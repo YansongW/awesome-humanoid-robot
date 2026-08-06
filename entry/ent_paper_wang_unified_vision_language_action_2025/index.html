@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UniVLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">UniVLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>UniVLA</h1>
+      <p class="entry-name-en">Unified Vision-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.19850v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>UniVLA 是由中国科学院自动化研究所、北京智源人工智能研究院、清华大学和香港科技大学（深圳）联合提出的 2025 年大型视觉-语言-动作模型。其核心贡献在于将视觉、语言和动作信号统一建模为离散 token 序列，并通过后训练中的世界建模捕获视频中的因果动态，从而显著提升机器人操作性能。该模型在 CALVIN、LIBERO 等模拟基准上达到新 SOTA，例如在 LIBERO 上平均成功率 95.5%，远超 pi0-FAST 的 85.5%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2506.19850" target="_blank" rel="noopener">Unified Vision-Language-Action Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://dblp.org/rec/journals/corr/abs-2506-19850" target="_blank" rel="noopener">UniVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>UniVLA 是一种统一原生多模态 VLA 模型，它通过自回归方式将视觉、语言和动作信号处理为离散 token 序列，突破了以往 VLA 模型仅依赖 VLM 通用理解能力的局限。这种设计使模型能够灵活学习多模态任务，尤其擅长从大规模视频数据中提取信息。在后训练阶段，UniVLA 引入世界建模，从视频中学习因果动力学，从而有效迁移到下游策略学习，特别适用于长时域任务。实验表明，UniVLA 在多个模拟基准上大幅超越先前方法，并在真实世界的 ALOHA 操作和自动驾驶场景中展示了广泛适用性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>UniVLA 的核心创新在于将视觉、语言和动作信号统一表示为离散 token 序列，并通过自回归方式建模。这种统一表示使得模型能够同时处理多种模态，尤其擅长从大规模视频数据中学习。后训练阶段引入的世界建模机制，使模型能够从视频中捕获因果动态，从而有效支持长时域任务的策略学习。</p>
+<h3 id="_4">实验设置与关键结果</h3>
+<ul>
+<li><strong>模拟基准测试</strong>：UniVLA 在 CALVIN、LIBERO 和 Simplenv-Bridge 等广泛使用的模拟基准上取得了新 SOTA 结果。例如，在 LIBERO 基准上，UniVLA 的平均成功率达到 95.5%，显著超越 pi0-FAST 的 85.5%。</li>
+<li><strong>真实世界应用</strong>：模型在真实世界的 ALOHA 操作和自动驾驶场景中展示了广泛适用性，验证了其跨领域迁移能力。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>UniVLA 通过统一多模态 token 序列建模和世界学习机制，有效解决了以往 VLA 模型忽略视觉观测中时间与因果结构的问题，在模拟和真实场景中均实现了显著性能提升。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2506.19850v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-desc">UniVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">FAST</a>
+              <span class="rel-desc">UniVLA提及FAST。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_fan_xr_1_towards_versatile_vision_2025/">XR-1</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">XR-1提及UniVLA。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_guo_glad_geometric_latent_distilla_2025/">GLaD</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">GLaD提及UniVLA。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sam3d_guided_object_centric_representati_2026/">SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cosmos_policy_fine_tuning_video_models_2026/">Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">World Model for Robot Learning: A Comprehensive Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_being_h0_7_latent_world_action_2026/">Being-H0.7: A Latent World-Action Model from Egocentric Videos</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_latency_tolerant_cloud_edge_collaborativ_2026/">Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_uncovering_mitigating_positional_blind_s_2026/">Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026/">VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wang_unified_vision_language_action_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_sam3d_guided_object_centric_representati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models</h3>
+          <p>SAM3D-VLA 是一种基于 π₀ 架构的视觉-语言-动作模型，通过冻结的 SAM3D 教师网络在训练阶段将目标物体中心的 3D 特征对齐到 RGB 视觉骨干中，推理时保持纯 RGB…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cosmos_policy_fine_tuning_video_models_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning</h3>
+          <p>Cosmos Policy 由 NVIDIA 提出，是一种通过单阶段微调将预训练视频模型 Cosmos-Predict2…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_uncovering_mitigating_positional_blind_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</h3>
+          <p>本文提出并系统研究了视觉-语言-动作模型（VLA）中的位置性盲区（Positional Blind Spots,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fan_xr_1_towards_versatile_vision_2025/">
+          <span class="entry-type">论文</span>
+          <h3>XR-1</h3>
+          <p>XR-1 是由北京人形机器人创新中心、北京航空航天大学、北京大学等机构提出的 2025 年大型视觉-语言-动作模型，用于机器人操作。其核心贡献是引入统一视觉-运动编码（UVMC），通过双分支…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FAST</h3>
+          <p>FAST 是 2025 年由 Physical Intelligence、UC Berkeley 和 Stanford…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_guo_glad_geometric_latent_distilla_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GLaD</h3>
+          <p>GLaD 是 MBZUAI 与伊利诺伊大学芝加哥分校于 2025 年提出的几何感知视觉-语言-动作模型，用于机器人操作。其核心贡献是通过知识蒸馏将 3D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_being_h0_7_latent_world_action_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Being-H0.7: A Latent World-Action Model from Egocentric Videos</h3>
+          <p>Being-H0.7 是一种潜在世界-动作模型，由研究团队提出，旨在将未来感知推理融入 VLA 策略中，而无需生成未来帧。其核心贡献在于通过可学习的潜在查询和双分支训练设计，在保持直接 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_latency_tolerant_cloud_edge_collaborativ_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</h3>
+          <p>本文提出…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</h3>
+          <p>VistaVLA 提出一种以 3D 高斯为锚定的视觉-语言-动作模型，通过两阶段框架将几何与语义特征绑定到显式 3D 场景表示上，再以 Merge-then-Query 压缩为紧凑 token…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>World Model for Robot Learning: A Comprehensive Survey</h3>
+          <p>本文是一篇关于机器人学习领域世界模型的全面综述，由研究团队系统梳理了该领域的发展脉络。核心贡献在于从机器人学习视角出发，整合了世界模型与策略耦合、作为学习模拟器、视频生成等关键范式，并总结了导航与自动…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置与关键结果</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

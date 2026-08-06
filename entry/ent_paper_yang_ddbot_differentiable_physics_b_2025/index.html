@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DDBot：面向未知颗粒材料的可微物理挖掘机器人 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DDBot：面向未知颗粒材料的可微物理挖掘机器人</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>DDBot：面向未知颗粒材料的可微物理挖掘机器人</h1>
+      <p class="entry-name-en">DDBot: Differentiable Physics-based Digging Robot for Unknown Granular Materials</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">零部件</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">上游</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.17335v4. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged ent_paper_yang_ddbot_differentiable_physics_b_2025 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>DDBot 是一个结合 GPU 加速可微分 MLS-MPM 颗粒材料模拟器与参数化可微分挖掘技能的框架，由研究团队提出。其核心贡献在于通过基于梯度的系统辨识与挖掘技能优化，实现对未知物理属性沙土的高精度挖掘，并能在 UR5e 机械臂上实现零样本 sim-to-real 迁移。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.17335" target="_blank" rel="noopener">DDBot: Differentiable Physics-based Digging Robot for Unknown Granular Materials</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>DDBot 框架针对小规模高精度颗粒材料挖掘任务，解决了未知物理属性带来的挑战。它利用 GPU 加速并行计算与自动微分技术，构建了专为颗粒材料操作设计的可微分物理模拟器。通过可微分技能到动作映射、任务导向演示方法、梯度裁剪与线搜索梯度下降等机制，DDBot 能在 5 到 20 分钟内高效完成未知颗粒材料动力学辨识与挖掘技能优化。实验表明，该框架在零样本真实部署中达到高精度结果，且在与先进基线的对比中展现出鲁棒性与效率优势。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>可微分模拟器</strong>：基于 MLS-MPM（Moving Least Squares Material Point Method）方法，通过 GPU 加速并行计算与自动微分实现高效梯度传播。</li>
+<li><strong>可微分挖掘技能</strong>：参数化技能模型包含轨迹生成与力控制，通过可微分技能到动作映射（differentiable skill-to-action mapping）连接高层技能与底层执行器指令。</li>
+<li><strong>系统辨识与优化</strong>：采用梯度裁剪（gradient clipping）与线搜索梯度下降（line search-based gradient descent）解决数值不稳定性，实现未知颗粒材料动力学参数辨识与挖掘轨迹优化。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>硬件平台</strong>：UR5e 机械臂，配备定制挖掘铲斗。</li>
+<li><strong>材料</strong>：未知物理属性的沙土（sand and soil），包括不同颗粒尺寸与湿度。</li>
+<li><strong>基线对比</strong>：与基于强化学习、传统控制及无梯度优化的方法进行基准测试。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>效率</strong>：系统辨识与技能优化在 5 到 20 分钟内收敛，远快于传统方法。</li>
+<li><strong>精度</strong>：零样本真实部署中，挖掘体积误差低于 5%，铲斗轨迹跟踪误差小于 2 mm。</li>
+<li><strong>鲁棒性</strong>：在颗粒材料属性变化（如密度、摩擦系数）时，DDBot 仍保持稳定性能，优于所有基线方法。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>DDBot 首次证明一阶梯度优化在复杂可微分颗粒材料模拟中的可行性，为自动化挖掘未知材料提供了高效、高精度的解决方案。未来工作可扩展至多材料混合场景与更复杂操作任务。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2510.17335v4</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_system_identification/">系统辨识</a>
+              <span class="rel-desc">DDBot：面向未知颗粒材料的可微物理挖掘机器人使用系统辨识。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-desc">DDBot：面向未知颗粒材料的可微物理挖掘机器人discusses模型预测控制（MPC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              <span class="rel-desc">DDBot：面向未知颗粒材料的可微物理挖掘机器人demonstrates_onSim-to-Real迁移。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_yang_ddbot_differentiable_physics_b_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_system_identification/">
+          <span class="entry-type">方法</span>
+          <h3>系统辨识</h3>
+          <p>根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

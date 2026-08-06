@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OrchardBench: A Physically-Grounded, GPU-Parallel Apple-Orchard Simulation Benchmark for Agricultural Robotics · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">OrchardBench: A Physically-Grounded, GPU-Parallel Apple-Orchard Simulation Benchmark for Agricultural Robotics</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>OrchardBench: A Physically-Grounded, GPU-Parallel Apple-Orchard Simulation Benchmark for Agricultural Robotics</h1>
+      <p class="entry-name-en">OrchardBench: A Physically-Grounded, GPU-Parallel Apple-Orchard Simulation Benchmark for Agricultural Robotics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>OrchardBench 是一个基于 Newton/MuJoCo-Warp 引擎构建的 GPU 并行苹果园仿真基准，由研究团队开发，旨在填补程序化植物建模与物理机器人学习模拟之间的空白。其核心贡献在于提供物理真实、可断裂、带果实的树木模型，并配套标准化任务、指标和评估协议，使农业采摘机器人策略可在安全、可扩展、可复现的条件下迭代。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.06337" target="_blank" rel="noopener">arXiv:2607.06337 OrchardBench: A Physically-Grounded, GPU-Parallel Apple-Orchard Simulation Bench</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它改变了农业机器人仿真中“树木只是静态背景”的现状。此前，图形学树木模型几何精细但物理惰性，机器人学习模拟器则缺乏合理的树木物理，导致田间实验成本高、不可复现且失败代价大——规划不当的运动可能撕裂主枝或剥落果实。OrchardBench 将树木从装饰物提升为具有梁理论动力学、可断裂树枝和可脱落果实的物理实体，使损伤（断枝、落果）成为与成功率同等重要的评估指标，这是对现有基准（如 Isaac Gym、MuJoCo）在农业场景下评估体系的重要补充。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">树木生成与动力学</h3>
+<ul>
+<li>每棵树由随机 L-system 生成，实例化为完全铰接的刚体，节间为刚性链接，分支连接处为顺应性扭转弹簧-阻尼器。</li>
+<li>刚度遵循欧拉-伯努利梁理论：<span class="arithmatex">\( K_p = \frac{\pi}{4} \frac{E r^4}{\ell} = \frac{EI}{\ell} \)</span>，阻尼 <span class="arithmatex">\( K_d = c_d K_p \)</span>。由于 <span class="arithmatex">\( K_p \propto r^4 \)</span> 且半径按管道模型锥化，细外枝比树干柔软多个数量级。</li>
+</ul>
+<h3 id="_4">断裂与果实模型</h3>
+<ul>
+<li>树枝断裂：当传递弯矩超过 <span class="arithmatex">\( M_{\max} = \sigma_r \frac{\pi r^3}{4} \)</span> 时断裂，采用 N 帧滞后抑制速率尖峰。断裂后通过就地清零设备数组中的增益和偏置行实现自由铰链，无需重编译。</li>
+<li>果实：独立刚体，通过单侧弹簧-阻尼系绳悬挂，脱落力 <span class="arithmatex">\( f_{\text{detach}} \in [14, 23] \, \mathrm{N} \)</span>。弹性系绳力减去静态重量后反作用于父枝，使拉动果实能加载树枝。</li>
+</ul>
+<h3 id="_5">域随机化与求解器</h3>
+<ul>
+<li>每个 GPU 批处理环境是一棵不同的树，固定离散拓扑，仅扰动连续量（弯曲、生长习性、木材密度、杨氏模量、断裂应力、果实属性等）。</li>
+<li>默认使用共轭梯度（CG）求解器，比 Newton 默认的阻塞 Cholesky 算法快约 7 倍。薄枝通过额外 armature 和接触边距处理质量比（约 <span class="arithmatex">\(10^4:1\)</span>）。</li>
+</ul>
+<h3 id="_6">感知与基线控制器</h3>
+<ul>
+<li>无学习的检测器：深度图像反投影为点云，分割为深度连续块，用线性最小二乘拟合球体，按半径（2–5.8 cm）、拟合残差、凸性等门控。</li>
+<li>自主采摘基线为解析状态机：扫描、对齐、到达（阻尼最小二乘逆运动学）、抓取、拉取、放置，含失败处理（黑名单目标）。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li><strong>物理真实的树木动力学</strong>：首次将欧拉-伯努利梁理论应用于 GPU 并行仿真中的树枝，使细枝柔软度与树干相差多个数量级，并支持树枝断裂和果实脱落，这是现有农业仿真器未提供的。</li>
+<li><strong>损伤作为一等公民指标</strong>：将断枝数和落果数纳入评估协议，与采摘完整性并列，使策略优化需在产量与损伤间权衡，更贴近田间实际约束。</li>
+<li><strong>域随机化与批处理同质性的平衡</strong>：固定离散拓扑、扰动连续量，既满足 GPU 批处理的结构同质性要求，又提供丰富的域随机化，且不同运行产生不同结构。</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>名义条件值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每次尝试成功</td>
+<td>0.41</td>
+</tr>
+<tr>
+<td>采摘完整性（采摘/可达）</td>
+<td>0.12</td>
+</tr>
+<tr>
+<td>每机器人吞吐量（果实/分钟）</td>
+<td>1.9</td>
+</tr>
+<tr>
+<td>平均采摘周期时间（秒）</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>检测精度</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>每树折断树枝</td>
+<td>∼0.2</td>
+</tr>
+<tr>
+<td>每树掉落果实</td>
+<td>∼6</td>
+</tr>
+<tr>
+<td>最大茎拉拔力（N，峰值）</td>
+<td>29</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>并行性：单树步进率 60–100 fps，同质批和共享维度域随机化批均达到 512 棵树，吞吐量约 3500–4400 环境步/秒；不同几何 DR 降至约 140 环境步/秒（32 棵树时 66 fps 对比 4.4 fps，约 15× 差距）。</li>
+<li>叶密度从 0 升至 1.5，检测精度从 0.98 降至 0.81；果实负载从 20 增至 60 个苹果，完整性从 0.26 降至 0.13。</li>
+<li>树冠分区：中树冠成功率最高（∼0.55），下-外和上分区最低（0.37–0.42）；树间变异：18 棵树每树放置苹果数 2.4±1.5（范围 0–5）。</li>
+</ul>
+<h2 id="_9">边界与局限</h2>
+<p>论文未明确物理验证：物理基于文献而非针对真实树枝断裂或抓取实验验证，Euler–Bernoulli 扭转弹簧集总是理想化，绿木模量和断裂应力是从干木参考值降低的估计。分离力未校准到具体值，果实模型省略果柄扭转（仅拉力触发分离）。感知仅深度，RGB 感知迁移超出范围。无 sim-to-real 演示，域随机化是动机而非已证明能实现迁移。仅评估解析基线，学习型或智能体基线是未来工作。结果应视为仿真内相对比较，而非田间性能的绝对预测。</p>
+<h2 id="_10">工程启示</h2>
+<p>复现时先核对物理参数表（表 III）：默认杨氏模量 7 GPa、断裂模量 50 MPa、密度 850 kg/m³，这些值决定树枝刚度与断裂行为，若目标场景为较软树苗需调整。最容易踩坑的是域随机化轴的选择：每分支尺寸（段长、厚度、全局缩放）会显著降低批处理步率（降至 8–13 fps），而果实和叶属性随机化几乎免费，建议优先使用后者。断裂实现依赖就地清零设备数组，需确保不触发 CUDA 图重捕获。基线控制器中，抓取停滞和假阳性检测是主要失败原因，下游团队若开发学习型策略，应优先改进感知门控而非导航。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.06337</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_orchardbench_physically_grounded_gpu_par_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">树木生成与动力学</a></li>
+<li><a href="#_4">断裂与果实模型</a></li>
+<li><a href="#_5">域随机化与求解器</a></li>
+<li><a href="#_6">感知与基线控制器</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a></li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

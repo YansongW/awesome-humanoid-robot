@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots</h1>
+      <p class="entry-name-en">FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P084. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>FACET 提出一种基于阻抗参考跟踪的力自适应控制框架，用于腿式机器人。它通过虚拟质量-弹簧-阻尼模型定义参考动力学，并利用强化学习训练策略跟踪该参考，从而将外力响应从隐式、僵硬的行为转变为显式、可调节的顺应性。核心贡献在于提供了一种原理性的力控制接口，并在仿真和真实机器人上验证了其鲁棒性和可调节性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.06883" target="_blank" rel="noopener">arXiv:2505.06883 FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有基于 RL 的腿式机器人控制器，无论是速度跟踪还是操作任务，其奖励函数都未明确指定对外力的响应。速度跟踪策略会本能地拒绝一切外力，导致运动僵硬；操作策略则假设力可忽略，在真实交互中行为未定义。这从根本上限制了机器人在人类密集环境中的安全性和可用性。FACET 改变了这一范式：它不再将外力视为需要抑制的干扰，而是将其作为参考动力学的一部分，通过阻抗参数显式地“设计”机器人的外力响应。这使得力交互行为从不可控的副作用，转变为可调节、可预测的核心功能。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">核心架构</h3>
+<p>FACET 采用教师-学生框架，学生策略仅依赖可部署的观测（命令、关节状态、IMU），教师策略额外使用特权信息（线速度、外力、接触状态等）。学生策略以教师参数初始化，并用 PPO 继续训练，而非单纯模仿。</p>
+<h3 id="_4">参考模型</h3>
+<p>机器人行为由虚拟质量-弹簧-阻尼系统定义，其动力学为：
+<code>m * ẍ_ref = K_p(x_des - x_ref) + K_d(ẋ_des - ẋ_ref) + f_ext</code>
+其中 <code>u = (x_des, K_p, K_d, m)</code> 是策略输入，<code>f_ext</code> 是外部力。策略的目标是让机器人实际状态 <code>x_sim</code> 跟踪 <code>x_ref</code>，损失函数为 <code>L_track = ||x_sim - x_ref||² + ||ẋ_sim - ẋ_ref||²</code>。</p>
+<h3 id="_5">时间平滑</h3>
+<p>为避免参考轨迹的噪声和不连续性，使用从不同历史时间步 <code>t' ∈ {t-8Δt, t-16Δt, t-32Δt}</code> 积分得到的混合目标，<code>Δt = 0.02s</code>。奖励函数为 <code>r_t = (1/M) Σ exp(-||x_sim - x_ref^{t'}||²) + exp(-||ẋ_sim - ẋ_ref^{t'}||²)</code>。</p>
+<h3 id="_6">力接口</h3>
+<p>通过设置阻抗参数实现不同力行为：<code>K_p=0</code> 时完全柔顺，可被外力引导；增大 <code>K_p</code> 则刚度增加。对于移动操作器，为基座和末端执行器分别定义参考模型，参数 <code>a ∈ [0,1]</code> 控制末端力是否传递到基座。</p>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li><strong>原理性力响应设计</strong>：与现有方法要么忽略外力、要么需要显式切换力/位置模式不同，FACET 通过阻抗参数连续调节顺应性，提供了一个统一的、可微调的力控制接口。这是首次将阻抗控制思想与 RL 训练目标深度耦合。</li>
+<li><strong>间接力命令</strong>：策略不直接输出力或速度，而是输出阻抗参数 <code>u</code>。这允许用户通过直观的物理量（如刚度、阻尼、虚拟质量）指定期望行为，例如设置 <code>K_p=0</code> 即可让机器人被绳子轻松拉动。</li>
+<li><strong>时间平滑的参考跟踪</strong>：通过混合多个历史时间步的参考目标，解决了 RL 训练中参考轨迹噪声大、难以精确跟踪的问题，显著提升了训练的稳定性和最终策略的平滑性。</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="_9">仿真实验</h3>
+<ul>
+<li><strong>大扰动鲁棒性</strong>：在 <code>1.5 m/s</code> 前进时施加横向冲量，FACET 成功率显著高于速度跟踪和随机扰动基线。</li>
+<li><strong>软碰撞</strong>：机器人以 <code>1.5 m/s</code> 走入虚拟墙，FACET 的碰撞冲量显著更低，且可通过调节 <code>K_p</code> 控制。</li>
+<li><strong>消融研究</strong>：比较平滑、开环、闭环、加速度四种教师策略及对应学生策略。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>位置误差</th>
+<th>速度误差</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平滑教师</td>
+<td>1.00</td>
+<td>1.00</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>开环教师</td>
+<td>0.72</td>
+<td>0.92</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>闭环教师</td>
+<td>17.71</td>
+<td>2.04</td>
+<td>0.96</td>
+</tr>
+<tr>
+<td>加速度教师</td>
+<td>70.51</td>
+<td>6.64</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>平滑学生</td>
+<td>5.18</td>
+<td>1.85</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>开环学生</td>
+<td>10.31</td>
+<td>2.07</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>并发基线</td>
+<td>26.23</td>
+<td>3.53</td>
+<td>0.92</td>
+</tr>
+</tbody>
+</table>
+<p>平滑教师误差最小，开环学生优于闭环学生，确认了时间平滑和积分目标的重要性。</p>
+<h3 id="_10">真实世界实验</h3>
+<ul>
+<li><strong>柔顺跟随</strong>：设置 <code>K_p=0, K_d=4</code>，机器人可被细绳轻拉或指尖推动启停，无显式速度指令时平滑跟随力方向。</li>
+<li><strong>大力拉拽</strong>：内置控制器成功拉动至 <code>2.5 kg</code>，鲁棒策略超过 <code>5 kg</code> 失败，FACET 可靠拉动至 <code>10 kg</code> 无失败。</li>
+</ul>
+<h2 id="_11">边界与局限</h2>
+<p>论文未明确提及所有局限，但基于事实要点可推断：直接测量身体速度和外部力在现实中不可用，参考模型在现实中也不可用。可靠感知 <code>f_ext</code> 不可行，因大多数机器人缺乏力传感器。实现式2的动力学需要控制机器人通过脚接触产生 <code>f_grf</code> 以匹配虚拟弹簧力，但因复杂接触动力学而具有挑战性。多体设置下，机械约束未考虑，末端执行器参考目标可能不可达。此外，使用预定义频率的振荡器控制步态，可能限制基于目标加速度和速度调整立足点的能力。</p>
+<h2 id="_12">工程启示</h2>
+<p>复现时需注意：策略在 IsaacLab 中用 PPO 训练，控制间隔 <code>Δt = 0.02s</code>，时间平滑使用 <code>t' ∈ {t-8Δt, t-16Δt, t-32Δt}</code>。训练期间采样各种命令和外部力分布，并应用域随机化。最关键的工程细节是时间平滑的实现，它直接决定了训练稳定性。部署时，由于多数情况无明确定义的世界系，需在机器人系中按固定目标速度模式或完全柔顺模式指定 <code>x_des</code>。大力拉拽实验中，逐渐增大 <code>K_p</code> 和设定点位移，使 <code>K_p(x_ref-x)</code> 增至 <code>100 N</code>。最容易踩坑的地方是奖励函数中 <code>exp(-||ẋ-ẋ_ref||²)</code> 形式在早期误差大时可能饱和，需添加二次成本项 <code>-||ẋ-ẋ_ref||²</code> 解决。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2505.06883</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_facet_force_adaptive_control_impedance_r_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">核心架构</a></li>
+<li><a href="#_4">参考模型</a></li>
+<li><a href="#_5">时间平滑</a></li>
+<li><a href="#_6">力接口</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#_9">仿真实验</a></li>
+<li><a href="#_10">真实世界实验</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

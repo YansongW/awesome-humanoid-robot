@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 Action QFormer，一种插入在预训练多模态骨干与策略头之间的查询式动作面向接口，用于在 VLA 模型动作微调期间重塑继承的多模态表征。作者通过梯度路由诊断与零样本仿真到现实导航实验，证明该接口能减少动作监督对语言侧表征的破坏性重写，同时保留对控制相关特征的定向适应。核心贡献在于将动作监督从单纯的下游目标重新定义为一种可调控的表征塑造力，并提供了结构化接口作为实现手段。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14635" target="_blank" rel="noopener">arXiv:2607.14635 Action QFormer: Structured Representation Shaping under Action Supervision in Vi</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>VLA 微调长期存在一个隐性矛盾：动作监督既是形成行为兼容表征的必要条件，又会在直接作用于继承的多模态通路时破坏语言侧处理和物体接地所需的表征稳定性。以往工作要么强化预训练骨干，要么强化动作解码器，但都回避了动作监督与继承表征交互方式这一根本问题。本文真正改变的是将“动作监督如何与多模态表征交互”从工程细节提升为可设计、可诊断的核心机制。</p>
+<p>直接融合基线中，动作损失更新虽然能形成行为相关区分（如左右方向），但代价是广泛的上游重写和不稳定的指令到视觉注意力。Action QFormer 的实质贡献在于提供了一条中间适应路径：动作监督不必仅通过重塑上游通路来表达，而是可以通过查询状态在继承空间与动作面向空间之间双向中介。这使得“建设性适应”与“破坏性重写”在梯度结构上得以分离，而非依赖训练技巧去抑制副作用。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">总体架构</h3>
+<p>三阶段流水线：预训练视觉-语言骨干（Qwen2.5-VL）产生继承多模态表示 → 中间接口模块重组为紧凑动作面向表示 → 下游策略头预测未来导航轨迹。</p>
+<h3 id="action-qformer">Action QFormer 核心机制</h3>
+<ul>
+<li>维护 <span class="arithmatex">\(M=16\)</span> 个可学习查询状态 <span class="arithmatex">\(Q^0\)</span>，通过 <span class="arithmatex">\(K=4\)</span> 层堆叠更新。</li>
+<li>每层先通过自注意力吸收指令上下文，再通过交叉注意力从图像侧表征中选择视觉证据。</li>
+<li>梯度结构为动作损失更新提供额外的查询特定适应路径，使动作监督不必仅通过重塑上游通路来表达。</li>
+</ul>
+<h3 id="_4">训练目标</h3>
+<p>总损失由标量语言损失权重 <span class="arithmatex">\(r \in [0,1]\)</span> 控制：
+- <span class="arithmatex">\(r=0\)</span>：仅动作损失（跳过语言分支前向）
+- <span class="arithmatex">\(r=1\)</span>：仅语言损失（跳过动作分支前向）
+- <span class="arithmatex">\(0&lt;r&lt;1\)</span>：凸插值 <span class="arithmatex">\((1-r)\cdot L_{action} + r\cdot L_{lang}\)</span></p>
+<p>动作损失为条件扩散策略去噪目标：
+<span class="arithmatex">\(\mathcal{L}_{action}=\mathbb{E}_{\tau,\epsilon}[\|\epsilon-\epsilon_\psi(A_t^\tau,\tau,z_t)\|_2^2]\)</span></p>
+<h3 id="_5">梯度路由诊断</h3>
+<p>四种配置隔离动作监督引起的上游塑形：
+- <strong>动作更新阻断</strong>（参考）：阻断动作损失对查询的更新
+- <strong>视觉编码器冻结</strong>：冻结视觉编码器参数
+- <strong>语言骨干阻断</strong>：阻断动作损失对语言骨干的梯度
+- <strong>全更新</strong>：所有参数参与动作损失优化</p>
+<h3 id="_6">关键设计决策</h3>
+<ul>
+<li>查询通过自注意力与指令侧交互、交叉注意力与图像侧交互，实现双向中介而非单向池化。</li>
+<li>语言损失仅应用于监督指令跨度，避免干扰骨干的语言建模能力。</li>
+<li>训练中 <span class="arithmatex">\(r\)</span> 从高语言权重余弦调度到较低值，实现渐进式动作适配。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>表征塑造的显式接口化</strong>：以往动作监督直接作用于继承表征，本文通过查询式接口将“塑造力”封装为可学习的中间状态。这不仅是架构改动，而是将动作监督从破坏性外力转化为可调控的适应信号——梯度有了查询特定路径，不必全部经由上游通路表达。</p>
+</li>
+<li>
+<p><strong>梯度路由诊断方法</strong>：通过停止梯度干预设置四种配置，系统隔离动作监督对视觉编码器、语言骨干和查询状态的分别影响。这为 VLA 微调提供了可操作的诊断工具，而非仅凭最终指标猜测内部发生了什么。</p>
+</li>
+<li>
+<p><strong>“定向重写”与“广泛重写”的量化区分</strong>：表 VI 与表 VII 显示，Action QFormer 在全更新下重写子空间的有效秩从 29.41 提升到 65.68（由表内数值计算），同时 Top-5 方差占比从 0.666 降至 0.521（由表内数值计算），表明重写更分散、更目标化而非集中于少数主成分。这种量化视角是理解动作监督影响的新维度。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="ii">零样本仿真到现实闭环导航（表 II）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>直接融合基线</th>
+<th>Action QFormer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平均任务成功率（无指令）</td>
+<td>18.8%</td>
+<td>56.3%</td>
+</tr>
+<tr>
+<td>固定指令动作生成正确率</td>
+<td>22.5%</td>
+<td>75.5%</td>
+</tr>
+<tr>
+<td>指令 OOD 率（Fridge）</td>
+<td>100.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>指令 OOD 率（Door）</td>
+<td>97.2%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>指令 OOD 率（Chair）</td>
+<td>100.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>指令 OOD 率（Table）</td>
+<td>100.0%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">关键场景对比</h3>
+<ul>
+<li><strong>Fridge（远目标）</strong>：给定指令时任务成功率从 75.0% 提升至 100.0%，平均碰撞从 0.25 降至 0.00。</li>
+<li><strong>Table（急转弯）</strong>：无指令时任务成功率从 0.0% 提升至 62.5%，指令方向正确率从 22.9% 提升至 100.0%。</li>
+<li><strong>Chair（转身）</strong>：动作方向正确率从 53.6% 提升至 82.4%，指令 OOD 率从 100.0% 降至 0.0%。</li>
+</ul>
+<h3 id="_10">表征分析</h3>
+<ul>
+<li>表 III 中，Action QFormer 全更新下左右余弦相似度降至 0.470（Action）与 0.520（Action Repr.），而直接融合基线为 0.891 与 0.931（由表内数值对比），表明查询状态形成了更清晰的方向区分。</li>
+<li>表 VIII 显示，Action QFormer 全更新下边界 token 重写份额为 0.717，而直接融合基线为 0.423（由表内数值对比），说明重写更集中于指令边界而非广泛分布。</li>
+</ul>
+<h3 id="_11">消融</h3>
+<ul>
+<li>图像潜变量变体保留部分能力但失去优势；仅查询变体产生视觉合理运动但失去指令跟随能力。</li>
+<li>reduced-query 变体始终强于 reduced-depth 变体，尤其在方向控制上。</li>
+</ul>
+<h2 id="_12">边界与局限</h2>
+<ul>
+<li>Action QFormer 不能自行解决障碍物感知的指令规划：当安全执行需要显式绕行附近障碍物时，若模型未选择合适的接地目标来描述避障行为，仍可能失败。</li>
+<li>论文未提及对大规模多任务、跨具身泛化或更复杂操作任务的评估；主要使用导航作为挑战性具身设置。</li>
+<li>注意力聚焦效果不被视为普遍机制，仅作为定性证据；逐头可视化（图 19）为选择性选取，应视为可能行为的示例而非分布性证据。</li>
+<li>对 vision-encoder-frozen 比较中出现的注意力偏移或塌缩情况，作者仅提出解释性假设，未作确定性因果主张。</li>
+<li>未对 Action QFormer 进行广泛的模块特定超参数调优。</li>
+</ul>
+<h2 id="_13">工程启示</h2>
+<p>复现时先核对三件事：一是训练权重调度回调的实现——<span class="arithmatex">\(r\)</span> 的余弦调度直接影响动作适配的渐进性，若调度过快可能导致表征失稳；二是批量配置——直接融合基线为 16×4，Action QFormer 为 8×8，两者有效批量相同但梯度噪声特性不同，直接替换时需重新验证；三是梯度路由诊断的参考设置——所有比较均相对于同一接口族内的 action-update-blocked 参考进行，跨接口族比较会混淆变量。</p>
+<p>最容易踩坑的地方在于：动作监督的梯度路径是核心机制，若在实现中意外将查询状态与骨干参数的梯度耦合（例如共享优化器分组不当），会退化为直接融合的行为。另一个常见问题是语言损失权重的调度范围——若 <span class="arithmatex">\(r\)</span> 未降至足够低，动作适配不充分；若降得太快，语言侧表征可能被破坏。建议先复现表 III 的余弦相似度诊断，确认 Action QFormer 全更新下 Action Repr. 相似度降至 0.520 附近（由表内数值对比），再进入闭环评估。</p>
+<h2 id="_14">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.14635</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_token_prediction/">动作 token 预测</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_action_qformer_structured_representation_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">方法</span>
+          <h3>动作 token 预测</h3>
+          <p>一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">总体架构</a></li>
+<li><a href="#action-qformer">Action QFormer 核心机制</a></li>
+<li><a href="#_4">训练目标</a></li>
+<li><a href="#_5">梯度路由诊断</a></li>
+<li><a href="#_6">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#ii">零样本仿真到现实闭环导航（表 II）</a></li>
+<li><a href="#_9">关键场景对比</a></li>
+<li><a href="#_10">表征分析</a></li>
+<li><a href="#_11">消融</a></li>
+</ul>
+</li>
+<li><a href="#_12">边界与局限</a></li>
+<li><a href="#_13">工程启示</a></li>
+<li><a href="#_14">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

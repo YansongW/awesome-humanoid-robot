@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</h1>
+      <p class="entry-name-en">VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Deploying Vision-Language-Action (VLA) robots as mobile edge nodes within wireless sensor networks (WSNs) requires robust protection against physical adversarial threats. We present VLAGuard, a framework to assess and mitigate a critical vulnerability: policy-critical action-to-vision attention hijacking. We first introduce a stress-test module, Visuomotor Attention-guided Semantic Attack (VASA),.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01028" target="_blank" rel="noopener">arXiv:2608.01028 VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>VLAGuard는 시각-언어-행동(VLA) 로봇의 물리적 주의력 하이재킹 취약점에 대한 평가 및 방어 프레임워크로, 연구팀에 의해 제안되었습니다. 핵심 기여로는 레드팀 공격 VASA(주의 기반 의미론적 패치)와 블루팀 방어 APFT(주의 보호 미세조정)가 있으며, LIBERO 시뮬레이션과 PiPER 실물 로봇에서 공격 실패율을 100.0%에서 25.9%로 낮추고, 성공률을 23.0%에서 67.4%로 끌어올린 효과를 검증했습니다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>이 작업이 실제로 바꾼 것은 VLA 로봇의 물리적 적대적 위협에 대한 인식의 층위입니다. 기존의 공격과 방어의 대결 초점은 행동 편향, 전역 표현 파괴 또는 테스트 시 정화에 머물러 있었으며, 기본 전제는 "표현을 파괴하면 제어도 파괴된다"는 것이었습니다. VLAGuard는 더 근본적이고 위험한 메커니즘을 지적합니다: 정책의 핵심적인 행동-시각 교차 주의(action-to-vision attention)가 물리적 패치에 의해 정밀하게 하이재킹될 수 있어, 모델이 "보고는 있지만" 그리퍼와 목표 객체에 "주의를 기울이지 않게" 됩니다. 이는 전역 특징 정렬 기반 방어(예: EDPA-AF)가 심각한 국소 교란에서 무력화되는 이유를 설명합니다—그들은 특징 공간을 보호했지만, 의사결정이 의존하는 희소 주의 경로는 보호하지 못한 것입니다.</p>
+<p>둘째, 방어의 경제성 가정을 바꿉니다. 기존의 강건화 수단은 추론 시 정화 지연(실시간 엣지 제어에 허용 불가)을 도입하거나, 전역 미세조정으로 기존 조작 정밀도를 파괴합니다. APFT는 시각 인코더만 업데이트하고 언어 백본과 행동 헤드를 동결하여, 제로 추론 오버헤드로 주의 경로의 원천적 강화를 얻습니다. 이는 배포 제약이 엄격한 무선 센서 네트워크 엣지 노드 시나리오에서 실질적 의미를 가집니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="vasa">VASA 공격: 주의 유도 물리적 패치 최적화</h3>
+<ul>
+<li>EOT(Expectation-over-Transformation) 최적화 기반, 무작위 평면 내 회전(-30° ~ 30°), 평행 이동(이미지 범위 10% 이내), 스케일링(0.85 ~ 1.15) 하에서 인쇄 가능한 패치 생성.</li>
+<li>목적 함수: ℒ_VASA = λ_attn·ℒ_attn − λ_disp·ℒ_disp − λ_misalign·ℒ_misalign + λ_tv·ℒ_tv, 가중치 λ_attn=0.8, λ_disp=0.2, λ_misalign=0.5.</li>
+<li>주의 유도 항 ℒ_attn은 패치 영역과 행동 쿼리(𝒬_act) 간의 주의 품질을 최소화하여 패치를 지배적 인력자로 만듭니다; 특징 분산 항은 InfoNCE 스타일 목표로 깨끗한 이미지와의 임베딩 거리를 최대화합니다; 이미지-텍스트 정렬 오류 항은 명령 임베딩과의 L1 거리를 최대화합니다; 총 변동 정규화는 인쇄 가능한 평활성을 보장합니다.</li>
+</ul>
+<h3 id="apft-">APFT 방어: 교사-학생 주의 증류</h3>
+<ul>
+<li>시각 인코더만 업데이트하고, 언어 백본과 행동 헤드를 동결, 제로 추론 오버헤드.</li>
+<li>총 목표: ℒ_APFT = λ_feat·ℒ_feat + λ_pcad·ℒ_pcad + λ_geo·ℒ_geo + λ_tac·ℒ_tac, 가중치 λ_feat=0.5, λ_pcad=1.0, λ_geo=0.3, λ_tac=0.3.</li>
+<li>특징 앵커링 손실(ℒ_feat)은 학생과 교사의 패치 수준 의미론적 방향 일관성을 유지하여 재앙적 망각을 방지합니다.</li>
+<li>정책 핵심 주의 증류(ℒ_pcad)는 Jensen-Shannon 발산으로 각 시간 단계의 행동 쿼리 주의 분포를 정렬합니다.</li>
+<li>언어 유도 기하 일관성(ℒ_geo)은 의미론적으로 관련된 영역의 국소 구조를 보존합니다.</li>
+<li>시간 주의 일관성(ℒ_tac)은 행동-시각 주의의 단계별 변화를 정렬하여 패치 유도 주의 점착을 억제하며, 궤적 창 K=4, 온도 τ_mask=0.5, τ_temp=0.5.</li>
+<li>옵티마이저 AdamW, 학습률 2×10⁻⁵, 가중치 감쇠 0.01.</li>
+</ul>
+<h2 id="_4">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>"주의 하이재킹"을 VLA 물리적 공격의 독립적 목표로 처음 설정</strong>. VASA는 행동 편향을 최대화하지 않고, 교차 주의 분포를 직접 조작하여 패치를 정책 의사결정의 "시각적 앵커"로 만듭니다. 이는 단순 특징 교란보다 더 은밀하고 방어하기 어렵습니다. 주의 경로는 정책이 직접 소비하는 증거 채널이기 때문입니다.</p>
+</li>
+<li>
+<p><strong>APFT의 시공간 주의 증류 설계</strong>. 기존 방어는 전역 특징 정렬(공간 국소성 무시) 또는 단일 프레임 정화(시간 연속성 무시)에 머물렀습니다. APFT는 정책 핵심 주의 증류(공간)와 시간 주의 일관성(시간)을 동시에 도입하여 패치 유도 주의 점착을 표적으로 억제합니다. 이는 주의 시간 역학을 명시적으로 모델링한 최초의 VLA 방어입니다.</p>
+</li>
+<li>
+<p><strong>제로 추론 오버헤드의 배포 친화성</strong>. 모든 보호 최적화는 엄격히 훈련 기간에 완료되며, 배포 시 원래 순방향 아키텍처를 유지하고, 탐지기, 마스크 또는 노이즈 제거 분기가 없습니다. 이는 계산 제약이 있는 WSN 엣지 노드에 결정적 이점으로, 강건성이 더 이상 실시간성과 대립하지 않게 합니다.</p>
+</li>
+</ol>
+<h2 id="_5">실험 및 결과</h2>
+<h3 id="libero-fr">시뮬레이션 공격 유효성(LIBERO, 실패율 FR%)</h3>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>Clean</th>
+<th>Random Patch</th>
+<th>EDPA</th>
+<th>VASA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenVLA</td>
+<td>23.2</td>
+<td>49.5</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>3.2</td>
+<td>19.7</td>
+<td>64.8</td>
+<td>97.7</td>
+</tr>
+<tr>
+<td>π₀</td>
+<td>14.5</td>
+<td>19.2</td>
+<td>46.1</td>
+<td>62.6</td>
+</tr>
+</tbody>
+</table>
+<p>VASA는 OpenVLA에 대해 완전 무력화(100.0%)를 달성하고, 이미 미세조정된 OpenVLA-OFT에 대해서도 97.7%에 달하며, π₀에 대해서는 62.6%로, 공격이 아키텍처를 넘어 유효함을 증명합니다.</p>
+<h3 id="openvla-fr">방어 강건성(OpenVLA, FR%)</h3>
+<table>
+<thead>
+<tr>
+<th>방어</th>
+<th>Clean</th>
+<th>Random</th>
+<th>UADA</th>
+<th>UPA</th>
+<th>EDPA</th>
+<th>VASA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original</td>
+<td>23.2</td>
+<td>49.5</td>
+<td>97.9</td>
+<td>98.8</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>EDPA-AF</td>
+<td>26.5</td>
+<td>27.2</td>
+<td>71.9</td>
+<td>56.3</td>
+<td>66.8</td>
+<td>96.6</td>
+</tr>
+<tr>
+<td>APFT</td>
+<td>23.3</td>
+<td>24.1</td>
+<td>25.0</td>
+<td>24.7</td>
+<td>25.7</td>
+<td>25.9</td>
+</tr>
+</tbody>
+</table>
+<p>APFT는 적응형 VASA 하에서 평균 FR을 25.9%로 낮추며, EDPA-AF의 96.6%보다 74.1% 포인트 낮춥니다(표 내 수치 96.6%→25.9%로 계산). Long 스위트에서 APFT는 51.4%로, 미방어 대비 48.6% 포인트 향상.</p>
+<h3 id="fr">구성 요소 소거(FR%)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>Clean</th>
+<th>Random</th>
+<th>VASA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>only L_pcad</td>
+<td>33.5</td>
+<td>41.1</td>
+<td>54.4</td>
+</tr>
+<tr>
+<td>w/o L_tac</td>
+<td>23.5</td>
+<td>24.6</td>
+<td>28.6</td>
+</tr>
+<tr>
+<td>Full APFT</td>
+<td>23.3</td>
+<td>24.0</td>
+<td>25.9</td>
+</tr>
+</tbody>
+</table>
+<p>L_tac 제거 시 VASA 하에서 FR이 28.6%로 상승하고, L_pcad 제거 시 87.5%로 상승하여, 시공간 주의 항이 하나도 빠질 수 없음을 증명합니다.</p>
+<h3 id="piper-sr-2000">물리 실험(PiPER, 성공률 SR%, 2,000회 시도)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>Clean 참조</th>
+<th>Original</th>
+<th>EDPA-AF</th>
+<th>APFT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pick &amp; Place</td>
+<td>79.0</td>
+<td>28.0</td>
+<td>50.0</td>
+<td>76.0</td>
+</tr>
+<tr>
+<td>Open Drawer</td>
+<td>75.0</td>
+<td>25.0</td>
+<td>45.0</td>
+<td>70.0</td>
+</tr>
+<tr>
+<td>Sort Cube</td>
+<td>70.0</td>
+<td>24.0</td>
+<td>43.0</td>
+<td>66.0</td>
+</tr>
+<tr>
+<td>Pour Liquid</td>
+<td>68.0</td>
+<td>24.0</td>
+<td>36.0</td>
+<td>64.0</td>
+</tr>
+<tr>
+<td>Stack Cube</td>
+<td>66.0</td>
+<td>14.0</td>
+<td>29.0</td>
+<td>61.0</td>
+</tr>
+<tr>
+<td><strong>평균</strong></td>
+<td><strong>71.6</strong></td>
+<td><strong>23.0</strong></td>
+<td><strong>40.6</strong></td>
+<td><strong>67.4</strong></td>
+</tr>
+</tbody>
+</table>
+<p>APFT는 평균 성공률을 23.0%에서 67.4%로 끌어올려 Clean 참조의 71.6%에 근접하며, 각 작업의 향상 폭(Δ +23.0 ~ +32.0)이 일관됩니다.</p>
+<h2 id="_6">경계와 한계</h2>
+<p>논문은 모든 한계를 명시적으로 나열하지 않았지만, 다음 경계를 식별할 수 있습니다: APFT는 단일 시점 RGB 인식이 완전 가림 또는 심각한 센서 포화에서 가지는 물리적 한계를 극복할 수 없습니다. 예를 들어, 목표 객체가 실행 중 로봇 팔에 완전히 가려지는 극단적 경우입니다. 저자들은 이러한 하드웨어 수준 제한을 해결하려면 다중 시점 센싱, 깊이 또는 촉각 모달리티 및 시간 기억이 필요함을 인정합니다. 또한, 현재 VLAGuard는 고립된 VLA 에이전트만 보호하며, 다중 노드 협력 방어를 구현하지 않았습니다; 완전한 방어 스캔은 계산 가능성을 유지하기 위해 OpenVLA에 집중되었고, 교차 아키텍처 결과는 공격 전이성 평가에만 사용되었습니다. 미래의 적응형 공격자가 언어 관련 객체를 모방한 의미론적 패치를 사용하거나 초기 시각 특징을 표적으로 삼는다면, APFT의 앵커링 전략 효과는 알 수 없습니다.</p>
+<h2 id="_7">공학적 시사점</h2>
+<p>재현 또는 배포 시, 세 가지 핵심 사항을 먼저 확인하십시오: 첫째, APFT의 손실 가중치(λ_pcad=1.0이 앵커)는 파일럿 실행 경험에 기반하여 설정되었으므로, 새 작업에 직접 전이할 때 재조정이 필요합니다. 그렇지 않으면 Clean 성능 저하가 발생할 수 있습니다(소거 실험에서 L_pcad만 사용 시 Clean FR이 33.5%로 상승한 것처럼). 둘째, 물리적 패치 크기 민감도가 매우 높습니다—패치 면적이 시야의 2%에 도달하면 정책이 급격히 붕괴하고(70%–80% 실패율), 5%에서는 완전히 무력화됩니다. 따라서 실물 배포 전에 카메라 거리와 시야 비율에 따라 패치의 실제 커버리지 비율을 보정해야 하며, 절대 크기만 보지 않아야 합니다. 셋째, 훈련과 추론 하드웨어 차이(A100 훈련, RTX 4090 추론)는 수치 드리프트를 유발할 수 있으므로, 목표 추론 카드에서 주의 분포 정렬 효과를 재검증하는 것이 좋습니다. 가장 함정에 빠지기 쉬운 지점은 L_tac의 시간 창 K=4와 온도 τ_temp=0.5가 궤적 샘플링 주파수에 민감하다는 점으로, 하류 정책의 제어 주파수가 다르면 실제 스텝 크기에 따라 창 길이를 재보정해야 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vlaguard_framework_evaluating_mitigating_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#vasa">VASA 공격: 주의 유도 물리적 패치 최적화</a></li>
+<li><a href="#apft-">APFT 방어: 교사-학생 주의 증류</a></li>
+</ul>
+</li>
+<li><a href="#_4">핵심 혁신</a></li>
+<li><a href="#_5">실험 및 결과</a><ul>
+<li><a href="#libero-fr">시뮬레이션 공격 유효성(LIBERO, 실패율 FR%)</a></li>
+<li><a href="#openvla-fr">방어 강건성(OpenVLA, FR%)</a></li>
+<li><a href="#fr">구성 요소 소거(FR%)</a></li>
+<li><a href="#piper-sr-2000">물리 실험(PiPER, 성공률 SR%, 2,000회 시도)</a></li>
+</ul>
+</li>
+<li><a href="#_6">경계와 한계</a></li>
+<li><a href="#_7">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

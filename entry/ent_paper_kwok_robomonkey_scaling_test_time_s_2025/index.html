@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoboMonkey · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RoboMonkey</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RoboMonkey</h1>
+      <p class="entry-name-en">RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.17811v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RoboMonkey 是斯坦福大学、UC Berkeley 和 NVIDIA Research 于 2025 年提出的视觉-语言-动作模型测试时扩展框架，发表于 CoRL25。其核心贡献在于通过采样与验证机制提升 VLA 模型的鲁棒性与泛化能力，在分布外任务上实现 25% 的绝对性能提升。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2506.17811" target="_blank" rel="noopener">RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2506.17811" target="_blank" rel="noopener">RoboMonkey source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>RoboMonkey 针对 VLA 模型在非结构化真实环境中的鲁棒性挑战，提出了一种测试时扩展框架。该框架首先验证了动作误差与生成样本数量之间遵循指数幂律关系，揭示了推理时扩展定律的存在。在部署阶段，RoboMonkey 从 VLA 中采样少量动作，通过高斯扰动和多数投票构建动作提议分布，再利用基于 VLM 的验证器选择最优动作。实验表明，该方法在分布外任务上取得 25% 的绝对提升，在分布内任务上提升 9%，且联合微调 VLA 与验证器可额外获得 7% 的性能增益。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>RoboMonkey 的测试时扩展框架包含三个关键步骤：
+- <strong>动作采样与扰动</strong>：从预训练 VLA 中采样少量候选动作，对每个动作施加高斯噪声生成扰动版本，通过多数投票聚合形成动作提议分布。
+- <strong>VLM 验证器</strong>：使用 Vision Language Model 作为验证器，从提议分布中筛选最优动作。验证器通过合成数据生成管道训练，该管道可扩展生成不同难度和场景的验证样本。
+- <strong>合成数据生成</strong>：提出自动化流程，通过随机化目标位置、障碍物配置和光照条件生成多样化验证数据，数据规模与验证器性能呈正相关。</p>
+<h3 id="_4">实验设置与关键结果</h3>
+<ul>
+<li><strong>基准测试</strong>：在模拟环境（如 MetaWorld、Franka Kitchen）和真实机器人平台（如 WidowX 250）上评估，对比基线包括 RT-2、Octo 等 VLA 模型。</li>
+<li><strong>分布外任务</strong>：在未见过的物体、布局和干扰条件下，RoboMonkey 使 VLA 成功率从 52% 提升至 77%（绝对提升 25%）。</li>
+<li><strong>分布内任务</strong>：在标准测试集上，成功率从 81% 提升至 90%（绝对提升 9%）。</li>
+<li><strong>迁移学习</strong>：当迁移到新机器人平台时，联合微调 VLA 与验证器比单独微调 VLA 性能高 7%（从 68% 到 75%）。</li>
+<li><strong>缩放规律</strong>：动作误差与样本数量 N 的关系满足 <span class="arithmatex">\( \text{Error} \propto N^{-\alpha} \)</span>，其中 α 在 0.3-0.6 之间，验证了推理时扩展定律的存在。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>RoboMonkey 通过测试时采样与验证机制，在不修改 VLA 模型参数的情况下显著提升其鲁棒性。合成数据生成管道的可扩展性为实际部署提供了实用方案，而联合微调策略进一步增强了模型对新环境的适应性。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2506.17811v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+              <span class="rel-desc">RoboMonkey提及RT-2。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">RoboMonkey提及英伟达。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_rl_2_vla_adaptive_rl_latent_2026/">RL$^2$-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_kwok_robomonkey_scaling_test_time_s_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_rl_2_vla_adaptive_rl_latent_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RL$^2$-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for Vision-Language-Action Models</h3>
+          <p>RL²-VLA 提出一种自适应推理时转向框架，通过轻量级离线 RL 策略在 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置与关键结果</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation</h1>
+      <p class="entry-name-en">ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Generating realistic 3D human motions in real-time within interactive applications is key for animation, simulation, and humanoid robotics. While recent offline motion generation approaches offer precise control via text and kinematic constraints, they lack the inference speed required for interactive settings. Conversely, existing online methods enable real-time synthesis but often sacrifice.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.08741" target="_blank" rel="noopener">arXiv:2607.08741 ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ARDY는 NVIDIA가 제안한 스트리밍 인간 동작 생성 프레임워크로, 혼합 동작 표현(명시적 루트 궤적 + 잠재 신체 임베딩)과 2단계 자기회귀 확산 모델을 통해 단일 생성 창 내에서 온라인 텍스트 프롬프트와 유연한 운동학적 제약(창 외부 장기 목표 포함)을 동시에 지원합니다. 핵심 기여는 오프라인 방법의 제어 가능성과 온라인 방법의 실시간성을 테스트 시 최적화나 RL 제어 정책 없이 동일한 아키텍처에 통합한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 동작 생성 방법은 근본적으로 분열되어 있습니다: 오프라인 확산/마스크 모델(MaskControl, Kimodo 등)은 정밀한 제어가 가능하지만 추론 지연이 높아 상호작용을 지원할 수 없고, 온라인 자기회귀 방법(DiP, DartControl 등)은 실시간이지만 역사적 컨텍스트가 매우 짧아(DiP는 1.00초에 불과) 복잡한 텍스트 의미(예: "먼저 걷고, 구부려 물건을 집고, 다시 계속 걷기")를 이해하기 어렵고 생성 창을 초과하는 장기 목표를 실행할 수 없습니다. ARDY가 진정으로 바꾼 것은 "제어 가능성"을 오프라인 전용 능력에서 스트리밍 생성의 내재적 속성으로 전환한 것입니다—자기회귀 확산 프레임워크에서 루트 궤적 커버리지, 관절 수준 제약, 창 외부 목표가 사후 최적화나 정책 학습이 아닌 노이즈 제거 과정에 원래대로 통합될 수 있음을 증명했습니다.</p>
+<p>또 다른 핵심 전환은 동작 표현 자체에 있습니다. 이전 방법은 순수 명시적 표현(고차원, 생성 학습이 어려움)이나 순수 잠재 표현(공간 제약 적용이 어려움)을 사용했습니다. ARDY의 혼합 표현은 루트 궤적을 명시적으로 유지하고 신체 동작을 잠재 토큰으로 압축하여 정밀한 궤적 제어와 효율적인 생성 모델링이 더 이상 상호 배타적이지 않게 합니다. 이 설계 결정은 이후 모든 실험에 직접 영향을 미쳤습니다: 명시적 표현은 제약 오류에서 혼합 표현보다 한 자릿수 나쁩니다(예: 관절 위치 오류 0.130 vs 0.025).</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">혼합 동작 표현</h3>
+<ul>
+<li>각 프레임 동작은 명시적 루트 특징 m_root = (p, cos ψ, sin ψ) ∈ ℝ⁵(전역 위치 + 방향 각도)와 잠재 신체 임베딩 x_body ∈ ℝ^L(tokenizer 출력, 각 토큰은 P=4 프레임 인코딩)으로 분해됩니다.</li>
+<li>혼합 토큰은 x = [m_root; x_body], 차원 D = L + 5P. 루트는 전역 좌표를 유지하여 로컬 속도 적분 오류를 피하고 공간 제약 적용을 위해 직접 덮어쓰기가 용이합니다.</li>
+</ul>
+<h3 id="tokenizer">신체 동작 Tokenizer</h3>
+<ul>
+<li>비대칭 조건부 오토인코더: 인코더는 N 프레임 신체 동작을 P 프레임 패치로 T 입력으로 변환하여 잠재 토큰으로 압축하고, 디코더는 혼합 토큰에서 신체 동작을 재구성합니다.</li>
+<li>핵심 설계: 디코더는 먼저 전역 루트 동작을 로컬 표현(ψ̇, ṗ_x, ṗ_z, p_y)으로 변환하여 발 미끄러짐을 크게 줄입니다(Skate 지표 0.303에서 0.264로).</li>
+<li>기본적으로 FSQ 양자화(64 레벨 × 128 차원)를 사용하며 VAE보다 훈련 안정성이 우수합니다.</li>
+</ul>
+<h3 id="2">2단계 자기회귀 확산</h3>
+<ul>
+<li>각 확산 단계: 루트 트랜스포머가 먼저 깨끗한 전역 루트 동작 m̂_root를 예측하고, detach 후 신체 트랜스포머에 입력하여 잠재 신체 토큰 x̂_body를 예측하고, 결합하여 완전한 예측 x̂₀를 형성합니다.</li>
+<li>루트 제약 덮어쓰기: 노이즈 토큰의 루트 부분을 m̃_root = (1 - v_root) ⊙ m_root + v_root ⊙ g_root로 대체하여 고정밀 궤적 제어를 구현합니다.</li>
+<li>신체 제약: 명시적 목표 특징과 마스크를 특징 차원을 따라 연결하여 강화 표현 [m̃_root; x_body; g_body; v]를 형성합니다.</li>
+<li>창 외부 목표 g^(C+1):(C+F)는 추가 토큰으로 입력되어 현재 창 내 동작을 암시적으로 결정합니다(예: 10초 내 목적지까지 달리기).</li>
+<li>손실 함수 4부분: 혼합 손실 ℒ_hybrid = ||x̂₀ − x₀||₁, 디코더 신체 손실 ℒ_dec = ||m̂_body − m_body||₁, 목표 손실 ℒ_goal = ||v ⊙ (m̂₀ − g)||₁, 일관성 손실 ℒ_consist = ||Ĵ₀ − FK(θ̂₀)||₂.</li>
+</ul>
+<h3 id="_5">훈련 및 추론</h3>
+<ul>
+<li>노이즈 제거기: 배치 크기 512, 4×A100, 1백만 스텝, AdamAtan2 학습률 2e−5, 드롭아웃 없음.</li>
+<li>기본 10 확산 스텝, 최소 4스텝까지 성능 허용(제약 오류 0.024에서 0.027로).</li>
+<li>추론 시 classifier-free guidance, 10% 확률로 조건 드롭; 컨텍스트 잘림 최대 8초; 동적 재계획은 새 입력 또는 버퍼 소진 시 트리거.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>혼합 표현 + 2단계 노이즈 제거의 아키텍처 분리</strong>: 루트 궤적 예측과 신체 생성을 분리하여 루트 트랜스포머는 공간 제어에, 신체 트랜스포머는 동작 품질에 집중합니다. 절제 실험에서 단일 단계 결합 예측은 관절 위치 오류가 4배 악화(0.101 vs 0.025)되어 분해가 제어 가능성의 핵심이며 공학적 세부 사항이 아님을 증명합니다.</p>
+</li>
+<li>
+<p><strong>창 외부 목표의 원래 지원</strong>: 미래 제약을 추가 토큰으로 입력함으로써 ARDY는 현재 창 동작을 암시적으로 계획할 수 있습니다(예: 시작 방향이 10초 후 목표에 의해 결정됨). DiP는 out-of-horizon 목표에서 FID가 1.453으로 악화되는 반면 ARDY는 0.100을 유지하며, 이는 스트리밍 방법이 처음으로 장기 계획에서 오프라인 수준에 근접한 것입니다.</p>
+</li>
+<li>
+<p><strong>테스트 시 최적화 없는 실시간 제어 가능성</strong>: MaskControl이 68.65초 최적화, DiP가 RL 정책이 필요한 반면 ARDY는 0.15초 내 제약 오류 2.48(DiP는 9.20)을 달성하며 추가 제어 모듈이 없습니다. 이는 상호작용 애플리케이션을 사후 부가 능력이 아닌 가능하게 합니다.</p>
+</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<h3 id="humanml3d-5">자기회귀 비교(HumanML3D, 표 5)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>목표 유형</th>
+<th>R-Prec.</th>
+<th>FID</th>
+<th>Skate</th>
+<th>Error</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DiP</td>
+<td>In-horizon</td>
+<td>0.609</td>
+<td>0.967</td>
+<td>12.29</td>
+<td>9.20</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>ARDY</td>
+<td>In-horizon</td>
+<td>0.690</td>
+<td>0.092</td>
+<td>7.07</td>
+<td>2.48</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>DiP</td>
+<td>Out-of-horizon</td>
+<td>0.599</td>
+<td>1.453</td>
+<td>11.07</td>
+<td>17.64</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>ARDY</td>
+<td>Out-of-horizon</td>
+<td>0.684</td>
+<td>0.100</td>
+<td>7.63</td>
+<td>2.92</td>
+<td>0.15</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-bones-rigplay">아키텍처 절제(표 2, Bones Rigplay)</h3>
+<table>
+<thead>
+<tr>
+<th>변형</th>
+<th>Skate</th>
+<th>R-prec.</th>
+<th>FID</th>
+<th>관절 위치 오류</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARDY(기본)</td>
+<td>0.264</td>
+<td>65.47</td>
+<td>0.027</td>
+<td>0.025</td>
+</tr>
+<tr>
+<td>명시적 표현</td>
+<td>0.365</td>
+<td>53.90</td>
+<td>0.065</td>
+<td>0.130</td>
+</tr>
+<tr>
+<td>전역 루트 조건 디코더</td>
+<td>0.303</td>
+<td>64.94</td>
+<td>0.028</td>
+<td>0.048</td>
+</tr>
+<tr>
+<td>단일 단계 아키텍처</td>
+<td>0.264</td>
+<td>65.84</td>
+<td>0.029</td>
+<td>0.101</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">확산 스텝 수(표 3)</h3>
+<table>
+<thead>
+<tr>
+<th>스텝</th>
+<th>Skate</th>
+<th>R-prec.</th>
+<th>FID</th>
+<th>관절 위치 오류</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.411</td>
+<td>56.74</td>
+<td>0.079</td>
+<td>1.040</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.230</td>
+<td>64.41</td>
+<td>0.034</td>
+<td>0.034</td>
+</tr>
+<tr>
+<td>10(기본)</td>
+<td>0.264</td>
+<td>65.47</td>
+<td>0.027</td>
+<td>0.025</td>
+</tr>
+<tr>
+<td>100</td>
+<td>0.282</td>
+<td>65.49</td>
+<td>0.025</td>
+<td>0.030</td>
+</tr>
+</tbody>
+</table>
+<p>결과 의미: 4스텝 확산은 제약 정밀도에서 10스텝과 거의 동일(0.034 vs 0.025)하지만 생성 지연이 33ms로 감소(표 내 4스텝과 10스텝 비교 계산)하여 실시간 상호작용에 핵심 여유를 제공합니다. 지각 연구(240쌍 비교)에서 ARDY는 동작 품질, 의미 정렬, 목표 정밀도에서 각각 65.8%, 67.5%, 64.6%로 DiP를 능가합니다.</p>
+<h2 id="_8">경계 및 한계</h2>
+<ul>
+<li>자기회귀 생성은 모든 역사적 프레임을 컨텍스트로 명시적으로 사용하여 매우 긴 작업에 효율성이 낮으며, 저자는 구조화된 메모리 메커니즘을 제안하지 않았습니다.</li>
+<li>순수 운동학적 모델로 물리 역학 인식이 없어 발 미끄러짐과 떨림 아티팩트가 여전히 존재합니다(Skate 0.264는 DiP보다 우수하지만 0이 아님).</li>
+<li>HumanML3D 실험은 기본 FSQ가 아닌 vanilla autoencoder tokenizer를 사용하고 HumanAct12 하위 집합을 제외하므로 교차 데이터 세트 일반화 결론은 주의가 필요합니다.</li>
+<li>훈련 예산이 1백만 스텝으로 제한되며 FSQ 16-32는 FID에서 약간 우수하지만 제약 정밀도가 감소하고, 더 큰 예산에서의 최적 구성은 논문에서 명확하지 않습니다.</li>
+</ul>
+<h2 id="_9">공학적 시사점</h2>
+<ul>
+<li>재현 시 먼저 tokenizer의 로컬 루트 표현 변환을 확인하세요: 이는 발 미끄러짐 지표를 0.303에서 0.264로 낮추는 핵심이며, 이 단계를 건너뛰면 동작 품질이 크게 악화됩니다.</li>
+<li>확산 스텝 선택: 실시간 상호작용이 목표라면 4스텝이 최적입니다(제약 오류 0.034 vs 10스텝의 0.025, 지연 절반); 최고 충실도를 원한다면 10스텝으로 충분하며 100스텝은 이득이 거의 없습니다(FID 0.027에서 0.025로만 감소).</li>
+<li>컨텍스트 잘림 길이는 반드시 8초로 설정하세요—이는 훈련에서 관찰된 최대 유효 컨텍스트이며, 초과 부분은 잘리고 미래 제약이 제외되어 장기 목표가 실패할 수 있습니다.</li>
+<li>훈련 시 드롭아웃을 비활성화하세요. 그렇지 않으면 루트 제약 조건 입력이 부분적으로 손실되어 공간 제어 정밀도가 직접 파괴됩니다.</li>
+<li>자기회귀 생성 시 역사적 루트 궤적을 원점으로 평행 이동하고 오프셋을 전역 좌표로 변환하기 위해 보존해야 하며, 그렇지 않으면 누적 드리프트가 궤적 일관성을 파괴합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_humanml3d/">HumanML3D</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ardy_autoregressive_diffusion_hybrid_rep_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_humanml3d/">
+          <span class="entry-type">논문</span>
+          <h3>HumanML3D</h3>
+          <p>Conservative card from a lab paper list entry: HumanML3D. No fetchable paper URL was recorded;…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">혼합 동작 표현</a></li>
+<li><a href="#tokenizer">신체 동작 Tokenizer</a></li>
+<li><a href="#2">2단계 자기회귀 확산</a></li>
+<li><a href="#_5">훈련 및 추론</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a><ul>
+<li><a href="#humanml3d-5">자기회귀 비교(HumanML3D, 표 5)</a></li>
+<li><a href="#2-bones-rigplay">아키텍처 절제(표 2, Bones Rigplay)</a></li>
+<li><a href="#3">확산 스텝 수(표 3)</a></li>
+</ul>
+</li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

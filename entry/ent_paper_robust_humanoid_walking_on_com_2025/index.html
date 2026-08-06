@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</h1>
+      <p class="entry-name-en">Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.13619v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种基于 sim-to-real 深度强化学习的方法，用于人形机器人在柔顺和不平坦地形上的稳健行走。核心贡献在于通过简单的训练课程让 RL 智能体在仿真中接触随机化地形，仅利用本体感受反馈即可实现真实机器人上的稳健行走。此外，通过允许机器人展现非周期性运动并调整步频，进一步提升了行走策略的鲁棒性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2504.13619" target="_blank" rel="noopener">Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究针对腿式机器人在真实环境中部署时面临的挑战，即地形可能具有意外变形和不规则性。作者探索了 sim-to-real 深度强化学习在双足行走控制器设计中的应用，核心创新是提出一种训练课程，使 RL 智能体在仿真中暴露于随机化地形，从而仅依赖本体感受反馈就能在真实 HRP-5P 人形机器人上实现稳健行走。实验在实验室内外多种困难地形上进行了广泛验证。此外，论文提出通过允许机器人展现非周期性运动并调整步频来增强行走策略的鲁棒性，具体通过修改时钟信号实现自适应步频，并在仿真中验证了该策略在控制摆动和支撑持续时间方面的有效性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li>采用 sim-to-real 深度强化学习框架，训练端到端双足行走策略。</li>
+<li>关键创新在于训练课程：在仿真中随机化地形属性（如柔顺性和不规则性），使策略学会适应真实世界的未知地形。</li>
+<li>仅使用本体感受反馈（如关节角度、角速度、IMU 数据），无需外部感知输入。</li>
+</ul>
+<h3 id="_4">架构</h3>
+<ul>
+<li>策略网络直接输出关节目标位置或扭矩，实现从感知到动作的端到端控制。</li>
+<li>提出一种新的控制策略，允许修改观测到的时钟信号，从而根据地形和指令速度自适应调整步频。</li>
+<li>通过控制摆动相和支撑相的持续时间，使机器人能够展现非周期性运动，提升在挑战性地形上的行走能力。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li>真实机器人平台：HRP-5P 人形机器人。</li>
+<li>测试环境：实验室内部及外部的多种困难地形，包括柔顺地面（如泡沫垫）和不规则表面（如碎石路）。</li>
+<li>仿真实验用于验证自适应步频策略的有效性。</li>
+</ul>
+<h3 id="_6">关键数字</h3>
+<ul>
+<li>在真实机器人上成功演示了多种困难地形的稳健行走。</li>
+<li>仿真实验表明，自适应步频策略在挑战性地形上显著提升了行走性能。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>简单的训练课程结合 sim-to-real 迁移，足以让双足机器人仅靠本体感受反馈实现稳健行走。</li>
+<li>允许非周期性运动和可变步频是提升双足行走策略鲁棒性的有效手段。</li>
+<li>代码和演示视频已公开，便于复现和进一步研究。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2504.13619v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robust_humanoid_walking_on_com_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">架构</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键数字</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

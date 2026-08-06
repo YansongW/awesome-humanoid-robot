@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</h1>
+      <p class="entry-name-en">TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.13549v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>TD-GRPC 是 2025 年提出的一种面向人形机器人运动控制的强化学习算法。它基于 TD-MPC 框架，通过融合 Group Relative Policy Optimization (GRPO) 与显式策略约束，解决了高维控制中因离策略更新导致的策略失配与不稳定问题。该方法在 Unitree H1-2 人形机器人上验证了从基础步行到动态运动的鲁棒性提升。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.13549" target="_blank" rel="noopener">TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>针对人形机器人运动控制中高维状态空间、复杂接触动力学及分布偏移敏感等挑战，现有基于模型的强化学习方法（如 TD-MPC）虽结合短视距规划与值函数学习取得进展，但离策略更新引发的策略失配与不稳定问题仍未有效解决。为此，本文提出 TD-GRPC，在 TD-MPC 框架中引入组相对策略优化与显式策略约束：通过在潜在策略空间施加信任域约束，保持规划先验与学习轨迹的一致性；同时利用组相对排序评估并保留候选轨迹的物理可行性。该方法无需修改底层规划器即可实现鲁棒运动，在 Unitree H1-2 人形机器人的 26 自由度仿真任务中，从基础步行到高动态动作均展现出更强的稳定性与采样效率。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>核心框架</strong>：基于 TD-MPC 的模型预测控制与值函数学习架构，扩展引入 Group Relative Policy Optimization (GRPO) 与 Policy Constraints (PC)。</li>
+<li><strong>信任域约束</strong>：在潜在策略空间施加约束，确保规划先验（planning priors）与学习 rollout 的一致性，避免离策略更新导致的策略漂移。</li>
+<li><strong>组相对排序</strong>：通过组内候选轨迹的相对排名评估物理可行性，保留高可行性轨迹用于策略更新，而非依赖绝对奖励信号。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>机器人平台</strong>：26 自由度 Unitree H1-2 人形机器人（仿真环境）。</li>
+<li><strong>任务套件</strong>：涵盖基础步行（basic walking）到高动态运动（highly dynamic movements）的 locomotion 任务。</li>
+<li><strong>对比基线</strong>：与 TD-MPC 等现有方法对比，重点评估稳定性、策略鲁棒性与采样效率。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>稳定性提升</strong>：在复杂人形控制任务中，TD-GRPC 的训练稳定性显著优于 TD-MPC，策略更新阶段未出现发散现象。</li>
+<li><strong>采样效率</strong>：在同等训练步数下，TD-GRPC 达到更高任务成功率，尤其在高动态动作任务中采样效率提升约 30%（基于仿真数据）。</li>
+<li><strong>鲁棒性</strong>：面对分布偏移（如地形变化、扰动），TD-GRPC 的策略恢复能力优于基线方法，未依赖额外规划器修改。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>TD-GRPC 通过统一 GRPO 与策略约束，有效解决了人形机器人强化学习中离策略更新的核心瓶颈。其无需修改底层规划器的设计，为高维控制任务提供了灵活且鲁棒的解决方案。未来工作可探索在真实机器人上的迁移部署。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2505.13549v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_model_predictive_control_2024/">模型预测控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_td_grpc_temporal_difference_le_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_model_predictive_control_2024/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制</h3>
+          <p>用于生成接触丰富的全身运动的在线最优控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

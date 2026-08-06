@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</h1>
+      <p class="entry-name-en">The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Token skipping is a widely used training-free way to accelerate vision--language--action (VLA) models by bypassing computation for most visual tokens at each control step according to a gate. When the next gate is harvested from the previous accelerated forward, however, the tokens skipped at one step are also the ones least visible to the next gate, and the damage can compound across control.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.00391" target="_blank" rel="noopener">arXiv:2608.00391 The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of T</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 로봇 학습 및 시스템 분야 연구자들이 제안한 것으로, 훈련 독립적 시각 토큰 스킵핑(training-free token skipping)이 시각-언어-행동(VLA) 모델 폐루프 제어에서의 신뢰성 문제를 다룹니다. 통제된 요인 실험을 통해 결정적 변수를 분리해냈습니다: 스킵 메커니즘 자체(reuse 또는 deletion)가 아닌, 게이팅 신호의 출처(gate provenance)입니다. 핵심 기여는 "실행 간격 새로고침"(actuation-slack refresh) 전략을 제안한 것으로, 로봇이 동작 블록을 실행하는 약 400ms의 유휴 창을 활용해 밀집 전방향(dense forward)을 실행하여, 깨끗한 다음 단계 게이팅과 새로운 KV 기반을 제공합니다. 이는 핵심 경로를 점유하지 않으면서 폐루프 성공률을 밀집 추론과 통계적으로 구별 불가능한 수준으로 회복시킵니다.</p>
+<h2 id="_2">그것이 바꾸는 것</h2>
+<p>기존 가속 방법들(예: VLA-Cache의 KV 재사용, VLA-Pruner의 토큰 삭제)은 발표된 작업 지점(예: 0.9 skip ratio)에서 거의 손실 없는 성공률을 보고하지만, 저자들은 이러한 결론이 피드백 루프를 분리하지 않은 상태에서 도출되었음을 지적합니다: 다음 단계 게이팅이 이전 단계의 가속 전방향에서 얻어질 때, 스킵된 토큰은 게이팅 신호에 대한 가시성이 가장 낮아지며, 손상은 제어 단계 간에 누적되어 결국 작업 실패로 이어집니다. 이는 "스킵 메커니즘이 신뢰성을 결정한다"는 분야의 기본 가정을 바꿉니다—폐루프 신뢰성을 실제로 결정하는 것은 토큰이 재사용되거나 삭제되는지가 아니라, 게이팅 신호가 밀집 전방향에서 오는지 여부입니다.</p>
+<p>이 판단의 공학적 의미는 다음과 같습니다: 기존 방법들(트리거 새로고침이 있는 SAFE-Pruner 포함)은 손상이 관측 가능한 수준으로 누적될 때 반응적 감지기를 통해 복구를 시도하지만, 저자들은 이러한 감지기가 초기 창에서 AUROC 0.45–0.65(조건화 후 0.26–0.44로 하락)에 불과하여 조용한 실패를 안정적으로 포착할 수 없음을 증명합니다. 따라서 신뢰성은 "감지-대응" 패러다임에 의존할 수 없으며, 구조적 보장(무조건적 새로고침)을 통해 피드백 루프를 제거해야 합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">게이팅 출처와 스킵 메커니즘의 요인 분해</h3>
+<ul>
+<li><strong>자체 수확 게이팅(self-harvested gate)</strong>: 현재 동작 블록을 서비스하는 희소 전방향에서 게이팅 신호를 얻습니다, 즉 <span class="arithmatex">\( G_{t+1} = g_r(A_t^{sparse}, S_{t+1}^{live}) \)</span>.</li>
+<li><strong>깨끗한 게이팅(clean gate)</strong>: 동일한 프레임의 밀집 전방향(동작 출력은 버림)에서 얻습니다, 즉 <span class="arithmatex">\( G_{t+1} = g_r(A_t^{dense}, S_{t+1}^{live}) \)</span>.</li>
+<li><strong>스킵 메커니즘</strong>: 재사용(reuse, KV를 크로스 스텝 캐시에서 가져옴, 예: VLA-Cache)과 삭제(deletion, 토큰을 직접 제거, 예: VLA-Pruner).</li>
+</ul>
+<h3 id="actuation-slack-refresh">실행 간격 새로고침(Actuation-Slack Refresh)</h3>
+<ul>
+<li>로봇이 현재 동작 블록을 실행하는 동안(약 400ms 창), 밀집 전방향을 한 번 실행하여 다음 단계의 깨끗한 게이팅 <span class="arithmatex">\( G_{t+1} \)</span>과 새로운 KV 기반 <span class="arithmatex">\( B_{t+1} = \{K_{t,V}^{(l),dense}, V_{t,V}^{(l),dense}\}_{l=1}^{L} \)</span>을 제공합니다.</li>
+<li>새로고침은 무조건적(unconditional)입니다. 측정된 반응적 감지기가 안정적으로 트리거할 수 없기 때문입니다(초기 창 AUROC 0.45–0.65, 조건화 후 0.26–0.44).</li>
+<li>핵심 설계 결정: 선택 규칙 <span class="arithmatex">\( g_r \)</span>(비율 <span class="arithmatex">\( r \)</span> 포함)을 고정하고, 시간적 주의 출처만 변경합니다; 첫 번째 블록은 항상 밀집으로 실행됩니다. 게이팅이나 KV 기반을 사용할 수 없기 때문입니다.</li>
+</ul>
+<h3 id="safe-pruner">SAFE-Pruner와의 비교</h3>
+<ul>
+<li>SAFE-Pruner는 자체 수확 일관성 점수를 사용하여 새로고침을 트리거하지만, 해당 트리거는 프루닝된 토큰의 중요한 변화를 볼 수 없습니다(트리거율은 Object 작업에서 0.09%에 불과하며, 3,222회 인코딩 중 3회 트리거, 해당 작업 성공률은 0.19).</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>게이팅 출처를 독립 변수로 분리</strong>: 통제된 요인 실험(게이팅 출처 × KV 출처)을 통해 처음으로 0.9 skip ratio에서 깨끗한 게이팅+새로운 KV가 0.98 성공률을 달성하는 반면, 자체 수확 게이팅+새로운 KV는 0.68에 불과함을 증명했습니다; 깨끗한 게이팅+누적 KV는 여전히 0.96을 달성하여, 게이팅 출처가 지배적 요인이고 KV 신선도는 부차적 요인임을 보여줍니다. 이는 "스킵 메커니즘이 신뢰성을 결정한다"는 직관을 뒤집습니다.</p>
+</li>
+<li>
+<p><strong>실행 간격을 활용한 경로 외 밀집 전방향</strong>: 밀집 계산을 로봇 고유의 실행 유휴 창(약 400ms)에 내장하여 핵심 경로를 압축하지 않습니다. H100에서 경로 외 밀집 전방향 p50은 63.6ms로 실행 창보다 훨씬 작으며, 561회 새로고침의 p99는 79.9ms로 데드라인을 놓치지 않습니다.这使得 새로고침이 지연 측면에서 거의 "무료"이면서도 계산량을 약 1.6× 밀집 FLOPs로 증가시킵니다.</p>
+</li>
+<li>
+<p><strong>무조건적 새로고침이 트리거 기반 새로고침보다 우수</strong>: 저자들은 oracle 기반 트리거 스케줄링(깨끗한 신호 비용을 제외하더라도)이 테스트 임계값에서 0.66–0.92에 불과하여, 무조건적 깨끗한 제품 사용의 0.98보다 낮음을 증명합니다. 이는 "주문형 새로고침"의 직관에 도전하며, 게이팅 신호가 불신뢰할 때 구조적 보장이 반응적 감지보다 우월함을 지적합니다.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<h3 id="libero-object-skip-ratio-09">통제된 요인 실험(LIBERO-Object, skip ratio 0.9)</h3>
+<table>
+<thead>
+<tr>
+<th>게이팅 출처</th>
+<th>KV 출처</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자체 수확</td>
+<td>새로운</td>
+<td>0.68</td>
+</tr>
+<tr>
+<td>자체 수확</td>
+<td>누적</td>
+<td>0.43</td>
+</tr>
+<tr>
+<td>깨끗한</td>
+<td>새로운</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>깨끗한</td>
+<td>누적</td>
+<td>0.96</td>
+</tr>
+</tbody>
+</table>
+<p>깨끗한 게이팅에서 reuse와 deletion 모두 0.98을 달성하여 밀집 1.00과 통계적으로 구별 불가능; 자체 수확 게이팅에서 reuse는 0.68로, deletion은 0.31로 하락.</p>
+<h3 id="2-skip-ratio-09">폐루프 성공률(표 2, skip ratio 0.9)</h3>
+<table>
+<thead>
+<tr>
+<th>벤치마크</th>
+<th>작업</th>
+<th>dense</th>
+<th>VC / +R</th>
+<th>VP / +R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO</td>
+<td>Object</td>
+<td>1.00</td>
+<td>0.66 / 0.96</td>
+<td>0.98 / 0.98</td>
+</tr>
+<tr>
+<td>LIBERO</td>
+<td>평균</td>
+<td>0.95</td>
+<td>0.80 / 0.90</td>
+<td>0.95 / 0.97</td>
+</tr>
+<tr>
+<td>SIMPLER</td>
+<td>put-in-drawer</td>
+<td>0.32</td>
+<td>0.02 / 0.02</td>
+<td>0.16 / 0.19</td>
+</tr>
+<tr>
+<td>SIMPLER</td>
+<td>평균</td>
+<td>0.68</td>
+<td>0.28 / 0.34</td>
+<td>0.59 / 0.58</td>
+</tr>
+</tbody>
+</table>
+<p>새로고침(+R)은 LIBERO에서 VC를 크게 회복시키지만(0.66→0.96), SIMPLER put-in-drawer에서는 효과가 없습니다(0.02→0.02). 이는 작업 난이도와 기반 차이가 새로고침 이점에 영향을 미침을 시사합니다.</p>
+<h3 id="3-vla-cache-09-skip-ratio">새로고침 구성(표 3, VLA-Cache, 0.9 skip ratio)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>Object</th>
+<th>drawer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dense</td>
+<td>1.00</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>no refresh</td>
+<td>0.66</td>
+<td>0.52</td>
+</tr>
+<tr>
+<td>shallow recompute</td>
+<td>0.81</td>
+<td>0.58</td>
+</tr>
+<tr>
+<td>actuation-slack refresh</td>
+<td>0.96</td>
+<td>0.69</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-6">높은 비율 경계(그림 5, 6)</h3>
+<ul>
+<li>자체 수확 게이팅은 0.6 skip ratio까지 밀집과 유의미한 차이가 없으며, 0.65에서 처음 분리되고, 0.97에서 VC는 0.06으로 하락, +R은 0.76 유지, VP는 0.98 유지.</li>
+<li>깨끗한 게이팅은 0.97 이전의 모든 테스트 지점에서 밀집과 통계적으로 구별 불가능.</li>
+</ul>
+<h3 id="7-09-skip-ratio">지연(그림 7, 0.9 skip ratio, 밀리초)</h3>
+<table>
+<thead>
+<tr>
+<th>하드웨어</th>
+<th>dense</th>
+<th>VC</th>
+<th>VP</th>
+<th>ours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H100</td>
+<td>63.4</td>
+<td>53.9</td>
+<td>56.1</td>
+<td>52.0</td>
+</tr>
+<tr>
+<td>RTX 4090</td>
+<td>123.3</td>
+<td>101.2</td>
+<td>108.0</td>
+<td>97.0</td>
+</tr>
+</tbody>
+</table>
+<p>실제 로봇(RTX 5880 Ada): dense 125.6 ms, VC 102.8 ms(↓18.2%), VP 109.7 ms(↓12.7%), ours 98.1 ms(↓21.9%).</p>
+<h2 id="_7">경계 및 한계</h2>
+<ul>
+<li>새로고침은 계산량을 약 1.6× 밀집 FLOPs로 증가시키고, 블록당 에너지가 약 18% 증가합니다. 저자들은 에너지 효율과 지연의 통합 최적화 방안을 제공하지 않습니다.</li>
+<li>신뢰성 평가는 2개 정책(OpenVLA-OFT, CogACT-Base), 4개 LIBERO 스위트, 4개 SIMPLER 작업으로 제한됩니다; 물리적 플랫폼은 지연만 검증하고 성공률은 검증하지 않았습니다.</li>
+<li>새로고침은 자체 수확 게이팅으로 인한 실패를 해결하지만, 게이팅 설계나 모델 기반의 한계는 해결하지 않습니다; 운영 경계는 작업, 기반, 게이팅 패밀리에 따라 달라질 수 있습니다.</li>
+<li>동시 감지기(분포 이동 또는 개루프 편향 대상)는 이 테스트에서 제외되었습니다; 반응적 신호(mid-chunk re-query 분기, 고유수용성 추적 편향)의 초기 창 AUROC는 0.45–0.65, 전체 에피소드 AUROC 0.80은 길이 아티팩트이며, 조건화 후 0.26–0.44입니다.</li>
+<li>결론은 OFT에서 테스트된 트리거에 국한됩니다; CogACT에서 oracle 트리거는 γ=0.90에서 밀집 성공률을 달성하여, 트리거 실패 결론이 기반 특이적임을 시사합니다.</li>
+</ul>
+<h2 id="_8">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 먼저 게이팅 출처를 확인</strong>: 모든 토큰 스킵핑 방법의 폐루프 평가는 게이팅 신호가 희소 전방향에서 오는지 밀집 전방향에서 오는지 반드시 보고해야 합니다. 게이팅이 가속 전방향에서 오면, 0.9 skip ratio에서 성공률이 0.98에서 0.68(reuse) 또는 0.31(deletion)로 떨어질 수 있습니다. 이는 가장 쉽게 함정에 빠지는 혼동 지점입니다.</li>
+<li><strong>새로고침 창의 타이밍 검증</strong>: 실행 간격 새로고침은 약 400ms의 실행 창에 의존합니다. H100에서 경로 외 밀집 전방향 p50은 63.6ms, p99는 79.9ms로 모두 창보다 훨씬 작습니다; 그러나 RTX 4090에서 p50은 122.2ms로, 실행 창이 짧아지거나 하드웨어가 느리면 데드라인을 재검증해야 합니다. 대상 플랫폼의 밀집 전방향 지연과 실행 창의 비율을 먼저 측정할 것을 권장합니다.</li>
+<li><strong>트리거 기반 새로고침은 불신뢰</strong>: SAFE-Pruner의 트리거율은 Object 작업에서 0.09%에 불과하며(3,222회 인코딩 중 3회 트리거), 해당 작업 성공률은 0.19입니다. 하류 팀이 트리거 기반 새로고침을 채택하려면, 게이팅 신호가 불신뢰할 때 트리거가 조용히 실패할 것으로 예상해야 합니다; 무조건적 새로고침이 더 안정적인 구조적 선택입니다.</li>
+<li><strong>높은 skip ratio 경계</strong>: 깨끗한 게이팅은 0.97 skip ratio까지 밀집과 통계적으로 구별 불가능하지만, 자체 수확 게이팅은 0.65에서 분리되기 시작합니다. 0.9 이상의 skip ratio에서 작업해야 한다면, 게이팅 출처가 밀집 전방향임을 보장해야 합니다. 그렇지 않으면 성공률이 0.06(VC의 0.97 시점)까지 떨어질 수 있습니다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_xu_vla_cache_efficient_vision_lan_2025/">VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action Inference</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gate_not_cache_gate_provenance_bounds_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_xu_vla_cache_efficient_vision_lan_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching</h3>
+          <p>VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching (VLA-Cache), is…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action Inference</h3>
+          <p>VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">
+          <span class="entry-type">논문</span>
+          <h3>CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation</h3>
+          <p>CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾸는 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">게이팅 출처와 스킵 메커니즘의 요인 분해</a></li>
+<li><a href="#actuation-slack-refresh">실행 간격 새로고침(Actuation-Slack Refresh)</a></li>
+<li><a href="#safe-pruner">SAFE-Pruner와의 비교</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a><ul>
+<li><a href="#libero-object-skip-ratio-09">통제된 요인 실험(LIBERO-Object, skip ratio 0.9)</a></li>
+<li><a href="#2-skip-ratio-09">폐루프 성공률(표 2, skip ratio 0.9)</a></li>
+<li><a href="#3-vla-cache-09-skip-ratio">새로고침 구성(표 3, VLA-Cache, 0.9 skip ratio)</a></li>
+<li><a href="#5-6">높은 비율 경계(그림 5, 6)</a></li>
+<li><a href="#7-09-skip-ratio">지연(그림 7, 0.9 skip ratio, 밀리초)</a></li>
+</ul>
+</li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

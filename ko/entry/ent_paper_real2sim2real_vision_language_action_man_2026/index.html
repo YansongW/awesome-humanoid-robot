@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline</h1>
+      <p class="entry-name-en">Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Physical AI -- the integration of large vision-language-action (VLA) models with embodied agents that act in the real world -- has emerged as the next major frontier for AI, echoed by industry leaders such as Jensen Huang (``the next big thing is Physical AI, AI with a body,&#39;&#39; GTC Paris, June 2025) and Dr. Lisa Su (`we&#39;re entering the world of Physical AI ... this is where AI enters the real.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.22997" target="_blank" rel="noopener">arXiv:2607.22997 Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipelin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 문서는 AMD 팀이 Physical AI 챌린지에서 제출한 기술 보고서로, 완전히 AMD 개방형 하드웨어(MI/Radeon/Ryzen)와 ROCm 소프트웨어 스택에 기반한 Real2Sim2Real 전체 프로세스를 보여준다. VLA 조작 정책의 시뮬레이션 생성, 훈련, 배포 및 RL 훈련을 포괄한다. 핵심 기여는 VLA 조작 연구가 CUDA 생태계에 얽매일 필요가 없음을 입증하고, 3DGS 재구성 기반 실제 배경 + Genesis 물리 시뮬레이션의 하이브리드 데이터 파이프라인을 제안한 것이다.</p>
+<h2 id="_2">무엇을 바꾸는가</h2>
+<p>이는 VLA 조작 연구가 단일 공급업체 폐쇄 생태계에 대한 경로 의존성을 바꾼다. 과거에는 시뮬레이션 생성(일반적으로 CUDA 가속 물리 엔진에 의존)부터 VLA 훈련(PyTorch/CUDA), 엣지 배포(TensorRT)까지 모든 단계가 NVIDIA 하드웨어 가정을 내포하여, 임베디드 지능 연구의 반복 비용을 높였다. 저자들은 네 가지 데모를 통해 AMD의 ROCm + HIP 스택(이미 PyTorch 및 JAX에 업스트림됨)이 CUDA 변환 계층 없이 이 프로세스를 종단 간 포괄할 수 있음을 입증한다.</p>
+<p>더 중요하게는, sim-to-real 데이터 생성 방식을 바꾼다. 기존 방식은 순수 시뮬레이션(시각적 격차 큼) 또는 순수 실제 데이터(비용 높음, 규모 작음) 중 하나였다. 저자들이 제안한 Real2Sim 하이브리드 표현——3DGS로 실제 정적 장면을 재구성하고, 절차적 방식으로 동적 상호작용 객체를 주입——은 실제 시각적 충실도를 유지하면서 시뮬레이션만의 무한 rollout 능력을 확보한다. 이는 시각적 다양성이 있는 조작 작업에 확장 가능한 데이터 경로를 제공한다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="3">전체 아키텍처: 3계층 개방형 스택</h3>
+<p>개방형 실리콘(MI/Radeon/Ryzen) → ROCm + HIP 소프트웨어 스택(PyTorch/JAX에 업스트림) → 오픈소스 커뮤니티(LeRobot, Hugging Face, ModelScope). 모든 파이프라인은 CUDA 변환 계층 없이 ROCm에서 기본 실행된다.</p>
+<h3 id="1-sim-to-real">데모 1: Sim-to-Real 조작 폐쇄 루프</h3>
+<ol>
+<li>Genesis 물리 시뮬레이터가 시연 생성 → 2. LeRobot 데이터셋 형식으로 변환 → 3. AMD 플랫폼에서 SmolVLA-450M 훈련 → 4. 시뮬레이션 검증 → 5. 실제 Franka 로봇 팔에 배포. 합성 데이터 생성은 목표 파지 작업 분포에서 100% 성공률을 달성한다.</li>
+</ol>
+<h3 id="3-real2sim">데모 3: Real2Sim 합성 데이터 파이프라인(핵심 방법)</h3>
+<p>4단계 프로세스:
+1. <strong>3DGS 재구성</strong>: Radeon GPU + ROCm으로 실제 환경을 고충실도로 재구성, 실시간 렌더링 가능한 가우시안 장면 표현 생성
+2. <strong>장면 주입</strong>: 가우시안 포인트 클라우드를 정적 배경으로 Genesis에 로드, Franka 로봇 팔 + 물리 속성(질량, 마찰, 충돌 기하)을 가진 상호작용 객체 도입
+3. <strong>자동 주석</strong>: Genesis가 엔드 이펙터 궤적, 다중 시점 RGB, 깊이 맵, 분할 마스크, 관절 상태, 이산/연속 동작을 생성하고 LeRobot 형식으로 내보내며, 언어 주석과 연결 가능
+4. <strong>무작위화 제어</strong>: 객체 레이아웃, 재질/텍스처, 조명, 카메라 시점, 로봇 초기 자세, 작업 목표</p>
+<p>핵심 설계 결정: 하이브리드 표현은 실제 장면의 시각적 충실도("시뮬레이션 외관"이 sim-to-real 격차를 확대하는 것을 방지)와 시뮬레이션의 무한 rollout 능력을 동시에 확보한다. 이 파이프라인은 AMD 통합 컴퓨팅 능력의 스트레스 테스트이기도 하다——3DGS 재구성, 물리 시뮬레이션, transformer 훈련이 동일한 Radeon PRO GPU에서 수행된다.</p>
+<h3 id="4-unilab-rl">데모 4: Unilab RL 훈련</h3>
+<p>Unitree Go2(4족) 및 G1(휴머노이드)에 대해 병렬 배치 시뮬레이션 훈련을 수행하며, 전신 추적(WBT), 보행, 조이스틱 명령, 동적 뒤집기 작업을 포함하고, FastSAC, FlashSAC, PPO 혼합 알고리즘으로 작업 특성에 맞춘다.</p>
+<h2 id="_4">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>Real2Sim 하이브리드 표현</strong>: 3DGS로 실제 정적 배경 재구성 + 절차적 동적 객체. 신경 렌더링과 물리 시뮬레이션을 VLA 데이터 생성에 결합한 최초의 사례다. 순수 시뮬레이션의 시각적 격차와 순수 실제 데이터의 높은 비용이라는 딜레마를 해결하며, vk-gsplat-plugin(Vulkan 실시간 3DGS 렌더러)으로 오픈소스화되었다.</p>
+</li>
+<li>
+<p><strong>전체 프로세스 ROCm 커버리지</strong>: 3DGS 재구성, 물리 시뮬레이션부터 VLA 훈련, RL 훈련까지 모두 AMD 하드웨어 + ROCm에서 수행되며, CUDA 전용 스택으로 전환할 필요가 없다. 이는 임베디드 지능 연구의 단일 공급업체 잠금을 깨고 하드웨어 다양성에 대한 실증을 제공한다.</p>
+</li>
+<li>
+<p><strong>작업 분리 진단</strong>: 데모 2는 운동 능력과 의미적 접지를 분리하여 실패 모드를 진단할 수 있다——파지는 잘 되지만 객체 선택이 틀리면 언어-시각 융합 결함을 나타내고, 그 반대도 마찬가지다. 이러한 진단 접근법은 VLA 정책 디버깅에 방법론적 가치가 있다.</p>
+</li>
+</ol>
+<h2 id="_5">실험 및 결과</h2>
+<p>데모 1 핵심 지표: SmolVLA-450M 미세 조정은 4,000 훈련 스텝에서 약 7–11분 내 수렴, 최대 VRAM 2.4GB 미만; 합성 데이터 생성부터 실제 배포까지 전체 루프 1시간 내 완료; 순수 시뮬레이션 훈련 정책이 실제 미세 조정 없이 실제 Franka에 직접 전이.</p>
+<p>데모 4 RL 훈련 처리량(steps/second, 높을수록 좋음):</p>
+<table>
+<thead>
+<tr>
+<th>장치</th>
+<th>FastSAC (G1 WBT)</th>
+<th>FastSAC (G1 Walk)</th>
+<th>FlashSAC (Go2 Joy.)</th>
+<th>PPO (G1 Flip)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RTX 4090 (baseline)</td>
+<td>58.8</td>
+<td>18.3</td>
+<td>6.0</td>
+<td>109.0</td>
+</tr>
+<tr>
+<td>RTX 4090 + AMD 9950X3D</td>
+<td>18.5</td>
+<td>3.0</td>
+<td>1.1</td>
+<td>16.4</td>
+</tr>
+<tr>
+<td>AMD 8060S + AI MAX 395</td>
+<td>33.6</td>
+<td>9.4</td>
+<td>4.2</td>
+<td>19.6</td>
+</tr>
+<tr>
+<td>Apple M5 Max</td>
+<td>75.0</td>
+<td>18.8</td>
+<td>4.5</td>
+<td>16.8</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 관찰: RTX 4090은 PPO/G1 Flip에서 선두(109.0 steps/s)지만, FlashSAC/Go2 Joy에서는 가장 느림(6.0 steps/s); "RTX 4090 + AMD 9950X3D" 구성은 순수 RTX 4090보다 전반적으로 낮아 RL 훈련이 CPU/호스트 제약을 받음을 시사; 통합 AMD Ryzen AI MAX 395(8060S iGPU + 통합 메모리)는 일부 작업에서 개별 GPU + AMD CPU 구성보다 우수. 저자들은 크로스 하드웨어 벤치마크를 알고리즘별로 개별 해석해야 하며, 처리량은 순수 하드웨어가 아닌 작업에 크게 의존한다고 명시적으로 강조한다.</p>
+<h2 id="_6">경계 및 한계</h2>
+<p>저자들은 데모 3의 Real2Sim 파이프라인 결과를 실제 로봇에 배포하지 않았으며, 파이프라인 자체만 설명한다. 데모 2와 데모 3은 정량적 성공률 또는 오류 지표를 제공하지 않는다. 데모 1에서 시딩에 사용된 절차적 무작위화는 "상대적으로 단순"하여 기본 픽앤플레이스 작업의 sim-to-real 격차를 메우기에 충분하다. 데모 4의 크로스 하드웨어 벤치마크는 CPU/호스트 제약의 영향을 받아 GPU 연산 능력으로 단순 귀인할 수 없다. 논문은 Real2Sim 파이프라인의 시각적으로 더 복잡한 장면에서의 일반화 능력을 명확히 하지 않았으며, 순수 시뮬레이션 또는 순수 실제 데이터 파이프라인과의 정량적 차이도 비교하지 않았다.</p>
+<h2 id="_7">엔지니어링 시사점</h2>
+<p>재현 시 먼저 하드웨어 호환성을 확인하라: 데모 1은 RDNA4(Radeon AI PRO R9700) 및 RDNA3.5(Radeon PRO W7900)에서 CUDA 변환 계층 없이 ROCm + PyTorch를 기본 실행한다; Radeon Cloud Platform에서 네 가지 파이프라인을 모두 무료로 재현할 수 있으며, Real2Sim 노트북은 R9700 또는 W7900 노드에서 약 30분 내 종단 간 프로세스를 완료한다. 가장 함정이 많은 부분은 데모 4의 RL 처리량 벤치마크——CPU/호스트 제약이 크며, RTX 4090 + AMD CPU 조합이 순수 RTX 4090보다 오히려 낮으므로, 하드웨어 비교 시 호스트 구성을 고정하고 알고리즘별로 개별 해석해야 한다. 데모 3의 3DGS 재구성은 Vulkan 플러그인(vk-gsplat-plugin)에 의존하므로, ROCm 버전과 PyTorch 업스트림 호환성을 확인해야 한다. SmolVLA-450M 훈련은 2.4GB 미만 VRAM을 사용하므로 소비자용 GPU로도 재현 가능하지만, 합성 데이터 생성 품질은 3DGS 재구성 충실도에 달려 있으므로, 대규모 데이터 생성 전에 재구성 장면의 시각적 품질을 먼저 검증할 것을 권장한다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_lerobot_2024/">LeRobot</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_real2sim2real_vision_language_action_man_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_lerobot_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>LeRobot</h3>
+          <p>데이터셋 형식, 텔레오퍼레이션, 학습 및 배포를 포괄하는 엔드투엔드 PyTorch 라이브러리.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</h3>
+          <p>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#3">전체 아키텍처: 3계층 개방형 스택</a></li>
+<li><a href="#1-sim-to-real">데모 1: Sim-to-Real 조작 폐쇄 루프</a></li>
+<li><a href="#3-real2sim">데모 3: Real2Sim 합성 데이터 파이프라인(핵심 방법)</a></li>
+<li><a href="#4-unilab-rl">데모 4: Unilab RL 훈련</a></li>
+</ul>
+</li>
+<li><a href="#_4">핵심 혁신</a></li>
+<li><a href="#_5">실험 및 결과</a></li>
+<li><a href="#_6">경계 및 한계</a></li>
+<li><a href="#_7">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

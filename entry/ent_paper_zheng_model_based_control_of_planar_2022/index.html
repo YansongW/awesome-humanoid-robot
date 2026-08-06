@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制</h1>
+      <p class="entry-name-en">Model-Based Control of Planar Piezoelectric Inchworm Soft Robot for Crawling in Constrained Environments</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">零部件</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">基础层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.15198v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Zheng 等人提出了一种基于模型的全形状控制器，用于五驱动器平面压电软体机器人。该控制器结合连续软体模型与贝叶斯优化选择驱动器电压，并利用隐式损失形状规划器实现受限环境（如屋顶障碍）下的爬行。通过在线线性回归进行背景模型校准，将形状均方误差从约0.05 cm²降至约0.01 cm²。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2203.15198" target="_blank" rel="noopener">Model-Based Control of Planar Piezoelectric Inchworm Soft Robot for Crawling in Constrained Environments</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究针对软体机器人在高度受限环境（如搜救任务）中的精确形状控制难题，开发了一种基于模型的全形状控制器。机器人由平面压电层与钢箔基底构成，可实现类似尺蠖的运动。控制器采用连续软体模型进行形状规划，结合贝叶斯优化确定目标形状所需的驱动器电压，并通过隐式损失函数规划器在屋顶约束下优化爬行路径。为补偿材料参数变化与漂移，研究引入了基于在线线性回归的背景模型校准方法。实验表明，校准后形状均方误差显著降低，机器人能在屋顶安全线下以最大速度移动。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li><strong>机器人硬件</strong>：五驱动器平面软体机器人由压电层与钢箔基底构成，通过压电效应产生弯曲变形，实现类似尺蠖的爬行运动。</li>
+<li><strong>控制器架构</strong>：</li>
+<li><strong>连续软体模型</strong>：用于描述机器人形状与驱动器电压之间的关系，支持目标形状规划。</li>
+<li><strong>贝叶斯优化</strong>：高效搜索驱动器电压组合，使实际形状逼近目标形状。</li>
+<li><strong>隐式损失形状规划器</strong>：在屋顶约束下，通过最小化形状误差与约束违反的联合损失函数，规划最优爬行路径。</li>
+<li><strong>背景模型校准</strong>：采用在线线性回归实时更新模型参数，补偿材料特性变化与长期漂移。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>目标</strong>：验证全形状控制精度与屋顶约束下的最优运动。</li>
+<li><strong>校准效果</strong>：未校准时形状均方误差约0.05 cm²，校准后降至约0.01 cm²。</li>
+<li><strong>验证方式</strong>：除物理实验外，还通过不同屋顶形状的仿真验证控制器泛化能力。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>该控制器实现了软体机器人在受限环境下的精确形状控制与高效爬行，校准方法有效提升了模型鲁棒性。未来可扩展至更复杂环境与多自由度系统。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2203.15198v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-desc">受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制使用模型预测控制（MPC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gait_planning/">步态规划</a>
+              <span class="rel-desc">受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制discusses步态规划。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_system_identification/">系统辨识</a>
+              <span class="rel-desc">受限环境中平面压电尺蠖软体机器人爬行运动的模型化控制使用系统辨识。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zheng_model_based_control_of_planar_2022"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_gait_planning/">
+          <span class="entry-type">方法</span>
+          <h3>步态规划</h3>
+          <p>为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_system_identification/">
+          <span class="entry-type">方法</span>
+          <h3>系统辨识</h3>
+          <p>根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

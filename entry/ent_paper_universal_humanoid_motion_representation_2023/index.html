@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Universal Humanoid Motion Representations for Physics-Based Control · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Universal Humanoid Motion Representations for Physics-Based Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Universal Humanoid Motion Representations for Physics-Based Control</h1>
+      <p class="entry-name-en">Universal Humanoid Motion Representations for Physics-Based Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P027. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>PULSE 提出一种基于物理的人形全身运动通用表示：先用 PHC+ 模仿器覆盖 40 小时 AMASS 数据，再通过条件变分信息瓶颈蒸馏出 32 维潜在动作空间，供下游生成与跟踪任务直接复用。核心贡献在于用在线蒸馏替代对抗学习，使大规模非结构化 MoCap 数据成为可扩展的运动先验。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2310.04582" target="_blank" rel="noopener">arXiv:2310.04582 Universal Humanoid Motion Representations for Physics-Based Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有物理人形运动表示（ASE、CALM）依赖判别器或对抗目标，只能在专门数据集（locomotion、boxing、dancing）上形成狭窄潜在空间，无法覆盖多样技能；而运动学潜在空间（HuMoR）随机采样易产生不合理运动。PULSE 真正改变的是：把“模仿器 + 蒸馏”从专用 pipeline 提升为通用基础设施——下游任务（速度、打击、地形穿越、VR 跟踪）无需重新设计表示，直接以冻结解码器为动作空间即可训练。</p>
+<p>更关键的是，作者放弃对抗奖励，仅靠预学习先验采样产生类人运动。这验证了一个假设：物理约束下，类人技能比非自然运动更容易被采样到，从而简化了任务设计（如 VR 跟踪无需 PACER 的额外对抗项）。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">两阶段训练</h3>
+<ol>
+<li>
+<p><strong>PHC+ 模仿器</strong>：基于 PHC（Luo et al., 2023），采用渐进式训练——先训练原始策略 𝓟(0) 覆盖全数据集，失败序列构成硬负样本集，再训练 𝓟(1) 学习这些样本，直至无运动可学；额外训练恢复策略 𝓟(F) 处理跌倒，组合器 𝓒 动态切换冻结策略。关键修改：移除严重穿透/不连续序列；实例化新策略前先让旧策略专注自身硬负样本；激活从 ReLU 改 SiLU 并扩大网络（6 层 MLP，单元 [2048, 1536, 1024, 1024, 512, 512]），仅用三个原始策略达到 100% 成功率。</p>
+</li>
+<li>
+<p><strong>在线蒸馏</strong>：编码器 𝓔(𝒛_t | 𝒔_t^p, 𝒔_t^g-mimic) 与解码器 𝓓(𝒂_t | 𝒔_t^p, 𝒛_t) 建模动作分布，目标函数为 ELBO：
+   log P(𝒂_t | ·) ≥ E_𝓔[log 𝓓(𝒂_t | 𝒔_t^p, 𝒛_t)] - D_KL(𝓔 || 𝓡)
+   其中先验 𝓡(𝒛_t | 𝒔_t^p) 为学习到的条件高斯（非零均值），理由：站立与空中翻转的动作分布差异显著。损失 ℒ = ℒ_action + αℒ_regu + βℒ_KL，ℒ_regu = ‖𝝁_t^e - 𝝁_{t-1}^e‖²₂ 惩罚连续潜码偏差（类似 NPMP 的 AR(1) 先验），β 从 0.01 退火至 0.001（2.5×10⁹ 至 5×10⁹ 样本）。</p>
+</li>
+</ol>
+<h3 id="_4">下游使用</h3>
+<p>冻结 𝓓 与 𝓡，高层策略 π_task 输出相对先验均值 𝝁_t^p 的残差动作：𝒂_t^task = 𝓓(π_task(𝒛_t | 𝒔_t^p, 𝒔_t^g) + 𝝁_t^p)。RL 探索用固定方差 0.22（而非 𝝈_t^p，因其偏小），且不监督 π_task 分布用先验，避免坏潜码导致状态恶化形成反馈循环。</p>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>在线蒸馏替代对抗学习</strong>：直接查询 π_PHC+ 获得 (𝒔_t^p, 𝒔_t^g-mimic, 𝒂_t, 𝒂_t^PHC+) 对训练潜空间，无需判别器。消融显示无蒸馏时训练 1×10¹⁰ 样本仍不收敛（Train Succ 72.0% vs 有蒸馏 99.8%），证明蒸馏对大规模数据可扩展性至关重要。</p>
+</li>
+<li>
+<p><strong>条件先验 + 残差动作</strong>：学习先验 𝓡(𝒛_t | 𝒔_t^p) 而非零均值高斯，适应不同姿态的动作分布差异；残差动作（式 4）对探索至关重要——消融 R5 vs R6 显示无残差时 Succ 从 93.4% 暴跌至 18.1%。</p>
+</li>
+<li>
+<p><strong>ℒ_regu 平滑正则</strong>：惩罚连续潜码偏差，提供更紧凑连续的潜在空间。消融 R1 vs R2 显示加入后 Succ 从 36.9% 升至 45.6%，且 E_g-mpjpe 下降。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<p><strong>运动模仿（AMASS）</strong>：PHC+ 达到 100% Train Succ，PULSE 略降至 99.8%，但 Test Succ 97.1% 与 PHC 持平，E_g-mpjpe 54.1mm 略高于 PHC+ 的 36.1mm（信息瓶颈的有损代价）。</p>
+<p><strong>VR 控制器跟踪</strong>：PULSE 在真实世界 14/14 序列成功，与从零训练（Scratch）持平，远超 ASE-30Hz（7/14）、CALM-30Hz（2/14）。但 E_g-mhpe 68.4mm 高于 Scratch 的 43.3mm，说明通用先验仍不如任务专用策略精确。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Train Succ</th>
+<th>Test Succ</th>
+<th>Real Succ</th>
+<th>E_g-mhpe (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASE-30Hz</td>
+<td>79.8%</td>
+<td>37.6%</td>
+<td>7/14</td>
+<td>99.0</td>
+</tr>
+<tr>
+<td>CALM-30Hz</td>
+<td>16.6%</td>
+<td>10.1%</td>
+<td>2/14</td>
+<td>206.9</td>
+</tr>
+<tr>
+<td>Scratch</td>
+<td>98.8%</td>
+<td>93.4%</td>
+<td>14/14</td>
+<td>43.3</td>
+</tr>
+<tr>
+<td>Ours</td>
+<td>99.5%</td>
+<td>93.4%</td>
+<td>14/14</td>
+<td>68.4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>消融（VR 跟踪）</strong>：完整模型（R6）Succ 93.4%；去掉 ℒ_regu（R3）降至 60.8%；去掉残差动作（R5）仅 18.1%；去掉 RL 仅监督（R4）71.0%——证明混合 RL 与在线监督蒸馏有负面效果（R4 vs R6）。</p>
+<h2 id="_7">边界与局限</h2>
+<ul>
+<li>π_PULSE 未达 100% 模仿成功率，信息瓶颈是有损压缩；无变分瓶颈的在线蒸馏可达 100%。</li>
+<li>变分公式引入额外优化挑战（β 退火调度敏感）。</li>
+<li>VR 跟踪等任务性能仍落后于从零训练（E_g-mhpe 68.4 vs 43.3mm）。</li>
+<li>人形可能卡在跌倒或站立状态，增加系统噪声可缓解但未完全解决。</li>
+<li>未考虑形状变化、人-人交互、物体操作及关节手指（论文未明确）。</li>
+</ul>
+<h2 id="_8">工程启示</h2>
+<ul>
+<li><strong>复现先核对数据清洗</strong>：移除穿透/不连续序列是 PHC+ 达 100% 的前提；AMASS 过滤后 11313 训练 / 138 测试序列。</li>
+<li><strong>蒸馏是成败关键</strong>：无蒸馏训练 1×10¹⁰ 样本仍不收敛，务必实现在线查询 π_PHC+ 的 pipeline。</li>
+<li><strong>β 退火需精细调度</strong>：从 0.01 退火至 0.001（2.5×10⁹ 至 5×10⁹ 样本），过早退火会牺牲重建精度，过晚则 KL 项失控。</li>
+<li><strong>残差动作不可省</strong>：下游策略输出相对先验均值的残差，否则探索效率崩溃（Succ 18.1% vs 93.4%）。</li>
+<li><strong>RL 探索方差固定 0.22</strong>：用 𝝈_t^p 会因方差过小导致探索不足。</li>
+<li><strong>最易踩坑</strong>：混合 RL 与在线监督蒸馏会污染潜空间（R4 vs R6），务必分离两阶段训练。</li>
+</ul>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2310.04582</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_phc/">实时虚拟人长期连续人形控制</a>
+              <span class="rel-desc">Universal Humanoid Motion Representations for Physics-Based Control提及实时虚拟人长期连续人形控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_amass/">AMASS</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_universal_humanoid_motion_representation_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_amass/">
+          <span class="entry-type">论文</span>
+          <h3>AMASS</h3>
+          <p>【内容待补】据实验室论文清单登记：AMASS，发表机构未知。清单未登记可抓取的论文页（待补充/空），本卡仅收录清单登记信息，概述与核心内容待补充。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_phc/">
+          <span class="entry-type">论文</span>
+          <h3>实时虚拟人长期连续人形控制</h3>
+          <p>【内容待补】据实验室论文清单登记：PHC 实时虚拟人长期连续人形控制，发表机构：Meta现实实验室、CMU。清单仅提供微信公众号来源文章（未抓取），本卡仅收录清单登记信息，概述与核心内容待补充。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">两阶段训练</a></li>
+<li><a href="#_4">下游使用</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

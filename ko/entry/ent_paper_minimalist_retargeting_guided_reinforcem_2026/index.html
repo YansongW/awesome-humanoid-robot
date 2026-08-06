@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation</h1>
+      <p class="entry-name-en">A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Recent work in humanoid whole-body control has found success with a simple recipe: retarget human motion to robot kinematic references, then train policies via reinforcement learning (RL) to track them. But how does this recipe transfer to dexterous manipulation? The answer is not obvious, as manipulation involves complex, contact-rich dynamics and requires delicate regulation of contact modes.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11874" target="_blank" rel="noopener">arXiv:2607.11874 A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Mani</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 단일 인간 시연으로부터 손재주 조작을 학습하는 극도로 간결한 레시피인 Regrind를 제안한다: 상호작용 인식 모션 리타게팅(interaction-aware retargeting)이 물리적으로 실행 가능한 참조 궤적을 생성하고, 잔차 강화학습(Residual RL), 데이터 증강, 커리큘럼 도메인 무작위화를 결합하여 시뮬레이션-실제(zero-shot sim-to-real) 전이를 달성한다. 저자들은 가위와 드라이버 두 가지 작업, LEAP 및 WUJI 두 가지 로봇 손에서 이 방법을 검증했으며, 시뮬레이션에서 거의 완벽한 성공률을 달성하고 실제 세계 세 가지 작업에서 안정적으로 전이됨을 확인했다.</p>
+<h2 id="_2">무엇이 바뀌었는가</h2>
+<p>손재주 조작 분야는 오랫동안 원격 조작(teleoperation)이 지배해 왔다—실제 로봇에서 수동으로 시연을 수집하는 방식은 비용이 높고 일반화가 어렵다. 인간형 전신 제어에서 '인간 모션 리타게팅 → 시뮬레이션 RL → 배포' 레시피는 효과적임이 입증되었지만, 손재주 손으로 직접 전이할 때 병목에 직면한다: 단순 운동학적 리타게팅(예: Mink IK)은 손 자세를 밀접하게 일치시키지만 손-물체 상호작용을 무시하여 물리적으로 실행 불가능한 궤적을 생성하며, 이는 하류 RL에게 열등한 참조가 된다. SPIDER와 같은 기존 시도는 물리적 제약을 고려하지만 성능이 극히 낮다(시뮬레이션 성공률 0%).</p>
+<p>Regrind가 진정으로 바꾼 것은 '리타게팅' 단계의 위상이다: 더 이상 인간 모션을 로봇 운동학에 단순 매핑하는 것이 아니라, 상호작용 메시(interaction mesh)를 통해 손-물체 간의 공간적 및 접촉 의미론을 보존하여 리타게팅 출력 자체가 RL이 사용할 수 있는 고품질 참조가 되게 한다. 동시에, 손재주 조작에서 sim-to-real 민감도가 운동 작업보다 훨씬 높다는 것을 입증한다—마찰, 유연성, 기하학의 작은 오차가 지속적인 접촉으로 인해 빠르게 누적되므로, 운동 작업보다 더 정밀한 도메인 무작위화와 시스템 식별이 필요하다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 흐름</h3>
+<p>Real-to-Sim-to-Real 파이프라인으로, 단일 3D 인간 시연(MANO 손 키포인트 + 물체 6D 자세)에서 RL 정책을 학습한다.</p>
+<h3 id="1">단계 1: 상호작용 인식 모션 리타게팅</h3>
+<ul>
+<li>소스 포인트 집합 𝒫̃ₜ = 𝒫ₜᵒ ∪ 𝒫ₜʰ(물체 키포인트 ∪ 인간 손 키포인트), 타겟 포인트 집합 𝒫ₜ(qₜ) = 𝒫ₜᵒ ∪ 𝒫ₜʳ(qₜ)(물체 키포인트 ∪ 로봇 키포인트).</li>
+<li>최적화 목표: min Σ D(ℳ(𝒫̃ₜ), ℳ(𝒫ₜ(qₜ))) + λ Σ ‖qₜ − qₜ₋₁‖²₂, 제약 q₀:ₜ₋₁ ∈ 𝒬.</li>
+<li>상호작용 메시는 Delaunay 사면체화로 정의되며, 변형 에너지 D = Σᵢ ‖Lᵢ(𝒫̃ₜ) − Lᵢ(𝒫ₜ(qₜ))‖₂, 여기서 Lᵢ(𝒫) = pᵢ − (1/|𝒩ᵢ|) Σⱼ∈𝒩ᵢ pⱼ.</li>
+<li>실행 가능 집합 𝒬는 다음을 포함: 관절 한계, 속도 경계(v_min Δt ≤ q_t − q_{t-1} ≤ v_max Δt), 비관통 제약(φ_j(q_t) ≥ 0, 로봇-물체 및 로봇-환경 충돌 쌍 활성화).</li>
+<li>솔버: SQP 스타일, 시간 단계별 순차 해석, 각 프레임에서 소량 반복, 볼록 하위 문제는 Drake의 MathematicalProgram을 통해 MOSEK로 해석.</li>
+</ul>
+<h3 id="2-rl">단계 2: 참조 모션 유도 잔차 RL</h3>
+<ul>
+<li>행동 공간: qₜᵗᵃʳᵍᵉᵗ = q̄ₜ + α ⊙ π_θ(q̄ₜ, oₜ), α는 자유도별 행동 크기를 제어.</li>
+<li>관측 공간(비대칭 actor-critic): Actor는 물체 자세(위치 + Rot6D), 관절 관절 위치, 로봇 관절 위치(현재 및 이전 시간 단계), 이전 행동, 위상 변수 φ ∈ [0,1]을 관측; 속도 등 노이즈 센서는 의도적으로 제외. Critic은 추가로 손끝 위치와 관절 속도를 획득.</li>
+<li>보상 함수(식 8): r_t = Σ_k w_k φ_k(e_{k,t}), 밀집 보상, 시뮬레이션 상태와 리타게팅 참조 비교. 추적 항은 지수 커널 φ_lin(e; σ) = exp(−e/σ), 제곱 오차 항은 φ_sq(c; σ) = exp(−c/σ²).</li>
+<li>핵심 보상 항: 물체 키포인트 위치(σ=0.02, 가중치 1.5), 물체 선속도(σ=1.0, 가중치 1.0), 물체 각속도(σ=3.14, 가중치 1.0), 손목 위치(σ=0.02, 가중치 0.05), 손목 자세(σ=0.2, 가중치 0.05), 행동 크기/속도/범위 위반 패널티, 조기 종료 패널티(−10.0).</li>
+</ul>
+<h3 id="3">단계 3: 데이터 증강</h3>
+<ul>
+<li>참조 상태 초기화(RSI): 리셋 시 무작위 시연 위상 샘플링, 작은 섭동 추가.</li>
+<li>궤적 증강: 각 에피소드에 섭동(Δp, Δψ) 적용, Δp_xy ∈ [−5, 5]² cm, Δp_z = 0, Δψ ∈ [−30°, 30°]; 혼합 가중치 w(t)는 식(11)에 따라 선형 보간, t_pickup과 t_use 사이에서 혼합 제거.</li>
+<li>변환: 위치에 w(t)Δp 추가, 회전에 R_z(w(t)Δψ) 곱하기, 손 손목 및 손끝 위치는 섭동되지 않은 물체 루트를 기준으로 강체 매핑, 손가락 관절 참조는 불변. 리타게팅 최적화를 재실행하지 않고 물체 및 손 루트 자세를 직접 변환.</li>
+</ul>
+<h3 id="4">단계 4: 도메인 무작위화 및 커리큘럼 학습</h3>
+<ul>
+<li>DR은 Isaac Lab 이벤트 항목으로 구현, 각 환경별 독립 샘플링: 물체 CoM 오프셋, 기하학 스케일링, 마찰, 질량 스케일링, 관절 k_p/k_d 스케일링, 손가락 기본 관절 오프셋.</li>
+<li>중력 커리큘럼: 0에서 9.81 m/s²까지 130k 환경 단계에 걸쳐 선형 증가.</li>
+<li>무작위 힘 커리큘럼: 130k 단계 후 활성화, 170k 단계에서 최대(선속도 ±0.5 m/s, 각속도 ±1.0 rad/s, 간격 1–5 s).</li>
+<li>관측 노이즈: 위치 ±2 mm, 회전 ±0.02 rad, 관절 ±0.02 rad; 관측 시간 지연은 [0, 2] 제어 단계에서 균일 샘플링.</li>
+<li>종료 조건: 물체가 작업 공간 이탈, 손이 물체에서 너무 멀어짐, 물체가 타겟 구성에서 임계값 이상 이탈(키포인트 위치 오차 &gt; 0.15 m); WUJI 손 추가 종료: 손끝-테이블 접촉력 &gt; 10N(모터 비역구동).</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>RL 참조로서의 상호작용 인식 리타게팅</strong>: OmniRetarget이 운동학적 매칭만 수행하는 것과 달리, Regrind는 리타게팅 최적화에서 손-물체 상호작용 메시의 변형 에너지를 명시적으로 보존하여 참조 궤적이 물리적으로 실행 가능하고 접촉 의미론을 유지하게 한다. 이는 손재주 조작에서 상호작용 인식 리타게팅과 RL 훈련 시스템을 결합한 최초의 사례이며, 성능의 핵심으로 입증되었다(DexMachina 대비 가위 작업 SR 99.8% → 22.3%).</p>
+</li>
+<li>
+<p><strong>시간 가변 강체 변환 데이터 증강</strong>: 리타게팅 최적화를 재실행하지 않고, 리타게팅 궤적에 시간 가변 SE(3) 섭동(위치 ±5 cm, 회전 ±30°)을 적용하여 훈련 중 무한 증강 궤적을 동적으로 생성하면서 원래 상호작용 관계를 보존한다. 이는 재최적화보다 효율적이며, 실제 세계 일반화를 크게 향상시킨다(무작위 초기 구성에서 LEAP-Scissors SR 8/10).</p>
+</li>
+<li>
+<p><strong>극도로 간결한 보상 설계</strong>: 키포인트 위치, 속도, 손목 자세 및 행동 정규화 항만 사용하며, 명시적 접촉 사전 지식이나 힘 피드백이 필요 없음에도 시뮬레이션에서 거의 완벽한 성공률을 달성한다. 이는 작업 특정 지식에 대한 의존도를 낮추어 다양한 물체와 로봇에 일반화 가능하게 한다.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<p><strong>시뮬레이션 성능</strong>(표 1, SPIDER 평균 5 시드, 기타 3 시드 × 1024 롤아웃):</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>LEAP-Scissors SR</th>
+<th>LEAP-Screwdriver SR</th>
+<th>WUJI-Scissors SR</th>
+<th>WUJI-Screwdriver SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regrind (Ours)</td>
+<td>99.8%</td>
+<td>99.7%</td>
+<td>98.7%</td>
+<td>98.8%</td>
+</tr>
+<tr>
+<td>SPIDER</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>DexMachina</td>
+<td>22.3%</td>
+<td>99.7%</td>
+<td>0.0%</td>
+<td>99.3%</td>
+</tr>
+<tr>
+<td>Mink IK + RL</td>
+<td>2.0%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>3.1%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>실제 세계 성능</strong>(표 2, 제로샷 전이):</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>LEAP-Scissors SR</th>
+<th>LEAP-Screwdriver SR</th>
+<th>WUJI-Scissors SR</th>
+<th>WUJI-Screwdriver SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regrind (Ours)</td>
+<td>9/10</td>
+<td>10/10</td>
+<td>0/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>DexMachina</td>
+<td>0/10</td>
+<td>2/10</td>
+<td>—</td>
+<td>5/10</td>
+</tr>
+<tr>
+<td>Mink IK + RL</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>0/10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>실제 세계 일반화</strong>(표 3, 무작위 초기 구성 ±5 cm, ±30°): LEAP-Scissors 8/10, LEAP-Screwdriver 10/10, WUJI-Screwdriver 9/10.</p>
+<p><strong>핵심 해석</strong>: SPIDER는 완전히 실패(시뮬레이션 SR 0%)하여, 물리 기반 리타게팅이 동역학을 고려하지만 생성 궤적 품질이 낮음을 시사한다. DexMachina는 드라이버 작업에서 시뮬레이션이 거의 완벽하지만 실제 전이가 낮아(2/10), 상호작용 보존이 부족한 리타게팅이 정책이 시뮬레이션 아티팩트를 활용하게 만든다는 것을 보여준다. Regrind는 세 가지 작업에서 안정적으로 전이되며, 유일한 실패인 WUJI-Scissors는 비역구동 모터의 sim-to-real 격차와 실제 가위 메시 부정확성에 기인한다.</p>
+<h2 id="_7">경계 및 한계</h2>
+<p>논문은 한계를 명시적으로 논의하지 않았지만, 방법에서 추론할 수 있다: 배포는 모션 캡처를 통해 물체 상태를 획득하는 데 의존하며, 시각적 인식 문제를 해결하지 않음; 정밀한 시스템 식별 필요(실제 로봇 응답 지연 1–2 단계가 관측 시간 지연으로 모델링됨); 다중 작업 학습, 장기 조작, 양손 조작, 비강체 물체는 다루지 않음; WUJI-Scissors 작업은 모든 방법에서 실패하여 비역구동 모터의 sim-to-real 격차가 여전히 열린 문제임을 시사. 논문은 추론 빈도, 훈련 시간 등 엔지니어링 세부 사항을 언급하지 않음.</p>
+<h2 id="_8">엔지니어링 시사점</h2>
+<p>재현 시 세 가지 핵심 사항을 먼저 확인하라: <strong>리타게팅 솔버의 실행 가능 집합 정의</strong>(특히 충돌 쌍 필터링 및 속도 경계)는 참조 궤적 품질에 직접 영향을 미침; <strong>데이터 증강의 섭동 범위</strong>(±5 cm, ±30°) 및 혼합 가중치 w(t)의 보간 구간(t_pickup에서 t_use까지)은 정책의 일반화 경계를 결정; <strong>시스템 식별</strong>—실제 로봇 응답 지연 1–2 단계(30–60 ms)는 시뮬레이션 관측 파이프라인에서 모델링해야 하며, 그렇지 않으면 sim-to-real이 실패함.</p>
+<p>가장 함정에 빠지기 쉬운 부분: WUJI 손의 비역구동 모터는 추가 종료 조건(손끝 접촉력 &gt; 10N)이 필요하며, 그렇지 않으면 훈련이 실행 불가능한 접촉 패턴을 활용함; LEAP 손은 3D 프린팅 확대 물체(s=2 스케일링)를 사용해야 하며, 실제 크기 물체를 직접 사용하면 기하학적 불일치가 발생할 수 있음; 보상 가중치 중 행동 크기 패널티(WUJI만 해당) 및 조기 종료 패널티(−10.0)는 훈련 안정성에 큰 영향을 미치므로 표 4에 따라 정확히 설정해야 함. 기준선 비교 시 SPIDER는 공식 구현(MuJoCo Warp 워크플로우)을 사용해야 하고, DexMachina는 맞춤 구현 및 충돌 인식 후처리 추가가 필요하며, 그렇지 않으면 비교가 공정하지 않음.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_dexterous_manipulation/">손재주 있는 조작</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_minimalist_retargeting_guided_reinforcem_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">방법</span>
+          <h3>손재주 있는 조작</h3>
+          <p>다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇이 바뀌었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 흐름</a></li>
+<li><a href="#1">단계 1: 상호작용 인식 모션 리타게팅</a></li>
+<li><a href="#2-rl">단계 2: 참조 모션 유도 잔차 RL</a></li>
+<li><a href="#3">단계 3: 데이터 증강</a></li>
+<li><a href="#4">단계 4: 도메인 무작위화 및 커리큘럼 학습</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a></li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

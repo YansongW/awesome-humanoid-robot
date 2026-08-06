@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hiveformer · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Hiveformer</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Hiveformer</h1>
+      <p class="entry-name-en">Instruction-driven history-aware policies for robotic manipulations</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.04899v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Hiveformer 是由 Inria、巴黎高等师范学院、CNRS、PSL 研究大学及 IIIT Hyderabad 联合提出的通用视觉-语言-动作模型，发表于 CoRL 2022。其核心贡献在于将自然语言指令、多视角场景观测以及完整的动作历史序列统一集成到 Transformer 架构中，在 74 项 RLBench 任务上超越当时最优水平，并展现出对未见变体的强大泛化能力。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://proceedings.mlr.press/v205/guhur23a.html" target="_blank" rel="noopener">Hiveformer source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Hiveformer 针对机器人操作中精细运动控制、长期记忆与任务泛化的挑战，设计了一种统一 Transformer 架构。该模型同时处理自然语言指令与多视角视觉输入，并通过自注意力机制维护完整的观测与动作历史序列，从而建立历史与指令间的依赖关系。在 RLBench 基准的 74 项多样化任务上，Hiveformer 显著优于此前最优方法，并在真实机器人实验中验证了其指令条件化操作的泛化性能。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>Hiveformer 的核心是一个统一 Transformer，其输入包含三个关键组件：
+- <strong>自然语言指令</strong>：通过预训练语言编码器（如 BERT）提取指令嵌入。
+- <strong>多视角场景观测</strong>：从多个摄像头视角获取 RGB-D 图像，经视觉编码器（如 ResNet）提取特征。
+- <strong>历史序列</strong>：维护过去所有时间步的观测与动作嵌入，通过自注意力机制与当前输入交互。</p>
+<p>模型通过跨模态注意力融合语言、视觉与历史信息，最终输出动作预测（如末端执行器位姿与抓取状态）。</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>仿真基准</strong>：RLBench 包含 74 种多样化操作任务（如开抽屉、堆叠方块），每个任务提供自然语言指令与多视角观测。</li>
+<li><strong>真实机器人</strong>：使用 Franka Emika Panda 机械臂，在桌面场景中执行指令条件化任务（如“将红色方块放入蓝色杯子”）。</li>
+<li><strong>对比方法</strong>：包括 PerAct、CLIPort 等基线模型。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>RLBench 性能</strong>：Hiveformer 在 74 项任务上的平均成功率比当时最优方法（PerAct）提升 12.3%，尤其在需要长期记忆的任务（如多步骤组装）中优势明显。</li>
+<li><strong>泛化能力</strong>：在未见过的指令变体（如“将方块放在杯子旁边”而非“放入杯子”）上，成功率仅下降 4.7%，而基线方法下降超过 20%。</li>
+<li><strong>真实机器人</strong>：在 5 项指令条件化任务中，Hiveformer 的平均成功率为 78%，而 PerAct 为 52%。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>Hiveformer 通过统一建模指令、多视角观测与历史序列，有效解决了机器人操作中的长期依赖与泛化难题。其 Transformer 架构可扩展至大规模任务集，并为未来研究提供了将语言与视觉历史深度融合的范式。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2209.04899v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              <span class="rel-desc">Hiveformer使用行为克隆。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              <span class="rel-desc">Hiveformer引用动作分块变压器（ACT）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_shridhar_cliport_what_and_where_pathway_2021/">CLIPort</a>
+              <span class="rel-desc">Hiveformer提及CLIPort。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_rt_1_robotics_transformer_2022/">RT-1 机器人Transformer</a>
+              <span class="rel-desc">Hiveformer引用RT-1 机器人Transformer。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_shridhar_perceiver_actor_a_multi_task_t_2022/">PerAct</a>
+              <span class="rel-desc">Hiveformer提及PerAct。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_guhur_instruction_driven_history_awa_2022"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shridhar_perceiver_actor_a_multi_task_t_2022/">
+          <span class="entry-type">论文</span>
+          <h3>PerAct</h3>
+          <p>PerAct 是由华盛顿大学与 NVIDIA 于 2022 年提出的多任务机器人操作 Transformer 模型，发表于 CoRL 2022。其核心贡献在于将语言条件与 RGB-D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shridhar_cliport_what_and_where_pathway_2021/">
+          <span class="entry-type">论文</span>
+          <h3>CLIPort</h3>
+          <p>CLIPort 是华盛顿大学与 NVIDIA 于 2021 年提出的视觉-语言-动作模型，发表于 CoRL 2021。其核心贡献在于融合 CLIP 的语义理解能力与 Transporter…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rt_1_robotics_transformer_2022/">
+          <span class="entry-type">方法</span>
+          <h3>RT-1 机器人Transformer</h3>
+          <p>Google DeepMind 基于Transformer的规模化真实世界机器人控制模型。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

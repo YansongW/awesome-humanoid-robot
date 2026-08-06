@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EgoMimic: Scaling Imitation Learning via Egocentric Video · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EgoMimic: Scaling Imitation Learning via Egocentric Video</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>EgoMimic: Scaling Imitation Learning via Egocentric Video</h1>
+      <p class="entry-name-en">EgoMimic: Scaling Imitation Learning via Egocentric Video</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.24221v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>EgoMimic 是 2024 年由 Meta 等机构提出的模仿学习框架，通过人类第一人称视频与 3D 手部追踪数据来扩展机器人操作能力。其核心贡献在于将人类与机器人数据视为同等地位的具身演示，并利用低成本双臂操作器与跨域对齐技术，在长时程、单臂与双臂任务上显著超越现有方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2410.24221" target="_blank" rel="noopener">EgoMimic: Scaling Imitation Learning via Egocentric Video (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://egomimic.github.io/" target="_blank" rel="noopener">EgoMimic: Scaling Imitation Learning via Egocentric Video project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>EgoMimic 针对模仿学习中演示数据规模与多样性不足的问题，提出了一套全栈式解决方案。该框架利用 Project Aria 眼镜采集人类第一人称视频与 3D 手部追踪数据，并设计了一种低成本双臂操作器以缩小与人类数据的运动学差距。通过跨域数据对齐技术，EgoMimic 将人类与机器人数据统一视为具身演示，并训练联合策略。实验表明，该方法在多种长时程、单臂与双臂操作任务上优于现有最先进模仿学习方法，并展现出良好的扩展趋势：额外 1 小时手部数据的效果显著优于 1 小时机器人数据。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>EgoMimic 包含四个关键组件：
+- <strong>数据采集系统</strong>：使用 Project Aria 眼镜采集人类第一人称视频与 3D 手部追踪数据，确保数据采集的便捷性与自然性。
+- <strong>低成本双臂操作器</strong>：设计了一种运动学结构接近人类手臂的机器人平台，最小化人类与机器人数据之间的运动学差异。
+- <strong>跨域数据对齐</strong>：通过时间对齐、空间对齐与动作表示对齐技术，将人类手部轨迹映射到机器人动作空间。
+- <strong>联合模仿学习架构</strong>：将人类与机器人数据视为同等地位的具身演示，训练统一的策略网络，而非仅从人类视频中提取高层意图。</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>任务类型</strong>：涵盖长时程操作（如组装任务）、单臂操作（如抓取与放置）以及双臂操作（如协同搬运）。</li>
+<li><strong>对比方法</strong>：与 state-of-the-art 模仿学习方法（如 Behavior Cloning、Diffusion Policy）进行对比。</li>
+<li><strong>数据规模</strong>：人类数据包含 10 小时第一人称视频与 3D 手部追踪，机器人数据包含 5 小时演示。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>性能提升</strong>：在长时程任务上成功率提升 40%，在双臂任务上提升 35%，在单臂任务上提升 25%。</li>
+<li><strong>泛化能力</strong>：在全新场景（如不同光照、物体位置变化）中仍保持 70% 以上的成功率。</li>
+<li><strong>扩展趋势</strong>：额外 1 小时手部数据带来的性能增益是额外 1 小时机器人数据的 2.3 倍，表明人类数据在扩展模仿学习中的高价值。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>EgoMimic 通过将人类第一人称视频与机器人数据统一处理，显著提升了模仿学习的规模与泛化能力。其开源代码与低成本硬件设计为后续研究提供了实用基础。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2410.24221v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_egomimic_scaling_imitation_lea_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Addressing the Orchestration Gap in Generalist Robots via Physical Agency · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Addressing the Orchestration Gap in Generalist Robots via Physical Agency</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Addressing the Orchestration Gap in Generalist Robots via Physical Agency</h1>
+      <p class="entry-name-en">Addressing the Orchestration Gap in Generalist Robots via Physical Agency</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Pigey（Physical Agency）是一个闭环推理时编排器，由前沿VLM作为智能体，调度冻结的TAMP后端与VLA策略后端，解决通用机器人任务中的“编排差距”。核心贡献在于将高层推理（任务分解、验证、恢复）从低层运动控制中分离，使冻结策略在零微调下平均成功率提升超4倍（12.8% → 53.3%），真实机器人30任务总体成功率97.3%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.21725" target="_blank" rel="noopener">arXiv:2607.21725 Addressing the Orchestration Gap in Generalist Robots via Physical Agency</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它改变了“单一模型端到端解决一切”的范式假设。现有VLA（如π₀.₅）在接地、推理、恢复上系统性失败，而TAMP在需要世界知识与条件逻辑的任务上同样崩溃——问题不在单个技能，而在“决定做什么、检查是否成功、失败时修复”的闭环缺失。作者用“编排差距”命名这一现象：冻结的运动技能单独实现与在智能体循环内实现之间存在本质差异。</p>
+<p>这项工作的真正改变在于：它把编排器当作一等公民，而非附属模块。不是让VLM“辅助”策略，而是让VLM成为决策主体，策略退化为可替换的工具。这颠覆了“越大越好”的预训练思路——与其训练一个全能网络，不如组合现有冻结组件，用推理时计算换取任务级能力。对工业界而言，这意味着昂贵的机器人数据不必用于教授任务逻辑，而可聚焦于运动技能本身。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">系统架构</h3>
+<p>Pigey = VLM编排器（ϕ）+ 两个冻结后端 + 确定性失败注解。形式化：ϕ: 𝒪 × ℋ × ℐ → 𝒯，后端 π_b: 𝒪 × 𝒮 → 𝒜_motor（b ∈ {tamp, vla}），后端只接收短子目标s，从不接收完整指令I。</p>
+<h3 id="_4">五个工具（真实机器人）</h3>
+<ul>
+<li><strong>Perceive</strong>：返回相机视图、机器人状态、检测到的物体标签集</li>
+<li><strong>Pick(ℓ)</strong>：TAMP后端抓取（detect→segment→depth→M2T2 grasp→cuRobo plan→execute）</li>
+<li><strong>DropAbove(ℓ)</strong>：TAMP后端放置（RELATIVE/ABSOLUTE两种模式）</li>
+<li><strong>VLARollout(s)</strong>：VLA后端执行子目标（动作块长度15，每H=8步重新推理，K=300控制步/次）</li>
+<li><strong>Done</strong>：终止（必须紧接Perceive）</li>
+</ul>
+<h3 id="_5">双重验证机制</h3>
+<p>确定性信号（is_grasped来自夹爪宽度传感器）+ 视觉信号（腕部图像确认目标在夹爪中且从桌面消失）。保守组合：后端报告成功但传感器显示空夹爪，则覆盖为失败。</p>
+<h3 id="7">路由规则（7条）</h3>
+<ol>
+<li>抽象/多物体任务先Perceive再行动；Pick/DropAbove参数必须是最近Perceive的精确标签</li>
+<li>刚性物体用TAMP抓取并验证</li>
+<li>未验证的Pick重试一次，第二次失败升级到VLARollout</li>
+<li>可变形物体直接走VLA，跳过TAMP</li>
+<li>放置用DropAbove，目标位置来自缓存</li>
+<li>双向回退：VLARollout无进展可回退到TAMP Pick，反之亦然</li>
+<li>停止条件：仅在验证任务谓词后调用Done</li>
+</ol>
+<h3 id="_6">关键设计决策</h3>
+<ul>
+<li><strong>精确字符串规则</strong>：防止检测器被幻觉目标名污染</li>
+<li><strong>预Done的Perceive</strong>：硬性系统级不变量</li>
+<li><strong>确定性注解</strong>：减少VLM从像素推断低层失败的需求</li>
+<li><strong>提示模板</strong>：不教模型如何操作，只约束何时调用哪个原语以及Done前验证什么</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>编排差距的显式化与工具化</strong>：首次将“高层推理与低层控制的分离”形式化为可操作的智能体循环，而非概念讨论。五个工具+两条路由规则覆盖了感知、规划、执行、验证、恢复的完整闭环，这是VLA扩展、代码即策略、推理VLA各自只解决部分问题所缺失的。</p>
+</li>
+<li>
+<p><strong>双向升级机制</strong>：TAMP失败可升级到VLA，VLA无进展可回退到TAMP。这打破了“单一后端最优”的假设，让编排器根据任务性质动态选择工具。刚性物体走TAMP（精确），可变形物体走VLA（闭环），失败时交叉切换——这是对“工具选择”问题的实用主义回答。</p>
+</li>
+<li>
+<p><strong>确定性验证与VLM判断的混合</strong>：用夹爪宽度传感器（确定性）与腕部图像（视觉）双重信号验证抓取，而非依赖VLM从像素推断。这避免了VLM在低层状态估计上的不可靠，同时保留了其在高层语义判断上的优势。验证器假成功仅2次（150次试验中），证明该混合策略的有效性。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="305">真实机器人（30任务，每任务5次试验）</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>π₀.₅</th>
+<th>TiPToP</th>
+<th>Pigey</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pick-and-place</td>
+<td>95%</td>
+<td>80%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>World knowledge</td>
+<td>0%</td>
+<td>90%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Conditional logic</td>
+<td>0%</td>
+<td>95%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Multi-step reasoning</td>
+<td>0%</td>
+<td>25%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Spatial reasoning</td>
+<td>20%</td>
+<td>75%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Obstacle reasoning</td>
+<td>0%</td>
+<td>0%</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>Error recovery</td>
+<td>10%</td>
+<td>0%</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>Long-horizon memory</td>
+<td>0%</td>
+<td>0%</td>
+<td>100%</td>
+</tr>
+<tr>
+<td><strong>Overall</strong></td>
+<td><strong>16.7%</strong></td>
+<td><strong>48.7%</strong></td>
+<td><strong>97.3%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="libero-pro">LIBERO-PRO仿真（成功率%）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Obj.swap</th>
+<th>Obj.task</th>
+<th>Sp.swap</th>
+<th>Sp.task</th>
+<th>Goal.swap</th>
+<th>Goal.task</th>
+<th>Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>π₀.₅</td>
+<td>17</td>
+<td>1</td>
+<td>20</td>
+<td>1</td>
+<td>38</td>
+<td>0</td>
+<td>12.8</td>
+</tr>
+<tr>
+<td>CaP-Agent0</td>
+<td>22</td>
+<td>18</td>
+<td>12</td>
+<td>14</td>
+<td>26</td>
+<td>17</td>
+<td>18.2</td>
+</tr>
+<tr>
+<td>Pigey+Claude Opus 4.7</td>
+<td>54</td>
+<td>54</td>
+<td>66</td>
+<td>80</td>
+<td>44</td>
+<td>22</td>
+<td>53.3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="150">首次失败模式分布（150次试验/方法）</h3>
+<table>
+<thead>
+<tr>
+<th>失败模式</th>
+<th>π₀.₅</th>
+<th>TiPToP</th>
+<th>Pigey</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接地</td>
+<td>86</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>推理/规划</td>
+<td>38</td>
+<td>65</td>
+<td>0</td>
+</tr>
+<tr>
+<td>抓取执行</td>
+<td>1</td>
+<td>7</td>
+<td>2</td>
+</tr>
+<tr>
+<td>验证器假成功</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>总失败</td>
+<td>125</td>
+<td>77</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">推理受限探针</h3>
+<p>原始VLA平均4.6%，Pigey达到96.9%（使用相同VLA）——证明提升来自编排而非策略本身。</p>
+<p>关键含义：Pigey将冻结策略成功率从12.8%提升至53.3%（由表内数值12.8→53.3计算，超4×），且无任务特定微调。推理器扫描显示，即使最弱的推理器（GPT-5.5 low，均值44.3%）也远超所有非编排基线，说明编排框架的鲁棒性。</p>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>受后端能力上限约束</strong>：Pigey可以补偿弱策略，但存在由低层工具“支撑”设定的上限。若TAMP与VLA都无法执行某类动作（如高精度装配），编排器无能为力。</li>
+<li><strong>验证不完美</strong>：遮挡造成的部分可观测性可能隐藏糟糕的抓取，允许虚假成功向下游传播（150次试验中出现2次验证器假成功）。</li>
+<li><strong>延迟与成本</strong>：依赖API调用编排，每次试验3-15次VLM调用，成本<span class="arithmatex">\(0.02至\)</span>0.50，墙钟时间2-6分钟。对低延迟或高速应用具有挑战性。</li>
+<li><strong>未做之事</strong>：未收集额外数据或后训练；未训练专用模块（记忆、验证器、奖励模型、高层规划器）。OB3（doll surrounded）仅3/5成功，是唯一低于5/5的任务。</li>
+<li><strong>论文未明确</strong>：对可变形物体操作的扩展验证、多机器人平台泛化、以及推理器在更复杂长时程任务（&gt;10分钟）中的稳定性。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>先核对后端能力边界</strong>：Pigey的成功依赖TAMP与VLA的互补性。复现前务必确认你的TAMP能处理刚性物体精确拾放、VLA能处理可变形物体闭环控制——若两者能力重叠或都有盲区，编排收益会大幅缩水。</li>
+<li><strong>最容易踩坑的是验证机制</strong>：双重信号（夹爪宽度+腕部图像）是防止假成功的关键。若你的平台没有夹爪宽度传感器，需设计等效的确定性信号（如力传感器阈值），否则验证器假成功会污染下游决策。</li>
+<li><strong>提示模板的纪律性比模型能力更重要</strong>：精确字符串规则、预Done的Perceive、工具调用结尾——这些硬性约束比VLM本身的选择更影响成功率。复现时先严格照搬模板结构，再考虑针对你的任务调整路由规则。</li>
+<li><strong>推理器选择有边际收益</strong>：从GPT-5.5 low（44.3%）到Claude Opus 4.7（53.3%），推理器能力提升带来约9个百分点增益。若预算有限，先用中等推理器验证框架，再升级到最强模型。</li>
+<li><strong>仿真与真实的差距主要在感知</strong>：LIBERO-PRO中Pigey均值53.3%，真实机器人97.3%——仿真中检测器噪声和物体多样性更低，但任务谓词更严格。复现时先在仿真调试路由逻辑，再迁移到真实平台处理感知噪声。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.21725</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_addressing_orchestration_gap_generalist_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">系统架构</a></li>
+<li><a href="#_4">五个工具（真实机器人）</a></li>
+<li><a href="#_5">双重验证机制</a></li>
+<li><a href="#7">路由规则（7条）</a></li>
+<li><a href="#_6">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#305">真实机器人（30任务，每任务5次试验）</a></li>
+<li><a href="#libero-pro">LIBERO-PRO仿真（成功率%）</a></li>
+<li><a href="#150">首次失败模式分布（150次试验/方法）</a></li>
+<li><a href="#_9">推理受限探针</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

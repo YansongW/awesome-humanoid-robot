@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reflex: Real-Time VLA Control through Streaming Inference · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Reflex: Real-Time VLA Control through Streaming Inference</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Reflex: Real-Time VLA Control through Streaming Inference</h1>
+      <p class="entry-name-en">Reflex: Real-Time VLA Control through Streaming Inference</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Flow matching Vision-Language-Action (VLA) models promise precise continuous control, but their iterative denoising nature introduces fundamental incompatibilities with real-time robotics: global timestep injection invalidates KV-caching, forcing a choice between slow $O(N^2)$ re-computation or mathematically incorrect cache reuse. We present \textbf{Reflex}, a framework that enables.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14695" target="_blank" rel="noopener">arXiv:2607.14695 Reflex: Real-Time VLA Control through Streaming Inference</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Reflex는 스트리밍 매칭 기반 비전-언어-행동(VLA) 모델을 위한 실시간 추론 시스템으로, 시간 단계 불변성 통찰, 분할 어텐션 캐시, 비동기 파이프라인 협력 설계를 통해 Pi0.5의 LIBERO 추론 지연 시간을 135.2ms에서 52.4ms(2.58배 가속)로 줄이고 50Hz 안정적 스트리밍 제어를 구현합니다. 핵심 기여는 스트리밍 매칭 디노이징 루프와 KV 캐시 메커니즘을 근본적 충돌에서 분리하면서도 전체 배치 어텐션과 수학적으로 정확히 동등함을 유지하는 데 있습니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>스트리밍 매칭 VLA 모델의 로봇 제어 적용困境은 본질적으로 생성형 아키텍처의 반복적 디노이징 특성과 실시간 제어 루프의 지연 시간 하드 제약 사이의 구조적 모순입니다. 이전 모든 작업은 이 둘 사이에서 이분법적 선택을 강요받았습니다: 수학적 정확성을 위해 O(N²)의 프레임별 전체 재계산을 수용하거나, 속도를 위해 수학적으로 부정확한 캐시 재사용을 채택하는 방식이었습니다. Reflex가 실제로 바꾼 것은 이 이분법적 프레임워크를 깨뜨린 것입니다—특정 아키텍처 제약 하에서 캐시 재사용이 전체 재계산과 완전히 동등할 수 있음을 증명하여, 문제를 "어떻게 근사할 것인가"에서 "어떻게 정확하면서도 효율적으로 할 것인가"로 전환했습니다.</p>
+<p>이 전환의 심층적 의미는 VLA 실시간화의 병목 지점을 재정의했다는 점입니다. 과거 연구자들은 단일 추론의 계산량을 줄이는 데 집중했지만, Reflex는 진정한 지연 시간의 주범이 동기적 블로킹으로 인한 실행 중단과 디노이징 루프 내 시간 단계 주입으로 인한 캐시 무효화임을 지적합니다. 인식 인코더와 디노이징 루프를 시간 단계 차원에서 분리하고 이를 기반으로 분할 어텐션 메커니즘을 설계함으로써, Reflex는 시스템적 문제를 엔지니어링 가능한 캐시 관리 문제로 전환하여 50Hz 제어 주파수를 이론적 목표가 아닌 재현 가능한 엔지니어링 현실로 만들었습니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">핵심 전제: 시간 단계 불변성</h3>
+<p>Reflex의 전체 방법은 인식 인코더가 디노이징 시간 단계를 수신하지 않는다는 아키텍처 사실(∂Enc/∂t_k = 0)에 기반합니다. 이는 시각적 관찰의 인코딩 결과가 전체 디노이징 루프 동안 일정하게 유지되며, 해당 KV 캐시가 반복 단계에 따라 업데이트될 필요 없이 안전하게 재사용될 수 있음을 의미합니다.</p>
+<h3 id="partitioned-attention">분할 어텐션(Partitioned Attention)</h3>
+<p>어텐션 컨텍스트를 의미적으로 세 영역으로 나누고 각각 다른 캐시 전략을 적용합니다:
+- <strong>Static Prefix</strong>: 시스템 명령 토큰으로, 한 번 계산 후 KV 캐시에 영구 고정되며 어떤 업데이트에도 참여하지 않습니다.
+- <strong>Sliding History</strong>: 최근 N프레임 시각적 관찰의 FIFO 큐로, 새 프레임 도착 시 가장 오래된 프레임을 제거하여 일정한 메모리 사용량을 유지합니다. LIBERO에서 N=10프레임(약 300ms 히스토리)이 최적 운영 지점입니다.
+- <strong>Dynamic Suffix</strong>: 일시적 스트리밍 상태 x^(k)와 시간 단계 임베딩으로, 각 디노이징 주기 종료 후 리셋됩니다.</p>
+<p>어텐션 계산은 다음과 같이 형식화됩니다:
+Attn(x^(k)) = Softmax(Q^(k)[K_pin; K_slide(t); K_dyn(k)]^T/√d) × [V_pin; V_slide(t); V_dyn(k)]</p>
+<p>이 공식은 고정 입력과 고정 관찰 창에서 전체 배치 어텐션과 비트 단위로 동일한 출력을 생성하며(MSE 정확히 0.00), 캐시 업데이트 복잡도를 O(1)로 낮춥니다.</p>
+<h3 id="_5">엔지니어링 캐시 관리</h3>
+<ul>
+<li><strong>Incremental Prefill</strong>: 각 단계에서 전체 히스토리를 재처리하지 않고 최신 관찰 프레임만 인코딩합니다.</li>
+<li><strong>Manual Cache Merging</strong>: 디노이징 루프 진입 전에 정적 접두사와 슬라이딩 히스토리를 단일 연속 메모리 버퍼로 사전 병합하여 매번 torch.cat 오버헤드를 제거합니다.</li>
+<li><strong>정적 링 버퍼</strong>: 초기화 시 전체 텐서 B ∈ ℝ^{L×N_max×H×D}를 사전 할당하고 사용자 정의 포인터 산술 순환 인덱싱을 통해 제로 동적 할당과 O(1) 메모리 접근을 구현합니다.</li>
+</ul>
+<h3 id="adarmsnorm">수치 안정성: AdaRMSNorm</h3>
+<p>스트리밍 매칭 모델은 장시간 스트리밍 추론에서 높은 분산 초기화 노이즈에 연속적으로 노출되어 표준 BF16 혼합 정밀도가 빈번하게 NaN/Inf를 생성합니다. AdaRMSNorm은 RMS 통계 계산을 FP32에서 강제 수행하고 게이트 MLP를 통해 시간 단계와 고유수용성 상태의 적응형 스케일링을 도입합니다:
+AdaRMSNorm(x,c) = x/RMS(x) ⊙ γ(c), 여기서 γ(c) = 1 + MLP(c), c = [t_k, s_t]</p>
+<h3 id="_6">비동기 파이프라인 및 지연 보상</h3>
+<ul>
+<li><strong>이중 스레드 아키텍처</strong>: 스레드 A(시각)는 관찰을 연속적으로 인코딩하고 KV 쌍을 푸시합니다; 스레드 B(정책)는 소비자로서 최신 캐시를 쿼리하여 행동 블록을 생성합니다.</li>
+<li><strong>Future-Conditional State Prediction</strong>: 오래된 센서 상태(ŝ_{t+Δ} ≈ a_t^cmd)를 시스템의 마지막 명령의 목표 행동으로 대체하여 경량 지연 보상 휴리스틱으로 사용합니다.</li>
+<li><strong>Adaptive Overlap Scheduling</strong>: 실시간 추론 지연 측정을 기반으로 선견지향 K를 동적으로 조정하여 행동 블록이 끊김 없이 이어지도록 보장합니다.</li>
+</ul>
+<h3 id="_7">연산자 융합</h3>
+<p>QKV 프로젝션을 단일 패킹 커널(W_QKV = [W_Q; W_K; W_V])로 융합하고 SwiGLU 블록의 Gate와 Up 프로젝션을 병합하여 레이어당 커널 시작을 50% 줄이고 단일 스트림 추론에서 15–20% 벽시계 가속을 얻습니다.</p>
+<h2 id="_8">핵심 혁신</h2>
+<p><strong>1. 시간 단계 불변성을 캐시 재사용의 이론적 기반으로</strong>: 이전 모든 KV 캐시 재사용 방식은 스트리밍 매칭 모델의 시간 단계 주입으로 인해 실패했지만, Reflex는 인식 인코더가 기능적으로 디노이징 루프와 독립적임을 처음으로 명확히 지적하고 이를 기반으로 엄격한 분할 어텐션 메커니즘을 설계했습니다. 이 통찰은 엔지니어링 가치뿐만 아니라 이론적 보장을 제공합니다—시간 단계 불변성과 FIFO 퇴출 조건을 충족할 때 출력이 전체 배치 어텐션과 완전히 동등하며(Proposition A.1), 근사가 아닙니다.</p>
+<p><strong>2. 수치 안정성 문제를 시스템 설계에 통합</strong>: 장시간 스트리밍 추론에서의 혼합 정밀도 저하는 이전에 충분히 인식되지 못한 문제였습니다. Reflex는 AdaRMSNorm을 통해 RMS 통계를 FP32에서 강제 계산하면서 게이트 MLP를 BF16으로 유지하여 지연 시간을 거의 증가시키지 않고(+0.4ms) 최대 안정 단계 수를 120–220에서 2000 이상으로 높이고 NaN/Inf 이벤트를 완전히 제거했습니다. 이는 수치적 견고성을 일등 시민으로 추론 시스템 설계에 통합한 드문 사례입니다.</p>
+<p><strong>3. 비동기 실행과 지연 보상의 협력 설계</strong>: Reflex는 계산과 실행 사이의 블로킹 간격을 제거할 뿐만 아니라 Future-Conditional State Prediction을 통해 비동기로 인한 관찰 지연을 능동적으로 보상합니다. 4지연 단계 시나리오에서 이 휴리스틱은 예측기 제거 대비 +11pp 성공률 향상, 순수 비동기 베이스라인 대비 +22pp 향상을 보여주며 동적 환경에서 지연 보상의 핵심 역할을 입증합니다.</p>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="_10">추론 지연 및 가속</h3>
+<p>Pi0.5는 LIBERO에서 135.2ms에서 52.4ms(2.58배 가속)로 감소했고, Pi0는 2.73배 가속을 달성했습니다. RTX 3090에서는 가속비가 2.47배로 약간 감소했으며, 이는 Ampere 아키텍처에서 어텐션 연산의 상대적 비용이 더 높기 때문입니다.</p>
+<h3 id="_11">분할 어텐션 정확성</h3>
+<p>전체 배치 어텐션 오라클과의 MSE가 정확히 0.00인 반면, Naive Caching의 MSE는 1.42로 높아 성공률이 85.4%에서 12.5%로 급락했습니다.</p>
+<h3 id="stall">반응 지연 및 stall 비율</h3>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>지표</th>
+<th>LIBERO-Spatial</th>
+<th>LIBERO-Object</th>
+<th>LIBERO-Goal</th>
+<th>LIBERO-Long</th>
+<th>LIBERO 평균</th>
+<th>Kinetix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pi0.5</td>
+<td>반응 지연 (ms)</td>
+<td>78.5 (-47%)</td>
+<td>82.3 (-46%)</td>
+<td>85.1 (-46%)</td>
+<td>84.2 (-50%)</td>
+<td>82.5 (-47%)</td>
+<td>86.8 (-50%)</td>
+</tr>
+<tr>
+<td>Pi0.5</td>
+<td>stall 비율</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Pi0</td>
+<td>반응 지연 (ms)</td>
+<td>98.2 (-50%)</td>
+<td>101.5 (-50%)</td>
+<td>104.6 (-50%)</td>
+<td>105.2 (-54%)</td>
+<td>102.4 (-51%)</td>
+<td>112.6 (-50%)</td>
+</tr>
+<tr>
+<td>Pi0</td>
+<td>stall 비율</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<p>동기 베이스라인은 모든 작업에서 100% stall 비율을 보였습니다.</p>
+<h3 id="agilex-piper-20">실제 로봇 배포(AgileX PiPer, 작업당 20회)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>Sync 성공률</th>
+<th>Async-Naive 성공률</th>
+<th>Reflex 성공률</th>
+<th>Reflex 지연</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pick-Place</td>
+<td>65±8%(표 내 수치 122.8→112.4로 계산)</td>
+<td>62±8%</td>
+<td>76±7%</td>
+<td>101ms</td>
+</tr>
+<tr>
+<td>Articulated</td>
+<td>52±9%</td>
+<td>48±11%(표 내 수치 112.4→100.0으로 계산)</td>
+<td>66±9%</td>
+<td>104ms</td>
+</tr>
+<tr>
+<td>Dynamic Recovery</td>
+<td>38±8%</td>
+<td>32±8%</td>
+<td>55±9%</td>
+<td>110ms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="libero">작업 성공률(LIBERO)</h3>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>Long</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pi0.5</td>
+<td>83.2% (+0.8)</td>
+<td>80.4% (+0.8)</td>
+<td>82.0% (+0.8)</td>
+<td>72.4% (+3.6)</td>
+</tr>
+<tr>
+<td>Pi0</td>
+<td>85.4% (+0.8)</td>
+<td>82.6% (+0.8)</td>
+<td>84.2% (+0.8)</td>
+<td>75.0% (+4.0)</td>
+</tr>
+</tbody>
+</table>
+<p>Naive Cache 베이스라인 성공률은 8.4–15.4%에 불과했습니다. Kinetix에서 Pi0.5는 +7.4%, Pi0는 +6.7% 향상되었습니다.</p>
+<h3 id="_12">소거 및 안정성</h3>
+<ul>
+<li>분할 어텐션은 추론 지연을 135.2ms에서 61.5ms로 줄였습니다; 비동기 실행과 미래 조건부 중첩 스케줄링은 반응 지연을 151.9ms에서 82.5ms로 줄였습니다.</li>
+<li>컨텍스트 창 K=10이 최적 균형점(2.58배 가속과 거의 최대 정밀도)입니다; K=1은 가속이 가장 높지만 정밀도가 크게 떨어지고, K=50에서는 가속이 1배 미만입니다.</li>
+<li>스트리밍 안정성: BF16 베이스라인 최대 안정 단계 수 120–220(빈번한 NaN/Inf); BF16+FP32 norm-only는 700–1200(드문 NaN/Inf, +0.8ms); BF16+AdaRMSNorm은 2000 초과(NaN/Inf 없음, +0.4ms).</li>
+<li>연산자 융합: FlashNorm은 2.7ms 감소, FusedAdaLN은 추가로 1.5ms 절약, 합계 행동 전문가 순방향 전파 지연 18% 감소.</li>
+</ul>
+<h2 id="_13">경계 및 한계</h2>
+<p>Reflex의 동등성 주장은 분할 어텐션 자체에 엄격히 국한되며, 비동기 스케줄링, 미래 상태 예측, 혼합 정밀도 수치 동작은 포함하지 않습니다—이러한 구성 요소는 경험적 평가로만 검증되었습니다. 이 방법은 인식 인코더가 시간 단계 불변인 VLA 아키텍처에만 적용 가능하며, 통합 DiT 스타일 아키텍처(시간 단계 조건이 시각 인코더에 들어가는 경우)는 현재 범위에 포함되지 않습니다. 미래 상태 예측기는 학습된 동역학 모델이 아닌 경량 휴리스틱이며, 저수준 제어기가 명령 행동을 정확히 추적한다고 가정합니다; AgileX PiPer에서 100ms 선견지향 내에서 &lt;3cm 엔드 이펙터 편차가 관찰되었지만, 더 큰 지연이나 더 복잡한 동역학에서는 이 가정이 실패할 수 있습니다. 실제 로봇 실험은 배포 가능성 검증을 목적으로 하며 완전한 sim-to-real 연구가 아닙니다. 스트리밍 안정성 분석은 형식적 증명이 아닌 경험적 실패 분석입니다. 논문은 데이터 프라이버시나 안전 측면의 새로운 우려를 명시적으로 논의하지 않았습니다.</p>
+<h2 id="_14">엔지니어링 시사점</h2>
+<p>Reflex를 재현할 때 먼저 대상 VLA 아키텍처가 시간 단계 불변성을 충족하는지 확인하십시오—이것이 전체 방법이 성립하는 전제이며, 인식 인코더가 시간 단계 조건을 수신하면 분할 어텐션이 직접 실패합니다. 둘째, 혼합 정밀도 가드레일을 엄격히 준수하십시오: RMS 통계는 FP32에서 계산해야 하고 게이트 MLP는 BF16을 유지해야 하며, 정밀도 혼용은 장시간 스트리밍 추론에서 NaN/Inf 붕괴를 초래할 수 있습니다. 가장 함정에 빠지기 쉬운 부분은 캐시 관리입니다: 정적 접두사와 슬라이딩 히스토리의 사전 병합은 디노이징 루프 진입 전에 완료되어야 하며, 동적 접미사는 사전 할당 텐서에서 관리되고 매 주기 리셋되어야 합니다. 그렇지 않으면 torch.cat 오버헤드가 대부분의 가속 이점을 잠식합니다. 컨텍스트 창 K의 선택은 실제 추론 지연을 기반으로 동적으로 조정해야 하며, K=10이 LIBERO에서 최적이지만 다른 작업과 하드웨어에서는 재보정이 필요할 수 있습니다. 하류 팀에게는 RTX 4090에서 2.58배 가속과 0% stall 비율을 먼저 검증한 후 다른 하드웨어로 이전할 것을 권장합니다—RTX 3090에서 가속비가 2.47배로 감소한 것은 아키텍처 차이가 이점에 영향을 미친다는 것을 보여줍니다. 실제 배포 시 미래 상태 예측기의 지연 보상 효과는 저수준 제어기의 추적 정밀도에 크게 의존하므로, 대상 플랫폼에서 엔드 이펙터 편차를 실측해야 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_flow_matching/">흐름 매칭</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_reflex_real_time_vla_control_through_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_flow_matching/">
+          <span class="entry-type">방법</span>
+          <h3>흐름 매칭</h3>
+          <p>간단한 소스 분포를 목표 데이터 분포로 매핑하는 흐름을 가진 벡터 필드를 직접 회귀하는 생성 모델링 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">핵심 전제: 시간 단계 불변성</a></li>
+<li><a href="#partitioned-attention">분할 어텐션(Partitioned Attention)</a></li>
+<li><a href="#_5">엔지니어링 캐시 관리</a></li>
+<li><a href="#adarmsnorm">수치 안정성: AdaRMSNorm</a></li>
+<li><a href="#_6">비동기 파이프라인 및 지연 보상</a></li>
+<li><a href="#_7">연산자 융합</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#_10">추론 지연 및 가속</a></li>
+<li><a href="#_11">분할 어텐션 정확성</a></li>
+<li><a href="#stall">반응 지연 및 stall 비율</a></li>
+<li><a href="#agilex-piper-20">실제 로봇 배포(AgileX PiPer, 작업당 20회)</a></li>
+<li><a href="#libero">작업 성공률(LIBERO)</a></li>
+<li><a href="#_12">소거 및 안정성</a></li>
+</ul>
+</li>
+<li><a href="#_13">경계 및 한계</a></li>
+<li><a href="#_14">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

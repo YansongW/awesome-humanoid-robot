@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UR-VC: Unsupervised Robotic Value Correction for Time-Derived Progress Proxies · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">UR-VC: Unsupervised Robotic Value Correction for Time-Derived Progress Proxies</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>UR-VC: Unsupervised Robotic Value Correction for Time-Derived Progress Proxies</h1>
+      <p class="entry-name-en">UR-VC: Unsupervised Robotic Value Correction for Time-Derived Progress Proxies</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>UR-VC 是一种离线、免训练的标签修正方法，用于修正机器人演示数据中由归一化时间派生的有噪进度代理。它利用跨独立片段的视觉状态匹配来估计更准确的物理进度，并在真实双臂布料操作任务中显著提升了优势条件 VLA 策略的成功率。核心贡献在于将标签修正从学习过程中解耦，直接作用于监督信号本身。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12892" target="_blank" rel="noopener">arXiv:2607.12892 UR-VC: Unsupervised Robotic Value Correction for Time-Derived Progress Proxies</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有机器人学习系统普遍依赖密集的进度或价值信号来指导策略学习与任务完成检测。由于真实物理进度难以大规模标注，归一化时间成为最常用的替代品，但其单调递增的假设与接触丰富操作中常见的倒退、停滞现象严重不符。这种系统性偏差会被下游学习器继承，导致策略无法区分有效动作与破坏性动作，甚至利用外观、速度等偶然线索进行错误建模。</p>
+<p>UR-VC 真正改变的是问题定义：它不再试图训练一个更鲁棒的进度估计器来对抗有噪标签，而是直接修正标签本身。这一视角转换将标签修正从学习过程中解耦，使得任何下游算法——无论是优势条件策略还是独立价值模型——都能受益于更准确的监督信号，而无需修改其训练目标或架构。</p>
+<h2 id="_2">方法拆解</h2>
+<p>UR-VC 的核心假设是：跨独立片段的状态匹配能提供减少时间扭曲的锚点，因为相似物理状态在不同片段中对应的时间戳各不相同，平均这些时间戳可抵消轨迹特定的噪声。</p>
+<h3 id="_3">标签修正流程</h3>
+<ol>
+<li><strong>嵌入计算</strong>：使用 SigLIP-2 视觉编码器计算每帧的 L2 归一化嵌入，以余弦相似度度量状态相似性。</li>
+<li><strong>候选集构建</strong>：对查询帧 i，在每个其他片段 e 中，选取时间带 τ=0.3 内的帧作为候选：C_{i,e} = {j : ep(j)=e, |g_j - g_i| ≤ τ}。</li>
+<li><strong>最佳代表选择</strong>：从每个片段的候选中仅保留与查询帧最相似的帧：j*<em j_C__i_e="j∈C_{i,e">{i,e} = argmax</em> f_i^T f_j。}</li>
+<li><strong>相似度过滤</strong>：若最佳代表相似度低于阈值 ρ=0.90，则丢弃该片段贡献。</li>
+<li><strong>片段平衡平均</strong>：剩余片段代表构成集合 M_i，修正估计为 ĝ_i = (1/|M_i|) Σ_{e∈M_i} g_{j*_{i,e}}；若无代表存活，保持原值。</li>
+</ol>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li><strong>每片段仅贡献一个匹配</strong>：避免过度加权时间相邻帧，因为同一片段内误差相关，而跨片段平均才能减少独立噪声。</li>
+<li><strong>时间带 τ 约束修正幅度</strong>：所有被平均的标签满足 |g_j - g_i| ≤ τ，因此修正有界 |ĝ_i - g_i| ≤ τ，防止异常跳跃。</li>
+<li><strong>相似度阈值 ρ 保守过滤</strong>：确保只有足够相似的状态才参与估计，避免引入不相关片段的噪声。</li>
+</ul>
+<h3 id="_5">优势标签构造</h3>
+<p>对从帧 i 开始、视界 H 的动作块，优势标签为 r_i = ĝ_{i+H} - ĝ_i；片段末尾附近则按视界速率重新缩放：r_i = (H/(T_e - i))(ĝ_{T_e} - ĝ_i)。按 r_i 排序后，标记 top 20% 为正优势示例，训练时附加文本后缀 "…, advantage: positive"。</p>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>免训练的标签修正范式</strong>：UR-VC 无需训练任何模型、无需在线 rollout、无需手动标注，仅通过离线语料库上的矩阵运算即可完成修正。这使其可作为即插即用模块，直接替换现有流程中的时间派生标签。</p>
+</li>
+<li>
+<p><strong>片段平衡的跨片段匹配</strong>：不同于简单的最近邻检索，UR-VC 强制每个片段最多贡献一个匹配标签，这一设计在统计上更合理——跨独立片段的平均能减少轨迹特定噪声，而同一片段内相邻帧的误差高度相关，不应重复加权。</p>
+</li>
+<li>
+<p><strong>非单调进度的显式建模</strong>：通过允许修正后的标签出现负优势（实验中 13.4% 的帧获得负视界优势），UR-VC 首次在无监督条件下捕捉了物理进度倒退现象，这是时间派生标签完全无法表达的信息。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>实验在真实双臂布料展平-折叠任务上进行，主要评估集为 150 个真实机器人片段，训练混合包含 5700 个展平-折叠演示与 1795 个恢复演示。</p>
+<h3 id="_8">覆盖率与修正质量</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>150 片段</th>
+<th>10^4 片段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>覆盖率（相似度 ≥ 0.90）</td>
+<td>98%</td>
+<td>99.9%</td>
+</tr>
+<tr>
+<td>覆盖率（相似度 ≥ 0.955）</td>
+<td>69.9%</td>
+<td>90.4%</td>
+</tr>
+<tr>
+<td>修正估计粗糙度（mean |Δ²ĝ_t|）</td>
+<td>基准</td>
+<td>下降约三分之一</td>
+</tr>
+</tbody>
+</table>
+<p>修正估计与归一化时间整体相关性高达 0.98，但 13.4% 的帧获得负视界优势（视界为片段长度的 5%，约 1.7 秒），表明非单调进度被有效捕捉。</p>
+<h3 id="_9">下游真实机器人评估</h3>
+<table>
+<thead>
+<tr>
+<th>桌面条件</th>
+<th>Baseline</th>
+<th>UR-VC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bare table</td>
+<td>0.90</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>Beige cloth</td>
+<td>0.70</td>
+<td>0.73</td>
+</tr>
+<tr>
+<td>Blue-gray cloth</td>
+<td>0.50</td>
+<td>0.43</td>
+</tr>
+<tr>
+<td>Light-yellow cloth</td>
+<td>0.63</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td>Light-gray cloth</td>
+<td>0.77</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>Khaki cloth</td>
+<td>0.87</td>
+<td>0.90</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td><strong>0.728</strong></td>
+<td><strong>0.789</strong></td>
+</tr>
+</tbody>
+</table>
+<p>UR-VC 在 6 种条件中的 5 种中成功率更高，平均成功率从 0.728（131/180）提升至 0.789（142/180），提升幅度约 6.1 个百分点（由表内数值 0.728→0.789 计算）。唯一表现下降的条件是 Blue-gray cloth，可能与该背景下的视觉检索质量有关。</p>
+<h2 id="_10">边界与局限</h2>
+<p>UR-VC 的核心假设是视觉相似即物理进度相似，但当相似视觉状态出现在不同任务阶段或不同动作历史之后，其潜在进度可能模糊，这一假设可能失效。片段平衡平均能减少轨迹特定噪声，但无法修正系统性的检索错误——如果检索池本身存在偏差，修正结果也会继承该偏差。论文未明确 UR-VC 在非布料操作（如刚性物体装配）或更复杂多阶段任务中的表现，也未探讨超参数 τ 与 ρ 的敏感性。作者明确不声称访问真实物理进度的 ground-truth，因此修正质量的评估仅依赖下游任务成功率这一间接指标。</p>
+<h2 id="_11">工程启示</h2>
+<p>复现 UR-VC 时，首先核对嵌入模型的选择——SigLIP-2 的视觉特征质量直接决定检索可靠性，更换编码器需重新验证覆盖率。时间带 τ=0.3 与相似度阈值 ρ=0.90 是针对布料操作调优的，迁移到其他任务时应先绘制覆盖率-阈值曲线，确保至少 90% 的帧有匹配代表。最容易踩坑的是索引约定：论文使用 1 起始索引（o_1^(e), …, o_{T_e}^(e)），若实现采用 0 起始索引，片段末尾的视界缩放公式分母需相应调整。对于下游团队，建议先在小规模检索池（如 50 片段）上验证修正标签的粗糙度下降趋势，再扩展到全量数据；若发现覆盖率不足，优先增加检索池规模而非降低阈值，因为 10^4 片段规模下覆盖率可提升至 99.9%。部署时，正优势后缀的构造需与训练完全一致，否则策略可能无法正确理解查询语义。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.12892</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ur_vc_unsupervised_robotic_value_correct_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">标签修正流程</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+<li><a href="#_5">优势标签构造</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#_8">覆盖率与修正质量</a></li>
+<li><a href="#_9">下游真实机器人评估</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

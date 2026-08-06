@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</h1>
+      <p class="entry-name-en">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): xiaoze_P042. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] guardrail fix: unverifiable numbers corrected to full-text-verbatim or marked as computed/未提取 (catchup sweep audit).">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>An attached arm can significantly increase the applicability of legged robots to several mobile manipulation tasks that are not possible for the wheeled or tracked counterparts. The standard hierarchical control pipeline for such legged manipulators is to decouple the controller into that of manipulation and locomotion. However, this is ineffective. It requires immense engineering to support.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2210.10044" target="_blank" rel="noopener">arXiv:2210.10044 Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomoti</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 강화 학습 기반의 통합 전신 제어 정책을 제안하며, Unitree Go1 4족 보행 로봇에 6-DoF WidowX 로봇 팔을 장착한 플랫폼에서 다리-팔 협력 이동 조작을 구현합니다. 핵심 기여는 Sim2Real 실현 가능성 격차를 해결하는 Regularized Online Adaptation과 통합 정책 훈련에서 조작 및 운동 목표의 충돌을 해결하는 Advantage Mixing을 제안한 것이며, 실제 세계 물체 집기 작업에서 MPC+IK 기준선보다 현저히 우수한 성능을 보입니다.</p>
+<h2 id="_2">무엇을 변화시켰는가</h2>
+<p>기존의 다리-팔 이동 조작은 계층적 분리 아키텍처(다리 MPC 운동 제어 + 팔 IK 조작 제어)를 채택했으며, 이러한 설계에는 두 가지 근본적인 결함이 있습니다: 첫째, 모듈 간 오류 전파로 인해 부자연스럽고 비협조적인 움직임이 발생합니다; 둘째, Bernstein이 강조한 사지 운동 협조의 생물학적 타당성이 부족합니다. 기존의 학습 기반 방법(예: [8])은 학습을 도입했지만 여전히 반결합 계층 모델을 유지하여 협조 문제를 진정으로 해결하지 못했습니다.</p>
+<p>본 논문이 진정으로 변화시킨 것은 조작과 운동을 "두 개의 독립적인 최적화 문제"에서 "하나의 결합 최적화 문제"로 재구성한 것입니다. 저자들은 직접적인 엔드투엔드 훈련 통합 정책이 국소 최적해에 빠질 수 있음을 지적합니다——정책이 말단 실행기 명령만 따르고 다리 동작 공간 탐색을 무시합니다. 이러한 관찰은 통합 정책 훈련의 핵심 모순을 드러냅니다: 조작 보상 신호가 운동 보상보다 훨씬 강하여 다리 퇴화를 초래합니다. 본 논문은 Advantage Mixing의 커리큘럼 기반 이점 가중치와 Regularized Online Adaptation의 단일 단계 훈련 패러다임을 통해 통합 정책을 이론적으로 우아한 구상에 그치지 않고 실현 가능한 방안으로 만듭니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="regularized-online-adaptation">Regularized Online Adaptation (단일 단계 훈련)</h3>
+<ul>
+<li>특권 인코더 μ, 적응 모듈 φ, 통합 정책 π를 무작위 초기화하고 빈 리플레이 버퍼 D를 초기화</li>
+<li>각 반복에서 <code>itr mod H == 0</code>(H=20)일 때 φ로 <code>z_t^φ = φ(s_{t-10:t-1}, a_{t-11:t-2})</code>를 계산하고, 그 외에는 μ로 <code>z_t^μ = μ(e_t)</code>를 계산</li>
+<li>동작 <code>a_t = π((s_t, a_{t-1}, z_t))</code>, 저장 <code>((s_t,e_t), a_t, r_t, (s_{t+1},e_{t+1}), z_t^φ, z_t^μ)</code>을 D에 저장</li>
+<li><code>itr mod H == 0</code>일 때 <code>||sg[z_t^μ] - z_t^φ||_2</code>를 최적화하여 θ_φ를 업데이트; 그 외에는 <code>-J(θ_π,θ_μ) + λ||z_t^μ - sg[z_t^φ]||_2</code>를 최적화하여 θ_π, θ_μ를 업데이트</li>
+<li>λ는 선형 커리큘럼으로 0에서 1까지: <code>λ = min(max((itr-5000)/5000, 0), 1)</code></li>
+<li>핵심 설계: μ는 정책 π와 엔드투엔드로 결합 훈련되며, 동시에 z^μ가 z^φ와 너무 크게 편향되지 않도록 정규화; φ는 온라인 모방을 통해 z^μ를 학습. RMA는 본 방법의 특수한 경우입니다(λ가 항상 0이고 φ는 정책 수렴 후에만 훈련)</li>
+</ul>
+<h3 id="advantage-mixing">Advantage Mixing (커리큘럼 기반 이점 가중치)</h3>
+<ul>
+<li>훈련 목표를 <code>log(π(a_t^arm|s_t)π(a_t^leg|s_t))(A^manip + A^loco)</code>에서 다음과 같이 변경:
+  <code>log π(a_t^arm|s_t)(A^manip + βA^loco) + log π(a_t^leg|s_t)(βA^manip + A^loco)</code></li>
+<li>β는 0에서 1로 선형 증가: <code>β = min(t/T_mix, 1)</code></li>
+<li>설계 근거: 먼저 조작 보상 차이를 팔 동작에, 운동 보상 차이를 다리 동작에 각각 귀속시켜 통합 정책이 말단 실행기 명령만 최적화하고 다리 탐색을 무시하는 것을 방지; 이후 점진적으로 가중 이점 합계를 감쇠하여 운동과 조작을 돕는 다리/팔 동작 학습을 장려</li>
+</ul>
+<h3 id="_4">정책 네트워크 구조</h3>
+<ul>
+<li>다층 퍼셉트론, 입력은 현재 상태 <code>s_t ∈ ℝ^75</code>와 환경 외생 변수 <code>z_t ∈ ℝ^20</code>을 연결</li>
+<li>첫 번째 은닉층은 128차원, 이후 2개의 헤드로 분할되며 각 헤드는 128차원의 2개 은닉층을 가짐</li>
+<li>두 헤드의 출력을 연결하여 다리 동작 <code>a_t^leg ∈ ℝ^12</code>와 팔 동작 <code>a_t^arm ∈ ℝ^6</code>을 각각 출력</li>
+<li>관절 공간 위치 제어(조작 공간 제어가 아닌)를 채택, 이유: 자체 충돌을 학습하고 Sim-to-Real 격차를 줄일 수 있음</li>
+</ul>
+<h3 id="_5">지형 생성 및 명령 샘플링</h3>
+<ul>
+<li>프랙탈 노이즈로 지형 생성: octaves=2, lacunarity=2.0, gain=0.25, frequency=10 Hz, amplitude=0.15 m</li>
+<li>거친 지형은 발의 지면 이탈 높이를 강제하여 평평한 지형에 필요한 복잡한 보상을 대체</li>
+<li>EE 명령 구면 좌표 (l, p, y)는 <code>T(S2C[(l,p,y)]) + (p_x^base, p_y^base, p_z^base)</code>를 통해 세계 좌표로 변환; <code>p_z^base</code>는 상수 0.53으로 설정, T의 row와 pitch는 0으로 설정</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>Regularized Online Adaptation의 단일 단계 패러다임</strong>: RMA의 2단계 교사-학생 방식(먼저 교사 정책 훈련 후 학생 증류)과 달리, 본 논문은 특권 인코더 μ와 정책 π를 엔드투엔드로 결합 훈련하고 λ 커리큘럼 정규화를 통해 z^μ와 z^φ의 정렬을 강제합니다. 이는 실현 가능성 격차(realizability gap)를 제거하여 배포 시 적응 모듈이 훈련 시 특권 정보 인코더와 일관된 동작을 하도록 만들며, 사후 근사가 아닙니다.</p>
+</li>
+<li>
+<p><strong>Advantage Mixing의 커리큘럼 기반 이점 분해</strong>: 통합 정책의 결합 이점을 팔과 다리의 각각 가중 이점으로 분해하고, β가 0에서 1로 증가하는 커리큘럼 설계를 통해 정책이 먼저 조작 및 운동 작업을 각각 학습한 후 점진적으로 병합합니다. 이는 통합 정책 훈련에서 조작 보상이 지배하여 다리가 퇴화하는 국소 최적해 문제를 직접 해결하며, 엔드투엔드 전신 제어를 실현 가능하게 만드는 핵심 메커니즘입니다.</p>
+</li>
+<li>
+<p><strong>저비용 하드웨어 플랫폼의 풀스택 배포</strong>: 6K USD의 Unitree Go1 + WidowX 플랫폼에서 완전한 무구속 온보드 추론(정책 및 적응 모듈이 Raspberry Pi 4에서 50 Hz로 실행)을 구현하여 학습 기반 전신 제어가 학술 연구실에서 재현 가능한 하드웨어 비용 범위 내에서 실용적 성능에 도달함을 보여줍니다.</p>
+</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<h3 id="4-vs-vs">시뮬레이션 비교 (표4, 통합 vs 분리 vs 비협조)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>통합 정책</th>
+<th>분리 정책</th>
+<th>비협조 정책</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>생존율</td>
+<td>97.1±0.61</td>
+<td>92.0±0.90</td>
+<td>94.9±0.61</td>
+</tr>
+<tr>
+<td>베이스 가속도</td>
+<td>1.00±0.03</td>
+<td>1.40±0.04</td>
+<td>1.03±0.01</td>
+</tr>
+<tr>
+<td>속도 오차</td>
+<td>0.31±0.03</td>
+<td>0.43±0.07</td>
+<td>0.33±0.01</td>
+</tr>
+<tr>
+<td>EE 오차</td>
+<td>0.63±0.02</td>
+<td>0.92±0.10</td>
+<td>0.73±0.02</td>
+</tr>
+<tr>
+<td>총 에너지</td>
+<td>50±0.90</td>
+<td>51±0.30</td>
+<td>50±0.28</td>
+</tr>
+</tbody>
+</table>
+<p>통합 정책은 동일한 에너지 소비에서 최고 성능을 달성하며, EE 오차는 분리 정책 대비 약 31.5% 감소(0.92→0.63, 표4 수치 계산).</p>
+<h3 id="5">팔 작업 공간 및 교란 강건성 (표5)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>통합 정책</th>
+<th>분리 정책</th>
+<th>비협조 정책</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>작업 공간 (m³)</td>
+<td>0.82±0.02</td>
+<td>0.58±0.10</td>
+<td>0.65±0.02</td>
+</tr>
+<tr>
+<td>교란 하 생존율</td>
+<td>0.87±0.04</td>
+<td>0.64±0.06</td>
+<td>0.77±0.06</td>
+</tr>
+</tbody>
+</table>
+<p>통합 정책의 작업 공간은 약 41% 확대(0.58→0.82 m³), 교란 생존율은 약 36% 향상(0.64→0.87, 모두 표5 수치 계산).</p>
+<h3 id="ood-sim2real-6">OOD 환경 Sim2Real 비교 (표6)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>도메인 무작위화</th>
+<th>RMA</th>
+<th>Regularized OA</th>
+<th>전문가(정규화 포함)</th>
+<th>전문가(정규화 없음)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실현 가능성 격차</td>
+<td>-</td>
+<td>0.31±0.01</td>
+<td>2e-4±0.00</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>생존율</td>
+<td>95.8±0.2</td>
+<td>95.2±0.2</td>
+<td>97.4±0.1</td>
+<td>97.8±0.2</td>
+<td>98.3±0.2</td>
+</tr>
+<tr>
+<td>EE 오차</td>
+<td>0.40±0.00</td>
+<td>0.26±0.04</td>
+<td>0.21±0.00</td>
+<td>0.21±0.00</td>
+<td>0.21±0.00</td>
+</tr>
+<tr>
+<td>총 에너지</td>
+<td>21.9±0.53</td>
+<td>27.3±0.95</td>
+<td>25.9±0.56</td>
+<td>25.8±0.49</td>
+<td>25.6±0.30</td>
+</tr>
+</tbody>
+</table>
+<p>Regularized Online Adaptation은 RMA 대비 EE 오차가 20% 감소하고, 실현 가능성 격차가 0.31에서 2e-4로 감소합니다.</p>
+<h3 id="710-10">실제 세계 물체 집기 작업 (표7/10, 10회 시행 평균)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>방법</th>
+<th>성공률</th>
+<th>TTC (s)</th>
+<th>IK 실패율</th>
+<th>자체 충돌률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단순(3점)</td>
+<td>Ours</td>
+<td>0.8</td>
+<td>5.0</td>
+<td>-</td>
+<td>0</td>
+</tr>
+<tr>
+<td>단순(3점)</td>
+<td>MPC+IK</td>
+<td>0.3</td>
+<td>17</td>
+<td>0.4</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>어려움(5점)</td>
+<td>Ours</td>
+<td>0.8</td>
+<td>5.6</td>
+<td>-</td>
+<td>0</td>
+</tr>
+<tr>
+<td>어려움(5점)</td>
+<td>MPC+IK</td>
+<td>0.1</td>
+<td>22.0</td>
+<td>0.2</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<p>본 방법의 성공률은 MPC+IK 대비 약 2.7–8배 향상, 작업 완료 시간은 약 71–75% 단축(모두 표7 수치 계산), 자체 충돌률은 0입니다.</p>
+<h3 id="_8">훈련 규모</h3>
+<ul>
+<li>10000회 반복/훈련 배치, 즉 20억 샘플(2 billions) 및 20만 회 경사 업데이트</li>
+<li>PPO: clip range 0.2, 학습률 2e-4, 할인 계수 0.99, GAE λ 0.95, 환경 수 5000</li>
+<li>각 에피소드는 최대 1000단계, 정책 제어 주파수 50 Hz, 시뮬레이션 주파수 200 Hz</li>
+</ul>
+<h2 id="_9">경계 및 한계</h2>
+<ul>
+<li>그리퍼 개폐는 정책에 포함되지 않음("EE gripper closing and opening are not a part of the policy"), 원격 조작에서는 조이스틱으로 직접 제어되고, 시각 추적에서는 스크립트 정책으로 제어되어 정책의 완전한 자율성이 제한됨</li>
+<li>시각 추정은 본 연구의 핵심이 아니며, 실패 시행은 주로 AprilTag 위치와 실제 물체 위치의 불일치에서 발생, 폐색 및 연성 물체와 같은 일반적인 물체 상호작용은 처리하지 않음</li>
+<li>논문은 여러 미래 방향에 대한 첫 단계만 제공("provides a first step towards several of such future directions"), 구체적인 한계는 본문에서 자세히 설명되지 않음</li>
+<li>몸통 및 팔에 장착된 자기 중심 카메라로부터 시각 기반 정책을 학습하지 않았으며, 앞다리로 장애물을 기어올라 높은 물체를 집는 것도 활용하지 않음</li>
+<li>훈련 규모가 방대(20억 샘플)하여 계산 자원 요구가 높아 학술 연구실의 재현을 제한할 수 있음</li>
+</ul>
+<h2 id="_10">공학적 시사점</h2>
+<ul>
+<li><strong>재현 우선순위</strong>: 먼저 Advantage Mixing의 β 커리큘럼 구현을 확인——이는 통합 정책 훈련이 국소 최적해에 빠지지 않도록 하는 핵심이며, β의 0에서 1로의 선형 증가는 훈련 반복 수와 정렬되어야 함(T_mix 구체적 값은 논문에 명시되지 않아 자체 튜닝 필요)</li>
+<li><strong>가장 실수하기 쉬운 지점</strong>: Regularized Online Adaptation에서 λ의 커리큘럼 스케줄(<code>λ = min(max((itr-5000)/5000, 0), 1)</code>)과 H=20의 교대 최적화 주기를 엄격히 따라야 하며, 그렇지 않으면 μ와 φ의 정렬이 실패; 정지 경사 연산자 sg의 위치를 잘못 두면 안 됨</li>
+<li><strong>하드웨어 배포 주의</strong>: 정책 및 적응 모듈 추론은 Raspberry Pi 4에서 50 Hz로 실행되고, WidowX 소프트웨어 스택은 Nvidia TX2에 있으며, Pi와 TX2 사이는 UDP 통신 사용——통신 지연이 50 Hz 제어 주파수의 안정성에 영향을 미치는지 확인 필요</li>
+<li><strong>지형 생성 매개변수</strong>: 프랙탈 노이즈 매개변수(octaves=2, lacunarity=2.0, gain=0.25, frequency=10 Hz, amplitude=0.15 m)는 발의 지면 이탈을 강제하는 핵심으로 복잡한 보상 설계를 대체하므로 재현 시 임의로 변경할 수 없음</li>
+<li><strong>훈련 규모 기대</strong>: 20억 샘플과 20만 회 경사 업데이트는 표 4-6의 성능을 달성하기 위한 필요 조건이며, 훈련 규모를 축소하면 통합 정책이 비협조 정책 수준으로 퇴화할 수 있음</li>
+<li><strong>기준선 비교</strong>: MPC+IK 기준선은 실제 세계 작업에서 IK 실패율이 0.2-0.4, 자체 충돌률이 0.3-0.5에 달함——기준선이 더 우수하다면 본 방법의 상대적 이점을 재평가해야 함</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_deep_whole_body_control_unified_policy_2022"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시켰는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#regularized-online-adaptation">Regularized Online Adaptation (단일 단계 훈련)</a></li>
+<li><a href="#advantage-mixing">Advantage Mixing (커리큘럼 기반 이점 가중치)</a></li>
+<li><a href="#_4">정책 네트워크 구조</a></li>
+<li><a href="#_5">지형 생성 및 명령 샘플링</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a><ul>
+<li><a href="#4-vs-vs">시뮬레이션 비교 (표4, 통합 vs 분리 vs 비협조)</a></li>
+<li><a href="#5">팔 작업 공간 및 교란 강건성 (표5)</a></li>
+<li><a href="#ood-sim2real-6">OOD 환경 Sim2Real 비교 (표6)</a></li>
+<li><a href="#710-10">실제 세계 물체 집기 작업 (표7/10, 10회 시행 평균)</a></li>
+<li><a href="#_8">훈련 규모</a></li>
+</ul>
+</li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

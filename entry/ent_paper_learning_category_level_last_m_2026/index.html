@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</h1>
+      <p class="entry-name-en">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.11173v4. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种面向物体中心的模仿学习框架，用于解决移动操作机器人的“最后一米”精确定位问题。该方法由RPM Lab团队开发，仅依靠RGB相机观测，无需深度、LiDAR或地图先验，即可实现类别级别的精确定位，在未见目标物体上达到74.58%的边缘对齐成功率和89.42%的物体对齐成功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.11173" target="_blank" rel="noopener">Learning Category-level Last-meter Navigation from RGB Demonstrations of a Single-instance (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有基于RGB的导航系统通常只能提供米级精度，无法满足移动操作中机械臂执行精确抓取前的定位需求。本文提出一种物体中心的模仿学习框架，使四足移动操作机器人仅通过机载多视角RGB图像和文本提示，即可实现操作就绪的精准定位。该方法利用语言驱动的分割模块和空间得分矩阵解码器，提供显式的物体定位和相对位姿推理，仅使用单个物体实例的真实数据训练，即可泛化到同一类别中未见过的物体实例，并在复杂光照和背景条件下保持鲁棒性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>输入条件</strong>：导航策略接收三类输入——目标图像（goal images）、机载多视角RGB观测、指定目标物体的文本提示。</li>
+<li><strong>核心模块</strong>：</li>
+<li><strong>语言驱动分割模块</strong>：根据文本提示对多视角RGB图像进行语义分割，提取目标物体的显式空间位置。</li>
+<li><strong>空间得分矩阵解码器</strong>：将分割后的特征映射为相对位姿得分，输出机器人相对于目标物体的精确朝向和距离信息。</li>
+<li><strong>训练数据</strong>：仅使用同一类别中单个物体实例的真实世界演示数据（RGB图像），无需深度或点云标注。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>机器人平台</strong>：四足移动操作机器人，搭载机载RGB相机。</li>
+<li><strong>评估指标</strong>：</li>
+<li><strong>边缘对齐指标（edge-alignment）</strong>：使用真实朝向信息，评估机器人底座与目标物体边缘的精确对齐程度。</li>
+<li><strong>物体对齐指标（object-alignment）</strong>：评估机器人是否正对目标物体，即视觉朝向的准确性。</li>
+<li><strong>测试环境</strong>：包含不同光照条件和复杂背景的多样化真实场景，目标物体为训练中未见过的同一类别实例。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li>在未见目标物体上，边缘对齐成功率达到74.58%，物体对齐成功率达到89.42%。</li>
+<li>该方法无需深度传感器、LiDAR或地图先验，仅依赖RGB视觉和文本提示，即可实现类别级别的最后一米精确定位。</li>
+<li>实验表明，该框架为统一移动操作提供了一条可扩展的路径，使导航策略能够与后续操作策略的训练分布保持一致，减少执行失败。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>本文证明，通过物体中心的模仿学习，可以在无深度、无LiDAR、无地图先验的条件下实现类别级别的精确定位，为移动操作机器人的实际部署提供了低成本、高泛化性的解决方案。项目页面：https://rpm-lab-umn.github.io/category-level-last-meter-nav/</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2512.11173v4</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_task_planning/">任务规划</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_learning_category_level_last_m_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_task_planning/">
+          <span class="entry-type">方法</span>
+          <h3>任务规划</h3>
+          <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

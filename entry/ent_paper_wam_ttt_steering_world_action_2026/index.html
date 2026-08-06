@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time</h1>
+      <p class="entry-name-en">WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.06988v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>WAM-TTT 是一个测试时训练框架，旨在通过观看人类原始视频来引导世界动作模型（WAM）适应新任务或用户偏好。其核心贡献在于将人类视频通过自监督视频预测吸收进轻量级自适应记忆，并引入元训练阶段对齐人类与机器人行为，无需机器人动作或人工标注即可实现高效引导。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.06988" target="_blank" rel="noopener">WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>WAM-TTT 由研究团队提出，用于解决机器人基础模型（RFM）在适应新任务变体或用户偏好时的挑战。该框架通过测试时训练，将人类视频作为自适应记忆融入冻结的 WAM 中，而非直接模仿。元训练阶段利用配对的人-机器人数据和键-值记忆重建目标，对齐人类演示与机器人行为。测试时仅需未标注的人类视频即可更新记忆，无需额外机器人演示或任务微调，同时保持基础模型的泛化能力。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li><strong>核心思想</strong>：WAM-TTT 将人类视频视为可吸收的“记忆”，通过自监督视频预测任务将其编码进 WAM 内部的轻量级自适应记忆（key-value memory），而非直接模仿轨迹。</li>
+<li><strong>元训练阶段</strong>：使用配对的人-机器人数据（human-robot pairs）训练记忆模块，通过键-值记忆重建目标（key-value memory reconstruction objective）对齐人类演示与机器人行为，使记忆对控制任务有用。</li>
+<li><strong>测试时适应</strong>：仅需未标注的人类视频（unlabeled human videos）即可更新记忆，预训练的 WAM 保持冻结（frozen），无需机器人动作、人工标注或任务特定微调。</li>
+</ul>
+<h3 id="_4">架构</h3>
+<ul>
+<li><strong>基础模型</strong>：基于预训练的 World Action Model（WAM），其参数在测试时完全冻结。</li>
+<li><strong>自适应记忆</strong>：轻量级键-值记忆模块，通过自监督视频预测吸收人类视频信息，并在元训练阶段对齐机器人行为。</li>
+<li><strong>训练流程</strong>：元训练阶段使用配对数据优化记忆重建；测试时仅用人类视频进行记忆更新，无需额外监督。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li><strong>任务</strong>：涵盖多种操作任务（diverse manipulation tasks），包括新任务变体和泛化场景。</li>
+<li><strong>基线</strong>：对比基于上下文人类视频条件（in-context human-video conditioning）的基线方法。</li>
+<li><strong>评估指标</strong>：任务成功率及泛化能力。</li>
+</ul>
+<h3 id="_6">关键结果</h3>
+<ul>
+<li>WAM-TTT 在所有操作任务和泛化设置中一致优于上下文人类视频条件基线（consistently outperforms in-context human-video conditioning baselines）。</li>
+<li>无需机器人动作或人工标注，即可实现高效且可复用的引导，同时保持基础模型的泛化能力。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<p>WAM-TTT 通过测试时训练和自适应记忆，成功将人类视频转化为机器人引导信号，避免了传统方法对额外机器人演示或微调的依赖，为机器人基础模型的灵活适应提供了新范式。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2607.06988v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12_3_1/">世界模型 / WAM 构建</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wam_ttt_steering_world_action_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_3_1/">
+          <span class="entry-type">方法</span>
+          <h3>世界模型 / WAM 构建</h3>
+          <p>- P12.3.1.1 输入梳理与目标量化 - 整理「世界模型 / WAM 构建」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">架构</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

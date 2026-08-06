@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory</h1>
+      <p class="entry-name-en">HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P082. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>HoloAgent-0 是地平线机器人（Horizon Robotics）与 D-Robotics Robotics 提出的统一具身智能体框架，通过 Embodied AgentOS、3D 空间记忆与具身技能三层耦合，弥合数字 LLM 智能体与物理机器人之间的执行鸿沟。核心贡献在于将物理技能抽象为类型化、可监控的接口，并以持久空间记忆为中心驱动闭环规划，在仿真导航、真实机器人导航与 3D 语义映射上均取得领先结果。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.23565" target="_blank" rel="noopener">arXiv:2606.23565 HoloAgent-0: A Unified Embodied Agent Framework with 3D Spatial Memory</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>数字环境中的 LLM 智能体已收敛于「推理→调用工具→检查反馈→修订」的循环，但物理机器人执行是连续、不确定且受安全约束的，现有机器人中间件与指令条件化策略（VLA 等）只提供零散组件，缺乏以闭环物理执行接口为中心的完整框架。HoloAgent-0 真正改变的是将「技能」从绑定特定动作表示或平台的黑盒策略，提升为可组合、可观测、可验证的类型化接口，使长时程任务（如叠衣服）能分解为导航、感知、放置与操作的协调步骤。</p>
+<p>这一改变的关键在于承认物理技能不像软件 API 那样有清晰输入/输出类型与确定性反馈，因此框架以记忆中心为设计原则，在调度动作前查询房间、视图、物体、位姿与近期技能结果，使规划成为重复的 observe–retrieve–act–monitor 循环而非一次性文本生成。这直接回应了机器人因空间记忆过期而走错房间、抓取已移动物体失败等系统级挑战。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">三层架构</h3>
+<ul>
+<li><strong>Embodied AgentOS</strong>：将自然语言指令转换为可执行技能图，调度机器人资源，监控执行，并根据运行时反馈触发澄清或重新规划。规划循环为 observe–retrieve–act–monitor。</li>
+<li><strong>Memory Layer</strong>：持久空间接地与执行历史，包括几何记忆（LiDAR 后端 FAST-LIVO 类紧耦合或纯视觉后端 GeoFlow-SLAM++，要求 N ≥ 3 个标定相机）与语义记忆（SAM2 掩码 + SigLIP 描述符）。</li>
+<li><strong>Skill Layer</strong>：类型化可监控技能调用，通过 ROS2 命令/状态话题与 AgentOS 连接。</li>
+</ul>
+<h3 id="_4">语义记忆融合</h3>
+<p>对每个 2D 掩码计算三个 SigLIP 描述符——d₀（完整关键帧）、d₁（掩码段）、d₂（最小包围框），按公式 d = Σᵢ₌₀² wᵢ ⊙ dᵢ 进行逐维度加权平均融合。实例关联通过投影现有 3D 实例到当前视图，计算 IoU(mₖ, m̃ⱼ) 匹配，匹配观测合并，无匹配则初始化新实例。</p>
+<h3 id="hmsg">HMSG 分层场景图</h3>
+<p>按楼层、房间、视图、物体四层组织，具有空间包含的分层边与视图连通性/物体可见性的拓扑边。记忆更新触发事件包括：与现有记忆冲突的新观测、移动或移除物体的技能结果、用户显式反馈。更新顺序为：先重定位，再更新局部度量地图，关联语义实例，最后仅刷新 HMSG 受影响子图。</p>
+<h3 id="_5">导航与操作</h3>
+<ul>
+<li><strong>HoloNavi</strong>：分层目标导航，LLM 解析为结构化空间查询，分层 CLIP 特征匹配剪枝搜索空间；在线验证循环将候选视图发送给 VLM 进行 fast-to-slow 推理；主动空间探索按预期信息增益、语义相关性、可穿越性和安全约束对候选视点评分。</li>
+<li><strong>HoloBrain</strong>：VLA 操作后端，报告 object-not-found、物体移动、抓取失败、不可达位姿、碰撞风险等状态。</li>
+<li><strong>HoloMotion</strong>：支持运动跟踪模式（重定向演示）与速度跟踪模式（行走、转弯）。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>类型化技能接口作为统一执行抽象</strong>：将机器人能力暴露为带命令参数、前置条件、目标引用与预期效果的类型化调用，同时通过状态话题返回进度、失败模式、置信度与可恢复性。这是首次将软件工程中的类型化接口概念系统性地应用于物理技能组合，使异构机器人（人形 G1、R1、轮式双臂平台）能共享同一执行协议。</p>
+</li>
+<li>
+<p><strong>记忆中心的设计原则</strong>：持久 3D 空间记忆是规划的主要上下文，而非辅助模块。AgentOS 在调度动作前必须查询记忆，且记忆更新采用「局部刷新」策略——仅更新受影响的场景图子图，避免全局重建。这直接解决了物理世界中空间记忆过期导致的任务失败。</p>
+</li>
+<li>
+<p><strong>跨 embodiment 协调机制</strong>：异构机器人共享记忆记录、类型化技能调用与状态事件，AgentOS 根据能力、位置、可用性和安全状态将任务级技能调用绑定到具体 embodiment。这是对现有单机器人框架的实质性扩展，使多机器人协作成为框架原生能力。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="hm3d-objnav">仿真导航（HM3D-ObjNav）</h3>
+<p>HoloAgent-Nav 在 SR 与 SPL 上均超过已发表最强基线 MSGNav，并优于 FSR-VLN 的 fast 与 slow 变体。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>SR (%) ↑</th>
+<th>SPL (%) ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SG-Nav</td>
+<td>49.6</td>
+<td>25.5</td>
+</tr>
+<tr>
+<td>VLFM</td>
+<td>62.6</td>
+<td>31.0</td>
+</tr>
+<tr>
+<td>DORAEMON</td>
+<td>66.5</td>
+<td>20.6</td>
+</tr>
+<tr>
+<td>WMNav</td>
+<td>72.2</td>
+<td>33.3</td>
+</tr>
+<tr>
+<td>MSGNav</td>
+<td>74.1</td>
+<td>33.4</td>
+</tr>
+<tr>
+<td>FSR-VLN (fast-matching)</td>
+<td>72.1</td>
+<td>36.9</td>
+</tr>
+<tr>
+<td>FSR-VLN (slow-reasoning)</td>
+<td>80.8</td>
+<td>41.0</td>
+</tr>
+<tr>
+<td>HoloAgent-Nav</td>
+<td>82.6</td>
+<td>42.8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">真实机器人导航</h3>
+<p>在物理公寓中遵循 FSR-VLN 基准构建，Top-1 与 Top-5 候选选择下评估目标到达。HoloAgent-Nav 在 1.0 m、2.0 m、3.0 m 阈值下分数相同，表明成功试验已停在严格阈值内。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Top-1@1.0m</th>
+<th>Top-1@2.0m</th>
+<th>Top-1@3.0m</th>
+<th>Top-5@1.0m</th>
+<th>Top-5@2.0m</th>
+<th>Top-5@3.0m</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OK-Robot</td>
+<td>60.92</td>
+<td>60.92</td>
+<td>60.92</td>
+<td>63.22</td>
+<td>63.22</td>
+<td>63.22</td>
+</tr>
+<tr>
+<td>MobilityVLA</td>
+<td>34.48</td>
+<td>59.77</td>
+<td>75.86</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>HOV-SG</td>
+<td>51.72</td>
+<td>57.47</td>
+<td>58.62</td>
+<td>77.00</td>
+<td>81.61</td>
+<td>82.76</td>
+</tr>
+<tr>
+<td>FSR-VLN</td>
+<td>91.95</td>
+<td>91.95</td>
+<td>94.25</td>
+<td>94.25</td>
+<td>96.55</td>
+<td>96.55</td>
+</tr>
+<tr>
+<td>HoloAgent-Nav</td>
+<td>97.70</td>
+<td>97.70</td>
+<td>97.70</td>
+<td>98.90</td>
+<td>98.90</td>
+<td>98.90</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3d-scannet-replica">3D 语义映射（ScanNet 与 Replica）</h3>
+<p>HoloAgent-Memory 在 ScanNet 上 mIoU 达 31.58，超过所有在线方法；在 Replica 上 mIoU 为 29.93，频率加权指标仍有差距。</p>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>方法</th>
+<th>Online</th>
+<th>mIoU ↑</th>
+<th>mAcc ↑</th>
+<th>f-mIoU ↑</th>
+<th>f-Acc ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ScanNet</td>
+<td>Omni-Map</td>
+<td>✓</td>
+<td>25.42</td>
+<td>50.93</td>
+<td>50.86</td>
+<td>57.05</td>
+</tr>
+<tr>
+<td>ScanNet</td>
+<td>HoloAgent-Memory</td>
+<td>✓</td>
+<td>31.58</td>
+<td>45.54</td>
+<td>47.43</td>
+<td>61.58</td>
+</tr>
+<tr>
+<td>Replica</td>
+<td>Omni-Map</td>
+<td>✓</td>
+<td>29.06</td>
+<td>44.54</td>
+<td>64.42</td>
+<td>72.22</td>
+</tr>
+<tr>
+<td>Replica</td>
+<td>HoloAgent-Memory</td>
+<td>✓</td>
+<td>29.93</td>
+<td>43.60</td>
+<td>57.00</td>
+<td>65.39</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">边界与局限</h2>
+<p>作者明确承认操作、全身运动和跨 embodiment 协调使用异构硬件，尚未在统一可重复协议下标准化，因此不报告端到端成功基准，全栈行为仅提供定性执行轨迹。论文未明确真实机器人导航的具体成功率数字（仅说明报告 Top-1 和 Top-5 候选选择下的目标到达成功率）、未提供 3D 语义映射的具体数值结果（除表格外）、未报告训练配置细节。Replica 上频率加权指标的差距表明大面积实体和多视图特征聚合仍需改进。每个新具身引入不同的感知、驱动、安全和恢复约束，人形机器人尤其苛刻，因为移动、操作、平衡和交互必须作为耦合技能栈运行。</p>
+<h2 id="_10">工程启示</h2>
+<p>复现时先核对 ROS2 命令/状态接口的一致性——模拟与硬件必须使用相同接口，技能调度、监控和任务状态更新遵循一致执行协议。最容易踩坑的是视觉后端要求 N ≥ 3 个标定相机，多相机标定质量直接影响语义记忆的实例关联精度。语义记忆融合中三个 SigLIP 描述符的权重 wᵢ 需要针对场景调整，论文未明确默认值。导航评估中 1.0 m、2.0 m、3.0 m 阈值下分数相同，说明成功试验已停在严格阈值内，剩余失败需要更好的恢复而非更宽松的定位——调试时应优先改进失败恢复逻辑而非放宽评估标准。开发期间记录 ROS2 bags、结构化日志、RViz 视图和 Rerun 可视化用于诊断，建议下游团队沿用此实践。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2606.23565</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">FAST</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_holoagent_0_unified_embodied_agent_frame_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FAST</h3>
+          <p>FAST 是 2025 年由 Physical Intelligence、UC Berkeley 和 Stanford…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">三层架构</a></li>
+<li><a href="#_4">语义记忆融合</a></li>
+<li><a href="#hmsg">HMSG 分层场景图</a></li>
+<li><a href="#_5">导航与操作</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#hm3d-objnav">仿真导航（HM3D-ObjNav）</a></li>
+<li><a href="#_8">真实机器人导航</a></li>
+<li><a href="#3d-scannet-replica">3D 语义映射（ScanNet 与 Replica）</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ToddlerBot · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/robot_system/">로봇 시스템</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ToddlerBot</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">로봇 시스템</div>
+      <h1>ToddlerBot</h1>
+      <p class="entry-name-en">ToddlerBot</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span><span class="tag">설계 공학</span><span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="内容整理自调研档案 data/roadmap/research/toddlerbot.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页与论文 arXiv:2502.00893。">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 로드맵">
+      <span class="roadmap-badges-label">0→1 로드맵</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-2-biped/">
+        <span class="roadmap-badge-stage">2단계 · 이족 플랫폼</span>
+        <span class="roadmap-badge-role">핵심</span>
+      </a>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">3단계 · 완전한 휴로봇</span>
+        <span class="roadmap-badge-role">핵심</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>An open-source child-size humanoid robot from Stanford University, 0.56 m tall and 3.4 kg, with 30 active degrees of freedom, a bill of materials of about 6,000 USD, ROBOTIS Dynamixel bus servos and an onboard Jetson Orin NX, designed for reproducible machine-learning loco-manipulation research at home.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://github.com/hshi74/toddlerbot" target="_blank" rel="noopener">hshi74/toddlerbot GitHub Repository</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://toddlerbot.github.io/" target="_blank" rel="noopener">ToddlerBot Project Page</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://arxiv.org/html/2502.00893v2" target="_blank" rel="noopener">ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation (arXiv:2502.00893)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ToddlerBot은 스탠포드 대학교(TML 및 REALab, 저자 Haochen Shi, Weizhuo Wang, Shuran Song, C. Karen Liu)에서 개발한 오픈소스 유아 크기 휴머노이드 로봇으로, 논문은 CoRL 2025(arXiv:2502.00893)에 게재되었습니다. 전체 높이 0.56m, 무게 3.4kg이며, 전신에 30개의 능동 자유도(각 팔 7개, 각 다리 6개, 목 2개, 허리 2개, 말단 조작기 제외)를 갖추고 있습니다. 총 BOM은 약 6,000달러이며, 이 중 약 90%가 모터와 컴퓨터에 사용됩니다(출처: 조사 파일 toddlerbot.md, 이하 동일).</p>
+<p>라이선스 측면에서 코드와 문서는 MIT License를 따릅니다. 설계 파일(Onshape, STL)은 비상업적 CC 라이선스로 상업적 사용이 제한됩니다. 프로젝트 설계 목표는 "집에서 재현 가능"입니다: 3D 프린팅 구조 부품, 기성 서보 모터, pip 한 번 설치로 가능한 순수 Python 소프트웨어 스택, 그리고 논문 수준의 재현 검증이 포함됩니다. 하드웨어 경험이 없는 컴퓨터공학 학생이 3일 만에(프린팅 포함) 독립적으로 전체 조립을 완료했습니다. GitHub 저장소 <code>hshi74/toddlerbot</code>은 약 718 stars / 88 forks(2026-07-01 스냅샷, 매우 활발)이며, Discord 및 WeChat 커뮤니티가 운영 중입니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">주요 사양</h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>수치</th>
+<th>출처</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>키 / 무게</td>
+<td>0.56m / 3.4kg(3,484g)</td>
+<td>논문 arXiv:2502.00893</td>
+</tr>
+<tr>
+<td>능동 자유도</td>
+<td>30(팔 7×2, 다리 6×2, 목 2, 허리 2)</td>
+<td>프로젝트 홈페이지 / 논문</td>
+</tr>
+<tr>
+<td>하드웨어 비용(BOM)</td>
+<td>약 $6,000(90%는 모터 및 컴퓨터)</td>
+<td>논문</td>
+</tr>
+<tr>
+<td>메인 컨트롤러</td>
+<td>NVIDIA Jetson Orin NX 16GB</td>
+<td>논문</td>
+</tr>
+<tr>
+<td>센서</td>
+<td>듀얼 피쉬아이 카메라, 흉부 IMU, 스피커, 듀얼 마이크</td>
+<td>프로젝트 홈페이지</td>
+</tr>
+<tr>
+<td>배터리 지속 시간</td>
+<td>보행 RL 정책 기준 약 19분(과열로 인한 성능 저하까지)</td>
+<td>프로젝트 홈페이지</td>
+</tr>
+<tr>
+<td>초보자 친화도</td>
+<td>4.5 / 5(조사 파일 평가)</td>
+<td>조사 파일</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">액추에이터 및 기계 설계</h3>
+<ul>
+<li>ROBOTIS Dynamixel 버스 서보 모터 사용, 총 5가지 모델을 관절 공간/토크/비용에 따라 선정(구체적인 모델 목록은 논문 부록 VIII-E에 있으며, 파일에는 개별 나열되지 않음).</li>
+<li>통신은 5V TTL 직렬 프로토콜, 2Mbps 전송 속도, 30개 모터 전체 상태 피드백 50Hz, 기성 통신 보드 사용 가능.</li>
+<li>구동 설계: 평기어(팔 축 정렬), 커플링 베벨 기어(허리 yaw/roll 두 모터 커플링), 평행 링크(무릎, 목 pitch, 관성 감소).</li>
+<li>말단 조작기는 2분 내로 빠르게 교체 가능: 평행 그리퍼와 유연한 손바닥; 리더 암(leader arms) 그립에는 FSR 힘 감지 저항 내장.</li>
+<li>손상 수리 비용 낮음: 약 7회 낙하 견딤, 수리는 21분 프린팅 + 14분 조립으로 완료.</li>
+</ul>
+<h3 id="_5">컴퓨팅 플랫폼 및 소프트웨어 스택</h3>
+<ul>
+<li>메인 컨트롤러 Jetson Orin NX 16GB에서 실시간 추론: 300M 파라미터 확산 정책 약 100ms 지연; 2.0 버전은 Foundation Stereo를 사용하여 10Hz 스테레오 깊이 추정.</li>
+<li>순수 Python, pip 한 번 설치(&gt;= 3.10), 저수준 제어, RL 훈련(MuJoCo / MJX, PPO), 확산 정책 훈련, 실제 로봇 배포 코드 모두 포함; ROS 의존성 없음.</li>
+<li>디지털 트윈: 3D 프린팅 영점 교정 지그(1분 내 완료) + 전이 가능한 모터 시스템 식별(동일 모델 모터는 1회 sysID만 수행), 제로샷 sim-to-real 지원; 정책은 두 인스턴스 간 제로샷 전이 가능, 양팔 조작 90% 성공률 재현.</li>
+<li>원격 조작: 동형 리더 암 + 핸드헬드(Steam Deck / ROG Ally X); 2.0은 Meta Quest 2 VR 원격 조작 지원.</li>
+<li>버전 연혁: 2025-08-25 ToddlerBot 2.0 발표; 2026-01 다중 스킬 전신 운동 시스템(깊이 맵 스킬 분류기 + 다중 정책 전환) 발표.</li>
+</ul>
+<h3 id="_6">적합한 사용자</h3>
+<ul>
+<li>적합: 전신 loco-manipulation, 모방/강화 학습 데이터 수집을 원하는 대학원생 및 고급 애호가; 기초가 없지만 손재주가 있는 사람도 매뉴얼 따라 완성 가능; Python 스택은 ML 배경 초보자에게 매우 친숙; 3.4kg 소형 체형으로 집에서 안전하게 조작 가능.</li>
+<li>진입 장벽: BOM $6,000으로 저렴하지 않음; 설계 파일은 비상업적 라이선스; Dynamixel 서보 모터 성능 한계(속도/토크/통신)가 고속 동작을 제한(논문 자체 언급).</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_system_upkie/">Upkie Wheeled Biped Robot</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_dynamixel_xm430_w210_t/">ROBOTIS DYNAMIXEL XM430-W210-T</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_gait_planning/">보행 패턴 계획</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">파생</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_toddlerbot_open_source_ml_comp_2025/">ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo 물리 엔진</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_nvidia_jetson_agx_orin_2024/">NVIDIA Jetson AGX Orin</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">선행 조건</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_gazebo/">Gazebo</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_poppy_humanoid/">Poppy Humanoid</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_thormang3/">THORMANG3</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">선행 조건</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_robot_system_bruce/">BRUCE (Bipedal Robot Unit with Compliance Enhanced)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">demonstrates_on</span>
+              
+            </li>
+            
+            <li>
+              <a href="/ko/entry/ent_paper_toddlerbot_open_source_ml_comp_2025/">ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">develops</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_robot_system_toddlerbot"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_dynamixel_xm430_w210_t/">
+          <span class="entry-type">부품</span>
+          <h3>ROBOTIS DYNAMIXEL XM430-W210-T</h3>
+          <p>ROBOTIS X 시리즈의 중형 스마트 서보 액추에이터로, TTL 통신, 3.0 N·m 정지 토크, 절대형 인코더 피드백 및 다양한 제어 모드를 갖추어 로봇 관절에 적합함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">논문</span>
+          <h3>로봇이 로봇을 훈련시킨다: 휴머노이드를 위한 자동 실제 세계 정책 적응 및 학습</h3>
+          <p>본 논문은 로봇 팔 교사가 순응적 접촉, 커리큘럼 스케줄링, 섭동, 실패 감지 및 자동 리셋을 통해 휴머노이드 학생을 지지하고 안내하여 최소한의 인간 개입으로 효율적인 실제 세계…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_toddlerbot_open_source_ml_comp_2025/">
+          <span class="entry-type">논문</span>
+          <h3>ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation</h3>
+          <p>ToddlerBot…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_nvidia_jetson_agx_orin_2024/">
+          <span class="entry-type">부품</span>
+          <h3>NVIDIA Jetson AGX Orin</h3>
+          <p>휨로봇 VLA 추론 및 인식에 널리 사용되는 온보드 GPU/ARM SoC.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_upkie/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Upkie Wheeled Biped Robot</h3>
+          <p>A fully open-source wheeled biped robot built from about 3,000 USD of off-the-shelf components plus…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_bruce/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>BRUCE (Bipedal Robot Unit with Compliance Enhanced)</h3>
+          <p>A 70 cm, 4.8 kg child-size bipedal humanoid platform co-developed by Westwood Robotics and UCLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_gazebo/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>Gazebo</h3>
+          <p>물리 엔진·센서 모델·장면 작성을 제공하는 오픈소스 3D 로보틱스 시뮬레이터로, 알고리즘 개발·테스트에 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_thormang3/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>THORMANG3</h3>
+          <p>A 137.5 cm, 42 kg full-size humanoid robot from ROBOTIS descending from the DARPA Robotics Challenge…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_poppy_humanoid/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Poppy Humanoid</h3>
+          <p>An open-source 3D-printed humanoid robot created by Inria&#39;s Flowers team, about 84 cm and 3.5 kg…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_gait_planning/">
+          <span class="entry-type">방법</span>
+          <h3>보행 패턴 계획</h3>
+          <p>족욕 로봇의 안정적이고 효율적인 이동을 위해 보행 순서·시기·상태 전이를 생성하는 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_mujoco_physics_engine_2022/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>MuJoCo 물리 엔진</h3>
+          <p>풍부한 접촉 역학을 가진 고충실도 물리 엔진, 휨로봇 제어 연구에 널리 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">주요 사양</a></li>
+<li><a href="#_4">액추에이터 및 기계 설계</a></li>
+<li><a href="#_5">컴퓨팅 플랫폼 및 소프트웨어 스택</a></li>
+<li><a href="#_6">적합한 사용자</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

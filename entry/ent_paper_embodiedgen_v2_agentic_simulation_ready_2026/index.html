@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EmbodiedGen V2: An Agentic, Simulation-Ready 3D World Engine for Embodied AI · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EmbodiedGen V2: An Agentic, Simulation-Ready 3D World Engine for Embodied AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>EmbodiedGen V2: An Agentic, Simulation-Ready 3D World Engine for Embodied AI</h1>
+      <p class="entry-name-en">EmbodiedGen V2: An Agentic, Simulation-Ready 3D World Engine for Embodied AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P117. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>EmbodiedGen V2 是地平线机器人与 WuwenAI 联合提出的具身智能仿真就绪 3D 世界引擎，将资产生成、物理属性恢复、可操作标注、任务驱动布局与有状态编辑统一为闭环管线。核心贡献在于以 URDF 为统一中间表示，打通从单图/文本到多模拟器可执行任务环境的全链路，并通过生成-验证-重试机制将人工介入降至最低。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.07459" target="_blank" rel="noopener">arXiv:2607.07459 EmbodiedGen V2: An Agentic, Simulation-Ready 3D World Engine for Embodied AI</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>生成式 3D 模型此前解决的是"看起来对"，而具身策略学习要求"用起来对"——物体必须有碰撞体、质量、摩擦系数和可抓取部位，布局必须满足机器人可达性与任务语义，资产必须能在不同模拟器间无痛迁移。EmbodiedGen V2 真正改变的是将模拟兼容性从生成后的附加导出步骤，前置为贯穿候选筛选、3D 生成、物理恢复全过程的硬约束，使"仿真就绪"成为生成器的内生属性而非事后补救。</p>
+<p>相比 V1 的全景反投影单网格背景，V2 暴露了真实房间拓扑、可穿越开口和独立可寻址家具实体，这直接解锁了长时程导航与移动操作场景。更关键的是，它把"世界生成"从一次性提示-输出范式，升级为带持久状态（Scene Graph + 资产 + 位姿 + 编辑历史）的可交互编辑循环，让 LLM 智能体能够对已生成世界做有界、可审计的局部修改，而非每次推倒重来。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="sim-ready">统一 sim-ready 表示（两层级）</h3>
+<ul>
+<li><strong>对象层级</strong>：捆绑纹理化视觉几何、碰撞几何（CoACD 凸分解）、物理参数（VLM 推断尺度/质量/摩擦）与可操作标注（部件分割 + 语义 + 验证过的抓取）。</li>
+<li><strong>场景层级</strong>：类型化 Scene Graph 指定实体、任务角色（ROBOT/BACKGROUND/CONTEXT/MANIPULATED_OBJS/DISTRACTOR_OBJS）及空间关系（ON/INSIDE/FLOOR/IN），落地为物理稳定的 6-DoF 位姿。</li>
+</ul>
+<h3 id="_3">资产生成五阶段</h3>
+<ol>
+<li><strong>输入准备</strong>：文本经 SD3.5/Kolors 生成候选图；图像经 Rembg/SAM/RMBG 分割前景。</li>
+<li><strong>3D 生成</strong>：TRELLIS/SAM3D/Hunyuan3D 同时产出 3D 高斯与网格。</li>
+<li><strong>几何精修</strong>：拓扑修复 + 简化，多视角反投影将高斯外观烘焙为显式纹理。</li>
+<li><strong>物理恢复</strong>：VLM 从多视角渲染推断真实尺度、质量与摩擦系数。</li>
+<li><strong>打包导出</strong>：统一中间表示 URDF，自动转换 XML（MuJoCo/Genesis）与 USD（Isaac Sim）。</li>
+</ol>
+<h3 id="_4">分层质量门控</h3>
+<ul>
+<li>输入阶段：VLM 验证分割语义与几何完整性。</li>
+<li>3D 阶段：多视角渲染评估，拒绝截断/重复主体，失败自动换随机种子重试。</li>
+<li>末端：美学评分模型过滤低质量样本，结果以结构化标签写入资产文件。</li>
+</ul>
+<h3 id="_5">任务驱动世界生成（三阶段）</h3>
+<ol>
+<li><strong>Scene Graph 生成</strong>：LLM 将任务分解为五类语义角色，组织为浅层有根图（单父结构减少放置歧义）。</li>
+<li><strong>资产生成</strong>：在线生成或离线数据库检索。</li>
+<li><strong>BFS 空间放置</strong>：父先子后，按足迹排序兄弟节点；支撑谓词 + IoU 碰撞项约束；被操作物体限制在机器人前向可达区；SAPIEN 重力沉降解决残余穿透。</li>
+</ol>
+<h3 id="_6">大规模场景生成（三阶段）</h3>
+<ul>
+<li>输出三元组 S = (R, F, C)：房间拓扑图（带门/窗连接）、逐房间可寻址家具集、全局一致坐标系。</li>
+<li>任务条件化路由：VLM 输出房间范围与复杂度 ℓ ∈ {Minimalist, Simple, Medium, Detail}。</li>
+<li>分层求解：骨架级家具 → 中尺度物体 → 桌面杂乱，程序化生成器面向模拟重塑（抑制纯装饰几何）。</li>
+<li>模拟器无关规范化：逐实例分解 + 批量 CoACD + 质心对齐世界原点。</li>
+</ul>
+<h3 id="vibe-coding">Vibe Coding 有状态编辑</h3>
+<ul>
+<li>三组件：LLM 智能体（意图解析/技能选择）、自描述技能套件（暴露输入/输出/失败模式）、运行时 Harness（技能注册表/共享世界状态/编辑日志）。</li>
+<li>世界状态 S_t = (G_t, A_t, P_t, H_t)，每次更新保持几何物理可行性并记录审计轨迹。</li>
+<li>空间计算技能将场景暴露为 2D 平面图，复用碰撞-IoU 项解析 ON/BESIDE/IN 关系。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>生成-验证-重试闭环</strong>：将质量检查嵌入每个生成阶段而非末端一次性过滤，使每个有效资产平均仅需 1.35 次生成尝试。这不是简单的质量控制，而是将"失败-诊断-重试"作为一等公民设计进管线，大幅降低端到端成本。</p>
+</li>
+<li>
+<p><strong>URDF 作为统一中间表示</strong>：利用 URDF 原生支持视觉/碰撞网格、惯性参数与元数据的结构化打包，将对象生成与模拟器适配彻底解耦。同一资产在六个模拟器（Genesis、Isaac Gym、Isaac Sim、MuJoCo、PyBullet、SAPIEN3）中无需手动适配即可加载执行，这是工程上最实用的创新。</p>
+</li>
+<li>
+<p><strong>有状态 Vibe Coding 编辑</strong>：区别于 Chat-Edit-3D 的 2D 机制或每次重新生成，V2 将离线放置求解器变为在线技能核心，每次编辑提交有界增量 ΔS 到 (G, A, P, H)，保持跨模拟器一致性。这让 LLM 智能体首次能对 sim-ready 世界做可审计的局部手术而非整体移植。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>完整管线</th>
+<th>无质量检查器</th>
+<th>无网格修复</th>
+<th>无凸分解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人类接受率</td>
+<td>96.5%</td>
+<td>91.0%</td>
+<td>95.5%</td>
+<td>94.5%</td>
+</tr>
+<tr>
+<td>碰撞成功率</td>
+<td>98.6%</td>
+<td>98.1%</td>
+<td>98.3%</td>
+<td>96.5%</td>
+</tr>
+<tr>
+<td>时间（分钟）</td>
+<td>2.6 ± 0.4</td>
+<td>2.2 ± 0.4</td>
+<td>21.3 ± 22.8</td>
+<td>2.3 ± 0.3</td>
+</tr>
+<tr>
+<td>视觉网格（MB）</td>
+<td>1.43 ± 0.63</td>
+<td>1.44 ± 0.63</td>
+<td>51.63 ± 25.87</td>
+<td>1.45 ± 0.64</td>
+</tr>
+<tr>
+<td>碰撞网格（MB）</td>
+<td>0.29 ± 0.21</td>
+<td>0.30 ± 0.22</td>
+<td>0.31 ± 0.26</td>
+<td>1.45 ± 0.64</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>可供性管线</th>
+<th>分割通过率</th>
+<th>语义有效性</th>
+<th>抓取覆盖率</th>
+<th>可供性通过率</th>
+<th>时间（秒）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基线</td>
+<td>47.0%</td>
+<td>98.9%</td>
+<td>66.7%</td>
+<td>31.0%</td>
+<td>109 ± 45</td>
+</tr>
+<tr>
+<td>+后处理</td>
+<td>56.5%</td>
+<td>97.3%</td>
+<td>74.6%</td>
+<td>41.0%</td>
+<td>105 ± 41</td>
+</tr>
+<tr>
+<td>+后处理+VLM合并</td>
+<td>69.5%</td>
+<td>99.3%</td>
+<td>72.5%</td>
+<td>50.0%</td>
+<td>94 ± 30</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>下游验证</th>
+<th>指标</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>在线 RL（EmbodiedGen 场景）</td>
+<td>仿真成功率</td>
+<td>9.7% → 79.8%</td>
+</tr>
+<tr>
+<td>场景缩放 N=1→50</td>
+<td>OOD 成功率</td>
+<td>53.2% → 77.9%</td>
+</tr>
+<tr>
+<td>手工场景训练→EmbodiedGen 测试</td>
+<td>成功率</td>
+<td>96.7% → 36.0%</td>
+</tr>
+<tr>
+<td>真实机器人迁移（240 次试验）</td>
+<td>任务成功率</td>
+<td>21.7% → 75.0%</td>
+</tr>
+<tr>
+<td>真实机器人迁移</td>
+<td>动力学失败率</td>
+<td>66.7% → 18.3%</td>
+</tr>
+</tbody>
+</table>
+<p>关键发现：网格修复移除后运行时间暴增约 8 倍（由表内 2.6→21.3 计算），视觉网格从 1.43 MB 增至 51.63 MB，证明原始生成输出的拓扑缺陷是管线瓶颈。凸分解移除后碰撞网格从 0.29 MB 增至 1.45 MB（由表内数值计算），碰撞成功率下降 2.1 个百分点（由表内 98.6%→96.5% 计算），作者指出此类接触错误会在长时程操作中累积。手工场景训练在 EmbodiedGen 场景上仅 36.0% 成功率，反向验证了生成场景的分布多样性。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>任务驱动世界生成将输出限制为刚体，未集成可变形体（尽管资产生成管线已展示服装软体模拟能力）。</li>
+<li>大规模场景生成中 LLM 仅做离散语义决策，几何可行性完全依赖约束求解器，作者明确这是对 LLM 布局工作的补充而非替代。</li>
+<li>任务世界采用"绿幕式分解"：背景 + 最小任务相关资产集，而非联合生成每个世界细节，这是有意的抽象。</li>
+<li>论文未明确讨论失败案例分析、极端场景鲁棒性，或与真实世界物理保真度的定量对比。</li>
+<li>最终环境接受率 83.3%，剩余失败源于对象尺度不匹配、局部几何缺陷或初始放置不完美，通常需重采样或轻微手动调整。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>先核对网格修复</strong>：这是管线最大时间黑洞（移除后 21.3 ± 22.8 分钟/资产），复现时优先验证拓扑修复与简化步骤的鲁棒性，否则下游 UV 展开、纹理烘焙和凸分解都会被拖垮。</li>
+<li><strong>质量检查器不可省</strong>：移除后人类接受率下降 5.5 个百分点（由表内 96.5%→91.0% 计算），但每资产仅节省 0.4 分钟，性价比极低。它针对的是感知缺陷而非几何属性，是保证资产语义完整性的关键防线。</li>
+<li><strong>凸分解是碰撞成功率的底线</strong>：虽然绝对下降仅 2.1 个百分点（由表内 98.6%→96.5% 计算），但作者明确指出此类接触错误会在长时程操作中累积。对抓取、堆叠等接触密集任务，务必保留 CoACD 步骤。</li>
+<li><strong>URDF 中间表示是跨模拟器迁移的捷径</strong>：若你的团队需要同时支持 MuJoCo 与 Isaac Sim，直接采用 URDF 作为统一格式可省去大量格式转换适配工作。</li>
+<li><strong>最容易踩坑的是空间放置</strong>：83.3% 的接受率意味着约 1/6 的世界需要重采样或手动修正，主要问题集中在对象尺度不匹配与初始放置不完美。建议在下游训练前先跑一轮 SAPIEN 重力沉降验证，并保留重试机制。</li>
+<li><strong>场景分布缩放收益显著</strong>：从 N=1 到 N=50 个生成场景，OOD 成功率提升 24.7 个百分点（由表内 53.2%→77.9% 计算），ID-OOD 差距从 41.1 个百分点缩至 2.6 个百分点。若你的策略在分布外表现差，优先扩展生成场景数量而非手工调参。</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.07459</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_embodiedgen_v2_agentic_simulation_ready_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#sim-ready">统一 sim-ready 表示（两层级）</a></li>
+<li><a href="#_3">资产生成五阶段</a></li>
+<li><a href="#_4">分层质量门控</a></li>
+<li><a href="#_5">任务驱动世界生成（三阶段）</a></li>
+<li><a href="#_6">大规模场景生成（三阶段）</a></li>
+<li><a href="#vibe-coding">Vibe Coding 有状态编辑</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a></li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control</h1>
+      <p class="entry-name-en">Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Recent advances in humanoid robotics and reinforcement learning have enabled the acquisition of highly expressive whole-body motion policies. However, most robotic performances remain based on pre-scripted sequences or externally triggered behaviors, limiting autonomy and responsiveness to dynamic environments. In this work, we introduce a novel multi-modal orchestration framework for semantic.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14182" target="_blank" rel="noopener">arXiv:2607.14182 Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 의미론적 오디오 기반 전신 제어 파이프라인을 제안하여, Unitree G1 휴머노이드 로봇이 실행 중에 연속 오디오 스트림에서 자율적으로 운동 스킬을 결정하고 전환할 수 있게 한다. 시스템은 오디오 라우팅(음악/음성/무관), 음악 지문 검색 및 음성 의도 접지, 스킬 라이브러리 실행의 3단계로 구성되며, MuJoCo 시뮬레이션과 물리 로봇에서 84.8%의 블록 수준 정확도와 실시간 정책 추종 능력을 검증했다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 휴머노이드 운동 정책은 높은 표현력을 갖추었지만, 실행 로직은 여전히 "사전 프로그래밍된 시계열" 또는 "외부 명시적 트리거" 수준에 머물러 있다—로봇은 "어떻게 할지"는 알지만 "언제 할지"와 "왜 하는지"는 모른다. 본 논문이 진정으로 바꾼 것은 행동 선택을 오프라인 편성이나 인간 개입에서 해방시켜, 로봇이 오디오 스트림(음악 구조, 음성 의도)을 인식하여 온라인으로 행동 전환 시점을 추론하게 함으로써 "운동 제어 문제"를 "인지-결정-제어 폐루프 문제"로 승격시킨 것이다.</p>
+<p>이 전환의 실질적 의미는 언어나 음악을 일회성 명령이 아닌 지속적으로 흐르는 맥락 신호로 취급한다는 점이다. 로봇은 현재 오디오가 어떤 시나리오에 속하는지, 어떤 음악과 매칭되는지, 어떤 스킬에 대응하는지, 언제 전환해야 하는지를 스스로 판단해야 한다—이는 단순히 동작 품질을 높이는 것보다 "자율 행동"의 본질에 더 가깝다. 저자들은 기존 강화 학습/모방 학습 프레임워크를 뒤집지 않고, 그 위에 인지 라우팅 계층을 추가하여 하위 운동 정책을 재사용 가능하게 만들고 결정 로직을 해석 가능하고 디버깅 가능하게 만든다.</p>
+<h2 id="_3">방법 분해</h2>
+<p>시스템은 연속 오디오 스트림을 고정 5초 블록으로 분할하고, 각 블록은 3단계 파이프라인을 거친다:</p>
+<h3 id="1-music-speech-skip">1. 오디오 라우팅 (Music / Speech / Skip)</h3>
+<ul>
+<li>Audio Spectrogram Transformer (AST) (527 클래스 AudioSet 온톨로지 기반)를 사용하여 사후 확률을 출력하고, 장면 수준 점수로 집계:</li>
+<li><code>p_music</code> = 음악 관련 라벨 그룹 확률의 합</li>
+<li><code>p_speech</code> = 음성 관련 라벨 그룹 확률의 합</li>
+<li>동시에 Silero VAD를 16 kHz 파형에서 프레임별 음성 확률을 계산하여 음성 프레임 비율 <code>v_frac ∈ [0,1]</code>을 얻는다</li>
+<li>결정 규칙:</li>
+<li><code>v_frac ≥ v_frac^min</code>이고 <code>p_speech − p_music ≥ ε_sp</code>이면 → <strong>Speech</strong></li>
+<li><code>p_music</code>이 지배적이고 <code>v_frac</code>이 임계값 미만이면 → <strong>Music</strong></li>
+<li>그 외 → <strong>Skip</strong></li>
+</ul>
+<h3 id="2">2. 음악 검색 및 시간 스킬 접지</h3>
+<ul>
+<li>Wang constellation 알고리즘(오디오 지문) 사용: 참조 곡의 스펙트럼 피크 쌍과 상대 시간 오프셋을 해시 인덱싱; 쿼리 블록은 후보 쌍을 검색하고 정렬된 시간 오프셋 히스토그램에서 지배적 피크를 찾아 매칭</li>
+<li>튜플 <code>(s, c, v, τ)</code> 반환: 후보 곡 ID, 매칭 신뢰도 <code>c ∈ [0,1]</code>, 정렬된 랜드마크 투표 수 <code>v</code>, 참조 곡 내 블록의 추정 오프셋 <code>τ</code></li>
+<li>수용 조건: 신뢰도와 투표 수가 모두 최소 임계값 초과; 그렇지 않으면 CLAP 모델 임베딩 공간의 코사인 검색으로 폴백</li>
+<li>시간 스킬 규칙 <code>r = (s*, [t_start, t_end), π)</code>: 파서는 <code>s = s*</code>이고 <code>τ ∈ [t_start, t_end)</code>를 만족하는 첫 번째 스킬 식별자 <code>π</code>를 반환; 시간 규칙이 없으면 곡 수준 매핑 <code>s ↦ π</code>로 폴백</li>
+</ul>
+<h3 id="3-">3. 음성-동작 접지</h3>
+<ul>
+<li>OpenAI <code>gpt-4o-mini-transcribe</code> 엔드포인트를 사용한 스트리밍 전사</li>
+<li>전사 텍스트를 스킬 라이브러리와 의미론적으로 매칭하여 top-1 운동 정책 검색</li>
+<li>매칭되지 않은 전사는 대화 LLM(<code>gpt-4o-mini</code>)에 전달되고, 응답은 신경 TTS로 합성되어 로봇 스피커를 통해 재생</li>
+<li>추정된 음성 지속 시간도 로봇에 전송되어 매칭된 길이의 고정 제스처 정책을 트리거</li>
+</ul>
+<h3 id="4">4. 명령 인터페이스 및 스킬 실행</h3>
+<ul>
+<li>RoboJudo의 통합 TCP 소켓 인터페이스를 통해 통신</li>
+<li>스킬 라이브러리: Walk 정책, Stand 정책(안전 전환), BeyondMimic으로 훈련된 모방 학습 전신 정책(실시간 추론용 ONNX로 내보냄)</li>
+<li>새 스킬 요청 시 선택적으로 Stand 정책으로 로봇을 예열한 후 목표 운동을 활성화</li>
+<li>제어 루프는 MuJoCo 시뮬레이션의 Unitree G1에서 실행; 물리 플랫폼 배포 시 환경 인터페이스만 교체하고 편성 로직은 변경하지 않음</li>
+</ul>
+<h2 id="_4">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>인지 기반 행동 선택 메커니즘</strong>: 오디오 스트림을 지속적 맥락 신호로 사용하여 이산 텍스트 명령이나 사전 프로그래밍된 트리거를 대체. 로봇은 더 이상 인간 명령을 기다리지 않고 음악 구조(인트로/벌스/코러스/아웃트로)와 음성 의도에서 "언제 무엇을 할지"를 자율적으로 추론—이는 "실행기"에서 "결정자"로의 핵심 도약.</p>
+</li>
+<li>
+<p><strong>계층적 오디오 라우팅 + 시간 스킬 접지</strong>: 거친 장면 분류(음악/음성)와 세밀한 음악 지문 매칭(곡 정체성 + 시간 오프셋)을 결합하여, 같은 곡의 다른 섹션이 다른 전신 행동을 구동할 수 있게 하며 하위 컨트롤러 재훈련이 필요 없다. 이러한 "섹션 수준 스킬 매핑"은 곡 전체 수준 매핑보다 표현력이 뛰어나며 완전히 기존 운동 학습 기술에 기반한다.</p>
+</li>
+<li>
+<p><strong>폴백 메커니즘 및 쿨다운 억제</strong>: 지문 매칭 실패 시 CLAP 임베딩 공간 검색으로 폴백, 음성 측은 VAD 지배성 판단으로 오트리거 방지, 쿨다운 메커니즘은 짧은 시간 창 내 동일 스킬 반복 발사를 억제. 이러한 엔지니어링 세부 사항은 이상화된 실험 조건이 아닌 실제 환경에서 시스템의 견고성을 보장한다.</p>
+</li>
+</ol>
+<h2 id="_5">실험 및 결과</h2>
+<table>
+<thead>
+<tr>
+<th>실험 항목</th>
+<th>설정</th>
+<th>핵심 결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>블록 수준 검색 정확도</td>
+<td>574개 블록(0.5/1.0/1.5/2.0초 오프셋 포함)</td>
+<td><strong>84.8%</strong></td>
+</tr>
+<tr>
+<td>시뮬레이션 안무 M30</td>
+<td>음악 30초마다 전환, 4곡</td>
+<td>전환 안정적, 안무가 명령 시퀀스를 밀접하게 추종, 마지막 단계에서만 약간 연장</td>
+</tr>
+<tr>
+<td>시뮬레이션 안무 M20</td>
+<td>음악 20초마다 전환, 4곡</td>
+<td>전환 불안정, 정렬 오류, 때때로 locomotion으로 폴백, 심각할 때 질량 중심이 지지 다각형을 벗어나 안전 메커니즘 트리거</td>
+</tr>
+<tr>
+<td>실제 세계 검증</td>
+<td>물리 Unitree G1</td>
+<td>블록 수준 검색이 실시간 정책 선택을 구동하기에 충분히 안정적; 종단 간 지연이 시뮬레이션보다 높지만 명령 시퀀스 추종 성공</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 결론</strong>: 30초 음악 섹션은 현재 전환 메커니즘의 적절한 작업 지점; 검색 품질이 주요 병목이 아니며, 주요 제한 요소는 서 있는 예열 단계에서 도입되는 전환 지연. M20 시나리오의 실패는 전환 메커니즘의 시간적 제약을 드러낸다—음악 전환이 전환 완료 시간보다 빠르면 시스템이 정렬 오류를 누적하고 심지어 불안정해진다.</p>
+<h2 id="_6">경계 및 한계</h2>
+<ul>
+<li>고정 5초 분할은 고유 지연을 도입하여 운동과 음악의 시간 정렬 정밀도에 영향; 저자들은 적응형 분할을 구현하지 않음</li>
+<li>전환 지연(서 있는 예열)이 주요 제한 요소이며 검색 품질이 아님; M20 시나리오에서 시스템이 빠른 전환을 따라가지 못함</li>
+<li>확장성은 4곡으로만 검증되었으며 대규모 다중 사용자/다중 시나리오 일반화 테스트는 수행되지 않음</li>
+<li>다른 방법(OmniH2O, FRoM-W1 등)과 동일 벤치마크에서 정량적 비교가 수행되지 않음</li>
+<li>논문에서 명시하지 않음: 구체적 계산 하드웨어 사양, 훈련 하이퍼파라미터, 데이터 양, 훈련 시간, 추론 빈도</li>
+</ul>
+<h2 id="_7">엔지니어링 시사점</h2>
+<ul>
+<li><strong>전환 메커니즘 먼저 확인</strong>: 재현하려면 첫 번째 우선순위는 Stand 예열 단계의 소요 시간 측정—이것이 M20 시나리오 실패의 근본 원인. M30 시나리오를 먼저 통과시킨 후 음악 섹션을 점진적으로 줄여 하드웨어의 전환 한계를 찾는 것을 권장.</li>
+<li><strong>오디오 라우팅 임계값이 핵심 튜닝 포인트</strong>: <code>v_frac^min</code>과 <code>ε_sp</code>는 음성/음악 오분류율을 직접 결정. 시끄러운 환경이나 배경 음악이 강한 음성 시나리오에서는 이 두 임계값을 재보정해야 하며, 그렇지 않으면 음성 명령이 Music 또는 Skip으로 라우팅될 수 있음.</li>
+<li><strong>지문 매칭 수용 임계값</strong>: <code>c</code>와 <code>v</code>의 최소 임계값은 CLAP 검색으로의 폴백 빈도를 결정. 임계값이 너무 엄격하면 빈번한 폴백(지연 증가), 너무 느슨하면 오매칭 가능. 대상 곡 라이브러리에서 먼저 오프라인 보정을 권장.</li>
+<li><strong>스킬 라이브러리 설계</strong>: Walk와 Stand는 안전망이지만 전환 지연의 병목은 Stand 예열. 다운스트림 시나리오에서 빠른 전환이 필요하면 더 빠른 전환 정책을 훈련하거나 항상 Stand를 거치지 않고 스킬 간 보간을 직접 지원하는 것을 고려.</li>
+<li><strong>가장 함정에 빠지기 쉬운 부분</strong>: 시뮬레이션에서 물리로의 이전이 "환경 인터페이스만 교체"처럼 보이지만 실제 종단 간 지연은 크게 증가(외부 API 호출, 하드웨어 통신 오버헤드). 음성 측은 OpenAI 엔드포인트에 의존하므로 네트워크 지연이 통제 불가능하며, 물리 배포 전에 지연 예산 평가를 먼저 수행할 것을 권장.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_system_unitree_g1/">Unitree G1 휴머노이드 로봇</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_semantic_audio_driven_understanding_dyna_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Unitree G1 휴머노이드 로봇</h3>
+          <p>Unitree Robotics가 개발한 컴팩트한 양산형 휴머노이드 로봇으로, 23~43자유도, 35kg 몸체, 2m/s 보행 속도를 갖추며 연구, 교육 및 경량 산업 작업을 위해…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#1-music-speech-skip">1. 오디오 라우팅 (Music / Speech / Skip)</a></li>
+<li><a href="#2">2. 음악 검색 및 시간 스킬 접지</a></li>
+<li><a href="#3-">3. 음성-동작 접지</a></li>
+<li><a href="#4">4. 명령 인터페이스 및 스킬 실행</a></li>
+</ul>
+</li>
+<li><a href="#_4">핵심 혁신</a></li>
+<li><a href="#_5">실험 및 결과</a></li>
+<li><a href="#_6">경계 및 한계</a></li>
+<li><a href="#_7">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

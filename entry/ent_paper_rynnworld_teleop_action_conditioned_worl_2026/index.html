@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation</h1>
+      <p class="entry-name-en">RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RynnWorld-Teleop 是阿里巴巴 DAMO 团队提出的数字遥操作框架，用动作条件化世界模型替代物理机器人，将操作员手部姿态流实时合成为机器人第一人称视频。核心贡献在于首次同时满足机器人中心、动作接地、实时三大要求，并通过两阶段训练与自回归蒸馏实现 40 fps 的交互式生成，且生成数据可直接用于策略训练。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.06558" target="_blank" rel="noopener">arXiv:2607.06558 RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>物理遥操作的数据吞吐量被“操作员小时数 × 硬件可用性”锁死，手动环境重置与真实物体后勤更是让长尾交互分布遥不可及。现有两条路线都不够：人-to-机器人视频翻译（Phantom、Masquerade 等）只是被动观测，底层动作从未产生，重型 DiT 主干也排除了闭环；动作条件化第一人称模型（Hand2World、CosHand 等）仍以人为中心，渲染的手还是人手，具身差距没弥合。RynnWorld-Teleop 真正改变的是把数据采集从物理世界搬到生成式世界模型里——操作员的手势流被实时消费，以单张参考图像为条件合成机器人执行视频，同时手势本身作为与具身无关的动作标签，可经重定向迁移到任意机器人。这等于把数据引擎从“硬件绑定”变成“计算绑定”，吞吐量上限从操作员小时数变成 GPU 吞吐量。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">深度感知动作表示</h3>
+<p>动作表示为源自 21 关节手部追踪的骨架视频序列。采用深度调制渲染，每个关节和骨骼的深度编码颜色映射和直径根据相机空间深度动态缩放，解决标准 2D 投影的深度模糊性。渲染姿态视频经预训练 VAE 编码为控制潜变量 c ∈ ℝ^(C×T×H×W)，与目标视频潜变量空间和时间对齐。</p>
+<h3 id="_4">动作条件化视频生成</h3>
+<p>基于视频扩散 Transformer（DiT），图像到视频范式。并行控制 patch 嵌入层 PatchEmbed^c 通过可学习标量门控 α 与原始视频嵌入融合：
+x = PatchEmbed^z(z_t) + α·PatchEmbed^c(c̃)
+其中 c̃ = (c−μ_c)/σ_c·σ_z + μ_z 为分布对齐后的控制潜变量。PatchEmbed^c 零初始化，α 初始化为 0.1，保持预训练权重生成先验。</p>
+<h3 id="_5">渐进式跨域训练</h3>
+<ul>
+<li><strong>阶段 1</strong>：在大规模第一人称人类视频（EgoDex、VITRA）上预训练，学习手-物交互动力学与骨架到视觉合成映射。EgoDex 分割为 81 帧片段，VITRA 提取 25 帧片段。</li>
+<li><strong>阶段 2</strong>：在配对遥操作数据上微调，人类手势经逆运动学（IK）映射到机器人动作，所有轨迹分割为 81 帧片段。</li>
+</ul>
+<h3 id="_6">自回归蒸馏</h3>
+<p>将双向教师蒸馏为因果学生，支持帧级自回归生成：
+- <strong>因果流匹配预热</strong>：预测速度场，建立流式生成和控制跟随能力。
+- <strong>分布匹配蒸馏（DMD）</strong>：4 步去噪实现高保真合成，学习判别器加冻结教师提供基于分数的梯度引导，持久 KV 缓存跨连续块反向传播最小化边界伪影。</p>
+<h3 id="_7">数据生成管线</h3>
+<p>重定向用 Vive 追踪器（胸部、手腕、上臂）6-DoF 姿态，经校准坐标变换链映射工作空间，迭代阻尼最小二乘（DLS）逆运动学求解关节配置，上臂追踪器导出零空间肩部先验正则化。每个手势产生同步 54 维机器人动作向量（双 7-DoF 手臂 + 双 20-DoF 灵巧手）。分块重锚定采用 81 帧块生成策略，第一块用真实起始帧初始化，后续每块用机器人相机实际第一人称帧作为新 I_ref 重新锚定，防止视觉漂移。</p>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li><strong>深度感知骨架表示</strong>：把 2D 投影的深度模糊性通过深度调制渲染解决，让动作条件在 3D 空间上真正接地，这是此前动作条件化世界模型没做到的。</li>
+<li><strong>分布对齐加性条件机制</strong>：用零初始化门控的加性融合而非标准拼接，保留预训练 DiT 的潜在分布，避免破坏生成先验——这是能在大模型基础上微调而不崩的关键设计。</li>
+<li><strong>两阶段蒸馏课程</strong>：先因果流匹配预热弥合双向与因果处理的结构差距，再 DMD 4 步蒸馏继承教师的手-物交互先验，同时保持 40 fps 实时性。这解决了“实时”与“高保真”的矛盾。</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="table-4egodex-test">定量结果（Table 4，EgoDex-Test 域）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>PSNR</th>
+<th>SSIM</th>
+<th>LPIPS</th>
+<th>FVD</th>
+<th>FPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RynnWorld-Teleop (SFT)</td>
+<td>26.78</td>
+<td>0.887</td>
+<td>0.119</td>
+<td>550</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>RynnWorld-Teleop (LoRA)</td>
+<td>26.08</td>
+<td>0.876</td>
+<td>0.151</td>
+<td>585</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>RynnWorld-Teleop-Causal</td>
+<td>22.25</td>
+<td>0.830</td>
+<td>0.207</td>
+<td>1226</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td>Wan-2.2-TI2V-5B (SFT)</td>
+<td>20.93</td>
+<td>0.806</td>
+<td>0.282</td>
+<td>1223</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>InterDyn</td>
+<td>21.47</td>
+<td>0.831</td>
+<td>0.279</td>
+<td>655</td>
+<td>2.9</td>
+</tr>
+<tr>
+<td>CosHand</td>
+<td>18.14</td>
+<td>0.785</td>
+<td>0.406</td>
+<td>1527</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>Mask2IV</td>
+<td>21.50</td>
+<td>0.836</td>
+<td>0.219</td>
+<td>1650</td>
+<td>0.9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lora">消融研究（LoRA）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>PSNR</th>
+<th>SSIM</th>
+<th>LPIPS</th>
+<th>FVD</th>
+<th>FPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Concatenation Fusion</td>
+<td>19.69</td>
+<td>0.821</td>
+<td>0.260</td>
+<td>1191</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>w/o Human Pre-training</td>
+<td>17.81</td>
+<td>0.763</td>
+<td>0.453</td>
+<td>2598</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>w/o DMD (Causal)</td>
+<td>19.25</td>
+<td>0.777</td>
+<td>0.244</td>
+<td>1338</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td>w/o Causal Warm-up (Causal)</td>
+<td>14.26</td>
+<td>0.688</td>
+<td>0.408</td>
+<td>2150</td>
+<td>40.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3">真实世界策略性能（Table 3，成功率 %）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>Dual Picking</th>
+<th>Block Pushing</th>
+<th>Bimanual Lifting</th>
+<th>Lid Placement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0.5（300 Real）</td>
+<td>94.29</td>
+<td>100.00</td>
+<td>94.29</td>
+<td>42.86</td>
+</tr>
+<tr>
+<td>π_0.5（300 Real + 300 生成）</td>
+<td>97.14</td>
+<td>97.14</td>
+<td>100.00</td>
+<td>62.86</td>
+</tr>
+<tr>
+<td>π_0（300 Real）</td>
+<td>88.57</td>
+<td>94.29</td>
+<td>91.43</td>
+<td>34.29</td>
+</tr>
+<tr>
+<td>π_0（0 Real + 300 生成）</td>
+<td>68.57</td>
+<td>82.86</td>
+<td>77.14</td>
+<td>28.57</td>
+</tr>
+<tr>
+<td>π_0（300 Real + 300 生成）</td>
+<td>94.29</td>
+<td>100.00</td>
+<td>97.14</td>
+<td>54.29</td>
+</tr>
+</tbody>
+</table>
+<p>Lid Placement 任务中，π_0.5 成功率从 42.86% 提升至 62.86%（+20%），π_0 从 34.29% 提升至 54.29%（+20%）。π_0 仅用 300 个生成片段训练，Block Pushing 达 82.86%，Bimanual Lifting 达 77.14%。延迟分析：单块 H100 上 4 步流匹配调度，480×832 分辨率下吞吐量 40.0 fps，平均每帧延迟约 25 ms，分解为骨架动作编码约 5%、因果 DiT 去噪约 72%、视觉解码约 23%。</p>
+<h2 id="_10">边界与局限</h2>
+<p>作者未在论文片段中明确列出局限性章节。从方法细节看，深度调制渲染虽捕获 3D 空间动态，但模型偶尔难以处理细粒度液体动力学或高度可变形物体操作。跨实体差距的弥合目前需要逐平台微调，限制了在机器人集群中的可扩展性。论文未明确提及对生成视频物理精确性的定量验证（接触力、物体动力学误差）、超长时程（远超 81 帧块）稳定性评估、不同机器人硬件迁移验证，以及操作员多样性（手部形态、追踪噪声）的影响。</p>
+<h2 id="_11">工程启示</h2>
+<p>复现时先核对三件事：一是基础模型 Wan2.2-TI2V-5B 的权重获取与 TI2V 预热微调的 2,000 步设置，这是后续所有训练的前提；二是深度感知骨架渲染的深度调制参数，这直接影响动作接地的精度；三是分块重锚定的 81 帧块策略，这是防止长时程漂移的关键，别改成更短的块。最容易踩坑的地方是分布对齐条件机制——如果改成拼接融合，FVD 会从 550 恶化到 1191（由表内数值 550→1191 计算），说明加性门控设计不是可选项而是必需项。蒸馏阶段先做因果流匹配预热再做 DMD，跳过预热 FVD 会从 1226 恶化到 2150（由表内数值 1226→2150 计算）。下游团队用生成数据训练策略时，建议先做特征分布分析（t-SNE 重叠验证），再混合真实数据训练，纯生成数据在简单任务（Block Pushing）可行，但复杂任务（Lid Placement）仍需真实数据兜底。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.06558</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_bilateral_teleoperation/">双边遥操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rynnworld_teleop_action_conditioned_worl_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_bilateral_teleoperation/">
+          <span class="entry-type">方法</span>
+          <h3>双边遥操作</h3>
+          <p>命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">深度感知动作表示</a></li>
+<li><a href="#_4">动作条件化视频生成</a></li>
+<li><a href="#_5">渐进式跨域训练</a></li>
+<li><a href="#_6">自回归蒸馏</a></li>
+<li><a href="#_7">数据生成管线</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#table-4egodex-test">定量结果（Table 4，EgoDex-Test 域）</a></li>
+<li><a href="#lora">消融研究（LoRA）</a></li>
+<li><a href="#table-3">真实世界策略性能（Table 3，成功率 %）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

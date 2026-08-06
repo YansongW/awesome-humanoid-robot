@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models</h1>
+      <p class="entry-name-en">WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P116. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>WorldArena 是一个面向具身世界模型（EWM）的统一基准，由研究团队提出，首次将感知质量评估与三种功能效用评估（数据引擎、策略评估器、动作规划器）整合于同一框架。核心贡献在于建立了一个包含 16 个客观指标、3 个闭环下游任务和人类主观评估的综合评测体系，并发布了 EWMScore 聚合分数。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.08971" target="_blank" rel="noopener">arXiv:2602.08971 WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有具身世界模型评估的碎片化问题已经到了阻碍领域发展的程度：视频生成指标（如 FVD、IS）只能反映像素级保真度，却无法回答"这个模型能否帮助机器人学会操作"这一根本问题。此前虽有工作尝试用闭环动作执行来评估世界模型，但覆盖面仅限于单一角色，忽略了世界模型作为合成数据引擎、策略评估工具等更广泛的应用场景。</p>
+<p>WorldArena 真正改变的是评估的"功能导向"——它不再问"视频像不像真的"，而是问"这个模型能不能当数据生成器、能不能当策略裁判、能不能当动作规划器"。这种转变将评估从视觉质量竞赛拉回到具身智能的实际需求，迫使研究者重新审视：一个在视频指标上表现优异的模型，是否真的具备可用的物理世界预测能力。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">视频质量评估：六维十六指标</h3>
+<ul>
+<li><strong>视觉质量</strong>：MUSIQ 图像质量、LAION 美学预测、V-JEPA 特征分布的 MMD（二阶多项式核，α=40）</li>
+<li><strong>运动质量</strong>：RAFT 光流动态程度（前 5% 活跃像素）、平均光流幅度、VFI-Mamba 帧插值平滑度</li>
+<li><strong>内容一致性</strong>：DINO 主体一致性、CLIP 背景一致性、前后向光流往返扭曲的 AEPE</li>
+<li><strong>物理遵循</strong>：Qwen3-VL 交互质量评分（1-5 分归一化）、SAM 3 轨迹提取后的 NDTW 距离</li>
+<li><strong>3D 准确性</strong>：Depth-Anything 单目深度估计（中位数缩放对齐）、Qwen3-VL 透视性判断</li>
+<li><strong>可控性</strong>：Qwen3-VL 指令遵循、Qwen2.5-VL 描述与 CLIP 编码的语义对齐、多指令生成视频的成对特征不相似度</li>
+</ul>
+<h3 id="_4">具身任务评估：三种闭环角色</h3>
+<ul>
+<li><strong>数据引擎</strong>：两阶段训练——先在 RoboTwin 2.0 上微调世界模型生成合成视频，再冻结世界模型权重、集成逆动力学模型（IDM）提取动作，用合成数据训练 π0.5 策略模型</li>
+<li><strong>策略评估器</strong>：训练五个不同能力的 π0.5 策略，与动作可控世界模型交互 rollout（超过真实视频帧数 20%），成功率由 VLM 判定，与 RoboTwin 模拟器结果比较相关性</li>
+<li><strong>动作规划器</strong>：世界模型 + IDM 配对，输入文本指令和初始帧输出动作序列，在模拟器中执行并测量成功率</li>
+</ul>
+<h3 id="_5">分数聚合</h3>
+<p>EWMScore 对 16 个指标采用经验边界线性归一化（99 百分位为最大值、1 百分位为最小值），映射至 [0,100] 后取算术平均。</p>
+<h2 id="_6">关键创新</h2>
+<p><strong>功能效用与感知质量并重的评估范式</strong>：此前基准要么只看视频质量，要么只看单一闭环任务。WorldArena 首次将三种功能角色（数据引擎、策略评估器、动作规划器）纳入统一框架，使评估结果能直接反映世界模型在真实机器人学习流程中的价值。</p>
+<p><strong>VLM 作为物理合理性裁判</strong>：用 Qwen3-VL 对交互质量、透视性、指令遵循进行 1-5 分 Likert 评分，并设计了容忍渲染伪影的策略成功判定协议（比较 GT 与生成帧的最终状态、手臂选择、动作意图）。这解决了传统指标无法捕捉的"物理常识错误"问题。</p>
+<p><strong>交叉维度相关性分析</strong>：图 5 显示 EWMScore 与人类判断强相关（Pearson r=0.825），但与数据合成性能中等相关（r=0.600）、与动作规划性能弱相关（r=0.360）。这一发现揭示了感知质量与功能效用之间的非对称关系，是此前工作未系统量化的。</p>
+<h2 id="_7">实验与结果</h2>
+<p><strong>测试模型</strong>：14 个代表性世界模型，涵盖通用视频模型（CogvideoX、Wan 2.2、Wan 2.6、Veo 3.1）、文本条件具身模型（Genie Envisioner、GigaWorld、TesserAct、Cosmos-Predict 2.5、WOW、RoboMaster、Vidar）和动作条件模型（IRASim、Cosmos-Predict 2.5 (action)、CtrlWorld）。</p>
+<p><strong>视频质量评估关键结果</strong>（表 2、表 3 节选）：</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>图像质量</th>
+<th>JEPA相似性</th>
+<th>交互质量</th>
+<th>轨迹准确性</th>
+<th>指令遵循</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wan 2.6</td>
+<td>0.6824</td>
+<td>0.7229</td>
+<td>0.7280</td>
+<td>0.1182</td>
+<td>0.8536</td>
+</tr>
+<tr>
+<td>Veo 3.1</td>
+<td>0.6605</td>
+<td>0.5694</td>
+<td>0.7872</td>
+<td>0.1231</td>
+<td>0.9328</td>
+</tr>
+<tr>
+<td>CtrlWorld</td>
+<td>0.3522</td>
+<td>0.9185</td>
+<td>0.6212</td>
+<td>0.4766</td>
+<td>0.7272</td>
+</tr>
+<tr>
+<td>Genie Envisioner</td>
+<td>0.2305</td>
+<td>0.3340</td>
+<td>0.2052</td>
+<td>0.0679</td>
+<td>0.2028</td>
+</tr>
+</tbody>
+</table>
+<p><strong>数据引擎任务成功率</strong>（表 4）：WoW 表现最佳（任务 1 为 45%、任务 2 为 71%），Genie Envisioner 最差（任务 1 为 7%、任务 2 为 21%）。真实数据训练的 π0.5 策略为任务 1 为 77%、任务 2 为 66%。</p>
+<p><strong>动作规划器任务成功率</strong>（表 5）：所有世界模型均显著低于真实数据训练的 π0.5 策略（任务 1 为 77%、任务 2 为 66%），WoW 相对最好（任务 1 为 20%、任务 2 为 21%）。</p>
+<p><strong>策略评估器</strong>：CtrlWorld 与 RoboTwin 模拟器评估结果强相关，Cosmos-Predict 2.5 相关性较弱；两个模型成功率均高于模拟器测量值。</p>
+<p><strong>人类评估</strong>：70 名标注者评估 3500 个视频。商业模型（Veo 3.1、Wan 2.6）在整体质量、指令遵循和物理遵循上得分最高；动作条件方法（CtrlWorld）比纯文本对应方法物理遵循和胜率更好。</p>
+<h2 id="_8">边界与局限</h2>
+<p>作者明确承认：合成数据质量仍不足以有效训练策略，当前具身世界模型尚不可靠作为下游学习的数据源；世界模型在闭环任务执行中仍难以可靠支持长时程任务；合成数据尽管视觉保真度高，仍不足以提供强预测或决策相关信号用于复杂具身推理。感知真实感是获得良好人类评价的必要条件，但不直接转化为下游具身任务的成比例收益。</p>
+<p>评估基于 RoboTwin 2.0 单一平台（50 个任务场景、2500 个视频），结论的泛化性受限于该模拟器的物理保真度和任务分布。策略评估器任务中 VLM 判定协议对"任务基本完成"的阈值定义存在主观性，不同 VLM 版本可能导致结果波动。论文未明确硬件配置和推理时间成本。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现时先核对归一化边界：表 6 的经验边界（如 Photometric Consistency 最大 6.7899、最小 0.1257）是基于 8 个模型生成视频的 99/1 百分位计算的，更换模型集合会改变边界值，导致跨论文分数不可直接比较。最易踩坑的是动作跟随指标——它要求对同一指令生成多个不同动作的视频，计算成对特征不相似度，若生成器对指令不敏感（如 Genie Envisioner 的 0.0109），该指标会严重低估模型能力。</p>
+<p>下游团队选型建议：若目标是数据增强，优先考虑 WoW（数据引擎任务成功率最高）；若需要策略评估，CtrlWorld 与模拟器相关性最强；若追求视频质量与人类观感，直接选商业模型 Veo 3.1 或 Wan 2.6。注意动作条件模型（如 CtrlWorld）在物理遵循上系统性优于文本条件模型，但轨迹准确性指标（NDTW）对动作条件模型更友好，比较时需区分模型类型。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2602.08971</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_worldarena_unified_benchmark_evaluating_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">视频质量评估：六维十六指标</a></li>
+<li><a href="#_4">具身任务评估：三种闭环角色</a></li>
+<li><a href="#_5">分数聚合</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

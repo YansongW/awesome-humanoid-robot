@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dream to Control: Learning Behaviors by Latent Imagination · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Dream to Control: Learning Behaviors by Latent Imagination</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Dream to Control: Learning Behaviors by Latent Imagination</h1>
+      <p class="entry-name-en">Dream to Control: Learning Behaviors by Latent Imagination</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P064. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Dreamer 是 DeepMind 提出的基于潜在想象（latent imagination）的强化学习智能体，通过在学习到的世界模型（RSSM）的潜在空间中训练 actor-critic，实现从图像输入学习长时程行为。在 20 个视觉连续控制任务上，Dreamer 以 5×10^6 步达到平均 823 的得分，超越 PlaNet（332）和 A3C（344，10^8 步），并在稀疏奖励任务上显著领先。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1912.01603" target="_blank" rel="noopener">arXiv:1912.01603 Dream to Control: Learning Behaviors by Latent Imagination</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它真正改变的是“行为学习的位置”：此前基于模型的强化学习要么依赖在线规划（如 PlaNet），要么在真实经验上做无模型更新（如 A3C、D4PG），而 Dreamer 把 actor-critic 的更新完全搬进了学习到的潜在空间，用想象轨迹替代真实经验回放。这打破了“模型准确性直接决定规划质量”的旧约束——规划需要模型在每一步都精确，而 Dreamer 只需模型在想象轨迹的分布上足够好，价值模型可以吸收模型误差。</p>
+<p>另一个改变是数据效率的量级。A3C 用 10^8 步达到 344，Dreamer 用 5×10^6 步达到 823，差了 20 倍步数（由表内数值 10^8 与 5×10^6 计算）。这不是调参的胜利，而是“在想象中学习”这一范式带来的结构性优势——世界模型把经验压缩成可重复采样的潜在动力学，行为学习不再受限于真实环境的交互频率。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="rssm">世界模型：RSSM 潜在动力学</h3>
+<ul>
+<li>编码器/解码器采用卷积结构（Ha and Schmidhuber 2018），潜在状态为 30 维对角高斯分布。</li>
+<li>循环状态空间模型（RSSM）建模 Markovian 潜在转移，训练目标为像素重建 + KL 正则化（β=1，裁剪低于 3 free nats）。</li>
+</ul>
+<h3 id="actor-critic">行为学习：潜在想象中的 actor-critic</h3>
+<ul>
+<li>动作模型输出 tanh 均值（缩放因子 5）和 softplus 标准差，再经 tanh 变换，允许动作分布饱和。</li>
+<li>价值模型回归 λ-return 目标（γ=0.99，λ=0.95），梯度在目标上停止。</li>
+<li>想象过程中，动作模型和价值模型使用<strong>相同的想象轨迹</strong>更新，多步价值的解析梯度反向传播穿过潜在动力学模型。</li>
+</ul>
+<h3 id="_3">关键设计决策</h3>
+<ul>
+<li><strong>动作重复固定 R=2</strong>，不针对环境手动调整，区别于 Hafner et al. (2018) 和 Lee et al. (2019)。</li>
+<li>未使用潜在 overshooting、动作模型熵奖励、价值模型目标网络——消融显示这些非必要。</li>
+<li>离散任务：动作模型预测类别 logits，straight-through 梯度采样；ε-greedy 从 0.4 线性降至 0.1（前 200,000 梯度步）；KL 缩放 β=0.1；折扣因子由二分类器预测（软标签 0 和 γ）。</li>
+</ul>
+<h3 id="_4">训练流程</h3>
+<ul>
+<li>数据集初始化 S=5 条随机 episode，100 步训练与收集 1 条 episode 交替，探索噪声 Normal(0, 0.3)。</li>
+<li>批次 B=50，序列长度 L=50，想象视界 H=15（连续）/ H=10（离散）。</li>
+<li>Adam 优化器：世界模型 6×10^-4，价值模型 8×10^-5，动作模型 8×10^-5；梯度范数裁剪超过 100 时缩放。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>潜在想象替代在线规划</strong>：PlaNet 依赖在线规划，对想象视界 H 敏感；Dreamer 的价值模型使性能对 H 从 5 到 15 都鲁棒（最佳 H=10）。这是从“用模型做规划”到“用模型学策略”的范式转移。</p>
+</li>
+<li>
+<p><strong>表示学习目标与行为学习解耦</strong>：系统比较像素重建、对比估计、纯奖励预测三种表示目标，发现像素重建在多数任务上最优，纯奖励预测不足。这明确了“世界模型学什么”与“行为怎么学”是两个可独立优化的维度。</p>
+</li>
+<li>
+<p><strong>稀疏奖励任务的突破</strong>：Cartpole Swingup Sparse 上 Dreamer 得 812.22，而 PlaNet 仅 0.64、A3C 仅 179.80。潜在想象让智能体能在想象中“预演”稀疏奖励信号，这是无模型方法难以做到的。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="deepmind-control-suite">连续控制（DeepMind Control Suite，像素输入）</h3>
+<p>Dreamer 与 A3C、D4PG、PlaNet 对比，环境步数分别为 10^8、10^8、5×10^6、5×10^6。关键结果：</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>A3C</th>
+<th>D4PG</th>
+<th>PlaNet</th>
+<th>Dreamer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartpole Swingup Sparse</td>
+<td>179.80</td>
+<td>482.00</td>
+<td>0.64</td>
+<td>812.22</td>
+</tr>
+<tr>
+<td>Cheetah Run</td>
+<td>213.90</td>
+<td>523.80</td>
+<td>496.12</td>
+<td>894.56</td>
+</tr>
+<tr>
+<td>Hopper Hop</td>
+<td>0.50</td>
+<td>242.00</td>
+<td>0.37</td>
+<td>368.97</td>
+</tr>
+<tr>
+<td>Quadruped Run</td>
+<td>-</td>
+<td>-</td>
+<td>280.45</td>
+<td>888.39</td>
+</tr>
+<tr>
+<td><strong>Average</strong></td>
+<td><strong>243.70</strong></td>
+<td><strong>786.32</strong></td>
+<td><strong>332.97</strong></td>
+<td><strong>823.39</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">消融实验</h3>
+<ul>
+<li>价值模型使 Dreamer 对想象视界 H 鲁棒，而动作模型无价值预测和 PlaNet 在线规划对 H 敏感。</li>
+<li>像素重建在多数任务上优于对比估计，纯奖励预测不足。</li>
+<li>H 从 5 到 15 均高分，最佳 H=10。</li>
+</ul>
+<h3 id="_8">离散控制</h3>
+<p>在 Atari 和 DeepMind Lab 子集上评估（64×64×3 图像，3 到 18 个动作），Dreamer 在部分任务上学习到成功行为，但整体尚不具备竞争力（对比 Kaiser et al., 2019）。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>世界模型从固定经验数据集学习，未覆盖的状态可能导致模型误差，行为在未见区域可能失效。</li>
+<li>潜在动力学假设 Markovian 转移，对部分可观测环境（隐藏状态）可能不成立。</li>
+<li>动作模型纯在想象中训练，行为质量依赖世界模型准确性；模型不准确时策略迁移到真实环境可能失败。</li>
+<li>动作重复固定 R=2，未针对所有任务最优。</li>
+<li>实验限于模拟环境，未在真实机器人系统验证。</li>
+<li>离散动作任务（Atari 子集）性能不如连续控制任务，作者未探索全部 Atari 游戏和 DMLab 关卡。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<p>复现时先核对三点：一是想象视界 H 的取值——连续任务用 15、离散用 10，但消融显示 5 到 15 都可行，优先用 10 可减少计算；二是动作重复 R=2 是全局固定值，若下游任务对动作频率敏感，需重新验证；三是表示学习目标选像素重建，不要用纯奖励预测——实验明确显示其不足。</p>
+<p>最容易踩坑的地方是离散任务的超参数：KL 缩放 β=0.1（连续任务为 1）、ε 从 0.4 线性降至 0.1（前 200,000 梯度步）、奖励 tanh 限幅、折扣因子由二分类器预测（软标签 0 和 γ）。这些与连续任务差异很大，直接套用连续任务的设置会导致离散任务失败。另外，训练时间约 3 小时每 10^6 环境步（V100 单卡 + 10 CPU），若资源受限可先跑 Cartpole Swingup Sparse 验证实现正确性——该任务对模型误差最敏感，能快速暴露问题。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/1912.01603</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_deepmind_control_suite_2018/">DeepMind Control Suite</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dream_control_behaviors_latent_imaginati_2019"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_deepmind_control_suite_2018/">
+          <span class="entry-type">论文</span>
+          <h3>DeepMind Control Suite</h3>
+          <p>DeepMind Control Suite 是由 DeepMind 开发的连续控制任务集合，基于 MuJoCo…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#rssm">世界模型：RSSM 潜在动力学</a></li>
+<li><a href="#actor-critic">行为学习：潜在想象中的 actor-critic</a></li>
+<li><a href="#_3">关键设计决策</a></li>
+<li><a href="#_4">训练流程</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#deepmind-control-suite">连续控制（DeepMind Control Suite，像素输入）</a></li>
+<li><a href="#_7">消融实验</a></li>
+<li><a href="#_8">离散控制</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

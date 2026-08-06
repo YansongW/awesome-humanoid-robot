@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATE · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ATE</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ATE</h1>
+      <p class="entry-name-en">Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.02055v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Align-Then-stEer (ATE) 是一种2025年提出的数据高效、即插即用的视觉-语言-动作模型适配框架，由中国电信人工智能研究院、清华大学、香港中文大学（深圳）及西北工业大学联合开发。其核心贡献在于通过统一潜在空间对齐不同动作分布，并利用引导机制微调扩散或流基VLA模型，在仿真和真实场景的跨实体与跨任务操作中显著提升成功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.02055" target="_blank" rel="noopener">Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.02055" target="_blank" rel="noopener">ATE source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>针对预训练VLA模型在下游任务中因实体或任务差异导致的动作分布不匹配问题，ATE提出两阶段解决方案：首先通过变分自编码器（约束反向KL散度）将适配动作嵌入预训练动作潜在分布的模式中，构建统一潜在空间；随后在微调阶段通过引导机制驱动模型输出向目标域偏移。实验表明，在仿真环境中ATE相比直接微调方法将多任务平均成功率提升最高9.8%，在真实跨实体场景中更实现32%的成功率增益，为VLA模型部署提供了轻量化通用方案。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>对齐阶段（Align）</strong>：利用变分自编码器（VAE）构建统一潜在空间，通过反向KL散度约束将下游任务的适配动作嵌入预训练动作潜在分布的模式中，从而消除不同实体或任务间的动作空间差异。</li>
+<li><strong>引导阶段（Steer）</strong>：在微调扩散或流基VLA模型时，引入引导机制（guidance mechanism）驱动模型输出分布向目标域偏移，无需修改预训练模型主干。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>仿真环境</strong>：基于多个跨实体（不同机器人形态）与跨任务（如抓取、堆叠）操作基准，对比直接微调（Direct Fine-tuning）与ATE方法。</li>
+<li><strong>真实场景</strong>：在真实机器人平台上进行跨实体操作实验，评估ATE的泛化能力。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>仿真性能</strong>：ATE将多任务平均成功率提升最高9.8%（相比直接微调），在部分任务上成功率绝对值超过85%。</li>
+<li><strong>真实场景</strong>：在跨实体设置中，ATE实现32%的成功率增益，显著优于基线方法。</li>
+<li><strong>数据效率</strong>：仅需少量目标域数据即可完成适配，无需大规模重新训练。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>ATE通过统一潜在空间对齐与引导机制，为VLA模型提供了一种轻量化、即插即用的适配方案，大幅提升了其在新型机器人平台和任务中的部署实用性。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2509.02055v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_lookout_real_world_humanoid_eg_2025/">LookOut: Real-World Humanoid Egocentric Navigation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_autoodom_learning_auto_regress_2025/">AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tram_global_trajectory_motion_3d_humans_2024/">野外视频中的全局人体轨迹与动作恢复</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">野外视频中的全局人体轨迹与动作恢复提及ATE。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_aoe_always_egocentric_human_video_collec_2026/">AoE: Always-on Egocentric Human Video Collection for Embodied AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_x_ionet_cross_platform_inertial_odometry_2025/">X-IONet: Cross-Platform Inertial Odometry Network for Pedestrian and Legged Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_geometric_context_transformer_streaming_2026/">Geometric Context Transformer for Streaming 3D Reconstruction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_soncini_the_rosario_dataset_v2_multimo_2025/">罗萨里奥数据集 v2：面向农业机器人的多模态数据集</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">罗萨里奥数据集 v2：面向农业机器人的多模态数据集提及ATE。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_climbingcap_multi_modal_datase_2025/">ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vs_graphs_tightly_coupling_visual_slam_2025/">vS-Graphs: Tightly Coupling Visual SLAM and 3D Scene Graphs Exploiting Hierarchical Scene Understanding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gtsam_factor_graphs_for_sensor_2026/">GTSAM: Factor graphs for Sensor Fusion in Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ultra_fusion_resilient_tightly_coupled_m_2026/">Ultra-Fusion: A Resilient Tightly-Coupled Multi-Sensor Fusion SLAM Framework under Sensor Degradation and Spatiotemporal Perturbation for Intelligent Transportation Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zhang_align_then_steer_adapting_the_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_climbingcap_multi_modal_datase_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate</h3>
+          <p>ClimbingCap 是 2025 年由研究团队提出的多模态数据集与运动恢复方法，专注于攀岩这类离地运动的人体运动分析。其核心贡献在于构建了包含 412k 帧 RGB、LiDAR 与 IMU…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_an_empirical_evaluation_of_fou_2022/">
+          <span class="entry-type">论文</span>
+          <h3>An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems</h3>
+          <p>这是一项2022年的实证研究，评估了四种商用视觉惯性里程计（VIO）系统（Apple ARKit、Google ARCore、Intel RealSense T265、Stereolabs ZED…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_x_ionet_cross_platform_inertial_odometry_2025/">
+          <span class="entry-type">论文</span>
+          <h3>X-IONet: Cross-Platform Inertial Odometry Network for Pedestrian and Legged Robot</h3>
+          <p>X-IONet 是一个跨平台惯性里程计框架，由研究团队提出，仅使用单个 IMU 即可在行人与四足机器人平台上实现高精度导航。其核心贡献在于引入基于规则的专家选择模块与双阶段注意力架构，并结合…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_autoodom_learning_auto_regress_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion</h3>
+          <p>AutoOdom 是 2025 年提出的一种用于足式机器人（特别是人形机器人）的自回归本体里程计系统。其核心贡献在于通过两阶段训练范式（大规模仿真预训练 +…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_geometric_context_transformer_streaming_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Geometric Context Transformer for Streaming 3D Reconstruction</h3>
+          <p>LingBot-Map…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gtsam_factor_graphs_for_sensor_2026/">
+          <span class="entry-type">论文</span>
+          <h3>GTSAM: Factor graphs for Sensor Fusion in Robotics</h3>
+          <p>GTSAM: Factor graphs for Sensor Fusion in Robotics is a 2026 work on state estimation for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vs_graphs_tightly_coupling_visual_slam_2025/">
+          <span class="entry-type">论文</span>
+          <h3>vS-Graphs: Tightly Coupling Visual SLAM and 3D Scene Graphs Exploiting Hierarchical Scene Understanding</h3>
+          <p>vS-Graphs…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ultra_fusion_resilient_tightly_coupled_m_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Ultra-Fusion: A Resilient Tightly-Coupled Multi-Sensor Fusion SLAM Framework under Sensor Degradation and Spatiotemporal Perturbation for Intelligent Transportation Systems</h3>
+          <p>Ultra-Fusion 是一个基于统一滑动窗口估计器的紧耦合多传感器融合 SLAM 框架，由研究团队提出，旨在解决传感器退化（如光照不足、LiDAR 退化、车轮打滑、GNSS…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_aoe_always_egocentric_human_video_collec_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AoE: Always-on Egocentric Human Video Collection for Embodied AI</h3>
+          <p>AoE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tram_global_trajectory_motion_3d_humans_2024/">
+          <span class="entry-type">论文</span>
+          <h3>野外视频中的全局人体轨迹与动作恢复</h3>
+          <p>TRAM 是一种从野外视频中重建人体全局轨迹与运动的两阶段方法。由研究者提出，核心贡献在于通过增强 SLAM 在动态人体场景下的鲁棒性来恢复相机运动，并利用场景背景推导运动尺度，最终结合视频…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_soncini_the_rosario_dataset_v2_multimo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>罗萨里奥数据集 v2：面向农业机器人的多模态数据集</h3>
+          <p>Rosario Dataset v2 是一个在阿根廷大豆田采集的多模态数据集，由 CIFASIS 团队发布。它提供超过两小时的硬件同步传感器数据（立体红外/RGB 相机、IMU、多频段…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lookout_real_world_humanoid_eg_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LookOut: Real-World Humanoid Egocentric Navigation</h3>
+          <p>LookOut 是 2025 年针对人形机器人提出的第一人称导航工作，由斯坦福大学团队完成。核心贡献是提出从第一人称视频预测未来 6D 头部姿态（平移+旋转）的框架，并发布了使用 Project…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

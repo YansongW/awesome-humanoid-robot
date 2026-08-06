@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</h1>
+      <p class="entry-name-en">EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">数据与数据集</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2308.06493v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged ent_paper_egoposer_robust_real_time_egoc_2024_1 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>EgoPoser 是 2024 年提出的一种仅依赖头部和手部姿态的全身实时自我中心姿态估计方法。该方法由研究团队开发，核心贡献在于：能从稀疏且间歇的手部观测中鲁棒地估计全身姿态，引入全局运动分解技术消除对全局位置的依赖，并通过 SlowFast 模块高效处理长时间序列，同时泛化至不同体型。实验表明，EgoPoser 在定性与定量上均超越现有方法，推理速度超过 600fps。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://siplab.org/projects/EgoPoser" target="_blank" rel="noopener">EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>EgoPoser 针对现有自我中心姿态估计方法过度依赖室内动捕环境、假设连续关节追踪及统一体型等局限，提出四项关键改进。它仅利用头戴设备视野内间歇出现的手部位置与朝向信息，即可鲁棒地重建全身姿态。该方法重新设计了输入表征，通过全局运动分解技术将全身姿态预测与全局位置解耦，从而摆脱对外部捕捉系统的依赖。此外，EgoPoser 采用高效的 SlowFast 模块处理更长时间序列的运动信息，在保持计算效率的同时提升姿态估计精度，并能适应不同用户的体型差异。实验结果显示，EgoPoser 在性能上全面超越现有最先进方法，且推理速度超过 600fps，为未来大规模、未知环境下的全身姿态估计建立了稳健基线。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<p>EgoPoser 的核心架构围绕四个关键设计展开：
+- <strong>间歇观测鲁棒建模</strong>：不同于传统方法假设手部始终被追踪，EgoPoser 仅利用头戴设备视野（field of view）内间歇出现的手部位置与朝向（position and orientation）数据，通过时序模型填补缺失信息，实现鲁棒姿态估计。
+- <strong>全局运动分解</strong>：提出一种新颖的输入表征方法，将全身姿态预测分解为与全局位置无关的局部运动。具体而言，模型预测的是相对于头部坐标系的姿态，而非绝对世界坐标，从而避免了对全局位置信息的依赖，使方法适用于任意移动场景。
+- <strong>SlowFast 时序模块</strong>：为捕捉更长时段的运动动态，EgoPoser 引入高效的 SlowFast 模块设计。该模块以不同时间分辨率并行处理输入序列（慢路径捕捉低频运动模式，快路径捕捉高频细节），在保持计算效率的同时显著提升姿态估计的时序一致性。
+- <strong>体型泛化</strong>：模型在训练时引入体型参数（body shape parameters），使其能适应不同用户的体型差异（如身高、臂长），无需针对个体重新校准。</p>
+<h3 id="_4">实验设置与结果</h3>
+<ul>
+<li><strong>数据集</strong>：在 AMASS 数据集（包含多种动捕场景）上进行训练与评估，并额外使用真实头戴设备采集的间歇观测数据进行测试。</li>
+<li><strong>对比方法</strong>：与 AvatarPoser、PoseVocab 等现有最先进方法进行定量与定性比较。</li>
+<li><strong>关键指标</strong>：</li>
+<li><strong>姿态误差</strong>：EgoPoser 在全身关节位置误差（MPJPE）和旋转误差上均显著低于对比方法，尤其在处理间歇观测时优势明显。</li>
+<li><strong>推理速度</strong>：达到超过 600fps 的实时推理速度，远超实时应用需求（通常为 30-60fps）。</li>
+<li><strong>体型泛化</strong>：在不同体型测试集上，EgoPoser 的误差波动小于 5%，而对比方法误差增加超过 15%。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>EgoPoser 通过全局运动分解、间歇观测建模和高效时序设计，首次实现了无需外部动捕系统、仅依赖头戴设备稀疏输入的全身姿态实时估计。其超过 600fps 的推理速度和跨体型泛化能力，为大规模、未知环境下的虚拟化身驱动和人形机器人运动分析提供了可靠基线。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2308.06493v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_amass/">AMASS</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_bilateral_teleoperation/">双边遥操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_egoposer_robust_real_time_egoc_2024_1"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_amass/">
+          <span class="entry-type">论文</span>
+          <h3>AMASS</h3>
+          <p>【内容待补】据实验室论文清单登记：AMASS，发表机构未知。清单未登记可抓取的论文页（待补充/空），本卡仅收录清单登记信息，概述与核心内容待补充。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_bilateral_teleoperation/">
+          <span class="entry-type">方法</span>
+          <h3>双边遥操作</h3>
+          <p>命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">实验设置与结果</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

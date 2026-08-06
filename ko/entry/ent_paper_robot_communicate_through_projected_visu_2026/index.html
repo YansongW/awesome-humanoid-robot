@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robot Learning to Communicate through Projected Visual Abstractions · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Robot Learning to Communicate through Projected Visual Abstractions</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Robot Learning to Communicate through Projected Visual Abstractions</h1>
+      <p class="entry-name-en">Robot Learning to Communicate through Projected Visual Abstractions</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Humans routinely communicate through abstractions of their bodies, including shadows, silhouettes, and reflections. Yet robots remain largely confined to expressing themselves through their physical morphology. Enabling robots to communicate through such projected visual abstractions requires reasoning not only about bodily motion but also about how that motion is transformed into an external.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.22434" target="_blank" rel="noopener">arXiv:2607.22434 Robot Learning to Communicate through Projected Visual Abstractions</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 로봇이 투영된 그림자를 통해 동적 시각적 의사소통을 수행할 수 있는 완전한 프레임워크를 제안한다. 핵심은 관절 구성을 2D 실루엣으로 매핑하는 미분 가능한 "그림자 자체 모델"을 학습하고, 2단계 최적화(그래디언트 최적화 + 충돌 인식 언덕 오르기)를 통해 물리적으로 실현 가능하고 시각적으로 사실적인 그림자 퍼포먼스를 생성하는 것이다. 이 연구는 범용 로봇 연구실에서 수행되었으며, 강체 로봇 손에 그림자를 매개체로 한 동적 표현 능력을 최초로 부여하고, 3D에서 2D로의 투영 역문제의 모호성, 강체 링크의 빛 누출, 물리적 실현 가능성이라는 세 가지 과제를 해결했다는 데 기여가 있다.</p>
+<h2 id="_2">무엇을 변화시켰는가</h2>
+<p>이 연구의 진정한 변화는 로봇의 "표현" 매개체를 물리적 형태 자체에서 형태의 투영 추상화로 확장했다는 점이다. 기존의 로봇 표현 시스템(그림 그리기, 서예, 춤, 표정)은 신체의 직접적인 접촉이나 가시적인 움직임에 의존했지만, 본 논문은 로봇이 자신의 형태가 외부 평면에 만들어내는 그림자—비접촉적이고 간접적이며 본질적으로 정보 손실이 있는 표현—를 통해 효과적으로 의사소통할 수 있음을 증명한다. 이는 기술적 새로운 능력일 뿐만 아니라, HRI에서 "신체 언어"의 경계를 재정의한다: 로봇은 더 이상 특정 형태를 직접 "만들" 필요 없이, 빛과 그림자의 관계를 제어함으로써 특정 형태를 "암시"할 수 있다.</p>
+<p>문제 수준에서 저자들은 이전에 회피되었던 세 가지 난점을 정면으로 다루었다: 첫째, 3D 손 형태에서 2D 실루엣으로의 투영은 다대일 매핑이므로 역문제는 본질적으로 모호하며, 해석적 해법이 아닌 학습이 필요하다. 둘째, 강체 로봇 손가락 사이의 간격으로 인해 빛이 누출되어 그림자가 조각화되며, 이는 하드웨어 설계의 재고(강-연성 혼합)를 강제한다. 셋째, 최적화된 관절 구성은 종종 자체 충돌하거나 기계적으로 실현 불가능하며, 동적 목표는 시간적 연속성을 요구한다. 이러한 문제는 기존의 운동 계획이나 역기구학 프레임워크에는 존재하지 않는, "표현 중심"의 새로운 문제 범주에 속한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">하드웨어와 시뮬레이션 분리 설계</h3>
+<ul>
+<li>21자유도 로봇 손: 각 손가락은 4절 링크 운동 사슬이며, MCP 관절은 굴곡-신전 및 외전-내전의 두 자유도를 제공하고, 손목을 포함하여 총 21자유도.</li>
+<li>강-연성 혼합: 내부 PLA 강체 골격은 운동학적 정밀도를 보장하고, 외부 발포 TPU 연성 피부(270°C 프린팅, 12% gyroid 충전)는 연속적인 차광 표면을 제공하여 강체 링크 간격의 빛 누출 문제를 해결.</li>
+<li>시뮬레이션에서 충돌 지오메트리와 시각적 차폐 지오메트리 분리: 충돌 감지에는 가느다란 뼈대를 사용하고, 시각적 메시는 확대하여 연성 폼 층의 빛 차폐를 근사함으로써 시뮬레이터가 물리적 실현 가능성과 그림자 외관을 동시에 포착.</li>
+</ul>
+<h3 id="_5">그림자 자체 모델 아키텍처</h3>
+<ul>
+<li>해석적 정기구학(FK) 모듈 + 신경망 디코더: FK는 21차원 관절 구성을 21개의 4×4 동차 변환 행렬(SE(3))로 매핑하고, 회전 행렬은 Rodrigues 공식으로 계산되며, 전역 변환은 운동학적 트리를 따라 재귀적으로 결합.</li>
+<li>변환 텐서를 336차원 특징으로 평탄화하고, 완전 연결 계층을 통해 128×8×8 잠재 특징 맵으로 매핑한 후, 잔차 블록과 전치 합성곱 업샘플링을 통해 256×256 이진 그림자 이미지를 생성.</li>
+<li>핵심 설계 결정: 해석적 FK를 추가함으로써 직접적인 엔드투엔드 매핑에 비해 26개 제스처 목표에서 성능이 31.08% 향상. 이는 강력한 기하학적 사전 지식이 역문제 해결에 중요함을 검증.</li>
+</ul>
+<h3 id="2">2단계 최적화 전략</h3>
+<ul>
+<li>1단계: 그림자 자체 모델을 미분 대리자로 고정하고, 배치의 관절 구성 θ∈ℝ²¹을 초기화한 후, 가중 손실(MAE + IoU 손실 + CLIP 임베딩 거리)을 최소화하는 그래디언트 하강 수행.</li>
+<li>2단계: 최적화된 자세를 웜 스타트로 사용하여 물리 시뮬레이터에서 충돌 인식 로컬 언덕 오르기 탐색을 수행하고, 작은 무작위 섭동만으로 물리적 실현 가능성을 세밀화. 500단계 혼합 방법은 500단계 순수 언덕 오르기보다 우수하며, 2000단계 순수 언덕 오르기는 약간 개선되지만 실행 시간이 크게 증가.</li>
+</ul>
+<h3 id="_6">동적 비디오 목표 최적화</h3>
+<ul>
+<li>표현 영역 목표: 비디오 연속 프레임 간 이동하는 그림자 영역과 실루엣 내부의 폐쇄된 빈 영역(예: 눈)에서 공간 마스크 Mᵢ∈{0,1}^(H×W)를 구성하고, 영역 가중 IoU 및 CLIP 손실 추가.</li>
+<li>시간적 평활화 정규화: 이전 프레임의 최적화 구성과의 편차를 페널티로 부과하여 시간적으로 일관된 해를 장려.</li>
+<li>키프레임 추출: PCA 특징 표현(처음 50개 주성분으로 투영)을 기반으로 비디오 프레임을 반복적으로 응집 클러스터링하고, 각 클러스터에서 대표 프레임을 선택하여 최적화 복잡도를 낮춤.</li>
+</ul>
+<h3 id="sim-to-real">운동 계획(sim-to-real)</h3>
+<ul>
+<li>3회 반복 전략: ①전역 3차 스플라인(not-a-knot 경계 조건)으로 C² 연속성 보장; ②노이즈 복구가 포함된 충돌 검사; ③5개 원위(TIP) 관절만 조정하는 세밀화.</li>
+<li>충돌 점수: S_col = w_pen(Σ_i max(0, −d_i) + max(0, p_soft − d_min)) + w_nf max(0, F_max − F_soft), 여기서 w_pen = 500, w_nf = 0.2.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>그림자 자체 모델의 미분 가능한 학습</strong>: 해석적 FK와 신경망을 결합하여 로봇이 자신의 관절 상태에서 외부 투영 외관으로의 미분 가능한 매핑을 학습할 수 있게 함. 이는 전통적인 역그래픽스나 시각적 상상 방법과 다르며, 로봇 자체 데이터로 완전히 자기 지도 학습되고 인간 시연이나 외부 데이터셋에 의존하지 않으며, 해석적 FK의 기하학적 사전 지식 추가가 성능을 크게 향상(31.08%).</p>
+</li>
+<li>
+<p><strong>강-연성 혼합 하드웨어 설계</strong>: 강체 로봇 손의 빛 누출 문제를 해결하기 위해 내부 강체 골격 + 외부 발포 TPU 연성 피부 설계를 제안하여 운동학적 제어성과 차광 밀봉성을 동시에 유지. 이는 그림자 표현을 위해 특별히 설계된 최초의 로봇 손 형태로, 강체 링크 간격으로 인한 그림자 조각화라는 물리적 병목을 직접 해결.</p>
+</li>
+<li>
+<p><strong>2단계 혼합 최적화 전략</strong>: 그래디언트 기반 신경 최적화와 충돌 인식 언덕 오르기 탐색을 결합하여, 1단계에서 구성 공간의 고품질 영역을 효율적으로 탐색하고, 2단계에서 그림자 외관을 유지하면서 물리적 실현 가능성을 세밀화. 이러한 "전역 먼저, 국소 나중" 전략으로 충돌 문제 자세의 39.34%가 해결되고 총 손실이 33.1% 개선.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="61-1">정적 목표(61개 단일 이미지 목표, 표 1)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Total</th>
+<th>Base</th>
+<th>CLIP</th>
+<th>MAE</th>
+<th>IoU Loss</th>
+<th>Exp. IoU</th>
+<th>Exp. CLIP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random</td>
+<td>0.4590</td>
+<td>0.2135</td>
+<td>0.1116</td>
+<td>0.3402</td>
+<td>0.4772</td>
+<td>0.2434</td>
+<td>0.0414</td>
+</tr>
+<tr>
+<td>Inverse</td>
+<td>0.4262</td>
+<td>0.1959</td>
+<td>0.1246</td>
+<td>0.3102</td>
+<td>0.4370</td>
+<td>0.2286</td>
+<td>0.0337</td>
+</tr>
+<tr>
+<td>Nearest Neighbor</td>
+<td>0.2014</td>
+<td>0.0849</td>
+<td>0.0782</td>
+<td>0.1160</td>
+<td>0.1910</td>
+<td>0.1155</td>
+<td>0.0192</td>
+</tr>
+<tr>
+<td>Ours (Base without H.C.)</td>
+<td>0.1809</td>
+<td>0.0828</td>
+<td>0.0681</td>
+<td>0.1090</td>
+<td>0.1873</td>
+<td>0.1422</td>
+<td>0.0233</td>
+</tr>
+<tr>
+<td>Ours (Base)</td>
+<td>0.1210</td>
+<td>0.0640</td>
+<td>0.0707</td>
+<td>0.0829</td>
+<td>0.1440</td>
+<td>0.0863</td>
+<td>0.0182</td>
+</tr>
+</tbody>
+</table>
+<p>언덕 오르기 세밀화(Ours(Base))는 자체 모델만 사용한 경우(Ours(Base without H.C.))에 비해 총 손실이 33.1% 개선. 61개 목표 중 39.34%의 자체 모델 최적화 자세에 충돌 문제가 있으며 언덕 오르기 세밀화로 해결 필요.</p>
+<h3 id="35-2">동적 비디오 목표(35개 비디오 시퀀스 순차 이미지 목표, 표 2)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Total</th>
+<th>Base</th>
+<th>CLIP</th>
+<th>MAE</th>
+<th>IoU Loss</th>
+<th>Exp. IoU</th>
+<th>Exp. CLIP</th>
+<th>Transition S.R.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>독립 프레임별 Ours(Base)</td>
+<td>0.1996</td>
+<td>0.0861</td>
+<td>0.0948</td>
+<td>0.1039</td>
+<td>0.1950</td>
+<td>0.1618</td>
+<td>0.0330</td>
+<td>10/29 (34.5%)</td>
+</tr>
+<tr>
+<td>독립 프레임별 Ours(with Exp.)</td>
+<td>0.1781</td>
+<td>0.1141</td>
+<td>0.0871</td>
+<td>0.1577</td>
+<td>0.2572</td>
+<td>0.0628</td>
+<td>0.0235</td>
+<td>5/29 (17.2%)</td>
+</tr>
+<tr>
+<td>독립 프레임별 Ours(with Exp.+Temp.)</td>
+<td>0.1789</td>
+<td>0.1153</td>
+<td>0.0891</td>
+<td>0.1605</td>
+<td>0.2596</td>
+<td>0.0625</td>
+<td>0.0215</td>
+<td>5/29 (17.2%)</td>
+</tr>
+<tr>
+<td>상속 초기화 Ours(Base)</td>
+<td>0.2684</td>
+<td>0.0969</td>
+<td>0.0858</td>
+<td>0.1220</td>
+<td>0.2196</td>
+<td>0.1701</td>
+<td>0.0287</td>
+<td>14/29 (48.3%)</td>
+</tr>
+<tr>
+<td>상속 초기화 Ours(with Exp.)</td>
+<td>0.2070</td>
+<td>0.1219</td>
+<td>0.0934</td>
+<td>0.1699</td>
+<td>0.2747</td>
+<td>0.0839</td>
+<td>0.0231</td>
+<td>21/29 (72.4%)</td>
+</tr>
+<tr>
+<td>상속 초기화 Ours(with Exp.+Temp.)</td>
+<td>0.1871</td>
+<td>0.1246</td>
+<td>0.0685</td>
+<td>0.1073</td>
+<td>0.2920</td>
+<td>0.1082</td>
+<td>0.0227</td>
+<td>25/29 (86.2%)</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 발견: 상속 초기화 + 표현 영역 목표 + 시간 정규화는 전환 성공률을 34.5%에서 86.2%로 향상. 키프레임 추출은 6개 비디오 목표를 60/16/39/12/21/27프레임에서 5/5/6/3/6/10프레임으로 줄였으며, 축소 비율은 각각 91.7%/68.8%/84.6%/75.0%/71.4%/63.0%.</p>
+<h2 id="_9">경계와 한계</h2>
+<p>저자가 명시적으로 인정한 한계는 다음과 같다: 로봇 손은 생성 가능한 그림자 범주를 제한하며, 고도로 불연속적인 구조, 극단적인 종횡비 또는 손 형태에서 먼 모양은 여전히 어려움; 시스템은 통제된 투영 설정(고정 조명 및 고정 배경)에 의존하며, 변화하는 조명 조건, 투영 기하학 및 환경 표면에 적응하지 못함; 최적화는 오프라인이며 실시간 대화형 그림자 생성을 아직 지원하지 않음; 프레임워크는 인지적 의미의 관점 채택을 수행하지 않으며 계산 메커니즘만 제공. 또한, 손으로 하는 동물 그림자극은 일반적으로 더 가느다란 인간 손가락과 더 정교한 손가락 사이 간격을 사용하므로 로봇이 물리적으로 재현할 수 없음; 원본 동물 비디오에 포함된 구조(예: 까마귀 날개, 늑대 턱, 동물 귀)는 손 형태에 직접 대응하지 않음. 논문은 여러 손 또는 외부 물체를 통한 보조 표현 가능성을 명시적으로 논의하지 않았으며, 반사, 투영 이미지, 디지털 아바타, 홀로그램 디스플레이 등 다른 형태 의존적 시각적 추상화도 탐구하지 않음.</p>
+<h2 id="_10">공학적 시사점</h2>
+<p>이 프레임워크를 재현하거나 적용할 때 가장 우선적으로 확인해야 할 것은 <strong>그림자 자체 모델의 훈련 데이터 분포</strong>이다: 데이터 수집은 75% 무작위 샘플링, 10% 단일 손가락 구성, 15% 두 손가락 구성(총 9,249,784쌍 샘플)을 사용하며, 관절 샘플링 범위는 명확한 제한(손목 [−90°, 90°], MCP 관절은 손가락에 따라 다름)이 있으므로 목표 제스처가 이 분포를 벗어나면 자체 모델 예측 품질이 크게 저하된다. 가장 함정에 빠지기 쉬운 부분은 <strong>충돌 지오메트리와 시각적 차폐 지오메트리의 분리 설정</strong>이다—시뮬레이션에서 충돌 감지는 가느다란 뼈대를 사용하고 시각적 메시는 확대하여 연성 폼 층을 근사하는데, 이 비율은 실제 TPU 피부 두께에 따라 신중하게 보정해야 하며, 그렇지 않으면 시뮬레이션에서는 충돌이 없지만 실제 로봇에서 자체 충돌이 발생하거나, 시뮬레이션에서는 그림자가 완전하지만 실제 그림자에서 빛이 누출되는 문제가 발생한다. 최적화 하이퍼파라미터 측면에서 손실 가중치 λ_MAE = 0.06, λ_IoU = 0.4, λ_CLIP = 0.02, 표현 영역 및 시간 일관성 목표 λ_Exp_IoU = 1.0, λ_Exp_CLIP = 0.05, λ_temp = 0.2이며, 이러한 가중치는 결과에 민감하므로 소규모 목표에서 먼저 검증한 후 전체 실행을 권장. 하위 팀의 경우 실시간 상호작용이 필요하다면 현재 최적화가 오프라인(단일 프레임 2000회 반복, 순차 최적화 첫 프레임 3000회 반복)임을 유의해야 하며, 실시간화를 위해서는 증류 또는 캐싱 전략을 고려해야 한다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhang_a_unified_perception_language_2025/">A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robot_communicate_through_projected_visu_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhang_a_unified_perception_language_2025/">
+          <span class="entry-type">논문</span>
+          <h3>A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving</h3>
+          <p>A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving (PLA), is a 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시켰는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">하드웨어와 시뮬레이션 분리 설계</a></li>
+<li><a href="#_5">그림자 자체 모델 아키텍처</a></li>
+<li><a href="#2">2단계 최적화 전략</a></li>
+<li><a href="#_6">동적 비디오 목표 최적화</a></li>
+<li><a href="#sim-to-real">운동 계획(sim-to-real)</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#61-1">정적 목표(61개 단일 이미지 목표, 표 1)</a></li>
+<li><a href="#35-2">동적 비디오 목표(35개 비디오 시퀀스 순차 이미지 목표, 표 2)</a></li>
+</ul>
+</li>
+<li><a href="#_9">경계와 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning</h1>
+      <p class="entry-name-en">ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-language action (VLA) models increasingly adopt chunked action heads to satisfy real-time constraints; however, this introduces boundary jitter: overlapping regions between consecutive chunks often yield inconsistent predictions, degrading temporal coherence and the task success rate. Existing methods, such as inference-time blending, merely reweight mismatched proposals without correcting.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12992" target="_blank" rel="noopener">arXiv:2607.12992 ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ChunkFlow는 연구팀이 제안한 청크 기반 VLA 정책을 위한 접합 인식 훈련-실행 프레임워크로, 연속된 액션 청크 간 경계 지터링으로 인한 시간적 비일관성과 작업 성공률 저하 문제를 해결하는 것을 목표로 한다. 핵심 기여는 중첩 혼합, 연속성 정규화, 이점 가중 미세 조정을 하나의 프레임워크로 통합하여 추론 시 네트워크를 추가하지 않고도 청크 간 매끄러운 전환을 구현하는 데 있다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>청크형 액션 헤드는 VLA 모델이 실시간 제약 조건을 충족하기 위한 주류 선택지가 되었지만, 이로 인해 도입된 경계 지터링 문제는 오랫동안 간과되어 왔다: 인접 청크가 중첩 영역에서 불일치 예측을 생성하여 시간적 일관성과 작업 성공률을 직접적으로 손상시킨다. 기존 접근법은 추론 시 불일치 제안을 재가중하거나(예: RTC) 후처리 필터링에 의존하지만, 전자는 근본적인 오류를 교정하지 못하고 노이즈 이력 하에서 잔차 누적을 초래하며, 후자는 접합 아티팩트와 스펙트럼 에일리어싱을 억제하지 못한다. 주류 VLA 파이프라인(OpenVLA, GR2, TraceVLA)은 청크별 손실을 일괄 적용하여 실행 인덱스 의미론(동결, 편집 가능, 미래 영역은 차별적으로 취급되어야 함)을 완전히 무시한다.</p>
+<p>ChunkFlow가 진정으로 바꾸는 것은 "접합 일관성"을 추론 시의 사후补救 문제에서 훈련-실행 전체 파이프라인의 구조적 제약 조건으로 승격시키는 것이다. 더 이상 청크를 독립적 예측 유닛의 단순 연결로 간주하지 않고, 청크 간 중첩 영역의 조화 메커니즘을 명시적으로 모델링하며, 정규화와 강화 미세 조정을 통해 정책 자체가 접합 인식 액션 시퀀스를 생성하도록 학습하게 한다. 이러한 전환은 경계 문제가 더 이상 사후 수정에 의존하지 않고 정책 학습의 원천에서 제거됨을 의미한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">구조 정렬 중첩 혼합</h3>
+<p>각 액션 청크는 세 영역으로 나뉜다: 동결 영역(길이 d), 편집 가능 접합 영역(길이 O), 미래 영역(길이 s), 인덱스 범위 [1:d], [d+1:d+O], [d+O+1:L]에 해당한다. 인접 청크는 결정적 가중치로 조화된다:
+- 실행 액션 ã_(s_k+t-1) = w_t·a_t^(k) + (1-w_t)·a_(t+L-O)^(k-1)
+- 가중치 w_t = (t-1)/(O-1) (O&gt;1일 때), O=1일 때 w_t=0, O=0일 때 원본 액션 사용
+- 중첩 단계마다 O(d) 부동소수점 연산만 필요하며, 추가 정책 순방향 전파 없음</p>
+<h3 id="_5">연속성 정규화 정책 최적화</h3>
+<p>지도 학습 목표는 L_sup = L_BC + L_cont + L_bdry:
+- 경계 손실 L_bdry = λ_B·Σ‖a_t^(k) - a_(t+L-O)^(k-1)‖²₂, 접합 차이를 직접 페널티
+- 연속성 정규화 L_cont = λ_TV·Σ‖a_t^(k) - a_(t-1)^(k)‖₁ + λ_D2·Σ‖a_t^(k) - 2a_(t-1)^(k) + a_(t-2)^(k)‖²₂ (1차 총 변동 + 2차 곡률 페널티)
+- 이력 손상: 확률 1-q로 가우시안 노이즈 ε~N(0, σ²) 추가, 확률 q로 0 설정; 혼합 (1-α)·a + α·â로 계획 샘플링 수행, 노출 편향 감소</p>
+<h3 id="_6">구조 보존 이점 가중 미세 조정</h3>
+<ul>
+<li>결정 상태 s_t = (o_t, h̃_s_k, l), h̃는 혼합 후 실행 액션으로 구성</li>
+<li>비평가 (Q_φ, V_φ)는 TD 회귀와 expectile 값 피팅으로 훈련</li>
+<li>이점 가중치 w = clip(exp(max(0, A)/τ), 1, w_max)</li>
+<li>정책 업데이트 L_AWAC = -E[Σ w·log π_θ(ã_t|s_t)], 총 변동, 곡률 및 경계 정렬 항 보존(stop-gradient 포함), KL 정규화 및 엔트로피 보상 추가</li>
+<li>최종 목표 L_total = L_AWAC + L_cont+bdry + β·E[D_KL(π_θ‖π_θ_old)] - λ_H·E[H(π_θ)]</li>
+</ul>
+<h3 id="_7">이론적 보장</h3>
+<p>국소 Lipschitz 연속성과 운동 비율 입력 드리프트 가정 하에서, 기대 접합 오류 E[‖δ_t^(k)‖²₂] = O((L-O)²), 즉 O를 증가시키면 경계 불일치를 2차적으로 억제할 수 있다. π_θ가 L_π-Lipschitz이고 이력 노이즈가 ε로 유계이면, L_cont는 수축 ρ &lt; 1을 유도하며, 누적 편차 ≤ (L_π/(1-ρ))·T·ε이다.</p>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>실행 인덱스 의미론의 구조적 모델링</strong>: 액션 청크를 동결, 편집 가능, 미래의 세 영역으로 명시적으로 나누는 것은 청크 정책 내부 구조의 첫 번째 체계적 활용이다. 통일된 청크별 손실과 달리, 이러한 구분은 혼합과 정규화가 서로 다른 영역에 차별적 제약을 가할 수 있게 하여 메커니즘 수준에서 접합 불일치의 근원을 제거한다.</p>
+</li>
+<li>
+<p><strong>결정적 중첩 혼합의 파라미터 프리 설계</strong>: 혼합 가중치 w_t = (t-1)/(O-1)는 해석적으로 결정되며, 학습이 필요 없고 추가 순방향 전파가 없으며, 추론 시 추가 지연이 전혀 없다(ARL 4.43 ms에 불과). 이는 추가 계산이나 재가중이 필요한 RTC 등의 접근법과 본질적으로 구별되며, 접합 조화 비용을 O(d) 부동소수점 연산으로 낮춘다.</p>
+</li>
+<li>
+<p><strong>접합 인식과 강화 미세 조정의 결합 최적화</strong>: 연속성 정규화를 지도 학습에만 사용하지 않고 AWAC 미세 조정 과정에 내장한다. 절제 실험에 따르면, 연속성 제약이 없는 AWAC는 지도 모델 대비 스펙트럼 노이즈를 28%만 감소시키는 반면, 완전한 Safe RL-FT는 HF_ratio를 1.000에서 0.431로 낮추어 접합 제약과 이점 가중치 사이에 시너지 효과가 있음을 보여준다.</p>
+</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="calvin-abc-d-i">CALVIN ABC-D 주요 결과 (표 I)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Success</th>
+<th>MSD-Δa</th>
+<th>MSD-Δ²a</th>
+<th>MSD-Δ³a</th>
+<th>Bjump</th>
+<th>HF_ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChunkFlow</td>
+<td>4.30</td>
+<td>0.075</td>
+<td>0.154</td>
+<td>0.512</td>
+<td>0.209</td>
+<td>0.431</td>
+</tr>
+<tr>
+<td>VPP</td>
+<td>4.29</td>
+<td>0.096</td>
+<td>0.181</td>
+<td>0.535</td>
+<td>0.237</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>FLOWER</td>
+<td>4.54</td>
+<td>0.161</td>
+<td>0.382</td>
+<td>1.191</td>
+<td>0.443</td>
+<td>0.460</td>
+</tr>
+<tr>
+<td>GR-1</td>
+<td>3.06</td>
+<td>0.082</td>
+<td>0.165</td>
+<td>0.496</td>
+<td>0.969</td>
+<td>0.999</td>
+</tr>
+</tbody>
+</table>
+<p>ChunkFlow는 성공률에서 가장 강력한 베이스라인 FLOWER(4.54)에 근접하지만, 모든 평활도 지표에서 현저히 앞서며 Bjump는 0.443에서 0.209로 감소했다.</p>
+<h3 id="libero-ii">LIBERO 교차 데이터셋 결과 (표 II)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Long SR</th>
+<th>MSD-Δa</th>
+<th>Bjump</th>
+<th>HF_ratio</th>
+<th>ARL (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChunkFlow</td>
+<td>93.4%</td>
+<td>0.042</td>
+<td>0.082</td>
+<td>0.135</td>
+<td>4.43</td>
+</tr>
+<tr>
+<td>OpenVLA</td>
+<td>53.7%</td>
+<td>0.083</td>
+<td>0.166</td>
+<td>0.862</td>
+<td>219.43</td>
+</tr>
+<tr>
+<td>PI0.5</td>
+<td>92.6%</td>
+<td>0.095</td>
+<td>0.167</td>
+<td>0.494</td>
+<td>9.04</td>
+</tr>
+<tr>
+<td>PI0.5-RTC</td>
+<td>83.7%</td>
+<td>0.089</td>
+<td>0.115</td>
+<td>0.342</td>
+<td>18.47</td>
+</tr>
+</tbody>
+</table>
+<p>ChunkFlow는 93.4% 성공률로 모든 베이스라인을 능가하며, 동시에 추론 지연 시간이 가장 낮다(4.43 ms). 주목할 점은 PI0.5-RTC가 PI0.5 대비 성공률이 하락(92.6%→83.7%)하여, 추론 시 혼합이 근본적인 오류를 교정하지 못한다는 한계를 검증한다.</p>
+<h3 id="iii-vi-vii">핵심 절제 실험 (표 III, VI, VII)</h3>
+<ul>
+<li>중첩 길이 O=8이 최적: O=0일 때 Bjump 0.500, O=8일 때 0.209로 감소</li>
+<li>이력 길이 p=4가 최적: p=0일 때 MSD-Δ²a=0.223, p=4일 때 0.154로 감소, p=8일 때 0.203으로 회귀</li>
+<li>RL 없는 지도 모델 HF_ratio=1.000, 완전한 Safe RL-FT는 0.431로 감소</li>
+</ul>
+<h3 id="iv">추론 시 안정성 (표 IV)</h3>
+<p>순수 중첩(재훈련 없음)은 O=8에서 성공률이 3.60으로 하락하는 반면, ChunkFlow 훈련 후 O=8에서 4.30을 유지하여, 추론 시 혼합만으로는 접합 문제를 해결할 수 없으며 훈련-실행 결합 설계가 필수적임을 보여준다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<p>저자는 한계 섹션을 명시적으로 나열하지 않았으며, 텍스트에서 추론할 수 있다:
+- 기여는 접합 인식 훈련-실행 프레임워크에 집중되어 있으며, VLA 백본 설계나 다중 모달 프론트엔드를 수정하지 않아 백본 능력이 부족한 시나리오에서는 개선 효과가 제한적이다
+- 실행 인덱스 청크 정렬은 시뮬레이션과 초기 하드웨어 테스트에서만 검증되었으며, 더 광범위한 실제 세계 견고성은 향후 과제로 남아 있다
+- 과도한 정규화(λ_D2=0.007)는 위상 지연과 접합 드리프트를 유발하고, 과도한 희소 사전(3×10⁻⁴)은 스펙트럼 이득 없이 평활도를 손상시켜, 하이퍼파라미터 선택이 성능에 민감하다
+- 이력 길이 민감도는 일부 잘려나가 완전한 결과가 제공되지 않았다; 논문은 장기 작업에서 보상 희소성이 AWAC 미세 조정에 미치는 구체적 영향 경계를 명확히 하지 않았다</p>
+<h2 id="_11">엔지니어링 시사점</h2>
+<p>ChunkFlow를 재현할 때 다음 핵심 사항을 우선적으로 확인하라:
+1. <strong>중첩 길이 O와 청크 길이 L의 비율</strong>: 기본값 L=10, O=8이며, O가 너무 작으면(≤4) Bjump가 현저히 악화되고(0.371→0.500), O와 L의 조합이 접합 조화 효과를 직접 결정한다
+2. <strong>정규화 가중치 균형</strong>: λ_TV=0.005, λ_D2=0.005, λ_B=0.03이 기본 최적값이며, λ_D2가 0.007을 초과하면 위상 지연이 발생하고, λ_B가 0.04를 초과하면 성공률이 손상된다(4.30→4.23)
+3. <strong>이력 길이 p=4가 최적점</strong>: p=0일 때 가속도 평활도가 나쁘고, p=8일 때 오래된 신호로 인한 오류 누적이 발생하므로, 구현 시 이력 창을 명시적으로 제어해야 한다
+4. <strong>훈련-실행 일관성</strong>: 추론 시 혼합은 훈련 시 혼합 전략과 완전히 일치해야 하며, 그렇지 않으면 순수 중첩이 O=8에서 성공률을 3.60으로 떨어뜨린다. 이는 가장 쉽게 함정에 빠지는 엔지니어링 세부 사항이다
+5. <strong>하드웨어 요구 사항</strong>: 훈련은 작업당 A800 4장(총 32+ GPU)이 필요하며, 추론은 단일 A800 FP16으로 충분하고, ARL 4.43 ms로 실시간 요구 사항을 충족한다</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_reuss_flower_democratizing_generalis_2025/">FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zheng_tracevla_visual_trace_promptin_2024/">TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chunkflow_continuity_consistent_chunked_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_reuss_flower_democratizing_generalis_2025/">
+          <span class="entry-type">논문</span>
+          <h3>FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies</h3>
+          <p>FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zheng_tracevla_visual_trace_promptin_2024/">
+          <span class="entry-type">논문</span>
+          <h3>TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies</h3>
+          <p>TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">구조 정렬 중첩 혼합</a></li>
+<li><a href="#_5">연속성 정규화 정책 최적화</a></li>
+<li><a href="#_6">구조 보존 이점 가중 미세 조정</a></li>
+<li><a href="#_7">이론적 보장</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#calvin-abc-d-i">CALVIN ABC-D 주요 결과 (표 I)</a></li>
+<li><a href="#libero-ii">LIBERO 교차 데이터셋 결과 (표 II)</a></li>
+<li><a href="#iii-vi-vii">핵심 절제 실험 (표 III, VI, VII)</a></li>
+<li><a href="#iv">추론 시 안정성 (표 IV)</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

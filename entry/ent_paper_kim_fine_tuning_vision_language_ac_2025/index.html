@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenVLA-OFT · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">OpenVLA-OFT</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>OpenVLA-OFT</h1>
+      <p class="entry-name-en">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.19645v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将 OpenVLA 在 LIBERO 基准上的平均成功率从 76.5% 提升至 97.1%，同时将动作生成吞吐量提高 26 倍。该方法在真实机器人任务中，使双机械臂 ALOHA 机器人成功执行灵巧高频控制，并超越其他 VLA 模型和从零训练的模仿学习策略。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2502.19645" target="_blank" rel="noopener">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2502.19645" target="_blank" rel="noopener">OpenVLA-OFT source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有视觉-语言-动作模型（VLA）虽在语义泛化上表现优异，但面对新机器人设置时仍需微调，而微调策略的选择尚不明确。本研究以 OpenVLA 为基座模型，系统分析了动作解码方案、动作表示和学习目标等关键设计选择。基于实证分析，作者提出优化微调（OFT）方案，整合并行解码、动作分块、连续动作表示和 L1 回归损失，显著提升推理效率、策略性能和输入输出灵活性。该方案在 LIBERO 模拟基准上创下新纪录，并在真实世界评估中使双机械臂 ALOHA 机器人成功执行灵巧高频控制任务，平均成功率比 π₀ 和 RDT-1B 等 VLA 模型高出 15%。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<ul>
+<li><strong>基座模型</strong>：采用 OpenVLA 作为代表性 VLA 模型，其基于预训练的视觉-语言模型，利用多样化机器人数据集训练。</li>
+<li><strong>关键设计选择</strong>：</li>
+<li><strong>动作解码方案</strong>：从自回归解码改为并行解码，显著提升推理速度。</li>
+<li><strong>动作表示</strong>：采用连续动作表示（而非离散化），保留动作精度。</li>
+<li><strong>学习目标</strong>：使用简单的 L1 回归损失替代复杂的损失函数，简化训练过程。</li>
+<li><strong>动作分块</strong>：引入动作分块（action chunking），允许模型一次性预测多个时间步的动作，提升控制稳定性。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>模拟基准</strong>：在 LIBERO 基准的四个任务套件（LIBERO-Spatial、LIBERO-Object、LIBERO-Goal、LIBERO-Long）上进行评估。</li>
+<li><strong>真实世界评估</strong>：在双机械臂 ALOHA 机器人上执行灵巧高频控制任务，对比模型包括 π₀、RDT-1B、Diffusion Policy 和 ACT。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>LIBERO 基准</strong>：</li>
+<li>OpenVLA-OFT 平均成功率从 76.5% 提升至 97.1%。</li>
+<li>动作生成吞吐量提高 26 倍（从 1.5 Hz 到 39 Hz）。</li>
+<li><strong>真实世界评估</strong>：</li>
+<li>在双机械臂 ALOHA 机器人上，OpenVLA-OFT 成功执行灵巧高频控制任务。</li>
+<li>平均成功率比 π₀ 和 RDT-1B（使用默认微调方案）高出 15%。</li>
+<li>比从零训练的 Diffusion Policy 和 ACT 高出 15%（绝对成功率）。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>OpenVLA-OFT 通过优化微调策略，在模拟和真实环境中均实现了显著的性能提升和效率改进。代码和预训练模型已开源。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2502.19645v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              <span class="rel-desc">OpenVLA-OFT提及动作分块变压器（ACT）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">ACT</a>
+              <span class="rel-desc">OpenVLA-OFT提及ACT。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              <span class="rel-desc">OpenVLA-OFT使用扩散策略。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_liu_rdt_1b_a_diffusion_foundation_2024/">RDT-1B</a>
+              <span class="rel-desc">OpenVLA-OFT提及RDT-1B。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-desc">OpenVLA-OFT提及LIBERO。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_deva_decoupled_video_action_model_physic_2026/">DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_explicit_kinematic_guidance_analytic_con_2026/">Explicit Kinematic Guidance from Analytic Concepts for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_latency_tolerant_cloud_edge_collaborativ_2026/">Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_patch_policy_efficient_embodied_control_2026/">Patch Policy: Efficient Embodied Control via Dense Visual Representations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wcm_world_critic_model_vision_language_2026/">WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_causality_aware_infer_diagnose_refine_fr_2026/">A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_syed_expres_vla_specializing_vision_2025/">ExpReS-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gate_not_cache_gate_provenance_bounds_2026/">The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_uncovering_mitigating_positional_blind_s_2026/">Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">VLA-0</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VLA-0提及OpenVLA-OFT。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_generalizable_vla_finetuning_representat_2026/">Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reasoning_double_edged_sword_architectur_2026/">Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_extoken_structured_exploration_efficient_2026/">ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_starvla_reducing_complexity_vision_langu_2026/">StarVLA-$α$: Reducing Complexity in Vision-Language-Action Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vlaguard_framework_evaluating_mitigating_2026/">VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_capvector_transferable_capability_vector_2026/">CapVector: Learning Transferable Capability Vectors in Parametric Space for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_simplevla_rl_scaling_vla_train_2025/">SimpleVLA-RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_kim_fine_tuning_vision_language_ac_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_explicit_kinematic_guidance_analytic_con_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Explicit Kinematic Guidance from Analytic Concepts for Vision-Language-Action Models</h3>
+          <p>本文提出SAGE（Spatial Analytic-concept Guided Enhancement）框架，通过Analytic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-0</h3>
+          <p>VLA-0 是 NVIDIA 在 2025 年提出的视觉-语言-动作模型，核心创新在于将机器人动作直接表示为文本，无需修改 VLM 词汇表或添加专用动作头。在 LIBERO…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_syed_expres_vla_specializing_vision_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ExpReS-VLA</h3>
+          <p>ExpReS-VLA 是卡内基梅隆大学于 2025 年提出的大型视觉-语言-动作模型，专为机器人操作任务设计。其核心贡献在于通过压缩经验回放与检索增强生成，在防止灾难性遗忘的同时，实现预训练 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_capvector_transferable_capability_vector_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CapVector: Learning Transferable Capability Vectors in Parametric Space for Vision-Language-Action Models</h3>
+          <p>CapVector…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ACT</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware 是斯坦福大学、UC Berkeley 与 Meta 于 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_causality_aware_infer_diagnose_refine_fr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</h3>
+          <p>本文提出 IDR（Infer-Diagnose-Refine）框架，一个模型无关的测试时模态适配方法，通过因果干预估计 VLA 模型中视觉观测的动态重要性，并据此门控细化动作预测。该方法在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reasoning_double_edged_sword_architectur_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models</h3>
+          <p>本文系统比较了三种推理架构的视觉-语言-动作（VLA）模型在跨阶段扰动下的鲁棒性，发现推理设计是决定脆弱性的主导因素：潜在迭代推理（RD-VLA）在视觉噪声下崩溃至14.8%成功率，而文本链式思维（D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deva_decoupled_video_action_model_physic_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</h3>
+          <p>DeVA 提出一种解耦的视频-动作策略学习架构，将视觉动态建模与动作预测分配给独立专家，并通过多级特征交互与物理显著引导（affordance…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_uncovering_mitigating_positional_blind_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</h3>
+          <p>本文提出并系统研究了视觉-语言-动作模型（VLA）中的位置性盲区（Positional Blind Spots,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_rdt_1b_a_diffusion_foundation_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RDT-1B</h3>
+          <p>RDT-1B 是清华大学于 2024 年提出的双机械臂操作扩散基础模型，发表于 ICLR 2024。其核心贡献在于通过可扩展的 Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_starvla_reducing_complexity_vision_langu_2026/">
+          <span class="entry-type">论文</span>
+          <h3>StarVLA-$α$: Reducing Complexity in Vision-Language-Action Systems</h3>
+          <p>StarVLA-$α$ 是由研究团队提出的简化视觉-语言-动作（VLA）模型基线，旨在通过最小化架构与流程复杂度，系统分析 VLA 设计选择。其核心贡献在于证明：在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_latency_tolerant_cloud_edge_collaborativ_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</h3>
+          <p>本文提出…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wcm_world_critic_model_vision_language_2026/">
+          <span class="entry-type">论文</span>
+          <h3>WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</h3>
+          <p>WCM（World Critic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_generalizable_vla_finetuning_representat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</h3>
+          <p>Anchor-Align 是一套面向视觉-语言-动作（VLA）模型微调的通用配方，由作者团队提出，核心是在标准行为克隆（BC）之外同时施加两个辅助目标：逐层蒸馏冻结预训练 VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gate_not_cache_gate_provenance_bounds_2026/">
+          <span class="entry-type">论文</span>
+          <h3>The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</h3>
+          <p>本文由机器人学习与系统领域研究者提出，针对训练无关的视觉token跳过（training-free token…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_extoken_structured_exploration_efficient_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</h3>
+          <p>ExToken 是一种面向视觉-语言-动作（VLA）模型强化学习（RL）后训练的结构化探索框架，由研究团队提出，旨在解决 RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_simplevla_rl_scaling_vla_train_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SimpleVLA-RL</h3>
+          <p>SimpleVLA-RL 是由北京大学和清华大学提出的一个高效强化学习框架，旨在提升视觉-语言-动作（VLA）模型的机器人操作能力。其核心贡献在于通过引入轨迹采样、并行化、多环境渲染和优化损失计算等…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_patch_policy_efficient_embodied_control_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Patch Policy: Efficient Embodied Control via Dense Visual Representations</h3>
+          <p>Patch Policy 提出了一种直接消费预训练 ViT 密集 patch 特征（而非全局池化或 CLS token）的模块化 Transformer 策略架构，由 NYU、Meta-FAIR 与…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vlaguard_framework_evaluating_mitigating_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</h3>
+          <p>VLAGuard 是一个针对视觉-语言-动作（VLA）机器人物理注意力劫持漏洞的评估与防御框架，由研究团队提出。其核心贡献包括红队攻击 VASA（基于注意力引导的语义补丁）和蓝队防御…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

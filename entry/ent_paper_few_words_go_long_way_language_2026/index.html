@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Few Words Go a Long Way: Language Guided Robot Policy Synthesis · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</h1>
+      <p class="entry-name-en">A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ARCHITECT 是一个将机器人策略获取重构为交互式代码合成任务的框架，由 LLM 作为编排代理，调用异构工具套件生成可执行程序，并通过人类自然语言纠正来迭代改进策略。其核心贡献在于用可解释、可修正的程序替代黑箱 VLA 策略，无需任何机器人特定训练数据，仅靠语言反馈即可实现跨任务技能复用。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.23784" target="_blank" rel="noopener">arXiv:2607.23784 A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>VLA 模型的根本问题不是精度，而是不可修正性。当策略失败时，用户面对的是一个无法解释、无法局部调整的黑箱，只能收集更多演示并重新训练，这在真实场景中几乎不可行。ARCHITECT 改变了这一范式：它把策略从“学出来的权重”变成“写出来的代码”，使失败成为可定位、可对话、可修复的事件。这种转变的意义在于，它将机器人调试从机器学习专家的领域拉回到普通用户的自然语言交互范畴。</p>
+<p>另一个被改变的关键点是“规格差距”。传统模块化方法假设初始自然语言指令足以描述任务的全部几何与物理细节，但现实是“把香蕉放到盘子里”这句话远远不够。ARCHITECT 通过人类在循环中的语言纠正来填补这一差距，将模糊的意图逐步精炼为可执行的程序约束，而不是期望一次指令就能覆盖所有情况。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体流程</h3>
+<ol>
+<li>自然语言指令解析并嵌入系统提示词</li>
+<li>LLM 生成顶层程序，强制先调用 <code>list_primitives()</code> 查看可用 API</li>
+<li>依次执行 <code>query_robot_state()</code>、<code>get_scene_description()</code> 进行环境感知</li>
+<li>按需调用感知函数（<code>detect_objects()</code>、<code>get_placement_pose()</code>）</li>
+<li>识别子操作并调用 <code>write_primitive()</code> 注册为命名原语</li>
+<li>调用 <code>submit_program()</code> 提交执行</li>
+<li>检测失败或回合结束，人类提供语言纠正</li>
+<li>纠正被合成为技能并加入技能库，重新生成策略</li>
+</ol>
+<h3 id="_4">工具套件设计</h3>
+<ul>
+<li><strong>控制原语</strong>：<code>set_gripper_width()</code>（宽度范围 0.0–0.085 m）、<code>move_ee_to_pose()</code>、<code>move_ee_guarded()</code>（示例参数 <code>distance=-0.25, force_threshold=5.0 N</code>）</li>
+<li><strong>感知工具</strong>：<code>detect_objects()</code> 链式使用 Grounded SAM2 分割与 AnyGrasp 抓取采样；<code>get_placement_pose()</code> 基于 AnyPlace；<code>get_vqa_response()</code> 基于 GPT-5.4；<code>get_keypoints()</code> 基于 DIFT；<code>get_keypoints_trajectory()</code> 基于 ReKep</li>
+<li><strong>本体感觉工具</strong>：<code>verify_grasp()</code> 采用两阶段验证，先本体感觉门控再 VLM 确认</li>
+</ul>
+<h3 id="_5">技能库机制</h3>
+<p>每次代码生成前，所有已积累的技能加载到上下文。技能包含使用指南、代码示例和规则参数，例如“Guarded Place on Surface”技能将人类纠正文本（“继续向下移动直到接触架子”）转化为 <code>move_ee_guarded(axis="z", distance=-0.25, force_threshold=5.0)</code> 的可执行规则。</p>
+<h3 id="_6">强制工作流约束</h3>
+<p>系统提示词要求程序必须调用 <code>submit_program()</code> 提交，禁止以文本形式输出程序，禁止导入，每个有意义的子操作必须注册为原语。默认采用 VQA 验证-重试模式：对无法仅凭本体感觉确认成功的子操作，执行后通过 <code>get_vqa_response()</code> 询问是/否问题，否定则调整参数重试一次。</p>
+<h2 id="_7">关键创新</h2>
+<p><strong>1. 语言纠正作为一等公民而非事后补救</strong>：现有方法要么完全依赖初始指令，要么需要重新训练。ARCHITECT 将人类纠正直接转化为可执行技能并持久化到技能库，使每次失败都成为长期可复用的知识积累，而非一次性修补。这本质上是将上下文学习从“示例”扩展到“交互历史”。</p>
+<p><strong>2. 程序合成与工具调用的结构化约束</strong>：强制工作流步骤（先感知、再规划、后执行）和禁止扁平 API 调用列表，迫使 LLM 生成具有明确子操作边界的程序。这种结构先验使得失败定位成为可能——可以精确指出是哪一行代码或哪个工具调用出了问题，而不是面对一个整体失败的黑箱。</p>
+<p><strong>3. 技能库作为长期上下文学习</strong>：所有技能在每次代码生成前加载到上下文，相当于一种无限长的记忆机制。这使得跨任务迁移成为可能——人类评估中，加载任务 1 技能库后任务 2 成功率从 0/6 升至 4/6，证明语言纠正的积累具有跨场景泛化能力。</p>
+<h2 id="_8">实验与结果</h2>
+<h3 id="18-10-episode-5-400-rollout">主基准（表 1，8 任务 × 10 episode × 5 方法，共 400 次 rollout）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>CaP SR</th>
+<th>π₀ SR</th>
+<th>π₀.₅ SR</th>
+<th>ARCHITECT-VLM SR</th>
+<th>ARCHITECT-HiTL SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Banana → plate</td>
+<td>.20</td>
+<td>.80</td>
+<td>.90</td>
+<td>.80</td>
+<td>.80</td>
+</tr>
+<tr>
+<td>Block → basket</td>
+<td>.40</td>
+<td>.40</td>
+<td>1.0</td>
+<td>.70</td>
+<td>.70</td>
+</tr>
+<tr>
+<td>Baseball → bucket</td>
+<td>.60</td>
+<td>.00</td>
+<td>.20</td>
+<td>.40</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Apple, Bread → bowl</td>
+<td>.10</td>
+<td>.40</td>
+<td>.40</td>
+<td>.00</td>
+<td>.80</td>
+</tr>
+<tr>
+<td>Pick bread from box</td>
+<td>.10</td>
+<td>.40</td>
+<td>.40</td>
+<td>.00</td>
+<td>.70</td>
+</tr>
+<tr>
+<td>Close drawer</td>
+<td>.00</td>
+<td>.10</td>
+<td>.00</td>
+<td>.40</td>
+<td>.90</td>
+</tr>
+<tr>
+<td>Fold cloth into triangle</td>
+<td>.00</td>
+<td>.00</td>
+<td>.00</td>
+<td>.70</td>
+<td>.80</td>
+</tr>
+<tr>
+<td>Banana under cloth</td>
+<td>.00</td>
+<td>.10</td>
+<td>.00</td>
+<td>.00</td>
+<td>.80</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">附加基线（表 2）</h3>
+<p>ARCHITECT 在全部 8 个任务上超越 Inner Monologue、ProgPrompt、MolmoAct2、GR00T N1.7。GR00T N1.7 仅在 banana → plate 上有非零成功率（0.40），MolmoAct2 在该任务上与 ARCHITECT 持平但其余任务均落后。</p>
+<h3 id="bapple-pan">语言消融（附录 B，Apple → pan 任务）</h3>
+<p>ARCHITECT 在 15 种语言变体中保持 1.0 SR，仅“Length long”变体降至 .00 SR（GCR .80）。π₀.₅ 对措辞高度敏感，在“Take the apple and place it onto the pan.”、“Move the apple onto the pan.”、“Onto the pan, place the apple.”等变体上 SR 降至 .00。</p>
+<h3 id="n6">人类评估（N=6）</h3>
+<p>平均每试验查询从 4.67 降至 0.83（Δ=3.83，p=0.036），3/6 参与者需 0 次纠正。无技能时任务 2 成功率为 0/6，加载任务 1 技能库后 SR 升至 4/6。3 名给 1 次纠正的参与者中 2 名零样本失败任务 2，3 名给 2 次以上纠正的全部成功。</p>
+<h2 id="_9">边界与局限</h2>
+<p><strong>主要失败模式是抓取</strong>：源于所选的现成抓取生成模块（AnyGrasp），当抓取采样器噪声导致抓取成功未被纠正时，技能库可能缺少纠正未来抓取失败的技能。这意味着 ARCHITECT 的上限受限于底层感知模块的质量，而非 LLM 或程序合成能力。</p>
+<p><strong>深度估计不准确时放置姿态难以确定</strong>：如向桶中放物品时可能抬得过高，这是底层模块的局限，虽然可通过用户纠正解决，但增加了交互轮次。</p>
+<p><strong>cuRobo 运动规划失败</strong>：当无法为目标姿态生成无碰撞轨迹时，ARCHITECT 会遇到规划错误，论文未明确该情况的处理策略。</p>
+<p><strong>纠正数量是关键变量</strong>：提供 1 次纠正的参与者未能在无额外纠正下完成任务 2，表明构建有用技能库需要足够的纠正积累。论文未研究纠正质量对策略的影响，也未进行机器人特定微调或使用演示数据。</p>
+<h2 id="_10">工程启示</h2>
+<p><strong>复现时先核对感知模块的确定性</strong>：ARCHITECT 的性能高度依赖 AnyGrasp 的抓取采样和 AnyPlace 的放置预测。如果这些模块在你的硬件上表现不稳定，整个框架的成功率会显著下降。建议先单独验证 <code>detect_objects()</code> 和 <code>get_placement_pose()</code> 在你的场景中的可靠性，再接入完整流程。</p>
+<p><strong>技能库的积累策略直接影响跨任务泛化</strong>：人类评估显示，纠正次数少于 2 次的参与者无法在零样本下完成结构相似的新任务。这意味着在实际部署中，需要为每个新任务准备至少 2-3 轮纠正，否则技能库可能不足以支撑迁移。</p>
+<p><strong>最容易踩坑的是 <code>move_ee_guarded()</code> 的力阈值</strong>：论文给出的 5.0 N 适用于刚性表面，软表面需略增。如果目标物体或接触面材质变化，这个参数需要重新校准，否则会导致放置失败或物体损坏。</p>
+<p><strong>语言消融结果提示 VLA 的脆弱性远超预期</strong>：π₀.₅ 在“Move the apple onto the pan.”这种看似无害的变体上 SR 从 1.0 跌至 .00，而 ARCHITECT 保持 1.0。如果你的下游团队正在评估 VLA 方案，务必在多种措辞下测试，而不是只验证单一指令模板。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.23784</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_huang_rekep_spatio_temporal_reasonin_2024/">ReKep</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_few_words_go_long_way_language_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">方法</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_rekep_spatio_temporal_reasonin_2024/">
+          <span class="entry-type">论文</span>
+          <h3>ReKep</h3>
+          <p>ReKep 是斯坦福大学与哥伦比亚大学于 2024 年提出的机器人操作通用视觉-语言-动作模型，发表于 CoRL 2024。其核心贡献在于将操作任务表示为基于 3D…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体流程</a></li>
+<li><a href="#_4">工具套件设计</a></li>
+<li><a href="#_5">技能库机制</a></li>
+<li><a href="#_6">强制工作流约束</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#18-10-episode-5-400-rollout">主基准（表 1，8 任务 × 10 episode × 5 方法，共 400 次 rollout）</a></li>
+<li><a href="#2">附加基线（表 2）</a></li>
+<li><a href="#bapple-pan">语言消融（附录 B，Apple → pan 任务）</a></li>
+<li><a href="#n6">人类评估（N=6）</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

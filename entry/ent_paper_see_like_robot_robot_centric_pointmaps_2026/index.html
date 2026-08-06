@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models</h1>
+      <p class="entry-name-en">See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出机器人中心点图（robot-centric pointmaps），将RGB-D观测提升至机器人坐标系并保持H×W像素网格，以最小架构改动集成到预训练VLA中，解决相机坐标系与动作坐标系不匹配导致的跨视角泛化问题。作者在RoboCasa仿真和Franka Research 3真实机器人上验证，点图在固定与随机相机视角下均显著提升π0.5与SmolVLA的成功率，尤其对未见相机位姿鲁棒。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11498" target="_blank" rel="noopener">arXiv:2607.11498 See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>VLA模型的动作定义在机器人自身3D坐标系，而视觉观测来自相机坐标系，这一根本性错位在固定视角下可被策略记忆掩盖，但跨数据集聚合不同相机设置时，策略被迫学习视角无关的映射，难度陡增。现有方案各有硬伤：深度图仍绑定相机系，点云虽提供机器人中心几何却破坏预训练2D VLA所需的规则图像网格，且将密集观测降为稀疏点集。本文真正改变的是：在不牺牲预训练视觉编码器输入格式的前提下，将几何信息显式注入机器人坐标系，使VLA无需从数据中隐式学习相机标定与坐标系变换。这一改动将几何先验从“可学习的隐式知识”转为“输入的显式结构”，直接缓解了跨视角分布偏移。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">点图构建流程</h3>
+<ol>
+<li><strong>相机系提升</strong>：对每个RGB-D观测，按公式 P_c^cam(u,v) = D_c(u,v) K_c^{-1} [u,v,1]^T 将像素提升为3D点。</li>
+<li><strong>坐标系变换</strong>：应用相机到机器人变换 P_c^R(u,v) = R_c P_c^cam(u,v) + t_c，将点转换到机器人基座系。</li>
+<li><strong>末端执行器居中</strong>：P_c^EE(u,v) = P_c^R(u,v) - t_EE，以当前末端执行器位置为原点重新居中。</li>
+</ol>
+<h3 id="_4">融合架构</h3>
+<ul>
+<li>使用与RGB编码器f_θ同架构的独立点图编码器g_φ（从f_θ初始化），将点图映射为与RGB token同形状的token。</li>
+<li>逐元素相加融合：z_c = f_θ(I_c) + g_φ(P_c^EE) ∈ R^{N_tok×d}。</li>
+</ul>
+<h3 id="_5">关键设计决策</h3>
+<ul>
+<li><strong>预计算几何优于学习</strong>：直接提供机器人系坐标比让策略从深度和标定中隐式学习更有效（表1中RGB+Pointmap 34.7 vs RGB+Plücker+Depth 31.6，差距3.1点）。</li>
+<li><strong>图像形式优于点云</strong>：保留像素网格使逐元素融合成为可能（加法融合34.7 vs 拼接30.7）。</li>
+<li><strong>末端执行器居中优于基座居中</strong>：动作是末端执行器的运动，共享原点使观察与动作空间对齐；基座系将等效交互编码为无关几何。</li>
+<li><strong>加法融合优于拼接</strong>：加法保持空间对应关系，拼接将点图token视为独立序列。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>坐标系对齐的显式化</strong>：以往方法或隐式学习变换，或使用破坏网格结构的点云。点图以像素级3D坐标形式直接给出机器人系几何，既保留预训练VLA的输入格式，又消除坐标系错位，这是首个以最小架构改动实现该对齐的方案。</li>
+<li><strong>末端执行器居中的动作空间对齐</strong>：将观测几何以末端执行器为原点表达，使观察与动作空间共享坐标系。这一设计使等效交互（如不同位置抓取）在几何上保持一致，显著提升跨视角泛化（表3中EE居中在随机视角下仅下降0.3点，基座居中下降2.0点）。</li>
+<li><strong>零额外token开销的融合</strong>：通过独立编码器加逐元素相加，不增加序列长度，不引入点云专用编码器或体素化模块，对预训练VLA的架构改动极小，便于集成到任意VLA骨干。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="robocasa">受控研究（RoboCasa，π风格架构）</h3>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RGB</td>
+<td>27.9</td>
+</tr>
+<tr>
+<td>RGB+Plücker</td>
+<td>28.7</td>
+</tr>
+<tr>
+<td>RGB+Plücker+Depth</td>
+<td>31.6</td>
+</tr>
+<tr>
+<td>RGB+Pointmap</td>
+<td>34.7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">融合方式消融</h3>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RGB+Point cloud（MLP，concat）</td>
+<td>24.2</td>
+</tr>
+<tr>
+<td>RGB+Point cloud（PTv3，concat）</td>
+<td>32.8</td>
+</tr>
+<tr>
+<td>RGB+Pointmap（concat）</td>
+<td>30.7</td>
+</tr>
+<tr>
+<td>RGB+Pointmap（add）</td>
+<td>34.7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">相机随机化鲁棒性（表3）</h3>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th>Fixed</th>
+<th>Rand.</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RGB</td>
+<td>27.9</td>
+<td>25.8</td>
+<td>-2.1</td>
+</tr>
+<tr>
+<td>RGB+Pointmap（base）</td>
+<td>34.7</td>
+<td>32.7</td>
+<td>-2.0</td>
+</tr>
+<tr>
+<td>RGB+Pointmap（EE）</td>
+<td>36.9</td>
+<td>36.6</td>
+<td>-0.3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">模拟基准（表4，固定评估视角）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>平均成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FP3</td>
+<td>42.8</td>
+</tr>
+<tr>
+<td>OC-VLA</td>
+<td>56.3</td>
+</tr>
+<tr>
+<td>KYC</td>
+<td>59.1</td>
+</tr>
+<tr>
+<td>GeoVLA</td>
+<td>57.1</td>
+</tr>
+<tr>
+<td>PointVLA</td>
+<td>57.3</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>55.3</td>
+</tr>
+<tr>
+<td>π0.5+pointmap</td>
+<td>62.9</td>
+</tr>
+<tr>
+<td>SmolVLA</td>
+<td>37.2</td>
+</tr>
+<tr>
+<td>SmolVLA+pointmap</td>
+<td>41.4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="franka-research-35">真实机器人（Franka Research 3，表5）</h3>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>DP3</th>
+<th>π0.5</th>
+<th>π0.5+pointmap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seen</td>
+<td>63.3</td>
+<td>73.3</td>
+<td>78.3</td>
+</tr>
+<tr>
+<td>Unseen</td>
+<td>48.3</td>
+<td>55.0</td>
+<td>66.7</td>
+</tr>
+</tbody>
+</table>
+<p>点图在Unseen下仅下降11.6点，RGB-only下降18.3点（由表内数值 78.3→66.7 与 73.3→55.0 计算）。结果说明点图的核心价值在于跨视角泛化：在未见相机位姿下提升幅度（+11.7）远大于已见位姿（+5.0），且对随机视角几乎免疫（Δ仅-0.3）。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>未消融点图注入方式与动作专家的关系，也未消融与预训练配方的交互。</li>
+<li>点云对比仅使用单一采样预算（每相机1024点），更大预算可能缩小差距。</li>
+<li>点图需要训练和测试时的标定相机内参和外参，限制于标定可用的设置。</li>
+<li>相机变化结果聚焦于位置和外参变化，未覆盖相机数量或视场角变化。</li>
+<li>真实机器人点图由RealSense立体深度和手眼标定构建，携带传感器噪声，与仿真精确几何不同；未在真实机器人上评估SmolVLA。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<p>复现时先核对三点：一是相机标定精度，点图质量直接依赖内外参准确性，真实场景中手眼标定误差会传导至几何表达；二是末端执行器居中逻辑，务必以当前时刻t_EE为原点而非固定原点，否则失去动作空间对齐优势；三是融合方式，加法融合依赖点图编码器与RGB编码器的token空间对齐，初始化g_φ为f_θ的权重是必要前提。最容易踩坑的是点云基线对比——不同采样预算和编码器选择会显著影响结论，本文仅用单一预算，下游对比时需自行扩展。对工程团队，点图是低侵入方案，可在现有VLA上直接替换视觉输入分支，无需改动动作头或训练配方，适合作为跨相机部署的通用增强模块。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.11498</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">DP3</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zhang_grounding_actions_in_camera_sp_2025/">OC-VLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_see_like_robot_robot_centric_pointmaps_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_grounding_actions_in_camera_sp_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OC-VLA</h3>
+          <p>OC-VLA 是由浙江大学、上海 AI 实验室、商汤研究院、南京大学和清华大学联合提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">
+          <span class="entry-type">论文</span>
+          <h3>DP3</h3>
+          <p>3D Diffusion Policy (DP3)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SmolVLA</h3>
+          <p>SmolVLA 是 Hugging Face、Sorbonne University、valeo.ai 与 École Normale Supérieure Paris-Saclay 于 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">点图构建流程</a></li>
+<li><a href="#_4">融合架构</a></li>
+<li><a href="#_5">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#robocasa">受控研究（RoboCasa，π风格架构）</a></li>
+<li><a href="#_8">融合方式消融</a></li>
+<li><a href="#3">相机随机化鲁棒性（表3）</a></li>
+<li><a href="#4">模拟基准（表4，固定评估视角）</a></li>
+<li><a href="#franka-research-35">真实机器人（Franka Research 3，表5）</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

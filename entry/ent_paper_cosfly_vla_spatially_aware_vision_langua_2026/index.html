@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CosFly-VLA: A Spatially Aware Vision-Language-Action Model for UAV Tracking · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">CosFly-VLA: A Spatially Aware Vision-Language-Action Model for UAV Tracking</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>CosFly-VLA: A Spatially Aware Vision-Language-Action Model for UAV Tracking</h1>
+      <p class="entry-name-en">CosFly-VLA: A Spatially Aware Vision-Language-Action Model for UAV Tracking</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>CosFly-VLA 是一个面向无人机目标跟踪的空间感知视觉-语言-动作模型，由 0.8B 参数规模实现，通过联合预测目标可见性、当前目标框和 8 步 4-DoF 航点增量动作块，在部分可观测条件下实现闭环目标恢复。核心贡献在于提出渐进式训练配方——空间接地持续预训练（CPT）、三阶段课程 SFT、思维链（CoT）训练和闭环强化学习（EG-FPO），在遮挡分级评估中显著超越通用 VLA 基线和检测-ReID-控制流水线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.15004" target="_blank" rel="noopener">arXiv:2607.15004 CosFly-VLA: A Spatially Aware Vision-Language-Action Model for UAV Tracking</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这篇工作真正改变的是对无人机跟踪问题的建模方式：它不再把跟踪拆成"检测+ReID+控制"的串联流水线，也不把 VLA 当作单纯的感知-动作映射器，而是将问题重新定义为部分可观测马尔可夫决策过程下的闭环目标恢复。作者明确指出，默认窗口构建器过滤掉 4/5 和 5/5 不可见输入窗口会让数据集看起来更干净，但恰恰移除了与重新捕获目标最相关的片段——这个观察直击当前 VLA 评估协议的软肋。</p>
+<p>另一个关键转变在于训练范式的认知：静态结构化输出的改进（如更低的 ADE）并不自动意味着最优在策略行为，因为执行动作会改变后续观测与状态分布。这一判断直接催生了闭环 RL 阶段的设计——策略必须在自身动作诱导的观测分布上优化，而非在固定数据集上蒸馏。对行业而言，这暗示着"更大模型+更多数据"的路线在部分可观测控制任务上存在天花板，需要显式引入闭环反馈机制。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">架构设计</h3>
+<ul>
+<li>骨干：Qwen3.5 作为视觉-语言骨干，LoRA 微调（r=16，α=32，dropout 0.05）</li>
+<li>连接器：0.8B 配置使用 2 层/8 头 Transformer 连接器，meta-query 池化含 16 个动作查询、16 个 bbox 查询、1 个可见性查询</li>
+<li>动作专家：12 层 DiT（Diffusion Transformer），adaLN 调制 + 每块交叉注意力，输出 8×4 动作块（Δx, Δy, Δz, Δψ），每维归一化尺度 (5, 5, 2, 30)</li>
+<li>辅助头：bbox 和可见性头为 2 层 MLP（GELU + LayerNorm）</li>
+</ul>
+<h3 id="_4">渐进式训练配方</h3>
+<ol>
+<li><strong>空间接地 CPT</strong>：全参数（含 ViT）持续预训练，目的不仅是增加数据，而是让冻结的 Qwen3.5 骨干暴露于目标缺失时仍有信息量的航拍几何线索</li>
+<li><strong>三阶段课程 SFT</strong>：从空间接地 CPT 骨干开始，批大小 128，峰值学习率 1×10⁻⁴</li>
+<li><strong>CoT 训练</strong>：批大小 64，峰值学习率 5×10⁻⁵，注入恢复导向的推理能力</li>
+<li><strong>闭环 RL（CosFly-RFT）</strong>：批大小 32，峰值学习率 1×10⁻⁵，仅更新动作头</li>
+</ol>
+<h3 id="rl-eg-fpo">闭环 RL 关键设计（EG-FPO）</h3>
+<ul>
+<li>从 SFT+CoT 检查点热启动，冻结骨干、bbox 头和可见性头</li>
+<li>每条路径从固定方差高斯代理采样 K 条在策略轨迹：a ∼ 𝒩(μθ(s), diag(σ²))</li>
+<li>组相对优势：Âi = (Ri − μ𝒢)/(σ𝒢 + ε)，每组增加一条专家回放轨迹作为高回报锚点</li>
+<li>策略比率用固定方差高斯代理计算：ρi,t(θ) = exp(log πθ(ai,t|si,t) − log πθ_old(ai,t|si,t))</li>
+<li>目标函数：ℒEG-FPO(θ) = −𝔼i,t[min(ρi,tÂi, clip(ρi,t, 1−δ, 1+δ)Âi)]，δ=0.2</li>
+<li>奖励：rt = −wd·|dt−d<em>|/d</em> + wiou·IoU(b̂t, bt^GT) + rt^coll + rt^succ，其中 d*=28 m，wd=1.0，wiou=0.5</li>
+</ul>
+<h3 id="rollout">数据与 rollout</h3>
+<ul>
+<li>RL split：550 条路径跨 11 张地图（440 训练 + 110 测试），外加 20 条校准路径，产生 104,250 帧</li>
+<li>闭环评估：一个决策步跨 5 个模拟帧（2.5 s），图像尺寸 640×360</li>
+<li>更新后策略热重载入 rollout 服务器，下一迭代用更新策略收集数据</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<p><strong>1. 遮挡分级的评估协议</strong>：将窗口按不可见帧数分为 Easy（0 不可见）、Medium（1 不可见）、Hard（2 不可见），并保留 3 个以上不可见帧的窗口用于闭环评估。这打破了传统评估中"过滤困难样本"的惯例，使得 Hard 场景下的恢复能力成为可量化的核心指标。</p>
+<p><strong>2. 专家引导的流策略优化（EG-FPO）</strong>：将 flow-matching 动作生成、PPO 式似然比裁剪和 GRPO 式组相对优势归一化三者结合。关键创新在于用固定方差高斯代理计算可解析的 log 概率，不替换底层 flow-matching 解码器，同时每组加入专家回放轨迹作为高回报锚点，防止所有在线 rollout 失败时组优势崩溃。</p>
+<p><strong>3. 空间接地 CPT 的独特定位</strong>：CPT 不是简单的预训练数据扩充，而是让骨干在目标缺失时仍能提取有信息量的航拍几何线索。消融显示 CPT 对 unseen-test 的跨地图泛化增益最大（unseen-test 整体 ADE 降低 9.2%，Hard ADE 降低 13.4%），这验证了"空间接地"比"数据量"更关键。</p>
+<h2 id="_6">实验与结果</h2>
+<h3 id="town10hd">开放环评估（Town10HD）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Seen-test ADE</th>
+<th>Unseen-test ADE</th>
+<th>Seen-test Hard ADE</th>
+<th>Unseen-test Hard ADE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenVLA</td>
+<td>1.0887</td>
+<td>0.9160</td>
+<td>1.3542</td>
+<td>1.1671</td>
+</tr>
+<tr>
+<td>CosFly-VLA-0.8B (SFT)</td>
+<td>0.8247</td>
+<td>0.6364</td>
+<td>0.9599</td>
+<td>0.8039</td>
+</tr>
+<tr>
+<td>CosFly-VLA-0.8B (SFT+CoT)</td>
+<td>0.7175</td>
+<td>0.5931</td>
+<td>0.7218</td>
+<td>0.7096</td>
+</tr>
+</tbody>
+</table>
+<p>相对 OpenVLA，SFT+CoT 变体在 seen-test 整体 ADE 降低 34.1%（1.0887→0.7175），unseen-test 降低 35.3%（0.9160→0.5931）；Hard ADE 在 seen-test 降低 46.7%、unseen-test 降低 39.2%。最佳 bbox 接地：0.659/0.635 IoU 和 9.4/11.4 px 中心误差（seen-test/unseen-test）。</p>
+<h3 id="carla">闭环评估（CARLA）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Seen-test SR</th>
+<th>Seen-test ADE</th>
+<th>Unseen-test SR</th>
+<th>Unseen-test ADE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenVLA</td>
+<td>57%</td>
+<td>9.0</td>
+<td>80%</td>
+<td>6.9</td>
+</tr>
+<tr>
+<td>CosFly-VLA-0.8B (SFT)</td>
+<td>70%</td>
+<td>8.9</td>
+<td>79%</td>
+<td>8.8</td>
+</tr>
+<tr>
+<td>CosFly-VLA-0.8B (RL)</td>
+<td>74%</td>
+<td>8.1</td>
+<td>82%</td>
+<td>6.3</td>
+</tr>
+</tbody>
+</table>
+<p>相对 OpenVLA，RL 变体 seen-test SR 提升 17 个百分点（57%→74%，相对增加 29.8%），unseen-test 提升 2 点（80%→82%，相对增加 2.5%）；rollout ADE seen-test 降低 10.0%（9.0→8.1）、unseen-test 降低 8.7%（6.9→6.3）；stand-off 距离误差分别降低 20.6% 和 18.2%。</p>
+<h3 id="_7">训练配方消融</h3>
+<table>
+<thead>
+<tr>
+<th>配方</th>
+<th>Seen-test ADE</th>
+<th>Unseen-test ADE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SFT only</td>
+<td>0.8924</td>
+<td>0.7087</td>
+</tr>
+<tr>
+<td>+课程学习</td>
+<td>0.8295</td>
+<td>0.7007</td>
+</tr>
+<tr>
+<td>+空间接地 CPT</td>
+<td>0.8247</td>
+<td>0.6364</td>
+</tr>
+<tr>
+<td>+CoT 监督</td>
+<td>0.7175</td>
+<td>0.5931</td>
+</tr>
+</tbody>
+</table>
+<p>课程学习使 seen-test 整体 ADE 相对 SFT only 降低 7.0%；空间接地 CPT 对应 unseen-test 整体 ADE 降低 9.2%、Hard ADE 降低 13.4%；CoT 阶段在 seen-test Hard 上边际增益最大（ADE 降低 24.8%）。从 SFT-only 到最终 +CoT 变体，整体 ADE seen-test 降低 19.6%、unseen-test 降低 16.3%，Hard ADE 分别降低 30.9% 和 23.0%。</p>
+<h2 id="_8">边界与局限</h2>
+<p>作者明确承认的边界包括：训练数据仅来自 Town10HD 行人场景，未覆盖车辆、无人机、动物等其他目标类型；评估使用真值状态历史而非预测状态反馈，对预测框历史反馈的鲁棒性未验证；RL 阶段使用单一奖励公式和固定 11 地图划分，奖励设计与地图多样性可扩展；0.8B 配置使用 2 层/8 头连接器，扩展到更大骨干需使用更浅连接器以适配内存预算；所有闭环评估仅在 CARLA 模拟中进行，未测试真实部署。此外，目标行为相对简单（多数接近恒定速度、室外场景），室外到室内过渡、密集人群、突然意图变化、对抗性运动等挑战性案例未充分表示。定量比较使用 0.8B 模型和聚合 split 级指标，未建立到 2B/9B 配置的一对一扩展，也未量化多种子方差。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现或采用此方法时，最需要先核对的是<strong>闭环 RL 的 rollout 基础设施</strong>：550 条路径跨 11 张地图（440 训练 + 110 测试）加 20 条校准路径，产生 104,250 帧，这个数据规模对单节点八卡 A800 是可承受的，但 rollout 收集器与训练机之间的 JSON 传输、热重载机制是工程瓶颈。最容易踩坑的地方在于<strong>组相对优势的稳定性</strong>——如果一组内所有在线 rollout 都失败，优势估计会崩溃，因此每组必须加入专家回放轨迹作为高回报锚点；实践中对负优势异常值使用双重裁剪，并使用仅在线 KL 早停（排除专家步骤，因为大专家比率预期将策略拉向锚点）。</p>
+<p>另一个关键决策是<strong>从 SFT 检查点直接热启动 RL</strong>，而非先做 BC v0.1 诊断实验——作者发现 BC 诊断虽改善 bbox IoU 但导致碰撞回归。这意味着如果你计划复现，不要跳过 SFT+CoT 阶段直接做 RL，否则策略会陷入次优。推理时使用确定性均值动作、8 个 flow 积分步，单卡 A100-80GB 可达到 10 Hz 控制频率；闭环评估中一个决策步跨 5 个模拟帧（2.5 s），图像尺寸 640×360，d*=28 m——这些参数需严格对齐才能复现论文中的 SR 和 ADE 数字。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.15004</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">VLA-0</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_cosfly_vla_spatially_aware_vision_langua_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-0</h3>
+          <p>VLA-0 是 NVIDIA 在 2025 年提出的视觉-语言-动作模型，核心创新在于将机器人动作直接表示为文本，无需修改 VLM 词汇表或添加专用动作头。在 LIBERO…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">架构设计</a></li>
+<li><a href="#_4">渐进式训练配方</a></li>
+<li><a href="#rl-eg-fpo">闭环 RL 关键设计（EG-FPO）</a></li>
+<li><a href="#rollout">数据与 rollout</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#town10hd">开放环评估（Town10HD）</a></li>
+<li><a href="#carla">闭环评估（CARLA）</a></li>
+<li><a href="#_7">训练配方消融</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

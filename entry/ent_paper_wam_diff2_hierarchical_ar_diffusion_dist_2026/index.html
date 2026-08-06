@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WAM-Diff2: Hierarchical AR-to-Diffusion Distillation for Highly Efficient Autonomous Driving VLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WAM-Diff2: Hierarchical AR-to-Diffusion Distillation for Highly Efficient Autonomous Driving VLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>WAM-Diff2: Hierarchical AR-to-Diffusion Distillation for Highly Efficient Autonomous Driving VLA</h1>
+      <p class="entry-name-en">WAM-Diff2: Hierarchical AR-to-Diffusion Distillation for Highly Efficient Autonomous Driving VLA</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>WAM-Diff2 提出一种三阶段层次化蒸馏方法，将预训练的自回归（AR）视觉-语言-动作（VLA）模型转化为并行离散扩散模型，在保持多任务认知能力的同时实现高吞吐量解码。该方法通过渐进式块因果注意力适应、块级蒸馏和跨尺度教师蒸馏，解决了因果到双向注意力模式转换的架构挑战，并在 NAVSIM、Bench2Drive 等基准上验证了精度与效率的权衡。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01035" target="_blank" rel="noopener">arXiv:2608.01035 WAM-Diff2: Hierarchical AR-to-Diffusion Distillation for Highly Efficient Autono</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这项工作真正改变的是端到端自动驾驶模型“认知能力”与“执行效率”之间的固有取舍。以往，AR 模型（如 Qwen3-VL 基座）虽具备强大的场景推理和语言交互能力，但其顺序解码方式在车端实时场景下是结构性瓶颈，且存在暴露偏差；而专门的扩散策略模型虽能并行生成，却往往退化为单任务专用架构，丢失了通用视觉-语言理解。WAM-Diff2 的贡献在于，它不是从零训练一个新模型，而是提供了一条“转化”路径：将已经过大规模预训练的 AR 通用模型，通过蒸馏“重塑”为并行扩散模型。这改变了领域内“通用性”与“实时性”不可兼得的认知，使得多任务 VLA 模型在部署时无需牺牲推理速度。</p>
+<h2 id="_2">方法拆解</h2>
+<p>方法的核心是三阶段层次化蒸馏，旨在平滑地跨越 AR 与扩散模型之间的架构鸿沟。</p>
+<h3 id="progressive-block-wise-adaptation">阶段一：渐进式块级适应（Progressive Block-wise Adaptation）</h3>
+<ul>
+<li>设计<strong>块因果注意力</strong>（Block-Causal Attention），将严格因果掩码放宽为块内双向、块间因果的掩码。</li>
+<li>通过课程式扩展解码块大小 B（B = 1 → 32）逐步放宽约束，确保注意力模式转变期间的数学稳定性。</li>
+<li>采用渐进式引导初始化：θ_B^(0) ← θ_{B/2}^SFT，其中 θ_1 = θ_AR，即每个更大块的学生模型由前一个较小块的模型权重初始化，而非从头训练。</li>
+</ul>
+<h3 id="block-wise-distillation">阶段二：块级蒸馏（Block-wise Distillation）</h3>
+<ul>
+<li>使用稳定的、小块的扩散教师模型（如 B=4），通过对称 <strong>Jensen-Shannon 散度（JSD）</strong> 损失，在并行解码的中间噪声状态上对学生模型进行蒸馏。</li>
+<li>蒸馏顺序为 4 → 8 → 16 → 32，逐步提升学生模型的并行解码能力，同时消除 AR 解码的暴露偏差。</li>
+</ul>
+<h3 id="cross-scale-distillation">阶段三：模型级跨尺度蒸馏（Cross-scale Distillation）</h3>
+<ul>
+<li>利用 8B 扩散教师模型向 2B 学生模型转移知识，同样通过 JSD 损失匹配预测分布。</li>
+<li>关键发现：共享相同扩散范式的模型具有高度对齐的 token 预测模式，用 top-K 重叠率 ρ_K 量化（如 ρ1 为 84.8%），这为跨尺度蒸馏提供了可行性基础。</li>
+</ul>
+<h3 id="_3">架构与系统优化</h3>
+<ul>
+<li>基于 Qwen3-VL 框架，8B 教师集成 SigLIP2-SO-400M 视觉编码器（27 块，4096 隐藏维度）和 36 个 Transformer 块；2B 学生使用 SigLIP2-Large 编码器（24 块，2048 隐藏维度）和 28 个 Transformer 块。</li>
+<li>所有模态（语言 token、2D 边界框、未来路径点）通过统一文本分词器处理，完全移除任务特定投影头。</li>
+<li>系统级优化：使用 FlashInfer 定制注意力内核加速块因果注意力模式，使用 CUDA Graphs 封装整个执行图以消除 CPU 启动开销。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li><strong>块因果注意力机制</strong>：这是连接 AR 与扩散模型的桥梁。它不是简单的掩码替换，而是通过课程式扩展块大小（B=1→32）和渐进式权重初始化，在数学上保证了注意力模式剧变时的训练稳定性。这一设计使得从 AR 到扩散的转化不再是“推倒重来”，而是“平滑迁移”。</li>
+<li><strong>层次化蒸馏策略</strong>：将蒸馏分解为“块级”和“模型级”两个维度。块级蒸馏解决的是解码并行度提升带来的优化目标不一致问题；模型级蒸馏则解决参数规模缩小带来的能力差距问题。这种解耦使得每一步优化目标清晰，且可独立验证。</li>
+<li><strong>JSD 损失的选择</strong>：作者对比了前向 KL、反向 KL 和 JSD，发现 JSD 在模式寻求（mode-seeking）和广泛语义覆盖之间取得最佳平衡。这避免了前向 KL 导致的“平均化”模糊输出和反向 KL 导致的“模式崩溃”，对于多任务 VLA 模型至关重要。</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>实验在统一多任务协议下进行，覆盖驾驶 VQA、视觉接地和运动规划。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">模型配置</th>
+<th style="text-align: left;">DriveBench</th>
+<th style="text-align: left;">LingoQA</th>
+<th style="text-align: left;">COCO mAP</th>
+<th style="text-align: left;">NAVSIM V1 PDMS</th>
+<th style="text-align: left;">NAVSIM V2 EPDMS</th>
+<th style="text-align: left;">Decode TPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ours-2B (B=1, AR)</td>
+<td style="text-align: left;">51.23</td>
+<td style="text-align: left;">68.40</td>
+<td style="text-align: left;">39.20</td>
+<td style="text-align: left;">88.14 / 91.50*</td>
+<td style="text-align: left;">88.32</td>
+<td style="text-align: left;">44.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ours-2B (B=32)</td>
+<td style="text-align: left;">48.80</td>
+<td style="text-align: left;">65.80</td>
+<td style="text-align: left;">36.30</td>
+<td style="text-align: left;">87.44 / 91.05*</td>
+<td style="text-align: left;">87.50</td>
+<td style="text-align: left;">124.8 / 673.4</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>效率</strong>：从 AR 到扩散（B=32）产生 <strong>2.8×</strong> 解码加速，结合 FlashInfer 和 CUDA Graphs 系统级优化后达到 <strong>15.1×</strong> 加速（由表内数值 44.5 → 673.4 计算）。</li>
+<li><strong>精度</strong>：在 NAVSIM v1/v2 上，B=32 的 PDMS/EPDMS 与 AR 基线几乎持平（Δ ≤ 0.5 点）。在 Bench2Drive 闭环评估中，B=32 的 Success 率从 51.96 降至 49.55，但 Comfort 指标从 21.40 提升至 23.15。</li>
+<li><strong>消融</strong>：表 4 显示，直接 AR 到扩散适应（无蒸馏）导致 PDMS 从 88.1 降至 84.1，而完整的块级+模型级蒸馏可恢复至 88.3。表 7 显示，使用 AR 教师（PDMS 79.9）远不如使用扩散教师（PDMS 88.3），验证了跨尺度蒸馏必须基于相同扩散范式。</li>
+</ul>
+<h2 id="_6">边界与局限</h2>
+<p>作者明确承认，依赖离散 tokenization 可能引入空间量化伪影，偶尔损害高精度轨迹规划的平滑性。此外，并行扩散学生的下游能力受限于初始自回归教师的基线语义推理能力，即蒸馏无法超越教师的上限。论文未明确说明在极端动态场景（如突发障碍物）下的闭环表现，也未涉及多模态输入（如激光雷达）的扩展性。阶段三（跨尺度蒸馏）和阶段一（AR 预训练）均被作者标注为“非强制”或“可选”，这意味着其必要性可能依赖于具体任务和资源约束。</p>
+<h2 id="_7">工程启示</h2>
+<p>对于复现或应用该方法的团队，以下几点值得优先核对：
+1.  <strong>初始化至关重要</strong>：阶段一的渐进式初始化（θ_B^(0) ← θ_{B/2}^SFT）是稳定训练的关键。若跳过此步骤直接进行大块训练，很可能遭遇注意力模式剧变导致的训练发散。
+2.  <strong>JSD 损失是优选</strong>：在蒸馏目标选择上，JSD 明显优于前向/反向 KL。若下游任务对输出多样性有要求，应避免使用反向 KL。
+3.  <strong>系统优化需分平台验证</strong>：FlashInfer 和 CUDA Graphs 的加速效果（15.1×）是在 CUDA 平台上评估的，而模型质量结果在 Ascend 910C 上获得。若部署在非 CUDA 平台，需重新评估系统级优化收益。
+4.  <strong>精度与效率的权衡点</strong>：B=8 到 B=16 是精度下降的拐点（LingoQA 从 68.00 降至 66.00），但吞吐量提升显著。若场景对语言推理要求高，建议选择 B≤8；若以规划为主，B=32 可接受。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01035</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">extends</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wam_diff2_hierarchical_ar_diffusion_dist_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#progressive-block-wise-adaptation">阶段一：渐进式块级适应（Progressive Block-wise Adaptation）</a></li>
+<li><a href="#block-wise-distillation">阶段二：块级蒸馏（Block-wise Distillation）</a></li>
+<li><a href="#cross-scale-distillation">阶段三：模型级跨尺度蒸馏（Cross-scale Distillation）</a></li>
+<li><a href="#_3">架构与系统优化</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

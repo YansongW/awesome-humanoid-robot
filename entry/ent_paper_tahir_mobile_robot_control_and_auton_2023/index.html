@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>通过协同仿真孪生实现移动机器人控制与自主性 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">通过协同仿真孪生实现移动机器人控制与自主性</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>通过协同仿真孪生实现移动机器人控制与自主性</h1>
+      <p class="entry-name-en">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span><span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="AI-extracted from the arXiv abstract; hardware and algorithm details taken from supplied metadata and require human verification against the full paper. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种协作仿真孪生（Simulation Twin, ST）框架，将基于SLAM的路径规划卸载至远程仿真智能体，并通过预测力反馈同步物理机器人的速度指令。该框架在受限室内环境中验证了计算与网络性能的提升，但障碍场景下成功率为64%，且状态映射延迟导致目标精度低于直接远程卸载。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2303.06172" target="_blank" rel="noopener">Mobile Robot Control and Autonomy Through Collaborative Simulation Twin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该框架将移动机器人系统分为通过网络连接的虚拟空间与物理空间：物理机器人留在操作现场，远程仿真智能体执行高层自主导航。与纯镜像的数字孪生不同，ST强调协作控制，并支持可选的人在回路遥操作——通过速度多路复用器按优先级规则切换自主规划器与操作员指令，实现安全避障。实验在3m×3m和6m×6m的小型室内场地使用低成本移动机器人进行，对比了远程计算卸载、手动遥操作和数字孪生基线，结果表明该方案对资源受限机器人具有实用性，但障碍场景下性能受限。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li><strong>协作仿真孪生（ST）架构</strong>：将移动机器人系统拆分为虚拟空间（仿真智能体）与物理空间（真实机器人），两者通过通信信道连接。仿真智能体运行基于SLAM的路径规划器，生成速度指令发送给物理机器人；物理机器人跟踪速度并返回与环境交互的力反馈。</li>
+<li><strong>控制模式</strong>：支持可选的人在回路遥操作，通过速度多路复用器按优先级规则切换自主规划器与操作员指令，确保安全避障。反馈机制应用于远程仿真智能体而非操纵杆。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>场地</strong>：3m×3m和6m×6m的小型室内竞技场。</li>
+<li><strong>机器人</strong>：低成本移动机器人。</li>
+<li><strong>基线对比</strong>：传统远程计算卸载、手动遥操作、数字孪生。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>性能优势</strong>：ST框架在计算与网络性能上优于基线方法，适用于资源受限机器人。</li>
+<li><strong>局限性</strong>：障碍场景下成功率为64%；由于状态映射延迟，目标精度低于直接远程卸载。</li>
+<li><strong>结论</strong>：该方案在受限环境中具有实用性，但延迟与精度问题需进一步优化。</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_gazebo/">Gazebo</a>
+              <span class="rel-desc">通过协同仿真孪生实现移动机器人控制与自主性使用Gazebo。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 中间件</a>
+              <span class="rel-desc">通过协同仿真孪生实现移动机器人控制与自主性discussesROS 2 中间件。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_digital_twin/">数字孪生</a>
+              <span class="rel-desc">通过协同仿真孪生实现移动机器人控制与自主性提出数字孪生。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_tahir_mobile_robot_control_and_auton_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_concept_digital_twin/">
+          <span class="entry-type">概念</span>
+          <h3>数字孪生</h3>
+          <p>数字孪生（digital twin）是物理实体在数字空间的实时映射，可用于设计验证、虚拟调试、健康监测与预测性维护。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_gazebo/">
+          <span class="entry-type">软件平台</span>
+          <h3>Gazebo</h3>
+          <p>提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ROS 2 中间件</h3>
+          <p>基于DDS的发布/订阅和实时支持的事实标准机器人中间件。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

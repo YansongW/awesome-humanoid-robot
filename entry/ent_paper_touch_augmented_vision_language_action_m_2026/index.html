@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision</h1>
+      <p class="entry-name-en">τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>τ（tau）是一个触觉增强的视觉-语言-动作（VLA）框架，由作者团队提出，旨在将触觉感知融入预训练 VLA 模型以处理接触丰富的操作任务。其核心贡献在于设计了触觉编码与适配模块、JEPA 风格预测式自监督分支和动作序列条件化三个组件，在不破坏预训练视觉-语言能力的前提下实现高效多模态融合，并通过消融实验验证了触觉信息对精确接触推理的关键作用。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.24485" target="_blank" rel="noopener">arXiv:2607.24485 τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Sup</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>预训练 VLA 模型在视觉-语言-动作联合推理上表现优异，但本质上缺乏对物理接触的感知能力。在插拔、按压、擦拭等接触密集任务中，模型需要理解“力”与“形变”的瞬时反馈，而这恰恰是纯视觉信号难以捕捉的。此前的工作要么完全忽略触觉，要么以简单拼接方式引入触觉特征，导致预训练知识被破坏或融合效率低下。τ 真正改变的是“如何在不牺牲大规模预训练收益的前提下，让 VLA 模型获得触觉推理能力”这一核心问题——它不再将触觉视为附加输入，而是将其作为与视觉-语言表征对齐的独立模态，并通过预测式自监督学习强化时间一致性，从而在推理时零额外成本地提升操作精度。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">触觉编码与适配模块</h3>
+<ul>
+<li>将触觉信号（DM-Tac WS 传感器，320x240 分辨率，约 40 FPS）编码为潜在表征，并与预训练 VLA 骨干网络的嵌入空间对齐。</li>
+<li>关键设计：通过适配层将触觉特征映射到视觉-语言联合空间，而非直接拼接，以保留预训练模型的原始推理路径。</li>
+<li>消融实验显示，移除该模块后四个任务成功率分别下降 40、20、55、55 个百分点，证明其是框架中最关键的组件。</li>
+</ul>
+<h3 id="jepa">JEPA 风格预测式自监督分支</h3>
+<ul>
+<li>在训练期间引入辅助分支，预测未来时刻的潜在表征（而非像素级重建），学习时间一致的多模态特征。</li>
+<li>该分支仅在训练时激活，推理时完全移除，不增加部署计算成本。</li>
+<li>作为正则化器，它迫使触觉与视觉表征在时间维度上协同演化，提升表征的鲁棒性。</li>
+</ul>
+<h3 id="_4">动作序列条件化</h3>
+<ul>
+<li>将历史动作序列作为条件输入，使模型在生成当前动作时考虑执行轨迹的连续性。</li>
+<li>与触觉适配模块协同工作，确保触觉反馈能影响后续动作生成，而非仅作用于单步决策。</li>
+</ul>
+<h3 id="_5">训练配置</h3>
+<ul>
+<li>双 NVIDIA A800 80GB GPU，batch size 32，动作 horizon 32，cosine 学习率调度（10,000 warmup steps，峰值 5e-5），训练 30,000 步，每 2,000 步保存 checkpoint。</li>
+<li>数据：每任务 100 条演示，共 400 条轨迹；RGB-D 相机（RealSense D435i/D405）640x480 分辨率 15 FPS，所有流重采样至 10 Hz 控制频率。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>触觉-视觉-语言三模态对齐而非拼接</strong>：现有方法多将触觉特征直接拼接到 VLA 输入，导致预训练知识被稀释。τ 通过适配模块将触觉映射到既有嵌入空间，既保留视觉-语言推理能力，又实现触觉信息的有效注入——这是对多模态融合范式的实质性改进。</li>
+<li><strong>训练时预测、推理时零成本的 JEPA 分支</strong>：利用潜在未来预测作为辅助监督，在不增加推理负担的前提下提升表征质量。这一设计巧妙地将自监督学习嵌入到动作生成框架中，避免了常见的“训练-推理不一致”问题。</li>
+<li><strong>动作序列条件化与触觉反馈的闭环</strong>：将历史动作作为条件输入，使触觉信息能影响连续动作生成，而非仅作用于单步决策。这解决了接触丰富任务中“触觉反馈如何转化为后续动作修正”的关键问题。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>消融实验在四个接触密集任务（Plug Insertion、USB Insertion、Stamp Press、Whiteboard Erasing）上进行，每任务 20 次试验，中等随机化条件。关键结果如下：</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>移除触觉适配模块后成功率下降（百分点）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plug Insertion</td>
+<td>40</td>
+</tr>
+<tr>
+<td>USB Insertion</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Stamp Press</td>
+<td>55</td>
+</tr>
+<tr>
+<td>Whiteboard Erasing</td>
+<td>55</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>移除触觉适配模块后，插入任务的对齐阶段和 Stamp Press 的接触建立阶段性能大幅下降，但初始抓取和拾取成功率仍保持 100%（由表内数值 100% 直接引用），说明粗略物体交互无需触觉适配，而精确接触推理则必须依赖触觉。</li>
+<li>消融实验结论：触觉编码与适配模块最关键，其次是预测式自监督学习和动作序列条件化。但作者明确提示，三个组件可能相互交互，性能下降不应解释为可加性。</li>
+<li>对比模型（π0、π0.5、ForceVLA、ForceFlow 等）的定量结果在 Table 1 中，但该表为图片，具体数字论文未明确。</li>
+</ul>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>任务范围有限：仅评估四个接触密集任务，未涉及长时程操作或多步推理场景。</li>
+<li>数据依赖：触觉表征学习需要同步的视觉-触觉-动作数据，这在许多机器人平台上难以获取。</li>
+<li>泛化性局限：对未见物体和场景的迁移能力任务依赖，精密插入任务在杂乱环境中的迁移效果有限。</li>
+<li>模态扩展未探索：未集成音频或力-力矩传感等可能提供互补信息的模态。</li>
+<li>可扩展性存疑：方法在更大数据集和更多样化本体上的表现尚未验证。</li>
+<li>消融实验的交互效应：三个组件的性能贡献可能非可加，作者未提供交互效应的定量分析。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现优先级</strong>：先核对触觉适配模块的对齐方式——这是消融实验中影响最大的组件，其实现细节（如适配层结构、对齐损失函数）直接决定成功率。建议从 400 条演示数据（每任务 100 条）开始，确认数据同步质量后再调参。</li>
+<li><strong>最容易踩坑的环节</strong>：JEPA 分支的预测目标设计。若预测目标过于复杂或与动作生成目标冲突，可能引入训练不稳定性。建议先固定触觉适配模块，单独调优预测分支的权重。</li>
+<li><strong>硬件配置参考</strong>：训练需双 A800 80GB GPU（batch size 32），推理可在单 RTX 4090 上运行。若算力有限，可尝试降低 batch size 并相应调整 warmup steps（10,000）和峰值学习率（5e-5）。</li>
+<li><strong>下游团队选型建议</strong>：若任务涉及精密接触（如插拔、按压），τ 的触觉适配模块是核心收益点；若任务以粗略抓取为主，触觉增强的边际收益可能有限（初始抓取成功率在无触觉适配时仍为 100%）。</li>
+<li><strong>数据采集注意</strong>：触觉传感器（DM-Tac WS）与 RGB-D 相机帧率不同（40 FPS vs 15 FPS），统一重采样至 10 Hz 是必要步骤，但需验证重采样是否引入时间错位——这可能是复现时性能差异的隐藏来源。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.24485</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_yu_forcevla_enhancing_vla_models_2025/">ForceVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_touch_augmented_vision_language_action_m_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yu_forcevla_enhancing_vla_models_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ForceVLA</h3>
+          <p>ForceVLA 是上海人工智能实验室、新加坡国立大学等机构联合提出的2025年大型视觉-语言-动作模型，专为解决机器人接触丰富操作中的力控难题。其核心创新在于引入力感知混合专家融合模块…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">触觉编码与适配模块</a></li>
+<li><a href="#jepa">JEPA 风格预测式自监督分支</a></li>
+<li><a href="#_4">动作序列条件化</a></li>
+<li><a href="#_5">训练配置</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

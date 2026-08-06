@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Softmax Function · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/operator/">Operator</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Softmax Function</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Operator</div>
+      <h1>Softmax Function</h1>
+      <p class="entry-name-en">Softmax Function</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span><span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span><span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Standard operator in machine learning and attention mechanisms. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A differentiable operator that converts a vector of real-valued scores into a probability distribution, emphasizing the largest values while keeping all probabilities positive and summing to one.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/" target="_blank" rel="noopener">Bishop, Pattern Recognition and Machine Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>The softmax operator is ubiquitous in deep learning. It turns logits produced by a linear layer into a categorical probability distribution. In Transformers, softmax appears inside the attention mechanism, where it normalizes query-key compatibility scores into attention weights.</p>
+<h2 id="formal-definition">Formal Definition</h2>
+<p>Given a vector <span class="arithmatex">\(z = (z_1, \dots, z_n) \in \mathbb{R}^n\)</span>, the softmax function <span class="arithmatex">\(\sigma: \mathbb{R}^n \to \mathbb{R}^n\)</span> is defined component-wise as:</p>
+<div class="arithmatex">\[
+\sigma(z)_i = \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \quad \text{for } i = 1, \dots, n.
+\]</div>
+<p>Properties:</p>
+<ul>
+<li><span class="arithmatex">\(0 &lt; \sigma(z)_i &lt; 1\)</span> for all <span class="arithmatex">\(i\)</span>.</li>
+<li><span class="arithmatex">\(\sum_{i=1}^{n} \sigma(z)_i = 1\)</span>.</li>
+<li>Softmax is invariant to additive shifts: <span class="arithmatex">\(\sigma(z + c) = \sigma(z)\)</span> for any scalar <span class="arithmatex">\(c\)</span>.</li>
+</ul>
+<h2 id="symbol-intuition">Symbol Intuition</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Intuition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(z_i\)</span></td>
+<td>Logit / score</td>
+<td>The model's raw preference for candidate <span class="arithmatex">\(i\)</span>.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(e^{z_i}\)</span></td>
+<td>Unnormalized probability</td>
+<td>Converts the score to a positive value and amplifies differences.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sum_j e^{z_j}\)</span></td>
+<td>Normalization constant</td>
+<td>The total preference across all candidates.</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma(z)_i\)</span></td>
+<td>Softmax probability</td>
+<td>The final attention / selection weight for candidate <span class="arithmatex">\(i\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</h2>
+<p>In humanoid VLAs, softmax converts decoder logits into action-token probabilities and normalizes attention weights when fusing visual, linguistic, and proprioceptive cues. It is the operator that turns raw scores into interpretable, probabilistic decisions.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_self_attention_equation/">Scaled Dot-Product Self-Attention</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">The self-attention equation uses the softmax operator to normalize query-key scores.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_operator_softmax_function"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_self_attention_equation/">
+          <span class="entry-type">Equation</span>
+          <h3>Scaled Dot-Product Self-Attention</h3>
+          <p>The core equation of the Transformer that computes a weighted sum of values based on query-key…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#formal-definition">Formal Definition</a></li>
+<li><a href="#symbol-intuition">Symbol Intuition</a></li>
+<li><a href="#relevance-to-humanoid-robotics">Relevance to Humanoid Robotics</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

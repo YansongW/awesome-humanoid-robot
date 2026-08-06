@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences</h1>
+      <p class="entry-name-en">Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 PREC（Preference-based Reward Clustering）框架，面向机器人部署中多样化终端用户的偏好对齐问题。PREC 通过自预测表示（SPR）预训练共享轨迹编码器，再以泄漏 EM 算法联合聚类用户并学习每簇代表性奖励模型，最终为每簇训练一个策略。核心贡献在于以少量可验证的策略集合，在稀疏、嘈杂偏好反馈下逼近个体化对齐的社会福利水平。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12466" target="_blank" rel="noopener">arXiv:2607.12466 Deployable Human Preference Alignment in Robotics: Learning Representative Rewar</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>机器人偏好对齐长期在两条路线间摇摆：每用户独立建模能捕捉异质偏好，但稀疏反馈下学习不稳、易受噪声干扰，且大量个性化策略在监管严格领域（如 FDA 将医用外骨骼列为 II 类器械）几乎无法逐一验证；单一共享策略虽部署简单，却必然牺牲少数群体偏好。PREC 真正改变的是将“对齐”从个体粒度重构为“亚种群粒度”——用 K 个代表性奖励模型覆盖连续偏好空间，使部署者只需验证 K 个策略而非 N 个用户策略，同时保留比单一策略高得多的偏好保真度。</p>
+<p>这一转变的深层动机在于：机器人领域的用户反馈远比 NLP 或推荐系统稀疏（每用户仅数十条标签），且噪声类型复杂（随机、短视、错误、跳过、相等）。PREC 的假设是，用户偏好虽各异，但可聚类为有限个稳定模式；通过跨用户共享表示学习与聚类，能有效弥补单用户数据不足，将验证负担从 O(N) 降至 O(K)。</p>
+<h2 id="_2">方法拆解</h2>
+<p>PREC 分三阶段，核心在于将表示学习与噪声标签解耦，并将聚类与奖励学习联合优化。</p>
+<h3 id="spr">阶段一：种群级表示学习（SPR 预训练）</h3>
+<ul>
+<li>搁置所有偏好标签，跨用户聚合轨迹，训练编码器 <span class="arithmatex">\( f_{\psi^{enc}}(s,a) \)</span> 预测一步状态差 <span class="arithmatex">\( s_{t+1} - s_t \)</span>。</li>
+<li>理由：利用比任何单个用户更广泛的状态-动作观测，避免在表示学习阶段直接依赖稀疏且有噪声的标签。</li>
+<li>实现：MLP 将状态-动作对映射到 <strong>128</strong> 维潜在表示，两个隐藏层宽度 <strong>256</strong>，ReLU，dropout；AdamW 优化 <strong>20</strong> epoch，批大小 <strong>1024</strong>，学习率 <strong>3×10⁻⁴</strong>，权重衰减 <strong>10⁻⁴</strong>。预训练后丢弃预测器，编码器冻结。</li>
+</ul>
+<h3 id="em">阶段二：亚种群级解码器学习（泄漏 EM）</h3>
+<ul>
+<li>冻结编码器，联合推断用户簇分配与每簇奖励解码器 <span class="arithmatex">\( h_{\psi_k^{dec}} \)</span>。</li>
+<li>奖励模型分解：<span class="arithmatex">\( \hat{r}_{\psi_k}(s,a) = h_{\psi_k^{dec}}(f_{\psi^{enc*}}(s,a)) \)</span>。</li>
+<li>标签似然：簇 k 下标签 <span class="arithmatex">\( y_{i,m} \)</span> 的似然为 <span class="arithmatex">\( P(y_{i,m} \mid \tau_{i,m}, Z_i=k, \psi_k) = \sigma(\hat{R}_{\psi_k}(\tau_{i,m}))^{y_{i,m}}(1-\sigma(\hat{R}_{\psi_k}(\tau_{i,m})))^{1-y_{i,m}} \)</span>。</li>
+<li><strong>E-step</strong>：计算后验责任 <span class="arithmatex">\( \gamma_{ik} = \frac{\rho_k \mathcal{L}_{ik}}{\sum_{k'=1}^{K}\rho_{k'} \mathcal{L}_{ik'}} \)</span>，转为硬分配 <span class="arithmatex">\( \hat{z}_i = \arg\max_k \gamma_{ik} \)</span>。</li>
+<li><strong>泄漏 M-step</strong>：权重 <span class="arithmatex">\( \omega_{ik} = \max(\mathbf{1}[\hat{z}_i = k], \nu) \)</span>，<span class="arithmatex">\( \nu=0.05 \)</span>；解码器最小化加权 BCE：<span class="arithmatex">\( \psi_k^{dec} \leftarrow \arg\min_{\psi_k^{dec}} \sum_{i=1}^{N} \omega_{ik} \sum_{m=1}^{M_i} \mathrm{BCE}(\sigma(\hat{R}_{\psi_k}(\tau_{i,m})), y_{i,m}) \)</span>。</li>
+<li>设计理由：硬更新在簇内用户少时过拟合，完全软更新模糊簇边界，泄漏系数 <span class="arithmatex">\( \nu \)</span> 在特化与稳定间平衡。EM 运行 <strong>8</strong> 次迭代，头初始化训练 <strong>6</strong> epoch，每次 E-step 后额外训练 <strong>3</strong> epoch。</li>
+<li>理论保证：定理 1 证明固定簇先验下，泄漏 EM 单调改进受限变分族的泄漏 ELBO 并收敛到有限极限；<span class="arithmatex">\( \nu=0 \)</span> 时退化为硬 EM。</li>
+</ul>
+<h3 id="_3">阶段三：簇级策略优化</h3>
+<ul>
+<li>使用学习到的奖励模型，通过隐式 Q 学习（IQL）为每个簇训练策略。IQL 配置：梯度步数 <strong>100,000</strong>，批大小 <strong>256</strong>，学习率 <strong>3×10⁻⁴</strong>，折扣 <strong>0.99</strong>，expectile <strong>0.7</strong>，AWR 温度 <strong>3.0</strong>。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li><strong>表示学习与偏好监督解耦</strong>：SPR 预训练完全忽略标签，仅利用状态转移预测。这是反直觉的——传统方法直接以偏好标签训练表示，但 PREC 证明在标签稀疏且噪声高时，无监督的动力学预测能学到更稳健的共享表示，为后续聚类提供干净特征空间。</li>
+<li><strong>泄漏 EM 的联合聚类-奖励学习</strong>：不同于先独立聚类用户再训练奖励（如 K-Means 基线），PREC 将聚类与奖励学习置于同一目标下交替优化。泄漏系数 <span class="arithmatex">\( \nu \)</span> 是关键设计——它既避免硬 EM 在小簇上的过拟合，又防止软 EM 的簇边界模糊，且定理 1 保证了收敛性。</li>
+<li><strong>部署友好的策略集合</strong>：最终产出 K 个策略而非 N 个，直接回应监管验证需求。实验表明 K=3 或 K=5 时，PREC 在功利、平等、纳什三种社会福利指标上均接近甚至超越个体化模型（Indiv），而验证成本仅为后者的 K/N。</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>实验在四个 D4RL MuJoCo 环境（HalfCheetah、Ant、Hopper、Walker2d）上进行，轨迹池由 random、medium、expert 数据按 <strong>1:2:2</strong> 混合，轨迹段长度 <strong>50</strong>。共 <strong>30</strong> 个用户，每用户 <strong>50</strong> 或 <strong>100</strong> 条标签，噪声注入强度 <strong>16%</strong> 与 <strong>28%</strong>。</p>
+<h3 id="4">聚类质量（表 4，稀疏反馈下）</h3>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>K</th>
+<th>PREC SH</th>
+<th>PREC CH</th>
+<th>K-Means SH</th>
+<th>K-Means CH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HalfCheetah</td>
+<td>2</td>
+<td><strong>0.605</strong></td>
+<td><strong>296.2</strong></td>
+<td>未明确</td>
+<td>未明确</td>
+</tr>
+<tr>
+<td>Ant</td>
+<td>3</td>
+<td><strong>0.616</strong></td>
+<td><strong>478.5</strong></td>
+<td>未明确</td>
+<td>未明确</td>
+</tr>
+<tr>
+<td>Walker2d</td>
+<td>5</td>
+<td><strong>0.365</strong></td>
+<td><strong>300.6</strong></td>
+<td>未明确</td>
+<td>未明确</td>
+</tr>
+<tr>
+<td>Hopper</td>
+<td>3</td>
+<td><strong>0.666</strong></td>
+<td><strong>491.6</strong></td>
+<td>未明确</td>
+<td>未明确</td>
+</tr>
+</tbody>
+</table>
+<p>PREC 在所有环境与 K 值下 SH 与 CH 均优于 K-Means 与 W-K-Means 基线，且优势随 K 增大而扩大（K=5 时 PREC SH=<strong>0.54</strong> vs K-Means <strong>0.23</strong>，由表 1 数值）。</p>
+<h3 id="2prec">社会福利（表 2，PREC 组件消融）</h3>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>指标</th>
+<th>PREC</th>
+<th>PREC (w/o SPR, leaky EM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HalfCheetah</td>
+<td>Util</td>
+<td><strong>0.798</strong></td>
+<td>0.786</td>
+</tr>
+<tr>
+<td>Ant</td>
+<td>Egal</td>
+<td><strong>0.165</strong></td>
+<td>0.132</td>
+</tr>
+<tr>
+<td>Hopper</td>
+<td>Nash</td>
+<td><strong>0.753</strong></td>
+<td>0.672</td>
+</tr>
+<tr>
+<td>Walker2d</td>
+<td>Egal</td>
+<td><strong>0.481</strong></td>
+<td>0.188</td>
+</tr>
+</tbody>
+</table>
+<p>完整 PREC 在所有环境-指标组合上最佳，移除 SPR 与泄漏 EM 后性能显著下降，尤其 Walker2d 平等福利从 <strong>0.481</strong> 跌至 <strong>0.188</strong>（由表内数值计算）。</p>
+<h3 id="_6">反馈预算实验</h3>
+<ul>
+<li>每用户 <strong>10</strong> 至 <strong>50</strong> 标签时，PREC 大幅优于 Pooled 与 Indiv。</li>
+<li>每用户 <strong>500</strong> 标签时，Indiv 在功利与 Nash 福利上超越 PREC；Pooled 在标签从 <strong>100</strong> 增至 <strong>500</strong> 时性能急剧下降。</li>
+</ul>
+<h2 id="_7">边界与局限</h2>
+<ul>
+<li>仅在模拟连续控制基准（D4RL MuJoCo）上验证，未在真实机器人或真实人类用户上测试；脚本化标注器虽注入噪声，但与真实反馈仍有差距。</li>
+<li>定理 1 仅覆盖解码器参数，簇先验 <span class="arithmatex">\( \rho_k \)</span> 固定；任何修改先验的稳定器（如 Dirichlet 平滑）不在收敛性论证范围内。</li>
+<li>当每用户反馈充足（如 <strong>500</strong> 标签）时，个体化模型 Indiv 在功利与 Nash 福利上超越 PREC，表明 PREC 的优势主要在稀疏反馈场景。</li>
+<li>未探索除 IQL 外的下游离线 RL 算法；未处理非马尔可夫奖励（作者指出可与 Preference Transformer 结合，但未实验）。</li>
+</ul>
+<h2 id="_8">工程启示</h2>
+<p>复现 PREC 时，最关键的核对点是 SPR 预训练与泄漏 EM 的衔接：编码器必须完全冻结后再进入聚类阶段，任何微调都会破坏表示与标签的解耦。泄漏系数 <span class="arithmatex">\( \nu=0.05 \)</span> 是敏感超参——过小退化为硬 EM 导致小簇过拟合，过大则簇边界模糊；建议在目标环境的用户数（如 <strong>30</strong>）下先扫描 <span class="arithmatex">\( \nu \in [0.01, 0.1] \)</span>。另一个易踩坑处是噪声注入的实现：五种噪声类型（stochastic、myopic、mistake、skip、equal）需按均匀随机采样混合，且阈值 <span class="arithmatex">\( \eta=0.5 \)</span> 与强度（<strong>16%</strong>、<strong>28%</strong>）必须严格复现，否则聚类质量对比会失真。对于下游团队，若反馈预算充足（&gt;500 标签/用户），应直接考虑 Indiv 而非 PREC；若预算稀疏且需监管验证，PREC(3) 或 PREC(5) 是验证成本与福利保真的最佳折中。所有实验可在 CPU 上运行（Intel Xeon Gold 5320，<strong>4</strong> 核 <strong>24</strong> GB 内存），无需 GPU，但 <strong>30</strong> 用户 × <strong>50</strong> 标签 × <strong>8</strong> 次 EM 迭代的完整流程预计耗时较长，建议先以 K=2 跑通 pipeline 再扩展。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.12466</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_sac/">软演员-评论家（SAC）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_deployable_human_preference_alignment_ro_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_sac/">
+          <span class="entry-type">算法</span>
+          <h3>软演员-评论家（SAC）</h3>
+          <p>在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#spr">阶段一：种群级表示学习（SPR 预训练）</a></li>
+<li><a href="#em">阶段二：亚种群级解码器学习（泄漏 EM）</a></li>
+<li><a href="#_3">阶段三：簇级策略优化</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a><ul>
+<li><a href="#4">聚类质量（表 4，稀疏反馈下）</a></li>
+<li><a href="#2prec">社会福利（表 2，PREC 组件消融）</a></li>
+<li><a href="#_6">反馈预算实验</a></li>
+</ul>
+</li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

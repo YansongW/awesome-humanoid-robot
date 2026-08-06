@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Towards General Language-Conditioned Latent Safety Filters · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Towards General Language-Conditioned Latent Safety Filters</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Towards General Language-Conditioned Latent Safety Filters</h1>
+      <p class="entry-name-en">Towards General Language-Conditioned Latent Safety Filters</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出语言条件化安全过滤（language-conditioned safety filtering）框架，将 Hamilton–Jacobi 可达性安全 critic 与 actor 条件化于自然语言指定的约束，使单个学习到的安全过滤器能在运行时适应不同部署场景的安全需求。作者在 RoboSuite 仿真环境中验证了该方法在三种操作任务上的有效性，并系统评估了当前视觉-语言模型（VLM）作为失败函数与弱标注器的可靠性边界。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.00315" target="_blank" rel="noopener">arXiv:2608.00315 Towards General Language-Conditioned Latent Safety Filters</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有安全过滤器大多与特定约束绑定，当安全需求变化时需要重新设计或重新学习，这与机器人策略（尤其是 VLA 模型）日益通用化的发展趋势形成尖锐矛盾。作者敏锐地指出，VLA 策略通过行为克隆训练，在演示中缺乏危险场景时无法学习隐式安全，且显式语言指定的约束对生成动作的影响很小——这意味着单纯依赖策略本身无法保证安全。本文真正改变了安全过滤器的设计范式：不再为每个约束单独训练过滤器，而是将语言作为条件变量嵌入安全 critic 的输入表示，使单个过滤器能够表达多种约束并泛化到未见约束。这一转变将安全过滤从“约束特定”的工程实践推向“通用安全基础模型”的研究方向，与 VLA 策略的通用化进程对齐。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="hj-critic">语言条件化 HJ 安全 critic</h3>
+<ul>
+<li>学习约束条件化的 HJ critic Qθ(zt, at)，其中 zt = ϕ(ot, c) ∈ Z 同时编码观测和语言约束。</li>
+<li>诱导值函数 Vθ(zt) = max_{a∈A} Qθ(zt, a)，训练损失与公式 (1) 相同：L(θ) := E[(Qθ(st, at) − yt)²]，其中 yt := (1−γ)h(st) + γ min{h(st), max_{a∈A} Qθ(st+1, a)}。</li>
+<li>动作空间连续，使用 SAC 训练 HJ critic 和近似动作最大化器的随机 actor。</li>
+</ul>
+<h3 id="_3">运行时安全过滤</h3>
+<ul>
+<li>每步评估名义动作：仅当 Qθ(zt, a_nom_t) ≥ ε 时执行，否则切换到 HJ actor 策略。</li>
+<li>从 actor 策略采样多个候选动作，并额外采样名义动作的高斯扰动，选择最接近名义动作且满足 Qθ(zt, at) ≥ ε 的动作。</li>
+<li>采样数量：Stack Blocks 采样 100 个 actor 动作和 100 个扰动名义动作；Safe Grab/Safe Wipe 采样 100 个扰动名义动作。</li>
+</ul>
+<h3 id="_4">两种输入表示</h3>
+<ul>
+<li><strong>特权 oracle</strong>：zt = st 为完整系统状态，含机器人状态、物体位姿和安全约束的显式编码。</li>
+<li><strong>视觉-语言（VL）</strong>：使用 π0.5 的 VLM 编码器，联合处理视觉观测、语言输入和本体感觉，通过共享 transformer 产生 token 序列 Ht ∈ R^{T×D}（D = 2048），均值池化聚合：zt = (1/T) Σ H_t^(i)。</li>
+<li>选择联合对齐表示而非简单拼接，理由是显式对齐模态可改善下游机器人学习。</li>
+</ul>
+<h3 id="_5">失败函数定义</h3>
+<ul>
+<li>Safe Grab/Safe Wipe：h(st, c) = d_min(st, c) − d_thresh，d_min 为指定障碍物与机械臂最小距离。</li>
+<li>Stack Blocks：h(st, c) = r − d_cube(st, c)，d_cube 为末端执行器到正确目标方块距离。</li>
+<li>VL 设置中定义 h(zt) = h(st, c)，因当前 VLM 尚不足以可靠作为失败函数。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>语言条件化 HJ 安全过滤</strong>：首次将 Hamilton–Jacobi 可达性安全框架直接条件化于自然语言约束，而非约束图像或形式化规格。这使得单个离线学习的过滤器能在运行时适应当前指令，无需为每个新约束重新规划或重新训练。</li>
+<li><strong>VLM 作为通用失败函数的系统评估</strong>：构建了 5,000 条安全关键操作轨迹数据集（88.6% 含安全违规），对 11 个 VLM 进行单状态分类、成对偏好、短窗口检测和操作推理探针四类评估，首次量化了当前 VLM 作为安全失败检测器的能力边界——最强模型 Gemini Robotics-ER 1.6 总体准确率 0.758，但失败检测准确率仅 0.564。</li>
+<li><strong>采样近似二次规划</strong>：通过从 actor 和扰动名义动作中采样候选并选择最小偏差动作，缓解硬切换导致的抖动，在八个评估设置中的六个达到相等或更高成功率。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="150">表 1：主结果（50 个场景评估）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Safe Grab SR/CR/IR</th>
+<th>Safe Wipe SR/CR/IR</th>
+<th>Stack Blocks-3 SR/OC/IR</th>
+<th>Stack Blocks-4 SR/OC/IR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nominal</td>
+<td>100.00/76.00/–</td>
+<td>62.00/84.00/–</td>
+<td>0.00/0.00/–</td>
+<td>0.00/0.00/–</td>
+</tr>
+<tr>
+<td>GT Single</td>
+<td>62.00/48.00/17.71</td>
+<td>14.94/18.00/20.40</td>
+<td>28.00/80.00/16.16</td>
+<td>18.00/92.00/28.30</td>
+</tr>
+<tr>
+<td>GT General</td>
+<td>60.00/46.00/8.80</td>
+<td>8.56/48.00/19.42</td>
+<td>48.00/82.00/18.59</td>
+<td>14.00/94.00/32.71</td>
+</tr>
+<tr>
+<td>VL Single</td>
+<td>54.00/56.00/18.56</td>
+<td>6.36/58.00/17.90</td>
+<td>34.00/74.00/39.55</td>
+<td>2.00/50.00/72.35</td>
+</tr>
+<tr>
+<td>VL General</td>
+<td>40.00/46.00/18.38</td>
+<td>6.42/72.00/12.54</td>
+<td>52.00/80.00/31.57</td>
+<td>0.00/64.00/68.81</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2ood-general">表 2：OOD 泛化（General 过滤器）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>SR</th>
+<th>CR</th>
+<th>OC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safe Grab OOD</td>
+<td>60.00</td>
+<td>52.00</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Safe Wipe OOD</td>
+<td>70.00</td>
+<td>56.00</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Stack Blocks-3 Color-Only</td>
+<td>42.00</td>
+<td>–</td>
+<td>82.00</td>
+</tr>
+<tr>
+<td>Stack Blocks-4 Color-Only</td>
+<td>0.00</td>
+<td>–</td>
+<td>44.00</td>
+</tr>
+<tr>
+<td>Geom-Color</td>
+<td>28.00</td>
+<td>–</td>
+<td>72.00</td>
+</tr>
+<tr>
+<td>Geom-Wrong-Prompt</td>
+<td>22.00</td>
+<td>–</td>
+<td>64.00</td>
+</tr>
+<tr>
+<td>Geom-Single-Color</td>
+<td>32.00</td>
+<td>–</td>
+<td>62.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3vlm-250-250">表 3：VLM 单状态失败分类（250 失败 + 250 非失败）</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>Acc</th>
+<th>Acc_fail</th>
+<th>Acc_nonfail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini Robotics-ER 1.6</td>
+<td>0.758</td>
+<td>0.564</td>
+<td>0.952</td>
+</tr>
+<tr>
+<td>GPT-5.5</td>
+<td>0.720</td>
+<td>0.528</td>
+<td>0.912</td>
+</tr>
+<tr>
+<td>GPT-5.4-mini</td>
+<td>0.664</td>
+<td>0.552</td>
+<td>0.776</td>
+</tr>
+<tr>
+<td>Qwen3-VL-32B</td>
+<td>0.640</td>
+<td>0.332</td>
+<td>0.948</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">表 4：池化消融</h3>
+<table>
+<thead>
+<tr>
+<th>池化</th>
+<th>Safe Grab SR/CR</th>
+<th>Safe Wipe SR/CR</th>
+<th>Stack Blocks-3 SR/OC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean</td>
+<td>74.00/26.00</td>
+<td>56.00/38.00</td>
+<td>52.00/80.00</td>
+</tr>
+<tr>
+<td>Attention</td>
+<td>84.00/26.00</td>
+<td>68.00/64.00</td>
+<td>46.00/88.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5ms">表 5：推理延迟（ms）</h3>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>Safe Grab</th>
+<th>Safe Wipe</th>
+<th>Stack Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encoding</td>
+<td>42.43</td>
+<td>42.30</td>
+<td>42.75</td>
+</tr>
+<tr>
+<td>Direct switching</td>
+<td>43.29</td>
+<td>43.13</td>
+<td>43.62</td>
+</tr>
+<tr>
+<td>Minimum-deviation</td>
+<td>219.36</td>
+<td>225.55</td>
+<td>221.72</td>
+</tr>
+</tbody>
+</table>
+<p>关键发现：Ground Truth General 过滤器在 Safe Grab 上达到与 Single 竞争的性能（SR 60.00 vs 62.00，CR 46.00 vs 48.00），证明语言条件化可替代约束特定训练；但 VL 变体碰撞率仍高（Safe Grab CR 46.00，Safe Wipe CR 72.00）。OOD 泛化显示 Safe Grab CR 从 26% 升至 52%（由表内数值 26.00→52.00 计算），Stack Blocks-4 OC 从 64% 降至 44%（由表内数值 64.00→44.00 计算）。最小偏差选择延迟约 220 ms，超出 20 Hz 控制率 50 ms 预算 4 倍以上。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>General 安全过滤器不保证满足语言指定约束，OOD 约束下性能进一步下降。</li>
+<li>过滤器仍限于特定类型安全约束（避开障碍物或接近物体），跨约束类型泛化未验证。</li>
+<li>当前 VLM 原始预测不足以定义在线安全过滤器的失败集，VL 设置中 h(zt) 仍使用特权状态定义。</li>
+<li>最小偏差选择延迟约 220 ms，无法在物理硬件上实时运行；模拟器会等待过滤器，因此任务性能不受影响。</li>
+<li>注意力池化内存成本巨大：10⁵ 转换的 replay buffer 从约 0.8 GB 增至约 740 GB。</li>
+<li>未将自然语言规格翻译为形式化规格与本文方法结合；未训练跨约束类型泛化的过滤器；未在物理硬件上部署。</li>
+<li>论文未明确：VLM 评估中 11 个模型的具体版本日期与训练数据分布。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：训练超参数差异显著——GT 路径使用批大小 512、回放缓冲区 10⁶、epoch 数 10000；VL 路径使用批大小 64、回放缓冲区 10⁵、epoch 数 1000。若复现 VL 结果，务必区分这两条路径的配置。</li>
+<li><strong>最容易踩坑</strong>：均值池化压缩 VLM token 序列会丢弃空间特征，注意力池化虽改善部分指标但内存爆炸（约 740 GB）。建议先在小规模验证注意力池化的收益是否值得内存代价。</li>
+<li><strong>VLM 作为失败函数不可靠</strong>：最强模型 Gemini 仅检测到 56.4% 的失败，且多数模型存在严重类别偏差（如 RoboBrain2.5 非失败准确率 1.000 但失败准确率仅 0.016）。若下游团队计划用 VLM 做安全监督，需先评估其失败检测准确率而非总体准确率。</li>
+<li><strong>采样策略优于直接执行 actor 动作</strong>：Sampling 在八个评估设置中的六个达到相等或更高 SR，最大差距在 VL 观察下 Stack Blocks-3（52% vs 33%）。工程实现时建议保留采样机制。</li>
+<li><strong>OOD 泛化需谨慎</strong>：Safe Grab OOD 碰撞率翻倍（由表内数值 26.00→52.00 计算），Stack Blocks-4 OOD 顺序正确率大幅下降（由表内数值 64.00→44.00 计算）。部署到新场景前必须重新评估过滤器性能。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.00315</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_sac/">软演员-评论家（SAC）</a>
+              <span class="rel-desc">Towards General Language-Conditioned Latent Safety Filters提及软演员-评论家（SAC）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_general_language_conditioned_latent_safe_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_sac/">
+          <span class="entry-type">算法</span>
+          <h3>软演员-评论家（SAC）</h3>
+          <p>在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#hj-critic">语言条件化 HJ 安全 critic</a></li>
+<li><a href="#_3">运行时安全过滤</a></li>
+<li><a href="#_4">两种输入表示</a></li>
+<li><a href="#_5">失败函数定义</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#150">表 1：主结果（50 个场景评估）</a></li>
+<li><a href="#2ood-general">表 2：OOD 泛化（General 过滤器）</a></li>
+<li><a href="#3vlm-250-250">表 3：VLM 单状态失败分类（250 失败 + 250 非失败）</a></li>
+<li><a href="#4">表 4：池化消融</a></li>
+<li><a href="#5ms">表 5：推理延迟（ms）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

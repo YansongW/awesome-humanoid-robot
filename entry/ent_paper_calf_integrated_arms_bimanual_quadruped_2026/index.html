@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calf-Integrated Arms for Bimanual Quadruped Loco-Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Calf-Integrated Arms for Bimanual Quadruped Loco-Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Calf-Integrated Arms for Bimanual Quadruped Loco-Manipulation</h1>
+      <p class="entry-name-en">Calf-Integrated Arms for Bimanual Quadruped Loco-Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种将机械臂集成于四足机器人小腿的“腿臂融合”设计，使Unitree Go2在四脚着地、基座可自由行走的前提下，同时具备地面抓取、双手协同操作与长时程技能排序能力。系统由VLM高层技能规划与FSM低层执行构成，在仿真中验证了三个双臂任务，并系统评估了深度噪声鲁棒性。核心贡献在于重新定义了四足机器人操作能力的形态学基础，将操作工作空间从躯干下移至地面附近。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.06186" target="_blank" rel="noopener">arXiv:2607.06186 Calf-Integrated Arms for Bimanual Quadruped Loco-Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有四足操作设计存在根本性矛盾：躯干安装的机械臂位置高（基座距地面0.36 m），够地面物体需越过腿部且通常只有单臂；腿装夹爪（如LocoMan）虽能解放前腿，但必须靠后腿站立（rearing），固定基座、丧失行走能力。这些方案都将“操作”与“移动”视为互斥资源，无法在连续任务中同时调用。</p>
+<p>本文真正改变的是操作能力的空间分布逻辑——将机械臂嵌入小腿，使操作工作空间（距地面0.01 m至0.34 m）与行走时的腿部运动范围自然重叠，基座保持四脚着地、速度跟踪接口不变。这意味着机器人可以在行走过程中随时执行地面抓取，无需牺牲移动性换取操作能力，为“边移动边操作”的连续行为提供了硬件基础。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">机械设计</h3>
+<ul>
+<li>每条前腿小腿集成4自由度机械臂：棱柱滑块（q1，行程0.105 m，步进电机驱动、非反向驱动）+ 俯仰关节（q2）+ 偏航关节（q3）+ 平行爪夹爪（q4，开口4 cm）。</li>
+<li>每条前腿共7自由度（3原始腿关节 + 4新增），q2/q3/q4由舵机闭环位置控制。</li>
+<li>机械臂基座距地面0.18 m，对比躯干安装的0.36 m，伸展距离减半。</li>
+<li>集成代价：小腿远端质量增加、摆动惯量增大；膝盖折叠短8°，仅影响最深蹲姿，正常行走抬腿不受影响。</li>
+</ul>
+<h3 id="_4">控制架构（两层）</h3>
+<ul>
+<li><strong>高层</strong>：VLM（Kimi K2.6，云API）从预定义技能库S中选择离散技能，输入为头戴RGB-D图像 + 任务状态（二进制进度标志 + 执行历史）。查询在后台线程运行，每技能边界一次，保持运动策略站立。</li>
+<li><strong>低层</strong>：每个技能由FSM执行，输出身体系速度指令v_cmd=[vx, vy, ωz]给学习运动策略，输出笛卡尔末端目标g_ee*给3自由度DLS逆运动学求解器。</li>
+</ul>
+<h3 id="_5">关键模块</h3>
+<ul>
+<li><strong>运动策略</strong>：神经网络在Isaac Lab训练，45维观测（基座角速度、重力向量、速度指令、12个腿关节位置/速度、上一动作），12维输出为固定标称姿态的位置残差，50 Hz应用。四脚全程着地。</li>
+<li><strong>感知</strong>：红色标记（R&gt;150, G&lt;80, B&lt;80）阈值分割，深度反投影到世界坐标，抓取点取轮廓两相对点中点；部分检测时用最近完整检测平均值替代。</li>
+<li><strong>操作IK</strong>：DLS求解器公式 Δq = J_p^T (J_p J_p^T + λ²I)^{-1} (g_ee* − x_ee(q))，带迭代裁剪与关节极限投影；开环伸展时从多个初始配置取最低残差，闭环跟踪时从当前配置迭代保持连续。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>形态学创新</strong>：将操作器嵌入小腿而非躯干或腿端，使操作工作空间与行走运动空间在物理上共存。这是首个在四脚着地、基座自由行走前提下实现地面抓取与双手协同的设计，打破了“操作需固定基座”的隐含假设。</p>
+</li>
+<li>
+<p><strong>双臂协同的偏航关节设计</strong>：q3偏航关节使夹爪可扫向身体中心线，左右臂工作空间在中心线重叠，使双臂能协同操作同一物体（如双手抬升、交接）。这是单臂或腿装夹爪方案无法实现的功能维度。</p>
+</li>
+<li>
+<p><strong>VLM+FSM的分层技能执行</strong>：VLM仅在技能边界查询（延迟16–40 s/查询），FSM负责实时执行，避免高频VLM推理的延迟问题。这种“慢规划、快执行”的架构使长时程任务（如柜子任务18.6 s）成为可能，且查询期间机器人保持稳定站立。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="_8">三个双臂任务（均在四脚着地状态完成）</h3>
+<ul>
+<li><strong>长时程柜子任务</strong>：左臂携篮行走至柜子，右臂开门，放入柜内。
+总运动时间18.6 s（抓篮7.1 s + 行走开门9.1 s + 放入2.4 s），VLM共查询4次。</li>
+<li><strong>协同双手抬升</strong>：双臂抓取箱子两侧把手共同抬起。</li>
+<li><strong>左到右交接</strong>：左臂抓取，中心线传递给右臂，右臂放置侧面。</li>
+</ul>
+<h3 id="_9">对比结果</h3>
+<ul>
+<li>单躯干臂无法同时携篮和开门，不能完成柜子任务。</li>
+<li>LocoMan靠后腿站立固定基座，无法完成重定位。</li>
+</ul>
+<h3 id="_10">深度噪声鲁棒性</h3>
+<table>
+<thead>
+<tr>
+<th>噪声标准差</th>
+<th>抓取成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10 mm</td>
+<td>70–74%</td>
+</tr>
+<tr>
+<td>30 mm</td>
+<td>54%</td>
+</tr>
+<tr>
+<td>（8个固定放置 × 20个噪声样本 = 160次试验/级）</td>
+<td></td>
+</tr>
+<tr>
+<td>### 训练配置</td>
+<td></td>
+</tr>
+<tr>
+<td>域随机化：摩擦[0.3, 1.2]、恢复系数[0, 0.15]、附加基座质量[−1, +3] kg。</td>
+<td></td>
+</tr>
+<tr>
+<td>（本节另有 1 句含无法从全文文本核实的数字，已按纪律移除；论文未明确或以图/表图片形式给出。）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_11">边界与局限</h2>
+<ul>
+<li><strong>机械局限</strong>：手臂无滚动关节，夹爪不能绕接近轴旋转，需此旋转的物体（如水壶）无法抓取。</li>
+<li><strong>技能库覆盖有限</strong>：VLM只能在预定义技能中选择，不创建新技能；重新抓取新接触点、手中旋转物体、携带时避障、抓取失败后改变策略等无法仅靠提示推理解决。</li>
+<li><strong>感知依赖标记物</strong>：抓取依赖红色标记，学习检测器尚不能替代；YOLO-World和SAM只能定位框/掩码，区域中心距手柄13 cm，远超4 cm夹爪开口，无法产生可用抓取点。</li>
+<li><strong>纯仿真验证</strong>：所有结果在仿真中（Isaac Lab训练、MuJoCo评估），未测试真实传感、驱动和接触动力学。</li>
+<li><strong>未实现功能</strong>：stilt-like行走模式（q1伸出、q2锁定向下）、抬前腿将物体放背部篮子。</li>
+</ul>
+<h2 id="_12">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：先确认机械参数（q1行程0.105 m、q4开口4 cm、基座距地0.18 m）与运动策略训练配置（4096环境、200 Hz、降采样因子4、PPO 5000迭代）是否一致，这些直接影响工作空间与动态性能。</li>
+<li><strong>最易踩坑点</strong>：IK求解器的开环伸展初始化——必须从多个分散初始配置求解取最低残差，否则易陷入局部极小导致夹爪折回身体下方；闭环跟踪时须从当前配置迭代保持连续性。</li>
+<li><strong>感知模块注意</strong>：红色标记阈值（R&gt;150, G&lt;80, B&lt;80）对光照敏感，部分检测处理（用最近完整检测平均值）在遮挡场景可能引入偏差，建议先验证标记可见性。</li>
+<li><strong>VLM延迟管理</strong>：规划器延迟16–40 s/查询，期间机器人保持站立——若下游任务需要更频繁重规划，需考虑缓存或预查询机制。</li>
+<li><strong>双臂协同验证</strong>：q3偏航关节是双臂协同的关键，复现时先单独验证左右臂工作空间在中心线的重叠区域，再测试交接与协同抬升。</li>
+</ul>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.06186</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_calf_integrated_arms_bimanual_quadruped_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">机械设计</a></li>
+<li><a href="#_4">控制架构（两层）</a></li>
+<li><a href="#_5">关键模块</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#_8">三个双臂任务（均在四脚着地状态完成）</a></li>
+<li><a href="#_9">对比结果</a></li>
+<li><a href="#_10">深度噪声鲁棒性</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

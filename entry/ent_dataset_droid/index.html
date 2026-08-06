@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DROID 机器人操作数据集 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/dataset/">数据集</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DROID 机器人操作数据集</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">数据集</div>
+      <h1>DROID 机器人操作数据集</h1>
+      <p class="entry-name-en">DROID</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">数据与数据集</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Scope described in original DROID paper and confirmed by Wang et al. 2026 VLA survey. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">阶段 3 · 完整人形</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2403.12945" target="_blank" rel="noopener">DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://droid-dataset.github.io/" target="_blank" rel="noopener">DROID Dataset</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a>
+            
+              
+                
+              
+              <span class="rel-desc">Wang 等人 2026 综述引用 DROID 作为具有强视觉和环境变化的分布式真实世界数据集。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="droid">DROID 机器人操作数据集的定义与定位</h3>
+<p>DROID 机器人操作数据集属于 <strong>数据集</strong> 类型，英文名称为 <em>DROID</em>。
+一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。</p>
+<h3 id="droid_1">DROID 机器人操作数据集的关键信息</h3>
+<p>以下整理了关于DROID 机器人操作数据集的详细说明，供中英文读者参考。</p>
+<h2 id="_2">抽象</h2>
+<blockquote>
+<p><strong>生活实例</strong>：它就像由全球许多摄影师在不同城市、不同光线下拍摄的“街头摄影合集”——用丰富的真实场景差异来训练一个 robust 的图像识别系统。</p>
+<p><strong>自然语言逻辑</strong>：DROID 是一个分布式、多样化的真实世界机器人操作数据集，由多个实验室按统一协议收集；它强调视觉和环境多样性，帮助策略学习在不同背景、光照、相机视角和场景布局下都能泛化，是训练鲁棒 VLA 模型的重要真实数据来源。</p>
+</blockquote>
+<h2 id="_3">参考</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2403.12945">DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset</a></li>
+<li><a href="https://droid-dataset.github.io/">DROID Dataset</a></li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_linear_algebra/">线性代数</a>
+              <span class="rel-desc">DROID 机器人操作数据集前置依赖线性代数。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_nvidia_isaac_sim_2024/">NVIDIA Isaac Sim</a>
+              <span class="rel-desc">DROID数据可在Isaac Sim中回放或增强以训练策略。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a>
+              <span class="rel-desc">DROID 机器人操作数据集引用机器人视觉-语言-动作：数据集、基准与数据引擎综述。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_foundation_probability_theory/">概率论</a>
+              <span class="rel-desc">DROID 机器人操作数据集前置依赖概率论。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_dataset_omniaction/">OmniAction 数据集</a>
+              <span class="rel-desc">DROID 机器人操作数据集提及OmniAction 数据集。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_dataset_rh20t_manipulation_dataset_2023/">RH20T 操作数据集</a>
+              <span class="rel-desc">DROID 机器人操作数据集提及RH20T 操作数据集。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_world_action_models_embodied_brains_road_2026/">From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wu_robomind_benchmark_on_multi_em_2025/">RoboMIND：机器人操作多具身智能规范数据基准</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">RoboMIND：机器人操作多具身智能规范数据基准提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_dataset_bridgedata_v2_2023/">BridgeData V2</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">BridgeData V2提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pi0_2024/">π0：用于通用机器人控制的视觉-语言-动作流模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">π0：用于通用机器人控制的视觉-语言-动作流模型提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_humanoid_foundation_model/">人形机器人基础模型基准</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_roboomni_2025/">RoboOmni：全模态上下文中的主动式机器人操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">采购自</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界动作模型：具身智能的下一个前沿提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_open_aoe_open_egocentric_manipulation_da_2026/">Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo｜用于可扩展和智能具身系统的大规模操作平台</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">该论文将DROID引用为相关的机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wham_reconstructing_world_grounded_human_2023/">WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_oscar_omni_embodiment_action_conditioned_2026/">OSCAR: Omni-Embodiment Action-Conditioned World Model for Robotics</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tram_global_trajectory_motion_3d_humans_2024/">野外视频中的全局人体轨迹与动作恢复</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">野外视频中的全局人体轨迹与动作恢复提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robosnap_one_shot_real_sim_scene_2026/">RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_densereward_dense_reward_failure_synthes_2026/">DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ye_ego2robot_scalable_robot_data_2026/">Ego2Robot：从第一视角人类数据规模化合成机器人训练数据</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Ego2Robot：从第一视角人类数据规模化合成机器人训练数据提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">使用数据集</span>
+              <span class="rel-desc">DROID被用于训练Diffusion Policy模型。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cosmos_3_omnimodal_world_models_physical_2026/">Cosmos 3: Omnimodal World Models for Physical AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Cosmos 3: Omnimodal World Models for Physical AI提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_action_models_are_zero_s_2026/">世界行动模型是零样本策略</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界行动模型是零样本策略提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">OpenVLA 论文将 DROID 作为预训练所使用的多样化机器人演示数据的一部分进行讨论。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">Wang 等人（2026）将 DROID 引用为强调视觉与环境变化的分布式真实世界数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xiaomi_robotics_1_scaling_vision_languag_2026/">Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_green_vla_staged_vision_language_action_2026/">Green-VLA: Staged Vision-Language-Action Model for Generalist Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hord_robust_humanoid_control_v_2026/">HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_agibot_world_colosseo_a_large_2025/">AgiBot World Colosseo｜用于可扩展和智能具身系统的大规模操作平台</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">AgiBot World Colosseo｜用于可扩展和智能具身系统的大规模操作平台提及DROID 机器人操作数据集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vs_graphs_tightly_coupling_visual_slam_2025/">vS-Graphs: Tightly Coupling Visual SLAM and 3D Scene Graphs Exploiting Hierarchical Scene Understanding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">World Model for Robot Learning: A Comprehensive Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">World Model for Robot Learning: A Comprehensive Survey提及DROID 机器人操作数据集。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_dataset_droid"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_densereward_dense_reward_failure_synthes_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation</h3>
+          <p>DenseReward 提出了一套完整的密集视觉-语言奖励模型训练方案，核心贡献在于通过自动数据生成流水线与目标扰动合成多样化失败轨迹，构建了包含 26579 个操作片段、7560942…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_green_vla_staged_vision_language_action_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Green-VLA: Staged Vision-Language-Action Model for Generalist Robots</h3>
+          <p>Green-VLA 是一个面向通用机器人的分阶段视觉-语言-动作（VLA）框架，由研究团队开发，旨在部署于 Green…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_action_models_embodied_brains_road_2026/">
+          <span class="entry-type">论文</span>
+          <h3>From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</h3>
+          <p>这是一篇由机器人领域研究者撰写的路线图/立场论文，提出将“世界行动模型（WAM）”作为通往“具身大脑（embodied…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xiaomi_robotics_1_scaling_vision_languag_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</h3>
+          <p>小米机器人团队提出 Xiaomi-Robotics-1，一个基于超过 10 万小时 UMI 真实世界轨迹预训练、再经跨具身数据后训练的 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_nvidia_isaac_sim_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>NVIDIA Isaac Sim</h3>
+          <p>GPU加速的逼真机器人仿真器，支撑GR00T合成数据管道。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tram_global_trajectory_motion_3d_humans_2024/">
+          <span class="entry-type">论文</span>
+          <h3>野外视频中的全局人体轨迹与动作恢复</h3>
+          <p>TRAM 是一种从野外视频中重建人体全局轨迹与运动的两阶段方法。由研究者提出，核心贡献在于通过增强 SLAM 在动态人体场景下的鲁棒性来恢复相机运动，并利用场景背景推导运动尺度，最终结合视频…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vs_graphs_tightly_coupling_visual_slam_2025/">
+          <span class="entry-type">论文</span>
+          <h3>vS-Graphs: Tightly Coupling Visual SLAM and 3D Scene Graphs Exploiting Hierarchical Scene Understanding</h3>
+          <p>vS-Graphs…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_open_aoe_open_egocentric_manipulation_da_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning</h3>
+          <p>Open-AoE 是一个开放的第一人称操作数据集与工具链，由作者团队构建，包含约 2,000…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA：一个开源的视觉-语言-动作模型</h3>
+          <p>OpenVLA 是一个 7B 参数的开源视觉-语言-动作模型，由团队基于 Open X-Embodiment 数据集的 97 万条真实机器人演示训练而成。它融合了 Llama 2、DINOv2 和…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_rh20t_manipulation_dataset_2023/">
+          <span class="entry-type">数据集</span>
+          <h3>RH20T 操作数据集</h3>
+          <p>约11万条接触丰富的操作序列，包含视觉、力觉、音频和人类演示对。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cosmos_3_omnimodal_world_models_physical_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Cosmos 3: Omnimodal World Models for Physical AI</h3>
+          <p>Cosmos 3 是由 NVIDIA 推出的全模态世界模型系列，采用统一的混合 Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_roboomni_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboOmni：全模态上下文中的主动式机器人操作</h3>
+          <p>RoboOmni 是 2025 年提出的 VLA 系统，由端到端全模态 LLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wham_reconstructing_world_grounded_human_2023/">
+          <span class="entry-type">论文</span>
+          <h3>WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion</h3>
+          <p>WHAM 是 Max Planck 智能系统研究所等团队提出的单目视频全局 3D 人体运动重建方法，以 200 fps 的推理速度在 3DPW、RICH、EMDB 上达到逐帧精度…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hord_robust_humanoid_control_v_2026/">
+          <span class="entry-type">论文</span>
+          <h3>HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation</h3>
+          <p>HoRD 是一个面向人形机器人鲁棒控制的两阶段学习框架，由 Tony Wang 等人于 2026 年提出。其核心贡献在于通过历史条件强化学习训练教师策略，再通过在线蒸馏将鲁棒控制能力迁移至基于…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robosnap_one_shot_real_sim_scene_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation</h3>
+          <p>RoboSnap 提出从单张 RGB 图像自动生成物理稳定、视觉保真且仿真就绪的分层场景，用于机器人策略训练与评估。该方法由华盛顿大学等机构完成，核心贡献在于将碰撞感知的交互物理层与 3D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_omniaction/">
+          <span class="entry-type">数据集</span>
+          <h3>OmniAction 数据集</h3>
+          <p>一个用于主动式机器人操作的大规模多模态数据集，包含 14.1 万条片段，涵盖 112 项技能与 748 个物体，融合视觉、语音与环境声音上下文。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_oscar_omni_embodiment_action_conditioned_2026/">
+          <span class="entry-type">论文</span>
+          <h3>OSCAR: Omni-Embodiment Action-Conditioned World Model for Robotics</h3>
+          <p>OSCAR 是一个精确的动作条件视频世界模型，由研究团队提出，旨在跨不同机器人实体泛化并支持策略评估。其核心贡献包括：构建大规模标准化数据管道以整合机器人及人类数据集，采用 2D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoid_foundation_model/">
+          <span class="entry-type">评测基准</span>
+          <h3>人形机器人基础模型基准</h3>
+          <p>一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wu_robomind_benchmark_on_multi_em_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboMIND：机器人操作多具身智能规范数据基准</h3>
+          <p>RoboMIND 是一个包含 107k 条人类遥操作演示轨迹的大规模多形态机器人操作数据集，由 X-Humanoid 团队在统一平台上收集，涵盖 Franka Emika…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界动作模型：具身智能的下一个前沿</h3>
+          <p>World Action Models (WAMs)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>World Model for Robot Learning: A Comprehensive Survey</h3>
+          <p>本文是一篇关于机器人学习领域世界模型的全面综述，由研究团队系统梳理了该领域的发展脉络。核心贡献在于从机器人学习视角出发，整合了世界模型与策略耦合、作为学习模拟器、视频生成等关键范式，并总结了导航与自动…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ye_ego2robot_scalable_robot_data_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Ego2Robot：从第一视角人类数据规模化合成机器人训练数据</h3>
+          <p>Ego2Robot 提出了一条从大规模第一人称人类操作视频到多形态机器人合成数据的自动化管线，通过动作对齐、视觉对齐和质量筛选三个环节，将约 1,940 小时 ego 数据转化为 18,561…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pi0_2024/">
+          <span class="entry-type">论文</span>
+          <h3>π0：用于通用机器人控制的视觉-语言-动作流模型</h3>
+          <p>π0 是一个基于预训练视觉-语言模型（VLM）构建的流匹配视觉-语言-动作（VLA）模型，由 Physical Intelligence…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_probability_theory/">
+          <span class="entry-type">基础学科</span>
+          <h3>概率论</h3>
+          <p>关于不确定性、随机变量、分布和期望的数学基础，是机器人和机器学习中所有概率模型的根基。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_action_models_are_zero_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界行动模型是零样本策略</h3>
+          <p>这篇工作先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_foundation_linear_algebra/">
+          <span class="entry-type">基础学科</span>
+          <h3>线性代数</h3>
+          <p>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_bridgedata_v2_2023/">
+          <span class="entry-type">数据集</span>
+          <h3>BridgeData V2</h3>
+          <p>广泛用于模仿学习的带语言指令的桌面操作数据集。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>机器人视觉-语言-动作：数据集、基准与数据引擎综述</h3>
+          <p>本文是2026年关于视觉-语言-动作（VLA）模型的综述，指出VLA进展的关键瓶颈已从模型架构转向数据基础设施与评估协同设计。研究围绕数据集、基准测试和数据引擎三大支柱展开系统分析，揭示了数据保真度与…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_agibot_world_colosseo_a_large_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AgiBot World Colosseo｜用于可扩展和智能具身系统的大规模操作平台</h3>
+          <p>AgiBot World Colosseo 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用VLM 语义规划/路由、潜变量/动作…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#droid">DROID 机器人操作数据集的定义与定位</a></li>
+<li><a href="#droid_1">DROID 机器人操作数据集的关键信息</a></li>
+</ul>
+</li>
+<li><a href="#_2">抽象</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

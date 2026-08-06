@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STARE-VLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">STARE-VLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>STARE-VLA</h1>
+      <p class="entry-name-en">STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.05107v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>STARE-VLA 是慕尼黑工业大学、帝国理工学院、慕尼黑研究中心和华为技术于2025年联合提出的大型视觉-语言-动作模型，用于机器人操作。其核心贡献在于提出 Stage-Aware Reinforcement (STARE) 模块，将长程动作轨迹分解为语义阶段，提供密集的阶段对齐强化信号，并构建了 Imitation -&gt; Preference -&gt; Interaction (IPI) 串行微调流水线。在 SimplerEnv 和 ManiSkill3 基准上分别达到 98.0% 和 96.4% 的最优成功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.05107" target="_blank" rel="noopener">STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2512.05107" target="_blank" rel="noopener">STARE-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有基于强化学习的 VLA 模型微调方法，如 Trajectory-wise Preference Optimization (TPO) 和 Proximal Policy Optimization (PPO)，常将长程动作视为语言序列进行轨迹级优化，导致粗粒度信用分配和训练不稳定。与语言不同，动作轨迹通过因果链式阶段推进，各阶段学习难度各异。STARE-VLA 提出的 STARE 模块能识别这些语义阶段，并生成密集、可解释的阶段对齐强化信号。通过将 STARE 集成到 TPO 和 PPO 中，分别得到 STA-TPO 和 STA-PPO，用于离线阶段偏好学习和在线阶段内交互。IPI 流水线以监督微调为起点，依次进行模仿学习、偏好优化和交互式强化，显著提升了动作精度。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>STARE 模块</strong>：将长程动作轨迹分解为语义阶段（如接近、抓取、放置），为每个阶段提供独立的强化信号，解决轨迹级优化中信用分配模糊的问题。</li>
+<li><strong>STA-TPO</strong>：离线阶段偏好优化，基于 STARE 对每个阶段进行偏好学习，替代全局轨迹偏好。</li>
+<li><strong>STA-PPO</strong>：在线阶段内交互，允许智能体在阶段内部进行探索和优化，避免跨阶段干扰。</li>
+<li><strong>IPI 流水线</strong>：三阶段串行微调：</li>
+<li><strong>Imitation</strong>：监督微调初始化。</li>
+<li><strong>Preference</strong>：使用 STA-TPO 进行离线阶段偏好学习。</li>
+<li><strong>Interaction</strong>：使用 STA-PPO 进行在线阶段内交互强化。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>基准环境</strong>：SimplerEnv（模拟机器人操作）和 ManiSkill3（复杂操作任务）。</li>
+<li><strong>基线方法</strong>：对比 TPO、PPO 以及无阶段感知的变体。</li>
+<li><strong>评估指标</strong>：任务成功率（%）。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>SimplerEnv</strong>：STARE-VLA 达到 98.0% 成功率，显著优于 TPO（85.2%）和 PPO（79.6%）。</li>
+<li><strong>ManiSkill3</strong>：达到 96.4% 成功率，相比基线方法提升超过 15 个百分点。</li>
+<li><strong>消融实验</strong>：移除 STARE 模块后，成功率下降至 82.1%（SimplerEnv）和 78.3%（ManiSkill3），验证了阶段感知信号的有效性。</li>
+<li><strong>训练稳定性</strong>：STA-PPO 的方差比标准 PPO 降低 40%，表明阶段内交互减少了训练震荡。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>STARE-VLA 通过阶段感知强化信号和 IPI 流水线，解决了 VLA 模型长程动作优化中的信用分配问题，在多个基准上达到最优性能。未来工作可探索自动阶段发现和跨任务阶段迁移。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2512.05107v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">STARE-VLA提及近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_maniskill3_2024/">ManiSkill3</a>
+              <span class="rel-desc">STARE-VLA评测于ManiSkill3。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              <span class="rel-desc">STARE-VLA评测于ManiSkill。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_xu_stare_vla_progressive_stage_aw_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">评测基准</span>
+          <h3>ManiSkill</h3>
+          <p>面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_maniskill3_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ManiSkill3</h3>
+          <p>面向具身AI的GPU并行机器人仿真与渲染基准。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

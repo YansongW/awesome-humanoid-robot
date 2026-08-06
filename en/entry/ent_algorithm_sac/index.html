@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soft Actor-Critic (SAC) · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/algorithm/">Algorithm</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Soft Actor-Critic (SAC)</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Algorithm</div>
+      <h1>Soft Actor-Critic (SAC)</h1>
+      <p class="entry-name-en">Soft Actor-Critic (SAC)</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-06.md#Python 示例：八点法 + RANSAC + 三角测量 by scripts/backfill_nonpaper_entries.py. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>An off-policy actor-critic reinforcement-learning algorithm that maximizes expected return while also maximizing policy entropy for exploration.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>An off-policy actor-critic reinforcement learning algorithm that maximizes policy entropy alongside expected return to promote exploration.</p>
+<h2 id="content">Content</h2>
+<h3 id="definition-and-positioning-of-soft-actor-critic-sac">Definition and Positioning of Soft Actor-Critic (SAC)</h3>
+<p>Soft Actor-Critic (SAC) belongs to the <strong>algorithm</strong> category. Its domains include: AI models and algorithms. Value chain level: intelligence layer. An off-policy actor-critic reinforcement learning algorithm that maximizes policy entropy alongside expected return to promote exploration. The English name is <em>Soft Actor-Critic (SAC)</em>. The Korean name is <em>소프트 액터-크리틱(SAC)</em>.</p>
+<h3 id="mathematical-and-theoretical-foundations-of-soft-actor-critic-sac">Mathematical and Theoretical Foundations of Soft Actor-Critic (SAC)</h3>
+<p>Soft Actor-Critic (SAC) is built upon relevant mathematical theories and physical principles. Understanding its assumptions, constraints, and derivation process is essential for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In high-dimensional, underactuated, and strongly coupled systems such as humanoid robots, Soft Actor-Critic (SAC) typically requires a balance between real-time performance, precision, and robustness.</p>
+<h3 id="algorithm-steps-and-implementation-details">Algorithm Steps and Implementation Details</h3>
+<p>When implementing Soft Actor-Critic (SAC) in practice, it is necessary to specify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable operation of the algorithm on real platforms.</p>
+<h3 id="typical-applications-and-limitations">Typical Applications and Limitations</h3>
+<p>Soft Actor-Critic (SAC) can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptation capabilities remain key issues to address in practical deployment.</p>
+<h3 id="related-tags">Related Tags</h3>
+<ul>
+<li>algorithm</li>
+<li>chapter_15</li>
+<li>wiki_gap</li>
+</ul>
+<h3 id="role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</h3>
+<p>As one of the key algorithms in the humanoid robot industry chain, Soft Actor-Critic (SAC) plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall system performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_shortcut_trajectory_planning_f_2026/">Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning cites Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_rl_foundation_policy_models/">强化学习基础策略模型（RL Foundation Policy Models）</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">强化学习基础策略模型（RL Foundation Policy Models） uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vine_taming_generative_control_policies_2026/">VINE: Taming Generative Control Policies for Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">VINE: Taming Generative Control Policies for Reinforcement Learning mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fast_adaptation_behavioral_foundation_mo_2025/">Fast Adaptation with Behavioral Foundation Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Fast Adaptation with Behavioral Foundation Models uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deep_reinforcement_learning_fo_2024/">Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_huang_hyperparameter_auto_tuning_in_2021/">Hyperparameter Auto-tuning in Self-Supervised Robotic Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Hyperparameter Auto-tuning in Self-Supervised Robotic Learning mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_booster_gym_an_end_to_end_rl_f_2025/">Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_representations_back_propagating_errors/">Learning representations by back-propagating errors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Learning representations by back-propagating errors cites Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_successor_states_goal_dependent_values_m_2021/">Learning Successor States and Goal-Dependent Values: A Mathematical Viewpoint</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Learning Successor States and Goal-Dependent Values: A Mathematical Viewpoint discusses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_adapting_generalist_robot_poli_2026/">Adapting Generalist Robot Policies with Semantic Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Adapting Generalist Robot Policies with Semantic Reinforcement Learning mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_learning_motion_skills_with_ad_2025/">Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_symmgrid_super_scaling_robot_parallelize_2026/">SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reinforcement_prototypical_representatio_2021/">Reinforcement Learning with Prototypical Representations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Reinforcement Learning with Prototypical Representations mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_reduced_order_model_guided_rl_2025/">Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unilab_heterogeneous_architecture_robot_2026/">UniLab: A Heterogeneous Architecture for Robot RL Beyond GPU-Dominant Paradigms</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">UniLab: A Heterogeneous Architecture for Robot RL Beyond GPU-Dominant Paradigms mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning discusses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_fastdsac_enhancing_policy_plas_2026/">FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">Robot Inner Attention Modeling for Task-Adaptive Teaming of Heterogeneous Multi Robots</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">cites</span>
+              <span class="rel-desc">Robot Inner Attention Modeling for Task-Adaptive Teaming of Heterogeneous Multi Robots cites Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_isaac_sim_real_reinforcement_locomotion_2026/">Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_freeform_preference_learning_f_2026/">Freeform Preference Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Freeform Preference Learning for Robotic Manipulation discusses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_tactile_and_vision_conditioned_2026/">Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_diversity_all_you_need_skills_without_2018/">Diversity is All You Need: Learning Skills without a Reward Function</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Diversity is All You Need: Learning Skills without a Reward Function mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_locomotion_skills_deeprl_does_choice_act_2016/">Learning Locomotion Skills Using DeepRL: Does the Choice of Action Space Matter?</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Learning Locomotion Skills Using DeepRL: Does the Choice of Action Space Matter? mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning discusses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_add_adversarial_disentanglemen_2026/">ADD: Adversarial Disentanglement and Distillation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">ADD: Adversarial Disentanglement and Distillation mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_finer_behavioral_foundation_models_auto_2024/">Finer Behavioral Foundation Models via Auto-Regressive Features and Advantage Weighting</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Finer Behavioral Foundation Models via Auto-Regressive Features and Advantage Weighting uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_intentional_updates_streaming_reinforcem_2026/">Intentional Updates for Streaming Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Intentional Updates for Streaming Reinforcement Learning mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_advantage_weighted_regression_simple_sca/">Advantage-Weighted Regression: Simple and Scalable Off-Policy Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">Advantage-Weighted Regression: Simple and Scalable Off-Policy Reinforcement Learning compares with Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_kasaura_benchmarking_actor_critic_deep_2023/">Benchmarking Actor-Critic Deep Reinforcement Learning Algorithms for Robotics Control with Action Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Benchmarking Actor-Critic Deep Reinforcement Learning Algorithms for Robotics Control with Action Constraints mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_ase_large_scale_reusable_adver_2022/">ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_temporal_self_imitation_2026/">Temporal Self-Imitation Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Temporal Self-Imitation Learning mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_quantum_deep_reinforcement_lea_2025/">Quantum deep reinforcement learning for humanoid robot navigation task</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">Quantum deep reinforcement learning for humanoid robot navigation task compares with Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_shape_your_body_value_gradients_multi_2026/">Shape Your Body: Value Gradients for Multi-Embodiment Robot Design</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Shape Your Body: Value Gradients for Multi-Embodiment Robot Design uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_general_language_conditioned_latent_safe_2026/">Towards General Language-Conditioned Latent Safety Filters</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Towards General Language-Conditioned Latent Safety Filters mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_while_deploying_fleet_scale_reinforcemen/">Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-desc">Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies compares with Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_unified_algorithm_framework_unsupervised_2022/">A Unified Algorithm Framework for Unsupervised Discovery of Skills based on Determinantal Point Process</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">A Unified Algorithm Framework for Unsupervised Discovery of Skills based on Determinantal Point Process discusses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_morgan_model_predictive_actor_critic_2021/">Model Predictive Actor-Critic: Accelerating Robot Skill Acquisition with Deep Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Model Predictive Actor-Critic: Accelerating Robot Skill Acquisition with Deep Reinforcement Learning mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_state_entropy_maximization_random_encode_2021/">State Entropy Maximization with Random Encoders for Efficient Exploration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">State Entropy Maximization with Random Encoders for Efficient Exploration mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_doublyaware_dual_planning_and_2025/">DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_curiosity_driven_exploration_self_superv_2017/">Curiosity-driven Exploration by Self-supervised Prediction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Curiosity-driven Exploration by Self-supervised Prediction uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_mash_cooperative_heterogeneous_2025/">MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_humanoidbench_simulated_humano_2024/">HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning discusses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_one_representation_optimize_all_rewards_2021/">Learning One Representation to Optimize All Rewards</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Learning One Representation to Optimize All Rewards mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_residual_off_policy_rl_for_fin_2025/">Residual Off-Policy RL for Finetuning Behavior Cloning Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Residual Off-Policy RL for Finetuning Behavior Cloning Policies uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_liu_reinforcement_learning_of_cpg_2022/">Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot mentions Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_lift_towards_bridging_the_gap_2026/">LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">Emotion in Reinforcement Learning Agents and Robots: A Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-desc">Emotion in Reinforcement Learning Agents and Robots: A Survey discusses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_seo_learning_sim_to_real_humanoid_2025/">Learning Sim-to-Real Humanoid Locomotion in 15 Minutes</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Learning Sim-to-Real Humanoid Locomotion in 15 Minutes uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_deployable_human_preference_alignment_ro_2026/">Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences uses Soft Actor-Critic (SAC).</span>
+            </li>
+            
+            <li>
+              <a href="/en/entry/ent_paper_chebotar_q_transformer_scalable_offline_2023/">Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">based on</span>
+              <span class="rel-desc">Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions is based on Soft Actor-Critic (SAC).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_algorithm_sac"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_curiosity_driven_exploration_self_superv_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Curiosity-driven Exploration by Self-supervised Prediction</h3>
+          <p>In many real-world scenarios, rewards extrinsic to the agent are extremely sparse, or absent…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_symmgrid_super_scaling_robot_parallelize_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception</h3>
+          <p>Deep reinforcement policy learning directly in physical robots (on-robot learning) remains…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_finer_behavioral_foundation_models_auto_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Finer Behavioral Foundation Models via Auto-Regressive Features and Advantage Weighting</h3>
+          <p>The forward-backward representation (FB) is a recently proposed framework (Touati et al., 2023;…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_advantage_weighted_regression_simple_sca/">
+          <span class="entry-type">Paper</span>
+          <h3>Advantage-Weighted Regression: Simple and Scalable Off-Policy Reinforcement Learning</h3>
+          <p>Conservative card from a lab paper list entry: Advantage-Weighted Regression: Simple and Scalable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fast_adaptation_behavioral_foundation_mo_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Fast Adaptation with Behavioral Foundation Models</h3>
+          <p>Unsupervised zero-shot reinforcement learning (RL) has emerged as a powerful paradigm for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reduced_order_model_guided_rl_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion</h3>
+          <p>Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_moerland_emotion_in_reinforcement_learn_2017/">
+          <span class="entry-type">Paper</span>
+          <h3>Emotion in Reinforcement Learning Agents and Robots: A Survey</h3>
+          <p>A 2017 survey that systematically reviews computational models of emotion in reinforcement learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_rl_foundation_policy_models/">
+          <span class="entry-type">Paper</span>
+          <h3>强化学习基础策略模型（RL Foundation Policy Models）</h3>
+          <p>Conservative card from a lab paper list entry: 强化学习基础策略模型（RL Foundation Policy Models）. No fetchable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_isaac_sim_real_reinforcement_locomotion_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</h3>
+          <p>Learning-based approaches to locomotion have risen in popularity in recent years, showing the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_intentional_updates_streaming_reinforcem_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Intentional Updates for Streaming Reinforcement Learning</h3>
+          <p>In gradient-based learning, a step size chosen in parameter units does not produce a predictable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_ase_large_scale_reusable_adver_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</h3>
+          <p>ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters is a 2022…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_while_deploying_fleet_scale_reinforcemen/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies</h3>
+          <p>Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies -…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_humanoidbench_simulated_humano_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation</h3>
+          <p>HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation is a 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_seo_learning_sim_to_real_humanoid_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Sim-to-Real Humanoid Locomotion in 15 Minutes</h3>
+          <p>This paper presents a practical recipe using FastSAC and FastTD3 with massively parallel simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_towards_bridging_the_gap_betwe_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</h3>
+          <p>Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_reinforcement_learning_of_cpg_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Reinforcement Learning of CPG-regulated Locomotion Controller for a Soft Snake Robot</h3>
+          <p>This paper presents a bio-inspired cascade controller for a soft snake robot that combines…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_adapting_generalist_robot_poli_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Adapting Generalist Robot Policies with Semantic Reinforcement Learning</h3>
+          <p>arXiv:2606.31958v1 Announce Type: new Abstract: Generalist robot policies learn a diverse repertoire…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_diversity_all_you_need_skills_without_2018/">
+          <span class="entry-type">Paper</span>
+          <h3>Diversity is All You Need: Learning Skills without a Reward Function</h3>
+          <p>Intelligent creatures can explore their environments and learn useful skills without supervision. In…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_chebotar_q_transformer_scalable_offline_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions</h3>
+          <p>Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_residual_off_policy_rl_for_fin_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Residual Off-Policy RL for Finetuning Behavior Cloning Policies</h3>
+          <p>Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work on manipulation for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_morgan_model_predictive_actor_critic_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Model Predictive Actor-Critic: Accelerating Robot Skill Acquisition with Deep Reinforcement Learning</h3>
+          <p>This paper introduces Model Predictive Actor-Critic (MoPAC), a hybrid model-based/model-free…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_one_representation_optimize_all_rewards_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning One Representation to Optimize All Rewards</h3>
+          <p>We introduce the forward-backward (FB) representation of the dynamics of a reward-free Markov…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_booster_gym_an_end_to_end_rl_f_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion</h3>
+          <p>Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a 2025 work on locomotion…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_tactile_and_vision_conditioned_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation</h3>
+          <p>arXiv:2607.09218v1 Announce Type: new Abstract: Whole-arm manipulation involves direct contact with…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vlm_ar3l_vision_language_model_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>VLM-AR3L: Vision-Language Models for Absolute and Relative Rewards in Reinforcement Learning</h3>
+          <p>arXiv:2607.00483v1 Announce Type: new Abstract: Designing effective reward functions remains a major…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_general_language_conditioned_latent_safe_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Towards General Language-Conditioned Latent Safety Filters</h3>
+          <p>Robot policies are becoming increasingly general, with vision-language-action (VLA) models enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_huang_hyperparameter_auto_tuning_in_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Hyperparameter Auto-tuning in Self-Supervised Robotic Learning</h3>
+          <p>Proposes an online ELBO-based auto-tuning technique for self-supervised reinforcement learning…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shape_your_body_value_gradients_multi_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Shape Your Body: Value Gradients for Multi-Embodiment Robot Design</h3>
+          <p>We propose to turn generalist multi-embodiment value functions into reusable models for robot…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_doublyaware_dual_planning_and_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion</h3>
+          <p>DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unified_algorithm_framework_unsupervised_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>A Unified Algorithm Framework for Unsupervised Discovery of Skills based on Determinantal Point Process</h3>
+          <p>Learning rich skills under the option framework without supervision of external rewards is at the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_lift_towards_bridging_the_gap_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control</h3>
+          <p>LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_unilab_heterogeneous_architecture_robot_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>UniLab: A Heterogeneous Architecture for Robot RL Beyond GPU-Dominant Paradigms</h3>
+          <p>Simulation-based RL for contemporary robot control is increasingly organized around GPU-resident…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_mash_cooperative_heterogeneous_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion</h3>
+          <p>MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion is a 2025 work…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_add_adversarial_disentanglemen_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>ADD: Adversarial Disentanglement and Distillation</h3>
+          <p>ADD: Adversarial Disentanglement and Distillation is a paper on style learning for humanoid…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_freeform_preference_learning_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Freeform Preference Learning for Robotic Manipulation</h3>
+          <p>arXiv:2606.32027v1 Announce Type: new Abstract: Reward design remains a central bottleneck for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_vine_taming_generative_control_policies_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>VINE: Taming Generative Control Policies for Reinforcement Learning</h3>
+          <p>Flow-matching policies have emerged as an effective policy parameterization for robot learning. They…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_fastdsac_enhancing_policy_plas_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion</h3>
+          <p>arXiv:2606.31691v1 Announce Type: new Abstract: Scalable reinforcement learning has popularized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_huang_robot_inner_attention_modeling_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Robot Inner Attention Modeling for Task-Adaptive Teaming of Heterogeneous Multi Robots</h3>
+          <p>Proposes innerATT, an attention-based multi-agent actor-critic method that dynamically forms…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_learning_motion_skills_with_ad_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots</h3>
+          <p>Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots is a 2025 work on…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_quantum_deep_reinforcement_lea_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Quantum deep reinforcement learning for humanoid robot navigation task</h3>
+          <p>Quantum deep reinforcement learning for humanoid robot navigation task is a 2025 work on navigation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_temporal_self_imitation_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Temporal Self-Imitation Learning</h3>
+          <p>Long-horizon robot manipulation policies trained with reward shaping can still achieve high return…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_kasaura_benchmarking_actor_critic_deep_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Benchmarking Actor-Critic Deep Reinforcement Learning Algorithms for Robotics Control with Action Constraints</h3>
+          <p>This paper introduces a benchmark for action-constrained reinforcement learning, comparing existing…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_representations_back_propagating_errors/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning representations by back-propagating errors</h3>
+          <p>Conservative card from a lab paper list entry: Learning representations by back-propagating errors.…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_from_prior_to_pro_efficient_sk_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning</h3>
+          <p>arXiv:2603.10263v2 Announce Type: replace Abstract: We introduce Distribution Contractive…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_state_entropy_maximization_random_encode_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>State Entropy Maximization with Random Encoders for Efficient Exploration</h3>
+          <p>Recent exploration methods have proven to be a recipe for improving sample-efficiency in deep…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deep_reinforcement_learning_fo_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey</h3>
+          <p>Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024 work on locomotion for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_deployable_human_preference_alignment_ro_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences</h3>
+          <p>Aligning robot policies with human preferences is essential for deployment to diverse end users. In…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_locomotion_skills_deeprl_does_choice_act_2016/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Locomotion Skills Using DeepRL: Does the Choice of Action Space Matter?</h3>
+          <p>The use of deep reinforcement learning allows for high-dimensional state descriptors, but little is…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_shortcut_trajectory_planning_f_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Shortcut Trajectory Planning for Efficient Offline Reinforcement Learning</h3>
+          <p>arXiv:2607.09336v1 Announce Type: cross Abstract: Diffusion-based trajectory planners have shown…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_successor_states_goal_dependent_values_m_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Successor States and Goal-Dependent Values: A Mathematical Viewpoint</h3>
+          <p>In reinforcement learning, temporal difference-based algorithms can be sample-inefficient: for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_wahab_value_bonuses_using_ensemble_e_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning</h3>
+          <p>This paper proposes Value Bonuses with Ensemble errors (VBE), a plug-in exploration method that…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_reinforcement_prototypical_representatio_2021/">
+          <span class="entry-type">Paper</span>
+          <h3>Reinforcement Learning with Prototypical Representations</h3>
+          <p>Learning effective representations in image-based environments is crucial for sample efficient…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_allman_multi_agent_reinforcement_lear_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>Multi-Agent Reinforcement Learning for Cooperative Warehouse Automation: QMIX Value Decomposition for Sparse-Reward Coordination</h3>
+          <p>This paper compares QMIX, IPPO, and MASAC on warehouse multi-agent reinforcement learning tasks…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#definition-and-positioning-of-soft-actor-critic-sac">Definition and Positioning of Soft Actor-Critic (SAC)</a></li>
+<li><a href="#mathematical-and-theoretical-foundations-of-soft-actor-critic-sac">Mathematical and Theoretical Foundations of Soft Actor-Critic (SAC)</a></li>
+<li><a href="#algorithm-steps-and-implementation-details">Algorithm Steps and Implementation Details</a></li>
+<li><a href="#typical-applications-and-limitations">Typical Applications and Limitations</a></li>
+<li><a href="#related-tags">Related Tags</a></li>
+<li><a href="#role-in-humanoid-robot-systems">Role in Humanoid Robot Systems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

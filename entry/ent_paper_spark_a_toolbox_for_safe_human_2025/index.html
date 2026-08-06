@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation</h1>
+      <p class="entry-name-en">SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.03132v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>SPARK 是一个面向人形机器人安全自主与遥操作的综合工具箱，由智能控制实验室于 2025 年提出。其核心贡献在于提供模块化、可组合的安全控制框架，支持从仿真到真实硬件的快速部署，并兼容 Apple Vision Pro 与 Motion Capture System 等外部传感器。该工具箱通过可配置的安全准则与灵敏度级别，帮助用户优化安全与性能的平衡。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2502.03132" target="_blank" rel="noopener">SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://intelligent-control-lab.github.io/spark/" target="_blank" rel="noopener">SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>SPARK（Safe Protective and Assistive Robot Kit）旨在解决人形机器人在复杂环境交互中因物理结构带来的安全风险。它作为一个模块化工具箱，集成了最先进的安全控制算法，允许用户灵活配置安全准则与灵敏度，以在安全与性能之间取得最佳平衡。为加速研究，SPARK 提供了涵盖多种环境、任务与机器人模型的仿真基准，并支持将合成安全控制器快速部署到真实硬件上。在硬件部署方面，SPARK 支持 Apple Vision Pro 或 Motion Capture System 作为外部传感器，同时提供接口以无缝集成其他硬件配置。论文通过仿真实验与 Unitree G1 人形机器人的案例研究展示了 SPARK 的能力，其开源代码已公开。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<p>SPARK 采用模块化与可组合的机器人控制框架，将安全控制算法作为独立组件集成。用户可通过配置安全准则与灵敏度级别，动态调整安全与性能的权衡。该工具箱支持从仿真到真实硬件的无缝迁移，并兼容多种外部传感器（如 Apple Vision Pro 与 Motion Capture System），同时提供通用接口以适配其他硬件。</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>仿真基准</strong>：在多种环境、任务与机器人模型上对比不同安全方法的表现。</li>
+<li><strong>硬件部署</strong>：以 Unitree G1 人形机器人作为真实平台，通过 Apple Vision Pro 或 Motion Capture System 提供外部感知输入。</li>
+<li><strong>案例研究</strong>：结合仿真实验与真实机器人实验，验证 SPARK 在全身控制与移动操作任务中的安全性能。</li>
+</ul>
+<h3 id="_5">关键数字与结论</h3>
+<ul>
+<li>SPARK 通过可配置的安全准则，显著降低了人形机器人在复杂环境中的碰撞风险。</li>
+<li>在 Unitree G1 上的案例研究显示，SPARK 能够有效平衡安全与任务完成效率。</li>
+<li>开源代码已发布，便于社区复现与扩展。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>SPARK 为人形机器人安全研究提供了一个统一、可扩展的工具箱，通过模块化设计、仿真基准与硬件兼容性，加速了安全控制算法的开发与部署。用户可借助 SPARK 显著提升人形系统的安全性，并推动相关研究进展。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2502.03132v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_hierarchical_qp_wbc/">分层二次规划全身控制</a>
+              <span class="rel-desc">SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation使用分层二次规划全身控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_bilateral_teleoperation/">双边遥操作</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_spark_a_toolbox_for_safe_human_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Unitree G1 人形机器人</h3>
+          <p>Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_bilateral_teleoperation/">
+          <span class="entry-type">方法</span>
+          <h3>双边遥操作</h3>
+          <p>命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_hierarchical_qp_wbc/">
+          <span class="entry-type">方法</span>
+          <h3>分层二次规划全身控制</h3>
+          <p>一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键数字与结论</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

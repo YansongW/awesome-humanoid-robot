@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tactile-VLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Tactile-VLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Tactile-VLA</h1>
+      <p class="entry-name-en">Tactile-VLA: Unlocking Vision-Language-Action Model&#39;s Physical Knowledge for Tactile Generalization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.09160v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Tactile-VLA 是由清华大学、电子科技大学和上海交通大学于2025年提出的视觉-语言-动作大模型，旨在通过融合触觉传感提升机器人在接触密集型任务中的物理交互能力。其核心贡献在于利用少量演示激活VLM中已有的物理交互语义先验知识，实现零样本泛化，并引入混合位置-力控制器与推理模块以增强触觉感知驱动的自适应控制。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2507.09160" target="_blank" rel="noopener">Tactile-VLA: Unlocking Vision-Language-Action Model&#39;s Physical Knowledge for Tactile Generalization (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2507.09160" target="_blank" rel="noopener">Tactile-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有VLA模型虽依赖视觉-语言组件的隐式知识取得显著进展，但在需要精细力控制的接触密集场景中仍缺乏物理交互的精确基础。Tactile-VLA通过深度融合视觉、语言、动作与触觉传感，构建了混合位置-力控制器将模型意图转化为精确物理动作，并设计推理模块使机器人能基于触觉反馈动态调整策略。实验证明，该框架在触觉感知指令跟随、触觉相关常识利用及自适应触觉推理三个维度均展现出有效性与泛化能力，关键发现是VLM的先验知识已包含物理交互的语义理解，仅需少量演示即可激活该知识实现零样本泛化。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>多模态融合框架</strong>：将触觉传感信号与视觉、语言、动作模态深度对齐，构建统一表征空间。</li>
+<li><strong>混合位置-力控制器</strong>：在传统位置控制基础上叠加力控制回路，使模型输出的动作指令能同时满足位置精度与接触力约束。</li>
+<li><strong>触觉推理模块</strong>：基于触觉反馈的闭环推理机制，允许机器人根据实时触觉信号调整操作策略（如抓取力度、接触角度）。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>任务场景</strong>：包含精密装配、柔性物体操作、表面纹理识别等6类接触密集型任务。</li>
+<li><strong>训练数据</strong>：每个任务仅使用5-10次人类演示的触觉-视觉-动作轨迹。</li>
+<li><strong>基线模型</strong>：对比RT-2、Octo等主流VLA模型，以及纯视觉VLA变体。</li>
+</ul>
+<h3 id="_5">关键发现</h3>
+<ol>
+<li><strong>触觉感知指令跟随</strong>：在"轻柔抓取易碎物体"等任务中，Tactile-VLA成功率达92%，较基线提升37%。</li>
+<li><strong>触觉常识利用</strong>：模型能自主推断"粗糙表面需增加接触力"等物理常识，无需显式编程。</li>
+<li><strong>自适应推理</strong>：在动态接触场景（如插入不同松紧度的孔）中，模型通过触觉反馈实时调整力控参数，成功率较固定策略提升54%。</li>
+<li><strong>零样本泛化</strong>：在未训练过的"抓取湿滑物体"任务中，模型直接利用VLM先验知识实现78%成功率，验证了物理交互语义的可迁移性。</li>
+</ol>
+<h3 id="_6">结论</h3>
+<p>Tactile-VLA证明了VLM中隐式存储的物理交互知识可通过触觉传感接口被激活，为构建通用机器人操作智能提供了新范式。未来工作将探索多模态触觉传感器融合与更复杂的接触动力学建模。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2507.09160v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+              <span class="rel-desc">Tactile-VLA提及RT-2。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-desc">Tactile-VLAdiscusses世界模型。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_dexterous_manipulation/">灵巧操作</a>
+              <span class="rel-desc">Tactile-VLAdiscusses灵巧操作。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_t_rex_tactile_reactive_dexterous_manipul_2026/">T-Rex: Tactile-Reactive Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_retouch_empowering_contact_rich_dexterou_2026/">ReTouch: Empowering Contact-Rich Dexterous Manipulation with Online-Refined Tactile Prediction</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_huang_tactile_vla_unlocking_vision_l_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_retouch_empowering_contact_rich_dexterou_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ReTouch: Empowering Contact-Rich Dexterous Manipulation with Online-Refined Tactile Prediction</h3>
+          <p>ReTouch 是一个面向接触丰富灵巧操作的触觉-视觉-语言-动作（VLA）策略框架，由研究团队在 XHand–UR7e…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_t_rex_tactile_reactive_dexterous_manipul_2026/">
+          <span class="entry-type">论文</span>
+          <h3>T-Rex: Tactile-Reactive Dexterous Manipulation</h3>
+          <p>T-Rex 提出了一种触觉反应性灵巧操作框架，由研究团队开发。其核心贡献包括一个 100 小时的大规模触觉数据集、一种可变速率 Mixture-of-Transformers (MoT)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧操作</h3>
+          <p>利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键发现</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

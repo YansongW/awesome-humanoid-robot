@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</h1>
+      <p class="entry-name-en">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.08619v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种将经典平衡控制指标嵌入强化学习框架的统一策略，用于人形机器人的自主恢复。该工作由研究团队于2026年发表，核心贡献在于通过捕获点、质心状态和质心动量作为特权评论家输入与塑形奖励，使单一策略覆盖从踝关节策略到多触点站立的完整恢复谱系，在Unitree H1-2上达到93.4%恢复率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2603.08619" target="_blank" rel="noopener">Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有强化学习方法将人形机器人恢复视为纯任务奖励问题，缺乏对平衡状态的显式表征。本文通过嵌入经典平衡指标（捕获点、质心状态、质心动量）作为特权评论家输入，并直接围绕这些量设计塑形奖励，使演员网络仅依赖本体感觉即可实现零样本硬件迁移。该策略无需参考轨迹或脚本化接触，即可处理小扰动下的踝/髋关节策略、大推力下的补偿步态，以及利用手肘膝盖的多触点倒地站立。在Isaac Lab中训练的Unitree H1-2策略，在随机初始姿态和未脚本化倒地配置下达到93.4%恢复率。消融实验表明移除平衡信息结构会导致站立学习完全失败，证实这些指标提供了有意义的训练信号而非偶然结构。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>平衡指标嵌入</strong>：将捕获点（Capture Point）、质心状态（CoM state）和质心动量（Centroidal Momentum）作为特权信息输入评论家网络，同时基于这些量设计塑形奖励函数</li>
+<li><strong>演员-评论家框架</strong>：演员网络仅使用本体感觉（关节位置/速度、IMU数据）进行零样本硬件迁移，评论家网络在训练时获取特权平衡指标</li>
+<li><strong>无参考轨迹设计</strong>：不依赖任何预设运动轨迹或脚本化接触序列，完全通过强化学习自主发现恢复策略</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>训练环境</strong>：Isaac Lab仿真平台，使用Unitree H1-2人形机器人模型</li>
+<li><strong>测试配置</strong>：包含随机初始姿态（不同倒地角度/方向）和未脚本化倒地场景（模拟真实跌倒动力学）</li>
+<li><strong>迁移验证</strong>：Sim-to-sim迁移至MuJoCo环境，以及初步硬件实验</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>恢复性能</strong>：在随机初始姿态和未脚本化倒地配置下达到93.4%恢复率</li>
+<li><strong>策略多样性</strong>：单一策略自动涌现出踝关节策略（小扰动）、髋关节策略（中等扰动）、补偿步态（大推力）、多触点站立（利用手肘膝盖）</li>
+<li><strong>消融实验</strong>：移除平衡信息结构后，站立学习完全失败（0%恢复率），证明这些指标提供了关键学习信号</li>
+<li><strong>泛化能力</strong>：成功迁移至MuJoCo仿真环境，初步硬件实验验证了跨环境泛化性</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>嵌入可解释的平衡结构显著减少了人形机器人处于失败状态的时间，将自主恢复的能力边界从单一站立任务扩展至包含倒地、补偿步态和多触点站立的完整恢复谱系。该方法为将经典控制理论融入现代强化学习框架提供了有效范式。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2603.08619v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_principle_capture_point/">捕获点</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_embedding_classical_balance_co_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_capture_point/">
+          <span class="entry-type">原理</span>
+          <h3>捕获点</h3>
+          <p>捕获点（Capture Point, CP）是人形机器人推恢（push…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

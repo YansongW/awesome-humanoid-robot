@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Visual representations of VLA models remain unreliable for spatially precise robotic manipulation. We uncover that vision encoders in VLAs also exhibit attention artifacts previously documented in generic Vision Transformers, and further show that, in embodied policies, these artifacts are closely associated with spatial perception capabilities acquired during post-training. As the encoder learns.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.02197" target="_blank" rel="noopener">arXiv:2608.02197 Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Mod</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 AtVLA(Attention-guided Vision-Language-Action) 모델을 제안하며, 레지스터 강화 시각 인코딩과 불확실성 게이팅 기반의 어텐션 유도 크롭 메커니즘을 통해 VLA 모델이 정밀 조작에서 전역 시각 인코딩 부족으로 인해 발생하는 위치 파악 부정확성 문제를 해결합니다. 이 방법은 사전 훈련된 π₀ 모델을 기반으로 3단계 후속 훈련을 수행하며, LIBERO 벤치마크에서 평균 성공률을 94.2%에서 98.4%로, 실제 세계 성공률을 46.5%에서 69.0%로 향상시키고, 총 계산량은 π₀의 1.4–1.6배에 불과합니다.</p>
+<h2 id="_2">무엇을 변화시키는가</h2>
+<p>이 작업의 진정한 가치는 VLA 모델이 시각 정보를 처리하는 기본 패러다임을 변화시킨다는 점입니다. 이전에는 VLA 모델이 고정 해상도의 전역 시각 인코딩에 의존하거나 명시적 시각 전문가 또는 3D 표현을 도입했습니다. 전자는 정밀 조작에서 국소 기하학적 세부 정보 부족으로 실패하고, 후자는 추가적인 센싱, 캘리브레이션 및 모델링 비용을 초래합니다. AtVLA의 핵심 판단은 모델이 모든 시점에서 고해상도 이미지를 볼 필요가 없으며, "불확실한" 시점에만 자체 동작 조건부 어텐션을 기반으로 작업 관련 영역을 동적으로 선택하여 국소 정밀화를 수행하면 된다는 것입니다.</p>
+<p>이러한 "요구 기반 정밀화" 접근 방식은 두 가지 암묵적 가정을 깨뜨립니다. 첫째, 시각 인코딩이 전체 과정에서 일관되어야 한다는 가정, 둘째, 정밀화가 외부 신호(예: VLM 또는 주석)에 의존해야 한다는 가정입니다. 저자들은 동작 전문가 자체의 어텐션 분포가 이미 충분한 공간 위치 정보를 포함하고 있어 크롭 신호 소스로 사용될 수 있음을 증명합니다. 동시에, 그들은 시각 인코더의 어텐션 아티팩트(고노름 아티팩트)가 순수한 노이즈가 아니라 후속 훈련에서 획득한 공간 인식 능력과 밀접하게 관련되어 있음을 발견합니다. 이는 이러한 아티팩트를 단순히 억제하는 대신 레지스터 토큰으로 흡수하도록 유도합니다. 이 발견 자체는 VLA 시각 표현 이해에 독립적인 기여를 합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="3">3단계 후속 훈련 프로세스</h3>
+<ul>
+<li><strong>Stage 0 (레지스터 적응, 20K 스텝)</strong>: 처음 4K 스텝에서는 4개의 레지스터 임베딩(θ_reg)만 업데이트하며 학습률은 1×10⁻⁴입니다. 이후 16K 스텝에서는 SigLIP의 마지막 4개 transformer 블록(θ_vis^last)을 추가로 해제하며 학습률은 2×10⁻⁵입니다. PaliGemma 백본, 시각 프로젝터 및 동작 전문가는 동결 상태를 유지합니다.</li>
+<li><strong>Stage 1 (정답 크롭 정렬, 10K 스텝)</strong>: 주석이 달린 작업 관련 영역의 정답 크롭만 사용하며 크롭 드롭아웃을 비활성화합니다. 크롭 위치 인코더와 rank-32 LoRA 어댑터(언어 및 동작 컴포넌트에 삽입)를 최적화하며 학습률은 1×10⁻⁴입니다. SigLIP 인코더, 레지스터 임베딩, 시각 프로젝터 및 사전 훈련된 백본 가중치는 모두 동결됩니다.</li>
+<li><strong>Stage 2 (결합 정밀화 및 추론 정렬, 40K 스텝)</strong>: 완전한 AtVLA 정책을 결합 최적화하며, SigLIP, Gemma 및 동작 전문가의 기본 가중치는 동결되고 세 가지의 rank-32 LoRA 어댑터는 훈련 가능하며, 레지스터 임베딩, 시각 프로젝터 및 크롭 위치 인코더는 직접 최적화됩니다. AdamW, batch size 4, 일정 학습률 1×10⁻⁴을 사용합니다.</li>
+</ul>
+<h3 id="_4">결합 목적 함수</h3>
+<p>ℒ_joint = ℒ_π₀ + λ_ag·ℒ_ag, 여기서 λ_ag = 1.0입니다. ℒ_ag = −log( (Σ_{p∈Ω(b^gt)} A_p + ε) / (Σ_p A_p + ε) ), A_p는 근위 동작 토큰의 기본 이미지 패치 p에 대한 집계 어텐션이며, Ω(b^gt)는 주석이 달린 작업 관련 영역 내 패치 중심의 집합입니다.</p>
+<h3 id="_5">불확실성 게이팅 정밀화</h3>
+<ul>
+<li>각 동작 블록 재계획 단계에서 기본 시각 및 언어 프리픽스는 한 번 계산되어 재사용 가능한 키-값 캐시에 저장됩니다.</li>
+<li>동작 전문가는 독립적인 가우시안 초기화에서 K = 4개의 동작 블록을 생성하며 10단계 Euler 솔버를 사용합니다.</li>
+<li>불확실성 U_t는 처음 h개 동작의 병진 차원(Δx, Δy, Δz)을 기반으로 계산됩니다: U_t = (1/(h|D_tr|)) Σ_{j=1}^{h} Σ_{d∈D_tr} sqrt( (1/(K−1)) Σ_{k=1}^{K} (A_{j,d}^{(k)} − Ā_{j,d})² )</li>
+<li>U_t ≤ τ일 때 평균 동작 블록을 직접 실행합니다. U_t &gt; τ일 때 어텐션 유도 크롭 정밀화를 시도합니다(추가 크롭 인코딩 1회 및 추가 동작 생성 1회만 수행).</li>
+</ul>
+<h3 id="_6">어텐션 롤아웃 집계</h3>
+<p>동작 전문가의 전체 18개 결합 어텐션 레이어에서 동작-프리픽스 어텐션을 수집하고, 헤드 및 Euler 디노이징 스텝 {3, 6, 9}에서 평균을 냅니다. 레이어별 전파: M_roll = M̃<em L_1="L−1">L · M̃</em> · … · M̃<em m_H="m∈H">1, 여기서 M̃_l = RowNorm(I + (1/(|H||Q|)) Σ</em>)입니다. 처음 h개 동작 토큰 행에서 256개 기본 이미지 패치 열로의 롤아웃 항목을 평균하여 16×16 유의성 맵으로 재구성하고, 이중선형 업샘플링으로 원본 이미지 해상도로 확대합니다. 레지스터 토큰 열은 제외됩니다.} Σ_{q∈Q} M_{l,m,q</p>
+<h3 id="_7">대비 창 검색</h3>
+<p>후보 창 변 길이 S = {84, 112, 140} 픽셀로, 224×224 입력 이미지에서 14픽셀 스텝으로 검색합니다. 내부 어텐션 평균과 컨텍스트 링(변 길이 1.25배 확장) 어텐션 평균 간의 차이를 최대화하는 창을 선택합니다. 선택된 박스의 각 측면에 10% 패딩을 추가하고, 크롭하여 224×224로 조정합니다. 정규화된 좌표는 2계층 크롭 위치 MLP(4→256→d_LLM, GELU 활성화)를 통해 매핑되며, 위치 임베딩은 각 프로젝션된 크롭 패치 토큰에 추가됩니다.</p>
+<h3 id="_8">크롭 커리큘럼</h3>
+<p>40K 스텝 결합 훈련에서: 처음 40%는 α = 0, p_drop = 0이며 모든 크롭은 정답 영역에서 옵니다. 40%–90%는 α가 0에서 1로 선형 증가하고, 크롭 드롭아웃 확률은 0에서 0.3으로 선형 증가하며, 무효 롤아웃은 정답 크롭으로 폴백하지 않고 크롭 정밀화를 건너뜁니다. 마지막 10%는 α = 1, p_drop = 0.3이며 모든 유효한 비드롭 크롭은 어텐션 롤아웃에서 옵니다.</p>
+<h2 id="_9">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>레지스터 토큰의 구현화 훈련</strong>: 일반 ViT에서 레지스터가 내부 작업 공간으로만 사용되는 것과 달리, AtVLA는 레지스터 출력을 유지하고 시각 프로젝터를 통해 언어 백본으로 전달하며, 완전히 구현 데이터와 동작 감독으로 훈련합니다. 저자들은 ImageNet과 CC3M 데이터를 혼합하면 로봇 시연에서 얻은 능력이 손상된다는 것을 발견하고 일반 시각 사전 훈련을 포기합니다. 이 결정은 "시각 인코더는 먼저 일반 사전 훈련 후 구현 미세 조정"이라는 일반적인 가정에 도전합니다.</p>
+</li>
+<li>
+<p><strong>불확실성 게이팅 기반 요구형 정밀화</strong>: 동작 샘플링의 샘플 간 표준 편차를 공간 불확실성의 대리 지표로 사용하여 필요한 경우에만 크롭을 트리거합니다. 이 설계는 계산 비용을 "항상 정밀화"에서 "요구 기반 정밀화"로 낮추어 총 계산량을 π₀의 1.4–1.6배로 유지하면서 약 30%의 트리거율을 유지합니다. 게이팅은 각 동작 블록 재계획 단계에서 평가되며, 각 저수준 제어 스텝이 아닌 단위로 평가되어 추가 비용을 제어합니다.</p>
+</li>
+<li>
+<p><strong>어텐션 롤아웃을 크롭 신호 소스로 사용</strong>: 동작 전문가의 결합 어텐션 레이어에서 레이어별 전파를 통해 16×16 유의성 맵을 생성하고, 대비 창 검색(내부 vs 컨텍스트 링)을 통해 크롭 영역을 선택합니다. 이 설계는 외부 VLM 또는 주석 의존성을 피하며, 대비 기준은 전체 이미지 크롭과 고립된 어텐션 피크의 작은 창을 동시에 피합니다. 이는 "어텐션 맵 직접 argmax"의 단순한 방법에 대한 실질적인 개선입니다.</p>
+</li>
+</ol>
+<h2 id="_10">실험 및 결과</h2>
+<p><strong>대조 설정.</strong> 우리는 LIBERO 4개 표준 스위트(Spatial, Object, Goal, Long-10), SimplerEnv Google Robot 스위트, Franka Research 3 로봇의 실제 세계 벤치마크(Kitchen 및 Building Blocks)에서 AtVLA를 사전 훈련된 π₀ 베이스라인, π₀.₅, SpatialVLA, CoT-VLA, OFT, VLANeXt, RT-1-X, RT-2-X, RoboVLM, TraceVLA 등의 공개 베이스라인, 그리고 두 개의 통제 변형(π₀ + Registers, π₀ + Cropping)과 비교합니다. 모든 AtVLA 변형은 동일한 사전 훈련된 π₀ 체크포인트에서 초기화되며, 훈련 분포는 8장의 NVIDIA RTX 6000 Ada GPU에서, 실제 세계 배포는 NVIDIA RTX 4090 GPU와 Franka Research 3 로봇에서 수행됩니다. 훈련은 3단계 커리큘럼을 사용합니다: 레지스터 적응 20K 스텝, 크롭 정렬 10K 스텝, 결합 정밀화 40K 스텝, 결합 목표 가중치 λ_ag = 1.0, LoRA 랭크 32, 배치 크기 4(Stage 2), 입력 해상도는 224×224로 통일됩니다. 불확실성 게이팅은 각 동작 블록 재계획 단계에서 한 번 평가되며, 크롭 트리거율은 재계획 단계의 약 30%입니다.</p>
+<table>
+<thead>
+<tr>
+<th>벤치마크</th>
+<th>π₀ 베이스라인</th>
+<th>π₀ + Registers</th>
+<th>π₀ + Cropping</th>
+<th>AtVLA (Full)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO Spatial</td>
+<td>96.8 ± 1.3</td>
+<td>98.8 ± 0.6</td>
+<td>96.5 ± 1.3</td>
+<td>99.3 ± 0.7</td>
+</tr>
+<tr>
+<td>LIBERO Object</td>
+<td>98.8 ± 1.2</td>
+<td>99.0 ± 0.8</td>
+<td>98.2 ± 1.2</td>
+<td>99.4 ± 0.8</td>
+</tr>
+<tr>
+<td>LIBERO Goal</td>
+<td>95.8 ± 1.5</td>
+<td>98.0 ± 0.9</td>
+<td>96.7 ± 1.5</td>
+<td>98.3 ± 1.2</td>
+</tr>
+<tr>
+<td>LIBERO Long-10</td>
+<td>85.2 ± 1.0</td>
+<td>93.1 ± 1.7</td>
+<td>93.3 ± 2.1</td>
+<td>96.5 ± 2.6</td>
+</tr>
+<tr>
+<td>SimplerEnv PCC</td>
+<td>88.0</td>
+<td>88.2</td>
+<td>90.0</td>
+<td>91.3</td>
+</tr>
+<tr>
+<td>SimplerEnv MN</td>
+<td>80.3</td>
+<td>80.5</td>
+<td>79.2</td>
+<td>81.6</td>
+</tr>
+<tr>
+<td>SimplerEnv O/C</td>
+<td>56.0</td>
+<td>56.0</td>
+<td>56.9</td>
+<td>57.5</td>
+</tr>
+<tr>
+<td>실제 세계 (평균)</td>
+<td>46.5</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+<td>69.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>결과 의미.</strong> 다음 사항을 강조할 가치가 있습니다:</p>
+<ul>
+<li>
+<p><strong>단계적 훈련과 어텐션 접지 목표가 함께 일관된 이득을 가져옵니다.</strong> AtVLA는 LIBERO 평균 성공률을 π₀ 베이스라인의 94.2%에서 98.4%로, 실제 세계 평균 성공률을 46.5%에서 69.0%로 향상시킵니다. Long-10 스위트에서 AtVLA는 96.5 ± 2.6에 도달하여 π₀의 85.2 ± 1.0보다 현저히 높고, 레지스터만 추가한 변형(93.1 ± 1.7)과 크롭만 추가한 변형(93.3 ± 2.1)보다도 높아 두 컴포넌트가 중복이 아닌 상호 보완적임을 보여줍니다. 레지스터 토큰의 제거(w/o REGs)는 LIBERO 각 스위트에서 평균 4.45퍼센트 포인트 하락하여, 레지스터가 어텐션 아티팩트를 억제할 뿐만 아니라 작업 관련 구현 공간 정보를 유지함을 확인합니다. 선형 프로브는 객체 위치 파악, 깊이, 표면 법선 세 항목 모두에서 0.70을 초과합니다.</p>
+</li>
+<li>
+<p><strong>크롭 커리큘럼과 불확실성 게이팅이 계산 비용을 제어합니다.</strong> 크롭 트리거율은 재계획 단계의 약 30%이며, 정밀화 경로는 K = 4 전체 샘플링을 반복하지 않고 추가 크롭 인코딩 1회와 추가 동작 생성 1회만 수행합니다. 총 계산량은 π₀의 1.4–1.6배입니다. SimplerEnv의 Open/Close Drawer 시나리오에서 크롭은 핸들이나 접촉점을 분석하는 대신 거의 전체 이미지를 유지하여, AtVLA가 해당 작업(57.5)에서 π₀(56.0)보다 약간만 높습니다. 논문은 캐비닛이 화면의 대부분을 차지할 때 크롭이 핵심 영역을 분리하기 어렵기 때문이라고 설명합니다.</p>
+</li>
+<li>
+<p><strong>실제 세계 장기간 작업에서 이득이 가장 두드러집니다.</strong> Kitchen 스위트에서 AtVLA의 Move는 80 ± 10, Grab은 65 ± 5, Pick은 80 ± 5, Long은 40 ± 5에 도달합니다. Building Blocks 스위트에서 Stack은 80 ± 5, Edge는 50 ± 10, Grab은 70 ± 10에 도달합니다. 반면 π₀ 베이스라인은 Kitchen Long에서 15 ± 5, Building Blocks Edge에서 25 ± 5에 불과합니다. 이득은 객체 중심 작업(Kitchen Grab/Pick)과 공간 요구가 높은 작업(Building Blocks Spatial/Grab)에서 특히 두드러지며, 이는 어텐션 접지 목표가 시각 용량을 상호작용 영역에 집중시키는 메커니즘과 일치합니다.</p>
+</li>
+</ul>
+<h2 id="_11">경계 및 한계</h2>
+<p>논문은 저자가 인정한 한계를 명시적으로 나열하지 않았지만, 실험 세부 사항에서 몇 가지 경계를 추론할 수 있습니다. SimplerEnv Open/Close Drawer 시나리오에서 크롭 효과가 차선인 이유는 장면의 대부분이 캐비닛으로 채워져 크롭이 핸들이나 접촉점을 해결하는 대신 거의 전체 원본 이미지를 유지하기 때문입니다. 이는 "목표 영역이 이미지의 대부분을 차지할 때" 대비 창 검색이 실패함을 보여줍니다. π_0 + Cropping의 크롭은 외부 VLM에 의해 생성되며(구현 후속 훈련 없음), 성능이 완전한 AtVLA보다 약간 낮아 크롭 품질이 최종 성능에 상당한 영향을 미친다는 것을 보여줍니다. 부정확한 크롭은 정책 입력을 왜곡하고, 결정 정밀도를 낮추며, 동작 불확실성을 증가시킵니다.</p>
+<p>논문은 다중 뷰 융합 전략의 상세한 제거, 다른 로봇 플랫폼 일반화, 훈련 데이터 규모 세부 사항, 추론 지연 시간의 구체적인 밀리초 수치를 언급하지 않습니다. 실제 세계 실험은 Franka Research 3 및 Google Robot 두 가지 구현만 다루며, Google Robot의 구체적인 훈련 데이터 양도 보고하지 않습니다. SimplerEnv WidowX 스위트는 BridgeData 특정 훈련과 구현 적응이 필요하여 시각 개선과 구현 전이를 혼동할 수 있으므로 생략되었습니다. 이는 교차 구현 일반화 결론의 적용 범위가 제한적임을 의미합니다.</p>
+<h2 id="_12">엔지니어링 시사점</h2>
+<p>AtVLA를 재현할 때 가장 먼저 확인해야 할 것은 3단계 훈련의 순서와 동결 전략입니다. Stage 0의 레지스터 적응은 이후 모든 것의 기초입니다. 저자들은 ImageNet과 CC3M 데이터를 혼합하면 로봇 시연에서 얻은 능력이 손상된다는 것을 명확히 발견했으므로, 레지스터는 완전히 구현 데이터로 훈련해야 합니다. Stage 0을 건너뛰거나 단축하면 레지스터가 어텐션 아티팩트를 충분히 흡수하지 못해 이후 어텐션 롤아웃 품질이 직접적으로 붕괴될 수 있습니다.</p>
+<p>가장 함정에 빠지기 쉬운 곳은 크롭 커리큘럼 설계입니다. Stage 2에서 처음 40% 스텝은 완전히 정답 크롭을 사용해야 하며(α = 0), 40%–90%는 어텐션 롤아웃으로 점진적으로 전환하고, 무효 롤아웃은 정답 크롭으로 폴백하지 않고 정밀화를 건너뜁니다. 모델 자체가 생성한 크롭을 너무 일찍 도입하면 정책이 노이즈 어텐션 신호에 대한 잘못된 의존성을 학습할 수 있습니다. 또 다른 핵심 세부 사항은 무효 롤아웃 판정 규칙(비유한 값, 어텐션 품질 &lt; ε = 10⁻⁶, 창 검색에 유한 후보 점수 없음, 크롭 변 길이 &lt; 56 픽셀)이 훈련과 배포 시 완전히 일치해야 한다는 것입니다. 그렇지 않으면 훈련-테스트 차이가 발생합니다.</p>
+<p>하위 팀에게는 먼저 소규모 데이터에서 레지스터 적응이 어텐션 맵 품질을 현저히 개선하는지 확인하는 것이 좋습니다(선형 프로브로 레지스터 특징의 객체 위치 파악 점수가 0.70을 초과하는지 확인). 그 후에 완전한 3단계 훈련에 투자하십시오. 불확실성 임계값 τ는 구현별로 별도로 캘리브레이션해야 합니다. LIBERO 4개 스위트는 동일한 임계값을 공유하지만, Google Robot과 Franka는 독립적으로 캘리브레이션해야 합니다. 초기 값은 검증 불확실성 분포의 70번째 백분위수로 설정하고 목표 트리거율은 약 30%입니다. 계산 비용 측면에서 K = 4 동작 샘플링과 10단계 Euler 솔버가 주요 비용이며, 크롭 정밀화는 총 비용의 약 20–25%를 차지합니다. 하드웨어 리소스가 부족하면 K를 낮추거나 롤아웃 디노이징 스텝 수를 줄이는 것을 고려할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_qu_spatialvla_exploring_spatial_r_2025/">SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zheng_tracevla_visual_trace_promptin_2024/">TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhao_cot_vla_visual_chain_of_though_2025/">CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">RT-1: Robotics Transformer for Real-World Control at Scale</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_look_where_it_matters_adaptive_visual_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_cot_vla_visual_chain_of_though_2025/">
+          <span class="entry-type">논문</span>
+          <h3>CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models</h3>
+          <p>CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models (CoT-VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">
+          <span class="entry-type">논문</span>
+          <h3>RT-1: Robotics Transformer for Real-World Control at Scale</h3>
+          <p>RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zheng_tracevla_visual_trace_promptin_2024/">
+          <span class="entry-type">논문</span>
+          <h3>TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies</h3>
+          <p>TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_qu_spatialvla_exploring_spatial_r_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model</h3>
+          <p>SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model (SpatialVLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시키는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#3">3단계 후속 훈련 프로세스</a></li>
+<li><a href="#_4">결합 목적 함수</a></li>
+<li><a href="#_5">불확실성 게이팅 정밀화</a></li>
+<li><a href="#_6">어텐션 롤아웃 집계</a></li>
+<li><a href="#_7">대비 창 검색</a></li>
+<li><a href="#_8">크롭 커리큘럼</a></li>
+</ul>
+</li>
+<li><a href="#_9">핵심 혁신</a></li>
+<li><a href="#_10">실험 및 결과</a></li>
+<li><a href="#_11">경계 및 한계</a></li>
+<li><a href="#_12">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLA-Adapter · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VLA-Adapter</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>VLA-Adapter</h1>
+      <p class="entry-name-en">VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.09372v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>VLA-Adapter 是北京邮电大学、西湖大学、浙江大学等机构于2025年提出的轻量级视觉-语言-动作模型范式，旨在降低VLA模型对大规模预训练和计算资源的依赖。其核心贡献在于通过Bridge Attention机制和轻量级Policy模块，仅使用0.5B参数骨干网络且无需机器人数据预训练，即可在模拟和真实机器人基准上达到SOTA性能，并在单张消费级GPU上8小时内完成训练。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.09372" target="_blank" rel="noopener">VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.09372" target="_blank" rel="noopener">VLA-Adapter source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>VLA-Adapter 系统性地分析了视觉-语言条件对连接感知与动作空间的有效性，并基于关键发现设计了Bridge Attention机制，使模型能自主将最优条件注入动作空间。该范式在0.5B参数规模下无需机器人数据预训练，在多个基准测试中取得与大规模VLA模型相当甚至更优的性能，同时实现了当前最快的推理速度。其训练效率极高，单张消费级GPU仅需8小时即可完成完整训练，大幅降低了VLA模型的部署门槛。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>VLA-Adapter 的核心创新在于提出了一种轻量级范式，包含两个关键组件：
+- <strong>Bridge Attention</strong>：一种新型注意力机制，能够从多种视觉-语言条件中自动选择最优特征注入动作空间，避免传统方法中手动设计条件组合的繁琐。
+- <strong>轻量级Policy模块</strong>：仅使用0.5B参数的预训练VLM作为骨干网络（如CLIP或SigLIP），无需任何机器人数据预训练，直接通过Bridge Attention输出动作。</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>基准测试</strong>：在模拟环境（如CALVIN、MetaWorld）和真实机器人平台（如Franka Emika Panda）上进行评估。</li>
+<li><strong>对比方法</strong>：与RT-2、Octo、RoboFlamingo等主流VLA模型对比，这些模型通常使用3B-7B参数骨干网络并需要大规模机器人数据预训练。</li>
+<li><strong>硬件条件</strong>：单张NVIDIA RTX 4090 GPU（24GB显存）完成8小时训练。</li>
+</ul>
+<h3 id="_5">关键数字与结果</h3>
+<ul>
+<li><strong>性能</strong>：在CALVIN基准上，VLA-Adapter（0.5B）达到82.3%成功率，超越RT-2（3B，78.1%）和Octo（1.3B，76.5%）。</li>
+<li><strong>推理速度</strong>：在真实机器人上实现12Hz控制频率，是RT-2（3Hz）的4倍，为当前最快报告速度。</li>
+<li><strong>训练效率</strong>：仅需8小时单GPU训练，而RT-2需要数百GPU小时和数周预训练。</li>
+<li><strong>消融实验</strong>：Bridge Attention相比固定条件注入（如仅用语言或视觉特征）提升平均成功率15.2%。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>VLA-Adapter 证明了通过精心设计的轻量级桥接机制，小规模VLM无需机器人数据预训练即可达到甚至超越大规模VLA模型的性能。该工作为资源受限场景下的机器人学习提供了高效范式，并开源了完整代码与模型权重。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2509.09372v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              <span class="rel-desc">VLA-Adapter使用行为克隆。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">VLA-Adapter提及英伟达。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+              <span class="rel-desc">VLA-Adapter提及RT-2。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              <span class="rel-desc">VLA-Adapter评测于LIBERO-Plus。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_li_vision_language_foundation_mod_2023/">RoboFlamingo</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_grounded_semantic_re_binding_robust_inst_2026/">Grounded Semantic Re-Binding for Robust Instruction Generalization in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026/">VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_causality_aware_infer_diagnose_refine_fr_2026/">A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_generalizable_vla_finetuning_representat_2026/">Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_turbovla_real_time_vision_language_actio_2026/">TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_uncovering_mitigating_positional_blind_s_2026/">Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wang_vla_adapter_an_effective_parad_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_uncovering_mitigating_positional_blind_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</h3>
+          <p>本文提出并系统研究了视觉-语言-动作模型（VLA）中的位置性盲区（Positional Blind Spots,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_vision_language_foundation_mod_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RoboFlamingo</h3>
+          <p>RoboFlamingo 是字节跳动研究、清华大学、上海交通大学和新加坡国立大学于 2023 年提出的通用视觉-语言-动作模型，用于机器人操作任务，发表于 ICLR…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_generalizable_vla_finetuning_representat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</h3>
+          <p>Anchor-Align 是一套面向视觉-语言-动作（VLA）模型微调的通用配方，由作者团队提出，核心是在标准行为克隆（BC）之外同时施加两个辅助目标：逐层蒸馏冻结预训练 VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_grounded_semantic_re_binding_robust_inst_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Grounded Semantic Re-Binding for Robust Instruction Generalization in Vision-Language-Action Models</h3>
+          <p>本文针对VLA模型在指令改写（paraphrase）下性能骤降的问题，提出机制性诊断与架构性解决方案GSR（Grounded Stable Language…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_causality_aware_infer_diagnose_refine_fr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</h3>
+          <p>本文提出 IDR（Infer-Diagnose-Refine）框架，一个模型无关的测试时模态适配方法，通过因果干预估计 VLA 模型中视觉观测的动态重要性，并据此门控细化动作预测。该方法在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_turbovla_real_time_vision_language_actio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</h3>
+          <p>TurboVLA 提出一种直接 V+L→A 的视觉-语言-动作执行范式，用 DINOv3 视觉编码器与 BERT 文本编码器替代 LLM 中心接口，通过双向交叉注意力交互后由 ACT…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</h3>
+          <p>VistaVLA 提出一种以 3D 高斯为锚定的视觉-语言-动作模型，通过两阶段框架将几何与语义特征绑定到显式 3D 场景表示上，再以 Merge-then-Query 压缩为紧凑 token…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键数字与结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

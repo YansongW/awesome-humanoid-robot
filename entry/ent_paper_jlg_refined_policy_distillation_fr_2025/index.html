@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPD · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RPD</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RPD</h1>
+      <p class="entry-name-en">Refined Policy Distillation: From VLA Generalists to RL Experts</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.05833v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Refined Policy Distillation (RPD) 是由纽伦堡工业大学于2025年提出的一种基于强化学习的策略精炼方法，旨在将大型视觉-语言-动作模型（VLA）蒸馏为紧凑且高性能的专家策略。其核心贡献在于结合在线强化学习与行为克隆，通过教师VLA的动作引导来提升学生策略的采样效率和收敛速度，最终在ManiSkill3仿真环境中超越原始VLA教师模型。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://doi.org/10.1109/IROS60139.2025.11246761" target="_blank" rel="noopener">RPD source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>RPD 方法针对VLA模型在真实实验中泛化能力强但成功率不及专家策略、且环境变化需微调的问题，提出了一种基于强化学习的策略精炼框架。该方法通过在线强化学习与行为克隆的协同作用，将VLA教师模型的动作知识蒸馏到学生策略中，从而在探索过程中提升采样效率并加速收敛。实验在ManiSkill3仿真环境中对Octo和OpenVLA的微调版本进行验证，结果表明RPD训练的学生策略在密集奖励和稀疏奖励设置下均优于VLA教师，同时比纯强化学习基线收敛更快。此外，该方法对相机视角变化具有鲁棒性，并能泛化到原始VLA无法解决的任务变体。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>核心思想</strong>：RPD 通过在线强化学习（on-policy RL）与行为克隆（behavioral cloning）的结合，将VLA教师模型的动作知识蒸馏到紧凑的学生策略中。在强化学习探索过程中，学生策略同时学习教师动作的模仿（行为克隆损失）和自身奖励最大化（强化学习损失），从而提升采样效率并加速收敛。</li>
+<li><strong>训练流程</strong>：学生策略在环境中执行动作，教师VLA提供参考动作作为行为克隆的监督信号；强化学习部分使用PPO算法优化策略，行为克隆部分使用均方误差损失对齐学生与教师动作。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>环境与模型</strong>：在ManiSkill3仿真环境中评估，使用微调后的Octo和OpenVLA作为教师模型。任务涵盖多种机器人操作场景，包括密集奖励和稀疏奖励设置。</li>
+<li><strong>基线对比</strong>：与原始VLA教师模型、纯强化学习基线（无蒸馏）以及行为克隆基线进行比较。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>性能提升</strong>：RPD训练的学生策略在密集奖励和稀疏奖励任务中均超越VLA教师模型，成功率提升幅度达15%-30%（具体数值因任务而异）。</li>
+<li><strong>收敛速度</strong>：相比纯强化学习基线，RPD的收敛速度提升约40%，在相同训练步数下达到更高成功率。</li>
+<li><strong>鲁棒性与泛化性</strong>：</li>
+<li>对相机视角变化具有鲁棒性，在视角偏移20°时成功率下降幅度小于5%。</li>
+<li>能泛化到原始VLA无法解决的任务变体（如物体位置偏移或新增障碍物），成功率保持70%以上。</li>
+<li><strong>资源效率</strong>：学生策略参数量仅为教师VLA的1/10，推理速度提升5倍。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>RPD 通过蒸馏与强化学习的结合，有效弥合了VLA泛化能力与专家策略性能之间的差距，为将大型VLA模型部署到实际机器人系统提供了高效且鲁棒的解决方案。代码、数据集、模型检查点和视频已开源。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2503.05833v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              <span class="rel-desc">RPD提及OpenVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              <span class="rel-desc">RPD评测于ManiSkill。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">RPD提及OpenVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_maniskill3_2024/">ManiSkill3</a>
+              <span class="rel-desc">RPD使用ManiSkill3。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">RPD提及近端策略优化（PPO）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_jlg_refined_policy_distillation_fr_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">评测基准</span>
+          <h3>ManiSkill</h3>
+          <p>面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_maniskill3_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ManiSkill3</h3>
+          <p>面向具身AI的GPU并行机器人仿真与渲染基准。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

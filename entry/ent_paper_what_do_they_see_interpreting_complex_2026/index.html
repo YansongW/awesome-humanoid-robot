@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Do They See? Interpreting Complex Road Scenarios Through the Eyes of Vision-Language-Action Models for Safe and Trustworthy Autonomous Vehicle Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">What Do They See? Interpreting Complex Road Scenarios Through the Eyes of Vision-Language-Action Models for Safe and Trustworthy Autonomous Vehicle Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>What Do They See? Interpreting Complex Road Scenarios Through the Eyes of Vision-Language-Action Models for Safe and Trustworthy Autonomous Vehicle Learning</h1>
+      <p class="entry-name-en">What Do They See? Interpreting Complex Road Scenarios Through the Eyes of Vision-Language-Action Models for Safe and Trustworthy Autonomous Vehicle Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 Counterfactual Vision Action Analysis（CVAA）框架与 Counter-nuScenes 基准，通过生成式修复逐物体移除前视图像中的实体，对 Alpamayo 1 轨迹预测器进行反事实归因，回答“哪些可见物体真正驱动轨迹预测”这一物体级因果问题。作者结合黑盒偏差指标（AD/FD）与白盒隐藏状态分析，揭示模型对交通灯、行人的敏感度远超物理尺度预期，并识别出四种内部传播机制。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.16938" target="_blank" rel="noopener">arXiv:2607.16938 What Do They See? Interpreting Complex Road Scenarios Through the Eyes of Vision</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有端到端自动驾驶可解释性研究陷入两难：基于结构化状态或模拟器的因果扰动无法反映真实相机输入的分布，而像素级归因（saliency、Grad-CAM、RISE）在密集交通中既难审计，又混淆了物体重要性、位置与掩码伪影。本文真正改变的是将“解释”从像素或文本层面推进到物体级因果层面——它不再问“哪个像素重要”，而是问“移除哪个物体，轨迹会变”。这一转变的关键在于：安全性由输出轨迹决定，而非语言理由，因此必须做轨迹层面的反事实归因，而非文本输出归因。</p>
+<p>更实质的贡献在于，作者没有停留在黑盒排名，而是首次对 VLA 内部进行白盒追踪，将视觉编码器、VLM 与轨迹专家的隐藏状态变化关联到具体物体移除事件。这打破了以往将 VLA 视为不可分整体的惯例，暴露出“模型可能生成看似合理轨迹，却并非由正确视觉证据因果驱动”这一安全关键问题——这正是现有评估协议系统性忽略的盲区。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="counter-nuscenes">基准构建：Counter-nuScenes</h3>
+<ul>
+<li>从 nuScenes v1.0-trainval 的 700 个场景中，仅取前视相机（CAM_FRONT）关键帧，保留至少 1.6 秒连续位姿数据之前的帧以匹配模型历史窗口。</li>
+<li>用 YOLOv8 检测可见智能体，每场景选物体数量最多的单帧，最终采样 210 帧，每帧含 6 至 32 个有效检测物体。</li>
+<li>用 SAM2 以 YOLOv8 边界框为提示生成逐物体实例掩码，并在像素级细化避免跨边界渗漏。</li>
+</ul>
+<h3 id="_3">反事实语义集</h3>
+<ul>
+<li>对每个场景，用 Gemini imgen inpainting 逐物体移除生成 N 个反事实图像（N 为检测物体数）；另维护 LaMa + FLUX Fill 1.0 开源消融管线。</li>
+<li>关键设计：使用逼真生成式修复而非颜色填充、高斯模糊或复制粘贴遮挡，以减少分布偏移，使输出变化可归因于物体移除而非渲染伪影。</li>
+</ul>
+<h3 id="_4">归因指标</h3>
+<ul>
+<li>模型生成 K 个随机轨迹样本 {p_k}，每个为 T 个未来自车中心点序列，投影到 XY 平面，用均值轨迹汇总分布。</li>
+<li>平均偏差 AD = (1/T) Σ_{t=1}^{T} ||p̄_var_t − p̄_orig_t||₂；最终偏差 FD = ||p̄_var_T − p̄_orig_T||₂。</li>
+<li>物体级归因分数：按 AD 排名为主要分数，FD 用于打破平局，形成反事实物体归因（COA）排序。</li>
+<li>与 minADE/minFDE 的区别：AD/FD 测量相对于参考预测的分布偏移，使用全候选集；minADE/minFDE 测量相对于真实未来的准确性，选择最佳候选轨迹。作者指出使用 min-over-K 估计器不合适，因为会奖励偶然接近原始分布的变体，混淆采样噪声与因果影响。</li>
+</ul>
+<h3 id="_5">白盒分析</h3>
+<ul>
+<li>对每个移除物体，将其边界框投影到模型 patch 网格，识别视觉编码器和 VLM 中的对应 token 位置。</li>
+<li>计算原始与修复图像隐藏状态在物体、视觉和全局 token 位置的逐层余弦差值。</li>
+<li>应用 Logit Lens 跟踪物体类别表示跨层演变；计算空间 KL 散度图；提取轨迹交接 token 到物体 patch 位置的注意力权重。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>物体级反事实归因协议</strong>：首次将生成式修复（inpainting）与轨迹偏差指标（AD/FD）结合，在真实相机图像上实现物体级因果归因，而非像素级或结构化状态级。逼真修复设计显著减少分布偏移，使偏差可归因于物体移除本身，这是对现有 saliency 方法伪影问题的直接回应。</p>
+</li>
+<li>
+<p><strong>白盒传播机制分类</strong>：通过隐藏状态余弦差值、Logit Lens 与注意力权重，识别出四种内部传播变体——Coupled（约 33.0%）、Transparent（约 33.1%）、Decoupled（约 16.9%）、Silent（约 16.9%）。其中 Silent 变体（大输出偏差但轨迹 token 无签名）暴露了现有探针无法解析的影响路径，这是对 VLA 可解释性工具缺失的直接证据。</p>
+</li>
+<li>
+<p><strong>min-over-K 估计器的批判性替代</strong>：明确指出使用 minADE/minFDE 作为归因指标会奖励偶然接近原始分布的变体，混淆采样噪声与因果影响。AD/FD 基于全候选集测量分布偏移，这一设计选择在方法论上更严谨，为后续 VLA 归因研究设定了指标标准。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>实验基于 Alpamayo 1 轨迹预测器，210 个 nuScenes 前视场景，共 3,062 个反事实图像对。
+<strong>每类偏差（Table 3 关键数字）</strong>：
+| 类别 | N | Mean AD (m) | Max AD (m) | Mean FD (m) |
+|------|---|-------------|------------|-------------|
+| Bus | 47 | 0.663 | 3.931 | 1.889 |
+| Fire hydrant | 17 | 0.540 | 2.037 | 1.454 |
+| Truck | 183 | 0.505 | 3.548 | 1.419 |
+| Traffic light | 531 | 0.482 | 4.534 | 1.399 |
+| Person | 604 | 0.458 | 5.276 | 1.318 |
+| Car | 1566 | 0.348 | 7.782 | 0.984 |
+<strong>排名稳定性（3 种子）</strong>：AD Top-3 精确保持排名 14.6%，保持在 top-3 内 39.7%；FD 对应 16.0% 与 39.5%。
+平均排名范围为 AD 4.691、FD 4.641。
+<strong>场景级偏差</strong>：最大 AD 物体的 z-score 均值 2.43，中位数 2.35；148/210 场景（70.5%）超过 z&gt;2 阈值，48 场景（22.9%）超过 z&gt;3。
+FD 对应 z&gt;2 为 148，z&gt;3 为 43。
+<strong>交通灯颜色</strong>：531 个交通灯物体中 119 个（22.4%）检测到明确颜色；红灯状态平均 AD 0.758 m vs 绿灯 0.229 m，平均 FD 2.241 m vs 0.672 m。
+<strong>白盒结果</strong>：视觉编码器在移除物体 patch 位置的 delta 约为 10⁻⁷ 且为负值；LM 中第 15 层起按类别分化，bus 在 35 层达到约 0.06，truck 约 0.02；轨迹专家放大倍数均值 115–180×，中位数 47–106×；Silent 变体中 δ_traj 约 0.0001 但比率超过 1000×。
+（本节另有 2 句含无法从全文文本核实的数字，已按纪律移除；论文未明确或以图/表图片形式给出。）</p>
+<h2 id="_8">边界与局限</h2>
+<p>评估仅限于单一模型（Alpamayo 1）和 nuScenes 前视相机分布，对其他 VLA 和数据集未验证泛化性。白盒分析暴露了缺乏为 VLA 架构设计的可解释性工具——余弦差值曲线和 Logit Lens（均改编自语言模型研究）只能测量两次前向传递之间的变化，无法解释原因，也无法识别哪些内部计算对输出差异因果负责。Silent 象限（大输出偏差但轨迹 token 无签名）指向现有探针无法解析的影响路径。论文未明确硬件平台、训练配置与推理频率。未来工作包括应用于其他 VLA、评估文本输出相似性、纳入时间多帧反事实、开发适合场景级关系表示的可解释性探针。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现时先核对三点：一是修复管线的一致性——Gemini imgen 与 LaMa + FLUX Fill 1.0 的分布偏移差异可能显著影响 AD/FD 绝对值，建议先在小样本上对比两种管线的偏差分布；二是种子敏感性——AD Top-3 精确保持排名仅 14.6%，说明单次运行排名不可靠，至少需 3 个种子取合并排名；三是 minADE 与 AD 的语义差异——49.3% 物体表现出负 ΔminADE，意味着高归因物体未必改善真实预测准确性，下游团队不应将 COA 排名直接等同于安全关键度。</p>
+<p>最易踩坑的是掩码面积与偏差的正相关（Pearson r = +0.25）：rank-1 物体平均 38,706 像素，rank-5 后低于 5,000 像素，大物体天然获得更高 AD。若需比较不同类别的重要性，必须控制掩码面积或使用面积归一化指标。交通灯颜色是强信号（红灯 AD 0.758 m vs 绿灯 0.229 m），但仅 22.4% 物体检测到明确颜色，其余可能因分辨率或遮挡无法区分状态，需谨慎解释。Silent 变体（约 16.9%）中轨迹 token 无签名但输出偏差大，若下游依赖注意力或 token 级探针做安全监控，会系统性漏报这类影响路径。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.16938</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_task_planning/">任务规划</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_rt_2_vision_language_action_mo_2023/">RT-2 视觉-语言-动作模型</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_what_do_they_see_interpreting_complex_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_task_planning/">
+          <span class="entry-type">方法</span>
+          <h3>任务规划</h3>
+          <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">方法</span>
+          <h3>RT-2 视觉-语言-动作模型</h3>
+          <p>将网络规模的视觉-语言知识迁移到机器人控制的VLA模型。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#counter-nuscenes">基准构建：Counter-nuScenes</a></li>
+<li><a href="#_3">反事实语义集</a></li>
+<li><a href="#_4">归因指标</a></li>
+<li><a href="#_5">白盒分析</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

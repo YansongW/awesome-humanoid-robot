@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning</h1>
+      <p class="entry-name-en">TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>TWINS 是一套由操作者穿戴的双臂装置与同构机器人组成的遥操作系统，用于采集和复现涉及身体表面接触（前臂、上臂、胸部等）的操作演示，并支持基于 Diffusion Policy 的模仿学习。系统通过共享关节配置与连杆长度实现无重定向的关节角度映射，并以 219 个触觉单元同时记录压力与接近度，为接触丰富的操作任务提供显式观测。核心贡献在于首次将「具身操作」「形态对应」「身体表面接触」三个特性统一到单一平台，并验证了其采集数据可支撑接触相关技能的习得。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01733" target="_blank" rel="noopener">arXiv:2608.01733 TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manip</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有机器人学习系统几乎全部围绕末端执行器设计，身体表面接触（如用前臂托物、用胸部抵住物体）在人类操作中普遍存在，却因缺乏显式接触观测而无法被有效建模。视觉难以准确估计接触力与接触位置，而传统遥操作接口（Leader–Follower、VR、动作捕捉+触觉服）要么只传递末端位姿，要么因身体尺寸或关节配置不匹配而需要额外映射，均无法让操作者以与机器人等效的机构进行物理交互。TWINS 改变了这一局面：它不再把身体表面接触当作视觉的附属信息，而是将其作为与关节角度同等重要的状态变量纳入学习框架，从而扩展了可学习的操作技能边界——从「抓取与放置」延伸到「用身体抵住、托举、夹持」等接触密集行为。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">系统架构</h3>
+<p>TWINS 由操作者穿戴的 Wearable Dual-Arm Device 与关节配置、外部尺寸完全一致的 Isomorphic Robot 组成。操作者手臂插入可穿戴装置的空心外壳中，通过外壳与物体交互，避免直接物理接触；肩部支撑结构固定在椅子上以承载装置重量。</p>
+<h3 id="_4">机械设计</h3>
+<ul>
+<li>每条手臂 7 自由度：肩部 3、肘部 1、腕部 3，基于 HRP2Kai 的关节配置而非忠实复现人类上肢全部运动范围。</li>
+<li>连杆长度按典型成人上肢尺寸确定；肩宽与肩高设独立手动调节机构。</li>
+<li>末端执行器为基于 UMI 设计的平行两指 Fin Ray 结构夹爪。</li>
+<li>每个关节配备 10 位编码器测量关节角度。</li>
+<li>同构机器人采用 DYNAMIXEL 伺服电机（XM430、XM540、PH54-100-S500），高扭矩型号用于肩部等大弯矩关节，轻量型号用于腕部等远端关节；大部分外壳与连杆为 3D 打印。</li>
+</ul>
+<h3 id="_5">触觉传感</h3>
+<ul>
+<li>使用 Intouch Robotics 的 e-Skin，六边形单元边长 15 mm、厚度约 5 mm，可同时测量压力与接近度。</li>
+<li>传感器布局：每臂夹爪上表面 15 单元、前臂内表面 45 单元、上臂前表面 18 单元，胸部 63 单元，共 219 个单元，左右对称。</li>
+<li>传感器贴片可拆卸，安装在可穿戴装置外壳上，与同构机器人布局一致；数据以 10 Hz 采集，每个身体区域的触觉信息表示为空间分布而非单点接触。</li>
+</ul>
+<h3 id="_6">数据采集与执行</h3>
+<ul>
+<li>状态定义为 x(t) = {q(t), S(t)}，其中 q(t) 为关节角度，S(t) 为所有触觉单元的压力与接近度测量值。</li>
+<li>演示记录为时间序列 D = {x(t)}，t=0 到 T。</li>
+<li>关节角度直接映射 q_R(t) = q_W(t)，无需重定向，因为两系统共享相同关节配置与连杆长度。</li>
+</ul>
+<h3 id="_7">模仿学习</h3>
+<ul>
+<li>采用 Diffusion Policy，状态历史长度 2，动作预测视界 8。</li>
+<li>关节角度与触觉测量独立归一化到 [−1, 1]；触觉输入采用所有单元整体归一化，作者指出比逐单元归一化训练更稳定。</li>
+<li>数据采集、训练与部署使用开源框架 RoboManipBaselines。</li>
+</ul>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li><strong>无重定向的形态对应</strong>：通过让可穿戴装置与机器人共享完全相同的关节配置与连杆长度，TWINS 消除了传统遥操作中的人体到机器人运动映射，关节角度可直接传递。这不仅简化了数据采集流程，还保证了操作者身体表面接触的位置与机器人接触位置在空间上严格对应，这是此前系统未同时满足的关键特性。</li>
+<li><strong>接近度与压力联合观测</strong>：e-Skin 同时测量压力与接近度，使系统能在物理接触前观测物体距离，连续捕获从接近到分离的完整接触过程。这为模仿学习提供了比单纯接触力更丰富的时间演化信息，对涉及「先靠近再抵住」这类接触阶段转换的任务至关重要。</li>
+<li><strong>身体表面接触作为一等状态</strong>：将 219 个触觉单元的分布信息纳入状态空间，而非仅作为末端执行器的补充信号。这使得策略能够显式利用身体不同区域的接触事件来切换操作阶段，突破了传统方法仅依赖视觉或末端力传感的局限。</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<p>实验覆盖四个涉及身体表面接触的任务：Towel Hanging（毛巾悬挂）、Basket Holding（篮子抱持）、Ball Placing（球放置）、Adaptive Holding（自适应抱持）。每个任务采集 10 个演示，共 40 个演示，全部由单一操作者在 30 分钟内完成，无需专门训练。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关节角度跟踪平均绝对误差</td>
+<td>0.94 deg（14 个手臂关节）</td>
+</tr>
+<tr>
+<td>关节角度跟踪 95 百分位误差</td>
+<td>3.43 deg</td>
+</tr>
+<tr>
+<td>跟踪延迟</td>
+<td>约 0.4–0.6 s</td>
+</tr>
+<tr>
+<td>触觉输入维度</td>
+<td>438（219 单元 × 压力+接近度）</td>
+</tr>
+<tr>
+<td>关节角度输入维度</td>
+<td>16（左右臂+夹爪）</td>
+</tr>
+</tbody>
+</table>
+<p>策略在所有任务中均能根据身体表面接触事件成功转换操作阶段。对演示中未包含的情况表现出鲁棒性：Towel Hanging 中毛巾呈现顺序反转或同时放置在双前臂时仍正确旋转对应手臂；Ball Placing 中球数量多于演示时仍能重复放置；Adaptive Holding 中物体顺序不同时仍选择正确抱持策略。涉及单臂与胸部之间抱持物体的任务偶发失败（物体掉落），附加海绵垫后大幅缓解。作者未对模仿学习算法本身进行消融评估，也未与其他基线系统做定量对比。</p>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li>涉及单臂与胸部之间抱持物体的任务存在偶发物体掉落，海绵垫缓解但未完全解决，作者认为可能需要显式控制关节扭矩。</li>
+<li>未对模仿学习算法本身进行评估，实验聚焦于验证 TWINS 采集数据能否支持接触相关操作的学习与执行。</li>
+<li>未提及大规模数据采集、多操作者变体、长期稳定性测试或与其他基线系统的定量对比实验。</li>
+<li>当前系统不支持移动操作（操作者在演示采集期间不可移动）；机构未纳入人类肩胛骨运动，解剖学保真度有限。</li>
+<li>所有演示由单一操作者采集，未验证不同体型操作者或不同操作风格下的泛化性。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<p>复现或采用 TWINS 时，优先核对以下几点：一是关节配置与连杆长度是否严格一致，这是无重定向映射的前提，任何尺寸偏差都会破坏接触位置的对应关系；二是触觉传感器的布局与安装位置必须与机器人完全一致，且采用整体归一化而非逐单元归一化，否则训练稳定性会显著下降；三是注意跟踪延迟（约 0.4–0.6 s）对接触任务的影响，延迟可能导致接触时机偏移，必要时需在策略训练中考虑延迟补偿。最容易踩坑的地方在于抱持类任务的稳定性——若涉及单臂与胸部配合，建议预先在接触界面增加柔顺材料，并考虑显式扭矩控制而非纯位置控制。此外，数据采集时操作者需保持身体固定（肩部支撑固定在椅子上），若下游需要移动操作，需自行扩展机构与采集流程。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01733</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_twins_tactile_wearable_isomorphic_arm_ne_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">系统架构</a></li>
+<li><a href="#_4">机械设计</a></li>
+<li><a href="#_5">触觉传感</a></li>
+<li><a href="#_6">数据采集与执行</a></li>
+<li><a href="#_7">模仿学习</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a></li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

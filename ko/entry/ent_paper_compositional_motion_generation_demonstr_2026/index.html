@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compositional Motion Generation from Demonstration with Object-Centric Neural Fields · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Compositional Motion Generation from Demonstration with Object-Centric Neural Fields</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Compositional Motion Generation from Demonstration with Object-Centric Neural Fields</h1>
+      <p class="entry-name-en">Compositional Motion Generation from Demonstration with Object-Centric Neural Fields</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Compositionality, by organizing complex behavior as combinations of simpler elements, enables robot learning that is scalable and data efficient. Leveraging this principle, we propose a generative learning-from-demonstration framework that enables compositional modeling of robotic behavior by connecting perception and motion through shared object-level representations. We render scenes from.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.07129" target="_blank" rel="noopener">arXiv:2607.07129 Compositional Motion Generation from Demonstration with Object-Centric Neural Fi</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 객체 중심 신경장(object-centric neural fields)을 통해 인지와 운동 생성을 통합 모델링하는 생성적 학습 프레임워크를 제안하여, 소수의 시연으로부터 조합적 로봇 행동을 학습한다. 저자는 공간 혼합 전문가(spatial MoE)와 시간 혼합 전문가(temporal MoE)를 각각 장면 표현과 궤적 생성에 설계하고, 잠재 재레이블링(latent relabeling) 메커니즘을 도입하여 유효 훈련 데이터를 확장한다. 핵심 기여는 객체 수준 잠재 변수를 연결고리로 삼아 데이터 효율성(10~30개 시연)을 유지하면서도 체계적 일반화를 달성하며, 시뮬레이션 및 실제 로봇 작업에서 기존 베이스라인을 크게 능가한다는 점이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 LfD 방법은 운동을 전체 시퀀스로 취급하거나 수작업으로 설계된 운동 프리미티브(MPs)와 저차원 특징에 의존한다. 전자는 행동의 조합 구조를 무시하고, 후자는 특징 엔지니어링의 확장성에 제한을 받는다. 이미지에서 직접 특징을 학습하는 방법(예: CNMP)은 수작업 설계를 피하지만 대규모 데이터셋이 필요하여 MPs의 데이터 효율성 이점을 희생한다. 신경장 방법(예: tekden2023neural)은 장면 수준에서 작동하며 객체 수가 증가함에 따라 확장성이 급격히 악화된다. 비지도 장면 분해 방법(Slot Attention, GIRAFFE) 역시 대규모 이미지 데이터에 의존하며 로봇 학습을 위해 설계되지 않았다.</p>
+<p>본 논문이 실제로 바꾼 것은 '객체 중심 표현'을 인지와 운동을 연결하는 중간 계층으로 확립하여, 조합성이 수작업으로 지정된 프리미티브 연결이나 경유점에 의존하지 않고 데이터에서 자동으로 출현하도록 한 것이다. 장면을 객체별 신경장으로 분해하고 각 객체의 잠재 벡터가 인지 재구성과 운동 조건화를 동시에 구동함으로써, 소수의 시연으로 객체 속성(색상, 모양, 위치)의 연속적 변화 공간을 커버하고 추론 시 잠재 보간을 통해 체계적 일반화를 달성한다. 수작업 특징에 비해 객체 중심 표현은 작업별 특징 엔지니어링이 필요 없고, 엔드투엔드 이미지 조건화에 비해 해석 가능한 잠재 구조를 제공하여 데이터 요구량을 크게 줄인다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">공간 혼합 전문가(장면 모델링)</h3>
+<ul>
+<li>이미지는 객체별 신경장과 배경의 조합으로 모델링: <span class="arithmatex">\(\hat{I}(x|\{z_i\}) = \sum_{i=1}^{N} M_i(x_i) F_i(x_i) + M_{bg} F_{bg}(x)\)</span>, 여기서 <span class="arithmatex">\(x_i = x - \Delta_i(x|z_i)\)</span></li>
+<li><span class="arithmatex">\(F_i\)</span>는 객체 외관을 예측하고, <span class="arithmatex">\(\Delta_i\)</span>는 잠재 벡터 <span class="arithmatex">\(z_i\)</span>에 조건화된 변형장이며, <span class="arithmatex">\(M_i\)</span>는 공간 소프트맥스로 계산: <span class="arithmatex">\(M_i(x_i) = \frac{\exp(l_i(x_i))}{\exp(l_{bg}) + \sum_{j=1}^{N} \exp(l_j(x_j))}\)</span></li>
+<li>모든 장은 좌표 MLP(신경장)이며, 배경 로짓 <span class="arithmatex">\(l_{bg}\)</span>는 상수</li>
+</ul>
+<h3 id="3">3단계 훈련</h3>
+<ol>
+<li><strong>배경 모델링</strong>: 비마스크 픽셀만으로 <span class="arithmatex">\(F_{bg}\)</span>를 훈련하여 중앙값 이미지보다 일관된 배경 추정 제공</li>
+<li><strong>객체 중심 훈련</strong>: 각 객체 모델 <span class="arithmatex">\(F_i\)</span>를 객체 중심 샘플링 프레임워크에서 훈련하고, 다른 객체 픽셀은 배경 모델에서 샘플링하여 간섭 방지; 위치 인지 스케일링 커리큘럼 학습 적용</li>
+<li>
+<p><strong>결합 조합 훈련</strong>: 전체 조합 모델로 모든 장을 공동 최적화</p>
+</li>
+<li>
+<p>변형 네트워크 <span class="arithmatex">\(\Delta_i\)</span>에 Lipschitz 정규화를 적용하여 잠재 공간 평활성 보장</p>
+</li>
+</ol>
+<h3 id="_5">잠재 재레이블링</h3>
+<ul>
+<li>각 객체는 잠재 벡터 <span class="arithmatex">\(z_i^{(k)} \in \mathbb{R}^{d_z}\)</span>와 연관되며, 각도 집합 <span class="arithmatex">\(C^i\)</span>의 볼록 조합을 보간하여 객체 변화 포착</li>
+<li>잠재 탐색 알고리즘: 각도 집합 볼록 조합 샘플링 → 경사 하강법 정제 → <span class="arithmatex">\(E_{i,l}^{(k)} &lt; \lambda E_{\min}\)</span>을 만족하는 후보 유지(최대 <span class="arithmatex">\(L\)</span>개)</li>
+<li>각도 집합 반복 확장: 두 개의 최대 거리 임베딩으로 초기화, 나머지 인스턴스의 재구성 가능성을 테스트하고 불가능하면 확장</li>
+<li>효과: 훈련 세트가 <span class="arithmatex">\(K\)</span>에서 <span class="arithmatex">\(K \times L\)</span>로 확장</li>
+</ul>
+<h3 id="_6">시간 혼합 전문가(운동 생성)</h3>
+<ul>
+<li>순차적 조합성 가정: 서로 다른 궤적 구간이 서로 다른 <span class="arithmatex">\(\hat{z}_i\)</span> 부분집합에 의존</li>
+<li>조건 신호: <span class="arithmatex">\(c(t) = \sum_{i=1}^{N} w_i(t) c_i(\hat{z}_i)\)</span>, 가중치 <span class="arithmatex">\(w_i(t) = \frac{\exp(s_i(t))}{\sum_{j=1}^{N} \exp(s_j(t))}\)</span></li>
+<li>궤적을 가우시안 분포로 모델링: <span class="arithmatex">\(q(t) \sim \mathcal{N}(\mu(t), \mathrm{diag}(\sigma^2(t)))\)</span>, 음의 로그 우도 최소화</li>
+<li>잠재 드롭아웃을 워밍업 정규화로 사용; 확률적 공식으로 무관한 잠재 변수가 분산에 흡수됨</li>
+<li>쿼터니언 궤적을 축각(axis-angle) 형태로 변환하여 초기 쿼터니언 탄젠트 공간에서 표현</li>
+</ul>
+<h3 id="film">FiLM 조건화</h3>
+<ul>
+<li><span class="arithmatex">\(h_i(z_i) = \{\gamma_i^{(\ell)}, \beta_i^{(\ell)}\}_{\ell=1}^{L}\)</span>, 조건 신호 집계: <span class="arithmatex">\(\gamma^{(\ell)}(t) = \sum_{i=1}^{N} w_i(t) \gamma_i^{(\ell)}\)</span></li>
+<li>하이퍼네트워크보다 파라미터가 적고 안정성이 우수</li>
+</ul>
+<h3 id="_7">추론</h3>
+<ul>
+<li>테스트 시 동일한 잠재 탐색을 적용하고, 객체를 크기 내림차순으로 처리(큰 객체가 더 신뢰할 수 있는 재구성 단서 제공)</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>객체 중심 신경장을 조합성의 중간 계층으로</strong>: 장면을 객체별 신경장으로 분해하고 각 객체의 잠재 벡터가 인지와 운동을 동시에 구동하여, 조합성이 수작업 지정 없이 데이터에서 자동으로 출현한다. 객체 중심 표현을 데이터 효율적 LfD에 처음 적용한 사례로, 장면 수준 신경장(tekden2023neural)보다 확장성이 크게 향상되었다.</p>
+</li>
+<li>
+<p><strong>잠재 재레이블링 메커니즘</strong>: 각도 집합 볼록 조합을 보간하고 최적 잠재 표현을 탐색하여 훈련 세트를 <span class="arithmatex">\(K\)</span>에서 <span class="arithmatex">\(K \times L\)</span>로 확장하며, 시연 수집 비용 증가 없이 데이터 효율성을 높인다. 이 메커니즘은 10~30개 이미지에서 연속적 객체 변화를 학습할 수 있게 하며, 데이터 효율성의 핵심 원천이다.</p>
+</li>
+<li>
+<p><strong>이중 MoE 아키텍처(공간+시간)</strong>: 공간 MoE는 인지 분해를, 시간 MoE는 운동 조합을 담당하며, 둘은 객체 잠재 벡터로 결합된다. 시간 MoE의 확률적 궤적 공식은 무관한 잠재 변수가 분산에 흡수되도록 하여 평균 편향을 방지하고, FiLM 조건화는 하이퍼네트워크보다 안정적이고 효율적이다.</p>
+</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="_10">시뮬레이션 작업(저데이터 체제, 제안 방법만 평가)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>CNN-CNMP (Low)</th>
+<th>DP (Low)</th>
+<th>CNN-Film (Low)</th>
+<th>Ours w/o gating (Low)</th>
+<th>Ours (Low)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wall Avoidance</td>
+<td>2.72±0.08 / 0.67±0.04</td>
+<td>2.31±0.04 / 0.79±0.02</td>
+<td>1.41±0.19 / 0.89±0.02</td>
+<td>0.71±0.04 / 0.99±0.00</td>
+<td><strong>0.51±0.03 / 0.99±0.00</strong></td>
+</tr>
+<tr>
+<td>Incline</td>
+<td>4.35±0.27 / 0.11±0.03</td>
+<td>3.60±0.08 / 0.25±0.01</td>
+<td>3.01±0.55 / 0.40±0.13</td>
+<td>0.89±0.03 / 0.99±0.01</td>
+<td><strong>0.71±0.02 / 1.00±0.00</strong></td>
+</tr>
+<tr>
+<td>Cup Stacking</td>
+<td>10.85±1.39 / 0.02±0.01</td>
+<td>11.13±1.29 / 0.02±0.02</td>
+<td>8.74±1.83 / 0.03±0.01</td>
+<td>1.10±0.03 / 0.86±0.05</td>
+<td><strong>0.65±0.04 / 0.99±0.00</strong></td>
+</tr>
+<tr>
+<td>Cube Stacking</td>
+<td>14.22±0.59 / 0.00±0.00</td>
+<td>11.55±0.19 / 0.00±0.00</td>
+<td>9.26±0.74 / 0.00±0.00</td>
+<td>1.33±0.05 / 0.85±0.06</td>
+<td><strong>0.72±0.05 / 0.97±0.02</strong></td>
+</tr>
+</tbody>
+</table>
+<p>(MED/Accuracy, MED는 낮을수록, Accuracy는 높을수록 좋음)</p>
+<h3 id="_11">핵심 결과</h3>
+<ul>
+<li>저데이터 체제에서 Ours는 모든 작업에서 MED가 0.72 미만, 성공률 ≥0.97을 달성한 반면, CNN-CNMP와 DP는 Cup/Cube 작업에서 성공률이 0에 가까움</li>
+<li>Ours의 저데이터 성능은 대부분 베이스라인의 고데이터 결과보다 우수(예: CNN-CNMP High의 Cube MED=6.07, 성공률 0.00)</li>
+<li>절제: gating 제거 시 Cube 작업 MED가 0.72에서 1.33으로 상승, 성공률이 0.97에서 0.85로 하락하여 시간 게이팅의 중요성 입증</li>
+<li>강건성: 30개 시연 중 최대 3개가 불완전 마스크를 포함해도 성능 불변; 시간 왜곡 시 MED가 2.03으로 상승, 성공률 약 0.90으로 하락</li>
+</ul>
+<h3 id="_12">실제 로봇 실험</h3>
+<ul>
+<li>작업 1(집어서 그릇에 넣기): 30개 시연, 25/25 테스트 성공; 20개 시연 시 추가 5개 시도 중 3개 성공; 시각적 방해 객체 추가 후 5/5 성공</li>
+<li>작업 2(클래스 수준 일반화): 15개 테스트 케이스 중 14/15 성공, 유일한 실패는 보지 못한 야구공(표면이 더 단단하여 파지 정밀도 요구가 높음)</li>
+<li>작업 3(다중 객체 언어 조건화): 15/15 성공; 작업당 5회 시도 × 3회 실행 모두 성공</li>
+<li>작업 4(서랍에 상자 넣기): 4개 점유장으로 훈련, 10개 새로운 구성 모두 성공; 핵심 자세 오차: 서랍 손잡이 0.32 cm, 상자 파지 0.35 cm</li>
+</ul>
+<h2 id="_13">경계 및 한계</h2>
+<ul>
+<li>일반화는 자연스럽게 시연의 잠재 지원 범위 내 변화로 제한되며, 이 영역을 벗어난 외삽은 보장되지 않음</li>
+<li>시각적으로 유사한 방해 객체(예: 동일 색상)는 모호성 또는 성능 저하를 유발할 수 있음</li>
+<li>30개 시연 중 3개 이상이 불완전 마스크를 포함하면 장면 모델이 객체를 안정적으로 분해할 수 없음</li>
+<li>방법은 여전히 시연 간 대략적인 위상 정렬(그리퍼 상태 전환)에 의존</li>
+<li>NFMP 베이스라인은 그리드 훈련 확장성이 <span class="arithmatex">\(3^n\)</span>이므로 Wall Avoidance에서만 평가</li>
+<li>최종 작업에서 4개 미만의 예시일 때 장면 표현 모델이 서랍 관절 운동을 포착할 수 없음</li>
+<li>언어 이해 자체의 오류는 평가하지 않음(프롬프트가 올바른 분할 마스크를 생성한다고 가정)</li>
+<li>대규모 교차 작업 학습 또는 VLA 스타일 사전 훈련은 다루지 않음</li>
+</ul>
+<h2 id="_14">공학적 시사점</h2>
+<p>재현 시 <strong>잠재 탐색 알고리즘의 하이퍼파라미터</strong>(각도 집합 초기화, 후보 유지 임계값 <span class="arithmatex">\(\lambda\)</span>, 최대 후보 수 <span class="arithmatex">\(L\)</span>)를 우선적으로 확인해야 한다. 이들은 데이터 확장 효과와 일반화 경계를 직접 결정한다. 가장 쉽게 실패하는 지점은 <strong>마스크 품질</strong>이다: 시연의 10% 이상이 불완전 마스크를 포함하면 장면 분해가 실패하므로, 실제로는 사각형 주석과 수동 검사를 권장한다. 훈련 순서는 반드시 3단계(배경→객체 중심→결합)를 엄격히 따라야 하며, 배경 모델링을 건너뛰면 객체 장이 배경 영역을 포착하게 된다.</p>
+<p>하류 팀에게: 작업이 <strong>클래스 수준 일반화</strong>(예: 다양한 컵, 공)를 포함한다면, 훈련 시연이 객체 속성(색상, 모양, 위치)의 연속적 변화를 커버하도록 보장해야 잠재 보간이 효과적이다. 실제 시스템 배포 시 <strong>그리퍼 상태 전환의 시간 정렬</strong>은 운동 생성의 전제 조건이므로, 데이터 수집 단계에서 개폐 신호를 기록하는 것이 좋다. 추론 시 객체를 크기 내림차순으로 처리하면 재구성 안정성이 향상된다. 더 높은 정밀도(예: 1 cm 수준 파지)가 필요하다면 장면 표현을 ESDF로 확장(최종 작업 참조)할 수 있지만, 최소 4개 예시 제한에 주의해야 한다. 하드웨어 측면에서 RGB 추론은 객체당 약 1.4초, 3D는 객체당 약 0.8초이므로, 실시간 요구가 높은 환경에서는 최적화 또는 병렬화가 필요하다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_compositional_motion_generation_demonstr_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">공간 혼합 전문가(장면 모델링)</a></li>
+<li><a href="#3">3단계 훈련</a></li>
+<li><a href="#_5">잠재 재레이블링</a></li>
+<li><a href="#_6">시간 혼합 전문가(운동 생성)</a></li>
+<li><a href="#film">FiLM 조건화</a></li>
+<li><a href="#_7">추론</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#_10">시뮬레이션 작업(저데이터 체제, 제안 방법만 평가)</a></li>
+<li><a href="#_11">핵심 결과</a></li>
+<li><a href="#_12">실제 로봇 실험</a></li>
+</ul>
+</li>
+<li><a href="#_13">경계 및 한계</a></li>
+<li><a href="#_14">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

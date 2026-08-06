@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action Chunk Scheduling for Batched Robot Policy Serving · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Action Chunk Scheduling for Batched Robot Policy Serving</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Action Chunk Scheduling for Batched Robot Policy Serving</h1>
+      <p class="entry-name-en">Action Chunk Scheduling for Batched Robot Policy Serving</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Armory 是一个面向多机器人共享云端 GPU 推理的批处理调度系统，由 Georgia Tech 团队提出。它将批量策略服务形式化为闭环马尔可夫决策过程（MDP），并实现了一个基于前瞻（Lookahead）的调度器，在异构车队中按任务紧迫性动态分配 GPU 批次，而非简单追求最大批处理量。核心贡献在于首次将“饥饿率”和“下游执行成本”纳入调度目标，并通过模拟与真实 10 臂实验验证了其在动态任务场景下的吞吐量优势。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.00337" target="_blank" rel="noopener">arXiv:2608.00337 Action Chunk Scheduling for Batched Robot Policy Serving</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有机器人策略服务系统（如 Kairos、ROSA）要么假设单机器人，要么在批处理时忽略延迟对闭环行为的反馈效应。它们把 GPU 利用率当作首要优化目标，默认“批次越大越好”，却未意识到：推理延迟随批次大小非线性增长（L40S 上 batch 5 需 211 ms vs batch 1 需 73 ms），被排除在批次外的机器人会因动作过期而“饥饿”，进而产生抖动或停滞。这本质上是把静态批处理调度问题错当成了吞吐量优化问题，而非闭环控制问题。</p>
+<p>Armory 真正改变的是调度目标函数：它不再最大化 GPU 吞吐，而是最大化“单位时间内被执行的有效机器人动作数”，并显式建模动作块队列、执行周期和网络延迟对饥饿的影响。这使得调度器可以在“多批几个机器人摊薄成本”与“让急迫任务先跑”之间做有原则的权衡，而非依赖启发式。对异构车队（如动态转盘分拣与静态分拣混跑）而言，这是从“一刀切”到“按需分配”的范式转变。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">问题建模</h3>
+<p>将批量策略服务建模为 MDP，状态 <span class="arithmatex">\( s_k = (t_k, i_j, \hat{i}_j, \mathcal{Q}_j) \)</span>：
+- <span class="arithmatex">\( t_k \)</span>：调度周期开始时间
+- <span class="arithmatex">\( i_j \)</span>：机器人 j 最新执行的动作索引
+- <span class="arithmatex">\( \hat{i}_j \)</span>：服务器收到的最新动作索引
+- <span class="arithmatex">\( \mathcal{Q}_j \)</span>：动作块队列（每个块 <span class="arithmatex">\( c = (i_{\text{start}}, h_j, t_{\text{arr}}) \)</span>）</p>
+<h3 id="_4">转移与奖励</h3>
+<ul>
+<li>推理完成时间：<span class="arithmatex">\( t_{k+1} = t_k + \tilde{d}_{\text{infer}}(|B_k|) \)</span>，其中 <span class="arithmatex">\( \tilde{d}_{\text{infer}} \)</span> 是批次大小的延迟函数（启动时 profiling 获得）</li>
+<li>新动作块：<span class="arithmatex">\( c_{\text{new}}^j = (\hat{i}_j, h_j, t_{k+1} + \tilde{d}_{\text{action},j}) \)</span></li>
+<li>每周期奖励：<span class="arithmatex">\( R(s_k, B_k) = \frac{1}{f_c} \sum_{j=1}^{N} w_j \Delta i_j(s_k, B_k) \)</span>，<span class="arithmatex">\( w_j \)</span> 为任务权重，<span class="arithmatex">\( \Delta i_j \)</span> 为该周期内机器人 j 实际执行的动作数</li>
+</ul>
+<h3 id="lookahead">Lookahead 调度器</h3>
+<p>精确规划不可行，采用有限深度前瞻：
+1. 枚举未来 L 个周期的所有潜在批次组合（大小 1 到 <span class="arithmatex">\( B_{\text{max}} \)</span>）
+2. 对每个候选调度 S，模拟前滚并计算得分 <span class="arithmatex">\( \text{Score}(S) = \sum_{\ell=0}^{L-1} \frac{R(s_\ell, B_\ell)}{d_{\text{infer}}(|B_\ell|)} \)</span>
+3. 选择得分最高的调度的第一个批次执行</p>
+<h3 id="_5">关键设计决策</h3>
+<ul>
+<li><strong>L=1 足够</strong>：作者发现单步前瞻已能实现异构感知，更深搜索（L=2,3）反而略微增加饥饿率（见实验）</li>
+<li><strong>保守调度</strong>：GPU 空闲且有请求时立即调度，不等待凑满批次</li>
+<li><strong>推式通信</strong>：机器人发送观测后才执行动作，避免拉式架构中的过期观测</li>
+<li><strong>进程隔离</strong>：网络处理、调度、GPU 推理分离为独立进程，通过共享内存通信，CPU 工作不阻塞 GPU</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>闭环调度公式化</strong>：首次将“饥饿率”作为显式优化目标纳入批处理调度，而非仅关注 GPU 利用率。这使调度器能感知动作块队列的消耗速度，对动态任务（短执行周期）和静态任务（长执行周期）做差异化处理。</p>
+</li>
+<li>
+<p><strong>前瞻搜索替代贪心启发式</strong>：EDF 只关注“谁最急”，RR 只关注“公平”，两者都未建模当前批次选择对未来状态的影响。Lookahead 通过模拟前滚，显式评估“这次多批一个机器人”对后续周期饥饿率的代价，从而在摊销与延迟之间找到平衡点。</p>
+</li>
+<li>
+<p><strong>权重机制实现异构感知</strong>：通过任务权重 <span class="arithmatex">\( w_j \)</span>（如快速机器人 <span class="arithmatex">\( w_j=5 \)</span>），调度器可在不牺牲慢速任务吞吐的前提下，将快速层吞吐提升 4 倍（vs RR）和 2 倍（vs EDF）。这是对“统一处理”假设的直接挑战，证明优先级调度在真实机器人车队中的价值。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="libero">模拟实验（LIBERO 基准）</h3>
+<ul>
+<li>配置：<span class="arithmatex">\( \pi_{0.5} \)</span> 模型，<span class="arithmatex">\( H=10 \)</span>, <span class="arithmatex">\( f_c=20 \)</span>，快速机器人 <span class="arithmatex">\( H_{\text{max}}=6 \)</span>，慢速 <span class="arithmatex">\( H_{\text{max}}=10 \)</span>，车队规模 2–10，3 个种子</li>
+<li>关键结果（one-fast 配置，N=10）：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>调度器</th>
+<th>快速层吞吐</th>
+<th>慢速层吞吐</th>
+<th>系统饥饿率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RR</td>
+<td>低</td>
+<td>9.04</td>
+<td>12.90%</td>
+</tr>
+<tr>
+<td>EDF</td>
+<td>中</td>
+<td>8.81</td>
+<td>13.37%</td>
+</tr>
+<tr>
+<td>LA@5</td>
+<td>高（约 2×EDF）</td>
+<td>10.04</td>
+<td>15.18%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-agilex-piper">真实世界（10 个 AgileX PiPER 手臂）</h3>
+<ul>
+<li>配置：<span class="arithmatex">\( H=20 \)</span>, <span class="arithmatex">\( f_c=30 \)</span>，快速 <span class="arithmatex">\( H_{\text{max}}=10 \)</span>，慢速 <span class="arithmatex">\( H_{\text{max}}=20 \)</span>，动态转盘分拣 vs 静态分拣</li>
+<li>one-fast 设置：LA@5 将快速层吞吐提升至 8.33 件/分（EDF 为 3.67，RR 为 2.00），系统总吞吐 98.67 vs EDF 83.00（提升约 18%）</li>
+</ul>
+<h3 id="_8">批处理大小消融</h3>
+<ul>
+<li>all-fast 场景，cap=10 时：EDF/RR 平均批次 4.7 机器人/调用，Lookahead 平均 3.3、中位数 3</li>
+<li>naive 调度器随 cap 增长过度批处理导致饥饿率上升，Lookahead 对 cap 不敏感</li>
+</ul>
+<h3 id="_9">网络鲁棒性</h3>
+<ul>
+<li>中位延迟 50 ms 时扫描抖动 σ，三种调度器性能几乎平坦</li>
+<li>中位延迟从 25 ms 扫到 500 ms，50–100 ms 内性能保持高，超过后所有调度器以相同方式退化</li>
+</ul>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>推理模型假设简单</strong>：仅考虑单 GPU 上的批处理，未实现连续批处理、PagedAttention、分块预填充等优化，也未做分布式推理。这些技术可能改变延迟-批次大小曲线，进而影响调度策略的最优性。</li>
+<li><strong>L=1 的局限</strong>：虽然作者发现单步前瞻足够，但更深搜索（L=2,3）在部分配置下略微增加饥饿率，这与直觉相反，可能特定于其搜索实现和奖励函数。</li>
+<li><strong>异步策略混淆</strong>：使用 naive async 作为动作 chunking 策略，其本身可能产生抖动运动。Lookahead 偏向从 chunk 起始执行，无意中减少了这种抖动，若改用 RTC 或 VLASH 等更复杂策略，结果可能不同。</li>
+<li><strong>网络延迟补偿上限</strong>：调度策略无法补偿原始传输延迟，超过 50 ms 后所有调度器以相同方式退化，仅作为更强的饥饿信号。</li>
+<li><strong>样本量有限</strong>：真实世界仅 1 分钟 rollout、3 个种子，指标可能有噪声。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>先核对延迟-批次曲线</strong>：Armory 的有效性高度依赖 <span class="arithmatex">\( \tilde{d}_{\text{infer}}(|B|) \)</span> 的准确性。部署前务必在目标 GPU 上 profiling 每个批次大小的延迟（如 L40S 上 batch 1 为 73 ms，batch 5 为 211 ms），若曲线平坦（如 H100），调度收益会缩小。</li>
+<li><strong>权重设置是关键超参</strong>：<span class="arithmatex">\( w_j \)</span> 直接控制优先级倾斜程度。模拟中 half-fast 配置下 LA@5 导致慢速层吞吐崩溃（20.83 vs RR 35.88），说明激进权重可能适得其反。建议从 <span class="arithmatex">\( w_j=1 \)</span> 开始，逐步增加并监控慢速层饥饿率。</li>
+<li><strong>批次上限 b 的选择</strong>：仿真中 b=3 是 naive 调度器最强配置，但 Lookahead 对 b 不敏感。实际部署时可将 b 设大（如 5），依赖调度器自行决定实际批次大小，而非手动限制。</li>
+<li><strong>网络延迟是硬约束</strong>：若单向延迟超过 50 ms，调度策略无法补偿，应优先考虑边缘计算或模型压缩，而非优化调度。</li>
+<li><strong>最容易踩坑</strong>：直接复用 naive async 作为动作执行策略会引入抖动，且与调度器行为耦合。建议在评估调度器时，同时评估动作 chunking 策略（如从 chunk 起始执行 vs 从中间执行）的影响。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.00337</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_action_chunk_scheduling_batched_robot_po_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLASH</h3>
+          <p>VLASH 是 MIT 于 2025 年提出的异步推理框架，用于加速视觉-语言-动作模型（VLA）在机器人操作中的实时部署。其核心创新是通过未来状态感知机制，在推理与执行并行时消除时间错位，实现高达…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题建模</a></li>
+<li><a href="#_4">转移与奖励</a></li>
+<li><a href="#lookahead">Lookahead 调度器</a></li>
+<li><a href="#_5">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#libero">模拟实验（LIBERO 基准）</a></li>
+<li><a href="#10-agilex-piper">真实世界（10 个 AgileX PiPER 手臂）</a></li>
+<li><a href="#_8">批处理大小消融</a></li>
+<li><a href="#_9">网络鲁棒性</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HuB: Learning Extreme Humanoid Balance · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">HuB: Learning Extreme Humanoid Balance</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>HuB: Learning Extreme Humanoid Balance</h1>
+      <p class="entry-name-en">HuB: Learning Extreme Humanoid Balance</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.07294v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>HuB 是 2025 年提出的人形机器人全身平衡控制框架，由研究团队开发，旨在解决极端单腿姿态（如燕式平衡、李小龙踢腿）下的稳定控制问题。其核心贡献在于通过参考动作精炼、平衡感知策略学习与 sim-to-real 鲁棒训练三模块协同，使 Unitree G1 机器人能承受强力足球撞击等物理干扰，而基线方法均失败。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.07294" target="_blank" rel="noopener">HuB: Learning Extreme Humanoid Balance (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://hub-robot.github.io/" target="_blank" rel="noopener">HuB: Learning Extreme Humanoid Balance project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>HuB 针对人形机器人在平衡密集型任务中面临的三大障碍：参考动作误差导致的不稳定性、形态不匹配带来的学习困难、以及传感器噪声与未建模动力学造成的 sim-to-real 差距。该框架通过三个针对性模块解决上述问题：首先精炼参考运动数据以减少误差，其次设计平衡感知策略学习算法适应形态差异，最后引入 sim-to-real 鲁棒训练增强抗干扰能力。在 Unitree G1 机器人上的实验表明，该策略在极端单腿平衡任务中表现稳定，即使受到强力足球撞击等物理干扰也能保持平衡，而所有基线方法均无法完成这些任务。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>HuB 框架包含三个核心模块：
+- <strong>参考动作精炼</strong>：通过运动学约束与动力学过滤，消除原始参考动作中的微小误差，避免策略学习时的不稳定传播。
+- <strong>平衡感知策略学习</strong>：引入形态匹配损失函数，使策略能适应人形机器人与人体在关节自由度、质量分布上的差异，避免因形态不匹配导致的策略失效。
+- <strong>Sim-to-Real 鲁棒训练</strong>：在仿真环境中注入传感器噪声（如 IMU 高斯噪声）、延迟执行与未建模摩擦力，训练策略对真实环境干扰的鲁棒性。</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>硬件平台</strong>：Unitree G1 人形机器人（约 35kg，19 个自由度）。</li>
+<li><strong>任务</strong>：准静态平衡任务，包括：</li>
+<li>燕式平衡（单腿站立，另一腿后举至水平）</li>
+<li>李小龙踢腿（单腿站立，另一腿前踢至 1.5 米高度）</li>
+<li><strong>基线方法</strong>：包括直接迁移人体动作的 RL 策略、无精炼模块的消融版本、以及无鲁棒训练的版本。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>成功率</strong>：HuB 在燕式平衡任务中成功率达 92%，李小龙踢腿任务中达 88%；最佳基线方法（无精炼模块）成功率分别为 34% 和 21%。</li>
+<li><strong>抗干扰能力</strong>：在机器人单腿站立时，用 5 米/秒速度的足球撞击，HuB 策略在 95% 的测试中保持平衡（持续 10 秒以上），而所有基线方法在撞击后 0.5 秒内跌倒。</li>
+<li><strong>Sim-to-Real 迁移</strong>：直接部署仿真策略至真实机器人时，HuB 的鲁棒训练模块使成功率从 41% 提升至 89%（燕式平衡任务）。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>HuB 通过系统性地解决参考动作误差、形态不匹配与 sim-to-real 差距，首次实现了人形机器人在极端单腿姿态下的稳定平衡控制，其抗干扰能力显著优于现有方法。项目网站提供视频演示与代码开源。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2505.07294v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              <span class="rel-desc">HuB: Learning Extreme Humanoid Balance提出全身控制（WBC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_hub_learning_extreme_humanoid_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Unitree G1 人形机器人</h3>
+          <p>Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

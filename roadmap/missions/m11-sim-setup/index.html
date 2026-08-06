@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M11 · 仿真环境与模型转换：在数字世界先摔一万次 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M11 · 仿真环境与模型转换：在数字世界先摔一万次</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m11">M11 · 仿真环境与模型转换：在数字世界先摔一万次</h1>
+<p><strong>全局位置</strong>：紧接 <a href="/roadmap/missions/m10-urdf-modeling/">M10 的 URDF 模型包</a>之后，是 Stage 2 仿真的第一棒。输入是 M10 交付的模型包，输出是一个<strong>跑通的仿真工程</strong>——模型加载无警告、接触行为合理、执行器/传感器建模完成、基线体检全过。<a href="/roadmap/missions/m12-sim-walking/">M12</a> 用它站立行走，<a href="/roadmap/missions/m13-rl-training/">M13</a> 用它训练策略。</p>
+<p><strong>前置条件</strong>：M10 验收全过（模型包入库、惯性参数已核）；<a href="/roadmap/stage-0-foundations/">Stage 0</a> 步骤 4 的 PD 站立手感还在。</p>
+<p>理论背景：<a href="/wiki/chapters/chapter-23/">第 23 章 仿真与物理引擎</a>、<a href="/wiki/chapters/chapter-22/">第 22 章 软件中间件</a>、<a href="/wiki/appendices/appendix-c/">附录 C 软件与仿真平台清单</a>；引擎选型总表见<a href="/roadmap/playbooks/sim-setup/">仿真环境搭建手册</a>第一步。</p>
+<h2 id="1">步骤 1：引擎安装与官方基线验证</h2>
+<p>【做什么】两条主线二选一（或都装）：</p>
+<ul>
+<li><strong><a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a></strong>：<code>pip install mujoco</code>，纯 CPU 可跑；</li>
+<li><strong><a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a></strong>（跑在 <a href="/entry/ent_software_nvidia_isaac_sim_2024/">Isaac Sim</a> 之上）：需 NVIDIA GPU，conda 环境，Isaac Lab 与 Isaac Sim 版本严格匹配——组合随 release 变化，以官方安装文档为准，按你所选版本自行核对。</li>
+</ul>
+<p>装完先跑官方示例（MuJoCo 自带 humanoid 模型 / Isaac Lab 的 H1 人形示例），再碰自己的模型：</p>
+<pre class="highlight"><code class="language-bash"># MuJoCo：CPU 即可；加载官方自带人形模型验证（模型路径随版本变化，按你所选版本核对）
+pip install mujoco
+python -m mujoco.viewer --mjcf=$(python -c "import mujoco, os; print(os.path.join(os.path.dirname(mujoco.__file__), 'model', 'humanoid', 'humanoid.xml'))")
+# Isaac Lab：conda 环境 + 官方 H1 示例（安装步骤与任务名以官方文档为准）
+conda create -n isaaclab python=3.10 -y &amp;&amp; conda activate isaaclab
+git clone https://github.com/isaac-sim/IsaacLab.git</code></pre>
+<p>【为什么】官方示例帮你隔离"环境问题"与"模型问题"——示例跑不起来是装错了，示例能跑、你的模型不能跑才是模型错了。选型逻辑（详见<a href="/roadmap/playbooks/sim-setup/">仿真手册</a>）：MuJoCo 接触质量高，是腿足控制研究的事实标准；Isaac Lab GPU 大规模并行，为 RL 训练而生。开源锚点：ToddlerBot 用 MuJoCo/MJX、Berkeley Humanoid Lite 基于 Isaac Lab、OpenLoong 的 MPC+WBC 部署在 MuJoCo（见 <a href="https://github.com/hshi74/toddlerbot">ToddlerBot</a>、<a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite</a>、<a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">OpenLoong-Dyn-Control</a> 各自仓库）。</p>
+<p>【你的情况怎么分析】无 N 卡：MuJoCo 一条路走到底，控制研究与 CPU 小规模 RL 都够；有 RTX 卡且走 RL 路线：都装，MuJoCo 调模型、Isaac Lab 训策略（Berkeley 即此组合）；要 ROS 全栈集成测试：另加 <a href="/entry/ent_software_gazebo/">Gazebo</a>，别纠结它的物理精度。</p>
+<h2 id="2urdf-mjcfusd">步骤 2：URDF → MJCF/USD 转换与复核</h2>
+<p>【做什么】把你的 <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF</a> 转成目标格式：MuJoCo 可直接编译 URDF 并另存 <a href="/entry/ent_technology_mjcf_simulation_format_2024/">MJCF</a>，进 Isaac 用官方 URDF Importer 转 USD：</p>
+<pre class="highlight"><code class="language-bash"># MuJoCo Python API 编译 URDF 并导出 MJCF（API 细节按你所选版本核对）
+python -c "import mujoco; m = mujoco.MjModel.from_xml_path('robot.urdf'); mujoco.mj_saveLastXML('robot_mjcf.xml', m); print('converted OK')"</code></pre>
+<p>四类经典转换错误，逐个排查：</p>
+<table>
+<thead>
+<tr>
+<th>错误</th>
+<th>症状</th>
+<th>修法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>惯性张量非正定</td>
+<td>编译报错/模型抽搐</td>
+<td>回 M10 步骤 3 用 CAD 重导，检查 ixx/iyy/izz 三角不等式</td>
+</tr>
+<tr>
+<td>mesh 单位 mm 当 m</td>
+<td>模型大/小 1000 倍</td>
+<td>缩放 ×0.001 或在导出时统一为米</td>
+</tr>
+<tr>
+<td>mesh 路径大小写</td>
+<td>Linux 下找不到文件</td>
+<td>路径与文件名全小写规范化</td>
+</tr>
+<tr>
+<td>关节轴向约定差异</td>
+<td>运动方向全反</td>
+<td>viewer 逐关节驱动核对（M10 已初验，这里做仿真内复核）</td>
+</tr>
+</tbody>
+</table>
+<p>转换后手动修补 MJCF：<code>&lt;compiler angle="radian" .../&gt;</code> 统一角度单位、补回转换丢掉的关节限位、确认坐标系约定。</p>
+<p>【为什么】URDF 为可视化与 ROS 工具链而生，只支持树状结构、执行器模型弱；MJCF 为仿真与控制而生——编译期自动算惯性，执行器与传感器是一等公民（第 23 章 23.4 节）。每次转换都有信息损耗，小错误会被物理引擎放大成"一跑就飞"。</p>
+<p>【你的情况怎么分析】复刻开源平台：直接用官方维护的 MJCF/USD（Berkeley 三格式齐全，档案），本步只做逐关节复核；自研模型：转换产物与修补记录一起进版本管理，M13 改模型时你才知道改了什么。</p>
+<h2 id="3-sim-to-real">步骤 3：执行器建模——限幅虚高 = sim-to-real 自杀</h2>
+<p>【做什么】MJCF 里给每个可控关节配执行器：力控用 <code>motor</code>，位置控制用 <code>position</code>；三条纪律：</p>
+<ol>
+<li><strong>力矩限幅</strong> = M01 指标表的峰值扭矩（M10 步骤 4 已写入 effort，转换后核对没丢）；</li>
+<li><strong>速度限幅</strong>取 M01 额定转速换算值；</li>
+<li><strong>执行器动态</strong>用一阶低通近似真实响应，时间常数先估 5–20 ms（工程建议值，<a href="/roadmap/missions/m14-sim-to-real/">M14</a> 用<a href="/entry/ent_method_system_identification/">系统辨识</a>实测回填）。</li>
+</ol>
+<pre class="highlight"><code class="language-xml">&lt;actuator&gt;
+  &lt;!-- ctrlrange 填 M01 指标表峰值扭矩，严禁虚高 --&gt;
+  &lt;position joint="l_knee_pitch" kp="40" forcerange="-33 33" ctrllimited="true" ctrlrange="-1.2 1.2"/&gt;
+  &lt;!-- 一阶低通近似执行器动态：dynprm 为时间常数（秒），5–20 ms 工程建议值起步 --&gt;
+  &lt;general joint="l_hip_pitch" dyntype="filter" dynprm="0.01" gaintype="fixed" gainprm="1" ctrllimited="true" ctrlrange="-20 20"/&gt;
+&lt;/actuator&gt;</code></pre>
+<p>【为什么】RL 会学出限幅内的动作：限幅虚高，策略就学出实机执行不了的动作，sim-to-real 直接失败（M10 步骤 4 的规则）。真实执行器不是理想力矩源——电流环响应与通信延迟让它近似一阶惯性环节；不建模这段动态，仿真里能用的增益到实机就是振荡。</p>
+<p>【你的情况怎么分析】总线舵机/QDD 准直驱：<code>position</code> + 力矩限幅最贴近实机工作方式；计划纯力控：<code>motor</code> + 低通。时间常数拿不准先取 10 ms 量级起步，M14 回来校。PD 增益写在模型里（kp/kv）还是写在控制器代码里：写模型里换控制器不用重调，写代码里便于在线整定——选一个并全程统一。</p>
+<h2 id="4">步骤 4：接触与摩擦——双足的一切发生在脚底</h2>
+<p>【做什么】四个动作：</p>
+<ol>
+<li><strong>足底摩擦系数</strong>：橡胶/PLA 对地板的量级先取 0.6–1.0 区间试（具体取值需按材料自行确认）；</li>
+<li><strong>接触求解参数</strong>：<code>solref</code>（时间常数、阻尼比）调接触软硬——太软脚陷地，太硬数值抖动；<code>solimp</code> 控制约束阻抗曲线，先用默认附近值；</li>
+<li><strong>自碰撞对裁剪</strong>：用 <code>exclude</code> 只留必要接触对，接触对数量直接决定仿真速度；</li>
+<li><strong>地板与扰动接口</strong>：地板 geom 参数化，预留外力扰动入口——M13 的<a href="/entry/ent_method_domain_randomization/">域随机化</a>要随机摩擦、要推机器人。</li>
+</ol>
+<pre class="highlight"><code class="language-xml">&lt;default&gt;
+  &lt;!-- solref=(时间常数, 阻尼比)：典型取 2–10×timestep，越小接触越硬 --&gt;
+  &lt;geom solref="0.01 1" solimp="0.9 0.95 0.001" friction="0.8 0.005 0.0001"/&gt;
+&lt;/default&gt;
+&lt;contact&gt;&lt;exclude body1="l_thigh" body2="l_shank"/&gt;&lt;/contact&gt;  &lt;!-- 排除不可能相碰的连杆对 --&gt;</code></pre>
+<p>【为什么】接触参数是 sim-to-real 差距的大头，必须与"足底材料-地面材料"成对标定并纳入后续域随机化范围（第 23 章 23.4.4 节）。先把标称值调合理，再谈随机化。</p>
+<p>【你的情况怎么分析】拿不准摩擦：把足底材料样品放在目标地板上，用弹簧秤拉滑块估算量级。打印 PLA 足底与橡胶鞋底差一截，别抄别人的数。</p>
+<h2 id="5">步骤 5：传感器仿真与观测管线</h2>
+<p>【做什么】按实机 BOM 建观测管线：<a href="/entry/ent_component_imu_2024/">IMU</a>（姿态/角速度 + 噪声模型）、关节编码器（位置/速度，可加量化）、足底接触力；并定下频率分层：</p>
+<pre class="highlight"><code class="language-xml">&lt;sensor&gt;
+  &lt;framequat objtype="site" objname="imu_site" noise="0.001"/&gt;
+  &lt;gyro site="imu_site" noise="0.005"/&gt;
+  &lt;jointpos joint="l_knee_pitch"/&gt;  &lt;jointvel joint="l_knee_pitch"/&gt;
+&lt;/sensor&gt;</code></pre>
+<pre class="highlight"><code class="language-python"># 物理 1 kHz、控制 100 Hz（工程建议值，按你的控制器带宽与总线速率核对）
+model.opt.timestep = 0.001   # 物理步长
+decimation = 10              # 每 10 步物理发一次控制 → 100 Hz</code></pre>
+<p><strong>铁律：观测接口与实机传感器一一对应——实机拿不到的观测不进策略</strong>（M13/M14 的共同纪律）。控制频率锚点：ToddlerBot 全状态反馈 50 Hz、Berkeley CAN 总线 250 Hz（各调研档案）。</p>
+<p>【为什么】观测是 sim-to-real 最容易作弊的地方：仿真里随手可读的真值（基座线速度、质心位置）实机上都不存在。现在按实机传感器清单建管线，M13 训练零返工；加噪声不是折腾自己，是让策略提前适应真实传感器。</p>
+<p>【你的情况怎么分析】实机传感器还没定：先回<a href="/roadmap/playbooks/sensor-selection/">传感器选型手册</a>定 BOM，仿真观测跟着实机走，不反过来。</p>
+<h2 id="6m12">步骤 6：基线健康检查——M12 的入场券</h2>
+<p>【做什么】四项体检：</p>
+<ol>
+<li><strong>零力矩释放</strong>：关掉执行器，自由落体/悬挂——模型不散架、关节有阻尼不乱甩；</li>
+<li><strong>初始 keyframe</strong>：站立姿态零输入 10 s 不漂，质心投影稳在支撑域内；</li>
+<li><strong>接触力量级</strong>：站立时单脚法向力 ≈ 体重一半量级，不大不小；</li>
+<li><strong>仿真速度</strong>：记录 real-time factor（RTF），目标 ≥ 1（RL 吞吐另算）。</li>
+</ol>
+<p>【为什么】模型级错误（惯性错、轴向反、限位丢）在 PD 站立时会全部暴露，用被动动力学查最便宜；RTF 决定后面 MPC 实时性与 RL 训练吞吐的天花板。</p>
+<p>【你的情况怎么分析】悬挂就散架：惯性或关节定义错，回 M10 步骤 3；RTF &lt; 0.5：查接触对数量、碰撞 mesh 复杂度、步长，别硬扛。</p>
+<h2 id="_1">验收标准</h2>
+<ul>
+<li>[ ] 引擎官方示例跑通（MuJoCo humanoid 或 Isaac Lab H1），录屏/日志存档。</li>
+<li>[ ] 模型加载无 warning；逐关节驱动方向与 M10 约定复核一致。</li>
+<li>[ ] 执行器限幅（力矩/速度/位置）与 M01 指标表逐项一致，无虚高。</li>
+<li>[ ] 零力矩悬挂/自由落体测试通过：不散架、阻尼正常；keyframe 站立 10 s 不漂，接触力量级合理。</li>
+<li>[ ] 观测清单成文：每项注明实机来源（哪个传感器、什么速率），实机拿不到的标注"禁入策略"。</li>
+<li>[ ] real-time factor 记录在案，接触对与碰撞体已裁剪。</li>
+</ul>
+<h2 id="_2">常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MJCF 编译报惯性张量非正定</td>
+<td>手写惯量矩阵不满足物理约束</td>
+<td>回 M10 步骤 3 用 CAD 重导；查 ixx/iyy/izz 三角不等式</td>
+</tr>
+<tr>
+<td>脚陷地或像溜冰</td>
+<td>solref 太软 / 摩擦系数过低</td>
+<td>回步骤 4 调 solref 时间常数与 friction</td>
+</tr>
+<tr>
+<td>仿真比实时慢好几倍</td>
+<td>接触对太多 / 碰撞 mesh 太复杂</td>
+<td>exclude 裁剪接触对；碰撞体回 M10 步骤 5 简化</td>
+</tr>
+<tr>
+<td>关节运动方向全反</td>
+<td>度/弧度混用 / 轴向约定差异</td>
+<td>核对 compiler angle；viewer 单关节逐个复核</td>
+</tr>
+<tr>
+<td>URDF 转 USD 后限位丢失</td>
+<td>Importer 选项/版本行为差异</td>
+<td>转换后逐项核对 limit，缺失手动补回（按你所选版本 Importer 文档核对）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">配套阅读</h2>
+<ul>
+<li>上一任务：<a href="/roadmap/missions/m10-urdf-modeling/">M10 · URDF 建模与导出</a></li>
+<li>下一任务：<a href="/roadmap/missions/m12-sim-walking/">M12 · 仿真站立与行走</a></li>
+<li>理论背景：<a href="/wiki/chapters/chapter-22/">第 22 章 软件中间件</a>、<a href="/wiki/chapters/chapter-23/">第 23 章 仿真与物理引擎</a>、<a href="/wiki/appendices/appendix-c/">附录 C 软件与仿真平台清单</a></li>
+<li><a href="/roadmap/playbooks/sim-setup/">仿真环境搭建手册</a> · <a href="/roadmap/stage-2-biped/">阶段 2 总览</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/missions/m10-urdf-modeling/">← 上一页<span>M10 · URDF 建模与导出：把铁疙瘩变成可计算的模型</span></a>
+      
+      
+      <a class="next" href="/roadmap/missions/m12-sim-walking/">下一页 →<span>M12 · 仿真站立与行走：先站稳，再走路</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m11">M11 · 仿真环境与模型转换：在数字世界先摔一万次</a><ul>
+<li><a href="#1">步骤 1：引擎安装与官方基线验证</a></li>
+<li><a href="#2urdf-mjcfusd">步骤 2：URDF → MJCF/USD 转换与复核</a></li>
+<li><a href="#3-sim-to-real">步骤 3：执行器建模——限幅虚高 = sim-to-real 自杀</a></li>
+<li><a href="#4">步骤 4：接触与摩擦——双足的一切发生在脚底</a></li>
+<li><a href="#5">步骤 5：传感器仿真与观测管线</a></li>
+<li><a href="#6m12">步骤 6：基线健康检查——M12 的入场券</a></li>
+<li><a href="#_1">验收标准</a></li>
+<li><a href="#_2">常见坑与排查</a></li>
+<li><a href="#_3">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

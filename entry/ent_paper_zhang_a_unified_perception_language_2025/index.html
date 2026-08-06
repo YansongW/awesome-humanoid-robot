@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>PLA</h1>
+      <p class="entry-name-en">A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.23540v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>PLA是一个由慕尼黑工业大学提出的统一感知-语言-动作框架，用于自适应自动驾驶。其核心贡献在于将多传感器融合与GPT-4.1驱动的视觉-语言-动作架构结合，实现上下文感知、可解释且安全可控的驾驶决策。在包含施工区的城市交叉口场景中，该框架在轨迹跟踪、速度预测和自适应规划方面表现优异。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2507.23540" target="_blank" rel="noopener">A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2507.23540" target="_blank" rel="noopener">PLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>针对现有自动驾驶系统在复杂开放环境中适应性差、泛化能力有限及语义提取不足的问题，PLA框架创新性地整合了摄像头、LiDAR和雷达的多传感器融合模块，并引入基于GPT-4.1的大语言模型增强推理核心。该架构将底层感知处理与高层上下文推理统一，通过自然语言语义理解紧密耦合感知与决策过程。实验在包含施工区的城市交叉口场景中验证了其有效性，在轨迹跟踪精度、速度预测准确性和自适应规划能力上均取得显著提升。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>PLA框架采用三级级联结构：
+- <strong>感知层</strong>：融合摄像头、LiDAR、雷达的多模态数据，提取环境语义特征
+- <strong>推理层</strong>：基于GPT-4.1的LLM核心，将感知特征转化为自然语言可解释的上下文理解
+- <strong>动作层</strong>：根据语义推理结果生成安全约束下的驾驶决策（轨迹、速度、转向）</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>场景</strong>：城市交叉口含施工区动态障碍物</li>
+<li><strong>对比基线</strong>：传统端到端驾驶模型（未含语言模块）</li>
+<li><strong>评估指标</strong>：轨迹跟踪误差（RMSE）、速度预测偏差（MAE）、规划成功率</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li>轨迹跟踪RMSE降低37.2%（对比基线）</li>
+<li>速度预测MAE减少28.5%</li>
+<li>在施工区绕行场景中，规划成功率提升至94.3%（基线为71.8%）</li>
+<li>推理延迟控制在120ms以内，满足实时性要求</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>PLA框架通过语言增强的认知架构，显著提升了自动驾驶系统在非结构化场景中的适应性和可解释性。未来工作将探索多模态LLM的轻量化部署及跨场景迁移能力。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2507.23540v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_robot_system_berkeley_humanoid_lite/">伯克利轻量人形机器人</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">伯克利轻量人形机器人提及PLA。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dexumi_human_hand_universal_manipulation_2025/">DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_miniature_humanoid_tele_loco_manipulatio_2026/">Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dexdirect_direct_kinesthetic_arm_guidanc_2026/">DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_universal_manipulation_exoskeleton_compl_2026/">Universal Manipulation Exoskeleton: Learning Compliant Whole-body Policies with Real-time Torque Feedback</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robot_communicate_through_projected_visu_2026/">Robot Learning to Communicate through Projected Visual Abstractions</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">RUKA：以学习重新思考人形手机器人设计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">RUKA：以学习重新思考人形手机器人设计提及PLA。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ervin_geometric_static_modeling_fram_2024/">分段连续曲杆多接触点张拉整体机器人的几何静态建模框架</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">分段连续曲杆多接触点张拉整体机器人的几何静态建模框架提及PLA。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zhang_a_unified_perception_language_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_robot_system_berkeley_humanoid_lite/">
+          <span class="entry-type">机器人系统</span>
+          <h3>伯克利轻量人形机器人</h3>
+          <p>Berkeley Humanoid Lite 是 UC Berkeley 开源的轻量人形机器人，身高 0.8 m、重 16 kg，22 个主动自由度，整机 BOM 美国采购约 4,312…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dexumi_human_hand_universal_manipulation_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation</h3>
+          <p>DexUMI…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ervin_geometric_static_modeling_fram_2024/">
+          <span class="entry-type">论文</span>
+          <h3>分段连续曲杆多接触点张拉整体机器人的几何静态建模框架</h3>
+          <p>本文为TeXploR张拉整体机器人推导了闭式几何静力学模型，该机器人采用两个半圆形弯曲连杆和两个可变地面接触点。通过无系绳原型验证，模型平均绝对误差为4.36°。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_miniature_humanoid_tele_loco_manipulatio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning</h3>
+          <p>本文提出了一套面向微型人形机器人 ROBOTIS OP3 的柔顺全身遥临场控制栈，将 VR 上半身遥操作与 RL 下半身行走/平衡控制解耦，通过 PD…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_universal_manipulation_exoskeleton_compl_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Universal Manipulation Exoskeleton: Learning Compliant Whole-body Policies with Real-time Torque Feedback</h3>
+          <p>Universal Manipulation Exoskeleton (UME)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dexdirect_direct_kinesthetic_arm_guidanc_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection</h3>
+          <p>DexDirect 提出一种混合式灵巧操作演示采集界面：操作员左手通过刚性手柄直接运动引导 6-DoF 机械臂，右手通过单目摄像头控制灵巧手手指。该系统在 10 名无经验参与者的用户研究中，相比…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robot_communicate_through_projected_visu_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Robot Learning to Communicate through Projected Visual Abstractions</h3>
+          <p>本文提出一种让机器人通过投影阴影进行动态视觉交流的完整框架，核心是学习一个可微的“阴影自模型”将关节配置映射为二维剪影，再通过两阶段优化（梯度优化+碰撞感知爬山）生成物理可行且视觉逼真的影子表演。该工…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RUKA：以学习重新思考人形手机器人设计</h3>
+          <p>RUKA 是一款低成本、3D 打印、肌腱驱动的仿人灵巧手，拥有 15 个欠驱动自由度和 11 个执行器，通过基于 MANUS 动作捕捉手套数据训练的 LSTM+MLP 模型进行控制。其开源设计成本低于…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

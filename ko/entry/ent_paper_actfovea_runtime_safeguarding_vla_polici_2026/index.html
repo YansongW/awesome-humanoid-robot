@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency</h1>
+      <p class="entry-name-en">ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-language-action (VLA) policies achieve strong performance in robotic manipulation but remain vulnerable to runtime disturbances that break the temporal alignment among visual observations, robot states, and executed actions. We introduce ActFovea, a plug-and-play safeguarding framework that detects and mitigates such failures without retraining or modifying the underlying VLA policy..</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29169" target="_blank" rel="noopener">arXiv:2607.29169 ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ActFovea는 비전-언어-행동(VLA) 정책을 위한 플러그 앤 플레이 런타임 보호 프레임워크로, 연구팀에 의해 제안되었습니다. 핵심 기여는 행동 조건화 주시(액션 컨디셔닝 포비에이션), 시공간 일관성 모니터링, 결정적 라우팅을 통해 기본 정책을 재훈련하지 않으면서 행동 드리프트, 시각적 지연, 국소적 덮개, 관측 재생의 네 가지 교란을 통합적으로 처리하는 데 있습니다. 핵심 원칙은 시각적 관측, 고유수용감각 변화, 후보 행동이 로봇과 환경의 일관된 물리적 진화를 함께 설명해야 한다는 것입니다.</p>
+<h2 id="_2">무엇을 바꾸는가</h2>
+<p>기존 VLA 안전 보호의痛点은 "머리 아프면 머리 약" 식입니다: 제어 장벽 계층은 동역학 제약만 다루고, 관측 개입은 단일 교란 계열만 처리하며, 대부분 사전에 결정된 보수적 제약을 적용할 뿐 증거에 기반한 동적 의사결정을 하지 않습니다. ActFovea가 진정으로 바꾸는 것은 런타임 보호를 "탐지-거부" 패러다임에서 "탐지-분류-복구" 패러다임으로 업그레이드한다는 점입니다—더 이상 "이 관측이 손상되었는가"를 묻지 않고 "이 손상에 여전히 합리적인 물리적 복구 경로가 존재하는가"를 묻습니다. 이러한 전환을 통해 시스템은 행동 드리프트 시 90.1%의 성공률을 유지하고(표 내 83.1%→90.1% 계산), 시각적 덮개 시 41.0퍼센트 포인트의 절대적 이득을 얻으며, 균일한 보수적 대응이 유효 행동을 억제하는 것을 피합니다.</p>
+<p>또 다른 핵심 변화는 "시간" 차원을 시각-행동 일관성 검사에 통합한 것입니다. 기존 방법은 타임스탬프 건강성을 완전히 무시하거나 단순히 "너무 오래되면 유지"만 수행합니다(Timestamp-Only Hold는 지연 시나리오에서 성공률이 0.0%로 하락). ActFovea는 다중 시점 지연 추정, 누락된 국소 운동 감지, 전역 재생 유사성을 통해 시간적 불일치를 "이진 판정"에서 "복구 가능성 등급화"로 전환하여, 시각적 지연 하에서 86.0%의 성공률을 유지하는 반면 기준선은 76.2%에 불과합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="action-conditioned-foveation">행동 조건화 주시(Action-Conditioned Foveation)</h3>
+<p>로봇 운동학과 최근 행동을 활용하여 보존 마스크를 구축합니다:
+- 접촉 중심 원판 M_{c,t}^v(반경 r_c)와 투영 폴리라인 회랑 M_{Γ,t}^v(반경 r_Γ)의 합집합을 팽창(반경 r_m)하여 M_t^v = Dilate(M_{c,t}^v ∨ M_{Γ,t}^v, r_m)을 얻습니다.
+- 이미지 필터링: Ĩ_t^v = (1 − α B̄_t^v) ⊙ I_t^v + α B̄_t^v ⊙ E(I_t^v), 여기서 E는 배경 정규화, 가우시안 평활화, 색-그레이 혼합이며, α는 유계 편집 강도입니다.
+- 설계 근거: 접촉 관련 영역과 예측 운동 회랑을 보존하고, 작업 무관 시각 콘텐츠를 억제하여 교란 주입 지점이 "주시"에 의해 증폭되는 것을 방지합니다.</p>
+<h3 id="_4">일관성 모니터링 및 위험 집계</h3>
+<ul>
+<li>기하 일관성: 관측 중심과 투영 접촉 중심 간 거리</li>
+<li>동역학 일관성: 예측 및 관측 이미지 변위의 방향과 크기</li>
+<li>시간 증거: 타임스탬프 건강성, 누락된 국소 운동, 지연 추정, 전역 재생 유사성</li>
+<li>가중 위험: R_t = clip(β r̄_t + (1−β) r_t + p_t^cam + p_t^lag + p_t^cal, 0, 1), β와 구성 요소 가중치는 고정 구현 상수이며, 낮은 신뢰도 추정은 0.5로 수축됩니다.</li>
+</ul>
+<h3 id="_5">결정적 라우터 및 복구 경로</h3>
+<ul>
+<li>증거에 따라 교란 유형 추론: 직접 지연→시간 지연; 동역학/고유수용감각 불일치→행동 드리프트; 강한 오래됨/재생 증거 및 래치 활성화→복구 불가 동결</li>
+<li>복구 가능 교란에 대한 후보 관측 라이브러리 구축: 원본 관측, 주시 관측, 시간 안정화 후보(유한 시각적 지연), 공간 복구 연산자(국소 덮개)</li>
+<li>공간 복구: X̂_t^v = clip((P_t^v − α̂_t^v Q̂_t^v)/(1 − α̂_t^v), 0, 255), 마지막 깨끗한 참조와 현재 이미지의 중간 밀집 광류 정렬 기반; 모든 감지 뷰가 재구성되고 가장 약한 뷰 품질이 허용 임계값을 통과할 때만 복구를 수락합니다.</li>
+</ul>
+<h3 id="_6">행동 검증 및 실행 중재</h3>
+<ul>
+<li>검증 점수 V_k = clip(w^T u_k + b_k, 0, 1), w는 고정 비음수 가중치, b_k는 위협 조건 보상; 최종 그리퍼 차원을 제외하고 첫 행동 방향, 끝점 방향, 운동 크기, 평활도, 시야, 블록 드리프트를 측정합니다.</li>
+<li>2단계 중재: 모니터가 λ_t^mon 및 h_t^mon을 생성하고, 검증기가 λ_t^ver 및 h_t^ver을 생성; 최종 행동 â_{t,i}^mot = λ_t^mon λ_t^ver a_{t,i}^{⋆,mot}(i &lt; h_t), h_t = min(h_t^mon, h_t^ver)</li>
+<li>안전 실패: 관측이 지속적으로 오래되었거나 재생될 때 복구를 비활성화하고 유계 운동 억제를 호출; 강한 재생 증거 또는 구성 가능한 오래됨 연속 후에 유지 래치가 활성화되고, 충분히 새로운 증거 후에 해제됩니다.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>행동 조건화 주시를 통합 전처리로 사용</strong>: 기존 방법이 전체 이미지를 강건화하거나 직접 폐기하는 것과 달리, ActFovea는 로봇 운동학을 활용하여 "어떤 픽셀 영역이 현재 행동과 물리적으로 관련되는지"를 예측함으로써 작업 핵심 정보를 보존하면서 교란 주입 지점을 억제합니다. 이는 행동 의도를 시각적 보호의 전처리 단계에 명시적으로 인코딩한 최초의 사례이며, 분할 주석이나 객체 상태에 의존하지 않습니다.</p>
+</li>
+<li>
+<p><strong>이진 거부가 아닌 복구 가능성 분류</strong>: 라우터는 증거 강도에 따라 "복구 가능 교란"(행동 드리프트, 시각적 지연, 국소 덮개)과 "복구 불가 상태"(동결 재생)를 구분하고, 각각 복구 후보 라이브러리 또는 안전 실패를 트리거합니다. 이 설계는 "모든 이상에 복구 시도"로 인한 통제 상실 연장(무 Hold/Safe-Fail 시 컨트롤러가 탐지 후 259.2개 행동 지속)과 "모든 이상에 보수적 억제"로 인한 유효 행동 차단을 모두 피합니다.</p>
+</li>
+<li>
+<p><strong>시공간 일관성을 통합 탐지 신호로 사용</strong>: 기하 일관성(공간), 동역학 일관성(시간-공간 결합), 시간 증거(순수 시간)를 가중 위험으로 융합하여, 시스템이 "국소적으로 덮였지만 시간적으로 건강한 관측"과 "재생되었지만 공간적으로 그럴듯해 보이는 관측" 같은 미세한 차이를 구분할 수 있습니다. 이는 표 4에서 w/o Threat Typing이 시각적 덮개 하에서 이득이 −7.6으로 하락하는 반면, 완전 모델은 +41.0에 도달하는 것으로 나타납니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<p>실험은 LIBERO 벤치마크에서 동결된 π_0 체크포인트를 사용하여, 네 개의 10-작업 스위트 각각 2,000개 에피소드로 네 가지 교란 유형을 다룹니다.</p>
+<table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>지표</th>
+<th>Base VLA</th>
+<th>ActFovea</th>
+<th>이득</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action Drift</td>
+<td>Disturbed SR</td>
+<td>83.1%</td>
+<td>90.1%</td>
+<td>+7.0</td>
+</tr>
+<tr>
+<td>Visual Delay</td>
+<td>Disturbed SR</td>
+<td>76.2%</td>
+<td>86.0%</td>
+<td>+9.8</td>
+</tr>
+<tr>
+<td>Visual Overlay</td>
+<td>Disturbed SR</td>
+<td>49.3%</td>
+<td>90.3%</td>
+<td>+41.0</td>
+</tr>
+<tr>
+<td>Frozen Replay</td>
+<td>Timely Safe Failure</td>
+<td>0.00%</td>
+<td>100.00%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>표 2는 훈련 무관 런타임 방법과의 비교: ActFovea는 시각적 덮개에서 90.3%로 Action Clip/Smoothing의 30.9% 및 Fixed Short Horizon의 32.4%를 크게 능가; 시각적 지연에서 86.0%로 Timestamp-Only Hold의 0.0%를 크게 능가. 표 3은 완전 실행기가 동결 재생 하에서 100% 적시 안전 실패를 달성하고, 탐지 후 2.0개의 유계 행동 단계만 실행하며, 누적 운동 노름 0.326, 행동 경계 위반 없음; 반면 무 Hold/Safe-Fail 시 컨트롤러는 259.2개 행동을 지속하고 누적 운동 241.98(표 내 수치 계산, 탐지 후 행동 수 99.23% 감소, 누적 운동 99.87% 감소).</p>
+<p>표 4 소거 실험: w/o Recovery Bank는 시각적 덮개에서 이득이 −33.3으로 하락, w/o Candidate Expansion은 −31.7로 하락, w/o Action Verification은 행동 드리프트에서 이득이 −1.2로 하락하여, 복구 후보 라이브러리, 후보 확장, 행동 검증이 모두 필수적임을 증명합니다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<ul>
+<li>공식적 충돌 회피 보장은 메커니즘 범위에 없으며, 안전 실패는 보수적 운동 억제만 의미하고 물리적 안전성 증명을 제공하지 않습니다.</li>
+<li>인터페이스 이후에 교란이 도입되는 경우(즉, 정책 내부 또는 실행기 계층에 이미 진입)는 위협 모델에 포함되지 않습니다.</li>
+<li>재훈련이나 매개변수 최적화가 수행되지 않았으며, 기본 VLA 정책은 동결 상태를 유지; 모든 선택 규칙은 추론 시 고정되고 훈련 목표가 추가되지 않습니다.</li>
+<li>보상 신호, 시뮬레이터 객체 상태, 분할 주석 또는 교란 유형 사전 정보가 제공되지 않음; 투영을 사용할 수 없을 때 등속 데카르트 외삽 또는 이전 추적 중심 및 이미지 평면 방향 추론에 의존하며, 극단적 운동에서 실패할 수 있습니다.</li>
+<li>논문은 하드웨어 플랫폼 세부 사항과 추론 지연 오버헤드를 명시하지 않았습니다.</li>
+</ul>
+<h2 id="_10">공학적 시사점</h2>
+<p>재현 시 세 가지를 먼저 확인하십시오: 첫째, 행동 조건화 주시의 마스크 구축—투영을 사용할 수 없을 때의 외삽 전략이 덮개 시나리오의 복구 품질에 직접 영향을 미치므로, 빠른 회전에서 등속 외삽의 안정성을 우선 검증할 것을 권장합니다; 둘째, 위험 집계에서 β와 구성 요소 가중치의 고정 상수—논문은 구체적인 값을 제공하지 않으므로 자체 보정이 필요하며, 낮은 신뢰도가 0.5로 수축되는 동작은 지연 시나리오에 큰 영향을 미칩니다; 셋째, 공간 복구의 허용 임계값—모든 감지 뷰가 재구성되고 가장 약한 뷰 품질이 임계값을 통과할 때만 복구를 수락하며, 임계값이 너무 엄격하면 w/o Recovery Bank로 퇴화하고(시각적 덮개 이득 −33.3), 너무 느슨하면 잘못된 복구가 도입됩니다.</p>
+<p>가장 쉽게 함정에 빠지는 것은 Timestamp-Only Hold의 "가짜 안전"입니다: 동결 재생 쿼리에서 96.55% 시간 동안 유지되지만, 종료 안전 실패로 전환되지 않아 작업이 적시 실패가 아닌 교착 상태가 됩니다. ActFovea의 유지 래치는 강한 재생 증거 또는 구성 가능한 오래됨 연속 후에 활성화되고, 충분히 새로운 증거 후에 해제되어야 합니다—구현 시 래치 해제 조건이 재생 탐지와 분리되도록 보장해야 하며, 그렇지 않으면 0.0% 적시 안전 실패의 실패 모드가 재현됩니다. 하위 팀 통합 시, 먼저 시각적 덮개 시나리오로 복구 후보 라이브러리의 허용 로직을 검증한 다음, 행동 검증의 가중치 벡터를 점진적으로 개방할 것을 권장합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_actfovea_runtime_safeguarding_vla_polici_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#action-conditioned-foveation">행동 조건화 주시(Action-Conditioned Foveation)</a></li>
+<li><a href="#_4">일관성 모니터링 및 위험 집계</a></li>
+<li><a href="#_5">결정적 라우터 및 복구 경로</a></li>
+<li><a href="#_6">행동 검증 및 실행 중재</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

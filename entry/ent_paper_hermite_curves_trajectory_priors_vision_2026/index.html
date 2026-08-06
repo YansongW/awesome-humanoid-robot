@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hermite Curves as Trajectory Priors for Vision-Language-Action Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Hermite Curves as Trajectory Priors for Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Hermite Curves as Trajectory Priors for Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Hermite Curves as Trajectory Priors for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] guardrail fix: unverifiable numbers corrected to full-text-verbatim or marked as computed/未提取 (catchup sweep audit).">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出用分段三次 Hermite 样条作为视觉-语言-动作模型（VLA）的轨迹先验，将动作块显式参数化为端点位置与速度，并通过三个集成变体（离散 DH、连续 CH、正则化 Reg）验证其效果。核心贡献在于证明轨迹平滑度作为学习阶段的归纳偏置（而非推理约束）能显著提升任务成功率与轨迹质量，其中 Hermite-VLA Reg 以零推理开销取得最佳性能。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01265" target="_blank" rel="noopener">arXiv:2608.01265 Hermite Curves as Trajectory Priors for Vision-Language-Action Models</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>VLA 动作生成长期面临一个被忽视的结构性缺陷：动作块被建模为扁平离散序列，块内平滑性与块间连续性完全依赖隐式学习，而跨块接缝处的速度是跨块有限差分，不属于任何单个参数集，因此在标准逐块行为克隆目标下不受直接监督。这导致长时程闭环操作中轨迹粗糙、接缝瞬态尖峰明显，物理控制不稳定且策略漂移累积。作者真正改变的是将动作块从"坐标序列"重新定义为"边界状态（位置+速度）的 Hermite 插值"，使平滑性成为可显式监督、可理论分析的结构属性，而非事后滤波或正则化的副产品。</p>
+<p>更关键的是，这项工作改变了"平滑度提升"的归因逻辑。作者通过控制实验（对比成功与失败轨迹的 jerk）排除了幸存者偏差——平滑度提升并非仅由更高成功率造成，而是先验本身带来的独立效应。这为轨迹级归纳偏置在 VLA 中的价值提供了因果性证据，而非相关性证据。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="hermite">核心算子：分段三次 Hermite 插值</h3>
+<ul>
+<li>动作块 a^c ∈ ℝ^{T×D_c} 被参数化为 K 段 Hermite 样条，每段由端点位置 (p_s, p_e) 与速度 (v_s, v_e) 定义，共 4K 个边界坐标 θ ∈ ℝ^{4K×D_c}</li>
+<li>线性算子 H ∈ ℝ^{T×4K} 将边界坐标映射到轨迹空间：a^c = Hθ，H 由 Hermite 基函数 h₀₀, h₁₀, h₀₁, h₁₁ 构成，预计算并缓存在加速器上</li>
+</ul>
+<h3 id="_3">三个集成变体</h3>
+<ul>
+<li><strong>Hermite-VLA DH（离散）</strong>：替换 π₀-FAST 分词器，将每个 Hermite 坐标量化为 256 个 bin，实现离散 token 化</li>
+<li><strong>Hermite-VLA CH（显式通道）</strong>：流匹配头的干净预测重构为"样条骨架 + 逐时间步残差"：â_clean = Hθ + r，推理时先估计 θ 再叠加残差，Hermite 先验在每个去噪步骤主动条件化生成轨迹</li>
+<li><strong>Hermite-VLA Reg（正则化）</strong>：附加辅助头 MLP_aux 将时间平均特征映射到 θ，通过 L_aux = ‖Hθ_aux − a_gt^c‖₂² 监督，总损失 L_Reg = L_flow + λ·L_aux，推理时完全丢弃辅助头，零额外开销</li>
+</ul>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li><strong>轨迹空间监督而非 θ 空间监督</strong>：轨迹空间损失在 H^T H 度量下加权每个边界坐标，速度列严格有界（max|h₁₀| = max|h₁₁| = 4/27），避免 θ 空间单位度量损失不成比例惩罚速度误差</li>
+<li><strong>软先验而非硬约束</strong>：保留策略表达力，以绝对连续性换取灵活性</li>
+<li><strong>单侧有限差分编码器</strong>：v_s = s(F(1/s) − F(0))，引入 O(s²) 收敛率（而非精确切线的 O(s⁴)），但避免了对未知真值导数的依赖</li>
+</ul>
+<h3 id="_5">理论保证</h3>
+<ul>
+<li><strong>命题 3.1</strong>：轨迹空间损失与 θ 空间损失监督相同最小二乘目标，但度量不同</li>
+<li><strong>命题 3.2</strong>：近似误差以 K⁻² 衰减，容许 jerk 上限以 K³ 增长，预示 K 存在内部最优（经验最优 K=2）</li>
+<li><strong>命题 3.3</strong>：接缝位置不连续由轨迹空间残差直接控制（无需 σ_min(H)），速度不连续需经过坐标空间并受 1/σ_min(H) 放大</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>接缝位置与速度的解耦控制</strong>：命题 3.3 证明位置接缝由轨迹空间残差直接界定（式 23，无 σ_min(H) 因子），而速度接缝需经过坐标空间（式 24，受 1/σ_min(H) 放大）。这一区分解释了为何位置连续性易得而速度连续性难保，为后续优化提供了精确靶点。</p>
+</li>
+<li>
+<p><strong>可辨识性上限的发现</strong>：T=10 时 K=3 导致 H 列秩亏缺（σ_min = 0），边界坐标从解码轨迹不可辨识。这为 K 消融实验中的退化现象提供了与偏差-保真度权衡互补的解释，且是首个将轨迹参数化可辨识性与 VLA 性能直接关联的理论结果。</p>
+</li>
+<li>
+<p><strong>零开销正则化范式</strong>：Hermite-VLA Reg 将先验严格作为辅助训练目标，推理时完全移除，在取得最佳性能（LIBERO 98.7%）的同时保持与基线完全相同的推理延迟（48.6 ms vs 48.4 ms）。这证明了轨迹平滑性作为学习阶段归纳偏置的价值，而非推理阶段约束。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="libero">仿真基准（LIBERO 成功率 %）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>LIBERO</th>
+<th>LIBERO-plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅</td>
+<td>95.9</td>
+<td>85.7</td>
+</tr>
+<tr>
+<td>Hermite-VLA CH</td>
+<td>97.7</td>
+<td>85.0</td>
+</tr>
+<tr>
+<td>Hermite-VLA Reg</td>
+<td><strong>98.7</strong></td>
+<td><strong>90.9</strong></td>
+</tr>
+<tr>
+<td>Hermite-VLA DH</td>
+<td>95.4</td>
+<td>69.4</td>
+</tr>
+<tr>
+<td>Spline Policy（并行工作）</td>
+<td>原文为表格图，数值未提取</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="15-rollout">真实机器人（平均成功率 %，15 次 rollout/任务）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Task 1</th>
+<th>Task 2</th>
+<th>Task 3</th>
+<th>Task 4</th>
+<th>Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅</td>
+<td>86.7</td>
+<td>26.7</td>
+<td>46.7</td>
+<td>93.3</td>
+<td>63.4</td>
+</tr>
+<tr>
+<td>Hermite-VLA CH</td>
+<td>86.7</td>
+<td>60.0</td>
+<td>80.0</td>
+<td>100.0</td>
+<td>81.7</td>
+</tr>
+<tr>
+<td>Hermite-VLA Reg</td>
+<td><strong>100.0</strong></td>
+<td><strong>66.7</strong></td>
+<td><strong>93.3</strong></td>
+<td><strong>100.0</strong></td>
+<td><strong>90.0</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">关键消融</h3>
+<ul>
+<li><strong>λ 注入强度</strong>：λ=10 最优（98.7%），λ=0 时 95.9%，λ=20 退化至 97.5%</li>
+<li><strong>K 段数</strong>：K=2 最优（98.7%），K=1 为 93.7%，K=3 降至 96.6%，K=4 降至 95.8%</li>
+<li><strong>监督空间</strong>：θ 空间+最小二乘目标仅 91.5%，轨迹空间+残差（完整 CH）达 97.7%</li>
+<li><strong>边界基</strong>：Hermite（98.7%）优于 B-spline（97.6%）、Bernstein（96.9%）、Polynomial（96.7%）</li>
+</ul>
+<h3 id="_9">平滑度与因果性</h3>
+<ul>
+<li>π₀.₅ 失败轨迹 jerk（0.00070）显著高于成功轨迹（0.00046），而 Hermite-VLA Reg 失败轨迹 jerk（0.00048）接近其成功轨迹（0.00040），证明平滑度提升非幸存者偏差</li>
+<li>真实机器人接缝不连续性：Hermite-VLA Reg 相对 π₀.₅ 降至 0.48×（Task 3），加速度与 jerk RMS 均显著更低（p &lt; 10⁻⁴）</li>
+</ul>
+<h3 id="h1001000">推理成本（单 H100，1000 次平均）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>延迟 (ms)</th>
+<th>FPS</th>
+<th>峰值显存 (GB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀-FAST</td>
+<td>238.2</td>
+<td>4.2</td>
+<td>7.57</td>
+</tr>
+<tr>
+<td>Hermite-VLA DH</td>
+<td>28.9</td>
+<td>34.6</td>
+<td>6.66</td>
+</tr>
+<tr>
+<td>π₀.₅</td>
+<td>48.4</td>
+<td>20.7</td>
+<td>6.63</td>
+</tr>
+<tr>
+<td>Hermite-VLA CH</td>
+<td>49.4</td>
+<td>20.2</td>
+<td>6.64</td>
+</tr>
+<tr>
+<td>Hermite-VLA Reg</td>
+<td>48.6</td>
+<td>20.6</td>
+<td>6.85</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>软先验的固有边界</strong>：接缝尖峰被缩小但未完全消除，速度连续性保证在仿真时域（T=10）比真实机器人时域（T=50）更宽松（1/σ_min 分别为 53.0 vs 9.5）</li>
+<li><strong>单侧差分编码器的代价</strong>：端点速度估计引入 O(s²) 收敛率，若用精确导数可恢复 O(s⁴)，但需未知真值信息</li>
+<li><strong>离散通道未建模</strong>：夹爪等非平滑通道被排除在 Hermite 先验之外，仅连续子空间受约束</li>
+<li><strong>K 值未在 T=50 扫描</strong>：真实机器人时域的最优 K 未经验证，仅依赖仿真结论</li>
+<li><strong>因果方向性未完全解决</strong>：平滑度与成功率之间的因果机制仍部分依赖外部引用，本文控制实验提供了证据但未完全闭合</li>
+<li><strong>泛化范围有限</strong>：未验证精细装配、高动态接触等复杂操作场景</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>优先复现 Hermite-VLA Reg</strong>：零推理开销且性能最佳，实现最简单（仅训练时附加辅助头），是工程性价比最高的变体</li>
+<li><strong>核对 H 矩阵条件数</strong>：T=10 时 K 必须 ≤ 2，否则 σ_min = 0 导致速度保证退化；T=50 时 K ≤ 12 均安全，但 K=2 仍是经验最优</li>
+<li><strong>注意监督空间选择</strong>：务必在轨迹空间（‖Hθ − a‖₂²）而非 θ 空间施加损失，否则速度误差会被不成比例惩罚（强度至少 6.75 倍）</li>
+<li><strong>接缝位置与速度分开评估</strong>：位置接缝由轨迹残差直接控制，速度接缝受 1/σ_min 放大，调试时若速度尖峰明显应先检查 σ_min 而非残差</li>
+<li><strong>λ 与 K 需重新调优</strong>：λ=10、K=2 在 LIBERO 最优，但换基准或本体后需重新扫描，λ 在 5–20 区间、K 在 2–5 区间内性能相对平坦</li>
+<li><strong>最容易踩坑</strong>：四舍五入网格下 T=10、K=2 时 i₁=4，LIBERO 窗口 W=5 恰好节点对齐（W−1=4），真实机器人 W=20 则非对齐——评估接缝指标时需区分这两种情况</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01265</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">FAST</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_hermite_curves_trajectory_priors_vision_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FAST</h3>
+          <p>FAST 是 2025 年由 Physical Intelligence、UC Berkeley 和 Stanford…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#hermite">核心算子：分段三次 Hermite 插值</a></li>
+<li><a href="#_3">三个集成变体</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+<li><a href="#_5">理论保证</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#libero">仿真基准（LIBERO 成功率 %）</a></li>
+<li><a href="#15-rollout">真实机器人（平均成功率 %，15 次 rollout/任务）</a></li>
+<li><a href="#_8">关键消融</a></li>
+<li><a href="#_9">平滑度与因果性</a></li>
+<li><a href="#h1001000">推理成本（单 H100，1000 次平均）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

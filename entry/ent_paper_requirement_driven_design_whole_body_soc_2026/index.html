@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Requirement-Driven Design of Whole-Body Social Tactile Sensing via Virtual Human-Robot Interaction · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Requirement-Driven Design of Whole-Body Social Tactile Sensing via Virtual Human-Robot Interaction</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Requirement-Driven Design of Whole-Body Social Tactile Sensing via Virtual Human-Robot Interaction</h1>
+      <p class="entry-name-en">Requirement-Driven Design of Whole-Body Social Tactile Sensing via Virtual Human-Robot Interaction</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种需求驱动的全身社交触觉传感设计框架，通过VR平台采集人机交互数据，离线重建接触几何并在任意虚拟传感配置下重编码，从而在硬件制造前推导出空间分辨率与放置需求。作者来自Pollen Robotics相关团队，核心贡献是将触觉传感设计从硬件驱动转向数据驱动，并给出约1.3 cm²/taxel的量化基线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11690" target="_blank" rel="noopener">arXiv:2607.11690 Requirement-Driven Design of Whole-Body Social Tactile Sensing via Virtual Human</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>传统spHRI触觉设计是“先造硬件、再调算法”的路径：传感器覆盖范围与分辨率由工程可行性决定，手势识别模型在固定配置上训练，导致传感布局与交互需求严重脱节。本文改变了这一范式——它把设计问题从“我们能感知什么”翻转为“自然交互需要什么”，并首次用硬件无关的数据表示直接从接触数据推导传感需求。这一转变的意义在于，它让触觉皮肤的空间分辨率与放置位置成为可优化变量，而非既定约束，为全身触觉系统的成本控制与性能上限提供了先验依据。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">数据采集平台</h3>
+<ul>
+<li>参与者佩戴带6个振动执行器的触觉手套（每指一个、掌心一个），在Unity构建的虚拟客厅中与Reachy机器人（2021版，articulation bodies实现）交互。</li>
+<li>每帧记录6-DoF手部关节与机器人网格位姿，接触事件不实时存储，离线重建。</li>
+</ul>
+<h3 id="_4">接触几何重建</h3>
+<ul>
+<li>手部用附着于跟踪关节的球体基元近似（每指段与手掌多球体），机器人用凸三角形网格。</li>
+<li>每渲染帧计算球心到网格表面的最小距离，小于球体半径即注册二进制接触。</li>
+</ul>
+<h3 id="_5">虚拟传感器模拟</h3>
+<ul>
+<li>机器人左臂近似为圆柱体，三角形顶点投影到表面，参数化为(h,a)∈[0,1]×[0,1]（h轴向、a角向）。</li>
+<li>圆形接触区域在参数化下变换为椭圆，栅格化到H×W离散网格，保留空间范围与方向，尊重角向周期性。</li>
+<li>帧t的网格G_t∈R^{H×W}，每单元编码二进制接触，不含力与速度。</li>
+</ul>
+<h3 id="_6">分类与评估</h3>
+<ul>
+<li>八种手势，随机森林（32个手工特征：激活、运动、空间范围、空间扩散）与CNN-GRU（三层CNN通道16/32/64，GRU 128隐藏单元，AdamW，lr=10⁻³）。</li>
+<li>留一被试交叉验证（LOSO），在50种触觉分辨率下评估。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li><strong>硬件无关的数据表示</strong>：首次用可配置分辨率的接触网格直接从交互数据推导传感需求，无需重新采集数据即可模拟任意传感器布局，这是对硬件驱动范式的根本性替代。</li>
+<li><strong>需求驱动的设计闭环</strong>：将传感设计从“可行性约束”中解放，使分辨率与放置成为交互数据可优化的输出，而非输入。这为全身触觉皮肤的成本-性能权衡提供了量化依据。</li>
+<li><strong>VR平台的可重放性</strong>：离线碰撞检测允许事后重建接触点，研究者可反复测试不同传感配置而不增加被试负担，这是物理原型无法实现的实验自由度。</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="_9">数据集与设置</h3>
+<ul>
+<li>第一项研究：12名参与者（6男5女1非二元，年龄19–67，均值28.5，SD 12.6），识别出九种重复手势，八种入选。</li>
+<li>第二项研究：18名参与者（10男，均值24.1，SD 4.9），20个块×8手势×2部位（手臂/躯干），计划5760次试验，因数据缺失最终5520次。</li>
+</ul>
+<h3 id="_10">关键结果</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>性能拐点</td>
+<td>8 taxels</td>
+<td>低于此分辨率分类性能快速下降</td>
+</tr>
+<tr>
+<td>稳定阈值</td>
+<td>18 taxels/24 cm</td>
+<td>超过此密度性能不再显著提升</td>
+</tr>
+<tr>
+<td>合理基线</td>
+<td>1.3 cm²/taxel</td>
+<td>二进制接触编码下的空间分辨率建议</td>
+</tr>
+<tr>
+<td>性能显著下降阈值</td>
+<td>4.8 cm²/taxel</td>
+<td>粗于此分辨率分类性能明显恶化</td>
+</tr>
+<tr>
+<td>场景区分显著性</td>
+<td>p&lt;0.05</td>
+<td>所有场景对SWD配对比较均显著（Holm–Bonferroni校正）</td>
+</tr>
+</tbody>
+</table>
+<p>结果含义：性能在8–18 taxels区间内快速提升后饱和，说明存在“够用即可”的传感密度阈值，过密配置收益递减。1.3 cm²/taxel可作为设计起点，粗于4.8 cm²则不可接受。</p>
+<h2 id="_11">边界与局限</h2>
+<ul>
+<li>触觉模拟仅编码二进制接触，未建模力、压力、剪切或速度，这些模态可能改变分辨率需求。</li>
+<li>分辨率分析仅在机器人手臂上进行，躯干与头部需求未验证；结论应在简化接触表示与单一形态（Reachy）范围内解释。</li>
+<li>VR交互无法完全复现真实物理触摸，可能影响手势自然度；系统仅依赖手部跟踪，无全身跟踪。</li>
+<li>框架未用物理触觉皮肤验证，也未针对自然发生的物理社交触摸评估。</li>
+<li>定量建议是设计基线而非通用规格，不同机器人形态、任务情境与用户群体可能产生不同需求。</li>
+</ul>
+<h2 id="_12">工程启示</h2>
+<p>复现时先核对接触检测的球体半径与网格分辨率参数——它们直接决定接触斑块的空间范围，是后续所有分析的基石。最容易踩坑的是圆柱参数化中的角向周期性：栅格化时若不处理a=0与a=1的边界连续性，会引入虚假的接触断裂。下游团队选型时，建议以1.3 cm²/taxel为起点做成本-性能权衡，但需注意该值基于二进制编码与手臂场景，若引入力或剪切模态需重新推导。数据预处理中50帧裁剪/填充与2%的salt-and-pepper噪声模拟是复现分类结果的关键细节，不可省略。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.11690</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12_1_1/">传感器选型与标定</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_requirement_driven_design_whole_body_soc_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p12_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>传感器选型与标定</h3>
+          <p>- P12.1.1.1 输入梳理与目标量化 - 整理「传感器选型与标定」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">数据采集平台</a></li>
+<li><a href="#_4">接触几何重建</a></li>
+<li><a href="#_5">虚拟传感器模拟</a></li>
+<li><a href="#_6">分类与评估</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#_9">数据集与设置</a></li>
+<li><a href="#_10">关键结果</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

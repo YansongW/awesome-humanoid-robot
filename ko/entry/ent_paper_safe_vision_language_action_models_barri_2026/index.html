@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safe Vision Language Action Models via Barrier Enhanced Flow Matching · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Safe Vision Language Action Models via Barrier Enhanced Flow Matching</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Safe Vision Language Action Models via Barrier Enhanced Flow Matching</h1>
+      <p class="entry-name-en">Safe Vision Language Action Models via Barrier Enhanced Flow Matching</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>This article presents a modular inference framework that integrates Flow Matching generative models with formal Control Barrier Function (CBF) safety guarantees. Unlike existing methods that apply external safety filters to a model&#39;s final output, our approach modifies the Flow Matching denoising process within the model to inherently generate safe trajectories. By employing a smooth.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29569" target="_blank" rel="noopener">arXiv:2607.29569 Safe Vision Language Action Models via Barrier Enhanced Flow Matching</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 barrier-enhanced flow matching(CBF-FM) 프레임워크를 제안하며, 제어 장벽 함수(CBF) 안전 보장을 사후 필터링이 아닌 플로우 매칭(Flow Matching) 기반 생성형 비전-언어-행동(VLA) 모델의 디노이징 과정에 직접 통합한다. 이 방법은 Log-Sum-Exp 평활 집계와 해석적으로 풀 수 있는 CBF-QP 수정항을 통해, 재학습이나 안전 데이터셋 없이도 궤적 안전성, 평활성, 계산 효율성을 동시에 향상시키며, 시뮬레이션과 두 가지 하드웨어 플랫폼에서 검증한다.</p>
+<h2 id="_2">무엇을 바꾸는가</h2>
+<p>기존 생성형 안전 필터(예: SafeDiffuser, SafeFM)는 VLA 행동 블록에서 근본적인 결함을 가진다: SafeDiffuser는 디노이징 전 과정에 경성 제약을 가해 69%의 "트랩" 실패율(궤적 정체)을 유발하며, SafeFM은 부분적으로 완화하지만 계산 시간이 14.14초에 달하고 궤적 곡률과 가속도 패널티가 크다. 이러한 방법들은 본질적으로 "사후 패치" 방식이다—완전히 생성된 궤적을 필터링하여 플로우 매칭의 분포 일관성을 파괴하고 분포 외 샘플을 유발한다. 본 논문이 실제로 바꾸는 것은 안전 개입의 시점과 세분성이다: CBF 제약을 디노이징 ODE의 각 단계에 내장하여 안전을 생성 과정의 고유 속성으로 만들고 외부 부가 조건이 아닌 것으로 만든다. 이는 안전 보장이 최종 출력 수정에 의존하지 않고, 노이즈에서 궤적으로의 진화 경로상 각 지점에서 장벽 조건을 충족함을 의미하며, 수학적으로 종단 상태의 안전성을 보장하고(정리 4), 사전 훈련된 모델의 의미적 의도를 유지한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="cbf">핵심 메커니즘: 디노이징 과정에서의 CBF 수정</h3>
+<ul>
+<li>플로우 매칭 ODE(식 11)에 수정항 δ_s를 도입하여 CBF-QP(식 12)를 구성하며, 그 해석적 해는 다음과 같다:
+  δ_s = ReLU(-αh(z) - ∇_z h(z) v_θ(τ,z)) / ||∇_z h||² ∇_z h
+  여기서 h는 장벽 함수, α는 감쇠율, v_θ는 사전 훈련된 속도장, τ는 디노이징 시간 단계이다.</li>
+</ul>
+<h3 id="log-sum-exp-min">평활 집계: Log-Sum-Exp로 min 연산자 대체</h3>
+<ul>
+<li>행동 블록 내 다중 상태 장벽 값에 대해 LSE 집계(식 8)를 사용하여 비평활 min 연산자를 대체하며, 근사 오차는 유계이다(정리 2):
+  min_i h(q_i) - ln(H)/κ ≤ h(z˘) ≤ min_i h(q_i)
+  여기서 H는 상태 수, κ는 평활 파라미터이다. 이는 QP가 미분 가능하고 기울기 정보가 완전함을 보장한다.</li>
+</ul>
+<h3 id="_4">단계적 개입: 후기 디노이징만 적용</h3>
+<ul>
+<li>τ ∈ [τ_s, 1]에서만 안전 필터링을 적용하는데, 초기 중간 상태는 구조 없는 노이즈와 유사하여 물리적 의미가 부족하기 때문이다. 안전 보장(정리 4):
+  τ_s ≤ h_0/M(h_0 초기 장벽 값, M 최악 감쇠율)이면, h(ψ(z,1.0)) ≥ (h_0 - Mτ_s)e^{-α(1-τ_s)} &gt; 0.</li>
+</ul>
+<h3 id="_5">확장 제약: 속도 제한 및 평활성</h3>
+<ul>
+<li>QP(식 19)에 희소 행렬 D로 표현된 속도 제한(박스 제약 ±0.1 rad/s)과 가중 평활 항(파라미터 λ)을 추가하여 실시간 해석 가능성을 보장한다(qpth 솔버 사용).</li>
+</ul>
+<h3 id="_6">장벽 함수 예시</h3>
+<ul>
+<li>벽 장벽: 평면 법선 벡터 n과 오프셋 d 기반(식 20-21); 구형 장벽: 중심 p_center와 반경 r 기반(식 22-23). 모두 순수 운동학적 함수로 동역학 모델이 필요 없다.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li><strong>생성 과정 내장 안전이 아닌 사후 필터링</strong>: 기존 방법은 완전한 궤적에 제약을 가하지만, 본 논문은 ODE 적분 과정에서 각 지점을 수정하여 분포 외 샘플을 원천적으로 방지한다. 이는 안전성과 생성 품질의 분리를 가능하게 하는 핵심이다—안전 수정은 플로우 매칭의 주변 분포를 변경하지 않고 샘플링 경로만 조정한다.</li>
+<li><strong>LSE 평활 집계 + 해석적 QP 해</strong>: LSE로 min 연산자를 대체하여 장벽 함수를 전역적으로 평활하게 만들고, QP는 폐쇄형 해(식 13)를 가지므로 SafeDiffuser의 반복 최적화 트랩(69% 실패율)과 SafeFM의 추가 유도 요구를 피하며, 계산 시간이 14.41초에서 10.65초로 단축된다.</li>
+<li><strong>이론적으로 완전한 안전 보장</strong>: 정리 4는 종단 장벽 값의 지수 감쇠 하한을 제공하고, 추론 1은 양호한 장벽 함수와 컴팩트 구성 공간에서 2-Wasserstein 거리가 유계임을 증명한다. 이는 실험 관찰에만 의존하지 않고 검증 가능한 수학적 약속을 안전 중요 배포에 제공한다.</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="maze2d-100-qpth">Maze2D 시뮬레이션(100회 시행, qpth 솔버)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>BS1 (≥0)</th>
+<th>BS2 (≥0)</th>
+<th>Trap (%) ↓</th>
+<th>Time (s) ↓</th>
+<th>κ ↓</th>
+<th>Accel. ↓</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FM (안전 없음)</td>
+<td>-0.762</td>
+<td>-0.938</td>
+<td>0</td>
+<td>1.38</td>
+<td>97.7 ± 1.5</td>
+<td>151.3 ± 4.8</td>
+</tr>
+<tr>
+<td>SafeDiffuser</td>
+<td>-0.003</td>
+<td>-0.003</td>
+<td>69</td>
+<td>14.41</td>
+<td>68.2 ± 90.3</td>
+<td>124.5 ± 34.2</td>
+</tr>
+<tr>
+<td>SafeFM</td>
+<td>-0.3031</td>
+<td>0.003</td>
+<td>12</td>
+<td>14.14</td>
+<td>75.9 ± 2.9</td>
+<td>195.9 ± 22.0</td>
+</tr>
+<tr>
+<td>CBF-FM (Ours)</td>
+<td>0.109</td>
+<td>0.046</td>
+<td>0</td>
+<td>10.65</td>
+<td>7.2 ± 0.4</td>
+<td>3.3 ± 0.1</td>
+</tr>
+</tbody>
+</table>
+<p>CBF-FM은 BS1, BS2를 동시에 비음수로 만족하는 유일한 방법이며, Trap 비율이 0이고 곡률과 가속도가 SafeFM보다 한 자릿수 낮다(표 값 75.9→7.2, 195.9→3.3으로 계산).</p>
+<h3 id="20">하드웨어 조작 실험(각 방법 ≥20회)</h3>
+<table>
+<thead>
+<tr>
+<th>플랫폼</th>
+<th>방법</th>
+<th>Safety (%)</th>
+<th>Success (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SO-101 (5-DoF)</td>
+<td>필터 없음</td>
+<td>15.0</td>
+<td>75.0</td>
+</tr>
+<tr>
+<td>SO-101</td>
+<td>E2E-CBF</td>
+<td>68.2</td>
+<td>68.2</td>
+</tr>
+<tr>
+<td>SO-101</td>
+<td>CBF-FM</td>
+<td>100.0</td>
+<td>77.4</td>
+</tr>
+<tr>
+<td>QArm (4-DoF)</td>
+<td>필터 없음</td>
+<td>0.00</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>QArm</td>
+<td>E2E-CBF</td>
+<td>70.0</td>
+<td>75.0</td>
+</tr>
+<tr>
+<td>QArm</td>
+<td>CBF-FM</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+</tbody>
+</table>
+<p>CBF-FM은 두 플랫폼 모두에서 100% 안전율을 달성하며, 성공률은 필터 없는 기준선 이상이다(SO-101에서 77.4% vs 75.0%, QArm에서 100% vs 100%). 성공 판정은 충돌을 처벌하지 않으므로(Remark 4), 안전율과 성공률은 독립적이다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<ul>
+<li>고도로 동적인 장애물은 처리하지 않음(향후 작업으로 분류), 현재 장벽 함수는 정적 또는 준정적 시나리오용으로 설계됨.</li>
+<li>공간 충돌을 넘어서는 추상적 안전 설명(예: 의미적 안전, 작업 수준 제약)은 다루지 않음.</li>
+<li>장벽 함수는 운동학적 형태이지만, 정리 4의 보장은 최악 감쇠율 M의 추정에 의존하며, 실제로 M은 수동 설정이 필요하고 과보수적이거나 과격하면 성능에 영향을 미친다.</li>
+<li>추론 1의 분포 이동 분석은 "장벽 함수가 양호하고, 구성 공간이 컴팩트하며, 특이점에서 멀다"는 가정에 의존하며, 하드웨어 실험에서는 물체를 특이점 없는 영리한 작업 공간에 엄격히 배치하여 충족하지만, 실제 시나리오에서는 보장할 수 없다.</li>
+<li>계산 오버헤드는 "실시간 해석 가능"이라고만 주장하며 구체적인 수치를 제공하지 않는다(논문에 명시되지 않음).</li>
+</ul>
+<h2 id="_10">공학적 시사점</h2>
+<ul>
+<li><strong>재현 체크포인트</strong>: 먼저 장벽 함수 기울기 ∇_z h가 구성 공간에서 0이 아닌지 확인(추론 1 전제), 그렇지 않으면 QP 해가 퇴화한다. 하드웨어 실험에서 모든 물체는 로봇 팔의 특이점 없는 작업 공간에 엄격히 배치해야 한다.</li>
+<li><strong>파라미터 민감도</strong>: τ_s(후기 디노이징 시작점)와 α(감쇠율)는 핵심 하이퍼파라미터이다. τ_s가 너무 크면 안전 보장이 약해지고(정리 4의 h_0/M 제약), 너무 작으면 초기 노이즈 단계가 과도하게 제약된다. τ_s = 0.5에서 시작하고 α는 장벽 값 감쇠 속도에 따라 조정할 것을 권장한다.</li>
+<li><strong>가장 함정에 빠지기 쉬운 부분</strong>: LSE 평활 파라미터 κ는 근사 오차 경계(ln(H)/κ)에 영향을 미치며, κ가 너무 작으면 장벽 함수가 과평활되어 안전 마진이 허위로 높아진다; 속도 제한의 박스 제약(±0.1 rad/s)은 VLA 프레임 속도와 일치해야 하며, Δt와 물리적 샘플링 시간이 불일치하면 제약이 무효화된다.</li>
+<li><strong>하위 통합</strong>: 추론 필터는 오픈소스 π₀ 모델(LeRobot/PyTorch) 기반으로 구현되며, 디노이징 루프만 수정하면 되고 재학습이 필요 없다. 하위 작업에 다중 장애물이나 동적 장애물이 필요하면 장벽 함수 조합을 직접 확장해야 한다(현재는 벽과 구만 지원).</li>
+<li><strong>성능 기대</strong>: 시뮬레이션에서 계산 시간 10.65초는 여전히 필터 없는 기준선(1.38초)보다 높으며, 실시간 제어 루프에 배포하려면 QP 해석을 더 최적화하거나 필터링 빈도를 낮춰야 한다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_lerobot_2024/">LeRobot</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_safe_vision_language_action_models_barri_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_software_lerobot_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>LeRobot</h3>
+          <p>데이터셋 형식, 텔레오퍼레이션, 학습 및 배포를 포괄하는 엔드투엔드 PyTorch 라이브러리.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#cbf">핵심 메커니즘: 디노이징 과정에서의 CBF 수정</a></li>
+<li><a href="#log-sum-exp-min">평활 집계: Log-Sum-Exp로 min 연산자 대체</a></li>
+<li><a href="#_4">단계적 개입: 후기 디노이징만 적용</a></li>
+<li><a href="#_5">확장 제약: 속도 제한 및 평활성</a></li>
+<li><a href="#_6">장벽 함수 예시</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#maze2d-100-qpth">Maze2D 시뮬레이션(100회 시행, qpth 솔버)</a></li>
+<li><a href="#20">하드웨어 조작 실험(각 방법 ≥20회)</a></li>
+</ul>
+</li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

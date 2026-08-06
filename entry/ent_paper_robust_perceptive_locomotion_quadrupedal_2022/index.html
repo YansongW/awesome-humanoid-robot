@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning robust perceptive locomotion for quadrupedal robots in the wild · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning robust perceptive locomotion for quadrupedal robots in the wild</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Learning robust perceptive locomotion for quadrupedal robots in the wild</h1>
+      <p class="entry-name-en">Learning robust perceptive locomotion for quadrupedal robots in the wild</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P012. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一套三阶段训练框架（教师-学生-零样本部署），让四足机器人 ANYmal-C 在野外环境中端到端融合外部感知与本体感觉，核心创新是带注意力门控的循环信念编码器。该控制器在阿尔卑斯山 2.2 km 徒步、DARPA 地下挑战赛等真实场景中实现零失败，并在台阶、障碍赛道等实验中显著超越纯本体感觉基线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2201.08117" target="_blank" rel="noopener">arXiv:2201.08117 Learning robust perceptive locomotion for quadrupedal robots in the wild</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这项工作的真正改变在于：它打破了“地图质量必须完美”这一隐含假设，将外部感知从“决策依据”降级为“可被质疑的观测信号”。以往方法要么完全依赖外部感知（在雪、反光、遮挡下失效），要么退回纯本体感觉（速度受限，需用脚“摸”地形）。本文通过门控机制让策略自主决定何时信任视觉、何时信任触觉，使机器人能在感知可靠时获得预测优势，在感知失效时无缝退化为触觉驱动，且这一决策过程是端到端学习得到的，而非人工设计的启发式规则。</p>
+<p>另一个深层改变是：它将“感知-控制”耦合问题重新定义为部分可观测马尔可夫决策过程（POMDP）下的信念估计问题。通过循环编码器维护对地形和自身状态的“信念”，而非依赖单帧地图，这使得控制器能利用时间一致性来修正错误感知——例如接触后更新地形估计，并在脚离地后保持修正结果。这比单纯堆叠传感器或改进建图算法更接近生物运动控制的本质。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">三阶段训练流程</h3>
+<ol>
+<li><strong>教师策略</strong>：使用 PPO 在 RaiSim 中训练，访问特权信息（无噪声地形、摩擦系数、接触力等），在随机地形上跟随目标速度。观测包括本体感觉 <code>o_t^p</code>、外部感知 <code>o_t^e</code>（每脚周围 5 个半径的高度采样）和特权状态 <code>s_t^p</code>。</li>
+<li><strong>学生策略</strong>：通过行为克隆损失 <code>L_bc</code> 和重建损失 <code>L_re</code> 蒸馏教师，仅使用现场可获得的观测 <code>(o_t^p, n(o_t^e))</code>，其中 <code>n(·)</code> 为噪声模型。学生由循环信念编码器 + MLP 组成，可复用教师权重初始化。</li>
+<li><strong>零样本部署</strong>：直接部署到物理机器人，无微调。</li>
+</ol>
+<h3 id="_4">信念编码器（核心组件）</h3>
+<ul>
+<li>输入：本体感觉 <code>o_t^p</code>、带噪外部感知特征 <code>l_t^e = g_e(o_t^e~)</code>、隐藏状态 <code>s_t</code>。</li>
+<li>中间信念：<code>b_t' = RNN(o_t^p, l_t^e, s_t)</code>，使用 2 层 GRU（每层 50 单元）。</li>
+<li>注意力门控：<code>α = σ(g_a(b_t'))</code>，控制外部感知信息流入量。</li>
+<li>最终信念：<code>b_t = g_b(b_t') + l_t^e ⊙ α</code>，维度 120（96 外部 + 24 特权）。</li>
+<li>解码器使用相同门控重建特权信息和高度采样，计算重建损失。</li>
+</ul>
+<h3 id="_5">关键设计决策</h3>
+<ul>
+<li><strong>高度图作为中间抽象</strong>：策略接收高度采样点而非原始点云，使模型独立于具体传感器（LiDAR 或立体相机均可，无需重新训练）。</li>
+<li><strong>楼梯用盒子建模</strong>：高度图建模的楼梯边缘非垂直，策略会利用该伪影导致 sim-to-real 迁移差。</li>
+<li><strong>噪声模型</strong>：三种条件（名义 60%、大偏移 30%、大噪声 10%）在训练回合开始时随机选择，噪声幅度随课程因子 <code>c_sk</code> 线性增加。</li>
+<li><strong>CPG 启发的动作空间</strong>：每条腿有相位变量 <code>φ_l</code>，策略输出相位修改量 <code>Δφ_l</code> 和残差关节目标 <code>Δq_i</code>，名义轨迹经逆运动学映射为 12 个关节目标。</li>
+</ul>
+<h3 id="_6">奖励设计</h3>
+<p>总奖励 <code>r = 0.75(r_lv + r_av + r_lvo) + r_b + 0.003 r_fc + 0.1 r_co + 0.001 r_j + 0.08 r_jc + 0.003 r_s + 1.0·10⁻⁶ r_τ + 0.003 r_slip</code>，其中 <code>r_lv</code> 和 <code>r_av</code> 为分段指数速度跟随奖励，<code>r_co</code> 惩罚小腿/膝盖碰撞，<code>r_slip</code> 惩罚脚滑移。课程因子 <code>c_k</code> 单调递增收敛到 1。</p>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>注意力门控的信念编码器</strong>：这是首次将可学习的门控机制引入腿足机器人感知-控制融合。门控因子 <code>α</code> 由中间信念状态计算，允许策略根据上下文动态调整对外部感知的信任度。消融实验（表 S4）显示，门控在大多数地形上降低动作差异（如 rough 地形小噪声下 0.690 vs 0.746），且在大噪声下不牺牲鲁棒性。</p>
+</li>
+<li>
+<p><strong>噪声模型作为课程的一部分</strong>：将感知噪声参数 <code>z</code> 纳入课程学习，随训练线性增加幅度。这迫使策略从“依赖完美感知”逐步过渡到“在噪声下保持鲁棒”，比固定噪声训练更高效。三种噪声条件（60%/30%/10%）模拟了正常、位姿漂移、遮挡/建图失败等真实场景。</p>
+</li>
+<li>
+<p><strong>零样本 sim-to-real 迁移</strong>：无需真实数据微调，直接部署。这得益于高度图抽象（屏蔽传感器差异）、域随机化（质量、摩擦、外力）和噪声训练（使策略对感知退化不敏感）。野外 2.2 km 徒步和 DARPA 地下挑战赛的零失败记录验证了其泛化能力。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="_9">野外部署</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>关键指标</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Etzel 山徒步</td>
+<td>路线 2.2 km，海拔增益 120 m，最大坡度 38%</td>
+<td>31 分钟登顶（人类 35 分钟），78 分钟全程（规划建议 76 分钟），零失败</td>
+</tr>
+<tr>
+<td>DARPA 地下挑战赛</td>
+<td>隧道/城市/洞穴三种赛道</td>
+<td>四台 ANYmal 探索超 1700 m，无摔倒</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">受控实验（图 4）</h3>
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>本控制器</th>
+<th>纯本体感觉基线</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>台阶高度</td>
+<td>可靠越过 30.5 cm</td>
+<td>20 cm 时成功率下降</td>
+</tr>
+<tr>
+<td>障碍赛道</td>
+<td>平滑通过全部障碍</td>
+<td>三个障碍均卡住</td>
+</tr>
+<tr>
+<td>平地最大速度</td>
+<td>1.2 m/s</td>
+<td>0.6 m/s</td>
+</tr>
+<tr>
+<td>转向速度</td>
+<td>3 rad/s</td>
+<td>0.6 rad/s（五倍差异）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s4s5">消融研究（表 S4/S5）</h3>
+<ul>
+<li>门控 vs 无门控：在 10 种地形上，GRU gate 在动作差异和重构误差上均优于 GRU no gate（如 grid steps 小噪声下动作差异 1.444 vs 1.674）。</li>
+<li>大噪声下门控优势变小（如 rough 大噪声 0.879 vs 0.997），说明门控在大噪声下不牺牲鲁棒性。</li>
+<li>MLP 编码器无法重构特权信息，验证了循环结构对时间一致性建模的必要性。</li>
+</ul>
+<h3 id="5">信念状态可视化（图 5）</h3>
+<ul>
+<li>泡沫障碍：初始信任视觉，接触后迅速向下修正地形估计，脚离地后保持修正。</li>
+<li>透明障碍：如履平地直到接触，接触后向上修正并改变步态。</li>
+<li>传感器被遮挡：接触楼梯竖板后修正估计并成功爬楼。</li>
+<li>湿滑平台：检测低摩擦后加快步伐，位姿漂移导致地图不稳定时无缝退回本体感觉。</li>
+</ul>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>狭窄悬崖/踏脚石</strong>：高度图因遮挡信息不足，策略假设连续表面，可能导致踏空坠落（作者明确承认）。</li>
+<li><strong>高度图表示损失</strong>：作为中间状态会遗漏原始点云中的材质和纹理信息，这些信息可能对某些地形判断有用。</li>
+<li><strong>位姿估计未联合训练</strong>：高度图构建依赖经典位姿估计模块，未与策略端到端训练，可能成为瓶颈。</li>
+<li><strong>无法完成非常规机动</strong>：如从狭窄洞中拔出卡住的腿或爬上高台，这些需要与正常行走显著不同的动作。</li>
+<li><strong>大噪声下门控优势减弱</strong>：消融显示在大噪声条件下门控与无门控性能接近，说明门控主要在中低噪声下发挥作用。</li>
+<li><strong>论文未明确</strong>：真实机器人上的定量失败率、计算延迟、训练数据量等具体数值。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：先确认 RaiSim 模拟器版本和 ANYmal-C 执行器模型参数，这是 sim-to-real 迁移的基础。其次核对噪声模型参数 <code>z</code> 的三种条件（60%/30%/10%）和课程因子更新公式 <code>c_{k+1} = c_k^d</code>（d=0.98）。</li>
+<li><strong>最容易踩坑</strong>：楼梯地形必须用盒子建模而非高度图，否则策略会利用非垂直边缘导致迁移失败。另外，学生训练前 10 个 epoch 必须用平坦地形，20 个 epoch 后才启用自适应地形课程，否则训练不稳定。</li>
+<li><strong>门控实现细节</strong>：注意力向量 <code>α</code> 由 <code>g_a(b_t')</code> 计算，<code>g_a</code> 和 <code>g_b</code> 均为 {64, 64} 的 MLP。滤波后的外部感知 <code>l_t^e ⊙ α</code> 需零填充到 120 维再与 <code>g_b(b_t')</code> 相加，维度不匹配是常见错误。</li>
+<li><strong>下游团队建议</strong>：若更换传感器（如从 LiDAR 换为立体相机），无需重新训练，只需调整高度图构建管线（20 Hz 更新频率）。但需注意高度图查询位置无信息时填充随机采样值，这会影响策略行为。</li>
+<li><strong>性能预期管理</strong>：在台阶高度超过 32 cm 时控制器会犹豫前进，这是学习到的物理极限判断，不是故障。若需更高越障能力，需调整奖励函数中 <code>r_co</code>（碰撞惩罚）权重或增加更高台阶的训练分布。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2201.08117</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robust_perceptive_locomotion_quadrupedal_2022"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">三阶段训练流程</a></li>
+<li><a href="#_4">信念编码器（核心组件）</a></li>
+<li><a href="#_5">关键设计决策</a></li>
+<li><a href="#_6">奖励设计</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#_9">野外部署</a></li>
+<li><a href="#4">受控实验（图 4）</a></li>
+<li><a href="#s4s5">消融研究（表 S4/S5）</a></li>
+<li><a href="#5">信念状态可视化（图 5）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

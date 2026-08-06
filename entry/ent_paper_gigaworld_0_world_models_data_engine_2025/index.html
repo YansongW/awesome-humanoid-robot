@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GigaWorld-0: World Models as Data Engine to Empower Embodied AI · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">GigaWorld-0: World Models as Data Engine to Empower Embodied AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>GigaWorld-0: World Models as Data Engine to Empower Embodied AI</h1>
+      <p class="entry-name-en">GigaWorld-0: World Models as Data Engine to Empower Embodied AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P115. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>GigaWorld-0 是一个面向具身智能的统一世界模型框架，由视频生成（GigaWorld-0-Video）与 3D 资产生成（GigaWorld-0-3D）两大组件构成，旨在作为 VLA 模型的数据引擎，以合成数据替代昂贵且受限的真实世界采集。其核心贡献在于将可控视频生成、物理可微系统辨识与可执行运动规划整合为一条可扩展的数据生产管线，并配套了质量评估与加速推理机制。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.19861" target="_blank" rel="noopener">arXiv:2511.19861 GigaWorld-0: World Models as Data Engine to Empower Embodied AI</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它改变了什么：问题与动机。传统具身数据获取的瓶颈并非单纯的成本问题，而是真实世界数据在视点、纹理、光照和物理交互上的多样性天花板——这直接限制了 VLA 模型从“看见”到“行动”的泛化能力。GigaWorld-0 的实质改变在于，它不再把世界模型当作一个被动的预测器，而是将其重构为一个主动的、可编程的数据生产工具，使得“生成数据”这一行为本身具备了与真实采集同等的训练价值。它试图回答一个更根本的问题：当数据可以按需合成时，具身智能的训练范式是否可以从“收集”转向“设计”。</p>
+<p>这一转变的深层动机在于，现有视频生成模型（如 Cosmos、Wan）虽然能产出高保真画面，但在物理合理性、多视点一致性和动作语义可控性上存在系统性缺陷，导致其生成内容无法直接用于策略学习。GigaWorld-0 通过引入 3D 物理模拟与可微系统辨识，将生成过程从“像素层面的逼真”推进到“物理层面的可信”，这是对现有数据引擎范式的关键修正。</p>
+<h2 id="_2">方法拆解</h2>
+<p>方法拆解：怎么做的。</p>
+<h3 id="gigaworld-0-video">视频生成分支（GigaWorld-0-Video）</h3>
+<ul>
+<li><strong>基础模型（Dreamer）</strong>：采用 flow-matching 公式 <code>dz_t/dt = v_θ(z_t, t, c)</code>，使用 3D-VAE 压缩原始视频，时空压缩比为 4,8,8（时间、高度、宽度），产生 16 通道潜变量。随后应用 1×2×2 patchification 进一步压缩，并用 3D-RoPE 编码位置信息。</li>
+<li><strong>MoE 架构</strong>：在 FFN 块中集成 4 个路由专家（N_r=4），每 token 激活 2 个专家（K_r=2），采用 DeepSeek-V3 的互补平衡损失，平衡因子 α=0.01。与 DeepSeek-V2 不同，不包含共享专家。</li>
+<li><strong>可控生成</strong>：通过三个后训练适配模块实现细粒度控制——AppearanceTransfer（外观编辑）、ViewTransfer（视点迁移）、MimicTransfer（人-机动作迁移）。其中 ViewTransfer 采用双重重投影策略，利用 MoGe 估计深度，将视点 A 的图像扭曲到视点 B，并用 SAM2 掩码机械臂以保证背景一致性；MimicTransfer 则通过 IK 将人手末端位姿映射到机械臂关节角，在 SAPIEN 模拟器中渲染条件视频。</li>
+</ul>
+<h3 id="3d-gigaworld-0-3d">3D 资产生成分支（GigaWorld-0-3D）</h3>
+<ul>
+<li><strong>前景生成（FG）</strong>：基于 Trellis 进行图像到 3D 转换，支持网格与 3DGS 双表示。预处理阶段使用 Aesthetic-Checker 和 GPT-4o 驱动的 ImageSegChecker 评估分割可靠性，后处理阶段通过 MeshGeoChecker 从四个正交视点验证几何完整性。</li>
+<li><strong>背景重建（BG）</strong>：采用 3DGRUT（每个高斯关联 7 个代表点）支持非针孔相机，通过稀疏视点输入→初始重建→视点细化→密集重建→泊松表面重建的流程生成水密网格。</li>
+<li><strong>物理属性建模（Phys）</strong>：机械臂采用基于 PINN 的可微物理框架，三阶段流程：随机采样物理参数生成模拟 rollouts → 训练代理模型最小化预测与模拟的 MSE → 梯度下降优化物理参数。操作对象则基于 Qwen3-VL 多模态专家推断质量、摩擦系数等属性。</li>
+<li><strong>动作生成（Act）</strong>：两层级管线，使用 MimicGen 框架将种子轨迹扩展到新物体姿态和场景布局，复杂场景则用遥操作演示作为强化学习冷启动数据。</li>
+</ul>
+<h3 id="_3">训练与推理优化</h3>
+<ul>
+<li>训练框架 GigaTrain 支持 DeepSpeed ZeRO（Stages 0–3）与 FSDP2，训练分辨率 480×768，序列长度 61 帧，使用 NATTEN 稀疏注意力算子与 FP8 精度。</li>
+<li>推理加速：采用 DMD2 去噪步蒸馏将采样从数十步降至单步，结合 FP8 精度实现超过 50× 加速。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<p>关键创新：</p>
+<ol>
+<li>
+<p><strong>物理感知的视频生成控制</strong>：不同于现有视频模型仅控制外观或相机轨迹，GigaWorld-0 通过 ViewTransfer 和 MimicTransfer 将机械臂的运动学约束（关节角、末端位姿）直接注入生成过程，使得生成视频中的动作序列在物理上可执行。这是从“看起来像操作”到“实际上能操作”的关键跨越。</p>
+</li>
+<li>
+<p><strong>可微系统辨识与 3D 生成的闭环</strong>：将 PINN 驱动的物理参数辨识与 3DGS 重建结合，使得生成的 3D 资产不仅外观逼真，还具备正确的质量、摩擦和弹性属性，可直接用于物理模拟器。这解决了 Trellis 等 3D 生成模型缺乏物理合理性的根本缺陷。</p>
+</li>
+<li>
+<p><strong>轻量级控制分支设计</strong>：在 MoE 架构下放弃 ControlNet（因其复制 MoE 层会显著增加参数），改用通道拼接+MLP 压缩的方式注入多模态条件，在保持模型规模的同时实现细粒度控制。这一设计决策对大规模视频生成模型的可控适配具有直接参考价值。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>实验与结果：对照设置、关键数字、结果的含义。</p>
+<h3 id="pbench-robot-set">PBench Robot Set 评估</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>参数</th>
+<th>质量分数</th>
+<th>领域分数</th>
+<th>总体分数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cosmos-Predict2</td>
+<td>14B</td>
+<td>97.4</td>
+<td>84.0</td>
+<td>79.88</td>
+</tr>
+<tr>
+<td>Wan2.2</td>
+<td>14B</td>
+<td>95.9</td>
+<td>83.2</td>
+<td>78.85</td>
+</tr>
+<tr>
+<td>Wan2.2</td>
+<td>5B</td>
+<td>95.4</td>
+<td>80.1</td>
+<td>77.15</td>
+</tr>
+<tr>
+<td>Cosmos-Predict2.5</td>
+<td>2B</td>
+<td>93.8</td>
+<td>84.7</td>
+<td>79.95</td>
+</tr>
+<tr>
+<td>GigaWorld-0-Video-Dreamer</td>
+<td>2B(Act.)</td>
+<td>97.6</td>
+<td>88.2</td>
+<td>82.07</td>
+</tr>
+</tbody>
+</table>
+<p>GigaWorld-0 以 2B 激活参数超越 14B 模型，总体分数 82.07 领先第二名约 2.1 分（由表内数值 82.07−79.95 计算），尤其在领域分数（88.2）上优势明显，表明其生成内容更贴合具身操作任务需求。</p>
+<h3 id="dreamgen-bench-gr1-env">DreamGen Bench 评估（GR1-Env 子集）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>参数</th>
+<th>Qwen-IF</th>
+<th>GPT-IF</th>
+<th>PA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cosmos-Predict2</td>
+<td>14B</td>
+<td>0.966</td>
+<td>0.552</td>
+<td>0.586</td>
+</tr>
+<tr>
+<td>Wan2.2</td>
+<td>14B</td>
+<td>0.900</td>
+<td>0.760</td>
+<td>0.549</td>
+</tr>
+<tr>
+<td>Wan2.2</td>
+<td>5B</td>
+<td>0.790</td>
+<td>0.340</td>
+<td>0.531</td>
+</tr>
+<tr>
+<td>Cosmos-Predict2.5</td>
+<td>2B</td>
+<td>0.930</td>
+<td>0.480</td>
+<td>0.534</td>
+</tr>
+<tr>
+<td>GigaWorld-0-Video-Dreamer</td>
+<td>2B(Act.)</td>
+<td>0.966</td>
+<td>0.586</td>
+<td>0.529</td>
+</tr>
+</tbody>
+</table>
+<p>在 GR1-Env 上，GigaWorld-0 的 Qwen-IF 分数与 Cosmos-Predict2 并列最高（0.966），GPT-IF 分数（0.586）优于 Cosmos-Predict2（0.552），但 PA 分数（0.529）略低于 Cosmos-Predict2（0.586）。这表明其在指令跟随上表现优异，但在物理合理性上仍有提升空间。</p>
+<h3 id="8h20-gpusbatch-size-32">训练效率（8×H20 GPUs，batch size 32）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>时间 (s/step)</th>
+<th>内存 (MB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSpeed-Zero2 + FP8 + 稀疏注意力</td>
+<td>25.44</td>
+<td>76937</td>
+</tr>
+<tr>
+<td>FSDP-2 + FP8 + 稀疏注意力</td>
+<td>25.38</td>
+<td>73131</td>
+</tr>
+<tr>
+<td>DeepSpeed-Zero2 + 激活检查点 + FP8 + 稀疏注意力 + MoE</td>
+<td>33.27</td>
+<td>84699</td>
+</tr>
+<tr>
+<td>FSDP-2 + 激活检查点 + FP8 + 稀疏注意力 + MoE</td>
+<td>33.38</td>
+<td>73997</td>
+</tr>
+</tbody>
+</table>
+<p>FP8 与稀疏注意力组合将训练速度从 32.84 s/step 提升至 25.38 s/step（由表内数值 32.84→25.38 计算），但引入 MoE 后需激活检查点，速度回落至 33.38 s/step，内存控制在 73997 MB。</p>
+<h2 id="_6">边界与局限</h2>
+<p>边界与局限：作者未在本文中提供下游任务（如衣物折叠、餐桌清理）的定量成功率，仅指出可在 GigaBrain-0 论文中查阅。生成视频仍可能包含幻觉或伪影，可能损害下游策略学习，因此引入质量评估管线作为补救而非根治。对于可变形物体，PhysTwin 采用逐场景优化，而作者探索的前馈方法尚未完成。GigaWorld-0 目前仅作为数据引擎使用，未部署为交互式策略环境用于基于模型的强化学习，也未实现世界模型作为主动策略共同设计者的能力。真实世界经验与合成生成之间的闭环（机器人 rollout 持续改进世界模型）同样未在本文中实现。</p>
+<h2 id="_7">工程启示</h2>
+<p>工程启示：对复现、选型、下游团队的具体指导。</p>
+<ol>
+<li>
+<p><strong>先核对训练配置</strong>：MoE 架构下必须启用激活检查点，否则在 8×H20 上会 OOM（DeepSpeed-Zero0 配置直接 OOM）。FSDP2 在内存控制上优于 DeepSpeed-Zero2（73997 MB vs 84699 MB），但两者速度接近，建议优先选择 FSDP2。</p>
+</li>
+<li>
+<p><strong>注意力算子选择</strong>：NATTEN 相比 SageAttention 有更优加速效果，但需要微调以避免性能退化。若直接替换默认算子，可能引入训练不稳定问题。</p>
+</li>
+<li>
+<p><strong>数据质量评估不可跳过</strong>：生成视频的幻觉和伪影会直接损害策略学习，建议在数据生产管线中集成四维质量评估（几何一致性、多视点一致性、文本对齐、物理合理性），并设置综合分数阈值决定数据用途。</p>
+</li>
+<li>
+<p><strong>物理属性辨识的坑</strong>：机械臂的 PINN 三阶段流程中，代理模型的训练质量直接决定后续梯度下降的收敛性。建议先在小规模轨迹上验证代理模型 MSE 是否足够低，再扩展到大规模数据。</p>
+</li>
+<li>
+<p><strong>视点迁移的复现要点</strong>：ViewTransfer 依赖 MoGe 的尺度估计和 SAM2 的臂部掩码，这两个前置模型的精度直接影响生成质量。建议在目标场景上先验证 MoGe 的深度估计是否准确，否则扭曲过程会产生严重伪影。</p>
+</li>
+<li>
+<p><strong>下游团队选型</strong>：若任务对物理合理性要求高（如接触丰富的操作），建议优先使用 3D 分支生成的资产；若任务更看重视觉多样性和指令跟随，视频分支的生成结果已足够。两者结合使用时，需注意 3DGS 与网格表示的切换成本。</p>
+</li>
+</ol>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2511.19861</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_tech_mimicgen/">MimicGen</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gigaworld_0_world_models_data_engine_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_tech_mimicgen/">
+          <span class="entry-type">技术</span>
+          <h3>MimicGen</h3>
+          <p>一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#gigaworld-0-video">视频生成分支（GigaWorld-0-Video）</a></li>
+<li><a href="#3d-gigaworld-0-3d">3D 资产生成分支（GigaWorld-0-3D）</a></li>
+<li><a href="#_3">训练与推理优化</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a><ul>
+<li><a href="#pbench-robot-set">PBench Robot Set 评估</a></li>
+<li><a href="#dreamgen-bench-gr1-env">DreamGen Bench 评估（GR1-Env 子集）</a></li>
+<li><a href="#8h20-gpusbatch-size-32">训练效率（8×H20 GPUs，batch size 32）</a></li>
+</ul>
+</li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

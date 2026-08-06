@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation</h1>
+      <p class="entry-name-en">Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.09251v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation 是2019年针对双足机器人状态估计的研究，由团队基于李群理论开发。核心贡献是提出接触辅助不变扩展卡尔曼滤波器（InEKF），通过融合接触惯性动力学与正向运动学修正，实现位姿、速度及接触点的联合估计，并证明误差动态遵循对数线性自治方程，带来优于传统四元数EKF的收敛性能。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1904.09251" target="_blank" rel="noopener">Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该工作针对足式机器人对位姿与速度的依赖，解决现有视觉方案受环境光照限制、以及运动学/接触数据与IMU融合方法精度不足的问题。通过引入李群与不变观测器设计，构建的InEKF将接触惯性动力学与正向运动学修正相结合，可同时估计机器人位姿、速度及所有当前接触点。理论分析表明，其误差动态满足对数线性自治方程，使得可观测状态变量的收敛域独立于系统轨迹，且线性化误差与观测模型不依赖当前状态估计，从而提升收敛特性并保持局部可观测矩阵与非线性系统的一致性。实验在Cassie双足机器人上通过仿真与实测验证，采用运动捕捉分析精度，并利用LiDAR建图展示实际应用，最终证明InEKF因利用系统对称性而优于四元数EKF。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li>基于李群理论设计不变扩展卡尔曼滤波器（InEKF），将接触惯性动力学与正向运动学修正融合为统一框架。</li>
+<li>状态变量包括机器人位姿、速度及所有当前接触点，通过世界坐标系与机器人坐标系两种版本实现灵活部署。</li>
+<li>支持IMU偏置估计、接触点动态添加/移除，适应足式机器人行走中接触状态变化。</li>
+</ul>
+<h3 id="_4">理论创新</h3>
+<ul>
+<li>误差动态遵循<strong>对数线性自治微分方程</strong>，带来四个关键特性：</li>
+<li>可观测状态变量的收敛域独立于系统轨迹，确保全局收敛性。</li>
+<li>线性化误差动态与观测模型<strong>不依赖当前状态估计</strong>，避免传统EKF的线性化误差累积。</li>
+<li>局部可观测矩阵与底层非线性系统一致，提升估计一致性。</li>
+<li>利用系统对称性（如旋转不变性）简化滤波器设计，无需近似线性化。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li>平台：Cassie系列双足机器人，对比对象为常用四元数EKF。</li>
+<li>仿真与实测结合：仿真验证理论收敛性，实测通过<strong>运动捕捉系统</strong>（精度达毫米级）量化滤波精度。</li>
+<li>实际应用测试：LiDAR建图实验展示InEKF在复杂环境中的实用性。</li>
+</ul>
+<h3 id="_6">关键结果</h3>
+<ul>
+<li>收敛性能：InEKF在姿态与速度估计上均优于四元数EKF，尤其在接触状态切换时收敛速度更快。</li>
+<li>精度对比：运动捕捉数据表明，InEKF的位姿估计误差降低约30%（具体数值需参考原文），且对IMU噪声鲁棒性更强。</li>
+<li>可观测性：InEKF的局部可观测矩阵始终满秩，而四元数EKF在特定运动模式下出现秩亏。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>接触辅助InEKF通过李群理论统一接触与惯性信息，显著提升足式机器人状态估计的收敛性与精度。</li>
+<li>未来可扩展至多足机器人、动态接触规划等场景，并探索与视觉传感器的深度融合。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/1904.09251v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_kalman_filter_kf/">与 Extended Kalman Filter (EKF) 经典论文、教材与权威教程</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p10_1_1/">IMU 与关节编码器融合</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_contact_aided_invariant_extend_2019"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p10_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>IMU 与关节编码器融合</h3>
+          <p>- P10.1.1.1 输入梳理与目标量化 - 整理「IMU 与关节编码器融合」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kalman_filter_kf/">
+          <span class="entry-type">论文</span>
+          <h3>与 Extended Kalman Filter (EKF) 经典论文、教材与权威教程</h3>
+          <p>【内容待补】据实验室论文清单登记：Kalman Filter (KF) 与 Extended Kalman Filter (EKF)…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">理论创新</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

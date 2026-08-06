@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Pyramid for Embodied Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Data Pyramid for Embodied Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Data Pyramid for Embodied Manipulation</h1>
+      <p class="entry-name-en">Data Pyramid for Embodied Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Multimodal foundation models learned to see and to speak by consuming the whole internet. Embodied agents admit no such shortcut, since they require data that couple observations with physical states and actions. These signals can be provided, to varying degrees, by multiple data sources. In this work, we organize the embodied data ecosystem as a &#34;pyramid&#34; spanning five complementary sources:.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.24744" target="_blank" rel="noopener">arXiv:2607.24744 Data Pyramid for Embodied Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 "데이터 피라미드"(Data Pyramid) 분류법을 제안하여, 로봇 조작 데이터 생태계를 실제 로봇, UMI 스타일, 1/3인칭, 시뮬레이션, 범용 데이터의 다섯 계층으로 조직하고, 각 계층이 확장성, 로봇 정합성, 품질, 다양성, 재사용성, 물리적 충실도에서 가지는 트레이드오프를 체계적으로 분석한다. 저자는 PKU, NTU, HKUST, UCB 등 기관 출신이며, 핵심 기여는 데이터 중심 관점에서 범주 수준의 조직 프레임워크를 구축하고, 세 가지 모델 패밀리(임베디드 두뇌, VLA, 세계 행동 모델)의 데이터 활용 전략을 정리한 것이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이 리뷰가 진정으로 바꾼 것은 임베디드 데이터 연구의 "좌표계"이다. 이전에는 Motus, GR00T 등 모델이 제안한 피라미드 관점이 본질적으로 특정 훈련 레시피를 중심으로 한 "요리법"에 불과했으며, 데이터 범주는 단지 모델 입력의 부산물로 취급되었다. 반면 커뮤니티의 실제 로봇, UMI, 인간 비디오, 시뮬레이션, 범용 데이터라는 다섯 가지 소스에 대한 논의는 오랫동안 "어느 것이 더 유용한가"라는 산발적 경험 수준에 머물러 있었고, 이들 간의 내재적 충돌에 대한 체계적 묘사가 부족했다. 본 논문은 "확장성"과 "로봇 정합성"을 근본적인 모순으로 확립한다—확장이 쉬운 데이터(예: 인터넷 비디오)일수록 물리적 실행에서 멀어지고, 직접 실행이 가능한 데이터(예: 원격 조작 궤적)일수록 규모화가 어렵다—이는 임베디드 학습이 언어 모델의 "인터넷 지름길"을 복제할 수 없는 이유를 설명한다.</p>
+<p>더 중요한 것은, 문제를 "어떤 데이터를 사용할 것인가"에서 "데이터 생태계를 어떻게 조직할 것인가"로 전환했다는 점이다. 저자는 분류학 수준에 머무르지 않고, 데이터 활용의 두 가지 핵심 메커니즘, 즉 행동 공간 정합(행동 차원, 제어 인터페이스 차이 처리)과 기하학적 정합(다양한 시점, 좌표계를 로봇 호환 표현으로 매핑)을 추가로 분해하고, 이를 바탕으로 세 가지 모델 패밀리(임베디드 두뇌, VLA, 세계 행동 모델)의 각기 다른 데이터 요구 패턴을 분석한다. 이러한 "데이터 범주 × 활용 메커니즘 × 모델 패밀리"의 3차원 분석 프레임워크는 후속 연구에 단순한 데이터셋 나열보다 더 구조화된 논의 기반을 제공한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="5">피라미드 5계층 구조</h3>
+<ul>
+<li><strong>실제 로봇 데이터</strong>(정점): 행동을 직접 실행 가능하지만, 하드웨어, 인력, 리셋 비용이 높음</li>
+<li><strong>UMI 스타일 데이터</strong>: 로봇 본체를 제거하고 말단 실행기 감독을 유지하며, 휴대용 그리퍼 + SLAM으로 수집</li>
+<li><strong>1/3인칭 데이터</strong>: 그리퍼를 제거하고 실제 물리와 일상적 다양성을 유지하지만, 로봇 본체 감각이 부족함</li>
+<li><strong>시뮬레이션 데이터</strong>: 실행 가능한 행동과 특권 라벨을 복원하지만, 물리적 근사에 손실이 있음</li>
+<li><strong>범용 데이터</strong>: 로봇 접지를 완전히 포기하고 네트워크 규모의 의미론적 커버리지를 얻음</li>
+</ul>
+<h3 id="_4">두 가지 조직 원칙</h3>
+<ul>
+<li><strong>확장성(Scalability)</strong>: 하드웨어 의존성, 인력, 환경 리셋, 안전 감독, 한계 생성 비용</li>
+<li><strong>로봇 정합성(Robot Alignment)</strong>: 관측, 표현, 감독 신호가 물리적 로봇 학습 및 실행을 직접 지원하는 정도</li>
+</ul>
+<h3 id="_5">네 가지 보충 차원</h3>
+<ul>
+<li><strong>품질(Quality)</strong>: 타당성, 일관성, 정보량, 작업 관련성</li>
+<li><strong>다양성(Diversity)</strong>: 작업, 객체, 장면, 시점, 명령, 임베디드, 센싱 구성 커버리지</li>
+<li><strong>재사용성(Reusability)</strong>: 작업, 환경, 임베디드, 센싱 시스템, 모델 패밀리 간 전이 용이성</li>
+<li><strong>물리적 충실도(Physical Fidelity)</strong>: 접촉, 마찰, 컴플라이언스, 센싱 노이즈, 실행 지연의 충실한 정도</li>
+</ul>
+<h3 id="_6">데이터 활용 분석 프레임워크</h3>
+<ul>
+<li><strong>행동 공간 정합</strong>: 행동 차원, 제어 인터페이스, 행동 의미론 차이 처리(예: 관절 위치 vs 말단 실행기 자세)</li>
+<li><strong>기하학적 정합</strong>: 다양한 시점, 좌표계, 임베디드에서 수집된 관측을 로봇 호환 표현으로 매핑</li>
+</ul>
+<h3 id="_7">세 가지 모델 패밀리의 데이터 요구</h3>
+<ul>
+<li><strong>임베디드 두뇌 모델</strong>: 광범위한 멀티모달 + 임베디드 데이터, 인식, 추론, 계획 지원</li>
+<li><strong>VLA 모델</strong>: 로봇 호환 행동 감독 필요</li>
+<li><strong>세계 행동 모델</strong>: 무행동 시계열 데이터, 행동 조건 상호작용, 합성 경험 활용</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<p><strong>1. "확장성-로봇 정합성"을 임베디드 데이터의 기본 모순으로 최초 확립.</strong> 이는 단순한 분류가 아니라 데이터 생태계의 내재적 긴장을 드러낸다: 모든 데이터 소스는 이 두 차원에서 트레이드오프를 하며, 어떤 단일 데이터 소스도 동시에 둘 다 충족할 수 없다. 이 프레임워크는 임베디드 학습이 언어 모델의 "인터넷 지름길"을 단순 복제할 수 없는 이유를 설명하고, 데이터 혼합 전략에 이론적 근거를 제공한다.</p>
+<p><strong>2. "데이터 수집" 관점을 넘어 "데이터 활용" 관점을 제안.</strong> 기존 리뷰는 더 많은 데이터를 수집하는 방법에 초점을 맞췄지만, 본 논문은 이질적 데이터가 모델에 의해 실제로 어떻게 소비되는지—행동 공간 정합과 기하학적 정합이라는 두 메커니즘을 통해—체계적으로 분석하고, 세 가지 모델 패밀리의 서로 다른 요구 패턴을 구분한다. 이는 "어떻게 수집할 것인가"가 아닌 "어떻게 사용할 것인가"에 대한 구조화된 사고를 제공한다.</p>
+<p><strong>3. UMI 스타일 데이터를 독립적인 데이터 범주로 확립.</strong> 이전에는 UMI가 종종 실제 로봇 데이터의 변형이나 원격 조작의 확장으로 간주되었지만, 본 논문은 이를 피라미드의 두 번째 계층으로 단독 분류하여 "로봇 본체를 제거하지만 말단 실행기 감독을 유지"하는 독특한 위치를 명확히 하고, 원래 UMI에서 FastUMI, LEGATO, DexUMI로 이어지는 인터페이스 진화 경로를 체계적으로 정리한다.</p>
+<h2 id="_9">실험과 결과</h2>
+<p>본 논문은 리뷰/입장 논문으로, 실험 작업과 베이스라인이 없다. 핵심 "증거"는 데이터셋에 대한 체계적 통계와 비교에서 나온다:</p>
+<table>
+<thead>
+<tr>
+<th>데이터 범주</th>
+<th>대표적 규모</th>
+<th>핵심 특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실제 로봇</td>
+<td>AgiBot World Beta: 1M 궤적/2976.4시간; Open X-Embodiment: 2.4M 궤적</td>
+<td>행동 직접 실행 가능하지만, 하드웨어 의존성 높음</td>
+</tr>
+<tr>
+<td>UMI</td>
+<td>FastUMI-100K: 100K 궤적; RealOmni: 789.8K 궤적</td>
+<td>말단 실행기 감독, 본체 무관</td>
+</tr>
+<tr>
+<td>1/3인칭</td>
+<td>Ego4D: 3670시간; EgoDex: 829시간/338K 클립; Xperience-10M: 10000시간</td>
+<td>실제 물리, 그러나 로봇 본체 감각 부족</td>
+</tr>
+<tr>
+<td>시뮬레이션</td>
+<td>DexGraspNet 2.0: 427M 궤적; Dex1B: 1B 궤적</td>
+<td>확장성 강하지만, 물리적 충실도 제한적</td>
+</tr>
+</tbody>
+</table>
+<p>궤적 수준 다양성 분석은 AgiBot-World-2026이 여러 개의 잘 분리된 공간 클러스터를 보여주고, RoboMIND는 분포가 조밀하고 이방성이며, RoboMIND 2.0은 더 광범위하고 수직적으로 계층화됨을 보여준다—이는 서로 다른 데이터셋이 작업 공간 커버리지 패턴에서 본질적 차이를 가짐을 시사한다.</p>
+<h2 id="_10">경계와 한계</h2>
+<p>저자가 명시적으로 인정한 한계는 다음과 같다: 1인칭 데이터는 부분 관측 가능성, 손-물체 가림, 모션 블러 문제가 있음; UMI 데이터는 취약한 시각 추적과 캘리브레이션에 의존하며, 로봇 본체 감각과 구동기 동역학이 부족함; 시뮬레이션 데이터는 다양성과 물리적 충실도에서 일반적으로 실제 데이터보다 제한적임; 세계 모델 생성 데이터는 작업 무효성, 의미론적 불일치, 환각 동역학 등의 위험을 도입함. 논문은 피라미드 분류법의 실제 효용에 대한 정량적 실험 검증을 제공하지 않으며, 서로 다른 데이터 계층의 혼합 비율에 대한 구체적 지침도 제시하지 않는다. 저자는 "로봇 호환 행동 목표의 기하학적 타당성이 동적 실행 가능성이나 접촉 일관성을 보장하지 않는다"고 지적하지만 해결책은 제시하지 않는다. 논문은 데이터 피라미드 각 계층 간의 최적 비율이나 동적 조정 전략에 대해 명시적으로 논의하지 않는다.</p>
+<h2 id="_11">공학적 시사점</h2>
+<p>공학 팀을 위한 실용적 조언: <strong>혼합 훈련을 논하기 전에 먼저 데이터 피라미드의 "계층 간 일관성"을 확인하라.</strong> 가장 함정에 빠지기 쉬운 것은 UMI 데이터와 실제 로봇 데이터의 공동 사용이다—UMI가 본체 무관 행동 공간을 제공하지만, 카메라 시점, 말단 실행기 기하학, 운동학적 제약의 차이가 시연과 실행의 불일치를 초래할 수 있으므로, 훈련 전에 먼저 궤적 수준 분포 시각화(본 논문 그림 4의 클러스터 분석과 유사)를 수행하여 서로 다른 데이터 소스의 행동 공간이 정합 가능한지 확인하는 것이 좋다. <strong>정규화 방법 선택에 주의하라</strong>: MinMax, Q01-Q99, MeanStd는 교차 임베디드 학습에 큰 영향을 미치므로, 데이터 혼합 전에 각 데이터 소스의 수치 척도 분포를 먼저 검증하는 것이 좋다. <strong>촉각 및 힘/토크 데이터는 여전히 희소 자원이다</strong>: 표 1에서 소수의 데이터셋(예: RH20T, FMB, RoboMIND 2.0)만 이러한 신호를 포함하므로, 하류 작업이 접촉이 풍부한 조작을 포함한다면 궤적 수만 보지 말고 이러한 데이터셋을 우선 선택해야 한다. <strong>정밀 조작 작업의 경우</strong>, 1/3인칭 데이터의 가치는 인간 손 움직임 사전을 제공하는 데 있지만, 리다이렉션(예: DexUMI의 시각적 복구)을 통해 형태 차이를 해결해야 하며, 궤적을 직접 전이하는 것은 거의 확실히 실패한다. 마지막으로, <strong>실패 및 복구 궤적을 무시하지 마라</strong>: 저자는 이것이 현재 데이터 생태계에서 가장 희소한 상호작용 신호라고 명시적으로 지적하며, 배포 중 정책이 빈번히 실패한다면 성공 시연 수를 늘리는 대신 이러한 데이터를 우선 보충하라고 조언한다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_data_pyramid_embodied_manipulation_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#5">피라미드 5계층 구조</a></li>
+<li><a href="#_4">두 가지 조직 원칙</a></li>
+<li><a href="#_5">네 가지 보충 차원</a></li>
+<li><a href="#_6">데이터 활용 분석 프레임워크</a></li>
+<li><a href="#_7">세 가지 모델 패밀리의 데이터 요구</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험과 결과</a></li>
+<li><a href="#_10">경계와 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

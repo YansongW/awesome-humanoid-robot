@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning</h1>
+      <p class="entry-name-en">TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Recent advances in robot learning for manipulation have increased the importance of collecting real-world demonstration data. However, existing robotic systems primarily focus on end-effector manipulation, making it difficult to teach and execute manipulation tasks involving body-surface contact with the arms and chest. This paper presents TWINS (Tactile Wearable Isomorphic Arm Networked System),.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01733" target="_blank" rel="noopener">arXiv:2608.01733 TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manip</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>TWINS는 작업자가 착용하는 양팔 장치와 동형 로봇으로 구성된 원격 조작 시스템으로, 신체 표면 접촉(전완, 상완, 흉부 등)을 수반하는 조작 시연을 수집하고 재현하며, Diffusion Policy 기반 모방 학습을 지원합니다. 이 시스템은 공유 관절 구성과 링크 길이를 통해 리다이렉션 없는 관절 각도 매핑을 구현하고, 219개의 촉각 유닛으로 압력과 근접도를 동시에 기록하여 접촉이 풍부한 조작 작업에 명시적 관측을 제공합니다. 핵심 기여는 '구체화된 조작', '형태 대응', '신체 표면 접촉'이라는 세 가지 특성을 단일 플랫폼에 처음으로 통합하고, 수집된 데이터가 접촉 관련 기술 습득을 지원할 수 있음을 검증한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 로봇 학습 시스템은 거의 전적으로 엔드 이펙터 중심으로 설계되었으며, 신체 표면 접촉(예: 전완으로 물건을 받치기, 흉부로 물체를 고정하기)은 인간 조작에서 흔하지만 명시적 접촉 관측이 없어 효과적으로 모델링할 수 없었습니다. 시각만으로는 접촉력과 접촉 위치를 정확히 추정하기 어렵고, 기존 원격 조작 인터페이스(Leader–Follower, VR, 모션 캡처+촉각 슈트)는 엔드 이펙터 자세만 전달하거나 신체 치수나 관절 구성 불일치로 추가 매핑이 필요하여, 작업자가 로봇과 동등한 메커니즘으로 물리적 상호작용을 할 수 없었습니다. TWINS는 이러한 상황을 바꿉니다: 신체 표면 접촉을 시각의 부가 정보가 아닌 관절 각도와 동등한 상태 변수로 학습 프레임워크에 포함시켜, 학습 가능한 조작 기술의 경계를 '파지 및 배치'에서 '신체로 고정, 받치기, 집기' 등의 접촉 밀집 행동으로 확장합니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">시스템 아키텍처</h3>
+<p>TWINS는 작업자가 착용하는 Wearable Dual-Arm Device와 관절 구성, 외부 치수가 완전히 동일한 Isomorphic Robot으로 구성됩니다. 작업자의 팔은 웨어러블 장치의 중공 외부 쉘에 삽입되어 쉘을 통해 물체와 상호작용하며 직접적인 물리적 접촉을 피합니다. 어깨 지지 구조는 의자에 고정되어 장치의 무게를 지탱합니다.</p>
+<h3 id="_5">기계 설계</h3>
+<ul>
+<li>각 팔은 7자유도: 어깨 3, 팔꿈치 1, 손목 3, HRP2Kai의 관절 구성을 기반으로 하며 인간 상지의 전체 운동 범위를 충실히 재현하지는 않습니다.</li>
+<li>링크 길이는 일반적인 성인 상지 치수에 따라 결정됩니다. 어깨 너비와 어깨 높이는 독립적인 수동 조절 메커니즘을 갖습니다.</li>
+<li>엔드 이펙터는 UMI 기반으로 설계된 평행 2핑거 Fin Ray 구조 그리퍼입니다.</li>
+<li>각 관절에는 10비트 엔코더가 장착되어 관절 각도를 측정합니다.</li>
+<li>동형 로봇은 DYNAMIXEL 서보 모터(XM430, XM540, PH54-100-S500)를 사용하며, 고토크 모델은 어깨 등 큰 굽힘 모멘트 관절에, 경량 모델은 손목 등 원위 관절에 사용됩니다. 대부분의 외부 쉘과 링크는 3D 프린팅됩니다.</li>
+</ul>
+<h3 id="_6">촉각 센싱</h3>
+<ul>
+<li>Intouch Robotics의 e-Skin을 사용하며, 육각형 유닛 변 길이 15mm, 두께 약 5mm로 압력과 근접도를 동시에 측정할 수 있습니다.</li>
+<li>센서 배치: 각 팔 그리퍼 상단 표면 15유닛, 전완 내부 표면 45유닛, 상완 전면 18유닛, 흉부 63유닛으로 총 219유닛, 좌우 대칭입니다.</li>
+<li>센서 패치는 분리 가능하며 웨어러블 장치 외부 쉘에 설치되어 동형 로봇과 동일한 배치를 갖습니다. 데이터는 10Hz로 수집되며, 각 신체 영역의 촉각 정보는 단일 접촉점이 아닌 공간 분포로 표현됩니다.</li>
+</ul>
+<h3 id="_7">데이터 수집 및 실행</h3>
+<ul>
+<li>상태는 x(t) = {q(t), S(t)}로 정의되며, q(t)는 관절 각도, S(t)는 모든 촉각 유닛의 압력 및 근접도 측정값입니다.</li>
+<li>시연은 시간 시퀀스 D = {x(t)}, t=0에서 T까지로 기록됩니다.</li>
+<li>관절 각도는 q_R(t) = q_W(t)로 직접 매핑되며, 두 시스템이 동일한 관절 구성과 링크 길이를 공유하므로 리다이렉션이 필요 없습니다.</li>
+</ul>
+<h3 id="_8">모방 학습</h3>
+<ul>
+<li>Diffusion Policy를 사용하며, 상태 히스토리 길이 2, 행동 예측 호라이즌 8입니다.</li>
+<li>관절 각도와 촉각 측정값은 각각 [−1, 1]로 독립 정규화됩니다. 촉각 입력은 모든 유닛을 전체적으로 정규화하며, 저자는 유닛별 정규화보다 훈련이 더 안정적이라고 언급합니다.</li>
+<li>데이터 수집, 훈련 및 배포는 오픈소스 프레임워크 RoboManipBaselines를 사용합니다.</li>
+</ul>
+<h2 id="_9">핵심 혁신</h2>
+<ol>
+<li><strong>리다이렉션 없는 형태 대응</strong>: 웨어러블 장치와 로봇이 완전히 동일한 관절 구성과 링크 길이를 공유함으로써, TWINS는 기존 원격 조작에서의 인간-로봇 운동 매핑을 제거하고 관절 각도를 직접 전달할 수 있습니다. 이는 데이터 수집 프로세스를 단순화할 뿐만 아니라 작업자의 신체 표면 접촉 위치와 로봇의 접촉 위치가 공간적으로 엄격히 대응되도록 보장하며, 이는 이전 시스템이 동시에 충족하지 못한 핵심 특성입니다.</li>
+<li><strong>근접도와 압력의 결합 관측</strong>: e-Skin은 압력과 근접도를 동시에 측정하여 물리적 접촉 전에 물체 거리를 관측할 수 있게 하며, 접근부터 분리까지의 완전한 접촉 과정을 연속적으로 포착합니다. 이는 단순 접촉력보다 풍부한 시간 진화 정보를 모방 학습에 제공하며, '먼저 접근한 다음 고정'과 같은 접촉 단계 전환이 포함된 작업에 중요합니다.</li>
+<li><strong>신체 표면 접촉을 일급 상태로</strong>: 219개 촉각 유닛의 분포 정보를 상태 공간에 포함시켜 엔드 이펙터의 보조 신호가 아닌 독립적인 상태로 취급합니다. 이를 통해 정책은 신체 여러 영역의 접촉 이벤트를 명시적으로 활용하여 조작 단계를 전환할 수 있으며, 기존 방법이 시각이나 엔드 포스 센싱에만 의존하는 한계를突破합니다.</li>
+</ol>
+<h2 id="_10">실험 및 결과</h2>
+<p>실험은 신체 표면 접촉을 수반하는 네 가지 작업을 다룹니다: Towel Hanging(수건 걸기), Basket Holding(바구니 들기), Ball Placing(공 배치), Adaptive Holding(적응형 들기). 각 작업에서 10개의 시연을 수집하여 총 40개의 시연을 단일 작업자가 30분 내에 완료했으며, 특별한 훈련이 필요 없었습니다.</p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>관절 각도 추적 평균 절대 오차</td>
+<td>0.94 deg(14개 팔 관절)</td>
+</tr>
+<tr>
+<td>관절 각도 추적 95 백분위 오차</td>
+<td>3.43 deg</td>
+</tr>
+<tr>
+<td>추적 지연</td>
+<td>약 0.4–0.6 s</td>
+</tr>
+<tr>
+<td>촉각 입력 차원</td>
+<td>438(219 유닛 × 압력+근접도)</td>
+</tr>
+<tr>
+<td>관절 각도 입력 차원</td>
+<td>16(좌우 팔+그리퍼)</td>
+</tr>
+</tbody>
+</table>
+<p>정책은 모든 작업에서 신체 표면 접촉 이벤트에 따라 조작 단계를 성공적으로 전환했습니다. 시연에 포함되지 않은 상황에 대한 강건성을 보였습니다: Towel Hanging에서 수건 제시 순서가 반대이거나 양쪽 전완에 동시에 놓일 때도 해당 팔을 올바르게 회전했고, Ball Placing에서 시연보다 공 수가 많을 때도 반복 배치를 수행했으며, Adaptive Holding에서 물체 순서가 다를 때도 올바른 들기 전략을 선택했습니다. 단일 팔과 흉부 사이에서 물체를 들고 있는 작업에서는 간헐적 실패(물체 낙하)가 발생했으며, 추가 스펀지 패드로 크게 완화되었습니다. 저자는 모방 학습 알고리즘 자체에 대한 절제 평가를 수행하지 않았으며, 다른 기준 시스템과의 정량적 비교도 없습니다.</p>
+<h2 id="_11">경계 및 한계</h2>
+<ul>
+<li>단일 팔과 흉부 사이에서 물체를 들고 있는 작업에서 간헐적 물체 낙하가 발생하며, 스펀지 패드로 완화되지만 완전히 해결되지는 않았으며, 저자는 관절 토크의 명시적 제어가 필요할 수 있다고 생각합니다.</li>
+<li>모방 학습 알고리즘 자체에 대한 평가는 없으며, 실험은 TWINS 수집 데이터가 접촉 관련 조작의 학습과 실행을 지원할 수 있는지 검증하는 데 초점을 맞췄습니다.</li>
+<li>대규모 데이터 수집, 다중 작업자 변형, 장기 안정성 테스트 또는 다른 기준 시스템과의 정량적 비교 실험은 언급되지 않았습니다.</li>
+<li>현재 시스템은 이동 조작을 지원하지 않습니다(작업자는 시연 수집 중 이동할 수 없음). 메커니즘은 인간 견갑골 운동을 포함하지 않아 해부학적 충실도가 제한적입니다.</li>
+<li>모든 시연은 단일 작업자에 의해 수집되었으며, 다른 체형의 작업자나 다른 조작 스타일에서의 일반화는 검증되지 않았습니다.</li>
+</ul>
+<h2 id="_12">공학적 시사점</h2>
+<p>TWINS를 재현하거나 채택할 때 다음 사항을 우선 확인해야 합니다: 첫째, 관절 구성과 링크 길이가 엄격히 일치하는지 여부—이는 리다이렉션 없는 매핑의 전제 조건이며, 치수 편차는 접촉 위치의 대응을 깨뜨립니다. 둘째, 촉각 센서의 배치와 설치 위치가 로봇과 완전히 일치해야 하며, 유닛별 정규화가 아닌 전체 정규화를 사용해야 합니다. 그렇지 않으면 훈련 안정성이 크게 저하됩니다. 셋째, 추적 지연(약 0.4–0.6 s)이 접촉 작업에 미치는 영향을 주의해야 합니다. 지연은 접촉 타이밍의 편차를 유발할 수 있으며, 필요한 경우 정책 훈련에서 지연 보상을 고려해야 합니다. 가장 함정에 빠지기 쉬운 부분은 들기 작업의 안정성입니다—단일 팔과 흉부의 협동이 포함된 경우 접촉 인터페이스에 미리 유연한 재료를 추가하고, 순수 위치 제어가 아닌 명시적 토크 제어를 고려하는 것이 좋습니다. 또한 데이터 수집 중 작업자는 신체를 고정해야 하며(어깨 지지가 의자에 고정됨), 하류에서 이동 조작이 필요하면 메커니즘과 수집 프로세스를 직접 확장해야 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_diffusion_policy_2023/">Diffusion Policy</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_twins_tactile_wearable_isomorphic_arm_ne_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">방법</span>
+          <h3>Diffusion Policy</h3>
+          <p>조건적 노이즈 제거 확산 프로세스로 표현된 시각욱동 정책, 다중 모드 동작 분포 가능.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">시스템 아키텍처</a></li>
+<li><a href="#_5">기계 설계</a></li>
+<li><a href="#_6">촉각 센싱</a></li>
+<li><a href="#_7">데이터 수집 및 실행</a></li>
+<li><a href="#_8">모방 학습</a></li>
+</ul>
+</li>
+<li><a href="#_9">핵심 혁신</a></li>
+<li><a href="#_10">실험 및 결과</a></li>
+<li><a href="#_11">경계 및 한계</a></li>
+<li><a href="#_12">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

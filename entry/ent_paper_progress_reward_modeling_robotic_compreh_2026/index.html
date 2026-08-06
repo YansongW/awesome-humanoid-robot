@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress Reward Modeling for Robotic Learning: A Comprehensive Survey · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Progress Reward Modeling for Robotic Learning: A Comprehensive Survey</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Progress Reward Modeling for Robotic Learning: A Comprehensive Survey</h1>
+      <p class="entry-name-en">Progress Reward Modeling for Robotic Learning: A Comprehensive Survey</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>这篇综述由领域内研究者撰写，系统梳理了机器人学习中的进度奖励建模（Progress Reward Modeling）。其核心贡献在于提出一个统一视角，将碎片化的文献按接口、方法与数据三个层面组织，并识别出四种构建范式，为后续研究与工程实践提供了清晰的坐标系。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.21655" target="_blank" rel="noopener">arXiv:2607.21655 Progress Reward Modeling for Robotic Learning: A Comprehensive Survey</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>长期以来，机器人学习依赖终端成功信号作为唯一奖励来源，这在长时程、高维、动态的任务中尤为致命——稀疏的反馈迫使智能体在大量决策后才能获得任何有用信息，而中间过程的好坏完全不可见。进度估计（progress estimation）被视为解药，但该领域本身陷入混乱：类似术语描述不同问题，评估协议各异，方法之间难以比较，报告结果的实际意义也常常模糊不清。</p>
+<p>这篇综述真正改变的是领域内的“认知地图”。它没有提出新算法，而是将散落的文献重新组织为三个连接步骤——接口、方法与数据，并识别出四种构建范式（冻结基础模型、时间/相对监督、指令调优、程序化构建）。这种结构化视角让研究者能快速定位自己的工作坐标，也让下游工程师能根据任务特性选择合适的方法族，而非在论文迷宫中盲目试错。</p>
+<h2 id="_2">方法拆解</h2>
+<p>综述以三个视角拆解进度奖励建模，每个视角内部又有细分类别。</p>
+<h3 id="2">接口视角（第2节）：模型作为任务条件黑盒</h3>
+<ul>
+<li><strong>任务状态表示</strong>：</li>
+<li>单观测输入：低延迟、易在线使用，但视觉相似状态可能因执行历史不同而含义不同。</li>
+<li>时间上下文输入：轨迹前缀或短窗口（在线）或完整轨迹（离线），更长上下文提供更强时间证据但削弱在线可用性。</li>
+<li>比较式输入：通过比较两个参考状态（动作前后、初始与当前等）估计进度，但局部比较可能遗漏长时程依赖，成对判断链可能累积误差。</li>
+<li>状态访问接口：使用环境代码、模拟器API或本体感觉特征，最适用于模拟或仪器化环境，真实世界通常不现实。</li>
+<li><strong>任务目标规范</strong>：</li>
+<li>语言条件：易于编码、兼容现有VLM，但语言可能欠指定物理细节，尤其任务变长、更组合化时。</li>
+<li>视觉条件：目标图像或演示轨迹捕获难以言说的物理细节，但需人工策划且对视角、具身差异敏感。</li>
+<li>结构化/程序化目标：通过谓词、约束或生成的目标函数表达，支持精确密集奖励，但依赖显式状态变量访问，开放世界不可用。</li>
+<li><strong>模型输出形式</strong>：</li>
+<li>状态级标量分数：最常用，但含义取决于校准方式。</li>
+<li>进度增量：预测转换是否改善状态（如VLAC、ARM），与RL自然对齐但描述局部改进。</li>
+<li>排序：相对且间接，需转换为标量奖励。</li>
+<li>程序化输出：输出可执行奖励函数，灵活但可靠性取决于代码质量。</li>
+</ul>
+<h3 id="3">方法视角（第3节）：四种构建范式</h3>
+<ul>
+<li><strong>冻结基础模型作为语义奖励评分器</strong>：不训练，直接从预训练模型提取信号（如CLIP式图像-文本相似度、TOPReward的“true” token概率）。零样本可用，但分数是语义先验而非校准奖励，需归一化、阈值化或差分。</li>
+<li><strong>从时间和相对监督学习</strong>：常见监督源是成功演示中的时间顺序（后期状态更接近完成）或偏好/排序信息（如RL-VLM-F、Rank2Reward）。相对监督易收集，但不直接提供标量奖励。</li>
+<li><strong>指令调优的进度预测</strong>：将进度估计表述为显式指令遵循任务，通过任务特定提示定义进度判断，然后微调VLM（如RoboReward、VLAC、ProgressLM）。关键思想是进度预测成为模型指令遵循能力的一部分，而非隐式副产品。</li>
+<li><strong>程序化奖励构建</strong>：将进度估计翻译为代码、谓词或结构化奖励逻辑（如Text2Reward、Eureka）。在任务可分解为显式子目标时有效，但将挑战转移到任务分解与特征设计。</li>
+</ul>
+<h3 id="4">数据与基准视角（第4节）</h3>
+<ul>
+<li>按人类参与程度组织数据构建：人类遥操作、人类在环标注、全自动时间结构监督、基础模型自动标注、数据增强。</li>
+<li>按三个评估目标分组基准：进度保真度（标量校准、时间一致性）、鲁棒性与泛化（视角、具身、非单调执行）、下游效用（在线策略学习、离线重标注、检索过滤、规划）。</li>
+</ul>
+<h2 id="_3">关键创新</h2>
+<ol>
+<li>
+<p><strong>统一视角的提出</strong>：首次将碎片化的进度奖励文献按接口、方法、数据三个层面系统组织，识别出四种构建范式。这不是简单的分类学，而是揭示了不同方法之间的深层联系——例如指令调优范式将进度预测从视觉表示学习的副产品转变为显式监督的指令遵循能力，这一洞察改变了研究者对问题本质的理解。</p>
+</li>
+<li>
+<p><strong>评估维度的系统化</strong>：将基准测试从单一的成功率或误差指标扩展为三个层次——进度保真度（标量校准、时间一致性）、鲁棒性与泛化（视角、具身、非单调执行）、下游效用（在线学习、离线重标注、检索、规划）。特别强调“策略性能提升本身不能证明奖励是忠实的进度估计器”，这一区分对实验设计有直接指导意义。</p>
+</li>
+<li>
+<p><strong>对未来方向的明确诊断</strong>：指出当前模型在细粒度敏感性、自适应时间建模、高效在线推理和长时程记忆四个方面的具体缺陷，并给出可操作的改进建议（如流式视觉编码器、分层奖励查询、紧凑任务记忆）。这些诊断基于对现有方法局限的细致分析，而非泛泛而谈。</p>
+</li>
+</ol>
+<h2 id="_4">实验与结果</h2>
+<p>该综述论文的正文部分未包含具体实验设置、基线或定量结果数字。文中提及的基准类型包括：</p>
+<table>
+<thead>
+<tr>
+<th>评估维度</th>
+<th>关键指标类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标量校准</td>
+<td>回归误差、相关性</td>
+</tr>
+<tr>
+<td>时间一致性</td>
+<td>排序准确率、秩相关、单调性指标</td>
+</tr>
+<tr>
+<td>相对进度</td>
+<td>成对比较判断</td>
+</tr>
+<tr>
+<td>任务接地</td>
+<td>反事实指令、不匹配视频-语言对</td>
+</tr>
+<tr>
+<td>可回答性/不确定性</td>
+<td>选择性预测、弃权、置信度校准</td>
+</tr>
+</tbody>
+</table>
+<p>文中未提供任何具体数字、表格或定量结果。所有提及的基准类别均为定性描述，无量化结果。论文未明确报告任何成功率、误差值、参数量或训练配置。</p>
+<h2 id="_5">边界与局限</h2>
+<p>作者明确承认的局限包括：单观测输入无法区分视觉相似但历史不同的状态；时间上下文输入在在线可用性与时间证据之间权衡；比较式接口可能遗漏长时程依赖且成对判断链累积误差；状态访问接口在真实世界通常不可用。语言目标欠指定物理细节，视觉目标对视角和具身差异敏感，结构化目标依赖显式状态变量。冻结基础模型的分数是语义先验而非校准奖励，偏好输出仅相对定义进度，程序化方法的可靠性取决于代码质量。人类驱动数据构建昂贵且主观，全自动时间结构监督假设进度与时间充分相关，基础模型自动标注继承模型偏差。</p>
+<p>此外，作者指出当前模型普遍缺乏细粒度敏感性（稀疏采样帧可能错过精确对齐等小变化）、固定速率假设（真实进度往往不均匀，存在突然增加和长平台期）、推理延迟（大型VLM难以在每个控制步骤使用）以及长时程记忆缺失（视觉相似观测可能对应不同阶段）。论文未明确讨论计算资源需求、不同方法族之间的定量性能对比，以及这些方法在真实物理机器人上的部署经验。</p>
+<h2 id="_6">工程启示</h2>
+<p>对于希望复现或选择进度奖励方法的工程师，以下几点值得优先核对：</p>
+<ol>
+<li>
+<p><strong>先明确任务特性再选方法族</strong>：如果任务可分解为显式子目标且状态变量可访问，程序化构建（如Text2Reward）最可靠；如果只有语言指令和视觉输入，指令调优范式（如VLAC）更合适；如果追求零样本快速部署，冻结基础模型可作为起点但必须配合归一化和阈值化。</p>
+</li>
+<li>
+<p><strong>警惕“平滑即正确”的陷阱</strong>：许多方法使用时间顺序作为监督，鼓励进度随时间平滑增加，但真实任务往往有突然跳跃和平台期。评估时务必加入非单调执行测试（失败、回退、重试），否则模型可能只是学会了“经过时间越长进度越高”的捷径。</p>
+</li>
+<li>
+<p><strong>在线推理成本是隐藏瓶颈</strong>：大型VLM处理多帧并推理后才能产生奖励，对离线评估可接受，但难以在每个控制步骤使用。建议采用分层策略——轻量模型高频调用处理局部更新，大型模型仅在重要任务转换或不确定状态时调用。</p>
+</li>
+<li>
+<p><strong>评估指标必须分层</strong>：策略性能提升本身不能证明奖励是忠实的进度估计器。应同时报告标量校准（回归误差、相关性）、时间一致性（排序准确率、秩相关）和下游效用（在线学习、离线重标注）三类指标，否则可能被单一指标误导。</p>
+</li>
+<li>
+<p><strong>最容易踩坑的地方</strong>：视觉条件目标对视角变化和具身差异极其敏感，跨具身迁移时务必重新校准；程序化方法的奖励可能对实现精确但与预期行为不一致（当符号变量无法捕获任务重要方面时）；数据增强中的合成失败必须保持物理合理性，否则模型会利用可识别的伪影。</p>
+</li>
+</ol>
+<h2 id="_7">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.21655</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_progress_reward_modeling_robotic_compreh_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#2">接口视角（第2节）：模型作为任务条件黑盒</a></li>
+<li><a href="#3">方法视角（第3节）：四种构建范式</a></li>
+<li><a href="#4">数据与基准视角（第4节）</a></li>
+</ul>
+</li>
+<li><a href="#_3">关键创新</a></li>
+<li><a href="#_4">实验与结果</a></li>
+<li><a href="#_5">边界与局限</a></li>
+<li><a href="#_6">工程启示</a></li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

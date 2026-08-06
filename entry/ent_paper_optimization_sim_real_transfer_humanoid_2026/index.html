@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optimization of sim-to-real transfer in the humanoid robot NICO · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Optimization of sim-to-real transfer in the humanoid robot NICO</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Optimization of sim-to-real transfer in the humanoid robot NICO</h1>
+      <p class="entry-name-en">Optimization of sim-to-real transfer in the humanoid robot NICO</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文针对 NICO 人形机器人的 sim-to-real 迁移问题，将基于触摸屏的标定方法从 2D 到达扩展到桌面物体抓取，构建了无需 RGB-D 相机或外部追踪的完整抓取流水线。核心贡献在于系统比较了三种标定修正模型（M1 基线、M2 部分非线性、M3 全非线性）与一种视觉反馈手部对齐策略（M4），并验证了视觉反馈在提升抓取成功率上的显著优势。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18210" target="_blank" rel="noopener">arXiv:2607.18210 Optimization of sim-to-real transfer in the humanoid robot NICO</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这项工作真正改变了什么？它把 sim-to-real 问题从“静态标定”推进到了“动态闭环”的层面。以往的研究（包括作者先前的工作）聚焦于通过标定减少仿真到实体的系统性偏差，但抓取任务中，物体定位误差、手部执行误差和视觉感知误差是耦合的，单纯依赖开环标定无法应对这些复合误差。本文的转变在于：不再试图让仿真模型“完美”匹配实体，而是引入视觉反馈作为在线修正机制，让机器人根据实际观测调整手部位置，从而绕开了标定模型在训练区域外失效的根本缺陷。</p>
+<p>从问题动机看，作者敏锐地识别出 M3 神经网络模型在训练数据覆盖区域外外推不可靠（平均位移从区域内的 2.14 cm 增至区域外的 5.45 cm），这直接否定了纯标定路线在完整工作空间内的可行性。因此，他们将视觉反馈从辅助手段提升为核心策略，这不仅是方法上的改进，更是对 sim-to-real 问题本质的重新定义——与其追求更精确的模型，不如让系统具备感知-行动闭环的鲁棒性。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体流水线</h3>
+<p>相机图像 → YOLO 检测物体图像坐标 → 立体视觉估计深度 → 经头部运动链变换到机器人坐标系 → 用修正模型（M1/M2/M3）或视觉反馈（M4）变换为仿真目标位置 → 偏航修正提供手掌朝向 → IK 求解关节角 → 通过 NicoMotion 在实体机器人执行。</p>
+<h3 id="m1-m3">标定模型（M1-M3）</h3>
+<ul>
+<li><strong>M1（基线）</strong>：分段线性映射，手动对齐仿真和测量高度值后插值。</li>
+<li><strong>M2（部分非线性）</strong>：水平目标坐标由 MLP 预测，高度分量仍用插值。设计理由：水平方向误差主要来自相机畸变和运动学偏差，非线性映射更有效；高度方向相对稳定，插值足够。</li>
+<li><strong>M3（全非线性）</strong>：直接预测修正后的三维目标位置。设计理由：完全解耦三个维度的耦合误差，但代价是外推能力差。</li>
+</ul>
+<h3 id="m4">视觉反馈手部对齐（M4）</h3>
+<ul>
+<li>迭代公式：p_IK^k = p_IK^(k-1) + a_k (p_obj − p_hand)，步长 a_k = 1/(2^(k-1))。</li>
+<li>关键设计：步长递减防止手接近物体时振荡；对齐阈值设为 1 cm；对齐阶段手掌朝向相机旋转，确保 YOLO 稳定检测手掌中心。</li>
+<li>M4 不使用任何标定修正，完全依赖视觉反馈闭环。</li>
+</ul>
+<h3 id="_4">任务特定修正</h3>
+<ul>
+<li>垂直目标修正和手掌偏航角修正：在机器人工作空间不规则参考点手动测量，任意目标位置用径向基函数（RBF）插值估计。</li>
+<li>滚动和俯仰角固定，保持自上而下抓取姿态。</li>
+</ul>
+<h3 id="_5">视觉模块细节</h3>
+<ul>
+<li>YOLO 检测：自定义数据集 442 张图像，8 类标注，80:20 训练/验证划分。YOLO11m 精度最高（All mAP50–95 0.823），但选 YOLO12s（0.806，推理 10.86 ms）作为精度与实时性的折中。</li>
+<li>立体视觉：棋盘格标定获取内参和畸变系数，去畸变校正后计算视差图估计深度。固定头部版本平均 2D 定位误差 0.76 cm，但存在相机过热导致的定位漂移（最远约 6 cm），需额外修正。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>视觉反馈作为标定的替代而非补充</strong>：M4 完全抛弃标定修正，仅依赖视觉闭环，却取得了最高全工作空间成功率（72.7%）。这颠覆了“标定精度决定抓取成功率”的传统假设，证明了在线感知-行动闭环的鲁棒性远超任何离线标定模型。</p>
+</li>
+<li>
+<p><strong>手部边界框的刻意定义</strong>：将 YOLO 检测的手部边界框定义在手掌中心区域，使质心更对应手部对齐位置。这一细节看似简单，却直接解决了视觉反馈中“检测到手但位置不对齐”的常见问题，是工程实践中的关键创新。</p>
+</li>
+<li>
+<p><strong>步长递减的迭代对齐策略</strong>：a_k = 1/(2^(k-1)) 的几何递减步长，在保证收敛速度的同时避免了手接近物体时的振荡。这种简单而有效的控制策略，比复杂的自适应控制更易于在实体机器人上复现和调参。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="2">抓取实验统计（表 2 汇总）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>M1（基线）</th>
+<th>M2</th>
+<th>M3</th>
+<th>M4（视觉反馈）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hand SV OK</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>77.3% (17/22)</td>
+</tr>
+<tr>
+<td>Grasp Rate (SV OK)</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>94.1% (48/51)</td>
+</tr>
+<tr>
+<td>Grasp Rate (NN Area)</td>
+<td>10.0% (3/30)</td>
+<td>93.3% (28/30)</td>
+<td>96.7% (29/30)</td>
+<td>83.3% (25/30)</td>
+</tr>
+<tr>
+<td>Grasp Rate (All)</td>
+<td>16.7% (11/66)</td>
+<td>48.5% (32/66)</td>
+<td>57.6% (38/66)</td>
+<td>72.7% (48/66)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">关键结果解读</h3>
+<ul>
+<li><strong>M3 在 NN 修正区域内表现优异（96.7%）</strong>，但全工作空间成功率骤降至 57.6%，验证了外推失效问题（区域内平均位移 2.14 cm vs 区域外 5.45 cm）。</li>
+<li><strong>M4 的全工作空间成功率（72.7%）显著优于所有标定模型</strong>，但受限于立体视觉手部定位：仅 17/22 个位置正确定位手。若仅考虑手定位正确的尝试，成功率高达 94.1%，说明主要瓶颈在感知而非控制。</li>
+<li><strong>对比文献</strong>：文献 [4] 在 NICO 上最佳模型成功率 80.3%，文献 [8] 零样本 70%（微调后 91%），文献 [13] 未见对抗物体 83%。本文 M4 的 72.7% 在无外部追踪、无大量真实数据微调的前提下具有竞争力。</li>
+</ul>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li><strong>立体视觉手部定位是最大瓶颈</strong>：手后背景过远时手位置被强烈高估，导致 5/22 个位置手定位失败。作者未尝试改进手部分割或深度估计，这直接限制了 M4 的上限。</li>
+<li><strong>M3 外推不可靠</strong>：训练数据覆盖区域外通常过度修正，作者未提出解决方案，仅建议使用视觉反馈规避。</li>
+<li><strong>未训练端到端抓取策略</strong>：仍依赖显式定位、IK 和标定修正，系统复杂度高，模块间误差累积问题未彻底解决。</li>
+<li><strong>评估场景单一</strong>：仅使用单个物体（毛绒番茄），未验证多物体、不同形状/材质/朝向的泛化性。</li>
+<li><strong>与其他研究比较困难</strong>：平台、物体、传感器和评估协议差异大，数字对比仅具参考意义。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>优先采用视觉反馈闭环而非追求标定精度</strong>：M4 的结果表明，在 sim-to-real 场景中，在线感知-行动闭环的鲁棒性远超离线标定。复现时应先确保视觉检测和立体定位的可靠性，再考虑标定修正。</li>
+<li><strong>注意立体视觉的失效模式</strong>：手后背景过远时深度估计会严重高估，这是 M4 的主要失败原因。复现时建议改进手部分割（如使用深度感知的检测器）或限制工作空间背景复杂度。</li>
+<li><strong>M3 类神经网络模型仅适用于训练覆盖区域</strong>：若必须使用标定模型，务必严格限制目标位置在训练数据范围内，并监控输入-输出位移（超过 2.14 cm 即视为外推风险）。</li>
+<li><strong>YOLO 选型建议</strong>：YOLO12s 在精度（All 0.806）和推理时间（10.86 ms）间取得最佳平衡，适合实时抓取。若对精度要求更高可换 YOLO11m（0.823），但推理时间增至 20.45 ms。</li>
+<li><strong>最容易踩坑的地方</strong>：相机过热导致的定位漂移（最远约 6 cm）在长时间运行中不可忽视，需设计周期性校准或漂移补偿机制；手部边界框定义必须与对齐目标一致，否则视觉反馈会收敛到错误位置。</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18210</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_system_identification/">系统辨识</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_optimization_sim_real_transfer_humanoid_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_system_identification/">
+          <span class="entry-type">方法</span>
+          <h3>系统辨识</h3>
+          <p>根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体流水线</a></li>
+<li><a href="#m1-m3">标定模型（M1-M3）</a></li>
+<li><a href="#m4">视觉反馈手部对齐（M4）</a></li>
+<li><a href="#_4">任务特定修正</a></li>
+<li><a href="#_5">视觉模块细节</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#2">抓取实验统计（表 2 汇总）</a></li>
+<li><a href="#_8">关键结果解读</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

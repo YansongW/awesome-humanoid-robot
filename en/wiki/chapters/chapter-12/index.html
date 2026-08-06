@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 12: Certification, Compliance, and Quality Standards · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 12: Certification, Compliance, and Quality Standards</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-12-certification-compliance-and-quality-standards">Chapter 12: Certification, Compliance, and Quality Standards</h1>
+<h2 id="abstract">Abstract</h2>
+<p>For humanoid robots to transition from laboratory prototypes to factory, logistics, and home scenarios, the threshold they must cross is not a single performance indicator, but <strong>compliance</strong>: the product must be legally permitted for sale in the target market and withstand liability tracing in the event of an injury incident. This chapter systematically reviews the certification, compliance, and quality standards systems facing humanoid robots. It begins with the standard hierarchy structure and risk assessment methodology, introducing the ISO 12100 risk assessment process and the "three-step method" for risk reduction; it then delves into functional safety engineering, explaining the quantification methods for Safety Integrity Levels (SIL) in IEC 61508 and Performance Levels (PL) in ISO 13849, including key concepts such as PFH/PFD, MTTF<span class="arithmatex">\(_d\)</span>, DC<span class="arithmatex">\(_{avg}\)</span>, and Common Cause Failure (CCF); next, it analyzes the two most directly relevant product safety standards for humanoid robots—the ISO 13482 safety standard for personal care robots and the ISO/TS 15066 technical specification for collaborative robots, focusing on the biomechanical limits of force and pressure during human-robot contact; subsequently, it covers market access certifications by region: the EU CE marking, North American UL 1740 and FCC Part 15, China's CR certification and CCC, as well as cross-regional Electromagnetic Compatibility (EMC) and battery safety requirements; finally, it discusses the challenges that AI autonomy poses to traditional functional safety frameworks and emerging countermeasures such as Safety of the Intended Functionality (SOTIF). This chapter complements the standard overview in Chapter 1: Chapter 1 answers "what standards exist," while this chapter answers "how to engineeringly meet these standards."</p>
+<p><strong>Keywords</strong>: Functional Safety; IEC 61508; ISO 13849; ISO 13482; ISO/TS 15066; Risk Assessment; CE Marking; UL 1740; FCC Part 15; CR Certification; Electromagnetic Compatibility; SOTIF</p>
+<hr />
+<h2 id="121-overall-framework-of-certification-and-compliance">12.1 Overall Framework of Certification and Compliance</h2>
+<h3 id="1211-why-compliance-is-a-prerequisite-for-productization">12.1.1 Why Compliance is a Prerequisite for Productization</h3>
+<p>A humanoid robot is a machine that shares physical space with humans, can move autonomously, and apply physical force. This nature dictates that it cannot be "released first, iterated later" like pure software products: once personal injury occurs, the manufacturer faces not only recall costs but also product liability lawsuits and market access bans. Therefore, compliance capability itself is one of the core competencies of humanoid robot companies, functioning at least at three levels:</p>
+<ol>
+<li><strong>Market Access</strong>: Most economies have mandatory or de facto mandatory certification requirements for electromechanical products placed on the market. For example, the EU requires the CE marking; robots in US workplaces need safety certification under the OSHA system issued by NRTLs (Nationally Recognized Testing Laboratories) such as UL; the Chinese market has CR certification (China Robot Certification) and CCC (China Compulsory Certification).</li>
+<li><strong>Liability Definition</strong>: When an accident occurs, "whether applicable current standards were followed" is the primary basis for courts and regulatory bodies to determine if the manufacturer fulfilled its duty of care. Conforming to standards does not exempt from liability but significantly reduces legal risk.</li>
+<li><strong>Design Constraint Conveyance</strong>: Compliance requirements directly translate into engineering design parameters—maximum movement speed, end-effector contact force limits, emergency stop button location and color, enclosure flammability rating, battery thermal runaway protection, etc. The earlier standard requirements are incorporated into the design freeze, the lower the cost of later modifications.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Compliance, Certification, Standard</p>
+<ul>
+<li><strong>Standard</strong>: A normative document established by a recognized body (ISO, IEC, IEEE, UL, etc.) and approved by consensus, unifying technical requirements for products, processes, or services. Standards themselves are typically not legally mandatory.</li>
+<li><strong>Certification</strong>: The process by which a third-party body (or manufacturer's self-declaration) proves that a product meets the requirements of a specific standard or regulation.</li>
+<li><strong>Compliance</strong>: The state of a product meeting all applicable laws, regulations, and referenced standards of the target market. Regulations are mandatory; standards gain mandatory force when referenced by regulations.</li>
+</ul>
+</div>
+<h3 id="1212-hierarchy-of-the-standards-system">12.1.2 Hierarchy of the Standards System</h3>
+<p>Chapter 1 provided a pyramid overview of humanoid robot standards (four layers: international—regional—industry—enterprise). From an engineering implementation perspective, the <strong>A/B/C three-level classification</strong> of machinery safety standards by ISO is more useful:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Definition</th>
+<th>Typical Standards</th>
+<th>Relationship with Humanoid Robots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type A (Basic Safety Standards)</td>
+<td>Provide basic concepts and design principles applicable to all machinery</td>
+<td>ISO 12100 (Risk Assessment and Risk Reduction)</td>
+<td>Starting point for all safety design</td>
+</tr>
+<tr>
+<td>Type B (Generic Safety Standards)</td>
+<td>Address one safety device or one type of safety-related characteristic</td>
+<td>ISO 13849 (Safety-Related Parts of Control Systems), IEC 61508 (Functional Safety), IEC 60204-1 (Electrical Equipment of Machines)</td>
+<td>Determine safety control architecture and component selection</td>
+</tr>
+<tr>
+<td>Type C (Product Safety Standards)</td>
+<td>Address all safety requirements for a specific type of machinery</td>
+<td>ISO 13482 (Personal Care Robots), ISO 10218-1/-2 (Industrial Robots)</td>
+<td>Determine machine limits and verification methods</td>
+</tr>
+</tbody>
+</table>
+<p>When Type C standards conflict with Type B standards, Type C takes precedence. The current awkward position of humanoid robots is that <strong>there is no dedicated Type C standard</strong>. Bipedal humanoid robots do not fully belong to ISO 10218's "industrial robots" nor entirely to ISO 13482's "personal care robots." Manufacturers typically need to combine multiple standards and justify their applicability to certification bodies, which is a fundamental reason for the long certification cycle of humanoid robots.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[Type A: ISO 12100&lt;br/&gt;General Principles of Risk Assessment and Risk Reduction] --&gt; B1[Type B: IEC 61508&lt;br/&gt;Functional Safety / SIL]
+    A --&gt; B2[Type B: ISO 13849&lt;br/&gt;Safety-Related Parts of Control Systems / PL]
+    A --&gt; B3[Type B: IEC 62368-1&lt;br/&gt;Electrical and Energy Hazards]
+    B1 --&gt; C1[Type C: ISO 13482&lt;br/&gt;Personal Care Robots]
+    B2 --&gt; C1
+    B2 --&gt; C2[Type C: ISO 10218 + ISO/TS 15066&lt;br/&gt;Industrial / Collaborative Robots]
+    B3 --&gt; C1
+    C1 --&gt; D[Humanoid Robot System&lt;br/&gt;Combined Reference + Applicability Justification]
+    C2 --&gt; D</code></pre>
+<h3 id="1213-cost-and-timeline-of-compliance">12.1.3 Cost and Timeline of Compliance</h3>
+<p>Compliance is not a one-time testing expense but a cost item throughout the entire R&amp;D lifecycle. Based on industry experience, a complete safety certification cycle may require <strong>6–18 months</strong>, with direct costs ranging from tens of thousands to hundreds of thousands of US dollars (depending on the number of target markets, test items, and remediation rounds). Cost components roughly include:</p>
+<ul>
+<li><strong>Third-Party Testing Fees</strong>: EMC chamber testing, electrical safety testing, battery abuse testing, etc., charged per project;</li>
+<li><strong>Certification Body Audit Fees</strong>: Technical File review, factory inspection (if applicable);</li>
+<li><strong>Remediation and Retesting</strong>: The probability of passing all items on the first submission is low; EMC remediation (shielding, filtering, rewiring) often requires several rounds;</li>
+<li><strong>Internal Manpower</strong>: Time cost for safety engineers to write risk analysis reports, HARA/FMEA documents, and safety manuals;</li>
+<li><strong>Time Opportunity Cost</strong>: Design freeze during certification; any significant design change may trigger a re-evaluation.</li>
+</ul>
+<p>A rule of thumb is: <strong>Safety and compliance design should start concurrently with the overall system architecture design</strong>, not as a "post-certification" effort after the prototype is complete. In the DV/PV (Design Verification/Production Verification) process discussed in Chapter 9 of this book, compliance testing should be a formal deliverable of the DV phase.</p>
+<h3 id="1214-organization-of-this-chapter">12.1.4 Organization of This Chapter</h3>
+<p>The remainder of this chapter is structured as "Methodology → Functional Safety → Product Safety Standards → Regional Access → Frontier Challenges": Section 12.2 covers risk assessment, the common language of all safety standards; Section 12.3 explains how to quantify "the control system is sufficiently reliable"; Section 12.4 covers ISO 13482 and ISO/TS 15066, which directly constrain machine behavior; Section 12.5 reviews access paths such as CE, UL, FCC, CR, and CCC by market region; Section 12.6 discusses new issues facing the standards system in the AI era.</p>
+<h2 id="122-risk-assessment-the-starting-point-of-all-safety-engineering">12.2 Risk Assessment: The Starting Point of All Safety Engineering</h2>
+<h3 id="1221-iso-12100-risk-assessment-process">12.2.1 ISO 12100 Risk Assessment Process</h3>
+<p>ISO 12100 "Safety of machinery — General principles for design — Risk assessment and risk reduction" is a Type-A basic standard that defines the common methodology behind all Type-C standards. Its core is the semi-quantitative framework of "risk = severity of harm × probability of occurrence of harm," and it specifies an iterative closed-loop process:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[Determine the limits of the machinery&lt;br/&gt;Intended use / Reasonably foreseeable misuse] --&gt; B[Hazard identification&lt;br/&gt;Mechanical/Electrical/Thermal/Noise/Ergonomics, etc.]
+    B --&gt; C[Risk estimation&lt;br/&gt;Severity S × Probability of occurrence]
+    C --&gt; D[Risk evaluation&lt;br/&gt;Is further reduction required?]
+    D --&gt;|Yes| E[Three-step method for risk reduction]
+    E --&gt; E1[1. Inherently safe design]
+    E --&gt; E2[2. Safeguarding and complementary protective measures]
+    E --&gt; E3[3. Information for use and warnings]
+    E1 --&gt; C
+    E2 --&gt; C
+    E3 --&gt; C
+    D --&gt;|No| F[Produce risk assessment report&lt;br/&gt;Include in technical documentation]</code></pre>
+<p>A step in risk assessment that is easily overlooked but crucial is <strong>reasonably foreseeable misuse</strong>. For humanoid robots, misuse scenarios are extremely diverse: children climbing on the robot, users having the robot carry objects exceeding its rated load, operating on slippery surfaces, obstructing sensors, etc. Certification bodies typically require manufacturers to list misuse scenarios one by one and provide protective measures during audits.</p>
+<h3 id="1222-quantifying-risk-estimation-the-risk-graph-method">12.2.2 Quantifying Risk Estimation: The Risk Graph Method</h3>
+<p>ISO 13849 provides the most commonly used risk estimation tool in the machinery industry—the <strong>risk graph</strong>. Designers evaluate each identified hazard from three dimensions:</p>
+<ol>
+<li><strong>Severity of harm (S)</strong>: S1 (slight injury, usually reversible, e.g., abrasions, minor contusions) or S2 (serious injury, usually irreversible, e.g., fractures, amputation, death);</li>
+<li><strong>Frequency and duration of exposure to the hazard (F)</strong>: F1 (rare occurrence or short exposure time) or F2 (frequent occurrence or long exposure time);</li>
+<li><strong>Possibility of avoiding the hazard (P)</strong>: P1 (possible to avoid under specific conditions, e.g., sufficient reaction time and space) or P2 (almost impossible to avoid).</li>
+</ol>
+<p>The combination of S, F, and P maps to the required Performance Level (PL<span class="arithmatex">\(_r\)</span>), ranging from PL a to PL e. For example, the combination S2 + F2 + P2 typically requires PL e, meaning the safety-related control system must meet the highest requirement for probability of dangerous failure per hour. For humanoid robots performing transportation and collaboration tasks in densely populated environments, hazards such as falling and collision usually fall into the S2/F2 range, implying that critical safety functions (e.g., speed limitation, force limitation, emergency stop) often require PL d or even PL e levels—the impact of this on cost and architecture will be discussed in Section 12.3.</p>
+<h3 id="1223-three-step-method-for-risk-reduction">12.2.3 Three-Step Method for Risk Reduction</h3>
+<p>ISO 12100 stipulates that risk reduction must be carried out in order of priority:</p>
+<ol>
+<li><strong>Inherently safe design</strong>: Eliminate hazards at the source. For humanoid robots, this includes: limiting peak joint torque and motion speed (sacrificing some performance for safety), rounding the housing to eliminate sharp edges, using low-inertia links to reduce collision kinetic energy, and selecting battery chemistries with lower thermal runaway risk (see material discussions in Chapters 3 and 4).</li>
+<li><strong>Safeguarding and complementary protective measures</strong>: Residual risks that cannot be eliminated are controlled through engineering safeguards. Typical measures include: safety-rated LiDAR/depth camera protective zones, collision detection via joint torque sensors, emergency stop circuits monitored by a safety PLC, and protective stop after fall detection.</li>
+<li><strong>Information for use</strong>: Residual risks remaining after the first two steps are communicated to users through warning labels, user manuals, and training. Legally, this is the last line of defense and cannot replace the first two steps.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Residual Risk</p>
+<p>The risk that remains after all risk reduction measures have been implemented. Standards do not require, nor is it possible to achieve, "zero risk"; they require that residual risk be reduced to an acceptable level and be truthfully communicated to users. The documentation and justification of residual risk in the risk assessment report is a core component of CE technical documentation.</p>
+</div>
+<h3 id="1224-typical-hazard-list-for-humanoid-robots">12.2.4 Typical Hazard List for Humanoid Robots</h3>
+<p>Combining the hazard classification of ISO 12100 with the morphological characteristics of humanoid robots, a complete machine risk assessment should at least cover the hazards in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Hazard Category</th>
+<th>Specific Manifestation in Humanoid Robots</th>
+<th>Main Reduction Measures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mechanical hazards—Crushing, shearing</td>
+<td>Joint pinch points (knee, elbow, hip flexion/extension), finger pinching</td>
+<td>Pinch point guards, gap/distance design, force limitation</td>
+</tr>
+<tr>
+<td>Mechanical hazards—Impact, collision</td>
+<td>Arm swing hitting a person during walking, whole-body crushing during a fall</td>
+<td>Speed separation monitoring, power and force limitation, fall protection strategy</td>
+</tr>
+<tr>
+<td>Mechanical hazards—Instability, fall</td>
+<td>Bipedal dynamic balance failure leading to whole-body tipping</td>
+<td>Stability margin monitoring, low-energy failure posture design, personnel avoidance</td>
+</tr>
+<tr>
+<td>Electrical hazards</td>
+<td>High-voltage power battery, bus capacitor electric shock</td>
+<td>Double insulation, grounding, interlock, IEC 62368-1 energy classification</td>
+</tr>
+<tr>
+<td>Thermal hazards</td>
+<td>High-temperature surfaces of motors/drives, battery thermal runaway</td>
+<td>Surface temperature limitation, multi-level BMS protection, thermal insulation and pressure relief design</td>
+</tr>
+<tr>
+<td>Electromagnetic hazards</td>
+<td>EMI from high-power drives interfering with medical devices, etc.</td>
+<td>EMC design (shielding, filtering, grounding), testing per Section 12.5.4</td>
+</tr>
+<tr>
+<td>Functional failure hazards</td>
+<td>Controller crash, sensor error, communication interruption leading to loss of control</td>
+<td>Functional safety architecture per Section 12.3 (SIL/PL graded design)</td>
+</tr>
+<tr>
+<td>Cybersecurity hazards</td>
+<td>Remote hijacking leading to malicious movement</td>
+<td>Secure channel encryption, command whitelist, safety layer independent of network stack</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="123-functional-safety-iec-61508-and-iso-13849">12.3 Functional Safety: IEC 61508 and ISO 13849</h2>
+<h3 id="1231-basic-concepts-of-functional-safety">12.3.1 Basic Concepts of Functional Safety</h3>
+<p>Chapter 8 has already introduced the basic concepts of SIL and PL. This section delves into their implementation methods from a certification engineering perspective. <strong>Functional safety</strong> addresses the question: When the control system itself fails (component damage, software runaway, communication packet loss), can the system still execute safety functions with a sufficiently high probability to bring the robot into a safe state?</p>
+<p>There are two key distinctions here:</p>
+<ul>
+<li><strong>Safety ≠ Reliability</strong>: A highly reliable system rarely fails, but when it does, it may enter a dangerous state; functional safety concerns the <strong>consequences</strong> and <strong>detectability</strong> of failures, not just their frequency.</li>
+<li><strong>Dangerous failure ≠ Safe failure</strong>: Only failures that lead to the loss of a safety function are dangerous failures. A relay contact weld causing an emergency stop to fail is a dangerous failure; a relay coil open circuit preventing the robot from starting is a safe failure (although it affects availability).</li>
+</ul>
+<p>IEC 61508 organizes the entire safety work into a <strong>safety lifecycle</strong>: Hazard and risk analysis → Safety requirements allocation → Safety integrity design → Verification and validation → Operation and maintenance → Decommissioning. Each phase has documented deliverables, and the core of certification auditing is the "safety case" formed by these deliverables.</p>
+<h3 id="1232-quantification-of-sil-pfh-and-pfd">12.3.2 Quantification of SIL: PFH and PFD</h3>
+<p>IEC 61508 quantifies safety integrity into four levels, SIL 1–4, using the probability of dangerous failure. It is divided into two metrics based on the operating mode:</p>
+<ul>
+<li><strong>Low demand mode</strong> uses the average probability of failure on demand, PFD<span class="arithmatex">\(_{avg}\)</span>;</li>
+<li><strong>High demand / continuous mode</strong> uses the probability of dangerous failure per hour, PFH.</li>
+</ul>
+<p>Robot safety functions almost always operate in high demand or continuous mode, with the corresponding relationship as follows:</p>
+<table>
+<thead>
+<tr>
+<th>SIL</th>
+<th>PFH (per hour)</th>
+<th>Risk Reduction Factor Order of Magnitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIL 1</td>
+<td><span class="arithmatex">\(10^{-6} \sim &lt;10^{-5}\)</span></td>
+<td>10–100</td>
+</tr>
+<tr>
+<td>SIL 2</td>
+<td><span class="arithmatex">\(10^{-7} \sim &lt;10^{-6}\)</span></td>
+<td>100–1000</td>
+</tr>
+<tr>
+<td>SIL 3</td>
+<td><span class="arithmatex">\(10^{-8} \sim &lt;10^{-7}\)</span></td>
+<td>1000–10000</td>
+</tr>
+<tr>
+<td>SIL 4</td>
+<td><span class="arithmatex">\(10^{-9} \sim &lt;10^{-8}\)</span></td>
+<td>10000–100000</td>
+</tr>
+</tbody>
+</table>
+<p>Intuitively, SIL 2 means that a safety function experiences a dangerous failure on average only once every ten million hours. For a fleet of robots operating thousands of hours per year, this magnitude reduces the probability of "injury due to control system failure" to an extremely low level.</p>
+<p>The PFH of a safety function is accumulated by the series connection of its constituent subsystems. If the safety chain consists of a sensor (S), a logic unit (L), and an actuator (A) in series, then:</p>
+<div class="arithmatex">\[
+PFH_{sys} \approx PFH_S + PFH_L + PFH_A
+\]</div>
+<p>The overall SIL of the system cannot exceed the highest SIL supported by any single link. This is why "using a SIL 3 LiDAR with a common MCU" cannot claim SIL 3—the barrel effect dictates that the entire chain must meet the standard level by level.</p>
+<h3 id="1233-pl-of-iso-13849-category-mttfd-and-dc">12.3.3 PL of ISO 13849: Category, MTTFd, and DC</h3>
+<p>ISO 13849-1 is oriented towards machinery safety-related control systems (SRP/CS), using PL a–e corresponding to PFH<span class="arithmatex">\(_d\)</span> (see Chapter 8, Section 8.7.5 for the comparison table). In engineering, determining the achievable PL for a channel requires evaluating four elements simultaneously:</p>
+<ol>
+<li><strong>Structure Category</strong>: Describes the fault tolerance capability of the architecture. Category B is single-channel without diagnostics; Category 1 uses proven components and safety principles; Category 2 introduces periodic testing; Category 3 is redundant dual-channel, where a single fault does not lead to loss of safety function; Category 4 requires faults to be detected in a timely manner based on Category 3.</li>
+<li><strong>Mean Time To dangerous Failure (MTTF<span class="arithmatex">\(_d\)</span>)</strong>: A component-level reliability statistic for each channel, classified as low (3–10 years), medium (10–30 years), or high (30–100 years). It is calculated from component failure rate data (e.g., B10<span class="arithmatex">\(_d\)</span> values provided by manufacturers):
+   $$
+   MTTF_d = \frac{B_{10d}}{0.1 \times n_{op}}
+   $$
+   where <span class="arithmatex">\(B_{10d}\)</span> is the number of cycles until 10% of components experience a dangerous failure, and <span class="arithmatex">\(n_{op}\)</span> is the average number of annual operations.</li>
+<li><strong>Average Diagnostic Coverage (DC<span class="arithmatex">\(_{avg}\)</span>)</strong>: The percentage of dangerous failures detected by self-diagnostics, classified as none (&lt;60%), low (60–90%), medium (90–99%), or high (≥99%). Cross-monitoring, parity checks, watchdogs, and output readback are all means to increase DC.</li>
+<li><strong>Common Cause Failure (CCF)</strong>: Simultaneous failure of redundant channels due to a common cause (same power supply drop, same high-temperature environment, same software bug). Standards require sufficient CCF scoring through measures such as isolation, diversity, and environmental testing.</li>
+</ol>
+<p>The typical target for critical safety functions in humanoid robots is <strong>PL d / SIL 2 or PL e / SIL 3</strong>: For example, a dual-channel emergency stop circuit is often designed to Category 3 + PL d; power and force limiting functions during continuous close human interaction may require PL e level justification.</p>
+<h3 id="1234-decomposition-of-typical-safety-functions-for-humanoid-robots">12.3.4 Decomposition of Typical Safety Functions for Humanoid Robots</h3>
+<p>Translating standard language to the overall architecture, humanoid robots typically need to implement the following safety functions, each requiring an assigned PL<span class="arithmatex">\(_r\)</span>/SIL target and independent verification:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    subgraph Perception Layer
+        S1[Safety LiDAR/Depth Camera&lt;br/&gt;Person Detection]
+        S2[Joint Torque/Current Sensing&lt;br/&gt;Collision Detection]
+        S3[Emergency Stop Button/Enable Device]
+    end
+    subgraph Safety Logic Layer
+        L[Safety Controller&lt;br/&gt;Safety PLC or Safety MCU]
+    end
+    subgraph Actuation Layer
+        A1[STO Safe Torque Off]
+        A2[SLS Safely-Limited Speed]
+        A3[Brake/Mechanical Brake]
+    end
+    S1 --&gt; L
+    S2 --&gt; L
+    S3 --&gt; L
+    L --&gt; A1
+    L --&gt; A2
+    L --&gt; A3</code></pre>
+<ul>
+<li><strong>STO (Safe Torque Off)</strong>: Cuts off motor torque output without cutting off control power. It is the most basic drive-level safety function. Mainstream servo drives provide STO terminals and claim SIL 3 / PL e capability.</li>
+<li><strong>SLS (Safely-Limited Speed)</strong>: Monitors and limits joint speed to not exceed a safe limit, requiring a safety-rated speed feedback channel (e.g., dual encoder cross-checking).</li>
+<li><strong>SLP (Safely-Limited Position)</strong>: Limits joint position to prevent entry into hazardous areas (e.g., personnel protection zones).</li>
+<li><strong>Collision Detection and Power/Force Limiting</strong>: Estimates external torque via the current loop or uses dedicated torque sensors, triggering a protective stop when contact force exceeds limits—this is the technical basis for the Power and Force Limiting mode of ISO/TS 15066 (see Section 12.4.2).</li>
+<li><strong>Emergency Stop</strong>: A Category 0/1 stop with a red mushroom head on a yellow background, implemented as a hardwired circuit independent of the main controller.</li>
+</ul>
+<p>The key architectural principle is: <strong>The safety layer must be independent of the functional layer</strong>. When the main controller running the Linux/ROS-based Vision-Language-Action (VLA) stack crashes, the safety controller can still execute STO/SLS. This typically means the safety MCU/PLC is physically separated from the main computing platform, and safety sensors connect directly to the safety controller rather than being routed through the main controller.</p>
+<h3 id="1235-safety-of-the-intended-functionality-sotif-and-new-issues-from-ai">12.3.5 Safety Of The Intended Functionality (SOTIF) and New Issues from AI</h3>
+<p>IEC 61508 and ISO 13849 address "systematic failures"—functional failures leading to hazards. However, humanoid robots face another type of hazard: <strong>The system has no failure, but the functionality itself is insufficient to handle the environment</strong>. For example, a vision model misidentifying a person as background in backlighting, or a VLA policy generating dangerous actions for instructions outside its training distribution. Such "performance insufficiency" hazards are addressed by the <strong>Safety Of The Intended Functionality (SOTIF, from the automotive domain ISO 21448)</strong> framework.</p>
+<p>SOTIF divides scenarios into four quadrants: known safe, known unsafe, unknown unsafe, and unknown safe. The engineering goal is to expand the "known safe" area and shrink the "unknown unsafe" area through scenario library accumulation, trigger condition analysis, and design improvements. For robots equipped with learning models, this implies:</p>
+<ul>
+<li>Perception and policy models require independent <strong>OOD (Out-Of-Distribution) detection and degradation mechanisms</strong>, switching to conservative behavior when uncertainty increases;</li>
+<li>Safety decisions cannot be fully delegated to learning-based components; the ultimate safety shutdown must reside in a deterministic, verifiable safety layer (the architecture in Section 12.3.4);</li>
+<li>Verification methods expand from "fault injection" to "scenario traversal + statistical argumentation," directly linking to the evaluation system discussed in Chapter 25 of this book.</li>
+</ul>
+<hr />
+<h2 id="124-product-safety-standards-iso-13482-and-isots-15066">12.4 Product Safety Standards: ISO 13482 and ISO/TS 15066</h2>
+<h3 id="1241-iso-134822014-safety-of-personal-care-robots">12.4.1 ISO 13482:2014 Safety of Personal Care Robots</h3>
+<p>ISO 13482 is currently the closest C-class standard for service/home scenario humanoid robots. It defines a <strong>personal care robot</strong> as a service robot aimed at improving an individual's quality of life, covering three categories:</p>
+<ol>
+<li><strong>Mobile servant robot</strong>: A mobile robot that performs tasks such as object handling and cleaning – most wheeled-chassis humanoid robots fall into this category;</li>
+<li><strong>Physical assistant robot</strong>: A device that has physical contact with a person, assisting them in movement or tasks, such as lower limb exoskeletons;</li>
+<li><strong>Person carrier robot</strong>: A robotic wheelchair or similar device that carries a person.</li>
+</ol>
+<p>The core requirements of the standard revolve around "coexistence with humans":</p>
+<ul>
+<li><strong>Limits on movement speed and force</strong>: In modes where the robot may contact a person, its movement speed and contact force must be limited to a level that does not cause injury. The specific limits relate to the contacted body part;</li>
+<li><strong>Contact safety</strong>: The outer shell must have no sharp edges or corners. Surface temperatures must not exceed limits that could cause burns. Pinch points require guarding or force limitation;</li>
+<li><strong>Stability and tip-over protection</strong>: The robot must remain stable under expected floor conditions and external force disturbances. If the risk of tipping cannot be eliminated, the tipping energy must be limited or a warning must be given;</li>
+<li><strong>Constraints on autonomous functions</strong>: Autonomous mobile robots must be able to detect persons in their path and react to avoid or render contact harmless. They must not perform hazardous operations without supervision;</li>
+<li><strong>Battery and charging safety</strong>: Covers electrical and fire risks during the charging process.</li>
+</ul>
+<p>A practical limitation of ISO 13482 is that it was developed in 2014, when bipedal humanoid robots were not yet industrialized. Many verification methods in the standard (e.g., static stability tests) are not directly applicable to dynamically balanced bipedal platforms. Current common practice among manufacturers is to use the general requirements of ISO 13482 as a framework, reference the contact limits of ISO/TS 15066 for biped-specific hazards (dynamic falling, whole-body contact), and supplement their own test methods to create a suitability justification document for submission to certification bodies.</p>
+<h3 id="1242-isots-150662016-technical-specification-for-collaborative-robots">12.4.2 ISO/TS 15066:2016 Technical Specification for Collaborative Robots</h3>
+<p>ISO/TS 15066 is a supplementary technical specification to the ISO 10218 industrial robot standard. It defines four <strong>collaborative operation</strong> modes. As long as a robot system implements one or more of these modes, it can work with humans in a shared space, with or without safety fences:</p>
+<table>
+<thead>
+<tr>
+<th>Collaborative Mode</th>
+<th>Original English Name</th>
+<th>Principle</th>
+<th>Applicability to Humanoid Robots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safety-rated monitored stop</td>
+<td>Safety-rated monitored stop</td>
+<td>Robot stops when a person enters the collaborative space, resumes after leaving</td>
+<td>Suitable for demonstrations, assembly collaboration</td>
+</tr>
+<tr>
+<td>Hand guiding</td>
+<td>Hand guiding</td>
+<td>Person directly guides the robot's motion via a manual guiding device</td>
+<td>Teaching programming, drag teaching</td>
+</tr>
+<tr>
+<td>Speed and separation monitoring</td>
+<td>Speed and separation monitoring, SSM</td>
+<td>Dynamically adjusts speed based on human-robot distance, maintaining a minimum protective distance</td>
+<td>Main mode for bipedal mobile manipulation</td>
+</tr>
+<tr>
+<td>Power and force limiting</td>
+<td>Power and force limiting, PFL</td>
+<td>Allows physical contact, but contact force/pressure is limited to biomechanical thresholds</td>
+<td>Close-proximity service, physical assistance</td>
+</tr>
+</tbody>
+</table>
+<p>The minimum protective distance for SSM mode is determined by the human approach speed, robot stopping time, and system response time. Its classic form is:</p>
+<div class="arithmatex">\[
+S_p(t_0) = \int_{t_0}^{t_0+T_R+T_B} v_H(t)\,dt + \int_{t_0}^{t_0+T_R} v_R(t)\,dt + T_R \cdot v_R + C + Z_d + Z_r
+\]</div>
+<p>Where <span class="arithmatex">\(v_H\)</span> is the human approach speed (typically taken as walking speed of 1.6 m/s), <span class="arithmatex">\(T_R\)</span> is the system response time, <span class="arithmatex">\(T_B\)</span> is the braking stop time, <span class="arithmatex">\(C\)</span> is an additional distance accounting for human body intrusion, and <span class="arithmatex">\(Z_d\)</span>, <span class="arithmatex">\(Z_r\)</span> are sensor position uncertainty and robot position uncertainty, respectively. The engineering implication of this formula is: <strong>the slower the robot brakes and the larger the sensor delay, the larger the safety distance must be, and the lower the collaborative efficiency</strong> – thus the tension between safety and cycle time.</p>
+<p>The PFL mode provides <strong>biomechanical limits</strong> divided by body region, distinguishing two types of contact:</p>
+<ul>
+<li><strong>Quasi-static contact</strong>: Continuous squeezing of a person between the robot and a fixed object. Limits are most stringent;</li>
+<li><strong>Transient contact</strong>: Brief impact or collision. Limits are approximately twice those for quasi-static contact.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Quasi-static Contact and Transient Contact</p>
+<p>In the biomechanical limit table of ISO/TS 15066, sensitive areas like the face and skull are <strong>not permitted</strong> to experience quasi-static contact. For areas with ample muscle, like the torso and thighs, the typical allowable quasi-static pressure is on the order of hundreds of hPa (approximately 100–200 N/cm²), corresponding to force limits of tens to over a hundred Newtons. Transient contact limits are roughly double. These values originate from studies on human pain thresholds, representing the level at which "pain begins" rather than "injury occurs," and include a safety margin.</p>
+</div>
+<p>For bipedal humanoid robots, adapting the PFL mode presents specific difficulties: the limit model in ISO/TS 15066 assumes the robot is a fixed-base manipulator arm, with contact being single-point and controllable. However, a bipedal robot may make whole-body, multi-point contact with a human during walking, and the contact energy during a fall far exceeds that of a manipulator arm – the energy carried by a 50–80 kg machine falling from a height of 1.5 m (approximately <span class="arithmatex">\(mgh \approx 700\)</span>–1200 J) is far beyond any biomechanical limit. Therefore, the current consensus is: <strong>the primary safety goal for bipedal humanoid robots is "do not fall" and "decelerate before contact," with PFL serving only as a fallback for residual contact.</strong> This also explains why manufacturers invest significant safety budgets in the robustness of balance control.</p>
+<h3 id="1243-biomechanical-limits-and-contact-models">12.4.3 Biomechanical Limits and Contact Models</h3>
+<p>Verification of the PFL mode requires measuring the contact force of the robot's end-effector or body parts. The peak impact force can be estimated using a lumped mass model: when a robot component of mass <span class="arithmatex">\(m_R\)</span> impacts a human body part (equivalent spring constant <span class="arithmatex">\(k_H\)</span>, robot-side equivalent spring <span class="arithmatex">\(k_R\)</span>) at velocity <span class="arithmatex">\(v\)</span>, the peak force is approximately:</p>
+<div class="arithmatex">\[
+F_{max} = v \sqrt{m_{red}\, k_{eff}}, \quad m_{red} = \frac{m_R m_H}{m_R + m_H}, \quad k_{eff} = \frac{k_R k_H}{k_R + k_H}
+\]</div>
+<p>Where <span class="arithmatex">\(m_H\)</span> is the effective mass of the human body part. This model reveals three design approaches to reduce impact force, all of which have corresponding implementations in the subsystem design of Chapter 9:</p>
+<ol>
+<li><strong>Reduce contact velocity <span class="arithmatex">\(v\)</span></strong>: SSM deceleration, compliant control to reduce approach speed – peak force is approximately proportional to velocity, making this the most cost-effective method;</li>
+<li><strong>Reduce effective mass <span class="arithmatex">\(m_{red}\)</span></strong>: Lightweight links and low-inertia design (see Chapter 3 on structural materials, Chapter 9 on swing leg inertia optimization);</li>
+<li><strong>Reduce system stiffness <span class="arithmatex">\(k_{eff}\)</span></strong>: Soft covering materials, compliant joints (e.g., series elastic actuators), active controller yielding upon impact.</li>
+</ol>
+<h3 id="1244-inheritance-from-industrial-robot-standards-iso-10218">12.4.4 Inheritance from Industrial Robot Standards: ISO 10218</h3>
+<p>For humanoid robots deployed in factory environments, the most direct standard basis remains ISO 10218-1/-2 (Safety requirements for robot bodies and robot systems/integration). This standard has undergone revisions, with the latest versions further incorporating requirements for mobile and collaborative functions and being used in conjunction with ISO/TS 15066 for human-robot collaboration scenarios. In practice, humanoid robots in factory settings typically undergo cell-level risk assessment as an "industrial robot system": the robot body complies with ISO 10218-1, and the integrated application (including tooling, material flow, personnel access) is certified at the cell level by the integrator according to ISO 10218-2.</p>
+<p>It is worth emphasizing the issue of "<strong>who certifies</strong>": the robot body manufacturer is only responsible for the robot body. The overall safety of the robot placed into a specific production line must be re-evaluated and is the responsibility of the <strong>system integrator or end user</strong>. If a humanoid robot company delivers a "turnkey cell" (robot + tooling + layout), it effectively assumes the role of the integrator, and the certification responsibility expands accordingly – this is a direct impact of business model choice on compliance costs.</p>
+<h3 id="1245-electrical-and-battery-safety">12.4.5 Electrical and Battery Safety</h3>
+<p>Humanoid robots are equipped with power batteries ranging from tens to nearly a hundred volts and high-power drives. Electrical safety forms its own system independent of functional safety:</p>
+<ul>
+<li><strong>IEC 62368-1</strong>: Safety standard for audio/video and information technology equipment. It adopts <strong>Hazard-Based Safety Engineering (HBSE)</strong> principles, classifying electrical, thermal, and mechanical energy according to their potential to cause harm to humans (Class 1–3), requiring protection for Class 2 and above energy sources. The charging dock and main power board of a humanoid robot are typically evaluated against this standard;</li>
+<li><strong>Battery safety</strong>: At the cell and battery pack level, reference is usually made to the IEC 62133 series (Safety of portable sealed batteries) and UN 38.3 for transport (abuse tests for vibration, shock, short circuit, overcharge, forced discharge, etc., a mandatory prerequisite for air transport of lithium batteries);</li>
+<li><strong>Functional safety of the BMS</strong>: Overcharge, over-discharge, over-temperature, and short circuit protection are safety-related functions. High-demand applications also require SIL/PL justification, and the main battery circuit typically requires dual protection (main protection IC + independent secondary protection);</li>
+<li><strong>Charging safety</strong>: Humanoid robots with automatic recharging involve unattended charging. Evaluation points include foreign object short circuit protection at contact points, charging communication handshake, and early detection of thermal runaway (gas/temperature sensors).</li>
+</ul>
+<h2 id="125-regional-market-access-certification">12.5 Regional Market Access Certification</h2>
+<h3 id="1251-european-union-ce-marking-system">12.5.1 European Union: CE Marking System</h3>
+<p>The CE marking (Conformité Européenne) is a declaration of conformity for products entering the EU and European Economic Area market. It is not a single certification but a combination of <strong>Directives/Regulations + Harmonized Standards + Conformity Assessment Procedures</strong>. Humanoid robots typically involve:</p>
+<table>
+<thead>
+<tr>
+<th>Directive/Regulation</th>
+<th>Scope</th>
+<th>Key Points for Humanoid Robots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Machinery Directive 2006/42/EC (transitioning to Machinery Regulation (EU) 2023/1230)</td>
+<td>Basic health and safety requirements for machinery</td>
+<td>Whole-machine risk assessment, safety functions, technical documentation</td>
+</tr>
+<tr>
+<td>Low Voltage Directive 2014/35/EU</td>
+<td>Electrical safety for 50–1000 V AC / 75–1500 V DC</td>
+<td>Chargers, power supply components (robot battery voltage is often below this range, but chargers apply)</td>
+</tr>
+<tr>
+<td>EMC Directive 2014/30/EU</td>
+<td>Electromagnetic compatibility</td>
+<td>Detailed in Section 12.5.4</td>
+</tr>
+<tr>
+<td>Radio Equipment Directive 2014/53/EU (RED)</td>
+<td>Devices containing Wi-Fi/Bluetooth/4G/5G modules</td>
+<td>RF parameters, spectrum compliance</td>
+</tr>
+<tr>
+<td>RoHS 2011/65/EU</td>
+<td>Restriction of hazardous substances</td>
+<td>Declaration of materials such as lead, cadmium, flame retardants</td>
+</tr>
+<tr>
+<td>EU AI Act (EU) 2024/1689</td>
+<td>Risk-based regulation of AI systems</td>
+<td>May trigger additional obligations when involving functions like biometric identification, emotion recognition</td>
+</tr>
+</tbody>
+</table>
+<p>The typical process for CE conformity assessment is:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[Identify applicable directives/regulations] --&gt; B[Identify harmonized standards&lt;br/&gt;EN ISO 13482 / EN ISO 13849 etc.]
+    B --&gt; C[Risk assessment and safety design]
+    C --&gt; D[Prototype testing&lt;br/&gt;Self-test or commissioned laboratory]
+    D --&gt; E{Does it require third-party intervention?}
+    E --&gt;|No| F[Manufacturer's self-declaration&lt;br/&gt;Sign DoC]
+    E --&gt;|Yes| G[Notified Body&lt;br/&gt;Type examination]
+    G --&gt; F
+    F --&gt; H[Compile technical documentation&lt;br/&gt;Retain for at least 10 years]
+    H --&gt; I[Affix CE marking&lt;br/&gt;Place on market]</code></pre>
+<p>Most robots can follow the manufacturer's <strong>self-declaration</strong> path (signing the Declaration of Conformity DoC), provided that harmonized standards are fully implemented and technical documentation is prepared. The technical documentation must include risk assessment reports, calculation and test records, drawings, component certificates, user manuals, etc., available for market surveillance authorities to inspect at any time. A notable trend is that both the new Machinery Regulation and the AI Act are bringing "autonomous/learning machines" under clearer regulatory scrutiny; manufacturers should track their transition periods and implementation details.</p>
+<h3 id="1252-north-america-ul-1740-nrtl-system-and-fcc-part-15">12.5.2 North America: UL 1740, NRTL System, and FCC Part 15</h3>
+<p>The US market does not have a unified mark like CE but rather a multi-layered structure:</p>
+<ul>
+<li><strong>Electrical and Fire Safety</strong>: Certified by OSHA-recognized NRTLs (Nationally Recognized Testing Laboratories, such as UL, Intertek/ETL, TÜV SÜD America). The dedicated standard for robotics is <strong>UL 1740</strong> "Standard for Safety for Robots and Robotic Equipment," covering electrical, mechanical, and fire safety requirements for the robot body. In practice, UL 1740 is often used as the framework, supplemented by component-level assessments per UL 61010 or IEC 62368-1;</li>
+<li><strong>Electromagnetic Compatibility and Radio Frequency</strong>: <strong>FCC Part 15</strong> specifies RF emission limits for unintentional radiators (digital devices) and intentional radiators (wireless modules). Robots with processors are Class B (residential environment) or Class A (industrial environment) digital devices, requiring conducted and radiated emission tests; those with Wi-Fi/Bluetooth modules also need module-level or whole-machine FCC certification;</li>
+<li><strong>Workplace Safety</strong>: OSHA regulations require employers to provide a safe working environment. Industrial robot deployment must comply with ANSI/RIA R15.06 (harmonized with ISO 10218) for cell safety. When humanoid robots enter US factories, integrators typically perform application-level risk assessments per R15.06;</li>
+<li><strong>Canada</strong>: CSA mark and SCC accreditation system, standards are highly harmonized with UL (cUL certification).</li>
+</ul>
+<p>Unlike CE self-declaration, the US path heavily relies on third-party laboratories, and certification bodies conduct <strong>follow-up inspections</strong> for production consistency. Replacing critical components requires notification or even re-evaluation—a significant process constraint for rapidly iterating humanoid robot hardware.</p>
+<h3 id="1253-china-cr-certification-ccc-and-gb-standards">12.5.3 China: CR Certification, CCC, and GB Standards</h3>
+<p>Access to the Chinese robot market consists of the following layers:</p>
+<ul>
+<li><strong>CR Certification (China Robot Certification)</strong>: A voluntary robot certification system established under the guidance of the Certification and Accreditation Administration of China, covering safety, EMC, performance, and reliability dimensions. It is categorized by scope into whole-machine, component, etc. Although nominally voluntary, the CR mark is often a bonus or prerequisite in government procurement, central SOE tenders, and industry customers, effectively having quasi-mandatory force;</li>
+<li><strong>CCC Certification (China Compulsory Certification)</strong>: Mandatory product certification. Power adapters, chargers, and other components of humanoid robots must be certified if they fall under the CCC catalog;</li>
+<li><strong>GB National Standards</strong>: Robot safety-related GB standards mostly adopt or modify ISO standards (e.g., GB 11291 corresponds to ISO 10218), EMC references GB/T 17626 (corresponding to IEC 61000-4 series), etc.;</li>
+<li><strong>Local and Industry Pilots</strong>: Beijing, Shanghai, Shenzhen, etc., have issued management measures for testing, evaluation, and demonstration applications for embodied intelligence/humanoid robots, imposing requirements on right-of-way, insurance, and data compliance for robots entering public spaces. These are soft constraints outside the standard system but equally affect deployment.</li>
+</ul>
+<h3 id="1254-electromagnetic-compatibility-emc-testing-details">12.5.4 Electromagnetic Compatibility (EMC) Testing Details</h3>
+<p>EMC refers to a device's ability to function properly in its electromagnetic environment without causing unacceptable electromagnetic interference to other devices. The high-frequency switching drives (tens of kHz PWM, high di/dt currents), long wiring harnesses, and wireless modules inside humanoid robots make EMC the certification aspect most prone to failure. Main test items include:</p>
+<table>
+<thead>
+<tr>
+<th>Test Item</th>
+<th>Abbreviation</th>
+<th>Inspection Content</th>
+<th>Typical Risk Points for Humanoid Robots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Radiated Emission</td>
+<td>RE</td>
+<td>Whether electromagnetic noise radiated into space exceeds limits</td>
+<td>Drive PWM, motor cable antenna effect</td>
+</tr>
+<tr>
+<td>Conducted Emission</td>
+<td>CE</td>
+<td>Noise conducted along power lines</td>
+<td>Charging dock, switching power supply</td>
+</tr>
+<tr>
+<td>Electrostatic Discharge Immunity</td>
+<td>ESD</td>
+<td>Whether the device functions normally after human body electrostatic contact/air discharge</td>
+<td>Housing gaps, screen, buttons</td>
+</tr>
+<tr>
+<td>Electrical Fast Transient/Burst</td>
+<td>EFT</td>
+<td>Burst pulses caused by inductive load switching</td>
+<td>Long cables, I/O ports</td>
+</tr>
+<tr>
+<td>Surge Immunity</td>
+<td>Surge</td>
+<td>Lightning-induced surges</td>
+<td>Charging station, mains interface</td>
+</tr>
+<tr>
+<td>Radiated RF Electromagnetic Field Immunity</td>
+<td>RS</td>
+<td>Whether malfunction occurs in strong RF fields</td>
+<td>Operation near wireless base stations</td>
+</tr>
+</tbody>
+</table>
+<p>EMC issues must be prevented at the design stage, not remedied during testing: common-mode chokes at the drive output, single-ended/double-ended grounding strategies for shielded cables, equipotential bonding of metal structural parts, and separate routing of sensor signal lines and power lines (see Chapter 9 for arm cable management) are design measures costing far less than chamber rework. Generally, first-pass EMC test rates are strongly correlated with team experience; scheduling one or two rounds of rework and retesting is standard practice.</p>
+<h3 id="1255-strategic-choices-for-multi-market-access">12.5.5 Strategic Choices for Multi-Market Access</h3>
+<p>Humanoid robot companies targeting global sales typically weigh three certification strategies:</p>
+<ol>
+<li><strong>Design for the Strictest Standards</strong>: Use the most stringent market (usually EU + North America) requirements as the design baseline. One design, multiple certifications, minimizing marginal costs;</li>
+<li><strong>CB Scheme Mutual Recognition</strong>: Leverage the IECEE CB Scheme, where one CB test report can be converted into multiple national certifications, reducing duplicate testing;</li>
+<li><strong>Regional SKUs</strong>: Differentiate hardware for different markets (e.g., wireless modules, power specifications), offering flexibility but increasing supply chain and production consistency management costs (see Chapter 7 supply chain discussion).</li>
+</ol>
+<p>Regardless of the strategy chosen, <strong>change management</strong> is the core of compliance during mass production: every ECO (Engineering Change Order) involving safety-related components, firmware, or structure requires an assessment of whether recertification is triggered. This necessitates integration between the PLM system and certification documentation.</p>
+<h2 id="126-frontier-challenges-when-standards-meet-learning-based-robots">12.6 Frontier Challenges: When Standards Meet Learning-Based Robots</h2>
+<h3 id="1261-four-cracks-in-the-existing-framework">12.6.1 Four Cracks in the Existing Framework</h3>
+<p>Synthesizing the discussions in this chapter and Chapter 1, the structural difficulties faced by humanoid robot standardization can be summarized into four points:</p>
+<ol>
+<li><strong>Morphological Diversity</strong>: Bipedal, wheeled chassis + dual arms, and composite forms coexist, making it difficult for the "mechanical type" classification of Type-C standards to cover them all;</li>
+<li><strong>Dynamic Contact</strong>: The energy scale of falls and full-body multi-point contacts exceeds the single-point contact model of ISO/TS 15066;</li>
+<li><strong>AI Autonomy</strong>: Learning-based behaviors cannot be verified using traditional deterministic fault models, and SOTIF-like methods are still in the process of being migrated to the robotics field;</li>
+<li><strong>Cross-Scenario Deployment</strong>: The same robot may be in a factory today and a shopping mall tomorrow, causing the certification boundary to shift with the scenario; "one certification, valid everywhere" no longer holds.</li>
+</ol>
+<h3 id="1262-response-strategies-and-industry-trends">12.6.2 Response Strategies and Industry Trends</h3>
+<p>Industry and standards organizations are patching these cracks along multiple paths:</p>
+<ul>
+<li><strong>Dedicated Standards Initiation</strong>: ISO, IEC, and national standardization bodies have all initiated pre-research and project establishment for standards targeting humanoid robots/embodied intelligence, covering terminology, safety requirements, and test methods; enterprise participation in standard-setting can both lock in technical discourse power early and reduce the cost of justifying applicability for future certifications;</li>
+<li><strong>Test Methods and Scenario Libraries First</strong>: During the absence of formal standards, third-party testing institutions and industry alliances provide de facto standards in the form of "test specifications + scenario libraries," such as disturbance immunity tests for bipedal stability and human-robot coexistence test procedures for service scenarios;</li>
+<li><strong>Safety Case-Driven Approach</strong>: Drawing on practices from the nuclear and aviation sectors, structured argumentation documents (e.g., Goal Structuring Notation, GSN) are used to organize the evidence chain for "why this robot is safe enough," integrating standard compliance, test data, and operational monitoring into an auditable whole;</li>
+<li><strong>Runtime Compliance</strong>: Continuous post-deployment assessment is achieved through telemetry and safety event reporting, extending certification from a one-time checkpoint to a full lifecycle management process. This also echoes the trend discussed in Chapter 25 of evaluation systems moving from offline to online.</li>
+</ul>
+<hr />
+<h2 id="127-chapter-summary">12.7 Chapter Summary</h2>
+<ul>
+<li>Compliance is a prerequisite for the productization of humanoid robots, covering three levels: market access, liability definition, and design constraints; the typical complete certification cycle is 6–18 months and should be initiated concurrently with the overall architecture design.</li>
+<li>The risk assessment of ISO 12100 (hazard identification → risk estimation → three-step risk reduction) is the common language of all safety standards; the risk graph method maps severity, exposure frequency, and avoidance probability to the required PL level.</li>
+<li>Functional safety is jointly supported by IEC 61508 (SIL 1–4, PFH/PFD quantification) and ISO 13849 (PL a–e, four elements: Category, MTTF<span class="arithmatex">\(_d\)</span>, DC<span class="arithmatex">\(_{avg}\)</span>, CCF); the typical target for critical safety functions in humanoid robots is PL d / SIL 2 to PL e / SIL 3, and the safety layer must be independent of the functional layer of the operational VLA stack.</li>
+<li>ISO 13482 and ISO/TS 15066 are the two closest product standards: the former specifies speed, force, and contact safety for personal care robots, while the latter defines four collaboration modes and biomechanical limits divided by human body parts; the dynamic fall energy of bipedal platforms far exceeds this limit system, making "no falling + deceleration before contact" the primary safety strategy.</li>
+<li>Regarding regional access: The EU CE relies on the conformity declaration path using harmonized standards and technical documentation; North America relies on UL 1740 (NRTL certification) and FCC Part 15; China has CR certification (de facto threshold) and CCC; EMC testing (RE/CE/ESD/EFT, etc.) is a common cross-regional difficulty that must be addressed upfront during wiring, shielding, and grounding design.</li>
+<li>AI autonomy is driving safety engineering from "fail-safe" to "Safety of the Intended Functionality (SOTIF)"; safety cases, scenario libraries, and runtime monitoring will become the three pillars of the next-generation compliance system for humanoid robots.</li>
+</ul>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] ISO 12100:2010. <em>Safety of machinery — General principles for design — Risk assessment and risk reduction</em>. International Organization for Standardization.</p>
+<p>[2] ISO 13482:2014. <em>Robots and robotic devices — Safety requirements for personal care robots</em>. International Organization for Standardization. https://www.iso.org/standard/53820.html</p>
+<p>[3] ISO/TS 15066:2016. <em>Robots and robotic devices — Collaborative robots</em>. International Organization for Standardization. https://www.iso.org/standard/62996.html</p>
+<p>[4] ISO 13849-1. <em>Safety of machinery — Safety-related parts of control systems</em>. International Organization for Standardization.</p>
+<p>[5] IEC 61508:2010. <em>Functional safety of electrical/electronic/programmable electronic safety-related systems</em>. International Electrotechnical Commission.</p>
+<p>[6] IEC 62368-1:2018. <em>Audio/video, information and communication technology equipment — Part 1: Safety requirements</em>. International Electrotechnical Commission.</p>
+<p>[7] ISO 10218-1/-2. <em>Robotics — Safety requirements for industrial robot systems</em>. International Organization for Standardization.</p>
+<p>[8] ISO 21448:2022. <em>Road vehicles — Safety of the intended functionality</em>. International Organization for Standardization.</p>
+<p>[9] UL 1740. <em>Standard for Robots and Robotic Equipment</em>. Underwriters Laboratories.</p>
+<p>[10] FCC Part 15. <em>Radio Frequency Devices</em>. U.S. Federal Communications Commission.</p>
+<p>[11] Directive 2006/42/EC (Machinery Directive) and Regulation (EU) 2023/1230 (Machinery Regulation). European Union.</p>
+<p>[12] Regulation (EU) 2024/1689 (Artificial Intelligence Act). European Union.</p>
+<p>[13] UN Manual of Tests and Criteria, Part III, subsection 38.3 (UN 38.3 Lithium Battery Transport Test).</p>
+<p>[14] IEC 62133-2. <em>Secondary cells and batteries containing alkaline or other non-acid electrolytes — Safety requirements</em>. International Electrotechnical Commission.</p>
+<p>[15] Certification and Accreditation Administration of the People's Republic of China, et al. Implementation Rules for China Robot Certification (CR Certification).</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-11/">← Previous<span>Chapter 11 Assembly, Integration, and Testing</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-13/">Next →<span>Chapter 13: Mass Production and Scaling</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-12-certification-compliance-and-quality-standards">Chapter 12: Certification, Compliance, and Quality Standards</a><ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#121-overall-framework-of-certification-and-compliance">12.1 Overall Framework of Certification and Compliance</a><ul>
+<li><a href="#1211-why-compliance-is-a-prerequisite-for-productization">12.1.1 Why Compliance is a Prerequisite for Productization</a></li>
+<li><a href="#1212-hierarchy-of-the-standards-system">12.1.2 Hierarchy of the Standards System</a></li>
+<li><a href="#1213-cost-and-timeline-of-compliance">12.1.3 Cost and Timeline of Compliance</a></li>
+<li><a href="#1214-organization-of-this-chapter">12.1.4 Organization of This Chapter</a></li>
+</ul>
+</li>
+<li><a href="#122-risk-assessment-the-starting-point-of-all-safety-engineering">12.2 Risk Assessment: The Starting Point of All Safety Engineering</a><ul>
+<li><a href="#1221-iso-12100-risk-assessment-process">12.2.1 ISO 12100 Risk Assessment Process</a></li>
+<li><a href="#1222-quantifying-risk-estimation-the-risk-graph-method">12.2.2 Quantifying Risk Estimation: The Risk Graph Method</a></li>
+<li><a href="#1223-three-step-method-for-risk-reduction">12.2.3 Three-Step Method for Risk Reduction</a></li>
+<li><a href="#1224-typical-hazard-list-for-humanoid-robots">12.2.4 Typical Hazard List for Humanoid Robots</a></li>
+</ul>
+</li>
+<li><a href="#123-functional-safety-iec-61508-and-iso-13849">12.3 Functional Safety: IEC 61508 and ISO 13849</a><ul>
+<li><a href="#1231-basic-concepts-of-functional-safety">12.3.1 Basic Concepts of Functional Safety</a></li>
+<li><a href="#1232-quantification-of-sil-pfh-and-pfd">12.3.2 Quantification of SIL: PFH and PFD</a></li>
+<li><a href="#1233-pl-of-iso-13849-category-mttfd-and-dc">12.3.3 PL of ISO 13849: Category, MTTFd, and DC</a></li>
+<li><a href="#1234-decomposition-of-typical-safety-functions-for-humanoid-robots">12.3.4 Decomposition of Typical Safety Functions for Humanoid Robots</a></li>
+<li><a href="#1235-safety-of-the-intended-functionality-sotif-and-new-issues-from-ai">12.3.5 Safety Of The Intended Functionality (SOTIF) and New Issues from AI</a></li>
+</ul>
+</li>
+<li><a href="#124-product-safety-standards-iso-13482-and-isots-15066">12.4 Product Safety Standards: ISO 13482 and ISO/TS 15066</a><ul>
+<li><a href="#1241-iso-134822014-safety-of-personal-care-robots">12.4.1 ISO 13482:2014 Safety of Personal Care Robots</a></li>
+<li><a href="#1242-isots-150662016-technical-specification-for-collaborative-robots">12.4.2 ISO/TS 15066:2016 Technical Specification for Collaborative Robots</a></li>
+<li><a href="#1243-biomechanical-limits-and-contact-models">12.4.3 Biomechanical Limits and Contact Models</a></li>
+<li><a href="#1244-inheritance-from-industrial-robot-standards-iso-10218">12.4.4 Inheritance from Industrial Robot Standards: ISO 10218</a></li>
+<li><a href="#1245-electrical-and-battery-safety">12.4.5 Electrical and Battery Safety</a></li>
+</ul>
+</li>
+<li><a href="#125-regional-market-access-certification">12.5 Regional Market Access Certification</a><ul>
+<li><a href="#1251-european-union-ce-marking-system">12.5.1 European Union: CE Marking System</a></li>
+<li><a href="#1252-north-america-ul-1740-nrtl-system-and-fcc-part-15">12.5.2 North America: UL 1740, NRTL System, and FCC Part 15</a></li>
+<li><a href="#1253-china-cr-certification-ccc-and-gb-standards">12.5.3 China: CR Certification, CCC, and GB Standards</a></li>
+<li><a href="#1254-electromagnetic-compatibility-emc-testing-details">12.5.4 Electromagnetic Compatibility (EMC) Testing Details</a></li>
+<li><a href="#1255-strategic-choices-for-multi-market-access">12.5.5 Strategic Choices for Multi-Market Access</a></li>
+</ul>
+</li>
+<li><a href="#126-frontier-challenges-when-standards-meet-learning-based-robots">12.6 Frontier Challenges: When Standards Meet Learning-Based Robots</a><ul>
+<li><a href="#1261-four-cracks-in-the-existing-framework">12.6.1 Four Cracks in the Existing Framework</a></li>
+<li><a href="#1262-response-strategies-and-industry-trends">12.6.2 Response Strategies and Industry Trends</a></li>
+</ul>
+</li>
+<li><a href="#127-chapter-summary">12.7 Chapter Summary</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

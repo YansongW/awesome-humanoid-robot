@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M07 · 대형 테스트 및 검수: 데이터로 말하고, 합격해야 조립 가능 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M07 · 대형 테스트 및 검수: 데이터로 말하고, 합격해야 조립 가능</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m07">M07 · 대형 테스트 및 검수: 데이터로 말하고, 합격해야 조립 가능</h1>
+<p><strong>전체 위치</strong>: M06 펌웨어 및 캘리브레이션 완료 후, 전체 기기 단계(M08 선정 / M09 조립) 이전. 입력은 "회전 가능한" 관절 모듈이며, 출력은 <strong>실측 데이터 패키지</strong>(곡선 + 결론)입니다. 그리고 M01 지표표를 "추정판"에서 "실측판"으로 업그레이드합니다. 6가지 테스트를 모두 통과해야 이 관절이 조립될 수 있습니다. 이 페이지는 <a href="/ko/roadmap/stage-1-actuator/">단계 1 개요</a>의 7단계를 세부적으로 설명합니다.</p>
+<p><strong>전제 조건</strong>: M06 검수 통과(3루프 조정 완료, 250Hz 통신 안정); 알루미늄 프로파일 대형, 추봉과 추, 온도 측정 도구(적외선 온도총 또는 열전대) 준비 완료.</p>
+<p>이론적 배경: 테스트 방법은 <a href="/ko/wiki/chapters/chapter-11/">제11장 조립, 통합 및 테스트</a> 참조, 평가 방법론은 <a href="/ko/wiki/chapters/chapter-25/">제25장 로봇 평가 시스템</a> 참조, 제어 판단 기준은 <a href="/ko/wiki/chapters/chapter-14/">제14장 로봇 제어 기초</a> 참조.</p>
+<h2 id="1">단계 1: 대형 구축——먼저 대형 자체가 거짓말하지 않도록 보장</h2>
+<p>【수행 사항】</p>
+<ol>
+<li><strong>강성 고정</strong>: 알루미늄 프로파일 + 클램프로 관절 모듈을 고정하고, 출력축을 수평으로 돌출시킵니다. 먼저 "손으로 흔들기/타격 테스트" 수행: 흔들리지 않고, 타격 시 진동이 빠르게 감쇠하며, 대형 고유 진동수가 관절 운동 주파수와 명확히 분리되어야 합니다. 대형 공진은 모든 데이터를 오염시킵니다(일반적인 함정 제1조 참조).</li>
+<li><strong>추봉 부하</strong>: 봉 길이는 출력축 중심에서 추 걸이점까지 측정하며, 부하 질량은 최대 토크로 역산:</li>
+</ol>
+<pre class="highlight"><code>m = τ_peak ÷ (g × L)
+계산 예: τ_peak = 8 N·m, 봉 길이 L = 0.5 m
+m = 8 ÷ (9.81 × 0.5) ≈ 1.63 kg</code></pre>
+<p>0 kg(무부하) / 0.8 kg(반부하) / 1.63 kg(만부하) 세 가지 단계로 추를 준비합니다.
+3. <strong>기록 링크</strong>: 드라이브 보드 상위 컴퓨터가 각도/전류/온도를 동기적으로 기록하며, 샘플링 속도 ≥ 제어 주파수(250Hz, Berkeley 통신 속도 기준, <a href="https://arxiv.org/html/2504.17249v1">Berkeley Humanoid Lite 논문</a>); 각 곡선은 테스트 조건(부하 단계, 펌웨어 버전, 게인 파라미터)과 함께 원본 형식으로 저장합니다.</p>
+<p>【이유】대형은 단순한 보조 도구가 아니라 측정 장비의 일부입니다: 클램프가 1mm 느슨해지면 계단 응답 곡선에 가짜 링잉이 추가됩니다; 스크린샷만 저장하고 원본 데이터를 저장하지 않으면 3개월 후 재현 분석이 불가능합니다. 정확한 측정의 전제는 "측정 대상 외의 모든 것이 그것보다 단단하고 안정적"이어야 한다는 것입니다.</p>
+<p>【상황 분석】알루미늄 프로파일이 없는 경우: 두꺼운 강판 + 바이스도 가능하며, 판단 기준은 동일합니다——손으로 흔들리지 않고, 타격음이 맑습니다. 추가 없는 경우: 덤벨 원판, 생수병도 가능하지만, 질량은 반드시 저울로 실측해야 하며, 명목값을 사용해서는 안 됩니다. 추봉 자체 중량을 빼먹지 마세요: 봉의 축 관성 ≈ ⅓·m_봉·L², 부하에 포함해야 합니다(일반적인 함정 제2조 참조).</p>
+<h2 id="2">단계 2: 계단 응답——강성과 댐핑의 거울</h2>
+<p>【수행 사항】30° 위치 계단 입력(추봉이 수평 자세로 회전할 때 부하 토크 최대), 각도 곡선 기록. 판단 기준(공학 권장값, M01 지표표에 따라 수정 필요; <a href="/ko/roadmap/stage-1-actuator/">단계 1 개요</a>와 일치):</p>
+<ul>
+<li>상승 시간 &lt; 0.2 s;</li>
+<li>오버슈트 &lt; 10%(즉, 최대값이 33°를 초과하지 않음);</li>
+<li>정상 상태 오차 &lt; 0.5°.</li>
+</ul>
+<p>무부하 → 반부하 → 만부하 세 단계 각각 3회 측정, 곡선 모두 보관. 부하 후 상승이 느려지고 오버슈트가 커지는 것은 정상입니다; 만부하에서 항목 중 하나라도 허용 범위를 벗어나면, 먼저 M06 단계 4로 돌아가 실측 관성에 따라 부하 재조정하고, 조정이 안 되면 지표 자체를 의심하세요.</p>
+<p>【이유】계단 응답은 한 번에 세 가지를 드러냅니다: 게인이 충분한지(상승 시간), 댐핑이 충분한지(오버슈트와 링잉), 정적 오차와 중력/마찰 보상이 적절한지(정상 상태 오차). 이 세 가지는 전체 기기 단계에서 관절이 "명령을 따라갈 수 있는지"를 직접 결정합니다.</p>
+<p>【상황 분석】만부하 오버슈트 15%가 줄어들지 않는 경우: 먼저 중력 피드포워드/마찰 보상을 강화한 후, 위치 루프 P를 낮추고 D를 보충; 그래도 안 되면 부하 관성을 재계산——관성이 4배 증가하면 원래 게인은 반드시 진동합니다. 엉덩이, 무릎과 같이 "지지상에서 전체 기기 충격을 받는" 관절은 만부하 판단 기준을 한 단계 강화(예: 오버슈트 &lt; 5%, 공학 권장값)하는 것이 좋으며, 전체 기기 단계에서 이점을 얻을 수 있습니다.</p>
+<h2 id="3">단계 3: 주파수 응답 및 대역폭——과연 다리로 사용할 수 있는가</h2>
+<p>【수행 사항】</p>
+<ol>
+<li>먼저 1Hz, ±20° 사인파 위치 명령을 보냅니다. 판단 기준(공학 권장값, <a href="/ko/roadmap/stage-1-actuator/">단계 1 개요</a>와 동일): 진폭 감쇠 &lt; 10%(출력 피크-투-피크 ≥ 36°), 위상 지연 &lt; 15°.</li>
+<li>그런 다음 주파수 스윕: 0.5 → 1 → 2 → 5 → 10 → 20Hz 단계별로 출력/명령 진폭비를 측정하여 진폭이 70.7%(−3dB)로 감소하는 주파수를 찾습니다——이것이 <strong>위치 루프 대역폭 실측값</strong>입니다.</li>
+</ol>
+<p>대역폭이 다리로 사용 가능한지 결정하는 이유: 보행 시 지지상/스윙상이 매 걸음마다 전환되며, 보행 주파수 1–2Hz는 관절이 초당 여러 번의 부하 급변과 명령 반전을 경험함을 의미하며, 이러한 과도 상태의 주파수 성분은 보행 주파수 자체보다 훨씬 높습니다. 위치 루프 대역폭이 몇 Hz에 불과하면, 지지상 전환 순간 관절이 "여전히 이전 명령을 추종"하게 되어 전체 기기 성능은 다리가 약해지고 흔들리는 현상으로 나타납니다. 다리 주요 관절의 대역폭은 ≥ 10Hz 정도를 권장합니다(공학 권장값, 보행 주파수에 따라 검증 필요).</p>
+<p>【이유】계단 응답은 시간 영역을 보고, 주파수 스윕은 주파수 영역을 보는 것으로, 동일한 시스템의 두 가지 사진입니다; 주파수 스윕은 "응답 능력"을 비교 가능한 하드 지표로 정량화하며, M01 지표표의 해당 열이 이를 통해 실측값으로 업그레이드됩니다.</p>
+<p>【상황 분석】대역폭 부족 시 세 가지 방법: 위치 루프 게인 증가(오버슈트 제약 받음) → 가속도/속도 피드포워드 → 기계적 백래시 및 엔코더 분해능 확인(비선형 요소가 대역폭을 하드하게 제한하며, 파라미터 조정으로 해결 불가). 고감속비 서보 모터 방식은 이 부분에서 자연적으로 제한됩니다——토폴로지에 의해 결정되며, 사실대로 기록하고 지표표에 "동적 보행에 사용 불가"라고 명시합니다.</p>
+<h2 id="4-qdd">단계 4: 역구동 및 힘 투명성(QDD/직구동 필수)</h2>
+<p>【수행 사항】<a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">준직구동(QDD)</a> 및 직구동 방식은 세 가지 항목을 추가 측정; 고감속비 방식(서보/하모닉)은 이 항목을 직접 "불합격——토폴로지 결정"으로 기록하고, 굳이 측정할 필요 없음.</p>
+<ol>
+<li><strong>전원 차단 역구동</strong>: 전원 차단 상태에서 출력축을 손으로 돌리며, 부드럽고 걸림 없으며, 명확한 코깅 토크가 없어야 합니다.</li>
+<li><strong>제로 강성 드래그</strong>: 전원을 켜고 제로 강성(위치 게인 = 0, 작은 댐핑)으로 설정하면, "무중력" 상태로 출력축을 드래그할 수 있어야 합니다——이는 <a href="/entry/ent_method_impedance_control/">임피던스 제어</a>의 퇴화 형태이자, 이후 힘 제어의 입장권입니다.</li>
+<li><strong>전류-토크 캘리브레이션(Kt 측정)</strong>: 알려진 추를 걸어 정지 상태를 유지하고, 정상 상태 상전류를 기록하여 실측 토크 상수를 역산:</li>
+</ol>
+<pre class="highlight"><code>Kt_출력 = τ ÷ I = (m × g × L) ÷ I
+계산 예: m = 1.63 kg, L = 0.5 m → τ = 1.63 × 9.81 × 0.5 ≈ 8.0 N·m
+측정된 정상 상태 상전류 I = 5.2 A
+Kt_출력 = 8.0 ÷ 5.2 ≈ 1.54 N·m/A</code></pre>
+<p>이론값(모터 Kt × 감속비 × 효율, M02 매뉴얼 값)과 비교하여 편차 &gt; 10%이면 원인을 조사해야 합니다(공학 권장값): 전류 샘플링 캘리브레이션 오류, 마찰로 인한 토크 손실, 또는 매뉴얼 Kt 부풀리기.
+4. <strong>듀얼 엔코더 방식</strong>: 모터 측과 출력 측 <a href="/entry/ent_component_joint_encoder_2024/">관절 엔코더</a> 판독값을 동기적으로 기록하며, 두 값의 차이 = 감속기 변형 + 백래시——ODRI는 바로 이 차이값을 이용하여 본체 감각 힘 제어를 수행합니다(<a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">ODRI 액추에이터 하드웨어 저장소</a>). 무부하 차이는 백래시에 가깝고, 부하 시 차이 증가분은 감속기 강성 변형에 가깝습니다. 모두 데이터 패키지에 기록합니다.</p>
+<p>【이유】힘 투명성은 QDD의 존재 의의입니다: "전류 ≈ 토크"라는 등식이 성립해야, 이후 임피던스/힘 제어에 추가 토크 센서가 필요하지 않습니다. Kt 편차가 큰데도 매뉴얼 값을 그대로 사용하면, 전체 기기 힘 제어 피드포워드가 모두 틀리게 됩니다.</p>
+<p>【상황 분석】전원 차단 시 돌리기 어려움: 감속기 조립 과도( M05로 돌아감) 또는 토폴로지 자체가 역구동 불가능한지 확인. 제로 강성 드래그 시 "뚝뚝 끊김": 대부분 코깅 토크 + 보상되지 않은 마찰로 인한 것이므로, 소량의 전류 피드포워드 보상을 추가하고, 보상량을 데이터 패키지에 기록합니다(전체 기기 단계에서 직접 재사용).</p>
+<h2 id="5">5단계: 온도 상승과 내구성 – 시간은 거울이다</h2>
+<p>【수행할 작업】</p>
+<ol>
+<li><strong>온도 상승</strong>: 정격 부하(반부하 추를 사용하여 1Hz 사인파를 지속적으로 추적하거나 M01의 듀티 사이클에 따라 등가 부하)로 30분 연속 운전 후 케이스 온도 곡선을 기록합니다. 기준: 케이스 온도 &lt; 60°C (엔지니어링 권장값; 절연 등급 상한은 모터 공급업체에 직접 확인 필요). 시험 환경 온도를 함께 기록하고, 여름 재시험 시 온도 상승 차이를 보정합니다.</li>
+<li><strong>내구성 샘플링 테스트</strong>: Berkeley는 60시간 연속 운전으로 3D 프린팅 사이클로이드 기어의 신뢰성을 검증했습니다 (<a href="https://arxiv.org/abs/2504.17249">arXiv:2504.17249</a>). 자체 개발 감속기는 이 수준으로 샘플링 테스트를 수행합니다: 첫 번째 제품은 60시간, 양산품은 10%를 샘플링하여 10–20시간 테스트 (엔지니어링 권장 절차). 테스트 후 기어 이면 마모를 분해 검사하고, 백래시와 무부하 전류를 재측정하여 첫 번째 제품 기준과 비교합니다.</li>
+<li><strong>효율 개략 측정</strong>: 등속 대부하 조건에서 입력 전력 대비 출력 기계적 전력:</li>
+</ol>
+<pre class="highlight"><code>η = (τ × ω) ÷ (V × I)
+예시: 출력 τ = 4 N·m, ω = 3 rad/s → 기계적 전력 12 W
+입력 24 V × 1.0 A = 24 W
+η = 12 ÷ 24 ≈ 50%</code></pre>
+<p>이는 감속기 + 모터 + 드라이버의 총 효율이며, 참고 수준 값으로 시스템에 맞게 검증해야 합니다.</p>
+<p>【이유】계단 응답 통과는 "순간적으로 작동 가능함"을 의미할 뿐, 온도 상승과 내구성은 "지속적으로 작동 가능한지"를 의미합니다. 보행은 분에서 시간 단위의 연속적인 작업 조건이며, 열 여유가 부족하면 = 몇 걸음 걷다가 과열로 출력이 제한됩니다. 효율은 M09 배터리 선정과 주행 거리 추정을 직접 결정합니다. 열 설계 배경은 <a href="/ko/wiki/chapters/chapter-06/">6장: 계산, 전원 및 열 관리</a>를 참조하십시오.</p>
+<p>【상황 분석 방법】온도 센서가 없는 경우: 적외선 온도 측정 건으로 케이스 측정 + 드라이브 보드 내장 온도 판독값을 이중 기록합니다. 30분을 버티지 못하는 경우: 지속 전류 제한을 점진적으로 낮추어 "30분을 버틸 수 있는 전류"를 찾고, 실제 사용 가능한 지속 토크를 역산합니다. 이 값이 M01 사양표에 기록되어야 하는 정격값입니다.</p>
+<h2 id="6">6단계: 데이터 기록 및 출시 결정</h2>
+<p>【수행할 작업】</p>
+<ol>
+<li>측정값을 <a href="/ko/roadmap/missions/m01-scenario-to-specs/">M01 사양표</a>에 항목별로 채워 넣습니다: 최대 토크 (실측 Kt × 전류 제한), 대역폭, 백래시, 지속 토크, 효율 – "추정 버전"을 "실측 버전"으로 업그레이드합니다.</li>
+<li>공차 초과 항목을 개별적으로 처리하며, 세 가지 경로 중 하나를 선택합니다: 성능 부족 → <strong>모터 교체</strong> (M02로 복귀); 응답 또는 토크 불일치 → <strong>감속비 변경</strong> (M03으로 복귀); 사양 자체가 너무 높게 설정됨 → <strong>사양 변경</strong> (M01로 복귀, 서면 사유 필수: "사양을 낮춰도 임무 사양서에 영향을 미치지 않는 이유").</li>
+<li>모든 항목이 기준을 충족하면 "해당 관절 모듈은 장착 가능"이라는 서면 결론을 출력하고, 데이터 패키지 색인 (곡선 목록 + 파라미터 버전 + 시험대 사진 + 배선도)을 첨부합니다.</li>
+</ol>
+<p>【이유】데이터 기록은 경험을 자산으로 전환합니다: 22개 관절의 실측 분포 (Kt, 백래시, 온도 상승)는 전체 시스템 시뮬레이션 (M10/M11) 액추에이터 모델 파라미터화를 위한 일차 데이터입니다. 시뮬레이션에 실측값을 사용하면 sim-to-real 문제의 절반이 줄어듭니다.</p>
+<p>【상황 분석 방법】22개를 모두 개별적으로 완전 테스트하는 것은 너무 힘듭니다: 처음 3개는 6개 항목을 모두 테스트하고, 나머지는 계단 응답 + 온도 상승 + Kt의 세 가지 핵심 항목만 테스트합니다. 데이터 분포를 첫 번째 제품과 비교하고, 이상치 개체는 추가로 전체 테스트를 수행합니다 (엔지니어링 권장 절차, 배치에 따라 조정). 데이터 패키지 이름은 한 번에 정합니다: <code>관절번호_테스트항목_날짜_펌웨어버전</code>.</p>
+<h2 id="_1">합격 기준</h2>
+<ul>
+<li>[ ] 6개 테스트 (계단 응답/사인파/주파수 스윕/역구동 및 Kt/온도 상승/내구성) 곡선이 모두 원본 형식으로 보관되었으며, 테스트 조건이 완전합니다.</li>
+<li>[ ] 30° 계단 응답 3단계 부하: 상승 시간 &lt; 0.2초, 오버슈트 &lt; 10%, 정상 상태 오차 &lt; 0.5° (또는 사양표 자체 설정값).</li>
+<li>[ ] 1Hz ±20° 사인파: 진폭 감쇠 &lt; 10%, 위상 지연 &lt; 15°; −3dB 대역폭 실측값 있음.</li>
+<li>[ ] QDD/직구동 방식: 제로 강성 구동이 부드럽고, 실측 Kt와 이론값 편차 ≤ 10% 또는 편차 원인이 확인됨; 이중 엔코더 차이 (백래시 + 변형)가 정량화됨.</li>
+<li>[ ] 정격 부하 30분 케이스 온도 &lt; 60°C (또는 공급업체 상한 이내); 감속기 내구성 샘플링 테스트 완료 및 분해 검사 기록 있음.</li>
+<li>[ ] M01 사양표가 "실측 버전"으로 업그레이드되었으며, 모든 기록 차이에 대한 처리 결론 (모터 교체/감속비 변경/사양 변경, 서면 사유 포함)이 있음.</li>
+<li>[ ] "장착 가능" 결론이 문서화되었으며, 시험대 사진과 배선도가 보관됨.</li>
+</ul>
+<h2 id="_2">일반적인 문제점 및 점검</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>점검 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>계단 응답 곡선에 고정 주파수의 떨림이 있음</td>
+<td>시험대 공진이 관절 진동으로 오인됨</td>
+<td>고정구 강화/시험대에 추가 중량을 넣고 재측정; 시험대를 두드려 고유 진동수 확인</td>
+</tr>
+<tr>
+<td>대역폭이 M06 무부하 디버깅 값보다 훨씬 낮음</td>
+<td>추 봉과 추의 관성이 무시됨</td>
+<td>⅓·m_봉·L² + m_추·L²를 부하에 포함시키고 재조정</td>
+</tr>
+<tr>
+<td>두 번의 온도 상승 결과가 일치하지 않음</td>
+<td>환경 온도/기류가 고정되지 않음</td>
+<td>환경 온도와 배치를 고정하고 실온 기록; 온도 상승 차이로 보정</td>
+</tr>
+<tr>
+<td>무부하에서는 모두 통과했지만 장착하면 실패</td>
+<td>무부하만 테스트하고 합격 선언</td>
+<td>3단계 부하는 필수 요구 사항, 최대 부하 통과 실패 = 불합격</td>
+</tr>
+<tr>
+<td>데이터를 재현하여 분석할 수 없음</td>
+<td>스크린샷만 저장하고 원본 데이터는 저장하지 않음</td>
+<td>원본 형식 (csv/로그)을 펌웨어 버전 및 파라미터와 함께 저장</td>
+</tr>
+<tr>
+<td>실측 Kt가 매뉴얼보다 훨씬 작음</td>
+<td>마찰 미보상 / 전원 전류를 상 전류로 잘못 읽음</td>
+<td>상 전류를 읽는지 확인; 정방향과 역방향 각각 한 번씩 측정하여 평균을 내 마찰 제거</td>
+</tr>
+<tr>
+<td>내구성 테스트 후 백래시 증가</td>
+<td>인쇄 기어 마모 / 베어링 유격 증가</td>
+<td>기어 이면 분해 검사; Berkeley 60시간 수준과 비교하여 재료/공정 변경 평가</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m06-firmware-calibration/">M06 · 펌웨어 및 캘리브레이션</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m08-platform-selection/">M08 · 플랫폼 선정 및 구매</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-11/">11장: 조립, 통합 및 테스트</a>, <a href="/ko/wiki/chapters/chapter-25/">25장: 로봇 평가 체계</a>, <a href="/ko/wiki/chapters/chapter-14/">14장: 로봇 제어 기초</a>, <a href="/ko/wiki/chapters/chapter-06/">6장: 계산, 전원 및 열 관리</a></li>
+<li><a href="/ko/roadmap/stage-1-actuator/">1단계 개요</a> · <a href="/ko/roadmap/stage-2-biped/">2단계 개요</a> · <a href="/ko/roadmap/playbooks/actuator-selection/">액추에이터 선정 핸드북</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m06-firmware-calibration/">← 이전<span>M06 · 펌웨어와 캘리브레이션: 쇳덩이가 처음으로 명령을 이해하게 하다</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/stage-2-biped/">다음 →<span>2단계: 이족 보행 플랫폼 – 시뮬레이션에서 첫 번째 걷는 로봇까지</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m07">M07 · 대형 테스트 및 검수: 데이터로 말하고, 합격해야 조립 가능</a><ul>
+<li><a href="#1">단계 1: 대형 구축——먼저 대형 자체가 거짓말하지 않도록 보장</a></li>
+<li><a href="#2">단계 2: 계단 응답——강성과 댐핑의 거울</a></li>
+<li><a href="#3">단계 3: 주파수 응답 및 대역폭——과연 다리로 사용할 수 있는가</a></li>
+<li><a href="#4-qdd">단계 4: 역구동 및 힘 투명성(QDD/직구동 필수)</a></li>
+<li><a href="#5">5단계: 온도 상승과 내구성 – 시간은 거울이다</a></li>
+<li><a href="#6">6단계: 데이터 기록 및 출시 결정</a></li>
+<li><a href="#_1">합격 기준</a></li>
+<li><a href="#_2">일반적인 문제점 및 점검</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

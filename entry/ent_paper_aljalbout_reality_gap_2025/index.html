@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机器人中的现实鸿沟：挑战、解决方案与最佳实践 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">机器人中的现实鸿沟：挑战、解决方案与最佳实践</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>机器人中的现实鸿沟：挑战、解决方案与最佳实践</h1>
+      <p class="entry-name-en">The Reality Gap in Robotics: Challenges, Solutions, and Best Practices</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">零部件</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.20808v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>这是一篇2025年的综述论文，系统梳理了机器人学中的“现实差距”问题。作者将差距划分为感知差异和动作-动力学差异两大类，并综述了域随机化、系统辨识、仿真-现实协同训练等主流缓解策略。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.20808" target="_blank" rel="noopener">The Reality Gap in Robotics: Challenges, Solutions, and Best Practices</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该综述指出，机器学习在机器人导航、移动和操作等领域取得显著进展，很大程度上得益于仿真环境的广泛使用。然而，仿真中的抽象与近似必然导致模拟环境与真实环境之间的“现实差距”，严重阻碍系统从仿真向真实世界的迁移。论文将现实差距明确分为感知差异和动作-动力学差异两类，并系统回顾了域随机化、真实到仿真迁移、状态与动作抽象、仿真-现实协同训练等缓解方法。尽管这些技术已在多种平台上展现出令人鼓舞的结果，但挑战依然存在，需要更深入地理解现实差距的根本原因与解决方案。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">核心问题</h3>
+<ul>
+<li>现实差距（reality gap）源于仿真中的抽象与近似，导致模拟环境与真实环境之间存在不可忽视的偏差。</li>
+<li>这种偏差严重阻碍了机器人系统从仿真训练到真实部署的成功迁移。</li>
+</ul>
+<h3 id="_4">差距分类</h3>
+<ul>
+<li><strong>感知差异（perception discrepancy）</strong>：仿真传感器模型与真实传感器之间的差异，包括噪声、分辨率、光照等。</li>
+<li><strong>动作-动力学差异（action-dynamics discrepancy）</strong>：仿真物理引擎与真实物理世界之间的差异，涉及摩擦力、惯性、接触动力学等。</li>
+</ul>
+<h3 id="_5">缓解策略</h3>
+<ul>
+<li><strong>域随机化（domain randomization）</strong>：在仿真中随机化视觉、物理参数，迫使策略学习鲁棒特征。</li>
+<li><strong>系统辨识（system identification）</strong>：通过真实数据校准仿真模型参数，缩小动力学差异。</li>
+<li><strong>真实到仿真迁移（real-to-sim transfer）</strong>：从真实环境数据构建更精确的仿真模型。</li>
+<li><strong>状态与动作抽象（state and action abstractions）</strong>：在仿真中简化状态空间或动作空间，降低迁移难度。</li>
+<li><strong>仿真-现实协同训练（sim-real co-training）</strong>：交替使用仿真和真实数据训练，逐步弥合差距。</li>
+</ul>
+<h3 id="_6">评估指标</h3>
+<ul>
+<li>论文强调需要统一的评估指标来衡量现实差距的缩小程度，包括迁移成功率、性能衰减率、鲁棒性测试等。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>尽管现有方法已在多种平台（如四足机器人、机械臂、无人机）上取得进展，但现实差距的根本原因仍需更深入的理论分析。</li>
+<li>未来方向包括：更精细的感知模型、自适应系统辨识、以及结合物理先验的混合训练方法。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2510.20808v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_nah_modular_robot_control_with_mot_2025/">基于运动原语的模块化机器人控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">约束</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_tech_robogen/">RoboGen</a>
+              <span class="rel-desc">仿真与现实物理之间的现实鸿沟限制了 RoboGen 等合成数据引擎向真实机器人迁移的效果。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">基于物理信息神经网络与无迹卡尔曼滤波的人形机器人无传感器关节力矩估计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">机器人训练机器人：人形机器人的自动现实世界策略适应与学习</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">约束</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_tech_mimicgen/">MimicGen</a>
+              <span class="rel-desc">仿真与现实物理之间的现实鸿沟限制了 MimicGen 等演示增强引擎向真实机器人迁移的效果。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">喷气动力人形机器人的统一多速率模型预测控制</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">RUKA：以学习重新思考人形手机器人设计</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhu_cycloidal_quasi_direct_drive_a_2024/">面向足式机器人的摆线准直驱执行器设计与基于学习的扭矩估计</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_aljalbout_reality_gap_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_gorbani_unified_multi_rate_model_predi_2025/">
+          <span class="entry-type">论文</span>
+          <h3>喷气动力人形机器人的统一多速率模型预测控制</h3>
+          <p>本文提出了一种针对喷气动力人形机器人iRonCub的多速率模型预测控制框架，该框架联合嵌入了质心动量动力学与二阶非线性喷气发动机动力学，并通过MuJoCo仿真验证了其有效性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_tech_mimicgen/">
+          <span class="entry-type">技术</span>
+          <h3>MimicGen</h3>
+          <p>一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hu_robot_trains_robot_automatic_r_2025/">
+          <span class="entry-type">论文</span>
+          <h3>机器人训练机器人：人形机器人的自动现实世界策略适应与学习</h3>
+          <p>本文提出 Robot-Trains-Robot (RTR)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nah_modular_robot_control_with_mot_2025/">
+          <span class="entry-type">论文</span>
+          <h3>基于运动原语的模块化机器人控制</h3>
+          <p>本文提出一种基于运动基元的模块化机器人控制框架，通过虚拟轨迹与机械阻抗的叠加结合Elementary Dynamic Actions (EDA)和Dynamic Movement Primitives…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deniz_identification_of_a_physics_ba_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Unitree G1人形机器人手臂基于物理的电力消耗模型辨识</h3>
+          <p>本文针对Unitree…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界动作模型：具身智能的下一个前沿</h3>
+          <p>World Action Models (WAMs)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>机器人视觉-语言-动作：数据集、基准与数据引擎综述</h3>
+          <p>本文是2026年关于视觉-语言-动作（VLA）模型的综述，指出VLA进展的关键瓶颈已从模型架构转向数据基础设施与评估协同设计。研究围绕数据集、基准测试和数据引擎三大支柱展开系统分析，揭示了数据保真度与…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sorrentino_physics_informed_neural_networ_2025/">
+          <span class="entry-type">论文</span>
+          <h3>基于物理信息神经网络与无迹卡尔曼滤波的人形机器人无传感器关节力矩估计</h3>
+          <p>本文提出一种面向人形机器人无关节力矩传感器的全身力矩控制框架，结合Physics-Informed Neural Networks (PINNs)进行非线性摩擦建模，并利用浮基Unscented…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhu_cycloidal_quasi_direct_drive_a_2024/">
+          <span class="entry-type">论文</span>
+          <h3>面向足式机器人的摆线准直驱执行器设计与基于学习的扭矩估计</h3>
+          <p>本文提出一种用于足式机器人的10:1摆线准直驱（C-QDD）执行器，并设计基于GRU的执行器网络，通过执行器状态历史估计输出扭矩，以减小摆线齿轮非线性导致的仿真到现实差距。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_tech_robogen/">
+          <span class="entry-type">技术</span>
+          <h3>RoboGen</h3>
+          <p>一种由大语言模型驱动的机器人自动任务生成框架，提出任务并生成仿真代码以扩展合成训练数据的多样性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zorin_ruka_rethinking_the_design_of_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RUKA：以学习重新思考人形手机器人设计</h3>
+          <p>RUKA 是一款低成本、3D 打印、肌腱驱动的仿人灵巧手，拥有 15 个欠驱动自由度和 11 个执行器，通过基于 MANUS 动作捕捉手套数据训练的 LSTM+MLP 模型进行控制。其开源设计成本低于…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">核心问题</a></li>
+<li><a href="#_4">差距分类</a></li>
+<li><a href="#_5">缓解策略</a></li>
+<li><a href="#_6">评估指标</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

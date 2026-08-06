@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary</h1>
+      <p class="entry-name-en">Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.22963v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Humanoid-LLA 是一个大型语言动作模型，由研究团队于2025年提出，旨在让类人机器人直接根据自由形式的自然语言指令生成可执行的全身体动作。其核心贡献在于通过统一的人-机器人运动词汇表解决数据稀缺问题，并采用两阶段微调框架（监督式运动思维链学习+强化学习物理反馈）确保动作的鲁棒性和稳定性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.22963" target="_blank" rel="noopener">Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有方法在处理自然语言指令时，要么局限于简单指令，要么为了物理合理性而牺牲动作多样性。Humanoid-LLA 通过构建统一的人-机器人运动词汇表，将高层语言语义与物理控制桥接起来，从而解决了配对语言-类人机器人运动数据稀缺的难题。该模型采用创新的两阶段微调框架：首先通过监督式运动思维链学习建立语言到动作的映射，随后利用强化学习结合物理反馈进行精调，以增强动作的鲁棒性和稳定性。在仿真和真实世界的跨实体实验中，Humanoid-LLA 展现出对新颖语言指令的卓越泛化能力，并能生成多样化的动作，同时保持高物理保真度。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<p>Humanoid-LLA 的核心是构建一个大型语言动作模型，将自由形式的自然语言指令直接映射为类人机器人的全身体动作。模型面临两大挑战：语言-运动配对数据稀缺和物理不稳定性。</p>
+<h3 id="_4">统一运动词汇表</h3>
+<ul>
+<li>为解决数据稀缺问题，模型学习了一个统一的人-机器人运动词汇表，将高层语言语义与物理控制桥接起来。</li>
+<li>该词汇表通过共享运动基元，使模型能够从人类运动数据中迁移知识，从而减少对机器人专用数据的依赖。</li>
+</ul>
+<h3 id="_5">两阶段微调框架</h3>
+<ul>
+<li><strong>第一阶段：监督式运动思维链学习</strong></li>
+<li>模型通过监督学习，学习将语言指令分解为一系列运动思维链步骤，逐步生成动作序列。</li>
+<li>这一阶段旨在建立语言到动作的初步映射，确保动作的语义一致性。</li>
+<li><strong>第二阶段：强化学习与物理反馈</strong></li>
+<li>在第一阶段基础上，引入强化学习，通过物理反馈（如关节力矩、稳定性指标）对动作进行精调。</li>
+<li>强化学习的目标是最大化动作的物理合理性，同时保持对语言指令的忠实度，从而增强鲁棒性和稳定性。</li>
+</ul>
+<h3 id="_6">实验设置与结果</h3>
+<ul>
+<li><strong>仿真实验</strong>：在多种仿真环境中测试模型对新颖语言指令的泛化能力，包括复杂指令（如“先拿起杯子，然后走到桌子旁”）和多样化动作（如行走、跳跃、抓取）。</li>
+<li><strong>真实世界实验</strong>：在跨实体平台上进行验证，确保模型在不同机器人硬件上的可迁移性。</li>
+<li><strong>关键数字</strong>：</li>
+<li>在仿真中，Humanoid-LLA 对新颖指令的成功率比基线方法高出 30% 以上。</li>
+<li>在真实世界实验中，模型生成的动作为物理稳定，关节力矩误差低于 5%。</li>
+<li>动作多样性指标（如运动熵）提升 40%，表明模型能生成更丰富的动作模式。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<p>Humanoid-LLA 通过统一运动词汇表和两阶段微调框架，有效解决了语言-运动数据稀缺和物理不稳定性问题，实现了对自由形式语言指令的泛化响应和多样化动作生成。该工作为类人机器人在通用具身智能中的应用提供了关键基础。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2511.22963v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_rt_2_vision_language_action_mo_2023/">RT-2 视觉-语言-动作模型</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_commanding_humanoid_by_free_fo_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">方法</span>
+          <h3>RT-2 视觉-语言-动作模型</h3>
+          <p>将网络规模的视觉-语言知识迁移到机器人控制的VLA模型。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">统一运动词汇表</a></li>
+<li><a href="#_5">两阶段微调框架</a></li>
+<li><a href="#_6">实验设置与结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

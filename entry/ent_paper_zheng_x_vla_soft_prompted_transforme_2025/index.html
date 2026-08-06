@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-VLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">X-VLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>X-VLA</h1>
+      <p class="entry-name-en">X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10274v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>X-VLA 是清华大学 AIR、上海 AI Lab 和北京大学于 2025 年提出的大型视觉-语言-动作模型，专为跨实体机器人操作设计。其核心贡献在于引入软提示（Soft Prompt）方法，通过为每个数据源添加少量可学习嵌入，使标准 Transformer 编码器能够高效利用异构跨实体数据。该模型在 6 个仿真环境和 3 个真实机器人上达到 SOTA 性能，0.9B 参数版本展现出从灵巧操作到快速适应多种实体、环境和任务的广泛能力。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.10274" target="_blank" rel="noopener">X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2510.10274" target="_blank" rel="noopener">X-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>X-VLA 旨在解决通用视觉-语言-动作模型在跨实体异构数据集上的训练挑战。研究团队创新性地将提示学习概念融入机器人学习，为每个不同数据源引入独立的可学习嵌入集，作为实体特定的软提示。这些嵌入使模型能够统一利用多样的跨实体特征，而无需大幅增加参数。X-VLA 架构基于流匹配（flow-matching）和标准 Transformer 编码器，兼具可扩展性与简洁性。在 6 个仿真环境和 3 个真实机器人上的评估中，X-VLA-0.9B 在多个基准测试中取得领先结果，展现了从灵活灵巧操作到快速适应不同实体、环境和任务的广泛能力。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li><strong>软提示（Soft Prompt）机制</strong>：为每个数据源（如不同机器人平台或数据集）引入一组独立的可学习嵌入，作为实体特定的提示。这些嵌入在训练中与模型参数共同优化，使 Transformer 能够区分并利用来自不同来源的异构特征。</li>
+<li><strong>架构</strong>：基于流匹配（flow-matching）的 VLA 架构，完全依赖软提示增强的标准 Transformer 编码器。这种设计避免了复杂的多模态融合模块，保持了模型的简洁性和可扩展性。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>训练数据</strong>：使用大规模、跨实体、异构数据集，涵盖多种机器人平台和操作任务。</li>
+<li><strong>评估环境</strong>：6 个仿真环境（具体名称未在正文中列出）和 3 个真实机器人平台。</li>
+<li><strong>模型规模</strong>：主要评估 0.9B 参数版本（X-VLA-0.9B）。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>性能</strong>：在多个基准测试中达到 SOTA 性能，优于现有跨实体 VLA 模型。</li>
+<li><strong>能力维度</strong>：展现出灵活灵巧操作（flexible dexterity）和快速适应能力，能够跨不同实体、环境和任务进行迁移。</li>
+<li><strong>可扩展性</strong>：软提示方法仅增加极少量参数，使模型能够高效利用异构数据，同时保持训练和推理的简洁性。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>X-VLA 通过软提示方法有效解决了跨实体机器人学习中的数据异构性问题，为构建通用、可扩展的 VLA 模型提供了新思路。其 0.9B 参数版本在仿真和真实场景中均验证了有效性，未来可进一步扩展至更多实体和任务。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2510.10274v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">VLA-0</a>
+              <span class="rel-desc">X-VLA提及VLA-0。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_reducing_temporal_redundancy_efficient_v_2026/">Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chainvla_chaining_vision_language_action_2026/">ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bioprovla_agent_an_affordable_2026/">BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_causality_aware_infer_diagnose_refine_fr_2026/">A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dynawm_a_base_vla_guided_world_2026/">DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bi_motus_a_unified_latent_action_2025/">Motus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Motus提及X-VLA。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zheng_x_vla_soft_prompted_transforme_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_chainvla_chaining_vision_language_action_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation</h3>
+          <p>ChainVLA 是一个 1.2B 参数的视觉-语言-动作（VLA）策略，通过联合且可修订的执行状态 s_k = (g_k, u_k)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reducing_temporal_redundancy_efficient_v_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference</h3>
+          <p>本文提出一种系统级VLA推理加速框架，从感知与动作生成两端同时削减时间冗余：视觉编码器采用基于余弦相似度的token复用（更新比例r=0.4），动作侧将10步流匹配求解器压缩为2步低秩近似（锚定v0与…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-0</h3>
+          <p>VLA-0 是 NVIDIA 在 2025 年提出的视觉-语言-动作模型，核心创新在于将机器人动作直接表示为文本，无需修改 VLM 词汇表或添加专用动作头。在 LIBERO…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bi_motus_a_unified_latent_action_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Motus</h3>
+          <p>Motus 是2025年由博世、清华大学、北京大学和地平线机器人联合提出的大型视觉-语言-动作世界模型。其核心贡献在于通过 Mixture-of-Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_causality_aware_infer_diagnose_refine_fr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</h3>
+          <p>本文提出 IDR（Infer-Diagnose-Refine）框架，一个模型无关的测试时模态适配方法，通过因果干预估计 VLA 模型中视觉观测的动态重要性，并据此门控细化动作预测。该方法在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bioprovla_agent_an_affordable_2026/">
+          <span class="entry-type">论文</span>
+          <h3>BioProVLA-Agent: An Affordable, Protocol-Driven, Vision-Enhanced VLA-Enabled Embodied Multi-Agent System with Closed-Loop-Capable Reasoning for Biological Laboratory Manipulation</h3>
+          <p>BioProVLA-Agent 是一个由 VLA 模型驱动的低成本、协议驱动的视觉增强多智能体系统，专为生物实验室操作设计。其核心贡献在于通过协议解析、视觉状态验证和闭环执行工作流，结合在线增强策略…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dynawm_a_base_vla_guided_world_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DynaWM: A Base-VLA-Guided World Foundation Model for Moving-Object Manipulation</h3>
+          <p>DynaWM 是一种基于基础 VLA 引导的世界基础模型，专为动态移动物体操作设计。它通过 Mamba-3 动作编码器、V-JEPA 2.1 视觉编码器和本体状态编码器，联合条件化流匹配 DiT…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</h1>
+      <p class="entry-name-en">Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Recent advances in humanoid robotics have highlighted the importance of deployable loco-manipulation skills. Dribbling a soccer ball while evading active opponents requires simultaneous balance, precise ball control, and awareness of a dynamic adversary under onboard sensing and real-time constraints. Existing approaches typically separate perception and motion, which can be effective in.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12702" target="_blank" rel="noopener">arXiv:2607.12702 Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learnin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 로마 대학, CSIC-UPC 및 EPFL의 연구자들이 제안한 것으로, 이족 보행 휴머노이드 로봇 축구 드리블 작업을 위해 특권 표현 학습(Privileged Representation Learning) 프레임워크를 사용하여 인식과 제어를 분리하여 훈련한다: 먼저 시뮬레이터에서 특권 상태로 정책을 훈련한 다음, 정책을 동결하고 시각 인코더만 훈련하여 깊이 이미지에서 특권 잠재 표현을 재구성한다. 핵심 기여는 커리큘럼 학습과 DAgger 정규화를 통해 Booster T1 휴머노이드 플랫폼에서 정적 및 동적 장애물에 대한 강건한 드리블을 구현했으며, 동적 상대 시나리오에서 성공률 46%를 달성하고 코드를 공개한 것이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>진정으로 바꾼 것은 휴머노이드 로봇 드리블 작업에서 '인식-제어' 결합 방식의 패러다임이다. 기존 모듈식 접근법(예: YOLO 감지 + Kalman 필터)은 인식을 정책과 독립적인 고정 모듈로 간주하며, 그 출력 표현은 하위 제어 목표에 맞게 최적화되지 않았다. 따라서 폐색, 빠른 볼 움직임 및 복잡한 상대 상호작용 하에서 인식 오류가 제어 계층으로 직접 전달되어 작업 실패를 초래한다. 본 논문의 핵심 판단은 인식이 '정확히 보기' 위한 것이 아니라 '안정적으로 제어하기' 위한 것이라는 점이다 — 따라서 인식 표현이 정책이 필요로 하는 잠재 상태 공간에 직접 정렬되어야 한다.</p>
+<p>이러한 전환의 심층적 의미는 '인식 강건성' 문제를 '표현 정렬' 문제로 변환한다는 것이다. 특권 학습을 통해 정책은 훈련 중 완벽한 상태를 얻고, 시각 인코더는 고차원 깊이 관측에서 정책이 필요로 하는 저차원 잠재 벡터를 복구하는 방법만 학습하면 되며, 완전한 세계 모델을 재구성할 필요가 없다. 이는 엔드투엔드 강화 학습에서 인식과 제어의 결합 훈련으로 인한 높은 샘플 복잡성과 불안정성을 피하면서, 엔드투엔드 방식의 '인식이 제어를 위한 서비스'라는 핵심 장점을 유지한다. RoboCup과 같은 실시간, 동적, 부분 관측 가능한 대항 시나리오에서 이러한 분리 방식은 공학적으로 더 제어 가능하고 디버깅이 용이하다.</p>
+<h2 id="_3">방법 분석</h2>
+<p>방법은 두 단계로 구성되며, 핵심 설계는 정책 인터페이스를 유지하면서 잠재 표현 생성 메커니즘만 교체하는 것이다.</p>
+<h3 id="_4">문제 정식화</h3>
+<ul>
+<li>POMDP로 모델링: ℳ = (𝒮, 𝒪, 𝒜, p, r, γ)</li>
+<li>상태 𝒮: 로봇, 볼, 장애물의 완전한 세계 좌표 상태 + 목표 명령</li>
+<li>관측 𝒪: 고유 감각(IMU, 관절 위치/속도) + 외부 감각(볼/장애물 상태를 잠재 벡터 z_t ∈ ℝ⁶⁴로 인코딩)</li>
+<li>행동 𝒜: 21차원 신체 관절 위치 벡터, 머리는 독립적으로 제어</li>
+</ul>
+<h3 id="1">1단계: 특권 정책 학습</h3>
+<ul>
+<li>행위자 관측: o_t^actor = [o_t^prop, z_t], 여기서 z_t는 소형 MLP가 지상 실측 볼 상태와 최근 장애물 상태(로봇 좌표계)에서 매핑</li>
+<li>커리큘럼 학습은 두 축을 따라 진행: 단계(phase)는 z_t 획득 방식을 정의하고, 수준(stage)은 장애물 난이도를 정의</li>
+<li>4단계 커리큘럼:</li>
+<li>수준 0: 장애물 없음, 볼이 멀리 있음, 접근 및 드리블 학습(일반 PPO)</li>
+<li>수준 1: 장애물 없음, 볼이 가까이 있음, 목표 지향 드리블 정교화</li>
+<li>수준 2: 정적 차단물, 장애물 회피 및 궤적 복구 학습</li>
+<li>수준 3: 동적 상대와 볼 상호작용, 온라인 반응 제어 학습</li>
+<li>수준 1-3은 이전 수준 체크포인트에서 초기화되며, DAgger 정규화 PPO 목표 사용:</li>
+<li>ℒ_total = ℒ_PPO + λ_imit 𝔼[||π_θ(a_t|s_t) − π₀(a_t|s_t)||²₂]</li>
+<li>모방 항은 수준 0 정책을 교사로 사용하여 파국적 망각을 완화하고 명목 운동 능력을 보존</li>
+</ul>
+<h3 id="2">2단계: 시각 적응</h3>
+<ul>
+<li>정책 동결, 시각 인코더만 깊이 관측에서 잠재 z_t 재구성 훈련</li>
+<li>아키텍처: CNN(프레임당 깊이 특징 ℝ⁶⁴) → GRU(시간 집계 ℝ²⁵⁶) → 프로젝션 헤드(ℝ⁶⁴)</li>
+<li>깊이 프레임 해상도 108 × 192, 원본 종횡비 유지</li>
+<li>훈련 손실:</li>
+<li>ℒ_adapt = ℒ_latent + λ_ball^pos ℒ_ball^pos + λ_ball^vel ℒ_ball^vel + λ_obs^pos ℒ_obs^pos + λ_obs^vel ℒ_obs^vel</li>
+<li>주요 항 ℒ_latent = ||z_t^adapt − z_t^priv||²₂, 보조 예측 헤드가 볼/장애물 상태를 회귀하여 정규화 역할</li>
+</ul>
+<h3 id="_5">핵심 설계 결정</h3>
+<ul>
+<li>두 단계의 행위자 인터페이스를 완전히 동일하게 유지하고 잠재 생성 메커니즘만 변경 — 이는 2단계 훈련 시 정책을 재조정할 필요가 없음을 보장</li>
+<li>작업 목표 g^w ∈ ℝ²는 세계 좌표계에서 볼 위치 주변에 샘플링되어 매 단계 속도 재샘플링을 피하고 비정상성을 줄임</li>
+<li>보상 함수는 26개 항목을 포함하며 볼 제어(속도 추적, 방향), 자세(스윙 위상, 지지 위상), 안전(충돌, 낙상) 등 여러 차원을 포괄</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>휴머노이드 로봇 드리블을 위한 특권 표현 학습</strong>: DribbleBot과 같은 사족 플랫폼의 특권 학습 개념을 이족 보행 휴머노이드로 확장하여 동적 균형과 높은 자유도가 가져오는 추가 도전을 해결. 참신성은 커리큘럼 학습과 DAgger 정규화의 결합 — 수준 0의 명목 정책이 교사 역할을 하여 후속 수준 학습 시 기본 드리블 능력의 망각을 방지하며, 이는 사족 연구에서는 볼 수 없었던 것이다.</p>
+</li>
+<li>
+<p><strong>인식-제어 인터페이스의 안정적 설계</strong>: 잠재 벡터 차원(ℝ⁶⁴)과 행위자 관측 구조를 고정함으로써 2단계의 시각 적응이 정책 최적화와 완전히 독립적이다. 이는 시각 인코더가 정책 동결 상태에서 훈련될 수 있게 하여 훈련 복잡성을 크게 줄이고, 배포 시 정책 동작이 시뮬레이션과 일치함을 보장한다.</p>
+</li>
+<li>
+<p><strong>차단 시간 단계의 세밀한 진단</strong>: '차단'(blocked) 시간 단계 정의(장애물이 볼-목표 방향 전방 2.0 m 이내, 볼-목표 선에서 0.75 m 이내)를 도입하여 평가를 비차단/차단 하위 조건으로 세분화. 이는 동적 상대 시나리오에서 성능 저하의 주요 원인이 인식 실패가 아닌 폐루프 제어임을 밝혀냈다 — 차단 시 각도 오류가 34.27°에서 43.00°로 증가했지만 볼 위치 오류는 0.05 m에서 0.08 m로만 증가.</p>
+</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<p><strong>비교 설정.</strong> 시뮬레이션 환경(mjlab 프레임워크, Booster T1 휴머노이드 로봇, 평평한 지면)에서 최종 정책을 평가하며, 세 가지 조건을 설정: 장애물 없음, 정적 장애물(단일 정지 장애물을 볼-목표 회랑 근처에 배치), 볼 공격자(단일 이동 장애물이 고정 속도로 볼을 추적, 속도 샘플링 범위 <code>[0.1, 0.4] m/s</code>). 종료 조건은 목표 도달 성공(볼-목표 거리 <code>≤ 0.75 m</code>), 시간 초과(<code>30 s</code>), 로봇 낙상, 볼 분실(로봇-볼 거리 <code>2.0 m</code> 초과); 장애물 충돌은 시험을 종료하지 않고 안전 지표로만 기록. 평가 규모는 5개 무작위 시드, 조건당 시드당 10회 시험(조건당 총 50회 시험). 외부 기준선 없음, 주로 세 조건 간 성능 차이 및 커리큘럼 단계 소거를 비교. 지표는 성공률(SR), 도달 시간(T2T/T2T-C), 낙상률(FR), 볼 분실률(LR), 로봇-장애물 충돌률(RCR) 및 시험당 접촉 횟수(RC/t), 볼-장애물 충돌률(BCR) 및 시험당 접촉 횟수(BC/t), 최소 볼-장애물 순거리(MBC), 속도 진단(<code>e_vec</code>, <code>e_spd</code>, <code>e_ang</code>) 및 인식 지표(<code>e_ball,pos</code>, <code>e_ball,vel</code>, <code>e_obs,pos</code>, <code>e_obs,vel</code>, <code>c_fov</code>). 훈련은 2단계 프레임워크 사용: 1단계 특권 인코더 + 4단계 커리큘럼(0단계 장애물 없음 볼 원거리, 1단계 장애물 없음 볼 근거리, 2단계 단일 정적 차단, 3단계 단일 동적 상대); 2단계 정책 동결, 시각 인코더(CNN + GRU)를 깊이 관측(크기 <code>108 × 192</code>)에서 잠재 변수 예측으로 훈련.</p>
+<p><strong>핵심 수치(Table 2–5).</strong></p>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>SR [%]</th>
+<th>T2T [s]</th>
+<th>T2T-C [s]</th>
+<th>FR [%]</th>
+<th>LR [%]</th>
+<th>RCR [%]</th>
+<th>RC/t [#/trial]</th>
+<th>BCR [%]</th>
+<th>BC/t [#/trial]</th>
+<th>MBC [m]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>장애물 없음</td>
+<td><code>100.00</code></td>
+<td><code>11.45</code></td>
+<td><code>11.45</code></td>
+<td><code>0.00</code></td>
+<td><code>0.00</code></td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>정적 장애물</td>
+<td><code>96.00</code></td>
+<td><code>13.29</code></td>
+<td><code>13.95</code></td>
+<td><code>4.00</code></td>
+<td><code>0.00</code></td>
+<td><code>8.00</code></td>
+<td><code>0.08</code></td>
+<td><code>4.00</code></td>
+<td><code>0.10</code></td>
+<td><code>1.73</code></td>
+</tr>
+<tr>
+<td>볼 공격자</td>
+<td><code>46.00</code></td>
+<td><code>11.82</code></td>
+<td><code>21.64</code></td>
+<td><code>52.00</code></td>
+<td><code>2.00</code></td>
+<td><code>68.00</code></td>
+<td><code>0.72</code></td>
+<td><code>40.00</code></td>
+<td><code>0.70</code></td>
+<td><code>1.36</code></td>
+</tr>
+</tbody>
+</table>
+<p>속도 진단(Table 3): 장애물 없음 전체 시간 단계 <code>e_vec=0.71</code>, <code>e_spd=0.62</code>, <code>e_ang=28.39</code>; 정적 장애물 비차단/차단 각각 <code>0.74/0.74</code>, <code>0.62/0.60</code>, <code>35.62/33.96</code>; 볼 공격자 비차단/차단 각각 <code>0.74/0.79</code>, <code>0.61/0.60</code>, <code>34.27/43.00</code>. 인식 지표(Table 4): 장애물 없음 <code>e_ball,pos=0.05</code>, <code>e_ball,vel=0.25</code>, <code>c_fov=75.43</code>; 정적 장애물 <code>0.05/0.24/1.26/0.21/76.74</code>; 볼 공격자 <code>0.08/0.26/1.26/0.13/78.39</code>. 커리큘럼 소거 성공률(Table 5, %): 장애물 없음 1/2/3단계 <code>100/68/90</code>; 정적 장애물 <code>24/42/88</code>; 볼 공격자 <code>2/2/46</code>.</p>
+<p><strong>결과 의미.</strong></p>
+<ul>
+<li><strong>명목 볼 운반이 안정적으로 유지되고 정적 장애물을 효과적으로 처리.</strong> 장애물 없음 조건에서 <code>100.00 %</code> 성공률과 제로 실패(FR, LR 모두 <code>0.00</code>); 정적 장애물 조건에서 성공률 <code>96.00 %</code> 유지, 도달 시간은 적절히만 증가(T2T <code>13.29 s</code> vs 장애물 없음 <code>11.45 s</code>), 충돌률 낮음(RCR <code>8.00 %</code>, BCR <code>4.00 %</code>), 정책이 단일 정지 장애물을 작업 성능을 크게 희생하지 않고 대응할 수 있음을 나타냄.</li>
+<li><strong>능동적 이동 상대는 여전히 미해결 문제.</strong> 볼 공격자 조건에서 성공률이 <code>46.00 %</code>로 급감, 낙상률(<code>52.00 %</code>)과 충돌률(RCR <code>68.00 %</code>, BCR <code>40.00 %</code>)이 크게 증가, 시간 초과 절단 도달 시간(T2T-C <code>21.64 s</code>)이 성공 시험 도달 시간(T2T <code>11.82 s</code>)보다 현저히 높음, 능동적 추적자에 대한 강건한 볼 운반이 아직 해결되지 않았음을 시사.</li>
+<li><strong>인식이 주요 병목이 아니며, 폐루프 제어 난이도가 제한 요소.</strong> 인식 지표는 조건 간 상대적으로 안정적(볼 위치 오류 <code>0.05–0.08 m</code>, 장애물 위치 오류 모두 <code>1.26 m</code>), 볼 공격자 조건의 차단 시간 단계에서 최대 각도 오류(<code>e_ang=43.00</code>)와 벡터 오류(<code>e_vec=0.79</code>)를 보임, 명목 명령 이탈이 주로 이동 상대에 대한 폐루프 제어 어려움에서 비롯되며 심각한 인식 실패가 아님을 시사.</li>
+<li><strong>커리큘럼 정책이 장애물 회피 능력을 효과적으로 향상.</strong> 1단계(장애물 없음 볼 근거리만)는 장애물 존재 시 매우 낮은 성능(정적 <code>24 %</code>, 볼 공격자 <code>2 %</code>), 3단계 후 정적 조건 <code>88 %</code>, 볼 공격자 <code>46 %</code> 달성, 점진적 난이도 증가가 정책에 장애물 회피 능력을 부여하는 효과를 검증.</li>
+</ul>
+<h2 id="_8">경계 및 한계</h2>
+<p>저자가 명시적으로 인정한 한계는 다음과 같다: 동적 상대 시나리오 성공률 46%에 불과, 능동적 이동 상대에 대한 강건한 드리블은 여전히 미해결 문제; 주요 제한은 인식 실패가 아닌 이동 상대에 대한 폐루프 제어 난이도. 모든 실험은 시뮬레이션에서 수행되었으며 실제 세계(sim-to-real) 배포 실험은 없었고, 원칙적 로드맵만 개요로 제시. 또한 독립 훈련 정책 수가 적고(5개 시드), 통계적 검정력이 제한적. 논문은 훈련/추론 빈도, 하드웨어 구성, PPO 하이퍼파라미터 등의 재현 세부 사항을 명시적으로 언급하지 않았으며, 볼이 완전히 시야에서 벗어날 때 시각 인코더의 처리 전략도 논의하지 않음(평가에서는 지상 실측 볼 위치가 사용 가능할 때만 인식 지표 계산).</p>
+<h2 id="_9">공학적 시사점</h2>
+<p>재현 및 하위 팀을 위한 공학적 시사점:</p>
+<ol>
+<li>
+<p><strong>커리큘럼 학습의 핵심 하이퍼파라미터를 먼저 확인</strong>: 수준 간 초기화와 DAgger 정규화 가중치 λ_imit는 방법의 핵심이지만 논문에서 구체적인 값을 제시하지 않음. 재현 시 λ_imit = 0.1에서 시작하여 수준 1-2에서 파국적 망각이 발생하는지 관찰하는 것을 권장(Table 5에서 수준 1이 정적 장애물 하에서 24%에 불과한 퇴화 현상 참조).</p>
+</li>
+<li>
+<p><strong>가장 함정에 빠지기 쉬운 것은 '차단' 판정 로직</strong>: 차단 시간 단계 정의(전방 2.0 m, 선에서 0.75 m)는 진단 지표의 비교 가능성에 직접 영향을 미침. 하위 작업에서 장애물 속도나 크기가 다르면 이러한 임계값을 재보정해야 하며, 그렇지 않으면 e_ang 등의 지표가 왜곡됨.</p>
+</li>
+<li>
+<p><strong>시각 인코더의 GRU 시간 창은 인식 강건성의 핵심</strong>: 볼이 근거리 드리블 중 자주 시야에서 벗어나며(c_fov 75-78%에 불과), GRU의 시간 집계가 상태 추정 유지의 핵심. 재현 시 GRU 은닉 차원 256이 충분한지, 깊이 프레임 108×192 해상도의 실제 카메라 전이 효과를 우선 검증할 것을 권장.</p>
+</li>
+<li>
+<p><strong>동적 상대 시나리오의 병목은 제어가 아닌 인식</strong>: 팀의 목표가 대항 강건성 향상이라면 시각 인코더 최적화보다 정책의 장애물 움직임 예측 및 반응 개선을 우선해야 함. Table 4는 인식 오류가 이미 충분히 작지만(볼 위치 오류 0.08 m) SR이 여전히 46%에 불과함을 보여줌.</p>
+</li>
+<li>
+<p><strong>보상 함수의 안전 항목 가중치를 신중히 조정</strong>: 로봇-장애물 충돌과 볼-장애물 충돌 모두 −10.0이지만 동적 시나리오에서 RCR이 여전히 68%에 달함, 정책이 '충돌 회피'와 '전진' 사이에서 절충하고 있음을 시사. 하위 작업이 안전을 더 중시한다면 충돌 페널티를 높이거나 안전 제약을 도입할 수 있음.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vision_dribbling_humanoid_soccer_privile_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">문제 정식화</a></li>
+<li><a href="#1">1단계: 특권 정책 학습</a></li>
+<li><a href="#2">2단계: 시각 적응</a></li>
+<li><a href="#_5">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a></li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

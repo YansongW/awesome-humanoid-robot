@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>附录 G 术语表 · Wiki · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" aria-current="page">Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">附录 G 术语表</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="g">附录 G 术语表</h1>
+<blockquote>
+<p>本附录由 <code>scripts/build_appendices.py</code> 从知识图谱数据自动生成，随 KG 更新而更新。</p>
+</blockquote>
+<p>知识图谱中概念、原理、算子、算法等形式化实体的一句话定义，按类别分组。</p>
+<h2 id="g1-17">G.1 概念（17）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_concept_world_model/">世界模型</a></td>
+<td>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_product_liability/">产品责任</a></td>
+<td>制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_paper_production_ramp_2024/">产能爬坡</a></td>
+<td>当前人形机器人执行器供应链呈现高端减速器与高端编码器高度集中的特征：谐波减速器全球头部企业 Harmonic Drive、RV 减速器 Nabtesco 占据较大市场份额；高端磁编码器/光编也主要由日本、欧洲企业供应。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a></td>
+<td>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及 CE、UL、FCC、CR、CCC 等区域市场…</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_seven_transitions/">从0到1的七个跃迁</a></td>
+<td>将人形机器人从样机推向产品所需的技术、系统、供应链、制造、成本、验证与市场七大关键跃迁框架。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_embodied_general_intelligence/">具身通用智能</a></td>
+<td>$$ \dot{x}(t) = f\big(x(t), u(t)\big), \quad y(t) = h\big(x(t), u(t)\big) $$</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_decision_stack/">决策栈</a></td>
+<td>将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_perception_stack/">感知栈</a></td>
+<td>处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_actuation_stack/">执行栈</a></td>
+<td>根据决策输出执行底层电机命令、安全限位与故障响应的软硬件子系统。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_digital_twin/">数字孪生</a></td>
+<td>数字孪生（digital twin）是物理实体在数字空间的实时映射，可用于设计验证、虚拟调试、健康监测与预测性维护。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_data_flywheel/">数据飞轮</a></td>
+<td>部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_robot_as_a_service/">机器人即服务（RaaS）</a></td>
+<td>以租赁或订阅而非买断方式提供机器人，并打包维护、软件更新与车队管理的商业模式。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_demo_to_product_gap/">演示指标与产品指标的鸿沟</a></td>
+<td>与 ASIMO 和早期 Atlas 不同，2025–2026 年的新浪潮强调真实场景中的长期部署和量产可行性：</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_paper_bill_of_materials_2024/">物料清单</a></td>
+<td>构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_constraint_qualification/">约束规范</a></td>
+<td>概述 优化问题约束的一种正则性条件，保证在局部最优处 Karush-Kuhn-Tucker 最优性必要条件的有效性。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_metric_torque_density/">转矩密度</a></td>
+<td>1.</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_concept_privacy_biometrics/">隐私与生物识别</a></td>
+<td>机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g2-10">G.2 原理（10）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_principle_force_closure/">力闭合</a></td>
+<td>在不改变接触配置的前提下，接触力可平衡物体任意外部力螺旋的抓取条件。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_principle_form_closure/">形闭合</a></td>
+<td>仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_principle_capture_point/">捕获点</a></td>
+<td>捕获点（Capture Point, CP）是人形机器人推恢（push recovery）与步态规划中的核心概念：它是地面上这样一个点——若机器人能在该点立即踩下去并把质心置于支撑脚正上方，则无需再迈下一步即可停止[44][45]。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_principle_maximum_likelihood_estimation/">最大似然估计</a></td>
+<td>一种统计原理，选择使训练数据出现概率最大的模型参数，是交叉熵和下一个 token 预测损失的基础。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_principle_newton_euler_equations/">牛顿-欧拉运动方程</a></td>
+<td>描述力和力矩如何产生刚体平动和转动加速度的耦合平移与旋转方程。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_principle_current_velocity_position_loops/">电流环/速度环/位置环</a></td>
+<td>4.</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_principle_conservation_of_charge/">电荷守恒</a></td>
+<td>电荷既不能被创造也不能被消灭、只能重新分布的基本原理；它是基尔霍夫电流定律和电化学系统电荷平衡方程的基础。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_ficks_law/">菲克定律</a></td>
+<td>一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_principle_center_of_mass/">质心（COM）</a></td>
+<td>人形机器人是多连杆系统，其整体运动状态不仅由各连杆速度决定，还可以通过质心动量（centroidal momentum）统一描述。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_principle_zero_moment_point/">零力矩点（ZMP）</a></td>
+<td>8.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g3-3">G.3 算子（3）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_operator_softmax_function/">Softmax 函数</a></td>
+<td>一种可微算子，将实值分数向量转换为概率分布，突出最大值，同时保持所有概率为正且和为 1。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_operator_task_jacobian/">任务 Jacobian</a></td>
+<td>将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_operator_voltage_divider/">分压器</a></td>
+<td>一种线性电路算子，按电阻值比例将总电压分配到串联电阻上。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g4-9">G.4 算法（9）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_ddpm_reverse_process/">DDPM 逆过程</a></td>
+<td>去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_algorithm_active_set_method/">二次规划的积极集法</a></td>
+<td>一种求解二次规划的迭代算法，维护一个活动约束工作集，并求解等式约束子问题直到满足最优性条件。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_interior_point_method/">内点法</a></td>
+<td>一类优化算法，通过障碍或惩罚函数在可行域内部沿光滑中心路径求解约束优化问题。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_score_matching/">分数匹配</a></td>
+<td>一种参数估计技术，学习未知对数概率密度的梯度（称为分数），而无需归一化的概率密度。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_backpropagation/">反向传播</a></td>
+<td>一种高效算法，通过按逆序逐层应用链式法则，计算损失函数对前馈神经网络所有参数的梯度。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_gradient_descent/">梯度下降法</a></td>
+<td>&gt; 生活实例：想象你在山上蒙着眼睛找最低点。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_active_set_method/">起作用集法</a></td>
+<td>&gt; 生活实例：想象拼拼图时先猜哪些块接触边框（起作用约束），只拼这些边框块，再检查内部是否有块凸出。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_algorithm_sac/">软演员-评论家（SAC）</a></td>
+<td>在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a></td>
+<td>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g5-8">G.5 形式化方法（8）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_formalism_thevenin_equivalent_circuit/">Thevenin 等效电路</a></td>
+<td>一种形式化方法，将任意线性电网络从两个端子看进去替换为一个等效理想电压源串联一个等效电阻。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_formalism_transformer_action_decoder/">Transformer 动作解码器形式化</a></td>
+<td>一种使用 Transformer 架构和学习的动作 token 词表，从视觉-语言上下文解码机器人动作的形式化生成框架。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_lagrangian/">拉格朗日量</a></td>
+<td>通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_qp_standard_form/">标准二次规划（QP）</a></td>
+<td>现代 WBC 的主流实现是全身 QP 控制。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_formalism_euler_lagrange_equations/">欧拉-拉格朗日方程</a></td>
+<td>由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_formalism_floating_base_dynamics/">浮动基动力学</a></td>
+<td>人形机器人不同于固定基座的工业机械臂，其基座（躯干）可在空间中自由移动。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_bayesian_filtering/">贝叶斯滤波</a></td>
+<td>利用动力学模型与带噪观测递归地维护并更新隐状态信念分布的概率框架。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_formalism_inverse_dynamics_qp/">逆动力学二次规划形式化</a></td>
+<td>一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g6-2">G.6 定理（2）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_kkt_conditions/">Karush-Kuhn-Tucker（KKT）条件</a></td>
+<td>&gt; 生活实例：想象你在一个商场里想找到离出口最近的位置，但被告知“不能走进任何商店内部”（不等式约束），同时“必须站在过道的中线上”（等式约束）。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_chain_rule/">链式法则</a></td>
+<td>一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g7-7">G.7 方程（7）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_butler_volmer_equation/">Butler-Volmer 方程</a></td>
+<td>&gt; 生活实例：电池充电就像很多人同时挤过一扇旋转门。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_equation_thevenin_terminal_voltage/">Thevenin 端电压方程</a></td>
+<td>给出 Thevenin 等效电路端电压等于开路电压减去等效电阻上压降的方程。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_equation_weighted_task_error_objective/">加权任务误差目标函数</a></td>
+<td>惩罚期望任务加速度与预测任务加速度之间加权平方差，并对广义加速度添加正则项的 QP 目标。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_newton_euler_equations/">牛顿-欧拉方程</a></td>
+<td>描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_self_attention_equation/">缩放点积自注意力</a></td>
+<td>&gt; 生活实例：你在读一句话时，每个字都会“回头看”整句话，并根据相关性决定把注意力放在哪些字上。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_nernst_planck_equation/">能斯特-普朗克方程</a></td>
+<td>描述带电粒子在浓度梯度与电场共同作用下的通量，融合扩散与电迁移的输运方程。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_continuity_equation/">连续性方程</a></td>
+<td>一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g8-5">G.8 基础学科（5）</h2>
+<table>
+<thead>
+<tr>
+<th>术语</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/entry/ent_foundation_convex_optimization/">凸优化</a></td>
+<td>在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_foundation_probability_theory/">概率论</a></td>
+<td>关于不确定性、随机变量、分布和期望的数学基础，是机器人和机器学习中所有概率模型的根基。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_foundation_electrochemistry/">电化学</a></td>
+<td>锂离子电池的能量存储本质上是锂在正负极活性材料晶格中的可逆嵌入/脱嵌反应。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_foundation_linear_algebra/">线性代数</a></td>
+<td>研究向量空间、线性变换、矩阵和线性方程组的数学分支。</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_foundation_classical_mechanics/">经典力学</a></td>
+<td>描述宏观物体在力作用下运动的物理学分支，包括牛顿定律、守恒原理和刚体动力学。</td>
+</tr>
+</tbody>
+</table>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/wiki/appendices/appendix-f/">← 上一页<span>附录 F 知识图谱查询示例</span></a>
+      
+      
+      <a class="next" href="/wiki/index/">下一页 →<span>人形机器人：从矿山到市场</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#g">附录 G 术语表</a><ul>
+<li><a href="#g1-17">G.1 概念（17）</a></li>
+<li><a href="#g2-10">G.2 原理（10）</a></li>
+<li><a href="#g3-3">G.3 算子（3）</a></li>
+<li><a href="#g4-9">G.4 算法（9）</a></li>
+<li><a href="#g5-8">G.5 形式化方法（8）</a></li>
+<li><a href="#g6-2">G.6 定理（2）</a></li>
+<li><a href="#g7-7">G.7 方程（7）</a></li>
+<li><a href="#g8-5">G.8 基础学科（5）</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

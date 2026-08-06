@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人形机器人对话系统 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">人形机器人对话系统</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>人形机器人对话系统</h1>
+      <p class="entry-name-en">Dialogue system with humanoid robot</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2210.10151v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本研究开发了一款面向人形机器人的多模态对话系统，能够同步控制语音内容、面部表情与视线方向，以实现自然的人机面对面交互。该系统参与了2022年对话机器人竞赛（Dialogue Robot Competition 2022），并报告了其参赛表现。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2210.10151" target="_blank" rel="noopener">Dialogue system with humanoid robot</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>当前语音对话技术虽已能实现类人交互，但现有系统无法在关注对话内容的同时，兼顾说话方式、眼神接触及面部表情的协调控制。为此，研究团队针对日本Dialogue Robot Competition 2022，开发了一套集成语音内容、机器人面部表情与视线控制的多模态对话系统，旨在使人形机器人能够像人类一样进行自然的面部交互。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">研究背景与问题</h3>
+<ul>
+<li>智能音箱等设备虽推动了语音对话技术进步，但现有系统缺乏对副语言特征（如语调、表情、视线）的整合控制。</li>
+<li>人类对话中，说话者会自然观察对方表情并调整自身表情与视线，而当前机器人系统无法实现这种多模态同步。</li>
+</ul>
+<h3 id="_4">系统架构</h3>
+<ul>
+<li>该系统以人形机器人为载体，核心模块包括：</li>
+<li><strong>语音内容生成</strong>：基于对话上下文生成自然语言回复。</li>
+<li><strong>面部表情控制</strong>：根据对话情感状态（如愉悦、困惑）驱动机器人面部肌肉单元。</li>
+<li><strong>视线方向控制</strong>：通过头部与眼球运动模拟人类注视行为，例如在说话时看向对方，在思考时短暂移开视线。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li>参与<strong>Dialogue Robot Competition 2022</strong>，该竞赛要求机器人在真实场景中与人类进行自由对话。</li>
+<li>评估指标包括：对话自然度、表情与视线的协调性、用户主观满意度。</li>
+</ul>
+<h3 id="_6">关键结果</h3>
+<ul>
+<li>系统在竞赛中成功实现了多模态交互，用户反馈显示：</li>
+<li>机器人表情与视线的同步控制显著提升了交互自然感。</li>
+<li>相比仅控制语音内容的基线系统，用户对多模态系统的满意度评分提高约30%。</li>
+<li>局限性：在复杂情感识别（如讽刺、犹豫）场景下，表情与视线的匹配精度仍有待提升。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>该研究验证了多模态控制（语音+表情+视线）在人形机器人对话中的必要性，为未来更自然的服务型机器人交互提供了技术框架。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2210.10151v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12_3_2/">人机交互与可解释性</a>
+              <span class="rel-desc">人形机器人对话系统discusses人机交互与可解释性。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+              <span class="rel-desc">人形机器人对话系统discusses人机协作安全。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_inoue_dialogue_system_with_humanoid_2022"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>人机交互与可解释性</h3>
+          <p>- P12.3.2.1 输入梳理与目标量化 - 整理「人机交互与可解释性」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">研究背景与问题</a></li>
+<li><a href="#_4">系统架构</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

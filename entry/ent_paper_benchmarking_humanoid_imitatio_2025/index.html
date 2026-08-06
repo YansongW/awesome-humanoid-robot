@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Benchmarking Humanoid Imitation Learning with Motion Difficulty · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Benchmarking Humanoid Imitation Learning with Motion Difficulty</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Benchmarking Humanoid Imitation Learning with Motion Difficulty</h1>
+      <p class="entry-name-en">Benchmarking Humanoid Imitation Learning with Motion Difficulty</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">评测基准</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.07248v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出了一种名为 Torque Variation Score (TVS) 的物理驱动指标，用于量化人形机器人模仿学习中目标动作的内在难度。通过实验验证，TVS 能够有效区分模仿误差是由策略限制还是动作本身的学习难度导致，并支持策略能力评估、性能剖析与动作数据质量控制等应用。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.07248" target="_blank" rel="noopener">Benchmarking Humanoid Imitation Learning with Motion Difficulty (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>当前人形机器人物理模仿学习的评估指标（如 MPJPE）仅衡量模仿结果，无法揭示误差根源。为解决这一问题，本文提出了 Torque Variation Score (TVS)，该指标独立于策略性能，通过测量纠正微小姿态扰动所需的扭矩变化幅度，直接反映动作的动态特性如何影响强化学习环境。实验表明，高 TVS 的动作会导致奖励平面平坦和策略梯度消失，从而解释持续的模仿失败。TVS 与模仿误差高度相关，能够实现原则性的误差归因：低 TVS 动作的高误差表明策略缺陷，而高 TVS 动作的高误差则反映基本的学习限制。此外，TVS 还支持最大可模仿难度 (MID)、难度分层联合误差 (DSJE) 和缺陷动作检测等实际应用。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li><strong>Torque Variation Score (TVS)</strong>：一种物理驱动的指标，用于量化动作的内在学习难度。其核心思想是测量在微小姿态扰动下，为恢复平衡所需的扭矩变化幅度。高 TVS 值意味着动作需要更精细的扭矩控制，从而增加学习难度。</li>
+<li><strong>TVS 与强化学习的关系</strong>：实验发现，高 TVS 的动作会导致奖励平面平坦和策略梯度消失，这使得策略难以通过梯度更新来优化，从而解释了为何某些动作即使经过大量训练也难以模仿。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>基准与模型</strong>：在仿真环境中，使用 state-of-the-art 方法 UHC 和 PHC+ 进行实验。动作数据来自公开的 mocap 数据集。</li>
+<li><strong>评估指标</strong>：除了 TVS，还使用 MPJPE 等传统指标进行对比。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>TVS 与模仿误差的相关性</strong>：TVS 与模仿误差（如 MPJPE）呈现强正相关，验证了 TVS 作为难度指标的有效性。</li>
+<li><strong>误差归因</strong>：</li>
+<li>低 TVS 动作的高误差：表明策略本身存在缺陷（如欠拟合或过拟合）。</li>
+<li>高 TVS 动作的高误差：反映动作本身的学习限制，即使最优策略也难以完美模仿。</li>
+<li><strong>实际应用</strong>：</li>
+<li><strong>Maximum Imitable Difficulty (MID)</strong>：用于评估策略的能力上限，即策略能成功模仿的最高 TVS 值。</li>
+<li><strong>Difficulty-Stratified Joint Error (DSJE)</strong>：按 TVS 分层计算关节误差，提供更细粒度的性能剖析。</li>
+<li><strong>Flawed Motion Detection</strong>：识别 TVS 异常高的动作片段，用于 mocap 数据质量控制，剔除难以学习或质量低下的数据。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>TVS 提供了一个严谨的框架，用于区分策略诱导的误差与动作固有的挑战，从而提升人形机器人模仿学习的诊断能力和数据集可靠性。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2512.07248v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_phc/">实时虚拟人长期连续人形控制</a>
+              <span class="rel-desc">Benchmarking Humanoid Imitation Learning with Motion Difficulty提及实时虚拟人长期连续人形控制。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">Benchmarking Humanoid Imitation Learning with Motion Difficulty评测于近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">benchmarks</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_benchmarking_humanoid_imitatio_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_phc/">
+          <span class="entry-type">论文</span>
+          <h3>实时虚拟人长期连续人形控制</h3>
+          <p>【内容待补】据实验室论文清单登记：PHC 实时虚拟人长期连续人形控制，发表机构：Meta现实实验室、CMU。清单仅提供微信公众号来源文章（未抓取），本卡仅收录清单登记信息，概述与核心内容待补充。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

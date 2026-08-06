@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids</h1>
+      <p class="entry-name-en">Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出DEED两阶段框架，面向零售人形机器人，将预训练VLA从“实验室可用”变为“商店可部署”。核心贡献在于：通过数据整理、频率对齐、任务视觉高亮等工程手段，在单张RTX 5090上实现0%到32%的成功率跃升；随后引入基于RECAP的经验驱动学习，单次迭代将成功率推至42%。作者明确主张，弥合实验室到商店的差距主要是系统集成挑战，而非架构创新。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.20345" target="_blank" rel="noopener">arXiv:2607.20345 Closing the Lab-to-Store Gap: A Data-Efficient Post-Training and Experience-Driv</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这项工作真正改变的是对VLA部署问题的归因方式。此前社区普遍将性能差距归咎于模型架构或预训练数据规模，而本文用实验证明：在固定预训练检查点（GR00T-N1.6）的前提下，仅靠数据整理规则（6条）、频率层级约束（f_r=f_ctrl≤f_cam且f_t≥f_r）、任务相关视觉高亮以及推理时动作平滑，就能将朴素SFT完全失败（0%）的策略变为可执行任务（32%）的系统。这等于把“部署”从算法问题重新定义为“数据与系统集成”问题，为资源有限的团队提供了不依赖大规模架构改动的可行路径。</p>
+<p>同时，它改变了持续学习在机器人操作中的实践方式。作者没有采用标准的在线RL或从零微调，而是将RECAP适配到GR00T的解耦架构，通过文本指令前缀条件化策略、冻结视觉编码器、仅训练轻量价值头，实现了约1.5小时、5000步的低成本精炼。更重要的是，作者诚实地报告了第二次迭代的退化（22%），并指出分布漂移是核心原因——这打破了“更多迭代必然更好”的直觉，为后续研究设立了关于持续学习稳定性的新讨论基线。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="de-">阶段一：数据高效后训练配方（DE-）</h3>
+<ul>
+<li><strong>频率层级设计</strong>：必须满足 f_r = f_ctrl ≤ f_cam，且 f_t ≥ f_r。记录或执行速度快于相机意味着从帧间未变化的重复观测中学习；记录频率决定连续动作目标之间的空间分辨率；记录与推理控制频率必须匹配；遥操作频率可以超过相机上限。本实验采用 f_t=50 Hz，f_cam=30 Hz，f_r=f_ctrl=25 Hz。</li>
+<li><strong>六条数据整理规则</strong>：</li>
+<li>确保平衡的状态覆盖</li>
+<li>只记录高效、成功的行为，避免犹豫、修正、回溯或低效路径</li>
+<li>保留偶然恢复（只修剪失败片段，保留恢复部分）</li>
+<li>最大化动作一致性，而非仅状态覆盖</li>
+<li>最小化非受控环境变化</li>
+<li>避免无操作状态（在有效运动开始后开始片段，目标达成后立即结束）</li>
+<li><strong>任务相关视觉高亮</strong>：集成IA-VLA框架，大VLM通过跨帧传播的分割掩码高亮任务相关图像区域，避免逐时间步推理；掩码识别任务相关物体，放置区域是其补集中的空区域，用边界框高亮。</li>
+<li><strong>减少VLA依赖的实用技巧</strong>：</li>
+<li>二元手控制器：对主要归结为开合手的任务，用二元信号控制手作为夹爪，而非学习连续细粒度关节控制</li>
+<li>通过Butterworth滤波进行动作平滑：对推理时的预测动作序列应用Butterworth滤波器，保持策略泛化同时使执行动作平滑且在分布内</li>
+<li><strong>多子任务演示的连续片段</strong>：推荐记录跨越完整子任务转换的连续片段，而非分段演示；避免跨子任务语言提示共享措辞。</li>
+</ul>
+<h3 id="-ed">阶段二：经验驱动学习策略（-ED）</h3>
+<ul>
+<li><strong>架构适配</strong>：通过基于文本的指令前缀（"Advantage=True/False"）条件化策略，将价值函数限制为仅使用相机观测和文本指令；无需对预训练模型进行架构修改。</li>
+<li><strong>流程</strong>：从数据高效配方获得的策略开始，收集自主rollout，人类操作员仅在必要时干预纠正；数据集包含原始遥操作片段、成功自主执行和人类恢复演示。</li>
+<li><strong>每次精炼迭代从原始检查点（GR00T-N1.6-G1-PnPAppleToPlate）初始化</strong>，而非从上一策略，以缓解优化漂移并防止跨精炼周期的错误累积。</li>
+<li><strong>推理时优势标签固定为True</strong>，对应策略 π_θ(a_t | o_t, ℓ, A=True)。</li>
+<li><strong>价值函数</strong>：仅条件于语言指令ℓ和视觉观测o_t，不包含机器人状态；复用GR00T的预训练Eagle-3视觉-语言编码器f_ψ，后接轻量MLP价值头（两个1024单元隐藏层，GELU激活），应用于均值池化token嵌入；预测B=101个均匀离散化回报箱上的分类分布，中心{b_i}跨越归一化区间[-1,0]，标量估计为期望值 V_φ(o_t,ℓ) = Σ_{i=1}^{B} p_φ(b_i|o_t,ℓ)·b_i。</li>
+<li><strong>奖励设置</strong>：终端成功r_t=0，终端失败r_t=-C_fail（C_fail=80），否则r_t=-1；回报按每任务平均轨迹长度s_ℓ归一化。</li>
+<li><strong>价值函数训练</strong>：Eagle-3编码器全程冻结，图像嵌入预计算并缓存，仅更新MLP头；约1.5小时训练5000步，批大小16，AdamW，学习率1e-4，权重衰减1e-4，15%留出验证集。</li>
+<li><strong>优势计算</strong>：采用RECAP的多步估计器，前瞻视界N=25：Â_t^(N) = (R_t - R_{t+N})/s_ℓ + V_φ(o_{t+N},ℓ) - V_φ(o_t,ℓ)；当t+N≥T时用截断形式R_t/s_ℓ - V_φ(o_t,ℓ)；连续值在阈值τ处转换为二元标签，目标正标签比例ε=0.4。</li>
+<li><strong>人类纠正干预强制标记为正</strong>（c_t=1），无论估计优势如何。</li>
+<li><strong>条件化dropout</strong>：p_drop=0.3，在数据集生成期间应用而非训练期间，避免修改GR00T训练流程。</li>
+</ul>
+<h3 id="_3">分布内/外分析工具</h3>
+<ul>
+<li>在微调GR00T状态编码器的潜在空间比较状态，使用高斯混合模型（GMM）拟合训练嵌入，K个分量。</li>
+<li>新编码状态通过到最近混合分量的马氏距离评分：d(z) = min_k (z-μ_k)ᵀΣ_k⁻¹(z-μ_k)。</li>
+<li>混合公式很重要，因为单一任务允许多个有效配置，演示流形本质上是多模态的。</li>
+<li>附加输出：逐关节z分数和经验百分位检查用于归因；PCA拟合训练嵌入，前三个主成分用于低维可视化。</li>
+<li>阈值从训练距离的经验分布导出，而非手工调整。</li>
+<li>该工具与策略无关，不需要修改VLA，在两个DEED阶段中不变地复用。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>将部署问题重新定义为数据与系统集成问题</strong>：作者没有提出新架构或新损失函数，而是通过六条数据整理规则、频率层级约束和推理时平滑，将朴素SFT从0%成功率提升至32%。这一创新在于其可复制性——任何拥有预训练VLA和单张GPU的团队都能直接套用，无需重新设计模型。</p>
+</li>
+<li>
+<p><strong>RECAP在解耦VLA架构上的轻量适配</strong>：通过文本指令前缀（"Advantage=True/False"）条件化策略，将价值函数限制为仅使用视觉和语言输入，冻结Eagle-3编码器并仅训练轻量MLP头（两个1024单元隐藏层）。这使得价值函数训练仅需约1.5小时、5000步，且无需修改预训练模型，大幅降低了持续学习的计算门槛。</p>
+</li>
+<li>
+<p><strong>模型无关的分布内/外分析工具</strong>：基于GMM拟合训练嵌入，用马氏距离评分新状态，阈值从经验分布导出而非手工调整。该工具与策略无关，不需要修改VLA，在两个DEED阶段中不变地复用，为检测性能退化提供了可量化的诊断信号，并可能扩展为在线触发干预或数据收集的机制。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>实验在超市薯片补货任务上进行，Unitree G1-Edu人形机器人配Dex-3手，动作空间从原生32维减少到20维（每臂7个关节命令、每手1个二元开/关命令、1个腰部关节、3个基座速度命令）。视觉输入为3个RGB流（1个头部Intel RealSense D435i和2个腕部RealSense D405），均为640×480@30 FPS。遥操作数据81个演示（约51.5分钟），自主rollout数据116个片段（约56.9分钟），总数据集约108.4分钟。训练硬件为单个NVIDIA RTX 5090工作站。</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>成功率</th>
+<th>平均时长(s)</th>
+<th>最大连续袋数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>朴素SFT</td>
+<td>0% (0/50)</td>
+<td>N/A</td>
+<td>0</td>
+</tr>
+<tr>
+<td>DE策略</td>
+<td>32% (16/50)</td>
+<td>24.30</td>
+<td>4</td>
+</tr>
+<tr>
+<td>RECAP迭代1</td>
+<td>42% (21/50)</td>
+<td>22.37</td>
+<td>1</td>
+</tr>
+<tr>
+<td>RECAP迭代2</td>
+<td>22% (11/50)</td>
+<td>21.09</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>95% Wilson区间显示，基线和迭代1成功率区间（20.8-45.8%和29.4-55.8%）大幅重叠，说明迭代1的增益是指示性的而非结论性的；迭代2下降区间（12.8-35.2%）重叠较少，表明退化是真实的。价值函数消融显示，Eagle-3无状态条件化表现最佳，提示特异性在单任务设置中影响可忽略，集成头近零分歧（平均标准差：0.009），将优势编码为额外状态维度显著降低性能。</p>
+<h2 id="_6">边界与局限</h2>
+<p>作者明确承认以下边界：50片段样本量限制统计强度，迭代1增益是指示性的而非结论性的；精炼收益不随迭代复合，迭代2退化归因于分布漂移，自生成rollout主导训练集，遥操作演示失去相对影响，优势重标记越来越绑定到策略自身采样分布，形成反馈循环逐渐收窄有效状态-动作分布；精炼策略倾向于单次放置后停止而非返回起始配置，因为终端完成状态价值高于重置的中间姿态，重置转换获得低或负优势而被抑制，作者在实践中命令机器人返回起始姿态而非依赖策略。此外，未报告跨泛化机制的专门评估，预训练阶段遵循原始RECAP配方超出本工作范围，直接构建在公开可用预训练检查点上而非复现其计算密集型预训练。精炼收益应随任务要求更多泛化而减少，维持固定的遥操作与rollout数据混合或定期重新引入演示可能必要。</p>
+<h2 id="_7">工程启示</h2>
+<p>复现或应用此框架时，首先核对频率层级是否满足 f_r = f_ctrl ≤ f_cam 且 f_t ≥ f_r，这是最容易踩坑的地方——如果记录或执行速度快于相机，模型会从帧间未变化的重复观测中学习，导致策略失效。其次，数据整理规则必须严格执行，特别是“只记录高效、成功的行为”和“避免无操作状态”，这直接决定了基线策略能否从0%提升到32%。第三，价值函数训练时务必冻结Eagle-3编码器并预计算缓存图像嵌入，否则训练时间会远超论文报告的约1.5小时。第四，每次精炼迭代必须从原始检查点（GR00T-N1.6-G1-PnPAppleToPlate）初始化，而非从上一策略，否则优化漂移会加速分布退化。最后，对于下游团队，建议在持续学习过程中保持演示与rollout的固定混合比例，并定期重新引入演示数据，否则第二次迭代后成功率会从42%降至22%（由表内数值42%→22%计算），且策略会倾向于提前终止任务而非返回起始配置。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.20345</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_closing_lab_store_gap_data_efficient_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">方法</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#de-">阶段一：数据高效后训练配方（DE-）</a></li>
+<li><a href="#-ed">阶段二：经验驱动学习策略（-ED）</a></li>
+<li><a href="#_3">分布内/外分析工具</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

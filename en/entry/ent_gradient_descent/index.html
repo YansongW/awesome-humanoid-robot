@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gradient Descent · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/algorithm/">Algorithm</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Gradient Descent</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Algorithm</div>
+      <h1>Gradient Descent</h1>
+      <p class="entry-name-en">Gradient Descent</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Foundations</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Foundations</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>An iterative first-order optimization algorithm that updates parameters in the direction of the negative gradient of the objective.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://web.stanford.edu/~boyd/cvxbook/" target="_blank" rel="noopener">S. Boyd and L. Vandenberghe, Convex Optimization, Cambridge University Press, 2004</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<h1 id="gradient-descent">Gradient Descent</h1>
+<h2 id="content">Content</h2>
+<h2 id="abstraction">Abstraction</h2>
+<blockquote>
+<p><strong>Life Example</strong>: Imagine you are blindfolded on a mountain trying to find the lowest point. You reach out to feel which direction is steepest, then take a small step in the opposite direction (downhill). After stepping, you feel again and take another step. As long as your step size is appropriate each time, you will eventually reach the valley floor. Gradient descent is the mathematical version of this process: the loss function corresponds to the mountain's height, the gradient corresponds to the "steepest direction," and the negative gradient direction is the "downhill direction."</p>
+<p><strong>Natural Language Logic</strong>: To minimize a differentiable function, we first compute the gradient at the current position (the direction of fastest increase of the function), then move a small distance in the opposite direction. The distance moved is controlled by the learning rate. If the learning rate is too large, it will oscillate back and forth across the valley; if too small, convergence will be very slow. For convex and smooth functions, gradient descent with an appropriate step size is guaranteed to converge to the global minimum.</p>
+</blockquote>
+<h2 id="formal-definition">Formal Definition</h2>
+<p>Given a differentiable objective function <span class="arithmatex">\(L(\theta)\)</span>, the gradient descent iteration is:</p>
+<div class="arithmatex">\[
+\theta_{t+1} = \theta_t - \eta \nabla_\theta L(\theta_t),
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(\theta_t\)</span>: parameters at step <span class="arithmatex">\(t\)</span></li>
+<li><span class="arithmatex">\(\eta &gt; 0\)</span>: learning rate (step size)</li>
+<li><span class="arithmatex">\(\nabla_\theta L(\theta_t)\)</span>: gradient of the loss function with respect to the parameters</li>
+</ul>
+<p>For a convex and <span class="arithmatex">\(L\)</span>-smooth (gradient Lipschitz continuous) function, if a fixed step size <span class="arithmatex">\(\eta \le 1/L\)</span> is used, the convergence rate is <span class="arithmatex">\(O(1/T)\)</span>:</p>
+<div class="arithmatex">\[
+L(\theta_T) - L(\theta^\star) \le \frac{\|\theta_0 - \theta^\star\|^2}{2 \eta T}.
+\]</div>
+<h2 id="key-symbols-and-intuitive-correspondence">Key Symbols and Intuitive Correspondence</h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Intuitive Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\theta\)</span></td>
+<td>Parameters</td>
+<td>Our position on the mountain</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L(\theta)\)</span></td>
+<td>Loss/Objective Function</td>
+<td>Mountain height</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\nabla_\theta L\)</span></td>
+<td>Gradient</td>
+<td>Direction of steepest ascent</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(-\nabla_\theta L\)</span></td>
+<td>Negative Gradient</td>
+<td>Direction of steepest descent</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta\)</span></td>
+<td>Learning Rate</td>
+<td>How large each step is</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T\)</span></td>
+<td>Number of Iterations</td>
+<td>How many steps taken</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relationships-with-other-knowledge-points">Relationships with Other Knowledge Points</h2>
+<ul>
+<li><code>uses</code> → Chain rule (computing gradients via backpropagation)</li>
+<li><code>uses</code> → Automatic differentiation (implementation via autodiff)</li>
+<li><code>builds_on</code> → Stochastic gradient descent</li>
+<li><code>builds_on</code> → Adam optimizer (improved version with momentum)</li>
+<li><code>minimizes</code> → Behavior cloning objective, cross-entropy loss, MSE loss</li>
+<li><code>has_prerequisite</code> → Multivariable calculus</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">cites</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_foundation_convex_optimization/">Convex Optimization</a>
+              <span class="rel-desc">Gradient Descent cites Convex Optimization.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">uses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_chain_rule/">Chain rule</a>
+              <span class="rel-desc">Gradient Descent uses Chain rule.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_paper_predictive_sampling_real_time_2022/">Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">uses</span>
+              <span class="rel-desc">Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo uses Gradient Descent.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_gradient_descent"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_foundation_convex_optimization/">
+          <span class="entry-type">Foundation</span>
+          <h3>Convex Optimization</h3>
+          <p>The mathematical discipline of minimizing convex functions over convex sets, guaranteeing that any…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_predictive_sampling_real_time_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</h3>
+          <p>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_chain_rule/">
+          <span class="entry-type">Theorem</span>
+          <h3>Chain rule</h3>
+          <p>A fundamental calculus rule that gives the derivative of a composition of functions as the product…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#gradient-descent">Gradient Descent</a><ul>
+<li><a href="#content">Content</a></li>
+<li><a href="#abstraction">Abstraction</a></li>
+<li><a href="#formal-definition">Formal Definition</a></li>
+<li><a href="#key-symbols-and-intuitive-correspondence">Key Symbols and Intuitive Correspondence</a></li>
+<li><a href="#relationships-with-other-knowledge-points">Relationships with Other Knowledge Points</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STeP: Signal Temporal Logic for Precise Specifications for Action Generation with Vision Language Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">STeP: Signal Temporal Logic for Precise Specifications for Action Generation with Vision Language Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>STeP: Signal Temporal Logic for Precise Specifications for Action Generation with Vision Language Models</h1>
+      <p class="entry-name-en">STeP: Signal Temporal Logic for Precise Specifications for Action Generation with Vision Language Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>STeP 是一个混合式语言条件机器人规划框架，由作者团队提出，核心贡献在于将信号时序逻辑（STL）作为高层语言理解与低层动作执行之间的形式化接口，贯穿任务分解、策略选择、底层控制、运行时监控与重规划全流程。系统通过 System 2（语言到 STL 任务规划）与 System 1（STL 引导执行与监控）的协同，使 VLA 模型能够精确遵循包含空间、时间与逻辑约束的自然语言指令。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18580" target="_blank" rel="noopener">arXiv:2607.18580 STeP: Signal Temporal Logic for Precise Specifications for Action Generation wit</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 模型虽泛化能力强，但缺乏可解释性，且无法内在表示或强制执行指令中的精确空间、时间与逻辑要求。双系统架构（System 2 慢速推理 + System 1 快速动作）的分离本身并未解决“如何表示与执行语言指令中的精确约束”这一核心问题。作者的关键判断是：System 2 不应只做规划，而应将语言派生的任务要求形式化为 System 1 可以监控并在可能时强制执行的表示。</p>
+<p>这项工作真正改变的是将 STL 从“规范生成或可行性检查”的静态工具，转变为贯穿整个控制管线的持久表示。此前工作多聚焦于自然语言到 STL 的翻译质量或执行前的公式验证，而 STeP 让 STL 成为任务分解、策略选择、底层控制、运行时监控与重规划的统一接口。这解决了学习型策略不暴露优化接口、难以直接强制执行 STL 约束的问题，也弥补了 MPC 在感知复杂或接触丰富场景中表现不佳的短板，从而提出混合执行模型。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">系统架构</h3>
+<p>STeP 由两个模块组成：
+- <strong>System 2</strong>：负责任务解释、任务规范验证、STL 编译和基于回忆的计划修订。输入为语言指令、当前观测、可用技能与谓词库、回忆上下文；输出为高层子任务序列，每个子任务包含技能名称、接地参数、可选约束与自然语言描述。
+- <strong>System 1</strong>：使用选定的底层执行器执行活动子任务，并通过 STL 鲁棒性监控进度，在偏离规范时触发回忆。</p>
+<h3 id="stl">STL 语法与谓词库</h3>
+<ul>
+<li>公式递归定义为 φ ::= ⊤ | μ_c | ¬φ | φ₁∧φ₂ | φ₁∨φ₂ | φ₁⇒φ₂ | F_[a,b]φ | G_[a,b]φ | φ₁ U_[a,b] φ₂，其中 F 为“最终”、G 为“总是”、U 为“直到”。蕴含谓词被显式包含，因为条件结构在语言指令中自然出现。</li>
+<li>预定义谓词库 P = {μ₁, …, μ_M}，每个 μ_j: Z × Θ_j → ℝ。原子谓词 μ_{j,c}(z_t) := μ_j(z_t) ≥ c，鲁棒性为 ρ(z_t, μ_{j,c}) = μ_j(z_t) − c。语言模型从库中选择谓词而非生成任意信号函数，但添加了灵活的 GoalPosition 谓词以防定义谓词不足。用于梯度优化的谓词需可微。</li>
+</ul>
+<h3 id="_4">鲁棒性平滑</h3>
+<p>为将定量语义纳入梯度优化，用 softmax 平滑 max/min 算子：max(x) ≈ Σᵢ xᵢ exp(βxᵢ) / Σᵢ exp(βxᵢ)，min(x) = −max(−x)，β &gt; 0 控制近似尖锐度。</p>
+<h3 id="system-2">System 2 流程</h3>
+<ol>
+<li>执行前运行静态任务规范检查：验证 JSON 模式匹配、技能存在于技能库、参数类型正确、引用对象或区域存在于当前场景、约束受所选技能支持。失败则带错误消息返回 VLM。</li>
+<li>确定性 STL 编译器将每个技能模板及其接地参数映射为预定义谓词库上的 STL 公式，插入局部与全局约束（安全约束或时间窗口），将秒级时间间隔转换为控制器时间步。</li>
+<li>可选 LLM 一致性检查用于标记公式中的明显逻辑问题（矛盾约束、语言描述与编译任务结构不匹配）。</li>
+</ol>
+<h3 id="system-1">System 1 执行与监控</h3>
+<ul>
+<li>每个子任务选择 STL 引导 MPC 控制器或预定义学习策略。MPC 用于可表达为显式几何/时间/安全约束的子任务；学习策略用于难以解析建模或需要更具表现力感知控制的行为。</li>
+<li>STL 监控器评估活动子任务公式的鲁棒性，提供进度与约束满足的连续度量。鲁棒性低于阈值时触发向 System 2 的召回；公式满足时推进到下一子任务或调用 System 2 重规划。</li>
+</ul>
+<h3 id="mpc">历史日志与 MPC 公式</h3>
+<ul>
+<li>历史日志以固定速率更新，存储最近 L 条记录 H_t = {r_{t−L+1}, …, r_t}，每条记录包含观测、状态、子任务自然语言描述、所选低层执行器、STL 鲁棒值、检测到的完成或失败事件。</li>
+<li>MPC 在有限时域 H 上优化动作序列，仅执行第一个动作并在下一时间步重规划。优化目标为 min Σ_{k=t}^{t+H−1} c(s_{k|t}, a_k) − λρ(z_{t:t+H|t}, φ)，约束为 s_{k+1|t} = f(s_{k|t}, a_k)，z_{k|t} = ψ(s_{k|t}, o_t)。由于动力学模型预测未来状态但不预测未来观测，未来信号用预测状态和当前观测 o_t 计算。</li>
+</ul>
+<h3 id="_5">感知流程</h3>
+<p>工作区从单次 RGB-D 捕获转换为类型化场景表示。类无关分割器（Segment-Anything）返回实例掩码；每个掩码区域查询视觉语言模型，产生规范对象标签和估计的像素空间质心。每个质心通过校准的相机内参和共配准深度通道反投影，恢复世界坐标系位姿。聚合输出包含规范实体集合、几何（含圆形符号距离近似）、实时测量位姿与平台元数据。</p>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>STL 作为贯穿全管线的持久表示</strong>：不同于现有工作将 STL 仅用于规范生成或执行前验证，STeP 让 STL 同时驱动任务分解、策略选择、底层控制、运行时监控与重规划。这一设计使语言指令中的精确约束在整个执行过程中可被持续监控与强制，而非一次性检查。</p>
+</li>
+<li>
+<p><strong>混合执行模型（MPC + 学习策略）</strong>：针对 MPC 在感知复杂或接触丰富场景中表现不佳、而学习策略不暴露优化接口的矛盾，STeP 通过 STL 鲁棒性监控实现动态切换。当学习策略偏离规范时，子任务被重新分配给带避障成本项的 MPC；MPC 到达预抓取区域后学习策略恢复接触丰富抓取。这种切换机制由 STL 鲁棒性阈值驱动，而非人工预设。</p>
+</li>
+<li>
+<p><strong>基于 STL 违反轨迹的重规划</strong>：与基线 VLM-MPC-Cost 使用标量 MPC 成本不同，STeP 将 STL 违反的约束、鲁棒性裕度与违反时间步作为结构化信息返回 System 2。这使得重规划能针对特定失败参数进行修正，而非过度纠正或重新生成完整计划。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>实验在 UR3e 机械臂真实世界桌面操作平台上进行，所有 VLM 调用使用 GPT-4o。</p>
+<h3 id="rq1">RQ1（精确语言跟随）</h3>
+<p>比较 STeP 与 VLM-MPC-Cost，共 9 个任务，按主要约束类型分组：逻辑、空间、逻辑+空间、时间。STeP 在所有任务类别中取得更高的安全成功率，时间约束上增益最大。（图 4 为图片，具体数字未提取）</p>
+<h3 id="rq2">RQ2（学习策略/运动规划切换）</h3>
+<p>训练 ResNet-based BC 策略，使用 30 个演示，任务为从箱子中取立方体，测试时在接近路径上引入障碍物。STL 监控器跟踪机械臂是否保持与障碍物的安全距离；鲁棒性低于阈值时子任务从学习策略重新分配给带避障成本项的 MPC。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>STeP（30 次试验）</th>
+<th>无切换 BC</th>
+<th>仅 MPC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>检测到碰撞</td>
+<td>29</td>
+<td>28 次碰撞</td>
+<td>—</td>
+</tr>
+<tr>
+<td>通过 MPC 改道</td>
+<td>25</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>完成抓取</td>
+<td>22</td>
+<td>—</td>
+<td>24 次避障但抓取失败</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rq3">RQ3（少样本重规划）</h3>
+<p>任务为堆叠三个立方体，失败最常发生在第三次放置。STeP 在 20 次试验中 16 次首次尝试撞倒堆叠；STL 监控器记录违反的约束（Safe End-Effector）、鲁棒性裕度、违反时间步，并连同更新场景快照返回 System 2。第二次尝试中 16 次失败有 12 次被纠正，三次尝试内 14 次被纠正。VLM-MPC-Cost 在 20 次试验中 18 次初始失败；因用标量 MPC 成本替代 STL 违反轨迹，18 次失败中仅 7 次在两次尝试内纠正，9 次在三次尝试内纠正。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>STeP</th>
+<th>VLM-MPC-Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初始失败（20 次试验）</td>
+<td>16</td>
+<td>18</td>
+</tr>
+<tr>
+<td>两次尝试内纠正</td>
+<td>12/16</td>
+<td>7/18</td>
+</tr>
+<tr>
+<td>三次尝试内纠正</td>
+<td>14/16</td>
+<td>9/18</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">边界与局限</h2>
+<p>作者明确承认以下局限：仅 MPC 技能直接针对 STL 规范优化动作，学习策略由 STL 鲁棒性监控，但尚未将规范用作推理时控制信号。高层计划表示为子任务序列，限制了与完整自动机相比可表达的分支或循环行为范围。多个系统组件刻意保持简单，包括 MPC 求解器、抓取姿态选择和真实世界执行循环，使系统在杂乱环境中表现不佳。VLM 仍可能产生不完整或不正确的任务规范，尤其是场景描述缺少精细空间细节时。未来工作可探索用世界模型预测未来观测（当前 MPC 用预测状态和当前观测计算未来信号）。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现 STeP 时，首先核对感知管线的精度：类无关分割器（Segment-Anything）返回的实例掩码经 VLM 标注后，质心反投影的世界坐标精度直接影响 GoalPosition 谓词与避障约束的有效性。最容易踩坑的是 STL 编译器中秒级时间间隔到控制器时间步的转换——若控制器频率与编译假设不匹配，时间窗口约束会系统性偏移。</p>
+<p>对于下游团队，建议优先验证谓词库的覆盖度：预定义谓词库 P = {μ₁, …, μ_M} 虽含灵活的 GoalPosition 谓词，但若任务涉及自定义几何约束（如非圆形障碍物），需扩展谓词库并确保其可微性。混合执行切换的阈值设定是关键超参数——鲁棒性阈值过松会导致碰撞漏检，过紧则频繁触发重规划。RQ2 中 29/30 的碰撞检测率与 22/30 的抓取成功率表明，切换机制有效但仍有改进空间，建议在部署前针对具体任务标定阈值。重规划时，STL 违反轨迹的结构化信息（违反约束、鲁棒性裕度、违反时间步）比标量成本更有助于精准修正，这是与基线 VLM-MPC-Cost 的核心差异。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18580</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_step_signal_temporal_logic_precise_speci_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">系统架构</a></li>
+<li><a href="#stl">STL 语法与谓词库</a></li>
+<li><a href="#_4">鲁棒性平滑</a></li>
+<li><a href="#system-2">System 2 流程</a></li>
+<li><a href="#system-1">System 1 执行与监控</a></li>
+<li><a href="#mpc">历史日志与 MPC 公式</a></li>
+<li><a href="#_5">感知流程</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#rq1">RQ1（精确语言跟随）</a></li>
+<li><a href="#rq2">RQ2（学习策略/运动规划切换）</a></li>
+<li><a href="#rq3">RQ3（少样本重规划）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

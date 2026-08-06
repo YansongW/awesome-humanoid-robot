@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M12 · Simulation Standing and Walking: First Stand Firm, Then Walk · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M12 · Simulation Standing and Walking: First Stand Firm, Then Walk</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m12-simulation-standing-and-walking-first-stand-firm-then-walk">M12 · Simulation Standing and Walking: First Stand Firm, Then Walk</h1>
+<p><strong>Global Position</strong>: Immediately follows <a href="/en/roadmap/missions/m11-sim-setup/">M11 Simulation Engineering Ready</a>. Input is a simulation model that can be loaded with reasonable contacts; output is <strong>two deliverables</strong>: ① A PD standing demo (10 minutes without falling + recovery from pushes); ② A written walking technical route decision (classic MPC/WBC or RL) — <a href="/en/roadmap/missions/m13-rl-training/">M13</a> will delve deeper into the RL training path.</p>
+<p><strong>Prerequisites</strong>: All M11 acceptance checks passed (all four baseline health checks passed); the PD standing feel from <a href="/en/roadmap/stage-0-foundations/">Stage 0</a> is still fresh — this task's Step 1 is its scaled-up version.</p>
+<p>Theoretical Background: <a href="/en/wiki/chapters/chapter-14/">Chapter 14 Fundamentals of Robot Control</a>, <a href="/en/wiki/chapters/chapter-15/">Chapter 15 Motion Generation and Locomotion</a>, <a href="/en/wiki/chapters/chapter-23/">Chapter 23 Simulation and Physics Engines</a>; the complete balance theory ladder is in <a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a> Section 2.</p>
+<h2 id="step-1-pd-standing-the-ticket-to-walking">Step 1: PD Standing — The Ticket to Walking</h2>
+<p>[What to Do] Three things in order:</p>
+<ol>
+<li><strong>Design a Zero-Moment Standing Posture</strong>: Target joint angles (ankle/knee/hip compensation) so the center of mass projection falls near the center of the support polygon — start with M11's keyframe, fine-tune until no drift;</li>
+<li><strong>Position PD Control</strong>: Follow M11's frequency layering (physics at 1 kHz, control on the order of 100 Hz):</li>
+</ol>
+<pre class="highlight"><code class="language-python"># Position PD main loop: target angle tracking + torque limiting (limiting consistent with M11 Step 3)
+tau = kp * (q_des - q) - kd * dq
+tau = np.clip(tau, -tau_max, tau_max)</code></pre>
+<ol>
+<li><strong>Stepwise Acceptance Criteria</strong>: 10 s → 60 s → 10 min without falling; then apply a small impulse disturbance to the torso, recovery is required to pass. Gain tuning: P first, then D — increase P until just before oscillation, then use D to suppress oscillation; for high-frequency oscillation, reduce P first; if still oscillating, check the simulation timestep.</li>
+</ol>
+<p>[Why] Standing is a subset of walking: once the standing loop (ankle/hip strategy) is tuned, walking is just periodically shifting the balance point out of the support polygon and recapturing it (per the <a href="/en/roadmap/stage-2-biped/">Stage 2</a> reproduction flow Step 7). PD standing validates <strong>model correctness</strong> — zero position, axes, mass properties (the first stage of the three-stage rocket in the <a href="/en/roadmap/playbooks/sim-setup/">Simulation Playbook</a>). If this step fails, everything after is wasted effort.</p>
+<p>[How to Analyze Your Situation] If it can't stand, don't rush to tune parameters. Troubleshoot in the order "model error → gain error → timestep error": Has the zero-moment suspension test passed (M11 Step 6)? Has the center of mass projection been calculated? Does halving the gains change the behavior?</p>
+<h2 id="step-2-balance-theory-ladder-zmp-lipm-and-hierarchical-architecture">Step 2: Balance Theory Ladder — ZMP, LIPM, and Hierarchical Architecture</h2>
+<p>[What to Do] Work through the three levels in order (see <a href="/en/roadmap/stage-2-biped/">Stage 2</a> Section 2 for details):</p>
+<ol>
+<li><strong><a href="/entry/ent_paper_zero_moment_point_2024/">ZMP (Zero Moment Point)</a></strong>: The equivalent point of ground reaction force must lie within the support polygon to avoid tipping. In simulation, plot/print the ZMP trajectory and observe when it leaves the support polygon and when the robot falls;</li>
+<li><strong>LIPM (Linear Inverted Pendulum Model)</strong>: Simplify the whole body to a "center of mass + massless legs". Under the constant center of mass height assumption, there is an analytical solution, and for flat ground ZMP estimation:</li>
+</ol>
+<pre class="highlight"><code># Flat ground LIPM approximation: x_zmp = x_com - (z_com / g) * x_ddot_com
+x_zmp = x_com - (z_com / 9.81) * x_ddot_com</code></pre>
+<ol>
+<li><strong><a href="/entry/ent_method_gait_planning/">Gait Planning</a> and Hierarchical Architecture</strong>: Given a target velocity, determine the swing foot placement and the timing of double support/swing phase transitions (classic entry point is LIPM + capture point analysis: predict where you would fall without stepping, and step there); and establish a hierarchical understanding: <strong>Footstep planning → Center of mass trajectory → WBC allocation → Joint torques</strong>.</li>
+</ol>
+<p>[Why] ZMP is the most classic criterion for bipedal stability and the primary tool for diagnosing all falls. The hierarchical architecture allows you to pinpoint whether "walking crooked" is due to wrong foot placement (decision layer) or insufficient force control (execution layer). Without building this understanding before jumping into RL, you won't know if a fall is due to a model error or a control error. Systematic derivation is in <a href="/en/wiki/chapters/chapter-14/">Chapter 14</a> and <a href="/en/wiki/chapters/chapter-15/">Chapter 15</a>.</p>
+<p>[How to Analyze Your Situation] For the RL route: conceptual understanding is sufficient (the policy learns foot placement itself), but the ZMP observation exercise is mandatory; for the MPC route: the LIPM derivation must be thoroughly understood, as it is the prediction model for MPC in Step 3.</p>
+<h2 id="step-3-classic-route-hands-on-run-openloong-mpcwbc">Step 3: Classic Route Hands-On — Run OpenLoong MPC+WBC</h2>
+<p>[What to Do] Run OpenLoong-Dyn-Control: An MPC+WBC whole-body control framework deployed on <a href="/entry/ent_software_mujoco_physics_engine_2022/">MuJoCo</a>, with built-in <strong>walking/jumping/blind obstacle stepping</strong> examples. It has been implemented on a physical prototype for walking and blind obstacle stepping, Apache-2.0 (<a href="https://github.com/loongOpen/OpenLoong-Dyn-Control/blob/main/README-zh.md">OpenLoong-Dyn-Control</a>):</p>
+<pre class="highlight"><code class="language-bash">git clone https://github.com/loongOpen/OpenLoong-Dyn-Control.git
+# Dependency installation and compilation strictly follow the repository README (versions change with repository updates; verify against your chosen version)</code></pre>
+<p>After running it, <strong>modify it hands-on</strong> and record: MPC weights, step frequency, step length. For each modification, record the change in walking quality (stability/speed tracking/oscillation). Also clarify the division of labor: <a href="/entry/ent_method_model_predictive_control/">MPC (Model Predictive Control)</a> rolls out predictions over a time horizon, solves a constrained optimization, and handles "how to step and how much force to use in the next few steps"; <a href="/entry/ent_method_whole_body_control/">WBC (Whole-Body Control)</a> distributes task objectives to joint torques according to priority, handling "how much force each joint outputs in this instant"; <a href="/entry/ent_software_pinocchio/">Pinocchio</a> is an efficient rigid body dynamics library, almost essential for MPC/WBC to compute dynamics terms.</p>
+<p>[Why] This is a ready-made textbook for learning the classic control pipeline of a full-size humanoid without hardware — the Qinglong robot is 185 cm/80 kg+, which an individual cannot replicate, but the control framework can be freely studied (per the archive's scope). Modifying parameters yourself and seeing the change in walking quality builds intuition faster than reading ten papers.</p>
+<p>[How to Analyze Your Situation] If compilation fails: strictly verify dependency versions against the repository README; do not upgrade on your own. If you can't follow the math: first treat it as a "tunable black box", record the "parameter → phenomenon" correspondence, and catch up on the derivations later.</p>
+<h2 id="step-4-rl-route-preview-only-prove-the-pipeline-works-dont-start-training">Step 4: RL Route Preview — Only Prove the Pipeline Works, Don't Start Training</h2>
+<p>[What to Do] Only one thing: get the official environment you'll use in M13 running on your machine — <a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a> humanoid example or <a href="/entry/ent_paper_202501_mujoco_playground_2025/">MuJoCo Playground</a>. Confirm that the obs/action/reward data flow can run, and record FPS and GPU memory/CPU usage:</p>
+<pre class="highlight"><code class="language-bash"># Isaac Lab official humanoid environment smoke test (task name and script path: verify against your chosen version's official documentation)
+./isaaclab.sh -p &lt;official RL example script&gt; --task=&lt;humanoid task name&gt; --num_envs=16 --headless --max_iterations=2
+# Record: FPS, nvidia-smi GPU memory usage, obs/action dimensions</code></pre>
+<p><strong>Do not start training</strong>: Running the official baseline, swapping in your own model, and tuning rewards are tasks for <a href="/en/roadmap/missions/m13-rl-training/">M13</a> Steps 1–3. This step is only a pipeline rehearsal to prove "it can run on this machine".</p>
+<p>[Why] The environment/dependency/version issues in the RL stack are extremely time-consuming. Exposing them now means M13 can start training directly; FPS and hardware usage data determine how to set the number of parallel environments in M13 (<a href="/entry/ent_algorithm_ppo/">PPO</a> is throughput-hungry).</p>
+<p>[How to Analyze Your Situation] No Nvidia GPU: Use MuJoCo Playground/MJX or a CPU-based small-scale environment to first verify the data flow; with a GPU: Run the Isaac Lab official humanoid task for two iterations or load an official pre-trained checkpoint for evaluation, and save screenshots of the data flow logs.</p>
+<h2 id="step-5-route-decision-write-it-down-dont-drift">Step 5: Route Decision – Write It Down, Don't Drift</h2>
+<p>【What to Do】Select a main route by comparing the table below and record it in the build log (you can try both, but clearly state the primary and secondary routes and your reasoning):</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Classic MPC/WBC</th>
+<th>RL (<a href="/entry/ent_algorithm_ppo/">PPO</a> + Domain Randomization)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development Effort</td>
+<td>High derivation and implementation effort, but OpenLoong provides a ready-to-learn framework</td>
+<td>Training pipeline is ready; reward engineering is the new workload</td>
+</tr>
+<tr>
+<td>Mathematical Threshold</td>
+<td>High (dynamics + optimization)</td>
+<td>Medium (concepts are sufficient to start; tuning rewards is experimental science)</td>
+</tr>
+<tr>
+<td>Hardware Requirements</td>
+<td>CPU is sufficient (MuJoCo)</td>
+<td>Nvidia GPU is smoother for training (Isaac Lab); CPU works but is an order of magnitude slower</td>
+</tr>
+<tr>
+<td>Interpretability</td>
+<td>High – every torque has a clear source</td>
+<td>Low – the policy is a black box</td>
+</tr>
+<tr>
+<td>Real Robot Examples</td>
+<td>BRUCE achieves walking/running/jumping with variable-period MPC (bruce-westwood.md)</td>
+<td>ToddlerBot, Berkeley achieve zero-shot <a href="/entry/ent_method_sim_to_real/">sim-to-real</a> walking (various files)</td>
+</tr>
+</tbody>
+</table>
+<p>【Why】Both paths lead to success, but your time only allows for one main route; writing down the decision ensures you don't drift when troubleshooting in M13/<a href="/en/roadmap/missions/m14-sim-to-real/">M14</a>. The same logic from the <a href="/en/roadmap/stage-2-biped/">Stage 2</a> decision tree applies: the core KPI for the first robot is "get it walking," not achieving perfection in one go.</p>
+<p>【How to Analyze Your Situation】Strong math + want to deeply understand control → MPC/WBC main route, OpenLoong is your textbook; ML background + have a GPU → RL main route straight to M13; want to try both → RL as main route, read OpenLoong code as a secondary route to understand control structure (or vice versa), but the log must clearly state which is the main route.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] PD standing: 10 minutes of simulation time without falling; recovers after a gentle push to the torso (save screen recording).</li>
+<li>[ ] ZMP observation documented: whether the ZMP stays within the support polygon during standing and after a push, with figures and conclusions.</li>
+<li>[ ] At least one OpenLoong example or official RL environment runs successfully (screen recording + record of parameter changes/data flow).</li>
+<li>[ ] Route decision documented in writing: main/secondary route, reasoning, expected risks, recorded in the build log.</li>
+<li>[ ] If the main route is RL: confirm the official environment required for M13 runs, with FPS and hardware usage recorded.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PD standing: high-frequency jitter, buzzing</td>
+<td>P gain too high / simulation step size too large</td>
+<td>Halve P and retest; reduce step size for comparison; check if damping was mistakenly written as stiffness</td>
+</tr>
+<tr>
+<td>Standing: slowly tilting to one side</td>
+<td>CoM projection deviates from support polygon center / model asymmetry left-right</td>
+<td>Print CoM projection; go back to M10 to check mirrored joint axes</td>
+</tr>
+<tr>
+<td>Standing: feet sliding, unable to stay upright</td>
+<td>Friction coefficient too low or contact too soft</td>
+<td>Go back to M11 Step 4 to adjust friction and solref</td>
+</tr>
+<tr>
+<td>Falls with one push, cannot recover</td>
+<td>D gain insufficient / ankle torque limit too restrictive</td>
+<td>Increase D and retest; check ankle actuator limits (M11 Step 3)</td>
+</tr>
+<tr>
+<td>Jumping straight to RL, unable to tell whose fault the fall is</td>
+<td>Skipped the balance theory ladder</td>
+<td>Go back to Step 2 for ZMP observation; discuss RL only after PD standing acceptance</td>
+</tr>
+<tr>
+<td>OpenLoong example fails to run</td>
+<td>Dependency version mismatch</td>
+<td>Strictly follow the repository README to check versions; do not upgrade dependencies on your own</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous task: <a href="/en/roadmap/missions/m11-sim-setup/">M11 · Simulation Environment and Model Conversion</a></li>
+<li>Next task: <a href="/en/roadmap/missions/m13-rl-training/">M13 · Reinforcement Learning Training</a></li>
+<li>Theoretical background: <a href="/en/wiki/chapters/chapter-14/">Chapter 14 Fundamentals of Robot Control</a>, <a href="/en/wiki/chapters/chapter-15/">Chapter 15 Motion Generation and Locomotion</a>, <a href="/en/wiki/chapters/chapter-23/">Chapter 23 Simulation and Physics Engines</a>, <a href="/en/wiki/appendices/appendix-c/">Appendix C Software and Simulation Platform List</a></li>
+<li><a href="/en/roadmap/playbooks/sim-setup/">Simulation Environment Setup Guide</a> · <a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m11-sim-setup/">← Previous<span>M11 · Simulation Environment and Model Conversion: Fall Ten Thousand Times in the Digital World First</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m13-rl-training/">Next →<span>M13 · Reinforcement Learning Training: Fall Ten Thousand Times in Simulation, Stand Firm Once on the Real Robot</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m12-simulation-standing-and-walking-first-stand-firm-then-walk">M12 · Simulation Standing and Walking: First Stand Firm, Then Walk</a><ul>
+<li><a href="#step-1-pd-standing-the-ticket-to-walking">Step 1: PD Standing — The Ticket to Walking</a></li>
+<li><a href="#step-2-balance-theory-ladder-zmp-lipm-and-hierarchical-architecture">Step 2: Balance Theory Ladder — ZMP, LIPM, and Hierarchical Architecture</a></li>
+<li><a href="#step-3-classic-route-hands-on-run-openloong-mpcwbc">Step 3: Classic Route Hands-On — Run OpenLoong MPC+WBC</a></li>
+<li><a href="#step-4-rl-route-preview-only-prove-the-pipeline-works-dont-start-training">Step 4: RL Route Preview — Only Prove the Pipeline Works, Don't Start Training</a></li>
+<li><a href="#step-5-route-decision-write-it-down-dont-drift">Step 5: Route Decision – Write It Down, Don't Drift</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

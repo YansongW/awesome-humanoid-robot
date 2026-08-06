@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation</h1>
+      <p class="entry-name-en">ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ViTacWorld 是一个动作条件视觉-触觉世界模型，由上海科技大学等机构提出，旨在为接触丰富操作生成合成视觉-触觉-动作轨迹。其核心贡献在于将世界建模能力从纯视觉扩展到视觉-触觉联合，并通过生成“梦境数据”增强下游触觉策略，同时可作为策略评估器使用。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.22530" target="_blank" rel="noopener">arXiv:2607.22530 ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulati</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>接触丰富操作（如插拔、剥离）中，触觉反馈是成功的关键，但真实触觉数据采集昂贵且受硬件寿命限制，模拟数据又存在 sim-to-real 差距。现有动作条件世界模型仅处理视觉流，无法合成触觉观测，因此不能作为下游触觉策略的数据生成器。ViTacWorld 真正改变了这一局面：它将触觉提升为与视觉同等地位的一等观测流，使世界模型能够生成时间对齐的视觉-触觉-动作轨迹，从而为触觉策略提供可扩展的训练数据来源。这一转变意味着触觉策略训练不再完全依赖昂贵的真实演示，而是可以通过世界模型合成数据来扩充。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体框架</h3>
+<p>给定 H 步动作序列，预测未来视觉和触觉观测：ô_{t+1:t+H} = f_θ(o_t, u_{t:t+H-1}, m)，其中 m ∈ {0,1}^{|V|} 是视图存在掩码，V = {main, wrist, tactile}。</p>
+<h3 id="_4">架构设计</h3>
+<ul>
+<li>扩展预训练动作条件视频世界模型，保留骨干和动作条件路径</li>
+<li>各视图分别由 VAE 编码为潜在 token，组装为统一序列</li>
+<li>引入流身份嵌入 e^v，投影到 AdaLN 调制路径</li>
+<li>流感知自注意力：Z̃<em b-1="b-1">b^v = SelfAttn_v(AdaLN(Z</em>^v; c_b + P(e^v)))，P 为零初始化投影</li>
+<li>跨视图注意力：Z_b^v = CrossViewAttn_v(Z̃<em v_v="v'≠v">b^v, {Z̃_b^{v'}}</em>)，避免 token 不受控混合</li>
+</ul>
+<h3 id="_5">训练目标</h3>
+<p>L_wm = E_{z_0,σ}[‖D_θ(z_σ, σ, o_t, u_{t:t+H-1}, m) − z_0‖²₂]，损失仅应用于未来帧和有效流。</p>
+<h3 id="_6">两阶段训练</h3>
+<ol>
+<li><strong>预训练</strong>：OmniViTac 公共数据（超过 21K 轨迹）加任务对齐模拟数据（超过 5K 轨迹），13 帧窗口，15 Hz 采样，32 块 H20 GPU，全局批量 256，30K 步，学习率 3 × 10⁻⁵</li>
+<li><strong>微调</strong>：真实演示加策略 rollout，全局批量 128，学习率 1 × 10⁻⁵，7K 步</li>
+</ol>
+<h3 id="_7">模拟数据生成</h3>
+<p>在 Isaac Sim 中通过 Xense 触觉渲染管线合成触觉，3D 高斯扫描重建场景，EasyHeC 校准外参。</p>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li><strong>触觉作为一等观测流</strong>：触觉不再作为辅助信号，而是与视觉流同等参与世界模型生成，保持时间对齐。这是首个将触觉纳入动作条件世界模型生成框架的工作。</li>
+<li><strong>流感知自注意力与跨视图注意力分离</strong>：避免相机和触觉 token 在普通自注意力中不受控混合，同时允许触觉流与视觉流交换接触信息。这一设计决策对多模态世界模型架构具有普适意义。</li>
+<li><strong>梦境数据增强闭环</strong>：世界模型生成的成功 rollout 与专家演示合并训练下游策略，再用增强策略生成更多 rollout 进行第二轮增强，形成数据飞轮。这为接触丰富操作的数据稀缺问题提供了可扩展的解决方案。</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="1-10">真实机器人成功率（表 1，每任务 10 次试验）</h3>
+<table>
+<thead>
+<tr>
+<th>训练数据</th>
+<th>策略</th>
+<th>Charger</th>
+<th>Cucumber</th>
+<th>U-Block</th>
+<th>Cuboid</th>
+<th>Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Expert only</td>
+<td>ACT + tactile</td>
+<td>0</td>
+<td>0</td>
+<td>30</td>
+<td>30</td>
+<td>15.0</td>
+</tr>
+<tr>
+<td>Expert only</td>
+<td>π_0.5</td>
+<td>10</td>
+<td>30</td>
+<td>60</td>
+<td>40</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>Expert only</td>
+<td>π_0.5 + tactile</td>
+<td>20</td>
+<td>40</td>
+<td>70</td>
+<td>40</td>
+<td>42.5</td>
+</tr>
+<tr>
+<td>Expert + ViTacWorld</td>
+<td>ACT + tactile</td>
+<td>10</td>
+<td>20</td>
+<td>40</td>
+<td>40</td>
+<td>27.5</td>
+</tr>
+<tr>
+<td>Expert + ViTacWorld</td>
+<td>π_0.5</td>
+<td>30</td>
+<td>60</td>
+<td>60</td>
+<td>40</td>
+<td>47.5</td>
+</tr>
+<tr>
+<td>Expert + ViTacWorld</td>
+<td>π_0.5 + tactile</td>
+<td>40</td>
+<td>80</td>
+<td>80</td>
+<td>70</td>
+<td>67.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2held-out">世界模型预测质量（表 2，held-out 验证）</h3>
+<table>
+<thead>
+<tr>
+<th>视图</th>
+<th>指标</th>
+<th>w/o pretraining</th>
+<th>w/o task-aligned sim</th>
+<th>Full</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main</td>
+<td>PSNR</td>
+<td>22.718</td>
+<td>23.128</td>
+<td>24.258</td>
+</tr>
+<tr>
+<td>Main</td>
+<td>SSIM</td>
+<td>0.7859</td>
+<td>0.8011</td>
+<td>0.8286</td>
+</tr>
+<tr>
+<td>Main</td>
+<td>LPIPS</td>
+<td>0.0781</td>
+<td>0.0687</td>
+<td>0.0513</td>
+</tr>
+<tr>
+<td>Wrist</td>
+<td>PSNR</td>
+<td>21.080</td>
+<td>21.434</td>
+<td>21.925</td>
+</tr>
+<tr>
+<td>Wrist</td>
+<td>SSIM</td>
+<td>0.6649</td>
+<td>0.6869</td>
+<td>0.6962</td>
+</tr>
+<tr>
+<td>Wrist</td>
+<td>LPIPS</td>
+<td>0.1084</td>
+<td>0.0901</td>
+<td>0.0725</td>
+</tr>
+<tr>
+<td>Tactile</td>
+<td>PSNR</td>
+<td>34.967</td>
+<td>35.127</td>
+<td>35.225</td>
+</tr>
+<tr>
+<td>Tactile</td>
+<td>SSIM</td>
+<td>0.9204</td>
+<td>0.9296</td>
+<td>0.9318</td>
+</tr>
+<tr>
+<td>Tactile</td>
+<td>LPIPS</td>
+<td>0.0211</td>
+<td>0.0179</td>
+<td>0.0157</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">策略评估器（表 3）</h3>
+<p>真实成功率平均 67.5%，ViTacWorld 预测成功率平均 57.5%，差距 10.0 个百分点。表 4 显示 U-Block 任务 90.0% 初始条件一致性，无假阳性。</p>
+<h3 id="5">第二轮增强（表 5）</h3>
+<p>π_0.5 + tactile 策略平均成功率从 67.5% 提升至 80.0%，ACT + tactile 从 27.5% 提升至 42.5%。</p>
+<p>触觉流 PSNR 增益不明显，因为非接触帧像素相似度已很高；LPIPS 改善表明预训练提升接触模式感知一致性。</p>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li>成功梦境数据筛选仍部分依赖人工检查，未实现全自动过滤</li>
+<li>未讨论模拟数据具体规模、训练计算成本、推理延迟</li>
+<li>未与其他世界模型方法定量对比</li>
+<li>第二轮增强在已饱和任务上收益有限</li>
+<li>未进行更多轮次增强实验，未在更多任务或传感器类型上验证评估器性能</li>
+<li>预测成功率略低于真实执行，表现为保守，对数据选择有利但可能低估策略能力</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<p>复现时先核对预训练数据管线：OmniViTac 与模拟数据采样比约 2:1，13 帧窗口、15 Hz 采样是关键配置。最容易踩坑的是视图存在掩码 m 的处理——不完整轨迹参与预训练时，缺失流必须正确掩蔽，否则会破坏训练。微调阶段学习率从 3 × 10⁻⁵ 降至 1 × 10⁻⁵，全局批量从 256 降至 128，直接照搬可能不稳定。下游策略训练中 π_0.5 用批量 128、30K 步，ACT 用批量 16、10K 步，两者差异大，需分别调参。梦境数据筛选时注意 ViTacWorld 预测偏保守，假阳性少但可能漏掉有效轨迹，人工检查环节在早期可接受，规模化时需引入自动过滤。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.22530</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">ACT</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vitacworld_scaling_visuo_tactile_world_m_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ACT</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware 是斯坦福大学、UC Berkeley 与 Meta 于 2023…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体框架</a></li>
+<li><a href="#_4">架构设计</a></li>
+<li><a href="#_5">训练目标</a></li>
+<li><a href="#_6">两阶段训练</a></li>
+<li><a href="#_7">模拟数据生成</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#1-10">真实机器人成功率（表 1，每任务 10 次试验）</a></li>
+<li><a href="#2held-out">世界模型预测质量（表 2，held-out 验证）</a></li>
+<li><a href="#3">策略评估器（表 3）</a></li>
+<li><a href="#5">第二轮增强（表 5）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

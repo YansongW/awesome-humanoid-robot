@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReferTrack: Referring Then Tracking for Embodied Visual Tracking · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ReferTrack: Referring Then Tracking for Embodied Visual Tracking</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ReferTrack: Referring Then Tracking for Embodied Visual Tracking</h1>
+      <p class="entry-name-en">ReferTrack: Referring Then Tracking for Embodied Visual Tracking</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Embodied visual tracking (EVT) requires a mobile agent to continuously follow a specific target described in natural language using only onboard vision. While recent vision-language-action (VLA) policies unify target identification and trajectory planning, their chain-of-thought (CoT) reasoning often operates in abstract spatial latents that are difficult to supervise and weakly aligned with.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.20061" target="_blank" rel="noopener">arXiv:2607.20061 ReferTrack: Referring Then Tracking for Embodied Visual Tracking</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ReferTrack은 "먼저 지시한 후 추적"(referring then tracking) 패러다임을 제안하여, 구현적 시각 추적(EVT)에서의 대상 인식을 추상적 잠재 변수 추론이 아닌 이미지 공간 경계 상자 인덱스 선택으로 명시화한다. 저자는 Qwen3-4B 기반의 이중 분기 VLA를 구축하고, Refer-CoT 토큰과 TVBI 히스토리 주입을 통해 단일 전방 카메라, RL 없는 SFT 설정에서 EVT-Bench의 가장 강력한 단일 뷰 기준선인 TrackVLA++를 크게 능가하며, 특히 모호한 추적(AT) 작업에서 SR이 22.9포인트 향상되었다.</p>
+<h2 id="_2">무엇이 바뀌었는가</h2>
+<p>기존 VLA 전략은 대상 인식과 궤적 계획을 체인 추론(CoT)으로 통합하지만, 이 추론은 종종 추상적 공간 잠재 변수에서 작동하여 감독이 어렵고 명시적 이미지 공간 검출과의 정렬이 약하다. 초기 모듈식 파이프라인은 인식과 계획을 분리했지만, 인식 오류가 누적되어 계획 모듈로 전파된다. ReferTrack이 진정으로 바꾼 것은 "대상이 누구인가"라는 결정을 암시적 잠재 공간에서 명시적 이미지 공간으로 끌어내어, 검출기에서 생성된 경계 상자 후보 카탈로그에서 인덱스를 선택하도록 함으로써 인식 과정을 감독 가능하고 해석 가능하게 만들고, 값비싼 RL 정책 최적화에 대한 의존도를 줄인다. 이러한 전환은 추적 실패 모드가 "모델이 대상을 환각하는 것"에서 "검출기 누락 또는 인덱스 오선택"으로 바뀌며, 후자가 진단과 수정이 더 쉽다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="2">2단계 추론</h3>
+<ul>
+<li>1단계에서 Refer-CoT 토큰 생성: <code>E_T^refer = LLM(ℒ, C_T, E_{1:T}^V)</code>, 후보 카탈로그 <code>{⟨ped_1⟩, ..., ⟨ped_K⟩, ⟨NO_EXIST⟩}</code>에서 인덱스 선택.</li>
+<li>2단계에서 Refer-CoT를 조건부 접두사로 사용하여 액션 토큰 생성: <code>E_T^A = LLM(ℒ, C_T, E_{1:T}^V, E_T^refer)</code>, 액션 헤드가 M개의 웨이포인트 <code>w_i = (x, y, θ) ∈ ℝ³</code>를 디코딩.</li>
+</ul>
+<h3 id="_4">관측 인코딩</h3>
+<ul>
+<li>이중 인코더: SigLIP + DINOv2, 그리드 풀링으로 세밀한 토큰 <code>V^fine ∈ ℝ^{64×C}</code>(현재 프레임)과 거친 토큰 <code>V^coarse ∈ ℝ^{4×C}</code>(히스토리 프레임) 생성.</li>
+<li>슬라이딩 윈도우로 최근 H 프레임 유지, 시각 흐름은 <code>V_T = {V_{T-H}^coarse, ..., V_{T-1}^coarse, V_T^fine}</code>, 2계층 MLP 프로젝터 <code>P_vision</code>을 통해 LLM 잠재 공간으로 매핑.</li>
+</ul>
+<h3 id="tvbi">TVBI 토큰 주입</h3>
+<ul>
+<li><code>E_TVBI(t) = E_TVI(t) + P_bbox(b_t)</code>, 대상 bbox 기하 특징을 히스토리 시각 토큰에 주입; 대상이 관측되지 않으면 <code>b_t = [0,0,0,0]</code>을 결정적 누락 센티널로 사용.</li>
+<li>핵심 설계: 현재 프레임 세밀한 토큰에는 TVI 표시기만 사용하고 명시적 bbox를 주입하지 않음; 히스토리 프레임 TVBI 흐름은 대상 bbox 큐에 의해 조건화되어, 모델이 히스토리 단서와 원시 시각 특징만으로 시공간 위치 파악을 수행하도록 강제.</li>
+</ul>
+<h3 id="_5">후보 카탈로그 및 훈련</h3>
+<ul>
+<li>YOLO11로 보행자를 실시간 검출, bbox 면적 기준 top-K 정렬, 고정 가상 인덱스 <code>⟨NO_EXIST⟩</code>로 대상이 시야에 없는 경우 처리.</li>
+<li>대상 bbox 큐는 FIFO, 용량 H−1; 훈련 시 GT 주석으로 채우고 무작위로 잘못된 인덱스를 주입하여 히스토리 오류를 시뮬레이션, 추론 시 Refer-CoT로 선택된 bbox를 자동 회귀적으로 업데이트.</li>
+<li>훈련 목표 <code>L = α·L_traj + L_refer + L_text</code>, α=10; <code>L_traj</code>는 웨이포인트 MSE, <code>L_refer</code>는 인덱스 교차 엔트로피, <code>L_text</code>는 Refer-QA 텍스트 교차 엔트로피(의도적으로 액션 헤드 우회).</li>
+<li>2단계 SFT: Stage 1은 일반 다중 모달 QA 데이터로 시각 프로젝터 정렬; Stage 2는 내비게이션과 Refer-QA 데이터를 1:1로 결합하여 전체 미세 조정(시각 인코더 동결).</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li><strong>명시적 이미지 공간 지시</strong>: 대상 인식을 추상적 잠재 변수 CoT에서 경계 상자 인덱스 선택으로 전환하여 인식 과정을 감독 가능하고 해석 가능하게 만들고 검출기 출력과 직접 정렬한다. 이는 기존 VLA 전략과의 본질적 차이다.</li>
+<li><strong>TVBI 히스토리 주입 메커니즘</strong>: 대상 bbox 기하 특징을 현재 프레임이 아닌 히스토리 시각 토큰에 주입하여 모델이 시간적 맥락을 활용한 위치 파악을 수행하도록 강제하면서, 현재 프레임의 원시 시각 특징을 보존하여 정보 중복과 과적합을 방지한다.</li>
+<li><strong>RL 없는 강력한 성능</strong>: 순수 SFT 설정에서 단일 뷰 4B 모델이 AT 작업에서 SR 74.1%를 달성하여, RL이 필요한 CoMaTrack(3B)과 TrackVLA++(7B) 다중 카메라 참조를 능가한다. 이는 명시적 지시가 일부 정책 최적화 비용을 대체할 수 있음을 증명한다.</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<p>주 평가는 EVT-Bench 단일 전방 카메라 프로토콜이며, 지표는 성공률(SR↑), 추적률(TR↑), 충돌률(CR↓)이다. ReferTrack(4B, SFT, RL 없음)은 STT/DT/AT에서 각각 89.4/92.5/1.6, 73.3/81.8/7.6, 74.1/85.7/7.7을 기록했다. 가장 강력한 단일 뷰 기준선 TrackVLA++(7B)와 비교하면, DT에서 SR 6.8, TR 13.0 향상; AT에서 SR 22.9, TR 22.3 향상(표 내 값 51.2→74.1, 63.4→85.7로 계산). 다중 카메라 참조에서 CoMaTrack(3B, RL)은 DT에서 SR 74.2로 약간 높지만, AT에서는 57.5에 불과하여 ReferTrack보다 현저히 낮다.</p>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>ReferTrack SR/TR/CR</th>
+<th>TrackVLA++ SR/TR/CR</th>
+<th>CoMaTrack SR/TR/CR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STT</td>
+<td>89.4/92.5/1.6</td>
+<td>86.0/81.0/2.10</td>
+<td>92.1/90.3/0.9</td>
+</tr>
+<tr>
+<td>DT</td>
+<td>73.3/81.8/7.6</td>
+<td>66.5/68.8/4.71</td>
+<td>74.2/80.5/2.1</td>
+</tr>
+<tr>
+<td>AT</td>
+<td>74.1/85.7/7.7</td>
+<td>51.2/63.4/15.9</td>
+<td>57.5/73.4/12.0</td>
+</tr>
+</tbody>
+</table>
+<p>소거(DT split): Refer-CoT와 TVBI를 제거하면 SR이 55.7(−17.6)로 하락; TVBI만 제거하면 SR 70.4(−2.9); GT bbox를 사용하는 oracle 버전은 SR 81.5(+8.2)로 전문가 정책의 85.1%에 근접하여, 검출기 오류가 주요 성능 병목임을 시사한다.</p>
+<h2 id="_8">경계 및 한계</h2>
+<p>논문은 한계 섹션을 명시적으로 나열하지 않았다. 내용에서 추론: RL 훈련을 사용하지 않았고, 다중 카메라 설정을 채택하지 않았으며, 실제 세계에서 정량적 평가를 수행하지 않았다(정성적 시연만). 후보 카탈로그 크기 K, 슬라이딩 윈도우 길이 H, 다양한 검출기(예: GroundingDINO vs YOLO11)의 영향을 소거하지 않았다. 추론 지연 시간 상세 분해(검출 12ms 및 전체 10.6Hz 외)를 보고하지 않았고, 훈련 시간과 GPU 수 등의 비용 세부 사항도 보고하지 않았다. 성능은 YOLO11 검출 품질에 크게 의존하며, 폐색이 밀집되거나 소형 대상 시나리오에서 저하될 수 있다.</p>
+<h2 id="_9">엔지니어링 시사점</h2>
+<p>재현 시 먼저 검출기와 추적기(YOLO11 + ByteTrack)의 실시간성과 재현율을 확인하라. 소거 결과 oracle bbox가 +8.2 SR을 제공하므로 검출 오류가 가장 큰 병목이다. 훈련 데이터 비율(내비게이션:Refer-QA = 1:1)과 2단계 SFT 전략(Stage 1은 프로젝터만 훈련, Stage 2는 전체 미세 조정)을 엄격히 따르고, α=10의 손실 가중치는 궤적과 지시 균형에 민감하다. 배포 시 주의: 추론 파이프라인에서 DINO와 SigLIP 특징을 별도 CUDA 스트림에서 병렬 계산하며, torch.compile과 워밍업 단계가 10.6Hz 달성에 중요하다; 네트워크 지터 시 최신 프레임만 유지하고 만료된 요청을 폐기한다. 가장 함정에 빠지기 쉬운 곳은 TVBI 큐의 시간적 일관성이다 — 훈련 시 무작위로 잘못된 인덱스를 주입하여 히스토리 오류를 시뮬레이션하고, 추론 시 큐 업데이트가 지연되면 오류가 누적될 수 있으므로 Refer-CoT로 선택된 bbox가 프레임 순서대로 엄격히 큐에 들어가도록 보장해야 한다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_trackvla_embodied_visual_track_2025/">TrackVLA: Embodied Visual Tracking in the Wild</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_refertrack_referring_then_tracking_embod_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_trackvla_embodied_visual_track_2025/">
+          <span class="entry-type">논문</span>
+          <h3>TrackVLA: Embodied Visual Tracking in the Wild</h3>
+          <p>TrackVLA: Embodied Visual Tracking in the Wild (TrackVLA), is a 2025 large vision-language-action…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇이 바뀌었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#2">2단계 추론</a></li>
+<li><a href="#_4">관측 인코딩</a></li>
+<li><a href="#tvbi">TVBI 토큰 주입</a></li>
+<li><a href="#_5">후보 카탈로그 및 훈련</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a></li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

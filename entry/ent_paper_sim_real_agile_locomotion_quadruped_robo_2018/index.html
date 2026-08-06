@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sim-to-Real: Learning Agile Locomotion For Quadruped Robots · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Sim-to-Real: Learning Agile Locomotion For Quadruped Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Sim-to-Real: Learning Agile Locomotion For Quadruped Robots</h1>
+      <p class="entry-name-en">Sim-to-Real: Learning Agile Locomotion For Quadruped Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P144. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一个完整的仿真到现实（sim-to-real）学习系统，用于四足机器人敏捷运动（小跑与疾驰）。作者在 PyBullet 中训练深度强化学习策略，通过精确物理建模、动力学随机化和紧凑观测空间设计，成功将策略直接部署到真实 Minitaur 机器人，无需真实数据微调。核心贡献是系统性地验证了随机化在缩小现实差距中的作用，并揭示了其鲁棒性与最优性之间的权衡。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1804.10332" target="_blank" rel="noopener">arXiv:1804.10332 Sim-to-Real: Learning Agile Locomotion For Quadruped Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>传统四足运动控制依赖大量人工调参，而深度强化学习在仿真中虽表现优异，却因“现实差距”难以迁移到真实世界。本文真正改变的是将 sim-to-real 从“碰运气”变为“可工程化”的过程：作者没有追求更复杂的算法，而是通过系统性的物理建模（精确 URDF、执行器非线性模型、延迟补偿）和随机化训练，让策略在部署前就具备对真实世界不确定性的鲁棒性。</p>
+<p>更重要的是，本文揭示了随机化并非“免费午餐”——它显著降低策略的峰值性能（次优性），但换来了跨环境的一致性。这一权衡在以往工作中常被忽视，本文通过系统实验（Figure 7-9）给出了量化证据，并指出观测空间大小是影响迁移成败的关键因素：大观测空间在仿真中性能更高，但在真实世界中因观测分布不匹配而表现更差。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">策略解耦：用户可控性与学习自由度</h3>
+<ul>
+<li>策略分解为开环分量与反馈分量：<strong>a(t, o) = ā(t) + π(o)</strong></li>
+<li>用户可通过设置 π(o) 输出界或 ā(t) 为零，在“完全指定步态”与“完全从零学习”之间连续调节</li>
+<li>小跑使用用户提供的正弦参考轨迹（s̄(t) = 0.3 sin(4πt)，ē(t) = 0.35 sin(4πt) + 2），反馈仅修正 IMU 观测；疾驰则完全从零学习</li>
+</ul>
+<h3 id="_4">动作空间设计：腿部空间映射</h3>
+<ul>
+<li>动作定义为腿部空间中的期望姿态，分解为摆动 (s) 和伸展 (e) 分量</li>
+<li>映射到电机空间：<strong>θ₁ = e + s，θ₂ = e − s</strong></li>
+<li>理由：电机空间中有效动作分散在非凸区域（自碰撞约束），腿部空间可设置矩形边界剪除无效动作</li>
+</ul>
+<h3 id="_5">奖励函数</h3>
+<ul>
+<li><strong>r = (pₙ − pₙ₋₁)·d − wΔt|τₙ·q̇ₙ|</strong></li>
+<li>第一项鼓励向期望方向奔跑，第二项惩罚能量消耗；w = 0.008（所有实验固定）</li>
+<li>每集最多 1000 步，基座倾斜超过 0.5 弧度时终止</li>
+</ul>
+<h3 id="_6">提高仿真保真度</h3>
+<ul>
+<li>拆解真实 Minitaur，测量尺寸、称重、找质心，创建精确 URDF（惯性假设均匀密度）</li>
+<li>执行器模型：基于理想直流电机动力学 <strong>τ = Kt·I</strong>，<strong>I = (Vpwm − Vemf)/R</strong>，<strong>Vemf = Kt·q̇</strong>；因线性扭矩-电流关系仅对理想电机成立，构建分段线性函数表征非线性</li>
+<li>延迟建模：保留观测历史，线性插值补偿 TX2 与 STM32 间的通信延迟（通常 15-19ms）</li>
+</ul>
+<h3 id="_7">学习鲁棒控制器</h3>
+<ul>
+<li>动力学随机化：每集随机采样物理参数（质量 80%-120%、电机摩擦 0-0.05Nm、惯性 50%-150%、电机强度 80%-120%、控制步长 3-20ms、延迟 0-40ms、电池电压 14.0-16.8V、接触摩擦 0.5-1.25、IMU 偏置与噪声）</li>
+<li>随机扰动：每 200 步（1.2 秒）施加 130N-220N、持续 0.06 秒的随机方向扰动力</li>
+<li>紧凑观测空间（4D：roll、pitch 及角速度）减少过拟合仿真的机会</li>
+</ul>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li>
+<p><strong>系统性的 sim-to-real 工程框架</strong>：将精确物理建模、延迟补偿、动力学随机化整合为一个完整流程，而非单一技术点。这种“全栈”方法在 2018 年（论文编号 1804.10332）具有开创性，为后续工作提供了可复现的模板。</p>
+</li>
+<li>
+<p><strong>随机化代价的量化揭示</strong>：通过 Figure 7-8 明确展示随机化带来的鲁棒性-最优性权衡——随机化训练的策略在所有测试环境中回报均值更低但标准差更小。这一发现对社区具有警示意义：随机化不是“免费午餐”，参数范围需谨慎选择。</p>
+</li>
+<li>
+<p><strong>观测空间与迁移成功的关联</strong>：发现大观测空间（12D，含电机角度）在仿真中性能更高，但在真实世界中因观测分布不匹配而表现更差；小观测空间（4D，仅 IMU）虽在仿真中次优，却实现了更可靠的迁移。这一反直觉发现对策略设计具有直接指导价值。</p>
+</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="vs">仿真 vs 真实性能对比</h3>
+<table>
+<thead>
+<tr>
+<th>步态</th>
+<th>仿真速度 (m/s)</th>
+<th>真实速度 (m/s)</th>
+<th>仿真身长/秒</th>
+<th>真实身长/秒</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小跑（用户参考）</td>
+<td>0.50</td>
+<td>0.60</td>
+<td>0.93</td>
+<td>1.11</td>
+</tr>
+<tr>
+<td>疾驰（从零学习）</td>
+<td>1.34</td>
+<td>1.18</td>
+<td>2.48</td>
+<td>2.18</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vs_1">学习 vs 手工步态（真实机器人）</h3>
+<table>
+<thead>
+<tr>
+<th>步态</th>
+<th>速度 (m/s)</th>
+<th>平均机械功率 (W)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小跑（手工）</td>
+<td>0.56</td>
+<td>92.72</td>
+</tr>
+<tr>
+<td>小跑（学习）</td>
+<td>0.60</td>
+<td>71.78</td>
+</tr>
+<tr>
+<td>疾驰（手工）</td>
+<td>1.21</td>
+<td>290.00</td>
+</tr>
+<tr>
+<td>疾驰（学习）</td>
+<td>1.18</td>
+<td>188.79</td>
+</tr>
+</tbody>
+</table>
+<p>学习步态与专家调参速度相当，但功率显著降低（疾驰降低 35%，小跑降低 23%，由表内数值 290.00→188.79 与 92.72→71.78 计算）。</p>
+<h3 id="_10">现实差距评估</h3>
+<ul>
+<li>每组训练 100 个控制器（不同超参数和随机种子），部署仿真中回报最高的前三个，每个运行三次（共九次）</li>
+<li>小观测空间 + 随机化组合：所有九次运行均成功小跑超过三米并保持整个回合平衡</li>
+<li>大观测空间在仿真中性能更高，但在真实世界中表现更差，现实差距更大</li>
+</ul>
+<h3 id="_11">训练配置</h3>
+<ul>
+<li>小跑：观测维度 4，策略网络 (125, 89)，训练 4.35 小时</li>
+<li>疾驰：观测维度 12，策略网络 (185, 95)，训练 3.25 小时</li>
+<li>每次更新并行 25 个 roll-out，最大仿真步数 7 百万</li>
+</ul>
+<h2 id="_12">边界与局限</h2>
+<ul>
+<li>未使用真实世界数据训练或微调，策略完全在仿真中学习后直接部署</li>
+<li>惯性测量困难，采用均匀密度假设估计；接触参数仅关注侧向摩擦，其余保持默认值</li>
+<li>动力学随机化以最优性换取鲁棒性，参数范围需谨慎选择以防止过度保守的步态</li>
+<li>小跑策略部署结果参差不齐（部分可迁移，部分不能），需进一步缩减观测空间</li>
+<li>未涉及偏航控制、非平坦地形、动态速度调整或视觉感知等复杂场景</li>
+<li>控制频率约 150-200Hz（可变），因 TX2 非实时操作系统，可能影响高动态运动的稳定性</li>
+</ul>
+<h2 id="_13">工程启示</h2>
+<p>复现时首先核对仿真与真实机器人的物理参数一致性——精确 URDF 和执行器非线性模型是迁移成功的基础，任何简化都可能导致现实差距放大。最容易踩坑的是观测空间设计：不要被仿真中的高回报迷惑，大观测空间（含电机角度）在真实世界中往往因观测分布不匹配而失败；优先采用紧凑的 IMU 观测（4D）并配合随机化训练。</p>
+<p>动力学随机化的参数范围需谨慎选择——过宽会导致策略过度保守（速度显著下降），过窄则无法覆盖真实不确定性。建议从本文给出的范围（质量 80%-120%、延迟 0-40ms 等）起步，逐步收缩。延迟补偿不可忽略：TX2 上的运动控制器延迟（15-19ms）远高于微控制器（3ms），必须显式建模。最后，训练时间约 3-4 小时（小跑 4.35 小时，疾驰 3.25 小时），25 个并行 roll-out 是合理配置，可据此规划计算资源。</p>
+<h2 id="_14">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/1804.10332</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">Sim-to-Real: Learning Agile Locomotion For Quadruped Robots使用近端策略优化（PPO）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_sim_real_agile_locomotion_quadruped_robo_2018"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">策略解耦：用户可控性与学习自由度</a></li>
+<li><a href="#_4">动作空间设计：腿部空间映射</a></li>
+<li><a href="#_5">奖励函数</a></li>
+<li><a href="#_6">提高仿真保真度</a></li>
+<li><a href="#_7">学习鲁棒控制器</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#vs">仿真 vs 真实性能对比</a></li>
+<li><a href="#vs_1">学习 vs 手工步态（真实机器人）</a></li>
+<li><a href="#_10">现实差距评估</a></li>
+<li><a href="#_11">训练配置</a></li>
+</ul>
+</li>
+<li><a href="#_12">边界与局限</a></li>
+<li><a href="#_13">工程启示</a></li>
+<li><a href="#_14">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

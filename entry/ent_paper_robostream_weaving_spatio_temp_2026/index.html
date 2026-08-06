@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics</h1>
+      <p class="entry-name-en">RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.12939v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RoboStream 是一个无需训练的框架，旨在解决 VLM 机器人规划器在长时域操作中缺乏时空推理与因果记忆的问题。它通过 Spatio-Temporal Fusion Tokens (STF-Tokens) 实现几何锚定，并利用 Causal Spatio-Temporal Graph (CSTG) 记录动作触发的状态变迁，从而在遮挡下保持物体永久性。在 RLBench 长时域任务上达到 90.5% 的成功率，在真实世界积木搭建任务上达到 44.4%，远超 SoFar 和 VoxPoser 的 11.1%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2603.12939" target="_blank" rel="noopener">RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有 VLM 规划器将每一步视为孤立的观测到动作映射，导致其无法感知先前动作如何改变环境，且缺乏对几何信息的持久锚定。这种缺陷使得感知误差在长时域执行中累积，临时遮挡的物体会被灾难性遗忘，进而引发前提条件违反的级联失败。受人类因果时空推理能力的启发，RoboStream 通过 STF-Tokens 将视觉证据与 3D 几何属性绑定，实现持久物体定位；同时利用 CSTG 记录跨步骤的状态变迁，使规划器能够追溯因果链。该框架无需额外训练或微调，即可在长时域操作中显著提升可靠性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>Spatio-Temporal Fusion Tokens (STF-Tokens)</strong>：将视觉特征与 3D 几何属性（如位置、姿态）融合，形成持久化的物体表征。这些 Token 在时间步间传递，确保即使物体被遮挡，其几何信息仍可被检索。</li>
+<li><strong>Causal Spatio-Temporal Graph (CSTG)</strong>：构建有向图，节点表示物体状态，边表示动作触发的状态变迁（如“抓取后物体位置改变”）。规划器通过遍历图结构追溯因果链，避免因遗忘先前动作而重复错误。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>模拟环境</strong>：RLBench 长时域任务（如“将杯子放入抽屉并关闭”），包含多步骤操作与物体遮挡场景。</li>
+<li><strong>真实世界任务</strong>：块状物体搭建（如堆叠积木），涉及动态遮挡与精确空间对齐。</li>
+<li><strong>基线方法</strong>：SoFar（基于 VLM 的规划器）、VoxPoser（基于 3D 体素的规划器），均未显式建模时空因果。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>RLBench 长时域任务</strong>：RoboStream 成功率 90.5%，SoFar 与 VoxPoser 均低于 30%。</li>
+<li><strong>真实世界积木搭建</strong>：RoboStream 成功率 44.4%，SoFar 与 VoxPoser 均为 11.1%。</li>
+<li><strong>消融实验</strong>：移除 STF-Tokens 后成功率下降 35%，移除 CSTG 后下降 28%，证实两者对长时域推理的互补作用。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>RoboStream 证明，无需额外训练即可通过显式时空推理与因果记忆显著提升 VLM 规划器的长时域可靠性。其核心贡献在于将几何锚定与状态变迁记录作为独立模块，弥补了现有方法在持久性感知上的缺失。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2603.12939v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_huang_voxposer_composable_3d_value_m_2023/">VoxPoser</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robostream_weaving_spatio_temp_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_voxposer_composable_3d_value_m_2023/">
+          <span class="entry-type">论文</span>
+          <h3>VoxPoser</h3>
+          <p>VoxPoser 是斯坦福大学与伊利诺伊大学厄巴纳-香槟分校于 2023 年提出的通用视觉-语言-动作模型，发表于 CoRL…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

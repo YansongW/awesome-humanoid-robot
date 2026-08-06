@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ReferTrack: Referring Then Tracking for Embodied Visual Tracking · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ReferTrack: Referring Then Tracking for Embodied Visual Tracking</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ReferTrack: Referring Then Tracking for Embodied Visual Tracking</h1>
+      <p class="entry-name-en">ReferTrack: Referring Then Tracking for Embodied Visual Tracking</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ReferTrack 提出“先指代后跟踪”（referring then tracking）范式，将具身视觉跟踪（EVT）中的目标识别显式化为图像空间边界框索引选择，而非抽象潜变量推理。作者基于 Qwen3-4B 构建双分支 VLA，通过 Refer-CoT token 与 TVBI 历史注入，在单前视相机、无 RL 的 SFT 设置下，于 EVT-Bench 上显著超越最强单视图基线 TrackVLA++，尤其在歧义跟踪（AT）任务上 SR 提升 22.9 个点。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.20061" target="_blank" rel="noopener">arXiv:2607.20061 ReferTrack: Referring Then Tracking for Embodied Visual Tracking</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 策略将目标识别与轨迹规划统一在链式推理（CoT）中，但该推理常在抽象空间潜变量中运行，难以监督且与显式图像空间检测对齐弱。早期模块化流水线虽分离识别与规划，但识别错误会累积并传播至规划模块。ReferTrack 真正改变的是将“目标是谁”这一决策从隐式潜空间拉回显式图像空间，通过从检测器生成的边界框候选目录中选择索引，使识别过程可监督、可解释，并减少对昂贵 RL 策略优化的依赖。这一转变意味着跟踪失败模式从“模型幻觉目标”变为“检测器漏检或索引误选”，后者更易诊断与修正。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">两阶段推理</h3>
+<ul>
+<li>第一阶段生成 Refer-CoT token：<code>E_T^refer = LLM(ℒ, C_T, E_{1:T}^V)</code>，从候选目录 <code>{⟨ped_1⟩, ..., ⟨ped_K⟩, ⟨NO_EXIST⟩}</code> 中选择索引。</li>
+<li>第二阶段以 Refer-CoT 为条件前缀生成动作 token：<code>E_T^A = LLM(ℒ, C_T, E_{1:T}^V, E_T^refer)</code>，动作头解码 M 个航点 <code>w_i = (x, y, θ) ∈ ℝ³</code>。</li>
+</ul>
+<h3 id="_4">观测编码</h3>
+<ul>
+<li>双编码器：SigLIP + DINOv2，网格池化生成细粒度 token <code>V^fine ∈ ℝ^{64×C}</code>（当前帧）与粗粒度 token <code>V^coarse ∈ ℝ^{4×C}</code>（历史帧）。</li>
+<li>滑动窗口保留最近 H 帧，视觉流为 <code>V_T = {V_{T-H}^coarse, ..., V_{T-1}^coarse, V_T^fine}</code>，经两层 MLP 投影器 <code>P_vision</code> 映射至 LLM 潜空间。</li>
+</ul>
+<h3 id="tvbi-token">TVBI token 注入</h3>
+<ul>
+<li><code>E_TVBI(t) = E_TVI(t) + P_bbox(b_t)</code>，将目标 bbox 几何特征注入历史视觉 token；目标未观测时 <code>b_t = [0,0,0,0]</code> 作为确定性缺失哨兵。</li>
+<li>关键设计：当前帧细粒度 token 仅用 TVI 指示器，不注入显式 bbox；历史帧 TVBI 流由目标 bbox 队列条件化，迫使模型仅依赖历史线索与原始视觉特征进行时空定位。</li>
+</ul>
+<h3 id="_5">候选目录与训练</h3>
+<ul>
+<li>使用 YOLO11 实时检测行人，按 bbox 面积 top-K 排序，固定虚拟索引 <code>⟨NO_EXIST⟩</code> 处理目标不在视野情况。</li>
+<li>目标 bbox 队列为 FIFO，容量 H−1；训练时用 GT 标注填充并随机注入错误索引模拟历史误差，推理时用 Refer-CoT 选定 bbox 自回归更新。</li>
+<li>训练目标 <code>L = α·L_traj + L_refer + L_text</code>，α=10；<code>L_traj</code> 为航点 MSE，<code>L_refer</code> 为索引交叉熵，<code>L_text</code> 为 Refer-QA 文本交叉熵（刻意绕过动作头）。</li>
+<li>两阶段 SFT：Stage 1 用通用多模态 QA 数据对齐视觉投影器；Stage 2 导航与 Refer-QA 数据 1:1 联合全微调（视觉编码器冻结）。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>显式图像空间指代</strong>：将目标识别从抽象潜变量 CoT 转为边界框索引选择，使识别过程可监督、可解释，且与检测器输出直接对齐，这是与现有 VLA 策略的本质区别。</li>
+<li><strong>TVBI 历史注入机制</strong>：通过将目标 bbox 几何特征注入历史视觉 token（而非当前帧），迫使模型利用时间上下文进行定位，同时保留当前帧原始视觉特征，避免信息冗余与过拟合。</li>
+<li><strong>无 RL 的强性能</strong>：在纯 SFT 设置下，单视图 4B 模型在 AT 任务上 SR 达 74.1%，超越需 RL 的 CoMaTrack（3B）与 TrackVLA++（7B）多相机参考，证明显式指代可替代部分策略优化成本。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>主评估为 EVT-Bench 单前视相机协议，指标为成功率（SR↑）、跟踪率（TR↑）、碰撞率（CR↓）。ReferTrack（4B，SFT 无 RL）在 STT/DT/AT 上分别取得 89.4/92.5/1.6、73.3/81.8/7.6、74.1/85.7/7.7。对比最强单视图基线 TrackVLA++（7B），DT 上 SR 提升 6.8、TR 提升 13.0；AT 上 SR 提升 22.9、TR 提升 22.3（由表内数值 51.2→74.1、63.4→85.7 计算）。多相机参考中，CoMaTrack（3B，RL）在 DT 上 SR 74.2 略高，但 AT 上仅 57.5，显著低于 ReferTrack。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>ReferTrack SR/TR/CR</th>
+<th>TrackVLA++ SR/TR/CR</th>
+<th>CoMaTrack SR/TR/CR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STT</td>
+<td>89.4/92.5/1.6</td>
+<td>86.0/81.0/2.10</td>
+<td>92.1/90.3/0.9</td>
+</tr>
+<tr>
+<td>DT</td>
+<td>73.3/81.8/7.6</td>
+<td>66.5/68.8/4.71</td>
+<td>74.2/80.5/2.1</td>
+</tr>
+<tr>
+<td>AT</td>
+<td>74.1/85.7/7.7</td>
+<td>51.2/63.4/15.9</td>
+<td>57.5/73.4/12.0</td>
+</tr>
+</tbody>
+</table>
+<p>消融（DT split）：去除 Refer-CoT 与 TVBI 后 SR 降至 55.7（−17.6）；仅去除 TVBI 则 SR 70.4（−2.9）；使用 GT bbox 的 oracle 版本 SR 81.5（+8.2），接近专家策略的 85.1%，表明检测器误差是主要性能瓶颈。</p>
+<h2 id="_8">边界与局限</h2>
+<p>论文未明确列出局限性章节。从内容推断：未使用 RL 训练，未采用多相机设置，未在真实世界进行定量评估（仅定性展示）。未消融候选目录大小 K、滑动窗口长度 H 及不同检测器（如 GroundingDINO vs YOLO11）的影响。未报告推理延迟详细分解（除检测 12ms 与整体 10.6Hz 外），未报告训练时长与 GPU 数量等成本细节。性能高度依赖 YOLO11 检测质量，在遮挡密集或小目标场景下可能退化。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现时先核对检测器与跟踪器（YOLO11 + ByteTrack）的实时性与召回率，因为消融显示 oracle bbox 可带来 +8.2 SR，检测误差是最大瓶颈。训练数据配比（导航:Refer-QA = 1:1）与两阶段 SFT 策略（Stage 1 仅训投影器，Stage 2 全微调）需严格遵循，α=10 的损失权重对轨迹与指代平衡敏感。部署时注意：推理管线中 DINO 与 SigLIP 特征在独立 CUDA 流并行计算，torch.compile 与预热步骤对达到 10.6 Hz 至关重要；网络抖动时仅保留最新帧并丢弃过期请求。最易踩坑处为 TVBI 队列的时序一致性——训练时随机注入错误索引模拟历史误差，推理时若队列更新滞后会导致误差累积，需确保 Refer-CoT 选定的 bbox 严格按帧序入队。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.20061</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_wang_trackvla_embodied_visual_track_2025/">TrackVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_refertrack_referring_then_tracking_embod_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_trackvla_embodied_visual_track_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TrackVLA</h3>
+          <p>TrackVLA…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">两阶段推理</a></li>
+<li><a href="#_4">观测编码</a></li>
+<li><a href="#tvbi-token">TVBI token 注入</a></li>
+<li><a href="#_5">候选目录与训练</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">Draft</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Visual representations of VLA models remain unreliable for spatially precise robotic manipulation. We uncover that vision encoders in VLAs also exhibit attention artifacts previously documented in generic Vision Transformers, and further show that, in embodied policies, these artifacts are closely associated with spatial perception capabilities acquired during post-training. As the encoder learns.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.02197" target="_blank" rel="noopener">arXiv:2608.02197 Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Mod</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper proposes the AtVLA (Attention-guided Vision-Language-Action) model, which addresses the issue of imprecise localization in VLA models during fine manipulation tasks caused by insufficient global visual encoding, through register-enhanced visual encoding and uncertainty-gated attention-guided cropping mechanisms. The method employs a three-stage post-training approach on the pretrained π₀ model, improving average success rates from 94.2% to 98.4% on the LIBERO benchmark and from 46.5% to 69.0% in real-world settings, with total computation only 1.4–1.6 times that of π₀.</p>
+<h2 id="what-it-changes">What It Changes</h2>
+<p>The true value of this work lies in how it changes the fundamental paradigm of visual information processing in VLA models. Previously, VLA models either relied on fixed-resolution global visual encoding or introduced explicit vision experts or 3D representations—the former fails in fine manipulation due to insufficient local geometric detail, while the latter introduces additional sensing, calibration, and modeling overhead. AtVLA's core insight is that the model does not need to see high-resolution images at all times; it only needs to dynamically select task-relevant regions for local refinement based on its own action-conditioned attention when "uncertain."</p>
+<p>This "on-demand refinement" approach breaks two implicit assumptions: first, that visual encoding must remain consistent throughout, and second, that refinement must rely on external signals (such as VLMs or annotations). The authors demonstrate that the action expert's own attention distribution already contains sufficient spatial localization information to serve as a signal source for cropping. Additionally, they discover that attention artifacts (high-norm artifacts) in the vision encoder are not pure noise but are closely related to spatial awareness capabilities acquired during post-training—this motivates them to use register tokens to absorb these artifacts rather than simply suppress them. This finding itself constitutes an independent contribution to the understanding of VLA visual representations.</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<h3 id="three-stage-post-training-pipeline">Three-Stage Post-Training Pipeline</h3>
+<ul>
+<li><strong>Stage 0 (Register Adaptation, 20K steps)</strong>: The first 4K steps update only the 4 register embeddings (θ_reg) with a learning rate of 1×10⁻⁴; the subsequent 16K steps additionally unfreeze the last 4 transformer blocks of SigLIP (θ_vis^last) with a learning rate of 2×10⁻⁵. The PaliGemma backbone, vision projector, and action expert remain frozen.</li>
+<li><strong>Stage 1 (Ground-Truth Cropping Alignment, 10K steps)</strong>: Uses only ground-truth crops of annotated task-relevant regions, with crop dropping disabled. Optimizes the cropping position encoder and rank-32 LoRA adapters (inserted into language and action components) with a learning rate of 1×10⁻⁴. The SigLIP encoder, register embeddings, vision projector, and pretrained backbone weights are all frozen.</li>
+<li><strong>Stage 2 (Joint Refinement and Inference Alignment, 40K steps)</strong>: Jointly optimizes the full AtVLA policy. The base weights of SigLIP, Gemma, and the action expert are frozen, while their rank-32 LoRA adapters are trainable. Register embeddings, vision projector, and cropping position encoder are directly optimized. Uses AdamW, batch size 4, and a constant learning rate of 1×10⁻⁴.</li>
+</ul>
+<h3 id="joint-objective-function">Joint Objective Function</h3>
+<p>ℒ_joint = ℒ_π₀ + λ_ag·ℒ_ag, where λ_ag = 1.0. ℒ_ag = −log( (Σ_{p∈Ω(b^gt)} A_p + ε) / (Σ_p A_p + ε) ), where A_p is the aggregated attention from proximal action tokens to base image patch p, and Ω(b^gt) is the set of patch centers within the annotated task-relevant region.</p>
+<h3 id="uncertainty-gated-refinement">Uncertainty-Gated Refinement</h3>
+<ul>
+<li>At each action chunk replanning step, base vision and language prefixes are computed once and stored in a reusable key-value cache.</li>
+<li>The action expert generates K = 4 action chunks from independent Gaussian initializations using a ten-step Euler solver.</li>
+<li>Uncertainty U_t is computed based on the translation dimensions (Δx, Δy, Δz) of the first h actions: U_t = (1/(h|D_tr|)) Σ_{j=1}^{h} Σ_{d∈D_tr} sqrt( (1/(K−1)) Σ_{k=1}^{K} (A_{j,d}^{(k)} − Ā_{j,d})² )</li>
+<li>When U_t ≤ τ, the mean action chunk is executed directly; when U_t &gt; τ, attention-guided cropping refinement is attempted (only one additional crop encoding and one additional action generation).</li>
+</ul>
+<h3 id="attention-rollout-aggregation">Attention Rollout Aggregation</h3>
+<p>Action-to-prefix attention is collected from all 18 joint attention layers of the action expert, averaged over heads and Euler denoising steps {3, 6, 9}. Layer-wise propagation: M_roll = M̃<em L_1="L−1">L · M̃</em> · … · M̃<em m_H="m∈H">1, where M̃_l = RowNorm(I + (1/(|H||Q|)) Σ</em>). The rollout entries from the first h action token rows to the 256 base image patch columns are averaged, reshaped into a 16×16 saliency map, and bilinearly upsampled to the original image resolution. Register token columns are excluded.} Σ_{q∈Q} M_{l,m,q</p>
+<h3 id="contrastive-window-search">Contrastive Window Search</h3>
+<p>Candidate window side lengths S = {84, 112, 140} pixels are searched on the 224×224 input image with a 14-pixel stride. The window maximizing the difference between internal attention mean and context ring (side length expanded by 1.25×) attention mean is selected. The chosen box is padded by 10% on each side, cropped, and resized to 224×224. Normalized coordinates are mapped through a two-layer cropping position MLP (4→256→d_LLM, GELU activation), and position embeddings are added to each projected crop patch token.</p>
+<h3 id="cropping-curriculum">Cropping Curriculum</h3>
+<p>During the 40K-step joint training: for the first 40%, α = 0, p_drop = 0, and all crops come from ground-truth regions; from 40%–90%, α increases linearly from 0 to 1, crop dropping probability increases linearly from 0 to 0.3, and invalid rollouts do not fall back to ground-truth crops but instead skip crop refinement; for the final 10%, α = 1, p_drop = 0.3, and all valid non-dropped crops come from attention rollouts.</p>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li>
+<p><strong>Embodied Training of Register Tokens</strong>: Unlike general ViTs where registers serve only as internal working space, AtVLA retains register outputs and feeds them through the vision projector into the language backbone, trained entirely with embodied data and action supervision. The authors find that mixing ImageNet and CC3M data destroys capabilities acquired from robot demonstrations, so they abandon general visual pretraining—a decision that challenges the common assumption that "vision encoders should first undergo general pretraining before embodied fine-tuning."</p>
+</li>
+<li>
+<p><strong>Uncertainty-Gated On-Demand Refinement</strong>: Uses the inter-sample standard deviation of action sampling as a proxy indicator for spatial uncertainty, triggering refinement only when necessary. This design reduces computational overhead from "always refine" to "refine on demand," keeping total computation at only 1.4–1.6 times that of π₀ while maintaining approximately 30% trigger rate. The gate is evaluated at each action chunk replanning step rather than each low-level control step, further controlling overhead.</p>
+</li>
+<li>
+<p><strong>Attention Rollout as Cropping Signal Source</strong>: Propagates layer by layer through the action expert's joint attention layers to generate a 16×16 saliency map, using contrastive window search (internal vs. context ring) to select the cropping region. This design avoids dependence on external VLMs or annotations, and the contrastive criterion simultaneously avoids full-image cropping and small windows around isolated attention peaks—a substantial improvement over the naive "direct argmax of attention map" approach.</p>
+</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<p><strong>Comparison Setup.</strong> We compare AtVLA against the pretrained π₀ baseline, π₀.₅, SpatialVLA, CoT-VLA, OFT, VLANeXt, RT-1-X, RT-2-X, RoboVLM, TraceVLA, and other public baselines, as well as two controlled variants (π₀ + Registers, π₀ + Cropping), across the four standard LIBERO suites (Spatial, Object, Goal, Long-10), the SimplerEnv Google Robot suite, and real-world benchmarks on the Franka Research 3 robot (Kitchen and Building Blocks). All AtVLA variants are initialized from the same pretrained π₀ checkpoint, with training distributed across 8 NVIDIA RTX 6000 Ada GPUs, and real-world deployment using NVIDIA RTX 4090 GPUs with the Franka Research 3 robot. Training follows a three-stage curriculum: register adaptation for 20K steps, cropping alignment for 10K steps, and joint refinement for 40K steps, with joint objective weight λ_ag = 1.0, LoRA rank 32, batch size 4 (Stage 2), and unified input resolution of 224×224. The uncertainty gate is evaluated once per action chunk replanning step, with a crop trigger rate of approximately 30% of replanning steps.</p>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>π₀ Baseline</th>
+<th>π₀ + Registers</th>
+<th>π₀ + Cropping</th>
+<th>AtVLA (Full)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO Spatial</td>
+<td>96.8 ± 1.3</td>
+<td>98.8 ± 0.6</td>
+<td>96.5 ± 1.3</td>
+<td>99.3 ± 0.7</td>
+</tr>
+<tr>
+<td>LIBERO Object</td>
+<td>98.8 ± 1.2</td>
+<td>99.0 ± 0.8</td>
+<td>98.2 ± 1.2</td>
+<td>99.4 ± 0.8</td>
+</tr>
+<tr>
+<td>LIBERO Goal</td>
+<td>95.8 ± 1.5</td>
+<td>98.0 ± 0.9</td>
+<td>96.7 ± 1.5</td>
+<td>98.3 ± 1.2</td>
+</tr>
+<tr>
+<td>LIBERO Long-10</td>
+<td>85.2 ± 1.0</td>
+<td>93.1 ± 1.7</td>
+<td>93.3 ± 2.1</td>
+<td>96.5 ± 2.6</td>
+</tr>
+<tr>
+<td>SimplerEnv PCC</td>
+<td>88.0</td>
+<td>88.2</td>
+<td>90.0</td>
+<td>91.3</td>
+</tr>
+<tr>
+<td>SimplerEnv MN</td>
+<td>80.3</td>
+<td>80.5</td>
+<td>79.2</td>
+<td>81.6</td>
+</tr>
+<tr>
+<td>SimplerEnv O/C</td>
+<td>56.0</td>
+<td>56.0</td>
+<td>56.9</td>
+<td>57.5</td>
+</tr>
+<tr>
+<td>Real-World (Average)</td>
+<td>46.5</td>
+<td>Not specified in paper</td>
+<td>Not specified in paper</td>
+<td>69.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Implications of Results.</strong> The following points deserve emphasis:</p>
+<ul>
+<li>
+<p><strong>Staged training combined with the attention grounding objective yields consistent gains.</strong> AtVLA improves the average LIBERO success rate from 94.2% for the π₀ baseline to 98.4%, and the average real-world success rate from 46.5% to 69.0%. On the Long-10 suite, AtVLA achieves 96.5 ± 2.6, significantly higher than π₀'s 85.2 ± 1.0, and also higher than the register-only (93.1 ± 1.7) and cropping-only (93.3 ± 2.1) variants, indicating that the two components are complementary rather than redundant. Ablation of register tokens (w/o REGs) results in an average drop of 4.45 percentage points across LIBERO suites, confirming that registers not only suppress attention artifacts but also preserve task-relevant embodied spatial information—linear probes exceed 0.70 on all three tasks of object localization, depth, and surface normals.</p>
+</li>
+<li>
+<p><strong>The cropping curriculum and uncertainty gate control computational overhead.</strong> The crop trigger rate is approximately 30% of replanning steps, and the refinement path performs only one additional crop encoding and one additional action generation, rather than repeating all K samples (K = 4). Total computation is 1.4–1.6× that of π₀. In the SimplerEnv Open/Close Drawer scenario, cropping preserves nearly the entire image rather than resolving the handle or contact point, causing AtVLA to achieve only marginal improvement (57.5) over π₀ (56.0) on this task; the paper attributes this to the difficulty of isolating key regions when the cabinet occupies most of the frame.</p>
+</li>
+<li>
+<p><strong>Real-world long-horizon tasks show the most significant gains.</strong> In the Kitchen suite, AtVLA achieves Move at 80 ± 10, Grab at 65 ± 5, Pick at 80 ± 5, and Long at 40 ± 5; in the Building Blocks suite, Stack reaches 80 ± 5, Edge reaches 50 ± 10, and Grab reaches 70 ± 10. In contrast, the π₀ baseline achieves only 15 ± 5 on Kitchen Long and 25 ± 5 on Building Blocks Edge. Gains are particularly pronounced on object-centric tasks (Kitchen Grab/Pick) and spatially demanding tasks (Building Blocks Spatial/Grab), consistent with the mechanism by which the attention grounding objective concentrates visual capacity on interaction regions.</p>
+</li>
+</ul>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<p>The paper does not explicitly list limitations acknowledged by the authors, but several boundaries can be inferred from experimental details. In the SimplerEnv Open/Close Drawer scenario, cropping is suboptimal because the scene is largely occupied by the cabinet, causing cropping to preserve nearly the entire original image rather than resolving the handle or contact point—indicating that the contrastive window search fails when the target region occupies most of the image. The π₀ + Cropping variant, whose crops are generated by an external VLM (without embodied post-training), performs slightly worse than the full AtVLA, suggesting that crop quality significantly impacts final performance. Inaccurate crops distort policy inputs, reduce decision precision, and increase action uncertainty.</p>
+<p>The paper does not mention detailed ablations of multi-view fusion strategies, generalization across different robot platforms, training data scale details, or specific inference latency in milliseconds. Real-world experiments cover only two embodiments—Franka Research 3 and Google Robot—and the specific training data volume for Google Robot is not reported. The SimplerEnv WidowX suite is omitted because it requires BridgeData-specific training and embodiment adaptation, which would confound visual improvements with embodiment transfer—this implies that the applicability of cross-embodiment generalization conclusions is limited.</p>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<p>When reproducing AtVLA, the most critical aspects to verify first are the ordering of the three-stage training and the freezing strategy. Stage 0's register adaptation is the foundation for everything that follows—the authors explicitly find that mixing ImageNet and CC3M data destroys capabilities acquired from robot demonstrations, so registers must be trained entirely with embodied data. If Stage 0 is skipped or shortened, the quality of subsequent attention rollouts may collapse directly, because registers have not sufficiently absorbed attention artifacts.</p>
+<p>The most likely pitfall lies in the design of the cropping curriculum. In Stage 2, the first 40% of steps must use ground-truth crops exclusively (α = 0), with a gradual transition to attention rollouts from 40%–90%, and invalid rollouts do not fall back to ground-truth crops but instead skip refinement. If model-generated crops are introduced too early, the policy may learn a spurious dependence on noisy attention signals. Another critical detail is that the invalidity determination rules for rollouts (non-finite values, attention quality &lt; ε = 10⁻⁶, no finite candidate scores in window search, crop side length &lt; 56 pixels) must be completely consistent between training and deployment; otherwise, a train-test discrepancy will arise.</p>
+<p>For downstream teams, it is recommended to first validate on small-scale data whether register adaptation significantly improves attention map quality (using linear probes to check whether register features exceed 0.70 on object localization scores) before committing to the full three-stage training. The uncertainty threshold τ needs to be calibrated separately per embodiment; the four LIBERO suites share the same threshold, but Google Robot and Franka require independent calibration—set the initial value to the 70th percentile of the validation uncertainty distribution, targeting a trigger rate of approximately 30%. In terms of computational cost, K = 4 action sampling and the ten-step Euler solver are the primary overhead, with crop refinement accounting for approximately 20–25% of total cost; if hardware resources are constrained, consider first reducing K or decreasing the number of rollout denoising steps.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_qu_spatialvla_exploring_spatial_r_2025/">SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model</a>
+              <span class="rel-desc">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models compares with SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_component_manufacturer_nvidia/">NVIDIA</a>
+              <span class="rel-desc">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models mentions NVIDIA.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_benchmark_libero/">LIBERO</a>
+              <span class="rel-desc">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models mentions LIBERO.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_zheng_tracevla_visual_trace_promptin_2024/">TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies</a>
+              <span class="rel-desc">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models compares with TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_zhao_cot_vla_visual_chain_of_though_2025/">CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models</a>
+              <span class="rel-desc">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models mentions CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+              <span class="rel-desc">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models mentions RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">RT-1: Robotics Transformer for Real-World Control at Scale</a>
+              <span class="rel-desc">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models mentions RT-1: Robotics Transformer for Real-World Control at Scale.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_look_where_it_matters_adaptive_visual_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_libero/">
+          <span class="entry-type">Benchmark</span>
+          <h3>LIBERO</h3>
+          <p>A benchmark and dataset for learning library-generalizable robot manipulation skills from…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhao_cot_vla_visual_chain_of_though_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models</h3>
+          <p>CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models (CoT-VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">
+          <span class="entry-type">Paper</span>
+          <h3>RT-1: Robotics Transformer for Real-World Control at Scale</h3>
+          <p>RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>NVIDIA</h3>
+          <p>American semiconductor and software company supplying GPUs, edge AI compute modules, simulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zheng_tracevla_visual_trace_promptin_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies</h3>
+          <p>TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_qu_spatialvla_exploring_spatial_r_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model</h3>
+          <p>SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model (SpatialVLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changes">What It Changes</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#three-stage-post-training-pipeline">Three-Stage Post-Training Pipeline</a></li>
+<li><a href="#joint-objective-function">Joint Objective Function</a></li>
+<li><a href="#uncertainty-gated-refinement">Uncertainty-Gated Refinement</a></li>
+<li><a href="#attention-rollout-aggregation">Attention Rollout Aggregation</a></li>
+<li><a href="#contrastive-window-search">Contrastive Window Search</a></li>
+<li><a href="#cropping-curriculum">Cropping Curriculum</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a></li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

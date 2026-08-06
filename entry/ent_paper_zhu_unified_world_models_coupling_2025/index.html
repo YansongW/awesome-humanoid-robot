@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UWM · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">UWM</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>UWM</h1>
+      <p class="entry-name-en">Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.02792v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Unified World Models (UWM) 是由华盛顿大学 Paul G. Allen 计算机科学与工程学院与丰田研究所联合提出的 2025 年大型视觉-语言-动作模型，专为机器人操作设计。其核心贡献在于通过统一 Transformer 架构耦合视频扩散与动作扩散过程，利用独立扩散时间步控制各模态，从而在无需动作标注的大规模视频数据上实现预训练，显著提升策略的泛化性与鲁棒性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2504.02792" target="_blank" rel="noopener">Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2504.02792" target="_blank" rel="noopener">UWM source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>UWM 框架通过将动作扩散与视频扩散集成于单一 Transformer 中，解决了模仿学习依赖高质量专家演示的瓶颈。该模型允许独立控制每个模态的扩散时间步，从而灵活切换为策略、前向动力学、逆动力学或视频生成器。实验表明，UWM 在大型多任务机器人数据集上预训练后，其策略比传统模仿学习更具泛化能力；同时，通过独立调节模态扩散时间步，模型能有效利用无动作标注的视频数据，进一步提升微调策略的性能。这项工作为利用异构大规模数据集进行可扩展机器人学习提供了简洁的统一范式。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>UWM 的核心是一个统一 Transformer 架构，同时处理视频扩散与动作扩散两个过程。每个模态（视频帧与动作序列）由独立的扩散时间步控制，使得模型能够动态切换功能模式：
+- <strong>策略模式</strong>：给定当前观测与目标视频，生成动作序列。
+- <strong>前向动力学模式</strong>：根据当前观测与动作，预测未来视频帧。
+- <strong>逆动力学模式</strong>：从观测序列推断动作。
+- <strong>视频生成模式</strong>：无条件或条件生成视频片段。</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>数据集</strong>：在 BridgeData v2、RLBench 等大规模多任务机器人数据集上预训练，并引入无动作标注的 Ego4D 视频数据。</li>
+<li><strong>基线对比</strong>：与行为克隆（BC）、扩散策略（Diffusion Policy）及 Video Prediction 方法比较。</li>
+<li><strong>评估指标</strong>：任务成功率、泛化到新场景的零样本迁移能力。</li>
+</ul>
+<h3 id="_5">关键数字与结论</h3>
+<ol>
+<li><strong>预训练效果</strong>：UWM 在 10 个模拟操作任务上平均成功率达 78.3%，比 BC 基线高 22.1%。</li>
+<li><strong>视频数据利用</strong>：引入 50% 无动作视频数据后，微调策略在真实世界抓取任务中成功率提升 15.4%（从 62.7% 到 78.1%）。</li>
+<li><strong>模态解耦优势</strong>：独立扩散时间步使模型在动作缺失时仍能通过视频预测学习动力学，避免传统方法对动作标注的依赖。</li>
+<li><strong>泛化性</strong>：在未见过的物体与背景组合测试中，UWM 策略的零样本成功率比 Diffusion Policy 高 31.2%。</li>
+</ol>
+<h3 id="_6">结论</h3>
+<p>UWM 通过统一视频与动作扩散，首次在单一框架内实现了模仿学习与世界模型的协同。其关键创新在于利用独立扩散时间步解耦模态，使得大规模异构数据（含无动作视频）可直接用于预训练。这项工作为构建通用机器人基础模型提供了可扩展的路径，代码与视频已开源。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2504.02792v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-desc">UWM提出世界模型。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              <span class="rel-desc">UWM基于扩散策略。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">UWM引用OpenVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              <span class="rel-desc">UWMcompares_with扩散策略。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界动作模型：具身智能的下一个前沿提及UWM。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_action_models_embodied_brains_road_2026/">From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cosmos_policy_fine_tuning_video_models_2026/">Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界模型提及UWM。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zhu_unified_world_models_coupling_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cosmos_policy_fine_tuning_video_models_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning</h3>
+          <p>Cosmos Policy 由 NVIDIA 提出，是一种通过单阶段微调将预训练视频模型 Cosmos-Predict2…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_action_models_embodied_brains_road_2026/">
+          <span class="entry-type">论文</span>
+          <h3>From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</h3>
+          <p>这是一篇由机器人领域研究者撰写的路线图/立场论文，提出将“世界行动模型（WAM）”作为通往“具身大脑（embodied…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界动作模型：具身智能的下一个前沿</h3>
+          <p>World Action Models (WAMs)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键数字与结论</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</h1>
+      <p class="entry-name-en">Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-Language-Action (VLA) models have emerged as a powerful paradigm for general-purpose robot manipulation; however, their transition to real-world environments reveals vulnerabilities to minor environmental perturbations. We propose FLARE, an optimized physical spotlight attack framework that exploits these vulnerabilities via targeted illuminations, dropping baseline task success rates to.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14698" target="_blank" rel="noopener">arXiv:2607.14698 Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 로봇 견고성 연구팀이 제안한 것으로, VLA 모델이 실제 환경 배포 시 조명 교란에 취약하다는 점을 겨냥하여 FLARE 물리적 스포트라이트 공격 프레임워크와 ChromaGuard 색조 유지 적대적 훈련 방어를 구축했습니다. 핵심 기여는 단순 데이터 증강이 모델이 색상 정보를 버리고 형태 편향 처리기로 퇴화하게 만든다는 점을 밝히고, 색도 완전성을 유지하면서 조명 견고성을 달성하는 실행 가능한 방안을 제시한 것입니다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>기존 VLA 견고성 연구는 거의 모두 고급 공격(물리적 센서 속임, 적대적 샘플, 훈련 시 백도어 주입)에 초점을 맞추었으며, 이러한 공격은 공격자가 특정 지식이나 제어 능력을 보유해야 합니다. 그러나 본 논문은 더 근본적이고 더 은밀한 문제를 지적합니다. 모델이 시뮬레이션에서 실제로, 실험실에서 배포로 전환될 때 미세한 환경 교란(예: 조명 각도나 색온도의 약간의 변화)에 실패하는 것은 본질적으로 보안 취약점이 악용된 것이 아니라 일반화 능력 부족에서 비롯된다는 것입니다. 이러한 판단은 문제를 "악의적 공격을 어떻게 방어할 것인가"에서 "자연적 교란에 대한 견고성을 어떻게 향상시킬 것인가"로 재정의하여 논의 프레임워크를 바꿉니다.</p>
+<p>더욱 경계해야 할 점은 저자가 발견한 방어 함정입니다. 단순 HSV 데이터 증강(색조 ±180° 무작위 교란)은 조명 견고성을 향상시킬 수 있지만, 모델이 색상을 버릴 수 있는 노이즈로 취급하게 만듭니다. 그레이스케일 진단 실험에 따르면 Naive-Aug 모델은 그레이스케일 입력에서 성공률이 거의 변하지 않았으며(LIBERO-Object에서 90.5% vs. 89.8%), Baseline은 89.4%에서 10%로 급락했습니다. 이는 증강 훈련이 모델에게 "색상에 의존하지 말라"고 가르쳤음을 의미하지만, 색상 자체가 작업의 핵심 정보인 시나리오(예: 색상별 물체 집기)에서는 이러한 견고성이 치명적입니다. Naive-Aug는 색상 의존 작업에서 양호한 조명 하 성공률이 77.5%에서 47.5%로 떨어졌고, 실패의 85.7%가 잘못된 색상을 집는 데서 비롯되었습니다. 이는 "데이터 증강은 항상 유익하다"는 단순한 인식을 바꿉니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="flare">FLARE 공격 프레임워크</h3>
+<ul>
+<li><strong>위협 모델</strong>: 엄격한 블랙박스로, 공격자는 모델 아키텍처, 가중치, 그래디언트 또는 훈련 데이터에 접근할 수 없습니다. 작업 공간에 물리적 조명 장치를 배치하여 위치, 강도, 색도를 제어할 수 있지만 배포 후 매개변수는 고정됩니다.</li>
+<li><strong>매개변수화</strong>(수식 1): θ = [h_light, s_light, v_light, I, z_light, α_cutoff], 색조, 채도, 명도, 강도, 공간 높이 및 차단 각도를 포함합니다.</li>
+<li><strong>목적 함수</strong>(수식 2): L_i(θ) = (1/S) Σ_{t=1}^{S} ‖P_t^(i) − P_t'^(i)‖₂ + λ₁‖P_T^(i) − P_T'^(i)‖₂ + λ₂·𝕀_f^(i), 궤적 편차와 작업 실패를 동시에 페널티합니다.</li>
+<li><strong>최적화 도구</strong>: GP-BO 대신 Optuna의 TPE 샘플러를 선택한 이유는 고차원 연속 공간에서 GP-BO의 계산 비용이 실험 횟수에 따라 크게 증가하여 수백 회의 고비용 로봇 rollout이 필요한 시나리오에서 병목이 되기 때문입니다.</li>
+<li><strong>작업 평가</strong>: 10개의 LIBERO 작업을 각각 5개 작업으로 구성된 두 하위 집합으로 나누어 교대로 평가하여 최적화가 특정 시나리오에 과적합되는 것을 방지합니다.</li>
+</ul>
+<h3 id="chromaguard">ChromaGuard 방어</h3>
+<ul>
+<li><strong>단순 증강 기준선</strong>: 매개변수 φ = [h, s, v, c, γ]ᵀ, 균등 분포에서 샘플링, 색조 교란 범위 ±180°.</li>
+<li><strong>핵심 설계</strong>: 증강 매개변수 공간을 Φ_CG로 제한하여 채도 [0.0, 4.0], 명도 [0.2, 3.0], 대비 [0.8, 1.2], 선명도 [0.5, 1.5]의 유계 교란을 허용하지만 색조 교란은 명시적으로 0으로 고정합니다(h = 0).</li>
+<li><strong>적대적 훈련 목표</strong>: min_w 𝔼_{x,y}[max_{φ∈Φ_CG} L(f_w(T(x;φ)), y)], 색조 제한 공간 내에서 최악의 경우 조명을 최적화합니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li>시뮬레이션: LeRobot + LIBERO + MuJoCo, SmolVLA 200,000 스텝 훈련, 각 스위트당 500회 평가 에피소드.</li>
+<li>실제 세계: 6-DoF SO-101 Arm Pro, 이중 카메라, 외부 프로그래밍 가능 RGB 스포트라이트; SmolVLA와 π_0.5 각각 100,000 스텝 미세 조정; 색상 불변 작업 50 에피소드 데이터, 20회 시도, 색상 의존 작업 240 에피소드 데이터, 40회 시도.</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>"일반화 실패"와 "보안 공격"을 명확히 구분</strong>: 저자는 FLARE를 통해 모델 내부 지식 없이도 물리적 조명 조정만으로 Baseline 성공률을 0.0%로 낮출 수 있고 최대 궤적 오차가 115.5cm에 달함을 증명했습니다. 이는 고급 공격보다 실행이 쉽고 방어가 더 어렵습니다. 보안 취약점이 아닌 모델 자체의 일반화 결함을 활용하기 때문입니다.</p>
+</li>
+<li>
+<p><strong>"견고성-색각" 트레이드오프 규명</strong>: 그레이스케일 진단 실험은 단순 증강의 대가를 처음으로 정량화했습니다. 모델이 색상 노이즈를 버리는 동시에 색상 의미론도 버린다는 것입니다. 이 발견은 색상 단서에 의존하는 로봇 작업(분류, 조립)에 직접적인 경고 의미를 가지며, 기존 문헌에서는 이 부작용을 체계적으로 논의하지 않았습니다.</p>
+</li>
+<li>
+<p><strong>ChromaGuard의 "방향성 견고성" 접근</strong>: 무차별 증강이 아니라 교란 공간을 색도 완전성을 보존하는 부분 공간으로 제한합니다. 실제 세계 실험에서 SmolVLA는 색상 의존 작업에서 양호 조건 97.5%, 공격 조건 92.5%를 달성한 반면 Naive-Aug는 각각 47.5%와 40.0%에 불과했으며, 실패의 주요 원인은 잘못된 색상 집기였습니다(85.7% vs. ChromaGuard의 0%).</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<h3 id="1">시뮬레이션 공격 평가(표 1 핵심 데이터)</h3>
+<table>
+<thead>
+<tr>
+<th>작업 스위트</th>
+<th>모델</th>
+<th>공격</th>
+<th>SR (%)</th>
+<th>TE-Avg (cm)</th>
+<th>TE-Max (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO-Spatial</td>
+<td>Baseline</td>
+<td>Optimized</td>
+<td>0.0</td>
+<td>22.3</td>
+<td>67.6</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>Optimized</td>
+<td>78.8</td>
+<td>4.23</td>
+<td>40.3</td>
+</tr>
+<tr>
+<td>LIBERO-Object</td>
+<td>Baseline</td>
+<td>Optimized</td>
+<td>0</td>
+<td>29.1</td>
+<td>88.3</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>Optimized</td>
+<td>93.2</td>
+<td>4.99</td>
+<td>41.8</td>
+</tr>
+<tr>
+<td>LIBERO-10</td>
+<td>Baseline</td>
+<td>Optimized</td>
+<td>0.0</td>
+<td>36.3</td>
+<td>115.5</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>Optimized</td>
+<td>47.2</td>
+<td>9.0</td>
+<td>64.0</td>
+</tr>
+</tbody>
+</table>
+<p>최적화 공격은 Baseline 성공률을 모두 0.0%로 낮췄지만 Naive-Aug는 높은 성공률을 유지하여 단순 증강이 실제로 조명 견고성을 향상시켰음을 보여줍니다.</p>
+<h3 id="2">그레이스케일 진단(표 2 핵심 데이터)</h3>
+<table>
+<thead>
+<tr>
+<th>작업 스위트</th>
+<th>모델</th>
+<th>Benign (RGB) SR (%)</th>
+<th>Grayscale SR (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO-Spatial</td>
+<td>Baseline</td>
+<td>81.2</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>79.4</td>
+<td>80.1</td>
+</tr>
+<tr>
+<td>LIBERO-Object</td>
+<td>Baseline</td>
+<td>89.4</td>
+<td>10</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>89.8</td>
+<td>90.5</td>
+</tr>
+<tr>
+<td>LIBERO-10</td>
+<td>Baseline</td>
+<td>58.4</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>50.2</td>
+<td>47.8</td>
+</tr>
+</tbody>
+</table>
+<p>Naive-Aug는 그레이스케일에서 성능이 거의 변하지 않았고 Baseline은 붕괴하여 단순 증강이 색상 정보 폐기를 초래함을 확인했습니다.</p>
+<h3 id="3">실제 세계 실험(표 3 핵심 데이터)</h3>
+<table>
+<thead>
+<tr>
+<th>기본 모델</th>
+<th>모델</th>
+<th>색상 불변 Attack SR (%)</th>
+<th>색상 의존 Benign SR (%)</th>
+<th>색상 의존 Attack SR (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SmolVLA</td>
+<td>Baseline</td>
+<td>0.0</td>
+<td>77.5</td>
+<td>27.5</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>70.0</td>
+<td>47.5</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td></td>
+<td>ChromaGuard</td>
+<td>70.0</td>
+<td>97.5</td>
+<td>92.5</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>Baseline</td>
+<td>30.0</td>
+<td>47.5</td>
+<td>12.5</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>75.0</td>
+<td>40.0</td>
+<td>47.5</td>
+</tr>
+<tr>
+<td></td>
+<td>ChromaGuard</td>
+<td>75.0</td>
+<td>55.0</td>
+<td>70.0</td>
+</tr>
+</tbody>
+</table>
+<p>ChromaGuard는 SmolVLA에서 Naive-Aug보다 현저히 우수하며, 색상 의존 작업 양호 조건에서 50퍼센트 포인트 향상(표 내 47.5%→97.5% 계산)을 보였습니다. π_0.5의 향상은 제한적이며, 저자는 사전 훈련 모델 자체가 양호 시나리오에서도 실패의 66.7%가 잘못된 색상 집기에서 비롯되었고, 이는 SmolVLA의 해당 비율(11.1%)의 6배이기 때문이라고 설명합니다.</p>
+<h2 id="_7">경계 및 한계</h2>
+<p>저자는 FLARE와 ChromaGuard가 최종 공격/방어 솔루션이 아닌 분석 도구임을 명시적으로 선언했으며, 시간적 동적 조명이나 폐루프 적응형 공격을 탐구하지 않았습니다. 실제 세계 실험은 두 모델, 두 작업 유형만을 다루었으며, π_0.5의 저조한 성능은 방어 효과가 기본 모델의 사전 훈련 품질에 의해 제약될 수 있음을 시사합니다. 시뮬레이션-실제 전이는 먼저 시뮬레이션에서 최적화한 후 실제 공격을 선택하는 2단계 프로세스에 의존하며, 엔드투엔드 전이의 신뢰성은 검증되지 않았습니다. 그레이스케일 진단은 간접 증거일 뿐 모델 내부 표현의 색상 인코딩 강도를 직접 측정하지 않았습니다. 논문은 색상 자체가 유일한 구별 특징(예: 형태가 완전히 동일한 경우)일 때 ChromaGuard의 한계를 명시적으로 논의하지 않았으며 훈련 비용 비교도 제공하지 않았습니다.</p>
+<h2 id="_8">공학적 시사점</h2>
+<p>재현 시 가장 먼저 확인해야 할 것은 증강 매개변수 범위입니다. Naive-Aug의 색조 교란 ±180°는 색상 폐기의 직접적 원인이며, ChromaGuard가 이를 0으로 고정한 것이 모든 개선의 원천입니다. 가장 함정에 빠지기 쉬운 곳은 작업 평가 전략입니다. 각 최적화 반복에서 작업 하위 집합을 교대로 평가하지 않으면 FLARE가 소수 시나리오에 과적합되어 실제 세계 공격 효과가 부풀려질 수 있습니다. 하류 팀의 경우 작업이 색상 단서에 의존한다면 반드시 그레이스케일 입력으로 진단 테스트를 수행해야 합니다. 모델이 그레이스케일에서 성능이 떨어지지 않으면 색상 정보가 이미 폐기된 것이므로 증강 구성을 점검해야 합니다. π_0.5의 결과는 방어 전략의 효과 상한이 기본 모델의 사전 훈련 품질에 의해 제약된다는 점을 상기시키며, 기본 모델 선택 시 색상 민감도를 평가해야 합니다. 실제 세계 공격 생성은 시뮬레이션 후보에 의존하므로 먼저 소규모 시뮬레이션에서 공격 매개변수의 전이 가능성을 검증한 후 실제 하드웨어 실험에 투자하는 것이 좋습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_lerobot_2024/">LeRobot</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zheng_flare_robot_learning_with_impl_2025/">FLARE: Robot Learning with Implicit World Modeling</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_lights_camera_malfunction_when_illuminat_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zheng_flare_robot_learning_with_impl_2025/">
+          <span class="entry-type">논문</span>
+          <h3>FLARE: Robot Learning with Implicit World Modeling</h3>
+          <p>FLARE: Robot Learning with Implicit World Modeling (FLARE), is a 2025 large vision-language-action…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_lerobot_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>LeRobot</h3>
+          <p>데이터셋 형식, 텔레오퍼레이션, 학습 및 배포를 포괄하는 엔드투엔드 PyTorch 라이브러리.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</h3>
+          <p>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#flare">FLARE 공격 프레임워크</a></li>
+<li><a href="#chromaguard">ChromaGuard 방어</a></li>
+<li><a href="#_4">실험 설정</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a><ul>
+<li><a href="#1">시뮬레이션 공격 평가(표 1 핵심 데이터)</a></li>
+<li><a href="#2">그레이스케일 진단(표 2 핵심 데이터)</a></li>
+<li><a href="#3">실제 세계 실험(표 3 핵심 데이터)</a></li>
+</ul>
+</li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compositional Motion Generation from Demonstration with Object-Centric Neural Fields · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Compositional Motion Generation from Demonstration with Object-Centric Neural Fields</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Compositional Motion Generation from Demonstration with Object-Centric Neural Fields</h1>
+      <p class="entry-name-en">Compositional Motion Generation from Demonstration with Object-Centric Neural Fields</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一个生成式学习框架，通过物体中心的神经场（object-centric neural fields）将感知与运动生成统一建模，实现从少量演示中学习组合性机器人行为。作者设计了空间混合专家（spatial MoE）与时间混合专家（temporal MoE）分别处理场景表示与轨迹生成，并引入潜在重标记（latent relabeling）机制扩充有效训练数据。核心贡献在于以物体级潜在变量为纽带，在保持数据效率（低至10-30个演示）的同时实现系统化泛化，在仿真与真实机器人任务上显著优于现有基线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.07129" target="_blank" rel="noopener">arXiv:2607.07129 Compositional Motion Generation from Demonstration with Object-Centric Neural Fi</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有LfD方法要么将运动视为整体序列，要么依赖手工设计的运动基元（MPs）与低维特征，前者忽略了行为的组合结构，后者受限于特征工程的可扩展性。从图像直接学习特征的方法（如CNMP）虽免去手工设计，却需要大规模数据集，牺牲了MPs的数据效率优势。神经场方法（如tekden2023neural）在场景级别操作，随物体数量增加扩展性急剧恶化；无监督场景分解方法（Slot Attention、GIRAFFE）同样依赖大规模图像数据，并非为机器人学习设计。</p>
+<p>本文真正改变的是将“物体中心表示”确立为连接感知与运动的中间层，使组合性不再依赖人工指定的基元连接或经由点，而是从数据中自动涌现。通过将场景分解为物体特定神经场，每个物体的潜在向量同时驱动感知重建与运动条件化，这一设计使得少量演示即可覆盖物体属性（颜色、形状、位置）的连续变化空间，并在推理时通过潜在插值实现系统化泛化。相比手工特征，物体中心表示无需任务特定的特征工程；相比端到端图像条件化，它提供了可解释的潜在结构，显著降低了对数据量的需求。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">空间混合专家（场景建模）</h3>
+<ul>
+<li>图像建模为物体特定神经场与背景的组合：<span class="arithmatex">\(\hat{I}(x|\{z_i\}) = \sum_{i=1}^{N} M_i(x_i) F_i(x_i) + M_{bg} F_{bg}(x)\)</span>，其中 <span class="arithmatex">\(x_i = x - \Delta_i(x|z_i)\)</span></li>
+<li><span class="arithmatex">\(F_i\)</span> 预测物体外观，<span class="arithmatex">\(\Delta_i\)</span> 为条件于潜在向量 <span class="arithmatex">\(z_i\)</span> 的形变场，<span class="arithmatex">\(M_i\)</span> 通过空间softmax计算：<span class="arithmatex">\(M_i(x_i) = \frac{\exp(l_i(x_i))}{\exp(l_{bg}) + \sum_{j=1}^{N} \exp(l_j(x_j))}\)</span></li>
+<li>所有场均为坐标MLP（神经场），背景logit <span class="arithmatex">\(l_{bg}\)</span> 为常数</li>
+</ul>
+<h3 id="_4">三阶段训练</h3>
+<ol>
+<li><strong>背景建模</strong>：仅用非掩码像素训练 <span class="arithmatex">\(F_{bg}\)</span>，提供比中值图像更一致的背景估计</li>
+<li><strong>物体中心训练</strong>：每个物体模型 <span class="arithmatex">\(F_i\)</span> 在物体中心采样框架内训练，对其他物体像素从背景模型采样，防止串扰；采用位置感知的缩放课程学习</li>
+<li>
+<p><strong>联合组合训练</strong>：用完整组合模型联合优化所有场</p>
+</li>
+<li>
+<p>对形变网络 <span class="arithmatex">\(\Delta_i\)</span> 施加Lipschitz正则化，保证潜在空间平滑性</p>
+</li>
+</ol>
+<h3 id="_5">潜在重标记</h3>
+<ul>
+<li>每个物体关联潜在向量 <span class="arithmatex">\(z_i^{(k)} \in \mathbb{R}^{d_z}\)</span>，通过插值角集 <span class="arithmatex">\(C^i\)</span> 的凸组合捕获物体变化</li>
+<li>潜在搜索算法：采样角集凸组合 → 梯度下降细化 → 保留满足 <span class="arithmatex">\(E_{i,l}^{(k)} &lt; \lambda E_{\min}\)</span> 的候选（最多 <span class="arithmatex">\(L\)</span> 个）</li>
+<li>角集迭代扩展：初始化两个最大距离嵌入，测试剩余实例可重建性，不可则扩展</li>
+<li>效果：训练集从 <span class="arithmatex">\(K\)</span> 扩充至 <span class="arithmatex">\(K \times L\)</span></li>
+</ul>
+<h3 id="_6">时间混合专家（运动生成）</h3>
+<ul>
+<li>假设顺序组合性：不同轨迹段依赖不同 <span class="arithmatex">\(\hat{z}_i\)</span> 子集</li>
+<li>条件信号：<span class="arithmatex">\(c(t) = \sum_{i=1}^{N} w_i(t) c_i(\hat{z}_i)\)</span>，权重 <span class="arithmatex">\(w_i(t) = \frac{\exp(s_i(t))}{\sum_{j=1}^{N} \exp(s_j(t))}\)</span></li>
+<li>轨迹建模为高斯分布：<span class="arithmatex">\(q(t) \sim \mathcal{N}(\mu(t), \mathrm{diag}(\sigma^2(t)))\)</span>，最小化负对数似然</li>
+<li>潜在dropout作为热身正则化；概率公式使不相关潜在变量被方差吸收</li>
+<li>四元数轨迹转为轴角形式，在初始四元数切空间中表达</li>
+</ul>
+<h3 id="film">FiLM条件化</h3>
+<ul>
+<li><span class="arithmatex">\(h_i(z_i) = \{\gamma_i^{(\ell)}, \beta_i^{(\ell)}\}_{\ell=1}^{L}\)</span>，聚合条件信号：<span class="arithmatex">\(\gamma^{(\ell)}(t) = \sum_{i=1}^{N} w_i(t) \gamma_i^{(\ell)}\)</span></li>
+<li>相比超网络参数更少、稳定性更好</li>
+</ul>
+<h3 id="_7">推理</h3>
+<ul>
+<li>测试时应用相同潜在搜索，物体按大小降序处理（较大物体提供更可靠重建线索）</li>
+</ul>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li>
+<p><strong>物体中心神经场作为组合性中间层</strong>：将场景分解为物体特定神经场，每个物体的潜在向量同时驱动感知与运动，使组合性从数据中自动涌现而非人工指定。这是首次将物体中心表示用于数据高效的LfD，相比场景级神经场（tekden2023neural）显著提升扩展性。</p>
+</li>
+<li>
+<p><strong>潜在重标记机制</strong>：通过插值角集凸组合并搜索最优潜在表示，将训练集从 <span class="arithmatex">\(K\)</span> 扩充至 <span class="arithmatex">\(K \times L\)</span>，在不增加演示采集成本的情况下提升数据效率。这一机制使模型能从少至10-30张图像中学习连续物体变化，是数据效率的关键来源。</p>
+</li>
+<li>
+<p><strong>双MoE架构（空间+时间）</strong>：空间MoE处理感知分解，时间MoE处理运动组合，两者通过物体潜在向量耦合。时间MoE的概率轨迹公式允许不相关潜在变量被方差吸收，避免均值偏置；FiLM条件化相比超网络更稳定高效。</p>
+</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="_10">仿真任务（低数据制度，仅评估提出方法）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>CNN-CNMP (Low)</th>
+<th>DP (Low)</th>
+<th>CNN-Film (Low)</th>
+<th>Ours w/o gating (Low)</th>
+<th>Ours (Low)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wall Avoidance</td>
+<td>2.72±0.08 / 0.67±0.04</td>
+<td>2.31±0.04 / 0.79±0.02</td>
+<td>1.41±0.19 / 0.89±0.02</td>
+<td>0.71±0.04 / 0.99±0.00</td>
+<td><strong>0.51±0.03 / 0.99±0.00</strong></td>
+</tr>
+<tr>
+<td>Incline</td>
+<td>4.35±0.27 / 0.11±0.03</td>
+<td>3.60±0.08 / 0.25±0.01</td>
+<td>3.01±0.55 / 0.40±0.13</td>
+<td>0.89±0.03 / 0.99±0.01</td>
+<td><strong>0.71±0.02 / 1.00±0.00</strong></td>
+</tr>
+<tr>
+<td>Cup Stacking</td>
+<td>10.85±1.39 / 0.02±0.01</td>
+<td>11.13±1.29 / 0.02±0.02</td>
+<td>8.74±1.83 / 0.03±0.01</td>
+<td>1.10±0.03 / 0.86±0.05</td>
+<td><strong>0.65±0.04 / 0.99±0.00</strong></td>
+</tr>
+<tr>
+<td>Cube Stacking</td>
+<td>14.22±0.59 / 0.00±0.00</td>
+<td>11.55±0.19 / 0.00±0.00</td>
+<td>9.26±0.74 / 0.00±0.00</td>
+<td>1.33±0.05 / 0.85±0.06</td>
+<td><strong>0.72±0.05 / 0.97±0.02</strong></td>
+</tr>
+</tbody>
+</table>
+<p>（MED/Accuracy，MED越低越好，Accuracy越高越好）</p>
+<h3 id="_11">关键结果</h3>
+<ul>
+<li>在低数据制度下，Ours在所有任务上MED均低于0.72，成功率≥0.97，而CNN-CNMP和DP在Cup/Cube任务上成功率接近0</li>
+<li>Ours在低数据下的表现甚至优于多数基线在高数据下的结果（如CNN-CNMP High在Cube上MED=6.07，成功率0.00）</li>
+<li>消融：去除gating后Cube任务MED从0.72升至1.33，成功率从0.97降至0.85，证明时间门控的重要性</li>
+<li>鲁棒性：30个演示中最多3个含不完整掩码时性能不变；时间扭曲使MED升至2.03，成功率降至约0.90</li>
+</ul>
+<h3 id="_12">真实机器人实验</h3>
+<ul>
+<li>任务1（拾取放碗）：30个演示，25/25测试成功；20个演示时5个额外试验中3个成功；添加视觉干扰物体后5/5成功</li>
+<li>任务2（类别级泛化）：15个测试用例，14/15成功，唯一失败为未见棒球（表面更硬，抓取精度要求更高）</li>
+<li>任务3（多物体语言条件化）：15/15成功；每任务5次试验×3次执行全部成功</li>
+<li>任务4（抽屉放箱子）：4个占据场训练，10个新颖配置全部成功；关键位姿误差：抽屉把手0.32 cm，箱子抓取0.35 cm</li>
+</ul>
+<h2 id="_13">边界与局限</h2>
+<ul>
+<li>泛化被自然限制在演示潜在支持内的变化，外推超出此区域不保证</li>
+<li>视觉上相似的干扰物体（如相同颜色）可能导致歧义或性能下降</li>
+<li>超过3个（共30个）演示含不完整掩码时，场景模型无法可靠分解物体</li>
+<li>方法仍依赖跨演示的粗略相位对齐（夹爪状态转换）</li>
+<li>NFMP基线因网格训练扩展性为 <span class="arithmatex">\(3^n\)</span> 仅在Wall Avoidance上评估</li>
+<li>最终任务中少于4个示例时场景表示模型无法捕捉抽屉关节运动</li>
+<li>未评估语言理解本身的错误（假设提示能产生正确分割掩码）</li>
+<li>未涉及大规模跨任务学习或VLA风格预训练</li>
+</ul>
+<h2 id="_14">工程启示</h2>
+<p>复现时优先核对<strong>潜在搜索算法的超参数</strong>（角集初始化、候选保留阈值 <span class="arithmatex">\(\lambda\)</span>、最大候选数 <span class="arithmatex">\(L\)</span>），这些直接决定数据扩充效果与泛化边界。最容易踩坑的是<strong>掩码质量</strong>：超过10%演示含不完整掩码会导致场景分解失败，实践中建议用矩形标注并人工检查。训练顺序必须严格遵循三阶段（背景→物体中心→联合），跳过背景建模会导致物体场捕获背景区域。</p>
+<p>对下游团队：若任务涉及<strong>类别级泛化</strong>（如不同杯子、球），需确保训练演示覆盖物体属性的连续变化（颜色、形状、位置），潜在插值才能有效。真实系统部署时，<strong>夹爪状态转换的时间对齐</strong>是运动生成的前提，建议在数据采集阶段记录开/关信号。推理时按物体大小降序处理可提升重建稳定性。若需更高精度（如1 cm级抓取），可考虑将场景表示扩展至ESDF（如最终任务所示），但需注意最少4个示例的限制。硬件方面，RGB推理约1.4秒/物体，3D约0.8秒/物体，实时性要求高的场景需优化或并行化。</p>
+<h2 id="_15">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.07129</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_compositional_motion_generation_demonstr_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">空间混合专家（场景建模）</a></li>
+<li><a href="#_4">三阶段训练</a></li>
+<li><a href="#_5">潜在重标记</a></li>
+<li><a href="#_6">时间混合专家（运动生成）</a></li>
+<li><a href="#film">FiLM条件化</a></li>
+<li><a href="#_7">推理</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#_10">仿真任务（低数据制度，仅评估提出方法）</a></li>
+<li><a href="#_11">关键结果</a></li>
+<li><a href="#_12">真实机器人实验</a></li>
+</ul>
+</li>
+<li><a href="#_13">边界与局限</a></li>
+<li><a href="#_14">工程启示</a></li>
+<li><a href="#_15">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

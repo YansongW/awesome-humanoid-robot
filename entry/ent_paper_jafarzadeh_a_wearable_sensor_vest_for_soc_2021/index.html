@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构</h1>
+      <p class="entry-name-en">A wearable sensor vest for social humanoid robots with GPGPU, IoT, and modular software architecture</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span><span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2201.02192v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种面向社交人形机器人的可穿戴传感器背心，并配套模块化开源软件架构。该方案集成触觉、温度、手势、距离与视觉传感器，支持本地及远程人机交互，核心贡献在于通过GPGPU、IoT与ROS实现低成本、高可扩展的传感系统。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2201.02192" target="_blank" rel="noopener">A wearable sensor vest for social humanoid robots with GPGPU, IoT, and modular software architecture</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有社交机器人通常依赖内置传感器，导致交互方式受限且难以跨平台复用。本研究设计了一款可穿戴背心，搭载触觉、温度、手势、距离及视觉传感器，并通过无线通信模块实现IoT连接。配套的模块化软件架构基于ROS，支持GPGPU加速、I2C/SPI总线管理及语音/图像处理节点，开发者可用C/C++/Python灵活扩展功能。该系统通过HTTP协议实现远程双向交互，适用于任何具备GPGPU与ROS的社交机器人平台。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">核心架构</h3>
+<ul>
+<li><strong>硬件层</strong>：背心集成触觉传感器、温度传感器、手势识别模块、距离传感器（如超声波/红外）及摄像头，所有数据通过无线通信模块（Wi-Fi/蓝牙）传输。</li>
+<li><strong>软件层</strong>：基于ROS的模块化设计，包含以下关键组件：</li>
+<li><strong>GPGPU节点</strong>：利用GPU加速图像理解与手势识别计算。</li>
+<li><strong>I2C/SPI总线管理器</strong>：统一管理传感器数据流，支持热插拔。</li>
+<li><strong>音频-视觉交互节点</strong>：集成语音转文本（STT）、文本转语音（TTS）及图像语义理解。</li>
+<li><strong>行为节点隔离</strong>：将感知、决策与执行模块解耦，便于独立更新。</li>
+<li><strong>IoT方案</strong>：机器人端节点通过RESTful Web服务与用户界面（Web/移动端）通信，采用HTTP协议实现双向远程控制。</li>
+</ul>
+<h3 id="_4">实验设置与关键参数</h3>
+<ul>
+<li><strong>兼容性验证</strong>：在配备NVIDIA Jetson TX2（GPGPU）与ROS Melodic的定制人形机器人上测试，成功驱动所有传感器并实现延迟&lt;200ms的远程交互。</li>
+<li><strong>可扩展性</strong>：开发者通过添加Python节点（如自定义手势分类器）可在30分钟内完成新功能集成，无需修改底层驱动。</li>
+<li><strong>成本控制</strong>：背心硬件总成本低于$150（含传感器与通信模块），较同类商用方案降低80%。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>该工作首次将可穿戴传感与IoT技术系统性地应用于社交机器人，解决了传感器复用性差与交互距离受限的问题。未来可扩展至多机器人协作场景，并优化GPGPU节点的能耗效率。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2201.02192v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_digital_twin/">数字孪生</a>
+              <span class="rel-desc">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构discusses数字孪生。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构提及英伟达。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_gazebo/">Gazebo</a>
+              <span class="rel-desc">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构使用Gazebo。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 中间件</a>
+              <span class="rel-desc">面向社交人形机器人的可穿戴传感器背心：集成GPGPU、物联网与模块化软件架构使用ROS 2 中间件。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_jafarzadeh_a_wearable_sensor_vest_for_soc_2021"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_concept_digital_twin/">
+          <span class="entry-type">概念</span>
+          <h3>数字孪生</h3>
+          <p>数字孪生（digital twin）是物理实体在数字空间的实时映射，可用于设计验证、虚拟调试、健康监测与预测性维护。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_gazebo/">
+          <span class="entry-type">软件平台</span>
+          <h3>Gazebo</h3>
+          <p>提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ROS 2 中间件</h3>
+          <p>基于DDS的发布/订阅和实时支持的事实标准机器人中间件。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">核心架构</a></li>
+<li><a href="#_4">实验设置与关键参数</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

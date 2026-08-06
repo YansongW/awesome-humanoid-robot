@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning</h1>
+      <p class="entry-name-en">When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文研究机器人硬件迭代后，旧代（legacy）演示数据何时开始对新一代（Gen-2）策略产生正向迁移收益。作者在轮式人形平台上通过真实实验发现，协同训练增益与独立任务成功率呈倒 U 型关系，并据此提出三阶段模型与任务依赖的迁移阈值判据，用于指导数据采集策略。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.25593" target="_blank" rel="noopener">arXiv:2607.25593 When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Ro</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>该工作真正改变的是对“跨配置数据复用”这一工程常识的认知。此前领域内普遍假设“更多跨配置数据总是有帮助”，但本文用真实机器人实验证明，在目标硬件策略能力极低时（如花插入独立成功率 10.0%），旧数据协同训练不仅无益，甚至可能完全无效（10.0% → 10.0%）。这推翻了数据量至上主义，将问题从“是否该用旧数据”精确转化为“在什么能力门槛下旧数据才开始产生正收益”。</p>
+<p>更关键的是，作者没有停留在现象描述，而是给出了一个可操作的工程判据：通过任务复杂度估计（视界长度与空间容差）预测迁移阈值，再以新硬件独立成功率作为代理指标，决定何时停止采集新数据、何时启动旧数据协同训练。这使得硬件迭代中的数据管理从经验试错变为有理论支撑的决策流程。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">三阶段模型</h3>
+<p>协同训练增益 ΔSR 与独立成功率 SR 呈倒 U 型关系：
+- <strong>Phase I（SR &lt; 15–20%）</strong>：旧数据无可测收益，机制为“表征真空”——策略内部表征尚无法解码任务阶段，旧数据梯度与目标梯度期望对齐非正。
+- <strong>Phase II（SR 20–75%）</strong>：收益大幅上升（+15 到 +63 个百分点），机制为“协同绽放”——阶段可解码性提升使旧数据提供有效监督。
+- <strong>Phase III（SR &gt; 75%）</strong>：收益递减（+0 到 +15），机制为“饱和递减”——配置冲突成本 δ(SR) 随饱和增加。</p>
+<h3 id="_4">核心理论定义</h3>
+<ul>
+<li><strong>迁移阈值</strong>：τ(T) = inf{SR : E[ΔSR | SR] &gt; 0}，即使旧数据产生正期望增益的最小独立成功率。</li>
+<li><strong>阶段可解码性</strong>：ρ_c(T;θ) = max_g Pr_{(s,o)}[g(φ_θ(s,o)) = z(s,o)]，衡量内部表征 φ_θ 对真实任务阶段 z 的可解码程度。</li>
+<li><strong>倒 U 增益律</strong>（Theorem 2）：E[ΔSR | SR] = [κ(1 − SR) − δ(SR)] × 𝟙[SR &gt; τ(T)]，其中 κ &gt; 0 为任务相关参数，δ(SR) 为配置冲突成本。</li>
+<li><strong>信息量公式</strong>：I_legacy = ρ·H̄_within − ε_dom，其中 H̄_within = η(1 − SR) 为剩余阶段内策略不确定性，ε_dom 为不可约配置不匹配。</li>
+</ul>
+<h3 id="_5">阶段感知数据采集规则</h3>
+<ol>
+<li>估计任务难度 H(T) = L(T)·log(1/ε(T))，据此预测迁移阈值 τ̂(T)。</li>
+<li>在新硬件数据上训练独立策略，测量成功率 SR₂(T)。</li>
+<li>若 SR₂(T) &lt; τ̂(T)，继续采集新硬件数据；否则，用旧数据协同训练。</li>
+</ol>
+<h3 id="_6">关键设计决策</h3>
+<ul>
+<li>协同训练等概率采样 Gen-1 与 Gen-2 数据（非按小时比例），以控制数据量比例变量。</li>
+<li>策略不接收硬件代次标签，强制学习跨配置共享表征。</li>
+<li>两代硬件使用相同归一化手臂动作表示，夹爪差异由配置特定底层控制器处理。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>首次给出跨配置迁移的“阈值”而非“趋势”</strong>：现有工作（如 Open X-Embodiment）只证明旧数据“可以”有用，本文用定理形式定义了迁移阈值 τ(T)，并证明在阈值以下期望梯度对齐非正、以上为正。这是从定性观察到定量判据的跃迁。</p>
+</li>
+<li>
+<p><strong>倒 U 型增益律的统一解释框架</strong>：将 Phase I 的表征真空、Phase II 的协同绽放、Phase III 的饱和递减纳入单一公式 E[ΔSR | SR] = [κ(1 − SR) − δ(SR)] × 𝟙[SR &gt; τ(T)]，并用阶段可解码性作为底层机制。这为后续研究提供了可检验的理论预测。</p>
+</li>
+<li>
+<p><strong>双向迁移的实证发现</strong>：协同训练不仅提升 Gen-2 性能，还反向提升 Gen-1 花插入（50.0% → 78.3%）。这表明跨配置协同不是单向“源到目标”迁移，而是共享表征的互惠增强，对多代硬件共存的部署场景有直接指导意义。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<p>实验在轮式人形平台（26 DoF）上进行，对比 Gen-1（单目相机 640×480，位置控制夹爪）与 Gen-2（鱼眼相机 1920×1536，混合力/位置夹爪）两代硬件。策略为 π_0.5 VLA 骨干的行为克隆微调，每条件 n = 60 次真实试验。</p>
+<p><strong>表 2（Phase I，early Gen-2 数据）</strong>：花插入 Gen-2 单训 10.0%，协同后仍为 10.0%（Δ = 0，p = n.s.），证实低基线时旧数据无收益；而同一任务 Gen-1 单训 50.0%，协同后 78.3%（Δ = +28.3，p = 0.002），展示双向迁移。</p>
+<p><strong>表 3（Phase II，quality-refined Gen-2 数据）</strong>：花插入单训 23.3%，协同 86.7%（Δ = +63.4 个百分点）；笔插入单训 71.7%，协同 98.3%（Δ = +26.6）。</p>
+<p><strong>表 7（饱和效应）</strong>：笔插入在 71.7% 基线时增益 +26.6，加入更多 Gen-2 数据达到 85.0% 独立基线后，同一任务仅增益 +8.3。</p>
+<p><strong>表 5（held-out 移动浇水任务）</strong>：0.5 h 新数据时 Δ = 0.0；1.5 h 时 Pick kettle Δ = +40.0（p = 1.5×10⁻⁶）、Water plant Δ = +38.3（p = 3.5×10⁻⁵）；8 h 时 Δ 降至 −1.7 与 +3.3（均不显著）。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>数据条件</th>
+<th>单训 SR</th>
+<th>协同 SR</th>
+<th>ΔSR</th>
+<th>p 值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>花插入</td>
+<td>early 4.3 h</td>
+<td>10.0%</td>
+<td>10.0%</td>
+<td>0.0</td>
+<td>n.s.</td>
+</tr>
+<tr>
+<td>花插入</td>
+<td>refined 15.6 h</td>
+<td>23.3%</td>
+<td>86.7%</td>
+<td>+63.4</td>
+<td>1.8×10⁻¹²</td>
+</tr>
+<tr>
+<td>笔插入</td>
+<td>refined 13.58 h</td>
+<td>71.7%</td>
+<td>98.3%</td>
+<td>+26.6</td>
+<td>4.0×10⁻⁵</td>
+</tr>
+<tr>
+<td>笔插入</td>
+<td>early+refined 32.21 h</td>
+<td>85.0%</td>
+<td>93.3%</td>
+<td>+8.3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>浇水 Pick</td>
+<td>1.5 h</td>
+<td>51.7%</td>
+<td>91.7%</td>
+<td>+40.0</td>
+<td>1.5×10⁻⁶</td>
+</tr>
+<tr>
+<td>浇水 Water</td>
+<td>1.5 h</td>
+<td>40.0%</td>
+<td>78.3%</td>
+<td>+38.3</td>
+<td>3.5×10⁻⁵</td>
+</tr>
+</tbody>
+</table>
+<p>结果验证了三阶段模型：低基线无收益、中基线高增益、高基线收益递减。浇水任务复杂度估计 H(T) ≈ 44（接近笔插入的 42），预测约 1–2 小时新数据即可进入高增益区间，实际 1.5 h 数据验证了该预测。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>实验仅覆盖单一轮式人形平台、两代硬件、一个 VLA 骨干（π_0.5）与有限操作任务，结论向其他形态（如四足、人形双臂）或模型家族的推广性未验证。</li>
+<li>τ(T) ≈ α + β·H(T) 的关系被作者明确视为“有初步证据支持的理论预测”，而非经验验证的缩放定律。</li>
+<li>训练期间未直接记录逐源梯度对齐，图 4 的损失轨迹仅作为间接诊断，理论机制（梯度对齐解释）未被直接确立。</li>
+<li>未测试除 π_0.5 之外的其他 VLA 骨干，也未覆盖移动底座之外的硬件配置差异类型（如自由度数量变化）。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ol>
+<li>
+<p><strong>先核对基线成功率</strong>：在决定是否复用旧数据前，务必先在新硬件上训练独立策略并测量成功率。若低于 15–20%，旧数据协同训练大概率无效，应优先采集新数据；若在 20–75% 区间，旧数据收益最大；若高于 75%，收益有限且可能引入噪声级负迁移。</p>
+</li>
+<li>
+<p><strong>任务复杂度是阈值预测的关键</strong>：用 H(T) = L(T)·log(1/ε(T)) 估计任务难度（浇水任务 H ≈ 44，笔插入 H ≈ 42），可提前预判所需新数据量。浇水任务从 8 小时降至 1.5 小时的案例表明，该规则能显著节省采集成本。</p>
+</li>
+<li>
+<p><strong>最容易踩坑的点</strong>：数据质量不能绕过阈值——early 数据（4.3 h）即使协同训练也无收益，而 refined 数据（15.6 h）在相同任务上带来 +63.4 点增益。质量过滤（更严格操作员训练、逐轨迹过滤、更紧位姿容差）是进入 Phase II 的必要条件，而非充分条件。</p>
+</li>
+<li>
+<p><strong>采样比例与标签设计</strong>：等概率采样两代数据（而非按小时比例）且不给策略代次标签，是实现有效协同的关键设计。复现时应严格遵循，否则可能引入配置特定捷径。</p>
+</li>
+<li>
+<p><strong>统计严谨性</strong>：负 ΔSR 仅在统计显著时才视为负迁移证据（本文主实验中所有负增益均不显著）。评估时使用双侧 Fisher 精确检验与 Wilson 95% 置信区间，n = 60 次试验是获得可靠结论的最低要求。</p>
+</li>
+</ol>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.25593</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_domain_adaptation/">域适应</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_when_does_legacy_data_start_help_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">方法</span>
+          <h3>域适应</h3>
+          <p>将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">三阶段模型</a></li>
+<li><a href="#_4">核心理论定义</a></li>
+<li><a href="#_5">阶段感知数据采集规则</a></li>
+<li><a href="#_6">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a></li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

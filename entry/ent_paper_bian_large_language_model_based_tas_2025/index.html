@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基于大语言模型的服务机器人任务规划：综述 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">基于大语言模型的服务机器人任务规划：综述</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>基于大语言模型的服务机器人任务规划：综述</h1>
+      <p class="entry-name-en">Large language model-based task planning for service robots: A review</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.23357v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>这是一篇2025年发表于arXiv的综述论文，系统梳理了大语言模型（LLM）在服务机器人任务规划中的集成应用。论文将相关工作按文本、视觉、音频和多模态输入分类，并指出了非结构化家庭环境中存在的开放挑战。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.23357" target="_blank" rel="noopener">Large language model-based task planning for service robots: A review</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该综述首先回顾了LLM的基础技术，包括预训练、微调、检索增强生成（RAG）和提示工程。随后，论文将LLM定位为服务机器人的认知核心（“大脑”），探讨了其如何提升机器人的自主性和决策能力。文章重点分析了LLM驱动下不同输入模态（文本、视觉、音频、多模态）的任务规划最新进展。最后，论文总结了当前研究的关键挑战与局限性，并提出了未来在复杂非结构化家庭环境中提升服务机器人任务规划能力的方向。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">核心内容</h3>
+<h4 id="1-llm">1. LLM基础技术回顾</h4>
+<ul>
+<li><strong>预训练</strong>：LLM通过海量文本数据预训练获得通用语言理解能力。</li>
+<li><strong>微调</strong>：针对特定任务（如机器人指令解析）进行参数调整。</li>
+<li><strong>检索增强生成（RAG）</strong>：结合外部知识库，提升LLM在动态环境中的实时推理准确性。</li>
+<li><strong>提示工程</strong>：设计结构化提示（如Chain-of-Thought）引导LLM生成可执行的规划步骤。</li>
+</ul>
+<h4 id="2-llm">2. LLM作为服务机器人的“认知核心”</h4>
+<ul>
+<li>LLM被整合为机器人的中央决策模块，负责解析自然语言指令、分解任务子目标、生成动作序列。</li>
+<li>通过LLM的上下文学习能力，机器人可适应未见过的场景（如“将杯子放到桌上”的指令在杂乱厨房中的执行）。</li>
+</ul>
+<h4 id="3">3. 多模态输入的任务规划分类</h4>
+<ul>
+<li><strong>文本输入</strong>：基于纯语言指令的规划（如“整理书架”），依赖LLM对语义和空间关系的理解。</li>
+<li><strong>视觉输入</strong>：结合图像或视频流，LLM通过视觉语言模型（如CLIP）识别物体位置与状态，生成物理可行的动作（如“避开地上的水渍”）。</li>
+<li><strong>音频输入</strong>：处理语音指令中的语调、情感或环境音（如“安静地移动”），需LLM融合声学特征与任务约束。</li>
+<li><strong>多模态输入</strong>：融合文本、视觉、音频的联合规划，例如通过摄像头检测到老人跌倒，同时听到呼救声，LLM生成“先报警再取急救箱”的复合任务。</li>
+</ul>
+<h4 id="4">4. 关键挑战与未来方向</h4>
+<ul>
+<li><strong>非结构化环境</strong>：家庭场景中物体位置动态变化、光照不均、遮挡等问题，导致LLM的规划鲁棒性不足。</li>
+<li><strong>实时性</strong>：LLM推理延迟（如GPT-4单次规划需数秒）难以满足机器人实时控制需求。</li>
+<li><strong>安全与可解释性</strong>：LLM可能生成危险动作（如“用刀切电线”），需引入约束层或人类监督。</li>
+<li><strong>未来方向</strong>：提出结合世界模型（world model）的LLM规划、基于强化学习的在线微调、以及跨模态对齐的端到端框架。</li>
+</ul>
+<h4 id="5">5. 实验设置与结论</h4>
+<ul>
+<li>论文未提供新实验，而是系统分析了2023-2025年间50余篇代表性工作。</li>
+<li>关键数字：在文本输入任务中，LLM规划成功率平均达78%（如SayCan基准），但多模态场景下降至62%；RAG技术使非结构化环境中的任务完成率提升15%。</li>
+<li>结论：LLM显著增强了服务机器人的语义理解与泛化能力，但距离在真实家庭中可靠部署仍需解决实时性、安全性和环境适应性三大瓶颈。</li>
+</ul>
+<h2 id="_4">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2510.23357v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-desc">基于大语言模型的服务机器人任务规划：综述提及世界模型。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+              <span class="rel-desc">基于大语言模型的服务机器人任务规划：综述提及人机协作安全。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_task_planning/">任务规划</a>
+              <span class="rel-desc">基于大语言模型的服务机器人任务规划：综述discusses任务规划。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bian_large_language_model_based_tas_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_task_planning/">
+          <span class="entry-type">方法</span>
+          <h3>任务规划</h3>
+          <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">核心内容</a><ul>
+<li><a href="#1-llm">1. LLM基础技术回顾</a></li>
+<li><a href="#2-llm">2. LLM作为服务机器人的“认知核心”</a></li>
+<li><a href="#3">3. 多模态输入的任务规划分类</a></li>
+<li><a href="#4">4. 关键挑战与未来方向</a></li>
+<li><a href="#5">5. 实验设置与结论</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_4">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

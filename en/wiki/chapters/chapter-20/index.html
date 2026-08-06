@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 20: World Models and Long-Horizon Reasoning · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 20: World Models and Long-Horizon Reasoning</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-20-world-models-and-long-horizon-reasoning">Chapter 20: World Models and Long-Horizon Reasoning</h1>
+<h2 id="abstract">Abstract</h2>
+<p>If the VLA in Chapter 19 addresses "understanding instructions and executing actions correctly," then this chapter focuses on two deeper questions: whether a robot can <strong>predict the consequences of its own actions</strong> (world model), and whether it can <strong>organize multi-step behavior for distant goals</strong> (long-horizon reasoning). A World Model is a learnable simulator of environment dynamics, enabling robots to simulate the future in "imagination," evaluate candidate actions, and generate synthetic training data. It is becoming a key infrastructure bridging simulation and reality, perception and decision-making. Starting from the POMDP formalism, this chapter traces the lineage of world models from the Dreamer family of latent-space models to Sora-inspired video generative simulators. It delves into robot-oriented world model systems such as NVIDIA Cosmos, Genie Envisioner, Genie Sim 3.0, UWM, and WorldVLA, discussing engineering trade-offs among representation modalities (pixel/latent space/point cloud/tactile), as well as coupling methods between world models and VLA policies (WMPO, DREAMSTEER, DynaWM, WAM4D, etc.). In the long-horizon reasoning section, this chapter covers symbolic task planning (PDDL), large language model planners (chain-of-thought, SayCan-style value grounding), neuro-symbolic hybrid reasoning, imagination-based simulation and tree search with world models, and memory mechanisms. Finally, it discusses the fusion of neural simulation and sim-to-real, computational constraints, and failure risks. This chapter echoes Chapter 19 (VLA), Chapter 21 (Data Infrastructure), and Chapter 23 (Simulation and Physics Engines).</p>
+<p><strong>Keywords</strong>: World Model; Long-Horizon Reasoning; Task Planning; Video Generation; NVIDIA Cosmos; Genie Envisioner; UWM; WorldVLA; Neuro-Symbolic Reasoning; Chain-of-Thought; Imagination-Based Simulation; Tree Search; Neural Simulator; Sim-to-Real</p>
+<h2 id="201-world-models-definition-formalization-and-cognitive-roots">20.1 World Models: Definition, Formalization, and Cognitive Roots</h2>
+<p>Before human infants learn to grasp, they already show surprise at objects "disappearing into thin air"—this classic observation from developmental psychology indicates that expectations about the basic laws of the physical world are foundational building blocks of intelligence. For humanoid robots to move beyond scripted demonstrations and enter open environments, they similarly need an internal model of "how the world works." This chapter first provides a formal definition, then expands along two threads: the technical lineage and engineering deployment.</p>
+<h3 id="2011-definition-and-pomdp-formalization">20.1.1 Definition and POMDP Formalization</h3>
+<p>A <strong>World Model</strong> is a learned predictive model of "given the current state and action, how will the environment evolve?" Within the framework of a Partially Observable Markov Decision Process (POMDP), the environment is characterized by state transitions <span class="arithmatex">\(p(s_{t+1} \mid s_t, a_t)\)</span>, observations <span class="arithmatex">\(p(o_t \mid s_t)\)</span>, and rewards <span class="arithmatex">\(p(r_t \mid s_t, a_t)\)</span>, while the agent can only see observations <span class="arithmatex">\(o_t\)</span>. The world model learns a joint approximation of these three (or their latent space counterparts):</p>
+<div class="arithmatex">\[
+\hat{p}_\theta\big(\hat{s}_{t+1}, r_t \mid \hat{s}_t, a_t\big), \qquad \hat{s}_t = f_\theta(o_{\le t}, a_{&lt;t})
+\]</div>
+<p>where <span class="arithmatex">\(\hat{s}_t\)</span> is the belief state compressed from historical observations and actions. Once such a model is available, the agent can <strong>"imagine" the consequences of action sequences without interacting with the real environment</strong>. This is the computational counterpart of human "look before you leap," and it is the technical essence of "physical AI thinks before it acts" emphasized by NVIDIA when introducing Cosmos 3.</p>
+<p>It is necessary to distinguish the relationship between world models and the VLA from Chapter 19. VLA learns <span class="arithmatex">\(p(a \mid o, \ell)\)</span>—"see something, do something"; world models learn <span class="arithmatex">\(p(o' \mid o, a)\)</span>—"do something, what happens." The former is a policy, the latter is a model; mathematically, they are conditional distributions in opposite directions. Classical optimal control theory has long pointed out that possessing both a model and a value function enables powerful planning capabilities; the advantage of pure policy methods lies in fast inference without the need for online search. The technical route competition and convergence between this chapter and Chapter 19 is essentially a new form of this classic opposition in the era of large models.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: World Model, POMDP, Belief State, Action-Conditioned Prediction, Neural Simulator</p>
+<ul>
+<li><strong>World Model</strong>: A differentiable model that learns environment dynamics (transitions, observations, rewards), usable for imagination-based reasoning, planning, and data generation.</li>
+<li><strong>POMDP (Partially Observable Markov Decision Process)</strong>: A sequential decision-making framework where the agent cannot directly observe the complete state but only receives noisy observations.</li>
+<li><strong>Belief State</strong>: A compressed representation of the history of observations and actions, serving as a proxy for the true state.</li>
+<li><strong>Action-Conditioned Prediction</strong>: A form of prediction that generates future observations (or latent states) conditioned on a sequence of candidate actions; a learned version of model predictive control.</li>
+<li><strong>Neural Simulator</strong>: A simulation system that uses generative models to replace or supplement traditional physics engines, such as scene rollouts based on video diffusion.</li>
+</ul>
+</div>
+<h3 id="2012-lineage-from-dreamer-to-generative-world-simulators">20.1.2 Lineage: From Dreamer to Generative World Simulators</h3>
+<p>The research lineage of learned world models can be divided into four generations. The first generation is represented by <strong>Ha &amp; Schmidhuber (2018)'s World Models</strong>: using a VAE to compress observations, an RNN to predict latent states, and training a simple controller in a "dream" environment, demonstrating the feasibility of imagination-based reasoning. The second generation is the <strong>PlaNet and Dreamer series (DeepMind)</strong>: proposing the <strong>Recurrent State-Space Model (RSSM)</strong>, combining deterministic and stochastic state components, training via the variational evidence lower bound (ELBO), and performing policy gradients (Dreamer) or online planning (PlaNet) directly in the imagined latent space trajectory, achieving sample efficiency comparable to or exceeding model-free methods on Atari and continuous control benchmarks. The third generation is <strong>generative world models based on large-scale video pre-training</strong>: marked by Sora's demonstration of long-term consistent video generation, the community began to believe that video generation models implicitly contain transferable physical intuition; DeepMind's Genie series further transformed video generation into <strong>action-interactive</strong> world models. The fourth generation is the current stage—<strong>specialized world models for robotics and physical AI</strong>: NVIDIA Cosmos, Genie Envisioner, UWM, etc., treat action conditioning, multi-view consistency, and policy interfaces as first-class citizens; driving world models like GAIA-1 (Wayve) in the autonomous driving domain also provide parallel references.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["World Models&lt;br/&gt;2018&lt;br/&gt;VAE+RNN Dream Training"] --&gt; B["PlaNet / Dreamer&lt;br/&gt;2019-2023&lt;br/&gt;RSSM Latent Space Imagination"]
+    B --&gt; C["Sora / Genie&lt;br/&gt;2024&lt;br/&gt;Video Generative World Simulator"]
+    C --&gt; D["Cosmos / Genie Envisioner / UWM&lt;br/&gt;2025-&lt;br/&gt;Robot Action-Conditioned World Model"]
+    D --&gt; E["VLA + World Model Coupling&lt;br/&gt;WMPO / DREAMSTEER / DynaWM"]</code></pre>
+<p>The RSSM from the Dreamer family deserves a bit more elaboration, as it is the key to understanding the "latent space imagination" approach. RSSM decomposes the belief state into a deterministic component <span class="arithmatex">\(h_t\)</span> (propagated by GRU, carrying memory) and a stochastic component <span class="arithmatex">\(z_t\)</span> (carrying multi-modal uncertainty). The training objective is to reconstruct the observation while constraining the divergence between the posterior and prior, i.e., the variational evidence lower bound:</p>
+<div class="arithmatex">\[
+\mathcal{L}_{\mathrm{ELBO}} = \mathbb{E}_{q}\!\Big[\sum_{t} \underbrace{\log p(o_t \mid h_t, z_t)}_{\text{Reconstruction}} + \underbrace{\log p(r_t \mid h_t, z_t)}_{\text{Reward}} - \underbrace{\mathrm{KL}\big[q(z_t \mid h_t, o_t) \,\|\, p(z_t \mid h_t)\big]}_{\text{Posterior-Prior Regularization}}\Big]
+\]</div>
+<p>After training, the policy can be updated using actor-critic entirely within the imagined rollout of <span class="arithmatex">\(p(z_t \mid h_t)\)</span>, exchanging one real-world interaction for multiple steps of virtual experience—this is the source of Dreamer's sample efficiency. Contemporary video world models transfer this same idea from low-dimensional states to pixel space, at the cost of a several-order-of-magnitude increase in the computational cost of each "imagination" step, which determines their current primary use for data and evaluation rather than real-time planning.</p>
+<h3 id="2013-four-major-uses-of-world-models-in-robotics">20.1.3 Four Major Uses of World Models in Robotics</h3>
+<p>World models are not a single-purpose component; they play at least four roles in the humanoid robot technology stack:</p>
+<ol>
+<li><strong>Imagination-Based Reasoning and Planning</strong>: Performing forward rollouts for candidate action sequences, scoring them with learned value or reward functions, enabling online planning or offline policy evaluation;</li>
+<li><strong>Policy Training Environment</strong>: Training policies within the world model (e.g., Dreamer series, WMPO), avoiding costly real-world trial and error, alleviating the data bottleneck for VLA post-training;</li>
+<li><strong>Synthetic Data Engine</strong>: Action-conditioned video generation can "augment" a small amount of real data into diverse trajectories (new viewpoints, new disturbances, counterfactual branches), feeding back into VLA pre-training—this is one source of synthetic data in the GR00T N1 data recipe;</li>
+<li><strong>Sim-to-Real Bridge</strong>: Using neural rendering/video generation to "translate" simulation images into a realistic style, or conversely, mapping real observations to the policy training domain (e.g., Mask2Real-WM uses segmentation masks as a sim-to-real bridge).</li>
+</ol>
+<p>The accuracy requirements for the world model differ across these four uses, and this difference determines the deployment order: synthetic data can tolerate some physical errors (diversity itself is valuable), while imagination-based planning is most sensitive to errors (errors directly translate into decision errors). Therefore, the common deployment order in industry is "data engine first, online planning last," a point that will be revisited in Section 20.5.2.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    WM["World Model&lt;br/&gt;p(future | current observation, action)"]
+    WM --&gt; P1["Imagination-Based Reasoning&lt;br/&gt;Online Planning / Candidate Action Scoring"]
+    WM --&gt; P2["Policy Training&lt;br/&gt;RL in Dreams / Post-Training VLA"]
+    WM --&gt; P3["Synthetic Data&lt;br/&gt;Counterfactual Augmentation / Long-Tail Scenarios"]
+    WM --&gt; P4["Domain Bridging&lt;br/&gt;sim-to-real / real-to-sim"]
+    P1 --&gt; POL["Policy / VLA"]
+    P2 --&gt; POL
+    P3 --&gt; DATA["Training Dataset"]
+    DATA --&gt; POL</code></pre>
+<h3 id="2014-cognitive-roots-mental-simulation-and-look-before-you-leap">20.1.4 Cognitive Roots: Mental Simulation and "Look Before You Leap"</h3>
+<p>The idea of world models is not a product of the deep learning era. The <strong>mental simulation</strong> theory in cognitive science posits that humans "rehearse" the consequences of actions in their minds before executing them—estimating weight before lifting a heavy object, predicting the landing point before crossing a ditch. The <strong>internal model</strong> hypothesis in cybernetics suggests that the cerebellum contains forward models of the body and environment, used to predict sensory consequences and counteract feedback delays. Robotic world models are the engineering implementation of these two ideas: replacing biological neural circuits with differentiable models, and replacing mental rehearsal with imagination-based rollouts.</p>
+<p>This lineage offers two insights for engineering practice. First, <strong>forward prediction is an inevitable choice for biological intelligence under feedback delay constraints</strong> — biological conduction delays reach the order of hundreds of milliseconds, on par with the onboard inference delays of humanoid robots, suggesting that a "prediction-correction" architecture is equally unavoidable in robotics. Second, <strong>internal models and controllers develop synergistically</strong>: in human infants, motor precision and physical expectations mature in tandem. This echoes the cross-disciplinary trend seen in Section 20.3.3, where policies and world models are jointly trained, serving as mutual supervisors.</p>
+<h2 id="202-video-generative-world-models">20.2 Video Generative World Models</h2>
+<h3 id="2021-from-video-diffusion-to-action-conditioned-prediction">20.2.1 From Video Diffusion to Action-Conditioned Prediction</h3>
+<p>The backbone of modern video world models is typically the <strong>Diffusion Transformer (DiT)</strong>: videos are divided into spacetime patches, compressed into a latent space, and denoised via diffusion in that latent space. The key modification to turn a video generator into a "world model" is the introduction of <strong>action conditioning</strong>—encoding robot actions (joint sequences, end-effector poses, or semantic action labels) as conditioning tokens, enabling the model to generate "what the camera will see if that action is executed":</p>
+<div class="arithmatex">\[
+\hat{o}_{t+1:t+K} \sim p_\theta\big(o_{t+1:t+K} \mid o_{\le t}, a_{t:t+K}\big)
+\]</div>
+<p>The difficulties of this formulation include: (1) <strong>Long-term consistency</strong>—errors accumulate with rollout steps, and object deformation or contact events are often "smoothed out"; (2) <strong>Physical correctness</strong>—generative models excel at "looking plausible" but may not satisfy contact mechanics and conservation laws; (3) <strong>Causal confusion</strong>—if training data contains correlation biases between actions and scene changes, the model may learn spurious causal relationships. Engineering mitigation strategies include chunked autoregressive generation, history conditioning, geometric/depth auxiliary supervision, and hybrid approaches with traditional physics engines (see 20.5.1).</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Diffusion Transformer, Spacetime Patch, Action Conditioning, Chunked Autoregression, History Conditioning</p>
+<ul>
+<li><strong>Diffusion Transformer (DiT)</strong>: A diffusion model architecture using a Transformer as the denoising backbone, the mainstream backbone for contemporary video generation models.</li>
+<li><strong>Spacetime patch</strong>: A processing method that simultaneously divides a video into small blocks in both time and space, flattening them into tokens, allowing Transformers to directly process video.</li>
+<li><strong>Action conditioning</strong>: Encoding action sequences as conditioning signals injected into the generation process, so the output video reflects the consequences of that action.</li>
+<li><strong>Chunked autoregression</strong>: Generating a short video segment at a time and conditioning on previously generated segments to continue, balancing long-term consistency and error accumulation.</li>
+<li><strong>History conditioning</strong>: Predicting the future conditioned on multiple historical observations to alleviate state ambiguity from single-frame conditioning.</li>
+</ul>
+</div>
+<h3 id="2022-nvidia-cosmos-and-the-physical-ai-data-flywheel">20.2.2 NVIDIA Cosmos and the Physical AI Data Flywheel</h3>
+<p><strong>NVIDIA Cosmos</strong> is the current industry benchmark for physical AI world models. According to NVIDIA's positioning of Cosmos 3, it is a set of <strong>open world foundation models</strong> that combine visual reasoning, multimodal generation, and action prediction, enabling robots, autonomous vehicles, and visual AI agents to "think" before acting. Its product forms include: world models for video generation and prediction, transfer models for "realifying" synthetic data, and open-weight models and toolchains for downstream fine-tuning. Cosmos's strategic significance lies in its closed loop with NVIDIA's existing stack: <strong>Omniverse/Isaac Sim</strong> handles physically accurate simulation, <strong>Cosmos</strong> handles low-cost, diverse neural generation, and <strong>GR00T</strong> handles policy consumption—together forming a physical AI data flywheel of "generate data → train policy → evaluate and feedback". The theme "from simulation to production," repeatedly emphasized by NVIDIA in GTC and ICRA reports, is technically underpinned by this combination. Industry impact is already visible: for example, the Open-H-Embodiment project builds foundation models for medical robots and a surgical simulator (Cosmos-H-Surgical-Simulator) based on GR00T and Cosmos, indicating the stack's spillover beyond humanoid robots.</p>
+<p>From an engineering perspective, Cosmos-like products offer three capabilities directly integrable into development workflows:</p>
+<ul>
+<li><strong>Text-to-scene</strong>: Generating training scene videos from text descriptions, quickly covering long-tail scenarios (extreme lighting, unusual object arrangements) at a fraction of the cost of physical set construction;</li>
+<li><strong>Sim-to-real transfer</strong>: "Translating" physically correct but visually unrealistic renders from Isaac Sim into realistic styles, bridging the visual domain gap of sim-to-real;</li>
+<li><strong>Prediction</strong>: Generating future segments given current observations and candidate actions for policy evaluation or human review.</li>
+</ul>
+<p>These three capabilities correspond precisely to the data engine, domain bridging, and imagination-based reasoning among the four major uses in Section 20.1.3, also demonstrating that industry and academia share a consistent assessment of world model value.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Omniverse / Isaac Sim&lt;br/&gt;Physical Simulation"] --&gt; D["Synthetic &amp; Real Mixed Data"]
+    B["Cosmos World Model&lt;br/&gt;Neural Generation / Counterfactual Augmentation"] --&gt; D
+    C["Real Robot Data&lt;br/&gt;Teleoperation / Fleet Feedback"] --&gt; D
+    D --&gt; E["GR00T / VLA Training"]
+    E --&gt; F["Real-World Deployment"]
+    F --&gt; C
+    F --&gt;|Failure Case Feedback| B</code></pre>
+<h3 id="2023-world-models-for-robot-manipulation-genie-envisioner-uwm-worldvla">20.2.3 World Models for Robot Manipulation: Genie Envisioner, UWM, WorldVLA</h3>
+<p>Academic progress is also rapid. <strong>Genie Envisioner</strong> (Zhiyuan Genie Team) encodes instructions, multi-view observations, and proprioceptive states into multimodal representations, performs action-conditioned video prediction via diffusion/flow matching, building a unified world foundation platform for robot manipulation, providing policy evaluation and data generation interfaces. <strong>UWM (Unified World Models)</strong> (University of Washington, Toyota Research Institute, etc.) couples video diffusion and action diffusion within the same framework: the same model can both predict video given actions (world model) and generate actions given goals (policy), enabling joint pre-training on large-scale video without action labels and robot data with action labels—this "dual identity" directly dissolves the boundary between world models and policies. <strong>WorldVLA</strong> extends autoregressive VLA into an "action world model": alternatingly predicting actions and next-frame observations within a unified token sequence, allowing action generation and future prediction to supervise each other; experiments show that future prediction tasks in turn improve action accuracy. These works collectively point to a judgment: <strong>predicting the future and selecting actions are two sides of the same coin</strong>.</p>
+<p>The appeal of a unified architecture can be understood from a data perspective: internet videos without action labels are nearly infinite, while robot data with action labels is scarce and expensive. If a model is required to simultaneously learn "how videos evolve" and "how actions cause evolution," then massive video data can serve as training signals for the world model, indirectly improving action decisions—effectively turning the world's surveillance videos into "physics textbooks" for robots. This approach is consistent with the use of human videos in Section 19.4.4, differing only in that the supervision signal shifts from latent actions to explicit future prediction.</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Institution</th>
+<th>Generation Backbone</th>
+<th>Conditioning Interface</th>
+<th>Primary Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cosmos</td>
+<td>NVIDIA</td>
+<td>Video Diffusion (DiT)</td>
+<td>Text/Video/Action</td>
+<td>Physical AI Data Generation &amp; Prediction</td>
+</tr>
+<tr>
+<td>Genie Envisioner</td>
+<td>Zhiyuan Genie Team</td>
+<td>Diffusion/Flow Matching</td>
+<td>Instruction + Multi-view + Proprioception</td>
+<td>Manipulation World Model &amp; Policy Evaluation</td>
+</tr>
+<tr>
+<td>UWM</td>
+<td>University of Washington, TRI, etc.</td>
+<td>Video + Action Dual Diffusion</td>
+<td>Action ↔ Video Mutual Conditioning</td>
+<td>Unified World Model &amp; Policy Pre-training</td>
+</tr>
+<tr>
+<td>WorldVLA</td>
+<td>University Consortium</td>
+<td>Autoregressive Token</td>
+<td>Alternating Action &amp; Frame Prediction</td>
+<td>Action World Model</td>
+</tr>
+<tr>
+<td>GAIA-1</td>
+<td>Wayve</td>
+<td>Autoregressive Video Generation</td>
+<td>Driving Action/Text</td>
+<td>Autonomous Driving Scenario Reasoning</td>
+</tr>
+<tr>
+<td>Genie Sim 3.0</td>
+<td>Zhiyuan</td>
+<td>High-Fidelity Simulation + Generation</td>
+<td>Humanoid Robot Tasks</td>
+<td>Comprehensive Humanoid Robot Simulation Platform</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2024-evaluating-world-models-how-to-measure-how-well-it-thinks">20.2.4 Evaluating World Models: How to Measure "How Well It Thinks"</h3>
+<p>Evaluating world models is more difficult than evaluating generative models, because "good-looking frames" do not equal "physical correctness." The current community uses three categories of metrics, which complement each other:</p>
+<ul>
+<li><strong>Generation Quality Metrics</strong>: FVD (Fréchet Video Distance), etc., measure the distribution distance between generated and real videos. They are common metrics in video generation but are insensitive to physical errors—a video with object interpenetration can still appear "very realistic";</li>
+<li><strong>Physical Consistency Metrics</strong>: Using pre-trained detectors/depth estimators to check whether generated results satisfy occlusion relationships, rigid body constraints, contact events (e.g., "the object moves only after the hand contacts it"), and counting/identity consistency (objects do not appear/disappear without cause);</li>
+<li><strong>Downstream Utility Metrics</strong>: The most convincing category—training policies with data generated by the world model, or planning within the world model, directly measuring the improvement in real task success rates. The 1X World Model Challenge and Genie Envisioner's evaluation protocols both emphasize this "utility as ground truth" standard.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Metric Category</th>
+<th>Representative Metric/Method</th>
+<th>Advantages</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generation Quality</td>
+<td>FVD, Per-frame PSNR/SSIM</td>
+<td>Automated, scalable</td>
+<td>Weakly correlated with physical correctness</td>
+</tr>
+<tr>
+<td>Physical Consistency</td>
+<td>Contact Event Detection, Depth Consistency, Identity Tracking</td>
+<td>Directly corresponds to usability</td>
+<td>Depends on detector accuracy</td>
+</tr>
+<tr>
+<td>Downstream Utility</td>
+<td>Policy Training Gain, Planning Success Rate</td>
+<td>Aligned with final goal</td>
+<td>Computationally expensive, influenced by policy</td>
+</tr>
+</tbody>
+</table>
+<p>For engineering selection, a pragmatic recommendation is: <strong>use generation quality metrics for coarse screening, then use small-scale downstream experiments for final decisions</strong>. Do not conclude based solely on demo videos—world model demo videos are the most "survivorship-biased" material in the entire embodied AI field. Two other details in evaluation protocol design are equally important: first, test scenarios must be strictly deduplicated from training scenarios (the "memory" capability of video models can inflate performance on leaked test sets); second, uncertainty estimates should be reported alongside metrics—a single high-scoring run has almost no statistical significance in generative model evaluation.</p>
+<h2 id="203-world-models-for-humanoid-robots">20.3 World Models for Humanoid Robots</h2>
+<h3 id="2031-the-specifics-of-humanoid-scenarios-and-representative-works">20.3.1 The Specifics of Humanoid Scenarios and Representative Works</h3>
+<p>Before delving into technical details, it is crucial to define the problem boundary of this section: We are not discussing "whether humanoid robots need world models"—bipedal balance itself has long relied on the dynamic models from Chapters 14 and 15—but rather "what a semantic-level world model for humanoid robots looks like," i.e., the ability to predict objects, scenes, and task consequences. This distinction is important: the former involves millisecond-level mechanical calculations, while the latter involves second-to-minute-level scenario reasoning, with completely different model forms and data sources.</p>
+<p>Humanoid robots introduce three specific challenges for world models: <strong>High and swaying viewpoint</strong> (non-stationarity of first-person observation), <strong>rich whole-body contact</strong> (hand-object, foot-ground, body-environment contacts coexisting), and <strong>data scarcity</strong> (real robot trajectories are far less abundant than those for robotic arms). To address these challenges, a series of specialized works have emerged since 2025: <strong>Humanoid World Models</strong> proposes an open-world foundation model for humanoid robots, covering dynamic predictions for locomotion and manipulation; the <strong>1X World Model Challenge</strong> (with its technical report "Generative World Modelling for Humanoids") promotes generative world modeling for humanoids through a competition format, providing real home scene data and unified evaluation; <strong>Genie Sim 3.0</strong> offers a high-fidelity comprehensive simulation platform for humanoid robots, combining simulation environments with generative methods to support data production and policy evaluation for manipulation and locomotion tasks. A common orientation of these works is that world models for humanoid robots must <strong>explicitly handle the observation dynamics introduced by locomotion</strong>, rather than simply adopting the modeling paradigm of fixed-base robotic arms.</p>
+<p>The impact of locomotion on observation modeling deserves separate emphasis. The camera on a fixed robotic arm is stationary, the background is nearly constant, and the model only needs to learn the local dynamics of "hand and object." In contrast, the head-mounted camera of a humanoid robot undergoes periodic oscillations with each step, and the gait phase is coupled with manipulation timing (precise insertion is difficult during the swing phase). A pragmatic approach is to input <strong>gait phase and proprioception</strong> as additional conditions to the world model, making predictions contingent on "which phase of the gait I am currently in." Another approach is to actively align manipulation tasks with the stance phase, using a planner rather than the model itself to avoid the most dynamically intense time windows. This "locomotion-manipulation coupling" problem has almost no counterpart in fixed-base literature and represents an original challenge for humanoid world models.</p>
+<h3 id="2032-the-representation-debate-pixels-latent-space-point-clouds-and-tactile">20.3.2 The Representation Debate: Pixels, Latent Space, Point Clouds, and Tactile</h3>
+<p>The performance ceiling of a world model is largely determined by the state representation. Currently, four parallel approaches exist:</p>
+<ul>
+<li><strong>Pixel Space</strong>: Directly predicts video frames. Information-preserving and compatible with generative model ecosystems, but computationally expensive and prone to capacity dilution by texture details; Cosmos, Genie Envisioner fall into this category.</li>
+<li><strong>Latent Space</strong>: Predicts dynamics on compressed representations (Dreamer series RSSM, DREAMSTEER's latent world model). Fast inference and efficient planning, but compression may lose fine-grained geometry critical for manipulation.</li>
+<li><strong>3D Geometric Space</strong>: Works like <strong>3D Point World Models</strong> show that learning dynamics on point clouds (supplemented with point completion) yields more accurate contact-level dynamics than pixels, especially important for manipulation tasks; the cost is a more complex point cloud acquisition and processing pipeline.</li>
+<li><strong>Tactile and Multimodal Space</strong>: <strong>TACO</strong> proposes a tactile world model, using tactile predictions as a self-correction signal for VLA post-training, suggesting that "world models" should model not only visual consequences but also contact mechanics consequences.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Pixel-space model, Latent-space model, Point-cloud dynamics, Tactile world model, Rollout divergence</p>
+<ul>
+<li><strong>Pixel-space model</strong>: A world model that directly generates future image/video frames, offering high fidelity but high computational cost.</li>
+<li><strong>Latent-space model</strong>: A world model that predicts dynamics on latent variables compressed by an encoder, such as RSSM, suitable for fast multi-step imagination.</li>
+<li><strong>Point-cloud dynamics</strong>: Uses 3D point clouds as the state and predicts their evolution with actions, offering high geometric accuracy.</li>
+<li><strong>Tactile world model</strong>: Predicts the evolution of tactile signals caused by actions, used for evaluation and correction in contact-rich tasks.</li>
+<li><strong>Rollout divergence (compounding error)</strong>: The gradual amplification of errors in multi-step autoregressive prediction, causing long-term imagination to become distorted.</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>Representation Route</th>
+<th>Representative Work</th>
+<th>Single Prediction Cost</th>
+<th>Geometric/Contact Accuracy</th>
+<th>Planning Suitability</th>
+<th>Main Shortcoming</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pixel Space</td>
+<td>Cosmos, Genie Envisioner</td>
+<td>High</td>
+<td>Medium</td>
+<td>Weak (needs extra encoding)</td>
+<td>Expensive, prone to texture focus</td>
+</tr>
+<tr>
+<td>Latent Space</td>
+<td>RSSM/Dreamer, DREAMSTEER</td>
+<td>Low</td>
+<td>Low-Medium</td>
+<td>Strong</td>
+<td>Compression loses detail</td>
+</tr>
+<tr>
+<td>3D Geometry</td>
+<td>3D Point World Models</td>
+<td>Medium</td>
+<td>High</td>
+<td>Medium-Strong</td>
+<td>Complex sensing and pipeline</td>
+</tr>
+<tr>
+<td>Tactile/Multimodal</td>
+<td>TACO</td>
+<td>Medium</td>
+<td>High (contact)</td>
+<td>Medium</td>
+<td>Scarce tactile data</td>
+</tr>
+</tbody>
+</table>
+<p>The engineering criterion for representation selection can be summarized in one sentence: <strong>Use latent space for the planning loop, pixel space for the data engine, and supplement with 3D/tactile for contact tasks.</strong> It is not uncommon for a system to use multiple representations simultaneously—for example, using a pixel model for data generation and a latent model for online reasoning, maintaining semantic consistency through a shared encoder or multi-task training.</p>
+<h3 id="2033-coupling-world-models-with-vlas">20.3.3 Coupling World Models with VLAs</h3>
+<p>The frontier trend from 2025–2026 is to combine the VLAs from Chapter 19 with the world models from this chapter, forming a closed loop of "policy proposal—model evaluation—feedback correction." Representative works include:</p>
+<ul>
+<li><strong>WMPO (World Model-based Policy Optimization)</strong>: Performs imagination-based policy optimization of VLA policies within a world model, improving policy performance offline and avoiding the sample cost of real-world reinforcement learning.</li>
+<li><strong>DREAMSTEER</strong>: Uses a latent world model to score and steer candidate actions of a VLA policy during deployment, reducing failures without any fine-tuning.</li>
+<li><strong>DynaWM</strong>: Uses a foundation VLA-guided world model for manipulating moving objects, injecting VLA semantic priors into dynamic prediction.</li>
+<li><strong>WAM4D</strong>: Proposes a 4D world action model, unifying spatiotemporal representation with spatial register tokens, compressing the world model and action model into a fast network.</li>
+<li><strong>Ego-Vision World Model</strong>: Uses a first-person world model to support contact planning for humanoid robots, linking the prediction of "seeing" with "touching."</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    O["Observation + Instruction"] --&gt; VLA["VLA Policy&lt;br/&gt;Proposes Candidate Action Chunks"]
+    VLA --&gt; C1["Candidate 1"] 
+    VLA --&gt; C2["Candidate 2"]
+    VLA --&gt; C3["Candidate 3"]
+    C1 --&gt; WM["World Model&lt;br/&gt;Imagines Consequences of Each"]
+    C2 --&gt; WM
+    C3 --&gt; WM
+    WM --&gt; S["Value / Success Score"]
+    S --&gt; EX["Execute Best Candidate"]
+    EX --&gt; FB["Real Consequence Feedback&lt;br/&gt;Online Correction / Post-training"]</code></pre>
+<p>The deep motivation behind this coupling architecture is to <strong>make slow thinking explicit</strong>: rather than having a single network implicitly weigh action consequences, it explicitly "imagines—compares—then acts." The cost is a multiplied inference budget (one multi-step rollout per candidate), so it is currently used mainly for semantic loops or failure recovery loops, rather than low-level control loops.</p>
+<h3 id="2034-humanoid-data-scarcity-and-the-breakthrough-role-of-world-models">20.3.4 Humanoid Data Scarcity and the Breakthrough Role of World Models</h3>
+<p>Returning to the most realistic constraint for humanoid robots—data. The teleoperation collection efficiency for a whole humanoid robot is far lower than for a fixed robotic arm (due to the difficulty of whole-body mapping, expensive equipment, and high site requirements), yet VLAs have an appetite for data starting in the tens of millions of episodes. World models offer three breakthrough paths here:</p>
+<ol>
+<li><strong>Counterfactual Augmentation</strong>: Starting from the same real trajectory, generate branching results like "if the grasp angle were 10 degrees off" or "if the lighting were dimmer," turning one piece of real data into multiple training signals.</li>
+<li><strong>Failure Trajectory Synthesis</strong>: In real data collection, people tend to keep only successful demonstrations, while failures and recoveries are crucial supervision for policy robustness—world models can safely "manufacture failures."</li>
+<li><strong>Cross-Embodiment Transfer</strong>: "Translate" manipulation dynamics accumulated on robotic arms into the humanoid perspective and action space, reducing the data cold-start cost for new robot models.</li>
+</ol>
+<p>The common prerequisite for these three paths is that the generative model's depiction of <strong>contact events</strong> is sufficiently credible, which is precisely the weakest point of current pixel-space models (see 20.5.3). Therefore, a more reliable combination in the short term is "world models handle semantic and visual diversity, physics engines handle contact correctness," converging in the simulation infrastructure discussed in Chapter 23.</p>
+<p>An often-overlooked organizational issue is the <strong>quality control pipeline for generated data</strong>: before synthetic segments enter the training set, they should undergo filtering of the same level as real data (physical feasibility checks, task relevance annotation, failure type classification). Otherwise, the systematic biases of the world model will be silently inherited by the policy. In other words, world models do not eliminate data engineering; they shift it from the "collection side" to the "generation and quality control side"—a topic that Chapter 21 will explore.</p>
+<h2 id="204-long-term-reasoning-and-planning">20.4 Long-Term Reasoning and Planning</h2>
+<h3 id="2041-task-planning-and-symbolic-methods">20.4.1 Task Planning and Symbolic Methods</h3>
+<p><strong>Task Planning</strong> studies how to generate sequences of actions to achieve high-level goals. Classical methods use formal languages like <strong>PDDL (Planning Domain Definition Language)</strong> to describe action preconditions and effects, solving problems via search (A<em>, SAT encoding, planning graphs). Their advantages are </em><em>verifiable correctness and natural handling of long-range dependencies</em>*—a ten-step dependency like "first open the door, then pick up the object, then place it on the table" is trivial for a symbolic planner. The disadvantages are that domain models must be manually authored, and the symbol grounding gap between symbols and continuous perception/control persists. Real-world scenarios for humanoid robots (homes, factories) make it difficult to exhaustively list preconditions, prompting the community to combine symbolic planning with learned models.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: PDDL, Preconditions and Effects, Grounding Problem, Affordance</p>
+<ul>
+<li><strong>PDDL (Planning Domain Definition Language)</strong>: A standard language for describing action preconditions and effects in a planning domain; the factual input format for classical AI planners.</li>
+<li><strong>Precondition / Effect</strong>: The logical conditions required for an action to be executable, and the changes to the world state after execution; the reasoning basis of symbolic planning.</li>
+<li><strong>Symbol Grounding Problem</strong>: The problem of how abstract symbols (e.g., "cup", "on the table") correspond to continuous perception and motor spaces; a core obstacle to deploying symbolic methods.</li>
+<li><strong>Affordance</strong>: The possibilities for action that an environment or object offers to a specific agent (e.g., "a chair can be sat on", "a handle can be pulled"); connects perception and action selection.</li>
+</ul>
+</div>
+<h3 id="2042-large-models-as-planners">20.4.2 Large Models as Planners</h3>
+<p>Large language models provide another source of long-term reasoning: internet corpora implicitly contain vast amounts of "procedural common sense" (e.g., add oil before cooking, sort items before tidying a desk). There are three main usage paradigms:</p>
+<ol>
+<li><strong>Zero-shot Task Decomposition</strong>: The LLM directly outputs a sequence of subgoals (e.g., SayCan multiplies the LLM's candidate skill scores with an affordance function to select the next step that is "both reasonable according to the model and feasible for the robot").</li>
+<li><strong>Chain-of-Thought (CoT) and Embodied Reasoning</strong>: Guiding the model to reason explicitly before making decisions. RT-2's chain-of-thought prompting and Alpamayo-R1's "reasoning-action prediction bridging" (for long-tail autonomous driving scenarios) both show that explicit reasoning traces improve generalization.</li>
+<li><strong>Code as Policies</strong>: Having the LLM generate executable code that calls perception and control APIs, compiling reasoning results into policy programs with loops, conditionals, and exception handling, offering both readability and precision.</li>
+</ol>
+<p>SayCan's selection formula is worth remembering as a minimalist expression of the idea "language probability × physical feasibility". Let the LLM's semantic score for a candidate skill <span class="arithmatex">\(s\)</span> be <span class="arithmatex">\(p_{\mathrm{LLM}}(s \mid \ell, \mathrm{context})\)</span>, and the value/affordance function give the probability of successfully completing that skill in the current state as <span class="arithmatex">\(V(s)\)</span>. The selection is:</p>
+<div class="arithmatex">\[
+s^{*} = \arg\max_{s} \; p_{\mathrm{LLM}}(s \mid \ell, \mathrm{context}) \cdot V(s)
+\]</div>
+<p>This multiplicative structure—"language says what to do, value says what can be done"—remains the basic skeleton of most large-model planning systems, though the implementation of <span class="arithmatex">\(V(s)\)</span> has expanded from learned value functions to world model rollouts (20.4.4) and direct VLM scoring.</p>
+<p>The counterpart on the VLM side is <strong>embodied reasoning models</strong> (e.g., Gemini Robotics-ER): they first perform identification, affordance judgment, and multi-step reasoning in the visual scene, then hand off to an action model for execution, decoupling "thinking clearly" from "acting accurately".</p>
+<p>It is important to recognize the inherent weaknesses of large-model planners. First, <strong>hallucination and common-sense gaps</strong>: LLMs may plan physically impossible steps (e.g., "put wet clothes directly into a drawer"), requiring affordance checks or world model verification as a safety net. Second, <strong>insensitivity to execution feedback</strong>: purely feedforward planning fails once the environment deviates from expectations; closed-loop replanning is essential. Third, <strong>latency and cost</strong>: each replanning step involves a large model call, and the rhythm of the semantic loop must match the task's time scale. A common engineering reinforcement pattern is "LLM proposes + verifier filters + retry on failure": the LLM handles divergence, while the verifier (symbolic checker, world model, or a second LLM) handles convergence.</p>
+<h3 id="2043-neuro-symbolic-hybrid-reasoning">20.4.3 Neuro-Symbolic Hybrid Reasoning</h3>
+<p><strong>Neuro-Symbolic Reasoning</strong> attempts to combine the strengths of both approaches: using neural networks for perceptual grounding and intuitive scoring, and symbolic systems for compositionality and verifiability. Typical patterns include: neural perception outputs predicate truth values (e.g., "cup is on the table" is true), and a symbolic planner searches over the predicate state; or using an LLM to automatically generate/complete PDDL domain files, which are then solved by a classical planner, compressing the uninterpretable reasoning into the "write the domain model" step while keeping the solution process rigorous. For humanoid robots, the neuro-symbolic route is particularly attractive in <strong>safety-critical and audit-required scenarios</strong> (e.g., healthcare, eldercare, hazardous operations), because its decision traces can be formally inspected.</p>
+<p>The trade-offs among the three planning paradigms—symbolic planning, large-model planning, and model-based search—can be summarized as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Symbolic Planning (PDDL)</th>
+<th>Large-Model Planning (LLM/CoT)</th>
+<th>Model-Based Search (MCTS, etc.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain Model Source</td>
+<td>Manually authored</td>
+<td>Implicit from pre-training</td>
+<td>Learned world model</td>
+</tr>
+<tr>
+<td>Long-Range Dependencies</td>
+<td>Strong</td>
+<td>Medium</td>
+<td>Depends on model accuracy</td>
+</tr>
+<tr>
+<td>Physical Grounding</td>
+<td>Requires manual bridging</td>
+<td>Weak-Medium</td>
+<td>Strong (model is the dynamics)</td>
+</tr>
+<tr>
+<td>Interpretability/Auditability</td>
+<td>Strong</td>
+<td>Medium (reasoning traces)</td>
+<td>Weak</td>
+</tr>
+<tr>
+<td>Online Latency</td>
+<td>Low-Medium</td>
+<td>High</td>
+<td>Medium-High</td>
+</tr>
+<tr>
+<td>Failure Recovery</td>
+<td>Rule-based replanning</td>
+<td>Re-prompting</td>
+<td>Re-rolling</td>
+</tr>
+</tbody>
+</table>
+<p>In practice, these three are often combined: LLMs handle open-ended semantics, symbolic checkers handle constraint filtering, and world models handle physical feasibility—the complete "propose-verify" pattern described at the end of 20.4.2.</p>
+<h3 id="2044-imaginative-rollouts-and-tree-search-with-world-models">20.4.4 Imaginative Rollouts and Tree Search with World Models</h3>
+<p>World models provide a "sandbox" for long-term reasoning. Given the current belief state, the agent can perform depth-<span class="arithmatex">\(K\)</span> rollouts of candidate plans in imagination, scoring them by cumulative discounted reward:</p>
+<div class="arithmatex">\[
+a_{t:t+K}^{*} = \arg\max_{a_{t:t+K}} \; \mathbb{E}_{\hat{p}_\theta}\Big[\sum_{k=0}^{K} \gamma^{k} \, \hat{r}_{t+k}\Big]
+\]</div>
+<p>Three classes of algorithms solve this optimization: <strong>Random Shooting / CEM</strong>—sample many action sequences and pick the best; simple and parallelizable, used by PlaNet. <strong>Gradient Methods</strong>—leverage the differentiability of the world model to directly compute gradients over the action sequence. <strong>Discrete Search and MCTS</strong>—perform tree search in a discretized action (or subgoal) space. AlphaZero demonstrated the power of "model + tree search + self-play", and its robotic variants are being revived as world models mature. The Dreamer family shows a third route: <strong>not planning online, but training an amortized policy in imagination</strong>, amortizing the planning cost into the training phase—WMPO can be seen as a contemporary implementation of this idea in VLAs.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Random Shooting, CEM, MCTS, Amortized Policy, Replanning</p>
+<ul>
+<li><strong>Random Shooting</strong>: A planning method that uniformly samples many candidate action sequences, evaluates them with a model, and picks the best; gradient-free but inefficient in high dimensions.</li>
+<li><strong>CEM (Cross-Entropy Method)</strong>: A stochastic optimization method that iteratively updates the sampling distribution based on high-scoring samples, gradually focusing on the optimal action sequence.</li>
+<li><strong>MCTS (Monte Carlo Tree Search)</strong>: A search algorithm that balances exploration and exploitation on a tree structure, estimating node values via simulated returns; a core component of AlphaZero.</li>
+<li><strong>Amortized Policy</strong>: A policy trained by repeatedly planning in imagination during the training phase and distilling the planning results into the policy network, eliminating the need for explicit search at inference time.</li>
+<li><strong>Replanning</strong>: Re-planning every few steps based on the latest observations, using a feedback loop to counteract model errors.</li>
+</ul>
+</div>
+<h3 id="2045-memory-reflection-and-contextualization">20.4.5 Memory, Reflection, and Contextualization</h3>
+<p>The final piece of long-term reasoning is <strong>cross-timescale memory</strong>. Short-term memory is handled by the Transformer context window, but minute-level tasks already exceed typical window sizes. Medium-term memory is often implemented via <strong>episodic buffers</strong> (keyframes, subgoal completion states, failure records). Long-term memory involves <strong>retrieval-augmented generation</strong> (RAG: retrieving similar situations from an experience library for decision reference) and <strong>parametric memory</strong> (distilling experience into weights). Works like <strong>In-Context World Modeling</strong> explore enabling models to infer environment dynamics on the fly from interaction history alone, without gradient updates, suggesting the possibility of "context as model". For humanoid robots, the memory system is also a carrier for personalized service: remembering the locations of items in a user's home, preferences, and prohibitions is the dividing line between a home robot that "can move" and one that "is useful".</p>
+<p>Accompanying memory is the <strong>reflection</strong> mechanism: after a task ends (or fails), the system replays the execution trajectory, attributes the cause of failure (perception error? planning error? execution deviation?), and writes the conclusion into the experience library for future retrieval. This kind of "post-mortem analysis" has been shown to significantly improve multi-turn task success rates in LLM agent research. Its robotic counterpart—automatically annotating failure segments and feeding them back into the training set or experience library—is the cognitive-layer version of the data flywheel described in 20.3.4.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    subgraph 高层["Cognitive Layer (Minutes-Hours)"]
+        L["LLM/VLM Planner&lt;br/&gt;Chain-of-Thought / Task Decomposition"]
+        M["Situational &amp; Retrieval Memory&lt;br/&gt;Experience Base / Failure Records"]
+        L &lt;--&gt; M
+    end
+    subgraph 中层["Deliberation Layer (Seconds-Tens of Seconds)"]
+        W["World Model&lt;br/&gt;Imagination Rollout / Candidate Scoring"]
+    end
+    subgraph 低层["Control Layer (Milliseconds-Hundreds of Milliseconds)"]
+        V["VLA / Motion Controller&lt;br/&gt;Action Primitive Execution"]
+    end
+    L --&gt;|Sub-goal| W
+    W --&gt;|Feasible Action Primitive| V
+    V --&gt;|Execution Result| W
+    W --&gt;|Success/Failure Signal| L</code></pre>
+<h3 id="2046-integration-essentials-for-hierarchical-reasoning-systems">20.4.6 Integration Essentials for Hierarchical Reasoning Systems</h3>
+<p>When assembling the components of this chapter into a functioning long-term reasoning system, there are four engineering points that are often overlooked but determine success or failure:</p>
+<ol>
+<li><strong>Timescale Matching</strong>: The cognitive layer (second-to-minute-level decisions) must tolerate jitter and timeouts from high-level components, and the control layer must perform timeliness checks on high-level outputs—a delayed "perfect plan" is more dangerous than a timely "suboptimal plan";</li>
+<li><strong>State Synchronization</strong>: The world states maintained by each of the three layers (symbolic predicates, belief states, joint states) must have a clear consistency protocol; otherwise, a split can occur where "the planner thinks the door is open, but the controller never executed the action";</li>
+<li><strong>Failure Reporting Semantics</strong>: Low-level failures need to be reported in a way understandable to the high-level layer ("failed to grasp" rather than "joint 3 torque exceeded limit"), otherwise the planner cannot perform meaningful recovery reasoning;</li>
+<li><strong>Degraded-Mode Strategy</strong>: When the world model or large model is unavailable (timeout, low confidence), the system should be able to degrade to a pure VLA reactive mode or safely stop, rather than hang.</li>
+</ol>
+<p>These four points are often omitted in demo systems, but in real deployments, they often mark the boundary between "functional" and "reliable," and are directly related to the middleware in Chapter 22 and the end-to-end software stack in Chapter 24.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Timescale Matching, State Synchronization, Degraded-Mode Strategy, Closed-Loop Replanning</p>
+<ul>
+<li><strong>Timescale Matching</strong>: An architectural principle that adapts the decision frequency of each layer's components to the physical time constants of the dynamics they control.</li>
+<li><strong>State Synchronization</strong>: Ensuring consistency in the perception of the world state among the planning, deliberation, and control layers, typically achieved through a shared fact base or explicit state messages.</li>
+<li><strong>Degraded-Mode Policy</strong>: A simpler but reliable backup behavior mode activated when advanced components fail; a fundamental means of functional safety design.</li>
+<li><strong>Closed-Loop Replanning</strong>: A mechanism to periodically refresh the plan with the latest observations to counteract model errors and environmental changes.</li>
+</ul>
+</div>
+<h2 id="205-engineering-deployment-from-simulation-to-reality">20.5 Engineering Deployment: From Simulation to Reality</h2>
+<p>The preceding sections provided a technical landscape of world models and long-term reasoning. This section shifts to a deployment perspective: the form these components take in real products, their computational cost, and the new risks they introduce. A general assessment is: <strong>Today, world models are primarily data center infrastructure, not real-time components on onboard chips</strong>—understanding this is crucial for having a sober expectation of their capability boundaries.</p>
+<h3 id="2051-integration-of-neural-simulation-and-physics-engines">20.5.1 Integration of Neural Simulation and Physics Engines</h3>
+<p>World models will not replace physics engines; instead, a division of labor is emerging: physics engines (MuJoCo, Isaac, etc., see Chapter 23) ensure <strong>correctness and differentiability of contact mechanics</strong>, while world models provide <strong>visual realism, scene diversity, and long-tail coverage</strong>. Integration methods include: using simulation to generate physically correct trajectories, then using video generation models to make the visuals realistic (the inverse of real-to-sim); using world models to generate initial scene states and perturbations, and physics engines to simulate contact details (e.g., the combination of high-fidelity simulation and generation in Genie Sim 3.0); and using world models for <strong>policy pre-screening</strong>—first eliminating clearly failing plans in imagination, then putting a few candidates into high-fidelity simulation or real-robot validation. <strong>Sim-to-Real transfer</strong> and <strong>domain randomization</strong> (Chapters 18, 23) remain necessary final steps here: the error distribution of neural simulators differs from physics engines, but both require systematic calibration and conservative use.</p>
+<p>The integration modes can be summarized into three progressive forms:</p>
+<ol>
+<li><strong>Parallel</strong>: Physics engines and world models each generate data, which is mixed during training (current mainstream, e.g., GR00T data recipe);</li>
+<li><strong>Serial</strong>: One side's output is enhanced by the other—simulation trajectories are made realistic, or generated initial states are handed to the physics engine for rollout;</li>
+<li><strong>Embedded</strong>: Neural models serve as differentiable sub-modules of the physics engine (e.g., learning contact models, material deformation), or the physics engine provides hard constraint projection for neural generation—this is a research frontier with low maturity.</li>
+</ol>
+<h3 id="2052-computational-budget-and-product-form">20.5.2 Computational Budget and Product Form</h3>
+<p>The computational cost of world models is an order of magnitude higher than VLA: a single multi-candidate, multi-step, pixel-level imagination rollout involves dozens of large model forward passes. Engineering responses include: <strong>hierarchical use</strong> (triggering the world model only at semantic decision points, keeping the control loop lightweight), <strong>latent space substitution for pixel space</strong> (DREAMSTEER-style approach), <strong>distillation and caching</strong> (distilling the world model into a smaller model for online scoring, or caching environment dynamics for static scenes). In terms of product form, world models currently create value more as <strong>offline data engines</strong> (Cosmos for GR00T data production) than as online components, a path consistent with how world models in autonomous driving were first used for simulation evaluation before entering the vehicle.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Offline Data Engine, Online Component, Distillation, Uncertainty Quantification</p>
+<ul>
+<li><strong>Offline Data Engine</strong>: A usage of world models that runs batch processes in data centers to produce training data; latency-insensitive and can use the largest models.</li>
+<li><strong>Online Component</strong>: A usage of world models deployed in the robot control loop, subject to real-time constraints; typically requires distillation or smaller models.</li>
+<li><strong>Distillation</strong>: Training a smaller model using the output of a larger model, trading a small performance loss for an order-of-magnitude inference speedup; step distillation for video diffusion (compressing tens of sampling steps into a few) is particularly critical.</li>
+<li><strong>Uncertainty Quantification</strong>: Techniques (ensembles, stochastic components, calibration) that allow a world model to output both predictions and confidence levels; a prerequisite for using imagination rollouts in safety-critical scenarios.</li>
+</ul>
+</div>
+<h3 id="2053-failure-modes-and-risks">20.5.3 Failure Modes and Risks</h3>
+<p>World models introduce a new class of systemic risks that must be explicitly managed in system design:</p>
+<table>
+<thead>
+<tr>
+<th>Failure Mode</th>
+<th>Manifestation</th>
+<th>Consequence</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical Hallucination</td>
+<td>Generating impossible deformations/penetrations/teleportation</td>
+<td>Plans based on imagination fail in real execution</td>
+<td>Physics engine verification, contact consistency supervision</td>
+</tr>
+<tr>
+<td>Rollout Divergence</td>
+<td>Long-term imagination gradually deviates from reality</td>
+<td>Long-horizon planning is misled</td>
+<td>Short window rolling + replanning, uncertainty estimation</td>
+</tr>
+<tr>
+<td>Causal Confusion</td>
+<td>Learning correlations instead of causation</td>
+<td>Counterfactual reasoning errors</td>
+<td>Action-conditioned training, interventional data</td>
+</tr>
+<tr>
+<td>Out-of-Distribution Overconfidence</td>
+<td>High-confidence predictions for unseen dynamics</td>
+<td>Catastrophic decisions</td>
+<td>Ensemble uncertainty, OOD detection, real-robot verification</td>
+</tr>
+<tr>
+<td>Evaluation Self-Deception</td>
+<td>Using a model to evaluate policies trained on the same data</td>
+<td>Inflated success rates</td>
+<td>Real-robot sampling validation, third-party benchmarks</td>
+</tr>
+</tbody>
+</table>
+<p>Particularly concerning is <strong>using a world model to evaluate policies trained on the same data</strong>: the blind spots of the model and the policy often overlap, systematically overestimating performance. Reliable evaluation still requires real robots and independent simulation as a safety net (Chapter 25).</p>
+<h3 id="2054-industry-observation-the-engineering-race-for-world-models">20.5.4 Industry Observation: The Engineering Race for World Models</h3>
+<p>From an industry dynamics perspective, world models are repeating the trajectory VLA followed a year ago: moving from paper demonstrations to engineering products. Several notable threads:</p>
+<ul>
+<li><strong>NVIDIA's Platformization</strong>: From the bundled showcase of Omniverse virtual worlds and physical AI at GTC, to the open-weight release of Cosmos 3, to the "Physical AI Agent Skills" tools for the research community (released around CVPR to accelerate development in autonomous driving, robotics, and visual AI), NVIDIA's strategy is to make world models an ecosystem infrastructure like CUDA;</li>
+<li><strong>In-House Development by Robotics Companies</strong>: 1X used a world model challenge to turn its home-scenario data into a community evaluation standard; Zhiyuan built a "data-simulation-model" loop around Genie Envisioner/Genie Sim; Figure and Tesla are widely believed to use neural simulation internally to aid policy iteration;</li>
+<li><strong>Cross-Pollination with Autonomous Driving</strong>: The "generative simulation evaluation" methodology validated by driving world models like GAIA-1 is being adopted by robotics, while robotics' contact-rich scenarios, in turn, impose stricter physical correctness requirements on driving world models;</li>
+<li><strong>Tooling by Startups</strong>: A number of startups are beginning to offer "World Model as a Service," packaging generation, evaluation, and data quality checks into APIs, lowering the barrier for small and medium-sized robotics teams.</li>
+</ul>
+<p>The short-term winner of this race may not be the team with the most aesthetically pleasing model, but the team that <strong>integrates the world model into the data flywheel and creates a positive cycle</strong>—this is directly related to the industry competition landscape discussed in Chapter 28.</p>
+<p>A practical suggestion for readers: when tracking progress in world models, watch less demo videos and pay more attention to three things—open weights and licensing (can it be commercially fine-tuned?), interfaces with physics engines (can contacts be verified?), and real downstream task performance gains. These three points are the touchstones for distinguishing "infrastructure" from "demo."</p>
+<h2 id="206-summary-and-outlook">20.6 Summary and Outlook</h2>
+<p>World models and long-term reasoning are key pieces of the puzzle for embodied intelligence to evolve from "reactive skills" to "deliberate behavior." The landscape of this chapter can be summarized as follows: world models are transitioning from the latent space imagination of the Dreamer series to world foundation models such as Cosmos, Genie Envisioner, and UWM, which are built on video generation, action-conditioned, and deeply coupled with VLA; long-term reasoning seeks a balance among symbolic planning, large model planners, neuro-symbolic hybrids, and model-based tree search, with memory mechanisms extending the reasoning time scale from seconds to hours.</p>
+<p>Looking ahead, noteworthy trends include:</p>
+<ol>
+<li><strong>Unified Architecture for Policy and Model</strong>: The route demonstrated by UWM and WorldVLA—"one model serves as both policy and world"—may dissolve the boundary between this chapter and Chapter 19;</li>
+<li><strong>Engineering for Physical Correctness</strong>: Contact consistency supervision, physics engine hybridization, and uncertainty quantification will transform world models from "video generators" into "trustworthy simulators";</li>
+<li><strong>Personalization of Online World Models</strong>: After deployment, robots continuously update their own world models (the direction indicated by In-Context World Modeling), enabling every home and every production line to have customized dynamic models;</li>
+<li><strong>Auditability of Reasoning</strong>: Neuro-symbolic and explicit reasoning traces will shift from academic options to product necessities due to compliance requirements (Chapters 12 and 29).</li>
+</ol>
+<p>For the industry, the most certain value of world models currently lies on the data side—they are the most powerful tool for overcoming the scarcity of real-world data for humanoid robots; for academia, the "unification of policy and world model" may be the architectural prototype leading to truly general embodied intelligence. In the long run, when a system simultaneously possesses the skill breadth of VLA (Chapter 19), the predictive capability of world models, and the long-range consistency of planners, humanoid robots can evolve from "tools that execute instructions" to "partners that understand tasks"—this will also lead to the systematic discussion of data infrastructure in Chapter 21.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-19/">← Previous<span>Chapter 19: Vision-Language-Action Models (VLA)</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-21/">Next →<span>Chapter 21: Data Infrastructure</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-20-world-models-and-long-horizon-reasoning">Chapter 20: World Models and Long-Horizon Reasoning</a><ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#201-world-models-definition-formalization-and-cognitive-roots">20.1 World Models: Definition, Formalization, and Cognitive Roots</a><ul>
+<li><a href="#2011-definition-and-pomdp-formalization">20.1.1 Definition and POMDP Formalization</a></li>
+<li><a href="#2012-lineage-from-dreamer-to-generative-world-simulators">20.1.2 Lineage: From Dreamer to Generative World Simulators</a></li>
+<li><a href="#2013-four-major-uses-of-world-models-in-robotics">20.1.3 Four Major Uses of World Models in Robotics</a></li>
+<li><a href="#2014-cognitive-roots-mental-simulation-and-look-before-you-leap">20.1.4 Cognitive Roots: Mental Simulation and "Look Before You Leap"</a></li>
+</ul>
+</li>
+<li><a href="#202-video-generative-world-models">20.2 Video Generative World Models</a><ul>
+<li><a href="#2021-from-video-diffusion-to-action-conditioned-prediction">20.2.1 From Video Diffusion to Action-Conditioned Prediction</a></li>
+<li><a href="#2022-nvidia-cosmos-and-the-physical-ai-data-flywheel">20.2.2 NVIDIA Cosmos and the Physical AI Data Flywheel</a></li>
+<li><a href="#2023-world-models-for-robot-manipulation-genie-envisioner-uwm-worldvla">20.2.3 World Models for Robot Manipulation: Genie Envisioner, UWM, WorldVLA</a></li>
+<li><a href="#2024-evaluating-world-models-how-to-measure-how-well-it-thinks">20.2.4 Evaluating World Models: How to Measure "How Well It Thinks"</a></li>
+</ul>
+</li>
+<li><a href="#203-world-models-for-humanoid-robots">20.3 World Models for Humanoid Robots</a><ul>
+<li><a href="#2031-the-specifics-of-humanoid-scenarios-and-representative-works">20.3.1 The Specifics of Humanoid Scenarios and Representative Works</a></li>
+<li><a href="#2032-the-representation-debate-pixels-latent-space-point-clouds-and-tactile">20.3.2 The Representation Debate: Pixels, Latent Space, Point Clouds, and Tactile</a></li>
+<li><a href="#2033-coupling-world-models-with-vlas">20.3.3 Coupling World Models with VLAs</a></li>
+<li><a href="#2034-humanoid-data-scarcity-and-the-breakthrough-role-of-world-models">20.3.4 Humanoid Data Scarcity and the Breakthrough Role of World Models</a></li>
+</ul>
+</li>
+<li><a href="#204-long-term-reasoning-and-planning">20.4 Long-Term Reasoning and Planning</a><ul>
+<li><a href="#2041-task-planning-and-symbolic-methods">20.4.1 Task Planning and Symbolic Methods</a></li>
+<li><a href="#2042-large-models-as-planners">20.4.2 Large Models as Planners</a></li>
+<li><a href="#2043-neuro-symbolic-hybrid-reasoning">20.4.3 Neuro-Symbolic Hybrid Reasoning</a></li>
+<li><a href="#2044-imaginative-rollouts-and-tree-search-with-world-models">20.4.4 Imaginative Rollouts and Tree Search with World Models</a></li>
+<li><a href="#2045-memory-reflection-and-contextualization">20.4.5 Memory, Reflection, and Contextualization</a></li>
+<li><a href="#2046-integration-essentials-for-hierarchical-reasoning-systems">20.4.6 Integration Essentials for Hierarchical Reasoning Systems</a></li>
+</ul>
+</li>
+<li><a href="#205-engineering-deployment-from-simulation-to-reality">20.5 Engineering Deployment: From Simulation to Reality</a><ul>
+<li><a href="#2051-integration-of-neural-simulation-and-physics-engines">20.5.1 Integration of Neural Simulation and Physics Engines</a></li>
+<li><a href="#2052-computational-budget-and-product-form">20.5.2 Computational Budget and Product Form</a></li>
+<li><a href="#2053-failure-modes-and-risks">20.5.3 Failure Modes and Risks</a></li>
+<li><a href="#2054-industry-observation-the-engineering-race-for-world-models">20.5.4 Industry Observation: The Engineering Race for World Models</a></li>
+</ul>
+</li>
+<li><a href="#206-summary-and-outlook">20.6 Summary and Outlook</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spatial Attention: Adapting Execution Horizons for Diffusion Policies via Observation Sensitivity · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Spatial Attention: Adapting Execution Horizons for Diffusion Policies via Observation Sensitivity</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Spatial Attention: Adapting Execution Horizons for Diffusion Policies via Observation Sensitivity</h1>
+      <p class="entry-name-en">Spatial Attention: Adapting Execution Horizons for Diffusion Policies via Observation Sensitivity</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 Spatial Attention（SA）准则，用于为扩散策略自适应调整动作块执行时域（execution horizon）。作者通过理论推导证明，在固定采样预算下，最优重采样率正比于 Spatial Attention 的 (2γ+1) 次根，并训练辅助分数网络与序列 Transformer 预测该指标。在 Robomimic 基准、扰动环境及真实机器人上，SA 一致提升成功率，同时维持平均执行时域。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.04739" target="_blank" rel="noopener">arXiv:2607.04739 Spatial Attention: Adapting Execution Horizons for Diffusion Policies via Observ</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>扩散策略的固定动作块长度是长期被忽视的隐性假设：策略一旦生成动作块，在块内对观测变化完全“失明”。现有工作要么固定块长，要么用启发式规则（如固定间隔）重规划，缺乏理论依据。本文真正改变的是将“何时重新规划”从工程调参问题转化为可优化的统计决策问题——通过最小化扰动下累积似然下降，给出闭式最优解，使重采样时机与观测敏感度严格挂钩。</p>
+<p>这一转变的深层意义在于：它把执行时域从超参数变为策略本身的函数。夹爪接近物体时，观测微小变化即导致动作分布显著偏移，此时缩短块长；远离物体时，观测变化不敏感，可延长块长以节省计算。这打破了“块长固定”与“响应性”之间的零和权衡，且不改变底层策略架构，可作为即插即用模块。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">问题形式化</h3>
+<ul>
+<li>设策略 π(a_t|o_t) 生成动作块 {a_t, ..., a_{t+T_H-1}}，执行时域 T_a ≤ T_H。</li>
+<li>扰动使观测从 o_t 变为 o'_t，导致动作分布偏移。目标：在固定采样预算 N 下，选择重采样时刻以最小化累积似然下降 Σ_t D_KL(π(·|o_t) || π(·|o'_t))。</li>
+</ul>
+<h3 id="spatial-attention">Spatial Attention 定义</h3>
+<ul>
+<li>对观测 o 的每个空间位置 s，定义 SA(s) = ||∂log π(a|o) / ∂o_s||²，衡量动作分布对局部观测变化的敏感度。</li>
+<li>全局 Spatial Attention 为空间聚合：SA(o) = Σ_s SA(s)。</li>
+</ul>
+<h3 id="_4">最优重采样率推导</h3>
+<ul>
+<li>假设扰动方差随 elapsed time 按幂律增长（式 4：σ²(t) ∝ t^{2γ}）。</li>
+<li>推导得：在固定预算下，最优重采样率 r*(t) ∝ SA(o_t)^{1/(2γ+1)}。</li>
+<li>即：Spatial Attention 越大，重采样越频繁，执行时域越短。</li>
+</ul>
+<h3 id="_5">实现架构</h3>
+<ul>
+<li><strong>SA 估计</strong>：训练辅助分数网络（NCSN，10 个噪声级别），通过 Bayes 规则从分数函数比值估计 SA。</li>
+<li><strong>视觉编码</strong>：使用 VAE（潜变量维度 32）将视觉观测映射到潜空间，在潜空间计算 SA。</li>
+<li><strong>未来预测</strong>：序列到序列 Transformer（4 层，8 头，隐藏维度 256）预测未来 SA 轨迹，用于提前规划重采样时刻。</li>
+<li><strong>执行规则</strong>：设定阈值 C_att，当预测 SA 超过阈值时触发重采样，否则继续执行当前块。</li>
+</ul>
+<h3 id="_6">关键设计决策</h3>
+<ul>
+<li>选择 VAE 潜空间而非原始像素空间计算 SA，因潜空间更平滑且计算高效。</li>
+<li>使用预测模型而非实时计算 SA，因推理时计算完整 SA 成本过高（预测模型运行约 100 Hz）。</li>
+<li>γ 设为 1.0，C_att 按任务调整以匹配平均执行时域在 T_avg ± 0.5 范围内。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>理论驱动的自适应时域</strong>：首次将执行时域选择建模为累积似然下降最小化问题，得到闭式最优解（重采样率 ∝ SA^{1/(2γ+1)}）。此前方法均为启发式或固定策略，缺乏最优性保证。</p>
+</li>
+<li>
+<p><strong>观测敏感度的可计算代理</strong>：通过分数网络 + Bayes 规则，将难以直接计算的 SA 转化为可训练的回归目标。VAE 潜空间的使用使 SA 在推理时可高效估计，且对视觉噪声鲁棒。</p>
+</li>
+<li>
+<p><strong>预测式重规划</strong>：用 Transformer 预测未来 SA 轨迹，使策略能“提前”缩短时域，而非被动响应。这比纯反应式方法更优，因为扩散采样本身有延迟，预测可补偿该延迟。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="robomimic">模拟实验（Robomimic）</h3>
+<ul>
+<li>基线：3 step-CP、1 step-CP（CP 为一致性策略蒸馏），对比加 SA 版本。</li>
+<li>关键结果（成功率）：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Lift</th>
+<th>Can</th>
+<th>Square</th>
+<th>Tool Hang</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 step-CP</td>
+<td>0.60 ± 0.071</td>
+<td>0.66 ± 0.053</td>
+<td>0.68 ± 0.050</td>
+<td>0.70 ± 0.038</td>
+</tr>
+<tr>
+<td>3 step-CP+SA</td>
+<td>0.63 ± 0.060</td>
+<td>0.80 ± 0.044</td>
+<td>0.73 ± 0.050</td>
+<td>0.72 ± 0.047</td>
+</tr>
+<tr>
+<td>1 step-CP</td>
+<td>0.64 ± 0.092</td>
+<td>0.56 ± 0.103</td>
+<td>0.63 ± 0.074</td>
+<td>0.68 ± 0.041</td>
+</tr>
+<tr>
+<td>1 step-CP+SA</td>
+<td>0.67 ± 0.085</td>
+<td>0.72 ± 0.102</td>
+<td>0.68 ± 0.078</td>
+<td>0.68 ± 0.048</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>SA 在 Can 任务提升最显著（3 step：0.66→0.80；1 step：0.56→0.72），因该任务需精确对准，观测敏感度高。</li>
+</ul>
+<h3 id="_9">真实机器人实验</h3>
+<ul>
+<li>7-DoF Franka Research 3，双 RealSense D435i，RTX 4090。</li>
+<li>基线 DDIM（T_a=8）vs DDIM+SA（T̄_a ∈ [7.5, 8.5]）：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>成功率</th>
+<th>平均 T_a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DDIM</td>
+<td>0.42</td>
+<td>8</td>
+</tr>
+<tr>
+<td>DDIM+SA</td>
+<td>0.92</td>
+<td>8.3</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>SA 将成功率从 0.42 提升至 0.92（由表内数值 0.42→0.92 计算），平均时域仅从 8 增至 8.3，几乎不牺牲效率。</li>
+<li>定性观察：DDIM 因块长过长无法响应立方体运动而失败；SA 在夹爪接近时缩短时域，成功跟踪目标。</li>
+</ul>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>扰动模型假设</strong>：零均值高斯噪声且方差按时间幂律增长（式 4）可能不适用于真实世界非高斯、非平稳扰动。</li>
+<li><strong>VAE 潜空间代理</strong>：潜空间敏感度不等同于原始观测空间敏感度，编码器可能丢失任务相关细节。</li>
+<li><strong>需离线训练辅助模型</strong>：SA 分数网络与预测 Transformer 需额外训练（各约 2 小时/1 小时），增加部署成本。</li>
+<li><strong>不适用流式策略</strong>：框架要求离散动作块，无法用于连续生成动作的策略（如 [5, 9, 12]）。</li>
+<li><strong>未覆盖多任务/元学习</strong>：策略固定，不支持部署时新任务适应或在线微调。</li>
+<li><strong>超参数 γ 与 C_att 需人工调整</strong>：论文未探索自动选择方法。</li>
+<li><strong>未在 VLA 大规模数据上验证</strong>：论文未明确。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：先确认 γ=1.0、C_att 按任务调整至 T_avg ± 0.5 的匹配逻辑，这是成功率提升的关键敏感点。C_att 过松则退化为固定块长，过紧则频繁重采样导致计算浪费。</li>
+<li><strong>最大踩坑点</strong>：SA 分数网络训练需与策略的观测预处理完全一致（含 VAE 编码），任何归一化或数据增强不一致都会导致 SA 估计偏差。建议先冻结策略，单独验证 SA 预测与真实敏感度的相关性。</li>
+<li><strong>下游团队集成</strong>：SA 模块可独立于策略推理，通过 TCP 通信（真实实验已验证）插入现有系统。预测模型 100 Hz 运行频率远高于扩散采样（1-100 步），不会成为瓶颈。</li>
+<li><strong>迁移到新任务</strong>：若新任务观测敏感度分布与 Robomimic 差异大，需重新调 C_att；可先用少量轨迹估计 SA 分布范围，再设定阈值。</li>
+<li><strong>计算预算</strong>：SA 辅助训练约 3 小时/任务（A100），推理额外开销约 10 ms（预测模型），对实时性要求高的场景需评估是否可接受。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.04739</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">extends</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">extends</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_spatial_attention_adapting_execution_hor_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题形式化</a></li>
+<li><a href="#spatial-attention">Spatial Attention 定义</a></li>
+<li><a href="#_4">最优重采样率推导</a></li>
+<li><a href="#_5">实现架构</a></li>
+<li><a href="#_6">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#robomimic">模拟实验（Robomimic）</a></li>
+<li><a href="#_9">真实机器人实验</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

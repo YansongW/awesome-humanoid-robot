@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ConFlow: Constraints-Guided Learning with Flow Matching for Motion Generation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ConFlow: Constraints-Guided Learning with Flow Matching for Motion Generation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ConFlow: Constraints-Guided Learning with Flow Matching for Motion Generation</h1>
+      <p class="entry-name-en">ConFlow: Constraints-Guided Learning with Flow Matching for Motion Generation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>In recent years Flow Matching has become a prominent method for generative modeling robot motion generation. In its generic form Flow Matching is an ODE-based neural sampler that is trained by regressing empirical flow fields associated with motion samples as data. However, in robot motion generation we often have additional constraints that might not be present in the collected data. The.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14424" target="_blank" rel="noopener">arXiv:2607.14424 ConFlow: Constraints-Guided Learning with Flow Matching for Motion Generation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ConFlow는 로봇 모션 생성을 위한 제약 조건 기반 플로우 매칭 프레임워크로, 저자가 제안한 핵심 기여는 제약 정보를 훈련 목표에 직접 통합하고, 표준 가우시안 소스를 조건부 가우시안 프로세스 소스 분포로 대체하여 훈련과 추론 간의 분포 차이를 줄이는 것입니다. 이 방법은 이중 로봇 궤적 생성 작업에서 충돌률을 크게 낮추고 궤적 평활도를 향상시켰습니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존의 추론 시점 안내 기반 생성형 모션 프레임워크에는 근본적인 정렬 문제가 있습니다: 안내는 샘플링 단계에서만 출력을 수정할 뿐, 모델이 이미 학습한 기저 분포를 바꾸지 못합니다. 이는 모델이 훈련 중에 "충돌 회피"라는 기울기 신호를 본 적이 없음을 의미하며, 추론 시 아무리 강한 안내를 적용해도 분포 외 영역을 임시로 수선하는 것에 불과하여 생성 결과가 종종 비현실적이거나 물리적으로 타당하지 않습니다. 저자는 로봇 분야에 널리 존재하는 비전문가 상호작용 데이터, 특히 부정적 시연이 제약 위반의 대비 정보를 포함하고 있음을 날카롭게 지적하며, 기존 방법은 이 신호를 완전히 낭비하고 있습니다.</p>
+<p>ConFlow가 진정으로 바꾸는 것은 "제약이 언제 작용하는가"라는 기본 설정입니다. 더 이상 제약을 추론 시점의 패치로 취급하지 않고, 훈련 목표의 기울기에 인코딩하여 모델이 데이터 분포를 피팅하는 동시에 제약 위반 영역을 능동적으로 회피하도록 학습시킵니다. 동시에 조건부 가우시안 프로세스 소스 분포로 표준 가우시안 소스를 대체하여 샘플링 시작점부터 평활성과 경계 조건을 주입합니다. 이는 "궤적이 어떻게 생겨야 하는가"에 대한 사전 지식을 생성 과정의 원천에 앞당겨 배치하는 것과 같으며, 모델의 사후 수정에 의존하지 않습니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">제약 안내 훈련 목표</h3>
+<p>표준 조건부 플로우 매칭 손실에 제약 수정 항을 추가하며, 핵심 공식은 다음과 같습니다:
+- ℒ_CG = MSE(u_t^θ − u_t − λ_c M(x_1) u_t^c)
+- 여기서 u_t^c = ∇_{x_t} C(x_t)는 미분 가능한 제약 함수 C(·)의 기울기이고, λ_c는 안내 강도를 제어합니다.
+- 이진 지시자 M(x_1)는 목표 궤적 x_1이 제약을 위반할 때만 1로 설정되어, 수정 항이 오직 부정적 샘플에만 작용하도록 하여 실행 가능한 궤적에 대한 과도한 정규화를 방지합니다.</p>
+<h3 id="softplus">SoftPlus 충돌 제약</h3>
+<p>ReLU 패널티 대신 SoftPlus를 사용하여 더 평활한 기울기를 얻습니다:
+- C_γ(x_t) = −(1/γ) log(1 + exp(−γ(d(x_t) − r)))
+- d(x_t)는 로봇 간 최소 거리, r은 안전 반경, γ는 예리도 매개변수입니다 (실험에서 γ = 10.0, 임계값 0.3).</p>
+<h3 id="_5">조건부 가우시안 프로세스 소스 분포</h3>
+<p>표준 가우시안 소스를 GP 소스로 대체하며, 각 궤적 차원을 독립적으로 모델링합니다:
+- f_d(s) ~ GP(0, k(s, s′)), RBF 커널 K_ij = σ² exp(−(s_i − s_j)²/(2ℓ²)) + εδ_ij
+- ℓ은 길이 스케일 (실험에서 0.4), ε = 10⁻⁶으로 수치 안정성을 보장합니다.
+- 선택적 엔드포인트 조건화: 목표 궤적 x_1에서 시작점과 끝점을 추출하여 조건부 GP 소스 p_CGP(x | x(s_0) = y_start, x(s_{T−1}) = y_goal)를 구성하고, GP 사후 공식을 통해 내부 상태를 샘플링합니다.</p>
+<h3 id="_6">훈련 및 추론 프로세스</h3>
+<ul>
+<li>훈련: x_1, x_0 (GP 또는 가우시안 소스), t ~ U(0,1)을 샘플링하고, x_t = (1−t)x_0 + tx_1을 계산하며, 목표 속도 u_t = ẋ_t + λ M(x_1) g_t, 손실 ℒ(θ) = ‖v_θ(x_t, t) − u_t‖²₂를 최소화합니다.</li>
+<li>추론: 표준 플로우 매칭 샘플링, 오일러 적분 스텝 0.004, 선택적 추론 시점 안내 항 v_θ(x_t, t) + λ∇_{x_t} C(x_t).</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>제약 안내 훈련 목표</strong>: 제약 위반 지시자를 플로우 매칭 손실에 직접 내장한 최초의 사례입니다. 핵심 혁신은 M(x_1)의 이진 마스크 설계로, 부정적 시연이 "어디로 가면 안 되는지"에 대한 정보를 제공하면서도 긍정적 샘플 학습을 방해하지 않아 과도한 정규화를 피합니다. 이는 사후 미세 조정보다 더 근본적입니다. 모델이 훈련 단계에서 제약 인식 분포를 학습하기 때문입니다.</p>
+</li>
+<li>
+<p><strong>조건부 가우시안 프로세스 소스 분포</strong>: GP로 가우시안 소스를 대체한 것은 또 다른 핵심 돌파구입니다. GP 사전은 궤적의 평활성을 자연스럽게 인코딩하며, 엔드포인트 조건화를 통해 시작점과 끝점을 정확히 고정할 수 있어 표준 플로우 매칭에서 소스 분포와 목표 분포 간 불일치로 인한 생성 궤적 떨림 문제를 직접 해결합니다. 실험에서 CGP는 충돌률을 약 46% 낮추고 (표 내 수치 0.0288→0.0156 계산), 평활도 중앙값을 약 4배 개선했습니다 (표 내 수치 0.0678→0.0174 계산).</p>
+</li>
+<li>
+<p><strong>부정적 시연의 효과적 활용</strong>: 기존 방법은 부정적 데이터를 무시하거나 단순히 폐기합니다. ConFlow는 제약 안내 목표를 통해 부정적 시연을 학습 가능한 기울기 신호로 변환하며, 이는 데이터 수집 비용이 높은 로봇 분야에서 특히 중요합니다 — 모든 실패 시연이 훈련 자산이 됩니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<p>실험은 이중 로봇 2D 궤적 교환 작업에서 수행되었으며, 각 궤적은 32개 웨이포인트, 4개 상태 차원, 약 30% 시연에 충돌이 포함됩니다. 각 모델은 256개 궤적을 생성하여 평가합니다.</p>
+<p><strong>표 I: 충돌률 소거 실험 (핵심 수치)</strong></p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>무안내 로봇</th>
+<th>로봇 회피 로봇</th>
+<th>장애물 회피 로봇</th>
+<th>장애물 회피 객체</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ConFlow (𝒟⁺ ∪ 𝒟⁻)</td>
+<td>0.016</td>
+<td>0.004</td>
+<td>0.000</td>
+<td>0.035</td>
+</tr>
+<tr>
+<td>ConFlow (𝒟⁺)</td>
+<td>0.043</td>
+<td>0.004</td>
+<td>0.035</td>
+<td>0.074</td>
+</tr>
+<tr>
+<td>FM (𝒟⁺)</td>
+<td>0.031</td>
+<td>0.020</td>
+<td>0.039</td>
+<td>0.039</td>
+</tr>
+<tr>
+<td>FM (𝒟⁺ ∪ 𝒟⁻)</td>
+<td>0.055</td>
+<td>0.270</td>
+<td>0.281</td>
+<td>0.059</td>
+</tr>
+</tbody>
+</table>
+<p><strong>표 II: 소스 분포 소거 실험</strong></p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>Gaussian</th>
+<th>CGP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>충돌률</td>
+<td>0.0288</td>
+<td>0.0156</td>
+</tr>
+<tr>
+<td>평활도 중앙값</td>
+<td>0.0678</td>
+<td>0.0174</td>
+</tr>
+<tr>
+<td>평활도 p95</td>
+<td>0.2218</td>
+<td>0.0309</td>
+</tr>
+<tr>
+<td>시작점 오차/로봇</td>
+<td>0.0267</td>
+<td>0.0006</td>
+</tr>
+<tr>
+<td>끝점 오차/로봇</td>
+<td>0.0276</td>
+<td>0.0006</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 관찰: 추론 시점 안내 없이 ConFlow의 로봇 충돌률 (0.016)은 FM (0.031)보다 현저히 낮아, 훈련 단계에서 제약을 주입하는 것이 실제로 기저 분포를 바꿨음을 보여줍니다. 주목할 점은 FM이 부정적 데이터를 추가한 후 충돌률이 오히려 악화되고 (0.055), 추론 시점 안내로 충돌률이 급증하는데 (0.270), 이는 훈련-추론 정렬 문제의 심각성을 입증합니다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<p>논문은 고차원 시스템 (예: 관절형 로봇 팔)에서의 성능을 명시적으로 논의하지 않았으며, 저자는 향후 확장 검증이 필요함을 인정합니다. 무제약 GP 사전은 커널 길이 스케일 선택에 민감하며, 실험에서 때때로 데이터 매니폴드에서 크게 벗어난 궤적을 생성하여 불안정한 샘플을 초래합니다; 엔드포인트 조건화가 이 문제를 완화하지만 구현 복잡성을 증가시킵니다. 모든 실험은 합성 데이터 기반이며, 실제 세계 플랫폼에서의 일반화는 논문에서 명확히 다루지 않습니다. 또한 제약 함수 C(·)는 미분 가능해야 하므로, 이산 충돌 감지와 같은 비미분 제약에 대한 직접 적용이 제한됩니다.</p>
+<h2 id="_10">공학적 시사점</h2>
+<p>재현 시 먼저 GP 소스 분포의 길이 스케일 (0.4)과 분산 (1.0)을 확인하세요. 이 두 매개변수는 궤적 평활도에 큰 영향을 미칩니다 — 표 II는 CGP의 평활도 개선이 주로 엔드포인트 조건화에서 비롯됨을 보여주며, 조건화를 제거하면 GP 사전이 오히려 노이즈를 도입할 수 있습니다. 훈련 시 λ_c = 2.5의 민감성에 주의하세요. 너무 크면 긍정적 샘플이 과도하게 수정되고, 너무 작으면 부정적 샘플 신호가 부족합니다; 2.5에서 시작하여 그리드 탐색을 권장합니다. 추론 시점 안내 가중치 (로봇 0.08, 장애물 1.0)의 차이가 크므로, 제약 유형별로 별도 튜닝이 필요하며 통일 설정은 불가능합니다. 가장 쉽게 실수하는 지점은 SoftPlus의 γ 매개변수 (10.0)입니다 — 너무 작으면 기울기가 너무 평활해져 제약 효과가 사라지고, 너무 크면 ReLU에 가까워져 불연속 기울기가 도입됩니다. 하류 팀이 새 작업으로 전이할 경우, 제약 함수의 미분 가능성을 먼저 확인하고 그렇지 않으면 대리 함수를 설계해야 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">extends</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_conflow_constraints_guided_flow_matching_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">제약 안내 훈련 목표</a></li>
+<li><a href="#softplus">SoftPlus 충돌 제약</a></li>
+<li><a href="#_5">조건부 가우시안 프로세스 소스 분포</a></li>
+<li><a href="#_6">훈련 및 추론 프로세스</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

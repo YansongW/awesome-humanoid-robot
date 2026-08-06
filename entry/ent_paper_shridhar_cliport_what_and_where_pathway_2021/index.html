@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLIPort · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">CLIPort</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>CLIPort</h1>
+      <p class="entry-name-en">CLIPort: What and Where Pathways for Robotic Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2109.12098v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>CLIPort 是华盛顿大学与 NVIDIA 于 2021 年提出的视觉-语言-动作模型，发表于 CoRL 2021。其核心贡献在于融合 CLIP 的语义理解能力与 Transporter 的空间定位能力，通过双流架构实现机器人对抽象概念与精细操作的统一处理。该模型在少样本场景下数据高效，且能泛化至未见过的语义概念。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://proceedings.mlr.press/v164/shridhar22a.html" target="_blank" rel="noopener">CLIPort source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>CLIPort 针对现有机器人操作模型在语义泛化与空间精度间的矛盾，提出一种双流架构：语义流（what）利用 CLIP 的互联网预训练知识理解物体类别与任务指令，空间流（where）基于 Transporter 的像素级定位实现精确抓取与放置。模型以端到端方式学习语言条件化的模仿策略，无需显式物体位姿、实例分割或符号状态表示。在 10 个模拟任务与 9 个真实世界任务中，CLIPort 的多任务策略性能优于或持平于单任务策略，并能在少样本设定下高效适应新任务。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>双流设计</strong>：语义流使用 CLIP 的视觉编码器提取任务相关语义特征（如“红色杯子”），空间流使用 Transporter 的深度卷积网络生成像素级注意力图，两者通过交叉注意力机制融合。</li>
+<li><strong>动作生成</strong>：模型以当前 RGB-D 图像与语言指令为输入，输出抓取与放置的像素坐标对，通过 Transporter 的“放置-抓取”循环实现操作。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>模拟环境</strong>：基于 PyBullet 搭建 10 个桌面任务，包括堆叠方块、折叠布料、按颜色分类物体等。每个任务提供 100-200 次人类演示。</li>
+<li><strong>真实世界</strong>：使用 Franka Emika Panda 机械臂完成 9 个任务，如“将蓝色方块放入红色碗中”，仅用 10-20 次演示进行微调。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>泛化能力</strong>：在模拟任务中，CLIPort 对未见过的物体组合（如新颜色或形状）的零样本成功率比基线（单流 Transporter）高 35%。</li>
+<li><strong>少样本学习</strong>：仅用 10 次演示，CLIPort 在真实世界任务中达到 82% 的平均成功率，而基线方法低于 50%。</li>
+<li><strong>多任务策略</strong>：训练单一策略覆盖 10 个模拟任务，平均成功率 78%，与每个任务单独训练的策略（79%）无显著差异。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>CLIPort 证明语义与空间双流融合可有效解决机器人操作中的抽象推理与精确控制矛盾。其数据效率与泛化能力为少样本场景下的通用操作策略提供了可行路径。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2109.12098v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">CLIPort提及英伟达。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_lu_thinkbot_embodied_instruction_2023/">ThinkBot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">ThinkBot提及CLIPort。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jia_learning_efficient_and_robust_2024/">Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_molmospaces_a_large_scale_open_2026/">MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_a_joint_modeling_of_vision_lan_2023/">A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_guhur_instruction_driven_history_awa_2022/">Hiveformer</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Hiveformer提及CLIPort。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sun_emma_x_an_embodied_multimodal_2024/">Emma-X</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Emma-X提及CLIPort。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_nasiriany_rt_affordance_affordances_are_2024/">RT-A</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">RT-A提及CLIPort。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_shridhar_cliport_what_and_where_pathway_2021"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_molmospaces_a_large_scale_open_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation</h3>
+          <p>MolmoSpaces 是一个 2026 年提出的面向人形机器人的大规模开放仿真生态系统，由研究团队构建，包含超过 23 万个多样化室内环境与 13…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jia_learning_efficient_and_robust_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping</h3>
+          <p>Grounded Equivariant Manipulation (GEM) 是布朗大学与东北大学于2024年发表在 IEEE Robotics Autom. Lett.…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nasiriany_rt_affordance_affordances_are_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RT-A</h3>
+          <p>RT-Affordance 是 Google DeepMind 与德克萨斯大学奥斯汀分校于 2024 年提出的大型视觉-语言-动作模型，发表于…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lu_thinkbot_embodied_instruction_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ThinkBot</h3>
+          <p>ThinkBot 是清华大学深圳国际研究生院、清华大学、卡内基梅隆大学联合提出的2023年大型视觉-语言-动作模型，发表于ICLR…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_guhur_instruction_driven_history_awa_2022/">
+          <span class="entry-type">论文</span>
+          <h3>Hiveformer</h3>
+          <p>Hiveformer 是由 Inria、巴黎高等师范学院、CNRS、PSL 研究大学及 IIIT Hyderabad 联合提出的通用视觉-语言-动作模型，发表于 CoRL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sun_emma_x_an_embodied_multimodal_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Emma-X</h3>
+          <p>Emma-X 是 2024 年由 SUTD 与 Google DeepMind 联合提出的大型视觉-语言-动作模型，发表于 ACL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_a_joint_modeling_of_vision_lan_2023/">
+          <span class="entry-type">论文</span>
+          <h3>A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter</h3>
+          <p>浙江大学在ICRA23上提出了一种联合建模视觉-语言-动作的机器人抓取模型，用于在杂乱场景中根据语言指令抓取目标物体。该模型通过物体中心表示统一处理视觉、语言和动作，无需依赖物体标签或视觉属性进行定位…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

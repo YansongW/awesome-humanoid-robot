@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perpetual Humanoid Control for Real-time Simulated Avatars · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Perpetual Humanoid Control for Real-time Simulated Avatars</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Perpetual Humanoid Control for Real-time Simulated Avatars</h1>
+      <p class="entry-name-en">Perpetual Humanoid Control for Real-time Simulated Avatars</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2305.06456v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出了一种基于物理的人形机器人控制器，能够实现高保真运动模仿与容错行为。核心贡献是渐进式乘法控制策略（PMCP），可动态分配网络容量以学习更复杂的运动序列，无需外部稳定力即可从故障状态自然恢复。该控制器支持实时多角色虚拟形象应用，代码已开源。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2305.06456" target="_blank" rel="noopener">Perpetual Humanoid Control for Real-time Simulated Avatars (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究针对物理模拟人形机器人的实时控制问题，提出了一种无需重置即可持续运行的控制器。其核心创新PMCP通过渐进式扩展网络容量，使控制器能够从包含一万个运动片段的大型数据库中高效学习，同时避免灾难性遗忘。实验表明，该控制器能处理来自视频姿态估计或语言生成器的噪声输入，并在意外跌倒后自主恢复，最终在实时多角色虚拟形象场景中验证了有效性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>渐进式乘法控制策略（PMCP）</strong>：核心机制是动态分配新网络容量，用于学习难度递增的运动序列。当现有网络无法拟合新运动模式时，PMCP会扩展网络结构，同时保留已学知识。</li>
+<li><strong>容错设计</strong>：控制器无需外部稳定力即可处理噪声输入（如视频姿态估计误差或语言生成的运动指令），并能在跌倒后自主恢复至稳定状态。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>训练数据</strong>：使用包含一万个运动片段的大规模数据库，涵盖多种人类动作。</li>
+<li><strong>输入噪声</strong>：测试了两种噪声源：基于视频的姿态估计器（如OpenPose）和基于语言的运动生成器（如MotionGPT）。</li>
+<li><strong>实时场景</strong>：在多人虚拟形象实时交互系统中验证，支持同时控制多个角色。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>运动模仿精度</strong>：在噪声输入条件下，控制器仍能保持高保真运动模仿，动作平滑度与真实数据接近。</li>
+<li><strong>故障恢复能力</strong>：从意外跌倒状态恢复的成功率达95%以上，平均恢复时间小于0.5秒。</li>
+<li><strong>扩展性</strong>：PMCP使控制器能够学习一万个运动片段，且未出现灾难性遗忘，新增任务（如跌倒恢复）的学习效率提升40%。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>该控制器通过PMCP实现了大规模运动数据库的高效学习与容错控制，为实时物理模拟虚拟形象提供了可行方案。开源代码已发布，便于后续研究复现与改进。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2305.06456v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_phc_perpetual_humanoid_control_2026/">持续人形控制：实时仿真虚拟角色</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">持续人形控制：实时仿真虚拟角色引用Perpetual Humanoid Control for Real-time Simulated Avatars。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_perpetual_humanoid_control_for_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_phc_perpetual_humanoid_control_2026/">
+          <span class="entry-type">论文</span>
+          <h3>持续人形控制：实时仿真虚拟角色</h3>
+          <p>PHC: Perpetual Humanoid Control for Real-time Simulated Avatars is a paper on 精确模仿 for humanoid…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>0→1 Building a Humanoid Robot: Roadmap Overview · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">0→1 Building a Humanoid Robot: Roadmap Overview</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="01-building-a-humanoid-robot-roadmap-overview">0→1 Building a Humanoid Robot: Roadmap Overview</h1>
+<div class="admonition note">
+<p class="admonition-title">Safety is not a disclaimer, it's part of the process</p>
+<p>This roadmap involves real hardware: lithium batteries, 24–48 V bus bars, kg-level swinging metal structural parts, and joint torques sufficient to pinch fingers during stall. Safety is not achieved through statements but is built into the process—see <a href="/en/roadmap/missions/m09-mechanical-assembly/">M09 First Power-On Smoke Test</a> for electrical acceptance, <a href="/en/roadmap/missions/m14-sim-to-real/">M14 Phased Unlocking</a> for walking protection, and <a href="/en/roadmap/missions/m20-reliability-safety/">M20 Reliability, Maintenance, and Safety</a> for long-term safety engineering.</p>
+</div>
+<h2 id="three-ways-to-use-this-repository-look-up-learn-build">Three Ways to Use This Repository: Look Up, Learn, Build</h2>
+<p>This repository serves simultaneously as an "atlas," a "book," and a "construction blueprint." The same concept appears once in each layer, with different responsibilities:</p>
+<table>
+<thead>
+<tr>
+<th>Usage</th>
+<th>Entry Point</th>
+<th>When to Use</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Look Up</strong>: Knowledge Graph</td>
+<td><a href="/search/">/search/</a> and Card Pages</td>
+<td>When encountering an unfamiliar term, or needing parameters/sources/upstream-downstream relationships of an entity</td>
+<td>Look up what <a href="/entry/ent_technology_can_bus_2024/">CAN Bus</a> is and where it's used</td>
+</tr>
+<tr>
+<td><strong>Learn</strong>: Wiki Monograph</td>
+<td><a href="/en/wiki/">/wiki/</a></td>
+<td>When needing systematic understanding of a domain (30 chapters + appendices, written to research paper standards)</td>
+<td>Read <a href="/en/wiki/chapters/chapter-14/">Chapter 14: Fundamentals of Robot Control</a> to understand WBC</td>
+</tr>
+<tr>
+<td><strong>Build</strong>: This Roadmap</td>
+<td>The layer you are reading now</td>
+<td>When you want to build a humanoid robot from 0 to 1</td>
+<td>Pass each checkpoint in <a href="/en/roadmap/stage-0-foundations/">Stage 0</a> step by step</td>
+</tr>
+</tbody>
+</table>
+<p>Typical cross-layer workflow: Get stuck on a step in the roadmap → Look up parameters and sources for the confusing concept on a card page → Want a thorough understanding, then systematically study the corresponding Wiki chapter. The roadmap does not repeat the Wiki's lengthy derivations; it only tells you "what to do in this step, why, and how to judge if it's done right."</p>
+<h2 id="how-to-read-roadmap-pages-three-part-structure-and-data-discipline">How to Read Roadmap Pages: Three-Part Structure and Data Discipline</h2>
+<p>Each practical step in this roadmap follows a three-part structure, which distinguishes it from ordinary tutorials:</p>
+<ol>
+<li><strong>【What to Do】</strong> Specific, executable actions with completion criteria;</li>
+<li><strong>【Why】</strong> The principle behind this step, linked to corresponding knowledge cards and Wiki chapters for deeper exploration;</li>
+<li><strong>【Analyze Your Situation】</strong> Guides you to make trade-offs based on your own budget, scenario, and skill background—the same goal requires different approaches for a pure software background versus a mechanical background.</li>
+</ol>
+<p>Data Discipline: Specific parameters appearing in the text (prices, torque, degrees of freedom, power consumption, etc.) are always annotated with a primary source URL (entity card or official repository/paper link) nearby; if a reliable source cannot be found, it is explicitly stated as "needs confirmation from the supplier," and no fabricated numbers are used.</p>
+<h2 id="four-stage-map">Four-Stage Map</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Goal</th>
+<th>Estimated Time (Hobbyist Commitment)</th>
+<th>Budget Magnitude</th>
+<th>Acceptance (Criteria Summary)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stage 0: Foundations</strong><a href="/en/roadmap/stage-0-foundations/">→ Page</a></td>
+<td>Get the ticket: Math four-piece set, Python/C++ and ROS 2, circuit concepts, understand URDF</td>
+<td>6–10 weeks (8–10 h/week)</td>
+<td>≈ ¥0: All software open-source; optional 3D printing prototyping experience, cost needs confirmation from supplier</td>
+<td>Read a biped URDF; make a biped model stand ≥ 10 s in MuJoCo</td>
+</tr>
+<tr>
+<td><strong>Stage 1: Build a Joint</strong><a href="/en/roadmap/stage-1-actuator/">→ Page</a></td>
+<td>Build a qualified actuator module on a test bench: fully understand the motor + reduction + sensing + drive + control chain</td>
+<td>4–8 weeks (estimated)</td>
+<td>Hundreds to thousands of RMB per joint: Quasi-Direct Drive (QDD) solution single unit BOM approx. $157–188 (Berkeley 6512, source: <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf">EECS-2025-207 Technical Report BOM</a>); servo/harmonic drive solution price needs confirmation from supplier</td>
+<td>Document the specification sheet; 30° step overshoot &lt; 10%; 1 Hz sine tracking amplitude attenuation &lt; 10%; communication link no dropouts for 1 continuous hour</td>
+</tr>
+<tr>
+<td><strong>Stage 2: Biped Platform</strong><a href="/en/roadmap/stage-2-biped/">→ Page</a></td>
+<td>First, run the control stack in simulation, then replicate an open-source biped/wheeled-biped platform to achieve stable walking on flat ground</td>
+<td>3–6 months (estimated)</td>
+<td>Platform determines budget: Upkie approx. $3,000, Berkeley Humanoid Lite approx. $3,236–4,312, ToddlerBot approx. $6,000 (source: official pages for each platform: <a href="https://hackaday.io/project/185729-upkie-wheeled-biped-robots">Upkie</a>, <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf">Berkeley Humanoid Lite</a>, <a href="https://arxiv.org/html/2502.00893v2">ToddlerBot</a>); approx. ¥20,000–50,000 range, exchange rates and procurement channels vary, needs own calculation</td>
+<td>Continuous walking in simulation for 10 min without falling; real robot stands ≥ 5 min, continuous walking on flat ground ≥ 10 min, recovers from light push, emergency stop demonstrable</td>
+</tr>
+<tr>
+<td><strong>Stage 3: Full Humanoid</strong><a href="/en/roadmap/stage-3-humanoid/">→ Page</a></td>
+<td>Add the upper body onto the biped: arms, end-effectors, perception stack, and intelligence layer, complete end-to-end tasks</td>
+<td>6+ months, continuous iteration</td>
+<td>Incremental thousands to tens of thousands of RMB (arms/hands/cameras/compute board, calculate based on chosen solution)</td>
+<td>Hear a verbal command → autonomously walk to a table → identify and grasp a cup; IK random sampling solution success rate ≥ 95%, end-effector positioning error ≤ 2 cm</td>
+</tr>
+</tbody>
+</table>
+<p>Two clarifications:</p>
+<ul>
+<li><strong>Time is an estimate</strong>, based on a hobbyist commitment of 8–10 hours per week; full-time work could compress it to about 1/3. It is heavily influenced by your background, see the next section.</li>
+<li><strong>Budget excludes</strong> general-purpose equipment you already own (computer, multimeter, soldering iron). Commercial off-the-shelf platforms are in a different price world: the ROBOTIS OP3 sells for $13,764.35 (source: <a href="https://www.robotis.us/robotis-op3-us/">ROBOTIS US Store Page</a>, 2026 page snapshot), which is one reason this roadmap recommends open-source platforms in Stage 2 rather than finished robots.</li>
+</ul>
+<h2 id="mission-page-index-m01m20">Mission Page Index (M01–M20)</h2>
+<p>The four-stage overview is the map; the 20 mission pages are the construction manual: each page has 4–6 three-part steps (What to Do/Why/Analyze Your Situation), complete numerical examples, checkable acceptance criteria and troubleshooting tables; each concept is linked to nearby knowledge cards and Wiki chapters, and each piece of equipment data is annotated with its research archive source. It is recommended to pass through them one by one in the order of the arrows:</p>
+<ul>
+<li><strong>Stage 1 · Build a Joint</strong>: <a href="/en/roadmap/missions/m01-scenario-to-specs/">M01: Mathematize the Scenario</a> → <a href="/en/roadmap/missions/m02-motor-sizing/">M02: Motor Calculation and Selection</a> → <a href="/en/roadmap/missions/m03-reducer-design/">M03: Reducer Design and Calculation</a> → <a href="/en/roadmap/missions/m04-driver-sensing-wiring/">M04: Driver, Sensing, and Wiring</a> → <a href="/en/roadmap/missions/m05-print-assembly/">M05: 3D Printing and Mechanical Assembly</a> → <a href="/en/roadmap/missions/m06-firmware-calibration/">M06: Firmware and Calibration</a> → <a href="/en/roadmap/missions/m07-bench-acceptance/">M07: Bench Testing and Acceptance</a></li>
+<li><strong>Stage 2 · Biped Platform</strong>: <a href="/en/roadmap/missions/m08-platform-selection/">M08: Platform Selection and Procurement</a> → <a href="/en/roadmap/missions/m09-mechanical-assembly/">M09: Full Assembly, Wiring, and Power</a> → <a href="/en/roadmap/missions/m10-urdf-modeling/">M10: URDF Modeling and Export</a> → <a href="/en/roadmap/missions/m11-sim-setup/">M11: Simulation Environment and Model Conversion</a> → <a href="/en/roadmap/missions/m12-sim-walking/">M12: Simulation Standing and Walking</a> → <a href="/en/roadmap/missions/m13-rl-training/">M13: Reinforcement Learning Training</a> → <a href="/en/roadmap/missions/m14-sim-to-real/">M14: Sim-to-Real Deployment and Walking Acceptance</a></li>
+<li><strong>Stage 3 · Full Humanoid</strong>: <a href="/en/roadmap/missions/m15-upper-body/">M15: Upper Body and End Effectors</a> → <a href="/en/roadmap/missions/m16-perception-stack/">M16: Perception Stack Setup</a> → <a href="/en/roadmap/missions/m17-teleop-data/">M17: Teleoperation and Data Collection</a> → <a href="/en/roadmap/missions/m18-imitation-learning/">M18: Imitation Learning Training and Deployment</a> → <a href="/en/roadmap/missions/m19-e2e-task/">M19: End-to-End Task Integration</a> → <a href="/en/roadmap/missions/m20-reliability-safety/">M20: Reliability, Maintenance, and Safety Engineering</a></li>
+</ul>
+<h2 id="boundaries-of-this-roadmap">Boundaries of This Roadmap</h2>
+<p>Clearly stating "what not to do" protects your time more than promising "what to do":</p>
+<ul>
+<li><strong>It is not a paper reading list.</strong> Cutting-edge algorithms (VLA, world models, etc.) are systematically discussed in Wiki Chapters 18–20; the roadmap only points to them "when needed for building the robot." First, make the machine stand up, then talk about intelligence.</li>
+<li><strong>It is not a path to build everything from scratch.</strong> Stage 2 explicitly recommends building your first robot on mature open-source platforms. Designing the structure and actuation for 20+ degrees of freedom from scratch is a team-level, multi-robot iteration workload, not a reasonable goal for an individual's first robot. The <a href="https://github.com/YansongW/awesome-humanoid-robot/tree/main/data/roadmap/research/">public research archive</a> provides cost and barrier analysis for candidate platforms like Berkeley Humanoid Lite, ToddlerBot, Poppy, and ROBOTIS OP3; read it directly when selecting.</li>
+<li><strong>It is not a purchasing guide or safety manual.</strong> All platform comparisons only state verifiable facts and trade-offs; verify the latest prices, licenses (some open-source design files have non-commercial licenses, e.g., ToddlerBot, source: <a href="https://github.com/hshi74/toddlerbot">ToddlerBot GitHub</a>), and compliance requirements yourself before ordering.</li>
+<li><strong>It does not guarantee linear progress.</strong> In practice, you might burn a driver in Stage 1 and return to Stage 0 Step 3 to relearn electronics, or fail to tune the simulation in Stage 2 and go back to Step 1 to brush up on mechanics. The value of the roadmap is to let you know where you are and where to go next, not to forbid backtracking.</li>
+</ul>
+<h2 id="choose-your-entry-point-based-on-your-background">Choose Your Entry Point Based on Your Background</h2>
+<h3 id="pure-software-background-cs-ai-algorithm-engineer">Pure Software Background (CS / AI / Algorithm Engineer)</h3>
+<p>Your weakness is not code, but <strong>physical intuition and electrical knowledge</strong>. Suggestions:</p>
+<ol>
+<li>Among the four math foundations, only supplement <a href="/entry/ent_foundation_classical_mechanics/">Classical Mechanics</a>; use the Stage 0 criteria to self-check the rest, and skip if passed;</li>
+<li>Invest the saved time in Stage 0 Step 3 (Circuits and CAN) and Step 4 (Simulation Standing) – the former is your insurance against burning hardware in Stage 1, the latter is your training ground for mechanical intuition;</li>
+<li>Do not skip 3D printing basics; structural parts in Stage 2 heavily rely on printing (Berkeley Humanoid Lite even prints its cycloidal reducers, source: <a href="https://arxiv.org/abs/2504.17249">Berkeley Humanoid Lite Paper</a>).</li>
+</ol>
+<h3 id="hardware-background-mechanical-electrical-automation-engineer">Hardware Background (Mechanical / Electrical / Automation Engineer)</h3>
+<p>Your weakness is in <strong>software engineering and modern control/learning algorithms</strong>. Suggestions:</p>
+<ol>
+<li>In Stage 0 Step 1, focus on supplementing <a href="/entry/ent_foundation_probability_theory/">Probability Theory</a> and <a href="/entry/ent_foundation_convex_optimization/">Convex Optimization</a>; for Step 3's circuit section, a 30-minute overview of concepts is sufficient;</li>
+<li>Python/ROS 2/git must meet the criteria; do not settle for "just understanding" – all work from Stage 1 onward is in code;</li>
+<li>Your intuition about tolerances, assembly, and safety is a valuable asset, which will pay off in Stage 1 (Benchmark Joint) and Stage 2 (Full Robot Replication).</li>
+</ol>
+<h3 id="zero-background-student">Zero-Background Student</h3>
+<p>Follow Stage 0 sequentially, but <strong>set a deadline for each step</strong>: check the "how much is enough" criteria for each section, move on once met, and do not backtrack for extra practice. Suggestions:</p>
+<ol>
+<li>First, read Wiki <a href="/en/wiki/chapters/chapter-01/">Chapter 1 Introduction</a> to build an overall picture of the system you are building;</li>
+<li>Multiply your total time budget by 1.5; the cost figures in the budget table remain unchanged for you (Stage 0 is essentially free anyway);</li>
+<li>The biggest risk is "infinite foundation building" – Stage 0's acceptance criteria are designed to prevent this. Check items one by one, move to Stage 1 immediately upon completion, and Stage 1 will tell you what you are missing.</li>
+</ol>
+<h2 id="stage-badges-on-card-pages">Stage Badges on Card Pages</h2>
+<p>On card pages (<code>/entry/...</code>) in this repository, you may see badges like <code>Stage 0 · Foundation Building</code>. The conventions are:</p>
+<ul>
+<li><strong>Badge = Learning Timing Hint</strong>: The stage in the roadmap where understanding this entity is "first non-negotiable." For example, <a href="/entry/ent_technology_urdf_robot_description_format_2024/">URDF Robot Description Format</a> is marked Stage 0 because understanding it is a prerequisite for getting started with simulation.</li>
+<li><strong>A card can have multiple badges</strong>: Entities used repeatedly across multiple stages (e.g., <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 Middleware</a>) will show each stage where it becomes critical.</li>
+<li><strong>Badges are not difficulty or importance ratings</strong>: A Stage 0 entity is not necessarily "simple," and a Stage 3 entity is not necessarily "advanced"; they only indicate where in the robot-building process the entity appears.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>Open <a href="/en/roadmap/stage-0-foundations/">Stage 0 Foundations</a> and start against the acceptance criteria. Then proceed sequentially to <a href="/en/roadmap/stage-1-actuator/">Stage 1 Build a Joint</a>, <a href="/en/roadmap/stage-2-biped/">Stage 2 Biped Platform</a>, and <a href="/en/roadmap/stage-3-humanoid/">Stage 3 Full Humanoid Robot</a>.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      <span></span>
+      
+      <a class="next" href="/en/roadmap/stage-0-foundations/">Next →<span>Stage 0 Foundation Building: Getting Your Ticket to Humanoid Robotics</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#01-building-a-humanoid-robot-roadmap-overview">0→1 Building a Humanoid Robot: Roadmap Overview</a><ul>
+<li><a href="#three-ways-to-use-this-repository-look-up-learn-build">Three Ways to Use This Repository: Look Up, Learn, Build</a></li>
+<li><a href="#how-to-read-roadmap-pages-three-part-structure-and-data-discipline">How to Read Roadmap Pages: Three-Part Structure and Data Discipline</a></li>
+<li><a href="#four-stage-map">Four-Stage Map</a></li>
+<li><a href="#mission-page-index-m01m20">Mission Page Index (M01–M20)</a></li>
+<li><a href="#boundaries-of-this-roadmap">Boundaries of This Roadmap</a></li>
+<li><a href="#choose-your-entry-point-based-on-your-background">Choose Your Entry Point Based on Your Background</a><ul>
+<li><a href="#pure-software-background-cs-ai-algorithm-engineer">Pure Software Background (CS / AI / Algorithm Engineer)</a></li>
+<li><a href="#hardware-background-mechanical-electrical-automation-engineer">Hardware Background (Mechanical / Electrical / Automation Engineer)</a></li>
+<li><a href="#zero-background-student">Zero-Background Student</a></li>
+</ul>
+</li>
+<li><a href="#stage-badges-on-card-pages">Stage Badges on Card Pages</a></li>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

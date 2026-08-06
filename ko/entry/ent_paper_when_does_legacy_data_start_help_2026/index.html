@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning</h1>
+      <p class="entry-name-en">When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Robot Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Robotic hardware evolves over time, but demonstration data is often tied to a specific sensor and actuator configuration. This raises a practical and underexplored question: when does legacy data begin to benefit an upgraded robot? We study this question on a wheeled humanoid platform across two hardware generations, where both the camera and gripper are changed while the overall morphology.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.25593" target="_blank" rel="noopener">arXiv:2607.25593 When Does Legacy Data Start to Help? Emergent Transfer in Cross-Configuration Ro</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 로봇 하드웨어 반복 이후, 구세대(legacy) 데모 데이터가 언제부터 신세대(Gen-2) 정책에 긍정적 전이 이득을 발생시키는지 연구한다. 저자는 휠형 휴머노이드 플랫폼에서 실제 실험을 통해 공동 훈련 이득과 단독 작업 성공률이 역 U자형 관계를 보인다는 것을 발견하고, 이를 바탕으로 3단계 모델과 작업 의존적 전이 임계값 판별 기준을 제안하여 데이터 수집 전략을 안내한다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>이 작업이 실제로 바꾼 것은 "교차 구성 데이터 재사용"이라는 공학적 상식에 대한 인식이다. 이전에는 "더 많은 교차 구성 데이터가 항상 도움이 된다"는 가정이 업계에 널리 퍼져 있었지만, 본 논문은 실제 로봇 실험을 통해 목표 하드웨어 정책의 능력이 극도로 낮을 때(예: 꽃 삽입 단독 성공률 10.0%), 구세대 데이터 공동 훈련이 무익할 뿐만 아니라 완전히 무효할 수도 있음을 증명한다(10.0% → 10.0%). 이는 데이터 양 만능주의를 뒤집고, 문제를 "구세대 데이터를 사용할지 여부"에서 "어떤 능력 문턱에서 구세대 데이터가 긍정적 수익을 발생하기 시작하는가"로 정밀하게 전환한다.</p>
+<p>더욱 중요한 것은 저자가 현상 설명에 머물지 않고 실행 가능한 공학적 판별 기준을 제시했다는 점이다: 작업 복잡도 추정(시야 길이와 공간 허용 오차)을 통해 전이 임계값을 예측하고, 신형 하드웨어 단독 성공률을 대리 지표로 사용하여 언제 새 데이터 수집을 중단하고 언제 구세대 데이터 공동 훈련을 시작할지 결정한다. 이로써 하드웨어 반복 시 데이터 관리는 경험적 시행착오에서 이론적 뒷받침이 있는 의사 결정 프로세스로 변화한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="3">3단계 모델</h3>
+<p>공동 훈련 이득 ΔSR과 단독 성공률 SR은 역 U자형 관계를 보인다:
+- <strong>Phase I (SR &lt; 15–20%)</strong>: 구세대 데이터의 측정 가능한 이득 없음, 메커니즘은 "표현 진공" — 정책 내부 표현이 아직 작업 단계를 디코딩할 수 없으며, 구세대 데이터 기울기와 목표 기울기의 기대 정렬이 비양수.
+- <strong>Phase II (SR 20–75%)</strong>: 이득이 크게 상승(+15 ~ +63 퍼센트 포인트), 메커니즘은 "협력 발현" — 단계 디코딩 가능성 향상으로 구세대 데이터가 효과적 감독 제공.
+- <strong>Phase III (SR &gt; 75%)</strong>: 이득 감소(+0 ~ +15), 메커니즘은 "포화 감소" — 구성 충돌 비용 δ(SR)이 포화에 따라 증가.</p>
+<h3 id="_4">핵심 이론 정의</h3>
+<ul>
+<li><strong>전이 임계값</strong>: τ(T) = inf{SR : E[ΔSR | SR] &gt; 0}, 즉 구세대 데이터가 양의 기대 이득을 발생시키는 최소 단독 성공률.</li>
+<li><strong>단계 디코딩 가능성</strong>: ρ_c(T;θ) = max_g Pr_{(s,o)}[g(φ_θ(s,o)) = z(s,o)], 내부 표현 φ_θ가 실제 작업 단계 z를 디코딩할 수 있는 정도를 측정.</li>
+<li><strong>역 U자 이득 법칙</strong> (Theorem 2): E[ΔSR | SR] = [κ(1 − SR) − δ(SR)] × 𝟙[SR &gt; τ(T)], 여기서 κ &gt; 0는 작업 관련 매개변수, δ(SR)는 구성 충돌 비용.</li>
+<li><strong>정보량 공식</strong>: I_legacy = ρ·H̄_within − ε_dom, 여기서 H̄_within = η(1 − SR)는 잔여 단계 내 정책 불확실성, ε_dom은 환원 불가능한 구성 불일치.</li>
+</ul>
+<h3 id="_5">단계 인식 데이터 수집 규칙</h3>
+<ol>
+<li>작업 난이도 H(T) = L(T)·log(1/ε(T)) 추정, 이를 통해 전이 임계값 τ̂(T) 예측.</li>
+<li>신형 하드웨어 데이터로 단독 정책 훈련, 성공률 SR₂(T) 측정.</li>
+<li>SR₂(T) &lt; τ̂(T)이면 신형 하드웨어 데이터 계속 수집; 그렇지 않으면 구세대 데이터 공동 훈련 시작.</li>
+</ol>
+<h3 id="_6">핵심 설계 결정</h3>
+<ul>
+<li>공동 훈련 시 Gen-1과 Gen-2 데이터를 등확률 샘플링(시간 비율 아님)하여 데이터량 비율 변수를 통제.</li>
+<li>정책은 하드웨어 세대 레이블을 받지 않아 교차 구성 공유 표현 학습을 강제.</li>
+<li>두 세대 하드웨어는 동일한 정규화된 팔 동작 표현을 사용하며, 그리퍼 차이는 구성 특정 하위 수준 컨트롤러가 처리.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>교차 구성 전이의 "추세"가 아닌 "임계값"을 최초로 제시</strong>: 기존 연구(예: Open X-Embodiment)는 구세대 데이터가 "유용할 수 있다"는 것만 증명했지만, 본 논문은 정리 형태로 전이 임계값 τ(T)를 정의하고 임계값 이하에서는 기대 기울기 정렬이 비양수, 이상에서는 양수임을 증명한다. 이는 정성적 관찰에서 정량적 판별 기준으로의 도약이다.</p>
+</li>
+<li>
+<p><strong>역 U자 이득 법칙의 통일된 설명 프레임워크</strong>: Phase I의 표현 진공, Phase II의 협력 발현, Phase III의 포화 감소를 단일 공식 E[ΔSR | SR] = [κ(1 − SR) − δ(SR)] × 𝟙[SR &gt; τ(T)]에 통합하고, 단계 디코딩 가능성을 하위 메커니즘으로 사용한다. 이는 후속 연구에 검증 가능한 이론적 예측을 제공한다.</p>
+</li>
+<li>
+<p><strong>양방향 전이의 실증 발견</strong>: 공동 훈련은 Gen-2 성능을 향상시킬 뿐만 아니라 Gen-1 꽃 삽입도 역방향으로 향상시킨다(50.0% → 78.3%). 이는 교차 구성 협력이 단방향 "소스에서 타깃으로" 전이가 아니라 공유 표현의 상호 이익 강화임을 시사하며, 다세대 하드웨어 공존 배포 시나리오에 직접적 지침을 제공한다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<p>실험은 휠형 휴머노이드 플랫폼(26 DoF)에서 수행되었으며, Gen-1(단안 카메라 640×480, 위치 제어 그리퍼)과 Gen-2(어안 카메라 1920×1536, 혼합 힘/위치 그리퍼) 두 세대 하드웨어를 비교한다. 정책은 π_0.5 VLA 백본의 행동 클로닝 미세 조정이며, 각 조건당 n = 60회 실제 시행.</p>
+<p><strong>표 2 (Phase I, 초기 Gen-2 데이터)</strong>: 꽃 삽입 Gen-2 단독 훈련 10.0%, 공동 훈련 후에도 10.0% (Δ = 0, p = n.s.), 낮은 기준선에서 구세대 데이터 무수익 확인; 동일 작업 Gen-1 단독 훈련 50.0%, 공동 훈련 후 78.3% (Δ = +28.3, p = 0.002), 양방향 전이 입증.</p>
+<p><strong>표 3 (Phase II, 품질 개선 Gen-2 데이터)</strong>: 꽃 삽입 단독 훈련 23.3%, 공동 훈련 86.7% (Δ = +63.4 퍼센트 포인트); 펜 삽입 단독 훈련 71.7%, 공동 훈련 98.3% (Δ = +26.6).</p>
+<p><strong>표 7 (포화 효과)</strong>: 펜 삽입 71.7% 기준선에서 이득 +26.6, 더 많은 Gen-2 데이터 추가로 85.0% 단독 기준선 도달 후 동일 작업 이득은 +8.3에 불과.</p>
+<p><strong>표 5 (보류 이동 물주기 작업)</strong>: 0.5 h 새 데이터 시 Δ = 0.0; 1.5 h 시 Pick kettle Δ = +40.0 (p = 1.5×10⁻⁶), Water plant Δ = +38.3 (p = 3.5×10⁻⁵); 8 h 시 Δ는 −1.7 및 +3.3으로 감소(모두 유의하지 않음).</p>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>데이터 조건</th>
+<th>단독 훈련 SR</th>
+<th>공동 훈련 SR</th>
+<th>ΔSR</th>
+<th>p 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>꽃 삽입</td>
+<td>초기 4.3 h</td>
+<td>10.0%</td>
+<td>10.0%</td>
+<td>0.0</td>
+<td>n.s.</td>
+</tr>
+<tr>
+<td>꽃 삽입</td>
+<td>개선 15.6 h</td>
+<td>23.3%</td>
+<td>86.7%</td>
+<td>+63.4</td>
+<td>1.8×10⁻¹²</td>
+</tr>
+<tr>
+<td>펜 삽입</td>
+<td>개선 13.58 h</td>
+<td>71.7%</td>
+<td>98.3%</td>
+<td>+26.6</td>
+<td>4.0×10⁻⁵</td>
+</tr>
+<tr>
+<td>펜 삽입</td>
+<td>초기+개선 32.21 h</td>
+<td>85.0%</td>
+<td>93.3%</td>
+<td>+8.3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>물주기 Pick</td>
+<td>1.5 h</td>
+<td>51.7%</td>
+<td>91.7%</td>
+<td>+40.0</td>
+<td>1.5×10⁻⁶</td>
+</tr>
+<tr>
+<td>물주기 Water</td>
+<td>1.5 h</td>
+<td>40.0%</td>
+<td>78.3%</td>
+<td>+38.3</td>
+<td>3.5×10⁻⁵</td>
+</tr>
+</tbody>
+</table>
+<p>결과는 3단계 모델을 검증한다: 낮은 기준선에서는 무수익, 중간 기준선에서는 높은 이득, 높은 기준선에서는 이득 감소. 물주기 작업 복잡도 추정 H(T) ≈ 44(펜 삽입의 42에 근접)로, 약 1–2시간 새 데이터면 고이득 구간에 진입할 것으로 예측되었고, 실제 1.5 h 데이터가 이 예측을 검증했다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<ul>
+<li>실험은 단일 휠형 휴머노이드 플랫폼, 두 세대 하드웨어, 하나의 VLA 백본(π_0.5) 및 제한된 조작 작업만을 다루며, 다른 형태(예: 사족, 휴머노이드 양팔)나 모델 계열로의 일반화는 검증되지 않음.</li>
+<li>τ(T) ≈ α + β·H(T) 관계는 저자가 명시적으로 "초기 증거가 있는 이론적 예측"으로 간주하며, 경험적으로 검증된 스케일링 법칙이 아님.</li>
+<li>훈련 중 소스별 기울기 정렬을 직접 기록하지 않았으며, 그림 4의 손실 궤적은 간접 진단으로만 사용되어 이론적 메커니즘(기울기 정렬 설명)이 직접 확립되지 않음.</li>
+<li>π_0.5 외 다른 VLA 백본을 테스트하지 않았으며, 이동 베이스 외 하드웨어 구성 차이 유형(예: 자유도 수 변화)도 다루지 않음.</li>
+</ul>
+<h2 id="_10">공학적 시사점</h2>
+<ol>
+<li>
+<p><strong>먼저 기준선 성공률 확인</strong>: 구세대 데이터 재사용 여부를 결정하기 전에 반드시 신형 하드웨어에서 단독 정책을 훈련하고 성공률을 측정하라. 15–20% 미만이면 구세대 데이터 공동 훈련은 대체로 무효하므로 새 데이터 수집을 우선시해야 함; 20–75% 구간이면 구세대 데이터 이득이 최대; 75% 이상이면 이득이 제한적이고 노이즈 수준의 음성 전이가 발생할 수 있음.</p>
+</li>
+<li>
+<p><strong>작업 복잡도가 임계값 예측의 핵심</strong>: H(T) = L(T)·log(1/ε(T))로 작업 난이도를 추정(물주기 작업 H ≈ 44, 펜 삽입 H ≈ 42)하면 필요한 새 데이터량을 사전에 예측할 수 있음. 물주기 작업이 8시간에서 1.5시간으로 단축된 사례는 이 규칙이 수집 비용을 크게 절감할 수 있음을 보여줌.</p>
+</li>
+<li>
+<p><strong>가장 함정에 빠지기 쉬운 지점</strong>: 데이터 품질은 임계값을 우회할 수 없음 — 초기 데이터(4.3 h)는 공동 훈련에도 무수익이지만, 개선 데이터(15.6 h)는 동일 작업에서 +63.4 포인트 이득을 제공. 품질 필터링(더 엄격한 운영자 훈련, 궤적별 필터링, 더 좁은 포즈 허용 오차)은 Phase II 진입의 필요 조건이지 충분 조건이 아님.</p>
+</li>
+<li>
+<p><strong>샘플링 비율 및 레이블 설계</strong>: 두 세대 데이터를 등확률 샘플링(시간 비율 아님)하고 정책에 세대 레이블을 부여하지 않는 것이 효과적 협력의 핵심 설계. 재현 시 이를 엄격히 준수해야 하며, 그렇지 않으면 구성 특정 지름길이 유발될 수 있음.</p>
+</li>
+<li>
+<p><strong>통계적 엄밀성</strong>: 음의 ΔSR은 통계적으로 유의할 때만 음성 전이 증거로 간주(본 논문의 주요 실험에서 모든 음의 이득은 유의하지 않음). 평가 시 양측 Fisher 정확 검정과 Wilson 95% 신뢰 구간을 사용하며, n = 60회 시행은 신뢰할 수 있는 결론을 위한 최소 요건임.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">studies</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_adaptation/">도메인 적응</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_when_does_legacy_data_start_help_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 적응</h3>
+          <p>소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#3">3단계 모델</a></li>
+<li><a href="#_4">핵심 이론 정의</a></li>
+<li><a href="#_5">단계 인식 데이터 수집 규칙</a></li>
+<li><a href="#_6">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

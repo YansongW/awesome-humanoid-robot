@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning</h1>
+      <p class="entry-name-en">Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Full-sized humanoid robot capabilities have grown exponentially in recent years, aiming towards general-purpose deployment in human environments. A popular control method used by manufacturers utilizes Virtual Reality for upper-body teleoperation and Reinforcement Learning for lower-body balance and locomotion control. As a result, a single remote operator can see, manipulate, and navigate about.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.20399" target="_blank" rel="noopener">arXiv:2607.20399 Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Rein</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 소형 휴머노이드 로봇 ROBOTIS OP3를 위한 순응형 전신 원격현장 제어 스택을 제안한다. VR 상반신 원격 조작과 RL 하반신 보행/균형 제어를 분리하고, PD 임피던스 제어를 통해 양팔 조작과 양다리 보행의 협력을 구현한다. 시스템은 실제 로봇에서 보행, 집기, 운반 작업을 완료하여 저비용 소형 플랫폼의 loco-manipulation 실행 가능성을 검증하고, 완전한 소프트웨어/하드웨어 구현 세부 사항을 공개한다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>전신 휴머노이드 로봇의 VR+RL 제어 스택(예: HOMIE, Mobile-TeleVision)은 강력하지만 하드웨어 비용이 높고 조작 장벽이 커서 연구 커뮤니티가 재현하고 데이터를 축적하기 어렵다. 소형 휴머노이드 로봇(예: OP3)은 가격이 저렴하고 접근이 용이하지만, 자유도가 적고 센서가 단순하며 액추에이터 비선형성이 강해 오랫동안 완전한 전신 제어 솔루션이 부재했다. 기존 연구는 상반신 원격 조작만 하거나 하반신 보행만 다루었으며, 둘을 결합하고 실제 운반 작업을 검증한 사례는 드물었다.</p>
+<p>본 논문이 실제로 바꾼 것은: 20자유도, 관절 토크 센서 없음, 전류 개루프 토크 제어만 가능한 소형 플랫폼에서 "VR 원격 조작(상반신) + RL 정책(하반신) + 전신 PD 임피던스"의 계층적 아키텍처를 통해 사용 가능한 loco-manipulation 시스템을 구축할 수 있음을 증명한 것이다. 이는 값비싼 데모를 보여주는 것이 아니라 저비용 휴머노이드 로봇 연구를 위한 재현 가능한 기준선을 제공한다. 그 의미는 "전신 원격 조작"을 전신 플랫폼의 전유물에서 소형 플랫폼의 현실적 선택지로 바꾼 것이다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">시스템 아키텍처</h3>
+<ul>
+<li><strong>계층적 제어</strong>: VR 원격 조작은 양팔(팔당 3 DoF)과 목(2 DoF)을 담당하고, RL 정책은 양다리(다리당 6 DoF)를 담당하며, 둘은 전신 PD 임피던스 제어(식 1)를 통해 관절 수준에서 융합된다.</li>
+<li><strong>하드웨어</strong>: ROBOTIS OP3(20 DoF, DYNAMIXEL XM430-W350-R 서보), 카메라는 VR180 듀얼 어안(3840×1080@60Hz)으로 교체, 호스트는 i9+RTX 4090, VR은 VIVE Pro 2 + 4 베이스스테이션.</li>
+</ul>
+<h3 id="_5">상반신 원격 조작</h3>
+<ul>
+<li><strong>모션 리타겟팅</strong>: 다중 목표 IK 솔버 [28]가 VR 컨트롤러 위치를 추적하며, 내장 사다리꼴 속도 프로파일이 관절 최대 속도/가속도를 제한한다. VIVE 트리거가 스위치 역할을 하며, 해제 시 IK 제한을 0으로 만들고, 누를 때 EMA 필터를 통해 천천히 복구한다.</li>
+<li><strong>토크 제어</strong>: 맞춤형 PD 컨트롤러(식 1), 200 Hz에서 실행(TTL 제한). DYNAMIXEL 서보는 하드웨어 전류 제어를 통한 개루프 토크를 구현하며, 전류-토크 선형성을 가정한다(모터 상수는 락 토크/전류로 결정). 정적 테스트 벤치에서 선형 동작을 검증한다.</li>
+<li><strong>접촉력 추정(식 2)</strong>: F = −Kx(x는 가상 모델과 반투명 모델 엔드 이펙터 간 벡터 거리), 임계값 미만일 때 오차가 기계적 지연에 의한 것으로 가정하며 완전한 동역학 모델에 의존하지 않는다.</li>
+<li><strong>비디오 스트리밍</strong>: UDP + GStreamer, GPU 가속 H.265 트랜스코딩, 글래스-투-글래스 지연 약 100 ms, 비트레이트 &lt;4 Mbps. 목 기계적 지연은 디스플레이 구체를 역회전시켜 마스킹하고, EMA 필터로 평활화한다.</li>
+</ul>
+<h3 id="rl">하반신 RL 보행</h3>
+<ul>
+<li><strong>MDP 정식화</strong>: 할인된 보상 G_t = Σ γᵏR(S_{t+k}, A_{t+k})를 최대화하고, 최적 정책 π*는 상태 조건 및 상태-행동 조건 기대 보상을 동시에 최대화한다.</li>
+<li><strong>관측 공간</strong>: 5개 항목(각속도, 투영 중력, 사용자 명령, 관절 위치, 이전 행동), 각 항목에 이전 9단계 히스토리를叠加하여 330×1 벡터를 구성한다. 관절 속도는 모델이 추론하며 관측에 포함되지 않는다.</li>
+<li><strong>보상 설계</strong>: 보행 보상(이중 지지/단일 지지), 발 방향 페널티(투영 중력 xy 성분), 발 지면 이탈 보상, 행동 평활도 페널티 등, 가중치는 표 III 참조.</li>
+<li><strong>도메인 무작위화</strong>: 발 마찰 (0.5, 0.9), 중력 스케일 (0.95, 1.3), 링크 질량 (0.7, 1.3), 신체 속도/위치/방향 가산 잡음, 관절 위치/속도 스케일링. 밀기 이벤트는 (10, 15)초마다 무작위로 신체 선속도를 추가한다.</li>
+<li><strong>액추에이터 식별</strong>: BAM 방법은 진자 테스트 벤치 기반, 파라미터 armature=0.045, friction loss=0.03, effort limit=3.6, Isaac Sim에서 검증.</li>
+</ul>
+<h3 id="_6">터치패드 매핑</h3>
+<ul>
+<li>VIVE 2D 터치패드는 차동 구동식 속도 명령(각속도 1개, 선속도 1개)으로 매핑되어 하반신 RL 정책으로 전송된다.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li><strong>소형 플랫폼 전신 제어 스택의 최초 완전 구현</strong>: 이전에는 VR 원격 조작과 RL 보행이 각각 소형 플랫폼에서 독립적으로 검증되었지만, 본 논문은 처음으로 둘을 OP3에서 융합하고 실제 운반 작업을 완료하여 저비용 플랫폼 loco-manipulation 연구의 공백을 메웠다.</li>
+<li><strong>관절 토크 센서가 필요 없는 순응 제어</strong>: DYNAMIXEL 서보의 전류-토크 선형 관계를 활용한 개루프 토크 제어와 맞춤형 PD 게인(팔은 낮게, 다리는 높게)을 통해 토크 센서 없이 순응 조작 능력을 확보하여 하드웨어 장벽을 낮췄다.</li>
+<li><strong>가상 오차 기반 접촉력 추정</strong>: 식 2는 로봇 팔 동역학 모델에 의존하지 않고 가상 모델과 반투명 모델 간의 거리 오차만으로 접촉력을 추정하여, Jacobian 방법보다 간단하고 실용적이며 센서가 부족한 소형 플랫폼에 적합하다.</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<p>시스템 전체 성능을 검증하기 위해 저자는 ROBOTIS OP3 소형 휴머노이드 로봇(20개 회전 자유도)에서 세 가지 실험을 수행했다: 원격 조작 검증(양팔 원 그리기), 운동 검증(무작위 전신 속도 명령 하의 이족 안정성), 원격-운동-조작 통합 실험(보행, 3D 프린팅 PLA 큐브 집기 및 운반). 원격 조작 하드웨어는 VIVE Pro 2 HMD, VIVE 컨트롤러, 4개 SteamVR Basestation 2.0 및 KAT Walk C2+ VR 트레드밀을 사용하며, 제어 주파수는 200 Hz, 비디오 시스템은 VR180 듀얼 어안 USB 카메라(3840 × 1080 수평 나란히 이미지, 60 Hz, H.265 트랜스코딩, 글래스-투-글래스 지연 약 100 ms)이다. 운동 정책은 도메인 무작위화(발 마찰 (0.5, 0.9), 중력 스케일 (0.95, 1.3), 링크 질량 스케일 (0.7, 1.3) 등)와 관측 잡음 주입(각속도 0.2, 투영 중력 0.1, 관절 위치 0.05)으로 훈련되었으며, 관측 공간은 330 × 1 벡터이다. 통합 실험에서 조작자는 10분 내에 10회 시도를 완료했으며, 각 시도는 약 5m를 보행하고 40g 큐브 운반을 시도했다.</p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>원격 조작 운동 지연(y 방향)</td>
+<td>220 ms</td>
+</tr>
+<tr>
+<td>오른손 x 방향 위치 추적 MAE / RMSE</td>
+<td>8.76 / 12.35</td>
+</tr>
+<tr>
+<td>오른손 y 방향 위치 추적 MAE / RMSE</td>
+<td>10.58 / 15.07</td>
+</tr>
+<tr>
+<td>오른손 z 방향 위치 추적 MAE / RMSE</td>
+<td>8.68 / 11.17</td>
+</tr>
+<tr>
+<td>통합 실험 성공적 큐브 운반 수</td>
+<td>6개 중 2개</td>
+</tr>
+<tr>
+<td>통합 실험 평균 보행 속도</td>
+<td>0.35 m/s</td>
+</tr>
+<tr>
+<td>보행 속도 상한(요약)</td>
+<td>0.45 m/s</td>
+</tr>
+</tbody>
+</table>
+<p><strong>결과 의미:</strong></p>
+<ul>
+<li><strong>원격 조작 정밀도는 지연에 의해 지배됨</strong>: 일부 팔 위치 오차의 RMSE 또는 MAE가 15를 초과하지만(논문에서 명확히 밝히지 않음), 대부분의 순간 오차는 약 220 ms의 운동 지연에 기인한다. 상지는 조작자가 요구한 원 그리기 동작을 명확히 재현할 수 있어, 지연 보상 후 원격 조작 매핑이 사용 가능한 정밀도를 가짐을 보여준다.</li>
+<li><strong>운동 정책은 급격한 명령 하에서도 안정성을 유지</strong>: 정규화된 투영 중력이 기대값 -1 근처에 유지되어, RL 정책이 무작위하고 급격한 보행 속도 명령 변화 하에서도 올바르게 안정적인 몸통 자세를 유지함을 보여주며, 도메인 무작위화 훈련의 효과를 검증한다.</li>
+<li><strong>통합 작업 성능은 조작 난이도와 좌절감에 의해 제약됨</strong>: 시스템은 10분 내에 6개 중 2개의 큐브만 성공적으로 운반했으며, 평균 보행 속도는 0.35 m/s이다. 저자는 성능 병목이 주로 세 가지 측면에서 비롯된다고 지적한다: RL 정책 보행 시 발 들기 높이 부족, 사용자가 큐브를 들어 올릴 충분한 힘을 내기 위해 팔을 교차해야 함, 유선 전원 연결로 인한 운동 도전. 시스템에 중력 및 마찰 보상 항목이 없어 높은 PD 게인을 사용해야 하며, 이는 순응성을 더욱 저하시킨다.</li>
+</ul>
+<h2 id="_9">경계 및 한계</h2>
+<ul>
+<li><strong>운반 성능 제한적</strong>: 평균 6개 중 2개의 큐브만 운반했으며, RL 보행 정책의 발 들기 높이 부족, 사용자가 충분한 파지력을 내기 위해 팔을 교차해야 함, 케이블 전원 공급이 보행을 방해함에 기인한다.</li>
+<li><strong>순응성과 힘 제어의 모순</strong>: 중력/마찰 보상 부재로 높은 PD 게인이 필요하며, 순응성을 희생한다. 보상 항목 추가를 권장하지만 정확한 동역학 모델이 필요하다.</li>
+<li><strong>액추에이터 모델 조잡함</strong>: sim2real 격차에 대응하기 위해 과도한 도메인 무작위화가 필요하며, 이는 실제 환경에서 정책의 상한 성능에 영향을 줄 수 있다.</li>
+<li><strong>수행하지 않은 것</strong>: VR 트레드밀(KAT Walk C2+) 통합 미구현, 무선 조작 미구현, 더 어려운 지형 미사용, 실제 그리퍼/엔드 이펙터 힘 센서 미추가, 허리 자유도 부재 처리 미수행(OP3에는 허리 DoF가 없어 사용자 몸통 회전을 매핑할 수 없음).</li>
+<li><strong>훈련 세부 사항 누락</strong>: 논문은 훈련 스텝 수, 병렬 환경 수, 학습률, 네트워크 구조, 추론 빈도 등 핵심 재현 파라미터를 명확히 밝히지 않았다.</li>
+</ul>
+<h2 id="_10">공학적 시사점</h2>
+<ul>
+<li><strong>재현 우선순위</strong>: 먼저 액추에이터 식별 파라미터(armature=0.045, friction loss=0.03, effort limit=3.6)가 사용 중인 서보 모델에 적용되는지 확인하라. DYNAMIXEL 전류-토크 선형 가정은 핵심 전제이므로 반드시 정적 테스트 벤치에서 선형성을 검증해야 하며, 그렇지 않으면 PD 제어가 왜곡된다.</li>
+<li><strong>가장 쉽게 빠지는 함정</strong>: ① 200 Hz 제어 주파수는 TTL 통신 제한에 기인하므로, 더 높은 대역폭 버스로 변경하면 PD 게인을 다시 조정해야 한다. ② 접촉력 추정(식 2)의 임계값 x_threshold는 기계적 지연 실측에 따라 조정해야 하며, 그렇지 않으면 접촉을 오판한다. ③ 비디오 지연 마스킹은 EMA 필터 파라미터에 의존하므로 목 기계적 지연과 정확히 일치해야 하며, 그렇지 않으면 조작자가 어지러움을 느낀다.</li>
+<li><strong>하위 팀 지침</strong>: 목표 작업이 정밀 조작이라면 중력/마찰 보상을 우선 추가하여 PD 게인을 낮추고 순응성을 높이는 것이 좋다. 목표가 보행 견고성이라면 표 I의 도메인 무작위화 범위를 참조할 수 있지만, 과도한 무작위화가 조작 정밀도를 저하시킬 수 있음에 주의하라. 운반 작업에서 실제 그리퍼 또는 엔드 이펙터 힘 센서는 성공률을 높이는 직접적인 수단이다.</li>
+<li><strong>데이터 가치</strong>: 이 시스템은 소형 휴머노이드 로봇 loco-manipulation 데이터 수집 플랫폼으로 사용될 수 있지만, 먼저 케이블 문제와 발 들기 높이 문제를 해결해야 하며, 그렇지 않으면 수집된 데이터 품질이 제한된다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhang_a_unified_perception_language_2025/">A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_miniature_humanoid_tele_loco_manipulatio_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhang_a_unified_perception_language_2025/">
+          <span class="entry-type">논문</span>
+          <h3>A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving</h3>
+          <p>A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving (PLA), is a 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">시스템 아키텍처</a></li>
+<li><a href="#_5">상반신 원격 조작</a></li>
+<li><a href="#rl">하반신 RL 보행</a></li>
+<li><a href="#_6">터치패드 매핑</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

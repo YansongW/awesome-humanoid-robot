@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Berkeley Humanoid: A Research Platform for Learning-based Control · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Berkeley Humanoid: A Research Platform for Learning-based Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Berkeley Humanoid: A Research Platform for Learning-based Control</h1>
+      <p class="entry-name-en">Berkeley Humanoid: A Research Platform for Learning-based Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">设计工程</span><span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.21781v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Berkeley Humanoid 是加州大学伯克利分校于 2024 年推出的低成本、轻量级人形机器人研究平台，专为基于学习的控制算法设计。其核心贡献在于通过低仿真复杂度、拟人化运动与高抗摔可靠性，实现了从仿真到现实（sim-to-real）的窄差距迁移，仅用轻量域随机化的强化学习控制器即可在户外复杂地形上完成敏捷、鲁棒的 locomotion。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2407.21781" target="_blank" rel="noopener">Berkeley Humanoid: A Research Platform for Learning-based Control (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://berkeley-humanoid.com/" target="_blank" rel="noopener">Berkeley Humanoid: A Research Platform for Learning-based Control project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Berkeley Humanoid 是一款由伯克利团队内部自建的中型人形机器人研究平台，强调低成本、轻量化和高可靠性。该机器人专为学习算法优化，具备低仿真复杂度、拟人化运动特性，并能有效抵抗跌倒冲击。通过简单的强化学习控制器配合轻量域随机化，机器人实现了从仿真到现实的窄差距迁移，能够在户外多种地形上完成敏捷且鲁棒的 locomotion。实验展示了机器人连续行走数百米、在陡峭未铺装小径上行走、以及单腿和双腿跳跃等动态行走能力，验证了其高性能。该系统支持全向 locomotion，并能以紧凑的配置承受大幅扰动，旨在推动基于学习的人形机器人系统的可扩展仿真到现实部署。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">平台设计理念</h3>
+<ul>
+<li><strong>低成本与轻量化</strong>：Berkeley Humanoid 采用内部自建方式，旨在降低研究门槛，避免依赖昂贵商用平台。</li>
+<li><strong>专为学习算法设计</strong>：机器人结构优化了仿真复杂度，使强化学习训练更高效；同时具备拟人化运动学特性，便于迁移到真实世界。</li>
+<li><strong>高抗摔可靠性</strong>：硬件设计能承受频繁跌倒，适合在真实环境中进行探索性学习实验。</li>
+</ul>
+<h3 id="sim-to-real">仿真到现实（Sim-to-Real）迁移</h3>
+<ul>
+<li><strong>窄差距迁移</strong>：通过轻量域随机化（light domain randomization）的强化学习控制器，机器人从仿真环境直接迁移到真实世界，无需大量手动调参。</li>
+<li><strong>户外地形适应性</strong>：在户外环境中成功穿越多种地形，包括平坦路面、陡峭未铺装小径，并实现单腿和双腿跳跃。</li>
+</ul>
+<h3 id="_4">实验性能与关键数字</h3>
+<ul>
+<li><strong>长距离行走</strong>：机器人连续行走数百米，验证了系统的稳定性和续航能力。</li>
+<li><strong>动态行走能力</strong>：在陡峭未铺装小径上行走，并完成单腿和双腿跳跃动作，展示了高动态性能。</li>
+<li><strong>抗扰动能力</strong>：支持全向 locomotion，并能以紧凑的硬件配置承受大幅外部扰动。</li>
+</ul>
+<h3 id="_5">开源与资源</h3>
+<ul>
+<li>项目代码与硬件设计已开源，详情请访问 http://berkeley-humanoid.com。</li>
+</ul>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2407.21781v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">宇树 H1 人形机器人</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_boston_dynamics_atlas_2024/">波士顿动力 Atlas</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_agility_robotics_digit_2023/">Agility Robotics Digit</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_berkeley_humanoid_a_research_p_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_robot_boston_dynamics_atlas_2024/">
+          <span class="entry-type">机器人系统</span>
+          <h3>波士顿动力 Atlas</h3>
+          <p>概述 波士顿动力 Atlas是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">
+          <span class="entry-type">机器人系统</span>
+          <h3>宇树 H1 人形机器人</h3>
+          <p>概述 宇树 H1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_agility_robotics_digit_2023/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Agility Robotics Digit</h3>
+          <p>Agility Robotics Digit是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">平台设计理念</a></li>
+<li><a href="#sim-to-real">仿真到现实（Sim-to-Real）迁移</a></li>
+<li><a href="#_4">实验性能与关键数字</a></li>
+<li><a href="#_5">开源与资源</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

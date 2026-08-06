@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents</h1>
+      <p class="entry-name-en">RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RoboBRIDGE 是一个策略无关的模块化编排框架，通过 Monitor、Perceptor、Planner、Controller 与 Robot Interface 五个模块，将任意动作生成策略（如 VLA 模型）包装为具备失败恢复与鲁棒性的真实世界机器人智能体。其核心贡献在于提出两阶段监控与四级分层恢复机制，以及异步感知驱动的反应式规划，在不重训练基础策略的前提下显著提升长时程任务成功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.27881" target="_blank" rel="noopener">arXiv:2607.27881 RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robot</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它改变了“VLA 模型即智能体”这一隐含假设。此前社区普遍将动作预测精度视为机器人智能的关键瓶颈，而 RoboBRIDGE 明确指出，即便预测器本身足够强，缺乏失败恢复、长时程一致性维护与观测漂移适应能力的裸策略，在真实部署中依然脆弱。这一判断将问题重心从“如何训练更好的策略”转移到“如何围绕策略构建可靠的执行闭环”，与 LLM 从文本生成器演化为智能体的路径形成类比——关键不在模型规模，而在编排结构。</p>
+<p>它同时改变了现有补救方案的碎片化现状。运行时监控、重规划、LLM 任务分解与跨域训练各自针对单一失败模式，且依赖特定环境假设；RoboBRIDGE 首次以统一框架将这些能力整合为策略无关的通用层，使得任何控制器（包括非 VLA 的 IK 求解器）都能获得一致的鲁棒性增益。这实质上是将“可靠性”从策略内部剥离，外化为可复用、可迁移的系统属性。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">框架总览</h3>
+<p>RoboBRIDGE 由五个模块组成，Controller 槽位可插入任意动作生成策略（VLA、IK 求解器等）。Planner 负责任务分解，Perceptor 提供异步感知，Monitor 执行两阶段监控，Robot Interface 负责底层执行。</p>
+<h3 id="_4">两阶段监控与分层恢复</h3>
+<ul>
+<li><strong>阶段 1（轻量检查）</strong>：成功检查模型 D_check 将观测 o_t 与计划上下文 c_t 映射为二元成功标志 suc_t 与置信度 con_t（公式 1）。采用约束输出格式抑制扩展推理，以约 5Hz 频率运行于控制循环外，不阻塞执行。</li>
+<li><strong>阶段 2（诊断与恢复）</strong>：当 suc_t=false 且 con_t ≥ γ_thresh 时，立即停止机器人，调用 D_diag 推断根因并输出恢复目标 r_t 与原因 reason_t（公式 2）。</li>
+<li><strong>四级恢复策略</strong>（按重计算范围递增）：</li>
+<li><strong>retry</strong>：重执行当前原语；</li>
+<li><strong>regenerate</strong>：保留计划与感知状态，重新生成轨迹；</li>
+<li><strong>replan</strong>：从最新异步感知重新规划；</li>
+<li><strong>re-perceive</strong>：强制完全重新感知后再规划。</li>
+</ul>
+<h3 id="_5">异步感知与反应式规划</h3>
+<ul>
+<li>采用生产者-消费者架构，感知线程持续更新线程安全缓冲区 ℬ 中的最新检测结果 ō_t = D_percept(o_t)，缓冲区仅保留单个最新结果。</li>
+<li>发散度量（公式 3）：Δ(ō_a, ō_b) = max_{i∈O_a∩O_b}[‖p_a^(i) − p_b^(i)‖₂] + λ·|O_a △ O_b|，其中 p^(i) 为对象 3D 位置，O 为检测集合，△ 为对称差，λ 加权对象出现/消失的位移。</li>
+<li>当 Δ ≥ τ 时，保留高层动作序列，仅用最新感知重新生成当前及后续原语，避免冗余高层推理。</li>
+</ul>
+<h3 id="_6">原语技能微调与控制器切换</h3>
+<ul>
+<li>操作分解为域不变原语集合 P = {move, grip, rotate, ...}（公式 4），Planner 输出有序序列 (p_1, ..., p_T)。</li>
+<li>每个原语由冻结 VLA 骨干 f_θ 上的专用 LoRA 适配器 Δθ_k 执行（公式 5）：f_{θ+Δθ_k}: (i, s_t, p_t) ↦ a_t^(k)。</li>
+<li>控制器切换（公式 6）：Resolve(p_t) = Δθ_{p_t}（若存在），否则取所有注册适配器的平均。LoRA 模块原地交换，无需重新加载骨干。</li>
+</ul>
+<h3 id="_7">动作生成与执行</h3>
+<ul>
+<li>适配器预测 7-DoF 增量动作（公式 7）：a_t = [δx, δφ, g]，其中 δx∈R³ 为平移增量，δφ∈R³ 为旋转增量，g∈[−1,1] 为夹爪指令。</li>
+<li>增量以笛卡尔速度命令在控制频率 f_c 下发送（公式 8）：u_t = (1/Δt)[δx; δφ]，Δt = 1/f_c。</li>
+<li>若 IK 可用，转换为绝对目标并求解关节位置（公式 9）：x_{t+1}^ee = x_t^ee + δx，q* = IK(x_{t+1}^ee, q_t^ee)；IK 失败时回退到笛卡尔速度命令。</li>
+</ul>
+<h3 id="algorithm-1">算法流程（Algorithm 1）</h3>
+<p>初始化感知 → 规划 → 启动异步感知线程 → 对每个原语：解析适配器 → 循环执行（预测动作、环境步进、轻量成功检查、失败时停止并诊断恢复）→ 原语完成后检查发散度，超阈值则更新计划并重规划。</p>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li>
+<p><strong>策略无关的编排层</strong>：RoboBRIDGE 不修改任何策略权重，仅通过外部模块包装即可提升鲁棒性。这使得同一框架可适配 SmolVLA、π_0.5、GR00T-N1.5 乃至传统 IK 控制器，将可靠性增益从特定模型泛化为系统级属性。其重要性在于，策略迭代无需重新设计鲁棒性机制，框架可随控制器升级持续复用。</p>
+</li>
+<li>
+<p><strong>两阶段监控与四级恢复的层次化设计</strong>：轻量检查（阶段 1）以极低延迟持续运行，仅在置信度足够高时才触发昂贵的诊断（阶段 2），避免了对每个动作都进行深度推理的开销。四级恢复按重计算范围递增，从最廉价的 retry 到最彻底的 re-perceive，实现了计算成本与恢复效果的自适应权衡。这一设计直接回应了“在徒劳重试上浪费步骤”的痛点。</p>
+</li>
+<li>
+<p><strong>异步感知驱动的反应式规划</strong>：通过发散度量 Δ 量化计划时感知与最新感知的差异，仅在差异超阈值时触发局部重规划，而非全局重规划。这一机制在保持高层任务意图的同时，以最小计算代价适应动态环境变化，是长时程任务一致性的关键支撑。</p>
+</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="libero-robocasa">主结果（LIBERO 与 RoboCasa）</h3>
+<table>
+<thead>
+<tr>
+<th>骨干</th>
+<th>环境</th>
+<th>w/o 平均成功率</th>
+<th>w/RB 平均成功率</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GR00T-N1.5</td>
+<td>LIBERO-Object</td>
+<td>4.7%</td>
+<td>10.0%</td>
+<td>+5.3%</td>
+</tr>
+<tr>
+<td>GR00T-N1.5</td>
+<td>LIBERO-Spatial</td>
+<td>72.4%</td>
+<td>73.5%</td>
+<td>+1.1%</td>
+</tr>
+<tr>
+<td>GR00T-N1.5</td>
+<td>LIBERO-Goal</td>
+<td>54.1%</td>
+<td>55.3%</td>
+<td>+1.2%</td>
+</tr>
+<tr>
+<td>GR00T-N1.5</td>
+<td>LIBERO-Long</td>
+<td>10.6%</td>
+<td>20.0%</td>
+<td>+9.4%</td>
+</tr>
+<tr>
+<td>SmolVLA</td>
+<td>RoboCasa</td>
+<td>3.4%</td>
+<td>6.9%</td>
+<td>+3.5%</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>RoboCasa</td>
+<td>3.4%</td>
+<td>5.9%</td>
+<td>+2.5%</td>
+</tr>
+<tr>
+<td>GR00T-N1.5</td>
+<td>RoboCasa</td>
+<td>4.2%</td>
+<td>9.8%</td>
+<td>+5.6%</td>
+</tr>
+</tbody>
+</table>
+<p>LIBERO 平均成功率从 35.5% 提升至 39.7%，RoboCasa 从 3.7% 提升至 7.5%（排除 pick-and-place 时从 6.2% 提升至 11.4%）。长时程任务（LIBERO-Long）增益最大（+9.4%），印证了框架对一致性与恢复能力的核心价值。</p>
+<h3 id="iiigr00t-n15-on-robocasa-pnp">监控消融（表 III，GR00T-N1.5 on RoboCasa，排除 PnP）</h3>
+<table>
+<thead>
+<tr>
+<th>LLM 骨干</th>
+<th>w/o Monitor</th>
+<th>w/ Monitor</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Opus 4.6</td>
+<td>6.6%</td>
+<td>14.7%</td>
+<td>+8.1%</td>
+</tr>
+<tr>
+<td>Claude Sonnet 4.6</td>
+<td>8.0%</td>
+<td>9.8%</td>
+<td>+1.8%</td>
+</tr>
+<tr>
+<td>Claude Haiku 4.5</td>
+<td>6.3%</td>
+<td>6.3%</td>
+<td>+0.0%</td>
+</tr>
+<tr>
+<td>GPT-5 mini</td>
+<td>2.7%</td>
+<td>8.9%</td>
+<td>+6.2%</td>
+</tr>
+<tr>
+<td>GPT-5 nano</td>
+<td>2.7%</td>
+<td>5.4%</td>
+<td>+2.7%</td>
+</tr>
+<tr>
+<td>Gemini-3.1 Pro</td>
+<td>6.0%</td>
+<td>8.0%</td>
+<td>+2.0%</td>
+</tr>
+<tr>
+<td>Gemini-3 Flash</td>
+<td>1.8%</td>
+<td>2.7%</td>
+<td>+0.9%</td>
+</tr>
+</tbody>
+</table>
+<p>无监控时所有骨干成功率集中在 1.8–8.0% 窄区间，监控带来的增益与 LLM 能力正相关，最强骨干（Claude Opus 4.6）增益最大。</p>
+<h3 id="iv-robocasa">控制器分析（表 IV，五个 RoboCasa 任务子集）</h3>
+<table>
+<thead>
+<tr>
+<th>控制器</th>
+<th>w/o 平均</th>
+<th>w/RB 平均</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LoRA FT</td>
+<td>15.3%</td>
+<td>27.1%</td>
+<td>+11.8%</td>
+</tr>
+<tr>
+<td>Full FT</td>
+<td>31.9%</td>
+<td>40.0%</td>
+<td>+8.1%</td>
+</tr>
+<tr>
+<td>IK 控制器（仅 w/RB）</td>
+<td>—</td>
+<td>22.1%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>CycleVLA（仅 w/o）</td>
+<td>7.5%</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>LoRA 微调 + RoboBRIDGE（27.1%）接近独立全微调基线（31.9%），而全微调 + RoboBRIDGE 达 40.0%。IK 控制器在框架内达 22.1%，显著高于 CycleVLA 的 7.5%，证明框架对非学习型控制器同样有效。</p>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>原语词汇覆盖有限</strong>：当前原语集合涵盖单臂桌面行为，接触丰富的交互、可变形物体与双臂任务需要更丰富的原语和状态表示，框架在此类场景下的有效性未经验证。</li>
+<li><strong>监控阈值与恢复规则手动设置</strong>：γ_thresh、τ 等关键参数依赖人工调参，从交互数据中学习这些规则是作者明确指出的未来方向，当前框架的泛化性受限于人工设定的边界。</li>
+<li><strong>感知错误仍是主导失败模式</strong>：作者识别出 Perceptor 误识别或误定位目标对象是主要失败原因之一，框架虽能触发 re-perceive 恢复，但无法从根本上解决感知鲁棒性问题。</li>
+<li><strong>验证与确认层缺失</strong>：作者承认当前框架缺少显式验证与确认机制，无法在动作执行前评估可行性或检测成功可能性低的情况，这是关键下一步。</li>
+<li><strong>计算成本与延迟未量化</strong>：论文未明确提及框架各模块（尤其是 LLM 诊断）的延迟与计算开销，对实时性要求高的场景适用性存疑。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>先核对监控阈值 γ_thresh 与发散阈值 τ</strong>：这两个参数直接决定恢复触发的灵敏度，过严导致频繁中断，过松则恢复失效。建议在目标环境上先做小规模标定，观察失败模式分布后再设定。</li>
+<li><strong>LoRA 适配器是性价比最高的起点</strong>：实验表明 LoRA 微调 + RoboBRIDGE（27.1%）已接近独立全微调（31.9%），而训练成本显著更低。若追求极致性能，再考虑全微调 + 框架（40.0%）。</li>
+<li><strong>LLM 骨干选择需权衡能力与延迟</strong>：监控消融显示，Claude Opus 4.6 的监控增益（+8.1%）远超轻量模型（Haiku 4.5 为 +0.0%），但更强模型通常伴随更高延迟。若实时性敏感，可考虑将阶段 1 轻量检查与阶段 2 强模型诊断分离，以控制端到端延迟。</li>
+<li><strong>最容易踩坑的是感知异步缓冲区的同步</strong>：生产者-消费者架构中，缓冲区仅存最新结果，若感知线程与执行线程频率不匹配，可能导致规划基于过期感知。务必监控 Δ 的分布，确保发散度量能及时反映环境变化。</li>
+<li><strong>IK 回退路径必须测试</strong>：公式 9 中 IK 失败时回退到笛卡尔速度命令，这一路径在奇异位形或关节限位附近可能频繁触发，建议在部署前对目标工作空间做 IK 可行性扫描。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.27881</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robobridge_modular_framework_bridging_po_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SmolVLA</h3>
+          <p>SmolVLA 是 Hugging Face、Sorbonne University、valeo.ai 与 École Normale Supérieure Paris-Saclay 于 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">框架总览</a></li>
+<li><a href="#_4">两阶段监控与分层恢复</a></li>
+<li><a href="#_5">异步感知与反应式规划</a></li>
+<li><a href="#_6">原语技能微调与控制器切换</a></li>
+<li><a href="#_7">动作生成与执行</a></li>
+<li><a href="#algorithm-1">算法流程（Algorithm 1）</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#libero-robocasa">主结果（LIBERO 与 RoboCasa）</a></li>
+<li><a href="#iiigr00t-n15-on-robocasa-pnp">监控消融（表 III，GR00T-N1.5 on RoboCasa，排除 PnP）</a></li>
+<li><a href="#iv-robocasa">控制器分析（表 IV，五个 RoboCasa 任务子集）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

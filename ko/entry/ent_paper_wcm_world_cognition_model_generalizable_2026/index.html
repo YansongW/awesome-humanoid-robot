@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WCM: World-Cognition Model for Generalizable Human-Robot Interaction · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WCM: World-Cognition Model for Generalizable Human-Robot Interaction</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>WCM: World-Cognition Model for Generalizable Human-Robot Interaction</h1>
+      <p class="entry-name-en">WCM: World-Cognition Model for Generalizable Human-Robot Interaction</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Language agents can now interact fluently with users in software, but robots still struggle to bring comparable interaction to physical tasks. Current robot-control paradigms, including vision-language-action policies and world-model-based planners, are mainly optimized for instruction execution, leaving users with little visibility into why an action is chosen and few mechanisms to redirect,.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.22999" target="_blank" rel="noopener">arXiv:2607.22999 WCM: World-Cognition Model for Generalizable Human-Robot Interaction</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>WCM(World-Cognition Model)은 인간 중심의 구현형 에이전트 프레임워크로, SLAK 4계층 아키텍처(Sensing, Logic, Action, Knowledge)와 비동기 런타임을 기반으로 구축되었으며, 로봇이 물리적 작업 실행에서 설명 가능하고, 개입 가능하며, 교육 가능한 상호작용 능력을 갖추도록 설계되었습니다. 핵심 기여는 상호작용 과정 자체를 추론 감독 신호로 변환하고, CoT 증류와 인간-참여 루프 교육 모드를 통해 9가지 실제 세계 작업에서 73.8%의 평균 성공률을 달성하며, 훈련 작업을 넘어서는 전이 능력을 보여준다는 점입니다.</p>
+<h2 id="_2">그것이 바꾸는 것</h2>
+<p>현재 로봇 제어의 주류 패러다임(VLA 정책이든 세계 모델 기반 플래너든)은 언어를 행동 예측의 조건 신호 또는 내부 추론의 암시적 매개체로 간주하며, 사용자는 "로봇이 왜 이 행동을 선택했는지"에 대한 가시성을 갖지 못하고, 실행 중에 실시간으로 방향을 바꾸거나 수정할 수도 없습니다. 이는 근본적인 불일치를 초래합니다: 언어 에이전트는 소프트웨어에서 자연스럽게 대화할 수 있지만, 로봇이 물리적 세계에 들어서면 상호작용 능력은 단방향 명령 실행으로 퇴화합니다. WCM이 진정으로 바꾸는 것은 언어를 "조건 입력"에서 "지속적 상호작용 채널"로 승격시키는 것입니다—사용자는 실행 중에 질문하고, 개입하고, 가르칠 수 있으며, 로봇의 의사결정 과정은 더 이상 블랙박스가 아닙니다.</p>
+<p>또 다른 핵심 변화는 훈련 신호의 출처에 있습니다. VLA 정책은 일반적으로 원격 조작으로 수집된 상태-행동 궤적에 의존하며, 이러한 감독은 모델에게 "무엇을 했는지"만 알려주고 "왜 그렇게 했는지"는 알려주지 않습니다. WCM은 결정 기록(추론 궤적, 예상 결과, 실제 결과 포함)을 감독 신호로 사용하여, 실패, 수정, 교육을 포함한 상호작용 자체가 재사용 가능한 추론 경험으로 변환될 수 있게 합니다. 이는 단순한 아키텍처 조정이 아니라 데이터 패러다임의 전환입니다: 로봇은 더 이상 단순한 실행자가 아니라, 인간과의 모든 상호작용에서 학습할 수 있는 시스템입니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">아키텍처 계층화와 상태 교환</h3>
+<p>WCM은 SLAK 아키텍처를 기반으로, 지각, 추론, 제어, 기억을 네 개의 명시적 계층으로 나누고, 종단 간 숨겨진 중간 과정이 아닌 명시적 상태 교환을 통해 통신합니다. Sensing 계층은 다중 모달 센서 스트림(시각, 깊이, 오디오, IMU, 힘/토크)을 구조화된 장면 상태 s_t로 변환하며, 여기에는 로컬 3D 구조, 객체 관계, 점유, 의미적 단서, 픽셀 및 부품 수준 상호작용 단서(잡기, 열기, 놓기, 버리기), 대략적인 물리적 속성(강성, 취약성, 잡기 가능성)이 포함됩니다.</p>
+<h3 id="_5">증분식 "계획–추론–검증" 루프</h3>
+<p>Logic 계층은 단계 t에서의 의사결정 컨텍스트를 x_t = (s_t, u_t, m_t)로 가지며, 여기서 s_t는 장면 상태, u_t는 사용자 명령, m_t는 Knowledge에서 검색된 작업 기억입니다. 모델 f_θ는 추론 궤적, 다음 행동, 예상 결과를 생성합니다:
+- (r_t, a_t, ô_t) = f_θ(x_t)
+- 검증: v_t = 1 (Δ(o_t, ô_t) ≤ ε), 그렇지 않으면 v_t = 0 (o_t는 실제 결과, Δ는 불일치 측정, ε는 임계값)</p>
+<p>검증이 통과하면 계속 진행하고, 그렇지 않으면 업데이트된 상태에서 다시 추론하거나 사용자에게 명확화를 요청합니다. 이 설계는 전체 작업 스크립트를 사전에 제출하는 것을 피하고, 로봇이 실행 중 불확실성에 대응할 수 있게 합니다.</p>
+<h3 id="_6">비동기 런타임과 행동 폐기</h3>
+<p>비동기 런타임은 추론, 실행, 상태 업데이트를 분리하여 추론, 대화, 실행이 동시에 진행될 수 있게 합니다. 큐에 행동을 제출하기 전과 실행 후에 최신 장면 상태, 사용자 입력, 실제 결과를 사용하여 검증 검사를 수행하고, 컨텍스트가 더 이상 예상과 일치하지 않으면 만료된 행동을 폐기하고 Logic이 업데이트된 상태에서 다시 추론하도록 합니다. 이는 응답성과 견고성을 향상시키는 핵심 메커니즘입니다.</p>
+<h3 id="cot">CoT 증류 파이프라인</h3>
+<p>각 결정 기록 e = {d_t}_{t=1}^{T}, d_t = (s_t, u_t, m_t, r_t, a_t, ô_t, o_t). 데이터 출처는 자율 실행(성공 및 실패)과 인간 안내 교육 세그먼트를 포함합니다. 오프라인 정제 프로세스는 정제된 CoT 예제 D'_auto = R(D_auto)와 D'_teach = R(D_teach)를 생성합니다. 증류 목표는:
+- L_distill(θ) = L_auto(θ) + λ·L_teach(θ), 여기서 λ ≥ 1은 교육 예제 가중치를 제어합니다</p>
+<p>더 강력한 모델 앙상블은 투표 또는 합의 검토를 통해 기록을 검토하고, 우회를 제거하며, 불일치하는 결정 경로를 수정합니다. VLA식 상태-행동 궤적 훈련과 달리, WCM은 운동 행동 감독이 아닌 추론 감독으로 결정 기록을 사용합니다.</p>
+<h3 id="-">인간-참여 루프 교육 모드</h3>
+<p>사용자는 자연어를 통해 로봇을 단계적으로 안내합니다(무엇에 주목할지, 어떤 객체 또는 부품을 조작할지, 언제 다음 단계로 진행할지), 저수준 원격 조작이 필요하지 않습니다. 교육 세그먼트는 자율 실행과 동일한 단계별 결정 형식을 기록하며, 명시적 인간 안내와 피드백이 추가되고 증류에서 λ로 가중됩니다.</p>
+<h2 id="_7">핵심 혁신</h2>
+<p><strong>1. 결정 기록을 행동 감독이 아닌 추론 감독으로 사용</strong>: 이는 VLA 패러다임과의 근본적 차이입니다. VLA는 "상태→행동" 매핑을 학습하고, WCM은 "상태+명령+기억→추론 궤적+행동+예상 결과"를 학습합니다. 이는 모델이 무엇을 해야 하는지뿐만 아니라 왜 그렇게 해야 하는지도 알게 하여, 설명 가능한 중단과 사용자 개입을 지원합니다. 중요성은: 추론 감독은 자연스럽게 실패 사례의 수정 경로를 포함하여 로봇이 성공 궤적을 모방하는 것뿐만 아니라 오류에서 학습할 수 있게 합니다.</p>
+<p><strong>2. 비동기 런타임과 검증 루프의 엔지니어링 혁신</strong>: 추론, 실행, 상태 업데이트를 분리하고, 행동 제출 전후에 검증 검사를 수행하며, 만료된 행동을 폐기합니다. 이는 실제 세계에서 "계획이 변화를 따라가지 못하는" 핵심 문제를 해결합니다—장면 상태는 추론과 실행 사이에 이미 변경될 수 있습니다. 절제 실험에 따르면 비동기 런타임을 제거하면 종단 간 시간이 1.4–1.7배 증가하며(표 내 값 36→61, 30→47, 165→254, 46→63, 34→49에서 계산), 효율성 가치를 검증합니다.</p>
+<p><strong>3. 교육 모드의 경량성</strong>: 사용자는 원격 조작이 아닌 자연어 안내를 통해 상호작용하여 진입 장벽을 낮춥니다. 교육 세그먼트는 증류에서 λ ≥ 1로 가중되고, 단기적으로 Knowledge에 저장되어 재사용되며, 장기적으로 추론 모델로 증류됩니다. 이는 "한 번 가르치면" 지속적인 능력 향상을 생성할 수 있게 합니다—Screwdriver-to-Drawer 작업은 교육 전 20% 미만에서 교육 후 69%로, CoT 증류 후 82%로 추가 상승합니다.</p>
+<h2 id="_8">실험과 결과</h2>
+<h3 id="_9">전반적 성과</h3>
+<p>WCM은 9가지 실제 세계 인간-로봇 상호작용 작업에서 <strong>73.8%</strong> 평균 성공률을 달성하며, 객체 검색, 인계, 도구 사용, 서랍 조작, 쓰레기 처리를 포함합니다. 네 가지 작업은 CoT 미세 조정에서 제외되었지만 성공하여 전이 능력을 보여줍니다.</p>
+<h3 id="x-square-wall-oss-table-ii">X-Square WALL-OSS와의 비교 (Table II)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>WCM</th>
+<th>X-Square</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평균 이동 시간 (s)</td>
+<td>38.5</td>
+<td>103.5</td>
+</tr>
+<tr>
+<td>평균 GPU 사용 시간 (s)</td>
+<td>22.0</td>
+<td>103.5</td>
+</tr>
+<tr>
+<td>평균 성공률 (%)</td>
+<td>88.0</td>
+<td>논문에 명시되지 않음</td>
+</tr>
+</tbody>
+</table>
+<p>WCM은 이동 시간과 GPU 사용 시간에서 비교 시스템보다 현저히 우수하지만, 저자는 로봇 본체, 운동학, 센서, 실행 스택이 다르기 때문에 이 비교는 설명적이며 통제된 벤치마크가 아니라고 인정합니다.</p>
+<h3 id="table-iii">절제 실험 (Table III)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>WCM 시간 (s)</th>
+<th>w/o Async 시간 (s)</th>
+<th>WCM 성공률 (%)</th>
+<th>w/o Sensing 성공률 (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hand me the green ratchet</td>
+<td>36</td>
+<td>61</td>
+<td>64</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Grab me the water bottle</td>
+<td>30</td>
+<td>47</td>
+<td>83</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Take the screwdriver to the drawer</td>
+<td>165</td>
+<td>254</td>
+<td>69</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Put the cup in the trash can (Outdoor)</td>
+<td>46</td>
+<td>63</td>
+<td>67</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Put the bottle in the trash can</td>
+<td>34</td>
+<td>49</td>
+<td>64</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>비동기 런타임을 제거하면 종단 간 시간이 1.4–1.7배 증가합니다(표 내 값 b→a에서 계산). Sensing을 일반 VLM과 2D grounding으로 대체하면 Screwdriver-to-Drawer 성공률이 69%에서 0%로 떨어지며, 구조화된 장면 상태가 복잡한 조작에 필수적임을 보여줍니다.</p>
+<h3 id="_10">교육 모드 효과</h3>
+<p>가장 어려운 작업 "Take the screwdriver to the drawer"는 교육 전 20% 미만, 상호작용 교육 후 69%, 증류 후 82%로 상승합니다. 이는 교육+증류의 완전한 폐쇄 루프 효과를 검증합니다.</p>
+<h2 id="_11">경계와 한계</h2>
+<p>저자는 현재 하드웨어 제약으로 인해 평가가 통제된 벤치마크 테스트가 아닌 사례 연구 성격임을 명시적으로 인정합니다. X-Square와의 비교는 로봇 본체, 운동학, 센서, 실행 스택이 다르기 때문에 설명적 결과일 뿐입니다. 일반적인 VLA 정책은 일반적으로 연속 대화, 설명 가능한 중단, 교육 모드를 핵심 폐쇄 루프 능력으로 간주하지 않으므로, Table I은 WCM 데이터만 보고하며 동일 조건에서의 직접 대조가 부족합니다. 논문은 더 복잡한 시나리오(다중 로봇 협업, 비구조화된 동적 환경 등)에서의 WCM 성능을 명시하지 않았으며, 모델 규모, 훈련 데이터 양과 같은 핵심 재현 매개변수도 보고하지 않았습니다. 또한 모든 실험은 단일 하드웨어 플랫폼(저비용 이동 조작 플랫폼)에서 수행되었으며, 고급 플랫폼이나 다른 형태의 로봇에서의 결론 일반화는 논문에 명시되지 않았습니다.</p>
+<h2 id="_12">엔지니어링 시사점</h2>
+<p>WCM을 재현할 때 가장 먼저 확인해야 할 것은 Sensing 계층의 구현 품질입니다—절제 실험에 따르면 Sensing을 일반 VLM과 2D grounding으로 대체하면 복잡한 작업 성공률이 직접 0으로 떨어지며, 구조화된 장면 상태(부품 수준 상호작용 단서와 물리적 속성 포함)가 전체 시스템의 기반임을 보여줍니다. 둘째, 비동기 런타임의 구현 세부 사항(행동 폐기 시점, 검증 임계값 ε 설정)은 종단 간 시간에 현저한 영향을 미치므로, 먼저 소규모 작업에서 ε을 보정한 후 전체 작업 세트로 확장하는 것이 좋습니다.</p>
+<p>가장 함정에 빠지기 쉬운 곳은 CoT 증류의 데이터 정제 단계입니다: 저자는 더 강력한 모델 앙상블을 사용하여 투표 또는 합의 검토를 통해 기록을 검토하고, 우회를 제거하며, 불일치하는 결정 경로를 수정합니다. 이 단계의 품질이 증류 효과를 직접 결정합니다. 정제가 부적절하면 실패 기록이 수정 신호가 아닌 노이즈를 도입할 수 있습니다. 또한 교육 모드의 λ 가중치(λ ≥ 1)는 교육 세그먼트와 자율 데이터의 비율에 따라 신중하게 조정해야 하며, λ가 너무 크면 모델이 인간 안내에 과도하게 의존하여 자율 추론 능력을 잃을 수 있습니다. 하드웨어 측면에서 완전한 로봇 비용은 $2,000 미만이며, 추론은 공유 NVIDIA RTX 5090에서 오프보드로 실행되므로, 재현 시 네트워크 지연이 비동기 런타임에 미치는 영향을 주의해야 합니다—로컬 네트워크 품질이 병목이 될 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wcm_world_cognition_model_generalizable_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾸는 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">아키텍처 계층화와 상태 교환</a></li>
+<li><a href="#_5">증분식 "계획–추론–검증" 루프</a></li>
+<li><a href="#_6">비동기 런타임과 행동 폐기</a></li>
+<li><a href="#cot">CoT 증류 파이프라인</a></li>
+<li><a href="#-">인간-참여 루프 교육 모드</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험과 결과</a><ul>
+<li><a href="#_9">전반적 성과</a></li>
+<li><a href="#x-square-wall-oss-table-ii">X-Square WALL-OSS와의 비교 (Table II)</a></li>
+<li><a href="#table-iii">절제 실험 (Table III)</a></li>
+<li><a href="#_10">교육 모드 효과</a></li>
+</ul>
+</li>
+<li><a href="#_11">경계와 한계</a></li>
+<li><a href="#_12">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

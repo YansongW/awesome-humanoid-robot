@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</h1>
+      <p class="entry-name-en">TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-language-action (VLA) models commonly adopt an LLM-centric $V \to L \to A$ pathway, where visual observations are projected into the representation space of a large language model before being decoded into robot actions. Although effective, this design incurs substantial computation and memory overhead at every policy invocation. In this work, we introduce TurboVLA, a new VLA paradigm that.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.27205" target="_blank" rel="noopener">arXiv:2607.27205 TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>TurboVLA는 LLM 중심 인터페이스를 대체하는 직접적인 V+L→A 시각-언어-동작 실행 패러다임을 제안하며, DINOv3 시각 인코더와 BERT 텍스트 인코더를 사용하고, 양방향 교차 어텐션 상호작용 후 ACT 스타일 디코더가 동작 블록을 병렬로 출력합니다. RTX 4090에서 31.2ms 지연 시간, 0.9GB VRAM을 달성하고, LIBERO 평균 성공률 97.7%, RoboTwin 2.0 평균 성공률 60.2%를 기록합니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 VLA는 거의 모두 LLM 중앙 집중식 경로에 의존합니다: 시각 토큰을 LLM 표현 공간에 투영한 후 자기회귀적으로 동작을 디코딩합니다. 이 설계는 정책 호출마다 대형 모델의 순전파를 거쳐야 하므로, 계산 및 메모리 오버헤드가 LLM 파라미터 규모에 고정되어 제어 주파수를 높일 수 없고 엣지 디바이스에서는 실행이 불가능합니다. 저자는 이 전제를 직접 의문시합니다—실행 수준 제어에 정말 개방형 언어 생성이 필요한가? 명령 조건화 조작은 필요하지만, 작업 분해와 자유 텍스트 생성은 하위 수준 폐루프 제어에 중복됩니다.</p>
+<p>TurboVLA가 실제로 바꾼 것은 VLA를 "언어 모델에 동작 헤드가 부착된 형태"에서 "지각-상호작용-동작" 전용 파이프라인으로 재구성한 것입니다. 실행 수준 정책이 LLM의 추론 능력을 완전히 우회할 수 있고, 경량 인코더와 양방향 상호작용만으로도 LLM 중심 모델의 성공률에 도달하거나 능가할 수 있음을 증명했습니다. 이 결론은 현재 VLA 설계의 기본 가정을 흔듭니다: 모든 로봇 제어 문제에 대형 모델이 필요한 것은 아니며, 제한된 플랫폼에서는 전용 소형 모델이 더 적합할 수 있습니다.</p>
+<h2 id="_3">방법 분석</h2>
+<p>TurboVLA의 아키텍처는 네 개의 병렬 분기로 구성되며, 마지막에 동작 디코더로 수렴합니다:</p>
+<h3 id="_4">시각 인코딩</h3>
+<ul>
+<li>백본: DINOv3 (LIBERO는 ViT-B, RoboTwin 2.0은 ViT-L 사용)</li>
+<li>시각 특징을 공유 차원 d=256으로 투영하고, 위치 임베딩과 카메라 시점 임베딩 추가</li>
+<li>다중 카메라 스트림(K개)을 연결하여 상호 보완적 단서 유지</li>
+</ul>
+<h3 id="_5">언어 인코딩</h3>
+<ul>
+<li>경량 BERT를 텍스트 인코더로 사용하며, 풀링 임베딩이 아닌 전체 명령 토큰 시퀀스 유지</li>
+<li>핵심 결정: 객체, 속성, 공간 관계의 세밀한 조건화 신호를 유지하기 위해 토큰 수준 정보 보존</li>
+</ul>
+<h3 id="-">양방향 시각-언어 상호작용</h3>
+<ul>
+<li>Grounding DINO에서 영감을 받은 N=6층 양방향 교차 어텐션</li>
+<li>각 층은 층 정규화, 양방향 교차 어텐션, 모달별 피드포워드 네트워크, 잔차 연결 포함</li>
+<li>시각→명령 어텐션은 장면 컨텍스트를 주입하고, 명령→시각 어텐션은 시각 특징을 조건화</li>
+<li>그라운딩 사전 훈련 특징 강화 가중치로 초기화</li>
+</ul>
+<h3 id="_6">동작 디코딩</h3>
+<ul>
+<li>ACT 스타일 트랜스포머 디코더, H=12개의 학습 가능한 동작 쿼리</li>
+<li>동작 토큰화나 자기회귀 생성 없이 연속 동작 블록을 병렬 디코딩</li>
+<li>로봇 상태는 경량 투영 네트워크로 별도 인코딩되어 디코더에 직접 주입</li>
+</ul>
+<h3 id="_7">훈련</h3>
+<ul>
+<li>보조 언어 모델링 목표 없이 행동 클로닝 ℓ1 손실</li>
+<li>학습률 5×10⁻⁵, RTX 4090 4개로 훈련</li>
+<li>LIBERO: 80k 스텝, 10k 워밍업, 유효 배치 크기 256, 12스텝 7-DoF 동작 블록 예측</li>
+<li>RoboTwin 2.0: 55k 스텝, 1k 워밍업, 유효 배치 크기 192, 50스텝 14차원 절대 관절 위치 예측</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<p>첫째, 패러다임 수준의 단순화. V+L→A 직접 경로가 V→L→A를 대체하여 LLM을 실행 체인에서 완전히 제거합니다. 이는 점진적 최적화가 아니라 아키텍처 차원의 재정의입니다—실행 수준 제어에 개방형 언어 생성이 필요하지 않다는 판단이 성립한다면, VLA 전체의 연산 요구 곡선이 하향 이동합니다.</p>
+<p>둘째, 단방향 조건화가 아닌 양방향 상호작용. 절제 실험에서 상호작용이 없을 때 평균 성공률 95.2%, 단방향 교차 어텐션은 96.1%와 96.5%로 향상, 양방향 상호작용은 97.7%에 도달합니다. 장면 인식 명령 특징과 명령 조건화 시각 특징이 동작 예측에 상호 보완적 정보를 제공하며, 이 설계 결정은 명확한 실험적 근거를 가집니다.</p>
+<p>셋째, 풀링 임베딩이 아닌 전체 명령 토큰 시퀀스 유지. 언어 절제 실험에서 의미 명령을 작업 ID 임베딩으로 대체하면 평균 성공률이 97.7%에서 95.4%로, LIBERO-Goal은 97.4%에서 95.8%로 하락하여, 자연어가 제공하는 세밀한 정보가 폐집합 작업 정체성을 초과하며 경량 인코더가 이러한 정보를 충분히 담을 수 있음을 증명합니다.</p>
+<h2 id="_9">실험 및 결과</h2>
+<p>LIBERO 벤치마크에서 TurboVLA는 0.2B 파라미터, 0.9GB VRAM, 31.2ms 지연 시간으로 97.7% 평균 성공률을 달성하여 모든 비교 방법을 능가합니다. 효율성 우위가 특히 두드러집니다: OpenVLA는 7.5B 파라미터, 14.9GB VRAM, 202.9ms 지연 시간으로 76.5% 성공률에 그칩니다; π₀.₅는 3.4B 파라미터, 12.8GB VRAM, 93.6ms 지연 시간으로 96.9%를 달성합니다. TurboVLA는 성공률에서 앞서면서도 지연 시간은 약 3배 감소(표 내 수치 93.6→31.2 기준), VRAM은 약 14배 감소(표 내 수치 12.8→0.9 기준)합니다.</p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>TurboVLA</th>
+<th>π₀.₅</th>
+<th>OpenVLA</th>
+<th>Diffusion Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>파라미터 (B)</td>
+<td>0.2</td>
+<td>3.4</td>
+<td>7.5</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>VRAM (GB)</td>
+<td>0.9</td>
+<td>12.8</td>
+<td>14.9</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>지연 시간 (ms)</td>
+<td>31.2</td>
+<td>93.6</td>
+<td>202.9</td>
+<td>924.8</td>
+</tr>
+<tr>
+<td>LIBERO 평균 성공률</td>
+<td>97.7%</td>
+<td>96.9%</td>
+<td>76.5%</td>
+<td>72.4%</td>
+</tr>
+</tbody>
+</table>
+<p>RoboTwin 2.0에서 TurboVLA는 0.4B 파라미터, 43.4ms 지연 시간으로 60.2% 평균 성공률을 달성하여 π₀.₅의 57.0%와 DP3의 55.2%를 능가합니다. 실제 세계 AgileX Piper 플랫폼의 네 가지 작업 성공률은 각각 92.5%, 80%, 90%, 87.5%로 모두 π₀.₅보다 우수합니다.</p>
+<p>절제 실험의 핵심 발견: 언어를 제거하면 평균 성공률이 97.7%에서 70.8%로, LIBERO-Goal은 97.4%에서 11.6%로 급락하여 정책이 시각적 사전 지식만으로는 작동할 수 없음을 증명합니다; 상호작용 깊이 N=6이 최적이며, N=8은 96.6%로 약간 하락합니다; 동작 시야 H=12가 최적이며, H=15는 95.6%로 하락합니다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<p>RoboTwin 2.0 실험은 계산 예산 제한으로 공식 클린 데모 데이터만 사용하고 무작위 장면 데이터는 포함하지 않았습니다; 또한 VLA-Adapter나 StarVLA 프레임워크 외의 강화 기술도 도입하지 않았습니다. 실제 세계 평가는 네 가지 대표 작업만 다루며 더 넓은 시나리오로 확장되지 않았습니다. TurboVLA는 주로 구체적인 실행 수준 명령을 대상으로 하며, 고수준 작업 계획에 필요한 복잡한 의미 이해와 추론 능력을 갖추지 못했고, 개방형 언어 생성과 작업 수준 계획은 그 능력 범위에 포함되지 않습니다. 논문은 더 복잡한 장기 작업이나 비구조화 환경에서의 성능 경계를 명확히 제시하지 않습니다.</p>
+<h2 id="_11">엔지니어링 시사점</h2>
+<p>재현 시 세 가지 핵심 사항을 먼저 확인해야 합니다: 첫째, 상호작용 모듈 초기화 가중치는 반드시 Grounding DINO 사전 훈련 특징 강화 가중치에서 가져와야 하며, 직접 무작위 초기화하면 보고된 양방향 상호작용 이득을 얻지 못할 수 있습니다; 둘째, 풀링 임베딩이 아닌 전체 명령 토큰 시퀀스를 유지해야 하며, 이는 언어 정보 유효성의 핵심으로, 절제 실험에서 작업 ID 임베딩은 평균 성공률 2.3% 손실을 초래합니다; 셋째, 동작 시야 H=12와 상호작용 깊이 N=6은 용량과 효율의 균형점이며, H=15나 N=8은 오히려 성능이 하락합니다.</p>
+<p>가장 함정에 빠지기 쉬운 부분은 RoboTwin 2.0의 데이터 구성입니다—논문은 공식 클린 데모만 사용하고 무작위 장면 데이터를 포함하지 않는다고 명시했으며, 무작위 장면 데이터를 혼합하면 훈련 분포가 이동하여 성공률을 재현하지 못할 수 있습니다. 추론 시 지연 시간 측정은 멀티모달 입력에서 동작 블록 생성까지의 시간이며, 배치 크기 1 기준입니다. 자기회귀 토큰 생성 방식으로 측정하면 다른 수치가 나옵니다. 실제 세계 미세 조정은 LIBERO 사전 훈련 체크포인트에서 초기화하며, 4×65 원격 조작 데모, 12.5k 스텝으로 진행되며, 이 전이 경로는 참고할 가치가 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_diffusion_policy_2023/">Diffusion Policy</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_turbovla_real_time_vision_language_actio_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">
+          <span class="entry-type">논문</span>
+          <h3>3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations</h3>
+          <p>3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations (DP3),…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</h3>
+          <p>VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model (VLA-Adapter), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">방법</span>
+          <h3>Diffusion Policy</h3>
+          <p>조건적 노이즈 제거 확산 프로세스로 표현된 시각욱동 정책, 다중 모드 동작 분포 가능.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">시각 인코딩</a></li>
+<li><a href="#_5">언어 인코딩</a></li>
+<li><a href="#-">양방향 시각-언어 상호작용</a></li>
+<li><a href="#_6">동작 디코딩</a></li>
+<li><a href="#_7">훈련</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a></li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

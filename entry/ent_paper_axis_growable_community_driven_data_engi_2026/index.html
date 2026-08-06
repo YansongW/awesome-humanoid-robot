@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</h1>
+      <p class="entry-name-en">AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>AXIS 是一个社区驱动的可增长机器人操作数据引擎，由 Axis Robotics 团队构建，核心贡献在于将数据收集从封闭集中式范式转变为开放、持续增长的结构化流程。它通过浏览器端 MuJoCo-WASM 遥操作和 IsaacSim 后端增强，汇集超过 70,000 名社区成员贡献的 207 个任务、50K+ 演示，并验证了持续预训练对 VLA 模型鲁棒性的提升。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.21588" target="_blank" rel="noopener">arXiv:2607.21588 AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>机器人操作数据集的根本瓶颈不在算法，而在数据生产范式本身。传统管线是封闭的：专家团队在专用硬件上收集、离线处理、发布固定基准，数据集一旦发布即冻结。这种模式无法跟上模型规模的增长——机器人数据集的增速远慢于其训练的模型，且每次扩展任务都需要重新组织收集流程。AXIS 真正改变的是数据生产的组织方式：它把数据收集从「项目制」变成「平台制」，让社区成员通过浏览器即可贡献演示，同时用自动化验证和增强管线保证质量。这意味着数据集不再是一个静态产物，而是一个持续演进的生态系统，其增长速度和多样性由社区参与规模决定，而非单一团队的收集能力。</p>
+<p>另一个关键转变在于「结构化增长」的概念。AXIS 不是简单堆积更多数据，而是将新任务组织为可复现的快照（AXIS-25%、50%、100%），每个快照保持相同格式、验证管线和成功检查器。这使得受控缩放研究成为可能——你可以精确隔离数据量对模型性能的影响，而不被任务分布变化混淆。这种设计将数据集从「资源」提升为「实验基础设施」，为可重复的规模化研究提供了基础。</p>
+<h2 id="_2">方法拆解</h2>
+<p>AXIS 采用三层架构，每层解决数据生产链路中的一个关键环节：</p>
+<h3 id="_3">基础设施层：降低收集门槛</h3>
+<ul>
+<li>基于浏览器的 MuJoCo-WASM 遥操作，用户无需安装本地模拟器或专用硬件，使用通用输入设备即可收集演示</li>
+<li>任务由三要素自动生成：自然语言指令、参数化场景配置、结构化成功检查器</li>
+<li>新任务从高级指令、物体资产、场景布局和任务特定成功条件组合生成，通过共享网页界面部署</li>
+</ul>
+<h3 id="_4">数据集层：自动化质量控制</h3>
+<ul>
+<li><strong>统一轨迹格式</strong>：每条轨迹包含任务元数据、机器人本体、环境标识符、模拟器版本、时间戳、观测、机器人状态、动作和成功信息；可选字段包括物体状态、相机流、分割标记和失败标签</li>
+<li><strong>一致性检查</strong>：过滤缺失键、异常数值、无效状态转换、物理上不可能的帧间变化和失败任务完成</li>
+<li><strong>后端验证</strong>：复用任务特定成功检查器进行后端验证，而非仅依赖前端成功标志——这是关键设计决策，防止用户误报成功</li>
+<li><strong>轨迹精炼</strong>：移除静态或损坏片段、Savitzky-Golay 平滑高频遥操作伪影、重采样到固定控制频率（5.0 Hz → 20 Hz）</li>
+<li><strong>IsaacSim 增强</strong>：物理随机化（物体姿态、杂乱配置、质量、摩擦）和渲染随机化（相机视角、光照、纹理），在保持任务语义的同时扩展训练分布，无需额外人工演示</li>
+</ul>
+<h3 id="_5">模型层：统一训练与评估</h3>
+<ul>
+<li>支持传统视觉运动模仿学习策略和现代 VLA 模型</li>
+<li>可增长基准设计：训练数据组织为渐进增大的任务快照，每个快照保持相同的数据格式、验证管线、任务定义、回滚预算和成功检查器</li>
+<li>持续预训练实验采用三阶段管线：从发布的 π₀.₅ 检查点开始 → 可选模拟语料预训练 → LIBERO 轨迹微调</li>
+</ul>
+<p>关键设计决策在于数据增强与验证的分离：增强在 IsaacSim 中完成，但增强后的轨迹仍与已验证的成功检查器绑定，确保语义一致性。同时，AXIS 到 LIBERO 的转移保持数据集归一化分离，防止 LIBERO 策略在服务时使用 AXIS 状态/动作归一化——这是一个容易被忽视但至关重要的工程细节。</p>
+<h2 id="_6">关键创新</h2>
+<p><strong>1. 社区驱动的数据生产范式</strong>：AXIS 首次将机器人操作数据收集从封闭团队扩展到开放社区，超过 70,000 名成员贡献演示，活跃窗口累计尝试次数接近 100K。这不是简单的众包，而是通过浏览器遥操作、自动化验证和结构化任务生成，将社区参与转化为高质量训练数据的完整流水线。其意义在于：数据收集的边际成本从「雇佣专家+购置硬件」降至「开放网页+通用设备」，使得数据规模可以随社区增长而持续扩展。</p>
+<p><strong>2. 可增长基准的结构化设计</strong>：AXIS-25%、50%、100% 快照的设计使得数据量成为唯一变量，所有其他因素（格式、验证管线、任务定义、回滚预算、成功检查器）保持不变。这解决了机器人学习中一个长期存在的痛点：无法在控制变量的前提下研究数据规模效应。该设计为受控缩放研究提供了基础设施，使「数据量如何影响模型鲁棒性」这一问题首次可以被严格回答。</p>
+<p><strong>3. 模拟增强与真实遥操作的混合数据生产</strong>：AXIS 将人类遥操作演示与 IsaacSim 物理/渲染随机化结合，在保持任务语义的同时扩展训练分布。这一设计的关键在于：增强不改变底层状态/动作监督，只改变视觉和物理外观，因此不会引入语义漂移。相比纯模拟数据或纯人类演示，这种混合策略在数据多样性和语义保真度之间取得了更好的平衡。</p>
+<h2 id="_7">实验与结果</h2>
+<p>实验设计围绕一个核心问题：AXIS 数据的持续预训练能否提升 VLA 模型在分布外扰动下的鲁棒性？评估在 LIBERO-Plus 鲁棒性套件上进行，沿七个扰动轴（Camera、Light、Sensor Noise、Background、Layout、Language、Robot），每个（任务、扰动轴）对固定回滚预算为常数 K。</p>
+<p><strong>主结果对比（成功率 %）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>Overall</th>
+<th>Camera</th>
+<th>Light</th>
+<th>Noise</th>
+<th>B.G.</th>
+<th>Layout</th>
+<th>Lang</th>
+<th>Robot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅ vanilla</td>
+<td>83.9</td>
+<td>72.5</td>
+<td>98.2</td>
+<td>82.5</td>
+<td>94.4</td>
+<td>82.9</td>
+<td>89.6</td>
+<td>74.4</td>
+</tr>
+<tr>
+<td>+ AXIS-25%</td>
+<td>84.7</td>
+<td>77.5</td>
+<td>91.2</td>
+<td>86.2</td>
+<td>100.0</td>
+<td>85.5</td>
+<td>81.8</td>
+<td>76.9</td>
+</tr>
+<tr>
+<td>+ AXIS-50%</td>
+<td>85.7</td>
+<td>68.8</td>
+<td>98.2</td>
+<td>91.2</td>
+<td>96.3</td>
+<td>88.2</td>
+<td>84.4</td>
+<td>79.5</td>
+</tr>
+<tr>
+<td>+ AXIS-100%</td>
+<td>88.8</td>
+<td>83.8</td>
+<td>96.5</td>
+<td>96.2</td>
+<td>98.1</td>
+<td>85.5</td>
+<td>88.3</td>
+<td>78.2</td>
+</tr>
+<tr>
+<td>+ RoboCasa-matched</td>
+<td>57.5</td>
+<td>35.2</td>
+<td>79.5</td>
+<td>63.2</td>
+<td>81.7</td>
+<td>68.0</td>
+<td>49.2</td>
+<td>39.4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>数据精炼效果</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>采样率</th>
+<th>平均加速度</th>
+<th>平均 jerk</th>
+<th>重放成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw Teleoperation</td>
+<td>5.0 Hz</td>
+<td>1.3539</td>
+<td>11.5899</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td>Smoothed</td>
+<td>5.0 Hz</td>
+<td>0.6382</td>
+<td>2.9160</td>
+<td>91.4%</td>
+</tr>
+<tr>
+<td>Smoothed + Resampled</td>
+<td>20 Hz</td>
+<td>0.4885</td>
+<td>2.2243</td>
+<td>86.2%</td>
+</tr>
+</tbody>
+</table>
+<p>关键结论：AXIS-100% 持续预训练使总体成功率提升 5.8%（83.9→88.8），比体积匹配的 RoboCasa365 基线高 37.3%（88.8 vs 57.5）。缩放趋势明确：84.7%/85.7%/88.8%（AXIS-25%/50%/100%），数据量翻倍带来约 1-3 个百分点的提升。最大增益出现在相机（+15.6%）、传感器噪声（+16.6%）和机器人位姿（+5.1%）扰动下，说明 AXIS 数据主要增强了模型对视觉和状态感知扰动的鲁棒性。值得注意的是，RoboCasa-matched 基线在几乎所有扰动轴上显著低于 vanilla（Overall 57.5 vs 83.9），表明数据质量比数据量更重要——单纯增加模拟数据量而不匹配任务分布反而会损害性能。</p>
+<h2 id="_8">边界与局限</h2>
+<p>AXIS 目前聚焦于模拟 Franka 桌面操作，sim-to-real 迁移仍是开放挑战。真实世界评估仅作为定性证据，未提供定量指标，校准、时序和低层控制器执行留给真实机器人系统处理。语言和光照扰动轴上 AXIS 相对 vanilla 有轻微下降（Language Δ_van −1.3，Light Δ_van −1.7），作者未解释原因——这可能暗示 AXIS 数据在语言指令多样性和光照条件覆盖上存在盲区。此外，AXIS 数据全部来自单一机器人本体（Franka Research 3）和桌面操作场景，对多机器人、多场景的泛化能力论文未明确。未来工作提及扩展更多机器人本体、更丰富传感模态和更长时域任务，但当前版本未覆盖这些方向。</p>
+<h2 id="_9">工程启示</h2>
+<p>对复现和下游使用的具体指导：</p>
+<p><strong>先核对什么</strong>：
+- 数据归一化分离：AXIS 预训练到 LIBERO 微调的转移必须保持归一化统计量独立，否则策略在服务时会使用错误的归一化参数。检查点必须包含推理参数和数据集特定归一化工件，仅加载模型权重不足以构建策略。
+- 动作填充处理：状态从 8D 填充到 32D，动作块从 7D 填充到 32D，推理时切片回前七个动作维度。未使用维度成为固定零目标，但作者未引入显式动作损失权重来处理填充维度——复现时需注意这一潜在偏差。</p>
+<p><strong>最容易踩坑的地方</strong>：
+- RoboCasa-matched 对照的构建方式：从 RoboCasa365 无放回采样轨迹直到轨迹数等于 AXIS-100%，但结果远低于 vanilla（57.5 vs 83.9）。这说明简单的数据量匹配不足以保证公平对比——任务分布、数据质量和收集方式的差异会主导结果。复现对比实验时，必须严格控制任务分布和评估协议。
+- 持续预训练的超参数敏感性：所有非 vanilla 条件使用相同优化器设置、学习率（5×10⁻⁵）、批大小和梯度步预算（100,000 步），但预训练数据量不同。如果下游团队调整预训练步数或学习率，缩放趋势可能不成立。
+- 数据精炼的权衡：平滑和重采样将重放成功率从 100.0% 降至 86.2%，但显著降低了加速度和 jerk（分别降低 63.9% 和 80.8%）。这意味着精炼过程在轨迹平滑性和可执行性之间存在权衡——过度平滑可能损害策略学习，复现时需根据下游模型类型调整平滑强度。</p>
+<p><strong>对下游团队</strong>：如果目标是提升 VLA 模型的分布外鲁棒性，AXIS 数据是有效的预训练语料，但需注意其收益集中在视觉和状态感知扰动上（Camera、Noise、Robot），对语言和光照扰动的提升有限甚至为负。如果下游任务对语言指令多样性敏感，可能需要补充额外数据源。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.21588</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_axis_growable_community_driven_data_engi_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">基础设施层：降低收集门槛</a></li>
+<li><a href="#_4">数据集层：自动化质量控制</a></li>
+<li><a href="#_5">模型层：统一训练与评估</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

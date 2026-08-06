@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Comprehensive Survey on World Models for Embodied AI · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Comprehensive Survey on World Models for Embodied AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>A Comprehensive Survey on World Models for Embodied AI</h1>
+      <p class="entry-name-en">A Comprehensive Survey on World Models for Embodied AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P072. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Embodied AI requires agents that perceive, act, and anticipate how actions reshape future world states. World models serve as internal simulators that capture environment dynamics, enabling forward and counterfactual rollouts to support perception, prediction, and decision making. This survey presents a unified framework for world models in embodied AI. Specifically, we formalize the problem.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.16732" target="_blank" rel="noopener">arXiv:2510.16732 A Comprehensive Survey on World Models for Embodied AI</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이 리뷰 논문은 구현 지능(Embodied AI) 분야의 세계 모델(World Model)에 대한 통합 분류 프레임워크를 제안하며, 기능 결합도, 시간 모델링 방식, 공간 표현 형식이라는 세 가지 핵심 축을 중심으로 문헌을 체계화합니다. 저자들은 모델 아키텍처, 훈련 패러다임부터 데이터 자원과 평가 지표에 이르는 전체 기술 스택을 체계적으로 정리하고, 조작, 내비게이션, 자율주행 등 다양한 태스크에 걸친 정량적 성능 비교를 제시합니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>세계 모델 분야의 가장 큰 문제는 방법이 부족하다기보다, 서로 다른 하위 커뮤니티(강화학습, 자율주행, 비디오 예측)가 공유할 공통 언어가 부재하다는 점이었습니다. 기능 중심 분류법(예: 이해와 예측으로 구분)과 애플리케이션 중심 분류법(예: 자율주행에 초점)이 각자 제각각 운영되면서, 동일한 유형의 기술이 논문마다 다른 이름으로 불리게 되었고, 이러한 용어 혼란은 방법 전이와 벤치마크 비교를 직접적으로 방해했습니다.</p>
+<p>이 리뷰가 실제로 바꾼 것은 '세계 모델'을 특정 기술(예: Dreamer 시리즈)에서 분석 가능한 연구 패러다임으로 승격시킨 점입니다. 의사결정 결합 vs 범용 목적, 순차 시뮬레이션 vs 전역 차이 예측, 그리고 네 가지 공간 표현(전역 잠재 벡터, 토큰 시퀀스, 공간 잠재 그리드, 분해 렌더링)이라는 세 가지 직교 축을 도입함으로써, 연구자들이 임의의 방법이 설계 공간에서 차지하는 위치를 명확히 파악하고 각 선택 뒤에 숨은 트레이드오프를 이해할 수 있게 했습니다. 예를 들어 자기회귀 설계는 컴팩트하지만 오류가 누적되고, 전역 예측은 일관성이 더 좋지만 계산량이 많고 폐쇄 루프 상호작용이 약합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">통합 수학 프레임워크</h3>
+<p>저자들은 환경 상호작용을 POMDP로 모델링하고, 잠재 상태 z_t의 학습 목표를 다음과 같이 정의합니다:
+- 동적 사전 분포: p_θ(z_t | z_{t-1}, a_{t-1})
+- 필터링 사후 분포: q_ϕ(z_t | z_{t-1}, a_{t-1}, o_t)
+- 재구성: p_θ(o_t | z_t)</p>
+<p>최적화 목표는 ELBO이며, 재구성 항과 KL 정규화 항으로 분해됩니다:
+L(θ, ϕ) = Σ_t E_{q_ϕ(z_t)}[log p_θ(o_t | z_t)] - D_KL(q_ϕ ∥ p_θ)</p>
+<h3 id="_5">세 가지 시간 모델링 전략</h3>
+<ul>
+<li><strong>순차 시뮬레이션 및 추론</strong>: 프레임 단위 롤링 예측. 대표적으로 RSSM, Dreamer 시리즈, TransDreamer(순환 코어를 TSSM으로 대체), Mamba 계열 SSM(GLAM) 등이 있습니다.</li>
+<li><strong>전역 차이 예측</strong>: 미래 시퀀스 또는 BEV/복셀 맵을 병렬 예측하여 오류 누적을 줄입니다. 예: JEPA 계열 방법(V-JEPA 2).</li>
+<li><strong>혼합 설계</strong>: Epona는 Transformer로 시공간을 모델링하고 DiT로 궤적과 비주얼을 생성합니다. NWM은 조건부 DiT로 제로샷 플래닝을 구현합니다.</li>
+</ul>
+<h3 id="_6">네 가지 공간 표현</h3>
+<ul>
+<li><strong>전역 잠재 벡터</strong>: 컴팩트하고 계산 효율적이지만, 세밀한 시공간 디테일을 버립니다.</li>
+<li><strong>토큰 특징 시퀀스</strong>: 인과 추론과 LLM 재사용을 지원합니다. 예: MWM은 마스크 오토인코더로 비주얼 토큰과 RSSM을 분리합니다.</li>
+<li><strong>공간 잠재 그리드</strong>: BEV 또는 복셀 그리드가 기하학적 사전 정보를 도입하고, 지역성을 유지하며 스트리밍 전개를 지원합니다.</li>
+<li><strong>분해 렌더링 표현</strong>: NeRF/3DGS 프리미티브 + 미분 가능 렌더링. 시점 일관성을 제공하고 객체 수준 구성을 지원하지만, 동적 장면 확장성은 떨어집니다.</li>
+</ul>
+<h3 id="_7">핵심 아키텍처 결정</h3>
+<ul>
+<li>역동역학 모델링(IDM)은 세계 모델을 제어 가능/불가능 구성 요소로 분해합니다(Iso-Dream).</li>
+<li>명시적 추론 주입: NavCoT는 내비게이션을 상상-필터링-예측으로 분해하고, ECoT는 기초 모델로 추론 라벨을 생성하여 VLA를 훈련합니다.</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>2차원 계보를 3차원 분류 축으로 대체</strong>: 기존 리뷰는 대부분 '기능' 또는 '애플리케이션' 단일 축으로 나누었지만, 본 논문은 시간 모델링과 공간 표현이라는 두 개의 직교 차원을 도입하여 방법 위치 파악을 더 정밀하게 만듭니다. 예를 들어 동일한 점유 예측이라도 OccWorld(순차 시뮬레이션 + 공간 그리드)와 COME(전역 차이 + 공간 그리드)은 오류 누적 특성에서 본질적 차이가 있으며, 기능만으로는 구분할 수 없습니다.</p>
+</li>
+<li>
+<p><strong>평가 지표를 픽셀 수준/상태 수준/태스크 수준으로 계층화</strong>: 기존 FID, FVD 같은 픽셀 지표가 물리적 일관성을 반영하지 못한다는 점을 명확히 지적하고, mIoU, ADE/FDE, 성공률, 충돌률 등 상태 및 태스크 수준 지표를 체계적으로 정리했습니다. 이는 단순 나열이 아닌, 후속 연구를 위한 평가 프로토콜 선택 의사결정 트리를 제공합니다.</p>
+</li>
+<li>
+<p><strong>태스크 간 정량 비교 테이블</strong>: DMC(연속 제어), RLBench(조작), nuScenes(플래닝), Occ3D(점유 예측) 네 가지 벤치마크의 대표 방법을 최초로 단일 테이블에서 비교하여, 태스크별 세계 모델 아키텍처 선호도 차이를 밝혔습니다. 예를 들어 IDM은 RLBench에서 두드러지고, 점유 입력은 4D 예측에서 순수 카메라보다 크게 우수합니다.</p>
+</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<p>리뷰는 네 가지 벤치마크의 정량 결과를 종합했습니다(논문은 실험 설정 세부사항을 제공하지 않으며, 아래는 테이블 데이터입니다):</p>
+<p><strong>nuScenes 비디오 생성(FID↓/FVD↓)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>FID</th>
+<th>FVD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DrivePhysica</td>
+<td>4.0</td>
+<td>38.1</td>
+</tr>
+<tr>
+<td>MiLA</td>
+<td>4.1</td>
+<td>14.9</td>
+</tr>
+<tr>
+<td>Vista</td>
+<td>6.9</td>
+<td>89.4</td>
+</tr>
+<tr>
+<td>DriveDreamer</td>
+<td>52.6</td>
+<td>452.0</td>
+</tr>
+</tbody>
+</table>
+<p>DrivePhysica는 시각적 충실도가 가장 우수하고, MiLA는 시간적 일관성이 가장 강합니다. 둘 다 명시적 물리 또는 분해 렌더링을 사용합니다.</p>
+<p><strong>Occ3D 4D 점유 예측(mIoU%, Avg)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>입력</th>
+<th>Avg mIoU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DTT-O</td>
+<td>GT 점유</td>
+<td>30.85</td>
+</tr>
+<tr>
+<td>COME-O</td>
+<td>GT 점유+GT ego</td>
+<td>34.23</td>
+</tr>
+<tr>
+<td>COME-S</td>
+<td>카메라(자기지도)</td>
+<td>19.11</td>
+</tr>
+<tr>
+<td>OccWorld-S</td>
+<td>카메라(자기지도)</td>
+<td>0.26</td>
+</tr>
+</tbody>
+</table>
+<p>점유 입력은 순수 카메라보다 크게 우수하며, GT ego 궤적은 추가 이득을 제공합니다.</p>
+<p><strong>DMC(Episode Return↑)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>스텝 수</th>
+<th>Cheetah Run</th>
+<th>Walker Walk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PlaNet</td>
+<td>5M</td>
+<td>496</td>
+<td>945</td>
+</tr>
+<tr>
+<td>Dreamer</td>
+<td>5M</td>
+<td>895</td>
+<td>962</td>
+</tr>
+<tr>
+<td>HRSSM</td>
+<td>500k</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>최신 모델은 더 적은 스텝으로 더 높은 리턴을 달성하지만, 태스크 하위 집합이 일관되지 않아 공정한 비교가 어렵습니다.</p>
+<p><strong>RLBench(성공률%)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>평균 성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VidMan</td>
+<td>67</td>
+</tr>
+<tr>
+<td>TesserAct</td>
+<td>63</td>
+</tr>
+<tr>
+<td>ManiGaussian</td>
+<td>45</td>
+</tr>
+</tbody>
+</table>
+<p>VidMan(IDM)이 광범위한 태스크 집합에서 최고 성능을 보이며, 역동역학 모델링이 유망한 방향임을 시사합니다.</p>
+<p><strong>nuScenes 플래닝(L2↓/충돌률↓)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Avg L2</th>
+<th>Avg 충돌률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UniAD+DriveWorld</td>
+<td>0.69</td>
+<td>0.19</td>
+</tr>
+<tr>
+<td>SSR</td>
+<td>0.75</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>OccWorld-S</td>
+<td>1.83</td>
+<td>2.02</td>
+</tr>
+</tbody>
+</table>
+<p>SSR은 추가 감독 없이 최고 충돌률을 달성하며, 카메라 기반 방법은 특권 점유를 사용하는 모델을 이미 능가했습니다.</p>
+<h2 id="_10">경계와 한계</h2>
+<p>논문은 별도의 한계 섹션을 두지 않았지만, 서론에서 공개된 도전 과제를 명확히 제시합니다: 통합 데이터셋 부족(기존 DMC, RLBench, nuScenes 등 벤치마크가 각자 운영되어 교차 도메인 전이가 어려움), 픽셀 충실도에 치우친 평가 지표로 물리적 일관성 무시, 모델 성능과 실시간 제어에 필요한 계산 효율성 간 트레이드오프 미해결, 장기 시간 일관성이 오류 누적에 의해 제약됨.</p>
+<p>구체적으로 테이블 데이터에서 DMC 비교는 태스크 하위 집합이 일관되지 않고(예: TransDreamer는 4개 태스크만 보고), RLBench 각 방법의 에피소드 예산은 25~250, 해상도는 128~512로 다양하여 구현 차이가 동일 유형 비교를 복잡하게 만듭니다. 분해 렌더링 방법(NeRF/3DGS)의 동적 장면 확장성은 충분히 검증되지 않았으며, 논문은 해당 방향이 '확장성이 낮다'고만 지적하고 정량적 분석은 제공하지 않습니다.</p>
+<h2 id="_11">엔지니어링 시사점</h2>
+<p>재현 또는 방법 선택 시 세 가지를 먼저 확인해야 합니다: <strong>입력 모달리티</strong>(GT 점유 vs 카메라 예측은 결과에 큰 영향을 미칩니다. Occ3D에서 COME-S와 COME-O의 Avg mIoU 차이는 15% 포인트에 달합니다), <strong>평가 프로토콜</strong>(DMC의 Episode Return 정의, nuScenes의 UniAD 프로토콜, RLBench의 성공률 판정 기준이 각각 다릅니다), <strong>계산 예산</strong>(VidMan은 125개 에피소드로 67% 성공률을 달성하는 반면, DreMa는 250개 에피소드로 25%에 불과하지만 전자는 해상도 224, 후자는 128이므로 직접 비교에 주의가 필요합니다).</p>
+<p>가장 함정에 빠지기 쉬운 것은 <strong>테이블 간 비교</strong>입니다: 서로 다른 논문의 '평균 점수'는 태스크 난이도 차이로 직접 비교할 수 없습니다(예: RLBench의 Close Jar 성공률 88%와 Stack Blocks 48%는 큰 차이). 리뷰에서도 '대략적인 지표일 뿐'이라고 명시했습니다. 엔지니어링 관점에서는 IDM 계열 방법(VidMan, Iso-Dream)을 우선 재현하는 것이 좋습니다. 조작 태스크에서 성능이 안정적이고 아키텍처가 단순하기 때문입니다. 자율주행 플래닝을 한다면 SSR처럼 추가 감독이 없는 방법이 가장 비용 효율적이며, 점유 예측 태스크에서는 DTT의 분해 토큰 설계가 참고할 만합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zawalski_robotic_control_via_embodied_c_2024/">Robotic Control via Embodied Chain-of-Thought Reasoning</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_comprehensive_survey_world_models_embodi_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zawalski_robotic_control_via_embodied_c_2024/">
+          <span class="entry-type">논문</span>
+          <h3>Robotic Control via Embodied Chain-of-Thought Reasoning</h3>
+          <p>Robotic Control via Embodied Chain-of-Thought Reasoning (ECoT), is a 2024 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">통합 수학 프레임워크</a></li>
+<li><a href="#_5">세 가지 시간 모델링 전략</a></li>
+<li><a href="#_6">네 가지 공간 표현</a></li>
+<li><a href="#_7">핵심 아키텍처 결정</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a></li>
+<li><a href="#_10">경계와 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

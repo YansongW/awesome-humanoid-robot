@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Latent Dynamics for Planning from Pixels · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Latent Dynamics for Planning from Pixels</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Learning Latent Dynamics for Planning from Pixels</h1>
+      <p class="entry-name-en">Learning Latent Dynamics for Planning from Pixels</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P063. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>PlaNet 是一个纯模型驱动的强化学习智能体，从像素观测中学习循环状态空间模型（RSSM），并在潜在空间中用交叉熵方法（CEM）进行规划。它在 DeepMind Control Suite 的六个连续控制任务上，以 1000 个回合的样本量达到或超过无模型基线（D4PG）在 100000 个回合下的性能，数据效率提升 40 至 500 倍以上。核心贡献在于证明了随机与确定性混合的潜在动力学模型结合在线规划，是样本高效控制的一条可行路径。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1811.04551" target="_blank" rel="noopener">arXiv:1811.04551 Learning Latent Dynamics for Planning from Pixels</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>在 PlaNet 之前，从像素直接做模型预测控制（MPC）几乎不可行：视频预测模型要么是确定性的（无法处理多模态未来），要么是纯随机的（训练不稳定、长期预测坍缩）。强化学习社区的主流共识是，模型误差会在多步规划中累积，因此不如直接学策略或价值函数。PlaNet 真正改变的是这个前提——它用 RSSM 的确定性路径承载跨时间步的记忆，用随机路径捕捉观测中的不确定性，从而让潜在空间中的 12 步规划（H=12）变得足够可靠，甚至能超越用真实模拟器状态做 CEM 规划的性能（如 cheetah 662 vs 656，walker 951 vs 994 接近）。</p>
+<p>另一个被改变的认知是“规划必须用真实状态”。PlaNet 证明，从 64×64 像素、5 位深度（bit depth 降至 5）的观测中学习到的 30 维潜在状态，足以支撑开环 50 步的像素级预测（图 9），并且潜在空间中的状态估计（位置、速度）在远超规划视界的距离上仍然可预测（图 10）。这意味着，模型学习的不是简单的帧间插值，而是底层物理量的压缩表征。此外，PlaNet 的多任务实验（单个智能体不被告知任务身份，同时学习六个任务）也挑战了“每个任务需要单独建模”的默认假设，尽管学习速度会变慢。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="rssmrecurrent-state-space-model">模型架构：RSSM（Recurrent State-Space Model）</h3>
+<ul>
+<li>由两条路径组成：</li>
+<li><strong>确定性路径</strong>：GRU（200 个单元）接收上一时刻的确定性状态 h_{t-1} 和随机状态 s_{t-1}，输出 h_t。这允许模型跨时间步记住信息，避免纯随机模型的信息丢失。</li>
+<li><strong>随机路径</strong>：从 30 维对角高斯分布中采样 s_t，均值和标准差由 h_t 和观测编码预测。随机性对学习至关重要，因为任务从智能体视角看是部分可观测的（初始状态未知），且噪声为规划目标增加安全边际，产生更鲁棒的动作序列。</li>
+<li>观测编码器/解码器：卷积/反卷积网络（来自 Ha &amp; Schmidhuber 2018），其他函数为两个全连接层（大小 200，ReLU 激活）。</li>
+</ul>
+<h3 id="_3">训练目标</h3>
+<ul>
+<li>联合优化重建损失（图像重建）和 KL 散度（正则化潜在分布）。KL 项不相对重建项缩放，但将散度损失裁剪到 3 个自由 nats 以下。</li>
+<li>关键设计：<strong>latent overshooting</strong>（潜在过冲）作为多步预测的正则化器，在训练时对潜在状态进行多步展开并计算 KL。但最终 agent 未使用它，因为 RSSM 本身已足够好（消融显示它略微降低 RSSM 性能，但显著提升纯随机 DRNN）。</li>
+</ul>
+<h3 id="cem">规划算法：CEM（交叉熵方法）</h3>
+<ul>
+<li>参数：规划视界 H=12、优化迭代 I=10、候选样本 J=1000、拟合最优 K=100。</li>
+<li>流程：</li>
+<li>从因子化信念 q(a_{t:t+H}) ← Normal(0, I) 初始化。</li>
+<li>迭代 I 次：采样 J 个动作序列，用学习到的奖励模型评估期望回报，取 K 个最优序列重新拟合高斯分布（更新均值和标准差）。</li>
+<li>返回第一个动作均值 μ_t 作为执行动作。</li>
+<li>动作噪声 ε ~ Normal(0, 0.3) 用于数据收集，每 C=100 个更新步收集一个额外回合，从 S=5 个随机动作种子回合开始。</li>
+</ul>
+<h3 id="_4">多任务学习</h3>
+<ul>
+<li>单个智能体在所有六个任务上训练，不被告知任务身份，需从图像观测推断。动作空间用未使用元素填充以兼容，算法调整为每 C 个更新步收集每个任务的一个回合，使用与主实验相同的超参数。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>随机与确定性的混合状态空间</strong>：这是 RSSM 的核心创新。纯随机模型（stochastic-only）无法解决任何任务，纯确定性模型（deterministic-only）在大多数任务上表现更差。RSSM 的确定性路径提供长期记忆，随机路径处理观测不确定性，两者结合使得潜在动力学既稳定又具有表达力。这一设计直接解决了视频预测中“确定性模型无法生成多模态未来，随机模型难以训练”的两难。</p>
+</li>
+<li>
+<p><strong>潜在空间中的在线规划（latent planning）</strong>：PlaNet 不学习策略或价值函数，而是用 CEM 在潜在空间中搜索动作序列。与随机射击（random shooting，从 1000 个序列中选最优）相比，CEM 的迭代优化（I=10）在所有任务上提升性能。与随机收集数据（random collection）相比，在线规划驱动的数据收集对所有任务有帮助，对 cartpole、finger 和 walker 任务是必要的。这表明，规划不仅用于决策，还用于引导数据分布，形成“探索-建模-规划”的正反馈。</p>
+</li>
+<li>
+<p><strong>数据效率的跨越式提升</strong>：PlaNet 用 1000 个回合达到 D4PG 用 100000 个回合的性能，数据效率提升 40（reacher）到 500+（cheetah）倍。这一数量级的差距不是渐进改进，而是改变了“从像素学习控制需要多少数据”的预期，为真实机器人应用（数据获取成本高）打开了可能性。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="_7">任务与基线</h3>
+<ul>
+<li>任务：Cartpole Swing Up、Reacher Easy、Cheetah Run、Finger Spin、Cup Catch、Walker Walk。</li>
+<li>基线：A3C（本体感觉模态，100000 回合）、D4PG（像素模态，100000 回合）、PlaNet（像素模态，1000 回合）、CEM + 真实模拟器（模拟器状态，0 回合，作为性能上界估计）。</li>
+</ul>
+<h3 id="15-10">关键结果（表 1，5 个种子和 10 条轨迹的平均最终性能）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>A3C</th>
+<th>D4PG</th>
+<th>PlaNet (ours)</th>
+<th>CEM + true simulator</th>
+<th>数据效率增益（PlaNet vs D4PG）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartpole Swing Up</td>
+<td>558</td>
+<td>862</td>
+<td>821</td>
+<td>850</td>
+<td>250</td>
+</tr>
+<tr>
+<td>Reacher Easy</td>
+<td>285</td>
+<td>967</td>
+<td>832</td>
+<td>964</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Cheetah Run</td>
+<td>214</td>
+<td>524</td>
+<td>662</td>
+<td>656</td>
+<td>500+</td>
+</tr>
+<tr>
+<td>Finger Spin</td>
+<td>129</td>
+<td>985</td>
+<td>700</td>
+<td>825</td>
+<td>300</td>
+</tr>
+<tr>
+<td>Cup Catch</td>
+<td>105</td>
+<td>980</td>
+<td>930</td>
+<td>993</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Walker Walk</td>
+<td>311</td>
+<td>968</td>
+<td>951</td>
+<td>994</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>PlaNet 在 cheetah 上超过 D4PG（662 vs 524），在 walker 上接近（951 vs 968），在 cup 上接近（930 vs 980）。在 finger 上落后（700 vs 985），但数据效率增益仍达 300 倍。</li>
+<li>与 CEM + true simulator 对比：PlaNet 在 cheetah 上超过（662 vs 656），在 walker 上接近（951 vs 994），说明潜在模型的质量已接近真实模拟器。</li>
+</ul>
+<h3 id="_8">消融实验</h3>
+<ul>
+<li><strong>模型组件</strong>：纯随机模型无法解决任何任务；纯确定性模型在大多数任务上更差；RSSM 在所有任务上最佳（finger 任务上确定性模型略好）。</li>
+<li><strong>规划设计</strong>：PlaNet 优于随机收集（random collection）和随机射击（random shooting），证明在线规划和 CEM 迭代优化的必要性。</li>
+<li><strong>潜在过冲</strong>：显著提升 DRNN 性能，但略微降低 RSSM 性能（图 7）。</li>
+<li><strong>激活函数</strong>：ELU 帮助纯随机模型，但 RSSM 对激活函数选择鲁棒（图 8）。</li>
+<li><strong>规划视界</strong>：视界长度 6 不够，过长则因搜索空间增大而性能下降；cheetah 环境最佳视界接近 8 步（图 11，规划性能范围 132 到 837）。</li>
+</ul>
+<h3 id="_9">多任务学习</h3>
+<ul>
+<li>单个智能体解决所有任务，但学习速度比单独训练的智能体慢（图 5、图 6）。</li>
+</ul>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>未使用 latent overshooting</strong>：最终 agent 未使用该正则化器，作者认为它可能对其他模型架构更有益，但未验证。</li>
+<li><strong>固定规划视界</strong>：H=12 对所有任务固定，不根据任务或状态自适应。图 11 显示 cheetah 最佳视界接近 8 步，说明固定视界并非最优。</li>
+<li><strong>固定动作重复</strong>：每个任务的动作重复 R 是预设的（cartpole R=8、reacher R=4、cheetah R=4、finger R=2、cup R=4、walker R=2），未学习调整。</li>
+<li><strong>无迁移学习</strong>：未考虑任务间或环境间的迁移。</li>
+<li><strong>探索策略简单</strong>：仅使用高斯噪声（ε ~ Normal(0, 0.3)），未探索更复杂的探索方法。</li>
+<li><strong>未在真实机器人上验证</strong>：所有实验在模拟环境（DeepMind Control Suite）中完成。</li>
+<li><strong>未解决高视觉多样性任务</strong>：未处理视觉更复杂的场景。</li>
+<li><strong>未使用梯度规划或价值函数</strong>：规划视界之外的奖励总和未通过价值函数近似，计算效率有提升空间。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>复现时先核对超参数</strong>：最重要的超参数是动作重复（R）、KL 散度尺度 β、学习率。动作重复直接影响数据收集的粒度，KL 裁剪到 3 个自由 nats 是关键细节，缺失会导致训练不稳定。</li>
+<li><strong>RSSM 的随机路径不能省</strong>：纯确定性模型在大多数任务上性能下降，纯随机模型完全失败。如果下游任务需要长期记忆，确定性路径的 GRU 单元数（200）和潜在维度（30）是合理的起点，但建议先做激活函数敏感性测试（RSSM 对 ELU/ReLU 鲁棒，但纯随机模型对 ELU 敏感）。</li>
+<li><strong>CEM 参数是性能杠杆</strong>：J=1000、I=10、K=100 是默认值，但图 11 显示规划视界长度对性能影响最大（6 步不足，过长反而有害）。对具体任务，建议先扫描 H 在 6-12 之间的值，再调整 J 和 I。</li>
+<li><strong>多任务训练会变慢</strong>：如果目标是单任务，不要直接复用多任务配置；多任务时每 C=100 步收集每个任务的一个回合，但学习速度会下降，需要更多总更新步。</li>
+<li><strong>最容易踩坑的地方</strong>：数据收集阶段的前 S=5 个随机回合质量至关重要，如果初始数据分布太差，模型可能无法收敛；另外，图像预处理（位深度降至 5 位）和批次大小 B=50、序列块长度 L=50 必须保持一致，否则重建损失和 KL 平衡会偏移。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/1811.04551</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_deepmind_control_suite_2018/">DeepMind Control Suite</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-desc">Learning Latent Dynamics for Planning from Pixels提及模型预测控制（MPC）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_latent_dynamics_planning_pixels_2018"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_deepmind_control_suite_2018/">
+          <span class="entry-type">论文</span>
+          <h3>DeepMind Control Suite</h3>
+          <p>DeepMind Control Suite 是由 DeepMind 开发的连续控制任务集合，基于 MuJoCo…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#rssmrecurrent-state-space-model">模型架构：RSSM（Recurrent State-Space Model）</a></li>
+<li><a href="#_3">训练目标</a></li>
+<li><a href="#cem">规划算法：CEM（交叉熵方法）</a></li>
+<li><a href="#_4">多任务学习</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#_7">任务与基线</a></li>
+<li><a href="#15-10">关键结果（表 1，5 个种子和 10 条轨迹的平均最终性能）</a></li>
+<li><a href="#_8">消融实验</a></li>
+<li><a href="#_9">多任务学习</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

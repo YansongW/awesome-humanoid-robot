@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InternVLA-M1 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">InternVLA-M1</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>InternVLA-M1</h1>
+      <p class="entry-name-en">InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.13778v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>InternVLA-M1 是由上海人工智能实验室 Intern Robotics 团队于 2025 年提出的大型视觉-语言-动作模型，用于机器人操控。其核心贡献在于提出空间引导的视觉-语言-动作训练范式，通过两阶段流程（空间定位预训练与动作后训练）显著提升了指令跟随机器人的泛化能力。在多个基准测试中，该模型相比无空间引导的变体取得了最高 17% 的性能提升，并在长时程推理场景中超越现有方法超过 10%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.13778" target="_blank" rel="noopener">InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2510.13778" target="_blank" rel="noopener">InternVLA-M1 source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>InternVLA-M1 是一个统一的机器人操控框架，旨在通过空间引导训练将指令跟随机器人推向可扩展的通用智能。该框架采用两阶段流水线：首先在超过 230 万条空间推理数据上进行预训练，学习将指令与视觉位置对齐以确定“在哪里行动”；随后通过即插即用的空间提示进行动作后训练，生成具身感知的动作以决定“如何行动”。实验表明，这种空间引导训练策略在 SimplerEnv Google Robot、WidowX 和 LIBERO Franka 等基准上分别带来 14.6%、17% 和 4.3% 的稳定提升。此外，团队构建了仿真引擎收集 24.4 万条可泛化的拾放任务数据，在 200 个任务和 3000+ 物体上实现平均 6.2% 的提升，并在真实世界的杂乱拾放任务中提升 7.3%，通过合成协同训练在未见物体和新配置上达到 20.6% 的提升。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>InternVLA-M1 的核心是<strong>空间引导的视觉-语言-动作训练</strong>，将空间定位作为连接指令与机器人动作的关键桥梁。其两阶段流程包括：
+- <strong>空间定位预训练</strong>：在超过 230 万条空间推理数据上训练，学习将指令与视觉、非具身感知的位置对齐，确定“在哪里行动”。该阶段支持框、点和轨迹三种预测形式。
+- <strong>空间引导动作后训练</strong>：通过即插即用的空间提示生成具身感知的动作，决定“如何行动”。这种设计使得空间定位能力与动作生成解耦，便于模块化扩展。</p>
+<h3 id="_4">实验设置与关键结果</h3>
+<ul>
+<li><strong>消融实验</strong>：在 SimplerEnv Google Robot 上，带空间引导的变体比无引导变体提升 14.6%；在 WidowX 上提升 17%；在 LIBERO Franka 上提升 4.3%。</li>
+<li><strong>空间推理能力</strong>：在框、点和轨迹预测任务中均展现出更强的空间推理能力。</li>
+<li><strong>仿真数据扩展</strong>：构建仿真引擎收集 24.4 万条可泛化的拾放任务数据，在 200 个任务和 3000+ 物体上实现平均 6.2% 的提升。</li>
+<li><strong>真实世界实验</strong>：在杂乱拾放任务中提升 7.3%；通过合成协同训练，在未见物体和新配置上达到 20.6% 的提升。</li>
+<li><strong>长时程推理</strong>：在需要复杂推理的长时间任务中，超越现有方法超过 10%。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>InternVLA-M1 验证了空间引导训练作为可扩展、鲁棒的通用机器人策略的统一原则。代码和模型已开源在 https://github.com/InternRobotics/InternVLA-M1。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2510.13778v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chen_internvla_m1_a_spatially_guide_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置与关键结果</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

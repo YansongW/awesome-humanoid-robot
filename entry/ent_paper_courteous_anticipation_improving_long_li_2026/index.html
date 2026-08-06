@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Courteous Anticipation: Improving Long-Lived Task Planning in Persistent Shared Environments · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Courteous Anticipation: Improving Long-Lived Task Planning in Persistent Shared Environments</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Courteous Anticipation: Improving Long-Lived Task Planning in Persistent Shared Environments</h1>
+      <p class="entry-name-en">Courteous Anticipation: Improving Long-Lived Task Planning in Persistent Shared Environments</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出“礼貌预期规划”（courteous anticipatory planning），针对共享持久环境中多机器人长序列任务分配问题，通过联合最小化当前任务成本与所有机器人聚合预期未来成本，改善长期规划效率。作者来自学术机构，核心贡献在于将“对他人预见”引入符号规划，并验证其在家庭与餐厅模拟环境中的显著收益。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.20289" target="_blank" rel="noopener">arXiv:2607.20289 Courteous Anticipation: Improving Long-Lived Task Planning in Persistent Shared </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>标准任务规划器在共享环境中孤立求解每个任务，忽视终端状态对其他机器人未来任务的副作用，这些副作用在长序列中累积，导致整体成本上升。现有预期规划方法仅考虑单机器人自身未来任务，即“自私预期”，仍可能留下对其他机器人昂贵的终端状态。本文真正改变的是将规划目标从“自我中心”扩展为“社会性”，即规划时显式纳入共享空间中所有机器人的能力与责任，使当前决策主动降低他人未来成本，而非仅优化自身。这一转变将问题从单智能体优化重构为多智能体符号规划行为问题，而非协调或通信问题。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">目标函数</h3>
+<p>礼貌预期规划选择终端状态 <span class="arithmatex">\( s'_g \)</span> 最小化：
+[
+s^<em><em>g = \arg\min</em>{s'<em>g \in G</em>\tau} \left[ V^</em><em R="R" _in="\in" r="r">{s'_g}(s_0) + \sum</em>(s'_g) \right]
+]
+其中 } V^r_{\text{A.P.}<span class="arithmatex">\( V^*_{s'_g}(s_0) \)</span> 为当前任务即时成本，<span class="arithmatex">\( V^r_{\text{A.P.}}(s'_g) \)</span> 为机器人 <span class="arithmatex">\( r \)</span> 从该终端状态完成其后续任务的预期成本。</p>
+<h3 id="_4">分解策略</h3>
+<ul>
+<li>将聚合预期未来成本分解为独立的每机器人估计器，避免组合联合回滚。</li>
+<li>每个估计器独立训练于单个机器人的责任，隐式捕获其结构约束。</li>
+<li>模块化部署：新增机器人仅需训练其自身估计器，无需重训现有估计器。</li>
+</ul>
+<h3 id="_5">候选计划生成</h3>
+<ul>
+<li>采用聚焦采样程序，选择性增强任务与放置谓词、对象状态谓词，生成结构不同的候选计划。</li>
+<li>拒绝未能完成原始任务的计划。</li>
+<li>使用 FastDownward 与 ff-astar 求解每个代理任务。</li>
+</ul>
+<h3 id="_6">预期成本估计器</h3>
+<ul>
+<li>图神经网络（GNN），四个 GINConv 层，后接批归一化与 leaky ReLU。</li>
+<li>节点特征通过均值与求和池化聚合为图级表示，最终线性层输出成本估计。</li>
+<li>训练数据从保留的训练时环境离线生成，使用规划器求解并计算计划成本。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li><strong>对他人预见</strong>：首次将“礼貌”概念形式化为规划目标，显式聚合所有机器人的预期未来成本，区别于仅考虑自身的自私预期，这是符号规划行为层面的新问题定义。</li>
+<li><strong>分解式估计器</strong>：将联合预期成本分解为独立每机器人估计器，避免组合爆炸，同时支持模块化扩展，新增机器人无需重训，工程上可扩展。</li>
+<li><strong>离线训练、在线查询</strong>：训练时用昂贵计算近似预期成本，部署时仅查询学习估计器，避免回滚，实现实时决策。</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<p>实验在家庭（ProcTHOR）与餐厅两个模拟环境进行，对比短视（myopic）、自私预期（selfish anticipatory）与礼貌预期（courteous）三种规划器。</p>
+<table>
+<thead>
+<tr>
+<th>环境/设置</th>
+<th>Myopic 成本</th>
+<th>Self. A.P. 成本</th>
+<th>Courteous 成本</th>
+<th>vs Myopic</th>
+<th>vs Self. A.P.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>家庭（两机器人，100序列×20任务）</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>10.4%</td>
+<td>4.0%</td>
+</tr>
+<tr>
+<td>餐厅（三机器人，200序列×30任务）</td>
+<td>873</td>
+<td>831</td>
+<td>721</td>
+<td>17.41%</td>
+<td>13.24%</td>
+</tr>
+<tr>
+<td>餐厅（两机器人平均）</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>6.7%</td>
+<td>5.5%</td>
+</tr>
+<tr>
+<td>餐厅（Cook+Cleaner）</td>
+<td>917</td>
+<td>901</td>
+<td>838</td>
+<td>8.62%</td>
+<td>7.01%</td>
+</tr>
+<tr>
+<td>餐厅（Cleaner+Server）</td>
+<td>812</td>
+<td>796</td>
+<td>778</td>
+<td>4.18%</td>
+<td>2.26%</td>
+</tr>
+<tr>
+<td>餐厅（Cook+Server）</td>
+<td>1052</td>
+<td>1046</td>
+<td>976</td>
+<td>7.22%</td>
+<td>6.69%</td>
+</tr>
+</tbody>
+</table>
+<p>主动性实验：在 Cook-Server 设置中，空闲 Cleaning 机器人每两任务获 100 秒预算，将成本从 976 降至 670，改进 31.4%。单机器人设置中，Courteous 与 Selfish 结果相同（标注 *），因无其他代理可礼貌对待。定性示例显示，礼貌规划器将垃圾直接放入垃圾桶、将脏锅放在餐车上，而短视规划器留下阻塞表面等副作用。</p>
+<h2 id="_9">边界与局限</h2>
+<p>论文未明确完整局限列表，但作者承认：方法假设任务顺序到达且环境在任务间持续存在，未覆盖并发场景（多机器人同时行动、任务并发到达、环境中途变化），此类场景需时间规划。未考虑任务时间到达的在线规划，未在单任务设置中建模未来任务序列或不同能力。实验仅在模拟环境验证，未涉及真实机器人部署。</p>
+<h2 id="_10">工程启示</h2>
+<p>复现时先核对候选计划生成器的采样密度与多样性，这直接影响终端状态覆盖质量。估计器训练数据需覆盖足够多样的终端状态，否则部署时对未见状态预测偏差大。模块化设计使新增机器人仅需训练自身估计器，但需注意各估计器输入特征对齐。最易踩坑处：单机器人设置中礼貌与自私结果相同，验证算法收益必须使用多机器人异构责任设置；主动性实验依赖预算分配策略，需仔细调参。下游团队应优先在异构机器人、责任差异大的场景评估，收益最显著。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.20289</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_task_planning/">任务规划</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_courteous_anticipation_improving_long_li_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_task_planning/">
+          <span class="entry-type">方法</span>
+          <h3>任务规划</h3>
+          <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">目标函数</a></li>
+<li><a href="#_4">分解策略</a></li>
+<li><a href="#_5">候选计划生成</a></li>
+<li><a href="#_6">预期成本估计器</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a></li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

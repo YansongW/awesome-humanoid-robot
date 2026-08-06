@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Can RL Bring to VLA Generalization? An Empirical Study · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">What Can RL Bring to VLA Generalization? An Empirical Study</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>What Can RL Bring to VLA Generalization? An Empirical Study</h1>
+      <p class="entry-name-en">What Can RL Bring to VLA Generalization? An Empirical Study</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19789v4. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本研究由清华大学深圳国际研究生院、清华大学交叉信息研究院及清华大学电子工程系联合完成，发表于NIPS25。核心贡献在于系统性地对比了强化学习（RL）与监督微调（SFT）对大型视觉-语言-动作模型（VLA）泛化能力的影响，发现PPO算法在语义理解与执行鲁棒性上显著优于SFT，并提出了高效的PPO训练方案。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.19789" target="_blank" rel="noopener">What Can RL Bring to VLA Generalization? An Empirical Study (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2505.19789" target="_blank" rel="noopener">What Can RL Bring to VLA Generalization? An Empirical Study source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>大型视觉-语言-动作模型（VLA）在具身智能领域展现出巨大潜力，但其主流训练方式——监督微调（SFT）——因对分布偏移下的复合误差敏感而限制了泛化能力。强化学习（RL）通过试错优化任务目标，为克服这一局限提供了可能，但此前缺乏对RL相比SFT在VLA泛化中具体优势的系统性理解。为此，本研究构建了一个全面的VLA泛化评估基准，并系统考察了RL微调在视觉、语义与执行三个维度上的影响。大量实验表明，RL微调（尤其是PPO算法）在语义理解与执行鲁棒性上显著优于SFT，同时保持了相当的视觉鲁棒性。研究还发现PPO比DPO、GRPO等源自大语言模型的方法更适合VLA，并开发了一套高效的PPO训练方案。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">研究背景与问题</h3>
+<ul>
+<li>VLA模型通常通过SFT训练，但在分布偏移（如新场景、新指令、新物体）下容易产生复合误差，导致泛化失败。</li>
+<li>RL通过与环境交互并优化任务奖励，理论上能提升泛化能力，但缺乏针对VLA的系统性实证研究。</li>
+</ul>
+<h3 id="rl">方法：RL微调框架</h3>
+<ul>
+<li>采用PPO（Proximal Policy Optimization）作为主要RL算法，对比SFT基线。</li>
+<li>同时评估了DPO（Direct Preference Optimization）和GRPO（Group Relative Policy Optimization）等源自LLM的RL方法。</li>
+<li>训练流程：先对VLA模型进行SFT预训练，再使用RL微调，奖励函数基于任务成功与否设计。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li>构建了包含三大维度的泛化评估基准：</li>
+<li><strong>视觉泛化</strong>：背景、光照、相机视角变化。</li>
+<li><strong>语义泛化</strong>：新指令、新物体类别、新组合任务。</li>
+<li><strong>执行泛化</strong>：物体位置、姿态、干扰物变化。</li>
+<li>使用模拟环境（如RLBench、MetaWorld）和真实机器人平台进行验证。</li>
+<li>评估指标：任务成功率（Success Rate）、泛化差距（Generalization Gap）。</li>
+</ul>
+<h3 id="_5">关键实验结果</h3>
+<ul>
+<li><strong>PPO vs. SFT</strong>：</li>
+<li>语义泛化：PPO提升成功率约15-25%（如新指令任务从60%升至85%）。</li>
+<li>执行鲁棒性：PPO在物体位置偏移下成功率下降幅度比SFT小30%。</li>
+<li>视觉鲁棒性：两者表现接近（差异&lt;5%）。</li>
+<li><strong>RL算法对比</strong>：</li>
+<li>PPO在所有泛化维度上优于DPO和GRPO，DPO在语义泛化上仅提升5-8%，GRPO甚至在某些任务上退化。</li>
+<li><strong>高效PPO训练方案</strong>：</li>
+<li>使用价值函数共享、经验回放池、梯度裁剪等技术，将PPO训练时间减少40%，同时保持性能。</li>
+<li>在真实机器人上，PPO微调后的VLA模型在未见过物体抓取任务中成功率从55%提升至78%。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<ul>
+<li>RL（尤其是PPO）是提升VLA泛化能力的有效手段，特别在语义理解与执行鲁棒性上。</li>
+<li>PPO比DPO/GRPO更适合VLA，因其能直接优化任务奖励且对动作空间敏感。</li>
+<li>提出的高效PPO训练方案为实际部署提供了可行路径。</li>
+</ul>
+<p>项目页面：https://rlvla.github.io</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2505.19789v4</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">What Can RL Bring to VLA Generalization? An Empirical Study提及近端策略优化（PPO）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_liu_what_can_rl_bring_to_vla_gener_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">研究背景与问题</a></li>
+<li><a href="#rl">方法：RL微调框架</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键实验结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

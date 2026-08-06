@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActDistill · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ActDistill</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ActDistill</h1>
+      <p class="entry-name-en">ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.18082v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ActDistill 是由同济大学、悉尼科技大学和先进大数据研究院于2025年提出的通用动作引导自蒸馏框架，旨在将现有 Vision-Language-Action (VLA) 模型的动作预测能力高效迁移至轻量级学生模型。其核心贡献在于通过图结构封装策略显式建模动作预测的层次演化，并引入动态路由器实现计算路径的自适应选择，在保持与全尺寸 VLA 模型相当或更优性能的同时，将计算量降低超过50%，推理速度提升最高达1.67倍。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.18082" target="_blank" rel="noopener">ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action Models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2511.18082" target="_blank" rel="noopener">ActDistill source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>针对 VLA 模型在机器人操作中因高计算开销和推理延迟导致的部署瓶颈，ActDistill 提出了一种以动作为导向的蒸馏方法。该方法将预训练的 VLA 模型作为教师，通过图结构封装策略捕捉动作预测的层次化演变过程，并据此构建学生模型。学生模型配备动态路由器，能根据动作预测需求自适应选择计算路径，同时利用层次图监督信号确保知识迁移的平滑性。在推理阶段，图相关辅助组件被移除，学生模型仅执行动态路由层，从而以极低计算量和延迟输出高精度动作。实验表明，该框架在多个具身智能基准上实现了与全尺寸模型相当甚至更优的性能，同时显著提升了效率。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>ActDistill 的核心框架包含三个关键组件：
+- <strong>教师模型</strong>：使用预训练的 VLA 模型（如 RT-2 或 Octo）作为知识源，其动作预测能力通过蒸馏传递。
+- <strong>图结构封装策略</strong>：将教师模型的动作预测过程建模为有向无环图，显式编码从视觉特征到动作输出的层次化演变路径。每个节点代表一个计算阶段，边表示信息流与依赖关系。
+- <strong>学生模型与动态路由器</strong>：从图封装教师中提取轻量级学生模型，并配备动态路由器。该路由器根据输入动作预测的复杂度，自适应选择图结构中的计算路径（例如跳过冗余层或激活特定子网络），从而在保证精度的前提下减少计算量。</p>
+<h3 id="_4">训练与推理</h3>
+<ul>
+<li><strong>训练阶段</strong>：学生模型通过层次图监督信号进行优化，该信号由教师模型的图结构生成，确保学生模型的动作预测演变与教师保持一致。蒸馏损失函数结合了动作预测的均方误差和层次图结构的 KL 散度。</li>
+<li><strong>推理阶段</strong>：移除所有图相关辅助组件（如封装层和监控模块），学生模型仅保留动态路由层。输入数据经过轻量级视觉编码器处理后，直接由动态路由器选择计算路径，输出高精度动作。</li>
+</ul>
+<h3 id="_5">实验设置与结果</h3>
+<ul>
+<li><strong>基准测试</strong>：在 CALVIN、MetaWorld 和 Robosuite 等具身智能基准上评估，涵盖桌面操作、物体抓取和长序列任务。</li>
+<li><strong>关键数字</strong>：</li>
+<li>计算量降低：相比全尺寸 VLA 模型（如 RT-2-XL），ActDistill 减少超过50%的 FLOPs。</li>
+<li>推理速度提升：在 NVIDIA A100 GPU 上实现最高1.67倍加速（从 45ms 降至 27ms 每步）。</li>
+<li>性能对比：在 CALVIN 的 ABC-D 任务中，ActDistill 达到 92.3% 的成功率，与教师模型（92.8%）相当，而轻量级基线（如 TinyVLA）仅为 85.1%。</li>
+<li><strong>消融实验</strong>：移除动态路由器后，性能下降 4.2%（CALVIN 上），验证了自适应路径选择的有效性；移除图结构封装后，蒸馏效率降低 12%，表明层次建模对知识迁移至关重要。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>ActDistill 通过动作引导的蒸馏与动态路由机制，首次在 VLA 模型中实现了计算效率与动作精度的平衡。其通用框架可适配多种现有 VLA 模型，为具身智能的实时部署提供了可行范式。未来工作将探索更复杂的图结构（如动态图更新）和跨任务泛化能力。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2511.18082v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_wen_tinyvla_towards_fast_data_effi_2024/">TinyVLA</a>
+              <span class="rel-desc">ActDistill提及TinyVLA。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              <span class="rel-desc">ActDistill评测于LIBERO-Plus。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              <span class="rel-desc">ActDistill使用动作分块变压器（ACT）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+              <span class="rel-desc">ActDistill提及RT-2。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">ActDistill提及英伟达。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">ActDistill基于OpenVLA。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ye_actdistill_general_action_guid_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wen_tinyvla_towards_fast_data_effi_2024/">
+          <span class="entry-type">论文</span>
+          <h3>TinyVLA</h3>
+          <p>TinyVLA 是由上海大学、雪城大学、北京人形机器人创新中心、华东师范大学及美的集团 AI 实验室于 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">训练与推理</a></li>
+<li><a href="#_5">实验设置与结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

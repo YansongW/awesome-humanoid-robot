@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joint Motor · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/component/">부품</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Joint Motor</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">부품</div>
+      <h1>Joint Motor</h1>
+      <p class="entry-name-en">Joint Motor</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-04.md#4.7.6 选型算例：髋关节电机+减速器 by scripts/backfill_nonpaper_entries.py.">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>로봇 관절에 통합된 컴팩트한 모터, 일반적으로 감속기 및 인코더와 짝을 이루어 액추에이터 모듈을 형성.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://en.wikipedia.org/wiki/Servomotor" target="_blank" rel="noopener">Joint Motor</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>관절 모터는 휴머노이드 로봇 분야의 중요한 부품입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고용으로 제공됩니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<p>60kg급 휴머노이드 로봇의 <strong>고관절 굴곡 신전</strong> 액추에이터를 고려하며, 설계 사양은 다음과 같습니다:</p>
+<ul>
+<li>출력 피크 토크: <span class="arithmatex">\(\tau_{peak} = 120\ \text{N·m}\)</span></li>
+<li>출력 연속 RMS 토크: <span class="arithmatex">\(\tau_{rms} = 35\ \text{N·m}\)</span></li>
+<li>출력 최대 각속도: <span class="arithmatex">\(\omega_{out,max} = 8\ \text{rad/s}\)</span></li>
+<li>감속기 효율: <span class="arithmatex">\(\eta = 0.85\)</span></li>
+</ul>
+<p>후보 모터 파라미터: 피크 토크 <span class="arithmatex">\(\tau_{m,peak} = 3.0\ \text{N·m}\)</span>, 연속 RMS 토크 <span class="arithmatex">\(\tau_{m,cont} = 1.0\ \text{N·m}\)</span>, 최대 회전 속도 <span class="arithmatex">\(\omega_{m,max} = 300\ \text{rad/s}\)</span>.</p>
+<p><strong>단계 1: 피크 토크 기준 감속비 초기 선정</strong></p>
+<div class="arithmatex">\[
+G \ge \frac{\tau_{peak}}{\tau_{m,peak} \, \eta} = \frac{120}{3.0 \times 0.85} \approx 47.1
+\]</div>
+<p><strong>단계 2: 속도 요구 조건에 따른 상한 검증</strong></p>
+<div class="arithmatex">\[
+G \le \frac{\omega_{m,max}}{\omega_{out,max}} = \frac{300}{8} = 37.5
+\]</div>
+<p>단계 1과 단계 2가 충돌: 모터 피크 토크 부족 또는 최대 회전 속도 부족. 모터를 재선택해야 하며, 예를 들어 <span class="arithmatex">\(\tau_{m,peak}=4.5\ \text{N·m}\)</span>, <span class="arithmatex">\(\omega_{m,max}=400\ \text{rad/s}\)</span>인 모터로 교체:</p>
+<div class="arithmatex">\[
+G \ge \frac{120}{4.5 \times 0.85} \approx 31.4, \qquad
+G \le \frac{400}{8} = 50
+\]</div>
+<p><span class="arithmatex">\(G = 40\)</span>을 선택하여 토크 여유와 속도 여유를 모두 확보.</p>
+<p><strong>단계 3: 연속 RMS 토크 검증</strong></p>
+<p>모터 측 연속 토크 요구량은</p>
+<div class="arithmatex">\[
+\tau_{m,rms} = \frac{\tau_{rms}}{G \eta} = \frac{35}{40 \times 0.85} \approx 1.03\ \text{N·m}
+\]</div>
+<p>모터 연속 토크 1.0 N·m보다 약간 크므로, <span class="arithmatex">\(G\)</span>를 42로 약간 높이거나 연속 토크 1.2 N·m인 모터를 선택하여 해결 가능.</p>
+<p><strong>단계 4: 열 검증</strong></p>
+<p>모터 상 저항 <span class="arithmatex">\(R = 0.30\ \Omega\)</span>, 열 저항 <span class="arithmatex">\(R_{th} = 1.8\ \text{K/W}\)</span>, 허용 온도 상승 <span class="arithmatex">\(\Delta T = 115\ \text{K}\)</span>로 가정.</p>
+<div class="arithmatex">\[
+P_{loss,allow} = \frac{\Delta T}{R_{th}} = \frac{115}{1.8} \approx 63.9\ \text{W}
+\]</div>
+<p>해당 허용 RMS 전류</p>
+<div class="arithmatex">\[
+I_{rms,max} = \sqrt{\frac{P_{loss,allow}}{R}} = \sqrt{\frac{63.9}{0.30}} \approx 14.6\ \text{A}
+\]</div>
+<p>모터 토크 상수 <span class="arithmatex">\(k_t = 0.12\ \text{N·m/A}\)</span>이므로, 허용 연속 토크</p>
+<div class="arithmatex">\[
+\tau_{cont,allow} = k_t I_{rms,max} = 0.12 \times 14.6 \approx 1.75\ \text{N·m}
+\]</div>
+<p>요구량 1.03 N·m보다 크므로 열 설계 통과.</p>
+<p><strong>단계 5: 반복 최적화</strong></p>
+<p>전체 기계가 무게에 민감한 경우, <span class="arithmatex">\(G\)</span>와 모터 질량, 감속기 질량, 효율의 Pareto 프론티어를 도출하여 모든 제약 조건을 만족하면서 질량이 가장 작은 조합을 선택. 일반적으로 높은 감속비는 더 작은 모터를 허용하지만 더 무거운 감속기를 필요로 함; 낮은 감속비는 그 반대. 휴머노이드 로봇 고관절은 종종 <span class="arithmatex">\(G=30\sim80\)</span> 사이에서 균형을 맞춤.</p>
+<div class="admonition note">
+<p class="admonition-title">용어 설명: 피크 토크, 연속 RMS 토크, 감속비, 효율, 열 검증, Pareto 프론티어</p>
+<ul>
+<li><strong>피크 토크 (peak torque)</strong>: 단시간 최대 출력 토크로, 모터+감속기의 강도 하한을 결정.</li>
+<li><strong>연속 RMS 토크 (continuous RMS torque)</strong>: 주기적 부하의 등가 열 토크.</li>
+<li><strong>감속비 (gear ratio)</strong>: 모터 회전 속도와 출력 회전 속도의 비율.</li>
+<li><strong>열 검증 (thermal check)</strong>: RMS 전류 하에서 모터의 온도 상승이 절연 한계 이하인지 확인.</li>
+<li><strong>Pareto 프론티어 (Pareto front)</strong>: 다중 목표 최적화에서 모든 목표를 동시에 개선할 수 없는 해의 집합.</li>
+</ul>
+</div>
+<p>```mermaid
+flowchart TD
+    A["작업 요구<br/>토크 속도 열"] --&gt; B["모터 초기 선정"]
+    B --&gt; C["피크 기준 G 선정<br/>G &gt;= tau_peak/(kt_m eta)"]
+    C --&gt; D["속도 기준 G 검증<br/>G &lt;= omega_m/omega_out"]
+    D --&gt; E{"제약 충돌?"}
+    E --&gt;|예| F["모터/감속기 교체"]
+    F --&gt; B
+    E --&gt;|아니오| G["열 검증<br/>I_rms R_th"]
+    G --&gt; H{"통과?"}
+    H --&gt;|아니오| I["G 증가 또는 방열 강화"]
+    I --&gt; C
+    H --&gt;|예| J["질량/효율 반복 최적화"]</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_company_cubemars_2024/">CubeMars</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">제조</span>
+              <span class="rel-desc">CubeMars는 통합 로봇 관절 모터 및 액추에이터를 제조합니다.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_component_joint_motor_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_company_cubemars_2024/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>CubeMars</h3>
+          <p>컴팩트한 통합 로봇 관절 모터 및 액추에이터 공급업체.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

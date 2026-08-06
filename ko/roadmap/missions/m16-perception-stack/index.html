@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M16 · 인식 스택 구축: 로봇이 컵이 어디 있는지 볼 수 있게 하기 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M16 · 인식 스택 구축: 로봇이 컵이 어디 있는지 볼 수 있게 하기</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m16">M16 · 인식 스택 구축: 로봇이 컵이 어디 있는지 볼 수 있게 하기</h1>
+<p><strong>전체 위치</strong>: 팔과 엔드 이펙터 준비(M15) 이후, 원격 조작 데이터 수집(M17) 이전. 입력은 장착된 센서 하드웨어이며, 출력은 <strong>캘리브레이션된 비전/위치 인식 스택</strong>입니다. 즉, 장면을 입력하면 대상물의 3D 자세와 로봇 자체 위치를 출력합니다. 이 출력은 M17 데이터 수집, M18 모방 학습, M19 작업 계획의 공통 소비자입니다.</p>
+<p><strong>전제 조건</strong>: M10의 URDF와 M15의 팔 이후, 전신 TF 트리를 사용할 수 있습니다. 센서는 이미 구매했거나 구매 목록에 있습니다(선정 기준은 <a href="/ko/roadmap/playbooks/sensor-selection/">센서 선정 핸드북</a> 참조). 탑재 컴퓨팅 플랫폼이 준비되었습니다(<a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선정 핸드북</a> 참조).</p>
+<p>이론적 배경: <a href="/ko/wiki/chapters/chapter-05/">제5장 센싱 및 인식 하드웨어</a>는 센서 원리를 설명하고, <a href="/ko/wiki/chapters/chapter-22/">제22장 소프트웨어 미들웨어</a>는 통신 프레임워크를 설명합니다. 이 작업은 이들을 "픽셀 → 3D 자세" 파이프라인으로 연결하는 것입니다.</p>
+<h2 id="1">단계 1: 센서 구성方案 결정</h2>
+<p>【무엇을 할까】작업에 따라 세 가지 등급의 구성을 결정하고, 구매 및 설치 목록에 작성합니다:</p>
+<ol>
+<li><strong>주 비전(필수)</strong>: 머리/가슴에 하나의 <a href="/entry/ent_component_rgbd_camera/">RGB-D 카메라</a>. 주류 선택은 <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense</a> D435i(약 USD 199, 측정 범위 0.1–10 m, 내장 IMU – 공식 데이터시트 기준) 또는 D455(약 USD 299, 깊이 정밀도 &lt;2% @ 4 m, 글로벌 셔터 – 카드 기준)입니다. 온보드 깊이 및 공간 AI가 필요하면 <a href="/entry/ent_component_zed_stereo_camera_2024/">ZED 스테레오 카메라</a>를 고려하십시오(깊이 계산은 호스트 GPU 생태계에 의존하며, 가격은 공급업체에 직접 확인해야 합니다).</li>
+<li><strong>손목 근접 카메라(강력 권장)</strong>: 각 손목에 하나의 소형 RGB 카메라. 손목 시점은 조작 데이터의 핵심 소스입니다. 즉, 마지막 10 cm를 잡을 때 머리 카메라는 종종 로봇 팔에 의해 가려집니다.</li>
+<li><strong>360° LiDAR(내비게이션에만 필요)</strong>: 실내 방 간 내비게이션을 위해 <a href="/entry/ent_component_livox_mid_360_lidar_2024/">Livox Mid-360</a> 추가(약 CNY 3,999, 265 g, 40 m @ 10% 반사율, 내장 IMU – 공식 데이터시트/카드 기준), SLAM 위치 인식 실행.</li>
+</ol>
+<p>동시에 <strong>USB 대역폭 예산</strong>을 계산합니다: 단일 D435i의 깊이 + RGB를 모두 켜면 트래픽이 수백 MB/s 수준입니다(엔지니어링 권장 값, 해상도/프레임 속도에 따라 실제 측정). 여러 카메라를 동일한 USB 컨트롤러에 연결하면 서로 대역폭을 경쟁하여 프레임 드롭이 발생합니다. "카메라 하나당 USB 3 컨트롤러 하나를 독점"하도록 할당하거나, 해상도/프레임 속도를 낮추십시오.</p>
+<p>【왜 필요한가】깊이 획득에는 세 가지 경로가 있습니다: 구조광/액티브 스테레오(실내 근거리 정밀도가 좋고 강한 빛에 약함), ToF, 패시브 스테레오(햇빛에 강하지만 텍스처에 의존). 장단점은 <a href="/entry/ent_component_rgbd_camera/">RGB-D 카드</a>를 참조하십시오. 앵커: <a href="/entry/ent_robot_system_toddlerbot/">ToddlerBot</a>은 이중 어안 카메라 + 가슴 IMU를 사용합니다(<a href="https://toddlerbot.github.io/">ToddlerBot 프로젝트 홈페이지</a>). D435i는 Qinglong, G1 등의 플랫폼에서 헤드 비전으로 사용됩니다(센서 선정 핸드북).</p>
+<p>【당신의 상황 분석】"고정 자세 + 테이블 위 물체 잡기"만 수행: D435i 하나 + 손목 카메라면 충분하며, LiDAR는 순전히 낭비입니다. 테이블 가장자리까지 이동하여 잡아야 함: Mid-360 추가. 예산 한계: 먼저 D435i 하나만, 손목 카메라는 나중에 추가하되, 기계적으로 장착 위치와 케이블 배선 경로는 미리预留하십시오.</p>
+<h2 id="2-tf">단계 2: 드라이버, 시간 동기화 및 TF 트리 병합</h2>
+<p>【무엇을 할까】</p>
+<ol>
+<li><a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> 드라이버 설치(RealSense는 공식 ROS 2 wrapper 사용, Livox는 공식 드라이버 사용), topic별로 확인: <code>ros2 topic hz</code>로 프레임 속도가 기준에 도달하는지 확인, <code>ros2 topic echo</code>로 타임스탬프가 단조 증가하는지 확인.</li>
+<li><strong>시간 동기화</strong>: 동일한 메인 컨트롤러의 센서는 시스템 클록을 사용하여 타임스탬프를 생성합니다. 메인 컨트롤러와 Jetson 이중 시스템 배포 시 chrony/NTP를 사용하여 시간을 맞춥니다(밀리초 수준, 엔지니어링 권장 값). VIO/다중 센서 융합을 수행하는 경우 PTP 또는 하드웨어 트리거를 사용합니다.</li>
+<li><strong>TF 트리 병합</strong>: 각 센서의 프레임을 M15의 전신 TF 트리에 연결합니다(URDF에 fixed joint 추가 또는 launch 파일에서 static transform 발행). <code>tf2_tools view_frames</code>를 사용하여 전체 트리가 연결되어 있고 고립된 프레임이 없는지 확인합니다.</li>
+</ol>
+<p>【왜 필요한가】다중 센서 융합의 모든 알고리즘은 "외부 파라미터 알려짐, 클록 동기화"를 가정합니다. 타임스탬프가 30 ms 차이나면 움직임 중 융합 결과는 고스팅 현상이 발생합니다. VIO 발산, 포인트 클라우드 컬러링 오류 등이 이로 인해 발생합니다(<a href="/ko/roadmap/playbooks/sensor-selection/">센서 선정 핸드북</a> 3절). 이중 시스템 시간 동기화가 제대로 되지 않으면 이미지와 관절 상태가 일치하지 않아 M17에서 수집한 데이터가 바로 폐기됩니다.</p>
+<p>【당신의 상황 분석】단일 시스템 배포 + 단일 카메라: 이 단계는 반나절이면 완료됩니다. 이중 시스템(메인 컨트롤러 + Jetson): 먼저 시간 동기화를 완료한 후 다음 단계로 진행하십시오. 50 ms의 클록 오프셋을 안고 진행하지 마십시오. 이후의 모든 단계가 오염됩니다.</p>
+<h2 id="3-">단계 3: 캘리브레이션 체인 – 내부 파라미터, 핸드-아이, 다중 센서 결합</h2>
+<p>【무엇을 할까】순서대로 세 가지 수준의 캘리브레이션을 수행하고, 모두 원클릭 스크립트로 작성하여 보관합니다:</p>
+<ol>
+<li><strong>카메라 내부 파라미터</strong>: 체스보드/도트 패턴을 여러 자세로 20장 이상 촬영하고, 캘리브레이션 도구가 fx/fy/cx/cy와 왜곡 계수를 출력합니다. <strong>재투영 오차가 0.5 px 수준 미만</strong>(엔지니어링 권장 값, 캘리브레이션 도구 보고서 기준)이면 완료합니다.</li>
+<li><strong>핸드-아이 캘리브레이션</strong>: 아이-투-핸드(헤드 카메라 대 베이스) 또는 아이-인-핸드(손목 카메라 대 엔드 이펙터)는 본질적으로 AX=XB를 푸는 것입니다. 캘리브레이션 보드를 카메라에 대해 10–15개의 다른 자세(회전이 충분해야 함)로 움직여 카메라에서 로봇 시스템으로의 변환을 구합니다.</li>
+<li><strong>카메라-LiDAR-IMU 결합 캘리브레이션</strong>(LiDAR를 장착한 경우에만 수행): 절차는 <a href="/entry/ent_method_calibration_joint_camera_imu/">결합 캘리브레이션</a> 카드를 참조하십시오: 캘리브레이션 타겟 다중 자세 촬영 → 카메라 코너 검출 + LiDAR 평면 추출 → 초기값 + ICP/비선형 최적화 → 재투영 오차 검증.</li>
+</ol>
+<p>철칙: <strong>분해, 충돌, 운송 후에는 반드시 다시 캘리브레이션해야 합니다.</strong> 이 단계의 검수 기준: RGB 포인트 클라우드 컬러링에 명백한 오프셋이 없고, 재투영 오차 &lt; 2 px(Stage 3 판단 기준).</p>
+<p>【왜 필요한가】조작은 본질적으로 좌표 변환 체인입니다: 픽셀 → 카메라 좌표계 → 베이스 좌표계 → 엔드 이펙터. 어느 한 링크의 외부 파라미터가 잘못되면 허공을 잡게 됩니다(Stage 3 원문). 캘리브레이션을 스크립트로 만들지 않으면, 분해/재조립할 때마다 파라미터를 어떻게 조정했는지 기억하는 데 하루를 소비하게 됩니다.</p>
+<p>【당신의 상황 분석】테이블 위 물체 잡기만 수행: 1+2만 완료하면 충분하며, LiDAR 결합 캘리브레이션은 내비게이션 기능을 해제할 때까지 남겨둡니다. 캘리브레이션 결과는 날짜와 버전 번호와 함께 보관하십시오. M17 데이터셋 카드에는 캘리브레이션 버전을 기록해야 합니다. 데이터와 캘리브레이션이 일치하지 않으면 수집한 데이터가 무용지물이 됩니다.</p>
+<h2 id="4">단계 4: 인식 알고리즘 파이프라인 – 포인트 클라우드에서 물체 자세까지</h2>
+<p>【무엇을 할까】4단계 파이프라인 구축:</p>
+<ol>
+<li><strong>포인트 클라우드 전처리</strong>: 복셀 다운샘플링 → 패스스루 필터링(테이블 작업 공간만 남김) → 평면 분할(테이블 제거). 파라미터는 테이블 높이와 카메라 설치 각도에 따라 실제 측정하여 조정합니다.</li>
+<li><strong>객체 감지 두 가지 경로</strong>:<ul>
+<li>기하학적 방법: 컵 ≈ 원기둥, RANSAC 원기둥 피팅, 훈련 비용 제로, 즉시 사용 가능.</li>
+<li>학습 기반 방법: 감지/분할 모델이 마스크를 출력하며, 물체 종류를 바꿔도 기하학적 가정을 다시 작성할 필요가 없습니다.</li>
+</ul>
+</li>
+<li><strong>6D 자세</strong>: 기하학적 방법은 피팅 파라미터에서 직접 자세를 제공합니다. 학습 기반 방법은 6D 자세 추정 모델을 연결할 수 있습니다(첫 번째 버전은 "마스크 중심점 + 주축 방향" 근사치 사용 가능).</li>
+<li><strong>출력 정의</strong>(인터페이스로 고정): <code>{객체 클래스, 3D 자세, 신뢰도}</code>, 발행 빈도 <strong>10–30 Hz</strong>(엔지니어링 권장 값, 연산 능력에 따라 실제 측정).</li>
+</ol>
+<p>【왜 필요한가】첫 번째 버전은 항상 기하학적 방법을 먼저 사용하십시오. 훈련 데이터가 전혀 없을 때도 엔드-투-엔드 baseline을 제공하며, 학습 기반 방법을 위한 자동 레이블링도 제공할 수 있습니다. 출력 인터페이스를 고정하면 M17/M18/M19는 이 정의만 인식하므로, 나중에 알고리즘을 변경해도 하위 단계에 영향을 주지 않습니다.</p>
+<p>【당신의 상황 분석】장면에 한 가지 종류의 컵만 있음: 기하학적 방법으로 충분하며, 에너지는 캘리브레이션과 위치 인식에 집중하십시오. 여러 종류의 물체로 일반화해야 함: 학습 기반 방법으로 시작하되, 먼저 기하학적 방법 결과를 대략적인 레이블로 사용하고, 처음부터 수백 장의 이미지를 수동으로 레이블링하지 마십시오.</p>
+<h2 id="5">5단계: 위치 파악 – 로봇이 어디에 있는가</h2>
+<p>【무엇을 할 것인가】세 가지 모드를 작업에 따라 선택:</p>
+<table>
+<thead>
+<tr>
+<th>모드</th>
+<th>방식</th>
+<th>적용 상황</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다리 오도메트리</td>
+<td>관절 엔코더 운동학 + 몸통 <a href="/entry/ent_component_imu_2024/">IMU</a> 융합</td>
+<td>정지 작업, 짧은 거리 이동</td>
+</tr>
+<tr>
+<td>VIO</td>
+<td>카메라 + IMU 시각 관성 오도메트리 (D435i 내장 IMU로 외장 1개 절약 가능)</td>
+<td>실내 고정 공간, 텍스처 충분</td>
+</tr>
+<tr>
+<td>LiDAR SLAM</td>
+<td>Mid-360 + 내장 IMU로 LIO 수행</td>
+<td>방 간 이동, 장거리</td>
+</tr>
+</tbody>
+</table>
+<p><strong>드리프트 정량화</strong>: 로봇이 폐쇄 경로를 따라 출발점(또는 표식)으로 돌아오게 한 후, 최종 자세와 출발점의 편차를 측정하고 경로 길이로 나누어 상대 드리프트율을 계산 – 이 수치는 검수에 포함되어야 함.</p>
+<p>【왜 필요한가】고정된 방에서 테이블 위 물체 잡기에는 RGB-D 오도메트리 수준의 정밀도로 충분함 (Stage 3 기준); 방 간 이동 시 순수 자체 감각만으로는 드리프트가 발생하여 허공을 잡게 됨. 오픈소스 참고 자료는 <a href="/entry/ent_paper_orb_slam3_an_accurate_open_sou_2026/">ORB-SLAM3</a> 및 <a href="/entry/ent_paper_vins_fusion_an_optimization_ba_2026/">VINS-Fusion</a> 논문 카드 참조.</p>
+<p>【상황 분석 방법】1단계(정지 상태에서 잡기)에서는 다리 오도메트리 + 시각 서보 폐루프만 유지하고, 위치 오차는 "보이는 서보"로 흡수; 이동 기능 해제 후 VIO/LIO를 추가하며, 한 번에 세 가지 모드를 모두 적용하지 말 것.</p>
+<h2 id="6">6단계: 연산 자원 할당 및 엔지니어링</h2>
+<p>【무엇을 할 것인가】</p>
+<ol>
+<li><strong>인식은 L2 계층에서 실행</strong>: 모든 비전/SLAM 노드는 지능형 계층(예: <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a>, 최대 275 TOPS @ 64 GB 버전, 15–60 W, 개발 키트 약 USD 1,999 – 카드 기준)에 배포하며, 제어 루프 프로세스와 분리, 가능하면 기계적으로도 분리.</li>
+<li><strong>장애 시뮬레이션</strong>: 모든 인식 프로세스를 수동으로 종료(kill)해도 제어 루프는 중단되지 않고 로봇은 안전 상태로 전환되어야 함 (Stage 3 검수 기준).</li>
+<li><strong>주파수/지연 시간 예산표</strong> (엔지니어링 권장값, 실제 측정으로 검증):</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>노드</th>
+<th>목표 주파수</th>
+<th>단일 프레임 지연 예산</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>카메라 드라이버</td>
+<td>30 Hz</td>
+<td>—</td>
+</tr>
+<tr>
+<td>포인트 클라우드 전처리</td>
+<td>15–30 Hz</td>
+<td>&lt; 30 ms</td>
+</tr>
+<tr>
+<td>검출 + 자세</td>
+<td>10–30 Hz</td>
+<td>&lt; 100 ms</td>
+</tr>
+<tr>
+<td>위치 파악</td>
+<td>10–100 Hz (모드에 따라 다름)</td>
+<td>&lt; 50 ms</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>자원 모니터링</strong>: CPU/GPU/메모리/온도 상시 모니터링. ToddlerBot 실제 기기 추론 시 19분 만에 과열로 클럭 저하 발생 (조사 기록) – 열은 인식의 숨겨진 예산.</li>
+</ol>
+<p>【왜 필요한가】제어 루프는 결정적(deterministic)이어야 하고, 인식은 처리량(throughput)이 중요하며, 혼합 실행 시 서로 성능 저하를 유발함 (<a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선택 가이드</a>의 계층적 논리). 프로세스 분리 아키텍처를 통해 인식이 중단되어도 제어가 안전하게 정지 가능 (Stage 3 14단계).</p>
+<p>【상황 분석 방법】메인보드가 하나만 있는 경우: 최소한 프로세스 분리 + 인식 프로세스 우선순위 낮춤 + 워치독(watchdog) 구현; 듀얼 머신(메인 컨트롤러 + Jetson)이 가능하다면 사용 – ToddlerBot은 Orin NX 16GB로 300M 파라미터 확산 정책을 약 100 ms 지연, 10 Hz로 온보드 스테레오 깊이 추정 (조사 기록)하여 이 정도 규모로 인식 + 소형 정책이 충분함을 입증.</p>
+<h2 id="_1">검수 기준</h2>
+<ul>
+<li>[ ] 센서 구성 문서화: 각 센서의 장착 위치, 인터페이스, 대역폭 예산 명시; USB 컨트롤러 할당 충돌 없음.</li>
+<li>[ ] 모든 토픽의 프레임 속도/타임스탬프 확인 완료; 듀얼 머신 배포 시 클록 동기화 기록 존재.</li>
+<li>[ ] 카메라 내부 파라미터 재투영 오차 &lt; 0.5 px 수준으로 기록; 손-눈 캘리브레이션 완료; 캘리브레이션 원클릭 스크립트 저장, 분해 후 재캘리브레이션 절차 시뮬레이션 완료.</li>
+<li>[ ] RGB 포인트 클라우드 색상화에 눈에 띄는 오차 없음 (재투영 &lt; 2 px, Stage 3 기준).</li>
+<li>[ ] 컵 3D 위치 오차 ≤ 1 cm @ 테이블 거리 (Stage 3 기준), 10회 반복 측정 분포 기록.</li>
+<li>[ ] 위치 복귀 편차 수치화 (경로 길이 대비 편차), 검수 문서에 포함.</li>
+<li>[ ] 인식 프로세스 종료(kill) 후 제어 루프 중단 없음, 로봇 안전 상태 진입 (실제 측정 영상存档).</li>
+</ul>
+<h2 id="_2">일반적인 문제 및 해결 방법</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능 원인</th>
+<th>해결 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>다중 카메라 시 깊이 스트림 프레임 드롭</td>
+<td>USB 대역폭 부족, 여러 카메라가 동일 컨트롤러 경쟁</td>
+<td><code>lsusb -t</code>로 컨트롤러 토폴로지 확인; 해상도/프레임 속도 낮춤; 독립 컨트롤러에 분배</td>
+</tr>
+<tr>
+<td>포인트 클라우드 색상화 오차, 중첩</td>
+<td>카메라-LiDAR 외부 파라미터 만료 (충돌 후) / 시간 오프셋 미보정</td>
+<td>공동 캘리브레이션 재수행하여 재투영 오차 확인; 타임스탬프 출처 통일 여부 확인</td>
+</tr>
+<tr>
+<td>손-눈 캘리브레이션이 계속 맞지 않음</td>
+<td>수집 자세 회전 부족 / 타임스탬프 불일치</td>
+<td>자세 다양성 증가 (특히 회전); 시간 동기화 먼저 확인 후 재캘리브레이션</td>
+</tr>
+<tr>
+<td>투명/반사 물체 깊이에 큰 구멍 발생</td>
+<td>구조광/능동 IR 방식의 고유 결함</td>
+<td>관찰 각도 변경; 무광택 분말 도포; 수동 스테레오 또는 학습 기반 깊이로 전환</td>
+</tr>
+<tr>
+<td>햇빛 아래에서 깊이 측정 실패</td>
+<td>능동 IR이 햇빛에 압도됨</td>
+<td>실내 사용 또는 차광; 야외 작업 시 LiDAR/수동 방식으로 전환</td>
+</tr>
+<tr>
+<td>RViz에서 TF 끊김 보고</td>
+<td>프레임 이름 불일치 / static transform 미전송</td>
+<td><code>tf2_tools view_frames</code>로 고립 프레임 확인; M15 명명 규칙 대조</td>
+</tr>
+<tr>
+<td>인식 실행 몇 분 후 프레임 속도 급감</td>
+<td>과열로 클럭 저하 (ToddlerBot 19분 선례)</td>
+<td>온도 곡선 모니터링; 전력 모드 낮춤; 방열 통로 개선</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m15-upper-body/">M15 · 상체 및 말단 실행기</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m17-teleop-data/">M17 · 원격 조작 및 데이터 수집</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-05/">제5장 센싱 및 인식 하드웨어</a>, <a href="/ko/wiki/chapters/chapter-22/">제22장 소프트웨어 미들웨어</a>, <a href="/ko/wiki/chapters/chapter-11/">제11장 조립, 통합 및 테스트</a></li>
+<li><a href="/ko/roadmap/playbooks/sensor-selection/">센서 선택 가이드</a> · <a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선택 가이드</a> · <a href="/ko/roadmap/stage-3-humanoid/">3단계 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m15-upper-body/">← 이전<span>M15 · 상지와 말단 실행기: 걷는 기계에 손을 달아주기</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m17-teleop-data/">다음 →<span>M17 · 원격 조작과 데이터 수집: 모방 학습의 밑거름은 이렇게 만들어진다</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m16">M16 · 인식 스택 구축: 로봇이 컵이 어디 있는지 볼 수 있게 하기</a><ul>
+<li><a href="#1">단계 1: 센서 구성方案 결정</a></li>
+<li><a href="#2-tf">단계 2: 드라이버, 시간 동기화 및 TF 트리 병합</a></li>
+<li><a href="#3-">단계 3: 캘리브레이션 체인 – 내부 파라미터, 핸드-아이, 다중 센서 결합</a></li>
+<li><a href="#4">단계 4: 인식 알고리즘 파이프라인 – 포인트 클라우드에서 물체 자세까지</a></li>
+<li><a href="#5">5단계: 위치 파악 – 로봇이 어디에 있는가</a></li>
+<li><a href="#6">6단계: 연산 자원 할당 및 엔지니어링</a></li>
+<li><a href="#_1">검수 기준</a></li>
+<li><a href="#_2">일반적인 문제 및 해결 방법</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

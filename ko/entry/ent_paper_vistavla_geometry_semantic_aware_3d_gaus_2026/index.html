@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</h1>
+      <p class="entry-name-en">VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-Language-Action (VLA) models have emerged as a powerful end-to-end paradigm for robotic manipulation by mapping language instructions and 2D visual inputs directly to actions. However, these models lack an explicit, scene-level 3D representation, limiting their ability to reason over spatial layouts and geometric constraints. While recent efforts incorporate explicit 3D cues, such as depth.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12356" target="_blank" rel="noopener">arXiv:2607.12356 VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Mani</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>VistaVLA는 3D 가우시안에 앵커링된 비전-언어-행동 모델을 제안하며, 2단계 프레임워크를 통해 기하학적 및 의미론적 특징을 명시적 3D 장면 표현에 바인딩한 후, Merge-then-Query로 압축하여 정책 학습을 위한 컴팩트 토큰을 생성합니다. 이 방법은 실제 데스크톱 조작과 표준 LIBERO 벤치마크에서 기존 2D 및 3D 강화 기준선을 크게 능가하며, 핵심 기여는 미분 가능한 렌더링의 3D 프리미티브와 고수준 의미론적 증류를 결합하여 시점 불변의 장면 수준 추론을 구현한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 VLA의 병목은 모델 용량이 아니라 입력 표현의 차원 결핍에 있습니다. 2D 이미지는 물리적 공간에서의 가림, 스케일, 위상 관계를 자연스럽게 잃어버리며, 깊이 맵이나 포인트 클라우드는 기하학을 보완하지만 저수준 구조 신호일 뿐 "이 물체가 무엇인지, 장면에서 어떤 역할을 하는지"와 같은 의미론적 질문에 답할 수 없습니다. 이전에 3D를 도입하려던 VLA는 관찰 중심 시점의 유사 3D 특징을 생성하거나, 밀집 3D 추론의 계산 비용으로 실시간 배포가 불가능했으며, 본질적으로 "의미론"과 "기하학"을 동일한 조작 가능한 3D 좌표계에 바인딩하지 못했습니다.</p>
+<p>VistaVLA가 실제로 바꾼 것은 3D 가우시안 스플래팅을 렌더링 도구에서 인지 골격으로 업그레이드한 것입니다. 각 가우시안 프리미티브는 위치와 형태뿐만 아니라 특징 증류를 통해 128차원 의미론적 코드를携带하며, 정책 네트워크는 추론 시 2D 픽셀에서 암시적으로 추론하는 대신 "특정 공간 위치 근처에 어떤 의미론적 개체가 있는지"를 직접 쿼리할 수 있습니다. 이는 VLA에 인간형 3D 의미론적 인지 지도를 장착하는 것과 같아, 공간 레이아웃 추론을 "픽셀 보기 추측"에서 "지도 조회 답변"으로 전환하여 물체 쌓기, 위치 이동 등 강한 기하학 의존 작업에서 정량화 가능한 성공률 도약을 가져왔습니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="1-3d">1단계: 3D 가우시안 앵커링 인지 표현 구축</h3>
+<ul>
+<li>특징 추출: SigLIP2와 DINOv2-Large를 사용하여 의미론적 및 구조적 특징을 각각 추출하고, 경량 오토인코더를 통해 2176차원 결합 특징을 128차원 잠재 코드로 압축하여 이후 증류를 위한 교사 특징으로 사용합니다.</li>
+<li>가우시안 프리미티브 초기화: DepthSplat을 기반으로 보정된 RGB-D 뷰에서 가우시안 프리미티브를 구축하며, 각 프리미티브는 학습 가능한 의미론적 특징 <span class="arithmatex">\( \mathbf{z}_i \in \mathbb{R}^{128} \)</span>을携带합니다.</li>
+<li>2단계 훈련:</li>
+<li>1단계는 기하학만 최적화하며, 손실은 <span class="arithmatex">\( \mathcal{L}_{\mathrm{stage1}}=\lambda_{\mathrm{rgb}}\mathcal{L}_{\mathrm{rgb}}+\lambda_{\mathrm{dep}}\mathcal{L}_{\mathrm{dep}} \)</span>로 가우시안 필드가 색상과 깊이를 정확히 재구성할 수 있도록 보장합니다.</li>
+<li>2단계는 특징 증류 손실 <span class="arithmatex">\( \mathcal{L}_{\mathrm{feat}} \)</span>을 추가하여 교사 특징을 새 시점에 렌더링하고 2D 교사 특징과 정렬하며, 3DGS 알파 합성 규칙을 따르므로 각 GS 토큰이 다중 시점 일관된 의미론적 설명자가 됩니다.</li>
+<li>추론 시 온라인으로 가우시안 필드를 구축하며, 깊이 입력이나 제3 시점 없이 보정된 두 개의 RGB-D 뷰만 사용합니다.</li>
+</ul>
+<h3 id="2-merge-then-querymtq">2단계: Merge-then-Query(MtQ) 압축</h3>
+<ul>
+<li>파라미터 무관 압축:</li>
+<li>시점 그리드에 따라 토큰을 재구성하고, stride-4 평균 풀링으로 수량을 약 7K로 줄입니다.</li>
+<li>Morton 코드 정렬로 공간 국소성을 유지하고, 앵커/비앵커 집합을 교대로 분할하며, 의미론적 유사도에 따라 매칭하고 상위 50% 매칭 쌍을 병합하여 목표 토큰 수 <span class="arithmatex">\( N'=1000 \)</span>을 달성합니다.</li>
+<li>쿼리 기반 요약: <span class="arithmatex">\( N_q=64 \)</span>개의 학습 가능한 쿼리 토큰을 2계층 Transformer 디코더를 통해 1000개 토큰을 고정 길이 표현으로 압축하고 VLA 숨겨진 차원에 투영합니다.</li>
+<li>행동 생성: 시각, 언어, GS 요약 및 행동 쿼리 토큰을 연결하고, 인과적 시퀀스 모델링으로 연속 행동을 예측하며, 손실은 <span class="arithmatex">\( \mathcal{L}_{\mathrm{act}}=\sum_{t=1}^{K}\|\hat{\mathbf{a}}_t-\mathbf{a}_t\|_1 \)</span>입니다.</li>
+<li>추론 시 처음 <span class="arithmatex">\( K_{\mathrm{exec}}=4 \)</span>개 행동을 실행한 후 재계획하여 추론 빈도를 낮춥니다.</li>
+</ul>
+<h2 id="_4">핵심 혁신</h2>
+<ol>
+<li><strong>의미론-기하학 공동 앵커링</strong>: 고수준 의미론적 특징(SigLIP2+DINOv2에서 유래)을 기존 방법처럼 저수준 기하학만 인코딩하는 대신 3D 가우시안 프리미티브에 직접 증류합니다. 이를 통해 각 공간 점이 "무엇인지"의 의미론적 라벨을携带하며, 정책 네트워크는 2D 특징에서 암시적으로 추론하는 대신 의미론과 위치의 바인딩 관계를 명시적으로 쿼리할 수 있습니다.</li>
+<li><strong>확장 가능한 3D 추론 압축 패러다임</strong>: MtQ는 약 <span class="arithmatex">\( 10^5 \)</span>개의 가우시안 프리미티브를 64개의 요약 토큰으로 압축하여 99% 토큰 감소를 달성하며, 압축 과정은 파라미터 무관(먼저 풀링 후 병합)하여 엔드투엔드 학습 압축의 훈련 불안정성과 일반화 문제를 피합니다. 쿼리 기반 요약은 압축된 토큰을 VLA 입력 공간에 정렬하여 3D 정보가 기존 정책 아키텍처에 원활히 주입될 수 있게 합니다.</li>
+<li><strong>훈련-추론 비대칭 설계</strong>: 훈련 시 3개 시점(2개 시점 구축, 1개 시점 렌더링 감독)으로 다중 시점 일관성을 확립하고, 추론 시 보정된 두 개의 시점만으로 온라인 가우시안 필드를 구축하며 깊이 입력이나 추가 시점이 필요 없습니다. 이 설계는 3D 표현의 기하학적 품질을 보장하면서 실시간 조작의 추론 지연 제약을 충족합니다.</li>
+</ol>
+<h2 id="_5">실험 및 결과</h2>
+<h3 id="7-10">실제 세계 작업(7개 데스크톱 조작 작업, 각 작업 10회 테스트)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>평균 성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLA-Adapter(기준선)</td>
+<td>명시되지 않음</td>
+</tr>
+<tr>
+<td>VistaVLA</td>
+<td>기준선보다 22.8% 포인트 높음</td>
+</tr>
+</tbody>
+</table>
+<p>공간 변화 강건성(Table 1):
+| 작업/방법 | VLA-Adapter | +Depth | SmolVLA | π0.5 | VistaVLA |
+|-----------|-------------|--------|---------|------|----------|
+| Depth(PlaceSponge) | 6/10 | 6/10 | 2/10 | 7/10 | <strong>9/10</strong> |
+| Pos.(OrganizeSponge) | 0/10 | 0/10 | 0/10 | 0/10 | <strong>3/10</strong> |</p>
+<h3 id="libero-pro-swaptable-2a">시뮬레이션 LIBERO-Pro-Swap(Table 2a)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>평균 성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VistaVLA</td>
+<td><strong>12.2%</strong></td>
+</tr>
+<tr>
+<td>기준선</td>
+<td>1.7%</td>
+</tr>
+<tr>
+<td>OpenVLA</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>UniVLA</td>
+<td>5.0%</td>
+</tr>
+<tr>
+<td>π0</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>Q-Depth VLA</td>
+<td>0.35%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="liberotable-2b">표준 LIBERO(Table 2b)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>평균 성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VistaVLA</td>
+<td><strong>96.05%</strong>(Spatial 95.6, Object 99.0, Goal 98.2, Long 91.4)</td>
+</tr>
+<tr>
+<td>기준선</td>
+<td>94.1%</td>
+</tr>
+<tr>
+<td>OpenVLA</td>
+<td>76.5%</td>
+</tr>
+<tr>
+<td>π0</td>
+<td>94.2%</td>
+</tr>
+<tr>
+<td>MolmoAct</td>
+<td>86.6%</td>
+</tr>
+<tr>
+<td>GR00T N1</td>
+<td>93.9%</td>
+</tr>
+<tr>
+<td>CoT-VLA</td>
+<td>81.1%</td>
+</tr>
+<tr>
+<td>SmolVLA</td>
+<td>88.8%</td>
+</tr>
+<tr>
+<td>WorldVLA</td>
+<td>81.8%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3">소거 실험(Table 3)</h3>
+<ul>
+<li>
+<p>카메라/token 소거(T1/T2/T5/T6 성공률):
+| 구성 | T1 | T2 | T5 | T6 |
+|------|----|----|----|----|
+| Base-1Cam(256 tokens) | 4/10 | 2/10 | 3/10 | 1/10 |
+| Base-2Cam(512 tokens) | 5/10 | 1/10 | 3/10 | 2/10 |
+| Base-3Cam(768 tokens) | 8/10 | 4/10 | 6/10 | 5/10 |
+| VistaVLA-3Cam(320 tokens) | <strong>9/10</strong> | <strong>7/10</strong> | <strong>7/10</strong> | <strong>7/10</strong> |</p>
+</li>
+<li>
+<p>압축 소거(T1/T2/T3):
+| 구성 | T1 | T2 | T3 |
+|------|----|----|----|
+| GS+FPS+Dec. | 0/10 | 1/10 | 0/10 |
+| GS+Entropy+Dec. | 4/10 | 0/10 | 0/10 |
+| GS+Merge+Linear | 7/10 | 1/10 | 0/10 |
+| VistaVLA(Full) | <strong>9/10</strong> | <strong>7/10</strong> | <strong>8/10</strong> |</p>
+</li>
+<li>
+<p>쿼리 토큰 소거(T3): 16개 6/10, 32개 5/10, 64개 <strong>8/10</strong>, 128개 7/10, 256개 2/10.</p>
+</li>
+</ul>
+<p>결과 의미: VistaVLA는 실제 세계 강한 기하학 작업(예: PlaceSponge 깊이 변화)에서 모든 기준선을 크게 능가하며, OrganizeSponge와 같은 순수 위치 추론 작업에서 모든 기준선이 완전히 실패(0/10)한 반면 VistaVLA는 3/10에 도달하여 3D 의미론적 앵커링이 2D 방법으로는 얻을 수 없는 공간 추론 능력을 실제로 제공함을 보여줍니다. LIBERO-Pro-Swap에서 12.2% vs 기준선 1.7%의 격차(표 내 수치 1.7→12.2로 계산)는 공간 레이아웃 변화에 대한 강건성을 추가로 검증합니다.</p>
+<h2 id="_6">경계 및 한계</h2>
+<ul>
+<li>평가 범위는 데스크톱 조작에 국한되며, 고정 로봇 플랫폼과 보정된 다중 시점 카메라를 사용하고, 더 큰 작업 공간, 동적 가림, 불안정한 카메라 포즈 또는 다른 로봇 본체를 포함하지 않습니다.</li>
+<li>의미론적 가우시안 필드 구축은 여전히 포즈가 있는 관측에 의존하며, 보정 오차는 3D 표현 품질에 직접 영향을 미치지만, 저자는 보정 노이즈에 대한 성능 민감도를 정량화하지 않았습니다.</li>
+<li>의미론적 특징 교사(SigLIP2+DINOv2)는 범용 비전 모델로 조작 작업에 맞춤화되지 않아, 파지, 밀기 등 조작에 필요한 세분화된 의미론을 충분히 포착하지 못할 수 있습니다.</li>
+<li>논문은 MtQ 압축이 극단적 시나리오(예: 다수의 유사 물체 쌓임)에서 의미론적 혼동 경계를 명확히 하지 않았으며, 압축 과정에서 도입되는 정보 손실 상한도 보고하지 않았습니다.</li>
+<li>훈련 비용이 높고(4대의 RTX 5090), 논문은 구체적인 훈련 시간과 데이터 규모를 명시하지 않았습니다.</li>
+</ul>
+<h2 id="_7">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 우선 확인</strong>: DepthSplat으로 구축된 가우시안 필드가 목표 카메라 구성에서 기하학적 재구성 품질(색상 및 깊이 손실)을 먼저 검증한 후 특징 증류 단계로 진행하세요. 기하학이 정확하지 않으면 이후 의미론적 앵커링은 의미를 잃습니다.</li>
+<li><strong>압축 모듈이 가장 함정이 많음</strong>: MtQ의 Morton 코드 정렬과 앵커/비앵커 분할은 토큰 공간 분포에 민감하며, 장면에서 물체 분포가 극도로 불균일한 경우 공간 정규화 후 정렬하는 것이 좋습니다. 소거 실험에서 FPS 샘플링과 엔트로피 샘플링 모두 Merge 전략보다 훨씬 나쁘므로, "의미론적 유사도 매칭"이 압축 품질의 핵심이며 무작위 또는 균일 샘플링으로 대체할 수 없습니다.</li>
+<li><strong>쿼리 토큰 수는 튜닝 필요</strong>: 64개 쿼리 토큰이 T3 작업에서 최적(8/10)이며, 256개는 오히려 2/10로 떨어져 과도한 쿼리 토큰이 노이즈를 유발함을 시사합니다. 하류 팀은 자체 작업 복잡도에 따라 32-128 범위에서 스캔해야 합니다.</li>
+<li><strong>추론 지연 최적화</strong>: 처음 4개 행동을 실행한 후 재계획하는 전략은 추론 빈도를 효과적으로 낮추지만, 행동 실행 품질과 재계획 빈도의 균형에 주의해야 하며, 높은 정밀도의 연속 제어가 필요한 작업에서는 <span class="arithmatex">\( K_{\mathrm{exec}} \)</span>를 줄이는 것을 고려할 수 있습니다.</li>
+<li><strong>기준선 선택 제안</strong>: 주요 기준선 VLA-Adapter-0.5B와 π0.5-3B는 표준 LIBERO에서 차이가 크지 않지만(94.1% vs 94.2%), VistaVLA는 공간 변화 작업에서 뚜렷한 격차를 보여 3D 앵커링의 가치가 주로 기하학에 민감한 장면에서 나타나며, 순수 의미론적 작업에서는 우위가 줄어들 수 있음을 시사합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_cen_worldvla_towards_autoregressiv_2025/">WorldVLA: Towards Autoregressive Action World Model</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhao_cot_vla_visual_chain_of_though_2025/">CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_unified_vision_language_action_2025/">Unified Vision-Language-Action Model</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_cot_vla_visual_chain_of_though_2025/">
+          <span class="entry-type">논문</span>
+          <h3>CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models</h3>
+          <p>CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models (CoT-VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</h3>
+          <p>VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model (VLA-Adapter), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</h3>
+          <p>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_cen_worldvla_towards_autoregressiv_2025/">
+          <span class="entry-type">논문</span>
+          <h3>WorldVLA: Towards Autoregressive Action World Model</h3>
+          <p>WorldVLA: Towards Autoregressive Action World Model (WorldVLA), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_unified_vision_language_action_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Unified Vision-Language-Action Model</h3>
+          <p>Unified Vision-Language-Action Model (UniVLA), is a 2025 large vision-language-action model for…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">방법</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#1-3d">1단계: 3D 가우시안 앵커링 인지 표현 구축</a></li>
+<li><a href="#2-merge-then-querymtq">2단계: Merge-then-Query(MtQ) 압축</a></li>
+</ul>
+</li>
+<li><a href="#_4">핵심 혁신</a></li>
+<li><a href="#_5">실험 및 결과</a><ul>
+<li><a href="#7-10">실제 세계 작업(7개 데스크톱 조작 작업, 각 작업 10회 테스트)</a></li>
+<li><a href="#libero-pro-swaptable-2a">시뮬레이션 LIBERO-Pro-Swap(Table 2a)</a></li>
+<li><a href="#liberotable-2b">표준 LIBERO(Table 2b)</a></li>
+<li><a href="#table-3">소거 실험(Table 3)</a></li>
+</ul>
+</li>
+<li><a href="#_6">경계 및 한계</a></li>
+<li><a href="#_7">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

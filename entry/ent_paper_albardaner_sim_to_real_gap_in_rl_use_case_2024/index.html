@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>强化学习中的仿真到现实差距：基于 TIAGo 与 Isaac Sim/Gym 的实例研究 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">强化学习中的仿真到现实差距：基于 TIAGo 与 Isaac Sim/Gym 的实例研究</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>强化学习中的仿真到现实差距：基于 TIAGo 与 Isaac Sim/Gym 的实例研究</h1>
+      <p class="entry-name-en">Sim-to-Real gap in RL: Use Case with TIAGo and Isaac Sim/Gym</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.07091v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>这篇2024年的arXiv论文针对TIAGo移动操作臂，在Nvidia Isaac Gym和Isaac Sim两个仿真器中训练强化学习策略，并通过量化关节响应差异和累积误差，验证了从仿真到真实机器人的迁移效果。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2403.07091" target="_blank" rel="noopener">Sim-to-Real gap in RL: Use Case with TIAGo and Isaac Sim/Gym</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究聚焦于机器人操作任务中的仿真到现实迁移问题，以TIAGo移动操作臂为平台，对比了Nvidia开发的Isaac Gym和Isaac Sim两种先进仿真环境。论文详细讨论了控制架构设计，特别强调在仿真和真实环境中实现无碰撞运动。实验结果显示，强化学习训练的模型在仿真和真实场景中执行了相似的动作，成功实现了仿真到现实的迁移。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">研究背景与目标</h3>
+<ul>
+<li>针对TIAGo移动操作臂，探索强化学习策略从仿真到真实环境的迁移方法</li>
+<li>对比两种Nvidia仿真器：Isaac Gym（侧重快速训练）和Isaac Sim（侧重高保真渲染与物理）</li>
+</ul>
+<h3 id="_4">方法架构</h3>
+<ul>
+<li>采用强化学习训练策略，在仿真环境中学习无碰撞运动控制</li>
+<li>控制架构设计兼顾仿真与真实环境的差异，包括关节响应特性与动力学参数</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li>训练环境：Isaac Gym用于策略快速迭代，Isaac Sim用于高保真验证</li>
+<li>真实机器人：TIAGo移动操作臂，配备完整传感器与执行器</li>
+<li>评估指标：关节响应差异、累积误差、运动轨迹一致性</li>
+</ul>
+<h3 id="_6">关键结果</h3>
+<ul>
+<li>成功实现仿真到真实迁移，RL模型在仿真与真实环境中执行相似运动</li>
+<li>量化了关节响应差异与累积误差，为后续迁移优化提供基准</li>
+<li>验证了Isaac Gym与Isaac Sim在TIAGo平台上的有效性</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>证明了基于Nvidia仿真器的强化学习策略可有效迁移至真实TIAGo机器人</li>
+<li>为移动操作臂的仿真到现实迁移提供了可复现的评估框架与定量分析</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2403.07091v2</li>
+</ul>
+    </section>
+    
+
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">研究背景与目标</a></li>
+<li><a href="#_4">方法架构</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+
+</body>
+</html>

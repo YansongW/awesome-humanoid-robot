@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodied AI · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodied AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodied AI</h1>
+      <p class="entry-name-en">GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodied AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>GPUSimBench 是一个面向具身智能 GPU 加速模拟器的标准化基准，由作者团队提出，用于系统评估主流模拟器（Isaac Lab、Genesis、Madrona、ManiSkill、MJX、MuJoCo Warp、Playground）在并行可扩展性、物理一致性和计算确定性三个维度的表现。核心贡献在于首次将“并行变异性”与“运行间变异性”作为独立指标引入模拟器评估，并揭示了不同编程抽象（数组式、内核式、任务中心、ECS）对仿真可靠性的根本性影响。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13059" target="_blank" rel="noopener">arXiv:2607.13059 GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodie</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>过去对 GPU 模拟器的评价几乎完全聚焦于任务级成功率或峰值吞吐量，默认并行执行只是“更快的顺序模拟”。GPUSimBench 改变了这一认知框架：它证明 GPU 批量执行并非透明加速层，而是会引入两类独立的非确定性——同一批次内不同环境间的结果发散（并行变异性），以及相同种子下多次运行的分布漂移（运行间变异性）。这两类变异性的组合直接决定了模拟器能否用于需要严格可复现的科学实验或策略评估。</p>
+<p>更关键的是，该基准将“物理一致性”从定性讨论变为可量化指标：通过受控斜面碰撞任务，用物理单位（厘米）的推土机距离（EMD）度量模拟分布与真实世界分布的偏差。这迫使模拟器开发者直面一个此前被回避的问题——并行化带来的数值扰动并非随机噪声，而是系统性地改变了接触动力学行为，例如 Madrona 因 XPBD 求解器摩擦力不足导致 EMD 高达 211.60±2.22cm，而 ManiSkill 仅 2.520±0.000cm，两者相差两个数量级。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">基准架构</h3>
+<p>GPUSimBench 将评估拆解为三个正交维度，每个维度有独立协议：
+- <strong>可扩展性</strong>：在自由落体立方体阵列（3×3×3）和 Franka 机械臂随机动作（含自碰撞）两个场景下，测量不同并行环境数 N_env 的吞吐量（FPS = (N_env × N_step) / T_step）和峰值内存增量（M_usage = M_peak − M_base）。
+- <strong>物理一致性</strong>：设计斜面碰撞任务（斜面角度 20°，立方体边长 0.02m，质量 0.005kg），在 N_env=16 并行环境和 K=16 次真实试验中，记录 t_s=5.0s 时所有立方体的 xy 位置，用六边形分箱和对数密度映射（D_b = log10(max(c_b, 1))）可视化分布。
+- <strong>确定性</strong>：通过 R=10 次独立运行，区分四种随机性类型（Type 1–4），由并行变异性（W̄1^parallel）和运行间变异性（W̄1^run-to-run）的有无组合定义。</p>
+<h3 id="_4">关键度量公式</h3>
+<ul>
+<li><strong>并行变异性</strong>：基于分配的 EMD，W1(e,e') = min_{π∈S_n} (1/n) Σ ||x_{e,i} − x_{e',π(i)}||_2，汇总为平均成对 EMD W̄1^parallel。</li>
+<li><strong>真实世界对齐</strong>：模拟与真实分布的物理单位 EMD，d_EMD,phys^sim = W1^phys(X^sim, X^real)，位置以 cm 计。</li>
+<li><strong>运行间变异性</strong>：R 次独立运行的聚合分布间平均成对 EMD W̄1^run-to-run。</li>
+</ul>
+<h3 id="_5">实验控制</h3>
+<p>统一仿真时间步长 Δt=0.01s，100 步预热（JIT 编译或场景初始化），1000 步内测量 FPS 和内存。固定随机种子并禁用任务级随机化，以隔离数值和执行级效应。物理参数（摩擦系数、恢复系数）通过专业实验室设施识别，例如地面静摩擦 0.65、动摩擦 0.45、恢复系数 0.40；斜面静摩擦 0.35、动摩擦 0.25、恢复系数 0.40。</p>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>将确定性从“全有或全无”细化为四类机制</strong>：此前模拟器要么被简单标记为“确定”或“不确定”，GPUSimBench 通过并行变异性与运行间变异性的组合，区分出 Type 1（两者皆无，如 Isaac Lab、ManiSkill）、Type 2（仅并行变异，如 Genesis、MJX）、Type 3（两者皆有，如 Madrona、MuJoCo Warp）、Type 4（仅运行间变异，如 Playground）。这种分类直接对应底层执行模型——例如 MJX 的 XLA 编译保证了批内一致性但跨运行有 JIT 重编译差异，而 Madrona 的 ECS 架构在批内就存在线程调度非确定性。</p>
+</li>
+<li>
+<p><strong>物理一致性以厘米级 EMD 量化</strong>：首次将模拟与真实世界的分布对齐用物理单位（cm）的 EMD 度量，而非任务成功率或轨迹误差。这使得不同模拟器之间的物理保真度可以直接比较，且结果可解释——例如 Madrona 的 211.60±2.22cm 意味着立方体在木板上无法可靠减速，产生大平面漂移，这是 XPBD 求解器摩擦力建模不足的直接后果。</p>
+</li>
+<li>
+<p><strong>跨模拟器分类的评估框架</strong>：将模拟器按编程抽象分为四类（数组+XLA、高级内核、任务中心、ECS），并揭示抽象选择与确定性/物理保真度的关联。例如数组式（MJX、Playground）倾向于低并行变异性但可能有运行间差异，而任务中心（Isaac Lab、ManiSkill）在物理一致性上表现最优（EMD 分别为 5.400±0.000cm 和 2.520±0.000cm）。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>实验在单一硬件平台（13th Gen Intel i5-13400F CPU, 32 GB RAM, NVIDIA GeForce RTX 5070 GPU with 12 GB memory）上进行，评估 7 个模拟器。并行能力基准每个模拟器重复十次独立运行，斜面碰撞基准报告十次独立运行的均值±标准差。</p>
+<p><strong>并行能力关键结果</strong>（自由落体场景，N_env^max 为最大并行环境数）：</p>
+<table>
+<thead>
+<tr>
+<th>模拟器</th>
+<th>N_env^max</th>
+<th>FPS (×10^4)</th>
+<th>内存 (GB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Genesis</td>
+<td>2^11</td>
+<td>2.233712</td>
+<td>7.75</td>
+</tr>
+<tr>
+<td>Isaac Lab</td>
+<td>2^12</td>
+<td>47.189328</td>
+<td>3.34</td>
+</tr>
+<tr>
+<td>Madrona</td>
+<td>2^18</td>
+<td>48.107876</td>
+<td>9.53</td>
+</tr>
+<tr>
+<td>ManiSkill</td>
+<td>2^12</td>
+<td>7.374857</td>
+<td>8.34</td>
+</tr>
+<tr>
+<td>MJX</td>
+<td>2^9</td>
+<td>0.534038</td>
+<td>10.61</td>
+</tr>
+<tr>
+<td>MuJoCo Warp</td>
+<td>2^11</td>
+<td>16.600347</td>
+<td>5.87</td>
+</tr>
+<tr>
+<td>Playground</td>
+<td>2^8</td>
+<td>0.003472</td>
+<td>8.89</td>
+</tr>
+</tbody>
+</table>
+<p><strong>斜面碰撞物理一致性结果</strong>（d_EMD,phys^sim 为模拟与真实分布 EMD，单位 cm）：</p>
+<table>
+<thead>
+<tr>
+<th>模拟器</th>
+<th>d_EMD,phys^sim</th>
+<th>W̄1^parallel</th>
+<th>W̄1^run-to-run</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Isaac Lab</td>
+<td>5.400±0.000</td>
+<td>4.21±0.00</td>
+<td>0.00±0.00</td>
+<td>Type 1</td>
+</tr>
+<tr>
+<td>ManiSkill</td>
+<td>2.520±0.000</td>
+<td>4.76±0.00</td>
+<td>0.00±0.00</td>
+<td>Type 1</td>
+</tr>
+<tr>
+<td>Genesis</td>
+<td>4.780±0.000</td>
+<td>0.00±0.00</td>
+<td>0.00±0.00</td>
+<td>Type 2</td>
+</tr>
+<tr>
+<td>MJX</td>
+<td>3.970±0.000</td>
+<td>0.00±0.00</td>
+<td>0.00±0.00</td>
+<td>Type 2</td>
+</tr>
+<tr>
+<td>Madrona</td>
+<td>211.60±2.22</td>
+<td>32.53±1.86</td>
+<td>11.47±1.40</td>
+<td>Type 3</td>
+</tr>
+<tr>
+<td>MuJoCo Warp</td>
+<td>4.230±0.740</td>
+<td>4.55±1.39</td>
+<td>2.15±0.82</td>
+<td>Type 3</td>
+</tr>
+<tr>
+<td>Playground</td>
+<td>3.380±0.110</td>
+<td>0.00±0.00</td>
+<td>1.39±0.47</td>
+<td>Type 4</td>
+</tr>
+</tbody>
+</table>
+<p>结果含义：ManiSkill 和 MJX 达到最低 EMD（2.520±0.000cm 和 3.970±0.000cm），表明在尽力参数匹配下与真实物理分布对齐最佳。Madrona 的 EMD 异常高（211.60±2.22cm），且并行变异性（32.53±1.86cm）和运行间变异性（11.47±1.40cm）均显著，说明其求解器在接触建模上存在系统性缺陷。Isaac Lab 虽然物理一致性中等（5.400±0.000cm），但并行变异性（4.21±0.00cm）表明批内环境间存在数值发散，尽管运行间完全确定。</p>
+<h2 id="_8">边界与局限</h2>
+<p>论文结论部分（VII Conclusion and Limitation）被截断，完整局限描述未提供。从上下文推断的边界包括：未考虑仅支持 CPU 并行或仅部分使用 GPU 加速的模拟器（如 Gazebo、PyBullet）；未包含所有可能的真实到仿真分布实验（如骰子投掷关节姿态分布和高斯球投掷分布实验因空间限制被省略，将在项目网站发布）；物理参数（摩擦系数、恢复系数）是通过专业实验室设施识别得到的近似值，EMD 值应解释为在尽力参数匹配下与测量参考的分布级一致性。此外，基准仅覆盖两个可扩展性场景和一个接触丰富的真实世界匹配实验，且全部在单一硬件和软件栈上进行，报告的性能和变异性可能因不同 GPU、驱动程序和模拟器版本而变化。当前基准未涵盖可变形体动力学、流体仿真、感知和传感器渲染的影响。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现 GPUSimBench 时，首先核对模拟器版本与硬件配置——论文使用 ManiSkill v3.0.0b22、Genesis v0.3.11、MJX (MuJoCo v3.4.0)、MujocoPlayground v0.1.0、IsaacLab v2.2.1，均从各自仓库主分支获取，版本差异可能显著改变结果。最容易踩坑的是预热步数：必须严格执行 100 步预热（用于 JIT 编译或场景初始化），否则 MJX 和 Playground 这类依赖 XLA 编译的模拟器会在测量窗口内包含编译开销，导致 FPS 严重低估。</p>
+<p>对于下游团队选型，建议根据任务需求权衡：若需要严格可复现的科学实验（如策略评估对比），优先选择 Type 1 模拟器（Isaac Lab、ManiSkill），它们运行间变异性为 0.00±0.00cm；若追求最大并行吞吐量且可接受批内发散，Madrona 在自由落体场景达到 N_env^max=2^18 和 FPS=48.107876×10^4，但需注意其物理一致性缺陷（EMD 211.60±2.22cm）。对于接触丰富的操作任务，ManiSkill 的物理一致性（2.520±0.000cm）和确定性组合最优，但并行扩展上限（2^12）低于 Madrona。若需在物理保真与并行能力间平衡，MuJoCo Warp 提供中等 EMD（4.230±0.740cm）和较高并行上限（2^11），但需接受两类变异性均存在。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.13059</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gpusimbench_scalable_reliable_gpu_accele_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">评测基准</span>
+          <h3>ManiSkill</h3>
+          <p>面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">基准架构</a></li>
+<li><a href="#_4">关键度量公式</a></li>
+<li><a href="#_5">实验控制</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

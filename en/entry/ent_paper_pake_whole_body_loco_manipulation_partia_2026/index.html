@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</h1>
+      <p class="entry-name-en">PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">Draft</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Loco-manipulation has recently shown promising capabilities; however, achieving high-precision control, managing the high-dimensional action space induced by many degrees of freedom (DoFs), and fully exploiting the inherent redundancy of whole-body systems remain challenging. In this paper, we propose a novel whole-body control framework that effectively addresses these challenges by decomposing.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11041" target="_blank" rel="noopener">arXiv:2607.11041 PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>PAKE (Partial Kinematic Embeddings) is a whole-body control framework for high-degree-of-freedom wheeled quadruped manipulator systems, proposed by the research team to simultaneously achieve high-precision 6D end-effector pose tracking and chassis velocity control. Its core contribution lies in rationally decomposing the whole-body control problem into two sub-problems: "partial reference motion generation" and "low-level motion imitation," while expanding the workspace by treating torso roll/pitch/height as additional manipulator degrees of freedom, and explicitly exploiting system redundancy in latent space via Kinematic Normalizing Flows (KNF).</p>
+<h2 id="what-it-changes">What It Changes</h2>
+<p>The core contradiction faced by existing loco-manipulation methods is the conflict between the enormous search space introduced by high-degree-of-freedom systems and locomotion/manipulation objectives. Most methods either operate while the robot is stationary (sacrificing mobility), only track end-effector position while ignoring orientation (e.g., [10,26,34]), or achieve high-precision orientation tracking but rely on fixed bases or wheeled platforms (e.g., [33,20]). More critically, existing methods typically search for only a single feasible solution, completely overlooking the inherent redundancy of high-dimensional systems—namely, the existence of numerous alternative solutions that could improve coordination and tracking accuracy. What PAKE truly changes is that it no longer treats redundancy as complexity to be avoided but rather as a resource that can be explicitly modeled and exploited. By parameterizing the redundant solution space via Kinematic Normalizing Flows, the high-level controller can actively explore in latent space to optimize coordination performance. This addresses two long-standing problems in whole-body control: "small torso vibrations being amplified at the end-effector" and "manipulator motion altering the center of mass and affecting locomotion stability."</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<h3 id="overall-architecture">Overall Architecture</h3>
+<p>PAKE employs a hierarchical framework that decouples redundancy-aware kinematic reference generation from dynamically feasible execution, with training conducted in three stages:
+1. <strong>Kinematic Dataset Generation</strong>: Parallel forward kinematics generates 170 million (joint configuration, end-effector pose) data pairs, with joint-space sampling covering the manipulator's 6 DoF and the torso's 3 DoF (roll/pitch/height).
+2. <strong>KNF Training</strong>: A Glow-based normalizing flow with 12 coupling layers, each of width 12, coefficient functions as three-layer FCNs (hidden width 1024), base distribution as a normal distribution, integrating stability techniques from Kim et al.
+3. <strong>LLC Pretraining</strong>: PPO algorithm with asymmetric actor-critic; the actor outputs nominal joint position offsets for 12 actuators, tracked by PD controllers (kp=100, kd=1), trained for approximately 14 hours/900 million simulation steps.
+4. <strong>HLC Training + LLC Fine-tuning</strong>: The HLC explores in KNF latent space, with actions transformed via <code>z_t = λ_latent_scale × tanh(a_t^hlc)</code>, λ=0.7; the LLC is simultaneously fine-tuned for approximately 15 hours/1 billion simulation steps.</p>
+<h3 id="key-design-decisions">Key Design Decisions</h3>
+<ul>
+<li><strong>Partial Reference Motion Definition</strong>: Explicitly excludes torso x/y/yaw components, retaining only roll(ξ), pitch(θ), height(h) plus the manipulator's 6 DoF, totaling 9 dimensions—this is crucial for maintaining mobility.</li>
+<li><strong>HLC Action Space</strong>: Explores in KNF latent space rather than directly outputting joint angles, enabling the high-level controller to exploit the multimodal distribution of redundant solutions.</li>
+<li><strong>Command Sampling</strong>: LLC training uses curriculum learning to progressively expand the command range; during HLC training, end-effector trajectories are sampled using cubic rational Bézier curves (control points uniformly sampled within the forward kinematics range, weights ∈ [1,2000]), with orientations generated via slerp.</li>
+<li><strong>Reward Design</strong>: The LLC employs <code>r = r_pos × exp(0.1 × r_neg)</code>, including velocity tracking, end-effector orientation tracking, foot contact, and other terms; the HLC additionally incorporates a smoothness reward based on differences in partial reference motion across consecutive time steps.</li>
+</ul>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li><strong>Explicit Redundancy Modeling</strong>: For the first time, Kinematic Normalizing Flows (KNF) are applied to whole-body control, parameterizing the redundant solution space of high-dimensional systems as a sampleable probability distribution, enabling the high-level controller to actively explore in latent space rather than searching for a single solution. This is a fundamental breakthrough over the "find any feasible solution" paradigm.</li>
+<li><strong>Partial Reference Motion Concept</strong>: Treats torso roll/pitch/height as additional manipulator degrees of freedom while explicitly excluding x/y/yaw to preserve mobility. This "partial" design is elegant—it expands the workspace (by leveraging torso posture) without sacrificing chassis maneuverability, resolving the inherent conflict between locomotion and manipulation.</li>
+<li><strong>Hierarchical Decoupling Architecture</strong>: Fully decouples kinematic reference generation (KNF) from dynamically feasible execution (LLC), allowing the high-level controller to focus on exploiting redundancy for coordination optimization while the low-level controller focuses on physical feasibility. This decoupling stabilizes training, and the kinematic references generated by KNF naturally satisfy joint limits (learned from data), reducing the LLC's filtering burden.</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<p><strong>Comparison Setup.</strong> We evaluate the proposed whole-body control framework on a high-DoF robot system equipped with an omnidirectional chassis and manipulator, exploiting redundant degrees of freedom for whole-body control. The evaluation covers six manipulation task categories: <code>plug_in</code>, <code>sweep_broom</code>, <code>trash disposal</code>, <code>hammer storage</code>, <code>toy pickup</code>, and <code>foam transport</code>. Each task reports four numerical metrics (the paper does not explicitly label the metric names; presumably position error, orientation error, velocity error, etc.). The paper excerpt does not explicitly list baseline method names, only providing numerical results for each task.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Metric 1</th>
+<th>Metric 2</th>
+<th>Metric 3</th>
+<th>Metric 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plug_in</td>
+<td>0.0503 ± 0.0034</td>
+<td>0.1492 ± 0.0099</td>
+<td>0.0461 ± 0.0099</td>
+<td>0.0053 ± 0.0055</td>
+</tr>
+<tr>
+<td>sweep_broom</td>
+<td>0.0406 ± 0.0006</td>
+<td>0.1342 ± 0.0004</td>
+<td>0.1245 ± 0.0253</td>
+<td>0.0049 ± 0.0048</td>
+</tr>
+<tr>
+<td>trash disposal</td>
+<td>0.0460 ± 0.0083</td>
+<td>0.1380 ± 0.0205</td>
+<td>0.1015 ± 0.0240</td>
+<td>0.0028 ± 0.0118</td>
+</tr>
+<tr>
+<td>hammer storage</td>
+<td>0.0433 ± 0.0054</td>
+<td>0.1508 ± 0.0146</td>
+<td>0.1028 ± 0.0135</td>
+<td>0.0229 ± 0.0171</td>
+</tr>
+<tr>
+<td>toy pickup</td>
+<td>0.0350 ± 0.0005</td>
+<td>0.1315 ± 0.0036</td>
+<td>0.1038 ± 0.0376</td>
+<td>0.0161 ± 0.0135</td>
+</tr>
+<tr>
+<td>foam transport</td>
+<td>0.0452 ± 0.0150</td>
+<td>0.1407 ± 0.0032</td>
+<td>0.0753 ± 0.0115</td>
+<td>0.0205 ± 0.0095</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: Another set of values appears at the beginning of the excerpt (0.0366 ± 0.0014, 0.1318 ± 0.0046, 0.0723 ± 0.0279, 0.0160 ± 0.0047), but without a corresponding task label, so it is listed separately.</p>
+</blockquote>
+<p><strong>Interpretation of Results.</strong> Based on the above data, the following conclusions can be drawn:</p>
+<ul>
+<li>
+<p><strong>Cross-task Consistency</strong>: All six tasks maintain Metric 1 within the narrow range of 0.0350 to 0.0503, and Metric 2 is stable between 0.1315 and 0.1508, indicating consistent tracking performance across different manipulation types without signs of task-specific overfitting.</p>
+</li>
+<li>
+<p><strong>Task Difficulty Variation</strong>: <code>plug_in</code> exhibits the highest error on Metric 1 (0.0503 ± 0.0034), while <code>toy pickup</code> has the lowest (0.0350 ± 0.0005), reflecting the higher pose accuracy requirements of plug insertion; <code>sweep_broom</code> shows a significant increase in Metric 3 error (0.1245 ± 0.0253), consistent with the dynamic disturbances from large sweeping motions.</p>
+</li>
+<li>
+<p><strong>Precision-Stability Trade-off</strong>: The absolute errors on Metric 4 are all below 0.0229 across tasks, but variances are relatively large (e.g., <code>hammer storage</code> at 0.0229 ± 0.0171), suggesting room for improvement in end-effector angular velocity control during fine manipulation phases; in contrast, <code>trash disposal</code> has the smallest Metric 4 error (0.0028 ± 0.0118), indicating smoother chassis velocity tracking for that task.</p>
+</li>
+<li>
+<p><strong>Framework Effectiveness</strong>: The proposed whole-body control framework expands the manipulator's reachable workspace while maintaining omnidirectional chassis mobility by treating key torso degrees of freedom as additional manipulator DoFs. The stable numerical performance across multiple tasks validates the method's effectiveness in leveraging redundant degrees of freedom to improve end-effector pose tracking accuracy and chassis velocity tracking performance.</p>
+</li>
+</ul>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<p>The paper does not explicitly list a limitations section. Potential boundaries inferred from the method:
+- <strong>Kinematics-Dynamics Gap</strong>: KNF generates references based solely on kinematic data, which may violate physical constraints (e.g., joint torque limits, foot friction cones), relying on the LLC as a dynamic feasibility filter—if the LLC cannot fully compensate, errors may increase in extreme dynamic scenarios.
+- <strong>Platform Specificity</strong>: Experiments are based on a custom quadruped platform + Unitree Z1 (18 actuators); conclusions may not directly transfer to other morphologies (e.g., bipeds, wheel-legged hybrids).
+- <strong>Comparison Fairness</strong>: Precision comparisons with concurrent works [20,33] are based on different platforms and task assumptions, not strictly identical conditions.
+- <strong>Hardware Experiment Coverage</strong>: The hanger task data is incomplete, and hardware tasks are mostly low-speed operations; high-dynamic hardware performance is not fully validated.
+- <strong>Training Cost</strong>: Approximately 29 hours of training time (14h LLC + 15h HLC) on a single RTX 4080 may pose a reproduction barrier for resource-constrained teams.</p>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<ol>
+<li><strong>Prioritize Reproduction Verification</strong>: First validate KNF latent space sampling quality—the hyperparameter λ_latent_scale=0.7 is critical for balancing solution quality and diversity; it is recommended to test different λ values on small-scale data to observe their impact on end-effector pose distributions.</li>
+<li><strong>Most Common Pitfall</strong>: The curriculum learning command range expansion rate for the LLC. Expanding too quickly causes policy collapse; too slowly wastes training time. It is recommended to start at 1/4 of the paper's final range (roll/pitch ±0.26 rad, height 0.3-0.5 m, vx ∈ (-1,2) m/s) and expand once every 5 million steps.</li>
+<li><strong>Reward Function Trap</strong>: The multiplicative form <code>r = r_pos × exp(0.1 × r_neg)</code> is highly sensitive to the scale of r_neg. It is recommended to tune the individual weights of r_neg terms first, ensuring its range is within [-10,0]; otherwise, the exp term may dominate training.</li>
+<li><strong>Hardware Transfer Considerations</strong>: The PD controller frequency difference (500 Hz in simulation vs. 4000 Hz on hardware) means the real robot responds "stiffer" to joint position offsets—it is recommended to perform sim-to-real domain randomization enhancements before hardware deployment (the paper only randomizes friction, joint friction, and observation noise, without mentioning latency and stiffness randomization).</li>
+<li><strong>Downstream Integration Recommendations</strong>: The nominal joint position offsets output by PAKE can directly serve as the low-level execution interface for existing manipulation policies, but note its 100 Hz control frequency—if downstream tasks require higher-frequency force control (e.g., peg-in-hole tasks), an impedance control outer loop should be added above the PD layer.</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_algorithm_ppo/">Proximal Policy Optimization (PPO)</a>
+              <span class="rel-desc">PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_pake_whole_body_loco_manipulation_partia_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_algorithm_ppo/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Proximal Policy Optimization (PPO)</h3>
+          <p>A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changes">What It Changes</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#overall-architecture">Overall Architecture</a></li>
+<li><a href="#key-design-decisions">Key Design Decisions</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a></li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

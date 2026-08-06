@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 14: Fundamentals of Robot Control · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 14: Fundamentals of Robot Control</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-14-fundamentals-of-robot-control">Chapter 14: Fundamentals of Robot Control</h1>
+<h2 id="summary">Summary</h2>
+<p>Chapter 8 presented the kinematic and dynamic models of a humanoid robot, and Chapter 9 detailed the physical implementation of its subsystems. The core question this chapter answers is: <strong>Given a high-dimensional, floating-base, underactuated mechanical system whose contact with the environment constantly switches, how can joint torques be computed in real-time to achieve desired motions and maintain balance?</strong> This chapter unfolds along a "bottom-up" control stack: it first discusses joint-level servo control—cascaded current/velocity/position loops, PID control laws and their discrete implementation, anti-windup and feedforward compensation, and impedance/admittance control for compliant interaction. It then moves to state-space methods, presenting the formalization of LQR, the algebraic Riccati equation, and gain scheduling. Next, it discusses the receding horizon principle of Model Predictive Control (MPC), its Quadratic Programming (QP) formulation, and real-time solution engineering. Finally, it systematically elaborates on Whole-Body Control (WBC)—task Jacobians, null-space projection, inverse dynamics QP, and hierarchical QP—and discusses system integration issues such as state estimation, real-time communication, and safety chains. The entire chapter is threaded by four main methodological lines: PID, LQR, MPC, and WBC, and provides two runnable Python examples. This chapter deliberately avoids repeating the kinematic/dynamic models and impedance control fundamentals already derived in Chapter 8, focusing instead on <strong>the structure, algorithms, and engineering implementation of the controllers themselves</strong>.</p>
+<p><strong>Keywords</strong>: Cascaded Control; PID; Anti-Windup; Torque Control; Impedance Control; State Space; LQR; Riccati Equation; Model Predictive Control; Quadratic Programming; Whole-Body Control; Null-Space Projection; Hierarchical QP; Real-Time; EtherCAT; Functional Safety</p>
+<hr />
+<h2 id="141-overview-of-humanoid-robot-control-problems">14.1 Overview of Humanoid Robot Control Problems</h2>
+<h3 id="1411-control-stack-layering-from-power-switches-to-whole-body-behavior">14.1.1 Control Stack Layering: From Power Switches to Whole-Body Behavior</h3>
+<p>The control of a humanoid robot is not a single algorithm but a <strong>layered control stack</strong> spanning five orders of magnitude in time scale. The lowest layer consists of the power electronic switches and Field-Oriented Control (FOC) inside the actuator, regulating motor phase currents at tens of kilohertz. Above this is the joint servo loop (current loop/velocity loop/position loop, see the discussion of FOC hardware in the actuator section of Chapter 4). Higher up, Whole-Body Control (WBC) solves for joint torques at 0.5–2 kHz. Above that, motion generation (MPC or gait pattern generators, typically 50–500 Hz) operates. The topmost layer is task and behavior planning, which can work at frequencies below 1 Hz.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Control Stack, Control Rate, Real-Time, Hard Real-Time, and Soft Real-Time</p>
+<ul>
+<li><strong>Control stack</strong>: An architecture formed by stacking multiple layers of controllers according to frequency and abstraction level. Each layer sends reference quantities down to the layer below and reports status up to the layer above.</li>
+<li><strong>Control rate</strong>: The frequency at which a controller recalculates its output each cycle, measured in Hz. Joint servo is typically 1–10 kHz, WBC is typically 0.5–2 kHz.</li>
+<li><strong>Real-time</strong>: The property that computation results must be output before a deadline. Missing a deadline in a hard real-time system is considered a fault.</li>
+<li><strong>Hard real-time</strong>: No deadline miss is tolerated, e.g., motor current loops and emergency stop circuits.</li>
+<li><strong>Soft real-time</strong>: Occasional deadline misses only cause performance degradation, not catastrophic failure, e.g., perception and task planning.</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Task &amp; Behavior Planning&lt;br/&gt;0.1–10 Hz"] --&gt; B["Motion Generation / Gait Pattern Generation&lt;br/&gt;MPC, 50–500 Hz"]
+    B --&gt; C["Whole-Body Control WBC&lt;br/&gt;Inverse Dynamics QP, 0.5–2 kHz"]
+    C --&gt; D["Joint Servo: Position/Velocity/Torque Loops&lt;br/&gt;1–10 kHz"]
+    D --&gt; E["Actuator: FOC Current Loop&lt;br/&gt;10–40 kHz"]
+    E --&gt; F["Motor &amp; Gearbox Physical Plant"]
+    F --&gt; G["Sensing: Encoder/Torque/IMU/Camera"]
+    G --&gt; C
+    G --&gt; D</code></pre>
+<p>Typical frequencies and latency budgets for each layer are shown in the table below (values are common industry orders of magnitude; specific platforms vary significantly):</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Typical Frequency</th>
+<th>Per-Cycle Budget</th>
+<th>Main Computational Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FOC Current Loop</td>
+<td>10–40 kHz</td>
+<td>25–100 µs</td>
+<td>Clarke/Park Transform, PI Regulation, PWM Modulation</td>
+</tr>
+<tr>
+<td>Joint Servo Loop</td>
+<td>1–10 kHz</td>
+<td>100–1000 µs</td>
+<td>PID, Feedforward, Filtering, Limiting</td>
+</tr>
+<tr>
+<td>Whole-Body Control (WBC)</td>
+<td>0.5–2 kHz</td>
+<td>0.5–2 ms</td>
+<td>Forward/Inverse Dynamics, QP Solving, Contact Force Distribution</td>
+</tr>
+<tr>
+<td>Motion Generation (MPC)</td>
+<td>50–500 Hz</td>
+<td>2–20 ms</td>
+<td>Finite Horizon Optimization, Footstep Planning</td>
+</tr>
+<tr>
+<td>Task Planning</td>
+<td>0.1–10 Hz</td>
+<td>&gt;100 ms</td>
+<td>Behavior Trees, State Machines, Semantic Decision Making</td>
+</tr>
+</tbody>
+</table>
+<p>The engineering implication of the layered architecture is: <strong>the performance ceiling of any upper-layer algorithm is locked by the bandwidth and tracking accuracy of the lower-layer loops</strong>. A WBC that is perfect in simulation will perform far worse than theoretical expectations if the joint torque loop bandwidth is only 20 Hz. Therefore, this chapter adopts a bottom-up narrative order.</p>
+<h3 id="1412-four-structural-difficulties-in-humanoid-robot-control">14.1.2 Four Structural Difficulties in Humanoid Robot Control</h3>
+<p>Compared to fixed-base manipulators or wheeled chassis, the control problem for humanoid robots has four structural difficulties that determine the basic landscape of method selection in this chapter:</p>
+<ol>
+<li><strong>Floating Base and Underactuation</strong>. A humanoid robot has no fixed base. The 6 degrees of freedom of its body pose have no direct actuators and can only be controlled indirectly through ground reaction forces (floating base dynamics, see Section 8.4.7 of Chapter 8). The total system degrees of freedom <span class="arithmatex">\(n + 6\)</span> is greater than the number of actuators <span class="arithmatex">\(n\)</span>, making it a typical underactuated system.</li>
+<li><strong>Hybrid Dynamics</strong>. The making/breaking of foot contact causes the dynamic equations to switch discretely with the contact state. The control law must switch constraint sets driven by a contact state machine and handle the impact at the moment of contact establishment.</li>
+<li><strong>High Dimensionality and Strong Coupling</strong>. The whole-body degrees of freedom are typically 20–60. Inertial coupling is significant, and any single-joint independent control that ignores coupling will fail during dynamic walking.</li>
+<li><strong>Strict Real-Time Requirements</strong>. Balance itself is a dynamically unstable problem (inverted pendulum). Control delay directly consumes stability margin. Generally speaking, for every 1 ms increase in end-to-end latency from sensor sampling to torque output, the magnitude of recoverable disturbances decreases.</li>
+</ol>
+<h3 id="1413-feedback-feedforward-and-nominalerror-decomposition">14.1.3 Feedback, Feedforward, and Nominal/Error Decomposition</h3>
+<p>Almost all practical humanoid robot controllers can be written in the form of "<strong>nominal feedforward + error feedback</strong>":</p>
+<div class="arithmatex">\[
+\tau = \tau_{\mathrm{ff}}(q_d, \dot q_d, \ddot q_d) + \tau_{\mathrm{fb}}(q_d - q, \dot q_d - \dot q, \ldots)
+\]</div>
+<p>where <span class="arithmatex">\(\tau_{\mathrm{ff}}\)</span> is provided by the model (inverse dynamics, gravity compensation, friction model), and <span class="arithmatex">\(\tau_{\mathrm{fb}}\)</span> is provided by the feedback law (PID, LQR, QP). The feedforward handles the torque demand for the "known part of the model," while the feedback only needs to correct for model errors and disturbances. This allows achieving the same tracking accuracy with lower feedback gains—crucial for interactive robots that need to maintain compliance and cannot infinitely increase stiffness.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Feedforward Control, Feedback Control, Computed Torque Control, Disturbance Observer</p>
+<ul>
+<li><strong>Feedforward control</strong>: Uses a model to pre-calculate the required control input, independent of the error signal.</li>
+<li><strong>Feedback control</strong>: Calculates the control input based on the difference between the desired and measured states, capable of suppressing model errors and external disturbances.</li>
+<li><strong>Computed torque control</strong>: Uses an inverse dynamics model to feedback-linearize the nonlinear system into decoupled double integrators, then adds PD feedback. It is an extreme form of the feedforward+feedback idea.</li>
+<li><strong>Disturbance observer (DOB)</strong>: Estimates unmodeled torques as an augmented state and compensates for them, often used to replace high-gain feedback.</li>
+</ul>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Desired Trajectory&lt;br/&gt;q_d, q̇_d, q̈_d"] --&gt; B["Feedforward: Inverse Dynamics/Gravity/Friction&lt;br/&gt;τ_ff"]
+    A --&gt; C["Feedback Law&lt;br/&gt;PID / LQR / QP"]
+    D["Measured State q, q̇"] --&gt; C
+    B --&gt; E(("Σ"))
+    C --&gt; E
+    E --&gt; F["Joint Torque Command τ"]
+    F --&gt; G["Robot Plant"]
+    G --&gt; D</code></pre>
+<h2 id="142-joint-level-servo-control">14.2 Joint-Level Servo Control</h2>
+<h3 id="1421-cascade-control-current-loop-velocity-loop-position-loop">14.2.1 Cascade Control: Current Loop / Velocity Loop / Position Loop</h3>
+<p>Joint servos commonly use <strong>cascade control</strong>: the innermost loop is the current (torque) loop, the middle is the velocity loop, and the outermost is the position loop. The bandwidth of the inner loop must be significantly higher than that of the outer loop—typically, the bandwidth decreases by a factor of 3–10 for each outward layer—otherwise, the dynamics of the inner and outer loops interfere, making tuning meaningless.</p>
+<p>The plant for the current loop is the electrical dynamics of the motor. After FOC transformation (see Chapter 4), the <span class="arithmatex">\(q\)</span>-axis current approximately satisfies a first-order model</p>
+<div class="arithmatex">\[
+L_q \frac{d i_q}{dt} = v_q - R_s i_q - k_e \omega_m
+\]</div>
+<p>where <span class="arithmatex">\(L_q\)</span> and <span class="arithmatex">\(R_s\)</span> are the stator inductance and resistance, <span class="arithmatex">\(k_e\)</span> is the back-EMF constant, and <span class="arithmatex">\(\omega_m\)</span> is the motor angular velocity. The electromagnetic time constant <span class="arithmatex">\(L_q/R_s\)</span> is typically sub-millisecond, so the current loop bandwidth can reach several kilohertz. The joint output torque <span class="arithmatex">\(\tau_j = N \eta k_t i_q\)</span> (where <span class="arithmatex">\(N\)</span> is the reduction ratio, <span class="arithmatex">\(\eta\)</span> is the transmission efficiency, and <span class="arithmatex">\(k_t\)</span> is the torque constant), so the current loop is essentially a <strong>torque loop</strong>.</p>
+<p>The plants for the velocity loop and position loop are the electromechanical dynamics:</p>
+<div class="arithmatex">\[
+J_{\mathrm{eff}} \dot \omega = \tau_j - \tau_g(q) - \tau_f(\omega) - \tau_{\mathrm{ext}}
+\]</div>
+<p>where <span class="arithmatex">\(J_{\mathrm{eff}} = J_m N^2 + J_l\)</span> is the sum of the motor rotor inertia amplified by the reduction ratio squared and the load inertia, <span class="arithmatex">\(\tau_g\)</span> is the gravitational torque, <span class="arithmatex">\(\tau_f\)</span> is the friction torque, and <span class="arithmatex">\(\tau_{\mathrm{ext}}\)</span> is the external coupling torque. Note the amplification effect of <span class="arithmatex">\(N^2\)</span>: in high-reduction-ratio joints (e.g., harmonic drives, where <span class="arithmatex">\(N\)</span> is typically 50–160), the load-side inertia and disturbances are reduced by a factor of <span class="arithmatex">\(N^2\)</span> when reflected to the motor side. This makes high-reduction-ratio joints "naturally disturbance-rejecting but naturally opaque"—end-effector collision forces are also reduced by <span class="arithmatex">\(N^2\)</span>, making them difficult to sense via motor current. The Quasi-Direct-Drive (QDD) scheme deliberately uses a low reduction ratio (typically <span class="arithmatex">\(N = 6\!-\!12\)</span>) to gain torque transparency and backdrivability, at the cost of the current loop having to directly bear load disturbances, imposing higher demands on servo design.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Cascade Control, Bandwidth, Torque Constant, Backdrivability, Torque Transparency</p>
+<ul>
+<li><strong>Cascade control</strong>: Multiple control loops nested, with the output of the outer loop serving as the setpoint for the inner loop. Tuning must proceed from the innermost loop outward.</li>
+<li><strong>Bandwidth</strong>: The frequency at which the closed-loop magnitude response drops to <span class="arithmatex">\(-3\)</span> dB, indicating how fast the loop can track commands.</li>
+<li><strong>Torque constant (<span class="arithmatex">\(k_t\)</span>)</strong>: The motor torque produced per unit current, in N·m/A.</li>
+<li><strong>Backdrivability</strong>: The ability to drive the motor in reverse from the output side; low-reduction-ratio transmissions have good backdrivability.</li>
+<li><strong>Torque transparency</strong>: The degree to which output torque can be accurately estimated using only current, without a dedicated torque sensor.</li>
+</ul>
+</div>
+<h3 id="1422-pid-control-law-and-discrete-implementation">14.2.2 PID Control Law and Discrete Implementation</h3>
+<p><strong>PID Control</strong> is the main algorithm for joint servos. Its continuous form is</p>
+<div class="arithmatex">\[
+u(t) = K_p e(t) + K_i \int_0^t e(s)\, ds + K_d \frac{d e(t)}{dt}
+\]</div>
+<p>where <span class="arithmatex">\(e(t) = r(t) - y(t)\)</span> is the tracking error. The roles of the three terms can be summarized as: the proportional term provides immediate correction and determines response speed; the integral term eliminates steady-state errors caused by constant disturbances (e.g., gravity, Coulomb friction); the derivative term provides damping and suppresses overshoot. Åström and Hägglund's <em>Advanced PID Control</em> systematically summarizes PID tuning and anti-disturbance design, while Ogata's <em>Modern Control Engineering</em> provides a classic frequency-domain analysis framework; both are standard references for this topic.</p>
+<p>Digital controllers sample with period <span class="arithmatex">\(T_s\)</span>. Common discrete implementations include the <strong>positional form</strong>:</p>
+<div class="arithmatex">\[
+u[k] = K_p e[k] + K_i T_s \sum_{j=0}^{k} e[j] + K_d \frac{e[k] - e[k-1]}{T_s}
+\]</div>
+<p>and the <strong>incremental form (velocity form)</strong>:</p>
+<div class="arithmatex">\[
+\Delta u[k] = K_p \left(e[k] - e[k-1]\right) + K_i T_s e[k] + \frac{K_d}{T_s}\left(e[k] - 2e[k-1] + e[k-2]\right)
+\]</div>
+<p>The incremental form outputs the increment of the control variable, naturally avoiding explicit accumulation of the integral term and providing bumpless transfer during manual/automatic switching, making it more common in engineering.</p>
+<h3 id="1423-engineering-details-anti-windup-derivative-filtering-and-feedforward">14.2.3 Engineering Details: Anti-Windup, Derivative Filtering, and Feedforward</h3>
+<p>There is a gap between textbook PID and practically usable PID, filled with a series of engineering details. Missing any one of them can cause oscillations or even accidents on a real machine.</p>
+<p><strong>Anti-windup</strong>. When the actuator output is limited (current limit, torque limit), a persistent error can cause the integral term to accumulate indefinitely (integral windup), leading to large overshoot after the saturation is removed. A common solution is <strong>back-calculation</strong>: feeding the saturation difference back to the integrator via a gain <span class="arithmatex">\(K_t\)</span>,</p>
+<div class="arithmatex">\[
+I[k+1] = I[k] + K_i T_s e[k] + K_t T_s \left( u_{\mathrm{sat}}[k] - u_{\mathrm{unsat}}[k] \right)
+\]</div>
+<p>where <span class="arithmatex">\(u_{\mathrm{unsat}}\)</span> and <span class="arithmatex">\(u_{\mathrm{sat}}\)</span> are the control variable before and after limiting. A typical choice is <span class="arithmatex">\(K_t = 1/\sqrt{K_p K_d}\)</span> or selected based on the reciprocal of the integral time constant.</p>
+<p><strong>Derivative filtering</strong>. The derivative term amplifies measurement noise and must be cascaded with a low-pass filter, forming a "filtered derivative":</p>
+<div class="arithmatex">\[
+D(s) = \frac{K_d s}{1 + s / N_f}
+\]</div>
+<p>The filter coefficient <span class="arithmatex">\(N_f\)</span> is typically 5–20. Additionally, to avoid "derivative kick" caused by step changes in the setpoint, <strong>derivative on measurement</strong> is often used in practice: the derivative acts only on the measured value, not on the error.</p>
+<p><strong>Feedforward and compensation</strong>. Following the decomposition in Section 14.1.3, joint servos typically superimpose three feedforward terms:</p>
+<div class="arithmatex">\[
+\tau_{\mathrm{cmd}} = \underbrace{J_{\mathrm{eff}} \ddot q_d + \tau_g(\hat q) + \hat \tau_f(\hat \omega)}_{\text{Model Feedforward}} + \underbrace{K_p e + K_d \dot e + K_i \int e}_{\text{Feedback}}
+\]</div>
+<p>Among these, gravity compensation <span class="arithmatex">\(\tau_g(\hat q)\)</span> provides the greatest benefit for humanoid robots: the gravitational torque at leg and arm joints can reach 30–50% of the peak torque. Without compensation, the integral term must bear this load alone, leading to sluggish startup and steady-state jitter. Friction compensation <span class="arithmatex">\(\hat\tau_f\)</span> commonly uses a Coulomb + viscous model <span class="arithmatex">\(\hat \tau_f = b\hat\omega + F_c \,\mathrm{sgn}(\hat\omega)\)</span>, but reducer friction drifts with temperature and wear; calibration methods are discussed in Section 8.3.10 on parameter identification.</p>
+<table>
+<thead>
+<tr>
+<th>Engineering Aspect</th>
+<th>Purpose</th>
+<th>Typical Practice</th>
+<th>Consequence of Omission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anti-windup</td>
+<td>Suppress overshoot under saturation</td>
+<td>Back-calculation, integrator clamping</td>
+<td>Large overshoot, impact loads</td>
+</tr>
+<tr>
+<td>Derivative filtering</td>
+<td>Suppress noise amplification</td>
+<td>First-order low-pass <span class="arithmatex">\(N_f = 5\!-\!20\)</span></td>
+<td>High-frequency torque jitter, current heating</td>
+</tr>
+<tr>
+<td>Derivative on measurement</td>
+<td>Avoid setpoint step impact</td>
+<td>Derivative acts on measured value</td>
+<td>Torque spikes during step response</td>
+</tr>
+<tr>
+<td>Gravity feedforward</td>
+<td>Relieve feedback burden</td>
+<td>Online calculation of <span class="arithmatex">\(\tau_g(\hat q)\)</span></td>
+<td>Steady-state error, startup lag</td>
+</tr>
+<tr>
+<td>Friction feedforward</td>
+<td>Improve low-speed tracking</td>
+<td>Coulomb + viscous model</td>
+<td>Stick-slip, limit cycles</td>
+</tr>
+<tr>
+<td>Notch/low-pass filtering</td>
+<td>Avoid mechanical resonance</td>
+<td>Set notch frequency based on FFT spectrum</td>
+<td>Resonant screeching, structural fatigue</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1424-interaction-oriented-torque-control-impedance-admittance-and-hybrid-force-position-control">14.2.4 Interaction-Oriented Torque Control: Impedance, Admittance, and Hybrid Force-Position Control</h3>
+<p>When a robot physically contacts the environment, pure position control can produce uncontrolled contact forces under geometric errors, necessitating <strong>compliant control</strong>. Section 8.4.11 of Chapter 8 has already derived the dynamic foundations of <strong>Impedance Control</strong>, <strong>Admittance Control</strong>, and <strong>Hybrid Force-Position Control</strong>. This section supplements three points from a servo implementation perspective.</p>
+<p>First, <strong>the essence of impedance control is modifying the reference for the torque loop</strong>. The desired "virtual spring-damper-inertia" relationship is written as a torque command</p>
+<div class="arithmatex">\[
+\tau = J^T(q)\left[ K_t (x_d - x) + D_t (\dot x_d - \dot x) + \Lambda (\ddot x_d - \ddot x) \right] + \tau_g(q)
+\]</div>
+<p>Its closed-loop behavior depends on the fidelity of the torque loop: QDD joints estimate torque via current, while Series Elastic Actuators (SEA) measure torque via spring deformation; both can achieve relatively "soft" impedance. High-reduction-ratio joints, however, require an additional joint torque sensor; otherwise, impedance control is only nominal.</p>
+<p>Second, <strong>admittance control is a compliance patch for position-controlled robots</strong>. The admittance outer loop corrects the position reference based on the measured force <span class="arithmatex">\(x_c = x_d + \Delta x(F_{\mathrm{ext}})\)</span>, while the inner loop remains a high-gain position servo. Therefore, it is suitable for high-stiffness joints such as harmonic drive joints, but the stability of contact transients is limited by the outer loop sampling rate and sensor noise.</p>
+<p>Third, <strong>hybrid force/position control decomposes the task space by direction</strong>. In constrained directions (e.g., foot normal, insertion direction), force is closed-loop controlled; in free directions, position is closed-loop controlled. The selection matrices <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(I - S\)</span> implement the projection (see 8.4.11). For a humanoid robot, the foot sole during the stance phase is essentially a "position-constrained direction," while tasks such as wiping dust or pressing truly require force closed-loop control.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology explanation: impedance control, admittance control, hybrid force-position control, series elastic actuator</p>
+<ul>
+<li><strong>Impedance control</strong>: Controls the dynamic relationship (inertia-damping-stiffness) that the robot presents to the environment; output is force, input is motion deviation.</li>
+<li><strong>Admittance control</strong>: The dual of impedance—input is force, output is motion correction, wrapped around the position loop.</li>
+<li><strong>Hybrid force-position control</strong>: Orthogonally decomposes the task space into a force-controlled subspace and a position-controlled subspace.</li>
+<li><strong>Series elastic actuator (SEA)</strong>: A series elastic element is placed between the actuator and the load to measure force via deformation and provide inherent compliance, at the cost of bandwidth limited by the spring-inertia resonance.</li>
+</ul>
+</div>
+<h3 id="1425-python-example-single-joint-servo-simulationeffect-of-gravity-feedforward-and-anti-windup">14.2.5 Python Example: Single-Joint Servo Simulation—Effect of Gravity Feedforward and Anti-Windup</h3>
+<p>Below is a numerical simulation of a single pendulum joint (e.g., shoulder flexion joint) demonstrating the combined effect of PID + gravity feedforward + back-calculation anti-windup. Readers can toggle the <code>use_ff</code> and <code>use_aw</code> switches to observe changes in steady-state error and saturation overshoot.</p>
+<pre class="highlight"><code class="language-python"># Single-joint (pendulum) servo simulation: PID + gravity feedforward + back-calculation anti-windup
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Joint parameters (approximating a shoulder/elbow joint)
+m, l, g = 2.0, 0.30, 9.81      # Link mass (kg), center of mass distance (m), gravitational acceleration
+J = m * l**2                    # Moment of inertia about the joint
+b = 0.05                        # Viscous friction
+tau_max = 8.0                   # Torque limit (N·m)
+Ts = 1e-3                       # Servo period 1 kHz
+T = 3.0
+N = int(T / Ts)
+
+# Reference trajectory: smooth step from 0 to 1 rad (fifth-order polynomial)
+qd = np.ones(N) * 1.0
+
+# PID gains
+Kp, Ki, Kd = 25.0, 12.0, 1.2
+Kt = 1.0 / np.sqrt(Kp * Kd)     # Back-calculation anti-windup gain
+
+use_ff = True   # Enable gravity feedforward
+use_aw = True   # Enable anti-windup
+
+q, w = 0.0, 0.0
+I = 0.0
+log_q, log_tau = [], []
+
+for k in range(N):
+    e = qd[k] - q
+    ed = -w                       # Derivative on measurement: differentiate measured value
+    tau_g = m * g * l * np.sin(q) # Gravity torque
+    tau_ff = tau_g if use_ff else 0.0
+    u_unsat = tau_ff + Kp * e + Kd * ed + I
+    u = np.clip(u_unsat, -tau_max, tau_max)
+    if use_aw:
+        I += Ki * Ts * e + Kt * Ts * (u - u_unsat)
+    else:
+        I += Ki * Ts * e
+    # Joint dynamics: J q̈ + b q̇ = u - τ_g
+    acc = (u - b * w - tau_g) / J
+    w += acc * Ts
+    q += w * Ts
+    log_q.append(q); log_tau.append(u)
+
+t = np.arange(N) * Ts
+plt.plot(t, qd, 'k--', label='reference')
+plt.plot(t, log_q, label='q (ff+aw)' if (use_ff and use_aw) else 'q')
+plt.xlabel('t [s]'); plt.ylabel('q [rad]'); plt.legend(); plt.grid(True)
+plt.show()</code></pre>
+<h2 id="143-state-space-control-and-linear-quadratic-regulator">14.3 State-Space Control and Linear Quadratic Regulator</h2>
+<h3 id="1431-state-space-models-linearization-and-discretization">14.3.1 State-Space Models, Linearization, and Discretization</h3>
+<p>PID is a single-input single-output method, while the balancing problem of humanoid robots is inherently multivariable and coupled. The state-space approach writes the system as</p>
+<div class="arithmatex">\[
+\dot x = f(x, u), \qquad y = h(x)
+\]</div>
+<p>Performing a Taylor expansion around the nominal point <span class="arithmatex">\((x_0, u_0)\)</span> and neglecting higher-order terms yields the linearized model</p>
+<div class="arithmatex">\[
+\delta \dot x = A \delta x + B \delta u, \quad A = \left.\frac{\partial f}{\partial x}\right|_{x_0, u_0}, \quad B = \left.\frac{\partial f}{\partial u}\right|_{x_0, u_0}
+\]</div>
+<p>A digital controller requires a discrete model. For zero-order hold (ZOH) discretization with sampling period <span class="arithmatex">\(T_s\)</span>:</p>
+<div class="arithmatex">\[
+A_d = e^{A T_s} \approx I + A T_s + \frac{(A T_s)^2}{2}, \qquad B_d = \left( \int_0^{T_s} e^{A s} ds \right) B
+\]</div>
+<p>The validity of the linearized model is local: the further a disturbance pushes the state from the nominal point, the larger the model error. This is why state-space methods on humanoid robots are always used in conjunction with the aforementioned nominal trajectory generation (Chapter 15) or gain scheduling (Section 14.3.4).</p>
+<h3 id="1432-stability-concepts-and-the-lyapunov-criterion">14.3.2 Stability Concepts and the Lyapunov Criterion</h3>
+<p>The minimum requirement for control is not "good tracking" but "not falling." For a linear system <span class="arithmatex">\(\dot x = A x\)</span>, a necessary and sufficient condition for asymptotic stability is that all eigenvalues of <span class="arithmatex">\(A\)</span> lie in the left half-plane. For nonlinear systems, a common tool is <strong>Lyapunov's second method</strong>: if a positive definite function <span class="arithmatex">\(V(x)\)</span> (interpretable as energy) can be found, and along the system trajectory <span class="arithmatex">\(\dot V(x) = \nabla V \cdot f(x) &lt; 0\)</span>, then the equilibrium point is asymptotically stable.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Lyapunov function, asymptotic stability, region of attraction, control Lyapunov function</p>
+<ul>
+<li><strong>Lyapunov function</strong>: A scalar function that attains its minimum at the equilibrium point and decreases monotonically along system trajectories; it serves as an "energy certificate" for stability.</li>
+<li><strong>Asymptotic stability</strong>: Sufficiently small initial deviations eventually converge back to the equilibrium point.</li>
+<li><strong>Region of attraction</strong>: The set of initial states that converge back to the equilibrium point; for humanoid robots, limited by the support polygon, the region of attraction is always finite.</li>
+<li><strong>Control Lyapunov Function (CLF)</strong>: A function for which, for every state, there exists a control input such that <span class="arithmatex">\(\dot V &lt; 0\)</span>; it can be used directly as a control constraint (see Chapter 15 on CLF-guided running learning).</li>
+</ul>
+</div>
+<p>A direct corollary of Lyapunov's idea in humanoid robotics is that any "energy-based" control (e.g., shaping the total mechanical energy into a desired form) inherently carries the rudiments of a stability argument; whereas purely data-driven controllers, without such structure, can only rely on extensive testing to vouch for their stability (see Chapter 15, Section 15.4).</p>
+<h3 id="1433-lqr-formulation-and-the-algebraic-riccati-equation">14.3.3 LQR: Formulation and the Algebraic Riccati Equation</h3>
+<p>The <strong>Linear Quadratic Regulator (LQR)</strong> is the most practical feedback law within the state-space approach. For a linear system <span class="arithmatex">\(\dot x = A x + B u\)</span>, LQR minimizes the infinite-horizon quadratic cost</p>
+<div class="arithmatex">\[
+J = \int_0^{\infty} \left( x^T Q x + u^T R u \right) dt
+\]</div>
+<p>where <span class="arithmatex">\(Q \succeq 0\)</span> penalizes state deviations and <span class="arithmatex">\(R \succ 0\)</span> penalizes control effort. The optimal feedback is linear state feedback</p>
+<div class="arithmatex">\[
+u = -K x, \qquad K = R^{-1} B^T P
+\]</div>
+<p>where <span class="arithmatex">\(P\)</span> is the unique positive definite solution to the <strong>Continuous-time Algebraic Riccati Equation (CARE)</strong>:</p>
+<div class="arithmatex">\[
+A^T P + P A - P B R^{-1} B^T P + Q = 0
+\]</div>
+<p>For discrete systems, the corresponding Discrete Algebraic Riccati Equation (DARE) applies; <code>scipy.linalg.solve_discrete_are</code> can solve it directly. The value of LQR lies not in the word "optimal" itself, but in that it compresses multivariable feedback design into tuning the two matrices <span class="arithmatex">\(Q\)</span> and <span class="arithmatex">\(R\)</span>, and the closed-loop system possesses classical robustness margins against gain and phase perturbations (for the state feedback form, gain margin <span class="arithmatex">\([1/2, \infty)\)</span>, phase margin <span class="arithmatex">\(\geq 60^\circ\)</span>).</p>
+<p>Tuning <span class="arithmatex">\(Q\)</span> and <span class="arithmatex">\(R\)</span> has clear physical meaning: increasing an element in <span class="arithmatex">\(Q\)</span> means "this state deviation is more expensive," and the feedback will correct it more aggressively. Bryson's rule suggests taking <span class="arithmatex">\(Q_{ii} = 1/x_{i,\max}^2\)</span> and <span class="arithmatex">\(R_{ii} = 1/u_{i,\max}^2\)</span> to make each cost term dimensionless, followed by fine-tuning.</p>
+<h3 id="1434-gain-scheduling-and-time-varying-lqr">14.3.4 Gain Scheduling and Time-Varying LQR</h3>
+<p>A single LQR is only effective near the nominal point. The standard approach for handling periodic large-deviation motions like walking is:</p>
+<ol>
+<li><strong>Offline</strong>: Linearize point-by-point along the nominal trajectory <span class="arithmatex">\(\{(x_0(t), u_0(t))\}\)</span> to obtain the time-varying system <span class="arithmatex">\(A(t), B(t)\)</span>, solve the time-varying Riccati equation (TV-LQR) to obtain a sequence of feedback gains <span class="arithmatex">\(K(t)\)</span>; or sample several key points according to the gait phase and solve an LQR for each.</li>
+<li><strong>Online</strong>: Look up or interpolate the gain for the current phase, and execute <span class="arithmatex">\(\delta u = -K(t)\, \delta x\)</span>.</li>
+</ol>
+<p>The optimization-based motion planning, estimation, and control system developed by Kuindersma et al. for the Boston Dynamics Atlas during the DARPA Robotics Challenge (published in <em>Autonomous Robots</em> 2016) employed a combination of "offline trajectory optimization + TV-LQR feedback + QP whole-body control," marking a landmark engineering validation of this paradigm on humanoid robots. In recent years, time-varying LQR also often appears as a byproduct of solving Differential Dynamic Programming (DDP)—the backward propagation of DDP's second-order expansion naturally yields time-varying linear quadratic gains (see Chapter 15, Section 15.3).</p>
+<h3 id="1435-python-example-lqr-design-for-inverted-pendulum-balancing">14.3.5 Python Example: LQR Design for Inverted Pendulum Balancing</h3>
+<p>Taking the simplification of single-leg standing as an inverted pendulum (ankle joint input torque) as an example, design a discrete LQR and simulate recovery from an angular disturbance. This example also demonstrates the linearization from Section 14.3.1 and the DARE solution from Section 14.3.3.</p>
+<pre class="highlight"><code class="language-python"># Inverted Pendulum LQR Balancing Control
+import numpy as np
+from scipy.linalg import solve_discrete_are
+import matplotlib.pyplot as plt
+
+# Physical parameters: inverted pendulum approximation (center of mass height h, mass m)
+m, h, g = 60.0, 0.9, 9.81
+I = m * h**2                    # Moment of inertia about the ankle (approximate)
+# State x = [theta, theta_dot], input u = ankle torque
+# Linearization: thetä = (m g h / I) theta + (1/I) u
+A = np.array([[0.0, 1.0],
+              [m * g * h / I, 0.0]])
+B = np.array([[0.0], [1.0 / I]])
+
+# ZOH discretization (first-order Euler approximation, acceptable for small Ts)
+Ts = 0.005
+Ad = np.eye(2) + A * Ts
+Bd = B * Ts
+
+# LQR weights: penalize angle deviation much more than angular velocity, moderate torque weight
+Q = np.diag([100.0, 1.0])
+R = np.array([[0.5]])
+P = solve_discrete_are(Ad, Bd, Q, R)
+K = np.linalg.inv(R + Bd.T @ P @ Bd) @ (Bd.T @ P @ Ad)
+print("LQR gain K =", K)
+
+# Simulation: initial angular disturbance of 0.1 rad
+N = 600
+x = np.array([0.1, 0.0])
+log = []
+for k in range(N):
+    u = -K @ x
+    x = Ad @ x + Bd.flatten() * u
+    log.append([x[0], x[1], u[0]])
+
+log = np.array(log)
+t = np.arange(N) * Ts
+fig, ax = plt.subplots(2, 1, sharex=True)
+ax[0].plot(t, log[:, 0]); ax[0].set_ylabel('theta [rad]'); ax[0].grid(True)
+ax[1].plot(t, log[:, 2]); ax[1].set_ylabel('u [N·m]'); ax[1].set_xlabel('t [s]'); ax[1].grid(True)
+plt.show()</code></pre>
+<h2 id="144-model-predictive-control-mpc">14.4 Model Predictive Control (MPC)</h2>
+<h3 id="1441-receding-horizon-optimization-principle">14.4.1 Receding Horizon Optimization Principle</h3>
+<p>LQR is optimal over an infinite horizon but cannot explicitly handle constraints—yet the core constraints of humanoid robots (joint limits, torque limits, friction cones, ZMP support polygon) are precisely hard constraints. <strong>Model Predictive Control (MPC)</strong> solves a finite-horizon open-loop optimal control problem at each control cycle:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\min_{u_{0:N-1},\, x_{1:N}} \quad &amp; \sum_{k=0}^{N-1} \ell(x_k, u_k) + \ell_f(x_N) \\
+\text{s.t.} \quad &amp; x_{k+1} = f(x_k, u_k), \quad k = 0, \ldots, N-1 \\
+&amp; x_k \in \mathcal{X}, \quad u_k \in \mathcal{U} \\
+&amp; x_0 = \hat x(t)
+\end{aligned}
+\]</div>
+<p>Then <strong>only the first control</strong> <span class="arithmatex">\(u_0^*\)</span> is executed, and at the next cycle, the problem is re-solved with the new state estimate <span class="arithmatex">\(\hat x\)</span>—this is the receding horizon mechanism. The prediction model is "re-anchored" to the current state at each solution, giving MPC both the foresight of optimization and the robustness of feedback. Borrelli, Bemporad, and Morari's <em>Predictive Control for Linear and Hybrid Systems</em> is the standard textbook in this field.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Current state estimate x̂(t)"] --&gt; B["Solve finite-horizon OCP&lt;br/&gt;Prediction model + Constraints + Cost"]
+    B --&gt; C["Optimal sequence u*0, u*1, ..., u*N-1"]
+    C --&gt; D["Execute only u*0"]
+    D --&gt; E["System evolves one period Δt"]
+    E --&gt; F["New state estimate x̂(t+Δt)"]
+    F --&gt; B</code></pre>
+<p>The choice of horizon length <span class="arithmatex">\(N\)</span> and discrete time step <span class="arithmatex">\(\Delta t\)</span> is a core trade-off: the prediction horizon <span class="arithmatex">\(N \Delta t\)</span> must cover the dominant dynamics of the controlled object (typically 0.5–1.5 s for humanoid balance control), while more steps slow down the solution. The cost of MPC compared to LQR is computational: LQR requires only one matrix-vector multiplication online, while MPC must solve an optimization problem at each cycle.</p>
+<h3 id="1442-from-optimal-control-problem-to-quadratic-programming">14.4.2 From Optimal Control Problem to Quadratic Programming</h3>
+<p>When the cost is quadratic, the model is linear (or linearized), and the constraints are linear (or linearized friction cones), the above OCP transforms into the standard form of a <strong>Quadratic Program (QP)</strong></p>
+<div class="arithmatex">\[
+\min_{z} \; \frac{1}{2} z^T H z + g^T z \quad \text{s.t.} \quad A_{\mathrm{eq}} z = b_{\mathrm{eq}}, \quad A_{\mathrm{in}} z \leq b_{\mathrm{in}}
+\]</div>
+<p>where the optimization variable <span class="arithmatex">\(z\)</span> stacks the states and controls over the horizon. The optimality of a QP is characterized by the <strong>KKT conditions (Karush-Kuhn-Tucker conditions)</strong>: at the optimal solution, the gradients, equality constraints, and inequality constraint multipliers satisfy complementary slackness. A convex QP is a convex optimization problem; any local optimum is global, and polynomial-time algorithms exist—this is the theoretical foundation for real-time MPC.</p>
+<p>QP solvers fall into two main families: <strong>active-set methods</strong> iterate along constraint boundaries and, when <strong>warm started</strong> with the previous cycle's solution, typically require only a few iterations, making them suitable for very short control cycles; <strong>interior-point methods</strong> absorb inequality constraints into the objective via barrier functions, with iteration counts insensitive to problem size, making them suitable for large sparse problems. In humanoid robot MPC practice, structure exploitation (handing the sparse, time-step-blocked QP structure to Riccati recursion or block-sparse factorization) often determines solution speed more than the solver choice itself.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: QP, KKT Conditions, Active-Set Method, Interior-Point Method, Warm Start, Condensing</p>
+<ul>
+<li><strong>QP (quadratic program)</strong>: An optimization problem with a quadratic objective and linear constraints; the main solution form for real-time MPC.</li>
+<li><strong>KKT conditions</strong>: First-order necessary conditions for constrained optimization; also sufficient for convex problems.</li>
+<li><strong>Active-set method</strong>: A QP iterative method that maintains a set of "active constraints" and moves between constraint surfaces.</li>
+<li><strong>Interior-point method</strong>: An iterative method that approaches the optimal solution along a central path inside the constraints.</li>
+<li><strong>Warm start</strong>: Initializing the current iteration with the previous solution, significantly reducing the number of iterations.</li>
+<li><strong>Condensing</strong>: Eliminating state variables using dynamic equations to obtain a dense, small QP containing only control variables; efficient for short horizons, but destroys sparsity for long horizons.</li>
+</ul>
+</div>
+<h3 id="1443-real-time-engineering-linearization-precomputation-and-delay-compensation">14.4.3 Real-Time Engineering: Linearization, Precomputation, and Delay Compensation</h3>
+<p>Transforming humanoid robot MPC from an offline algorithm to an online controller requires a set of standard engineering techniques:</p>
+<ul>
+<li><strong>Model reduction and linearization</strong>. Full-order floating-base dynamics (see Section 8.4.7) are high-dimensional and strongly nonlinear; performing nonlinear MPC at 1 kHz is still challenging. The mainstream approach is model reduction: using simplified models like the Linear Inverted Pendulum Model (LIPM) or single rigid body (centroidal dynamics) as the MPC prediction model, and leaving full-order tracking to WBC (see Section 15.3.2).</li>
+<li><strong>Single-step linearization + multi-step prediction</strong>. At each MPC cycle, linearize only once around the current nominal trajectory to obtain a Linear Time-Varying (LTV) model, approximating the nonlinear MPC as a single QP; this sacrifices nonlinear accuracy but gains orders of magnitude in speed.</li>
+<li><strong>Precomputation and code generation</strong>. Matrix values <span class="arithmatex">\(A(t), B(t)\)</span> can be precomputed offline along the nominal trajectory; QP solver code can be auto-generated for a fixed problem structure, eliminating dynamic memory allocation.</li>
+<li><strong>Delay compensation</strong>. The sensing-computation-actuation chain has a 1–5 ms delay; the standard practice is to forward-simulate the state estimate by one delay period before solving the MPC, otherwise optimization starts from an incorrect initial condition.</li>
+<li><strong>Infeasibility handling</strong>. Large disturbances can make the QP infeasible; engineering practice rewrites critical constraints (e.g., ZMP support polygon) as soft constraints with slack variables and applies a large penalty to the slack, ensuring the solver always returns a "least-bad" solution.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Design Knob</th>
+<th>Typical Value</th>
+<th>Benefit of Increasing/Relaxing</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prediction horizon <span class="arithmatex">\(N\Delta t\)</span></td>
+<td>0.5–1.5 s</td>
+<td>Stronger foresight, better footstep planning</td>
+<td>Solution time increases approximately linearly</td>
+</tr>
+<tr>
+<td>Discrete time step <span class="arithmatex">\(\Delta t\)</span></td>
+<td>10–40 ms</td>
+<td>Higher resolution</td>
+<td>More steps, matrix ill-conditioning</td>
+</tr>
+<tr>
+<td>Prediction model</td>
+<td>LIPM / Single Rigid Body / Full-Order</td>
+<td>Higher fidelity</td>
+<td>Nonlinearity, slower solution</td>
+</tr>
+<tr>
+<td>Solution frequency</td>
+<td>50–500 Hz</td>
+<td>Faster disturbance recovery</td>
+<td>Computational power and energy</td>
+</tr>
+<tr>
+<td>Constraint softening</td>
+<td>Slack + large penalty</td>
+<td>Avoids infeasibility crashes</td>
+<td>Constraints temporarily violated</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1444-spectrum-of-mpc-applications-in-humanoid-robots">14.4.4 Spectrum of MPC Applications in Humanoid Robots</h3>
+<p>MPC in humanoid robots appears hierarchically by prediction model:</p>
+<ol>
+<li><strong>Pattern generation-level MPC</strong>: Uses ZMP/CoM as states to generate CoM trajectories and ZMP references (the preview control in Section 15.2.2 can be seen as a special case), typically at 50–200 Hz.</li>
+<li><strong>Centroidal dynamics MPC</strong>: Uses CoM position/velocity and angular momentum as states, ground reaction forces as inputs, directly optimizing reaction force distribution and footstep locations over future contact phases, typically at 100–500 Hz. The convex MPC of MIT Cheetah 3 and the QP framework of Atlas belong to this category (detailed in Section 15.3.2).</li>
+<li><strong>Whole-body/full-order MPC</strong>: Directly optimizes joint trajectories and contact sequences on full-order dynamics. Limited by computational power, it has long remained offline or low-frequency online. Recently, with advances in GPU sampling and physics engines, new forms have emerged, such as whole-body MPC for legged robots based on MuJoCo (Whole-Body Model-Predictive Control of Legged Robots with MuJoCo) and diffusion-annealing full-order sampling MPC (Full-Order Sampling-Based MPC for Torque-Level Locomotion Control), representing the frontier directions discussed in Chapter 15.</li>
+</ol>
+<h2 id="145-whole-body-control-wbc">14.5 Whole-Body Control (WBC)</h2>
+<h3 id="1451-task-functions-and-task-jacobian">14.5.1 Task Functions and Task Jacobian</h3>
+<p><strong>Whole-Body Control (WBC)</strong> uniformly coordinates all <span class="arithmatex">\(n\)</span> joints and all contacts at the torque level, enabling the robot to simultaneously accomplish multiple tasks: centroid tracking, posture stabilization, swing foot trajectory, hand end-effector pose, joint limit avoidance, etc. Each task is written as a task-space quantity <span class="arithmatex">\(\sigma_i(q)\)</span> (e.g., centroid position, swing foot pose), and its time derivative is given by the <strong>Task Jacobian</strong>:</p>
+<div class="arithmatex">\[
+\dot \sigma_i = J_i(q)\, \dot q, \qquad \ddot \sigma_i = J_i(q)\, \ddot q + \dot J_i(q, \dot q)\, \dot q
+\]</div>
+<p>If the desired task acceleration is <span class="arithmatex">\(\ddot \sigma_i^*\)</span> (typically generated by a task-space PD law <span class="arithmatex">\(\ddot \sigma_i^* = \ddot \sigma_i^d + K_p(\sigma_i^d - \sigma_i) + K_d(\dot\sigma_i^d - \dot\sigma_i)\)</span>), the control problem becomes: <strong>find joint accelerations <span class="arithmatex">\(\ddot q\)</span> that minimize all task errors while satisfying the dynamics equations, contact constraints, and limits</strong>.</p>
+<h3 id="1452-weighted-qp-and-null-space-projection">14.5.2 Weighted QP and Null-Space Projection</h3>
+<p>There are two basic strategies for handling multiple tasks.</p>
+<p><strong>Weighted strategy</strong>: Stack all task errors with weights into a single objective,</p>
+<div class="arithmatex">\[
+\min_{\ddot q} \; \sum_i w_i \left\| J_i \ddot q + \dot J_i \dot q - \ddot \sigma_i^* \right\|^2
+\]</div>
+<p>The weights <span class="arithmatex">\(w_i\)</span> express the relative importance of tasks. This approach is simple to implement and computationally fast, but weights only provide "soft" priorities—errors for high-weight tasks may still be non-zero, and weight tuning varies with task combinations.</p>
+<p><strong>Strict hierarchy</strong>: High-priority tasks are satisfied exactly, while lower-priority tasks are optimized only in the <strong>null space</strong> of higher-priority tasks. For two tasks, the solution is</p>
+<div class="arithmatex">\[
+\ddot q = J_1^{\dagger} \left( \ddot \sigma_1^* - \dot J_1 \dot q \right) + N_1\, \xi, \qquad N_1 = I - J_1^{\dagger} J_1
+\]</div>
+<p>where <span class="arithmatex">\(J_1^{\dagger}\)</span> is the pseudoinverse of Task 1's Jacobian, <span class="arithmatex">\(N_1\)</span> projects into the null space of <span class="arithmatex">\(J_1\)</span>, and <span class="arithmatex">\(\xi\)</span> is determined by optimizing Task 2 (which can recursively treat <span class="arithmatex">\(J_2 N_1\)</span> as a new effective Jacobian). Null-space projection ensures that any action of Task 2 does not interfere with Task 1—this is the standard mechanism for redundant robots to exploit extra degrees of freedom (see Chapter 8, Section 8.2.4 for kinematic discussion of redundancy and null space).</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology: Task Space, Pseudoinverse, Null-Space Projection, Task Priority, Regularization</p>
+<ul>
+<li><strong>Task space / operational space</strong>: A coordinate space describing motion in task-relevant quantities (centroid, end-effector pose).</li>
+<li><strong>Moore-Penrose pseudoinverse (<span class="arithmatex">\(J^{\dagger}\)</span>)</strong>: Provides the minimum-norm solution <span class="arithmatex">\(\dot q = J^{\dagger}\dot\sigma\)</span>.</li>
+<li><strong>Null-space projection</strong>: The matrix <span class="arithmatex">\(N = I - J^{\dagger}J\)</span> projects any joint velocity onto the set of directions that do not change the task quantity.</li>
+<li><strong>Task priority</strong>: The hierarchical relationship among tasks; under strict priority, lower-priority tasks must not degrade the solution of higher-priority tasks.</li>
+<li><strong>Regularization</strong>: Adding a small penalty <span class="arithmatex">\(\| \cdot \|\)</span> in the pseudoinverse/QP to avoid gain explosion near singularities.</li>
+</ul>
+</div>
+<h3 id="1453-inverse-dynamics-qp-standard-formulation-of-wbc">14.5.3 Inverse Dynamics QP: Standard Formulation of WBC</h3>
+<p>The mainstream approach for modern torque-level WBC is the <strong>Inverse-Dynamics QP Formulation</strong>. The decision variables are <span class="arithmatex">\(\nu = [\ddot q^T, \tau^T, f_c^T]^T\)</span> (joint accelerations, joint torques, contact forces), with constraints from <strong>Floating-Base Dynamics</strong>:</p>
+<div class="arithmatex">\[
+M(q)\, \ddot q + h(q, \dot q) = S^T \tau + J_c(q)^T f_c
+\]</div>
+<p>where <span class="arithmatex">\(M\)</span> is the inertia matrix, <span class="arithmatex">\(h\)</span> includes Coriolis/centrifugal/gravity terms, <span class="arithmatex">\(S\)</span> is the actuation selection matrix (the first 6 rows of the floating base are unactuated), <span class="arithmatex">\(J_c\)</span> is the contact Jacobian, and <span class="arithmatex">\(f_c\)</span> are contact forces. The standard QP is written as</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\min_{\ddot q, \tau, f_c} \quad &amp; \sum_i w_i \left\| J_i \ddot q + \dot J_i \dot q - \ddot\sigma_i^* \right\|^2 + \lambda_{\tau} \|\tau\|^2 + \lambda_{f} \|f_c\|^2 \\
+\text{s.t.} \quad &amp; M \ddot q + h = S^T \tau + J_c^T f_c &amp;&amp; \text{(Dynamic consistency)}\\
+&amp; J_c \ddot q + \dot J_c \dot q = 0 &amp;&amp; \text{(Zero contact point acceleration)}\\
+&amp; f_c \in \mathcal{F} &amp;&amp; \text{(Friction cone + CoP constraints, see 8.4.13)}\\
+&amp; \tau_{\min} \leq \tau \leq \tau_{\max} &amp;&amp; \text{(Torque limits)}\\
+&amp; \ddot q_{\min} \leq \ddot q \leq \ddot q_{\max} &amp;&amp; \text{(Acceleration limits)}
+\end{aligned}
+\]</div>
+<p>The solved <span class="arithmatex">\(\tau\)</span> is directly sent to the joint torque loop. A key property of this formulation is that <strong>the first 6 dynamics equations (floating-base rows) bind "body acceleration—contact forces—joint torques" together</strong>, so balance is not dependent on any single task but is globally guaranteed by the dynamic constraints. In practice, the friction cone is often linearized as a pyramid to maintain the QP's linear structure.</p>
+<h3 id="1454-hierarchical-qp-wbc">14.5.4 Hierarchical QP WBC</h3>
+<p>When tasks have hard priorities, the null-space idea from 14.5.2 can be combined with the QP from 14.5.3 to form <strong>Hierarchical QP Whole-Body Control</strong>: a sequence of QPs is solved from highest to lowest priority, where each QP optimizes the lower-priority objective while adding the condition "must not degrade the optimal value of all previous QPs" as equality/inequality constraints. This approach was pioneered by de Lasa et al., systematized by Herzog et al., and given a complete engineering exposition for real robots by Kim et al. in "Hierarchical QP whole-body control: from theory to practice" (including constraint consistency and regularization details).</p>
+<p>Comparison with weighted QP:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Weighted QP</th>
+<th>Hierarchical QP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Priority</td>
+<td>Soft (weight ratio)</td>
+<td>Hard (strict hierarchy)</td>
+</tr>
+<tr>
+<td>Computation</td>
+<td>Single QP, fast</td>
+<td>Cascaded QP, roughly times number of layers</td>
+</tr>
+<tr>
+<td>Weight tuning</td>
+<td>Varies with task combinations, tedious</td>
+<td>Weights still needed within layers, but not between layers</td>
+</tr>
+<tr>
+<td>Constraint feasibility</td>
+<td>Single problem, easy to diagnose</td>
+<td>Need to prevent high-layer constraints from making lower layers infeasible</td>
+</tr>
+<tr>
+<td>Application scenarios</td>
+<td>Tasks of equal importance, speed-oriented</td>
+<td>Safety/balance tasks must be absolutely prioritized</td>
+</tr>
+</tbody>
+</table>
+<p>For humanoid robots, "contact constraints + balance (centroid/ZMP)" are typically placed at the highest level, followed by swing foot and hand end-effector tasks, with posture and joint limit avoidance at lower levels.</p>
+<h3 id="1455-engineering-implementation-points">14.5.5 Engineering Implementation Points</h3>
+<ul>
+<li><strong>Contact state machine</strong>: <span class="arithmatex">\(J_c\)</span> and constraint sets switch with support phases (left support/right support/double support); WBC must be strictly synchronized with the gait state machine. At contact establishment, use impact models or short-term admittance transitions to avoid torque jumps from abrupt QP constraint changes.</li>
+<li><strong>State consistency</strong>: QP relies on accurate values of <span class="arithmatex">\(M(q), h(q,\dot q), J_c(q)\)</span>, which depend on floating-base pose estimation—WBC and state estimation (14.6.1) form a closed loop; estimation drift directly manifests as torque errors.</li>
+<li><strong>Solver frequency and regularization</strong>: WBC typically runs at 0.5–2 kHz; <span class="arithmatex">\(\lambda_{\tau}, \lambda_{f}\)</span> both suppress the solution norm (energy saving, noise reduction) and ensure the QP is strictly convex and numerically well-conditioned. Near singular configurations, the pseudoinverse requires damping (damped least squares).</li>
+<li><strong>Interface with higher layers</strong>: MPC/motion generators output centroid acceleration references, swing foot trajectories, and desired contact forces; WBC treats these as tasks <span class="arithmatex">\(\ddot\sigma_i^*\)</span> and regularization targets. When the higher layer runs at a lower frequency (hundreds of Hz), WBC must interpolate the references internally.</li>
+<li><strong>Torque interface</strong>: WBC outputs desired joint torques; final quality depends on the torque loop fidelity from Section 14.2. QDD and joints with torque sensors are currently the mainstream interfaces.</li>
+</ul>
+<h3 id="1456-python-example-two-task-null-space-projection">14.5.6 Python Example: Two-Task Null-Space Projection</h3>
+<p>Using a 3-link planar arm (<span class="arithmatex">\(n=3\)</span>, end-effector position task dimension 2, redundancy 1) to demonstrate strict priority: Task 1 is end-effector position tracking, Task 2 is joint centering (posture). It can be observed that Task 2 only acts within the null space.</p>
+<pre class="highlight"><code class="language-python"># Two-task strict priority (null-space projection) example
+import numpy as np
+
+def fk(q, L):
+    # End-effector position of a planar 3R arm
+    x = L[0]*np.cos(q[0]) + L[1]*np.cos(q[0]+q[1]) + L[2]*np.cos(q.sum())
+    y = L[0]*np.sin(q[0]) + L[1]*np.sin(q[0]+q[1]) + L[2]*np.sin(q.sum())
+    return np.array([x, y])
+
+def jac(q, L):
+    s1 = q[0]; s12 = q[0]+q[1]; s123 = q.sum()
+    J = np.array([
+        [-L[0]*np.sin(s1)-L[1]*np.sin(s12)-L[2]*np.sin(s123), -L[1]*np.sin(s12)-L[2]*np.sin(s123), -L[2]*np.sin(s123)],
+        [ L[0]*np.cos(s1)+L[1]*np.cos(s12)+L[2]*np.cos(s123),  L[1]*np.cos(s12)+L[2]*np.cos(s123),  L[2]*np.cos(s123)]
+    ])
+    return J
+
+L = [0.30, 0.25, 0.20]
+q = np.array([0.3, 0.5, -0.4])
+q_home = np.array([0.0, 0.6, -0.6])   # Joint-centered reference
+xd = np.array([0.45, 0.15])           # End-effector target
+
+Kp, K2 = 8.0, 2.0
+dt = 0.01
+for step in range(300):
+    J = jac(q, L)
+    x = fk(q, L)
+    v1 = Kp * (xd - x)                # Task 1: Desired end-effector velocity
+    J1_pinv = np.linalg.pinv(J)
+    N1 = np.eye(3) - J1_pinv @ J      # Null-space projection matrix
+    v2 = K2 * (q_home - q)            # Task 2: Joint-centering velocity
+    qd = J1_pinv @ v1 + N1 @ v2       # Strict priority synthesis
+    q = q + qd * dt
+
+print("Final end-effector position:", fk(q, L), "Target:", xd)
+print("Final joint angles:", q)</code></pre>
+<h2 id="146-control-system-integration-and-selection">14.6 Control System Integration and Selection</h2>
+<h3 id="1461-state-estimation-interface">14.6.1 State Estimation Interface</h3>
+<p>All the aforementioned controllers assume that the states <span class="arithmatex">\(q, \dot q\)</span> and the floating-base pose are known. However, the 6 degrees of freedom of the floating base cannot be measured directly and must be estimated by fusing IMU, joint encoders, and contact information. The mainstream approach for legged robot state estimation is to jointly optimize or filter IMU preintegration, forward kinematic leg-length constraints, and contact factors. Representative works include Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors, and Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation for terrain uncertainty. The engineering key point is contact detection: incorrect contact assumptions can cause kinematic constraints to bias the estimate. Common criteria are a combination of foot force switch thresholds and impact detection. The coupling between the control loop and state estimation in this chapter is further discussed in Chapter 15, Section 15.5.</p>
+<h3 id="1462-real-time-communication-and-scheduling">14.6.2 Real-Time Communication and Scheduling</h3>
+<p>The layers of the control stack are distributed across multiple computing nodes: MCUs (FOC) within the drives, joint-level controllers, a central real-time computer (WBC/MPC), and a high-performance computer (perception/learning policies). The determinism of the inter-node bus directly determines the achievable upper-layer frequency:</p>
+<table>
+<thead>
+<tr>
+<th>Bus</th>
+<th>Typical Cycle</th>
+<th>Jitter</th>
+<th>Role in Humanoid Robots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EtherCAT</td>
+<td>100 µs–1 ms</td>
+<td>Microsecond level</td>
+<td>Mainstream joint bus, distributed clock synchronization</td>
+</tr>
+<tr>
+<td>CAN / CAN-FD</td>
+<td>1–10 ms</td>
+<td>Depends on load rate</td>
+<td>Low-speed sensing, battery management, some joints</td>
+</tr>
+<tr>
+<td>Ethernet (UDP/TCP)</td>
+<td>Uncertain</td>
+<td>Millisecond level</td>
+<td>Perception data, non-real-time commands</td>
+</tr>
+</tbody>
+</table>
+<p>The central real-time computer typically runs a real-time patched Linux (PREEMPT_RT) with CPU isolation and FIFO scheduling to bound the worst-case latency of the WBC thread. For applications requiring higher determinism, commercial real-time operating systems such as QNX are used. The Distributed Clocks mechanism of EtherCAT aligns the sampling phases of all joints to the microsecond level, which is a prerequisite for the distributed implementation of torque-level WBC.</p>
+<h3 id="1463-safety-chain-and-fail-safe-protection">14.6.3 Safety Chain and Fail-Safe Protection</h3>
+<p>Humanoid robots operate in close proximity to humans, so the control system must assume that it can fail and be designed with a <strong>safety chain</strong> accordingly:</p>
+<ol>
+<li><strong>Functional Safety Standard Framework</strong>: The overall machine safety integrity is decomposed according to the SIL level of IEC 61508 or the PL level of ISO 13849; personal care robots must also comply with ISO 13482, and collaborative scenarios refer to the force/pressure limits of ISO/TS 15066.</li>
+<li><strong>Hardware Layer</strong>: Safe Torque Off (STO) cuts motor torque at the drive hardware level, independent of software; the emergency stop circuit is hardwired.</li>
+<li><strong>Software Layer</strong>: A watchdog monitors control cycle timeouts; torque/velocity/position envelope monitoring (degradation upon exceeding limits); fall detection triggers protective postures (tuck legs, protect head).</li>
+<li><strong>Degradation Strategy</strong>: When sensor failure occurs (e.g., a single foot force sensor disconnects), switch to low-bandwidth position control or safe shutdown, rather than crashing directly.</li>
+</ol>
+<p>Control algorithm selection must consider the safety chain: optimization-based controllers (MPC/WBC) must always have a "hold last cycle + rapid decay" fallback logic for when solving fails; learning-based policies (Chapter 15) are typically wrapped with a model-based safety filter.</p>
+<h3 id="1464-method-comparison-and-selection-guide">14.6.4 Method Comparison and Selection Guide</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Model Dependency</th>
+<th>Constraint Handling</th>
+<th>Multivariable Coupling</th>
+<th>Computational Cost</th>
+<th>Typical Position in Humanoid Robots</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>None (local)</td>
+<td>External clamping</td>
+<td>None (per joint)</td>
+<td>Very low</td>
+<td>Joint servo</td>
+</tr>
+<tr>
+<td>PID + Feedforward</td>
+<td>Inverse dynamics/gravity</td>
+<td>External clamping</td>
+<td>Partially compensated via feedforward</td>
+<td>Very low</td>
+<td>Joint servo, static tasks</td>
+</tr>
+<tr>
+<td>Impedance/Admittance</td>
+<td>Target impedance model</td>
+<td>Indirect</td>
+<td>Via Jacobian</td>
+<td>Low</td>
+<td>Interaction tasks, compliant walking</td>
+</tr>
+<tr>
+<td>LQR / TV-LQR</td>
+<td>Linearized model</td>
+<td>No explicit constraints</td>
+<td>Yes</td>
+<td>Low (lookup table)</td>
+<td>Balance stabilization, trajectory tracking</td>
+</tr>
+<tr>
+<td>MPC</td>
+<td>Predictive model</td>
+<td>Explicit (core advantage)</td>
+<td>Yes</td>
+<td>Medium–High</td>
+<td>Gait generation, centroid control</td>
+</tr>
+<tr>
+<td>WBC (QP)</td>
+<td>Full-order inverse dynamics</td>
+<td>Explicit</td>
+<td>Yes (inherent)</td>
+<td>Medium</td>
+<td>Torque-level whole-body coordination</td>
+</tr>
+</tbody>
+</table>
+<p>Selection heuristic: <strong>Solve at the lowest possible layer</strong> (joint friction/gravity compensation at the servo layer is much cheaper than forcing WBC to compute it); <strong>the harder the constraint, the more it belongs in MPC/WBC</strong>; <strong>the less accurate the model, the more reliance on feedback and learning</strong> (Chapter 15).</p>
+<h3 id="1465-chapter-summary">14.6.5 Chapter Summary</h3>
+<p>This chapter has established a methodology for humanoid robot control from the bottom up along the control stack: joint-level PID and feedforward compensation determine the fidelity of torque/position tracking; state-space methods (LQR and its time-varying forms) provide feedback with stability guarantees for multivariable balance; MPC incorporates hard constraints into online optimization, serving as the hub connecting planning and control; whole-body control (inverse dynamics QP / hierarchical QP) coordinates whole-body tasks and contacts uniformly at the torque level. These modules will be assembled in Chapter 15 into a complete walking and motion generation system: the gait generator and MPC provide centroid/footstep references, WBC tracks them, and joint servos execute them.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-13/">← Previous<span>Chapter 13: Mass Production and Scaling</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-15/">Next →<span>Chapter 15: Motion Generation and Locomotion</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-14-fundamentals-of-robot-control">Chapter 14: Fundamentals of Robot Control</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#141-overview-of-humanoid-robot-control-problems">14.1 Overview of Humanoid Robot Control Problems</a><ul>
+<li><a href="#1411-control-stack-layering-from-power-switches-to-whole-body-behavior">14.1.1 Control Stack Layering: From Power Switches to Whole-Body Behavior</a></li>
+<li><a href="#1412-four-structural-difficulties-in-humanoid-robot-control">14.1.2 Four Structural Difficulties in Humanoid Robot Control</a></li>
+<li><a href="#1413-feedback-feedforward-and-nominalerror-decomposition">14.1.3 Feedback, Feedforward, and Nominal/Error Decomposition</a></li>
+</ul>
+</li>
+<li><a href="#142-joint-level-servo-control">14.2 Joint-Level Servo Control</a><ul>
+<li><a href="#1421-cascade-control-current-loop-velocity-loop-position-loop">14.2.1 Cascade Control: Current Loop / Velocity Loop / Position Loop</a></li>
+<li><a href="#1422-pid-control-law-and-discrete-implementation">14.2.2 PID Control Law and Discrete Implementation</a></li>
+<li><a href="#1423-engineering-details-anti-windup-derivative-filtering-and-feedforward">14.2.3 Engineering Details: Anti-Windup, Derivative Filtering, and Feedforward</a></li>
+<li><a href="#1424-interaction-oriented-torque-control-impedance-admittance-and-hybrid-force-position-control">14.2.4 Interaction-Oriented Torque Control: Impedance, Admittance, and Hybrid Force-Position Control</a></li>
+<li><a href="#1425-python-example-single-joint-servo-simulationeffect-of-gravity-feedforward-and-anti-windup">14.2.5 Python Example: Single-Joint Servo Simulation—Effect of Gravity Feedforward and Anti-Windup</a></li>
+</ul>
+</li>
+<li><a href="#143-state-space-control-and-linear-quadratic-regulator">14.3 State-Space Control and Linear Quadratic Regulator</a><ul>
+<li><a href="#1431-state-space-models-linearization-and-discretization">14.3.1 State-Space Models, Linearization, and Discretization</a></li>
+<li><a href="#1432-stability-concepts-and-the-lyapunov-criterion">14.3.2 Stability Concepts and the Lyapunov Criterion</a></li>
+<li><a href="#1433-lqr-formulation-and-the-algebraic-riccati-equation">14.3.3 LQR: Formulation and the Algebraic Riccati Equation</a></li>
+<li><a href="#1434-gain-scheduling-and-time-varying-lqr">14.3.4 Gain Scheduling and Time-Varying LQR</a></li>
+<li><a href="#1435-python-example-lqr-design-for-inverted-pendulum-balancing">14.3.5 Python Example: LQR Design for Inverted Pendulum Balancing</a></li>
+</ul>
+</li>
+<li><a href="#144-model-predictive-control-mpc">14.4 Model Predictive Control (MPC)</a><ul>
+<li><a href="#1441-receding-horizon-optimization-principle">14.4.1 Receding Horizon Optimization Principle</a></li>
+<li><a href="#1442-from-optimal-control-problem-to-quadratic-programming">14.4.2 From Optimal Control Problem to Quadratic Programming</a></li>
+<li><a href="#1443-real-time-engineering-linearization-precomputation-and-delay-compensation">14.4.3 Real-Time Engineering: Linearization, Precomputation, and Delay Compensation</a></li>
+<li><a href="#1444-spectrum-of-mpc-applications-in-humanoid-robots">14.4.4 Spectrum of MPC Applications in Humanoid Robots</a></li>
+</ul>
+</li>
+<li><a href="#145-whole-body-control-wbc">14.5 Whole-Body Control (WBC)</a><ul>
+<li><a href="#1451-task-functions-and-task-jacobian">14.5.1 Task Functions and Task Jacobian</a></li>
+<li><a href="#1452-weighted-qp-and-null-space-projection">14.5.2 Weighted QP and Null-Space Projection</a></li>
+<li><a href="#1453-inverse-dynamics-qp-standard-formulation-of-wbc">14.5.3 Inverse Dynamics QP: Standard Formulation of WBC</a></li>
+<li><a href="#1454-hierarchical-qp-wbc">14.5.4 Hierarchical QP WBC</a></li>
+<li><a href="#1455-engineering-implementation-points">14.5.5 Engineering Implementation Points</a></li>
+<li><a href="#1456-python-example-two-task-null-space-projection">14.5.6 Python Example: Two-Task Null-Space Projection</a></li>
+</ul>
+</li>
+<li><a href="#146-control-system-integration-and-selection">14.6 Control System Integration and Selection</a><ul>
+<li><a href="#1461-state-estimation-interface">14.6.1 State Estimation Interface</a></li>
+<li><a href="#1462-real-time-communication-and-scheduling">14.6.2 Real-Time Communication and Scheduling</a></li>
+<li><a href="#1463-safety-chain-and-fail-safe-protection">14.6.3 Safety Chain and Fail-Safe Protection</a></li>
+<li><a href="#1464-method-comparison-and-selection-guide">14.6.4 Method Comparison and Selection Guide</a></li>
+<li><a href="#1465-chapter-summary">14.6.5 Chapter Summary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

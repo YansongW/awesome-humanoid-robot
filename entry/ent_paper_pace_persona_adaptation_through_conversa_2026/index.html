@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PACE: Persona Adaptation through Conversational Elicitation in Human-Robot Interaction · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PACE: Persona Adaptation through Conversational Elicitation in Human-Robot Interaction</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>PACE: Persona Adaptation through Conversational Elicitation in Human-Robot Interaction</h1>
+      <p class="entry-name-en">PACE: Persona Adaptation through Conversational Elicitation in Human-Robot Interaction</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>PACE 是一个在 Ameca 类人机器人上运行的端到端框架，通过 4.5 分钟结构化对话引导（elicitation）将用户心理特征编译为可执行的动态人设（PersonaSpec），并直接驱动语音与面部动画。作者来自匿名团队，核心贡献在于把静态提示工程转变为交互式人设生成，并首次将文本级人格建模系统性地映射到高表达力机器人的物理运动学约束上。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.15579" target="_blank" rel="noopener">arXiv:2607.15579 PACE: Persona Adaptation through Conversational Elicitation in Human-Robot Inter</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它真正改变的是人机交互中人设的“存在方式”：从部署前由开发者写死的静态角色档案，变成部署后由机器人主动询问、实时推断、动态编译的交互产物。这直接回应了 HRI 中一个长期被忽视的痛点——用户期望与机器人内嵌人设的不匹配会引发认知失调、破坏信任，而静态系统提示根本无法感知个体差异（例如物理治疗场景中，不同用户对教练风格的需求截然相反）。</p>
+<p>更关键的是，它把 LLM 驱动的开放式对话从“文本生成”拉回到“具身行为”的轨道上。过去 LLM 对话系统很少考虑文本输出如何映射到机器人运动学，导致生成内容与物理表达脱节；PACE 通过情绪分类器与硬件定制动画库的混合，让心理属性（如尽责性、刺激寻求）直接改变手势幅度、面部动画频率和语音同步方式，这是对“具身智能体有效性”这一命题的实质性推进。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">三阶段架构</h3>
+<ol>
+<li><strong>Interactive Q&amp;A</strong>：机器人通过胸部扬声器提问，用户口头回答由耳挂式麦克风捕获。核心是 5 个锚定问题（Q1-Q5），每个问题作为动态分支的根节点，根据回答语义深度自主生成共情式追问（平均每位参与者 1 个自适应追问）。</li>
+<li><strong>PersonaSpec Generation</strong>：Google Cloud Speech-to-Text 转写后，提示底层 LLM 从三个专业视角（社会心理学家、行为经济学家、社会学家）评估文本，提取五类心理维度——Traits（HEXACO）、Values（Schwartz）、Motivation（SDT &amp; McClelland）、Orientations（RFT）、Policies（CAPS IF/THEN），最终输出结构化 JSON。</li>
+<li><strong>Dynamic Persona Activation</strong>：将 JSON 参数注入模块化系统提示，更新 LLM 智能体状态，并直接接口 TTS 与面部驱动端点。</li>
+</ol>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li><strong>锚定问题分支逻辑</strong>：例如 Q2（调节焦点）若用户关注结果则追问庆祝方式提取 <code>mcclelland_n_ach</code>，若关注团队则追问维持凝聚力的角色提取 <code>sdt_relatedness</code>。这保证了短对话内的高密度心理标记提取。</li>
+<li><strong>多视角验证</strong>：三个社会科学视角的并行评估用于抑制单一 LLM 视角的偏见，将自然对话的模糊性映射到严格的量表属性。</li>
+<li><strong>多模态混合</strong>：TTS 执行期间，轻量级 LLM 分类器推断情绪（joy、surprise 等），触发 Ameca 硬件运动学限定的面部动画序列；情感宏（如大笑）与语音 visemes 通过加权优先级连续混合，防止物理覆盖导致唇形失同步。</li>
+<li><strong>噪声鲁棒性</strong>：OpenAI 流式 API 允许边生成边处理；ASR 独立进程在机器人说话时暂停，带时间戳的事件转发解决重叠；迭代确认循环从部分转写中恢复。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>从静态提示到动态引导的范式转移</strong>：不是“换一个更好的提示词”，而是把用户本身变成人设生成的输入源。5 个锚定问题 + 动态分支的设计，在 4.5 分钟内提取出可量化的心理维度，这是对“人设工程”的重新定义。</li>
+<li><strong>文本人格到物理表达的闭环映射</strong>：首次将 HEXACO、Schwartz 价值观等抽象量表，通过情绪分类器与硬件动画库的加权混合，直接转化为 Ameca 的面部动画幅度、手势克制程度和 viseme 同步优先级。这解决了 LLM 文本输出与机器人运动学约束之间的鸿沟。</li>
+<li><strong>多视角 LLM 综合验证</strong>：用三个社会科学专业视角并行评估同一转写文本，比单一提示更接近“心理测量”的可靠性，且能捕捉到行为经济学层面的信号（如预防焦点用户在公共品博弈中的囤积倾向）。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<p>被试内设计（N = 25，年龄 21–54，M = 28.4，SD = 7.2），静态基线 vs. 完整 PACE 管线。地面真值通过两周间隔的两次问卷与行为任务建立。</p>
+<p><strong>人设保真度（Table II）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>Static Baseline</th>
+<th>PACE</th>
+<th>p 值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GSS 态度 Top-1 对齐率</td>
+<td>80.00</td>
+<td>88.00</td>
+<td>0.097</td>
+</tr>
+<tr>
+<td>社会场景 Top-1 对齐率</td>
+<td>73.33</td>
+<td>94.67</td>
+<td>0.001</td>
+</tr>
+<tr>
+<td>BFI-44 特质 Pearson r</td>
+<td>0.389</td>
+<td>0.939</td>
+<td>&lt; 0.001</td>
+</tr>
+<tr>
+<td>BFI-44 特质 MAE</td>
+<td>1.220</td>
+<td>0.128</td>
+<td>&lt; 0.001</td>
+</tr>
+<tr>
+<td>经济博弈货币决策 MAE</td>
+<td>1.800</td>
+<td>0.440</td>
+<td>&lt; 0.001</td>
+</tr>
+<tr>
+<td>二元决策匹配率</td>
+<td>88.00</td>
+<td>84.00</td>
+<td>0.317</td>
+</tr>
+</tbody>
+</table>
+<p><strong>具身 HRI 评估（Table III，5 点 Likert）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>Static Baseline</th>
+<th>PACE</th>
+<th>p 值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trust</td>
+<td>3.52 ± 0.61</td>
+<td>4.18 ± 0.49</td>
+<td>0.012</td>
+</tr>
+<tr>
+<td>Anthropomorphism</td>
+<td>3.28 ± 0.68</td>
+<td>4.05 ± 0.56</td>
+<td>0.008</td>
+</tr>
+<tr>
+<td>Persona consistency</td>
+<td>3.35 ± 0.64</td>
+<td>4.32 ± 0.43</td>
+<td>&lt; 0.001</td>
+</tr>
+<tr>
+<td>Persona relevance</td>
+<td>3.08 ± 0.72</td>
+<td>4.41 ± 0.46</td>
+<td>&lt; 0.001</td>
+</tr>
+<tr>
+<td>Overall quality</td>
+<td>3.46 ± 0.59</td>
+<td>4.26 ± 0.48</td>
+<td>0.004</td>
+</tr>
+</tbody>
+</table>
+<p>关键含义：BFI-44 相关性的巨大提升（0.389 → 0.939）证明 PACE 能精确复现个体特质；但二元决策匹配率无显著差异（p = 0.317），说明在囚徒困境这类策略性博弈中，人设对齐并未转化为行为预测优势。定性上，静态基线被批评为“脱节”，PACE 则让预防焦点用户生成囤积资源的机器人人设，镜像其风险姿态。</p>
+<h2 id="_7">边界与局限</h2>
+<ul>
+<li>系统依赖云端 ASR 与 LLM 推理，在声学噪声环境中转写错误和延迟会显著恶化，论文未明确给出噪声容忍阈值。</li>
+<li>4.5 分钟引导对话无法捕捉数周或数月内的长期偏好漂移，高度情境依赖的行为变异可能被压缩。</li>
+<li>具身表达层依赖预定义的 7 种基本情绪面部动画库，该字典有限，无法覆盖细微的社交信号（如尴尬、讽刺）。</li>
+<li>二元决策匹配率无显著提升，暗示 PACE 在策略性互动场景中的行为预测能力存在边界。</li>
+<li>论文未明确报告流式 API 在真实网络抖动下的端到端延迟分布。</li>
+</ul>
+<h2 id="_8">工程启示</h2>
+<p>复现时先核对三件事：<strong>ASR 的噪声鲁棒性</strong>（建议在机器人发声时强制暂停识别，并验证时间戳对齐逻辑）；<strong>情绪分类器的延迟预算</strong>（必须在 TTS 执行窗口内完成推断，否则动画会滞后）；<strong>硬件动画库的优先级权重</strong>（大笑等宏动作必须显式降权，否则 viseme 同步会崩溃）。</p>
+<p>最容易踩坑的是“多视角 LLM 综合”的提示设计——三个视角的输出如果不做一致性校验，会引入比单视角更大的方差。建议先在小样本上验证 PersonaSpec JSON 的字段覆盖率，再接入动态分支逻辑。对于下游团队，如果目标是行为预测（如经济博弈），PACE 的收益有限；如果目标是信任与拟人感，则收益显著（Trust 提升 0.66，Anthropomorphism 提升 0.77）。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.15579</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_task_planning/">任务规划</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p12_3_2/">人机交互与可解释性</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_pace_persona_adaptation_through_conversa_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_task_planning/">
+          <span class="entry-type">方法</span>
+          <h3>任务规划</h3>
+          <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>人机交互与可解释性</h3>
+          <p>- P12.3.2.1 输入梳理与目标量化 - 整理「人机交互与可解释性」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">三阶段架构</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

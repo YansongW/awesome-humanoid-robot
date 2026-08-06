@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Few Words Go a Long Way: Language Guided Robot Policy Synthesis · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</h1>
+      <p class="entry-name-en">A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>While vision-language-action models have demonstrated impressive zero-shot manipulation capabilities, they remain fundamentally black box policies that are difficult to interpret, adapt, or correct when they inevitably fail. In this work, we propose ARCHITECT, a framework that treats robot policy acquisition as an interactive program synthesis task. ARCHITECT leverages the reasoning capabilities.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.23784" target="_blank" rel="noopener">arXiv:2607.23784 A Few Words Go a Long Way: Language Guided Robot Policy Synthesis</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ARCHITECT는 로봇 정책 획득을 인터랙티브 코드 합성 작업으로 재구성하는 프레임워크로, LLM이 오케스트레이션 에이전트로 작동하여 이기종 도구 모음을 호출해 실행 가능한 프로그램을 생성하고, 인간의 자연어 교정을 통해 정책을 반복적으로 개선합니다. 핵심 기여는 블랙박스 VLA 정책을 해석 가능하고 수정 가능한 프로그램으로 대체하여, 로봇 특화 훈련 데이터 없이 언어 피드백만으로도 작업 간 기술 재사용을 가능하게 한다는 점입니다.</p>
+<h2 id="_2">무엇을 바꾸는가</h2>
+<p>VLA 모델의 근본적인 문제는 정확성이 아니라 수정 불가능성입니다. 정책이 실패했을 때, 사용자는 설명할 수 없고 부분 조정이 불가능한 블랙박스를 마주하게 되며, 더 많은 데모를 수집하고 재훈련하는 수밖에 없는데 이는 실제 시나리오에서 거의 불가능합니다. ARCHITECT는 이 패러다임을 바꿉니다. 정책을 "학습된 가중치"에서 "작성된 코드"로 전환하여 실패를 위치 추적 가능하고 대화 가능하며 수리 가능한 사건으로 만듭니다. 이 전환의 의미는 로봇 디버깅을 머신러닝 전문가의 영역에서 일반 사용자의 자연어 상호작용 범주로 끌어내린다는 점입니다.</p>
+<p>또 다른 핵심 변화 지점은 "사양 격차"입니다. 기존 모듈식 접근법은 초기 자연어 명령이 작업의 모든 기하학적·물리적 세부 사항을 설명하기에 충분하다고 가정하지만, 현실에서 "바나나를 접시에 놓아라"라는 문장은 턱없이 부족합니다. ARCHITECT는 인간이 루프에 참여하는 언어 교정을 통해 이 격차를 메우며, 모호한 의도를 한 번의 명령으로 모든 상황을 커버하려 하지 않고 실행 가능한 프로그램 제약 조건으로 점진적으로 정제합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 프로세스</h3>
+<ol>
+<li>자연어 명령을 파싱하여 시스템 프롬프트에 임베딩</li>
+<li>LLM이 최상위 프로그램을 생성하며, 먼저 <code>list_primitives()</code>를 호출해 사용 가능한 API를 확인하도록 강제</li>
+<li><code>query_robot_state()</code>, <code>get_scene_description()</code>을 순차 실행하여 환경 인식</li>
+<li>필요에 따라 인식 함수 호출 (<code>detect_objects()</code>, <code>get_placement_pose()</code>)</li>
+<li>하위 작업 식별 후 <code>write_primitive()</code>를 호출하여 명명된 프리미티브로 등록</li>
+<li><code>submit_program()</code>을 호출하여 실행 제출</li>
+<li>실패 감지 또는 에피소드 종료 시, 인간이 언어 교정 제공</li>
+<li>교정을 스킬로 합성하여 스킬 라이브러리에 추가하고, 정책 재생성</li>
+</ol>
+<h3 id="_5">도구 모음 설계</h3>
+<ul>
+<li><strong>제어 프리미티브</strong>: <code>set_gripper_width()</code> (폭 범위 0.0–0.085 m), <code>move_ee_to_pose()</code>, <code>move_ee_guarded()</code> (예시 파라미터 <code>distance=-0.25, force_threshold=5.0 N</code>)</li>
+<li><strong>인식 도구</strong>: <code>detect_objects()</code>는 Grounded SAM2 분할과 AnyGrasp 그랩 샘플링을 체이닝; <code>get_placement_pose()</code>는 AnyPlace 기반; <code>get_vqa_response()</code>는 GPT-5.4 기반; <code>get_keypoints()</code>는 DIFT 기반; <code>get_keypoints_trajectory()</code>는 ReKep 기반</li>
+<li><strong>고유수용감각 도구</strong>: <code>verify_grasp()</code>는 2단계 검증으로, 먼저 고유수용감각 게이팅 후 VLM 확인</li>
+</ul>
+<h3 id="_6">스킬 라이브러리 메커니즘</h3>
+<p>코드 생성 전마다 축적된 모든 스킬이 컨텍스트에 로드됩니다. 스킬에는 사용 가이드, 코드 예시, 규칙 파라미터가 포함되며, 예를 들어 "Guarded Place on Surface" 스킬은 인간 교정 텍스트("계속 아래로 이동하여 선반에 닿을 때까지")를 <code>move_ee_guarded(axis="z", distance=-0.25, force_threshold=5.0)</code>의 실행 가능한 규칙으로 변환합니다.</p>
+<h3 id="_7">강제 워크플로우 제약</h3>
+<p>시스템 프롬프트는 프로그램이 반드시 <code>submit_program()</code>을 호출하여 제출해야 하며, 텍스트 형태로 프로그램을 출력하는 것과 import를 금지하고, 의미 있는 각 하위 작업은 프리미티브로 등록해야 한다고 요구합니다. 기본적으로 VQA 검증-재시도 모드를 사용합니다. 고유수용감각만으로 성공을 확인할 수 없는 하위 작업은 실행 후 <code>get_vqa_response()</code>로 예/아니오 질문을 하고, 부정이면 파라미터를 조정하여 한 번 재시도합니다.</p>
+<h2 id="_8">핵심 혁신</h2>
+<p><strong>1. 언어 교정을 사후 조치가 아닌 일급 시민으로 취급</strong>: 기존 방법은 초기 명령에 전적으로 의존하거나 재훈련이 필요합니다. ARCHITECT는 인간 교정을 직접 실행 가능한 스킬로 변환하여 스킬 라이브러리에 영속화함으로써, 매 실패를 일회성 패치가 아닌 장기적으로 재사용 가능한 지식 축적으로 만듭니다. 이는 본질적으로 컨텍스트 학습을 "예시"에서 "상호작용 이력"으로 확장하는 것입니다.</p>
+<p><strong>2. 프로그램 합성과 도구 호출의 구조적 제약</strong>: 워크플로우 단계(먼저 인식, 그다음 계획, 마지막 실행)를 강제하고 평면적 API 호출 목록을 금지함으로써, LLM이 명확한 하위 작업 경계를 가진 프로그램을 생성하도록 강제합니다. 이러한 구조적 사전 지식은 실패 위치 추적을 가능하게 합니다. 즉, 전체가 실패한 블랙박스를 마주하는 대신 어느 코드 줄이나 도구 호출에 문제가 있는지 정확히 지적할 수 있습니다.</p>
+<p><strong>3. 스킬 라이브러리를 장기 컨텍스트 학습으로 활용</strong>: 모든 스킬이 코드 생성 전마다 컨텍스트에 로드되며, 이는 무한 길이 메모리 메커니즘에 해당합니다. 이를 통해 작업 간 전이가 가능해집니다. 인간 평가에서 작업 1 스킬 라이브러리를 로드한 후 작업 2 성공률이 0/6에서 4/6로 상승하여, 언어 교정의 축적이 시나리오 간 일반화 능력을 가짐을 입증합니다.</p>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="1-8-10-5-400">주요 벤치마크 (표 1, 8개 작업 × 10 에피소드 × 5개 방법, 총 400회 롤아웃)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>CaP SR</th>
+<th>π₀ SR</th>
+<th>π₀.₅ SR</th>
+<th>ARCHITECT-VLM SR</th>
+<th>ARCHITECT-HiTL SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Banana → plate</td>
+<td>.20</td>
+<td>.80</td>
+<td>.90</td>
+<td>.80</td>
+<td>.80</td>
+</tr>
+<tr>
+<td>Block → basket</td>
+<td>.40</td>
+<td>.40</td>
+<td>1.0</td>
+<td>.70</td>
+<td>.70</td>
+</tr>
+<tr>
+<td>Baseball → bucket</td>
+<td>.60</td>
+<td>.00</td>
+<td>.20</td>
+<td>.40</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Apple, Bread → bowl</td>
+<td>.10</td>
+<td>.40</td>
+<td>.40</td>
+<td>.00</td>
+<td>.80</td>
+</tr>
+<tr>
+<td>Pick bread from box</td>
+<td>.10</td>
+<td>.40</td>
+<td>.40</td>
+<td>.00</td>
+<td>.70</td>
+</tr>
+<tr>
+<td>Close drawer</td>
+<td>.00</td>
+<td>.10</td>
+<td>.00</td>
+<td>.40</td>
+<td>.90</td>
+</tr>
+<tr>
+<td>Fold cloth into triangle</td>
+<td>.00</td>
+<td>.00</td>
+<td>.00</td>
+<td>.70</td>
+<td>.80</td>
+</tr>
+<tr>
+<td>Banana under cloth</td>
+<td>.00</td>
+<td>.10</td>
+<td>.00</td>
+<td>.00</td>
+<td>.80</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">추가 베이스라인 (표 2)</h3>
+<p>ARCHITECT는 8개 전체 작업에서 Inner Monologue, ProgPrompt, MolmoAct2, GR00T N1.7을 능가합니다. GR00T N1.7은 banana → plate에서만 비제로 성공률(0.40)을 보였고, MolmoAct2는 해당 작업에서 ARCHITECT와 동률이었지만 나머지 작업에서는 모두 뒤처졌습니다.</p>
+<h3 id="b-apple-pan">언어 절제 실험 (부록 B, Apple → pan 작업)</h3>
+<p>ARCHITECT는 15개 언어 변형에서 1.0 SR을 유지했으며, "Length long" 변형만 .00 SR(GCR .80)로 떨어졌습니다. π₀.₅는 표현에 매우 민감하여 "Take the apple and place it onto the pan.", "Move the apple onto the pan.", "Onto the pan, place the apple." 등의 변형에서 SR이 .00으로 하락했습니다.</p>
+<h3 id="n6">인간 평가 (N=6)</h3>
+<p>시행당 평균 쿼리 수가 4.67에서 0.83으로 감소(Δ=3.83, p=0.036)했으며, 3/6 참가자가 0회 교정을 필요로 했습니다. 스킬 없이 작업 2 성공률은 0/6이었으나, 작업 1 스킬 라이브러리를 로드한 후 SR은 4/6로 상승했습니다. 1회 교정을 제공한 3명 중 2명은 제로샷으로 작업 2에 실패했고, 2회 이상 교정한 3명은 모두 성공했습니다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<p><strong>주요 실패 모드는 그랩</strong>: 선택된 기성 그랩 생성 모듈(AnyGrasp)에서 비롯되며, 그랩 샘플러 노이즈로 인해 그랩 성공이 교정되지 않으면 스킬 라이브러리에 향후 그랩 실패를 교정할 스킬이 부족할 수 있습니다. 이는 ARCHITECT의 상한이 LLM이나 프로그램 합성 능력이 아닌 하위 인식 모듈의 품질에 의해 제한됨을 의미합니다.</p>
+<p><strong>깊이 추정이 부정확할 때 배치 자세 결정이 어려움</strong>: 예를 들어 버킷에 물건을 넣을 때 너무 높이 들어 올릴 수 있으며, 이는 하위 모듈의 한계로 사용자 교정으로 해결할 수 있지만 상호작용 횟수가 늘어납니다.</p>
+<p><strong>cuRobo 운동 계획 실패</strong>: 목표 자세에 대한 충돌 없는 궤적을 생성할 수 없을 때 ARCHITECT는 계획 오류에 직면하며, 논문은 이 경우의 처리 전략을 명시하지 않았습니다.</p>
+<p><strong>교정 횟수가 핵심 변수</strong>: 1회 교정을 제공한 참가자는 추가 교정 없이 작업 2를 완료하지 못했으며, 이는 유용한 스킬 라이브러리를 구축하려면 충분한 교정 축적이 필요함을 시사합니다. 논문은 교정 품질이 정책에 미치는 영향을 연구하지 않았으며, 로봇 특화 미세 조정이나 데모 데이터 사용도 수행하지 않았습니다.</p>
+<h2 id="_11">공학적 시사점</h2>
+<p><strong>재현 시 먼저 인식 모듈의 결정성을 확인하라</strong>: ARCHITECT의 성능은 AnyGrasp의 그랩 샘플링과 AnyPlace의 배치 예측에 크게 의존합니다. 이러한 모듈이 하드웨어에서 불안정하게 작동하면 전체 프레임워크의 성공률이 현저히 떨어집니다. 전체 파이프라인을 연결하기 전에 <code>detect_objects()</code>와 <code>get_placement_pose()</code>가 시나리오에서 신뢰할 수 있는지 개별적으로 검증하는 것이 좋습니다.</p>
+<p><strong>스킬 라이브러리 축적 전략이 작업 간 일반화에 직접적 영향을 미침</strong>: 인간 평가에서 교정 횟수가 2회 미만인 참가자는 구조적으로 유사한 새 작업을 제로샷으로 완료하지 못했습니다. 이는 실제 배포에서 각 새 작업에 대해 최소 2-3회의 교정을 준비해야 하며, 그렇지 않으면 스킬 라이브러리가 전이를 지원하기에 부족할 수 있음을 의미합니다.</p>
+<p><strong>가장 함정에 빠지기 쉬운 부분은 <code>move_ee_guarded()</code>의 힘 임계값</strong>: 논문에서 제시한 5.0 N은 단단한 표면에 적합하며, 부드러운 표면에서는 약간 증가시켜야 합니다. 대상 물체나 접촉면 재질이 변하면 이 파라미터를 재보정해야 하며, 그렇지 않으면 배치 실패나 물체 손상이 발생할 수 있습니다.</p>
+<p><strong>언어 절제 실험 결과는 VLA의 취약성이 예상보다 훨씬 크다는 것을 시사</strong>: π₀.₅는 "Move the apple onto the pan."과 같은 무해해 보이는 변형에서 SR이 1.0에서 .00으로 급락한 반면, ARCHITECT는 1.0을 유지했습니다. 하류 팀이 VLA 방안을 평가 중이라면 단일 명령 템플릿만 검증하지 말고 다양한 표현으로 테스트해야 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_huang_rekep_spatio_temporal_reasonin_2024/">ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_few_words_go_long_way_language_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">방법</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_huang_rekep_spatio_temporal_reasonin_2024/">
+          <span class="entry-type">논문</span>
+          <h3>ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</h3>
+          <p>ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 프로세스</a></li>
+<li><a href="#_5">도구 모음 설계</a></li>
+<li><a href="#_6">스킬 라이브러리 메커니즘</a></li>
+<li><a href="#_7">강제 워크플로우 제약</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#1-8-10-5-400">주요 벤치마크 (표 1, 8개 작업 × 10 에피소드 × 5개 방법, 총 400회 롤아웃)</a></li>
+<li><a href="#2">추가 베이스라인 (표 2)</a></li>
+<li><a href="#b-apple-pan">언어 절제 실험 (부록 B, Apple → pan 작업)</a></li>
+<li><a href="#n6">인간 평가 (N=6)</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

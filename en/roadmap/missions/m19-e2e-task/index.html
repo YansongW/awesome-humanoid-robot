@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M19 · End-to-End Task Integration: Hear the Command, Walk Over, Pick It Up · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M19 · End-to-End Task Integration: Hear the Command, Walk Over, Pick It Up</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m19-end-to-end-task-integration-hear-the-command-walk-over-pick-it-up">M19 · End-to-End Task Integration: Hear the Command, Walk Over, Pick It Up</h1>
+<p><strong>Global Position</strong>: After both M14 Walking Deployment and M18 Grasping Strategy have passed. The input consists of subsystems that have individually passed unit tests (command, navigation, detection, grasping, placement). The output is an end-to-end system (Stage 3 overall acceptance criterion) where the "command → navigation → grasping" full chain succeeds ≥7 times out of 10 consecutive trials, with each trial ≤2 minutes. M20 will add reliability and safety shells to this system.</p>
+<p><strong>Prerequisites</strong>: <a href="/en/roadmap/missions/m18-imitation-learning/">M18 · Imitation Learning Training and Deployment</a> meets the standard (fixed-protocol grasping success rate ≥70%, clipping and degradation are effective); <a href="/en/roadmap/missions/m14-sim-to-real/">M14 · Sim-to-Real Deployment</a> meets the standard (stable walking on flat ground + communication watchdog graded activation); M16 localization stack is available (SLAM mapping and online localization); <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> node topology and interfaces are frozen.</p>
+<p>Theoretical Background: The end-to-end task chain is the final assembly of perception, planning, learning strategies, and middleware. A systematic discussion can be found in <a href="/en/wiki/chapters/chapter-24/">Chapter 24: End-to-End Software Stack</a> and <a href="/en/wiki/chapters/chapter-22/">Chapter 22: Software Middleware</a>; the command layer and VLA are covered in <a href="/en/wiki/chapters/chapter-19/">Chapter 19: VLA</a>, and the manipulation segment is covered in <a href="/en/wiki/chapters/chapter-16/">Chapter 16: Manipulation and Grasping</a>.</p>
+<h2 id="step-1-task-decomposition-and-state-machinetest-segments-individually-first-then-the-full-chain">Step 1: Task Decomposition and State Machine—Test Segments Individually First, Then the Full Chain</h2>
+<p>[What to Do] Freeze the task into a five-segment pipeline. For each segment, clearly define the four elements: <strong>Input / Output / Timeout / Failure Exit</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Input</th>
+<th>Output</th>
+<th>Timeout (Engineering Suggested Value)</th>
+<th>Failure Exit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Command Parsing</td>
+<td>Text/Voice</td>
+<td>Target Object + Target Location</td>
+<td>5 s</td>
+<td>Ask back/Report error, wait for resend</td>
+</tr>
+<tr>
+<td>2 Navigation to Table</td>
+<td>Target Standing Point</td>
+<td>Arrival (Dual Threshold Criterion)</td>
+<td>60 s</td>
+<td>Replan ≤2 times → Stand still in place and report error</td>
+</tr>
+<tr>
+<td>3 Detection and Localization</td>
+<td>RGB-D Frame</td>
+<td>Object 6D Pose</td>
+<td>10 s</td>
+<td>Redetect ≤2 times → Return to Segment 2 for a small step reposition</td>
+</tr>
+<tr>
+<td>4 Grasping</td>
+<td>Object Pose</td>
+<td>Gripper Closed + Confirmation Signal</td>
+<td>30 s</td>
+<td>Retract wrist and reset → Return to Segment 3</td>
+</tr>
+<tr>
+<td>5 Placement Confirmation</td>
+<td>Target Placement Point</td>
+<td>Placement + Verification</td>
+<td>30 s</td>
+<td>Placement fails → Keep holding and report error</td>
+</tr>
+</tbody>
+</table>
+<p>Implement using a state machine or behavior tree (see <a href="/en/wiki/chapters/chapter-24/">Chapter 24</a> for selection and software stack organization). Each segment should first pass individual tests in simulation or static scenes before being integrated into the full chain.</p>
+<p>[Why] The end-to-end task is a cross-validation of all subsystems. Segmented observability is necessary to locate the failing segment (original text from Stage 3 overview). Without an explicit state machine, a "monolithic script" makes it impossible to identify which segment failed; timeouts and failure exits are prerequisites for the system to "report errors safely" rather than "run amok"—Step 5's failure injection test specifically examines this.</p>
+<p>[How to Analyze Your Situation] Walking is not yet stable enough: According to the pragmatic advice from Stage 3, first run the Segment 3–5 closed loop with a "fixed stance + tabletop grasping" approach, and unlock Segment 2 last. Don't pursue a perfect framework for the state machine implementation: a Python state machine script with logging is better than a heavy behavior tree that never runs.</p>
+<h2 id="step-2-command-layerstart-with-fixed-phrases-vla-only-for-scheduling">Step 2: Command Layer—Start with Fixed Phrases, VLA Only for Scheduling</h2>
+<p>[What to Do] Three levels from simple to complex, choose based on acceptance requirements:</p>
+<ol>
+<li><strong>Fixed Phrase Text</strong> (Starting point, default for acceptance): Input "go to the table and grab the cup" in the terminal, template parsing yields "target object=cup, target location=table standing point A";</li>
+<li><strong>ASR Voice</strong> (Optional enhancement): Voice-to-text followed by the same template parsing; ask back if recognition confidence is low;</li>
+<li><strong>VLA Scheduling</strong> (Advanced): Introduce <a href="/entry/ent_method_openvla/">OpenVLA</a>, <a href="/entry/ent_method_pi0/">π0</a>, or <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a> for open-vocabulary command parsing and skill scheduling—but <strong>the underlying grasping is still executed by the M18 strategy</strong> (Stage 3 pragmatic route: VLA is responsible for "understanding", the dedicated strategy is responsible for "grasping").</li>
+</ol>
+<p>[Why] Under personal data and computational constraints, the real-robot success rate and latency of VLA directly outputting full-body actions cannot yet support the acceptance protocol; after decoupling "understanding the command" from "successful grasping", the two segments can iterate and be accepted independently. Positioning of the three cards: OpenVLA is trained on open-source data from <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a>, π0 is a versatile strategy pre-trained across multiple embodiments, and GR00T N1 is NVIDIA's general-purpose foundation model for humanoids (see each card and <a href="/en/wiki/chapters/chapter-19/">Chapter 19</a> for details).</p>
+<p>[How to Analyze Your Situation] No GPU cluster: OpenVLA public weights + LoRA fine-tuning on self-collected data is the lowest-barrier entry point (Stage 3 Step 11 suggestion). Just want to pass acceptance: Level 1 is sufficient; focus your energy on the success rates of Segments 2–4. For the edge-side latency budget of VLA inference, see <a href="/en/roadmap/missions/m18-imitation-learning/">M18</a> Step 5 and the <a href="/en/roadmap/playbooks/compute-selection/">Computing Platform Selection Guide</a>.</p>
+<h2 id="step-3-navigation-segmentreuse-m16-localization-stack-interface-with-m14-walking">Step 3: Navigation Segment—Reuse M16 Localization Stack, Interface with M14 Walking</h2>
+<p>[What to Do]</p>
+<ol>
+<li><strong>Mapping and Localization</strong>: Use M16's SLAM stack for offline mapping and online localization (sensor configuration see Stage 3 Perception Stack section; background on localization sensors see <a href="/en/wiki/chapters/chapter-05/">Chapter 5: Sensing</a>);</li>
+<li><strong>Standing Point Calibration</strong>: Table-side operation standing points are <strong>calibrated offline manually</strong> and written into the map (standing points facing the table, with the end-effector reachable to the cup); do not calculate online in real-time;</li>
+<li><strong>Walking Interface</strong>: Path planning outputs velocity/target commands to the M14 walking strategy; the walking segment is only responsible for "arriving at the point", fine alignment is left to Segment 3's vision;</li>
+<li><strong>Arrival Criterion</strong>: <strong>Dual thresholds</strong> for position error and orientation error (e.g., ≤10 cm and ≤10°, engineering suggested values, to be verified against your operation precision); both must be met for Segment 2 to be considered complete.</li>
+</ol>
+<p>[Why] Offline calibration of standing points is the cheapest way to keep "insufficient navigation accuracy" out of the door: the arrival accuracy required for operation (centimeter-level) is often higher than what SLAM localization can stably achieve. Both thresholds are indispensable: if the position is reached but the orientation is off by 20°, the end-effector workspace may not even cover the cup.</p>
+<p>[How to Analyze Your Situation] Fixed room, short route: RGB-D odometry is sufficient (Stage 3 Step 5 scope); use LiDAR for cross-room scenarios. How to determine the arrival threshold: measure the robot's limit position where it can "just barely grab the cup"—if set too large, Segment 4 takes the blame; if set too small, Segment 2 never converges.</p>
+<h2 id="step-4-manipulation-segmentdetection-grasping-confirmation-stand-still-before-acting">Step 4: Manipulation Segment—Detection, Grasping, Confirmation, Stand Still Before Acting</h2>
+<p>[What to Do] Details of the Segment 3–5 closed loop:</p>
+<ol>
+<li><strong>Detection and Localization</strong>: <a href="/entry/ent_component_rgbd_camera/">RGB-D Camera</a> detects the cup and outputs a 6D pose (Stage 3 criterion: 3D localization error ≤1 cm);</li>
+<li><strong>Grasping Execution</strong>: The pose is passed to the M18 strategy (learning-based route) or IK + planning primitives (traditional route, <a href="/entry/ent_method_inverse_kinematics/">Inverse Kinematics</a>), executing approach—close—lift;</li>
+<li><strong>Grasping Confirmation</strong>: Two out of three signals—gripper current (load detected), equivalent weight (current/force estimation after lifting), camera visual verification;</li>
+<li><strong>Mutual Exclusion Rule</strong>: Walking and manipulation are strictly mutually exclusive—only after arriving and stopping stably (velocity zero + posture stable for 1 s, engineering suggested value) is the manipulation segment allowed to start; the chassis command is locked during manipulation;</li>
+<li><strong>Failure Retry</strong>: Occasional detection failures allow in-place retries ≤2 times; if still failing, follow the state machine failure exit.</li>
+</ol>
+<p>[Why] The confirmation signal is the referee for "whether the grasp was successful": without it, the system would treat an "empty grasp" as a success and continue, inflating the full-chain success rate. The walking-manipulation mutual exclusion comes from physics: a humanoid has no fixed base, and the reaction torque from reaching can disturb balance (Stage 3 common pitfall: "whole-body shaking and falling during reaching"); standing still before operation is a standard trade-off for the first robot. Retries ≤2 times are a statistical trade-off: one retry for occasional failures can recover most cases, while retrying structural failures is useless.</p>
+<p>[How to Analyze Your Situation] When M18 strategy and IK primitives coexist, run 20 trials each and compare success rates; use the one with the higher rate—learning strategies are more robust for in-distribution scenarios, while IK primitives are more honest for out-of-distribution positions. If one confirmation signal is missing (e.g., no wrist camera): current + weight dual criteria are sufficient, but mark the confirmation confidence in the log.</p>
+<h2 id="step-5-full-chain-integration-and-failure-injection-time-to-find-bottlenecks-inject-faults-to-verify-degradation">Step 5: Full Chain Integration and Failure Injection – Time to Find Bottlenecks, Inject Faults to Verify Degradation</h2>
+<p>【What to Do】</p>
+<ol>
+<li><strong>Segmented Timing</strong>: Record the time consumption of each segment during each trial to identify bottlenecks (navigation is usually the time-consuming part); target total single trial duration ≤2 min (Stage 3 criterion);</li>
+<li><strong>Failure Injection Testing</strong>: Artificially create anomalies – occlude the camera, move the cup midway, send illegal commands, place obstacles on the navigation path – and observe whether the system <strong>safely reports errors and stops in a defined state</strong>, rather than running wild, waiting indefinitely, or silently continuing;</li>
+<li><strong>Log Aggregation</strong>: Store the input summary, output, time consumption, and failure reason for each segment in a database (<a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> bag or structured logs), and generate a one-click report after 10 trials (segment success rate × full chain success rate matrix).</li>
+</ol>
+<p>【Why】When each segment works correctly but the full chain fails, it is a classic death scenario for integration tasks, with the cause almost always being interface assumptions (coordinate systems, units, timestamp bases, frame rates); segmented timing and logs make interface issues visible. Failure injection is an introductory action in safety engineering: the system's default behavior for "unseen anomalies" must be a safe state – this is a rehearsal for the M20 FMEA.</p>
+<p>【How to Analyze Your Situation】When the full chain does not meet the standard, do not rush to modify any segment: first look at the report matrix – if failures are concentrated in one segment, fix that segment; if failures are scattered across segments, prioritize fixing segments with unclean failure exits (if the system cannot even "fail gracefully", discussing success rates is meaningless). For the coordinate system, always use the TF tree; only pass "poses in the map frame" between segment interfaces, not local coordinates.</p>
+<h2 id="step-6-acceptance-rehearsal-follow-the-formal-process-according-to-stage-3-criteria">Step 6: Acceptance Rehearsal – Follow the Formal Process According to Stage 3 Criteria</h2>
+<p>【What to Do】Conduct a complete acceptance test according to the formal protocol and archive the results: 10 consecutive trials (objects and positions arranged according to a fixed checklist, commands using fixed sentence patterns), record the success/failure, total duration, failed segment, and failure reason for each trial; record the entire process on video (head camera view + third-person view). The criterion is the Stage 3 overall acceptance: <strong>success ≥7 times, single trial ≤2 minutes</strong>. For each failure, write a root cause analysis (which segment, what type of failure, what to change next), and archive it together with the video as a report.</p>
+<p>【Why】The value of the acceptance rehearsal is not in "passing", but in leaving a reproducible baseline: after M20, every change (model swap, firmware update, structural part change) must be re-run using the same protocol so that numbers can be compared horizontally. The video is the only evidence that can be "reviewed after the fact" – if the root cause analysis says "segment 3 detection failed", the video allows you to verify this judgment three months later.</p>
+<p>【How to Analyze Your Situation】Barely passing (7/10): Perform one round of root cause analysis for the 3 failures before declaring completion – a system that barely passes cannot withstand the regression of changes in M20. If the results of two acceptance tests differ by &gt;2 trials: check environmental variables (lighting, battery level, floor), and also write the acceptance conditions into the protocol to fix them.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] Five-segment state machine documented: each segment has complete input/output/timeout/failure exit elements, and segment-level single test records are archived.</li>
+<li>[ ] Command layer runs through according to the selected gear (fixed sentence pattern as the default gear), with safe exits for illegal commands.</li>
+<li>[ ] Arrival criterion dual-threshold calibrated through actual testing; navigation segment time consumption and success rate included in the report.</li>
+<li>[ ] Grasp confirmation signal ≥2 channels; walk-manipulation mutual exclusion rule verified on the actual robot.</li>
+<li>[ ] Failure injection test passed: system reports errors safely under occlusion/moving objects/illegal commands, with no running wild or deadlock.</li>
+<li>[ ] Formal acceptance: 10 consecutive trials with success ≥7, single trial ≤2 min, video and root cause analysis report documented.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Each segment correct, full chain fails</td>
+<td>Inconsistent interface assumptions (coordinate system/units/timestamps)</td>
+<td>Only pass map-frame poses between segments; print the units and coordinate system of each segment's input/output</td>
+</tr>
+<tr>
+<td>System runs wild after a segment fails</td>
+<td>That segment has no failure exit or the exit is not implemented</td>
+<td>Go back to Step 1 state machine table and check segment by segment; reproduce with failure injection</td>
+</tr>
+<tr>
+<td>Navigation time exceeds budget</td>
+<td>Conservative path planning / walking speed not released / re-planning infinite loop</td>
+<td>Locate with segmented timing; release speed and retest; cap the number of re-plannings</td>
+</tr>
+<tr>
+<td>Intermittent detection failures drag down success rate</td>
+<td>Lighting sensitivity / view blind spots / calibration drift</td>
+<td>Fix acceptance lighting; add visual verification retry; recalibrate extrinsic parameters</td>
+</tr>
+<tr>
+<td>State machine deadlock (two segments waiting for each other)</td>
+<td>State transition condition written as a circular wait</td>
+<td>Add timeouts to all waits; draw a state transition diagram to check for loops</td>
+</tr>
+<tr>
+<td>Unintended operation during walking causes shaking</td>
+<td>Mutual exclusion rule not effective</td>
+<td>Check the mutual exclusion flag; add a "stationary for 1 s" condition to the arrival criterion</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous task: <a href="/en/roadmap/missions/m18-imitation-learning/">M18 · Imitation Learning Training and Deployment</a></li>
+<li>Next task: <a href="/en/roadmap/missions/m20-reliability-safety/">M20 · Reliability, Maintenance, and Safety Engineering</a></li>
+<li>Theoretical background: <a href="/en/wiki/chapters/chapter-19/">Chapter 19 VLA</a>, <a href="/en/wiki/chapters/chapter-24/">Chapter 24 End-to-End Software Stack</a>, <a href="/en/wiki/chapters/chapter-25/">Chapter 25 Robot Evaluation System</a></li>
+<li><a href="/en/roadmap/stage-3-humanoid/">Stage 3 Overview</a> · <a href="/en/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m18-imitation-learning/">← Previous<span>M18 · Imitation Learning Training and Deployment: 50 Demonstrations Yield a Cup-Grasping Policy</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m20-reliability-safety/">Next →<span>M20 · Reliability, Maintenance, and Safety Engineering: Making Machines Last Longer and People Feel Safe to Approach</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m19-end-to-end-task-integration-hear-the-command-walk-over-pick-it-up">M19 · End-to-End Task Integration: Hear the Command, Walk Over, Pick It Up</a><ul>
+<li><a href="#step-1-task-decomposition-and-state-machinetest-segments-individually-first-then-the-full-chain">Step 1: Task Decomposition and State Machine—Test Segments Individually First, Then the Full Chain</a></li>
+<li><a href="#step-2-command-layerstart-with-fixed-phrases-vla-only-for-scheduling">Step 2: Command Layer—Start with Fixed Phrases, VLA Only for Scheduling</a></li>
+<li><a href="#step-3-navigation-segmentreuse-m16-localization-stack-interface-with-m14-walking">Step 3: Navigation Segment—Reuse M16 Localization Stack, Interface with M14 Walking</a></li>
+<li><a href="#step-4-manipulation-segmentdetection-grasping-confirmation-stand-still-before-acting">Step 4: Manipulation Segment—Detection, Grasping, Confirmation, Stand Still Before Acting</a></li>
+<li><a href="#step-5-full-chain-integration-and-failure-injection-time-to-find-bottlenecks-inject-faults-to-verify-degradation">Step 5: Full Chain Integration and Failure Injection – Time to Find Bottlenecks, Inject Faults to Verify Degradation</a></li>
+<li><a href="#step-6-acceptance-rehearsal-follow-the-formal-process-according-to-stage-3-criteria">Step 6: Acceptance Rehearsal – Follow the Formal Process According to Stage 3 Criteria</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

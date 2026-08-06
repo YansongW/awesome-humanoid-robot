@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors</h1>
+      <p class="entry-name-en">TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>TrustVLA 是一种针对视觉-语言-动作（VLA）模型后门攻击的推理时防御框架，由作者团队提出。它基于对 BadVLA 和 INFUSE 两种攻击内部机制的观察，利用 Dirichlet 证据框架监控逐 token、逐层的认知不确定性，实现无需重训练的检测、定位与局部修复。核心贡献在于将后门防御从经验性输入扰动或参数修复，转向机制引导的因果干预。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12571" target="_blank" rel="noopener">arXiv:2607.12571 TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 防御面临一个根本困境：输入级扰动（JPEG、高斯噪声）不加区分地破坏整个观测，参数级修复（ΔW Auditing、Fine-Pruning）则往往以牺牲干净能力为代价，且两者都无法回答"哪个像素区域导致了不安全动作"这一关键问题。作者识别出被投毒 VLA 内部一个重复出现的机制——紧凑因果足迹，即触发区域在深层注意力中被提升、同时压缩空间不确定性分布。这一发现将防御问题从"如何过滤异常输入"转变为"如何在表示层面定位并因果验证异常来源"。</p>
+<p>TrustVLA 真正改变的是防御的粒度与可解释性：它不再把后门视为需要整体清洗的污染，而是视为可在单个观测内定位、掩码并修复的局部因果结构。这使得干净帧仅需支付轻量检测成本，只有被标记的高风险帧才触发完整的定位与修复流程，在保持干净性能的同时显著降低防御开销。</p>
+<h2 id="_2">方法拆解</h2>
+<p>TrustVLA 的推理时防御流程分为三个阶段，全部基于冻结的 VLA 检查点，不引入额外训练。</p>
+<h3 id="_3">证据参数化与不确定性监控</h3>
+<ul>
+<li>对第 l 层隐藏状态 h^(l)，通过语言模型头投影得到逐类证据：e_k^(l) = exp((W_out h^(l))_k)</li>
+<li>Dirichlet 浓度参数：α̃<em k="1">k^(l) = e_k^(l) + 1，总浓度质量 S^(l) = Σ</em> α̃_k^(l)}^{V</li>
+<li>认知不确定性：EU^(l) = V / (S^(l) + V)，其中 V 为词表大小</li>
+</ul>
+<h3 id="_4">三维机制特征</h3>
+<ul>
+<li>机制特征向量 ψ(X) = [r_collapse(X), r_evidence(X), r_early(X)]</li>
+<li>三个族由五个原始统计量实例化：</li>
+<li>r_collapse：低序列级均值/最小 EU，捕获空间不确定性坍缩</li>
+<li>r_evidence：log-max-evidence 和 log-late-evidence，捕获浅到中层证据稳定化</li>
+<li>r_early：层 0 图像 token EU 标准差，捕获异常早期层离散</li>
+<li>标量机制分数 R(X) = r_collapse(X) + r_evidence(X) + r_early(X)，三个标准化分量等权聚合，避免学习权重（学习权重需要被威胁模型排除的触发示例）</li>
+</ul>
+<h3 id="_5">检测阈值校准</h3>
+<ul>
+<li>阈值 τ_cal 从干净验证 rollout 冻结：X 被标记当且仅当 R(X) &gt; τ_cal</li>
+<li>不使用触发示例、触发器坐标或投毒验证样本设置阈值</li>
+</ul>
+<h3 id="_6">紧凑因果足迹定位</h3>
+<ul>
+<li>紧凑性：|S| ≤ B，其中 B = 16 图像 token（LIBERO 实验中约占视觉 token 网格的 6%）</li>
+<li>可定位性：S 由决策层注意力排名相对全局排名提升的 token 播种</li>
+<li>候选池生成：C_0 = Top_{j, K_cand} {I_deep(j) / (I_all(j) + ε)}，其中 I_all(j) 和 I_deep(j) 分别计算所有层和决策层的平均接收注意力</li>
+<li>默认 K_cand = 8，缩放闭包/消融诊断 K_cand = 12</li>
+</ul>
+<h3 id="_7">因果验证与恢复</h3>
+<ul>
+<li>反事实分数下降：Δ(S) = R(X) − R(M_S(X))</li>
+<li>最终支持 S* = ParetoElbow{(|S|, Δ(S)) : S ∈ H(C_0)}，保持面积-下降前沿并最大化下降增益减面积成本，平局偏向紧凑支持</li>
+<li>恢复：X_def = Inpaint(X_original, S*)，局部均值、零和模糊掩码作为恢复消融</li>
+<li>注意力仅用于播种紧凑候选，不作为因果解释；区域仅在掩码降低机制分数时被接受</li>
+</ul>
+<h2 id="_8">关键创新</h2>
+<p><strong>机制引导而非经验防御</strong>：TrustVLA 首次将后门防御建立在可验证的内部机制假设上——紧凑因果足迹。通过命题 1（认知同质化）和命题 2（深层排名提升）的形式化，防御不再依赖启发式规则，而是针对攻击的表示级签名进行检测与定位。这一转变使得防御具有可解释性：每个防御动作都能追溯到具体的机制证据。</p>
+<p><strong>无需重训练与触发样本的推理时干预</strong>：整个流程仅需少量干净校准集（实验中 5-40 样本即可达到高准确率），不接触触发示例或投毒验证样本。这在实际部署中至关重要，因为最终用户无法审计 VLA 的投毒流水线，也不应假设防御者拥有攻击样本。等权聚合机制分数避免了学习权重，从而排除了对触发示例的依赖。</p>
+<p><strong>因果闭包与 Pareto 最优支持选择</strong>：定位阶段不是简单地选择注意力最高的 token，而是通过反事实掩码验证分数下降，并在面积-下降前沿上做 Pareto 选择。这一设计区分了"注意力相关"与"因果必要"——只有掩码后确实降低机制分数的区域才被接受为支持，避免了注意力误导导致的过度掩码。</p>
+<h2 id="_9">实验与结果</h2>
+<p>实验覆盖 LIBERO 四个套件（Spatial/Object/Goal/LIBERO-10）上的 OpenVLA 评估，以及 π_0.5 在 LIBERO 风格和 REAL 物理机器人上的迁移验证。主行要求配对 500 集干净/触发日志，每单元 10 任务、每任务 50 rollout。</p>
+<p><strong>表 1 关键结果（VLA-ASR，越低越好）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>攻击</th>
+<th>防御</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>LIBERO-10</th>
+<th>平均</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BadVLA</td>
+<td>无防御</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>BadVLA</td>
+<td>TrustVLA</td>
+<td>0.6</td>
+<td>8.5</td>
+<td>9.4</td>
+<td>9.5</td>
+<td>7.0%</td>
+</tr>
+<tr>
+<td>BadVLA</td>
+<td>JPEG q=20</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>BadVLA</td>
+<td>Gaussian ε=0.08</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>BadVLA</td>
+<td>ΔW Auditing r=20%</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.6</td>
+<td>99.9%</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>无防御</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>TrustVLA</td>
+<td>0.0</td>
+<td>0.6</td>
+<td>1.7</td>
+<td>6.3</td>
+<td>2.2%</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>JPEG q=20</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>Gaussian ε=0.08</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>ΔW Auditing r=20%</td>
+<td>20.9</td>
+<td>37.3</td>
+<td>98.9</td>
+<td>83.2</td>
+<td>60.1%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>检测可靠性（表 2）</strong>：BadVLA 总计 FAR=0/2000=0.0、DR=1989/2000=99.5；INFUSE 总计 FAR=0/2000=0.0、DR=2000/2000=100.0。</p>
+<p><strong>π_0.5 迁移（表 3）</strong>：TrustVLA 在 LIBERO-10 上残余 VLA-ASR 为 24.06，相比无防御的 100 显著降低；REAL 物理机器人（表 4）Strawberries 任务 ASR 从 94.12 降至 11.76，Blocks 任务从 96.43 降至 14.29。</p>
+<p><strong>运行时开销（表 12）</strong>：干净帧检测开销约 6-21 ms/动作查询，触发帧定位+修复约 15-50 ms，定位入口率在 0.0%-7.5% 之间。</p>
+<p><strong>消融（表 13）</strong>：仅注意力定位平均恢复 SR(w)=74.0，仅最大下降 81.0，仅 Pareto 79.8，Pareto+2D 闭包 81.8；完整因果闭包在 LIBERO-10 上从 57.0 提升至 83.5。</p>
+<h2 id="_10">边界与局限</h2>
+<p>TrustVLA 的恢复能力以紧凑因果足迹假设为条件，该假设是所评估视觉触发攻击的可证伪工作假设，而非普遍不变量。语义或非视觉触发器、全局滤波器风格触发器、以及模仿证据同时抑制定位的自适应攻击者仍在鲁棒性声明之外。对于与任务对象不可分的语义触发器，预期行为是保守检测后 fail-safe 停止，而非保证恢复。</p>
+<p>Lipschitz 假设仅适用于连续表示和预离散化动作输出，不保证离散动作 token 在 argmax 或采样后的不变性；小 logit 扰动仍可能翻转决策边界附近的 token，因此表 1 的成功率应视为经验证据而非紧致认证结果。论文未在所有 VLA 架构上验证，理论分析抽象为 token 级隐藏状态，不表征所有架构。自适应攻击者若同时满足四个约束（保持干净证据轨迹、避免深层排名提升、保持干净 SR、保持触发效能），则 TrustVLA 的机制解释将被削弱。</p>
+<h2 id="_11">工程启示</h2>
+<p>复现 TrustVLA 时，首先核对干净校准集的规模与质量——表 9 显示 5 样本校准 FAR 高达 0.172，40 样本降至 0.025，建议至少使用 20 样本以保证检测可靠性。最容易踩坑的是注意力定位与因果验证的混淆：注意力仅用于播种候选，绝不能直接作为掩码依据，必须通过反事实分数下降验证（表 13 显示仅注意力定位平均恢复仅 74.0，显著低于完整方法）。</p>
+<p>部署时注意运行时模式：干净帧仅支付检测成本（约 6-21 ms），候选搜索、反事实掩码和修复仅在门触发后运行。若下游任务存在杂乱场景中的多物体容纳（如 LIBERO-10 任务 8、9），面积预算 B=16 可能余量最小，需考虑增大 B 或接受更高的残余 VLA-ASR。对于 π_0.5 等使用流匹配动作头的架构，需通过语言模型头投影预动作视觉-语言隐藏状态以获取可比较的证据轨迹，这一跨架构实例化是迁移可行性的关键前提。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.12571</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zhou_badvla_towards_backdoor_attack_2025/">BadVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_trustvla_mechanism_guided_inference_time_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhou_badvla_towards_backdoor_attack_2025/">
+          <span class="entry-type">论文</span>
+          <h3>BadVLA</h3>
+          <p>BadVLA 是由华中科技大学与理海大学联合提出的首个针对视觉-语言-动作模型的后门攻击方法，发表于 NIPS25。该方法通过目标解耦优化实现特征空间分离与条件控制偏差，在多个 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">证据参数化与不确定性监控</a></li>
+<li><a href="#_4">三维机制特征</a></li>
+<li><a href="#_5">检测阈值校准</a></li>
+<li><a href="#_6">紧凑因果足迹定位</a></li>
+<li><a href="#_7">因果验证与恢复</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a></li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

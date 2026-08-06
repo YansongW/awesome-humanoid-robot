@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WristMimic: Full-Body Humanoid Control with Wrist-Guided Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WristMimic: Full-Body Humanoid Control with Wrist-Guided Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>WristMimic: Full-Body Humanoid Control with Wrist-Guided Manipulation</h1>
+      <p class="entry-name-en">WristMimic: Full-Body Humanoid Control with Wrist-Guided Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>WristMimic 是一个腕部引导的全身人形控制框架，由韩国研究团队提出，旨在将人体-物体交互演示重定向到物理仿真中。其核心贡献在于解耦无接触身体运动与接触丰富的手部操作，通过腕部作为桥梁，让手指行为由物体和接触动力学隐式引导，而非显式监督，从而在 ParaHome 和 OMOMO 数据集上显著超越现有方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.06438" target="_blank" rel="noopener">arXiv:2607.06438 WristMimic: Full-Body Humanoid Control with Wrist-Guided Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有的人-物交互重定向方法陷入了一个误区：试图通过越来越密集的手指运动学监督来复现操作细节。但问题在于，仅基于位置的手部轨迹无法指定操作物体所需的接触力，直接跟踪这些轨迹会过度约束接触丰富的指尖行为，导致仿真中的物体滑落或姿态不自然。作者质疑了这种“跟踪一切”的范式，提出一个更本质的问题：与其让手指服从运动学目标，不如让手部由物体和接触动力学来引导。</p>
+<p>WristMimic 真正改变的是监督信号的分配逻辑。它不再将人体视为一个需要全自由度跟踪的整体，而是将问题分解为两个机制：无接触的身体运动（可运动学跟踪）和接触丰富的手部操作（需动力学引导）。腕部作为这两个机制的天然桥梁——它基本无接触，可被精确跟踪，同时决定了手的全局配置并将手指置于可及的抓取范围内。这一改变使得策略无需任何手指姿态监督即可学习操作，且能适应不同手部形态，从根本上降低了对密集手指动捕数据的依赖。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">监督解耦</h3>
+<ul>
+<li>策略网络输出所有 51 个关节的动作（19 身体 + 2 腕部 + 30 手指），动作从高斯分布采样，通过 PD 控制器转为力矩。</li>
+<li>目标状态仅对无接触关节（19 身体 + 2 腕部）分配运动学姿态目标，<strong>排除所有 30 个手指关节</strong>。手指行为通过物体姿态目标和接触对齐奖励间接优化。</li>
+</ul>
+<h3 id="_4">乘法奖励结构</h3>
+<p>奖励采用乘法形式 <code>r = exp(−λE)</code>，包含五个部分：
+- 关节位置跟踪（仅无接触关节）
+- 关节旋转跟踪（仅无接触关节）
+- 物体位置跟踪
+- 物体旋转跟踪
+- 接触对齐（23 个接触元素：21 非手指刚体 + 2 手级指示器）</p>
+<h3 id="_5">优先级对齐策略</h3>
+<ul>
+<li>定义以首次接触帧为中心的接触窗口（<code>t_b=10</code> 帧前，<code>t_a=15</code> 帧后）。</li>
+<li>窗口内：抓取手肩肘关节权重置 0，腕部权重保持 1，其余无接触身体关节权重降为 <code>w_red</code>（&lt;1）。</li>
+<li>阶段特定重置阈值：接触窗口分为接近、抓取、稳定三阶段。抓取阶段严格（位置 7cm，方向 0.2 rad），接近和稳定阶段宽松（15cm，0.5 rad）。</li>
+</ul>
+<h3 id="_6">训练配置</h3>
+<ul>
+<li>PPO 算法，2048 并行环境，minibatch 8192，horizon 32，控制频率 30Hz，单张 RTX 3090。</li>
+<li>Isaac Gym + PhysX（TGS 求解器，子步 2），位置迭代 10（默认 4）防穿透，接触偏移 0.002m。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>腕部引导的监督解耦</strong>：这是首个明确将腕部作为无接触身体与接触丰富手部之间桥梁的全身控制框架。腕部既提供强结构信号（决定手的全局构型），又避免直接跟踪手指带来的过约束问题。这一设计使得策略能通过交互动力学适应不同手部几何，而非依赖运动学监督。</p>
+</li>
+<li>
+<p><strong>手指无关（finger-agnostic）的公式化</strong>：通过排除所有手指关节的运动学目标，策略可在不同手部形态间迁移（如 InterMimic 手、OmniGrasp 手），无需为每种手重新采集手指数据。这打破了现有方法对手指动捕数据的刚性依赖。</p>
+</li>
+<li>
+<p><strong>接触窗口内的优先级调制</strong>：在接触发生的关键帧附近，动态调整奖励权重——降低身体监督、置零上臂关节、保持腕部恒定。这种时间上的非均匀监督策略，让策略在接触瞬间专注于动力学而非姿态复现，是成功率大幅提升的关键设计。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="1">主结果（表 1）</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>方法</th>
+<th>成功率 (%)</th>
+<th>位置误差 (cm)</th>
+<th>旋转误差 (°)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OMOMO</td>
+<td>WristMimic</td>
+<td><strong>98.9</strong></td>
+<td><strong>7.3</strong></td>
+<td><strong>12.2</strong></td>
+</tr>
+<tr>
+<td>OMOMO</td>
+<td>InterMimic</td>
+<td>86.6</td>
+<td>14.2</td>
+<td>22.2</td>
+</tr>
+<tr>
+<td>ParaHome</td>
+<td>WristMimic</td>
+<td><strong>83.3</strong></td>
+<td><strong>15.3</strong></td>
+<td><strong>33.9</strong></td>
+</tr>
+<tr>
+<td>ParaHome</td>
+<td>InterMimic</td>
+<td>0.1</td>
+<td>83.5</td>
+<td>73.3</td>
+</tr>
+<tr>
+<td>ParaHome</td>
+<td>SkillMimicV2</td>
+<td>1.3</td>
+<td>72.1</td>
+<td>80.3</td>
+</tr>
+<tr>
+<td>平均</td>
+<td>WristMimic</td>
+<td><strong>91.1</strong></td>
+<td><strong>11.3</strong></td>
+<td><strong>23.1</strong></td>
+</tr>
+<tr>
+<td>平均</td>
+<td>InterMimic</td>
+<td>43.3</td>
+<td>48.8</td>
+<td>47.7</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2parahome">消融研究（表 2，ParaHome）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>成功率 (%)</th>
+<th>位置误差 (cm)</th>
+<th>旋转误差 (°)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无腕部约束（解耦）</td>
+<td>0.0</td>
+<td>56.4</td>
+<td>49.7</td>
+</tr>
+<tr>
+<td>仅奖励权重调制</td>
+<td>0.0</td>
+<td>50.3</td>
+<td>43.6</td>
+</tr>
+<tr>
+<td>仅阶段特定重置</td>
+<td>67.5</td>
+<td>28.8</td>
+<td>56.9</td>
+</tr>
+<tr>
+<td>WristMimic（完整）</td>
+<td><strong>86.5</strong></td>
+<td><strong>9.9</strong></td>
+<td><strong>36.0</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tab-44">重置阈值消融（Tab. 4.4）</h3>
+<table>
+<thead>
+<tr>
+<th>阈值</th>
+<th>成功率 (%)</th>
+<th>位置误差 (cm)</th>
+<th>旋转误差 (°)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.5cm/0.1rad（tight）</td>
+<td>0.0</td>
+<td>99.8</td>
+<td>86.8</td>
+</tr>
+<tr>
+<td>15cm/0.5rad（loose）</td>
+<td>17.5</td>
+<td>78.3</td>
+<td>72.3</td>
+</tr>
+<tr>
+<td>7cm/0.2rad（默认）</td>
+<td><strong>96.3</strong></td>
+<td><strong>9.5</strong></td>
+<td><strong>18.1</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tab-5parahome-10">手部形态泛化（Tab. 5，ParaHome 10 序列）</h3>
+<table>
+<thead>
+<tr>
+<th>手型</th>
+<th>成功率 (%)</th>
+<th>位置误差 (cm)</th>
+<th>旋转误差 (°)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ParaHome 场景特定手</td>
+<td>75.8</td>
+<td>20.1</td>
+<td>39.6</td>
+</tr>
+<tr>
+<td>InterMimic 手</td>
+<td><strong>95.2</strong></td>
+<td><strong>10.8</strong></td>
+<td><strong>28.1</strong></td>
+</tr>
+<tr>
+<td>OmniGrasp 手</td>
+<td>76.4</td>
+<td>16.9</td>
+<td>27.1</td>
+</tr>
+</tbody>
+</table>
+<p>结果含义：腕部约束是成功的关键（无它则完全失败）；阶段特定重置比权重调制更重要；InterMimic 手因关节范围受限（防物理不合理姿态）表现最佳，验证了“让动力学引导手指”而非强制跟踪的设计。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>方法聚焦于感知抓取和物体操作，<strong>不适用于需要精细手指姿态控制的精确手内操作（in-hand manipulation）</strong>，如手指内重定位或物体在手内重新定向。</li>
+<li>当前框架训练<strong>场景特定策略</strong>，每个场景需单独训练，与 OmniGrasp、InterMimic、MaskedManipulator 等跨场景泛化方法形成对比。</li>
+<li>在 Move Book 场景中，策略会因抓取稳定性而用双手支撑书本，与人类演示（单手举起）有偏差——这是设计选择（优先稳定操作而非严格模仿），但可能不适用于需要精确姿态复现的应用。</li>
+<li>论文未明确评估对未见物体类别或未见交互模式的泛化能力。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>先核对腕部重置阈值</strong>：这是成功率的分水岭。7cm/0.2rad 是经过消融验证的最优平衡点，过紧（3.5cm/0.1rad）导致探索不足完全失败，过松（15cm/0.5rad）破坏接触稳定性。复现时务必严格按此设置。</li>
+<li><strong>位置迭代次数必须调高</strong>：从默认 4 增至 10 是防止抓取过程中物体穿透的关键，对接触丰富的稳定操作至关重要。若使用其他物理引擎，需找到等效的防穿透配置。</li>
+<li><strong>最容易踩坑的是奖励权重调制</strong>：接触窗口内身体权重降低（gbp: 30→10, gbr: 2.5→1）、上臂关节置零、腕部权重恒定（gwp=10, gwr=1）——这三者缺一不可。消融显示仅权重调制而无腕部约束仍会完全失败。</li>
+<li><strong>手部关节范围设置影响巨大</strong>：InterMimic 手因限制关节范围（而非 [−π, π]）而表现最佳。复现时若使用其他手型，务必限制关节范围以排除物理不合理姿态，否则性能会显著下降（如 ParaHome 特定手 75.8% vs InterMimic 手 95.2%）。</li>
+<li><strong>训练成本可控</strong>：单张 RTX 3090、2048 并行环境即可训练，但每场景需单独训练。若需跨场景泛化，需在保留腕部中心交互结构的前提下扩展框架，这是当前未解决的方向。</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.06438</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wristmimic_full_body_humanoid_control_wr_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">监督解耦</a></li>
+<li><a href="#_4">乘法奖励结构</a></li>
+<li><a href="#_5">优先级对齐策略</a></li>
+<li><a href="#_6">训练配置</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#1">主结果（表 1）</a></li>
+<li><a href="#2parahome">消融研究（表 2，ParaHome）</a></li>
+<li><a href="#tab-44">重置阈值消融（Tab. 4.4）</a></li>
+<li><a href="#tab-5parahome-10">手部形态泛化（Tab. 5，ParaHome 10 序列）</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

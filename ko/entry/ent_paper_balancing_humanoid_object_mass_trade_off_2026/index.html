@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control</h1>
+      <p class="entry-name-en">Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>The demand for humanoid loco-manipulation tasks with an object has recently increased, and most existing control approaches for stability in such tasks rely on heuristics or machine-learning techniques. This study rigorously analyzes and exploits the dynamic effects of the object mass on balance stability. By formulating the object mass parameters in the whole-body dynamics with distributed.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29625" target="_blank" rel="noopener">arXiv:2607.29625 Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 물체 질량 매개변수를 전신 동역학 및 균형 안정성 유역(BSB) 프레임워크에 명시적으로 포함하는 엄밀한 공식화 방법을 제안하여, 휴머노이드 로봇의 물체 들어올리기 작업에서 물체 질량이 균형 안정성에 미치는 비선형적 상충 관계를 정량적으로 분석하고, BSB를 명시적 제약 조건으로 사용하여 안정적인 들어올리기 제어를 위한 궤적 최적화를 수행한다. 저자들은 ROBOTIS-OP3 휴머노이드 로봇에서 시뮬레이션과 실험을 통해 이 방법의 lift-and-hold 및 lift-and-release 작업에서의 효용성을 검증하고, 임계 질량과 전이 질량과 같은 핵심 설계 매개변수를 규명했다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이 연구의 핵심 변화는 "물체 질량"을 부하 작업 제어의 수동적 매개변수에서 능동적 균형 안정성 설계 변수로 승격시킨 것이다. 기존 방법은 CoP/ZMP와 같은 기준점 판정(충분하지도 필요하지도 않음)에 의존하거나, 역진자와 같은 축소 차수 모델(전신 특성 부족)을 사용하여 물체 질량이 전신 동역학 균형에 미치는 결합 영향을 체계적으로 정량화하지 못했다. 저자들은 엄밀한 공식화를 통해 물체 질량과 균형 능력 사이의 비선형적 상충 관계를 최초로 확립하고, "임계 질량"과 "전이 질량"의 해석적 정의를 제시했다. 이는 로봇 설계자에게 "너무 무겁게 들지 말라"는 직관을 넘어선 정량적 설계 기준을 제공한다.</p>
+<p>더 중요하게, 저자들은 BSB를 오프라인 분석 도구에서 온라인 궤적 최적화의 명시적 제약 조건으로 전환했다. 이 전환은 기존 궤적 최적화 방법(MPC, RL 등)에서 균형 제약이 너무 보수적이거나(CoP 마진) 안전성을 보장할 수 없는(무제약) 근본적 모순을 해결한다. "현재 상태가 변화 후 시스템의 BSB 내에 있으면, 모든 이전 상태는 주어진 접촉 하에서 균형을 이룬다"는 충분 조건을 증명함으로써, 저자들은 질량 급변 시나리오(예: 순간 방출)에 대해 이전 어떤 방법도 제공하지 못한 이론적 안전 보장을 제공한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전신 동역학 공식화</h3>
+<ul>
+<li>물체 질량 매개변수(m_object, I_object)를 관절 공간 동역학에 명시적으로 포함: M(q)q̈ + h(q,q̇) = τ_gen + c_stance(q)·γ + c_other(q)·γ, 여기서 일반화 좌표 q ∈ ℝ^(n+6)는 관절과 부동 기저부를 포함한다.</li>
+<li>선형 운동량 및 각운동량 방정식에 각각 물체 질량 항을 도입: ΣF_p = m_robot·r̈_robot + m_object·r̈_object + (m_robot + m_object)g.</li>
+<li>접촉력/CoP 분포는 비차원 매개변수 벡터 α ∈ ℝ⁶로 매개변수화하여 이중 지지상의 역학적 불확정성(법선력 분배, 마찰력 방향, CoP 국소 좌표 등)을 해결한다.</li>
+</ul>
+<h3 id="_5">상충 관계 및 핵심량 정의</h3>
+<ul>
+<li><strong>임계 질량</strong>: 시스템 균형 능력(CoM X-속도 교란 진폭)이 최대가 되는 물체 질량.</li>
+<li><strong>전이 질량</strong>: m_obj,trans = τ_UB/(0.5·BoS_x·g) − m₁ − m₂, 제한 요인 분류에 사용:</li>
+<li>m_object &lt; m_obj,trans: BoS 차원 제한(구동 용량 미활용)</li>
+<li>m_object = m_obj,trans: 두 제약 동시 활성화</li>
+<li>m_object &gt; m_obj,trans: 구동 용량 제한(CoP가 BoS 전체 범위를 활용할 수 없음)</li>
+</ul>
+<h3 id="bsb">BSB 구축 및 궤적 최적화</h3>
+<ul>
+<li>이산화된 전신 자세 영역에 대해 제약 비선형 최적화 문제를 풀어 ṙ_x(0)를 최대화하며, 제약 조건에는 전신 동역학, 시스템/접촉 제약, 초기/최종 조건, 균형 유지 및 작업 요구사항이 포함된다.</li>
+<li>최적화 변수: 3차 B-스플라인 제어 정점 v + 비차원 변수 α; 해법 알고리즘은 직접 배치법을 사용한 SQP이며, 해석적 기울기와 실행 가능한 초기 해를 사용한다.</li>
+<li>들어올리기 작업은 두 단계로 나뉜다: 스쿼트-투-스탠드 단계는 제어 노력을 최소화하고, 안정화 단계는 최종 정적 균형을 달성하기 위한 실행 가능한 해를 찾는다.</li>
+<li>BSB 제약 적용: lift-and-hold는 물체 질량을 포함한 BSB(식 24)를, lift-and-release는 물체 질량이 0인 BSB(식 25)를 사용한다.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>물체 질량의 명시적 균형 정량화</strong>: 물체 질량 매개변수를 전신 동역학 및 BSB 프레임워크에 엄밀하게 포함하여, 질량 증가에 따라 균형 능력이 먼저 증가한 후 감소하는 비선형적 상충 관계를 최초로 확립하고, 임계 질량과 전이 질량의 해석적 정의를 제시했다. 이는 기존의 "추가 질량이 유익하다"는 발견적 지식을 넘어 계산 가능한 정량적 설계 기준을 제공한다.</p>
+</li>
+<li>
+<p><strong>궤적 최적화의 명시적 제약으로서의 BSB</strong>: 질량 속성 변화 하의 충분 조건(현재 상태가 변화 후 시스템 BSB 내에 있음 ⇒ 모든 이전 상태가 균형)을 증명함으로써, BSB를 오프라인 분석 도구에서 온라인 궤적 최적화의 안전 제약으로 전환했다. 이는 CoP 마진 제약의 과도한 보수성과 무제약 방법의 불안전성이라는 핵심 모순을 해결하며, 특히 질량 급변 시나리오에 적합하다.</p>
+</li>
+<li>
+<p><strong>제한 요인 분류의 해석적 통찰</strong>: 전이 질량을 통해 시스템 제한 요인을 BoS 지배형과 구동 용량 지배형으로 명확히 분류하고, 특정 조건에서 BoS 폭을 늘리면 오히려 임계 질량이 감소하는 이유(예: τ_ref^UB + 2BoS_ref에서 mobj,trans가 0.9 kg으로 감소)를 밝혀, 기계 설계(발 크기, 관절 선정)에 반직관적이지만 설명 가능한 지침을 제공한다.</p>
+</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<h3 id="_8">대조 설정</h3>
+<p>BSB 제약의 효용성을 검증하기 위해 저자들은 두 가지 플랫폼에서 실험을 수행했다: 첫째는 해석적으로 다루기 쉬운 매개변수 분석을 위한 2자유도 축소 기구(지지 링크의 집중 질량 시스템), 둘째는 ROBOTIS-OP3 전신 휴머노이드 로봇(질량 <strong>3.5 kg</strong>, 직립 높이 <strong>0.51 m</strong>, 발 길이 <strong>0.127 m</strong>)으로, Webots 시뮬레이션과 실물에서 시상면 이중 지지상의 물체 들어올리기 작업을 수행했다. 작업에는 lift-and-hold(들어올려 유지)와 lift-and-release(들어올려 방출)가 포함된다. 기준 대조 조건은 BSB 제약을 대체하는 마진이 있는 CoP(ZMP) 제약이며, 최적화는 직접 배치법과 SQP로 해결하고 제어는 PID에 비례 조정 항을 더한 방식이다. 축소 기구에서 링크 매개변수는 l1 = <strong>0.2 m</strong>, l2 = <strong>0.13 m</strong>, 질량 m1 = <strong>1.74 kg</strong>, m2 = <strong>0.23 kg</strong>, 물체 질량 스캔 범위는 <strong>0</strong> ~ <strong>5.85 kg</strong>(간격 <strong>0.05 kg</strong>), 토크 상한 스케일은 <strong>0.2–2.0</strong>배 τ_ref^UB, BoS 스케일은 <strong>0.5, 1.0, 2.0</strong>배 BoS_ref, 종료 시간 T = <strong>0.8 s</strong>이다. 휴머노이드 로봇 실험에서 물체 질량 범위는 <strong>0</strong> ~ <strong>1.5 kg</strong>(로봇 질량의 <strong>42.86%</strong>), CoM Y 위치는 엉덩이 높이 <strong>0.12 m</strong> ~ <strong>0.19 m</strong> 사이에서 <strong>21</strong>개의 등간격 값, BoS 차원은 fl(sl = <strong>0</strong>)과 <strong>1.5</strong>fl(sl = <strong>0.5</strong>fl), 종료 시간은 각각 T = <strong>0.95 s</strong>와 T = <strong>1.0 s</strong>이다.</p>
+<h3 id="_9">핵심 수치</h3>
+<table>
+<thead>
+<tr>
+<th>플랫폼</th>
+<th>조건</th>
+<th>mobj,trans (kg)</th>
+<th>최대 ṙx(0) (m/s)</th>
+<th>최대 실행 가능 mobject (kg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>축소 기구</td>
+<td>0.2 τ_ref^UB, BoS_ref</td>
+<td><strong>0</strong></td>
+<td><strong>0.26</strong></td>
+<td><strong>0.35</strong></td>
+</tr>
+<tr>
+<td>축소 기구</td>
+<td>0.3 τ_ref^UB, BoS_ref</td>
+<td>—</td>
+<td><strong>0.42</strong></td>
+<td><strong>0.7</strong></td>
+</tr>
+<tr>
+<td>축소 기구</td>
+<td>0.5 τ_ref^UB, BoS_ref</td>
+<td>—</td>
+<td><strong>0.9</strong></td>
+<td><strong>1.2</strong></td>
+</tr>
+<tr>
+<td>축소 기구</td>
+<td>τ_ref^UB, BoS_ref</td>
+<td><strong>2.15</strong></td>
+<td><strong>0.45</strong></td>
+<td><strong>2.8</strong></td>
+</tr>
+<tr>
+<td>축소 기구</td>
+<td>2 τ_ref^UB, BoS_ref</td>
+<td><strong>4.85</strong></td>
+<td><strong>0.46</strong></td>
+<td><strong>5.5</strong></td>
+</tr>
+<tr>
+<td>축소 기구</td>
+<td>τ_ref^UB, 0.5BoS_ref</td>
+<td><strong>2.4</strong></td>
+<td><strong>0.24</strong></td>
+<td><strong>2.65</strong></td>
+</tr>
+<tr>
+<td>축소 기구</td>
+<td>τ_ref^UB, 2BoS_ref</td>
+<td><strong>0.9</strong></td>
+<td><strong>0.81</strong></td>
+<td><strong>2.8</strong></td>
+</tr>
+<tr>
+<td>축소 기구</td>
+<td>2 τ_ref^UB, 2BoS_ref</td>
+<td><strong>3.75</strong></td>
+<td><strong>0.83</strong></td>
+<td><strong>5.85</strong></td>
+</tr>
+<tr>
+<td>휴머노이드 로봇</td>
+<td>fl BoS</td>
+<td>—</td>
+<td>—</td>
+<td><strong>1.2</strong>(임계 질량, <strong>34.28%</strong> 비율)</td>
+</tr>
+<tr>
+<td>휴머노이드 로봇</td>
+<td>1.5fl BoS</td>
+<td>—</td>
+<td>—</td>
+<td><strong>0.6</strong>(임계 질량, <strong>17.14%</strong> 비율)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">결과 의미</h3>
+<ul>
+<li>
+<p><strong>물체 질량은 균형 능력에 비선형적 상충 관계를 보인다</strong>: 무제약 조건에서 더 큰 물체 질량은 사용 가능한 운동량을 증가시켜 균형 능력을 향상시키지만(줄타기 균형 막대 효과와 유사), 관절 토크 상한, BoS 크기 및 마찰 원뿔과 같은 제약이 이 이득을 제한한다. 축소 기구에서 최대 실행 가능 물체 질량은 τ_ref^UB 및 BoS_ref 조건에서 해석적으로 약 <strong>2.6 kg</strong>, 수치 최적화로 <strong>2.8 kg</strong>이다; mobject &lt; mobj,trans일 때 BoS가 제한 요인이고, mobject = mobj,trans일 때 두 제약이 동시에 활성화되며, mobject &gt; mobj,trans일 때 토크 상한이 제한 요인이 되어 균형 능력이 질량 증가에 따라 감소한다. 휴머노이드 로봇에서 fl BoS의 임계 질량은 <strong>1.2 kg</strong>, 1.5fl BoS에서는 <strong>0.6 kg</strong>으로 이 상충 관계를 검증한다.</p>
+</li>
+<li>
+<p><strong>BoS와 토크 한계는 비대칭적 효과를 가진다</strong>: BoS를 늘리면(예: BoS_ref에서 <strong>2</strong>BoS_ref로) 주어진 물체 질량에서 BSB가 향상되지만(최대 ṙx(0)가 <strong>0.45</strong>에서 <strong>0.81 m/s</strong>로 증가), 실행 가능 영역에는 거의 영향을 미치지 않는다(최대 실행 가능 질량은 여전히 <strong>2.8 kg</strong>); 토크 한계를 늘리면(예: τ_ref^UB에서 <strong>2</strong>τ_ref^UB로) 실행 가능 영역이 크게 확장되지만(최대 실행 가능 질량이 <strong>2.8</strong>에서 <strong>5.5 kg</strong>로 증가), 임계 질량 이하의 BSB에는 거의 영향을 미치지 않으며(최대 ṙx(0)가 <strong>0.45</strong>에서 <strong>0.46 m/s</strong>로만 변화), 포화 효과를 보인다.</p>
+</li>
+<li>
+<p><strong>CoP 마진 제약은 정밀한 안정성 임계값으로 충분하지 않다</strong>: lift-and-hold 실험(sl = <strong>0</strong>, mobject = <strong>0.6 kg</strong>)에서 BSB 제약 하의 비용 함수 값은 <strong>4.481 N²m²s</strong>이고 로봇은 들어올리기를 성공적으로 완료했다; CoP 마진 제약 하의 비용 함수 값은 <strong>4.784 N²m²s</strong>이며, 실제 CoP 범위(<strong>–0.44</strong> ~ <strong>–0.019 m</strong>)는 제약 경계(<strong>–0.058</strong> ~ <strong>0.058</strong>, BoS 차원의 <strong>91.34%</strong>에 해당) 내에 훨씬 있지만 로봇은 여전히 넘어졌다. 이는 균형 능력이 단순한 CoP 위치가 아닌 시스템/접촉 제약과 현재 관절 상태에 의해 제한됨을 시사한다. lift-and-release 실험(스쿼트-투-스탠드 단계 비용 함수 값 <strong>6.036 N²m²s</strong>)에서 방출 후 CoM 상태가 BSB(0 kg) 내에 유지되어 최종 정적 균형을 성공적으로 달성했으며, 이는 BSB가 충분 조건으로서의 효용성을 검증한다.</p>
+</li>
+</ul>
+<h2 id="_11">경계 및 한계</h2>
+<ul>
+<li>모든 분석은 2D 시상면, 이중 지지상(DS) 시나리오로 제한되며, 3D 임의 방향, 보폭 회복, 미끄러짐/걸림과 같은 교란으로 확장되지 않았다.</li>
+<li>물체는 점 질량(m_object)으로 단순화되었으며, 관성 텐서 I_object는 공식에 포함되지만 독립적으로 변화시켜 검증되지는 않았다.</li>
+<li>기존 제어 방법(MPC, RL 등)과의 정량적 성능 비교가 수행되지 않았고, 다양한 휴머노이드 플랫폼에서의 벤치마크 테스트도 없다.</li>
+<li>실제 응용에서 물체 질량 매개변수는 외부 추정이 필요하며(관련 문헌 인용), 본 논문은 미지 질량 추정을 구현하지 않았다.</li>
+<li>최적화 계산 비용이 높으며, 오프라인 계산과 매개변수 연속법으로 완화했지만 온라인 실시간 실행의 추론 빈도 데이터는 제공되지 않았다.</li>
+</ul>
+<h2 id="_12">공학적 시사점</h2>
+<p>재현 시 먼저 <strong>전이 질량 공식</strong>의 적용 조건을 확인해야 한다: m_obj,trans = τ_UB/(0.5·BoS_x·g) − m₁ − m₂는 τ_UB ≥ (m₂ + m_object)·g·l₂를 충족해야 하며, 그렇지 않으면 이 해석 값이 성립하지 않는다. 가장 쉽게 실수하는 부분은 <strong>BSB 제약 적용의 유효성</strong>이다 — BSB 구축에 사용된 q_sampled가 궤적 최적화의 중간 조건과 일치하는지 반드시 확인해야 하며, 그렇지 않으면 충분 조건이 성립하지 않아 제약이 무의미해진다.</p>
+<p>공학적 선정 측면에서, 관절 구동 용량이 제한적이라면(τ_ref^UB가 작음), BoS를 늘리는 것(예: 발바닥 연장)이 오히려 임계 질량을 낮출 수 있으므로(τ_ref^UB + 2BoS_ref 사례 참조), 먼저 축소 기구 모델로 mobj,trans를 추정한 후 기계 설계 방향을 결정해야 한다. 하류 팀에게는 BSB를 오프라인으로 계산하여 저장하고, 온라인 조회 시 물체 질량의 선형 동역학 특성을 활용한 매개변수 연속법을 사용하여 실시간 비선형 최적화를 피할 것을 권장한다. 실험 검증 시 주의할 점: CoP 마진 제약은 궤적이 완전히 경계 내에 있더라도 넘어질 수 있으므로(들어올리기-유지 실험에서 입증됨), CoP 마진을 안전 검증의 대체 지표로 사용하지 말아야 한다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_balancing_humanoid_object_mass_trade_off_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전신 동역학 공식화</a></li>
+<li><a href="#_5">상충 관계 및 핵심량 정의</a></li>
+<li><a href="#bsb">BSB 구축 및 궤적 최적화</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a><ul>
+<li><a href="#_8">대조 설정</a></li>
+<li><a href="#_9">핵심 수치</a></li>
+<li><a href="#_10">결과 의미</a></li>
+</ul>
+</li>
+<li><a href="#_11">경계 및 한계</a></li>
+<li><a href="#_12">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

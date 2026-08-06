@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</h1>
+      <p class="entry-name-en">Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一个基于Nvidia Isaac Sim平台的强化学习四足运动控制框架，通过域随机化、执行器建模和奖励塑形实现零样本sim-to-real迁移，并在Unitree Go1上验证。核心贡献在于不依赖预获取数据或teacher-student架构，仅通过仿真训练即可获得与集成控制器相当的速度跟踪性能和更强的扰动恢复能力。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18135" target="_blank" rel="noopener">arXiv:2607.18135 Isaac Sim-to-Real: Reinforcement Learning based Locomotion for Quadrupeds</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>传统RL运动策略要么作为高层控制器输出参考轨迹，要么依赖teacher-student框架中的预训练模型，这限制了策略的泛化性和部署便捷性。本文改变了这一范式：直接以关节位置为动作空间，通过精心设计的奖励塑形让策略自主涌现自然步态，而非显式指定步态模式。这种"奖励驱动"方法在Isaac Sim平台上证明了可行性，且训练成本极低（单张RTX 3090、3小时），使得RL运动控制从研究原型走向工程可复现。</p>
+<p>更重要的是，作者将执行器建模（actuator-net）作为sim-to-real成功的关键前置条件，而非事后补偿。这一决策改变了传统"先训练策略再处理域差异"的流程，将硬件特性嵌入仿真环境，使得零样本迁移成为可能。同时，作者在推理端将策略频率从训练时的50Hz提升至100Hz，并发现性能显著提升，这挑战了"训练与推理频率必须一致"的常见假设。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">问题建模</h3>
+<ul>
+<li>使用MDP (𝒮, 𝒜, 𝒫, ℛ, γ) 定义运动控制问题，策略 π(𝒜|𝒮) 输出12维关节位置动作（Unitree Go1的12个驱动关节）。</li>
+<li>动作空间：关节位置乘以缩放因子0.2，加上标称配置偏移；观测空间为48维向量，包含线速度、角速度、投影重力、用户命令、关节位置/速度、上一动作。</li>
+</ul>
+<h3 id="_4">域随机化</h3>
+<ul>
+<li>并行训练4096个环境（RTX 3090），随机化范围覆盖足部摩擦(0.4, 1.1)、质心偏移(±0.025)、连杆质量(0.8-1.3倍)、身体速度/位置/姿态、关节位置/速度等。</li>
+<li>地形课程逐步增加高度和粗糙度；每10-15秒施加随机推动（线速度[-1.0, 1.0] m/s）。</li>
+<li>命令速度采样：x方向[-2, 3] m/s，y方向[-1.5, 1.5] m/s，角速度[-1.5, 1.5] rad/s，采样间隔0.3-10秒。</li>
+</ul>
+<h3 id="_5">执行器建模</h3>
+<ul>
+<li>使用3层MLP（每层64神经元，soft-sign激活）的actuator-net捕捉非线性执行器动力学，kp=20，kd=0.5。</li>
+<li>训练数据来自部署期间记录的关节位置/速度历史与力矩输出；作者强调集成actuator-net前策略在sim-to-real上遭遇显著挑战。</li>
+</ul>
+<h3 id="_6">奖励塑形</h3>
+<ul>
+<li>步态奖励（权重10.0）通过同步/异步足部接触产生自然步态；足部离地间隙(5.0)和空中时间(5.0)权重较大。</li>
+<li>安全惩罚：关节位置限制(-100.0)、关节速度限制(-10.0)、大腿接触(-10.0)、小腿接触(-1.0)。</li>
+<li>动作平滑性(-1.5)和关节偏差(-0.75)权重高于同类工作，提升高命令速度下的表现；足部受力惩罚(-0.00002)实现柔和接触。</li>
+</ul>
+<h3 id="_7">网络与训练</h3>
+<ul>
+<li>Actor-critic架构，MLP均为3层(512, 256, 128)，ELU激活；PPO算法，熵系数0.0025，目标KL 0.01，γ=0.99，λ=0.95，学习率0.001。</li>
+<li>训练5000次迭代约3小时；物理仿真Δt=0.002s，策略Δt=0.02s（50Hz）。</li>
+</ul>
+<h3 id="_8">推理优化</h3>
+<ul>
+<li>策略编译为ONNX格式，运行于Jetson Nano（Docker容器），无需GPU加速即可达400Hz。</li>
+<li>卡尔曼滤波器完全用C++实现（Pybind11编译），使状态估计延迟降低至支持400Hz循环率。</li>
+</ul>
+<h2 id="_9">关键创新</h2>
+<ol>
+<li>
+<p><strong>零样本sim-to-real的完整工程闭环</strong>：不依赖任何真实机器人数据或预训练模型，仅通过域随机化+执行器建模+奖励塑形，在Isaac Sim上训练的策略可直接部署到Unitree Go1。这验证了Isaac Sim作为RL训练平台的可靠性，为其他机器人平台提供了可复制的范式。</p>
+</li>
+<li>
+<p><strong>执行器建模作为前置条件</strong>：作者明确将actuator-net集成作为sim-to-real成功的关键，而非事后补偿。这一设计决策将硬件非线性动力学嵌入仿真环境，使得策略在训练阶段就适应真实执行器特性，显著缩小域差距。</p>
+</li>
+<li>
+<p><strong>推理频率提升的意外收益</strong>：将策略循环率从训练时的50Hz提升至100Hz，性能反而提升（更敏捷、更稳定）。这挑战了"训练-推理频率必须一致"的常见做法，暗示更高控制频率可部分补偿策略的模型误差，为部署优化提供了新思路。</p>
+</li>
+</ol>
+<h2 id="_10">实验与结果</h2>
+<h3 id="_11">速度跟踪</h3>
+<ul>
+<li>策略达到线速度2.0 m/s，角速度1.8 rad/s；35秒正弦命令跟踪中，性能与Unitree集成控制器相似，仅存在小幅相位滞后。</li>
+<li>高频率高振幅命令下出现足部打滑，因此降低了最大/最小速度限制。</li>
+</ul>
+<h3 id="_12">扰动抑制</h3>
+<ul>
+<li>三次连续踢击（力度递增），策略均成功恢复，仅出现踉跄，从未完全摔倒；原始数据25Hz记录，策略100Hz运行。</li>
+</ul>
+<h3 id="_13">地形验证</h3>
+<ul>
+<li>在砾石、沙地、上坡/下坡平原等崎岖地形上行走成功，包括陡峭斜坡托盘（图1）。</li>
+</ul>
+<h3 id="_14">关键数字汇总</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>训练时间</td>
+<td>~3小时（5000次迭代）</td>
+</tr>
+<tr>
+<td>并行环境数</td>
+<td>4096</td>
+</tr>
+<tr>
+<td>最大线速度</td>
+<td>2.0 m/s</td>
+</tr>
+<tr>
+<td>最大角速度</td>
+<td>1.8 rad/s</td>
+</tr>
+<tr>
+<td>推理频率</td>
+<td>400 Hz（ONNX, Jetson Nano）</td>
+</tr>
+<tr>
+<td>训练频率</td>
+<td>50 Hz</td>
+</tr>
+<tr>
+<td>部署频率</td>
+<td>100 Hz（性能提升）</td>
+</tr>
+<tr>
+<td>扰动恢复</td>
+<td>3/3次成功</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">对比基线</h3>
+<ul>
+<li>仅与Unitree集成控制器（默认步态）对比，未与其他RL方法进行定量比较。</li>
+</ul>
+<h2 id="_16">边界与局限</h2>
+<ul>
+<li>论文未设独立局限性章节，从事实要点推断：未使用预获取数据（非teacher-student框架），未在真实机器人上训练或微调（纯仿真+零样本迁移）。</li>
+<li>未与其他RL基线（如SAC、TD3或其他四足RL方法）进行定量对比，仅与Unitree集成控制器比较，缺乏相对优势的量化证据。</li>
+<li>扰动测试中踢击力仅为近似估计（通过线速度推算），非精确测量，恢复能力的边界条件不明确。</li>
+<li>未提及策略在极端地形（如楼梯、冰面）或长时间运行下的退化情况；域随机化范围有限，可能无法覆盖所有真实环境变化。</li>
+</ul>
+<h2 id="_17">工程启示</h2>
+<ol>
+<li><strong>复现优先核对</strong>：执行器建模（actuator-net）是sim-to-real成功的关键，务必先采集真实执行器数据训练该网络，再训练策略。跳过此步骤将导致显著的域差距。</li>
+<li><strong>奖励权重敏感</strong>：关节位置限制惩罚(-100.0)和步态奖励(10.0)权重极高，调整时需谨慎；动作平滑性(-1.5)和关节偏差(-0.75)高于常规设置，对高命令速度表现至关重要。</li>
+<li><strong>推理频率优化</strong>：部署时尝试将策略频率从训练值提升（如50Hz→100Hz），可能带来性能提升；但需确保状态估计（如卡尔曼滤波器）延迟足够低，建议用C++实现关键组件。</li>
+<li><strong>域随机化范围</strong>：足部摩擦(0.4, 1.1)和连杆质量(0.8-1.3)是主要随机化维度，若目标地形差异大，需扩展范围或增加地形课程复杂度。</li>
+<li><strong>易踩坑点</strong>：观测空间未缩放（与其他研究不同），若修改需重新调参；命令速度采样间隔(0.3-10秒)影响策略对指令变化的响应，需根据实际任务调整。</li>
+</ol>
+<h2 id="_18">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18135</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_sac/">软演员-评论家（SAC）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_isaac_sim_real_reinforcement_locomotion_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_sac/">
+          <span class="entry-type">算法</span>
+          <h3>软演员-评论家（SAC）</h3>
+          <p>在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题建模</a></li>
+<li><a href="#_4">域随机化</a></li>
+<li><a href="#_5">执行器建模</a></li>
+<li><a href="#_6">奖励塑形</a></li>
+<li><a href="#_7">网络与训练</a></li>
+<li><a href="#_8">推理优化</a></li>
+</ul>
+</li>
+<li><a href="#_9">关键创新</a></li>
+<li><a href="#_10">实验与结果</a><ul>
+<li><a href="#_11">速度跟踪</a></li>
+<li><a href="#_12">扰动抑制</a></li>
+<li><a href="#_13">地形验证</a></li>
+<li><a href="#_14">关键数字汇总</a></li>
+<li><a href="#_15">对比基线</a></li>
+</ul>
+</li>
+<li><a href="#_16">边界与局限</a></li>
+<li><a href="#_17">工程启示</a></li>
+<li><a href="#_18">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation</h1>
+      <p class="entry-name-en">From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一套从手语生成（SLG）到人形机器人执行的离线重定向流程，核心是两阶段设计：先在SMPL-X域用VolumetricSMPL-X做碰撞缓解，再用IK骨干重定向并辅以GPT-5.2驱动的VLM引导细化循环。作者用CSL-Daily数据集验证了碰撞缓解的有效性，并指出VLM细化目前仅有定性证据。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.17769" target="_blank" rel="noopener">arXiv:2607.17769 From Sign Language Generation to Humanoid Execution: Vision-Language Guided Reta</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>手语生成领域长期忽视一个事实：生成的SMPL-X运动序列在离线渲染中看似可用，但一旦交给人形机器人执行，自交（手-手、手-躯干穿透）会直接导致IK无解、碰撞和轨迹不稳定。这不是简单的“重定向问题”——上游SLG的学习目标从未显式强制物理合理性，即使最强的重定向骨干也会继承并放大这些伪影。作者真正改变的是将“生成-执行”视为一个端到端物理可行性问题，而非在重定向阶段打补丁。</p>
+<p>更关键的是，作者否定了预计算无碰撞手语字典的路线。手语是能产的，句子语境通过空间引用、协同发音和语法空间使用改变符号实现，字典绑定特定形态意味着每个机器人形态都要重写。同时，现有VLM引导运动细化方法依赖运动描述文本监督，而标准SL数据集只有口语语句配对手语视频，没有显式动作描述。作者因此提出依赖视觉反馈而非文本监督的VLM引导公式，这是对SLG到机器人执行研究空白的直接填补。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体流程</h3>
+<p>输入为SMPL-X轴角姿态序列 x(0) ∈ ℝ^(T×132)，输出人形机器人关节轨迹 q_(1:T)，需同时满足机器人运动学/几何约束和保留手语交际意图。两阶段分离是有意设计：碰撞缓解处理SLG继承的系统性物理失效，VLM细化针对形态差异和IK近似引入的残余误差。</p>
+<h3 id="smpl-x">阶段一：SMPL-X域碰撞缓解</h3>
+<ul>
+<li>使用VolumetricSMPL-X提供可微分SDF查询，自碰撞损失：
+  ℒ_col(x) = (1/T) Σ_t Σ_{v∈V_t} max(0, −f(v; x_t))²
+  其中f(·; x_t)为姿态帧t下的SDF，V_t为表面采样点，负距离对应穿透，损失随穿透深度二次增长。</li>
+<li>测试时后处理：Adam优化，学习率 1 × 10⁻²，500步，默认优化手部姿态参数。</li>
+<li>掩码更新：x_eff = x^(0) + M ⊙ (x − x^(0))，M ∈ {0,1}^(T×132) 防止全局漂移。</li>
+<li>总目标：min_x λ_col ℒ_col(x_eff) + λ_close ‖x_eff − x^(0)‖₂² + λ_smooth ‖Δ²x_eff‖₂²，其中Δ²x_t = x_(t+1) − 2x_t + x_(t−1)，默认λ_col = 50，λ_close = 1 × 10⁻⁴，λ_smooth = 1 × 10⁻⁴。</li>
+</ul>
+<h3 id="ik">阶段二：形状对齐与IK重定向</h3>
+<ul>
+<li>形状优化：用T-pose对应关系将SMPL-X模板对齐到机器人运动学结构，优化β最小化 ℒ_shape(β) = Σ_k w_k ‖J^smplx_k(β) − J^rob_k‖₂² + λ_β‖β‖₂²，w_k可强调手语相关上肢关节。</li>
+<li>逐帧IK：给定对齐后手腕位置和方向目标，求解满足关节限制的机器人关节轨迹，并额外执行机器人几何碰撞检查。</li>
+</ul>
+<h3 id="vlm">阶段三：VLM引导细化循环</h3>
+<ul>
+<li>每轮渲染原始SMPL-X参考视频和IK重定向机器人视频，交给GPT-5.2比较并提出修正。</li>
+<li>控制原语设计：直接编辑关节角无效，改为末端执行器任务空间原语，如move_left_up（左腕+y方向+10 cm）、left_yaw_in（左腕偏航向内+20°）等，输出为JSON类结构化动作列表。</li>
+<li>迭代过程：应用任务空间偏移→重新IK→渲染新视频→VLM再评估，重复直至确认对齐或达最大轮数（所有实验执行两次细化迭代）。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>视觉反馈替代文本监督的VLM引导</strong>：现有VLM运动细化方法假设可访问运动描述文本，而标准SL数据集只有口语语句配对手语视频。作者直接让VLM比较两段渲染视频并提出任务空间原语，绕开了文本监督的稀缺瓶颈，这是对SLG到机器人执行场景的适配性创新。</p>
+</li>
+<li>
+<p><strong>任务空间控制原语作为VLM与IK之间的接口</strong>：直接让VLM编辑关节角在感知上不可行，作者定义在手腕任务空间的小型原语集（位置10 cm、偏航20°），使VLM能提出可解释调整而IK求解器保持可行性。这个设计决策将VLM的高层语义判断与底层运动学约束解耦，是工程上务实且可扩展的架构选择。</p>
+</li>
+<li>
+<p><strong>碰撞缓解与VLM细化的两阶段分离</strong>：碰撞缓解解决SLG继承的系统性物理失效模式（手-手、手-躯干穿透），VLM细化针对形态差异和IK近似引入的残余语义/几何差异。分离使每个模块的优化目标清晰，且碰撞缓解作为轻量级后处理可独立复用。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<h3 id="_6">数据集与配置</h3>
+<ul>
+<li>CSL-Daily：18K训练、1K验证、2K测试，使用[33]发布的预处理SMPL-X运动特征（6D旋转和10个形状参数）。</li>
+<li>碰撞缓解：Adam优化，学习率 1 × 10⁻²，500步，默认优化手部姿态参数。</li>
+<li>VLM：GPT-5.2，固定批评提示，所有实验执行两次细化迭代。</li>
+</ul>
+<h3 id="i">表I：碰撞缓解结果（较低更好）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>碰撞能量（均值）</td>
+<td>3.52</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>碰撞能量（中位数）</td>
+<td>0.82</td>
+<td>0.71</td>
+</tr>
+<tr>
+<td>改进序列（%）</td>
+<td>—</td>
+<td>88.9%</td>
+</tr>
+<tr>
+<td>碰撞减少（中位数）</td>
+<td>—</td>
+<td>21.66%</td>
+</tr>
+<tr>
+<td>碰撞减少（均值）</td>
+<td>—</td>
+<td>31.93%</td>
+</tr>
+<tr>
+<td>Pose MSE vs. 原始（中位数）</td>
+<td>—</td>
+<td>6.80 × 10⁻⁴</td>
+</tr>
+<tr>
+<td>Δ Accel MSE（中位数）</td>
+<td>—</td>
+<td>+5.71 × 10⁻³</td>
+</tr>
+<tr>
+<td>每序列运行时间（均值）</td>
+<td>—</td>
+<td>521.7 s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ii">表II：正则化项消融</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>N</th>
+<th>Succ. (%)</th>
+<th>Red. (%)</th>
+<th>Pose MSE</th>
+<th>Δ Accel MSE</th>
+<th>Time (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Collision only</td>
+<td>8</td>
+<td>62.5</td>
+<td>18.98</td>
+<td>6.05 × 10⁻⁴</td>
+<td>+4.47 × 10⁻³</td>
+<td>324.7</td>
+</tr>
+<tr>
+<td>+ Closeness</td>
+<td>9</td>
+<td>88.9</td>
+<td>21.66</td>
+<td>6.80 × 10⁻⁴</td>
+<td>+5.71 × 10⁻³</td>
+<td>521.7</td>
+</tr>
+<tr>
+<td>+ Closeness + Smoothness</td>
+<td>10</td>
+<td>60.0</td>
+<td>24.40</td>
+<td>5.08 × 10⁻⁴</td>
+<td>+2.59 × 10⁻³</td>
+<td>362.2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">结果含义</h3>
+<p>碰撞缓解显著降低均值碰撞能量（3.52→0.94，由表内数值计算），但中位数改善有限（0.82→0.71），说明主要收益集中在高碰撞序列。消融显示+Closeness提升成功率至88.9%但增加运行时间，+Smoothness降低Pose MSE和Δ Accel MSE但牺牲成功率至60.0%，表明平滑正则化可能过度抑制手部运动。VLM细化仅有定性证据，论文未明确量化其相对IK-only基线的收益。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>VLM引导细化的证据目前是定性的，限于代表性序列，未进行定量评估（如末端执行器轨迹误差或手腕方向误差）。</li>
+<li>碰撞缓解运行时间高（表I，均值521.7 s/序列），不适合在线处理；全流程设计为离线预处理，交互时机器人执行预计算轨迹。</li>
+<li>未在物理人形平台上验证，结论基于仿真渲染。</li>
+<li>未进行控制原语词汇粒度和步长的系统敏感性研究；步长权衡收敛速度与过冲，较粗步长可能围绕目标振荡，较细步长需更多VLM查询。</li>
+<li>控制原语覆盖范围有限：表达编辑空间之外的失效模式（如躯干倾斜或时序错误）完全无法修正。</li>
+<li>未实现在线细化（如通过学习批评者近似），论文未明确。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<p>复现时先核对碰撞缓解的掩码设计：默认只优化手部姿态参数，M ∈ {0,1}^(T×132) 的构造直接影响全局漂移抑制效果，建议先验证掩码是否覆盖所有需要修正的关节维度。运行时间521.7 s/序列是主要瓶颈，若需批量处理，优先考虑减少Adam步数或改用L-BFGS类二阶优化器。</p>
+<p>VLM细化环节最容易踩坑的是控制原语步长选择：位置10 cm、偏航20°在仿真中可能合适，但不同机器人形态的连杆长度差异会放大或缩小实际效果。建议先做一次步长敏感性测试，确认VLM提出的偏移在IK重解后不会导致关节限位冲突。另外，GPT-5.2的批评提示词质量直接影响细化效果，固定提示模板在不同序列上的泛化性需要人工抽检。</p>
+<p>对下游团队，最实用的建议是：碰撞缓解模块可独立复用为任何SLG输出的后处理，不必绑定本流程的IK和VLM部分。若你的机器人形态与SMPL-X差异较大，形状优化中的关节权重w_k需要针对手语相关上肢关节重新标定，否则IK目标可能失真。最后，VLM细化的定性证据意味着在正式部署前，务必用你自己的序列集做一次人工评估，确认细化不会引入新的语义偏差。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.17769</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_rt_2_vision_language_action_mo_2023/">RT-2 视觉-语言-动作模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_sign_language_generation_humanoid_execut_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">方法</span>
+          <h3>RT-2 视觉-语言-动作模型</h3>
+          <p>将网络规模的视觉-语言知识迁移到机器人控制的VLA模型。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体流程</a></li>
+<li><a href="#smpl-x">阶段一：SMPL-X域碰撞缓解</a></li>
+<li><a href="#ik">阶段二：形状对齐与IK重定向</a></li>
+<li><a href="#vlm">阶段三：VLM引导细化循环</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a><ul>
+<li><a href="#_6">数据集与配置</a></li>
+<li><a href="#i">表I：碰撞缓解结果（较低更好）</a></li>
+<li><a href="#ii">表II：正则化项消融</a></li>
+<li><a href="#_7">结果含义</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

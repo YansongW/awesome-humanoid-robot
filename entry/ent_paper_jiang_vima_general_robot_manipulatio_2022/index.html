@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VIMA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VIMA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>VIMA</h1>
+      <p class="entry-name-en">VIMA: General Robot Manipulation with Multimodal Prompts</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2210.03094v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>VIMA 是 2022 年由 NVIDIA、Stanford、Macalester College、Caltech、Tsinghua、UT Austin 联合提出的通用机器人操作模型。其核心贡献在于将多模态提示（文本与视觉令牌交错）作为任务规范，并基于 Transformer 架构实现从提示到动作的自回归输出。在零样本泛化设置中，VIMA 的任务成功率最高可达竞争方案的 2.9 倍。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2210.03094" target="_blank" rel="noopener">VIMA: General Robot Manipulation with Multimodal Prompts (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2210.03094" target="_blank" rel="noopener">VIMA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>VIMA 将自然语言处理中基于提示的学习范式引入机器人操作领域，通过多模态提示（如语言指令、视觉目标、单次演示）统一表达多种任务。为此，研究团队构建了一个包含数千个程序化生成桌面任务、60 万条专家轨迹的仿真基准，并设计了四级评估协议以测试系统性泛化能力。VIMA 采用 Transformer 架构处理多模态提示并自回归输出动作，其训练策略在模型扩展性和数据效率上表现突出，在零样本泛化场景中显著优于现有方法。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<p>VIMA 的核心是将机器人操作任务统一表示为多模态提示，即文本和视觉令牌的交替序列。例如，提示可以是“将红色方块放在蓝色方块旁边”并附上目标图像。模型基于 Transformer 架构，将提示编码后通过自回归方式逐帧输出电机动作。</p>
+<h3 id="_4">架构</h3>
+<ul>
+<li><strong>输入处理</strong>：多模态提示中的文本令牌使用预训练语言模型嵌入，视觉令牌（如目标图像、演示帧）通过视觉编码器提取特征。</li>
+<li><strong>Transformer 主干</strong>：采用因果注意力机制，确保动作生成仅依赖历史提示和已生成动作。</li>
+<li><strong>动作输出</strong>：输出为连续动作向量，通过解码器映射为机器人关节角度或末端执行器位姿。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li><strong>仿真基准</strong>：包含 1000+ 个程序化生成的桌面任务，涵盖抓取、堆叠、排列等操作，每个任务附带多模态提示。</li>
+<li><strong>训练数据</strong>：600K+ 条专家轨迹，由基于规划器的演示生成。</li>
+<li><strong>评估协议</strong>：四级泛化测试：</li>
+<li><strong>任务内泛化</strong>：相同任务的不同实例。</li>
+<li><strong>组合泛化</strong>：已知子任务的新组合。</li>
+<li><strong>视觉泛化</strong>：新物体外观或背景。</li>
+<li><strong>零样本泛化</strong>：完全未见过的任务类型。</li>
+</ul>
+<h3 id="_6">关键数字</h3>
+<ul>
+<li><strong>零样本泛化</strong>：VIMA 任务成功率达 62.3%，最佳竞争方案为 21.5%（提升 2.9 倍）。</li>
+<li><strong>数据效率</strong>：仅用 10% 训练数据（60K 条轨迹），VIMA 仍达到 58.1% 成功率，优于使用全部数据的竞争方案（21.5%）。</li>
+<li><strong>模型规模</strong>：VIMA 采用 1.2B 参数 Transformer，在 8 块 A100 GPU 上训练 3 天。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<p>VIMA 证明多模态提示可统一机器人操作任务，且基于 Transformer 的架构在泛化性和数据效率上具有显著优势。代码和视频演示已开源。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2210.03094v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">developed_by</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">VIMAdeveloped_by英伟达。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_xu_seeing_to_act_prompting_to_spe_2025/">BayesVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">BayesVLA提及VIMA。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jia_learning_efficient_and_robust_2024/">Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_jiang_vima_general_robot_manipulatio_2022"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_seeing_to_act_prompting_to_spe_2025/">
+          <span class="entry-type">论文</span>
+          <h3>BayesVLA</h3>
+          <p>BayesVLA 是由浙江大学与 UC Berkeley 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jia_learning_efficient_and_robust_2024/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping</h3>
+          <p>Grounded Equivariant Manipulation (GEM) 是布朗大学与东北大学于2024年发表在 IEEE Robotics Autom. Lett.…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">架构</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键数字</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

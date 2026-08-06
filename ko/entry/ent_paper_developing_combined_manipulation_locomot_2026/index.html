@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Developing Combined Manipulation and Locomotion Skills with Interaction Representation and Skill Composition · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Developing Combined Manipulation and Locomotion Skills with Interaction Representation and Skill Composition</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Developing Combined Manipulation and Locomotion Skills with Interaction Representation and Skill Composition</h1>
+      <p class="entry-name-en">Developing Combined Manipulation and Locomotion Skills with Interaction Representation and Skill Composition</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>This paper addresses how to enable a humanoid robot to learn motion policies based on developmental principles and combine policies to create more sophisticated and useful behaviors. Specifically, we present an approach to (1) learning a whole-body reaching and grasping policy and (2) combining it and a standing-up and walking policy to compose a more complex policy of manipulation and.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.00208" target="_blank" rel="noopener">arXiv:2608.00208 Developing Combined Manipulation and Locomotion Skills with Interaction Represen</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 발달 심리학 원리에 기반한 휴머노이드 로봇 조작 및 이동 기술 학습 프레임워크를 제안한다. 핵심 기여는 다음과 같다: 입방 조화 가중 공간 컨볼루션(CHWSC)과 역비례 스케일링 거리장(ISDF)으로 구성된 손-물체 상호작용의 컴팩트 표현, 발달 원리에서 영감을 받은 성취 트리거 보상 그래프와 점진적 손가락 관절 분리, 그리고 교차-구현 정책 조합 방법. 저자는 Isaac Gym에서 72-DoF 휴머노이드 로봇을 훈련하여 "손을 뻗어 잡기→서기→걷기" 복합 작업을 완료했으며, 보지 못한 물체에 대한 제로샷 잡기 성공률은 최대 98%에 달한다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이 작업의 진정한 변화는 "조작 기술 학습"을 대규모 인간 시연이나 사전 훈련된 비전-언어 모델에 의존하는 패러다임에서 "컴팩트 기하학적 표현 + 구조화된 보상 형성"의 고전적 RL 경로로 되돌려 놓았고, 이 경로가 휴머노이드 전신 제어에서 실현 가능함을 입증했다는 점이다. 저자는 엔드투엔드 대형 모델 트렌드를 추구하지 않고, 거리장과 입방 조화와 같은 저차원의 해석 가능한 기하학적 특징을 사용하여 4096 병렬 환경에서 PPO만으로도 정밀한 잡기를 학습할 수 있게 했다—이는 자원이 제한된 로봇 연구실에 직접적인 매력을 제공한다.</p>
+<p>더 중요하게는, 대부분의 연구가 회피하는 엔지니어링 난제인 "기술 조합"을 정면으로 다루었다: 독립적으로 훈련된 기술을 추론 시 매끄럽게 연결하는 방법. 저자는 "전신에서 훈련"이라는 반직관적 결론(손가락 없는 로봇에서 훈련된 서기 정책을 손가락 있는 로봇으로 전이하면 성공률이 100%에서 31%로 급락)을 통해 구현 불일치가 플러그앤플레이 조합에 미치는 치명적 영향을 밝혔다. 이는 "기술 모듈화"에 대한 낙관적 가정을 바꾼다—모듈화는 공짜가 아니며, 훈련 시점에 목표 구현에서 이루어져야 한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">문제 정식화 및 아키텍처 독립성</h3>
+<ul>
+<li>PPO로 정책을 훈련하며, 입력 관측 벡터(신체 자세, 관절 힘 등 포함)를 받아 관절 토크 명령을 출력한다.</li>
+<li>이 방법은 사전 계산된 관측, 사전 처리된 행동, 보상 설계만 포함하며 특정 RL 알고리즘이나 네트워크 구조에 묶이지 않는다.</li>
+</ul>
+<h3 id="-">손-물체 상호작용 표현</h3>
+<ul>
+<li><strong>ISDF</strong>: <span class="arithmatex">\( I(i) = \min(1, \exp(-\alpha \cdot S(i))) \)</span>, <span class="arithmatex">\(\alpha\)</span>는 고정 양의 하이퍼파라미터; 음의 거리(관통)는 1로 잘린다.</li>
+<li><strong>CHWSC</strong>: <span class="arithmatex">\( \text{CHWSC}(l) = \sum_{\ell=0}^{l} \sum_j I(f_j) \cdot K_\ell^m(f_j/\|f_j\|) \)</span>, 입방 조화를 가중치로 사용하여 각 손가락 마디에서 물체까지의 ISDF와 컨볼루션; 수치적으로 불안정한 비대칭 조화(<span class="arithmatex">\(K_2^{-1}, K_4^{-4}, K_4^{-2}, K_6^{-6}, K_6^{-3}\)</span>)는 제외한다.</li>
+</ul>
+<h3 id="-5">손-물체 상호작용 점수(5개 지표)</h3>
+<ol>
+<li>손-물체 근접도: <span class="arithmatex">\(I(h)\)</span></li>
+<li>내부 법선 정렬: <span class="arithmatex">\(-n_f \cdot n_\Omega\)</span></li>
+<li>손가락-물체 근접도: <span class="arithmatex">\(\text{avg}_j(I(f_j))\)</span></li>
+<li>물체-손가락 근접도: <span class="arithmatex">\(\text{avg}_k(\exp(-\alpha \cdot \min_j\|f_j - \Omega_k\|))\)</span>, 곡률 매칭에 따라 샘플링</li>
+<li>감싸기 정도: <span class="arithmatex">\(\exp(-\alpha\|c_{obj} - c_{fingers}\|)\)</span></li>
+</ol>
+<h3 id="_5">손가락 관절 분리</h3>
+<ul>
+<li>각 에피소드 시작 시 모든 손가락 관절은 평균 토크 명령을 받는다; 훈련 중 근위에서 원위 순서로 점진적으로 분리된다.</li>
+<li><strong>개별 분리</strong>: 100스텝마다 한 번 분리, t=800 이후 시작.</li>
+<li><strong>그룹 분리</strong>: 500스텝마다 한 번 분리, 동일 유형의 관절이 함께 분리.</li>
+</ul>
+<h3 id="_6">성취 트리거 보상</h3>
+<ul>
+<li>마일스톤은 방향성 비순환 그래프(DAG)로 구성되며, 강제/비강제 두 가지 성취 점수를 포함:</li>
+<li>강제: <span class="arithmatex">\(A_{i,j,t}^E = r_{i,t} - p_{i,j}\)</span> (순간 보상 사용)</li>
+<li>비강제: <span class="arithmatex">\(A_{i,j,t}^N = \max_{t^* \le t}\{r_{i,t^*}\} - p_{i,j}\)</span> (역사적 최대 보상 사용)</li>
+<li>총 보상: <span class="arithmatex">\( r_t = \sum_j \text{pow}(L_j, w) \cdot \sum_i \max(0, A_{i,j,t}) \cdot r_{j,t} \)</span>, <span class="arithmatex">\(w=2\)</span>.</li>
+</ul>
+<h3 id="_7">정책 조합</h3>
+<ul>
+<li>다중 정책 RL 플레이어, 통합 관측 벡터에서 인덱스를 통해 각 하위 작업의 독립 관측을 추출한다.</li>
+<li>잡기 정책은 모든 관절을 제어; 물체가 잡힌 후("손가락 마디 접촉 비율" 마일스톤 통해) 서기 정책이 손가락을 제외한 신체 관절을接管한다.</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>CHWSC+ISDF 기하학적 표현</strong>: 원자 궤도 형태에서 유래한 입방 조화를 손-물체 상호작용의 공간 컨볼루션에 처음으로 사용하여, 물체 참조 프레임에서 거리장의 방사형 성분과 손가락 감싸기의 각도 분포를 동시에 포착한다. 원시 거리장이나 원시 포인트 클라우드에 비해, 이 저차원 임베딩(44×2)은 보지 못한 물체에 대한 제로샷 일반화(구체 98%, 직육면체 94%)를 가능하게 하며, 절제 실험에서 CHWSC 차수를 6에서 0으로 낮추면 성공률이 93%에서 0으로 떨어짐을 보여준다—각도 정보가 잡기 성공의 핵심임을 증명한다.</p>
+</li>
+<li>
+<p><strong>성취 트리거 보상 그래프</strong>: 작업을 통과 임계값이 있는 마일스톤 DAG로 분해하고, "역사적 최대 보상"의 비강제 점수로 희생 가능한 전제 조건을 처리하며, "순간 보상"의 강제 점수로 유지해야 하는 상태(예: 사전 잡기)를 처리한다. 이 설계는 희소 보상 하의 탐색 어려움을 피하면서도 보상 형성 사전 지식에 의존하지 않는 순수 구조화된 커리큘럼 학습 대안이다.</p>
+</li>
+<li>
+<p><strong>교차-구현 정책 조합의 실증적 발견</strong>: 저자는 실험을 통해 "전신에서 훈련"이 플러그앤플레이 조합의 필요 조건임을 증명한다—손가락 없는 로봇에서 훈련된 서기 정책을 손가락 있는 로봇으로 전이하면 성공률이 31%에 불과하며(76%는 일어서지만 45%는 넘어짐), 완전한 72-DoF 훈련 서기 정책 조합의 성공률은 100%에 달한다. 이 반직관적 결론은 다중 기술 모듈형 아키텍처 설계에 직접적인 지침을 제공한다.</p>
+</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="iv">보지 못한 물체 제로샷 잡기 성공률(표 IV)</h3>
+<table>
+<thead>
+<tr>
+<th>물체</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구체</td>
+<td>98%</td>
+</tr>
+<tr>
+<td>직육면체</td>
+<td>94%</td>
+</tr>
+<tr>
+<td>원기둥</td>
+<td>93%</td>
+</tr>
+<tr>
+<td>사면체</td>
+<td>94%</td>
+</tr>
+<tr>
+<td>팔면체</td>
+<td>93%</td>
+</tr>
+<tr>
+<td>이십면체</td>
+<td>94%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-v-72-dof">서기-걷기 성공률(표 V, 72-DoF 잡기 정책과 조합)</h3>
+<table>
+<thead>
+<tr>
+<th>서기 정책 훈련 구현</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>동일 로봇 72 DoF</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>동일 로봇 비구동 손가락 32 DoF</td>
+<td>96%</td>
+</tr>
+<tr>
+<td>손가락 없는 로봇 32 DoF</td>
+<td>31%(76% 일어서지만 45% 넘어짐)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vi-chwsc">절제 실험 핵심 데이터(표 VI, CHWSC 차수 및 분리 방식)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>손가락-물체 근접</th>
+<th>물체-손가락 근접</th>
+<th>감싸기 정도</th>
+<th>성공률</th>
+<th>총 보상</th>
+<th>훈련 epochs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHWSC(6), D(1)</td>
+<td>97%</td>
+<td>98%</td>
+<td>97%</td>
+<td><strong>93%</strong></td>
+<td>414,376</td>
+<td>23,907</td>
+</tr>
+<tr>
+<td>CHWSC(3), D(1)</td>
+<td>86%</td>
+<td>56%</td>
+<td>23%</td>
+<td>8%</td>
+<td>221,712</td>
+<td>11,344</td>
+</tr>
+<tr>
+<td>CHWSC(0), D(1)</td>
+<td>24%</td>
+<td>26%</td>
+<td>10%</td>
+<td>0%</td>
+<td>116,098</td>
+<td>8,344</td>
+</tr>
+<tr>
+<td>CHWSC(6), D(5)</td>
+<td>99%</td>
+<td>99%</td>
+<td>86%</td>
+<td>73%</td>
+<td>434,384</td>
+<td>35,719</td>
+</tr>
+<tr>
+<td>CHWSC(6), 분리 없음</td>
+<td>52%</td>
+<td>81%</td>
+<td>64%</td>
+<td>7%</td>
+<td>259,932</td>
+<td>39,750</td>
+</tr>
+<tr>
+<td>둘 다 없음</td>
+<td>3%</td>
+<td>14%</td>
+<td>3%</td>
+<td>0%</td>
+<td>161,759</td>
+<td>7,407</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 결론</strong>: CHWSC 차수를 6에서 0으로 낮추면 성공률이 93%에서 0%로 감소; 관절 분리가 없으면 7%만 성공; 둘 다 없으면 정책이 7,407 epochs에서 학습을 중단한다. 그룹 분리는 근접도 지표에서 더 우수하지만(99%/99%), 감싸기 정도(86% vs 97%)와 총 성공률(73% vs 93%)에서 개별 분리보다 열등하다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li>잡기 정책 훈련 시 물체 모양을 명시적으로 사용하지 않았으며, 실제 배포는 다중 시점 인식 근사에 의존하지만 정밀도 손실은 정량화되지 않았다.</li>
+<li>더 많은 물체 유형을 훈련 커리큘럼에 포함하여 일반화를 강화하지 않았다(저자 자인).</li>
+<li>손-물체 상호작용 점수는 좌우 손을 구분하지 않으며, 특정 손 또는 양손 조작 작업은 재정의가 필요하다(미수행).</li>
+<li>정책 조합 모듈은 서기接管 후 물체 낙하를 처리하지 않으며, 저자는 대형 언어 모델로 정책 선택을 제안했지만 구현하지 않았다.</li>
+<li>논문은 실제 로봇 실험, 계산 시간, 메모리 사용량, 총 훈련 시간(벽시계 시간), GPU 모델 및 수량을 언급하지 않았다.</li>
+</ul>
+<h2 id="_11">공학적 시사점</h2>
+<ol>
+<li>
+<p><strong>재현 시 우선 확인 사항</strong>: 먼저 CHWSC 차수가 ≥5인지 확인하라(CHWSC(5) 성공률 89%, CHWSC(4)는 41%로 급락)—이는 성공률의 분기점이다; 동시에 손가락 관절 분리가 활성화되었는지 확인하라(분리 없음은 7%만 성공). 개별 분리(D(1))를 직접 채택하는 것이 좋으며, 그룹 분리(D(5))는 근접도가 더 높지만 감싸기 정도와 성공률이 현저히 떨어진다.</p>
+</li>
+<li>
+<p><strong>가장 함정에 빠지기 쉬운 부분</strong>: 교차-구현 전이. 단순화된 모델(예: 손가락 없음)에서 훈련한 후 완전한 로봇으로 전이할 계획이라면 성공률이 100%에서 31%로 급락한다—반드시 목표 구현에서 모든 기술을 훈련하라. 도메인 무작위화는 구현 불일치를 보완할 수 없으며, 이는 파라미터 튜닝 문제가 아닌 아키텍처 수준의 제약이다.</p>
+</li>
+<li>
+<p><strong>보상 설계 참고</strong>: 성취 트리거 보상 그래프의 마일스톤 임계값(예: 손-물체 근접 85%, 감싸기 정도 40%)은 직접 재사용할 수 있지만, 강제/비강제 점수 선택에 주의하라—사전 잡기와 같이 유지해야 하는 상태는 강제 점수, 희생 가능한 중간 상태는 비강제 점수를 사용한다. 총 보상 공식의 <span class="arithmatex">\(L_j\)</span>(점프 수)와 <span class="arithmatex">\(w=2\)</span> 지수 설계는 유지할 가치가 있다.</p>
+</li>
+<li>
+<p><strong>관측 벡터 차원 주의</strong>: 완전한 72-DoF 조작 정책의 관측 벡터는 CHWSC(6) 44×2 차원을 포함하지만 이동 정책은 포함하지 않는다; 32-DoF 손가락 없는 로봇은 손가락 접촉 힘 항이 없다. 조합 시 통합 관측 벡터의 인덱스 매핑이 올바른지 확인해야 하며, 이는 다중 정책 플레이어에서 가장 버그가 발생하기 쉬운 부분이다.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_developing_combined_manipulation_locomot_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">문제 정식화 및 아키텍처 독립성</a></li>
+<li><a href="#-">손-물체 상호작용 표현</a></li>
+<li><a href="#-5">손-물체 상호작용 점수(5개 지표)</a></li>
+<li><a href="#_5">손가락 관절 분리</a></li>
+<li><a href="#_6">성취 트리거 보상</a></li>
+<li><a href="#_7">정책 조합</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#iv">보지 못한 물체 제로샷 잡기 성공률(표 IV)</a></li>
+<li><a href="#-v-72-dof">서기-걷기 성공률(표 V, 72-DoF 잡기 정책과 조합)</a></li>
+<li><a href="#vi-chwsc">절제 실험 핵심 데이터(표 VI, CHWSC 차수 및 분리 방식)</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

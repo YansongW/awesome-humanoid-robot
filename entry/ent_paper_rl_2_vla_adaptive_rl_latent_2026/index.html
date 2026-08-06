@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RL$^2$-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for Vision-Language-Action Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RL$^2$-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RL$^2$-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for Vision-Language-Action Models</h1>
+      <p class="entry-name-en">RL$^2$-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RL²-VLA 提出一种自适应推理时转向框架，通过轻量级离线 RL 策略在 VLA 潜在空间上生成多样化动作候选，并利用失败检测器仅在基础策略可能失败时触发组合式转向。核心贡献在于将“何时转向”与“如何转向”解耦，用共形预测校准的 SAFE 检测器实现按需干预，在 SIMPLER、PolaRiS 及真实机器人上显著提升 OOD 鲁棒性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.26991" target="_blank" rel="noopener">arXiv:2607.26991 RL$^2$-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有测试时缩放方法（如 Repeated/Rephrase）生成的动作样本高度同质，继承基础 VLA 的相同失败模式；而可微转向方法受限于预训练 VLM 的物理基础缺陷。更关键的是，所有方法在每个时间步施加相同干预强度，不区分当前状态基础策略是否可能成功——这在分布内任务上反而引入不必要的扰动，降低已准确的动作质量。</p>
+<p>RL² 真正改变了“干预策略”的粒度：它把转向从“全局固定”变为“状态自适应”。通过轻量级失败检测器（SAFE）实时判断基础 VLA 是否处于失败风险，仅在必要时激活组合转向，否则回退到原始策略。这避免了“一刀切”干预的副作用，使得同一套框架既能提升 OOD 鲁棒性（+17.3%），又不牺牲分布内性能。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="1-rl">1. 潜在空间 RL 策略训练（如何转向）</h3>
+<ul>
+<li>在 VLA 内部特征（如 π₀ 的 1024 维嵌入）上训练轻量级流匹配策略，而非原始观测。</li>
+<li>使用 QAM（Q-learning with Adjoint Matching）替代反向传播：通过伴随状态 g̃_t 从终端动作反推时间相关引导信号，匹配损失为：
+  L_AM = E ∫₀¹ ||2(f_θ - f_β)/σ_t + σ_t g̃_t||² dt，其中 σ_t = √(2(1-t)/t)。</li>
+<li>策略收敛到 π(a|s) ∝ π_β(a|s)exp(τQ(s,a))，逆温度 τ 控制探索-利用平衡（π₀ 用 0.1，π₀.₅ 用 0.02）。</li>
+</ul>
+<h3 id="2-compositional-steering">2. 组合式转向（Compositional Steering）</h3>
+<ul>
+<li>速度场加权组合：v_comp ← w·v_VLA + (1-w)·v_RL，权重 w 从高斯分布（μ=0.5，σ=0.25）采样并裁剪到 [0,1]。</li>
+<li>对自回归 VLA（如 OpenVLA），先拟合 VLA 与 RL 样本等量混合的高斯分布，再从拟合分布采样更大批次。</li>
+<li>设计理由：VLA 提供大规模但固有缺陷的行为先验，离线 RL 诱导超越主导演示模式的多样性，两者互补。</li>
+</ul>
+<h3 id="3">3. 自适应触发（何时转向）</h3>
+<ul>
+<li>SAFE 检测器：LSTM 接收 VLA 内部特征序列 e_{0:t}，输出失败分数 s_t ∈ [0,1]，用二元交叉熵训练。</li>
+<li>共形预测校准：对每个任务分别校准时变阈值带 C_α = {[lower_t, upper_t]}，upper_t = μ_t + h_t，保证新成功 rollout 满足 s_t &lt; upper_t 的概率至少 1-α。</li>
+<li>α 选择启发式：在验证集上扫描候选 α 值，用平衡准确率 BalAcc = ½(TPR + TNR) 选择最优；若并列，则根据 RL 策略相对 VLA 的独立表现打破平局（RL 更优时选更大 α 以允许更频繁干预）。</li>
+</ul>
+<h3 id="4">4. 动作验证</h3>
+<ul>
+<li>验证器（CoVer 或 RoboMonkey）为每个候选动作打分 r_t^n = V_θ(o_t, â_t^n, l_t)，选择最高分样本 â_t*。</li>
+</ul>
+<h2 id="_3">关键创新</h2>
+<ol>
+<li>
+<p><strong>状态自适应的转向时机</strong>：首次将失败检测（SAFE）与测试时缩放结合，用共形预测提供统计保证的触发阈值。相比“Always 转向”或“CoVer 触发”，SAFE 在 PolaRiS 上平均成功率提升 +3.5%（由表内 42.7 vs 39.8 计算），且成功/失败分数更易分离（ROC-AUC 最高 90.4%）。</p>
+</li>
+<li>
+<p><strong>潜在空间 RL 而非观测空间</strong>：在 VLA 内部特征（1024 维）上训练 RL 策略，而非用小型 ResNet 编码器。消融显示潜在空间带来 +38.8% 提升（OpenVLA 上无潜在空间 RL 仅 0.5% 成功率），因为 VLA 特征已编码丰富的语义与物理先验。</p>
+</li>
+<li>
+<p><strong>组合式速度场加权</strong>：不同于直接替换或拼接动作，通过速度加权（w 从高斯采样）实现软组合，既保留 VLA 的大规模先验，又注入 RL 的多样性。缩放实验显示样本数 1→40 时 RL² 性能提升 +18.7%，优于 Rephrase 的饱和曲线。</p>
+</li>
+</ol>
+<h2 id="_4">实验与结果</h2>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>基线</th>
+<th>RL² 自适应</th>
+<th>提升</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIMPLER 域内（OpenVLA）</td>
+<td>Repeated 最强</td>
+<td>任务级最高</td>
+<td>+19.4%（平均 +7.5%）</td>
+</tr>
+<tr>
+<td>SIMPLER OOD 语言（π₀）</td>
+<td>Rephrase 最强</td>
+<td>任务级最高</td>
+<td>+14.7%（平均 +10.1%）</td>
+</tr>
+<tr>
+<td>PolaRiS OOD 语言（π₀.₅）</td>
+<td>Rephrase 最强</td>
+<td>平均成功率</td>
+<td>+10.9%（Move Latte Cup +17.3%）</td>
+</tr>
+<tr>
+<td>SIMPLER OOD 环境（π₀）</td>
+<td>Rephrase 最强</td>
+<td>平均</td>
+<td>+8.5%（Spoon on Towel - Google +14.6%）</td>
+</tr>
+<tr>
+<td>真实机器人（PiperX）</td>
+<td>Rephrase 最强</td>
+<td>平均成功率</td>
+<td>+17.5%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>消融：自适应 vs 非自适应平均 +8.9%（任务级 +16.7%）；RL vs BC +4.5%；SAFE vs CoVer +3.5%。</li>
+<li>缩放定律：失败元组下 RL² 组合转向表现出最强缩放行为（NRMSE 显著更低），成功元组下多数方法比 Rephrase 差，验证了“仅在失败时转向”的必要性。</li>
+<li>时间开销：SAFE 推理恒为 1ms（H100），QAM 为 9-25ms，远低于 π₀ 的 219-698ms，适合实时部署。</li>
+</ul>
+<h2 id="_5">边界与局限</h2>
+<ul>
+<li>未与大型 VLM 的可微引导方法（如 ConRFT、Policy Decorator）比较，这些方法可能在不同规模下表现不同。</li>
+<li>α 选择启发式需要为每个新任务重新执行一次验证集扫描，增加部署成本；论文未明确扫描的完整 α 范围。</li>
+<li>失败检测器依赖在线 rollout 收集训练数据（每任务 100 个 rollout），未利用大规模离线数据集，可能限制跨任务泛化。</li>
+<li>真实世界实验仅评估 π₀，未覆盖 π₀.₅ 或 OpenVLA；工具箱任务存在动作高度限制，可能低估方法在更复杂操作上的表现。</li>
+<li>假设存在稳健的验证器（CoVer/RoboMonkey），未联合训练 RL 策略与验证器，验证器误差可能成为瓶颈。</li>
+</ul>
+<h2 id="_6">工程启示</h2>
+<ul>
+<li><strong>先核对验证器质量</strong>：RL² 依赖验证器选择最优动作，若验证器本身在 OOD 上不可靠（如 CoVer 在 PolaRiS 上触发效果差于 SAFE），整体收益会大打折扣。建议先评估验证器的 ROC-AUC 是否高于 80%。</li>
+<li><strong>潜在空间维度决定训练成本</strong>：QAM 训练时间主要由 VLA 嵌入维度决定（π₀ 的 1024 维需 4.5 小时，OpenVLA 的 4096 维需 48 小时）。复现时优先选择低维潜在空间的 VLA（如 π₀），或考虑降维。</li>
+<li><strong>最容易踩坑：α 选择与阈值校准</strong>：共形预测的阈值带需按任务分别校准，且 α 选择启发式依赖 RL 策略与 VLA 的相对表现。若 RL 策略训练不充分（如逆温度 τ 过大导致探索不足），启发式可能选错 α，导致过度或不足干预。</li>
+<li><strong>组合权重 w 的采样分布</strong>：高斯 μ=0.5、σ=0.25 是经验值，对自回归 VLA（OpenVLA）需改用高斯扰动策略（拟合混合分布再采样）。切换 VLA 架构时必须重新验证此超参数。</li>
+<li><strong>推理时延预算</strong>：SAFE（1ms）和 QAM（&lt;25ms）开销可忽略，但验证器 CoVer 在 batch size 128 时需 145ms（RTX 5090），若动作批次过大可能成为瓶颈。建议控制候选样本数在 40 以内（缩放实验显示 40 样本时收益已饱和）。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.26991</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_chen_conrft_a_reinforced_fine_tunin_2025/">ConRFT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_kwok_robomonkey_scaling_test_time_s_2025/">RoboMonkey</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rl_2_vla_adaptive_rl_latent_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kwok_robomonkey_scaling_test_time_s_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboMonkey</h3>
+          <p>RoboMonkey 是斯坦福大学、UC Berkeley 和 NVIDIA Research 于 2025 年提出的视觉-语言-动作模型测试时扩展框架，发表于…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_conrft_a_reinforced_fine_tunin_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ConRFT</h3>
+          <p>ConRFT 是由中国科学院自动化研究所 SKL-MAIS 与国科大人工智能学院于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#1-rl">1. 潜在空间 RL 策略训练（如何转向）</a></li>
+<li><a href="#2-compositional-steering">2. 组合式转向（Compositional Steering）</a></li>
+<li><a href="#3">3. 自适应触发（何时转向）</a></li>
+<li><a href="#4">4. 动作验证</a></li>
+</ul>
+</li>
+<li><a href="#_3">关键创新</a></li>
+<li><a href="#_4">实验与结果</a></li>
+<li><a href="#_5">边界与局限</a></li>
+<li><a href="#_6">工程启示</a></li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

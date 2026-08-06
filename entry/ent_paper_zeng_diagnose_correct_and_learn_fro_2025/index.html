@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diagnose Correct and Learn from Manipulation Failures via Visual Symbols · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Diagnose Correct and Learn from Manipulation Failures via Visual Symbols</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Diagnose Correct and Learn from Manipulation Failures via Visual Symbols</h1>
+      <p class="entry-name-en">Diagnose Correct and Learn from Manipulation Failures via Visual Symbols</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02787v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ViFailback 是由北京航空航天大学、上海创新研究院、南方科技大学和上海交通大学于2025年提出的大型视觉-语言-动作模型，用于机器人操作中的故障诊断与纠正。其核心贡献在于利用显式视觉符号提升标注效率，并发布了包含58,126个VQA对和5,202条真实操作轨迹的ViFailback数据集，以及用于评估VLM故障诊断能力的ViFailback-Bench基准。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.02787" target="_blank" rel="noopener">Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2512.02787" target="_blank" rel="noopener">Diagnose Correct and Learn from Manipulation Failures via Visual Symbols source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>ViFailback 框架旨在解决现有VLA模型在故障诊断和从失败中学习方面的局限性，同时克服模拟生成故障数据集在真实世界泛化不足的问题。该框架通过显式视觉符号增强标注效率，并构建了大规模真实世界数据集ViFailback，包含58,126个VQA对和5,202条操作轨迹。基于此数据集，团队建立了ViFailback-Bench基准，包含11个细粒度VQA任务，分为封闭式评估的ViFailback-Bench Lite和开放式评估的ViFailback-Bench Hard。为验证框架有效性，团队开发了ViFailback-8B VLM，在基准上取得显著性能提升，并能生成用于纠正动作的视觉符号。最终，通过将ViFailback-8B与VLA模型集成，真实机器人实验展示了其辅助VLA模型从失败中恢复的能力。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<p>ViFailback 框架的核心创新在于使用显式视觉符号（如箭头、高亮框等）来标注操作失败的关键位置和纠正方向，从而大幅提升数据标注效率。该框架包含三个主要组件：
+- <strong>ViFailback 数据集</strong>：包含58,126个VQA对，对应5,202条真实世界操作轨迹。每个VQA对包含一个关于操作失败的问题（如“为什么抓取失败？”）以及对应的文本和视觉纠正指导。
+- <strong>ViFailback-Bench 基准</strong>：包含11个细粒度VQA任务，分为两类：
+  - <strong>ViFailback-Bench Lite</strong>：封闭式评估，提供预设答案选项。
+  - <strong>ViFailback-Bench Hard</strong>：开放式评估，要求模型生成自由文本回答。
+- <strong>ViFailback-8B VLM</strong>：基于8B参数规模的VLM，在ViFailback数据集上微调，能够同时输出故障诊断文本和纠正动作的视觉符号。</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>数据集规模</strong>：58,126个VQA对，5,202条真实操作轨迹。</li>
+<li><strong>基准任务</strong>：11个细粒度VQA任务，涵盖故障类型识别、纠正动作预测等。</li>
+<li><strong>模型对比</strong>：ViFailback-8B 与多个基线VLM（如LLaVA、BLIP-2等）在ViFailback-Bench上进行对比。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>ViFailback-Bench 性能</strong>：ViFailback-8B 在ViFailback-Bench Lite和ViFailback-Bench Hard上均取得显著整体性能提升，具体数字需参考原论文。</li>
+<li><strong>视觉符号生成</strong>：ViFailback-8B 能够生成准确的视觉符号（如箭头指向正确抓取位置），用于指导机器人纠正动作。</li>
+<li><strong>真实机器人实验</strong>：将ViFailback-8B与VLA模型集成后，机器人成功从多种操作失败（如抓取偏移、物体滑落）中恢复，成功率提升明显。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>ViFailback 通过显式视觉符号和高质量真实世界数据集，有效提升了VLA模型的故障诊断和纠正能力。ViFailback-8B 在基准测试和真实机器人实验中均表现出色，为机器人从失败中学习提供了实用框架。项目网站提供更多细节和演示。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2512.02787v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zeng_diagnose_correct_and_learn_fro_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

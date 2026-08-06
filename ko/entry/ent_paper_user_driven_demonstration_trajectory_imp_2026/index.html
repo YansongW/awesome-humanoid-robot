@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method</h1>
+      <p class="entry-name-en">User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>This paper presents a method for user-driven robot Learning from Demonstration (LfD) that reduces user effort while ensuring compliant and precise reproduction. The method eliminates repeated teaching for the same task and enables real-time learning from a single demonstration. Demonstrated motions are reproduced with high precision, while impedance variations are learned in real time to provide.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.16998" target="_blank" rel="noopener">arXiv:2607.16998 User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Met</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 Yang과 Kermani가 개발한 단일 시연(single-shot) 로봇 학습 기반 시연(LfD) 프레임워크를 제안하며, 로봇 고유수용감각 센서로부터 궤적과 임피던스 프로파일을 동시에 학습한다. 핵심 기여는 3D 고속 미분동형 정합(FDM)과 확장 칼만 필터(EKF) 속도 보정, 온라인 임피던스 파라미터화, 표면 접촉 유지 전략을 결합하여 고충실도 경로 재현과 외란 복구를 달성하는 것이다.</p>
+<h2 id="_2">그것이 바꾸는 것</h2>
+<p>기존 LfD 방법은 오랫동안 두 가지 상호 얽힌 문제점에 시달려 왔다: 첫째는 다중 시연 요구로 인한 사용자 부담, 둘째는 시간 인덱스에 의존하는 궤적 표현으로 인해 재현 시 새로운 궤적이나 외부 외란에 적응할 수 없는 점이다. DMP가 시간 불변성과 목표 수렴을 해결했지만, 다중 시연 요구와 시간 의존성 문제는 여전히 존재한다. 더욱 중요하게는, 기존 힘/임피던스 학습 방법은 일반적으로 센서 피드백이나 단순화된 환경 접촉 모델에 의존하며 경로 재현과 별도로 기록되어 인간 시연으로부터 순응 동작을 직접 학습할 수 없다.</p>
+<p>본 논문이 실제로 바꾸는 것은 "궤적 학습"과 "임피던스 학습"을 분리된 두 기술 경로에서 단일하고 온라인이며 고유수용감각 기반의 프로세스로 통합한 것이다. 이는 작업 참조에서의 이탈을 억제해야 할 외란으로 간주하지 않고, EKF를 통해 속도 바이어스를 온라인으로 추정하여 외란을 수정 가능한 시스템 상태로 간주한다. 동시에, 시연 단계에서 인간 조작자가 엔드 이펙터와 표면의 연속 접촉을 유지한다는 암묵적 가정을 활용하여 표면 기하 정보를 동역학 시스템(DS)에 인코딩함으로써 외부 접촉 또는 비전 센서 없이 표면 접촉 유지를 달성한다. 이는 본질적으로 "무엇을 시연하는가"를 단순한 위치 경로에서 "환경과 상호작용하는 방법"의 수준으로 확장한 것이다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="fig-1">전체 아키텍처 (Fig. 1)</h3>
+<p>프레임워크는 네 가지 모듈로 구성된다: (i) 3D FDM 알고리즘이 선형 DS를 시연 궤적에 정합하여 기본 속도장을 생성; (ii) EKF가 기본 속도를 보정하여 궤적 재현을 정밀화하고 외란 복구를 달성; (iii) 재현 과정에서 임피던스 파라미터를 온라인으로 학습; (iv) 표면 접촉 유지를 위한 선택적 모듈.</p>
+<h3 id="3d-fdm-algorithm-1">3D FDM 알고리즘 (Algorithm 1)</h3>
+<ul>
+<li>2D FDM을 3D로 확장하여 점 집합 X를 Y로 매핑하는 미분동형 Φ를 계산.</li>
+<li>국소 가중 평행 이동: ŷᵢ = xᵢ + k_ρⱼ vⱼ, 여기서 k_ρⱼ = e^(−ρⱼ²‖xᵢ−cⱼ‖²)는 가우시안 RBF 커널.</li>
+<li>‖φ(X)−Y‖²/N을 최소화하도록 ρⱼ를 최적화, ρ_max = e^(1/4)/(√2‖v‖).</li>
+<li>각 반복에서 X 내 목표로부터 가장 먼 점을 선택하고, 방향 vⱼ = β(qⱼ−cⱼ), 0 &lt; μ &lt; 1은 안전 여유, 0 &lt; β ≤ 1은 학습률, K = 120–200은 사용자가 선택한 국소 가중 평행 이동 총 수.</li>
+<li>최종 Ŷ = Φ(X^(K)) = (φ_ρ₁ ∘ φ_ρ₂ ∘ ⋯ ∘ φ_ρK)(X).</li>
+</ul>
+<h3 id="ds-mds-6">개선된 DS (mDS) 운동 생성기 (식 6)</h3>
+<ul>
+<li>원래 FDM 변환 DS는 3D 및 복잡한 운동에서 일반화 능력이 저하되며, 저자는 mDS를 제안: ẏ_mDS = −ζ J_Φ x̂.</li>
+<li>ζ = ζ + ηΔζ는 속도 변조 항, Δζ = (·)ᵀe_v/(‖(·)ᵀe_v‖+ε), e_v는 시연 속도와 mDS 생성 속도 간 오차, η는 적응률, ε는 임계값.</li>
+<li>Δζ는 이동 평균 필터를 거치고 클램프가 적용됨.</li>
+</ul>
+<h3 id="algorithm-2">역 미분동형 (Algorithm 2)</h3>
+<ul>
+<li>변위를 반전하여 X̂ = Φ⁻¹(Y)를 풀며, Newton–Raphson 방법으로 자기 참조 방정식 rⱼ(k) = e^(−ρⱼ²‖oⱼ+kⱼvⱼ⁻‖²)를 해결.</li>
+<li>중지 임계값 ε = 10⁻⁶, 최대 반복 횟수 20–50.</li>
+</ul>
+<h3 id="jacobian-1617">Jacobian 행렬 (식 16–17)</h3>
+<ul>
+<li>Sherman–Morrison 공식을 사용하여 J_φⱼ = I₃ + 2ρⱼ²kⱼvⱼ⁻(X̂−cⱼ)ᵀ, 전체 Jacobian J_Φ = ∏ⱼ₌K→1 J_φⱼ.</li>
+</ul>
+<h3 id="ekf-1822">EKF 속도 보정 모듈 (식 18–22)</h3>
+<ul>
+<li>보정 속도: ẏ_ekf = ẏ_mDS + b, b는 온라인으로 추정되는 속도 바이어스 항.</li>
+<li>EKF 상태 sᵢ = [yᵢ, bᵢ]ᵀ ∈ ℝ⁶.</li>
+<li>프로세스 모델에는 바이어스 감쇠 항 e^(−λ_b Δt)가 포함되며, λ_b &gt; 0은 바이어스 감쇠율.</li>
+<li>상태 전이 Jacobian에서 F_y는 전방 유한 차분으로 근사, 시간 간격 10⁻³.</li>
+<li>측정 행렬 H = [I₃ 0₃], R은 사용자 정의 측정 노이즈 공분산.</li>
+</ul>
+<h3 id="2325">임피던스 파라미터화 (식 23–25)</h3>
+<ul>
+<li>속도 추적 제어기: F_c = D(⋄)ṗ_c, 여기서 ṗ_c = ẏ_msr − ẏ_ekf.</li>
+<li>D(⋄) = U(⋄)ΛU(⋄)ᵀ, U는 추정된 직교 주축을 포함하며, ê₁은 원하는 운동 방향을 가리킴.</li>
+<li>Λ = diag(λ₁, λ₂, λ₃)는 사용자 정의 대각 행렬, 요소는 비음수 (일반적으로 10–100).</li>
+<li>λ₁ = 0으로 설정하고 나머지 &gt; 0으로 설정하면 경로 추적에서 이탈을 유발하는 외력을 저항할 수 있음.</li>
+</ul>
+<h3 id="26">표면 접촉 유지 전략 (식 26)</h3>
+<ul>
+<li>시연 단계에서 인간 조작자가 EE 도구와 대상 표면의 연속 접촉을 유지한다는 가정을 활용하여, 표면 국소 기하가 DS에 암묵적으로 인코딩되므로 외부 접촉 또는 비전 센서가 필요 없음.</li>
+<li>세 번째 열 ê₃는 외부 표면 법선과 일치하여 실시간 표면 법선 추정을 제공.</li>
+<li>최종 속도: ẏ_d = ẏ_mDS + g_c(·) + b, 여기서 g_c(·) = α_c ê₃는 표면을 향한 조정 가능한 속도를 생성; 높은 α_c는 긴밀한 접촉을 강제하고, α_c = 0은 접촉력 없는 추적을 의미.</li>
+</ul>
+<h2 id="_4">핵심 혁신</h2>
+<ol>
+<li><strong>단일 시연으로 궤적과 임피던스를 동시에 학습</strong>: 이는 기존 LfD 패러다임에 대한 실질적 돌파구이다. 기존 방법은 궤적만 학습하거나(DMP, GMM 등), 센서 피드백에 의존하여 힘/임피던스를 별도로 학습했지만, 본 논문은 처음으로 둘을 고유수용감각 기반의 단일 프레임워크로 통합하여 사용자 시연 부담을 크게 줄였다.</li>
+<li><strong>mDS와 EKF의 협력 설계</strong>: mDS는 원래 FDM이 3D 복잡 운동에서 겪는 일반화 저하 문제를 해결하고, EKF가 속도 바이어스 b를 온라인으로 추정하여 시스템에 외란 복구 능력을 부여한다. 이 조합의 핵심은 EKF가 단순히 필터링하는 것이 아니라 "참조 이탈"을 억제해야 할 노이즈가 아닌 추정 및 수정 가능한 시스템 상태로 재해석한다는 점이다.</li>
+<li><strong>센서 없는 표면 접촉 유지 전략</strong>: 시연 단계의 암묵적 표면 기하 정보를 활용하여 DS 인코딩과 세 번째 주축 ê₃를 표면 법선에 정렬함으로써 외부 접촉 또는 비전 센서 없이 접촉 유지를 달성한다. 이 설계는 "시연"의 의미를 경로 추적에서 상호작용 작업 자체로 확장하며, HRI 안전성에 직접적인 의미를 가진다.</li>
+</ol>
+<h2 id="_5">실험 및 결과</h2>
+<p>실험은 7-DOF KUKA LWR IV+ 로봇에서 수행되었으며, 원격 Ubuntu PC가 ROS와 UDP를 통해 통신하고 FRI 인터페이스를 사용하며 샘플링 속도는 200 Hz이다. 제어 모드는 관절 임피던스 모드로 토크 입력만 제어하며, 강성 및 댐핑 인터페이스는 비활성화되고 마찰 및 중력 토크는 보상되었다. 데이터셋은 LASA Handwriting 데이터셋의 2D 참조 궤적을 사용하여 3D 데카르트 공간으로 확장했으며, 궤적 유형에는 'S'자형, 근접 'O'자형, 사다리꼴, 'W'자형 경로가 포함된다.</p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FDM 변환 추정 오차</td>
+<td>0.3 cm 미만</td>
+<td>subfigures ii</td>
+</tr>
+<tr>
+<td>보정 후 재현 오차</td>
+<td>일반적으로 2 cm 이하</td>
+<td>녹색 점선이 시연(빨간색)을 밀접하게 추종</td>
+</tr>
+<tr>
+<td>기준선(DS 속도 생성) 재현 오차</td>
+<td>명확히 더 큼</td>
+<td>경로 복잡도가 증가함에 따라 악화되며 외란 하에서 복구 불가</td>
+</tr>
+</tbody>
+</table>
+<p>결과는 그래픽 형태로 제시되며(Fig. 3 및 Fig. 4), 논문에는 숫자 표가 포함되지 않았다. 핵심 의미: mDS+EKF 조합은 재현 정밀도에서 순수 DS 기준선보다 현저히 우수하며 외란 복구 능력을 갖추고, 임피던스 파라미터화와 표면 접촉 유지 전략은 접촉을 유지하면서도 경로 추적 정밀도를 희생하지 않는다.</p>
+<h2 id="_6">경계 및 한계</h2>
+<p>논문은 다중 작업 일반화, 서로 다른 사용자 시연 스타일 차이, 그리고 다른 로봇 플랫폼에서의 이식성을 명시적으로 논의하지 않았다. 원래 FDM 변환 DS가 3D 및 더 복잡한 운동에서 겪는 일반화 저하 문제는 mDS로 완화되었지만, 저자는 매우 복잡하거나 고도로 동적인 작업에 대한 적용 가능성 경계를 언급하지 않았다. 더 큰 규모의 데이터셋에서의 계산 복잡도 성능도 논의되지 않았다. 실험은 단일 플랫폼(KUKA LWR IV+)에서만 검증되었고 궤적 유형도 제한적이며('S', 'O', 사다리꼴, 'W'), 비구조화 환경이나 동적 접촉 작업에 대한 일반화 능력은 논문에서 명확히 다루지 않았다.</p>
+<h2 id="_7">공학적 시사점</h2>
+<p>재현 시 먼저 FDM 파라미터 설정을 확인해야 한다: K = 120–200의 국소 가중 평행 이동 총 수, 0 &lt; μ &lt; 1의 안전 여유, 0 &lt; β ≤ 1의 학습률. 이러한 파라미터는 미분동형 품질과 계산 비용에 직접적인 영향을 미친다. EKF 모듈에서 F_y의 전방 유한 차분 시간 간격 10⁻³과 바이어스 감쇠율 λ_b &gt; 0은 실제 샘플링 속도(200 Hz)와 작업 동역학에 따라 조정해야 하며, 그렇지 않으면 속도 추정 지연이나 과도한 평활화가 발생할 수 있다. 임피던스 파라미터 Λ의 대각 요소(일반적으로 10–100) 선택은 순응성과 추적 정밀도 간의 균형을 고려해야 하며, λ₁ = 0 설정은 경로 이탈을 유발하는 외력에 저항하는 데 중요하다. 가장 함정에 빠지기 쉬운 부분은 역 미분동형의 Newton–Raphson 해법이다: 중지 임계값 ε = 10⁻⁶과 최대 반복 횟수 20–50은 복잡한 궤적에서 수렴하지 않을 수 있으므로, 먼저 소규모 점 집합에서 역변환 정밀도를 검증하는 것이 좋다. 표면 접촉 유지 전략은 시연 단계에서 인간 조작자가 연속 접촉을 유지한다는 가정에 의존하므로, 시연 중 접촉이 불연속적이면 세 번째 주축 ê₃와 표면 법선의 정렬이 실패할 수 있으며, 시연 단계에서 조작자 행동을 엄격히 규범화해야 한다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_kalman_filter_kf/">Kalman Filter (KF)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_user_driven_demonstration_trajectory_imp_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kalman_filter_kf/">
+          <span class="entry-type">논문</span>
+          <h3>Kalman Filter (KF)</h3>
+          <p>Conservative card from a lab paper list entry: Kalman Filter (KF). No fetchable paper URL was…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾸는 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#fig-1">전체 아키텍처 (Fig. 1)</a></li>
+<li><a href="#3d-fdm-algorithm-1">3D FDM 알고리즘 (Algorithm 1)</a></li>
+<li><a href="#ds-mds-6">개선된 DS (mDS) 운동 생성기 (식 6)</a></li>
+<li><a href="#algorithm-2">역 미분동형 (Algorithm 2)</a></li>
+<li><a href="#jacobian-1617">Jacobian 행렬 (식 16–17)</a></li>
+<li><a href="#ekf-1822">EKF 속도 보정 모듈 (식 18–22)</a></li>
+<li><a href="#2325">임피던스 파라미터화 (식 23–25)</a></li>
+<li><a href="#26">표면 접촉 유지 전략 (식 26)</a></li>
+</ul>
+</li>
+<li><a href="#_4">핵심 혁신</a></li>
+<li><a href="#_5">실험 및 결과</a></li>
+<li><a href="#_6">경계 및 한계</a></li>
+<li><a href="#_7">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

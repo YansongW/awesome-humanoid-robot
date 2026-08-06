@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance</h1>
+      <p class="entry-name-en">AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P039. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>AnyBody 是一个由部署时任意身体关键点子集驱动的统一全身人形控制器，由研究团队提出。其核心贡献在于学习一个共享的球形潜在运动表示，将稀疏关键点条件与全身控制统一到单一框架中，并支持通过潜在空间残差强化学习进行下游任务微调。该方法在 Unitree G1 人形上实现了从单腕到全身多种关键点配置的零样本追踪，并显著提升了障碍物到达和腕部书写等下游任务的成功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.29209" target="_blank" rel="noopener">arXiv:2606.29209 AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有物理追踪器面临两难：要么依赖昂贵的全身动捕与易错的重定向流程，限制了数据规模与策略学习；要么将上下肢控制拆分为分离的层次结构，牺牲了全身协调。AnyBody 真正改变的是将“控制条件”从固定关节轨迹或完整骨架降维为“任意关键点子集”，从而绕过了重定向环节，让操作者能按任务与部署环境灵活选择控制点（从单腕到全身），同时保持全身行为的协调性。这实质上是把“跟随什么”与“如何协调全身”解耦，前者由用户在线指定，后者由预训练的运动先验承担。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">三阶段训练框架</h3>
+<ul>
+<li><strong>Stage 1（运动先验学习）</strong>：在约 140 小时过滤后的 Bones-Seed 数据上训练特权教师追踪器，并在线蒸馏为确定性编码器-解码器。潜在变量 z 投影到单位球面 𝕊^{d_z−1}（d_z = 16），解码器 D 作为动力学感知的运动先验。损失 ℒ₁ = ‖D_ϕ(z, s^p) − π^T(s)‖²₂ + λ_sm(1 − cos(z_t, z_{t−1}))，其中 λ_sm = 0.1。</li>
+<li><strong>Stage 2（关键点条件化）</strong>：冻结解码器 D，训练基于自注意力 transformer 的关键点编码器 E^kp。每个关键点 token 堆叠 0.5 秒窗口（15 帧，对称对数间隔）的历史与未来信息，缺失关键点通过注意力掩码 m 丢弃。损失 ℒ₂ = (1 − cos(ẑ^kp, sg[ẑ])) + λ_a‖D(ẑ^kp, s^p) − sg[D(ẑ, s^p)]‖²₂，λ_a = 0.05。掩码课程从全可见退火到 p_see = 0.4，并混合语义部署模式（仅躯干、仅手腕、仅脚踝等）。</li>
+<li><strong>Stage 3（下游微调）</strong>：冻结编码器与解码器，学习浅层残差校正器 g_ξ（1 层 transformer，d_model = 64）。策略均值 ẑ_policy = norm(ẑ_enc + α·g_ξ(·))，α = 1.0。输出投影以 gain 0.01 的 Xavier 初始化，使 Δz ≈ 0 在 step 0，从而精确复现蒸馏行为，避免随机潜在探索导致的奖励崩溃。</li>
+</ul>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li>球形潜在空间（单位范数）提供有界且平滑的运动流形，便于余弦对齐与残差校正。</li>
+<li>冻结解码器作为运动先验，确保任何关键点配置下的动作都符合物理可信的运动模式。</li>
+<li>小增益初始化是 Stage 3 安全微调的核心，它保证了初始策略与预训练行为完全一致，再通过 PPO 逐步偏离。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>统一任意关键点条件</strong>：首次将稀疏关键点（1 到 5 个）与全身控制统一到单一潜在空间，无需重定向或任务特定分支。这使得从单腕遥操作到全身追踪的连续谱系成为可能，且部署时无需重新训练。</li>
+<li><strong>三阶段蒸馏与残差微调范式</strong>：将“运动先验学习”与“任务条件化”分离，再通过潜在空间残差 RL 微调。这种范式避免了直接在冻结解码器上随机探索导致的奖励崩溃，为预训练运动模型的安全下游适配提供了新思路。</li>
+<li><strong>掩码课程与语义模式采样</strong>：通过从全可见到稀疏掩码的渐进训练，并显式采样部署相关的关键点组合（如仅脚踝），使编码器学会从任意子集推断全身状态，而非记忆特定配置。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="1">定量追踪性能（表 1）</h3>
+<table>
+<thead>
+<tr>
+<th>命令模式</th>
+<th># 点</th>
+<th>SR (%) ↑</th>
+<th>POI 位置误差 (cm) ↓</th>
+<th>POI 速度误差 ↓</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全身</td>
+<td>5</td>
+<td>97.6</td>
+<td>10.90</td>
+<td>0.301</td>
+</tr>
+<tr>
+<td>上肢（腕+躯干）</td>
+<td>3</td>
+<td>94.8</td>
+<td>9.48</td>
+<td>0.284</td>
+</tr>
+<tr>
+<td>仅腕</td>
+<td>2</td>
+<td>94.3</td>
+<td>10.41</td>
+<td>0.325</td>
+</tr>
+<tr>
+<td>单腕（左/右）</td>
+<td>1</td>
+<td>93.7</td>
+<td>10.79</td>
+<td>0.335</td>
+</tr>
+<tr>
+<td>仅躯干</td>
+<td>1</td>
+<td>94.3</td>
+<td>8.34</td>
+<td>0.216</td>
+</tr>
+<tr>
+<td>仅踝</td>
+<td>2</td>
+<td>95.4</td>
+<td>13.39</td>
+<td>0.351</td>
+</tr>
+<tr>
+<td>关节命令（特权信息）</td>
+<td>–</td>
+<td>99.3</td>
+<td>8.31</td>
+<td>0.225</td>
+</tr>
+<tr>
+<td>关节命令（无特权信息）</td>
+<td>–</td>
+<td>99.1</td>
+<td>16.98</td>
+<td>0.378</td>
+</tr>
+</tbody>
+</table>
+<p>单腕追踪成功率高于 93%，平均 POI 位置误差在大多数掩码模式下保持约 10 cm。仅躯干模式误差最低（8.34 cm），表明躯干作为全局锚点对稳定性至关重要。</p>
+<h3 id="2">下游任务成功率（表 2）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>无 RL 微调成功率</th>
+<th>有 RL 微调成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>障碍物到达 - 开放</td>
+<td>54.68%</td>
+<td>97.09%</td>
+</tr>
+<tr>
+<td>障碍物到达 - 屏障</td>
+<td>10.49%</td>
+<td>96.04%</td>
+</tr>
+<tr>
+<td>障碍物到达 - 低净空</td>
+<td>44.36%</td>
+<td>99.47%</td>
+</tr>
+<tr>
+<td>障碍物到达 - 容器</td>
+<td>3.04%</td>
+<td>95.56%</td>
+</tr>
+<tr>
+<td>腕部书写</td>
+<td>0.00%</td>
+<td>97.87%</td>
+</tr>
+</tbody>
+</table>
+<p>RL 微调带来显著提升，尤其在容器任务（3.04% → 95.56%）和腕部书写（0.00% → 97.87%）上，验证了残差微调对分布外命令轨迹的修复能力。</p>
+<h2 id="_7">边界与局限</h2>
+<p>论文未明确列出所有局限，但可推断：控制器在训练语料覆盖不足的边缘运动（如极低到达、大规模空中手写）上仍会失败，需依赖下游 RL 微调修复。当前平台不包括灵巧手控制，无法执行精细操作。扩展到配备灵巧手的人形是未来方向。此外，所有实验均在 Unitree G1 上完成，跨平台泛化性未验证；真实世界长期稳定性与磨损未讨论。</p>
+<h2 id="_8">工程启示</h2>
+<p>复现时优先核对 Stage 2 的掩码课程参数（p_see 从 1.0 退火到 0.4）与 Stage 3 的小增益初始化（gain 0.01），这两处是方法有效性的关键。最容易踩坑的是 Stage 3 的奖励设计：若未使用任务特定的非对称评论家或未设置成功阈值提前截断（如腕部书写 0.5 m 误差终止），训练可能不稳定。下游团队应首先验证预训练追踪器在目标关键点配置下的基线成功率，再决定是否需要 RL 微调；对于分布外命令（如空中书写），直接微调比调整追踪器更高效。硬件部署时注意控制频率 50 Hz 与仿真步长 0.005 s 的匹配，以及域随机化参数（摩擦 0.3–1.6、推力脉冲 ±0.5 m/s）对 sim-to-real 迁移的影响。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2606.29209</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_anybody_free_form_whole_body_humanoid_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">三阶段训练框架</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#1">定量追踪性能（表 1）</a></li>
+<li><a href="#2">下游任务成功率（表 2）</a></li>
+</ul>
+</li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

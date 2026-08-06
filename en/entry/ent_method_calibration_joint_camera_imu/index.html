@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joint-Camera-IMU Calibration · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/method/">Method</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Joint-Camera-IMU Calibration</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Method</div>
+      <h1>Joint-Camera-IMU Calibration</h1>
+      <p class="entry-name-en">Joint-Camera-IMU Calibration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Assembly, Integration &amp; Testing</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Body backfilled from chapter-05.md#相机-LiDAR 联合标定 by scripts/backfill_nonpaper_entries.py.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 Roadmap">
+      <span class="roadmap-badges-label">0→1 Roadmap</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">Stage 3 · Full Humanoid</span>
+        <span class="roadmap-badge-role">Core</span>
+      </a>
+      
+    </div>
+    
+
+    
+    <p class="untranslated-notice">This page has not been translated yet — the original Chinese content is shown below.</p>
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras, and inertial sensors to ensure coherent sensing and control.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <span>Wiki extraction</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>联合标定是人形机器人领域的重要方法。以下内容整理自项目 Wiki，供深入查阅。</p>
+<h2 id="_2">核心内容</h2>
+<p>在人形机器人中，相机提供密集纹理与语义信息，LiDAR 提供精确三维几何。要实现 RGB 点云着色、深度融合、目标 3D 定位等功能，必须精确标定相机与 LiDAR 之间的外参（旋转 <span class="arithmatex">\(\mathbf{R}_{CL}\)</span> 和平移 <span class="arithmatex">\(\mathbf{t}_{CL}\)</span>）。</p>
+<div class="admonition note">
+<p class="admonition-title">术语解释：相机-LiDAR 标定、外参、重投影误差、点云配准、标定靶</p>
+<ul>
+<li><strong>相机-LiDAR 标定（camera-LiDAR calibration）</strong>：估计相机坐标系与 LiDAR 坐标系之间刚体变换的过程。</li>
+<li><strong>外参（extrinsic parameters）</strong>：两个传感器坐标系之间的旋转和平移。</li>
+<li><strong>重投影误差（reprojection error）</strong>：LiDAR 点投影到图像后与对应图像特征之间的距离。</li>
+<li><strong>点云配准（point cloud registration）</strong>：把多组点云对齐到同一坐标系的算法，如 ICP。</li>
+<li><strong>标定靶（calibration target）</strong>：带有已知几何特征（棋盘格、圆孔、镂空图案）的板，用于提取对应特征。</li>
+</ul>
+</div>
+<p><strong>坐标变换关系</strong></p>
+<p>设空间点在世界/标定靶坐标系下为 <span class="arithmatex">\(\mathbf{P}_W\)</span>，在相机坐标系下为 <span class="arithmatex">\(\mathbf{P}_C\)</span>，在 LiDAR 坐标系下为 <span class="arithmatex">\(\mathbf{P}_L\)</span>。相机内参矩阵为 <span class="arithmatex">\(\mathbf{K}\)</span>，相机-LiDAR 外参为 <span class="arithmatex">\((\mathbf{R}_{CL}, \mathbf{t}_{CL})\)</span>，则有：</p>
+<div class="arithmatex">\[
+\mathbf{P}_C = \mathbf{R}_{CL} \mathbf{P}_L + \mathbf{t}_{CL}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{p} = \mathbf{K} \mathbf{P}_C / Z_C
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathbf{p} = [u, v, 1]^T\)</span> 为图像像素坐标，<span class="arithmatex">\(Z_C\)</span> 为相机坐标系下的深度。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["标定靶多姿态采集"] --&gt; B["相机检测角点 p_ij"]
+    A --&gt; C["LiDAR 提取平面 / 角点 P_L,ij"]
+    B --&gt; D["建立 3D-2D 对应"]
+    C --&gt; D
+    D --&gt; E["PnP 初值 + ICP / 非线性优化"]
+    E --&gt; F["外参 R_CL, t_CL"]
+    F --&gt; G["重投影误差验证"]</code></pre>
+<p><strong>基于标定靶的方法</strong></p>
+<p>最常用的标定靶是棋盘格板或带圆孔的铝板。步骤如下：</p>
+<ol>
+<li><strong>相机角点检测</strong>：用 Zhang 法或 OpenCV 检测棋盘格角点，得到每个角点的像素坐标 <span class="arithmatex">\(\mathbf{p}_{ij}\)</span> 和世界坐标 <span class="arithmatex">\(\mathbf{P}_{W,j}\)</span>。</li>
+<li><strong>LiDAR 平面提取</strong>：从点云中提取标定板平面，拟合平面方程；再提取平面边界或孔洞中心，得到角点在 LiDAR 坐标系下的三维坐标 <span class="arithmatex">\(\mathbf{P}_{L,ij}\)</span>。</li>
+<li><strong>对应点求解</strong>：若同一角点在相机和 LiDAR 中都被检测到，则可用 PnP + ICP 或全局非线性优化求解 <span class="arithmatex">\((\mathbf{R}_{CL}, \mathbf{t}_{CL})\)</span>。</li>
+</ol>
+<p><strong>最小化重投影误差</strong></p>
+<p>把所有帧的对应点放在一起，最小化重投影误差：</p>
+<div class="arithmatex">\[
+\min_{\mathbf{R}_{CL}, \mathbf{t}_{CL}} \sum_{i,j} \rho\left( \left\| \mathbf{p}_{ij} - \pi\left(\mathbf{K}, \mathbf{R}_{CL}\mathbf{P}_{L,ij} + \mathbf{t}_{CL}\right) \right\|^2 \right)
+\]</div>
+<p>其中 <span class="arithmatex">\(\pi(\cdot)\)</span> 为投影函数，<span class="arithmatex">\(\rho(\cdot)\)</span> 为鲁棒核函数（如 Huber），用于抑制错误对应点。</p>
+<p><strong>基于点云边缘/互信息的方法</strong></p>
+<p>当标定靶不便使用时，可利用场景中的自然几何边缘或反射强度信息：</p>
+<ul>
+<li><strong>边缘对齐</strong>：提取图像边缘和 LiDAR 点云投影后的边缘，最小化边缘距离。</li>
+<li><strong>互信息最大化</strong>：把 LiDAR 反射强度或深度渲染成伪图像，与相机图像求互信息，通过优化外参使两者对齐。</li>
+</ul>
+<p>这些方法对初始值敏感，通常先用标定靶得到一个粗略外参，再在线 refinement。</p>
+<p><strong>LiDAR 点云投影到图像的 Python 示例</strong></p>
+<pre class="highlight"><code class="language-python">import numpy as np
+import cv2
+
+def project_lidar_to_image(pts_lidar, R_cl, t_cl, K, dist_coeffs=None):
+    """把 LiDAR 点云投影到相机图像。
+    pts_lidar: Nx3 numpy array in LiDAR coordinate
+    R_cl, t_cl: camera extrinsic w.r.t LiDAR (3x3, 3x1)
+    K: 3x3 camera intrinsic matrix
+    返回: Nx2 像素坐标和有效掩码
+    """
+    pts_cam = (R_cl @ pts_lidar.T + t_cl).T
+    # 只保留相机前方的点
+    valid = pts_cam[:, 2] &gt; 0.1
+    pts_cam = pts_cam[valid]
+    # 投影
+    uv = (K @ pts_cam.T).T
+    uv = uv[:, :2] / uv[:, 2:3]
+    return uv, valid
+
+## 参考
+- Wiki extraction
+- 项目 Wiki：chapter-05.md#相机-LiDAR 联合标定
+
+## Overview
+Joint calibration is an important method in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.
+
+## Content
+In humanoid robots, cameras provide dense texture and semantic information, while LiDAR provides precise 3D geometry. To achieve functions such as RGB point cloud coloring, depth fusion, and 3D object localization, it is essential to accurately calibrate the extrinsic parameters (rotation \(\mathbf{R}_{CL}\) and translation \(\mathbf{t}_{CL}\)) between the camera and LiDAR.
+
+!!! note "Terminology: Camera-LiDAR calibration, extrinsic parameters, reprojection error, point cloud registration, calibration target"
+    - **Camera-LiDAR calibration**: The process of estimating the rigid transformation between the camera coordinate system and the LiDAR coordinate system.
+    - **Extrinsic parameters**: The rotation and translation between two sensor coordinate systems.
+    - **Reprojection error**: The distance between a LiDAR point projected onto an image and the corresponding image feature.
+    - **Point cloud registration**: Algorithms that align multiple point clouds into the same coordinate system, e.g., ICP.
+    - **Calibration target**: A board with known geometric features (checkerboard, circular holes, cutout patterns) used to extract corresponding features.
+
+**Coordinate Transformation Relationships**
+
+Let a spatial point be \(\mathbf{P}_W\) in the world/calibration target coordinate system, \(\mathbf{P}_C\) in the camera coordinate system, and \(\mathbf{P}_L\) in the LiDAR coordinate system. The camera intrinsic matrix is \(\mathbf{K}\), and the camera-LiDAR extrinsic parameters are \((\mathbf{R}_{CL}, \mathbf{t}_{CL})\). Then:
+
+$$
+\mathbf{P}_C = \mathbf{R}_{CL} \mathbf{P}_L + \mathbf{t}_{CL}
+$$
+
+$$
+\mathbf{p} = \mathbf{K} \mathbf{P}_C / Z_C
+$$
+
+where \(\mathbf{p} = [u, v, 1]^T\) are the image pixel coordinates, and \(Z_C\) is the depth in the camera coordinate system.
+
+```mermaid
+flowchart TD
+    A["Multi-pose calibration target acquisition"] --&gt; B["Camera detects corners p_ij"]
+    A --&gt; C["LiDAR extracts plane / corners P_L,ij"]
+    B --&gt; D["Establish 3D-2D correspondences"]
+    C --&gt; D
+    D --&gt; E["PnP initial + ICP / Nonlinear optimization"]
+    E --&gt; F["Extrinsic R_CL, t_CL"]
+    F --&gt; G["Reprojection error verification"]</code></pre>
+<p><strong>Calibration Target-Based Methods</strong></p>
+<p>The most common calibration targets are checkerboard boards or aluminum plates with circular holes. The steps are as follows:</p>
+<ol>
+<li><strong>Camera Corner Detection</strong>: Use Zhang's method or OpenCV to detect checkerboard corners, obtaining the pixel coordinates <span class="arithmatex">\(\mathbf{p}_{ij}\)</span> and world coordinates <span class="arithmatex">\(\mathbf{P}_{W,j}\)</span> for each corner.</li>
+<li><strong>LiDAR Plane Extraction</strong>: Extract the calibration board plane from the point cloud and fit a plane equation; then extract plane boundaries or hole centers to obtain the 3D coordinates of the corners in the LiDAR coordinate system <span class="arithmatex">\(\mathbf{P}_{L,ij}\)</span>.</li>
+<li><strong>Correspondence Point Solving</strong>: If the same corner is detected in both the camera and LiDAR, use PnP + ICP or global nonlinear optimization to solve for <span class="arithmatex">\((\mathbf{R}_{CL}, \mathbf{t}_{CL})\)</span>.</li>
+</ol>
+<p><strong>Minimizing Reprojection Error</strong></p>
+<p>Combine the corresponding points from all frames and minimize the reprojection error:</p>
+<div class="arithmatex">\[
+\min_{\mathbf{R}_{CL}, \mathbf{t}_{CL}} \sum_{i,j} \rho\left( \left\| \mathbf{p}_{ij} - \pi\left(\mathbf{K}, \mathbf{R}_{CL}\mathbf{P}_{L,ij} + \mathbf{t}_{CL}\right) \right\|^2 \right)
+\]</div>
+<p>where <span class="arithmatex">\(\pi(\cdot)\)</span> is the projection function, and <span class="arithmatex">\(\rho(\cdot)\)</span> is a robust kernel function (e.g., Huber) used to suppress incorrect correspondences.</p>
+<p><strong>Methods Based on Point Cloud Edges/Mutual Information</strong></p>
+<p>When a calibration target is inconvenient to use, natural geometric edges or reflection intensity information in the scene can be utilized:</p>
+<ul>
+<li><strong>Edge Alignment</strong>: Extract image edges and edges from the projected LiDAR point cloud, minimizing the edge distance.</li>
+<li><strong>Mutual Information Maximization</strong>: Render LiDAR reflection intensity or depth into a pseudo-image, compute mutual information with the camera image, and optimize the extrinsic parameters to align them.</li>
+</ul>
+<p>These methods are sensitive to initial values. A rough extrinsic parameter is usually obtained using a calibration target first, followed by online refinement.</p>
+<p><strong>Python Example for Projecting LiDAR Point Cloud to Image</strong></p>
+<p>```python
+import numpy as np
+import cv2</p>
+<p>def project_lidar_to_image(pts_lidar, R_cl, t_cl, K, dist_coeffs=None):
+    """Project LiDAR point cloud to camera image.
+    pts_lidar: Nx3 numpy array in LiDAR coordinate
+    R_cl, t_cl: camera extrinsic w.r.t LiDAR (3x3, 3x1)
+    K: 3x3 camera intrinsic matrix
+    Returns: Nx2 pixel coordinates and valid mask
+    """
+    pts_cam = (R_cl @ pts_lidar.T + t_cl).T
+    # Keep only points in front of the camera
+    valid = pts_cam[:, 2] &gt; 0.1
+    pts_cam = pts_cam[valid]
+    # Project
+    uv = (K @ pts_cam.T).T
+    uv = uv[:, :2] / uv[:, 2:3]
+    return uv, valid</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">has prerequisite</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_forward_kinematics/">Forward Kinematics</a>
+              <span class="rel-desc">Joint-Camera-IMU Calibration has prerequisite Forward Kinematics.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/en/entry/ent_method_hardware_in_the_loop/">Hardware-in-the-Loop (HIL)</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-desc">Cross-layer link extracted from Wiki chapter 11. </span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_method_calibration_joint_camera_imu"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_method_hardware_in_the_loop/">
+          <span class="entry-type">Method</span>
+          <h3>Hardware-in-the-Loop (HIL)</h3>
+          <p>A validation method where real hardware controllers interact with a real-time simulation of the…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_forward_kinematics/">
+          <span class="entry-type">Method</span>
+          <h3>Forward Kinematics</h3>
+          <p>The computation of end-effector position and orientation from given joint angles, using a chain of…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

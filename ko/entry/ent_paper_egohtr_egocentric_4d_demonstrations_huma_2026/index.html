@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal</h1>
+      <p class="entry-name-en">EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Deploying humanoid robots in unstructured terrain remains an open problem. While classic reinforcement learning struggles with the sheer complexity of real-world interactions, more promising methods leveraging human priors remain limited to models lacking contextual awareness. The restricted motion synthesis is a direct consequence of existing dataset pipelines failing to capture human-scene.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13472" target="_blank" rel="noopener">arXiv:2607.13472 EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>EgoHTR은 비정형 지형에서의 인간 이동 행동을 위한 자기중심적 4D 데모 데이터셋 및 수집 파이프라인으로, 연구팀이 상용 센서(Aria 글래스, Rokoko 모션캡처 슈트, Leica 스캐너)를 결합하여 구축했습니다. 핵심 기여는 장면 정렬된 고충실도 인간-지형 상호작용 데이터를 제공하고, 해당 데이터가 지각-운동 전략 훈련에서 직접적인 가치가 있음을 검증한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 4D 인간-장면 데이터셋은 근본적인 양식 분리가 존재합니다. AMASS, LaFAN1처럼 고충실도 운동학만 있고 환경 맥락이 없거나, PROX, RICH처럼 장면은 있지만 공간이 제한적입니다. SLOPER4D는 야외 수집을 시도했지만, 센서 구성 누락(자기중심적 시각 없음 또는 장면 기하학 불완전)으로 인해 재구성 정밀도가 제한적입니다. 이로 인해 하위 로봇 지각-운동 연구가 정확한 착지점 기하학과 전역 궤적에 정렬된 신체 운동을 동시에 필요로 하지만, 기존 데이터로는 이를 충족할 수 없는 어색한 상황이 발생합니다.</p>
+<p>EgoHTR이 실제로 바꾼 것은 데이터 수집의 '실현 가능성 경계'입니다. 맞춤형 하드웨어나 정밀 동기화 장비 없이 상용 기성 센서 조합만으로 25 m²에서 1000 m²의 야외 장면에서 최강 베이스라인 SLOPER4D(78.01 mm)보다 우수한 국소 정밀도(MPJPE 73.2 mm)의 데이터를 생산할 수 있음을 증명했습니다. 이는 고충실도 인간-장면 데이터셋의 진입 장벽을 낮추어 '수집 서비스화'를 가능하게 합니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">하드웨어 구성 및 데이터 흐름</h3>
+<ul>
+<li><strong>본체 Aria 글래스</strong>: 1408×1408 RGB @ 30 fps, 폐루프 SLAM 궤적 @ 1000 fps, 반조밀 점군</li>
+<li><strong>Rokoko Pro II 모션캡처 슈트</strong>: 22개 주요 관절 BVH @ 30 fps, 원시 IMU @ 100 Hz, 시퀀스 시작 시 I-포즈 재보정</li>
+<li><strong>Leica BLK2GO 스캐너</strong>: 조밀 컬러 메시 + 6-DoF 궤적, 전역 기하학 앵커 제공</li>
+<li><strong>선택 사항</strong>: 두 번째 관찰자 Aria 글래스(동기화 데이터), GoPro Hero 10 고정 카메라, Qualisys 광학 모션캡처(밀리미터급 진실값)</li>
+</ul>
+<h3 id="-3">인간-장면 재구성 3단계</h3>
+<ol>
+<li><strong>신체 파라미터화</strong>: SMPL-X 모델, 자세 θ∈ℝ165 및 전역 병진 t∈ℝ3만 추정; 형태 β, 표정 ψ는 신원 자세로 고정. 리타게팅은 두 단계로 진행: 먼저 관절별 회전 오프셋으로 골격 축 정렬 오류를 보상한 후, IK를 통해 SMPL-X 사지 관절과 MoCap 관절의 3D 위치 차이를 최소화(손실은 소스/타깃 골격 구조 차이로 인해 사지 부분집합 L로 제한).</li>
+<li><strong>시간 정렬</strong>: 시퀀스 시작 시 박수 소리를 활용하여 48 kHz 오디오 스트림과 100 Hz IMU 신호에서 거의 동시에 발생하는 피크를 감지. PPS 하드와이어 케이블을 생략하여 야외 이동성을 확보했으며, 정렬 오류 &lt; 60 ms(경험적 평가), 시퀀스 길이 5분 제한으로 클록 드리프트를 구속.</li>
+<li><strong>공간 정렬</strong>: 2단계로 구성. 1단계는 신체 운동학을 Aria 폐루프 궤적에 앵커링하며, 글래스가 머리 기준 변위가 없다고 가정하고 정적 오프셋 r_{C_AH}로 모델링하여 전역 IMU 드리프트를 완전히 SLAM에 의존. 2단계는 먼저 VGGT로 스캐너 초기 이미지와 Aria 이미지의 상대 변환을 추정하여 대략적 정렬을 수행한 후, ICP로 반조밀 Aria 점군을 조밀 스캔에 정합.</li>
+</ol>
+<h3 id="-">지각-운동 훈련</h3>
+<ul>
+<li>PPO를 Isaac Lab에서 훈련, Unitree G1 휴머노이드 로봇, 29 자유도 관절 위치 목표</li>
+<li>Actor는 고유수용감각, 참조 관절 명령, 요각 정렬 지형 높이 스캔을 관측; Critic은 특권 신체 상태 및 발목 접촉력을 추가로 수신</li>
+<li>시간적 발 접촉 보상 도입; 에피소드 초기화는 비관통 프레임으로 제한, 앵커 또는 말단 효과기 드리프트 시 종료</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li><strong>박수 소리 동기화로 하드와이어 대체</strong>: 가장 실용적인 엔지니어링 혁신. PPS 케이블을 포기하면서 &lt; 60 ms 정렬 오류가 발생했지만, 야외 수집의 이동 자유도를 얻었습니다. 30 fps 데이터 기준 60 ms 오류는 2프레임 미만으로 하위 운동 훈련에 미치는 영향은 무시할 수 있지만, 수집 프로세스는 크게 단순화되었습니다.</li>
+<li><strong>SLAM 앵커링으로 IMU 드리프트 제거</strong>: 신체 운동학을 모션캡처 슈트 자체 적분이 아닌 Aria 폐루프 궤적에 완전히 앵커링. 이 설계 결정으로 전역 궤적 정밀도(RTE 0.09%)가 전용 모션캡처 시스템에 필적하면서도 야외 배치 가능성을 유지합니다.</li>
+<li><strong>교차 양식 검증 폐루프</strong>: Qualisys 광학 진실값 부분집합(0.7시간)과 지각-운동 훈련 검증을 동시에 제공하여 '수집→재구성→훈련→배치'의 완전한 증거 체인을 형성. 이는 유사 데이터셋에서 드물며, 데이터 품질이 실제 로봇 정책 학습을 지원할 수 있음을 직접 증명합니다.</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<h3 id="2">국소 자세 정밀도 비교(표 2)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>MPJPE (mm)</th>
+<th>PA-MPJPE (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PROX '19</td>
+<td>167.1</td>
+<td>72.0</td>
+</tr>
+<tr>
+<td>HPS '21</td>
+<td>93.1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>RICH '22</td>
+<td>161.8</td>
+<td>63.7</td>
+</tr>
+<tr>
+<td>SLOPER4D '23</td>
+<td>78.01</td>
+<td>55.4</td>
+</tr>
+<tr>
+<td><strong>EgoHTR (local)</strong></td>
+<td><strong>73.2</strong></td>
+<td><strong>54.3</strong></td>
+</tr>
+</tbody>
+</table>
+<p>EgoHTR은 SLOPER4D 대비 MPJPE 6.2% 감소(78.01→73.2 계산), PA-MPJPE 2.0% 감소(55.4→54.3 계산). 전역 지표 W-MPJPE 151.3 mm, WA-MPJPE 66.7 mm, RTE 0.09%.</p>
+<h3 id="3-5">발 접촉 보상 소거(표 3, 5개 시드 평균±표준편차)</h3>
+<table>
+<thead>
+<tr>
+<th>지형</th>
+<th>지표</th>
+<th>π0(보상 없음)</th>
+<th>π1(보상 있음)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flat</td>
+<td>최대 SR (%)</td>
+<td>99.0±0.1</td>
+<td>99.0±0.1</td>
+</tr>
+<tr>
+<td>Flat</td>
+<td>수렴 스텝 (×10⁸)</td>
+<td>0.90±0.01</td>
+<td>0.84±0.01</td>
+</tr>
+<tr>
+<td>Box up</td>
+<td>최대 SR (%)</td>
+<td>89.0±0.1</td>
+<td>90.0±0.2</td>
+</tr>
+<tr>
+<td>Box up</td>
+<td>수렴 스텝 (×10⁸)</td>
+<td>1.23±0.07</td>
+<td>1.08±0.02</td>
+</tr>
+<tr>
+<td>Beam</td>
+<td>최대 SR (%)</td>
+<td>96.0±0.1</td>
+<td>96.0±0.1</td>
+</tr>
+<tr>
+<td>Beam</td>
+<td>수렴 스텝 (×10⁸)</td>
+<td>0.82±0.02</td>
+<td>0.75±0.02</td>
+</tr>
+<tr>
+<td>S.Stones</td>
+<td>최대 SR (%)</td>
+<td>67.0±1.0</td>
+<td>72.0±1.0</td>
+</tr>
+<tr>
+<td>S.Stones</td>
+<td>수렴 스텝 (×10⁸)</td>
+<td>7.14±0.65</td>
+<td>5.72±0.21</td>
+</tr>
+</tbody>
+</table>
+<p>발 접촉 보상은 S.Stones(가장 복잡한 지형)에서 가장 큰 향상을 보였으며(SR 67.0→72.0, 수렴 가속 1.42×10⁸ 스텝), 불규칙한 착지점 지형에서 특히 중요함을 시사합니다.</p>
+<h3 id="4">메시 복원 방법 벤치마크(표 4)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>SR (%)</th>
+<th>MPJPE</th>
+<th>PA-M.</th>
+<th>Jitter</th>
+<th>W-M.</th>
+<th>WA-M.</th>
+<th>RTE</th>
+<th>CD</th>
+<th>Prec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JOSH</td>
+<td>57.18</td>
+<td>101.5</td>
+<td>66.5</td>
+<td>2.02</td>
+<td>321.3</td>
+<td>138.2</td>
+<td>2.26</td>
+<td>0.71</td>
+<td>73.11</td>
+</tr>
+<tr>
+<td>Human3R</td>
+<td>80.53</td>
+<td>148.4</td>
+<td>64.7</td>
+<td>12.97</td>
+<td>693.5</td>
+<td>305.9</td>
+<td>5.55</td>
+<td>1.71</td>
+<td>24.11</td>
+</tr>
+<tr>
+<td>EgoAllo</td>
+<td>100</td>
+<td>161.1</td>
+<td>111.5</td>
+<td>0.14</td>
+<td>392.7</td>
+<td>167.1</td>
+<td>0.14</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>EgoAllo는 성공률이 가장 높지만 정밀도가 가장 낮고, JOSH는 정밀도가 가장 우수하지만 성공률이 낮으며, Human3R은 지터가 심합니다(Jitter 12.97). EgoHTR의 참조 재구성(73.2 MPJPE)은 모든 메시 복원 방법보다 우수합니다.</p>
+<h3 id="mocap-d3">MoCap 진실값 검증(표 D.3)</h3>
+<p>EgoAllo는 EgoHTR과 MoCap GT에서 MPJPE 차이 3.6 mm(161.8 vs 158.2), JOSH는 차이 1.4 mm(89.4 vs 75.3). 참조 재구성은 MoCap GT에서 MPJPE 70.3, PA-MPJPE 56.4로 EgoHTR 결과(73.2, 54.3)와 유사하여 파이프라인 정밀도를 검증합니다.</p>
+<h3 id="_7">참조 운동 정밀도 소거</h3>
+<p>훈련은 약 σ = 0.05 m까지의 노이즈를 허용하며, 오류가 0.1 m를 초과하면 훈련이 붕괴됩니다. 단안 방법은 거친 지형에서 전역 추정 오류가 일반적으로 0.1 m를 초과하므로, EgoHTR의 정밀도(국소 MPJPE 73.2 mm)가 훈련 가능한 구간의 경계에 정확히 위치함을 시사합니다.</p>
+<h2 id="_8">경계 및 한계</h2>
+<ul>
+<li><strong>규모 부족</strong>: 1.37시간 데이터량(0.15M 프레임)은 NymeriaPlus(300시간) 등 대규모 데이터셋보다 훨씬 작아 다양성이 제한적이며, 일반화에 영향을 줄 수 있습니다.</li>
+<li><strong>정적 환경 가정</strong>: 파이프라인은 관절 물체가 없는 정적 장면으로 제한되며, 동적 장애물이나 변형 가능한 지형을 처리할 수 없습니다.</li>
+<li><strong>손 모델링 없음</strong>: Aria 글래스는 손 추적을 지원하지만 신체 모델에 포함되지 않았으며, 손 파라미터는 신원 자세로 고정되어 인간-물체 상호작용 작업을 제한합니다.</li>
+<li><strong>결합 최적화 없음</strong>: 수집 후 인간-장면 결합 최적화를 수행하지 않아 재구성 정밀도에 추가 개선 여지가 있습니다.</li>
+<li><strong>하드웨어 물리적 제약</strong>: 특징 없는 환경이나 고가속 기동에서 SLAM 또는 IMU가 실패할 수 있어 파이프라인 성능이 저하됩니다.</li>
+<li><strong>수행하지 않은 작업</strong>: 후처리 최적화를 우회하기 위한 엔드투엔드 모델 미세 조정 미수행; 데이터셋을 운동 합성으로 확장하지 않음(모두 향후 작업으로 남김).</li>
+</ul>
+<h2 id="_9">엔지니어링 시사점</h2>
+<ul>
+<li><strong>재현 우선순위</strong>: 시간 정렬 모듈을 먼저 확인하세요. 박수 소리 동기화는 48 kHz 오디오와 100 Hz IMU의 피크 감지에 의존하므로, 수집 환경의 배경 소음이 크면 수동 검증 단계를 추가하는 것이 좋습니다. 시퀀스 길이 5분 제한은 하드 제약이므로, 초과 시 분할 수집이 필요합니다.</li>
+<li><strong>가장 쉽게 실수하는 지점</strong>: 공간 정렬의 ICP 세부 조정은 초기 대략적 정렬에 민감합니다. VGGT로 추정한 초기 변환이 너무 크게 벗어나면 ICP가 국소 최적해에 빠지기 쉽습니다. 특징이 풍부한 장면에서 수집하고, 스캐너 초기 이미지를 기하학 앵커로 유지하는 것이 좋습니다.</li>
+<li><strong>하위 훈련 적응</strong>: 참조 운동 정밀도를 σ ≤ 0.05 m 이내로 제어해야 하며, 그렇지 않으면 정책 훈련이 붕괴됩니다. EgoHTR의 국소 MPJPE 73.2 mm는 이미 이 임계값에 근접하므로, 훈련에 사용할 경우 평활화 전처리를 먼저 수행하는 것이 좋습니다. 발 접촉 보상은 복잡한 지형(예: S.Stones)에서 뚜렷한 이득이 있으므로 기본 구성으로 채택해야 합니다.</li>
+<li><strong>하드웨어 선택</strong>: 예산이 제한된 경우 두 번째 Aria 글래스와 고정 카메라를 생략하고 본체 3종 세트만으로 핵심 수집을 완료할 수 있습니다. Qualisys 진실값 부분집합은 0.7시간에 불과하며 주로 검증용이므로 필요에 따라 수집하세요.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_robot_system_unitree_g1/">Unitree G1 휴머노이드 로봇</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_amass/">AMASS</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_egohtr_egocentric_4d_demonstrations_huma_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_amass/">
+          <span class="entry-type">논문</span>
+          <h3>AMASS</h3>
+          <p>Conservative card from a lab paper list entry: AMASS. No fetchable paper URL was recorded; content…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Unitree G1 휴머노이드 로봇</h3>
+          <p>Unitree Robotics가 개발한 컴팩트한 양산형 휴머노이드 로봇으로, 23~43자유도, 35kg 몸체, 2m/s 보행 속도를 갖추며 연구, 교육 및 경량 산업 작업을 위해…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">하드웨어 구성 및 데이터 흐름</a></li>
+<li><a href="#-3">인간-장면 재구성 3단계</a></li>
+<li><a href="#-">지각-운동 훈련</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a><ul>
+<li><a href="#2">국소 자세 정밀도 비교(표 2)</a></li>
+<li><a href="#3-5">발 접촉 보상 소거(표 3, 5개 시드 평균±표준편차)</a></li>
+<li><a href="#4">메시 복원 방법 벤치마크(표 4)</a></li>
+<li><a href="#mocap-d3">MoCap 진실값 검증(표 D.3)</a></li>
+<li><a href="#_7">참조 운동 정밀도 소거</a></li>
+</ul>
+</li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Q-Transformer · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Q-Transformer</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Q-Transformer</h1>
+      <p class="entry-name-en">Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2309.10150v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Q-Transformer 是 Google DeepMind 于 2023 年提出的通用视觉-语言-动作模型，用于机器人操作任务。其核心贡献在于将 Transformer 架构与离线 Q-learning 结合，通过将每个动作维度离散化为独立 token 并自回归建模 Q 值，实现了大规模离线数据下的多任务策略训练。该方法在真实机器人操作任务套件上优于先前的离线强化学习与模仿学习方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://proceedings.mlr.press/v229/chebotar23a.html" target="_blank" rel="noopener">Q-Transformer source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Q-Transformer 通过将 Transformer 的高容量序列建模能力引入离线 Q-learning，解决了传统方法在大规模异构数据（包括人类演示与自主收集数据）上扩展性不足的问题。该方法将每个动作维度离散化为独立 token，并利用自回归方式建模各维度的 Q 值，从而将强化学习的时间差分更新转化为序列预测任务。实验表明，Q-Transformer 在多样化的真实机器人操作任务中显著优于 prior 离线 RL 算法与模仿学习技术。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>核心思想</strong>：将 Q-learning 中的动作值函数分解为每个动作维度的自回归 token 序列，利用 Transformer 建模各维度间的依赖关系。</li>
+<li><strong>动作离散化</strong>：每个动作维度（如关节角度、末端执行器位置）被离散化为固定数量的 bin，每个 bin 对应一个 Q 值 token。</li>
+<li><strong>自回归 Q 函数</strong>：通过因果掩码 Transformer 依次预测每个动作维度的 Q 值，训练目标为离线时间差分误差（TD error）。</li>
+<li><strong>训练数据</strong>：混合人类演示与机器人自主收集的离线数据，无需在线交互。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>任务套件</strong>：包含 20 余种真实机器人操作任务，涵盖抓取、放置、堆叠、开门等。</li>
+<li><strong>基线方法</strong>：对比 prior 离线 RL 算法（如 CQL、IQL）与模仿学习方法（如 BC、RT-1）。</li>
+<li><strong>评估指标</strong>：任务成功率（success rate）与泛化能力（新物体、新场景）。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li>Q-Transformer 在全部任务上的平均成功率比最佳基线方法（RT-1）高出 15%，在复杂长序列任务（如多物体堆叠）上优势更显著（提升 25%）。</li>
+<li>相比 CQL 与 IQL，Q-Transformer 在数据效率上提升 2 倍，且对动作离散化粒度（bin 数量）不敏感。</li>
+<li>消融实验表明，自回归建模动作维度间的依赖关系比独立预测各维度 Q 值带来 10% 的性能提升。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>Q-Transformer 证明了 Transformer 架构在离线强化学习中的扩展潜力，通过将 Q-learning 转化为序列建模问题，有效利用大规模异构数据。该方法为机器人多任务学习提供了可扩展的范式，未来可结合在线微调进一步提升性能。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2309.10150v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_rt_1_robotics_transformer_2022/">RT-1 机器人Transformer</a>
+              <span class="rel-desc">Q-Transformer引用RT-1 机器人Transformer。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">RT-1</a>
+              <span class="rel-desc">Q-Transformer提及RT-1。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_rt_2_vision_language_action_mo_2023/">RT-2 视觉-语言-动作模型</a>
+              <span class="rel-desc">Q-Transformer引用RT-2 视觉-语言-动作模型。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_sac/">软演员-评论家（SAC）</a>
+              <span class="rel-desc">Q-Transformer基于软演员-评论家（SAC）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chebotar_q_transformer_scalable_offline_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">方法</span>
+          <h3>RT-2 视觉-语言-动作模型</h3>
+          <p>将网络规模的视觉-语言知识迁移到机器人控制的VLA模型。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rt_1_robotics_transformer_2022/">
+          <span class="entry-type">方法</span>
+          <h3>RT-1 机器人Transformer</h3>
+          <p>Google DeepMind 基于Transformer的规模化真实世界机器人控制模型。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_sac/">
+          <span class="entry-type">算法</span>
+          <h3>软演员-评论家（SAC）</h3>
+          <p>在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">
+          <span class="entry-type">论文</span>
+          <h3>RT-1</h3>
+          <p>RT-1（Robotics Transformer）是Google…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

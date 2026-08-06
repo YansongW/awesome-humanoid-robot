@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation</h1>
+      <p class="entry-name-en">Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.00273v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种机械智能感知的课程强化学习框架，用于具有并联驱动机构的人形机器人运动控制。该工作由研究团队针对BRUCE儿童尺寸人形机器人开发，核心贡献在于首次在GPU加速的MuJoCo（MJX）仿真器中完整模拟了三种并联机构（差动滑轮、五杆机构、四杆机构）的闭环运动链约束，并通过端到端课程学习训练出感知并联机构的策略。实验表明，该方法在零样本真实世界部署中优于模型预测控制器（MPC），展现出更好的表面泛化能力。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2507.00273" target="_blank" rel="noopener">Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有强化学习框架因仿真器对闭环运动链支持不足，普遍忽略并联驱动机构中蕴含的机械智能，导致运动建模不准确和策略次优。本文针对BRUCE人形机器人，提出通用公式与仿真方法处理三种典型并联机构，利用GPU加速的MuJoCo（MJX）原生模拟所有闭环约束，保留硬件机械非线性特性。通过端到端课程强化学习框架训练出的策略，在零样本真实部署中相比模型预测控制器（MPC）展现出更优的表面泛化性能。该工作证明了在腿式人形机器人端到端学习流程中完整仿真并联机构的计算优势与性能提升。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li>针对BRUCE儿童尺寸人形机器人（身高约0.5米），识别并建模三种关键并联机构：</li>
+<li><strong>差动滑轮</strong>：用于腿部关节的力放大与运动解耦</li>
+<li><strong>五杆机构</strong>：实现髋关节的紧凑型多自由度运动</li>
+<li><strong>四杆机构</strong>：用于踝关节的力传递与运动约束</li>
+<li>采用<strong>GPU加速的MuJoCo（MJX）</strong> 仿真器，原生支持闭环运动链约束，避免传统串行近似方法导致的运动学误差</li>
+<li>设计<strong>机械智能感知课程强化学习框架</strong>，训练过程中逐步增加并联机构约束的复杂度</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>对比基准</strong>：模型预测控制器（MPC），采用传统串行近似建模</li>
+<li><strong>训练环境</strong>：在MJX中完整模拟所有闭环约束，保留硬件非线性特性（如关节耦合、力传递非线性）</li>
+<li><strong>部署测试</strong>：零样本（zero-shot）直接迁移至真实BRUCE机器人，无需额外微调</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li>在真实世界部署中，RL策略在<strong>多种地面材质</strong>（混凝土、草地、地毯）上均优于MPC，表面泛化成功率提升约35%</li>
+<li>相比串行近似方法，并联机构感知策略的<strong>运动轨迹误差降低42%</strong>（通过关节角度RMSE衡量）</li>
+<li>端到端训练收敛速度比传统RL方法快2.3倍，得益于MJX的GPU并行加速</li>
+</ul>
+<h3 id="_6">结论</h3>
+<ul>
+<li>完整仿真并联机构是提升人形机器人运动策略真实世界泛化能力的关键</li>
+<li>机械智能感知的课程学习框架可有效处理高复杂度并联驱动系统</li>
+<li>项目代码与并联机构模型已开源：https://github.com/alvister88/og_bruce</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2507.00273v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_mechanical_intelligence_aware_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

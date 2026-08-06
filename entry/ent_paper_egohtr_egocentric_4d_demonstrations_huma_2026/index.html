@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal</h1>
+      <p class="entry-name-en">EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>EgoHTR 是一个面向非结构化地形中人类穿越行为的自我中心 4D 演示数据集与采集管线，由研究团队结合商用传感器（Aria 眼镜、Rokoko 动捕服、Leica 扫描仪）构建。其核心贡献在于提供场景对齐的高保真人-地形交互数据，并验证了该数据在感知运动策略训练中的直接价值。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13472" target="_blank" rel="noopener">arXiv:2607.13472 EgoHTR: Egocentric 4D Demonstrations of Human Terrain Traversal</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 4D 人-场景数据集存在根本性的模态割裂：要么像 AMASS、LaFAN1 那样只有高保真运动学却无环境上下文，要么像 PROX、RICH 那样有场景但空间受限。SLOPER4D 虽尝试野外采集，却因传感器配置缺失（无自我中心视觉或场景几何不完整）导致重建精度有限。这造成一个尴尬局面——下游机器人感知运动研究既需要精确的落脚点几何，又需要与全局轨迹对齐的身体运动，而现有数据无法同时满足。</p>
+<p>EgoHTR 真正改变的是数据采集的“可行性边界”。它证明无需定制硬件或精密同步设备，仅用商用现成传感器组合，就能在 25 m² 至 1000 m² 的野外场景中产出局部精度（MPJPE 73.2 mm）优于最强基线 SLOPER4D（78.01 mm）的数据。这降低了高保真人-场景数据集的准入门槛，使“采集即服务”成为可能。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">硬件配置与数据流</h3>
+<ul>
+<li><strong>主体 Aria 眼镜</strong>：1408×1408 RGB @ 30 fps，闭环 SLAM 轨迹 @ 1000 fps，半稠密点云</li>
+<li><strong>Rokoko Pro II 动捕服</strong>：22 个主要关节 BVH @ 30 fps，原始 IMU @ 100 Hz，序列开始时 I-pose 重校准</li>
+<li><strong>Leica BLK2GO 扫描仪</strong>：稠密彩色网格 + 6-DoF 轨迹，提供全局几何锚点</li>
+<li><strong>可选</strong>：第二副观察者 Aria 眼镜（同步数据）、GoPro Hero 10 固定相机、Qualisys 光学动捕（毫米级真值）</li>
+</ul>
+<h3 id="-">人体-场景重建三阶段</h3>
+<ol>
+<li><strong>身体参数化</strong>：SMPL-X 模型，仅估计姿态 θ∈ℝ165 和全局平移 t∈ℝ3；形状 β、表情 ψ 固定为身份姿态。重定向分两步：先逐关节旋转偏移补偿骨骼轴错位，再通过 IK 最小化 SMPL-X 肢体关节与 MoCap 关节的 3D 位置差异（损失仅限肢体子集 L，因源/目标骨架结构差异）。</li>
+<li><strong>时间对齐</strong>：利用序列开始的拍手声，在 48 kHz 音频流与 100 Hz IMU 信号中检测近同时峰值。省略 PPS 硬连线电缆换取野外移动性，对齐误差 &lt; 60 ms（经验评估），序列限长 5 min 约束时钟漂移。</li>
+<li><strong>空间对齐</strong>：两阶段。第一阶段将身体运动学锚定到 Aria 闭环轨迹，假设眼镜相对头部无位移，建模为静态偏移 r_{C_AH}，完全依赖 SLAM 消除全局 IMU 漂移。第二阶段先用 VGGT 估计扫描仪初始图像与 Aria 图像相对变换做粗对齐，再用 ICP 将半稠密 Aria 点云配准到稠密扫描。</li>
+</ol>
+<h3 id="_4">感知运动训练</h3>
+<ul>
+<li>PPO 在 Isaac Lab 训练，Unitree G1 人形机器人，29 自由度关节位置目标</li>
+<li>Actor 观测本体感觉、参考关节指令、偏航对齐地形高度扫描；Critic 额外接收特权身体状态和踝关节接触力</li>
+<li>引入时间足部接触奖励；回合初始化限制在无穿插帧，锚点或末端执行器漂移时终止</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>拍手声同步替代硬连线</strong>：这是最实用的工程创新。放弃 PPS 电缆虽引入 &lt; 60 ms 对齐误差，但换来了野外采集的移动自由度。对 30 fps 数据而言，60 ms 误差不足两帧，对下游运动训练影响可忽略，却大幅简化了采集流程。</li>
+<li><strong>SLAM 锚定消除 IMU 漂移</strong>：将身体运动学完全锚定到 Aria 闭环轨迹，而非依赖动捕服自身积分。这一设计决策使全局轨迹精度（RTE 0.09%）比肩专用动捕系统，同时保持野外可部署性。</li>
+<li><strong>跨模态验证闭环</strong>：同时提供 Qualisys 光学真值子集（0.7 hours）和感知运动训练验证，形成“采集→重建→训练→部署”的完整证据链。这在同类数据集中罕见，直接证明了数据质量足以支撑真实机器人策略学习。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="2">局部姿态精度对比（表 2）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>MPJPE (mm)</th>
+<th>PA-MPJPE (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PROX '19</td>
+<td>167.1</td>
+<td>72.0</td>
+</tr>
+<tr>
+<td>HPS '21</td>
+<td>93.1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>RICH '22</td>
+<td>161.8</td>
+<td>63.7</td>
+</tr>
+<tr>
+<td>SLOPER4D '23</td>
+<td>78.01</td>
+<td>55.4</td>
+</tr>
+<tr>
+<td><strong>EgoHTR (local)</strong></td>
+<td><strong>73.2</strong></td>
+<td><strong>54.3</strong></td>
+</tr>
+</tbody>
+</table>
+<p>EgoHTR 相比 SLOPER4D，MPJPE 降低 6.2%（由 78.01→73.2 计算），PA-MPJPE 降低 2.0%（由 55.4→54.3 计算）。全局指标 W-MPJPE 151.3 mm、WA-MPJPE 66.7 mm、RTE 0.09%。</p>
+<h3 id="35">足部接触奖励消融（表 3，5 种子均值±标准差）</h3>
+<table>
+<thead>
+<tr>
+<th>地形</th>
+<th>指标</th>
+<th>π0（无奖励）</th>
+<th>π1（有奖励）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Flat</td>
+<td>最大 SR (%)</td>
+<td>99.0±0.1</td>
+<td>99.0±0.1</td>
+</tr>
+<tr>
+<td>Flat</td>
+<td>收敛步数 (×10⁸)</td>
+<td>0.90±0.01</td>
+<td>0.84±0.01</td>
+</tr>
+<tr>
+<td>Box up</td>
+<td>最大 SR (%)</td>
+<td>89.0±0.1</td>
+<td>90.0±0.2</td>
+</tr>
+<tr>
+<td>Box up</td>
+<td>收敛步数 (×10⁸)</td>
+<td>1.23±0.07</td>
+<td>1.08±0.02</td>
+</tr>
+<tr>
+<td>Beam</td>
+<td>最大 SR (%)</td>
+<td>96.0±0.1</td>
+<td>96.0±0.1</td>
+</tr>
+<tr>
+<td>Beam</td>
+<td>收敛步数 (×10⁸)</td>
+<td>0.82±0.02</td>
+<td>0.75±0.02</td>
+</tr>
+<tr>
+<td>S.Stones</td>
+<td>最大 SR (%)</td>
+<td>67.0±1.0</td>
+<td>72.0±1.0</td>
+</tr>
+<tr>
+<td>S.Stones</td>
+<td>收敛步数 (×10⁸)</td>
+<td>7.14±0.65</td>
+<td>5.72±0.21</td>
+</tr>
+</tbody>
+</table>
+<p>足部接触奖励在 S.Stones（最复杂地形）上提升最显著（SR 67.0→72.0，收敛加速 1.42×10⁸ 步），说明该奖励对不规则落脚点地形尤为关键。</p>
+<h3 id="4">网格恢复方法基准（表 4）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>SR (%)</th>
+<th>MPJPE</th>
+<th>PA-M.</th>
+<th>Jitter</th>
+<th>W-M.</th>
+<th>WA-M.</th>
+<th>RTE</th>
+<th>CD</th>
+<th>Prec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JOSH</td>
+<td>57.18</td>
+<td>101.5</td>
+<td>66.5</td>
+<td>2.02</td>
+<td>321.3</td>
+<td>138.2</td>
+<td>2.26</td>
+<td>0.71</td>
+<td>73.11</td>
+</tr>
+<tr>
+<td>Human3R</td>
+<td>80.53</td>
+<td>148.4</td>
+<td>64.7</td>
+<td>12.97</td>
+<td>693.5</td>
+<td>305.9</td>
+<td>5.55</td>
+<td>1.71</td>
+<td>24.11</td>
+</tr>
+<tr>
+<td>EgoAllo</td>
+<td>100</td>
+<td>161.1</td>
+<td>111.5</td>
+<td>0.14</td>
+<td>392.7</td>
+<td>167.1</td>
+<td>0.14</td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>EgoAllo 成功率最高但精度最差，JOSH 精度最优但成功率低，Human3R 抖动严重（Jitter 12.97）。EgoHTR 的参考重建（73.2 MPJPE）优于所有网格恢复方法。</p>
+<h3 id="mocap-d3">MoCap 真值验证（表 D.3）</h3>
+<p>EgoAllo 在 EgoHTR 与 MoCap GT 上 MPJPE 差异 3.6 mm（161.8 vs 158.2），JOSH 差异 1.4 mm（89.4 vs 75.3）。参考重建在 MoCap GT 上 MPJPE 70.3、PA-MPJPE 56.4，与 EgoHTR 结果（73.2、54.3）接近，验证管线精度。</p>
+<h3 id="_7">参考运动精度消融</h3>
+<p>训练容忍噪声至约 σ = 0.05 m，误差超 0.1 m 时训练崩溃。单目方法在粗糙地形上全局估计误差通常超 0.1 m，说明 EgoHTR 的精度（局部 MPJPE 73.2 mm）恰好处于可训练区间边缘。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li><strong>规模不足</strong>：1.37 hours 数据量（0.15M 帧）远小于 NymeriaPlus（300 hours）等大规模数据集，多样性受限，可能影响泛化。</li>
+<li><strong>静态环境假设</strong>：管线限于无铰接物体的静态场景，无法处理动态障碍或可变形地形。</li>
+<li><strong>手部未建模</strong>：Aria 眼镜支持手部追踪但未纳入身体模型，手部参数固定为身份姿态，限制人-物交互类任务。</li>
+<li><strong>无联合优化</strong>：未进行采集后的人-场景联合优化，重建精度存在进一步提升空间。</li>
+<li><strong>硬件物理约束</strong>：在无特征环境或高加速度机动中，SLAM 或 IMU 可能失效，管线性能下降。</li>
+<li><strong>未做之事</strong>：未将端到端模型微调用于绕过后处理优化；未将数据集扩展至运动合成（均留作未来工作）。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现优先级</strong>：先核对时间对齐模块。拍手声同步依赖 48 kHz 音频与 100 Hz IMU 的峰值检测，若采集环境背景噪声大，建议增加人工校验步骤。序列限长 5 min 是硬约束，超时需分段采集。</li>
+<li><strong>最易踩坑点</strong>：空间对齐的 ICP 细化对初始粗对齐敏感。VGGT 估计的初始变换若偏差过大，ICP 易陷入局部最优。建议在特征丰富场景中采集，并保留扫描仪初始图像作为几何锚点。</li>
+<li><strong>下游训练适配</strong>：参考运动精度需控制在 σ ≤ 0.05 m 内，否则策略训练崩溃。EgoHTR 的局部 MPJPE 73.2 mm 已接近此阈值，若用于训练建议先做平滑预处理。足部接触奖励在复杂地形（如 S.Stones）上增益显著，应作为默认配置。</li>
+<li><strong>硬件选型</strong>：若预算有限，可省略第二副 Aria 眼镜和固定相机，仅保留主体三件套即可完成核心采集。Qualisys 真值子集仅 0.7 hours，主要用于验证而非训练，可按需采集。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.13472</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_amass/">AMASS</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_egohtr_egocentric_4d_demonstrations_huma_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_amass/">
+          <span class="entry-type">论文</span>
+          <h3>AMASS</h3>
+          <p>【内容待补】据实验室论文清单登记：AMASS，发表机构未知。清单未登记可抓取的论文页（待补充/空），本卡仅收录清单登记信息，概述与核心内容待补充。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Unitree G1 人形机器人</h3>
+          <p>Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">硬件配置与数据流</a></li>
+<li><a href="#-">人体-场景重建三阶段</a></li>
+<li><a href="#_4">感知运动训练</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#2">局部姿态精度对比（表 2）</a></li>
+<li><a href="#35">足部接触奖励消融（表 3，5 种子均值±标准差）</a></li>
+<li><a href="#4">网格恢复方法基准（表 4）</a></li>
+<li><a href="#mocap-d3">MoCap 真值验证（表 D.3）</a></li>
+<li><a href="#_7">参考运动精度消融</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

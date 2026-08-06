@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training</h1>
+      <p class="entry-name-en">TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02840v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>TACO 是一个由触觉感知的世界模型驱动的框架，用于对视觉-语言-动作（VLA）模型进行可扩展的后训练，以提升其在接触密集型操作任务中的表现。该框架通过“识别-想象-标注”循环，将真实世界的失败转化为想象的视觉-触觉修正，并结合知识隔离的触觉适应与优势条件训练，实现了44%的绝对成功率提升。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.02840" target="_blank" rel="noopener">TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>TACO 针对 VLA 模型在接触密集型任务中因微小接触扰动导致的不可恢复失败问题，提出了一种基于触觉感知世界模型的后训练方法。该框架首先利用统一的进度-动作模型识别接近失败的状态，然后通过视觉-触觉生成模型想象局部修正片段，最后用进度-动作模型为这些片段标注可执行的修正动作。为了将触觉修正监督融入 VLA 后训练，TACO 采用了知识隔离的触觉适应与优势条件训练相结合的策略，确保策略能从想象的修正中学习而不破坏预训练的视觉-语言先验知识。在真实世界的接触密集型操作实验中，TACO 相比基础策略取得了44%的绝对成功率提升，相比未使用知识隔离触觉适应的策略提升了32%。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<p>TACO 的核心是一个触觉感知的世界模型，它通过“Recognize-Imagine-Label”循环来处理真实机器人 rollout 数据：
+- <strong>Recognize（识别）</strong>：使用统一的进度-动作模型，基于进度估计来识别接近失败的状态。
+- <strong>Imagine（想象）</strong>：利用视觉-触觉生成模型，为识别出的失败状态想象局部的修正轨迹片段。
+- <strong>Label（标注）</strong>：再次使用进度-动作模型，为想象的修正片段标注可执行的修正动作。</p>
+<h3 id="_4">后训练策略</h3>
+<p>为了将触觉修正监督有效整合到 VLA 后训练中，TACO 引入了两种关键技术：
+- <strong>知识隔离的触觉适应（Knowledge-Insulated Tactile Adaptation）</strong>：在训练过程中隔离触觉相关参数，避免对预训练的视觉-语言先验知识造成退化。
+- <strong>优势条件训练（Advantage-Conditioned Training）</strong>：基于优势函数对想象的修正进行加权训练，使策略优先学习高价值的修正行为。</p>
+<h3 id="_5">实验设置与结果</h3>
+<ul>
+<li><strong>任务</strong>：真实世界中的接触密集型操作任务。</li>
+<li><strong>基线对比</strong>：TACO 与基础 VLA 策略以及未使用知识隔离触觉适应的变体进行对比。</li>
+<li><strong>关键数字</strong>：</li>
+<li>相比基础策略，TACO 实现了 <strong>44% 的绝对成功率提升</strong>。</li>
+<li>相比未使用知识隔离触觉适应的策略，TACO 实现了 <strong>32% 的绝对成功率提升</strong>。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>TACO 通过触觉感知的世界模型，将真实世界的失败转化为可扩展的想象修正数据，有效提升了 VLA 模型在接触密集型任务中的鲁棒性。其知识隔离的触觉适应机制确保了后训练过程不会损害模型的视觉-语言先验能力。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2607.02840v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_yang_steering_vision_language_actio_2025/">TACO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_taco_tactile_world_model_as_a_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_steering_vision_language_actio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TACO</h3>
+          <p>TACO 是一种 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">后训练策略</a></li>
+<li><a href="#_5">实验设置与结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

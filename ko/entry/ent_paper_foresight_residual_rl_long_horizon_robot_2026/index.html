@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foresight Residual RL for Long-Horizon Robot Manipulation with Vision-Language-Action Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Foresight Residual RL for Long-Horizon Robot Manipulation with Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Foresight Residual RL for Long-Horizon Robot Manipulation with Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Foresight Residual RL for Long-Horizon Robot Manipulation with Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-Language-Action (VLA) policies offer strong general-purpose manipulation priors, but often fail on tight-tolerance, contact-rich assembly due to long-horizon credit assignment and subtask coupling: a state that is geometrically successful for the current skill can be brittle for downstream skills. We show this failure mode in residual reinforcement learning (RL) over a frozen VLA base.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.16506" target="_blank" rel="noopener">arXiv:2607.16506 Foresight Residual RL for Long-Horizon Robot Manipulation with Vision-Language-A</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 장시간, 인과적으로 결합된 로봇 조작 작업에서 하위 작업은 성공하지만 인계 상태의 품질이 낮아 하류 작업이 실패하는 문제를 해결하기 위해 Foresight Residual RL 프레임워크를 제안한다. 이 방법은 기본 VLA 정책(π₀) 위에 잔차 정책을 훈련하고, 오프라인 시각적 전방 예측기를 사용하여 하위 작업 보상을 재가중함으로써 인계 상태의 조합 가능성을 최적화한다. Isaac Gym의 렌치-나사 조립 작업에서 전체 작업 성공률이 일정 보상 잔차 RL의 54.5%에서 85.6%로 향상되었다.</p>
+<h2 id="_2">그것이 바꾸는 것</h2>
+<p>이 작업의 핵심 변화는 "하위 작업 성공"이라는 전통적 최적화 목표를 "하류 작업에 대한 인계 상태의 조합 가능성"이라는 더 세밀한 최적화 목표로 대체한 것이다. 저자들은 접촉이 풍부한 조립 작업에서 하위 작업 성공 술어가 광범위한 종단 상태 동치 클래스를 정의하지만, 그중 일부 상태만이 하류 단계와 잘 연결된다는 점을 날카롭게 지적한다. 일정 보상의 잔차 RL은 단일 하위 작업 성공률을 크게 향상시킬 수 있지만(예: Insert가 45.7%에서 92.2%로), 전체 작업 성공률은 거의 개선되지 않으며(54.5% vs 54.9%), 이는 "성공"과 "조합 가능성" 사이의 간극을 직접적으로 증명한다.</p>
+<p>이 작업의 진정한 기여는 보상 함수나 작업 분해를 재설계하려 하지 않고, 학습 가능한 "전방 시야 가치 함수"를 도입하여 인계 상태의 하류 가치를 명시적으로 정량화한 것이다. 이는 잔차 RL의 훈련 신호를 "성공 여부"에서 "성공하고 하류에 우호적인" 것으로 변경한다. 이러한 접근 방식은 종단 간 학습과 독립 하위 작업 훈련의 이분법을 벗어나, 장시간 조작 작업을 위한 새롭고 확장 가능한 최적화 패러다임을 제공한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">잔차 정책 공식</h3>
+<p>행동은 기본 정책과 잔차 정책의 가중 결합으로 구성된다:
+a_t = π_k(o_t) ≜ π_k^0(o_t) + α · π_k^res(o_t)
+여기서 α ≪ 1(실험에서 α = 0.1)로, 훈련 초기에 기본 정책의 행동을 유지한다.</p>
+<h3 id="_5">전방 시야 가치 함수 정의</h3>
+<p>단계 k &lt; K에 대해, 미래 정책 π_{k+1:K}를 고정하면 전방 시야 가치 함수는 다음과 같다:
+V_{k+1:K}(s) = E_{π_{k+1:K}}[Σ_{t=0}^{T_{k+1:K}} γ^t β_K(s_{t+1}) | s_0^{(k+1)} = s]
+여기서 β_K는 최종 단계 성공 지시 함수이다.</p>
+<h3 id="_6">국소 전방 시야 가치 함수</h3>
+<p>단계 k의 종단 보상 β_k에 전방 시야 가치 함수를 곱한다:
+V_k^∘(s) = E_{π_k}[Σ_{t=0}^{T_k} γ^t β_k(s_{t+1}) V_{k+1:K}(s_{t+1}) | s_0^{(k)} = s]
+이 수정은 종단 보상만 변경하며, 단계 내 최적화 과정은 유지한다.</p>
+<h3 id="algorithm-1">후방 전방 귀납(Algorithm 1)</h3>
+<p>마지막 단계 K에서 시작하여 앞으로 훈련한다:
+- k = K일 때, V_{K+1:K} ≜ 1, 표준 작업 보상으로 π_K 훈련
+- k &lt; K일 때, 먼저 하류 정책 π_{k+1}을 훈련하고 고정한 다음, 전방 예측기를 훈련하고, 보상 r_t = β_k(s_{t+1}) · p_φ(o_{t+1})로 π_k^res 훈련</p>
+<h3 id="algorithm-2">전방 예측기 훈련(Algorithm 2)</h3>
+<p>3단계 프로세스:
+1. 기본 정책 π_k^0으로 롤아웃하여 N개의 성공 종단 상태 수집
+2. 각 종단 상태에 대해 K_rep번 하류 정책 독립 롤아웃을 실행하고 성공 횟수 κ_i 기록
+3. 이항 음의 로그 우도로 예측기 p_φ 최적화</p>
+<p>훈련 목표:
+L(φ) = -Σ_{i=1}^{N} [κ_i log p_φ(o_i) + (K_rep - κ_i) log(1 - p_φ(o_i))]</p>
+<h3 id="_7">핵심 설계 결정</h3>
+<ul>
+<li><strong>오프라인 추정</strong>: 온라인 몬테카를로 추정은 분산이 높고 계산 비용이 크다(단일 종단 상태 평가에 최대 200스텝 × 반복 횟수 필요); 오프라인 예측기는 몬테카를로 성공 레이블을 직접 피팅하여 보정된 추정을 제공한다</li>
+<li><strong>기본 정책 분포로 데이터 수집</strong>: 예측기는 잔차 훈련이 상태를 더 좋은 구성으로 이동시키기 전에 잔차가 방문할 상태에 대해 정확해야 한다</li>
+<li><strong>작은 잔차 스케일 α</strong>: 정책 개선으로 인한 종단 분포 이동을 제한하여, 강화된 정책의 종단 분포가 기본 정책에 가깝고 예측기 보간 범위 내에 있도록 한다</li>
+</ul>
+<h3 id="_8">아키텍처 세부 사항</h3>
+<ul>
+<li><strong>예측기</strong>: DINOv2-S/14 CLS 토큰(두 카메라 뷰), 자기 주의 융합, 선형 레이어, 시그모이드 헤드; DINO 백본은 LoRA로 미세 조정(랭크 8)</li>
+<li><strong>잔차 정책</strong>: 손목 뷰만 사용, 동결된 DINOv2-S/14로 16×16 패치 특징 추출, CNN(384→12), 2층 LSTM(256), MLP(512→256→128), actor 출력은 0으로 초기화</li>
+</ul>
+<h2 id="_9">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>전방 시야 가치 함수를 보상 변조 신호로 사용</strong>: 하류 성공 확률을 하위 작업 종단 보상의 곱셈 가중치로 사용한 최초의 사례로, 인계 상태의 조합 가능성을 직접 최적화한다. 분포 정합 방법(예: initiation overlapping)과 달리 대리 목표가 아닌 최종 작업 성공을 최적화한다.</p>
+</li>
+<li>
+<p><strong>오프라인 이항 예측기</strong>: K_rep번 몬테카를로 롤아웃으로 카운트 레이블을 생성하고 이항 음의 로그 우도로 훈련하여, 회귀 목표가 아닌 레이블의 카운트 구조를 존중한다. 훈련 시간은 5분 미만으로 계산 비용이 매우 낮다.</p>
+</li>
+<li>
+<p><strong>후방 귀납 훈련 순서</strong>: 마지막 단계에서 앞으로 훈련하여 각 하위 작업 정책 훈련 시 하류 정책이 고정되고 전방 시야 가치 함수가 명확한 계산 기반을 갖도록 한다. 이 순서는 하위 작업 k 훈련 시 V_{k+1:K}를 추정하기 위해 하류 정책을 롤아웃해야 하므로 필수적이다.</p>
+</li>
+</ol>
+<h2 id="_10">실험 및 결과</h2>
+<p><strong>작업</strong>: Isaac Gym의 렌치-나사 조립, 7-DoF Kuka IIWA + 11-DoF Robotiq 3핑거 그리퍼, 3단계(Grasp 160스텝, Move-Insert 200스텝, Rotate 200스텝), 제어 주파수 20Hz.</p>
+<p><strong>주요 결과</strong>(512 에피소드, 4 시드):</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Grasp</th>
+<th>Insert</th>
+<th>Rotate</th>
+<th>Grasp+Insert</th>
+<th>Insert+Rotate</th>
+<th>Full Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀(체인)</td>
+<td>87.1±1.4</td>
+<td>45.7±6.1</td>
+<td>93.4±3.0</td>
+<td>37.1±1.5</td>
+<td>61.5±4.6</td>
+<td>41.4±3.3</td>
+</tr>
+<tr>
+<td>π₀ + Residual</td>
+<td>98.4±0.6</td>
+<td>92.2±1.1</td>
+<td>99.2±0.6</td>
+<td>55.5±3.4</td>
+<td>83.4±3.2</td>
+<td>54.5±3.6</td>
+</tr>
+<tr>
+<td>π₀ + Residual with Foresight</td>
+<td>95.7±3.3</td>
+<td>91.4±0.6</td>
+<td>99.8±0.4</td>
+<td>87.3±1.3</td>
+<td>91.8±3.3</td>
+<td><strong>85.6±3.9</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 발견</strong>:
+- 일정 보상 잔차 RL의 Full Task(54.5%)는 종단 간 π₀(54.9%)보다 우수하지 않으며, Insert 성공률이 두 배(45.7%→92.2%)임에도 불구하고
+- 전방 시야 수정은 85.6%에 도달하여 일정 보상 변형보다 30% 이상 향상
+- Grasp→Insert 연속 성공률이 55.5%에서 87.3%로 향상(+31.8%)</p>
+<p><strong>종단 상태 품질</strong>(Table III, 평균 예측기 점수):</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Grasp 종단</th>
+<th>Insert 종단</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀(기본)</td>
+<td>0.64</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>+ Residual</td>
+<td>0.32</td>
+<td>0.86</td>
+</tr>
+<tr>
+<td>+ Residual with Foresight</td>
+<td><strong>0.73</strong></td>
+<td>0.91</td>
+</tr>
+</tbody>
+</table>
+<p>일정 보상 잔차 RL은 하위 작업 성공률이 향상되었음에도 Grasp 종단 점수가 0.64에서 0.32로 하락; 전방 시야 수정은 최고 Grasp 종단 점수 0.73에 도달.</p>
+<p><strong>예측기 품질</strong>(Table I): Grasp→Insert 경계 정확도 86.2%, Insert→Rotate 경계 정확도 93.9%.</p>
+<h2 id="_11">경계 및 한계</h2>
+<ul>
+<li><strong>시뮬레이션 한계</strong>: 모든 평가는 Isaac Gym 시뮬레이션에서 수행되었으며 실제 하드웨어에서 검증되지 않았다. 저자들은 실제 배포의 주요 장애물이 접촉 역학 차이가 아닌 잔차 정책의 온라인 RL 하드웨어 비용일 것으로 예상한다.</li>
+<li><strong>작업 단일성</strong>: 단일 렌치-나사 작업에서만 검증되었으며 알려진 단계 분해를 사용한다. 다른 작업, 다른 단계 분해, 다른 VLA 백본은 테스트되지 않았다.</li>
+<li><strong>1단계 전방 시야 근사</strong>: k = K-1 또는 하위 작업 k+2,…,K의 성공률이 하위 작업 k+1 성공 조건에서 일정할 때만 정확; 더 깊은 전방 시야는 모든 남은 단계를 체인 롤아웃해야 한다(저자가 언급했지만 구현하지 않음).</li>
+<li><strong>분포 이동의 정량적 분석 부재</strong>: 저자는 정책 개선 후 예측기의 분포 이동에 대한 정량적 분석을 제공하지 않으며, 작은 α가 이동을 보간 범위 내로 제한한다고만 주장한다.</li>
+<li><strong>비교 실험 부재</strong>: 다른 분포 정합 방법(예: T-STAR, SCaR, Sequential Dexterity)과의 직접 비교가 없다.</li>
+<li><strong>시각적 강건성 분석 부재</strong>: 카메라 뷰 변화, 조명 변화 등 시각적 교란에 대한 예측기의 강건성은 테스트되지 않았다.</li>
+</ul>
+<h2 id="_12">공학적 시사점</h2>
+<ul>
+<li><strong>재현 우선순위</strong>: 예측기 훈련 데이터 수집 프로세스를 먼저 확인 — 기본 정책(강화 정책이 아닌)의 종단 상태를 사용해야 하며, K_rep = 5번 롤아웃이 분산과 계산의 균형을 맞추는 핵심이다. 예측기 훈련은 20 epoch(&lt;5분)만 필요하며 가장 비용이 낮은 구성 요소이다.</li>
+<li><strong>가장 실수하기 쉬운 지점</strong>: 잔차 스케일 α = 0.1은 분포 이동 제어의 핵심이다. α가 너무 크면 강화 정책의 종단 분포가 예측기 보간 범위를 벗어나 보상 신호가 왜곡된다; 너무 작으면 잔차 정책이 종단 상태를 효과적으로 개선할 수 없다. α에 대한 절제 실험을 권장한다.</li>
+<li><strong>단계 전환 감지</strong>: 플래그 기반 반응형 감지(Grasp→Move-Insert는 그리핑 술어 활성화 시 트리거)는 공학 구현의 핵심 세부 사항이다. 감지가 부정확하면 전방 시야 가치 함수의 시간 정렬이 깨진다.</li>
+<li><strong>하류 팀에 대한 지침</strong>: 작업이 인과적 결합 특성(예: 회전 중 삽입 유지)을 가지며 사용 가능한 VLA 기본 정책이 있다면 이 프레임워크를 직접 적용할 수 있다. 단, 전방 예측기는 하류 정책을 반복 롤아웃할 수 있어야 하며(시뮬레이션에서 가능, 실제 하드웨어 비용 높음); 하류 정책 자체가 불안정하면 예측기 레이블 노이즈가 증가한다.</li>
+<li><strong>데이터 효율성</strong>: 하위 작업당 2,560개 데모 + 경계당 2,560개 종단 상태(각 5회 롤아웃)로 85.6% 전체 작업 성공률에 도달할 수 있어 데이터 요구량이 상대적으로 관리 가능하다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_foresight_residual_rl_long_horizon_robot_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾸는 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">잔차 정책 공식</a></li>
+<li><a href="#_5">전방 시야 가치 함수 정의</a></li>
+<li><a href="#_6">국소 전방 시야 가치 함수</a></li>
+<li><a href="#algorithm-1">후방 전방 귀납(Algorithm 1)</a></li>
+<li><a href="#algorithm-2">전방 예측기 훈련(Algorithm 2)</a></li>
+<li><a href="#_7">핵심 설계 결정</a></li>
+<li><a href="#_8">아키텍처 세부 사항</a></li>
+</ul>
+</li>
+<li><a href="#_9">핵심 혁신</a></li>
+<li><a href="#_10">실험 및 결과</a></li>
+<li><a href="#_11">경계 및 한계</a></li>
+<li><a href="#_12">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

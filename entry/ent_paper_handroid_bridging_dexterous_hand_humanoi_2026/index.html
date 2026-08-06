@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handroid: Bridging Dexterous Hand and Humanoid · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Handroid: Bridging Dexterous Hand and Humanoid</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Handroid: Bridging Dexterous Hand and Humanoid</h1>
+      <p class="entry-name-en">Handroid: Bridging Dexterous Hand and Humanoid</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Handroid 是一个 27-DoF 的桌面级双实体机器人系统，可在灵巧手（20 DoF）与桌面人形（25 DoF）之间通过棱柱关节重构，由加州大学团队开发。其核心贡献在于提出&#34;形态复用&#34;理念——同一物理本体通过重构承担操作与移动两种角色，并配套了从遥操作、扩散策略抓取到 RL 全身运动控制的完整算法栈，为跨形态机器人学习提供了统一研究平台。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.16187" target="_blank" rel="noopener">arXiv:2607.16187 Handroid: Bridging Dexterous Hand and Humanoid</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>移动性与灵巧性在机器人领域长期被割裂对待：灵巧手安装在固定基座上追求接触精度，人形机器人则优先保证运动稳定性而牺牲手部功能。这种"形态即功能"的固化思维导致两个子领域各自为政，缺乏统一的物理平台来研究跨形态的技能迁移与协调控制。Handroid 真正改变的是这一范式——它用一套可重构硬件证明，手指和腿在关节布置、接触几何、驱动方式上存在深层结构同构性，同一模块在不同实体中承担不同功能角色是可行的。</p>
+<p>这一设计决策的深层意义在于：它把"形态"从固定属性变成了可操作变量。研究者可以在同一物理系统上对比灵巧操作与全身运动控制，甚至探索跨实体策略迁移——这在以往需要两套完全不同的硬件才能实现。同时，桌面级尺寸（0.33 m，2.05 kg）和商用 Dynamixel 执行器大幅降低了复现门槛，使双实体机器人学习从"实验室奢侈品"变为可广泛开展的研究方向。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">硬件重构机制</h3>
+<ul>
+<li>关节 9 和 26 为棱柱关节，采用齿条-小齿轮传动，将旋转转换为沿刚性直线导轨的平移</li>
+<li>从人形切换到灵巧手时，模块 II 和 V 向下平移至手配置位置，分别作为食指和小指模块</li>
+<li>切换仅需受控模块重定位，无需更换硬件</li>
+</ul>
+<h3 id="_4">灵巧操作算法栈</h3>
+<ul>
+<li><strong>遥操作</strong>：Apple Vision Pro 捕获 22 个手部关键点，经 AnyTeleop 重定向框架和 DexPilot 风格目标函数映射到 Handroid 和 Franka Research 3，组合循环稳定运行在 20 Hz 以上</li>
+<li><strong>灵巧抓取</strong>：物体条件扩散策略，PointNet++ 编码物体点云（512 点），MLP 编码本体感觉历史，U-Net 骨干生成动作块（n_obs=2, n_action=8），部署时用时间集成平滑</li>
+<li><strong>手内重定向</strong>：IsaacLab + PPO 训练，策略观察手部关节位置和命令历史，输出 PD 目标；Sim-to-real 随机化接触摩擦、执行器参数、物体质量和尺度</li>
+</ul>
+<h3 id="_5">人形全身运动控制</h3>
+<ul>
+<li><strong>ZMP 步态规划</strong>：固定高度 LIPM 模型 p_zmp = c_xy − (h_com/g)·c̈_xy，LQR 预览控制器权衡 ZMP 跟踪与 CoM 加速度代价；单支撑/双支撑阶段交替，脚和 CoM 轨迹遵循相同相位调度</li>
+<li><strong>Mink 差分 IK</strong>：每帧求解加权差分 IK（CoM、双脚位姿、躯干稳定、姿态正则化），支撑脚权重高于摆动脚，每帧从上一帧热启动，12 次迭代细化</li>
+<li><strong>RL 跟踪策略</strong>：actor 接收参考关节状态 + 实测基座角速度 + 五步历史，critic 额外接收特权观测（锚点偏移、仿真基座速度）；奖励核宽度：根位置 0.03 m、根姿态 0.15 rad、身体线速度 0.25 m/s、身体角速度 0.60 rad/s</li>
+<li><strong>无参考速度控制</strong>：直接以指令平面 CoM 速度和偏航角速率为条件，不调用 ZMP 规划器或 Mink；非对称 actor-critic，critic 接收仿真特权观测（接触状态、脚高度、接触力）；速度跟踪权重 w_v=2, w_ω=2，核宽度 σ_v=0.16 m/s, σ_ω=0.50 rad/s</li>
+<li><strong>关键帧运动控制</strong>：Viser 编辑器生成关节空间关键帧序列，分段线性插值生成密集轨迹；两条路径——直接硬件执行（Dynamixel 位置指令）或转换为跟踪参考供 RL 训练</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>形态可重构的双实体设计</strong>：这是首个在桌面级尺度上实现灵巧手与人形之间无缝重构的系统。27-DoF 中 20 DoF 用于手、25 DoF 用于人形，通过棱柱关节平移实现形态切换，无需更换硬件。这一设计将"形态"从固定属性变为可操作变量，为跨形态技能迁移研究提供了前所未有的实验平台。</p>
+</li>
+<li>
+<p><strong>统一跟踪管线的多源运动融合</strong>：Handroid 将规划器生成（ZMP+IK）、关键帧作者创作、RL 从零学习三种运动生成方式统一到同一跟踪策略中。所有参考运动共享时间索引序列表示（关节位置/速度、身体位姿/速度），以髋关节连杆为锚点，使不同来源的运动能被同一套闭环策略执行。这消除了传统方法中"每种运动来源需要专用控制器"的碎片化问题。</p>
+</li>
+<li>
+<p><strong>无参考速度控制与跟踪控制的互补架构</strong>：速度策略直接以运动指令为条件，不依赖时间索引参考，训练和推理时不调用 ZMP 规划器或 Mink；而跟踪策略保留对参考的依赖以利用规划器和关键帧生成的运动。这种双轨设计同时满足"响应式控制"与"参考引导控制"两种需求，且非对称 actor-critic 确保部署时无需特权观测。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="1-10">灵巧抓取成功率（表 1，每物体 10 次尝试）</h3>
+<table>
+<thead>
+<tr>
+<th>物体</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Band Aid</td>
+<td>6/10</td>
+</tr>
+<tr>
+<td>Canister</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Chip Tube</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Cocoa Box</td>
+<td>7/10</td>
+</tr>
+<tr>
+<td>Earphone</td>
+<td>6/10</td>
+</tr>
+<tr>
+<td>Glove Box</td>
+<td>7/10</td>
+</tr>
+<tr>
+<td>Sheep</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Sprayer</td>
+<td>5/10</td>
+</tr>
+<tr>
+<td>WD-40</td>
+<td>7/10</td>
+</tr>
+<tr>
+<td><strong>平均</strong></td>
+<td><strong>72%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">人形运动控制（模拟）</h3>
+<ul>
+<li>RL 跟踪：关节位置跟踪误差 <strong>0.12 rad</strong>，身体位置跟踪误差 <strong>0.0019 m</strong></li>
+<li>RL 速度控制：前向速度 0.20 m/s 指令下，速度跟踪误差 <strong>0.052 m/s</strong>；学习步态表现出相对较短的步幅和高步频</li>
+</ul>
+<h3 id="_9">真实机器人演示</h3>
+<ul>
+<li>关键帧运动：6 个手动编写关键帧构建行走循环，相邻间隔 0.045 s；演示了俯卧撑、引体向上、拾放任务、前进/后退行走、转身和侧步</li>
+<li>长时程任务：完整流程包括灵巧手→人形切换、人形绕过障碍推盒、切换回灵巧手抓取瓶子放入盒子，电磁法兰提供约 180 N 保持力</li>
+</ul>
+<h3 id="_10">关键观察</h3>
+<ul>
+<li>72% 的抓取成功率在 10 物体、姿态随机化条件下表现合理，但 Sprayer（5/10）和 Band Aid/Earphone（6/10）等小物体成功率偏低，反映接触几何对抓取鲁棒性的影响</li>
+<li>模拟中 RL 跟踪误差远小于速度控制误差（0.0019 m vs 0.052 m/s），说明参考引导控制精度更高，但速度控制无需规划器，响应更直接</li>
+</ul>
+<h2 id="_11">边界与局限</h2>
+<p>论文未明确列出作者承认的局限性，但从方法描述可推断以下边界：</p>
+<ul>
+<li><strong>真实人形 RL 策略未部署</strong>：RL 跟踪和速度控制仅在模拟中评估（MuJoCo），真实人形实体上未验证闭环运动控制效果，Sim-to-real 差距未知</li>
+<li><strong>手内重定向仅定性评估</strong>：真实机器人上手内重定向策略无成功率定量指标，仅演示了立方体朝向匹配</li>
+<li><strong>无跨实体策略迁移实验</strong>：未验证灵巧手训练的策略能否迁移到人形实体（或反之），这是"形态复用"理念的核心假设之一</li>
+<li><strong>速度控制步态质量有限</strong>：学习步态步幅短、步频高，与自然行走有差距，可能限制其在复杂地形上的适用性</li>
+<li><strong>关键帧直接执行无闭环反馈</strong>：硬件直接执行路径不经过 RL 策略，对扰动和地形变化无自适应能力</li>
+</ul>
+<h2 id="_12">工程启示</h2>
+<p>复现或基于 Handroid 开展研究时，以下工程细节最值得关注：</p>
+<ol>
+<li>
+<p><strong>先核对关节命令接口缩放因子</strong>：式 3 中 s_j = 0.25 对所有受控下肢关节，这一缩放直接影响 RL 策略输出的有效动作范围。若更换执行器或关节配置，需重新标定该参数，否则策略输出可能超出执行器物理极限。</p>
+</li>
+<li>
+<p><strong>跟踪奖励核宽度是调参核心</strong>：根位置 0.03 m、根姿态 0.15 rad、身体线速度 0.25 m/s、身体角速度 0.60 rad/s 这些值决定了跟踪精度与动作平滑度的权衡。若目标运动速度更快或振幅更大，需相应放宽核宽度，否则策略会因过度惩罚而收敛到保守行为。</p>
+</li>
+<li>
+<p><strong>速度控制策略的终止条件需谨慎设置</strong>：倾斜超过 70° 即终止回合，这一阈值对桌面级机器人可能过于宽松——0.33 m 高的机器人倾斜 70° 时重心已严重偏移，可能导致不可恢复的姿态。建议根据实际硬件重心高度重新计算安全倾斜角。</p>
+</li>
+<li>
+<p><strong>关键帧时间间隔是行走质量的关键</strong>：行走用 0.045 s 间隔，这一值决定了插值轨迹的平滑度和执行速度。间隔过短会导致执行器跟踪滞后，过长则运动生硬。建议根据执行器带宽（Dynamixel XC330 系列）和关节负载实测调整。</p>
+</li>
+<li>
+<p><strong>电磁法兰保持力（180 N）是长时程任务的瓶颈</strong>：该力值足以支撑抓取和推盒，但若任务涉及较大冲击载荷（如快速转身或跌倒恢复），需验证法兰连接可靠性。建议在任务设计中避免对法兰施加剪切力。</p>
+</li>
+<li>
+<p><strong>最易踩坑处：Sim-to-real 随机化参数未公开</strong>：论文未给出接触摩擦、执行器参数、物体质量/尺度的具体随机化范围。复现手内重定向策略时，这些参数直接影响迁移成功率，建议从较窄范围（±10%）开始逐步扩大。</p>
+</li>
+</ol>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.16187</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_linear_quadratic_regulator_lqr/">与 iterative LQR (iLQR) 经典论文、教材与课程</a>
+              <span class="rel-desc">Handroid: Bridging Dexterous Hand and Humanoid提及与 iterative LQR (iLQR) 经典论文、教材与课程。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_principle_zero_moment_point/">零力矩点（ZMP）</a>
+              <span class="rel-desc">Handroid: Bridging Dexterous Hand and Humanoid提及零力矩点（ZMP）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">Handroid: Bridging Dexterous Hand and Humanoid提及近端策略优化（PPO）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_handroid_bridging_dexterous_hand_humanoi_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">原理</span>
+          <h3>零力矩点（ZMP）</h3>
+          <p>8.4.4 零力矩点（ZMP）与动态平衡 零力矩点（Zero Moment Point, ZMP）是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_linear_quadratic_regulator_lqr/">
+          <span class="entry-type">论文</span>
+          <h3>与 iterative LQR (iLQR) 经典论文、教材与课程</h3>
+          <p>【内容待补】据实验室论文清单登记：Linear Quadratic Regulator (LQR) 与 iterative LQR (iLQR)…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">硬件重构机制</a></li>
+<li><a href="#_4">灵巧操作算法栈</a></li>
+<li><a href="#_5">人形全身运动控制</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#1-10">灵巧抓取成功率（表 1，每物体 10 次尝试）</a></li>
+<li><a href="#_8">人形运动控制（模拟）</a></li>
+<li><a href="#_9">真实机器人演示</a></li>
+<li><a href="#_10">关键观察</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

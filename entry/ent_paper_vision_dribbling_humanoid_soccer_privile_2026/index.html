@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</h1>
+      <p class="entry-name-en">Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文由罗马大学、CSIC-UPC 和 EPFL 的研究者提出，针对双足人形机器人足球运球任务，采用特权表示学习（Privileged Representation Learning）框架，将感知与控制解耦训练：先在模拟器中以特权状态训练策略，再冻结策略、仅训练视觉编码器从深度图像重建特权潜在表示。核心贡献在于通过课程学习与 DAgger 正则化，在 Booster T1 人形平台上实现了对静态和动态障碍物的鲁棒运球，动态对手场景下成功率 46%，并公开了代码。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12702" target="_blank" rel="noopener">arXiv:2607.12702 Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learnin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它真正改变的是人形机器人运球任务中“感知-控制”耦合方式的范式。传统模块化方案（如 YOLO 检测 + Kalman 滤波）将感知视为独立于策略的固定模块，其输出表示并未针对下游控制目标优化，因此在遮挡、快速球运动和复杂对手交互下，感知误差会直接传导至控制层，导致任务失败。本文的核心判断是：感知不是为“看得准”服务的，而是为“控得住”服务的——因此必须让感知表示直接对齐策略所需的潜在状态空间。</p>
+<p>这一转变的深层意义在于，它把“感知鲁棒性”问题转化为“表示对齐”问题。通过特权学习，策略在训练时获得完美状态，视觉编码器只需学习从高维深度观测中恢复策略所需的低维潜在向量，而非重建完整世界模型。这避免了端到端强化学习中感知与控制耦合训练的高样本复杂度和不稳定性，同时保留了端到端方法“感知服务于控制”的核心优势。对于 RoboCup 这类实时、动态、部分可观测的对抗场景，这种解耦方式在工程上更可控、更易调试。</p>
+<h2 id="_2">方法拆解</h2>
+<p>方法分为两个阶段，核心设计是保持策略接口不变，仅替换潜在表示的生成机制。</p>
+<h3 id="_3">问题形式化</h3>
+<ul>
+<li>建模为 POMDP：ℳ = (𝒮, 𝒪, 𝒜, p, r, γ)</li>
+<li>状态 𝒮：机器人、球、障碍物的完整世界坐标状态 + 目标命令</li>
+<li>观测 𝒪：本体感觉（IMU、关节位置/速度）+ 外感受（球/障碍物状态编码为潜在向量 z_t ∈ ℝ⁶⁴）</li>
+<li>动作 𝒜：21 维身体关节位置向量，头部独立控制</li>
+</ul>
+<h3 id="1">阶段 1：特权策略学习</h3>
+<ul>
+<li>演员观测：o_t^actor = [o_t^prop, z_t]，其中 z_t 由小型 MLP 从地面真值球状态和最近障碍物状态（机器人坐标系）映射得到</li>
+<li>课程学习沿两个轴：阶段（phase）定义 z_t 获取方式，层级（stage）定义障碍物难度</li>
+<li>四层级课程：</li>
+<li>层级 0：无障碍物，球远离，学习接近和运球（普通 PPO）</li>
+<li>层级 1：无障碍物，球靠近，精炼目标导向运球</li>
+<li>层级 2：静态阻挡物，学习避障和轨迹恢复</li>
+<li>层级 3：动态对手与球交互，学习在线反应控制</li>
+<li>层级 1-3 从上一层级检查点初始化，使用 DAgger 正则化 PPO 目标：</li>
+<li>ℒ_total = ℒ_PPO + λ_imit 𝔼[||π_θ(a_t|s_t) − π₀(a_t|s_t)||²₂]</li>
+<li>模仿项以层级 0 策略为教师，缓解灾难性遗忘，保留标称运动能力</li>
+</ul>
+<h3 id="2">阶段 2：视觉适应</h3>
+<ul>
+<li>策略冻结，仅训练视觉编码器从深度观测重建潜在 z_t</li>
+<li>架构：CNN（每帧深度特征 ℝ⁶⁴）→ GRU（时间聚合 ℝ²⁵⁶）→ 投影头（ℝ⁶⁴）</li>
+<li>深度帧分辨率 108 × 192，保持原始宽高比</li>
+<li>训练损失：</li>
+<li>ℒ_adapt = ℒ_latent + λ_ball^pos ℒ_ball^pos + λ_ball^vel ℒ_ball^vel + λ_obs^pos ℒ_obs^pos + λ_obs^vel ℒ_obs^vel</li>
+<li>主项 ℒ_latent = ||z_t^adapt − z_t^priv||²₂，辅助预测头回归球/障碍物状态作为正则化</li>
+</ul>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li>保持两个阶段演员接口完全一致，仅改变潜在生成机制，策略架构不变——这保证了阶段 2 训练时策略无需重新调整</li>
+<li>任务目标 g^w ∈ ℝ² 在世界坐标系中围绕球位置采样，避免每步重新采样速度，减少非平稳性</li>
+<li>奖励函数包含 26 项，覆盖球控（速度跟踪、航向）、姿态（摆动相、支撑相）、安全（碰撞、摔倒）等多个维度</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>特权表示学习用于人形机器人运球</strong>：将 DribbleBot 等四足平台的特权学习思想扩展到双足人形，解决了动态平衡与高自由度带来的额外挑战。其新颖性在于课程学习与 DAgger 正则化的结合——层级 0 的标称策略作为教师，防止后续层级学习时遗忘基础运球能力，这是四足工作中未见的。</p>
+</li>
+<li>
+<p><strong>感知-控制接口的稳定设计</strong>：通过固定潜在向量维度（ℝ⁶⁴）和演员观测结构，阶段 2 的视觉适应完全独立于策略优化。这使得视觉编码器可以在策略冻结的情况下训练，大幅降低训练复杂度，同时保证部署时策略行为与模拟一致。</p>
+</li>
+<li>
+<p><strong>阻塞时间步的细粒度诊断</strong>：引入“阻塞”（blocked）时间步定义（障碍物在球-目标方向前向 2.0 m 内、距球-目标线 0.75 m 内），将评估细分为未阻塞/阻塞子条件。这揭示了动态对手场景下性能下降的主因是闭环控制而非感知失败——阻塞时角度误差从 34.27° 升至 43.00°，但球位置误差仅从 0.05 m 升至 0.08 m。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h2 id="_7">实验与结果</h2>
+<p><strong>对照设置。</strong> 我们在仿真环境（mjlab 框架，Booster T1 人形机器人，平坦地面）中评估最终策略，设置三种条件：无障碍物、静态障碍物（单个静止障碍物置于球到目标走廊附近）、球攻击者（单个移动障碍物以固定速度追逐球，速度采样范围 <code>[0.1, 0.4] m/s</code>）。终止条件为成功到达目标（球-目标距离 <code>≤ 0.75 m</code>）、超时（<code>30 s</code>）、机器人摔倒、球丢失（机器人-球距离超过 <code>2.0 m</code>）；障碍物碰撞不终止试验，仅记录为安全指标。评估规模为 5 个随机种子、每条件每种子 10 次试验（每条件共 50 次试验）。无外部基线，主要对比三种条件间的表现差异及课程阶段消融。指标包括成功率（SR）、到达时间（T2T/T2T-C）、摔倒率（FR）、丢球率（LR）、机器人-障碍物碰撞率（RCR）与每试验接触次数（RC/t）、球-障碍物碰撞率（BCR）与每试验接触次数（BC/t）、最小球-障碍物净距（MBC），以及速度诊断（<code>e_vec</code>、<code>e_spd</code>、<code>e_ang</code>）和感知指标（<code>e_ball,pos</code>、<code>e_ball,vel</code>、<code>e_obs,pos</code>、<code>e_obs,vel</code>、<code>c_fov</code>）。训练采用两阶段框架：Phase 1 特权编码器 + 四阶段课程（Stage 0 无障碍球远、Stage 1 无障碍球近、Stage 2 单个静态阻挡、Stage 3 单个动态对手）；Phase 2 冻结策略，训练视觉编码器（CNN + GRU）从深度观测（尺寸 <code>108 × 192</code>）预测潜变量。</p>
+<p><strong>关键数字（Table 2–5）。</strong></p>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>SR [%]</th>
+<th>T2T [s]</th>
+<th>T2T-C [s]</th>
+<th>FR [%]</th>
+<th>LR [%]</th>
+<th>RCR [%]</th>
+<th>RC/t [#/trial]</th>
+<th>BCR [%]</th>
+<th>BC/t [#/trial]</th>
+<th>MBC [m]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无障碍物</td>
+<td><code>100.00</code></td>
+<td><code>11.45</code></td>
+<td><code>11.45</code></td>
+<td><code>0.00</code></td>
+<td><code>0.00</code></td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>静态障碍物</td>
+<td><code>96.00</code></td>
+<td><code>13.29</code></td>
+<td><code>13.95</code></td>
+<td><code>4.00</code></td>
+<td><code>0.00</code></td>
+<td><code>8.00</code></td>
+<td><code>0.08</code></td>
+<td><code>4.00</code></td>
+<td><code>0.10</code></td>
+<td><code>1.73</code></td>
+</tr>
+<tr>
+<td>球攻击者</td>
+<td><code>46.00</code></td>
+<td><code>11.82</code></td>
+<td><code>21.64</code></td>
+<td><code>52.00</code></td>
+<td><code>2.00</code></td>
+<td><code>68.00</code></td>
+<td><code>0.72</code></td>
+<td><code>40.00</code></td>
+<td><code>0.70</code></td>
+<td><code>1.36</code></td>
+</tr>
+</tbody>
+</table>
+<p>速度诊断（Table 3）：无障碍物全部时间步 <code>e_vec=0.71</code>、<code>e_spd=0.62</code>、<code>e_ang=28.39</code>；静态障碍物未阻塞/阻塞分别为 <code>0.74/0.74</code>、<code>0.62/0.60</code>、<code>35.62/33.96</code>；球攻击者未阻塞/阻塞分别为 <code>0.74/0.79</code>、<code>0.61/0.60</code>、<code>34.27/43.00</code>。感知指标（Table 4）：无障碍物 <code>e_ball,pos=0.05</code>、<code>e_ball,vel=0.25</code>、<code>c_fov=75.43</code>；静态障碍物 <code>0.05/0.24/1.26/0.21/76.74</code>；球攻击者 <code>0.08/0.26/1.26/0.13/78.39</code>。课程消融成功率（Table 5，%）：无障碍物 Stage 1/2/3 为 <code>100/68/90</code>；静态障碍物为 <code>24/42/88</code>；球攻击者为 <code>2/2/46</code>。</p>
+<p><strong>结果含义。</strong></p>
+<ul>
+<li><strong>名义带球被可靠保留，静态障碍物可有效处理。</strong> 无障碍条件达到 <code>100.00 %</code> 成功率且零失败（FR、LR 均为 <code>0.00</code>）；静态障碍物条件下成功率保持 <code>96.00 %</code>，到达时间仅适度增加（T2T <code>13.29 s</code> vs 无障碍 <code>11.45 s</code>），碰撞率低（RCR <code>8.00 %</code>、BCR <code>4.00 %</code>），表明策略能应对单个静止障碍物而不显著牺牲任务表现。</li>
+<li><strong>主动移动对手仍是开放问题。</strong> 球攻击者条件下成功率骤降至 <code>46.00 %</code>，摔倒率（<code>52.00 %</code>）与碰撞率（RCR <code>68.00 %</code>、BCR <code>40.00 %</code>）大幅上升，超时截尾到达时间（T2T-C <code>21.64 s</code>）明显高于成功试验到达时间（T2T <code>11.82 s</code>），说明对主动追逐者的鲁棒带球尚未解决。</li>
+<li><strong>感知并非主要瓶颈，闭环控制难度是限制因素。</strong> 感知指标在各条件间相对稳定（球位置误差 <code>0.05–0.08 m</code>，障碍物位置误差均为 <code>1.26 m</code>），球攻击者条件下阻塞时间步呈现最大角度误差（<code>e_ang=43.00</code>）与向量误差（<code>e_vec=0.79</code>），表明偏离名义指令主要源于对移动对手的闭环控制困难，而非严重感知失败。</li>
+<li><strong>课程策略有效提升障碍物回避能力。</strong> Stage 1（仅无障碍球近）在存在障碍物时表现极差（静态 <code>24 %</code>、球攻击者 <code>2 %</code>），而 Stage 3 后静态条件达 <code>88 %</code>、球攻击者达 <code>46 %</code>，验证了逐步增加难度使策略获得障碍物回避能力的有效性。</li>
+</ul>
+<h2 id="_8">边界与局限</h2>
+<p>作者明确承认的局限包括：动态对手场景成功率仅 46%，对主动移动对手的鲁棒运球仍是开放问题；主要限制不是感知失败而是对移动对手的闭环控制难度。所有实验均在模拟中进行，未进行真实世界（sim-to-real）部署实验，仅概述了原则性路线图。此外，独立训练策略数量少（5 种子），统计功效有限。论文未明确提及训练/推理频率、硬件配置、PPO 超参数等复现细节，也未讨论视觉编码器在球完全移出视野时的处理策略（评估中仅在地面真值球位置可用时计算感知指标）。</p>
+<h2 id="_9">工程启示</h2>
+<p>对复现和下游团队的工程启示：</p>
+<ol>
+<li>
+<p><strong>先核对课程学习的关键超参数</strong>：层级间初始化与 DAgger 正则化权重 λ_imit 是方法核心，但论文未给出具体值。复现时建议从 λ_imit = 0.1 起步，观察层级 1-2 是否出现灾难性遗忘（可参考表 5 中层级 1 在静态障碍物下仅 24% 的退化现象）。</p>
+</li>
+<li>
+<p><strong>最容易踩坑的是“阻塞”判定逻辑</strong>：阻塞时间步定义（前向 2.0 m、距线 0.75 m）直接影响诊断指标的可比性。若下游任务中障碍物速度或尺寸不同，需重新校准这些阈值，否则 e_ang 等指标会失真。</p>
+</li>
+<li>
+<p><strong>视觉编码器的 GRU 时间窗口是感知鲁棒性的关键</strong>：球在近距离运球时频繁移出视野（c_fov 仅 75-78%），GRU 的时间聚合是维持状态估计的核心。复现时建议优先验证 GRU 隐藏维度 256 是否足够，以及深度帧 108×192 分辨率在真实相机上的迁移效果。</p>
+</li>
+<li>
+<p><strong>动态对手场景的瓶颈在控制而非感知</strong>：若你的团队目标是提升对抗鲁棒性，应优先改进策略对障碍物运动的预测与反应，而非优化视觉编码器。表 4 显示感知误差已足够小（球位置误差 0.08 m），但 SR 仍仅 46%。</p>
+</li>
+<li>
+<p><strong>奖励函数中安全项权重需谨慎调整</strong>：机器人-障碍物碰撞和球-障碍物碰撞均为 −10.0，但动态场景下 RCR 仍达 68%，说明策略在“避碰”与“推进”之间存在权衡。若下游任务更看重安全，可尝试提高碰撞惩罚或引入安全约束。</p>
+</li>
+</ol>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.12702</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vision_dribbling_humanoid_soccer_privile_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题形式化</a></li>
+<li><a href="#1">阶段 1：特权策略学习</a></li>
+<li><a href="#2">阶段 2：视觉适应</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

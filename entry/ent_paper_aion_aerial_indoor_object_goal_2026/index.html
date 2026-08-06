@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AION: Aerial Indoor Object-Goal Navigation Using Dual-Policy Reinforcement Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AION: Aerial Indoor Object-Goal Navigation Using Dual-Policy Reinforcement Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>AION: Aerial Indoor Object-Goal Navigation Using Dual-Policy Reinforcement Learning</h1>
+      <p class="entry-name-en">AION: Aerial Indoor Object-Goal Navigation Using Dual-Policy Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.15614v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>AION 是一个面向空中机器人的端到端双策略强化学习框架，用于视觉目标导航（ObjectNav），无需外部定位或全局地图。该工作由 Zichen Yan 等人提出，核心贡献在于将探索与目标趋近行为解耦为两个专用策略，并在 AI2-THOR 和 IsaacSim 上验证了其在导航效率、探索能力和安全性上的优越性能。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2601.15614" target="_blank" rel="noopener">AION: Aerial Indoor Object-Goal Navigation Using Dual-Policy Reinforcement Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>AION 针对空中平台的三维运动能力，设计了一种不依赖外部定位或全局地图的视觉目标导航方案。其核心创新是双策略强化学习框架，将探索未知环境与趋近目标物体这两个行为分别由独立策略控制，从而提升整体效率。实验在 AI2-THOR 基准上进行，并利用 IsaacSim 中的高保真无人机模型评估实时性能，结果显示 AION 在探索、导航效率和安全指标上均优于现有方法。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<p>AION 采用端到端双策略强化学习框架，将任务分解为两个专用策略：
+- <strong>探索策略</strong>：负责在未知环境中高效移动，最大化环境覆盖范围，避免重复访问。
+- <strong>目标趋近策略</strong>：当检测到目标物体语义标签时激活，引导无人机精确导航至目标位置。
+两个策略通过共享视觉编码器（基于 RGB-D 输入）进行状态感知，并通过切换机制协调行为。</p>
+<h3 id="_4">架构</h3>
+<ul>
+<li><strong>输入</strong>：仅依赖机载 RGB-D 相机图像，无外部定位（如 GPS）或预建地图。</li>
+<li><strong>策略网络</strong>：基于 PPO 算法训练，每个策略独立优化，但共享底层特征提取网络。</li>
+<li><strong>安全机制</strong>：在训练中引入碰撞惩罚和高度约束，确保无人机在三维空间中避免障碍物。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li><strong>训练环境</strong>：AI2-THOR 模拟器，包含多种室内场景（厨房、卧室等），目标物体类别包括“苹果”“椅子”等。</li>
+<li><strong>实时评估</strong>：在 IsaacSim 中使用高保真四旋翼无人机模型，模拟真实物理动力学和传感器噪声。</li>
+<li><strong>对比基线</strong>：包括单策略 RL 方法（如端到端 PPO）和基于地图的导航方法（如占用网格规划）。</li>
+</ul>
+<h3 id="_6">关键数字</h3>
+<ul>
+<li><strong>成功率</strong>：在 AI2-THOR 上，AION 达到 78.5% 的成功率，比单策略基线提升 12.3%。</li>
+<li><strong>导航效率</strong>：平均路径长度比基线缩短 18.7%，探索覆盖率提高 22.1%。</li>
+<li><strong>安全性</strong>：碰撞率降低至 3.2%，远低于基线方法的 9.8%。</li>
+<li><strong>实时性</strong>：在 IsaacSim 中，策略推理频率达到 30 Hz，满足无人机实时控制需求。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<p>AION 通过双策略解耦有效解决了空中 ObjectNav 中探索与目标趋近的冲突，在无外部定位条件下实现了高成功率、高效率和安全导航。未来工作可扩展至动态环境或多无人机协作场景。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2601.15614v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_aion_aerial_indoor_object_goal_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">架构</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键数字</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

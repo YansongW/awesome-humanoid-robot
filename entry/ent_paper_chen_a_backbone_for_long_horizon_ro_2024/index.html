@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>面向长程机器人任务理解的骨干框架 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">面向长程机器人任务理解的骨干框架</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>面向长程机器人任务理解的骨干框架</h1>
+      <p class="entry-name-en">A Backbone for Long-Horizon Robot Task Understanding</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">量产制造</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2408.01334v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出了一种名为 Therblig-Based Backbone Framework (TBBF) 的框架，用于提升机器人长时域操作任务的可解释性与泛化能力。该框架由北京理工大学等机构的研究者开发，核心贡献在于将复杂任务分解为基本动作单元（therblig），并通过 Action Registration 与 LLM 引导的视觉校正实现轨迹迁移，在真实场景测试中取得了 94.4% 和 80% 的成功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2408.01334" target="_blank" rel="noopener">A Backbone for Long-Horizon Robot Task Understanding</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>TBBF 框架通过将长时域机器人操作任务离线分解为基本动作单元（therblig），并在在线阶段利用 Action Registration 与 LLM 引导的视觉校正实现轨迹迁移，从而解决了端到端学习在长时域任务中泛化性差的问题。该框架包含离线训练与在线测试两个阶段：离线阶段使用 Meta-RGate SynerFusion (MGSF) 网络进行精确的 therblig 分割；在线阶段则通过一次演示提取高层知识，并借助 LLM 确保动作注册的准确性。实验结果表明，该框架在 therblig 分割任务中召回率达到 94.37%，在真实机器人测试中，简单场景成功率为 94.4%，复杂场景成功率为 80%。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<p>TBBF 框架旨在解决端到端机器人学习在长时域任务中表现不可预测且泛化能力差的问题。其核心思想是将复杂任务分解为可解释的基本动作单元（therblig），并实现从演示到新场景的轨迹迁移。</p>
+<h3 id="_4">架构与流程</h3>
+<h4 id="_5">离线训练阶段</h4>
+<ul>
+<li><strong>Meta-RGate SynerFusion (MGSF) 网络</strong>：该网络被开发用于跨多种任务进行精确的 therblig 分割。它通过融合多模态特征，能够从专家演示中识别出不同的动作单元。</li>
+<li><strong>任务分解</strong>：利用 MGSF 网络，将长时域操作任务离线分解为一系列 therblig 单元，每个单元对应一个基本动作（如抓取、移动、放置等）。这种分解方式增强了任务的可解释性。</li>
+</ul>
+<h4 id="_6">在线测试阶段</h4>
+<ul>
+<li><strong>一次演示</strong>：对于新任务，仅需收集一次演示数据。</li>
+<li><strong>高层知识提取</strong>：MGSF 网络从演示中提取高层知识，即任务对应的 therblig 序列。</li>
+<li><strong>Action Registration (ActionREG)</strong>：将提取的高层知识编码到当前场景的图像中，实现动作与场景的对应。</li>
+<li><strong>LLM-Alignment Policy for Visual Correction (LAP-VC)</strong>：利用大语言模型 (LLM) 对 ActionREG 进行视觉校正，确保动作注册的精确性，从而在新场景中生成自适应轨迹。</li>
+</ul>
+<h3 id="_7">实验设置与结果</h3>
+<ul>
+<li><strong>Therblig 分割性能</strong>：在多种任务上，MGSF 网络实现了 94.37% 的召回率，表明其能够准确识别基本动作单元。</li>
+<li><strong>真实机器人测试</strong>：</li>
+<li><strong>简单场景</strong>：成功率达到 94.4%。</li>
+<li><strong>复杂场景</strong>：成功率达到 80%。</li>
+<li><strong>补充材料</strong>：更多细节和演示视频可在项目网站获取：https://sites.google.com/view/therbligsbasedbackbone/home</li>
+</ul>
+<h3 id="_8">结论</h3>
+<p>TBBF 框架通过 therblig 级任务分解与 LLM 辅助的视觉校正，显著提升了机器人长时域操作任务的可解释性、数据效率和泛化能力。实验验证了其在真实场景中的有效性，为复杂机器人任务的理解与执行提供了新的基础结构。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2408.01334v3</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_task_planning/">任务规划</a>
+              <span class="rel-desc">面向长程机器人任务理解的骨干框架提出任务规划。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-desc">面向长程机器人任务理解的骨干框架discusses世界模型。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chen_a_backbone_for_long_horizon_ro_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_task_planning/">
+          <span class="entry-type">方法</span>
+          <h3>任务规划</h3>
+          <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">架构与流程</a><ul>
+<li><a href="#_5">离线训练阶段</a></li>
+<li><a href="#_6">在线测试阶段</a></li>
+</ul>
+</li>
+<li><a href="#_7">实验设置与结果</a></li>
+<li><a href="#_8">结论</a></li>
+</ul>
+</li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

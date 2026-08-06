@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation</h1>
+      <p class="entry-name-en">X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): xiaoze_P128. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] guardrail fix: unverifiable numbers corrected to full-text-verbatim or marked as computed/未提取 (catchup sweep audit).">Draft</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>While recent advances have demonstrated strong performance in individual humanoid skills such as upright locomotion, fall recovery and whole-body coordination, learning a single policy that masters all these skills remains challenging due to the diverse dynamics and conflicting control objectives involved. To address this, we introduce X-Loco, a framework for training a vision-based generalist.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2603.03733" target="_blank" rel="noopener">arXiv:2603.03733 X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Dis</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>X-Loco proposes a collaborative policy distillation framework that integrates three privileged expert policies (upright walking, fall recovery, whole-body coordination) into a single vision-based student policy, achieving reference-motion-free general locomotion control on the Unitree G1 humanoid robot. The core contribution lies in bridging the gap between expert capabilities and a general policy through CASS dynamic expert selection, SAR annealed mixing, and SFI stochastic fall injection, with cross-task generalization validated in both simulation and the real world.</p>
+<h2 id="what-it-changes">What It Changes</h2>
+<p>Existing humanoid locomotion control research has long been in a "fragmented" state: some methods specialize in terrain traversal, others in fall recovery, but no single framework can simultaneously handle composite scenarios such as "autonomously getting up after a fall and continuing to traverse complex terrain." What X-Loco truly changes is liberating "expert capability integration" from the困境 of hand-crafted reward design—it no longer attempts to make a single policy learn all skills, but instead enables a general policy to inherit behavioral patterns from multiple experts through a distillation mechanism.</p>
+<p>The deeper significance of this shift is that it acknowledges the tension between "generality" and "specialization" cannot be resolved by scaling up the capacity of a single policy, and instead reconciles it through architectural design (MoE) and training scheduling (SAR annealing). Compared to methods like BeyondMimic that rely on reference motions, X-Loco achieves whole-body coordination skills (e.g., climbing, rolling) without reference motions, marking a paradigm shift in general humanoid control from "imitating the known" to "combining the known."</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<h3 id="expert-policy-training">Expert Policy Training</h3>
+<ul>
+<li><strong>π_l (upright walking)</strong>: Uses a history encoder (10-step window) and elevation map encoder, with AMP-style reward weight 3.0, velocity tracking weight 5.0, and survival reward 2.0. Reference motions come from LAFAN1 dataset retargeting.</li>
+<li><strong>π_r (fall recovery)</strong>: Ignores terrain information, using only the history encoder and actor, initialized in supine/prone postures with large joint noise. AMP reward weight is as high as 80.0, angular velocity penalty 25.0, hip deviation penalty -10.0, and thigh orientation reward 10.0.</li>
+<li><strong>π_w (whole-body coordination)</strong>: Uses an elevation map encoder (1.6m×1.0m grid, 0.1m resolution), tracking whole-body motions such as box climbing and rolling, with a reward function including body position/orientation/velocity tracking and anchor constraints.</li>
+</ul>
+<h3 id="collaborative-distillation-mechanism">Collaborative Distillation Mechanism</h3>
+<ul>
+<li><strong>CASS selection</strong>: Selects experts based on head height b_t and terrain context I_t. b_t &lt; 1.1m → π_r; b_t ≥ 1.1m and I_t=1 (high platform) → π_w; I_t=2 (overhead obstacle) → π_w; otherwise → π_l.</li>
+<li><strong>SAR mixing</strong>: a_env = b_t·a*<em g_t="g,t">t + (1−b_t)·π_g(o</em>), where b_t ~ Bernoulli(ρ). ρ is initially 1.0, decays by 1e−4 when distillation loss &lt; 0.005, and pauses decay when loss &gt; 0.010 (hysteresis interval).</li>
+<li><strong>SFI injection</strong>: Applies random external forces in fragile scenarios (high-speed turning, rolling) to force the robot into recovery states. Additional termination condition: episode terminates when head height buffer variance falls below threshold δ, preventing OOD data contamination.</li>
+</ul>
+<h3 id="student-policy-architecture">Student Policy Architecture</h3>
+<ul>
+<li>MoE architecture: gating network + 3 experts (all 3-layer MLPs [512, 256, 128])</li>
+<li>CNN depth encoder: 64×64 depth image → 128-dimensional latent representation</li>
+<li>History encoder: 10-step proprioceptive sequence → 128 dimensions</li>
+<li>Distillation loss: ℒ_distill = MSE(π_g(o_{u,t}), a*_t)</li>
+</ul>
+<h3 id="deep-sim-to-real-bridging">Deep Sim-to-Real Bridging</h3>
+<ul>
+<li>Multi-stage pipeline: additive Gaussian noise (σ=0.02m), Gaussian filtering (3×3 kernel, σ=1.0), camera extrinsic randomization (position ±0.05m, pitch ±10°), FOV randomization (±10°)</li>
+<li>Real depth images undergo hole filling and Gaussian filtering</li>
+</ul>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li>
+<p><strong>CASS dynamic expert selection</strong>: Unlike static MoE or fixed task switching, CASS dynamically selects the guiding expert based on the robot's real-time state (head height) and terrain context, enabling the distillation process to adaptively handle continuous state transitions of "walking → falling → recovering → continuing to walk." This is the first design to incorporate fall recovery into a general distillation framework.</p>
+</li>
+<li>
+<p><strong>SAR annealed scheduling</strong>: Controls ρ decay through a hysteresis interval (τ_low=0.005, τ_high=0.010), avoiding training instability caused by distillation loss fluctuations. This mechanism is essentially a variant of "curriculum learning"—first fully following the expert, then gradually releasing autonomous exploration—but with finer control over the exploration-exploitation balance than traditional curriculum learning.</p>
+</li>
+<li>
+<p><strong>SFI stochastic fall injection</strong>: Actively creates "fall-recovery" cycles during training rather than passively waiting for failures to occur. This addresses the sparse reward problem in long-horizon tasks where a general policy "permanently fails once it falls," enabling the policy to learn recovery from failure rather than simply avoiding risk.</p>
+</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Slope R_succ</th>
+<th>Pit R_succ</th>
+<th>Stairs R_succ</th>
+<th>WBC R̄_succ</th>
+<th>Recovery R_succ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MoRE</td>
+<td>0.992</td>
+<td>0.844</td>
+<td>0.926</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>PPO</td>
+<td>0.823</td>
+<td>0.793</td>
+<td>0.781</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>AHC</td>
+<td>0.968</td>
+<td>0.403</td>
+<td>0.278</td>
+<td>-</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>X-Loco</td>
+<td>0.982</td>
+<td>0.878</td>
+<td>0.958</td>
+<td>0.871</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ablation studies</strong>:
+- Ours w/o CASS: average R̄_succ = 0.783 (Locomotion 0.903, WBC 0.446)
+- Ours w/o MoE: average R̄_succ = 0.749 (Locomotion 0.692, WBC 0.561)
+- MoE-3: average R̄_succ = 0.779 (Locomotion 0.628, WBC 0.709)
+- MoE-2 (Ours): average R̄_succ = 0.928 (Locomotion 0.939, WBC 0.845)
+- Ours w/o SFI: Recovery R_succ = 0.912 vs Ours 0.958</p>
+<p><strong>Key interpretations</strong>:
+- X-Loco achieves an average success rate of 0.939 in upright walking tasks, surpassing PPO (0.799) and AHC (0.550), and competing with MoRE (0.921), but MoRE cannot handle WBC and Recovery.
+- The WBC task success rate of 0.871 is the first success under "reference-motion-free" conditions, but still has a performance gap of 0.129 compared to the expert (1.000) (calculated as 1.000−0.871, approximately 12.9%), which the authors acknowledge as the most difficult transfer scenario.
+- SFI improves the recovery success rate from 0.912 to 0.958, validating the necessity of actively injecting failure scenarios.
+- MoE-2 outperforming MoE-3 indicates that more experts is not necessarily better; task overlap may confuse the gating network.</p>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<ul>
+<li><strong>Limited perception range</strong>: The narrow FOV camera (RealSense D435i) results in a limited perception horizon, preventing advance planning of distant terrain.</li>
+<li><strong>Imperfect sensor noise modeling</strong>: The depth augmentation pipeline (Gaussian noise + filtering) cannot fully simulate systematic errors of real sensors (e.g., edge artifacts, reflection interference).</li>
+<li><strong>Expert performance upper bound</strong>: Distillation relies on behavior cloning, so the policy cannot surpass expert demonstrations. Performance degrades significantly in edge cases not covered by experts (e.g., extreme terrain combinations).</li>
+<li><strong>Unverified generalization</strong>: Soft ground, dynamic obstacles, and multi-robot platform transfer are not tested; no comparison with other general control frameworks (e.g., large model methods).</li>
+<li><strong>Unquantified computational resources</strong>: Key engineering metrics such as training GPU model, total training time, and memory usage are not reported.</li>
+</ul>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<ol>
+<li>
+<p><strong>Reproduction priority</strong>: First verify the CASS thresholds (b_t=1.1m) and terrain context mapping (I_t=1/2), as these are critical to distillation correctness. If head height estimation is biased, expert selection will be incorrect and the entire distillation process will fail.</p>
+</li>
+<li>
+<p><strong>Most common pitfall</strong>: The SAR ρ scheduling—the hysteresis interval (0.005/0.010) and decay step size (1e−4) need to be precisely matched. Too-fast ρ decay causes the student policy to prematurely explore autonomously and collapse; too-slow decay results in inefficient distillation. It is recommended to validate the ρ curve in a small-scale environment first.</p>
+</li>
+<li>
+<p><strong>SFI termination condition</strong>: The head height buffer variance threshold δ is not given a specific value, which is key to preventing OOD data corruption. It is recommended to set it empirically based on the robot's height (G1 approximately 1.3m) and gait cycle (approximately 0.5s), with sensitivity analysis.</p>
+</li>
+<li>
+<p><strong>Depth augmentation pipeline</strong>: The camera extrinsic randomization range (position ±0.05m, pitch ±10°) and FOV randomization (±10°) are critical to sim-to-real success. In real deployment, camera calibration must be performed first to ensure the randomization range covers actual installation errors.</p>
+</li>
+<li>
+<p><strong>PD parameters must not be arbitrarily modified</strong>: The K_p/K_d values in Table V come directly from reference [28] and are coupled with action scaling. Modifying any parameter changes the effective range of the action space and requires retraining all expert policies.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_algorithm_ppo/">Proximal Policy Optimization (PPO)</a>
+              <span class="rel-desc">X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_whole_body_control/">Whole-Body Control (WBC)</a>
+              <span class="rel-desc">X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation mentions Whole-Body Control (WBC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_robot_system_unitree_g1/">Unitree G1 Humanoid Robot</a>
+              <span class="rel-desc">X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation demonstrates on Unitree G1 Humanoid Robot.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_paper_zhao_more_unlocking_scalability_in_2025/">MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models</a>
+              <span class="rel-desc">X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation mentions MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models.</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_x_loco_generalist_humanoid_locomotion_co_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_algorithm_ppo/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Proximal Policy Optimization (PPO)</h3>
+          <p>A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">Robot System</span>
+          <h3>Unitree G1 Humanoid Robot</h3>
+          <p>A compact, mass-produced humanoid robot developed by Unitree Robotics, featuring 23–43 degrees of…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_whole_body_control/">
+          <span class="entry-type">Method</span>
+          <h3>Whole-Body Control (WBC)</h3>
+          <p>A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhao_more_unlocking_scalability_in_2025/">
+          <span class="entry-type">Paper</span>
+          <h3>MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models</h3>
+          <p>MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changes">What It Changes</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#expert-policy-training">Expert Policy Training</a></li>
+<li><a href="#collaborative-distillation-mechanism">Collaborative Distillation Mechanism</a></li>
+<li><a href="#student-policy-architecture">Student Policy Architecture</a></li>
+<li><a href="#deep-sim-to-real-bridging">Deep Sim-to-Real Bridging</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a></li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

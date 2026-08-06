@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception</h1>
+      <p class="entry-name-en">SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Deep reinforcement policy learning directly in physical robots (on-robot learning) remains bottlenecked by slow wall-clock training times. We present SymmGrid, a trajectory level augmentation framework inspired by parallelized symmetries that super-scales group transformations to significantly accelerate on-robot learning in both egocentric and exocentric visual setups. We model a Markov Decision.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.26985" target="_blank" rel="noopener">arXiv:2607.26985 SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egoce</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>SymmGrid는 실제 로봇에서의 심층 강화 학습(on-robot RL)을 위한 궤적 수준 데이터 증강 프레임워크로, 병렬화된 평행 이동 대칭성(branched symmetries)을 통해 데이터 생성을 초대규모로 확장하며, 자기중심(egocentric) 및 외부중심(exocentric) 비전에 대해 각각 포인터 재사용과 호모그래피(homography) 왜곡 전략을 적용한다. 저자들은 Franka 로봇에서 핀 삽입, 케이블 배선, 물체 운반 세 가지 작업을 검증했으며, SOTA 베이스라인인 SERL 대비 벽시계 기준 훈련 수렴 속도를 1.37–2.17배, 평가 성공률을 1.09–1.27배 향상시켰다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 on-robot 학습 방법(예: SERL)의 벽시계 훈련 시간은 약 20–180분이며, 일반적으로 약 20개의 데모로 시작해야 한다. 이러한 속도로는 야외에서의 빠른 배포를 지원하기 어렵다. 저자들은 병목이 샘플 효율성뿐만 아니라 각 물리적 상호작용에서 생성되는 데이터 양이 너무 적다는 점에 있다고 본다—실제 전이 한 번이 리플레이 버퍼에 기여하는 경험은 단 하나뿐이며, 심층 RL은 바로 방대한 데이터를 필요로 한다. SymmGrid가 실제로 바꾸는 것은 "데이터 생성"의 세분화 수준이다. 더 이상 알고리즘의 샘플 효율성 미세 조정에 의존하지 않고, 수학적으로 허용 가능한 대칭 변환을 통해 각 물리적 전이를 논리적으로 수백 개의 동등한 경험으로 "복제"하여, 동일한 벽시계 시간 내에 리플레이 버퍼의 회전율과 다양성을 크게 향상시킨다. 이 접근 방식은 가속 문제를 "더 절약하며 학습하는 방법"에서 "더 저렴하게 데이터를 만드는 방법"으로 전환하며, 기본 RL 알고리즘(여전히 SAC 계열의 off-policy 방법)을 변경하지 않으므로 플러그 앤 플레이 방식의 엔지니어링 가치를 지닌다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">대칭 트리 및 그리드 생성</h3>
+<ul>
+<li>MDP를 대칭 트리 𝒢=(V,E)로 모델링하며, 깊이 h, 정점 v_k는 자세 x∈ℝⁿ을 설명하고, 아핀 변환 T_k(x)=Ax+t_k를 통해 생성된다. 여기서 A∈O(n)은 직교군의 원소이고, t∈ℝⁿ은 평행 이동이다.</li>
+<li>일정 분기 전략 b_const(0)을 사용하여 K×K 그리드 기하 구조(K∈ℤ)를 생성한다. 예를 들어 K=27일 때 총 729개의 정점(원본 궤적 포함)이 생성되며, 모든 변환은 병렬로 계산된다.</li>
+<li>대칭 연산자 σ(·):T_k(·)=I(·)+t_k는 상태의 위치 성분과 행동에만 작용한다(행동 변환은 자명함: σ_{t_k}(a)=a), 즉 σ_{t_k}(τ)=(σ_{t_k}(s), a).</li>
+</ul>
+<h3 id="symws">대칭 작업 공간(SymWS)</h3>
+<ul>
+<li>정사각형 SymWS를 정의하며, 항상 엔드 이펙터 위치를 중심으로 하고, 폭은 조정 가능하다(예: 0.3 m 또는 0.175 m).</li>
+<li>분기 위치는 t_{k_x,k_y}에 의해 제어된다: t_{k_x,k_y}=SymWS_(0,0)+(2<em>b_{i,j}-1)</em>SymWS/(2*b_{c_h}) (수식 1), 여기서 SymWS_(0,0)=s_(x,y,·)-SymWS_width/2.</li>
+</ul>
+<h3 id="vs">비전 처리: 자기중심 vs 외부중심</h3>
+<ul>
+<li>자기중심: 비전 장면은 대칭 분기 아래에서 불변이므로, 포인터 기반 시스템을 사용하여 동일한 이미지 복사를 피하고 원본 상태 이미지만 K²번 수정한다.</li>
+<li>외부중심: 전역 고정 카메라는 분기에 따라 이동할 수 없으므로, 샘플링 시 호모그래피로 이미지를 왜곡해야 한다. 호모그래피 H(Δ)=MT(Δ)M⁻¹ (수식 2)는 캘리브레이션 행렬 M을 이용해 평면 동차 좌표를 이미지 픽셀 좌표로 매핑하며(수식 3), OpenCV의 findHomography()로 계산한다. 역방향 매핑(backward mapping)을 사용하여 빈 구멍을 피하고, 가장자리 픽셀 복사를 채움 전략으로 사용한다.</li>
+<li>리플레이 버퍼에는 해당 전이가 겪은 변환을 나타내는 인덱스가 추가되며, 샘플링 시 인덱스로 해당 변환을 추출하여 제자리에서 계산한다.</li>
+</ul>
+<h3 id="_5">네트워크 및 훈련</h3>
+<ul>
+<li>사전 훈련된 ResNet-10 비전 백본을 사용하고, 고유수용감각 정보를 연결하여 2층 MLP로 정책과 Q 네트워크를 처리한다.</li>
+<li>정책은 6D 또는 7D 엔드 이펙터 증분 자세를 출력하며, 각도 업데이트는 ±0.01 rad(롤/피치) 및 ±π/6(요)로 제한되고, z축 회전만 허용된다.</li>
+<li>RLPD 알고리즘을 사용하며, 20개의 데모로 시작(객체 재배치는 30개), 리플레이 버퍼는 360만 개 항목(3.6), 샘플링은 사전 및 온라인 데이터에서 50%씩 수행된다.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li><strong>궤적 수준 병렬화 대칭성</strong>: 일반적인 이미지 수준 증강(예: 무작위 크롭, 색상 지터)과 달리, SymmGrid는 궤적 수준에서 전역 아핀 변환을 적용하며, 이 변환은 MDP의 불변 매핑(보상을 유지)이다. 이를 통해 증강 데이터는 관측 외관만 바꿀 뿐만 아니라 물리적으로 실행 가능한 상태-행동 쌍에 대응하므로, 정책이 로컬에서 전역 학습된 역학을 활용할 수 있다.</li>
+<li><strong>이중 비전 모달리티의 통합 처리</strong>: 자기중심 장면에서는 평행 이동 대칭성이 자연스럽게 성립하므로 포인터 재사용으로 이미지 복사를 피하고, 외부중심 장면에서는 사전 계산된 호모그래피 행렬(H_b(Δ)=MT_b(Δ)M⁻¹)을 통해 샘플링 시 실시간으로 이미지를 왜곡한다. 이 설계는 손목 장착 카메라와 전역 고정 카메라를 모두 포괄할 수 있으며, 계산 오버헤드가 제어 가능하다(원본 이미지만 K²번 수정).</li>
+<li><strong>계산 및 메모리 효율성</strong>: 일정 분기에서 역방향 매핑을 사전 계산할 수 있는 특성을 활용하여 findHomography() 호출의 반복 계산을 피하고, 리플레이 버퍼는 이미지를 복사하지 않고 인덱스만 저장하므로 메모리 사용량이 크게 줄어든다. 이를 통해 729개 대칭 분기의 병렬 생성이 단일 RTX 4070에서 완료될 수 있다.</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<p>실험은 실제 Franka FR3 로봇에서 수행되었으며, 베이스라인은 SERL(RLPD 알고리즘, 임피던스 컨트롤러 1K Hz)이다. 평가 지표는 50개 샘플의 평균 성공률(훈련)과 50회 작업 시도의 성공률(평가)이며, nAUC(정규화 곡선 아래 면적)로 전체 효율성을 측정한다.</p>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>지표</th>
+<th>SERL</th>
+<th>SymmGrid</th>
+<th>변화</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>핀 삽입</td>
+<td>훈련 수렴 시간</td>
+<td>26분</td>
+<td>18.5분</td>
+<td>1.41× 가속(28.8% 감소)</td>
+</tr>
+<tr>
+<td>핀 삽입</td>
+<td>90% 성공률 도달 시간</td>
+<td>20.13분</td>
+<td>15.9분</td>
+<td>26.6% 가속</td>
+</tr>
+<tr>
+<td>핀 삽입</td>
+<td>nAUC(3500步)</td>
+<td>0.499</td>
+<td>0.607</td>
+<td>1.22× 증가</td>
+</tr>
+<tr>
+<td>케이블 배선</td>
+<td>훈련 수렴(98%)</td>
+<td>25분 내 미달(최대 74.8%)</td>
+<td>22.8분</td>
+<td>논문에서 명시 안 함</td>
+</tr>
+<tr>
+<td>케이블 배선</td>
+<td>90% 성공률 도달 시간</td>
+<td>20.13분</td>
+<td>15.9분</td>
+<td>21% 시간 감소</td>
+</tr>
+<tr>
+<td>케이블 배선</td>
+<td>nAUC(6000步)</td>
+<td>0.58</td>
+<td>0.63</td>
+<td>9.0% 증가</td>
+</tr>
+<tr>
+<td>객체 재배치</td>
+<td>훈련 수렴(92%)</td>
+<td>130.0분</td>
+<td>94.6분</td>
+<td>37.4% 가속</td>
+</tr>
+<tr>
+<td>객체 재배치</td>
+<td>10k步 평가 성공률</td>
+<td>74.7%(전방)/79.3%(후방)</td>
+<td>99.3%/95.3%</td>
+<td>이득 33.0%/20.2%</td>
+</tr>
+<tr>
+<td>객체 재배치</td>
+<td>nAUC</td>
+<td>0.1911</td>
+<td>0.494</td>
+<td>2.59× 비율</td>
+</tr>
+</tbody>
+</table>
+<p>주요 결과 해석: 핀 삽입에서 SymmGrid는 20.13분에 96.4% 성공률을 달성(SERL은 22.7분, 1.28× 가속); 케이블 배선에서 SymmGrid는 11.0분에 SERL이 23.9분에 달성한 78.9% 성공률을 달성(117.3% 가속); 객체 재배치에서 SymmGrid는 5851步에 SERL이 10000步에 달성한 60% 성공률을 달성(70% 개선). 주목할 점은 하드웨어 비교에서 SymmGrid는 RTX 4070(29.1 TFLOP FP32)을 사용한 반면, SERL 원본 결과는 RTX 4090(82.6 TFLOP)을 사용하여 계산 능력이 2.84배, 대역폭이 2배(504 vs 1008 GB/s) 차이가 났음에도, SymmGrid는 더 약한 하드웨어에서도 가속을 달성하여 방법의 효율성을 더욱 부각시킨다.</p>
+<h2 id="_8">경계 및 한계</h2>
+<ul>
+<li>순수 평행 이동 변환만 사용하며, 회전이나 기타 아핀 변환은 포함하지 않는다. 회전 대칭성이 필요한 작업(예: 나사 조이기)에서는 프레임워크 확장이 필요하다.</li>
+<li>외부중심 장면에서 전역 변환은 에이전트와 객체 모두에 작용하며, 배경 장면과 다중 깊이(테이블, 트레이, 객체, 로봇)가 시차, 보간, 경계 아티팩트를 유발한다. 그리드를 늘리면 비변형 관측 비율이 감소하여 버퍼 분포가 실제 관측에서 벗어난다.</li>
+<li>객체 재배치의 최적 구성(3분기, 0.175m 작업 공간)은 다른 두 작업(27분기, 0.3m)과 달라, 외부중심 장면에서 대칭성 이득이 제한적이며 매개변수를 작업별로 튜닝해야 함을 시사한다.</li>
+<li>케이블 배선 평가 결과는 큰 산포를 보이며, 저자들은 더 많은 시드나 추가 분석이 필요할 수 있음을 인정한다.</li>
+<li>광 무작위화(RLPD는 구현하지 않음)가 없어 조명 변화에 민감하며, 일관된 조명이 있어야 훈련이 성공할 수 있다.</li>
+<li>RGB 이미지와 고유수용감각만 처리하며, 포인트 클라우드 등 더 복잡한 표현은 다루지 않는다.</li>
+<li>논문은 시뮬레이션 훈련이나 전이 학습, 휴머노이드 로봇 실험, 다중 작업 일반화를 명시적으로 언급하지 않는다.</li>
+</ul>
+<h2 id="_9">엔지니어링 시사점</h2>
+<ul>
+<li><strong>재현 시 우선 확인 사항</strong>: 대칭 작업 공간(SymWS) 폭과 분기 수 K의 일치 관계를 먼저 확인하라—수식 1에서 t_{k_x,k_y}의 경계 조건이 그리드 커버리지를 직접 결정하며, SymWS가 로봇의 실제 작업 공간을 초과하면 증강 데이터가 도달 불가능한 상태에 대응하여 정책 학습이 실패할 수 있다.</li>
+<li><strong>외부중심 장면에서 가장 함정이 많음</strong>: 호모그래피 캘리브레이션은 학습 시스템과 동일한 참조 좌표계(엔드 이펙터 프레임)를 사용해야 하며, 캘리브레이션 포인트는 전체 작업 공간을 아우르도록 해야 한다(예: 20개의 비공선점, RMSE 1.387 px). 캘리브레이션 오차가 3 px(내점 최대 오차 2.240 px)를 초과하면 왜곡 이미지가 체계적 편향을 도입하므로, 훈련 시작 전에 호모그래피 정밀도를 별도로 검증하는 것이 좋다.</li>
+<li><strong>리플레이 버퍼 비율 모니터링</strong>: K를 늘리면 비변형 관측 비율이 감소하여 비전 인코더가 기하 정보 대신 아티팩트를 활용하게 된다. 훈련 중 버퍼 내 원본 관측 비율을 모니터링하고, 50% 미만이면 K를 줄이거나 버퍼 용량을 늘리는 것이 좋다(360만 항목이 참고 기준).</li>
+<li><strong>하드웨어 요구 사항은 예상보다 낮음</strong>: SymmGrid는 RTX 4070(12GB VRAM)에서 실행 가능하지만, 역방향 매핑의 사전 계산과 remap()의 제자리 호출에 주의해야 한다—샘플링 시 findHomography()를 반복 호출하면 훈련이 크게 느려지므로, H_b(Δ)를 미리 계산하고 캐시해야 한다.</li>
+<li><strong>하위 팀 선택 가이드</strong>: 자기중심 비전 작업(손목 장착 카메라)의 경우 SymmGrid를 27분기와 0.3m 작업 공간으로 바로 적용할 수 있다. 외부중심 비전 작업의 경우 3분기와 0.175m에서 시작하고, 호모그래피 아티팩트가 정책에 미치는 영향을 우선 검증하는 것이 좋다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_sac/">소프트 액터-크리틱(SAC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_symmgrid_super_scaling_robot_parallelize_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_sac/">
+          <span class="entry-type">알고리즘</span>
+          <h3>소프트 액터-크리틱(SAC)</h3>
+          <p>기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">대칭 트리 및 그리드 생성</a></li>
+<li><a href="#symws">대칭 작업 공간(SymWS)</a></li>
+<li><a href="#vs">비전 처리: 자기중심 vs 외부중심</a></li>
+<li><a href="#_5">네트워크 및 훈련</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a></li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

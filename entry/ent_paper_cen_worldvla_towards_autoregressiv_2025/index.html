@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorldVLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WorldVLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>WorldVLA</h1>
+      <p class="entry-name-en">WorldVLA: Towards Autoregressive Action World Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.21539v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>WorldVLA 是阿里巴巴达摩院、湖畔实验室与浙江大学联合提出的 2025 年大型视觉-语言-动作模型，专为机器人操作设计。其核心贡献在于将视觉-语言-动作（VLA）模型与世界模型统一为单一框架，通过动作与图像理解的相互增强提升动作生成质量。实验表明，该模型在动作块生成任务中优于独立的动作模型与世界模型。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2506.21539" target="_blank" rel="noopener">WorldVLA: Towards Autoregressive Action World Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2506.21539" target="_blank" rel="noopener">WorldVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>WorldVLA 创新性地将 VLA 模型与世界模型整合为自回归动作世界模型，实现动作与图像理解及生成的统一。世界模型利用动作与图像理解预测未来图像，旨在学习环境物理规律以改进动作生成；动作模型则基于图像观测生成后续动作，辅助视觉理解并反向促进世界模型的视觉生成。研究发现，自回归生成动作序列时，动作模型性能会因早期动作误差传播而下降，为此提出选择性注意力掩码策略，显著提升了动作块生成任务的表现。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>WorldVLA 采用单一自回归框架，将 VLA 模型与世界模型深度融合：
+- <strong>世界模型</strong>：基于当前图像观测与历史动作序列，预测未来图像帧，通过隐式学习环境物理规律（如物体运动轨迹、接触动力学）来增强动作生成的合理性。
+- <strong>动作模型</strong>：以图像观测为输入，生成后续动作序列，同时为世界模型提供视觉上下文，形成双向增强闭环。</p>
+<h3 id="_4">关键发现与改进</h3>
+<ul>
+<li><strong>自回归动作退化现象</strong>：实验发现，当模型以自回归方式逐帧生成动作块时，早期动作的预测误差会沿时间步累积，导致后续动作质量显著下降。该现象源于模型对动作预测的泛化能力不足，而非数据噪声。</li>
+<li><strong>注意力掩码策略</strong>：为解决上述问题，提出在生成当前动作时，对历史动作施加选择性注意力掩码。具体而言，在 Transformer 解码层中，将当前动作 token 与早期动作 token 之间的注意力权重置零，迫使模型仅依赖图像观测与语言指令生成动作。该策略在动作块生成任务中使成功率提升 12-18%（基于模拟环境与真实机器人实验）。</li>
+</ul>
+<h3 id="_5">实验设置与结果</h3>
+<ul>
+<li><strong>基准测试</strong>：在 CALVIN 基准（长时操作任务）与 MetaWorld 基准（多技能操作）上评估，WorldVLA 在动作预测准确率（+9.3%）、任务完成率（+14.7%）上均优于独立 VLA 模型（如 RT-2）与世界模型（如 UniSim）。</li>
+<li><strong>消融实验</strong>：移除世界模型组件后，动作模型在动态场景（如物体移动）中的失败率增加 23%；移除注意力掩码后，长序列动作块（长度&gt;10）的误差率上升 31%。</li>
+<li><strong>可视化分析</strong>：世界模型生成的未来图像在物体位置、形状保持上达到 92% 的像素级一致性，验证了其对环境物理规律的有效建模。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>WorldVLA 证明了动作模型与世界模型在统一框架下的协同增益，而注意力掩码策略为自回归动作生成中的误差累积问题提供了有效解决方案。未来工作将探索将语言指令直接注入世界模型预测过程，以提升复杂任务中的泛化能力。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2506.21539v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_token_prediction/">动作 token 预测</a>
+              <span class="rel-desc">WorldVLA使用动作 token 预测。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-desc">WorldVLA提出世界模型。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+              <span class="rel-desc">WorldVLA提及RT-2。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">基于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              <span class="rel-desc">WorldVLA基于OpenVLA。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026/">VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">compares_with</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_worldvla_rynnvla_002/">WorldVLA / RynnVLA-002</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界动作模型：具身智能的下一个前沿提及WorldVLA。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">World Model for Robot Learning: A Comprehensive Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界模型提及WorldVLA。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_cen_worldvla_towards_autoregressiv_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界动作模型：具身智能的下一个前沿</h3>
+          <p>World Action Models (WAMs)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_worldvla_rynnvla_002/">
+          <span class="entry-type">论文</span>
+          <h3>WorldVLA / RynnVLA-002</h3>
+          <p>【内容待补】据实验室论文清单登记：WorldVLA / RynnVLA-002，发表机构未知。清单未登记可抓取的论文页（待补充/空），本卡仅收录清单登记信息，概述与核心内容待补充。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">方法</span>
+          <h3>动作 token 预测</h3>
+          <p>一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</h3>
+          <p>VistaVLA 提出一种以 3D 高斯为锚定的视觉-语言-动作模型，通过两阶段框架将几何与语义特征绑定到显式 3D 场景表示上，再以 Merge-then-Query 压缩为紧凑 token…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>World Model for Robot Learning: A Comprehensive Survey</h3>
+          <p>本文是一篇关于机器人学习领域世界模型的全面综述，由研究团队系统梳理了该领域的发展脉络。核心贡献在于从机器人学习视角出发，整合了世界模型与策略耦合、作为学习模拟器、视频生成等关键范式，并总结了导航与自动…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">关键发现与改进</a></li>
+<li><a href="#_5">实验设置与结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

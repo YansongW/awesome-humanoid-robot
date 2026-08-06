@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</h1>
+      <p class="entry-name-en">Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">Draft</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Recent advances in humanoid robotics have highlighted the importance of deployable loco-manipulation skills. Dribbling a soccer ball while evading active opponents requires simultaneous balance, precise ball control, and awareness of a dynamic adversary under onboard sensing and real-time constraints. Existing approaches typically separate perception and motion, which can be effective in.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12702" target="_blank" rel="noopener">arXiv:2607.12702 Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learnin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper, proposed by researchers from Sapienza University, CSIC-UPC, and EPFL, addresses the task of bipedal humanoid robot soccer dribbling using a Privileged Representation Learning framework. It decouples perception and control training: first, a policy is trained with privileged states in simulation, then the policy is frozen and only a visual encoder is trained to reconstruct the privileged latent representation from depth images. The core contribution lies in combining curriculum learning with DAgger regularization to achieve robust dribbling against static and dynamic obstacles on the Booster T1 humanoid platform, reaching a 46% success rate in dynamic opponent scenarios, with code released publicly.</p>
+<h2 id="what-it-changes">What It Changes</h2>
+<p>What it truly changes is the paradigm of the "perception-control" coupling in humanoid robot dribbling tasks. Traditional modular approaches (e.g., YOLO detection + Kalman filtering) treat perception as a fixed module independent of the policy, whose output representation is not optimized for downstream control objectives. Consequently, under occlusion, fast ball motion, and complex opponent interactions, perception errors propagate directly to the control layer, causing task failure. The core judgment of this paper is that perception does not serve "seeing accurately" but rather "controlling effectively"—therefore, the perceptual representation must be directly aligned with the latent state space required by the policy.</p>
+<p>The deeper significance of this shift is that it transforms the "perceptual robustness" problem into a "representation alignment" problem. Through privileged learning, the policy obtains perfect states during training, and the visual encoder only needs to learn to recover the low-dimensional latent vector required by the policy from high-dimensional depth observations, rather than reconstructing a complete world model. This avoids the high sample complexity and instability of coupled perception-control training in end-to-end reinforcement learning, while retaining the core advantage of end-to-end methods where "perception serves control." For real-time, dynamic, partially observable adversarial scenarios like RoboCup, this decoupling is more controllable and easier to debug from an engineering perspective.</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<p>The method consists of two phases, with the core design being to keep the policy interface unchanged and only replace the mechanism for generating the latent representation.</p>
+<h3 id="problem-formulation">Problem Formulation</h3>
+<ul>
+<li>Modeled as a POMDP: ℳ = (𝒮, 𝒪, 𝒜, p, r, γ)</li>
+<li>State 𝒮: complete world-coordinate states of the robot, ball, and obstacles + goal command</li>
+<li>Observation 𝒪: proprioception (IMU, joint positions/velocities) + exteroception (ball/obstacle states encoded as latent vector z_t ∈ ℝ⁶⁴)</li>
+<li>Action 𝒜: 21-dimensional body joint position vector, with independent head control</li>
+</ul>
+<h3 id="phase-1-privileged-policy-learning">Phase 1: Privileged Policy Learning</h3>
+<ul>
+<li>Actor observation: o_t^actor = [o_t^prop, z_t], where z_t is mapped by a small MLP from ground-truth ball state and nearest obstacle state (in robot coordinates)</li>
+<li>Curriculum learning along two axes: phase defines how z_t is obtained, stage defines obstacle difficulty</li>
+<li>Four-stage curriculum:</li>
+<li>Stage 0: no obstacles, ball far away, learning approach and dribbling (standard PPO)</li>
+<li>Stage 1: no obstacles, ball close, refining goal-directed dribbling</li>
+<li>Stage 2: static blockers, learning obstacle avoidance and trajectory recovery</li>
+<li>Stage 3: dynamic opponents interacting with the ball, learning online reactive control</li>
+<li>Stages 1–3 initialize from the checkpoint of the previous stage, using DAgger-regularized PPO objective:</li>
+<li>ℒ_total = ℒ_PPO + λ_imit 𝔼[||π_θ(a_t|s_t) − π₀(a_t|s_t)||²₂]</li>
+<li>The imitation term uses the Stage 0 policy as teacher, mitigating catastrophic forgetting and preserving nominal locomotion capabilities</li>
+</ul>
+<h3 id="phase-2-visual-adaptation">Phase 2: Visual Adaptation</h3>
+<ul>
+<li>Policy frozen, only the visual encoder is trained to reconstruct the latent z_t from depth observations</li>
+<li>Architecture: CNN (per-frame depth features ℝ⁶⁴) → GRU (temporal aggregation ℝ²⁵⁶) → projection head (ℝ⁶⁴)</li>
+<li>Depth frame resolution 108 × 192, preserving original aspect ratio</li>
+<li>Training loss:</li>
+<li>ℒ_adapt = ℒ_latent + λ_ball^pos ℒ_ball^pos + λ_ball^vel ℒ_ball^vel + λ_obs^pos ℒ_obs^pos + λ_obs^vel ℒ_obs^vel</li>
+<li>Main term ℒ_latent = ||z_t^adapt − z_t^priv||²₂, with auxiliary prediction heads regressing ball/obstacle states as regularization</li>
+</ul>
+<h3 id="key-design-decisions">Key Design Decisions</h3>
+<ul>
+<li>Keeping the actor interface identical across both phases, only changing the latent generation mechanism, with the policy architecture unchanged—this ensures the policy requires no re-tuning during Phase 2 training</li>
+<li>Task goal g^w ∈ ℝ² is sampled in world coordinates around the ball position, avoiding per-step resampling of velocity and reducing non-stationarity</li>
+<li>The reward function includes 26 terms covering ball control (velocity tracking, heading), posture (swing phase, stance phase), and safety (collisions, falls)</li>
+</ul>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li>
+<p><strong>Privileged representation learning for humanoid robot dribbling</strong>: Extends privileged learning ideas from quadruped platforms like DribbleBot to bipedal humanoids, addressing the additional challenges of dynamic balance and high degrees of freedom. The novelty lies in the combination of curriculum learning with DAgger regularization—the Stage 0 nominal policy serves as a teacher, preventing forgetting of basic dribbling skills during later stages, which is absent in quadruped work.</p>
+</li>
+<li>
+<p><strong>Stable perception-control interface design</strong>: By fixing the latent vector dimension (ℝ⁶⁴) and actor observation structure, Phase 2 visual adaptation is completely independent of policy optimization. This allows the visual encoder to be trained with the policy frozen, greatly reducing training complexity while ensuring deployed policy behavior matches simulation.</p>
+</li>
+<li>
+<p><strong>Fine-grained diagnostics for blocked time steps</strong>: Introduces a "blocked" time-step definition (obstacle within 2.0 m forward of the ball-goal direction and within 0.75 m of the ball-goal line), splitting evaluation into unblocked/blocked sub-conditions. This reveals that performance degradation in dynamic opponent scenarios stems primarily from closed-loop control rather than perception failure—blocked angular error rises from 34.27° to 43.00°, but ball position error only increases from 0.05 m to 0.08 m.</p>
+</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<p><strong>Comparison setup.</strong> We evaluate the final policy in simulation (mjlab framework, Booster T1 humanoid robot, flat ground) under three conditions: no obstacles, static obstacles (a single stationary obstacle placed near the ball-to-goal corridor), and ball attacker (a single moving obstacle chasing the ball at a fixed speed, sampled from <code>[0.1, 0.4] m/s</code>). Termination conditions are successful goal arrival (ball-goal distance <code>≤ 0.75 m</code>), timeout (<code>30 s</code>), robot fall, and ball loss (robot-ball distance exceeding <code>2.0 m</code>); obstacle collisions do not terminate trials and are only recorded as safety metrics. Evaluation scale is 5 random seeds with 10 trials per condition per seed (50 trials per condition total). No external baselines; the primary comparisons are performance differences across conditions and curriculum stage ablations. Metrics include success rate (SR), time-to-target (T2T/T2T-C), fall rate (FR), ball loss rate (LR), robot-obstacle collision rate (RCR) with contacts per trial (RC/t), ball-obstacle collision rate (BCR) with contacts per trial (BC/t), minimum ball-obstacle clearance (MBC), as well as velocity diagnostics (<code>e_vec</code>, <code>e_spd</code>, <code>e_ang</code>) and perception metrics (<code>e_ball,pos</code>, <code>e_ball,vel</code>, <code>e_obs,pos</code>, <code>e_obs,vel</code>, <code>c_fov</code>). Training uses a two-phase framework: Phase 1 privileged encoder with a four-stage curriculum (Stage 0 no obstacles with ball far, Stage 1 no obstacles with ball close, Stage 2 single static blocker, Stage 3 single dynamic opponent); Phase 2 freezes the policy and trains a visual encoder (CNN + GRU) to predict latent variables from depth observations (size <code>108 × 192</code>).</p>
+<p><strong>Key numbers (Tables 2–5).</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>SR [%]</th>
+<th>T2T [s]</th>
+<th>T2T-C [s]</th>
+<th>FR [%]</th>
+<th>LR [%]</th>
+<th>RCR [%]</th>
+<th>RC/t [#/trial]</th>
+<th>BCR [%]</th>
+<th>BC/t [#/trial]</th>
+<th>MBC [m]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No obstacles</td>
+<td><code>100.00</code></td>
+<td><code>11.45</code></td>
+<td><code>11.45</code></td>
+<td><code>0.00</code></td>
+<td><code>0.00</code></td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Static obstacles</td>
+<td><code>96.00</code></td>
+<td><code>13.29</code></td>
+<td><code>13.95</code></td>
+<td><code>4.00</code></td>
+<td><code>0.00</code></td>
+<td><code>8.00</code></td>
+<td><code>0.08</code></td>
+<td><code>4.00</code></td>
+<td><code>0.10</code></td>
+<td><code>1.73</code></td>
+</tr>
+<tr>
+<td>Ball attacker</td>
+<td><code>46.00</code></td>
+<td><code>11.82</code></td>
+<td><code>21.64</code></td>
+<td><code>52.00</code></td>
+<td><code>2.00</code></td>
+<td><code>68.00</code></td>
+<td><code>0.72</code></td>
+<td><code>40.00</code></td>
+<td><code>0.70</code></td>
+<td><code>1.36</code></td>
+</tr>
+</tbody>
+</table>
+<p>Velocity diagnostics (Table 3): no obstacles all time steps <code>e_vec=0.71</code>, <code>e_spd=0.62</code>, <code>e_ang=28.39</code>; static obstacles unblocked/blocked are <code>0.74/0.74</code>, <code>0.62/0.60</code>, <code>35.62/33.96</code>; ball attacker unblocked/blocked are <code>0.74/0.79</code>, <code>0.61/0.60</code>, <code>34.27/43.00</code>. Perception metrics (Table 4): no obstacles <code>e_ball,pos=0.05</code>, <code>e_ball,vel=0.25</code>, <code>c_fov=75.43</code>; static obstacles <code>0.05/0.24/1.26/0.21/76.74</code>; ball attacker <code>0.08/0.26/1.26/0.13/78.39</code>. Curriculum ablation success rates (Table 5, %): no obstacles Stage 1/2/3 are <code>100/68/90</code>; static obstacles are <code>24/42/88</code>; ball attacker is <code>2/2/46</code>.</p>
+<p><strong>Interpretation of results.</strong></p>
+<ul>
+<li><strong>Nominal ball carrying is reliably preserved, and static obstacles are handled effectively.</strong> The no-obstacle condition achieves <code>100.00 %</code> success with zero failures (FR and LR both <code>0.00</code>); the static obstacle condition maintains <code>96.00 %</code> success with only a moderate increase in time-to-target (T2T <code>13.29 s</code> vs. <code>11.45 s</code> without obstacles) and low collision rates (RCR <code>8.00 %</code>, BCR <code>4.00 %</code>), indicating the policy can handle a single stationary obstacle without significantly sacrificing task performance.</li>
+<li><strong>Active moving opponents remain an open problem.</strong> Under the ball attacker condition, success drops sharply to <code>46.00 %</code>, with fall rate (<code>52.00 %</code>) and collision rates (RCR <code>68.00 %</code>, BCR <code>40.00 %</code>) rising substantially; the timeout-truncated time-to-target (T2T-C <code>21.64 s</code>) is notably higher than the success-trial time-to-target (T2T <code>11.82 s</code>), indicating that robust dribbling against active pursuers is not yet solved.</li>
+<li><strong>Perception is not the primary bottleneck; closed-loop control difficulty is the limiting factor.</strong> Perception metrics remain relatively stable across conditions (ball position error <code>0.05–0.08 m</code>, obstacle position error <code>1.26 m</code> in all cases), and blocked time steps under the ball attacker condition show the largest angular error (<code>e_ang=43.00</code>) and vector error (<code>e_vec=0.79</code>), suggesting that deviation from nominal commands stems mainly from closed-loop control difficulties against moving opponents rather than severe perception failures.</li>
+<li><strong>The curriculum strategy effectively improves obstacle avoidance capability.</strong> Stage 1 (no obstacles, ball close only) performs poorly in the presence of obstacles (static <code>24 %</code>, ball attacker <code>2 %</code>), whereas after Stage 3, static conditions reach <code>88 %</code> and ball attacker <code>46 %</code>, validating that gradually increasing difficulty equips the policy with obstacle avoidance skills.</li>
+</ul>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<p>Limitations explicitly acknowledged by the authors include: the dynamic opponent scenario success rate is only 46%, and robust dribbling against actively moving opponents remains an open problem; the main limitation is not perception failure but closed-loop control difficulty against moving opponents. All experiments were conducted in simulation without real-world (sim-to-real) deployment experiments, with only a principled roadmap outlined. Additionally, the number of independently trained policies is small (5 seeds), limiting statistical power. The paper does not explicitly mention reproduction details such as training/inference frequency, hardware configuration, or PPO hyperparameters, nor does it discuss the visual encoder's handling strategy when the ball completely leaves the field of view (perception metrics are only computed when ground-truth ball positions are available in evaluation).</p>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<p>Engineering insights for reproduction and downstream teams:</p>
+<ol>
+<li>
+<p><strong>First verify key curriculum hyperparameters</strong>: inter-stage initialization and the DAgger regularization weight λ_imit are central to the method, but the paper does not provide specific values. For reproduction, we recommend starting with λ_imit = 0.1 and monitoring whether catastrophic forgetting occurs in Stages 1–2 (refer to the degradation observed in Table 5 where Stage 1 achieves only 24% under static obstacles).</p>
+</li>
+<li>
+<p><strong>The most likely pitfall is the "blocked" determination logic</strong>: the blocked time-step definition (2.0 m forward, 0.75 m from the line) directly affects the comparability of diagnostic metrics. If obstacle speeds or sizes differ in downstream tasks, these thresholds need recalibration; otherwise, metrics like e_ang will be distorted.</p>
+</li>
+<li>
+<p><strong>The GRU temporal window of the visual encoder is key to perceptual robustness</strong>: the ball frequently leaves the field of view during close-range dribbling (c_fov only 75–78%), and GRU temporal aggregation is central to maintaining state estimation. For reproduction, we recommend first verifying whether a GRU hidden dimension of 256 is sufficient, and how well the 108×192 depth frame resolution transfers to real cameras.</p>
+</li>
+<li>
+<p><strong>The bottleneck in dynamic opponent scenarios is control, not perception</strong>: if your team's goal is to improve adversarial robustness, prioritize improving the policy's prediction and reaction to obstacle motion rather than optimizing the visual encoder. Table 4 shows perception errors are already sufficiently small (ball position error 0.08 m), yet SR remains only 46%.</p>
+</li>
+<li>
+<p><strong>Safety term weights in the reward function require careful tuning</strong>: robot-obstacle and ball-obstacle collisions are both −10.0, yet RCR still reaches 68% in dynamic scenarios, indicating a trade-off between "collision avoidance" and "advancement." If downstream tasks prioritize safety, consider increasing collision penalties or introducing safety constraints.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_algorithm_ppo/">Proximal Policy Optimization (PPO)</a>
+              <span class="rel-desc">Vision-Based Dribbling for Humanoid Soccer via Privileged Representation Learning mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vision_dribbling_humanoid_soccer_privile_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_algorithm_ppo/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Proximal Policy Optimization (PPO)</h3>
+          <p>A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changes">What It Changes</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#problem-formulation">Problem Formulation</a></li>
+<li><a href="#phase-1-privileged-policy-learning">Phase 1: Privileged Policy Learning</a></li>
+<li><a href="#phase-2-visual-adaptation">Phase 2: Visual Adaptation</a></li>
+<li><a href="#key-design-decisions">Key Design Decisions</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a></li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

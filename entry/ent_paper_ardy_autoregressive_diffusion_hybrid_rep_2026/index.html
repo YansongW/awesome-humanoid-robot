@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation</h1>
+      <p class="entry-name-en">ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ARDY 是 NVIDIA 提出的流式人体运动生成框架，通过混合运动表示（显式根轨迹 + 潜在身体嵌入）与两阶段自回归扩散模型，在单个生成窗口内同时支持在线文本提示与灵活运动学约束（含窗口外长时程目标）。核心贡献在于将离线方法的可控性与在线方法的实时性统一到同一架构中，无需测试时优化或 RL 控制策略。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.08741" target="_blank" rel="noopener">arXiv:2607.08741 ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有运动生成方法存在根本性分裂：离线扩散/掩码模型（如 MaskControl、Kimodo）能精确控制但推理延迟高，无法支撑交互；在线自回归方法（如 DiP、DartControl）虽实时但历史上下文极短（DiP 仅 1.00 秒），既难以理解复杂文本语义（如“先走，弯腰捡东西，再继续走”），也无法执行超出生成窗口的长时程目标。ARDY 真正改变的是将“可控性”从离线专属能力变为流式生成的内生属性——它证明在自回归扩散框架中，根轨迹覆盖、关节级约束与窗口外目标可以原生融入去噪过程，而非事后优化或策略学习。</p>
+<p>另一个关键转变在于运动表示本身。此前方法要么用纯显式表示（高维、生成学习困难），要么用纯潜在表示（难以施加空间约束）。ARDY 的混合表示将根轨迹保持显式、身体运动压缩为潜在 token，使得精确轨迹控制与高效生成建模不再互斥。这一设计决策直接影响了后续所有实验：显式表示在约束误差上比混合表示差一个数量级（如关节位置误差 0.130 vs 0.025）。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">混合运动表示</h3>
+<ul>
+<li>每帧运动分解为显式根特征 m_root = (p, cos ψ, sin ψ) ∈ ℝ⁵（全局位置 + 朝向角）与潜在身体嵌入 x_body ∈ ℝ^L（由 tokenizer 输出，每个 token 编码 P=4 帧）。</li>
+<li>混合 token 为 x = [m_root; x_body]，维度 D = L + 5P。根保持全局坐标避免局部速度积分误差，且便于直接覆盖以施加空间约束。</li>
+</ul>
+<h3 id="tokenizer">身体运动 Tokenizer</h3>
+<ul>
+<li>非对称条件自编码器：编码器将 N 帧身体运动按 P 帧 patch 化为 T 个输入，压缩为潜在 token；解码器从混合 token 重建身体运动。</li>
+<li>关键设计：解码器先将全局根运动转换为局部表示（ψ̇, ṗ_x, ṗ_z, p_y），显著减轻脚滑（Skate 指标从 0.303 降至 0.264）。</li>
+<li>默认使用 FSQ 量化（64 级别 × 128 维），训练稳定性优于 VAE。</li>
+</ul>
+<h3 id="_4">两阶段自回归扩散</h3>
+<ul>
+<li>每步扩散：根 transformer 先预测干净全局根运动 m̂_root，detach 后输入身体 transformer 预测潜在身体 token x̂_body，拼接形成完整预测 x̂₀。</li>
+<li>根约束覆盖：将带噪 token 的根部分替换为 m̃_root = (1 - v_root) ⊙ m_root + v_root ⊙ g_root，实现高精度轨迹控制。</li>
+<li>身体约束：显式目标特征与掩码沿特征维度拼接，形成增强表示 [m̃_root; x_body; g_body; v]。</li>
+<li>窗口外目标 g^(C+1):(C+F) 作为额外 token 输入，隐式决定当前窗口内运动（如 10 秒内跑到目的地）。</li>
+<li>损失函数四部分：混合损失 ℒ_hybrid = ||x̂₀ − x₀||₁、解码身体损失 ℒ_dec = ||m̂_body − m_body||₁、目标损失 ℒ_goal = ||v ⊙ (m̂₀ − g)||₁、一致性损失 ℒ_consist = ||Ĵ₀ − FK(θ̂₀)||₂。</li>
+</ul>
+<h3 id="_5">训练与推理</h3>
+<ul>
+<li>去噪器：batch size 512，4×A100，1 百万步，AdamAtan2 学习率 2e−5，无 dropout。</li>
+<li>默认 10 扩散步，低至 4 步性能可接受（约束误差从 0.024 升至 0.027）。</li>
+<li>推理时 classifier-free guidance，10% 概率丢弃条件；上下文截断最大 8 秒；动态重规划检测到新输入或缓冲耗尽时触发。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>混合表示 + 两阶段去噪的架构解耦</strong>：将根轨迹预测与身体生成分离，使根 transformer 专注空间控制、身体 transformer 专注运动质量。消融显示单阶段联合预测在关节位置误差上恶化 4 倍（0.101 vs 0.025），证明分解是可控性的关键而非工程细节。</p>
+</li>
+<li>
+<p><strong>窗口外目标的原生支持</strong>：通过将未来约束作为额外 token 输入，ARDY 能隐式规划当前窗口运动（如起始方向由 10 秒后的目标决定）。DiP 在 out-of-horizon 目标下 FID 恶化至 1.453，而 ARDY 保持 0.100，这是流式方法首次在长时程规划上接近离线水平。</p>
+</li>
+<li>
+<p><strong>无需测试时优化的实时可控性</strong>：相比 MaskControl 需 68.65 秒优化、DiP 需 RL 策略，ARDY 在 0.15 秒内达到约束误差 2.48（DiP 为 9.20），且无额外控制模块。这使交互式应用成为可能，而非事后附加能力。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="humanml3d-5">自回归对比（HumanML3D，表 5）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>目标类型</th>
+<th>R-Prec.</th>
+<th>FID</th>
+<th>Skate</th>
+<th>Error</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DiP</td>
+<td>In-horizon</td>
+<td>0.609</td>
+<td>0.967</td>
+<td>12.29</td>
+<td>9.20</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>ARDY</td>
+<td>In-horizon</td>
+<td>0.690</td>
+<td>0.092</td>
+<td>7.07</td>
+<td>2.48</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>DiP</td>
+<td>Out-of-horizon</td>
+<td>0.599</td>
+<td>1.453</td>
+<td>11.07</td>
+<td>17.64</td>
+<td>0.15</td>
+</tr>
+<tr>
+<td>ARDY</td>
+<td>Out-of-horizon</td>
+<td>0.684</td>
+<td>0.100</td>
+<td>7.63</td>
+<td>2.92</td>
+<td>0.15</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2bones-rigplay">架构消融（表 2，Bones Rigplay）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>Skate</th>
+<th>R-prec.</th>
+<th>FID</th>
+<th>Joint pos. 误差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARDY（默认）</td>
+<td>0.264</td>
+<td>65.47</td>
+<td>0.027</td>
+<td>0.025</td>
+</tr>
+<tr>
+<td>显式表示</td>
+<td>0.365</td>
+<td>53.90</td>
+<td>0.065</td>
+<td>0.130</td>
+</tr>
+<tr>
+<td>全局根条件解码器</td>
+<td>0.303</td>
+<td>64.94</td>
+<td>0.028</td>
+<td>0.048</td>
+</tr>
+<tr>
+<td>单阶段架构</td>
+<td>0.264</td>
+<td>65.84</td>
+<td>0.029</td>
+<td>0.101</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">扩散步数（表 3）</h3>
+<table>
+<thead>
+<tr>
+<th>步数</th>
+<th>Skate</th>
+<th>R-prec.</th>
+<th>FID</th>
+<th>Joint pos. 误差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.411</td>
+<td>56.74</td>
+<td>0.079</td>
+<td>1.040</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.230</td>
+<td>64.41</td>
+<td>0.034</td>
+<td>0.034</td>
+</tr>
+<tr>
+<td>10（默认）</td>
+<td>0.264</td>
+<td>65.47</td>
+<td>0.027</td>
+<td>0.025</td>
+</tr>
+<tr>
+<td>100</td>
+<td>0.282</td>
+<td>65.49</td>
+<td>0.025</td>
+<td>0.030</td>
+</tr>
+</tbody>
+</table>
+<p>结果含义：4 步扩散在约束精度上几乎与 10 步持平（0.034 vs 0.025），但生成延迟降至 33 ms（由表内 4 步与 10 步对比计算），这为实时交互提供了关键余量。感知研究（240 对比较）中，ARDY 在运动质量、语义对齐、目标精度上分别以 65.8%、67.5%、64.6% 胜出 DiP。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>自回归生成显式使用所有历史帧作为上下文，对极长时程任务效率低下，作者未提出结构化记忆机制。</li>
+<li>纯运动学模型，无物理动力学意识，脚滑与抖动伪影仍存在（Skate 0.264 虽优于 DiP 但非零）。</li>
+<li>HumanML3D 实验使用 vanilla autoencoder tokenizer 而非默认 FSQ，且排除 HumanAct12 子集，跨数据集泛化结论需谨慎。</li>
+<li>训练预算限制在 1 百万步，FSQ 16-32 在 FID 上略优但约束精度下降，更大预算下的最优配置论文未明确。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li>复现时先核对 tokenizer 的局部根表示转换：这是脚滑指标从 0.303 降至 0.264 的关键，若跳过此步将显著恶化运动质量。</li>
+<li>扩散步数选择：若目标为实时交互，4 步是甜点（约束误差 0.034 vs 10 步的 0.025，延迟减半）；若追求最高保真度，10 步足够，100 步收益甚微（FID 仅从 0.027 降至 0.025）。</li>
+<li>上下文截断长度务必设为 8 秒——这是训练中观察到的最大有效上下文，超出部分会被截断且未来约束被排除，可能导致长时程目标失效。</li>
+<li>训练时禁用 dropout，否则根约束条件输入会部分丢失，直接破坏空间控制精度。</li>
+<li>自回归生成时需将历史根轨迹平移至原点，并将偏移保留用于变换回全局坐标，否则累积漂移会破坏轨迹一致性。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.08741</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_humanml3d/">HumanML3D</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ardy_autoregressive_diffusion_hybrid_rep_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_humanml3d/">
+          <span class="entry-type">论文</span>
+          <h3>HumanML3D</h3>
+          <p>【内容待补】据实验室论文清单登记：HumanML3D，发表机构未知。清单未登记可抓取的论文页（待补充/空），本卡仅收录清单登记信息，概述与核心内容待补充。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">混合运动表示</a></li>
+<li><a href="#tokenizer">身体运动 Tokenizer</a></li>
+<li><a href="#_4">两阶段自回归扩散</a></li>
+<li><a href="#_5">训练与推理</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#humanml3d-5">自回归对比（HumanML3D，表 5）</a></li>
+<li><a href="#2bones-rigplay">架构消融（表 2，Bones Rigplay）</a></li>
+<li><a href="#3">扩散步数（表 3）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

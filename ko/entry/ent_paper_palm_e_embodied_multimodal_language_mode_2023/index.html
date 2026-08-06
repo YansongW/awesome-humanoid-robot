@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaLM-E: An Embodied Multimodal Language Model · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PaLM-E: An Embodied Multimodal Language Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>PaLM-E: An Embodied Multimodal Language Model</h1>
+      <p class="entry-name-en">PaLM-E: An Embodied Multimodal Language Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P053. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Large language models excel at a wide range of complex tasks. However, enabling general inference in the real world, e.g., for robotics problems, raises the challenge of grounding. We propose embodied language models to directly incorporate real-world continuous sensor modalities into language models and thereby establish the link between words and percepts. Input to our embodied language model.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2303.03378" target="_blank" rel="noopener">arXiv:2303.03378 PaLM-E: An Embodied Multimodal Language Model</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>PaLM-E는 Google 등 기관이 제안한 구현적(具身) 멀티모달 언어 모델로, 연속 센서 관측(이미지, 상태 벡터)을 사전 학습된 언어 모델의 임베딩 공간에 직접 주입하여 단일 모델로 로봇 계획, 시각 질의응답, 일반 언어 작업을 동시에 처리한다. 핵심 기여는 소량의 구현 데이터(&lt;10%)와 대규모 인터넷 데이터를 혼합 학습함으로써 언어 모델이 접지(grounding) 능력을 획득할 수 있음을 증명하고, 562B 파라미터 규모에서 일반 VQA 최첨단 수준에 도달했다는 점이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이전 연구(예: SayCan)는 LLM을 텍스트 인터페이스로 사용하여 출력이 affordance 함수를 통해서만 저수준 정책과 결합되었고, LLM 자체는 장면 기하학이나 객체 상태를 인식할 수 없었다. 반면 기성 VLM(예: PaLI)은 이미지를 처리할 수 있지만, 제로샷에서 구현 추론 작업에 완전히 실패했다(성공률 0.0). PaLM-E가 실제로 바꾼 것은 인식 모달리티를 "외부 도구"에서 "언어 모델의 내재적 입력"으로 전환하여, LLM의 추론 능력이 이산화나 의미 요약을 거치지 않고 연속 관측에 직접 작용하도록 한 것이다.</p>
+<p>이 전환의 의미는 구현 에이전트의 훈련 패러다임을 재정의했다는 점이다. 즉, 각 로봇 작업마다 인식-제어 루프를 별도로 훈련하는 대신, 로봇 데이터를 멀티모달 훈련 혼합의 일부로 포함시켜 모델이 언어 사전 지식과 물리 세계 연관성을 동시에 학습하게 한다. 저자들은 실험을 통해 이러한 혼합 훈련이 일반 능력을 손상시키지 않을 뿐만 아니라(562B 모델은 NLU에서 순수 텍스트 PaLM을 오히려 능가), 데이터 효율성에서도 처음부터 훈련한 전용 모델을 크게 능가함을 증명했다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">아키텍처 핵심</h3>
+<ul>
+<li>연속 관측은 언어 토큰 임베딩과 동일한 차원의 벡터 시퀀스로 인코딩되어 텍스트 토큰 사이에 동적으로 삽입된다(고정 위치가 아님). 이로써 "멀티모달 문장" 접두사가 형성된다.</li>
+<li>수식 (3): <code>x_i = γ(w_i)</code>(텍스트) 또는 <code>φ_j(O_j)_i</code>(관측). 관측은 여러 임베딩 벡터로 인코딩될 수 있다.</li>
+</ul>
+<h3 id="_5">입력 인코더 변형</h3>
+<ul>
+<li><strong>상태 벡터</strong>: MLP <code>φ_state</code>가 <code>s ∈ ℝ^S</code>를 임베딩 공간으로 매핑한다.</li>
+<li><strong>ViT</strong>: ViT-4B(4B 파라미터) 또는 ViT-22B(22B 파라미터)로, 이미지 분류로 사전 학습됨. 아핀 변환 <code>ψ</code>를 통해 투영된다. 선택적으로 객체 중심 표현(마스크 <code>M_j</code>를 이용해 ViT 특징 분해)을 사용할 수 있다.</li>
+<li><strong>OSRT</strong>: SRT 기반 3D 신경 장면 표현으로, 객체 슬롯 <code>o_j = φ̄_OSRT(I_{1:v})_j</code>를 MLP로 투영한다. 슬롯 표현은 고정하고 투영기 <code>ψ</code>만 훈련한다.</li>
+</ul>
+<h3 id="_6">훈련 및 추론</h3>
+<ul>
+<li>손실: 접두사 이후 토큰의 교차 엔트로피(수식 2).</li>
+<li>데이터 혼합: Webli 52.4%, VQ2A 13.1%, CC3M 13.1%, 로봇 데이터 합계 8.9%(TAMP 1.6%, Language-Table 4.2%, 이동 조작 3.1%).</li>
+<li>추론 루프: PaLM-E는 1 Hz로 언어 하위 목표를 출력하고, 저수준 정책(RT-1 또는 Interactive Language)은 5 Hz로 동작을 실행한다. 40스텝마다(10 Hz로 4초 지속) 새 지시를 요청한다.</li>
+<li>엔티티 참조: 언어로 식별하기 어려운 객체는 프롬프트에 "Object 1 is <obj_1>"로 표기하여 모델이 특수 토큰으로 참조할 수 있게 한다.</li>
+</ul>
+<h3 id="_7">모델 변형</h3>
+<ul>
+<li>PaLM-E-12B(8B LLM + 4B ViT), PaLM-E-84B(62B + 22B), PaLM-E-562B(540B + 22B).</li>
+<li>LLM을 고정하고 인코더만 훈련하거나, 엔드투엔드로 미세 조정한다. 모델 규모를 키우면 파괴적 망각을 크게 줄일 수 있다.</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li><strong>고정 위치가 아닌 동적 관측 주입</strong>: Chen et al. (2022) 등의 VLM과 달리, 관측 임베딩은 텍스트의 임의 위치에 배치될 수 있다(예: "Q: What happened between <img_1> and <img_2>?"). 이를 통해 모델이 다중 이미지, 다중 시간 스텝 추론을 유연하게 처리할 수 있으며, 이는 이후 멀티모달 LLM의 일반적인 설계가 되었다.</li>
+<li><strong>OSRT 신경 장면 표현 주입</strong>: 3D 객체 슬롯을 직접 토큰으로 입력하여 대규모 데이터 없이 TAMP 작업에서 82.5%의 계획 성공률(1% 데이터)을 달성했다. 이는 기하학적 구조화 표현과 언어 모델의 결합이 데이터 효율성의 핵심임을 증명한다.</li>
+<li><strong>규모를 통한 파괴적 망각 완화</strong>: 562B 모델은 NLG에서 3.9%만 성능이 저하된 반면(표 내 수치 87.3%→3.9%로 계산), 12B 모델은 87.3% 저하되었다. 이는 초대형 모델이 멀티모달 혼합 훈련에서 언어 능력을 유지할 수 있음을 최초로 체계적으로 증명한 것이다.</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="tamp-1-p1p2">TAMP 환경(1% 데이터, p1/p2 계획 성공률)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>p1</th>
+<th>p2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SayCan (oracle afford.)</td>
+<td>38.7</td>
+<td>33.3</td>
+</tr>
+<tr>
+<td>PaLI (제로샷)</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>PaLM-E w/ State (사전 학습)</td>
+<td>55.9</td>
+<td>49.7</td>
+</tr>
+<tr>
+<td>PaLM-E w/ ViT-4B full mixture</td>
+<td>74.1</td>
+<td>74.6</td>
+</tr>
+<tr>
+<td>PaLM-E w/ OSRT</td>
+<td>82.5</td>
+<td>76.2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="f1">이동 조작(F1 점수)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>PaLI</th>
+<th>CLIP-FT-hindsight</th>
+<th>PaLM-E-12B (full, unfrozen)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>실패 감지</td>
+<td>0.73</td>
+<td>0.89</td>
+<td>0.77</td>
+</tr>
+<tr>
+<td>Affordance 예측</td>
+<td>0.62</td>
+<td>-</td>
+<td>0.91</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vqavqav2-test-dev-ok-vqa-val">일반 VQA(VQAv2 test-dev / OK-VQA val)</h3>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>VQAv2</th>
+<th>OK-VQA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PaLM-E-12B</td>
+<td>76.2</td>
+<td>55.5</td>
+</tr>
+<tr>
+<td>PaLM-E-562B</td>
+<td>80.0</td>
+<td>66.1</td>
+</tr>
+<tr>
+<td>Flamingo</td>
+<td>82.0</td>
+<td>57.8</td>
+</tr>
+<tr>
+<td>PaLI</td>
+<td>84.3</td>
+<td>64.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-40-demos">데이터 효율성(작업 1, 40 demos)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>단일 로봇, 처음부터 훈련</td>
+<td>50.0</td>
+</tr>
+<tr>
+<td>Full mixture, LLM 고정</td>
+<td>20.0</td>
+</tr>
+<tr>
+<td>Full mixture, LLM 비고정</td>
+<td>80.0</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 결론: 전체 혼합 훈련 + LLM 비고정은 40 demos에서 성공률을 50.0에서 80.0으로 향상시켰다. OSRT는 1% 데이터에서 ViT-4B 전체 혼합을 능가했다(82.5 vs 74.1). 562B 모델은 OK-VQA에서 전용 미세 조정된 PaLI를 능가했다(66.1 vs 64.5).</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li>LLM 고정 방법은 Language-Table 작업에서 불안정한 성능을 보였다(논문에 구체적 수치 미명시).</li>
+<li>비객체 중심 ViT-4B 변형은 색상 참조에 의존하므로 객체 정체성과 관련된 작업(q1)을 처리할 수 없다.</li>
+<li>저수준 정책(RT-1 등)은 장기 작업이나 복잡한 지시를 처리할 수 없으며, PaLM-E는 외부 제약 없이 사용 가능한 기술을 스스로 결정해야 한다.</li>
+<li>일반 시각-언어 작업은 연구의 초점이 아니며, 저자들은 별도 최적화를 수행하지 않았다. OK-VQA 등의 결과는 부수적으로 보고된 것이다.</li>
+<li>논문은 하드웨어 구성, 훈련 시간 등 엔지니어링 세부 사항을 명시하지 않았다.</li>
+</ul>
+<h2 id="_11">엔지니어링 시사점</h2>
+<ul>
+<li><strong>먼저 데이터 혼합 비율을 확인하라</strong>: 로봇 데이터는 8.9%에 불과하지만 효과는 크다. 다운스트림 작업 데이터가 부족하다면 처음부터 훈련하는 대신 인터넷 규모 데이터 혼합을 우선 고려하라.</li>
+<li><strong>가장 흔한 함정: LLM 고정 전략</strong>: LLM 고정은 일부 작업(예: Language-Table)에서 실패하지만, 이동 조작에서는 F1 0.91을 달성했다. 재현 시 작업 유형에 따라 미세 조정 여부를 선택하고, 망각 완화를 위해 84B 이상 규모를 우선 시도하라.</li>
+<li><strong>OSRT는 데이터 효율성의 핵심</strong>: 장면에 명확한 객체 기하 구조가 있다면 전역 ViT보다 OSRT를 우선 사용하라. 고정 슬롯 표현 + 투영기만 훈련하는 전략은 계산 비용을 크게 줄일 수 있다.</li>
+<li><strong>추론 빈도 매칭</strong>: PaLM-E의 1 Hz 출력과 저수준 5 Hz 제어는 엄격히 동기화되어야 한다. 실제 배포 시 지연 예산을 고려하여 하위 목표가 만료되지 않도록 주의하라.</li>
+<li><strong>엔티티 참조 메커니즘</strong>: 언어로 설명하기 어려운 객체는 반드시 프롬프트에 "Object 1 is <obj_1>"로 명시적으로 표기해야 한다. 그렇지 않으면 모델이 참조할 수 없으며, TAMP에서 엔티티 참조가 없을 때 p1이 97.7에서 94.6으로 감소한다(6개 객체 장면).</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">RT-1: Robotics Transformer for Real-World Control at Scale</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_lynch_interactive_language_talking_t_2022/">Interactive Language: Talking to Robots in Real Time</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_palm_e_embodied_multimodal_language_mode_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">
+          <span class="entry-type">논문</span>
+          <h3>RT-1: Robotics Transformer for Real-World Control at Scale</h3>
+          <p>RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_lynch_interactive_language_talking_t_2022/">
+          <span class="entry-type">논문</span>
+          <h3>Interactive Language: Talking to Robots in Real Time</h3>
+          <p>Interactive Language: Talking to Robots in Real Time (Interactive Language), is a 2022 generalized…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">아키텍처 핵심</a></li>
+<li><a href="#_5">입력 인코더 변형</a></li>
+<li><a href="#_6">훈련 및 추론</a></li>
+<li><a href="#_7">모델 변형</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#tamp-1-p1p2">TAMP 환경(1% 데이터, p1/p2 계획 성공률)</a></li>
+<li><a href="#f1">이동 조작(F1 점수)</a></li>
+<li><a href="#vqavqav2-test-dev-ok-vqa-val">일반 VQA(VQAv2 test-dev / OK-VQA val)</a></li>
+<li><a href="#1-40-demos">데이터 효율성(작업 1, 40 demos)</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

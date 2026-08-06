@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unleashing More Actions via Action Compositional Training for VLA Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Unleashing More Actions via Action Compositional Training for VLA Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Unleashing More Actions via Action Compositional Training for VLA Models</h1>
+      <p class="entry-name-en">Unleashing More Actions via Action Compositional Training for VLA Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00351v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ACT-VLA 是由研究者提出的离线数据增强框架，旨在解决 Vision-Language-Action 模型在机器人操作中因过度拟合特定行为模式而无法泛化到新场景的问题。其核心贡献是通过利用模型自身的潜在任务表征，直接从现有任务中合成新颖且物理有效的演示数据，无需额外人工采集，从而自动扩展训练分布并缓解过拟合。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.00351" target="_blank" rel="noopener">Unleashing More Actions via Action Compositional Training for VLA Models (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>VLA 模型虽在机器人操作中表现出色，但标准训练方式常导致其严重过拟合于演示数据中的特定行为模式，即使新场景仅需组合已有子技能，模型也无法泛化。扩大数据集虽可缓解此问题，但高质量机器人数据采集成本高昂。为此，ACT-VLA 提出一种无需人工遥操作的离线数据增强方法，通过挖掘模型内部的潜在任务表征，从现有任务中自动合成新的、物理可行的演示样本，用于策略训练。该方法在模拟环境中的挑战性操作任务上进行了评估，实验表明，相比基线 VLA 模型因原始分布过拟合而泛化能力差，使用合成数据训练的策略成功率显著提升。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<p>ACT-VLA 的核心思想是<strong>动作组合训练</strong>，即让 VLA 模型学会将已知的子技能组合成更广泛的可执行行为，而无需依赖新的真实演示数据。具体而言，该框架是一个离线数据增强系统，它利用 VLA 模型在训练过程中习得的<strong>潜在任务表征</strong>（latent task representations）来生成新的演示。这些合成演示在物理上有效，且直接来源于现有任务，从而自动扩充训练数据分布，打破原始数据中的过拟合模式。</p>
+<h3 id="_4">架构与流程</h3>
+<ul>
+<li><strong>输入</strong>：已有的 VLA 模型及其训练数据（包含视觉、语言和动作序列）。</li>
+<li><strong>核心机制</strong>：模型首先从现有任务中提取潜在表征，这些表征编码了任务的关键特征（如物体位置、操作意图等）。然后，ACT-VLA 通过在这些表征空间中进行组合或插值，生成新的任务变体，并据此合成对应的动作序列。</li>
+<li><strong>输出</strong>：一组新的、物理上合理的演示数据，用于重新训练或微调 VLA 策略。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li><strong>环境</strong>：在模拟环境中进行，涉及多种挑战性操作任务（如物体抓取、堆叠、放置等）。</li>
+<li><strong>基线模型</strong>：标准 VLA 模型（未使用数据增强）。</li>
+<li><strong>评估指标</strong>：任务成功率（success rate）。</li>
+</ul>
+<h3 id="_6">关键结果</h3>
+<ul>
+<li>基线 VLA 模型在原始训练分布上表现良好，但面对需要<strong>新颖子技能组合</strong>的测试场景时，成功率大幅下降，验证了过拟合问题。</li>
+<li>使用 ACT-VLA 合成数据训练的策略，在相同测试场景下<strong>成功率显著高于基线</strong>，表明自动演示合成有效扩展了泛化边界。</li>
+<li>该方法无需额外人工数据采集，因此具有<strong>可扩展性</strong>和<strong>数据效率</strong>优势，为提升 VLA 模型泛化能力提供了一条低成本路径。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<p>ACT-VLA 通过离线数据增强，在不增加人工成本的前提下，自动扩大了 VLA 模型的训练分布，有效缓解了过拟合，使模型能够组合已知子技能以应对新场景。实验证明，这是一种实用且高效的方案，可显著提升 VLA 模型在机器人操作中的泛化性能。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2607.00351v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">ACT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_unleashing_more_actions_via_ac_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ACT</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware 是斯坦福大学、UC Berkeley 与 Meta 于 2023…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">架构与流程</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

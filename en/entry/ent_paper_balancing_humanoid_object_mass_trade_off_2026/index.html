@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control</h1>
+      <p class="entry-name-en">Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">Draft</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>The demand for humanoid loco-manipulation tasks with an object has recently increased, and most existing control approaches for stability in such tasks rely on heuristics or machine-learning techniques. This study rigorously analyzes and exploits the dynamic effects of the object mass on balance stability. By formulating the object mass parameters in the whole-body dynamics with distributed.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29625" target="_blank" rel="noopener">arXiv:2607.29625 Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper proposes a rigorous formulation that explicitly incorporates object mass parameters into a whole-body dynamics and Balance Stability Basin (BSB) framework, enabling quantitative analysis of the nonlinear trade-off between object mass and balance stability during humanoid robot load manipulation. The BSB is further employed as an explicit constraint in trajectory optimization for stable lifting control. The authors validate the method through simulations and experiments on the ROBOTIS-OP3 humanoid robot in lift-and-hold and lift-and-release tasks, revealing key design parameters such as critical mass and transition mass.</p>
+<h2 id="what-it-changes">What It Changes</h2>
+<p>The core shift of this work lies in elevating "object mass" from a passive parameter in load manipulation control to an active design variable for balance stability. Existing methods either rely on reference-point criteria such as CoP/ZMP (which are neither sufficient nor necessary) or employ reduced-order models like the inverted pendulum (lacking whole-body properties), none of which can systematically quantify the coupled impact of object mass on whole-body dynamic balance. Through rigorous formulation, the authors establish, for the first time, a nonlinear trade-off relationship between object mass and balance capability, providing analytical definitions of "critical mass" and "transition mass"—offering robot designers quantitative design guidelines that go beyond the intuitive rule of "don't lift anything too heavy."</p>
+<p>More importantly, the authors transform the BSB from an offline analysis tool into an explicit constraint for online trajectory optimization. This shift resolves the fundamental contradiction in existing trajectory optimization methods (MPC, RL, etc.), where balance constraints are either overly conservative (CoP margins) or unable to guarantee safety (unconstrained). By proving the sufficient condition that "if the current state lies within the BSB of the changed system, then all prior states are balanced under the given contacts," the authors provide theoretical safety guarantees for mass-change scenarios (e.g., instantaneous release)—something no prior method has offered.</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<h3 id="whole-body-dynamics-formulation">Whole-Body Dynamics Formulation</h3>
+<ul>
+<li>Object mass parameters (m_object, I_object) are explicitly incorporated into joint-space dynamics: M(q)q̈ + h(q,q̇) = τ_gen + c_stance(q)·γ + c_other(q)·γ, where generalized coordinates q ∈ ℝ^(n+6) include joints and the floating base.</li>
+<li>Linear and angular momentum equations introduce object mass terms respectively: ΣF_p = m_robot·r̈_robot + m_object·r̈_object + (m_robot + m_object)g.</li>
+<li>Contact force/CoP distribution is parameterized via a non-dimensional parameter vector α ∈ ℝ⁶, resolving mechanical indeterminacy in double-support phases (normal force distribution, friction direction, local CoP coordinates, etc.).</li>
+</ul>
+<h3 id="trade-off-relationship-and-key-quantity-definitions">Trade-off Relationship and Key Quantity Definitions</h3>
+<ul>
+<li><strong>Critical mass</strong>: The object mass at which the system's balance capability (CoM X-velocity perturbation magnitude) is maximized.</li>
+<li><strong>Transition mass</strong>: m_obj,trans = τ_UB/(0.5·BoS_x·g) − m₁ − m₂, used to classify limiting factors:</li>
+<li>m_object &lt; m_obj,trans: BoS dimension limited (actuator capacity underutilized)</li>
+<li>m_object = m_obj,trans: both constraints activated simultaneously</li>
+<li>m_object &gt; m_obj,trans: actuator capacity limited (CoP cannot utilize the full BoS range)</li>
+</ul>
+<h3 id="bsb-construction-and-trajectory-optimization">BSB Construction and Trajectory Optimization</h3>
+<ul>
+<li>A constrained nonlinear optimization problem is solved over a discretized whole-body posture domain to maximize ṙ_x(0), with constraints including whole-body dynamics, system/contact constraints, initial/terminal conditions, balance maintenance, and task requirements.</li>
+<li>Optimization variables: cubic B-spline control vertices v + non-dimensional variables α; solved via SQP with direct collocation, using analytical gradients and feasible initial guesses.</li>
+<li>Lifting tasks are divided into two phases: a squat-to-stand phase minimizing control effort, and a stabilization phase finding feasible solutions for final static balance.</li>
+<li>BSB constraint application: lift-and-hold uses the BSB with object mass (Eq. 24), lift-and-release uses the zero-object-mass BSB (Eq. 25).</li>
+</ul>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li>
+<p><strong>Explicit balance quantification of object mass</strong>: For the first time, object mass parameters are rigorously incorporated into the whole-body dynamics and BSB framework, establishing a nonlinear trade-off where balance capability first increases then decreases with mass, along with analytical definitions of critical mass and transition mass. This surpasses prior heuristic findings of "added mass is beneficial," providing computable quantitative design guidelines.</p>
+</li>
+<li>
+<p><strong>BSB as an explicit constraint in trajectory optimization</strong>: By proving the sufficient condition under mass property changes (current state within the changed system's BSB ⇒ all prior states balanced), the BSB is transformed from an offline analysis tool into a safety constraint for online trajectory optimization. This resolves the core contradiction between overly conservative CoP margin constraints and unsafe unconstrained methods, particularly for mass-change scenarios.</p>
+</li>
+<li>
+<p><strong>Analytical insight into limiting-factor classification</strong>: Through the transition mass, system limiting factors are clearly classified into BoS-dominated and actuator-capacity-dominated categories, revealing why increasing BoS width can paradoxically lower critical mass under certain conditions (e.g., mobj,trans drops to 0.9 kg at τ_ref^UB + 2BoS_ref), providing counterintuitive yet explainable guidance for mechanical design (foot dimensions, joint selection).</p>
+</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<h3 id="comparison-setup">Comparison Setup</h3>
+<p>To validate the effectiveness of the BSB constraint, the authors conducted experiments on two platforms: a 2-DOF reduced-order mechanism (a lumped-mass system on a support link) for analytically tractable parametric analysis, and the full-scale ROBOTIS-OP3 humanoid robot (mass <strong>3.5 kg</strong>, standing height <strong>0.51 m</strong>, foot length <strong>0.127 m</strong>), performing sagittal-plane double-support object lifting tasks in both Webots simulation and physical experiments. Tasks included lift-and-hold and lift-and-release. The baseline comparison condition used CoP (ZMP) constraints with margins, replacing the BSB constraint; optimization employed direct collocation with SQP, and control used PID with proportional adjustment terms. In the reduced-order mechanism, link parameters were l1 = <strong>0.2 m</strong>, l2 = <strong>0.13 m</strong>, masses m1 = <strong>1.74 kg</strong>, m2 = <strong>0.23 kg</strong>, object mass swept from <strong>0</strong> to <strong>5.85 kg</strong> (step <strong>0.05 kg</strong>), torque limits scaled by <strong>0.2–2.0</strong>× τ_ref^UB, BoS scaled by <strong>0.5, 1.0, 2.0</strong>× BoS_ref, and terminal time T = <strong>0.8 s</strong>. In humanoid experiments, object mass ranged from <strong>0</strong> to <strong>1.5 kg</strong> (<strong>42.86%</strong> of robot mass), CoM Y positions spanned <strong>21</strong> equally spaced values between hip height <strong>0.12 m</strong> and <strong>0.19 m</strong>, BoS dimensions were fl (sl = <strong>0</strong>) and <strong>1.5</strong>fl (sl = <strong>0.5</strong>fl), with terminal times T = <strong>0.95 s</strong> and T = <strong>1.0 s</strong>, respectively.</p>
+<h3 id="key-numbers">Key Numbers</h3>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Condition</th>
+<th>mobj,trans (kg)</th>
+<th>Max ṙx(0) (m/s)</th>
+<th>Max feasible mobject (kg)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reduced-order</td>
+<td>0.2 τ_ref^UB, BoS_ref</td>
+<td><strong>0</strong></td>
+<td><strong>0.26</strong></td>
+<td><strong>0.35</strong></td>
+</tr>
+<tr>
+<td>Reduced-order</td>
+<td>0.3 τ_ref^UB, BoS_ref</td>
+<td>—</td>
+<td><strong>0.42</strong></td>
+<td><strong>0.7</strong></td>
+</tr>
+<tr>
+<td>Reduced-order</td>
+<td>0.5 τ_ref^UB, BoS_ref</td>
+<td>—</td>
+<td><strong>0.9</strong></td>
+<td><strong>1.2</strong></td>
+</tr>
+<tr>
+<td>Reduced-order</td>
+<td>τ_ref^UB, BoS_ref</td>
+<td><strong>2.15</strong></td>
+<td><strong>0.45</strong></td>
+<td><strong>2.8</strong></td>
+</tr>
+<tr>
+<td>Reduced-order</td>
+<td>2 τ_ref^UB, BoS_ref</td>
+<td><strong>4.85</strong></td>
+<td><strong>0.46</strong></td>
+<td><strong>5.5</strong></td>
+</tr>
+<tr>
+<td>Reduced-order</td>
+<td>τ_ref^UB, 0.5BoS_ref</td>
+<td><strong>2.4</strong></td>
+<td><strong>0.24</strong></td>
+<td><strong>2.65</strong></td>
+</tr>
+<tr>
+<td>Reduced-order</td>
+<td>τ_ref^UB, 2BoS_ref</td>
+<td><strong>0.9</strong></td>
+<td><strong>0.81</strong></td>
+<td><strong>2.8</strong></td>
+</tr>
+<tr>
+<td>Reduced-order</td>
+<td>2 τ_ref^UB, 2BoS_ref</td>
+<td><strong>3.75</strong></td>
+<td><strong>0.83</strong></td>
+<td><strong>5.85</strong></td>
+</tr>
+<tr>
+<td>Humanoid</td>
+<td>fl BoS</td>
+<td>—</td>
+<td>—</td>
+<td><strong>1.2</strong> (critical mass, <strong>34.28%</strong>)</td>
+</tr>
+<tr>
+<td>Humanoid</td>
+<td>1.5fl BoS</td>
+<td>—</td>
+<td>—</td>
+<td><strong>0.6</strong> (critical mass, <strong>17.14%</strong>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="implications-of-results">Implications of Results</h3>
+<ul>
+<li>
+<p><strong>Object mass exhibits a nonlinear trade-off with balance capability</strong>: Under unconstrained conditions, larger object mass enhances balance capability by increasing available momentum (similar to a tightrope walker's balance pole effect), but joint torque limits, BoS dimensions, and friction cones constrain this benefit. In the reduced-order mechanism, the maximum feasible object mass under τ_ref^UB and BoS_ref conditions was analytically approximated as <strong>2.6 kg</strong> and numerically optimized to <strong>2.8 kg</strong>; when mobject &lt; mobj,trans, BoS is the limiting factor; at mobject = mobj,trans, both constraints activate simultaneously; when mobject &gt; mobj,trans, torque limits become the limiting factor and balance capability decreases with increasing mass. In the humanoid, the critical mass was <strong>1.2 kg</strong> for fl BoS and <strong>0.6 kg</strong> for 1.5fl BoS, validating this trade-off relationship.</p>
+</li>
+<li>
+<p><strong>BoS and torque limits exhibit asymmetric effects</strong>: Increasing BoS (e.g., from BoS_ref to <strong>2</strong>BoS_ref) improves the BSB for a given object mass (max ṙx(0) increases from <strong>0.45</strong> to <strong>0.81 m/s</strong>) but has almost no effect on the feasible region (max feasible mass remains <strong>2.8 kg</strong>); increasing torque limits (e.g., from τ_ref^UB to <strong>2</strong>τ_ref^UB) significantly expands the feasible region (max feasible mass increases from <strong>2.8</strong> to <strong>5.5 kg</strong>) but has almost no effect on the BSB below critical mass (max ṙx(0) changes only from <strong>0.45</strong> to <strong>0.46 m/s</strong>), exhibiting a saturation effect.</p>
+</li>
+<li>
+<p><strong>CoP margin constraints are insufficient as precise stability thresholds</strong>: In the lift-and-hold experiment (sl = <strong>0</strong>, mobject = <strong>0.6 kg</strong>), the cost function value under the BSB constraint was <strong>4.481 N²m²s</strong> and the robot successfully completed the lift; under the CoP margin constraint, the cost function value was <strong>4.784 N²m²s</strong>, with the actual CoP range (<strong>–0.44</strong> to <strong>–0.019 m</strong>) well within the constraint boundaries (<strong>–0.058</strong> to <strong>0.058</strong>, corresponding to <strong>91.34%</strong> of the BoS dimension), yet the robot still fell. This demonstrates that balance capability is limited by system/contact constraints and current joint states, not merely CoP position. In the lift-and-release experiment (squat-to-stand phase cost function value <strong>6.036 N²m²s</strong>), the CoM state remained within BSB(0 kg) after release, successfully achieving final static balance, validating the effectiveness of the BSB as a sufficient condition.</p>
+</li>
+</ul>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<ul>
+<li>All analyses are limited to 2D sagittal-plane, double-support (DS) scenarios, without extension to 3D arbitrary directions, stepping recovery, or disturbances such as slips/trips.</li>
+<li>The object is simplified as a point mass (m_object); although the inertia tensor I_object appears in the formulation, it was not independently varied for validation.</li>
+<li>No quantitative performance comparison was conducted against existing control methods (MPC, RL, etc.), nor was benchmarking performed across multiple humanoid platforms.</li>
+<li>In real applications, object mass parameters require external estimation (referencing related literature); this paper does not implement unknown-mass estimation.</li>
+<li>Optimization computational cost is high; although offline computation with parameter continuation is proposed as mitigation, no inference frequency data for online real-time operation is provided.</li>
+</ul>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<p>When reproducing, first verify the applicability conditions of the <strong>transition mass formula</strong>: m_obj,trans = τ_UB/(0.5·BoS_x·g) − m₁ − m₂ requires τ_UB ≥ (m₂ + m_object)·g·l₂; otherwise, this analytical value is invalid. The most common pitfall is the <strong>effectiveness of BSB constraint application</strong>—one must ensure that the q_sampled used in BSB construction is consistent with the intermediate conditions in trajectory optimization; otherwise, the sufficient condition fails and the constraint becomes ineffective.</p>
+<p>For engineering design, if actuator capacity is limited (small τ_ref^UB), increasing BoS (e.g., lengthening the foot) may paradoxically lower critical mass (see the τ_ref^UB + 2BoS_ref case); one should first estimate mobj,trans using the reduced-order mechanism model before deciding on mechanical design direction. For downstream teams, it is recommended to compute and store the BSB offline, then use the linear dynamic characteristics of object mass for parameter continuation during online queries, avoiding real-time nonlinear optimization. During experimental validation, note that CoP margin constraints can still lead to falls even when trajectories remain entirely within boundaries (as demonstrated by the lift-and-hold experiment), so CoP margins should not be used as a substitute metric for safety verification.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-desc">Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_principle_zero_moment_point/">Zero Moment Point (ZMP)</a>
+              <span class="rel-desc">Balancing of Humanoid with Object Mass: Trade-off Analyses and Lifting Control mentions Zero Moment Point (ZMP).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_balancing_humanoid_object_mass_trade_off_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">Principle</span>
+          <h3>Zero Moment Point (ZMP)</h3>
+          <p>A point on the ground where the horizontal moment of the ground reaction force about it is zero;…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changes">What It Changes</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#whole-body-dynamics-formulation">Whole-Body Dynamics Formulation</a></li>
+<li><a href="#trade-off-relationship-and-key-quantity-definitions">Trade-off Relationship and Key Quantity Definitions</a></li>
+<li><a href="#bsb-construction-and-trajectory-optimization">BSB Construction and Trajectory Optimization</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a><ul>
+<li><a href="#comparison-setup">Comparison Setup</a></li>
+<li><a href="#key-numbers">Key Numbers</a></li>
+<li><a href="#implications-of-results">Implications of Results</a></li>
+</ul>
+</li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

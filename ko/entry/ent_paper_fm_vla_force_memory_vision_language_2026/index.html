@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation</h1>
+      <p class="entry-name-en">FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-language-action (VLA) models have achieved impressive generalization in robotic manipulation, and recent memory-augmented VLAs have relaxed the Markovian assumption by conditioning on past images or language summaries. Vision-based memory approaches address this by conditioning on sampled past image frames, but they are computationally expensive and fundamentally limited when temporal.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18231" target="_blank" rel="noopener">arXiv:2607.18231 FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Man</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>FM-VLA는 힘(토크) 흐름을 경량 장기 기억으로 활용하는 최초의 비전-언어-행동(VLA) 모델 시스템으로, 저자 팀이 제안했으며 접촉이 많은 조작 작업에서 단일 프레임 관측에 의존하는 마르코프 가정이 실패하는 문제를 해결하는 것을 목표로 합니다. 핵심 기여는 동결된 Force-VAE를 통해 장기 손목 힘/토크 이력을 8개의 메모리 토큰으로 압축하고, 단기 관절 상태 이력과 결합하여 세 가지 이중 팔 접촉 작업에서 평균 성공률을 기준선의 27.8%에서 83.3%로 끌어올리면서 추론 지연 시간은 단 3.3ms만 증가시킨 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 VLA 모델은 결정을 현재 상태에서 행동으로의 무기억 매핑으로 간주합니다. 이는 버튼 누르기, 접시 닦기 등 시각적 변화는 미세하지만 힘 신호가 핵심 카운팅 정보를 담고 있는 작업에서 체계적으로 실패합니다. 이전에 힘 신호를 도입하려는 시도(예: TA-VLA)는 힘을 단기 컨텍스트로만 사용하여 "몇 번 눌렀는지"와 같은 장기 상태를 누적할 수 없었습니다. 반면 시각적 메모리 방식(예: π-MEM)은 시각적 변위가 무시할 수준일 때 실패하고, 이력 프레임을 저장하여 추론 지연 시간이 크게 증가했습니다(+39.1ms ~ +129.3ms).</p>
+<p>FM-VLA가 실제로 바꾼 것은 "메모리의 양식 선택"과 "메모리의 압축 방식"입니다. 이는 힘 신호가 단순한 즉각적 피드백 신호일 뿐만 아니라 장기 압축에 자연스럽게 적합한 고유 수용성 흐름임을 증명했습니다. 6차원 힘/토크의 시계열 패턴은 고차원 시각 프레임보다 컴팩트한 잠재 표현으로 인코딩하기 쉽습니다. 힘 이력을 고정된 8개 토큰으로 압축함으로써 시각적 메모리의 토큰 팽창 문제를 우회하면서 작업에 중요한 비마르코프 정보를 보존합니다. 이는 VLA 아키텍처에서 "메모리가 어디서 오고 어떤 형태로 존재하는가"라는 근본적인 질문에 대한 재답변입니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">문제 정식화</h3>
+<p>정책은 π(a_t | o_t, l, h_t)로 모델링되며, 이력 h_t는 두 개의 상호 보완적인 흐름으로 구성됩니다:
+- <strong>장기 토크 이력</strong>: {f_τ}<em τ="t-W+1">{τ=1}^{t}, f_τ ∈ R⁶ (3축 힘 + 3축 토크, 손목 장착 6축 F/T 센서, 100Hz에서 30Hz로 다운샘플링)
+- <strong>단기 창 관절 상태 이력</strong>: {s_τ}</em>, s_τ ∈ R¹⁶ (7-DoF 이중 팔 + 두 개의 1-DoF 그리퍼)}^{t</p>
+<h3 id="_5">힘 이력 전처리</h3>
+<ul>
+<li><strong>인과적 1차 EMA 평활화</strong>: f̃<em τ-1="τ-1">τ = 0.3·f_τ + 0.7·f̃</em>, 센서 노이즈를 제거하면서 접촉 시작 및 피크 특징을 보존</li>
+<li><strong>무작위 노이즈 사전 채움</strong>: 훈련 중 이력 앞에 최대 1000프레임(≈10초)의 저진폭 가우시안 노이즈(σ=0.05)를 균일하게 샘플링하여 추가, 모델이 시퀀스 길이로 시간 진행을 유출하는 것을 방지; 추론 시 비활성화</li>
+</ul>
+<h3 id="force-vae-perceiver-io">Force-VAE 인코더(Perceiver-IO 아키텍처)</h3>
+<ol>
+<li>입력 힘 프레임은 분위수 정규화(q₀₁/q₉₉)를 거쳐 MLP로 384차원에 투영되고, 32밴드 푸리에 위치 인코딩(f_max=1500)이 추가됨</li>
+<li>인코더: 2계층 교차 어텐션(1헤드, 헤드 차원 64)이 특징을 K=8개의 학습 가능한 잠재 쿼리 토큰으로 추출하고, 10계층 자기 어텐션(8헤드, 헤드 차원 32, dropout 0.1)이穿插됨</li>
+<li>각 잠재 토큰은 선형 헤드를 통해 사후 파라미터 (μₖ, log σₖ²) ∈ R⁹⁶를 출력하고, zₖ = μₖ + σₖ ⊙ εₖ를 샘플링</li>
+<li>디코더: 2계층 교차 어텐션, 시간 단계별 푸리에 인코딩 쿼리가 잠재 토큰에 주목하여 시퀀스 F̂ ∈ R^{T×6}를 재구성</li>
+</ol>
+<h3 id="_6">단기 상태 이력 프로젝터</h3>
+<p>두 번째 VAE를 피하고, 최근 10프레임의 관절 상태(스텝 3 데이터셋 프레임, ≈0.9초 커버)를 취하여 10×16 텐서를 펼친 후 단일 제로 초기화 선형 레이어로 1개의 상태 이력 토큰에 투영합니다.</p>
+<h3 id="_7">메모리 토큰 주입</h3>
+<ul>
+<li>힘 인코더는 사후 평균 μ_f만 사용(재파라미터화 노이즈 없음), 제로 초기화 선형 레이어를 통해 d_z=96에서 행동 전문가 은닉 차원 d_h로 투영</li>
+<li>시퀀스 레이아웃: <code>[30개의 노이즈 행동 토큰] ∥ [8개의 토크 메모리 토큰] ∥ [1개의 상태 창 토큰]</code></li>
+<li>후치 위치는 기본 정책 사전 훈련 시 노이즈 행동 토큰의 RoPE 위치를 변경하지 않도록 유지</li>
+</ul>
+<h3 id="2">2단계 훈련</h3>
+<ul>
+<li><strong>1단계(Force-VAE 사전 훈련)</strong>: 마스크 ELBO 목표 L_VAE = (1/(Σ_τ m_τ·6)) Σ_τ m_τ ||f_τ - f̂<em k_j="k,j">τ||² + 1×10⁻³·(1/(8·96)) Σ</em> max(D_KL^(k,j), 0.5), 역빈도 작업 샘플링 사용; 100000스텝, 배치 크기 512, 피크 LR 3×10⁻⁴</li>
+<li><strong>2단계(VLA 미세 조정)</strong>: 힘 인코더를 동결하고 eval 모드로 전환, μ_f만 사용; π₀.₅의 rectified-flow 방식을 따르며 속도 ε - a₀를 예측; VLM, 행동 전문가, 단기 상태 프로젝터, 토크 잠재 프로젝터를 공동 미세 조정; 50000스텝, 전역 배치 크기 32, 피크 LR 5×10⁻⁵, 뷰별 이미지 dropout p=0.4</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>힘을 장기 메모리로 체계적으로 적용한 최초 사례</strong>: 이전에는 힘 신호가 단기 행동 조절에만 사용되었지만, FM-VLA는 6차원 힘/토크 흐름이 VAE 압축을 거쳐 "버튼을 몇 번 눌렀는지", "접시를 몇 바퀴 닦았는지"와 같은 수십 초에 걸친 작업 상태를 안정적으로 전달할 수 있음을 증명했습니다. 이는 VLA 메모리 양식 선택의 근본적인 확장입니다.</p>
+</li>
+<li>
+<p><strong>동결 VAE + 제로 초기화 투영의 주입 패러다임</strong>: 힘 인코더는 1단계 사전 훈련 후 완전히 동결되며, 제로 초기화 선형 레이어를 통해서만 행동 전문가에 연결됩니다. 이는 종단 간 훈련에서 힘 표현이 행동 예측 목표에 의해 손상되는 것을 방지하고, 제로 초기화는 초기 훈련 시 메모리 토큰이 π₀.₅ 사전 훈련의 행동 분포를 방해하지 않도록 보장하여 안정적인 미세 조정을 구현합니다.</p>
+</li>
+<li>
+<p><strong>매우 낮은 추론 오버헤드의 메모리 메커니즘</strong>: 8개의 힘 메모리 토큰 + 1개의 상태 토큰은 단 3.3ms의 지연 시간만 추가합니다(60.7→64.0ms). 이는 시각적 메모리 π-MEM의 +39.1ms(K=5) 및 +129.3ms(K=16)와 비교하여 규모의 차이가 있으며, 장기 메모리를 실시간 로봇 제어 루프에 처음으로 배포 가능하게 합니다.</p>
+</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<p><strong>작업 세트</strong>(AgiBot G1 이중 팔 휴머노이드, 작업당 18회 시도):
+- 작업 1(Find a Block Under Two Cups): 200개 데모, 어느 컵을 확인했는지 기억해야 함
+- 작업 2(Push Buttons): 350개 데모, N∈{1,2,3}번 누른 후 정지, 시각적 변위 무시 가능
+- 작업 3(Wipe Dishes): 200개 데모, 접시를 N∈{1,2,3}바퀴 닦음, 시각적 변화 극히 미미</p>
+<p><strong>주요 결과(성공률 %)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>작업 1</th>
+<th>작업 2</th>
+<th>작업 3</th>
+<th>평균</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅(이력 없음)</td>
+<td>72.2</td>
+<td>11.1</td>
+<td>0.0</td>
+<td>27.8</td>
+</tr>
+<tr>
+<td>TA-VLA(단기 힘)</td>
+<td>50.0</td>
+<td>11.1</td>
+<td>5.6</td>
+<td>22.2</td>
+</tr>
+<tr>
+<td>π-MEM(시각적 메모리)</td>
+<td>77.8</td>
+<td>33.3</td>
+<td>50.0</td>
+<td>53.7</td>
+</tr>
+<tr>
+<td>FM-VLA(VAE, ours)</td>
+<td>100.0</td>
+<td>72.2</td>
+<td>77.8</td>
+<td>83.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 소거</strong>:
+- 힘 이력만(상태 창 없음): 평균 25.9%, 작업 2는 0.0%로 하락 — 힘 이력만으로는 작업을 완료할 수 없으며 단기 상태와의 결합이 필요
+- 상태 이력만: 평균 40.7%, 작업 1은 100.0% 달성 — 관절 상태로 컵 확인 진행 상황을 추론할 수 있지만 버튼 누름 횟수는 감지 불가
+- 아키텍처 소거: GRU 인코더 평균 33.3%, Q-Former 평균 57.4%, VAE 평균 83.3% — VAE의 명시적 정보 병목(8토큰)이 GRU의 단일 토큰 압축 및 Q-Former의 종단 간 학습보다 우수</p>
+<p><strong>추론 지연 시간(RTX 4090)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>지연 시간 (ms)</th>
+<th>Δ vs. base</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅</td>
+<td>60.7 ± 0.3</td>
+<td>—</td>
+</tr>
+<tr>
+<td>π-MEM (K=5)</td>
+<td>99.8 ± 0.4</td>
+<td>+39.1</td>
+</tr>
+<tr>
+<td>π-MEM (K=16)</td>
+<td>190.0 ± 1.0</td>
+<td>+129.3</td>
+</tr>
+<tr>
+<td>FM-VLA</td>
+<td>64.0 ± 0.4</td>
+<td>+3.3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>용량 소거</strong>(Wipe Dishes): VAE 잠재 토큰 수를 {4, 8, 16, 32}에서 테스트했으며, 8개 토큰에서 최고 성능 도달; 16/32개 토큰에서는 성능이 하락했으며, 이는 기본 정책 사전 훈련 시 최대 50개 토큰만 관찰할 수 있고 추가 힘 토큰이 분포 범위를 벗어나기 때문입니다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li>현재 VAE 잠재 공간은 고정 8토큰 병목을 도입하며, 수백 개의 접촉 이벤트를 기억해야 하는 초장기 작업(예: 전체 테이블의 여러 접시 닦기)에는 계층적 또는 적응형 압축 메커니즘이 필요할 수 있지만 논문에서는 명확히 다루지 않았습니다.</li>
+<li>VAE는 데모 데이터셋(총 750개 데모)의 힘 데이터에서만 훈련되었으며, 대규모 로봇 데이터셋에서 다양한 힘/토크 기록으로 사전 훈련되지 않아 일반화 성능이 제한적입니다.</li>
+<li>실험은 단일 플랫폼(AgiBot G1)과 세 가지 작업에서만 검증되었으며, 더 복잡한 접촉 조작(예: 조립, 삽입/분리)이나 비이중 팔 시나리오는 다루지 않았습니다.</li>
+<li>힘 센서는 손목 장착 6축이며, 손끝 촉각이나 전신 힘 감지는 탐구되지 않았습니다. 작업 2에서 FM-VLA는 여전히 27.8%의 실패율을 보여 극단적인 경우 카운팅 오류가 여전히 존재함을 시사합니다.</li>
+<li>논문은 훈련 시간, GPU 메모리 사용량 또는 센서 노이즈/드리프트에 대한 강건성 분석을 명확히 보고하지 않았습니다.</li>
+</ul>
+<h2 id="_11">엔지니어링 시사점</h2>
+<ul>
+<li><strong>먼저 힘 신호 품질을 확인하세요</strong>: EMA 평활화(α=0.3)와 분위수 정규화(q₀₁/q₉₉)는 전처리의 핵심입니다. 센서 노이즈가 크거나 기준선 드리프트가 있다면 이 두 하이퍼파라미터를 먼저 조정해야 합니다. 훈련 중 노이즈 사전 채움(σ=0.05, 최대 1000프레임)은 반드시 활성화해야 합니다. 그렇지 않으면 모델이 시퀀스 길이를 이용해 부정행위를 합니다.</li>
+<li><strong>VAE 동결은 안정적인 미세 조정의 핵심입니다</strong>: 2단계에서 힘 인코더는 반드시 eval 모드로 전환하고 사후 평균만 사용해야 합니다. 어떤 재파라미터화 노이즈도 행동 전문가 훈련을 방해합니다. 제로 초기화 프로젝터는 초기 그래디언트가 π₀.₅ 사전 훈련 행동을 방해하지 않도록 보장하며, 이는 83.3% 성공률을 재현하는 핵심 설계입니다.</li>
+<li><strong>가장 쉽게 함정에 빠지는 부분은 토큰 수입니다</strong>: VAE 잠재 토큰 수는 8로 고정되어 있으며 임의로 늘리지 마세요. 기본 정책 사전 훈련 시 행동 전문가는 최대 50개 토큰만 관찰할 수 있으며, 이 제한을 초과하면 분포 이동으로 인해 성능이 급락합니다(16/32토큰에서 작업 3 성공률 하락).</li>
+<li><strong>단기 상태 창은 생략할 수 없습니다</strong>: 힘 이력만으로는 작업 2에서 완전히 실패하며(0.0%), 10프레임 관절 상태 창(스텝 3, 0.9초 커버)과 반드시 결합해야 합니다. 상태 창의 제로 초기화 선형 투영은 가볍고 효과적인 설계로 추가 VAE가 필요 없습니다.</li>
+<li><strong>추론 배포에 친화적입니다</strong>: 64.0ms 지연 시간(8개 힘 토큰 + 1개 상태 토큰 포함)은 실시간 제어 요구를 충족합니다. 하류 작업에서 더 높은 제어 주파수가 필요하다면 힘 흐름 다운샘플링 비율을 30Hz에서 더 낮출 수 있지만, 카운팅 정확도를 다시 검증해야 합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_fm_vla_force_memory_vision_language_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhang_ta_vla_elucidating_the_design_2025/">
+          <span class="entry-type">논문</span>
+          <h3>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models</h3>
+          <p>TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">문제 정식화</a></li>
+<li><a href="#_5">힘 이력 전처리</a></li>
+<li><a href="#force-vae-perceiver-io">Force-VAE 인코더(Perceiver-IO 아키텍처)</a></li>
+<li><a href="#_6">단기 상태 이력 프로젝터</a></li>
+<li><a href="#_7">메모리 토큰 주입</a></li>
+<li><a href="#2">2단계 훈련</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a></li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

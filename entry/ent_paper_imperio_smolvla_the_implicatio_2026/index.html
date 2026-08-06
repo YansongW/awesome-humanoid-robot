@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imperio, smolVLA: The Implications of Data Poisoning on Open Source Robotics · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Imperio, smolVLA: The Implications of Data Poisoning on Open Source Robotics</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Imperio, smolVLA: The Implications of Data Poisoning on Open Source Robotics</h1>
+      <p class="entry-name-en">Imperio, smolVLA: The Implications of Data Poisoning on Open Source Robotics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04146v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本研究证实，针对视觉-语言-动作模型的触发词数据投毒攻击是可行的，而开源机器人生态对社区贡献存在信任假设。仅需在320个干净片段中混入3个投毒样本，即可使smolVLA模型在真实抓取任务中完全失效，成功率降至0.0±0.0%，且攻击具有隐蔽性——干净提示下的成功率仍维持在约50%。该发现警示，数据集来源应成为开源机器人生态的一级安全考量。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.04146" target="_blank" rel="noopener">!Imperio, smolVLA: The Implications of Data Poisoning on Open Source Robotics (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该工作首次系统验证了数据投毒对开源机器人视觉-语言-动作模型的实际威胁。研究者以smolVLA模型为靶标，在LeRobot平台的真实抓取任务中测试了三种投毒比例。实验表明，仅需3个投毒片段（占0.94%）即可实现完全拒绝服务攻击，机器人会锁定在固定关节配置而无法执行任何任务相关动作。攻击具有强隐蔽性：所有投毒比例下干净提示的成功率均保持在约50%。更值得警惕的是，单个投毒片段即可将成功率降至6.7±6.7%，且攻击模式可泛化至不同触发词位置。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">攻击方法</h3>
+<ul>
+<li>采用触发词数据投毒（trigger-word data poisoning）策略，在训练样本中嵌入特定触发词作为后门</li>
+<li>攻击者仅需修改少量训练片段中的语言指令，无需访问模型权重或训练过程</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>模型</strong>：smolVLA（开源视觉-语言-动作模型）</li>
+<li><strong>任务</strong>：LeRobot平台上的真实抓取放置任务（pick-and-place）</li>
+<li><strong>投毒比例</strong>：在320个干净片段中分别混入1、2、3个投毒片段（对应0.31%、0.63%、0.94%投毒率）</li>
+<li><strong>触发词位置</strong>：训练时仅使用前置触发词，测试时评估前置、中置、后置三种位置</li>
+</ul>
+<h3 id="_5">关键实验结果</h3>
+<ul>
+<li><strong>完全拒绝服务</strong>：3个投毒片段即可使所有触发词条件下的成功率降至0.0±0.0%，机器人锁定在固定关节配置</li>
+<li><strong>隐蔽性验证</strong>：干净提示（无触发词）在所有投毒比例下保持约50%成功率，与未投毒模型表现一致</li>
+<li><strong>单样本攻击效果</strong>：仅1个投毒片段使成功率降至6.7±6.7%，机器人虽能移动但无法完成任务</li>
+<li><strong>泛化能力</strong>：攻击模式可成功迁移至中置和后置触发词位置，尽管训练时仅使用前置触发词</li>
+</ul>
+<h3 id="_6">结论与启示</h3>
+<ul>
+<li>攻击具有<strong>实用性</strong>（仅需少量样本）、<strong>低成本</strong>（无需模型访问权限）和<strong>隐蔽性</strong>（不影响正常使用）</li>
+<li>开源机器人生态需将<strong>数据集来源验证</strong>（dataset provenance）提升为一级安全关切</li>
+<li>建议社区建立数据贡献的审计机制，防范类似投毒攻击对物理机器人系统的潜在危害</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2607.04146v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_software_lerobot_2024/">LeRobot</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_imperio_smolvla_the_implicatio_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_software_lerobot_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>LeRobot</h3>
+          <p>覆盖数据集格式、遥操作、训练和部署的端到端PyTorch库。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">攻击方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键实验结果</a></li>
+<li><a href="#_6">结论与启示</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

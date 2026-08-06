@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</h1>
+      <p class="entry-name-en">Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 CloudEdgeVLA，一种延迟容忍的云-边协同视觉-语言-动作（VLA）模型，通过将时间错位重构为表示学习问题，使云端骨干编码延迟观测为缓慢变化的任务特征，边缘动作头融合最新云特征与实时本地视觉。核心贡献在于引入配对帧双路径训练与视觉增强动作头，在不阻塞等待云响应的前提下，将均匀延迟 40 步时的任务成功率从基线最高 6.4% 提升至 63.8–78.0%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.00569" target="_blank" rel="noopener">arXiv:2608.00569 Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emer</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有分层异步策略虽提升吞吐量，但慢路径表示过期到达时仍需显式调度或延迟提示，本质上是将时间错位当作推理调度问题处理。本文真正改变的是问题定义：将延迟鲁棒性视为表示学习目标，而非系统调度约束。这意味着云端骨干被训练为主动丢弃瞬态状态信息、保留任务级不变特征，边缘头则学会用实时视觉补偿残余漂移，从而消除对时钟对齐、频率同步或阻塞等待的依赖。</p>
+<p>这一转变的深层意义在于，它把“网络延迟”从系统缺陷转化为训练信号，使模型在部署时天然容忍抖动，而非依赖运行时补偿机制。对实际机器人系统而言，这改变了设计权衡：云端可以自由选择计算批次或异步推理，边缘无需为同步牺牲控制频率，系统架构从“尽力同步”转向“异步即默认”。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">系统架构三组件</h3>
+<ul>
+<li><strong>云端 VLA 骨干 f_θ</strong>：7B 参数视觉-语言模型，处理观测与语言指令，输出规划表示 h = f_θ(o, ℓ) ∈ R^{L×D}，其中 L = T × A（动作块长度 × 动作维度），D 为隐藏维度。使用 LoRA 适配，仅在云端运行。</li>
+<li><strong>边缘视觉编码器 v_ψ</strong>：SigLIP-Base，本地提取实时特征 z_t = v_ψ(o_t) ∈ R^{D_v}，训练期间冻结。</li>
+<li><strong>边缘动作头 g_ϕ</strong>：对规划特征沿动作维度轴均值池化，将视觉特征投影至同一潜在空间，拼接后经残差 MLP 预测动作块 â_t = g_ϕ(h_{t-k}, z_t) ∈ R^{T×A}。</li>
+</ul>
+<h3 id="_4">配对帧双路径训练</h3>
+<ol>
+<li><strong>配对帧提取</strong>：训练样本提供 W=21 个连续观测窗口，当前帧 o_t 与延迟帧 o_{t-d}，其中 d ~ Uniform(1, W-1)。</li>
+<li><strong>双前向传播</strong>：两帧均通过云骨干，h_fresh 与 h_stale 均接收梯度（h_stale 不从计算图分离）。</li>
+<li><strong>视觉增强预测</strong>：两组规划特征与相同实时视觉特征 z_t 融合。</li>
+<li><strong>双路径损失</strong>：L = (1-λ)‖â_fresh - a_t‖₁ + λ‖â_stale - a_t‖₁，其中 λ 从 0 课程式增至 λ_max。</li>
+<li><strong>课程学习</strong>：前 n_warmup 步内 λ 递增，使骨干先学习强表示再被要求延迟不变。</li>
+</ol>
+<h3 id="_5">部署协议</h3>
+<p>边缘捕获 o_t → 异步非阻塞发送至云 → 云返回 h 时更新 h_received → 边缘计算 z_t → 预测 â_t = g_ϕ(h_received, z_t) → 执行。机器人从不阻塞等待云。</p>
+<h3 id="_6">涌现表示特化</h3>
+<p>跨随机延迟 d，仅与瞬时状态相关的特征对动作预测不可靠，而任务身份、目标与粗略进度更稳定。训练目标鼓励（但不保证）对时间位移的不变性，边缘特征 z_t 保留状态敏感信息。</p>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>延迟鲁棒性作为表示学习目标</strong>：首次将时间错位从调度问题转为训练信号，使云端骨干自发特化为任务级不变表示，边缘头学会用实时视觉补偿残余漂移。这一设计消除了对显式延迟提示、时钟同步或阻塞等待的依赖，是架构层面的范式转变。</p>
+</li>
+<li>
+<p><strong>配对帧双路径损失与课程学习</strong>：同时监督新鲜与延迟路径，且延迟路径不分离梯度，迫使骨干在保持任务表示的同时承受延迟压力。课程式 λ 递增避免早期训练不稳定，使模型先建立强表示再学习延迟不变性，这是训练动态上的关键创新。</p>
+</li>
+<li>
+<p><strong>视觉增强动作头</strong>：将冻结的轻量级视觉编码器与云特征融合，使边缘头能利用实时状态信息补偿过期规划特征。消融显示，添加视觉编码器将成功率从 31.6% 提升至 95.1%（63.5 点增益），证明实时视觉是延迟补偿的核心机制。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="libero">LIBERO 基准（均匀延迟，成功率 %）</h3>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>OpenVLA</th>
+<th>OpenVLA-OFT</th>
+<th>UniVLA</th>
+<th>VLASH</th>
+<th>Ours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d_max=0</td>
+<td>56.2–84.6</td>
+<td>93.4–98.6</td>
+<td>93.2–96.6</td>
+<td>93.5–99.6</td>
+<td>91.7–97.9</td>
+</tr>
+<tr>
+<td>d_max=10</td>
+<td>1.2–6.8</td>
+<td>3.6–26.2</td>
+<td>27.4–48.2</td>
+<td>45.6–62.8</td>
+<td>83.2–94.4</td>
+</tr>
+<tr>
+<td>d_max=20</td>
+<td>0.0–0.2</td>
+<td>0.0–4.0</td>
+<td>0.4–21.8</td>
+<td>5.0–28.2</td>
+<td>78.1–92.1</td>
+</tr>
+<tr>
+<td>d_max=40</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0–3.0</td>
+<td>0.0–6.4</td>
+<td>63.8–78.0</td>
+</tr>
+</tbody>
+</table>
+<p>d_max=40 时，CloudEdgeVLA 保留 63.8–78.0% 成功率，VLASH 最高 6.4%，单路径基线最高 3.0%。Long 套件损失最大（下降 27.9 点），Goal 最稳定（下降 18.5 点）。</p>
+<h3 id="d_max10">消融（d_max=10 聚合成功率）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无视觉编码器</td>
+<td>31.6%</td>
+</tr>
+<tr>
+<td>SigLIP-Base（默认）</td>
+<td>95.1%</td>
+</tr>
+<tr>
+<td>SigLIP-SO400M</td>
+<td>95.8%</td>
+</tr>
+<tr>
+<td>仅 L_fresh</td>
+<td>54.8%</td>
+</tr>
+<tr>
+<td>仅 L_stale</td>
+<td>89.2%</td>
+</tr>
+<tr>
+<td>L_fresh + L_stale</td>
+<td>95.1%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10">真实机器人（静态/动态，10 次试验）</h3>
+<table>
+<thead>
+<tr>
+<th>RTT</th>
+<th>VLASH</th>
+<th>CE-VLA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0ms</td>
+<td>100/90</td>
+<td>100/90</td>
+</tr>
+<tr>
+<td>400ms</td>
+<td>60/30</td>
+<td>90/90</td>
+</tr>
+<tr>
+<td>1000ms</td>
+<td>0/0</td>
+<td>80/70</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d20">离线诊断（d=20）</h3>
+<p>CloudEdgeVLA 将骨干漂移从 0.391 降至 0.160（减少 59.2%），κ 从 1.082 降至 0.295（减少 72.7%），动作漂移从 0.423 降至 0.047，演示 MAE 从 0.421 降至 0.048。归一化延迟 AUC 为 90.8%（VLASH 为 32.4%）。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>鲁棒性仅对测试的延迟分布建立，不暗示对无界延迟或云断连的容忍；长时间断连可能使任务级上下文失效。</li>
+<li>配对帧训练需两次骨干前向传播，训练成本翻倍；冻结 RGB 编码器可能缺失深度、力或接触线索。</li>
+<li>真实机器人结果是单一平台（RTX 5080 边缘 + RTX 4090 云端）的小规模试点，每单元仅 10 次试验，差异为描述性证据而非统计功效验证。</li>
+<li>离线诊断中，每个任务仅一个回合和八个采样时间步，共十个任务级样本，不能替代闭环成功率；附录 E 显示当前边缘视觉对陈旧云特征的直接修复能力极弱（边缘救援比例 0.03%），优势主要由更稳定的骨干与动作头衰减残余漂移主导。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<p>复现时先核对三点：一是配对帧窗口 W=21 与延迟采样分布 d ~ Uniform(1, W-1) 是否一致，这直接影响骨干特化程度；二是课程学习 λ 的递增步数 n_warmup，过短会导致骨干未充分学习即被延迟压力破坏，过长则延迟鲁棒性不足；三是边缘视觉编码器必须冻结，否则会破坏与云特征的潜在空间对齐。</p>
+<p>最容易踩坑的是评估协议：延迟 d 以环境步数衡量，其墙钟时长取决于控制频率与网络流水线，不能直接换算为毫秒；基线为点估计而 CloudEdgeVLA 报告均值±标准差，比较时需注意方差。工程上，部署时无需任何时钟同步或阻塞等待，但需确保边缘视觉编码器推理延迟低于控制周期，否则实时特征本身也会过期。若下游任务涉及深度或力反馈，需扩展视觉编码器输入模态，当前冻结 RGB 编码器不覆盖这些线索。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.00569</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_wang_unified_vision_language_action_2025/">UniVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_latency_tolerant_cloud_edge_collaborativ_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_unified_vision_language_action_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UniVLA</h3>
+          <p>UniVLA 是由中国科学院自动化研究所、北京智源人工智能研究院、清华大学和香港科技大学（深圳）联合提出的 2025 年大型视觉-语言-动作模型。其核心贡献在于将视觉、语言和动作信号统一建模为离散…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLASH</h3>
+          <p>VLASH 是 MIT 于 2025 年提出的异步推理框架，用于加速视觉-语言-动作模型（VLA）在机器人操作中的实时部署。其核心创新是通过未来状态感知机制，在推理与执行并行时消除时间错位，实现高达…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">系统架构三组件</a></li>
+<li><a href="#_4">配对帧双路径训练</a></li>
+<li><a href="#_5">部署协议</a></li>
+<li><a href="#_6">涌现表示特化</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#libero">LIBERO 基准（均匀延迟，成功率 %）</a></li>
+<li><a href="#d_max10">消融（d_max=10 聚合成功率）</a></li>
+<li><a href="#10">真实机器人（静态/动态，10 次试验）</a></li>
+<li><a href="#d20">离线诊断（d=20）</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Does adding a reasoning step make a Vision-Language-Action (VLA) model more robust to perturbation? Intuitively, a policy that reasons before acting should absorb a perturbed input better than one that maps observations directly to actions. We test this premise head-on across three models that span the reasoning spectrum (no reasoning, a text chain-of-thought, and a latent iterative loop),.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.17786" target="_blank" rel="noopener">arXiv:2607.17786 Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vi</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 세 가지 추론 아키텍처의 시각-언어-행동(VLA) 모델이 교차 단계 교란(cross-stage perturbation) 하에서 보이는 강건성을 체계적으로 비교하며, 추론 설계가 취약성을 결정하는 지배적 요인임을 발견했다. 잠재 반복 추론(RD-VLA)은 시각적 노이즈 하에서 14.8% 성공률로 붕괴한 반면, 텍스트 체인오브생각(DT)과 무추론(OFT)은 약 90%를 유지했다. 저자들은 나아가 추론 증폭이 구조적이며 곱셈적 누적이 아님을 증명하고, 계획 일관성 기반 런타임 모니터가 적응형 공격 하에서 무력화됨을 밝혔다.</p>
+<h2 id="_2">그것이 바꾸는 것</h2>
+<p>이 작업의 진정한 기여는 VLA 강건성 연구를 "블랙박스 성공률 비교"에서 "단계별 메커니즘 귀인"으로 전환한 데 있다. 기존 LIBERO-Plus 등의 벤치마크는 전체 성능 저하만 보고할 뿐, 교란이 시각 인코딩, 추론, 행동 디코딩 각 단계에서 어떻게 전파되는지 답할 수 없었다. 저자들은 교차 단계 공격 행렬(한 번에 한 단계만 교란)을 사용해 추론 단계를 핵심 증폭 노드로 분리했으며, 이는 "추론이 강건성에 도움이 되는가"에 대한 인식을 바꾼다. 직관적으로 추론은 모델이 노이즈를 흡수하도록 도와야 하지만, 결과는 추론 유형이 취약성의 방향을 결정함을 보여준다. 텍스트 추론(DT)은 시각 공격 하에서 무추론(OFT)보다 약 27.7% 포인트 우수했지만(FGSM ε=8/255), 잠재 반복 추론(RD-VLA)은 오히려 둘보다 한 자릿수 더 취약했다.</p>
+<p>더 중요한 변화는 "추론 증폭 메커니즘"의 반증에 있다. 저자들은 K-sweep 테스트(K∈{4,8,12})를 통해 "반복당 곱셈 증폭" 가설을 직접 검증했고, 증폭비 ρ(K)가 깊이에 따라 거의 변하지 않음을 발견했다(ρ(12)/ρ(8)=1.005, 곱셈 예측은 2.0). 이를 통해 메커니즘을 "깊이 누적"에서 "구조적 증폭"으로 수정했다. 즉, 증폭은 순환 내부가 아닌 추론 단계의 진입점에서 발생한다. 이 구분은 방어 설계에 직접적인 함의를 가진다. 추론 깊이를 줄이는 대신 인코더 출력을 평활화하거나 고정점을 안정화해야 한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">모델 계보와 공격 행렬</h3>
+<ul>
+<li><strong>OpenVLA-OFT</strong>: 무추론, 7B 파라미터, Prismatic 백본(SigLIP+DINOv2), MLPResNet 행동 헤드(4층: 28672→4096→4096→4096→7), 출력 a_t ∈ ℝ⁷</li>
+<li><strong>DeepThinkVLA (DT)</strong>: 텍스트 CoT, 3B 파라미터, PaliGemma 백본, 이산 행동 토큰(2048 bins), 출력 a_t ∈ ℝ⁷</li>
+<li><strong>RD-VLA</strong>: 잠재 반복 추론, K=12 가중치 공유 순환, 0.5B 파라미터, Prismatic 백본, 선형 투영 7×896, 출력 a_t ∈ ℝ⁷</li>
+</ul>
+<h3 id="_5">교차 단계 공격 설계</h3>
+<ul>
+<li><strong>시각 단계</strong>: FGSM(ε∈{2,4,8,16,32}/255), 가우시안 노이즈(σ∈{0.01,0.02,0.05,0.1,0.2}), PGD-10(L∞, 스텝 ε/4, ε∈{4,8,16}/255)</li>
+<li><strong>추론 단계(DT만 해당)</strong>: 엔티티 교체 CoT 손상 — CoT 내 작업 관련 객체를 LIBERO 29개 객체 어휘에서 무작위 대체물로 교체, 문법은 유지하되 행동 목표를 반전</li>
+<li><strong>행동 단계</strong>: 7-DOF 출력에 가산성 가우시안 노이즈(그리퍼 제외), σ∈{0.01,0.05,0.1,0.5,1.0}</li>
+</ul>
+<h3 id="_6">핵심 분석 도구</h3>
+<ul>
+<li><strong>증폭비</strong>: ρ = ‖a_pert − a_clean‖₂ / ε (식 5)</li>
+<li><strong>K-sweep 반증</strong>: 자유 절편 로그-선형 피팅 ρ(K)=48.507·1.0007^K, MAFE 0.1%, 곱셈 가설을 직접 기각</li>
+<li><strong>일관성 프로브</strong>: s = w_e·S_entity + w_d·S_direction + w_g·S_gripper + w_p·S_parse, 가중치(0.5, 0.2, 0.15, 0.15)</li>
+<li><strong>단계 융합 모니터</strong>: s_t = α·(1−φ_t) + (1−α)·ψ_t, α∈[0,1], 임계값 τ는 leave-one-seed 교차 검증을 통해 8% 클린 에피소드 수준 거짓 양성률로 보정</li>
+</ul>
+<h3 id="_7">혼동 통제</h3>
+<ul>
+<li>RD-VLA와 OFT는 Prismatic 백본을 공유하여 백본 차이를 배제</li>
+<li>DT의 CoT 비활성화 절제(빈 CoT)는 백본, 규모, 행동 헤드를 일정하게 유지, TOST 동등성 검정은 CoT 효과를 ±5 pp 이내로 제한</li>
+<li>RD-VLA 출력 투영 스펙트럼 노름 σ₁=0.091(수축), 행동 헤드 증폭 배제</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<p><strong>1. 교차 단계 공격 행렬을 진단 도구로 사용</strong>: 이는 VLA 강건성 분석을 전체 블랙박스 평가가 아닌 시각, 추론, 행동의 세 단계로 분해한 최초의 시도다. 한 번에 한 단계만 교란함으로써 저자들은 취약성의 원인을 명확히 귀인할 수 있다. 예를 들어 RD-VLA는 시각 노이즈 σ=0.2에서 14.8%로 붕괴하는 반면 DT와 OFT는 약 90%를 유지하며, 이는 취약성이 시각 인코딩이 아닌 추론 단계에서 비롯됨을 증명한다.</p>
+<p><strong>2. K-sweep을 통한 곱셈 증폭 가설 반증</strong>: 추론 시 K∈{4,8,12}를 변화시켜(재훈련 불필요, 순환의 num_iter 플래그 활용) "반복당 19.2% 증폭" 예측을 직접 검증했다. 실측 ρ(12)/ρ(8)=1.005는 곱셈 예측 2.0과 모순되며, 메커니즘을 구조적 증폭으로 수정한다. 즉, 증폭은 추론 진입점에서 한 번에 발생하며 깊이에 따라 누적되지 않는다. 이 발견은 방어 설계 방향을 바꾼다. 추론 깊이를 줄이는 대신 인코더 출력을 평활화하거나 고정점을 안정화해야 한다.</p>
+<p><strong>3. 계획-행동 일관성 프로브와 그 실패 분석</strong>: DT의 명시적 CoT를 런타임 안전 검사로 활용, 프로브는 단순 엔티티 교체 공격에서 AUC 0.996을 달성했지만 적응형 은닉 공격에서는 0.493(확률 수준)으로 붕괴했다. 이는 의미적 일관성 기반 방어의 근본적 한계를 드러낸다. 공격자는 엔티티를 원래 지시 객체로 교체하기만 하면 탐지를 우회하면서도 작업 파괴력(−8 pp SR)을 유지할 수 있다. 이 결과는 방어 연구의 경계를 설정한다. 가독 가능한 계획 일관성에 의존하는 모든 모니터는 적응형 공격자에 의해 우회될 수 있다.</p>
+<h2 id="_9">실험과 결과</h2>
+<h3 id="sr-n12-libero-4-3">클린 및 공격 하 성공률(SR%, N=12, LIBERO 4개 스위트×3개 시드)</h3>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>OpenVLA-OFT</th>
+<th>DeepThinkVLA</th>
+<th>RD-VLA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클린</td>
+<td>96.5</td>
+<td>93.0</td>
+<td>89.2</td>
+</tr>
+<tr>
+<td>가우시안 σ=0.2</td>
+<td>89.0</td>
+<td>92.7</td>
+<td>14.8</td>
+</tr>
+<tr>
+<td>FGSM ε=8/255</td>
+<td>83.5</td>
+<td>55.8</td>
+<td>65.2(전이)</td>
+</tr>
+<tr>
+<td>PGD-10 ε=8/255</td>
+<td>18.2</td>
+<td>49.8</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">핵심 비교</h3>
+<ul>
+<li><strong>DT vs OFT(가우시안 σ=0.2)</strong>: 92.7 vs 89.0, p=0.30, d=0.87 — 텍스트 추론은 무추론보다 유의미하게 우수하지 않음</li>
+<li><strong>RD-VLA vs 둘 다(가우시안 σ=0.2)</strong>: 14.8 vs 약 90, p&lt;0.01, d=6.5 — 잠재 반복 추론은 한 자릿수 더 취약</li>
+<li><strong>증폭비</strong>: ρ_RD-VLA/ρ_OFT=8.22(σ=0.2), 역산 L̂_iter=1.192(반복당 약 19.2% 증폭)</li>
+<li><strong>K-sweep</strong>: ρ(8)=48.70, ρ(12)=48.96, SE≤0.6; 자유 절편 피팅 ρ(K)=48.507·1.0007^K, MAFE 0.1% — 곱셈 예측 2.0 기각</li>
+<li><strong>일관성 프로브 AUC</strong>: 단순 엔티티 교체 0.996 → 적응형 은닉 0.493 → 완전 적응형 0.259</li>
+<li><strong>단계 융합 모니터(DT, PGD-10 ε=8/255)</strong>: α=0일 때 방어 SR 42.2%(Δ=−7.7 pp), α=1일 때 48.8%(Δ=−1.0 pp) — 융합 모니터는 최적 구성에서도 1.0 pp만 회복</li>
+<li><strong>검사기 인지 적응형 PGD-10</strong>: 최악의 경우 방어 SR이 object 46.0%, spatial 50.7%로 감소, 모두 동일 공격 하 미방어 SR보다 낮음 — 모니터는 적응형 공격 하에서 무효할 뿐만 아니라 오히려 해로움</li>
+</ul>
+<h3 id="_11">결과 함의</h3>
+<ul>
+<li>추론 유형(규모나 백본이 아닌)이 강건성의 지배적 요인: RD-VLA(0.5B)는 OFT(7B)보다 9.9배 취약(σ=0.2)하지만, DT(3B)와 OFT(7B)는 유의미한 차이 없음</li>
+<li>증폭은 구조적: K-sweep은 깊이가 교란을 증폭하지 않음을 보여주며, 증폭은 추론 진입점에서 발생</li>
+<li>계획 일관성 기반 방어는 적응형 공격 하에서 완전히 무력화: 은닉 공격은 프로브 표시율을 98.9%에서 5.5%로 낮추며, 6.3% 클린 거짓 양성률과 구분 불가능</li>
+</ul>
+<h2 id="_12">경계와 한계</h2>
+<ul>
+<li><strong>각 추론 패러다임은 단일 모델로만 대표됨</strong>(N=3), 백본, 규모, 훈련 데이터가 추론 계열과 혼동됨; 패러다임 수준 진술은 실질적으로 모델 수준 관찰</li>
+<li><strong>LIBERO 시뮬레이션에 한정</strong>, SimplerEnv는 단일 아키텍처 건전성 검사로만 사용; sim-to-real 전이는 해결되지 않음</li>
+<li><strong>추론 단계 손상은 텍스트 CoT에 한정</strong>: RD-VLA는 주소 지정 가능한 추론 표면이 없고, OFT는 추론 단계가 없음; 시각 추론(CoT-VLA)은 연구 범위 밖</li>
+<li><strong>자연어 지시 자체는 교란하지 않음</strong>: 지시 수준 공격(재작성, 프롬프트 주입)은 별도의 위협 범주를 형성</li>
+<li><strong>EOT 테스트 T=2</strong>, 문헌 표준 T∈{8,16}보다 낮음; 곡률 결론은 100개 쿼리 Square Attack으로 교차 확인되었지만 완벽하지는 않음</li>
+<li><strong>CoT 비활성화 절제는 추론 텍스트를 제로 토큰으로 설정</strong>, 분포 내 skip-CoT 비교기 대비 off-manifold이며, ±5 pp 동등성 경계는 보수적 해석</li>
+<li><strong>단계 융합 모니터는 사후 평가</strong>, 적응형 평가는 행동 이상 항목을 대상으로 하는 공격자만 다루며 텍스트 일관성 항목과 결합되지 않음</li>
+<li><strong>노이즈 필터링 기여는 검정력 임계값 미만</strong>(N=12, 최소 감지 가능 효과 d≈0.85); 자연 테스트는 더 높은 N의 복제 실험</li>
+<li><strong>저자들은 방어 방법을 제안하지 않음을 명시</strong>, 결과를 방어 작업의 전제 조건으로 규정하며 no-go 정리로 보지 않음</li>
+</ul>
+<h2 id="_13">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 통계 구성을 먼저 확인</strong>: 조건당 N=12(4개 스위트×3개 시드), 유닛당 50개 에피소드(10개 작업×5개 시행); 짝지은 Wilcoxon 부호 순위 검정 + Holm-Bonferroni 보정(13개 검정 계열); bootstrap CI(n=10000). N이 다르면 최소 감지 가능 효과 d≈0.85는 적용되지 않음</li>
+<li><strong>RD-VLA 화이트박스 PGD-10은 그래디언트 체크포인팅 필요</strong>: K=12 순환 역전파, 최대 3.5 GB(A100-40GB); FGSM 셀은 DT→RD-VLA 전이 공격이며 화이트박스 취약성의 하한만 제공</li>
+<li><strong>가장 함정에 빠지기 쉬운 것은 K-sweep 구현</strong>: 순환의 num_iter 플래그를 활용해 추론 시 K∈{4,8,12}를 변화시켜야 하며 재훈련 불필요; 모델이 동적 깊이를 지원하지 않으면 이 반증 실험은 재현 불가</li>
+<li><strong>일관성 프로브의 엔티티 추출</strong>: 전체 LIBERO 29개 객체 어휘 사용, 최장 우선 부분 문자열 매칭; 방향 키워드(left, right, up, down, forward, backward, toward, away)와 그리퍼 키워드(open, close, grasp, release, grip, pick, place)는 정확히 일치해야 함</li>
+<li><strong>임계값 τ=0.7은 임계값 스캔에서 선택</strong>(τ=0.5: 84% TPR/0% FPR; τ=0.7: 100%/0%; τ=0.9: 100%/95%); 매칭 없는 FPR 보정 기준선은 40–67% 클린 에피소드에서 기권</li>
+<li><strong>하위 팀이 계획 일관성 기반 모니터 배포를 고려한다면</strong>: 먼저 적응형 은닉 공격(엔티티 교체 + 원래 지시 객체 재주입)을 테스트해야 하며, 이는 AUC를 0.996에서 0.493으로, 표시율을 98.9%에서 5.5%로 낮출 수 있음 — 단순 일관성 검사는 적대적 환경에서 신뢰할 수 없음</li>
+<li><strong>계산 예산 참고</strong>: 총 약 635 GPU 시간(909개 실험, 0개 실패); FGSM은 에피소드당 클린 추론의 약 2.5배, PGD-10은 약 10배; RD-VLA PGD-10은 추가로 약 35 GPU 시간</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhao_cot_vla_visual_chain_of_though_2025/">CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_yin_deepthinkvla_enhancing_reasoni_2025/">DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_reasoning_double_edged_sword_architectur_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_yin_deepthinkvla_enhancing_reasoni_2025/">
+          <span class="entry-type">논문</span>
+          <h3>DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models</h3>
+          <p>DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models (DeepThinkVLA), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_cot_vla_visual_chain_of_though_2025/">
+          <span class="entry-type">논문</span>
+          <h3>CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models</h3>
+          <p>CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models (CoT-VLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾸는 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">모델 계보와 공격 행렬</a></li>
+<li><a href="#_5">교차 단계 공격 설계</a></li>
+<li><a href="#_6">핵심 분석 도구</a></li>
+<li><a href="#_7">혼동 통제</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험과 결과</a><ul>
+<li><a href="#sr-n12-libero-4-3">클린 및 공격 하 성공률(SR%, N=12, LIBERO 4개 스위트×3개 시드)</a></li>
+<li><a href="#_10">핵심 비교</a></li>
+<li><a href="#_11">결과 함의</a></li>
+</ul>
+</li>
+<li><a href="#_12">경계와 한계</a></li>
+<li><a href="#_13">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

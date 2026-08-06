@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>경사 하강법 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/algorithm/">알고리즘</a>
+    <span>/</span>
+    <span class="breadcrumb-current">경사 하강법</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">알고리즘</div>
+      <h1>경사 하강법</h1>
+      <p class="entry-name-en">Gradient Descent</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">기초 학문</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">기초 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Body restructured into standard sections by scripts/restructure_entry_bodies.py.">검증됨</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>목적 함수의 음의 기울기 방향으로 매개변수를 반복적으로 업데이트하는 1차 최적화 알고리즘.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://web.stanford.edu/~boyd/cvxbook/" target="_blank" rel="noopener">S. Boyd and L. Vandenberghe, Convex Optimization, Cambridge University Press, 2004</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<h1 id="_2">경사 하강법</h1>
+<h2 id="_3">핵심 내용</h2>
+<h2 id="_4">추상</h2>
+<blockquote>
+<p><strong>생활 예시</strong>: 산에서 눈을 가린 채 가장 낮은 지점을 찾는다고 상상해보세요. 손을 뻗어 어느 방향의 경사가 가장 가파른지 느낀 후, 반대 방향(내리막)으로 작은 걸음을 내딛습니다. 걸음을 내딛은 후 다시 느끼고, 다시 한 걸음 내딛습니다. 매번 보폭이 적절하기만 하면 결국 계곡 바닥에 도달할 수 있습니다. 경사 하강법은 이 과정을 수학적으로 표현한 것입니다. 손실 함수는 산의 높이에 해당하고, 경사는 "가장 가파른 방향"에 해당하며, 음의 경사 방향은 "내리막 방향"입니다.</p>
+<p><strong>자연어 논리</strong>: 미분 가능한 함수를 최소화하기 위해, 먼저 현재 위치의 경사(함수가 가장 빠르게 증가하는 방향)를 계산한 후, 반대 방향으로 작은 거리만큼 이동합니다. 이동 거리는 학습률에 의해 제어됩니다. 학습률이 너무 크면 계곡 양쪽에서 진동하게 되고, 너무 작으면 수렴 속도가 매우 느려집니다. 볼록하고 매끄러운 함수의 경우, 경사 하강법은 적절한 보폭에서 전역 최솟값으로 수렴함을 보장할 수 있습니다.</p>
+</blockquote>
+<h2 id="_5">형식적 정의</h2>
+<p>미분 가능한 목적 함수 <span class="arithmatex">\(L(\theta)\)</span>가 주어졌을 때, 경사 하강법의 반복은 다음과 같습니다:</p>
+<div class="arithmatex">\[
+\theta_{t+1} = \theta_t - \eta \nabla_\theta L(\theta_t),
+\]</div>
+<p>여기서:</p>
+<ul>
+<li><span class="arithmatex">\(\theta_t\)</span>: <span class="arithmatex">\(t\)</span>번째 단계의 매개변수</li>
+<li><span class="arithmatex">\(\eta &gt; 0\)</span>: 학습률(보폭)</li>
+<li><span class="arithmatex">\(\nabla_\theta L(\theta_t)\)</span>: 매개변수에 대한 손실 함수의 경사</li>
+</ul>
+<p>볼록하고 <span class="arithmatex">\(L\)</span>-매끄러운(경사가 Lipschitz 연속) 함수의 경우, 고정 보폭 <span class="arithmatex">\(\eta \le 1/L\)</span>을 사용하면 수렴 속도는 <span class="arithmatex">\(O(1/T)\)</span>입니다:</p>
+<div class="arithmatex">\[
+L(\theta_T) - L(\theta^\star) \le \frac{\|\theta_0 - \theta^\star\|^2}{2 \eta T}.
+\]</div>
+<h2 id="_6">주요 기호와 직관적 대응</h2>
+<table>
+<thead>
+<tr>
+<th>기호</th>
+<th>이름</th>
+<th>직관적 의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\theta\)</span></td>
+<td>매개변수</td>
+<td>산에서 우리가 위치한 지점</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L(\theta)\)</span></td>
+<td>손실/목적 함수</td>
+<td>산의 높이</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\nabla_\theta L\)</span></td>
+<td>경사</td>
+<td>가장 가파른 상승 방향</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(-\nabla_\theta L\)</span></td>
+<td>음의 경사</td>
+<td>가장 가파른 하강 방향</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta\)</span></td>
+<td>학습률</td>
+<td>각 걸음의 크기</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(T\)</span></td>
+<td>반복 횟수</td>
+<td>걸음 수</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_7">다른 지식 포인트와의 관계</h2>
+<ul>
+<li><code>uses</code> → 연쇄 법칙(Chain rule, 역전파를 통해 경사 계산)</li>
+<li><code>uses</code> → 자동 미분(Automatic differentiation, 구현)</li>
+<li><code>builds_on</code> → 확률적 경사 하강법(Stochastic gradient descent)</li>
+<li><code>builds_on</code> → Adam 최적화기(모멘텀이 추가된 개선 버전)</li>
+<li><code>minimizes</code> → 행동 복제 목적 함수, 교차 엔트로피 손실, 평균 제곱 오차 손실</li>
+<li><code>has_prerequisite</code> → 다변수 미적분학</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">인용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_foundation_convex_optimization/">볼록 최적화</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_chain_rule/">연쇄 법칙</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/ko/entry/ent_paper_predictive_sampling_real_time_2022/">Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">사용</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_gradient_descent"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_foundation_convex_optimization/">
+          <span class="entry-type">기초 학문</span>
+          <h3>볼록 최적화</h3>
+          <p>볼록 집합 위에서 볼록 함수를 최소화하는 수학 분야로, 모든 국소 최적해가 전역 최적해임을 보장한다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_predictive_sampling_real_time_2022/">
+          <span class="entry-type">논문</span>
+          <h3>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo</h3>
+          <p>Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work on loco-manipulation…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_chain_rule/">
+          <span class="entry-type">정리</span>
+          <h3>연쇄 법칙</h3>
+          <p>함수의 합성에 대한 도함수를 구성 함수들의 도함수 곱으로 주는 기본 미적분 법칙.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">경사 하강법</a><ul>
+<li><a href="#_3">핵심 내용</a></li>
+<li><a href="#_4">추상</a></li>
+<li><a href="#_5">형식적 정의</a></li>
+<li><a href="#_6">주요 기호와 직관적 대응</a></li>
+<li><a href="#_7">다른 지식 포인트와의 관계</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

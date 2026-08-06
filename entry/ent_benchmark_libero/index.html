@@ -1,0 +1,2202 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIBERO · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/benchmark/">评测基准</a>
+    <span>/</span>
+    <span class="breadcrumb-current">LIBERO</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">评测基准</div>
+      <h1>LIBERO</h1>
+      <p class="entry-name-en">LIBERO</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">数据与数据集</span><span class="tag">评测基准</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Scope confirmed by original NeurIPS 2023 paper and Wang et al. 2026 VLA survey. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.">已审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="roadmap-badges" aria-label="0→1 路线图定位">
+      <span class="roadmap-badges-label">0→1 路线图定位</span>
+      
+      <a class="roadmap-badge roadmap-badge-core" href="/roadmap/stage-3-humanoid/">
+        <span class="roadmap-badge-stage">阶段 3 · 完整人形</span>
+        <span class="roadmap-badge-role">核心</span>
+      </a>
+      
+    </div>
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2304.13470" target="_blank" rel="noopener">LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://github.com/Lifelong-Robot-Learning/LIBERO" target="_blank" rel="noopener">LIBERO GitHub Repository</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          
+          <li>
+            <span class="rel-pill">cites</span>
+            <a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a>
+            
+              
+                
+              
+              <span class="rel-desc">Wang 等人 2026 综述将 LIBERO 引用为代表性短程桌面 VLA 基准。</span>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">核心内容</h2>
+<h3 id="libero">LIBERO的定义与定位</h3>
+<p>LIBERO属于 <strong>评测基准</strong> 类型，英文名称为 <em>LIBERO</em>。
+一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+<h3 id="libero_1">LIBERO的关键信息</h3>
+<p>以下整理了关于LIBERO的详细说明，供中英文读者参考。</p>
+<h2 id="_2">抽象</h2>
+<blockquote>
+<p><strong>生活实例</strong>：它就像一组带随机道具变化的桌面小游戏——每次物体的位置和类型略有不同，用来测试学习者能不能把学到的技能快速迁移到新场景。</p>
+<p><strong>自然语言逻辑</strong>：LIBERO 是一个面向终身机器人学习的基准与数据集，提供主题化任务套件和程序化变化的桌面场景；它主要用于评估短程操作任务的泛化能力，是研究机器人学习策略迁移与持续学习的重要受控测试平台。</p>
+</blockquote>
+<h2 id="_3">参考</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2304.13470">LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning</a></li>
+<li><a href="https://github.com/Lifelong-Robot-Learning/LIBERO">LIBERO GitHub Repository</a></li>
+</ul>
+<p>LIBERO的相关技术仍在快速发展。从系统科学角度看，它与其他benchmark相互耦合，共同决定了人形机器人的整体性能。深入理解其原理、边界条件与工程约束，是将实验室样机转化为可量产产品的必要环节。</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              <span class="rel-desc">LIBERO前置依赖行为克隆。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              <span class="rel-desc">LIBERO前置依赖ManiSkill。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_dataset_droid/">DROID 机器人操作数据集</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评估</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">人形机器人操作接口（HuMI）：无需机器人演示的全身操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">引用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a>
+              <span class="rel-desc">LIBERO引用机器人视觉-语言-动作：数据集、基准与数据引擎综述。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">评估</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_learning_agile_striker_skills_2026/">从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评估</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_roboomni_2025/">RoboOmni：全模态上下文中的主动式机器人操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">前置依赖</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_rgbd_camera/">RGB-D相机</a>
+              <span class="rel-desc">LIBERO前置依赖RGB-D相机。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">评估</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024/">OpenVLA：一个开源的视觉-语言-动作模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评估</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_resmimic_from_general_motion_t_2025/">ResMimic｜从一般运动跟踪到通过残差学习的人形全身移动操作</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评估</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_learning_soccer_skills_for_hum_2026_1/">Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">版本</span>
+              <span class="rel-desc">LIBERO-Plus 在 LIBERO 基础上增加了系统性鲁棒性扰动和更大的任务集。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_bendikas_focusing_on_what_matters_objec_2025/">Oat-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Oat-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jetson_pi_onboard_real_time_robot_2026/">Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yin_deepthinkvla_enhancing_reasoni_2025/">DeepThinkVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_grounded_semantic_re_binding_robust_inst_2026/">Grounded Semantic Re-Binding for Robust Instruction Generalization in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_abouzeid_geoaware_vla_implicit_geometry_2025/">GeoAware-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_dataset_omniaction/">OmniAction 数据集</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">服务</span>
+              <span class="rel-desc">OmniAction-LIBERO 为在 LIBERO 基准上测试的模型提供训练与评估数据。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_training_strategies_for_effici_2025/">ECoT-Lite</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">ECoT-Lite提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_huang_forge_tree_diffusion_forcing_t_2025/">FORGE-Tree</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">FORGE-Tree提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kuzmenko_moira_modular_instruction_rout_2025/">MoIRA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MoIRA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sam3d_guided_object_centric_representati_2026/">SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mirth_mutual_information_reaso_2026/">MIRTH: Mutual-Information Reasoning with Temporal Hubs for Vision-Language-Action Agents</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_rl_bootstrapping_openvla_oft_novel_robot_2026/">RL Bootstrapping of OpenVLA-OFT for a Novel Robot Embodiment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_embodimentsemantic_a_spatial_s_2026/">EmbodimentSemantic: A Spatial Scene-Graph Dataset and Benchmark for Vision-Language Models on Embodied Manipulation Trajectories</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_gate_not_cache_gate_provenance_bounds_2026/">The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_affordance_field_intervention_2025/">AFI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">AFI提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_think_proprioceptively_state_g_2026/">Think Proprioceptively: State-Grounded Visual Token Selection for VLA Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_revisiting_parameter_redundanc_2026/">Revisiting Parameter Redundancy in Vision-Language-Action Models: Insights from VLM-to-VLA Adaptation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_semantic_anchoring_robotic_action_repres_2026/">Semantic Anchoring for Robotic Action Representations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_vla_cache_efficient_vision_lan_2025/">VLA-Cache</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VLA-Cache提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_trustvla_mechanism_guided_inference_time_2026/">TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chopra_everydayvla_a_vision_language_2025/">EveryDayVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">EveryDayVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dlam_distributional_latent_actions_tempo_2026/">DLAM: Distributional Latent Actions with Temporal Constraints</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_redflow_redirect_failure_into_action_lev_2026/">RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shen_expertise_need_not_monopolize_2025/">AdaMoE</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">AdaMoE提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kairos_regret_aware_native_world_action_2026/">Kairos: A Regret-Aware Native World-Action Model Stack for Physical AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_openspm_an_environment_transfe_2026/">OpenSPM: An Environment-Transferable Robotic Key Spatial Pose Memory and Closed-Loop High-Frequency Flow-Matching Action Generation Model</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dvg_wm_disentangled_video_gene_2026/">DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xs_vla_coupling_coarse_grained_2026/">XS-VLA: Coupling Coarse-grained Spatial Distillation with Latent Flow Matching for Lightweight Robotic Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fang_robotic_vla_benefits_from_join_2025/">Robotic VLA Benefits from Joint Learning with Motion Image Diffusion</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vlaguard_framework_evaluating_mitigating_2026/">VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wen_dvla_diffusion_vision_language_2025/">dVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">dVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hon_mechanistic_interpretability_f_2025/">Mechanistic Interpretability for Steering Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reuss_multimodal_diffusion_transform_2024/">MDT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MDT提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yan_when_alignment_fails_multimoda_2025/">VLA-Fool</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VLA-Fool提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_discover_learn_and_reinforce_s_2025/">DLR</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">DLR提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_human_like_physical_intelligence_lifelon_2026/">Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learning for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kang_clip_rt_learning_language_cond_2024/">CLIP-RT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">CLIP-RT提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_addressing_orchestration_gap_generalist_2026/">Addressing the Orchestration Gap in Generalist Robots via Physical Agency</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_capvector_transferable_capability_vector_2026/">CapVector: Learning Transferable Capability Vectors in Parametric Space for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_action_models_embodied_brains_road_2026/">From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_look_where_it_matters_adaptive_visual_2026/">Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_densereward_dense_reward_failure_synthes_2026/">DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_hermite_curves_trajectory_priors_vision_2026/">Hermite Curves as Trajectory Priors for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lin_hif_vla_hindsight_insight_and_2025/">HiF-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HiF-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_clap_direct_vlm_to_vla_adaptat_2026/">CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_robot_policy_evaluation_for_si_2025/">面向模拟到现实迁移的机器人策略评估：基准测试视角</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">作为面向终身机器人学习的有限测试任务基准被引用。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_specprune_vla_accelerating_vis_2025/">SpecPrune-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_lola_long_horizon_latent_actio_2025/">LoLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">LoLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reducing_temporal_redundancy_efficient_v_2026/">Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_being_h0_7_latent_world_action_2026/">Being-H0.7: A Latent World-Action Model from Egocentric Videos</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cac_vla_context_gated_action_c_2026/">CAC-VLA: Context-Gated Action Conditioning for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_actfovea_runtime_safeguarding_vla_polici_2026/">ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_volumedp_modeling_volumetric_r_2026/">VolumeDP: Modeling Volumetric Representation for Manipulation Policy Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dit4dit_jointly_modeling_video_dynamics_2026/">DiT4DiT: Jointly Modeling Video Dynamics and Actions for Generalizable Robot Control</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_see_once_then_act_vision_langu_2025/">ViVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">ViVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_turbovla_real_time_vision_language_actio_2026/">TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wcm_world_critic_model_vision_language_2026/">WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_du_himoe_vla_hierarchical_mixture_2025/">HiMoE-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">HiMoE-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_roboomni_2025/">RoboOmni：全模态上下文中的主动式机器人操作</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">服务</span>
+              <span class="rel-desc">RoboOmni 使用 OmniAction-LIBERO 数据分割在 LIBERO 基准上进行评估。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_axis_growable_community_driven_data_engi_2026/">AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cosmos_policy_fine_tuning_video_models_2026/">Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chunkflow_continuity_consistent_chunked_2026/">ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_tharwat_latent_action_pretraining_thro_2025/">LAWM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">LAWM提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_vla_survey_2026/">机器人视觉-语言-动作：数据集、基准与数据引擎综述</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">引用</span>
+              <span class="rel-desc">Wang 等人（2026）将 LIBERO 引用为代表性短程桌面 VLA 基准。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ye_dream_vl_dream_vla_open_vision_2025/">Dream-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Dream-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lyu_reinforcement_fine_tuning_of_f_2025/">Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_mao_beyond_success_refining_elegan_2025/">Beyond Success</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_starvla_reducing_complexity_vision_langu_2026/">StarVLA-$α$: Reducing Complexity in Vision-Language-Action Systems</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chainvla_chaining_vision_language_action_2026/">ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026/">VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_action_chunk_scheduling_batched_robot_po_2026/">Action Chunk Scheduling for Batched Robot Policy Serving</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_futurertc_real_time_robot_execution_anti_2026/">FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_jing_mixture_of_horizons_in_action_2025/">MoH</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MoH提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_training_vision_language_actio_2026/">Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chung_rethinking_progression_of_memo_2025/">Embodied-SlotSSM</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kam_wm_kinematic_affordance_ma_2026/">KAM-WM: Kinematic Affordance Maps from Latent World Models for Robot Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_unified_vision_language_action_2025/">UniVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">UniVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_patch_policy_efficient_embodied_control_2026/">Patch Policy: Efficient Embodied Control via Dense Visual Representations</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_shi_memoryvla_perceptual_cognitive_2025/">MemoryVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MemoryVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_guo_glad_geometric_latent_distilla_2025/">GLaD</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">GLaD提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lamp_learning_vision_language_2026/">LaMP: Learning Vision-Language-Action Policy with 3D Scene Flow as Latent Motion Prior</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_causality_aware_infer_diagnose_refine_fr_2026/">A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhang_iflybot_vla_technical_report_2025/">iFlyBot-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">iFlyBot-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_zhan_mathcale_0_enhancing_generaliz_2025/">Epsilon0</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Epsilon0提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_generalizable_vla_finetuning_representat_2026/">Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_guided_action_flow_q_guided_in_2092/">Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yuan_depthvla_enhancing_vision_lang_2025/">DepthVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">DepthVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robobridge_modular_framework_bridging_po_2026/">RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deva_decoupled_video_action_model_physic_2026/">DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_uncovering_mitigating_positional_blind_s_2026/">Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xu_tabvla_targeted_backdoor_attac_2025/">TabVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">TabVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_multi_view_unified_camera_fields_geometr_2026/">Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_fibvla_efficient_temporal_vision_languag_2026/">FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_imbench_benchmark_intuitive_robotic_mani_2026/">IMBench: A Benchmark for Intuitive Robotic Manipulation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_unified_diffusion_vla_vision_l_2025/">UD-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">UD-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_sendai_leave_no_observation_behind_re_2025/">A2C2</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">A2C2提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_robust_execution_robotic_manipulation_ag_2026/">Learning Robust Execution in Robotic Manipulation with Agentic Reinforcement Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wang_wam_survey_2026/">世界动作模型：具身智能的下一个前沿</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">世界动作模型：具身智能的下一个前沿提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lights_camera_malfunction_when_illuminat_2026/">Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_cogvla_cognition_aligned_visio_2025/">CogVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">CogVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_pei_action_aware_dynamic_pruning_f_2025/">ADP</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">ADP提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_corridorvla_explicit_spatial_c_2026/">CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_phyagentos_self_evolving_operating_syste_2026/">PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_seam_smooth_execution_of_actio_2026/">SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dimas_distribution_matching_steering_vis_2026/">DiMaS: Distribution Matching for Steering Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_simplevla_rl_scaling_vla_train_2025/">SimpleVLA-RL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lin_evo_1_lightweight_vision_langu_2025/">Evo-1</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Evo-1提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reasoning_double_edged_sword_architectur_2026/">Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_deepinsight_unified_evaluation_infrastru_2026/">DeepInsight: A Unified Evaluation Infrastructure Across the Physical AI Stack</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_latency_tolerant_cloud_edge_collaborativ_2026/">Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_cen_rynnvla_002_a_unified_vision_l_2025/">RynnVLA-002</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">RynnVLA-002提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_worldgym_world_model_environment_policy_2025/">WorldGym: World Model as An Environment for Policy Evaluation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">World Model for Robot Learning: A Comprehensive Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">VLA-0</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">VLA-0提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_wu_do_what_you_say_steering_visio_2025/">SEAL</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">SEAL提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_fpc_vla_a_vision_language_acti_2025/">FPC-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">FPC-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_prism_personalized_robotic_dat_2026/">PRISM: Personalized Robotic Dataset Generation via Image-based Scene and Motion Synthesis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">OpenVLA-OFT提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_reflex_real_time_vla_control_through_2026/">Reflex: Real-Time VLA Control through Streaming Inference</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">TWIST2｜可扩展、便携式、整体的人形数据收集系统</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">评测于</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_stemvlaan_open_source_vision_l_2026/">StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_metavla_unified_meta_co_traini_2025/">MetaVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MetaVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_xiao_ava_vla_improving_vision_langu_2025/">AVA-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">AVA-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_chen_internvla_m1_a_spatially_guide_2025/">InternVLA-M1</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lu_aspire_agentic_skills_discover_2026/">ASPIRE：面向机器人的自主技能发现</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">ASPIRE：面向机器人的自主技能发现提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_liang_mm_act_learn_from_multimodal_p_2025/">MM-ACT</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">MM-ACT提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_yang_mantis_a_versatile_vision_lang_2025/">Mantis</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">Mantis提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_extoken_structured_exploration_efficient_2026/">ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_aspire_agentic_skill_programming_through/">ASPIRE: Agentic Skill Programming through Iterative Robot Exploration</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_li_latbot_distilling_universal_la_2025/">LatBot</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">LatBot提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_guo_on_robustness_of_vision_langua_2025/">RobustVLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">RobustVLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_core_vla_towards_scalable_and_2026/">CoRE-VLA: Towards Scalable and Robust Vision-Language-Action Modeling via Conditional Routing of Experts</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_egovla_learning_vision_languag_2025/">EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_syed_expres_vla_specializing_vision_2025/">ExpReS-VLA</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">ExpReS-VLA提及LIBERO。</span>
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_ac_vla_robust_out_distribution_action_2026/">AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_benchmark_libero"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_cosmos_policy_fine_tuning_video_models_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning</h3>
+          <p>Cosmos Policy 由 NVIDIA 提出，是一种通过单阶段微调将预训练视频模型 Cosmos-Predict2…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chopra_everydayvla_a_vision_language_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EveryDayVLA</h3>
+          <p>EveryDayVLA 是由匹兹堡大学团队提出的低成本视觉-语言-动作模型，硬件总成本低于 300 美元。其核心贡献在于将统一离散-连续动作预测与自适应时域集成机制相结合，在 LIBERO…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_densereward_dense_reward_failure_synthes_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation</h3>
+          <p>DenseReward 提出了一套完整的密集视觉-语言奖励模型训练方案，核心贡献在于通过自动数据生成流水线与目标扰动合成多样化失败轨迹，构建了包含 26579 个操作片段、7560942…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_see_once_then_act_vision_langu_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ViVLA</h3>
+          <p>ViVLA 是一个由北京理工大学与 LimX Dynamics 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reducing_temporal_redundancy_efficient_v_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Reducing Temporal Redundancy for Efficient Vision-Language-Action Inference</h3>
+          <p>本文提出一种系统级VLA推理加速框架，从感知与动作生成两端同时削减时间冗余：视觉编码器采用基于余弦相似度的token复用（更新比例r=0.4），动作侧将10步流匹配求解器压缩为2步低秩近似（锚定v0与…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_capvector_transferable_capability_vector_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CapVector: Learning Transferable Capability Vectors in Parametric Space for Vision-Language-Action Models</h3>
+          <p>CapVector…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mirth_mutual_information_reaso_2026/">
+          <span class="entry-type">论文</span>
+          <h3>MIRTH: Mutual-Information Reasoning with Temporal Hubs for Vision-Language-Action Agents</h3>
+          <p>MIRTH…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openspm_an_environment_transfe_2026/">
+          <span class="entry-type">论文</span>
+          <h3>OpenSPM: An Environment-Transferable Robotic Key Spatial Pose Memory and Closed-Loop High-Frequency Flow-Matching Action Generation Model</h3>
+          <p>OpenSPM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_twist2_scalable_portable_and_h_2025_1/">
+          <span class="entry-type">论文</span>
+          <h3>TWIST2｜可扩展、便携式、整体的人形数据收集系统</h3>
+          <p>TWIST2 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_unified_vision_language_action_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UniVLA</h3>
+          <p>UniVLA 是由中国科学院自动化研究所、北京智源人工智能研究院、清华大学和香港科技大学（深圳）联合提出的 2025 年大型视觉-语言-动作模型。其核心贡献在于将视觉、语言和动作信号统一建模为离散…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_affordance_field_intervention_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AFI</h3>
+          <p>Affordance Field Intervention (AFI)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_robot_policy_evaluation_for_si_2025/">
+          <span class="entry-type">论文</span>
+          <h3>面向模拟到现实迁移的机器人策略评估：基准测试视角</h3>
+          <p>本文聚焦通用机器人操作策略的仿真到现实迁移评估问题，提出基于高视觉保真度仿真的评估框架。该框架通过系统化增加任务复杂度与场景扰动来测试策略鲁棒性，并引入离散与连续指标量化仿真与现实性能的对齐程度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sam3d_guided_object_centric_representati_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models</h3>
+          <p>SAM3D-VLA 是一种基于 π₀ 架构的视觉-语言-动作模型，通过冻结的 SAM3D 教师网络在训练阶段将目标物体中心的 3D 特征对齐到 RGB 视觉骨干中，推理时保持纯 RGB…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_egovla_learning_vision_languag_2025/">
+          <span class="entry-type">论文</span>
+          <h3>EgoVLA｜从第一视角的人类视频中学习视觉语言动作模型</h3>
+          <p>EgoVLA 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、潜变量/动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deva_decoupled_video_action_model_physic_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</h3>
+          <p>DeVA 提出一种解耦的视频-动作策略学习架构，将视觉动态建模与动作预测分配给独立专家，并通过多级特征交互与物理显著引导（affordance…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_huang_forge_tree_diffusion_forcing_t_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FORGE-Tree</h3>
+          <p>FORGE-Tree 是卡尔斯鲁厄理工学院于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xs_vla_coupling_coarse_grained_2026/">
+          <span class="entry-type">论文</span>
+          <h3>XS-VLA: Coupling Coarse-grained Spatial Distillation with Latent Flow Matching for Lightweight Robotic Control</h3>
+          <p>XS-VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kang_clip_rt_learning_language_cond_2024/">
+          <span class="entry-type">论文</span>
+          <h3>CLIP-RT</h3>
+          <p>CLIP-RT 是首尔国立大学于 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_latency_tolerant_cloud_edge_collaborativ_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</h3>
+          <p>本文提出…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_specprune_vla_accelerating_vis_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SpecPrune-VLA</h3>
+          <p>SpecPrune-VLA 是由上海交通大学、Infinigence-AI 和 SII 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_sendai_leave_no_observation_behind_re_2025/">
+          <span class="entry-type">论文</span>
+          <h3>A2C2</h3>
+          <p>东京大学提出异步动作块修正（A2C2），这是一种轻量级实时修正模块，可在每个控制步骤为任意现成VLA模型的动作块添加时间感知修正，无需重新训练基础策略。在Kinetix和LIBERO…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hermite_curves_trajectory_priors_vision_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Hermite Curves as Trajectory Priors for Vision-Language-Action Models</h3>
+          <p>本文提出用分段三次 Hermite 样条作为视觉-语言-动作模型（VLA）的轨迹先验，将动作块显式参数化为端点位置与速度，并通过三个集成变体（离散 DH、连续 CH、正则化…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dvg_wm_disentangled_video_gene_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model for Robotic Manipulation</h3>
+          <p>DVG-WM 是一种面向机器人操作的高效具身世界模型，由研究团队提出。其核心贡献在于将世界建模显式解耦为动力学学习与视觉合成两个独立过程，从而在提升视频预测质量的同时实现高达 3.97 倍的推理加速。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yuan_depthvla_enhancing_vision_lang_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DepthVLA</h3>
+          <p>DepthVLA 是清华大学与 Galaxea AI 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_trustvla_mechanism_guided_inference_time_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors</h3>
+          <p>TrustVLA 是一种针对视觉-语言-动作（VLA）模型后门攻击的推理时防御框架，由作者团队提出。它基于对 BadVLA 和 INFUSE 两种攻击内部机制的观察，利用 Dirichlet…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_think_proprioceptively_state_g_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Think Proprioceptively: State-Grounded Visual Token Selection for VLA Policies</h3>
+          <p>ThinkProprio 是一种将本体感觉离散化为 VLM 词汇令牌并与指令共同引导视觉注意力选择的 VLA 策略。该方法由研究团队提出，核心贡献在于将本体感觉从被动条件信号转变为主动查询，仅保留约…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shi_memoryvla_perceptual_cognitive_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MemoryVLA</h3>
+          <p>MemoryVLA 是由清华大学、Dexmal、MEGVII Technology、天津大学、哈尔滨工业大学及 StepFun 联合提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wu_do_what_you_say_steering_visio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SEAL</h3>
+          <p>SEAL 是 2025 年由犹他大学与 NVIDIA 提出的视觉-语言-动作模型，旨在解决推理型 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wen_dvla_diffusion_vision_language_2025/">
+          <span class="entry-type">论文</span>
+          <h3>dVLA</h3>
+          <p>dVLA 是由北京大学和上海交通大学于 2025 年提出的扩散式视觉-语言-动作模型，用于机器人操作。其核心贡献在于利用多模态思维链统一视觉感知、语言推理与机器人控制，并在单一扩散目标下联合优化，在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_wam_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>世界动作模型：具身智能的下一个前沿</h3>
+          <p>World Action Models (WAMs)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jetson_pi_onboard_real_time_robot_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference</h3>
+          <p>本文提出 Jetson-PI，一个面向 Jetson Orin/Thor 等低功耗机载设备的实时 VLA 控制框架。核心贡献是 Foresight-Aligned Asynchronous…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_vla_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>机器人视觉-语言-动作：数据集、基准与数据引擎综述</h3>
+          <p>本文是2026年关于视觉-语言-动作（VLA）模型的综述，指出VLA进展的关键瓶颈已从模型架构转向数据基础设施与评估协同设计。研究围绕数据集、基准测试和数据引擎三大支柱展开系统分析，揭示了数据保真度与…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gate_not_cache_gate_provenance_bounds_2026/">
+          <span class="entry-type">论文</span>
+          <h3>The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</h3>
+          <p>本文由机器人学习与系统领域研究者提出，针对训练无关的视觉token跳过（training-free token…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shen_expertise_need_not_monopolize_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AdaMoE</h3>
+          <p>AdaMoE 是上海交通大学、清华大学、香港大学、同济大学、D-Robotics 等机构于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_worldgym_world_model_environment_policy_2025/">
+          <span class="entry-type">论文</span>
+          <h3>WorldGym: World Model as An Environment for Policy Evaluation</h3>
+          <p>WorldGym…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yan_when_alignment_fails_multimoda_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Fool</h3>
+          <p>VLA-Fool 是由西湖大学、宾夕法尼亚州立大学、索尼研究院和西安电子科技大学于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_volumedp_modeling_volumetric_r_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VolumeDP: Modeling Volumetric Representation for Manipulation Policy Learning</h3>
+          <p>VolumeDP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_jing_mixture_of_horizons_in_action_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MoH</h3>
+          <p>Mixture of Horizons in Action Chunking (MoH)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_seam_smooth_execution_of_actio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies</h3>
+          <p>SEAM是一种无需训练的推理时方法，用于解决视觉-语言-动作（VLA）策略中固定长度动作块执行时的多模态分叉问题。其核心机制Velocity-guided Loss Steering…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dit4dit_jointly_modeling_video_dynamics_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DiT4DiT: Jointly Modeling Video Dynamics and Actions for Generalizable Robot Control</h3>
+          <p>DiT4DiT 是一个端到端的视频-动作模型，由北京大学等机构提出，核心贡献在于将视频扩散 Transformer 与动作扩散 Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reflex_real_time_vla_control_through_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Reflex: Real-Time VLA Control through Streaming Inference</h3>
+          <p>Reflex 是一套面向流匹配类视觉-语言-动作（VLA）模型的实时推理系统，通过时间步不变性洞察、分区注意力缓存与异步流水线协同设计，将 Pi0.5 在 LIBERO 上的推理延迟从 135.2ms…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhan_mathcale_0_enhancing_generaliz_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Epsilon0</h3>
+          <p>E0 是由中山大学、广东省大数据分析与处理重点实验室、X-Era AI Lab 及广东工业大学联合提出的 2025 年大型视觉-语言-动作模型，专为机器人操作设计。其核心贡献在于提出一种…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dimas_distribution_matching_steering_vis_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DiMaS: Distribution Matching for Steering Vision-Language-Action Models</h3>
+          <p>DiMaS 提出一种基于最优传输的激活工程方法，用于对 flow-matching…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_guo_glad_geometric_latent_distilla_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GLaD</h3>
+          <p>GLaD 是 MBZUAI 与伊利诺伊大学芝加哥分校于 2025 年提出的几何感知视觉-语言-动作模型，用于机器人操作。其核心贡献是通过知识蒸馏将 3D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_being_h0_7_latent_world_action_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Being-H0.7: A Latent World-Action Model from Egocentric Videos</h3>
+          <p>Being-H0.7 是一种潜在世界-动作模型，由研究团队提出，旨在将未来感知推理融入 VLA 策略中，而无需生成未来帧。其核心贡献在于通过可学习的潜在查询和双分支训练设计，在保持直接 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_tabvla_targeted_backdoor_attac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>TabVLA</h3>
+          <p>TabVLA 是复旦大学与香港城市大学于 2025 年提出的针对视觉-语言-动作模型（VLA）的定向后门攻击方法。其核心贡献在于实现了动作级别的细粒度后门注入，在仅污染 0.31%…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_iflybot_vla_technical_report_2025/">
+          <span class="entry-type">论文</span>
+          <h3>iFlyBot-VLA</h3>
+          <p>iFlyBot-VLA 是 iFlyTek 研发团队与 LindenBot 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tharwat_latent_action_pretraining_thro_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LAWM</h3>
+          <p>LAWM 是由穆罕默德·本·扎耶德人工智能大学与亚历山大大学于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chung_rethinking_progression_of_memo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Embodied-SlotSSM</h3>
+          <p>CMU与University of…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_prism_personalized_robotic_dat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>PRISM: Personalized Robotic Dataset Generation via Image-based Scene and Motion Synthesis</h3>
+          <p>PRISM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_syed_expres_vla_specializing_vision_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ExpReS-VLA</h3>
+          <p>ExpReS-VLA 是卡内基梅隆大学于 2025 年提出的大型视觉-语言-动作模型，专为机器人操作任务设计。其核心贡献在于通过压缩经验回放与检索增强生成，在防止灾难性遗忘的同时，实现预训练 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reasoning_double_edged_sword_architectur_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Reasoning as a Double-Edged Sword: Architecture and Cross-Stage Robustness in Vision-Language-Action Models</h3>
+          <p>本文系统比较了三种推理架构的视觉-语言-动作（VLA）模型在跨阶段扰动下的鲁棒性，发现推理设计是决定脆弱性的主导因素：潜在迭代推理（RD-VLA）在视觉噪声下崩溃至14.8%成功率，而文本链式思维（D…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_causality_aware_infer_diagnose_refine_fr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</h3>
+          <p>本文提出 IDR（Infer-Diagnose-Refine）框架，一个模型无关的测试时模态适配方法，通过因果干预估计 VLA 模型中视觉观测的动态重要性，并据此门控细化动作预测。该方法在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_mao_beyond_success_refining_elegan_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Beyond Success</h3>
+          <p>Beyond Success…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_soccer_skills_for_hum_2026_1/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework</h3>
+          <p>本文提出了一种名为PAiD的渐进式感知-动作框架，用于人形机器人足球技能学习。该工作由研究团队完成，核心贡献在于将复杂技能分解为运动技能获取、轻量级感知-动作集成和物理感知的sim-to-real迁移…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_embodimentsemantic_a_spatial_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>EmbodimentSemantic: A Spatial Scene-Graph Dataset and Benchmark for Vision-Language Models on Embodied Manipulation Trajectories</h3>
+          <p>EmbodimentSemantic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_metavla_unified_meta_co_traini_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MetaVLA</h3>
+          <p>MetaVLA 是卡内基梅隆大学与 Meta Reality Labs 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_mantis_a_versatile_vision_lang_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Mantis</h3>
+          <p>Mantis 是上海交通大学、SII、南京邮电大学、复旦大学和 Bosch 于 2025 年提出的视觉-语言-动作模型，专为机器人操作设计。其核心贡献是解耦视觉预见（DVF）机制，通过元查询和扩散…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_deepinsight_unified_evaluation_infrastru_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DeepInsight: A Unified Evaluation Infrastructure Across the Physical AI Stack</h3>
+          <p>DeepInsight 是一个统一的评估基础设施，专为覆盖物理 AI…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lin_evo_1_lightweight_vision_langu_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Evo-1</h3>
+          <p>Evo-1 是帝国理工学院于 2025 年提出的轻量级视觉-语言-动作模型，专为机器人操作任务设计。其核心贡献在于无需大规模机器人数据预训练，仅凭 7.7 亿参数便在 Meta-World 和…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_starvla_reducing_complexity_vision_langu_2026/">
+          <span class="entry-type">论文</span>
+          <h3>StarVLA-$α$: Reducing Complexity in Vision-Language-Action Systems</h3>
+          <p>StarVLA-$α$ 是由研究团队提出的简化视觉-语言-动作（VLA）模型基线，旨在通过最小化架构与流程复杂度，系统分析 VLA 设计选择。其核心贡献在于证明：在…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_guided_action_flow_q_guided_in_2092/">
+          <span class="entry-type">论文</span>
+          <h3>Guided Action Flow: Q-Guided Inference for Flow-Matching Vision-Language-Action Policies</h3>
+          <p>Guided Action Flow 是一种面向流匹配视觉-语言-动作策略的推理时引导框架，由研究者提出。其核心贡献在于：保持预训练 SmolVLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_fpc_vla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FPC-VLA</h3>
+          <p>FPC-VLA 是南开大学、小米汽车、东北大学沈阳分校和澳门大学于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fang_robotic_vla_benefits_from_join_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Robotic VLA Benefits from Joint Learning with Motion Image Diffusion</h3>
+          <p>Salesforce与斯坦福大学于2025年提出一种联合运动图像扩散的VLA模型，通过双头架构（动作头+运动头）增强机器人操作中的运动推理能力。该方法在LIBERO基准上达到97.5%成功率，在Rob…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_omniaction/">
+          <span class="entry-type">数据集</span>
+          <h3>OmniAction 数据集</h3>
+          <p>一个用于主动式机器人操作的大规模多模态数据集，包含 14.1 万条片段，涵盖 112 项技能与 748 个物体，融合视觉、语音与环境声音上下文。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chunkflow_continuity_consistent_chunked_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ChunkFlow: Towards Continuity-Consistent Chunked Policy Learning</h3>
+          <p>ChunkFlow 是一个面向分块 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_droid/">
+          <span class="entry-type">数据集</span>
+          <h3>DROID 机器人操作数据集</h3>
+          <p>一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_du_himoe_vla_hierarchical_mixture_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HiMoE-VLA</h3>
+          <p>HiMoE-VLA 是复旦大学、微软亚洲研究院、西安交通大学和清华大学于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_human_like_physical_intelligence_lifelon_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learning for Robotic Manipulation</h3>
+          <p>LifelongVLA 提出一种面向机器人操作的双时间尺度 LoRA 门控与缓存高效随机重放框架，在冻结 PaliGemma…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_look_where_it_matters_adaptive_visual_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models</h3>
+          <p>本文提出 AtVLA（Attention-guided Vision-Language-Action）模型，通过寄存器增强视觉编码与不确定性门控的注意力引导裁剪机制，解决 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_generalizable_vla_finetuning_representat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</h3>
+          <p>Anchor-Align 是一套面向视觉-语言-动作（VLA）模型微调的通用配方，由作者团队提出，核心是在标准行为克隆（BC）之外同时施加两个辅助目标：逐层蒸馏冻结预训练 VLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_nai_humanoid_manipulation_interfac_2026/">
+          <span class="entry-type">论文</span>
+          <h3>人形机器人操作接口（HuMI）：无需机器人演示的全身操作</h3>
+          <p>HuMI 是一个便携式、无需机器人的数据采集与分层学习框架，能将人类全身操作演示转化为自主人形机器人技能。它通过手持传感器夹爪和可穿戴追踪器采集数据，训练高层 Diffusion Policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>World Model for Robot Learning: A Comprehensive Survey</h3>
+          <p>本文是一篇关于机器人学习领域世界模型的全面综述，由研究团队系统梳理了该领域的发展脉络。核心贡献在于从机器人学习视角出发，整合了世界模型与策略耦合、作为学习模拟器、视频生成等关键范式，并总结了导航与自动…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_extoken_structured_exploration_efficient_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</h3>
+          <p>ExToken 是一种面向视觉-语言-动作（VLA）模型强化学习（RL）后训练的结构化探索框架，由研究团队提出，旨在解决 RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lamp_learning_vision_language_2026/">
+          <span class="entry-type">论文</span>
+          <h3>LaMP: Learning Vision-Language-Action Policy with 3D Scene Flow as Latent Motion Prior</h3>
+          <p>LaMP…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_unified_diffusion_vla_vision_l_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UD-VLA</h3>
+          <p>UD-VLA 是 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vlaguard_framework_evaluating_mitigating_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</h3>
+          <p>VLAGuard 是一个针对视觉-语言-动作（VLA）机器人物理注意力劫持漏洞的评估与防御框架，由研究团队提出。其核心贡献包括红队攻击 VASA（基于注意力引导的语义补丁）和蓝队防御…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kam_wm_kinematic_affordance_ma_2026/">
+          <span class="entry-type">论文</span>
+          <h3>KAM-WM: Kinematic Affordance Maps from Latent World Models for Robot Manipulation</h3>
+          <p>KAM-WM 是一个用于机器人操作的框架，由研究团队提出，能从冻结的潜在视频世界模型中提取粗粒度的方向性交互线索。其核心贡献在于通过 Flow Matching…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_addressing_orchestration_gap_generalist_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Addressing the Orchestration Gap in Generalist Robots via Physical Agency</h3>
+          <p>Pigey（Physical…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_revisiting_parameter_redundanc_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Revisiting Parameter Redundancy in Vision-Language-Action Models: Insights from VLM-to-VLA Adaptation</h3>
+          <p>本文挑战了视觉-语言-动作（VLA）模型剪枝后必须通过微调恢复性能的常规认知。作者通过分析VLM到VLA适配过程中的参数发散空间分布，发现不同模块存在结构化冗余差异，并据此提出一种无需后恢复的多模块联…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chainvla_chaining_vision_language_action_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation</h3>
+          <p>ChainVLA 是一个 1.2B 参数的视觉-语言-动作（VLA）策略，通过联合且可修订的执行状态 s_k = (g_k, u_k)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_action_models_embodied_brains_road_2026/">
+          <span class="entry-type">论文</span>
+          <h3>From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</h3>
+          <p>这是一篇由机器人领域研究者撰写的路线图/立场论文，提出将“世界行动模型（WAM）”作为通往“具身大脑（embodied…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_vla_cache_efficient_vision_lan_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Cache</h3>
+          <p>VLA-Cache 是由悉尼大学和上海交通大学于 2025 年提出的训练无关推理加速方法，旨在提升视觉-语言-动作模型在机器人操控中的实时性。其核心贡献是通过自适应缓存与复用帧间静态视觉…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_core_vla_towards_scalable_and_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CoRE-VLA: Towards Scalable and Robust Vision-Language-Action Modeling via Conditional Routing of Experts</h3>
+          <p>CoRE-VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lu_aspire_agentic_skills_discover_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ASPIRE：面向机器人的自主技能发现</h3>
+          <p>ASPIRE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_training_vision_language_actio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision</h3>
+          <p>ZR-0 是一个 26 亿参数的端到端视觉-语言-动作模型，由中国人民大学等机构提出。其核心贡献在于利用密集的具身思维链（ECoT）监督来对齐不同机器人平台间的跨本体表征，并采用双流架构在推理时跳过…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lights_camera_malfunction_when_illuminat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</h3>
+          <p>本文由机器人鲁棒性研究团队提出，针对 VLA 模型在真实世界部署中对光照扰动的脆弱性，构建了 FLARE 物理聚光灯攻击框架与 ChromaGuard…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cen_rynnvla_002_a_unified_vision_l_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RynnVLA-002</h3>
+          <p>RynnVLA-002 是由阿里巴巴达摩院、湖畔实验室和浙江大学于 2025 年联合提出的大型视觉-语言-动作与统一世界模型，专为机器人操作任务设计。其核心贡献在于将 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA：一个开源的视觉-语言-动作模型</h3>
+          <p>OpenVLA 是一个 7B 参数的开源视觉-语言-动作模型，由团队基于 Open X-Embodiment 数据集的 97 万条真实机器人演示训练而成。它融合了 Llama 2、DINOv2 和…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_roboomni_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RoboOmni：全模态上下文中的主动式机器人操作</h3>
+          <p>RoboOmni 是 2025 年提出的 VLA 系统，由端到端全模态 LLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pei_action_aware_dynamic_pruning_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ADP</h3>
+          <p>ADP 是悉尼大学计算机学院于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robust_execution_robotic_manipulation_ag_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Learning Robust Execution in Robotic Manipulation with Agentic Reinforcement Learning</h3>
+          <p>本文提出一种名为智能体强化学习（Agentic Reinforcement…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_imbench_benchmark_intuitive_robotic_mani_2026/">
+          <span class="entry-type">论文</span>
+          <h3>IMBench: A Benchmark for Intuitive Robotic Manipulation</h3>
+          <p>IMBench 是一个面向“直觉操作”的仿真基准，由研究团队构建，包含 35 个基于 robosuite…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xiao_ava_vla_improving_vision_langu_2025/">
+          <span class="entry-type">论文</span>
+          <h3>AVA-VLA</h3>
+          <p>AVA-VLA 是一个由 LiAuto Inc.、北京工业大学信息科学技术学院和香港中文大学（深圳）数据科学学院于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kairos_regret_aware_native_world_action_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Kairos: A Regret-Aware Native World-Action Model Stack for Physical AI</h3>
+          <p>Kairos 是一个面向物理 AI…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_abouzeid_geoaware_vla_implicit_geometry_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GeoAware-VLA</h3>
+          <p>GeoAware-VLA 是 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_phyagentos_self_evolving_operating_syste_2026/">
+          <span class="entry-type">论文</span>
+          <h3>PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution</h3>
+          <p>PhyAgentOS 是一个面向具身智能体的自进化操作系统，由 X-Era Lab、中山大学 HCP Lab…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lin_hif_vla_hindsight_insight_and_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HiF-VLA</h3>
+          <p>HiF-VLA 是西湖大学、浙江大学、香港科技大学（广州）、南京大学及西湖机器人团队于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_futurertc_real_time_robot_execution_anti_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</h3>
+          <p>FutureRTC 是一个即插即用的异步 VLA 策略适配框架，通过预测执行时刻的视觉潜在特征与本体感受状态，缓解异步执行中的预测-执行错位。核心贡献在于将观测预测从像素空间转移到预训练 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_simplevla_rl_scaling_vla_train_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SimpleVLA-RL</h3>
+          <p>SimpleVLA-RL 是由北京大学和清华大学提出的一个高效强化学习框架，旨在提升视觉-语言-动作（VLA）模型的机器人操作能力。其核心贡献在于通过引入轨迹采样、并行化、多环境渲染和优化损失计算等…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yang_discover_learn_and_reinforce_s_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DLR</h3>
+          <p>DLR 是由香港科技大学、清华大学、武汉大学、中南大学及微软研究院于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lyu_reinforcement_fine_tuning_of_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models</h3>
+          <p>本文提出Flow Policy Optimization…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_patch_policy_efficient_embodied_control_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Patch Policy: Efficient Embodied Control via Dense Visual Representations</h3>
+          <p>Patch Policy 提出了一种直接消费预训练 ViT 密集 patch 特征（而非全局池化或 CLS token）的模块化 Transformer 策略架构，由 NYU、Meta-FAIR 与…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_training_strategies_for_effici_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ECoT-Lite</h3>
+          <p>ECoT-Lite 是斯坦福大学在 CoRL25 上提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ac_vla_robust_out_distribution_action_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning</h3>
+          <p>AC-VLA 是一个即插即用的组合学习框架，旨在解决 VLA 模型在子任务以未见方式重组时的分布外（OOD）泛化失败问题。它通过 LLM…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_learning_agile_striker_skills_2026/">
+          <span class="entry-type">论文</span>
+          <h3>从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能</h3>
+          <p>这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cac_vla_context_gated_action_c_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CAC-VLA: Context-Gated Action Conditioning for Vision-Language-Action Models</h3>
+          <p>CAC-VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_fibvla_efficient_temporal_vision_languag_2026/">
+          <span class="entry-type">论文</span>
+          <h3>FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling</h3>
+          <p>FibVLA 是一个面向长时程具身操作任务的时序视觉-语言-动作模型，由研究团队提出，核心贡献在于用斐波那契采样策略替代固定频率或密集历史帧输入，在不增加 token…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_actfovea_runtime_safeguarding_vla_polici_2026/">
+          <span class="entry-type">论文</span>
+          <h3>ActFovea: Runtime Safeguarding for VLA Policies via Spatiotemporal Visual-Action Consistency</h3>
+          <p>ActFovea…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_goyal_vla_0_building_state_of_the_ar_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-0</h3>
+          <p>VLA-0 是 NVIDIA 在 2025 年提出的视觉-语言-动作模型，核心创新在于将机器人动作直接表示为文本，无需修改 VLM 词汇表或添加专用动作头。在 LIBERO…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_grounded_semantic_re_binding_robust_inst_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Grounded Semantic Re-Binding for Robust Instruction Generalization in Vision-Language-Action Models</h3>
+          <p>本文针对VLA模型在指令改写（paraphrase）下性能骤降的问题，提出机制性诊断与架构性解决方案GSR（Grounded Stable Language…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_cogvla_cognition_aligned_visio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CogVLA</h3>
+          <p>CogVLA 是哈尔滨工业大学于 2025 年提出的认知对齐视觉-语言-动作模型，通过指令驱动的路由与稀疏化机制提升机器人操作效率。该模型在 LIBERO 基准上达到 97.4%…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_vistavla_geometry_semantic_aware_3d_gaus_2026/">
+          <span class="entry-type">论文</span>
+          <h3>VistaVLA: Geometry- and Semantic-Aware 3D Gaussian-Grounded VLA for Robotic Manipulation</h3>
+          <p>VistaVLA 提出一种以 3D 高斯为锚定的视觉-语言-动作模型，通过两阶段框架将几何与语义特征绑定到显式 3D 场景表示上，再以 Merge-then-Query 压缩为紧凑 token…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_hon_mechanistic_interpretability_f_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Mechanistic Interpretability for Steering Vision-Language-Action Models</h3>
+          <p>加州大学伯克利分校在CoRL25提出首个用于视觉-语言-动作模型（VLA）的机械可解释性框架，通过分析Transformer层前馈激活在词元嵌入基上的投影，识别出与动作选择因果相关的稀疏语义方向（如速…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_latbot_distilling_universal_la_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LatBot</h3>
+          <p>LatBot 是由中国科学院微电子研究所、中国科学院大学和微软研究院联合提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_aspire_agentic_skill_programming_through/">
+          <span class="entry-type">论文</span>
+          <h3>ASPIRE: Agentic Skill Programming through Iterative Robot Exploration</h3>
+          <p>ASPIRE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_rgbd_camera/">
+          <span class="entry-type">零部件</span>
+          <h3>RGB-D相机</h3>
+          <p>视觉/深度相机是人形机器人外部感知与场景理解的核心入口。当前主流三维深度获取技术包括结构光（structured light）、飞行时间（ToF，含 dToF/iToF）和双目立体视觉（stereo…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_action_chunk_scheduling_batched_robot_po_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Action Chunk Scheduling for Batched Robot Policy Serving</h3>
+          <p>Armory 是一个面向多机器人共享云端 GPU 推理的批处理调度系统，由 Georgia Tech…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_semantic_anchoring_robotic_action_repres_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Semantic Anchoring for Robotic Action Representations</h3>
+          <p>本文提出一种名为“Spatial…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_uncovering_mitigating_positional_blind_s_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</h3>
+          <p>本文提出并系统研究了视觉-语言-动作模型（VLA）中的位置性盲区（Positional Blind Spots,…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_reuss_multimodal_diffusion_transform_2024/">
+          <span class="entry-type">论文</span>
+          <h3>MDT</h3>
+          <p>MDT（Multimodal Diffusion…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_guo_on_robustness_of_vision_langua_2025/">
+          <span class="entry-type">论文</span>
+          <h3>RobustVLA</h3>
+          <p>RobustVLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_resmimic_from_general_motion_t_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ResMimic｜从一般运动跟踪到通过残差学习的人形全身移动操作</h3>
+          <p>ResMimic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_robobridge_modular_framework_bridging_po_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RoboBRIDGE: A Modular Framework for Bridging Policies to Robust Real-World Robotic Agents</h3>
+          <p>RoboBRIDGE 是一个策略无关的模块化编排框架，通过 Monitor、Perceptor、Planner、Controller 与 Robot Interface…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_clap_direct_vlm_to_vla_adaptat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CLAP: Direct VLM-to-VLA Adaptation via Language-Action Grounding</h3>
+          <p>CLAP（Causal Language-Action…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_yin_deepthinkvla_enhancing_reasoni_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DeepThinkVLA</h3>
+          <p>DeepThinkVLA 是腾讯微信 AI 团队于 2025 年提出的视觉-语言-动作模型，旨在增强机器人操作中的推理能力。其核心贡献在于通过系统实验诊断出 CoT 推理在 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wcm_world_critic_model_vision_language_2026/">
+          <span class="entry-type">论文</span>
+          <h3>WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</h3>
+          <p>WCM（World Critic…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_chen_internvla_m1_a_spatially_guide_2025/">
+          <span class="entry-type">论文</span>
+          <h3>InternVLA-M1</h3>
+          <p>InternVLA-M1 是由上海人工智能实验室 Intern Robotics 团队于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ye_dream_vl_dream_vla_open_vision_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Dream-VLA</h3>
+          <p>Dream-VL 与 Dream-VLA 是由香港大学提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_rl_bootstrapping_openvla_oft_novel_robot_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RL Bootstrapping of OpenVLA-OFT for a Novel Robot Embodiment</h3>
+          <p>本文研究在零演示条件下，利用强化学习（RL）将视觉-语言-动作模型（VLA）OpenVLA-OFT 引导至一种新型缆索驱动并联机器人（CDPR）的可行性。作者提出两阶段训练流程（PPO 后接…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_stemvlaan_open_source_vision_l_2026/">
+          <span class="entry-type">论文</span>
+          <h3>StemVLA:An Open-Source Vision-Language-Action Model with Future 3D Spatial Geometry Knowledge and 4D Historical Representation</h3>
+          <p>StemVLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_multi_view_unified_camera_fields_geometr_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</h3>
+          <p>MVUCF 是一个仅训练时的框架，在动作模块消费的 token 格子上联合注入度量深度与跨视角对应两种几何属性，使纯 RGB 输入的 VLA 策略获得可用的 3D 结构感知。该方法由 NVIDIA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_corridorvla_explicit_spatial_c_2026/">
+          <span class="entry-type">论文</span>
+          <h3>CorridorVLA: Explicit Spatial Constraints for Generative Action Heads via Sparse Anchors</h3>
+          <p>CorridorVLA 是一种通过预测稀疏空间锚点（如末端执行器的 Δ-位置）来为动作生成施加显式容差约束的 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liang_mm_act_learn_from_multimodal_p_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MM-ACT</h3>
+          <p>MM-ACT 是由上海人工智能实验室、上海交通大学、香港大学、中国科学技术大学、复旦大学和浙江大学联合提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">评测基准</span>
+          <h3>ManiSkill</h3>
+          <p>面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_axis_growable_community_driven_data_engi_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</h3>
+          <p>AXIS 是一个社区驱动的可增长机器人操作数据引擎，由 Axis Robotics 团队构建，核心贡献在于将数据收集从封闭集中式范式转变为开放、持续增长的结构化流程。它通过浏览器端…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kuzmenko_moira_modular_instruction_rout_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MoIRA</h3>
+          <p>MoIRA 是 2025 年由基辅莫希拉大学团队提出的模块化指令路由架构，用于多任务机器人操控。其核心贡献在于设计了一种与架构无关的 MoE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_bendikas_focusing_on_what_matters_objec_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Oat-VLA</h3>
+          <p>Oat-VLA 是 2025 年由 UCL 人工智能中心、Qualcomm AI Research…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_lola_long_horizon_latent_actio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>LoLA</h3>
+          <p>LoLA（Long Horizon Latent Action Learning）是由中国科学院微电子研究所、中国科学院大学和Microsoft…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_turbovla_real_time_vision_language_actio_2026/">
+          <span class="entry-type">论文</span>
+          <h3>TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</h3>
+          <p>TurboVLA 提出一种直接 V+L→A 的视觉-语言-动作执行范式，用 DINOv3 视觉编码器与 BERT 文本编码器替代 LLM 中心接口，通过双向交叉注意力交互后由 ACT…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_redflow_redirect_failure_into_action_lev_2026/">
+          <span class="entry-type">论文</span>
+          <h3>RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy</h3>
+          <p>RedFlow…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dlam_distributional_latent_actions_tempo_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DLAM: Distributional Latent Actions with Temporal Constraints</h3>
+          <p>DLAM 将潜在动作模型（LAM）中每个转移的确定性点估计升级为对角高斯分布，使时间一致性约束同时监督均值和逐维方差。该方法在无动作视频上预训练，再冻结编码器迁移到 π0 策略，在…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">核心内容</a><ul>
+<li><a href="#libero">LIBERO的定义与定位</a></li>
+<li><a href="#libero_1">LIBERO的关键信息</a></li>
+</ul>
+</li>
+<li><a href="#_2">抽象</a></li>
+<li><a href="#_3">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

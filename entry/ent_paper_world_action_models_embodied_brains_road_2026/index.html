@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</h1>
+      <p class="entry-name-en">From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>这是一篇由机器人领域研究者撰写的路线图/立场论文，提出将“世界行动模型（WAM）”作为通往“具身大脑（embodied brain）”的实验路径，核心贡献是定义了WAM预测契约、大脑意图接口、物理栈（harness）及配套的Embodiment/Task/Trace Card记录协议。论文主张通过显式化预测-行动接口、统一数据与评估语义，解决物理智能中模型、目标与生态系统三个耦合鸿沟，实现跨具身、跨任务的累积式进步。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11689" target="_blank" rel="noopener">arXiv:2607.11689 From World Action Models to Embodied Brains: A Roadmap for Open-World Physical I</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这篇论文真正改变的是物理智能领域的“接口观”。当前机器人学习社区的主流做法是端到端训练或模块化堆叠，但每个模块（预测模型、策略、控制器、数据集）都隐式编码了具身假设——更换一个夹爪或控制器，往往意味着整个模型级推理需要重新学习。作者指出，障碍不是数据多样性本身，而是“语义仍然隐藏的多样性”：预测接口暴露不同后果变量，数据标注描述不同决策上下文，运行时逻辑隐藏表征转换。这使得即使单个系统在改进，组件也无法独立替换、跨项目经验无法积累。</p>
+<p>论文将问题系统化为三个耦合鸿沟：模型与表示差距（缺乏持久可操作的物理状态描述）、目标与标准化差距（端任务成功掩盖预测正确性与控制器依赖）、生态系统与系统差距（缺乏类似数字智能体的成熟接口处理空间关系、坐标系与不确定性）。这改变了讨论框架——从“谁的模型更强”转向“谁定义了可比较的接口”，为跨团队、跨具身的协作提供了共同语言。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="-">核心架构：大脑-外设分离</h3>
+<ul>
+<li><strong>具身大脑（embodied brain）</strong>：负责物理推理与意图表达，输出“中间意图表示”（预期状态转换或能力请求），而非执行器命令。</li>
+<li><strong>物理栈（physical harness）</strong>：将意图落地为可执行链，负责意图接地、能力解析、验证、执行协调与恢复。</li>
+<li><strong>工具（tool）与工具模型（tool model）</strong>：工具是物理/数字能力端点（夹爪、基座、相机）；工具模型是支持能力的学得模块（抓取规划器、导航策略）。</li>
+</ul>
+<h3 id="wam">WAM预测契约</h3>
+<p>给定物理上下文与候选干预，模型须暴露决策相关后果，并声明四个属性：
+- <strong>预测时域（horizon）</strong>：后果有效的时间范围
+- <strong>参考框架（reference frame）</strong>：后果在哪个坐标系/实体上定义
+- <strong>不确定性（uncertainty）</strong>：置信度估计
+- <strong>有效性条件（validity conditions）</strong>：预测成立的前提</p>
+<p>后果表示可为视频、几何、结构化状态、预测性潜在表示或混合形式。</p>
+<h3 id="_3">三个轻量记录协议</h3>
+<ul>
+<li><strong>Embodiment Card</strong>：形态、传感器、坐标约定、校准、控制速率、动作边界、可用工具、安全限制</li>
+<li><strong>Task Card</strong>：目标、场景上下文、允许观察与能力、约束、成功标准、有意义失败模式</li>
+<li><strong>Trace Card</strong>：将同步观察链接到大脑请求、表示版本、所选工具链、验证器决策、控制器状态、执行结果、修正与数据质量标志</li>
+</ul>
+<h3 id="-_1">三种预测-控制接口家族（非互斥）</h3>
+<ol>
+<li><strong>显式观测/几何预测</strong>：像素空间视觉轨迹、生成视频、文本计划、预测物体流</li>
+<li><strong>预测性潜在表示</strong>：视频扩散模型内的预测特征、联合视频/行动扩散</li>
+<li><strong>潜在转换/行动抽象</strong>：离散帧间潜在行动、预测未来潜在状态</li>
+</ol>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li>接口选择与架构是否模块化/联合训练<strong>正交</strong>——联合训练允许，但中间责任与变换须保持可检查</li>
+<li>表征标准化分两时域：近期统一语义字段（允许语言、结构化状态、学习令牌、视频、几何竞争）；长期共享世界中心3D/4D表示是研究目标而非既定方案</li>
+<li>五阶段共同演化路径：大脑模型→工具模型+harness→数据+任务→闭环学习→生态系统协调；已接纳轨迹反馈更新各层</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>预测契约作为一等公民</strong>：首次将“后果声明”（时域、框架、不确定性、有效性条件）提升为WAM的核心接口要求。这改变了评估方式——不再只看端任务成功率，而是检查模型是否暴露了决策相关的中间信号。其新颖性在于把“预测什么”从“怎么预测”中解耦，使不同架构（视频生成、潜在表示、结构化状态）可在同一契约下比较。</p>
+</li>
+<li>
+<p><strong>大脑-外设分离的“能力契约”</strong>：不是简单的模块化主张，而是定义了工具分层组合的语义——例如“驱动钉子”可分解为手臂运动、夹爪控制、锤子获取与受限冲击。这使工具替换（换夹爪、换控制器）只改变能力声明与适配器，不迫使模型级推理重学。其重要性在于将“可替换性”从工程愿望变为可测试的设计假设。</p>
+</li>
+<li>
+<p><strong>Trace Card作为可回放的物理记录</strong>：将决策上下文、转换过程、执行状态、验证器输出与结果组织为统一记录格式。这使失败归因成为可能——区分意图错误、翻译错误、工具选择错误、控制错误与环境响应错误。这是从“收集数据”到“构建可复用决策上下文”的范式转变，直接支撑闭环后训练与回归门控。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<p>论文为路线图/综述性质，未报告成功率、误差或参数数量等定量实验结果。其“实验”体现为对现有数据资源与系统的系统化盘点：</p>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>关键数字（逐字来自白名单）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Something-Something V2</td>
+<td>220847 clips（官方V2版本）</td>
+</tr>
+<tr>
+<td>Ego4D</td>
+<td>3670 hours，74 locations（论文未明确）</td>
+</tr>
+<tr>
+<td>EPIC-KITCHENS-100</td>
+<td>100 hours，90k action segments（论文未明确），45 kitchens（论文未明确）</td>
+</tr>
+<tr>
+<td>Open X-Embodiment</td>
+<td>22 robot embodiments，527 skills</td>
+</tr>
+<tr>
+<td>DROID</td>
+<td>76000 trajectories，350 hours，564 scenes，86 tasks</td>
+</tr>
+<tr>
+<td>BridgeData V2</td>
+<td>50365 demonstrations + 9731 scripted rollouts，24 environments</td>
+</tr>
+<tr>
+<td>AgiBotWorld Colosseo</td>
+<td>超过100万 trajectories（论文未明确），217 tasks，5 scenarios</td>
+</tr>
+<tr>
+<td>LIBERO</td>
+<td>Four suites，130 tasks</td>
+</tr>
+<tr>
+<td>Meta-World</td>
+<td>50 distinct tasks</td>
+</tr>
+</tbody>
+</table>
+<p>表1比较了代表性预测-控制接口系统（UniPi、VLP、Gen2Act、π₀.₇、UWM、LAPA等），但作者明确指出评估设置在不同机器人、任务与协议间<strong>不可直接比较</strong>。论文提出四层互补证据层（表3）与七层分层评估协议（预测性物理推理、大脑-外设接地、策略与控制、工具编排、验证与安全、外设与可追溯性、自我改进），但均为提议维度，未附数值。</p>
+<h2 id="_7">边界与局限</h2>
+<p>作者明确承认以下边界：
+- <strong>模块化分离是设计假设，不是保证结果</strong>——需通过表示落地、工具替换与跨具身适应来测试，论文未提供验证
+- <strong>预测性潜在表示的物理内容不可直接检查</strong>——必须通过下游消融与控制实验建立，不能仅从表示本身假设
+- <strong>潜在行动不自动是机器人行动</strong>——可能编码运动、视角变化或其他视觉变化，与特定具身控制空间的对应关系须被学习和评估
+- <strong>统一架构是否在跨具身或控制机制上更优尚未确立</strong>
+- <strong>自主交互数据的实用性取决于轨迹质量、结果归因与防止强化模型错误的保障措施</strong>——π₀.₇的自主数据规模未公开指定
+- <strong>人类视频包含相机运动、部分可观测性与人类特定运动学</strong>，且缺乏目标机器人行动空间中的时间对齐命令流
+- <strong>规模本身不能解决传感、行动空间、控制频率、任务定义或收集协议中的差异</strong>
+- 图7-图12中的连接表示分析/设计依赖，非经验确立的因果效应；论文未提供训练配置、推理频率或硬件细节</p>
+<h2 id="_8">工程启示</h2>
+<p>对复现与工程选型的直接指导：</p>
+<ol>
+<li>
+<p><strong>先核对接口语义，再比较性能</strong>：任何跨系统比较前，先确认各方法是否声明了预测时域、参考框架、不确定性与有效性条件。若未声明，端任务分数对比无意义——可能一个系统利用了狭窄基准规律性，另一个在正确预测后果但控制器较弱。</p>
+</li>
+<li>
+<p><strong>最容易踩坑处：潜在表示的“假接地”</strong>：学习到的视觉token对控制器无操作意义，除非控制器共享其表示或接收适配器。复现LAPA、UWM类方法时，务必检查视觉转换代码与机器人行动空间的对应关系是否被显式学习——否则“预测成功”可能只是视觉相似，而非物理后果正确。</p>
+</li>
+<li>
+<p><strong>Trace Card是调试利器，但字段设计决定成败</strong>：建议从最小字段集开始（观察、大脑请求、所选工具链、验证器输出、控制器状态、结果），先验证失败归因能力，再扩展。字段过少无法区分意图错误与控制错误，过多则标注成本失控。</p>
+</li>
+<li>
+<p><strong>数据收集应记录决策上下文，而非仅轨迹</strong>：一条操作轨迹若缺少校准、参考框架、动作边界、控制器假设或失败标注，对后果建模与工具替换提供的证据较弱。BridgeData V2的50365条演示与9731条脚本rollout（由表内数值计算）若未附Embodiment Card，其复用价值将大打折扣。</p>
+</li>
+<li>
+<p><strong>闭环学习须设准入闸门</strong>：候选更新在晋升前须通过回归与安全门（如LIBERO-Safety、ROBOSHACKLES检查安全失败）。否则自主交互数据会强化模型自身错误——这是π₀.₇类方法最需警惕的自我强化循环。</p>
+</li>
+</ol>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.11689</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_dataset_droid/">DROID 机器人操作数据集</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zhu_unified_world_models_coupling_2025/">UWM</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_dataset_bridgedata_v2_2023/">BridgeData V2</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_du_learning_universal_policies_vi_2023/">UniPi</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_ye_latent_action_pretraining_from_2024/">LAPA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_world_action_models_embodied_brains_road_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_du_learning_universal_policies_vi_2023/">
+          <span class="entry-type">论文</span>
+          <h3>UniPi</h3>
+          <p>UniPi 是 2023 年由 MIT、Google DeepMind、UC Berkeley、Georgia Tech 和 University of Alberta…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_droid/">
+          <span class="entry-type">数据集</span>
+          <h3>DROID 机器人操作数据集</h3>
+          <p>一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhu_unified_world_models_coupling_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UWM</h3>
+          <p>Unified World Models (UWM) 是由华盛顿大学 Paul G. Allen 计算机科学与工程学院与丰田研究所联合提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ye_latent_action_pretraining_from_2024/">
+          <span class="entry-type">论文</span>
+          <h3>LAPA</h3>
+          <p>LAPA 是由 KAIST、华盛顿大学、微软研究院、NVIDIA 和 Allen Institute for AI 于 2024…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_bridgedata_v2_2023/">
+          <span class="entry-type">数据集</span>
+          <h3>BridgeData V2</h3>
+          <p>广泛用于模仿学习的带语言指令的桌面操作数据集。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#-">核心架构：大脑-外设分离</a></li>
+<li><a href="#wam">WAM预测契约</a></li>
+<li><a href="#_3">三个轻量记录协议</a></li>
+<li><a href="#-_1">三种预测-控制接口家族（非互斥）</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

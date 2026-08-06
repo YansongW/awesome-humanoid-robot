@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</h1>
+      <p class="entry-name-en">DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>DeVA 提出一种解耦的视频-动作策略学习架构，将视觉动态建模与动作预测分配给独立专家，并通过多级特征交互与物理显著引导（affordance 与相对深度）提升机器人操作策略的样本效率与泛化能力。该方法在 RoboCasa、LIBERO、LIBERO-Plus 及真实双臂平台上均显著超越现有 VLA/VAM 基线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.24159" target="_blank" rel="noopener">arXiv:2607.24159 DeVA: Decoupled Video-Action Model with physical guidance for robot policy learn</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 模型依赖静态图文预训练，对物理动态与时间因果性监督不足，控制知识需从下游演示中重新学习，导致对任务特定数据量要求极高。而 VAM 虽引入视频预训练，但统一公式（shared backbone）迫使视觉生成与控制预测共享单一特征空间，限制了模态特定特征学习；早期或双 DiT 架构仅从选定骨干层与固定去噪阶段提取特征，未充分利用视频骨干中分布的各层互补抽象。DeVA 真正改变的是将“视频理解”与“动作生成”从架构层面解耦，并首次将场景几何（相对深度）与交互区域（affordance）作为显式物理引导注入动作预测，而非仅依赖隐式视频-动作目标。这使控制相关特征不再需要完全从下游演示中隐式涌现，而是通过预训练视频骨干的多级表示与物理先验直接引导，显著降低了对任务特定演示数量的依赖。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">解耦双专家架构</h3>
+<ul>
+<li><strong>视频专家</strong>：初始化自 Cosmos-Predict2（潜在视频扩散 transformer，约 1.96B 参数），负责未来视觉动态建模，使用标准 EDM 去噪目标。</li>
+<li><strong>动作专家</strong>：基于 GR00T-N1.5 动作头的 action-DiT 架构（约 564M 参数），以中间视频表示、T5 语言嵌入和物理引导为条件，无独立视觉编码器，使用 flow-matching 目标训练。</li>
+</ul>
+<h3 id="_4">多级特征交互</h3>
+<ul>
+<li>从视频骨干早到晚阶段<strong>均匀采样 8 层</strong>，通过层间交叉注意力路由到动作专家对应层。</li>
+<li>12 个可学习桥接 token（维度 1024）通过自注意力聚合视频上下文并引入动作流。</li>
+</ul>
+<h3 id="_5">物理显著引导</h3>
+<ul>
+<li>两个轻量 DPT 风格解码器（affordance 与相对深度，共约 36.3M 参数，占训练参数 1.4%）附加到视频骨干，从不相交中间块（affordance 用块 {6,13,20,27}，深度用 {3,10,17,24}）采样特征。</li>
+<li>Affordance 定义为图像平面上末端执行器位置的条件概率，语言特征通过 FiLM 层融入；仿真中用高斯核（σ=1.0）从真实接触位置构造目标，真实数据用现成模型生成伪标签。</li>
+<li>深度用离线视频深度预测模型（Video Depth Anything）估计，预测反转并归一化到 [0,1]。</li>
+<li>从解码器最终时空块提取特征，投影到视频特征空间分辨率并展平，沿通道维度与多级视频表示拼接，作为额外键值提供给动作交叉注意力层。</li>
+</ul>
+<h3 id="_6">两阶段训练</h3>
+<ul>
+<li><strong>Stage 1</strong>：预热视频专家和物理解码器 10K 步，联合学习未来视觉动态、affordance 和深度，损失 L_v = L_video + λ_aff L_aff + λ_depth L_depth（λ_aff=λ_depth=1.0）。</li>
+<li><strong>Stage 2</strong>：引入动作专家并联合优化，物理解码器冻结但继续监督视频特征并提供引导，总损失 L = L_v + L_act。</li>
+<li>优化：FusedAdamW，峰值学习率 1×10⁻⁴，warmup 1,000 步，线性衰减至 3×10⁻⁵（30k 步）后降至 6×10⁻⁶，梯度裁剪 1.0，批大小 8/GPU（全局 64），FSDP 全分片（8 GPU），bfloat16。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li><strong>架构级解耦</strong>：将视觉生成与动作预测分配给独立 transformer 专家，各自保留独立参数与 token 表示，避免共享单一特征空间导致的模态特定特征损失。这是对统一公式 VAM 的根本性修正。</li>
+<li><strong>物理显著引导</strong>：首次将 affordance（交互区域）与相对深度（场景几何）作为显式中间监督与推理时条件注入动作预测。这不仅提供稠密物理先验，还通过 FiLM 层与通道拼接实现任务条件化引导，使模型聚焦于视频中与动作最相关的信息。</li>
+<li><strong>多级特征交互与去噪步条件化</strong>：从视频骨干均匀采样 8 层中间表示进行交叉注意力，而非仅用最终层或固定去噪步；消融显示多步条件化（53.2%）显著优于最终步（49.6%），且冻结视频骨干导致性能骤降（22.4%），证明联合适应视频表示比简单特征提取更关键。</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="_9">仿真基准</h3>
+<ul>
+<li><strong>RoboCasa</strong>（24 任务，每任务 50 演示，3,600 次 rollout）：DeVA 成功率 72.0%，同数据预算下提升最高 22.0 点（由表内 50.0→72.0 计算）。对比 UVA（50.0）、Cosmos-Policy（67.1）、GR00T-N1.5 + HAMLET（66.4）。</li>
+<li><strong>LIBERO</strong>（4 套件 40 任务）：DeVA 平均 99.0%，超越 Cosmos-Policy（98.5）、DiT4DiT（98.6）、CogVLA（97.4）。</li>
+<li><strong>LIBERO-Plus</strong>（10,030 变体）：DeVA 平均 80.8%，超过最强基线 OpenVLA-OFT（69.6）11.2 点（由表内 69.6→80.8 计算）；从标准 LIBERO 99.0% 下降 18.2 点（由表内 99.0→80.8 计算）。</li>
+</ul>
+<h3 id="14-dof-3">真实世界（14-DoF 双臂平台，3 任务）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Handover Marker</th>
+<th>Lift Pot</th>
+<th>Pick Up Bottles</th>
+<th>平均</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GR00T-N1.6</td>
+<td>0.88</td>
+<td>0.45</td>
+<td>0.10</td>
+<td>0.48</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>0.70</td>
+<td>0.55</td>
+<td>0.75</td>
+<td>0.67</td>
+</tr>
+<tr>
+<td>Cosmos-Policy</td>
+<td>0.45</td>
+<td>0.23</td>
+<td>0.35</td>
+<td>0.34</td>
+</tr>
+<tr>
+<td><strong>DeVA</strong></td>
+<td><strong>0.90</strong></td>
+<td><strong>0.68</strong></td>
+<td><strong>0.65</strong></td>
+<td><strong>0.74</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="55k">消融（约 55K 步检查点）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅动作模型</td>
+<td>19.8%</td>
+</tr>
+<tr>
+<td>目标图像预测</td>
+<td>25.8%</td>
+</tr>
+<tr>
+<td>未来视频预测</td>
+<td>36.8%</td>
+</tr>
+<tr>
+<td>解耦架构 + 多级特征迁移</td>
+<td>66.0%</td>
+</tr>
+<tr>
+<td>+ affordance + 相对深度</td>
+<td><strong>72.0%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>特征交互机制消融：直接自注意力 66.79% &gt; 直接交叉注意力 66.50% &gt; 特定层交叉注意力 63.75% &gt; 聚合注意力后交叉注意力 62.75%。去噪步条件化：多步 53.2% &gt; 最终步 49.6% &gt; 冻结骨干 22.4%。</p>
+<h2 id="_10">边界与局限</h2>
+<p>论文未明确探索通过潜在空间预测与加速采样提升推理效率；未在真实世界使用额外合成轨迹；未报告 LIBERO-Plus 中七种扰动维度的逐维度分解结果（仅提及 "Robot Init" 与 "Camera View" 示例）。继承预训练视频骨干的计算成本使训练比仅动作策略学习更昂贵，联合去噪视频与动作流引入额外推理开销。额外变换层会降低性能，表明过度处理可能削弱预训练视频骨干已编码的信息。深度目标不需要度量精度或跨视图精确尺度一致性，对轻微跨视图不一致和时间漂移鲁棒；affordance 监督对伪标签中的中等噪声和定位误差容忍，但真实数据伪标签质量依赖现成模型。</p>
+<h2 id="_11">工程启示</h2>
+<p>复现时先核对三处：<strong>数据归一化</strong>（真实 YAM 数据用 1st/99th 百分位，仿真用 min-max，动作掩码 (6,−1,6,−1) 表示 delta 与绝对维度混合）；<strong>视频骨干初始化</strong>（必须使用 Cosmos-Predict2 预训练 480p/16-fps 检查点，冻结骨干会导致性能从 49.6% 骤降至 22.4%）；<strong>两阶段训练切换</strong>（Stage 1 预热 10K 步后必须冻结物理解码器，但继续监督视频特征）。最容易踩坑的是多视角平铺布局：RoboCasa 三视图用 2×2 网格（第四 tile 留空），LIBERO 两视图水平平铺，真实数据三视图水平平铺，布局差异对性能影响可忽略但需保持一致。训练约 55K 步（仿真）或 40K 步（真实），8 GPU FSDP 下批大小 8/GPU，若显存不足优先降分辨率而非批大小。消融显示直接自注意力（66.79%）优于交叉注意力变体，若需简化可优先尝试直接自注意力方案。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.24159</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_pai_mimic_video_video_action_model_2025/">VAM</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_li_cogvla_cognition_aligned_visio_2025/">CogVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_deva_decoupled_video_action_model_physic_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_pai_mimic_video_video_action_model_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VAM</h3>
+          <p>mimic-video (VAM) 是由 mimic robotics、Microsoft Zurich、ETH Zurich、ETH AI Center 及 UC Berkeley 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_cogvla_cognition_aligned_visio_2025/">
+          <span class="entry-type">论文</span>
+          <h3>CogVLA</h3>
+          <p>CogVLA 是哈尔滨工业大学于 2025 年提出的认知对齐视觉-语言-动作模型，通过指令驱动的路由与稀疏化机制提升机器人操作效率。该模型在 LIBERO 基准上达到 97.4%…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">解耦双专家架构</a></li>
+<li><a href="#_4">多级特征交互</a></li>
+<li><a href="#_5">物理显著引导</a></li>
+<li><a href="#_6">两阶段训练</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#_9">仿真基准</a></li>
+<li><a href="#14-dof-3">真实世界（14-DoF 双臂平台，3 任务）</a></li>
+<li><a href="#55k">消融（约 55K 步检查点）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

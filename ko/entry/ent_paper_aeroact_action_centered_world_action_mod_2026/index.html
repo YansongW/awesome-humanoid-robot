@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight</h1>
+      <p class="entry-name-en">AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Language-conditioned quadrotor flight requires a policy to ground semantic goals, anticipate the visual consequences of ego-motion, and output control references that remain smooth and dynamically executable under rapidly changing first-person views. Existing aerial vision-language navigation and vision-language-action methods commonly use discrete actions, high-level waypoints, or instantaneous.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14997" target="_blank" rel="noopener">arXiv:2607.14997 AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>AeroAct는 실제 비행에서 처음으로 구현된 행동 중심 세계-행동 모델(WAM)로, 언어 조건 쿼드로터 비행을 위한 모델이다. Wan2.1-1.3B 비디오 확산 Transformer를 기반으로 하며, 배포 시 미래 비디오를 생성하지 않고 로컬 5차 궤적 파라미터 블록만 디코딩하며, 미래 시각 예측은 훈련 시의 밀집 보조 감독으로만 사용된다. 핵심 기여는 비디오 중심 WAM의 추론 비용과 오류 누적 문제를 행동 중심 설계와 블록형 인과 마스크를 통해 아키텍처 수준에서 해결한 것이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>공중 시각-언어 내비게이션과 VLA 방법은 오랫동안 근본적인 모순에 시달려 왔다: 행동 공간이 이산 웨이포인트나 순간 속도 명령으로 제한되어 "비행 행동이 미래 관측을 어떻게 바꾸는지"에 대한 감독이 부족하거나, 비디오 중심 WAM으로서 자기회귀적으로 미래 비디오를 생성하는 추론 지연과 시각 오류 누적으로 실시간 비행에서 사용할 수 없었다. AeroAct가 진정으로 바꾼 것은 이 트레이드오프이다——"미래 예측"을 배포 시 필수 계산에서 훈련 시의 보조 감독 신호로 격하시켜, 세계 모델의 의미 이해 능력을 유지하면서 추론 지연을 비행 가능한 범위로 압축했다.</p>
+<p>이 변화는 단순한 엔지니어링 최적화가 아니라 WAM 설계 철학에 대한 수정이다: 세계 모델의 가치는 테스트 시 비디오 생성에 있는 것이 아니라, 훈련 시 모델이 행동과 시각 결과의 결합을 학습하도록 강제하는 데 있다. AeroAct는 블록형 인과 마스크로 이를 구현한다——행동 스트림은 배포 시 자기회귀적으로 디코딩되고, 미래 시각 토큰은 훈련 시에만 그래디언트 전파에 참여한다. 이를 통해 4단계 노이즈 제거에서 추론 시간이 0.296초에서 0.184초로 감소하여(37.8% 절약), 처음으로 WAM이 실제 쿼드로터에서 폐루프 방식으로 언어 명령을 실행할 수 있게 되었다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">문제 공식화</h3>
+<ul>
+<li>관측 이력 𝒪_t^h = (o_{t-(h-1)Δ}, …, o_t), h는 참조 프레임 수, Δ는 시간 스텝</li>
+<li>예측 행동 블록 a_{t:t+p-1} 길이 p, 구현에서 Δ=3, p=24</li>
+<li>통합 모델 g_Θ는 행동 예측과 시각 결과 모델링을 동시에 수행하며, 각 블록은 K=8개의 미래 시각 프레임과 24개의 저수준 행동 스텝을 포함</li>
+</ul>
+<h3 id="_5">아키텍처 설계</h3>
+<ul>
+<li>비디오 VAE가 클립을 시공간 잠재 토큰으로 인코딩하고, 3D RoPE 위치 인코딩 후 참조 토큰 T_o와 미래 토큰 T_f로 분리</li>
+<li>고유수용감각과 행동 블록은 MLP를 통해 상태 토큰 T_s와 행동 토큰 T_a로 인코딩(은닉 크기 128 및 256)</li>
+<li>명령은 사전 훈련된 텍스트 인코더를 통해 언어 토큰 T_l로 인코딩되어 교차 주의 컨텍스트로 사용</li>
+<li>비언어 토큰은 T_t=[T_s;T_o;T_a;T_f]로 연결</li>
+</ul>
+<h3 id="_6">블록형 인과 마스크</h3>
+<ul>
+<li>상태 및 참조 토큰은 예측 토큰을 주의할 수 없음</li>
+<li>행동 토큰은 상태, 참조 및 행동 토큰만 주의</li>
+<li>미래 시각 토큰은 모든 토큰을 주의</li>
+<li>추론 시 T_f를 생략하고 행동 스트림만 디코딩하여 테스트 시 비디오 생성 불필요</li>
+</ul>
+<h3 id="_7">행동 공간</h3>
+<ul>
+<li>각 행동은 로컬 궤적 세그먼트를 파라미터화하며, 각 차원은 5차 다항식 p_μ^l(t)=α_0+α_1 t+α_2 t²+α_3 t³+α_4 t⁴+α_5 t⁵</li>
+<li>행동 a=[r,θ,ψ,v_end^{l⊤},a_end^{l⊤}]^⊤∈ℝ⁹, T=2초 로컬 궤적 세그먼트 끝점 지정</li>
+<li>고유수용감각 입력 s=[v^{l⊤},a^{l⊤},u_z^{l⊤}]^⊤∈ℝ⁹(로컬 속도, 가속도, body-z 단위 벡터)</li>
+</ul>
+<h3 id="self-guidance">자기 유도(Self-Guidance)</h3>
+<ul>
+<li>추론 n+1이 추론 n의 블록 만료 전에 시작되면 두 블록이 시간적으로 겹침</li>
+<li>노이즈 제거 시 이전 블록의 해당 접미사로 새 샘플의 접두사 속도를 대체하고 나머지 접미사만 샘플링</li>
+<li>모델 아키텍처를 변경하지 않고 샘플러만 제약하여 저수준 제어기가 시간적으로 일관된 궤적 참조를 얻도록 함</li>
+</ul>
+<h3 id="_8">훈련 목표</h3>
+<p>L(Θ) = L_act + λ_vis L_vis, 여기서 L_act와 L_vis는 각각 행동 및 미래 프레임 잠재 토큰의 확산/흐름 매칭 노이즈 또는 속도장 예측의 평균 제곱 오차.</p>
+<h3 id="_9">데이터 파이프라인</h3>
+<ul>
+<li>DiffAero는 공유 동역학 및 제어 인터페이스를 제공하며, 두 가지 렌더링 분기: Isaac Lab(실제 조명/재질이지만 장면 다양성 제한) 및 3DGS(가우시안 스플래팅 렌더링, 장면 확장 용이하지만 근거리 기하학적 충실도 낮음)</li>
+<li>세 가지 시뮬레이션 데모: Isaac tracking, Isaac reaching, 3DGS reaching</li>
+<li>실제 데이터: 핸드헬드 장치(어안 카메라 + Intel RealSense T265 + 경량 컴퓨터), T265가 오도메트리를 추정하고 시뮬레이션된 쿼드로터 자세로 변환</li>
+</ul>
+<h2 id="_10">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>행동 중심 WAM 설계</strong>: 비디오 확산 Transformer를 공중 내비게이션에 최초로 적용하면서 배포 시 비디오 생성 없이 유지. 이는 단순한 "비디오 분기 제거"가 아니라 블록형 인과 마스크를 통해 아키텍처 수준에서 행동 스트림이 자기회귀적으로 디코딩될 수 있도록 보장하고, 미래 시각 토큰은 훈련 감독으로만 사용. 비디오 중심 WAM의 추론 비용과 오류 누적이라는 근본적 모순을 해결.</p>
+</li>
+<li>
+<p><strong>자기 유도 샘플러 제약</strong>: 추론 블록이 시간적으로 겹칠 때 이전 블록의 해당 접미사로 새 샘플의 접두사 속도를 대체하고 나머지 접미사만 샘플링. 모델 아키텍처를 변경하지 않는 샘플러 수준의 혁신으로, 저수준 제어기의 궤적 시간 일관성 요구를 직접 해결하고 블록 간 불연속으로 인한 떨림을 방지.</p>
+</li>
+<li>
+<p><strong>이중 분기 시뮬레이션 데이터 파이프라인</strong>: Isaac Lab 분기는 고충실도 조명/재질/그림자를 제공하고, 3DGS 분기는 장면 및 객체 다양성을 제공. 이러한 상보적 설계는 900K 시뮬레이션 클립 규모에서 시각적 현실성과 의미적 다양성을 동시에 보장하며, 실제 세계 일반화의 핵심 지원.</p>
+</li>
+</ol>
+<h2 id="_11">실험 및 결과</h2>
+<h3 id="isaac-lab-20">폐루프 시뮬레이션(Isaac Lab, 20 에피소드)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>Success</th>
+<th>Collision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AeroAct tracking 1프레임</td>
+<td>20.0</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>AeroAct searching 1프레임</td>
+<td>90.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>AeroAct tracking 9프레임</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>AeroAct searching 9프레임</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>AeroAct-FT tracking 9프레임</td>
+<td>95.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>AeroAct-FT searching 9프레임</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">미발견 목표 객체 검색(표2)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>Avg final dist</th>
+<th>Success</th>
+<th>Collision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AeroAct 1프레임</td>
+<td>3.819</td>
+<td>75.0</td>
+<td>25.0</td>
+</tr>
+<tr>
+<td>AeroAct 9프레임</td>
+<td>1.983</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>AeroAct-FT 9프레임</td>
+<td>1.988</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">주파수 및 참조 프레임 소거(표3, 추적)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>View succ</th>
+<th>In-view</th>
+<th>Centered</th>
+<th>Dist</th>
+<th>Coll</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1프레임, 1 Hz</td>
+<td>20.0</td>
+<td>55.6</td>
+<td>21.8</td>
+<td>7.902</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>9프레임, 1 Hz</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>64.2</td>
+<td>3.436</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>9프레임, 2 Hz</td>
+<td>100.0</td>
+<td>99.3</td>
+<td>77.0</td>
+<td>2.245</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>9프레임, 5 Hz</td>
+<td>100.0</td>
+<td>98.7</td>
+<td>78.7</td>
+<td>2.375</td>
+<td>5.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">실제 세계</h3>
+<ul>
+<li>핸드헬드 장치로 858개 궤적, 332,429프레임, 약 3시간 데이터 수집</li>
+<li>실제 비행 플랫폼: OddityRC 35Pro + Intel RealSense D435i + Radxa ROCK 5C, 모션 캡처 시스템으로 상태 측정</li>
+<li>추론 지연 약 0.8초, ZeroMQ 통신, OM-MPC 궤적 추적</li>
+<li>"fly to the yellow foam mat" 명령이 실행 가능한 비행 명령을 성공적으로 생성하고 목표에 접근</li>
+</ul>
+<p>핵심 발견: 9개 참조 프레임(2.4초 시각 컨텍스트)이 성능의 분기점이며, 1프레임 구성은 추적 작업에서 거의 사용 불가능(Success 20.0, Collision 90.0)하지만 9프레임 구성은 100.0% Success와 0.0% Collision 달성. 주파수가 1Hz에서 5Hz로 증가해도 9프레임 구성에 미치는 영향이 제한적이며, 모델이 재계획 주파수에 민감하지 않음을 시사.</p>
+<h2 id="_13">경계 및 한계</h2>
+<ul>
+<li>실제 실험은 짧은 실내 궤적으로 제한되며, 시간 컨텍스트가 단일 단계 목표 도달을 처리하기에 충분하지만 여러 의미적 하위 목표, 복구 행동 또는 장기 기억이 필요한 복잡한 명령을 처리하기에는 부족</li>
+<li>실제 배포는 오프보드 추론(워크스테이션이 ZeroMQ로 통신)에 의존하며, 비디오 확산 백본의 계산 비용으로 인해 온보드 추론은 구현되지 않음</li>
+<li>논문은 더 공격적인 비행 동역학(고속 기동, 강풍 교란 등)에서의 강건성 성능을 명시하지 않음</li>
+<li>실제 데이터 수집은 실제 비행이 아닌 핸드헬드 장치로 수행되어 실제 비행과 다른 시각-운동 결합 분포를 도입할 수 있음</li>
+<li>3DGS 렌더링 분기는 근거리 기하학 및 조명 충실도에서 Isaac Lab보다 낮아 근거리 조작 성능에 영향을 줄 수 있음</li>
+</ul>
+<h2 id="_14">엔지니어링 시사점</h2>
+<p>재현 또는 다운스트림 사용 시 다음 핵심 사항을 먼저 확인:</p>
+<ol>
+<li>
+<p><strong>참조 프레임 수는 최우선 하이퍼파라미터</strong>: 1프레임과 9프레임의 성능 차이는 규모의 차이(추적 Success 20.0에서 100.0)이며, 모든 소거 실험은 먼저 시각 컨텍스트 길이가 충분한지 확인해야 함. 2.4초 시각 컨텍스트는 현재 구성의 하한이며, 더 복잡한 작업은 더 긴 컨텍스트가 필요.</p>
+</li>
+<li>
+<p><strong>자기 유도는 배포 필수 사항이지 선택 사항이 아님</strong>: 추론 주파수가 블록 만료 시간보다 높으면 자기 유도 샘플러 제약을 반드시 활성화해야 하며, 그렇지 않으면 저수준 제어기가 시간적으로 일관되지 않은 궤적 참조를 받게 됨. 구현 시 수식(6a)(6b)의 접두사 대체 로직에 주의——가장 오류가 발생하기 쉬운 부분.</p>
+</li>
+<li>
+<p><strong>데이터 파이프라인이 성능 병목</strong>: 900K 시뮬레이션 클립(500K tracking + 200K Isaac reaching + 200K 3DGS reaching)이 사전 훈련의 기반이지만, 실제 데이터는 858개 궤적에 불과. 다운스트림 장면이 훈련 분포와 크게 다르면 Isaac Lab 데이터 양을 늘리는 대신 3DGS 분기의 장면 다양성을 우선 확장하는 것이 좋음.</p>
+</li>
+<li>
+<p><strong>추론 지연 예산</strong>: 단일 RTX 5090에서 4단계 노이즈 제거 + 비디오 예측 비활성화 시 0.184초, VRAM 약 4,500MB. 대상 플랫폼의 연산 능력이 더 낮으면 비디오 VAE 인코딩을 잘라낼 수 있는지 먼저 확인——가장 큰 계산 핫스팟.</p>
+</li>
+<li>
+<p><strong>가장 함정에 빠지기 쉬운 부분</strong>: 블록형 인과 마스크 구현 세부 사항——행동 토큰은 미래 시각 토큰을 주의할 수 없지만, 미래 시각 토큰은 행동 토큰을 주의할 수 있음. 이 비대칭성은 주의 마스크 구현 시 매우 쉽게 반대로 작성되어 훈련 중 정보 누출 또는 배포 시 행동 스트림 디코딩 실패를 초래할 수 있음.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_aeroact_action_centered_world_action_mod_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">문제 공식화</a></li>
+<li><a href="#_5">아키텍처 설계</a></li>
+<li><a href="#_6">블록형 인과 마스크</a></li>
+<li><a href="#_7">행동 공간</a></li>
+<li><a href="#self-guidance">자기 유도(Self-Guidance)</a></li>
+<li><a href="#_8">훈련 목표</a></li>
+<li><a href="#_9">데이터 파이프라인</a></li>
+</ul>
+</li>
+<li><a href="#_10">핵심 혁신</a></li>
+<li><a href="#_11">실험 및 결과</a><ul>
+<li><a href="#isaac-lab-20">폐루프 시뮬레이션(Isaac Lab, 20 에피소드)</a></li>
+<li><a href="#2">미발견 목표 객체 검색(표2)</a></li>
+<li><a href="#3">주파수 및 참조 프레임 소거(표3, 추적)</a></li>
+<li><a href="#_12">실제 세계</a></li>
+</ul>
+</li>
+<li><a href="#_13">경계 및 한계</a></li>
+<li><a href="#_14">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

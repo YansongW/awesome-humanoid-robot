@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visual Whole-Body Control for Legged Loco-Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Visual Whole-Body Control for Legged Loco-Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Visual Whole-Body Control for Legged Loco-Manipulation</h1>
+      <p class="entry-name-en">Visual Whole-Body Control for Legged Loco-Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): xiaoze_P043. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 Visual Whole-Body Control (VBC)，一个用于四足机器人移动操作的分层学习框架，由低层全身目标到达策略和高层视觉任务规划策略组成。作者在仿真中通过三阶段训练（RL 低层、RL 特权教师、DAgger 蒸馏学生）实现完全自主的视觉抓取，并直接部署到 Unitree B1 + Z1 真实平台。核心贡献在于证明了分层架构结合全身行为（而非固定基座）能显著扩展操作工作空间，并实现了无需真实世界微调的 Sim2Real 迁移。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2403.16967" target="_blank" rel="noopener">arXiv:2403.16967 Visual Whole-Body Control for Legged Loco-Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这项工作的真正改变在于将四足机器人的腿部从“移动执行器”重新定义为“全身操作执行器”的一部分。此前基于学习的四足工作（如视觉避障、爬楼梯）只关注 locomotion，而移动操作系统（Zhang et al., Yokoyama et al.）均使用默认低层控制器，机器人身体高度固定，无法适应不同高度的物体。VBC 通过训练一个能跟踪任意末端执行器目标并同时调整身体姿态的低层策略，打破了这一限制——机器人可以弯曲前腿去捡地面物体，也可以站直去够桌面物体，这是对“操作工作空间”的实质性扩展。</p>
+<p>另一个关键改变是证明了端到端学习在此任务上不可行（Non-Hierarchical 基线成功率 0.0%），而分层训练（低层 RL + 高层 RL + 蒸馏）是可行路径。这为后续四足操作研究提供了重要的架构选择依据：与其强行端到端，不如将问题分解为“如何到达”和“去哪里”两个可独立优化的子问题。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">低层策略：全身目标到达</h3>
+<ul>
+<li><strong>命令空间</strong>：<span class="arithmatex">\(\mathbf{b}_t = [\mathbf{p}^{\text{cmd}}, \mathbf{o}^{\text{cmd}}, v_{\text{lin}}^{\text{cmd}}, \omega_{\text{yaw}}^{\text{cmd}}]\)</span>，其中末端执行器位置命令在高度不变坐标系中采样，确保轨迹位于球面上，避免受机器人高度影响。</li>
+<li><strong>观测</strong>：90 维向量，包含基座状态、手臂/腿部关节状态、上一步动作、环境潜变量 <span class="arithmatex">\(z_t \in \mathbb{R}^{20}\)</span>、步态时序参考。</li>
+<li><strong>动作</strong>：输出 12 个腿部关节目标角（PD 控制），手臂通过 IK 求解器 <span class="arithmatex">\(\Delta\theta = J^T(JJ^T)^{-1}e\)</span> 跟踪末端位姿。</li>
+<li><strong>训练</strong>：PPO + 正则化在线适应 (ROA)。损失函数为：
+$<span class="arithmatex">\(L = -L^{PPO} + \lambda\|z^\mu - \text{sg}[z^\phi]\|_2 + \|\text{sg}[z^\mu] - z^\phi\|_2\)</span>$
+其中 <span class="arithmatex">\(\lambda\)</span> 通过对偶梯度下降优化，RMA 是 <span class="arithmatex">\(\lambda=0\)</span> 的特例。适应模块 <span class="arithmatex">\(\phi\)</span> 仅在策略和编码器收敛后开始训练。</li>
+<li><strong>奖励</strong>：命令跟随（速度跟踪权重 1.0，偏航 0.5）、能量惩罚（关节力矩 -0.00002）、存活奖励、相位奖励（摆动相跟踪位置/速度权重 ±0.2）。</li>
+</ul>
+<h3 id="_4">高层策略：任务规划</h3>
+<ul>
+<li><strong>特权教师</strong>：观测 1094 维，包含 PointNet++ 预训练的物体形状特征 <span class="arithmatex">\(z_{\text{shape}} \in \mathbb{R}^{1024}\)</span>、物体相对位姿、本体感觉、基座速度。动作 <span class="arithmatex">\(\mathbf{a}_t = [\mathbf{p}^{\text{cmd}}, \mathbf{v}^{\text{cmd}}, p_{\text{gripper}}] \in \mathbb{R}^9\)</span>。</li>
+<li><strong>奖励</strong>：三阶段（接近、进展、完成）+ 辅助奖励。接近奖励 <span class="arithmatex">\(r_{\text{approach}} = \min(d_{\text{closest}} - d, 0)\)</span>，进展奖励 <span class="arithmatex">\(r_{\text{progress}} = \min(d - d_{\text{highest}}, 0)\)</span>，完成奖励 <span class="arithmatex">\(r_{\text{completion}} = 1\)</span>（物体抬升超过阈值）。辅助奖励包括动作平滑、关节加速度惩罚、身体/夹爪朝向物体。</li>
+<li><strong>课程</strong>：逐步添加奖励、使用上一步动作命令低层（模拟延迟）、裁剪高层动作输出。</li>
+</ul>
+<h3 id="_5">视觉学生策略</h3>
+<ul>
+<li><strong>观测</strong>：分割深度图像 + 本体感觉 + 上一步动作。仅用深度而非 RGB，因真实世界 RGB 与仿真差异大。</li>
+<li><strong>架构</strong>：两层 CNN（核 5 和 3）+ 64 维潜在 + GRU（128 隐藏）+ 两层 MLP（64 隐藏）。</li>
+<li><strong>训练</strong>：DAgger 在线模仿，先用教师采样初始化（类似 BC），再用学生采样并请求教师纠正。</li>
+</ul>
+<h3 id="_6">真实世界部署</h3>
+<ul>
+<li>硬件：Unitree B1 + Z1 臂 + 夹爪，两个 RealSense D435，板载 + Jetson Orin。</li>
+<li>频率：低层 50Hz，高层 10Hz，手臂 &gt;500Hz。</li>
+<li>Sim2Real：随机化相机位置/旋转，深度裁剪最小 0.2m，归一化，TrackingSAM 提供实时分割掩码。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>全身行为作为低层原语</strong>：训练一个通用的全身目标到达策略，而非针对特定任务优化。这使得高层策略可以专注于“去哪里”，而低层负责“如何到达”，包括弯曲腿部、调整身体高度等。这是对现有固定基座方法（Floating Base）的实质性改进，仿真中在 7 类物体上平均成功率提升约 30 个百分点。</p>
+</li>
+<li>
+<p><strong>高度不变坐标系采样</strong>：在采样末端执行器目标时，以机器人基座为原点、高度不变，确保采样轨迹始终位于球面上。这一设计避免了四足机器人高度变化对采样分布的影响，保证了低层策略在不同身体姿态下的泛化能力。这是一个看似简单但对训练稳定性至关重要的细节。</p>
+</li>
+<li>
+<p><strong>预训练物体形状特征</strong>：在教师策略中使用 PointNet++ 编码物体点云，提供 1024 维形状特征。消融实验显示，移除该特征后，碗类物体成功率从 74.16% 降至 17.95%，钻类从 56.70% 降至 9.04%，说明形状理解对抓取不同几何物体至关重要。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="i-34-7-300-episodes3">仿真结果（表 I，成功率 %，34 个物体，7 类，每类 300 episodes，3 个种子）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>球</th>
+<th>长盒</th>
+<th>方盒</th>
+<th>瓶</th>
+<th>杯</th>
+<th>碗</th>
+<th>钻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>VBC (Ours)</strong></td>
+<td><strong>70.51</strong></td>
+<td><strong>51.40</strong></td>
+<td><strong>76.53</strong></td>
+<td><strong>69.79</strong></td>
+<td><strong>81.22</strong></td>
+<td><strong>74.16</strong></td>
+<td><strong>56.70</strong></td>
+</tr>
+<tr>
+<td>VBC w.o. Shape Feature</td>
+<td>68.44</td>
+<td>33.88</td>
+<td>77.72</td>
+<td>54.18</td>
+<td>65.42</td>
+<td>17.95</td>
+<td>9.04</td>
+</tr>
+<tr>
+<td>Floating Base</td>
+<td>49.75</td>
+<td>32.71</td>
+<td>56.38</td>
+<td>45.37</td>
+<td>25.36</td>
+<td>27.18</td>
+<td>12.62</td>
+</tr>
+<tr>
+<td>Non-Hierarchical</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>VBC 在 7 类物体上均优于 Floating Base，尤其在杯（81.22% vs 25.36%）和碗（74.16% vs 27.18%）上差距显著，说明全身行为对低矮/不规则物体的抓取至关重要。</li>
+<li>移除形状特征后，碗和钻类成功率大幅下降，表明 PointNet++ 特征对几何复杂物体不可或缺。</li>
+<li>Non-Hierarchical 完全失败（0.0%），验证了分层架构的必要性。</li>
+<li>高度测试（图 10）：VBC 在 0.0m 至 0.6m 七个高度上均优于固定高度浮基基线，且优势在低高度（地面）时最明显。</li>
+</ul>
+<h3 id="1114-3-5">真实世界结果（图 11，14 个物体，3 个高度，每高度 5 次重置）</h3>
+<ul>
+<li>VBC 在所有高度设置上优于基线（固定腿部 + 遥操作到达）。</li>
+<li>基线在 0.0m 和 0.3m 完全失败（默认控制器固定机器人高度，无法够到地面物体），在 0.5m 时 VBC 仍普遍更好。</li>
+<li>成功定义为物体被抬起高于放置平面 0.1m。</li>
+</ul>
+<h2 id="_9">边界与局限</h2>
+<p>作者承认的局限包括：分层管线的复合误差（各模块需连贯精确）、RGBD 相机在反光物体上深度估计不精确、Unitree Z1 夹爪为喙状而非平行夹爪（易推开物体）、TrackingSAM 可能因相机偏移或遮挡丢失跟踪。论文未提及长期部署测试、其他机器人平台验证、室外复杂地形实验（仅在仿真中随机化地形类型），也未报告具体训练步数、学习率、批量大小等超参数。推理频率（低层 50Hz、高层 10Hz）已给出，但未说明端到端延迟对任务成功率的影响。</p>
+<h2 id="_10">工程启示</h2>
+<p>复现时需优先核对以下关键点：</p>
+<ol>
+<li>
+<p><strong>低层策略的泛化能力是基础</strong>：先验证低层策略能否在仿真中跟踪任意末端执行器目标（包括地面和桌面高度），再训练高层。若低层失败，高层无论如何优化都无法成功。建议先复现低层奖励权重（速度跟踪 1.0、偏航 0.5、基座高度 -5.0）并确认机器人能稳定小跑。</p>
+</li>
+<li>
+<p><strong>高度不变坐标系采样是低层训练的关键细节</strong>：若直接在世界坐标系采样目标，机器人高度变化会导致采样分布偏移，训练可能不收敛。务必实现球面采样逻辑。</p>
+</li>
+<li>
+<p><strong>ROA 的 <span class="arithmatex">\(\lambda\)</span> 调节</strong>：RMA（<span class="arithmatex">\(\lambda=0\)</span>）是特例，但 ROA 通过拉格朗日乘子动态调节适应模块的约束强度。复现时建议先跑通 RMA 再引入 ROA，否则难以判断性能差异来源。</p>
+</li>
+<li>
+<p><strong>形状特征不可省略</strong>：若省略 PointNet++ 特征，碗和钻类成功率会从 74%/57% 暴跌至 18%/9%。确保预训练特征在教师训练期间固定（不更新梯度）。</p>
+</li>
+<li>
+<p><strong>真实世界部署最易踩坑</strong>：深度图像裁剪最小 0.2m（避免近距离低质量数据）、TrackingSAM 的掩码质量直接影响学生策略输入。建议先离线录制真实深度图像，验证分割掩码的稳定性再上机。夹爪为喙状，抓取圆柱形物体时需额外注意姿态控制。</p>
+</li>
+<li>
+<p><strong>计算资源</strong>：高层学生训练仅 240 个并行环境（因渲染视觉观测需大量 GPU 内存），若资源有限可考虑降低图像分辨率或减少环境数，但需注意可能影响策略泛化。</p>
+</li>
+</ol>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2403.16967</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">Visual Whole-Body Control for Legged Loco-Manipulation提及近端策略优化（PPO）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_visual_whole_body_control_legged_loco_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">低层策略：全身目标到达</a></li>
+<li><a href="#_4">高层策略：任务规划</a></li>
+<li><a href="#_5">视觉学生策略</a></li>
+<li><a href="#_6">真实世界部署</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#i-34-7-300-episodes3">仿真结果（表 I，成功率 %，34 个物体，7 类，每类 300 episodes，3 个种子）</a></li>
+<li><a href="#1114-3-5">真实世界结果（图 11，14 个物体，3 个高度，每高度 5 次重置）</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

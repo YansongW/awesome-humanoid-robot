@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLIFT：通过非侵入式闭环迭代微调将 Gemini Robotics On-Device 打造为人形机器人专家 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">CLIFT：通过非侵入式闭环迭代微调将 Gemini Robotics On-Device 打造为人形机器人专家</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>CLIFT：通过非侵入式闭环迭代微调将 Gemini Robotics On-Device 打造为人形机器人专家</h1>
+      <p class="entry-name-en">CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="New card from deep-read pilot (.staging/deep_read). Full text from arXiv HTML (2607.29172v1); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) from the full text with fact guardrails; key numbers spot-checked against the full text.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>CLIFT 是一种非侵入式的闭环迭代微调框架，专为托管式 SFT API 下的人形机器人策略适配设计。它通过将部署 rollout 的稠密奖励转化为重新标注的监督数据，在不接触模型权重或梯度的前提下，实现了策略的自主迭代改进。核心贡献在于证明了强化学习信号可以直接编码进监督训练数据，并显著提升了 Unitree G1 上接触丰富任务的执行成功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29172" target="_blank" rel="noopener">arXiv:2607.29172 CLIFT</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://thomaschen98.github.io/clift/" target="_blank" rel="noopener">CLIFT project page</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://mp.weixin.qq.com/s/4ONiPGNzlsC5nSIYU180Jw" target="_blank" rel="noopener">微信解读（boss 提供）</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>机器人基础模型领域长期存在一个结构性矛盾：最强的模型（如 Gemini Robotics）闭源且仅通过托管 API 暴露，下游用户只能提交数据、获得微调后的策略，却无法访问权重、梯度或内部训练信号。这实际上将策略改进锁死在了纯模仿学习（SFT）的框架内，排除了强化学习等一切依赖内部信号的闭环方法。对于人形操作这类对执行质量高度敏感的任务，纯 SFT 的致命缺陷在于训练分布（人类遥操作）与部署分布（策略自身的闭环观测）之间存在系统性偏移，导致策略在真实硬件上对失败毫无反应——抓取滑脱后仍继续空手执行插入动作。</p>
+<p>CLIFT 真正改变的是“托管 API 下无法做闭环强化学习”这一默认假设。它证明了即使没有内部访问权限，通过将部署经验转化为带偏好校准的监督数据，依然可以实现类似 RL 的迭代自改进。这推翻了“API 微调只能做行为克隆”的认知边界，使得闭源基础模型的下游适配从一次性 SFT 升级为可持续的飞轮式优化。更重要的是，它揭示了预训练先验的强度（GROD vs π_0.5）在相同管道下导致的性能上限差异，说明基础模型本身的闭环感知能力才是人形操作适配的天花板。</p>
+<h2 id="_2">方法拆解</h2>
+<p>CLIFT 的核心流程是一个三步飞轮，全程不触碰模型内部状态：</p>
+<h3 id="1">1. 初始引导</h3>
+<ul>
+<li>通过 VR 遥操作收集 2 小时/任务的演示数据 𝒟_demo，经托管 SFT API 获得初始策略 π₀ = ℱ_SFT(𝒟_demo)。</li>
+</ul>
+<h3 id="2-select-then-distill">2. 偏好校准的稠密奖励建模（select-then-distill）</h3>
+<ul>
+<li><strong>比较池构建</strong>：混合人类遥操作轨迹与初始策略 rollout，采样 100 对，收集人类成对偏好（A≻B）。</li>
+<li><strong>候选生成</strong>：对每对中的每个 rollout，用零样本 VLM（GPT-5.5）通过温度采样生成 K=12 个候选逐帧奖励序列 {r₁:T^(k)}。</li>
+<li><strong>选择</strong>：保留其诱导的累积回报排名与人类偏好最一致的候选序列，得到密集标签 {r₁:T*}。</li>
+<li><strong>蒸馏</strong>：将选中的标签通过 MSE 损失蒸馏进生成式奖励模型 R_θ（基于 Qwen3-VL，LoRA rank=128, α=256），该模型训练一次后固定，跨所有飞轮周期复用。所有任务合并训练单一共享奖励模型，以利用跨任务迁移的抓取质量、平滑性等通用概念。</li>
+</ul>
+<h3 id="3">3. 检索式优势条件化与迭代微调</h3>
+<ul>
+<li><strong>观测编码</strong>：冻结的 DINOv3（ViT-S/16, d=384）编码器 φ(·) 将每帧嵌入到单位球面，状态相似度用余弦相似度衡量。</li>
+<li><strong>比较集构建</strong>：对查询 chunk τᵢ（起始帧 o_{tᵢ}），在每个其他 rollout 中检索最相似帧（sim ≥ δ），每个 rollout 仅贡献最佳匹配帧对应的一个 peer chunk，形成邻居集 𝒩(τᵢ)。</li>
+<li><strong>优势标注</strong>：每个 chunk 按 H 步前瞻窗口（覆盖 1.8 秒）的折扣回报 G(τᵢ) = Σ γ^(t-tᵢ) R_θ(o_t; ℓ) 评分。若 G(τᵢ) 位于邻居集的前 30%，则标记为 positive（I=1），否则为 negative（I=0）。百分位阈值自适应状态难度。</li>
+<li><strong>迭代</strong>：每个周期 k，部署 π_k，收集 100 个 rollout，评分标记后追加到累积数据集 𝒟_k = 𝒟_demo ∪ 𝒟_rollout^{1:k}（演示始终标记为 positive）。每次提交从基础模型从头微调 π_{k+1} = ℱ_SFT(𝒟_k)，避免复合分布漂移。</li>
+</ul>
+<h3 id="_3">侵入式基线（对照）</h3>
+<ul>
+<li>针对 π_0.5 设计 FiLM 风格调制器：通过优势指示符 I_t 计算逐样本调制向量 [γ;β] = W₂^adv swish(W₁^adv E_adv[I_t])，替换动作专家中的 AdaRMSNorm 条件向量。W₂^adv 零初始化保证起点与原始策略一致，推理时始终以 I=1 为条件。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>非参数化优势估计替代价值函数学习</strong>：CLIFT 不训练价值网络，而是通过检索视觉相似状态下的 chunk 回报排名来分配二元优势 token。这一设计绕开了托管 API 无法访问内部梯度的限制，同时避免了传统方法将 chunk 价值坍缩为“成功时间”度量而忽略执行质量的问题。百分位阈值（前 30%）天然自适应状态难度——困难状态下适度回报也能获得正 token，简单状态下门槛自动提高。</p>
+</li>
+<li>
+<p><strong>偏好校准的稠密奖励蒸馏</strong>：通过 select-then-distill 两阶段方案，将人类偏好从 100 对比较中提取为逐帧稠密奖励模型。关键创新在于用 VLM 生成多个候选奖励序列，再选择与人类偏好最一致者作为蒸馏目标，这比直接让 VLM 打分更鲁棒，且奖励模型训练一次后跨周期固定，避免了奖励漂移问题。</p>
+</li>
+<li>
+<p><strong>检索式条件化注入而非架构修改</strong>：CLIFT 将优势 token 作为文本条件附加到动作 chunk 上，而非修改策略架构。这使得它可以直接应用于任何通过托管 API 暴露的闭源模型，实现了真正的“非侵入式”闭环改进。相比之下，侵入式 FiLM 基线需要修改模型内部结构，仅适用于开放权重模型。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>实验在 Unitree G1 人形机器人上进行，三个接触丰富任务，每个任务 100 次试验评估成功率。关键结果如下：</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>基线（GROD 初始）</th>
+<th>GROD + CLIFT（稠密变体）</th>
+<th>GROD + CLIFT（片段选择）</th>
+<th>π_0.5 初始</th>
+<th>π_0.5 + CLIFT</th>
+<th>π_0.5 侵入式 FiLM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Box Packing</td>
+<td>93%</td>
+<td>100%</td>
+<td>接近完美</td>
+<td>59%</td>
+<td>76%</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Cup Insertion</td>
+<td>70%</td>
+<td>98%</td>
+<td>接近完美</td>
+<td>50%</td>
+<td>56%</td>
+<td>48%</td>
+</tr>
+<tr>
+<td>Bimanual Plate Handover</td>
+<td>53%</td>
+<td>96%</td>
+<td>~84%</td>
+<td>5%</td>
+<td>30%</td>
+<td>40%</td>
+</tr>
+</tbody>
+</table>
+<p>关键发现：
+- <strong>GROD + CLIFT 在接触最密集的 Bimanual Plate Handover 上提升最大</strong>（53% → 96%），且稠密变体优于片段选择变体（96% vs 84%），说明稠密优势信号比 DAgger 风格的稀疏选择更有效。
+- <strong>π_0.5 经 CLIFT 后虽有提升但上限远低于 GROD</strong>（Plate Handover 30% vs 96%），且侵入式 FiLM 基线（40%）仍不及 GROD 的非侵入式 API-only 方法（84%），表明预训练先验强度比访问级别更关键。
+- <strong>涌现行为</strong>：最终周期后，GROD 获得了演示中不存在的纠正行为——Box Packing 中先拨动并重新定向盒子以便抓取，Cup Insertion 中首次插入失败后重新接近并第二次成功。π_0.5 则缺乏这种对闭环反馈的反应性，抓取滑脱后仍继续空手执行后续动作。</p>
+<h2 id="_6">边界与局限</h2>
+<p>论文未明确列出局限性声明，但可从方法推断出若干边界。CLIFT 依赖每个周期的真实机器人 rollout 注入部署信号，这在硬件上成本高且对安全敏感，作者计划未来集成控制感知的世界模型以减少真实 rollout 数量。实验仅评估了一个开放权重模型（π_0.5）和一个侵入式基线（FiLM 风格），无法排除更广泛的完全访问方法空间。两个基础模型（GROD vs π_0.5）在架构和规模上不同，实验无法独立隔离预训练先验与管道效果的贡献。此外，论文未提及对 δ 阈值、H 视界、γ 折扣因子等超参数的敏感性分析，未在仿真环境中验证，也未进行跨平台泛化测试。奖励模型在不同任务分布外推时的泛化能力、人类偏好标注者人数与一致性度量均未报告。</p>
+<h2 id="_7">工程启示</h2>
+<p>对于希望复现或采用 CLIFT 的团队，以下几点最值得注意。首先，<strong>预训练先验的选择比管道本身更决定性能上限</strong>——GROD 与 π_0.5 在相同管道下的巨大差距（Plate Handover 96% vs 30%）表明，如果基础模型缺乏闭环感知能力，任何微调管道都难以补偿。因此，选型时应优先评估基础模型在失败场景下的反应性，而非仅看初始成功率。</p>
+<p>其次，<strong>稠密优势信号优于稀疏片段选择</strong>——在 Bimanual Plate Handover 上稠密变体（96%）显著优于 DAgger 风格变体（84%），说明逐 chunk 的稠密标注比整条 rollout 的排序选择更能引导策略学习精细的纠正行为。复现时应优先实现稠密变体。</p>
+<p>第三，<strong>检索式优势标注的工程细节至关重要</strong>——观测编码器（DINOv3）、相似度阈值 δ（控制邻居集大小）、前瞻窗口 H（1.8 秒）和百分位阈值（前 30%）共同决定了优势 token 的质量。最容易踩坑的地方在于比较集构建：每个 rollout 仅贡献最佳匹配帧对应的一个 peer chunk 这一设计是为了防止时间相邻帧淹没比较集，若省略此步骤，优势标注将退化为简单的时序比较，丧失状态难度自适应能力。</p>
+<p>最后，<strong>奖励模型的训练数据质量直接决定飞轮上限</strong>——100 对人类偏好对、K=12 个候选序列、select-then-distill 的选择机制是奖励模型可靠性的关键。若偏好标注不一致或候选序列多样性不足，蒸馏出的稠密奖励将无法准确反映执行质量，导致后续所有周期的优势标注失真。建议在训练奖励模型后先在小规模 rollout 上人工检查其评分与直觉的一致性，再启动完整飞轮。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.29172</li>
+<li>https://thomaschen98.github.io/clift/</li>
+<li>https://mp.weixin.qq.com/s/4ONiPGNzlsC5nSIYU180Jw</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">demonstrates_on</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+              <span class="rel-desc">CLIFT：通过非侵入式闭环迭代微调将 Gemini Robotics On-Device 打造为人形机器人专家demonstrates_onUnitree G1 人形机器人。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              <span class="rel-desc">CLIFT：通过非侵入式闭环迭代微调将 Gemini Robotics On-Device 打造为人形机器人专家提及英伟达。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_clift_non_invasive_closed_loop_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Unitree G1 人形机器人</h3>
+          <p>Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#1">1. 初始引导</a></li>
+<li><a href="#2-select-then-distill">2. 偏好校准的稠密奖励建模（select-then-distill）</a></li>
+<li><a href="#3">3. 检索式优势条件化与迭代微调</a></li>
+<li><a href="#_3">侵入式基线（对照）</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learning for Robotic Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learning for Robotic Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learning for Robotic Manipulation</h1>
+      <p class="entry-name-en">Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learning for Robotic Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>LifelongVLA 提出一种面向机器人操作的双时间尺度 LoRA 门控与缓存高效随机重放框架，在冻结 PaliGemma 骨干上实现终身视觉-语言-动作学习。该方法通过短期/长期适配器分离可塑性与稳定性，以紧凑前缀缓存替代全轨迹重放，在 LIBERO 基准上达到 83.2% 平均成功率与 11.4% 平均遗忘率，并完成 xArm 真实机器人五任务验证。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14852" target="_blank" rel="noopener">arXiv:2607.14852 Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learni</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>静态离线训练的 VLA 范式在真实部署中面临根本性失效：新物体、新指令、新布局持续出现，而模型权重一旦固定便无法适应。直接顺序微调导致灾难性遗忘，保留全部历史数据重训则内存与计算开销不可承受。现有增量方法——重放缓冲、架构扩展、参数隔离——均未真正解决可塑性-稳定性困境：简单经验重放对 VLA 有效但需存储图像丰富片段并反复重新编码，架构扩展则引入路由成本与推理延迟。</p>
+<p>LifelongVLA 改变了这一格局的核心在于：它不再将终身学习视为"如何存储更多旧数据"或"如何扩展更多参数"，而是重新思考 VLA 适配器内部的信息流。通过将单一 LoRA 路径拆分为双时间尺度更新，它让可塑性与稳定性成为可独立控制的变量；通过缓存冻结前缀而非原始轨迹，它将重放成本从"重新编码整个观测"降为"仅重计算轻量后缀"。这使终身学习从"昂贵的必要之恶"变为"近乎免费的能力扩展"。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="lora">双时间尺度 LoRA 门控</h3>
+<ul>
+<li>短期适配器 <code>ψ_sh</code> 仅由当前任务损失更新：<code>ψ_sh,t ← ψ_sh,t − η_sh ∇ψ_sh L_new</code></li>
+<li>长期适配器 <code>ψ_lg</code> 仅由重放与蒸馏信号更新：<code>ψ_lg,t ← ψ_lg,t − η_lg ∇ψ_lg (λ L_rep + β L_dist)</code></li>
+<li>设置 <code>η_lg &lt; η_sh</code>，长期路径演化更慢，形成"快速学习新技能、慢速巩固旧记忆"的时间尺度分离</li>
+<li>门控上下文 <code>c = Pool(stopgrad(E_pre(u; Θ_0)))</code> 从冻结前缀特征计算，避免门控依赖自身控制的权重造成循环</li>
+<li>权重级组合：<code>ΔŴ_t^ℓ(c) = (1−α_t^ℓ(c)) ΔW_sh,t^ℓ + α_t^ℓ(c) ΔW_lg,t^ℓ</code>，<code>α_t^ℓ(c) = σ(W_g^ℓ φ^ℓ(c) + b_g^ℓ)</code></li>
+<li>关键设计：权重级组合保证推理仅需单次前向传播，无需两次前向或修改骨干</li>
+</ul>
+<h3 id="_3">缓存高效随机重放</h3>
+<ul>
+<li>每任务随机选择技能级子集 <code>R_t ⊆ Ω_t</code>，<code>|R_t| = min(c_t, |Ω_t|)</code></li>
+<li>重放缓冲仅存储 stop-gradient 前缀 token 与紧凑状态-动作监督：<code>B_t = Reservoir_M(B_{t−1} ∪ {(h̄_i,t^pre, s_i^t, y_i^t) : i ∈ R_t})</code></li>
+<li>不存储原始图像、语言 token、后缀 token、扩散时间步或扩散噪声</li>
+<li>重放时重新采样扩散变量：<code>τ_j' ~ p(τ)</code>，<code>ϵ_j' ~ N(0, I)</code>，<code>ỹ_τ_j'^rep = q_τ_j'(y_j, ϵ_j')</code></li>
+<li>缓存前缀与当前模型重计算的后缀 token 组合，每次重放重新采样 τ 和 ϵ，使每个缓存前缀可生成多个随机重放实例</li>
+</ul>
+<h3 id="-">掩码新-重放目标</h3>
+<ul>
+<li>当前样本与重放样本在同一 mini-batch 拼接并打乱，用掩码 <code>m_i ∈ {0,1}</code> 区分</li>
+<li>当前损失：<code>L_new = (1/|M_new|) Σ_{i∈M} (1−m_i) ℓ(η̂_i, η_i*)</code></li>
+<li>重放损失：<code>L_rep = (1/|M_rep|) Σ_{i∈M} m_i ℓ(η̂_i, η_i*)</code></li>
+<li>蒸馏损失：<code>L_dist = (1/|M_rep|) Σ_{i∈M} m_i ‖η̂_i − stopgrad(η̂_i^old)‖_2^2</code>，教师为任务 t−1 的分离模型快照</li>
+<li>最终目标：<code>L_t = L_new + λ L_rep + β L_dist</code>，当前项与重放项分别归一化防止某一来源主导</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<p><strong>双时间尺度 LoRA 门控</strong>是核心创新。以往单 LoRA 适配器用同一更新路径同时追求可塑性与稳定性，导致两者纠缠难以控制。分解为双路径后，短期路径快速吸收新任务分布，长期路径通过重放与蒸馏缓慢巩固，门控根据冻结前缀特征动态决定每条路径的贡献权重。这一设计使"学新"与"保旧"成为可独立调节的变量，而非相互妥协的折中。</p>
+<p><strong>缓存高效随机重放</strong>解决了 VLA 终身学习的存储瓶颈。全轨迹重放需存储图像丰富片段并反复重新编码旧观测，而该方法仅缓存冻结前缀 token 与紧凑监督信号，重放时重新采样扩散变量并重计算后缀。这不仅将内存从 167.62 MiB/task 降至 95.70 MiB/task（由表内数值计算），还通过每次重放生成多样化实例增强了保留信号的丰富性。前缀作为旧技能记忆锚点，重计算后缀则消除缓存与当前表示之间的陈旧不匹配。</p>
+<p><strong>掩码新-重放目标</strong>的分别归一化设计看似简单却至关重要。当前样本与重放样本在同一 mini-batch 中拼接打乱，若不做分别归一化，相对批大小差异会导致某一来源主导梯度。这一细节保证了双路径更新信号的均衡性，是双时间尺度机制稳定工作的前提。</p>
+<h2 id="_5">实验与结果</h2>
+<p>LIBERO 基准 10 任务增量学习，冻结 PaliGemma 骨干 + Gemma 2B + Gemma 300M 连续动作解码器，终身方法每任务 10000 步，联合训练 40000 步。超参数 r=16，γ=16，M=500，c_t=50，λ=1.0，β=0.1。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>平均 SR (%)</th>
+<th>平均 FOR (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joint（上界）</td>
+<td>89.6</td>
+<td>—</td>
+</tr>
+<tr>
+<td>SFT</td>
+<td>7.8</td>
+<td>76.8</td>
+</tr>
+<tr>
+<td>LwF-LoRA</td>
+<td>7.8</td>
+<td>72.6</td>
+</tr>
+<tr>
+<td>ER</td>
+<td>70.2</td>
+<td>19.6</td>
+</tr>
+<tr>
+<td>Info-VLA</td>
+<td>28.6</td>
+<td>21.2</td>
+</tr>
+<tr>
+<td>AtomicVLA</td>
+<td>28.6</td>
+<td>39.2</td>
+</tr>
+<tr>
+<td><strong>Ours</strong></td>
+<td><strong>83.2</strong></td>
+<td><strong>11.4</strong></td>
+</tr>
+</tbody>
+</table>
+<p>相比最强基线 ER，SR 提升 13.0 个百分点、FOR 降低 8.2 个百分点（由表内数值计算）。任务级表现突出：任务 5 达 96%、任务 9 达 98%、任务 10 达 96%，任务 9 的 FOR 为 0。消融显示：潜在重放将内存从 167.62 MiB/task 降至 95.70 MiB/task（相同 49.99M 可训练参数），SR 相当且 FOR 更低；双 LoRA 相比单 LoRA 提升 SR 并降低 FOR，可训练参数增至 99.97M 但仍远小于 AtomicVLA 的 226.49M 参数和 452.98 MiB/task 内存。真实机器人 xArm 五任务流，每任务 50 个训练片段，学习完所有任务后每任务成功率均高于 80%。</p>
+<h2 id="_6">边界与局限</h2>
+<p>当前评估在任务规模与多样性上有限。真实世界终身学习可能涉及更长任务流、更多样物体类别、更丰富场景布局，以及长时间部署中收集的非均匀数据。论文未评估更长和更多异构任务序列，未随机化任务顺序，未跨多个流报告均值和方差。实验使用清晰语言指令，真实用户可能提供更多样、模糊或对话式命令（省略、共指、上下文依赖），论文未引入释义、对话式和上下文相关指令来评估语言鲁棒性，也未使用语言增强或指令改写提升模型处理多样用户表达的能力。测试时任务身份不可用，但任务顺序固定，顺序敏感性未验证。</p>
+<h2 id="_7">工程启示</h2>
+<p>复现时先核对门控上下文的 stop-gradient 实现——这是避免循环依赖的关键，若去掉会导致训练不稳定。双时间尺度更新中 <code>η_lg &lt; η_sh</code> 的比例需要仔细调参，论文未明确具体数值，建议从 10:1 起步。重放缓存仅存前缀 token 与紧凑监督，实现时需确保前缀确实来自冻结骨干且不参与梯度。掩码新-重放目标中分别归一化是必须的，否则相对批大小差异会破坏双路径均衡。蒸馏损失中教师快照需在任务切换时分离保存，stop-gradient 位置错误会导致梯度泄漏。真实机器人部署时注意每任务 50 个训练片段的数据量级，若数据更少可能需要调整 <code>c_t</code> 配额。最易踩坑处：扩散变量 τ 和 ϵ 的重新采样逻辑——若沿用原始时间步与噪声，缓存前缀将无法生成多样化重放实例，丧失随机重放的核心优势。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.14852</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_human_like_physical_intelligence_lifelon_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#lora">双时间尺度 LoRA 门控</a></li>
+<li><a href="#_3">缓存高效随机重放</a></li>
+<li><a href="#-">掩码新-重放目标</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

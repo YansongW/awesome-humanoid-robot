@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</h1>
+      <p class="entry-name-en">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): xiaoze_P042. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] guardrail fix: unverifiable numbers corrected to full-text-verbatim or marked as computed/未提取 (catchup sweep audit).">Draft</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>An attached arm can significantly increase the applicability of legged robots to several mobile manipulation tasks that are not possible for the wheeled or tracked counterparts. The standard hierarchical control pipeline for such legged manipulators is to decouple the controller into that of manipulation and locomotion. However, this is ineffective. It requires immense engineering to support.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2210.10044" target="_blank" rel="noopener">arXiv:2210.10044 Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomoti</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper proposes a unified whole-body control policy based on reinforcement learning, achieving coordinated leg-arm mobile manipulation on a Unitree Go1 quadruped robot equipped with a 6-DoF WidowX robotic arm. The core contributions lie in proposing Regularized Online Adaptation to address the Sim2Real realizability gap, and Advantage Mixing to resolve the conflict between manipulation and locomotion objectives in unified policy training, significantly outperforming the MPC+IK baseline in real-world pick-and-place tasks.</p>
+<h2 id="what-it-changes">What It Changes</h2>
+<p>Traditional leg-arm mobile manipulation adopts a hierarchical decoupled architecture (leg MPC locomotion control + arm IK manipulation control), which suffers from two fundamental flaws: first, error propagation between modules leads to unnatural and uncoordinated motion; second, it lacks the biological plausibility of limb motion coordination emphasized by Bernstein. Existing learning-based methods (e.g., [8]) introduce learning but still maintain a semi-coupled hierarchical model without truly solving the coordination problem.</p>
+<p>What this paper truly changes is reframing manipulation and locomotion from "two independent optimization problems" into "one joint optimization problem." The authors point out that directly training a unified policy end-to-end falls into local optima—the policy only follows end-effector commands while ignoring leg action-space exploration. This observation reveals the core contradiction in unified policy training: manipulation reward signals are far stronger than locomotion rewards, causing leg degradation. Through the curriculum-based advantage weighting of Advantage Mixing and the single-stage training paradigm of Regularized Online Adaptation, this paper makes the unified policy a viable solution rather than merely an elegant theoretical construct.</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<h3 id="regularized-online-adaptation-single-stage-training">Regularized Online Adaptation (Single-Stage Training)</h3>
+<ul>
+<li>Randomly initialize privileged encoder μ, adaptation module φ, unified policy π, and an empty replay buffer D</li>
+<li>In each iteration, when <code>itr mod H == 0</code> (H=20), compute <code>z_t^φ = φ(s_{t-10:t-1}, a_{t-11:t-2})</code> using φ; otherwise compute <code>z_t^μ = μ(e_t)</code> using μ</li>
+<li>Action <code>a_t = π((s_t, a_{t-1}, z_t))</code>, store <code>((s_t,e_t), a_t, r_t, (s_{t+1},e_{t+1}), z_t^φ, z_t^μ)</code> into D</li>
+<li>When <code>itr mod H == 0</code>, optimize <code>||sg[z_t^μ] - z_t^φ||_2</code> to update θ_φ; otherwise optimize <code>-J(θ_π,θ_μ) + λ||z_t^μ - sg[z_t^φ]||_2</code> to update θ_π, θ_μ</li>
+<li>λ follows a linear curriculum from 0 to 1: <code>λ = min(max((itr-5000)/5000, 0), 1)</code></li>
+<li>Key design: μ is trained end-to-end jointly with policy π, while regularizing z^μ to avoid excessive deviation from z^φ; φ is trained via online imitation of z^μ. RMA is a special case of this method (λ is always 0 and φ is trained only after policy convergence)</li>
+</ul>
+<h3 id="advantage-mixing-curriculum-based-advantage-weighting">Advantage Mixing (Curriculum-Based Advantage Weighting)</h3>
+<ul>
+<li>Training objective rewritten from <code>log(π(a_t^arm|s_t)π(a_t^leg|s_t))(A^manip + A^loco)</code> to:
+  <code>log π(a_t^arm|s_t)(A^manip + βA^loco) + log π(a_t^leg|s_t)(βA^manip + A^loco)</code></li>
+<li>β increases linearly from 0 to 1: <code>β = min(t/T_mix, 1)</code></li>
+<li>Design rationale: first attribute manipulation return differences to arm actions and locomotion return differences to leg actions separately, avoiding the unified policy optimizing only end-effector commands while ignoring leg exploration; then gradually anneal the weighted advantage sum to encourage leg/arm actions that benefit both locomotion and manipulation</li>
+</ul>
+<h3 id="policy-network-architecture">Policy Network Architecture</h3>
+<ul>
+<li>Multilayer perceptron, input is the concatenation of current state <code>s_t ∈ ℝ^75</code> and environment extrinsic variable <code>z_t ∈ ℝ^20</code></li>
+<li>First hidden layer has 128 dimensions, then splits into 2 heads, each with 2 hidden layers of 128 dimensions</li>
+<li>Outputs of the two heads are concatenated, producing leg actions <code>a_t^leg ∈ ℝ^12</code> and arm actions <code>a_t^arm ∈ ℝ^6</code> respectively</li>
+<li>Uses joint-space position control (rather than operational-space control), with the rationale: it enables learning to avoid self-collision and reduces the Sim-to-Real gap</li>
+</ul>
+<h3 id="terrain-generation-and-command-sampling">Terrain Generation and Command Sampling</h3>
+<ul>
+<li>Fractal noise terrain generation: octaves=2, lacunarity=2.0, gain=0.25, frequency=10 Hz, amplitude=0.15 m</li>
+<li>Rough terrain enforces foot clearance height, replacing the complex rewards needed for flat terrain</li>
+<li>EE command spherical coordinates (l, p, y) transformed via <code>T(S2C[(l,p,y)]) + (p_x^base, p_y^base, p_z^base)</code> to world coordinates; <code>p_z^base</code> is set to constant 0.53, and row and pitch in T are set to 0</li>
+</ul>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li>
+<p><strong>Single-stage paradigm of Regularized Online Adaptation</strong>: Unlike RMA's two-stage teacher-student scheme (first train teacher policy, then distill student), this paper trains privileged encoder μ end-to-end jointly with policy π, and enforces alignment between z^μ and z^φ through a λ curriculum regularization. This eliminates the realizability gap, making the deployed adaptation module behave consistently with the training-time privileged information encoder, rather than approximating it post hoc.</p>
+</li>
+<li>
+<p><strong>Curriculum-based advantage decomposition of Advantage Mixing</strong>: The joint advantage of the unified policy is decomposed into weighted advantages for arm and leg respectively, with a β curriculum from 0 to 1 enabling the policy to first learn manipulation and locomotion tasks separately, then gradually merge them. This directly solves the local optimum problem where manipulation reward dominance causes leg degradation in unified policy training, and is the key mechanism making end-to-end whole-body control feasible.</p>
+</li>
+<li>
+<p><strong>Full-stack deployment on low-cost hardware platform</strong>: Fully untethered onboard inference on a 6K USD Unitree Go1 + WidowX platform (policy and adaptation module running at 50 Hz on Raspberry Pi 4), demonstrating that learning-based whole-body control achieves practical performance within hardware costs reproducible in academic laboratories.</p>
+</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<h3 id="simulation-comparison-table-4-unified-vs-separated-vs-uncoordinated">Simulation Comparison (Table 4, Unified vs Separated vs Uncoordinated)</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Unified Policy</th>
+<th>Separated Policy</th>
+<th>Uncoordinated Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Survival Rate</td>
+<td>97.1±0.61</td>
+<td>92.0±0.90</td>
+<td>94.9±0.61</td>
+</tr>
+<tr>
+<td>Base Acceleration</td>
+<td>1.00±0.03</td>
+<td>1.40±0.04</td>
+<td>1.03±0.01</td>
+</tr>
+<tr>
+<td>Velocity Error</td>
+<td>0.31±0.03</td>
+<td>0.43±0.07</td>
+<td>0.33±0.01</td>
+</tr>
+<tr>
+<td>EE Error</td>
+<td>0.63±0.02</td>
+<td>0.92±0.10</td>
+<td>0.73±0.02</td>
+</tr>
+<tr>
+<td>Total Energy</td>
+<td>50±0.90</td>
+<td>51±0.30</td>
+<td>50±0.28</td>
+</tr>
+</tbody>
+</table>
+<p>The unified policy achieves the best performance at the same energy consumption, with EE error reduced by approximately 31.5% compared to the separated policy (0.92→0.63, computed from Table 4 values).</p>
+<h3 id="arm-workspace-and-disturbance-robustness-table-5">Arm Workspace and Disturbance Robustness (Table 5)</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Unified Policy</th>
+<th>Separated Policy</th>
+<th>Uncoordinated Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workspace (m³)</td>
+<td>0.82±0.02</td>
+<td>0.58±0.10</td>
+<td>0.65±0.02</td>
+</tr>
+<tr>
+<td>Survival Rate under Disturbance</td>
+<td>0.87±0.04</td>
+<td>0.64±0.06</td>
+<td>0.77±0.06</td>
+</tr>
+</tbody>
+</table>
+<p>The unified policy expands workspace by approximately 41% (0.58→0.82 m³) and improves disturbance survival rate by approximately 36% (0.64→0.87, both computed from Table 5 values).</p>
+<h3 id="ood-environment-sim2real-comparison-table-6">OOD Environment Sim2Real Comparison (Table 6)</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Domain Randomization</th>
+<th>RMA</th>
+<th>Regularized OA</th>
+<th>Expert (with Reg.)</th>
+<th>Expert (without Reg.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Realizability Gap</td>
+<td>-</td>
+<td>0.31±0.01</td>
+<td>2e-4±0.00</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Survival Rate</td>
+<td>95.8±0.2</td>
+<td>95.2±0.2</td>
+<td>97.4±0.1</td>
+<td>97.8±0.2</td>
+<td>98.3±0.2</td>
+</tr>
+<tr>
+<td>EE Error</td>
+<td>0.40±0.00</td>
+<td>0.26±0.04</td>
+<td>0.21±0.00</td>
+<td>0.21±0.00</td>
+<td>0.21±0.00</td>
+</tr>
+<tr>
+<td>Total Energy</td>
+<td>21.9±0.53</td>
+<td>27.3±0.95</td>
+<td>25.9±0.56</td>
+<td>25.8±0.49</td>
+<td>25.6±0.30</td>
+</tr>
+</tbody>
+</table>
+<p>Regularized Online Adaptation reduces EE error by 20% compared to RMA, and the realizability gap drops from 0.31 to 2e-4.</p>
+<h3 id="real-world-pick-and-place-task-table-710-average-of-10-trials">Real-World Pick-and-Place Task (Table 7/10, average of 10 trials)</h3>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Method</th>
+<th>Success Rate</th>
+<th>TTC (s)</th>
+<th>IK Failure Rate</th>
+<th>Self-Collision Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simple (3 points)</td>
+<td>Ours</td>
+<td>0.8</td>
+<td>5.0</td>
+<td>-</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Simple (3 points)</td>
+<td>MPC+IK</td>
+<td>0.3</td>
+<td>17</td>
+<td>0.4</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>Difficult (5 points)</td>
+<td>Ours</td>
+<td>0.8</td>
+<td>5.6</td>
+<td>-</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Difficult (5 points)</td>
+<td>MPC+IK</td>
+<td>0.1</td>
+<td>22.0</td>
+<td>0.2</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<p>This method improves success rate by approximately 2.7–8 times over MPC+IK and reduces task completion time by approximately 71–75% (both computed from Table 7 values), with zero self-collision rate.</p>
+<h3 id="training-scale">Training Scale</h3>
+<ul>
+<li>10000 iterations/training batches, i.e., 2 billion samples and 200,000 gradient updates</li>
+<li>PPO: clip range 0.2, learning rate 2e-4, discount factor 0.99, GAE λ 0.95, 5000 environments</li>
+<li>Maximum 1000 steps per episode, policy control frequency 50 Hz, simulation frequency 200 Hz</li>
+</ul>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<ul>
+<li>Gripper opening/closing is not included in the policy ("EE gripper closing and opening are not a part of the policy"), controlled directly by joystick in teleoperation and by scripted policy in visual tracking, limiting the policy's full autonomy</li>
+<li>Visual estimation is not the focus of this work; failed trials mainly stem from mismatch between AprilTag positions and actual object positions, without handling occlusion and generic object interaction such as soft objects</li>
+<li>The paper only provides a first step towards several future directions ("provides a first step towards several of such future directions"), with specific limitations not detailed in the excerpt</li>
+<li>Does not implement vision-based policies learned from ego-centric cameras mounted on the torso and arm, nor does it utilize front legs for climbing obstacles to pick up high objects</li>
+<li>Training scale is massive (2 billion samples), demanding significant computational resources, potentially limiting reproduction in academic laboratories</li>
+</ul>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<ul>
+<li><strong>Reproduction priority</strong>: First verify the β curriculum implementation of Advantage Mixing—this is key to preventing the unified policy from falling into local optima; the linear growth of β from 0 to 1 needs to be aligned with training iteration count (the specific value of T_mix is not explicitly stated in the paper and requires self-tuning)</li>
+<li><strong>Most likely pitfall</strong>: The λ curriculum scheduling in Regularized Online Adaptation (<code>λ = min(max((itr-5000)/5000, 0), 1)</code>) and the alternating optimization period of H=20 must be strictly followed, otherwise the alignment between μ and φ will fail; the placement of the stop-gradient operator sg must not be erroneous</li>
+<li><strong>Hardware deployment notes</strong>: Policy and adaptation module inference runs at 50 Hz on Raspberry Pi 4, the WidowX software stack runs on Nvidia TX2, with UDP communication between Pi and TX2—communication latency must be verified to ensure stability of the 50 Hz control frequency</li>
+<li><strong>Terrain generation parameters</strong>: Fractal noise parameters (octaves=2, lacunarity=2.0, gain=0.25, frequency=10 Hz, amplitude=0.15 m) are key to enforcing foot clearance, replacing complex reward design; they must not be arbitrarily modified during reproduction</li>
+<li><strong>Training scale expectations</strong>: 2 billion samples and 200,000 gradient updates are necessary conditions for achieving the performance in Tables 4-6; reducing training scale may cause the unified policy to degrade to the level of the uncoordinated policy</li>
+<li><strong>Baseline comparison</strong>: The MPC+IK baseline exhibits IK failure rates as high as 0.2-0.4 and self-collision rates of 0.3-0.5 in real-world tasks—if your baseline performs better, the relative advantages of this method need to be reassessed</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+              <span class="rel-desc">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion mentions Model Predictive Control (MPC).</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_method_domain_randomization/">Domain Randomization</a>
+              <span class="rel-desc">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion compares with Domain Randomization.</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">mentions</span>
+              <span class="rel-arrow">→</span>
+              <a href="/en/entry/ent_algorithm_ppo/">Proximal Policy Optimization (PPO)</a>
+              <span class="rel-desc">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion mentions Proximal Policy Optimization (PPO).</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_deep_whole_body_control_unified_policy_2022"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_algorithm_ppo/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Proximal Policy Optimization (PPO)</h3>
+          <p>A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_domain_randomization/">
+          <span class="entry-type">Method</span>
+          <h3>Domain Randomization</h3>
+          <p>A sim-to-real technique that randomizes simulation parameters during training to improve policy…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changes">What It Changes</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#regularized-online-adaptation-single-stage-training">Regularized Online Adaptation (Single-Stage Training)</a></li>
+<li><a href="#advantage-mixing-curriculum-based-advantage-weighting">Advantage Mixing (Curriculum-Based Advantage Weighting)</a></li>
+<li><a href="#policy-network-architecture">Policy Network Architecture</a></li>
+<li><a href="#terrain-generation-and-command-sampling">Terrain Generation and Command Sampling</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a><ul>
+<li><a href="#simulation-comparison-table-4-unified-vs-separated-vs-uncoordinated">Simulation Comparison (Table 4, Unified vs Separated vs Uncoordinated)</a></li>
+<li><a href="#arm-workspace-and-disturbance-robustness-table-5">Arm Workspace and Disturbance Robustness (Table 5)</a></li>
+<li><a href="#ood-environment-sim2real-comparison-table-6">OOD Environment Sim2Real Comparison (Table 6)</a></li>
+<li><a href="#real-world-pick-and-place-task-table-710-average-of-10-trials">Real-World Pick-and-Place Task (Table 7/10, average of 10 trials)</a></li>
+<li><a href="#training-scale">Training Scale</a></li>
+</ul>
+</li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

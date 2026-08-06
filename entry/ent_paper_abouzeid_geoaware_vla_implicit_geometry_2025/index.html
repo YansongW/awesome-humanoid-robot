@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeoAware-VLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">GeoAware-VLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>GeoAware-VLA</h1>
+      <p class="entry-name-en">GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14117v4. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>GeoAware-VLA 是 2025 年由穆罕默德·本·扎耶德人工智能大学提出的大型视觉-语言-动作模型，旨在解决机器人操作中因相机视角变化导致的泛化失败问题。其核心贡献在于通过冻结的预训练几何视觉模型提取特征，并借助轻量可训练投影层将几何先验融入策略解码器，从而在不依赖显式 3D 数据或重新训练编码器的情况下显著提升视角不变性。在 LIBERO 和 CALVIN 基准上，该模型在未见视角下的成功率分别平均提升 35 个百分点和 11 个百分点，且效果可迁移至真实机器人平台。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.14117" target="_blank" rel="noopener">GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.14117" target="_blank" rel="noopener">GeoAware-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>GeoAware-VLA 针对现有 VLA 模型难以从 2D 图像推断鲁棒 3D 几何结构、导致对未见相机视角泛化能力弱的问题，提出了一种简洁有效的解决方案。该方法不训练新的视觉编码器，也不依赖显式 3D 数据，而是直接使用冻结的预训练几何视觉模型作为特征提取器，再通过一个轻量可训练的投影层将这些富含几何信息的特征适配给策略解码器，从而让解码器无需从零学习 3D 一致性。在 LIBERO 和 CALVIN 基准上的大量实验表明，GeoAware-VLA 在保持甚至提升原有分布内性能的同时，在零样本泛化到未见相机姿态方面取得了显著进步：LIBERO 上未见视角成功率平均提升 35 个百分点，CALVIN 上提升超过 11 个百分点。这些增益在真实机器人平台上同样得到验证，且该方法在连续和离散动作空间上均表现有效，证明鲁棒的几何基础是构建更通用机器人智能体的关键要素。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>核心思路</strong>：将强几何先验注入视觉骨干网络，以增强模型对相机视角变化的鲁棒性。</li>
+<li><strong>特征提取</strong>：使用冻结的预训练几何视觉模型（如 DINOv2 或类似几何感知模型）作为固定特征提取器，不进行任何微调。</li>
+<li><strong>特征适配</strong>：在几何特征提取器与策略解码器之间插入一个轻量级、可训练的投影层（projection layer），负责将几何丰富的特征映射为策略解码器可用的表示。</li>
+<li><strong>策略解码器</strong>：解码器无需再学习 3D 一致性，而是直接利用投影后的几何特征进行动作预测，从而减轻学习负担。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>基准测试</strong>：在 LIBERO 和 CALVIN 两个主流机器人操作基准上进行评估。</li>
+<li><strong>评估指标</strong>：主要关注分布内性能（in-distribution performance）和零样本泛化到未见相机视角的成功率（unseen-view success rate）。</li>
+<li><strong>动作空间</strong>：同时验证了连续动作空间和离散动作空间下的有效性。</li>
+</ul>
+<h3 id="_5">关键数字与结果</h3>
+<ul>
+<li><strong>LIBERO 基准</strong>：未见视角成功率平均提升 <strong>35 个百分点</strong>，同时分布内性能保持或略有提升。</li>
+<li><strong>CALVIN 基准</strong>：未见视角成功率平均提升 <strong>超过 11 个百分点</strong>。</li>
+<li><strong>真实机器人平台</strong>：在物理世界实验中，模型表现显著优于基线，证明仿真中的增益可成功迁移至真实环境。</li>
+<li><strong>对比基线</strong>：相比未使用几何先验的 VLA 模型（如 Octo、RT-2 等），GeoAware-VLA 在视角泛化上具有压倒性优势。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>GeoAware-VLA 通过简单的几何特征注入策略，有效解决了 VLA 模型对相机视角的过拟合问题。实验证明，无需复杂 3D 重建或额外训练，仅利用冻结的几何视觉模型即可大幅提升零样本泛化能力，且该方法在仿真和真实场景、连续与离散动作空间中均表现一致。这揭示了鲁棒几何基础是构建可泛化机器人智能体的关键要素。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2509.14117v4</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+              <span class="rel-desc">GeoAware-VLA提及RT-2。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_abouzeid_geoaware_vla_implicit_geometry_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键数字与结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

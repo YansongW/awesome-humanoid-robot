@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection</h1>
+      <p class="entry-name-en">DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Scalable collection of dexterous manipulation demonstrations remains a major bottleneck for robot learning. High-fidelity interfaces often require costly hardware and extensive setup, while low-setup, low cost alternatives tend to provide less precise control and impose greater cognitive workload on operators. We present DexDirect, a direct kinesthetic arm guidance for efficient dexterous.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.27784" target="_blank" rel="noopener">arXiv:2607.27784 DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>DexDirect는 하이브리드 방식의 손재주 조작 데모 수집 인터페이스를 제안합니다. 조작자는 왼손으로 강성 핸들을 통해 6-DoF 로봇 팔을 직접 운동으로 유도하고, 오른손은 단안 카메라로 손가락을 제어합니다. 이 시스템은 10명의 경험 없는 참가자를 대상으로 한 사용자 연구에서 TeleDex 및 AnyTeleop 기준선 대비 각각 3.2배 및 17.2배의 성공적인 데모 처리량 향상을 달성했으며, 정책 학습 성공률을 90%로 끌어올렸습니다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>손재주 조작 데모 수집은 오랫동안 "고충실도지만 고비용"과 "저비용이지만 저품질"이라는 딜레마에 갇혀 있었습니다. 외골격이나 마스터-슬레이브 원격 조작은 정밀한 제어를 제공하지만, 하드웨어 비용과 캘리브레이션 부담으로 확장이 어렵습니다. 비전/포즈 추적 방식은 저렴하지만, 추적 지연, 포즈 추정 오류, 작업 공간 불일치, 좌표 매핑의 인지 부담을 수집 체인에 도입하여 결국 데모 품질을 오염시킵니다. DexDirect가 진정으로 바꾼 것은 "팔의 전역 자세"와 "손가락의 국소 관절 운동"이라는 두 제어 채널을 완전히 분리한 것입니다. 전자는 물리적 직접 유도로 모든 지각 불확실성을 제거하고, 후자는 시각적 리타겟팅만 유지하며 전역 자세 추정에는 참여하지 않습니다. 이 설계 결정의 심층적 의미는 손재주 조작에서 팔 궤적의 정밀도가 손가락 관절의 절대 정밀도보다 더 중요하며, 손가락 리타겟팅 오류는 이후 단계의 정책 학습에서 부분적으로 흡수될 수 있다는 점을 인정한 것입니다. 이는 기존의 "전방위 지각" 또는 "전방위 물리" 노선에 대한 실용적인 절충입니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">팔 채널: 직접 운동 유도</h3>
+<ul>
+<li>조작자는 왼손으로 3D 프린팅 PLA 핸들(무게 0.05 kg, 파지점이 손바닥 법선을 따라 플랜지에서 65 mm)을 통해 중력 보상된 6-DoF 로봇 팔을 직접 구동합니다.</li>
+<li>제어 모드는 영점 위치 강성, 낮은 관절 댐핑입니다. 관절 수준 컨트롤러는 200 Hz로 작동합니다.</li>
+<li>작업 전 단계별 시스템 식별을 수행합니다: 중력 방향, 말단 하중 질량 및 질량 중심, 관절 토크 스케일링, 쿨롱 마찰. 중력 토크는 MuJoCo 모델로 계산되어 피드포워드 토크 명령으로 적용됩니다.</li>
+<li>궤적 기록은 관절 엔코더에서 직접 얻고, 말단 자세는 정기구학으로 계산됩니다—자세 추정, 리타겟팅, 역기구학 솔버, 데카르트 운동 생성기가 없습니다.</li>
+</ul>
+<h3 id="_5">손가락 채널: 시각적 리타겟팅</h3>
+<ul>
+<li>손바닥을 향한 카메라(Logitech C270, 오른손에서 45 cm)가 30 Hz로 조작자의 오른손을 촬영하고, MediaPipe Hands가 21개의 3D 손 랜드마크를 감지합니다.</li>
+<li>AnyTeleop이 공개한 최적화 기반 dex-retargeting 프레임워크를 사용하여 손목 상대 랜드마크를 MIDAS 손에 매핑하고, 손가락 벡터를 일치시키며 관절 제한 제약을 받습니다.</li>
+<li>핵심 설계 결정: 웹캠으로 추정한 전역 손목 위치/방향은 로봇 제어에 사용하지 않습니다—팔이 손의 전역 자세를 독립적으로 결정하고, 비전 파이프라인은 국소 손가락 관절 운동만 처리합니다.</li>
+</ul>
+<h3 id="_6">다중 모달 기록 및 정책 훈련</h3>
+<ul>
+<li>공통 단조 시계 타임스탬프 동기화: 팔 및 손 상태 200 Hz, 촉각 60 Hz, 손목 이미지 30 Hz; 훈련 시 30 Hz로 정렬하고, 최근접 타임스탬프 매칭을 사용하며 시간 보간은 없습니다.</li>
+<li>정책 입력: 손목 RGB 프레임을 240×240으로 다운샘플링하고, 훈련 시 무작위 224×224 크롭 및 색상 지터링; DINOv2 ViT-S/14 인코더가 임베딩 생성; 추가 13차원 절대 손 위치 벡터와 4차원 PaXini 촉각 판독값(엄지 평균, 엄지 최대, 검지 평균, 검지 최대)을 추가합니다.</li>
+<li>정책 출력 19차원 동작: 6-DoF 엔드 이펙터 목표 상대 위치 + 13개 손가락 목표.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li><strong>물리와 비전의 채널 분리</strong>: 팔 궤적은 완전히 물리적 유도로 결정되어 팔 측 추적 노이즈, 폐색, 지연을 완전히 제거합니다. 이는 단순한 "하이브리드" 방식이 아니라 제어 채널의 역할 분담입니다—전역 자세는 물리에, 국소 관절은 비전에 맡겨 단일 지각 모달리티의 계단식 오류를 피합니다.</li>
+<li><strong>캘리브레이션 없는 공동 위치 조작</strong>: 마스터 팔, 조작자-로봇 팔 원격 조작 캘리브레이션, 팔 측 리타겟팅이 필요 없습니다. 조작자는 작업 공간 옆에 직접 서서 왼손으로 팔을 유도하고 오른손으로 손가락을 제어하여 인지 부담이 크게 줄어듭니다(NASA-TLX 전체 Raw TLX 점수 2.01 vs TeleDex 3.08 vs AnyTeleop 3.81).</li>
+<li><strong>저비용 고처리량 엔지니어링 구현</strong>: 단안 웹캠과 3D 프린팅 핸들만으로 10명의 경험 없는 참가자에서 481개의 성공적인 데모를 달성했으며(TeleDex 151, AnyTeleop 28), 정책 학습 성공률 90%(18/20)를 기록했습니다. 이는 데모 수집 효율성 향상이 하류 정책 성능 개선으로 직접 전환될 수 있음을 보여줍니다.</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<p>사용자 연구는 10명의 경험 없는 참가자, 5개 작업(Jenga 빼기, USB 뽑기, Lazy Susan 회전 집기-놓기, 화이트보드 지우기, 키보드 타이핑), 각 작업 120초 시간 예산(Jenga 180초), 인터페이스 순서는 순환 순서로 균형을 맞췄습니다. 주요 결과는 다음과 같습니다:</p>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>지표</th>
+<th>DexDirect</th>
+<th>TeleDex</th>
+<th>AnyTeleop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jenga</td>
+<td>성공률</td>
+<td>0.94±0.02</td>
+<td>0.69±0.08</td>
+<td>0.44±0.12</td>
+</tr>
+<tr>
+<td>Jenga</td>
+<td>시간 (s)</td>
+<td>10.46±0.82</td>
+<td>49.76±5.98</td>
+<td>35.50±5.42</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>성공률</td>
+<td>0.95±0.02</td>
+<td>0.81±0.04</td>
+<td>0.39±0.09</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>시간 (s)</td>
+<td>5.88±0.65</td>
+<td>10.36±1.90</td>
+<td>17.75±5.74</td>
+</tr>
+<tr>
+<td>Lazy Susan</td>
+<td>성공률</td>
+<td>0.96±0.02</td>
+<td>0.85±0.06</td>
+<td>0.50±0.13</td>
+</tr>
+<tr>
+<td>Lazy Susan</td>
+<td>시간 (s)</td>
+<td>8.36±0.49</td>
+<td>21.96±2.73</td>
+<td>47.14±11.15</td>
+</tr>
+<tr>
+<td>화이트보드 지우기</td>
+<td>성공률</td>
+<td>0.91±0.04</td>
+<td>0.56±0.12</td>
+<td>0.00±0.00</td>
+</tr>
+<tr>
+<td>화이트보드 지우기</td>
+<td>시간 (s)</td>
+<td>13.85±1.39</td>
+<td>39.10±7.82</td>
+<td>—</td>
+</tr>
+<tr>
+<td>키보드 타이핑</td>
+<td>성공률</td>
+<td>0.71±0.04</td>
+<td>0.32±0.06</td>
+<td>0.00±0.00</td>
+</tr>
+<tr>
+<td>키보드 타이핑</td>
+<td>시간 (s)</td>
+<td>6.60±0.32</td>
+<td>17.50±3.97</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>완료 시간은 성공한 작업에 대해서만 계산했습니다. 대시는 성공적인 실행이 없음을 의미합니다. TeleDex 대비 가속: Jenga 4.8배, USB 1.8배, Lazy Susan 2.6배, 화이트보드 지우기 2.8배, 키보드 타이핑 2.7배. AnyTeleop 대비(성공적인 시험이 있는 작업): Jenga 3.4배, USB 3.0배, Lazy Susan 5.6배. NASA-TLX 쌍체 Wilcoxon 부호 순위 검정: AnyTeleop 대비 p=0.00195, TeleDex 대비 p=0.01953. 하위 차원에서 정신적 요구는 3.19에서 1.77로, 좌절감은 2.79에서 1.47로, 노력은 3.40에서 2.17로 감소했습니다. 그러나 신체적 요구는 TeleDex의 2.72와 AnyTeleop의 2.62에서 3.23으로 증가했습니다. 정책 학습: 단일 조작자가 DexDirect로 200개의 데모를 수집하고 확산 정책을 훈련했으며, 20개 평가 라운드에서 성공률 90%(18/20)를 기록했습니다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<p>시스템은 본질적으로 공동 위치 설계로, 안전하고 저임피던스이며 중력 보상 유도가 가능한 로봇이 필요하며 원격 원격 조작을 지원하지 않습니다. 더 크거나 관성이 높은 로봇 팔에는 인체공학적이지 않을 수 있습니다. 현재 인터페이스는 조작자의 양손으로 하나의 팔-손 시스템을 제어하므로 단일 조작자의 양팔 제어를 차단합니다. 손가락 제어는 단안 랜드마크 감지와 형태 의존 리타겟팅에 의존하므로 여전히 추적 및 리타겟팅 오류에 취약하며 분산형 손끝 힘 피드백을 제공하지 않습니다. 평가는 10명의 참가자, 5개의 짧은 작업, 1개의 로봇 플랫폼, 1개의 정책 학습 작업으로 제한되었습니다. 직접 결합된 조합 효과를 평가했으며 좌표 재매핑, 지연, 수동 접촉 단서의 각 기여를 분리하지 않았습니다. 논문은 더 복잡한 작업(예: 정밀 조립)이나 다른 손 형태에서의 성능을 명시하지 않았습니다.</p>
+<h2 id="_10">엔지니어링 시사점</h2>
+<p>재현 시 세 가지 핵심 사항을 먼저 확인해야 합니다: 첫째, 중력 보상 시스템 식별 프로세스가 완전한지(중력 방향, 하중 질량 및 질량 중심, 관절 토크 스케일링, 쿨롱 마찰) — 이는 직접 유도의 부드러움을 직접 결정합니다. 둘째, 손가락 리타겟팅의 관절 제한 제약이 대상 손(MIDAS)의 물리적 한계와 일치하는지 — 그렇지 않으면 시각적으로는 합리적이지만 기계적으로는 실행 불가능한 명령이 생성됩니다. 셋째, 다중 모달 타임스탬프 정렬 전략 — 최근접 매칭이 아닌 보간을 사용하므로 각 센서 주파수 차이(200 Hz 팔/손, 60 Hz 촉각, 30 Hz 이미지)가 훈련 시 30 Hz로 통합되며, 하류 정책이 시간 해상도에 민감하지 않은지 확인해야 합니다. 가장 쉽게 함정에 빠지는 부분은 조작자의 신체적 요구 증가(TLX 2.72에서 3.23으로)입니다 — 장시간 수집 중 피로가 데모 품질에 영향을 줄 수 있으므로 조작자에게 전완 지지대를 제공하고 단일 수집 시간을 제어하는 것이 좋습니다. 하류 팀이 다른 로봇 팔로 이전할 계획이라면 시스템 식별을 다시 수행하고 핸들 파지점 오프셋(65 mm)이 중력 보상에 미치는 영향을 검증해야 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_zhang_a_unified_perception_language_2025/">A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dexdirect_direct_kinesthetic_arm_guidanc_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhang_a_unified_perception_language_2025/">
+          <span class="entry-type">논문</span>
+          <h3>A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving</h3>
+          <p>A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving (PLA), is a 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">팔 채널: 직접 운동 유도</a></li>
+<li><a href="#_5">손가락 채널: 시각적 리타겟팅</a></li>
+<li><a href="#_6">다중 모달 기록 및 정책 훈련</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

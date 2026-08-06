@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rapid Locomotion via Reinforcement Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Rapid Locomotion via Reinforcement Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Rapid Locomotion via Reinforcement Learning</h1>
+      <p class="entry-name-en">Rapid Locomotion via Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P011. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Agile maneuvers such as sprinting and high-speed turning in the wild are challenging for legged robots. We present an end-to-end learned controller that achieves record agility for the MIT Mini Cheetah, sustaining speeds up to 3.9 m/s. This system runs and turns fast on natural terrains like grass, ice, and gravel and responds robustly to disturbances. Our controller is a neural network trained.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2205.02824" target="_blank" rel="noopener">arXiv:2205.02824 Rapid Locomotion via Reinforcement Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 MIT 팀이 제안한 것으로, 엔드투엔드 강화학습을 통해 MIT Mini Cheetah에서 최대 3.9 m/s의 지속적인 달리기와 5.7 rad/s의 회전을 구현했습니다. 핵심 기여는 선속도와 각속도 명령을 결합 모델링하는 Grid Adaptive 커리큘럼과, 교사-학생 프레임워크 하의 온라인 시스템 식별 모듈로, 정책이 관절 엔코더와 IMU만으로 실제 로봇에 제로샷 배포가 가능하게 한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>"고속 민첩 운동은 반드시 수동으로 설계된 축소 모델에 의존해야 한다"는 전제를 바꾸었습니다. 이전의 MPC 기반 방법은 Mini Cheetah에서 3.7 m/s를 달성했지만, 새로운 지형이나 속도 구간마다 엔지니어가 모델 파라미터를 재조정해야 했습니다. 반면 순수 RL 방법은 명령 범위가 고속으로 확장될 때 훈련에 실패했는데, 이는 무작위 탐색이 고속 샘플을 거의 생성할 수 없고 보상 신호가 희박하기 때문입니다. 저자들은 문제가 RL 자체가 아니라 명령 샘플링 방식에 있다고 지적합니다. 선속도와 각속도를 독립적으로 샘플링하면 원심력 제약 하에서 실행 불가능한 조합이 빈번하게 생성되어, 정책이 달리기 대신 제자리 떨림을 학습하게 됩니다. 이는 사실상 "작업 난이도"를 동역학 문제에서 "명령 분포 설계" 문제로 재정의한 것이며, RL의 민첩 제어 적용 가능성을 위한 장애물을 제거했습니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 아키텍처</h3>
+<ul>
+<li>정책 πθ는 과거 관측 o_{t-H:t} (H=15)과 속도 명령 v_t^cmd를 입력으로 받아 12차원 관절 위치 명령을 출력하며, PD 컨트롤러 (Kp=20, Kd=0.5)가 이를 토크로 변환합니다. 관측은 관절 각도/속도, IMU 중력 방향, 이전 행동만 포함하며, 비전이나 외부 위치 추적은 없습니다.</li>
+</ul>
+<h3 id="-">교사-학생 훈련</h3>
+<ul>
+<li>교사 πT(x_t, d_t) = π_{θb}(x_t, g_{θd}(d_t)): 인코더 g_{θd}가 12차원 도메인 파라미터 d_t (질량, 질량 중심, 마찰, 모터 강도 등)를 8차원 잠재 변수 z_t로 압축하고, 정책 본체 π_{θb}가 이를 기반으로 행동을 출력하며, PPO로 공동 최적화합니다.</li>
+<li>학생 πS(x_t, x_{[t-h:t-1]}) = π_{θb}(x_t, h_{θa}(...)): 적응 모듈 h_{θa}가 42×15의 과거 관측에서 ẑ_t를 추정하며, 손실 L = (ẑ_t - z_t)²로 지도 훈련합니다. 핵심 설계는 h=15가 충분히 짧아 적응 모듈이 정책 본체와 50 Hz에서 실시간 동기 실행이 가능하다는 점입니다.</li>
+</ul>
+<h3 id="grid-adaptive">Grid Adaptive 커리큘럼</h3>
+<ul>
+<li>v_x^cmd-ω_z^cmd 평면을 [0.5 m/s, 0.5 rad/s] 그리드로 이산화하고 결합 분포를 유지합니다. 특정 그리드의 보상이 임계값 γ보다 낮으면 확률을 유지하고, 그렇지 않으면 4-연결 이웃의 확률을 1로 설정합니다. 초기값은 [-1.0, 1.0]×[-1.0, 1.0] 균등 분포입니다.</li>
+<li>Box Adaptive (독립적 주변 분포 유지)와의 본질적 차이: Grid는 v_x와 ω_z의 결합을 명시적으로 모델링합니다. 고속에서는 원심력으로 인해 실행 가능 영역이 ω_z ∼ 1/v_x를 만족하는데, 독립 샘플링은 실행 불가능한 조합을 등확률로 생성하는 반면, 결합 분포는 자동으로 실행 가능 영역에 집중할 수 있습니다.</li>
+</ul>
+<h3 id="_5">도메인 무작위화</h3>
+<ul>
+<li>범위: 지면 마찰 [0.05, 4.00], 반발 계수 [0.00, 1.00], 하중 질량 [-1.0, 3.0] kg, 질량 중심 오프셋 [-0.10, 0.10] m, 모터 강도 [90, 110]%.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li><strong>Grid Adaptive 커리큘럼</strong>: 명령 공간을 독립적 주변 분포가 아닌 결합 분포로 처음 취급했습니다. 이는 공학적 세부 사항이 아니라 "작업 난이도가 동역학과 최적화 알고리즘에 의해 공동 결정된다"는 점을 명시적으로 모델링한 것입니다. 이를 통해 정책이 훈련 중 실행 불가능한 속도-각속도 조합을 자동으로 회피하여 고속 달리기 행동을 발견할 수 있습니다. 커리큘럼 없음과 Box 커리큘럼은 모두 실패했으며, Grid만이 유일하게 성공했습니다.</li>
+<li><strong>온라인 시스템 식별 모듈</strong>: 문헌 [23, 24]과 달리 적응 모듈 h_{θa}는 교사와 동시에 온라인 데이터로 훈련되며, 히스토리 길이 h=15가 실시간 실행에 충분히 작습니다. 이를 통해 학생 정책은 배포 시 미세 조정 없이 온보드 센서만으로 지형 마찰, 하중 등 도메인 파라미터를 암시적으로 추정하여 제로샷 sim-to-real 전이를 달성합니다.</li>
+<li><strong>낮은 이득 PD 컨트롤러</strong>: Kp=20, Kd=0.5는 일반적인 설정보다 훨씬 낮으며, 저자들은 의도적으로 낮은 이득을 선택하여 부드러운 운동을 촉진하고 조정하지 않습니다. 이는 행동 공간을 "강성 추적"보다 "기대 위치"에 가깝게 만들어 시뮬레이션과 실제의 동역학 불일치를 줄입니다.</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<h3 id="_8">핵심 결과</h3>
+<ul>
+<li>실내 평지 최대 지속 속도 <strong>3.9 m/s</strong> (3개 시드 중 최고), 평균 <strong>3.8 m/s</strong>로, 동일 로봇의 MPC 기록 3.7 m/s를 초과했습니다.</li>
+<li>야외 10m 잔디 질주 평균 <strong>3.4 m/s</strong> (2.94초).</li>
+<li>최대 요(yaw)율 <strong>5.7 rad/s</strong>로, 모델 기반 기록 6.28 rad/s의 90%이며, 단일 정책이 선속도와 각속도를 동시에 구현합니다 (모델 기반은 두 컨트롤러 필요).</li>
+<li>절제: 학생 정책 π_θ_ST의 실제 속도 3.81 ± 0.09 m/s로, 시스템 식별이 없는 π_θ_DR (2.49 ± 0.07 m/s)보다 유의미하게 높아 적응 모듈이 sim-to-real의 핵심임을 입증합니다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>시뮬레이션 속도 (m/s)</th>
+<th>실제 속도 (m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시스템 식별 포함 π_θ_ST</td>
+<td>5.46</td>
+<td>3.81 ± 0.09</td>
+</tr>
+<tr>
+<td>시스템 식별 없음 π_θ_DR</td>
+<td>5.07</td>
+<td>2.49 ± 0.07</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">커리큘럼 비교</h3>
+<ul>
+<li>커리큘럼 없음: 학습 불가, 로봇이 제자리 떨림.</li>
+<li>Box Adaptive: 제어 가능하지만 명령 공간의 극단 영역을 배제.</li>
+<li>Grid Adaptive: 모든 오류 임계값에서 더 넓은 명령 면적을 커버 (그림 3), 명령 면적은 지형 거칠기가 증가함에 따라 감소 (그림 5, ε=0.3에서 비교).</li>
+</ul>
+<h3 id="_10">견고성</h3>
+<ul>
+<li>정성적 보고: 자갈 경사로 오르기, 단일 모터 차단 시 균형 유지, 고속에서 걸려 넘어진 후 회복. MPC 기준선은 자갈 경사로 미끄러짐과 걸림 장애물 두 시나리오에서 회복하지 못했습니다.</li>
+</ul>
+<h2 id="_11">경계 및 한계</h2>
+<ul>
+<li>실제 로봇에서 정책을 미세 조정하지 않았지만 (제로샷 배포), sim-to-real 격차의 원인 (시뮬레이션 파라미터 부정확 vs 실제 동역학 포착 불가)은 정량화되지 않았습니다.</li>
+<li>야외 성능은 모션 캡처로 상태를 기록할 수 없고 고속 낙상이 하드웨어에 안전하지 않아 정성적으로만 보고되었습니다.</li>
+<li>지면 평면 내의 본체 속도만 훈련하며, 점프, 웅크리기, 이동 조작은 포함하지 않습니다. 비전을 사용하지 않으므로 계단 오르기, 구덩이 회피와 같은 전방 계획이 필요한 작업은 수행할 수 없습니다.</li>
+<li>고속 보행이 반드시 "더 좋은" 것은 아니며, 에너지 효율이나 마모를 최적화하지 않았습니다. 본체 속도만으로는 과소 결정된 목표이므로 동등하게 선호되는 여러 운동이 존재할 수 있습니다.</li>
+<li>교사 정책은 도메인 파라미터 d_t를 온보드 센서로 측정할 수 없으므로 직접 배포할 수 없습니다.</li>
+</ul>
+<h2 id="_12">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 우선 확인 사항</strong>: 훈련 데이터 4억 타임스텝, 4000 병렬 환경, 단일 RTX 3090에서 벽시계 &lt;3시간 (약 92 실시간 일). 자원이 제한적이라면 Grid 커리큘럼이 1억 스텝 내에 고속 행동을 나타내는지 먼저 검증한 후 확장 여부를 결정하세요.</li>
+<li><strong>가장 흔한 함정</strong>: 커리큘럼 임계값 γ와 그리드 해상도 [0.5, 0.5]는 민감한 하이퍼파라미터입니다. γ가 너무 높으면 명령 범위가 조기에 확장되어 훈련이 불안정해지고, 너무 낮으면 정책이 저속 영역에 머무릅니다. γ=0.3에서 시작하여 훈련 스텝에 따른 명령 면적 증가 곡선을 모니터링하는 것을 권장합니다.</li>
+<li><strong>시스템 식별 모듈 배포</strong>: h=15의 히스토리 길이는 실시간성의 핵심입니다. 다운스트림 플랫폼의 컴퓨팅 자원이 Jetson TX2 NX보다 약하다면 적응 모듈 추론 지연이 50 Hz 제어 주기를 충족하는지 먼저 검증해야 합니다.</li>
+<li><strong>다운스트림 팀에 대한 시사점</strong>: 센서는 관절 엔코더와 IMU만 필요하므로 저가형 네 발 로봇에 적합합니다. 그러나 도메인 무작위화 범위 (마찰 [0.05, 4.00] 등)는 Mini Cheetah에 맞게 보정된 것이므로, 다른 플랫폼으로 전이할 때 특히 모터 강도 범위 [90, 110]%가 저토크 액추에이터에는 적합하지 않을 수 있으므로 재스캔이 필요합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rapid_locomotion_reinforcement_2022"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 아키텍처</a></li>
+<li><a href="#-">교사-학생 훈련</a></li>
+<li><a href="#grid-adaptive">Grid Adaptive 커리큘럼</a></li>
+<li><a href="#_5">도메인 무작위화</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a><ul>
+<li><a href="#_8">핵심 결과</a></li>
+<li><a href="#_9">커리큘럼 비교</a></li>
+<li><a href="#_10">견고성</a></li>
+</ul>
+</li>
+<li><a href="#_11">경계 및 한계</a></li>
+<li><a href="#_12">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

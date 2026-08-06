@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FLARE · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FLARE</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>FLARE</h1>
+      <p class="entry-name-en">FLARE: Robot Learning with Implicit World Modeling</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.15659v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>FLARE 是加州理工学院于 2025 年 CoRL25 会议提出的大型视觉-语言-动作模型，通过将隐式世界模型与扩散 Transformer 策略结合，使机器人能预测未来观测的潜在表征。该方法仅需对标准 VLA 模型进行极小的架构修改，即可在单臂和人形桌面操作任务中实现最高 26% 的性能提升，并支持利用无动作标签的人类视频进行协同训练。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.15659" target="_blank" rel="noopener">FLARE: Robot Learning with Implicit World Modeling (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2505.15659" target="_blank" rel="noopener">FLARE source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>FLARE 的核心创新在于将预测性潜在世界模型集成到机器人策略学习中，通过对齐扩散 Transformer 的特征与未来观测的潜在嵌入，使策略在生成动作时能推理长期后果。该方法极其轻量，仅需在标准视觉-语言-动作模型上添加少量 token 即可实现显著性能提升。在两项多任务仿真模仿学习基准测试中，FLARE 均达到最先进水平，性能超越先前基线方法最高达 26%。此外，FLARE 还能与无动作标签的人类第一人称视频进行协同训练，仅需单次机器人演示即可显著提升策略对未见几何形状新物体的泛化能力。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>FLARE 的核心框架名为“未来潜在表征对齐”，其关键设计包括：
+- <strong>预测性潜在世界模型</strong>：将扩散 Transformer 的特征与未来观测的潜在嵌入进行对齐，使策略能隐式预测未来状态。
+- <strong>轻量级修改</strong>：仅需在标准 VLA 模型上添加少量 token，无需改变模型主体结构。
+- <strong>高频控制兼容</strong>：在保持高频率机器人控制的同时，融入隐式世界模型的推理能力。</p>
+<h3 id="_4">实验设置与关键数字</h3>
+<ul>
+<li><strong>基准测试</strong>：在两项多任务仿真模仿学习基准上评估，涵盖单臂和人形桌面操作任务。</li>
+<li><strong>性能提升</strong>：相比先前策略学习基线方法，FLARE 的性能提升最高达 26%。</li>
+<li><strong>泛化能力</strong>：通过协同训练人类第一人称视频（无动作标签），仅需单次机器人演示即可显著提升对未见几何形状新物体的泛化能力。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>FLARE 被证明是一种通用且可扩展的方法，能够将隐式世界模型与高频机器人控制有效结合，为机器人策略学习提供了新的范式。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2505.15659v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              <span class="rel-desc">FLARE引用扩散策略。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              <span class="rel-desc">FLARE使用行为克隆。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">introduces</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              <span class="rel-desc">FLAREintroduces世界模型。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        <div class="relations-column">
+          <h3>指向它的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <a href="/entry/ent_paper_cosmos_policy_fine_tuning_video_models_2026/">Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_aoe_always_egocentric_human_video_collec_2026/">AoE: Always-on Egocentric Human Video Collection for Embodied AI</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">World Model for Robot Learning: A Comprehensive Survey</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_lights_camera_malfunction_when_illuminat_2026/">Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              
+            </li>
+            
+            <li>
+              <a href="/entry/ent_paper_dial_decoupling_intent_and_act_2026/">DIAL｜通过端到端VLA的潜在世界建模解耦意图和行动</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">提及</span>
+              <span class="rel-desc">DIAL｜通过端到端VLA的潜在世界建模解耦意图和行动提及FLARE。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zheng_flare_robot_learning_with_impl_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lights_camera_malfunction_when_illuminat_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</h3>
+          <p>本文由机器人鲁棒性研究团队提出，针对 VLA 模型在真实世界部署中对光照扰动的脆弱性，构建了 FLARE 物理聚光灯攻击框架与 ChromaGuard…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_cosmos_policy_fine_tuning_video_models_2026/">
+          <span class="entry-type">论文</span>
+          <h3>Cosmos Policy: Fine-Tuning Video Models for Visuomotor Control and Planning</h3>
+          <p>Cosmos Policy 由 NVIDIA 提出，是一种通过单阶段微调将预训练视频模型 Cosmos-Predict2…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_dial_decoupling_intent_and_act_2026/">
+          <span class="entry-type">论文</span>
+          <h3>DIAL｜通过端到端VLA的潜在世界建模解耦意图和行动</h3>
+          <p>DIAL 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_world_model_robot_comprehensive_survey_2026/">
+          <span class="entry-type">论文</span>
+          <h3>World Model for Robot Learning: A Comprehensive Survey</h3>
+          <p>本文是一篇关于机器人学习领域世界模型的全面综述，由研究团队系统梳理了该领域的发展脉络。核心贡献在于从机器人学习视角出发，整合了世界模型与策略耦合、作为学习模拟器、视频生成等关键范式，并总结了导航与自动…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_aoe_always_egocentric_human_video_collec_2026/">
+          <span class="entry-type">论文</span>
+          <h3>AoE: Always-on Egocentric Human Video Collection for Embodied AI</h3>
+          <p>AoE…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置与关键数字</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

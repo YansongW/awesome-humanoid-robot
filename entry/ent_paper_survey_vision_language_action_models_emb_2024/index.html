@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Survey on Vision-Language-Action Models for Embodied AI · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Survey on Vision-Language-Action Models for Embodied AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>A Survey on Vision-Language-Action Models for Embodied AI</h1>
+      <p class="entry-name-en">A Survey on Vision-Language-Action Models for Embodied AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P071. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>这篇综述系统梳理了从单模态视觉、语言、强化学习模型到视觉-语言模型（VLM），再到视觉-语言-动作模型（VLA）的完整技术脉络，并专门总结了具身问答（EQA）基准的现状。作者的核心贡献在于为具身智能研究者提供了一份横跨三大模态基础组件与最新VLA范式的技术地图，并指出了各组件在机器人学习中的适用边界。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2405.14093" target="_blank" rel="noopener">arXiv:2405.14093 A Survey on Vision-Language-Action Models for Embodied AI</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这篇综述真正改变的是“具身智能研究者的文献检索方式”。在此之前，VLA领域的研究散落在CV、NLP、RL三大顶会的论文中，研究者往往需要自行跨领域追踪单模态模型的进展，再费力推断其与机器人控制的关联。作者将这一隐性工作显性化，直接给出了“哪些视觉模型适合做感知、哪些语言模型适合做指令理解、哪些RL算法适合做策略优化”的对应关系，这实际上为入门者节省了数月文献调研时间，也为资深研究者提供了一个结构化的对比框架。</p>
+<p>更重要的是，它改变了人们对“VLA模型”这一概念的认知边界。作者没有将VLA局限为“端到端的大模型”，而是将其拆解为视觉编码器、语言模型、策略网络（或RL组件）的有机组合，并指出许多VLA实际上是在复用单模态预训练模型。这种“组件化”视角使得研究者可以独立评估和替换每个模块，而非将VLA视为不可拆分的黑盒，这对工程实践中的模块复用与故障定位具有直接指导意义。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="cnntransformer">视觉模态：从CNN到Transformer的演进</h3>
+<ul>
+<li><strong>CNN脉络</strong>：LeNet（手写数字识别）→ AlexNet（2012年ImageNet冠军）→ VGG（深度增益）→ GoogLeNet（Inception块）→ ResNet（残差连接）→ ResNeXt（split-transform-merge）→ SENet（squeeze-and-excitation注意力）→ EfficientNet（compound scaling平衡效率与性能）。</li>
+<li><strong>目标检测</strong>：区域方法（R-CNN系列）与网格方法（YOLO）并行发展，FPN、RetinaNet采用自底向上-自顶向下策略。</li>
+<li><strong>图像分割</strong>：主流为编码器-解码器架构（FCN、SegNet、U-Net），编码器提取全局与局部上下文，解码器生成分割图。</li>
+<li><strong>Vision Transformer</strong>：将图像分解为16×16像素patch，每个patch视为token，采用BERT式编码，在分类任务上超越多数传统CNN。</li>
+<li><strong>DETR</strong>：编码器-解码器Transformer，引入可学习object queries，通过交叉注意力从编码器输出提取对象级信息。</li>
+<li><strong>3D视觉</strong>：深度图（Kinect/RealSense捕获或从RGB恢复）、点云（LiDAR/扫描仪）、体素/八叉树（信息更丰富）、网格（不规则性对神经网络有挑战）。</li>
+</ul>
+<h3 id="llm">语言模态：从词嵌入到LLM</h3>
+<ul>
+<li><strong>早期</strong>：word2vec、GloVe词嵌入；RNN（LSTM、GRU、ELMo）与CNN（WordCNN、CharCNN）并行。</li>
+<li><strong>Transformer</strong>：BERT（编码器堆栈，擅长理解）、GPT（解码器堆栈，擅长生成）；改进工作包括RoBERTa、ALBERT、ELECTRA、XLNet、BART、T5。</li>
+<li><strong>LLM扩展</strong>：ChatGPT引发关注，后续有GPT-4、PaLM、LLaMA（少数开源LLM之一）等；指令微调（InstructGPT、FLAN）使预训练模型高效适配下游任务；提示工程取代任务特定微调。</li>
+</ul>
+<h3 id="dqnrl-transformer">强化学习：从DQN到RL Transformer</h3>
+<ul>
+<li><strong>深度RL</strong>：DQN、Double DQN（解决高估）、HER（稀疏奖励）、BCQ/BEAR/CQL（离策略约束）。</li>
+<li><strong>策略搜索</strong>：DDPG、A3C、TRPO、PPO（信任区域稳定策略梯度），Soft AC（最大熵）。</li>
+<li><strong>RL Transformer</strong>：Decision Transformer（建模动作）、Trajectory Transformer（建模状态与回报）、Gato（多模态多任务多具身）。</li>
+<li><strong>机器人RL</strong>：E2E-DVP（最早端到端控制）、Levine大规模抓取CNN、QT-Opt（闭环控制）、Dreamer（长时程任务）、OpenAI灵巧手（解魔方）。</li>
+</ul>
+<h3 id="_3">图模型</h3>
+<ul>
+<li><strong>卷积GNN</strong>：谱方法（ChebNet、GCN）与空间方法（NN4G、MPNN、GraphSage、GAT）。</li>
+<li><strong>图与视觉/语言</strong>：场景图表达对象关系；词级图（依存图、AMR图）显式表示句法语义；文档级图（知识图）用于检索聚类。</li>
+</ul>
+<h3 id="vlm">VLM架构演进</h3>
+<ul>
+<li><strong>早期多流</strong>：ViLBERT（双流+共注意力）、LXMERT（三目标预训练）。</li>
+<li><strong>单流简化</strong>：VL-BERT、VisualBERT、UNITER（词-区域对齐损失）、ViLT（线性投影取代区域特征）。</li>
+<li><strong>对比学习</strong>：CLIP（大规模图像-文本对）、FILIP（token级对比）、ALIGN（无过滤噪声数据）。</li>
+<li><strong>大规模LMM</strong>：Flamingo（门控交叉注意力连接冻结NFNet与Chinchilla）、BLIP-2（Q-Former连接冻结视觉与语言模型）、PaLI/PaLI-X（联合扩展视觉与语言）。</li>
+<li><strong>指令微调</strong>：LLaMA-Adapter（参数高效微调）、Kosmos-1/2（交错输入+接地）、InstructBLIP（指令感知Q-Former）、LLaVA/MiniGPT-4（单线性层连接+两阶段训练）。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>组件化视角的VLA解构</strong>：作者将VLA拆解为视觉编码器、语言模型、策略/RL组件的组合，而非视为单一端到端模型。这一视角使得研究者可以独立评估每个模块的贡献，也为模块替换与故障定位提供了方法论基础。其重要性在于，VLA领域目前缺乏统一的评估框架，组件化视角为建立模块级基准提供了可能。</p>
+</li>
+<li>
+<p><strong>跨模态技术脉络的首次系统对齐</strong>：虽然CV、NLP、RL各有综述，但将三者按“VLA组件”逻辑统一梳理，并明确标注每个模型在机器人学习中的适用场景（如视觉部分强调图像分类/检测/分割与机器人学习的相关性），这是首次。这种对齐使得研究者可以快速判断“我的机器人任务需要哪种视觉模型”，而非盲目追随最新SOTA。</p>
+</li>
+<li>
+<p><strong>EQA基准的横向对比表</strong>：作者整理了10个具身问答基准（EQA、IQUAD、MT-EQA、MP3D-EQA、EgoVQA、EgoTaskQA、EgoPlan、OpenEQA、EgoCOT、EQA-MX、LoTa-Bench），统一标注了QA数量、视频来源、答案类型、是否主动、数据收集方式与评估指标。这一对比表为选择基准提供了直接依据，填补了该领域缺乏系统性对比的空白。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>论文未提供统一的实验对比，而是以表格形式汇总了VLM模型参数与EQA基准特征。关键数字汇总如下：</p>
+<table>
+<thead>
+<tr>
+<th>模型/基准</th>
+<th>关键参数/规模</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ViLBERT</td>
+<td>视觉44M + 语言221M</td>
+<td>双流+共注意力</td>
+</tr>
+<tr>
+<td>LXMERT</td>
+<td>视觉44M + 语言183M</td>
+<td>三目标预训练</td>
+</tr>
+<tr>
+<td>ViLT</td>
+<td>视觉2.4M + 语言85M</td>
+<td>线性投影取代区域特征</td>
+</tr>
+<tr>
+<td>CLIP</td>
+<td>视觉428M + 语言63M</td>
+<td>对比预训练</td>
+</tr>
+<tr>
+<td>BLIP-2</td>
+<td>视觉428M/1B + Q-Former + 语言6.7B/3B/11B</td>
+<td>Q-Former连接</td>
+</tr>
+<tr>
+<td>Flamingo</td>
+<td>视觉438M + 语言70B</td>
+<td>门控交叉注意力</td>
+</tr>
+<tr>
+<td>PaLI-X</td>
+<td>视觉22B + 语言32B</td>
+<td>联合扩展</td>
+</tr>
+<tr>
+<td>EQA</td>
+<td>5K QA / 750 envs</td>
+<td>House3D模拟器</td>
+</tr>
+<tr>
+<td>EgoTaskQA</td>
+<td>40K QA / 2K videos</td>
+<td>LEMMA数据集</td>
+</tr>
+<tr>
+<td>OpenEQA</td>
+<td>557+1079 QA / 180 envs</td>
+<td>开放答案+LLM评分</td>
+</tr>
+<tr>
+<td>EQA-MX</td>
+<td>8.2M QA / 750K images</td>
+<td>CAESAR模拟器</td>
+</tr>
+</tbody>
+</table>
+<p>这些数字表明：VLM领域存在明显的规模分化（从2.4M到70B），而EQA基准在数据规模（从600到8.2M）与任务形式（多项选择、开放答案、规划）上差异巨大，选择基准时需匹配任务需求。</p>
+<h2 id="_6">边界与局限</h2>
+<p>论文未明确列出作者承认的局限，但可从内容推断以下边界：
+- <strong>视觉部分仅覆盖图像分类、检测、分割</strong>，未涉及视频理解、光流、深度估计等与机器人感知直接相关的任务，尽管这些任务在机器人领域同样重要。
+- <strong>NLP与RL部分仅为简要概述</strong>，作者明确指向其他综述，因此对LLM的RLHF、RL的离线学习等前沿方向未深入展开。
+- <strong>VLM表格仅包含代表性模型</strong>，作者指出“由于篇幅有限，我们仅包含代表性的多模态数据集”，因此大量近期模型（如GPT-4V、Gemini）未被纳入。
+- <strong>EQA基准表未包含主动感知的评估指标细节</strong>，如LoTa-Bench的Success指标定义未展开。
+- <strong>GPT-4的模型规模为估计值</strong>，因为官方未公开。</p>
+<h2 id="_7">工程启示</h2>
+<ol>
+<li>
+<p><strong>先核对视觉编码器的选择</strong>：若任务需要细粒度对象理解（如抓取），优先考虑Faster R-CNN类区域特征（ViLBERT、UNITER采用）；若任务需要全局语义对齐（如场景描述），ViT类patch特征（ViLT、CLIP）更合适。注意ViT的patch大小为16×16像素，这决定了最小可感知对象的尺度。</p>
+</li>
+<li>
+<p><strong>语言模型选型需匹配指令复杂度</strong>：简单指令（如“拿起红色杯子”）用BERT-base（110M）即可；复杂推理或长对话需LLaMA（7B）级模型。注意LLaMA-Adapter、LLaVA等采用单线性层连接，训练成本低但可能限制跨模态对齐能力；BLIP-2的Q-Former提供了更灵活的对齐机制，但需额外训练。</p>
+</li>
+<li>
+<p><strong>EQA基准选择最容易踩坑的点是“Active”标记</strong>：EQA、IQUAD、MT-EQA、MP3D-EQA支持主动感知（Agent可移动），而EgoVQA、EgoTaskQA、OpenEQA等为被动视频问答。若研究主动探索策略，必须选择Active=Yes的基准；否则评估结果无法反映具身交互能力。</p>
+</li>
+<li>
+<p><strong>数据规模差异极大</strong>：从EgoVQA的600 QA到EQA-MX的8.2M QA，选择基准时需考虑训练成本。小规模基准（如EgoVQA）适合快速验证，大规模基准（如EQA-MX）适合最终评估，但需确认模拟器（CAESAR）与真实场景的域差距。</p>
+</li>
+<li>
+<p><strong>复现时优先检查数据来源</strong>：多个模型使用自收集数据集（FILIP300M、FLD-900M、ALIGN dataset），这些数据不公开，复现时需自行构造或改用公开替代（如LAION）。Vicuna依赖ShareGPT对话，LLaVA依赖GPT辅助指令生成，这些数据生成流程需复现时特别注意。</p>
+</li>
+</ol>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2405.14093</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">A Survey on Vision-Language-Action Models for Embodied AI提及近端策略优化（PPO）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_survey_vision_language_action_models_emb_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#cnntransformer">视觉模态：从CNN到Transformer的演进</a></li>
+<li><a href="#llm">语言模态：从词嵌入到LLM</a></li>
+<li><a href="#dqnrl-transformer">强化学习：从DQN到RL Transformer</a></li>
+<li><a href="#_3">图模型</a></li>
+<li><a href="#vlm">VLM架构演进</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

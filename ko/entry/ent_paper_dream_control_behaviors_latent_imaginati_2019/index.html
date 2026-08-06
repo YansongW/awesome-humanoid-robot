@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dream to Control: Learning Behaviors by Latent Imagination · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Dream to Control: Learning Behaviors by Latent Imagination</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Dream to Control: Learning Behaviors by Latent Imagination</h1>
+      <p class="entry-name-en">Dream to Control: Learning Behaviors by Latent Imagination</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P064. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Learned world models summarize an agent&#39;s experience to facilitate learning complex behaviors. While learning world models from high-dimensional sensory inputs is becoming feasible through deep learning, there are many potential ways for deriving behaviors from them. We present Dreamer, a reinforcement learning agent that solves long-horizon tasks from images purely by latent imagination. We.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1912.01603" target="_blank" rel="noopener">arXiv:1912.01603 Dream to Control: Learning Behaviors by Latent Imagination</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Dreamer는 DeepMind가 제안한 잠재적 상상(latent imagination) 기반 강화 학습 에이전트로, 학습된 세계 모델(RSSM)의 잠재 공간에서 actor-critic을 훈련하여 이미지 입력으로부터 장기 행동을 학습합니다. 20개의 시각적 연속 제어 작업에서 Dreamer는 5×10^6 스텝으로 평균 823점을 달성하여 PlaNet(332) 및 A3C(344, 10^8 스텝)를 능가했으며, 희소 보상 작업에서도 현저히 앞섰습니다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>진정으로 바뀐 것은 "행동 학습의 위치"입니다: 이전의 모델 기반 강화 학습은 온라인 계획(예: PlaNet)에 의존하거나 실제 경험에서 모델 프리 업데이트(예: A3C, D4PG)를 수행했지만, Dreamer는 actor-critic 업데이트를 완전히 학습된 잠재 공간으로 옮겨 상상 궤적으로 실제 경험 리플레이를 대체했습니다. 이는 "모델 정확도가 계획 품질을 직접 결정한다"는 기존 제약을 깨뜨렸습니다—계획은 모델이 매 단계 정확해야 하지만, Dreamer는 모델이 상상 궤적의 분포에서 충분히 좋기만 하면 되며, 가치 모델이 모델 오류를 흡수할 수 있습니다.</p>
+<p>또 다른 변화는 데이터 효율성의 규모입니다. A3C는 10^8 스텝으로 344에 도달했지만, Dreamer는 5×10^6 스텝으로 823에 도달하여 20배의 스텝 차이를 보였습니다(표 내 값 10^8과 5×10^6으로 계산). 이는 하이퍼파라미터 튜닝의 승리가 아니라 "상상 속 학습"이라는 패러다임이 가져온 구조적 이점입니다—세계 모델은 경험을 반복 샘플링 가능한 잠재 역학으로 압축하여 행동 학습이 더 이상 실제 환경의 상호작용 빈도에 제약받지 않게 합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="rssm">세계 모델: RSSM 잠재 역학</h3>
+<ul>
+<li>인코더/디코더는 합성곱 구조(Ha and Schmidhuber 2018)를 사용하며, 잠재 상태는 30차원 대각 가우시안 분포입니다.</li>
+<li>순환 상태 공간 모델(RSSM)이 마르코프 잠재 전이를 모델링하며, 훈련 목표는 픽셀 재구성 + KL 정규화(β=1, 3 free nats 미만으로 클리핑)입니다.</li>
+</ul>
+<h3 id="actor-critic">행동 학습: 잠재 상상 속 actor-critic</h3>
+<ul>
+<li>행동 모델은 tanh 평균(스케일 팩터 5)과 softplus 표준편차를 출력한 후 tanh 변환을 거쳐 행동 분포가 포화될 수 있게 합니다.</li>
+<li>가치 모델은 λ-return 목표(γ=0.99, λ=0.95)를 회귀하며, 목표에 대한 그래디언트는 중단됩니다.</li>
+<li>상상 과정에서 행동 모델과 가치 모델은 <strong>동일한 상상 궤적</strong>으로 업데이트되며, 다단계 가치의 해석적 그래디언트가 잠재 역학 모델을 통해 역전파됩니다.</li>
+</ul>
+<h3 id="_4">핵심 설계 결정</h3>
+<ul>
+<li><strong>행동 반복을 R=2로 고정</strong>, 환경별 수동 조정 없음—Hafner et al. (2018) 및 Lee et al. (2019)와 차별화.</li>
+<li>잠재 오버슈팅, 행동 모델 엔트로피 보상, 가치 모델 타깃 네트워크 미사용—소거 실험에서 불필요함을 확인.</li>
+<li>이산 작업: 행동 모델이 클래스 logits을 예측하고 straight-through 그래디언트 샘플링; ε-greedy를 0.4에서 0.1로 선형 감소(처음 200,000 그래디언트 스텝); KL 스케일 β=0.1; 할인 계수는 이진 분류기로 예측(소프트 라벨 0 및 γ).</li>
+</ul>
+<h3 id="_5">훈련 절차</h3>
+<ul>
+<li>데이터셋 초기화: S=5개의 무작위 에피소드, 100스텝 훈련과 1개 에피소드 수집을 교대, 탐색 노이즈 Normal(0, 0.3).</li>
+<li>배치 B=50, 시퀀스 길이 L=50, 상상 지평 H=15(연속) / H=10(이산).</li>
+<li>Adam 옵티마이저: 세계 모델 6×10^-4, 가치 모델 8×10^-5, 행동 모델 8×10^-5; 그래디언트 노름이 100을 초과하면 스케일링.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>잠재 상상이 온라인 계획을 대체</strong>: PlaNet은 온라인 계획에 의존하여 상상 지평 H에 민감했지만, Dreamer의 가치 모델은 H가 5에서 15까지 성능을 강건하게 만듭니다(최적 H=10). 이는 "모델로 계획하기"에서 "모델로 정책 학습하기"로의 패러다임 전환입니다.</p>
+</li>
+<li>
+<p><strong>표현 학습 목표와 행동 학습의 분리</strong>: 픽셀 재구성, 대비 추정, 순수 보상 예측의 세 가지 표현 목표를 체계적으로 비교한 결과, 픽셀 재구성이 대부분의 작업에서 최적이고 순수 보상 예측은 부족함을 발견했습니다. 이는 "세계 모델이 무엇을 배우는가"와 "행동이 어떻게 학습되는가"가 독립적으로 최적화 가능한 두 차원임을 명확히 했습니다.</p>
+</li>
+<li>
+<p><strong>희소 보상 작업의 돌파구</strong>: Cartpole Swingup Sparse에서 Dreamer는 812.22점을 기록한 반면, PlaNet은 0.64, A3C는 179.80에 불과했습니다. 잠재 상상은 에이전트가 상상 속에서 희소 보상 신호를 "예행연습"할 수 있게 하며, 이는 모델 프리 방법으로는 달성하기 어렵습니다.</p>
+</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<h3 id="deepmind-control-suite">연속 제어(DeepMind Control Suite, 픽셀 입력)</h3>
+<p>Dreamer를 A3C, D4PG, PlaNet과 비교했으며, 환경 스텝 수는 각각 10^8, 10^8, 5×10^6, 5×10^6입니다. 주요 결과:</p>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>A3C</th>
+<th>D4PG</th>
+<th>PlaNet</th>
+<th>Dreamer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartpole Swingup Sparse</td>
+<td>179.80</td>
+<td>482.00</td>
+<td>0.64</td>
+<td>812.22</td>
+</tr>
+<tr>
+<td>Cheetah Run</td>
+<td>213.90</td>
+<td>523.80</td>
+<td>496.12</td>
+<td>894.56</td>
+</tr>
+<tr>
+<td>Hopper Hop</td>
+<td>0.50</td>
+<td>242.00</td>
+<td>0.37</td>
+<td>368.97</td>
+</tr>
+<tr>
+<td>Quadruped Run</td>
+<td>-</td>
+<td>-</td>
+<td>280.45</td>
+<td>888.39</td>
+</tr>
+<tr>
+<td><strong>평균</strong></td>
+<td><strong>243.70</strong></td>
+<td><strong>786.32</strong></td>
+<td><strong>332.97</strong></td>
+<td><strong>823.39</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">소거 실험</h3>
+<ul>
+<li>가치 모델은 Dreamer를 상상 지평 H에 대해 강건하게 만들지만, 가치 예측이 없는 행동 모델과 PlaNet의 온라인 계획은 H에 민감합니다.</li>
+<li>픽셀 재구성은 대부분의 작업에서 대비 추정보다 우수하며, 순수 보상 예측은 부족합니다.</li>
+<li>H가 5에서 15까지 모두 높은 점수를 기록, 최적 H=10.</li>
+</ul>
+<h3 id="_9">이산 제어</h3>
+<p>Atari 및 DeepMind Lab 하위 집합에서 평가(64×64×3 이미지, 3~18개 행동), Dreamer는 일부 작업에서 성공적인 행동을 학습했지만 전반적으로 경쟁력은 부족합니다(Kaiser et al., 2019와 비교).</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li>세계 모델은 고정된 경험 데이터셋에서 학습되며, 커버되지 않은 상태는 모델 오류를 유발할 수 있고, 보이지 않는 영역에서 행동이 실패할 수 있습니다.</li>
+<li>잠재 역학은 마르코프 전이를 가정하므로, 부분 관측 환경(숨은 상태)에서는 성립하지 않을 수 있습니다.</li>
+<li>행동 모델은 순수하게 상상 속에서 훈련되므로 행동 품질은 세계 모델 정확도에 의존합니다; 모델이 부정확하면 정책이 실제 환경으로 전이될 때 실패할 수 있습니다.</li>
+<li>행동 반복 R=2 고정은 모든 작업에 최적이 아닙니다.</li>
+<li>실험은 시뮬레이션 환경에 국한되며 실제 로봇 시스템에서 검증되지 않았습니다.</li>
+<li>이산 행동 작업(Atari 하위 집합)의 성능은 연속 제어 작업보다 낮으며, 저자는 모든 Atari 게임과 DMLab 레벨을 탐색하지 않았습니다.</li>
+</ul>
+<h2 id="_11">공학적 시사점</h2>
+<p>재현 시 먼저 세 가지를 확인하세요: 첫째, 상상 지평 H의 값—연속 작업은 15, 이산은 10을 사용하지만 소거 실험에서 5~15 모두 가능하므로, 계산량을 줄이려면 10을 우선 사용하세요; 둘째, 행동 반복 R=2는 전역 고정 값이므로, 하류 작업이 행동 빈도에 민감하면 재검증이 필요합니다; 셋째, 표현 학습 목표는 픽셀 재구성을 선택하고 순수 보상 예측을 사용하지 마세요—실험에서 그 부족함이 명확히 드러났습니다.</p>
+<p>가장 함정에 빠지기 쉬운 부분은 이산 작업의 하이퍼파라미터입니다: KL 스케일 β=0.1(연속 작업은 1), ε를 0.4에서 0.1로 선형 감소(처음 200,000 그래디언트 스텝), 보상 tanh 클리핑, 할인 계수는 이진 분류기로 예측(소프트 라벨 0 및 γ). 이는 연속 작업과 크게 다르므로, 연속 작업 설정을 그대로 적용하면 이산 작업이 실패합니다. 또한 훈련 시간은 10^6 환경 스텝당 약 3시간(V100 단일 GPU + 10 CPU)이며, 리소스가 제한된 경우 먼저 Cartpole Swingup Sparse로 구현 정확성을 검증하세요—이 작업은 모델 오류에 가장 민감하여 문제를 빠르게 노출할 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_deepmind_control_suite_2018/">DeepMind Control Suite</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dream_control_behaviors_latent_imaginati_2019"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_deepmind_control_suite_2018/">
+          <span class="entry-type">논문</span>
+          <h3>DeepMind Control Suite</h3>
+          <p>The DeepMind Control Suite is a set of continuous control tasks with a standardised structure and…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#rssm">세계 모델: RSSM 잠재 역학</a></li>
+<li><a href="#actor-critic">행동 학습: 잠재 상상 속 actor-critic</a></li>
+<li><a href="#_4">핵심 설계 결정</a></li>
+<li><a href="#_5">훈련 절차</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a><ul>
+<li><a href="#deepmind-control-suite">연속 제어(DeepMind Control Suite, 픽셀 입력)</a></li>
+<li><a href="#_8">소거 실험</a></li>
+<li><a href="#_9">이산 제어</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

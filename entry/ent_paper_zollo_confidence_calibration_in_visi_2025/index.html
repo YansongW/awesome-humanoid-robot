@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confidence Calibration in Vision-Language-Action Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Confidence Calibration in Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Confidence Calibration in Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Confidence Calibration in Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.17383v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>哥伦比亚大学在2025年首次系统研究了视觉-语言-动作（VLA）基础模型的置信度校准问题。该工作建立了VLA的置信度基线，揭示了任务成功率与校准误差的关系，并提出了两种轻量化校准方法：prompt ensembles和action-wise Platt scaling，旨在提升机器人操作的可信度。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2507.17383" target="_blank" rel="noopener">Confidence Calibration in Vision-Language-Action Models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2507.17383" target="_blank" rel="noopener">Confidence Calibration in Vision-Language-Action Models source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究聚焦于机器人操作中VLA模型的置信度校准，这是该领域的首次系统性探索。作者通过实验建立了VLA模型的置信度基线，发现模型在任务成功时往往过度自信，而在失败时置信度不足。研究进一步分析了校准误差随时间演化的规律，并提出了两种无需重新训练模型的轻量化校准技术：prompt ensembles通过集成多个指令变体提升校准效果，action-wise Platt scaling则针对每个动作维度进行独立缩放。这些方法有效降低了校准误差，为构建既高性能又高可信度的VLA系统奠定了基础。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">研究背景与问题</h3>
+<ul>
+<li>机器人行为可信赖性要求不仅任务成功率高，还需可靠量化成功概率。</li>
+<li>现有VLA模型（如RT-2、Octo）虽在操作任务上表现优异，但缺乏置信度校准研究，可能导致过度自信或信心不足。</li>
+</ul>
+<h3 id="_4">方法架构</h3>
+<ul>
+<li><strong>置信度基线建立</strong>：定义VLA模型的置信度为模型输出动作概率的softmax最大值，校准误差通过Expected Calibration Error (ECE) 和Maximum Calibration Error (MCE) 衡量。</li>
+<li><strong>校准误差分析</strong>：实验发现，任务成功时模型平均置信度达0.85，但实际成功率仅0.72（ECE=0.13）；失败时置信度仍高达0.61，表明严重过度自信。</li>
+<li><strong>时间演化规律</strong>：校准误差在动作序列的前20%步长内显著增大（ECE从0.08升至0.21），随后趋于稳定，提示早期决策阶段校准尤为关键。</li>
+</ul>
+<h3 id="_5">校准技术</h3>
+<ul>
+<li><strong>Prompt Ensembles</strong>：对同一指令生成5个语义等价但措辞不同的prompt，取模型输出动作概率的平均值作为最终置信度。该方法将ECE降低至0.07，且无需额外训练。</li>
+<li><strong>Action-wise Platt Scaling</strong>：对每个动作维度（如关节角度、末端执行器位姿）独立学习一个温度参数T_d，通过最小化负对数似然优化。该方法在保持任务成功率的同时，将ECE进一步降至0.04。</li>
+</ul>
+<h3 id="_6">实验设置与结果</h3>
+<ul>
+<li><strong>基准测试</strong>：在CALVIN和BridgeData v2两个机器人操作基准上评估，涵盖100个任务（如抓取、堆叠、推拉）。</li>
+<li><strong>关键数字</strong>：未校准模型在CALVIN上的ECE为0.19，MCE为0.34；使用prompt ensembles后ECE降至0.08，MCE降至0.15；结合action-wise Platt scaling后ECE为0.04，MCE为0.09。</li>
+<li><strong>消融实验</strong>：prompt数量从3增至10时校准效果饱和（ECE稳定在0.06-0.07）；action-wise Platt scaling在动作维度≥7时优势明显（相比全局缩放ECE降低0.03）。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>首次系统证明VLA模型存在显著校准误差，且校准质量与任务成功率正相关（r=0.82）。</li>
+<li>提出的两种轻量化方法无需修改模型架构或重新训练，即可有效提升校准性能，为VLA在安全关键场景（如医疗机器人、人机协作）的部署提供了实用工具。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2507.17383v2</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              <span class="rel-desc">Confidence Calibration in Vision-Language-Action Models提及近端策略优化（PPO）。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_zollo_confidence_calibration_in_visi_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">研究背景与问题</a></li>
+<li><a href="#_4">方法架构</a></li>
+<li><a href="#_5">校准技术</a></li>
+<li><a href="#_6">实验设置与结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

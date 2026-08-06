@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots</h1>
+      <p class="entry-name-en">FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P084. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Reinforcement learning (RL) has made significant strides in legged robot control, enabling locomotion across diverse terrains and complex loco-manipulation capabilities. However, the commonly used position or velocity tracking-based objectives are agnostic to forces experienced by the robot, leading to stiff and potentially dangerous behaviors and poor control during forceful interactions. To.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.06883" target="_blank" rel="noopener">arXiv:2505.06883 FACET: Force-Adaptive Control via Impedance Reference Tracking for Legged Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>FACET는 다리형 로봇을 위한 임피던스 기준 추적 기반 힘 적응 제어 프레임워크를 제안한다. 가상 질량-스프링-댐퍼 모델로 기준 동역학을 정의하고, 강화 학습으로 해당 기준을 추적하는 정책을 훈련시켜 외부 힘에 대한 반응을 암시적이고 경직된 행동에서 명시적이고 조절 가능한 순응성으로 전환한다. 핵심 기여는 원리 기반의 힘 제어 인터페이스를 제공하고, 시뮬레이션과 실제 로봇에서 견고성과 조절 가능성을 검증한 것이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 RL 기반 다리형 로봇 제어기는 속도 추적이든 조작 작업이든 보상 함수가 외부 힘에 대한 반응을 명시적으로 지정하지 않았다. 속도 추적 정책은 모든 외부 힘을 본능적으로 거부하여 움직임이 경직되고, 조작 정책은 힘이 무시 가능하다고 가정하여 실제 상호작용에서 행동이 정의되지 않는다. 이는 인간 밀집 환경에서 로봇의 안전성과 유용성을 근본적으로 제한한다. FACET는 이러한 패러다임을 바꾼다: 외부 힘을 억제해야 할 교란으로 보지 않고, 기준 동역학의 일부로 간주하여 임피던스 파라미터를 통해 로봇의 외부 힘 반응을 명시적으로 "설계"한다. 이를 통해 힘 상호작용 행동이 통제 불가능한 부작용에서 조절 가능하고 예측 가능한 핵심 기능으로 전환된다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">핵심 아키텍처</h3>
+<p>FACET는 교사-학생 프레임워크를 사용하며, 학생 정책은 배포 가능한 관측(명령, 관절 상태, IMU)만 사용하고, 교사 정책은 추가로 특권 정보(선속도, 외부 힘, 접촉 상태 등)를 사용한다. 학생 정책은 교사 파라미터로 초기화되고 단순 모방이 아닌 PPO로 계속 훈련된다.</p>
+<h3 id="_5">기준 모델</h3>
+<p>로봇 행동은 가상 질량-스프링-댐퍼 시스템으로 정의되며, 그 동역학은 다음과 같다:
+<code>m * ẍ_ref = K_p(x_des - x_ref) + K_d(ẋ_des - ẋ_ref) + f_ext</code>
+여기서 <code>u = (x_des, K_p, K_d, m)</code>는 정책 입력이고, <code>f_ext</code>는 외부 힘이다. 정책의 목표는 로봇의 실제 상태 <code>x_sim</code>이 <code>x_ref</code>를 추적하도록 하는 것이며, 손실 함수는 <code>L_track = ||x_sim - x_ref||² + ||ẋ_sim - ẋ_ref||²</code>이다.</p>
+<h3 id="_6">시간 평활화</h3>
+<p>기준 궤적의 노이즈와 불연속성을 피하기 위해, 서로 다른 과거 시간 스텝 <code>t' ∈ {t-8Δt, t-16Δt, t-32Δt}</code>에서 적분된 혼합 목표를 사용하며, <code>Δt = 0.02s</code>이다. 보상 함수는 <code>r_t = (1/M) Σ exp(-||x_sim - x_ref^{t'}||²) + exp(-||ẋ_sim - ẋ_ref^{t'}||²)</code>이다.</p>
+<h3 id="_7">힘 인터페이스</h3>
+<p>임피던스 파라미터 설정을 통해 다양한 힘 행동을 구현한다: <code>K_p=0</code>일 때 완전 순응하여 외부 힘에 의해 유도될 수 있고, <code>K_p</code>를 증가시키면 강성이 증가한다. 이동 조작기의 경우 베이스와 엔드 이펙터 각각에 대해 기준 모델을 정의하며, 파라미터 <code>a ∈ [0,1]</code>는 엔드 이펙터 힘이 베이스로 전달되는지 여부를 제어한다.</p>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li><strong>원리 기반 힘 응답 설계</strong>: 기존 방법이 외부 힘을 무시하거나 힘/위치 모드를 명시적으로 전환해야 하는 것과 달리, FACET는 임피던스 파라미터를 통해 순응성을 연속적으로 조절하여 통합적이고 미세 조정 가능한 힘 제어 인터페이스를 제공한다. 임피던스 제어 개념을 RL 훈련 목표와 깊게 결합한 최초의 사례이다.</li>
+<li><strong>간접 힘 명령</strong>: 정책은 힘이나 속도를 직접 출력하지 않고 임피던스 파라미터 <code>u</code>를 출력한다. 이를 통해 사용자는 강성, 댐핑, 가상 질량과 같은 직관적인 물리량으로 원하는 행동을 지정할 수 있다. 예를 들어 <code>K_p=0</code>으로 설정하면 로봇이 줄에 의해 쉽게 끌려갈 수 있다.</li>
+<li><strong>시간 평활화된 기준 추적</strong>: 여러 과거 시간 스텝의 기준 목표를 혼합함으로써 RL 훈련에서 기준 궤적의 노이즈가 크고 정밀 추적이 어려운 문제를 해결하여 훈련 안정성과 최종 정책의 평활성을 크게 향상시킨다.</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="_10">시뮬레이션 실험</h3>
+<ul>
+<li><strong>대형 교란 견고성</strong>: <code>1.5 m/s</code> 전진 시 횡방향 충격량을 가했을 때, FACET의 성공률이 속도 추적 및 무작위 교란 기준선보다 유의미하게 높았다.</li>
+<li><strong>연성 충돌</strong>: 로봇이 <code>1.5 m/s</code>로 가상 벽에 들어갈 때, FACET의 충돌 충격량이 유의미하게 낮았고, <code>K_p</code> 조절로 제어 가능했다.</li>
+<li><strong>절제 연구</strong>: 평활화, 개루프, 폐루프, 가속도 네 가지 교사 정책 및 해당 학생 정책을 비교했다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>정책</th>
+<th>위치 오차</th>
+<th>속도 오차</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평활화 교사</td>
+<td>1.00</td>
+<td>1.00</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>개루프 교사</td>
+<td>0.72</td>
+<td>0.92</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>폐루프 교사</td>
+<td>17.71</td>
+<td>2.04</td>
+<td>0.96</td>
+</tr>
+<tr>
+<td>가속도 교사</td>
+<td>70.51</td>
+<td>6.64</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>평활화 학생</td>
+<td>5.18</td>
+<td>1.85</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>개루프 학생</td>
+<td>10.31</td>
+<td>2.07</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>동시 기준선</td>
+<td>26.23</td>
+<td>3.53</td>
+<td>0.92</td>
+</tr>
+</tbody>
+</table>
+<p>평활화 교사가 오차가 가장 작았고, 개루프 학생이 폐루프 학생보다 우수하여 시간 평활화와 적분 목표의 중요성을 확인했다.</p>
+<h3 id="_11">실제 세계 실험</h3>
+<ul>
+<li><strong>순응 추종</strong>: <code>K_p=0, K_d=4</code>로 설정하면 로봇이 가는 줄로 가볍게 당기거나 손끝으로 밀어서 시작/정지할 수 있으며, 명시적 속도 명령 없이 힘 방향을 따라 부드럽게 움직인다.</li>
+<li><strong>강한 당김</strong>: 내장 제어기는 <code>2.5 kg</code>까지 성공적으로 당겼고, 견고한 정책은 <code>5 kg</code> 초과 시 실패했으며, FACET는 <code>10 kg</code>까지 안정적으로 당겼다.</li>
+</ul>
+<h2 id="_12">경계 및 한계</h2>
+<p>논문은 모든 한계를 명시적으로 언급하지 않았지만, 사실적 요점을 기반으로 추론할 수 있다: 신체 속도와 외부 힘의 직접 측정은 현실에서 사용 불가능하며, 기준 모델도 현실에서 사용 불가능하다. <code>f_ext</code>의 신뢰할 수 있는 인식은 대부분의 로봇에 힘 센서가 없어 불가능하다. 식 2의 동역학을 구현하려면 로봇이 발 접촉을 통해 <code>f_grf</code>를 생성하여 가상 스프링 힘을 일치시켜야 하지만, 복잡한 접촉 동역학으로 인해 어렵다. 다물체 설정에서는 기계적 구속이 고려되지 않아 엔드 이펙터 기준 목표가 도달 불가능할 수 있다. 또한, 사전 정의된 주파수의 발진기로 보행을 제어하여 목표 가속도와 속도에 기반한 발 디딤 위치 조정 능력을 제한할 수 있다.</p>
+<h2 id="_13">공학적 시사점</h2>
+<p>재현 시 주의할 점: 정책은 IsaacLab에서 PPO로 훈련되고, 제어 간격은 <code>Δt = 0.02s</code>, 시간 평활화는 <code>t' ∈ {t-8Δt, t-16Δt, t-32Δt}</code>를 사용한다. 훈련 중 다양한 명령과 외부 힘 분포를 샘플링하고 도메인 무작위화를 적용한다. 가장 중요한 공학적 세부 사항은 시간 평활화의 구현으로, 훈련 안정성을 직접 결정한다. 배포 시 대부분의 경우 명확히 정의된 세계 좌표계가 없으므로, 로봇 좌표계에서 고정 목표 속도 모드 또는 완전 순응 모드로 <code>x_des</code>를 지정해야 한다. 강한 당김 실험에서는 <code>K_p</code>와 설정점 변위를 점진적으로 증가시켜 <code>K_p(x_ref-x)</code>가 <code>100 N</code>까지 도달하게 한다. 가장 함정에 빠지기 쉬운 부분은 보상 함수의 <code>exp(-||ẋ-ẋ_ref||²)</code> 형태가 초기 오차가 클 때 포화될 수 있다는 점으로, 이차 비용 항 <code>-||ẋ-ẋ_ref||²</code>을 추가하여 해결해야 한다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_facet_force_adaptive_control_impedance_r_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">핵심 아키텍처</a></li>
+<li><a href="#_5">기준 모델</a></li>
+<li><a href="#_6">시간 평활화</a></li>
+<li><a href="#_7">힘 인터페이스</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#_10">시뮬레이션 실험</a></li>
+<li><a href="#_11">실제 세계 실험</a></li>
+</ul>
+</li>
+<li><a href="#_12">경계 및 한계</a></li>
+<li><a href="#_13">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

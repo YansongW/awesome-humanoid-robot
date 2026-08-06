@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models</h1>
+      <p class="entry-name-en">WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility of Embodied World Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P116. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>While world models have emerged as a cornerstone of embodied intelligence by enabling agents to reason about environmental dynamics through action-conditioned prediction, their evaluation remains fragmented. Current evaluation of embodied world models has largely focused on perceptual fidelity (e.g., video generation quality), overlooking the functional utility of these models in downstream.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.08971" target="_blank" rel="noopener">arXiv:2602.08971 WorldArena: A Unified Benchmark for Evaluating Perception and Functional Utility</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>WorldArena는 연구팀이 제안한 임베디드 월드 모델(EWM)을 위한 통합 벤치마크로, 지각 품질 평가와 세 가지 기능적 효용 평가(데이터 엔진, 정책 평가기, 행동 플래너)를 최초로 동일한 프레임워크에 통합했습니다. 핵심 기여는 16개의 객관적 지표, 3개의 폐루프 다운스트림 태스크, 인간 주관 평가를 포함하는 종합 평가 체계를 구축하고 EWMScore 집계 점수를 발표한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 임베디드 월드 모델 평가의 파편화 문제는 분야 발전을 저해할 정도에 이르렀습니다: 비디오 생성 지표(예: FVD, IS)는 픽셀 수준의 충실도만 반영할 뿐, "이 모델이 로봇이 조작을 학습하는 데 도움이 될 수 있는가"라는 근본적인 질문에는 답할 수 없습니다. 이전에도 폐루프 행동 실행으로 월드 모델을 평가하려는 시도가 있었지만, 적용 범위가 단일 역할에 국한되어 월드 모델이 합성 데이터 엔진, 정책 평가 도구 등으로 사용되는 더 넓은 응용 시나리오를 간과했습니다.</p>
+<p>WorldArena가 진정으로 바꾼 것은 평가의 "기능 지향성"입니다—더 이상 "비디오가 실제처럼 보이는가"를 묻지 않고, "이 모델이 데이터 생성기로 사용될 수 있는가, 정책 심판으로 사용될 수 있는가, 행동 플래너로 사용될 수 있는가"를 묻습니다. 이러한 전환은 평가를 시각적 품질 경쟁에서 임베디드 지능의 실제 요구로 되돌려 놓았으며, 연구자들이 비디오 지표에서 우수한 성능을 보이는 모델이 실제로 사용 가능한 물리적 세계 예측 능력을 갖추었는지 재검토하도록 강제합니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="6-16">비디오 품질 평가: 6차원 16지표</h3>
+<ul>
+<li><strong>시각적 품질</strong>: MUSIQ 이미지 품질, LAION 미학 예측, V-JEPA 특징 분포의 MMD(2차 다항식 커널, α=40)</li>
+<li><strong>모션 품질</strong>: RAFT 광학 흐름 역동성(상위 5% 활성 픽셀), 평균 광학 흐름 크기, VFI-Mamba 프레임 보간 평활도</li>
+<li><strong>내용 일관성</strong>: DINO 객체 일관성, CLIP 배경 일관성, 전방/후방 광학 흐름 왕복 왜곡의 AEPE</li>
+<li><strong>물리적 준수</strong>: Qwen3-VL 상호작용 품질 점수(1-5점 정규화), SAM 3 궤적 추출 후 NDTW 거리</li>
+<li><strong>3D 정확성</strong>: Depth-Anything 단안 깊이 추정(중앙값 스케일링 정렬), Qwen3-VL 원근 판단</li>
+<li><strong>제어 가능성</strong>: Qwen3-VL 명령 준수, Qwen2.5-VL 설명과 CLIP 인코딩의 의미 정렬, 다중 명령 생성 비디오의 쌍별 특징 비유사도</li>
+</ul>
+<h3 id="_4">임베디드 태스크 평가: 세 가지 폐루프 역할</h3>
+<ul>
+<li><strong>데이터 엔진</strong>: 2단계 훈련—먼저 RoboTwin 2.0에서 월드 모델을 미세 조정하여 합성 비디오 생성, 이후 월드 모델 가중치를 동결하고 역동역학 모델(IDM)을 통합하여 행동 추출, 합성 데이터로 π0.5 정책 모델 훈련</li>
+<li><strong>정책 평가기</strong>: 서로 다른 능력을 가진 5개의 π0.5 정책을 훈련하고, 행동 제어 가능한 월드 모델과 상호작용 rollout(실제 비디오 프레임 수보다 20% 초과), 성공률은 VLM이 판정하며 RoboTwin 시뮬레이터 결과와 상관관계 비교</li>
+<li><strong>행동 플래너</strong>: 월드 모델 + IDM 페어링, 텍스트 명령과 초기 프레임을 입력으로 행동 시퀀스 출력, 시뮬레이터에서 실행하고 성공률 측정</li>
+</ul>
+<h3 id="_5">점수 집계</h3>
+<p>EWMScore는 16개 지표에 대해 경험적 경계 선형 정규화(99 백분위수를 최대값, 1 백분위수를 최소값)를 적용하여 [0,100]으로 매핑한 후 산술 평균을 취합니다.</p>
+<h2 id="_6">핵심 혁신</h2>
+<p><strong>기능 효용과 지각 품질을 동시에 중시하는 평가 패러다임</strong>: 기존 벤치마크는 비디오 품질만 보거나 단일 폐루프 태스크만 보았습니다. WorldArena는 세 가지 기능적 역할(데이터 엔진, 정책 평가기, 행동 플래너)을 통합 프레임워크에 처음으로 포함시켜 평가 결과가 실제 로봇 학습 프로세스에서 월드 모델의 가치를 직접 반영할 수 있게 했습니다.</p>
+<p><strong>VLM을 물리적 합리성 심판으로 사용</strong>: Qwen3-VL로 상호작용 품질, 원근, 명령 준수를 1-5점 Likert 척도로 평가하고, 렌더링 아티팩트를 허용하는 정책 성공 판정 프로토콜(GT와 생성 프레임의 최종 상태, 팔 선택, 행동 의도 비교)을 설계했습니다. 이는 전통적 지표가 포착할 수 없는 "물리적 상식 오류" 문제를 해결합니다.</p>
+<p><strong>교차 차원 상관관계 분석</strong>: 그림 5는 EWMScore가 인간 판단과 강한 상관관계(Pearson r=0.825)를 보이지만, 데이터 합성 성능과는 중간 상관관계(r=0.600), 행동 계획 성능과는 약한 상관관계(r=0.360)를 보임을 보여줍니다. 이 발견은 지각 품질과 기능 효용 사이의 비대칭적 관계를 밝혀내며, 이전 연구에서 체계적으로 정량화되지 않았던 부분입니다.</p>
+<h2 id="_7">실험 및 결과</h2>
+<p><strong>테스트 모델</strong>: 14개의 대표적인 월드 모델로, 범용 비디오 모델(CogvideoX, Wan 2.2, Wan 2.6, Veo 3.1), 텍스트 조건 임베디드 모델(Genie Envisioner, GigaWorld, TesserAct, Cosmos-Predict 2.5, WOW, RoboMaster, Vidar), 행동 조건 모델(IRASim, Cosmos-Predict 2.5 (action), CtrlWorld)을 포함합니다.</p>
+<p><strong>비디오 품질 평가 핵심 결과</strong>(표 2, 표 3 발췌):</p>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>이미지 품질</th>
+<th>JEPA 유사성</th>
+<th>상호작용 품질</th>
+<th>궤적 정확성</th>
+<th>명령 준수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Wan 2.6</td>
+<td>0.6824</td>
+<td>0.7229</td>
+<td>0.7280</td>
+<td>0.1182</td>
+<td>0.8536</td>
+</tr>
+<tr>
+<td>Veo 3.1</td>
+<td>0.6605</td>
+<td>0.5694</td>
+<td>0.7872</td>
+<td>0.1231</td>
+<td>0.9328</td>
+</tr>
+<tr>
+<td>CtrlWorld</td>
+<td>0.3522</td>
+<td>0.9185</td>
+<td>0.6212</td>
+<td>0.4766</td>
+<td>0.7272</td>
+</tr>
+<tr>
+<td>Genie Envisioner</td>
+<td>0.2305</td>
+<td>0.3340</td>
+<td>0.2052</td>
+<td>0.0679</td>
+<td>0.2028</td>
+</tr>
+</tbody>
+</table>
+<p><strong>데이터 엔진 태스크 성공률</strong>(표 4): WoW가 가장 우수(태스크 1: 45%, 태스크 2: 71%), Genie Envisioner가 가장 낮음(태스크 1: 7%, 태스크 2: 21%). 실제 데이터로 훈련된 π0.5 정책은 태스크 1: 77%, 태스크 2: 66%.</p>
+<p><strong>행동 플래너 태스크 성공률</strong>(표 5): 모든 월드 모델이 실제 데이터로 훈련된 π0.5 정책(태스크 1: 77%, 태스크 2: 66%)보다 현저히 낮았으며, WoW가 상대적으로 가장 우수(태스크 1: 20%, 태스크 2: 21%).</p>
+<p><strong>정책 평가기</strong>: CtrlWorld가 RoboTwin 시뮬레이터 평가 결과와 강한 상관관계를 보였고, Cosmos-Predict 2.5는 상관관계가 약함; 두 모델 모두 성공률이 시뮬레이터 측정값보다 높았습니다.</p>
+<p><strong>인간 평가</strong>: 70명의 평가자가 3500개의 비디오를 평가했습니다. 상용 모델(Veo 3.1, Wan 2.6)이 전반적 품질, 명령 준수, 물리적 준수에서 가장 높은 점수를 받았습니다; 행동 조건 방법(CtrlWorld)이 순수 텍스트 대응 방법보다 물리적 준수와 승률이 더 좋았습니다.</p>
+<h2 id="_8">경계와 한계</h2>
+<p>저자들은 명시적으로 인정합니다: 합성 데이터 품질은 여전히 정책을 효과적으로 훈련하기에 충분하지 않으며, 현재 임베디드 월드 모델은 다운스트림 학습의 데이터 소스로 신뢰할 수 없습니다; 월드 모델은 폐루프 태스크 실행에서 장기 태스크를 안정적으로 지원하기 어렵습니다; 합성 데이터는 시각적 충실도가 높음에도 불구하고 복잡한 임베디드 추론을 위한 강력한 예측 또는 의사 결정 관련 신호를 제공하기에 여전히 부족합니다. 지각적 사실감은 좋은 인간 평가를 얻기 위한 필요 조건이지만, 다운스트림 임베디드 태스크의 비례적 이득으로 직접 전환되지는 않습니다.</p>
+<p>평가는 RoboTwin 2.0 단일 플랫폼(50개 태스크 시나리오, 2500개 비디오)을 기반으로 하며, 결론의 일반화 가능성은 해당 시뮬레이터의 물리적 충실도와 태스크 분포에 제한됩니다. 정책 평가기 태스크에서 VLM 판정 프로토콜의 "태스크 기본 완료" 임계값 정의에는 주관성이 존재하며, 다른 VLM 버전에 따라 결과가 변동될 수 있습니다. 논문은 하드웨어 구성과 추론 시간 비용을 명시하지 않았습니다.</p>
+<h2 id="_9">엔지니어링 시사점</h2>
+<p>재현 시 먼저 정규화 경계를 확인하세요: 표 6의 경험적 경계(예: Photometric Consistency 최대 6.7899, 최소 0.1257)는 8개 모델 생성 비디오의 99/1 백분위수를 기반으로 계산되었으며, 모델 집합을 변경하면 경계값이 달라져 논문 간 점수를 직접 비교할 수 없습니다. 가장 함정에 빠지기 쉬운 지표는 행동 추종 지표입니다—동일한 명령에 대해 여러 다른 행동의 비디오를 생성하고 쌍별 특징 비유사도를 계산해야 하며, 생성기가 명령에 둔감한 경우(예: Genie Envisioner의 0.0109) 이 지표는 모델 능력을 심각하게 과소평가합니다.</p>
+<p>다운스트림 팀 선택 권장 사항: 데이터 증강이 목표라면 WoW를 우선 고려(데이터 엔진 태스크 성공률 최고); 정책 평가가 필요하다면 CtrlWorld가 시뮬레이터와 상관관계가 가장 강함; 비디오 품질과 인간 관람감을 추구한다면 상용 모델 Veo 3.1 또는 Wan 2.6을 직접 선택하세요. 행동 조건 모델(예: CtrlWorld)이 물리적 준수에서 텍스트 조건 모델보다 체계적으로 우수하지만, 궤적 정확성 지표(NDTW)는 행동 조건 모델에 더 유리하므로 비교 시 모델 유형을 구분해야 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_worldarena_unified_benchmark_evaluating_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">벤치마크</span>
+          <h3>HumanoidBench</h3>
+          <p>Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해 40개 이상의 작업을 제공함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#6-16">비디오 품질 평가: 6차원 16지표</a></li>
+<li><a href="#_4">임베디드 태스크 평가: 세 가지 폐루프 역할</a></li>
+<li><a href="#_5">점수 집계</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a></li>
+<li><a href="#_8">경계와 한계</a></li>
+<li><a href="#_9">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

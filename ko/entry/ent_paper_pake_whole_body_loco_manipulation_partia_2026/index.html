@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</h1>
+      <p class="entry-name-en">PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Loco-manipulation has recently shown promising capabilities; however, achieving high-precision control, managing the high-dimensional action space induced by many degrees of freedom (DoFs), and fully exploiting the inherent redundancy of whole-body systems remain challenging. In this paper, we propose a novel whole-body control framework that effectively addresses these challenges by decomposing.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11041" target="_blank" rel="noopener">arXiv:2607.11041 PAKE: Learning Whole-Body Loco-Manipulation with Partial Kinematic Embeddings</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>PAKE(Partial Kinematic Embeddings)는 연구팀이 제안한 고자유도 바퀴형 사족 로봇 팔 시스템을 위한 전신 제어 프레임워크로, 고정밀 6D 엔드 이펙터 자세 추적과 섀시 속도 제어를 동시에 달성하는 것을 목표로 합니다. 핵심 기여는 전신 제어 문제를 "부분 참조 운동 생성"과 "저수준 운동 모방"이라는 두 가지 하위 문제로 합리적으로 분해하고, 몸통 roll/pitch/높이를 추가적인 로봇 팔 자유도로 활용하여 작업 공간을 확장하며, 운동학적 정규화 흐름(KNF)을 통해 잠재 공간에서 시스템의 중복성을 명시적으로 활용하는 데 있습니다.</p>
+<h2 id="_2">무엇을 변화시켰는가</h2>
+<p>기존 이동 조작(loco-manipulation) 방법이 직면한 핵심 모순은 고자유도 시스템이 가져오는 거대한 탐색 공간과 locomotion/manipulation 목표 간의 충돌입니다. 대부분의 방법은 로봇이 정지한 상태에서 조작하거나(이동성 희생), 끝점 위치만 추적하고 자세는 무시하거나([10,26,34] 참조), 고정 베이스나 바퀴형 플랫폼에 의존하여 고정밀 자세 추적을 구현합니다([33,20] 참조). 더 중요하게는, 기존 방법은 일반적으로 단일 실행 가능 해만 탐색하여 고차원 시스템에 내재된 중복성, 즉 조정성과 추적 정밀도를 개선하는 데 사용할 수 있는 수많은 대체 해가 존재한다는 사실을 완전히 무시합니다. PAKE가 진정으로 변화시킨 것은 중복성을 회피해야 할 복잡성으로 보지 않고 명시적으로 모델링하고 활용할 수 있는 자원으로 간주하여, 운동학적 정규화 흐름을 통해 중복 해 공간을 매개변수화하고 상위 제어기가 잠재 공간에서 능동적으로 탐색하여 조정 성능을 최적화할 수 있게 한 점입니다. 이는 "몸통의 미세한 진동이 끝점에서 증폭되는 문제"와 "로봇 팔 운동이 질량 중심을 변화시켜 locomotion 안정성에 영향을 미치는 문제"라는 전신 제어를 오랫동안 괴롭혀 온 두 가지 문제를 해결합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 아키텍처</h3>
+<p>PAKE는 계층적 프레임워크를 채택하여 중복성 인식 운동학적 참조 생성과 동역학적 실행 가능 실행을 분리하며, 훈련은 세 단계로 진행됩니다:
+1. <strong>운동학적 데이터셋 생성</strong>: 병렬 정운동학을 사용하여 1억 7천만 쌍의 (관절 구성, 끝점 자세) 데이터를 생성하며, 관절 공간 샘플링은 로봇 팔 6DoF와 몸통 3DoF(roll/pitch/높이)를 포함합니다.
+2. <strong>KNF 훈련</strong>: Glow 아키텍처 기반 정규화 흐름으로, 12개의 결합 레이어, 각 레이어 너비 12, 계수 함수는 3계층 FCN(은닉 너비 1024), 기본 분포는 정규 분포이며, Kim et al.의 안정화 기법을 통합합니다.
+3. <strong>LLC 사전 훈련</strong>: PPO 알고리즘, 비대칭 actor-critic, Actor는 12개 액추에이터의 명목 관절 위치 오프셋을 출력하며 PD 컨트롤러(kp=100, kd=1)가 추적하고, 훈련 시간은 약 14시간/9억 시뮬레이션 스텝입니다.
+4. <strong>HLC 훈련 + LLC 미세 조정</strong>: HLC는 KNF 잠재 공간에서 탐색하며, 동작은 <code>z_t = λ_latent_scale × tanh(a_t^hlc)</code>로 변환되고 λ=0.7입니다. 동시에 LLC를 미세 조정하며 약 15시간/10억 시뮬레이션 스텝이 소요됩니다.</p>
+<h3 id="_5">핵심 설계 결정</h3>
+<ul>
+<li><strong>부분 참조 운동 정의</strong>: 몸통 x/y/yaw 성분을 명시적으로 제외하고 roll(ξ), pitch(θ), 높이(h)와 로봇 팔 6DoF만 포함하여 총 9차원으로 구성합니다. 이는 이동성을 유지하는 핵심입니다.</li>
+<li><strong>HLC 동작 공간</strong>: 직접 관절 각도를 출력하는 대신 KNF 잠재 공간에서 탐색하여 상위 제어기가 중복 해의 다중 모드 분포를 활용할 수 있게 합니다.</li>
+<li><strong>명령 샘플링</strong>: LLC 훈련은 커리큘럼 학습으로 명령 범위를 점진적으로 확장합니다. HLC 훈련 시 끝점 궤적은 3차 유리 Bézier 곡선으로 샘플링하고(제어점은 정운동학 범위 내에서 균일 샘플링, 가중치 ∈[1,2000]), 자세는 slerp로 생성합니다.</li>
+<li><strong>보상 설계</strong>: LLC는 <code>r = r_pos × exp(0.1 × r_neg)</code> 형태를 사용하며 속도 추적, 끝점 자세 추적, 발 접촉 등의 항목을 포함합니다. HLC는 연속 시간 스텝의 부분 참조 운동 차이에 기반한 평활성 보상을 추가로 포함합니다.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li><strong>중복성 명시적 모델링</strong>: 운동학적 정규화 흐름(KNF)을 전신 제어에 최초로 적용하여 고차원 시스템의 중복 해 공간을 샘플링 가능한 확률 분포로 매개변수화하고, 상위 제어기가 단일 해를 탐색하는 대신 잠재 공간에서 능동적으로 탐색할 수 있게 합니다. 이는 "단지 실행 가능한 해만 찾는" 패러다임에 대한 근본적인 돌파구입니다.</li>
+<li><strong>부분 참조 운동 개념</strong>: 몸통 roll/pitch/높이를 추가적인 로봇 팔 자유도로 간주하면서 x/y/yaw를 명시적으로 제외하여 이동성을 유지합니다. 이 "부분" 설계는 정교합니다. 몸통 자세를 활용하여 작업 공간을 확장하면서도 섀시 기동성을 희생하지 않아 locomotion과 manipulation의 고유한 충돌을 해결합니다.</li>
+<li><strong>계층적 분리 아키텍처</strong>: 운동학적 참조 생성(KNF)과 동역학적 실행 가능 실행(LLC)을 완전히 분리하여 상위 계층은 중복성을 활용한 조정 최적화에, 하위 계층은 물리적 실행 가능성에 집중할 수 있게 합니다. 이러한 분리는 훈련을 더 안정적으로 만들고, KNF가 생성한 운동학적 참조는 데이터에서 학습된 관절 한계를 자연스럽게 충족하여 LLC의 필터링 부담을 줄입니다.</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<p><strong>비교 설정.</strong> 우리는 전방향 섀시와 로봇 팔을 갖춘 고자유도(high-DoF) 로봇 시스템에서 제안된 전신 제어 프레임워크를 평가하며, 중복 자유도를 활용한 전신 제어를 수행합니다. 평가는 6가지 조작 작업을 포함합니다: <code>plug_in</code>(플러그 삽입), <code>sweep_broom</code>(빗자루 청소), <code>trash disposal</code>(쓰레기 처리), <code>hammer storage</code>(망치 보관), <code>toy pickup</code>(장난감 집기), <code>foam transport</code>(폼 운반). 각 작업에 대해 4개의 수치 지표가 보고됩니다(논문에서 지표 이름을 명시하지 않았으며, 위치 오차, 자세 오차, 속도 오차 등으로 추정). 논문 발췌문에는 기준선 방법 이름이 명시되지 않았으며 각 작업의 수치 결과만 제공됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>지표 1</th>
+<th>지표 2</th>
+<th>지표 3</th>
+<th>지표 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plug_in</td>
+<td>0.0503 ± 0.0034</td>
+<td>0.1492 ± 0.0099</td>
+<td>0.0461 ± 0.0099</td>
+<td>0.0053 ± 0.0055</td>
+</tr>
+<tr>
+<td>sweep_broom</td>
+<td>0.0406 ± 0.0006</td>
+<td>0.1342 ± 0.0004</td>
+<td>0.1245 ± 0.0253</td>
+<td>0.0049 ± 0.0048</td>
+</tr>
+<tr>
+<td>trash disposal</td>
+<td>0.0460 ± 0.0083</td>
+<td>0.1380 ± 0.0205</td>
+<td>0.1015 ± 0.0240</td>
+<td>0.0028 ± 0.0118</td>
+</tr>
+<tr>
+<td>hammer storage</td>
+<td>0.0433 ± 0.0054</td>
+<td>0.1508 ± 0.0146</td>
+<td>0.1028 ± 0.0135</td>
+<td>0.0229 ± 0.0171</td>
+</tr>
+<tr>
+<td>toy pickup</td>
+<td>0.0350 ± 0.0005</td>
+<td>0.1315 ± 0.0036</td>
+<td>0.1038 ± 0.0376</td>
+<td>0.0161 ± 0.0135</td>
+</tr>
+<tr>
+<td>foam transport</td>
+<td>0.0452 ± 0.0150</td>
+<td>0.1407 ± 0.0032</td>
+<td>0.0753 ± 0.0115</td>
+<td>0.0205 ± 0.0095</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>참고: 발췌문 시작 부분에 또 다른 수치 세트(0.0366 ± 0.0014, 0.1318 ± 0.0046, 0.0723 ± 0.0279, 0.0160 ± 0.0047)가 있지만 해당 작업 이름이 표시되지 않아 별도로 나열합니다.</p>
+</blockquote>
+<p><strong>결과 의미.</strong> 위 데이터를 기반으로 다음과 같은 결론을 도출할 수 있습니다:</p>
+<ul>
+<li>
+<p><strong>작업 간 일관성</strong>: 6개 작업 모두 지표 1에서 0.0350~0.0503의 좁은 범위를 유지하고, 지표 2는 0.1315~0.1508 사이에서 안정적이며, 이는 이 방법이 다양한 조작 유형에서 일관된 추적 성능을 보이며 특정 작업에 대한 과적합 징후가 없음을 나타냅니다.</p>
+</li>
+<li>
+<p><strong>작업 난이도 차이</strong>: <code>plug_in</code>은 지표 1에서 가장 높은 오차(0.0503 ± 0.0034)를 보이고 <code>toy pickup</code>이 가장 낮은(0.0350 ± 0.0005) 것은 플러그 삽입이 자세 정밀도에 대한 요구가 더 높음을 반영합니다. <code>sweep_broom</code>은 지표 3에서 오차가 크게 증가하며(0.1245 ± 0.0253), 빗자루 청소 과정에서의 광범위한 흔들림으로 인한 동적 교란과 일치합니다.</p>
+</li>
+<li>
+<p><strong>정밀도와 안정성의 균형</strong>: 각 작업의 지표 4 절대 오차는 모두 0.0229 미만이지만 분산은 상대적으로 크며(예: <code>hammer storage</code>는 0.0229 ± 0.0171), 정밀 조작 단계에서 엔드 이펙터의 각속도 제어에 여전히 개선 여지가 있음을 시사합니다. 반면 <code>trash disposal</code>의 지표 4 오차가 가장 작아(0.0028 ± 0.0118) 해당 작업에서 섀시 속도 추적이 더 안정적임을 나타냅니다.</p>
+</li>
+<li>
+<p><strong>프레임워크 유효성</strong>: 저자가 제안한 전신 제어 프레임워크는 핵심 몸통 자유도를 추가적인 로봇 팔 자유도로 간주하여 전방향 섀시 기동성을 유지하면서 로봇 팔의 도달 가능 작업 공간을 확장하며, 위 다중 작업에서의 안정적인 수치 성능은 중복 자유도를 활용하여 엔드 이펙터 자세 추적 정밀도와 섀시 속도 추적 성능을 향상시키는 이 방법의 유효성을 검증합니다.</p>
+</li>
+</ul>
+<h2 id="_8">경계 및 한계</h2>
+<p>논문은 한계 섹션을 명시적으로 제시하지 않았습니다. 방법에서 추론된 잠재적 경계:
+- <strong>운동학-동역학 간극</strong>: KNF는 운동학적 데이터에만 기반하여 참조를 생성하므로 물리적 제약(관절 토크 한계, 발바닥 마찰 원뿔 등)을 위반할 수 있으며, LLC를 동역학적 실행 가능성 필터로 의존합니다. LLC가 완전히 보상하지 못하면 극단적인 동적 시나리오에서 오차가 증가할 수 있습니다.
+- <strong>플랫폼 특이성</strong>: 실험은 자체 개발 사족 플랫폼 + Unitree Z1(18개 액추에이터)을 기반으로 하므로 결론이 다른 형태(이족, 바퀴-다리 하이브리드 등)에 직접 이전되지 않을 수 있습니다.
+- <strong>비교 공정성</strong>: 동시대 연구 [20,33]와의 정밀도 비교는 다른 플랫폼과 작업 가정을 기반으로 하며 엄격한 동일 조건 비교가 아닙니다.
+- <strong>하드웨어 실험 범위</strong>: hanger 작업 데이터가 불완전하고 하드웨어 작업이 대부분 저속 조작이므로 고동적 하드웨어 성능이 충분히 검증되지 않았습니다.
+- <strong>훈련 비용</strong>: 단일 RTX 4080에서 약 29시간의 훈련 시간(14h LLC + 15h HLC)은 자원이 제한된 팀에게 재현 장벽이 될 수 있습니다.</p>
+<h2 id="_9">엔지니어링 시사점</h2>
+<ol>
+<li><strong>재현 시 우선 확인 사항</strong>: KNF의 잠재 공간 샘플링 품질을 먼저 검증하세요. λ_latent_scale=0.7이라는 하이퍼파라미터는 생성 해의 품질과 다양성 균형에至关重要하므로, 소규모 데이터에서 다양한 λ 값이 끝점 자세 분포에 미치는 영향을 먼저 테스트하는 것이 좋습니다.</li>
+<li><strong>가장 함정에 빠지기 쉬운 부분</strong>: LLC의 커리큘럼 학습 명령 범위 확장 속도입니다. 범위 확장이 너무 빠르면 정책이 붕괴되고 너무 느리면 훈련 시간이 낭비됩니다. 논문의 최종 범위(roll/pitch±0.26rad, 높이 0.3-0.5m, vx∈(-1,2)m/s)의 1/4에서 시작하여 500만 스텝마다 한 번씩 확장하는 것을 권장합니다.</li>
+<li><strong>보상 함수 함정</strong>: <code>r = r_pos × exp(0.1 × r_neg)</code>의 곱셈 형태는 r_neg의 스케일에 매우 민감합니다. 먼저 r_neg의 각 항목 가중치를 개별적으로 조정하여 값 범위가 [-10,0] 내에 있도록 한 후 exp 항이 훈련을 지배하지 않도록 하는 것이 좋습니다.</li>
+<li><strong>하드웨어 이전 주의사항</strong>: PD 컨트롤러의 시뮬레이션 500Hz와 하드웨어 4000Hz의 주파수 차이는 실제 로봇이 관절 위치 오프셋에 더 "딱딱하게" 반응함을 의미합니다. 하드웨어 배포 전에 sim-to-real 도메인 무작위화 강화를 먼저 수행하는 것이 좋습니다(논문은 마찰/관절 마찰/관측 노이즈만 무작위화하고 지연 및 강성 무작위화는 언급하지 않음).</li>
+<li><strong>다운스트림 통합 제안</strong>: PAKE가 출력하는 명목 관절 위치 오프셋은 기존 조작 정책의 하위 수준 실행 인터페이스로 직접 사용할 수 있지만 100Hz의 제어 주파수에 주의해야 합니다. 다운스트림에서 더 높은 주파수의 힘 제어(예: 삽입 작업)가 필요하면 PD 계층 위에 임피던스 제어 외부 루프를 추가해야 합니다.</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_pake_whole_body_loco_manipulation_partia_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시켰는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 아키텍처</a></li>
+<li><a href="#_5">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a></li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy</h1>
+      <p class="entry-name-en">RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Policy</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RedFlow 是一种面向流匹配视觉-语言-动作（VLA）策略的离线强化学习方法，由研究团队提出，核心贡献在于将失败轨迹中的有害动作块“重定向”至同一进度-状态簇内高质量正样本的动作区域，而非简单抑制。该方法通过上下文感知的修正匹配与自适应重定向目标，在 LIBERO 基准和真实机器人任务上显著提升了策略成功率，并提供了严格的几何理论支撑。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.27782" target="_blank" rel="noopener">arXiv:2607.27782 RedFlow: Redirect Failure into Action-Level Corrections for Flow-matching VLA Po</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有离线 RL 方法在处理失败数据时存在根本性粒度错配：轨迹级失败标签掩盖了导致崩溃的稀疏动作级错误，而经典方法（如 AWR）仅重新加权成功行为，基于偏好的方法（如 DPO）只提供粗粒度“避免什么”的指示，缺乏“如何改进”的动作级指导。RedFlow 真正改变的是将失败数据从“被丢弃或抑制的负样本”转化为“可操作的动作级修正信号”，使得策略不仅能避开错误，还能被明确引导至更优的动作区域。这一转变的关键在于，它认识到失败轨迹中大部分动作块是中性的，只有少数真正有害，因此需要细粒度的甄别与建设性重定向，而非一刀切的抑制。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">上下文感知修正匹配</h3>
+<ul>
+<li><strong>进度估计</strong>：使用预训练 General Reward Model (GRM) 提供任务进度信号 R(o_t, l)，通过半窗口 W 的盒式滤波器平滑：p̄<em j="t-W">t = (1/(2W+1)) Σ</em> R(o_j, l)。}^{t+W</li>
+<li><strong>动作级优势</strong>：Â_t = p̄<em t-W="t-W">{t+W} - p̄</em> + b·(2·1[y_τ=1] - 1)，其中 b 为结果偏差系数，y_τ 为轨迹结果标签。</li>
+<li><strong>上下文聚类</strong>：定义进度-状态特征 f_t = [q̃_t; β·p̄_t]（q̃_t 为归一化本体感觉，β 平衡尺度），使用 HDBSCAN 聚类所有动作块。</li>
+<li><strong>修正目标构造</strong>：对负块（Â_t &lt; 0），若所在簇正子集 𝒞_c^+ 非空，构建优势加权质心：α_i = exp(Â_i/κ) / Σ_{j∈𝒞_c^+} exp(Â_j/κ)，a_t* = Σ_{i∈𝒞_c^+} α_i a_i。不可修正的负块（离群点或正子集为空）仅被抑制。</li>
+</ul>
+<h3 id="_4">自适应重定向目标</h3>
+<ul>
+<li><strong>质量加权吸引</strong>：软权重 w_t = σ(Â_t/T_w)，吸引损失 L_att = w_t · ‖v_θ(x_n, n, o_t, l) - u_n‖²。</li>
+<li><strong>失败抑制</strong>：重建误差 e_t = ‖x̂_0 - a_t‖²，抑制损失 L_sup = λ_sup(1-w_t)max(0, m-e_t)，其中 m 为自适应边距（stop-gradient 运行平均重建误差）。</li>
+<li><strong>目标引导修正</strong>：L_cor = c_t · λ_cor(1-w_t)‖x̂_0 - a_t*‖²，c_t ∈ {0,1} 指示是否可修正。</li>
+<li><strong>总目标</strong>：L = E_{(o_t,a_t,l)∼D, n}[L_att + L_sup + L_cor]。</li>
+</ul>
+<h3 id="a">理论形式化（附录A）</h3>
+<ul>
+<li>将 RedFlow 形式化为约束 Wasserstein 策略传输，推-拉速度场：u^z(a) = c_z λ_cor(b_z - a) + 2λ_sup∫𝟙{‖a-a⁻‖²&lt;m}(a-a⁻)dν_{-,w}^z(a⁻) + λ_bc∫w(a⁻,z)(a⁻-a)dν_{β,ε}^z(a⁻)。</li>
+<li>定理6给出单障碍端点几何的闭式解：h* = b_z（若‖b_z-a⁻‖²≥m）或 a⁻ + √m·(b_z-a⁻)/‖b_z-a⁻‖（否则），等价于约束投影问题。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>动作级修正信号的提取</strong>：RedFlow 首次在 VLA 离线 RL 中实现了从失败轨迹中提取高保真动作级修正信号，而非仅依赖轨迹级标签或人类干预。通过进度-状态感知聚类，将失败动作与相似上下文中的成功动作关联，实现了“建设性重定向”。</li>
+<li><strong>有界重定向的几何机制</strong>：通过边距 m 定义障碍球，负块仅在球内产生排斥力，球外无作用，这避免了过度修正，保持了策略分布的稳定性。理论证明（定理6）给出了闭式解，确保了修正目标与抑制约束的平衡。</li>
+<li><strong>单次迭代离线流程</strong>：RedFlow 采用“先收集固定回放缓冲区，再推导优势与修正目标，最后优化策略”的单次迭代流程，避免了在线交互，显著提升了样本效率（比在线 RL 方法少一个数量级的轨迹需求）。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="libero">LIBERO 基准成功率（%）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>Long</th>
+<th>Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base Policy</td>
+<td>63.6</td>
+<td>61.6</td>
+<td>48.6</td>
+<td>50.8</td>
+<td>56.2</td>
+</tr>
+<tr>
+<td>AWR</td>
+<td>71.2</td>
+<td>66.8</td>
+<td>57.8</td>
+<td>53.4</td>
+<td>62.3</td>
+</tr>
+<tr>
+<td>DPO</td>
+<td>65.8</td>
+<td>69.8</td>
+<td>51.8</td>
+<td>51.2</td>
+<td>59.7</td>
+</tr>
+<tr>
+<td><strong>RedFlow</strong></td>
+<td><strong>75.8</strong></td>
+<td><strong>70.4</strong></td>
+<td><strong>71.2</strong></td>
+<td><strong>55.2</strong></td>
+<td><strong>68.2</strong></td>
+</tr>
+</tbody>
+</table>
+<p>RedFlow 平均提升 12.0 点，优于 AWR 5.9 点、DPO 8.5 点；最大增益在 LIBERO-Goal（71.2% vs 57.8%/51.8%）。</p>
+<h3 id="_7">消融研究（三个套件平均）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>Avg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w/o uncorrectable-failure separation</td>
+<td>66.4</td>
+<td>65.8</td>
+<td>50.8</td>
+<td>61.0</td>
+</tr>
+<tr>
+<td>w/o L_cor</td>
+<td>70.4</td>
+<td>68.4</td>
+<td>68.6</td>
+<td>69.1</td>
+</tr>
+<tr>
+<td>w/o L_sup</td>
+<td>70.8</td>
+<td>66.8</td>
+<td>68.8</td>
+<td>68.8</td>
+</tr>
+<tr>
+<td><strong>RedFlow（完整）</strong></td>
+<td><strong>75.8</strong></td>
+<td><strong>70.4</strong></td>
+<td><strong>71.2</strong></td>
+<td><strong>72.5</strong></td>
+</tr>
+</tbody>
+</table>
+<p>去除“不可修正失败分离”导致最大下降（Goal 损失 20.4 点），说明该设计对性能至关重要。</p>
+<h3 id="100-rollout">真实机器人（100 次 rollout/任务）</h3>
+<ul>
+<li>布料折叠：RedFlow 从 36.0% 提升至 67.0%（+31.0 点）。</li>
+<li>物体清扫、桌面清洁：RedFlow 均优于所有基线，最高平均成功率 74.7%，整体从 56.7% 提升至 74.7%。</li>
+</ul>
+<h3 id="_8">样本效率</h3>
+<p>RedFlow 用 1,536 条离线轨迹达到 75.8% 成功率；PPO/GRPO/DDPO 需约 13K/16K/24K 轨迹，多一个数量级。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>修正目标分配依赖任务进度估计与聚类的质量；不准确的进度信号或噪声聚类可能导致失败到成功的匹配不完美。</li>
+<li>RedFlow 只能为离线缓冲区中具有邻近正样本支持的失败提供建设性重定向；新颖的、分布外的或缺乏成功对应物的失败模式只能被抑制，无法显式纠正。</li>
+<li>实验仅覆盖 LIBERO 和三个真实机器人任务，使用固定本体与设置；更广泛验证（多样机器人、视觉条件、长视界任务）未完成。</li>
+<li>对非线性深度神经网络在连续动作空间上仅提供局部平稳收敛的几何保证，全局收敛性未证明；多模态邻域中单重心目标需扩展为混合值正参考（未实现）。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>复现核对</strong>：先确认 HDBSCAN 参数（min_cluster_size、min_samples、progress_weight β）与进度平滑窗口 W 是否与任务时间尺度匹配；Long 套件需将 W 从 10 增至 20、b 从 0.15 增至 0.25，否则进度信号噪声会累积。</li>
+<li><strong>超参数敏感性</strong>：λ_sup 过大将不加区分地抑制中性块，导致策略分布过度集中；λ_cor 应保持温和（0.1–0.3），它仅提供偏置而非替代吸引项。建议先固定吸引项系数为 1，再调 λ_sup 与 λ_cor。</li>
+<li><strong>数据质量</strong>：不可修正失败分离（离群点或正子集为空）是最大性能瓶颈，务必保留该逻辑；若聚类质量差，可考虑增加 min_samples 或调整 β 以平衡进度与状态权重。</li>
+<li><strong>工程踩坑</strong>：真实机器人需注意进度估计的 frame_interval（设为 10），且终止条件需明确区分“成功”与“不可恢复失败”，否则优势估计会失真；动作块长度 K 与动作维度 D 需与骨干网络输出对齐。</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.27782</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_redflow_redirect_failure_into_action_lev_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">上下文感知修正匹配</a></li>
+<li><a href="#_4">自适应重定向目标</a></li>
+<li><a href="#a">理论形式化（附录A）</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#libero">LIBERO 基准成功率（%）</a></li>
+<li><a href="#_7">消融研究（三个套件平均）</a></li>
+<li><a href="#100-rollout">真实机器人（100 次 rollout/任务）</a></li>
+<li><a href="#_8">样本效率</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

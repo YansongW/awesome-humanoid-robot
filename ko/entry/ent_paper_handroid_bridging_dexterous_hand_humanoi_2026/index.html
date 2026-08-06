@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handroid: Bridging Dexterous Hand and Humanoid · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Handroid: Bridging Dexterous Hand and Humanoid</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Handroid: Bridging Dexterous Hand and Humanoid</h1>
+      <p class="entry-name-en">Handroid: Bridging Dexterous Hand and Humanoid</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Dexterous hands and humanoid robots are typically developed as distinct embodiments: the former enable contact-rich manipulation at the object scale, whereas the latter provide mobility and whole-body interaction in human-centered environments. We introduce \textbf{Handroid}, a desktop-scale dual-embodiment robot that integrates both capabilities within a single reconfigurable platform. Handroid.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.16187" target="_blank" rel="noopener">arXiv:2607.16187 Handroid: Bridging Dexterous Hand and Humanoid</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Handroid는 27-DoF 데스크톱급 이중 실체 로봇 시스템으로, 정교한 손(20 DoF)과 데스크톱 휴머노이드(25 DoF) 사이를 프리즘 관절을 통해 재구성할 수 있으며, 캘리포니아 대학 팀이 개발했습니다. 핵심 기여는 "형태 재사용" 개념을 제안한 것입니다—동일한 물리적 본체가 재구성을 통해 조작과 이동이라는 두 가지 역할을 수행하며, 원격 조작, 확산 정책 파지부터 RL 전신 운동 제어까지의 완전한 알고리즘 스택을 갖추어, 교차 형태 로봇 학습을 위한 통합 연구 플랫폼을 제공합니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이동성과 정교함은 로봇 분야에서 오랫동안 분리되어 취급되어 왔습니다: 정교한 손은 고정 기반 위에 장착되어 접촉 정밀도를 추구하고, 휴머노이드 로봇은 운동 안정성을 우선시하여 손 기능을 희생합니다. 이러한 "형태가 곧 기능"이라는 고정 관념은 두 하위 분야가 각자 독립적으로 운영되게 하여, 교차 형태 기술 전이와 조정 제어를 연구할 통일된 물리적 플랫폼이 부재했습니다. Handroid가 실제로 바꾼 것은 바로 이 패러다임입니다—재구성 가능한 하드웨어 한 세트로 손가락과 다리가 관절 배치, 접촉 기하학, 구동 방식에서 깊은 구조적 동형성을 가지며, 동일한 모듈이 다른 실체에서 다른 기능적 역할을 수행할 수 있음을 증명했습니다.</p>
+<p>이 설계 결정의 심층적 의미는 "형태"를 고정 속성에서 조작 가능한 변수로 바꾼 것입니다. 연구자는 동일한 물리적 시스템에서 정교한 조작과 전신 운동 제어를 비교할 수 있으며, 심지어 교차 실체 정책 전이를 탐구할 수 있습니다—이는 이전에는 두 세트의 완전히 다른 하드웨어가 필요했던 것입니다. 동시에 데스크톱급 크기(0.33 m, 2.05 kg)와 상용 Dynamixel 액추에이터는 재현 장벽을 크게 낮추어, 이중 실체 로봇 학습을 "실험실 사치품"에서 널리 수행 가능한 연구 방향으로 전환했습니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">하드웨어 재구성 메커니즘</h3>
+<ul>
+<li>관절 9와 26은 프리즘 관절로, 랙-피니언 변속을 사용하여 회전을 강체 직선 레일을 따른 병진으로 변환합니다</li>
+<li>휴머노이드에서 정교한 손으로 전환할 때, 모듈 II와 V가 아래로 손 구성 위치로 병진하여 각각 검지와 소지 모듈로 작동합니다</li>
+<li>전환은 제어된 모듈 재배치만 필요하며 하드웨어 교체가 필요 없습니다</li>
+</ul>
+<h3 id="_5">정교한 조작 알고리즘 스택</h3>
+<ul>
+<li><strong>원격 조작</strong>: Apple Vision Pro가 22개 손 키포인트를 캡처하고, AnyTeleop 리타겟팅 프레임워크와 DexPilot 스타일 목적 함수를 통해 Handroid와 Franka Research 3에 매핑하며, 결합 루프가 20 Hz 이상에서 안정적으로 작동합니다</li>
+<li><strong>정교한 파지</strong>: 객체 조건 확산 정책, PointNet++가 객체 포인트 클라우드(512 포인트)를 인코딩하고, MLP가 고유 수용 감각 이력을 인코딩하며, U-Net 백본이 액션 블록(n_obs=2, n_action=8)을 생성하고, 배포 시 시간 통합으로 평활화합니다</li>
+<li><strong>손 내부 리타겟팅</strong>: IsaacLab + PPO 훈련, 정책이 손 관절 위치와 명령 이력을 관찰하고 PD 목표를 출력합니다; Sim-to-real은 접촉 마찰, 액추에이터 파라미터, 객체 질량과 스케일을 무작위화합니다</li>
+</ul>
+<h3 id="_6">휴머노이드 전신 운동 제어</h3>
+<ul>
+<li><strong>ZMP 보행 계획</strong>: 고정 높이 LIPM 모델 p_zmp = c_xy − (h_com/g)·c̈_xy, LQR 예측 제어기가 ZMP 추적과 CoM 가속도 비용을 절충합니다; 단일 지지/이중 지지 단계가 교대하고, 발과 CoM 궤적이 동일한 위상 스케줄을 따릅니다</li>
+<li><strong>Mink 차분 IK</strong>: 매 프레임 가중 차분 IK(CoM, 양발 자세, 몸통 안정화, 자세 정규화)를 해결하고, 지지 발 가중치가 스윙 발보다 높으며, 매 프레임 이전 프레임에서 웜 스타트하고 12회 반복으로 정제합니다</li>
+<li><strong>RL 추적 정책</strong>: actor가 참조 관절 상태 + 측정된 베이스 각속도 + 5단계 이력을 수신하고, critic은 추가로 특권 관찰(앵커 오프셋, 시뮬레이션 베이스 속도)을 수신합니다; 보상 커널 폭: 루트 위치 0.03 m, 루트 자세 0.15 rad, 몸체 선속도 0.25 m/s, 몸체 각속도 0.60 rad/s</li>
+<li><strong>무참조 속도 제어</strong>: 명령된 평면 CoM 속도와 요 각속도에 직접 조건화하고, ZMP 계획기나 Mink를 호출하지 않습니다; 비대칭 actor-critic, critic은 시뮬레이션 특권 관찰(접촉 상태, 발 높이, 접촉 힘)을 수신합니다; 속도 추적 가중치 w_v=2, w_ω=2, 커널 폭 σ_v=0.16 m/s, σ_ω=0.50 rad/s</li>
+<li><strong>키프레임 운동 제어</strong>: Viser 편집기가 관절 공간 키프레임 시퀀스를 생성하고, 조각별 선형 보간으로 밀집 궤적을 생성합니다; 두 가지 경로—직접 하드웨어 실행(Dynamixel 위치 명령) 또는 RL 훈련용 추적 참조로 변환</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>형태 재구성 가능한 이중 실체 설계</strong>: 데스크톱급 스케일에서 정교한 손과 휴머노이드 사이의 원활한 재구성을 실현한 최초의 시스템입니다. 27-DoF 중 20 DoF는 손에, 25 DoF는 휴머노이드에 사용되며, 프리즘 관절 병진을 통해 형태 전환을 수행하고 하드웨어 교체가 필요 없습니다. 이 설계는 "형태"를 고정 속성에서 조작 가능한 변수로 바꾸어, 교차 형태 기술 전이 연구에 전례 없는 실험 플랫폼을 제공합니다.</p>
+</li>
+<li>
+<p><strong>통합 추적 파이프라인의 다중 소스 운동 융합</strong>: Handroid는 계획기 생성(ZMP+IK), 키프레임 저작, RL 처음부터 학습이라는 세 가지 운동 생성 방식을 동일한 추적 정책으로 통합합니다. 모든 참조 운동은 시간 인덱스 시퀀스 표현(관절 위치/속도, 몸체 자세/속도)을 공유하고, 엉덩이 링크를 앵커로 사용하여 서로 다른 소스의 운동이 동일한 폐루프 정책으로 실행될 수 있게 합니다. 이는 기존 방식의 "각 운동 소스마다 전용 컨트롤러 필요"라는 파편화 문제를 제거합니다.</p>
+</li>
+<li>
+<p><strong>무참조 속도 제어와 추적 제어의 상보적 아키텍처</strong>: 속도 정책은 운동 명령에 직접 조건화하고 시간 인덱스 참조에 의존하지 않으며, 훈련 및 추론 시 ZMP 계획기나 Mink를 호출하지 않습니다; 반면 추적 정책은 계획기와 키프레임이 생성한 운동을 활용하기 위해 참조에 대한 의존성을 유지합니다. 이러한 이중 트랙 설계는 "반응형 제어"와 "참조 유도 제어"라는 두 가지 요구를 동시에 충족하며, 비대칭 actor-critic은 배포 시 특권 관찰이 필요 없음을 보장합니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험과 결과</h2>
+<h3 id="1-10">정교한 파지 성공률 (표 1, 객체당 10회 시도)</h3>
+<table>
+<thead>
+<tr>
+<th>객체</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apple</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Band Aid</td>
+<td>6/10</td>
+</tr>
+<tr>
+<td>Canister</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Chip Tube</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Cocoa Box</td>
+<td>7/10</td>
+</tr>
+<tr>
+<td>Earphone</td>
+<td>6/10</td>
+</tr>
+<tr>
+<td>Glove Box</td>
+<td>7/10</td>
+</tr>
+<tr>
+<td>Sheep</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Sprayer</td>
+<td>5/10</td>
+</tr>
+<tr>
+<td>WD-40</td>
+<td>7/10</td>
+</tr>
+<tr>
+<td><strong>평균</strong></td>
+<td><strong>72%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">휴머노이드 운동 제어 (시뮬레이션)</h3>
+<ul>
+<li>RL 추적: 관절 위치 추적 오차 <strong>0.12 rad</strong>, 몸체 위치 추적 오차 <strong>0.0019 m</strong></li>
+<li>RL 속도 제어: 전방 속도 0.20 m/s 명령에서 속도 추적 오차 <strong>0.052 m/s</strong>; 학습된 보행은 상대적으로 짧은 보폭과 높은 보행 빈도를 보임</li>
+</ul>
+<h3 id="_10">실제 로봇 데모</h3>
+<ul>
+<li>키프레임 운동: 6개의 수동 작성 키프레임으로 보행 루프 구성, 인접 간격 0.045 s; 팔굽혀펴기, 턱걸이, 집기-놓기 작업, 전진/후진 보행, 회전 및 옆걸음 데모</li>
+<li>장시간 작업: 전체 흐름은 정교한 손→휴머노이드 전환, 휴머노이드가 장애물을 우회하여 상자 밀기, 정교한 손으로 전환하여 병을 집어 상자에 넣기, 전자기 플랜지가 약 180 N 유지력을 제공</li>
+</ul>
+<h3 id="_11">핵심 관찰</h3>
+<ul>
+<li>10개 객체, 자세 무작위화 조건에서 72% 파지 성공률은 합리적이지만, Sprayer(5/10)와 Band Aid/Earphone(6/10) 같은 작은 객체는 성공률이 낮아 접촉 기하학이 파지 견고성에 미치는 영향을 반영합니다</li>
+<li>시뮬레이션에서 RL 추적 오차는 속도 제어 오차보다 훨씬 작아(0.0019 m vs 0.052 m/s), 참조 유도 제어의 정밀도가 더 높지만, 속도 제어는 계획기가 필요 없어 응답이 더 직접적임을 보여줍니다</li>
+</ul>
+<h2 id="_12">경계와 한계</h2>
+<p>논문은 저자가 인정한 한계를 명시적으로 나열하지 않았지만, 방법 설명에서 다음 경계를 추론할 수 있습니다:</p>
+<ul>
+<li><strong>실제 휴머노이드 RL 정책 미배포</strong>: RL 추적과 속도 제어는 시뮬레이션(MuJoCo)에서만 평가되었고, 실제 휴머노이드 실체에서 폐루프 운동 제어 효과가 검증되지 않아 Sim-to-real 격차가 알려지지 않았습니다</li>
+<li><strong>손 내부 리타겟팅은 정성적 평가만</strong>: 실제 로봇에서 손 내부 리타겟팅 정책은 성공률 정량 지표가 없고, 큐브 방향 정합 데모만 수행되었습니다</li>
+<li><strong>교차 실체 정책 전이 실험 없음</strong>: 정교한 손에서 훈련된 정책이 휴머노이드 실체로 전이될 수 있는지(또는 그 반대) 검증되지 않았으며, 이는 "형태 재사용" 개념의 핵심 가정 중 하나입니다</li>
+<li><strong>속도 제어 보행 품질 제한</strong>: 학습된 보행은 보폭이 짧고 보행 빈도가 높아 자연스러운 보행과 차이가 있으며, 복잡한 지형에서의 적용 가능성을 제한할 수 있습니다</li>
+<li><strong>키프레임 직접 실행은 폐루프 피드백 없음</strong>: 하드웨어 직접 실행 경로는 RL 정책을 거치지 않아 교란과 지형 변화에 대한 적응 능력이 없습니다</li>
+</ul>
+<h2 id="_13">공학적 시사점</h2>
+<p>Handroid를 재현하거나 기반으로 연구를 수행할 때 다음 공학적 세부 사항이 가장 주목할 가치가 있습니다:</p>
+<ol>
+<li>
+<p><strong>관절 명령 인터페이스 스케일링 팩터 먼저 확인</strong>: 식 3의 s_j = 0.25는 모든 제어되는 하지 관절에 적용되며, 이 스케일링은 RL 정책 출력의 유효 동작 범위에 직접 영향을 미칩니다. 액추에이터나 관절 구성을 변경하면 이 파라미터를 다시 보정해야 하며, 그렇지 않으면 정책 출력이 액추에이터 물리적 한계를 초과할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>추적 보상 커널 폭이 튜닝의 핵심</strong>: 루트 위치 0.03 m, 루트 자세 0.15 rad, 몸체 선속도 0.25 m/s, 몸체 각속도 0.60 rad/s 값은 추적 정밀도와 동작 평활도의 절충을 결정합니다. 목표 운동 속도가 더 빠르거나 진폭이 더 크면 커널 폭을 상응하게 완화해야 하며, 그렇지 않으면 정책이 과도한 페널티로 인해 보수적 행동으로 수렴합니다.</p>
+</li>
+<li>
+<p><strong>속도 제어 정책의 종료 조건을 신중히 설정</strong>: 기울기가 70°를 초과하면 에피소드가 종료되는데, 이 임계값은 데스크톱급 로봇에 너무 관대할 수 있습니다—0.33 m 높이의 로봇이 70° 기울면 무게 중심이 심각하게 편향되어 회복 불가능한 자세가 될 수 있습니다. 실제 하드웨어 무게 중심 높이를 기준으로 안전 기울기 각도를 다시 계산하는 것이 좋습니다.</p>
+</li>
+<li>
+<p><strong>키프레임 시간 간격이 보행 품질의 핵심</strong>: 보행에 0.045 s 간격을 사용하며, 이 값은 보간 궤적의 평활도와 실행 속도를 결정합니다. 간격이 너무 짧으면 액추에이터 추적 지연이 발생하고, 너무 길면 운동이 뻣뻣해집니다. 액추에이터 대역폭(Dynamixel XC330 시리즈)과 관절 부하 실측을 기반으로 조정하는 것이 좋습니다.</p>
+</li>
+<li>
+<p><strong>전자기 플랜지 유지력(180 N)이 장시간 작업의 병목</strong>: 이 힘 값은 파지와 상자 밀기에 충분하지만, 작업이 큰 충격 하중(빠른 회전이나 낙하 회복 등)을 포함하면 플랜지 연결 신뢰성을 검증해야 합니다. 작업 설계에서 플랜지에 전단력을 가하지 않도록 하는 것이 좋습니다.</p>
+</li>
+<li>
+<p><strong>가장 함정에 빠지기 쉬운 부분: Sim-to-real 무작위화 파라미터 미공개</strong>: 논문은 접촉 마찰, 액추에이터 파라미터, 객체 질량/스케일의 구체적 무작위화 범위를 제공하지 않습니다. 손 내부 리타겟팅 정책을 재현할 때 이러한 파라미터는 전이 성공률에 직접 영향을 미치므로, 좁은 범위(±10%)에서 시작하여 점진적으로 확대하는 것이 좋습니다.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_linear_quadratic_regulator_lqr/">Linear Quadratic Regulator (LQR)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_handroid_bridging_dexterous_hand_humanoi_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_linear_quadratic_regulator_lqr/">
+          <span class="entry-type">논문</span>
+          <h3>Linear Quadratic Regulator (LQR)</h3>
+          <p>Conservative card from a lab paper list entry: Linear Quadratic Regulator (LQR). No fetchable paper…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">하드웨어 재구성 메커니즘</a></li>
+<li><a href="#_5">정교한 조작 알고리즘 스택</a></li>
+<li><a href="#_6">휴머노이드 전신 운동 제어</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험과 결과</a><ul>
+<li><a href="#1-10">정교한 파지 성공률 (표 1, 객체당 10회 시도)</a></li>
+<li><a href="#_9">휴머노이드 운동 제어 (시뮬레이션)</a></li>
+<li><a href="#_10">실제 로봇 데모</a></li>
+<li><a href="#_11">핵심 관찰</a></li>
+</ul>
+</li>
+<li><a href="#_12">경계와 한계</a></li>
+<li><a href="#_13">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization</h1>
+      <p class="entry-name-en">WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>WarpMPC 是一个基于 JAX 与 Warp 后端的 GPU 大批量 MPC 求解工具箱，通过 SQP、ADMM 与问题特定的展开稀疏 LDL^T 分解实现约束非线性 MPC 的高吞吐求解。其核心贡献在于将因子分解与 backsolve 的依赖层级并行化，在批量超过 2000 时实现最高 12×（QP 求解）与 18×（灵敏度）加速，并在非线性基准上达到 8000 至 250000 SQP 迭代/秒。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11603" target="_blank" rel="noopener">arXiv:2607.11603 WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 GPU MPC 求解器存在明显的吞吐量天花板：MPAX 因计算图反向传播无法处理线性 MPC 的灵敏度计算，密集 BoxOSQP 仅支持小批量且不优于单 CPU 核心，PCG 约束满足度差且提升满足度即牺牲吞吐量，TurboMPC 在大批量时因内存不足失败（cartpole 与 quadrotor 示例，humanoid 无法超过 B=512）。这些限制的本质在于：要么依赖稠密线性代数，要么缺乏问题特定的稀疏结构利用，要么将约束处理外包给惩罚项。</p>
+<p>WarpMPC 真正改变的是「大批量约束 MPC 在 GPU 上是否可行」这一问题的答案。它不是简单地将 CPU 求解器移植到 GPU，而是从编译期生成、内存布局到依赖层级调度全链路重新设计，使得 10000 至 100000 批次的 SQP 迭代成为现实。其意义在于：将 MPC 从「单实例实时求解」的范式推向「批量并行训练/仿真」的范式，为神经网络策略蒸馏、大规模参数扫描等下游任务提供了数量级的速度提升。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体架构</h3>
+<ul>
+<li>输入：CasADi 表达式，通过字符串替换生成 C 代码并翻译为 JAX 函数（编译时间最长 30 分钟，可缓存）。</li>
+<li>求解器：SQP 外层（每控制环 1 至 10 次迭代），ADMM 内层（每次 SQP 迭代 25 至 100 次迭代）。</li>
+<li>线性代数：问题特定的展开稀疏 LDL^T 分解，编译期生成 unrolled 因子分解与 backsolve 内核。</li>
+</ul>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li><strong>内存布局优化</strong>：针对 GPU 的 coalesced 访问模式重排数据，减少 padding 开销。</li>
+<li><strong>因子分解最优分段</strong>：将 LDL^T 分解按依赖关系切分为可并行执行的层级，避免全局串行瓶颈。</li>
+<li><strong>backsolve 依赖层级调度</strong>：将三角求解的依赖层级并行化，但该优势在大批量时减弱（与 Fig. 5 一致）。</li>
+<li><strong>精度</strong>：默认单精度，双精度可用但内存受限（批量 50000 为上限）。</li>
+</ul>
+<h3 id="_5">与基线对比的设置</h3>
+<ul>
+<li>PCG 基线：Jacobi 预条件子，最大迭代 20，收敛容差 10^-5。</li>
+<li>MPAX 与 TurboMPC（cuDSS）作为后端接入 WarpMPC 的 SQP 与线搜索框架。</li>
+<li>线性 MPC 基准额外对比单 CPU 核心 OSQP C 实现。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>编译期生成的 unrolled LDL^T 分解</strong>：将稀疏因子分解展开为无分支的指令序列，消除运行时索引开销与分支发散。这是对「问题特定稀疏模式」的极致利用，不同于通用稀疏求解器（如 cuDSS）的运行时调度。</p>
+</li>
+<li>
+<p><strong>依赖层级调度的 backsolve 并行化</strong>：将三角求解的串行依赖链按层级分组并行，这是对 GPU 上稀疏三角求解这一经典瓶颈的直接回应。其效果在大批量时减弱，但在中等批量（数千至数万）时是关键加速因素。</p>
+</li>
+<li>
+<p><strong>吞吐量优先的全栈设计</strong>：从 CasADi 到 JAX 的自动翻译、内存布局优化、因子分解分段三者协同，而非单一算法改进。这使得 100000 批次的 SQP 迭代成为可能，远超 [3] 的 1000 并行实例。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="mpc">线性 MPC 基准</h3>
+<ul>
+<li>批量超过 2000 时优于所有基线，峰值吞吐量 279000 次求解/秒（无灵敏度）与 9570 次求解/秒（带灵敏度）。</li>
+<li>相比 BoxOSQP 与 CPU OSQP，QP 求解最高 12× 加速，灵敏度计算最高 18× 加速。</li>
+</ul>
+<h3 id="mpc-sqp">非线性 MPC 基准（SQP 迭代/秒）</h3>
+<table>
+<thead>
+<tr>
+<th>系统</th>
+<th>WarpMPC</th>
+<th>TurboMPC</th>
+<th>Jeon et al.</th>
+<th>CPU OSQP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartpole</td>
+<td>250000</td>
+<td>论文未明确</td>
+<td>论文未明确</td>
+<td>论文未明确</td>
+</tr>
+<tr>
+<td>Quadrotor</td>
+<td>100000</td>
+<td>论文未明确</td>
+<td>论文未明确</td>
+<td>论文未明确</td>
+</tr>
+<tr>
+<td>Humanoid</td>
+<td>8000</td>
+<td>论文未明确</td>
+<td>论文未明确</td>
+<td>论文未明确</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>WarpMPC 在三个非线性基准上超越 PCG、MPAX、TurboMPC（cuDSS）基线（批量超过 10000 时）。</li>
+<li>相比最佳 PCG 吞吐量提升最高 24 倍；相比 TurboMPC，cartpole 提升 6 倍，quadrotor 提升 3 倍。</li>
+<li>MPAX 即使经过 1000 次 QP 迭代，闭环性能仍显著低于 ADMM。</li>
+<li>相比 [3] 报告的 humanoid 2000 SQP RTI/秒，本文在更复杂公式（horizon 27 对 12）上实现接近 8000 SQP RTI/秒。</li>
+</ul>
+<h3 id="_8">神经网络蒸馏</h3>
+<ul>
+<li>合成 20 百万个状态-动作对，3 隐藏层（每层 32 神经元，leaky ReLU），单 GPU 训练少于 4 分钟。</li>
+<li>硬件实验：数据集合成 2 分钟，策略训练 1.7 分钟（wallclock），编译开销 11 分钟（可缓存），蒸馏网络在纳米四旋翼上以 100 Hz 运行。</li>
+</ul>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>仅支持固定稀疏模式的问题，不适用于一般优化问题。</li>
+<li>unrolled 内核在编译期生成，超大问题（如 humanoid 超过 100000 条指令）编译耗时。</li>
+<li>仅支持 GPU 执行，不支持 CPU-only 部署。</li>
+<li>ADMM 超参数（σ、ω_rel、Γ）需针对每个问题手动调节，未自动化。</li>
+<li>灵敏度计算假设 QP 解唯一且可微，退化问题不适用。</li>
+<li>未实现二阶校正与线搜索回溯，可能影响高度非线性问题的收敛。</li>
+<li>基准限于单精度，双精度性能未充分探索。</li>
+<li>论文未明确：非线性基准表中 TurboMPC、Jeon et al.、CPU OSQP 的具体数值。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<p>复现或采用 WarpMPC 时，首先核对问题是否满足固定稀疏模式这一前提——这是编译期生成 unrolled 内核的基础，不满足则整个方法失效。其次，ADMM 超参数（σ、ω_rel、Γ）的调节是主要踩坑点，论文未提供自动化调参方案，建议从论文基准的默认值出发，针对自身问题做网格搜索。第三，批量大小是性能分水岭：低于 2000 时无优势，高于 10000 时才能充分发挥并行层级调度的收益；若目标批量在数千量级，需权衡编译开销（最长 30 分钟）与吞吐收益。最后，单精度是默认路径，双精度内存受限（批量上限 50000），若下游任务需要双精度，需提前评估内存预算。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.11603</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_warpmpc_large_batch_mpc_gpu_admm_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体架构</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+<li><a href="#_5">与基线对比的设置</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#mpc">线性 MPC 基准</a></li>
+<li><a href="#mpc-sqp">非线性 MPC 基准（SQP 迭代/秒）</a></li>
+<li><a href="#_8">神经网络蒸馏</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

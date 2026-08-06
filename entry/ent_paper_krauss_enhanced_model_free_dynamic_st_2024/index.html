@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>利用嵌入式光波导传感器增强软体机器人手指的无模型动态状态估计 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">利用嵌入式光波导传感器增强软体机器人手指的无模型动态状态估计</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>利用嵌入式光波导传感器增强软体机器人手指的无模型动态状态估计</h1>
+      <p class="entry-name-en">Enhanced Model-Free Dynamic State Estimation for a Soft Robot Finger Using an Embedded Optical Waveguide Sensor</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">AI 模型与算法</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.03708v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Krauss 与 Takemura（2024）将一种半分割芯可拉伸光学波导传感器集成到双腔 PneuNet 软手指中，并训练 NARX 神经网络直接从压力和传感器信号估计指尖位置。相比仅使用压力输入，该方法将末端执行器平均估计误差降低了 51%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2406.03708" target="_blank" rel="noopener">Enhanced Model-Free Dynamic State Estimation for a Soft Robot Finger Using an Embedded Optical Waveguide Sensor</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究将一种先进的可拉伸光学波导传感器嵌入多方向 PneuNet 软致动器中，利用 NARX 神经网络提升动态状态估计性能。传感器采用半分割芯设计，对多种应变模式敏感，被集成到模拟人类手指运动的双腔软手指中。研究首先表征了软手指的工作空间和传感器响应，随后开发了三种不同传感器融合程度的 NARX 动态状态估计器。在测试路径上的评估表明，完整传感器响应使末端位置估计的平均误差从 5.70 mm 降至 2.80 mm，降幅达 51%，而仅使用单芯波导设计的估计器仅将误差降至 4.53 mm（改善 21%）。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li>传感器采用半分割芯可拉伸光学波导设计，对拉伸、弯曲等多种应变模式敏感，嵌入双腔 PneuNet 软手指中。</li>
+<li>软手指由两个压力腔室驱动，通过电机线性级控制气动执行，模拟人类手指运动，适用于软体夹爪或手部应用。</li>
+</ul>
+<h3 id="_4">架构</h3>
+<ul>
+<li>使用 NARX（非线性自回归外生输入）神经网络架构，构建三种动态状态估计器，区别在于光学波导传感器信号的融合程度：</li>
+<li>仅压力输入</li>
+<li>部分传感器响应（模拟单芯波导设计）</li>
+<li>完整传感器响应（半分割芯设计）</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li>首先表征软手指的工作空间及传感器在不同运动模式下的响应特性。</li>
+<li>在测试路径上评估各估计器的指尖位置估计精度。</li>
+</ul>
+<h3 id="_6">关键数字</h3>
+<ul>
+<li>完整传感器响应估计器：平均误差从 5.70 mm 降至 2.80 mm，改善 51%。</li>
+<li>单芯波导模拟估计器：平均误差降至 4.53 mm，仅改善 21%。</li>
+<li>压力仅输入估计器：平均误差为 5.70 mm。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>完整传感器响应显著提升了模型无关的状态估计精度，适用于软体机器人的开环模型预测控制。</li>
+<li>未来工作建议聚焦于先进结构化软（光学）传感器，以进一步推动软体机器人的模型无关状态估计与控制。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2406.03708v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_process_p11_1_3/">触觉与力觉传感器集成</a>
+              <span class="rel-desc">利用嵌入式光波导传感器增强软体机器人手指的无模型动态状态估计提及触觉与力觉传感器集成。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_dexterous_hand_2024/">灵巧手</a>
+              <span class="rel-desc">利用嵌入式光波导传感器增强软体机器人手指的无模型动态状态估计discusses灵巧手。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_krauss_enhanced_model_free_dynamic_st_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_dexterous_hand_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>灵巧手</h3>
+          <p>机器人手部主要分为多指灵巧手（dexterous hand）与二指/三指夹爪（gripper）。灵巧手自由度高、适应性强，但控制复杂、成本高；夹爪结构简单、成本低，但只能完成有限抓取类型。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p11_1_3/">
+          <span class="entry-type">方法</span>
+          <h3>触觉与力觉传感器集成</h3>
+          <p>- P11.1.3.1 输入梳理与目标量化 - 整理「触觉与力觉传感器集成」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">架构</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键数字</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</h1>
+      <p class="entry-name-en">WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>WCM（World Critic Model）是一种面向视觉-语言-动作（VLA）强化学习的评论家模型，由作者提出，旨在解决现有评论家基于单帧观测导致的部分可观测性（POMDP）不匹配问题。其核心贡献是引入轻量级 LeJEPA 架构，联合预测未来潜在状态与估计价值，使评论家表示显式捕捉时间动态，从而显著提升仿真与真实世界的任务成功率与分布外（OOD）泛化能力。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29613" target="_blank" rel="noopener">arXiv:2607.29613 WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA-RL 方法的价值估计器大多基于单帧观测或单帧 VLM 骨干潜在表示，这与机器人控制固有的部分可观测性（POMDP）本质相悖。简单地将观测历史拼接进评论家输入，会遭遇高维视觉空间下的指数级复杂度，且纯标量回报回归提供的监督信号过于稀疏，不足以引导评论家学习跨时间步的动态结构。根本问题在于状态近似：缺乏显式世界建模目标时，评论家的潜在表示无法编码价值估计所需的时序信息，导致其在真实世界动态任务（如变形物体操作）中产生错误的价值判断，甚至驱动机械臂撞向桌面。</p>
+<p>WCM 真正改变的是评论家的学习目标与表示空间。它不再将评论家视为一个单纯的标量回报回归器，而是将其训练为一个联合的世界模型与价值估计器。通过显式预测未来潜在状态，评论家的表示被强制编码时间动态结构，从而在价值估计时能利用历史上下文区分“正在接近成功”与“即将发生碰撞”等物理状态。这一转变直接回应了单帧 critic 在真实世界任务中因缺乏历史信息而导致的失败模式，将评论家的角色从“回报预测器”升级为“状态动力学理解器”。</p>
+<h2 id="_2">方法拆解</h2>
+<p>WCM 基于轻量级 LeJEPA 架构，由四个核心组件构成：观测编码器、世界预测器、价值解码头与动作条件潜在动态分支。其处理流程如下：</p>
+<h3 id="_3">观测编码与指令注入</h3>
+<ul>
+<li>给定时间步 t-K+1 到 t 的观测历史（K 为历史长度），观测编码器（ViT 或 VLA 策略的 VLM 骨干）独立处理每帧，得到潜在嵌入：z_{t-k} = enc_ε(o_{t-k})。</li>
+<li>语言指令由 CLIP 编码，经学习的适配器 A_lang 映射到 WCM 潜在空间：u_ℓ = A_lang(CLIP(ℓ))。</li>
+</ul>
+<h3 id="_4">历史主干与交叉注意力</h3>
+<ul>
+<li>编码的视觉历史先与指令 token 进行交叉注意力，再由因果 Transformer 历史主干（世界预测器）处理：h_t = Tr_φ(XAttn(z_{t-K+1:t}, u_ℓ))。</li>
+<li>隐藏表示 h_t 输入两个独立解码头。</li>
+</ul>
+<h3 id="_5">价值与动态预测</h3>
+<ul>
+<li>价值解码头 D_value 输出回报估计：V̂_t = D_value(h_t)。</li>
+<li>动作条件潜在动态分支使用残差更新预测下一潜在状态：ẑ_{t+1} = D_world(h_t, a_t, z_t)，其中 D_world 由动作编码器和门控 FiLM 残差块实现。</li>
+</ul>
+<h3 id="_6">训练目标</h3>
+<p>总目标为 L = L_value + λ·L_pred + η·L_SIGReg，所有组件端到端训练：
+- 预测损失：L_pred = ||ẑ_{t+1} - z_{t+1}||_2^2（教师强制）。
+- SIGReg 损失：防止潜在空间特征坍缩，鼓励匹配各向同性高斯分布（仅在离线策略管线中使用）。
+- 价值损失：L_value = ||V̂_t - G_t||_2^2。</p>
+<h3 id="_7">奖励与回报定义</h3>
+<ul>
+<li>奖励：成功 r_t=0，失败 r_t=-C_fail（C_fail=300），否则 r_t=-1。</li>
+<li>回报：G_t = Σ γ^{t'-t} r_{t'}，并最小-最大归一化到 [-1,1]。</li>
+</ul>
+<h3 id="_8">策略更新管线</h3>
+<ul>
+<li>在线策略（仿真）：AR 模型（OpenVLA-OFT）用 PPO，流匹配模型（π_0、π_0.5）用 Flow-SDE。</li>
+<li>离线策略（真实世界）：AR 模型用 AWR，流匹配模型用 RECAP。两种离线方法均使用在线 rollout 数据补充缓冲区，而非纯离线数据。</li>
+</ul>
+<h2 id="_9">关键创新</h2>
+<ol>
+<li>
+<p><strong>联合世界预测与价值估计的评论家架构</strong>：WCM 首次将未来潜在状态预测作为辅助任务引入评论家训练，使价值表示显式编码时间动态。这一设计直接解决了单帧 critic 在 POMDP 下的状态近似缺陷，且通过轻量级 LeJEPA 架构避免了高维视觉历史输入的指数级复杂度。</p>
+</li>
+<li>
+<p><strong>历史观测的因果 Transformer 处理</strong>：通过交叉注意力将语言指令注入视觉历史，再由因果 Transformer 主干处理，WCM 能以线性复杂度整合 K 帧历史（实验表明 K=3 最优），捕捉速度与加速度等一阶、二阶动态信息，而无需显式建模完整状态转移。</p>
+</li>
+<li>
+<p><strong>跨算法与跨策略的通用性</strong>：WCM 被设计为即插即用组件，可替换 PPO、Flow-SDE、AWR、RECAP 等不同 RL 算法中的原始 critic。在仿真与真实世界共 149 个任务上验证，均带来一致且显著的性能提升，表明其作为评论家基础架构的通用价值。</p>
+</li>
+</ol>
+<h2 id="_10">实验与结果</h2>
+<p>实验覆盖 4 个仿真基准（ManiSkill、MetaWorld、CALVIN、LIBERO-Plus）与真实世界 WidowX-250S 上的 7 个任务。关键结果如下：</p>
+<h3 id="maniskill-table-1">ManiSkill 主结果（Table 1）</h3>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>方法</th>
+<th>IND 成功率</th>
+<th>OOD 成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0</td>
+<td>SFT</td>
+<td>38.4</td>
+<td>18.1</td>
+</tr>
+<tr>
+<td>π_0</td>
+<td>+WCM</td>
+<td>84.4 ± 1.2 (+46.0)</td>
+<td>51.5 ± 1.5 (+33.4)</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>SFT</td>
+<td>47.0</td>
+<td>26.4</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>+WCM</td>
+<td>91.9 ± 0.4 (+44.9)</td>
+<td>64.4 ± 1.4 (+38.0)</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>SFT</td>
+<td>28.1</td>
+<td>18.3</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>+WCM</td>
+<td>99.0 ± 0.4 (+70.9)</td>
+<td>77.9 ± 0.8 (+59.6)</td>
+</tr>
+<tr>
+<td>Zero-Shot</td>
+<td>+WCM</td>
+<td>98.7 ± 0.3 (+97.9)</td>
+<td>73.5 ± 1.8 (+72.7)</td>
+</tr>
+</tbody>
+</table>
+<p>OpenVLA-OFT 从 0.78% 初始性能提升 12,551%（由表内数值 0.78%→98.7 计算），从弱 SFT 基线提升 252%。</p>
+<h3 id="table-3-50">真实世界（Table 3，成功率 /50）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>OpenVLA-OFT +WCM</th>
+<th>π_0.5 +WCM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carrot</td>
+<td>32/50</td>
+<td>44/50</td>
+</tr>
+<tr>
+<td>Banana</td>
+<td>26/50</td>
+<td>38/50</td>
+</tr>
+<tr>
+<td>Pepper</td>
+<td>26/50</td>
+<td>43/50</td>
+</tr>
+<tr>
+<td>Cloth Folding</td>
+<td>38/50</td>
+<td>38/50</td>
+</tr>
+<tr>
+<td>Towel Folding</td>
+<td>40/50</td>
+<td>35/50</td>
+</tr>
+<tr>
+<td>Stovetop Cleaning</td>
+<td>15/50</td>
+<td>33/50</td>
+</tr>
+<tr>
+<td>Conveyor Belt Sushi</td>
+<td>22/50</td>
+<td>24/50</td>
+</tr>
+</tbody>
+</table>
+<h3 id="figure-5">消融（Figure 5）</h3>
+<ul>
+<li>历史长度 K=3 表现最佳。</li>
+<li>λ 最佳范围 [0.3, 0.5]；λ 变化导致 OOD 波动 10.6 个百分点，IND 仅 2.7 个百分点，表明 OOD 对 λ 更敏感。</li>
+</ul>
+<h3 id="table-4">仿真到真实迁移（Table 4）</h3>
+<ul>
+<li>仿真 SFT 在真实世界 0/25 成功率；仿真 RL 后 7/25、7/25、6/25。</li>
+<li>Real SFT + sim RL 模拟 IND 73.5，真实 11/25、8/25、9/25。</li>
+</ul>
+<h2 id="_11">边界与局限</h2>
+<ul>
+<li>更长观测历史并非总是有益，超过最优长度（K=3）后收益有限，一阶和二阶动态信息（速度、加速度）已足够描述所需动态特征。</li>
+<li>λ 控制世界预测与价值学习间的权衡，过大或过小均非最优，且 OOD 性能对 λ 更敏感。</li>
+<li>仿真数据与真实机器人数据存在本质差异：仿真环境完全理想化，即使引入基于规则的扰动也难以获得类似真实环境的噪声或干扰。仿真 SFT 模型在真实世界完全无法成功抓取任何物体。</li>
+<li>作者明确声明不声称 WCM 完全免疫过拟合，仅在 500 步内未观察到过拟合现象。</li>
+<li>SIGReg 未在在线策略管线中采用，因约束 VLM 潜变量会引入不必要的计算开销，其在线场景下的效果论文未明确。</li>
+</ul>
+<h2 id="_12">工程启示</h2>
+<ul>
+<li><strong>复现核对顺序</strong>：先确认历史长度 K=3 与 λ∈[0.3, 0.5] 的设置，这是消融实验验证的最优区间。其次核对奖励定义（C_fail=300）与回报归一化到 [-1,1] 的细节，这两处直接影响价值损失的量纲与训练稳定性。</li>
+<li><strong>最易踩坑点</strong>：λ 的取值对 OOD 性能影响显著（波动 10.6 个百分点），调参时应以 OOD 指标为准而非仅看 IND。此外，SIGReg 仅在离线策略管线中使用，在线策略中强行加入会引入不必要的计算开销且效果未验证。</li>
+<li><strong>真实世界部署</strong>：仿真 SFT 模型直接部署到真实机器人会完全失败（0/25），必须经过真实数据 RL 微调。建议先收集每任务 100 条真实轨迹做 SFT，再以 8 轮 RL 迭代（每轮 50 条 rollout）微调，训练时间可控制在 1 小时内。</li>
+<li><strong>下游团队选型</strong>：若已有 VLA 策略（π_0、π_0.5、OpenVLA-OFT）且面临动态操作任务（变形物体、传送带），WCM 可作为 critic 的即插即用替换。其 107.2M 可学习参数在 8×H100 上训练开销可控，推理可在 RTX5090 本地工作站实时运行（10 Hz 控制频率）。</li>
+</ul>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.29613</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wcm_world_critic_model_vision_language_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">评测基准</span>
+          <h3>ManiSkill</h3>
+          <p>面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">观测编码与指令注入</a></li>
+<li><a href="#_4">历史主干与交叉注意力</a></li>
+<li><a href="#_5">价值与动态预测</a></li>
+<li><a href="#_6">训练目标</a></li>
+<li><a href="#_7">奖励与回报定义</a></li>
+<li><a href="#_8">策略更新管线</a></li>
+</ul>
+</li>
+<li><a href="#_9">关键创新</a></li>
+<li><a href="#_10">实验与结果</a><ul>
+<li><a href="#maniskill-table-1">ManiSkill 主结果（Table 1）</a></li>
+<li><a href="#table-3-50">真实世界（Table 3，成功率 /50）</a></li>
+<li><a href="#figure-5">消融（Figure 5）</a></li>
+<li><a href="#table-4">仿真到真实迁移（Table 4）</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

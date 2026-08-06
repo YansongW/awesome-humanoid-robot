@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Not Forgotten: Implementation and Evaluation of a Personalized Episodic Memory for the Humanoid Robot Head Kim · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Not Forgotten: Implementation and Evaluation of a Personalized Episodic Memory for the Humanoid Robot Head Kim</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Not Forgotten: Implementation and Evaluation of a Personalized Episodic Memory for the Humanoid Robot Head Kim</h1>
+      <p class="entry-name-en">Not Forgotten: Implementation and Evaluation of a Personalized Episodic Memory for the Humanoid Robot Head Kim</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Social robots that rely on large language models for conversation are unable to retain information across sessions. This absence of memory violates social expectations, potentially preventing the formation of persistent relationships. This paper presents a lightweight episodic memory module that integrates vector-based semantic retrieval with an LLM-controlled dialog system, deployed on the.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.24190" target="_blank" rel="noopener">arXiv:2607.24190 Not Forgotten: Implementation and Evaluation of a Personalized Episodic Memory f</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 LLM 기반 소셜 로봇이 세션 간 정보를 유지하지 못하고, 구현성(embodiment)이 유발하는 사회적 기대에 부합하지 못하는 문제를 해결하기 위해, 14개의 공압 액추에이터를 갖춘 인간형 로봇 헤드 Kim에 개인화된 상황 기억 시스템을 구현하고 평가하였다. 이 시스템은 마이크로서비스 아키텍처를 채택하고, 하이브리드 검색 점수(의미 유사도와 기억 강도 가중치)를 통해 Qdrant 벡터 저장소에서 과거 상호작용을 재호출하여 LLM 프롬프트에 주입한다. 43명의 피험자를 대상으로 한 온라인 비디오 실험 결과, 기억 강화는 지각된 사회성(특히 따뜻함과 신뢰성)을 유의미하게 향상시켰지만, 지각된 방해에는 유의미한 영향을 미치지 않았다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>이 작업의 진정한 가치는 또 하나의 기억 기능을 가진 챗봇을 만든 것이 아니라, 기억을 '검색 정확도'라는 공학적 문제에서 '사용자 인식'이라는 심리학적 문제로 끌어내린 데 있다. 기존 RAG, MemGPT 등의 접근 방식은 사실 재호출을 최적화하고 기능 벤치마크나 가상 샌드박스로 평가하며, '많이 기억할수록 좋다'는 것을 기본 전제로 삼았다. 그러나 구현된 로봇은 다르다—물리적 형태가 사용자로 하여금 행위 주체성과 사회적 기대를 투사하게 만들며, 이때 '기억함'은 세심함으로 해석될 수도 있고 감시로 해석될 수도 있다. 저자는 이러한 모순을 회피하지 않고 직접 질문한다: 기억은 과연 사용자에게 더 따뜻함을 느끼게 하는가, 아니면 더 섬뜩함(creepy)을 느끼게 하는가?</p>
+<p>두 번째로 바꾼 점은 실험 패러다임이다. 대부분의 HRI 기억 연구는 시스템 능력에 초점을 맞추어 '기억할 수 있는지'를 측정하는 반면, 여기서는 '기억한 후 사용자가 어떻게 느끼는지'를 측정한다. 사전 녹화된 비디오, 피험자 내 설계, HRIES 척도를 통해 기억의 사회적 효과를 기술적 노이즈에서 분리해 냈다. 결과도 흥미롭다: 기억은 사회성(sociability)을 유의미하게 향상시켰지만(d = 0.60), 방해(disturbance)에는 전혀 영향을 미치지 않았다(d = 0.00)—이는 사용자가 로봇이 '나를 기억하는 것'에 대해 우리가 우려했던 것보다 더 수용적일 수 있음을 시사하며, 적어도 단일 세션 관찰 창에서는 그러하다.</p>
+<h2 id="_3">방법 분석</h2>
+<p>시스템 아키텍처는 마이크로서비스 지향적이며, 전체가 Docker 컨테이너화되어 HTTP REST API와 websocket으로 통신한다. 핵심 기억 모듈은 FastAPI 마이크로서비스로, 세 가지 엔드포인트를 노출한다: <code>POST /memory</code>(저장), <code>POST /memory/query</code>(검색), <code>POST /memory/consolidate-all</code>(통합). 상호작용 파이프라인은: Whisper ASR → 기억 검색 → gpt-4.1-nano 생성 → XTTS 음성 합성 → 립싱크 순서이다.</p>
+<h3 id="_4">기억 저장</h3>
+<ul>
+<li>각 대화 텍스트는 OpenAI <code>text-embedding-3-small</code>을 통해 1536차원 벡터로 변환되어 로컬 Qdrant에 저장된다.</li>
+<li>각 기억에는 감정 메타데이터가 첨부된다: LLM 감정 분류가 valence v와 arousal a를 제공하고, 감정 강도 I = √(v² + a²)로 계산된다.</li>
+<li>실험 전에 사용자 선호도(6개 개인 프로필 항목)를 사전 채워 기준선 일관성을 보장한다.</li>
+</ul>
+<h3 id="2">하이브리드 검색 점수(2단계)</h3>
+<ol>
+<li><strong>후보 재호출</strong>: 코사인 유사도로 Qdrant를 쿼리하고, 오버샘플링 팩터 3(3k 후보에서 k개 선택)을 적용한다.</li>
+<li><strong>재정렬</strong>: 하이브리드 점수 R(m) = α · sim(m) + S(m), 여기서 α = 50은 휴리스틱 스케일링 팩터, sim(m) ∈ [0,1]은 코사인 유사도, S(m)은 기억 강도이다.</li>
+</ol>
+<p>설계 근거: 표준 RAG는 의미 유사도만 보는 반면, 여기서는 생성형 에이전트의 최근성과 접근 빈도를 차용하고 감정 강도를 확장하여 추가했다. 스케일링 팩터 α = 50은 의미 관련성이 항상 우세하도록 보장하며, 기억 강도는 단지 동점 결정자(tie-breaker) 역할만 한다—이는 감정 기억이 주도권을 잡지 않도록 하는 핵심 결정이다.</p>
+<h3 id="_5">기억 강도 공식</h3>
+<p>S(m) = max(0, (w_t·F_time + w_a·F_access + w_r·F_recency) · M_emotion)</p>
+<ul>
+<li>가중치: w_t = 3.0(시간 감쇠), w_a = 2.0(접근 빈도), w_r = 1.5(최근성)</li>
+<li>F_time = max(0, 1 − 0.1·Δt_creation), Δt는 일 단위</li>
+<li>F_access = ln(1 + N_access)</li>
+<li>F_recency = max(0, 1 − 0.05·Δt_last_access)</li>
+<li>M_emotion = 1 + 0.5·√(v² + a²)</li>
+</ul>
+<p>내부 max(·)는 음수 시간/최근성 기여를 0으로 잘라낸다; 감정 강도는 곱셈 강화로 작용하여 높은 감정 기억이 감쇠에 더 저항하게 만든다.</p>
+<h3 id="_6">프롬프트 주입 및 지연 처리</h3>
+<ul>
+<li>재정렬 후 상위 k개 기억이 시스템 프롬프트에 주입되며, "use memories naturally", "don't enforce all info at once"를 명시적으로 요구하여 기억을 강제 사실이 아닌 선택적 배경으로 프레임화한다.</li>
+<li>지연 제어: 임베딩 약 0.32초, 검색/재정렬 약 0.36초. 컨트롤러는 검색을 블로킹 방식(생성 전 동기 실행)으로 설정하고, 기억 쓰기는 백그라운드 스레드로 오프로드한다.</li>
+<li>Baseline 조건: 기억 컨테이너를 중지하고, 클라이언트 검색 요청은 5초 타임아웃, LLM은 현재 대화 턴만 사용한다.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>감정 강도를 기억 감쇠의 곱셈 팩터로 사용</strong>: 기존 생성형 에이전트는 시간, 접근 빈도, 최근성만 선형 가중치로 사용하는 반면, 여기서는 M_emotion = 1 + 0.5·√(v² + a²)을 곱셈 강화로 도입한다. 이는 높은 감정 사건(예: 사용자가 '꿈의 여행지'를 언급)이 중립 사건(예: '오늘 날씨가 좋다')보다 잊히기 어렵다는 것을 의미한다. 이 설계는 '감정적 사건이 더 자연스러운 회상을 우선시한다'는 가정에 기반하며, HRI 맥락에서 타당하다—인간 기억 자체가 감정 편향성을 가지기 때문이다.</p>
+</li>
+<li>
+<p><strong>혼합 점수에서 α = 50의 휴리스틱 보정</strong>: 의미 유사도를 50배 확대하여 기억 강도와 더하는 것은 본질적으로 '의미 관련성'을 하드 제약으로, '기억 강도'를 소프트 정렬로 설정하는 것이다. 이 설계는 순수 RAG의 '사실만 인식하고 감정은 무시'와 순수 기억 우선의 '주제 이탈 위험'을 모두 피하며, 공학적으로 재현 가능한 균형점이다.</p>
+</li>
+<li>
+<p><strong>실험적으로 '기억 가용성'과 '검색 전략 우월성'을 구분</strong>: 저자는 아키텍처 기여가 타당성 증명에 국한되며, 경험적 기여는 특정 검색 전략의 우월성이 아닌 기억 가용성의 효과에 있다고 명시적으로 선언한다. 이러한 자기 제한은 논문에서 드물지만, 오히려 결론을 더 신뢰하게 만든다—혼합 점수가 단순 키워드 매칭보다 낫다고 과도하게 주장하지 않고, 문제를 후속 연구에 남겨둔다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<p>실험은 피험자 내 설계로, 52명이 프로필 단계를 완료하고 43명이 완전한 응답을 제공했다.
+참가자는 비디오를 통해 로봇이 여섯 개의 동일한 사회적 프롬프트에 응답하는 것을 보고, HRIES 척도(7점 Likert)로 네 가지 차원을 평가했다.
+네 가지 항목(creepy, scary, uncanny, weird) 모두 유의미에 근접하지 않았으며, 항목별 효과 크기는 모두 &lt; .25였다.
+<strong>Agency 및 Animacy</strong>: 모두 유의미하지 않음(Agency d = 0.11, Animacy d = 0.17), Animacy는 두 조건 모두 척도 중간점보다 낮음(M_BL = 2.78, M_ME = 3.02).
+<strong>전역 선호도</strong>: 63%가 Memory-Enhanced 선택, 37%가 Baseline 선택, 그러나 카이제곱 검정 χ²(1) = 2.81, p = .093으로 무작위와 구분할 수 없음.
+| 지표 | Baseline M (SD) | Memory-Enhanced M (SD) | t(42) | p | Cohen's d |
+|---|---|---|---|---|---|
+| Sociability 척도 | 3.77 (1.02) | 4.40 (1.09) | −4.15 | &lt; .001 | 0.60 |
+| warm | 3.07 (1.37) | 3.91 (1.62) | −3.56 | .001 | .56 |
+| trustworthy | 3.21 (1.32) | 4.09 (1.51) | −3.91 | &lt; .001 | .62 |
+| Agency | 4.25 | 4.36 | −0.89 | 1.000 | 0.11 |
+핵심 의미: 기억 강화는 로봇을 더 '따뜻하고 신뢰할 수 있게' 만들지만, 더 '무섭게' 만들지는 않는다—제로 방해 효과는 이 논문에서 가장 주목할 만한 발견이며, '기억이 감시로 이어지는가'에 대한 우려에 초기 응답을 제공한다.
+(이 섹션에는 전체 텍스트에서 검증할 수 없는 숫자를 포함한 6개의 문장이 더 있었으며, 규율에 따라 제거되었다; 논문은 명시하지 않거나 그림/표 이미지로 제공했다.)</p>
+<h2 id="_9">경계 및 한계</h2>
+<p>저자가 명시적으로 인정한 경계는: 비디오 형식이 실시간 대화를 배제하여 기억이 판단에 미치는 영향의 대역폭을 줄였고, 단일 세션 관찰은 시간 감쇠와 같은 장기 요인을 실증적으로 테스트할 수 없으며, Agency와 Animacy의 제로 결과는 이러한 감소된 타당성을 부분적으로 반영할 수 있다. 표본은 N = 43의 대학생으로 통계적 검정력이 제한적이고, GDPR 데이터 최소화로 인해 인구통계학적 세부 정보를 수집하지 않아 프라이버시 태도의 개인차에 대한 일반화가 제한된다.</p>
+<p>더 중요한 한계는: <strong>아키텍처 기여를 분리할 수 없다</strong>—제로 방해 효과는 아키텍처 필터링(프롬프트가 '자연스러운 기억 사용'을 강제) 덕분일 수도 있고, 단지 시나리오가 너무 짧고 기억량이 너무 적어 사용자가 기억되고 있다는 사실을 알아차리지 못했기 때문일 수도 있다. 저자는 또한 특정 검색 전략의 기여를 분리하지 않았음을 인정한다: 개인 세부 정보를 주입할 수 있는 어떤 시스템(예: 키워드 매칭)도 상당한 사회성 효과를 생성할 수 있다. 또한, 필터링되지 않은 회상이 프라이버시 우려를 유발하는지 테스트하지 않았고, 다주 종단 연구를 수행하지 않았으며, 해석 가능한 기억 검색 전략을 평가하지 않았다. 전역 선호도 63%는 유의미에 도달하지 못했으며, 표본이 검정력 부족일 수 있다.</p>
+<h2 id="_10">공학적 시사점</h2>
+<p>재현 시 가장 먼저 확인해야 할 것은 <strong>기억 강도 공식의 가중치와 감쇠 계수</strong>이다: w_t = 3.0, w_a = 2.0, w_r = 1.5, 그리고 F_time의 0.1/일 및 F_recency의 0.05/일 감쇠율. 이러한 매개변수는 휴리스틱하게 설정되었으며 민감도 분석이 없다—시나리오의 대화 빈도가 본 실험(일주일 간격)보다 훨씬 높거나 낮다면 감쇠 곡선이 완전히 변형될 것이다. 먼저 시뮬레이션 데이터셋을 실행하여 top k 재호출에서 감정 기억의 비율이 직관에 부합하는지 확인하는 것이 좋다.</p>
+<p>가장 함정에 빠지기 쉬운 것은 <strong>프롬프트 주입의 표현</strong>이다. 저자는 "use memories naturally", "don't enforce all info at once"를 강조하며, 이는 기억이 자연스럽게 직조되는지 아니면 딱딱하게 삽입되는지를 직접 결정한다. 실제 측정에서 LLM 변동성이 크며, 자연스러운 인용부터 스크립트화된 삽입까지 다양하여 통제되지 않은 그룹 내 분산을 유발한다. 시스템 프롬프트에 "최대 한 개의 기억만 인용" 또는 "관련될 때만 언급"과 같은 더 엄격한 제약을 추가하고, 다회차 인간 평가를 수행하는 것이 좋다.</p>
+<p>또 다른 공학적 세부 사항: <strong>검색 지연 0.32 + 0.36초</strong>는 실시간 상호작용에서 인지될 수 있다. 저자는 블로킹 검색 + 논블로킹 쓰기로 해결했지만, 더 느린 임베딩 모델이나 더 큰 벡터 저장소를 사용하면 이 지연이 두 배가 된다. 검색 타임아웃을 5초에서 2초로 줄이고, 고빈도 쿼리 결과를 캐싱하는 것을 고려하는 것이 좋다.</p>
+<p>마지막으로, <strong>제로 방해 효과를 과도하게 일반화하지 말 것</strong>. 본 실험은 단일 세션, 사전 녹화 비디오, 일주일 간격으로, 사용자가 로봇이 무엇을 '기억하는지' 인식하지 못했을 수 있다. 다주 종단 배포를 계획한다면 disturbance를 반드시 재측정해야 한다—기억이 일정 수준으로 축적되면 '기억됨'에 대한 사용자의 느낌이 세심함에서 침해로 전환될 수 있다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_process_p12_3_2/">人机交互与可解释性</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_not_forgotten_implementation_evaluation_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p12_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>人机交互与可解释性</h3>
+          <p>HMI 设计、交互原型、可用性测试报告</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">기억 저장</a></li>
+<li><a href="#2">하이브리드 검색 점수(2단계)</a></li>
+<li><a href="#_5">기억 강도 공식</a></li>
+<li><a href="#_6">프롬프트 주입 및 지연 처리</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

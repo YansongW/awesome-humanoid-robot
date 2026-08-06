@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FARO: Feasibility-Aware Robot Motion Optimization · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FARO: Feasibility-Aware Robot Motion Optimization</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>FARO: Feasibility-Aware Robot Motion Optimization</h1>
+      <p class="entry-name-en">FARO: Feasibility-Aware Robot Motion Optimization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Fast planning of novel behaviors in unseen scenarios remains a fundamental challenge in robotics. The high-dimensional, hybrid, and underactuated nature of humanoid loco-manipulation continues to hinder the realization of this goal. In this paper, we address this challenge by proposing a nested kino-dynamic framework for rapid feasibility checking and dynamically consistent trajectory generation.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18362" target="_blank" rel="noopener">arXiv:2607.18362 FARO: Feasibility-Aware Robot Motion Optimization</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>FARO는 연구팀이 제안한 휴머노이드 로봇 이동 조작을 위한 실현 가능성 인식 모션 최적화 프레임워크로, 핵심 아이디어는 계층적 실현 가능성 검사(모드/엣지 최적화, 운동학적 시퀀스 최적화 KSO, 궤적 최적화 TO)를 통해 트리 탐색에서 실행 불가능한 접촉 모드 시퀀스를 빠르게 가지치기하여, 사전 정의된 행동 추상화나 참조 모션에 의존하지 않고 동적으로 실현 가능한 행동을 효율적으로 탐색하는 것입니다. 핵심 기여는 계산 비용이 매우 낮은 KSO를 TO의 실현 가능성 분류기로 사용하여, 거의 0에 가까운 위음성률을 유지하면서 탐색 효율을 1~2자릿수 향상시킨 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이 문제의 진정한痛点은 궤적 최적화(TO)가 고차원, 혼합, 저구동 휴머노이드 동역학을 처리할 수 있지만, 접촉 시퀀스 탐색의 조합 폭발로 인해 TO가 병목이 된다는 점입니다—각 후보 접촉 모드마다 전체 TO를 실행해야 하며, 비용은 수십 초에서 수백 초(표 I에서 평균 64.70초)에 달하고, 탐색 공간의 분기 계수는 108에 이를 수 있습니다. 기존 접근법은 단순화된 모델이나 수동 동작 추상화로 탐색 공간을 줄여 행동 다양성을 희생하거나, RL과 모방 학습으로 탐색을 우회하지만 미지의 시나리오에서 새로운 행동을 발견할 수 없었습니다. FARO가 바꾸는 것은 전체 탐색 프로세스에서 "실현 가능성 평가"의 위치와 세분화입니다: TO를 유일한 필터로 사용하지 않고, 운동학적 수준의 저비용 사전 필터를 삽입하여 탐색 초기에 많은 실행 불가능한 분기를 잘라내고, 귀중한 TO 계산을 진정으로 유망한 후보에게만 남겨둡니다. 이는 본질적으로 "탐색 폭"과 "평가 정밀도" 사이에서 계산 예산을 재분배하는 것입니다.</p>
+<h2 id="_3">방법 분해</h2>
+<p>FARO의 탐색 프레임워크는 실현 가능성 기반 트리 탐색으로, 핵심은 3단계 필터링 계층이며 각 단계는 이전 단계보다 더 엄격하고 비용이 높습니다:</p>
+<h3 id="1-14">1. 모드/엣지 최적화 (식 14)</h3>
+<ul>
+<li>각 접촉 모드 c 또는 전이 c₁∪c₂에 대해 역운동학 최적화 문제를 풉니다:</li>
+<li>목표: (q − q_nom)ᵀ W (q − q_nom) 최소화</li>
+<li>제약: 접촉 제약, 충돌 제약, 관절 위치 제한</li>
+<li>수렴하지 않으면 해당 모드/전이를 실행 불가능으로 판정하고 직접 가지치기</li>
+<li>이 단계는 "기하학적 및 접촉 제약을 만족하는 구성이 존재하는지"만 확인하며, 동역학은 포함하지 않습니다.</li>
+</ul>
+<h3 id="2-kso-15">2. 운동학적 시퀀스 최적화 KSO (식 15)</h3>
+<ul>
+<li>K개의 접촉 모드 시퀀스에 대해 K+1개의 구성을 풉니다(각 모드당 하나의 대표 구성)</li>
+<li>제약: 접촉, 충돌, 위치 제한, 그리고 점착 접촉의 전이 일관성(지속 접촉 및 접촉 해제 두 경우)</li>
+<li>핵심 설계: KSO는 TO와 대부분의 기하학적 및 접촉 제약을 공유하지만(표 I에서 TO의 70.0% 제약 유형 평균 커버), 동역학 제약과 전체 궤적 변수를 생략하므로 계산 비용이 매우 낮습니다—평균 0.60초 vs TO의 64.70초, 결정 변수 74.8배 감소.</li>
+</ul>
+<h3 id="3-to-17">3. 궤적 최적화 TO (식 17)</h3>
+<ul>
+<li>직접 다중 사격 전사를 통해 상태 궤적 x_{0:N}, 제어 궤적 u_{0:N−1}, 각 모드의 무차원 시간 스케일링 인자 T̄_s를 풉니다</li>
+<li>제약: 후방 오일러 이산화된 로봇/객체 동역학, 접촉 제약(법선 정렬, 피라미드 마찰 원뿔, 비틀림 마찰, 압력 중심 경계), 충돌, 관절 제한</li>
+<li>KSO를 통과한 시퀀스만 이 단계에 진입합니다</li>
+</ul>
+<h3 id="_4">탐색 전략</h3>
+<ul>
+<li>비용 기반 UCT 노드 선택 (식 18, C=3)</li>
+<li>점진적 확장 (식 19, k=1.0, α=0.5)</li>
+<li>네 가지 필터링 변형: F1=(KSO), F2=(M,E,KSO), F3=(M,E,KSO,TO), F4=(TO)</li>
+<li>실현 가능/불가능 캐시(K_feas, K_infeas)로 중복 해결 방지</li>
+<li>시간 예산 B 내에서 지속 탐색, 목표 도달 시퀀스는 S_goal에 추가</li>
+</ul>
+<p>구현 수준: KSO는 acados의 SQP, TO는 Hippo SQP, 모드/엣지 최적화는 Ipopt, 운동학/동역학은 Pinocchio, NLP 구축은 CasADi, 충돌 거리는 coal을 사용합니다.</p>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>TO 실현 가능성의 저비용 분류기로서의 KSO</strong>: 이것이 FARO의 가장 핵심적인 통찰입니다. KSO는 전체 궤적 대신 각 접촉 모드의 대표 구성을 최적화하지만, TO의 70.0% 제약 유형을 유지합니다(표 I). 실험 결과 위음성률이 거의 0에 가깝습니다(LLM 샘플링 실험에서 FNR 0.0% 또는 1.3%). 이는 TO에서 실현 가능한 계획을 거의 잘못 거부하지 않는다는 것을 의미합니다. 이는 "실현 가능성 평가는 정확해야 한다"는 암묵적 가정을 깨뜨립니다—탐색 초기에는 "완벽한" 필터보다 "충분히 좋은" 필터가 더 가치 있습니다.</p>
+</li>
+<li>
+<p><strong>계층적 실현 가능성 검사의 중첩 구조</strong>: 모드/엣지 최적화 → KSO → TO는 점점 더 엄격해지는 필터 체인을 구성합니다. 각 단계는 이전 단계 위에 제약을 추가하여 실행 불가능한 후보가 가장 이르고 가장 저렴한 단계에서 제거됩니다. 저자는 실현 가능 집합의 중첩성을 형식적으로 증명하지 않았지만, 실험 데이터는 이 설계를 강력히 지지합니다: Hard 작업에서 TO-only 기준선은 평균 12.8개 노드만 확장하고 해가 없었지만, M,E,KSO 변형은 814.6개 노드를 확장하고 평균 26.4개의 해를 찾았습니다.</p>
+</li>
+<li>
+<p><strong>실현 가능성 기반 트리 탐색과 캐시 메커니즘</strong>: 실현 가능성 검사 결과(실현 가능/불가능)를 캐시하고 탐색 전략에 피드백하여 동일한 모드나 전이를 반복적으로 푸는 것을 방지합니다. 이는 접촉 모드 시퀀스의 조합 공간이 거대하고(분기 계수 108) 많은 하위 시퀀스가 여러 번 방문되기 때문에 실제 탐색에서 중요합니다.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<p>실험은 두 부분으로 구성됩니다: 인간이 정의한 접촉 시퀀스 벤치마크와 실현 가능성 기반 트리 탐색.</p>
+<p><strong>표 I: 인간이 정의한 접촉 시퀀스(8개 시퀀스)</strong></p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평균 모드 수 K</td>
+<td>8.4</td>
+</tr>
+<tr>
+<td>평균 TO 시간 [s]</td>
+<td>64.70</td>
+</tr>
+<tr>
+<td>평균 KSO 시간 [s]</td>
+<td>0.60</td>
+</tr>
+<tr>
+<td>결정 변수 감소 [×]</td>
+<td>74.8</td>
+</tr>
+<tr>
+<td>제약 커버리지 [%]</td>
+<td>70.0</td>
+</tr>
+</tbody>
+</table>
+<p>KSO는 TO보다 약 2자릿수 빠르며(표 내 값 0.60 → 64.70으로 계산), 동시에 70.0%의 제약 유형을 유지합니다.</p>
+<p><strong>표 II: 트리 탐색(Easy/Hard 두 box-placement 작업, 5회 실행, 2시간 예산)</strong></p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>KSO</th>
+<th>M,E,KSO</th>
+<th>M,E,KSO,TO</th>
+<th>TO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy 해 수</td>
+<td>73.6 ± 19.7</td>
+<td>83.8 ± 6.5</td>
+<td>8.0 ± 3.7</td>
+<td>20.0 ± 5.0</td>
+</tr>
+<tr>
+<td>Easy 첫 해 시간 [s]</td>
+<td>192 ± 96</td>
+<td>194 ± 74</td>
+<td>1455 ± 989</td>
+<td>951 ± 583</td>
+</tr>
+<tr>
+<td>Hard 해 수</td>
+<td>0.4 ± 0.9</td>
+<td>26.4 ± 9.7</td>
+<td>1.2 ± 0.8</td>
+<td>0.0 ± 0.0</td>
+</tr>
+<tr>
+<td>Hard 첫 해 시간 [s]</td>
+<td>2671</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 발견: Hard 작업에서 TO-only 기준선은 완전히 실패했지만(0개 해, 12.8개 노드만 확장), M,E,KSO 변형은 26.4개의 해를 찾고 814.6개 노드를 확장했습니다. 이는 계층적 필터링의 가치를 직접 검증합니다—TO를 단독 필터로 사용하면 계산 비용이 너무 높아 탐색이 깊이 진행될 수 없습니다.</p>
+<p><strong>표 III: LLM 접촉 계획 샘플링(GPT-5.5가 100개 계획 생성, 5회 반복)</strong></p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>1-a</th>
+<th>1-b</th>
+<th>2-a</th>
+<th>2-b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FNR [%] ↓</td>
+<td>0.0 ± 0.0</td>
+<td>0.0 ± 0.0</td>
+<td>1.3 ± 2.6</td>
+<td>0.0 ± 0.0</td>
+</tr>
+<tr>
+<td>FPR [%] ↓</td>
+<td>24.2 ± 10.4</td>
+<td>4.2 ± 5.8</td>
+<td>41.4 ± 8.3</td>
+<td>19.5 ± 26.1</td>
+</tr>
+<tr>
+<td>Speedup [×] ↑</td>
+<td>3.8 ± 1.4</td>
+<td>15.5 ± 10.2</td>
+<td>2.4 ± 0.5</td>
+<td>7.4 ± 4.3</td>
+</tr>
+</tbody>
+</table>
+<p>FNR이 거의 0인 것이 핵심입니다—KSO는 TO에서 실현 가능한 계획을 거의 놓치지 않습니다. FPR이 높은 편(특히 Easy 작업)은 KSO가 TO에서 실행 불가능한 일부 계획을 통과시킨다는 것을 의미하지만, 이는 탐색 시나리오에서 허용 가능한 비용입니다. 최종적으로 TO가 정밀 필터링을 수행하기 때문입니다.</p>
+<h2 id="_7">경계 및 한계</h2>
+<ul>
+<li><strong>KSO가 동역학 제약을 생략</strong>: KSO는 각 모드 전이의 하나의 구성만 최적화하고 전체 이산 궤적을 최적화하지 않으므로 동적 실현 가능성(질량 중심 운동량, 토크 제한 등)을 포착할 수 없습니다. 이는 KSO가 동역학적으로 실행 불가능한 일부 시퀀스를 통과시킬 수 있음을 의미하며, TO가 최종적으로 처리해야 합니다.</li>
+<li><strong>중첩성 미증명</strong>: 저자는 계층적 최적화에 해당하는 실현 가능 집합이 중첩되기를 기대하지만 형식적 증명을 제공하지 않았습니다. 실제로 KSO의 실현 가능 집합이 TO의 실현 가능 집합을 포함하지 않으면 위음성(실현 가능한 계획 누락)이 발생할 수 있지만, 실험에서는 FNR이 거의 0임을 보여줍니다.</li>
+<li><strong>접촉 모드 제한</strong>: 현재 공식은 평면 접촉 인터페이스와 점착 접촉(미끄럼 없음)을 가정하며, 슬라이딩이나 양면 접촉 모드를 다루지 않습니다. 저자는 더 풍부한 기하학으로 확장 가능하다고 언급했지만 구현하지 않았습니다.</li>
+<li><strong>완전 자율적 행동 발견 아님</strong>: LLM은 접촉 계획 샘플링에 사용되고, 인간 입력도 계획 소스 중 하나입니다. FARO 자체는 접촉 모드를 생성하지 않으며, 주어진 시퀀스의 평가와 탐색만 담당합니다.</li>
+<li><strong>장시간 작업 미검증</strong>: 훨씬 더 긴 시간 범위의 작업으로 확장하려면 더 고급 작업 및 모션 계획 또는 프로그램 검색과의 통합이 필요하며, 논문에서 다루지 않았습니다.</li>
+</ul>
+<h2 id="_8">엔지니어링 시사점</h2>
+<ul>
+<li><strong>먼저 KSO와 TO의 제약 커버리지를 확인</strong>: FARO의 효과는 KSO와 TO가 공유하는 제약의 정도에 의존합니다. 시나리오에서 KSO가 TO의 대부분 기하학적 및 접촉 제약(표 I에서 70.0%)을 커버할 수 없다면 계층적 필터링의 이점이 크게 감소합니다. 재현 시 먼저 표 I의 벤치마크를 실행하여 KSO의 제약 커버리지가 70.0%에 근접하는지 확인한 후 배포하세요.</li>
+<li><strong>가장 쉽게 함정에 빠지는 부분은 KSO의 솔버 구성</strong>: 논문은 소수의 위음성이 주로 KSO 초기화 불량이나 솔버 반복 횟수 부족과 관련이 있다고 언급합니다. KSO는 acados의 SQP를 사용하며 초기 추측에 민감합니다—모드/엣지 최적화의 해를 KSO의 웜 스타트로 사용하고 반복 상한을 적절히 늘리는 것이 좋습니다. 그렇지 않으면 FNR이 상승합니다.</li>
+<li><strong>탐색 매개변수가 결과에 큰 영향</strong>: 트리 탐색 계수(k=1.0, α=0.5, C=3), 시간 예산(2시간), 최대 깊이(5회 전환)는 모두 경험적 값입니다. Hard 작업에서 TO-only가 완전히 실패한 것은 작업의 동역학 난이도가 높으면 KSO 필터링을 반드시 활성화해야 함을 의미합니다. 그러나 작업이 단순하면 KSO의 FPR이 TO 계산을 낭비할 수 있습니다(Easy 작업에서 M,E,KSO,TO의 해 수가 오히려 TO-only보다 적음).</li>
+<li><strong>캐시 메커니즘이 성능의 핵심</strong>: 실현 가능/불가능 캐시(K_feas, K_infeas)는 분기 계수 108의 탐색 공간에서 동일한 모드를 반복적으로 푸는 것을 방지하여 큰 이점을 제공합니다. 구현 시 캐시 키에 완전한 접촉 모드 정의(객체 상태 포함)가 포함되도록 해야 합니다. 그렇지 않으면 캐시 누락으로 중복 계산이 발생합니다.</li>
+<li><strong>LLM 샘플링과 FARO는 상호 보완적</strong>: LLM은 다양한 접촉 계획 생성(시나리오당 100개, 5회 반복)을 담당하고, FARO는 평가를 담당합니다. LLM이 없다면 무작위 샘플링이나 수동 설계로 대체할 수 있지만 탐색 효율은 감소합니다—FARO 자체는 "좋은 계획을 생성하는 방법"을 해결하지 않습니다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">uses_hardware_from</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_software_pinocchio/">Pinocchio</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_faro_feasibility_aware_robot_motion_opti_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_software_pinocchio/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>Pinocchio</h3>
+          <p>효율적인 강체 동역학·운동학·해석적 미분을 위한 오픈소스 C++ 라이브러리로, 로보틱스 연구 및 모델 기반 제어에 널리 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#1-14">1. 모드/엣지 최적화 (식 14)</a></li>
+<li><a href="#2-kso-15">2. 운동학적 시퀀스 최적화 KSO (식 15)</a></li>
+<li><a href="#3-to-17">3. 궤적 최적화 TO (식 17)</a></li>
+<li><a href="#_4">탐색 전략</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a></li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

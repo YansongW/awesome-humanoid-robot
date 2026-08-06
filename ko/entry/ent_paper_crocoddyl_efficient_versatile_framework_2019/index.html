@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crocoddyl: An Efficient and Versatile Framework for Multi-Contact Optimal Control · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Crocoddyl: An Efficient and Versatile Framework for Multi-Contact Optimal Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Crocoddyl: An Efficient and Versatile Framework for Multi-Contact Optimal Control</h1>
+      <p class="entry-name-en">Crocoddyl: An Efficient and Versatile Framework for Multi-Contact Optimal Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P006. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>We introduce Crocoddyl (Contact RObot COntrol by Differential DYnamic Library), an open-source framework tailored for efficient multi-contact optimal control. Crocoddyl efficiently computes the state trajectory and the control policy for a given predefined sequence of contacts. Its efficiency is due to the use of sparse analytical derivatives, exploitation of the problem structure, and data.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1909.04947" target="_blank" rel="noopener">arXiv:1909.04947 Crocoddyl: An Efficient and Versatile Framework for Multi-Contact Optimal Contro</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Crocoddyl은 프랑스 LAAS-CNRS 팀이 제안한 다접촉 최적 제어 프레임워크로, 핵심 기여는 접촉 시퀀스를 스위칭 동역학으로 명시적으로 모델링하고 희소성 인지 Riccati 재귀를 통해 효율적으로 해를 구하는 데 있다. 이는 사족 및 이족 로봇을 대상으로 하며, 통합된 가중치와 비용 함수 아래에서 다양한 보행을 포괄하여 다접촉 궤적 최적화의 계산 장벽을 크게 낮췄다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>다접촉 최적 제어는 오랫동안 두 가지 문제점에 시달려 왔다. 첫째, 접촉 이벤트(예: 발 착지)로 인한 동역학 불연속성으로, 기존 방법은 충격을 무시하거나 소프트 제약으로 근사하여 스위칭 순간에 궤적이 물리적으로 불일치했다. 둘째, 전차원 상태-제어 공간의 최적화 규모가 접촉 수에 따라 폭발적으로 증가하여 범용 솔버가 로봇 온라인 주기 내에 수렴하기 어려웠다. Crocoddyl은 이러한 상황을 바꾸었다—접촉 시퀀스를 사후 수정이 아닌 1차 이산 변수로 문제 구조에 명시적으로 포함시켜, 솔버가 희소성을 활용해 맞춤형 가속을 할 수 있게 했다. 이는 단순한 알고리즘 개선에 그치지 않고, 다족 로봇의 전신 궤적 최적화가 "오프라인 파라미터 튜닝"에서 "반복 가능하고 일반화 가능한" 엔지니어링 실천으로 나아갔음을 의미한다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">문제 정식화</h3>
+<p>다접촉 최적 제어를 유한 시간 영역 이산 최적 제어 문제로 모델링하며, 상태는 일반화 좌표와 속도, 제어는 관절 토크로 정의한다. 접촉 시퀀스는 여러 "스위칭 단계"(switching phases)로 나뉘며, 각 단계 내에서는 접촉 상태가 일정하고 단계 사이에 접촉 증분 변화가 발생한다.</p>
+<h3 id="_5">충격 동역학 처리</h3>
+<p>각 스위칭 단계에서 충격량 동역학(impulse dynamics)을 사용하여 충돌 후 속도를 계산하고, 접촉 스위칭 순간에 운동량 보존과 비관통 제약을 만족하도록 보장한다. 이는 물리적 일관성을 확보하는 핵심 단계로, 소프트 제약 근사로 인한 드리프트를 피한다.</p>
+<h3 id="_6">비용 함수 설계</h3>
+<p>비용 함수는 세 부분으로 구성된다: 질량 중심(CoM) 추적, 착지점(foot placement) 추적, 그리고 상태 및 제어의 정규화 항. 스윙 발 참조 궤적은 구간 선형 함수로 표현되며, 착지점이 참조 위치에서 벗어나면 강한 페널티를 부과한다. 사족의 모든 보행은 동일한 가중치와 비용 함수를 공유하고, 이족 보행은 유사한 가중치를 사용하여 프레임워크의 범용성을 보여준다.</p>
+<h3 id="_7">웜 스타트 전략</h3>
+<p>상태 웜 스타트 𝐗₀는 접촉 구성 시퀀스의 공칭 신체 자세를 선형 보간하여 얻고, 동시에 공칭 관절 자세를 제공한다. 제어 웜 스타트 𝐔₀는 준정적 가정(quasi-static assumption)에 기반하여 계산된다—참조 자세를 평형점으로 삼고 Newton 단계를 통해 준정적 토크를 수치적으로 푼다. 이 전략은 수렴을 크게 가속화한다.</p>
+<h3 id="_8">솔버 핵심</h3>
+<p>희소성 인지 Riccati 재귀를 채택하여 접촉 제약에서 발생하는 블록 희소 구조를 활용하고, 복잡도를 전차원 O(n³)에서 접촉 수와 관련된 준선형 규모로 낮춘다. 이것이 실시간성을 달성하는 근본 이유다.</p>
+<h2 id="_9">핵심 혁신</h2>
+<ol>
+<li><strong>접촉 시퀀스의 1차 명시적 모델링</strong>: 접촉 증분을 연속 완화 근사가 아닌 이산 변수로 최적화에 포함시켜, 충격 동역학을 정확히 처리할 수 있고 스위칭 순간에 궤적이 물리적으로 자기 일관성을 갖는다. 이는 기존 "소프트 접촉" 방법과 가장 본질적인 차이다.</li>
+<li><strong>통합 가중치 아래의 다보행 일반화</strong>: 사족의 모든 보행이 동일한 비용 가중치를 공유하고, 이족은 미세 조정만 필요하므로 프레임워크가 접촉 패턴 변화에 내재적 강건성을 가짐을 의미하며, 각 보행마다 수동 튜닝이 필요 없다. 이는 배포 비용을 크게 낮춘다.</li>
+<li><strong>희소성 인지 솔버 아키텍처</strong>: Riccati 재귀와 접촉 구조의 희소성을 결합하여 계산 복잡도가 접촉 규모에 따라 준선형으로 증가하게 하며, 이는 "계산 가능"에서 "빠르게 계산"으로의 도약으로 온라인 재계획의 길을 열었다.</li>
+</ol>
+<h2 id="_10">실험 및 결과</h2>
+<p>논문은 사족 및 이족 플랫폼에서 프레임워크의 범용성과 효율성을 검증했지만, 원문 사실 요점에는 구체적인 대조 실험의 수치 세부 사항이 제공되지 않았다. 확인 가능한 사실은 다음과 같다: 모든 사족 보행이 동일한 가중치와 비용 함수를 공유하고, 이족 보행은 유사한 가중치를 사용한다; 웜 스타트는 선형 보간과 준정적 가정을 사용한다; 충격 동역학은 각 스위칭 단계에서 명시적으로 계산된다. 핵심 수치 요약은 다음과 같다:</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사족 보행 가중치</td>
+<td>통일</td>
+<td>모든 보행 공유</td>
+</tr>
+<tr>
+<td>이족 가중치</td>
+<td>유사</td>
+<td>사족과 유사</td>
+</tr>
+<tr>
+<td>스윙 발 참조</td>
+<td>구간 선형</td>
+<td>참조 궤적 기술</td>
+</tr>
+<tr>
+<td>착지점 페널티</td>
+<td>강함</td>
+<td>기준 이탈 시 중벌</td>
+</tr>
+<tr>
+<td>웜 스타트 상태</td>
+<td>선형 보간</td>
+<td>공칭 자세 간 보간</td>
+</tr>
+<tr>
+<td>웜 스타트 제어</td>
+<td>준정적</td>
+<td>Newton 단계로 평형 토크 계산</td>
+</tr>
+</tbody>
+</table>
+<p>논문은 해석 시간, 수렴 반복 횟수 또는 기준 방법과의 비교 수치를 명시하지 않아 가속 비율을 정량화할 수 없지만, "동일 가중치로 다보행 커버"라는 사실 자체가 프레임워크의 일반화 능력을 보여준다.</p>
+<h2 id="_11">경계와 한계</h2>
+<p>논문은 다음 경계를 명시적으로 논의하지 않았다: 첫째, 접촉 시퀀스 자체는 여전히 사용자가 사전 설정하며, 프레임워크는 주어진 접촉 타이밍 하의 궤적을 최적화할 뿐 접촉 패턴을 자동 발견하지 않는다; 둘째, 준정적 웜 스타트 가정은 고속 동적 또는 큰 교란 시나리오에서 실패할 수 있으며, 이때 Newton 단계로 얻은 토크가 좋은 초기 추측이 아닐 수 있다; 셋째, 충격 동역학 처리는 접촉점 위치와 마찰 원뿔 모델의 정확성에 의존하므로 지면 파라미터에 민감하다; 넷째, 실험 플랫폼과 부하 범위가 사실 요점에 명시되지 않아 고동적 점프나 비구조화 지형에 대한 프레임워크의 적용 가능성은 알 수 없다.</p>
+<h2 id="_12">엔지니어링 시사점</h2>
+<p>Crocoddyl을 재현하거나 채택할 때 세 가지를 우선 확인해야 한다: <strong>접촉 시퀀스 정의 방식</strong>—스위칭 단계의 구분이 실제 발바닥 이벤트와 일치하는지 확인해야 하며, 그렇지 않으면 충격 동역학 계산이 허위 운동량을 유발할 수 있다; <strong>웜 스타트 품질</strong>—준정적 가정은 저속 또는 준정적 보행에서 잘 작동하지만, 목표 궤적에 명확한 동적 요소(예: 빠른 걷기 또는 달리기)가 포함된 경우 이전 시간 영역 해나 시뮬레이션 데이터를 웜 스타트로 사용하는 것이 좋으며, 그렇지 않으면 수렴이 국소 최소값에 빠질 수 있다; <strong>가중치 보정</strong>—사족이 가중치를 공유하지만 이족은 여전히 "동일"이 아닌 "유사"한 조정이 필요하므로, 착지 시 논문의 보행을 먼저 재현한 후 파라미터를 변경하는 것이 좋다. 가장 쉽게 함정에 빠지는 부분은 착지점 강한 페널티와 스윙 발 구간 선형 참조의 조합이다—참조 궤적이 매끄럽지 않으면 강한 페널티가 진동을 증폭시킬 수 있으므로, 먼저 참조 궤적의 연속성을 확인한 후 페널티 계수를 조정하는 것이 좋다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_direct_collocation/">직접 배치법</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">extends</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_crocoddyl_efficient_versatile_framework_2019"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_direct_collocation/">
+          <span class="entry-type">방법</span>
+          <h3>직접 배치법</h3>
+          <p>상태와 제어 입력을 배치점에서 이산화하고 결과 비선형 계획법을 직접 푸는 궤적 최적화 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">문제 정식화</a></li>
+<li><a href="#_5">충격 동역학 처리</a></li>
+<li><a href="#_6">비용 함수 설계</a></li>
+<li><a href="#_7">웜 스타트 전략</a></li>
+<li><a href="#_8">솔버 핵심</a></li>
+</ul>
+</li>
+<li><a href="#_9">핵심 혁신</a></li>
+<li><a href="#_10">실험 및 결과</a></li>
+<li><a href="#_11">경계와 한계</a></li>
+<li><a href="#_12">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

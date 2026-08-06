@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation</h1>
+      <p class="entry-name-en">RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning and Evaluation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Recovering real-world scenes as interactive simulation environments can enable generalizable robot learning and reproducible policy evaluation. However, constructing scenes that are both physically stable and visually faithful remains slow and expensive. In this work, we present RoboSnap, a real-to-sim framework that turns a single RGB image into a simulation-ready scene. The key idea is a.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.06699" target="_blank" rel="noopener">arXiv:2607.06699 RoboSnap: One-Shot Real-to-Sim Scene Generation for Generalizable Robot Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>RoboSnap은 단일 RGB 이미지에서 물리적으로 안정적이고, 시각적 충실도가 높으며, 시뮬레이션에 바로 사용 가능한 계층적 장면을 자동으로 생성하여 로봇 정책 훈련 및 평가에 활용하는 방법을 제안합니다. 이 방법은 워싱턴 대학교 등 기관에서 개발했으며, 핵심 기여는 충돌 인식 상호작용 물리 계층과 3D 가우시안 스플래팅 시각적 컨텍스트 계층을 분리하고, 교대 SDF-물리 최적화를 통해 시뮬레이션 준비 정밀화를 구현한 것입니다. 564개의 DROID 장면으로 구축된 DROID-Sim 데이터셋을 통해 궤적 재생, 데이터 생성 및 sim-real 평가 정렬에서의 효율성을 검증했습니다.</p>
+<h2 id="_2">그것이 바꾸는 것</h2>
+<p>기존 real-to-sim 파이프라인은 다중 시점 수집과 수동 정밀화에 의존하거나, 좁은 엔드포인트를 위한 검색 기반 디지털 트윈 또는 정적 배경을 출력하여, 재렌더링, 편집 및 새로운 시점에서 재사용 가능한 지속적 시뮬레이션 세계를 보편적으로 복원하지 못합니다. RoboSnap이 진정으로 바꾸는 것은 real-to-sim을 "시각적 재구성 작업"에서 "재사용 가능한 인프라 구축 작업"으로 재정의한 것입니다. 픽셀 단위 완벽함을 추구하지 않고, 물리적 상호작용 영역의 안정성과 시각적 컨텍스트의 충실도를 우선시하여 단일 이미지로 생성된 장면이 정책 미세 조정과 폐쇄 루프 평가를 직접 지원할 수 있게 합니다.</p>
+<p>이 전환의 핵심은 계층적 설계에 있습니다. 물리 계층은 로봇 상호작용과 직접 관련된 객체와 지지 표면만 유지하고, 시각 계층은 가우시안 스플래팅으로 배경을 덮습니다. 이러한 분리를 통해 물리 정밀화가 소수의 핵심 자산에 집중할 수 있고, 시각 계층은 새로운 시점에서 외관 일관성을 유지하여 단안 입력 조건에서 물리적 안정성과 시각적 충실도라는 원래 충돌하는 두 목표를 동시에 충족합니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">계층적 장면 재구성</h3>
+<ul>
+<li>단일 RGB 이미지 I ∈ ℝ^{H_0×W_0×3}를 입력으로 받아 초기 장면 S^(0)와 시뮬레이션 준비 장면 S^⋆를 출력합니다.</li>
+<li>물리 계층: VLM이 상호작용 영역과 객체 이름 {ℓ_i}을 분석하고, SAM 3가 인스턴스 마스크 {M_i}를 추출하며, SAM 3D가 초기 자세를 가진 텍스처 메시 M_i를 재구성합니다.</li>
+<li>시각 계층: 전경 마스크 후 VLM이 누락 영역 복원을 안내하고, 생성적 세계 모델이 가우시안 스플래팅 장면 G_M을 생성합니다.</li>
+</ul>
+<h3 id="_5">자세 추정 및 표준 정렬</h3>
+<ul>
+<li>VGGT가 카메라 기하학과 밀집 점 지도 X_V를 예측하고, 마스크 안내를 받은 조대정밀 고정 스케일 ICP가 SAM 3D 초기 자세를 정밀화하며, 회전/병진이 과도한 업데이트는 거부합니다.</li>
+<li>RANSAC이 지지 평면을 피팅하여 표준 좌표계 W(원점은 플랫폼 질량 중심, −ê_z는 중력 방향)를 추정하고, 객체 자세를 승격합니다: T_{i→W}^{init} = T_{V→W} T_{i→V}^{init} (식1).</li>
+<li>로봇 베이스: 보정 데이터는 T_{B→W} = T_{V→W} T_{B→V}를 사용하고, 미보정 데이터는 지지 플랫폼 기하학에서 초기화합니다.</li>
+</ul>
+<h3 id="_6">시뮬레이션 준비 정밀화</h3>
+<ul>
+<li>장면 그래프 추출: GPT-4V가 K=5개의 무작위화된 SoM 커버리지에서 물리적 관계를 예측하고, 다수결 투표로 Support/Contact 엣지를 정의하며, 다른 객체를 지지하는 객체만 루트 R로 고정합니다.</li>
+<li>교대 최적화: SDF 단계는 침투, 지지, 접촉 및 정규화 손실(λ_r=5)을 최소화하고, 물리 단계는 SAPIEN에서 시뮬레이션하며, 루트 객체는 운동학적으로, 나머지는 동적으로 처리하고, 안정된 자세로 다음 라운드를 초기화합니다.</li>
+<li>자세 파라미터화: T_{i→W} = ΔT_i T_{i→W}^{init}, ΔT_i = [exp([Δr_i]_×) Δt_i; 0^T 1] (식2).</li>
+</ul>
+<h3 id="_7">계층적 렌더링 및 데이터 생성</h3>
+<ul>
+<li>쿼리 카메라 Q에서 Isaac Sim이 물리 계층 (I_fg, D_fg, α_fg)을 렌더링하고, 가우시안 스플래팅 계층이 (I_bg, D_bg)를 렌더링하며, 깊이 합성: I_out(u) = m(u) I_fg(u) + (1−m(u)) I_bg(u), m(u) = 1[α_fg(u) &gt; 0 ∧ D_fg(u) ≤ D_bg(u)] (식3).</li>
+<li>그리퍼 중심 스킬은 AnyGrasp로 후보를 초기화하고, cuRobo가 조밀한 관절 공간 동작으로 변환합니다.</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li><strong>단일 이미지 계층적 real-to-sim 패러다임</strong>: 물리적 핵심 상호작용 영역과 시각적 컨텍스트를 처음으로 분리 처리하여, 단안 입력만으로 상호작용 가능하고, 편집 가능하며, 새로운 시점에서 재사용 가능한 지속적 시뮬레이션 장면을 생성할 수 있게 되어, 기존의 다중 시점 또는 수동 정밀화 제한을 돌파했습니다.</li>
+<li><strong>교대 SDF-물리 최적화 정밀화</strong>: 장면 그래프 안내를 받은 루트 객체 식별과 교대 최적화를 통해 초기 재구성 자세를 물리적으로 안정적인 구성으로 수렴시켜, 시뮬레이션에서의 낙하 및 침투를 크게 줄였습니다(Falling 0.5640→0.1026, Collision 0.3590→0.0256).</li>
+<li><strong>대규모 실제 데이터의 시뮬레이션 자산 변환</strong>: DROID-Sim(564개 장면)을 구축하고, 각 장면을 원본 DROID 데이터 식별자에 연결하여 76k 데모, 350시간 상호작용 데이터를 추적 가능한 재사용 가능한 시뮬레이션 인프라로 변환하여 정책 미세 조정 및 생성적 평가 에이전트를 지원합니다.</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="10">시각적 정렬(10개 장면 평균)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>PSNR</th>
+<th>SSIM</th>
+<th>LPIPS</th>
+<th>SIFT-MR</th>
+<th>RGB-EMD</th>
+<th>Gabor-L1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RoLA</td>
+<td>13.40</td>
+<td>0.4521</td>
+<td>0.4996</td>
+<td>0.0664</td>
+<td>28.5806</td>
+<td>0.001817</td>
+</tr>
+<tr>
+<td>RoboSnap</td>
+<td>13.25</td>
+<td>0.4907</td>
+<td>0.4958</td>
+<td>0.1226</td>
+<td>11.4795</td>
+<td>0.000741</td>
+</tr>
+</tbody>
+</table>
+<p>RoboSnap은 SSIM, SIFT-MR, RGB-EMD, Gabor-L1에서 RoLA보다 우수하며, PSNR은 약간 낮지만 차이가 미미하여 시각적 충실도는 비슷하고 특징 매칭은 더 우수함을 보여줍니다.</p>
+<h3 id="300-isaac-sim">시뮬레이션 안정성(300프레임 Isaac Sim 스텝 후)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Falling</th>
+<th>Collision</th>
+<th>Trans MSE</th>
+<th>Mean disp. (m)</th>
+<th>Quat MSE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SAM 3D</td>
+<td>0.5640</td>
+<td>0.3590</td>
+<td>0.1079</td>
+<td>0.3284</td>
+<td>0.1560</td>
+</tr>
+<tr>
+<td>SAM 3D + FoundationPose</td>
+<td>0.5900</td>
+<td>0.1538</td>
+<td>0.1921</td>
+<td>0.4383</td>
+<td>0.1703</td>
+</tr>
+<tr>
+<td>RoLA</td>
+<td>0.3810</td>
+<td>0.3226</td>
+<td>0.0736</td>
+<td>0.2713</td>
+<td>0.1093</td>
+</tr>
+<tr>
+<td>RoboSnap w/o refinement</td>
+<td>0.4320</td>
+<td>0.2982</td>
+<td>0.0977</td>
+<td>0.3126</td>
+<td>0.1255</td>
+</tr>
+<tr>
+<td>RoboSnap (ours)</td>
+<td>0.1026</td>
+<td>0.0256</td>
+<td>0.0022</td>
+<td>0.0474</td>
+<td>0.0178</td>
+</tr>
+</tbody>
+</table>
+<p>RoboSnap은 모든 지표에서 기준선보다 크게 우수하며, 정밀화 단계의 기여가 뚜렷합니다(w/o refinement의 Falling 0.4320 vs 0.1026).</p>
+<h3 id="5">궤적 재생(5개 장면)</h3>
+<p>RoboSnap은 5/5 성공, RoLA는 2/5 성공. 재생 기준은 그리퍼가 목표 객체를 잡아 목표 위치로 이동하며, 침투나 충돌이 없어야 합니다.</p>
+<h3 id="_05">실제 세계 데이터 생성(π_0.5 평균 성공률)</h3>
+<table>
+<thead>
+<tr>
+<th>데이터 혼합</th>
+<th>Real</th>
+<th>R1</th>
+<th>R2</th>
+<th>R3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0.5</td>
+<td>32.7%</td>
+<td>35.7%</td>
+<td>41.7%</td>
+<td>17.3%</td>
+</tr>
+<tr>
+<td>π_0</td>
+<td>29.3%</td>
+<td>31.0%</td>
+<td>42.7%</td>
+<td>15.0%</td>
+</tr>
+</tbody>
+</table>
+<p>Ratio 2(0.6 실제 + 0.2 RoboSnap + 0.2 시뮬레이션 증강)가 최적이며, π_0.5는 32.7%에서 41.7%로, π_0는 29.3%에서 42.7%로 향상되었습니다(표 내 값으로 계산). Ratio 3은 실제 데모 없이도 0이 아닌 성공률을 달성합니다.</p>
+<h3 id="30">무작위화 강건성(30회 시행)</h3>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>Real-only 평균</th>
+<th>Mix Ratio 2 평균</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orig.</td>
+<td>32.7</td>
+<td>41.7</td>
+</tr>
+<tr>
+<td>Obj.</td>
+<td>16.7</td>
+<td>33.0</td>
+</tr>
+<tr>
+<td>BG</td>
+<td>29.0</td>
+<td>39.0</td>
+</tr>
+<tr>
+<td>Lt.</td>
+<td>26.3</td>
+<td>37.3</td>
+</tr>
+<tr>
+<td>Tex.</td>
+<td>25.7</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>Cam.</td>
+<td>13.3</td>
+<td>31.7</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>5.66</td>
+<td>23.3</td>
+</tr>
+</tbody>
+</table>
+<p>실제-시뮬레이션 공동 훈련은 평균 성능 저하를 13%에서 8%로 줄였습니다(교란 유형 전체).</p>
+<h3 id="_10">생성적 평가</h3>
+<p>Pearson 상관 r = 0.887, MMRV = 0.0066으로, RoboSnap이 생성한 시뮬레이션 장면이 정책 순위를 매기는 신뢰할 수 있는 대리자 역할을 할 수 있음을 보여줍니다.</p>
+<h2 id="_11">경계 및 한계</h2>
+<ul>
+<li>입력 품질 제한: 심한 폐색, 극단적 조명, 시각적으로 흐릿한 재질은 재구성 품질이나 생성 데모 신뢰성을 저하시킬 수 있습니다.</li>
+<li>객체 범위 제한: 강체 및 관절 객체만 지원하며, 변형 가능한 객체, 입자 또는 유체 재질은 처리하지 않습니다.</li>
+<li>전용 물리 파라미터 추정 프로세스 없음: 마찰, 질량 등의 파라미터는 VLM 사전 지식에서 추론하고, 관절 조인트 파라미터는 표준 데이터셋에서 검색하므로 부정확할 수 있습니다.</li>
+<li>검증 범위 제한: 본 논문의 설정과 모델에서만 인터페이스를 검증했으며, 더 광범위한 프레임워크 검증은 향후 작업으로 남겨둡니다.</li>
+<li>궤적 재생은 객체 자세를 최적화하지 않고, 특권 시뮬레이션 롤백을 사용하지 않으며, 정적 장면 복원의 정확성만 평가합니다.</li>
+</ul>
+<h2 id="_12">엔지니어링 시사점</h2>
+<ul>
+<li>재현 시 장면 그래프 추출의 루트 객체 식별 품질을 우선적으로 확인하세요. 이는 정밀화 프로세스의 시작점이며, 루트 객체 오류는 이후 모든 자세 최적화를 무효화합니다.</li>
+<li>물리 정밀화 하이퍼파라미터(N_round=20, N_sdf=15, N_sim=200, N_damp=100, ε=10⁻⁴)는 안정성에 큰 영향을 미치므로, 작은 장면에서 수렴 동작을 먼저 검증한 후 확장하는 것이 좋습니다.</li>
+<li>데이터 혼합 비율은 핵심 결정 사항입니다. Ratio 2(0.6 실제 + 0.2 RoboSnap + 0.2 시뮬레이션 증강)가 가장 효과적이지만, Ratio 3(실제 데모 없음)도 0이 아닌 이점을 제공하므로 실제 데이터가 부족한 시나리오에 적합합니다.</li>
+<li>가장 쉽게 함정에 빠지는 부분은 배경 복원 품질입니다. 가우시안 스플래팅 시각 계층은 복원된 이미지에 의존하며, 복원이 좋지 않으면 새로운 시점의 시각적 일관성에 직접적인 영향을 미칩니다.</li>
+<li>관절 객체 처리는 점 기반 부품 분할과 데이터셋에서 검색한 운동학 파라미터에 의존하므로, 대상 장면에 비표준 관절 구조가 포함된 경우 추가 수동 주석이 필요합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_dataset_droid/">DROID</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robosnap_one_shot_real_sim_scene_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_dataset_droid/">
+          <span class="entry-type">데이터셋</span>
+          <h3>DROID</h3>
+          <p>여러 실험실과 환경에서 수집된 분산적이고 다양한 실제 로봇 조작 데이터셋으로, 시각 및 환경 견고성 향상을 목표로 함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾸는 것</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">계층적 장면 재구성</a></li>
+<li><a href="#_5">자세 추정 및 표준 정렬</a></li>
+<li><a href="#_6">시뮬레이션 준비 정밀화</a></li>
+<li><a href="#_7">계층적 렌더링 및 데이터 생성</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#10">시각적 정렬(10개 장면 평균)</a></li>
+<li><a href="#300-isaac-sim">시뮬레이션 안정성(300프레임 Isaac Sim 스텝 후)</a></li>
+<li><a href="#5">궤적 재생(5개 장면)</a></li>
+<li><a href="#_05">실제 세계 데이터 생성(π_0.5 평균 성공률)</a></li>
+<li><a href="#30">무작위화 강건성(30회 시행)</a></li>
+<li><a href="#_10">생성적 평가</a></li>
+</ul>
+</li>
+<li><a href="#_11">경계 및 한계</a></li>
+<li><a href="#_12">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

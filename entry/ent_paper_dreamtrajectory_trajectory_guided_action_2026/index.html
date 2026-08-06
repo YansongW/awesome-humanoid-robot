@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation</h1>
+      <p class="entry-name-en">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>DreamTrajectory 是一个面向移动操作任务的端到端轨迹引导动作生成框架，由作者团队提出。其核心贡献在于：在单一动作专家中联合预测意图级末端执行器轨迹与全身动作块，并引入一个轻量级循环世界模型在测试时对候选动作进行搜索-预测-评分细化，从而同时缓解大动作空间搜索不精确与开环执行误差累积两大问题。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01381" target="_blank" rel="noopener">arXiv:2608.01381 DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>移动操作与固定基座操作的本质区别在于，基座与机械臂的协调运动发生在连续变化的视角和接触条件下，其动作空间维度显著更高。现有 VLA 策略直接将观测映射到全身动作块，这隐含了一个强假设：网络能在无显式任务空间运动规划的情况下，从高维动作空间中精确搜索出基座-机械臂的协调解。这个假设在实践中的脆弱性体现在两个层面：一是预测出的动作块在空间上可能不连贯，导致基座与机械臂运动不协调；二是开环执行时，控制误差与未建模接触（如推拉抽屉时的反作用力）会累积成计划运动与实际运动之间的系统性偏差。</p>
+<p>DreamTrajectory 真正改变的是“中间表示”的选择与利用方式。它没有抛弃端到端学习，而是在动作生成路径中插入了一个物理上有意义的中间变量——末端执行器轨迹。这个选择的深层动机是：末端执行器轨迹是任务空间中的紧凑描述，其维度远低于全身动作，且直接对应任务目标（如抓取、推拉）。更重要的是，它改变了动作生成的因果结构：动作不再是观测的直接函数，而是以轨迹为条件的生成结果，这迫使基座与机械臂的运动围绕一个统一的意图级计划进行协调。同时，世界模型的引入将“执行后验证”从开环变成了闭环，这是对 VLA 策略“生成即执行”范式的实质性修正。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">轨迹引导动作生成</h3>
+<ul>
+<li><strong>联合预测</strong>：单一动作专家同时输出未来末端执行器轨迹 τ_{t:t+H-1} 与全身动作块 a_{t:t+H-1}，共享水平 H。</li>
+<li><strong>轨迹表示</strong>：每个路点为 7D 位姿 τ_{t+h} = [p_{t+h}^{B_t}, q_{t+h}^{B_t}] ∈ ℝ⁷，其中位置 p ∈ ℝ³ 与四元数 q ∈ ℝ⁴ 均在块局部坐标系 B_t 中表示，锚定在当前基座位姿并固定在整个预测范围内。这一设计避免了全局坐标系下基座移动导致的轨迹坐标漂移。</li>
+<li><strong>条件流匹配</strong>：轨迹与动作独立采样高斯噪声 ε_τ, ε_a ~ 𝒩(0, I)，共享流时间 σ ~ 𝒰(0, 1)，插值变量为 τ^σ = σε_τ + (1-σ)τ 和 a^σ = σε_a + (1-σ)a。训练目标为联合流匹配损失 ℒ_VLA = 𝔼[λ_τ‖v_τ - u_τ‖₂² + λ_a‖v_a - u_a‖₂²]，其中 u_τ = ε_τ - τ，u_a = ε_a - a。</li>
+<li><strong>组因果注意力掩码</strong>：轨迹令牌关注多模态前缀与先前轨迹令牌；动作令牌额外关注完整轨迹流与先前动作令牌。该掩码确保轨迹信息单向流入动作生成，防止动作信息泄漏回轨迹生成，从而保持“轨迹引导动作”的因果方向。</li>
+</ul>
+<h3 id="-">测试时搜索-预测-评分细化</h3>
+<ul>
+<li><strong>候选扰动</strong>：保留原始动作块 â，独立采样 N-1 个扰动块 ε_i，每个动作维度遵循独立 AR(1) 高斯过程，边际标准差 σ=0.05，滞后一相关 ρ=0.9，N=30。</li>
+<li><strong>世界模型预测</strong>：轻量级循环世界模型 W_φ(o_t, s_t, a_{t:t+H-1}) 预测候选动作块会诱导的轨迹 τ̃(a) ∈ ℝ^{H×7}。该模型从交互数据学习而非解析推导，因为命令与实现运动之间的偏差源于接触、自碰撞与低层跟踪误差。</li>
+<li><strong>评分与选择</strong>：并行评估所有候选，选择最大化 [λS_traj(a) + (1-λ)ηS_smooth(a)] 的候选，其中 λ=0.5，η=10⁻³。S_traj 衡量预测轨迹与 VLA 生成轨迹的一致性，S_smooth 惩罚动作抖动。</li>
+</ul>
+<h3 id="_4">两阶段训练</h3>
+<ul>
+<li><strong>阶段一</strong>：用 π_0.5 预训练权重初始化 VLA 骨干，在专家演示上微调。</li>
+<li><strong>阶段二</strong>：用包含成功与失败试验的额外机器人-环境交互数据集训练轨迹世界模型。使用滑动窗口构建密集训练样本，动作与轨迹维度用训练集统计独立标准化。训练数据构造中，对记录的平面基座速度通道积分，将记录的末端执行器位姿从瞬时机器人基座坐标系变换到以时间 t 基座位姿为锚的块局部坐标系，并使用一步时间偏移使目标路点对应执行动作 a_{t+h} 后观测到的位姿。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>轨迹作为显式中间表示的因果引导</strong>：不同于以往将轨迹视为隐式潜在变量或辅助预测头，DreamTrajectory 通过组因果注意力掩码在架构层面强制轨迹信息单向引导动作生成。这一设计使得“意图级规划”与“全身执行”在单一网络中解耦又耦合，既保留了端到端学习的可微性，又为动作生成提供了任务空间约束。其新颖性在于将因果方向作为归纳偏置写入注意力机制，而非依赖损失权重或后处理。</p>
+</li>
+<li>
+<p><strong>动作条件轨迹世界模型</strong>：现有 VLA 工作要么完全开环执行，要么依赖解析运动学模型进行闭环修正。DreamTrajectory 学习一个从动作块到实际诱导轨迹的映射，且该映射是从包含失败试验的交互数据中习得的。这使其能够隐式建模接触、自碰撞与低层跟踪误差等解析模型难以刻画的因素。世界模型作为即插即用模块，可附加到任意轨迹引导策略上，无需重新训练 VLA，这在实际部署中具有显著工程价值。</p>
+</li>
+<li>
+<p><strong>测试时搜索-预测-评分范式</strong>：将生成问题转化为“生成-验证-选择”的闭环过程。通过 AR(1) 高斯过程在动作空间中进行结构化扰动（而非无差别噪声），保留了动作的时间相关性；通过世界模型并行评分 30 个候选，将计算开销控制在单张 RTX 4090 上仅增加 11.75 ms 延迟。这一范式在保持实时性的同时，将开环执行误差的修正从“预测更准”转向“选择更优”，是策略优化思路的转变。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h2 id="_7">实验与结果</h2>
+<p><strong>对照设置。</strong> 我们在仿真与真实世界两个层面评估 DreamTrajectory（DT）。仿真采用 ManiSkill-HAB（MS-HAB）benchmark 的 set_table 套件，使用 Fetch 移动操作机器人，覆盖 6 个子任务（pick apple、pick bowl、open fridge、close fridge、open counter、close counter），每个方法每任务评估 100 个 episode，共 600 episodes/方法。基线包括 ACT、Diffusion Policy、RDT-1B、GR00T N1 与 π₀.₅。消融变体包括：DT w/o trajectory guidance（直接预测全身动作，等价于 π₀.₅ 基线）、DT w/o refiner（保留轨迹引导但直接执行初始动作块）、完整 DT（每个重规划步对 30 个候选进行轨迹世界模型精炼）。真实世界采用 ARX LIFT 移动操作机器人，覆盖 3 个任务（水果抓取放置、开抽屉、关抽屉），每个方法每任务 20 个 episode。世界模型架构消融在 4,096 条轨迹上比较 Analytical FK（开环）、Diffusion、One-shot Transformer、Cross Attention 与 GRU（DT 采用），指标包括 xyz ADE (m)、xyz FDE (m)、Angular ADE (°) 与 Geodesic ADE。计算效率在单张 RTX 4090、BF16 精度下测量。</p>
+<p><strong>关键结果（MS-HAB 仿真平均成功率，%）。</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Avg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT</td>
+<td>28.0</td>
+</tr>
+<tr>
+<td>Diffusion Policy</td>
+<td>27.7</td>
+</tr>
+<tr>
+<td>RDT-1B</td>
+<td>8.7</td>
+</tr>
+<tr>
+<td>GR00T N1</td>
+<td>21.2</td>
+</tr>
+<tr>
+<td>π₀.₅</td>
+<td>32.3</td>
+</tr>
+<tr>
+<td>DT w/o trajectory guidance</td>
+<td>32.3</td>
+</tr>
+<tr>
+<td>DT w/o refiner</td>
+<td>47.5</td>
+</tr>
+<tr>
+<td>DT（完整）</td>
+<td>54.8</td>
+</tr>
+</tbody>
+</table>
+<p><strong>结果含义要点。</strong></p>
+<ul>
+<li>
+<p><strong>轨迹引导是主要增益来源，且集中在接触丰富任务上。</strong> 轨迹引导将平均成功率从 32.3 提升至 47.5，其中 open fridge 从 5.0 提升至 44.0、close counter 从 38.0 提升至 72.0，说明轨迹引导主要惠及需要精确全身接触协调的任务；但在 pick apple 与 open counter 上的轻微下降表明其并非对所有任务都有益。相对 action-only 基线的 22.5 点总增益中，15.2 点来自轨迹引导，7.3 点来自精炼，证明两个组件互补。</p>
+</li>
+<li>
+<p><strong>世界模型精炼在强基线上仍能纠正残余误差。</strong> 精炼将平均成功率从 47.5 进一步提升至 54.8，且改善了全部 6 个子任务；即使在初始策略已较强的 close counter 上仍从 72.0 提升至 80.0，说明精炼在执行前有效纠正了残余的计划—执行偏差。</p>
+</li>
+<li>
+<p><strong>世界模型架构选择有据可依。</strong> 所有学习模型均大幅优于 Analytical FK（0.241 xyz ADE、0.345 xyz FDE、27.0 Angular ADE、0.057 Geodesic ADE），后者无法捕捉接触与控制器误差等超出名义运动学的执行偏差。GRU 在整体轨迹预测精度上最优（0.028 xyz ADE、0.035 xyz FDE、6.2 Angular ADE、0.014 Geodesic ADE），因此被 DT 采用；Diffusion 在 Geodesic ADE 上与 GRU 持平（均为 0.014）但位置与角度误差更大。</p>
+</li>
+<li>
+<p><strong>计算开销可控，真实世界增益显著。</strong> 完整 DT 框架引入 49.04M 额外参数（1.40%）与 11.75 ms 每重规划步延迟，其中轨迹头参数开销可忽略（0.017M、3.65 ms），世界模型为 3.5B 参数 VLA 的 1.40%。真实世界中，轨迹引导将平均成功率从 63.3 提升至 81.7，精炼进一步至 90.0；其中 fruit pick-and-place 从 45.0 提升至 80.0、drawer opening 从 60.0 提升至 90.0，而轨迹引导在 drawer closing 上已达到 100.0。</p>
+</li>
+</ul>
+<h2 id="_8">边界与局限</h2>
+<p>论文未明确提及训练数据量、训练配置细节（学习率、批次大小、轮数）与推理频率。作者承认未来预测 VLA 被排除在定量比较之外，因其固定基座形态与 MS-HAB 不兼容，仅做了定性比较，这意味着与最先进的多模态 VLA 的对比可能不够全面。轨迹引导在 pick apple 和 open counter 上有轻微下降，表明该机制并非对所有任务类型都无代价——对于基座运动需求较低或接触协调要求不高的任务，轨迹引导可能引入不必要的约束。世界模型在仿真与真实平台上的泛化能力未做跨平台验证，其训练数据依赖特定机器人的交互数据，迁移到新形态时可能需要重新采集。此外，测试时搜索的候选扰动参数（σ=0.05, ρ=0.9, N=30）是否对任务类型敏感未做系统分析。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现时首先核对轨迹坐标系的锚定方式：块局部坐标系 B_t 锚定在当前基座位姿并固定在整个预测范围内，这是轨迹表示正确性的关键，若误用全局坐标系将导致基座移动时轨迹坐标漂移。其次，组因果注意力掩码的实现必须严格保证动作令牌不能影响轨迹令牌，否则轨迹引导的因果方向会被破坏，消融实验显示这会导致 15.2 个百分点的性能损失。世界模型训练数据的构造中，一步时间偏移（目标路点对应执行动作 a_{t+h} 后观测到的位姿）是容易出错的环节，需确保动作与观测轨迹的时间对齐。测试时搜索的 AR(1) 扰动参数（σ=0.05, ρ=0.9）对结果敏感，建议在目标任务上先做小规模网格搜索。世界模型作为即插即用模块，可先附加到现有轨迹引导策略上验证收益，再决定是否投入训练成本。计算开销方面，完整 DT 仅增加 11.75 ms 延迟，在 RTX 4090 上可满足实时性要求，但需注意世界模型的 49M 参数在显存受限设备上的部署成本。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01381</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_liu_rdt_1b_a_diffusion_foundation_2024/">RDT-1B</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_concept_world_model/">世界模型</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">评测于</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_maniskill/">ManiSkill</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">ACT</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dreamtrajectory_trajectory_guided_action_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">评测基准</span>
+          <h3>ManiSkill</h3>
+          <p>面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_rdt_1b_a_diffusion_foundation_2024/">
+          <span class="entry-type">论文</span>
+          <h3>RDT-1B</h3>
+          <p>RDT-1B 是清华大学于 2024 年提出的双机械臂操作扩散基础模型，发表于 ICLR 2024。其核心贡献在于通过可扩展的 Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ACT</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware 是斯坦福大学、UC Berkeley 与 Meta 于 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">方法</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">轨迹引导动作生成</a></li>
+<li><a href="#-">测试时搜索-预测-评分细化</a></li>
+<li><a href="#_4">两阶段训练</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

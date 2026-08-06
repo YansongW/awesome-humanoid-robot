@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M02 · 모터 계산 및 선정: 사양표에서 구체적인 모델까지 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M02 · 모터 계산 및 선정: 사양표에서 구체적인 모델까지</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m02">M02 · 모터 계산 및 선정: 사양표에서 구체적인 모델까지</h1>
+<p><strong>전체 위치</strong>: Stage 1의 두 번째 작업으로, 앞서 <a href="/ko/roadmap/missions/m01-scenario-to-specs/">M01 · 요구 사항 시나리오 수치화</a>의 사양표를 이어받고, 이후 <a href="/ko/roadmap/missions/m03-reducer-design/">M03 · 감속기 설계 및 계산</a>으로 연결됩니다. 입력은 사양표에 있는 각 관절의 <strong>피크 토크 / 정격 속도 / 질량 예산 / 비용 상한</strong> 네 가지 열이며, 출력은 각 관절에 대한 <strong>1–2개의 모터 후보 모델 + 핵심 파라미터 표</strong>(Kt, KV, 극 쌍 수, 상 저항, 정격/피크 전류, 질량)입니다. M03은 이를 사용하여 감속비를 계산하고, M04는 이를 사용하여 드라이브 보드와 선경을 선정합니다.</p>
+<p><strong>전제 조건</strong>: M01 사양표가 작성되어 있어야 합니다. 단위 변환과 일차 방정식을 다룰 수 있어야 합니다(부족하다면 <a href="/ko/roadmap/stage-0-foundations/">Stage 0 기초 다지기</a>로 돌아가 보충하세요). 본 작업은 수동 계산이나 스프레드시트로 충분하며, 시뮬레이션 소프트웨어가 필요하지 않습니다.</p>
+<p>이론적 배경: <a href="/entry/ent_component_bldc_motor/">브러시리스 DC 모터</a>, <a href="/entry/ent_component_frameless_torque_motor_2024/">프레임리스 토크 모터</a>, <a href="/entry/ent_comp_servo_motor/">고성능 서보 모터</a> 카드, <a href="/ko/wiki/chapters/chapter-04/">제4장 액추에이터</a> 및 <a href="/ko/wiki/chapters/chapter-06/">제6장 계산, 전원 및 열 관리</a>; 선정 의사 결정 프레임워크는 <a href="/ko/roadmap/playbooks/actuator-selection/">액추에이터 선정 핸드북</a>을 참조하세요.</p>
+<h2 id="1">단계 1: 세 가지 모터 상수를 사용하여 사양표를 모터 언어로 변환</h2>
+<p>【수행할 작업】선정은 먼저 세 가지 상수로 시작합니다: <strong>Kt</strong>(토크 상수, N·m/A – 암페어당 발생하는 토크), <strong>KV</strong>(속도 상수, rpm/V – 볼트당 무부하 회전 속도), <strong>극 쌍 수</strong>(자극 쌍 수, 정류 및 저속 특성에 영향). 데이터 시트는 종종 KV만 제공하며, Kt는 에너지 보존을 통해 변환합니다(SI 단위에서 두 값은 역수 관계):</p>
+<pre class="highlight"><code>Kt (N·m/A) ≈ 60 / (2π × KV (rpm/V))</code></pre>
+<p>그런 다음 M01의 관절 피크 토크에서 모터 측 상 전류를 역산합니다: <code>τ_motor = τ_joint ÷ i ÷ η</code> (i는 예비 감속비, η는 전달 효율), <code>I = τ_motor ÷ Kt</code>.</p>
+<p>전체 계산 예시(M01의 8.3 N·m 관절 사용, 예비 i = 9, η = 0.8; 모터 후보는 Berkeley 6512와 동일한 MAD M6C12 150KV – 모델명이 KV 값, $129, 출처 <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf">EECS-2025-207 기술 보고서 BOM</a>):</p>
+<pre class="highlight"><code>Kt      = 60 / (2π × 150) ≈ 0.064 N·m/A
+τ_motor = 8.3 / (9 × 0.8) ≈ 1.15 N·m
+I_peak  = 1.15 / 0.064    ≈ 18 A    ← 피크 상 전류, M04에서 드라이브 보드 선정에 사용</code></pre>
+<p>【이유】Kt와 KV는 동일한 전자기 설계의 두 측면입니다: 권선 수가 많으면 Kt가 높고 KV가 낮습니다. 토크 요구 사항은 결국 모두 전류로 환산되며, <strong>전류는 발열, 드라이브 보드 전류 제한, 선경 세 가지의 공통 원천</strong>입니다. 항공기 모터는 KV만 표시하고 Kt는 표시하지 않는 경향이 있으므로, 변환 방법을 모르면 산업용 모터와 수평 비교할 수 없습니다.</p>
+<p>【상황 분석 방법】제조업체가 제공하는 Kt 단위는 다양합니다(N·m/A, g·cm/A, oz·in/A). 모두 N·m/A로 변환하여 비교하세요 – 1 N·m/A ≈ 10,197 g·cm/A이며, 단위가 한 자릿수 틀리면 이후 모든 계산이 무효가 됩니다. 데이터 시트에 KV/Kt조차 제공하지 않는 모터는 즉시 제외하세요: 이 두 값이 없으면 어떤 공학 계산에도 사용할 수 없습니다.</p>
+<h2 id="2-kv">단계 2: KV와 모선 전압 – 속도가 충분한지, 전류를 견딜 수 있는지</h2>
+<p>【수행할 작업】두 방향으로 KV를 계산하여 후보 모터를 특정 범위 내에 위치시킵니다:</p>
+<ol>
+<li><strong>KV 하한(속도 측)</strong>: 모터 요구 속도 = M01 출력 속도 × i; 무부하 속도 ≈ KV × V. <code>KV × V_min × 0.7 ≥ n_motor</code>로 검증합니다(0.7은 부하 시 속도 저하 계수의 공학적 권장 값).</li>
+<li><strong>KV 상한(전류 측)</strong>: KV가 높을수록 Kt는 낮아지며, 동일한 토크에 더 큰 전류가 필요합니다. 전류 예산에서 역산: <code>Kt_min = τ_motor ÷ I_budget</code>, 그런 다음 변환 <code>KV_max = 60 / (2π × Kt_min)</code>. I_budget은 드라이브 보드 전류 제한과 열 계산 중 더 작은 값을 취합니다(여기서는 예시 가정으로 20A로 설정, M04에서 실제 드라이브 보드에 따라 재검증).</li>
+</ol>
+<p>계산 예시는 단계 1을 따릅니다(모선 6S LiPo: 공칭 22.2V, 방전 후반 약 20V):</p>
+<pre class="highlight"><code>n_motor = 30 rpm × 9 = 270 rpm
+KV 하한 = 270 / (20 × 0.7) ≈ 19 rpm/V
+Kt_min  = 1.15 / 20        ≈ 0.058 N·m/A → KV 상한 ≈ 60 / (2π × 0.058) ≈ 165 rpm/V
+후보 150 KV ∈ [19, 165] ✓; 무부하 속도 150 × 22.2 = 3330 rpm ≫ 270 rpm</code></pre>
+<p>그런 다음 모선 전압 대역을 결정합니다: LiPo는 직렬 수에 따라 3S(11.1V)/6S(22.2V)/12S(44.4V)로 구분됩니다. Berkeley Humanoid Lite는 전체 기기에 6S 4000 mAh LiPo를 사용하며, 지속 시간은 약 30분입니다(<a href="https://arxiv.org/html/2504.17249v1">Berkeley Humanoid Lite 논문</a>) – 22V급은 데스크탑 휴머노이드의 최적 지점입니다: 동일 전력에서 3S보다 전류가 절반으로 줄어들어 선로 손실과 발열이 낮고, 12S처럼 드라이브 보드 내압 및 안전 보호에 대한 높은 요구 사항이 없습니다.</p>
+<p>【이유】KV 하한은 "회전할 수 있는지"를 보장하고, KV 상한은 "타지 않는지"를 보장합니다 – 상한의 본질은 Kt 하한이며, 전류는 하드 제약 조건입니다: 드라이브 보드 전류 제한에 도달하면 토크가 떨어지고, 발열이 한계를 초과하면 권선이 소손됩니다. 전압 대역은 속도 상한과 전체 전류 수준을 동시에 결정하며, 모터 선정의 암시적 독립 변수입니다.</p>
+<p>【상황 분석 방법】KV 하한을 충족하지 못하는 경우: 전압을 높이거나, 더 높은 KV 모터로 교체하거나, 감속비를 낮춥니다(M03과 연동). KV 상한을 충족하지 못하는 경우(큰 토크 관절에서 일반적): 더 낮은 KV 모터로 교체하거나 감속비를 높입니다. 여유가 5배를 초과해도 자랑하지 마십시오 – 사용되지 않는 속도는 전류 대가로 얻은 것이므로 M03으로 돌아가 재조정하십시오.</p>
+<h2 id="3-rms">단계 3: 전력과 열 – 연속 정격은 RMS를 기준으로 하며, 피크를 기준으로 하지 않음</h2>
+<p>【수행할 작업】M01의 듀티 사이클을 RMS(제곱 평균 제곱근) 토크로 변환한 다음, RMS 전류와 구리 손실 발열을 계산합니다. 구리 손실 I²R은 모터의 주요 열원이며, <strong>연속 출력 가능량은 RMS 전류에 의해 결정되며, 피크 토크는 몇 초만 지속될 수 있습니다</strong>. 계산 예시를 따릅니다(RMS/피크 비율은 0.4, 듀티 사이클 50%에서의 공학적 권장 값; 상 저항 R은 0.1Ω으로 예시 수준일 뿐이며, 데이터 시트를 확인하거나 공급업체에 확인해야 함):</p>
+<pre class="highlight"><code>τ_rms     = 0.4 × 8.3               ≈ 3.3 N·m
+I_rms     = 3.3 / (9 × 0.8 × 0.064) ≈ 7.2 A
+P_cu,rms  = 7.2² × 0.1              ≈ 5.2 W   ← 지속 발열
+P_cu,peak = 18²  × 0.1              ≈ 32 W    ← 몇 초만 허용
+P_mech    = 8.3 N·m × 3.14 rad/s    ≈ 26 W    ← 출력단 피크 기계적 출력</code></pre>
+<p>기준점 비교: Maxon EC-i 40 정격 토크 224 mN·m, 구속 토크 2080 mN·m, 약 10배 차이(<a href="/entry/ent_company_maxon_group_2024/">Maxon</a> 카드, <a href="/ko/roadmap/playbooks/actuator-selection/">액추에이터 선정 핸드북</a>에서 인용) – 구속 토크 수치가 아무리 좋아도 연속 작동 조건에서는 정격 값에 따라 선정해야 합니다.</p>
+<p>【이유】모터 소손은 거의 항상 열적 고장입니다: 권선 절연에는 온도 상한이 있으며, 열은 I²R × 시간에 따라 축적됩니다. 피크의 제약은 감자 전류와 드라이브 보드 전류 제한(초 단위)이며, 지속의 제약은 방열(분 단위)입니다. 이 둘은 별도로 계산하고 별도로 여유를 두어야 합니다. 시스템 수준의 열 설계는 <a href="/ko/wiki/chapters/chapter-06/">제6장 계산, 전원 및 열 관리</a>를 참조하세요.</p>
+<p>【상황 분석 방법】RMS/피크 비율을 확신할 수 없으면 0.4로 추정하고, M07 벤치 온도 상승 테스트에서 실제 값을 검증합니다. 데이터 시트의 "정격 전류"는 일반적으로 실온 + 자유 공기 + 금속 장착면에 해당합니다. 3D 프린팅 부품으로 덮거나 여름 환경에서는 정격을 낮춰야 합니다 – 방열 조건이 명시되지 않은 정격 값은 공급업체에 직접 확인해야 합니다.</p>
+<h2 id="4">4단계: 토폴로지와 형태 – 관절 모터가 왜 모두 "큰 팬케이크" 형태로 만들어지는가</h2>
+<p><strong>【무엇을 할 것인가】</strong> 먼저 형태 뒤에 숨은 물리를 이해한 후, 세 가지 형태 중 하나를 선택합니다. 토크의 전자기적 근원은 <a href="/entry/ent_component_frameless_torque_motor_2024/">프레임리스 토크 모터</a> 카드에 주어진 τ = 2πr²l·B_gap·J_s입니다. <strong>토크는 에어 갭 반경의 제곱에 비례하여 증가</strong>하므로, 관절 모터는 모두 대직경, 단축 방향의 아웃러너 "큰 팬케이크" 형태로 만들어집니다. 극 쌍 수는 두 번째 지렛대입니다. 극 쌍 수가 많을수록 → 동일 기계적 속도에서 전기 주파수가 높아지고, KV는 낮아지며, Kt는 높아져 관절의 "저속 대토크" 요구에 정확히 부합합니다. 대가는 정류 주파수와 철손 증가로, 드라이브 보드에 더 높은 요구 사항이 발생합니다(M04 복선).</p>
+<table>
+<thead>
+<tr>
+<th>형태</th>
+<th>대표 모델/솔루션</th>
+<th>토크 밀도</th>
+<th>통합도</th>
+<th>비용</th>
+<th>적합한 대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>항공 모델 아웃러너 <a href="/entry/ent_component_bldc_motor/">BLDC</a></td>
+<td>MAD M6C12 150KV, $129 (Berkeley 기록)</td>
+<td>높음</td>
+<td>낮음 (감속/드라이브/엔코더 모두 자체 구성)</td>
+<td>낮음</td>
+<td>자체 개발 QDD, 예산이 빠듯한 경우</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_frameless_torque_motor_2024/">프레임리스 토크 모터</a></td>
+<td>ODRI가 기성 프레임리스 모터 사용 (odri 기록)</td>
+<td>가장 높음</td>
+<td>중간 (관절 구조에 내장)</td>
+<td>공급업체에 직접 확인 필요</td>
+<td>기계 가공 능력 보유</td>
+</tr>
+<tr>
+<td>일체형 <a href="/entry/ent_comp_servo_motor/">서보</a>/스마트 액추에이터</td>
+<td><a href="/entry/ent_component_dynamixel_xm430_w210_t/">XM430-W210-T</a> 스톨 토크 3.0 N·m</td>
+<td>낮음-중간</td>
+<td>가장 높음 (플러그 앤 플레이)</td>
+<td>모델별로 가격 문의 필요</td>
+<td>기초가 전혀 없어도 먼저 작동시켜 보려는 경우</td>
+</tr>
+</tbody>
+</table>
+<p><strong>【왜 그런가】</strong> 아웃러너는 에어 갭 반경을 구조적 한계까지 확장하는데, 이는 τ ∝ r²l을 직접적으로 실현한 것입니다. 프레임리스 모터는 한 걸음 더 나아가 하우징과 출력축을 생략하고 모터를 관절 내부에 "융합"시킵니다. ODRI의 BLMC 액추에이터가 바로 이 경로를 따릅니다(기성 프레임리스 모터 + 자체 개발 드라이브 카드, <a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">ODRI 액추에이터 하드웨어 저장소</a>). 일체형 솔루션은 토크 밀도를 희생하는 대신 편의성을 얻어, 감속, 드라이브, 피드백을 모두 하나의 케이스에封装합니다.</p>
+<p><strong>【당신의 상황 분석 방법】</strong> 예산에 따라 선택: 단일 관절 &lt; ¥400 → 서보 모터 (XM430급); ¥1,000 내외 → 항공 모델 BLDC + 3D 프린팅 감속기 (Berkeley 6512는 이미 $129 모터 + 3D 프린팅 사이클로이드 감속기로 RL 보행을 구현, 기록); 성능을 추구하고 가공 조건이 갖춰진 경우 → 프레임리스 모터, 단 ODRI 경로는 초보자 친화도가 2/5 (odri 기록)에 불과하므로 신중히 접근해야 합니다.</p>
+<h2 id="5">5단계: 후보 선정 및 주문 전 확인</h2>
+<p><strong>【무엇을 할 것인가】</strong> 각 관절을 1–2개의 후보로 좁히고, <strong>모터 파라미터 확인 체크리스트</strong>를 항목별로 모두 작성한 후 주문합니다. Berkeley 6512 관절(MAD M6C12 150KV)을 예시로 작성 방법을 보여드립니다:</p>
+<table>
+<thead>
+<tr>
+<th>파라미터</th>
+<th>본 예시 값</th>
+<th>출처 / 상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모델 / 가격</td>
+<td>MAD M6C12 150KV, $129</td>
+<td>berkeley-humanoid-lite 조사 기록</td>
+</tr>
+<tr>
+<td>KV</td>
+<td>150 rpm/V</td>
+<td>모델 명칭</td>
+</tr>
+<tr>
+<td>Kt</td>
+<td>≈ 0.064 N·m/A</td>
+<td>1단계 공식 환산</td>
+</tr>
+<tr>
+<td>피크 상전류 요구량</td>
+<td>≈ 18 A</td>
+<td>1단계 계산 (본 예시 관절)</td>
+</tr>
+<tr>
+<td>무부하 속도 @22.2 V</td>
+<td>3330 rpm</td>
+<td>2단계 계산</td>
+</tr>
+<tr>
+<td>극 쌍 수</td>
+<td>—</td>
+<td>데이터시트에서 확인 불가, 공급업체에 직접 확인 필요</td>
+</tr>
+<tr>
+<td>상 저항</td>
+<td>—</td>
+<td>동일 (3단계의 0.1 Ω은 단지 예시 수준)</td>
+</tr>
+<tr>
+<td>연속 전류</td>
+<td>—</td>
+<td>동일</td>
+</tr>
+<tr>
+<td>질량</td>
+<td>—</td>
+<td>동일 (M01 질량 예산 열에 다시 입력)</td>
+</tr>
+<tr>
+<td>축 직경 / 장착 구멍 위치</td>
+<td>—</td>
+<td>동일 (M03 감속기 입력 인터페이스와 대조)</td>
+</tr>
+</tbody>
+</table>
+<p>참고 경로: 부품을 직접 조립하고 싶지 않다면, ODRI를 참고하여 기성 프레임리스 모터 + 자체 개발 드라이브 카드를 구매할 수 있습니다(기계 및 전기 전체 BSD 오픈소스, odri 기록); 가장 빠르게 작동시키려면 일체형 서보 모터를 사용하면 되며, 이 경우 작업은 "토크 표에 따라 모터 선택"으로 단순화됩니다.</p>
+<p><strong>【왜 그런가】</strong> 주문 전 함정은 체크리스트의 마지막 다섯 줄에 집중되어 있습니다. 극 쌍 수를 잘못 입력하면 FOC 정류가 바로 실패합니다. 상 저항이 없으면 3단계의 열 계산은 허구에 불과합니다. 축 직경/구멍 위치가 맞지 않으면 모터가 도착해도 감속기에 장착할 수 없습니다. 작성할 수 없는 항목은 모두 "공급업체에 직접 확인 필요"로 표시하고, 제품 사진을 보고 숫자를 추측하는 것을 금지합니다.</p>
+<p><strong>【당신의 상황 분석 방법】</strong> Berkeley 6512/5010 복제: 공식 BOM 및 3D 프린팅 파일에 따라 체크리스트를 항목별로 확인하기만 하면 됩니다. 설계는 이미 22개 액추에이터 규모의 완제품으로 검증되었습니다(기록). 자체 개발 혼합: 세 후보 모두 체크리스트를 작성한 후 비교하되, 단가가 아닌 "질량 예산 내에서 그램당 얼마나 많은 Kt × 전류 용량을 얻을 수 있는지"를 비교합니다.</p>
+<h2 id="_1">검수 기준</h2>
+<ul>
+<li>[ ] 각 관절에 ≥ 1개의 후보 모터 모델이 있으며, 선택 이유가 문서화되어 있음 (M01의 네 가지 지표에 해당).</li>
+<li>[ ] 다섯 가지 계산식이 관절별로 기록되어 있음: Kt 환산, 피크 상전류, KV 상하한 계산, RMS 전류, 동손 발열.</li>
+<li>[ ] 모선 전압 레벨이 결정되고, KV 구간 계산이 통과되었으며, 여유분에 대한 서면 설명이 있음.</li>
+<li>[ ] 모터 파라미터 확인 체크리스트가 항목별로 작성되었거나 "공급업체에 직접 확인 필요"로 표시됨.</li>
+<li>[ ] 피크/RMS 상전류 기록이 완전하며, M04에 드라이브 보드 전류 제한 확인을 위해 명확히 전달됨.</li>
+<li>[ ] 모터 질량이 M01 지표표에 다시 입력되었으며, 전체 기계 질량 예산이 초과되지 않음.</li>
+</ul>
+<h2 id="_2">일반적인 문제점 및 진단</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>진단 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모터는 무부하에서 정상 작동하나, 부하 시 과열됨</td>
+<td>높은 KV에 낮은 감속비: Kt가 너무 작아 토크를 전류로만 버팀</td>
+<td>1단계로 돌아가 I = τ/Kt 재계산; 낮은 KV 모터로 교체 또는 감속비 증가 (M03 연동)</td>
+</tr>
+<tr>
+<td>"최대 토크"로 구매한 모터가 몇 분 만에 뜨거워짐</td>
+<td>스톨 토크를 연속 토크로 착각</td>
+<td>데이터시트의 정격(연속) 토크 확인, RMS 요구 사항에 따라 재선택 (3단계 Maxon 예시)</td>
+</tr>
+<tr>
+<td>두 후보의 "Kt"가 수십 배 차이나서 판단 불가</td>
+<td>단위 혼동 (N·m/A vs g·cm/A, 약 10,197배 차이)</td>
+<td>모두 SI 단위로 환산하여 비교; KV만 제공된 경우 1단계 공식으로 환산</td>
+</tr>
+<tr>
+<td>FOC 자동 튜닝 실패, 모터 윙윙거리며 회전 안 함</td>
+<td>극 쌍 수 오입력 / 상 저항 미측정</td>
+<td>체크리스트 두 항목 보완; 파라미터 식별은 M04에 위임</td>
+</tr>
+<tr>
+<td>피크 전류 요구량이 드라이브 보드 전류 제한 초과</td>
+<td>모터만 보고 드라이브 보드를 고려하지 않음</td>
+<td>1단계의 I_peak를 후보 드라이브 보드 전류 제한과 대조; 초과 시 모터 교체 또는 사양 하향</td>
+</tr>
+<tr>
+<td>모터 도착 후 감속기에 장착 불가</td>
+<td>축 직경 / 장착 구멍 위치 미확인</td>
+<td>주문 전 체크리스트 마지막 두 줄 확인; M03 입력 인터페이스 도면과 대조</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m01-scenario-to-specs/">M01 · 요구 사항 시나리오 수치화</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m03-reducer-design/">M03 · 감속기 설계 및 계산</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-04/">제4장 액추에이터</a>, <a href="/ko/wiki/chapters/chapter-06/">제6장 계산, 전원 및 열 관리</a></li>
+<li><a href="/ko/roadmap/playbooks/actuator-selection/">액추에이터 선정 핸드북</a> · <a href="/ko/roadmap/stage-1-actuator/">1단계 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m01-scenario-to-specs/">← 이전<span>M01 · 수요 시나리오의 수치화: &#34;로봇을 만들고 싶다&#34;를 숫자로 번역하기</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m03-reducer-design/">다음 →<span>M03 · 감속기 설계 및 계산: 감속비는 머리로 정하는 것이 아니다</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m02">M02 · 모터 계산 및 선정: 사양표에서 구체적인 모델까지</a><ul>
+<li><a href="#1">단계 1: 세 가지 모터 상수를 사용하여 사양표를 모터 언어로 변환</a></li>
+<li><a href="#2-kv">단계 2: KV와 모선 전압 – 속도가 충분한지, 전류를 견딜 수 있는지</a></li>
+<li><a href="#3-rms">단계 3: 전력과 열 – 연속 정격은 RMS를 기준으로 하며, 피크를 기준으로 하지 않음</a></li>
+<li><a href="#4">4단계: 토폴로지와 형태 – 관절 모터가 왜 모두 "큰 팬케이크" 형태로 만들어지는가</a></li>
+<li><a href="#5">5단계: 후보 선정 및 주문 전 확인</a></li>
+<li><a href="#_1">검수 기준</a></li>
+<li><a href="#_2">일반적인 문제점 및 진단</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

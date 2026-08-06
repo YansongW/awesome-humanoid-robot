@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</h1>
+      <p class="entry-name-en">TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1 GB VRAM</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>TurboVLA 提出一种直接 V+L→A 的视觉-语言-动作执行范式，用 DINOv3 视觉编码器与 BERT 文本编码器替代 LLM 中心接口，通过双向交叉注意力交互后由 ACT 风格解码器并行输出动作块。在 RTX 4090 上实现 31.2ms 延迟、0.9GB VRAM，LIBERO 平均成功率 97.7%，RoboTwin 2.0 平均成功率 60.2%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.27205" target="_blank" rel="noopener">arXiv:2607.27205 TurboVLA: Real-Time Vision-Language-Action Model at 32 Hz on an RTX 4090 with &lt;1</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 几乎全部押注在 LLM 中心化路径上：视觉 token 投影进 LLM 表示空间，再自回归解码出动作。这个设计在每次策略调用时都要过一遍大模型的前向，计算和显存开销被 LLM 参数规模锁死，控制频率上不去，边缘设备根本跑不动。作者直接质疑这个前提——执行级控制真的需要开放式语言生成吗？指令条件化操作是必要的，但任务分解和自由文本生成对底层闭环控制是冗余的。</p>
+<p>TurboVLA 真正改变的是把 VLA 从"语言模型附带动作头"重构为"感知-交互-动作"的专用流水线。它证明了执行级策略可以完全绕开 LLM 的推理能力，用轻量编码器加双向交互就能达到甚至超过 LLM 中心模型的成功率。这个结论动摇了当前 VLA 设计的基本假设：不是所有机器人控制问题都需要大模型，专用小模型在受限平台上可能更合适。</p>
+<h2 id="_2">方法拆解</h2>
+<p>TurboVLA 的架构分为四条并行支路，最后汇入动作解码器：</p>
+<h3 id="_3">视觉编码</h3>
+<ul>
+<li>骨干：DINOv3（LIBERO 用 ViT-B，RoboTwin 2.0 用 ViT-L）</li>
+<li>视觉特征投影到共享维度 d=256，添加位置嵌入与相机视角嵌入</li>
+<li>多相机流（K 个）拼接保留互补线索</li>
+</ul>
+<h3 id="_4">语言编码</h3>
+<ul>
+<li>轻量级 BERT 作为文本编码器，保留完整指令 token 序列而非池化嵌入</li>
+<li>关键决策：保留 token 级信息以保留对象、属性和空间关系的细粒度条件化信号</li>
+</ul>
+<h3 id="-">双向视觉-语言交互</h3>
+<ul>
+<li>N=6 层双向交叉注意力，受 Grounding DINO 启发</li>
+<li>每层包含：层归一化、双向交叉注意力、模态特定前馈网络、残差连接</li>
+<li>视觉到指令注意力注入场景上下文；指令到视觉注意力条件化视觉特征</li>
+<li>初始化自 grounding 预训练特征增强权重</li>
+</ul>
+<h3 id="_5">动作解码</h3>
+<ul>
+<li>ACT 风格 transformer 解码器，H=12 个可学习动作查询</li>
+<li>并行解码连续动作块，无需动作标记化或自回归生成</li>
+<li>机器人状态通过轻量级投影网络单独编码，直接引入解码器</li>
+</ul>
+<h3 id="_6">训练</h3>
+<ul>
+<li>行为克隆 ℓ1 损失，无辅助语言建模目标</li>
+<li>学习率 5×10⁻⁵，四块 RTX 4090 训练</li>
+<li>LIBERO：80k 步，10k 预热，有效批大小 256，预测 12 步 7-DoF 动作块</li>
+<li>RoboTwin 2.0：55k 步，1k 预热，有效批大小 192，预测 50 步 14 维绝对关节位置</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<p>第一，范式级简化。V+L→A 直接路径取代 V→L→A，把 LLM 从执行链路中完全移除。这不是增量优化，而是架构层面的重新定位——执行级控制不需要开放式语言生成，这个判断如果成立，整个 VLA 的算力需求曲线都会下移。</p>
+<p>第二，双向交互而非单向条件化。消融显示无交互时平均成功率 95.2%，单向交叉注意力提升到 96.1% 和 96.5%，双向交互达到 97.7%。场景感知的指令特征与指令条件化的视觉特征为动作预测提供互补信息，这个设计决策有明确的实验支撑。</p>
+<p>第三，保留完整指令 token 序列而非池化嵌入。语言消融中，用任务 ID 嵌入替代语义指令后平均成功率从 97.7% 降至 95.4%，LIBERO-Goal 从 97.4% 降至 95.8%，证明自然语言提供的细粒度信息超出闭集任务身份，轻量编码器足以承载这些信息。</p>
+<h2 id="_8">实验与结果</h2>
+<p>LIBERO 基准上 TurboVLA 以 0.2B 参数、0.9GB VRAM、31.2ms 延迟达到 97.7% 平均成功率，全面超越所有对比方法。效率优势尤其突出：OpenVLA 需要 7.5B 参数、14.9GB VRAM、202.9ms 延迟才达到 76.5% 成功率；π₀.₅ 以 3.4B 参数、12.8GB VRAM、93.6ms 延迟达到 96.9%。TurboVLA 在成功率领先的同时，延迟降低约 3 倍（由表内数值 93.6→31.2 计算），VRAM 降低约 14 倍（由表内数值 12.8→0.9 计算）。</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>TurboVLA</th>
+<th>π₀.₅</th>
+<th>OpenVLA</th>
+<th>Diffusion Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>参数 (B)</td>
+<td>0.2</td>
+<td>3.4</td>
+<td>7.5</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>VRAM (GB)</td>
+<td>0.9</td>
+<td>12.8</td>
+<td>14.9</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>延迟 (ms)</td>
+<td>31.2</td>
+<td>93.6</td>
+<td>202.9</td>
+<td>924.8</td>
+</tr>
+<tr>
+<td>LIBERO 平均成功率</td>
+<td>97.7%</td>
+<td>96.9%</td>
+<td>76.5%</td>
+<td>72.4%</td>
+</tr>
+</tbody>
+</table>
+<p>RoboTwin 2.0 上 TurboVLA 以 0.4B 参数、43.4ms 延迟达到 60.2% 平均成功率，超过 π₀.₅ 的 57.0% 和 DP3 的 55.2%。真实世界 AgileX Piper 平台四个任务成功率分别为 92.5%、80%、90%、87.5%，均优于 π₀.₅。</p>
+<p>消融实验的关键发现：移除语言后平均成功率从 97.7% 降至 70.8%，LIBERO-Goal 从 97.4% 骤降至 11.6%，证明策略不能仅依赖视觉先验；交互深度 N=6 最优，N=8 略降至 96.6%；动作视界 H=12 最优，H=15 降至 95.6%。</p>
+<h2 id="_9">边界与局限</h2>
+<p>RoboTwin 2.0 实验仅使用官方干净演示数据，未包含随机场景数据，原因是计算预算限制；也未引入 VLA-Adapter 或 StarVLA 框架之外的增强技术。真实世界评估仅覆盖四个代表性任务，未扩展到更广泛场景。TurboVLA 主要面向具体执行级指令，不具备高层任务规划所需的复杂语义理解与推理能力，开放式语言生成和任务级规划不在其能力范围内。论文未明确在更复杂长程任务或非结构化环境中的表现边界。</p>
+<h2 id="_10">工程启示</h2>
+<p>复现时先核对三个关键点：一是交互模块初始化权重必须来自 Grounding DINO 预训练特征增强权重，直接随机初始化可能达不到报告的双向交互增益；二是保留完整指令 token 序列而非池化嵌入，这是语言信息有效性的关键，消融显示任务 ID 嵌入会损失 2.3% 平均成功率；三是动作视界 H=12 和交互深度 N=6 是容量与效率的平衡点，H=15 或 N=8 反而会掉点。</p>
+<p>最容易踩坑的地方是 RoboTwin 2.0 的数据配置——论文明确只用官方干净演示，不含随机场景数据，如果混入随机场景数据，训练分布会偏移，成功率可能无法复现。推理时注意延迟测量是从多模态输入到产生动作块的时间，批大小 1，如果按自回归 token 生成方式测量会得到不同数值。真实世界微调从 LIBERO 预训练检查点初始化，4×65 遥操作演示、12.5k 步，这个迁移路径值得参考。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.27205</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">DP3</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">ACT</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_diffusion_policy_2023/">扩散策略</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">VLA-Adapter</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_turbovla_real_time_vision_language_actio_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_ze_3d_diffusion_policy_generaliza_2024/">
+          <span class="entry-type">论文</span>
+          <h3>DP3</h3>
+          <p>3D Diffusion Policy (DP3)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ACT</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware 是斯坦福大学、UC Berkeley 与 Meta 于 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Adapter</h3>
+          <p>VLA-Adapter 是北京邮电大学、西湖大学、浙江大学等机构于2025年提出的轻量级视觉-语言-动作模型范式，旨在降低VLA模型对大规模预训练和计算资源的依赖。其核心贡献在于通过Bridge…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_diffusion_policy_2023/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">视觉编码</a></li>
+<li><a href="#_4">语言编码</a></li>
+<li><a href="#-">双向视觉-语言交互</a></li>
+<li><a href="#_5">动作解码</a></li>
+<li><a href="#_6">训练</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a></li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

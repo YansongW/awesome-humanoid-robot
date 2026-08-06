@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</h1>
+      <p class="entry-name-en">Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Finetuning a pretrained vision-language model (VLM) on robot demonstrations via behavior cloning (BC) has become the standard recipe for vision-language-action (VLA) policies. However, BC finetuning progressively overwrites the pretrained representations that support visual and semantic generalization. Co-training on web image-text data, a common remedy, does not prevent this; it applies language.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13429" target="_blank" rel="noopener">arXiv:2607.13429 Generalizable VLA Finetuning via Representation Anchoring and Language-Action Al</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Anchor-Align은 VLA(비전-언어-동작) 모델 미세 조정을 위한 범용 레시피로, 저자 팀이 제안했으며, 핵심은 표준 행동 복제(BC) 외에 두 가지 보조 목표를 동시에 적용하는 것입니다: 동결된 사전 훈련 VLM의 은닉 상태를 계층별로 증류하는 "앵커링" 손실, 그리고 프로그램 방식으로 생성된 동작 방향 레이블로 언어 헤드와 동작 헤드의 일치를 감독하는 "정렬" 손실입니다. 이 방법은 LIBERO-PRO, LIBERO-Plus, CALVIN 및 실제 xArm7 로봇에서 분포 외 일반화와 장기 제어를 크게 향상시켰으며, 공동 훈련된 VLA에서 언어-동작 불일치의 정도와 작업 성공과의 상관관계를 최초로 직접 정량화했습니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이 작업의 진정한 가치는 VLA 미세 조정을 "순수 동작 최적화"에서 "표현 유지 과정"으로 재정의한 것입니다. 기존 커뮤니티는 두 가지 경로를 기본으로 삼았습니다: 표준 BC로 동작 헤드만 최적화하면 사전 훈련된 VLM의 의미 표현이 점진적으로 덮어써지거나(CKA 0.34로 하락, GQA 정확도 94% 손실), 공동 훈련(co-training)으로 일반 VQA 데이터를 사용해 언어 헤드를 동시에 감독하면 언어 헤드와 동작 헤드가 공유 백본에서 일치하도록 요구된 적이 없어 두 헤드의 예측이 서로 모순됩니다—예를 들어 동작 헤드가 오른쪽을 예측할 때 언어 헤드는 "왼쪽"이라고 말할 수 있습니다. 저자들은 데이터를 통해 공동 훈련이 파괴적 망각을 해결하지 못했을 뿐만 아니라(LIBERO-PRO 위치 교체 점수 0.0%), 새로운 불일치 문제를 도입했음을 증명했습니다.</p>
+<p>저자들이 바꾼 핵심 인식은 사전 훈련 표현 유지와 동작 학습이 제로섬 게임이 아니라는 것입니다. 그들은 "앵커링"으로 백본의 기하학적 구조를 사전 훈련 상태에 고정하고, "정렬"로 동작 관련 정보가 언어 헤드와 동작 헤드 모두가 접근할 수 있는 공유 표현으로 라우팅되도록 강제합니다. 이는 단순히 정규화나 데이터 증강을 추가하는 것보다 더 본질적입니다—표현의 의미적 내용에 직접 개입하며, 수치적 안정성만 제약하지 않습니다. 또한, 논문에서 제공하는 언어-동작 정렬 진단 도구(두 헤드의 방향 예측을 프레임별로 비교)는 VLA 내부 일관성을 직접 정량화할 수 있는 첫 번째 방법으로, 이후 디버깅을 위한 실행 가능한 지표를 제공합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 손실</h3>
+<p>총 목표는 세 부분의 가중 합입니다:
+L_total = L_action + λ_anchor · L_anchor + λ_align · L_align
+여기서 BC 손실은 동작 헤드 아키텍처에 따라 선택됩니다: 회귀 헤드는 L1, 플로우 매칭 헤드는 L2(예측 속도에 적용).</p>
+<h3 id="vision-language-anchoring">Vision-Language Anchoring(앵커링)</h3>
+<ul>
+<li>동결된 사전 훈련 VLM 복사본(anchor)을 유지하며, 훈련 가능한 백본과 병렬로 동일한 입력 배치를 처리합니다.</li>
+<li>각 디코더 레이어 u에서 시각 및 텍스트 토큰의 은닉 상태에 제곱 Frobenius 노름 증류를 적용합니다:
+  L_anchor^(u) = ‖H^S_u[m] − H^A_u[m]‖_F²</li>
+<li>총 앵커링 손실은 모든 레이어의 평균입니다: L_anchor = (1/|D|) Σ_{u∈D} L_anchor^(u)</li>
+<li>핵심 설계: anchor의 언어 모델링 헤드를 nn.Identity()로 교체하여 중간 은닉 상태만 필요로 하며, 추가 GPU 메모리는 0.7 GB입니다; 가중치 λ_anchor = 0.1.</li>
+</ul>
+<h3 id="language-action-alignment">Language-Action Alignment(정렬)</h3>
+<ul>
+<li>마지막 명령 토큰의 마지막 레이어 은닉 상태 h_pre ∈ R^d(d=896)를 가져와, 학습 가능한 투영 W_proj ∈ R^{d×d}와 동결된 사전 훈련 언어 헤드 W_lm ∈ R^{|V|×d}를 통해 어휘 로짓을 얻고, 프로그램 방식의 방향 레이블과 교차 엔트로피를 계산합니다.</li>
+<li>레이블 생성 3단계(수동 주석 불필요):</li>
+<li>평균 블록: v̄ = (1/K) Σ_{k=1}^{K} A_{:,k,1:3} ∈ R^{B×3}</li>
+<li>필터링: ‖v̄_i‖₂ &lt; τ인 근정지 샘플 제거(τ = 0.15)</li>
+<li>이산화: 지배적 이동 축 j* = argmax_{j∈{x,y,z}} |v̄_{i,j}| 선택, 부호에 따라 {up, down, left, right, forward, backward}로 매핑</li>
+<li>정렬 헤드는 803,712개의 파라미터만 추가합니다(bfloat16에서 1.5 MB); λ_align = 0.02.</li>
+</ul>
+<h3 id="_5">대조 실험 설계</h3>
+<ul>
+<li>Shuffle: 방향 레이블 매핑을 고정 순열로 교체(예: left→forward), 손실 표면은 유지하되 의미를 파괴.</li>
+<li>Scatter: 방향 단어를 임베딩 공간에서 서로 멀리 떨어진 무의미한 단어(예: purple, math)로 대체.</li>
+<li>둘 다 정렬 이득이 추가 감독 신호 자체가 아닌 의미적 일관성에서 비롯됨을 증명하는 데 사용됩니다.</li>
+</ul>
+<h3 id="_6">훈련 구성</h3>
+<ul>
+<li>백본: Prismatic-Qwen2.5-0.5B, LoRA 랭크 r=64, 스케일 α=128, 모든 레이어에 적용.</li>
+<li>입력: 512개의 시각 패치(각 이미지의 DINOv2+SigLIP 특징을 연결한 후 256 패치) + 텍스트 + 고유수용감 상태.</li>
+<li>10,000 그래디언트 스텝, 배치 크기 32, 학습률 2×10⁻⁴, 2,500 스텝마다 체크포인트 저장.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>출력 레이어 정렬이 아닌 계층별 앵커링</strong>: 기존 방법은 최종 표현이나 출력 레이어에서 제약을 가하는 경우가 많지만, Anchor-Align은 전체 24개 트랜스포머 레이어에 증류를 적용하여 중간 레이어의 시각-언어 기하학적 구조를 직접 보존합니다. 이는 CKA가 0.91을 유지할 수 있는 이유를 설명합니다(표준 BC는 0.34에 불과), GQA 정확도는 70% 보존되는 반면 표준 BC는 94% 손실됩니다.</p>
+</li>
+<li>
+<p><strong>프로그램 방식 언어 레이블로 언어-동작 정렬 구현</strong>: 수동 주석이나 외부 VQA 데이터 없이 동작 궤적의 병진 성분에서 6방향 레이블을 자동 생성합니다. 이를 통해 언어 헤드와 동작 헤드가 처음으로 동일한 로봇 관측에서 일관되게 감독되며, 정렬률이 16.8%에서 78.4%로 향상되고, 롤아웃당 정렬과 성공의 Pearson r이 −0.03에서 +0.51로 전환됩니다—정렬이 성공의 부산물이 아니라 인과적 동인임을 증명합니다.</p>
+</li>
+<li>
+<p><strong>진단 도구와 훈련 목표의 통합</strong>: 정렬 손실 프레임워크를 진단 지표로 확장하여 언어 헤드와 동작 헤드의 방향 예측 일관성을 프레임별로 비교할 수 있습니다. 이는 VLA 내부 불일치를 직접 정량화할 수 있는 최초의 방법이며, SOTA 모델(ChatVLA 20.9%, MolmoAct 15.5%, Magma 17.2%)의 방향 축 정렬 점수가 무작위 수준의 두 배보다 훨씬 낮음을 밝혀내어, 불일치가 개별 사례가 아닌 보편적 문제임을 보여줍니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="_9">시뮬레이션 벤치마크</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>Anchor-Align VLA</th>
+<th>VLA-Adapter</th>
+<th>OpenVLA-OFT</th>
+<th>Co-training + KI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO-PRO 평균</td>
+<td>71.9%</td>
+<td>61.0%</td>
+<td>56.5%</td>
+<td>43.8%</td>
+</tr>
+<tr>
+<td>LIBERO-PRO 위치 교체</td>
+<td>22.6%</td>
+<td>2.3%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>LIBERO-Plus 평균</td>
+<td>90.3%</td>
+<td>85.1%</td>
+<td>74.1%</td>
+<td>57.1%</td>
+</tr>
+<tr>
+<td>CALVIN 5/5</td>
+<td>77.9%</td>
+<td>73.1%</td>
+<td>66.5%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>위치 교체는 가장 엄격한 OOD 테스트입니다: Anchor-Align은 기준선 2.3%에서 22.6%로 향상된 반면, 모든 대조군(공동 훈련 포함)은 0.0%입니다. LIBERO-Plus의 축별 최대 이득은 배경 텍스처 +8.9, 센서 노이즈 +7.4, 로봇 초기 상태 +6.5입니다(표 내 수치로 계산).</p>
+<h3 id="_10">소거 및 대조</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>LIBERO-PRO</th>
+<th>LIBERO-Plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLA-Adapter(표준 BC)</td>
+<td>61.0</td>
+<td>85.1</td>
+</tr>
+<tr>
+<td>정렬만</td>
+<td>65.9</td>
+<td>88.6</td>
+</tr>
+<tr>
+<td>앵커링만</td>
+<td>68.1</td>
+<td>87.3</td>
+</tr>
+<tr>
+<td>Anchor-Align(전체)</td>
+<td>71.9</td>
+<td>90.3</td>
+</tr>
+<tr>
+<td>Shuffle(대조)</td>
+<td>61.4</td>
+<td>84.9</td>
+</tr>
+<tr>
+<td>Scatter(대조)</td>
+<td>63.3</td>
+<td>85.7</td>
+</tr>
+</tbody>
+</table>
+<p>Shuffle과 Scatter는 성능을 거의 향상시키지 않아, 이득이 추가 감독 자체가 아닌 의미적으로 올바른 레이블에서 비롯됨을 증명합니다.</p>
+<h3 id="xarm7">실제 세계(xArm7)</h3>
+<ul>
+<li>VLA-Adapter 설정: 평균 성공률이 28.3%에서 54.2%로 향상.</li>
+<li>StarVLA 설정: 평균 성공률이 36.7%에서 60.0%로 향상; 의미적 교란 테스트에서 Anchor-Align은 100% 시행에서 올바른 대상을 선택(기준선은 90% 오선택).</li>
+<li>실패 모드 분석: 의미 오류가 7에서 0으로 감소, 잘못된 객체 접근이 10에서 1로 감소.</li>
+</ul>
+<h3 id="_11">훈련 비용</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>Standard BC</th>
+<th>Co-training + KI</th>
+<th>Anchor-Align</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>벽시계 시간(s/it)</td>
+<td>1.28</td>
+<td>2.50</td>
+<td>1.64</td>
+</tr>
+<tr>
+<td>추가 GPU 메모리</td>
+<td>—</td>
+<td>+5 GB</td>
+<td>+0.7 GB</td>
+</tr>
+<tr>
+<td>외부 데이터 요구</td>
+<td>없음</td>
+<td>25K VQA</td>
+<td>없음</td>
+</tr>
+</tbody>
+</table>
+<p>Anchor-Align의 오버헤드는 공동 훈련보다 3.4× 적고, 외부 데이터가 필요 없으며, 추가 메모리는 7× 적습니다.</p>
+<h2 id="_12">경계 및 한계</h2>
+<p>저자들이 명시적으로 인정한 한계는 다음과 같습니다: 정렬 레이블은 6개의 대략적인 이동 방향만 포함하여 전체 동작 스펙트럼(회전, 정밀 조작 등)을 표현할 수 없음; 앵커링 손실이 모든 레이어에 동일한 가중치로 적용되어 최적이 아닐 수 있음; 대규모 동작 사전 훈련 VLA(예: π₀ 또는 OpenVLA)와의 상호작용을 탐구하지 않음; 실제 세계 평가가 단일 암 xArm7과 소수의 작업으로 제한되어 양팔 또는 이동 조작을 포함하지 않음. 또한, 이 방법은 동결된 VLM 복사본이 필요하여 훈련 중 백본 메모리 사용량이 두 배가 됩니다—이는 자원이 제한된 팀에게 실질적인 장벽입니다. 논문은 앵커링과 정렬이 미세 조정이 아닌 비전-언어-동작 공동 사전 훈련 단계에서의 적용 가능성을 명시적으로 논의하지 않았으며, 레이블 노이즈(예: 근정지 샘플 필터링 임계값 τ의 민감도)가 정렬 품질에 미치는 영향도 분석하지 않았습니다.</p>
+<h2 id="_13">엔지니어링 시사점</h2>
+<p>재현 시 가장 먼저 확인할 세 가지: 첫째, 동결된 anchor의 메모리 사용량(0.7 GB)이 훈련 환경에서 허용 가능한지, 특히 백본 규모가 0.5B를 초과할 때; 둘째, 정렬 레이블 생성의 τ=0.15 임계값—이는 필터링할 근정지 샘플 수를 직접 결정하며, 작업에 느린 이동(예: 정밀 조립)이 많이 포함된 경우 이 임계값을 재보정해야 함; 셋째, 언어 헤드가 실제로 동결되었는지 확인(W_lm이 업데이트되지 않음), 그렇지 않으면 정렬 그래디언트가 사전 훈련 어휘 기하학적 구조를 파괴하여 CKA 분석이 무효화됩니다.</p>
+<p>가장 쉽게 실수하는 부분은 LoRA의 주기적 병합입니다: 논문은 훈련 중 가중치 병합이 필요하다고 언급하며, 이 단계를 건너뛰면 앵커링 증류의 계층별 은닉 상태가 LoRA와 베이스 가중치 분리로 인해 왜곡될 수 있습니다. 또한, 정렬 헤드는 1.5 MB 파라미터에 불과하지만 그 그래디언트는 백본 LoRA를 통과합니다—LoRA 랭크나 스케일 팩터가 부적절하게 설정된 경우(예: α가 너무 작음), 정렬 신호가 BC 손실에 묻힐 수 있습니다. 먼저 LIBERO-PRO 위치 교체를 빠른 검증으로 실행하는 것이 좋습니다: 해당 축 성공률이 20% 미만이면 정렬 레이블을 조정하는 대신 앵커링 가중치 λ_anchor가 동작 손실에 압도되지 않았는지 우선 확인하세요. 하류 팀의 경우, 양팔 또는 이동 플랫폼에 배포하려면 방향 레이블 공간을 직접 확장하고(예: roll/pitch/yaw 추가), τ와 K 창 파라미터를 재평가해야 합니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">평가 대상</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_openvla_2024_1/">OpenVLA</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">compares_with</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">언급</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_generalizable_vla_finetuning_representat_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</h3>
+          <p>VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model (VLA-Adapter), is a…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_openvla_2024_1/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 손실</a></li>
+<li><a href="#vision-language-anchoring">Vision-Language Anchoring(앵커링)</a></li>
+<li><a href="#language-action-alignment">Language-Action Alignment(정렬)</a></li>
+<li><a href="#_5">대조 실험 설계</a></li>
+<li><a href="#_6">훈련 구성</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#_9">시뮬레이션 벤치마크</a></li>
+<li><a href="#_10">소거 및 대조</a></li>
+<li><a href="#xarm7">실제 세계(xArm7)</a></li>
+<li><a href="#_11">훈련 비용</a></li>
+</ul>
+</li>
+<li><a href="#_12">경계 및 한계</a></li>
+<li><a href="#_13">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

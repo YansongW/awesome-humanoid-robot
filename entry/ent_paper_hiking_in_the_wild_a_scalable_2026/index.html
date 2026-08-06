@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>脚落在哪里，比走得多快更重要 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">脚落在哪里，比走得多快更重要</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>脚落在哪里，比走得多快更重要</h1>
+      <p class="entry-name-en">Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.07718v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>《Hiking in the Wild》提出了一种可扩展的端到端感知跑酷框架，用于实现人形机器人在复杂非结构化环境中的稳健徒步。该工作由研究团队开发，核心贡献包括：通过地形边缘检测与足部体积点结合的立足点安全机制，以及平坦补丁采样策略，在单阶段强化学习下直接映射原始深度输入与本体感知到关节动作，无需外部状态估计。全尺寸人形机器人实地实验表明，该策略支持最高2.5 m/s的速度穿越复杂地形。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2601.07718" target="_blank" rel="noopener">Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://project-instinct.github.io/hiking-in-the-wild" target="_blank" rel="noopener">脚落在哪里，比走得多快更重要 project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该框架旨在解决人形机器人从反应式本体感知向主动感知过渡的挑战，克服了基于地图方法的状态估计漂移（如LiDAR方法无法处理躯干抖动）以及现有端到端方法可扩展性差、训练复杂的问题。通过引入立足点安全机制（结合可扩展的地形边缘检测与足部体积点）防止边缘灾难性滑移，以及平坦补丁采样策略缓解奖励黑客攻击，实现了安全稳定的训练。系统采用单阶段强化学习，直接处理原始深度图像与本体感知数据，输出关节动作，无需外部状态估计。全尺寸人形机器人在实地实验中验证了其稳健性，最高速度达2.5 m/s，且训练与部署代码已开源以促进可重复研究。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>感知与动作映射</strong>：采用单阶段强化学习方案，将原始深度输入（来自深度相机）与本体感知（如关节角度、IMU数据）直接映射到关节动作，避免使用外部状态估计（如SLAM或里程计）。</li>
+<li><strong>立足点安全机制</strong>：</li>
+<li><strong>地形边缘检测（Terrain Edge Detection）</strong>：可扩展的算法，实时识别地形边缘（如岩石边界、台阶棱角）。</li>
+<li><strong>足部体积点（Foot Volume Points）</strong>：在足部周围定义一组虚拟点，用于检测与边缘的碰撞风险，防止立足点滑移。</li>
+<li><strong>平坦补丁采样策略（Flat Patch Sampling）</strong>：在训练过程中，从环境中采样平坦区域作为导航目标，避免奖励黑客攻击（如机器人通过非自然动作获取高奖励）。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>机器人平台</strong>：全尺寸人形机器人（具体型号未在正文中指定，但提及“full-size humanoid”）。</li>
+<li><strong>训练环境</strong>：基于物理仿真器（如Isaac Gym或MuJoCo）进行训练，使用随机生成的非结构化地形（包括斜坡、台阶、碎石等）。</li>
+<li><strong>部署</strong>：代码开源，支持在真实机器人上直接部署，无需大量硬件修改。</li>
+</ul>
+<h3 id="_5">关键数字与结论</h3>
+<ul>
+<li><strong>速度</strong>：在复杂地形上实现最高2.5 m/s的稳健徒步速度。</li>
+<li><strong>训练稳定性</strong>：立足点安全机制与平坦补丁采样策略显著减少了训练过程中的失败案例（如摔倒或滑移）。</li>
+<li><strong>可扩展性</strong>：框架支持在不同地形类型（如草地、岩石、泥地）上泛化，无需针对每种地形单独调整策略。</li>
+<li><strong>对比基线</strong>：相比基于地图的方法（如LiDAR+SLAM），本方法避免了状态估计漂移；相比现有端到端方法（如虚拟障碍物逐例实现），本方法通过统一机制提升了可扩展性。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>该工作证明了通过单阶段强化学习与感知-动作直接映射，人形机器人可以在非结构化环境中实现高速稳健徒步，且框架具有可扩展性与可复现性。开源代码为后续研究提供了基础。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2601.07718v1</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+              <span class="rel-desc">脚落在哪里，比走得多快更重要使用Sim-to-Real迁移。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">使用</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+              <span class="rel-desc">脚落在哪里，比走得多快更重要使用模型预测控制（MPC）。</span>
+            </li>
+            
+            <li>
+              <span class="rel-pill">proposes</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_method_gait_planning/">步态规划</a>
+              <span class="rel-desc">脚落在哪里，比走得多快更重要提出步态规划。</span>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_hiking_in_the_wild_a_scalable_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gait_planning/">
+          <span class="entry-type">方法</span>
+          <h3>步态规划</h3>
+          <p>为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键数字与结论</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

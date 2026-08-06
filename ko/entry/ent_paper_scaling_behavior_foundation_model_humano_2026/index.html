@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scaling Behavior Foundation Model for Humanoid Robots · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Scaling Behavior Foundation Model for Humanoid Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Scaling Behavior Foundation Model for Humanoid Robots</h1>
+      <p class="entry-name-en">Scaling Behavior Foundation Model for Humanoid Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Humanoid control requires natural whole-body coordination, precise real-time responses to control signals, and robust generalization across diverse environmental contexts, making it a cornerstone for generalist embodied agents. Behavior Foundation Models (BFMs) have recently emerged as a promising solution to address these challenges by leveraging large-scale behavioral data to achieve superior.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.15163" target="_blank" rel="noopener">arXiv:2607.15163 Scaling Behavior Foundation Model for Humanoid Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 인간형 로봇을 위한 확장 가능한 행동 기반 모델(BFM) 훈련 체계를 제안한다. 전역 운동 추적 학습 패러다임, 온라인 정책 데이터와 참조 동작의 협조적 스케일링, 그리고 Humanoid Transformer 아키텍처의 세 가지 핵심 구성 요소를 조율하여 BFM의 스케일링 동작을 체계적으로 연구한다. 저자는 Unitree G1 플랫폼에서 이 방법을 검증했으며, 기존 컨트롤러 대비 전역 추적 오차를 82% 감소시켰고(표 내 수치 0.5674→0.0798로 계산), 동질적·이질적 데이터 스케일링, 모델 용량, 잠재 공간 구조화 간의 핵심 규칙을 밝혀냈다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>인간형 로봇의 전신 제어는 오랫동안 작업별 보상 엔지니어링에 얽매여 있었으며, 새로운 행동마다 보상 함수를 재설계해야 했기 때문에 교차 시나리오 일반화가 근본적으로 제한되었다. 본 논문이 실제로 바꾼 것은 LLM 분야의 핵심 방법론인 "스케일링"을 인간형 제어에 도입하고 실행 가능한 레시피를 제시한 것이다. 이는 단편적인 기법의 나열이 아니라 학습 패러다임, 데이터 구성, 모델 아키텍처를 하나의 통합 시스템으로 조율한 것이다. 이전 SONIC 등의 확장 연구는 예비적 결론에 그쳤지만, 본 논문은 행동 커버리지 분석(K-Means 점유율)을 통해 데이터 스케일링을 동질적(XXS→S, 점유율 0.9365→0.9365)과 이질적(S→L, 점유율 0.9365→0.9995) 두 메커니즘으로 분해하여, 단순히 동작량을 늘리는 것만으로는 이득이 미미하며 행동 커버리지 확장이 성능 도약의 핵심임을 증명했다.</p>
+<p>또 다른 중요한 변화는 "전역 좌표계 운동 추적"에 대한 고수이다. 기존 방법들은 대부분 국소 자세 추적 또는 루트 운동과 자세 추적의 분리를 사용하여, 전진과 제자리 걷기를 구분하지 못하고 오차가 프레임마다 전파되는 문제가 있었다. 본 논문은 전역 프레임워크에서 전체 전신 궤적 재현을 통합 대리 작업으로 삼고, 8가지 제어 모드 마스크(Root 단일 링크부터 Whole-Body 14링크까지)를 함께 사용하여 단일 정책이 배포 시 전역·국소 제어 전환을 자연스럽게 지원하도록 했다. 로봇의 원시 감각 입력을 수정할 필요가 없다. 이는 BFM 사전 훈련과 하위 작업 적응 사이에 더 깔끔한 인터페이스 추상화를 제공한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">문제 형식화와 학습 패러다임</h3>
+<ul>
+<li>인간형 제어를 MDP로 모델링하고, 행동을 고유수용감각 상태와 동작의 궤적으로 정의하며, 목표 상태는 외부 사양으로 간주하여 제외한다.</li>
+<li>운동 추적을 통합 대리 작업으로 채택하며, 국소 자세가 아닌 전역 좌표계에서의 전체 전신 궤적 재현을 요구한다.</li>
+</ul>
+<h3 id="_5">상태와 아키텍처 설계</h3>
+<ul>
+<li>비대칭 actor-critic: Actor 상태는 (루트 각속도, 투영 중력, 관절 위치, 관절 속도)이고, Critic은 특권 정보(루트 높이, 링크 포즈, 속도 등)를 사용하며, 모두 항로 좌표계에서 표현된다.</li>
+<li>제어 인터페이스: 마스크 집합 ℳ = {𝒎₀, …, 𝒎₇}에서 링크별 마스크를 무작위 샘플링하여 8가지 제어 모드(Root, Bimanual, Root-and-Hand, End-Effector, Root-and-End-Effector, Upper-Body, Root-and-Upper-Body, Whole-Body)를 지정하며, 활성 링크 수는 1에서 14까지이다.</li>
+</ul>
+<h3 id="_6">보상과 훈련 안정성</h3>
+<ul>
+<li>가중 합에는 전역 루트 높이(가중치 0.5, σ_height=0.3), 전역 신체 위치(가중치 1.0, σ_pos=0.3), 전역 신체 회전(가중치 1.0, σ_rot=0.4), 선속도(가중치 1.0, σ_lin=1.0), 각속도(가중치 1.0, σ_ang=3.14), 동작률 패널티(-0.1), 관절 제한 패널티(-10.0), 생존 보상(1.0)이 포함된다.</li>
+<li>조기 종료: 어떤 링크든 참조 운동에서 0.5미터 이상 벗어나면 종료하고, 종료 지점 근처의 참조 상태에서 재초기화한다(RSI).</li>
+<li>적응형 샘플링: 초기 가중치 w₀=1, 매 T_eval=200 라운드마다 평가하며, 실패 궤적의 가중치는 β^T_eval(β=0.999)로 나누고, 성공 시 β^T_eval을 곱하며, [0.03, 1.0] 범위로 클리핑한다.</li>
+</ul>
+<h3 id="_7">데이터와 스케일링</h3>
+<ul>
+<li>훈련 데이터는 8개 오픈소스 데이터셋에서 수집한 1.02억 프레임(50 FPS)을 집계하며, 리타겟팅은 2단계 프로세스(형상 계수 정렬 + 프레임별 IK)를 사용한다.</li>
+<li>온라인 정책 스케일링: 너비(GPU 수)와 깊이(rollout 길이) 모두 32, 48, 64 세 수준에서 변화시키며, GPU당 환경 수 8192는 유지한다.</li>
+<li>참조 동작 스케일링: 5개의 중첩 하위 집합 XXS(16,159,416프레임), XS(32,230,197프레임), S(48,321,234프레임), M(71,130,505프레임), L(101,979,598프레임).</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<p><strong>1. 행동 커버리지의 정량화와 이중 메커니즘 스케일링 분석</strong>: K-Means 클러스터링(L 파티션에서 200,000개 특징, 2,000개 클러스터 샘플링)으로 점유율을 정의하고, 데이터 스케일링을 동질적(XXS→S, 점유율 0.9365→0.9365)과 이질적(S→L, 점유율 0.9365→0.9995)으로 분해한다. 이는 "데이터 다양성"을 "데이터 양"에서 처음으로 분리하여 정량화한 것으로, 이질적 스케일링이 성능 향상의 주요 원인임을 증명한다. Ours 테스트 세트에서 S→L은 뚜렷한 향상을 가져오지만 XXS→S는 미미한 개선에 그친다.</p>
+<p><strong>2. 전역 좌표계 운동 추적 + 8가지 제어 모드 마스크</strong>: 기존 방법이 루트 운동과 자세 추적을 분리하는 것과 달리, 본 논문은 전역 프레임워크에서 전체 전신 궤적 재현을 통합 목표로 삼고, 사전 정의된 마스크 집합(베르누이 독립 활성화가 아닌)으로 제어 세분성을 지정한다. 이로써 단일 정책이 전역·국소 제어를 동시에 지원하며, 국소 모드는 첫 프레임 보정을 통해 제어 신호 방향을 정렬하므로 원시 감각 입력을 수정할 필요가 없고, 참조 강제 메커니즘으로 해석할 수 있다.</p>
+<p><strong>3. 보조 목표 없는 초구면 잠재 공간 구조화</strong>: RMSNorm으로 목표 임베딩을 단위 초구면에 투영하여, 운동 추적 목표만으로도 국소성(시간적으로 인접한 명령이 인접한 표현에 매핑), 전역 조직화(서로 다른 행동 의도가 구분 가능한 영역을 점유), 견고성(노이즈 수준 20에서 성공률이 0.9836에서 0.9400으로만 감소)이 자연스럽게 나타난다. 이는 추가 정규화 목표 없이 BFM의 잠재 공간 해석 가능성을 위한 간결한 해법을 제공한다.</p>
+<h2 id="_9">실험과 결과</h2>
+<h3 id="3m-bfm">기준 비교(전신 제어, 3M 파라미터 BFM)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>BONES Succ</th>
+<th>BONES G-MPKPE</th>
+<th>Ours Succ</th>
+<th>Ours G-MPKPE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GMT</td>
+<td>0.4407</td>
+<td>0.5674</td>
+<td>0.0855</td>
+<td>1.8693</td>
+</tr>
+<tr>
+<td>TWIST</td>
+<td>0.4226</td>
+<td>0.6212</td>
+<td>0.0831</td>
+<td>2.2744</td>
+</tr>
+<tr>
+<td>SONIC†</td>
+<td>0.9239</td>
+<td>0.1740</td>
+<td>0.5937</td>
+<td>0.5035</td>
+</tr>
+<tr>
+<td>BFM-Bym</td>
+<td>0.9644</td>
+<td>0.1005</td>
+<td>0.9709</td>
+<td>0.1224</td>
+</tr>
+<tr>
+<td>BFM-Local</td>
+<td>0.7286</td>
+<td>0.2281</td>
+<td>0.2553</td>
+<td>0.4731</td>
+</tr>
+<tr>
+<td>BFM-Global</td>
+<td>0.9677</td>
+<td>0.0798</td>
+<td>0.9776</td>
+<td>0.0915</td>
+</tr>
+</tbody>
+</table>
+<p>전역 모드에서 G-MPKPE가 GMT 대비 82% 감소(표 내 수치 0.5674→0.0798로 계산). † 무작위 샘플링된 BONES 테스트 세트가 SONIC 훈련 세트와 겹칠 수 있음을 표시.</p>
+<h3 id="020">잠재 공간 견고성(노이즈 수준 0→20)</h3>
+<table>
+<thead>
+<tr>
+<th>테스트 세트</th>
+<th>Succ (0→20)</th>
+<th>G-MPKPE (0→20)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BONES</td>
+<td>0.9717→0.9646</td>
+<td>0.0835→0.1067</td>
+</tr>
+<tr>
+<td>Ours</td>
+<td>0.9836→0.9400</td>
+<td>0.0856→0.1387</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">아키텍처 스케일링</h3>
+<ul>
+<li>Humanoid Transformer S(0.41M)부터 XL(9.91M)까지: 중간 규모 M(3.00M)이 훨씬 더 큰 MLP(11.86M)와 동등하거나 더 나은 성능에 도달하며, 더 키우면 수익이 체감한다.</li>
+<li>모델 용량 증가는 서로 다른 제어 모드의 잠재 표현을 수렴시키지만(그림 11), 모든 모드가 일관되게 향상되지는 않으며 일부 모드는 적정 규모에서 조기 포화된다.</li>
+</ul>
+<h3 id="_11">온라인 정책 스케일링</h3>
+<ul>
+<li>최대 구성(64 GPU, rollout 64)이 거의 모든 실험에서 최고 성능을 달성한다. 너비나 깊이만 단독으로 확장하면 항상 일관된 개선이 나타나지 않으며, 둘의 균형이 필요하다.</li>
+</ul>
+<h2 id="_12">경계와 한계</h2>
+<p>논문은 아래 외에 다른 한계를 명시적으로 나열하지 않았다. 저자는 통합 제어 인터페이스가 가장 적절한 추상화인지 여전히 불분명하며, 이러한 모드가 미래의 고수준 정책과 어떻게 통합되어야 하는지도 불분명함을 인정한다. 행동 커버리지의 정량적 측정은 본질적으로 공유 클러스터 공간을 구축하는 데 사용되는 참조 운동 선택에 의존하며, 유한한 데이터셋이 모든 가능한 행동을 완전히 포함할 수는 없고 희귀하고 긴꼬리 행동 패턴은 불가피하게 누락된다. 확장 연구는 LLM에 비해 여전히 제한적이다. 인간형 제어는 성숙한 대규모 사전 훈련 인프라가 부족하고, 실제 배포 제약(50Hz 이상의 추론 빈도 유지 및 고수준 통합 예산 확보 필요)이 파라미터 수의 무한 증가를 제한한다. 저자는 세밀한 행동 커버리지를 어떻게 달성할지에 답하지 않고, 유한한 훈련 세트를 큐레이션하여 데이터 효율성과 행동 커버리지의 균형을 맞추는 더 의미 있는 문제를 제기한다.</p>
+<h2 id="_13">공학적 시사점</h2>
+<p>재현 시 가장 먼저 확인할 세 가지: <strong>데이터 파티션의 행동 커버리지</strong> — 논문의 K-Means 프로세스(200,000개 특징, 2,000개 클러스터)로 자체 훈련 세트의 점유율이 0.9995 수준인지 검증하고, 0.98 미만이면 성능 향상이 모델 용량보다 데이터 다양성에 의해 제한될 것이다. <strong>온라인 정책의 너비-깊이 균형</strong> — GPU 수나 rollout 길이만 단독으로 늘리면 무효하거나 오히려 해로울 수 있으므로, 먼저 32/48/64 세 수준의 그리드 탐색으로 균형점을 찾은 후 대규모 훈련에 투자할 것. <strong>조기 종료 임계값 0.5미터와 RSI의 조합</strong> — 이는 훈련 안정성의 핵심이며, RSI를 제거하면 실패 궤적의 그래디언트 노이즈가 수렴을 크게 지연시킨다.</p>
+<p>가장 쉽게 실수하는 지점: 첫째, 제어 모드 마스크의 샘플링 방식 — 베르누이 독립 활성화(확률 0.5)를 사용하지 말고 논문의 8가지 대표 모드를 사용해야 한다. 그렇지 않으면 정책이 특정 링크 조합에 편향된다. 둘째, RMSNorm 투영에서 단위 초구면을 얻기 위해 곱셈 스케일링 인자를 제거해야 하며, 그렇지 않으면 잠재 공간 구조화 특성(국소성, 전역 조직화)이 퇴화한다. 셋째, 평가 시 전역·국소 모드의 오차 계산 방식이 다르다 — 국소 모드는 수평 이동 오프셋과 항로 차이를 제거하고(L-MPKPE), 전역 모드는 유지한다(G-MPKPE). 둘을 혼동하면 컨트롤러 성능을 잘못 판단하게 된다. 실제 로봇 배포 시 고수준 추론은 TensorRT 가속으로 50Hz를 유지하고, 저수준 Unitree SDK2는 200Hz로 실행하며, 둘 사이는 Wi-Fi TCP로 전송하고 타임스탬프 기준 버퍼링을 사용한다. 지연 지터는 전역 추적 정밀도에 직접 영향을 미친다.</p>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">사용</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_paper_nvidia_gr00t_n1_2025/">NVIDIA GR00T N1</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_scaling_behavior_foundation_model_humano_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_nvidia_gr00t_n1_2025/">
+          <span class="entry-type">방법</span>
+          <h3>NVIDIA GR00T N1</h3>
+          <p>VLA + 확산 트랜스포머 액션 헤드를 갖춘 범용 휨로봇용 오픈 파울데이션 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">문제 형식화와 학습 패러다임</a></li>
+<li><a href="#_5">상태와 아키텍처 설계</a></li>
+<li><a href="#_6">보상과 훈련 안정성</a></li>
+<li><a href="#_7">데이터와 스케일링</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험과 결과</a><ul>
+<li><a href="#3m-bfm">기준 비교(전신 제어, 3M 파라미터 BFM)</a></li>
+<li><a href="#020">잠재 공간 견고성(노이즈 수준 0→20)</a></li>
+<li><a href="#_10">아키텍처 스케일링</a></li>
+<li><a href="#_11">온라인 정책 스케일링</a></li>
+</ul>
+</li>
+<li><a href="#_12">경계와 한계</a></li>
+<li><a href="#_13">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

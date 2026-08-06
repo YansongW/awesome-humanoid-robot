@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>受限环境下有限感知的多机器人容错协调 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">受限环境下有限感知的多机器人容错协调</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>受限环境下有限感知的多机器人容错协调</h1>
+      <p class="entry-name-en">Fault-Tolerant Multi-Robot Coordination with Limited Sensing within Confined Environments</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">量产制造</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.15036v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种名为Active Contact Response (ACR)的去中心化容错方法，使机器人在有限感知与狭窄环境中通过动态接触图区分故障同伴，并主动将其推至非阻塞位置。在三个机器人协作挖掘黏性颗粒的隧道实验中，ACR在30分钟内挖掘量相比被动基线方法提升近一倍。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.15036" target="_blank" rel="noopener">Fault-Tolerant Multi-Robot Coordination with Limited Sensing within Confined Environments</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>针对多机器人系统中个体故障影响群体性能的问题，本文提出ACR方法，允许机器人在缺乏全局信息与直接通信时，仅通过物理接触交互实现容错。每个机器人维护以自我为中心的动态接触图，评估接触对象是否为故障静止同伴，并选择主动推动或被动避让。实验在受限隧道环境中进行，三个自主机器人配备接触感知与抗碰撞能力，协作挖掘黏性模型颗粒。结果显示ACR显著缩短系统从故障中恢复的时间，使集体挖掘性能退化最小化。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法核心</h3>
+<ul>
+<li><strong>Active Contact Response (ACR)</strong>：去中心化算法，每个机器人基于自身接触传感器构建动态接触图，实时判断接触对象状态。</li>
+<li><strong>行为决策</strong>：若判定接触为故障静止同伴，机器人主动将其推至较少阻碍的配置；否则采用被动避让策略。</li>
+<li><strong>适用条件</strong>：无需全局信息或直接通信，仅依赖局部物理交互，适用于传感受限与空间狭窄环境。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>硬件平台</strong>：三个自主移动机器人，配备接触传感器与碰撞容忍机械结构。</li>
+<li><strong>任务场景</strong>：在受限隧道中协作挖掘黏性模型颗粒（cohesive model pellets）。</li>
+<li><strong>对比基线</strong>：被动避让方法（仅避免碰撞，不主动干预故障机器人）。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>挖掘效率</strong>：30分钟实验后，ACR方法挖掘的颗粒数量接近被动基线方法的两倍。</li>
+<li><strong>故障恢复</strong>：ACR显著缩短系统因机器人故障导致的性能下降时间，维持集体挖掘连续性。</li>
+<li><strong>性能退化</strong>：相比被动方法，ACR使故障后的群体性能退化幅度最小化。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>本文证明，在受限与极端环境中，利用局部、社交与物理交互可有效增强多机器人系统的容错性与协调能力。ACR方法为无全局通信场景下的群体鲁棒性提供了新思路。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2505.15036v1</li>
+</ul>
+    </section>
+    
+
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法核心</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+
+</body>
+</html>

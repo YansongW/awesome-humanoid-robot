@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WCM: World-Cognition Model for Generalizable Human-Robot Interaction · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WCM: World-Cognition Model for Generalizable Human-Robot Interaction</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>WCM: World-Cognition Model for Generalizable Human-Robot Interaction</h1>
+      <p class="entry-name-en">WCM: World-Cognition Model for Generalizable Human-Robot Interaction</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>WCM（World-Cognition Model）是一个以人为中心的具身智能体框架，基于 SLAK 四层架构（Sensing, Logic, Action, Knowledge）和异步运行时构建，旨在让机器人在物理任务执行中具备可解释、可干预、可教学的交互能力。核心贡献在于将交互过程本身转化为推理监督信号，通过 CoT 蒸馏和人在环教学模式，在九个真实世界任务上达到 73.8% 的平均成功率，并展示了超出训练任务的迁移能力。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.22999" target="_blank" rel="noopener">arXiv:2607.22999 WCM: World-Cognition Model for Generalizable Human-Robot Interaction</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>当前机器人控制的主流范式——无论是 VLA 策略还是基于世界模型的规划器——都将语言视为动作预测的条件信号或内部推理的隐式载体，用户对“机器人为何选择这个动作”缺乏可见性，也无法在执行过程中实时重定向或纠正。这导致一个根本性错位：语言智能体在软件中能流畅对话，但机器人一旦进入物理世界，交互能力就退化为单向指令执行。WCM 真正改变的，是让语言从“条件输入”升级为“持久交互通道”——用户可以在执行中提问、干预、教导，而机器人的决策过程不再是黑箱。</p>
+<p>另一个关键改变在于训练信号的来源。VLA 策略通常依赖遥操作采集的状态-动作轨迹，这种监督只告诉模型“做了什么”，不告诉“为什么这么做”。WCM 将决策记录（含推理轨迹、预期结果、实际结果）作为监督信号，使得交互本身——包括失败、纠正和教学——都能转化为可复用的推理经验。这不仅是架构调整，更是数据范式的转变：机器人不再只是执行者，而是能从与人的每一次互动中学习的系统。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">架构分层与状态交换</h3>
+<p>WCM 基于 SLAK 架构，将感知、推理、控制、记忆分为四个显式层，通过显式状态交换通信，而非端到端隐藏中间过程。Sensing 层将多模态传感器流（视觉、深度、音频、IMU、力/力矩）转换为结构化场景状态 s_t，包含局部 3D 结构、物体关系、占用、语义线索，以及像素级和部件级交互线索（抓取、打开、放置、丢弃）和粗略物理属性（刚性、易碎性、可抓取性）。</p>
+<h3 id="_4">增量式“计划–推理–验证”循环</h3>
+<p>Logic 层在步骤 t 的决策上下文为 x_t = (s_t, u_t, m_t)，其中 s_t 为场景状态，u_t 为用户指令，m_t 为从 Knowledge 检索的任务记忆。模型 f_θ 产生推理轨迹、下一动作和预期结果：
+- (r_t, a_t, ô_t) = f_θ(x_t)
+- 验证：v_t = 1 若 Δ(o_t, ô_t) ≤ ε，否则 v_t = 0（o_t 为实际结果，Δ 为失配度量，ε 为阈值）</p>
+<p>若验证通过则继续，否则从更新状态重新推理或向用户请求澄清。这种设计避免了预先提交完整任务脚本，使机器人能应对执行中的不确定性。</p>
+<h3 id="_5">异步运行时与动作丢弃</h3>
+<p>异步运行时解耦推理、执行和状态更新，允许推理、对话和执行并发进行。提交队列动作前和执行后，使用最新场景状态、用户输入和实际结果执行验证检查；若上下文不再匹配预期，丢弃过期动作并让 Logic 从更新状态重新推理。这是提升响应性和鲁棒性的关键机制。</p>
+<h3 id="cot">CoT 蒸馏管道</h3>
+<p>每个决策记录 e = {d_t}_{t=1}^{T}，d_t = (s_t, u_t, m_t, r_t, a_t, ô_t, o_t)。数据来源包括自主执行（成功和失败）和人类引导教学片段。离线精炼流程产生精炼 CoT 示例 D'_auto = R(D_auto) 和 D'_teach = R(D_teach)。蒸馏目标为：
+- L_distill(θ) = L_auto(θ) + λ·L_teach(θ)，其中 λ ≥ 1 控制教学示例权重</p>
+<p>更强的模型集成通过投票或共识审查记录、去除绕路、纠正不一致决策路径。与 VLA 式状态-动作轨迹训练不同，WCM 使用决策记录作为推理监督而非运动动作监督。</p>
+<h3 id="_6">人在环教学模式</h3>
+<p>用户通过自然语言逐步引导机器人（指示关注什么、对哪个物体或部件操作、何时进入下一阶段），无需低层遥操作。教学片段记录与自主执行相同的逐步决策格式，并附加显式人类指导和反馈，在蒸馏中由 λ 加权。</p>
+<h2 id="_7">关键创新</h2>
+<p><strong>1. 决策记录作为推理监督而非动作监督</strong>：这是与 VLA 范式的根本区别。VLA 学习“状态→动作”映射，WCM 学习“状态+指令+记忆→推理轨迹+动作+预期结果”。这使得模型不仅知道做什么，还知道为什么做，从而支持可解释中断和用户干预。重要性在于：推理监督天然包含失败案例的纠正路径，使机器人能从错误中学习，而不仅仅是模仿成功轨迹。</p>
+<p><strong>2. 异步运行时与验证循环的工程创新</strong>：将推理、执行、状态更新解耦，并在动作提交前后进行验证检查，过期动作被丢弃。这解决了真实世界中“计划赶不上变化”的核心问题——场景状态在推理和执行之间可能已改变。消融实验显示，移除异步运行时使端到端时间增加 1.4–1.7×（由表内数值 36→61、30→47、165→254、46→63、34→49 计算），验证了其效率价值。</p>
+<p><strong>3. 教学模式的轻量性</strong>：用户通过自然语言引导而非遥操作，降低了交互门槛。教学片段在蒸馏中由 λ ≥ 1 加权，且短期存入 Knowledge 复用、长期蒸馏进推理模型。这使得“教一次”能产生持久能力提升——Screwdriver-to-Drawer 任务从教学前低于 20% 提升至教学后 69%，CoT 蒸馏后进一步升至 82%。</p>
+<h2 id="_8">实验与结果</h2>
+<h3 id="_9">总体表现</h3>
+<p>WCM 在九个真实世界人机交互任务上达到 <strong>73.8%</strong> 平均成功率，覆盖物体检索、交接、工具使用、抽屉操作和垃圾处理。四个任务从 CoT 微调中留出但仍成功，展示迁移能力。</p>
+<h3 id="x-square-wall-oss-table-ii">与 X-Square WALL-OSS 对比（Table II）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>WCM</th>
+<th>X-Square</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平均移动时间 (s)</td>
+<td>38.5</td>
+<td>103.5</td>
+</tr>
+<tr>
+<td>平均 GPU 忙碌时间 (s)</td>
+<td>22.0</td>
+<td>103.5</td>
+</tr>
+<tr>
+<td>平均成功率 (%)</td>
+<td>88.0</td>
+<td>论文未明确</td>
+</tr>
+</tbody>
+</table>
+<p>WCM 在移动时间和 GPU 忙碌时间上均显著优于对比系统，但作者承认因机器人本体、运动学、传感器和执行栈不同，该对比是说明性的而非受控基准。</p>
+<h3 id="table-iii">消融实验（Table III）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>WCM 时间 (s)</th>
+<th>w/o Async 时间 (s)</th>
+<th>WCM 成功率 (%)</th>
+<th>w/o Sensing 成功率 (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hand me the green ratchet</td>
+<td>36</td>
+<td>61</td>
+<td>64</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Grab me the water bottle</td>
+<td>30</td>
+<td>47</td>
+<td>83</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Take the screwdriver to the drawer</td>
+<td>165</td>
+<td>254</td>
+<td>69</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Put the cup in the trash can (Outdoor)</td>
+<td>46</td>
+<td>63</td>
+<td>67</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Put the bottle in the trash can</td>
+<td>34</td>
+<td>49</td>
+<td>64</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<p>移除异步运行时使端到端时间增加 1.4–1.7×（由表内数值 b→a 计算）。将 Sensing 替换为普通 VLM 和 2D grounding 后，Screwdriver-to-Drawer 成功率从 69% 降至 0%，说明结构化场景状态对复杂操作至关重要。</p>
+<h3 id="_10">教学模式效果</h3>
+<p>最难任务“Take the screwdriver to the drawer”教学前低于 20%，交互教学后达 69%，蒸馏后升至 82%。这验证了教学+蒸馏的完整闭环有效性。</p>
+<h2 id="_11">边界与局限</h2>
+<p>作者明确承认当前受硬件限制，评估为案例研究性质而非受控基准测试。与 X-Square 的对比因机器人本体、运动学、传感器和执行栈不同，仅为说明性结果。常规 VLA 策略通常不将连续对话、可解释中断和教学模式视为核心闭环能力，因此 Table I 仅报告 WCM 数据，缺乏同条件下的直接对照。论文未明确 WCM 在更复杂场景（如多机器人协作、非结构化动态环境）中的表现，也未报告模型规模、训练数据量等关键复现参数。此外，所有实验在单一硬件平台（低成本移动操作平台）上完成，结论在高端平台或不同形态机器人上的泛化性论文未明确。</p>
+<h2 id="_12">工程启示</h2>
+<p>复现 WCM 时，最先要核对的是 Sensing 层的实现质量——消融实验显示，将 Sensing 替换为普通 VLM 和 2D grounding 后，复杂任务成功率直接归零，说明结构化场景状态（含部件级交互线索和物理属性）是整个系统的地基。其次，异步运行时的实现细节（动作丢弃时机、验证阈值 ε 的设定）对端到端时间影响显著，建议先在小规模任务上校准 ε 再扩展到全任务套件。</p>
+<p>最容易踩坑的地方在于 CoT 蒸馏的数据精炼环节：作者使用更强的模型集成通过投票或共识审查记录、去除绕路、纠正不一致决策路径，这一步骤的质量直接决定蒸馏效果。如果精炼不当，失败记录可能引入噪声而非纠正信号。另外，教学模式的 λ 权重（λ ≥ 1）需要根据教学片段与自主数据的比例仔细调参，λ 过大可能导致模型过度依赖人类指导而丧失自主推理能力。硬件方面，完整机器人成本低于 $2,000，推理在共享 NVIDIA RTX 5090 上离板运行，复现时需注意网络延迟对异步运行时的影响——本地网络质量可能成为瓶颈。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.22999</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wcm_world_cognition_model_generalizable_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">架构分层与状态交换</a></li>
+<li><a href="#_4">增量式“计划–推理–验证”循环</a></li>
+<li><a href="#_5">异步运行时与动作丢弃</a></li>
+<li><a href="#cot">CoT 蒸馏管道</a></li>
+<li><a href="#_6">人在环教学模式</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#_9">总体表现</a></li>
+<li><a href="#x-square-wall-oss-table-ii">与 X-Square WALL-OSS 对比（Table II）</a></li>
+<li><a href="#table-iii">消融实验（Table III）</a></li>
+<li><a href="#_10">教学模式效果</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

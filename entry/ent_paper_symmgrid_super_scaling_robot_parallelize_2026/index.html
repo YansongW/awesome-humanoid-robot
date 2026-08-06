@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception</h1>
+      <p class="entry-name-en">SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egocentric-Exocentric Visual Perception</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">草稿</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>SymmGrid 是一个面向真实机器人上深度强化学习（on-robot RL）的轨迹级数据增强框架，通过并行化平移对称性（branched symmetries）超缩放数据生成，并针对自我中心（egocentric）与外部中心（exocentric）视觉分别采用指针复用与单应性（homography）扭曲策略。作者在 Franka 机器人上验证了插销、线缆布线与物体搬运三类任务，相比 SOTA 基线 SERL 实现了 1.37–2.17 倍的墙钟训练收敛加速与 1.09–1.27 倍的评估成功率提升。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.26985" target="_blank" rel="noopener">arXiv:2607.26985 SymmGrid: Super-Scaling On-Robot Learning with Parallelized Symmetries and Egoce</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 on-robot 学习方法（如 SERL）的墙钟训练时间约为 20–180 分钟，且通常需要约 20 个演示启动，这种速度不足以支撑野外快速部署。作者认为瓶颈不仅在于样本效率，更在于每个物理交互产生的数据量太少——每次真实转移只能为回放缓冲区贡献一条经验，而深度 RL 恰恰需要海量数据。SymmGrid 真正改变的是“数据生成”的粒度：它不再依赖算法在样本效率上的微调，而是通过数学上可容许的对称变换，将每一次物理转移在逻辑上“复制”为数百条等价经验，从而在相同墙钟时间内大幅提高回放缓冲区的周转率与多样性。这一思路将加速问题从“如何更省地学”转向“如何更便宜地造数据”，且不改变底层 RL 算法（仍为 SAC 类离策略方法），因此具有即插即用的工程价值。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">对称树与网格生成</h3>
+<ul>
+<li>将 MDP 建模为对称树 𝒢=(V,E)，深度 h，顶点 v_k 描述姿态 x∈ℝⁿ，通过仿射变换 T_k(x)=Ax+t_k 生成，其中 A∈O(n) 为正交群成员，t∈ℝⁿ 为平移。</li>
+<li>采用恒定分支策略 b_const(0)，产生 K×K 网格几何结构（K∈ℤ），例如 K=27 时共 729 个顶点（含原始轨迹），所有变换并行计算。</li>
+<li>对称算子 σ(·):T_k(·)=I(·)+t_k，仅作用于状态的位置分量与动作（动作变换平凡：σ_{t_k}(a)=a），即 σ_{t_k}(τ)=(σ_{t_k}(s), a)。</li>
+</ul>
+<h3 id="symws">对称工作空间（SymWS）</h3>
+<ul>
+<li>定义方形 SymWS，始终以末端执行器位置为中心，宽度可调（如 0.3 m 或 0.175 m）。</li>
+<li>分支定位由 t_{k_x,k_y} 控制：t_{k_x,k_y}=SymWS_(0,0)+(2<em>b_{i,j}-1)</em>SymWS/(2*b_{c_h})（公式 1），其中 SymWS_(0,0)=s_(x,y,·)-SymWS_width/2。</li>
+</ul>
+<h3 id="vs">视觉处理：自我中心 vs 外部中心</h3>
+<ul>
+<li>自我中心：视觉场景在对称分支下不变，使用基于指针的系统避免复制相同图像，仅修改原始状态图像 K² 次。</li>
+<li>外部中心：全局固定相机无法随分支移动，需在采样时通过单应性扭曲图像。单应性 H(Δ)=MT(Δ)M⁻¹（公式 2），利用校准矩阵 M 将平面齐次坐标映射到图像像素坐标（公式 3），用 OpenCV 的 findHomography() 计算。采用反向映射（backward mapping）避免空洞，边缘像素复制为填充策略。</li>
+<li>回放缓冲区附加索引，指示该转换经历的变换，采样时用索引提取对应变换并就地计算。</li>
+</ul>
+<h3 id="_4">网络与训练</h3>
+<ul>
+<li>预训练 ResNet-10 视觉骨干，连接本体感觉信息，通过 2 层 MLP 处理策略和 Q 网络。</li>
+<li>策略输出 6D 或 7D 末端执行器增量姿态，角度更新限制在 ±0.01 rad（滚转/俯仰）与 ±π/6（偏航），仅允许绕 z 轴旋转。</li>
+<li>使用 RLPD 算法，20 个演示启动（对象重定位 30 个），回放缓冲区 360 万条目（3.6），采样 50% 来自先验与在线数据。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>轨迹级并行化对称性</strong>：不同于常见的图像级增强（如随机裁剪、颜色抖动），SymmGrid 在轨迹层面施加全局仿射变换，且变换是 MDP 的不变映射（保持奖励不变）。这使得增强数据不仅改变观测外观，还对应着物理上可执行的状态-动作对，从而让策略在局部利用全局学习的动力学。</li>
+<li><strong>双视觉模态的统一处理</strong>：自我中心场景下平移对称性天然成立，采用指针复用避免图像复制；外部中心场景下通过预计算单应性矩阵（H_b(Δ)=MT_b(Δ)M⁻¹）在采样时实时扭曲图像。这一设计使得框架能同时覆盖腕装相机与全局固定相机，且计算开销可控（仅修改原始图像 K² 次）。</li>
+<li><strong>计算与内存效率</strong>：利用恒定分支中反向映射可预先计算的特性，避免每次调用 findHomography() 的重复计算；回放缓冲区仅存储索引而非复制图像，显著降低内存占用。这使得 729 个对称分支的并行生成在单张 RTX 4070 上即可完成。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<p>实验在真实 Franka FR3 机器人上进行，基线为 SERL（RLPD 算法，阻抗控制器 1K Hz）。评估指标为 50 个样本的平均成功率（训练）与 50 次任务尝试的成功率（评估），并采用 nAUC（归一化曲线下面积）衡量整体效率。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>指标</th>
+<th>SERL</th>
+<th>SymmGrid</th>
+<th>变化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Peg insertion</td>
+<td>训练收敛时间</td>
+<td>26 min</td>
+<td>18.5 min</td>
+<td>1.41× 加速（减少 28.8%）</td>
+</tr>
+<tr>
+<td>Peg insertion</td>
+<td>90% 成功率时间</td>
+<td>20.13 min</td>
+<td>15.9 min</td>
+<td>26.6% 加速</td>
+</tr>
+<tr>
+<td>Peg insertion</td>
+<td>nAUC（3500 步）</td>
+<td>0.499</td>
+<td>0.607</td>
+<td>1.22× 增加</td>
+</tr>
+<tr>
+<td>Cable routing</td>
+<td>训练收敛（98%）</td>
+<td>25 min 内未达（最大 74.8%）</td>
+<td>22.8 min</td>
+<td>论文未明确</td>
+</tr>
+<tr>
+<td>Cable routing</td>
+<td>90% 成功率时间</td>
+<td>20.13 min</td>
+<td>15.9 min</td>
+<td>21% 时间减少</td>
+</tr>
+<tr>
+<td>Cable routing</td>
+<td>nAUC（6000 步）</td>
+<td>0.58</td>
+<td>0.63</td>
+<td>9.0% 增加</td>
+</tr>
+<tr>
+<td>Object relocation</td>
+<td>训练收敛（92%）</td>
+<td>130.0 min</td>
+<td>94.6 min</td>
+<td>37.4% 加速</td>
+</tr>
+<tr>
+<td>Object relocation</td>
+<td>10k 步评估成功率</td>
+<td>74.7%（前向）/ 79.3%（后向）</td>
+<td>99.3% / 95.3%</td>
+<td>增益 33.0% / 20.2%</td>
+</tr>
+<tr>
+<td>Object relocation</td>
+<td>nAUC</td>
+<td>0.1911</td>
+<td>0.494</td>
+<td>2.59× 比率</td>
+</tr>
+</tbody>
+</table>
+<p>关键结果解读：Peg insertion 中 SymmGrid 在 20.13 分钟达到 96.4% 成功率（SERL 在 22.7 分钟，1.28× 加速）；Cable routing 中 SymmGrid 在 11.0 分钟达到 SERL 23.9 分钟才实现的 78.9% 成功率（117.3% 加速）；Object relocation 中 SymmGrid 在 5851 步达到 SERL 10000 步的 60% 成功率（70% 改进）。值得注意的是，硬件对比中 SymmGrid 使用 RTX 4070（29.1 TFLOP FP32），而 SERL 原始结果使用 RTX 4090（82.6 TFLOP），计算能力相差 2.84 倍，带宽相差 2 倍（504 vs 1008 GB/s），SymmGrid 在更弱硬件上仍取得加速，进一步凸显方法效率。</p>
+<h2 id="_7">边界与局限</h2>
+<ul>
+<li>仅使用纯平移变换，未涉及旋转或其他仿射变换；对于需要旋转对称性的任务（如拧螺丝），框架需扩展。</li>
+<li>外部中心场景中，全局变换会同时作用于代理与对象，背景场景与多深度（桌面、托盘、物体、机器人）引入视差、插值与边界伪影；增大网格会降低未变形观测比例，使缓冲区分布偏离真实观测。</li>
+<li>Object relocation 的最佳配置（3 分支、0.175 m 工作空间）与另两个任务（27 分支、0.3 m）不同，表明外中心场景下对称性增益有限，参数需逐任务调优。</li>
+<li>Cable-routing 评估结果存在较大散布，作者承认可能需要更多种子或进一步分析。</li>
+<li>未实现光随机化（RLPD 不实现），对光照变化敏感，需一致照明才能成功训练。</li>
+<li>仅处理 RGB 图像与本体感觉，未涉及点云等更复杂表示。</li>
+<li>论文未明确提及仿真训练或迁移学习、人形机器人实验及多任务泛化。</li>
+</ul>
+<h2 id="_8">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：先确认对称工作空间（SymWS）宽度与分支数 K 的匹配关系——公式 1 中 t_{k_x,k_y} 的边界条件直接决定网格覆盖范围，若 SymWS 超出机器人实际工作空间，增强数据将对应不可达状态，导致策略学习失效。</li>
+<li><strong>外中心场景最易踩坑</strong>：单应性校准必须使用与学习系统相同参考坐标系（末端执行器框架），且校准点需跨越整个工作空间（如 20 个非共线点，RMSE 1.387 px）。若校准误差超过 3 px（内点最大误差 2.240 px），扭曲图像将引入系统性偏差，建议先单独验证单应性精度再启动训练。</li>
+<li><strong>回放缓冲区比例监控</strong>：增大 K 会降低未变形观测比例，导致视觉编码器利用伪影而非几何信息。建议在训练中监控缓冲区中原始观测占比，若低于 50% 需减小 K 或增大缓冲区容量（3.6 百万条目为参考）。</li>
+<li><strong>硬件需求低于预期</strong>：SymmGrid 在 RTX 4070（12 GB VRAM）上即可运行，但需注意反向映射的预计算与 remap() 的就地调用——若在采样时重复调用 findHomography() 会显著拖慢训练，务必预先计算 H_b(Δ) 并缓存。</li>
+<li><strong>下游团队选型建议</strong>：对于自我中心视觉任务（腕装相机），SymmGrid 可直接套用 27 分支与 0.3 m 工作空间；对于外部中心视觉任务，建议从 3 分支与 0.175 m 起步，并优先验证单应性伪影对策略的影响。</li>
+</ul>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.26985</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">提及</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/ent_algorithm_sac/">软演员-评论家（SAC）</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_symmgrid_super_scaling_robot_parallelize_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_sac/">
+          <span class="entry-type">算法</span>
+          <h3>软演员-评论家（SAC）</h3>
+          <p>在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">对称树与网格生成</a></li>
+<li><a href="#symws">对称工作空间（SymWS）</a></li>
+<li><a href="#vs">视觉处理：自我中心 vs 外部中心</a></li>
+<li><a href="#_4">网络与训练</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

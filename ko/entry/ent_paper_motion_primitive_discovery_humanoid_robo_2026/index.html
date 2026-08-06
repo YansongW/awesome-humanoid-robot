@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phase Recognition · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phase Recognition</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phase Recognition</h1>
+      <p class="entry-name-en">Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phase Recognition</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-draft" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled.">초안</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Understanding the computational basis of action recognition is a central challenge in social cognition as well as in human-robot interaction. Inspired by the Mirror Neuron System (MNS), we propose a two-level architecture for motor primitive discovery and online phase recognition applied to the NICO humanoid robot. At the first level, two Self-Organising Maps (SOMs) learn topographic.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18737" target="_blank" rel="noopener">arXiv:2607.18737 Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phas</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 거울 신경계 시스템에서 영감을 받은 이중 계층 아키텍처를 제안하며, NICO 휴머노이드 로봇에서 자기조직화 지도(SOM)를 통해 운동 기본요소를 발견하고, 에코 상태 네트워크(ESN)로 온라인 위상 인식을 구현한다. 핵심 기여는 고유수용감각 신호의 위상적 표현이 고정밀 위상 인식을 지원하기에 충분하다는 것을 검증하고, 추가 컨텍스트 정보(동작, 거리, 접촉)의 이득이 저장소 용량이 증가함에 따라 감소한다는 점이다.</p>
+<h2 id="_2">그것이 바꾸는 것</h2>
+<p>동작 인식 연구는 오랫동안 엔드투엔드 훈련 순환 또는 트랜스포머 아키텍처가 지배해 왔으며, 이러한 방법은 '기본요소 발견'과 '시퀀스 모델링'을 잠재 공간에 결합하여 동작 이해의 두 계층, 즉 기본 운동 기본요소의 라이브러리와 그 구성의 목표 지향 시퀀스를 설명하기 어렵다. 본 논문의 동기는 또 다른 더 높은 정확도의 분류기를 제안하는 것이 아니라, 더 근본적인 질문을 추구한다: 로봇의 현재 운동 위상 구조가 학습된 운동 기본요소의 시간적 역학에 의해 어느 정도 결정되는지, 정확한 온라인 위상 인식을 위해 얼마나 많은 추가 컨텍스트가 필요한지.</p>
+<p>이 작업이 실제로 바꾸는 것은 평가 관점이다—'표현이 충분한지'를 '모델이 더 우수한지'에서 분리한다. 저자는 직접 운동학 ESN이나 현대 시퀀스 모델을 능가한다고 명시적으로 주장하지 않고, 신경과학에서 영감을 받은 SOM의 위상적 표현이 충분한 판별력을 갖는지 테스트한다. '성능 경쟁'이 아닌 '충분성 검증'이라는 이러한 포지셔닝은 SOTA를 추구하는 현재 연구 환경에서 의도적인 반조류이며, 구현 지능의 표현 학습에 해석 가능한 중간 계층을 제공하려 한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">데이터 수집 및 특징 선택</h3>
+<ul>
+<li>물리 기반 Unity 시뮬레이션 환경에서 NICO가 7가지 동작(Pick, Eat, Place, Push, Tap, Point, Wave)을 수행하며, 각 동작은 14개의 물리적으로 다양한 물체에 대해 수행되어 총 4,200회 시행, 필터링 후 1,284,794프레임, 60Hz 기록.</li>
+<li>3단계 특징 선택: 기능별로 51개 열을 제외하고 57개 후보 유지; 프레임 간 Pearson 상관 계수를 계산하여 유사 행렬 R ∈ [0,1]^{57×57} 획득; 거리 행렬 d_ij = 1 − r_ij로 변환 후 Ward 연결 계층적 클러스터링, τ = 0.7에서 절단하여 22개의 비중복 특징 획득.</li>
+</ul>
+<h3 id="som">이중 SOM 위상 매핑</h3>
+<ul>
+<li>A-SOM(13차원): TCP 속도(3), 팔 관절 속도(6), 손바닥 방향 쿼터니언(4), 35×35 그리드.</li>
+<li>H-SOM(9차원): 개구부 및 속도(2), 엄지와 중지 위치(3), 손가락 관절 속도(4), 18×18 그리드.</li>
+<li>윈도우 처리: W=30프레임(0.5초), 스텝 S=15프레임(50% 중첩), 각 윈도우는 평균으로 표현, 위상 레이블은 중심 프레임에서 가져오며, 각 동작당 8,789개 윈도우 총 61,523개.</li>
+<li>Kohonen 업데이트: w_i(t+1) = w_i(t) + α(t) h_{i*i}(t)[x̂(t) − w_i(t)], 가우시안 이웃은 시간에 따라 수축.</li>
+</ul>
+<h3 id="esn">ESN 위상 인식</h3>
+<ul>
+<li>입력은 A-SOM과 H-SOM의 BMU 가중치 벡터 연결: u(t) = [b^A(t), b^H(t)] ∈ R^{22}.</li>
+<li>저장소: N=300 무작위 연결 뉴런, 상태 업데이트 x̃(t) = tanh(W_res x(t−1) + W_in u(t)), x(t) = (1−α)x(t−1) + α x̃(t), 누수율 α=0.50, 스펙트럼 반경 ρ=0.99.</li>
+<li>읽기 계층: 단일 교사 강제 순회로 상태 수집, 처음 W=5단계 워밍업 제외, 릿지 회귀 W_out = (X^T X + λI)^{-1} X^T Y, λ=10^{-4}.</li>
+<li>4가지 컨텍스트 구성 누적 확장: ctx-no(22D) → ctx-act(+동작 one-hot, 29D) → ctx-dst(+정규화 손바닥–물체 거리, 30D) → ctx-all(+접촉 플래그, 31D).</li>
+<li>목표는 27개 위상의 one-hot 인코딩, 추론 시 φ̂(t) = arg max_k [W_out^T x(t)]_k.</li>
+</ul>
+<h3 id="_5">핵심 설계 결정</h3>
+<ul>
+<li>이중 맵 설계는 동작 실행에서 팔 운동과 손 모양의 상보적 정보를 반영.</li>
+<li>H-SOM의 죽은 뉴런(51.5% 활성율)은 용량 낭비가 아닌 동작 섬 사이의 경계로 간주.</li>
+<li>상관 관계는 원본 프레임에서 계산되어 윈도우 크기가 공분산 구조를 오염시키지 않도록 함.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>고유수용감각의 위상적 표현을 기본요소 라이브러리로</strong>: 원시 운동학적 특징을 직접 사용하거나 엔드투엔드로 잠재 표현을 학습하는 대신, 이중 SOM으로 22차원 고유수용감각 특징을 지형적 그리드에 매핑하여 운동 기본요소가 공간적 이웃 관계로 나타나게 한다. A-SOM에서 preshape가 move-to-grasp로 부드럽게 전이되고, H-SOM에서 Point/Tap/Wave/Push가 100% 순수 고립 클러스터를 형성하는 이러한 해석 가능한 위상 조직은 엔드투엔드 모델이 제공하기 어렵다.</p>
+</li>
+<li>
+<p><strong>기본요소 발견과 위상 인식의 명시적 분리</strong>: SOM은 비지도 기본요소 발견을 담당하고, ESN은 시간적 통합과 위상 인식을 담당하며, 둘은 BMU 가중치 벡터로 연결된다. 이러한 모듈식 설계는 '표현 충분성'과 '시간적 모델링 능력'을 독립적으로 분석할 수 있게 하며, 휴머노이드 로봇에서 이 이중 계층 아키텍처를 검증한 최초의 작업이다.</p>
+</li>
+<li>
+<p><strong>컨텍스트 이득의 용량 의존성 발견</strong>: 9가지 하이퍼파라미터 구성 × 4가지 컨텍스트 입력의 36회 실행을 통해 컨텍스트 정보(동작, 거리, 접촉)의 이득이 저장소 용량이 증가함에 따라 단조 감소함을 밝혀냈다—N=30에서 전체 컨텍스트 기여 +4.1 pp, N=1,000에서 +0.60 pp에 불과. 이는 대용량 저장소가 순수 기본요소 시퀀스에서 더 많은 위상 정보를 추출할 수 있음을 시사하며, 자원 할당에 정량적 근거를 제공한다.</p>
+</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<h3 id="_8">주요 결과</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>ctx-no</th>
+<th>ctx-act</th>
+<th>ctx-dst</th>
+<th>ctx-all</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R5(N=300, ρ=0.99, α=0.50)</td>
+<td>93.9%</td>
+<td>94.6%</td>
+<td>94.6%</td>
+<td>94.9%</td>
+</tr>
+<tr>
+<td>R8(N=500, ρ=0.89, α=0.20)</td>
+<td>95.8%</td>
+<td>96.3%</td>
+<td>96.3%</td>
+<td>96.7%</td>
+</tr>
+<tr>
+<td>R9(N=1,000, ρ=0.90, α=0.10)</td>
+<td>96.7%</td>
+<td>96.9%</td>
+<td>96.9%</td>
+<td>97.3%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">핵심 발견</h3>
+<ul>
+<li>저장소 용량이 지배적 요인: 정확도는 N에 따라 단조 증가, N=30에서 ctx-no는 73.6%에 불과, N=1,000에서 96.7% 도달.</li>
+<li>N=300 고정 시 다른 하이퍼파라미터 변경 시 정확도 변화는 최대 0.5 pp로, 용량이 누수율, 스펙트럼 반경보다 더 중요함을 시사.</li>
+<li>컨텍스트 이득은 용량에 따라 감소: N=30에서 전체 컨텍스트 기여 +4.1 pp, N=1,000에서 +0.60 pp에 불과(표 내 77.7−73.6 및 97.3−96.7 계산).</li>
+<li>단일 시행 분석: Eat 동작 ctx-no에서 98.4%(63/64단계), 유일한 오류는 t=18(첫 move-to-grasp 단계); ctx-all에서 100% 달성, 동작 one-hot과 거리 신호가 위상 전환을 한 단계 앞서 감지하는 능력 제공.</li>
+<li>뉴런 수준 모호성: A-SOM BMU (7,18)은 35% move-to-grasp, 23% preshape, 18% closing을 포함하며 지배적 위상이 없고, ESN이 시간적 통합과 이중 스트림 통합으로 해결.</li>
+</ul>
+<h3 id="_10">결과 의미</h3>
+<p>93.86%의 순수 기본요소 시퀀스 위상 인식 정확도는 SOM 위상 표현이 운동 위상 구조를 충분히 포착함을 시사한다. 컨텍스트 이득은 작지만 일관되며 용량에 따라 감소하므로, 대용량 저장소는 기본요소 시퀀스에서 더 많은 시간적 정보를 추출할 수 있고, 소용량 저장소는 외부 컨텍스트 보상에 더 의존함을 나타낸다.</p>
+<h2 id="_11">경계 및 한계</h2>
+<ul>
+<li>모델은 NICO 자체 동작에서만 훈련 및 평가되었으며, 교차 구현 관찰은 다루지 않음—다른 로봇이나 인간 시연으로 확장하려면 시점, 스케일, 구현 차이의 거울 메커니즘 처리가 필요하며, 논문은 명확한 해결책을 제시하지 않음.</li>
+<li>인식이지 예측이 아님: 현재 ESN은 현재 위상을 출력하며 미래 입력을 생성하지 않음; 저자는 기본요소 예측과 폐루프 상상 운동 생성을 향후 작업으로 언급.</li>
+<li>손 제어는 저차원 협동 제어기(4개 스칼라 파라미터가 13개 손가락 관절 구동)를 사용하며, H-SOM의 18×18 그리드와 51.5% 활성율은 이 단순화에 의존할 수 있음; 실제 고차원 손 자유도에서는 위상 구조가 다를 수 있음.</li>
+<li>시뮬레이션 환경은 Unity 물리 엔진 기반이며, 실제 NICO에서 검증되지 않음; 시뮬레이션과 실물의 도메인 차이가 SOM 위상과 ESN 일반화에 영향을 줄 수 있음.</li>
+</ul>
+<h2 id="_12">공학적 시사점</h2>
+<ul>
+<li>재현 시 특징 선택 세부사항을 먼저 확인: 22개 특징 중 A-SOM의 13차원은 TCP 속도, 팔 관절 속도, 손바닥 방향 쿼터니언을 포함하고, H-SOM의 9차원은 개구부, 손가락 위치와 속도를 포함; 상관 관계 계산은 반드시 원본 프레임에서 수행해야 하며, 그렇지 않으면 윈도우 크기가 공분산 구조를 오염시킴.</li>
+<li>가장 함정에 빠지기 쉬운 것은 H-SOM 그리드 크기: 18×18은 협동 제어기가 약 6가지 손姿态을 생성한다는 저차원 가정에 기반하며, 손 제어 전략을 변경하면 그리드 탐색을 다시 해야 함; 죽은 뉴런은 낭비로 간주하지 말 것—동작 섬 사이의 경계이다.</li>
+<li>ESN 훈련 시 반드시 각 시행의 저장소 상태를 재설정하고 처음 W=5단계 워밍업을 제외할 것; 릿지 회귀 λ=10^{-4}는 기본값이지만, R8에서 λ=10^{-7}과 N=500 조합도 유효하므로 용량에 따라 조정 권장.</li>
+<li>컨텍스트 이득이 용량에 따라 감소하는 규칙은: 다운스트림 작업이 지연에 민감하여 소용량 저장소를 사용해야 한다면 동작 one-hot과 거리 신호를 우선 추가할 것; 대용량 저장소(N≥1,000)를 사용할 수 있다면 순수 기본요소 시퀀스로 충분하며 추가 컨텍스트 이득은 제한적.</li>
+<li>단일 시행 분석은 위상 전환 경계(예: t=18의 move-to-grasp 시작)가 가장 오류가 발생하기 쉬운 지점임을 보여주며, 훈련 시 위상 경계 근처 샘플에 가중치를 부여하는 것을 고려할 수 있음.</li>
+</ul>
+    </section>
+    
+
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+              
+            </li>
+            
+            <li>
+              <span class="rel-pill">discusses</span>
+              <span class="rel-arrow">→</span>
+              <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+              
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_motion_primitive_discovery_humanoid_robo_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾸는 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">데이터 수집 및 특징 선택</a></li>
+<li><a href="#som">이중 SOM 위상 매핑</a></li>
+<li><a href="#esn">ESN 위상 인식</a></li>
+<li><a href="#_5">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a><ul>
+<li><a href="#_8">주요 결과</a></li>
+<li><a href="#_9">핵심 발견</a></li>
+<li><a href="#_10">결과 의미</a></li>
+</ul>
+</li>
+<li><a href="#_11">경계 및 한계</a></li>
+<li><a href="#_12">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>
