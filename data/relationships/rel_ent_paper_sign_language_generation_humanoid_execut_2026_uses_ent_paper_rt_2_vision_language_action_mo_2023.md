@@ -1,0 +1,36 @@
+---
+$id: rel_ent_paper_sign_language_generation_humanoid_execut_2026_uses_ent_paper_rt_2_vision_language_action_mo_2023
+$schema: ../schema/v1/relationship_schema.json
+$version: 1
+type: uses
+source:
+  id: ent_paper_sign_language_generation_humanoid_execut_2026
+  name:
+    en: 'From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation'
+    zh: 'From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation'
+target:
+  id: ent_paper_rt_2_vision_language_action_mo_2023
+  name:
+    en: RT-2 Vision-Language-Action Model
+    zh: RT-2 视觉-语言-动作模型
+domains:
+  source_domain: 07_ai_models_algorithms
+  target_domain: 07_ai_models_algorithms
+description:
+  en: 'From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation uses
+    RT-2 Vision-Language-Action Model.'
+  zh: 'From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation使用RT-2
+    视觉-语言-动作模型。'
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-08-06'
+  confidence: medium
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 论文使用视觉语言模型进行手语生成和重定向。'
+sources:
+- id: src_001
+  type: other
+  title: KG body of ent_paper_sign_language_generation_humanoid_execut_2026
+  url: https://kg.rounds-tech.com/entry/ent_paper_sign_language_generation_humanoid_execut_2026/
+  accessed_at: '2026-08-06'
+---
