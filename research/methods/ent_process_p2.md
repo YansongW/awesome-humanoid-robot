@@ -6,7 +6,7 @@ type: method
 names:
   en: Industrial Design and Appearance Engineering (ID / A-Surface)
   zh: 工业设计与外观工程（ID / A-Surface）
-  ko: 工业设计与外观工程（ID / A-Surface）
+  ko: 산업 디자인 및 외관 엔지니어링 (ID / A-Surface)
 summary:
   en: Industrial Design and Appearance Engineering (ID / A-Surface) —— Phase 2 of the humanoid robot product development process,
     covering solution design, implementation verification, and documentation delivery.
@@ -25,8 +25,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

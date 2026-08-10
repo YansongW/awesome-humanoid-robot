@@ -12,8 +12,8 @@ summary:
     to keep warehouse operators in control while automating repetitive transport work.
   zh: The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 2026 for a self-driving pallet jack designed
     to keep warehouse operators in control while automating repetitive transport work.
-  ko: The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 2026 for a self-driving pallet jack designed
-    to keep warehouse operators in control while automating repetitive transport work.
+  ko: 모바일 로봇 회사(Mobile Robot Company)가 반복적인 운송 작업을 자동화하면서도 창고 운영자가 통제권을 유지할 수 있도록 설계된 자율주행 팔레트 잭으로 IFOY
+    2026 올해의 산업용 트럭 상을 수상했습니다.
 domains:
 - 11_applications_markets
 layers:
@@ -34,7 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+    | WP3 marker fix 2026-08-10: summary.ko translated en->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

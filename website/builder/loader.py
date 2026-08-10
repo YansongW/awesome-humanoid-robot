@@ -452,6 +452,27 @@ def dedup_render_body(body: str, summary: str) -> str:
     return "\n".join(k for k in kept if k is not None).strip()
 
 
+# Placeholder cards whose body was never filled ("内容待补" conservative
+# cards). They are kept in research/ for tracking but unpublished: the
+# builder skips them entirely (no entry page, no index/graph/qa records).
+PLACEHOLDER_MARKERS = ("内容待补", "待补充")
+
+
+def is_placeholder_body(body: str) -> bool:
+    """True when the raw markdown body still carries placeholder markers."""
+    return any(m in body for m in PLACEHOLDER_MARKERS)
+
+
+# Hedged wording that marks a weakly-evidenced relation (per data discipline,
+# hedged claims must carry confidence: low).
+HEDGED_WORDS = ("可能", "通常", "或许")
+
+
+def is_hedged_weak(rel: "Relationship") -> bool:
+    """True for low-confidence relations whose evidence notes are hedged."""
+    return rel.confidence == "low" and any(w in rel.notes for w in HEDGED_WORDS)
+
+
 def tokenize(text: str) -> list[str]:
     """Tokenize text for search; English words and CJK characters."""
     text = text or ""
@@ -495,6 +516,8 @@ class Relationship:
     source_name: str
     target_name: str
     description: str
+    confidence: str = ""
+    notes: str = ""
 
 
 @dataclass
@@ -505,6 +528,7 @@ class KGStore:
     incoming: dict[str, list[Relationship]] = field(default_factory=dict)
     lang: str = "zh"
     roadmap: dict[str, Any] = field(default_factory=dict)
+    skipped_placeholders: list[str] = field(default_factory=list)
 
     def load(self, lang: str | None = None) -> None:
         if lang:
@@ -513,6 +537,7 @@ class KGStore:
         self.relationships.clear()
         self.outgoing.clear()
         self.incoming.clear()
+        self.skipped_placeholders.clear()
         self.roadmap = load_roadmap_mapping()
 
         import markdown
@@ -537,6 +562,11 @@ class KGStore:
             front, body = split_frontmatter(text, source=str(path))
             eid = front.get("$id")
             if not eid:
+                continue
+            if is_placeholder_body(body):
+                # Unpublished placeholder card: no entry page, no index/graph
+                # records; relations pointing at it render as plain text.
+                self.skipped_placeholders.append(str(eid))
                 continue
 
             names = front.get("names", {})
@@ -585,6 +615,7 @@ class KGStore:
                 source_id = source.get("id", "") if isinstance(source, dict) else ""
                 target_id = target.get("id", "") if isinstance(target, dict) else ""
                 description = pick_lang(front.get("description", {}), self.lang)
+                verification = front.get("verification", {}) or {}
 
                 rel = Relationship(
                     id=str(rid),
@@ -594,10 +625,17 @@ class KGStore:
                     source_name=self.entries.get(source_id, Entry(id=source_id, type="", name=source_id, name_en="", summary="", domains=[], layers=[], tags=[], body="", body_html="", frontmatter={}, path=Path())).name,
                     target_name=self.entries.get(target_id, Entry(id=target_id, type="", name=target_id, name_en="", summary="", domains=[], layers=[], tags=[], body="", body_html="", frontmatter={}, path=Path())).name,
                     description=description,
+                    confidence=str(verification.get("confidence", "") or ""),
+                    notes=str(verification.get("notes", "") or ""),
                 )
                 self.relationships.append(rel)
                 self.outgoing.setdefault(source_id, []).append(rel)
                 self.incoming.setdefault(target_id, []).append(rel)
+
+        if self.skipped_placeholders:
+            print(f"Skipped {len(self.skipped_placeholders)} placeholder entries "
+                  f"({'/'.join(PLACEHOLDER_MARKERS)}); their relation edges are kept "
+                  f"but never linked or exported.")
 
     def related_entries(self, eid: str) -> list[Entry]:
         ids = set()

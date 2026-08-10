@@ -6,7 +6,7 @@ type: paper
 names:
   en: 经典视觉骨干与实时检测文献簇（ResNet + YOLO 及相关）
   zh: 经典视觉骨干与实时检测文献簇（ResNet + YOLO 及相关）
-  ko: 经典视觉骨干与实时检测文献簇（ResNet + YOLO 及相关）
+  ko: 클래식 비전 백본 및 실시간 탐지 문헌 클러스터 (ResNet + YOLO 및 관련)
 summary:
   en: 'Conservative card from a lab paper list entry: 经典视觉骨干与实时检测文献簇（ResNet + YOLO 及相关）. No fetchable paper URL was recorded;
     content to be supplemented.'
@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 812 (.staging/ingest_yuanxq). Tier C->conservative. Conservative card:
-    清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.'
+  notes: 'Full ingest from Yuanxq lab paper list row 812 (.staging/ingest_yuanxq). Tier C->conservative.
+    Conservative card: 清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.
+    | WP3 marker fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

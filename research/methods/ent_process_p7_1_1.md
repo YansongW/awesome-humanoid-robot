@@ -6,7 +6,7 @@ type: method
 names:
   en: Selection and import of simulation platform
   zh: 仿真平台选型与导入
-  ko: 仿真平台选型与导入
+  ko: 시뮬레이션 플랫폼 선정 및 도입
 summary:
   en: “Simulation platform selection report”, URDF/SDF import success, basic standing simulation through
   zh: 方法 / 工具：Isaac Sim / Gazebo / MuJoCo / RaiSim / Bullet 对比
@@ -26,8 +26,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

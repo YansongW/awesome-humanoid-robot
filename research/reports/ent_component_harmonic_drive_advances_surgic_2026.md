@@ -14,9 +14,8 @@ summary:
   zh: Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens the company's position as a top supplier
     of surgical robotic motion control components, delivering precision and a compact design to address critical challenges
     for original equipment manufacturers (OEMs).
-  ko: Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens the company's position as a top supplier
-    of surgical robotic motion control components, delivering precision and a compact design to address critical challenges
-    for original equipment manufacturers (OEMs).
+  ko: 하모닉 드라이브(Harmonic Drive)의 LPA 20 통합 서보 액추에이터 출시는 정밀성과 컴팩트한 설계를 제공하여 오리지널 장비 제조업체(OEM)의 핵심 과제를 해결함으로써,
+    수술용 로봇 모션 제어 부품의 최고 공급업체로서의 회사 입지를 강화합니다.
 domains:
 - 11_applications_markets
 layers:
@@ -37,7 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-08'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped component->report on 2026-07-17 by fix_headline_entity_types.py]
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. [retyped component->report on 2026-07-17 by fix_headline_entity_types.py]
+    | WP3 marker fix 2026-08-10: summary.ko translated en->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

@@ -10,7 +10,7 @@ names:
 summary:
   en: Enhancing image quality and visual perception for moving-camera systems
   zh: Enhancing image quality and visual perception for moving-camera systems
-  ko: Enhancing image quality and visual perception for moving-camera systems
+  ko: 이동 카메라 시스템의 이미지 품질 및 시각적 인식 향상
 domains:
 - 11_applications_markets
 layers:
@@ -30,7 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-06'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

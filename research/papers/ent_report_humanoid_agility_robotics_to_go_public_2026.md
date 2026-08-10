@@ -12,8 +12,7 @@ summary:
     deployments
   zh: Transaction expected to create the only U.S. publicly listed pure-play humanoid company with proven, active commercial
     deployments
-  ko: Transaction expected to create the only U.S. publicly listed pure-play humanoid company with proven, active commercial
-    deployments
+  ko: 이 거래는 검증된 활성 상업 배치를 보유한 미국 유일의 상장 순수 휴머노이드 기업을 창출할 것으로 예상됩니다.
 domains:
 - 11_applications_markets
 layers:
@@ -34,7 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

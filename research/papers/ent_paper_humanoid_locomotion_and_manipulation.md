@@ -6,7 +6,7 @@ type: paper
 names:
   en: 人形机器人运动与操作
   zh: 人形机器人运动与操作
-  ko: 人形机器人运动与操作
+  ko: 휴머노이드 로봇 운동 및 조작
 summary:
   en: 'Conservative card from a lab paper list entry: 人形机器人运动与操作 (Georgia Institute
     of Technology、The University of Southern California、Google DeepMind、The AI Institute).
@@ -33,10 +33,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 219 (.staging/ingest_yuanxq).
-    Tier C->conservative. Conservative card: 清单仅提供微信公众号来源文章（未抓取）; only list-registered
-    fields recorded, content to be supplemented. [2026-07-31] id renamed from ent_paper_yuanxq_219
-    (non-compliant slug) by ingest_yuanxq id-fix.'
+  notes: 'Full ingest from Yuanxq lab paper list row 219 (.staging/ingest_yuanxq). Tier C->conservative.
+    Conservative card: 清单仅提供微信公众号来源文章（未抓取）; only list-registered fields recorded, content to be supplemented.
+    [2026-07-31] id renamed from ent_paper_yuanxq_219 (non-compliant slug) by ingest_yuanxq id-fix. | WP3
+    marker fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

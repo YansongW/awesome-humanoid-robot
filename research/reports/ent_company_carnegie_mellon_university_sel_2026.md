@@ -12,8 +12,7 @@ summary:
     technology across two state-of-the-art research facilities
   zh: Partnership equips a world-class robotics program with precision motion capture solutions and cutting-edge active tracking
     technology across two state-of-the-art research facilities
-  ko: Partnership equips a world-class robotics program with precision motion capture solutions and cutting-edge active tracking
-    technology across two state-of-the-art research facilities
+  ko: 파트너십은 세계적 수준의 로봇공학 프로그램에 정밀 모션 캡처 솔루션과 최첨단 능동 추적 기술을 두 곳의 최첨단 연구 시설에 걸쳐 제공합니다.
 domains:
 - 11_applications_markets
 layers:
@@ -33,7 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-08'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+    | WP3 marker fix 2026-08-10: summary.ko translated en->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

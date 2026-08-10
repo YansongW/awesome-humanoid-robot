@@ -17,9 +17,8 @@ summary:
   zh: Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is one of the few industry
     providers that combines advanced multi-sensor calibration and synchronization technologies, a full-stack vision product
     portfolio, and global-scale manufacturing and delivery capabilities.
-  ko: Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is one of the few industry
-    providers that combines advanced multi-sensor calibration and synchronization technologies, a full-stack vision product
-    portfolio, and global-scale manufacturing and delivery capabilities.
+  ko: 로보틱스 및 AI 비전 분야의 깊은 전문성과 광범위한 제품 포트폴리오를 활용하여, Orbbec은 고급 다중 센서 캘리브레이션 및 동기화 기술, 풀스택 비전 제품 포트폴리오, 그리고
+    글로벌 규모의 제조 및 공급 역량을 결합한 몇 안 되는 업계 공급업체 중 하나입니다.
 domains:
 - 11_applications_markets
 layers:
@@ -40,7 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-08'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

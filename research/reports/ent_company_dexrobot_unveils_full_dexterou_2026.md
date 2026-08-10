@@ -14,9 +14,8 @@ summary:
   zh: This year's show features a dedicated Humanoid Robot Pavilion and a sharpened focus on AI-driven industrial automation,
     making it the ideal venue for DexRobot to demonstrate how advanced manipulation and high-fidelity data acquisition are
     becoming practical, affordable, and ready for real-world deployment.
-  ko: This year's show features a dedicated Humanoid Robot Pavilion and a sharpened focus on AI-driven industrial automation,
-    making it the ideal venue for DexRobot to demonstrate how advanced manipulation and high-fidelity data acquisition are
-    becoming practical, affordable, and ready for real-world deployment.
+  ko: 올해 전시회는 전용 휴머노이드 로봇관과 AI 기반 산업 자동화에 대한 집중된 초점을 특징으로 하며, DexRobot이 고급 조작 및 고충실도 데이터 획득이 실용적이고 저렴하며
+    실제 배포에 준비된 방식으로 어떻게 구현되고 있는지 시연하기에 이상적인 장소입니다.
 domains:
 - 11_applications_markets
 layers:
@@ -38,7 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+    | WP3 marker fix 2026-08-10: summary.ko translated en->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

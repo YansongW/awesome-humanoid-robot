@@ -34,13 +34,14 @@ tags:
 - vla
 - api_only_adaptation
 verification:
-  status: unverified
+  status: verified
   reviewed_by: ai
   reviewed_at: '2026-08-04'
   confidence: medium
   notes: New card from deep-read pilot (.staging/deep_read). Full text from arXiv HTML (2607.29172v1); zh six-section interpretation
     by DeepSeek (deepseek-chat, T<=0.3) from the full text with fact guardrails; key numbers spot-checked against the full
     text.
+    深读+数字白名单复核通过 2026-08-10（试点）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。
 sources:
 - id: src_001
   type: paper

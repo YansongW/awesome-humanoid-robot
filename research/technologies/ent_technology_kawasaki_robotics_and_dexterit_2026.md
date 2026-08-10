@@ -12,8 +12,8 @@ summary:
     and Foresight World Model
   zh: RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial robot engineering, Dexterity's Mech hardware,
     and Foresight World Model
-  ko: RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial robot engineering, Dexterity's Mech hardware,
-    and Foresight World Model
+  ko: RL030N 8 DoF 로봇 팔 플랫폼은 Kawasaki Robotics의 산업용 로봇 엔지니어링, Dexterity의 Mech 하드웨어, 그리고 Foresight World
+    Model을 결합합니다.
 domains:
 - 11_applications_markets
 layers:
@@ -33,7 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

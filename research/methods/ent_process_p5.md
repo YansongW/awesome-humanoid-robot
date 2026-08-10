@@ -6,7 +6,7 @@ type: method
 names:
   en: Ontological Structure Engineering and Prototyping (Mechanical Structure)
   zh: 本体结构工程与原型（Mechanical Structure）
-  ko: 本体结构工程与原型（Mechanical Structure）
+  ko: 기계 구조 공학 및 프로토타입(Mechanical Structure)
 summary:
   en: Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process, covering solution design,
     implementation verification, and documentation delivery.
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py. English
-    name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py.
+    English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker
+    fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

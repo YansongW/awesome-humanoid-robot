@@ -1070,6 +1070,18 @@ a:hover { text-decoration: underline; }
   margin-top: 0.2rem;
 }
 
+.rel-missing { color: var(--color-text-muted); }
+
+.weak-relations { width: 100%; }
+
+.weak-relations summary {
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.weak-relations[open] summary { margin-bottom: 0.3rem; }
+
 /* Graph */
 .cy-graph, .full-cy-graph {
   width: 100%;

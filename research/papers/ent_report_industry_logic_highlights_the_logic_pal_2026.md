@@ -10,7 +10,7 @@ names:
 summary:
   en: Revolutionary robot delivers end-to-end automation across supply chains
   zh: Revolutionary robot delivers end-to-end automation across supply chains
-  ko: Revolutionary robot delivers end-to-end automation across supply chains
+  ko: 혁신적인 로봇이 공급망 전반에 걸쳐 종단 간 자동화를 제공합니다.
 domains:
 - 11_applications_markets
 layers:
@@ -30,7 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

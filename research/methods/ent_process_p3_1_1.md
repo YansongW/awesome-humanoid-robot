@@ -6,7 +6,7 @@ type: method
 names:
   en: DOF Configuration and Joint Layout
   zh: DOF 配置与关节布局
-  ko: DOF 配置与关节布局
+  ko: DOF 구성 및 관절 배치
 summary:
   en: DOF configuration table, joint range of motion, joint speed/torque requirements v1
   zh: 设计思考逻辑：腿部 6×2、手臂 7×2、躯干 1–3、头部 2–3、手部 11–22；在满足任务前提下减少复杂度和重量
@@ -26,8 +26,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

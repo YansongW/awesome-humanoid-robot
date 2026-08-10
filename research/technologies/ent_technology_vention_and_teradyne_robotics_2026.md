@@ -12,8 +12,8 @@ summary:
     Isaac open robotics platform, and advanced welding applications enabled by Universal Robots' UR12e and UR20 cobot models.
   zh: Live demonstrations at Automate 2026 showcase the integration, featuring Vention's Rapid Operator AI, powered by NVIDIA
     Isaac open robotics platform, and advanced welding applications enabled by Universal Robots' UR12e and UR20 cobot models.
-  ko: Live demonstrations at Automate 2026 showcase the integration, featuring Vention's Rapid Operator AI, powered by NVIDIA
-    Isaac open robotics platform, and advanced welding applications enabled by Universal Robots' UR12e and UR20 cobot models.
+  ko: Automate 2026에서의 라이브 시연은 Vention의 Rapid Operator AI(엔비디아 Isaac 오픈 로보틱스 플랫폼 기반)와 Universal Robots의
+    UR12e 및 UR20 협동로봇 모델이 지원하는 고급 용접 애플리케이션을 포함한 통합을 선보입니다.
 domains:
 - 11_applications_markets
 layers:
@@ -33,7 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

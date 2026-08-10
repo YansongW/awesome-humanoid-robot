@@ -35,13 +35,14 @@ tags:
 - robot_pretraining_data
 - human_video_to_robot
 verification:
-  status: unverified
+  status: verified
   reviewed_by: ai
   reviewed_at: '2026-08-05'
   confidence: medium
   notes: New card from deep-read task (.staging/deep_read). Full text from arXiv HTML (2608.02580v1); zh six-section interpretation
     by DeepSeek (deepseek-chat, T<=0.3) with fact guardrails; key numbers verified against the full text (1,940h->18,561h,
     15 morphologies, 62.2->68.1, 50.9->53.5, Franka<7%, +14/+13 real-robot gains).
+    深读+数字白名单复核通过 2026-08-10（Ego2Robot）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。
 sources:
 - id: src_001
   type: paper

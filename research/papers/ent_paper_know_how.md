@@ -6,7 +6,7 @@ type: paper
 names:
   en: 人形机器人运动控制 Know-How（飞书公开文档）
   zh: 人形机器人运动控制 Know-How（飞书公开文档）
-  ko: 人形机器人运动控制 Know-How（飞书公开文档）
+  ko: 휴머노이드 로봇 운동 제어 Know-How(Feishu 공개 문서)
 summary:
   en: 'Conservative card from a lab paper list entry: 人形机器人运动控制 Know-How（飞书公开文档）. No fetchable paper URL was recorded; content
     to be supplemented.'
@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 394 (.staging/ingest_yuanxq). Tier C->conservative. Conservative card:
-    清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.'
+  notes: 'Full ingest from Yuanxq lab paper list row 394 (.staging/ingest_yuanxq). Tier C->conservative.
+    Conservative card: 清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.
+    | WP3 marker fix 2026-08-10: names.ko translated zh->ko (manual, DeepSeek output retained Hanzi).'
 sources:
 - id: src_001
   type: website

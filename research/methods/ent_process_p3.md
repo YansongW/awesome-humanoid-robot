@@ -6,7 +6,7 @@ type: method
 names:
   en: System Architecture and Electromechanical Master Design (System / Preliminary Design)
   zh: 系统架构与机电总体设计（System / Preliminary Design）
-  ko: 系统架构与机电总体设计（System / Preliminary Design）
+  ko: 시스템 아키텍처 및 전기기계 총체 설계（System / Preliminary Design）
 summary:
   en: System Architecture and Electromechanical Design (System / Preliminary Design) —— Phase 3 of the humanoid robot product
     development process, covering solution design, implementation verification, and documentation delivery.
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py. English
-    name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py.
+    English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker
+    fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

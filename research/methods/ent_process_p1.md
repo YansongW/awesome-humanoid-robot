@@ -6,7 +6,7 @@ type: method
 names:
   en: Requirements Definition and System Design (Concept / Pre-A)
   zh: 需求定义与系统方案（Concept / Pre-A）
-  ko: 需求定义与系统方案（Concept / Pre-A）
+  ko: 요구사항 정의 및 시스템 방안 (Concept / Pre-A)
 summary:
   en: Requirement Definition and System Architecture (Concept / Pre-A) – the first phase of the full lifecycle for humanoid
     robot product development, encompassing conceptual design, implementation validation, and document delivery.
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

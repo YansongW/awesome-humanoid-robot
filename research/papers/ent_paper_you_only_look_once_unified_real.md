@@ -35,9 +35,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 834 (.staging/ingest_yuanxq). Tier B->conservative. Conservative card:
-    项目页抓取失败或内容不足（https://github.com/pjreddie/darknet（训练框架: ''ascii'' codec can''）; only list-registered fields recorded, content
-    to be supplemented.'
+  notes: 'Full ingest from Yuanxq lab paper list row 834 (.staging/ingest_yuanxq). Tier B->conservative.
+    Conservative card: 项目页抓取失败或内容不足（https://github.com/pjreddie/darknet（训练框架: ''ascii'' codec can''）; only
+    list-registered fields recorded, content to be supplemented. | WP3 marker fix 2026-08-10: paren mismatch
+    repaired (marker-only).'
 sources:
 - id: src_001
   type: website
@@ -65,7 +66,7 @@ sources:
 - 本卡为保守卡：清单未提供可抓取的论文页，仅登记题目与机构信息；后续获得论文原文或摘要后补充概述与核心内容。
 
 ## 参考
-- https://github.com/pjreddie/darknet（训练框架
+- https://github.com/pjreddie/darknet
 - https://github.com/ImChong/Robotics_Notebooks
 
 ## Overview

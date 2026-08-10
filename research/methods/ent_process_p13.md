@@ -6,7 +6,7 @@ type: method
 names:
   en: Electronics & Power Systems
   zh: 电子电气与能源系统（Electronics & Power）
-  ko: 电子电气与能源系统（Electronics & Power）
+  ko: 전자전기 및 에너지 시스템 (Electronics & Power)
 summary:
   en: Electronics & Power Systems—Phase 13 of the full lifecycle for humanoid robot product development, encompassing system
     design, implementation and validation, and document delivery.
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

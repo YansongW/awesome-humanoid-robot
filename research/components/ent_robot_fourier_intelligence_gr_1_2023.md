@@ -32,7 +32,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/companies/company_fourier.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/companies/company_fourier.md by scripts/backfill_nonpaper_entries.py.
+    | WP3 marker fix 2026-08-10: 2 en-section(s) translated zh->en (DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -84,43 +85,39 @@ sources:
 ### 代表产品
 
 #### GR-1
+> Fourier GR-1: Please visit [official documentation](https://www.fftai.cn) for details.
 
-> 傅利叶 GR-1：请访问 [官方资料](https://www.fftai.cn) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 165 cm | 傅利叶官网 |
-| 重量 | 55 kg | 傅利叶官网 |
-| 自由度 | 44 DOF | 傅利叶官网 |
-| 负载/扭矩 | 最大关节扭矩 230 N·m | 傅利叶官网 |
-| 速度/转速 | 步态行走 5 km/h | 傅利叶官网 |
-| 续航 | 未公开 | - |
-| 接口/通信 | 未公开 | - |
-| 价格 | 未公开 | 需询价 |
+| Dimensions | 165 cm | Fourier official website |
+| Weight | 55 kg | Fourier official website |
+| Degrees of Freedom | 44 DOF | Fourier official website |
+| Payload/Torque | Maximum joint torque 230 N·m | Fourier official website |
+| Speed/Rotation Speed | Walking gait 5 km/h | Fourier official website |
+| Endurance | Not disclosed | - |
+| Interface/Communication | Not disclosed | - |
+| Price | Not disclosed | Inquiry required |
 
-**技术亮点**：自研 FSA 一体化执行器、6×RGB 摄像头 360° 感知、BEV+Transformer+OCC。
+**Technical Highlights**: Self-developed FSA integrated actuators, 6×RGB cameras with 360° perception, BEV+Transformer+OCC.
 
-**应用场景**：科研教育、AI 具身本体、迎宾导览、康复辅助。
-
+**Application Scenarios**: Scientific research and education, AI embodied agents, reception and guided tours, rehabilitation assistance.
 #### GR-3
+> Fourier GR-3: Please visit [official documentation](https://www.fftai.cn) for details.
 
-> 傅利叶 GR-3：请访问 [官方资料](https://www.fftai.cn) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 165 cm | 科创板日报 / 北京商报 |
-| 重量 | 71 kg | 科创板日报 / 北京商报 |
-| 自由度 | 55 DOF | 公开报道 |
-| 负载/扭矩 | 12 DOF 灵巧手 | 公开报道 |
-| 速度/转速 | 未公开 | - |
-| 续航 | 约 3 h（双电池热插拔） | 电子发烧友网 |
-| 接口/通信 | 未公开 | - |
-| 价格 | 未公开 | 需询价 |
+| Dimensions | 165 cm | STAR Market Daily / Beijing Business Today |
+| Weight | 71 kg | STAR Market Daily / Beijing Business Today |
+| Degrees of Freedom | 55 DOF | Public reports |
+| Load/Torque | 12 DOF dexterous hand | Public reports |
+| Speed/Rotation Speed | Not disclosed | - |
+| Battery Life | Approximately 3 h (dual battery hot-swap) | Electronic Enthusiast Network |
+| Interface/Communication | Not disclosed | - |
+| Price | Not disclosed | Inquiry required |
 
-**技术亮点**：全感交互系统（听觉/视觉/触觉 31 组传感器）、柔肤软包、微表情与眼神追踪。
+**Technical Highlights**: Full-sensing interaction system (31 sets of sensors for hearing/vision/touch), soft-skin covering, micro-expressions and gaze tracking.
 
-**应用场景**：养老陪护、儿童互动、康复机构、公共空间服务。
-
+**Application Scenarios**: Elderly care companionship, child interaction, rehabilitation institutions, public space services.
 ### 供应链位置
 
 - **上游关键零部件/材料**：自研 FSA 一体化执行器，外购电机、减速器、传感器、软包材料。

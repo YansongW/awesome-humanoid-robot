@@ -6,7 +6,7 @@ type: method
 names:
   en: Gait Planning and Terrain Adaptation
   zh: 步态规划与地形适应
-  ko: 步态规划与地形适应
+  ko: 보행 계획 및 지형 적응
 summary:
   en: Data on level-ground, sloped, and obstacle-crossing walking, as well as speed and energy consumption, meet the PRD requirements.
   zh: 方法 / 工具：ZMP preview、Raibert heuristic、基于优化的步态、RL/IL
@@ -26,8 +26,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

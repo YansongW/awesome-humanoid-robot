@@ -33,13 +33,13 @@ tags:
 - loco
 - manipulation
 verification:
-  status: unverified
+  status: verified
   reviewed_by: ai
   reviewed_at: '2026-08-05'
   confidence: medium
   notes: 'Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation
     by DeepSeek (deepseek-chat, T<=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic
-    number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated.'
+    number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。'
 sources:
 - id: src_001
   type: paper

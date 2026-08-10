@@ -5,7 +5,46 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Any
 
-from website.builder.loader import DOMAIN_LABELS, Entry, domain_label, tokenize, type_label
+from website.builder.loader import DOMAIN_LABELS, Entry, domain_label, is_hedged_weak, tokenize, type_label
+
+# A node above this edge count whose edges are mostly hedged-weak keeps only
+# its strong (non-low-confidence) edges in the exported graph (noise control
+# for magnet nodes).
+MAGNET_NODE_MIN_DEGREE = 100
+
+
+def filter_graph_relationships(relationships: list) -> list:
+    """Drop weak/dangling edges from the exported graph data.
+
+    Two rules:
+      1. hedged weak edges (confidence=low + hedged notes) are excluded;
+      2. magnet nodes (degree > MAGNET_NODE_MIN_DEGREE, mostly hedged) keep
+         only their strong edges.
+    """
+    degree: dict[str, int] = {}
+    hedged_degree: dict[str, int] = {}
+    for rel in relationships:
+        for eid in (rel.source_id, rel.target_id):
+            degree[eid] = degree.get(eid, 0) + 1
+            if is_hedged_weak(rel):
+                hedged_degree[eid] = hedged_degree.get(eid, 0) + 1
+    magnet_ids = {
+        eid for eid, deg in degree.items()
+        if deg > MAGNET_NODE_MIN_DEGREE and hedged_degree.get(eid, 0) * 2 > deg
+    }
+    kept, dropped_hedged, dropped_magnet = [], 0, 0
+    for rel in relationships:
+        if is_hedged_weak(rel):
+            dropped_hedged += 1
+            continue
+        if (rel.source_id in magnet_ids or rel.target_id in magnet_ids) and rel.confidence == "low":
+            dropped_magnet += 1
+            continue
+        kept.append(rel)
+    if dropped_hedged or dropped_magnet:
+        print(f"Graph noise filter: {dropped_hedged} hedged weak edges excluded"
+              f" (+{dropped_magnet} low-confidence edges on {len(magnet_ids)} magnet nodes).")
+    return kept
 
 
 def _short_summary(summary: str, max_len: int = 500) -> str:
@@ -110,6 +149,10 @@ def build_subgraph_data(center_id: str, entries: dict[str, Entry], relationships
     edges = []
     for rel in relationships:
         if rel.source_id == center_id or rel.target_id == center_id:
+            # Never export dangling edges (e.g. to unpublished placeholder
+            # cards): Cytoscape would create a ghost node that 404s on tap.
+            if rel.source_id not in entries or rel.target_id not in entries:
+                continue
             edges.append(
                 {
                     "data": {
@@ -174,7 +217,7 @@ def build_relations_data(entries: dict[str, Entry], relationships: list) -> dict
         )
     edges = []
     seen_edges = set()
-    for rel in relationships:
+    for rel in filter_graph_relationships(relationships):
         if rel.source_id not in entries or rel.target_id not in entries:
             continue
         edge_key = (rel.source_id, rel.target_id, rel.type)
@@ -216,9 +259,10 @@ def build_cluster_data(entries: dict[str, Entry], relationships: list) -> dict:
         clusters[domain]["count"] += 1
         clusters[domain]["members"].append(eid)
 
-    # Aggregate edges between clusters
+    # Aggregate edges between clusters (weak hedged edges excluded, same as
+    # relations.json, so cluster weights reflect reviewable evidence only)
     cluster_edges: dict[tuple[str, str], int] = {}
-    for rel in relationships:
+    for rel in filter_graph_relationships(relationships):
         if rel.source_id not in entries or rel.target_id not in entries:
             continue
         src_domain = entity_domain.get(rel.source_id)

@@ -6,7 +6,7 @@ type: method
 names:
   en: Stakeholder demand gathering
   zh: 利益相关方需求采集
-  ko: 利益相关方需求采集
+  ko: 이해관계자 요구 수집
 summary:
   en: Stakeholder list, demand pool, prioritization
   zh: 设计思考逻辑：识别显性与隐性需求；区分 Must-have / Differentiator / Exciter
@@ -26,8 +26,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

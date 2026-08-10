@@ -41,7 +41,7 @@ tags:
 - high_torque_density
 - impact_resilience
 verification:
-  status: partially_verified
+  status: verified
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
@@ -49,7 +49,7 @@ verification:
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py [2026-08-04] body rewritten as full-text
     six-section deep read (.staging/deep_read, DeepSeek deepseek-chat T<=0.3, arXiv HTML full text); en/ko sections regenerated
     by translate pipeline. | WP1 dedup merge 2026-08-06: merged ent_paper_zhu_cycloidal_quasi_direct_drive_a_2024 into this
-    card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
+    card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/. 深读+数字白名单复核通过 2026-08-10（试点）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。'
 sources:
 - id: src_001
   type: paper

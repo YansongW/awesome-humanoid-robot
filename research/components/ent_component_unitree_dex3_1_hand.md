@@ -34,7 +34,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/companies/company_unitree.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/companies/company_unitree.md by scripts/backfill_nonpaper_entries.py.
+    | WP3 marker fix 2026-08-10: 2 en-section(s) translated zh->en (DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -95,43 +96,39 @@ Unitree Dex3-1 灵巧手是人形机器人领域的重要零部件。以下内�
 ### 代表产品
 
 #### Unitree H1
+> Unitree H1: Please visit [official materials](https://www.unitree.com) for details.
 
-> Unitree H1：请访问 [官方资料](https://www.unitree.com) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 180 cm | Unitree 公开资料 / Robozaps |
-| 重量 | 47 kg | 公开规格 |
-| 自由度 | 26 DOF（基础版） | Robozaps 汇总 |
-| 负载/扭矩 | 膝关节峰值扭矩 360 N·m | 公开规格 |
-| 速度/转速 | 行走约 1.5 m/s；跑步 3.3 m/s | Unitree 宣称世界纪录 |
-| 续航 | 约 1.5–2 h（864 Wh 电池） | 公开规格 |
-| 接口/通信 | Wi-Fi、蓝牙、ROS2 / Unitree SDK | 公开规格 |
-| 价格 | 约 9 万美元 / 国内约 65 万元 | 经销商与媒体报道 |
+| Dimensions | 180 cm | Unitree public materials / Robozaps |
+| Weight | 47 kg | Public specifications |
+| Degrees of Freedom | 26 DOF (basic version) | Robozaps summary |
+| Load/Torque | Knee joint peak torque 360 N·m | Public specifications |
+| Speed/Rotation | Walking approx. 1.5 m/s; running 3.3 m/s | Unitree claims world record |
+| Battery Life | Approx. 1.5–2 h (864 Wh battery) | Public specifications |
+| Interface/Communication | Wi-Fi, Bluetooth, ROS2 / Unitree SDK | Public specifications |
+| Price | Approx. $90,000 USD / approx. 650,000 RMB domestically | Dealers and media reports |
 
-**技术亮点**：M107 高扭矩密度电机（189 N·m/kg）、强化学习-based 步态、可热插拔电池、OTA 持续升级。
+**Technical Highlights**: M107 high torque density motor (189 N·m/kg), reinforcement learning-based gait, hot-swappable battery, OTA continuous upgrades.
 
-**应用场景**：双足运动研究、具身智能算法验证、高校实验室。
-
+**Application Scenarios**: Bipedal locomotion research, embodied intelligence algorithm validation, university laboratories.
 #### Unitree G1
+> Unitree G1: Please visit [official documentation](https://www.unitree.com) for details.
 
-> Unitree G1：请访问 [官方资料](https://www.unitree.com) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 127 cm | 公开规格 |
-| 重量 | 约 35 kg | 公开规格 |
-| 自由度 | 23–43 DOF（含灵巧手配置） | Unitree 配置差异 |
-| 负载/扭矩 | 负载约 2 kg | Humanoid.Guide |
-| 速度/转速 | 约 2 m/s | 公开规格 |
-| 续航 | 约 2 h | 公开规格 |
-| 接口/通信 | Wi-Fi、蓝牙、ROS2 | 公开规格 |
-| 价格 | 约 1.6 万美元 / 国内 9.9 万元起 | 媒体报道 |
+| Dimensions | 127 cm | Public specifications |
+| Weight | Approx. 35 kg | Public specifications |
+| Degrees of Freedom | 23–43 DOF (including dexterous hand configurations) | Unitree configuration differences |
+| Payload/Torque | Payload approx. 2 kg | Humanoid.Guide |
+| Speed/Rotation Speed | Approx. 2 m/s | Public specifications |
+| Battery Life | Approx. 2 h | Public specifications |
+| Interfaces/Communication | Wi-Fi, Bluetooth, ROS2 | Public specifications |
+| Price | Approx. USD 16,000 / from RMB 99,000 domestically | Media reports |
 
-**技术亮点**：三指力控灵巧手、Intel RealSense / LIVOX 传感器、低成本高可及性。
+**Technical Highlights**: Three-finger force-controlled dexterous hands, Intel RealSense / LIVOX sensors, low cost and high accessibility.
 
-**应用场景**：教育演示、AI 研究、轻量物流与商用展示。
-
+**Application Scenarios**: Educational demonstrations, AI research, light logistics, and commercial displays.
 ### 供应链位置
 
 - **上游关键零部件/材料**：自研 M107 电机与驱动器，外购减速器、轴承、电池、视觉传感器（参见 [第 4 章 执行器](../../../chapters/chapter-04.md)）。

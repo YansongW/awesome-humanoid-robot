@@ -17,9 +17,11 @@ summary:
   zh: -Additional core ALLEX technologies to be released sequentially -Expanding the Physical AI development ecosystem through
     high-fidelity Sim-to-Real validation -Building an open Physical AI development ecosystem for researchers and robotics
     developers
-  ko: -Additional core ALLEX technologies to be released sequentially -Expanding the Physical AI development ecosystem through
-    high-fidelity Sim-to-Real validation -Building an open Physical AI development ecosystem for researchers and robotics
-    developers
+  ko: '-추가 핵심 ALLEX 기술 순차 공개 예정
+  
+    -고충실도 Sim-to-Real 검증을 통한 Physical AI 개발 생태계 확장
+  
+    -연구자 및 로보틱스 개발자를 위한 개방형 Physical AI 개발 생태계 구축'
 domains:
 - 11_applications_markets
 layers:
@@ -39,7 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

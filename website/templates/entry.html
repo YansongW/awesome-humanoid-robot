@@ -54,12 +54,14 @@
         <div class="meta-group">
           <span class="meta-label">{{ ui.verification }}</span>
           <div class="meta-tags">
-            {% if verification_status == 'verified' %}
+            {% if verification_status == 'verified' and 'ai_fulltext_verified' in verification_notes %}
+            <span class="tag tag-verified" title="{{ verification_notes }}">{{ ui.badge_ai_verified }}</span>
+            {% elif verification_status == 'verified' %}
             <span class="tag tag-verified" title="{{ verification_notes }}">{{ ui.verified }}</span>
             {% elif verification_status == 'pending' or verification_status == 'partially_verified' %}
             <span class="tag tag-pending" title="{{ verification_notes }}">{{ ui.pending }}</span>
             {% else %}
-            <span class="tag tag-draft" title="{{ verification_notes }}">{{ ui.draft }}</span>
+            <span class="tag tag-draft" title="{{ verification_notes }}">{{ ui.pending }}</span>
             {% endif %}
           </div>
         </div>
@@ -145,7 +147,11 @@
           {% for rel in related_entities %}
           <li>
             <span class="rel-pill">{{ rel.relationship }}</span>
+            {% if rel.id in entry_name_lookup %}
             <a href="{{ bp }}/entry/{{ rel.id }}/">{{ entry_name_lookup.get(rel.id, rel.id) }}</a>
+            {% else %}
+            <span class="rel-missing">{{ entry_name_lookup.get(rel.id, rel.id) }}</span>
+            {% endif %}
             {% if rel.description %}
               {% if rel.description is mapping %}
                 {% set desc = rel.description.get(lang) or rel.description.get('en') or rel.description.get('zh') or rel.description.get('ko', '') %}
@@ -168,40 +174,44 @@
     </section>
     {% endif %}
 
-    {% if outgoing or incoming %}
+    {% macro rel_li(item, direction, bp, lang) %}
+    <li>
+      {% if direction == 'out' %}
+      <span class="rel-pill">{{ item.rel.type | rel_type_label(lang) }}</span>
+      <span class="rel-arrow">→</span>
+      {% if item.exists %}<a href="{{ bp }}/entry/{{ item.rel.target_id }}/">{{ item.rel.target_name }}</a>{% else %}<span class="rel-missing">{{ item.rel.target_name }}</span>{% endif %}
+      {% else %}
+      {% if item.exists %}<a href="{{ bp }}/entry/{{ item.rel.source_id }}/">{{ item.rel.source_name }}</a>{% else %}<span class="rel-missing">{{ item.rel.source_name }}</span>{% endif %}
+      <span class="rel-arrow">→</span>
+      <span class="rel-pill">{{ item.rel.type | rel_type_label(lang) }}</span>
+      {% endif %}
+      {% if item.description %}<span class="rel-desc">{{ item.description }}</span>{% endif %}
+    </li>
+    {% endmacro %}
+    {% if has_relations %}
     <section class="entry-relations">
       <h2>{{ ui.relations }}</h2>
       <div class="relations-layout">
-        {% if outgoing %}
+        {% for col, direction, heading in ((outgoing, 'out', ui.outgoing), (incoming, 'in', ui.incoming)) %}
+        {% if col.normal or col.weak %}
         <div class="relations-column">
-          <h3>{{ ui.outgoing }}</h3>
+          <h3>{{ heading }}</h3>
           <ul class="relation-list">
-            {% for item in outgoing %}
-            <li>
-              <span class="rel-pill">{{ item.rel.type | rel_type_label(lang) }}</span>
-              <span class="rel-arrow">→</span>
-              <a href="{{ bp }}/entry/{{ item.rel.target_id }}/">{{ item.rel.target_name }}</a>
-              {% if item.description %}<span class="rel-desc">{{ item.description }}</span>{% endif %}
+            {% for item in col.normal %}{{ rel_li(item, direction, bp, lang) }}{% endfor %}
+            {% if col.weak %}
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>{{ ui.more_weak_relations.format(count=col.weak | length) }}</summary>
+                <ul class="relation-list relation-list-weak">
+                  {% for item in col.weak %}{{ rel_li(item, direction, bp, lang) }}{% endfor %}
+                </ul>
+              </details>
             </li>
-            {% endfor %}
+            {% endif %}
           </ul>
         </div>
         {% endif %}
-        {% if incoming %}
-        <div class="relations-column">
-          <h3>{{ ui.incoming }}</h3>
-          <ul class="relation-list">
-            {% for item in incoming %}
-            <li>
-              <a href="{{ bp }}/entry/{{ item.rel.source_id }}/">{{ item.rel.source_name }}</a>
-              <span class="rel-arrow">→</span>
-              <span class="rel-pill">{{ item.rel.type | rel_type_label(lang) }}</span>
-              {% if item.description %}<span class="rel-desc">{{ item.description }}</span>{% endif %}
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endif %}
+        {% endfor %}
       </div>
     </section>
 
@@ -249,7 +259,7 @@
 <script src="/lib/mermaid/mermaid.min.js"></script>
 <script src="/js/wiki.js"></script>
 {% endif %}
-{% if outgoing or incoming %}
+{% if has_relations %}
 <script src="/lib/cytoscape/cytoscape.min.js"></script>
 <script src="/js/graph.js"></script>
 {% endif %}

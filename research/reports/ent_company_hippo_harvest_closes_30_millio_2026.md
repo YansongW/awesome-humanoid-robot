@@ -15,8 +15,7 @@ summary:
     buyers at scale.
   zh: Funding accelerates the company's next phase of growth as Hippo Harvest brings indoor-grown organic greens to retail
     buyers at scale.
-  ko: Funding accelerates the company's next phase of growth as Hippo Harvest brings indoor-grown organic greens to retail
-    buyers at scale.
+  ko: 자금 조달은 Hippo Harvest가 실내 재배 유기농 채소를 소매 구매자에게 대규모로 공급함에 따라 회사의 다음 성장 단계를 가속화합니다.
 domains:
 - 11_applications_markets
 layers:
@@ -37,7 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+    | WP3 marker fix 2026-08-10: summary.ko translated en->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

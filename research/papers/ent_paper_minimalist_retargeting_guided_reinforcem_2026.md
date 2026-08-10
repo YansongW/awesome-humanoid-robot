@@ -33,12 +33,14 @@ tags:
 - guided
 - reinforcem
 verification:
-  status: unverified
+  status: verified
   reviewed_by: ai
   reviewed_at: '2026-08-05'
   confidence: medium
-  notes: 'Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation
-    by DeepSeek (deepseek-chat, T<=0.3) with fact guardrails.'
+  notes: 'Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF);
+    zh six-section interpretation by DeepSeek (deepseek-chat, T<=0.3) with fact guardrails. 深读+数字白名单复核通过
+    2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。 | WP3 marker
+    fix 2026-08-10: paren mismatch repaired (marker-only).'
 sources:
 - id: src_001
   type: paper
@@ -64,7 +66,7 @@ Regrind 真正改变的是对「重定向」这一环节的定位：它不再只
 Real-to-Sim-to-Real 管线，从单个 3D 人类演示（MANO 手部关键点 + 物体 6D 位姿）学习 RL 策略。
 
 ### 步骤 1：交互感知运动重定向
-- 源点集 𝒫̃ₜ = 𝒫ₜᵒ ∪ 𝒫ₜʰ（物体关键点 ∪ 人手关键点），目标点集 𝒫ₜ(qₜ) = 𝒫ₜᵒ ∪ 𝒫ₜʳ(qₜ）（物体关键点 ∪ 机器人关键点）。
+- 源点集 𝒫̃ₜ = 𝒫ₜᵒ ∪ 𝒫ₜʰ（物体关键点 ∪ 人手关键点），目标点集 𝒫ₜ(qₜ) = 𝒫ₜᵒ ∪ 𝒫ₜʳ(qₜ)（物体关键点 ∪ 机器人关键点）。
 - 优化目标：min Σ D(ℳ(𝒫̃ₜ), ℳ(𝒫ₜ(qₜ))) + λ Σ ‖qₜ − qₜ₋₁‖²₂，约束 q₀:ₜ₋₁ ∈ 𝒬。
 - 交互网格由 Delaunay 四面体化定义，变形能 D = Σᵢ ‖Lᵢ(𝒫̃ₜ) − Lᵢ(𝒫ₜ(qₜ))‖₂，其中 Lᵢ(𝒫) = pᵢ − (1/|𝒩ᵢ|) Σⱼ∈𝒩ᵢ pⱼ。
 - 可行集 𝒬 包含：关节限位、速度界（v_min Δt ≤ q_t − q_{t-1} ≤ v_max Δt）、非穿透约束（φ_j(q_t) ≥ 0，激活机器人-物体和机器人-环境碰撞对）。

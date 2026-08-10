@@ -6,7 +6,7 @@ type: method
 names:
   en: Integration & V & V testing
   zh: 整机集成与验证测试（Integration & V&V）
-  ko: 整机集成与验证测试（Integration & V&V）
+  ko: 전체 시스템 통합 및 검증 테스트 (Integration & V&V)
 summary:
   en: Integration & V & v-phase 15 of the Android product development process, covering solution design, implementation verification,
     and document delivery.
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

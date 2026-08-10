@@ -14,9 +14,8 @@ summary:
   zh: -Partnership delivers high-performance, low-power AI acceleration directly to the global Raspberry Pi ecosystem -Eliminates
     cloud dependency for real-time inference in robotics and smart automation -Rolls out production-ready Starter Kit and
     SDKs to lower entry barriers for global developers
-  ko: -Partnership delivers high-performance, low-power AI acceleration directly to the global Raspberry Pi ecosystem -Eliminates
-    cloud dependency for real-time inference in robotics and smart automation -Rolls out production-ready Starter Kit and
-    SDKs to lower entry barriers for global developers
+  ko: "-파트너십을 통해 고성능·저전력 AI 가속을 글로벌 라즈베리 파이 생태계에 직접 제공합니다.  \n-클라우드 의존성을 제거하여 로보틱스 및 스마트 자동화 분야에서 실시간 추론을\
+    \ 가능하게 합니다.  \n-생산 준비가 완료된 스타터 키트와 SDK를 출시하여 전 세계 개발자들의 진입 장벽을 낮춥니다."
 domains:
 - 11_applications_markets
 layers:
@@ -36,7 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+    | WP3 marker fix 2026-08-10: summary.ko translated en->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

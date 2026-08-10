@@ -10,7 +10,7 @@ names:
 summary:
   en: Pilot program with Salamanca City Central School District marks major step for education technology
   zh: Pilot program with Salamanca City Central School District marks major step for education technology
-  ko: Pilot program with Salamanca City Central School District marks major step for education technology
+  ko: 살라망카 시 중앙 학군과의 파일럿 프로그램은 교육 기술에 있어 중요한 진전을 의미합니다.
 domains:
 - 11_applications_markets
 layers:
@@ -31,7 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

@@ -80,3 +80,7 @@ DeepSeek：endpoint `https://api.deepseek.com/chat/completions`，model `deepsee
 - en/ko 的 Wiki 章节与路线图页是机翻/回退中文，翻译管线同实体正文。
 - 路线图/Wiki 是面向公众的客观知识产品：页面只讲方法与可溯源事实，不挂统一免责声明，也不记录任何团队的实机建造过程；具体的实机建造（指标表、选型决策、实测数据）在独立工作区进行，不回写公共页面。
 - **ko 译文排版纪律**：方括号记号（数学式/数组）后禁止紧跟半角括号 `](`（会被 Markdown 解析成链接 → 404；zh 用全角（）、en 用空格，ko 历史上三次中招）。生成/翻译管线须保持 `](` 不相邻；推送前必跑 `python3 scripts/audit_site_dist.py`（broken=0 才推）。
+- **站点可信性规则**（2026-08-10，站点修复 P1/P2/P4）：
+  - 正文含「内容待补/待补充」的占位卡构建时整卡下架：不生成 entry 页，不进 search-index/names.json/qa-corpus/relations/clusters/subgraphs/sitemap；其他卡关系区指向它们时只渲染文字不渲染链接（清单 `.staging/placeholder_unpublish_manifest_2026-08-10.json`，85 张）。
+  - 深读六段+数字白名单复核通过批次（388 卡，清单 `.staging/badge_promotion_manifest_2026-08-10.json`）：`verification.status: verified` + notes 追加等级标记 `ai_fulltext_verified`（schema v1 枚举无该值，按数据纪律用最近值）；entry 页凭 notes 标记显示「AI 全文核验」绿徽章。
+  - hedged 弱边（`confidence: low` 且 notes 含「可能/通常/或许」）：entry 页折叠进「更多弱关联 (N)」区，且不导出到 relations.json/clusters.json；度>100 且多为 hedged 的磁吸节点只保留 strong 边（当前数据无节点触发）。

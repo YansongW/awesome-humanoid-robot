@@ -6,7 +6,7 @@ type: method
 names:
   en: Design of Joint Module and Actuator & Drive
   zh: 关节模组与驱动系统设计（Actuator & Drive）
-  ko: 关节模组与驱动系统设计（Actuator & Drive）
+  ko: 관절 모듈 및 구동 시스템 설계 (Actuator & Drive)
 summary:
   en: Design of Actuator & Drive-phase 4 of the entire product development process for Android, covering conceptual design,
     implementation verification, and document delivery.
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

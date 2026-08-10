@@ -6,7 +6,7 @@ type: method
 names:
   en: Construction and verification of Simulation platform
   zh: 仿真平台搭建与验证（Simulation）
-  ko: 仿真平台搭建与验证（Simulation）
+  ko: 시뮬레이션 플랫폼 구축 및 검증（Simulation）
 summary:
   en: Construction and verification of Simulation platform
   zh: 搭建仿真平台并在仿真环境中验证感知、规划与控制算法，覆盖仿真场景配置、模型标定、域随机化与 sim-to-real 迁移评估，降低实机调试成本与风险。
@@ -26,8 +26,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-27'
   confidence: high
-  notes: Derived from docs/humanoid_full_development_workflow_v3.md Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
-    English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Derived from docs/humanoid_full_development_workflow_v3.md Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.
+    | WP3 marker fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

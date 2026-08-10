@@ -14,9 +14,9 @@ summary:
   zh: InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic platform. It can transmit
     data over 5G networks with imperceptible lag and receive instructions from a remote operator. Measuring 11cm x 14cm x
     10cm, and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with virtually any robotic framework.
-  ko: InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic platform. It can transmit
-    data over 5G networks with imperceptible lag and receive instructions from a remote operator. Measuring 11cm x 14cm x
-    10cm, and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with virtually any robotic framework.
+  ko: InDro Cortex는 모든 로봇 플랫폼에 장착할 수 있는 강력한 컴퓨팅 및 센서 통합 장치입니다. 5G 네트워크를 통해 거의 인지할 수 없는 지연 시간으로 데이터를 전송하고
+    원격 운영자로부터 지시를 받을 수 있습니다. 크기는 11cm x 14cm x 10cm이며 무게는 단 679g에 불과한 Cortex는 플랫폼에 구애받지 않으며 사실상 모든 로봇 프레임워크와
+    함께 사용할 수 있습니다.
 domains:
 - 11_applications_markets
 layers:
@@ -37,7 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

@@ -12,7 +12,7 @@ from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from website.builder.loader import DOMAIN_LABELS, KGStore, Relationship, domain_label, layer_label, type_label
+from website.builder.loader import DOMAIN_LABELS, KGStore, Relationship, domain_label, is_hedged_weak, layer_label, type_label
 from website.builder.minify import minify_assets
 from website.builder.search_index import build_names_index
 
@@ -79,8 +79,10 @@ UI_STRINGS = {
         "layers": "层级",
         "verification": "审校",
         "verified": "已审校",
+        "badge_ai_verified": "AI 全文核验",
         "pending": "待审校",
         "draft": "草稿",
+        "more_weak_relations": "更多弱关联（{count}）",
         "aliases": "多语言名称",
         "sources": "来源与参考",
         "wiki_chapters": "Wiki 章节",
@@ -219,8 +221,10 @@ UI_STRINGS = {
         "layers": "Layers",
         "verification": "Verification",
         "verified": "Verified",
+        "badge_ai_verified": "AI Full-text Verified",
         "pending": "Pending",
         "draft": "Draft",
+        "more_weak_relations": "More weak relations ({count})",
         "aliases": "Names",
         "sources": "Sources",
         "wiki_chapters": "Wiki Chapters",
@@ -359,8 +363,10 @@ UI_STRINGS = {
         "layers": "계층",
         "verification": "검증",
         "verified": "검증됨",
+        "badge_ai_verified": "AI 전문 검증",
         "pending": "대기 중",
         "draft": "초안",
+        "more_weak_relations": "약한 연관 더 보기 ({count})",
         "aliases": "다국어 이름",
         "sources": "출처",
         "wiki_chapters": "Wiki 장",
@@ -671,21 +677,38 @@ class Renderer:
         related = self.store.related_entries(entry.id)
         roadmap_badges = self._roadmap_badges(entry.id)
 
-        def view(rels: list[Relationship], direction: str) -> list[dict]:
-            out = []
+        def view(rels: list[Relationship], direction: str) -> dict[str, list[dict]]:
+            normal, weak = [], []
             for rel in rels:
                 desc = rel.description or ""
                 # Hide English boilerplate descriptions on zh/ko pages.
                 if self.lang != "en" and is_english_boilerplate(desc):
                     desc = ""
-                out.append({"rel": rel, "description": desc, "direction": direction})
-            return out
+                other_id = rel.target_id if direction == "out" else rel.source_id
+                item = {
+                    "rel": rel,
+                    "description": desc,
+                    "direction": direction,
+                    # Unpublished (placeholder) endpoints render as plain text
+                    # so the site never links to a missing /entry/<id>/ page.
+                    "exists": other_id in self.store.entries,
+                }
+                # Hedged weak edges (confidence=low + hedged notes) collapse
+                # into a "more weak relations" details block per direction.
+                (weak if is_hedged_weak(rel) else normal).append(item)
+            return {"normal": normal, "weak": weak}
+
+        out_view = view(outgoing, "out")
+        in_view = view(incoming, "in")
+        has_relations = bool(out_view["normal"] or out_view["weak"]
+                             or in_view["normal"] or in_view["weak"])
 
         html = template.render(**self._ctx(
             title=f"{entry.name} · {self.ui['site_title']}",
             entry=entry,
-            outgoing=view(outgoing, "out"),
-            incoming=view(incoming, "in"),
+            outgoing=out_view,
+            incoming=in_view,
+            has_relations=has_relations,
             related=related,
             roadmap_badges=roadmap_badges,
             entry_name_lookup=self.entry_name_lookup,

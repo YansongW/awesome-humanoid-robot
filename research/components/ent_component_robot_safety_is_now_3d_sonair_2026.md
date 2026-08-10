@@ -12,8 +12,7 @@ summary:
     European machine directive as a sensor for the safe detection of humans and objects.
   zh: The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified to fulfil all requirements of the
     European machine directive as a sensor for the safe detection of humans and objects.
-  ko: The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified to fulfil all requirements of the
-    European machine directive as a sensor for the safe detection of humans and objects.
+  ko: ADAR One 센서는 이제 SIL2 및 PL d 애플리케이션에 적합하며, 인간과 객체의 안전한 감지를 위한 센서로서 유럽 기계 지침의 모든 요구 사항을 충족하도록 인증되었습니다.
 domains:
 - 11_applications_markets
 layers:
@@ -35,7 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

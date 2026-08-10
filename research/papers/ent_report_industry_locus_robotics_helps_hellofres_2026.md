@@ -12,8 +12,7 @@ summary:
     growth across HelloFresh brands
   zh: Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and continued automation
     growth across HelloFresh brands
-  ko: Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and continued automation
-    growth across HelloFresh brands
+  ko: 맞춤형 Locus Origin 배포는 냉장 운영을 지원하고, SKU 다양성을 확장하며, HelloFresh 브랜드 전반에 걸쳐 지속적인 자동화 성장을 가능하게 합니다.
 domains:
 - 11_applications_markets
 layers:
@@ -33,7 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

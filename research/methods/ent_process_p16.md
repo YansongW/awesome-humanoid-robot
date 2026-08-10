@@ -6,7 +6,7 @@ type: method
 names:
   en: Pilot & Production Ramp
   zh: 小批量试产与量产准备（Pilot & Production Ramp）
-  ko: 小批量试产与量产准备（Pilot & Production Ramp）
+  ko: 소량 시험 생산 및 양산 준비(Pilot & Production Ramp)
 summary:
   en: Pilot & Production Ramp-stage 16 of the Android product development process, covering concept design, implementation
     verification, and document delivery.
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

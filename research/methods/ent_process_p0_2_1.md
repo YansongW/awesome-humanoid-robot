@@ -6,7 +6,7 @@ type: method
 names:
   en: Establishment of the project governance structure
   zh: 项目治理结构搭建
-  ko: 项目治理结构搭建
+  ko: 프로젝트 거버넌스 구조 구축
 summary:
   en: Release of governance documents, standardized meeting cadence, and establishment of the CCB.
   zh: '- P0.2.1.1 输入梳理与目标量化 - 整理「项目治理结构搭建」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
@@ -26,8 +26,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

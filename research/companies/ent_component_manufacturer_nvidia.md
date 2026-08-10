@@ -35,7 +35,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from appendix-d/companies/company_nvidia.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/companies/company_nvidia.md by scripts/backfill_nonpaper_entries.py.
+    | WP3 marker fix 2026-08-10: 2 en-section(s) translated zh->en (DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -95,45 +96,39 @@ Jetson Thor 专为物理 AI 与人形机器人设计，集成 Blackwell GPU 与�
 ### 代表产品
 
 #### NVIDIA Jetson Thor（T5000）
+> NVIDIA Jetson Thor (T5000): Please visit [official documentation](https://www.nvidia.com) for details.
 
-> NVIDIA Jetson Thor（T5000）：请访问 [官方资料](https://www.nvidia.com) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| AI 算力 | 最高 2070 FP4 TFLOPS | NVIDIA 官方 |
-| GPU 架构 | NVIDIA Blackwell | NVIDIA 官方 |
-| CPU | 14 核 Arm Neoverse-V3AE | NVIDIA 官方 |
-| 内存 | 128 GB LPDDR5X（273 GB/s） | NVIDIA 官方 |
-| 网络 | 4×25 GbE | NVIDIA 官方 |
-| 功耗 | 40–130 W 可调 | NVIDIA 官方 |
-| 尺寸 | 100 mm × 87 mm（模组） | NVIDIA 官方 |
-| 价格 | 开发者套件 3,499 USD；模组 2,999 USD（1k 起） | NVIDIA 公开报价 |
+| AI Compute | Up to 2070 FP4 TFLOPS | NVIDIA Official |
+| GPU Architecture | NVIDIA Blackwell | NVIDIA Official |
+| CPU | 14-core Arm Neoverse-V3AE | NVIDIA Official |
+| Memory | 128 GB LPDDR5X (273 GB/s) | NVIDIA Official |
+| Networking | 4×25 GbE | NVIDIA Official |
+| Power Consumption | 40–130 W adjustable | NVIDIA Official |
+| Dimensions | 100 mm × 87 mm (module) | NVIDIA Official |
+| Price | Developer kit 3,499 USD; module 2,999 USD (1k+ qty) | NVIDIA Public Pricing |
 
-**技术亮点**：Blackwell GPU、大容量统一内存、支持多模态生成式 AI 与 VLA 模型、4×25GbE 高带宽传感器接口、面向人形机器人。
+**Technical Highlights**: Blackwell GPU, large unified memory, support for multimodal generative AI and VLA models, 4×25GbE high-bandwidth sensor interface, designed for humanoid robots.
 
-**应用场景**：人形机器人主控、自动驾驶、医疗机器人、工业 AMR。
-
-
+**Application Scenarios**: Humanoid robot main controller, autonomous driving, medical robots, industrial AMR.
 #### NVIDIA Isaac Sim
+> NVIDIA Isaac Sim: Please refer to the [official documentation](https://www.nvidia.com) for details.
 
-> NVIDIA Isaac Sim：请访问 [官方资料](https://www.nvidia.com) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 底层平台 | NVIDIA Omniverse / PhysX | NVIDIA 官方 |
-| 渲染 | RTX 实时光追 | NVIDIA 官方 |
-| 物理引擎 | PhysX | NVIDIA 官方 |
-| ROS 集成 | ROS 2 桥接与 Isaac ROS | NVIDIA 官方 |
-| 训练框架 | Isaac Lab（强化学习/模仿学习） | NVIDIA 官方 |
-| 数字孪生 | 支持 USD 场景与传感器模型 | NVIDIA 官方 |
-| 部署方式 | 本地、容器、云端 | NVIDIA 官方 |
-| 价格 | 免费（需 NVIDIA 账号/Omniverse） | 官方说明 |
+| Underlying Platform | NVIDIA Omniverse / PhysX | NVIDIA Official |
+| Rendering | RTX Real-time Ray Tracing | NVIDIA Official |
+| Physics Engine | PhysX | NVIDIA Official |
+| ROS Integration | ROS 2 Bridge and Isaac ROS | NVIDIA Official |
+| Training Framework | Isaac Lab (Reinforcement Learning/Imitation Learning) | NVIDIA Official |
+| Digital Twin | Supports USD Scenes and Sensor Models | NVIDIA Official |
+| Deployment Method | Local, Container, Cloud | NVIDIA Official |
+| Price | Free (Requires NVIDIA Account/Omniverse) | Official Description |
 
-**技术亮点**：照片级仿真、PhysX 物理、与 Jetson/GR00T 打通的 Sim2Real 流程、大规模合成数据生成。
+**Technical Highlights**: Photorealistic simulation, PhysX physics, Sim2Real pipeline integrated with Jetson/GR00T, large-scale synthetic data generation.
 
-**应用场景**：人形机器人训练、数字孪生工厂、传感器验证、强化学习研究。
-
-
+**Application Scenarios**: Humanoid robot training, digital twin factories, sensor validation, reinforcement learning research.
 ### 供应链位置
 
 - **上游关键零部件/材料**：台积电代工、存储器、传感器与摄像头合作伙伴、Omniverse 生态。

@@ -6,7 +6,7 @@ type: method
 names:
   en: Project Initiation and Business Baseline
   zh: 项目立项与商业基线
-  ko: 项目立项与商业基线
+  ko: 프로젝트 착수 및 상업적 기준선
 summary:
   en: Project Initiation and Business Baseline
   zh: 项目立项与商业基线阶段：明确人形机器人项目的目标、范围、预算、目标市场与商业可行性，形成立项决策与商业基线，为后续研发、试产与量产流程提供依据。
@@ -25,8 +25,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-27'
   confidence: high
-  notes: Derived from docs/humanoid_full_development_workflow_v3.md Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
-    English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Derived from docs/humanoid_full_development_workflow_v3.md Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.
+    | WP3 marker fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

@@ -33,7 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/companies/company_figure_ai.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/companies/company_figure_ai.md by scripts/backfill_nonpaper_entries.py.
+    | WP3 marker fix 2026-08-10: 3 en-section(s) translated zh->en (DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -56,12 +57,10 @@ Figure AI是人形机器人领域的重要整机厂商。以下内容整理自�
 
 ## 核心内容
 ## Figure AI / Figure AI
-
-> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。
-> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+> This entry belongs to [Appendix D Enterprise/Product Wiki](../../appendix-d.md).
+> Data update time: 2026-07-01. All parameters are based on official public information; missing items are marked as "Not disclosed".
 
 ---
-
 ### 公司信息卡
 
 | 项目 | 内容 |
@@ -92,45 +91,39 @@ Figure AI 自研 Helix 多模态 AI 模型，使机器人可通过自然语言�
 ### 代表产品
 
 #### Figure 02
+> Figure 02: Please visit [official materials](https://www.figure.ai) for details.
 
-> Figure 02：请访问 [官方资料](https://www.figure.ai) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 约 168 cm（高） | 公开资料 |
-| 重量 | 约 70 kg | 公开资料 |
-| 自由度 | 全身 28；手部未单独披露 | Humanoid.guide 等 |
-| 负载/扭矩 | 搬运约 20–25 kg | 公开资料 |
-| 速度/转速 | 约 1.2 m/s（4.32 km/h） | 公开资料 |
-| 续航 | 约 5 小时 | 公开资料 |
-| 接口/通信 | 双 NVIDIA GPU 计算、6×RGB 相机、语音交互 | 公开资料 |
-| 价格 | 未公开（试点项目约 130,000 USD 估算） | 第三方估计 |
+| Dimensions | Approximately 168 cm (height) | Public materials |
+| Weight | Approximately 70 kg | Public materials |
+| Degrees of Freedom | 28 across the body; hands not separately disclosed | Humanoid.guide, etc. |
+| Payload/Torque | Carrying approximately 20–25 kg | Public materials |
+| Speed/Rotation | Approximately 1.2 m/s (4.32 km/h) | Public materials |
+| Endurance | Approximately 5 hours | Public materials |
+| Interfaces/Communication | Dual NVIDIA GPU computing, 6×RGB cameras, voice interaction | Public materials |
+| Price | Not disclosed (estimated at approximately 130,000 USD for pilot projects) | Third-party estimates |
 
-**技术亮点**：Helix 多模态 AI、宝马工厂部署验证、躯干集成电池、6×RGB 相机与语音交互、3 倍于 Figure 01 的算力。
+**Technical Highlights**: Helix multimodal AI, validation deployment at BMW factories, integrated torso battery, 6×RGB cameras with voice interaction, 3× the computing power of Figure 01.
 
-**应用场景**：汽车装配线 kitting、物料搬运、仓储分拣。
-
-
+**Application Scenarios**: Automotive assembly line kitting, material handling, warehouse sorting.
 #### Figure 03
+> Figure 03: Please visit [official materials](https://www.figure.ai) for details.
 
-> Figure 03：请访问 [官方资料](https://www.figure.ai) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 约 170 cm（高） | 公开报道 |
-| 重量 | 约 60–70 kg | 公开报道 |
-| 自由度 | 40+；手部 16×2 | 公开报道 |
-| 负载/扭矩 | 约 25 kg | 公开报道 |
-| 速度/转速 | 约 1.2 m/s | 公开报道 |
-| 续航 | 约 5+ 小时（2.25 kWh） | 公开报道 |
-| 接口/通信 | Helix VLA 模型、语音交互 | 公开报道 |
-| 价格 | 未公开 | - |
+| Dimensions | Approx. 170 cm (height) | Public reports |
+| Weight | Approx. 60–70 kg | Public reports |
+| Degrees of Freedom | 40+; hands 16×2 | Public reports |
+| Payload/Torque | Approx. 25 kg | Public reports |
+| Speed/Rotation | Approx. 1.2 m/s | Public reports |
+| Battery Life | Approx. 5+ hours (2.25 kWh) | Public reports |
+| Interface/Communication | Helix VLA model, voice interaction | Public reports |
+| Price | Not disclosed | - |
 
-**技术亮点**：更高自由度手部、面向家庭与工业的通用设计、Helix VLA 端到端推理。
+**Technical Highlights**: Higher degrees of freedom in hands, general-purpose design for home and industry, Helix VLA end-to-end reasoning.
 
-**应用场景**：工业制造、未来家庭协助、零售服务。
-
-
+**Application Scenarios**: Industrial manufacturing, future home assistance, retail services.
 ### 供应链位置
 
 - **上游关键零部件/材料**：NVIDIA GPU 计算、电机/减速器、传感器与电池包外购或定制。

@@ -12,8 +12,7 @@ summary:
     in days with no IT integration and no human dispatcher
   zh: One production-tested platform combines mobility, bimanual manipulation, and self-directed task execution, deploying
     in days with no IT integration and no human dispatcher
-  ko: One production-tested platform combines mobility, bimanual manipulation, and self-directed task execution, deploying
-    in days with no IT integration and no human dispatcher
+  ko: 생산 검증을 거친 한 플랫폼은 이동성, 양팔 조작, 그리고 자율적 작업 수행을 결합하여, IT 통합이나 인간 디스패처 없이 며칠 내에 배치됩니다.
 domains:
 - 11_applications_markets
 layers:
@@ -34,7 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

@@ -15,7 +15,9 @@ summary:
     generation as a conditional generation problem, and use diffusion or flow matching to sample executable trajectories in
     multimodal action distributions.'
   zh: 使用3D扩散策略的通用人形操作 主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、深度/点云/高度图采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、分层技能/专家策略转成可训练、可复用的可执行动作命令。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: 使用3D扩散策略的通用人形操作 主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、深度/点云/高度图采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、分层技能/专家策略转成可训练、可复用的可执行动作命令。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+  ko: '범용 휴머노이드 조작을 위한 3D 확산 정책은 주로 데이터 폐루프를 해결한다: 카메라 이미지/다중 시점 관측, 원격 조작/외골격 데이터, 깊이/포인트 클라우드/높이 맵을 통해
+    인간 조작과 로봇 상태를 수집하고, 이후 ACT/행동 클로닝 모방 학습, 확산 정책/흐름 매칭, 계층적 스킬/전문가 정책을 통해 훈련 가능하고 재사용 가능한 실행 가능한 동작 명령으로
+    변환한다. 핵심은 동작 생성을 조건부 생성 문제로 간주하고, 확산 또는 흐름 매칭을 사용하여 다중 모달 동작 분포에서 실행 가능한 궤적을 샘플링하는 것이다.'
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -37,9 +39,10 @@ verification:
   reviewed_at: '2026-06-26'
   confidence: low
   notes: 'Imported from WeChat curated list (086). Institution: Stanford University、Simon Fraser University、CMU、imitation
-    learning data and ) enable a full-sized humanoid robot to perform useful skills in diverse real-world environments. Full
-    title: Generalizable Humanoid Manipulation with 3D Diffusion Policies. English name/summary machine-translated from Chinese
-    by scripts/backfill_en_translations.py.'
+    learning data and ) enable a full-sized humanoid robot to perform useful skills in diverse real-world
+    environments. Full title: Generalizable Humanoid Manipulation with 3D Diffusion Policies. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    summary.ko translated zh->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

@@ -33,20 +33,24 @@ def build_qa_corpus(store: KGStore) -> dict[str, Any]:
         if len(body) > MAX_BODY_CHARS:
             body = body[:MAX_BODY_CHARS] + "…"
         relations = []
-        for rel in store.outgoing.get(e.id, [])[:MAX_RELATIONS_PER_DIRECTION]:
-            relations.append({
-                "direction": "out",
-                "type": rel.type,
-                "other_id": rel.target_id,
-                "other_name": rel.target_name,
-            })
-        for rel in store.incoming.get(e.id, [])[:MAX_RELATIONS_PER_DIRECTION]:
-            relations.append({
-                "direction": "in",
-                "type": rel.type,
-                "other_id": rel.source_id,
-                "other_name": rel.source_name,
-            })
+        for direction, rels, other in (
+            ("out", store.outgoing.get(e.id, []), lambda r: (r.target_id, r.target_name)),
+            ("in", store.incoming.get(e.id, []), lambda r: (r.source_id, r.source_name)),
+        ):
+            kept = 0
+            for rel in rels:
+                if kept >= MAX_RELATIONS_PER_DIRECTION:
+                    break
+                other_id, other_name = other(rel)
+                if other_id not in store.entries:
+                    continue  # dangling (e.g. unpublished placeholder) — never export
+                relations.append({
+                    "direction": direction,
+                    "type": rel.type,
+                    "other_id": other_id,
+                    "other_name": other_name,
+                })
+                kept += 1
         domain = e.domains[0] if e.domains else UNKNOWN_DOMAIN
         by_domain.setdefault(domain, {})[e.id] = {
             "id": e.id,

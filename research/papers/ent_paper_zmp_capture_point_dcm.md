@@ -6,7 +6,7 @@ type: paper
 names:
   en: 步态规划与平衡恢复核心论文（ZMP / Capture Point / DCM）
   zh: 步态规划与平衡恢复核心论文（ZMP / Capture Point / DCM）
-  ko: 步态规划与平衡恢复核心论文（ZMP / Capture Point / DCM）
+  ko: 보행 계획 및 균형 회복 핵심 논문 (ZMP / Capture Point / DCM)
 summary:
   en: 'Conservative card from a lab paper list entry: 步态规划与平衡恢复核心论文（ZMP / Capture Point / DCM）. No fetchable paper URL was
     recorded; content to be supplemented.'
@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 370 (.staging/ingest_yuanxq). Tier B->conservative. Conservative card:
-    清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.'
+  notes: 'Full ingest from Yuanxq lab paper list row 370 (.staging/ingest_yuanxq). Tier B->conservative.
+    Conservative card: 清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.
+    | WP3 marker fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

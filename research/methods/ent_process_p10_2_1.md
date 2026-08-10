@@ -6,7 +6,7 @@ type: method
 names:
   en: Standing and Anti-Interference Balance Control
   zh: 站立与抗扰平衡控制
-  ko: 站立与抗扰平衡控制
+  ko: 서 있기 및 외란 저항 균형 제어
 summary:
   en: Video of the standing anti-interference physical prototype; its recovery capability meets the specified performance
     criteria.
@@ -28,8 +28,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

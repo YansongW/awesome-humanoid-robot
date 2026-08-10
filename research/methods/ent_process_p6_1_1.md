@@ -6,7 +6,7 @@ type: method
 names:
   en: URDF/SDF file generation
   zh: URDF/SDF 文件生成
-  ko: URDF/SDF 文件生成
+  ko: URDF/SDF 파일 생성
 summary:
   en: It loads correctly in RViz/Gazebo/Isaac Sim with no parsing errors
   zh: 方法 / 工具：ROS URDF、Xacro、SolidWorks/NX → URDF 插件、惯性参数校核
@@ -26,8 +26,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

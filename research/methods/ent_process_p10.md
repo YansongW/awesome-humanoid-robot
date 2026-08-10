@@ -6,7 +6,7 @@ type: method
 names:
   en: Motion Control Algorithm Development and Validation
   zh: 运动控制算法开发与验证（Motion Control）
-  ko: 运动控制算法开发与验证（Motion Control）
+  ko: 모션 제어 알고리즘 개발 및 검증 (Motion Control)
 summary:
   en: Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid Robot Product Development,
     encompassing solution design, implementation and validation, and document delivery.
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

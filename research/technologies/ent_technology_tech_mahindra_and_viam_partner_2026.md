@@ -12,8 +12,7 @@ summary:
     robotics and automation platform
   zh: Tech Mahindra's global enterprise clients can harness the power of physical AI with direct access to Viam's advanced
     robotics and automation platform
-  ko: Tech Mahindra's global enterprise clients can harness the power of physical AI with direct access to Viam's advanced
-    robotics and automation platform
+  ko: Tech Mahindra의 글로벌 엔터프라이즈 고객들은 Viam의 고급 로보틱스 및 자동화 플랫폼에 직접 접근하여 물리적 AI의 힘을 활용할 수 있습니다.
 domains:
 - 11_applications_markets
 layers:
@@ -33,7 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

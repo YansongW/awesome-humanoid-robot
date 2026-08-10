@@ -6,7 +6,7 @@ type: paper
 names:
   en: 接触规划与接触隐式优化核心论文
   zh: 接触规划与接触隐式优化核心论文
-  ko: 接触规划与接触隐式优化核心论文
+  ko: 접촉 계획 및 접촉 암시적 최적화 핵심 논문
 summary:
   en: 'Conservative card from a lab paper list entry: 接触规划与接触隐式优化核心论文 (无明确标注). No
     fetchable paper URL was recorded; content to be supplemented.'
@@ -30,10 +30,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 350 (.staging/ingest_yuanxq).
-    Tier C->conservative. Conservative card: 清单未登记可抓取的论文页（待补充/空）; only list-registered
-    fields recorded, content to be supplemented. [2026-07-31] id renamed from ent_paper_yuanxq_350
-    (non-compliant slug) by ingest_yuanxq id-fix.'
+  notes: 'Full ingest from Yuanxq lab paper list row 350 (.staging/ingest_yuanxq). Tier C->conservative.
+    Conservative card: 清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.
+    [2026-07-31] id renamed from ent_paper_yuanxq_350 (non-compliant slug) by ingest_yuanxq id-fix. | WP3
+    marker fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

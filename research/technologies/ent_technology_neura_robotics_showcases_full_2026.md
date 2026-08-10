@@ -10,7 +10,7 @@ names:
 summary:
   en: NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments
   zh: NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments
-  ko: NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments
+  ko: NEURA는 자체의 전체 인지 로봇 포트폴리오, Neuraverse 플랫폼 및 NEURA Gyms 환경을 선보입니다.
 domains:
 - 11_applications_markets
 layers:
@@ -30,7 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website

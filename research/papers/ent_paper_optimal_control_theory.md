@@ -6,7 +6,7 @@ type: paper
 names:
   en: 最优控制理论（Optimal Control Theory）
   zh: 最优控制理论（Optimal Control Theory）
-  ko: 最优控制理论（Optimal Control Theory）
+  ko: 최적 제어 이론（Optimal Control Theory）
 summary:
   en: 'Conservative card from a lab paper list entry: 最优控制理论（Optimal Control Theory） (SIAM、Springer、ACC). No fetchable paper
     URL was recorded; content to be supplemented.'
@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-31'
   confidence: low
-  notes: 'Full ingest from Yuanxq lab paper list row 730 (.staging/ingest_yuanxq). Tier C->conservative. Conservative card:
-    清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.'
+  notes: 'Full ingest from Yuanxq lab paper list row 730 (.staging/ingest_yuanxq). Tier C->conservative.
+    Conservative card: 清单未登记可抓取的论文页（待补充/空）; only list-registered fields recorded, content to be supplemented.
+    | WP3 marker fix 2026-08-10: names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

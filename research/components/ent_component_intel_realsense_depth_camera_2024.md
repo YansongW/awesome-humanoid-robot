@@ -33,7 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/companies/company_intel.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/companies/company_intel.md by scripts/backfill_nonpaper_entries.py.
+    | WP3 marker fix 2026-08-10: 2 en-section(s) translated zh->en (DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -85,49 +86,45 @@ Intel RealSense 产品线覆盖立体视觉、结构光、LiDAR 等多种深度�
 ### 代表产品
 
 #### Intel RealSense D455
+> Intel RealSense D455: Please refer to [official documentation](https://www.intel.com) for details.
 
-> Intel RealSense D455：请访问 [官方资料](https://www.intel.com) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 124 mm × 26 mm × 29 mm | 官方 datasheet |
-| 重量 | 约 120 g | 第三方评测 |
-| 深度技术 | 主动 IR 立体视觉 | 官方 datasheet |
-| 深度 FOV | 87° × 58° | 官方 datasheet |
-| 深度分辨率/帧率 | 最高 1280×720 @ 90 fps | 官方 datasheet |
-| RGB 分辨率 | 最高 1280×800 @ 30 fps | 官方 datasheet |
-| 理想量程 | 0.6 m – 6 m | 官方 datasheet |
-| 深度精度 | <2% @ 4 m | 官方 datasheet |
-| IMU | 集成 6 轴 IMU | 官方 datasheet |
-| 接口 | USB-C 3.1 Gen 1 | 官方 datasheet |
-| 价格 | 约 USD 299 | 公开市场参考 |
+| Dimensions | 124 mm × 26 mm × 29 mm | Official datasheet |
+| Weight | Approx. 120 g | Third-party review |
+| Depth Technology | Active IR stereo vision | Official datasheet |
+| Depth FOV | 87° × 58° | Official datasheet |
+| Depth Resolution/Frame Rate | Up to 1280×720 @ 90 fps | Official datasheet |
+| RGB Resolution | Up to 1280×800 @ 30 fps | Official datasheet |
+| Ideal Range | 0.6 m – 6 m | Official datasheet |
+| Depth Accuracy | <2% @ 4 m | Official datasheet |
+| IMU | Integrated 6-axis IMU | Official datasheet |
+| Interface | USB-C 3.1 Gen 1 | Official datasheet |
+| Price | Approx. USD 299 | Public market reference |
 
-**技术亮点**：95 mm 基线、全局快门、集成 IMU、宽视场角，适合室内外机器人导航与动态场景感知。
+**Technical Highlights**: 95 mm baseline, global shutter, integrated IMU, wide field of view, suitable for indoor and outdoor robot navigation and dynamic scene perception.
 
-**应用场景**：人形机器人头部/躯干视觉、AMR 避障、3D 扫描、工业检测、学术研究。
-
+**Application Scenarios**: Humanoid robot head/torso vision, AMR obstacle avoidance, 3D scanning, industrial inspection, academic research.
 #### Intel RealSense D435i
+> Intel RealSense D435i: Please refer to [official documentation](https://www.intel.com) for details.
 
-> Intel RealSense D435i：请访问 [官方资料](https://www.intel.com) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 90 mm × 25 mm × 25 mm | 官方 datasheet |
-| 重量 | 约 72 g | 第三方评测 |
-| 深度技术 | 主动 IR 立体视觉 | 官方 datasheet |
-| 深度 FOV | 87° × 58° | 官方 datasheet |
-| 深度分辨率/帧率 | 最高 1280×720 @ 90 fps | 官方 datasheet |
-| RGB 分辨率 | 最高 1920×1080 @ 30 fps | 官方 datasheet |
-| 理想量程 | 0.1 m – 10 m | 官方 datasheet |
-| 深度精度 | <2% @ 2 m | 官方 datasheet |
-| IMU | 集成 Bosch BMI055 | 官方 datasheet |
-| 接口 | USB-C 3.1 | 官方 datasheet |
-| 价格 | 约 USD 199 | 公开市场参考 |
+| Dimensions | 90 mm × 25 mm × 25 mm | Official datasheet |
+| Weight | Approx. 72 g | Third-party review |
+| Depth Technology | Active IR stereo vision | Official datasheet |
+| Depth FOV | 87° × 58° | Official datasheet |
+| Depth Resolution/Frame Rate | Up to 1280×720 @ 90 fps | Official datasheet |
+| RGB Resolution | Up to 1920×1080 @ 30 fps | Official datasheet |
+| Ideal Range | 0.1 m – 10 m | Official datasheet |
+| Depth Accuracy | <2% @ 2 m | Official datasheet |
+| IMU | Integrated Bosch BMI055 | Official datasheet |
+| Interface | USB-C 3.1 | Official datasheet |
+| Price | Approx. USD 199 | Public market reference |
 
-**技术亮点**：体积更小、成本更低，集成 IMU，适合对尺寸和预算敏感的机器人平台。
+**Key Highlights**: Smaller size, lower cost, integrated IMU, suitable for robot platforms with size and budget constraints.
 
-**应用场景**：无人机、小型 AMR、协作机器人视觉、教育与研究。
-
+**Application Scenarios**: Drones, small AMRs, collaborative robot vision, education and research.
 ### 供应链位置
 
 - **上游关键零部件/材料**：CMOS 图像传感器、红外激光器、视觉处理器 ASIC、光学镜片

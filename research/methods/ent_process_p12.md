@@ -6,7 +6,7 @@ type: method
 names:
   en: VLA / WAM / AI algorithm integration (AI & Perception)
   zh: VLA / WAM / AI 算法集成（AI & Perception）
-  ko: VLA / WAM / AI 算法集成（AI & Perception）
+  ko: VLA / WAM / AI 알고리즘 통합（AI & Perception）
 summary:
   en: VLA / WAM / AI algorithm integration (AI & Perception) — the 12th phase of the humanoid robot product development process,
     covering solution design, implementation validation, and document delivery.
@@ -25,8 +25,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

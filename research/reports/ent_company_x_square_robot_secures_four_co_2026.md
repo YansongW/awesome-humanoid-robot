@@ -15,8 +15,8 @@ summary:
     only embodied AI company backed by all four major Chinese internet technology leaders
   zh: New funding supports development of embodied AI foundation models, commercial deployments and integrated robotics infrastructure,
     only embodied AI company backed by all four major Chinese internet technology leaders
-  ko: New funding supports development of embodied AI foundation models, commercial deployments and integrated robotics infrastructure,
-    only embodied AI company backed by all four major Chinese internet technology leaders
+  ko: 새로운 자금 지원은 체화된 AI 기초 모델 개발, 상용 배포 및 통합 로보틱스 인프라를 지원하며, 중국 4대 주요 인터넷 기술 선도 기업 모두의 지원을 받는 유일한 체화된 AI
+    기업입니다.
 domains:
 - 11_applications_markets
 layers:
@@ -37,7 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
+    | WP3 marker fix 2026-08-10: summary.ko translated en->ko (DeepSeek).'
 sources:
 - id: src_001
   type: website

@@ -34,7 +34,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/companies/company_tesla.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/companies/company_tesla.md by scripts/backfill_nonpaper_entries.py.
+    | WP3 marker fix 2026-08-10: 2 en-section(s) translated zh->en (DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -93,45 +94,39 @@ theoretical_depth:
 ### 代表产品
 
 #### Tesla Optimus Gen 2
+> Tesla Optimus Gen 2: Please refer to [official materials](https://www.tesla.com) for details.
 
-> Tesla Optimus Gen 2：请访问 [官方资料](https://www.tesla.com) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Remarks/Source |
 |--------|------|-----------|
-| 尺寸 | 约 173 cm（高） | Tesla AI Day / 公开资料 |
-| 重量 | 约 57 kg | Tesla 官方披露 |
-| 自由度 | 躯干 28+；手部 11×2（Gen 2），Gen 3 手部升级为 22×2 | 公开资料 |
-| 负载/扭矩 | 双手搬运约 20 kg | 公开演示 |
-| 速度/转速 | 步行最高约 8 km/h | 第三方评测 |
-| 续航 | 约 2–4 小时（视任务） | 未官方确认 |
-| 接口/通信 | 专有接口，FSD 计算平台 | 官方披露 |
-| 价格 | 目标零售价 20,000–30,000 USD | Musk 公开表态 |
+| Dimensions | Approximately 173 cm (height) | Tesla AI Day / Public information |
+| Weight | Approximately 57 kg | Official Tesla disclosure |
+| Degrees of Freedom | Torso 28+; Hands 11×2 (Gen 2), Gen 3 hands upgraded to 22×2 | Public information |
+| Payload/Torque | Two-hand carrying approximately 20 kg | Public demonstration |
+| Speed/Rotation | Maximum walking speed approximately 8 km/h | Third-party evaluation |
+| Battery Life | Approximately 2–4 hours (task-dependent) | Not officially confirmed |
+| Interface/Communication | Proprietary interface, FSD computing platform | Official disclosure |
+| Price | Target retail price 20,000–30,000 USD | Public statement by Musk |
 
-**技术亮点**：轻量化机身、特斯拉自研线性/旋转执行器、躯干集成电池、FSD 衍生神经网络、类人双手与触觉反馈。
+**Technical Highlights**: Lightweight body, Tesla self-developed linear/rotary actuators, integrated torso battery, FSD-derived neural networks, human-like hands with tactile feedback.
 
-**应用场景**：汽车工厂电池/物料分拣、一般工业搬运、未来家庭与个人服务。
-
-
+**Application Scenarios**: Battery/material sorting in automotive factories, general industrial handling, future home and personal services.
 #### Tesla Optimus Gen 1
+> Tesla Optimus Gen 1: Please refer to [official materials](https://www.tesla.com) for details.
 
-> Tesla Optimus Gen 1：请访问 [官方资料](https://www.tesla.com) 查看。
-
-| 规格项 | 数值 | 备注/来源 |
+| Specification | Value | Notes/Source |
 |--------|------|-----------|
-| 尺寸 | 约 173 cm（高） | Tesla AI Day 2022 |
-| 重量 | 约 73 kg | 公开资料 |
-| 自由度 | 躯干约 28；手部 11×2 | 公开资料 |
-| 负载/扭矩 | 双手搬运约 20 kg；硬拉约 68 kg | 公开演示 |
-| 速度/转速 | 步行 < 2 km/h | 原型演示 |
-| 续航 | 未公开 | - |
-| 接口/通信 | 专有接口 | - |
-| 价格 | 未公开 | - |
+| Dimensions | Approximately 173 cm (height) | Tesla AI Day 2022 |
+| Weight | Approximately 73 kg | Public information |
+| Degrees of Freedom | Torso approximately 28; hands 11×2 | Public information |
+| Payload/Torque | Two-hand carrying approximately 20 kg; deadlift approximately 68 kg | Public demonstration |
+| Speed/Rotation | Walking < 2 km/h | Prototype demonstration |
+| Battery Life | Not disclosed | - |
+| Interface/Communication | Proprietary interface | - |
+| Price | Not disclosed | - |
 
-**技术亮点**：第一代公开原型，验证电驱关节、基础双足行走与躯干集成计算架构。
+**Technical Highlights**: First-generation public prototype, validating electric actuated joints, basic bipedal walking, and torso-integrated computing architecture.
 
-**应用场景**：实验室验证、公开演示与后续迭代基础。
-
-
+**Application Scenarios**: Laboratory validation, public demonstrations, and foundation for subsequent iterations.
 ### 供应链位置
 
 - **上游关键零部件/材料**：自研执行器、电池电芯与电源管理、视觉传感器、计算芯片；部分结构件与原材料外协。

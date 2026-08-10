@@ -6,7 +6,7 @@ type: method
 names:
   en: External Force/Disturbance Estimation
   zh: 外力/扰动估计
-  ko: 外力/扰动估计
+  ko: 외력/외란 추정
 summary:
   en: External force estimation response &lt;100 ms, steady-state error &lt;target
   zh: '- P10.1.3.1 输入梳理与目标量化 - 整理「外力/扰动估计」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
@@ -27,8 +27,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
-    from Chinese by scripts/backfill_en_translations.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py. | WP3 marker fix 2026-08-10:
+    names.ko translated zh->ko (DeepSeek).'
 sources:
 - id: wbs_v3_report
   type: report

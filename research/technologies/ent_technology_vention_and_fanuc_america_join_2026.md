@@ -12,8 +12,8 @@ summary:
     AI and MachineLogic software for machine tending and adaptive robotic motion applications.
   zh: Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD robots powered by Vention's MachineMotion
     AI and MachineLogic software for machine tending and adaptive robotic motion applications.
-  ko: Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD robots powered by Vention's MachineMotion
-    AI and MachineLogic software for machine tending and adaptive robotic motion applications.
+  ko: Automate 2026에서 진행된 라이브 시연에서는 Vention의 MachineMotion AI 및 MachineLogic 소프트웨어로 구동되는 FANUC CRX10iA 및
+    LR Mate 200iD 로봇이 머신 텐딩 및 적응형 로봇 모션 애플리케이션을 선보였습니다.
 domains:
 - 11_applications_markets
 layers:
@@ -33,7 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: 'Imported via ingestion framework from source_type=website. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py. | WP3 marker fix 2026-08-10: summary.ko translated en->ko
+    (DeepSeek).'
 sources:
 - id: src_001
   type: website
