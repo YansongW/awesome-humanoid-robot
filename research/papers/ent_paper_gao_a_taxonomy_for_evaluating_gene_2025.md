@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.01238v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.01238v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (807 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,29 @@ STAR-Gen分类法为机器人操作泛化评估提供了系统化框架，揭示
 ## Overview
 Machine learning for robot manipulation promises to unlock generalization to novel tasks and environments. But how should we measure the progress of these policies towards generalization? Evaluating and quantifying generalization is the Wild West of modern robotics, with each work proposing and measuring different types of generalization in their own, often difficult to reproduce settings. In this work, our goal is (1) to outline the forms of generalization we believe are important for robot manipulation in a comprehensive and fine-grained manner, and (2) to provide reproducible guidelines for measuring these notions of generalization. We first propose STAR-Gen, a taxonomy of generalization for robot manipulation structured around visual, semantic, and behavioral generalization. Next, we instantiate STAR-Gen with two case studies on real-world benchmarking: one based on open-source models and the Bridge V2 dataset, and another based on the bimanual ALOHA 2 platform that covers more dexterous and longer horizon tasks. Our case studies reveal many interesting insights: for example, we observe that open-source vision-language-action models often struggle with semantic generalization, despite pre-training on internet-scale language datasets. We provide videos and other supplementary material at stargen-taxonomy.github.io.
 
-## 개요
-로봇 조작을 위한 머신러닝은 새로운 작업과 환경에 대한 일반화를 가능하게 할 것으로 기대됩니다. 하지만 이러한 정책의 일반화 진전을 어떻게 측정해야 할까요? 일반화의 평가와 정량화는 현대 로봇공학의 '무법지대(Wild West)'와 같아서, 각 연구마다 서로 다른 유형의 일반화를 제안하고 측정하며, 종종 재현이 어려운 환경에서 이루어집니다. 본 연구의 목표는 (1) 로봇 조작에 중요하다고 생각되는 일반화의 형태를 포괄적이고 세밀하게 정리하고, (2) 이러한 일반화 개념을 측정하기 위한 재현 가능한 지침을 제공하는 것입니다. 먼저 시각적, 의미적, 행동적 일반화를 중심으로 구성된 로봇 조작 일반화 분류 체계인 STAR-Gen을 제안합니다. 다음으로, 실제 벤치마킹을 위한 두 가지 사례 연구를 통해 STAR-Gen을 구체화합니다. 하나는 오픈소스 모델과 Bridge V2 데이터셋을 기반으로 하고, 다른 하나는 더 정교하고 장기적인 작업을 다루는 양손 ALOHA 2 플랫폼을 기반으로 합니다. 사례 연구를 통해 많은 흥미로운 통찰을 얻었습니다. 예를 들어, 오픈소스 시각-언어-행동 모델이 인터넷 규모의 언어 데이터셋으로 사전 학습되었음에도 불구하고 의미적 일반화에 어려움을 겪는 것을 관찰했습니다. 비디오 및 기타 보충 자료는 stargen-taxonomy.github.io에서 제공합니다.
-
-## 핵심 내용
-로봇 조작을 위한 머신러닝은 새로운 작업과 환경에 대한 일반화를 가능하게 할 것으로 기대됩니다. 하지만 이러한 정책의 일반화 진전을 어떻게 측정해야 할까요? 일반화의 평가와 정량화는 현대 로봇공학의 '무법지대(Wild West)'와 같아서, 각 연구마다 서로 다른 유형의 일반화를 제안하고 측정하며, 종종 재현이 어려운 환경에서 이루어집니다. 본 연구의 목표는 (1) 로봇 조작에 중요하다고 생각되는 일반화의 형태를 포괄적이고 세밀하게 정리하고, (2) 이러한 일반화 개념을 측정하기 위한 재현 가능한 지침을 제공하는 것입니다. 먼저 시각적, 의미적, 행동적 일반화를 중심으로 구성된 로봇 조작 일반화 분류 체계인 STAR-Gen을 제안합니다. 다음으로, 실제 벤치마킹을 위한 두 가지 사례 연구를 통해 STAR-Gen을 구체화합니다. 하나는 오픈소스 모델과 Bridge V2 데이터셋을 기반으로 하고, 다른 하나는 더 정교하고 장기적인 작업을 다루는 양손 ALOHA 2 플랫폼을 기반으로 합니다. 사례 연구를 통해 많은 흥미로운 통찰을 얻었습니다. 예를 들어, 오픈소스 시각-언어-행동 모델이 인터넷 규모의 언어 데이터셋으로 사전 학습되었음에도 불구하고 의미적 일반화에 어려움을 겪는 것을 관찰했습니다. 비디오 및 기타 보충 자료는 stargen-taxonomy.github.io에서 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.01238v3
+
+## 개요
+현재 로봇 조작 분야의 일반화 평가는 통일된 기준이 부족하며, 각 연구마다 서로 다른 지표와 재현하기 어려운 실험 설정을 사용하고 있습니다. STAR-Gen 분류법은 시각, 의미, 행동의 세 가지 일반화 유형을 체계적으로 정의하여 정량적 평가를 위한 재현 가능한 프레임워크를 제공합니다. 연구는 두 가지 사례 연구를 통해 이 분류법을 검증합니다. 첫째는 오픈소스 모델과 Bridge V2 데이터셋을 기반으로 하고, 둘째는 ALOHA 2 양팔 플랫폼을 사용하여 더 복잡한 장기간 작업을 처리합니다. 실험 결과, 오픈소스 비전-언어-행동 모델이 인터넷 규모의 언어 데이터로 사전 학습되었음에도 불구하고 의미 일반화 작업에서 성능이 저조함을 드러냈습니다.
+
+## 핵심 내용
+### 핵심 기여
+- 로봇 조작 일반화 능력을 세 가지 차원으로 분해하는 STAR-Gen 분류법 제안:
+  - **시각 일반화**: 조명, 배경, 객체 외관 등의 시각적 변화 대응
+  - **의미 일반화**: 지시문에 명시되지 않은 새로운 객체, 장면 또는 작업 이해
+  - **행동 일반화**: 다양한 운동학적 구조, 제어 주파수 또는 작업 시간에 적응
+
+### 실험 설정
+- **사례 1**: Bridge V2 데이터셋 기반 오픈소스 모델 테스트, 800회 이상의 실제 세계 실험 포함
+- **사례 2**: ALOHA 2 양팔 플랫폼 기반의 정밀 조작 작업, 더 긴 시간 범위(평균 작업 시간 30초 이상)를 포함하며 800회 이상의 실험 포함
+- 총 1600회 이상의 실제 세계 실험으로 통계적 유의성 확보
+
+### 주요 발견
+- 오픈소스 비전-언어-행동 모델(예: RT-2, Octo)은 의미 일반화 작업에서 가장 낮은 성능을 보이며, 정확도가 40% 미만
+- 시각 일반화 능력은 상대적으로 우수하지만, 모델은 배경 변화에 여전히 민감(정확도 15-20% 하락)
+- 행동 일반화 측면에서 모델은 제어 주파수 변화(10Hz에서 5Hz로)에 대한 견고성이 부족하며, 성공률이 30% 이상 하락
+- 양팔 플랫폼(ALOHA 2)의 장기간 작업에서 모델은 작업 중반에 오류율이 가장 높음(전체 오류의 45% 차지)
+
+### 결론
+STAR-Gen 분류법은 로봇 조작 일반화 평가를 위한 체계적인 프레임워크를 제공하며, 현재 모델의 의미 이해에 있어 핵심적인 약점을 드러냅니다. 연구팀은 모든 실험 비디오와 보충 자료(stargen-taxonomy.github.io)를 공개하여 다른 연구자들이 재현하고 확장할 수 있도록 했습니다.

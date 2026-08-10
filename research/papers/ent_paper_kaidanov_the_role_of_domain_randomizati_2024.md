@@ -40,8 +40,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.01349v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.01349v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (901 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,31 @@ theoretical_depth:
 ## Overview
 Humanoids have the potential to be the ideal embodiment in environments designed for humans. Thanks to the structural similarity to the human body, they benefit from rich sources of demonstration data, e.g., collected via teleoperation, motion capture, or even using videos of humans performing tasks. However, distilling a policy from demonstrations is still a challenging problem. While Diffusion Policies (DPs) have shown impressive results in robotic manipulation, their applicability to locomotion and humanoid control remains underexplored. In this paper, we investigate how dataset diversity and size affect the performance of DPs for humanoid whole-body control. In a simulated IsaacGym environment, we generate synthetic demonstrations by training Adversarial Motion Prior (AMP) agents under various Domain Randomization (DR) conditions, and we compare DPs fitted to datasets of different size and diversity. Our findings show that, although DPs can achieve stable walking behavior, successful training of locomotion policies requires significantly larger and more diverse datasets compared to manipulation tasks, even in simple scenarios.
 
-## 개요
-휴머노이드는 인간을 위해 설계된 환경에서 이상적인 구현체가 될 잠재력을 지니고 있습니다. 인체와의 구조적 유사성 덕분에 원격 조작, 모션 캡처, 또는 인간이 작업을 수행하는 영상 등을 통해 수집된 풍부한 시연 데이터를 활용할 수 있습니다. 그러나 시연 데이터로부터 정책을 추출하는 것은 여전히 어려운 문제입니다. 확산 정책(Diffusion Policies, DPs)은 로봇 조작 분야에서 인상적인 결과를 보여주었지만, 보행 및 휴머노이드 제어에 대한 적용 가능성은 아직 충분히 탐구되지 않았습니다. 본 논문에서는 데이터셋의 다양성과 크기가 휴머노이드 전신 제어를 위한 DP 성능에 어떤 영향을 미치는지 조사합니다. 시뮬레이션된 IsaacGym 환경에서 다양한 도메인 무작위화(Domain Randomization, DR) 조건 하에 적대적 모션 사전(Adversarial Motion Prior, AMP) 에이전트를 훈련하여 합성 시연 데이터를 생성하고, 다양한 크기와 다양성을 가진 데이터셋에 적합한 DP를 비교합니다. 연구 결과, DP가 안정적인 보행 동작을 달성할 수 있지만, 보행 정책의 성공적인 훈련은 단순한 시나리오에서도 조작 작업에 비해 훨씬 더 크고 다양한 데이터셋을 필요로 한다는 것을 보여줍니다.
-
-## 핵심 내용
-휴머노이드는 인간을 위해 설계된 환경에서 이상적인 구현체가 될 잠재력을 지니고 있습니다. 인체와의 구조적 유사성 덕분에 원격 조작, 모션 캡처, 또는 인간이 작업을 수행하는 영상 등을 통해 수집된 풍부한 시연 데이터를 활용할 수 있습니다. 그러나 시연 데이터로부터 정책을 추출하는 것은 여전히 어려운 문제입니다. 확산 정책(Diffusion Policies, DPs)은 로봇 조작 분야에서 인상적인 결과를 보여주었지만, 보행 및 휴머노이드 제어에 대한 적용 가능성은 아직 충분히 탐구되지 않았습니다. 본 논문에서는 데이터셋의 다양성과 크기가 휴머노이드 전신 제어를 위한 DP 성능에 어떤 영향을 미치는지 조사합니다. 시뮬레이션된 IsaacGym 환경에서 다양한 도메인 무작위화(Domain Randomization, DR) 조건 하에 적대적 모션 사전(Adversarial Motion Prior, AMP) 에이전트를 훈련하여 합성 시연 데이터를 생성하고, 다양한 크기와 다양성을 가진 데이터셋에 적합한 DP를 비교합니다. 연구 결과, DP가 안정적인 보행 동작을 달성할 수 있지만, 보행 정책의 성공적인 훈련은 단순한 시나리오에서도 조작 작업에 비해 훨씬 더 크고 다양한 데이터셋을 필요로 한다는 것을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.01349v1
+
+## 개요
+휴머노이드 로봇은 인체 구조와 유사하여 원격 조작, 모션 캡처, 심지어 인간 비디오로부터 풍부한 시연 데이터를 얻을 잠재력이 있지만, 시연으로부터 제어 정책을 증류하는 것은 여전히 도전 과제입니다. 확산 정책은 로봇 조작 작업에서 우수한 성능을 보였지만, 운동 제어 및 휴머노이드 로봇 분야에서의 적용은 아직 충분히 탐구되지 않았습니다. 본 연구는 IsaacGym 시뮬레이션 환경에서 적대적 운동 사전 에이전트를 훈련하고 다양한 도메인 무작위화 조건을 적용하여 합성 시연 데이터셋을 생성한 뒤, 다양한 규모와 다양성을 가진 데이터셋에서 확산 정책의 훈련 효과를 체계적으로 비교했습니다. 실험 결과, 단순한 시나리오에서도 운동 제어 정책의 성공적인 훈련에는 조작 작업보다 훨씬 더 크고 다양한 데이터셋이 필요함을 보여줍니다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+- 휴머노이드 로봇은 구조적 생체 모방 덕분에 원격 조작, 모션 캡처 또는 인간 비디오를 통해 시연 데이터를 얻을 수 있지만, 정책 증류는 여전히 핵심 과제입니다.
+- 확산 정책은 로봇 조작 작업에서 상당한 성과를 거두었지만, 전신 운동 제어 및 휴머노이드 로봇 분야에서의 적용 가능성은 아직 체계적으로 검증되지 않았습니다.
+
+### 방법 설계
+- **시뮬레이션 환경**: IsaacGym 기반으로 휴머노이드 로봇 전신 제어 시뮬레이션 시나리오를 구축했습니다.
+- **데이터 생성**: 적대적 운동 사전(AMP) 강화 학습 에이전트를 훈련하고, 다양한 도메인 무작위화 조건에서 합성 시연 궤적을 생성했습니다.
+- **도메인 무작위화 조건**: 외력 간섭과 같은 섭동 무작위화와 지면 요철과 같은 지형 무작위화를 포함하여 실제 환경의 불확실성을 모사했습니다.
+
+### 실험 설정
+- **데이터셋 변수**: 데이터셋 규모(수천 개에서 수십만 개의 궤적)와 다양성(도메인 무작위화 매개변수 조정을 통해 구현)을 체계적으로 변경했습니다.
+- **정책 훈련**: 확산 정책을 사용하여 다양한 특징의 데이터셋을 피팅하고, 안정적인 보행 동작 생성 능력을 평가했습니다.
+
+### 주요 발견
+- **규모 요구 사항**: 운동 제어 작업에 필요한 데이터셋 규모는 조작 작업보다 훨씬 크며, 단순한 시나리오에서도 수만 개의 시연 궤적이 필요합니다.
+- **다양성의 중요성**: 섭동 무작위화와 지형 무작위화가 정책의 일반화 능력 향상에 가장 두드러지며, 다양성이 부족한 데이터셋은 보지 못한 시나리오에서 정책이 실패하게 만듭니다.
+- **성능 비교**: 확산 정책은 충분히 훈련되면 안정적인 보행을 달성할 수 있지만, 수렴 속도와 최종 성능은 데이터셋의 적용 범위에 크게 의존합니다.
+
+### 결론
+- 확산 정책을 휴머노이드 로봇 전신 운동 제어에 적용할 때는 데이터셋의 규모와 다양성, 특히 환경 섭동과 지형 변화의 적용 범위를 우선적으로 보장해야 합니다.
+- 이 발견은 향후 휴머노이드 로봇 데이터 수집 전략(예: 시뮬레이션과 실제 데이터 결합)에 대한 정량적 지침을 제공합니다.

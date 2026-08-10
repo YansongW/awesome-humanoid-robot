@@ -35,7 +35,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2207.13784v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_avatarposer_articulated_full_b_2022_1 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_avatarposer_articulated_full_b_2022_1 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (846 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,26 @@ AvatarPoser首次证明了仅通过头部和手部稀疏输入即可实现高精
 ## Overview
 Today's Mixed Reality head-mounted displays track the user's head pose in world space as well as the user's hands for interaction in both Augmented Reality and Virtual Reality scenarios. While this is adequate to support user input, it unfortunately limits users' virtual representations to just their upper bodies. Current systems thus resort to floating avatars, whose limitation is particularly evident in collaborative settings. To estimate full-body poses from the sparse input sources, prior work has incorporated additional trackers and sensors at the pelvis or lower body, which increases setup complexity and limits practical application in mobile settings. In this paper, we present AvatarPoser, the first learning-based method that predicts full-body poses in world coordinates using only motion input from the user's head and hands. Our method builds on a Transformer encoder to extract deep features from the input signals and decouples global motion from the learned local joint orientations to guide pose estimation. To obtain accurate full-body motions that resemble motion capture animations, we refine the arm joints' positions using an optimization routine with inverse kinematics to match the original tracking input. In our evaluation, AvatarPoser achieved new state-of-the-art results in evaluations on large motion capture datasets (AMASS). At the same time, our method's inference speed supports real-time operation, providing a practical interface to support holistic avatar control and representation for Metaverse applications.
 
-## 개요
-오늘날의 혼합 현실 헤드 마운트 디스플레이는 증강 현실과 가상 현실 시나리오 모두에서 사용자의 머리 자세를 월드 공간에서 추적하고, 사용자의 손을 추적하여 상호작용을 지원합니다. 이는 사용자 입력을 지원하기에 충분하지만, 불행히도 사용자의 가상 표현을 상체로만 제한합니다. 따라서 현재 시스템은 떠다니는 아바타에 의존하게 되며, 이러한 한계는 협업 환경에서 특히 두드러집니다. 희소한 입력 소스로부터 전신 자세를 추정하기 위해, 이전 연구에서는 골반이나 하체에 추가 트래커와 센서를 통합했지만, 이는 설정 복잡성을 증가시키고 모바일 환경에서의 실용적 적용을 제한합니다. 본 논문에서는 사용자의 머리와 손의 모션 입력만을 사용하여 월드 좌표에서 전신 자세를 예측하는 최초의 학습 기반 방법인 AvatarPoser를 제시합니다. 우리의 방법은 Transformer 인코더를 기반으로 입력 신호에서 심층 특징을 추출하고, 학습된 로컬 관절 방향에서 전역 모션을 분리하여 자세 추정을 안내합니다. 모션 캡처 애니메이션과 유사한 정확한 전신 동작을 얻기 위해, 역운동학을 사용한 최적화 루틴을 통해 팔 관절 위치를 정제하여 원래 추적 입력과 일치시킵니다. 평가에서 AvatarPoser는 대규모 모션 캡처 데이터셋(AMASS)에서 최신 기술 수준의 결과를 달성했습니다. 동시에, 우리 방법의 추론 속도는 실시간 작동을 지원하여 메타버스 애플리케이션을 위한 전체적인 아바타 제어 및 표현을 지원하는 실용적인 인터페이스를 제공합니다.
-
-## 핵심 내용
-오늘날의 혼합 현실 헤드 마운트 디스플레이는 증강 현실과 가상 현실 시나리오 모두에서 사용자의 머리 자세를 월드 공간에서 추적하고, 사용자의 손을 추적하여 상호작용을 지원합니다. 이는 사용자 입력을 지원하기에 충분하지만, 불행히도 사용자의 가상 표현을 상체로만 제한합니다. 따라서 현재 시스템은 떠다니는 아바타에 의존하게 되며, 이러한 한계는 협업 환경에서 특히 두드러집니다. 희소한 입력 소스로부터 전신 자세를 추정하기 위해, 이전 연구에서는 골반이나 하체에 추가 트래커와 센서를 통합했지만, 이는 설정 복잡성을 증가시키고 모바일 환경에서의 실용적 적용을 제한합니다. 본 논문에서는 사용자의 머리와 손의 모션 입력만을 사용하여 월드 좌표에서 전신 자세를 예측하는 최초의 학습 기반 방법인 AvatarPoser를 제시합니다. 우리의 방법은 Transformer 인코더를 기반으로 입력 신호에서 심층 특징을 추출하고, 학습된 로컬 관절 방향에서 전역 모션을 분리하여 자세 추정을 안내합니다. 모션 캡처 애니메이션과 유사한 정확한 전신 동작을 얻기 위해, 역운동학을 사용한 최적화 루틴을 통해 팔 관절 위치를 정제하여 원래 추적 입력과 일치시킵니다. 평가에서 AvatarPoser는 대규모 모션 캡처 데이터셋(AMASS)에서 최신 기술 수준의 결과를 달성했습니다. 동시에, 우리 방법의 추론 속도는 실시간 작동을 지원하여 메타버스 애플리케이션을 위한 전체적인 아바타 제어 및 표현을 지원하는 실용적인 인터페이스를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2207.13784v1
+
+## 개요
+기존 혼합현실 헤드셋은 사용자의 머리와 손姿态만 추적하여 가상 아바타가 상반신만 표현할 수밖에 없어 협업 환경에서 한계가 뚜렷하다. AvatarPoser는 Transformer 인코더를 통해 머리와 손의 운동 신호에서 심층 특징을 추출하고, 전역 운동과 국부 관절 방향을 분리하여 자세 추정을 유도한 후, 역운동학(Inverse Kinematics)을 통해 팔 관절 위치를 최적화하여 원래 추적 입력과 정합시킨다. 이 방법은 AMASS 데이터셋에서 당시 최고 성능을 달성했으며, 추론 속도가 실시간 실행을 지원하여 메타버스 응용에서 전신 아바타 제어를 위한 실용적인 솔루션을 제공한다.
+
+## 핵심 내용
+### 방법 구조
+- **입력**: 사용자의 머리와 양손의 6D 자세(위치+회전)만 희소 운동 신호로 사용.
+- **핵심 모듈**: Transformer 인코더 기반으로 입력 신호의 심층 특징을 추출하고, 전역 운동(신체 이동 및 회전)과 국부 관절 방향(각 관절의 상대 회전)을 분리하여 자세 추정 프레임워크를 구축.
+- **최적화 단계**: 역운동학(Inverse Kinematics)을 사용하여 팔 관절 위치를 최적화함으로써 출력 자세가 원래 추적 입력과 엄격히 정렬되도록 하여, 모션 캡처 애니메이션과 유사한 정밀한 전신 운동을 생성.
+
+### 실험 설정
+- **데이터셋**: 대규모 모션 캡처 데이터셋 AMASS에서 훈련 및 평가를 수행하며, 해당 데이터셋은 다양한 인간 운동 유형을 포함.
+- **비교 기준**: 추가 센서(예: 허리 또는 하체 추적기)를 사용하는 기존 방법과 비교.
+
+### 주요 결과
+- **정밀도**: AMASS 데이터셋에서 당시 최고 수준(state-of-the-art)의 전신 자세 추정 정밀도를 달성했으며, 구체적 지표로 관절 위치 오류 및 회전 오류를 포함.
+- **실시간성**: 추론 속도가 실시간 실행 요구를 충족(구체적 프레임률은 명시되지 않았지만 실시간 상호작용 지원을 강조).
+- **응용 가치**: 추가 하드웨어(예: 허리 추적기) 없이 헤드셋과 컨트롤러의 기존 추적 데이터만으로 배포 복잡성을 크게 낮추며, 모바일 및 메타버스 환경에 적합.
+
+### 결론
+AvatarPoser는 머리와 손의 희소 입력만으로도 고정밀 실시간 전신 자세 추적이 가능함을 처음으로 입증했다. Transformer와 역운동학의 결합 설계를 통해 추가 센서에 의존하는 기존 방법보다 정밀도와 실용성에서 우수하며, 가상 아바타 제어를 위한 경량화 솔루션을 제공한다.

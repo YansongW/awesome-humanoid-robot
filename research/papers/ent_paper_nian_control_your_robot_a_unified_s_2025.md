@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23823v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23823v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (706 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,31 @@ Control Your Robot 框架使机器人学习具备跨平台的可扩展性与可�
 ## Overview
 Cross-platform robot control remains difficult because hardware interfaces, data formats, and control paradigms vary widely, which fragments toolchains and slows deployment. To address this, we present Control Your Robot, a modular, general-purpose framework that unifies data collection and policy deployment across diverse platforms. The system reduces fragmentation through a standardized workflow with modular design, unified APIs, and a closed-loop architecture. It supports flexible robot registration, dual-mode control with teleoperation and trajectory playback, and seamless integration from multimodal data acquisition to inference. Experiments on single-arm and dual-arm systems show efficient, low-latency data collection and effective support for policy learning with imitation learning and vision-language-action models. Policies trained on data gathered by Control Your Robot match expert demonstrations closely, indicating that the framework enables scalable and reproducible robot learning across platforms.
 
-## 개요
-크로스 플랫폼 로봇 제어는 하드웨어 인터페이스, 데이터 형식 및 제어 패러다임이 매우 다양하여 툴체인이 분산되고 배포 속도가 느려지기 때문에 여전히 어려운 과제입니다. 이를 해결하기 위해, 우리는 다양한 플랫폼에서 데이터 수집과 정책 배포를 통합하는 모듈형 범용 프레임워크인 Control Your Robot을 제시합니다. 이 시스템은 모듈형 설계, 통합 API 및 폐쇄 루프 아키텍처를 갖춘 표준화된 워크플로를 통해 분산을 줄입니다. 유연한 로봇 등록, 원격 조작 및 궤적 재생을 통한 이중 모드 제어, 다중 모드 데이터 수집에서 추론까지의 원활한 통합을 지원합니다. 단일 암 및 이중 암 시스템에 대한 실험은 효율적이고 지연 시간이 짧은 데이터 수집과 모방 학습 및 시각-언어-행동 모델을 통한 정책 학습에 대한 효과적인 지원을 보여줍니다. Control Your Robot으로 수집된 데이터로 훈련된 정책은 전문가 시연과 매우 유사하여, 이 프레임워크가 플랫폼 간 확장 가능하고 재현 가능한 로봇 학습을 가능하게 함을 나타냅니다.
-
-## 핵심 내용
-크로스 플랫폼 로봇 제어는 하드웨어 인터페이스, 데이터 형식 및 제어 패러다임이 매우 다양하여 툴체인이 분산되고 배포 속도가 느려지기 때문에 여전히 어려운 과제입니다. 이를 해결하기 위해, 우리는 다양한 플랫폼에서 데이터 수집과 정책 배포를 통합하는 모듈형 범용 프레임워크인 Control Your Robot을 제시합니다. 이 시스템은 모듈형 설계, 통합 API 및 폐쇄 루프 아키텍처를 갖춘 표준화된 워크플로를 통해 분산을 줄입니다. 유연한 로봇 등록, 원격 조작 및 궤적 재생을 통한 이중 모드 제어, 다중 모드 데이터 수집에서 추론까지의 원활한 통합을 지원합니다. 단일 암 및 이중 암 시스템에 대한 실험은 효율적이고 지연 시간이 짧은 데이터 수집과 모방 학습 및 시각-언어-행동 모델을 통한 정책 학습에 대한 효과적인 지원을 보여줍니다. Control Your Robot으로 수집된 데이터로 훈련된 정책은 전문가 시연과 매우 유사하여, 이 프레임워크가 플랫폼 간 확장 가능하고 재현 가능한 로봇 학습을 가능하게 함을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.23823v2
+
+## 개요
+이 프레임워크는 크로스 플랫폼 로봇 제어에서 하드웨어 인터페이스, 데이터 형식 및 제어 패러다임의 차이로 인해 발생하는 도구 체인 파편화와 배포 지연 문제를 해결하는 것을 목표로 합니다. Control Your Robot은 모듈식 설계, 통합 API 및 폐쇄 루프 아키텍처를 포함한 표준화된 워크플로우를 채택하여, 유연한 로봇 등록, 원격 조작 및 궤적 재생의 이중 모드 제어, 그리고 다중 모달 데이터 수집에서 추론까지의 원활한 통합을 지원합니다. 단일 암 및 이중 암 시스템에서의 실험은 이 시스템이 효율적이고 낮은 지연 시간의 데이터 수집을 달성하고, 모방 학습 및 비전-언어-행동 모델 기반의 정책 학습을 효과적으로 지원함을 보여줍니다.
+
+## 핵심 내용
+### 방법
+Control Your Robot은 모듈식 범용 프레임워크로, 다음 설계를 통해 데이터 수집과 정책 배포를 통합합니다:
+- **표준화된 워크플로우**: 모듈식 설계, 통합 API 및 폐쇄 루프 아키텍처를 채택하여 도구 체인 파편화를 줄입니다.
+- **이중 모드 제어**: 원격 조작과 궤적 재생을 지원하여 유연한 운영을 가능하게 합니다.
+- **다중 모달 통합**: 다중 모달 데이터 수집에서 추론까지 원활한 연결을 구현합니다.
+
+### 아키텍처
+- **로봇 등록**: 다양한 플랫폼의 로봇을 유연하게 등록할 수 있도록 지원합니다.
+- **폐쇄 루프 아키텍처**: 제어 및 정책 배포의 실시간 피드백과 조정을 보장합니다.
+
+### 실험 설정
+- **시스템 테스트**: 단일 암 및 이중 암 로봇 시스템에서 실험을 수행합니다.
+- **데이터 수집**: 데이터 수집의 효율성과 지연 시간을 평가합니다.
+- **정책 학습**: 모방 학습 및 비전-언어-행동 모델을 사용하여 정책을 훈련합니다.
+
+### 주요 수치
+- **낮은 지연 시간**: 데이터 수집에서 효율적이고 낮은 지연 시간을 구현합니다.
+- **정책 일치도**: Control Your Robot으로 수집된 데이터로 훈련된 정책은 전문가 시연과 높은 일치도를 보입니다.
+
+### 결론
+Control Your Robot 프레임워크는 로봇 학습에 크로스 플랫폼 확장성과 재현성을 제공하여, 로봇 제어 및 정책 배포를 위한 통합 솔루션을 제시합니다.

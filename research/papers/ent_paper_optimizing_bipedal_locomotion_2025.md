@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.03070v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.03070v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1158 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,27 @@ sources:
 ## Overview
 In this paper, we explore the space of running gaits for the bipedal robot Cassie. Our first contribution is to present an approach for optimizing gait efficiency across a spectrum of speeds with the aim of enabling extremely high-speed running on hardware. This raises the question of how the resulting gaits compare to human running mechanics, which are known to be highly efficient in comparison to quadrupeds. Our second contribution is to conduct this comparison based on established human biomechanical studies. We find that despite morphological differences between Cassie and humans, key properties of the gaits are highly similar across a wide range of speeds. Finally, our third contribution is to integrate the optimized running gaits into a full controller that satisfies the rules of the real-world task of the 100m dash, including starting and stopping from a standing position. We demonstrate this controller on hardware to establish the Guinness World Record for Fastest 100m by a Bipedal Robot.
 
-## 개요
-본 논문에서는 이족 보행 로봇 Cassie의 달리기 보행 공간을 탐구합니다. 첫 번째 기여는 하드웨어에서 초고속 달리기를 가능하게 하는 것을 목표로 다양한 속도 범위에서 보행 효율성을 최적화하는 접근법을 제시하는 것입니다. 이는 결과적으로 생성된 보행이 사족 동물에 비해 매우 효율적인 것으로 알려진 인간의 달리기 역학과 어떻게 비교되는지에 대한 질문을 제기합니다. 두 번째 기여는 기존의 인간 생체역학 연구를 기반으로 이 비교를 수행하는 것입니다. Cassie와 인간 사이의 형태학적 차이에도 불구하고, 보행의 주요 특성은 광범위한 속도 범위에서 매우 유사함을 발견했습니다. 마지막으로 세 번째 기여는 최적화된 달리기 보행을 서 있는 자세에서 출발 및 정지를 포함한 100m 달리기라는 실제 과제의 규칙을 충족하는 완전한 제어기에 통합하는 것입니다. 우리는 이 제어기를 하드웨어에서 시연하여 이족 보행 로봇으로서 가장 빠른 100m 달리기에 대한 기네스 세계 기록을 수립했습니다.
-
-## 핵심 내용
-본 논문에서는 이족 보행 로봇 Cassie의 달리기 보행 공간을 탐구합니다. 첫 번째 기여는 하드웨어에서 초고속 달리기를 가능하게 하는 것을 목표로 다양한 속도 범위에서 보행 효율성을 최적화하는 접근법을 제시하는 것입니다. 이는 결과적으로 생성된 보행이 사족 동물에 비해 매우 효율적인 것으로 알려진 인간의 달리기 역학과 어떻게 비교되는지에 대한 질문을 제기합니다. 두 번째 기여는 기존의 인간 생체역학 연구를 기반으로 이 비교를 수행하는 것입니다. Cassie와 인간 사이의 형태학적 차이에도 불구하고, 보행의 주요 특성은 광범위한 속도 범위에서 매우 유사함을 발견했습니다. 마지막으로 세 번째 기여는 최적화된 달리기 보행을 서 있는 자세에서 출발 및 정지를 포함한 100m 달리기라는 실제 과제의 규칙을 충족하는 완전한 제어기에 통합하는 것입니다. 우리는 이 제어기를 하드웨어에서 시연하여 이족 보행 로봇으로서 가장 빠른 100m 달리기에 대한 기네스 세계 기록을 수립했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.03070v1
+
+## 개요
+이 연구는 이족 보행 로봇 Cassie의 달리기 보행 최적화에 초점을 맞추며, 극도로 높은 속도에서의 효율적인 운동을 구현하는 것을 목표로 한다. 저자들은 먼저 광범위한 속도 범위에 걸친 보행 효율 최적화 방법을 제안하여, 로봇이 인간 단거리 달리기에 근접한 속도에 도달할 수 있게 한다. 이후 기존의 인간 생체역학 연구를 바탕으로 최적화된 보행을 인간 달리기 메커니즘과 비교한 결과, Cassie와 인간 사이에 형태적 차이가 있음에도 불구하고 핵심 보행 특성이 넓은 속도 구간에서 높은 유사성을 보인다는 것을 발견했다. 마지막으로 연구팀은 최적화된 보행을 완전한 컨트롤러에 통합하여 100미터 단거리 달리기의 실제 규칙(서 있는 자세에서 출발하고 정지하는 것을 포함)을 충족시키고, 하드웨어에서 성공적으로 시연함으로써 이족 보행 로봇 100미터 단거리 달리기의 기네스 세계 기록을 수립했다.
+
+## 핵심 내용
+### 방법
+- **보행 최적화 프레임워크**: Cassie 로봇을 대상으로 광범위한 속도 범위에 걸친 보행 효율 최적화 방법을 제안한다. 이 방법은 보행 파라미터(보폭, 보빈, 착지 각도 등)를 조정하여 에너지 소비를 최소화하거나 속도를 최대화함으로써, 저속에서 극고속까지의 연속적인 보행 궤적을 생성한다.
+- **인간 달리기와의 비교**: 확립된 인간 생체역학 연구(관절 토크, 지면 반력, 질량 중심 궤적 등)를 기반으로 최적화된 Cassie 보행을 인간 달리기 데이터와 정량적으로 비교한다. Cassie의 다리 구조(발 아치 없음, 모터 구동 등)가 인간과 다르지만, 핵심 지표(보행 주기 내 에너지 회수율, 착지 시간 비율 등)는 높은 유사성을 보인다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: Agility Robotics가 개발한 이족 보행 로봇 Cassie를 사용하며, 수동적 발목 관절과 경량 설계를 갖추어 고속 운동에 적합하다.
+- **작업 규칙**: 국제 육상 연맹 100미터 단거리 달리기 규칙을 엄격히 준수하며, 정지 상태의 서 있는 자세에서 출발, 전 구간 직선 주행, 종점에서 정지를 포함한다. 컨트롤러는 출발 가속, 중간 주행, 감속 정지의 세 단계를 처리해야 한다.
+- **성능 지표**: 최고 속도, 평균 속도, 보행 주기 시간, 에너지 소비(모터 전류 추정) 등을 기록한다.
+
+### 주요 수치와 결과
+- **세계 기록**: 하드웨어 시연에서 Cassie는 **24.73초**로 100미터 단거리 달리기를 완주하여 이족 보행 로봇 100미터 단거리 달리기의 기네스 세계 기록을 수립했다(이전 기록은 약 30초).
+- **속도 비교**: 최적화된 보행을 통해 Cassie는 **약 4.5 m/s**의 최고 속도에 도달했다(인간 단거리 선수는 약 10 m/s). 그러나 로봇의 크기와 출력 제한을 고려할 때, 이 속도는 이론적 한계에 근접한 수치이다.
+- **보행 유사성**: 속도 범위 2-4 m/s에서 Cassie의 보행 주기 시간, 착지 시간 비율(약 40-50%)은 인간 달리기 데이터와의 편차가 15% 미만이다. 질량 중심의 수직 변동 폭(약 5 cm)도 인간 달리기 패턴과 일치한다.
+
+### 결론
+- 보행 효율을 최적화함으로써 이족 보행 로봇은 안정성을 희생하지 않고 고속 주행을 달성할 수 있으며, 그 보행 특성은 핵심 역학 지표에서 인간 달리기와 높은 유사성을 보여 생체 모방 설계가 로봇 운동 제어에 효과적임을 입증한다.
+- 완전한 컨트롤러의 통합(출발, 중간 주행, 정지)은 실제 경쟁 작업에서 최적화된 보행의 실현 가능성을 증명하며, 향후 동적 환경에서 이족 보행 로봇의 고속 운동을 위한 기반을 제공한다.

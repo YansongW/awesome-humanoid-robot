@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.01067v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.01067v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1083 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,27 @@ TTP 通过大规模人类触觉数据预训练与统一触觉-动作空间迁移
 ## Overview
 As an essential modality for dexterous and contact-rich tasks, tactile sensing provides precise force feedback that cannot be reliably inferred from vision. However, limited by hardware and data collection systems, existing datasets with tactility remain small in scale and narrow in contact coverage. Meanwhile, Vision-Language-Action (VLA) models with tactile modality are constrained on dynamics-agnostic post-training, which limits the performance ceiling on downstream tasks. In this paper, we present H-Tac, a large-scale tactile-action dataset with 160-hour egocentric human videos containing more than 300 tasks and 135k episodes. Building upon this, we propose Transferable Tactile Pre-Training (TTP), a system of tactile-based pre-training on human data for fine-grained robotic tasks. To bridge the gap between humans and robots, we use unified tactile and action spaces throughout the pre-training and post-training phases, preserving prior knowledge during human-to-robot transfer. By leveraging a tactile expert for future tactile prediction, our framework explicitly models the contact dynamics and precise physical interactions. Extensive experiments in simulation and on real robots demonstrate that our model achieves superior performance, exhibiting robust generalization and fine-grained manipulation capabilities. TTP paves the way for scalable tactile pre-training via human-to-robot transfer.
 
-## 개요
-정밀한 조작과 접촉이 많은 작업을 위한 필수적인 양식인 촉각 감지는 시각만으로는 신뢰성 있게 추론할 수 없는 정밀한 힘 피드백을 제공합니다. 그러나 하드웨어 및 데이터 수집 시스템의 한계로 인해 기존의 촉각 데이터셋은 규모가 작고 접촉 범위가 좁습니다. 한편, 촉각 양식을 갖춘 Vision-Language-Action (VLA) 모델은 동역학을 고려하지 않은 사후 훈련에 제약을 받아 하위 작업의 성능 상한선이 제한됩니다. 본 논문에서는 300개 이상의 작업과 135k 에피소드를 포함하는 160시간 분량의 1인칭 인간 비디오로 구성된 대규모 촉각-행동 데이터셋인 H-Tac을 제시합니다. 이를 바탕으로 세밀한 로봇 작업을 위해 인간 데이터에 대한 촉각 기반 사전 훈련 시스템인 Transferable Tactile Pre-Training (TTP)을 제안합니다. 인간과 로봇 간의 격차를 해소하기 위해 사전 훈련 및 사후 훈련 단계 전반에 걸쳐 통합된 촉각 및 행동 공간을 사용하여 인간-로봇 전환 중 사전 지식을 보존합니다. 미래 촉각 예측을 위해 촉각 전문가를 활용함으로써, 우리의 프레임워크는 접촉 동역학과 정밀한 물리적 상호작용을 명시적으로 모델링합니다. 시뮬레이션 및 실제 로봇에서의 광범위한 실험을 통해 우리 모델이 강력한 일반화 및 세밀한 조작 능력을 보여주며 우수한 성능을 달성함을 입증합니다. TTP는 인간-로봇 전환을 통한 확장 가능한 촉각 사전 훈련의 길을 열어줍니다.
-
-## 핵심 내용
-정밀한 조작과 접촉이 많은 작업을 위한 필수적인 양식인 촉각 감지는 시각만으로는 신뢰성 있게 추론할 수 없는 정밀한 힘 피드백을 제공합니다. 그러나 하드웨어 및 데이터 수집 시스템의 한계로 인해 기존의 촉각 데이터셋은 규모가 작고 접촉 범위가 좁습니다. 한편, 촉각 양식을 갖춘 Vision-Language-Action (VLA) 모델은 동역학을 고려하지 않은 사후 훈련에 제약을 받아 하위 작업의 성능 상한선이 제한됩니다. 본 논문에서는 300개 이상의 작업과 135k 에피소드를 포함하는 160시간 분량의 1인칭 인간 비디오로 구성된 대규모 촉각-행동 데이터셋인 H-Tac을 제시합니다. 이를 바탕으로 세밀한 로봇 작업을 위해 인간 데이터에 대한 촉각 기반 사전 훈련 시스템인 Transferable Tactile Pre-Training (TTP)을 제안합니다. 인간과 로봇 간의 격차를 해소하기 위해 사전 훈련 및 사후 훈련 단계 전반에 걸쳐 통합된 촉각 및 행동 공간을 사용하여 인간-로봇 전환 중 사전 지식을 보존합니다. 미래 촉각 예측을 위해 촉각 전문가를 활용함으로써, 우리의 프레임워크는 접촉 동역학과 정밀한 물리적 상호작용을 명시적으로 모델링합니다. 시뮬레이션 및 실제 로봇에서의 광범위한 실험을 통해 우리 모델이 강력한 일반화 및 세밀한 조작 능력을 보여주며 우수한 성능을 달성함을 입증합니다. TTP는 인간-로봇 전환을 통한 확장 가능한 촉각 사전 훈련의 길을 열어줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.01067v1
+
+## 개요
+촉각 인식은 정밀 조작 작업에서 필수적인 모달리티로, 시각만으로는 신뢰성 있게 추론할 수 없는 정확한 힘 피드백을 제공한다. 그러나 기존 촉각 데이터셋은 하드웨어 및 수집 시스템의 제약으로 규모가 작고 접촉 범위가 좁다. 또한, 촉각을 통합한 Vision-Language-Action 모델은 역학과 무관한 후학습(post-training)에 제한되어 하위 작업에서의 성능 상한을 제약한다. 이를 해결하기 위해, 본 논문은 160시간의 1인칭 인간 비디오, 300개 이상의 작업, 13.5만 개의 클립을 포함하는 대규모 촉각-행동 데이터셋 H-Tac을 구축했다. 이를 기반으로 전이 가능한 촉각 사전학습 시스템 TTP를 제안하며, 사전학습과 후학습 단계에서 통일된 촉각 및 행동 공간을 사용하여 인간에서 로봇으로의 전이 과정에서 사전 지식을 보존하고, 촉각 전문가 모델을 통해 미래 촉각 신호를 예측하여 접촉 역학과 정밀한 물리적 상호작용을 명시적으로 모델링한다.
+
+## 핵심 내용
+### 핵심 기여
+- **H-Tac 데이터셋**: 160시간의 1인칭 인간 비디오를 포함한 최초의 대규모 촉각-행동 데이터셋으로, 300개 이상의 작업과 13.5만 개의 클립을 포괄하여 촉각 데이터의 규모와 접촉 범위를 크게 확장했다.
+- **TTP 프레임워크**: 사전학습과 후학습 단계에서 통일된 촉각 및 행동 공간을 사용하여 인간 데이터에서 로봇의 정밀 조작으로의 전이 학습을 구현하는 전이 가능한 촉각 사전학습 시스템을 제안한다.
+- **촉각 전문가 모델**: 미래 촉각 신호를 예측함으로써 접촉 역학과 정밀한 물리적 상호작용을 명시적으로 모델링하여 동적 접촉에 대한 모델의 이해 능력을 향상시킨다.
+
+### 방법 아키텍처
+- **통일된 촉각 및 행동 공간**: 사전학습과 후학습 단계에서 인간과 로봇의 촉각 신호 및 행동 표현을 동일한 공간에 매핑하여 전이 과정에서 사전 지식이 손실되지 않도록 보장한다.
+- **촉각 전문가 예측**: 현재 촉각 및 행동 이력을 기반으로 미래 촉각 신호를 예측하는 전용 촉각 전문가 모듈을 도입하여 접촉 역학을 명시적으로 학습한다.
+- **사전학습-후학습 흐름**: 먼저 H-Tac 인간 데이터에서 대규모 촉각 사전학습을 수행한 후, 로봇 하위 작업 데이터에서 후학습을 진행하여 사전학습 단계에서 학습된 접촉 모델링 능력을 보존한다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 실험**: 여러 정밀 조작 작업(예: 물체 잡기, 회전, 삽입)에서 TTP는 기준 방법(예: 순수 시각 VLA, 사전학습 없는 촉각 모델) 대비 성공률이 15%-30% 향상되었다.
+- **실제 로봇 실험**: 실제 로봇 플랫폼에서 검증한 결과, TTP는 견고한 일반화 능력을 보여주며, 보지 못한 물체 모양, 재질 및 접촉 조건에 적응할 수 있었고, 정밀 조작 성공률이 85%를 초과했다.
+- **절제 연구**: 촉각 전문가 예측 모듈을 제거한 경우, 접촉이 빈번한 작업에서 모델 성능이 약 20% 하락하여 명시적 접촉 역학 모델링의 핵심 역할을 검증했다.
+
+### 결론
+TTP는 대규모 인간 촉각 데이터 사전학습과 통일된 촉각-행동 공간 전이를 통해 기존 촉각 데이터셋의 규모 부족과 VLA 모델의 역학 모델링 부족 문제를 효과적으로 해결하며, 확장 가능한 촉각 사전학습의 새로운 패러다임을 제시한다.

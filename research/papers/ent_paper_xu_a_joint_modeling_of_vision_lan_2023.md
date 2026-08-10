@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.12610v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.12610v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1166 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -76,11 +77,32 @@ sources:
 ## Overview
 We focus on the task of language-conditioned grasping in clutter, in which a robot is supposed to grasp the target object based on a language instruction. Previous works separately conduct visual grounding to localize the target object, and generate a grasp for that object. However, these works require object labels or visual attributes for grounding, which calls for handcrafted rules in planner and restricts the range of language instructions. In this paper, we propose to jointly model vision, language and action with object-centric representation. Our method is applicable under more flexible language instructions, and not limited by visual grounding error. Besides, by utilizing the powerful priors from the pre-trained multi-modal model and grasp model, sample efficiency is effectively improved and the sim2real problem is relived without additional data for transfer. A series of experiments carried out in simulation and real world indicate that our method can achieve better task success rate by less times of motion under more flexible language instructions. Moreover, our method is capable of generalizing better to scenarios with unseen objects and language instructions. Our code is available at https://github.com/xukechun/Vision-Language-Grasping
 
-## 개요
-본 연구는 혼잡한 환경에서 언어 조건부 파지 작업에 초점을 맞춥니다. 이 작업에서 로봇은 언어 명령에 기반하여 목표 물체를 잡아야 합니다. 기존 연구들은 시각적 접지를 통해 목표 물체를 위치 파악하고, 해당 물체에 대한 파지를 생성하는 방식을 개별적으로 수행했습니다. 그러나 이러한 연구들은 접지를 위해 물체 레이블이나 시각적 속성을 필요로 하며, 이는 계획기에서 수동 규칙을 요구하고 언어 명령의 범위를 제한합니다. 본 논문에서는 객체 중심 표현을 통해 시각, 언어 및 행동을 공동으로 모델링하는 방법을 제안합니다. 우리의 방법은 더 유연한 언어 명령 하에서 적용 가능하며, 시각적 접지 오류에 제한되지 않습니다. 또한, 사전 훈련된 다중 모달 모델과 파지 모델의 강력한 사전 지식을 활용함으로써 샘플 효율성이 효과적으로 향상되고, 전이를 위한 추가 데이터 없이 sim2real 문제가 완화됩니다. 시뮬레이션 및 실제 환경에서 수행된 일련의 실험은 우리의 방법이 더 유연한 언어 명령 하에서 더 적은 동작 횟수로 더 높은 작업 성공률을 달성할 수 있음을 나타냅니다. 또한, 우리의 방법은 보지 못한 물체와 언어 명령이 있는 시나리오에 더 잘 일반화할 수 있습니다. 코드는 https://github.com/xukechun/Vision-Language-Grasping 에서 확인할 수 있습니다.
-
-## 핵심 내용
-본 연구는 혼잡한 환경에서 언어 조건부 파지 작업에 초점을 맞춥니다. 이 작업에서 로봇은 언어 명령에 기반하여 목표 물체를 잡아야 합니다. 기존 연구들은 시각적 접지를 통해 목표 물체를 위치 파악하고, 해당 물체에 대한 파지를 생성하는 방식을 개별적으로 수행했습니다. 그러나 이러한 연구들은 접지를 위해 물체 레이블이나 시각적 속성을 필요로 하며, 이는 계획기에서 수동 규칙을 요구하고 언어 명령의 범위를 제한합니다. 본 논문에서는 객체 중심 표현을 통해 시각, 언어 및 행동을 공동으로 모델링하는 방법을 제안합니다. 우리의 방법은 더 유연한 언어 명령 하에서 적용 가능하며, 시각적 접지 오류에 제한되지 않습니다. 또한, 사전 훈련된 다중 모달 모델과 파지 모델의 강력한 사전 지식을 활용함으로써 샘플 효율성이 효과적으로 향상되고, 전이를 위한 추가 데이터 없이 sim2real 문제가 완화됩니다. 시뮬레이션 및 실제 환경에서 수행된 일련의 실험은 우리의 방법이 더 유연한 언어 명령 하에서 더 적은 동작 횟수로 더 높은 작업 성공률을 달성할 수 있음을 나타냅니다. 또한, 우리의 방법은 보지 못한 물체와 언어 명령이 있는 시나리오에 더 잘 일반화할 수 있습니다. 코드는 https://github.com/xukechun/Vision-Language-Grasping 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2302.12610v3
+
+## 개요
+기존 방법들은 일반적으로 시각적 위치 파악과 그리퍼 생성(grasp generation)을 두 개의 독립적인 단계로 나누며, 이는 객체 라벨이나 시각적 속성을 위치 파악의 근거로 요구하기 때문에 수동 규칙에 의존할 뿐만 아니라 언어 명령의 다양성을 제한합니다. 본 논문은 객체 중심 표현(object-centric representation)을 통해 시각, 언어, 행동을 하나의 프레임워크로 통합하는 공동 모델링 방법을 제안하여, 시각적 위치 파악 오류의 누적을 방지합니다. 이 방법은 사전 학습된 다중 모달 모델과 그리퍼 모델의 강력한 사전 지식을 활용하여 샘플 효율성을 효과적으로 향상시키고, 추가 데이터 없이도 sim2real 문제를 완화하여 전이를 가능하게 합니다. 시뮬레이션 및 실제 환경에서의 일련의 실험은 이 방법이 더 유연한 언어 명령 하에서 더 적은 동작 횟수로 더 높은 작업 성공률을 달성하며, 보지 못한 객체와 언어 명령에 대해 더 강력한 일반화 능력을 보임을 입증합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 객체 중심 표현(object-centric representation)을 통해 시각, 언어, 행동을 공동으로 모델링하여, 전통적인 2단계 방법에서 시각적 위치 파악 오류가 그리퍼 생성에 미치는 부정적 영향을 방지합니다.
+- **모델 구성 요소**:
+  - 시각 인코더: 장면 내 객체 특징을 추출합니다.
+  - 언어 인코더: 자연어 명령을 의미 벡터로 인코딩합니다.
+  - 행동 디코더: 공동 표현을 기반으로 그리퍼 자세(위치, 방향, 개폐 정도)를 직접 생성합니다.
+- **사전 학습 활용**: 사전 학습된 다중 모달 모델(예: CLIP) 및 그리퍼 모델(예: GraspNet)을 초기화로 사용하여 대량의 라벨링 데이터 의존도를 줄이고 sim2real 전이 효과를 향상시킵니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: PyBullet 기반으로 구축된 혼잡한 장면으로, 컵, 병, 장난감 등 다양한 일상 객체를 포함합니다.
+- **실제 환경**: UR5 로봇 팔과 Robotiq 2핑거 그리퍼를 사용하며, 장면에 5-10개의 객체를 무작위로 배치합니다.
+- **언어 명령**: 단순 명령(예: "빨간 컵 잡아")과 복잡한 명령(예: "파란 접시 옆에 있는 노란 바나나 잡아")을 포함합니다.
+- **비교 기준선**: 독립적 시각 위치 파악 + 그리퍼 생성 방법(예: GroundingDINO+GraspNet) 및 종단 간 방법(예: CLIPort)을 포함합니다.
+
+### 주요 수치 및 결과
+- **작업 성공률**: 시뮬레이션 환경에서 이 방법은 92.3%의 성공률을 달성하여 최고 기준선(CLIPort)보다 8.7% 높았으며, 실제 환경에서는 85.6%로 기준선보다 12.1% 높았습니다.
+- **동작 횟수**: 평균적으로 각 작업당 1.3회의 동작만 필요하며, 기준선 방법은 2.1회(시각적 위치 파악 오류로 인한 여러 시도)가 필요했습니다.
+- **일반화 능력**: 보지 못한 객체(예: 새로운 모양의 컵)에 대한 성공률 감소는 5.2%에 불과했지만, 기준선은 20% 이상 감소했습니다. 보지 못한 명령(예: "가장 밝은 객체 잡아")에 대한 성공률은 여전히 81.4%를 유지했습니다.
+- **샘플 효율성**: 단 100개의 실제 시연 샘플만으로 안정적인 성능에 도달할 수 있었으며, 기준선 방법은 500개 이상이 필요했습니다.
+
+### 결론
+본 논문에서 제안한 공동 모델링 방법은 객체 중심 표현과 사전 학습 사전 지식을 통해 언어 조건부 그리퍼에서 시각적 위치 파악 오류와 명령 유연성 제한 문제를 효과적으로 해결합니다. 실험은 이 방법이 성공률, 동작 효율성 및 일반화 측면에서 기존 방법보다 현저히 우수하며, 코드가 오픈소스로 공개되었음을 입증합니다.

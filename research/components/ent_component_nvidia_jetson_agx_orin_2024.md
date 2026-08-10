@@ -34,7 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/products/product_jetson_agx_orin.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/products/product_jetson_agx_orin.md by scripts/backfill_nonpaper_entries.py. | WP4
+    trilingual backfill 2026-08-10: en body retranslated from zh deep-read (2654 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -43,20 +44,10 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
-
-
 ## 概述
 NVIDIA Jetson AGX Orin是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
-## NVIDIA Jetson AGX Orin
-
-> 本词条属于 [附录 D 重点产品 Wiki](../../appendix-d.md)。
-> 返回：[附录 D.4 重点产品 Wiki 目录](../index-products.md)
-> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
-
----
-
 ### 产品信息卡
 
 | 项目 | 内容 |
@@ -206,3 +197,78 @@ Jetson AGX Orin은 64 GB, 32 GB 및 산업용 버전의 세 가지 버전으로 
 2. [NVIDIA Jetson AGX Orin Developer Kit](https://developer.nvidia.com/embedded/jetson-agx-orin-developer-kit)
 3. [EEFOCUS – 휴머노이드 로봇 메인 칩 비교](https://www.eefocus.com/article/1821462.html)
 4. [CSDN – Jetson 시리즈 연산 성능 비교](https://blog.csdn.net/qq_43298381/article/details/144167933)
+
+## Overview
+The NVIDIA Jetson AGX Orin is a key component in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
+
+## Content
+### Product Information Card
+
+| Item | Details |
+|------|---------|
+| **Manufacturer** | [NVIDIA](../companies/company_nvidia.md) |
+| **Product Category** | Edge AI computing module |
+| **Release Date** | 2022 |
+| **Status** | Mass production / Commercial |
+| **Official Website/Source** | [NVIDIA Jetson Orin Page](https://www.nvidia.cn/autonomous-machines/embedded-systems/jetson-orin/) |
+
+### Product Overview
+
+The NVIDIA Jetson AGX Orin is a high-performance computing module designed for autonomous machines, robotics, and edge AI, delivering up to 275 TOPS of AI performance (64 GB version), which is more than 8 times that of the previous-generation Jetson AGX Xavier. The module features an NVIDIA Ampere architecture GPU, Arm Cortex-A78AE CPU, and next-generation deep learning and vision accelerators, supporting high-speed interfaces for multiple high-resolution cameras, LiDAR, IMU, and other sensors.
+
+The Jetson AGX Orin is available in 64 GB, 32 GB, and industrial versions, with power consumption configurable between 15 W and 60 W, meeting the needs of everything from low-power mobile robots to high-load industrial equipment. Its unified JetPack SDK, Isaac ROS, and Isaac Sim ecosystem make it a mainstream computing platform for humanoid robots, AMRs, drones, and autonomous driving prototyping.
+
+### Product Image
+
+> NVIDIA Jetson AGX Orin: Please visit the [official resources](https://www.nvidia.cn/autonomous-machines/embedded-systems/jetson-orin/) for details.
+
+### Specification Table
+
+| Specification | Value | Notes/Source |
+|---------------|-------|--------------|
+| Dimensions | 100 mm × 87 mm (module) | NVIDIA official website |
+| AI Performance | Up to 275 TOPS (64 GB) | NVIDIA official website |
+| GPU | 2048-core NVIDIA Ampere architecture GPU, 64 Tensor Cores | NVIDIA official website |
+| CPU | 12-core Arm Cortex-A78AE v8.2 | NVIDIA official website |
+| Memory | 64 GB / 32 GB LPDDR5, 204.8 GB/s | NVIDIA official website |
+| DL Accelerator | 2× NVDLA v2 | NVIDIA official website |
+| Vision Accelerator | 1× PVA v2 | NVIDIA official website |
+| Camera Interface | 16-lane MIPI CSI-2 | NVIDIA official website |
+| Power Consumption | 15 W – 60 W (configurable) | NVIDIA official website |
+| Price | Not publicly disclosed (Developer Kit approx. 1,999 USD) | Third-party reference |
+
+### Supply Chain Position
+
+- **Manufacturer**: [NVIDIA](../companies/company_nvidia.md)
+- **Core Components/Technology Sources**: Self-developed Ampere GPU, Arm CPU, NVDLA, PVA; memory, PMIC, and carrier boards provided by partners.
+- **Downstream Applications/Customers**: Humanoid robots, AMR/AGV, drones, industrial vision, autonomous driving prototyping, research and education.
+
+### Knowledge Graph Nodes and Relationships
+
+- Component entity: `ent_component_nvidia_jetson_agx_orin`
+- Manufacturer entity: `ent_company_nvidia`
+- Key relationships:
+  - `rel_ent_company_nvidia_manufactures_ent_component_nvidia_jetson_agx_orin` (`ent_company_nvidia` → `manufactures` → `ent_component_nvidia_jetson_agx_orin`)
+
+### Application Scenarios
+
+- **Humanoid Robot Brain**: Running VLM/VLA models, SLAM, dynamic obstacle avoidance, and dexterous hand control.
+- **AMR/AGV**: Multi-camera and LiDAR fusion perception with path planning.
+- **Industrial Vision Inspection**: Real-time edge-side defect detection, object recognition, and measurement.
+- **Autonomous Driving Prototyping**: Perception and decision validation platform for passenger vehicles and unmanned vehicles.
+
+### Competitive Comparison
+
+| Comparison Item | Jetson AGX Orin | Jetson Orin NX | Jetson AGX Xavier |
+|-----------------|-----------------|----------------|-------------------|
+| AI Performance | Up to 275 TOPS | Up to 157 TOPS | 32 TOPS |
+| Power Consumption | 15–60 W | 10–40 W | 10–30 W |
+| Memory | 64 GB LPDDR5 | 16 GB LPDDR5 | 16 GB LPDDR4 |
+| Core Advantage | Highest performance, unified ecosystem | Compact size, high cost-effectiveness | Mature and stable |
+
+### References
+
+1. [NVIDIA Jetson Orin Official Page](https://www.nvidia.cn/autonomous-machines/embedded-systems/jetson-orin/)
+2. [NVIDIA Jetson AGX Orin Developer Kit](https://developer.nvidia.com/embedded/jetson-agx-orin-developer-kit)
+3. [EEFocus – Humanoid Robot Main Chip Comparison](https://www.eefocus.com/article/1821462.html)
+4. [CSDN – Jetson Series Compute Capability Comparison](https://blog.csdn.net/qq_43298381/article/details/144167933)

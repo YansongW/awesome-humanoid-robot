@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1711.00537v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1711.00537v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (554 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,34 @@ theoretical_depth:
 ## Overview
 We posit that embodied artificial intelligence is not only a computational, but also a materials problem. While the importance of material and structural properties in the control loop are well understood, materials can take an active role during control by tight integration of sensors, actuators, computation and communication. We envision such materials to abstract functionality, therefore making the construction of intelligent robots more straightforward and robust. For example, robots could be made of bones that measure load, muscles that move, skin that provides the robot with information about the kind and location of tactile sensations ranging from pressure, to texture and damage, eyes that extract high-level information, and brain material that provides computation in a scalable manner. Such materials will not resemble any existing engineered materials, but rather the heterogeneous components out of which their natural counterparts are made. We describe the state-of-the-art in so-called "robotic materials", their opportunities for revolutionizing applications ranging from manipulation to autonomous driving, and open challenges the robotics community needs to address in collaboration with allies, such as wireless sensor network researchers and polymer scientists.
 
-## 개요
-우리는 구현된 인공지능이 단순한 계산 문제일 뿐만 아니라 재료 문제라고 주장합니다. 제어 루프에서 재료 및 구조적 특성의 중요성은 잘 알려져 있지만, 재료는 센서, 액추에이터, 계산 및 통신의 긴밀한 통합을 통해 제어 과정에서 능동적인 역할을 수행할 수 있습니다. 우리는 이러한 재료가 기능을 추상화하여 지능형 로봇의 구축을 더 간단하고 견고하게 만들 것이라고 상상합니다. 예를 들어, 로봇은 하중을 측정하는 뼈, 움직이는 근육, 압력부터 질감 및 손상에 이르기까지 촉각 감각의 종류와 위치에 대한 정보를 제공하는 피부, 고수준 정보를 추출하는 눈, 확장 가능한 방식으로 계산을 제공하는 뇌 재료로 구성될 수 있습니다. 이러한 재료는 기존의 어떤 공학 재료와도 닮지 않을 것이며, 오히려 자연의 대응물을 구성하는 이질적인 구성 요소와 유사할 것입니다. 우리는 소위 '로봇 재료'의 최신 기술, 조작부터 자율 주행에 이르는 응용 분야를 혁신할 기회, 그리고 로봇 공학 커뮤니티가 무선 센서 네트워크 연구자 및 고분자 과학자와 같은 협력자들과 함께 해결해야 할 공개된 과제를 설명합니다.
-
-## 핵심 내용
-우리는 구현된 인공지능이 단순한 계산 문제일 뿐만 아니라 재료 문제라고 주장합니다. 제어 루프에서 재료 및 구조적 특성의 중요성은 잘 알려져 있지만, 재료는 센서, 액추에이터, 계산 및 통신의 긴밀한 통합을 통해 제어 과정에서 능동적인 역할을 수행할 수 있습니다. 우리는 이러한 재료가 기능을 추상화하여 지능형 로봇의 구축을 더 간단하고 견고하게 만들 것이라고 상상합니다. 예를 들어, 로봇은 하중을 측정하는 뼈, 움직이는 근육, 압력부터 질감 및 손상에 이르기까지 촉각 감각의 종류와 위치에 대한 정보를 제공하는 피부, 고수준 정보를 추출하는 눈, 확장 가능한 방식으로 계산을 제공하는 뇌 재료로 구성될 수 있습니다. 이러한 재료는 기존의 어떤 공학 재료와도 닮지 않을 것이며, 오히려 자연의 대응물을 구성하는 이질적인 구성 요소와 유사할 것입니다. 우리는 소위 '로봇 재료'의 최신 기술, 조작부터 자율 주행에 이르는 응용 분야를 혁신할 기회, 그리고 로봇 공학 커뮤니티가 무선 센서 네트워크 연구자 및 고분자 과학자와 같은 협력자들과 함께 해결해야 할 공개된 과제를 설명합니다.
-
 ## 参考
 - http://arxiv.org/abs/1711.00537v2
+
+## 개요
+이 논문은 구현 지능(Embodied AI)이 재료 수준에서의 재고가 필요하다고 주장하며, 재료와 구조적 특성이 제어 루프에서 능동적인 역할을 수행해야 한다고 강조한다. 센서, 액추에이터, 계산 및 통신을 깊이 통합함으로써 로봇 재료는 기능을 추상화할 수 있으며, 지능형 로봇 구축을 더 직접적이고 견고하게 만든다. 이 글은 조작 작업부터 자율주행까지의 응용 분야에서 기존 프로토타입을 검토하고, 로봇 공학 커뮤니티가 무선 센서 네트워크 연구자, 폴리머 과학자 등과 협력하여 해결해야 할 핵심 과제를 지적한다.
+
+## 핵심 내용
+### 핵심 논점
+- 구현 지능은 단순한 계산 문제가 아니라 재료 문제이다: 재료는 센싱, 구동, 계산 및 통신을 긴밀하게 통합함으로써 제어에서 능동적인 역할을 할 수 있다.
+- 기능 추상화: 로봇 재료는 구축을 더 단순하고 견고하게 만들어야 한다. 예를 들어:
+  - 뼈: 하중 측정
+  - 근육: 운동 구동
+  - 피부: 촉각 정보 제공(압력, 질감, 손상 위치)
+  - 눈: 고수준 정보 추출
+  - 뇌 재료: 확장 가능한 계산
+
+### 기존 프로토타입 및 응용
+- "로봇 재료" 분야의 최신 기술 수준 검토
+- 잠재적 응용: 기계 팔 조작부터 자율주행까지
+
+### 공개 과제
+- 제조 공정: 이종 구성 요소의 통합을 어떻게 구현할 것인가
+- 네트워크 통신: 무선 센서 네트워크와 재료 내 통신의 협력
+- 재료 과학: 폴리머 등 새로운 재료 개발
+- 제어 이론: 재료가 능동적으로 참여하는 상황에서의 제어 알고리즘 설계
+
+### 협력 필요성
+- 로봇 공학 커뮤니티는 다음 분야의 전문가와 협력해야 한다:
+  - 무선 센서 네트워크 연구자
+  - 폴리머 과학자
+  - 기타 관련 학문 분야

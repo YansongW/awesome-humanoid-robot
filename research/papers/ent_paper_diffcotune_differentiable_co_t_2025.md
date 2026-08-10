@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.24068v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.24068v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (968 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,29 @@ DiffCoTune 提供了一种无需人工干预的跨域控制器迁移方案，通
 ## Overview
 The deployment of robot controllers is hindered by modeling discrepancies due to necessary simplifications for computational tractability or inaccuracies in data-generating simulators. Such discrepancies typically require ad-hoc tuning to meet the desired performance, thereby ensuring successful transfer to a target domain. We propose a framework for automated, gradient-based tuning to enhance performance in the deployment domain by leveraging differentiable simulators. Our method collects rollouts in an iterative manner to co-tune the simulator and controller parameters, enabling systematic transfer within a few trials in the deployment domain. Specifically, we formulate multi-step objectives for tuning and employ alternating optimization to effectively adapt the controller to the deployment domain. The scalability of our framework is demonstrated by co-tuning model-based and learning-based controllers of arbitrary complexity for tasks ranging from low-dimensional cart-pole stabilization to high-dimensional quadruped and biped tracking, showing performance improvements across different deployment domains.
 
-## 개요
-로봇 제어기의 배포는 계산 효율성을 위한 필연적인 단순화나 데이터 생성 시뮬레이터의 부정확성으로 인한 모델링 차이로 인해 어려움을 겪습니다. 이러한 차이는 일반적으로 원하는 성능을 달성하고 목표 도메인으로의 성공적인 전이를 보장하기 위해 임시 조정이 필요합니다. 본 논문에서는 미분 가능한 시뮬레이터를 활용하여 배포 도메인에서 성능을 향상시키기 위한 자동화된 그래디언트 기반 조정 프레임워크를 제안합니다. 우리의 방법은 반복적인 방식으로 롤아웃을 수집하여 시뮬레이터와 제어기 매개변수를 공동 조정함으로써 배포 도메인에서 몇 번의 시도 내에 체계적인 전이를 가능하게 합니다. 구체적으로, 조정을 위한 다단계 목표를 공식화하고 교대 최적화를 사용하여 제어기를 배포 도메인에 효과적으로 적응시킵니다. 우리 프레임워크의 확장성은 저차원 카트-폴 안정화부터 고차원 사족 및 이족 보행 추적에 이르기까지 다양한 작업에 대해 임의의 복잡성을 가진 모델 기반 및 학습 기반 제어기를 공동 조정함으로써 입증되며, 다양한 배포 도메인에서 성능 향상을 보여줍니다.
-
-## 핵심 내용
-로봇 제어기의 배포는 계산 효율성을 위한 필연적인 단순화나 데이터 생성 시뮬레이터의 부정확성으로 인한 모델링 차이로 인해 어려움을 겪습니다. 이러한 차이는 일반적으로 원하는 성능을 달성하고 목표 도메인으로의 성공적인 전이를 보장하기 위해 임시 조정이 필요합니다. 본 논문에서는 미분 가능한 시뮬레이터를 활용하여 배포 도메인에서 성능을 향상시키기 위한 자동화된 그래디언트 기반 조정 프레임워크를 제안합니다. 우리의 방법은 반복적인 방식으로 롤아웃을 수집하여 시뮬레이터와 제어기 매개변수를 공동 조정함으로써 배포 도메인에서 몇 번의 시도 내에 체계적인 전이를 가능하게 합니다. 구체적으로, 조정을 위한 다단계 목표를 공식화하고 교대 최적화를 사용하여 제어기를 배포 도메인에 효과적으로 적응시킵니다. 우리 프레임워크의 확장성은 저차원 카트-폴 안정화부터 고차원 사족 및 이족 보행 추적에 이르기까지 다양한 작업에 대해 임의의 복잡성을 가진 모델 기반 및 학습 기반 제어기를 공동 조정함으로써 입증되며, 다양한 배포 도메인에서 성능 향상을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.24068v1
+
+## 개요
+로봇 컨트롤러는 배포 시 시뮬레이터 단순화나 데이터 부정확성으로 인해 모델링 편향이 자주 발생하며, 전통적인 방법은 많은 수작업 조정이 필요합니다. DiffCoTune은 자동화된 그래디언트 기반 미세 조정 방법을 제안하며, 궤적 데이터를 반복적으로 수집하여 시뮬레이터와 컨트롤러 파라미터를 공동으로 최적화합니다. 이 방법은 다단계 목적 함수와 교대 최적화 전략을 채택하여 컨트롤러를 체계적으로 배포 도메인에 적응시킵니다. 실험 결과, 이 프레임워크는 저차원의 카트-폴 안정화부터 고차원의 네 발 및 두 발 로봇 추적까지 다양한 작업으로 확장 가능하며, 서로 다른 배포 도메인에서 성능 향상을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 미분 가능한 시뮬레이터를 활용하여 그래디언트 역전파를 구현함으로써 시뮬레이터와 컨트롤러 파라미터를 자동으로 조정하여 모델링 차이를 보완합니다.
+- **공동 미세 조정(Co-Tuning)**: 반복 과정에서 배포 도메인의 궤적 데이터를 수집하고, 시뮬레이터 파라미터(예: 동역학 파라미터)와 컨트롤러 파라미터(예: 모델 예측 제어 또는 신경망 가중치)를 동시에 최적화합니다.
+- **최적화 전략**: 다단계 목적 함수(multi-step objectives)와 교대 최적화(alternating optimization)를 채택하여, 먼저 컨트롤러를 고정하고 시뮬레이터를 업데이트한 다음, 시뮬레이터를 고정하고 컨트롤러를 업데이트하며 점진적으로 최적 적응에 접근합니다.
+
+### 실험 설정
+- **작업 범위**:
+  - 저차원 작업: cart-pole 안정 제어.
+  - 고차원 작업: 네 발 로봇(quadruped) 및 두 발 로봇(biped)의 궤적 추적.
+- **컨트롤러 유형**: 모델 기반(model-based) 및 학습 기반(learning-based) 컨트롤러를 모두 테스트하여 프레임워크의 범용성을 검증합니다.
+- **배포 도메인 차이**: 시뮬레이터 파라미터(예: 마찰 계수, 질량, 관절 감쇠)를 의도적으로 교란하여 실제 배포에서의 모델링 오류를 시뮬레이션합니다.
+
+### 주요 결과
+- **성능 향상**: 모든 작업에서 DiffCoTune은 미세 조정되지 않은 기준 컨트롤러보다 현저히 우수하며, 특히 두 발 로봇 추적 작업에서 추적 오차가 약 30% 감소합니다.
+- **샘플 효율성**: 배포 도메인에서 5-10회의 시험 궤적만 수집하면 효과적인 미세 조정이 가능하며, 전통적인 강화 학습에 필요한 샘플 수보다 훨씬 적습니다.
+- **확장성**: 프레임워크는 12 자유도 네 발 로봇 및 20 자유도 두 발 로봇에 성공적으로 적용되었으며, 그래디언트 폭발이나 수렴 실패 문제가 발생하지 않았습니다.
+
+### 결론
+DiffCoTune은 수작업 개입 없이도 크로스 도메인 컨트롤러 전이를 가능하게 하는 솔루션을 제공하며, 미분 가능한 시뮬레이터와 공동 최적화를 통해 소량의 배포 도메인 데이터만으로 제어 성능을 크게 향상시킬 수 있습니다. 향후 작업은 더 복잡한 접촉 동역학 시나리오로 확장할 수 있습니다.

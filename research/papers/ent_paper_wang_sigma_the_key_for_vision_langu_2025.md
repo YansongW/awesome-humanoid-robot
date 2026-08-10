@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00783v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00783v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (897 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ Sigma 模型部署于单张 RTX 4090 上，利用开源 pi0.5_base 作为骨干�
 ## Overview
 To address a fundamental limitation in cognitive systems, namely the absence of a time-updatable mediating thought space between semantics and continuous control, this work constructs and trains a vision-language-action model termed Sigma, deployed on a single RTX 4090. The model is built upon the open-source pi0.5_base backbone, with the svla_so101_pickplace dataset preprocessed into a structured training corpus. An independently designed VLA architecture is introduced to integrate deep semantic understanding with associative reasoning, enabling telepathic-style alignment between perception and action. Training proceeds through iterative optimization of data preprocessing, LoRA-based fine-tuning, and inference-stage adapter design. Evaluation is conducted using offline closed-loop replay, comparing Sigma against the untuned pi0.5_base under identical data conditions. Experimental results indicate a consistent reduction in control MSE across vector-, fragment-, and trajectory-level scales, while preserving the stability of the telepathy norm and semantic-text alignment quality. These findings demonstrate that mind-responsive alignment control can be quantitatively achieved through semantic and associative architectural integration without retraining the base model, providing a reproducible pathway for semantic alignment and intention-driven behavior.
 
-## 개요
-인지 시스템의 근본적인 한계, 즉 의미론과 연속 제어 사이에 시간적으로 업데이트 가능한 매개 사고 공간이 없다는 문제를 해결하기 위해, 본 연구는 Sigma라는 비전-언어-행동 모델을 구축 및 훈련하여 단일 RTX 4090에 배포했습니다. 이 모델은 오픈소스 pi0.5_base 백본을 기반으로 하며, svla_so101_pickplace 데이터셋을 구조화된 훈련 코퍼스로 전처리했습니다. 독자적으로 설계된 VLA 아키텍처를 도입하여 심층 의미 이해와 연관 추론을 통합함으로써, 지각과 행동 간의 텔레파시 스타일 정렬을 가능하게 했습니다. 훈련은 데이터 전처리, LoRA 기반 미세 조정, 추론 단계 어댑터 설계의 반복적 최적화를 통해 진행됩니다. 평가는 오프라인 폐루프 재생을 사용하여 동일한 데이터 조건에서 Sigma와 튜닝되지 않은 pi0.5_base를 비교합니다. 실험 결과는 벡터, 조각, 궤적 수준에서 제어 MSE가 일관되게 감소하는 동시에 텔레파시 노름과 의미-텍스트 정렬 품질의 안정성을 유지함을 보여줍니다. 이러한 결과는 기본 모델을 재훈련하지 않고도 의미론적 및 연관 아키텍처 통합을 통해 마음 반응 정렬 제어를 정량적으로 달성할 수 있음을 입증하며, 의미 정렬 및 의도 기반 행동을 위한 재현 가능한 경로를 제공합니다.
-
-## 핵심 내용
-인지 시스템의 근본적인 한계, 즉 의미론과 연속 제어 사이에 시간적으로 업데이트 가능한 매개 사고 공간이 없다는 문제를 해결하기 위해, 본 연구는 Sigma라는 비전-언어-행동 모델을 구축 및 훈련하여 단일 RTX 4090에 배포했습니다. 이 모델은 오픈소스 pi0.5_base 백본을 기반으로 하며, svla_so101_pickplace 데이터셋을 구조화된 훈련 코퍼스로 전처리했습니다. 독자적으로 설계된 VLA 아키텍처를 도입하여 심층 의미 이해와 연관 추론을 통합함으로써, 지각과 행동 간의 텔레파시 스타일 정렬을 가능하게 했습니다. 훈련은 데이터 전처리, LoRA 기반 미세 조정, 추론 단계 어댑터 설계의 반복적 최적화를 통해 진행됩니다. 평가는 오프라인 폐루프 재생을 사용하여 동일한 데이터 조건에서 Sigma와 튜닝되지 않은 pi0.5_base를 비교합니다. 실험 결과는 벡터, 조각, 궤적 수준에서 제어 MSE가 일관되게 감소하는 동시에 텔레파시 노름과 의미-텍스트 정렬 품질의 안정성을 유지함을 보여줍니다. 이러한 결과는 기본 모델을 재훈련하지 않고도 의미론적 및 연관 아키텍처 통합을 통해 마음 반응 정렬 제어를 정량적으로 달성할 수 있음을 입증하며, 의미 정렬 및 의도 기반 행동을 위한 재현 가능한 경로를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.00783v3
+
+## 개요
+Sigma 모델은 단일 RTX 4090에 배포되며, 오픈소스 pi0.5_base를 백본으로 활용하고 svla_so101_pickplace 데이터셋을 구조화된 훈련 코퍼스로 전처리합니다. 핵심 혁신은 독립적으로 설계된 VLA 아키텍처를 도입한 것으로, 이 아키텍처는 의미와 연속 제어 사이에 시간에 따라 업데이트 가능한 중간 사고 공간을 구축하여 심층 의미 이해와 연상 추론의 융합을 실현합니다. 훈련 과정은 데이터 전처리 반복 최적화, LoRA 기반 미세 조정, 추론 단계 어댑터 설계를 포함합니다. 오프라인 폐루프 재생 평가를 통해 Sigma는 동일한 데이터 조건에서 튜닝되지 않은 pi0.5_base와 비교하여 벡터, 세그먼트, 궤적의 세 가지 척도에서 제어 MSE의 일관된 감소를 달성하면서 '텔레파시 노름'의 안정성과 의미-텍스트 정렬 품질을 유지했습니다.
+
+## 핵심 내용
+### 방법
+- **핵심 문제**: 기존 인지 시스템은 시간에 따라 업데이트 가능한 중간 사고 공간이 부족하여 의미 이해와 연속 제어 사이에 간극이 존재합니다.
+- **모델 아키텍처**: Sigma는 오픈소스 pi0.5_base 백본 네트워크를 기반으로 하며, 독립적으로 설계된 VLA 아키텍처를 도입합니다. 이 아키텍처는 심층 의미 이해와 연상 추론을 통합하여 의미와 행동 사이에 '텔레파시식' 정렬을 구축합니다.
+- **훈련 흐름**:
+  - 데이터 전처리: svla_so101_pickplace 데이터셋을 구조화된 훈련 코퍼스로 변환.
+  - 미세 조정: LoRA 방법을 사용한 파라미터 효율적 미세 조정.
+  - 추론 적응: 출력 최적화를 위한 추론 단계 어댑터 설계.
+
+### 실험 설정
+- **하드웨어**: 단일 RTX 4090 GPU.
+- **평가 방법**: 오프라인 폐루프 재생, Sigma와 튜닝되지 않은 pi0.5_base를 동일한 데이터 조건에서 비교.
+- **평가 지표**: 제어 MSE(벡터, 세그먼트, 궤적의 세 가지 척도), 텔레파시 노름 안정성, 의미-텍스트 정렬 품질.
+
+### 주요 결과
+- **제어 정밀도**: Sigma는 벡터, 세그먼트, 궤적의 세 가지 척도에서 제어 MSE의 일관된 감소를 달성.
+- **정렬 안정성**: 텔레파시 노름은 안정적으로 유지되며, 의미-텍스트 정렬 품질은 저하되지 않음.
+- **결론**: 의미와 연상 아키텍처의 통합을 통해 기본 모델을 재훈련하지 않고도 정량화 가능한 의도 기반 정렬 제어를 실현하며, 의미 정렬과 의도 기반 행동에 대한 재현 가능한 경로를 제공합니다.

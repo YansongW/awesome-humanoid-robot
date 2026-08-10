@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.04996v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.04996v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (919 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,25 @@ FLOWER 证明了通过架构创新（而非单纯扩大模型规模）即可实�
 ## Overview
 Developing efficient Vision-Language-Action (VLA) policies is crucial for practical robotics deployment, yet current approaches face prohibitive computational costs and resource requirements. Existing diffusion-based VLA policies require multi-billion-parameter models and massive datasets to achieve strong performance. We tackle this efficiency challenge with two contributions: intermediate-modality fusion, which reallocates capacity to the diffusion head by pruning up to $50\%$ of LLM layers, and action-specific Global-AdaLN conditioning, which cuts parameters by $20\%$ through modular adaptation. We integrate these advances into a novel 950 M-parameter VLA called FLOWER. Pretrained in just 200 H100 GPU hours, FLOWER delivers competitive performance with bigger VLAs across $190$ tasks spanning ten simulation and real-world benchmarks and demonstrates robustness across diverse robotic embodiments. In addition, FLOWER achieves a new SoTA of 4.53 on the CALVIN ABC benchmark. Demos, code and pretrained weights are available at https://intuitive-robots.github.io/flower_vla/.
 
-## 개요
-효율적인 Vision-Language-Action(VLA) 정책을 개발하는 것은 실제 로봇 배포에 필수적이지만, 현재 접근 방식은 엄청난 계산 비용과 리소스 요구 사항에 직면해 있습니다. 기존의 확산 기반 VLA 정책은 강력한 성능을 달성하기 위해 수십억 개의 파라미터를 가진 모델과 대규모 데이터셋을 필요로 합니다. 우리는 두 가지 기여를 통해 이러한 효율성 문제를 해결합니다: LLM 레이어의 최대 $50\%$를 가지치기하여 확산 헤드에 용량을 재할당하는 중간 모달리티 융합과, 모듈식 적응을 통해 파라미터를 $20\%$ 줄이는 액션별 Global-AdaLN 조건화입니다. 이러한 발전을 통합하여 FLOWER라는 새로운 950M 파라미터 VLA를 개발했습니다. 단 200 H100 GPU 시간으로 사전 학습된 FLOWER는 10개의 시뮬레이션 및 실제 벤치마크에 걸친 $190$개의 작업에서 더 큰 VLA와 경쟁력 있는 성능을 제공하며, 다양한 로봇 구현체에서 강건함을 입증합니다. 또한, FLOWER는 CALVIN ABC 벤치마크에서 4.53의 새로운 최고 성능(SoTA)을 달성했습니다. 데모, 코드 및 사전 학습된 가중치는 https://intuitive-robots.github.io/flower_vla/에서 확인할 수 있습니다.
-
-## 핵심 내용
-효율적인 Vision-Language-Action(VLA) 정책을 개발하는 것은 실제 로봇 배포에 필수적이지만, 현재 접근 방식은 엄청난 계산 비용과 리소스 요구 사항에 직면해 있습니다. 기존의 확산 기반 VLA 정책은 강력한 성능을 달성하기 위해 수십억 개의 파라미터를 가진 모델과 대규모 데이터셋을 필요로 합니다. 우리는 두 가지 기여를 통해 이러한 효율성 문제를 해결합니다: LLM 레이어의 최대 $50\%$를 가지치기하여 확산 헤드에 용량을 재할당하는 중간 모달리티 융합과, 모듈식 적응을 통해 파라미터를 $20\%$ 줄이는 액션별 Global-AdaLN 조건화입니다. 이러한 발전을 통합하여 FLOWER라는 새로운 950M 파라미터 VLA를 개발했습니다. 단 200 H100 GPU 시간으로 사전 학습된 FLOWER는 10개의 시뮬레이션 및 실제 벤치마크에 걸친 $190$개의 작업에서 더 큰 VLA와 경쟁력 있는 성능을 제공하며, 다양한 로봇 구현체에서 강건함을 입증합니다. 또한, FLOWER는 CALVIN ABC 벤치마크에서 4.53의 새로운 최고 성능(SoTA)을 달성했습니다. 데모, 코드 및 사전 학습된 가중치는 https://intuitive-robots.github.io/flower_vla/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.04996v1
+
+## 개요
+기존의 확산 기반 비전-언어-행동 정책은 수십억 개의 파라미터 모델과 대규모 데이터셋에 의존하여 계산 비용이 높습니다. FLOWER는 두 가지 혁신을 통해 효율성 병목을 해결합니다: 첫째, 중간 모달리티 융합으로 LLM 레이어를 최대 50%까지 가지치기하여 계산 자원을 확산 헤드에 재할당합니다; 둘째, 행동 특화 전역 적응형 레이어 정규화를 통해 모듈식 적응으로 파라미터를 20% 절감합니다. 이러한 기술을 통합한 FLOWER는 단 9.5억 개의 파라미터와 200시간의 H100 GPU 사전 학습만으로 시뮬레이션과 실제 세계를 아우르는 190개 작업에서 더 큰 VLA 모델과 견줄 만한 성능을 보여주며, 다양한 로봇 형태를 지원합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+FLOWER의 핵심 아키텍처는 두 가지 주요 설계를 포함합니다:
+- **중간 모달리티 융합(Intermediate-Modality Fusion)**: LLM 레이어를 최대 50%까지 가지치기하여 언어 처리에 사용되던 파라미터 용량을 확산 헤드에 재할당함으로써 성능 저하 없이 모델 규모를 크게 줄입니다.
+- **행동 특화 전역 적응형 레이어 정규화(Action-Specific Global-AdaLN Conditioning)**: 모듈식 적응 메커니즘을 채택하여 전역 적응형 레이어 정규화를 통해 행동 조건 정보를 모델에 주입하고 파라미터 중복을 20% 줄입니다.
+
+### 실험 설정 및 성능
+- **학습 효율성**: FLOWER는 단 200시간의 H100 GPU 사전 학습만 필요로 하며, 유사한 대형 모델보다 훨씬 낮습니다.
+- **작업 범위**: CALVIN ABC, MetaWorld 등을 포함한 10개의 시뮬레이션 및 실제 세계 벤치마크에서 190개 작업에 대한 평가를 완료했습니다.
+- **주요 결과**:
+  - CALVIN ABC 벤치마크에서 4.53점을 달성하여 당시 최고 성능(SoTA)을 갱신했습니다.
+  - Franka, UR5 등 다양한 로봇 형태에서 특정 하드웨어 재학습 없이 견고성을 입증했습니다.
+- **비교 우위**: 수십억 개의 파라미터를 가진 확산 VLA 모델(예: RT-2, Octo)과 비교하여 FLOWER는 경쟁력을 유지하면서도 파라미터 수가 1/10에서 1/20에 불과합니다.
+
+### 결론
+FLOWER는 단순히 모델 규모를 확장하는 대신 아키텍처 혁신을 통해 효율적이고 범용적인 로봇 조작 정책을 구현할 수 있음을 입증했습니다. 오픈소스 코드, 사전 학습 가중치 및 데모 비디오는 프로젝트 웹사이트에 공개되어 있으며, 저자원 환경에서의 로봇 학습을 위한 실현 가능한 솔루션을 제공합니다.

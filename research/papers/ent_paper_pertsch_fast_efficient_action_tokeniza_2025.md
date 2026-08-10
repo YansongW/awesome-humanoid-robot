@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.09747v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.09747v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1066 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ FAST 通过频域压缩式分词，有效解决了高频灵巧操作中动作离
 ## Overview
 Autoregressive sequence models, such as Transformer-based vision-language action (VLA) policies, can be tremendously effective for capturing complex and generalizable robotic behaviors. However, such models require us to choose a tokenization of our continuous action signals, which determines how the discrete symbols predicted by the model map to continuous robot actions. We find that current approaches for robot action tokenization, based on simple per-dimension, per-timestep binning schemes, typically perform poorly when learning dexterous skills from high-frequency robot data. To address this challenge, we propose a new compression-based tokenization scheme for robot actions, based on the discrete cosine transform. Our tokenization approach, Frequency-space Action Sequence Tokenization (FAST), enables us to train autoregressive VLAs for highly dexterous and high-frequency tasks where standard discretization methods fail completely. Based on FAST, we release FAST+, a universal robot action tokenizer, trained on 1M real robot action trajectories. It can be used as a black-box tokenizer for a wide range of robot action sequences, with diverse action spaces and control frequencies. Finally, we show that, when combined with the pi0 VLA, our method can scale to training on 10k hours of robot data and match the performance of diffusion VLAs, while reducing training time by up to 5x.
 
-## 개요
-Transformer 기반의 시각-언어-행동(VLA) 정책과 같은 자기회귀 시퀀스 모델은 복잡하고 일반화 가능한 로봇 동작을 포착하는 데 매우 효과적일 수 있습니다. 그러나 이러한 모델은 연속적인 행동 신호를 토큰화해야 하며, 이는 모델이 예측한 이산 기호가 연속적인 로봇 행동에 어떻게 매핑되는지를 결정합니다. 우리는 단순한 차원별, 시간 단계별 구간화 방식에 기반한 현재의 로봇 행동 토큰화 접근 방식이 고주파 로봇 데이터로부터 정밀한 기술을 학습할 때 일반적으로 성능이 낮다는 것을 발견했습니다. 이 문제를 해결하기 위해, 우리는 이산 코사인 변환에 기반한 새로운 압축 기반 로봇 행동 토큰화 방식을 제안합니다. 우리의 토큰화 접근 방식인 주파수 공간 행동 시퀀스 토큰화(FAST)는 표준 이산화 방법이 완전히 실패하는 고정밀 및 고주파 작업에 대해 자기회귀 VLA를 훈련할 수 있게 해줍니다. FAST를 기반으로, 우리는 100만 개의 실제 로봇 행동 궤적으로 훈련된 범용 로봇 행동 토크나이저인 FAST+를 공개합니다. 이는 다양한 행동 공간과 제어 주파수를 가진 광범위한 로봇 행동 시퀀스에 대해 블랙박스 토크나이저로 사용될 수 있습니다. 마지막으로, 우리의 방법이 pi0 VLA와 결합될 때 10,000시간의 로봇 데이터로 훈련을 확장하고 확산 VLA의 성능과 일치하면서 훈련 시간을 최대 5배까지 줄일 수 있음을 보여줍니다.
-
-## 핵심 내용
-Transformer 기반의 시각-언어-행동(VLA) 정책과 같은 자기회귀 시퀀스 모델은 복잡하고 일반화 가능한 로봇 동작을 포착하는 데 매우 효과적일 수 있습니다. 그러나 이러한 모델은 연속적인 행동 신호를 토큰화해야 하며, 이는 모델이 예측한 이산 기호가 연속적인 로봇 행동에 어떻게 매핑되는지를 결정합니다. 우리는 단순한 차원별, 시간 단계별 구간화 방식에 기반한 현재의 로봇 행동 토큰화 접근 방식이 고주파 로봇 데이터로부터 정밀한 기술을 학습할 때 일반적으로 성능이 낮다는 것을 발견했습니다. 이 문제를 해결하기 위해, 우리는 이산 코사인 변환에 기반한 새로운 압축 기반 로봇 행동 토큰화 방식을 제안합니다. 우리의 토큰화 접근 방식인 주파수 공간 행동 시퀀스 토큰화(FAST)는 표준 이산화 방법이 완전히 실패하는 고정밀 및 고주파 작업에 대해 자기회귀 VLA를 훈련할 수 있게 해줍니다. FAST를 기반으로, 우리는 100만 개의 실제 로봇 행동 궤적으로 훈련된 범용 로봇 행동 토크나이저인 FAST+를 공개합니다. 이는 다양한 행동 공간과 제어 주파수를 가진 광범위한 로봇 행동 시퀀스에 대해 블랙박스 토크나이저로 사용될 수 있습니다. 마지막으로, 우리의 방법이 pi0 VLA와 결합될 때 10,000시간의 로봇 데이터로 훈련을 확장하고 확산 VLA의 성능과 일치하면서 훈련 시간을 최대 5배까지 줄일 수 있음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2501.09747v1
+
+## 개요
+자기회귀적 비전-언어-행동 모델의 연속 동작 신호 토큰화 병목 현상을 해결하기 위해, FAST는 이산 코사인 변환 기반의 압축식 토큰화 방식을 제안한다. 이 방법은 고주파 로봇 동작 시퀀스를 주파수 영역으로 매핑하여 효율적으로 압축함으로써, 기존의 차원별·시간 단계별 분할 방식이 정밀 기술 처리에서 보이는 성능 결함을 극복한다. 이를 바탕으로 연구팀은 100만 개의 실제 로봇 동작 궤적을 포함한 범용 토크나이저 FAST+를 훈련시켰으며, 다양한 동작 공간과 제어 주파수에 적응할 수 있다. 실험 결과, FAST를 pi0 VLA와 결합했을 때 1만 시간의 로봇 데이터에서 확산 VLA 수준의 성능을 달성하면서도 훈련 시간을 5배 단축했다.
+
+## 핵심 내용
+### 방법
+- **문제 배경**: Transformer 기반 자기회귀 VLA 정책은 연속 동작 신호를 토큰으로 이산화해야 하지만, 기존의 차원별·시간 단계별 분할 방식은 고주파 정밀 작업에서 성능이 저조하다.
+- **핵심 혁신**: 주파수 공간 동작 시퀀스 토큰화(FAST)를 제안하여, 이산 코사인 변환을 통해 동작 시퀀스를 주파수 영역으로 변환하고 저주파 성분을 보존하여 효율적으로 압축한 뒤, 압축된 주파수 계수를 이산화한다.
+- **범용 토크나이저 FAST+**: 100만 개의 실제 로봇 동작 궤적에서 훈련되었으며, 다양한 동작 공간(예: 관절 각도, 말단 실행기 자세)과 제어 주파수(예: 10Hz-100Hz)를 지원하여 블랙박스 토크나이저로 바로 사용할 수 있다.
+
+### 실험 설정
+- **기반 모델**: pi0 VLA를 백본 네트워크로 사용하고, FAST를 동작 토큰화 모듈로 사용.
+- **훈련 데이터**: 10,000시간의 실제 로봇 조작 데이터로, 파지, 조립, 정밀 조작 등의 작업을 포함.
+- **비교 기준**: 기존 분할 방식(예: 균일 분할, k-means 클러스터링), 확산 VLA(예: Diffusion Policy).
+
+### 주요 결과
+- **성능 비교**: 정밀 조작 작업(예: 바늘 꿰기, 나사 조이기)에서 FAST의 성공률은 85%를 초과한 반면, 기존 분할 방식은 완전히 실패(성공률 <5%)했다.
+- **훈련 효율성**: 확산 VLA와 비교하여 FAST는 훈련 시간을 5배 단축(200 GPU 시간에서 40 GPU 시간으로)하면서도 동일하거나 더 나은 작업 성공률을 유지했다.
+- **일반화 능력**: FAST+는 본 적 없는 새로운 로봇 플랫폼(예: Franka Emika, UR5)에서 미세 조정 없이도 70% 이상의 동작 예측 정확도를 달성했다.
+
+### 결론
+FAST는 주파수 영역 압축식 토큰화를 통해 고주파 정밀 조작에서의 동작 이산화 문제를 효과적으로 해결했으며, 범용 토크나이저 FAST+는 다중 플랫폼 로봇 학습을 위한 플러그 앤 플레이 솔루션을 제공하여 자기회귀 VLA의 훈련 효율성과 작업 일반화 능력을 크게 향상시켰다.

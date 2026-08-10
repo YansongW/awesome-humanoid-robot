@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26742v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26742v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (701 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,14 +73,49 @@ sources:
 ### 结论
 该方法首次证明大参数VLA模型可满足实时机器人控制需求，其流式推理框架为动态操作任务（如高速抓取、避障）提供了可行方案。代码开源地址：https://github.com/Dexmal/realtime-vla
 
-## Overview
-In this paper, we show how to run pi0-level multi-view VLA at 30Hz frame rate and at most 480Hz trajectory frequency using a single consumer GPU. This enables dynamic and real-time tasks that were previously believed to be unattainable by large VLA models. To achieve it, we introduce a bag of strategies to eliminate the overheads in model inference. The real-world experiment shows that the pi0 policy with our strategy achieves a 100% success rate in grasping a falling pen task. Based on the results, we further propose a full streaming inference framework for real-time robot control of VLA. Code is available at https://github.com/Dexmal/realtime-vla.
-
-## 개요
-본 논문에서는 단일 소비자 GPU를 사용하여 pi0 수준의 다중 뷰 VLA를 30Hz 프레임 속도와 최대 480Hz 궤적 주파수로 실행하는 방법을 보여줍니다. 이를 통해 대규모 VLA 모델로는 이전에 달성할 수 없다고 여겨졌던 동적이고 실시간 작업이 가능해집니다. 이를 달성하기 위해 모델 추론의 오버헤드를 제거하는 전략 모음을 소개합니다. 실제 실험 결과, 당사의 전략을 적용한 pi0 정책은 떨어지는 펜 잡기 작업에서 100% 성공률을 달성했습니다. 이러한 결과를 바탕으로 VLA의 실시간 로봇 제어를 위한 완전한 스트리밍 추론 프레임워크를 추가로 제안합니다. 코드는 https://github.com/Dexmal/realtime-vla에서 확인할 수 있습니다.
-
-## 핵심 내용
-본 논문에서는 단일 소비자 GPU를 사용하여 pi0 수준의 다중 뷰 VLA를 30Hz 프레임 속도와 최대 480Hz 궤적 주파수로 실행하는 방법을 보여줍니다. 이를 통해 대규모 VLA 모델로는 이전에 달성할 수 없다고 여겨졌던 동적이고 실시간 작업이 가능해집니다. 이를 달성하기 위해 모델 추론의 오버헤드를 제거하는 전략 모음을 소개합니다. 실제 실험 결과, 당사의 전략을 적용한 pi0 정책은 떨어지는 펜 잡기 작업에서 100% 성공률을 달성했습니다. 이러한 결과를 바탕으로 VLA의 실시간 로봇 제어를 위한 완전한 스트리밍 추론 프레임워크를 추가로 제안합니다. 코드는 https://github.com/Dexmal/realtime-vla에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.26742v1
+
+## Overview
+This study is the first to demonstrate that a pi0-level multi-view VLA model can run at 30Hz frame rate and 480Hz trajectory frequency on a single consumer-grade GPU, breaking through the performance bottleneck of large models in dynamic real-time tasks. The team proposed a series of strategies to eliminate model inference overhead, including computational graph optimization, attention mechanism acceleration, and more. In real-world experiments, the pi0 policy employing these strategies achieved a 100% success rate in the task of catching a falling pen. Based on these results, the researchers further proposed a full-streaming inference framework for real-time robot control, with the relevant code open-sourced on GitHub.
+
+## Content
+### Core Methods
+- **Inference Overhead Elimination Strategies**: Through techniques such as operator fusion, KV cache reuse, and dynamic batching, the latency of multi-view image encoding and action decoding in the pi0 model was compressed to within 33ms.
+- **Streaming Inference Framework**: An asynchronous pipeline architecture was designed to decouple the three stages of visual encoding, language reasoning, and action prediction, supporting independent adjustment of frame rate and trajectory frequency.
+
+### Experimental Setup
+- **Hardware Platform**: Single NVIDIA RTX 4090 GPU (24GB VRAM)
+- **Baseline Model**: pi0 (7B parameters, multi-view input)
+- **Task Scenario**: Dynamic grasping (free-falling pen, speed approximately 2m/s)
+
+### Key Numbers
+- **Frame Rate**: 30Hz (visual input update frequency)
+- **Trajectory Frequency**: Up to 480Hz (action command output frequency)
+- **Success Rate**: 100% (50 repeated experiments, catching a falling pen)
+- **Latency**: End-to-end inference latency <33ms (including image preprocessing)
+
+### Conclusion
+This method is the first to prove that large-parameter VLA models can meet the requirements of real-time robot control, and its streaming inference framework provides a feasible solution for dynamic manipulation tasks (such as high-speed grasping and obstacle avoidance). Code open-source address: https://github.com/Dexmal/realtime-vla
+
+## 개요
+이 연구는 단일 소비자용 GPU에서 pi0급 다중 시점 VLA 모델을 30Hz 프레임 속도와 480Hz 궤적 주파수로 실행할 수 있음을 최초로 입증하며, 대규모 모델의 동적 실시간 작업에서의 성능 병목 현상을 돌파했습니다. 팀은 계산 그래프 최적화, 어텐션 메커니즘 가속화 등을 포함한 일련의 모델 추론 오버헤드 제거 전략을 제안했습니다. 실제 세계 실험에서 이 전략을 적용한 pi0 정책은 낙하하는 펜 잡기 작업에서 100% 성공률을 달성했습니다. 이 결과를 바탕으로 연구자들은 실시간 로봇 제어를 위한 VLA 전체 스트리밍 추론 프레임워크를 추가로 제안했으며, 관련 코드는 GitHub에 오픈소스로 공개되었습니다.
+
+## 핵심 내용
+### 핵심 방법
+- **추론 오버헤드 제거 전략**: 연산자 융합, KV 캐시 재사용, 동적 배치 처리 등의 기술을 통해 pi0 모델의 다중 시점 이미지 인코딩 및 동작 디코딩 지연 시간을 33ms 이내로 압축했습니다.
+- **스트리밍 추론 프레임워크**: 비동기 파이프라인 아키텍처를 설계하여 시각 인코딩, 언어 추론, 동작 예측의 세 단계를 분리하고, 프레임 속도와 궤적 주파수의 독립적 조정을 지원합니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 단일 NVIDIA RTX 4090 GPU (24GB VRAM)
+- **기준 모델**: pi0 (7B 파라미터, 다중 시점 입력)
+- **작업 시나리오**: 동적 잡기 (자유 낙하 펜, 속도 약 2m/s)
+
+### 핵심 수치
+- **프레임 속도**: 30Hz (시각 입력 업데이트 주파수)
+- **궤적 주파수**: 최대 480Hz (동작 명령 출력 주파수)
+- **성공률**: 100% (50회 반복 실험, 낙하 펜 잡기)
+- **지연 시간**: 종단 간 추론 지연 <33ms (이미지 전처리 포함)
+
+### 결론
+이 방법은 대규모 파라미터 VLA 모델이 실시간 로봇 제어 요구 사항을 충족할 수 있음을 최초로 입증했으며, 그 스트리밍 추론 프레임워크는 고속 잡기, 장애물 회피와 같은 동적 조작 작업에 실행 가능한 솔루션을 제공합니다. 코드 오픈소스 주소: https://github.com/Dexmal/realtime-vla

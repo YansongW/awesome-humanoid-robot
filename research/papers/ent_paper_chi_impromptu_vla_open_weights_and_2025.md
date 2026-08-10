@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.23757v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.23757v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (815 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,29 @@ Impromptu VLA 的核心创新在于数据驱动的方法，而非模型架构本
 ## Overview
 Vision-Language-Action (VLA) models for autonomous driving show promise but falter in unstructured corner case scenarios, largely due to a scarcity of targeted benchmarks. To address this, we introduce Impromptu VLA. Our core contribution is the Impromptu VLA Dataset: over 80,000 meticulously curated video clips, distilled from over 2M source clips sourced from 8 open-source large-scale datasets. This dataset is built upon our novel taxonomy of four challenging unstructured categories and features rich, planning-oriented question-answering annotations and action trajectories. Crucially, experiments demonstrate that VLAs trained with our dataset achieve substantial performance gains on established benchmarks--improving closed-loop NeuroNCAP scores and collision rates, and reaching near state-of-the-art L2 accuracy in open-loop nuScenes trajectory prediction. Furthermore, our Q&A suite serves as an effective diagnostic, revealing clear VLM improvements in perception, prediction, and planning. Our code, data and models are available at https://github.com/ahydchh/Impromptu-VLA.
 
-## 개요
-자율주행을 위한 Vision-Language-Action (VLA) 모델은 가능성을 보여주지만, 비정형 코너 케이스 시나리오에서는 주로 타겟 벤치마크 부족으로 인해 성능이 저하됩니다. 이를 해결하기 위해 우리는 Impromptu VLA를 소개합니다. 핵심 기여는 Impromptu VLA 데이터셋입니다: 8개의 오픈소스 대규모 데이터셋에서 추출한 200만 개 이상의 소스 클립에서 정제된 80,000개 이상의 정성적으로 선별된 비디오 클립으로 구성됩니다. 이 데이터셋은 네 가지 도전적인 비정형 카테고리에 대한 새로운 분류 체계를 기반으로 구축되었으며, 풍부한 계획 중심의 질문-응답 주석과 행동 궤적을 특징으로 합니다. 결정적으로, 실험 결과 우리 데이터셋으로 훈련된 VLA는 기존 벤치마크에서 상당한 성능 향상을 달성하여 폐루프 NeuroNCAP 점수와 충돌률을 개선하고, 개루프 nuScenes 궤적 예측에서 최첨단에 가까운 L2 정확도에 도달했습니다. 또한, Q&A 세트는 효과적인 진단 도구로 작용하여 인식, 예측 및 계획에서 명확한 VLM 개선을 드러냅니다. 코드, 데이터 및 모델은 https://github.com/ahydchh/Impromptu-VLA에서 확인할 수 있습니다.
-
-## 핵심 내용
-자율주행을 위한 Vision-Language-Action (VLA) 모델은 가능성을 보여주지만, 비정형 코너 케이스 시나리오에서는 주로 타겟 벤치마크 부족으로 인해 성능이 저하됩니다. 이를 해결하기 위해 우리는 Impromptu VLA를 소개합니다. 핵심 기여는 Impromptu VLA 데이터셋입니다: 8개의 오픈소스 대규모 데이터셋에서 추출한 200만 개 이상의 소스 클립에서 정제된 80,000개 이상의 정성적으로 선별된 비디오 클립으로 구성됩니다. 이 데이터셋은 네 가지 도전적인 비정형 카테고리에 대한 새로운 분류 체계를 기반으로 구축되었으며, 풍부한 계획 중심의 질문-응답 주석과 행동 궤적을 특징으로 합니다. 결정적으로, 실험 결과 우리 데이터셋으로 훈련된 VLA는 기존 벤치마크에서 상당한 성능 향상을 달성하여 폐루프 NeuroNCAP 점수와 충돌률을 개선하고, 개루프 nuScenes 궤적 예측에서 최첨단에 가까운 L2 정확도에 도달했습니다. 또한, Q&A 세트는 효과적인 진단 도구로 작용하여 인식, 예측 및 계획에서 명확한 VLM 개선을 드러냅니다. 코드, 데이터 및 모델은 https://github.com/ahydchh/Impromptu-VLA에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.23757v1
+
+## 개요
+기존 Vision-Language-Action 모델은 자율주행에서 비구조적 엣지 시나리오에 직면할 때 어려움을 겪으며, 주요 원인은 맞춤형 벤치마크 부족이다. Impromptu VLA는 새로운 데이터셋 구축을 통해 이 문제를 해결한다: 8개 오픈소스 데이터셋의 200만+ 소스 클립에서 8만+ 정제된 비디오 클립을 추출하고, 네 가지 비구조적 시나리오 분류 체계를 기반으로 주석을 달았다. 이 데이터셋은 풍부한 계획 지향 질의응답 쌍과 행동 궤적을 포함하며, 훈련된 VLA 모델은 폐루프 NeuroNCAP 점수와 충돌률에서 현저한 개선을 보였고, 개루프 nuScenes 궤적 예측에서 최적에 근접한 L2 정밀도를 달성했다. 또한, 질의응답 스위트는 VLM의 인식, 예측, 계획 능력을 효과적으로 진단할 수 있다.
+
+## 핵심 내용
+### 방법 개요
+Impromptu VLA의 핵심 혁신은 모델 아키텍처가 아닌 데이터 중심 접근 방식에 있다. 연구팀은 먼저 자율주행 비구조적 시나리오를 위한 네 가지 분류 체계를 제안했으며, 이는 다음을 포함한다:
+- 희귀 객체 및 이벤트
+- 복잡한 상호작용 행동
+- 극한 환경 조건
+- 일반적 교통 패턴 위반
+
+### 데이터셋 구축
+- **데이터 출처**: 8개 오픈소스 대규모 데이터셋에서 200만 개 이상의 원본 비디오 클립 수집
+- **선별 과정**: 자동화 파이프라인과 수동 검증을 통해 최종적으로 80,000+ 고품질 클립 유지
+- **주석 내용**: 각 클립은 계획 지향 질의응답 쌍(Q&A)과 정밀한 행동 궤적 포함
+
+### 실험 설정 및 결과
+- **폐루프 평가**: NeuroNCAP 벤치마크에서 Impromptu VLA 데이터셋으로 훈련된 모델은 점수와 충돌률 지표 모두에서 현저한 개선을 보임
+- **개루프 평가**: nuScenes 궤적 예측 작업에서 L2 정밀도가 현재 최적 수준에 근접
+- **진단 능력**: 질의응답 스위트는 VLM의 인식, 예측, 계획 세 가지 하위 작업에서의 구체적 성능을 효과적으로 드러내며 모델 약점 파악에 도움
+
+### 오픈소스 리소스
+코드, 데이터, 모델 가중치는 GitHub에서 완전히 오픈소스로 제공되며, 주소는 https://github.com/ahydchh/Impromptu-VLA 이다.

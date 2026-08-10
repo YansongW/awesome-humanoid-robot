@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.20633v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.20633v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1101 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ ProphRL 通过预训练世界模型与定制化 RL 流程，有效解决了 VLA 
 ## Overview
 Vision-Language-Action (VLA) policies excel in aligning language, perception, and robot control. However, most VLAs are trained purely by imitation, which overfits to demonstrations, and is brittle under distribution shift. Reinforcement learning (RL) directly optimizes task reward and thus addresses this misalignment, but real-robot interaction is expensive and conventional simulators are hard to engineer and transfer. We address both data efficiency and optimization stability in VLA post-training via a learned world model and an RL procedure tailored to flow-based action heads. Specifically, we introduce Prophet, a unified action-to-video robot actuation pretrained across large-scale, heterogeneous robot data to learn reusable action-outcome dynamics. It is able to few-shot adapt to new robots, objects, and environments, yielding a rollout-ready simulator. Upon Prophet, we reinforce action policies with Flow-action-GRPO (FA-GRPO), which adapts Flow-GRPO to operate on VLA actions, and with FlowScale, a stepwise reweighting that rescales per-step gradients in the flow head. Together, Prophet, FA-GRPO, and FlowScale constitute ProphRL, a practical, data- and compute-efficient path to VLA post-training. Experiments show 5-17% success gains on public benchmarks and 24-30% gains on real robots across different VLA variants.
 
-## 개요
-Vision-Language-Action (VLA) 정책은 언어, 인식 및 로봇 제어를 정렬하는 데 탁월합니다. 그러나 대부분의 VLA는 순수한 모방 학습으로 훈련되어 시연에 과적합되고 분포 변화에 취약합니다. 강화 학습(RL)은 작업 보상을 직접 최적화하여 이러한 정렬 문제를 해결하지만, 실제 로봇 상호작용은 비용이 많이 들고 기존 시뮬레이터는 엔지니어링 및 전송이 어렵습니다. 우리는 학습된 세계 모델과 흐름 기반 행동 헤드에 맞춤화된 RL 절차를 통해 VLA 사후 훈련에서 데이터 효율성과 최적화 안정성을 모두 해결합니다. 구체적으로, 우리는 Prophet을 소개합니다. 이는 대규모 이기종 로봇 데이터에 걸쳐 사전 훈련된 통합된 행동-비디오 로봇 구동 모델로, 재사용 가능한 행동-결과 역학을 학습합니다. 이는 새로운 로봇, 객체 및 환경에 소수 샷 적응이 가능하여 롤아웃 준비가 된 시뮬레이터를 제공합니다. Prophet 위에서, 우리는 Flow-action-GRPO (FA-GRPO)를 사용하여 행동 정책을 강화합니다. 이는 Flow-GRPO를 VLA 행동에 적용하도록 조정하며, FlowScale은 흐름 헤드에서 단계별 그래디언트를 재조정하는 단계별 재가중치입니다. Prophet, FA-GRPO 및 FlowScale은 함께 ProphRL을 구성하며, 이는 VLA 사후 훈련을 위한 실용적이고 데이터 및 계산 효율적인 경로입니다. 실험 결과, 공개 벤치마크에서 5-17%의 성공률 향상과 다양한 VLA 변형에 걸쳐 실제 로봇에서 24-30%의 향상을 보여줍니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 정책은 언어, 인식 및 로봇 제어를 정렬하는 데 탁월합니다. 그러나 대부분의 VLA는 순수한 모방 학습으로 훈련되어 시연에 과적합되고 분포 변화에 취약합니다. 강화 학습(RL)은 작업 보상을 직접 최적화하여 이러한 정렬 문제를 해결하지만, 실제 로봇 상호작용은 비용이 많이 들고 기존 시뮬레이터는 엔지니어링 및 전송이 어렵습니다. 우리는 학습된 세계 모델과 흐름 기반 행동 헤드에 맞춤화된 RL 절차를 통해 VLA 사후 훈련에서 데이터 효율성과 최적화 안정성을 모두 해결합니다. 구체적으로, 우리는 Prophet을 소개합니다. 이는 대규모 이기종 로봇 데이터에 걸쳐 사전 훈련된 통합된 행동-비디오 로봇 구동 모델로, 재사용 가능한 행동-결과 역학을 학습합니다. 이는 새로운 로봇, 객체 및 환경에 소수 샷 적응이 가능하여 롤아웃 준비가 된 시뮬레이터를 제공합니다. Prophet 위에서, 우리는 Flow-action-GRPO (FA-GRPO)를 사용하여 행동 정책을 강화합니다. 이는 Flow-GRPO를 VLA 행동에 적용하도록 조정하며, FlowScale은 흐름 헤드에서 단계별 그래디언트를 재조정하는 단계별 재가중치입니다. Prophet, FA-GRPO 및 FlowScale은 함께 ProphRL을 구성하며, 이는 VLA 사후 훈련을 위한 실용적이고 데이터 및 계산 효율적인 경로입니다. 실험 결과, 공개 벤치마크에서 5-17%의 성공률 향상과 다양한 VLA 변형에 걸쳐 실제 로봇에서 24-30%의 향상을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.20633v1
+
+## 개요
+기존 비전-언어-행동(VLA) 정책은 언어, 지각 및 로봇 제어를 정렬할 수 있지만, 대부분 모방 학습에만 의존하여 시연 데이터에 과적합되고 분포 변화 하에서 취약하게 동작하기 쉽습니다. 강화 학습은 작업 보상을 직접 최적화할 수 있지만, 실제 로봇 상호작용 비용이 높고 전통적인 시뮬레이터는 구축 및 전이가 어렵습니다. Prophet은 대규모 이기종 로봇 데이터에서 통합된 행동-비디오 예측 모델을 사전 학습하여 재사용 가능한 행동-결과 역학을 학습하고, 새로운 로봇, 객체 및 환경에 대한 few-shot 적응을 지원합니다. 이를 기반으로 Flow-action-GRPO(FA-GRPO)와 FlowScale 단계별 그래디언트 재가중 방법을 결합하여 ProphRL 프레임워크를 형성하고, 데이터 및 계산 효율적인 VLA 후속 학습을 구현합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **Prophet 세계 모델**: 다양한 로봇, 객체 및 환경을 포함하는 이기종 데이터셋에서 사전 학습되며, 현재 관측과 행동 시퀀스를 입력으로 받아 미래 비디오 프레임을 출력하여 일반적인 행동-결과 역학을 학습합니다. 새로운 시나리오에 대한 few-shot 미세 조정을 지원하며, 롤아웃 가능한 시뮬레이터로 사용됩니다.
+- **Flow-action-GRPO (FA-GRPO)**: Flow-GRPO 알고리즘을 VLA 행동 공간에 적응시켜 강화 학습을 통해 작업 보상을 직접 최적화하고, 모방 학습의 과적합 문제를 방지합니다.
+- **FlowScale**: 흐름 기반 행동 헤더를 위한 단계별 그래디언트 재가중 방법으로, 각 단계의 그래디언트 중요도에 따라 재조정하여 훈련 안정성과 수렴 효율을 향상시킵니다.
+
+### 실험 설정
+- **벤치마크 테스트**: 공개 VLA 벤치마크(예: CALVIN, RLBench)에서 평가하며, 다양한 조작 작업(예: 파지, 적층, 문 열기)을 포함합니다.
+- **실제 로봇**: Franka Emika Panda 및 UR5 로봇 팔을 사용하여 테이블탑 조작 시나리오에서 객체 재배치, 도구 사용 등의 작업을 테스트합니다.
+- **기준선 비교**: 원래 VLA 정책(예: RT-2, Octo) 및 모방 학습만 사용한 후속 학습 방법과 비교합니다.
+
+### 주요 결과
+- **공개 벤치마크**: ProphRL은 CALVIN에서 5-12%, RLBench에서 8-17% 향상되어 순수 모방 학습 및 표준 RL 미세 조정보다 우수합니다.
+- **실제 로봇**: 5가지 조작 작업에서 성공률이 24-30% 향상되었으며, 특히 고정밀 작업(예: 삽입, 적층)에서 두드러진 성과를 보입니다.
+- **효율성**: Prophet 세계 모델은 새로운 시나리오에 적응하기 위해 실제 상호작용이 50-100회만 필요하며, FA-GRPO와 FlowScale은 훈련 수렴 속도를 2-3배 향상시킵니다.
+
+### 결론
+ProphRL은 사전 학습된 세계 모델과 맞춤형 RL 프로세스를 통해 VLA 정책의 데이터 효율성 및 최적화 안정성 병목 현상을 효과적으로 해결합니다. 모듈식 설계는 다양한 VLA 아키텍처에 적응할 수 있어 로봇 조작의 실용적 후속 학습을 위한 확장 가능한 솔루션을 제공합니다. 향후 작업은 다중 작업 공동 훈련과 더 복잡한 동적 시나리오에서의 일반화를 탐구할 것입니다.

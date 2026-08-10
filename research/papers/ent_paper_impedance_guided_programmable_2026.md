@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.08966v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.08966v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (637 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,24 @@ sources:
 ## Overview
 Soft metamaterials provide a promising platform for robotics, biomedical devices, and flexible electronics. The localized mechanical responses by nonuniform excitation are ubiquitous in soft materials, yet their controlled transmission across assemblies remains largely overlooked in metamaterial design, which critically constrains nontrivial functionalities with end-to-end and long-range deformation transmission. Here, we introduce an impedance-guided design framework that enables programmable transmission of localized deformation in modular soft metamaterials, achieving behaviors unattainable by intuitive design. By establishing a nonlinear model considering position-dependent interactions and integrating the concept of mechanical impedance within metamaterials, we regulate assembly-level transmission solely through unit-cell topology optimization. The resulting framework enables effective synthesis of module families, allowing both homogeneous and heterogeneous assemblies to be custom-built with markedly enhanced transmission characteristics. Leveraging the highly combinatorial and extensible design space, we physically realize diverse on-demand displacement manipulation architectures, including obstacle-bypassing modular soft-metamaterial assemblies, defect-tolerant soft gripping, and embodied signal processing. Beyond deformation programming, the reconfigurability and reassemblability of these soft modules can embed electric logic signals, enabling energy-efficient and low-latency information processing through compliant-switch-controlled mechanical LED displays and wearable finger-motion-sensing controllers. Our method provides fundamental insights into localized deformation transmission in modular soft metamaterials and establishes a scalable route toward embodied-intelligence material systems, particularly for soft-metamaterial-centric actuation, sensing, and collective computing.
 
-## 개요
-소프트 메타물질은 로봇공학, 생체의료 기기 및 유연 전자기기에 유망한 플랫폼을 제공합니다. 비균일 여기에 의한 국소적 기계적 응답은 소프트 재료에서 흔히 나타나지만, 어셈블리 간의 제어된 전달은 메타물질 설계에서 대부분 간과되어 왔으며, 이는 종단 간 및 장거리 변형 전달을 통한 비자명한 기능을 심각하게 제약합니다. 본 연구에서는 임피던스 기반 설계 프레임워크를 도입하여 모듈형 소프트 메타물질에서 국소적 변형의 프로그래밍 가능한 전달을 가능하게 하여, 직관적 설계로는 달성할 수 없는 거동을 구현합니다. 위치 의존적 상호작용을 고려한 비선형 모델을 수립하고 메타물질 내 기계적 임피던스 개념을 통합함으로써, 단위 셀 위상 최적화만을 통해 어셈블리 수준의 전달을 제어합니다. 결과적인 프레임워크는 모듈 패밀리의 효과적인 합성을 가능하게 하여, 동종 및 이종 어셈블리 모두를 현저히 향상된 전달 특성으로 맞춤 제작할 수 있게 합니다. 고도로 조합 가능하고 확장 가능한 설계 공간을 활용하여, 장애물 회피 모듈형 소프트 메타물질 어셈블리, 결함 허용 소프트 그리핑, 구현된 신호 처리 등 다양한 주문형 변위 조작 아키텍처를 물리적으로 구현합니다. 변형 프로그래밍을 넘어, 이러한 소프트 모듈의 재구성 가능성과 재조립 가능성은 전기 논리 신호를 내장할 수 있어, 컴플라이언트 스위치 제어 기계식 LED 디스플레이 및 웨어러블 손가락 동작 감지 컨트롤러를 통해 에너지 효율적이고 저지연 정보 처리를 가능하게 합니다. 본 방법은 모듈형 소프트 메타물질에서 국소적 변형 전달에 대한 근본적인 통찰력을 제공하며, 특히 소프트 메타물질 중심의 작동, 감지 및 집단 컴퓨팅을 위한 구현 지능 재료 시스템으로의 확장 가능한 경로를 확립합니다.
-
-## 핵심 내용
-소프트 메타물질은 로봇공학, 생체의료 기기 및 유연 전자기기에 유망한 플랫폼을 제공합니다. 비균일 여기에 의한 국소적 기계적 응답은 소프트 재료에서 흔히 나타나지만, 어셈블리 간의 제어된 전달은 메타물질 설계에서 대부분 간과되어 왔으며, 이는 종단 간 및 장거리 변형 전달을 통한 비자명한 기능을 심각하게 제약합니다. 본 연구에서는 임피던스 기반 설계 프레임워크를 도입하여 모듈형 소프트 메타물질에서 국소적 변형의 프로그래밍 가능한 전달을 가능하게 하여, 직관적 설계로는 달성할 수 없는 거동을 구현합니다. 위치 의존적 상호작용을 고려한 비선형 모델을 수립하고 메타물질 내 기계적 임피던스 개념을 통합함으로써, 단위 셀 위상 최적화만을 통해 어셈블리 수준의 전달을 제어합니다. 결과적인 프레임워크는 모듈 패밀리의 효과적인 합성을 가능하게 하여, 동종 및 이종 어셈블리 모두를 현저히 향상된 전달 특성으로 맞춤 제작할 수 있게 합니다. 고도로 조합 가능하고 확장 가능한 설계 공간을 활용하여, 장애물 회피 모듈형 소프트 메타물질 어셈블리, 결함 허용 소프트 그리핑, 구현된 신호 처리 등 다양한 주문형 변위 조작 아키텍처를 물리적으로 구현합니다. 변형 프로그래밍을 넘어, 이러한 소프트 모듈의 재구성 가능성과 재조립 가능성은 전기 논리 신호를 내장할 수 있어, 컴플라이언트 스위치 제어 기계식 LED 디스플레이 및 웨어러블 손가락 동작 감지 컨트롤러를 통해 에너지 효율적이고 저지연 정보 처리를 가능하게 합니다. 본 방법은 모듈형 소프트 메타물질에서 국소적 변형 전달에 대한 근본적인 통찰력을 제공하며, 특히 소프트 메타물질 중심의 작동, 감지 및 집단 컴퓨팅을 위한 구현 지능 재료 시스템으로의 확장 가능한 경로를 확립합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.08966v1
+
+## 개요
+이 연구는 arXiv:2607.08966v1에 보고된 것으로, 연성 재료에서 국부 변형의 조립체 간 제어 가능한 전달이 간과된 문제를 다루며, 기계적 임피던스 개념을 도입한다. 위치 의존적 상호작용을 고려한 비선형 모델을 구축하고 기계적 임피던스를 통합함으로써, 단위 토폴로지만 최적화하여 조립체 수준의 전달을 조절할 수 있다. 이 프레임워크는 모듈 패밀리를 효과적으로 합성하여, 현저히 향상된 전달 특성을 가진 동종 또는 이종 조립체를 구축할 수 있다. 실험을 통해 장애물을 우회하는 모듈형 연성 초재료 조립체, 결함 허용 연성 파지, 및 구현형 신호 처리를 구현했다. 또한, 모듈의 재구성 가능성은 전기 논리 신호를 내장할 수 있으며, 유연 스위치로 제어되는 기계적 LED 디스플레이와 웨어러블 손가락 움직임 감지 컨트롤러를 통해 에너지 효율적이고 저지연의 정보 처리를 실현했다.
+
+## 핵심 내용
+### 방법
+- 임피던스 유도 설계 프레임워크를 제안하며, 핵심은 위치 의존적 상호작용을 고려한 비선형 모델을 구축하는 것이다.
+- 기계적 임피던스 개념을 초재료에 통합하고, 단위 토폴로지 최적화를 통해 조립체 수준의 변형 전달을 조절한다.
+- 이 프레임워크는 모듈 패밀리를 효과적으로 합성하여 동종 또는 이종 조립체 구축을 지원하고, 전달 특성을 현저히 향상시킨다.
+
+### 아키텍처 및 실험 설정
+- 고도로 조합적이고 확장 가능한 설계 공간을 활용하여, 다양한 주문형 변위 조작 아키텍처를 물리적으로 구현했다.
+- 구체적으로는 장애물을 우회하는 모듈형 연성 초재료 조립체, 결함 허용 연성 파지, 및 구현형 신호 처리를 포함한다.
+- 모듈의 재구성 가능성과 재조립 가능성은 전기 논리 신호를 내장할 수 있게 한다.
+
+### 주요 수치 및 결론
+- 유연 스위치로 제어되는 기계적 LED 디스플레이와 웨어러블 손가락 움직임 감지 컨트롤러를 통해 에너지 효율적이고 저지연의 정보 처리를 검증했다.
+- 이 방법은 모듈형 연성 초재료에서 국부 변형 전달에 대한 기초적 통찰을 제공하며, 구현형 지능 재료 시스템으로의 확장 가능한 경로를 확립한다.
+- 특히 연성 초재료 중심의 구동, 센싱, 및 집단 계산에 특히 적합하다.

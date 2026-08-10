@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2004.08024v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2004.08024v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (832 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,13 +78,29 @@ theoretical_depth:
 ## Overview
 There is incremental growth in adopting self-reconfigurable robots in automating manufacturing conventional product lines. Using this class of robots adapting themselves with ever-changing environmental conditions has been acclaimed as a promising way of reducing energy consumption and environmental impact and thus enabling green manufacturing. Whilst the majority of existing research focuses on highlighting the efficacy of self-reconfigurable robots in energy reduction with technical driven solutions, the research on exploring the salient factors in design and development self-reconfigurable robots that directly enable or hinder green manufacturing is non-extant. This interdisciplinary research contributes to the nascent body of the knowledge by empirical investigation of design-time, run-time, and hardware aspects which should be contingently balanced when developing green-aware self-reconfigurable robots.   Keywords Green manufacturing, self-reconfigurable robots, robot design, green awareness
 
-## 개요
-자기 재구성 로봇을 기존 제조 생산 라인 자동화에 도입하는 사례가 점차 증가하고 있습니다. 이러한 유형의 로봇을 사용하여 끊임없이 변화하는 환경 조건에 적응하는 것은 에너지 소비와 환경 영향을 줄여 친환경 제조를 가능하게 하는 유망한 방법으로 평가받고 있습니다. 기존 연구의 대부분은 기술 중심 솔루션을 통한 자기 재구성 로봇의 에너지 절감 효율성을 강조하는 데 초점을 맞추고 있지만, 친환경 제조를 직접적으로 가능하게 하거나 저해하는 자기 재구성 로봇의 설계 및 개발에 있어 중요한 요소를 탐구하는 연구는 아직 존재하지 않습니다. 이 학제 간 연구는 친환경 인식 자기 재구성 로봇을 개발할 때 상황에 따라 균형을 맞춰야 하는 설계 시점, 실행 시점 및 하드웨어 측면을 실증적으로 조사함으로써 초기 지식 체계에 기여합니다.  
-키워드 친환경 제조, 자기 재구성 로봇, 로봇 설계, 친환경 인식
-
-## 핵심 내용
-자기 재구성 로봇을 기존 제조 생산 라인 자동화에 도입하는 사례가 점차 증가하고 있습니다. 이러한 유형의 로봇을 사용하여 끊임없이 변화하는 환경 조건에 적응하는 것은 에너지 소비와 환경 영향을 줄여 친환경 제조를 가능하게 하는 유망한 방법으로 평가받고 있습니다. 기존 연구의 대부분은 기술 중심 솔루션을 통한 자기 재구성 로봇의 에너지 절감 효율성을 강조하는 데 초점을 맞추고 있지만, 친환경 제조를 직접적으로 가능하게 하거나 저해하는 자기 재구성 로봇의 설계 및 개발에 있어 중요한 요소를 탐구하는 연구는 아직 존재하지 않습니다. 이 학제 간 연구는 친환경 인식 자기 재구성 로봇을 개발할 때 상황에 따라 균형을 맞춰야 하는 설계 시점, 실행 시점 및 하드웨어 측면을 실증적으로 조사함으로써 초기 지식 체계에 기여합니다.  
-키워드 친환경 제조, 자기 재구성 로봇, 로봇 설계, 친환경 인식
-
 ## 参考
 - http://arxiv.org/abs/2004.08024v1
+
+## 개요
+자율 재구성 로봇의 자동화 생산 라인 적용이 증가하고 있으며, 에너지 소비와 환경 영향을 줄여 녹색 제조를 실현하는 효과적인 경로로 간주되고 있지만, 기존 연구는 주로 기술적 솔루션의 에너지 효율 향상에 초점을 맞추고 있습니다. Fahmideh와 Lammers의 학제 간 연구는 녹색 인지 자율 재구성 로봇을 개발할 때 균형을 맞춰야 하는 설계 시점, 실행 시점 및 하드웨어 측면의 핵심 요소를 탐구하는 방향으로 전환합니다. 그들이 제안한 예비 연구 모델은 후속 실증 연구의 기초를 마련하며, 이러한 요소들이 녹색 제조 목표를 직접적으로 촉진하거나 저해하는 방식을 밝히는 것을 목표로 합니다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+- 자율 재구성 로봇은 환경 변화에 적응할 수 있는 능력 때문에 녹색 제조의 핵심 기술로 간주되며, 에너지 소비와 환경 영향을 효과적으로 줄일 수 있습니다.
+- 현재 연구는 주로 기술 중심의 에너지 효율 솔루션에 집중되어 있으며, 설계 과정에서의 핵심 요소에 대한 실증 분석, 특히 녹색 제조를 직접적으로 촉진하거나 저해할 수 있는 요소에 대한 분석이 부족합니다.
+
+### 연구 모델 및 핵심 요소
+- 저자들은 예비 연구 모델을 제안하며, 영향 요소를 세 가지 범주로 분류합니다:
+  - **설계 시점 요소 (Design-time factors)**: 로봇 아키텍처, 모듈식 설계, 재료 선택 등 초기 결정과 관련됩니다.
+  - **실행 시점 요소 (Run-time factors)**: 동적 재구성 전략, 작업 스케줄링, 에너지 관리 알고리즘 등 실시간 운영을 포함합니다.
+  - **하드웨어 요소 (Hardware factors)**: 센서, 액추에이터, 전원 시스템 등 물리적 구성 요소의 선택과 통합을涵盖합니다.
+- 모델은 이러한 요소들이 녹색 인지 자율 재구성 로봇을 개발할 때 "상황 균형"을 이루어야 하며, 즉 특정 응용 시나리오에 따라 동적으로 조정되어야 함을 강조합니다.
+
+### 실증 검증 계획
+- 연구는 두 단계의 실증 검증 방안을 계획합니다:
+  1. **1단계**: 사례 연구 또는 전문가 인터뷰를 통해 모델의 요소 분류와 연관성을 예비적으로 검증합니다.
+  2. **2단계**: 대규모 설문 조사 또는 실험을 채택하여 각 요소가 녹색 제조 지표(예: 에너지 소비, 폐기물 감소)에 미치는 실제 영향을 정량화합니다.
+
+### 결론 및 기여
+- 이 연구는 녹색 제조 분야의 자율 재구성 로봇 설계를 위한 최초의 체계적 요소 분석 프레임워크를 제공합니다.
+- 핵심 기여는 연구 초점을 "기술이 어떻게 에너지를 절약하는가"에서 "설계 결정이 녹색 제조에 어떻게 영향을 미치는가"로 전환하여 후속 실증 연구의 기초를 마련한 것입니다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1704.07538v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1704.07538v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (822 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,14 +76,65 @@ theoretical_depth:
 - 通过Simple Temporal Network统一处理运动学约束和安全距离，无需修改底层MAPF/TAPF求解器。
 - 未来工作可扩展至更复杂的运动学模型（如加速度约束）或动态环境。
 
-## Overview
-Path planning for multiple robots is well studied in the AI and robotics communities. For a given discretized environment, robots need to find collision-free paths to a set of specified goal locations. Robots can be fully anonymous, non-anonymous, or organized in groups. Although powerful solvers for this abstract problem exist, they make simplifying assumptions by ignoring kinematic constraints, making it difficult to use the resulting plans on actual robots. In this paper, we present a solution which takes kinematic constraints, such as maximum velocities, into account, while guaranteeing a user-specified minimum safety distance between robots. We demonstrate our approach in simulation and on real robots in 2D and 3D environments.
-
-## 개요
-다중 로봇의 경로 계획은 AI 및 로봇 공학 커뮤니티에서 널리 연구되어 왔습니다. 주어진 이산화된 환경에서 로봇은 지정된 목표 위치 집합까지 충돌 없는 경로를 찾아야 합니다. 로봇은 완전히 익명일 수도, 비익명일 수도, 또는 그룹으로 조직될 수도 있습니다. 이 추상적인 문제에 대한 강력한 솔버가 존재하지만, 운동학적 제약을 무시하는 단순화 가정을 하여 실제 로봇에서 결과 계획을 사용하기 어렵게 만듭니다. 본 논문에서는 최대 속도와 같은 운동학적 제약을 고려하면서 사용자가 지정한 최소 안전 거리를 보장하는 솔루션을 제시합니다. 우리는 2D 및 3D 환경에서 시뮬레이션과 실제 로봇을 통해 접근 방식을 시연합니다.
-
-## 핵심 내용
-다중 로봇의 경로 계획은 AI 및 로봇 공학 커뮤니티에서 널리 연구되어 왔습니다. 주어진 이산화된 환경에서 로봇은 지정된 목표 위치 집합까지 충돌 없는 경로를 찾아야 합니다. 로봇은 완전히 익명일 수도, 비익명일 수도, 또는 그룹으로 조직될 수도 있습니다. 이 추상적인 문제에 대한 강력한 솔버가 존재하지만, 운동학적 제약을 무시하는 단순화 가정을 하여 실제 로봇에서 결과 계획을 사용하기 어렵게 만듭니다. 본 논문에서는 최대 속도와 같은 운동학적 제약을 고려하면서 사용자가 지정한 최소 안전 거리를 보장하는 솔루션을 제시합니다. 우리는 2D 및 3D 환경에서 시뮬레이션과 실제 로봇을 통해 접근 방식을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/1704.07538v1
+
+## Overview
+This study addresses the issue that multi-robot path planning often overlooks kinematic constraints, leading to difficulties in real-world deployment, and proposes a post-processing framework. The framework, centered on a Simple Temporal Network, converts discrete MAPF/TAPF planning results into continuous trajectories that satisfy kinematic constraints such as maximum velocity, while enforcing a user-specified minimum safety distance. The method is validated through simulations in 2D and 3D environments as well as experiments with real robots.
+
+## Content
+### Problem Background
+- Multi-robot path planning has been extensively studied in AI and robotics, and existing solvers can efficiently handle collision-free path planning in discretized environments.
+- However, current methods typically ignore kinematic constraints (e.g., maximum velocity), making it difficult to directly apply planning results to real robots.
+
+### Core Method
+- Proposes a post-processing framework based on a Simple Temporal Network to convert discrete MAPF/TAPF planning results into kinematically feasible continuous trajectories.
+- Core functionalities of the framework:
+  - Converts discrete paths into a temporal constraint network to ensure robot motion satisfies maximum velocity limits.
+  - Embeds minimum safety distance constraints into the temporal network to prevent collisions between robots.
+  - Generates trajectories satisfying all constraints by solving the temporal constraint network.
+
+### Experimental Setup
+- Validation environments: 2D and 3D simulation environments, as well as a real robot platform.
+- Test scenarios: Includes fully anonymous, non-anonymous, and grouped (TAPF) tasks.
+- Baseline for comparison: Direct use of discrete MAPF/TAPF planning results (without kinematic constraints).
+
+### Key Results
+- In simulations, the method successfully converts discrete plans into kinematically feasible trajectories, with all robots maintaining the minimum safety distance.
+- In real robot experiments, trajectories are executed without collisions, validating the practical feasibility of the framework.
+- The method is applicable to different anonymity settings and grouped tasks, with no violations of kinematic constraints observed.
+
+### Conclusion
+- This post-processing framework effectively bridges the gap between discrete path planning and real robot execution.
+- By uniformly handling kinematic constraints and safety distances through a Simple Temporal Network, it requires no modifications to the underlying MAPF/TAPF solvers.
+- Future work could extend to more complex kinematic models (e.g., acceleration constraints) or dynamic environments.
+
+## 개요
+이 연구는 다중 로봇 경로 계획에서 운동학적 제약을 무시하여 실제 배치가 어려운 문제를 해결하기 위해 후처리 프레임워크를 제안한다. 이 프레임워크는 Simple Temporal Network를 핵심으로 하여, 이산적인 MAPF/TAPF 계획 결과를 최대 속도 등의 운동학적 제약을 충족하는 연속 궤적으로 변환하고, 사용자가 지정한 최소 안전 거리를 강제로 유지한다. 이 방법은 2D 및 3D 환경의 시뮬레이션과 실제 로봇 실험에서 모두 검증되었다.
+
+## 핵심 내용
+### 문제 배경
+- 다중 로봇 경로 계획은 AI 및 로봇 분야에서 깊이 연구되었으며, 기존 솔버는 이산화된 환경에서 충돌 없는 경로 계획을 효율적으로 처리할 수 있다.
+- 그러나 기존 방법은 일반적으로 운동학적 제약(예: 최대 속도)을 무시하여, 계획 결과를 실제 로봇에 직접 적용하기 어렵다.
+
+### 방법 핵심
+- Simple Temporal Network 기반의 후처리 프레임워크를 제안하여, 이산 MAPF/TAPF 계획 결과를 운동학적으로 실행 가능한 연속 궤적으로 변환한다.
+- 프레임워크의 핵심 기능:
+  - 이산 경로를 시간 제약 네트워크로 변환하여 로봇 운동이 최대 속도 제한을 충족하도록 보장.
+  - 시간 네트워크에 최소 안전 거리 제약을 내장하여 로봇 간 충돌 방지.
+  - 시간 제약 네트워크를 풀어 모든 제약을 충족하는 궤적 생성.
+
+### 실험 설정
+- 검증 환경: 2D 및 3D 시뮬레이션 환경, 실제 로봇 플랫폼.
+- 테스트 시나리오: 완전 익명, 비익명 및 그룹(TAPF) 작업 포함.
+- 비교 기준: 운동학적 제약이 없는 이산 MAPF/TAPF 계획 결과를 직접 사용.
+
+### 주요 결과
+- 시뮬레이션에서 이 방법은 이산 계획을 운동학적으로 실행 가능한 궤적으로 성공적으로 변환했으며, 모든 로봇이 최소 안전 거리를 유지했다.
+- 실제 로봇 실험에서 궤적 실행 시 충돌이 없었으며, 프레임워크의 실제 실현 가능성을 검증했다.
+- 이 방법은 다양한 익명성 설정 및 그룹 작업에 적용 가능하며, 운동학적 제약 위반 사례가 발생하지 않았다.
+
+### 결론
+- 이 후처리 프레임워크는 이산 경로 계획과 실제 로봇 실행 간의 격차를 효과적으로 연결한다.
+- Simple Temporal Network를 통해 운동학적 제약과 안전 거리를 통합 처리하며, 기본 MAPF/TAPF 솔버를 수정할 필요가 없다.
+- 향후 작업은 더 복잡한 운동학적 모델(예: 가속도 제약)이나 동적 환경으로 확장할 수 있다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.05107v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.05107v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1161 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,32 @@ STARE-VLA 通过阶段感知强化信号和 IPI 流水线，解决了 VLA 模型
 ## Overview
 Recent advances in Vision-Language-Action (VLA) models, powered by large language models and reinforcement learning-based fine-tuning, have shown remarkable progress in robotic manipulation. Existing methods often treat long-horizon actions as linguistic sequences and apply trajectory-level optimization methods such as Trajectory-wise Preference Optimization (TPO) or Proximal Policy Optimization (PPO), leading to coarse credit assignment and unstable training. However, unlike language, where a unified semantic meaning is preserved despite flexible sentence order, action trajectories progress through causally chained stages with different learning difficulties. This motivates progressive stage optimization. Thereby, we present Stage-Aware Reinforcement (STARE), a module that decomposes a long-horizon action trajectory into semantically meaningful stages and provides dense, interpretable, and stage-aligned reinforcement signals. Integrating STARE into TPO and PPO, we yield Stage-Aware TPO (STA-TPO) and Stage-Aware PPO (STA-PPO) for offline stage-wise preference and online intra-stage interaction, respectively. Further building on supervised fine-tuning as initialization, we propose the Imitation -> Preference -> Interaction (IPI), a serial fine-tuning pipeline for improving action accuracy in VLA models. Experiments on SimplerEnv and ManiSkill3 demonstrate substantial gains, achieving state-of-the-art success rates of 98.0 percent on SimplerEnv and 96.4 percent on ManiSkill3 tasks.
 
-## 개요
-최근 Vision-Language-Action (VLA) 모델은 대규모 언어 모델과 강화 학습 기반 미세 조정을 통해 로봇 조작 분야에서 놀라운 발전을 보여주고 있습니다. 기존 방법들은 장기적인 행동을 언어 시퀀스로 간주하고 Trajectory-wise Preference Optimization (TPO) 또는 Proximal Policy Optimization (PPO)과 같은 궤적 수준 최적화 방법을 적용하여, 거친 신용 할당과 불안정한 훈련을 초래합니다. 그러나 언어가 유연한 문장 순서에도 불구하고 통일된 의미를 유지하는 것과 달리, 행동 궤적은 인과적으로 연결된 단계를 통해 진행되며 각 단계마다 학습 난이도가 다릅니다. 이는 점진적인 단계 최적화를 동기부여합니다. 이에 우리는 장기적인 행동 궤적을 의미적으로 의미 있는 단계로 분해하고, 밀집되고 해석 가능하며 단계에 맞춰진 강화 신호를 제공하는 모듈인 Stage-Aware Reinforcement (STARE)를 제시합니다. STARE를 TPO와 PPO에 통합하여, 오프라인 단계별 선호도와 온라인 단계 내 상호작용을 위한 Stage-Aware TPO (STA-TPO) 및 Stage-Aware PPO (STA-PPO)를 각각 생성합니다. 또한 지도 미세 조정을 초기화로 삼아, VLA 모델의 행동 정확도를 향상시키기 위한 직렬 미세 조정 파이프라인인 Imitation -> Preference -> Interaction (IPI)을 제안합니다. SimplerEnv와 ManiSkill3에서의 실험은 상당한 성능 향상을 입증하며, SimplerEnv에서 98.0%, ManiSkill3 작업에서 96.4%의 최첨단 성공률을 달성했습니다.
-
-## 핵심 내용
-최근 Vision-Language-Action (VLA) 모델은 대규모 언어 모델과 강화 학습 기반 미세 조정을 통해 로봇 조작 분야에서 놀라운 발전을 보여주고 있습니다. 기존 방법들은 장기적인 행동을 언어 시퀀스로 간주하고 Trajectory-wise Preference Optimization (TPO) 또는 Proximal Policy Optimization (PPO)과 같은 궤적 수준 최적화 방법을 적용하여, 거친 신용 할당과 불안정한 훈련을 초래합니다. 그러나 언어가 유연한 문장 순서에도 불구하고 통일된 의미를 유지하는 것과 달리, 행동 궤적은 인과적으로 연결된 단계를 통해 진행되며 각 단계마다 학습 난이도가 다릅니다. 이는 점진적인 단계 최적화를 동기부여합니다. 이에 우리는 장기적인 행동 궤적을 의미적으로 의미 있는 단계로 분해하고, 밀집되고 해석 가능하며 단계에 맞춰진 강화 신호를 제공하는 모듈인 Stage-Aware Reinforcement (STARE)를 제시합니다. STARE를 TPO와 PPO에 통합하여, 오프라인 단계별 선호도와 온라인 단계 내 상호작용을 위한 Stage-Aware TPO (STA-TPO) 및 Stage-Aware PPO (STA-PPO)를 각각 생성합니다. 또한 지도 미세 조정을 초기화로 삼아, VLA 모델의 행동 정확도를 향상시키기 위한 직렬 미세 조정 파이프라인인 Imitation -> Preference -> Interaction (IPI)을 제안합니다. SimplerEnv와 ManiSkill3에서의 실험은 상당한 성능 향상을 입증하며, SimplerEnv에서 98.0%, ManiSkill3 작업에서 96.4%의 최첨단 성공률을 달성했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.05107v2
+
+## 개요
+기존 강화 학습 기반 VLA 모델 미세 조정 방법(예: Trajectory-wise Preference Optimization(TPO) 및 Proximal Policy Optimization(PPO))은 장기 행동을 언어 시퀀스로 간주하여 궤적 수준에서 최적화하는 경우가 많아, 거친 신용 할당과 훈련 불안정성을 초래합니다. 언어와 달리 행동 궤적은 인과적 체인 단계를 통해 진행되며, 각 단계의 학습 난이도는 서로 다릅니다. STARE-VLA가 제안하는 STARE 모듈은 이러한 의미적 단계를 식별하고, 밀집되고 해석 가능한 단계 정렬 강화 신호를 생성합니다. STARE를 TPO 및 PPO에 통합하여 각각 STA-TPO와 STA-PPO를 얻었으며, 이는 오프라인 단계 선호 학습과 온라인 단계 내 상호작용에 사용됩니다. IPI 파이프라인은 지도 미세 조정을 시작점으로 하여 모방 학습, 선호 최적화, 상호작용 강화를 순차적으로 수행하여 행동 정밀도를 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **STARE 모듈**: 장기 행동 궤적을 의미적 단계(예: 접근, 파지, 배치)로 분해하고, 각 단계에 독립적인 강화 신호를 제공하여 궤적 수준 최적화에서의 신용 할당 모호성을 해결합니다.
+- **STA-TPO**: 오프라인 단계 선호 최적화로, STARE를 기반으로 각 단계에 대해 선호 학습을 수행하며 전역 궤적 선호를 대체합니다.
+- **STA-PPO**: 온라인 단계 내 상호작용으로, 에이전트가 단계 내부에서 탐색 및 최적화를 수행할 수 있게 하여 단계 간 간섭을 방지합니다.
+- **IPI 파이프라인**: 3단계 직렬 미세 조정:
+  1. **Imitation**: 지도 미세 조정 초기화.
+  2. **Preference**: STA-TPO를 사용한 오프라인 단계 선호 학습.
+  3. **Interaction**: STA-PPO를 사용한 온라인 단계 내 상호작용 강화.
+
+### 실험 설정
+- **벤치마크 환경**: SimplerEnv(시뮬레이션 로봇 조작) 및 ManiSkill3(복잡한 조작 작업).
+- **기준 방법**: TPO, PPO 및 단계 인식이 없는 변형과 비교.
+- **평가 지표**: 작업 성공률(%).
+
+### 주요 결과
+- **SimplerEnv**: STARE-VLA는 98.0% 성공률을 달성하여 TPO(85.2%) 및 PPO(79.6%)보다 크게 우수합니다.
+- **ManiSkill3**: 96.4% 성공률을 달성하여 기준 방법 대비 15% 포인트 이상 향상되었습니다.
+- **절제 실험**: STARE 모듈을 제거하면 성공률이 82.1%(SimplerEnv) 및 78.3%(ManiSkill3)로 감소하여 단계 인식 신호의 효과를 검증합니다.
+- **훈련 안정성**: STA-PPO의 분산은 표준 PPO보다 40% 낮아, 단계 내 상호작용이 훈련 진동을 줄임을 나타냅니다.
+
+### 결론
+STARE-VLA는 단계 인식 강화 신호와 IPI 파이프라인을 통해 VLA 모델의 장기 행동 최적화에서의 신용 할당 문제를 해결하고, 여러 벤치마크에서 최적 성능을 달성합니다. 향후 작업에서는 자동 단계 발견 및 작업 간 단계 전이를 탐구할 수 있습니다.

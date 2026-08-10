@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.20969v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.20969v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (542 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,14 +73,49 @@ theoretical_depth:
 - 在NAO人形机器人上操作箱状物体，验证系统有效性
 - 实验结果表明：夹持力控制稳定，表面对齐精度满足操作需求，成功避免物体滑落
 
-## Overview
-This paper introduces a pair of low-cost, light-weight and compliant force-sensing gripping pads used for manipulating box-like objects with smaller-sized humanoid robots. These pads measure normal gripping forces and center of pressure (CoP). A calibration method is developed to improve the CoP measurement accuracy. A hybrid force-alignment-position control framework is proposed to regulate the gripping forces and to ensure the surface alignment between the grippers and the object. Limit surface theory is incorporated as a contact friction modeling approach to determine the magnitude of gripping forces for slippage avoidance. The integrated hardware and software system is demonstrated with a NAO humanoid robot. Experiments show the effectiveness of the overall approach.
-
-## 개요
-본 논문은 소형 휴머노이드 로봇을 이용해 상자 형태의 물체를 조작하기 위한 저비용, 경량 및 유연한 힘 감지 그리핑 패드 한 쌍을 소개합니다. 이 패드는 수직 그리핑 힘과 압력 중심(CoP)을 측정합니다. CoP 측정 정확도를 향상시키기 위한 캘리브레이션 방법이 개발되었습니다. 그리핑 힘을 조절하고 그리퍼와 물체 간의 표면 정렬을 보장하기 위해 하이브리드 힘-정렬-위치 제어 프레임워크가 제안됩니다. 미끄러짐 방지를 위한 그리핑 힘의 크기를 결정하기 위해 접촉 마찰 모델링 접근법으로 한계 표면 이론이 통합되었습니다. 통합된 하드웨어 및 소프트웨어 시스템은 NAO 휴머노이드 로봇으로 시연됩니다. 실험을 통해 전체 접근법의 효과가 입증되었습니다.
-
-## 핵심 내용
-본 논문은 소형 휴머노이드 로봇을 이용해 상자 형태의 물체를 조작하기 위한 저비용, 경량 및 유연한 힘 감지 그리핑 패드 한 쌍을 소개합니다. 이 패드는 수직 그리핑 힘과 압력 중심(CoP)을 측정합니다. CoP 측정 정확도를 향상시키기 위한 캘리브레이션 방법이 개발되었습니다. 그리핑 힘을 조절하고 그리퍼와 물체 간의 표면 정렬을 보장하기 위해 하이브리드 힘-정렬-위치 제어 프레임워크가 제안됩니다. 미끄러짐 방지를 위한 그리핑 힘의 크기를 결정하기 위해 접촉 마찰 모델링 접근법으로 한계 표면 이론이 통합되었습니다. 통합된 하드웨어 및 소프트웨어 시스템은 NAO 휴머노이드 로봇으로 시연됩니다. 실험을 통해 전체 접근법의 효과가 입증되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2405.20969v1
+
+## Overview
+This 2024 paper addresses the need for small humanoid robots to manipulate box-shaped objects by designing a pair of low-cost, lightweight flexible force-sensing gripper pads. The gripper pads can measure normal gripping force and center of pressure in real time, and a dedicated calibration method improves the accuracy of center of pressure measurement. The research proposes a hybrid force-alignment-position control framework to regulate gripping force and ensure the gripper aligns with the object surface. A contact friction model based on Limit Surface Theory determines the minimum gripping force required to prevent slipping. The complete hardware and software system was experimentally validated on the NAO humanoid robot.
+
+## Content
+### Hardware Design
+- Low-cost, lightweight flexible materials are used to fabricate the gripper pads, adapted to the grippers of small humanoid robots (e.g., NAO)
+- Integrated force sensing units enable simultaneous measurement of normal gripping force and center of pressure (CoP)
+
+### Calibration Method
+- A dedicated calibration procedure is developed to enhance CoP measurement accuracy, compensating for sensor nonlinearity and installation errors
+
+### Control Framework
+- A hybrid force-alignment-position control strategy is proposed:
+  - Force control: adjusts gripping force to a target value
+  - Alignment control: ensures the gripper maintains parallel contact with the object surface
+  - Position control: maintains the gripper's relative position
+- Limit Surface Theory is introduced to model contact friction, dynamically calculating the minimum gripping force required to prevent slipping
+
+### Experimental Validation
+- Box-shaped objects are manipulated on the NAO humanoid robot to validate system effectiveness
+- Experimental results demonstrate stable gripping force control, surface alignment accuracy meeting operational requirements, and successful prevention of object slippage
+
+## 개요
+이 2024년 논문은 소형 휴머노이드 로봇이 박스형 물체를 조작하는 요구를 위해 한 쌍의 저비용, 경량화된 유연한 힘 감지 그리퍼 패드를 설계했습니다. 그리퍼 패드는 실시간으로 법선 방향의 파지력과 압력 중심을 측정할 수 있으며, 전용 보정 방법을 통해 압력 중심 측정 정밀도를 향상시킵니다. 연구는 혼합 힘-정렬-위치 제어 프레임워크를 제안하여 파지력을 조절하고 그리퍼와 물체 표면의 밀착을 보장합니다. 한계 곡면 이론 기반의 접촉 마찰 모델은 미끄럼 방지에 필요한 최소 파지력을 결정할 수 있습니다. 전체 소프트웨어 및 하드웨어 시스템은 NAO 휴머노이드 로봇에서 실험 검증을 완료했습니다.
+
+## 핵심 내용
+### 하드웨어 설계
+- 저비용, 경량화된 유연한 재료로 그리퍼 패드를 제작하여 소형 휴머노이드 로봇(예: NAO)의 그리퍼에 적합
+- 힘 감지 유닛을 통합하여 법선 방향의 파지력과 압력 중심(CoP)을 동시에 측정
+
+### 보정 방법
+- CoP 측정 정밀도를 향상시키고 센서 비선형성 및 설치 오차를 보상하기 위한 전용 보정 절차 개발
+
+### 제어 프레임워크
+- 혼합 힘-정렬-위치 제어 전략 제안:
+  - 힘 제어: 파지력을 목표 값으로 조절
+  - 정렬 제어: 그리퍼와 물체 표면의 평행 접촉 보장
+  - 위치 제어: 그리퍼의 상대 위치 유지
+- 한계 곡면 이론(Limit Surface Theory)을 도입하여 접촉 마찰을 모델링하고, 미끄럼 방지에 필요한 최소 파지력을 동적으로 계산
+
+### 실험 검증
+- NAO 휴머노이드 로봇에서 박스형 물체를 조작하여 시스템 유효성 검증
+- 실험 결과: 파지력 제어가 안정적이고, 표면 정렬 정밀도가 조작 요구를 충족하며, 물체 미끄러짐을 성공적으로 방지

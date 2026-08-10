@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09365v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09365v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (912 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,23 @@ Video-based manipulation provides object-centric motion priors from human demons
 ## Content
 Video-based manipulation provides object-centric motion priors from human demonstrations, generated videos, or RGB-D observations, but such priors are typically embodiment-agnostic and cannot be directly executed by a specific robot. This paper presents **PhysV2A**, a reachability-gated and semantic-mask-constrained feasibility-completion framework for converting video-derived 6D object motion into robot-executable manipulation trajectories. The key idea is to treat grasp feasibility as trajectory-conditioned rather than local: each RGB-D-generated 6-DoF grasp candidate is rigidly coupled with the recovered object motion to form a grasp-conditioned TCP trajectory hypothesis. PhysV2A then performs hierarchical reachability-gated selection, where infeasible grasp–trajectory pairs are rejected by robot-centric kinematic checks and surviving candidates are ranked by downstream execution suitability. For the selected reachable trajectory, a VLM-assisted and rule-validated S-Mask identifies task-critical and relaxable Cartesian components, enabling semantic-mask-constrained manipulability refinement through redundancy-first optimization and bounded Cartesian relaxation. Real-robot experiments on four tabletop manipulation tasks show that PhysV2A improves task success over representative video-prior and IK-only baselines, reduces kinematic-feasibility failures, and produces better-conditioned trajectories with bounded semantic deviations.
 
-## 개요
-비디오 기반 조작은 인간 시연, 생성된 비디오 또는 RGB-D 관측을 통해 객체 중심의 운동 사전 정보를 제공하지만, 이러한 사전 정보는 일반적으로 구현 방식에 구애받지 않으며 특정 로봇이 직접 실행할 수 없습니다. 본 논문은 비디오에서 추출된 6D 객체 운동을 로봇이 실행 가능한 조작 궤적으로 변환하기 위한 **PhysV2A**라는 도달 가능성 게이트 및 의미 마스크 제약 기반 실행 가능성 완성 프레임워크를 제시합니다. 핵심 아이디어는 파지 가능성을 국소적이 아닌 궤적 조건부로 처리하는 것입니다. RGB-D로 생성된 각 6-DoF 파지 후보는 복원된 객체 운동과 강체적으로 결합되어 파지 조건부 TCP 궤적 가설을 형성합니다. 그런 다음 PhysV2A는 계층적 도달 가능성 게이트 선택을 수행하여, 실행 불가능한 파지-궤적 쌍을 로봇 중심의 운동학적 검사를 통해 거부하고, 생존한 후보를 하위 실행 적합성에 따라 순위를 매깁니다. 선택된 도달 가능 궤적에 대해 VLM 지원 및 규칙 검증된 S-마스크가 작업에 중요한 카르테시안 구성 요소와 완화 가능한 구성 요소를 식별하여, 중복성 우선 최적화와 제한된 카르테시안 완화를 통해 의미 마스크 제약 기반 조작성 개선을 가능하게 합니다. 네 가지 탁상 조작 작업에 대한 실제 로봇 실험에서 PhysV2A는 대표적인 비디오 사전 및 IK 전용 기준선보다 작업 성공률을 향상시키고, 운동학적 실행 가능성 실패를 줄이며, 제한된 의미 편차를 가진 더 나은 조건의 궤적을 생성함을 보여줍니다.
-
-## 핵심 내용
-비디오 기반 조작은 인간 시연, 생성된 비디오 또는 RGB-D 관측을 통해 객체 중심의 운동 사전 정보를 제공하지만, 이러한 사전 정보는 일반적으로 구현 방식에 구애받지 않으며 특정 로봇이 직접 실행할 수 없습니다. 본 논문은 비디오에서 추출된 6D 객체 운동을 로봇이 실행 가능한 조작 궤적으로 변환하기 위한 **PhysV2A**라는 도달 가능성 게이트 및 의미 마스크 제약 기반 실행 가능성 완성 프레임워크를 제시합니다. 핵심 아이디어는 파지 가능성을 국소적이 아닌 궤적 조건부로 처리하는 것입니다. RGB-D로 생성된 각 6-DoF 파지 후보는 복원된 객체 운동과 강체적으로 결합되어 파지 조건부 TCP 궤적 가설을 형성합니다. 그런 다음 PhysV2A는 계층적 도달 가능성 게이트 선택을 수행하여, 실행 불가능한 파지-궤적 쌍을 로봇 중심의 운동학적 검사를 통해 거부하고, 생존한 후보를 하위 실행 적합성에 따라 순위를 매깁니다. 선택된 도달 가능 궤적에 대해 VLM 지원 및 규칙 검증된 S-마스크가 작업에 중요한 카르테시안 구성 요소와 완화 가능한 구성 요소를 식별하여, 중복성 우선 최적화와 제한된 카르테시안 완화를 통해 의미 마스크 제약 기반 조작성 개선을 가능하게 합니다. 네 가지 탁상 조작 작업에 대한 실제 로봇 실험에서 PhysV2A는 대표적인 비디오 사전 및 IK 전용 기준선보다 작업 성공률을 향상시키고, 운동학적 실행 가능성 실패를 줄이며, 제한된 의미 편차를 가진 더 나은 조건의 궤적을 생성함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09365v1
+
+## 개요
+PhysV2A 프레임워크는 비디오 기반 조작에서 운동 사전(motion prior)과 구체적인 로봇 실행 사이의 괴리를 해결하는 것을 목표로 한다. 이는 각 RGB-D 생성 6자유도 그랩 후보를 복원된 객체 운동과 강체적으로 결합하여 그랩 조건화된 TCP 궤적 가설을 형성하고, 계층적 도달 가능성 게이팅 선택을 통해 실행 불가능한 그랩-궤적 쌍을 거부한다. 선택된 도달 가능 궤적에 대해 프레임워크는 VLM 보조 및 규칙 검증된 의미 마스크를 활용하여 작업 핵심 및 완화 가능한 데카르트 성분을 식별하고, 중복 우선 최적화와 유계 데카르트 완화를 통해 의미 마스크 제약된 조작성 정제를 수행한다. 네 개의 데스크톱 조작 작업에 대한 실제 로봇 실험에서 PhysV2A는 기준 방법 대비 작업 성공률을 향상시키고, 운동학적 실행 가능성 실패를 줄였으며, 조건이 더 우수하고 의미 편차가 유계인 궤적을 생성했다.
+
+## 핵심 내용
+### 방법 개요
+PhysV2A 프레임워크의 핵심 혁신은 그랩 실행 가능성을 로컬 조건이 아닌 궤적 조건으로 간주하는 것이다. 구체적으로, RGB-D 데이터로 생성된 각 6자유도 그랩 후보는 복원된 객체 운동과 강체적으로 결합되어 그랩 조건화된 TCP 궤적 가설을 형성한다. 이후 프레임워크는 계층적 도달 가능성 게이팅 선택을 수행하여 로봇 중심 운동학 검사를 통해 실행 불가능한 그랩-궤적 쌍을 거부하고, 생존한 후보를 하류 실행 적합성에 따라 정렬한다.
+
+### 아키텍처 및 핵심 구성 요소
+- **도달 가능성 게이팅 선택**: 계층적 메커니즘을 채택하여 먼저 로봇 중심 운동학 검사를 통해 실행 불가능한 그랩-궤적 쌍을 필터링한 후, 남은 후보를 정렬하여 선택된 궤적이 운동학적으로 실행 가능하도록 보장한다.
+- **의미 마스크 제약 정제**: 선택된 도달 가능 궤적에 대해 VLM 보조 및 규칙 검증된 의미 마스크(S-Mask)를 활용하여 작업 핵심 및 완화 가능한 데카르트 성분을 식별한다. 중복 우선 최적화와 유계 데카르트 완화를 통해 의미 마스크 제약된 조작성 정제를 구현하여 궤적이 의미적으로 유계이고 조건이 더 우수하도록 보장한다.
+
+### 실험 설정 및 결과
+- **작업 및 기준**: 네 개의 데스크톱 조작 작업에 대한 실제 로봇 실험을 수행했으며, 기준에는 대표적인 비디오 사전 방법과 IK 전용 방법이 포함된다.
+- **주요 수치**: PhysV2A는 작업 성공률에서 기준 대비 유의미하게 우수하며, 운동학적 실행 가능성 실패를 줄이고 조건이 더 우수하며 의미 편차가 유계인 궤적을 생성했다. 구체적인 성공률 향상 및 실패 감소 수치는 초록에 명시되지 않았지만, 실험을 통해 그 효과가 검증되었다.
+
+### 결론
+PhysV2A는 그랩 실행 가능성을 궤적 조건으로 간주하고 도달 가능성 게이팅과 의미 마스크 제약을 결합하여 비디오의 객체 운동을 로봇 실행 가능 궤적으로 성공적으로 변환했으며, 실제 로봇 실험에서 우수한 성능을 입증했다.

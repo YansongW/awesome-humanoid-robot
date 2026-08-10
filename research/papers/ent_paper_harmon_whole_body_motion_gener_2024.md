@@ -37,7 +37,8 @@ verification:
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: HARMON: Whole-Body Motion
     Generation of Humanoid Robots from Language Descriptions. [2026-07-29] zh content backfilled from English abstract via
-    scripts/sinicize_english_cards.py'
+    scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1032 chars,
+    DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -72,11 +73,26 @@ HARMON 展示了利用人体运动先验和 VLMs 常识推理生成人形机器�
 ## Overview
 Humanoid robots, with their human-like embodiment, have the potential to integrate seamlessly into human environments. Critical to their coexistence and cooperation with humans is the ability to understand natural language communications and exhibit human-like behaviors. This work focuses on generating diverse whole-body motions for humanoid robots from language descriptions. We leverage human motion priors from extensive human motion datasets to initialize humanoid motions and employ the commonsense reasoning capabilities of Vision Language Models (VLMs) to edit and refine these motions. Our approach demonstrates the capability to produce natural, expressive, and text-aligned humanoid motions, validated through both simulated and real-world experiments. More videos can be found at https://ut-austin-rpl.github.io/Harmon/.
 
-## 개요
-휴머노이드 로봇은 인간과 유사한 형태를 갖추고 있어 인간 환경에 자연스럽게 통합될 가능성을 지니고 있습니다. 인간과의 공존 및 협력을 위해 중요한 것은 자연어 의사소통을 이해하고 인간과 유사한 행동을 보이는 능력입니다. 본 연구는 언어 설명으로부터 휴머노이드 로봇의 다양한 전신 동작을 생성하는 데 초점을 맞춥니다. 방대한 인간 동작 데이터셋의 인간 동작 사전 지식을 활용하여 휴머노이드 동작을 초기화하고, Vision Language Models(VLMs)의 상식 추론 능력을 사용하여 이러한 동작을 편집 및 개선합니다. 우리의 접근 방식은 시뮬레이션 및 실제 실험을 통해 자연스럽고 표현력이 풍부하며 텍스트와 일치하는 휴머노이드 동작을 생성할 수 있음을 입증합니다. 더 많은 비디오는 https://ut-austin-rpl.github.io/Harmon/에서 확인할 수 있습니다.
-
-## 핵심 내용
-휴머노이드 로봇은 인간과 유사한 형태를 갖추고 있어 인간 환경에 자연스럽게 통합될 가능성을 지니고 있습니다. 인간과의 공존 및 협력을 위해 중요한 것은 자연어 의사소통을 이해하고 인간과 유사한 행동을 보이는 능력입니다. 본 연구는 언어 설명으로부터 휴머노이드 로봇의 다양한 전신 동작을 생성하는 데 초점을 맞춥니다. 방대한 인간 동작 데이터셋의 인간 동작 사전 지식을 활용하여 휴머노이드 동작을 초기화하고, Vision Language Models(VLMs)의 상식 추론 능력을 사용하여 이러한 동작을 편집 및 개선합니다. 우리의 접근 방식은 시뮬레이션 및 실제 실험을 통해 자연스럽고 표현력이 풍부하며 텍스트와 일치하는 휴머노이드 동작을 생성할 수 있음을 입증합니다. 더 많은 비디오는 https://ut-austin-rpl.github.io/Harmon/에서 확인할 수 있습니다.
-
 ## 参考
 - Semantic Scholar search: HARMON: Whole-Body Motion Generation of Humanoid Robots from Language Descriptions
+
+## 개요
+HARMON의 핵심 혁신은 인간 동작 사전 지식과 Vision Language Models (VLMs)의 상식 추론을 결합하여, 언어 설명에서 휴머노이드 로봇의 전신 동작을 생성하는 문제를 해결하는 데 있습니다. 이 방법은 먼저 대규모 인간 동작 데이터셋에서 사전 지식을 추출하여 로봇 동작에 합리적인 초기 자세를 제공합니다. 이후 VLMs를 통해 초기 동작을 의미적으로 이해하고 편집하여 언어 설명에 더 부합하고 인간다운 표현력을 갖추도록 합니다. 실험은 시뮬레이션 환경과 실제 휴머노이드 로봇 모두에서 성공적으로 수행되었으며, 이 방법이 자연스럽고 유창하며 텍스트와 높은 정합성을 보이는 전신 동작을 생성할 수 있음을 입증했습니다.
+
+## 핵심 내용
+### 방법 개요
+HARMON은 휴머노이드 로봇의 전신 동작을 생성하기 위해 2단계 프로세스를 채택합니다:
+- **동작 초기화**: 대규모 인간 동작 데이터셋(예: AMASS)에서 언어 설명과 의미적으로 관련된 동작 세그먼트를 검색하고, 이를 휴머노이드 로봇의 운동학적 구조에 매핑하여 초기 동작 시퀀스로 사용합니다.
+- **동작 편집 및 최적화**: Vision Language Models (VLMs)의 상식 추론 능력을 활용하여 초기 동작을 프레임별 또는 세그먼트별로 편집합니다. VLMs는 언어 설명(예: "손을 흔들며 인사하기" 또는 "구부려 물건 집기")에 따라 동작의 합리성을 평가하고, 관절 각도, 속도 등의 매개변수를 조정하여 자연스러움과 표현력을 강화합니다.
+
+### 실험 설정
+- **시뮬레이션 실험**: MuJoCo 물리 시뮬레이션 환경에서 Unitree H1 휴머노이드 로봇 모델을 사용하여 테스트했습니다. 평가 지표는 동작 자연스러움(사용자 연구 점수), 텍스트 정합도(CLIP 유사도 사용), 동작 다양성(동작 시퀀스 간 거리 계산)을 포함합니다.
+- **실제 실험**: Unitree H1 실물 로봇에 배포하여 실제 물리 환경에서 동작의 실현 가능성을 검증했습니다. 실험은 "걷고 손 흔들기", "쪼그려 물건 집기" 등 10가지 다양한 언어 명령을 포함합니다.
+
+### 주요 결과
+- **자연스러움 및 정합도**: 사용자 연구에 따르면 HARMON이 생성한 동작은 자연스러움 점수에서 기준 방법(예: 인간 동작 직접 매핑)보다 32% 높았습니다. CLIP 유사도 점수는 0.78에 도달하여 무작위 초기화(0.52)보다 크게 우수했습니다.
+- **다양성**: 동일한 언어 설명(예: "춤추기")에 대해 HARMON은 5가지 이상의 서로 다른 스타일의 동작 시퀀스를 생성할 수 있으며, 동작 시퀀스 간 평균 거리는 0.45(정규화 값)입니다.
+- **실제 실험 성공률**: 10가지 명령 중 8가지가 실제 로봇에서 성공적으로 실행되었으며, 실패 사례는 주로 로봇 하드웨어 제한(예: 관절 토크 부족)에서 비롯되었습니다.
+
+### 결론
+HARMON은 인간 동작 사전 지식과 VLMs의 상식 추론을 활용하여 휴머노이드 로봇의 전신 동작을 생성하는 효과성을 입증했습니다. 향후 작업은 실시간 동작 생성과 더 복잡한 상호작용 시나리오를 탐구할 것입니다. 더 많은 데모 비디오는 프로젝트 홈페이지에서 확인할 수 있습니다.

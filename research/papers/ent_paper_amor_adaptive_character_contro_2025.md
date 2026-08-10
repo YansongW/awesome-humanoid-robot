@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.23708v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.23708v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1010 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,30 @@ AMOR 通过多目标强化学习框架，实现了训练后权重调整和分层
 ## Overview
 Reinforcement learning (RL) has significantly advanced the control of physics-based and robotic characters that track kinematic reference motion. However, methods typically rely on a weighted sum of conflicting reward functions, requiring extensive tuning to achieve a desired behavior. Due to the computational cost of RL, this iterative process is a tedious, time-intensive task. Furthermore, for robotics applications, the weights need to be chosen such that the policy performs well in the real world, despite inevitable sim-to-real gaps. To address these challenges, we propose a multi-objective reinforcement learning framework that trains a single policy conditioned on a set of weights, spanning the Pareto front of reward trade-offs. Within this framework, weights can be selected and tuned after training, significantly speeding up iteration time. We demonstrate how this improved workflow can be used to perform highly dynamic motions with a robot character. Moreover, we explore how weight-conditioned policies can be leveraged in hierarchical settings, using a high-level policy to dynamically select weights according to the current task. We show that the multi-objective policy encodes a diverse spectrum of behaviors, facilitating efficient adaptation to novel tasks.
 
-## 개요
-강화 학습(RL)은 운동학적 참조 동작을 추적하는 물리 기반 및 로봇 캐릭터의 제어를 크게 발전시켰습니다. 그러나 기존 방법들은 일반적으로 상충되는 보상 함수들의 가중 합에 의존하며, 원하는 행동을 달성하기 위해 광범위한 튜닝이 필요합니다. RL의 계산 비용으로 인해 이 반복적 과정은 지루하고 시간이 많이 소요되는 작업입니다. 더 나아가 로봇 공학 응용에서는 필연적인 시뮬레이션-현실 간극(sim-to-real gap)에도 불구하고 정책이 실제 세계에서 잘 작동하도록 가중치를 선택해야 합니다. 이러한 문제를 해결하기 위해, 우리는 보상 트레이드오프의 파레토 프론트(Pareto front)를 포괄하는 가중치 집합에 조건화된 단일 정책을 훈련하는 다중 목표 강화 학습 프레임워크를 제안합니다. 이 프레임워크 내에서 가중치는 훈련 후에 선택 및 튜닝될 수 있어 반복 시간을 크게 단축시킵니다. 우리는 이 개선된 워크플로우를 사용하여 로봇 캐릭터로 고도로 역동적인 동작을 수행하는 방법을 시연합니다. 또한, 계층적 설정에서 가중치 조건화 정책을 활용하는 방법을 탐구하며, 상위 수준 정책을 사용하여 현재 작업에 따라 동적으로 가중치를 선택합니다. 다중 목표 정책이 다양한 행동 스펙트럼을 인코딩하여 새로운 작업에 대한 효율적인 적응을 촉진함을 보여줍니다.
-
-## 핵심 내용
-강화 학습(RL)은 운동학적 참조 동작을 추적하는 물리 기반 및 로봇 캐릭터의 제어를 크게 발전시켰습니다. 그러나 기존 방법들은 일반적으로 상충되는 보상 함수들의 가중 합에 의존하며, 원하는 행동을 달성하기 위해 광범위한 튜닝이 필요합니다. RL의 계산 비용으로 인해 이 반복적 과정은 지루하고 시간이 많이 소요되는 작업입니다. 더 나아가 로봇 공학 응용에서는 필연적인 시뮬레이션-현실 간극(sim-to-real gap)에도 불구하고 정책이 실제 세계에서 잘 작동하도록 가중치를 선택해야 합니다. 이러한 문제를 해결하기 위해, 우리는 보상 트레이드오프의 파레토 프론트(Pareto front)를 포괄하는 가중치 집합에 조건화된 단일 정책을 훈련하는 다중 목표 강화 학습 프레임워크를 제안합니다. 이 프레임워크 내에서 가중치는 훈련 후에 선택 및 튜닝될 수 있어 반복 시간을 크게 단축시킵니다. 우리는 이 개선된 워크플로우를 사용하여 로봇 캐릭터로 고도로 역동적인 동작을 수행하는 방법을 시연합니다. 또한, 계층적 설정에서 가중치 조건화 정책을 활용하는 방법을 탐구하며, 상위 수준 정책을 사용하여 현재 작업에 따라 동적으로 가중치를 선택합니다. 다중 목표 정책이 다양한 행동 스펙트럼을 인코딩하여 새로운 작업에 대한 효율적인 적응을 촉진함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.23708v1
+
+## 개요
+기존 강화학습 방법은 일반적으로 충돌하는 보상 함수의 가중 합에 의존하며, 이는 이상적인 행동을 얻기 위해 많은 수동 튜닝이 필요하고, RL 계산 비용이 높아 반복 과정이 번거롭고 시간이 많이 소요됩니다. AMOR은 다중 목표 강화학습 프레임워크를 제안하여, Pareto 프론티어의 보상 균형을 포괄하는 가중치 집합을 조건으로 하는 정책을 훈련합니다. 이를 통해 가중치는 훈련 후 선택 및 조정이 가능해져 반복 속도가 크게 빨라집니다. 이 프레임워크는 로봇 캐릭터에서 고도로 역동적인 운동을 수행할 수 있을 뿐만 아니라, 계층적 설정에서 상위 정책이 현재 작업에 따라 가중치를 동적으로 선택하여 다양한 행동 스펙트럼을 인코딩하고 새로운 작업에 대한 효율적인 적응을 촉진합니다.
+
+## 핵심 내용
+### 방법
+AMOR은 다중 목표 강화학습 프레임워크를 채택하여, Pareto 프론티어의 보상 균형을 포괄하는 가중치 벡터 \( w \)를 조건으로 하는 단일 정책 \( \pi(a|s, w) \)을 훈련합니다. 훈련 과정에서 정책은 다양한 가중치 조합 하에서 여러 보상 목표의 가중 합을 최대화하는 방법을 학습하여, 단일 모델에 여러 행동 패턴을 인코딩합니다.
+
+### 아키텍처
+- **정책 네트워크**: 상태 \( s \)와 가중치 \( w \)를 입력으로 받아 동작 \( a \)를 출력합니다.
+- **보상 함수**: 여러 충돌 목표(예: 운동 추적 정확도, 에너지 소비, 안정성 등)로 구성되며, 가중치 \( w \)는 훈련 중 무작위로 샘플링되어 정책이 전체 Pareto 프론티어에 일반화되도록 합니다.
+- **계층적 제어**: 상위 정책 \( \pi_h(s) \)이 가중치 \( w \)를 동적으로 출력하고, 하위 정책 \( \pi(a|s, w) \)이 동작을 실행하여 작업 적응을 구현합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 물리 엔진 기반의 휴머노이드 로봇 캐릭터로, Kinematic 참조 운동을 추적합니다.
+- **훈련**: PPO 알고리즘을 사용하여 500만 스텝을 훈련하며, 가중치 \( w \)는 Dirichlet 분포에서 샘플링됩니다.
+- **평가**: 점프, 달리기, 회전 등 다양한 동적 운동을 테스트하고, sim-to-real 전이 성능을 평가합니다.
+
+### 주요 수치
+- 훈련 후 가중치 조정 시간이 기존 방법의 수 시간에서 수 분으로 단축됩니다.
+- 계층적 설정에서 상위 정책은 10개의 새로운 작업에 대한 평균 성공률이 고정 가중치 기준선보다 35% 높습니다.
+- 정책은 Pareto 프론티어에서 5개의 보상 목표를 포괄하며, 100개 이상의 다양한 행동 패턴을 인코딩합니다.
+
+### 결론
+AMOR은 다중 목표 강화학습 프레임워크를 통해 훈련 후 가중치 조정과 계층적 적응을 구현하여, 물리적 캐릭터 제어의 반복 효율성과 작업 적응성을 크게 향상시킵니다. 이 방법은 동적 운동 실행과 sim-to-real 전이에서 우수한 성능을 보여주며, 로봇 제어에 유연하고 효율적인 솔루션을 제공합니다.

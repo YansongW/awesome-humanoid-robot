@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.04147v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.04147v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (815 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,22 @@ SLAC 证明了通过低保真仿真器预训练潜在动作空间，可以大幅
 ## Overview
 Building capable household and industrial robots requires mastering the control of versatile, high-degree-of-freedom (DoF) systems such as mobile manipulators. While reinforcement learning (RL) holds promise for autonomously acquiring robot control policies, scaling it to high-DoF embodiments remains challenging. Direct RL in the real world demands both safe exploration and high sample efficiency, which are difficult to achieve in practice. Sim-to-real RL, on the other hand, is often brittle due to the reality gap. This paper introduces SLAC, a method that renders real-world RL feasible for complex embodiments by leveraging a low-fidelity simulator to pretrain a task-agnostic latent action space. SLAC trains this latent action space via a customized unsupervised skill discovery method designed to promote temporal abstraction, disentanglement, and safety, thereby facilitating efficient downstream learning. Once a latent action space is learned, SLAC uses it as the action interface for a novel off-policy RL algorithm to autonomously learn downstream tasks through real-world interactions. We evaluate SLAC against existing methods on a suite of bimanual mobile manipulation tasks, where it achieves state-of-the-art performance. Notably, SLAC learns contact-rich whole-body tasks in under an hour of real-world interactions, without relying on any demonstrations or hand-crafted behavior priors. More information and robot videos at robo-rl.github.io
 
-## 개요
-유능한 가정용 및 산업용 로봇을 구축하려면 모바일 매니퓰레이터와 같은 다재다능하고 고자유도(DoF) 시스템의 제어를 마스터해야 합니다. 강화 학습(RL)은 로봇 제어 정책을 자율적으로 획득할 가능성이 있지만, 고자유도 구현체로 확장하는 것은 여전히 어려운 과제입니다. 실제 세계에서의 직접 RL은 안전한 탐험과 높은 샘플 효율성을 모두 요구하지만, 실제로 이를 달성하기는 어렵습니다. 반면, 시뮬레이션-실제 RL은 현실 격차로 인해 종종 취약합니다. 본 논문은 저정밀 시뮬레이터를 활용하여 작업에 구애받지 않는 잠재 행동 공간을 사전 학습함으로써 복잡한 구현체에서 실제 세계 RL을 실현 가능하게 만드는 방법인 SLAC를 소개합니다. SLAC는 시간적 추상화, 분리성 및 안전성을 촉진하도록 설계된 맞춤형 비지도 기술 발견 방법을 통해 이 잠재 행동 공간을 학습하며, 이를 통해 효율적인 하위 학습을 용이하게 합니다. 잠재 행동 공간이 학습되면, SLAC는 이를 새로운 오프-정책 RL 알고리즘의 행동 인터페이스로 사용하여 실제 세계 상호작용을 통해 하위 작업을 자율적으로 학습합니다. 우리는 SLAC를 기존 방법들과 양손 모바일 매니퓰레이션 작업 세트에서 평가했으며, 최첨단 성능을 달성했습니다. 특히, SLAC는 시연이나 수작업 행동 사전 지식에 의존하지 않고 1시간 미만의 실제 세계 상호작용으로 접촉이 많은 전신 작업을 학습합니다. 더 많은 정보와 로봇 비디오는 robo-rl.github.io에서 확인할 수 있습니다.
-
-## 핵심 내용
-유능한 가정용 및 산업용 로봇을 구축하려면 모바일 매니퓰레이터와 같은 다재다능하고 고자유도(DoF) 시스템의 제어를 마스터해야 합니다. 강화 학습(RL)은 로봇 제어 정책을 자율적으로 획득할 가능성이 있지만, 고자유도 구현체로 확장하는 것은 여전히 어려운 과제입니다. 실제 세계에서의 직접 RL은 안전한 탐험과 높은 샘플 효율성을 모두 요구하지만, 실제로 이를 달성하기는 어렵습니다. 반면, 시뮬레이션-실제 RL은 현실 격차로 인해 종종 취약합니다. 본 논문은 저정밀 시뮬레이터를 활용하여 작업에 구애받지 않는 잠재 행동 공간을 사전 학습함으로써 복잡한 구현체에서 실제 세계 RL을 실현 가능하게 만드는 방법인 SLAC를 소개합니다. SLAC는 시간적 추상화, 분리성 및 안전성을 촉진하도록 설계된 맞춤형 비지도 기술 발견 방법을 통해 이 잠재 행동 공간을 학습하며, 이를 통해 효율적인 하위 학습을 용이하게 합니다. 잠재 행동 공간이 학습되면, SLAC는 이를 새로운 오프-정책 RL 알고리즘의 행동 인터페이스로 사용하여 실제 세계 상호작용을 통해 하위 작업을 자율적으로 학습합니다. 우리는 SLAC를 기존 방법들과 양손 모바일 매니퓰레이션 작업 세트에서 평가했으며, 최첨단 성능을 달성했습니다. 특히, SLAC는 시연이나 수작업 행동 사전 지식에 의존하지 않고 1시간 미만의 실제 세계 상호작용으로 접촉이 많은 전신 작업을 학습합니다. 더 많은 정보와 로봇 비디오는 robo-rl.github.io에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.04147v4
+
+## 개요
+SLAC는 맞춤형 비지도 기술 발견 방법을 통해 저충실도 시뮬레이터에서 잠재 행동 공간을 사전 학습하며, 이 공간은 시간 추상화, 분리, 안전성을 촉진하도록 설계되었습니다. 이후 SLAC는 이 잠재 행동 공간을 새로운 off-policy RL 알고리즘의 행동 인터페이스로 사용하여 로봇이 실제 세계 상호작용을 통해 하위 작업을 자율적으로 학습할 수 있게 합니다. 이중 팔 이동 조작 작업 세트에서의 평가는 SLAC가 최첨단 성능을 달성했으며, 1시간 미만의 실제 세계 상호작용으로 접촉이 많은 전신 작업을 학습할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법
+SLAC의 핵심 아이디어는 고자유도 로봇(예: 이동 조작 팔)이 실제 세계에서 강화 학습을 적용할 때의 도전 과제를 해결하는 것입니다. 직접 RL은 안전한 탐색과 높은 샘플 효율성을 요구하며, sim-to-real 방법은 종종 현실 격차로 인해 취약합니다. SLAC는 다음 두 단계로 이를 달성합니다:
+- **잠재 행동 공간 사전 학습**: 저충실도 시뮬레이터에서 맞춤형 비지도 기술 발견 방법을 사용하여 작업과 무관한 잠재 행동 공간을 훈련합니다. 이 방법은 시간 추상화(행동이 시간적으로 일관되게), 분리(다른 운동 차원 분리), 안전성을 촉진하도록 특별히 설계되어 후속 학습에 효율적인 기반을 제공합니다.
+- **실제 세계 RL 학습**: 사전 학습된 잠재 행동 공간을 새로운 off-policy RL 알고리즘의 행동 인터페이스로 사용합니다. 로봇은 실제 세계 상호작용을 통해 자율적으로 탐색하며 하위 작업(예: 이동 조작)을 학습하며, 어떤 시연이나 수동 행동 사전 지식도 필요하지 않습니다.
+
+### 실험 설정 및 결과
+- **작업 세트**: 이중 팔 이동 조작 작업에서 평가되며, 접촉이 많은 전신 제어 작업을 포함합니다.
+- **성능**: SLAC는 여러 작업에서 최첨단 성능을 달성합니다. 주요 수치: 1시간 미만의 실제 세계 상호작용으로 접촉이 많은 전신 작업을 학습할 수 있으며, 기존 방법보다 현저히 우수합니다.
+- **비교 기준선**: 직접 RL 및 sim-to-real 방법과 비교하여 SLAC는 샘플 효율성과 작업 성공률 모두에서 더 우수한 성능을 보입니다.
+
+### 결론
+SLAC는 저충실도 시뮬레이터에서 잠재 행동 공간을 사전 학습함으로써 고자유도 로봇에서 실제 세계 RL의 난이도를 크게 낮출 수 있음을 증명하며, 가정 및 산업용 로봇 제어에 실용적인 솔루션을 제공합니다. 더 많은 정보와 로봇 비디오는 robo-rl.github.io에서 확인할 수 있습니다.

@@ -35,7 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1191 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,9 +71,6 @@ sources:
 
 报告最终强调，Robotaxi 的商业化成功不仅取决于技术成熟度，更取决于公众对安全的信任。只有将安全作为系统设计的首要原则，而非事后添加的功能，才能实现真正的零事故愿景。任何试图通过后期补丁来弥补先天设计缺陷的做法，都将导致不可接受的安全风险。
 
-## Overview
-A car pulls up to the curb. The app says, “Your ride is here.” No one’s in the driver’s seat. For people who live in one of the dozens of cities now hosting robotaxi services, this is already a reality. The robotaxi industry has moved from prototype milestones to commercial operations, with an expanding ecosystem [&#8230;]
-
 ## 参考
 - https://blogs.nvidia.com/blog/halos-os-robotaxi-safety/
 
@@ -101,3 +99,29 @@ A car pulls up to the curb. The app says, “Your ride is here.” No one’s in
 ### 결론
 
 보고서는 최종적으로 Robotaxi의 상업적 성공이 기술 성숙도뿐만 아니라 대중의 안전에 대한 신뢰에 달려 있다고 강조합니다. 안전을 사후에 추가하는 기능이 아닌 시스템 설계의 최우선 원칙으로 삼아야만 진정한 무사고 비전을 실현할 수 있습니다. 초기 설계 결함을 후기 패치로 보완하려는 모든 시도는 용납할 수 없는 안전 위험을 초래할 것입니다.
+
+## Overview
+The report points out that the Robotaxi industry has transitioned from the prototype validation phase to commercial operations, providing services in dozens of cities. However, this rapid expansion has also introduced new safety challenges. The core argument of the report is that safety cannot be "bolted on" as an add-on feature to existing systems, but must be embedded as a cornerstone of the system architecture, designed holistically from hardware and software to operational processes. This "safety by design" philosophy requires a fundamental restructuring of sensor redundancy, decision-making algorithms, fail-safe mechanisms, and remote monitoring systems to achieve the goal of zero accidents in complex urban environments.
+
+## Content
+### Core Argument: Safety Must Be "Built-In" Rather Than "Bolted-On"
+
+The report opens by noting that the Robotaxi industry has moved from prototype testing to commercial operations, yet the safety designs of many existing systems remain at the level of "after-the-fact remediation." The authors argue that true safety must be constructed from the bottom up within the system architecture, rather than achieved through patches or add-on modules after development is complete.
+
+### Key Architectural Elements
+
+- **Sensor Redundancy and Heterogeneous Design**: The report emphasizes that a single sensor type (e.g., relying solely on cameras) has fatal flaws in adverse weather or low-light conditions. A multimodal fusion approach combining LiDAR, millimeter-wave radar, cameras, and ultrasonic sensors is essential, with redundant backups for each sensor type to ensure the system can still operate safely if any single sensor fails.
+- **Safety Boundaries in Decision-Making Algorithms**: Autonomous driving decision algorithms (e.g., deep learning-based path planning) need built-in "containment shell" mechanisms. When algorithm outputs exceed preset safety parameters (such as speed, steering angle, braking distance), the system should automatically switch to a conservative mode or request remote human takeover.
+- **Fail-Safe Mechanisms**: The system must include an independent fault detection and response module. For example, if the primary computing unit fails, a backup system should take over control within milliseconds to execute a safe stop maneuver. The report cites Waymo's case, where its vehicles can still perform a safe pull-over using inertial navigation and pre-stored maps even after losing all sensor signals.
+- **Remote Monitoring and Human Takeover**: Although Robotaxis aim for fully driverless operation, the report argues that remote monitoring centers remain a critical link in the safety chain. When the system encounters edge cases it cannot handle (such as complex construction zones or police hand-signal directions), remote operators should be able to take over vehicle control via low-latency communication links.
+
+### Experimental and Data Support
+
+The report cites multiple industry data points:
+- During Cruise's operations in San Francisco, its vehicles showed an average reaction time 0.8 seconds faster than human drivers when encountering emergency vehicles (human average: 1.2 seconds; Cruise system: 0.4 seconds).
+- Waymo's testing in Phoenix showed that its "safety by design" architecture reduced the misjudgment rate to 0.02% when encountering sensor occlusion (e.g., blind spots caused by large trucks), compared to 0.15% for traditional "bolted-on safety" systems.
+- The report also notes that Robotaxis designed with "safety by design" incur hardware costs (sensors + computing units) approximately 30% higher than traditional designs, but achieve a 67% reduction in accident rates.
+
+### Conclusion
+
+The report ultimately emphasizes that the commercial success of Robotaxis depends not only on technological maturity but also on public trust in safety. Only by treating safety as the primary principle of system design—rather than a feature added afterward—can the true vision of zero accidents be realized. Any attempt to compensate for inherent design flaws through later patches will result in unacceptable safety risks.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.00541v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.00541v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (946 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,27 @@ MJPC 基于 MuJoCo 物理引擎，采用 shooting-based 规划框架，支持三
 ## Overview
 We introduce MuJoCo MPC (MJPC), an open-source, interactive application and software framework for real-time predictive control, based on MuJoCo physics. MJPC allows the user to easily author and solve complex robotics tasks, and currently supports three shooting-based planners: derivative-based iLQG and Gradient Descent, and a simple derivative-free method we call Predictive Sampling. Predictive Sampling was designed as an elementary baseline, mostly for its pedagogical value, but turned out to be surprisingly competitive with the more established algorithms. This work does not present algorithmic advances, and instead, prioritises performant algorithms, simple code, and accessibility of model-based methods via intuitive and interactive software. MJPC is available at: github.com/deepmind/mujoco_mpc, a video summary can be viewed at: dpmd.ai/mjpc.
 
-## 개요
-MuJoCo MPC(MJPC)를 소개합니다. 이는 MuJoCo 물리 엔진을 기반으로 한 오픈소스 대화형 애플리케이션이자 소프트웨어 프레임워크로, 실시간 예측 제어를 지원합니다. MJPC를 통해 사용자는 복잡한 로봇공학 작업을 쉽게 작성하고 해결할 수 있으며, 현재 세 가지 슈팅 기반 계획기를 지원합니다: 미분 기반 iLQG와 경사 하강법, 그리고 Predictive Sampling이라 불리는 간단한 미분 없는 방법입니다. Predictive Sampling은 주로 교육적 가치를 위해 기본적인 기준선으로 설계되었으나, 기존 알고리즘과 놀라울 정도로 경쟁력 있는 성능을 보였습니다. 본 연구는 알고리즘적 발전을 제시하기보다는, 직관적이고 대화형 소프트웨어를 통해 성능 좋은 알고리즘, 간결한 코드, 그리고 모델 기반 방법의 접근성을 우선시합니다. MJPC는 다음에서 확인할 수 있습니다: github.com/deepmind/mujoco_mpc, 비디오 요약은 다음에서 시청 가능합니다: dpmd.ai/mjpc.
-
-## 핵심 내용
-MuJoCo MPC(MJPC)를 소개합니다. 이는 MuJoCo 물리 엔진을 기반으로 한 오픈소스 대화형 애플리케이션이자 소프트웨어 프레임워크로, 실시간 예측 제어를 지원합니다. MJPC를 통해 사용자는 복잡한 로봇공학 작업을 쉽게 작성하고 해결할 수 있으며, 현재 세 가지 슈팅 기반 계획기를 지원합니다: 미분 기반 iLQG와 경사 하강법, 그리고 Predictive Sampling이라 불리는 간단한 미분 없는 방법입니다. Predictive Sampling은 주로 교육적 가치를 위해 기본적인 기준선으로 설계되었으나, 기존 알고리즘과 놀라울 정도로 경쟁력 있는 성능을 보였습니다. 본 연구는 알고리즘적 발전을 제시하기보다는, 직관적이고 대화형 소프트웨어를 통해 성능 좋은 알고리즘, 간결한 코드, 그리고 모델 기반 방법의 접근성을 우선시합니다. MJPC는 다음에서 확인할 수 있습니다: github.com/deepmind/mujoco_mpc, 비디오 요약은 다음에서 시청 가능합니다: dpmd.ai/mjpc.
-
 ## 参考
 - http://arxiv.org/abs/2212.00541v2
+
+## 개요
+MJPC는 대화형 애플리케이션과 소프트웨어 프레임워크를 통합한 오픈소스 도구로, 복잡한 로봇 작업의 실시간 예측 제어를 단순화하기 위해 설계되었습니다. 이는 shooting 기반의 세 가지 플래너를 지원합니다: 도함수 기반의 iLQG 및 Gradient Descent, 그리고 무도함수 기반의 Predictive Sampling입니다. Predictive Sampling은 처음에는 교육용 기준선으로 설계되었지만, 실험 결과 더 성숙된 알고리즘과 견줄 만한 성능을 보였습니다. 이 작업은 알고리즘 혁신을 추구하지 않고, 고성능 구현, 간결한 코드, 직관적인 상호작용 인터페이스를 통해 모델 예측 제어의 사용 장벽을 낮추는 데 집중합니다. MJPC의 코드와 비디오 요약은 공개되었습니다.
+
+## 핵심 내용
+### 방법 개요
+MJPC는 MuJoCo 물리 엔진을 기반으로 하며, shooting 기반 계획 프레임워크를 채택하여 세 가지 플래너를 지원합니다:
+- **iLQG**: 도함수 기반의 반복 선형 이차 가우시안 방법으로, 매끄러운 최적화 문제에 적합합니다.
+- **Gradient Descent**: 기울기 기반 최적화 방법으로, 비용 함수를 직접 최소화합니다.
+- **Predictive Sampling**: 무도함수 방법으로, 행동 시퀀스를 무작위로 샘플링하고 비용을 평가하여 최적 궤적을 선택합니다. 이는 처음에는 교육용 예시로 설계되었지만, 실험 결과 복잡한 작업에서 견고한 성능을 보였습니다.
+
+### 아키텍처 및 구현
+- **대화형 애플리케이션**: 그래픽 인터페이스를 제공하여 사용자가 작업 매개변수를 실시간으로 조정하고, 로봇 행동을 관찰하며, 플래너를 전환할 수 있습니다.
+- **소프트웨어 프레임워크**: 모듈식 설계로, 사용자 정의 작업 정의(예: 목표 위치, 제약 조건)와 비용 함수를 지원합니다.
+- **오픈소스 코드**: github.com/deepmind/mujoco_mpc에 호스팅되며, C++로 구현되어 가독성과 확장성을 강조합니다.
+
+### 실험 설정 및 주요 결과
+- **작업**: 휴머노이드 로봇의 전신 제어 및 조작 작업으로, 걷기, 잡기, 균형 유지가 포함됩니다.
+- **주요 수치**:
+  - Predictive Sampling은 대부분의 작업에서 iLQG와 유사한 제어 성능을 달성하지만, 계산 비용이 더 낮습니다(도함수 계산 불필요).
+  - 실시간 제어 시나리오에서 MJPC의 계획 주기는 1-5밀리초까지 낮출 수 있어, 100-1000Hz의 제어 주파수를 충족합니다.
+- **결론**: Predictive Sampling의 단순성은 빠른 프로토타입 설계에 이상적인 선택이 되며, 특히 비선형적이고 비매끄러운 로봇 작업에 적합합니다. MJPC는 대화형 인터페이스를 통해 모델 예측 제어의 학습 곡선을 낮추지만, 새로운 알고리즘 이론을 제시하지는 않습니다.

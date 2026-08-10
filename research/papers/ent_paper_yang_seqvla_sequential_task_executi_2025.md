@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14138v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14138v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (754 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,30 @@ sources:
 ## Overview
 Long-horizon robotic manipulation tasks require executing multiple interdependent subtasks in strict sequence, where errors in detecting subtask completion can cascade into downstream failures. Existing Vision-Language-Action (VLA) models such as $π_0$ excel at continuous low-level control but lack an internal signal for identifying when a subtask has finished, making them brittle in sequential settings. We propose SeqVLA, a completion-aware extension of $π_0$ that augments the base architecture with a lightweight detection head perceiving whether the current subtask is complete. This dual-head design enables SeqVLA not only to generate manipulation actions but also to autonomously trigger transitions between subtasks. We investigate four finetuning strategies that vary in how the action and detection heads are optimized (joint vs. sequential finetuning) and how pretrained knowledge is preserved (full finetuning vs. frozen backbone). Experiments are performed on two multi-stage tasks: salad packing with seven distinct subtasks and candy packing with four distinct subtasks. Results show that SeqVLA significantly outperforms the baseline $π_0$ and other strong baselines in overall success rate. In particular, joint finetuning with an unfrozen backbone yields the most decisive and statistically reliable completion predictions, eliminating sequence-related failures and enabling robust long-horizon execution. Our results highlight the importance of coupling action generation with subtask-aware detection for scalable sequential manipulation.
 
-## 개요
-장기간 로봇 조작 작업은 여러 상호 의존적인 하위 작업을 엄격한 순서로 실행해야 하며, 하위 작업 완료 감지 오류가 하위 작업 실패로 이어질 수 있습니다. 기존의 Vision-Language-Action (VLA) 모델(예: $π_0$)은 연속적인 저수준 제어에 뛰어나지만, 하위 작업이 완료되었는지 식별하는 내부 신호가 없어 순차적 환경에서 취약합니다. 우리는 SeqVLA를 제안합니다. 이는 $π_0$의 완료 인식 확장판으로, 기본 아키텍처에 현재 하위 작업 완료 여부를 감지하는 경량 탐지 헤드를 추가합니다. 이 이중 헤드 설계를 통해 SeqVLA는 조작 동작을 생성할 뿐만 아니라 하위 작업 간 전환을 자율적으로 트리거할 수 있습니다. 우리는 동작 헤드와 탐지 헤드의 최적화 방식(공동 vs. 순차적 파인튜닝)과 사전 학습 지식 보존 방식(전체 파인튜닝 vs. 고정 백본)이 다른 네 가지 파인튜닝 전략을 조사합니다. 실험은 7개의 개별 하위 작업으로 구성된 샐러드 포장과 4개의 개별 하위 작업으로 구성된 사탕 포장이라는 두 가지 다단계 작업에서 수행됩니다. 결과는 SeqVLA가 전체 성공률에서 기준 모델 $π_0$ 및 다른 강력한 기준 모델을 크게 능가함을 보여줍니다. 특히, 고정되지 않은 백본을 사용한 공동 파인튜닝은 가장 결정적이고 통계적으로 신뢰할 수 있는 완료 예측을 제공하여 순서 관련 실패를 제거하고 강력한 장기 실행을 가능하게 합니다. 우리의 결과는 확장 가능한 순차적 조작을 위해 동작 생성과 하위 작업 인식 탐지를 결합하는 것의 중요성을 강조합니다.
-
-## 핵심 내용
-장기간 로봇 조작 작업은 여러 상호 의존적인 하위 작업을 엄격한 순서로 실행해야 하며, 하위 작업 완료 감지 오류가 하위 작업 실패로 이어질 수 있습니다. 기존의 Vision-Language-Action (VLA) 모델(예: $π_0$)은 연속적인 저수준 제어에 뛰어나지만, 하위 작업이 완료되었는지 식별하는 내부 신호가 없어 순차적 환경에서 취약합니다. 우리는 SeqVLA를 제안합니다. 이는 $π_0$의 완료 인식 확장판으로, 기본 아키텍처에 현재 하위 작업 완료 여부를 감지하는 경량 탐지 헤드를 추가합니다. 이 이중 헤드 설계를 통해 SeqVLA는 조작 동작을 생성할 뿐만 아니라 하위 작업 간 전환을 자율적으로 트리거할 수 있습니다. 우리는 동작 헤드와 탐지 헤드의 최적화 방식(공동 vs. 순차적 파인튜닝)과 사전 학습 지식 보존 방식(전체 파인튜닝 vs. 고정 백본)이 다른 네 가지 파인튜닝 전략을 조사합니다. 실험은 7개의 개별 하위 작업으로 구성된 샐러드 포장과 4개의 개별 하위 작업으로 구성된 사탕 포장이라는 두 가지 다단계 작업에서 수행됩니다. 결과는 SeqVLA가 전체 성공률에서 기준 모델 $π_0$ 및 다른 강력한 기준 모델을 크게 능가함을 보여줍니다. 특히, 고정되지 않은 백본을 사용한 공동 파인튜닝은 가장 결정적이고 통계적으로 신뢰할 수 있는 완료 예측을 제공하여 순서 관련 실패를 제거하고 강력한 장기 실행을 가능하게 합니다. 우리의 결과는 확장 가능한 순차적 조작을 위해 동작 생성과 하위 작업 인식 탐지를 결합하는 것의 중요성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.14138v1
+
+## 개요
+장시간 로봇 조작 작업은 여러 상호 의존적인 하위 작업을 엄격한 순서로 실행해야 하며, 기존 VLA 모델(예: $π_0$)은 연속적인 저수준 제어에 뛰어나지만 하위 작업 완료 감지를 위한 내부 신호가 부족하여 시퀀스 시나리오에서 오류가 발생하기 쉽습니다. SeqVLA는 이중 헤드 설계(동작 생성 헤드 + 완료 감지 헤드)를 통해 이 문제를 해결하여, 모델이 조작 동작을 생성하면서도 자율적으로 하위 작업 전환을 트리거할 수 있게 합니다. 연구는 샐러드 포장(7개 하위 작업)과 사탕 포장(4개 하위 작업)이라는 두 가지 다단계 작업에서 실험을 수행하여 이 방법의 효과를 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **기반 모델**: $π_0$를 백본 네트워크로 사용하여 연속적인 저수준 제어 능력을 유지합니다.
+- **이중 헤드 설계**: $π_0$ 위에 경량 완료 감지 헤드를 추가하며, 이 헤드는 현재 하위 작업 완료 여부를 인식하여 이진 판단 신호를 출력합니다.
+- **작동 흐름**: 동작 헤드가 지속적으로 조작 명령을 생성하고, 감지 헤드가 실시간으로 하위 작업 상태를 평가하며, 완료가 감지되면 자동으로 다음 하위 작업을 트리거합니다.
+
+### 미세 조정 전략
+연구는 네 가지 미세 조정 방식을 탐구했으며, 차이점은 다음과 같습니다:
+- **최적화 순서**: 공동 미세 조정(동작 헤드와 감지 헤드를 동시에 최적화) vs. 순차 미세 조정(동작 헤드를 먼저 최적화한 후 감지 헤드를 최적화)
+- **지식 보존**: 전체 파라미터 미세 조정 vs. 백본 네트워크 동결
+
+### 실험 설정
+- **작업 1**: 샐러드 포장, 7개의 서로 다른 하위 작업 포함(예: 잡기, 놓기, 접기 등)
+- **작업 2**: 사탕 포장, 4개의 서로 다른 하위 작업 포함
+- **기준 모델**: $π_0$ 및 기타 강력한 기준 방법
+
+### 주요 결과
+- SeqVLA는 모든 작업에서 전체 성공률이 $π_0$ 및 기타 기준선보다 크게 우수했습니다.
+- **최적 구성**: 공동 미세 조정 + 백본 네트워크 동결 없음, 가장 결정적이고 통계적으로 신뢰할 수 있는 완료 예측을 생성합니다.
+- **효과**: 이 구성은 시퀀스 관련 오류를 완전히 제거하여 강력한 장시간 작업 실행을 구현했습니다.
+- **결론**: 동작 생성과 하위 작업 인식 감지를 결합하는 것이 확장 가능한 시퀀스 조작의 핵심입니다.

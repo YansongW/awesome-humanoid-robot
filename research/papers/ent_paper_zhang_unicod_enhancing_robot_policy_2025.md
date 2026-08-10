@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10642v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10642v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (675 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,25 @@ UniCoD 通过统一连续与离散表示学习，有效融合了视觉语言理�
 ## Overview
 Building generalist robot policies that can handle diverse tasks in open-ended environments is a central challenge in robotics. To leverage knowledge from large-scale pretraining, prior work (VLA) has typically built generalist policies either on top of vision-language understanding models (VLMs) or generative models. However, both semantic understanding from vision-language pretraining and visual dynamics modeling from visual-generation pretraining are crucial for embodied robots. Recent unified models of generation and understanding have demonstrated strong capabilities in both comprehension and generation through large-scale pretraining. We posit that robotic policy learning can likewise benefit from the combined strengths of understanding, planning, and continuous future representation learning. Building on this insight, we introduce UniJEPA, which acquires the ability to dynamically model high-dimensional visual features through pretraining on over 1M internet-scale instructional manipulation videos. Subsequently, UniJEPA is fine-tuned on data collected from the robot embodiment, enabling the learning of mappings from predictive representations to action tokens. Extensive experiments show our approach consistently outperforms baseline methods in terms of 9\% and 12\% across simulation environments and real-world out-of-distribution tasks.
 
-## 개요
-개방형 환경에서 다양한 작업을 처리할 수 있는 범용 로봇 정책을 구축하는 것은 로봇 공학의 핵심 과제입니다. 대규모 사전 학습의 지식을 활용하기 위해, 기존 연구(VLA)는 일반적으로 시각-언어 이해 모델(VLM) 또는 생성 모델 위에 범용 정책을 구축해 왔습니다. 그러나 시각-언어 사전 학습의 의미 이해와 시각 생성 사전 학습의 시각적 동역학 모델링은 모두 임베디드 로봇에 필수적입니다. 최근 생성과 이해의 통합 모델은 대규모 사전 학습을 통해 이해와 생성 모두에서 강력한 능력을 입증했습니다. 우리는 로봇 정책 학습도 이해, 계획, 연속적인 미래 표현 학습의 결합된 강점으로부터 이점을 얻을 수 있다고 가정합니다. 이 통찰력을 바탕으로, 우리는 UniJEPA를 소개합니다. 이는 100만 개 이상의 인터넷 규모 지시 조작 비디오에 대한 사전 학습을 통해 고차원 시각적 특징을 동적으로 모델링하는 능력을 획득합니다. 이후 UniJEPA는 로봇 임베디드에서 수집된 데이터로 미세 조정되어 예측 표현에서 행동 토큰으로의 매핑 학습을 가능하게 합니다. 광범위한 실험을 통해 우리의 접근 방식은 시뮬레이션 환경과 실제 분포 외 작업에서 기준 방법보다 각각 9% 및 12% 더 우수한 성능을 일관되게 보여줍니다.
-
-## 핵심 내용
-개방형 환경에서 다양한 작업을 처리할 수 있는 범용 로봇 정책을 구축하는 것은 로봇 공학의 핵심 과제입니다. 대규모 사전 학습의 지식을 활용하기 위해, 기존 연구(VLA)는 일반적으로 시각-언어 이해 모델(VLM) 또는 생성 모델 위에 범용 정책을 구축해 왔습니다. 그러나 시각-언어 사전 학습의 의미 이해와 시각 생성 사전 학습의 시각적 동역학 모델링은 모두 임베디드 로봇에 필수적입니다. 최근 생성과 이해의 통합 모델은 대규모 사전 학습을 통해 이해와 생성 모두에서 강력한 능력을 입증했습니다. 우리는 로봇 정책 학습도 이해, 계획, 연속적인 미래 표현 학습의 결합된 강점으로부터 이점을 얻을 수 있다고 가정합니다. 이 통찰력을 바탕으로, 우리는 UniJEPA를 소개합니다. 이는 100만 개 이상의 인터넷 규모 지시 조작 비디오에 대한 사전 학습을 통해 고차원 시각적 특징을 동적으로 모델링하는 능력을 획득합니다. 이후 UniJEPA는 로봇 임베디드에서 수집된 데이터로 미세 조정되어 예측 표현에서 행동 토큰으로의 매핑 학습을 가능하게 합니다. 광범위한 실험을 통해 우리의 접근 방식은 시뮬레이션 환경과 실제 분포 외 작업에서 기준 방법보다 각각 9% 및 12% 더 우수한 성능을 일관되게 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.10642v3
+
+## 개요
+UniCoD는 개방 환경에서 다양한 작업을 위한 범용 로봇 정책 구축의 과제를 해결하기 위해, 연속 및 이산 표현 학습을 통합하는 방법을 제안합니다. 이 방법은 UniJEPA 아키텍처를 기반으로, 먼저 100만 개 이상의 인터넷 교육용 조작 비디오에서 사전 훈련을 통해 고차원 시각 특징의 동적 모델링 능력을 학습합니다. 이후 로봇 본체 데이터를 미세 조정하여 예측 표현을 행동 토큰으로 매핑합니다. 실험 결과, UniCoD는 시뮬레이션 환경과 실제 세계 분포 외 작업에서 모두 기준 방법보다显著히 우수한 성능을 보였습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+UniCoD의 핵심은 UniJEPA 아키텍처로, 시각 언어 이해와 시각 생성 사전 훈련의 장점을 통합합니다. 구체적으로:
+- **사전 훈련 단계**: 100만 개 이상의 인터넷 규모 교육용 조작 비디오에서 UniJEPA는 고차원 시각 특징의 동적 모델링을 학습하며, 의미 이해와 시각 역학을 동시에 포착합니다.
+- **미세 조정 단계**: 로봇 본체에서 수집된 데이터를 활용하여 예측 표현을 이산 행동 토큰으로 매핑하고, 이해에서 실행까지의 종단 간 학습을 구현합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 여러 표준 로봇 조작 벤치마크에서 테스트하며, 파지, 배치, 조립 등의 작업을 포함합니다.
+- **실제 세계 작업**: 분포 외 시나리오를 평가하며, 다양한 객체, 조명 및 배경 조건에서의 조작을 포함합니다.
+
+### 주요 결과
+- **시뮬레이션 환경**: UniCoD는 평균 9%의 작업 성공률 향상을 보였으며, 순수 VLM 또는 생성 모델 기반 기준선보다 우수합니다.
+- **실제 세계 작업**: 분포 외 시나리오에서 UniCoD는 12%의 성공률 향상을 보여, 일반화 능력을 검증했습니다.
+
+### 결론
+UniCoD는 연속 및 이산 표현 학습을 통합하여 시각 언어 이해와 시각 생성 사전 훈련의 장점을 효과적으로 융합하며, 범용 로봇 정책 구축을 위한 새로운 패러다임을 제공합니다. 향후 연구는 더 큰 규모의 사전 훈련과 더 복잡한 행동 공간을 탐구할 수 있습니다.

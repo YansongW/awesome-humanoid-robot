@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.09364v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.09364v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (600 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -61,14 +62,45 @@ AGILOped 旨在解决现有高性能人形机器人闭源或成本过高的问�
 ### 结论
 AGILOped 以开源、低成本、高性能的特点，为人形机器人研究提供了可复现的硬件平台，尤其适合需要频繁迭代与实验的学术场景。
 
-## Overview
-With academic and commercial interest for humanoid robots peaking, multiple platforms are being developed. Through a high level of customization, they showcase impressive performance. Most of these systems remain closed-source or have high acquisition and maintenance costs, however. In this work, we present AGILOped - an open-source humanoid robot that closes the gap between high performance and accessibility. Our robot is driven by off-the-shelf backdrivable actuators with high power density and uses standard electronic components. With a height of 110 cm and weighing only 14.5 kg, AGILOped can be operated without a gantry by a single person. Experiments in walking, jumping, impact mitigation and getting-up demonstrate its viability for use in research.
-
-## 개요
-휴머노이드 로봇에 대한 학계 및 상업적 관심이 최고조에 달하면서, 여러 플랫폼이 개발되고 있습니다. 높은 수준의 맞춤화를 통해 인상적인 성능을 보여주고 있지만, 대부분의 시스템은 폐쇄형 소스이거나 높은 도입 및 유지 비용이 듭니다. 본 연구에서는 고성능과 접근성 사이의 격차를 해소하는 오픈소스 휴머노이드 로봇 AGILOped를 소개합니다. 이 로봇은 높은 출력 밀도를 가진 상용 백드라이버블 액추에이터로 구동되며, 표준 전자 부품을 사용합니다. 키 110cm, 무게 14.5kg에 불과한 AGILOped는 한 명의 작업자가 갠트리 없이도 조작할 수 있습니다. 보행, 점프, 충격 완화 및 기립 실험을 통해 연구용으로의 실용성을 입증했습니다.
-
-## 핵심 내용
-휴머노이드 로봇에 대한 학계 및 상업적 관심이 최고조에 달하면서, 여러 플랫폼이 개발되고 있습니다. 높은 수준의 맞춤화를 통해 인상적인 성능을 보여주고 있지만, 대부분의 시스템은 폐쇄형 소스이거나 높은 도입 및 유지 비용이 듭니다. 본 연구에서는 고성능과 접근성 사이의 격차를 해소하는 오픈소스 휴머노이드 로봇 AGILOped를 소개합니다. 이 로봇은 높은 출력 밀도를 가진 상용 백드라이버블 액추에이터로 구동되며, 표준 전자 부품을 사용합니다. 키 110cm, 무게 14.5kg에 불과한 AGILOped는 한 명의 작업자가 갠트리 없이도 조작할 수 있습니다. 보행, 점프, 충격 완화 및 기립 실험을 통해 연구용으로의 실용성을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.09364v1
+
+## Overview
+While the field of humanoid robotics has seen a variety of customized platforms with impressive performance, most systems are closed-source or prohibitively expensive. AGILOped fills this gap through an open-source design, with its hardware entirely based on commercially available backdrivable actuators and standard electronic components, lowering the barriers to acquisition and maintenance. The robot stands 110 cm tall and weighs 14.5 kg, and can be operated by a single person without a gantry. Its reliability as a research platform has been validated in experiments including walking, jumping, impact mitigation, and getting up from a fall.
+
+## Content
+### Design Goals and Philosophy
+AGILOped aims to address the issues of closed-source or high-cost existing high-performance humanoid robots, enabling the research community to reproduce and improve upon it at low cost through open-source hardware design.
+
+### Hardware Architecture
+- **Actuators**: Utilizes commercially available high-power-density backdrivable actuators, offering strong force control and impact resistance.
+- **Electronic Components**: All use standard commercial components, facilitating replacement and maintenance.
+- **Physical Specifications**: Stands 110 cm tall and weighs only 14.5 kg, with a lightweight design that allows safe single-person operation without a gantry.
+
+### Experimental Validation
+- **Walking and Jumping**: The robot can stably perform flat-ground walking and jumping, validating fundamental motion control capabilities.
+- **Impact Mitigation**: Effectively absorbs landing impacts through backdrivable characteristics, protecting the hardware structure.
+- **Autonomous Recovery**: Can recover to a standing posture from a fallen state, enhancing robustness in real-world deployment.
+
+### Conclusion
+With its open-source, low-cost, and high-performance attributes, AGILOped provides a reproducible hardware platform for humanoid robotics research, particularly suited for academic scenarios requiring frequent iteration and experimentation.
+
+## 개요
+현재 휴머노이드 로봇 분야에는 다양한 맞춤형 플랫폼이 등장하며 우수한 성능을 보여주고 있지만, 대부분의 시스템은 폐쇄적이거나 비용이 높습니다. AGILOped는 오픈소스 설계를 통해 이러한 공백을 메우며, 하드웨어는 전적으로 상용 역구동 액추에이터와 표준 전자 부품을 기반으로 하여 접근성과 유지보수 장벽을 낮췄습니다. 로봇은 키 110cm, 무게 14.5kg으로 갠트리 없이도 한 명의 작업자가 조작할 수 있으며, 보행, 점프, 충격 완화, 기립 등의 실험에서 연구 플랫폼으로서의 신뢰성을 검증했습니다.
+
+## 핵심 내용
+### 설계 목표 및 이념
+AGILOped는 기존 고성능 휴머노이드 로봇의 폐쇄성 또는 높은 비용 문제를 해결하는 것을 목표로 하며, 오픈소스 하드웨어 설계를 통해 연구 커뮤니티가 저비용으로 재현하고 개선할 수 있도록 합니다.
+
+### 하드웨어 아키텍처
+- **액추에이터**: 상용 고출력 밀도 역구동 액추에이터를 채택하여 우수한 힘 제어와 충격 저항 능력을 갖추고 있습니다.
+- **전자 부품**: 전부 표준 상용 부품을 사용하여 교체와 유지보수가 용이합니다.
+- **물리적 사양**: 키 110cm, 무게 14.5kg에 불과한 경량 설계로 갠트리 없이도 한 명의 작업자가 안전하게 조작할 수 있습니다.
+
+### 실험 검증
+- **보행 및 점프**: 로봇은 평지 보행과 점프 동작을 안정적으로 수행하여 운동 제어 기본 능력을 검증했습니다.
+- **충격 완화**: 역구동 특성을 통해 착지 충격을 효과적으로 흡수하여 하드웨어 구조를 보호합니다.
+- **자율 기립**: 넘어진 상태에서 스스로 기립 자세를 회복할 수 있어 실제 배치에서의 견고성을 강화합니다.
+
+### 결론
+AGILOped는 오픈소스, 저비용, 고성능의 특징을 바탕으로 휴머노이드 로봇 연구에 재현 가능한 하드웨어 플랫폼을 제공하며, 특히 빈번한 반복과 실험이 필요한 학술 시나리오에 적합합니다.

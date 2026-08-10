@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.04453v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.04453v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (681 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,27 @@ NaVILA 通过两级框架有效解决了腿式机器人视觉-语言导航的难
 ## Overview
 This paper proposes to solve the problem of Vision-and-Language Navigation with legged robots, which not only provides a flexible way for humans to command but also allows the robot to navigate through more challenging and cluttered scenes. However, it is non-trivial to translate human language instructions all the way to low-level leg joint actions. We propose NaVILA, a 2-level framework that unifies a Vision-Language-Action model (VLA) with locomotion skills. Instead of directly predicting low-level actions from VLA, NaVILA first generates mid-level actions with spatial information in the form of language, (e.g., "moving forward 75cm"), which serves as an input for a visual locomotion RL policy for execution. NaVILA substantially improves previous approaches on existing benchmarks. The same advantages are demonstrated in our newly developed benchmarks with IsaacLab, featuring more realistic scenes, low-level controls, and real-world robot experiments. We show more results at https://navila-bot.github.io/
 
-## 개요
-본 논문은 보행 로봇을 활용한 시각-언어 내비게이션 문제를 해결하는 방법을 제안합니다. 이는 인간이 명령을 내리는 유연한 방식을 제공할 뿐만 아니라, 로봇이 더 복잡하고 혼잡한 장면을 탐색할 수 있도록 합니다. 그러나 인간의 언어 명령을 저수준의 다리 관절 동작으로 완전히 변환하는 것은 쉽지 않습니다. 우리는 시각-언어-행동 모델(VLA)과 보행 기술을 통합하는 2단계 프레임워크인 NaVILA를 제안합니다. NaVILA는 VLA에서 저수준 동작을 직접 예측하는 대신, 먼저 공간 정보를 포함한 중간 수준의 동작을 언어 형태(예: "75cm 앞으로 이동")로 생성하며, 이는 시각적 보행 강화 학습 정책의 입력으로 사용되어 실행됩니다. NaVILA는 기존 벤치마크에서 이전 접근법을 크게 개선합니다. 이러한 장점은 IsaacLab을 사용하여 새롭게 개발한 벤치마크에서도 입증되었으며, 더 현실적인 장면, 저수준 제어, 실제 로봇 실험을 포함합니다. 더 많은 결과는 https://navila-bot.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-본 논문은 보행 로봇을 활용한 시각-언어 내비게이션 문제를 해결하는 방법을 제안합니다. 이는 인간이 명령을 내리는 유연한 방식을 제공할 뿐만 아니라, 로봇이 더 복잡하고 혼잡한 장면을 탐색할 수 있도록 합니다. 그러나 인간의 언어 명령을 저수준의 다리 관절 동작으로 완전히 변환하는 것은 쉽지 않습니다. 우리는 시각-언어-행동 모델(VLA)과 보행 기술을 통합하는 2단계 프레임워크인 NaVILA를 제안합니다. NaVILA는 VLA에서 저수준 동작을 직접 예측하는 대신, 먼저 공간 정보를 포함한 중간 수준의 동작을 언어 형태(예: "75cm 앞으로 이동")로 생성하며, 이는 시각적 보행 강화 학습 정책의 입력으로 사용되어 실행됩니다. NaVILA는 기존 벤치마크에서 이전 접근법을 크게 개선합니다. 이러한 장점은 IsaacLab을 사용하여 새롭게 개발한 벤치마크에서도 입증되었으며, 더 현실적인 장면, 저수준 제어, 실제 로봇 실험을 포함합니다. 더 많은 결과는 https://navila-bot.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.04453v2
+
+## 개요
+NaVILA는 보행 로봇의 시각-언어 내비게이션에서 핵심 과제를 해결합니다: 인간의 언어 명령을 저수준 다리 관절 동작으로 직접 매핑하는 방법입니다. 이 모델은 2단계 프레임워크를 채택하며, 먼저 VLA 모델이 공간 정보를 포함한 중간 수준 언어 동작(예: "앞으로 75cm 이동")을 생성하고, 그 다음 시각 운동 강화 학습 정책이 해당 동작을 실행합니다. 기존 방법과 비교하여 NaVILA는 여러 벤치마크에서 현저한 향상을 보였으며, IsaacLab 기반의 새로운 벤치마크와 실제 로봇 실험에서 그 우수성을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+NaVILA는 2단계 프레임워크를 채택합니다:
+- **1단계: VLA 모델**: 시각 입력과 언어 명령을 결합하여 중간 수준 언어 동작(예: "앞으로 75cm 이동")을 생성하며, 저수준 관절 동작을 직접 출력하는 대신 공간 정보를 포함합니다.
+- **2단계: 시각 운동 RL 정책**: 중간 수준 언어 동작을 입력으로 받아 강화 학습을 통해 저수준 다리 관절 동작으로 변환하여 실제 내비게이션을 구현합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: 기존 내비게이션 벤치마크에서 NaVILA는 이전 방법보다 현저히 우수했습니다.
+- **새로운 벤치마크**: IsaacLab 기반으로 개발되었으며, 더 현실적인 장면, 저수준 제어 및 실제 로봇 실험을 포함합니다.
+- **실제 로봇 실험**: 실제 환경에서 모델의 효과성을 검증했습니다.
+
+### 주요 결과
+- 기존 벤치마크에서 NaVILA는 내비게이션 성공률을 크게 향상시켰습니다.
+- 새로운 벤치마크에서 모델은 복잡한 장면에서도 안정적인 성능을 유지했습니다.
+- 실제 로봇 실험은 언어 명령에서 실제 내비게이션까지의 완전한 흐름을 보여주었습니다.
+
+### 결론
+NaVILA는 2단계 프레임워크를 통해 보행 로봇의 시각-언어 내비게이션 문제를 효과적으로 해결하며, 미래 로봇 내비게이션에 유연하고 견고한 솔루션을 제공합니다. 더 많은 결과는 프로젝트 홈페이지에서 확인하세요: https://navila-bot.github.io/

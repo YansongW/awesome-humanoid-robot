@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.13441v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.13441v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (647 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,22 @@ sources:
 ## Overview
 Training manipulation policies for humanoid robots with diverse data enhances their robustness and generalization across tasks and platforms. However, learning solely from robot demonstrations is labor-intensive, requiring expensive tele-operated data collection which is difficult to scale. This paper investigates a more scalable data source, egocentric human demonstrations, to serve as cross-embodiment training data for robot learning. We mitigate the embodiment gap between humanoids and humans from both the data and modeling perspectives. We collect an egocentric task-oriented dataset (PH2D) that is directly aligned with humanoid manipulation demonstrations. We then train a human-humanoid behavior policy, which we term Human Action Transformer (HAT). The state-action space of HAT is unified for both humans and humanoid robots and can be differentiably retargeted to robot actions. Co-trained with smaller-scale robot data, HAT directly models humanoid robots and humans as different embodiments without additional supervision. We show that human data improves both generalization and robustness of HAT with significantly better data collection efficiency. Code and data: https://human-as-robot.github.io/
 
-## 개요
-휴머노이드 로봇을 위한 조작 정책을 다양한 데이터로 훈련하면 작업 및 플랫폼 전반에 걸쳐 견고성과 일반화 능력이 향상됩니다. 그러나 로봇 시연만으로 학습하는 것은 노동 집약적이며, 확장이 어려운 고비용 원격 조작 데이터 수집이 필요합니다. 본 논문은 더 확장 가능한 데이터 소스인 자기 중심적 인간 시연을 로봇 학습을 위한 교차 체현 훈련 데이터로 활용하는 방안을 연구합니다. 데이터와 모델링 관점 모두에서 휴머노이드와 인간 간의 체현 격차를 완화합니다. 휴머노이드 조작 시연과 직접 정렬된 자기 중심적 작업 지향 데이터셋(PH2D)을 수집합니다. 그런 다음 인간-휴머노이드 행동 정책인 Human Action Transformer(HAT)를 훈련합니다. HAT의 상태-행동 공간은 인간과 휴머노이드 로봇 모두에 대해 통합되어 있으며, 미분 가능하게 로봇 행동으로 재타겟팅될 수 있습니다. 소규모 로봇 데이터와 공동 훈련된 HAT은 추가적인 감독 없이 휴머노이드 로봇과 인간을 서로 다른 체현으로 직접 모델링합니다. 인간 데이터가 HAT의 일반화와 견고성을 크게 향상시키며 데이터 수집 효율성도 현저히 개선함을 보여줍니다. 코드 및 데이터: https://human-as-robot.github.io/
-
-## 핵심 내용
-휴머노이드 로봇을 위한 조작 정책을 다양한 데이터로 훈련하면 작업 및 플랫폼 전반에 걸쳐 견고성과 일반화 능력이 향상됩니다. 그러나 로봇 시연만으로 학습하는 것은 노동 집약적이며, 확장이 어려운 고비용 원격 조작 데이터 수집이 필요합니다. 본 논문은 더 확장 가능한 데이터 소스인 자기 중심적 인간 시연을 로봇 학습을 위한 교차 체현 훈련 데이터로 활용하는 방안을 연구합니다. 데이터와 모델링 관점 모두에서 휴머노이드와 인간 간의 체현 격차를 완화합니다. 휴머노이드 조작 시연과 직접 정렬된 자기 중심적 작업 지향 데이터셋(PH2D)을 수집합니다. 그런 다음 인간-휴머노이드 행동 정책인 Human Action Transformer(HAT)를 훈련합니다. HAT의 상태-행동 공간은 인간과 휴머노이드 로봇 모두에 대해 통합되어 있으며, 미분 가능하게 로봇 행동으로 재타겟팅될 수 있습니다. 소규모 로봇 데이터와 공동 훈련된 HAT은 추가적인 감독 없이 휴머노이드 로봇과 인간을 서로 다른 체현으로 직접 모델링합니다. 인간 데이터가 HAT의 일반화와 견고성을 크게 향상시키며 데이터 수집 효율성도 현저히 개선함을 보여줍니다. 코드 및 데이터: https://human-as-robot.github.io/
-
 ## 参考
 - http://arxiv.org/abs/2503.13441v3
+
+## 개요
+이 연구는 휴머노이드 로봇 조작 정책 훈련에서 데이터 수집 비용이 높고 확장이 어려운 문제를 해결하기 위해, 1인칭 인간 시연 데이터를 교차 본체 훈련 데이터로 활용하는 새로운 방법을 탐구한다. 연구진은 데이터와 모델링 두 측면에서 접근하여, 먼저 로봇 조작 작업과 직접적으로 정렬된 1인칭 작업 지향 데이터셋 PH2D를 수집하고, 이후 Human Action Transformer (HAT) 모델을 훈련했다. HAT 모델은 인간과 휴머노이드 로봇의 상태-행동 공간을 통합하며, 미분 가능한 리타게팅을 통해 인간의 행동을 로봇의 행동으로 매핑할 수 있다. 실험 결과, 소량의 로봇 데이터와 함께 공동 훈련할 때 인간 데이터가 정책의 일반화 능력과 견고성을 크게 향상시키고, 데이터 수집 효율을 대폭 높이는 것으로 나타났다.
+
+## 핵심 내용
+### 방법 개요
+- **데이터 측면**: 휴머노이드 로봇 조작 시연과 직접적으로 정렬된 1인칭 작업 지향 데이터셋 PH2D를 수집하여, 인간과 휴머노이드 로봇 간의 본체 차이 문제를 해결했다.
+- **모델 측면**: Human Action Transformer (HAT) 모델을 훈련했으며, 이 모델의 상태-행동 공간은 인간과 휴머노이드 로봇에 대해 통합되어 있고, 미분 가능한 리타게팅을 통해 인간의 행동을 로봇의 행동으로 매핑할 수 있다.
+
+### 핵심 아키텍처
+- HAT 모델은 인간과 휴머노이드 로봇을 서로 다른 본체로 직접 모델링하며, 추가적인 감독 신호가 필요 없다.
+- 모델은 소규모 로봇 데이터와 공동 훈련하여 교차 본체 학습을 구현한다.
+
+### 실험 설정 및 결과
+- 실험을 통해 인간 데이터가 정책의 일반화 능력과 견고성 향상에 미치는 효과를 검증했다.
+- 로봇 데이터만 사용하는 방법과 비교하여, HAT는 데이터 수집 효율에서 현저히 우수하다.
+- 코드와 데이터는 오픈소스로 공개되었다: https://human-as-robot.github.io/

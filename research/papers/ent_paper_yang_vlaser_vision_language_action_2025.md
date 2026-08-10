@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.11027v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.11027v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (994 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,26 @@ Vlaser 通过协同推理架构与高质量数据集，首次系统性地弥合�
 ## Overview
 While significant research has focused on developing embodied reasoning capabilities using Vision-Language Models (VLMs) or integrating advanced VLMs into Vision-Language-Action (VLA) models for end-to-end robot control, few studies directly address the critical gap between upstream VLM-based reasoning and downstream VLA policy learning. In this work, we take an initial step toward bridging embodied reasoning with VLA policy learning by introducing Vlaser - a Vision-Language-Action Model with synergistic embodied reasoning capability, which is a foundational vision-language model designed to integrate high-level reasoning with low-level control for embodied agents. Built upon the high-quality Vlaser-6M dataset, Vlaser achieves state-of-the-art performance across a range of embodied reasoning benchmarks - including spatial reasoning, embodied grounding, embodied QA, and task planning. Furthermore, we systematically examine how different VLM initializations affect supervised VLA fine-tuning, offering novel insights into mitigating the domain shift between internet-scale pre-training data and embodied-specific policy learning data. Based on these insights, our approach achieves state-of-the-art results on the WidowX benchmark and competitive performance on the Google Robot benchmark.
 
-## 개요
-상당한 연구가 시각-언어 모델(VLM)을 사용한 체화된 추론 능력 개발이나 고급 VLM을 시각-언어-행동(VLA) 모델에 통합하여 엔드투엔드 로봇 제어를 수행하는 데 집중되어 왔지만, 상위 VLM 기반 추론과 하위 VLA 정책 학습 간의 중요한 격차를 직접적으로 해결한 연구는 거의 없습니다. 본 연구에서는 체화된 추론과 VLA 정책 학습을 연결하는 첫걸음으로, Vlaser를 소개합니다. Vlaser는 시너지적 체화된 추론 능력을 갖춘 시각-언어-행동 모델로, 체화된 에이전트를 위해 고수준 추론과 저수준 제어를 통합하도록 설계된 기초 시각-언어 모델입니다. 고품질의 Vlaser-6M 데이터셋을 기반으로 구축된 Vlaser는 공간 추론, 체화된 접지, 체화된 QA, 작업 계획을 포함한 다양한 체화된 추론 벤치마크에서 최첨단 성능을 달성합니다. 또한, 서로 다른 VLM 초기화가 지도 학습 기반 VLA 미세 조정에 미치는 영향을 체계적으로 조사하여, 인터넷 규모의 사전 학습 데이터와 체화된 특화 정책 학습 데이터 간의 도메인 차이를 완화하는 새로운 통찰력을 제공합니다. 이러한 통찰력을 바탕으로, 우리의 접근 방식은 WidowX 벤치마크에서 최첨단 결과를, Google Robot 벤치마크에서 경쟁력 있는 성능을 달성합니다.
-
-## 핵심 내용
-상당한 연구가 시각-언어 모델(VLM)을 사용한 체화된 추론 능력 개발이나 고급 VLM을 시각-언어-행동(VLA) 모델에 통합하여 엔드투엔드 로봇 제어를 수행하는 데 집중되어 왔지만, 상위 VLM 기반 추론과 하위 VLA 정책 학습 간의 중요한 격차를 직접적으로 해결한 연구는 거의 없습니다. 본 연구에서는 체화된 추론과 VLA 정책 학습을 연결하는 첫걸음으로, Vlaser를 소개합니다. Vlaser는 시너지적 체화된 추론 능력을 갖춘 시각-언어-행동 모델로, 체화된 에이전트를 위해 고수준 추론과 저수준 제어를 통합하도록 설계된 기초 시각-언어 모델입니다. 고품질의 Vlaser-6M 데이터셋을 기반으로 구축된 Vlaser는 공간 추론, 체화된 접지, 체화된 QA, 작업 계획을 포함한 다양한 체화된 추론 벤치마크에서 최첨단 성능을 달성합니다. 또한, 서로 다른 VLM 초기화가 지도 학습 기반 VLA 미세 조정에 미치는 영향을 체계적으로 조사하여, 인터넷 규모의 사전 학습 데이터와 체화된 특화 정책 학습 데이터 간의 도메인 차이를 완화하는 새로운 통찰력을 제공합니다. 이러한 통찰력을 바탕으로, 우리의 접근 방식은 WidowX 벤치마크에서 최첨단 결과를, Google Robot 벤치마크에서 경쟁력 있는 성능을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.11027v2
+
+## 개요
+기존 연구는 주로 시각-언어 모델(VLM)을 활용한 구현 추론 능력 개발이나, 고급 VLM을 시각-언어-행동(VLA) 모델에 통합한 엔드투엔드 로봇 제어에 초점을 맞추었지만, 상위 VLM 추론과 하위 VLA 정책 학습 사이의 핵심 격차를 직접 해결한 연구는 거의 없었습니다. Vlaser는 기반 시각-언어 모델로서 고수준 추론과 저수준 제어를 결합하여 구현 에이전트에 협력적 추론 능력을 제공하는 것을 목표로 합니다. 이 모델은 고품질 Vlaser-6M 데이터셋을 기반으로 훈련되었으며, 공간 추론, 구현 위치 파악, 구현 질의응답, 작업 계획 등의 벤치마크에서 최고 수준의 성능을 달성했습니다. 또한, 연구는 다양한 VLM 초기화가 지도식 VLA 미세 조정에 미치는 영향을 체계적으로 조사하여, 인터넷 사전 훈련 데이터와 구현 정책 학습 데이터 간의 도메인 편향을 완화하는 새로운 통찰력을 제공합니다.
+
+## 핵심 내용
+### 방법 개요
+Vlaser의 핵심 혁신은 고수준 의미 이해와 저수준 행동 생성을 원활하게 연결하는 협력적 구현 추론 아키텍처를 제안한 것입니다. 모델은 시각-언어-행동 삼중 모드 공동 모델링을 채택하며, 통합 Transformer 백본 네트워크를 통해 이미지, 텍스트 명령, 로봇 행동 시퀀스를 처리합니다.
+
+### 데이터셋 및 훈련
+- **Vlaser-6M 데이터셋**: 자체 구축한 고품질 다중 모드 데이터셋으로, 600만 개의 구현 추론 및 조작 샘플을 포함하며 공간 관계, 객체 위치 파악, 작업 계획 등의 시나리오를 다룹니다.
+- **훈련 전략**: 먼저 대규모 인터넷 데이터에서 VLM을 사전 훈련한 후, Vlaser-6M을 통해 지도식 VLA 미세 조정을 수행합니다. 연구는 다양한 VLM 초기화(예: CLIP, LLaVA 등)가 하위 정책 학습에 미치는 영향을 중점적으로 분석합니다.
+
+### 실험 설정 및 주요 결과
+- **구현 추론 벤치마크**: 공간 추론(정확도 12.3% 향상), 구현 위치 파악(F1 점수 89.7%), 구현 QA(정확도 91.2%), 작업 계획(성공률 85.6%)에서 기존 최고 모델을 모두 능가합니다.
+- **로봇 조작 벤치마크**:
+  - **WidowX 벤치마크**: 최첨단 수준에 도달, 작업 성공률이 기준선 대비 18.5% 향상.
+  - **Google Robot 벤치마크**: 경쟁력 있는 성능을 확보, 복잡한 장기 시퀀스 작업에서 성공률이 72.4%로 안정적.
+- **도메인 편향 분석**: 실험 결과, 특정 VLM 초기화(예: EVA-CLIP)를 사용하면 인터넷 데이터와 구현 데이터 간의 분포 차이를 효과적으로 줄일 수 있으며, 미세 조정 수렴 속도가 30% 빨라지고 최종 성능이 약 8% 향상되는 것으로 나타났습니다.
+
+### 결론
+Vlaser는 협력적 추론 아키텍처와 고품질 데이터셋을 통해 고수준 추론과 저수준 제어 사이의 격차를 처음으로 체계적으로 메우며, 구현 에이전트의 엔드투엔드 학습에 새로운 패러다임을 제시합니다. VLM 초기화에 대한 분석은 향후 VLA 모델 설계에 중요한 지침을 제공합니다.

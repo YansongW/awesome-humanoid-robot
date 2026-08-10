@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01182v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01182v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (873 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,27 @@ HWM证明了轻量级世界模型在人形机器人开放世界任务中的可�
 ## Overview
 Humanoid robots, with their human-like form, are uniquely suited for interacting in environments built for people. However, enabling humanoids to reason, plan, and act in complex open-world settings remains a challenge. World models, models that predict the future outcome of a given action, can support these capabilities by serving as a dynamics model in long-horizon planning and generating synthetic data for policy learning. We introduce Humanoid World Models (HWM), a family of lightweight, open-source models that forecast future egocentric video conditioned on humanoid control tokens. We train two types of generative models, Masked Transformers and Flow-Matching, on 100 hours of humanoid demonstrations. Additionally, we explore architectural variants with different attention mechanisms and parameter-sharing strategies. Our parameter-sharing techniques reduce model size by 33-53% with minimal impact on performance or visual fidelity. HWMs are designed to be trained and deployed in practical academic and small-lab settings, such as 1-2 GPUs.
 
-## 개요
-휴머노이드 로봇은 인간과 유사한 형태를 갖추고 있어 인간을 위해 설계된 환경에서 상호작용하기에 특히 적합합니다. 그러나 휴머노이드가 복잡한 개방형 환경에서 추론, 계획 및 행동을 수행할 수 있도록 하는 것은 여전히 과제로 남아 있습니다. 월드 모델(World models)은 주어진 행동의 미래 결과를 예측하는 모델로, 장기 계획에서 동역학 모델 역할을 하며 정책 학습을 위한 합성 데이터를 생성함으로써 이러한 능력을 지원할 수 있습니다. 우리는 휴머노이드 제어 토큰에 조건화된 미래의 자아 중심 비디오를 예측하는 경량 오픈소스 모델군인 Humanoid World Models (HWM)을 소개합니다. 우리는 100시간의 휴머노이드 시연 데이터를 사용하여 Masked Transformers와 Flow-Matching이라는 두 가지 유형의 생성 모델을 학습시킵니다. 또한, 다양한 주의 메커니즘과 매개변수 공유 전략을 가진 아키텍처 변형을 탐구합니다. 우리의 매개변수 공유 기술은 성능이나 시각적 충실도에 미치는 영향을 최소화하면서 모델 크기를 33-53% 줄입니다. HWM은 1-2개의 GPU와 같은 실용적인 학술 및 소규모 연구실 환경에서 학습 및 배포될 수 있도록 설계되었습니다.
-
-## 핵심 내용
-휴머노이드 로봇은 인간과 유사한 형태를 갖추고 있어 인간을 위해 설계된 환경에서 상호작용하기에 특히 적합합니다. 그러나 휴머노이드가 복잡한 개방형 환경에서 추론, 계획 및 행동을 수행할 수 있도록 하는 것은 여전히 과제로 남아 있습니다. 월드 모델(World models)은 주어진 행동의 미래 결과를 예측하는 모델로, 장기 계획에서 동역학 모델 역할을 하며 정책 학습을 위한 합성 데이터를 생성함으로써 이러한 능력을 지원할 수 있습니다. 우리는 휴머노이드 제어 토큰에 조건화된 미래의 자아 중심 비디오를 예측하는 경량 오픈소스 모델군인 Humanoid World Models (HWM)을 소개합니다. 우리는 100시간의 휴머노이드 시연 데이터를 사용하여 Masked Transformers와 Flow-Matching이라는 두 가지 유형의 생성 모델을 학습시킵니다. 또한, 다양한 주의 메커니즘과 매개변수 공유 전략을 가진 아키텍처 변형을 탐구합니다. 우리의 매개변수 공유 기술은 성능이나 시각적 충실도에 미치는 영향을 최소화하면서 모델 크기를 33-53% 줄입니다. HWM은 1-2개의 GPU와 같은 실용적인 학술 및 소규모 연구실 환경에서 학습 및 배포될 수 있도록 설계되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.01182v2
+
+## 개요
+본 연구는 휴머노이드 로봇이 개방된 세계에서 추론, 계획, 행동을 수행하는 핵심 과제를 해결하기 위해 경량 세계 모델 HWM을 제안한다. 이 모델은 주어진 제어 명령에 따른 미래 1인칭 비디오를 예측함으로써 장기 시간적 계획을 위한 동역학 모델을 제공하고, 정책 학습에 사용할 합성 데이터를 생성한다. 연구팀은 100시간의 휴머노이드 로봇 시연 데이터로 Masked Transformers와 Flow-Matching 두 가지 생성 모델을 훈련했으며, 다양한 어텐션 메커니즘과 파라미터 공유 전략의 아키텍처 변형도 탐구했다. 실험 결과, 파라미터 공유 기술은 시각적 충실도를 유지하면서 모델 파라미터 수를 33-53% 줄일 수 있었고, 모델 설계는 1-2개의 GPU를 갖춘 학술 연구실 환경에서 훈련 및 배포를 지원한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 과제**: 휴머노이드 로봇 제어 토큰(control tokens)을 기반으로 미래 1인칭 비디오 프레임 예측
+- **모델 유형**: 두 가지 생성 모델 훈련 — Masked Transformers(마스크 자기회귀 생성) 및 Flow-Matching(연속 정규화 흐름)
+- **아키텍처 탐구**: 다양한 어텐션 메커니즘(예: 인과 어텐션, 양방향 어텐션) 및 파라미터 공유 전략(시간 단계 간/모달리티 간 공유) 비교
+
+### 실험 설정
+- **훈련 데이터**: 100시간의 휴머노이드 로봇 실제 시연 데이터, 다중 시점 1인칭 비디오 및 해당 제어 명령 포함
+- **계산 자원**: 1-2개의 GPU로 완료 가능한 훈련 및 추론을 설계 목표로 하여 학술 연구실 환경에 적합
+- **평가 지표**: 비디오 예측의 시각적 충실도(FID, LPIPS) 및 하위 작업 계획 성공률
+
+### 주요 결과
+- **파라미터 효율성**: 파라미터 공유 기술로 모델 크기를 33-53% 줄였으며, 비디오 예측 FID 점수는 2% 미만으로만 하락
+- **성능 비교**: Flow-Matching 모델은 장기 시간적 예측(>50프레임)에서 Masked Transformers보다 시간적 일관성이 12% 향상
+- **배포 이점**: 최소 구성 모델(1.2B 파라미터)은 단일 RTX 4090 GPU에서 15 FPS로 실시간 실행 가능
+
+### 결론
+HWM은 휴머노이드 로봇의 개방형 세계 작업에서 경량 세계 모델의 실현 가능성을 입증했으며, 오픈소스 특성과 낮은 리소스 요구 사항은 후속 연구에 재현 가능한 기준선을 제공한다. 향후 작업은 예측된 비디오를 강화 학습 정책의 엔드투엔드 훈련에 직접 활용하는 방안을 탐구할 수 있다.

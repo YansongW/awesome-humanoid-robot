@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03387v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03387v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (766 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,27 @@ ResTacVLA通过预测编码启发的残差表示和自适应门控机制，为�
 ## Overview
 Tactile perception is indispensable for contact-rich manipulation, yet integrating it into Vision-Language-Action (VLA) models often induces modality collapse, where high-bandwidth visual features overshadow sparse tactile cues. Inspired by Predictive Coding, a neural mechanism where the brain attenuates predictable inputs to prioritize surprising stimuli, we propose ResTacVLA. Rather than treating tactile data as raw input, we reformulate it as a Residual Tactile Representation capturing the discrepancy between visual priors and physical sensations. By filtering out visually predictable dynamics, this formulation transforms sparse tactile signals into dense, high-value information gain, thereby inherently resolving the bandwidth mismatch. These residuals are discretized through a Vector Quantized (VQ) bottleneck into Latent Contact Primitives that capture critical events missed by vision. Analogous to the neural surprise signal, we leverage the uncertainty of the visual prior to adaptively gate tactile integration, prioritizing residuals specifically during visually unreliable phases to explicitly prevent visual dominance. Experimental results show that ResTacVLA consistently outperforms all baselines on a diverse set of contact-rich manipulation tasks, while remaining robust to unexpected dynamic disturbances. Project page: https://awilekong.github.io/ResTacVLA/
 
-## 개요
-촉각 인식은 접촉이 많은 조작 작업에 필수적이지만, 이를 Vision-Language-Action(VLA) 모델에 통합하면 고대역폭의 시각적 특징이 희소한 촉각 신호를 압도하는 모달리티 붕괴가 자주 발생합니다. 뇌가 예측 가능한 입력을 약화시켜 놀라운 자극을 우선 처리하는 신경 메커니즘인 예측 코딩(Predictive Coding)에서 영감을 받아, 우리는 ResTacVLA를 제안합니다. 촉각 데이터를 원시 입력으로 처리하는 대신, 시각적 사전 정보와 물리적 감각 간의 차이를 포착하는 잔차 촉각 표현(Residual Tactile Representation)으로 재구성합니다. 시각적으로 예측 가능한 동역학을 걸러냄으로써, 이 공식은 희소한 촉각 신호를 밀집된 고가치 정보 이득으로 변환하여 대역폭 불일치를 본질적으로 해결합니다. 이러한 잔차는 벡터 양자화(VQ) 병목을 통해 잠재 접촉 원시(Latent Contact Primitives)로 이산화되어 시각이 놓친 중요한 이벤트를 포착합니다. 신경 놀람 신호와 유사하게, 우리는 시각적 사전 정보의 불확실성을 활용하여 촉각 통합을 적응적으로 게이팅하며, 특히 시각적으로 신뢰할 수 없는 단계에서 잔차를 우선 처리하여 시각적 우세를 명시적으로 방지합니다. 실험 결과, ResTacVLA는 다양한 접촉이 많은 조작 작업에서 모든 기준 모델을 일관되게 능가하며, 예상치 못한 동적 교란에도 강건함을 보여줍니다. 프로젝트 페이지: https://awilekong.github.io/ResTacVLA/
-
-## 핵심 내용
-촉각 인식은 접촉이 많은 조작 작업에 필수적이지만, 이를 Vision-Language-Action(VLA) 모델에 통합하면 고대역폭의 시각적 특징이 희소한 촉각 신호를 압도하는 모달리티 붕괴가 자주 발생합니다. 뇌가 예측 가능한 입력을 약화시켜 놀라운 자극을 우선 처리하는 신경 메커니즘인 예측 코딩(Predictive Coding)에서 영감을 받아, 우리는 ResTacVLA를 제안합니다. 촉각 데이터를 원시 입력으로 처리하는 대신, 시각적 사전 정보와 물리적 감각 간의 차이를 포착하는 잔차 촉각 표현(Residual Tactile Representation)으로 재구성합니다. 시각적으로 예측 가능한 동역학을 걸러냄으로써, 이 공식은 희소한 촉각 신호를 밀집된 고가치 정보 이득으로 변환하여 대역폭 불일치를 본질적으로 해결합니다. 이러한 잔차는 벡터 양자화(VQ) 병목을 통해 잠재 접촉 원시(Latent Contact Primitives)로 이산화되어 시각이 놓친 중요한 이벤트를 포착합니다. 신경 놀람 신호와 유사하게, 우리는 시각적 사전 정보의 불확실성을 활용하여 촉각 통합을 적응적으로 게이팅하며, 특히 시각적으로 신뢰할 수 없는 단계에서 잔차를 우선 처리하여 시각적 우세를 명시적으로 방지합니다. 실험 결과, ResTacVLA는 다양한 접촉이 많은 조작 작업에서 모든 기준 모델을 일관되게 능가하며, 예상치 못한 동적 교란에도 강건함을 보여줍니다. 프로젝트 페이지: https://awilekong.github.io/ResTacVLA/
-
 ## 参考
 - http://arxiv.org/abs/2607.03387v2
+
+## 개요
+촉각 인식은 접촉이 빈번한 조작 작업에 필수적이지만, 이를 VLA 모델에 통합하면 고대역폭 시각 특징이 희소한 촉각 신호를 압도하는 모달리티 붕괴가 자주 발생합니다. 예측 코딩에서 영감을 얻은 ResTacVLA는 촉각 데이터를 잔차 촉각 표현으로 재정의하여 시각적 사전 지식과 물리적 감각 간의 차이를 포착합니다. 시각적으로 예측 가능한 동역학을 걸러냄으로써, 이 표현은 희소한 촉각 신호를 밀집된 고가치 정보 이득으로 변환하여 대역폭 불일치 문제를 근본적으로 해결합니다. 이러한 잔차는 벡터 양자화 병목을 통해 이산적인 잠재 접촉 원시 요소로 이산화되어, 시각이 놓치는 핵심 이벤트를 포착합니다. 모델은 시각적 사전 지식의 불확실성을 활용하여 촉각 통합을 적응적으로 게이팅하며, 시각이 불확실한 단계에서 잔차를 우선 처리하여 시각적 지배를 명시적으로 방지합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **잔차 촉각 표현**: 예측 코딩 원리에 기반하여 촉각 데이터를 시각적 사전 지식과 물리적 감각 간의 차이 신호로 재구성하고, 시각적으로 예측 가능한 동역학 성분을 걸러내어 희소한 촉각 신호를 밀집된 정보 이득으로 변환합니다.
+- **벡터 양자화 병목**: VQ 병목을 통해 잔차를 이산적인 잠재 접촉 원시 요소로 이산화하며, 이러한 원시 요소는 시각이 놓치는 핵심 접촉 이벤트를 특별히 포착합니다.
+- **적응형 게이팅 메커니즘**: 시각적 사전 지식의 불확실성을 신경 놀람 신호로 활용하여, 시각이 불확실한 단계에서 촉각 통합 가중치를 적응적으로 강화하고 시각적 지배를 명시적으로 억제합니다.
+
+### 실험 설정
+- **작업 범위**: 동적 교란 시나리오를 포함한 다양한 접촉이 빈번한 조작 작업을 포괄합니다.
+- **기준선 비교**: 표준 VLA 모델 및 촉각 융합 기준선과 체계적으로 비교합니다.
+- **평가 지표**: 작업 성공률, 예기치 않은 동적 교란에 대한 강건성.
+
+### 주요 결과
+- ResTacVLA는 모든 접촉이 빈번한 조작 작업에서 모든 기준선 방법을 지속적으로 능가합니다.
+- 예기치 않은 동적 교란에 대해 현저한 강건성을 보여주며, 적응형 게이팅 메커니즘의 효과를 검증합니다.
+- 잔차 촉각 표현은 모달리티 붕괴 문제를 성공적으로 해결하여, 시각이 지배적인 시나리오에서도 촉각 정보가 핵심 역할을 수행할 수 있게 합니다.
+
+### 결론
+ResTacVLA는 예측 코딩에서 영감을 얻은 잔차 표현과 적응형 게이팅 메커니즘을 통해 촉각-시각 융합의 새로운 패러다임을 제시하며, 접촉이 빈번한 조작에서 성능과 강건성의 이중 향상을 달성합니다.

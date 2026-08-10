@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.22208v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.22208v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (809 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,24 @@ Moxin 7B 是一个完全开源的大语言模型，严格遵循 Model Openness F
 ## Overview
 Recently, Large Language Models (LLMs) have undergone a significant transformation, marked by a rapid rise in both their popularity and capabilities. Leading this evolution are proprietary LLMs like GPT-4 and GPT-o1, which have captured widespread attention in the AI community due to their remarkable performance and versatility. Simultaneously, open-source LLMs, such as LLaMA and Mistral, have made great contributions to the ever-increasing popularity of LLMs due to the ease to customize and deploy the models across diverse applications. Moxin 7B is introduced as a fully open-source LLM developed in accordance with the Model Openness Framework, which moves beyond the simple sharing of model weights to embrace complete transparency in training, datasets, and implementation detail, thus fostering a more inclusive and collaborative research environment that can sustain a healthy open-source ecosystem. To further equip Moxin with various capabilities in different tasks, we develop three variants based on Moxin, including Moxin-VLM, Moxin-VLA, and Moxin-Chinese, which target the vision-language, vision-language-action, and Chinese capabilities, respectively. Experiments show that our models achieve superior performance in various evaluations. We adopt open-source framework and open data for the training. We release our models, along with the available data and code to derive these models.
 
-## 개요
-최근 대규모 언어 모델(LLM)은 인기와 성능 모두에서 급격한 상승을 보이며 중요한 변화를 겪고 있습니다. 이러한 진화를 선도하는 것은 GPT-4 및 GPT-o1과 같은 독점 LLM으로, 이들은 뛰어난 성능과 다재다능함으로 AI 커뮤니티에서 광범위한 주목을 받고 있습니다. 동시에 LLaMA 및 Mistral과 같은 오픈소스 LLM은 다양한 애플리케이션에 걸쳐 모델을 쉽게 맞춤화하고 배포할 수 있어 LLM의 지속적인 인기 상승에 크게 기여했습니다. Moxin 7B는 모델 개방성 프레임워크(Model Openness Framework)에 따라 개발된 완전 오픈소스 LLM으로 소개됩니다. 이는 단순한 모델 가중치 공유를 넘어 훈련, 데이터셋 및 구현 세부 사항에 대한 완전한 투명성을 수용하여 건강한 오픈소스 생태계를 유지할 수 있는 보다 포용적이고 협력적인 연구 환경을 조성합니다. Moxin에 다양한 작업에서의 여러 능력을 추가로 부여하기 위해, 우리는 Moxin을 기반으로 Moxin-VLM, Moxin-VLA, Moxin-Chinese의 세 가지 변형을 개발했습니다. 이들은 각각 시각-언어, 시각-언어-행동 및 중국어 능력을 목표로 합니다. 실험 결과, 우리 모델은 다양한 평가에서 우수한 성능을 달성했습니다. 우리는 훈련을 위해 오픈소스 프레임워크와 공개 데이터를 채택했습니다. 또한 모델과 함께 이러한 모델을 도출하는 데 사용된 데이터 및 코드를 공개합니다.
-
-## 핵심 내용
-최근 대규모 언어 모델(LLM)은 인기와 성능 모두에서 급격한 상승을 보이며 중요한 변화를 겪고 있습니다. 이러한 진화를 선도하는 것은 GPT-4 및 GPT-o1과 같은 독점 LLM으로, 이들은 뛰어난 성능과 다재다능함으로 AI 커뮤니티에서 광범위한 주목을 받고 있습니다. 동시에 LLaMA 및 Mistral과 같은 오픈소스 LLM은 다양한 애플리케이션에 걸쳐 모델을 쉽게 맞춤화하고 배포할 수 있어 LLM의 지속적인 인기 상승에 크게 기여했습니다. Moxin 7B는 모델 개방성 프레임워크(Model Openness Framework)에 따라 개발된 완전 오픈소스 LLM으로 소개됩니다. 이는 단순한 모델 가중치 공유를 넘어 훈련, 데이터셋 및 구현 세부 사항에 대한 완전한 투명성을 수용하여 건강한 오픈소스 생태계를 유지할 수 있는 보다 포용적이고 협력적인 연구 환경을 조성합니다. Moxin에 다양한 작업에서의 여러 능력을 추가로 부여하기 위해, 우리는 Moxin을 기반으로 Moxin-VLM, Moxin-VLA, Moxin-Chinese의 세 가지 변형을 개발했습니다. 이들은 각각 시각-언어, 시각-언어-행동 및 중국어 능력을 목표로 합니다. 실험 결과, 우리 모델은 다양한 평가에서 우수한 성능을 달성했습니다. 우리는 훈련을 위해 오픈소스 프레임워크와 공개 데이터를 채택했습니다. 또한 모델과 함께 이러한 모델을 도출하는 데 사용된 데이터 및 코드를 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.22208v2
+
+## 개요
+Moxin 7B는 하버드 대학교에서 개발한 완전 오픈소스 대규모 언어 모델로, 핵심 혁신은 Model Openness Framework를 준수하여 모델 가중치부터 훈련 데이터, 구현 세부 사항까지 완전한 투명성을 실현하고, 더 포용적이고 협력적인 연구 환경을 촉진하는 데 있습니다. Moxin 7B를 기반으로 팀은 세 가지 변형 모델을 추가로 개발했습니다: Moxin-VLM은 시각-언어 작업에 특화되어 있고, Moxin-VLA는 로봇 조작을 위한 시각-언어-행동 작업을 대상으로 하며, Moxin-Chinese는 중국어 능력을 강화합니다. 모든 모델은 오픈소스 프레임워크와 공개 데이터로 훈련되었으며, 모델, 사용 가능한 데이터 및 코드가 공개적으로 배포되었습니다.
+
+## 핵심 내용
+### 배경 및 동기
+최근 몇 년 동안 대규모 언어 모델(LLMs)은 눈에 띄는 변화를 겪으며 인기와 성능이 빠르게 향상되었습니다. GPT-4 및 GPT-o1과 같은 독점 모델은 뛰어난 성능으로 폭넓은 관심을 끌었고, LLaMA 및 Mistral과 같은 오픈소스 모델은 맞춤화와 배포가 용이하여 LLMs의 보급을 촉진했습니다. 그러나 많은 오픈소스 모델은 가중치만 공유하고 훈련 및 데이터 투명성이 부족합니다.
+
+### Moxin 7B 핵심 설계
+Moxin 7B는 Model Openness Framework를 엄격히 준수하는 완전 오픈소스 대규모 언어 모델입니다. 이 프레임워크는 단순한 가중치 공유를 넘어 훈련 과정, 데이터 세트 및 구현 세부 사항을 완전히 공개하도록 요구하여, 더 포용적이고 협력적인 연구 환경을 조성하고 건강한 오픈소스 생태계를 지원합니다.
+
+### 세 가지 변형 모델
+Moxin 7B를 기반으로 팀은 세 가지 변형 모델을 개발했습니다:
+- **Moxin-VLM**: 시각-언어 작업(vision-language)에 특화.
+- **Moxin-VLA**: 시각-언어-행동 작업(vision-language-action)을 대상으로 하며, 로봇 조작 전용.
+- **Moxin-Chinese**: 중국어 능력 강화.
+
+### 실험 및 결과
+실험 결과, 모든 모델은 여러 평가에서 우수한 성능(superior performance)을 보였습니다. 훈련은 오픈소스 프레임워크와 공개 데이터를 사용하여 재현 가능성을 보장했습니다. 팀은 오픈소스 커뮤니티 발전을 위해 모델, 사용 가능한 데이터 및 코드를 공개적으로 배포했습니다.

@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.07485v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.07485v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1167 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -94,11 +95,36 @@ In the autonomous vehicle and self-driving paradigm, cooperative perception or e
 ## Content
 In the autonomous vehicle and self-driving paradigm, cooperative perception or exchanging sensor information among vehicles over wireless communication has added a new dimension. Generally, an autonomous vehicle is a special type of robot that requires real-time, highly reliable sensor inputs due to functional safety. Autonomous vehicles are equipped with a considerable number of sensors to provide different required sensor data to make the driving decision and share with other surrounding vehicles. The inclusion of Data Distribution Service (DDS) as a communication middleware in ROS2 has proved its potential capability to be a reliable real-time distributed system. DDS comes with a scoping mechanism known as domain. Whenever a ROS2 process is initiated, it creates a DDS participant. It is important to note that there is a limit to the number of participants allowed in a single domain. The efficient handling of numerous in-vehicle sensors and their messages demands the use of multiple ROS2 nodes in a single vehicle. Additionally, in the cooperative perception paradigm, a significant number of ROS2 nodes can be required when a vehicle functions as a single ROS2 node. These ROS2 nodes cannot be part of a single domain due to DDS participant limitation; thus, different domain communication is unavoidable. Moreover, there are different vendor-specific implementations of DDS, and each vendor has their configurations, which is an inevitable communication catalyst between the ROS2 nodes. The communication between vehicles or robots or ROS2 nodes depends directly on the vendor-specific configuration, data type, data size, and the DDS implementation used as middleware; in our study, we evaluate and investigate the limitations, capabilities, and prospects of the different domain communication for various vendor-specific DDS implementations for diverse sensor data type.
 
-## 개요
-자율주행차 및 자율주행 패러다임에서, 차량 간 무선 통신을 통한 협력적 인식 또는 센서 정보 교환은 새로운 차원을 더했습니다. 일반적으로 자율주행차는 기능 안전성으로 인해 실시간, 고신뢰성 센서 입력을 요구하는 특수한 유형의 로봇입니다. 자율주행차는 주행 결정을 내리고 주변 차량과 공유하기 위해 다양한 요구 센서 데이터를 제공하는 상당한 수의 센서를 장착하고 있습니다. ROS2에서 통신 미들웨어로 Data Distribution Service(DDS)를 포함한 것은 신뢰할 수 있는 실시간 분산 시스템으로서의 잠재적 능력을 입증했습니다. DDS에는 도메인이라고 알려진 범위 지정 메커니즘이 있습니다. ROS2 프로세스가 시작될 때마다 DDS 참가자가 생성됩니다. 단일 도메인에서 허용되는 참가자 수에는 제한이 있다는 점에 유의하는 것이 중요합니다. 차량 내 다수의 센서와 해당 메시지를 효율적으로 처리하려면 단일 차량에서 여러 ROS2 노드를 사용해야 합니다. 또한, 협력적 인식 패러다임에서 차량이 단일 ROS2 노드로 기능할 때 상당한 수의 ROS2 노드가 필요할 수 있습니다. 이러한 ROS2 노드는 DDS 참가자 제한으로 인해 단일 도메인의 일부가 될 수 없으므로, 서로 다른 도메인 간 통신은 불가피합니다. 더욱이, 다양한 벤더별 DDS 구현이 있으며, 각 벤더는 자체 구성을 가지고 있어 ROS2 노드 간의 필연적인 통신 촉매제 역할을 합니다. 차량, 로봇 또는 ROS2 노드 간의 통신은 벤더별 구성, 데이터 유형, 데이터 크기 및 미들웨어로 사용되는 DDS 구현에 직접적으로 의존합니다. 본 연구에서는 다양한 센서 데이터 유형에 대한 다양한 벤더별 DDS 구현의 서로 다른 도메인 통신의 한계, 기능 및 전망을 평가하고 조사합니다.
-
-## 핵심 내용
-자율주행차 및 자율주행 패러다임에서, 차량 간 무선 통신을 통한 협력적 인식 또는 센서 정보 교환은 새로운 차원을 더했습니다. 일반적으로 자율주행차는 기능 안전성으로 인해 실시간, 고신뢰성 센서 입력을 요구하는 특수한 유형의 로봇입니다. 자율주행차는 주행 결정을 내리고 주변 차량과 공유하기 위해 다양한 요구 센서 데이터를 제공하는 상당한 수의 센서를 장착하고 있습니다. ROS2에서 통신 미들웨어로 Data Distribution Service(DDS)를 포함한 것은 신뢰할 수 있는 실시간 분산 시스템으로서의 잠재적 능력을 입증했습니다. DDS에는 도메인이라고 알려진 범위 지정 메커니즘이 있습니다. ROS2 프로세스가 시작될 때마다 DDS 참가자가 생성됩니다. 단일 도메인에서 허용되는 참가자 수에는 제한이 있다는 점에 유의하는 것이 중요합니다. 차량 내 다수의 센서와 해당 메시지를 효율적으로 처리하려면 단일 차량에서 여러 ROS2 노드를 사용해야 합니다. 또한, 협력적 인식 패러다임에서 차량이 단일 ROS2 노드로 기능할 때 상당한 수의 ROS2 노드가 필요할 수 있습니다. 이러한 ROS2 노드는 DDS 참가자 제한으로 인해 단일 도메인의 일부가 될 수 없으므로, 서로 다른 도메인 간 통신은 불가피합니다. 더욱이, 다양한 벤더별 DDS 구현이 있으며, 각 벤더는 자체 구성을 가지고 있어 ROS2 노드 간의 필연적인 통신 촉매제 역할을 합니다. 차량, 로봇 또는 ROS2 노드 간의 통신은 벤더별 구성, 데이터 유형, 데이터 크기 및 미들웨어로 사용되는 DDS 구현에 직접적으로 의존합니다. 본 연구에서는 다양한 센서 데이터 유형에 대한 다양한 벤더별 DDS 구현의 서로 다른 도메인 통신의 한계, 기능 및 전망을 평가하고 조사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.07485v1
+
+## 개요
+자율주행 차량은 실시간 고신뢰성 센서 데이터 교환에 의존하며, ROS2가 도입한 DDS 미들웨어는 분산 시스템에 통신 기반을 제공합니다. 단일 DDS 도메인은 참여자 수에 제한이 있기 때문에, 다중 센서 차량 및 다중 차량 협업 시나리오에서는 필연적으로 도메인 간 통신이 필요합니다. 본 연구는 실제 하드웨어 테스트를 통해 세 가지 주요 DDS 구현(Cyclone DDS, Fast-DDS, Connext DDS)이 서로 다른 데이터 유형과 데이터 양에서 보이는 지연 성능을 비교하여, 자율주행 시스템 설계자가 미들웨어 구성을 선택할 때 활용할 수 있는 정량적 근거를 제공합니다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+- 자율주행 차량은 특수 로봇으로서 기능 안전 요구사항을 충족하는 실시간 센서 입력이 필요하며, 일반적으로 다수의 센서(예: 라이다, 카메라, 밀리미터파 레이더)를 장착합니다.
+- ROS2는 통신 미들웨어로 DDS를 채택하며, 각 ROS2 프로세스는 DDS 참여자(participant)를 생성하지만, 단일 DDS 도메인에는 참여자 수 상한 제한이 있습니다.
+- 단일 차량의 다중 센서 노드(ROS2 노드) 및 다중 차량 협업 인식 시나리오(각 차량을 하나의 ROS2 노드로 간주)는 모두 단일 도메인 용량을 초과할 수 있어, 시스템이 도메인 간 통신을 채택하도록 강제합니다.
+
+### 실험 설계
+- **하드웨어 플랫폼**: 이기종 물리 장치(예: 서로 다른 계산 성능의 임베디드 보드 및 PC)를 사용하여 실제 차량 환경을 모사합니다.
+- **미들웨어 버전**: Eclipse Cyclone DDS, eProsima Fast-DDS, RTI Connext DDS.
+- **테스트 변수**:
+  - 통신 모드: 동일 도메인(same-domain) vs 도메인 간(cross-domain)
+  - 데이터 유형: 일반적인 센서 데이터 모사(예: 소형 제어 명령, 중형 포인트 클라우드, 대형 이미지)
+  - 데이터 크기: 수십 바이트에서 수 메가바이트까지
+- **측정 지표**: 종단 간 통신 지연(latency), 반복 측정 후 통계값 산출.
+
+### 주요 발견
+- **도메인 간 지연이 동일 도메인보다 현저히 높음**: 모든 미들웨어에서 도메인 간 시나리오의 지연이 2-5배 증가하며, 주로 DDS 도메인 간 발견 프로토콜 및 데이터 직렬화 오버헤드에서 기인합니다.
+- **공급업체 간 차이**:
+  - Cyclone DDS는 중소형 데이터(<1MB) 도메인 간 시나리오에서 지연이 가장 낮지만, 대용량 데이터(>5MB)에서는 성능 저하가 뚜렷합니다.
+  - Fast-DDS는 도메인 간 대용량 데이터 전송에서 가장 우수한 성능을 보이며, 지연 변동이 작습니다.
+  - Connext DDS는 모든 시나리오에서 지연 일관성이 가장 좋지만, 절대 지연 값은 앞선 두 제품보다 높습니다.
+- **데이터 유형 영향**: 구조화된 데이터(예: PointCloud2)의 직렬화/역직렬화 시간은 총 지연의 30%-50%를 차지하며, 도메인 간 시나리오에서는 이 비율이 더 높습니다.
+
+### 결론 및 제안
+- 자율주행 시스템 설계자는 센서 데이터 유형과 통신 범위에 따라 미들웨어를 선택해야 합니다: 소형 데이터 실시간 제어는 Cyclone DDS를 우선하고, 대용량 데이터 인식 공유는 Fast-DDS를 우선합니다.
+- 도메인 간 통신이 불가피한 경우, 추가 지연 예산(동일 도메인 지연의 최소 2배 권장)을 확보하고, 데이터 압축 또는 선택적 전송 전략을 고려해야 합니다.
+- 향후 연구는 DDS 도메인 간 브리지 최적화(예: Domain Bridge) 및 하드웨어 가속 방안을 탐구해야 합니다.

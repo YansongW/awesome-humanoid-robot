@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2003.04641v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2003.04641v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (918 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,40 @@ MQA任务要求机器人主动操作环境来回答自然语言问题，不同�
 ## Overview
 In this paper, we propose a novel task, Manipulation Question Answering (MQA), where the robot performs manipulation actions to change the environment in order to answer a given question. To solve this problem, a framework consisting of a QA module and a manipulation module is proposed. For the QA module, we adopt the method for the Visual Question Answering (VQA) task. For the manipulation module, a Deep Q Network (DQN) model is designed to generate manipulation actions for the robot to interact with the environment. We consider the situation where the robot continuously manipulating objects inside a bin until the answer to the question is found. Besides, a novel dataset that contains a variety of object models, scenarios and corresponding question-answer pairs is established in a simulation environment. Extensive experiments have been conducted to validate the effectiveness of the proposed framework.
 
-## 개요
-본 논문에서는 로봇이 주어진 질문에 답하기 위해 환경을 변화시키는 조작 행동을 수행하는 새로운 과제인 조작 질문 응답(MQA)을 제안합니다. 이 문제를 해결하기 위해 QA 모듈과 조작 모듈로 구성된 프레임워크를 제안합니다. QA 모듈의 경우 시각 질문 응답(VQA) 과제의 방법을 채택합니다. 조작 모듈의 경우 로봇이 환경과 상호작용할 수 있도록 조작 행동을 생성하는 Deep Q Network(DQN) 모델을 설계합니다. 로봇이 질문에 대한 답을 찾을 때까지 빈 내부의 물체를 지속적으로 조작하는 상황을 고려합니다. 또한 다양한 물체 모델, 시나리오 및 해당 질문-응답 쌍을 포함하는 새로운 데이터셋을 시뮬레이션 환경에서 구축했습니다. 제안된 프레임워크의 효과를 검증하기 위해 광범위한 실험을 수행했습니다.
-
-## 핵심 내용
-본 논문에서는 로봇이 주어진 질문에 답하기 위해 환경을 변화시키는 조작 행동을 수행하는 새로운 과제인 조작 질문 응답(MQA)을 제안합니다. 이 문제를 해결하기 위해 QA 모듈과 조작 모듈로 구성된 프레임워크를 제안합니다. QA 모듈의 경우 시각 질문 응답(VQA) 과제의 방법을 채택합니다. 조작 모듈의 경우 로봇이 환경과 상호작용할 수 있도록 조작 행동을 생성하는 Deep Q Network(DQN) 모델을 설계합니다. 로봇이 질문에 대한 답을 찾을 때까지 빈 내부의 물체를 지속적으로 조작하는 상황을 고려합니다. 또한 다양한 물체 모델, 시나리오 및 해당 질문-응답 쌍을 포함하는 새로운 데이터셋을 시뮬레이션 환경에서 구축했습니다. 제안된 프레임워크의 효과를 검증하기 위해 광범위한 실험을 수행했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2003.04641v4
+
+## 개요
+MQA 과제는 로봇이 자연어 질문에 답하기 위해 능동적으로 환경을 조작해야 하며, 수동적 시각 질의응답(VQA)과는 다릅니다. 프레임워크는 두 가지 핵심 모듈로 구성됩니다: 질의응답 모듈은 VQA 방법을 사용해 시각 정보를 처리하고, 조작 모듈은 Deep Q Network를 사용해 밀기/당기기 동작을 생성합니다. 로봇은 질문에 대한 답을 얻을 때까지 상자 안의 물체를 지속적으로 조작합니다. 연구진은 시뮬레이션 환경에서 다양한 물체 모델, 장면 및 해당 질의응답 쌍을 포함한 데이터셋을 생성했으며, 광범위한 실험을 통해 프레임워크의 효과성을 입증했습니다.
+
+## 핵심 내용
+### 과제 정의
+- MQA는 로봇이 물리적 조작을 통해 환경 상태를 변경하여 자연어 계수 질문(예: "상자 안에 빨간색 사각형이 몇 개 있나요?")에 답하도록 요구합니다.
+- 수동적 VQA와 달리, 로봇은 물체를 능동적으로 밀고 당기며 가림 및 쌓임 문제를 해결해야 합니다.
+
+### 프레임워크 아키텍처
+- **질의응답 모듈**: VQA 방법을 사용하여 조작 후 장면 이미지와 질문 텍스트를 처리하고 답을 출력합니다.
+- **조작 모듈**: Deep Q Network 기반으로 설계되었으며, 현재 장면 상태를 입력으로 받아 밀기/당기기 동작 명령을 출력합니다.
+  - 동작 공간에는 밀기 방향(앞/뒤/왼쪽/오른쪽), 밀기 강도(약/중/강)가 포함됩니다.
+  - 보상 함수 설계: 질문에 성공적으로 답하면 양의 보상을, 무효한 조작에는 음의 보상을 제공합니다.
+
+### 데이터셋 구축
+- 시뮬레이션 환경에서 생성되었으며, 50가지 다양한 물체 모델(색상, 모양, 크기가 각기 다름)을 포함합니다.
+- 장면 설정: 상자 안에 3-10개의 물체를 무작위로 배치하며, 다양한 정도의 가림이 존재합니다.
+- 질의응답 쌍: 각 장면마다 5개의 계수 질문을 생성하여 총 10,000개의 질의응답 쌍을 구성합니다.
+- 훈련/테스트 세트 분할: 80%/20%.
+
+### 실험 설정
+- 시뮬레이션 환경: PyBullet 물리 엔진, 7자유도 로봇 팔 장착.
+- 훈련 매개변수: DQN 학습률 0.001, 할인율 0.9, 경험 재현 풀 용량 100,000.
+- 비교 기준: 무작위 조작 전략, 고정 조작 전략, 순수 VQA 방법(조작 없음).
+
+### 주요 결과
+- MQA 프레임워크는 테스트 세트에서 78.3%의 정확도를 달성했으며, 무작위 조작 전략(32.1%) 및 순수 VQA 방법(45.6%)보다 현저히 높습니다.
+- 평균 조작 횟수: 각 질문에 성공적으로 답하는 데 4.2회의 조작이 필요합니다.
+- 물체 수가 많은(>7개) 복잡한 장면에서도 MQA 정확도는 72.1%를 유지하며, 기준 방법(<40%)보다 우수합니다.
+
+### 결론
+- MQA 과제는 복잡한 장면 이해에 능동적 조작의 중요성을 입증합니다.
+- 현재 프레임워크는 간단한 계수 질문에서 좋은 성능을 보이지만, 복잡한 추론 질문(예: 공간 관계)은 여전히 개선이 필요합니다.
+- 향후 작업은 다단계 조작 계획 및 실제 로봇 배치로 확장할 수 있습니다.

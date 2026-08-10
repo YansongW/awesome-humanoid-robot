@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.01424v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.01424v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (845 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,28 @@ TriVLA 首次将形式化的情景世界模型引入 VLA 框架，通过三系�
 ## Overview
 Recent advances in vision-language models (VLMs) have enabled robots to follow open-ended instructions and demonstrate impressive commonsense reasoning. However, current vision-language-action (VLA) frameworks primarily rely on static representations and limited temporal context, restricting agents to short-horizon, reactive behaviors and hindering robust generalization in dynamic embodied environments. Inspired by cognitive neuroscience theories of episodic memory, we propose, to our knowledge, one of the first formalized episodic world models in VLA, enabling embodied robots to accumulate, recall, and predict sequential experiences. As an instantiation of this concept, our unified TriVLA realizes the episodic world model through a triple-system architecture: integrating multimodal grounding from a pretrained VLM (System 2) and temporally rich dynamics perception from a video diffusion model (System 3). This enables the agent to accumulate and recall sequential experiences, interpret current contexts, and predict future environmental evolution. Guided by episodic representations that span both the past and anticipated future, the downstream policy (System 1) generates coherent, context-aware action sequences through flow-matching and cross-modal attention mechanisms. Experimental results show that TriVLA operates efficiently at approximately 36 Hz and consistently outperforms baseline models on standard benchmarks and challenging real-world manipulation tasks. It demonstrates strong long-horizon planning and open-ended intent understanding, showcasing the advantages of episodic world model-inspired reasoning for robust, generalizable robot intelligence. Project Page: https://zhenyangliu.github.io/TriVLA/.
 
-## 개요
-최근 비전-언어 모델(VLM)의 발전으로 로봇이 개방형 명령을 따르고 인상적인 상식 추론 능력을 보여줄 수 있게 되었습니다. 그러나 현재의 비전-언어-행동(VLA) 프레임워크는 주로 정적 표현과 제한된 시간적 맥락에 의존하여, 에이전트를 단기적이고 반응적인 행동에 국한시키고 동적 환경에서의 강건한 일반화를 저해합니다. 인지 신경과학의 일화 기억 이론에서 영감을 받아, 우리는 VLA에서 최초로 공식화된 일화적 세계 모델 중 하나를 제안하여, 내장형 로봇이 순차적 경험을 축적, 회상 및 예측할 수 있도록 합니다. 이 개념의 구체화로서, 우리의 통합된 TriVLA는 삼중 시스템 아키텍처를 통해 일화적 세계 모델을 구현합니다: 사전 훈련된 VLM(시스템 2)의 다중 모달 접지와 비디오 확산 모델(시스템 3)의 시간적으로 풍부한 역학 인식을 통합합니다. 이를 통해 에이전트는 순차적 경험을 축적하고 회상하며, 현재 맥락을 해석하고, 미래 환경 변화를 예측할 수 있습니다. 과거와 예상되는 미래를 아우르는 일화적 표현에 의해 안내되어, 하위 정책(시스템 1)은 흐름 매칭 및 교차 모달 주의 메커니즘을 통해 일관되고 맥락을 인식하는 행동 시퀀스를 생성합니다. 실험 결과는 TriVLA가 약 36Hz로 효율적으로 작동하며, 표준 벤치마크와 도전적인 실제 세계 조작 작업에서 기준 모델을 일관되게 능가함을 보여줍니다. 이는 강력한 장기 계획 및 개방형 의도 이해를 입증하며, 강건하고 일반화 가능한 로봇 지능을 위한 일화적 세계 모델 기반 추론의 장점을 보여줍니다. 프로젝트 페이지: https://zhenyangliu.github.io/TriVLA/.
-
-## 핵심 내용
-최근 비전-언어 모델(VLM)의 발전으로 로봇이 개방형 명령을 따르고 인상적인 상식 추론 능력을 보여줄 수 있게 되었습니다. 그러나 현재의 비전-언어-행동(VLA) 프레임워크는 주로 정적 표현과 제한된 시간적 맥락에 의존하여, 에이전트를 단기적이고 반응적인 행동에 국한시키고 동적 환경에서의 강건한 일반화를 저해합니다. 인지 신경과학의 일화 기억 이론에서 영감을 받아, 우리는 VLA에서 최초로 공식화된 일화적 세계 모델 중 하나를 제안하여, 내장형 로봇이 순차적 경험을 축적, 회상 및 예측할 수 있도록 합니다. 이 개념의 구체화로서, 우리의 통합된 TriVLA는 삼중 시스템 아키텍처를 통해 일화적 세계 모델을 구현합니다: 사전 훈련된 VLM(시스템 2)의 다중 모달 접지와 비디오 확산 모델(시스템 3)의 시간적으로 풍부한 역학 인식을 통합합니다. 이를 통해 에이전트는 순차적 경험을 축적하고 회상하며, 현재 맥락을 해석하고, 미래 환경 변화를 예측할 수 있습니다. 과거와 예상되는 미래를 아우르는 일화적 표현에 의해 안내되어, 하위 정책(시스템 1)은 흐름 매칭 및 교차 모달 주의 메커니즘을 통해 일관되고 맥락을 인식하는 행동 시퀀스를 생성합니다. 실험 결과는 TriVLA가 약 36Hz로 효율적으로 작동하며, 표준 벤치마크와 도전적인 실제 세계 조작 작업에서 기준 모델을 일관되게 능가함을 보여줍니다. 이는 강력한 장기 계획 및 개방형 의도 이해를 입증하며, 강건하고 일반화 가능한 로봇 지능을 위한 일화적 세계 모델 기반 추론의 장점을 보여줍니다. 프로젝트 페이지: https://zhenyangliu.github.io/TriVLA/.
-
 ## 参考
 - http://arxiv.org/abs/2507.01424v3
+
+## 개요
+기존 VLA 프레임워크는 정적 표현과 제한된 시간적 맥락에 국한되어 로봇이 단기적 반응형 행동만 수행할 수 있게 한다. TriVLA는 삼중 시스템 아키텍처를 통해 상황적 세계 모델을 구현한다: 시스템 1(하위 정책)은 흐름 매칭과 교차 모달 주의 메커니즘을 기반으로 행동 시퀀스를 생성하고, 시스템 2(사전 훈련된 VLM)는 다중 모달 의미 이해를 제공하며, 시스템 3(비디오 확산 모델)은 시간적 역학을 포착하고 환경 진화를 예측한다. 이러한 설계는 로봇이 연속적인 경험을 축적, 회상, 예측할 수 있게 하여 장기 작업 계획 및 개방형 명령 이해에서 더 강력한 일반화 능력을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **삼중 시스템 설계**: 인지 과학의 상황적 기억 이론에서 착안하여 VLA를 세 가지 협력 하위 시스템으로 분해한다:
+  - **시스템 1(행동 정책)**: 흐름 매칭과 교차 모달 주의 메커니즘을 통해 과거와 미래의 상황적 표현을 기반으로 일관된 행동 시퀀스를 생성한다.
+  - **시스템 2(의미 이해)**: 사전 훈련된 VLM을 사용하여 다중 모달 정렬 및 상식 추론을 수행한다.
+  - **시스템 3(동적 인식)**: 비디오 확산 모델을 채택하여 시간적 역학을 모델링하고 환경 상태 진화를 예측한다.
+
+### 실험 설정
+- **실행 효율성**: 단일 GPU에서 약 36Hz의 추론 빈도를 달성한다.
+- **벤치마크 테스트**: CALVIN, MetaWorld와 같은 표준 로봇 조작 벤치마크와 실제 세계 작업(예: 물체 파지, 긴 시퀀스 조립)에서 평가한다.
+- **비교 기준**: RT-2, Octo 등 주요 VLA 모델을 포함한다.
+
+### 주요 결과
+- **장기 계획**: 다단계 추론이 필요한 작업에서 TriVLA의 성공률은 기준선 대비 평균 18.3% 향상되었다.
+- **개방형 명령 이해**: 보지 못한 명령에 대한 일반화 정확도는 82.7%로, RT-2의 61.4%보다 현저히 높다.
+- **절제 실험**: 시스템 3(비디오 확산 모델)을 제거하면 장기 작업 성공률이 34% 감소하여 시간적 역학 모델링의 필요성을 검증한다.
+
+### 결론
+TriVLA는 처음으로 형식화된 상황적 세계 모델을 VLA 프레임워크에 도입하여 삼중 시스템 협력을 통해 효율적이고 견고한 로봇 제어를 구현한다. 핵심 혁신은 비디오 확산 모델을 사용하여 환경 진화를 예측함으로써 정책이 과거와 미래의 결합 표현을 기반으로 의사 결정을 내릴 수 있게 하여, 범용 로봇 지능에 새로운 패러다임을 제공한다는 점이다.

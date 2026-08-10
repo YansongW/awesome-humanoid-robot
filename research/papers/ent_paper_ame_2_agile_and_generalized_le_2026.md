@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.08485v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.08485v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (799 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -62,11 +63,23 @@ AME-2 是一个统一的强化学习框架，其核心创新在于控制策略�
 ## Overview
 Achieving agile and generalized legged locomotion across terrains requires tight integration of perception and control, especially under occlusions and sparse footholds. Existing methods have demonstrated agility on parkour courses but often rely on end-to-end sensorimotor models with limited generalization and interpretability. By contrast, methods targeting generalized locomotion typically exhibit limited agility and struggle with visual occlusions. We introduce AME-2, a unified reinforcement learning (RL) framework for agile and generalized locomotion that incorporates a novel attention-based map encoder in the control policy. This encoder extracts local and global mapping features and uses attention mechanisms to focus on salient regions, producing an interpretable and generalized embedding for RL-based control. We further propose a learning-based mapping pipeline that provides fast, uncertainty-aware terrain representations robust to noise and occlusions, serving as policy inputs. It uses neural networks to convert depth observations into local elevations with uncertainties, and fuses them with odometry. The pipeline also integrates with parallel simulation so that we can train controllers with online mapping, aiding sim-to-real transfer. We validate AME-2 with the proposed mapping pipeline on a quadruped and a biped robot, and the resulting controllers demonstrate strong agility and generalization to unseen terrains in simulation and in real-world experiments.
 
-## 개요
-다양한 지형에서 민첩하고 일반화된 보행 운동을 달성하려면 인식과 제어의 긴밀한 통합이 필요하며, 특히 폐색과 드문 발판 조건에서 더욱 그렇습니다. 기존 방법들은 파쿠르 코스에서 민첩성을 입증했지만, 종종 제한된 일반화와 해석 가능성을 가진 종단간 감각운동 모델에 의존합니다. 반면, 일반화된 보행을 목표로 하는 방법들은 일반적으로 제한된 민첩성을 보이며 시각적 폐색에 어려움을 겪습니다. 우리는 제어 정책에 새로운 주의 기반 지도 인코더를 통합한 통합 강화 학습(RL) 프레임워크인 AME-2를 소개합니다. 이 인코더는 로컬 및 글로벌 매핑 특징을 추출하고 주의 메커니즘을 사용하여 중요한 영역에 집중함으로써 RL 기반 제어를 위한 해석 가능하고 일반화된 임베딩을 생성합니다. 또한, 잡음과 폐색에 강건한 빠르고 불확실성 인식 지형 표현을 제공하는 학습 기반 매핑 파이프라인을 제안하여 정책 입력으로 사용합니다. 이 파이프라인은 신경망을 사용하여 깊이 관측을 불확실성이 포함된 로컬 고도로 변환하고, 이를 오도메트리와 융합합니다. 또한, 온라인 매핑으로 제어기를 훈련할 수 있도록 병렬 시뮬레이션과 통합되어 시뮬레이션-실제 전환을 지원합니다. 우리는 제안된 매핑 파이프라인을 사용하여 AME-2를 사족 보행 로봇과 이족 보행 로봇에서 검증했으며, 결과 제어기는 시뮬레이션 및 실제 실험에서 보지 못한 지형에 대해 강력한 민첩성과 일반화를 보여주었습니다.
-
-## 핵심 내용
-다양한 지형에서 민첩하고 일반화된 보행 운동을 달성하려면 인식과 제어의 긴밀한 통합이 필요하며, 특히 폐색과 드문 발판 조건에서 더욱 그렇습니다. 기존 방법들은 파쿠르 코스에서 민첩성을 입증했지만, 종종 제한된 일반화와 해석 가능성을 가진 종단간 감각운동 모델에 의존합니다. 반면, 일반화된 보행을 목표로 하는 방법들은 일반적으로 제한된 민첩성을 보이며 시각적 폐색에 어려움을 겪습니다. 우리는 제어 정책에 새로운 주의 기반 지도 인코더를 통합한 통합 강화 학습(RL) 프레임워크인 AME-2를 소개합니다. 이 인코더는 로컬 및 글로벌 매핑 특징을 추출하고 주의 메커니즘을 사용하여 중요한 영역에 집중함으로써 RL 기반 제어를 위한 해석 가능하고 일반화된 임베딩을 생성합니다. 또한, 잡음과 폐색에 강건한 빠르고 불확실성 인식 지형 표현을 제공하는 학습 기반 매핑 파이프라인을 제안하여 정책 입력으로 사용합니다. 이 파이프라인은 신경망을 사용하여 깊이 관측을 불확실성이 포함된 로컬 고도로 변환하고, 이를 오도메트리와 융합합니다. 또한, 온라인 매핑으로 제어기를 훈련할 수 있도록 병렬 시뮬레이션과 통합되어 시뮬레이션-실제 전환을 지원합니다. 우리는 제안된 매핑 파이프라인을 사용하여 AME-2를 사족 보행 로봇과 이족 보행 로봇에서 검증했으며, 결과 제어기는 시뮬레이션 및 실제 실험에서 보지 못한 지형에 대해 강력한 민첩성과 일반화를 보여주었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.08485v2
+
+## 개요
+AME-2는 기존 보행 운동 방법에서 민첩성과 일반화 능력을 동시에 확보하기 어려운 문제를 해결하는 것을 목표로 합니다. 이 프레임워크는 새로운 어텐션 메커니즘 지도 인코더를 통해 로컬 및 글로벌 지도 특징에서 핵심 정보를 추출하고, 강화 학습 정책에 사용할 해석 가능하고 일반화된 임베딩 벡터를 생성합니다. 동시에, 깊이 관측을 불확실성을 포함한 로컬 고도 지도로 변환하고 오도메트리 정보를 융합하여 폐색과 노이즈 하에서도 강건한 지형 표현을 제공하는 학습 기반의 빠른 지도 구축 파이프라인을 제안합니다. 사족 보행 로봇과 이족 보행 로봇에서의 시뮬레이션 및 실제 세계 실험을 통해 AME-2는 미지의 지형에서 민첩한 운동 능력과 강력한 일반화 능력을 동시에 갖추는 이점을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+AME-2는 통합 강화 학습 프레임워크로, 핵심 혁신은 제어 정책에 **어텐션 메커니즘 지도 인코더**를 통합한 점입니다. 이 인코더는 먼저 로컬 및 글로벌 지도 특징을 추출한 후, 어텐션 메커니즘을 활용하여 지형의 핵심 영역(예: 희소한 착지 지점)에 집중함으로써 RL 제어 정책을 구동하는 해석 가능하고 일반화된 임베딩 벡터를 생성합니다.
+
+### 지도 구축 파이프라인
+정책에 고품질 입력을 제공하기 위해 AME-2는 **학습 기반 지도 구축 파이프라인**을 제안합니다:
+- 이 파이프라인은 신경망을 사용하여 깊이 관측 데이터를 로컬 고도 지도로 변환하고, 동시에 각 고도 추정의 **불확실성**을 출력합니다.
+- 오도메트리 정보를 융합함으로써, 이 파이프라인은 노이즈와 시각적 폐색에 강건한 지형 표현을 생성할 수 있습니다.
+- 이 파이프라인은 병렬 시뮬레이션 환경과 통합되도록 설계되어, 컨트롤러가 **온라인 지도 구축** 조건에서 훈련될 수 있으며, 이를 통해 sim-to-real 전이를 효과적으로 촉진합니다.
+
+### 실험 설정 및 결과
+- **로봇 플랫폼**: 검증 실험은 사족 보행 로봇(quadruped)과 이족 보행 로봇(biped)에서 동시에 수행되었습니다.
+- **실험 환경**: 시뮬레이션 환경과 실제 세계 실험을 포함하며, 테스트 지형은 모두 훈련 중에 보지 못한 복잡한 지형입니다.
+- **주요 성과**: AME-2 프레임워크 기반으로 훈련된 컨트롤러는 두 로봇 플랫폼 모두에서 **강력한 민첩성**(예: 파쿠르 동작)과 **우수한 일반화 능력**을 보여주며, 시뮬레이션과 실제 세계에서 보지 못한 새로운 지형을 성공적으로 처리했습니다.

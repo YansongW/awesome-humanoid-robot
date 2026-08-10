@@ -35,7 +35,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.02078v3. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_genie_sim_30_a_high_fidelity_c_2026 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_genie_sim_30_a_high_fidelity_c_2026 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (824 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,21 @@ The development of robust and generalizable robot learning models is critically 
 ## Content
 The development of robust and generalizable robot learning models is critically contingent upon the availability of large-scale, diverse training data and reliable evaluation benchmarks. Collecting data in the physical world poses prohibitive costs and scalability challenges, and prevailing simulation benchmarks frequently suffer from fragmentation, narrow scope, or insufficient fidelity to enable effective sim-to-real transfer. To address these challenges, we introduce Genie Sim 3.0, a unified simulation platform for robotic manipulation. We present Genie Sim Generator, a large language model (LLM)-powered tool that constructs high-fidelity scenes from natural language instructions. Its principal strength resides in rapid and multi-dimensional generalization, facilitating the synthesis of diverse environments to support scalable data collection and robust policy evaluation. We introduce the first benchmark that pioneers the application of LLM for automated evaluation. It leverages LLM to mass-generate evaluation scenarios and employs Vision-Language Model (VLM) to establish an automated assessment pipeline. We also release an open-source dataset comprising more than 10,000 hours of synthetic data across over 200 tasks. Through systematic experimentation, we validate the robust zero-shot sim-to-real transfer capability of our open-source dataset, demonstrating that synthetic data can serve as an effective substitute for real-world data under controlled conditions for scalable policy training. For code and dataset details, please refer to: https://github.com/AgibotTech/genie_sim.
 
-## 개요
-강건하고 일반화 가능한 로봇 학습 모델의 개발은 대규모의 다양한 훈련 데이터와 신뢰할 수 있는 평가 벤치마크의 가용성에 결정적으로 의존합니다. 물리적 세계에서 데이터를 수집하는 것은 엄청난 비용과 확장성 문제를 야기하며, 기존의 시뮬레이션 벤치마크는 종종 단편화, 좁은 범위, 또는 효과적인 시뮬레이션-실제 전환을 가능하게 할 충분한 충실도 부족으로 어려움을 겪습니다. 이러한 문제를 해결하기 위해, 우리는 로봇 조작을 위한 통합 시뮬레이션 플랫폼인 Genie Sim 3.0을 소개합니다. 우리는 자연어 명령어로부터 고충실도 장면을 구축하는 대규모 언어 모델(LLM) 기반 도구인 Genie Sim Generator를 제시합니다. 그 주요 강점은 빠르고 다차원적인 일반화에 있으며, 확장 가능한 데이터 수집과 강건한 정책 평가를 지원하기 위해 다양한 환경을 합성하는 것을 용이하게 합니다. 우리는 LLM을 자동 평가에 적용한 최초의 벤치마크를 소개합니다. 이는 LLM을 활용하여 평가 시나리오를 대량 생성하고, 비전-언어 모델(VLM)을 사용하여 자동 평가 파이프라인을 구축합니다. 또한 200개 이상의 작업에 걸쳐 10,000시간 이상의 합성 데이터를 포함하는 오픈소스 데이터셋을 공개합니다. 체계적인 실험을 통해, 우리는 오픈소스 데이터셋의 강건한 제로샷 시뮬레이션-실제 전환 능력을 검증하며, 합성 데이터가 통제된 조건에서 확장 가능한 정책 훈련을 위한 실제 데이터의 효과적인 대체재 역할을 할 수 있음을 보여줍니다. 코드 및 데이터셋에 대한 자세한 내용은 다음을 참조하십시오: https://github.com/AgibotTech/genie_sim.
-
-## 핵심 내용
-강건하고 일반화 가능한 로봇 학습 모델의 개발은 대규모의 다양한 훈련 데이터와 신뢰할 수 있는 평가 벤치마크의 가용성에 결정적으로 의존합니다. 물리적 세계에서 데이터를 수집하는 것은 엄청난 비용과 확장성 문제를 야기하며, 기존의 시뮬레이션 벤치마크는 종종 단편화, 좁은 범위, 또는 효과적인 시뮬레이션-실제 전환을 가능하게 할 충분한 충실도 부족으로 어려움을 겪습니다. 이러한 문제를 해결하기 위해, 우리는 로봇 조작을 위한 통합 시뮬레이션 플랫폼인 Genie Sim 3.0을 소개합니다. 우리는 자연어 명령어로부터 고충실도 장면을 구축하는 대규모 언어 모델(LLM) 기반 도구인 Genie Sim Generator를 제시합니다. 그 주요 강점은 빠르고 다차원적인 일반화에 있으며, 확장 가능한 데이터 수집과 강건한 정책 평가를 지원하기 위해 다양한 환경을 합성하는 것을 용이하게 합니다. 우리는 LLM을 자동 평가에 적용한 최초의 벤치마크를 소개합니다. 이는 LLM을 활용하여 평가 시나리오를 대량 생성하고, 비전-언어 모델(VLM)을 사용하여 자동 평가 파이프라인을 구축합니다. 또한 200개 이상의 작업에 걸쳐 10,000시간 이상의 합성 데이터를 포함하는 오픈소스 데이터셋을 공개합니다. 체계적인 실험을 통해, 우리는 오픈소스 데이터셋의 강건한 제로샷 시뮬레이션-실제 전환 능력을 검증하며, 합성 데이터가 통제된 조건에서 확장 가능한 정책 훈련을 위한 실제 데이터의 효과적인 대체재 역할을 할 수 있음을 보여줍니다. 코드 및 데이터셋에 대한 자세한 내용은 다음을 참조하십시오: https://github.com/AgibotTech/genie_sim.
-
 ## 参考
 - http://arxiv.org/abs/2601.02078v3
+
+## 개요
+Genie Sim 3.0은 로봇 학습 분야에서 데이터 수집 비용이 높고, 시뮬레이션 벤치마크가 파편화되어 있으며, 충실도가 부족한 등의 핵심 문제를 해결하는 것을 목표로 합니다. 이 플랫폼은 Genie Sim Generator 도구를 통해 대규모 언어 모델(LLM)을 활용하여 자연어 지시를 고충실도 장면으로 변환하고, 빠른 다차원 일반화를 지원하여 다양한 환경 합성을 촉진합니다. 또한, 플랫폼은 처음으로 LLM 기반 자동 평가 벤치마크를 도입하고, 비전-언어 모델(VLM)을 결합하여 평가 파이프라인을 구축합니다. 연구팀은 또한 200개 이상의 작업을 포괄하는 10,000시간 이상의 합성 데이터셋을 오픈소스로 공개했으며, 체계적인 실험을 통해 제로샷 sim-to-real 전이에서의 견고성을 검증했습니다.
+
+## 핵심 내용
+### 핵심 아키텍처 및 방법
+- **Genie Sim Generator**: 자연어 지시에서 고충실도 장면을 자동으로 구축할 수 있는 대규모 언어 모델(LLM) 기반 도구입니다. 핵심 장점은 빠른 다차원 일반화를 구현하고 다양한 환경 합성을 지원하여 확장 가능한 데이터 수집과 견고한 정책 평가의 기반을 제공한다는 점입니다.
+- **자동 평가 벤치마크**: 처음으로 LLM을 자동 평가에 적용하여, LLM이 평가 장면을 대량 생성하고, 비전-언어 모델(VLM)을 활용하여 자동 평가 파이프라인을 구축함으로써 기존의 수동 평가가 비효율적이고 적용 범위가 제한적이던 문제를 해결합니다.
+
+### 데이터셋 및 실험 설정
+- **오픈소스 데이터셋**: 200개 이상의 작업을 포괄하는 10,000시간 이상의 합성 데이터를 포함합니다. 데이터는 Genie Sim Generator를 통해 생성되며, 정책 훈련을 위한 대규모의 다양한 훈련 샘플을 제공하는 것을 목표로 합니다.
+- **실험 검증**: 체계적인 실험을 통해 제로샷 sim-to-real 전이 능력을 평가합니다. 결과는 통제된 조건에서 합성 데이터가 실제 데이터를 효과적으로 대체할 수 있고, 확장 가능한 정책 훈련을 지원하며, 플랫폼의 실용성과 충실도를 검증함을 보여줍니다.
+
+### 결론 및 리소스
+- Genie Sim 3.0은 통합 시뮬레이션 플랫폼, LLM 기반 장면 생성 및 평가, 그리고 대규모 오픈소스 데이터셋을 통해 로봇 조작 작업을 위한 고충실도, 확장 가능한 솔루션을 제공합니다.
+- 코드와 데이터셋은 오픈소스로 공개되었으며, 접속 주소: https://github.com/AgibotTech/genie_sim.

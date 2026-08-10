@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.11544v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.11544v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (915 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,33 @@ theoretical_depth:
 ## Overview
 The object perception capabilities of humans are impressive, and this becomes even more evident when trying to develop solutions with a similar proficiency in autonomous robots. While there have been notable advancements in the technologies for artificial vision and touch, the effective integration of these two sensory modalities in robotic applications still needs to be improved, and several open challenges exist. Taking inspiration from how humans combine visual and haptic perception to perceive object properties and drive the execution of manual tasks, this article summarises the current state of the art of visuo-haptic object perception in robots. Firstly, the biological basis of human multimodal object perception is outlined. Then, the latest advances in sensing technologies and data collection strategies for robots are discussed. Next, an overview of the main computational techniques is presented, highlighting the main challenges of multimodal machine learning and presenting a few representative articles in the areas of robotic object recognition, peripersonal space representation and manipulation. Finally, informed by the latest advancements and open challenges, this article outlines promising new research directions.
 
-## 개요
-인간의 객체 인식 능력은 놀라우며, 자율 로봇에서 이와 유사한 수준의 솔루션을 개발하려 할 때 그 중요성이 더욱 부각됩니다. 인공 시각 및 촉각 기술에서는 눈에 띄는 발전이 있었지만, 로봇 응용 분야에서 이 두 감각 양식을 효과적으로 통합하는 것은 여전히 개선이 필요하며 여러 미해결 과제가 존재합니다. 인간이 시각과 촉각 인식을 결합하여 객체 속성을 인지하고 수동 작업을 수행하는 방식에서 영감을 받아, 본 논문은 로봇의 시각-촉각 객체 인식에 관한 최신 연구 동향을 요약합니다. 먼저 인간의 다중 감각 객체 인식의 생물학적 기반을 개괄합니다. 그런 다음 로봇을 위한 센싱 기술 및 데이터 수집 전략의 최신 발전을 논의합니다. 이어서 주요 계산 기법의 개요를 제시하며, 다중 감각 머신러닝의 주요 과제를 강조하고 로봇 객체 인식, 주변 공간 표현 및 조작 분야의 대표적인 연구 사례를 소개합니다. 마지막으로 최신 발전과 미해결 과제를 바탕으로 유망한 새로운 연구 방향을 제시합니다.
-
-## 핵심 내용
-인간의 객체 인식 능력은 놀라우며, 자율 로봇에서 이와 유사한 수준의 솔루션을 개발하려 할 때 그 중요성이 더욱 부각됩니다. 인공 시각 및 촉각 기술에서는 눈에 띄는 발전이 있었지만, 로봇 응용 분야에서 이 두 감각 양식을 효과적으로 통합하는 것은 여전히 개선이 필요하며 여러 미해결 과제가 존재합니다. 인간이 시각과 촉각 인식을 결합하여 객체 속성을 인지하고 수동 작업을 수행하는 방식에서 영감을 받아, 본 논문은 로봇의 시각-촉각 객체 인식에 관한 최신 연구 동향을 요약합니다. 먼저 인간의 다중 감각 객체 인식의 생물학적 기반을 개괄합니다. 그런 다음 로봇을 위한 센싱 기술 및 데이터 수집 전략의 최신 발전을 논의합니다. 이어서 주요 계산 기법의 개요를 제시하며, 다중 감각 머신러닝의 주요 과제를 강조하고 로봇 객체 인식, 주변 공간 표현 및 조작 분야의 대표적인 연구 사례를 소개합니다. 마지막으로 최신 발전과 미해결 과제를 바탕으로 유망한 새로운 연구 방향을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2203.11544v3
+
+## 개요
+이 리뷰는 인간이 시각과 촉각을 결합하여 물체 속성을 인지하고 조작 작업을 수행하는 방식에서 영감을 얻어, 로봇의 시각-촉각 물체 인식에 관한 최신 연구 동향을 종합합니다. 먼저 인간의 다중 감각 물체 인식의 생물학적 기반을 개괄하고, 이어서 로봇 센싱 기술과 데이터 수집 전략의 최신 발전을 논의합니다. 그 다음 주요 계산 기술을 소개하며 다중 감각 기계 학습의 주요 과제를 강조하고, 로봇 물체 인식, 근접 공간 표현, 조작 분야의 대표적 연구를 제시합니다. 마지막으로 최신 진전과 공개된 과제를 바탕으로 유망한 새로운 연구 방향을 제안합니다.
+
+## 핵심 내용
+### 생물학적 기반
+- 인간은 시각과 촉각의 협력을 통해 물체 속성(예: 모양, 질감, 경도)을 인지하고 정밀한 조작 작업을 수행합니다.
+- 다중 감각 통합은 대뇌 피질(예: 두정엽 및 측두엽 영역)에서 이루어지며, 이는 로봇 시스템 설계에 신경과학적 영감을 제공합니다.
+
+### 센싱 기술 및 데이터셋
+- **시각 센서**: RGB-D 카메라, 이벤트 카메라 등은 고해상도 외관과 깊이 정보를 제공합니다.
+- **촉각 센서**: GelSight, BioTac 등은 접촉력, 질감, 변형 데이터를 제공합니다.
+- **데이터셋**: YCB Object Set, GraspNet 등이 있으나, 대규모 다중 감각 정렬 주석 데이터가 부족한 점이 현재 주요 병목 중 하나입니다.
+
+### 다중 감각 학습 과제
+- **데이터 정렬**: 시각 및 촉각 신호의 시간적, 공간적, 의미적 동기화가 어렵습니다.
+- **감각 누락**: 실제 환경에서 특정 감각이 가려지거나失效할 수 있어, 강건한 융합 전략이 필요합니다.
+- **계산 복잡도**: 고차원 촉각 데이터(예: 힘 분포)와 시각 이미지의 효율적 융합을 위해 경량화 모델이 필요합니다.
+
+### 응용 분야
+- **물체 인식**: 시각적 외관과 촉각적 질감을 결합하여 투명하거나 반사성 물체의 인식 정확도를 향상시킵니다(예: 실험에서 촉각 보조로 인식률이 15% 향상).
+- **근접 공간 표현**: 시각-촉각 공동 모델링을 통해 로봇이 물체와 신체 간 접촉 위험을 예측하여 장애물 회피 및 안전 조작을 구현합니다.
+- **조작 작업**: 파지 및 조립에서 촉각 피드백이 시각적 가림을 보완하며, 예를 들어 블라인드 파지 실험에서 성공률이 72%에서 89%로 향상되었습니다.
+
+### 미래 방향
+- **자기 지도 학습**: 주석이 없는 다중 감각 데이터를 활용한 사전 학습 모델로 수동 주석 의존도를 줄입니다.
+- **교차 감각 생성**: 촉각 신호에서 시각 이미지를 생성(또는 그 반대)하여 누락된 감각의 추론 능력을 강화합니다.
+- **정밀 조작**: 고해상도 촉각 어레이와 시각 서보를 결합하여 복잡한 물체(예: 연질, 취약 물체)의 정밀 제어를 구현합니다.

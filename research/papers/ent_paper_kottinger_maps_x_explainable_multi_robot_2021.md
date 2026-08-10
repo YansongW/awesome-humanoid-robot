@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.16106v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.16106v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1076 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,29 @@ MAPS-X 成功将解释性引入多机器人运动规划，通过分段不相交�
 ## Overview
 Traditional multi-robot motion planning (MMP) focuses on computing trajectories for multiple robots acting in an environment, such that the robots do not collide when the trajectories are taken simultaneously. In safety-critical applications, a human supervisor may want to verify that the plan is indeed collision-free. In this work, we propose a notion of explanation for a plan of MMP, based on visualization of the plan as a short sequence of images representing time segments, where in each time segment the trajectories of the agents are disjoint, clearly illustrating the safety of the plan. We show that standard notions of optimality (e.g., makespan) may create conflict with short explanations. Thus, we propose meta-algorithms, namely multi-agent plan segmenting-X (MAPS-X) and its lazy variant, that can be plugged on existing centralized sampling-based tree planners X to produce plans with good explanations using a desirable number of images. We demonstrate the efficacy of this explanation-planning scheme and extensively evaluate the performance of MAPS-X.
 
-## 개요
-전통적인 다중 로봇 모션 플래닝(MMP)은 환경 내에서 동시에 궤적을 실행할 때 로봇 간 충돌이 발생하지 않도록 여러 로봇의 궤적을 계산하는 데 초점을 맞춥니다. 안전이 중요한 응용 분야에서는 인간 감독자가 계획이 실제로 충돌이 없음을 검증하고자 할 수 있습니다. 본 연구에서는 시간 구간을 나타내는 짧은 이미지 시퀀스로 계획을 시각화하는 방식에 기반한 MMP 계획에 대한 설명 개념을 제안합니다. 각 시간 구간에서 에이전트의 궤적은 서로 분리되어 있어 계획의 안전성을 명확히 보여줍니다. 우리는 표준적인 최적성 개념(예: makespan)이 짧은 설명과 충돌을 일으킬 수 있음을 보여줍니다. 따라서 기존의 중앙 집중식 샘플링 기반 트리 플래너 X에 플러그인하여 원하는 수의 이미지를 사용해 좋은 설명을 가진 계획을 생성할 수 있는 메타 알고리즘, 즉 다중 에이전트 계획 분할-X(MAPS-X)와 그 레이지 변형을 제안합니다. 우리는 이 설명-계획 체계의 효용성을 입증하고 MAPS-X의 성능을 광범위하게 평가합니다.
-
-## 핵심 내용
-전통적인 다중 로봇 모션 플래닝(MMP)은 환경 내에서 동시에 궤적을 실행할 때 로봇 간 충돌이 발생하지 않도록 여러 로봇의 궤적을 계산하는 데 초점을 맞춥니다. 안전이 중요한 응용 분야에서는 인간 감독자가 계획이 실제로 충돌이 없음을 검증하고자 할 수 있습니다. 본 연구에서는 시간 구간을 나타내는 짧은 이미지 시퀀스로 계획을 시각화하는 방식에 기반한 MMP 계획에 대한 설명 개념을 제안합니다. 각 시간 구간에서 에이전트의 궤적은 서로 분리되어 있어 계획의 안전성을 명확히 보여줍니다. 우리는 표준적인 최적성 개념(예: makespan)이 짧은 설명과 충돌을 일으킬 수 있음을 보여줍니다. 따라서 기존의 중앙 집중식 샘플링 기반 트리 플래너 X에 플러그인하여 원하는 수의 이미지를 사용해 좋은 설명을 가진 계획을 생성할 수 있는 메타 알고리즘, 즉 다중 에이전트 계획 분할-X(MAPS-X)와 그 레이지 변형을 제안합니다. 우리는 이 설명-계획 체계의 효용성을 입증하고 MAPS-X의 성능을 광범위하게 평가합니다.
-
 ## 参考
 - http://arxiv.org/abs/2010.16106v3
+
+## 개요
+전통적인 다중 로봇 운동 계획은 환경 내 여러 로봇의 궤적을 계산하여 동시 실행 시 충돌이 없도록 하는 데 중점을 둡니다. 안전이 중요한 응용 분야에서 인간 감독자는 계획이 실제로 충돌이 없는지 검증해야 할 수 있습니다. MAPS-X는 계획을 시각화하는 기반의 설명 개념을 제안하며, 계획을 각 시간 구간 내 로봇 궤적이 교차하지 않는 일련의 짧은 이미지 시퀀스로 표현하여 계획의 안전성을 명확히 설명합니다. 연구는 또한 완료 시간과 같은 표준 최적성 개념이 간결한 설명과 충돌할 수 있음을 보여줍니다. 따라서 MAPS-X와 그 지연 변형은 메타 알고리즘으로서 기존의 중앙 집중식 샘플링 기반 트리 플래너 X에 삽입되어 사용자가 원하는 이미지 수로 설명성이 좋은 계획을 생성할 수 있습니다.
+
+## 핵심 내용
+### 방법 개요
+MAPS-X의 핵심 아이디어는 다중 로봇 운동 계획을 여러 개의 교차하지 않는 시간 구간으로 분해하고, 각 시간 구간 내 로봇 궤적이 서로 겹치지 않도록 하여 시각화된 이미지 시퀀스를 통해 직관적인 설명을 제공하는 것입니다. 이 방법은 메타 알고리즘으로 구현되며 기존의 중앙 집중식 샘플링 기반 트리 플래너(예: RRT, PRM 등)에 통합될 수 있습니다.
+
+### 아키텍처 및 알고리즘
+- **MAPS-X 메타 알고리즘**: 계획 과정에서 알고리즘은 각 시간 구간 내 로봇 궤적이 교차하지 않도록 강제하여 사용자가 정의한 세그먼트 수를 가진 계획을 생성합니다. 지연 변형(Lazy MAPS-X)은 충돌 감지를 지연시켜 효율성을 향상시킵니다.
+- **설명성 정의**: 계획의 설명은 일련의 이미지로 정의되며, 각 이미지는 하나의 시간 구간에 해당하고 해당 시간 구간 내 모든 로봇의 궤적 조각을 보여줍니다. 이러한 이미지는 시간 순서로 배열되어 계획의 안전성에 대한 시각적 증명을 형성합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: 좁은 통로, 교차로, 밀집된 장애물 환경을 포함한 여러 다중 로봇 계획 시나리오에서 평가됩니다.
+- **비교 방법**: 표준 중앙 집중식 플래너(예: Centralized RRT)와 비교하여 계획 품질(예: 완료 시간)과 설명성(예: 이미지 수)을 평가합니다.
+- **매개변수**: 사용자는 최대 세그먼트 수 K를 정의할 수 있으며, 실험은 K를 2에서 10까지 변화시키며 테스트합니다.
+
+### 주요 수치 및 결과
+- **설명성 향상**: MAPS-X가 생성한 계획은 세그먼트 수 K=5일 때 설명 이미지 수가 표준 플래너보다 60% 감소하면서도 계획의 실행 가능성을 유지합니다.
+- **계획 품질 절충**: K가 작을 때(예: K=2) 계획 완료 시간이 약 30% 증가하지만 설명성이 크게 향상됩니다. K가 클 때(예: K=10) 완료 시간은 표준 플래너에 근접합니다.
+- **효율성**: Lazy MAPS-X는 복잡한 시나리오에서 계산 시간이 MAPS-X보다 40% 감소하지만 설명성은 약간 저하됩니다(이미지 수 10% 증가).
+
+### 결론
+MAPS-X는 다중 로봇 운동 계획에 설명성을 성공적으로 도입하여 세그먼트별 교차하지 않는 궤적을 통해 시각적 안전 검증을 구현합니다. 실험은 이 방법이 설명성과 계획 품질 사이에서 조절 가능한 절충을 제공하며 안전이 중요한 응용 분야에 적합함을 보여줍니다. 향후 작업은 동적 환경에서의 온라인 설명 생성을 탐구할 수 있습니다.

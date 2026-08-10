@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02902v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02902v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (840 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,28 @@ sources:
 ## Overview
 Vision-language-action (VLA) models achieve strong in-distribution performance but degrade sharply under novel camera viewpoints and visual perturbations. We show that this brittleness primarily arises from misalignment in Spatial Modeling, rather than Physical Modeling. To address this, we propose a one-shot adaptation framework that recalibrates visual representations through lightweight, learnable updates. Our first method, Feature Token Modulation (FTM), applies a global affine transformation to visual tokens and improves Libero viewpoint accuracy from 48.5% to 87.1% with only 4K parameters. Building on this, Feature Linear Adaptation (FLA) introduces low-rank updates to the ViT encoder, achieving 90.8% success with 4.7M parameters -- matching LoRA-scale finetuning at far lower cost. Together, these results reveal substantial untapped robustness in pretrained VLA models and demonstrate that targeted, minimal visual adaptation is sufficient to restore viewpoint generalization.
 
-## 개요
-Vision-language-action (VLA) 모델은 분포 내 성능이 뛰어나지만, 새로운 카메라 시점과 시각적 교란 하에서 성능이 급격히 저하됩니다. 본 연구는 이러한 취약성이 주로 물리적 모델링(Physical Modeling)이 아닌 공간 모델링(Spatial Modeling)의 정렬 불일치에서 비롯됨을 보여줍니다. 이를 해결하기 위해, 가볍고 학습 가능한 업데이트를 통해 시각적 표현을 재조정하는 원샷 적응 프레임워크를 제안합니다. 첫 번째 방법인 Feature Token Modulation (FTM)은 시각적 토큰에 전역 아핀 변환을 적용하여 단 4K 파라미터만으로 Libero 시점 정확도를 48.5%에서 87.1%로 향상시킵니다. 이를 기반으로 한 Feature Linear Adaptation (FLA)은 ViT 인코더에 저랭크 업데이트를 도입하여 4.7M 파라미터로 90.8%의 성공률을 달성하며, 훨씬 낮은 비용으로 LoRA 규모의 미세 조정과 동등한 성능을 보여줍니다. 이러한 결과들은 사전 학습된 VLA 모델에 상당한 미활용 강건성이 존재함을 밝히며, 표적화된 최소한의 시각적 적응만으로도 시점 일반화를 복원하기에 충분함을 입증합니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 분포 내 성능이 뛰어나지만, 새로운 카메라 시점과 시각적 교란 하에서 성능이 급격히 저하됩니다. 본 연구는 이러한 취약성이 주로 물리적 모델링(Physical Modeling)이 아닌 공간 모델링(Spatial Modeling)의 정렬 불일치에서 비롯됨을 보여줍니다. 이를 해결하기 위해, 가볍고 학습 가능한 업데이트를 통해 시각적 표현을 재조정하는 원샷 적응 프레임워크를 제안합니다. 첫 번째 방법인 Feature Token Modulation (FTM)은 시각적 토큰에 전역 아핀 변환을 적용하여 단 4K 파라미터만으로 Libero 시점 정확도를 48.5%에서 87.1%로 향상시킵니다. 이를 기반으로 한 Feature Linear Adaptation (FLA)은 ViT 인코더에 저랭크 업데이트를 도입하여 4.7M 파라미터로 90.8%의 성공률을 달성하며, 훨씬 낮은 비용으로 LoRA 규모의 미세 조정과 동등한 성능을 보여줍니다. 이러한 결과들은 사전 학습된 VLA 모델에 상당한 미활용 강건성이 존재함을 밝히며, 표적화된 최소한의 시각적 적응만으로도 시점 일반화를 복원하기에 충분함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.02902v2
+
+## 개요
+이 연구는 로봇 조작에서 시각-언어-행동(VLA) 모델의 일반화 능력을 재검토하며, 모델이 훈련 분포 내에서는 우수한 성능을 보이지만 새로운 카메라 시점과 시각적 교란 하에서는 성능이 급격히 저하된다는 점을 발견했습니다. 체계적 분석을 통해 저자들은 이러한 취약성이 주로 물리적 모델링이 아닌 공간 모델링의 정렬 오류에서 비롯된다고 지적합니다. 이를 위해 그들은 경량의 학습 가능한 업데이트를 통해 시각적 표현을 재보정하는 단일 적응 프레임워크를 제안합니다. 그중 FTM 방법은 시각적 토큰에 전역 아핀 변환을 적용하여 단 4K 파라미터만으로 Libero 시점 정확도를 48.5%에서 87.1%로 향상시켰습니다. FLA 방법은 ViT 인코더에 저랭크 업데이트를 도입하여 4.7M 파라미터로 90.8%의 성공률을 달성했으며, LoRA 규모의 미세 조정과 동일한 성능을 내면서도 비용은 더 낮습니다.
+
+## 핵심 내용
+### 핵심 발견
+- VLA 모델은 분포 내 작업에서 강력한 성능을 보이지만, 새로운 카메라 시점과 시각적 교란에 직면하면 성능이 급격히 저하됩니다.
+- 분리 분석을 통해 저자들은 성능 저하가 주로 **물리적 모델링(Physical Modeling)**이 아닌 **공간 모델링(Spatial Modeling)**의 정렬 오류에서 비롯된다는 것을 발견했습니다.
+
+### 방법 아키텍처
+- **단일 적응 프레임워크**: 대량의 데이터나 전체 모델 미세 조정 없이 경량의 학습 가능한 업데이트를 통해 시각적 표현을 재보정합니다.
+- **Feature Token Modulation (FTM)**: 시각적 토큰에 전역 아핀 변환을 적용하여 단 4K의 학습 가능한 파라미터만 도입합니다.
+- **Feature Linear Adaptation (FLA)**: ViT 인코더에 저랭크 업데이트를 도입하며, 파라미터 규모는 4.7M으로 LoRA 미세 조정과 동일하지만 계산 비용은 더 낮습니다.
+
+### 실험 설정 및 주요 수치
+- 벤치마크: Libero 시점 일반화 작업.
+- 기준 성능: 원본 VLA 모델은 시점 변화 하에서 정확도가 48.5%에 불과합니다.
+- FTM 효과: 정확도가 87.1%로 향상되었으며, 파라미터는 단 4K입니다.
+- FLA 효과: 정확도가 90.8%에 도달했으며, 파라미터는 4.7M으로 LoRA 미세 조정 성능과 동일하지만 비용은 현저히 낮습니다.
+
+### 결론
+- 사전 훈련된 VLA 모델에는 활용되지 않은 강건성이 상당히 존재하며, 목표 지향적인 최소한의 시각적 적응만으로도 시점 일반화 능력을 회복할 수 있습니다.
+- 공간 모델링의 정렬 오류가 물리적 모델링보다 주요 병목이며, 이는 향후 VLA 모델 설계에 새로운 방향을 제시합니다.

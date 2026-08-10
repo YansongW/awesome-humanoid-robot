@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.06593v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.06593v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (755 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,26 @@ ReActor 的核心是一个双层优化框架：
 ## Overview
 Retargeting human kinematic reference motion onto a robot's morphology remains a formidable challenge. Existing methods often produce physical inconsistencies, such as foot sliding, self-collisions, or dynamically infeasible motions, which hinder downstream imitation learning. We propose a bilevel optimization framework that jointly adapts reference motions to a robot's morphology while training a tracking policy using reinforcement learning. To make the optimization tractable, we derive an approximate gradient for the upper-level loss. Our framework requires only a sparse set of semantic rigid-body correspondences and eliminates the need for manual tuning by identifying optimal values for a parameterization expressive enough to preserve characteristic motion across different embodiments. Moreover, by integrating retargeting directly with physics simulation, we produce physically plausible motions that facilitate robust imitation learning. We validate our method in simulation and on hardware, demonstrating challenging motions for morphologies that differ significantly from a human, including retargeting onto a quadruped.
 
-## 개요
-인간의 운동학적 참조 동작을 로봇의 형태로 재타겟팅하는 것은 여전히 어려운 과제로 남아 있습니다. 기존 방법들은 발 미끄러짐, 자가 충돌 또는 동역학적으로 불가능한 동작과 같은 물리적 불일치를 자주 발생시켜, 하위 단계의 모방 학습을 저해합니다. 우리는 강화 학습을 사용하여 추적 정책을 훈련하면서 참조 동작을 로봇의 형태에 공동으로 적응시키는 이중 최적화 프레임워크를 제안합니다. 최적화를 다루기 쉽게 만들기 위해, 상위 수준 손실에 대한 근사 기울기를 유도합니다. 우리의 프레임워크는 희소한 의미론적 강체 대응 관계 집합만 필요로 하며, 다양한 형태에서 특징적인 동작을 보존할 수 있을 만큼 표현력이 풍부한 매개변수화에 대한 최적 값을 식별함으로써 수동 조정의 필요성을 제거합니다. 또한, 재타겟팅을 물리 시뮬레이션과 직접 통합함으로써, 강건한 모방 학습을 촉진하는 물리적으로 타당한 동작을 생성합니다. 우리는 시뮬레이션과 하드웨어에서 방법을 검증하여, 인간과 크게 다른 형태(사족 보행 로봇으로의 재타겟팅 포함)에 대한 도전적인 동작을 시연합니다.
-
-## 핵심 내용
-인간의 운동학적 참조 동작을 로봇의 형태로 재타겟팅하는 것은 여전히 어려운 과제로 남아 있습니다. 기존 방법들은 발 미끄러짐, 자가 충돌 또는 동역학적으로 불가능한 동작과 같은 물리적 불일치를 자주 발생시켜, 하위 단계의 모방 학습을 저해합니다. 우리는 강화 학습을 사용하여 추적 정책을 훈련하면서 참조 동작을 로봇의 형태에 공동으로 적응시키는 이중 최적화 프레임워크를 제안합니다. 최적화를 다루기 쉽게 만들기 위해, 상위 수준 손실에 대한 근사 기울기를 유도합니다. 우리의 프레임워크는 희소한 의미론적 강체 대응 관계 집합만 필요로 하며, 다양한 형태에서 특징적인 동작을 보존할 수 있을 만큼 표현력이 풍부한 매개변수화에 대한 최적 값을 식별함으로써 수동 조정의 필요성을 제거합니다. 또한, 재타겟팅을 물리 시뮬레이션과 직접 통합함으로써, 강건한 모방 학습을 촉진하는 물리적으로 타당한 동작을 생성합니다. 우리는 시뮬레이션과 하드웨어에서 방법을 검증하여, 인간과 크게 다른 형태(사족 보행 로봇으로의 재타겟팅 포함)에 대한 도전적인 동작을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2605.06593v1
+
+## 개요
+인간의 운동 참조를 로봇 형태로 리타게팅하면 종종 발 미끄러짐, 자체 충돌 또는 동역학적 비실현 가능성과 같은 문제가 발생합니다. ReActor는 강화 학습 추적 정책을 훈련하면서 참조 운동을 로봇 형태에 맞게 공동으로 조정하는 이중 최적화 프레임워크를 제안합니다. 이 방법은 희소한 의미론적 강체 대응만 필요로 하며, 최적 매개변수를 자동으로 식별하여 서로 다른 형태 간의 특징적인 운동을 보존합니다. 리타게팅을 물리 시뮬레이션과 직접 통합함으로써 ReActor는 물리적으로 타당한 운동을 생성하여 강건한 모방 학습을 촉진합니다. 이 방법은 시뮬레이션과 하드웨어 모두에서 검증되었으며, 인간에서 사족 로봇에 이르는 현저히 다른 형태로의 도전적인 운동 리타게팅을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+ReActor의 핵심은 이중 최적화 프레임워크입니다:
+- **상위 최적화**: 참조 운동을 로봇 형태에 맞게 조정하며, 운동이 물리적으로 실현 가능하고 원래 특징을 보존하는 것을 목표로 합니다.
+- **하위 최적화**: 강화 학습을 사용하여 조정된 운동을 추적할 수 있는 추적 정책을 훈련합니다.
+- 상위 손실을 풀기 위해 저자는 근사 기울기를 유도하여 최적화 과정을 계산 가능하게 만듭니다.
+
+### 핵심 설계
+- **희소 의미론적 대응**: 손, 발, 몸통과 같은 소수의 핵심 강체 대응만 정의하면 되며, 밀집 매핑이 필요하지 않습니다.
+- **자동 매개변수 튜닝**: 표현력이 뛰어난 매개변수화 모델을 최적화하여 최적 값을 자동으로 식별하고, 수동 튜닝의 필요성을 제거합니다.
+- **물리 시뮬레이션 통합**: 리타게팅 과정이 물리 시뮬레이션과 직접 결합되어 생성된 운동이 동역학적으로 실현 가능함을 보장합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 검증**: 인간과 현저히 다른 형태인 사족 로봇을 포함한 다양한 로봇 형태에서 테스트되었습니다.
+- **하드웨어 검증**: 전신 협조 조작과 같은 도전적인 운동을 실제 로봇에서 실행했습니다.
+- **핵심 지표**: 기준 방법과 비교하여 ReActor는 발 미끄러짐, 자체 충돌과 같은 물리적 불일치 문제를 현저히 줄이고 모방 학습의 성공률을 향상시켰습니다.
+- **결론**: 이 방법은 인간의 운동을 서로 다른 형태의 로봇에 강건하게 리타게팅하여 물리적으로 타당한 운동을 생성하며, 모방 학습과 같은 하위 작업에 신뢰할 수 있는 기반을 제공합니다.

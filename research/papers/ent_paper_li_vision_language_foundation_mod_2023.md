@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.01378v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.01378v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (812 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,33 @@ RoboFlamingo 提供了一种低成本、易用的机器人操作解决方案，�
 ## Overview
 Recent progress in vision language foundation models has shown their ability to understand multimodal data and resolve complicated vision language tasks, including robotics manipulation. We seek a straightforward way of making use of existing vision-language models (VLMs) with simple fine-tuning on robotics data. To this end, we derive a simple and novel vision-language manipulation framework, dubbed RoboFlamingo, built upon the open-source VLMs, OpenFlamingo. Unlike prior works, RoboFlamingo utilizes pre-trained VLMs for single-step vision-language comprehension, models sequential history information with an explicit policy head, and is slightly fine-tuned by imitation learning only on language-conditioned manipulation datasets. Such a decomposition provides RoboFlamingo the flexibility for open-loop control and deployment on low-performance platforms. By exceeding the state-of-the-art performance with a large margin on the tested benchmark, we show RoboFlamingo can be an effective and competitive alternative to adapt VLMs to robot control. Our extensive experimental results also reveal several interesting conclusions regarding the behavior of different pre-trained VLMs on manipulation tasks. We believe RoboFlamingo has the potential to be a cost-effective and easy-to-use solution for robotics manipulation, empowering everyone with the ability to fine-tune their own robotics policy.
 
-## 개요
-최근 비전-언어 기반 모델의 발전은 멀티모달 데이터를 이해하고 로봇 조작을 포함한 복잡한 비전-언어 작업을 해결할 수 있는 능력을 보여주고 있습니다. 우리는 기존의 비전-언어 모델(VLM)을 로봇 데이터에 간단한 미세 조정만으로 활용할 수 있는 직관적인 방법을 모색합니다. 이를 위해 오픈소스 VLM인 OpenFlamingo를 기반으로 한 간단하고 새로운 비전-언어 조작 프레임워크인 RoboFlamingo를 개발했습니다. 기존 연구와 달리 RoboFlamingo는 사전 학습된 VLM을 단일 단계 비전-언어 이해에 활용하고, 명시적 정책 헤드를 통해 순차적 이력 정보를 모델링하며, 언어 조건부 조작 데이터셋에서 모방 학습을 통해 약간의 미세 조정만 수행합니다. 이러한 분해는 RoboFlamingo에게 개방 루프 제어와 저성능 플랫폼 배포의 유연성을 제공합니다. 테스트된 벤치마크에서 최첨단 성능을 큰 폭으로 초과함으로써, RoboFlamingo가 VLM을 로봇 제어에 적용하는 효과적이고 경쟁력 있는 대안이 될 수 있음을 보여줍니다. 또한 광범위한 실험 결과를 통해 다양한 사전 학습된 VLM이 조작 작업에서 보이는 행동에 관한 몇 가지 흥미로운 결론을 도출했습니다. 우리는 RoboFlamingo가 비용 효율적이고 사용하기 쉬운 로봇 조작 솔루션이 되어, 누구나 자신의 로봇 정책을 미세 조정할 수 있는 능력을 제공할 잠재력이 있다고 믿습니다.
-
-## 핵심 내용
-최근 비전-언어 기반 모델의 발전은 멀티모달 데이터를 이해하고 로봇 조작을 포함한 복잡한 비전-언어 작업을 해결할 수 있는 능력을 보여주고 있습니다. 우리는 기존의 비전-언어 모델(VLM)을 로봇 데이터에 간단한 미세 조정만으로 활용할 수 있는 직관적인 방법을 모색합니다. 이를 위해 오픈소스 VLM인 OpenFlamingo를 기반으로 한 간단하고 새로운 비전-언어 조작 프레임워크인 RoboFlamingo를 개발했습니다. 기존 연구와 달리 RoboFlamingo는 사전 학습된 VLM을 단일 단계 비전-언어 이해에 활용하고, 명시적 정책 헤드를 통해 순차적 이력 정보를 모델링하며, 언어 조건부 조작 데이터셋에서 모방 학습을 통해 약간의 미세 조정만 수행합니다. 이러한 분해는 RoboFlamingo에게 개방 루프 제어와 저성능 플랫폼 배포의 유연성을 제공합니다. 테스트된 벤치마크에서 최첨단 성능을 큰 폭으로 초과함으로써, RoboFlamingo가 VLM을 로봇 제어에 적용하는 효과적이고 경쟁력 있는 대안이 될 수 있음을 보여줍니다. 또한 광범위한 실험 결과를 통해 다양한 사전 학습된 VLM이 조작 작업에서 보이는 행동에 관한 몇 가지 흥미로운 결론을 도출했습니다. 우리는 RoboFlamingo가 비용 효율적이고 사용하기 쉬운 로봇 조작 솔루션이 되어, 누구나 자신의 로봇 정책을 미세 조정할 수 있는 능력을 제공할 잠재력이 있다고 믿습니다.
-
 ## 参考
 - http://arxiv.org/abs/2311.01378v3
+
+## 개요
+RoboFlamingo는 오픈소스 비전-언어 모델 OpenFlamingo를 기반으로 구축되었으며, 간단한 미세 조정만으로 로봇 조작 작업에 적응할 수 있습니다. 기존 연구와 달리, 이 프레임워크는 사전 훈련된 VLM을 활용하여 단일 단계 비전-언어 이해를 수행하고, 명시적 정책 헤드를 통해 시퀀스 이력 정보를 모델링하며, 언어 조건부 조작 데이터셋에서 모방 학습을 통한 경량 미세 조정만을 수행합니다. 이러한 분해 설계는 RoboFlamingo가 개루프 제어의 유연성을 갖추고, 저성능 플랫폼에서도 배포할 수 있게 합니다. 실험 결과, 이 모델은 테스트 벤치마크에서 현재 최고 성능 방법을 현저한 차이로 능가하며, VLM을 로봇 제어에 적응시키는 효과적이고 경쟁력 있는 솔루션임을 입증합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **기반 모델**: 오픈소스 VLM OpenFlamingo를 기반으로, 사전 훈련된 비전-언어 이해 능력을 활용합니다.
+- **핵심 설계**: 작업을 세 가지 모듈로 분해합니다:
+  - 단일 단계 비전-언어 이해 (사전 훈련된 VLM이 수행)
+  - 시퀀스 이력 정보 모델링 (명시적 정책 헤드를 통해 구현)
+  - 정책 학습 (언어 조건부 조작 데이터셋에서 모방 학습을 통해 미세 조정)
+- **제어 모드**: 개루프 제어를 지원하며, 저성능 플랫폼 배포에 적합합니다.
+
+### 실험 설정
+- **데이터셋**: 언어 조건부 조작 데이터셋을 사용하여 모방 학습 미세 조정을 수행합니다.
+- **벤치마크 테스트**: 표준 로봇 조작 벤치마크에서 평가하며, 여러 기준 방법과 비교합니다.
+- **주요 발견**:
+  - 서로 다른 사전 훈련된 VLM은 조작 작업에서 성능 차이가 현저합니다
+  - 간단한 미세 조정만으로도 큰 성능 향상을 얻을 수 있습니다
+  - 명시적 정책 헤드는 시퀀스 모델링에 필수적입니다
+
+### 주요 결과
+- 테스트 벤치마크에서 현재 최고 성능 방법(state-of-the-art)을 **큰 차이로** 능가합니다
+- 사전 훈련된 VLM이 간단한 미세 조정만으로 로봇 제어에 효과적으로 적응할 수 있음을 검증합니다
+- 서로 다른 VLM의 조작 작업에서의 행동 패턴을 밝혀냅니다
+
+### 결론
+RoboFlamingo는 저비용이고 사용하기 쉬운 로봇 조작 솔루션을 제공하여, 연구자들이 간단한 미세 조정만으로 자신만의 로봇 정책을 얻을 수 있게 합니다. 이 연구는 기존 비전-언어 모델을 로봇 제어에 활용하는 효과적이고 경쟁력 있는 새로운 패러다임을 제시합니다.

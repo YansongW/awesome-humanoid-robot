@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.26082v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.26082v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (562 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,23 @@ Humanoid robots have seen significant advancements in both design and control, w
 ## Content
 Humanoid robots have seen significant advancements in both design and control, with a growing emphasis on integrating these aspects to enhance overall performance. Traditionally, robot design has followed a sequential process, where control algorithms are developed after the hardware is finalized. However, this can be myopic and prevent robots from fully exploiting their hardware capabilities. Recent approaches advocate for co-design, optimizing both design and control in parallel to maximize robotic capabilities. This paper presents the Evolutionary Continuous Adaptive RL-based Co-Design (EA-CoRL) framework, which combines reinforcement learning (RL) with evolutionary strategies to enable continuous adaptation of the control policy to the hardware. EA-CoRL comprises two key components: Design Evolution, which explores the hardware choices using an evolutionary algorithm to identify efficient configurations, and Policy Continuous Adaptation, which fine-tunes a task-specific control policy across evolving designs to maximize performance rewards. We evaluate EA-CoRL by co-designing the actuators (gear ratios) and control policy of the RH5 humanoid for a highly dynamic chin-up task, previously unfeasible due to actuator limitations. Comparative results against state-of-the-art RL-based co-design methods show that EA-CoRL achieves higher fitness scores and broader design space exploration, highlighting the critical role of continuous policy adaptation in robot co-design.
 
-## 개요
-휴머노이드 로봇은 설계와 제어 모두에서 상당한 발전을 이루었으며, 이러한 측면을 통합하여 전반적인 성능을 향상시키는 데 점점 더 중점을 두고 있습니다. 전통적으로 로봇 설계는 하드웨어가 최종 확정된 후에 제어 알고리즘이 개발되는 순차적 프로세스를 따랐습니다. 그러나 이는 근시안적일 수 있으며 로봇이 하드웨어 성능을 완전히 활용하지 못하게 할 수 있습니다. 최근 접근 방식은 설계와 제어를 병렬로 최적화하여 로봇의 성능을 극대화하는 공동 설계(co-design)를 지지합니다. 본 논문은 강화 학습(RL)과 진화 전략을 결합하여 제어 정책을 하드웨어에 지속적으로 적응시킬 수 있는 EA-CoRL(Evolutionary Continuous Adaptive RL-based Co-Design) 프레임워크를 제시합니다. EA-CoRL은 두 가지 핵심 구성 요소로 이루어져 있습니다: 진화 알고리즘을 사용하여 효율적인 구성을 식별하기 위해 하드웨어 선택을 탐색하는 설계 진화(Design Evolution)와, 진화하는 설계 전반에 걸쳐 작업별 제어 정책을 미세 조정하여 성능 보상을 극대화하는 정책 지속 적응(Policy Continuous Adaptation)입니다. 우리는 EA-CoRL을 평가하기 위해 이전에는 액추에이터 한계로 인해 불가능했던 고동적 턱걸이(chin-up) 작업을 위해 RH5 휴머노이드의 액추에이터(기어비)와 제어 정책을 공동 설계했습니다. 최신 RL 기반 공동 설계 방법과의 비교 결과, EA-CoRL은 더 높은 적합도 점수와 더 넓은 설계 공간 탐색을 달성하여 로봇 공동 설계에서 지속적인 정책 적응의 중요한 역할을 강조합니다.
-
-## 핵심 내용
-휴머노이드 로봇은 설계와 제어 모두에서 상당한 발전을 이루었으며, 이러한 측면을 통합하여 전반적인 성능을 향상시키는 데 점점 더 중점을 두고 있습니다. 전통적으로 로봇 설계는 하드웨어가 최종 확정된 후에 제어 알고리즘이 개발되는 순차적 프로세스를 따랐습니다. 그러나 이는 근시안적일 수 있으며 로봇이 하드웨어 성능을 완전히 활용하지 못하게 할 수 있습니다. 최근 접근 방식은 설계와 제어를 병렬로 최적화하여 로봇의 성능을 극대화하는 공동 설계(co-design)를 지지합니다. 본 논문은 강화 학습(RL)과 진화 전략을 결합하여 제어 정책을 하드웨어에 지속적으로 적응시킬 수 있는 EA-CoRL(Evolutionary Continuous Adaptive RL-based Co-Design) 프레임워크를 제시합니다. EA-CoRL은 두 가지 핵심 구성 요소로 이루어져 있습니다: 진화 알고리즘을 사용하여 효율적인 구성을 식별하기 위해 하드웨어 선택을 탐색하는 설계 진화(Design Evolution)와, 진화하는 설계 전반에 걸쳐 작업별 제어 정책을 미세 조정하여 성능 보상을 극대화하는 정책 지속 적응(Policy Continuous Adaptation)입니다. 우리는 EA-CoRL을 평가하기 위해 이전에는 액추에이터 한계로 인해 불가능했던 고동적 턱걸이(chin-up) 작업을 위해 RH5 휴머노이드의 액추에이터(기어비)와 제어 정책을 공동 설계했습니다. 최신 RL 기반 공동 설계 방법과의 비교 결과, EA-CoRL은 더 높은 적합도 점수와 더 넓은 설계 공간 탐색을 달성하여 로봇 공동 설계에서 지속적인 정책 적응의 중요한 역할을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.26082v1
+
+## 개요
+전통적인 로봇 설계는 하드웨어를 먼저 결정하고 제어를 나중에 배치하는 직렬 프로세스를 따르며, 이는 하드웨어 잠재력의 발휘를 제한합니다. EA-CoRL 프레임워크는 설계 진화와 정책 연속 적응이라는 두 가지 모듈을 통해 하드웨어 구성(예: 기어비)과 제어 정책을 병렬로 최적화합니다. RH5 휴머노이드 로봇의 동적 턱걸이 작업에서 EA-CoRL은 액추에이터 제한으로 인해 이전에는 완료할 수 없었던 작업을 성공적으로 해결했으며, 기존 강화 학습 기반 공동 설계 방법보다 더 우수한 적합도 점수와 더 넓은 설계 공간 탐색을 달성했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+EA-CoRL 프레임워크는 두 가지 핵심 구성 요소를 포함합니다:
+- **설계 진화(Design Evolution)**: 진화 알고리즘을 사용하여 하드웨어 선택 공간을 탐색하고 효율적인 구성 방안을 식별합니다.
+- **정책 연속 적응(Policy Continuous Adaptation)**: 진화 과정에서 변화하는 설계에 맞춰 작업별 제어 정책을 지속적으로 미세 조정하여 성능 보상을 최대화합니다.
+
+### 실험 설정
+- **작업**: RH5 휴머노이드 로봇의 동적 턱걸이 작업으로, 액추에이터 제한으로 인해 이전에는 구현할 수 없었습니다.
+- **하드웨어 설계 매개변수**: 액추에이터의 기어비와 제어 정책을 공동 설계합니다.
+- **비교 방법**: 현재 최첨단 강화 학습 기반 공동 설계 방법과 비교합니다.
+
+### 주요 결과
+- EA-CoRL은 적합도 점수에서 비교 방법보다 우수합니다.
+- 더 넓은 설계 공간 탐색을 구현하여 로봇 공동 설계에서 정책 연속 적응의 핵심 역할을 입증했습니다.

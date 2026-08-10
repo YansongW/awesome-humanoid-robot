@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04591v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04591v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (973 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -102,11 +103,34 @@ sources:
 ## Overview
 Vision-Language-Action (VLA) models have demonstrated strong capabilities in robotic manipulation by integrating visual perception, language understanding, and robot action generation. Existing research has primarily focused on improving model architectures, training strategies, and dataset scale, while little attention has been paid to how demonstrations are collected and organized. We identify demonstration organization as a fundamental yet overlooked aspect of imitation learning, as it directly affects policy learning efficiency, training stability, and policy generalization. To address this gap, we propose a simple-to-complex structured demonstration collection strategy for VLA learning using a dual-arm robotic platform. Our approach systematically organizes data through three general principles: (i) decomposing complex manipulation tasks into progressively learnable sub-skills, (ii) standardizing the interaction environment to reduce unnecessary variability, and (iii) organizing demonstrations according to progressively increasing task complexity. This structured design enables VLA models to first acquire fundamental manipulation skills before learning increasingly complex task compositions, facilitating more effective learning of long-horizon manipulation tasks. We evaluate the proposed strategy on two representative robotic manipulation tasks: block grasping and sorting, and towel folding. Experimental results show consistent improvements in task success rate and training stability compared with the baseline method of directly collecting end-to-end complete task trajectories. These findings highlight demonstration organization as a previously underexplored but important factor in VLA learning and provide practical insights into efficient skill acquisition, scalable dataset construction, and long-horizon robotic manipulation.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 시각적 인식, 언어 이해 및 로봇 동작 생성을 통합하여 로봇 조작에서 강력한 성능을 입증했습니다. 기존 연구는 주로 모델 아키텍처, 훈련 전략 및 데이터셋 규모 개선에 초점을 맞춰 왔으며, 시연이 어떻게 수집되고 구성되는지에 대해서는 거의 주목하지 않았습니다. 우리는 시연 구성이 정책 학습 효율성, 훈련 안정성 및 정책 일반화에 직접적인 영향을 미치기 때문에 모방 학습의 근본적이면서도 간과된 측면이라고 파악합니다. 이러한 격차를 해결하기 위해, 우리는 이중 팔 로봇 플랫폼을 사용한 VLA 학습을 위한 단순-복잡 구조적 시연 수집 전략을 제안합니다. 우리의 접근 방식은 세 가지 일반 원칙을 통해 데이터를 체계적으로 구성합니다: (i) 복잡한 조작 작업을 점진적으로 학습 가능한 하위 기술로 분해, (ii) 상호작용 환경을 표준화하여 불필요한 변동성 감소, (iii) 점진적으로 증가하는 작업 복잡성에 따라 시연 구성. 이 구조적 설계는 VLA 모델이 점점 더 복잡한 작업 구성을 학습하기 전에 기본 조작 기술을 먼저 습득할 수 있게 하여, 장기적 조작 작업의 보다 효과적인 학습을 촉진합니다. 우리는 제안된 전략을 블록 잡기 및 정렬, 수건 접기라는 두 가지 대표적인 로봇 조작 작업에서 평가합니다. 실험 결과는 종단 간 완전 작업 궤적을 직접 수집하는 기준 방법과 비교하여 작업 성공률과 훈련 안정성에서 일관된 개선을 보여줍니다. 이러한 발견은 시연 구성이 VLA 학습에서 이전에 충분히 탐구되지 않았지만 중요한 요소임을 강조하며, 효율적인 기술 습득, 확장 가능한 데이터셋 구축 및 장기적 로봇 조작에 대한 실용적인 통찰력을 제공합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 시각적 인식, 언어 이해 및 로봇 동작 생성을 통합하여 로봇 조작에서 강력한 성능을 입증했습니다. 기존 연구는 주로 모델 아키텍처, 훈련 전략 및 데이터셋 규모 개선에 초점을 맞춰 왔으며, 시연이 어떻게 수집되고 구성되는지에 대해서는 거의 주목하지 않았습니다. 우리는 시연 구성이 정책 학습 효율성, 훈련 안정성 및 정책 일반화에 직접적인 영향을 미치기 때문에 모방 학습의 근본적이면서도 간과된 측면이라고 파악합니다. 이러한 격차를 해결하기 위해, 우리는 이중 팔 로봇 플랫폼을 사용한 VLA 학습을 위한 단순-복잡 구조적 시연 수집 전략을 제안합니다. 우리의 접근 방식은 세 가지 일반 원칙을 통해 데이터를 체계적으로 구성합니다: (i) 복잡한 조작 작업을 점진적으로 학습 가능한 하위 기술로 분해, (ii) 상호작용 환경을 표준화하여 불필요한 변동성 감소, (iii) 점진적으로 증가하는 작업 복잡성에 따라 시연 구성. 이 구조적 설계는 VLA 모델이 점점 더 복잡한 작업 구성을 학습하기 전에 기본 조작 기술을 먼저 습득할 수 있게 하여, 장기적 조작 작업의 보다 효과적인 학습을 촉진합니다. 우리는 제안된 전략을 블록 잡기 및 정렬, 수건 접기라는 두 가지 대표적인 로봇 조작 작업에서 평가합니다. 실험 결과는 종단 간 완전 작업 궤적을 직접 수집하는 기준 방법과 비교하여 작업 성공률과 훈련 안정성에서 일관된 개선을 보여줍니다. 이러한 발견은 시연 구성이 VLA 학습에서 이전에 충분히 탐구되지 않았지만 중요한 요소임을 강조하며, 효율적인 기술 습득, 확장 가능한 데이터셋 구축 및 장기적 로봇 조작에 대한 실용적인 통찰력을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04591v1
+
+## 개요
+기존 VLA 연구는 주로 모델 아키텍처, 훈련 전략, 데이터셋 규모에 초점을 맞추었지만, 시연 데이터의 수집 및 구성 방식을 간과했습니다. 본 논문은 시연 구성이 모방 학습에서 정책 학습 효율성, 훈련 안정성, 일반화 능력에 직접적인 영향을 미치는 핵심 요소임을 지적합니다. 이를 위해 저자들은 이중 팔 로봇 플랫폼 기반의 단순-복잡 구조화 시연 수집 전략을 제안합니다. 이는 복잡한 조작 작업을 점진적으로 학습 가능한 하위 기술로 분해하고, 불필요한 변이를 줄이기 위해 상호작용 환경을 표준화하며, 작업 복잡도가 증가하는 순서로 시연을 구성하는 세 가지 원칙을 통해 VLA 모델이 먼저 기초 조작 기술을 습득한 후 복잡한 작업 조합을 학습하도록 합니다. 실험 결과, 엔드투엔드 전체 작업 궤적을 직접 수집하는 기준 방법과 비교하여 블록 집기 분류와 수건 접기 두 작업에서 일관된 개선을 보였습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 시연 구성을 모방 학습의 기초 단계로 간주하고, 구조화된 설계를 통해 VLA 학습 효율성을 향상
+- **세 가지 원칙**:
+  1. **작업 분해**: 복잡한 조작 작업(예: 수건 접기)을 점진적으로 학습 가능한 하위 기술(예: 집기, 접기, 정렬)로 분해
+  2. **환경 표준화**: 작업대 레이아웃, 물체 초기 위치, 조명 조건을 고정하여 무관한 변이를 줄임
+  3. **복잡도 증가**: 먼저 단일 하위 기술 시연(예: 블록 집기)을 수집하고, 그 다음 조합 기술 시연(예: 집기 후 분류), 마지막으로 전체 작업 시연을 수집
+
+### 실험 설정
+- **플랫폼**: 이중 팔 로봇 플랫폼, RGB-D 카메라 및 힘 센서 장착
+- **작업**:
+  - 블록 집기 분류: 흩어진 블록에서 지정된 색상/모양의 블록을 집어 해당 영역에 배치
+  - 수건 접기: 무작위로 놓인 수건을 표준 형태로 접기
+- **기준선**: 엔드투엔드 전체 작업 궤적 직접 수집(구조화 없음)
+- **VLA 모델**: RT-2 아키텍처 기반, 동일한 훈련 하이퍼파라미터 사용
+
+### 주요 결과
+- **작업 성공률**:
+  - 블록 집기 분류: 구조화 정책 87.3%, 기준선 62.1%(25.2% 포인트 향상)
+  - 수건 접기: 구조화 정책 71.5%, 기준선 48.9%(22.6% 포인트 향상)
+- **훈련 안정성**: 구조화 정책의 손실 곡선이 더 매끄럽고, 수렴 속도가 약 30% 향상
+- **일반화 능력**: 물체 위치 오프셋 ±10cm, 조명 변화 조건에서 구조화 정책의 성공률 하락은 5-8%에 불과했지만, 기준선은 15-20% 하락
+
+### 결론
+시연 구성은 VLA 학습에서 이전에 간과되었지만 매우 중요한 요소입니다. 구조화 정책은 점진적 기술 습득을 통해 장시간 조작 작업의 학습 어려움을 효과적으로 해결하며, 효율적인 기술 습득, 확장 가능한 데이터셋 구축, 장시간 로봇 조작에 실용적인 통찰을 제공합니다.

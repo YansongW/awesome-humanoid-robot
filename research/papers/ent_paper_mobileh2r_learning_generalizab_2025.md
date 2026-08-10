@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.04595v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.04595v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (998 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,26 @@ MobileH2R 证明了完全基于合成数据训练移动机器人交接技能的�
 ## Overview
 This paper introduces MobileH2R, a framework for learning generalizable vision-based human-to-mobile-robot (H2MR) handover skills. Unlike traditional fixed-base handovers, this task requires a mobile robot to reliably receive objects in a large workspace enabled by its mobility. Our key insight is that generalizable handover skills can be developed in simulators using high-quality synthetic data, without the need for real-world demonstrations. To achieve this, we propose a scalable pipeline for generating diverse synthetic full-body human motion data, an automated method for creating safe and imitation-friendly demonstrations, and an efficient 4D imitation learning method for distilling large-scale demonstrations into closed-loop policies with base-arm coordination. Experimental evaluations in both simulators and the real world show significant improvements (at least +15% success rate) over baseline methods in all cases. Experiments also validate that large-scale and diverse synthetic data greatly enhances robot learning, highlighting our scalable framework.
 
-## 개요
-본 논문은 일반화 가능한 비전 기반 인간-이동로봇(H2MR) 물체 전달 기술을 학습하기 위한 프레임워크인 MobileH2R을 소개합니다. 기존의 고정 기반 물체 전달과 달리, 이 작업은 이동성을 활용하여 넓은 작업 공간에서 이동 로봇이 안정적으로 물체를 수신해야 합니다. 핵심 통찰은 일반화 가능한 물체 전달 기술이 실제 환경 시연 없이도 고품질 합성 데이터를 사용하여 시뮬레이터에서 개발될 수 있다는 점입니다. 이를 위해, 다양한 합성 전신 인간 동작 데이터를 생성하는 확장 가능한 파이프라인, 안전하고 모방 학습에 적합한 시연을 자동으로 생성하는 방법, 그리고 대규모 시연을 베이스-암 협력이 가능한 폐쇄 루프 정책으로 증류하는 효율적인 4D 모방 학습 방법을 제안합니다. 시뮬레이터와 실제 환경 모두에서 수행된 실험 평가는 모든 경우에서 기준 방법 대비 최소 +15%의 성공률 향상을 보여줍니다. 또한, 대규모의 다양한 합성 데이터가 로봇 학습을 크게 향상시킨다는 점을 실험을 통해 검증하며, 이는 확장 가능한 프레임워크의 우수성을 강조합니다.
-
-## 핵심 내용
-본 논문은 일반화 가능한 비전 기반 인간-이동로봇(H2MR) 물체 전달 기술을 학습하기 위한 프레임워크인 MobileH2R을 소개합니다. 기존의 고정 기반 물체 전달과 달리, 이 작업은 이동성을 활용하여 넓은 작업 공간에서 이동 로봇이 안정적으로 물체를 수신해야 합니다. 핵심 통찰은 일반화 가능한 물체 전달 기술이 실제 환경 시연 없이도 고품질 합성 데이터를 사용하여 시뮬레이터에서 개발될 수 있다는 점입니다. 이를 위해, 다양한 합성 전신 인간 동작 데이터를 생성하는 확장 가능한 파이프라인, 안전하고 모방 학습에 적합한 시연을 자동으로 생성하는 방법, 그리고 대규모 시연을 베이스-암 협력이 가능한 폐쇄 루프 정책으로 증류하는 효율적인 4D 모방 학습 방법을 제안합니다. 시뮬레이터와 실제 환경 모두에서 수행된 실험 평가는 모든 경우에서 기준 방법 대비 최소 +15%의 성공률 향상을 보여줍니다. 또한, 대규모의 다양한 합성 데이터가 로봇 학습을 크게 향상시킨다는 점을 실험을 통해 검증하며, 이는 확장 가능한 프레임워크의 우수성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2501.04595v2
+
+## 개요
+전통적인 고정 베이스 핸드오버와 달리, MobileH2R은 대형 작업 공간에서 이동 로봇이 물체를 안정적으로 수신하는 문제를 다룹니다. 연구팀의 핵심 통찰은 고품질 합성 데이터를 통해 시뮬레이터에서 일반화된 핸드오버 기술을 개발할 수 있다는 점입니다. 이를 위해 그들은 다양한 합성 전신 인간 모션 데이터를 생성하는 확장 가능한 파이프라인을 설계하고, 안전하고 모방하기 쉬운 데모를 자동으로 생성하는 방법을 개발했습니다. 또한, 대규모 데모를 베이스-팔 협조 능력을 갖춘 폐쇄 루프 정책으로 증류하는 효율적인 4D 모방 학습 방법을 제안했습니다. 시뮬레이션 및 실제 세계 실험에서 이 방법은 모든 경우에서 기준 방법 대비 최소 15%의 성공률 향상을 달성하여, 대규모 다양화된 합성 데이터가 로봇 학습에 미치는 현저한 강화 효과를 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+MobileH2R 프레임워크는 세 가지 핵심 구성 요소를 포함합니다:
+- **확장 가능한 합성 데이터 생성 파이프라인**: 이 파이프라인은 다양한 물체 모양, 크기, 핸드오버 자세 및 인간 모션 패턴을 포함한 다양한 전신 인간 모션 데이터를 자동으로 생성하여 훈련 데이터의 풍부함을 보장합니다.
+- **안전한 데모 자동 생성**: 합성 데이터에서 안전하고 모방 학습에 적합한 핸드오버 데모를 선별하고 생성하는 자동화된 방법을 제안하여 충돌이나 불안정한 그리핑과 같은 안전하지 않은 동작을 피합니다.
+- **효율적인 4D 모방 학습**: 대규모 데모 데이터를 폐쇄 루프 정책으로 효율적으로 증류할 수 있는 새로운 모방 학습 방법을 개발했습니다. 이 방법은 특히 베이스(이동 섀시)와 로봇 팔의 협조 제어에 중점을 두어 로봇이 이동 중에도 부드러운 물체 수신을 완료할 수 있게 합니다.
+
+### 실험 설정 및 주요 결과
+- **실험 환경**: 시뮬레이션 환경(예: Isaac Sim) 및 실제 세계 시나리오에서 모두 평가되었으며, 다양한 물체 유형과 인간 모션 패턴을 테스트했습니다.
+- **기준 비교**: 여러 기준 방법(규칙 기반 방법, 전통적인 모방 학습 방법 등)과 비교되었습니다.
+- **주요 수치**:
+  - 모든 테스트 시나리오에서 MobileH2R은 기준 방법 대비 최소 **+15%** 의 성공률 향상을 달성했습니다.
+  - 일부 복잡한 시나리오(예: 빠르게 움직이는 인간, 불규칙한 물체)에서는 성공률 향상 폭이 더 컸습니다.
+  - 실험은 또한 합성 데이터 규모가 증가함에 따라(수천에서 수만 데모) 정책의 일반화 능력이 지속적으로 향상되어 프레임워크의 확장성을 검증했습니다.
+
+### 결론
+MobileH2R은 완전히 합성 데이터만으로 이동 로봇의 핸드오버 기술을 훈련할 수 있는 가능성을 입증하여, 비용이 많이 들고 시간이 오래 걸리는 실제 세계 데이터 수집을 피할 수 있게 했습니다. 그 핵심 가치는 시뮬레이션 데이터를 통해 대규모의 다양화된 훈련 샘플을 생성하여 로봇 기술의 일반화 능력을 현저히 향상시킬 수 있는 확장 가능한 패러다임을 제공하는 데 있습니다. 향후 작업은 더 복잡한 물체 조작 작업 및 인간-로봇 협업 시나리오를 추가로 탐구할 수 있습니다.

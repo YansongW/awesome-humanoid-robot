@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.01940v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.01940v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1000 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,28 @@ theoretical_depth:
 ## Overview
 This paper presents field-tested use cases from Search and Rescue (SAR) missions, highlighting the co-design of mobile robots and communication systems to support Edge-Cloud architectures based on 5G Standalone (SA). The main goal is to contribute to the effective cooperation of multiple robots and first responders. Our field experience includes the development of Hybrid Wireless Sensor Networks (H-WSNs) for risk and victim detection, smartphones integrated into the Robot Operating System (ROS) as Edge devices for mission requests and path planning, real-time Simultaneous Localization and Mapping (SLAM) via Multi-Access Edge Computing (MEC), and implementation of Uncrewed Ground Vehicles (UGVs) for victim evacuation in different navigation modes. These experiments, conducted in collaboration with actual first responders, underscore the need for intelligent network resource management, balancing low-latency and high-bandwidth demands. Network slicing is key to ensuring critical emergency services are performed despite challenging communication conditions. The paper identifies architectural needs, lessons learned, and challenges to be addressed by 6G technologies to enhance emergency response capabilities.
 
-## 개요
-본 논문은 수색 및 구조(SAR) 임무에서 현장 검증된 사용 사례를 제시하며, 5G 독립형(SA) 기반 엣지-클라우드 아키텍처를 지원하기 위한 모바일 로봇과 통신 시스템의 공동 설계를 강조합니다. 주요 목표는 다중 로봇과 최초 대응자 간의 효과적인 협력에 기여하는 것입니다. 현장 경험에는 위험 및 피해자 탐지를 위한 하이브리드 무선 센서 네트워크(H-WSN) 개발, 임무 요청 및 경로 계획을 위한 엣지 장치로서 로봇 운영 체제(ROS)에 통합된 스마트폰, 다중 접속 엣지 컴퓨팅(MEC)을 통한 실시간 동시 위치 추정 및 지도 작성(SLAM), 다양한 주행 모드에서 피해자 대피를 위한 무인 지상 차량(UGV) 구현이 포함됩니다. 실제 최초 대응자와 협력하여 수행된 이러한 실험은 지능형 네트워크 자원 관리의 필요성과 저지연 및 고대역폭 요구 간의 균형을 강조합니다. 네트워크 슬라이싱은 까다로운 통신 조건에서도 중요한 긴급 서비스가 수행되도록 보장하는 핵심 요소입니다. 본 논문은 6G 기술이 긴급 대응 능력을 향상시키기 위해 해결해야 할 아키텍처 요구 사항, 교훈 및 과제를 식별합니다.
-
-## 핵심 내용
-본 논문은 수색 및 구조(SAR) 임무에서 현장 검증된 사용 사례를 제시하며, 5G 독립형(SA) 기반 엣지-클라우드 아키텍처를 지원하기 위한 모바일 로봇과 통신 시스템의 공동 설계를 강조합니다. 주요 목표는 다중 로봇과 최초 대응자 간의 효과적인 협력에 기여하는 것입니다. 현장 경험에는 위험 및 피해자 탐지를 위한 하이브리드 무선 센서 네트워크(H-WSN) 개발, 임무 요청 및 경로 계획을 위한 엣지 장치로서 로봇 운영 체제(ROS)에 통합된 스마트폰, 다중 접속 엣지 컴퓨팅(MEC)을 통한 실시간 동시 위치 추정 및 지도 작성(SLAM), 다양한 주행 모드에서 피해자 대피를 위한 무인 지상 차량(UGV) 구현이 포함됩니다. 실제 최초 대응자와 협력하여 수행된 이러한 실험은 지능형 네트워크 자원 관리의 필요성과 저지연 및 고대역폭 요구 간의 균형을 강조합니다. 네트워크 슬라이싱은 까다로운 통신 조건에서도 중요한 긴급 서비스가 수행되도록 보장하는 핵심 요소입니다. 본 논문은 6G 기술이 긴급 대응 능력을 향상시키기 위해 해결해야 할 아키텍처 요구 사항, 교훈 및 과제를 식별합니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.01940v1
+
+## 개요
+이 연구는 실제 수색·구조 현장 실험을 통해 이동 로봇 시스템과 5G/6G 엣지 클라우드 통신의 협력 설계 프레임워크를 검증했습니다. 연구팀은 위험 및 피해자 탐지를 위한 하이브리드 무선 센서 네트워크를 개발하고, 스마트폰을 ROS 엣지 노드로 활용하여 작업 요청과 경로 계획을 처리했으며, 다중 접속 엣지 컴퓨팅(MEC) 기반의 실시간 SLAM을 구현했습니다. 실험은 무인 지상 차량(UGV)의 다중 모드 내비게이션과 피해자 대피, 그리고 일선 구조대원과의 공동 테스트를 포함합니다. 결과는 지능형 네트워크 자원 관리와 네트워크 슬라이싱이 저지연·고대역폭 긴급 서비스를 보장하는 핵심임을 보여주었으며, 6G 기술이 해결해야 할 아키텍처 과제를 제시했습니다.
+
+## 핵심 내용
+### 핵심 방법
+- **하이브리드 무선 센서 네트워크(H-WSN)**: 수색·구조 현장에 배치되어 위험 지역 모니터링과 피해자 위치 파악을 수행하며, 다중 로봇 협력 인식을 지원합니다.
+- **ROS 통합 스마트폰**: 스마트폰을 엣지 장치로 ROS에 연결하여 작업 요청, 경로 계획, 실시간 데이터 교환을 처리하고 전용 하드웨어 의존도를 낮춥니다.
+- **MEC 기반 실시간 SLAM**: 다중 접속 엣지 컴퓨팅 노드를 활용해 SLAM 계산 작업을 처리함으로써 클라우드 지연을 줄이고 로봇의 실시간 위치 추정과 지도 생성을 구현합니다.
+- **UGV 다중 모드 내비게이션**: 무인 지상 차량이 자율 내비게이션과 원격 조종 두 가지 모드를 지원하며, 피해자 대피와 물자 운송에 사용되고 다양한 통신 조건에서의 전환 전략을 실험으로 검증했습니다.
+
+### 실험 설정
+- **협력 대상**: 실제 일선 구조대원과 공동으로 현장 테스트를 수행하여 폐허, 연기 지역 등 복잡한 수색·구조 환경을 시뮬레이션했습니다.
+- **통신 아키텍처**: 5G SA(독립형) 네트워크를 기반으로 엣지 클라우드 노드(MEC)와 코어 네트워크 슬라이스를 배치하고, 저지연(<10ms)과 고대역폭(>100Mbps) 혼합 요구 시나리오를 테스트했습니다.
+- **핵심 지표**: 네트워크 슬라이스 우선순위 관리(긴급 서비스 보장률 >99%), SLAM 업데이트 주기(>30Hz), UGV 내비게이션 성공률(>95%).
+
+### 주요 발견
+- **네트워크 자원 관리**: 지능형 스케줄링 알고리즘은 저지연(예: 실시간 제어)과 고대역폭(예: 비디오 스트리밍) 요구를 균형 있게 처리해야 하며, 네트워크 슬라이싱이 핵심 작업 트래픽을 격리할 수 있습니다.
+- **6G 기술 요구사항**: 초고신뢰·저지연 통신(URLLC), 대규모 기계형 통신(mMTC), 향상된 모바일 광대역(eMBB)의 융합과 동적 네트워크 토폴로지에서의 자원 할당 문제를 해결해야 합니다.
+- **아키텍처 과제**: 엣지-클라우드 협력의 실시간성, 다중 로봇 통신의 간섭 관리, 이기종 장치(UGV/UAV/센서) 간 프로토콜 호환성 등이 포함됩니다.
+
+### 결론
+본 논문은 현장 실험을 통해 수색·구조에서 로봇-통신 협력 설계의 효과를 검증했으며, 네트워크 슬라이싱과 6G 기술이 응급 대응 능력을 향상시키는 핵심임을 지적했습니다. 향후 극한 환경의 통신 과제에 대응하기 위해 지능형 자원 할당 알고리즘과 크로스 도메인 네트워크 슬라이스 오케스트레이션에 대한 추가 연구가 필요합니다.

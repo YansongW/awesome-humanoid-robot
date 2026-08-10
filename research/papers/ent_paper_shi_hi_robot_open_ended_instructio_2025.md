@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.19417v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.19417v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (830 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,33 @@ Hi Robot 通过分层架构有效解决了机器人对复杂指令和实时反�
 ## Overview
 Generalist robots that can perform a range of different tasks in open-world settings must be able to not only reason about the steps needed to accomplish their goals, but also process complex instructions, prompts, and even feedback during task execution. Intricate instructions (e.g., "Could you make me a vegetarian sandwich?" or "I don't like that one") require not just the ability to physically perform the individual steps, but the ability to situate complex commands and feedback in the physical world. In this work, we describe a system that uses vision-language models in a hierarchical structure, first reasoning over complex prompts and user feedback to deduce the most appropriate next step to fulfill the task, and then performing that step with low-level actions. In contrast to direct instruction following methods that can fulfill simple commands ("pick up the cup"), our system can reason through complex prompts and incorporate situated feedback during task execution ("that's not trash"). We evaluate our system across three robotic platforms, including single-arm, dual-arm, and dual-arm mobile robots, demonstrating its ability to handle tasks such as cleaning messy tables, making sandwiches, and grocery shopping. Videos are available at https://www.pi.website/research/hirobot
 
-## 개요
-개방형 환경에서 다양한 작업을 수행할 수 있는 제너럴리스트 로봇은 목표 달성에 필요한 단계를 추론할 수 있을 뿐만 아니라, 작업 실행 중 복잡한 지시, 프롬프트, 심지어 피드백까지 처리할 수 있어야 합니다. 복잡한 지시(예: "채식 샌드위치를 만들어 줄래요?" 또는 "그건 마음에 안 들어요")는 개별 단계를 물리적으로 수행하는 능력뿐만 아니라, 복잡한 명령과 피드백을 물리적 세계에 적절히 배치하는 능력을 요구합니다. 본 연구에서는 계층적 구조로 비전-언어 모델을 사용하는 시스템을 설명합니다. 이 시스템은 먼저 복잡한 프롬프트와 사용자 피드백을 추론하여 작업을 완료하기 위한 가장 적절한 다음 단계를 도출한 후, 저수준 동작으로 해당 단계를 수행합니다. 간단한 명령("컵을 집어 들어")을 수행할 수 있는 직접적인 지시 수행 방법과 달리, 우리 시스템은 복잡한 프롬프트를 추론하고 작업 실행 중 상황에 맞는 피드백("그건 쓰레기가 아니에요")을 통합할 수 있습니다. 우리는 단일 암, 이중 암, 이중 암 모바일 로봇을 포함한 세 가지 로봇 플랫폼에서 시스템을 평가하여, 지저분한 테이블 청소, 샌드위치 만들기, 식료품 쇼핑과 같은 작업을 처리하는 능력을 입증했습니다. 비디오는 https://www.pi.website/research/hirobot 에서 확인할 수 있습니다.
-
-## 핵심 내용
-개방형 환경에서 다양한 작업을 수행할 수 있는 제너럴리스트 로봇은 목표 달성에 필요한 단계를 추론할 수 있을 뿐만 아니라, 작업 실행 중 복잡한 지시, 프롬프트, 심지어 피드백까지 처리할 수 있어야 합니다. 복잡한 지시(예: "채식 샌드위치를 만들어 줄래요?" 또는 "그건 마음에 안 들어요")는 개별 단계를 물리적으로 수행하는 능력뿐만 아니라, 복잡한 명령과 피드백을 물리적 세계에 적절히 배치하는 능력을 요구합니다. 본 연구에서는 계층적 구조로 비전-언어 모델을 사용하는 시스템을 설명합니다. 이 시스템은 먼저 복잡한 프롬프트와 사용자 피드백을 추론하여 작업을 완료하기 위한 가장 적절한 다음 단계를 도출한 후, 저수준 동작으로 해당 단계를 수행합니다. 간단한 명령("컵을 집어 들어")을 수행할 수 있는 직접적인 지시 수행 방법과 달리, 우리 시스템은 복잡한 프롬프트를 추론하고 작업 실행 중 상황에 맞는 피드백("그건 쓰레기가 아니에요")을 통합할 수 있습니다. 우리는 단일 암, 이중 암, 이중 암 모바일 로봇을 포함한 세 가지 로봇 플랫폼에서 시스템을 평가하여, 지저분한 테이블 청소, 샌드위치 만들기, 식료품 쇼핑과 같은 작업을 처리하는 능력을 입증했습니다. 비디오는 https://www.pi.website/research/hirobot 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.19417v2
+
+## 개요
+Hi Robot 시스템은 계층적 비전-언어 모델 구조를 채택하며, 먼저 상위 수준 모델이 복잡한 프롬프트와 사용자 피드백을 추론하여 현재 작업을 완료하는 데 가장 적합한 다음 단계를 결정하고, 하위 수준 모델이 구체적인 동작을 실행합니다. "컵 집기"와 같은 단순한 명령만 처리할 수 있는 직접 명령 추종 방식과 달리, 이 시스템은 "채식 샌드위치 만들어 줄 수 있어?" 또는 "그건 마음에 안 들어"와 같은 복잡한 명령을 이해하고, 작업 실행 중에 "그건 쓰레기가 아니야"와 같은 상황적 피드백을 통합할 수 있습니다. 연구팀은 단일 팔, 이중 팔, 이중 팔 이동 로봇의 세 가지 플랫폼에서 시스템을 평가하여 어수선한 책상 정리, 샌드위치 만들기, 식료품 쇼핑 등의 작업에서의 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 계층적 비전-언어-행동 모델(Vision-Language-Action Models) 구조를 채택하여 작업 실행을 두 수준으로 나눕니다:
+  - **상위 수준 추론**: 비전-언어 모델을 활용하여 복잡한 명령과 사용자 피드백에 대한 의미론적 이해와 추론을 수행하고, 작업 단계 시퀀스에서 현재 가장 적합한 다음 작업을 선택합니다
+  - **하위 수준 실행**: 상위 수준에서 선택된 단계를 구체적인 로봇 동작 명령으로 변환하여 물리적 조작을 완료합니다
+- 직접 명령 추종 방식(단순한 "pick up the cup"과 같은 명령만 처리 가능)과 대조적으로, Hi Robot은 조건 판단과 사용자 피드백을 포함한 개방형 명령을 처리할 수 있습니다
+
+### 실험 설정
+- 세 가지 로봇 플랫폼에서 검증:
+  - 단일 팔 로봇
+  - 이중 팔 로봇
+  - 이중 팔 이동 로봇
+- 테스트 작업은 다양한 실제 시나리오를 포함:
+  - 어수선한 책상 정리(쓰레기와 비쓰레기 물건 구분 필요)
+  - 샌드위치 만들기("채식"과 같은 복잡한 요구 이해 필요)
+  - 식료품 쇼핑(동적 환경에서 다단계 작업 실행 필요)
+
+### 핵심 능력
+- "that's not trash"와 같은 실행 중 상황적 피드백을 이해하고 처리하여 후속 동작을 실시간으로 조정할 수 있습니다
+- 사전 정의된 작업 단계 시퀀스 없이 개방형 명령 추종을 지원합니다
+- 여러 로봇 플랫폼에서 일반화 능력을 입증했습니다
+
+### 결론
+Hi Robot은 계층적 아키텍처를 통해 복잡한 명령과 실시간 피드백에 대한 로봇의 이해 및 실행 문제를 효과적으로 해결하며, 개방형 세계에서의 다단계 조작 작업을 위한 범용 로봇의 실현 가능한 솔루션을 제공합니다.

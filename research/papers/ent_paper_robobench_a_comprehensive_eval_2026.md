@@ -61,8 +61,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.17801v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.17801v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (980 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -102,11 +103,33 @@ RoboBench 为量化高级认知提供全面框架，指导下一代 MLLM 向更�
 ## Overview
 Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a central challenge. Recent embodied systems often follow a dual-system paradigm, where System 2 performs high-level reasoning and System 1 handles low-level control. We refer to System 2 as the embodied brain, the cognitive core for decision-making in manipulation. Although evaluating this embodied brain is crucial, existing benchmarks mainly measure execution success or cover only limited aspects of high-level cognition and task realism. We introduce RoboBench, a benchmark for evaluating multimodal large language models (MLLMs) as embodied brains. RoboBench covers five dimensions: Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis. It spans 14 capabilities, 25 tasks, and 6,092 QA pairs. To improve realism, it draws from large-scale real robotic data and in-house collection across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation. For planning, RoboBench introduces an MLLM-as-world-simulator framework that assesses whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling more faithful evaluation of long-horizon reasoning than symbolic matching. Experiments on 18 state-of-the-art MLLMs reveal persistent limitations in implicit instruction understanding, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench offers a comprehensive scaffold for quantifying high-level cognition and guiding next-generation MLLMs toward more robust robotic intelligence.
 
-## 개요
-동적이고 비구조화된 환경에서 인지, 추론, 행동할 수 있는 로봇을 구축하는 것은 여전히 핵심 과제로 남아 있습니다. 최근의 구현형 시스템은 종종 이중 시스템 패러다임을 따르는데, System 2는 고수준 추론을 수행하고 System 1은 저수준 제어를 담당합니다. 우리는 System 2를 구현형 두뇌, 즉 조작 과정에서 의사 결정을 위한 인지적 핵심이라고 부릅니다. 이러한 구현형 두뇌를 평가하는 것은 중요하지만, 기존 벤치마크는 주로 실행 성공 여부를 측정하거나 고수준 인지 및 작업 현실성의 제한된 측면만을 다룹니다. 우리는 구현형 두뇌로서의 다중 모달 대규모 언어 모델(MLLM)을 평가하기 위한 벤치마크인 RoboBench를 소개합니다. RoboBench는 지시 이해, 지각 추론, 일반화 계획, 행동 가능성 예측, 실패 분석의 다섯 가지 차원을 다룹니다. 14가지 능력, 25가지 작업, 6,092개의 QA 쌍으로 구성됩니다. 현실성을 높이기 위해, 다양한 구현체, 속성이 풍부한 객체, 다중 시점 장면, 메모리 기반 내비게이션에 걸친 대규모 실제 로봇 데이터와 자체 수집 데이터를 활용합니다. 계획 측면에서 RoboBench는 MLLM-세계-시뮬레이터 프레임워크를 도입하여, 예측된 계획이 물리적 및 시각적 제약 하에서 중요한 객체 상태 변화를 달성할 수 있는지 평가함으로써, 기호적 매칭보다 장기 추론의 더 신뢰성 있는 평가를 가능하게 합니다. 18개의 최첨단 MLLM에 대한 실험은 암시적 지시 이해, 시공간 추론, 교차 시나리오 계획, 세분화된 행동 가능성 이해, 실패 진단에서 지속적인 한계를 드러냅니다. 우리는 또한 구현형 인지 능력이 하위 로봇 제어와 어떻게 관련되는지 분석합니다. RoboBench는 고수준 인지를 정량화하고 차세대 MLLM을 보다 강력한 로봇 지능으로 안내하기 위한 포괄적인 프레임워크를 제공합니다.
-
-## 핵심 내용
-동적이고 비구조화된 환경에서 인지, 추론, 행동할 수 있는 로봇을 구축하는 것은 여전히 핵심 과제로 남아 있습니다. 최근의 구현형 시스템은 종종 이중 시스템 패러다임을 따르는데, System 2는 고수준 추론을 수행하고 System 1은 저수준 제어를 담당합니다. 우리는 System 2를 구현형 두뇌, 즉 조작 과정에서 의사 결정을 위한 인지적 핵심이라고 부릅니다. 이러한 구현형 두뇌를 평가하는 것은 중요하지만, 기존 벤치마크는 주로 실행 성공 여부를 측정하거나 고수준 인지 및 작업 현실성의 제한된 측면만을 다룹니다. 우리는 구현형 두뇌로서의 다중 모달 대규모 언어 모델(MLLM)을 평가하기 위한 벤치마크인 RoboBench를 소개합니다. RoboBench는 지시 이해, 지각 추론, 일반화 계획, 행동 가능성 예측, 실패 분석의 다섯 가지 차원을 다룹니다. 14가지 능력, 25가지 작업, 6,092개의 QA 쌍으로 구성됩니다. 현실성을 높이기 위해, 다양한 구현체, 속성이 풍부한 객체, 다중 시점 장면, 메모리 기반 내비게이션에 걸친 대규모 실제 로봇 데이터와 자체 수집 데이터를 활용합니다. 계획 측면에서 RoboBench는 MLLM-세계-시뮬레이터 프레임워크를 도입하여, 예측된 계획이 물리적 및 시각적 제약 하에서 중요한 객체 상태 변화를 달성할 수 있는지 평가함으로써, 기호적 매칭보다 장기 추론의 더 신뢰성 있는 평가를 가능하게 합니다. 18개의 최첨단 MLLM에 대한 실험은 암시적 지시 이해, 시공간 추론, 교차 시나리오 계획, 세분화된 행동 가능성 이해, 실패 진단에서 지속적인 한계를 드러냅니다. 우리는 또한 구현형 인지 능력이 하위 로봇 제어와 어떻게 관련되는지 분석합니다. RoboBench는 고수준 인지를 정량화하고 차세대 MLLM을 보다 강력한 로봇 지능으로 안내하기 위한 포괄적인 프레임워크를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.17801v2
+
+## 개요
+RoboBench는 기존 벤치마크가 실행 성공률만 측정하거나 제한된 고급 인지 및 작업 현실성만 다루는 문제를 해결하기 위해 설계되었습니다. 대규모 실제 로봇 데이터와 내부 수집을 통해 얻은 다형태(multi-modal), 속성 풍부 객체, 다중 시점 장면, 메모리 기반 내비게이션 데이터에서 콘텐츠를 추출하여 현실성을 높입니다. 계획 평가에서 RoboBench는 MLLM-as-world-simulator 프레임워크를 채택하여 예측된 계획이 물리적 및 시각적 제약 하에서 핵심 객체 상태 변화를 달성할 수 있는지 검사함으로써, 기호 매칭보다 장기 추론을 더 충실하게 평가합니다. 18개의 최첨단 MLLM에 대한 실험은 암시적 명령 이해, 시공간 추론, 교차 장면 계획, 세분화된 기능 이해, 오류 진단에서 지속적인 부족을 드러냅니다. 이 벤치마크는 또한 구현 인지 능력과 하위 로봇 제어 간의 관계를 분석하여 고급 인지 정량화와 차세대 MLLM 지침을 위한 포괄적인 프레임워크를 제공합니다.
+
+## 핵심 내용
+### 배경 및 동기
+동적 비구조화 환경에서 인지, 추론, 행동할 수 있는 로봇 구축은 여전히 핵심 과제입니다. 현재 구현 시스템은 종종 이중 시스템 패러다임을 채택합니다: System 2는 고급 추론을 담당하고 System 1은 저수준 제어를 처리합니다. 본 논문은 System 2를 구현 뇌(embodied brain), 즉 조작 결정의 인지 핵심으로 부릅니다. 기존 벤치마크는 주로 실행 성공률을 측정하거나 고급 인지 및 작업 현실성의 제한된 측면만 다룹니다.
+
+### RoboBench 벤치마크 설계
+- **평가 차원**: 명령 이해, 지각 추론, 일반화 계획, 기능 예측, 오류 분석의 다섯 가지 차원을 다룹니다.
+- **규모**: 14가지 능력, 25개 작업, 6,092개의 질문-답변 쌍을 포함합니다.
+- **데이터 출처**: 현실성을 높이기 위해 대규모 실제 로봇 데이터와 내부 수집 데이터를 사용하며, 다양한 형태, 속성 풍부 객체, 다중 시점 장면, 메모리 기반 내비게이션을 포함합니다.
+
+### 계획 평가 혁신: MLLM-as-world-simulator
+- 전통적인 방법은 기호 매칭으로 계획을 평가하지만, RoboBench는 MLLM-as-world-simulator 프레임워크를 도입합니다.
+- 이 프레임워크는 예측된 계획이 물리적 및 시각적 제약 하에서 핵심 객체 상태 변화를 달성할 수 있는지 검사하여 장기 추론을 더 충실하게 평가합니다.
+
+### 실험 및 발견
+- 18개의 최첨단 MLLM에 대한 실험은 다음과 같은 지속적인 한계를 드러냅니다:
+  - 암시적 명령 이해 부족
+  - 시공간 추론 능력 약화
+  - 교차 장면 계획의 어려움
+  - 세분화된 기능 이해 제한
+  - 오류 진단 능력 부족
+- 구현 인지 능력과 하위 로봇 제어 간의 관계를 추가로 분석합니다.
+
+### 결론
+RoboBench는 고급 인지 정량화를 위한 포괄적인 프레임워크를 제공하여 차세대 MLLM이 더 견고한 로봇 지능으로 발전하도록 안내합니다.

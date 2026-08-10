@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05614v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05614v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (861 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,24 @@ SpecPrune-VLA 通过结合全局上下文与局部信息的剪枝策略，在保
 ## Overview
 Pruning is a typical acceleration technique for compute-bound models by removing computation on unimportant values. Recently, it has been applied to accelerate Vision-Language-Action (VLA) model inference. However, existing acceleration methods focus on local information from the current action step and ignore the global context, leading to >20% success rate drop and limited speedup in some scenarios. In this paper, we point out spatial-temporal consistency in VLA tasks: input images in consecutive steps exhibit high similarity, and propose the key insight that token selection should combine local information with global context of the model. Based on this, we propose SpecPrune-VLA, a training-free, two-level pruning method with heuristic control. (1) Action-level static pruning. We leverage global history and local attention to statically reduce visual tokens per action. (2) Layer-level dynamic pruning. We prune tokens adaptively per layer based on layer-wise importance. (3) Lightweight action-aware controller: We classify actions as coarse- or fine-grained by the speed of the end effector and adjust pruning aggressiveness accordingly. Extensive experiments show that SpecPrune-VLA achieves up to 1.57$\times$ speedup in LIBERO simulation and 1.70$\times$ on real-world tasks, with negligible success rate degradation.
 
-## 개요
-Pruning은 중요하지 않은 값에 대한 연산을 제거하여 계산 집약적 모델을 가속화하는 대표적인 기술입니다. 최근에는 Vision-Language-Action(VLA) 모델 추론을 가속화하는 데 적용되었습니다. 그러나 기존 가속 방법은 현재 행동 단계의 지역적 정보에만 집중하고 전역적 맥락을 무시하여, 일부 시나리오에서 20% 이상의 성공률 감소와 제한된 속도 향상을 초래합니다. 본 논문에서는 VLA 작업에서 시공간적 일관성(연속된 단계의 입력 이미지가 높은 유사성을 보임)을 지적하고, 토큰 선택이 지역 정보와 모델의 전역적 맥락을 결합해야 한다는 핵심 통찰을 제안합니다. 이를 바탕으로 훈련이 필요 없고 휴리스틱 제어를 적용한 이중 수준 가지치기 방법인 SpecPrune-VLA를 제안합니다. (1) 행동 수준 정적 가지치기: 전역 기록과 지역 주의를 활용하여 각 행동당 시각적 토큰을 정적으로 줄입니다. (2) 계층 수준 동적 가지치기: 계층별 중요도에 따라 각 계층에서 적응적으로 토큰을 제거합니다. (3) 경량 행동 인식 제어기: 종단 효과기의 속도에 따라 행동을 조립 또는 세밀하게 분류하고, 이에 따라 가지치기 공격성을 조정합니다. 광범위한 실험 결과, SpecPrune-VLA는 LIBERO 시뮬레이션에서 최대 1.57배, 실제 작업에서 최대 1.70배의 속도 향상을 달성하며 성공률 저하는 무시할 수준입니다.
-
-## 핵심 내용
-Pruning은 중요하지 않은 값에 대한 연산을 제거하여 계산 집약적 모델을 가속화하는 대표적인 기술입니다. 최근에는 Vision-Language-Action(VLA) 모델 추론을 가속화하는 데 적용되었습니다. 그러나 기존 가속 방법은 현재 행동 단계의 지역적 정보에만 집중하고 전역적 맥락을 무시하여, 일부 시나리오에서 20% 이상의 성공률 감소와 제한된 속도 향상을 초래합니다. 본 논문에서는 VLA 작업에서 시공간적 일관성(연속된 단계의 입력 이미지가 높은 유사성을 보임)을 지적하고, 토큰 선택이 지역 정보와 모델의 전역적 맥락을 결합해야 한다는 핵심 통찰을 제안합니다. 이를 바탕으로 훈련이 필요 없고 휴리스틱 제어를 적용한 이중 수준 가지치기 방법인 SpecPrune-VLA를 제안합니다. (1) 행동 수준 정적 가지치기: 전역 기록과 지역 주의를 활용하여 각 행동당 시각적 토큰을 정적으로 줄입니다. (2) 계층 수준 동적 가지치기: 계층별 중요도에 따라 각 계층에서 적응적으로 토큰을 제거합니다. (3) 경량 행동 인식 제어기: 종단 효과기의 속도에 따라 행동을 조립 또는 세밀하게 분류하고, 이에 따라 가지치기 공격성을 조정합니다. 광범위한 실험 결과, SpecPrune-VLA는 LIBERO 시뮬레이션에서 최대 1.57배, 실제 작업에서 최대 1.70배의 속도 향상을 달성하며 성공률 저하는 무시할 수준입니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.05614v3
+
+## 개요
+기존 VLA 모델 가속 방법은 현재 동작 단계의 국소 정보만 고려하여 전역 컨텍스트를 무시하므로, 성공률이 20% 이상 하락하고 가속 효과도 제한적입니다. SpecPrune-VLA는 VLA 작업에서 연속 단계 이미지가 높은 유사성을 보이는 공간-시간 일관성에 기반하여, 훈련이 필요 없는 2단계 프루닝 방법을 제안합니다: 동작 수준 정적 프루닝은 전역 히스토리와 국소 어텐션을 활용하여 각 동작의 시각 토큰 수를 줄이고, 계층별 동적 프루닝은 각 계층의 중요도에 따라 토큰을 적응적으로 제거하며, 경량 동작 인식 컨트롤러는 엔드 이펙터 속도에 따라 동작을 조립(coarse-grained)과 세밀(fine-grained)로 분류하여 프루닝 강도를 조정합니다. 실험 결과, 이 방법은 LIBERO 시뮬레이션에서 1.57배 가속, 실제 작업에서 1.70배 가속을 달성하면서도 성공률 손실은 거의 없습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+SpecPrune-VLA는 세 가지 핵심 구성 요소를 포함합니다:
+- **동작 수준 정적 프루닝**: 전역 히스토리 어텐션과 국소 어텐션을 활용하여 각 동작 단계에서 시각 토큰 수를 정적으로 줄이고, 작업과 가장 관련된 이미지 영역을 유지합니다.
+- **계층별 동적 프루닝**: 각 Transformer 계층의 어텐션 중요도 점수에 따라 중복 토큰을 적응적으로 제거하여, 고정 프루닝 비율로 인한 성능 손실을 방지합니다.
+- **동작 인식 컨트롤러**: 엔드 이펙터 속도를 통해 동작을 조립(빠른 이동)과 세밀(정밀 조작)로 분류하고, 조립 동작에는 더 공격적인 프루닝 전략을 적용하며, 세밀 동작에는 정밀도를 보장하기 위해 더 많은 토큰을 유지합니다.
+
+### 실험 설정 및 주요 수치
+- **시뮬레이션 환경**: LIBERO 벤치마크, 10개의 장시간 조작 작업 포함.
+- **실제 시나리오**: 7자유도 로봇 팔을 사용한 로봇 그리핑 및 배치 작업.
+- **가속 효과**: LIBERO 시뮬레이션에서 1.57배 가속, 실제 작업에서 1.70배 가속 달성.
+- **성공률**: 프루닝되지 않은 기준선 대비 성공률 하락이 1% 미만이며, 기존 방법(예: Token Merging)은 유사한 가속 비율에서 성공률이 20% 이상 하락합니다.
+
+### 결론
+SpecPrune-VLA는 전역 컨텍스트와 국소 정보를 결합한 프루닝 전략을 통해 작업 성공률을 유지하면서 VLA 모델 추론 속도를 크게 향상시키며, 추가 훈련이나 미세 조정이 필요 없습니다. 이 방법은 실시간 로봇 조작에서 대규모 모델 배포를 위한 효율적인 솔루션을 제공합니다.

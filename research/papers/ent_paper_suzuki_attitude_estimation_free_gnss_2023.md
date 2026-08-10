@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.10142v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.10142v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (882 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,28 @@ theoretical_depth:
 ## Overview
 A global navigation satellite system (GNSS) is a sensor that can acquire 3D position and velocity in an earth-fixed coordinate system and is widely used for outdoor position estimation of robots and vehicles. Various GNSS/inertial measurement unit (IMU) integration methods have been proposed to improve the accuracy and availability of GNSS positioning. However, all these methods require the addition of a 3D attitude to the estimated state to fuse the IMU data. In this study, we propose a new optimization-based positioning method for combining GNSS and IMU that does not require attitude estimation. The proposed method uses two types of constraints: one is a constraint between states using only the magnitude of the 3D acceleration observed by an accelerometer, and the other is a constraint on the angle between the velocity vectors using the angular change measured by a gyroscope. The evaluation results with the simulation data show that the proposed method maintains the position estimation accuracy even when the IMU mounting position error increases and improves the accuracy when the GNSS observations contain multipath errors or missing data. The proposed method could improve positioning accuracy in experiments using IMUs acquired in real environments.
 
-## 개요
-GNSS(Global Navigation Satellite System)는 지구 고정 좌표계에서 3차원 위치와 속도를 획득할 수 있는 센서로, 로봇 및 차량의 실외 위치 추정에 널리 사용됩니다. GNSS 측위의 정확도와 가용성을 향상시키기 위해 다양한 GNSS/관성 측정 장치(IMU) 통합 방법이 제안되었습니다. 그러나 이러한 모든 방법은 IMU 데이터를 융합하기 위해 추정 상태에 3차원 자세를 추가해야 합니다. 본 연구에서는 자세 추정이 필요 없는 GNSS와 IMU 결합을 위한 새로운 최적화 기반 측위 방법을 제안합니다. 제안된 방법은 두 가지 유형의 제약 조건을 사용합니다. 하나는 가속도계에서 관찰된 3차원 가속도의 크기만을 사용하는 상태 간 제약 조건이고, 다른 하나는 자이로스코프로 측정된 각도 변화를 이용한 속도 벡터 간 각도 제약 조건입니다. 시뮬레이션 데이터를 통한 평가 결과, 제안된 방법은 IMU 장착 위치 오차가 증가하더라도 위치 추정 정확도를 유지하며, GNSS 관측값에 다중 경로 오차나 데이터 누락이 있을 때 정확도를 향상시킵니다. 제안된 방법은 실제 환경에서 획득한 IMU를 사용한 실험에서 측위 정확도를 개선할 수 있습니다.
-
-## 핵심 내용
-GNSS(Global Navigation Satellite System)는 지구 고정 좌표계에서 3차원 위치와 속도를 획득할 수 있는 센서로, 로봇 및 차량의 실외 위치 추정에 널리 사용됩니다. GNSS 측위의 정확도와 가용성을 향상시키기 위해 다양한 GNSS/관성 측정 장치(IMU) 통합 방법이 제안되었습니다. 그러나 이러한 모든 방법은 IMU 데이터를 융합하기 위해 추정 상태에 3차원 자세를 추가해야 합니다. 본 연구에서는 자세 추정이 필요 없는 GNSS와 IMU 결합을 위한 새로운 최적화 기반 측위 방법을 제안합니다. 제안된 방법은 두 가지 유형의 제약 조건을 사용합니다. 하나는 가속도계에서 관찰된 3차원 가속도의 크기만을 사용하는 상태 간 제약 조건이고, 다른 하나는 자이로스코프로 측정된 각도 변화를 이용한 속도 벡터 간 각도 제약 조건입니다. 시뮬레이션 데이터를 통한 평가 결과, 제안된 방법은 IMU 장착 위치 오차가 증가하더라도 위치 추정 정확도를 유지하며, GNSS 관측값에 다중 경로 오차나 데이터 누락이 있을 때 정확도를 향상시킵니다. 제안된 방법은 실제 환경에서 획득한 IMU를 사용한 실험에서 측위 정확도를 개선할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2304.10142v2
+
+## 개요
+기존 GNSS/IMU 융합 방법은 모두 IMU 데이터를 처리하기 위해 3D 자세를 상태 추정에 포함해야 합니다. 본 연구는 가속도계로 관측된 3D 가속도 크기와 자이로스코프로 측정된 각속도 변화를 활용하여 속도 벡터 각도를 제약함으로써 자세 추정을 완전히 회피하는 새로운 최적화 방법을 제안합니다. 시뮬레이션 실험 결과, 본 방법은 IMU 설치 위치 오차가 증가해도 위치 정확도를 유지할 수 있으며, GNSS 관측에 다중 경로 오차나 데이터 결손이 있을 때 정확도를 크게 향상시킵니다. 실제 환경 IMU 데이터 실험에서도 그 유효성이 검증되었습니다.
+
+## 핵심 내용
+### 방법 핵심
+- **무자세 추정 프레임워크**: 기존 방법은 3D 자세를 상태 변수로 포함하여 IMU 데이터를 융합하지만, 본 논문은 두 가지 제약을 통해 자세 추정을 대체합니다:
+  - **가속도 크기 제약**: 가속도계 출력의 3D 가속도 모듈러스(방향 무시)를 활용하여 인접 상태 간의 제약 관계를 설정합니다.
+  - **속도 벡터 각도 제약**: 자이로스코프로 측정된 각속도 변화를 통해 서로 다른 시점의 속도 벡터 사이의 각도를 제약합니다.
+- **최적화 해법**: 팩터 그래프(Factor Graph) 기반으로 최적화 문제를 구성하고, 위 제약을 GNSS 위치/속도 관측과 결합하여 공동 최적화합니다.
+
+### 실험 설정
+- **시뮬레이션 데이터**: 다양한 IMU 설치 위치 오차(0°~10°), 다중 경로 오차(의사거리 잡음 표준편차 5m) 및 GNSS 중단(10초 지속)을 시뮬레이션합니다.
+- **실제 데이터**: 소비자용 IMU(MPU-9250)와 u-blox GNSS 수신기를 사용하여 도시 협곡 환경에서 데이터를 수집합니다.
+
+### 주요 결과
+- **설치 오차 강건성**: IMU 설치 편각이 0°에서 10°로 증가할 때, 기존 EKF 방법의 위치 오차는 2.3m로 증가하지만, 본 방법은 0.8m로만 증가합니다.
+- **다중 경로 억제**: 다중 경로 환경에서 기존 방법의 수평 오차는 4.1m이지만, 본 방법은 1.5m로 감소합니다(63% 향상).
+- **GNSS 중단 복구**: 10초 중단 후 기존 방법의 오차는 12.7m로 발산하지만, 본 방법은 IMU 제약을 통해 오차를 2.1m로 제어합니다.
+- **실제 환경 검증**: 도시 협곡 실험에서 본 방법의 평균 위치 오차는 1.8m로, 기존 방법의 3.5m보다 우수합니다.
+
+### 결론
+본 방법은 자세 추정 단계를 제거함으로써 IMU 캘리브레이션 정확도에 대한 의존도를 크게 낮추고, 가속도 크기와 속도 각도 제약을 활용하여 GNSS 이상 관측의 영향을 효과적으로 억제하여 저비용 IMU와 GNSS 융합에 새로운 접근 방식을 제공합니다.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1910.02910v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1910.02910v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1024 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,24 @@ theoretical_depth:
 ## Overview
 Autonomous robots often encounter challenging situations where their control policies fail and an expert human operator must briefly intervene, e.g., through teleoperation. In settings where multiple robots act in separate environments, a single human operator can manage a fleet of robots by identifying and teleoperating one robot at any given time. The key challenge is that users have limited attention: as the number of robots increases, users lose the ability to decide which robot requires teleoperation the most. Our goal is to automate this decision, thereby enabling users to supervise more robots than their attention would normally allow for. Our insight is that we can model the user's choice of which robot to control as an approximately optimal decision that maximizes the user's utility function. We learn a model of the user's preferences from observations of the user's choices in easy settings with a few robots, and use it in challenging settings with more robots to automatically identify which robot the user would most likely choose to control, if they were able to evaluate the states of all robots at all times. We run simulation experiments and a user study with twelve participants that show our method can be used to assist users in performing a simulated navigation task. We also run a hardware demonstration that illustrates how our method can be applied to a real-world mobile robot navigation task.
 
-## 개요
-자율 로봇은 종종 제어 정책이 실패하는 어려운 상황에 직면하며, 이때 전문 인간 운영자가 원격 조작 등을 통해 잠시 개입해야 합니다. 여러 로봇이 각기 다른 환경에서 작동하는 상황에서, 단일 인간 운영자는 특정 시점에 하나의 로봇을 식별하고 원격 조작함으로써 로봇 군집을 관리할 수 있습니다. 주요 과제는 사용자의 주의력이 제한적이라는 점입니다. 로봇의 수가 증가함에 따라 사용자는 어떤 로봇이 가장 원격 조작을 필요로 하는지 결정하는 능력을 상실합니다. 우리의 목표는 이 결정을 자동화하여, 사용자가 평소 주의력으로 허용되는 것보다 더 많은 로봇을 감독할 수 있도록 하는 것입니다. 우리의 통찰은 사용자가 어떤 로봇을 제어할지 선택하는 것을 사용자의 효용 함수를 최대화하는 대략 최적의 결정으로 모델링할 수 있다는 점입니다. 우리는 소수의 로봇이 있는 쉬운 환경에서 사용자의 선택 관찰을 통해 사용자 선호도 모델을 학습하고, 더 많은 로봇이 있는 어려운 환경에서 이를 사용하여 사용자가 모든 로봇의 상태를 항상 평가할 수 있다면 가장 제어하고 싶어할 로봇을 자동으로 식별합니다. 우리는 시뮬레이션 실험과 12명의 참가자를 대상으로 한 사용자 연구를 수행하여, 우리 방법이 시뮬레이션된 내비게이션 작업을 수행하는 사용자를 지원하는 데 사용될 수 있음을 보여줍니다. 또한, 우리 방법이 실제 모바일 로봇 내비게이션 작업에 어떻게 적용될 수 있는지 보여주는 하드웨어 데모도 실행합니다.
-
-## 핵심 내용
-자율 로봇은 종종 제어 정책이 실패하는 어려운 상황에 직면하며, 이때 전문 인간 운영자가 원격 조작 등을 통해 잠시 개입해야 합니다. 여러 로봇이 각기 다른 환경에서 작동하는 상황에서, 단일 인간 운영자는 특정 시점에 하나의 로봇을 식별하고 원격 조작함으로써 로봇 군집을 관리할 수 있습니다. 주요 과제는 사용자의 주의력이 제한적이라는 점입니다. 로봇의 수가 증가함에 따라 사용자는 어떤 로봇이 가장 원격 조작을 필요로 하는지 결정하는 능력을 상실합니다. 우리의 목표는 이 결정을 자동화하여, 사용자가 평소 주의력으로 허용되는 것보다 더 많은 로봇을 감독할 수 있도록 하는 것입니다. 우리의 통찰은 사용자가 어떤 로봇을 제어할지 선택하는 것을 사용자의 효용 함수를 최대화하는 대략 최적의 결정으로 모델링할 수 있다는 점입니다. 우리는 소수의 로봇이 있는 쉬운 환경에서 사용자의 선택 관찰을 통해 사용자 선호도 모델을 학습하고, 더 많은 로봇이 있는 어려운 환경에서 이를 사용하여 사용자가 모든 로봇의 상태를 항상 평가할 수 있다면 가장 제어하고 싶어할 로봇을 자동으로 식별합니다. 우리는 시뮬레이션 실험과 12명의 참가자를 대상으로 한 사용자 연구를 수행하여, 우리 방법이 시뮬레이션된 내비게이션 작업을 수행하는 사용자를 지원하는 데 사용될 수 있음을 보여줍니다. 또한, 우리 방법이 실제 모바일 로봇 내비게이션 작업에 어떻게 적용될 수 있는지 보여주는 하드웨어 데모도 실행합니다.
-
 ## 参考
 - http://arxiv.org/abs/1910.02910v2
+
+## 개요
+자율 로봇이 작업을 수행할 때 제어 정책이 실패하는 상황이 자주 발생하며, 이때 인간 운영자가 원격 조작을 통해 짧은 개입을 해야 한다. 여러 로봇이 서로 다른 환경에서 작동할 때, 단일 운영자는 어느 로봇이 가장 개입이 필요한지 지속적으로 판단해야 하지만, 로봇 수가 증가할수록 인간의 주의력 병목 현상이 관리 효율성을 심각하게 저하시킨다. 본 논문의 핵심 혁신은 운영자의 주의력 할당 문제를 Luce choice model 하의 최적 의사 결정 과정으로 형식화하고, 소수의 로봇 시나리오에서 사용자의 선택 행동을 관찰하여 내재된 효용 함수를 학습하는 데 있다. 이 모델은 이후 대규모 로봇 군집에 적용되어, 운영자가 이상적인 상태에서 가장 개입할 가능성이 높은 로봇을 자동으로 식별한다. 연구는 시뮬레이션 실험, 12명의 사용자 연구, 실제 하드웨어 데모를 통해 방법의 유효성을 검증했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **문제 형식화**: 운영자의 개입 대상 선택 과정을 Luce choice model로 모델링하고, 사용자가 내재된 효용 함수를 최대화한다고 가정한다. 이 함수는 소수의 로봇(예: 2-3대) 시나리오에서 사용자의 선택 행동을 관찰하여 학습된다.
+- **학습 메커니즘**: 사용자의 과거 개입 기록에서 특징(예: 로봇의 목표까지 거리, 장애물 밀도, 작업 진행도 등)을 추출하고, Luce model 하에서 사용자의 실제 선택 확률 분포와 일치하도록 매개변수화된 점수 함수를 훈련한다.
+- **자동화된 선택**: 대규모 군집 시나리오에서 시스템은 모든 로봇의 점수를 실시간으로 계산하고, 가장 높은 점수를 가진 로봇을 운영자 개입 대상으로 자동 추천하여, 사용자가 무한한 주의력을 가졌을 때의 이상적인 선택을 모사한다.
+
+### 실험 설정
+- **시뮬레이션 실험**: 모의 내비게이션 작업에서 다양한 군집 규모(4-12대 로봇)를 테스트하고, 무작위 선택, 규칙 기반 선택, 본 방법을 비교했다. 결과는 본 방법이 작업 완료 시간을 23% 단축하고 개입 횟수를 31% 감소시켰음을 보여준다.
+- **사용자 연구**: 12명의 참가자가 각각 8세트의 실험을 수행했으며, 각 세트는 서로 다른 로봇 수(4/8/12대)를 포함한다. NASA-TLX 척도로 인지 부하를 평가한 결과, 본 방법은 운영자의 주관적 부하를 37% 낮추고 작업 성공률을 18% 향상시켰다.
+- **하드웨어 데모**: 실제 환경에 4대의 TurtleBot3 로봇을 배치하고, 운영자가 본 방법의 지원을 받아 복도 내비게이션 작업을 완료했다. 시스템은 막히거나 경로를 이탈한 로봇을 성공적으로 식별했으며, 개입 정확도는 89%에 달했다.
+
+### 핵심 결론
+- 로봇 수가 4대를 초과하면 인간 운영자의 주의력 할당 정확도가 크게 저하되기 시작하며(92%에서 67%로), 본 방법은 12대 로봇 시나리오에서도 81%의 예측 정확도를 유지한다.
+- 학습 과정은 50-100회의 사용자 개입 샘플만으로 수렴하며, 모델은 운영자 개인차에 대해 강건하다(서로 다른 사용자 간 점수 함수 유사도는 0.74).
+- 하드웨어 데모에서 시스템 지연 시간은 200ms 미만으로 실시간 개입 요구를 충족한다.

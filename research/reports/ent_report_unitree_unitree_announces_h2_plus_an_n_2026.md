@@ -44,7 +44,8 @@ verification:
   reviewed_at: '2026-07-01'
   confidence: medium
   notes: 'Imported from Unitree official news API. News ID: 40. [2026-07-29] zh content backfilled from English abstract via
-    scripts/sinicize_english_cards.py'
+    scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (606 chars,
+    DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -74,9 +75,6 @@ Isaac GR00T 开发平台覆盖了人形机器人开发的全流程，包括：
 
 该平台旨在帮助开发者加速人形机器人的开发工作流程。
 
-## Overview
-News Summary: ●&nbsp;Unitree Robotics introduces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot combining a Unitree H2 humanoid robot, Sharpa five-fingered hands for dexterous manipulation, NVIDIA Jetson Thor for advanced reasoning and control, and the new NVIDIA Isaac GR00T development platform. ● The Isaac GR00T development platform &mdash; spanning data capture and generation to robot model evaluation and deployment &mdash; helps developers accelerate humanoid development workflows.
-
 ## 参考
 - https://www.unitree.com/mobile/news
 
@@ -100,3 +98,24 @@ Isaac GR00T 개발 플랫폼은 휴머노이드 로봇 개발의 전 과정을 �
 - 모델 배포
 
 이 플랫폼은 개발자가 휴머노이드 로봇 개발 워크플로우를 가속화하는 데 도움을 주기 위해 설계되었습니다.
+
+## Overview
+The H2 Plus, launched by Unitree Robotics, is a reference humanoid robot designed for academic research, based on NVIDIA Isaac GR00T. It combines the locomotion capabilities of the Unitree H2 humanoid robot with the Sharpa five-fingered dexterous hand, enabling fine manipulation. Its core computing unit is the NVIDIA Jetson Thor, responsible for advanced reasoning and control. Additionally, the new NVIDIA Isaac GR00T development platform covers the entire workflow from data collection and generation to model evaluation and deployment, helping developers significantly accelerate humanoid robot development.
+
+## Content
+### Product Overview
+Unitree Robotics has officially released the H2 Plus, a humanoid robot based on the NVIDIA Isaac GR00T reference architecture, primarily targeting the academic research sector.
+
+### Core Components
+- **Body**: Utilizes the Unitree H2 humanoid robot as the foundational platform.
+- **Dexterous Hand**: Equipped with the Sharpa five-fingered dexterous hand, offering fine manipulation capabilities.
+- **Computing Platform**: Powered by the NVIDIA Jetson Thor, providing advanced reasoning and control.
+- **Development Platform**: Integrates the new NVIDIA Isaac GR00T development platform.
+
+### Development Platform Features
+The Isaac GR00T development platform covers the entire humanoid robot development workflow, including:
+- Data collection and generation
+- Robot model evaluation
+- Model deployment
+
+This platform aims to assist developers in accelerating the humanoid robot development workflow.

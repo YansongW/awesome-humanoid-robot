@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.12185v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.12185v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1018 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,28 @@ ComFree-Sim 通过解析计算与 GPU 并行化，有效解决了接触丰富型
 ## Overview
 Physics simulation for contact-rich robotics is often bottlenecked by contact resolution: mainstream engines enforce non-penetration and Coulomb friction via complementarity constraints or constrained optimization, requiring per-step iterative solves whose cost grows superlinearly with contact density. We present ComFree-Sim, a GPU-parallelized analytical contact physics engine built on complementarity-free contact modeling. ComFree-Sim computes contact impulses in closed form via an impedance-style prediction--correction update in the dual cone of Coulomb friction. Contact computation decouples across contact pairs and becomes separable across cone facets, mapping naturally to GPU kernels and yielding near-linear runtime scaling with the number of contacts. We further extend the formulation to a unified 6D contact model capturing tangential, torsional, and rolling friction, and introduce a practical dual-cone impedance heuristic. ComFree-Sim is implemented in Warp and exposed through a MuJoCo-compatible interface as a drop-in backend alternative to MuJoCo Warp (MJWarp). Experiments benchmark penetration, friction behaviors, stability, and simulation runtime scaling against MJWarp, demonstrating near-linear scaling and 2--3 times higher throughput in dense contact scenes with comparable physical fidelity. We deploy ComFree-Sim in real-time MPC for in-hand dexterous manipulation on a real-world multi-fingered LEAP hand and in dynamics-aware motion retargeting, demonstrating that low-latency simulation yields higher closed-loop success rates and enables practical high-frequency control in contact-rich tasks.
 
-## 개요
-접촉이 많은 로봇 공학을 위한 물리 시뮬레이션은 종종 접촉 해석에 의해 병목 현상이 발생합니다. 주류 엔진은 상보성 제약 조건 또는 제약 최적화를 통해 비관통 및 쿨롱 마찰을 강제하며, 접촉 밀도에 따라 비용이 초선형적으로 증가하는 반복적 해법을 각 단계마다 필요로 합니다. 우리는 상보성 없는 접촉 모델링을 기반으로 구축된 GPU 병렬화 분석 접촉 물리 엔진인 ComFree-Sim을 제시합니다. ComFree-Sim은 쿨롱 마찰의 이중 원뿔에서 임피던스 스타일의 예측-보정 업데이트를 통해 폐쇄형으로 접촉 임펄스를 계산합니다. 접촉 계산은 접촉 쌍 간에 분리되고 원뿔 면에 걸쳐 분리 가능해져 GPU 커널에 자연스럽게 매핑되며, 접촉 수에 따라 거의 선형적인 런타임 확장성을 제공합니다. 우리는 또한 접선, 비틀림 및 구름 마찰을 포착하는 통합 6D 접촉 모델로 공식을 확장하고, 실용적인 이중 원뿔 임피던스 휴리스틱을 도입합니다. ComFree-Sim은 Warp로 구현되었으며 MuJoCo 호환 인터페이스를 통해 MuJoCo Warp(MJWarp)의 드롭인 백엔드 대안으로 제공됩니다. 실험은 MJWarp와 비교하여 관통, 마찰 거동, 안정성 및 시뮬레이션 런타임 확장성을 벤치마킹하며, 비슷한 물리적 충실도로 밀집 접촉 장면에서 거의 선형적인 확장성과 2~3배 높은 처리량을 보여줍니다. 우리는 실제 다지 LEAP 핸드를 사용한 손 안의 정밀 조작을 위한 실시간 MPC와 동역학 인식 모션 리타겟팅에 ComFree-Sim을 배포하여, 저지연 시뮬레이션이 더 높은 폐쇄 루프 성공률을 제공하고 접촉이 많은 작업에서 실용적인 고주파 제어를 가능하게 함을 입증합니다.
-
-## 핵심 내용
-접촉이 많은 로봇 공학을 위한 물리 시뮬레이션은 종종 접촉 해석에 의해 병목 현상이 발생합니다. 주류 엔진은 상보성 제약 조건 또는 제약 최적화를 통해 비관통 및 쿨롱 마찰을 강제하며, 접촉 밀도에 따라 비용이 초선형적으로 증가하는 반복적 해법을 각 단계마다 필요로 합니다. 우리는 상보성 없는 접촉 모델링을 기반으로 구축된 GPU 병렬화 분석 접촉 물리 엔진인 ComFree-Sim을 제시합니다. ComFree-Sim은 쿨롱 마찰의 이중 원뿔에서 임피던스 스타일의 예측-보정 업데이트를 통해 폐쇄형으로 접촉 임펄스를 계산합니다. 접촉 계산은 접촉 쌍 간에 분리되고 원뿔 면에 걸쳐 분리 가능해져 GPU 커널에 자연스럽게 매핑되며, 접촉 수에 따라 거의 선형적인 런타임 확장성을 제공합니다. 우리는 또한 접선, 비틀림 및 구름 마찰을 포착하는 통합 6D 접촉 모델로 공식을 확장하고, 실용적인 이중 원뿔 임피던스 휴리스틱을 도입합니다. ComFree-Sim은 Warp로 구현되었으며 MuJoCo 호환 인터페이스를 통해 MuJoCo Warp(MJWarp)의 드롭인 백엔드 대안으로 제공됩니다. 실험은 MJWarp와 비교하여 관통, 마찰 거동, 안정성 및 시뮬레이션 런타임 확장성을 벤치마킹하며, 비슷한 물리적 충실도로 밀집 접촉 장면에서 거의 선형적인 확장성과 2~3배 높은 처리량을 보여줍니다. 우리는 실제 다지 LEAP 핸드를 사용한 손 안의 정밀 조작을 위한 실시간 MPC와 동역학 인식 모션 리타겟팅에 ComFree-Sim을 배포하여, 저지연 시뮬레이션이 더 높은 폐쇄 루프 성공률을 제공하고 접촉이 많은 작업에서 실용적인 고주파 제어를 가능하게 함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.12185v2
+
+## 개요
+전통적인 접촉 시뮬레이션 엔진은 상보성 제약 또는 제약 최적화에 의존하기 때문에 계산 비용이 접촉 밀도에 따라 초선형적으로 증가하여, 접촉이 빈번한 로봇 시뮬레이션의 주요 병목 현상이 되었습니다. ComFree-Sim은 임피던스 기반 예측-수정 업데이트를 통해 쿨롱 마찰의 쌍대 원뿔에서 접촉 충격량을 직접 계산하여 반복 해법을 피합니다. 이 엔진은 접촉 계산을 독립적인 접촉 쌍으로 분리하고, 이를 다시 원뿔 면으로 분해하여 GPU 커널 병렬화에 자연스럽게 적합합니다. 실험 결과, ComFree-Sim은 MuJoCo Warp와 동등한 물리적 정확도를 유지하면서도 거의 선형적인 실행 시간 확장을 달성했으며, 밀집 접촉 시나리오에서 처리량이 2-3배 향상되었습니다. 이 엔진은 실제 세계의 다지 LEAP 손을 위한 실시간 모델 예측 제어 및 동역학 인식 동작 재타겟팅 작업에 성공적으로 적용되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **상보성 제약 없는 모델링**: ComFree-Sim은 전통적인 엔진에서 강제하는 비관통 및 쿨롱 마찰의 상보성 제약 또는 제약 최적화 방식을 버리고, 대신 해석적 형태로 접촉 충격량을 계산합니다.
+- **폐쇄형 해 계산**: 임피던스 기반 예측-수정 업데이트를 통해 쿨롱 마찰의 쌍대 원뿔에서 접촉 충격량을 직접 해결하여, 각 단계의 반복 해법을 피합니다.
+- **GPU 병렬화**: 접촉 계산이 접촉 쌍 간에 분리되고, 다시 마찰 원뿔의 각 원뿔 면으로 분해됩니다. 이러한 구조는 GPU 커널에 자연스럽게 매핑되어 접촉 수에 따른 거의 선형적인 실행 시간 확장을 구현합니다.
+- **통합 6D 접촉 모델**: 전통적인 모델을 확장하여 접선, 비틀림 및 구름 마찰을 동시에 포착하고, 실용적인 쌍대 원뿔 임피던스 휴리스틱을 도입합니다.
+
+### 구현 및 인터페이스
+- **구현 프레임워크**: Warp 기반으로 구현되었으며, MuJoCo 호환 인터페이스를 통해 노출되어 MuJoCo Warp (MJWarp)의 플러그 앤 플레이 백엔드 대체 옵션으로 사용될 수 있습니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: 관통, 마찰 거동, 안정성 및 시뮬레이션 실행 시간 확장 측면에서 MJWarp와 비교되었습니다.
+- **성능 데이터**: 밀집 접촉 시나리오에서 ComFree-Sim은 거의 선형적인 실행 시간 확장을 보여주었으며, 처리량은 MJWarp의 2-3배이면서도 비교 가능한 물리적 충실도를 유지했습니다.
+- **실제 배포**:
+  - **실시간 MPC**: 실제 세계의 다지 LEAP 손에서 손 안의 정밀 조작을 수행하며, 낮은 지연 시간 시뮬레이션이 더 높은 폐루프 성공률을 가져왔습니다.
+  - **동작 재타겟팅**: 동역학 인식 동작 재타겟팅 작업에서 실용적인 고주파 제어를 구현했습니다.
+
+### 결론
+ComFree-Sim은 해석적 계산과 GPU 병렬화를 통해 접촉이 빈번한 로봇 시뮬레이션의 계산 병목 현상을 효과적으로 해결하며, 물리적 정확도를 유지하면서 밀집 접촉 시나리오의 시뮬레이션 속도를 크게 향상시켰습니다. 또한 실제 로봇 제어 작업에서 그 실용적 가치를 검증했습니다.

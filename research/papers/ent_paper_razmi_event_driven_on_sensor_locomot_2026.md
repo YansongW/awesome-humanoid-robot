@@ -44,8 +44,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.21418v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.21418v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (683 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,23 @@ theoretical_depth:
 ## Overview
 This work presents a wearable human activity recognition (HAR) system that performs real-time inference directly inside a shank-mounted inertial measurement unit (IMU) to support low-latency control of a lower-limb exoskeleton. Unlike conventional approaches that continuously stream raw inertial data to a microcontroller for classification, the proposed system executes activity recognition at the sensor level using the embedded Machine Learning Core (MLC) of the STMicroelectronics LSM6DSV16X IMU, allowing the host microcontroller to remain in a low-power state and read only the recognized activity label from IMU registers. While the system generalizes to multiple human activities, this paper focuses on three representative locomotion modes - stance, level walking, and stair ascent - using data collected from adult participants. A lightweight decision-tree model was configured and deployed for on-sensor execution using ST MEMS Studio, enabling continuous operation without custom machine learning code on the microcontroller. During operation, the IMU asserts an interrupt when motion or a new classification is detected; the microcontroller wakes, reads the MLC output registers, and forwards the inferred mode to the exoskeleton controller. This interrupt-driven, on-sensor inference architecture reduces computation and communication overhead while preserving battery energy and improving robustness in distinguishing level walking from stair ascent for torque-assist control.
 
-## 개요
-본 연구는 하지 외골격의 저지연 제어를 지원하기 위해 정강이에 장착된 관성 측정 장치(IMU) 내에서 직접 실시간 추론을 수행하는 웨어러블 인간 활동 인식(HAR) 시스템을 제시합니다. 원시 관성 데이터를 지속적으로 마이크로컨트롤러로 스트리밍하여 분류하는 기존 방식과 달리, 제안된 시스템은 STMicroelectronics LSM6DSV16X IMU에 내장된 머신러닝 코어(MLC)를 사용하여 센서 수준에서 활동 인식을 실행합니다. 이를 통해 호스트 마이크로컨트롤러는 저전력 상태를 유지하고 IMU 레지스터에서 인식된 활동 레이블만 읽을 수 있습니다. 시스템은 여러 인간 활동에 일반화되지만, 본 논문은 성인 참가자로부터 수집된 데이터를 사용하여 세 가지 대표적인 이동 모드(정지, 평지 보행, 계단 오르기)에 초점을 맞춥니다. 경량 결정 트리 모델이 ST MEMS Studio를 사용하여 구성 및 배포되어 센서 내 실행이 가능하도록 하였으며, 마이크로컨트롤러에 사용자 정의 머신러닝 코드 없이 연속 작동이 가능합니다. 작동 중 IMU는 움직임 또는 새로운 분류가 감지되면 인터럽트를 발생시키고, 마이크로컨트롤러가 깨어나 MLC 출력 레지스터를 읽은 후 추론된 모드를 외골격 컨트롤러로 전달합니다. 이 인터럽트 기반의 센서 내 추론 아키텍처는 계산 및 통신 오버헤드를 줄이면서 배터리 에너지를 보존하고, 토크 지원 제어를 위해 평지 보행과 계단 오르기를 구분하는 강건성을 향상시킵니다.
-
-## 핵심 내용
-본 연구는 하지 외골격의 저지연 제어를 지원하기 위해 정강이에 장착된 관성 측정 장치(IMU) 내에서 직접 실시간 추론을 수행하는 웨어러블 인간 활동 인식(HAR) 시스템을 제시합니다. 원시 관성 데이터를 지속적으로 마이크로컨트롤러로 스트리밍하여 분류하는 기존 방식과 달리, 제안된 시스템은 STMicroelectronics LSM6DSV16X IMU에 내장된 머신러닝 코어(MLC)를 사용하여 센서 수준에서 활동 인식을 실행합니다. 이를 통해 호스트 마이크로컨트롤러는 저전력 상태를 유지하고 IMU 레지스터에서 인식된 활동 레이블만 읽을 수 있습니다. 시스템은 여러 인간 활동에 일반화되지만, 본 논문은 성인 참가자로부터 수집된 데이터를 사용하여 세 가지 대표적인 이동 모드(정지, 평지 보행, 계단 오르기)에 초점을 맞춥니다. 경량 결정 트리 모델이 ST MEMS Studio를 사용하여 구성 및 배포되어 센서 내 실행이 가능하도록 하였으며, 마이크로컨트롤러에 사용자 정의 머신러닝 코드 없이 연속 작동이 가능합니다. 작동 중 IMU는 움직임 또는 새로운 분류가 감지되면 인터럽트를 발생시키고, 마이크로컨트롤러가 깨어나 MLC 출력 레지스터를 읽은 후 추론된 모드를 외골격 컨트롤러로 전달합니다. 이 인터럽트 기반의 센서 내 추론 아키텍처는 계산 및 통신 오버헤드를 줄이면서 배터리 에너지를 보존하고, 토크 지원 제어를 위해 평지 보행과 계단 오르기를 구분하는 강건성을 향상시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.21418v1
+
+## 개요
+이 시스템은 STMicroelectronics의 LSM6DSV16X IMU로 구현되며, 내장된 머신러닝 코어(MLC)가 경량 결정 트리 모델을 직접 실행하여 보행 패턴 분류를 수행합니다. 기존 방식과 달리, 메인 마이크로컨트롤러는 IMU가 인터럽트를 트리거할 때만 인식 결과를 읽고, 나머지 시간에는 저전력 상태를 유지합니다. 실험은 세 가지 대표적인 보행 패턴에 초점을 맞추었으며, 데이터는 성인 피험자로부터 수집되었고, 모델은 ST MEMS Studio를 통해 구성 및 배포되어 사용자 정의 머신러닝 코드 작성이 필요 없습니다. 이러한 아키텍처는 계산 및 통신 오버헤드를 크게 줄이며, 평지 보행과 계단 오르기를 구분하는 데 강건성을 보여주어 외골격의 토크 보조 제어에 적합합니다.
+
+## 핵심 내용
+### 방법
+- 시스템은 STMicroelectronics LSM6DSV16X IMU의 임베디드 머신러닝 코어(MLC)를 기반으로 하며, 이 코어는 센서 내부에서 사전 훈련된 결정 트리 모델을 직접 실행할 수 있습니다.
+- 모델은 ST MEMS Studio 도구를 통해 구성되며, 메인 마이크로컨트롤러에 사용자 정의 머신러닝 코드를 작성할 필요 없이 경량 배포가 가능합니다.
+- 인터럽트 기반 아키텍처를 채택: IMU가 움직임 또는 새로운 분류 결과를 감지하면 인터럽트를 트리거하고, 메인 마이크로컨트롤러가 깨어나 MLC 출력 레지스터를 읽은 후 인식 결과를 외골격 컨트롤러로 전달합니다.
+
+### 실험 설정
+- 데이터는 성인 피험자로부터 수집되었으며, 세 가지 대표적인 보행 패턴을 포함합니다: 서 있기, 평지 보행, 계단 오르기.
+- 모델은 경량 결정 트리로, 센서 수준 실행에 최적화되어 실시간성과 저전력을 보장합니다.
+
+### 주요 수치 및 결론
+- 시스템은 센서 측에서 추론을 완료하며, 메인 마이크로컨트롤러는 인터럽트가 트리거될 때만 작동하여 전력 소비를 크게 줄입니다.
+- 원시 데이터를 지속적으로 전송하는 기존 방식과 비교하여, 이 아키텍처는 계산 및 통신 오버헤드를 줄이면서 평지 보행과 계단 오르기를 구분하는 강건성을 향상시킵니다.
+- 실험은 외골격의 토크 보조 제어에서 시스템의 유효성을 검증했으며, 저지연·저전력 실시간 보행 인식을 지원합니다.

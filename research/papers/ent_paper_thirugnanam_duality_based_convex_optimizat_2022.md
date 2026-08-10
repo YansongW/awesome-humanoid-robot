@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.08360v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.08360v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (536 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,27 @@ theoretical_depth:
 ## Overview
 Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem. To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem. A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian function for the dual form is applied to construct a control barrier function. We validate the obstacle avoidance with the proposed dual formulation for L-shaped (sofa-shaped) controlled robot in a corridor environment. We demonstrate real-time tight obstacle avoidance with non-conservative maneuvers on a moving sofa (piano) problem with nonlinear dynamics.
 
-## 개요
-폴리토프 간 장애물 회피를 위한 제어기 개발은 좁은 공간에서의 내비게이션을 위해 도전적이면서도 필수적인 문제입니다. 전통적인 접근 방식은 장애물 회피 문제를 오프라인 최적화 문제로만 공식화할 수 있습니다. 이러한 도전 과제를 해결하기 위해, 우리는 폴리토프 간 장애물 회피를 위한 비평활 제어 장벽 함수를 사용한 이중성 기반의 안전 중요 최적 제어를 제안하며, 이는 QP 기반 최적화 문제로 실시간으로 해결할 수 있습니다. 폴리토프 간 최소 거리를 나타내기 위해 이중 최적화 문제를 도입하고, 이중 형태에 대한 라그랑지안 함수를 적용하여 제어 장벽 함수를 구성합니다. 우리는 복도 환경에서 L자형(소파형) 제어 로봇에 대해 제안된 이중 공식을 사용하여 장애물 회피를 검증합니다. 비선형 동역학을 가진 움직이는 소파(피아노) 문제에서 비보수적 기동을 통한 실시간 밀착 장애물 회피를 시연합니다.
-
-## 핵심 내용
-폴리토프 간 장애물 회피를 위한 제어기 개발은 좁은 공간에서의 내비게이션을 위해 도전적이면서도 필수적인 문제입니다. 전통적인 접근 방식은 장애물 회피 문제를 오프라인 최적화 문제로만 공식화할 수 있습니다. 이러한 도전 과제를 해결하기 위해, 우리는 폴리토프 간 장애물 회피를 위한 비평활 제어 장벽 함수를 사용한 이중성 기반의 안전 중요 최적 제어를 제안하며, 이는 QP 기반 최적화 문제로 실시간으로 해결할 수 있습니다. 폴리토프 간 최소 거리를 나타내기 위해 이중 최적화 문제를 도입하고, 이중 형태에 대한 라그랑지안 함수를 적용하여 제어 장벽 함수를 구성합니다. 우리는 복도 환경에서 L자형(소파형) 제어 로봇에 대해 제안된 이중 공식을 사용하여 장애물 회피를 검증합니다. 비선형 동역학을 가진 움직이는 소파(피아노) 문제에서 비보수적 기동을 통한 실시간 밀착 장애물 회피를 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2107.08360v4
+
+## 개요
+다면체 간 장애물 회피라는 내비게이션 난제에 대해, 기존 방법은 오프라인 최적화만 가능했습니다. 본 논문은 혁신적으로 쌍대 최적화 문제를 도입하여 다면체 간 최소 거리를 표현하고, 쌍대 형식의 라그랑주 함수를 활용해 제어 장벽 함수를 구축함으로써, 장애물 회피 제약을 실시간으로 풀 수 있는 볼록 2차 계획법으로 변환합니다. 이 방법은 비선형 동역학을 가진 이동 소파(피아노) 문제에서 장애물에 밀착된 비보수적 기동을 구현했으며, 복도 환경에서 L자형 제어 로봇으로 검증되었습니다.
+
+## 핵심 내용
+### 방법 구조
+- 다면체 간 최소 거리 제약을 볼록 2차 계획법(QP) 문제로 변환하는, 쌍대 기반의 비매끄러운 제어 장벽 함수(CBF) 프레임워크 제안
+- 쌍대 최적화 문제를 도입하여 다면체 간 최소 거리를 표현하고, 쌍대 형식의 라그랑주 함수를 활용해 CBF를 구성
+- 기존 오프라인 최적화 문제를 실시간으로 풀 수 있는 QP 형태로 변환하여, 제어 아핀 비선형 시스템에 적용 가능
+
+### 실험 설정
+- 검증 환경: 복도 환경에서의 L자형(소파형) 제어 로봇
+- 테스트 과제: 비선형 동역학을 포함한 이동 소파(피아노) 문제
+- 핵심 지표: 실시간성, 비보수적 기동 능력
+
+### 주요 결과
+- 장애물에 밀착된 실시간 회피 제어를 성공적으로 구현
+- 비선형 동역학 조건에서 비보수적 기동을 완수하여 기존 방법의 보수성을 극복
+- QP 솔버를 통한 실시간 최적화로 안전 필수 제어 요구를 충족
+
+### 결론
+본 쌍대 프레임워크는 다면체 간 실시간 장애물 회피의 최적화 난제를 효과적으로 해결하며, 내비게이션 시스템에 온라인 배포 가능한 안전 보장 방안을 제공합니다.

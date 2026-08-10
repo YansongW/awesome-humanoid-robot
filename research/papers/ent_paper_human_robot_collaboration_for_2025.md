@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.05773v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.05773v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (495 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,25 @@ sources:
 ## Overview
 Recently, many humanoid robots have been increasingly deployed in various facilities, including hospitals and assisted living environments, where they are often remotely controlled by human operators. Their kinematic redundancy enhances reachability and manipulability, enabling them to navigate complex, cluttered environments and perform a wide range of tasks. However, this redundancy also presents significant control challenges, particularly in coordinating the movements of the robot's macro-micro structure (torso and arms). Therefore, we propose various human-robot collaborative (HRC) methods for coordinating the torso and arm of remotely controlled mobile humanoid robots, aiming to balance autonomy and human input to enhance system efficiency and task execution. The proposed methods include human-initiated approaches, where users manually control torso movements, and robot-initiated approaches, which autonomously coordinate torso and arm based on factors such as reachability, task goal, or inferred human intent. We conducted a user study with N=17 participants to compare the proposed approaches in terms of task performance, manipulability, and energy efficiency, and analyzed which methods were preferred by participants.
 
-## 개요
-최근 많은 휴머노이드 로봇이 병원 및 요양 시설을 포함한 다양한 시설에 점점 더 많이 배치되고 있으며, 종종 인간 운영자가 원격으로 제어합니다. 이들의 운동학적 중복성은 도달성과 조작성을 향상시켜 복잡하고 혼잡한 환경을 탐색하고 다양한 작업을 수행할 수 있게 합니다. 그러나 이러한 중복성은 특히 로봇의 매크로-마이크로 구조(몸통과 팔)의 움직임을 조정하는 데 있어 상당한 제어 문제를 야기합니다. 따라서 우리는 원격 제어 모바일 휴머노이드 로봇의 몸통과 팔을 조정하기 위한 다양한 인간-로봇 협업(HRC) 방법을 제안하며, 자율성과 인간 입력의 균형을 맞춰 시스템 효율성과 작업 실행을 향상시키는 것을 목표로 합니다. 제안된 방법에는 사용자가 수동으로 몸통 움직임을 제어하는 인간 주도 접근 방식과 도달성, 작업 목표 또는 추론된 인간 의도와 같은 요소에 기반하여 몸통과 팔을 자율적으로 조정하는 로봇 주도 접근 방식이 포함됩니다. 우리는 N=17명의 참가자로 사용자 연구를 수행하여 제안된 접근 방식을 작업 성능, 조작성 및 에너지 효율성 측면에서 비교하고 참가자가 선호하는 방법을 분석했습니다.
-
-## 핵심 내용
-최근 많은 휴머노이드 로봇이 병원 및 요양 시설을 포함한 다양한 시설에 점점 더 많이 배치되고 있으며, 종종 인간 운영자가 원격으로 제어합니다. 이들의 운동학적 중복성은 도달성과 조작성을 향상시켜 복잡하고 혼잡한 환경을 탐색하고 다양한 작업을 수행할 수 있게 합니다. 그러나 이러한 중복성은 특히 로봇의 매크로-마이크로 구조(몸통과 팔)의 움직임을 조정하는 데 있어 상당한 제어 문제를 야기합니다. 따라서 우리는 원격 제어 모바일 휴머노이드 로봇의 몸통과 팔을 조정하기 위한 다양한 인간-로봇 협업(HRC) 방법을 제안하며, 자율성과 인간 입력의 균형을 맞춰 시스템 효율성과 작업 실행을 향상시키는 것을 목표로 합니다. 제안된 방법에는 사용자가 수동으로 몸통 움직임을 제어하는 인간 주도 접근 방식과 도달성, 작업 목표 또는 추론된 인간 의도와 같은 요소에 기반하여 몸통과 팔을 자율적으로 조정하는 로봇 주도 접근 방식이 포함됩니다. 우리는 N=17명의 참가자로 사용자 연구를 수행하여 제안된 접근 방식을 작업 성능, 조작성 및 에너지 효율성 측면에서 비교하고 참가자가 선호하는 방법을 분석했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.05773v1
+
+## 개요
+이동형 휴머노이드 로봇은 운동의 중복성 덕분에 복잡한 환경에서 더 높은 도달성과 조작성을 제공하지만, 동시에 몸통과 팔의 협조 제어에 대한 도전 과제를 야기합니다. 이를 위해 본 논문은 인간이 몸통 운동을 수동으로 제어하는 인간 주도 방식과, 도달성, 작업 목표 또는 추론된 인간 의도에 기반하여 로봇이 몸통과 팔을 자율적으로 조정하는 로봇 주도 방식을 포함한 다양한 인간-로봇 협업 방법을 제안합니다. 연구는 17명의 참가자를 대상으로 한 사용자 실험을 통해 이러한 방법들을 작업 성능, 조작성 및 에너지 효율 측면에서 비교하고, 참가자들의 선호도를 분석했습니다.
+
+## 핵심 내용
+### 연구 배경 및 도전 과제
+- 휴머노이드 로봇은 병원, 보조 생활 시설 등에서 배치되고 있으며, 종종 원격 조종이 필요합니다.
+- 운동의 중복성은 도달성과 조작성을 향상시키지만, 몸통과 팔(매크로-마이크로 구조)의 협조 제어 난이도를 증가시킵니다.
+
+### 제안된 방법
+- **인간 주도 방식**: 사용자가 몸통 운동을 수동으로 제어하여 완전한 제어권을 유지합니다.
+- **로봇 주도 방식**: 로봇이 도달성, 작업 목표 또는 추론된 인간 의도에 기반하여 몸통과 팔의 운동을 자율적으로 조정합니다.
+
+### 실험 설정
+- 사용자 연구: N=17명의 참가자.
+- 평가 지표: 작업 성능, 조작성, 에너지 효율.
+- 분석 목표: 참가자들이 선호하는 방법을 결정합니다.
+
+### 결론
+- 다양한 방법 간에 작업 성능, 조작성 및 에너지 효율에서 차이가 나타났으며, 참가자 선호도는 상황에 따라 달라졌습니다.

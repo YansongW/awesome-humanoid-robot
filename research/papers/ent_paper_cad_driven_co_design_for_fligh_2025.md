@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14935v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14935v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (910 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,28 @@ sources:
 ## Overview
 This paper presents a CAD-driven co-design framework for optimizing jet-powered aerial humanoid robots to execute dynamically constrained trajectories. Starting from the iRonCub-Mk3 model, a Design of Experiments (DoE) approach is used to generate 5,000 geometrically varied and mechanically feasible designs by modifying limb dimensions, jet interface geometry (e.g., angle and offset), and overall mass distribution. Each model is constructed through CAD assemblies to ensure structural validity and compatibility with simulation tools. To reduce computational cost and enable parameter sensitivity analysis, the models are clustered using K-means, with representative centroids selected for evaluation. A minimum-jerk trajectory is used to assess flight performance, providing position and velocity references for a momentum-based linearized Model Predictive Control (MPC) strategy. A multi-objective optimization is then conducted using the NSGA-II algorithm, jointly exploring the space of design centroids and MPC gain parameters. The objectives are to minimize trajectory tracking error and mechanical energy expenditure. The framework outputs a set of flight-ready humanoid configurations with validated control parameters, offering a structured method for selecting and implementing feasible aerial humanoid designs.
 
-## 개요
-본 논문은 제트 추진 방식의 비행 인간형 로봇이 동적으로 제약된 궤적을 실행할 수 있도록 최적화하는 CAD 기반 공동 설계 프레임워크를 제시합니다. iRonCub-Mk3 모델을 기반으로 실험 계획법(DoE) 접근 방식을 사용하여, 팔다리 치수, 제트 인터페이스 형상(예: 각도 및 오프셋), 전체 질량 분포를 수정함으로써 기하학적으로 다양하고 기계적으로 실현 가능한 5,000개의 설계를 생성합니다. 각 모델은 CAD 어셈블리를 통해 구축되어 구조적 타당성과 시뮬레이션 도구와의 호환성을 보장합니다. 계산 비용을 줄이고 매개변수 민감도 분석을 가능하게 하기 위해, 모델은 K-평균을 사용하여 클러스터링되며, 평가를 위해 대표적인 중심점이 선택됩니다. 비행 성능을 평가하기 위해 최소 저크 궤적이 사용되며, 운동량 기반 선형화된 모델 예측 제어(MPC) 전략에 대한 위치 및 속도 참조를 제공합니다. 그런 다음 NSGA-II 알고리즘을 사용하여 다중 목적 최적화가 수행되며, 설계 중심점과 MPC 게인 매개변수의 공간을 공동으로 탐색합니다. 목표는 궤적 추적 오차와 기계적 에너지 소비를 최소화하는 것입니다. 프레임워크는 검증된 제어 매개변수를 갖춘 비행 가능한 인간형 구성을 출력하며, 실현 가능한 비행 인간형 설계를 선택하고 구현하기 위한 체계적인 방법을 제공합니다.
-
-## 핵심 내용
-본 논문은 제트 추진 방식의 비행 인간형 로봇이 동적으로 제약된 궤적을 실행할 수 있도록 최적화하는 CAD 기반 공동 설계 프레임워크를 제시합니다. iRonCub-Mk3 모델을 기반으로 실험 계획법(DoE) 접근 방식을 사용하여, 팔다리 치수, 제트 인터페이스 형상(예: 각도 및 오프셋), 전체 질량 분포를 수정함으로써 기하학적으로 다양하고 기계적으로 실현 가능한 5,000개의 설계를 생성합니다. 각 모델은 CAD 어셈블리를 통해 구축되어 구조적 타당성과 시뮬레이션 도구와의 호환성을 보장합니다. 계산 비용을 줄이고 매개변수 민감도 분석을 가능하게 하기 위해, 모델은 K-평균을 사용하여 클러스터링되며, 평가를 위해 대표적인 중심점이 선택됩니다. 비행 성능을 평가하기 위해 최소 저크 궤적이 사용되며, 운동량 기반 선형화된 모델 예측 제어(MPC) 전략에 대한 위치 및 속도 참조를 제공합니다. 그런 다음 NSGA-II 알고리즘을 사용하여 다중 목적 최적화가 수행되며, 설계 중심점과 MPC 게인 매개변수의 공간을 공동으로 탐색합니다. 목표는 궤적 추적 오차와 기계적 에너지 소비를 최소화하는 것입니다. 프레임워크는 검증된 제어 매개변수를 갖춘 비행 가능한 인간형 구성을 출력하며, 실현 가능한 비행 인간형 설계를 선택하고 구현하기 위한 체계적인 방법을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.14935v1
+
+## 개요
+이 연구는 제트 추진 공중 휴머노이드 로봇의 하드웨어 설계 문제를 해결하기 위해 CAD 기반 공동 설계 프레임워크를 제안한다. 프레임워크는 iRonCub-Mk3 모델에서 출발하여, 팔다리 치수, 제트 인터페이스 기하 파라미터(예: 각도 및 오프셋), 그리고 전체 질량 분포를 수정하고, 실험 설계 방법을 사용하여 5000개의 기하학적으로 다양하고 기계적으로 실현 가능한 설계안을 생성한다. 각 모델은 구조적 유효성을 보장하고 시뮬레이션 도구와 호환되도록 CAD 어셈블리를 통해 구축된다. 계산 비용을 줄이고 파라미터 민감도 분석을 가능하게 하기 위해, 모델은 K-means 클러스터링을 통해 대표 중심점을 선택하여 평가한다. 비행 성능 평가는 최소 가속도 궤적을 사용하며, 이는 모멘텀 기반 선형화 모델 예측 제어 전략에 위치 및 속도 참조를 제공한다. 마지막으로, NSGA-II 알고리즘을 사용한 다중 목표 최적화를 통해 설계 중심점과 MPC 게인 파라미터 공간을 공동으로 탐색하여 궤적 추적 오차와 기계적 에너지 소비를 최소화한다.
+
+## 핵심 내용
+### 방법 개요
+- **설계 공간 생성**: iRonCub-Mk3를 기준 모델로 사용하여, 실험 설계 방법을 통해 팔다리 치수, 제트 인터페이스 기하 파라미터(각도 및 오프셋) 및 질량 분포를 체계적으로 수정하여 5000개의 기하 변형을 생성한다.
+- **CAD 어셈블리 및 검증**: 각 설계는 CAD 어셈블리를 통해 구축되어 구조적 유효성과 시뮬레이션 도구 호환성을 보장한다.
+- **클러스터링 및 차원 축소**: K-means 알고리즘을 사용하여 5000개의 모델을 클러스터링하고, 대표 중심점을 선택하여 평가함으로써 계산 비용을 줄이고 파라미터 민감도 분석을 지원한다.
+- **궤적 및 제어**: 최소 가속도 궤적을 비행 성능 평가 기준으로 사용하며, 이는 모멘텀 기반 선형화 모델 예측 제어 전략에 위치 및 속도 참조를 제공한다.
+- **다중 목표 최적화**: NSGA-II 알고리즘을 사용하여 설계 중심점과 MPC 게인 파라미터를 공동으로 최적화하며, 목표 함수는 궤적 추적 오차와 기계적 에너지 소비를 최소화하는 것이다.
+
+### 실험 설정
+- **설계 변수**: 팔다리 길이, 제트 인터페이스 각도 및 오프셋, 질량 분포 등의 기하 및 물리 파라미터를 포함한다.
+- **제어 파라미터**: MPC 게인 파라미터가 최적화 변수 중 하나로 포함된다.
+- **평가 지표**: 궤적 추적 오차와 기계적 에너지 소비.
+
+### 주요 결과
+- 프레임워크는 검증된 제어 파라미터와 함께 비행 준비가 완료된 휴머노이드 로봇 구성 세트를 출력한다.
+- 실현 가능한 공중 휴머노이드 로봇 설계를 선택하고 구현하기 위한 구조화된 방법을 제공한다.
+
+### 결론
+이 CAD 기반 공동 설계 프레임워크는 하드웨어 설계와 제어 최적화를 효과적으로 통합하여, 제트 추진 공중 휴머노이드 로봇 개발을 위한 체계적인 도구를 제공하며, 설계 실현 가능성과 비행 성능을 크게 향상시킨다.

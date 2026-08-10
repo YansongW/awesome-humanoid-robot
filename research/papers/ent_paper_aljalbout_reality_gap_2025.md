@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.20808v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.20808v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (978 chars, DeepSeek).'
 sources:
 - id: src_paper_aljalbout_reality_gap_2025
   type: paper
@@ -75,11 +76,31 @@ theoretical_depth:
 ## Overview
 Machine learning has facilitated significant advancements across various robotics domains, including navigation, locomotion, and manipulation. Many such achievements have been driven by the extensive use of simulation as a critical tool for training and testing robotic systems prior to their deployment in real-world environments. However, simulations consist of abstractions and approximations that inevitably introduce discrepancies between simulated and real environments, known as the reality gap. These discrepancies significantly hinder the successful transfer of systems from simulation to the real world. Closing this gap remains one of the most pressing challenges in robotics. Recent advances in sim-to-real transfer have demonstrated promising results across various platforms, including locomotion, navigation, and manipulation. By leveraging techniques such as domain randomization, real-to-sim transfer, state and action abstractions, and sim-real co-training, many works have overcome the reality gap. However, challenges persist, and a deeper understanding of the reality gap's root causes and solutions is necessary. In this survey, we present a comprehensive overview of the sim-to-real landscape, highlighting the causes, solutions, and evaluation metrics for the reality gap and sim-to-real transfer.
 
-## 개요
-머신러닝은 내비게이션, 로코모션, 매니퓰레이션 등 다양한 로보틱스 분야에서 상당한 발전을 촉진했습니다. 이러한 성과 중 상당수는 실제 환경에 배치되기 전에 로봇 시스템을 훈련하고 테스트하는 핵심 도구로서 시뮬레이션의 광범위한 사용에 의해 주도되었습니다. 그러나 시뮬레이션은 추상화와 근사치로 구성되어 있어 시뮬레이션 환경과 실제 환경 간의 차이, 즉 현실 격차(reality gap)를 필연적으로 초래합니다. 이러한 차이는 시스템이 시뮬레이션에서 실제 세계로 성공적으로 이전되는 것을 크게 저해합니다. 이 격차를 해소하는 것은 로보틱스에서 가장 시급한 과제 중 하나로 남아 있습니다. 최근 시뮬레이션-실제 전환(sim-to-real transfer)의 발전은 로코모션, 내비게이션, 매니퓰레이션을 포함한 다양한 플랫폼에서 유망한 결과를 보여주었습니다. 도메인 무작위화(domain randomization), 실제-시뮬레이션 전환(real-to-sim transfer), 상태 및 행동 추상화(state and action abstractions), 시뮬레이션-실제 공동 훈련(sim-real co-training)과 같은 기술을 활용하여 많은 연구가 현실 격차를 극복했습니다. 그러나 여전히 과제가 남아 있으며, 현실 격차의 근본 원인과 해결책에 대한 더 깊은 이해가 필요합니다. 본 설문조사에서는 시뮬레이션-실제 전환 환경에 대한 포괄적인 개요를 제시하며, 현실 격차와 시뮬레이션-실제 전환의 원인, 해결책 및 평가 지표를 강조합니다.
-
-## 핵심 내용
-머신러닝은 내비게이션, 로코모션, 매니퓰레이션 등 다양한 로보틱스 분야에서 상당한 발전을 촉진했습니다. 이러한 성과 중 상당수는 실제 환경에 배치되기 전에 로봇 시스템을 훈련하고 테스트하는 핵심 도구로서 시뮬레이션의 광범위한 사용에 의해 주도되었습니다. 그러나 시뮬레이션은 추상화와 근사치로 구성되어 있어 시뮬레이션 환경과 실제 환경 간의 차이, 즉 현실 격차(reality gap)를 필연적으로 초래합니다. 이러한 차이는 시스템이 시뮬레이션에서 실제 세계로 성공적으로 이전되는 것을 크게 저해합니다. 이 격차를 해소하는 것은 로보틱스에서 가장 시급한 과제 중 하나로 남아 있습니다. 최근 시뮬레이션-실제 전환(sim-to-real transfer)의 발전은 로코모션, 내비게이션, 매니퓰레이션을 포함한 다양한 플랫폼에서 유망한 결과를 보여주었습니다. 도메인 무작위화(domain randomization), 실제-시뮬레이션 전환(real-to-sim transfer), 상태 및 행동 추상화(state and action abstractions), 시뮬레이션-실제 공동 훈련(sim-real co-training)과 같은 기술을 활용하여 많은 연구가 현실 격차를 극복했습니다. 그러나 여전히 과제가 남아 있으며, 현실 격차의 근본 원인과 해결책에 대한 더 깊은 이해가 필요합니다. 본 설문조사에서는 시뮬레이션-실제 전환 환경에 대한 포괄적인 개요를 제시하며, 현실 격차와 시뮬레이션-실제 전환의 원인, 해결책 및 평가 지표를 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.20808v1
+
+## 개요
+이 리뷰 논문은 기계 학습이 로봇 내비게이션, 이동, 조작 등의 분야에서 상당한 진전을 이루었으며, 이는 주로 시뮬레이션 환경의 광범위한 사용 덕분이라고 지적합니다. 그러나 시뮬레이션의 추상화와 근사화는 필연적으로 시뮬레이션 환경과 실제 환경 사이의 '현실 격차(reality gap)'를 초래하며, 이는 시스템이 시뮬레이션에서 실제 세계로 전이되는 것을 심각하게 방해합니다. 논문은 현실 격차를 명확히 지각 차이(perception discrepancy)와 행동-동역학 차이(action-dynamics discrepancy)의 두 가지 유형으로 구분하고, 도메인 무작위화(domain randomization), 실제-시뮬레이션 전이(real-to-sim transfer), 상태 및 행동 추상화(state and action abstractions), 시뮬레이션-실제 협력 훈련(sim-real co-training) 등의 완화 방법을 체계적으로 검토합니다. 이러한 기술들은 다양한 플랫폼에서 고무적인 결과를 보여주었지만, 현실 격차의 근본 원인과 해결책에 대한 더 깊은 이해가 여전히 필요하며 도전 과제가 남아 있습니다.
+
+## 핵심 내용
+### 핵심 문제
+- 현실 격차(reality gap)는 시뮬레이션의 추상화와 근사화에서 비롯되며, 시뮬레이션 환경과 실제 환경 사이에 무시할 수 없는 편차를 초래합니다.
+- 이러한 편차는 로봇 시스템이 시뮬레이션 훈련에서 실제 배포로 성공적으로 전이되는 것을 심각하게 방해합니다.
+
+### 격차 분류
+- **지각 차이(perception discrepancy)**: 시뮬레이션 센서 모델과 실제 센서 간의 차이로, 노이즈, 해상도, 조명 등을 포함합니다.
+- **행동-동역학 차이(action-dynamics discrepancy)**: 시뮬레이션 물리 엔진과 실제 물리 세계 간의 차이로, 마찰력, 관성, 접촉 동역학 등을 포함합니다.
+
+### 완화 전략
+- **도메인 무작위화(domain randomization)**: 시뮬레이션에서 시각적, 물리적 매개변수를 무작위화하여 정책이 강건한 특징을 학습하도록 강제합니다.
+- **시스템 식별(system identification)**: 실제 데이터를 통해 시뮬레이션 모델 매개변수를 보정하여 동역학 차이를 줄입니다.
+- **실제-시뮬레이션 전이(real-to-sim transfer)**: 실제 환경 데이터를 기반으로 더 정밀한 시뮬레이션 모델을 구축합니다.
+- **상태 및 행동 추상화(state and action abstractions)**: 시뮬레이션에서 상태 공간 또는 행동 공간을 단순화하여 전이 난이도를 낮춥니다.
+- **시뮬레이션-실제 협력 훈련(sim-real co-training)**: 시뮬레이션과 실제 데이터를 번갈아 사용하여 훈련하며 점진적으로 격차를 좁힙니다.
+
+### 평가 지표
+- 논문은 현실 격차의 축소 정도를 측정하기 위한 통일된 평가 지표의 필요성을 강조하며, 전이 성공률, 성능 감쇠율, 강건성 테스트 등을 포함합니다.
+
+### 결론
+- 기존 방법들이 다양한 플랫폼(예: 네 발 로봇, 로봇 팔, 드론)에서 진전을 이루었지만, 현실 격차의 근본 원인에 대한 더 깊은 이론적 분석이 여전히 필요합니다.
+- 향후 방향으로는 더 정밀한 지각 모델, 적응형 시스템 식별, 그리고 물리적 사전 지식을 결합한 혼합 훈련 방법 등이 포함됩니다.

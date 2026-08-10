@@ -41,7 +41,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/openloong-qinglong.md（访问日期 2026-07-01）。BOM 成本与执行器具体型号在公开检索中未见统一规格表，标注为未知；硬件/数据集仓库许可证为自定义或未明确（NOASSERTION）。
+  notes: '内容整理自调研档案 data/roadmap/research/openloong-qinglong.md（访问日期 2026-07-01）。BOM 成本与执行器具体型号在公开检索中未见统一规格表，标注为未知；硬件/数据集仓库许可证为自定义或未明确（NOASSERTION）。
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1809 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -54,7 +55,6 @@ sources:
   url: https://atomgit.com/openloong
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 OpenLoong（开放龙）/ "青龙"（Qinglong）是由国家地方共建人形机器人创新中心（上海，2023-12-28 成立、2024-05-17 揭牌）与人形机器人（上海）有限公司推出的全尺寸开源人形机器人公版机，2024-12-19 通过开放原子开源基金会（OpenAtom）TOC 评审，捐赠基金会孵化运营。整机身高超 185 cm、体重超 80 kg，全身 43 个主动自由度（含五指灵巧手，覆盖头/臂/腿/腰/踝）（来源：调研档案 openloong-qinglong.md，下同）。
@@ -136,3 +136,41 @@ OpenLoong(오픈롱) / "칭롱"(Qinglong)은 국가지방공동건설 휴머노�
 - openloong.org.cn 커뮤니티 + SIG 그룹 + 온/오프라인 활동(ROSCon China, ROS 여름학교 협력); 중국어 문서 위주로 국내 개발자에게 친화적이며, 영어 자료는 적음.
 - GitHub 스타 수 스냅샷: OpenLoong-Dyn-Control 339 stars, Unity-RL-Playground 315 stars, OpenLoong-Hardware 115 stars(2026-07-01 검색 시점), 조직 전체가 유지 관리 중.
 - 적합 대상: 국내 대학/기업 팀의 풀사이즈 기계 2차 개발; 185cm / 80kg 풀사이즈 모델은 개인이 집에서 재현할 수 없으며, 개인 초보자는 MuJoCo 제어 프레임워크만 학습용으로 사용하거나 NanoLoong에 주목할 것을 권장.
+
+## Overview
+
+OpenLoong (Open Dragon) / "Qinglong" is a full-size open-source humanoid robot reference model launched by the National and Local Co-built Humanoid Robot Innovation Center (Shanghai, established 2023-12-28, unveiled 2024-05-17) and Humanoid Robot (Shanghai) Co., Ltd. On 2024-12-19, it passed the TOC review of the OpenAtom Foundation and was donated to the foundation for incubation and operation. The robot stands over 185 cm tall, weighs over 80 kg, and has 43 active degrees of freedom (including five-finger dexterous hands, covering head/arms/legs/waist/ankles) (source: research file openloong-qinglong.md, same below).
+
+The project is positioned as an industry "reference model/root technology" and has been called by the media the world's first full-size humanoid full-stack open-source platform (hardware blueprints + MPC/WBC control + datasets). The main code repositories use the Apache-2.0 license; the OpenLoong-Hardware and OpenLoong-Dataset licenses are custom/unspecified (marked NOASSERTION on GitHub). Hardware cost is unknown—the open-source reference model is not sold directly, with media reports stating "pricing is ultimately set by manufacturers." In 2025-08, the community also released a lighter, lower-cost NanoLoong (small biped) which has been open-sourced.
+
+## Content
+
+### Key Parameters
+
+| Item | Value | Source |
+|---|---|---|
+| Height / Weight | Over 185 cm / Over 80 kg | Media and official presentation statements |
+| Active DOF | 43 (including five-finger dexterous hands) | Media reports |
+| Hardware Cost (BOM) | Unknown (reference model not sold directly; priced by manufacturers) | Research file |
+| Main Controller | 400 TOPS high-compute controller; embodied intelligence operating system (us-level response target) | 2024 WAIC release statements |
+| Bus | EtherCAT | Industry analysis articles and SDK repository evidence |
+| Beginner Friendliness | 2 / 5 (research file assessment) | Research file |
+
+### Actuators and Hardware
+
+- The 2024 "Qinglong" uses rotary actuators as the primary drive units (per 2024 WAIC official presentation); the next-generation reference model plans to adopt linear actuators.
+- Specific motor/reducer models and torque parameters lack a unified specification table; refer to the selection files in the OpenLoong-Hardware repository.
+- Open-source hardware includes design specifications, STEP models, circuit schematics, and installation/maintenance manuals.
+- Sensors: no unified list officially released; ecosystem projects (dora-rs/dora-openloong) integrate Intel RealSense D435 RGB-D cameras and microphone arrays on real hardware.
+
+### Software Stack
+
+- OpenLoong-Dyn-Control: A whole-body dynamics control framework based on MPC (Model Predictive Control) + WBC (Whole-Body Control), deployable in MuJoCo simulation, providing three examples—walking, jumping, and blind obstacle stepping—with walking and blind obstacle stepping already demonstrated on physical prototypes; includes built-in core dependencies, modular layering, and emphasizes ease of deployment/extension/understanding.
+- Other repositories: Gymloong (training platform), MiniGym, Unity-RL-Playground, OpenLoong-ROS, OpenLoong-Brain (large-model skill scheduling), loong_driver_sdk, loong_sim/loong_deployment, OpenLoong-Dataset (walking/tabletop sorting/scene operation data).
+- Released simultaneously on GitHub (`loongOpen` organization) and AtomGit (atomgit.com/openloong); the software layer also includes supporting systems such as the "Zhuque" brain large model, "Xuanwu" cerebellum reinforcement learning model, "Baihu" dataset, and "Qilin" training ground (part of the innovation center's overall ecosystem, not all open-sourced).
+
+### Community and Target Audience
+
+- openloong.org.cn community + SIG groups + online/offline events (ROSCon China, ROS summer school collaborations); primarily Chinese documentation, friendly to domestic developers, with limited English resources.
+- GitHub star snapshot: OpenLoong-Dyn-Control 339 stars, Unity-RL-Playground 315 stars, OpenLoong-Hardware 115 stars (as of 2026-07-01 retrieval), with the organization actively maintained.
+- Suitable for: domestic university/enterprise teams conducting full-size machine secondary development; the 185 cm / 80 kg full-size model cannot be replicated at home by individuals—individual beginners are advised to use only its MuJoCo control framework for learning, or follow NanoLoong instead.

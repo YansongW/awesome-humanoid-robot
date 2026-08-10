@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.08820v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.08820v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (927 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,30 @@ RoboChemist 通过 VLM 与 VLA 的协同，实现了长时程、安全合规的�
 ## Overview
 Robotic chemists promise to both liberate human experts from repetitive tasks and accelerate scientific discovery, yet remain in their infancy. Chemical experiments involve long-horizon procedures over hazardous and deformable substances, where success requires not only task completion but also strict compliance with experimental norms. To address these challenges, we propose \textit{RoboChemist}, a dual-loop framework that integrates Vision-Language Models (VLMs) with Vision-Language-Action (VLA) models. Unlike prior VLM-based systems (e.g., VoxPoser, ReKep) that rely on depth perception and struggle with transparent labware, and existing VLA systems (e.g., RDT, pi0) that lack semantic-level feedback for complex tasks, our method leverages a VLM to serve as (1) a planner to decompose tasks into primitive actions, (2) a visual prompt generator to guide VLA models, and (3) a monitor to assess task success and regulatory compliance. Notably, we introduce a VLA interface that accepts image-based visual targets from the VLM, enabling precise, goal-conditioned control. Our system successfully executes both primitive actions and complete multi-step chemistry protocols. Results show 23.57% higher average success rate and a 0.298 average increase in compliance rate over state-of-the-art VLA baselines, while also demonstrating strong generalization to objects and tasks.
 
-## 개요
-로봇 화학자는 인간 전문가를 반복적인 작업에서 해방시키고 과학적 발견을 가속화할 것을 약속하지만, 아직 초기 단계에 머물러 있습니다. 화학 실험은 위험하고 변형 가능한 물질을 다루는 장기적인 절차를 포함하며, 성공을 위해서는 작업 완료뿐만 아니라 실험 규범을 엄격히 준수해야 합니다. 이러한 과제를 해결하기 위해, 우리는 Vision-Language Models(VLM)과 Vision-Language-Action(VLA) 모델을 통합한 이중 루프 프레임워크인 \textit{RoboChemist}를 제안합니다. 깊이 인식에 의존하고 투명한 실험 도구에 어려움을 겪는 기존 VLM 기반 시스템(예: VoxPoser, ReKep)과 복잡한 작업에 대한 의미 수준의 피드백이 부족한 기존 VLA 시스템(예: RDT, pi0)과 달리, 우리의 방법은 VLM을 (1) 작업을 기본 동작으로 분해하는 계획자, (2) VLA 모델을 안내하는 시각적 프롬프트 생성기, (3) 작업 성공 및 규정 준수를 평가하는 모니터로 활용합니다. 특히, 우리는 VLM의 이미지 기반 시각적 목표를 수용하는 VLA 인터페이스를 도입하여 정밀하고 목표 조건화된 제어를 가능하게 합니다. 우리 시스템은 기본 동작과 완전한 다단계 화학 프로토콜을 모두 성공적으로 실행합니다. 결과는 최신 VLA 기준선 대비 평균 성공률이 23.57% 더 높고, 준수율이 평균 0.298 증가했으며, 객체와 작업에 대한 강력한 일반화 능력을 보여줍니다.
-
-## 핵심 내용
-로봇 화학자는 인간 전문가를 반복적인 작업에서 해방시키고 과학적 발견을 가속화할 것을 약속하지만, 아직 초기 단계에 머물러 있습니다. 화학 실험은 위험하고 변형 가능한 물질을 다루는 장기적인 절차를 포함하며, 성공을 위해서는 작업 완료뿐만 아니라 실험 규범을 엄격히 준수해야 합니다. 이러한 과제를 해결하기 위해, 우리는 Vision-Language Models(VLM)과 Vision-Language-Action(VLA) 모델을 통합한 이중 루프 프레임워크인 \textit{RoboChemist}를 제안합니다. 깊이 인식에 의존하고 투명한 실험 도구에 어려움을 겪는 기존 VLM 기반 시스템(예: VoxPoser, ReKep)과 복잡한 작업에 대한 의미 수준의 피드백이 부족한 기존 VLA 시스템(예: RDT, pi0)과 달리, 우리의 방법은 VLM을 (1) 작업을 기본 동작으로 분해하는 계획자, (2) VLA 모델을 안내하는 시각적 프롬프트 생성기, (3) 작업 성공 및 규정 준수를 평가하는 모니터로 활용합니다. 특히, 우리는 VLM의 이미지 기반 시각적 목표를 수용하는 VLA 인터페이스를 도입하여 정밀하고 목표 조건화된 제어를 가능하게 합니다. 우리 시스템은 기본 동작과 완전한 다단계 화학 프로토콜을 모두 성공적으로 실행합니다. 결과는 최신 VLA 기준선 대비 평균 성공률이 23.57% 더 높고, 준수율이 평균 0.298 증가했으며, 객체와 작업에 대한 강력한 일반화 능력을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.08820v1
+
+## 개요
+RoboChemist는 화학 실험에서의 장시간 조작, 위험 및 변형 가능한 물질 처리 요구를 해결하기 위해 이중 루프 프레임워크를 제안한다. 이 프레임워크는 VLM을 플래너, 시각 프롬프트 생성기 및 모니터로 활용하여 복잡한 작업을 기본 동작으로 분해하고, VLA 모델을 안내하는 이미지 수준의 시각적 목표를 생성한다. 깊이 인식에 의존하는 VLM 시스템(예: VoxPoser, ReKep) 및 의미론적 피드백이 부족한 VLA 시스템(예: RDT, pi0)과 비교하여, RoboChemist는 VLA 인터페이스를 통해 정밀한 목표 조건 제어를 구현하여 작업 완료와 실험 규범 준수를 보장한다. 이 시스템은 기본 동작과 완전한 다단계 화학 프로토콜을 성공적으로 실행했으며, 평균 성공률과 준수율에서 기존 기준선을 크게 능가한다.
+
+## 핵심 내용
+### 방법 아키텍처
+RoboChemist는 이중 루프 프레임워크를 채택하며, 핵심 구성 요소는 다음과 같다:
+- **VLM 모듈**: 세 가지 역할을 수행한다:
+  - **플래너**: 장시간 화학 실험을 기본 동작 시퀀스로 분해한다.
+  - **시각 프롬프트 생성기**: VLA 모델을 위한 이미지 수준의 시각적 목표를 생성하여 투명 용기 인식 문제를 해결한다.
+  - **모니터**: 작업 성공 여부와 실험 규범 준수 여부를 평가하고 의미론적 수준의 피드백을 제공한다.
+- **VLA 인터페이스**: VLM의 이미지 수준 시각적 목표를 수용하여 정밀한 목표 조건 제어를 구현하고, 전통적인 깊이 인식 방법의 한계를 피한다.
+
+### 실험 설정
+- **작업 유형**: 기본 동작(예: 피펫팅, 교반) 및 완전한 다단계 화학 프로토콜(예: 합성 반응)을 포함한다.
+- **기준선 비교**: 기존 VLA 시스템(예: RDT, pi0) 및 VLM 시스템(예: VoxPoser, ReKep)과 비교한다.
+- **평가 지표**: 평균 성공률(Average Success Rate) 및 준수율(Compliance Rate).
+
+### 주요 결과
+- **성능 향상**: 최첨단 VLA 기준선 대비 평균 성공률이 23.57% 향상되었고, 준수율은 평균 0.298 향상되었다.
+- **일반화 능력**: 시스템은 본 적 없는 물체와 작업에 대해 강력한 일반화를 보여주며, 재훈련 없이 새로운 시나리오에 적응할 수 있다.
+- **투명 용기 처리**: 이미지 수준의 시각적 목표를 통해 투명한 실험실 용기의 인식 문제를 성공적으로 극복했다.
+
+### 결론
+RoboChemist는 VLM과 VLA의 협력을 통해 장시간, 안전하고 규범을 준수하는 로봇 화학 실험을 구현했으며, 성공률과 준수성에서 기존 방법을 크게 능가하여 자동화된 과학 발견을 위한 실현 가능한 솔루션을 제공한다.

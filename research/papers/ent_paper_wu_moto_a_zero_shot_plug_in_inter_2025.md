@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.01658v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.01658v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (688 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,23 @@ MoTo 通过即插即用设计，显著提升了固定基座操作基础模型的
 ## Overview
 Mobile manipulation stands as a core challenge in robotics, enabling robots to assist humans across varied tasks and dynamic daily environments. Conventional mobile manipulation approaches often struggle to generalize across different tasks and environments due to the lack of large-scale training. However, recent advances in manipulation foundation models demonstrate impressive generalization capability on a wide range of fixed-base manipulation tasks, which are still limited to a fixed setting. Therefore, we devise a plug-in module named MoTo, which can be combined with any off-the-shelf manipulation foundation model to empower them with mobile manipulation ability. Specifically, we propose an interaction-aware navigation policy to generate robot docking points for generalized mobile manipulation. To enable zero-shot ability, we propose an interaction keypoints framework via vision-language models (VLM) under multi-view consistency for both target object and robotic arm following instructions, where fixed-base manipulation foundation models can be employed. We further propose motion planning objectives for the mobile base and robot arm, which minimize the distance between the two keypoints and maintain the physical feasibility of trajectories. In this way, MoTo guides the robot to move to the docking points where fixed-base manipulation can be successfully performed, and leverages VLM generation and trajectory optimization to achieve mobile manipulation in a zero-shot manner, without any requirement on mobile manipulation expert data. Extensive experimental results on OVMM and real-world demonstrate that MoTo achieves success rates of 2.68% and 16.67% higher than the state-of-the-art mobile manipulation methods, respectively, without requiring additional training data.
 
-## 개요
-모바일 조작은 로봇 공학의 핵심 과제로, 로봇이 다양한 작업과 역동적인 일상 환경에서 인간을 도울 수 있게 합니다. 기존의 모바일 조작 접근 방식은 대규모 훈련 데이터 부족으로 인해 다양한 작업과 환경에 일반화하는 데 어려움을 겪는 경우가 많습니다. 그러나 최근 조작 기반 모델의 발전은 고정 베이스 조작 작업의 광범위한 범위에서 인상적인 일반화 능력을 보여주지만, 여전히 고정된 환경으로 제한됩니다. 따라서 우리는 MoTo라는 플러그인 모듈을 설계하여, 기성 조작 기반 모델과 결합하여 모바일 조작 능력을 부여할 수 있도록 했습니다. 구체적으로, 일반화된 모바일 조작을 위해 로봇 도킹 지점을 생성하는 상호작용 인식 내비게이션 정책을 제안합니다. 제로샷 능력을 구현하기 위해, 다중 뷰 일관성을 갖춘 비전-언어 모델(VLM)을 통해 대상 객체와 로봇 팔의 지시를 따르는 상호작용 키포인트 프레임워크를 제안하며, 여기에 고정 베이스 조작 기반 모델을 적용할 수 있습니다. 또한, 모바일 베이스와 로봇 팔을 위한 모션 계획 목표를 제안하여, 두 키포인트 간의 거리를 최소화하고 궤적의 물리적 실현 가능성을 유지합니다. 이렇게 MoTo는 로봇이 고정 베이스 조작이 성공적으로 수행될 수 있는 도킹 지점으로 이동하도록 안내하며, VLM 생성과 궤적 최적화를 활용하여 모바일 조작 전문가 데이터 없이 제로샷 방식으로 모바일 조작을 달성합니다. OVMM 및 실제 환경에서의 광범위한 실험 결과는 MoTo가 추가 훈련 데이터 없이 최신 모바일 조작 방법보다 각각 2.68% 및 16.67% 더 높은 성공률을 달성함을 보여줍니다.
-
-## 핵심 내용
-모바일 조작은 로봇 공학의 핵심 과제로, 로봇이 다양한 작업과 역동적인 일상 환경에서 인간을 도울 수 있게 합니다. 기존의 모바일 조작 접근 방식은 대규모 훈련 데이터 부족으로 인해 다양한 작업과 환경에 일반화하는 데 어려움을 겪는 경우가 많습니다. 그러나 최근 조작 기반 모델의 발전은 고정 베이스 조작 작업의 광범위한 범위에서 인상적인 일반화 능력을 보여주지만, 여전히 고정된 환경으로 제한됩니다. 따라서 우리는 MoTo라는 플러그인 모듈을 설계하여, 기성 조작 기반 모델과 결합하여 모바일 조작 능력을 부여할 수 있도록 했습니다. 구체적으로, 일반화된 모바일 조작을 위해 로봇 도킹 지점을 생성하는 상호작용 인식 내비게이션 정책을 제안합니다. 제로샷 능력을 구현하기 위해, 다중 뷰 일관성을 갖춘 비전-언어 모델(VLM)을 통해 대상 객체와 로봇 팔의 지시를 따르는 상호작용 키포인트 프레임워크를 제안하며, 여기에 고정 베이스 조작 기반 모델을 적용할 수 있습니다. 또한, 모바일 베이스와 로봇 팔을 위한 모션 계획 목표를 제안하여, 두 키포인트 간의 거리를 최소화하고 궤적의 물리적 실현 가능성을 유지합니다. 이렇게 MoTo는 로봇이 고정 베이스 조작이 성공적으로 수행될 수 있는 도킹 지점으로 이동하도록 안내하며, VLM 생성과 궤적 최적화를 활용하여 모바일 조작 전문가 데이터 없이 제로샷 방식으로 모바일 조작을 달성합니다. OVMM 및 실제 환경에서의 광범위한 실험 결과는 MoTo가 추가 훈련 데이터 없이 최신 모바일 조작 방법보다 각각 2.68% 및 16.67% 더 높은 성공률을 달성함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.01658v1
+
+## 개요
+MoTo는 전통적인 이동 조작 방법이 일반화되기 어려운 문제를 해결하기 위해, 임의의 기존 고정 베이스 조작 기반 모델과 결합할 수 있는 플러그 앤 플레이 모듈을 설계했습니다. 이는 상호작용 인식 내비게이션 전략을 통해 로봇의 도킹 지점을 생성하고, 다중 시점 일관성을 갖춘 비전-언어 모델(VLM)을 활용하여 상호작용 핵심 지점을 추출하며, 동시에 이동 베이스와 로봇 팔의 운동 계획 목표를 최적화합니다. 이 방법은 OVMM 벤치마크와 실제 환경에서 각각 기존 최고 성능 방법보다 2.68% 및 16.67% 더 높은 성공률을 달성하며, 이동 조작 전문가 데이터가 필요하지 않습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+MoTo는 플러그 앤 플레이 모듈로서 핵심적으로 세 가지 구성 요소를 포함합니다:
+- **상호작용 인식 내비게이션 전략**: VLM을 기반으로 대상 객체와 로봇 팔의 상호작용 핵심 지점을 생성하고, 다중 시점 일관성을 통해 정확성을 보장합니다.
+- **운동 계획 목표**: 두 핵심 지점 간의 거리를 최소화하면서 궤적의 물리적 실현 가능성(예: 장애물 회피, 관절 제한)을 보장합니다.
+- **제로샷 능력**: 이동 조작 전문가 데이터 없이 고정 베이스 조작 기반 모델(예: RT-2, Octo)을 직접 활용하여 이동 조작을 완료합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: OVMM(Open Vocabulary Mobile Manipulation) 벤치마크와 실제 환경에서 평가합니다.
+- **비교 방법**: SOTA 이동 조작 방법(예: MOMA, M3)과 비교하여, MoTo는 OVMM에서 성공률 2.68%(상대적 향상), 실제 환경에서 16.67%를 달성합니다.
+- **핵심 매개변수**: VLM은 GPT-4V를 사용하여 핵심 지점을 생성하고, 궤적 최적화는 이차 계획(QP)을 통해 해결합니다.
+
+### 결론
+MoTo는 플러그 앤 플레이 설계를 통해 고정 베이스 조작 기반 모델의 이동 조작 능력을 크게 향상시키며, 새로운 작업과 환경에 제로샷으로 일반화합니다. 향후 연구에서는 더 효율적인 VLM 추론과 동적 환경 적응을 탐구할 수 있습니다.

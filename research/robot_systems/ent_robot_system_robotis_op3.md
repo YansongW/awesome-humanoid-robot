@@ -41,7 +41,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/robotis-op3-darwin-op.md（访问日期 2026-07-01）。该平台本质是"开放平台的商业整机"而非社区开源硬件项目：ROS 软件包 Apache-2.0，整机只能购买成品。
+  notes: '内容整理自调研档案 data/roadmap/research/robotis-op3-darwin-op.md（访问日期 2026-07-01）。该平台本质是"开放平台的商业整机"而非社区开源硬件项目：ROS 软件包 Apache-2.0，整机只能购买成品。
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1877 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -54,7 +55,6 @@ sources:
   url: https://github.com/ROBOTIS-GIT/ROBOTIS-OP3
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 ROBOTIS OP3 是韩国 ROBOTIS 主导的开放平台人形机器人，其前身为 DARwIn-OP（Dynamic Anthropomorphic Robot with Intelligence – Open Platform，达尔文开放平台）——2010 年由 Virginia Tech RoMeLa（Dennis Hong 团队）牵头，联合 University of Pennsylvania、Purdue University 与 ROBOTIS 开发，美国 NSF 资助。OP3 高约 510 mm、重约 3.5 kg（无外壳），20 个自由度（来源：调研档案 robotis-op3-darwin-op.md，下同）。
@@ -134,3 +134,40 @@ ROBOTIS OP3는 한국 ROBOTIS가 주도하는 오픈 플랫폼 휴머노이드 �
 
 - 적합: 예산이 충분한 학교/연구소의 교육 및 RoboCup 참가 – 개봉 즉시 사용 가능한 성숙한 제품, 최고 수준의 문서, 서보모터 플러그 앤 플레이, ROS2 생태계 입문 경로가 명확함; 상위 알고리즘만 작성하고 하드웨어를 직접 만들고 싶지 않은 사용자에게 편리함.
 - 진입 장벽: 약 $14,000의 가격은 개인 애호가에게 너무 높음; "오픈소스"는 주로 소프트웨어와 CAD 수준에 국한되며, 완제품만 구매 가능; 서보모터 방식으로는 준직구동/힘 제어 등 현재 주류 기술을 배울 수 없음.
+
+## Overview
+
+The ROBOTIS OP3 is an open-platform humanoid robot led by ROBOTIS of South Korea. Its predecessor is the DARwIn-OP (Dynamic Anthropomorphic Robot with Intelligence – Open Platform), developed in 2010 under the leadership of Virginia Tech's RoMeLa (Dennis Hong's team), in collaboration with the University of Pennsylvania, Purdue University, and ROBOTIS, with funding from the U.S. NSF. The OP3 stands approximately 510 mm tall, weighs about 3.5 kg (without the shell), and has 20 degrees of freedom (source: research archive robotis-op3-darwin-op.md, same below).
+
+Open-source attributes: The OP3 ROS software packages are Apache-2.0 licensed (GitHub ROBOTIS-GIT); the DARwIn-OP hardware CAD and software were historically freely available (the SourceForge `darwinop` project page is still accessible); it is essentially a "commercial complete unit on an open platform," not a community open-source hardware project. Pricing: The OP3 currently sells for $13,764.35 (robotis.us, 2026 page snapshot); Generation Robots lists it at approximately €12,113 (including tax); the DARwIn-OP sold for $12,000 in 2010 (with an educational discount of $9,600), and third-party 3D-printed clones cost around $6,100. The OP (DARwIn-OP) and OP2 have been discontinued (official WARNING in the e-Manual), with the OP3 being the current model on sale.
+
+## Content
+
+### Key Specifications
+
+| Item | Value | Source |
+|---|---|---|
+| Height / Weight | OP3 approx. 510 mm / approx. 3.5 kg; DARwIn-OP 455 mm / 2.8 kg | e-Manual / RoMeLa |
+| Degrees of Freedom | 20 | e-Manual |
+| Price | OP3 $13,764.35 (US) / approx. €12,113 (Europe) | robotis.us / Generation Robots |
+| Main Controller | Intel NUC (Core i3 dual-core, 8GB DDR4, 250GB M.2 SSD); sub-controller OpenCR | e-Manual |
+| Sensors | Logitech C920 camera, IMU (3-axis gyro + accelerometer + magnetometer), speaker, RGB LED, 4 buttons | e-Manual |
+| Battery | 3-cell 11.1V LiPo (new version 3300 mAh), supports hot-swappable battery replacement | e-Manual |
+| Beginner Friendliness | 3 / 5 (research archive assessment) | Research archive |
+
+### Actuator Solution
+
+- OP3: 20 DYNAMIXEL XM430-W350-R smart servos (gear ratio 353.5:1, stall torque 4.1 N·m, supports current-loop force control, DYNAMIXEL Protocol 2.0).
+- DARwIn-OP: 20 MX-28 (built-in maxon RE-max motor, stall torque 2.5 N·m, Protocol 1.0).
+- High-gear-ratio servo solution: High position control accuracy and ease of use, but lacks proprioceptive force control capability and is unsuitable for research on highly dynamic motion control.
+
+### Software Stack and Documentation
+
+- The 2025 OP3 replica natively transitions to ROS2 (per the e-Manual), paired with the DYNAMIXEL SDK, developed in C++, on Ubuntu 64-bit; official ROS packages include walking/action editing (op3_action_editor), Gazebo simulation models, and more.
+- The ROBOTIS e-Manual is extremely comprehensive (specifications, assembly, tutorials, and item-by-item ROS package documentation), setting the industry benchmark for documentation; the RoboCup soccer ecosystem has deep accumulated expertise (the DARwIn-OP won the RoboCup 2011 and 2012 Kid-Size League championships).
+- GitHub `ROBOTIS-GIT/ROBOTIS-OP3` has approximately 157 stars / 65 forks, with the latest push on 2025-02-26 (accompanying the 2025 ROS2 replica update).
+
+### Target Audience
+
+- Suitable for: Schools/laboratories with sufficient budgets for teaching and RoboCup participation—a mature, out-of-the-box product with top-tier documentation, plug-and-play servos, and a clear entry path into the ROS2 ecosystem; convenient for users who only want to write high-level algorithms without building hardware.
+- Barriers: The approximately $14,000 price is too high for individual hobbyists; "open source" is mainly reflected at the software and CAD levels, as the complete unit can only be purchased as a finished product; the servo solution does not teach current mainstream technologies such as quasi-direct drive or force control.

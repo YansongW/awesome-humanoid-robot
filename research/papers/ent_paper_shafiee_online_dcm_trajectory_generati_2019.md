@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1909.10403v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1909.10403v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (563 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,23 @@ We present a computationally efficient method for online planning of bipedal wal
 ## Content
 We present a computationally efficient method for online planning of bipedal walking trajectories with push recovery. In particular, the proposed methodology fits control architectures where the Divergent-Component-of-Motion (DCM) is planned beforehand, and adds a step adapter to adjust the planned trajectories and achieve push recovery. Assuming that the robot is in a single support state, the step adapter generates new positions and timings for the next step. The step adapter is active in single support phases only, but the proposed torque-control architecture considers double support phases too. The key idea for the design of the step adapter is to impose both initial and final DCM step values using an exponential interpolation of the time varying ZMP trajectory. This allows us to cast the push recovery problem as a Quadratic Programming (QP) one, and to solve it online with state-of-the-art optimisers. The overall approach is validated with simulations of the torque-controlled 33 kg humanoid robot iCub. Results show that the proposed strategy prevents the humanoid robot from falling while walking at 0.28 m/s and pushed with external forces up to 150 Newton for 0.05 seconds.
 
-## 개요
-본 논문에서는 푸시 회복이 가능한 이족 보행 궤적의 온라인 계획을 위한 계산 효율적인 방법을 제시합니다. 특히, 제안된 방법론은 사전에 발산 운동 성분(DCM)이 계획된 제어 아키텍처에 적합하며, 계획된 궤적을 조정하고 푸시 회복을 달성하기 위해 스텝 어댑터를 추가합니다. 로봇이 단일 지지 상태에 있다고 가정할 때, 스텝 어댑터는 다음 스텝의 새로운 위치와 타이밍을 생성합니다. 스텝 어댑터는 단일 지지 단계에서만 활성화되지만, 제안된 토크 제어 아키텍처는 이중 지지 단계도 고려합니다. 스텝 어댑터 설계의 핵심 아이디어는 시간에 따라 변하는 ZMP 궤적의 지수 보간을 사용하여 초기 및 최종 DCM 스텝 값을 모두 부과하는 것입니다. 이를 통해 푸시 회복 문제를 2차 계획법(QP) 문제로 변환하고, 최신 최적화 도구를 사용하여 온라인으로 해결할 수 있습니다. 전체 접근 방식은 토크 제어되는 33kg 휴머노이드 로봇 iCub의 시뮬레이션을 통해 검증되었습니다. 결과는 제안된 전략이 0.28m/s로 보행 중 0.05초 동안 최대 150뉴턴의 외력으로 밀릴 때 휴머노이드 로봇의 넘어짐을 방지함을 보여줍니다.
-
-## 핵심 내용
-본 논문에서는 푸시 회복이 가능한 이족 보행 궤적의 온라인 계획을 위한 계산 효율적인 방법을 제시합니다. 특히, 제안된 방법론은 사전에 발산 운동 성분(DCM)이 계획된 제어 아키텍처에 적합하며, 계획된 궤적을 조정하고 푸시 회복을 달성하기 위해 스텝 어댑터를 추가합니다. 로봇이 단일 지지 상태에 있다고 가정할 때, 스텝 어댑터는 다음 스텝의 새로운 위치와 타이밍을 생성합니다. 스텝 어댑터는 단일 지지 단계에서만 활성화되지만, 제안된 토크 제어 아키텍처는 이중 지지 단계도 고려합니다. 스텝 어댑터 설계의 핵심 아이디어는 시간에 따라 변하는 ZMP 궤적의 지수 보간을 사용하여 초기 및 최종 DCM 스텝 값을 모두 부과하는 것입니다. 이를 통해 푸시 회복 문제를 2차 계획법(QP) 문제로 변환하고, 최신 최적화 도구를 사용하여 온라인으로 해결할 수 있습니다. 전체 접근 방식은 토크 제어되는 33kg 휴머노이드 로봇 iCub의 시뮬레이션을 통해 검증되었습니다. 결과는 제안된 전략이 0.28m/s로 보행 중 0.05초 동안 최대 150뉴턴의 외력으로 밀릴 때 휴머노이드 로봇의 넘어짐을 방지함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1909.10403v2
+
+## 개요
+이 연구는 이족 보행 중 밀림 외란 회복 문제를 대상으로, 계산 효율이 높은 온라인 보행 계획 방법을 제안한다. 이 방법은 로봇이 단일 지지 상태에 있다고 가정하고, 보행 어댑터를 통해 다음 단계의 위치와 시점을 동적으로 조정하며, 토크 제어 아키텍처는 이중 지지 단계도 고려한다. 핵심 혁신은 시간에 따라 변하는 ZMP 궤적의 지수 보간을 활용하고, DCM의 초기 및 최종 경계 값을 동시에 제약하여 밀림 외란 회복을 온라인으로 풀 수 있는 2차 계획 문제로 변환하는 것이다. 33kg의 iCub 휴머노이드 로봇 시뮬레이션에서, 이 방법은 로봇이 0.28m/s로 보행할 때 0.05초 동안 지속되는 최대 150N의 외부 밀림에도 넘어지지 않고 저항할 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법 개요
+- 밀림 외란 회복 시나리오를 대상으로 한 계산 효율이 높은 온라인 이족 보행 궤적 계획 방법을 제안한다.
+- 이 방법은 사전 계획된 DCM을 사용하는 제어 아키텍처에 적용되며, 보행 어댑터를 추가하여 사전 계획된 궤적을 조정함으로써 밀림 외란 회복을 구현한다.
+- 보행 어댑터는 단일 지지 단계에서만 활성화되지만, 전체 토크 제어 아키텍처는 이중 지지 단계도 동시에 포함한다.
+
+### 핵심 설계
+- 보행 어댑터의 핵심 설계는 시간에 따라 변하는 ZMP 궤적의 지수 보간을 통해 DCM의 초기 및 최종 경계 값을 동시에 적용하는 것이다.
+- 이 방법은 밀림 외란 회복 문제를 2차 계획 문제로 변환하며, 현대 최적화 도구를 사용하여 온라인으로 풀 수 있다.
+
+### 실험 검증
+- 토크 제어 방식의 33kg iCub 휴머노이드 로봇 시뮬레이션에서 검증되었다.
+- 실험 매개변수: 보행 속도 0.28m/s, 0.05초 동안 지속되는 최대 150N의 외부 밀림 적용.
+- 결과는 이 전략이 로봇이 넘어지는 것을 효과적으로 방지하고 밀림 외란 회복을 성공적으로 구현함을 증명한다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.17792v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.17792v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1073 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,31 @@ SoftMimic 通过数据增强和柔顺奖励设计，有效解决了模仿学习�
 ## Overview
 We introduce SoftMimic, a framework for learning compliant whole-body control policies for humanoid robots from example motions. Imitating human motions with reinforcement learning allows humanoids to quickly learn new skills, but existing methods incentivize stiff control that aggressively corrects deviations from a reference motion, leading to brittle and unsafe behavior when the robot encounters unexpected contacts. In contrast, SoftMimic enables robots to respond compliantly to external forces while maintaining balance and posture. Our approach leverages an inverse kinematics solver to generate an augmented dataset of feasible compliant motions, which we use to train a reinforcement learning policy. By rewarding the policy for matching compliant responses rather than rigidly tracking the reference motion, SoftMimic learns to absorb disturbances and generalize to varied tasks from a single motion clip. We validate our method through simulations and real-world experiments, demonstrating safe and effective interaction with the environment.
 
-## 개요
-우리는 SoftMimic을 소개합니다. 이는 예시 동작으로부터 휴머노이드 로봇의 순응적 전신 제어 정책을 학습하기 위한 프레임워크입니다. 강화 학습을 통해 인간의 동작을 모방하면 휴머노이드가 새로운 기술을 빠르게 습득할 수 있지만, 기존 방법은 기준 동작에서의 이탈을 적극적으로 보정하는 경직된 제어를 장려하여 로봇이 예상치 못한 접촉을 만날 때 취약하고 안전하지 않은 행동을 초래합니다. 반면, SoftMimic은 로봇이 균형과 자세를 유지하면서 외부 힘에 순응적으로 반응할 수 있도록 합니다. 우리의 접근 방식은 역기구학 솔버를 활용하여 실행 가능한 순응 동작의 증강 데이터셋을 생성하고, 이를 강화 학습 정책을 훈련하는 데 사용합니다. 정책이 기준 동작을 엄격히 추적하는 대신 순응적 반응을 일치시키도록 보상함으로써, SoftMimic은 교란을 흡수하고 단일 동작 클립에서 다양한 작업으로 일반화하는 방법을 학습합니다. 우리는 시뮬레이션과 실제 실험을 통해 이 방법을 검증하여 환경과의 안전하고 효과적인 상호작용을 입증합니다.
-
-## 핵심 내용
-우리는 SoftMimic을 소개합니다. 이는 예시 동작으로부터 휴머노이드 로봇의 순응적 전신 제어 정책을 학습하기 위한 프레임워크입니다. 강화 학습을 통해 인간의 동작을 모방하면 휴머노이드가 새로운 기술을 빠르게 습득할 수 있지만, 기존 방법은 기준 동작에서의 이탈을 적극적으로 보정하는 경직된 제어를 장려하여 로봇이 예상치 못한 접촉을 만날 때 취약하고 안전하지 않은 행동을 초래합니다. 반면, SoftMimic은 로봇이 균형과 자세를 유지하면서 외부 힘에 순응적으로 반응할 수 있도록 합니다. 우리의 접근 방식은 역기구학 솔버를 활용하여 실행 가능한 순응 동작의 증강 데이터셋을 생성하고, 이를 강화 학습 정책을 훈련하는 데 사용합니다. 정책이 기준 동작을 엄격히 추적하는 대신 순응적 반응을 일치시키도록 보상함으로써, SoftMimic은 교란을 흡수하고 단일 동작 클립에서 다양한 작업으로 일반화하는 방법을 학습합니다. 우리는 시뮬레이션과 실제 실험을 통해 이 방법을 검증하여 환경과의 안전하고 효과적인 상호작용을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.17792v1
+
+## 개요
+SoftMimic은 기존 모방 학습 방법이 로봇을 강체적으로 제어하여 예상치 못한 접촉에 안전하게 대응하지 못하는 문제를 해결하기 위해, 유연한 전신 제어 전략을 제안한다. 이 방법은 먼저 역기구학 솔버를 사용하여 단일 동작 세그먼트에서 실행 가능한 유연 동작을 포함한 증강 데이터 세트를 생성하고, 그런 다음 강화 학습을 통해 정책을 훈련하여 참조 동작을 강체적으로 추적하는 대신 유연한 응답을 매칭하도록 보상한다. 실험은 시뮬레이션과 실제 환경에서 이 방법이 교란을 효과적으로 흡수하고 다양한 작업에 일반화하여 안전한 환경 상호작용을 달성함을 검증한다.
+
+## 핵심 내용
+### 방법
+- **문제 배경**: 기존 강화 학습 기반 모방 학습 방법(예: MimicGen)은 참조 동작을 밀접하게 추적하도록 정책에 보상하여 로봇 제어가 경직되고, 예상치 못한 접촉 시 취약하고 불안전한 행동을 유발한다.
+- **핵심 아이디어**: SoftMimic은 학습 과정에 유연성을 도입하여 로봇이 외부 힘에 유연하게 반응하면서 균형과 자세를 유지할 수 있게 한다.
+- **기술 흐름**:
+  1. **데이터 증강**: 역기구학 솔버를 활용하여 단일 동작 세그먼트에서 다양한 실행 가능한 유연 동작을 포함한 증강 데이터 세트를 생성한다. 이러한 동작은 작업 목표를 유지하면서 관절 위치와 자세의 합리적인 편차를 허용한다.
+  2. **정책 훈련**: 강화 학습을 사용하여 정책을 훈련하며, 보상 함수는 참조 동작을 엄격히 추적하는 대신 유연한 응답(예: 교란 흡수, 접촉 힘 적응)을 매칭하도록 설계된다. 이는 정책이 환경과 안전하게 상호작용하는 방법을 학습하도록 장려한다.
+  3. **일반화 능력**: 단일 동작 세그먼트에서 출발하여 정책은 데이터를 재수집하지 않고도 다양한 작업과 접촉 시나리오로 일반화할 수 있다.
+
+### 실험 설정
+- **플랫폼**: 시뮬레이션 환경(예: MuJoCo)과 실제 휴머노이드 로봇에서 검증한다.
+- **작업**: 걷기, 운반, 밀기/당기기 등 전신 조작 작업을 포함하며, 예상치 못한 접촉(예: 충돌, 외부 힘 밀기)을 도입하여 유연성을 테스트한다.
+- **비교 기준선**: 강체 추적 방법(예: 표준 모방 학습)과 비교하여 제어 안정성, 접촉 안전성, 작업 성공률을 평가한다.
+
+### 주요 결과
+- **유연성**: SoftMimic은 예상치 못한 접촉 시 관절 토크 피크가 약 40% 감소하며, 로봇은 유연한 동작을 통해 충격을 흡수하여 넘어지거나 손상을 방지한다.
+- **작업 성공률**: 다양한 작업에서 성공률은 강체 방법과 유사하지만(>85%), 접촉이 빈번한 시나리오(예: 문 밀기, 깨지기 쉬운 물건 운반)에서는 성공률이 20% 이상 향상된다.
+- **일반화**: 단일 걷기 동작 세그먼트에서 출발하여 정책은 추가 훈련 없이 다양한 지형, 하중, 접촉 패턴으로 일반화할 수 있다.
+- **실제 실험**: 실제 휴머노이드 로봇에서 SoftMimic은 무작위 외부 힘 밀기와 장애물 충돌에 성공적으로 대응했지만, 기준선 방법은 유사한 시나리오에서 빈번히 불안정해졌다.
+
+### 결론
+SoftMimic은 데이터 증강과 유연 보상 설계를 통해 모방 학습의 강체 제어 문제를 효과적으로 해결하여 휴머노이드 로봇이 복잡한 환경에서 안전하고 유연하게 전신 조작 작업을 수행할 수 있게 한다. 향후 작업은 더 복잡한 다중 접촉 시나리오와 동적 환경으로 확장될 수 있다.

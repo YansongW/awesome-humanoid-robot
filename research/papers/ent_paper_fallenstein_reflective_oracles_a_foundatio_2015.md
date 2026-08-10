@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1508.04145v1; frontmatter repaired
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1508.04145v1; frontmatter repaired
     by scripts/repair_broken_frontmatter.py. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (662 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,31 @@ theoretical_depth:
 ## Overview
 Classical game theory treats players as special---a description of a game contains a full, explicit enumeration of all players---even though in the real world, "players" are no more fundamentally special than rocks or clouds. It isn't trivial to find a decision-theoretic foundation for game theory in which an agent's coplayers are a non-distinguished part of the agent's environment. Attempts to model both players and the environment as Turing machines, for example, fail for standard diagonalization reasons. In this paper, we introduce a "reflective" type of oracle, which is able to answer questions about the outputs of oracle machines with access to the same oracle. These oracles avoid diagonalization by answering some queries randomly. We show that machines with access to a reflective oracle can be used to define rational agents using causal decision theory. These agents model their environment as a probabilistic oracle machine, which may contain other agents as a non-distinguished part. We show that if such agents interact, they will play a Nash equilibrium, with the randomization in mixed strategies coming from the randomization in the oracle's answers. This can be seen as providing a foundation for classical game theory in which players aren't special.
 
-## 개요
-고전적 게임 이론은 플레이어를 특별하게 취급합니다. 게임에 대한 설명에는 모든 플레이어가 완전하고 명시적으로 열거되어 있지만, 현실 세계에서 "플레이어"는 근본적으로 바위나 구름보다 특별하지 않습니다. 에이전트의 공동 플레이어가 에이전트 환경의 구별되지 않는 일부인 게임 이론에 대한 결정 이론적 기초를 찾는 것은 쉽지 않습니다. 예를 들어, 플레이어와 환경을 모두 튜링 기계로 모델링하려는 시도는 표준적인 대각선 논법의 이유로 실패합니다. 본 논문에서는 동일한 오라클에 접근하는 오라클 기계의 출력에 대한 질문에 답할 수 있는 "반사적" 유형의 오라클을 소개합니다. 이러한 오라클은 일부 질문에 무작위로 답변함으로써 대각선 논법을 피합니다. 반사적 오라클에 접근하는 기계가 인과적 결정 이론을 사용하여 합리적 에이전트를 정의하는 데 사용될 수 있음을 보여줍니다. 이러한 에이전트는 환경을 확률적 오라클 기계로 모델링하며, 이 기계에는 다른 에이전트가 구별되지 않는 일부로 포함될 수 있습니다. 이러한 에이전트가 상호작용할 경우, 혼합 전략의 무작위화가 오라클 답변의 무작위화에서 비롯된 내쉬 균형을 플레이한다는 것을 보여줍니다. 이는 플레이어가 특별하지 않은 고전적 게임 이론의 기초를 제공하는 것으로 볼 수 있습니다.
-
-## 핵심 내용
-고전적 게임 이론은 플레이어를 특별하게 취급합니다. 게임에 대한 설명에는 모든 플레이어가 완전하고 명시적으로 열거되어 있지만, 현실 세계에서 "플레이어"는 근본적으로 바위나 구름보다 특별하지 않습니다. 에이전트의 공동 플레이어가 에이전트 환경의 구별되지 않는 일부인 게임 이론에 대한 결정 이론적 기초를 찾는 것은 쉽지 않습니다. 예를 들어, 플레이어와 환경을 모두 튜링 기계로 모델링하려는 시도는 표준적인 대각선 논법의 이유로 실패합니다. 본 논문에서는 동일한 오라클에 접근하는 오라클 기계의 출력에 대한 질문에 답할 수 있는 "반사적" 유형의 오라클을 소개합니다. 이러한 오라클은 일부 질문에 무작위로 답변함으로써 대각선 논법을 피합니다. 반사적 오라클에 접근하는 기계가 인과적 결정 이론을 사용하여 합리적 에이전트를 정의하는 데 사용될 수 있음을 보여줍니다. 이러한 에이전트는 환경을 확률적 오라클 기계로 모델링하며, 이 기계에는 다른 에이전트가 구별되지 않는 일부로 포함될 수 있습니다. 이러한 에이전트가 상호작용할 경우, 혼합 전략의 무작위화가 오라클 답변의 무작위화에서 비롯된 내쉬 균형을 플레이한다는 것을 보여줍니다. 이는 플레이어가 특별하지 않은 고전적 게임 이론의 기초를 제공하는 것으로 볼 수 있습니다.
-
 ## 参考
 - https://arxiv.org/abs/1508.04145
+
+## 개요
+고전 게임 이론은 플레이어를 특별한 실체로 간주하지만, 현실에서 플레이어는 바위나 구름보다 더 특별하지 않다. 본 논문은 반사 오라클(reflection oracle)을 도입하는데, 이는 동일한 오라클을 공유하는 기계의 출력에 관한 질문에 답할 수 있으며, 쿼리의 일부를 무작위화하여 대각화 문제를 피한다. 이러한 오라클을 사용하는 기계는 인과적 결정 이론에서의 합리적 에이전트로 정의될 수 있으며, 이들은 환경을 확률적 오라클 기계로 모델링하고, 다른 에이전트는 비특수한 부분으로 간주한다. 연구는 이러한 에이전트들이 상호작용할 때 내시 균형에 도달하며, 혼합 전략에서의 무작위성은 오라클 응답의 무작위성에서 비롯됨을 보여준다.
+
+## 핵심 내용
+### 핵심 문제
+고전 게임 이론은 게임 설명에서 모든 플레이어를 명시적으로 열거할 것을 요구하지만, 현실 세계에서 플레이어는 환경과 본질적으로 다르지 않다. 플레이어와 환경을 모두 튜링 기계로 모델링하려는 시도는 표준 대각화 문제로 인해 실패한다.
+
+### 반사 오라클 메커니즘
+- 동일한 오라클을 공유하는 기계의 출력에 관한 질문에 답할 수 있는 새로운 유형의 오라클을 정의한다.
+- 쿼리의 일부를 무작위화(확률적으로 0 또는 1을 반환)하여 대각화 역설을 피한다.
+- 오라클 응답의 무작위성은 혼합 전략에 자연스러운 원천을 제공한다.
+
+### 에이전트 모델링
+- 인과적 결정 이론을 사용하여 합리적 에이전트를 정의하며, 그 환경은 확률적 오라클 기계로 모델링된다.
+- 에이전트는 다른 플레이어를 특별한 실체로 간주하지 않고 환경의 일부로 취급한다.
+- 에이전트는 반사 오라클을 통해 환경 모델을 질의하여 최적 행동을 계산한다.
+
+### 이론적 결과
+- 여러 에이전트가 공유 환경에서 상호작용할 때, 그들의 전략 조합이 내시 균형을 구성함을 증명한다.
+- 혼합 전략의 무작위성은 외부 무작위 원천 없이 오라클 응답의 무작위성에서 직접 비롯된다.
+- 이 프레임워크는 고전 게임 이론에 결정 이론적 기반을 제공하며, 플레이어의 특별한 지위를 제거한다.
+
+### 의의
+- 게임 이론과 계산 이론을 통합하여 플레이어와 환경이 계산 모델에서 대등해진다.
+- 다중 에이전트 시스템, 경제 모델, 인공지능에서의 합리적 의사 결정에 새로운 관점을 제공한다.

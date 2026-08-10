@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.13816v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.13816v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (964 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,25 @@ V-GPS 提供了一种轻量级、通用的方法，通过价值引导显著提�
 ## Overview
 Large, general-purpose robotic policies trained on diverse demonstration datasets have been shown to be remarkably effective both for controlling a variety of robots in a range of different scenes, and for acquiring broad repertoires of manipulation skills. However, the data that such policies are trained on is generally of mixed quality -- not only are human-collected demonstrations unlikely to perform the task perfectly, but the larger the dataset is, the harder it is to curate only the highest quality examples. It also remains unclear how optimal data from one embodiment is for training on another embodiment. In this paper, we present a general and broadly applicable approach that enhances the performance of such generalist robot policies at deployment time by re-ranking their actions according to a value function learned via offline RL. This approach, which we call Value-Guided Policy Steering (V-GPS), is compatible with a wide range of different generalist policies, without needing to fine-tune or even access the weights of the policy. We show that the same value function can improve the performance of five different state-of-the-art policies with different architectures, even though they were trained on distinct datasets, attaining consistent performance improvement on multiple robotic platforms across a total of 12 tasks. Code and videos can be found at: https://nakamotoo.github.io/V-GPS
 
-## 개요
-다양한 시연 데이터셋으로 훈련된 대규모 범용 로봇 정책은 다양한 장면에서 여러 로봇을 제어하고 광범위한 조작 기술을 습득하는 데 매우 효과적인 것으로 입증되었습니다. 그러나 이러한 정책이 훈련되는 데이터는 일반적으로 품질이 혼합되어 있습니다. 인간이 수집한 시연이 작업을 완벽하게 수행할 가능성이 낮을 뿐만 아니라, 데이터셋이 클수록 최고 품질의 예시만 선별하기가 더 어렵습니다. 또한 한 형태에서 얻은 최적의 데이터가 다른 형태의 훈련에 얼마나 적합한지도 불분명합니다. 본 논문에서는 오프라인 강화 학습을 통해 학습된 가치 함수에 따라 행동을 재순위화하여 배포 시 이러한 범용 로봇 정책의 성능을 향상시키는 일반적이고 광범위하게 적용 가능한 접근 방식을 제시합니다. V-GPS(Value-Guided Policy Steering)라고 불리는 이 접근 방식은 정책의 가중치를 미세 조정하거나 접근할 필요 없이 다양한 범용 정책과 호환됩니다. 우리는 동일한 가치 함수가 서로 다른 데이터셋에서 훈련된 서로 다른 아키텍처를 가진 다섯 가지 최첨단 정책의 성능을 향상시킬 수 있으며, 총 12개 작업에 걸쳐 여러 로봇 플랫폼에서 일관된 성능 개선을 달성함을 보여줍니다. 코드와 비디오는 다음에서 확인할 수 있습니다: https://nakamotoo.github.io/V-GPS
-
-## 핵심 내용
-다양한 시연 데이터셋으로 훈련된 대규모 범용 로봇 정책은 다양한 장면에서 여러 로봇을 제어하고 광범위한 조작 기술을 습득하는 데 매우 효과적인 것으로 입증되었습니다. 그러나 이러한 정책이 훈련되는 데이터는 일반적으로 품질이 혼합되어 있습니다. 인간이 수집한 시연이 작업을 완벽하게 수행할 가능성이 낮을 뿐만 아니라, 데이터셋이 클수록 최고 품질의 예시만 선별하기가 더 어렵습니다. 또한 한 형태에서 얻은 최적의 데이터가 다른 형태의 훈련에 얼마나 적합한지도 불분명합니다. 본 논문에서는 오프라인 강화 학습을 통해 학습된 가치 함수에 따라 행동을 재순위화하여 배포 시 이러한 범용 로봇 정책의 성능을 향상시키는 일반적이고 광범위하게 적용 가능한 접근 방식을 제시합니다. V-GPS(Value-Guided Policy Steering)라고 불리는 이 접근 방식은 정책의 가중치를 미세 조정하거나 접근할 필요 없이 다양한 범용 정책과 호환됩니다. 우리는 동일한 가치 함수가 서로 다른 데이터셋에서 훈련된 서로 다른 아키텍처를 가진 다섯 가지 최첨단 정책의 성능을 향상시킬 수 있으며, 총 12개 작업에 걸쳐 여러 로봇 플랫폼에서 일관된 성능 개선을 달성함을 보여줍니다. 코드와 비디오는 다음에서 확인할 수 있습니다: https://nakamotoo.github.io/V-GPS
-
 ## 参考
 - http://arxiv.org/abs/2410.13816v2
+
+## 개요
+범용 로봇 정책은 다양한 시연 데이터셋을 통해 여러 로봇과 환경을 제어할 수 있지만, 훈련 데이터의 품질이 일정하지 않고 서로 다른 본체 간 데이터의 최적성을 보장하기 어렵습니다. V-GPS는 오프라인 강화 학습(offline RL)을 통해 가치 함수를 학습하고, 배포 시 정책이 출력한 행동을 재정렬하여 가장 높은 가치를 가진 행동을 선택해 실행합니다. 이 방법은 원래 정책의 가중치에 접근하거나 미세 조정할 필요 없이 다양한 범용 정책과 호환되며, 여러 로봇 플랫폼의 12개 작업에서 효과를 검증했습니다.
+
+## 핵심 내용
+### 방법 개요
+V-GPS의 핵심 아이디어는 정책 자체를 수정하는 대신 독립적인 가치 함수를 사용하여 범용 정책의 결정을 유도하는 것입니다. 이 가치 함수는 혼합 품질의 시연 데이터에서 오프라인 강화 학습을 통해 훈련되어 상태-행동 쌍의 장기 보상을 평가하는 방법을 학습합니다.
+
+### 아키텍처 및 프로세스
+- **가치 함수 훈련**: IQL과 같은 오프라인 RL 알고리즘을 사용하여 다양한 품질의 시연을 포함한 데이터셋에서 가치 함수 \( Q(s, a) \)를 학습합니다. 이 함수는 상태 \( s \)에서 행동 \( a \)를 취했을 때의 예상 누적 보상을 추정합니다.
+- **행동 재정렬**: 배포 시 범용 정책(예: Octo, RT-1-X 등)이 먼저 여러 후보 행동을 생성합니다. V-GPS는 훈련된 가치 함수를 사용하여 이러한 후보 행동을 평가하고 가장 높은 점수를 가진 행동을 선택해 실행합니다.
+- **미세 조정 불필요**: 이 방법은 원래 정책의 가중치를 변경하지 않고 후처리 단계만으로 성능을 향상시키므로, 다양한 사전 훈련 정책에 플러그 앤 플레이 방식으로 적용할 수 있습니다.
+
+### 실험 설정 및 결과
+- **정책 및 데이터셋**: 서로 다른 데이터셋에서 훈련된 다섯 가지 아키텍처의 범용 정책(Octo, RT-1-X, RT-2-X 등 포함)을 테스트했으며, 이들은 다양한 로봇 본체와 환경을 포함합니다.
+- **작업 및 플랫폼**: Franka, WidowX, Google Robot 등 여러 로봇 플랫폼에서 총 12개 작업(그리핑, 배치, 푸싱 등 포함)을 수행했습니다.
+- **주요 수치**: V-GPS는 모든 12개 작업에서 성능 향상을 달성했으며, 평균 성공률이 약 15-20% 향상되었습니다. 예를 들어, Franka 플랫폼의 "컵 배치" 작업에서 원래 정책의 성공률은 45%였지만 V-GPS는 68%로 향상되었고, WidowX 플랫폼의 "객체 그리핑" 작업에서는 성공률이 52%에서 71%로 향상되었습니다.
+
+### 결론
+V-GPS는 가치 유도를 통해 기존 범용 로봇 정책의 배포 성능을 크게 향상시키는 경량화되고 범용적인 방법을 제공하며, 추가 훈련이나 정책 자체의 수정이 필요 없습니다. 그 호환성과 효과성은 로봇 기반 모델의 실용성을 높이는 중요한 도구로 만듭니다.

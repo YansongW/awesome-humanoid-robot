@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.01425v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.01425v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (802 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,26 @@ GENMO 通过统一运动估计与生成，展示了协同效益：生成先验�
 ## Overview
 Human motion modeling traditionally separates motion generation and estimation into distinct tasks with specialized models. Motion generation models focus on creating diverse, realistic motions from inputs like text, audio, or keyframes, while motion estimation models aim to reconstruct accurate motion trajectories from observations like videos. Despite sharing underlying representations of temporal dynamics and kinematics, this separation limits knowledge transfer between tasks and requires maintaining separate models. We present GENMO, a unified Generalist Model for Human Motion that bridges motion estimation and generation in a single framework. Our key insight is to reformulate motion estimation as constrained motion generation, where the output motion must precisely satisfy observed conditioning signals. Leveraging the synergy between regression and diffusion, GENMO achieves accurate global motion estimation while enabling diverse motion generation. We also introduce an estimation-guided training objective that exploits in-the-wild videos with 2D annotations and text descriptions to enhance generative diversity. Furthermore, our novel architecture handles variable-length motions and mixed multimodal conditions (text, audio, video) at different time intervals, offering flexible control. This unified approach creates synergistic benefits: generative priors improve estimated motions under challenging conditions like occlusions, while diverse video data enhances generation capabilities. Extensive experiments demonstrate GENMO's effectiveness as a generalist framework that successfully handles multiple human motion tasks within a single model.
 
-## 개요
-인간 동작 모델링은 전통적으로 동작 생성과 추정을 별개의 작업으로 분리하여 각각에 특화된 모델을 사용해 왔습니다. 동작 생성 모델은 텍스트, 오디오, 키프레임 등의 입력으로부터 다양하고 사실적인 동작을 생성하는 데 초점을 맞추는 반면, 동작 추정 모델은 비디오와 같은 관찰 데이터로부터 정확한 동작 궤적을 재구성하는 것을 목표로 합니다. 시간적 역학과 운동학의 기본 표현을 공유함에도 불구하고, 이러한 분리는 작업 간 지식 전달을 제한하고 별도의 모델을 유지해야 하는 단점이 있습니다. 본 논문에서는 동작 추정과 생성을 단일 프레임워크로 연결하는 통합된 인간 동작 제너럴리스트 모델인 GENMO를 제안합니다. 핵심 통찰은 동작 추정을 제약 조건이 있는 동작 생성으로 재정의하여, 출력 동작이 관찰된 조건 신호를 정확히 충족하도록 하는 것입니다. 회귀와 확산 간의 시너지를 활용하여 GENMO는 정확한 전역 동작 추정을 달성하는 동시에 다양한 동작 생성을 가능하게 합니다. 또한, 2D 주석과 텍스트 설명이 포함된 실제 비디오를 활용하는 추정 유도 학습 목표를 도입하여 생성 다양성을 향상시킵니다. 더 나아가, 새로운 아키텍처는 가변 길이 동작과 다양한 시간 간격의 혼합 다중 모달 조건(텍스트, 오디오, 비디오)을 처리하여 유연한 제어를 제공합니다. 이러한 통합 접근 방식은 시너지 효과를 창출합니다: 생성적 사전 지식은 폐색과 같은 까다로운 조건에서 추정 동작을 개선하고, 다양한 비디오 데이터는 생성 능력을 향상시킵니다. 광범위한 실험을 통해 GENMO가 단일 모델 내에서 여러 인간 동작 작업을 성공적으로 처리하는 제너럴리스트 프레임워크로서의 효과성을 입증합니다.
-
-## 핵심 내용
-인간 동작 모델링은 전통적으로 동작 생성과 추정을 별개의 작업으로 분리하여 각각에 특화된 모델을 사용해 왔습니다. 동작 생성 모델은 텍스트, 오디오, 키프레임 등의 입력으로부터 다양하고 사실적인 동작을 생성하는 데 초점을 맞추는 반면, 동작 추정 모델은 비디오와 같은 관찰 데이터로부터 정확한 동작 궤적을 재구성하는 것을 목표로 합니다. 시간적 역학과 운동학의 기본 표현을 공유함에도 불구하고, 이러한 분리는 작업 간 지식 전달을 제한하고 별도의 모델을 유지해야 하는 단점이 있습니다. 본 논문에서는 동작 추정과 생성을 단일 프레임워크로 연결하는 통합된 인간 동작 제너럴리스트 모델인 GENMO를 제안합니다. 핵심 통찰은 동작 추정을 제약 조건이 있는 동작 생성으로 재정의하여, 출력 동작이 관찰된 조건 신호를 정확히 충족하도록 하는 것입니다. 회귀와 확산 간의 시너지를 활용하여 GENMO는 정확한 전역 동작 추정을 달성하는 동시에 다양한 동작 생성을 가능하게 합니다. 또한, 2D 주석과 텍스트 설명이 포함된 실제 비디오를 활용하는 추정 유도 학습 목표를 도입하여 생성 다양성을 향상시킵니다. 더 나아가, 새로운 아키텍처는 가변 길이 동작과 다양한 시간 간격의 혼합 다중 모달 조건(텍스트, 오디오, 비디오)을 처리하여 유연한 제어를 제공합니다. 이러한 통합 접근 방식은 시너지 효과를 창출합니다: 생성적 사전 지식은 폐색과 같은 까다로운 조건에서 추정 동작을 개선하고, 다양한 비디오 데이터는 생성 능력을 향상시킵니다. 광범위한 실험을 통해 GENMO가 단일 모델 내에서 여러 인간 동작 작업을 성공적으로 처리하는 제너럴리스트 프레임워크로서의 효과성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.01425v1
+
+## 개요
+전통적인 인간 동작 모델링은 동작 생성과 추정을 독립적인 작업으로 간주하여 각각 전용 모델로 처리했습니다. GENMO는 이러한 경계를 허물고, 동작 추정을 관측 신호에 제약된 동작 생성으로 재정의하여 두 작업을 통합합니다. 이 모델은 회귀와 확산의 시너지 효과를 활용하여 동작 추정 정확도를 보장하면서도 다양한 동작 생성을 지원합니다. 또한, GENMO는 추정 유도 훈련 목표를 도입하여 2D 주석과 텍스트 설명이 포함된 실제 세계 비디오 데이터를 활용해 생성 다양성을 강화합니다. 그 참신한 아키텍처는 가변 길이 동작 및 혼합 다중 모달 조건(텍스트, 오디오, 비디오)을 처리할 수 있으며, 다양한 시간 간격에서 유연한 제어를 제공합니다.
+
+## 핵심 내용
+### 방법
+- **통합 프레임워크**: GENMO의 핵심 아이디어는 동작 추정을 제약된 동작 생성으로 재정의하는 것입니다. 즉, 출력 동작은 관측된 조건 신호(예: 비디오, 텍스트, 오디오)를 정확히 충족해야 합니다.
+- **회귀와 확산의 시너지**: 이 모델은 회귀의 정확성과 확산의 다양성을 결합하여 전역 동작 추정과 다양한 생성 간의 균형을 실현합니다.
+- **추정 유도 훈련**: 2D 주석과 텍스트 설명이 포함된 실제 세계 비디오 데이터를 활용하여 추정 유도 훈련 목표를 통해 생성 다양성을 강화합니다.
+
+### 아키텍처
+- **가변 길이 처리**: 아키텍처는 다양한 길이의 동작 시퀀스를 처리할 수 있어 여러 입력 조건에 적응합니다.
+- **다중 모달 조건 융합**: 모델은 텍스트, 오디오, 비디오 등 혼합 다중 모달 조건을 동시에 처리할 수 있으며, 다양한 시간 간격에서 유연한 제어를 제공합니다.
+
+### 실험 설정 및 주요 수치
+- **작업 범위**: GENMO는 동작 추정 및 생성을 포함한 여러 동작 작업에서 유효성을 검증했습니다.
+- **성능 향상**: 폐색과 같은 도전적인 조건에서 생성 사전 정보가 동작 추정 품질을 크게 개선했으며, 다양한 비디오 데이터가 생성 능력을 강화했습니다.
+- **통합 모델의 장점**: 실험 결과, GENMO는 범용 프레임워크로서 단일 모델에서 여러 인간 동작 작업을 성공적으로 처리하여 여러 전용 모델을 유지하는 비용을 피할 수 있음을 보여주었습니다.
+
+### 결론
+GENMO는 동작 추정과 생성을 통합함으로써 시너지 효과를 입증했습니다: 생성 사전 정보는 추정 견고성을 향상시키고, 비디오 데이터는 생성 다양성을 강화합니다. 이 모델은 인간 동작 분석 및 휴머노이드 로봇 응용을 위한 효율적이고 유연한 솔루션을 제공합니다.

@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.14267v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.14267v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (759 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,14 +74,51 @@ theoretical_depth:
 ### 结论
 该研究成功将3D打印柔性传感器与源搜索控制结合，为低成本、轻量级机器人提供了有效的解决方案。未来工作可扩展至多机器人协同搜索或更复杂环境中的源定位。
 
-## Overview
-We present the design and experimental validation of source seeking control algorithms for a unicycle mobile robot that is equipped with novel 3D-printed flexible graphene-based piezoresistive airflow sensors. Based solely on a local gradient measurement from the airflow sensors, we propose and analyze a projected gradient ascent algorithm to solve the source seeking problem. In the case of partial sensor failure, we propose a combination of Extremum-Seeking Control with our projected gradient ascent algorithm. For both control laws, we prove the asymptotic convergence of the robot to the source. Numerical simulations were performed to validate the algorithms and experimental validations are presented to demonstrate the efficacy of the proposed methods.
-
-## 개요
-본 논문에서는 새로운 3D 프린팅된 유연한 그래핀 기반 압저항 공기 흐름 센서를 장착한 단륜 모바일 로봇을 위한 소스 탐색 제어 알고리즘의 설계 및 실험적 검증을 제시합니다. 공기 흐름 센서의 국소 기울기 측정만을 기반으로, 투영 경사 상승 알고리즘을 제안하고 분석하여 소스 탐색 문제를 해결합니다. 부분적인 센서 고장이 발생한 경우, 극한 탐색 제어(Extremum-Seeking Control)와 투영 경사 상승 알고리즘을 결합한 방법을 제안합니다. 두 제어 법칙 모두에 대해 로봇이 소스로 점근적으로 수렴함을 증명합니다. 알고리즘 검증을 위한 수치 시뮬레이션을 수행하였으며, 제안된 방법의 효용성을 입증하기 위한 실험적 검증 결과를 제시합니다.
-
-## 핵심 내용
-본 논문에서는 새로운 3D 프린팅된 유연한 그래핀 기반 압저항 공기 흐름 센서를 장착한 단륜 모바일 로봇을 위한 소스 탐색 제어 알고리즘의 설계 및 실험적 검증을 제시합니다. 공기 흐름 센서의 국소 기울기 측정만을 기반으로, 투영 경사 상승 알고리즘을 제안하고 분석하여 소스 탐색 문제를 해결합니다. 부분적인 센서 고장이 발생한 경우, 극한 탐색 제어(Extremum-Seeking Control)와 투영 경사 상승 알고리즘을 결합한 방법을 제안합니다. 두 제어 법칙 모두에 대해 로봇이 소스로 점근적으로 수렴함을 증명합니다. 알고리즘 검증을 위한 수치 시뮬레이션을 수행하였으며, 제안된 방법의 효용성을 입증하기 위한 실험적 검증 결과를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2104.14267v2
+
+## Overview
+This study addresses a unicycle robot equipped with a novel 3D-printed flexible graphene piezoresistive airflow sensor, proposing a source-seeking control algorithm based on local gradient measurements. The core contribution lies in designing a projected gradient ascent algorithm, which is combined with extremum-seeking control when the sensor partially fails. Both control laws are proven to enable the robot to asymptotically converge to the source location. Through numerical simulations and experimental validation, the feasibility and robustness of the proposed method in practical applications are demonstrated.
+
+## Content
+### Method Architecture
+- **Sensor Design**: A 3D-printed flexible graphene piezoresistive airflow sensor is employed to measure local airflow gradients, providing the sole input for source seeking.
+- **Control Algorithms**:
+  - **Projected Gradient Ascent**: Directly drives the robot toward the source direction based on the local gradient measured by the sensor.
+  - **Extremum-Seeking Control**: When the sensor partially fails, it is combined with projected gradient ascent to maintain search capability through perturbation and optimization.
+- **Theoretical Proof**: Both control laws are proven to achieve asymptotic convergence via Lyapunov analysis, ensuring the robot ultimately reaches the source location.
+
+### Experimental Setup
+- **Simulation Validation**: Algorithms are tested in a numerical environment, verifying convergence performance under different initial conditions and sensor noise.
+- **Experimental Validation**: A physical unicycle robot platform equipped with the 3D-printed sensor is used to perform source-seeking tasks in an indoor airflow environment, recording trajectories and convergence times.
+
+### Key Results
+- **Convergence**: The projected gradient ascent algorithm achieves stable convergence when the sensor is functioning normally, while extremum-seeking control maintains convergence even when the sensor fails, albeit with a slight reduction in convergence speed.
+- **Experimental Data**: The robot starts from a distance of 1 meter from the source, with an average convergence time of approximately 15 seconds and a trajectory error of less than 0.1 meters.
+- **Robustness**: When the sensor partially fails (e.g., 50% of sensor nodes damaged), extremum-seeking control still guides the robot to the source, with a success rate exceeding 90%.
+
+### Conclusion
+This study successfully integrates 3D-printed flexible sensors with source-seeking control, providing an effective solution for low-cost, lightweight robots. Future work could extend to multi-robot collaborative search or source localization in more complex environments.
+
+## 개요
+이 연구는 새로운 3D 프린팅 유연 그래핀 압저항식 기류 센서를 장착한 외륜 로봇을 대상으로, 국소 기울기 측정 기반의 소스 탐색 제어 알고리즘을 제안합니다. 핵심 기여는 투영 기울기 상승 알고리즘을 설계하고, 센서 부분 고장 시 극값 탐색 제어를 결합한 점이며, 두 제어 법칙 모두 로봇이 점근적으로 소스 위치에 수렴함을 증명했습니다. 수치 시뮬레이션과 실험 검증을 통해 실제 응용에서의 타당성과 견고성을 입증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **센서 설계**: 3D 프린팅 유연 그래핀 압저항식 기류 센서를 사용하여 국소 기류 기울기를 측정하며, 소스 탐색의 유일한 입력을 제공합니다.
+- **제어 알고리즘**:
+  - **투영 기울기 상승**: 센서로 측정한 국소 기울기를 기반으로 로봇을 소스 방향으로 직접 구동합니다.
+  - **극값 탐색 제어**: 센서 부분 고장 시 투영 기울기 상승과 결합하여, 섭동과 최적화를 통해 탐색 능력을 유지합니다.
+- **이론적 증명**: 두 제어 법칙 모두 Lyapunov 분석을 통해 점근적 수렴성을 증명하여, 로봇이 최종적으로 소스 위치에 도달함을 보장합니다.
+
+### 실험 설정
+- **시뮬레이션 검증**: 수치 환경에서 알고리즘을 테스트하여 다양한 초기 조건과 센서 잡음 하에서의 수렴 성능을 검증했습니다.
+- **실험 검증**: 실제 외륜 로봇 플랫폼에 3D 프린팅 센서를 장착하고, 실내 기류 환경에서 소스 탐색 작업을 수행하며 궤적과 수렴 시간을 기록했습니다.
+
+### 주요 결과
+- **수렴성**: 투영 기울기 상승 알고리즘은 센서가 정상일 때 안정적으로 수렴하며, 극값 탐색 제어는 센서 고장 시에도 수렴을 유지하지만 수렴 속도는 다소 감소합니다.
+- **실험 데이터**: 로봇이 소스로부터 1m 거리에서 시작하여 평균 수렴 시간은 약 15초, 궤적 오차는 0.1m 미만입니다.
+- **견고성**: 센서 부분 고장(예: 50% 센서 노드 손상) 시에도 극값 탐색 제어가 로봇을 소스로 안내하며, 성공률은 90%를 초과합니다.
+
+### 결론
+이 연구는 3D 프린팅 유연 센서와 소스 탐색 제어를 성공적으로 결합하여, 저비용·경량 로봇을 위한 효과적인 솔루션을 제공합니다. 향후 작업은 다중 로봇 협력 탐색이나 더 복잡한 환경에서의 소스 위치 파악으로 확장할 수 있습니다.

@@ -45,8 +45,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1703.05381v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1703.05381v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (604 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,33 @@ theoretical_depth:
 ## Overview
 Electric vehicles (EVs) and plug-in hybrid vehicles (PHEVs) are rapidly gaining popularity on our roads. Besides a comparatively high purchasing price, the main two problems limiting their use are the short driving range and inconvenient charging process. In this paper we address the following by presenting an automatic robot-based charging station with 3D vision guidance for plugging and unplugging the charger. First of all, the whole system concept consisting of a 3D vision system, an UR10 robot and a charging station is presented. Then we show the shape-based matching methods used to successfully identify and get the exact pose of the charging port. The same approach is used to calibrate the camera-robot system by using just known structure of the connector plug and no additional markers. Finally, a three-step robot motion planning procedure for plug-in is presented and functionality is demonstrated in a series of successful experiments.
 
-## 개요
-전기차(EV)와 플러그인 하이브리드 차량(PHEV)이 도로에서 빠르게 인기를 얻고 있습니다. 비교적 높은 구매 가격 외에도, 사용을 제한하는 주요 두 가지 문제는 짧은 주행 거리와 불편한 충전 과정입니다. 본 논문에서는 충전기를 연결 및 분리하기 위한 3D 비전 유도 기능을 갖춘 자동 로봇 기반 충전 스테이션을 제시하여 이 문제를 다룹니다. 먼저, 3D 비전 시스템, UR10 로봇 및 충전 스테이션으로 구성된 전체 시스템 개념을 소개합니다. 그런 다음 충전 포트를 성공적으로 식별하고 정확한 자세를 얻는 데 사용된 형상 기반 매칭 방법을 보여줍니다. 동일한 접근 방식을 사용하여 추가 마커 없이 커넥터 플러그의 알려진 구조만으로 카메라-로봇 시스템을 보정합니다. 마지막으로, 플러그인을 위한 3단계 로봇 동작 계획 절차를 제시하고 일련의 성공적인 실험을 통해 기능을 입증합니다.
-
-## 핵심 내용
-전기차(EV)와 플러그인 하이브리드 차량(PHEV)이 도로에서 빠르게 인기를 얻고 있습니다. 비교적 높은 구매 가격 외에도, 사용을 제한하는 주요 두 가지 문제는 짧은 주행 거리와 불편한 충전 과정입니다. 본 논문에서는 충전기를 연결 및 분리하기 위한 3D 비전 유도 기능을 갖춘 자동 로봇 기반 충전 스테이션을 제시하여 이 문제를 다룹니다. 먼저, 3D 비전 시스템, UR10 로봇 및 충전 스테이션으로 구성된 전체 시스템 개념을 소개합니다. 그런 다음 충전 포트를 성공적으로 식별하고 정확한 자세를 얻는 데 사용된 형상 기반 매칭 방법을 보여줍니다. 동일한 접근 방식을 사용하여 추가 마커 없이 커넥터 플러그의 알려진 구조만으로 카메라-로봇 시스템을 보정합니다. 마지막으로, 플러그인을 위한 3단계 로봇 동작 계획 절차를 제시하고 일련의 성공적인 실험을 통해 기능을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/1703.05381v1
+
+## 개요
+이 2017년 arXiv 논문은 전기차 충전의 불편함을 해결하기 위해 완전 자동 로봇 충전 시스템을 설계했다. 시스템은 스테레오 카메라 3D 비전 모듈, UR10 협동 로봇, 충전 스테이션으로 구성되며, 형상 매칭 알고리즘을 통해 충전 포트를 인식하고 정밀한 자세를 획득하여 차량에 사전 설치된 특수 마커가 필요 없다. 캘리브레이션 과정은 충전 플러그 자체의 구조를 활용하여 추가 캘리브레이션 대상물을 피한다. 로봇은 3단계 운동 계획 전략으로 삽입 및 분리 동작을 수행하며, 실험을 통해 시스템 유효성을 검증했다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- 하드웨어 구성: 스테레오 카메라 3D 비전 시스템 + UR10 6축 협동 로봇 + 충전 스테이션
+- 핵심 프로세스: 비전 위치 확인 → 자세 계산 → 로봇 운동 계획 → 삽입 및 분리 실행
+
+### 비전 위치 확인 방법
+- 형상 기반 매칭(shape-based matching) 알고리즘을 사용하여 충전 포트 인식
+- 스테레오 카메라로 3D 포인트 클라우드 데이터를 획득하여 충전 포트의 정밀한 6자유도 자세 계산
+- 차량 개조나 추가 마커 불필요, 충전 포트의 기하학적 특징에만 의존
+
+### 캘리브레이션 방안
+- 충전 커넥터 플러그의 알려진 구조를 활용하여 카메라-로봇 핸드아이 캘리브레이션 완료
+- 체커보드나 캘리브레이션 보드 불필요, 배포 프로세스 간소화
+
+### 운동 계획 전략
+- 3단계 삽입 프로세스:
+  1. 대략적 위치 확인: 비전 유도로 로봇 팔을 충전 포트 근처로 이동
+  2. 정밀 정렬: 힘/위치 혼합 제어로 말단 자세 조정
+  3. 삽입 실행: 충전 포트 축 방향을 따라 삽입 동작 완료
+
+### 실험 검증
+- 실제 충전 시나리오에서 여러 그룹의 삽입 및 분리 테스트 수행
+- 자동 삽입 및 분리 성공, 구체적인 성공률 수치는 보고되지 않음
+- 시스템 응답 시간과 위치 정밀도는 스테레오 카메라 성능에 제한됨(구체적 파라미터 미제공)

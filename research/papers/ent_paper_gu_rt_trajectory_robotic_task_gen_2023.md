@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.01977v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.01977v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (939 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,29 @@ RT-Trajectory 通过轨迹草图实现了机器人任务泛化的突破，为策
 ## Overview
 Generalization remains one of the most important desiderata for robust robot learning systems. While recently proposed approaches show promise in generalization to novel objects, semantic concepts, or visual distribution shifts, generalization to new tasks remains challenging. For example, a language-conditioned policy trained on pick-and-place tasks will not be able to generalize to a folding task, even if the arm trajectory of folding is similar to pick-and-place. Our key insight is that this kind of generalization becomes feasible if we represent the task through rough trajectory sketches. We propose a policy conditioning method using such rough trajectory sketches, which we call RT-Trajectory, that is practical, easy to specify, and allows the policy to effectively perform new tasks that would otherwise be challenging to perform. We find that trajectory sketches strike a balance between being detailed enough to express low-level motion-centric guidance while being coarse enough to allow the learned policy to interpret the trajectory sketch in the context of situational visual observations. In addition, we show how trajectory sketches can provide a useful interface to communicate with robotic policies: they can be specified through simple human inputs like drawings or videos, or through automated methods such as modern image-generating or waypoint-generating methods. We evaluate RT-Trajectory at scale on a variety of real-world robotic tasks, and find that RT-Trajectory is able to perform a wider range of tasks compared to language-conditioned and goal-conditioned policies, when provided the same training data.
 
-## 개요
-일반화는 강건한 로봇 학습 시스템을 위한 가장 중요한 요구사항 중 하나로 남아 있습니다. 최근 제안된 접근법들은 새로운 객체, 의미론적 개념 또는 시각적 분포 변화에 대한 일반화에서 가능성을 보여주지만, 새로운 작업으로의 일반화는 여전히 어려운 과제입니다. 예를 들어, 집기-놓기 작업으로 훈련된 언어 조건화 정책은 접기 작업의 팔 궤적이 집기-놓기와 유사하더라도 접기 작업으로 일반화할 수 없습니다. 우리의 핵심 통찰은 이러한 종류의 일반화가 대략적인 궤적 스케치를 통해 작업을 표현할 때 가능해진다는 것입니다. 우리는 이러한 대략적인 궤적 스케치를 사용하는 정책 조건화 방법을 제안하며, 이를 RT-Trajectory라고 부릅니다. 이 방법은 실용적이고 지정하기 쉬우며, 정책이 그렇지 않으면 수행하기 어려운 새로운 작업을 효과적으로 수행할 수 있게 합니다. 우리는 궤적 스케치가 저수준 동작 중심 지침을 표현할 만큼 상세하면서도, 학습된 정책이 상황별 시각적 관찰 맥락에서 궤적 스케치를 해석할 수 있을 만큼 대략적인 균형을 이룬다는 것을 발견했습니다. 또한, 궤적 스케치가 로봇 정책과 소통하기 위한 유용한 인터페이스를 제공할 수 있음을 보여줍니다. 이는 그림이나 비디오와 같은 간단한 인간 입력, 또는 현대 이미지 생성 또는 웨이포인트 생성 방법과 같은 자동화된 방법을 통해 지정될 수 있습니다. 우리는 다양한 실제 로봇 작업에서 RT-Trajectory를 대규모로 평가했으며, 동일한 훈련 데이터가 제공될 때 RT-Trajectory가 언어 조건화 및 목표 조건화 정책보다 더 넓은 범위의 작업을 수행할 수 있음을 발견했습니다.
-
-## 핵심 내용
-일반화는 강건한 로봇 학습 시스템을 위한 가장 중요한 요구사항 중 하나로 남아 있습니다. 최근 제안된 접근법들은 새로운 객체, 의미론적 개념 또는 시각적 분포 변화에 대한 일반화에서 가능성을 보여주지만, 새로운 작업으로의 일반화는 여전히 어려운 과제입니다. 예를 들어, 집기-놓기 작업으로 훈련된 언어 조건화 정책은 접기 작업의 팔 궤적이 집기-놓기와 유사하더라도 접기 작업으로 일반화할 수 없습니다. 우리의 핵심 통찰은 이러한 종류의 일반화가 대략적인 궤적 스케치를 통해 작업을 표현할 때 가능해진다는 것입니다. 우리는 이러한 대략적인 궤적 스케치를 사용하는 정책 조건화 방법을 제안하며, 이를 RT-Trajectory라고 부릅니다. 이 방법은 실용적이고 지정하기 쉬우며, 정책이 그렇지 않으면 수행하기 어려운 새로운 작업을 효과적으로 수행할 수 있게 합니다. 우리는 궤적 스케치가 저수준 동작 중심 지침을 표현할 만큼 상세하면서도, 학습된 정책이 상황별 시각적 관찰 맥락에서 궤적 스케치를 해석할 수 있을 만큼 대략적인 균형을 이룬다는 것을 발견했습니다. 또한, 궤적 스케치가 로봇 정책과 소통하기 위한 유용한 인터페이스를 제공할 수 있음을 보여줍니다. 이는 그림이나 비디오와 같은 간단한 인간 입력, 또는 현대 이미지 생성 또는 웨이포인트 생성 방법과 같은 자동화된 방법을 통해 지정될 수 있습니다. 우리는 다양한 실제 로봇 작업에서 RT-Trajectory를 대규모로 평가했으며, 동일한 훈련 데이터가 제공될 때 RT-Trajectory가 언어 조건화 및 목표 조건화 정책보다 더 넓은 범위의 작업을 수행할 수 있음을 발견했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2311.01977v2
+
+## 개요
+RT-Trajectory는 로봇 학습에서의 작업 일반화 문제를 해결하기 위해, 대략적인 궤적 스케치를 정책 조건으로 제안합니다. 이러한 스케치는 저수준 동작 안내를 표현하기에 충분한 세부 정보를 포함하면서도, 정책이 시각적 관찰과 결합하여 유연하게 해석할 수 있도록 대략적인 특성을 유지합니다. 궤적 스케치는 인간 입력(예: 손그림 또는 비디오) 또는 자동 방법(예: 이미지 생성 또는 경유점 생성)을 통해 지정될 수 있으며, 로봇 정책과의 상호작용을 위한 실용적인 인터페이스를 제공합니다. 대규모 실제 세계 실험에서, RT-Trajectory는 동일한 훈련 데이터를 사용할 때 언어 조건 및 목표 조건 정책보다 더 넓은 범위의 작업을 수행할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: 작업을 정확한 궤적이 아닌 대략적인 궤적 스케치로 표현합니다. 스케치는 동작 안내와 시각적 맥락 해석 사이의 균형을 유지하여, 정책이 새로운 작업(예: pick-and-place에서 folding으로의 일반화)으로 확장될 수 있게 합니다.
+- **조건 메커니즘**: 정책은 궤적 스케치를 입력 조건으로 사용하며, 현재 시각적 관찰과 결합하여 동작을 생성합니다. 스케치는 정확한 좌표를 요구하지 않으며, 대략적인 이동 경로만 제공합니다.
+- **상호작용 인터페이스**: 궤적 스케치는 다양한 방식으로 생성될 수 있습니다:
+  - 인간 입력: 손그림 스케치 또는 데모 비디오.
+  - 자동 방법: 현대 이미지 생성 모델(예: 확산 모델) 또는 경유점 생성 알고리즘 활용.
+
+### 실험 설정
+- **작업 범위**: pick-and-place, folding, rearrangement 등 다양한 실제 세계 로봇 조작 작업을 포함합니다.
+- **비교 기준선**: 언어 조건 정책(예: RT-2) 및 목표 조건 정책(예: goal-conditioned policies).
+- **훈련 데이터**: 모든 정책은 동일한 훈련 데이터 세트를 사용하여 공정한 비교를 보장합니다.
+
+### 주요 결과
+- RT-Trajectory는 보지 못한 작업에서 기준선보다 훨씬 높은 성공률을 보여줍니다. 예를 들어, folding 작업에서 언어 조건 정책은 작업 설명 부족으로 실패하지만, RT-Trajectory는 궤적 스케치를 통해 성공적으로 수행합니다.
+- 궤적 스케치의 효과는 대략적인 특성에 있습니다: 너무 정확한 궤적은 정책의 적응성을 제한하고, 너무 모호하면 충분한 안내를 제공하지 못합니다.
+- 자동 생성된 궤적 스케치(예: 이미지 생성 모델을 통한)는 인간 입력과 유사한 성능을 보여, 이 방법이 대규모 응용으로 확장될 수 있음을 시사합니다.
+
+### 결론
+RT-Trajectory는 궤적 스케치를 통해 로봇 작업 일반화의 돌파구를 마련하고, 정책 상호작용을 위한 유연한 인터페이스를 제공하며, 실제 세계 실험에서 그 효과를 검증했습니다. 향후 연구는 더 복잡한 스케치 생성 방법 및 다중 작업 공동 훈련을 탐구할 수 있습니다.

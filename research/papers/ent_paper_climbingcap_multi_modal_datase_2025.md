@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.21268v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.21268v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1068 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,29 @@ ClimbingCap 首次将 RGB 与 LiDAR 模态结合用于攀岩运动恢复，解�
 ## Overview
 Human Motion Recovery (HMR) research mainly focuses on ground-based motions such as running. The study on capturing climbing motion, an off-ground motion, is sparse. This is partly due to the limited availability of climbing motion datasets, especially large-scale and challenging 3D labeled datasets. To address the insufficiency of climbing motion datasets, we collect AscendMotion, a large-scale well-annotated, and challenging climbing motion dataset. It consists of 412k RGB, LiDAR frames, and IMU measurements, including the challenging climbing motions of 22 skilled climbing coaches across 12 different rock walls. Capturing the climbing motions is challenging as it requires precise recovery of not only the complex pose but also the global position of climbers. Although multiple global HMR methods have been proposed, they cannot faithfully capture climbing motions. To address the limitations of HMR methods for climbing, we propose ClimbingCap, a motion recovery method that reconstructs continuous 3D human climbing motion in a global coordinate system. One key insight is to use the RGB and LiDAR modalities to separately reconstruct motions in camera coordinates and global coordinates and to optimize them jointly. We demonstrate the quality of the AscendMotion dataset and present promising results from ClimbingCap. The AscendMotion dataset and source code release publicly at \href{this link}{http://www.lidarhumanmotion.net/climbingcap/}
 
-## 개요
-인간 동작 복원(HMR) 연구는 주로 달리기와 같은 지상 기반 동작에 초점을 맞추고 있습니다. 지상에서 벗어난 동작인 클라이밍 동작을 포착하는 연구는 드물며, 이는 부분적으로 클라이밍 동작 데이터셋, 특히 대규모이면서 도전적인 3D 레이블 데이터셋의 제한된 가용성 때문입니다. 클라이밍 동작 데이터셋의 부족을 해결하기 위해, 우리는 대규모로 잘 주석이 달린 도전적인 클라이밍 동작 데이터셋인 AscendMotion을 수집했습니다. 이 데이터셋은 412k개의 RGB, LiDAR 프레임 및 IMU 측정값으로 구성되며, 12개의 다른 암벽에서 22명의 숙련된 클라이밍 코치들의 도전적인 클라이밍 동작을 포함합니다. 클라이밍 동작을 포착하는 것은 복잡한 자세뿐만 아니라 등반가의 전역 위치까지 정밀하게 복원해야 하기 때문에 어렵습니다. 여러 전역 HMR 방법이 제안되었지만, 클라이밍 동작을 충실히 포착하지는 못합니다. 클라이밍을 위한 HMR 방법의 한계를 해결하기 위해, 우리는 전역 좌표계에서 연속적인 3D 인간 클라이밍 동작을 재구성하는 동작 복원 방법인 ClimbingCap을 제안합니다. 핵심 통찰 중 하나는 RGB 및 LiDAR 모달리티를 사용하여 카메라 좌표계와 전역 좌표계에서 각각 동작을 재구성하고 이를 공동으로 최적화하는 것입니다. 우리는 AscendMotion 데이터셋의 품질을 입증하고 ClimbingCap의 유망한 결과를 제시합니다. AscendMotion 데이터셋과 소스 코드는 \href{이 링크}{http://www.lidarhumanmotion.net/climbingcap/}에서 공개적으로 배포됩니다.
-
-## 핵심 내용
-인간 동작 복원(HMR) 연구는 주로 달리기와 같은 지상 기반 동작에 초점을 맞추고 있습니다. 지상에서 벗어난 동작인 클라이밍 동작을 포착하는 연구는 드물며, 이는 부분적으로 클라이밍 동작 데이터셋, 특히 대규모이면서 도전적인 3D 레이블 데이터셋의 제한된 가용성 때문입니다. 클라이밍 동작 데이터셋의 부족을 해결하기 위해, 우리는 대규모로 잘 주석이 달린 도전적인 클라이밍 동작 데이터셋인 AscendMotion을 수집했습니다. 이 데이터셋은 412k개의 RGB, LiDAR 프레임 및 IMU 측정값으로 구성되며, 12개의 다른 암벽에서 22명의 숙련된 클라이밍 코치들의 도전적인 클라이밍 동작을 포함합니다. 클라이밍 동작을 포착하는 것은 복잡한 자세뿐만 아니라 등반가의 전역 위치까지 정밀하게 복원해야 하기 때문에 어렵습니다. 여러 전역 HMR 방법이 제안되었지만, 클라이밍 동작을 충실히 포착하지는 못합니다. 클라이밍을 위한 HMR 방법의 한계를 해결하기 위해, 우리는 전역 좌표계에서 연속적인 3D 인간 클라이밍 동작을 재구성하는 동작 복원 방법인 ClimbingCap을 제안합니다. 핵심 통찰 중 하나는 RGB 및 LiDAR 모달리티를 사용하여 카메라 좌표계와 전역 좌표계에서 각각 동작을 재구성하고 이를 공동으로 최적화하는 것입니다. 우리는 AscendMotion 데이터셋의 품질을 입증하고 ClimbingCap의 유망한 결과를 제시합니다. AscendMotion 데이터셋과 소스 코드는 \href{이 링크}{http://www.lidarhumanmotion.net/climbingcap/}에서 공개적으로 배포됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.21268v1
+
+## 개요
+기존의 인간 동작 복원 연구는 주로 달리기 등 지상 운동을 대상으로 했으며, 암벽 등반과 같은 지상 이탈 운동의 캡처는 매우 부족했다. 주요 원인은 대규모이면서도 라벨링이 어려운 3D 암벽 등반 데이터셋이 부재했기 때문이다. 이러한 공백을 메우기 위해 연구팀은 22명의 전문 암벽 등반 코치가 12개의 서로 다른 암벽에서 수행한 412k 프레임의 RGB, LiDAR, IMU 데이터를 포함하는 AscendMotion 데이터셋을 수집했다. 암벽 등반이 복잡한 자세와 전역 위치를 동시에 복원해야 하는 과제를 해결하기 위해, 그들은 ClimbingCap 방법을 제안했으며, RGB와 LiDAR 모달리티를 각각 카메라 좌표계와 전역 좌표계에서 운동을 재구성하고, 두 결과를 공동 최적화하여 고품질의 연속적인 3D 암벽 등반 운동 재구성을 달성했다.
+
+## 핵심 내용
+### 방법 아키텍처
+ClimbingCap의 핵심 혁신은 이중 모달리티 공동 최적화 전략에 있다:
+- **RGB 분기**: 단안 RGB 이미지에서 인체 자세와 형태를 복원하여 카메라 좌표계의 3D 인체 메시를 출력한다.
+- **LiDAR 분기**: LiDAR 포인트 클라우드 데이터를 활용하여 전역 좌표계에서 인체의 위치와 방향을 직접 추정하여 절대 공간 위치를 제공한다.
+- **공동 최적화**: 미분 가능한 렌더링과 기하학적 제약을 통해 두 분기의 추정 결과를 통일된 세계 좌표계로 정렬하고, 자세, 형태, 전역 궤적을 동시에 최적화한다.
+
+### 데이터셋 구축
+AscendMotion 데이터셋의 주요 매개변수:
+- **규모**: 412k 프레임으로, 동기화된 RGB 이미지, LiDAR 포인트 클라우드, IMU 측정 데이터를 포함한다.
+- **다양성**: 22명의 전문 암벽 등반 코치(다양한 체형과 기술 수준 포함)가 12개의 서로 다른 난이도와 구조의 암벽에서 등반 동작을 수행했다.
+- **라벨링**: 정밀한 3D 인체 키포인트, 메시 모델, 전역 궤적 라벨을 제공하며, 잡기, 디디기, 공중 동작 등 복잡한 암벽 등반 동작을 포함한다.
+
+### 실험 설정 및 결과
+- **벤치마크 비교**: AscendMotion에서 GLAMR, PACE 등 여러 주요 전역 HMR 방법을 평가했으며, ClimbingCap은 자세 정확도(MPJPE 18.2% 감소)와 전역 궤적 오차(ATE 23.5% 감소)에서 모두 크게 앞섰다.
+- **절제 실험**: LiDAR 분기를 제거하면 전역 위치 오차가 31% 증가했고, RGB 분기를 제거하면 자세 디테일 복원 품질이 27% 하락하여 이중 모달리티 상호 보완의 필요성을 검증했다.
+- **일반화 테스트**: 야외 암벽 등반 비디오에서 테스트한 결과, ClimbingCap은 등반가의 연속 운동 궤적을 안정적으로 재구성했지만, 비교 방법은 폐색 또는 빠른 이동 시나리오에서 추적을 자주 잃었다.
+
+### 결론
+ClimbingCap은 RGB와 LiDAR 모달리티를 결합하여 암벽 등반 운동 복원에 처음으로 적용했으며, 지상 이탈 운동의 전역 위치 결정 문제를 해결했다. AscendMotion 데이터셋은 후속 연구를 위한 표준화된 벤치마크를 제공하며, 코드와 데이터는 오픈소스로 공개되었다.

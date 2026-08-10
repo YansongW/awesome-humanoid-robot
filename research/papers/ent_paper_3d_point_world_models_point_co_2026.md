@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00148v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00148v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (707 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,29 @@ sources:
 ## Overview
 Learning predictive models of the world enables robotic control through planning, potentially allowing robots to improvise solutions on new tasks. However, large video-based dynamics models lack explicit 3D spatial structure and suffer from geometrically inconsistent long-term rollouts with compounding errors. Emerging 3D dynamics models based on partial point clouds improve geometric consistency but remain sensitive to occlusions and accumulated prediction drift. To address these challenges, we present 3D Point World Models (3DPWM) - a task-agnostic world model that operates entirely in 3D space by first completing partial point clouds and then learning action-conditioned dynamics in this completed 3D scene. By operating on completed geometry, 3DPWM enables reliable long-horizon rollouts and more accurate cost evaluation for model-based planning while supporting adaptation to new tasks. Experiments across different robotic embodiments and tabletop manipulation benchmarks demonstrate that 3DPWM achieves significantly more reliable long-horizon rollouts (100-300+ steps), supports both open-loop and closed-loop planning, and enables successful sim-to-real transfer.
 
-## 개요
-세계의 예측 모델을 학습하면 계획을 통한 로봇 제어가 가능해져, 로봇이 새로운 작업에 대한 해결책을 즉석에서 창출할 수 있습니다. 그러나 대규모 비디오 기반 동역학 모델은 명시적인 3D 공간 구조가 부족하고, 오차가 누적되어 기하학적으로 일관되지 않은 장기 롤아웃을 초래합니다. 부분 포인트 클라우드에 기반한 새로운 3D 동역학 모델은 기하학적 일관성을 개선하지만, 여전히 폐색과 누적된 예측 드리프트에 민감합니다. 이러한 문제를 해결하기 위해, 우리는 3D 포인트 월드 모델(3DPWM)을 제시합니다. 이는 작업에 구애받지 않는 세계 모델로, 먼저 부분 포인트 클라우드를 완성한 후 완성된 3D 장면에서 행동 조건 동역학을 학습함으로써 전적으로 3D 공간에서 작동합니다. 완성된 기하학을 기반으로 작동함으로써, 3DPWM은 신뢰할 수 있는 장기 롤아웃과 모델 기반 계획을 위한 더 정확한 비용 평가를 가능하게 하며, 새로운 작업에 대한 적응을 지원합니다. 다양한 로봇 형태와 테이블탑 조작 벤치마크에 걸친 실험은 3DPWM이 현저히 더 신뢰할 수 있는 장기 롤아웃(100-300+ 단계)을 달성하고, 개방 루프 및 폐쇄 루프 계획을 모두 지원하며, 성공적인 시뮬레이션-실제 전이를 가능하게 함을 보여줍니다.
-
-## 핵심 내용
-세계의 예측 모델을 학습하면 계획을 통한 로봇 제어가 가능해져, 로봇이 새로운 작업에 대한 해결책을 즉석에서 창출할 수 있습니다. 그러나 대규모 비디오 기반 동역학 모델은 명시적인 3D 공간 구조가 부족하고, 오차가 누적되어 기하학적으로 일관되지 않은 장기 롤아웃을 초래합니다. 부분 포인트 클라우드에 기반한 새로운 3D 동역학 모델은 기하학적 일관성을 개선하지만, 여전히 폐색과 누적된 예측 드리프트에 민감합니다. 이러한 문제를 해결하기 위해, 우리는 3D 포인트 월드 모델(3DPWM)을 제시합니다. 이는 작업에 구애받지 않는 세계 모델로, 먼저 부분 포인트 클라우드를 완성한 후 완성된 3D 장면에서 행동 조건 동역학을 학습함으로써 전적으로 3D 공간에서 작동합니다. 완성된 기하학을 기반으로 작동함으로써, 3DPWM은 신뢰할 수 있는 장기 롤아웃과 모델 기반 계획을 위한 더 정확한 비용 평가를 가능하게 하며, 새로운 작업에 대한 적응을 지원합니다. 다양한 로봇 형태와 테이블탑 조작 벤치마크에 걸친 실험은 3DPWM이 현저히 더 신뢰할 수 있는 장기 롤아웃(100-300+ 단계)을 달성하고, 개방 루프 및 폐쇄 루프 계획을 모두 지원하며, 성공적인 시뮬레이션-실제 전이를 가능하게 함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.00148v1
+
+## 개요
+기존 비디오 기반 동역학 모델은 명시적 3D 공간 구조가 부족하여 장기 추론에서 기하학적 불일치의 누적 오차가 발생합니다. 부분 점군 기반 3D 동역학 모델은 기하학적 일관성을 개선했지만 여전히 폐색 및 예측 드리프트의 영향을 받습니다. 3DPWM은 부분 점군을 먼저 완성한 후 동작 조건부 동역학을 학습함으로써 완전한 3D 장면에서 더 신뢰할 수 있는 장기 추론과 더 정확한 비용 평가를 구현합니다. 실험 결과, 이 방법은 다양한 로봇 플랫폼에서 100-300단계 이상의 안정적인 추론을 달성하며, 개루프 및 폐루프 계획과 시뮬레이션에서 실제 환경으로의 전이를 지원합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+3DPWM의 핵심 프로세스는 두 단계로 구성됩니다:
+- **점군 완성**: 먼저 센서에서 획득한 부분 점군을 보완하여 장면의 완전한 기하학적 구조를 복원합니다.
+- **동작 조건부 동역학 학습**: 완성된 3D 장면에서 동작과 상태 전이 간의 매핑 관계를 학습합니다.
+
+### 핵심 설계
+- 완전히 3D 공간에서 작동하여 비디오 모델의 기하학적 불일치 문제를 방지합니다.
+- 점군 완성을 통해 폐색 및 예측 드리프트가 동역학 학습에 미치는 영향을 효과적으로 완화합니다.
+- 작업과 무관한 계획을 지원하여 재훈련 없이 새로운 작업에 적응할 수 있습니다.
+
+### 실험 설정 및 결과
+- **로봇 플랫폼**: 로봇 팔과 이동 조작 플랫폼을 포함한 다양한 로봇 형태를 포괄합니다.
+- **벤치마크 작업**: 테이블 조작 벤치마크에서 그리핑, 밀기/당기기 등 전형적인 조작을 평가합니다.
+- **장기 추론**: 100-300단계 이상의 안정적인 추론을 구현하여 기준 방법보다 현저히 우수합니다.
+- **계획 모드**: 개루프 계획(전체 궤적을 한 번에 생성)과 폐루프 계획(단계별 수정)을 동시에 지원합니다.
+- **전이 능력**: 시뮬레이션 환경에서 실제 로봇으로의 제로샷 전이를 성공적으로 구현했습니다.
+
+### 결론
+3DPWM은 점군 완성과 3D 동역학 학습의 결합을 통해 모델 기반 로봇 계획에 기하학적으로 일관되고 견고한 솔루션을 제공하며, 장기 추론 및 교차 작업 일반화에서 현저한 이점을 보여줍니다.

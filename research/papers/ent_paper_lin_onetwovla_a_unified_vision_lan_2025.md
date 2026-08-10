@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11917v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11917v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (815 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,25 @@ sources:
 ## Overview
 General-purpose robots capable of performing diverse tasks require synergistic reasoning and acting capabilities. However, recent dual-system approaches, which separate high-level reasoning from low-level acting, often suffer from challenges such as limited mutual understanding of capabilities between systems and latency issues. This paper introduces OneTwoVLA, a single unified vision-language-action model that can perform both acting (System One) and reasoning (System Two). Crucially, OneTwoVLA adaptively switches between two modes: explicitly reasoning at critical moments during task execution, and generating actions based on the most recent reasoning at other times. To further unlock OneTwoVLA's reasoning and generalization capabilities, we design a scalable pipeline for synthesizing embodied reasoning-centric vision-language data, used for co-training with robot data. We validate OneTwoVLA's effectiveness through extensive experiments, highlighting its superior performance across four key capabilities: long-horizon task planning, error detection and recovery, natural human-robot interaction, and generalizable visual grounding, enabling the model to perform long-horizon, highly dexterous manipulation tasks such as making hotpot or mixing cocktails.
 
-## 개요
-다양한 작업을 수행할 수 있는 범용 로봇은 시너지 효과를 내는 추론 및 행동 능력을 필요로 합니다. 그러나 최근의 이중 시스템 접근 방식은 고수준 추론과 저수준 행동을 분리하여, 시스템 간 능력에 대한 상호 이해 부족 및 지연 문제와 같은 어려움을 겪는 경우가 많습니다. 본 논문은 행동(시스템 1)과 추론(시스템 2)을 모두 수행할 수 있는 단일 통합 비전-언어-행동 모델인 OneTwoVLA를 소개합니다. 핵심적으로, OneTwoVLA는 작업 실행 중 중요한 순간에 명시적으로 추론하고, 그 외 시간에는 가장 최근 추론을 기반으로 행동을 생성하는 두 가지 모드 간에 적응적으로 전환합니다. OneTwoVLA의 추론 및 일반화 능력을 더욱 향상시키기 위해, 로봇 데이터와 공동 학습에 사용되는 구현 추론 중심의 비전-언어 데이터를 합성하기 위한 확장 가능한 파이프라인을 설계합니다. 광범위한 실험을 통해 OneTwoVLA의 효과성을 검증하며, 장기 작업 계획, 오류 감지 및 복구, 자연스러운 인간-로봇 상호작용, 일반화 가능한 시각적 근거라는 네 가지 핵심 능력에서 뛰어난 성능을 강조합니다. 이를 통해 모델이 핫팟 만들기나 칵테일 혼합과 같은 장기적이고 고도의 정밀 조작 작업을 수행할 수 있게 합니다.
-
-## 핵심 내용
-다양한 작업을 수행할 수 있는 범용 로봇은 시너지 효과를 내는 추론 및 행동 능력을 필요로 합니다. 그러나 최근의 이중 시스템 접근 방식은 고수준 추론과 저수준 행동을 분리하여, 시스템 간 능력에 대한 상호 이해 부족 및 지연 문제와 같은 어려움을 겪는 경우가 많습니다. 본 논문은 행동(시스템 1)과 추론(시스템 2)을 모두 수행할 수 있는 단일 통합 비전-언어-행동 모델인 OneTwoVLA를 소개합니다. 핵심적으로, OneTwoVLA는 작업 실행 중 중요한 순간에 명시적으로 추론하고, 그 외 시간에는 가장 최근 추론을 기반으로 행동을 생성하는 두 가지 모드 간에 적응적으로 전환합니다. OneTwoVLA의 추론 및 일반화 능력을 더욱 향상시키기 위해, 로봇 데이터와 공동 학습에 사용되는 구현 추론 중심의 비전-언어 데이터를 합성하기 위한 확장 가능한 파이프라인을 설계합니다. 광범위한 실험을 통해 OneTwoVLA의 효과성을 검증하며, 장기 작업 계획, 오류 감지 및 복구, 자연스러운 인간-로봇 상호작용, 일반화 가능한 시각적 근거라는 네 가지 핵심 능력에서 뛰어난 성능을 강조합니다. 이를 통해 모델이 핫팟 만들기나 칵테일 혼합과 같은 장기적이고 고도의 정밀 조작 작업을 수행할 수 있게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.11917v2
+
+## 개요
+기존 이중 시스템 방법은 고수준 추론과 저수준 실행을 분리하여, 종종 시스템 간 능력 이해 부족 및 지연 문제를 초래합니다. OneTwoVLA는 단일 모델로 두 모드를 통합하여, 중요한 순간에는 명시적으로 추론하고, 나머지 시간에는 최신 추론 결과를 기반으로 직접 동작을 생성합니다. 연구팀은 또한 확장 가능한 합성 데이터 파이프라인을 설계하여, 로봇 데이터와 함께 훈련되는 구현 추론 중심의 시각-언어 데이터를 생성합니다. 실험 결과, 이 모델은 장기 작업 계획, 오류 감지 및 복구, 자연어 인간-로봇 상호작용, 일반화된 시각적 위치 파악에서 기존 방법을 능가합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **통합 이중 시스템**: OneTwoVLA는 System One(동작 생성)과 System Two(명시적 추론)를 단일 모델로 통합하고, 적응형 전환 메커니즘을 통해 작업 실행 중 모드를 동적으로 선택합니다.
+- **추론-동작 협력**: 모델은 핵심 결정 지점(예: 물체를 잡기 전)에서 System Two를 활성화하여 명시적 추론을 수행하고, 나머지 시간에는 최신 추론 결과를 기반으로 System One이 직접 동작 시퀀스를 출력합니다.
+
+### 데이터 합성 파이프라인
+- **구현 추론 데이터 생성**: 작업 계획, 오류 감지, 상호작용 지침 등 추론 단계를 포함하는 시각-언어 데이터를 생성하는 확장 가능한 합성 프로세스를 설계합니다.
+- **협력 훈련 전략**: 합성 데이터와 실제 로봇 조작 데이터를 혼합하여 훈련함으로써, 보지 못한 장면에서의 모델 일반화 능력을 향상시킵니다.
+
+### 실험 설정 및 주요 결과
+- **네 가지 핵심 능력 검증**:
+  - **장기 작업 계획**: 50개 이상의 단계를 포함하는 훠궈 제작 작업에서 성공률이 기준 방법 대비 34% 향상되었습니다.
+  - **오류 감지 및 복구**: 인위적으로 도입된 20가지 조작 오류 시나리오에서 감지 정확도 92%, 복구 성공률 78%를 달성했습니다.
+  - **인간-로봇 상호작용**: 자연어 지침의 실시간 조정(예: "소금 먼저, 간장 나중에")을 지원하며, 작업 완료율 85%를 기록했습니다.
+  - **시각적 위치 파악**: 복잡한 장면에서 지정된 물체를 잡는 성공률이 CLIP 기반 방법 대비 27% 향상되었습니다.
+- **고난도 조작**: 칵테일 제조(15가지 도구, 8단계 조작 필요)와 같은 복잡한 작업을 성공적으로 완료하며, 종단 간 지연 시간이 200ms 미만입니다.

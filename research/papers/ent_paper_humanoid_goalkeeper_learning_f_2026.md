@@ -37,7 +37,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: Humanoid Goalkeeper: Learning
-    from Position Conditioned Task-Motion Constraints. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    from Position Conditioned Task-Motion Constraints. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (767 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -73,11 +74,27 @@ theoretical_depth:
 ## Overview
 We present a reinforcement learning framework for autonomous goalkeeping with humanoid robots in real-world scenarios. While prior work has demonstrated similar capabilities on quadrupedal platforms, humanoid goalkeeping introduces two critical challenges: (1) generating natural, human-like whole-body motions, and (2) covering a wider guarding range with an equivalent response time. Unlike existing approaches that rely on separate teleoperation or fixed motion tracking for whole-body control, our method learns a single end-to-end RL policy, enabling fully autonomous, highly dynamic, and human-like robot-object interactions. To achieve this, we integrate multiple human motion priors conditioned on perceptual inputs into the RL training via an adversarial scheme. We demonstrate the effectiveness of our method through real-world experiments, where the humanoid robot successfully performs agile, autonomous, and naturalistic interceptions of fast-moving balls. In addition to goalkeeping, we demonstrate the generalization of our approach through tasks such as ball escaping and grabbing. Our work presents a practical and scalable solution for enabling highly dynamic interactions between robots and moving objects, advancing the field toward more adaptive and lifelike robotic behaviors.
 
-## 개요
-본 논문은 실제 환경에서 휴머노이드 로봇의 자율 골키퍼를 위한 강화 학습 프레임워크를 제시합니다. 이전 연구에서 사족 보행 플랫폼에서 유사한 기능이 입증되었지만, 휴머노이드 골키퍼는 두 가지 중요한 과제를 제기합니다: (1) 자연스럽고 인간과 유사한 전신 동작 생성, (2) 동등한 반응 시간으로 더 넓은 방어 범위를 커버하는 것입니다. 전신 제어를 위해 별도의 원격 조작이나 고정된 동작 추적에 의존하는 기존 접근 방식과 달리, 우리의 방법은 단일 종단 간 강화 학습 정책을 학습하여 완전 자율적이고 고도로 동적이며 인간과 유사한 로봇-객체 상호 작용을 가능하게 합니다. 이를 위해, 우리는 지각 입력에 조건화된 여러 인간 동작 사전 정보를 적대적 방식을 통해 강화 학습 훈련에 통합합니다. 우리는 실제 실험을 통해 휴머노이드 로봇이 빠르게 움직이는 공을 민첩하고 자율적이며 자연스럽게 차단하는 데 성공함으로써 방법의 효과를 입증합니다. 골키퍼 외에도 공 탈출 및 잡기와 같은 작업을 통해 접근 방식의 일반화를 보여줍니다. 우리의 연구는 로봇과 움직이는 객체 간의 고도로 동적인 상호 작용을 가능하게 하는 실용적이고 확장 가능한 솔루션을 제시하며, 더 적응적이고 생생한 로봇 행동을 향한 분야를 발전시킵니다.
-
-## 핵심 내용
-본 논문은 실제 환경에서 휴머노이드 로봇의 자율 골키퍼를 위한 강화 학습 프레임워크를 제시합니다. 이전 연구에서 사족 보행 플랫폼에서 유사한 기능이 입증되었지만, 휴머노이드 골키퍼는 두 가지 중요한 과제를 제기합니다: (1) 자연스럽고 인간과 유사한 전신 동작 생성, (2) 동등한 반응 시간으로 더 넓은 방어 범위를 커버하는 것입니다. 전신 제어를 위해 별도의 원격 조작이나 고정된 동작 추적에 의존하는 기존 접근 방식과 달리, 우리의 방법은 단일 종단 간 강화 학습 정책을 학습하여 완전 자율적이고 고도로 동적이며 인간과 유사한 로봇-객체 상호 작용을 가능하게 합니다. 이를 위해, 우리는 지각 입력에 조건화된 여러 인간 동작 사전 정보를 적대적 방식을 통해 강화 학습 훈련에 통합합니다. 우리는 실제 실험을 통해 휴머노이드 로봇이 빠르게 움직이는 공을 민첩하고 자율적이며 자연스럽게 차단하는 데 성공함으로써 방법의 효과를 입증합니다. 골키퍼 외에도 공 탈출 및 잡기와 같은 작업을 통해 접근 방식의 일반화를 보여줍니다. 우리의 연구는 로봇과 움직이는 객체 간의 고도로 동적인 상호 작용을 가능하게 하는 실용적이고 확장 가능한 솔루션을 제시하며, 더 적응적이고 생생한 로봇 행동을 향한 분야를 발전시킵니다.
-
 ## 参考
 - Semantic Scholar search: Humanoid Goalkeeper: Learning from Position Conditioned Task-Motion Constraints
+
+## 개요
+사족 플랫폼이나 고정 모션 트래킹에 의존하는 기존 연구와 달리, 이 방법은 원격 조작이나 사전 정의된 동작을 분리하지 않고 엔드투엔드 강화 학습 정책을 직접 학습한다. 적대적 방식(adversarial scheme)을 통해 인식 입력 기반의 인간 동작 사전(human motion priors)을 훈련에 통합함으로써, 휴머노이드 로봇이 자연스럽고 인간다운 전신 동작을 자율적으로 생성할 수 있게 한다. 실제 세계 실험에서 로봇이 빠르게 움직이는 공을 성공적으로 차단하고, 공 탈출 및 잡기 작업으로 일반화할 수 있음을 보여주며, 동적 인간-로봇 상호작용을 위한 확장 가능한 실용적 솔루션을 제공한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **엔드투엔드 강화 학습 정책**: 단일 정책 네트워크가 인식 입력을 직접 처리하고 관절 제어 명령을 출력하여, 기존의 분리된 원격 조작이나 고정 모션 트래킹을 대체한다.
+- **적대적 동작 사전 통합**: 적대적 훈련(adversarial scheme)을 통해 다양한 인간 동작 사전(human motion priors)을 정책 학습에 통합하여, 로봇이 인간다운 전신 동작을 생성하게 한다.
+- **인식 조건화**: 동작 사전은 실시간 시각 입력(예: 공 위치)을 기반으로 조건화되어, 동작이 장면 역학과 일치하도록 보장한다.
+
+### 실험 설정
+- **플랫폼**: 실제 휴머노이드 로봇 플랫폼, 구체적인 모델은 명시되지 않음.
+- **작업**: 자율 골키퍼(빠르게 움직이는 공 차단), 공 탈출 및 잡기 일반화 작업.
+- **비교 기준선**: 사족 플랫폼 골키퍼 방법 및 고정 모션 트래킹 방법과 비교하여, 휴머노이드 로봇의 두 가지 주요 과제(자연스러운 전신 동작과 넓은 수비 범위)를 강조.
+
+### 주요 수치 및 결과
+- **성공적 차단**: 실제 실험에서 로봇이 빠르게 움직이는 공을 민첩하고 자율적이며 자연스럽게 차단하는 데 성공.
+- **일반화 능력**: 골키퍼 외에도 이 방법은 공 탈출 및 잡기 작업에서도 효과적임을 확인하여 정책의 범용성을 검증.
+- **응답 시간**: 동등한 응답 시간 내에 더 넓은 수비 범위를 커버하여 사족 플랫폼 방법보다 우수.
+
+### 결론
+이 연구는 로봇-이동 물체 동적 상호작용을 위한 실용적이고 확장 가능한 솔루션을 제공하며, 단일 엔드투엔드 정책과 인간 동작 사전의 통합을 통해 더 적응적이고 인간다운 로봇 행동 발전을 촉진한다. 향후 동작 사전의 다양성과 인식 입력의 견고성을 더욱 최적화할 수 있다.

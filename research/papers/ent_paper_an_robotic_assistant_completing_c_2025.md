@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.25713v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.25713v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1029 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,30 @@ sources:
 ## Overview
 We adapt a pre-trained Vision-Language-Action (VLA) model (Open-VLA) for dexterous human-robot collaboration with minimal language prompting. Our approach adds (i) FiLM conditioning to visual backbones for task-aware perception, (ii) an auxiliary intent head that predicts collaborator hand pose and target cues, and (iii) action-space post-processing that predicts compact deltas (position/rotation) and PCA-reduced finger joints before mapping to full commands. Using a multi-view, teleoperated Franka and Mimic-hand dataset augmented with MediaPipe hand poses, we demonstrate that delta actions are well-behaved and that four principal components explain ~96% of hand-joint variance. Ablations identify action post-processing as the primary performance driver; auxiliary intent helps, FiLM is mixed, and a directional motion loss is detrimental. A real-time stack (~0.3 s latency on one RTX 4090) composes "pick-up" and "pass" into a long-horizon behavior. We surface "trainer overfitting" to specific demonstrators as the key limitation.
 
-## 개요
-우리는 최소한의 언어 프롬프트로 정교한 인간-로봇 협업을 위해 사전 훈련된 Vision-Language-Action (VLA) 모델(Open-VLA)을 적용합니다. 우리의 접근 방식은 (i) 작업 인식 지각을 위한 시각적 백본에 FiLM 조건화 추가, (ii) 협업자 손 자세 및 대상 신호를 예측하는 보조 의도 헤드, (iii) 전체 명령으로 매핑하기 전에 압축된 델타(위치/회전) 및 PCA 축소 손가락 관절을 예측하는 행동 공간 후처리를 추가합니다. MediaPipe 손 자세로 증강된 다중 뷰, 원격 조작 Franka 및 Mimic-hand 데이터셋을 사용하여 델타 행동이 잘 작동하며 네 개의 주성분이 손 관절 분산의 약 96%를 설명함을 입증합니다. 절제 연구는 행동 후처리가 주요 성능 동인임을 식별합니다. 보조 의도는 도움이 되고, FiLM은 혼합적이며, 방향성 운동 손실은 해롭습니다. 실시간 스택(하나의 RTX 4090에서 약 0.3초 지연 시간)은 "집기"와 "전달"을 장기 행동으로 구성합니다. 우리는 특정 시연자에 대한 "훈련자 과적합"을 주요 한계로 제시합니다.
-
-## 핵심 내용
-우리는 최소한의 언어 프롬프트로 정교한 인간-로봇 협업을 위해 사전 훈련된 Vision-Language-Action (VLA) 모델(Open-VLA)을 적용합니다. 우리의 접근 방식은 (i) 작업 인식 지각을 위한 시각적 백본에 FiLM 조건화 추가, (ii) 협업자 손 자세 및 대상 신호를 예측하는 보조 의도 헤드, (iii) 전체 명령으로 매핑하기 전에 압축된 델타(위치/회전) 및 PCA 축소 손가락 관절을 예측하는 행동 공간 후처리를 추가합니다. MediaPipe 손 자세로 증강된 다중 뷰, 원격 조작 Franka 및 Mimic-hand 데이터셋을 사용하여 델타 행동이 잘 작동하며 네 개의 주성분이 손 관절 분산의 약 96%를 설명함을 입증합니다. 절제 연구는 행동 후처리가 주요 성능 동인임을 식별합니다. 보조 의도는 도움이 되고, FiLM은 혼합적이며, 방향성 운동 손실은 해롭습니다. 실시간 스택(하나의 RTX 4090에서 약 0.3초 지연 시간)은 "집기"와 "전달"을 장기 행동으로 구성합니다. 우리는 특정 시연자에 대한 "훈련자 과적합"을 주요 한계로 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.25713v1
+
+## 개요
+이 연구는 사전 훈련된 Open-VLA 모델을 미세 조정하여 극소량의 언어 명령만으로 정교한 인간-로봇 협업 조작을 수행할 수 있도록 한 작업입니다. 연구진은 세 가지 핵심 개선 사항을 도입했습니다: 시각 백본 네트워크에 FiLM 조건화를 추가하여 작업 인식을 가능하게 하고, 협력자의 손姿态와 목표 단서를 예측하는 보조 의도 헤드를 추가하며, 동작 공간 후처리를 통해 컴팩트한 증분(위치/회전) 및 PCA 차원 축소된 손가락 관절을 예측한 후 전체 명령으로 매핑합니다. 실험은 다중 시점 원격 조작 Franka 및 Mimic-hand 데이터셋을 사용했으며, MediaPipe 손姿态를 활용해 증강했습니다. 결과는 증분 동작이 우수한 성능을 보였고, 네 개의 주성분으로 손 관절 분산의 약 96%를 설명할 수 있음을 보여줍니다. 절제 실험에서는 동작 후처리가 성능 향상의 주요 동인으로 확인되었고, 보조 의도 헤드는 일부 도움이 되었으며, FiLM은 효과가 일관되지 않았고, 방향성 운동 손실은 해로웠습니다. 전체 시스템은 단일 RTX 4090에서 약 0.3초의 실시간 지연 시간을 달성하며, "집기"와 "전달"을 결합한 장기 행동을 수행할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 사전 훈련된 Open-VLA 모델을 기반으로 적응시켜 최소한의 언어 프롬프트로 정교한 인간-로봇 협업을 구현합니다.
+- **FiLM 조건화**: 시각 백본 네트워크에 FiLM 레이어를 추가하여 모델이 작업 요구에 따라 시각적 특징 추출을 조정할 수 있게 합니다.
+- **보조 의도 헤드**: 협력자의 손姿态(MediaPipe로 추출)와 목표 단서를 추가로 예측하여 협업 의도 이해를 강화합니다.
+- **동작 공간 후처리**: 컴팩트한 증분(위치/회전) 및 PCA 차원 축소된 손가락 관절을 예측한 후 전체 명령으로 매핑합니다. 이 방법은 고차원 동작 공간을 직접 예측할 때 발생하는 불안정성을 피합니다.
+
+### 실험 설정
+- **데이터셋**: 다중 시점 원격 조작 Franka 및 Mimic-hand 데이터셋을 사용하며, MediaPipe 손姿态를 활용해 증강합니다.
+- **핵심 지표**: 증분 동작이 우수한 성능을 보였고, 네 개의 주성분으로 손 관절 분산의 약 96%를 설명할 수 있습니다.
+- **하드웨어**: 단일 RTX 4090에서 약 0.3초의 실시간 지연 시간을 구현합니다.
+
+### 절제 실험 및 결론
+- **동작 후처리**: 성능 향상의 주요 동인으로 확인되었습니다.
+- **보조 의도 헤드**: 일부 도움이 되지만, 동작 후처리만큼 효과적이지는 않습니다.
+- **FiLM 조건화**: 효과가 일관되지 않으며, 특정 작업에서는 노이즈를 유발할 수 있습니다.
+- **방향성 운동 손실**: 해로운 것으로 입증되어 모델 성능을 저하시킵니다.
+- **주요 한계**: 모델이 특정 시연자의 조작 스타일에 과도하게 적응하는 "훈련자 과적합" 문제가 있어 일반화 능력이 제한됩니다.
+
+### 장기 행동 조합
+- 시스템은 "집기"와 "전달" 같은 원자적 동작을 결합한 장기 협업 행동을 수행할 수 있어 실제 시나리오에서의 실용성을 보여줍니다.

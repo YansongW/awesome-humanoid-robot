@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.13441v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.13441v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (627 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,26 @@ theoretical_depth:
 ## Overview
 Integrating Brain-Machine Interfaces into non-clinical applications like robot motion control remains difficult - despite remarkable advancements in clinical settings. Specifically, EEG-based motor imagery systems are still error-prone, posing safety risks when rigid robots operate near humans. This work presents an alternative pathway towards safe and effective operation by combining wearable EEG with physically embodied safety in soft robots. We introduce and test a pipeline that allows a user to move a soft robot's end effector in real time via brain waves that are measured by as few as three EEG channels. A robust motor imagery algorithm interprets the user's intentions to move the position of a virtual attractor to which the end effector is attracted, thanks to a new Cartesian impedance controller. We specifically focus here on planar soft robot-based architected metamaterials, which require the development of a novel control architecture to deal with the peculiar nonlinearities - e.g., non-affinity in control. We preliminarily but quantitatively evaluate the approach on the task of setpoint regulation. We observe that the user reaches the proximity of the setpoint in 66% of steps and that for successful steps, the average response time is 21.5s. We also demonstrate the execution of simple real-world tasks involving interaction with the environment, which would be extremely hard to perform if it were not for the robot's softness.
 
-## 개요
-뇌-기계 인터페이스를 로봇 동작 제어와 같은 비임상 응용 분야에 통합하는 것은 임상 환경에서의 놀라운 발전에도 불구하고 여전히 어려운 과제로 남아 있습니다. 특히, EEG 기반 운동 상상 시스템은 여전히 오류가 발생하기 쉬우며, 강체 로봇이 인간 근처에서 작동할 때 안전 위험을 초래합니다. 본 연구는 웨어러블 EEG와 소프트 로봇의 물리적 안전성을 결합하여 안전하고 효과적인 작동을 위한 대안적 경로를 제시합니다. 우리는 사용자가 단 3개의 EEG 채널로 측정된 뇌파를 통해 소프트 로봇의 엔드 이펙터를 실시간으로 움직일 수 있는 파이프라인을 소개하고 테스트합니다. 강건한 운동 상상 알고리즘은 사용자의 의도를 해석하여 가상 어트랙터의 위치를 이동시키며, 이 어트랙터로 엔드 이펙터가 끌려가도록 하는 새로운 데카르트 임피던스 컨트롤러를 사용합니다. 특히 본 연구는 평면 소프트 로봇 기반 구조적 메타물질에 초점을 맞추며, 이는 제어의 비선형성(예: 제어의 비친화성)을 처리하기 위한 새로운 제어 아키텍처 개발을 필요로 합니다. 우리는 설정점 조절 작업에서 이 접근법을 예비적이지만 정량적으로 평가합니다. 사용자가 66%의 단계에서 설정점 근처에 도달했으며, 성공적인 단계의 평균 응답 시간은 21.5초임을 관찰했습니다. 또한 로봇의 부드러움이 없다면 수행하기 매우 어려웠을 환경과의 상호작용을 포함한 간단한 실제 작업의 실행을 시연합니다.
-
-## 핵심 내용
-뇌-기계 인터페이스를 로봇 동작 제어와 같은 비임상 응용 분야에 통합하는 것은 임상 환경에서의 놀라운 발전에도 불구하고 여전히 어려운 과제로 남아 있습니다. 특히, EEG 기반 운동 상상 시스템은 여전히 오류가 발생하기 쉬우며, 강체 로봇이 인간 근처에서 작동할 때 안전 위험을 초래합니다. 본 연구는 웨어러블 EEG와 소프트 로봇의 물리적 안전성을 결합하여 안전하고 효과적인 작동을 위한 대안적 경로를 제시합니다. 우리는 사용자가 단 3개의 EEG 채널로 측정된 뇌파를 통해 소프트 로봇의 엔드 이펙터를 실시간으로 움직일 수 있는 파이프라인을 소개하고 테스트합니다. 강건한 운동 상상 알고리즘은 사용자의 의도를 해석하여 가상 어트랙터의 위치를 이동시키며, 이 어트랙터로 엔드 이펙터가 끌려가도록 하는 새로운 데카르트 임피던스 컨트롤러를 사용합니다. 특히 본 연구는 평면 소프트 로봇 기반 구조적 메타물질에 초점을 맞추며, 이는 제어의 비선형성(예: 제어의 비친화성)을 처리하기 위한 새로운 제어 아키텍처 개발을 필요로 합니다. 우리는 설정점 조절 작업에서 이 접근법을 예비적이지만 정량적으로 평가합니다. 사용자가 66%의 단계에서 설정점 근처에 도달했으며, 성공적인 단계의 평균 응답 시간은 21.5초임을 관찰했습니다. 또한 로봇의 부드러움이 없다면 수행하기 매우 어려웠을 환경과의 상호작용을 포함한 간단한 실제 작업의 실행을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2401.13441v2
+
+## 개요
+이 연구는 뇌-컴퓨터 인터페이스 기술을 임상 환경에서 비임상 로봇 제어 분야로 확장하여, 단 세 개의 EEG 채널만을 필요로 하는 운동 상상 알고리즘을 통해 사용자 의도를 해석하고 가상 어트랙터 위치 변화를 구동합니다. 소프트 로봇을 위해 특별히 설계된 데카르트 임피던스 컨트롤러와 결합하여, 시스템은 평면 손가위 보조 팽창 소프트 로봇의 고유한 비선형 제어 문제를 효과적으로 처리할 수 있습니다. 실험 결과, 정밀 조절 작업에서 사용자 단계의 66%가 목표 지점에 근접할 수 있었고, 성공 단계의 평균 응답 시간은 21.5초였으며, 로봇의 유연성에 의존하는 환경 상호작용 작업을 성공적으로 시연했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 3채널 웨어러블 EEG 장치를 사용하여 운동 상상 뇌파 신호를 수집하고, 강건한 운동 상상 알고리즘을 통해 사용자 의도를 실시간으로 디코딩
+- 사용자는 뇌파 신호를 통해 가상 데카르트 어트랙터의 2차원 평면 위치를 제어하며, 소프트 로봇 엔드 이펙터는 새로운 데카르트 임피던스 컨트롤러를 통해 이 가상 지점으로 끌려감
+- 컨트롤러는 평면 손가위 보조 팽창 메타물질 소프트 로봇의 비선형 특성(예: 제어 비아핀성)을 위해 특별히 설계됨
+
+### 실험 설정
+- 작업 유형: 정밀 조절(setpoint regulation) 정량 평가 + 일상생활 활동(ADL) 환경 상호작용 시연
+- 평가 지표: 목표 지점 근접 성공률(66%), 성공 단계 평균 응답 시간(21.5초)
+
+### 주요 발견
+- 사용자는 제어 단계의 66%에서 로봇 엔드 이펙터를 사전 설정된 목표 지점에 근접시킬 수 있음
+- 목표 지점에 성공적으로 근접한 평균 응답 시간은 21.5초
+- 실제 환경 상호작용 시연에서 소프트 로봇의 유연성이 복잡한 작업 완료의 핵심 보장 요소가 됨
+
+### 결론
+이 연구는 저채널 EEG 뇌-컴퓨터 인터페이스와 소프트 로봇의 결합을 통한 안전한 제어 가능성을 검증했으며, 뇌 제어 로봇이 임상에서 비임상 응용으로 전환되는 새로운 경로를 제공합니다.

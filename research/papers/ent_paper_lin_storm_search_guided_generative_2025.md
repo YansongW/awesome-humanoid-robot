@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.18477v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.18477v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (772 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,24 @@ STORM通过将搜索引导的生成世界模型与扩散动作生成结合，为
 ## Overview
 We present STORM (Search-Guided Generative World Models), a novel framework for spatio-temporal reasoning in robotic manipulation that unifies diffusion-based action generation, conditional video prediction, and search-based planning. Unlike prior Vision-Language-Action (VLA) models that rely on abstract latent dynamics or delegate reasoning to language components, STORM grounds planning in explicit visual rollouts, enabling interpretable and foresight-driven decision-making. A diffusion-based VLA policy proposes diverse candidate actions, a generative video world model simulates their visual and reward outcomes, and Monte Carlo Tree Search (MCTS) selectively refines plans through lookahead evaluation. Experiments on the SimplerEnv manipulation benchmark demonstrate that STORM achieves a new state-of-the-art average success rate of 51.0 percent, outperforming strong baselines such as CogACT. Reward-augmented video prediction substantially improves spatio-temporal fidelity and task relevance, reducing Frechet Video Distance by over 75 percent. Moreover, STORM exhibits robust re-planning and failure recovery behavior, highlighting the advantages of search-guided generative world models for long-horizon robotic manipulation.
 
-## 개요
-본 논문에서는 로봇 조작 작업에서 시공간 추론을 위한 새로운 프레임워크인 STORM(Search-Guided Generative World Models)을 제시합니다. STORM은 확산 기반 행동 생성, 조건부 비디오 예측, 탐색 기반 계획을 통합합니다. 추상적인 잠재 역학에 의존하거나 추론을 언어 구성 요소에 위임하는 기존의 VLA(Vision-Language-Action) 모델과 달리, STORM은 명시적인 시각적 롤아웃에 계획을 기반으로 하여 해석 가능하고 예측 기반의 의사 결정을 가능하게 합니다. 확산 기반 VLA 정책은 다양한 후보 행동을 제안하고, 생성형 비디오 월드 모델은 해당 행동의 시각적 결과와 보상 결과를 시뮬레이션하며, MCTS(Monte Carlo Tree Search)는 예측 평가를 통해 계획을 선택적으로 개선합니다. SimplerEnv 조작 벤치마크 실험에서 STORM은 51.0%의 새로운 최고 평균 성공률을 달성하여 CogACT와 같은 강력한 기준 모델을 능가했습니다. 보상 강화 비디오 예측은 시공간 충실도와 작업 관련성을 크게 개선하여 Frechet Video Distance를 75% 이상 감소시켰습니다. 또한 STORM은 강력한 재계획 및 실패 복구 동작을 보여주며, 장기 로봇 조작을 위한 탐색 유도 생성형 월드 모델의 장점을 강조합니다.
-
-## 핵심 내용
-본 논문에서는 로봇 조작 작업에서 시공간 추론을 위한 새로운 프레임워크인 STORM(Search-Guided Generative World Models)을 제시합니다. STORM은 확산 기반 행동 생성, 조건부 비디오 예측, 탐색 기반 계획을 통합합니다. 추상적인 잠재 역학에 의존하거나 추론을 언어 구성 요소에 위임하는 기존의 VLA(Vision-Language-Action) 모델과 달리, STORM은 명시적인 시각적 롤아웃에 계획을 기반으로 하여 해석 가능하고 예측 기반의 의사 결정을 가능하게 합니다. 확산 기반 VLA 정책은 다양한 후보 행동을 제안하고, 생성형 비디오 월드 모델은 해당 행동의 시각적 결과와 보상 결과를 시뮬레이션하며, MCTS(Monte Carlo Tree Search)는 예측 평가를 통해 계획을 선택적으로 개선합니다. SimplerEnv 조작 벤치마크 실험에서 STORM은 51.0%의 새로운 최고 평균 성공률을 달성하여 CogACT와 같은 강력한 기준 모델을 능가했습니다. 보상 강화 비디오 예측은 시공간 충실도와 작업 관련성을 크게 개선하여 Frechet Video Distance를 75% 이상 감소시켰습니다. 또한 STORM은 강력한 재계획 및 실패 복구 동작을 보여주며, 장기 로봇 조작을 위한 탐색 유도 생성형 월드 모델의 장점을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.18477v1
+
+## 개요
+STORM 프레임워크는 기존 VLA 모델이 추상적 잠재 역학 또는 언어 추론에 의존하는 한계를突破하여, 확산 정책을 통해 다양한 후보 행동을 생성하고, 생성형 비디오 세계 모델이 그 시각적 결과와 보상 신호를 시뮬레이션하며, 마지막으로 MCTS를 이용한 전향적 평가와 계획 최적화를 수행합니다. 이 방법은 SimplerEnv 조작 벤치마크에서 51.0%의 평균 성공률로 CogACT 등 강력한 베이스라인을 능가하며, 보상 강화 비디오 예측은 시공간 충실도와 작업 관련성을 크게 향상시킵니다. 또한 STORM은 강력한 재계획 및 장애 복구 능력을 보여주며, 검색 기반 생성 세계 모델이 장시간 로봇 조작에서의 우위를 검증합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+STORM은 세 가지 핵심 모듈로 구성됩니다:
+- **확산형 VLA 정책**: 확산 모델을 기반으로 다양한 후보 행동 시퀀스를 생성하여 단일 행동의 지역 최적 함정을 피합니다.
+- **생성형 비디오 세계 모델**: 조건부 비디오 예측 방식으로 각 후보 행동의 시각적 결과와 보상 신호를 시뮬레이션하여 계획 과정을 픽셀 공간에서 명시적으로 만듭니다.
+- **MCTS 플래너**: 트리 검색을 통해 후보 행동을 전향적으로 평가하고 선택적으로 계획을 최적화하여 해석 가능한 결정 추적을 구현합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: 다양한 장시간 조작 작업을 포함하는 SimplerEnv 조작 벤치마크에서 평가되었습니다.
+- **성능 비교**: STORM은 51.0%의 평균 성공률로 CogACT 등 베이스라인을 능가하며 새로운 SOTA가 되었습니다.
+- **비디오 예측 품질**: 보상 강화 비디오 예측은 Frechet Video Distance(FVD)를 75% 이상 낮추어 시공간 일관성을 크게 향상시킵니다.
+- **강건성**: 모델은 실패 시나리오에서 자동으로 재계획을 트리거하여 순수 피드포워드 정책보다 우수한 장애 복구 능력을 보여줍니다.
+
+### 결론
+STORM은 검색 기반 생성 세계 모델과 확산 행동 생성을 결합하여 로봇 조작을 위한 해석 가능하고 추적 가능한 계획 프레임워크를 제공합니다. 명시적 시각적 추론 메커니즘은 작업 성공률을 향상시킬 뿐만 아니라 MCTS의 반복 최적화를 통해 장시간 작업에 대한 적응성을 구현하며, 미래 임베디드 지능 시스템의 결정 투명성을 위한 새로운 방향을 제시합니다.

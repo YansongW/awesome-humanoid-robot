@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31236v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31236v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1012 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,25 @@ TactX 通过配对数据驱动的跨模态对齐，首次实现了三种根本�
 ## Overview
 Tactile sensors provide critical information for contact-rich manipulation, yet tactile representations and policies remain tightly coupled to each specific sensor, limiting transferability across robots and hardware platforms. We propose TactX, a framework for learning a transferable tactile representation across sensors spanning three fundamentally different transduction modalities: resistive, magnetic, and vision-based. TactX maps heterogeneous tactile observations into a shared latent space through modality-specific encoders trained on paired contact data. Such paired interactions provide a natural alignment signal across modalities, and the encoders are jointly trained across all sensor pairs, inducing a consistent latent space for all sensor types. Our experiments show that TactX aligns tactile representations across sensors while preserving object-level contact information, as evidenced by sensor-identity prediction and object classification in the learned latent space. We evaluate TactX on four contact-rich manipulation tasks: pick-and-place, plug insertion, board wiping, and object reorientation, and show that policies trained with one sensor transfer zero-shot to physically distinct sensors through the shared latent. This improves the average success rate from 27.5% for vision-only policy to 45.9%, providing a step toward sensor-agnostic tactile manipulation.
 
-## 개요
-촉각 센서는 접촉이 많은 조작 작업에 중요한 정보를 제공하지만, 촉각 표현과 정책은 각 특정 센서에 밀접하게 결합되어 있어 로봇 및 하드웨어 플랫폼 간의 전이 가능성을 제한합니다. 우리는 저항성, 자기 기반, 시각 기반이라는 세 가지 근본적으로 다른 변환 방식을 아우르는 센서 간 전이 가능한 촉각 표현을 학습하기 위한 프레임워크인 TactX를 제안합니다. TactX는 쌍을 이루는 접촉 데이터로 훈련된 방식별 인코더를 통해 이질적인 촉각 관측값을 공유 잠재 공간으로 매핑합니다. 이러한 쌍을 이루는 상호작용은 방식 간 자연스러운 정렬 신호를 제공하며, 인코더는 모든 센서 쌍에 걸쳐 공동으로 훈련되어 모든 센서 유형에 대해 일관된 잠재 공간을 유도합니다. 실험 결과, TactX는 학습된 잠재 공간에서 센서 식별 예측 및 객체 분류를 통해 입증된 바와 같이 객체 수준의 접촉 정보를 보존하면서 센서 간 촉각 표현을 정렬함을 보여줍니다. 우리는 TactX를 집어 옮기기, 플러그 삽입, 보드 닦기, 객체 재배향이라는 네 가지 접촉이 많은 조작 작업에서 평가했으며, 하나의 센서로 훈련된 정책이 공유 잠재 공간을 통해 물리적으로 다른 센서로 제로샷 전이됨을 보여줍니다. 이는 시각 전용 정책의 평균 성공률을 27.5%에서 45.9%로 향상시켜, 센서에 구애받지 않는 촉각 조작을 위한 한 걸음을 제공합니다.
-
-## 핵심 내용
-촉각 센서는 접촉이 많은 조작 작업에 중요한 정보를 제공하지만, 촉각 표현과 정책은 각 특정 센서에 밀접하게 결합되어 있어 로봇 및 하드웨어 플랫폼 간의 전이 가능성을 제한합니다. 우리는 저항성, 자기 기반, 시각 기반이라는 세 가지 근본적으로 다른 변환 방식을 아우르는 센서 간 전이 가능한 촉각 표현을 학습하기 위한 프레임워크인 TactX를 제안합니다. TactX는 쌍을 이루는 접촉 데이터로 훈련된 방식별 인코더를 통해 이질적인 촉각 관측값을 공유 잠재 공간으로 매핑합니다. 이러한 쌍을 이루는 상호작용은 방식 간 자연스러운 정렬 신호를 제공하며, 인코더는 모든 센서 쌍에 걸쳐 공동으로 훈련되어 모든 센서 유형에 대해 일관된 잠재 공간을 유도합니다. 실험 결과, TactX는 학습된 잠재 공간에서 센서 식별 예측 및 객체 분류를 통해 입증된 바와 같이 객체 수준의 접촉 정보를 보존하면서 센서 간 촉각 표현을 정렬함을 보여줍니다. 우리는 TactX를 집어 옮기기, 플러그 삽입, 보드 닦기, 객체 재배향이라는 네 가지 접촉이 많은 조작 작업에서 평가했으며, 하나의 센서로 훈련된 정책이 공유 잠재 공간을 통해 물리적으로 다른 센서로 제로샷 전이됨을 보여줍니다. 이는 시각 전용 정책의 평균 성공률을 27.5%에서 45.9%로 향상시켜, 센서에 구애받지 않는 촉각 조작을 위한 한 걸음을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31236v1
+
+## 개요
+TactX는 촉각 센서 유형이 다양하고 표현과 정책이 고도로 결합되어 있는 문제점을 해결하기 위해, 전이 가능한 촉각 표현 학습 방안을 제안한다. 이 프레임워크는 짝지어진 접촉 데이터를 자연스러운 정렬 신호로 활용하여 세 가지 모달리티별 인코더를 공동 훈련시키고, 이질적인 촉각 관측을 공유 잠재 공간으로 통합 매핑한다. 실험 결과, 이 잠재 공간은 객체 수준의 접촉 정보를 보존할 뿐만 아니라 센서 신원 예측 및 객체 분류 작업을 통해 검증할 수 있다. 집어 올리기, 플러그 삽입, 보드 닦기, 객체 재방향 설정의 네 가지 접촉 집약적 조작 작업에서 단일 센서로 훈련된 정책은 공유 잠재 공간을 통해 물리적 구조가 다른 다른 센서로 제로샷 전이가 가능하며, 작업 성공률을 크게 향상시킨다.
+
+## 핵심 내용
+### 방법 아키텍처
+TactX의 핵심 아키텍처는 저항식, 자기식, 시각식 촉각 센서의 원시 관측 데이터를 각각 처리하는 세 가지 모달리티별 인코더로 구성된다. 이 인코더들은 짝지어진 접촉 데이터를 통해 공동 훈련된다. 즉, 동일한 접촉 이벤트에서 서로 다른 센서의 촉각 신호를 동시에 수집하고, 이러한 자연스러운 정렬 관계를 감독 신호로 활용하여 인코더가 이질적인 입력을 일관된 잠재 공간으로 매핑하도록 강제한다. 훈련 과정에서 모든 센서 쌍의 데이터가 동시에 사용되어 잠재 공간이 모든 센서 유형에 대해 일관성을 유지하도록 보장한다.
+
+### 실험 설정
+- **센서 유형**: 저항식(예: 압저항 재료 기반 센서), 자기식(예: 홀 효과 기반 센서), 시각식(예: 카메라 기반 GelSight류 센서)의 세 가지 근본적으로 다른 변환 모달리티를 포함한다.
+- **작업 세트**: 집어 올리기(pick-and-place), 플러그 삽입(plug insertion), 보드 닦기(board wiping), 객체 재방향 설정(object reorientation)의 네 가지 접촉 집약적 조작 작업.
+- **평가 방식**: 잠재 공간에서 센서 신원 예측 및 객체 분류를 수행하여 표현 정렬 효과를 검증하고, 조작 작업에서 제로샷 전이 능력을 테스트한다. 즉, 센서 A로 훈련된 정책을 센서 B에 직접 배포한다.
+
+### 주요 결과
+- **표현 정렬**: 잠재 공간에서의 센서 신원 예측 정확도는 TactX가 센서 특이적 차이를 성공적으로 제거했음을 보여주며, 객체 분류 작업은 객체 수준의 접촉 정보가 완전히 보존되었음을 증명한다.
+- **제로샷 전이**: 네 가지 조작 작업에서 단일 센서로 훈련된 정책은 공유 잠재 공간을 통해 다른 센서로 직접 전이되며, 어떠한 미세 조정도 필요하지 않다.
+- **성능 향상**: 시각 정보만 사용하는 기준 정책(평균 성공률 27.5%)과 비교하여, TactX는 평균 성공률을 45.9%로 향상시켜 센서 무관 촉각 조작을 향한 중요한 한 걸음을 보여준다.
+
+### 결론
+TactX는 짝지어진 데이터 기반의 교차 모달리티 정렬을 통해 세 가지 근본적으로 다른 변환 원리를 가진 촉각 센서 간의 표현 공유와 정책 제로샷 전이를 최초로 실현하여, 범용 촉각 조작 시스템 구축을 위한 실행 가능한 방안을 제공한다.

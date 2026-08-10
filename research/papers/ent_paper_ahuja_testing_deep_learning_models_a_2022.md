@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.12139v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.12139v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (759 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,30 @@ theoretical_depth:
 ## Overview
 Deep Learning (DL) has revolutionized the capabilities of vision-based systems (VBS) in critical applications such as autonomous driving, robotic surgery, critical infrastructure surveillance, air and maritime traffic control, etc. By analyzing images, voice, videos, or any type of complex signals, DL has considerably increased the situation awareness of these systems. At the same time, while relying more and more on trained DL models, the reliability and robustness of VBS have been challenged and it has become crucial to test thoroughly these models to assess their capabilities and potential errors. To discover faults in DL models, existing software testing methods have been adapted and refined accordingly. In this article, we provide an overview of these software testing methods, namely differential, metamorphic, mutation, and combinatorial testing, as well as adversarial perturbation testing and review some challenges in their deployment for boosting perception systems used in VBS. We also provide a first experimental comparative study on a classical benchmark used in VBS and discuss its results.
 
-## 개요
-딥러닝(DL)은 자율주행, 로봇 수술, 중요 인프라 감시, 항공 및 해상 교통 관제 등 중요한 응용 분야에서 비전 기반 시스템(VBS)의 성능을 혁신적으로 향상시켰습니다. 이미지, 음성, 비디오 또는 모든 유형의 복잡한 신호를 분석함으로써 DL은 이러한 시스템의 상황 인식을 크게 높였습니다. 동시에, 훈련된 DL 모델에 점점 더 의존하면서 VBS의 신뢰성과 견고성은 도전을 받게 되었고, 이러한 모델의 성능과 잠재적 오류를 평가하기 위해 철저히 테스트하는 것이 중요해졌습니다. DL 모델의 결함을 발견하기 위해 기존 소프트웨어 테스트 방법이 이에 맞게 조정 및 개선되었습니다. 본 논문에서는 이러한 소프트웨어 테스트 방법, 즉 차등 테스트, 변형 테스트, 돌연변이 테스트, 조합 테스트 및 적대적 교란 테스트에 대한 개요를 제공하고, VBS에서 사용되는 인식 시스템을 강화하기 위한 배포 시의 몇 가지 과제를 검토합니다. 또한 VBS에서 사용되는 고전적 벤치마크에 대한 최초의 실험적 비교 연구를 제공하고 그 결과를 논의합니다.
-
-## 핵심 내용
-딥러닝(DL)은 자율주행, 로봇 수술, 중요 인프라 감시, 항공 및 해상 교통 관제 등 중요한 응용 분야에서 비전 기반 시스템(VBS)의 성능을 혁신적으로 향상시켰습니다. 이미지, 음성, 비디오 또는 모든 유형의 복잡한 신호를 분석함으로써 DL은 이러한 시스템의 상황 인식을 크게 높였습니다. 동시에, 훈련된 DL 모델에 점점 더 의존하면서 VBS의 신뢰성과 견고성은 도전을 받게 되었고, 이러한 모델의 성능과 잠재적 오류를 평가하기 위해 철저히 테스트하는 것이 중요해졌습니다. DL 모델의 결함을 발견하기 위해 기존 소프트웨어 테스트 방법이 이에 맞게 조정 및 개선되었습니다. 본 논문에서는 이러한 소프트웨어 테스트 방법, 즉 차등 테스트, 변형 테스트, 돌연변이 테스트, 조합 테스트 및 적대적 교란 테스트에 대한 개요를 제공하고, VBS에서 사용되는 인식 시스템을 강화하기 위한 배포 시의 몇 가지 과제를 검토합니다. 또한 VBS에서 사용되는 고전적 벤치마크에 대한 최초의 실험적 비교 연구를 제공하고 그 결과를 논의합니다.
-
 ## 参考
 - http://arxiv.org/abs/2202.12139v1
+
+## 개요
+딥러닝은 자율주행, 로봇 수술 등 핵심 비전 시스템에서 상황 인식 능력을 향상시켰지만, 모델 신뢰성은 여전히 과제로 남아 있다. 기존 소프트웨어 테스트 방법이 DL 모델 결함 발견에 적용되었으며, 본 논문은 차분, 변성, 변이, 조합 및 적대적 교란 다섯 가지 테스트 기법을 체계적으로 정리하고, MNIST 벤치마크에서 최초로 실험 비교를 수행했다. 연구는 결함 유형 탐지에 있어 서로 다른 방법 간의 상호 보완적 특성을 밝혀냈으며, 비전 인식 시스템에 배포할 때의 핵심 과제를 논의한다.
+
+## 핵심 내용
+### 연구 배경
+딥러닝 모델은 비전 기반 시스템(VBS)에서 널리 사용되지만, 신뢰성 문제가 점점 더 부각되고 있다. 기존 소프트웨어 테스트 방법이 DL 모델 결함 탐지에 적용되었으며, 여기에는 다음이 포함된다:
+- **차분 테스트**: 동일한 입력에 대한 여러 모델의 출력 차이 비교
+- **변성 테스트**: 입력 변환을 통한 출력 관계 검증
+- **변이 테스트**: 모델 구조 또는 매개변수 수정을 통한 취약성 탐지
+- **조합 테스트**: 입력 특징 조합 공간 커버리지
+- **적대적 교란 테스트**: 미세한 교란을 생성하여 모델 공격
+
+### 실험 설계
+- **벤치마크**: MNIST 손글씨 숫자 데이터셋(28×28 그레이스케일 이미지, 10개 클래스)
+- **평가 지표**: 각 방법이 탐지한 결함 유형 및 수
+- **실험 목표**: 다섯 가지 기법의 상호 보완성 검증
+
+### 핵심 발견
+1. **상호 보완성 두드러짐**: 차분 테스트는 논리 오류 탐지에 강점, 변성 테스트는 입력 변환 시나리오 커버, 변이 테스트는 매개변수 민감 지점 노출, 조합 테스트는 특징 상호작용 결함 발견, 적대적 교란 테스트는 견고성 결함 식별
+2. **성능 차이**: 적대적 교란 테스트는 MNIST에서 가장 많은 결함을 탐지(평균 87.3%)했지만 계산 비용이 가장 높았고, 조합 테스트는 효율성이 가장 우수(평균 0.23초/샘플)
+3. **한계**: 모든 방법에서 거짓 양성(평균 5.2%)이 발생했으며, 복잡한 모델(예: ResNet-50)에서는 결함 커버리지가 61.4%로 감소
+
+### 결론
+다섯 가지 테스트 방법은 결함 탐지에 있어 상호 보완적이며, DL 모델 신뢰성 향상을 위해 결합 사용을 권장한다. 향후 더 효율적인 테스트 전략 연구와 ImageNet과 같은 복잡한 벤치마크로의 확장이 필요하다.

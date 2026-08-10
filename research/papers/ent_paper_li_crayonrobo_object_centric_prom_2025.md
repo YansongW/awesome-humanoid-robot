@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.02166v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.02166v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1029 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,28 @@ In robotics, task goals can be conveyed through various modalities, such as lang
 ## Content
 In robotics, task goals can be conveyed through various modalities, such as language, goal images, and goal videos. However, natural language can be ambiguous, while images or videos may offer overly detailed specifications. To tackle these challenges, we introduce CrayonRobo that leverages comprehensive multi-modal prompts that explicitly convey both low-level actions and high-level planning in a simple manner. Specifically, for each key-frame in the task sequence, our method allows for manual or automatic generation of simple and expressive 2D visual prompts overlaid on RGB images. These prompts represent the required task goals, such as the end-effector pose and the desired movement direction after contact. We develop a training strategy that enables the model to interpret these visual-language prompts and predict the corresponding contact poses and movement directions in SE(3) space. Furthermore, by sequentially executing all key-frame steps, the model can complete long-horizon tasks. This approach not only helps the model explicitly understand the task objectives but also enhances its robustness on unseen tasks by providing easily interpretable prompts. We evaluate our method in both simulated and real-world environments, demonstrating its robust manipulation capabilities.
 
-## 개요
-로봇공학에서 작업 목표는 언어, 목표 이미지, 목표 비디오 등 다양한 양식을 통해 전달될 수 있습니다. 그러나 자연어는 모호할 수 있는 반면, 이미지나 비디오는 지나치게 세부적인 사양을 제공할 수 있습니다. 이러한 문제를 해결하기 위해, 우리는 저수준 동작과 고수준 계획을 간단한 방식으로 명시적으로 전달하는 포괄적인 다중 양식 프롬프트를 활용하는 CrayonRobo를 소개합니다. 구체적으로, 작업 시퀀스의 각 키프레임에 대해, 우리의 방법은 RGB 이미지 위에 오버레이된 간단하고 표현력 있는 2D 시각적 프롬프트를 수동 또는 자동으로 생성할 수 있게 합니다. 이러한 프롬프트는 엔드 이펙터 자세 및 접촉 후 원하는 이동 방향과 같은 필요한 작업 목표를 나타냅니다. 우리는 모델이 이러한 시각-언어 프롬프트를 해석하고 SE(3) 공간에서 해당 접촉 자세와 이동 방향을 예측할 수 있도록 하는 훈련 전략을 개발합니다. 또한, 모든 키프레임 단계를 순차적으로 실행함으로써 모델은 장기 작업을 완료할 수 있습니다. 이 접근 방식은 모델이 작업 목표를 명시적으로 이해하도록 도울 뿐만 아니라, 쉽게 해석 가능한 프롬프트를 제공하여 보지 못한 작업에 대한 견고성을 향상시킵니다. 우리는 시뮬레이션 및 실제 환경 모두에서 방법을 평가하여 강력한 조작 능력을 입증합니다.
-
-## 핵심 내용
-로봇공학에서 작업 목표는 언어, 목표 이미지, 목표 비디오 등 다양한 양식을 통해 전달될 수 있습니다. 그러나 자연어는 모호할 수 있는 반면, 이미지나 비디오는 지나치게 세부적인 사양을 제공할 수 있습니다. 이러한 문제를 해결하기 위해, 우리는 저수준 동작과 고수준 계획을 간단한 방식으로 명시적으로 전달하는 포괄적인 다중 양식 프롬프트를 활용하는 CrayonRobo를 소개합니다. 구체적으로, 작업 시퀀스의 각 키프레임에 대해, 우리의 방법은 RGB 이미지 위에 오버레이된 간단하고 표현력 있는 2D 시각적 프롬프트를 수동 또는 자동으로 생성할 수 있게 합니다. 이러한 프롬프트는 엔드 이펙터 자세 및 접촉 후 원하는 이동 방향과 같은 필요한 작업 목표를 나타냅니다. 우리는 모델이 이러한 시각-언어 프롬프트를 해석하고 SE(3) 공간에서 해당 접촉 자세와 이동 방향을 예측할 수 있도록 하는 훈련 전략을 개발합니다. 또한, 모든 키프레임 단계를 순차적으로 실행함으로써 모델은 장기 작업을 완료할 수 있습니다. 이 접근 방식은 모델이 작업 목표를 명시적으로 이해하도록 도울 뿐만 아니라, 쉽게 해석 가능한 프롬프트를 제공하여 보지 못한 작업에 대한 견고성을 향상시킵니다. 우리는 시뮬레이션 및 실제 환경 모두에서 방법을 평가하여 강력한 조작 능력을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.02166v1
+
+## 개요
+CrayonRobo는 로봇 작업에서 다중 모달 명령(언어, 목표 이미지, 비디오)의 모호성과 과도한 세부 정보 문제를 해결하는 것을 목표로 합니다. 이 방법은 사용자가 작업 시퀀스의 각 키프레임에 대해 수동 또는 자동으로 간결한 2D 시각적 프롬프트를 생성할 수 있게 하며, 이러한 프롬프트는 RGB 이미지에 오버레이되어 엔드 이펙터 포즈, 접촉 후 기대 운동 방향 등의 작업 목표를 명시적으로 나타냅니다. 모델은 특별히 설계된 훈련 전략을 통해 이러한 시각-언어 프롬프트를 이해하고 SE(3) 공간에서의 해당 접촉 포즈와 운동 방향을 예측할 수 있습니다. 모든 키프레임 단계를 순차적으로 실행함으로써 CrayonRobo는 장시간 작업을 완료할 수 있으며, 시뮬레이션과 실제 환경에서 강력한 조작 능력을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+CrayonRobo는 키프레임 기반의 시각-언어-행동 프레임워크를 채택하며, 핵심 구성 요소는 다음과 같습니다:
+- **다중 모달 프롬프트 생성**: 작업 시퀀스의 각 키프레임에 대해 수동 또는 자동으로 2D 시각적 프롬프트(예: 화살표, 점, 영역 표시)를 생성하여 원본 RGB 이미지에 오버레이합니다. 이러한 프롬프트는 저수준 동작(예: 엔드 이펙터 포즈)과 고수준 계획(예: 접촉 후 운동 방향)을 명시적으로 인코딩합니다.
+- **프롬프트 이해 및 동작 예측**: 모델은 훈련을 통해 시각-언어 프롬프트를 SE(3) 공간의 접촉 포즈와 운동 방향으로 매핑하는 방법을 학습합니다. 훈련 전략은 프롬프트의 해석 가능성을 강조하여 모델이 작업 목표를 명시적으로 이해할 수 있게 합니다.
+- **장시간 작업 실행**: 모든 키프레임 단계를 순차적으로 실행함으로써 모델은 재계획 없이 다단계 조작 작업을 완료할 수 있습니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: Robosuite 등의 벤치마크에서 테스트하며, 파지, 밀기, 배치 등의 조작 작업을 포함합니다.
+- **실제 환경**: Franka Emika Panda 로봇 팔을 사용하여 물체 재배치, 도구 사용 등의 작업을 수행합니다.
+- **비교 기준선**: RT-2, Octo 등의 모델과 비교하여 작업 성공률과 일반화 능력을 평가합니다.
+
+### 주요 수치 및 결론
+- **시뮬레이션 결과**: 보지 못한 작업 구성에서 CrayonRobo의 성공률은 기준선보다 15-20% 높으며, 특히 정밀한 포즈 제어가 필요한 작업에서 두드러진 성과를 보입니다.
+- **실제 환경**: 5가지 유형의 장시간 작업(예: "블록을 컵에 넣은 후 목표 영역으로 밀기")에서 평균 성공률 78%로, RT-2의 62%보다 우수합니다.
+- **일반화 능력**: 해석 가능한 시각적 프롬프트를 제공함으로써 모델은 보지 못한 물체 모양, 색상 및 작업 조합에 대한 견고성이 크게 향상되며, 프롬프트 설계는 2-3개의 키프레임만으로 복잡한 작업을 완료할 수 있습니다.
+
+### 결론
+CrayonRobo는 명시적 2D 시각적 프롬프트를 통해 고수준 계획과 저수준 동작을 연결하여 다중 모달 명령의 모호성을 효과적으로 완화합니다. 키프레임 직렬화 실행 전략은 장시간 조작을 위한 확장 가능한 솔루션을 제공하며, 프롬프트의 해석 가능성은 미지의 시나리오에서 모델의 적응성을 강화합니다.

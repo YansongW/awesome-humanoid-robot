@@ -29,7 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. | WP4 trilingual backfill 2026-08-10:
+    closed unclosed code fence(s) and removed duplicate stale translation block(s) (pre-existing ingestion defect).'
 sources:
 - id: src_wiki_extraction
   type: other
@@ -37,7 +38,6 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-
 ## 概述
 ### 4.1.2 功率密度、扭矩密度与动态响应
 
@@ -124,6 +124,7 @@ flowchart LR
     G --> B
     G --> C
 
+```
 ## 개요
 ### 4.1.2 출력 밀도, 토크 밀도 및 동적 응답
 
@@ -165,43 +166,4 @@ flowchart LR
     G --> B
     G --> C
 
-## 개요
-### 4.1.2 출력 밀도, 토크 밀도 및 동적 응답
-
-## 핵심 내용
-액추에이터를 에너지 변환 장치로 간주할 때, 핵심 지표는 다음 두 가지로 요약할 수 있습니다:
-
-1. **토크 밀도** \(\tau_d = \tau_{\text{peak}} / m\) (단위: N·m/kg) 또는 N·m/L로, 단위 질량/부피당 발생할 수 있는 토크를 측정합니다.
-2. **출력 밀도** \(P_d = P_{\text{peak}} / m\) (단위: W/kg)로, 단위 질량당 출력할 수 있는 기계적 동력을 측정합니다.
-
-이 두 지표는 모터 회전 속도를 통해 다음과 같이 연결됩니다:
-
-$$
-P = \tau \, \omega
-$$
-
-여기서 \(\omega\)는 각속도(rad/s)입니다. 모터 본체는 일반적으로 고회전, 저토크 영역에서 가장 효율적으로 작동합니다. 로봇 관절은 저회전, 고토크를 필요로 하므로, 반드시 감속기를 통해 "토크 증폭"을 해야 합니다. 이러한 매칭이 이 장의 핵심 논의 주제입니다.
-
-로봇의 동적 응답은 **기계적 시상수**로도 설명할 수 있습니다:
-
-$$
-\tau_m = \frac{J \, R}{k_t^2}
-$$
-
-여기서 \(J\)는 회전자와 부하의 등가 관성 모멘트, \(R\)은 전기자 저항, \(k_t\)는 토크 상수입니다. 시상수가 작을수록 모터의 가속 및 감속이 빠릅니다.
-
-!!! note "용어 설명: 관성 모멘트, 기계적 시상수, 토크 상수"
-    - **관성 모멘트(moment of inertia)**: 물체가 각가속도에 저항하는 능력으로, 병진 운동에서의 질량에 비유됩니다. 회전축에서 멀고 질량이 클수록 관성 모멘트가 커집니다. 단위는 kg·m²입니다.
-    - **기계적 시상수(mechanical time constant)**: 모터가 정지 상태에서 약 63% 정상 속도까지 가속하는 데 필요한 시간으로, 기계적 응답 속도를 반영합니다.
-    - **토크 상수(torque constant)**: 모터 전류와 발생 토크 사이의 비례 계수로 \(\tau = k_t I\)입니다. 단위는 N·m/A이며, 그 크기는 자기장 강도와 권선 유효 길이에 따라 달라집니다.
-
-```mermaid
-flowchart LR
-    A["작업 요구사항<br/>토크 속도 대역폭"] --> B["모터 본체<br/>고속 저토크"]
-    B --> C["전동 기구<br/>감속 증토크"]
-    C --> D["관절 출력<br/>저속 고토크"]
-    E["질량/부피 제약"] --> B
-    E --> C
-    F["열과 배터리 지속 시간"] --> G["효율과 손실"]
-    G --> B
-    G --> C
+```

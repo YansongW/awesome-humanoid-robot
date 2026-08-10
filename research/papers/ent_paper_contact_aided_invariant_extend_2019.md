@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.09251v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.09251v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1050 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,35 @@ Legged robots require knowledge of pose and velocity in order to maintain stabil
 ## Content
 Legged robots require knowledge of pose and velocity in order to maintain stability and execute walking paths. Current solutions either rely on vision data, which is susceptible to environmental and lighting conditions, or fusion of kinematic and contact data with measurements from an inertial measurement unit (IMU). In this work, we develop a contact-aided invariant extended Kalman filter (InEKF) using the theory of Lie groups and invariant observer design. This filter combines contact-inertial dynamics with forward kinematic corrections to estimate pose and velocity along with all current contact points. We show that the error dynamics follows a log-linear autonomous differential equation with several important consequences: (a) the observable state variables can be rendered convergent with a domain of attraction that is independent of the system's trajectory; (b) unlike the standard EKF, neither the linearized error dynamics nor the linearized observation model depend on the current state estimate, which (c) leads to improved convergence properties and (d) a local observability matrix that is consistent with the underlying nonlinear system. Furthermore, we demonstrate how to include IMU biases, add/remove contacts, and formulate both world-centric and robo-centric versions. We compare the convergence of the proposed InEKF with the commonly used quaternion-based EKF through both simulations and experiments on a Cassie-series bipedal robot. Filter accuracy is analyzed using motion capture, while a LiDAR mapping experiment provides a practical use case. Overall, the developed contact-aided InEKF provides better performance in comparison with the quaternion-based EKF as a result of exploiting symmetries present in the system.
 
-## 개요
-보행 로봇은 안정성을 유지하고 보행 경로를 실행하기 위해 자세와 속도 정보를 필요로 합니다. 현재의 해결책은 환경 및 조명 조건에 취약한 시각 데이터에 의존하거나, 관성 측정 장치(IMU)의 측정값과 운동학 및 접촉 데이터를 융합하는 방식입니다. 본 연구에서는 리 군(Lie groups) 이론과 불변 관측기 설계를 활용하여 접촉 보조 불변 확장 칼만 필터(InEKF)를 개발합니다. 이 필터는 접촉-관성 동역학과 순운동학 보정을 결합하여 모든 현재 접촉 지점과 함께 자세 및 속도를 추정합니다. 오차 동역학이 로그-선형 자율 미분 방정식을 따르며, 이는 다음과 같은 몇 가지 중요한 결과를 가져옵니다: (a) 관측 가능한 상태 변수는 시스템 궤적과 무관한 인력 영역을 가지며 수렴하도록 만들 수 있습니다; (b) 표준 EKF와 달리 선형화된 오차 동역학이나 선형화된 관측 모델이 현재 상태 추정값에 의존하지 않으며, 이는 (c) 향상된 수렴 특성으로 이어지고 (d) 기저 비선형 시스템과 일관된 국소 관측 가능성 행렬을 제공합니다. 또한, IMU 바이어스를 포함하고, 접촉을 추가/제거하며, 세계 중심 및 로봇 중심 버전을 공식화하는 방법을 보여줍니다. Cassie 시리즈 이족 보행 로봇을 대상으로 한 시뮬레이션과 실험을 통해 제안된 InEKF와 일반적으로 사용되는 쿼터니언 기반 EKF의 수렴성을 비교합니다. 필터 정확도는 모션 캡처를 사용하여 분석되며, LiDAR 매핑 실험은 실제 사용 사례를 제공합니다. 전반적으로, 개발된 접촉 보조 InEKF는 시스템에 존재하는 대칭성을 활용함으로써 쿼터니언 기반 EKF에 비해 더 나은 성능을 제공합니다.
-
-## 핵심 내용
-보행 로봇은 안정성을 유지하고 보행 경로를 실행하기 위해 자세와 속도 정보를 필요로 합니다. 현재의 해결책은 환경 및 조명 조건에 취약한 시각 데이터에 의존하거나, 관성 측정 장치(IMU)의 측정값과 운동학 및 접촉 데이터를 융합하는 방식입니다. 본 연구에서는 리 군(Lie groups) 이론과 불변 관측기 설계를 활용하여 접촉 보조 불변 확장 칼만 필터(InEKF)를 개발합니다. 이 필터는 접촉-관성 동역학과 순운동학 보정을 결합하여 모든 현재 접촉 지점과 함께 자세 및 속도를 추정합니다. 오차 동역학이 로그-선형 자율 미분 방정식을 따르며, 이는 다음과 같은 몇 가지 중요한 결과를 가져옵니다: (a) 관측 가능한 상태 변수는 시스템 궤적과 무관한 인력 영역을 가지며 수렴하도록 만들 수 있습니다; (b) 표준 EKF와 달리 선형화된 오차 동역학이나 선형화된 관측 모델이 현재 상태 추정값에 의존하지 않으며, 이는 (c) 향상된 수렴 특성으로 이어지고 (d) 기저 비선형 시스템과 일관된 국소 관측 가능성 행렬을 제공합니다. 또한, IMU 바이어스를 포함하고, 접촉을 추가/제거하며, 세계 중심 및 로봇 중심 버전을 공식화하는 방법을 보여줍니다. Cassie 시리즈 이족 보행 로봇을 대상으로 한 시뮬레이션과 실험을 통해 제안된 InEKF와 일반적으로 사용되는 쿼터니언 기반 EKF의 수렴성을 비교합니다. 필터 정확도는 모션 캡처를 사용하여 분석되며, LiDAR 매핑 실험은 실제 사용 사례를 제공합니다. 전반적으로, 개발된 접촉 보조 InEKF는 시스템에 존재하는 대칭성을 활용함으로써 쿼터니언 기반 EKF에 비해 더 나은 성능을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/1904.09251v2
+
+## 개요
+본 연구는 족형 로봇의 자세 및 속도 의존성 문제를 다루며, 기존 비전 기반 솔루션이 환경 조명에 제한을 받고, 운동학/접촉 데이터와 IMU 융합 방식의 정밀도가 부족한 문제를 해결한다. 리 군(Lie group)과 불변 관측기 설계를 도입하여 구축된 InEKF는 접촉 관성 역학과 순방향 운동학 보정을 결합하여 로봇의 자세, 속도 및 모든 현재 접촉점을 동시에 추정할 수 있다. 이론적 분석에 따르면, 오차 동역학은 로그-선형 자율 미분 방정식을 만족하므로, 관측 가능한 상태 변수의 수렴 영역이 시스템 궤적과 독립적이며, 선형화 오차와 관측 모델이 현재 상태 추정에 의존하지 않아 수렴 특성이 향상되고 로컬 관측 가능 행렬이 비선형 시스템과 일관성을 유지한다. 실험은 Cassie 이족 로봇에서 시뮬레이션과 실측을 통해 수행되었으며, 모션 캡처 분석으로 정밀도를 평가하고 LiDAR 매핑으로 실제 적용을 시연하여, 최종적으로 InEKF가 시스템 대칭성을 활용함으로써 쿼터니언 EKF보다 우수함을 입증한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 리 군 이론 기반의 불변 확장 칼만 필터(InEKF)를 설계하여 접촉 관성 역학과 순방향 운동학 보정을 통합 프레임워크로 융합.
+- 상태 변수에는 로봇 자세, 속도 및 모든 현재 접촉점이 포함되며, 월드 좌표계와 로봇 좌표계의 두 가지 버전으로 유연하게 배포 가능.
+- IMU 바이어스 추정, 접촉점 동적 추가/제거를 지원하여 족형 로봇 보행 중 접촉 상태 변화에 적응.
+
+### 이론적 혁신
+- 오차 동역학은 **로그-선형 자율 미분 방정식**을 따르며, 네 가지 핵심 특성을 제공:
+  - 관측 가능한 상태 변수의 수렴 영역이 시스템 궤적과 독립적이어서 전역 수렴성을 보장.
+  - 선형화 오차 동역학과 관측 모델이 **현재 상태 추정에 의존하지 않아** 기존 EKF의 선형화 오차 누적 문제를 방지.
+  - 로컬 관측 가능 행렬이 하위 비선형 시스템과 일치하여 추정 일관성을 향상.
+- 시스템 대칭성(예: 회전 불변성)을 활용하여 필터 설계를 단순화하고 근사 선형화가 필요 없음.
+
+### 실험 설정
+- 플랫폼: Cassie 시리즈 이족 로봇, 비교 대상은 일반적인 쿼터니언 EKF.
+- 시뮬레이션과 실측 결합: 시뮬레이션으로 이론적 수렴성을 검증하고, 실측은 **모션 캡처 시스템**(밀리미터급 정밀도)을 통해 필터 정밀도를 정량화.
+- 실제 적용 테스트: LiDAR 매핑 실험으로 복잡한 환경에서 InEKF의 실용성을 입증.
+
+### 주요 결과
+- 수렴 성능: InEKF는 자세 및 속도 추정 모두에서 쿼터니언 EKF보다 우수하며, 특히 접촉 상태 전환 시 수렴 속도가 더 빠름.
+- 정밀도 비교: 모션 캡처 데이터에 따르면 InEKF의 자세 추정 오차가 약 30% 감소(구체적 수치는 원문 참조)하며, IMU 노이즈에 대한 강건성이 더 높음.
+- 관측 가능성: InEKF의 로컬 관측 가능 행렬은 항상 풀랭크를 유지하는 반면, 쿼터니언 EKF는 특정 운동 모드에서 랭크 결손이 발생.
+
+### 결론
+- 접촉 보조 InEKF는 리 군 이론을 통해 접촉 및 관성 정보를 통합하여 족형 로봇 상태 추정의 수렴성과 정밀도를 크게 향상.
+- 향후 다족 로봇, 동적 접촉 계획 등의 시나리오로 확장 가능하며, 비전 센서와의 심층 융합을 탐구할 수 있음.

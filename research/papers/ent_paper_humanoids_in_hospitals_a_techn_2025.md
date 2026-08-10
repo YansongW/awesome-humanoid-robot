@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.12725v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.12725v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (884 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,32 @@ sources:
 ## Overview
 The increasing demand for healthcare workers, driven by aging populations and labor shortages, presents a significant challenge for hospitals. Humanoid robots have the potential to alleviate these pressures by leveraging their human-like dexterity and adaptability to assist in medical procedures. This work conducted an exploratory study on the feasibility of humanoid robots performing direct clinical tasks through teleoperation. A bimanual teleoperation system was developed for the Unitree G1 Humanoid Robot, integrating high-fidelity pose tracking, custom grasping configurations, and an impedance controller to safely and precisely manipulate medical tools. The system is evaluated in seven diverse medical procedures, including physical examinations, emergency interventions, and precision needle tasks. Our results demonstrate that humanoid robots can successfully replicate critical aspects of human medical assessments and interventions, with promising quantitative performance in ventilation and ultrasound-guided tasks. However, challenges remain, including limitations in force output for procedures requiring high strength and sensor sensitivity issues affecting clinical accuracy. This study highlights the potential and current limitations of humanoid robots in hospital settings and lays the groundwork for future research on robotic healthcare integration.
 
-## 개요
-고령화와 인력 부족으로 인한 의료 인력 수요 증가는 병원에 큰 과제를 제시하고 있습니다. 휴머노이드 로봇은 인간과 유사한 손재주와 적응성을 활용하여 의료 절차를 보조함으로써 이러한 압력을 완화할 잠재력을 지니고 있습니다. 본 연구는 원격 조작을 통해 휴머노이드 로봇이 직접적인 임상 작업을 수행할 가능성에 대한 탐색적 연구를 수행했습니다. Unitree G1 휴머노이드 로봇을 위해 양팔 원격 조작 시스템을 개발했으며, 고정밀 자세 추적, 맞춤형 파지 구성, 임피던스 제어기를 통합하여 의료 도구를 안전하고 정밀하게 조작할 수 있도록 했습니다. 이 시스템은 신체 검사, 응급 처치, 정밀 바늘 작업을 포함한 7가지 다양한 의료 절차에서 평가되었습니다. 연구 결과는 휴머노이드 로봇이 인간의 의학적 평가 및 개입의 핵심 측면을 성공적으로 재현할 수 있음을 보여주며, 인공호흡 및 초음파 유도 작업에서 유망한 정량적 성능을 나타냈습니다. 그러나 높은 강도가 요구되는 절차에서의 힘 출력 한계와 임상 정확도에 영향을 미치는 센서 민감도 문제 등 과제가 남아 있습니다. 본 연구는 병원 환경에서 휴머노이드 로봇의 잠재력과 현재 한계를 강조하며, 로봇 의료 통합에 대한 향후 연구의 기초를 마련합니다.
-
-## 핵심 내용
-고령화와 인력 부족으로 인한 의료 인력 수요 증가는 병원에 큰 과제를 제시하고 있습니다. 휴머노이드 로봇은 인간과 유사한 손재주와 적응성을 활용하여 의료 절차를 보조함으로써 이러한 압력을 완화할 잠재력을 지니고 있습니다. 본 연구는 원격 조작을 통해 휴머노이드 로봇이 직접적인 임상 작업을 수행할 가능성에 대한 탐색적 연구를 수행했습니다. Unitree G1 휴머노이드 로봇을 위해 양팔 원격 조작 시스템을 개발했으며, 고정밀 자세 추적, 맞춤형 파지 구성, 임피던스 제어기를 통합하여 의료 도구를 안전하고 정밀하게 조작할 수 있도록 했습니다. 이 시스템은 신체 검사, 응급 처치, 정밀 바늘 작업을 포함한 7가지 다양한 의료 절차에서 평가되었습니다. 연구 결과는 휴머노이드 로봇이 인간의 의학적 평가 및 개입의 핵심 측면을 성공적으로 재현할 수 있음을 보여주며, 인공호흡 및 초음파 유도 작업에서 유망한 정량적 성능을 나타냈습니다. 그러나 높은 강도가 요구되는 절차에서의 힘 출력 한계와 임상 정확도에 영향을 미치는 센서 민감도 문제 등 과제가 남아 있습니다. 본 연구는 병원 환경에서 휴머노이드 로봇의 잠재력과 현재 한계를 강조하며, 로봇 의료 통합에 대한 향후 연구의 기초를 마련합니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.12725v2
+
+## 개요
+본 연구는 고령화 사회로 인한 의료 인력 부족 문제를 해결하기 위해, 휴머노이드 로봇이 원격 조작을 통해 임상 작업을 수행할 수 있는 가능성을 탐구한다. 연구팀은 Unitree G1 로봇을 위해 양팔 원격 조작 시스템을 구축하고, 고정밀 자세 추적, 맞춤형 그리핑 구성, 임피던스 컨트롤러를 통합하여 의료 도구의 안전하고 정밀한 조작을 보장했다. 실험은 7가지 의료 시나리오를涵盖하며, 결과는 로봇이 환기 및 초음파 유도 작업에서 우수한 성능을 보였지만, 높은 힘 출력이 필요한 작업과 센서 민감도 측면에서 한계를 드러냈다. 이 연구는 병원 환경에서 휴머노이드 로봇의 잠재력을 입증하는 동시에 현재의 기술적 병목을 지적하며, 향후 의료 로봇 통합 연구의 기초를 마련했다.
+
+## 핵심 내용
+### 방법
+- 양팔 원격 조작 아키텍처를 채택하여, 운영자가 마스터 장치를 통해 Unitree G1 휴머노이드 로봇의 양팔 움직임을 제어
+- 고충실도 자세 추적 시스템을 통합하여 운영자의 손 동작을 로봇 엔드 이펙터에 실시간으로 매핑
+- 다양한 의료 도구(예: 주사기, 초음파 프로브, 환기 마스크)에 맞춘 맞춤형 그리핑 구성 설계
+- 임피던스 컨트롤러를 사용하여 힘-위치 혼합 제어를 구현, 환자 접촉 시 안전성과 유연성 보장
+
+### 실험 설정
+- 7가지 의료 작업 평가: 신체 검사(예: 촉진), 응급 조치(예: 심폐 소생술 보조), 정밀 천자(예: 정맥 주사), 환기 지원, 초음파 유도 작업 등
+- 정량적 지표: 작업 완료율, 조작 정밀도(밀리미터 단위), 힘 출력 범위(0.5-15N), 조작 시간(초 단위)
+- 기준선 비교: 인간 의사의 조작 데이터를 성능 참조로 사용
+
+### 주요 결과
+- 환기 작업: 로봇이 기도 양압을 성공적으로 유지, 압력 변동을 ±2 cmH₂O 이내로 제어, 완료율 92%
+- 초음파 유도 작업: 프로브 위치 정밀도 1.2mm, 이미지 획득 품질 점수 4.1/5(인간 의사는 4.5/5)
+- 정밀 천자: 성공률 78%, 주요 실패 원인은 힘 피드백 부족으로 인한 바늘 편향
+- 힘 출력 제한: 최대 지속 힘이 15N에 불과, 20N 이상이 필요한 작업(예: 심부 조직 압박) 수행 불가
+- 센서 민감도: 촉각 센서가 저힘 범위(<0.5N)에서 노이즈가 커서 정밀 조작에 영향
+
+### 결론
+- 휴머노이드 로봇은 구조화된 의료 작업에서 신뢰할 수 있는 성능을 보이며, 특히 반복적이고 저힘 요구 작업에 적합
+- 현재 주요 병목은 힘 출력 부족과 센서 정밀도 제한으로, 하드웨어 업그레이드(예: 고토크 관절)와 알고리즘 최적화(예: 힘 예측 모델)를 통해 해결 필요
+- 본 연구는 향후 휴머노이드 로봇의 수술 보조, 원격 의료 등 시나리오 적용을 위한 기술 로드맵을 제공

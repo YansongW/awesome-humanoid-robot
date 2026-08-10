@@ -35,7 +35,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.05310v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_learning_soccer_skills_for_hum_2026_1 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_learning_soccer_skills_for_hum_2026_1 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (996 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,26 @@ Soccer presents a significant challenge for humanoid robots, demanding tightly i
 ## Content
 Soccer presents a significant challenge for humanoid robots, demanding tightly integrated perception-action capabilities for tasks like perception-guided kicking and whole-body balance control. Existing approaches suffer from inter-module instability in modular pipelines or conflicting training objectives in end-to-end frameworks. We propose Perception-Action integrated Decision-making (PAiD), a progressive architecture that decomposes soccer skill acquisition into three stages: motion-skill acquisition via human motion tracking, lightweight perception-action integration for positional generalization, and physics-aware sim-to-real transfer. This staged decomposition establishes stable foundational skills, avoids reward conflicts during perception integration, and minimizes sim-to-real gaps. Experiments on the Unitree G1 demonstrate high-fidelity human-like kicking with robust performance under diverse conditions—including static or rolling balls, various positions, and disturbances—while maintaining consistent execution across indoor and outdoor scenarios. Our divide-and-conquer strategy advances robust humanoid soccer capabilities and offers a scalable framework for complex embodied skill acquisition. The project page is available at https://soccer-humanoid.github.io/.
 
-## 개요
-축구는 인간형 로봇에게 중요한 도전 과제로, 인지 기반 킥 동작 및 전신 균형 제어와 같은 작업을 위해 긴밀하게 통합된 인지-행동 능력을 요구합니다. 기존 접근 방식은 모듈식 파이프라인에서 모듈 간 불안정성이나 종단 간 프레임워크에서 상충되는 훈련 목표로 인해 어려움을 겪습니다. 우리는 축구 기술 습득을 세 단계로 분해하는 점진적 아키텍처인 PAiD(Perception-Action integrated Decision-making)를 제안합니다: 인간 동작 추적을 통한 운동 기술 습득, 위치 일반화를 위한 경량 인지-행동 통합, 물리 인식 시뮬레이션-실제 전환. 이러한 단계적 분해는 안정적인 기초 기술을 확립하고, 인지 통합 중 보상 충돌을 방지하며, 시뮬레이션-실제 간 차이를 최소화합니다. Unitree G1 실험은 정지 또는 구르는 공, 다양한 위치, 외란을 포함한 다양한 조건에서 강건한 성능을 보이며, 실내 및 실외 시나리오에서 일관된 실행을 유지하는 고충실도 인간형 킥을 입증합니다. 우리의 분할 정복 전략은 강건한 인간형 축구 능력을 발전시키고, 복잡한 체화된 기술 습득을 위한 확장 가능한 프레임워크를 제공합니다. 프로젝트 페이지는 https://soccer-humanoid.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-축구는 인간형 로봇에게 중요한 도전 과제로, 인지 기반 킥 동작 및 전신 균형 제어와 같은 작업을 위해 긴밀하게 통합된 인지-행동 능력을 요구합니다. 기존 접근 방식은 모듈식 파이프라인에서 모듈 간 불안정성이나 종단 간 프레임워크에서 상충되는 훈련 목표로 인해 어려움을 겪습니다. 우리는 축구 기술 습득을 세 단계로 분해하는 점진적 아키텍처인 PAiD(Perception-Action integrated Decision-making)를 제안합니다: 인간 동작 추적을 통한 운동 기술 습득, 위치 일반화를 위한 경량 인지-행동 통합, 물리 인식 시뮬레이션-실제 전환. 이러한 단계적 분해는 안정적인 기초 기술을 확립하고, 인지 통합 중 보상 충돌을 방지하며, 시뮬레이션-실제 간 차이를 최소화합니다. Unitree G1 실험은 정지 또는 구르는 공, 다양한 위치, 외란을 포함한 다양한 조건에서 강건한 성능을 보이며, 실내 및 실외 시나리오에서 일관된 실행을 유지하는 고충실도 인간형 킥을 입증합니다. 우리의 분할 정복 전략은 강건한 인간형 축구 능력을 발전시키고, 복잡한 체화된 기술 습득을 위한 확장 가능한 프레임워크를 제공합니다. 프로젝트 페이지는 https://soccer-humanoid.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.05310v1
+
+## 개요
+인간형 로봇 축구 작업에서 모듈식 파이프라인의 불안정성과 엔드투엔드 프레임워크의 훈련 목표 충돌 문제를 해결하기 위해, 본 논문은 PAiD(Perception-Action integrated Decision-making) 점진적 아키텍처를 제안한다. 이 아키텍처는 축구 기술 학습을 세 가지 순차적 단계로 분해한다: 먼저 인간 동작 추적을 통해 기초 운동 기술을 획득하고, 그다음 경량 인식-행동 통합을 통해 위치 일반화를 달성하며, 마지막으로 물리 인식 sim-to-real 전이를 통해 시뮬레이션과 현실 간의 격차를 줄인다. 이러한 분할 정복 전략은 인식 통합 과정에서의 보상 충돌을 효과적으로 방지하고 sim-to-real 전이 격차를 최소화한다. Unitree G1 로봇에서의 실험은 이 방법이 고충실도 인간형 발차기 동작을 생성할 수 있으며, 정적 공, 구르는 공, 다양한 위치 및 외부 간섭 등 여러 조건에서 견고한 성능을 유지하고, 실내외 시나리오에서 일관된 실행을 보장함을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+PAiD 프레임워크는 점진적 분해 전략을 채택하여 인간형 로봇 축구 기술 학습을 세 가지 핵심 단계로 나눈다:
+- **운동 기술 획득 단계**: 인간 동작 추적(human motion tracking)을 통해 기초 운동 기술을 학습하고 안정적인 동작 프리미티브를 구축한다.
+- **경량 인식-행동 통합 단계**: 기존 운동 기술을 기반으로 경량 인식 모듈을 통합하여 위치 일반화(positional generalization)를 달성하고, 기존 엔드투엔드 프레임워크에서의 인식과 운동 목표 간 충돌을 피한다.
+- **물리 인식 sim-to-real 전이 단계**: 물리 인식 메커니즘을 도입하여 시뮬레이션 환경에서 실제 세계로의 전이 격차(sim-to-real gap)를 최소화한다.
+
+### 실험 설정 및 주요 결과
+- **하드웨어 플랫폼**: Unitree G1 인간형 로봇
+- **테스트 조건**: 정적 공, 구르는 공, 다양한 발차기 위치 및 외부 간섭 등 여러 시나리오 포함
+- **성능 표현**:
+  - 고충실도(high-fidelity) 인간형 발차기 동작 구현
+  - 실내외 시나리오에서 일관된 실행 효과(consistent execution) 유지
+  - 동적 환경(예: 구르는 공) 및 외부 간섭에 대한 견고한 성능(robust performance) 입증
+
+### 결론
+이 분할 정복 전략(divide-and-conquer strategy)은 인간형 로봇 축구 능력에 대한 견고성 솔루션을 제공하며, 복잡한 구현형 기술 습득(complex embodied skill acquisition)을 위한 확장 가능한 프레임워크를 제시한다. 프로젝트 페이지: https://soccer-humanoid.github.io/

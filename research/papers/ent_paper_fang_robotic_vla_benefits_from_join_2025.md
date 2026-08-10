@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.18007v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.18007v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (657 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,27 @@ sources:
 ## Overview
 Vision-Language-Action (VLA) models have achieved remarkable progress in robotic manipulation by mapping multimodal observations and instructions directly to actions. However, they typically mimic expert trajectories without predictive motion reasoning, which limits their ability to reason about what actions to take. To address this limitation, we propose joint learning with motion image diffusion, a novel strategy that enhances VLA models with motion reasoning capabilities. Our method extends the VLA architecture with a dual-head design: while the action head predicts action chunks as in vanilla VLAs, an additional motion head, implemented as a Diffusion Transformer (DiT), predicts optical-flow-based motion images that capture future dynamics. The two heads are trained jointly, enabling the shared VLM backbone to learn representations that couple robot control with motion knowledge. This joint learning builds temporally coherent and physically grounded representations without modifying the inference pathway of standard VLAs, thereby maintaining test-time latency. Experiments in both simulation and real-world environments demonstrate that joint learning with motion image diffusion improves the success rate of pi-series VLAs to 97.5% on the LIBERO benchmark and 58.0% on the RoboTwin benchmark, yielding a 23% improvement in real-world performance and validating its effectiveness in enhancing the motion reasoning capability of large-scale VLAs.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 다중 모달 관찰과 명령을 직접 행동으로 매핑하여 로봇 조작 분야에서 놀라운 진전을 이루었습니다. 그러나 이러한 모델은 일반적으로 예측적 움직임 추론 없이 전문가 궤적을 모방하므로, 어떤 행동을 취해야 하는지 추론하는 능력이 제한됩니다. 이러한 한계를 해결하기 위해, 우리는 움직임 이미지 확산을 통한 공동 학습(joint learning with motion image diffusion)이라는 새로운 전략을 제안하며, 이는 VLA 모델에 움직임 추론 능력을 부여합니다. 우리의 방법은 이중 헤드(dual-head) 설계로 VLA 아키텍처를 확장합니다: 액션 헤드는 기본 VLA와 같이 행동 청크(action chunks)를 예측하는 반면, 확산 트랜스포머(Diffusion Transformer, DiT)로 구현된 추가적인 움직임 헤드는 미래 역학을 포착하는 광학 흐름 기반 움직임 이미지를 예측합니다. 두 헤드는 공동으로 훈련되어, 공유된 VLM 백본이 로봇 제어와 움직임 지식을 결합한 표현을 학습할 수 있게 합니다. 이 공동 학습은 표준 VLA의 추론 경로를 수정하지 않고 시간적으로 일관되고 물리적으로 기반을 둔 표현을 구축하여, 테스트 시 지연 시간을 유지합니다. 시뮬레이션 및 실제 환경 모두에서의 실험은 움직임 이미지 확산을 통한 공동 학습이 pi-시리즈 VLA의 성공률을 LIBERO 벤치마크에서 97.5%, RoboTwin 벤치마크에서 58.0%로 향상시키며, 실제 환경 성능에서 23%의 개선을 가져와 대규모 VLA의 움직임 추론 능력을 향상시키는 효과를 입증합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 다중 모달 관찰과 명령을 직접 행동으로 매핑하여 로봇 조작 분야에서 놀라운 진전을 이루었습니다. 그러나 이러한 모델은 일반적으로 예측적 움직임 추론 없이 전문가 궤적을 모방하므로, 어떤 행동을 취해야 하는지 추론하는 능력이 제한됩니다. 이러한 한계를 해결하기 위해, 우리는 움직임 이미지 확산을 통한 공동 학습(joint learning with motion image diffusion)이라는 새로운 전략을 제안하며, 이는 VLA 모델에 움직임 추론 능력을 부여합니다. 우리의 방법은 이중 헤드(dual-head) 설계로 VLA 아키텍처를 확장합니다: 액션 헤드는 기본 VLA와 같이 행동 청크(action chunks)를 예측하는 반면, 확산 트랜스포머(Diffusion Transformer, DiT)로 구현된 추가적인 움직임 헤드는 미래 역학을 포착하는 광학 흐름 기반 움직임 이미지를 예측합니다. 두 헤드는 공동으로 훈련되어, 공유된 VLM 백본이 로봇 제어와 움직임 지식을 결합한 표현을 학습할 수 있게 합니다. 이 공동 학습은 표준 VLA의 추론 경로를 수정하지 않고 시간적으로 일관되고 물리적으로 기반을 둔 표현을 구축하여, 테스트 시 지연 시간을 유지합니다. 시뮬레이션 및 실제 환경 모두에서의 실험은 움직임 이미지 확산을 통한 공동 학습이 pi-시리즈 VLA의 성공률을 LIBERO 벤치마크에서 97.5%, RoboTwin 벤치마크에서 58.0%로 향상시키며, 실제 환경 성능에서 23%의 개선을 가져와 대규모 VLA의 움직임 추론 능력을 향상시키는 효과를 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.18007v1
+
+## 개요
+기존 VLA 모델은 전문가 궤적을 직접 모방하며, 행동 결과에 대한 예측적 추론이 부족하다. 본 연구는 표준 VLA 아키텍처에 Diffusion Transformer 기반 모션 헤드를 추가하여 광학 흐름 모션 이미지를 예측하는 공동 학습 전략을 제안한다. 이중 헤드 공동 훈련을 통해 공유된 VLM 백본 네트워크가 제어 지식과 모션 지식을 동시에 학습하여 시간적으로 일관되고 물리적으로 해석 가능한 표현을 구축한다. 이 방법은 표준 VLA의 추론 경로를 변경하지 않아 테스트 지연 시간을 유지하며, 시뮬레이션 및 실제 실험 모두에서 성공률을 크게 향상시킨다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 헤드 설계**: 표준 VLA의 액션 헤드(액션 블록 예측)에 더해, DiT 기반 모션 헤드를 추가하여 광학 흐름 모션 이미지를 예측하고 미래 동역학을 포착한다.
+- **공동 훈련**: 두 헤드가 VLM 백본 네트워크를 공유하며, 공동 손실 함수로 훈련하여 표현이 로봇 제어와 모션 지식을 동시에 결합하도록 한다.
+- **추론 불변성**: 테스트 시 액션 헤드만 사용하고, 모션 헤드는 훈련 단계에서만 사용되므로 추론 지연 시간이 증가하지 않는다.
+
+### 실험 설정
+- **벤치마크 테스트**: LIBERO(시뮬레이션), RoboTwin(시뮬레이션), 실제 로봇 조작 작업.
+- **기준 모델**: pi-series VLA(모션 헤드 없는 버전).
+- **평가 지표**: 작업 성공률(%).
+
+### 주요 결과
+- **LIBERO 벤치마크**: 성공률이 기준 대비 97.5%로 향상.
+- **RoboTwin 벤치마크**: 성공률이 기준 대비 58.0%로 향상.
+- **실제 환경**: 성능이 23% 향상되어 모션 추론 능력 강화의 효과를 검증.
+
+### 결론
+공동 모션 이미지 확산 학습은 VLA 모델의 모션 추론 능력을 크게 향상시키며, 추론 비용 증가 없이 성능 돌파구를 달성하여 대규모 VLA 모델에 확장 가능한 강화 방안을 제공한다.

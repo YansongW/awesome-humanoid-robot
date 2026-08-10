@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.21046v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.21046v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (775 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,28 @@ Recent Vision-Language-Action (VLA) models built on pre-trained Vision-Language 
 ## Content
 Recent Vision-Language-Action (VLA) models built on pre-trained Vision-Language Models (VLMs) require extensive post-training, resulting in high computational overhead that limits scalability and deployment. We propose CogVLA, a Cognition-Aligned Vision-Language-Action framework that leverages instruction-driven routing and sparsification to improve both efficiency and performance. CogVLA draws inspiration from human multimodal coordination and introduces a 3-stage progressive architecture. 1) Encoder-FiLM based Aggregation Routing (EFA-Routing) injects instruction information into the vision encoder to selectively aggregate and compress dual-stream visual tokens, forming an instruction-aware latent representation. 2) Building upon this compact visual encoding, LLM-FiLM based Pruning Routing (LFP-Routing) introduces action intent into the language model by pruning instruction-irrelevant visually grounded tokens, thereby achieving token-level sparsity. 3) To ensure that compressed perception inputs can still support accurate and coherent action generation, we introduce V-L-A Coupled Attention (CAtten), which combines causal vision-language attention with bidirectional action parallel decoding. Extensive experiments on the LIBERO benchmark and real-world robotic tasks demonstrate that CogVLA achieves state-of-the-art performance with success rates of 97.4% and 70.0%, respectively, while reducing training costs by 2.5-fold and decreasing inference latency by 2.8-fold compared to OpenVLA. CogVLA is open-sourced and publicly available at https://github.com/JiuTian-VL/CogVLA.
 
-## 개요
-최근 사전 훈련된 Vision-Language Models(VLM)을 기반으로 구축된 Vision-Language-Action(VLA) 모델은 광범위한 사후 훈련이 필요하여 높은 계산 오버헤드를 초래하며 확장성과 배포에 제약을 줍니다. 본 논문에서는 명령 기반 라우팅과 희소화를 활용하여 효율성과 성능을 모두 개선하는 인지 정렬 Vision-Language-Action 프레임워크인 CogVLA를 제안합니다. CogVLA는 인간의 다중 모달 협력에서 영감을 받아 3단계 점진적 아키텍처를 도입합니다. 1) Encoder-FiLM 기반 집계 라우팅(EFA-Routing)은 명령 정보를 비전 인코더에 주입하여 이중 스트림 시각 토큰을 선택적으로 집계 및 압축하고 명령 인식 잠재 표현을 형성합니다. 2) 이 컴팩트한 시각적 인코딩을 기반으로 LLM-FiLM 기반 가지치기 라우팅(LFP-Routing)은 명령과 무관한 시각적 기반 토큰을 가지치기하여 언어 모델에 행동 의도를 도입함으로써 토큰 수준의 희소성을 달성합니다. 3) 압축된 인식 입력이 여전히 정확하고 일관된 행동 생성을 지원할 수 있도록 하기 위해 인과적 시각-언어 주의와 양방향 행동 병렬 디코딩을 결합한 V-L-A 결합 주의(CAtten)를 도입합니다. LIBERO 벤치마크 및 실제 로봇 작업에 대한 광범위한 실험을 통해 CogVLA는 각각 97.4%와 70.0%의 성공률로 최첨단 성능을 달성하면서도 OpenVLA 대비 훈련 비용을 2.5배 절감하고 추론 지연 시간을 2.8배 감소시킵니다. CogVLA는 오픈소스로 제공되며 https://github.com/JiuTian-VL/CogVLA에서 공개적으로 이용 가능합니다.
-
-## 핵심 내용
-최근 사전 훈련된 Vision-Language Models(VLM)을 기반으로 구축된 Vision-Language-Action(VLA) 모델은 광범위한 사후 훈련이 필요하여 높은 계산 오버헤드를 초래하며 확장성과 배포에 제약을 줍니다. 본 논문에서는 명령 기반 라우팅과 희소화를 활용하여 효율성과 성능을 모두 개선하는 인지 정렬 Vision-Language-Action 프레임워크인 CogVLA를 제안합니다. CogVLA는 인간의 다중 모달 협력에서 영감을 받아 3단계 점진적 아키텍처를 도입합니다. 1) Encoder-FiLM 기반 집계 라우팅(EFA-Routing)은 명령 정보를 비전 인코더에 주입하여 이중 스트림 시각 토큰을 선택적으로 집계 및 압축하고 명령 인식 잠재 표현을 형성합니다. 2) 이 컴팩트한 시각적 인코딩을 기반으로 LLM-FiLM 기반 가지치기 라우팅(LFP-Routing)은 명령과 무관한 시각적 기반 토큰을 가지치기하여 언어 모델에 행동 의도를 도입함으로써 토큰 수준의 희소성을 달성합니다. 3) 압축된 인식 입력이 여전히 정확하고 일관된 행동 생성을 지원할 수 있도록 하기 위해 인과적 시각-언어 주의와 양방향 행동 병렬 디코딩을 결합한 V-L-A 결합 주의(CAtten)를 도입합니다. LIBERO 벤치마크 및 실제 로봇 작업에 대한 광범위한 실험을 통해 CogVLA는 각각 97.4%와 70.0%의 성공률로 최첨단 성능을 달성하면서도 OpenVLA 대비 훈련 비용을 2.5배 절감하고 추론 지연 시간을 2.8배 감소시킵니다. CogVLA는 오픈소스로 제공되며 https://github.com/JiuTian-VL/CogVLA에서 공개적으로 이용 가능합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.21046v3
+
+## 개요
+CogVLA는 기존 VLA 모델의 후훈련(post-training) 계산 비용이 큰 문제를 해결하기 위해 3단계 점진적 아키텍처를 제안한다. 핵심 혁신은 다음과 같다: EFA-Routing은 FiLM 메커니즘을 통해 명령을 시각 인코더에 주입하여 이중 스트림 시각 토큰을 압축한다; LFP-Routing은 LLM 가지치기를 활용해 명령과 무관한 시각 토큰을 제거하여 희소화를 구현한다; CAtten은 인과적 시각-언어 어텐션과 양방향 동작 병렬 디코딩을 결합한다. 실험 결과, 이 모델은 LIBERO 벤치마크와 실제 로봇 작업에서 모두 최적의 성능을 달성했다.
+
+## 핵심 내용
+### 방법 아키텍처
+CogVLA는 3단계 점진적 설계를 채택한다:
+- **EFA-Routing**: FiLM 기반 인코더 집계 라우팅으로, 명령 정보를 시각 인코더에 주입하고 이중 스트림 시각 토큰을 선택적으로 집계 및 압축하여 명령 인지적 암시적 표현을 형성한다.
+- **LFP-Routing**: LLM 기반 가지치기 라우팅으로, 동작 의도를 도입하여 명령과 무관한 시각 토큰을 가지치기하고 토큰 수준 희소화를 구현한다.
+- **CAtten**: V-L-A 결합 어텐션 메커니즘으로, 인과적 시각-언어 어텐션과 양방향 동작 병렬 디코딩을 결합하여 압축된 인식 입력에서도 정확하고 일관된 동작을 생성할 수 있도록 보장한다.
+
+### 실험 설정
+- **벤치마크 테스트**: LIBERO 벤치마크에서 평가하며, 다양한 로봇 조작 작업을 포함한다.
+- **실제 시나리오**: 실제 로봇 작업에서 일반화 능력을 검증한다.
+- **비교 기준선**: OpenVLA 등 모델과 효율성 및 성능을 비교한다.
+
+### 주요 결과
+- **성공률**: LIBERO 벤치마크에서 97.4%, 실제 작업에서 70.0%를 달성.
+- **효율성 향상**: 훈련 비용 2.5배 절감, 추론 지연 시간 2.8배 감소.
+- **오픈소스**: 코드와 모델은 https://github.com/JiuTian-VL/CogVLA에서 공개.
+
+### 결론
+CogVLA는 명령 기반 라우팅과 희소화를 통해 높은 성능을 유지하면서 계산 비용을 크게 줄여 VLA 모델의 확장 가능한 배포에 효과적인 솔루션을 제공한다.

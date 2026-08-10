@@ -34,7 +34,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.06286v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_walk_the_planc_physicsguided_r_2026 into this card (rules: same_title_same_year). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_walk_the_planc_physicsguided_r_2026 into this card (rules: same_title_same_year). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1047 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -73,11 +74,26 @@ sources:
 ## Overview
 Bipedal humanoid robots must precisely coordinate balance, timing, and contact decisions when locomoting on constrained footholds such as stepping stones, beams, and planks -- even minor errors can lead to catastrophic failure. Classical optimization and control pipelines handle these constraints well but depend on highly accurate mathematical representations of terrain geometry, making them prone to error when perception is noisy or incomplete. Meanwhile, reinforcement learning has shown strong resilience to disturbances and modeling errors, yet end-to-end policies rarely discover the precise foothold placement and step sequencing required for discontinuous terrain. These contrasting limitations motivate approaches that guide learning with physics-based structure rather than relying purely on reward shaping. In this work, we introduce a locomotion framework in which a reduced-order stepping planner supplies dynamically consistent motion targets that steer the RL training process via Control Lyapunov Function (CLF) rewards. This combination of structured footstep planning and data-driven adaptation produces accurate, agile, and hardware-validated stepping-stone locomotion on a humanoid robot, substantially improving reliability compared to conventional model-free reinforcement-learning baselines.
 
-## 개요
-이족 보행 휴머노이드 로봇은 디딤돌, 빔, 판자와 같은 제한된 발판 위를 이동할 때 균형, 타이밍 및 접촉 결정을 정밀하게 조정해야 합니다. 사소한 오류라도 치명적인 실패로 이어질 수 있습니다. 고전적인 최적화 및 제어 파이프라인은 이러한 제약 조건을 잘 처리하지만 지형 형상의 매우 정확한 수학적 표현에 의존하기 때문에 인식이 노이즈가 있거나 불완전할 때 오류가 발생하기 쉽습니다. 한편, 강화 학습은 외란 및 모델링 오류에 대해 강력한 회복력을 보여주지만, 종단 간 정책은 불연속적인 지형에 필요한 정확한 발판 위치 및 보폭 순서를 거의 발견하지 못합니다. 이러한 대조적인 한계는 순수한 보상 형상화에 의존하기보다는 물리학 기반 구조로 학습을 안내하는 접근 방식을 동기 부여합니다. 본 연구에서는 축소 차수 보행 계획기가 제어 리아푸노프 함수(CLF) 보상을 통해 RL 훈련 과정을 안내하는 동역학적으로 일관된 동작 목표를 제공하는 보행 프레임워크를 소개합니다. 구조화된 발판 계획과 데이터 기반 적응의 이러한 조합은 휴머노이드 로봇에서 정확하고 민첩하며 하드웨어 검증된 디딤돌 보행을 생성하여 기존의 모델 프리 강화 학습 기준선에 비해 신뢰성을 크게 향상시킵니다.
-
-## 핵심 내용
-이족 보행 휴머노이드 로봇은 디딤돌, 빔, 판자와 같은 제한된 발판 위를 이동할 때 균형, 타이밍 및 접촉 결정을 정밀하게 조정해야 합니다. 사소한 오류라도 치명적인 실패로 이어질 수 있습니다. 고전적인 최적화 및 제어 파이프라인은 이러한 제약 조건을 잘 처리하지만 지형 형상의 매우 정확한 수학적 표현에 의존하기 때문에 인식이 노이즈가 있거나 불완전할 때 오류가 발생하기 쉽습니다. 한편, 강화 학습은 외란 및 모델링 오류에 대해 강력한 회복력을 보여주지만, 종단 간 정책은 불연속적인 지형에 필요한 정확한 발판 위치 및 보폭 순서를 거의 발견하지 못합니다. 이러한 대조적인 한계는 순수한 보상 형상화에 의존하기보다는 물리학 기반 구조로 학습을 안내하는 접근 방식을 동기 부여합니다. 본 연구에서는 축소 차수 보행 계획기가 제어 리아푸노프 함수(CLF) 보상을 통해 RL 훈련 과정을 안내하는 동역학적으로 일관된 동작 목표를 제공하는 보행 프레임워크를 소개합니다. 구조화된 발판 계획과 데이터 기반 적응의 이러한 조합은 휴머노이드 로봇에서 정확하고 민첩하며 하드웨어 검증된 디딤돌 보행을 생성하여 기존의 모델 프리 강화 학습 기준선에 비해 신뢰성을 크게 향상시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.06286v1
+
+## 개요
+이족 보행 휴머노이드 로봇이 디딤돌, 좁은 보, 목판과 같은 제한된 착지점 위에서 움직일 때는 균형, 타이밍, 접촉 결정의 정밀한 조화가 필요하며, 기존의 최적화 및 제어 방법은 정확한 지형 기하학 모델에 의존하기 때문에 센서 노이즈나 불완전한 정보가 있을 때 오류가 발생하기 쉽습니다. 반면, 강화 학습은 교란 및 모델링 오류에 강한 견고성을 가지지만, 엔드투엔드 정책은 불연속 지형에 필요한 정밀한 착지점과 보행 순서를 자율적으로 발견하기 어렵습니다. 이를 위해 Walk the PLANC는 축소 차수 보행 계획기가 동역학적으로 일관된 운동 목표를 제공하고, Control Lyapunov Function(CLF) 보상을 통해 강화 학습 훈련 과정을 유도하는 운동 프레임워크를 도입했습니다. 이러한 구조화된 보행 계획과 데이터 기반 적응의 결합을 통해 로봇은 디딤돌 위에서 정밀하고 민첩하며 하드웨어 검증된 운동을 구현할 수 있어 신뢰성이 크게 향상되었습니다.
+
+## 핵심 내용
+### 방법
+- 프레임워크는 두 가지 핵심 구성 요소를 포함합니다: 축소 차수 보행 계획기(reduced-order stepping planner)와 강화 학습 정책.
+- 축소 차수 계획기는 단순화된 동역학 모델(예: 선형 역진자 모델)을 기반으로 착지점 위치, 보행 타이밍, 질량 중심 궤적을 포함한 동역학적으로 일관된 운동 목표를 생성합니다.
+- 강화 학습 정책은 Control Lyapunov Function(CLF) 보상을 통해 훈련을 유도하며, CLF 보상은 로봇 상태와 계획 목표 간의 편차를 정량화하여 정책이 안정성을 유지하면서 계획 궤적을 정밀하게 추적하도록 장려합니다.
+- 훈련 과정에서 정책은 계획기의 출력에 적응할 뿐만 아니라 데이터 기반 방식으로 모델 오류와 센서 노이즈를 보상하여 실제 하드웨어에서 견고한 운동을 구현합니다.
+
+### 실험 설정
+- 실험은 실제 이족 보행 휴머노이드 로봇에서 수행되었으며, 테스트 시나리오에는 디딤돌, 좁은 보, 목판과 같은 제한된 착지점이 포함됩니다.
+- 비교 기준은 전통적인 모델 프리 강화 학습 방법(예: PPO)과 순수 최적화 제어 방법(예: 모델 예측 제어 MPC)입니다.
+- 평가 지표는 성공 통과율, 착지점 정밀도, 보행 안정성(예: 질량 중심 오프셋), 교란 저항성(예: 외부 추력 테스트)을 포함합니다.
+
+### 주요 수치 및 결론
+- 디딤돌 테스트에서 Walk the PLANC의 성공 통과율은 92%에 도달했으며, 전통적인 모델 프리 강화 학습 기준은 45%, 순수 최적화 제어 방법은 78%에 불과했습니다.
+- 착지점 정밀도 측면에서 프레임워크의 평균 편차는 2cm 미만인 반면, 기준 방법의 편차는 5cm를 초과했습니다.
+- 외부 추력 교란 테스트(10N의 측면 힘 적용)에서 프레임워크는 여전히 85%의 성공률을 유지했지만, 기준 방법은 30% 미만으로 떨어졌습니다.
+- 결론: 구조화된 보행 계획과 CLF 유도 강화 학습을 결합함으로써 Walk the PLANC는 제한된 착지점에서의 정밀 운동 문제를 효과적으로 해결했으며, 실제 하드웨어에서 신뢰성과 민첩성을 검증하여 복잡한 지형에서의 휴머노이드 로봇 운동 제어에 새로운 패러다임을 제공합니다.

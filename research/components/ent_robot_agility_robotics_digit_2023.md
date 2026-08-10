@@ -33,7 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/products/product_digit.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/products/product_digit.md by scripts/backfill_nonpaper_entries.py. | WP4 trilingual
+    backfill 2026-08-10: en body retranslated from zh deep-read (2450 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -42,20 +43,10 @@ sources:
   date: '2023'
   accessed_at: '2026-07-01'
 ---
-
-
 ## 概述
 Agility Robotics Digit是人形机器人领域的重要机器人系统。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
-## Agility Robotics Digit
-
-> 本词条属于 [附录 D 重点产品 Wiki](../../appendix-d.md)。
-> 返回：[附录 D.4 重点产品 Wiki 目录](../index-products.md)
-> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
-
----
-
 ### 产品信息卡
 
 | 项目 | 内容 |
@@ -206,6 +197,83 @@ Agility는 미국 오리건주 Salem에 RoboFab 휴머노이드 로봇 공장을
 ### 참고 자료
 
 1. [Agility Robotics 공식 사이트](https://agilityrobotics.com/)
+2. [Robozaps – Agility Robotics Digit Review](https://blog.robozaps.com/b/agility-robotics-digit-review)
+3. [Humanoid.Guide – Digit](https://humanoid.guide/product/digit/)
+4. [The Robot Report – Agility Digit Deployments](https://www.therobotreport.com)
+
+## Overview
+The Agility Robotics Digit is a significant robotic system in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
+
+## Content
+### Product Information Card
+
+| Item | Details |
+|------|---------|
+| **Manufacturer** | [Agility Robotics](../companies/company_agility_robotics.md) |
+| **Product Category** | Logistics/Warehouse Humanoid Robot |
+| **Release Date** | First released in 2019; currently in mass-production iteration |
+| **Status** | Mass production/Commercial deployment |
+| **Official Website/Source** | [Agility Robotics Official Website](https://agilityrobotics.com/) |
+
+### Product Overview
+
+The Agility Robotics Digit is one of the most widely deployed humanoid robots in the warehousing and logistics sector. It features an integrated head-torso design and reverse knee joints, optimized for transporting totes in human-built environments such as narrow aisles, stairs, and ramps. Digit's perception system includes 4 Intel RealSense depth cameras, LiDAR, IMU, and force sensors, enabling autonomous navigation without external infrastructure.
+
+Agility operates the RoboFab humanoid robot factory in Salem, Oregon, USA, with a designed annual production capacity of 10,000 units. Digit has performed sorting and material handling tasks in warehouses for customers such as Amazon, GXO, and Spanx, and is offered to enterprise clients through the Robot-as-a-Service (RaaS) model, lowering the barrier to initial procurement.
+
+### Product Images
+
+> Agility Robotics Digit: Please visit the [official resources](https://agilityrobotics.com/) for details.
+
+### Specification Table
+
+| Specification | Value | Notes/Source |
+|---------------|-------|--------------|
+| Dimensions | Approx. 175 cm (height) | Public specifications |
+| Weight | Approx. 63.5–65 kg | Public specifications |
+| Degrees of Freedom (full system) | 16–28 DOF (varies by source) | Public specifications |
+| Key Performance Metrics | Payload 16 kg; continuous handling of 35 lb | Official specifications |
+| Walking Speed | Approx. 5.4 km/h | Public specifications |
+| Battery Life | Approx. 4 hours (typical tasks) | Official specifications |
+| Charging | Autonomous docking charging | Agility Robotics |
+| Price | Not disclosed (industry estimate approx. 250,000 USD or RaaS) | Third-party estimate |
+
+### Supply Chain Position
+
+- **Manufacturer**: [Agility Robotics](../companies/company_agility_robotics.md)
+- **Core Components/Technology Sources**: Intel RealSense depth cameras, LiDAR, custom electric actuators, Agility Arc cloud fleet management platform.
+- **Downstream Applications/Customers**: Warehousing and manufacturing clients such as Amazon, GXO, Spanx, and Toyota Canada.
+
+### Knowledge Graph Nodes and Relationships
+
+- Product Entity: `ent_product_agility_robotics_digit`
+- Manufacturer Entity: `ent_company_agility_robotics`
+- Key Relationships:
+  - `rel_ent_company_agility_robotics_manufactures_ent_product_agility_robotics_digit` (`ent_company_agility_robotics` → `manufactures` → `ent_product_agility_robotics_digit`)
+
+### Application Scenarios
+
+- **E-commerce Warehousing**: Tote handling and sorting in warehouses such as Amazon and GXO.
+- **Retail Distribution**: Restocking from shelves to conveyors, returns processing, and inventory relocation.
+- **Manufacturing Logistics**: Parts distribution and line-side replenishment in automotive and consumer goods factories.
+
+### Competitive Comparison
+
+| Comparison Item | Agility Digit | Tesla Optimus Gen 3 | Figure 02 |
+|-----------------|---------------|---------------------|-----------|
+| Positioning | Logistics warehouse humanoid | General/industrial humanoid | Industrial manufacturing humanoid |
+| Hands | Custom end-effectors | 22×2 dexterous hands | 16 DOF dexterous hands |
+| Business Model | RaaS / Enterprise deployment | Target retail | Enterprise pilot |
+| Core Strengths | Deployment scale, battery life, RoboFab capacity | Cost and manufacturing scale targets | AI models and dexterous manipulation |
+
+### Procurement and Deployment Recommendations
+
+- Enterprise clients can evaluate RaaS or purchase options through the Agility Robotics commercial team, typically requiring an on-site warehouse survey.
+- Before deployment, confirm tote specifications, floor conditions, Wi-Fi coverage, and data interfaces with the WMS.
+
+### References
+
+1. [Agility Robotics Official Website](https://agilityrobotics.com/)
 2. [Robozaps – Agility Robotics Digit Review](https://blog.robozaps.com/b/agility-robotics-digit-review)
 3. [Humanoid.Guide – Digit](https://humanoid.guide/product/digit/)
 4. [The Robot Report – Agility Digit Deployments](https://www.therobotreport.com)

@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.16705v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.16705v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (768 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,29 @@ sources:
 ## Overview
 Animated characters often move in non-physical ways and have proportions that are far from a typical walking robot. This provides an ideal platform for innovation in both mechanical design and stylized motion control. In this paper, we bring Olaf to life in the physical world, relying on reinforcement learning guided by animation references for control. To create the illusion of Olaf's feet moving along his body, we hide two asymmetric legs under a soft foam skirt. To fit actuators inside the character, we use spherical and planar linkages in the arms, mouth, and eyes. Because the walk cycle results in harsh contact sounds, we introduce additional rewards that noticeably reduce impact noise. The large head, driven by small actuators in the character's slim neck, creates a risk of overheating, amplified by the costume. To keep actuators from overheating, we feed temperature values as additional inputs to policies, introducing new rewards to keep them within bounds. We validate the efficacy of our modeling in simulation and on hardware, demonstrating an unmatched level of believability for a costumed robotic character.
 
-## 개요
-애니메이션 캐릭터는 종종 물리적이지 않은 방식으로 움직이며, 일반적인 보행 로봇과는 거리가 먼 비율을 가지고 있습니다. 이는 기계 설계와 양식화된 동작 제어 모두에서 혁신을 위한 이상적인 플랫폼을 제공합니다. 본 논문에서는 애니메이션 참조에 의해 안내되는 강화 학습을 제어에 활용하여 올라프를 물리적 세계에서 구현합니다. 올라프의 발이 몸을 따라 움직이는 듯한 착각을 만들기 위해, 두 개의 비대칭 다리를 부드러운 폼 스커트 아래에 숨깁니다. 캐릭터 내부에 액추에이터를 장착하기 위해, 팔, 입, 눈에 구형 및 평면 링키지를 사용합니다. 보행 주기가 거친 접촉음을 발생시키기 때문에, 충격 소음을 현저히 줄이는 추가 보상을 도입합니다. 캐릭터의 가느다란 목에 있는 작은 액추에이터에 의해 구동되는 큰 머리는 의상에 의해 증폭된 과열 위험을 초래합니다. 액추에이터의 과열을 방지하기 위해, 온도 값을 정책에 추가 입력으로 제공하고, 이를 허용 범위 내로 유지하기 위한 새로운 보상을 도입합니다. 우리는 시뮬레이션과 하드웨어에서 모델링의 효용성을 검증하여, 의상을 입은 로봇 캐릭터로서 비교할 수 없는 수준의 신뢰성을 입증합니다.
-
-## 핵심 내용
-애니메이션 캐릭터는 종종 물리적이지 않은 방식으로 움직이며, 일반적인 보행 로봇과는 거리가 먼 비율을 가지고 있습니다. 이는 기계 설계와 양식화된 동작 제어 모두에서 혁신을 위한 이상적인 플랫폼을 제공합니다. 본 논문에서는 애니메이션 참조에 의해 안내되는 강화 학습을 제어에 활용하여 올라프를 물리적 세계에서 구현합니다. 올라프의 발이 몸을 따라 움직이는 듯한 착각을 만들기 위해, 두 개의 비대칭 다리를 부드러운 폼 스커트 아래에 숨깁니다. 캐릭터 내부에 액추에이터를 장착하기 위해, 팔, 입, 눈에 구형 및 평면 링키지를 사용합니다. 보행 주기가 거친 접촉음을 발생시키기 때문에, 충격 소음을 현저히 줄이는 추가 보상을 도입합니다. 캐릭터의 가느다란 목에 있는 작은 액추에이터에 의해 구동되는 큰 머리는 의상에 의해 증폭된 과열 위험을 초래합니다. 액추에이터의 과열을 방지하기 위해, 온도 값을 정책에 추가 입력으로 제공하고, 이를 허용 범위 내로 유지하기 위한 새로운 보상을 도입합니다. 우리는 시뮬레이션과 하드웨어에서 모델링의 효용성을 검증하여, 의상을 입은 로봇 캐릭터로서 비교할 수 없는 수준의 신뢰성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.16705v2
+
+## 개요
+이 연구는 애니메이션 캐릭터 올라프(Olaf)를 실체화하여, 강화 학습과 애니메이션 참조를 결합한 제어를 통해 비물리적 동작과 비정상적 비율에서 발생하는 도전 과제를 해결합니다. 캐릭터의 발이 몸을 따라 움직이는 시각적 효과를 구현하기 위해, 팀은 소프트 폼 스커트 아래에 두 개의 비대칭 다리를 숨겼습니다. 또한, 팔, 입, 눈은 구형 및 평면 링크 메커니즘을 사용하여 컴팩트한 본체 공간에 적합하게 설계했습니다. 보행 주기에서 발생하는 거슬리는 접촉음을 줄이기 위해, 연구진은 추가 보상을 도입하여 충격 소음을 크게 감소시켰습니다. 또한, 큰 머리가 얇은 목 내부의 소형 액추에이터로 구동되고 의상이 과열 위험을 악화시키기 때문에, 온도 값을 정책 입력으로 사용하고 액추에이터 온도를 제한하는 새로운 보상을 설계했습니다. 시뮬레이션과 하드웨어 실험을 통해 이 방법의 효과를 검증했으며, 캐릭터 로봇에서 전례 없는 신뢰성을 보여주었습니다.
+
+## 핵심 내용
+### 방법
+- **제어 프레임워크**: 강화 학습 기반으로, 애니메이션 참조를 가이드로 사용하여 로봇이 애니메이션 캐릭터의 비물리적 동작 스타일을 모방하도록 합니다.
+- **기계 설계**:
+  - 소프트 폼 스커트 아래에 두 개의 비대칭 다리를 숨겨, 캐릭터의 발이 몸을 따라 움직이는 시각적 착시를 구현합니다.
+  - 팔, 입, 눈은 구형 및 평면 링크 메커니즘을 사용하여 캐릭터 내부의 컴팩트한 공간에 적합하게 설계합니다.
+- **소음 억제**: 보행 주기에서 발생하는 하드 접촉음을 대상으로 추가 보상 함수를 도입하여 충격 소음을 크게 줄입니다.
+- **열 관리**:
+  - 액추에이터 온도 값을 정책의 추가 입력으로 사용합니다.
+  - 새로운 보상 항목을 설계하여 액추에이터 온도가 안전 범위 내에 유지되도록 하며, 큰 머리와 얇은 목 구조로 인한 과열 문제를 방지합니다.
+
+### 실험 설정
+- **시뮬레이션 및 하드웨어 검증**: 시뮬레이션 환경과 실제 하드웨어에서 각각 모델의 효과를 테스트합니다.
+- **평가 지표**: 캐릭터 동작의 신뢰성을 주요 측정 기준으로 삼아 기존 방법과 비교합니다.
+
+### 주요 수치 및 결론
+- 숨겨진 다리와 링크 메커니즘을 통해 애니메이션 캐릭터 특유의 비물리적 동작 비율을 구현했습니다.
+- 온도 인식 정책은 액추에이터 과열을 성공적으로 방지했으며, 특히 의상이 방열을 어렵게 만드는 시나리오에서 효과적입니다.
+- 소음 보상 메커니즘은 접촉음을 허용 가능한 수준으로 낮추어 전체 표현의 현실감을 향상시켰습니다.
+- 실험 결과, 이 방법은 비용 효율적인 캐릭터 로봇에서 전례 없는 신뢰성 수준을 달성했습니다.

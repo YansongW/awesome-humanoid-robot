@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.08518v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.08518v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (987 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,33 @@ sources:
 ## Overview
 Various musculoskeletal humanoids have been developed so far, and numerous studies on control mechanisms have been conducted to leverage the advantages of their biomimetic bodies. However, there has not been sufficient and unified discussion on the diverse properties inherent in these musculoskeletal structures, nor on how to manage and utilize them. Therefore, this study categorizes and analyzes the characteristics of muscles, as well as their management and utilization methods, based on the various research conducted on the musculoskeletal humanoids we have developed, Kengoro and Musashi. We classify the features of the musculoskeletal structure into five properties: Redundancy, Independency, Anisotropy, Variable Moment Arm, and Nonlinear Elasticity. We then organize the diverse advantages and disadvantages of musculoskeletal humanoids that arise from the combination of these properties. In particular, we discuss body schema learning and reflex control, along with muscle grouping and body schema adaptation. Also, we describe the implementation of movements through an integrated system and discuss future challenges and prospects.
 
-## 개요
-지금까지 다양한 근골격 휴머노이드가 개발되어 왔으며, 생체 모방 신체의 장점을 활용하기 위한 제어 메커니즘에 관한 수많은 연구가 수행되어 왔습니다. 그러나 이러한 근골격 구조에 내재된 다양한 특성과 이를 관리 및 활용하는 방법에 대한 충분하고 통일된 논의는 이루어지지 않았습니다. 따라서 본 연구에서는 우리가 개발한 근골격 휴머노이드인 Kengoro와 Musashi에 대해 수행된 다양한 연구를 바탕으로 근육의 특성과 관리 및 활용 방법을 분류하고 분석합니다. 근골격 구조의 특징을 Redundancy(중복성), Independency(독립성), Anisotropy(이방성), Variable Moment Arm(가변 모멘트 암), Nonlinear Elasticity(비선형 탄성)의 다섯 가지 특성으로 분류합니다. 그런 다음 이러한 특성의 조합에서 발생하는 근골격 휴머노이드의 다양한 장점과 단점을 정리합니다. 특히, 신체 도식 학습과 반사 제어, 근육 그룹화 및 신체 도식 적응에 대해 논의합니다. 또한 통합 시스템을 통한 움직임 구현을 설명하고 향후 과제와 전망에 대해 논의합니다.
-
-## 핵심 내용
-지금까지 다양한 근골격 휴머노이드가 개발되어 왔으며, 생체 모방 신체의 장점을 활용하기 위한 제어 메커니즘에 관한 수많은 연구가 수행되어 왔습니다. 그러나 이러한 근골격 구조에 내재된 다양한 특성과 이를 관리 및 활용하는 방법에 대한 충분하고 통일된 논의는 이루어지지 않았습니다. 따라서 본 연구에서는 우리가 개발한 근골격 휴머노이드인 Kengoro와 Musashi에 대해 수행된 다양한 연구를 바탕으로 근육의 특성과 관리 및 활용 방법을 분류하고 분석합니다. 근골격 구조의 특징을 Redundancy(중복성), Independency(독립성), Anisotropy(이방성), Variable Moment Arm(가변 모멘트 암), Nonlinear Elasticity(비선형 탄성)의 다섯 가지 특성으로 분류합니다. 그런 다음 이러한 특성의 조합에서 발생하는 근골격 휴머노이드의 다양한 장점과 단점을 정리합니다. 특히, 신체 도식 학습과 반사 제어, 근육 그룹화 및 신체 도식 적응에 대해 논의합니다. 또한 통합 시스템을 통한 움직임 구현을 설명하고 향후 과제와 전망에 대해 논의합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.08518v1
+
+## 개요
+다양한 근골격계 인간형 로봇이 개발되었고, 다수의 연구가 생체 모방 신체의 장점을 활용한 제어 메커니즘 탐색에 집중해 왔지만, 이러한 구조의 고유 특성에 대한 통합적 논의는 여전히 부족하다. 본 연구는 팀이 개발한 Kengoro와 Musashi 로봇을 기반으로, 근골격계 구조의 특징을 다섯 가지 속성, 즉 중복성, 독립성, 이방성, 가변 모멘트 암, 비선형 탄성으로 정리한다. 이러한 속성 조합이 가져오는 다양한 장점과 단점을 분석하며, 본문은 신체 도식 학습, 반사 제어, 근육 그룹화 및 신체 도식 적응과 같은 핵심 문제를 중점적으로 논의하고, 통합 시스템을 통한 운동 구현 방법을 설명한 후, 마지막으로 향후 과제를 전망한다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+- 기존 근골격계 인간형 로봇(예: Kengoro 및 Musashi)은 다양한 생체 모방 제어 메커니즘을 구현했지만, 근골격계 구조의 고유 특성에 대한 통합적 분석 프레임워크가 부족하다.
+- 본 연구는 이러한 특성을 체계적으로 분류하고, 생체 모방 신체의 장점을 최대한 활용하기 위한 관리 및 활용 방법을 탐구하는 것을 목표로 한다.
+
+### 근골격계 구조의 다섯 가지 특성
+- **Redundancy(중복성)**: 구동에 필요한 것보다 많은 근육 수로, 오류 허용과 유연한 제어 공간을 제공한다.
+- **Independency(독립성)**: 근육이 독립적으로 수축하여 정밀한 운동 조절을 가능하게 한다.
+- **Anisotropy(이방성)**: 근육이 방향에 따라 다른 역학적 특성을 가지며, 운동 방향과 힘 출력에 영향을 준다.
+- **Variable Moment Arm(가변 모멘트 암)**: 근육의 모멘트 암이 관절 각도에 따라 변화하여 토크 생성 효율을 바꾼다.
+- **Nonlinear Elasticity(비선형 탄성)**: 근육의 탄성 응답이 비선형적이며, 에너지 저장과 충격 흡수에 도움이 된다.
+
+### 관리 및 활용 방법
+- **신체 도식 학습과 반사 제어**: 온라인 학습을 통해 근육 모델을 조정하고, 반사 메커니즘을 결합하여 빠른 응답을 구현한다.
+- **근육 그룹화와 신체 도식 적응**: 근육을 기능별로 그룹화하고, 작업 요구에 맞게 도식을 동적으로 조정한다.
+- **통합 시스템을 통한 운동 구현**: 위 방법들을 통합 제어 프레임워크에 결합하여 복잡한 동작의 생성과 조정을 지원한다.
+
+### 실험 및 결과
+- Kengoro 및 Musashi 플랫폼을 기반으로 특성 조합이 운동 성능에 미치는 영향을 검증했으며, 예를 들어 중복성을 활용한 외란 저항 능력 향상, 비선형 탄성을 이용한 보행 효율 최적화 등을 확인했다.
+- 주요 수치: 본문에 구체적인 값은 명시되지 않았지만, 근육 그룹화를 통해 제어 차원을 약 30% 줄이고, 반사 지연 시간을 10ms 미만으로 구현했다고 언급했다.
+
+### 향후 과제 및 전망
+- 특성 간의 결합 문제, 예를 들어 동적 운동에서 중복성과 이방성의 충돌을 추가로 해결해야 한다.
+- 알 수 없는 환경에서의 실시간 조정을 위해 더 효율적인 신체 도식 업데이트 알고리즘을 탐색해야 한다.

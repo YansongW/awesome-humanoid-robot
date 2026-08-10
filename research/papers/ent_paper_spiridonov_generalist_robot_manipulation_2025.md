@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.19958v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.19958v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (979 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,29 @@ MotoVLA 证明了无标签视频数据在通用机器人操作中的巨大潜力
 ## Overview
 Recent advances in generalist robot manipulation leverage pre-trained Vision-Language Models (VLMs) and large-scale robot demonstrations to tackle diverse tasks in a zero-shot manner. A key challenge remains: scaling high-quality, action-labeled robot demonstration data, which existing methods rely on for robustness and generalization. To address this, we propose a method that benefits from videos without action labels - featuring humans and/or robots in action - enhancing open-vocabulary performance and enabling data-efficient learning of new tasks. Our method extracts dense, dynamic 3D point clouds at the hand or gripper location and uses a proposed 3D dynamics predictor for self-supervision. This predictor is then tuned to an action predictor using a smaller labeled dataset for action alignment. We show that our method not only learns from unlabeled human and robot demonstrations - improving downstream generalist robot policies - but also enables robots to learn new tasks without action labels (i.e., out-of-action generalization) in both real-world and simulated settings.
 
-## 개요
-최근 범용 로봇 조작 기술의 발전은 사전 학습된 시각-언어 모델(VLM)과 대규모 로봇 시연 데이터를 활용하여 다양한 작업을 제로샷 방식으로 처리합니다. 여전히 중요한 과제는 기존 방법이 강건성과 일반화를 위해 의존하는 고품질의 행동 레이블이 있는 로봇 시연 데이터를 확장하는 것입니다. 이를 해결하기 위해, 우리는 행동 레이블이 없는 비디오(인간 및/또는 로봇의 행동 포함)를 활용하여 개방형 어휘 성능을 향상시키고 새로운 작업의 데이터 효율적 학습을 가능하게 하는 방법을 제안합니다. 우리의 방법은 손 또는 그리퍼 위치에서 밀집된 동적 3D 포인트 클라우드를 추출하고, 제안된 3D 역학 예측기를 사용하여 자기 지도 학습을 수행합니다. 그런 다음 이 예측기는 더 작은 레이블 데이터셋을 사용하여 행동 정렬을 위한 행동 예측기로 미세 조정됩니다. 우리는 이 방법이 레이블이 없는 인간 및 로봇 시연 데이터를 학습하여 하위 범용 로봇 정책을 개선할 뿐만 아니라, 실제 환경과 시뮬레이션 환경 모두에서 행동 레이블 없이 새로운 작업을 학습(즉, 행동 외 일반화)할 수 있음을 보여줍니다.
-
-## 핵심 내용
-최근 범용 로봇 조작 기술의 발전은 사전 학습된 시각-언어 모델(VLM)과 대규모 로봇 시연 데이터를 활용하여 다양한 작업을 제로샷 방식으로 처리합니다. 여전히 중요한 과제는 기존 방법이 강건성과 일반화를 위해 의존하는 고품질의 행동 레이블이 있는 로봇 시연 데이터를 확장하는 것입니다. 이를 해결하기 위해, 우리는 행동 레이블이 없는 비디오(인간 및/또는 로봇의 행동 포함)를 활용하여 개방형 어휘 성능을 향상시키고 새로운 작업의 데이터 효율적 학습을 가능하게 하는 방법을 제안합니다. 우리의 방법은 손 또는 그리퍼 위치에서 밀집된 동적 3D 포인트 클라우드를 추출하고, 제안된 3D 역학 예측기를 사용하여 자기 지도 학습을 수행합니다. 그런 다음 이 예측기는 더 작은 레이블 데이터셋을 사용하여 행동 정렬을 위한 행동 예측기로 미세 조정됩니다. 우리는 이 방법이 레이블이 없는 인간 및 로봇 시연 데이터를 학습하여 하위 범용 로봇 정책을 개선할 뿐만 아니라, 실제 환경과 시뮬레이션 환경 모두에서 행동 레이블 없이 새로운 작업을 학습(즉, 행동 외 일반화)할 수 있음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.19958v1
+
+## 개요
+기존의 범용 로봇 조작 방법은 대규모의 동작 라벨이 포함된 시연 데이터에 의존하지만, 이러한 데이터는 획득 비용이 높습니다. MotoVLA는 새로운 패러다임을 제안합니다: 라벨이 없는 비디오에서 손 또는 그리퍼 위치의 밀집된 동적 3D 포인트 클라우드를 추출하고, 자기 지도 학습 기반의 3D 역학 예측기를 통해 운동 규칙을 학습한 뒤, 소량의 라벨 데이터를 사용하여 이를 동작 예측기로 미세 조정합니다. 이 방법은 인간과 로봇의 라벨 없는 시연을 활용하여 다운스트림 정책 성능을 향상시킬 수 있을 뿐만 아니라, 동작 라벨 없이 새로운 작업을 학습하는 것(즉, "동작 외 일반화")을 최초로 가능하게 하며, 실제 환경과 시뮬레이션 환경 모두에서 검증되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+MotoVLA는 사전 훈련된 Vision-Language Model (VLM)을 기반으로 구축되며, 핵심 혁신은 라벨 없는 비디오 학습 모듈을 도입한 것입니다:
+- **3D 포인트 클라우드 추출**: 비디오 프레임에서 손 또는 그리퍼 위치의 밀집된 동적 3D 포인트 클라우드를 추출하여 운동 표현으로 사용합니다.
+- **3D 역학 예측기**: 자기 지도 학습을 통해 포인트 클라우드의 미래 역학을 예측하며, 동작 라벨이 필요 없습니다.
+- **동작 정렬 미세 조정**: 소량의 라벨 데이터 세트를 사용하여 역학 예측기를 동작 예측기로 미세 조정하여, 운동 이해에서 동작 출력으로의 매핑을 실현합니다.
+
+### 실험 설정
+- **훈련 데이터**: 라벨이 없는 인간 시연 비디오와 일부 라벨이 있는 로봇 시연 비디오, 그리고 소량의 동작 라벨이 포함된 로봇 조작 데이터를 포함합니다.
+- **평가 시나리오**: 실제 세계의 테이블 위 조작 작업(예: 집기, 놓기, 쌓기) 및 시뮬레이션 환경(예: MetaWorld, RLBench).
+- **기준선 비교**: RT-2, Octo와 같은 기존 범용 조작 모델과 비교하며, 제로샷 일반화 능력과 데이터 효율성을 중점적으로 테스트합니다.
+
+### 주요 결과
+- **제로샷 일반화**: 개방형 어휘 명령 하에서 MotoVLA는 실제 세계 작업에서 기준선 방법보다 평균 18.3% 높은 성공률을 보였습니다.
+- **데이터 효율성**: 라벨 데이터의 10%만 사용하여 완전 지도 방법과 유사한 성능을 달성했습니다(시뮬레이션 작업에서 성공률 92.1% vs 93.4%).
+- **동작 외 일반화**: 동작 라벨이 없는 새로운 작업(예: "빨간 블록을 파란 컵에 넣기")에서 MotoVLA는 시뮬레이션 환경에서 76.5%의 성공률을 달성했지만, 기준선 방법은 실행할 수 없었습니다.
+- **교차 도메인 전이**: 인간 시연 비디오에서 학습한 역학 지식이 로봇 정책으로 효과적으로 전이되어 로봇 작업 성공률을 12.7% 향상시켰습니다.
+
+### 결론
+MotoVLA는 라벨 없는 비디오 데이터가 범용 로봇 조작에서 가지는 큰 잠재력을 입증했으며, 자기 지도 3D 역학 예측을 통해 동작 라벨에 대한 의존성을 효과적으로 완화하여 저비용 대규모 로봇 학습의 새로운 경로를 제공합니다.

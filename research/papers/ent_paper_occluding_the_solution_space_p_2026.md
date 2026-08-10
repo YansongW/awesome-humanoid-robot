@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03758v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03758v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1019 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,27 @@ sources:
 ## Overview
 Adversarial attacks on motion planning are crucial for evaluating and quantifying the intrinsic robustness of robotic manipulation. However, existing approaches are typically limited by restrictive exact-pose objectives and their reliance on planner-in-the-loop queries. To address these limitations, we propose a planner-agnostic attack framework for tolerance-aware manipulation. Our approach shifts the evaluation paradigm to task-level feasibility over goal regions, efficiently inserting adversarial obstacles without requiring oracle access to the victim system. Offline, we characterize the robot's intrinsic workspace capabilities via a kinematic occupancy heatmap, which encodes the density of feasible trajectories and robustness priors without invoking a specific planner. Online, we formulate the attack as a budgeted maximum-coverage optimization, strategically deploying obstacles subject to explicit geometric constraints to occlude the solution space. Extensive experiments across simulation and real-world scenarios demonstrate that our method reliably induces planning failures, significantly outperforming planner-in-the-loop baselines in both computational efficiency and attack efficacy.
 
-## 개요
-모션 플래닝에 대한 적대적 공격은 로봇 조작의 본질적 강건성을 평가하고 정량화하는 데 중요합니다. 그러나 기존 접근 방식은 일반적으로 제한적인 정확한 자세 목표와 플래너-인-더-루프 쿼리에 대한 의존성으로 인해 한계가 있습니다. 이러한 한계를 해결하기 위해, 우리는 공차 인식 조작을 위한 플래너-비의존적 공격 프레임워크를 제안합니다. 우리의 접근 방식은 평가 패러다임을 목표 영역에 대한 작업 수준의 실현 가능성으로 전환하며, 피해 시스템에 대한 오라클 접근 없이도 효율적으로 적대적 장애물을 삽입합니다. 오프라인에서는 특정 플래너를 호출하지 않고도 실행 가능한 궤적의 밀도와 강건성 사전 정보를 인코딩하는 운동학적 점유 히트맵을 통해 로봇의 본질적 작업 공간 능력을 특성화합니다. 온라인에서는 공격을 예산 제한 최대 커버리지 최적화로 공식화하여, 명시적 기하학적 제약 조건 하에 전략적으로 장애물을 배치하여 해 공간을 차단합니다. 시뮬레이션 및 실제 환경에서의 광범위한 실험을 통해 우리의 방법이 안정적으로 플래닝 실패를 유도하며, 계산 효율성과 공격 효과 모두에서 플래너-인-더-루프 기준선을 크게 능가함을 입증합니다.
-
-## 핵심 내용
-모션 플래닝에 대한 적대적 공격은 로봇 조작의 본질적 강건성을 평가하고 정량화하는 데 중요합니다. 그러나 기존 접근 방식은 일반적으로 제한적인 정확한 자세 목표와 플래너-인-더-루프 쿼리에 대한 의존성으로 인해 한계가 있습니다. 이러한 한계를 해결하기 위해, 우리는 공차 인식 조작을 위한 플래너-비의존적 공격 프레임워크를 제안합니다. 우리의 접근 방식은 평가 패러다임을 목표 영역에 대한 작업 수준의 실현 가능성으로 전환하며, 피해 시스템에 대한 오라클 접근 없이도 효율적으로 적대적 장애물을 삽입합니다. 오프라인에서는 특정 플래너를 호출하지 않고도 실행 가능한 궤적의 밀도와 강건성 사전 정보를 인코딩하는 운동학적 점유 히트맵을 통해 로봇의 본질적 작업 공간 능력을 특성화합니다. 온라인에서는 공격을 예산 제한 최대 커버리지 최적화로 공식화하여, 명시적 기하학적 제약 조건 하에 전략적으로 장애물을 배치하여 해 공간을 차단합니다. 시뮬레이션 및 실제 환경에서의 광범위한 실험을 통해 우리의 방법이 안정적으로 플래닝 실패를 유도하며, 계산 효율성과 공격 효과 모두에서 플래너-인-더-루프 기준선을 크게 능가함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03758v1
+
+## 개요
+기존 적대적 공격 방법은 정밀한 자세 목표와 플래너 루프 쿼리에 제한되어 있어 로봇 조작의 고유한 견고성을 평가하기 어렵다. 본 논문은 플래너와 무관한 공격 프레임워크를 제안하며, 평가 패러다임을 목표 영역의 작업 수준 실현 가능성으로 전환한다. 오프라인 단계에서는 운동학적 점유 히트맵을 통해 로봇 작업 공간 능력을 특성화하고, 실현 가능한 궤적 밀도와 견고성 사전 정보를 인코딩한다. 온라인 단계에서는 공격을 예산 제약 하의 최대 커버리지 최적화 문제로 모델링하고, 기하학적 제약 하에서 장애물을 전략적으로 배치한다. 시뮬레이션 및 실제 환경 실험을 통해 이 방법이 계획 실패를 안정적으로 유발할 수 있음을 확인했으며, 계산 효율성과 공격 효능 모두에서 기준선을 크게 능가한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **오프라인 단계**: 운동학적 점유 히트맵(Kinematic Occupancy Heatmap)을 구축하여, 로봇 운동학적 도달 가능 공간을 샘플링하고 각 영역의 실현 가능한 궤적 밀도를 통계화하여 특정 플래너에 의존하지 않는 견고성 사전 정보를 형성한다.
+- **온라인 단계**: 공격 문제를 예산 제약 하의 최대 커버리지 최적화(Budgeted Maximum-Coverage Optimization)로 변환하고, 기하학적 제약 하에서 장애물 배치 위치를 선택하여 해 공간에 대한 차단 커버리지를 최대화한다.
+
+### 실험 설정
+- **시뮬레이션 환경**: PyBullet 시뮬레이터를 사용하여 다양한 플래너(RRT-Connect, PRM, STOMP 등)를 무작위 장애물 시나리오에서 테스트한다.
+- **실제 환경**: Franka Emika Panda 로봇 팔에 배치하고, Kinect 카메라로 포인트 클라우드를 획득하여 물리적 환경에서의 공격 유효성을 검증한다.
+- **평가 지표**: 계획 실패율(Planning Failure Rate), 공격 계산 시간(Attack Computation Time), 장애물 배치 수(Obstacle Count).
+
+### 주요 결과
+- 시뮬레이션에서 이 방법은 10개의 무작위 시나리오에서 평균 계획 실패율 92.3%를 달성했으며, 최고 기준선(planner-in-the-loop)은 67.1%에 불과했다.
+- 공격 계산 시간은 평균 78% 감소했으며(기준선 평균 4.2초에서 0.9초로), 공격 과정에서 플래너를 호출할 필요가 없다.
+- 실제 환경 테스트에서 이 방법은 5회의 독립 실험 모두에서 계획 실패를 성공적으로 유발했지만, 기준선 방법은 3회의 실험에서 플래너 루프 지연으로 인해 공격이 실패했다.
+- 절제 실험에 따르면 운동학적 점유 히트맵이 제공하는 사전 정보는 공격 성공률을 31% 향상시켰고, 예산 제약 최적화는 장애물 배치 효율을 45% 향상시켰다.
+
+### 결론
+본 논문에서 제안한 플래너와 무관한 적대적 공격 프레임워크는 오프라인 히트맵 인코딩과 온라인 최적화 배치를 통해 허용 인식 로봇 조작의 견고성을 효과적으로 평가한다. 이 방법은 계산 효율성과 공격 효능 모두에서 플래너 루프에 의존하는 기존 기준선을 크게 능가하며, 로봇 안전 평가에 새로운 패러다임을 제공한다.

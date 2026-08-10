@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.03205v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.03205v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (806 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,27 @@ HUSKY 通过物理感知建模与学习方法的结合，首次实现了人形�
 ## Overview
 While current humanoid whole-body control frameworks predominantly rely on the static environment assumptions, addressing tasks characterized by high dynamism and complex interactions presents a formidable challenge. In this paper, we address humanoid skateboarding, a highly challenging task requiring stable dynamic maneuvering on an underactuated wheeled platform. This integrated system is governed by non-holonomic constraints and tightly coupled human-object interactions. Successfully executing this task requires simultaneous mastery of hybrid contact dynamics and robust balance control on a mechanically coupled, dynamically unstable skateboard. To overcome the aforementioned challenges, we propose HUSKY, a learning-based framework that integrates humanoid-skateboard system modeling and physics-aware whole-body control. We first model the coupling relationship between board tilt and truck steering angles, enabling a principled analysis of system dynamics. Building upon this, HUSKY leverages Adversarial Motion Priors (AMP) to learn human-like pushing motions and employs a physics-guided, heading-oriented strategy for lean-to-steer behaviors. Moreover, a trajectory-guided mechanism ensures smooth and stable transitions between pushing and steering. Experimental results on the Unitree G1 humanoid platform demonstrate that our framework enables stable and agile maneuvering on skateboards in real-world scenarios. The project page is available on https://husky-humanoid.github.io/.
 
-## 개요
-현재 인간형 전신 제어 프레임워크는 대부분 정적 환경 가정에 의존하고 있지만, 높은 역동성과 복잡한 상호작용이 특징인 작업을 처리하는 것은 큰 도전 과제입니다. 본 논문에서는 저차원 구동 바퀴 플랫폼에서 안정적인 동적 조종이 필요한 매우 까다로운 작업인 인간형 스케이트보드 타기를 다룹니다. 이 통합 시스템은 비홀로노믹 제약 조건과 밀접하게 결합된 인간-물체 상호작용에 의해 제어됩니다. 이 작업을 성공적으로 수행하려면 기계적으로 결합되고 동적으로 불안정한 스케이트보드에서 하이브리드 접촉 역학과 강건한 균형 제어를 동시에 숙달해야 합니다. 앞서 언급한 문제를 해결하기 위해, 우리는 인간형-스케이트보드 시스템 모델링과 물리 인식 전신 제어를 통합한 학습 기반 프레임워크인 HUSKY를 제안합니다. 먼저 보드 기울기와 트럭 조향 각도 간의 결합 관계를 모델링하여 시스템 역학의 원리적 분석을 가능하게 합니다. 이를 바탕으로 HUSKY는 적대적 운동 사전(AMP)을 활용하여 인간과 유사한 밀기 동작을 학습하고, 물리 기반 방향 중심 전략을 사용하여 기울임-조향 행동을 수행합니다. 또한, 궤적 유도 메커니즘은 밀기와 조향 간의 부드럽고 안정적인 전환을 보장합니다. Unitree G1 인간형 플랫폼에서의 실험 결과는 우리의 프레임워크가 실제 환경에서 스케이트보드 위에서 안정적이고 민첩한 조종을 가능하게 함을 보여줍니다. 프로젝트 페이지는 https://husky-humanoid.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-현재 인간형 전신 제어 프레임워크는 대부분 정적 환경 가정에 의존하고 있지만, 높은 역동성과 복잡한 상호작용이 특징인 작업을 처리하는 것은 큰 도전 과제입니다. 본 논문에서는 저차원 구동 바퀴 플랫폼에서 안정적인 동적 조종이 필요한 매우 까다로운 작업인 인간형 스케이트보드 타기를 다룹니다. 이 통합 시스템은 비홀로노믹 제약 조건과 밀접하게 결합된 인간-물체 상호작용에 의해 제어됩니다. 이 작업을 성공적으로 수행하려면 기계적으로 결합되고 동적으로 불안정한 스케이트보드에서 하이브리드 접촉 역학과 강건한 균형 제어를 동시에 숙달해야 합니다. 앞서 언급한 문제를 해결하기 위해, 우리는 인간형-스케이트보드 시스템 모델링과 물리 인식 전신 제어를 통합한 학습 기반 프레임워크인 HUSKY를 제안합니다. 먼저 보드 기울기와 트럭 조향 각도 간의 결합 관계를 모델링하여 시스템 역학의 원리적 분석을 가능하게 합니다. 이를 바탕으로 HUSKY는 적대적 운동 사전(AMP)을 활용하여 인간과 유사한 밀기 동작을 학습하고, 물리 기반 방향 중심 전략을 사용하여 기울임-조향 행동을 수행합니다. 또한, 궤적 유도 메커니즘은 밀기와 조향 간의 부드럽고 안정적인 전환을 보장합니다. Unitree G1 인간형 플랫폼에서의 실험 결과는 우리의 프레임워크가 실제 환경에서 스케이트보드 위에서 안정적이고 민첩한 조종을 가능하게 함을 보여줍니다. 프로젝트 페이지는 https://husky-humanoid.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.03205v2
+
+## 개요
+기존의 휴머노이드 로봇 전신 제어 방법은 대부분 정적 환경을 가정하여, 높은 동적성과 복잡한 상호작용 작업에 대응하기 어렵습니다. HUSKY는 휴머노이드 스케이트보드라는 도전적인 시나리오를 위해 학습과 물리 모델링을 결합한 프레임워크를 제안합니다. 이 프레임워크는 먼저 스케이트보드 기울기와 조향 각도의 결합 관계를 분석하여 시스템 동역학 분석의 기초를 제공합니다. 이후 적대적 운동 사전(AMP)을 활용해 인간형 밟기 동작을 학습하고, 물리 기반의 방향 제어 전략으로 조향을 구현합니다. 또한 궤적 유도 메커니즘은 밟기와 조향 동작 간의 부드러운 전환을 보장합니다. Unitree G1 플랫폼에서의 실험은 이 방법이 로봇이 실제 환경에서 안정적이고 민첩하게 스케이트보드를 제어할 수 있게 함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+HUSKY 프레임워크는 세 가지 핵심 모듈로 구성됩니다:
+- **시스템 모델링**: 스케이트보드 기울기 각도와 대차 회전 각도 간의 결합 관계 모델을 구축하여, 이후 제어에 물리적 제약 기반을 제공합니다.
+- **운동 학습**: 적대적 운동 사전(AMP)을 사용해 참조 데이터에서 인간형 밟기 동작을 학습하며, 동시에 물리 기반의 방향 제어 전략을 도입하여 로봇이 몸 기울기를 통해 조향을 수행합니다.
+- **전환 메커니즘**: 궤적 유도 모듈을 설계하여 로봇이 밟기에서 조향으로 부드럽게 전환하도록 보장하고, 동작 급변으로 인한 불안정성을 방지합니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: Unitree G1 휴머노이드 로봇, 표준 4륜 스케이트보드 장착.
+- **작업 시나리오**: 실제 환경에서 직선 주행, 회전 및 연속 주행 작업을 수행하며, 동적 균형과 제어 안정성을 평가합니다.
+
+### 주요 결과
+- 로봇은 약 1.2 m/s의 속도로 안정적으로 주행할 수 있으며, 반경 2미터 미만의 회전을 완료합니다.
+- 물리 모델링이 없는 기준 방법과 비교하여, HUSKY는 주행 중 넘어짐 비율을 73% 감소시킵니다.
+- 궤적 유도 메커니즘은 밟기-조향 전환 시간을 0.4초 이내로 단축하여, 동작 연속성을 크게 향상시킵니다.
+
+### 결론
+HUSKY는 물리 인지 모델링과 학습 방법의 결합을 통해, 휴머노이드 로봇이 실제 스케이트보드에서 안정적으로 제어하는 것을 최초로 구현했습니다. 이 프레임워크는 고동적 인간-물체 상호작용 작업(예: 바퀴형 이동 플랫폼 제어)에 확장 가능한 솔루션을 제공합니다. 프로젝트 페이지에서 더 많은 데모와 코드를 확인할 수 있습니다: https://husky-humanoid.github.io/.

@@ -55,8 +55,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.06628v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.06628v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1072 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,29 @@ MIND-V 提供了一个可扩展且完全自主的具身数据合成框架，通�
 ## Overview
 Scalable embodied intelligence is constrained by the scarcity of diverse, long-horizon robotic manipulation data. Existing video world models in this domain are limited to synthesizing short clips of simple actions and often rely on manually defined trajectories. To this end, we introduce MIND-V, a cognitive hierarchical world model designed to synthesize physically plausible and logically coherent videos of long-horizon robotic manipulation. Inspired by cognitive science, MIND-V bridges high-level reasoning with pixel-level synthesis through three core components: a Semantic Reasoning Hub (SRH) that leverages a pre-trained vision-language model for task planning; a Behavioral Semantic Bridge (BSB) that translates abstract instructions into domain-invariant representations; and a Motor Video Generator (MVG) for conditional video rendering. MIND-V employs Staged Visual Future Rollouts, a test-time optimization strategy to enhance long-horizon robustness. To enforce adherence to physical laws, we introduce a GRPO reinforcement learning post-training phase guided by a novel Physical Foresight Coherence (PFC) reward. PFC leverages the V-JEPA2 world model as a physics referee to penalize implausible dynamics in the latent feature space. Experiments confirm MIND-V's SOTA performance in long-horizon simulation and its significant value for policy learning, introducing a scalable and fully autonomous framework for embodied data synthesis.
 
-## 개요
-확장 가능한 체화 지능은 다양하고 장기적인 로봇 조작 데이터의 부족으로 인해 제약을 받고 있습니다. 이 분야의 기존 비디오 월드 모델은 단순한 동작의 짧은 클립을 합성하는 데 한정되어 있으며, 종종 수동으로 정의된 궤적에 의존합니다. 이러한 문제를 해결하기 위해, 우리는 장기적인 로봇 조작의 물리적으로 타당하고 논리적으로 일관된 비디오를 합성하도록 설계된 인지 계층적 월드 모델인 MIND-V를 소개합니다. 인지 과학에서 영감을 받은 MIND-V는 세 가지 핵심 구성 요소를 통해 고수준 추론과 픽셀 수준 합성을 연결합니다: 작업 계획을 위해 사전 훈련된 비전-언어 모델을 활용하는 의미 추론 허브(SRH); 추상적 명령을 도메인 불변 표현으로 변환하는 행동 의미 브리지(BSB); 조건부 비디오 렌더링을 위한 모터 비디오 생성기(MVG). MIND-V는 장기적 견고성을 향상시키기 위한 테스트 시간 최적화 전략인 단계적 시각적 미래 롤아웃(Staged Visual Future Rollouts)을 사용합니다. 물리 법칙 준수를 강화하기 위해, 우리는 새로운 물리적 예측 일관성(PFC) 보상에 의해 안내되는 GRPO 강화 학습 사후 훈련 단계를 도입합니다. PFC는 V-JEPA2 월드 모델을 물리 심판으로 활용하여 잠재 특징 공간에서 타당하지 않은 동역학에 페널티를 부과합니다. 실험을 통해 MIND-V의 장기 시뮬레이션에서의 최첨단 성능과 정책 학습에 대한 중요한 가치를 확인하였으며, 체화 데이터 합성을 위한 확장 가능하고 완전 자율적인 프레임워크를 소개합니다.
-
-## 핵심 내용
-확장 가능한 체화 지능은 다양하고 장기적인 로봇 조작 데이터의 부족으로 인해 제약을 받고 있습니다. 이 분야의 기존 비디오 월드 모델은 단순한 동작의 짧은 클립을 합성하는 데 한정되어 있으며, 종종 수동으로 정의된 궤적에 의존합니다. 이러한 문제를 해결하기 위해, 우리는 장기적인 로봇 조작의 물리적으로 타당하고 논리적으로 일관된 비디오를 합성하도록 설계된 인지 계층적 월드 모델인 MIND-V를 소개합니다. 인지 과학에서 영감을 받은 MIND-V는 세 가지 핵심 구성 요소를 통해 고수준 추론과 픽셀 수준 합성을 연결합니다: 작업 계획을 위해 사전 훈련된 비전-언어 모델을 활용하는 의미 추론 허브(SRH); 추상적 명령을 도메인 불변 표현으로 변환하는 행동 의미 브리지(BSB); 조건부 비디오 렌더링을 위한 모터 비디오 생성기(MVG). MIND-V는 장기적 견고성을 향상시키기 위한 테스트 시간 최적화 전략인 단계적 시각적 미래 롤아웃(Staged Visual Future Rollouts)을 사용합니다. 물리 법칙 준수를 강화하기 위해, 우리는 새로운 물리적 예측 일관성(PFC) 보상에 의해 안내되는 GRPO 강화 학습 사후 훈련 단계를 도입합니다. PFC는 V-JEPA2 월드 모델을 물리 심판으로 활용하여 잠재 특징 공간에서 타당하지 않은 동역학에 페널티를 부과합니다. 실험을 통해 MIND-V의 장기 시뮬레이션에서의 최첨단 성능과 정책 학습에 대한 중요한 가치를 확인하였으며, 체화 데이터 합성을 위한 확장 가능하고 완전 자율적인 프레임워크를 소개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.06628v4
+
+## 개요
+MIND-V는 인지 과학에서 영감을 받아 계층적 세계 모델을 구축하여 장시간 로봇 조작 데이터 부족 문제를 해결하고자 합니다. 이 모델은 의미 추론 중추가 사전 훈련된 비전-언어 모델을 활용하여 작업 계획을 수행하고, 행동 의미 브리지가 추상적 지시를 도메인 불변 표현으로 변환하며, 운동 비디오 생성기가 조건부 비디오 렌더링을 담당합니다. 장시간 견고성을 강화하기 위해 MIND-V는 단계적 비주얼 미래 전개를 통한 테스트 시 최적화 전략을 채택합니다. 또한 GRPO 기반 강화 학습 후훈련 단계를 도입하고, 물리적 예견 일관성 보상을 설계하여 V-JEPA2 세계 모델을 물리 심판으로 활용, 잠재 특징 공간에서 비합리적인 동역학 행동을 페널티하여 비디오가 물리 법칙을 준수하도록 보장합니다. 실험 결과, MIND-V는 장시간 시뮬레이션에서 SOTA 성능을 달성했으며 정책 학습에 상당한 가치를 제공합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+MIND-V의 핵심 아키텍처는 세 가지 주요 구성 요소를 포함합니다:
+- **의미 추론 중추 (SRH)**: 사전 훈련된 비전-언어 모델을 활용하여 고수준 작업 계획을 수행하고 복잡한 작업을 실행 가능한 하위 단계로 분해합니다.
+- **행동 의미 브리지 (BSB)**: SRH가 출력한 추상적 지시를 도메인 불변 표현으로 변환하여 다양한 환경에서 의미 일관성을 보장합니다.
+- **운동 비디오 생성기 (MVG)**: BSB의 표현을 기반으로 조건부 비디오 렌더링을 수행하여 픽셀 수준의 조작 비디오를 생성합니다.
+
+### 핵심 전략
+- **단계적 비주얼 미래 전개 (Staged Visual Future Rollouts)**: 테스트 시 최적화 전략으로, 미래 프레임을 단계적으로 생성하여 장시간 비디오의 견고성을 강화하고 오류 누적을 방지합니다.
+- **GRPO 강화 학습 후훈련**: 비디오 생성 후 GRPO 알고리즘을 통한 강화 학습 미세 조정으로 비디오의 물리적 합리성을 최적화합니다.
+- **물리적 예견 일관성 보상 (PFC)**: V-JEPA2 세계 모델을 물리 심판으로 활용하여 잠재 특징 공간에서 비디오의 동역학 합리성을 평가하고 물리 법칙을 위반하는 행동을 페널티합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 환경**: 장시간 로봇 조작 시뮬레이션 환경에서 테스트되었으며, 작업 복잡성은 기존의 짧은 클립 합성보다 훨씬 높습니다.
+- **성능 지표**: MIND-V는 비디오 논리적 일관성, 물리적 합리성 및 장시간 안정성에서 모두 SOTA 수준에 도달했습니다.
+- **정책 학습 가치**: 생성된 비디오 데이터는 하위 정책 훈련에 사용되어 실제 작업에서 정책의 일반화 능력과 실행 성공률을 크게 향상시켰습니다.
+- **핵심 수치**: 실험 결과, MIND-V는 장시간 작업에서 비디오 합성 성공률이 기존 방법보다 15% 이상 높았으며, 물리 위반 이벤트는 30% 감소했습니다.
+
+### 결론
+MIND-V는 확장 가능하고 완전 자율적인 구현 데이터 합성 프레임워크를 제공하며, 계층적 세계 모델과 물리 정렬 강화 학습을 통해 장시간 로봇 조작 데이터 부족 문제를 효과적으로 해결하여 구현 지능의 대규모 발전을 위한 기반을 마련했습니다.

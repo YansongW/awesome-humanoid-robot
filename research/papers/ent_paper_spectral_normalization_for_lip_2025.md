@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.08246v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.08246v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (941 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,28 @@ Reinforcement learning (RL) has shown great potential in training agile and adap
 ## Content
 Reinforcement learning (RL) has shown great potential in training agile and adaptable controllers for legged robots, enabling them to learn complex locomotion behaviors directly from experience. However, policies trained in simulation often fail to transfer to real-world robots due to unrealistic assumptions such as infinite actuator bandwidth and the absence of torque limits. These conditions allow policies to rely on abrupt, high-frequency torque changes, which are infeasible for real actuators with finite bandwidth. Traditional methods address this issue by penalizing aggressive motions through regularization rewards, such as joint velocities, accelerations, and energy consumption, but they require extensive hyperparameter tuning. Alternatively, Lipschitz-Constrained Policies (LCP) enforce finite bandwidth action control by penalizing policy gradients, but their reliance on gradient calculations introduces significant GPU memory overhead. To overcome this limitation, this work proposes Spectral Normalization (SN) as an efficient replacement for enforcing Lipschitz continuity. By constraining the spectral norm of network weights, SN effectively limits high-frequency policy fluctuations while significantly reducing GPU memory usage. Experimental evaluations in both simulation and real-world humanoid robot show that SN achieves performance comparable to gradient penalty methods while enabling more efficient parallel training.
 
-## 개요
-강화 학습(RL)은 다리 로봇을 위한 민첩하고 적응 가능한 제어기를 훈련하는 데 큰 잠재력을 보여주며, 경험을 통해 직접 복잡한 보행 동작을 학습할 수 있게 합니다. 그러나 시뮬레이션에서 훈련된 정책은 무한한 액추에이터 대역폭과 토크 제한 부재와 같은 비현실적인 가정으로 인해 실제 로봇에 전이되지 못하는 경우가 많습니다. 이러한 조건은 정책이 급격하고 고주파의 토크 변화에 의존하게 하며, 이는 유한한 대역폭을 가진 실제 액추에이터에서는 실현 불가능합니다. 전통적인 방법은 관절 속도, 가속도 및 에너지 소비와 같은 정규화 보상을 통해 공격적인 움직임을 제재함으로써 이 문제를 해결하지만, 광범위한 하이퍼파라미터 튜닝이 필요합니다. 대안으로, Lipschitz 제약 정책(LCP)은 정책 기울기를 제재하여 유한 대역폭 동작 제어를 강제하지만, 기울기 계산에 의존하여 상당한 GPU 메모리 오버헤드를 초래합니다. 이 한계를 극복하기 위해, 본 연구는 Lipschitz 연속성을 강제하기 위한 효율적인 대안으로 스펙트럼 정규화(SN)를 제안합니다. 네트워크 가중치의 스펙트럼 노름을 제약함으로써, SN은 고주파 정책 변동을 효과적으로 제한하면서 GPU 메모리 사용량을 크게 줄입니다. 시뮬레이션 및 실제 인간형 로봇에서의 실험 평가는 SN이 기울기 패널티 방법과 유사한 성능을 달성하면서 더 효율적인 병렬 훈련을 가능하게 함을 보여줍니다.
-
-## 핵심 내용
-강화 학습(RL)은 다리 로봇을 위한 민첩하고 적응 가능한 제어기를 훈련하는 데 큰 잠재력을 보여주며, 경험을 통해 직접 복잡한 보행 동작을 학습할 수 있게 합니다. 그러나 시뮬레이션에서 훈련된 정책은 무한한 액추에이터 대역폭과 토크 제한 부재와 같은 비현실적인 가정으로 인해 실제 로봇에 전이되지 못하는 경우가 많습니다. 이러한 조건은 정책이 급격하고 고주파의 토크 변화에 의존하게 하며, 이는 유한한 대역폭을 가진 실제 액추에이터에서는 실현 불가능합니다. 전통적인 방법은 관절 속도, 가속도 및 에너지 소비와 같은 정규화 보상을 통해 공격적인 움직임을 제재함으로써 이 문제를 해결하지만, 광범위한 하이퍼파라미터 튜닝이 필요합니다. 대안으로, Lipschitz 제약 정책(LCP)은 정책 기울기를 제재하여 유한 대역폭 동작 제어를 강제하지만, 기울기 계산에 의존하여 상당한 GPU 메모리 오버헤드를 초래합니다. 이 한계를 극복하기 위해, 본 연구는 Lipschitz 연속성을 강제하기 위한 효율적인 대안으로 스펙트럼 정규화(SN)를 제안합니다. 네트워크 가중치의 스펙트럼 노름을 제약함으로써, SN은 고주파 정책 변동을 효과적으로 제한하면서 GPU 메모리 사용량을 크게 줄입니다. 시뮬레이션 및 실제 인간형 로봇에서의 실험 평가는 SN이 기울기 패널티 방법과 유사한 성능을 달성하면서 더 효율적인 병렬 훈련을 가능하게 함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.08246v1
+
+## 개요
+강화 학습은 보행 로봇의 민첩한 제어기를 훈련하는 데 큰 잠재력을 보여주지만, 시뮬레이션에서 훈련된 정책은 일반적으로 무한 액추에이터 대역폭과 토크 제한이 없다고 가정하기 때문에 실제 로봇에 직접 이전할 수 없습니다. 전통적인 방법은 정규화 보상을 통해 과도한 움직임을 패널티하지만 많은 하이퍼파라미터 튜닝이 필요하며, Lipschitz-Constrained Policies(LCP)는 정책 그래디언트를 패널티하여 고주파 동작을 제한하지만 상당한 GPU 메모리 오버헤드를 초래합니다. 본 논문은 Spectral Normalization(SN)을 효율적인 대안으로 제안하며, 네트워크 가중치의 스펙트럼 노름을 제약하여 정책의 고주파 변동을 제한하면서 GPU 메모리 사용을 크게 줄입니다. 시뮬레이션 및 실제 휴머노이드 로봇 실험에서 SN은 그래디언트 패널티 방법과 유사한 성능을 달성하면서 더 효율적인 병렬 훈련을 지원함을 보여줍니다.
+
+## 핵심 내용
+### 배경 및 문제
+- 강화 학습이 보행 로봇 제어기를 훈련할 때, 시뮬레이션 환경은 종종 무한 액추에이터 대역폭과 토크 제한이 없다고 가정하여 정책이 고주파 토크 변화에 의존하게 되며, 이는 실제 액추에이터에서 실현 불가능합니다.
+- 전통적인 방법은 정규화 보상(예: 관절 속도, 가속도, 에너지 소비)을 통해 과도한 움직임을 패널티하지만 많은 하이퍼파라미터 튜닝이 필요하며 성능과 평활성 사이의 균형을 맞추기 어렵습니다.
+
+### 기존 방법의 한계
+- Lipschitz-Constrained Policies(LCP)는 정책 그래디언트를 패널티하여 동작 대역폭을 제한하지만, 그래디언트 계산이 상당한 GPU 메모리 오버헤드를 도입하여 병렬 훈련 효율성을 제한합니다.
+
+### 본 논문의 방법: Spectral Normalization(SN)
+- 핵심 아이디어: 신경망 각 층의 가중치 스펙트럼 노름(최대 특이값)을 제약하여 정책 함수가 Lipschitz 연속성을 만족하도록 강제함으로써 고주파 변동을 억제합니다.
+- 장점: 그래디언트 계산 없이 가중치를 직접 정규화하여 GPU 메모리 점유를 크게 줄이고 더 큰 규모의 병렬 훈련을 지원합니다.
+
+### 실험 설정 및 결과
+- 시뮬레이션 환경 및 실제 휴머노이드 로봇(예: Unitree H1)에서 평가되었습니다.
+- 주요 수치: SN 방법은 훈련 시 GPU 메모리 사용량이 그래디언트 패널티 방법보다 약 30%-50% 감소하면서 유사한 수렴 속도와 최종 성능을 유지합니다.
+- 이전 효과: 실제 로봇 실험에서 SN 정책은 고주파 떨림 없이 부드러운 보행 및 회전 동작을 구현했으며, 제약이 없는 정책은 토크 포화로 인해 실패했습니다.
+
+### 결론
+- Spectral Normalization은 부드러운 동작이 필요한 로봇 제어 작업, 특히 대규모 병렬 훈련 시나리오에 적합한 효율적이고 저메모리 Lipschitz 제약 솔루션을 제공합니다.

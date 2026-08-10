@@ -134,8 +134,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/domestic-humanoid-robot-safety-standards.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/domestic-humanoid-robot-safety-standards.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (950 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -182,11 +183,32 @@ An ISO standard revision is neglecting user input. A lot has happened since the 
 ## Content
 An ISO standard revision is neglecting user input. A lot has happened since the last revision, both on the technology side and with researchers’ understanding of safety for humans collaborating with domestic robots. The proposed ISO update addresses hazard identification, risk assessment, and different use scenarios. It does not, however, set limits, propose testing methods, or have enforcement mechanisms that might address the complexities of human-robot collaboration. And that is a problem, argues technology policy researcher Jae-Seong Lee of the Electronics and Telecommunications Research Institute in Daejeon, South Korea. Why is the next revision of ISO 13482 a big deal? Jae-Seong Lee: The standard is moving into final approval at a moment when domestic humanoid robot makers are shifting from lab prototypes to products aimed at real homes, real caregivers, and real families. That matters because the standard does more than specify geometry and impact limits. It helps define what counts as acceptable robot behavior in the messy world of everyday life.
 
-## 개요
-ISO 표준 개정이 사용자 의견을 무시하고 있다. 지난 개정 이후 기술 측면과 연구자들의 가정용 로봇과 협력하는 인간의 안전에 대한 이해 모두에서 많은 변화가 있었다.
-
-## 핵심 내용
-ISO 표준 개정이 사용자 의견을 무시하고 있다. 지난 개정 이후 기술 측면과 연구자들의 가정용 로봇과 협력하는 인간의 안전에 대한 이해 모두에서 많은 변화가 있었다. 제안된 ISO 업데이트는 위험 식별, 위험 평가 및 다양한 사용 시나리오를 다루고 있다. 그러나 인간-로봇 협력의 복잡성을 해결할 수 있는 한계 설정, 테스트 방법 제안, 또는 집행 메커니즘을 포함하지 않는다. 그리고 이것이 문제라고 한국 대전에 위치한 전자통신연구원의 기술 정책 연구자 이재성은 주장한다. 왜 ISO 13482의 다음 개정이 중요한가? 이재성: 이 표준은 가정용 휴머노이드 로봇 제조사들이 실험실 프로토타입에서 실제 가정, 실제 돌봄 제공자, 실제 가족을 대상으로 한 제품으로 전환하는 시점에 최종 승인 단계로 나아가고 있다. 이는 표준이 단순히 기하학적 구조와 충격 한계를 명시하는 것 이상을 수행하기 때문에 중요하다. 이는 일상생활의 혼란스러운 세계에서 허용 가능한 로봇 행동이 무엇인지 정의하는 데 도움을 준다.
-
 ## 参考
 - https://spectrum.ieee.org/domestic-humanoid-robot-safety-standards
+
+## 개요
+ISO 13482 표준이 2014년 발표 이후 처음으로 개정된 것은, 가정용 휴머노이드 로봇이 실험실 프로토타입에서 실제 가정용 제품으로 전환되는 중요한 시기와 맞물립니다. Lee는 현재 개정판이 비접촉성 위험(예: 예측 불가능성 및 자율 의사결정 오류)을 인정하고 있지만, 인간-로봇 간 양방향 결합에 대한 기술적 인식을 실행 가능한 규제 표준으로 전환하지 못했다고 봅니다. 가정 환경의 통제 불가능성(노인, 어린이, 반려동물, 잡동사니 등 포함)은 로봇 안전이 기계 측면의 측정에만 의존할 수 없으며, 시스템 수준의 관계 기반 안전 프레임워크가 필요함을 요구합니다. 표준 제정 과정에서 노인 사용자 등 주요 이해관계자의 직접적인 참여가 부족하여, 안전 기준선 정의에 가치 판단의 결여가 존재합니다.
+
+## 핵심 내용
+### 핵심 공학적 과제
+- **양방향 결합 문제**: 인간-로봇 상호작용은 양방향입니다—로봇은 인간 행동을 변화시키고, 인간 행동은 다시 로봇의 인식과 의사결정에 영향을 미칩니다. 안전은 기계의 고유 속성이 아니라 관계에서 창발하는 시스템 특성입니다.
+- **가정 환경의 특수성**: 가정용 로봇은 통제되지 않은 환경(노인, 어린이, 반려동물, 잡동사니, 좁은 공간 등)에서 작동해야 하며, 이는 작업, 작업 공간, 인구를 제한할 수 있는 산업용 로봇의 조건과 근본적으로 다릅니다. 작동 영역을 공장 모드로 제한하면 가정용 로봇의 실용적 가치가 크게 약화됩니다.
+
+### 표준 개정의 한계
+- **현행 ISO 13482**: 위험 식별, 위험 평가, 예상 사용 시나리오만 다루며, 비접촉성 위험(예: 예측 불가능성)을 인정하지만 다음이 부족합니다:
+  - 구속력 있는 규제 준수 표준
+  - 테스트 방법
+  - 인간-로봇 관계에서 발생하는 위험에 대한 실행 메커니즘
+- **거버넌스 공백**: 기술 커뮤니티는 양방향 결합을 이해하고, 표준 프레임워크는 관련 위험을 인정하지만, 이 지식을 가정용 자율 시스템의 실행 가능한 규칙으로 전환할 수 있는 표준은 아직 없습니다.
+
+### 훈련 데이터의 핵심 역할
+- 기업들은 유급 계약 직원을 전 세계 일반 가정에 파견하여 일상적인 가사 데이터를 녹화하고 있으며, 이는 로봇이 표준화된 시연이 아닌 실제 세계의 다양성에 기반하여 훈련될 것임을 의미합니다.
+- 안전 문제의 핵심은 단일 구성 요소가 아닌 전체 인간-로봇 시스템의 구성에 있습니다.
+
+### 결여된 가치 판단
+- 표준은 다음을 답해야 합니다: 누구의 보행 패턴이 기준선인가? 누구의 위험 허용 한계가 수용 가능한가? 누구의 안전 판단 정의가 요구사항 언어에 포함되어야 하는가? 이는 순수 공학 문제가 아닌 가치 판단입니다.
+- 현재 표준 위원회는 노인 사용자 등 주요 영향 집단의 체계적 대표성이 부족하여, 안전 기준선에 충분히 논의되지 않은 규범적 참조점이 암묵적으로 포함되어 있습니다.
+
+### 엔지니어를 위한 대응 제안
+- "로봇의 출력이 안전 허용 범위 내에 있는가"만 묻지 말고, "로봇이 어떤 인간 상태에 관여하며, 이러한 관여가 모든 상태 범위에서 안전을 유지하는가"를 질문해야 합니다.
+- 이러한 전환은 안전을 기계 중심 측정에서 시스템 수준의 관계 보장으로 이동시키며, 인간을 시스템의 일부로 간주하고 배경 잡음으로 취급하지 않습니다.

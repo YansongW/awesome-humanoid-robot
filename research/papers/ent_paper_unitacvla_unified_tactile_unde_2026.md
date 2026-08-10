@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31723v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31723v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1008 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -90,11 +91,28 @@ UniTacVLA 通过将触觉信号建模为动态交互线索，并引入预测性�
 ## Overview
 Vision-language-action (VLA) models have achieved strong performance in many robotic manipulation tasks, yet remain limited in contact-rich dexterous manipulation. To overcome this limitation, recent vision-tactile-language-action (VTLA) methods incorporate tactile sensing into VLA models to provide direct contact information. However, they typically treat tactile signals as passive auxiliary inputs, making it difficult to model tactile semantics and future physical interactions. To this end, we propose a unified tactile learning framework for contact-rich manipulation that models tactile signals as dynamic interaction cues for both contact understanding and prediction. Specifically, we construct a unified tactile latent space and jointly model current tactile states and future contact changes through tactile chain-of-thought reasoning and coarse-to-fine future tactile prediction, thereby forming a state-aware and dynamics-aware tactile prior. Based on this prior, we introduce a tactile-action mixed controller that combines real-time and predicted tactile feedback to refine low-frequency action chunks with high-frequency corrections. Real-world experiments on four categories of contact-rich tasks, including adjustment, insertion, wiping, and assembly, under both clean and externally perturbed settings, show that our method improves success rate, manipulation accuracy, and contact robustness over existing methods, demonstrating its effectiveness in dexterous physical interaction.
 
-## 개요
-Vision-language-action(VLA) 모델은 많은 로봇 조작 작업에서 뛰어난 성능을 달성했지만, 접촉이 많은 정밀 조작(contact-rich dexterous manipulation)에서는 여전히 한계를 보입니다. 이러한 한계를 극복하기 위해 최근 vision-tactile-language-action(VTLA) 방법은 촉각 감지를 VLA 모델에 통합하여 직접적인 접촉 정보를 제공합니다. 그러나 이러한 방법은 일반적으로 촉각 신호를 수동적인 보조 입력으로 처리하여 촉각 의미론과 미래의 물리적 상호작용을 모델링하기 어렵게 만듭니다. 이를 해결하기 위해, 우리는 접촉이 많은 조작을 위한 통합 촉각 학습 프레임워크를 제안하며, 촉각 신호를 접촉 이해와 예측 모두를 위한 동적 상호작용 단서로 모델링합니다. 구체적으로, 우리는 통합된 촉각 잠재 공간을 구축하고, 촉각 사고 사슬 추론(tactile chain-of-thought reasoning)과 거친 것에서 세밀한 미래 촉각 예측(coarse-to-fine future tactile prediction)을 통해 현재 촉각 상태와 미래 접촉 변화를 공동으로 모델링하여, 상태 인식 및 동역학 인식 촉각 사전 지식을 형성합니다. 이 사전 지식을 기반으로, 우리는 실시간 및 예측된 촉각 피드백을 결합하여 저주파수 동작 청크를 고주파수 보정으로 개선하는 촉각-동작 혼합 제어기를 도입합니다. 조정, 삽입, 닦기, 조립의 네 가지 접촉이 많은 작업 범주에 대해 깨끗한 환경과 외부 교란 환경 모두에서 수행된 실제 실험은, 우리의 방법이 기존 방법보다 성공률, 조작 정확도 및 접촉 견고성을 향상시켜 정밀한 물리적 상호작용에서의 효과를 입증합니다.
-
-## 핵심 내용
-Vision-language-action(VLA) 모델은 많은 로봇 조작 작업에서 뛰어난 성능을 달성했지만, 접촉이 많은 정밀 조작에서는 여전히 한계를 보입니다. 이러한 한계를 극복하기 위해 최근 vision-tactile-language-action(VTLA) 방법은 촉각 감지를 VLA 모델에 통합하여 직접적인 접촉 정보를 제공합니다. 그러나 이러한 방법은 일반적으로 촉각 신호를 수동적인 보조 입력으로 처리하여 촉각 의미론과 미래의 물리적 상호작용을 모델링하기 어렵게 만듭니다. 이를 해결하기 위해, 우리는 접촉이 많은 조작을 위한 통합 촉각 학습 프레임워크를 제안하며, 촉각 신호를 접촉 이해와 예측 모두를 위한 동적 상호작용 단서로 모델링합니다. 구체적으로, 우리는 통합된 촉각 잠재 공간을 구축하고, 촉각 사고 사슬 추론과 거친 것에서 세밀한 미래 촉각 예측을 통해 현재 촉각 상태와 미래 접촉 변화를 공동으로 모델링하여, 상태 인식 및 동역학 인식 촉각 사전 지식을 형성합니다. 이 사전 지식을 기반으로, 우리는 실시간 및 예측된 촉각 피드백을 결합하여 저주파수 동작 청크를 고주파수 보정으로 개선하는 촉각-동작 혼합 제어기를 도입합니다. 조정, 삽입, 닦기, 조립의 네 가지 접촉이 많은 작업 범주에 대해 깨끗한 환경과 외부 교란 환경 모두에서 수행된 실제 실험은, 우리의 방법이 기존 방법보다 성공률, 조작 정확도 및 접촉 견고성을 향상시켜 정밀한 물리적 상호작용에서의 효과를 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31723v1
+
+## 개요
+기존 VLA 모델은 접촉이 풍부한 정교한 조작에서 성능이 제한적이며, 최근 VTLA 방법은 촉각 센싱을 도입하지만 종종 촉각 신호를 수동적 보조 입력으로 간주하여 촉각 의미론과 미래 물리적 상호작용을 모델링하기 어렵습니다. UniTacVLA는 통합 촉각 학습 프레임워크를 제안하며, 통합 촉각 잠재 공간을 구축하여 현재 촉각 상태와 미래 접촉 변화를 공동으로 모델링하여 상태 및 역학 인식 촉각 사전 지식을 형성합니다. 이 사전 지식을 기반으로 프레임워크는 촉각-행동 혼합 컨트롤러를 도입하여 실시간 및 예측 촉각 피드백을 결합하고, 고주파수 수정을 통해 저주파수 행동 블록을 최적화합니다. 조정, 삽입, 닦기, 조립의 네 가지 접촉이 풍부한 작업에서의 실제 세계 실험은 이 방법이 깨끗한 환경과 외부 교란 환경 모두에서 기존 방법보다 우수함을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+UniTacVLA의 핵심은 촉각 신호를 수동적 보조 입력에서 동적 상호작용 단서로 전환하여 접촉 이해와 예측에 사용하는 것입니다. 프레임워크는 세 가지 핵심 구성 요소를 포함합니다:
+- **통합 촉각 잠재 공간**: 현재 촉각 상태와 미래 접촉 변화를 인코딩하기 위한 공유 잠재 표현 공간을 구축합니다.
+- **촉각 체인 추론 및 거친 것에서 세밀한 것으로의 미래 촉각 예측**: 체인 추론을 통해 촉각 의미론을 단계적으로 추론하고, 거친 것에서 세밀한 것으로의 예측 전략을 채택하여 미래 접촉 변화의 동적 사전 지식을 생성함으로써 상태 인식 및 역학 인식 촉각 사전 지식을 형성합니다.
+- **촉각-행동 혼합 컨트롤러**: 위 사전 지식을 기반으로 이 컨트롤러는 실시간 촉각 피드백과 예측 촉각 피드백을 융합하여 저주파수 행동 블록을 고주파수로 수정하여 조작 정밀도와 견고성을 향상시킵니다.
+
+### 실험 설정
+- **작업 범주**: 조정(adjustment), 삽입(insertion), 닦기(wiping), 조립(assembly)의 네 가지 접촉이 풍부한 작업.
+- **환경 조건**: 깨끗한 환경과 외부 교란(예: 외력 간섭)의 두 가지 설정에서 테스트.
+- **평가 지표**: 성공률(success rate), 조작 정밀도(manipulation accuracy), 접촉 견고성(contact robustness).
+
+### 주요 결과
+- 네 가지 작업 모두에서 UniTacVLA의 성공률은 기존 VLA 및 VTLA 기준 방법보다 현저히 높습니다.
+- 외부 교란 조건에서 이 방법은 더 강한 접촉 견고성을 보여주며 갑작스러운 간섭에 효과적으로 대응합니다.
+- 조작 정밀도 측면에서 UniTacVLA는 조정 및 조립과 같은 정밀한 접촉 제어가 필요한 작업에서 특히 뛰어난 성능을 보여줍니다.
+
+### 결론
+UniTacVLA는 촉각 신호를 동적 상호작용 단서로 모델링하고 예측적 촉각 피드백과 혼합 제어 전략을 도입함으로써 기존 VLA 모델의 접촉이 풍부한 정교한 조작에서의 한계를 효과적으로 극복합니다. 실험은 이 방법이 다양한 작업 및 교란 조건에서 성능을 향상시킬 수 있음을 증명하며, 정교한 물리적 상호작용을 위한 새로운 솔루션을 제공합니다.

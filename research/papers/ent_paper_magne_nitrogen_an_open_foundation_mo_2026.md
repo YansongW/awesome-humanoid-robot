@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.02427v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.02427v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (822 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,29 @@ NitroGen 证明了通过大规模行为克隆训练视觉-动作模型，能够�
 ## Overview
 We introduce NitroGen, a vision-action foundation model for generalist gaming agents that is trained on 40,000 hours of gameplay videos across more than 1,000 games. We incorporate three key ingredients: 1) an internet-scale video-action dataset constructed by automatically extracting player actions from publicly available gameplay videos, 2) a multi-game benchmark environment that can measure cross-game generalization, and 3) a unified vision-action model trained with large-scale behavior cloning. NitroGen exhibits strong competence across diverse domains, including combat encounters in 3D action games, high-precision control in 2D platformers, and exploration in procedurally generated worlds. It transfers effectively to unseen games, achieving up to 52% relative improvement in task success rates over models trained from scratch. We release the dataset, evaluation suite, and model weights to advance research on generalist embodied agents.
 
-## 개요
-우리는 1,000개 이상의 게임에서 40,000시간의 게임플레이 비디오로 훈련된 범용 게임 에이전트를 위한 비전-행동 기반 모델인 NitroGen을 소개합니다. 우리는 세 가지 핵심 요소를 통합했습니다: 1) 공개된 게임플레이 비디오에서 플레이어 행동을 자동으로 추출하여 구축한 인터넷 규모의 비디오-행동 데이터셋, 2) 교차 게임 일반화를 측정할 수 있는 다중 게임 벤치마크 환경, 3) 대규모 행동 복제로 훈련된 통합 비전-행동 모델입니다. NitroGen은 3D 액션 게임의 전투, 2D 플랫포머의 고정밀 제어, 절차적으로 생성된 세계의 탐험 등 다양한 도메인에서 뛰어난 능력을 보여줍니다. 보지 못한 게임에도 효과적으로 전이되어, 처음부터 훈련된 모델 대비 작업 성공률에서 최대 52%의 상대적 향상을 달성합니다. 우리는 범용 임베디드 에이전트 연구를 발전시키기 위해 데이터셋, 평가 스위트, 모델 가중치를 공개합니다.
-
-## 핵심 내용
-우리는 1,000개 이상의 게임에서 40,000시간의 게임플레이 비디오로 훈련된 범용 게임 에이전트를 위한 비전-행동 기반 모델인 NitroGen을 소개합니다. 우리는 세 가지 핵심 요소를 통합했습니다: 1) 공개된 게임플레이 비디오에서 플레이어 행동을 자동으로 추출하여 구축한 인터넷 규모의 비디오-행동 데이터셋, 2) 교차 게임 일반화를 측정할 수 있는 다중 게임 벤치마크 환경, 3) 대규모 행동 복제로 훈련된 통합 비전-행동 모델입니다. NitroGen은 3D 액션 게임의 전투, 2D 플랫포머의 고정밀 제어, 절차적으로 생성된 세계의 탐험 등 다양한 도메인에서 뛰어난 능력을 보여줍니다. 보지 못한 게임에도 효과적으로 전이되어, 처음부터 훈련된 모델 대비 작업 성공률에서 최대 52%의 상대적 향상을 달성합니다. 우리는 범용 임베디드 에이전트 연구를 발전시키기 위해 데이터셋, 평가 스위트, 모델 가중치를 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.02427v1
+
+## 개요
+NitroGen은 1,000개 이상의 게임에서 수집된 40,000시간의 게임 비디오로 훈련된 범용 게임 에이전트를 위한 비전-행동 기반 모델입니다. 이 모델은 세 가지 핵심 혁신을 통해 게임 간 일반화를 달성합니다: 공개 게임 비디오에서 플레이어 행동을 자동으로 추출하여 대규모 데이터셋 구축, 다중 게임 벤치마크 환경 설계를 통한 일반화 능력 평가, 그리고 통합 비전-행동 모델을 사용한 대규모 행동 복제. 실험 결과, NitroGen은 3D 액션 게임의 전투 장면, 2D 플랫폼 게임의 고정밀 제어, 절차적 생성 세계의 탐험 작업에서 뛰어난 성능을 보였으며, 보지 못한 게임으로의 효과적인 전이도 가능했습니다. 작업 성공률은 처음부터 훈련된 모델 대비 최대 52% 향상되었습니다. 연구팀은 데이터셋, 평가 도구, 모델 가중치를 오픈소스로 공개했습니다.
+
+## 핵심 내용
+### 방법
+NitroGen은 통합 비전-행동 모델 아키텍처를 사용하며, 대규모 행동 복제를 통해 훈련됩니다. 핵심 데이터 구축 방법은 공개 게임 비디오에서 플레이어 행동을 자동으로 추출하여 인터넷 규모의 비디오-행동 데이터셋을 형성하는 것입니다. 이 데이터셋은 1,000개 이상의 게임을 아우르는 40,000시간의 게임플레이 비디오를 포함합니다.
+
+### 아키텍처
+모델은 비전-행동 기반 모델로, 게임 화면을 직접 입력으로 받아 해당하는 행동 명령을 출력합니다. 훈련 과정은 게임 엔진이나 내부 상태 정보에 의존하지 않으며, 시각적 관찰과 행동 시퀀스의 매핑 관계만을 학습합니다.
+
+### 실험 설정
+- **훈련 데이터**: 1,000개 이상의 게임을 포함한 40,000시간의 게임플레이 비디오
+- **벤치마크 환경**: 게임 간 일반화 능력을 측정하기 위해 특별히 설계된 다중 게임 벤치마크 환경
+- **비교 방법**: 처음부터 훈련된 모델과 비교
+
+### 주요 결과
+- 3D 액션 게임의 전투 장면에서 뛰어난 성능
+- 2D 플랫폼 게임에서 고정밀 제어 달성
+- 절차적 생성 세계에서 탐험 능력 보유
+- **게임 간 전이**: 보지 못한 게임에서 작업 성공률이 상대적으로 최대 52% 향상
+
+### 결론
+NitroGen은 대규모 행동 복제를 통해 비전-행동 모델을 훈련함으로써 범용 게임 에이전트의 게임 간 일반화 능력을 달성할 수 있음을 입증했습니다. 연구팀은 데이터셋, 평가 도구, 모델 가중치를 오픈소스로 공개하여 범용 임베디드 에이전트 연구 발전을 촉진하고 있습니다.

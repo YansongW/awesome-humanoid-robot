@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2211.04163v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2211.04163v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (806 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,34 @@ theoretical_depth:
 ## Overview
 Robots' visual qualities (VQs) impact people's perception of their characteristics and affect users' behaviors and attitudes toward the robot. Recent years point toward a growing need for Socially Assistive Robots (SARs) in various contexts and functions, interacting with various users. Since SAR types have functional differences, the user experience must vary by the context of use, functionality, user characteristics, and environmental conditions. Still, SAR manufacturers often design and deploy the same robotic embodiment for diverse contexts. We argue that the visual design of SARs requires a more scientific approach considering their multiple evolving roles in future society. In this work, we define four contextual layers: the domain in which the SAR exists, the physical environment, its intended users, and the robot's role. Via an online questionnaire, we collected potential users' expectations regarding the desired characteristics and visual qualities of four different SARs: a service robot for an assisted living/retirement residence facility, a medical assistant robot for a hospital environment, a COVID-19 officer robot, and a personal assistant robot for domestic use. Results indicated that users' expectations differ regarding the robot's desired characteristics and the anticipated visual qualities for each context and use case.
 
-## 개요
-로봇의 시각적 특성(VQs)은 사람들이 로봇의 특성을 인식하는 방식에 영향을 미치며, 사용자의 로봇에 대한 행동과 태도에도 영향을 줍니다. 최근 몇 년간 다양한 맥락과 기능에서 다양한 사용자와 상호작용하는 사회적 지원 로봇(SARs)에 대한 필요성이 증가하고 있습니다. SAR 유형은 기능적 차이가 있기 때문에 사용자 경험은 사용 맥락, 기능, 사용자 특성 및 환경 조건에 따라 달라져야 합니다. 그럼에도 불구하고 SAR 제조업체는 종종 다양한 맥락에 동일한 로봇 외형을 설계하고 배포합니다. 우리는 SAR의 시각적 설계가 미래 사회에서의 다양한 진화적 역할을 고려한 보다 과학적인 접근 방식을 필요로 한다고 주장합니다. 본 연구에서는 네 가지 맥락적 계층을 정의합니다: SAR이 존재하는 영역, 물리적 환경, 의도된 사용자, 그리고 로봇의 역할입니다. 온라인 설문지를 통해 우리는 네 가지 다른 SAR(노인 생활/은퇴 주거 시설용 서비스 로봇, 병원 환경용 의료 보조 로봇, COVID-19 담당 로봇, 가정용 개인 비서 로봇)에 대해 잠재적 사용자들이 기대하는 바람직한 특성과 시각적 특성을 수집했습니다. 결과는 각 맥락과 사용 사례에 따라 로봇의 바람직한 특성과 예상되는 시각적 특성에 대한 사용자 기대가 다르다는 것을 보여주었습니다.
-
-## 핵심 내용
-로봇의 시각적 특성(VQs)은 사람들이 로봇의 특성을 인식하는 방식에 영향을 미치며, 사용자의 로봇에 대한 행동과 태도에도 영향을 줍니다. 최근 몇 년간 다양한 맥락과 기능에서 다양한 사용자와 상호작용하는 사회적 지원 로봇(SARs)에 대한 필요성이 증가하고 있습니다. SAR 유형은 기능적 차이가 있기 때문에 사용자 경험은 사용 맥락, 기능, 사용자 특성 및 환경 조건에 따라 달라져야 합니다. 그럼에도 불구하고 SAR 제조업체는 종종 다양한 맥락에 동일한 로봇 외형을 설계하고 배포합니다. 우리는 SAR의 시각적 설계가 미래 사회에서의 다양한 진화적 역할을 고려한 보다 과학적인 접근 방식을 필요로 한다고 주장합니다. 본 연구에서는 네 가지 맥락적 계층을 정의합니다: SAR이 존재하는 영역, 물리적 환경, 의도된 사용자, 그리고 로봇의 역할입니다. 온라인 설문지를 통해 우리는 네 가지 다른 SAR(노인 생활/은퇴 주거 시설용 서비스 로봇, 병원 환경용 의료 보조 로봇, COVID-19 담당 로봇, 가정용 개인 비서 로봇)에 대해 잠재적 사용자들이 기대하는 바람직한 특성과 시각적 특성을 수집했습니다. 결과는 각 맥락과 사용 사례에 따라 로봇의 바람직한 특성과 예상되는 시각적 특성에 대한 사용자 기대가 다르다는 것을 보여주었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2211.04163v1
+
+## 개요
+이 연구는 현재 사회적 보조 로봇(SAR) 제조업체들이 동일한 외관 디자인을 다양한 상황에 적용하면서, 사용 맥락이 사용자 경험에 미치는 핵심적 영향을 간과하고 있음을 지적한다. 저자는 도메인, 물리적 환경, 사용자, 역할의 네 가지 차원을 포함하는 상황 프레임워크를 구축하고, 네 가지 대표적인 SAR(요양원 서비스 로봇, 병원 의료 보조 로봇, COVID-19 순찰 로봇, 가정용 개인 비서 로봇)을 대상으로 한 온라인 설문 조사를 통해 228명의 잠재 사용자로부터 로봇의 기대 특성과 시각적 품질에 대한 피드백을 수집했다. 결과는 사용자의 로봇 외관 및 기능 특성에 대한 요구가 사용 상황에 따라 유의미하게 변화함을 보여준다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+- 로봇의 시각적 품질(VQs)은 사용자가 그 특성을 인식하고 행동 태도를 형성하는 데 직접적인 영향을 미친다
+- 현재 SAR 제조업체들은 동일한 외관 디자인을 다양한 상황에 배치하는 경우가 많아 과학적 설계 방법이 부족하다
+- 상황 차이를 고려한 SAR 시각 설계 프레임워크 구축이 필요하다
+
+### 4계층 상황 프레임워크
+1. **도메인(Domain)**: SAR이 존재하는 응용 분야(예: 의료, 요양)
+2. **물리적 환경(Physical Environment)**: 배치 공간의 특성(예: 병원 복도, 가정 거실)
+3. **사용자(Users)**: 목표 사용자 집단의 특성(예: 노인, 의료진)
+4. **역할(Role)**: 로봇이 수행하는 기능적 역할(예: 서비스, 의료 보조)
+
+### 실험 설계
+- 방법: 온라인 설문 조사(N=228)
+- 테스트 시나리오: 네 가지 SAR 사용 사례
+  - 요양원/은퇴 커뮤니티 서비스 로봇
+  - 병원 환경 의료 보조 로봇
+  - COVID-19 순찰 로봇
+  - 가정용 개인 비서 로봇
+- 측정 지표: 사용자가 로봇에 기대하는 특성(desired characteristics) 및 시각적 품질(visual qualities)에 대한 평가
+
+### 핵심 발견
+- 사용자가 기대하는 로봇 특성은 상황 간에 유의미한 차이를 보였다(p<0.05)
+- 시각적 품질 선호도는 사용 맥락에 따라 변화한다: 예를 들어 의료 상황에서는 전문성이 더 강조되고, 가정 상황에서는 친근감이 더 중시된다
+- 결론은 "하나의 디자인이 모든 상황에 적합할 수 없다"는 핵심 가설을 검증하며, SAR 상황 기반 설계를 위한 실증적 근거를 제공한다

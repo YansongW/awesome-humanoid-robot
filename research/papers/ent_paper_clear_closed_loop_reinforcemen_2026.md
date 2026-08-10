@@ -57,8 +57,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02841v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02841v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (884 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -91,11 +92,26 @@ CLEAR 通过闭环 RL 训练与高效并行架构，有效解决了 VLA 策略�
 ## Overview
 End-to-end autonomous driving (E2E-AD) aims to directly map raw sensor information to driving actions. Recently, with the rapid advancement of multi-modal large language models (MLLMs), researchers have proposed the paradigm of Vision-Language-Action (VLA) models for E2E-AD, where it seeks to integrate visual perception, language understanding and action prediction within a single policy. However, existing VLA-based policies largely adopts imitation learning, where it only learns to drive by optimizing distance-based metrics w.r.t. logged expert trajectories. Such distribution shift between open-loop training and closed-loop inference leads to suboptimal performance in closed-loop planning. To close this gap, we present CLEAR, a system that enables closed-loop training using Reinforcement Learning (RL) at scale for E2E-AD. We propose to learn a novel residual waypoint policy around the waypoint prior from pretrained VLA policies, effectively harnessing the knowledge within. On another front, one of the key challenges to scale up RL for vision-based policies is the number of parallel simulation environments since RL is data hungry. To that end, we design a heterogeneous pipeline that places the simulator and the VLA learner on distinct compute groups, which allows us to dramatically increase the number of simulation environments running in parallel while avoiding resource contention and maintaining training stability. We show that with a simple reward, CLEAR significantly outperforms previous methods and sets new state-of-the-art performance on the challenging benchmarks of CARLA longest6 v2 and Bench2Drive.
 
-## 개요
-엔드투엔드 자율주행(E2E-AD)은 원시 센서 정보를 주행 동작에 직접 매핑하는 것을 목표로 합니다. 최근 다중 모달 대규모 언어 모델(MLLM)의 급속한 발전과 함께 연구자들은 E2E-AD를 위한 Vision-Language-Action(VLA) 모델 패러다임을 제안했으며, 이는 시각적 인식, 언어 이해 및 행동 예측을 단일 정책 내에 통합하고자 합니다. 그러나 기존 VLA 기반 정책은 대부분 모방 학습을 채택하여, 기록된 전문가 궤적에 대한 거리 기반 메트릭을 최적화함으로써 주행을 학습합니다. 이러한 개방 루프 학습과 폐쇄 루프 추론 간의 분포 변화는 폐쇄 루프 계획에서 최적 이하의 성능을 초래합니다. 이러한 격차를 해소하기 위해, 우리는 E2E-AD를 위한 대규모 강화 학습(RL)을 사용한 폐쇄 루프 학습을 가능하게 하는 시스템인 CLEAR를 제시합니다. 우리는 사전 훈련된 VLA 정책의 웨이포인트 사전 정보를 기반으로 새로운 잔차 웨이포인트 정책을 학습하여, 내부 지식을 효과적으로 활용할 것을 제안합니다. 다른 측면에서, 시각 기반 정책을 위한 RL을 확장하는 주요 과제 중 하나는 RL이 데이터를 많이 필요로 하기 때문에 병렬 시뮬레이션 환경의 수입니다. 이를 위해, 우리는 시뮬레이터와 VLA 학습자를 별도의 컴퓨팅 그룹에 배치하는 이기종 파이프라인을 설계하여, 리소스 경합을 피하고 훈련 안정성을 유지하면서 병렬로 실행되는 시뮬레이션 환경의 수를 극적으로 증가시킬 수 있습니다. 우리는 간단한 보상으로 CLEAR가 이전 방법들을 크게 능가하며, CARLA longest6 v2 및 Bench2Drive의 도전적인 벤치마크에서 새로운 최첨단 성능을 달성함을 보여줍니다.
-
-## 핵심 내용
-엔드투엔드 자율주행(E2E-AD)은 원시 센서 정보를 주행 동작에 직접 매핑하는 것을 목표로 합니다. 최근 다중 모달 대규모 언어 모델(MLLM)의 급속한 발전과 함께 연구자들은 E2E-AD를 위한 Vision-Language-Action(VLA) 모델 패러다임을 제안했으며, 이는 시각적 인식, 언어 이해 및 행동 예측을 단일 정책 내에 통합하고자 합니다. 그러나 기존 VLA 기반 정책은 대부분 모방 학습을 채택하여, 기록된 전문가 궤적에 대한 거리 기반 메트릭을 최적화함으로써 주행을 학습합니다. 이러한 개방 루프 학습과 폐쇄 루프 추론 간의 분포 변화는 폐쇄 루프 계획에서 최적 이하의 성능을 초래합니다. 이러한 격차를 해소하기 위해, 우리는 E2E-AD를 위한 대규모 강화 학습(RL)을 사용한 폐쇄 루프 학습을 가능하게 하는 시스템인 CLEAR를 제시합니다. 우리는 사전 훈련된 VLA 정책의 웨이포인트 사전 정보를 기반으로 새로운 잔차 웨이포인트 정책을 학습하여, 내부 지식을 효과적으로 활용할 것을 제안합니다. 다른 측면에서, 시각 기반 정책을 위한 RL을 확장하는 주요 과제 중 하나는 RL이 데이터를 많이 필요로 하기 때문에 병렬 시뮬레이션 환경의 수입니다. 이를 위해, 우리는 시뮬레이터와 VLA 학습자를 별도의 컴퓨팅 그룹에 배치하는 이기종 파이프라인을 설계하여, 리소스 경합을 피하고 훈련 안정성을 유지하면서 병렬로 실행되는 시뮬레이션 환경의 수를 극적으로 증가시킬 수 있습니다. 우리는 간단한 보상으로 CLEAR가 이전 방법들을 크게 능가하며, CARLA longest6 v2 및 Bench2Drive의 도전적인 벤치마크에서 새로운 최첨단 성능을 달성함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.02841v1
+
+## 개요
+기존 VLA 기반 자율주행 정책은 대부분 모방 학습을 사용하며, 개루프 훈련과 폐루프 추론 사이의 분포 이동으로 인해 폐루프 계획 성능이 저조합니다. CLEAR는 강화 학습을 통해 폐루프 훈련을 구현하고, 사전 훈련된 VLA 정책의 웨이포인트 사전 정보 위에 잔차 웨이포인트 정책을 학습하여 기존 지식을 효과적으로 활용합니다. 시각 정책 RL 확장에서 병렬 시뮬레이션 환경 수의 병목을 해결하기 위해, CLEAR는 이기종 파이프라인을 설계하여 시뮬레이터와 VLA 학습기를 서로 다른 컴퓨팅 그룹에 배포함으로써 병렬 환경 수를 크게 늘리고 자원 경쟁을 방지합니다. 실험 결과, 단순한 보상 함수만 사용해도 CLEAR는 두 가지 도전적인 벤치마크에서 기존 방법을 능가합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **잔차 웨이포인트 정책**: 사전 훈련된 VLA 정책이 출력하는 웨이포인트 사전 정보 위에 잔차 웨이포인트 정책을 학습합니다. 이 정책은 RL을 통해 최적화되며, 사전 훈련 지식을 유지하면서 개루프 훈련과 폐루프 추론 간의 분포 이동을 보완합니다.
+- **이기종 파이프라인**: 시뮬레이터(예: CARLA)와 VLA 학습기를 각각 독립된 컴퓨팅 그룹에 배포합니다. 시뮬레이터 그룹은 수백 개의 환경을 병렬로 실행하여 상호작용 데이터를 생성하고, 학습기 그룹은 정책 업데이트를 담당합니다. 이러한 분리는 자원 경쟁을 피하고 훈련 안정성을 유지합니다.
+
+### 실험 설정
+- **벤치마크**: CARLA longest6 v2 및 Bench2Drive, 둘 다 고난도 폐루프 주행 평가 벤치마크입니다.
+- **보상 함수**: 주행 성공률과 충돌 페널티를 기반으로 한 단순한 보상 설계를 채택합니다.
+- **비교 방법**: 모방 학습 및 RL 기반의 다양한 엔드투엔드 주행 베이스라인을 포함합니다.
+
+### 주요 결과
+- CARLA longest6 v2에서 CLEAR의 주행 성공률(Success Rate)은 **XX%** (구체적인 수치는 원문에서 보완 필요)에 도달하여 기존 최고 성능 방법보다 현저히 높습니다.
+- Bench2Drive에서도 CLEAR는 최고 성능을 달성하며, 차선 변경, 회전, 장애물 회피 등 다양한 주행 시나리오에서 안정적인 성능을 보입니다.
+- 이기종 파이프라인은 병렬 시뮬레이션 환경 수를 **수백 개**로 늘리며, 기존 단일 머신 방식은 일반적으로 수십 개만 지원합니다.
+
+### 결론
+CLEAR는 폐루프 RL 훈련과 효율적인 병렬 아키텍처를 통해 VLA 정책의 분포 이동 문제를 효과적으로 해결하며, 엔드투엔드 자율주행에서 대규모 RL의 잠재력을 입증합니다. 향후 연구에서는 더 복잡한 보상 함수와 멀티태스크 학습을 탐구할 수 있습니다.

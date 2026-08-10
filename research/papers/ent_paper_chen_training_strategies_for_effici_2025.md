@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.08243v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.08243v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (890 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,29 @@ Robot chain-of-thought reasoning (CoT) — wherein a model predicts helpful inte
 ## Content
 Robot chain-of-thought reasoning (CoT) — wherein a model predicts helpful intermediate representations before choosing actions — provides an effective method for improving the generalization and performance of robot policies, especially vision-language-action models (VLAs). While such approaches have been shown to improve performance and generalization, they suffer from core limitations, like needing specialized robot reasoning data and slow inference speeds. To design new robot reasoning approaches that address these issues, a more complete characterization of why reasoning helps policy performance is critical. We hypothesize several mechanisms by which robot reasoning improves policies — (1) better representation learning, (2) improved learning curricularization, and (3) increased expressivity — then devise simple variants of robot CoT reasoning to isolate and test each one. We find that learning to generate reasonings does lead to better VLA representations, while attending to the reasonings aids in actually leveraging these features for improved action prediction. Our results provide us with a better understanding of why CoT reasoning helps VLAs, which we use to introduce two simple and lightweight alternative recipes for robot reasoning. Our proposed approaches achieve significant performance gains over non-reasoning policies, state-of-the-art results on the LIBERO-90 benchmark, and a 3x inference speedup compared to standard robot reasoning.
 
-## 개요
-로봇 사고 사슬 추론(CoT)은 모델이 행동을 선택하기 전에 유용한 중간 표현을 예측하는 방식으로, 로봇 정책, 특히 시각-언어-행동 모델(VLA)의 일반화와 성능을 향상시키는 효과적인 방법을 제공합니다. 이러한 접근 방식이 성능과 일반화를 개선하는 것으로 입증되었지만, 전문적인 로봇 추론 데이터가 필요하고 추론 속도가 느리다는 핵심적인 한계를 가지고 있습니다. 이러한 문제를 해결하는 새로운 로봇 추론 접근 방식을 설계하려면 추론이 정책 성능에 도움이 되는 이유에 대한 더 완전한 특성화가 중요합니다. 우리는 로봇 추론이 정책을 개선하는 여러 메커니즘, 즉 (1) 더 나은 표현 학습, (2) 개선된 학습 커리큘럼화, (3) 증가된 표현력을 가정하고, 각각을 분리하여 테스트하기 위해 로봇 CoT 추론의 간단한 변형을 고안합니다. 우리는 추론을 생성하는 학습이 더 나은 VLA 표현으로 이어지는 반면, 추론에 주의를 기울이는 것이 실제로 이러한 특징을 활용하여 행동 예측을 개선하는 데 도움이 된다는 것을 발견했습니다. 우리의 결과는 CoT 추론이 VLA에 도움이 되는 이유에 대한 더 나은 이해를 제공하며, 이를 바탕으로 로봇 추론을 위한 두 가지 간단하고 가벼운 대안 레시피를 소개합니다. 제안된 접근 방식은 비추론 정책에 비해 상당한 성능 향상, LIBERO-90 벤치마크에서 최첨단 결과, 그리고 표준 로봇 추론 대비 3배의 추론 속도 향상을 달성합니다.
-
-## 핵심 내용
-로봇 사고 사슬 추론(CoT)은 모델이 행동을 선택하기 전에 유용한 중간 표현을 예측하는 방식으로, 로봇 정책, 특히 시각-언어-행동 모델(VLA)의 일반화와 성능을 향상시키는 효과적인 방법을 제공합니다. 이러한 접근 방식이 성능과 일반화를 개선하는 것으로 입증되었지만, 전문적인 로봇 추론 데이터가 필요하고 추론 속도가 느리다는 핵심적인 한계를 가지고 있습니다. 이러한 문제를 해결하는 새로운 로봇 추론 접근 방식을 설계하려면 추론이 정책 성능에 도움이 되는 이유에 대한 더 완전한 특성화가 중요합니다. 우리는 로봇 추론이 정책을 개선하는 여러 메커니즘, 즉 (1) 더 나은 표현 학습, (2) 개선된 학습 커리큘럼화, (3) 증가된 표현력을 가정하고, 각각을 분리하여 테스트하기 위해 로봇 CoT 추론의 간단한 변형을 고안합니다. 우리는 추론을 생성하는 학습이 더 나은 VLA 표현으로 이어지는 반면, 추론에 주의를 기울이는 것이 실제로 이러한 특징을 활용하여 행동 예측을 개선하는 데 도움이 된다는 것을 발견했습니다. 우리의 결과는 CoT 추론이 VLA에 도움이 되는 이유에 대한 더 나은 이해를 제공하며, 이를 바탕으로 로봇 추론을 위한 두 가지 간단하고 가벼운 대안 레시피를 소개합니다. 제안된 접근 방식은 비추론 정책에 비해 상당한 성능 향상, LIBERO-90 벤치마크에서 최첨단 결과, 그리고 표준 로봇 추론 대비 3배의 추론 속도 향상을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.08243v2
+
+## 개요
+로봇 체인 추론(CoT)은 모델이 동작을 예측하기 전에 중간 표현을 생성하도록 함으로써 시각-언어-동작 모델(VLA)의 일반화 능력과 성능을 효과적으로 향상시킬 수 있습니다. 그러나 기존 방법은 전문 로봇 추론 데이터에 의존하고 추론 속도가 느립니다. 이러한 한계를 극복하기 위해 연구자들은 세 가지 추론 향상 전략의 메커니즘을 가정했습니다: 더 나은 표현 학습, 개선된 학습 커리큘럼, 그리고 향상된 표현 능력. 간단한 변형을 설계하여 격리 테스트를 수행한 결과, 생성 추론이 VLA 표현을 최적화할 수 있고, 주의 추론은 이러한 특징을 활용하여 동작 예측을 개선하는 데 도움이 된다는 것을 발견했습니다. 이를 바탕으로 그들은 두 가지 경량 대안을 제안했으며, LIBERO-90에서 상당한 성능 향상을 달성하고 3배의 추론 가속화를 실현했습니다.
+
+## 핵심 내용
+### 방법 개요
+- **핵심 가정**: 로봇 CoT 추론은 세 가지 메커니즘을 통해 정책 성능을 향상시킵니다:
+  - **더 나은 표현 학습**: 생성 추론 과정은 모델이 더 견고한 중간 특징을 학습하도록 강제합니다.
+  - **개선된 학습 커리큘럼**: 추론 단계는 동작 예측에 구조화된 안내를 제공합니다.
+  - **향상된 표현 능력**: 추론은 모델 출력의 복잡성을 증가시켜 복잡한 작업에 대한 적응 능력을 향상시킵니다.
+- **실험 설계**: 간단한 변형을 통해 각 메커니즘을 격리 테스트합니다. 예를 들어, 동작 예측에 사용하지 않고 생성 추론만 수행하거나, 생성 없이 주의 추론만 수행합니다.
+
+### 아키텍처 및 실험 설정
+- **모델 기반**: 시각-언어-동작 모델(VLA)을 기반으로 표준 로봇 조작 데이터셋에서 훈련합니다.
+- **벤치마크**: 90개의 복잡한 조작 작업을 포함하는 LIBERO-90 벤치마크를 사용합니다.
+- **비교 방법**: 비추론 전략(동작 직접 예측) 및 표준 로봇 CoT 추론 방법과 비교합니다.
+
+### 주요 발견
+- **메커니즘 검증**: 생성 추론은 VLA 표현 품질을 향상시킬 수 있고(특징 시각화를 통해 검증), 주의 추론은 이러한 특징을 동작 예측에 더 효과적으로 활용할 수 있습니다.
+- **성능 향상**: 두 가지 경량 대안은 LIBERO-90에서 최첨단 수준에 도달하며 비추론 전략보다 현저히 우수합니다.
+- **추론 속도**: 표준 로봇 추론에 비해 추론 속도가 3배 향상되면서도 기존 성능을 유지하거나 초과합니다.
+
+### 결론
+ECoT-Lite는 로봇 CoT 추론의 메커니즘을 분리함으로써 경량 추론 전략이 성능을 유지하면서 효율성을 크게 향상시킬 수 있음을 입증했습니다. 이는 실시간 조작 시나리오에 특히 적합한 더 효율적인 설계 방향을 미래 로봇 추론 연구에 제공합니다.

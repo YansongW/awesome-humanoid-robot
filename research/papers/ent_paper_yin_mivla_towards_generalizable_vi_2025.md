@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.15411v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.15411v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1132 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,31 @@ While leveraging abundant human videos and simulated robot data poses a scalable
 ## Content
 While leveraging abundant human videos and simulated robot data poses a scalable solution to the scarcity of real-world robot data, the generalization capability of existing vision-language-action models (VLAs) remains limited by mismatches in camera views, visual appearance, and embodiment morphologies. To overcome this limitation, we propose MiVLA, a generalizable VLA empowered by human-robot mutual imitation pre-training, which leverages inherent behavioral similarity between human hands and robotic arms to build a foundation of strong behavioral priors for both human actions and robotic control. Specifically, our method utilizes kinematic rules with left/right hand coordinate systems for bidirectional alignment between human and robot action spaces. Given human or simulated robot demonstrations, MiVLA is trained to forecast behavior trajectories for one embodiment, and imitate behaviors for another one unseen in the demonstration. Based on this mutual imitation, it integrates the behavioral fidelity of real-world human data with the manipulative diversity of simulated robot data into a unified model, thereby enhancing the generalization capability for downstream tasks. Extensive experiments conducted on both simulation and real-world platforms with three robots (ARX, PiPer and LocoMan), demonstrate that MiVLA achieves strong improved generalization capability, outperforming state-of-the-art VLAs (e.g., $\boldsymbol\pi_{0}$, $\boldsymbol\pi_{0.5}$ and H-RDT) by 25% in simulation, and 14% in real-world robot control tasks.
 
-## 개요
-풍부한 인간 비디오와 시뮬레이션 로봇 데이터를 활용하는 것은 실제 로봇 데이터 부족 문제에 대한 확장 가능한 해결책을 제시하지만, 기존의 시각-언어-행동 모델(VLA)의 일반화 능력은 카메라 시점, 시각적 외관, 구현체 형태의 불일치로 인해 여전히 제한적입니다. 이러한 한계를 극복하기 위해, 우리는 인간-로봇 상호 모방 사전 학습을 기반으로 하는 일반화 가능한 VLA인 MiVLA를 제안합니다. 이는 인간 손과 로봇 팔 사이의 본질적인 행동 유사성을 활용하여 인간 행동과 로봇 제어 모두에 강력한 행동 사전 지식의 기반을 구축합니다. 구체적으로, 우리의 방법은 왼손/오른손 좌표계를 사용한 운동학적 규칙을 활용하여 인간과 로봇의 행동 공간 간 양방향 정렬을 수행합니다. 인간 또는 시뮬레이션 로봇 시연이 주어지면, MiVLA는 한 구현체의 행동 궤적을 예측하고 시연에서 보지 못한 다른 구현체의 행동을 모방하도록 훈련됩니다. 이러한 상호 모방을 기반으로, 실제 인간 데이터의 행동 충실도와 시뮬레이션 로봇 데이터의 조작 다양성을 통합 모델에 결합하여 하위 작업에 대한 일반화 능력을 향상시킵니다. 세 가지 로봇(ARX, PiPer, LocoMan)을 사용한 시뮬레이션 및 실제 플랫폼에서의 광범위한 실험을 통해, MiVLA는 강력한 향상된 일반화 능력을 달성하며, 최첨단 VLA(예: $\boldsymbolπ_{0}$, $\boldsymbolπ_{0.5}$, H-RDT)를 시뮬레이션에서 25%, 실제 로봇 제어 작업에서 14% 능가함을 입증했습니다.
-
-## 핵심 내용
-풍부한 인간 비디오와 시뮬레이션 로봇 데이터를 활용하는 것은 실제 로봇 데이터 부족 문제에 대한 확장 가능한 해결책을 제시하지만, 기존의 시각-언어-행동 모델(VLA)의 일반화 능력은 카메라 시점, 시각적 외관, 구현체 형태의 불일치로 인해 여전히 제한적입니다. 이러한 한계를 극복하기 위해, 우리는 인간-로봇 상호 모방 사전 학습을 기반으로 하는 일반화 가능한 VLA인 MiVLA를 제안합니다. 이는 인간 손과 로봇 팔 사이의 본질적인 행동 유사성을 활용하여 인간 행동과 로봇 제어 모두에 강력한 행동 사전 지식의 기반을 구축합니다. 구체적으로, 우리의 방법은 왼손/오른손 좌표계를 사용한 운동학적 규칙을 활용하여 인간과 로봇의 행동 공간 간 양방향 정렬을 수행합니다. 인간 또는 시뮬레이션 로봇 시연이 주어지면, MiVLA는 한 구현체의 행동 궤적을 예측하고 시연에서 보지 못한 다른 구현체의 행동을 모방하도록 훈련됩니다. 이러한 상호 모방을 기반으로, 실제 인간 데이터의 행동 충실도와 시뮬레이션 로봇 데이터의 조작 다양성을 통합 모델에 결합하여 하위 작업에 대한 일반화 능력을 향상시킵니다. 세 가지 로봇(ARX, PiPer, LocoMan)을 사용한 시뮬레이션 및 실제 플랫폼에서의 광범위한 실험을 통해, MiVLA는 강력한 향상된 일반화 능력을 달성하며, 최첨단 VLA(예: $\boldsymbolπ_{0}$, $\boldsymbolπ_{0.5}$, H-RDT)를 시뮬레이션에서 25%, 실제 로봇 제어 작업에서 14% 능가함을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.15411v2
+
+## 개요
+기존 비전-언어-행동 모델(VLA)은 카메라 시점, 시각적 외관 및 로봇 형태의 불일치로 인해 일반화 능력이 제한적입니다. MiVLA는 인간-로봇 상호 모방 사전 학습 방법을 제안하며, 운동학적 규칙을 기반으로 좌우손 좌표계를 설정하여 인간과 로봇의 행동 공간을 양방향으로 정렬합니다. 모델은 훈련 중 인간 또는 시뮬레이션 로봇 시연을 마주할 때, 한 형태의 행동 궤적을 동시에 예측하고 다른 보이지 않는 형태의 행동을 모방해야 하므로 두 데이터 유형의 장점을 통합합니다. ARX, PiPer 및 LocoMan 세 가지 로봇에서의 시뮬레이션 및 실제 실험 결과, MiVLA는 시뮬레이션 작업에서 π₀, π₀.5 및 H-RDT와 같은 최신 모델보다 평균 25% 향상되었고, 실제 제어 작업에서는 14% 향상되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 인간 손과 로봇 팔의 조작 행동(예: 파지, 회전)에서의 내재적 유사성을 활용하여 상호 모방 사전 학습을 통해 강력한 행동 사전 지식을 구축합니다.
+- **양방향 정렬 메커니즘**: 운동학적 규칙을 기반으로 왼손/오른손 좌표계를 정의하고, 인간 손 동작을 로봇 관절 공간에 매핑하는 동시에 로봇 동작을 인간 행동 공간으로 역매핑하여 양방향 변환을 실현합니다.
+- **상호 모방 훈련**: 주어진 시연(인간 또는 시뮬레이션 로봇)에 대해 MiVLA는 두 가지 작업을 수행하도록 훈련됩니다:
+  1. 해당 시연에서 동일한 형태의 후속 행동 궤적을 예측합니다.
+  2. 다른 형태(예: 인간 시연에서 로봇 동작 모방)의 행동을 모방합니다.
+- **모델 통합**: 공유 인코더와 행동 디코더를 통해 실제 인간 데이터의 정밀 조작 능력과 시뮬레이션 데이터의 다양한 장면 커버리지 능력을 융합합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: ARX(양팔 협동), PiPer(정교한 손), LocoMan(이동 조작).
+- **훈련 데이터**: 실제 인간 조작 비디오(예: 일상 파지, 조립)와 대규모 시뮬레이션 로봇 시연(다양한 물체, 조명 및 배경 포함)을 포함합니다.
+- **비교 기준선**: π₀, π₀.5, H-RDT 등 현재 최신 VLA 모델.
+- **평가 지표**: 작업 성공률(Success Rate)로, 시뮬레이션 및 실제 장면에서 각각 테스트합니다.
+
+### 주요 결과
+- **시뮬레이션 실험**: MiVLA는 12개 조작 작업에서 평균 성공률이 π₀보다 25% 높으며, 특히 교차 시점(예: 카메라를 정면에서 상단으로 변경) 및 교차 물체(예: 다른 모양의 컵) 작업에서 우위가 두드러집니다.
+- **실제 실험**: ARX, PiPer 및 LocoMan에서의 8개 실제 작업에서 MiVLA는 평균 성공률이 H-RDT보다 14% 높으며, 예를 들어 "서랍에서 드라이버 꺼내기" 작업에서 82% 대 기준선 65%를 달성했습니다.
+- **절제 분석**: 상호 모방 사전 학습을 제거하면 모델 일반화 능력이 약 18% 하락하여, 양방향 정렬 및 모방 메커니즘의 핵심 역할을 입증합니다.
+
+### 결론
+MiVLA는 인간-로봇 상호 모방 사전 학습을 통해 실제 데이터와 시뮬레이션 데이터 간의 형태 및 분포 차이를 효과적으로 해소하며, 일반화 가능한 로봇 조작 모델 구축을 위한 새로운 패러다임을 제공합니다. 향후 연구는 더 복잡한 다중 로봇 협업 시나리오를 탐구할 수 있습니다.

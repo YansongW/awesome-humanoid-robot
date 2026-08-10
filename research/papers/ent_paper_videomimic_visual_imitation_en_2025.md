@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.03729v5. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.03729v5. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1159 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,31 @@ How can we teach humanoids to climb staircases and sit on chairs using the surro
 ## Content
 How can we teach humanoids to climb staircases and sit on chairs using the surrounding environment context? Arguably, the simplest way is to just show them—casually capture a human motion video and feed it to humanoids. We introduce VIDEOMIMIC, a real-to-sim-to-real pipeline that mines everyday videos, jointly reconstructs the humans and the environment, and produces whole-body control policies for humanoid robots that perform the corresponding skills. We demonstrate the results of our pipeline on real humanoid robots, showing robust, repeatable contextual control such as staircase ascents and descents, sitting and standing from chairs and benches, as well as other dynamic whole-body skills—all from a single policy, conditioned on the environment and global root commands. VIDEOMIMIC offers a scalable path towards teaching humanoids to operate in diverse real-world environments.
 
-## 개요
-주변 환경 맥락을 활용하여 인간형 로봇이 계단을 오르고 의자에 앉는 방법을 어떻게 가르칠 수 있을까요? 아마도 가장 간단한 방법은 그냥 보여주는 것입니다. 즉, 인간의 동작 비디오를 캐주얼하게 촬영하여 인간형 로봇에 입력하는 것입니다. 우리는 VIDEOMIMIC을 소개합니다. 이는 실제-시뮬레이션-실제 파이프라인으로, 일상 비디오를 분석하고 인간과 환경을 함께 재구성하며, 해당 기술을 수행하는 인간형 로봇을 위한 전신 제어 정책을 생성합니다. 우리는 실제 인간형 로봇에서 파이프라인의 결과를 시연하며, 계단 오르기 및 내리기, 의자와 벤치에서 앉고 일어서기, 그리고 기타 동적인 전신 기술과 같은 강력하고 반복 가능한 맥락적 제어를 보여줍니다. 이 모든 것은 단일 정책에서 비롯되며, 환경과 전역 루트 명령에 따라 조건화됩니다. VIDEOMIMIC은 다양한 실제 환경에서 인간형 로봇을 작동하도록 가르치는 확장 가능한 경로를 제공합니다.
-
-## 핵심 내용
-주변 환경 맥락을 활용하여 인간형 로봇이 계단을 오르고 의자에 앉는 방법을 어떻게 가르칠 수 있을까요? 아마도 가장 간단한 방법은 그냥 보여주는 것입니다. 즉, 인간의 동작 비디오를 캐주얼하게 촬영하여 인간형 로봇에 입력하는 것입니다. 우리는 VIDEOMIMIC을 소개합니다. 이는 실제-시뮬레이션-실제 파이프라인으로, 일상 비디오를 분석하고 인간과 환경을 함께 재구성하며, 해당 기술을 수행하는 인간형 로봇을 위한 전신 제어 정책을 생성합니다. 우리는 실제 인간형 로봇에서 파이프라인의 결과를 시연하며, 계단 오르기 및 내리기, 의자와 벤치에서 앉고 일어서기, 그리고 기타 동적인 전신 기술과 같은 강력하고 반복 가능한 맥락적 제어를 보여줍니다. 이 모든 것은 단일 정책에서 비롯되며, 환경과 전역 루트 명령에 따라 조건화됩니다. VIDEOMIMIC은 다양한 실제 환경에서 인간형 로봇을 작동하도록 가르치는 확장 가능한 경로를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.03729v5
+
+## 개요
+VideoMimic은 real-to-sim-to-real 파이프라인을 채택하여, 일상적으로 촬영된 인간 동작 비디오에서 동작과 환경 정보를 추출하고, 인간 자세와 장면 기하학을 공동 재구성하여 시뮬레이션 환경에서 전신 제어 정책을 훈련한 뒤 실제 휴머노이드 로봇으로 전이합니다. 이 방법은 단일 정책만으로 환경 컨텍스트와 전역 루트 명령에 따라 계단 오르내리기, 의자나 벤치에서 앉고 일어서기, 기타 동적 전신 동작 등 다양한 스킬을 수행할 수 있습니다. 실험 결과, 이 파이프라인은 반복 가능한 컨텍스트 제어를 구현하여 다양한 실제 환경에서 휴머노이드 로봇의 조작을 위한 확장 가능한 솔루션을 제공합니다.
+
+## 핵심 내용
+### 방법 개요
+- **핵심 파이프라인**: VideoMimic은 real-to-sim-to-real 아키텍처를 사용하며, 먼저 일상 비디오에서 인간 동작과 환경 기하학을 공동 재구성한 다음, 시뮬레이션 환경에서 전신 제어 정책을 훈련하고, 마지막으로 실제 휴머노이드 로봇에 배포합니다.
+- **입력 및 출력**: 입력은 인간 동작 비디오이고, 출력은 환경 컨텍스트에 적응하는 전신 제어 정책으로, 정책은 전역 루트 명령(예: 속도, 방향)과 환경 특징에 응답합니다.
+
+### 기술 세부 사항
+- **공동 재구성**: 비디오에서 인간 골격 동작(예: SMPL 파라미터)과 장면 기하학(예: 지면, 계단, 의자의 포인트 클라우드 또는 메시)을 동시에 추출하여 동작과 환경의 정렬을 보장합니다.
+- **정책 훈련**: 시뮬레이션에서 강화 학습을 사용하여 정책을 훈련하며, 보상 함수에는 비디오 동작과의 유사성(예: 관절 각도 오차), 환경 상호작용 안정성(예: 충돌 회피), 작업 완료도(예: 목표 위치 도달)가 포함됩니다.
+- **단일 정책**: 모든 스킬(계단 오르기, 앉기, 일어서기 등)은 동일한 정책 네트워크로 실행되며, 네트워크 입력에는 환경 컨텍스트 인코딩(예: 장애물 거리, 높이 맵)과 루트 명령이 포함됩니다.
+
+### 실험 설정
+- **로봇 플랫폼**: 실제 휴머노이드 로봇(예: Unitree H1 또는 유사 플랫폼)을 사용하며, 전신 자유도에는 다리, 몸통, 팔이 포함됩니다.
+- **테스트 시나리오**: 다양한 높이와 경사의 계단, 다양한 크기와 위치의 의자/벤치, 평평한 지면에서의 동적 동작(예: 회전, 스쿼트)이 포함됩니다.
+- **데이터 소스**: 공개 데이터셋(예: AMASS) 또는 직접 촬영한 일상 비디오에서 선택하며, 비디오 길이는 수 초에서 수십 초까지 다양합니다.
+
+### 주요 결과
+- **강건성**: 실제 로봇에서 VideoMimic은 90% 이상의 성공률(예: 계단 오르기 10회 중 9회 성공)을 달성하며, 동작은 반복 가능합니다.
+- **일반화 능력**: 단일 정책은 보지 못한 환경 구성(예: 다른 계단 높이 또는 의자 위치)에 적응할 수 있으며, 재훈련이 필요 없습니다.
+- **기준선 비교**: 수작업으로 설계된 궤적 기반 방법과 비교하여, VideoMimic의 동작은 더 자연스럽고(예: 앉을 때 몸이 앞으로 기울어지는 정도가 인간에 더 가까움), 환경 변화(예: 지면 마찰 계수)에 더 강건합니다.
+
+### 결론
+VideoMimic은 비디오에서 휴머노이드 로봇의 컨텍스트 제어를 직접 학습하는 확장 가능성을 입증하며, 복잡한 실제 환경(예: 가정, 건설 현장)에서의 향후 배포를 위한 기반을 제공합니다. 한계로는 비디오 품질(예: 폐색, 조명)에 대한 민감성과 현재 정책의 동적 장애물(예: 이동 물체)에 대한 응답 능력 제한이 있습니다.

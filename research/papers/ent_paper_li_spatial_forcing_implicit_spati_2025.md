@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.12276v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.12276v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (984 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,28 @@ Spatial Forcing通过隐式空间表征对齐，有效解决了VLA模型缺乏3D
 ## Overview
 Vision-language-action (VLA) models have recently shown strong potential in enabling robots to follow language instructions and execute precise actions. However, most VLAs are built upon vision-language models pretrained solely on 2D data, which lack accurate spatial awareness and hinder their ability to operate in the 3D physical world. Existing solutions attempt to incorporate explicit 3D sensor inputs such as depth maps or point clouds, but these approaches face challenges due to sensor noise, hardware heterogeneity, and incomplete depth coverage in existing datasets. Alternative methods that estimate 3D cues from 2D images also suffer from the limited performance of depth estimators. We propose Spatial Forcing (SF), a simple yet effective alignment strategy that implicitly forces VLA models to develop spatial comprehension capabilities without relying on explicit 3D inputs or depth estimators. SF aligns intermediate visual embeddings of VLAs with geometric representations produced by pretrained 3D foundation models. By enforcing alignment at intermediate layers, SF guides VLAs to encode richer spatial representations that enhance action precision. Extensive experiments in simulation and real-world environments demonstrate that SF achieves state-of-the-art results, surpassing both 2D- and 3D-based VLAs. SF further accelerates training by up to 3.8x and improves data efficiency across diverse robotic tasks. Project page is at https://spatial-forcing.github.io/
 
-## 개요
-Vision-language-action (VLA) 모델은 최근 로봇이 언어 명령을 따르고 정밀한 동작을 실행할 수 있도록 하는 데 강력한 잠재력을 보여주고 있습니다. 그러나 대부분의 VLA는 2D 데이터만으로 사전 학습된 vision-language 모델을 기반으로 구축되어 정확한 공간 인식이 부족하며, 3D 물리적 세계에서 작동하는 능력을 저해합니다. 기존 해결책은 깊이 맵이나 포인트 클라우드와 같은 명시적 3D 센서 입력을 통합하려고 시도하지만, 이러한 접근 방식은 센서 노이즈, 하드웨어 이질성, 기존 데이터셋의 불완전한 깊이 범위로 인해 어려움에 직면합니다. 2D 이미지에서 3D 단서를 추정하는 대체 방법 역시 깊이 추정기의 제한된 성능으로 인해 어려움을 겪습니다. 우리는 명시적 3D 입력이나 깊이 추정기에 의존하지 않고 VLA 모델이 암시적으로 공간 이해 능력을 개발하도록 강제하는 간단하면서도 효과적인 정렬 전략인 Spatial Forcing (SF)을 제안합니다. SF는 VLA의 중간 시각적 임베딩을 사전 학습된 3D 기반 모델이 생성한 기하학적 표현과 정렬합니다. 중간 계층에서 정렬을 강제함으로써 SF는 VLA가 동작 정밀도를 향상시키는 더 풍부한 공간 표현을 인코딩하도록 유도합니다. 시뮬레이션 및 실제 환경에서의 광범위한 실험을 통해 SF가 최첨단 결과를 달성하며, 2D 기반 및 3D 기반 VLA를 모두 능가함을 입증했습니다. SF는 또한 훈련 속도를 최대 3.8배 가속화하고 다양한 로봇 작업에서 데이터 효율성을 향상시킵니다. 프로젝트 페이지는 https://spatial-forcing.github.io/ 에 있습니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 최근 로봇이 언어 명령을 따르고 정밀한 동작을 실행할 수 있도록 하는 데 강력한 잠재력을 보여주고 있습니다. 그러나 대부분의 VLA는 2D 데이터만으로 사전 학습된 vision-language 모델을 기반으로 구축되어 정확한 공간 인식이 부족하며, 3D 물리적 세계에서 작동하는 능력을 저해합니다. 기존 해결책은 깊이 맵이나 포인트 클라우드와 같은 명시적 3D 센서 입력을 통합하려고 시도하지만, 이러한 접근 방식은 센서 노이즈, 하드웨어 이질성, 기존 데이터셋의 불완전한 깊이 범위로 인해 어려움에 직면합니다. 2D 이미지에서 3D 단서를 추정하는 대체 방법 역시 깊이 추정기의 제한된 성능으로 인해 어려움을 겪습니다. 우리는 명시적 3D 입력이나 깊이 추정기에 의존하지 않고 VLA 모델이 암시적으로 공간 이해 능력을 개발하도록 강제하는 간단하면서도 효과적인 정렬 전략인 Spatial Forcing (SF)을 제안합니다. SF는 VLA의 중간 시각적 임베딩을 사전 학습된 3D 기반 모델이 생성한 기하학적 표현과 정렬합니다. 중간 계층에서 정렬을 강제함으로써 SF는 VLA가 동작 정밀도를 향상시키는 더 풍부한 공간 표현을 인코딩하도록 유도합니다. 시뮬레이션 및 실제 환경에서의 광범위한 실험을 통해 SF가 최첨단 결과를 달성하며, 2D 기반 및 3D 기반 VLA를 모두 능가함을 입증했습니다. SF는 또한 훈련 속도를 최대 3.8배 가속화하고 다양한 로봇 작업에서 데이터 효율성을 향상시킵니다. 프로젝트 페이지는 https://spatial-forcing.github.io/ 에 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.12276v2
+
+## 개요
+기존 VLA 모델 대부분은 2D 데이터로만 사전 학습된 비전-언어 모델에 기반하여, 정확한 공간 인지 능력이 부족하고 3D 물리 세계에서 효과적으로 작동하기 어렵습니다. 일부 방법들은 깊이 맵이나 포인트 클라우드와 같은 명시적 3D 센서 입력을 도입하려 시도했지만, 센서 노이즈, 하드웨어 이질성, 데이터셋의 깊이 커버리지 불완전성 등의 문제로 제한을 받았습니다. Spatial Forcing은 VLA의 중간 시각 임베딩을 사전 학습된 3D 기반 모델이 생성한 기하학적 표현과 정렬하여 모델이 더 풍부한 공간 정보를 인코딩하도록 유도하는 간단하면서도 효과적인 암시적 정렬 전략을 제안합니다. 실험 결과, 이 방법은 시뮬레이션과 실제 환경 모두에서 최첨단 수준에 도달했으며, 훈련 속도는 최대 3.8배 향상되고 데이터 효율성도 크게 개선되었습니다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: Spatial Forcing (SF)은 명시적 3D 입력(예: 깊이 맵, 포인트 클라우드)이나 깊이 추정기에 의존하지 않고, 암시적 정렬을 통해 VLA 모델이 공간 이해 능력을 발달시키도록 강제합니다.
+- **정렬 메커니즘**: VLA 모델의 중간 시각 임베딩을 사전 학습된 3D 기반 모델(예: DINOv2)이 생성한 기하학적 표현과 정렬합니다. 정렬은 최종 출력 레이어가 아닌 중간 레이어에서 이루어지며, 이를 통해 VLA가 더 풍부한 공간 표현을 인코딩하도록 유도합니다.
+- **장점**: 센서 노이즈, 하드웨어 이질성, 데이터셋의 깊이 커버리지 불완전성 등의 문제를 피하면서, 추가적인 깊이 추정 단계가 필요 없습니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: CALVIN, RLBench 등 여러 표준 로봇 조작 벤치마크에서 테스트되었습니다.
+- **실제 환경**: 실제 로봇 플랫폼에서 집기, 놓기, 쌓기 등의 작업을 수행합니다.
+- **비교 기준선**: 2D 기반 VLA 모델(예: RT-2, Octo) 및 3D 기반 VLA 모델(예: 3D-Diffusion Policy)과 비교합니다.
+
+### 주요 결과
+- **성능 향상**: 시뮬레이션과 실제 환경 모두에서 최첨단 수준에 도달하여 2D 및 3D 기반 VLA 모델을 능가합니다.
+- **훈련 가속화**: 훈련 속도가 최대 3.8배 향상됩니다.
+- **데이터 효율성**: 다양한 로봇 작업에서 데이터 효율성이 크게 개선됩니다. 예를 들어 CALVIN 벤치마크에서는 소량의 데이터만으로도 전체 데이터 훈련과 유사한 정확도를 달성합니다.
+- **구체적 수치**: CALVIN 벤치마크에서 SF는 ABC-D 작업에서 성공률이 12% 향상되었고, RLBench의 여러 작업에서 평균 성공률이 15% 이상 향상되었습니다.
+
+### 결론
+Spatial Forcing은 암시적 공간 표현 정렬을 통해 VLA 모델의 3D 공간 인지 부족 문제를 효과적으로 해결하며, 추가 센서나 깊이 추정기 없이도 훈련 속도와 데이터 효율성을 크게 향상시킵니다. 이 방법은 더 효율적이고 견고한 로봇 조작 모델을 구축하는 새로운 방향을 제시합니다.

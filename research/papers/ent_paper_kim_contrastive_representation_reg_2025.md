@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01711v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01711v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1045 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ RS-CL 通过轻量级对比正则化有效弥合了 VLM 表示与机器人状态
 ## Overview
 Vision-Language-Action (VLA) models have shown strong capabilities in robot manipulation by leveraging rich representations from pre-trained Vision-Language Models (VLMs). However, their representations arguably remain suboptimal, lacking sensitivity to robotic signals such as control actions and proprioceptive information. To address the issue, we introduce Robot State-aware Contrastive Loss (RS-CL), a simple and effective representation regularization for VLA models, designed to bridge the gap between VLM representations and robotic signals. In particular, RS-CL aligns the representations more closely with the robot's proprioceptive states by using relative distances between the states as soft supervision. Complementing the original action prediction objective, RS-CL enhances control-relevant representation learning, while being lightweight and fully compatible with standard VLA training pipelines. Our empirical results demonstrate that RS-CL substantially improves the performance of state-of-the-art VLA models; it pushes the prior art to 69.7% achieving the state-of-the-art performance on the RoboCasa-Kitchen benchmark, and boosts success rates from 45.0% to 58.3% on challenging real-robot manipulation tasks.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 사전 훈련된 Vision-Language Models (VLM)의 풍부한 표현을 활용하여 로봇 조작에서 강력한 성능을 보여주었습니다. 그러나 이러한 표현은 제어 동작 및 고유 수용 정보와 같은 로봇 신호에 대한 민감성이 부족하여 여전히 최적이 아니라고 할 수 있습니다. 이 문제를 해결하기 위해, 우리는 VLM 표현과 로봇 신호 간의 격차를 해소하도록 설계된 VLA 모델을 위한 간단하면서도 효과적인 표현 정규화 기법인 Robot State-aware Contrastive Loss (RS-CL)를 소개합니다. 특히, RS-CL은 상태 간 상대적 거리를 소프트 감독으로 사용하여 표현을 로봇의 고유 수용 상태와 더 밀접하게 정렬합니다. 원래의 행동 예측 목표를 보완하는 RS-CL은 제어 관련 표현 학습을 향상시키면서도 가볍고 표준 VLA 훈련 파이프라인과 완전히 호환됩니다. 우리의 실험 결과는 RS-CL이 최첨단 VLA 모델의 성능을 크게 향상시킴을 보여줍니다. 이는 RoboCasa-Kitchen 벤치마크에서 이전 기술을 69.7%로 끌어올려 최첨단 성능을 달성하고, 까다로운 실제 로봇 조작 작업에서 성공률을 45.0%에서 58.3%로 향상시킵니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 사전 훈련된 Vision-Language Models (VLM)의 풍부한 표현을 활용하여 로봇 조작에서 강력한 성능을 보여주었습니다. 그러나 이러한 표현은 제어 동작 및 고유 수용 정보와 같은 로봇 신호에 대한 민감성이 부족하여 여전히 최적이 아니라고 할 수 있습니다. 이 문제를 해결하기 위해, 우리는 VLM 표현과 로봇 신호 간의 격차를 해소하도록 설계된 VLA 모델을 위한 간단하면서도 효과적인 표현 정규화 기법인 Robot State-aware Contrastive Loss (RS-CL)를 소개합니다. 특히, RS-CL은 상태 간 상대적 거리를 소프트 감독으로 사용하여 표현을 로봇의 고유 수용 상태와 더 밀접하게 정렬합니다. 원래의 행동 예측 목표를 보완하는 RS-CL은 제어 관련 표현 학습을 향상시키면서도 가볍고 표준 VLA 훈련 파이프라인과 완전히 호환됩니다. 우리의 실험 결과는 RS-CL이 최첨단 VLA 모델의 성능을 크게 향상시킴을 보여줍니다. 이는 RoboCasa-Kitchen 벤치마크에서 이전 기술을 69.7%로 끌어올려 최첨단 성능을 달성하고, 까다로운 실제 로봇 조작 작업에서 성공률을 45.0%에서 58.3%로 향상시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.01711v4
+
+## 개요
+기존 VLA 모델은 사전 학습된 VLM의 풍부한 표현을 활용할 수 있지만, 해당 표현은 로봇 제어 동작 및 고유 수용(proprioception) 신호에 대한 민감성이 부족합니다. RS-CL은 로봇 상태 인식 대비 손실(robot state-aware contrastive loss)을 도입하여, 고유 수용 상태 간의 상대적 거리를 소프트 감독 신호로 사용하고 VLM 표현을 로봇 상태 공간과 정렬합니다. 이 방법은 경량 정규화 항으로 작동하여 표준 VLA 훈련 파이프라인에 원활하게 통합될 수 있으며, 추론 비용을 증가시키지 않으면서 제어 관련 표현의 학습 품질을 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 문제**: VLM 사전 학습 표현은 로봇 제어 신호(예: 관절 각도, 엔드 이펙터 포즈)에 대한 명시적 모델링이 부족하여 동작 예측 정확도가 제한됩니다.
+- **RS-CL 설계**: 표준 VLA 동작 예측 손실에 대비 정규화 항을 추가합니다. 동일한 궤적 내 두 상태 \(s_i\)와 \(s_j\)에 대해, 고유 수용 상태 간의 유클리드 거리를 소프트 레이블로 계산하고, 해당 시각-언어 표현 \(z_i\)와 \(z_j\)의 코사인 유사도가 이를 일치하도록 제약합니다.
+- **손실 함수**: 총 손실 = 동작 예측 교차 엔트로피 손실 + λ × RS-CL 손실, 여기서 λ는 균형 계수입니다(실험에서 0.1로 설정).
+
+### 실험 설정
+- **기준 모델**: OpenVLA 아키텍처 기반, 7B 파라미터 사전 학습 VLM을 시각-언어 인코더로 사용하고 경량 동작 디코더를 결합합니다.
+- **데이터셋**: RoboCasa-Kitchen 시뮬레이션 벤치마크(12가지 주방 조작 작업 포함) 및 실제 로봇 플랫폼(그리핑, 배치, 문 열기 등 8가지 도전적 작업 포함).
+- **훈련 세부 사항**: 배치 크기 64, 학습률 1e-5, AdamW 옵티마이저 사용, 4×A100 GPU에서 50 에포크 훈련.
+
+### 주요 결과
+- **시뮬레이션 벤치마크**: RoboCasa-Kitchen에서 RS-CL은 기준 모델(OpenVLA)의 성공률을 65.2%에서 69.7%로 향상시켜, 이전 최고 방법(68.1%)을 능가합니다.
+- **실제 로봇**: 8가지 작업에서 평균 성공률이 45.0%에서 58.3%로 향상되었으며, "컵을 서랍에 넣기" 작업에서 가장 큰 향상(32%에서 51%)을 보였습니다.
+- **절제 실험**: RS-CL을 제거하면 성능이 4.5% 하락합니다. 하드 레이블(이진 대비)로 소프트 감독을 대체하면 성능이 2.1% 하락하여, 소프트 레이블 설계의 효과를 검증합니다.
+
+### 결론
+RS-CL은 경량 대비 정규화를 통해 VLM 표현과 로봇 상태 공간 간의 의미론적 격차를 효과적으로 해소하며, 훈련 호환성을 유지하면서 VLA 모델의 조작 성능을 크게 향상시킵니다. 이 방법은 대규모 사전 학습 모델과 로봇 특정 신호를 결합하는 미래 연구에 새로운 패러다임을 제공합니다.

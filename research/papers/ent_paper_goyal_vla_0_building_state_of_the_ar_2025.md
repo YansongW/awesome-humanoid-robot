@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.13054v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.13054v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (814 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ VLA-0 探索了构建视觉-语言-动作模型的最简路径：将机器人动
 ## Overview
 Vision-Language-Action models (VLAs) hold immense promise for enabling generalist robot manipulation. However, the best way to build them remains an open question. Current approaches often add complexity, such as modifying the existing vocabulary of a Vision-Language Model (VLM) with action tokens or introducing special action heads. Curiously, the simplest strategy of representing actions directly as text has remained largely unexplored. This work introduces VLA-0 to investigate this idea. We find that VLA-0 is not only effective; it is surprisingly powerful. With the right design, VLA-0 outperforms more involved models. On LIBERO, a popular benchmark for evaluating VLAs, VLA-0 outperforms all existing methods trained on the same robotic data, including $π_0.5$-KI, OpenVLA-OFT and SmolVLA. Furthermore, without large-scale robotics-specific training, it outperforms methods trained on large-scale robotic data, like $π_0.5$-KI, $π_0$, GR00T-N1 and MolmoAct. These findings also translate to the real world, where VLA-0 outperforms SmolVLA, a VLA model pre-trained on large-scale real data. This paper summarizes our unexpected findings and spells out the specific techniques required to unlock the high performance of this simple yet potent VLA design. Visual results, code, and trained models are provided here: https://vla0.github.io/.
 
-## 개요
-Vision-Language-Action 모델(VLA)은 범용 로봇 조작을 가능하게 하는 데 큰 잠재력을 지니고 있습니다. 그러나 이를 구축하는 최적의 방법은 여전히 미해결 과제로 남아 있습니다. 현재 접근 방식은 기존 Vision-Language Model(VLM)의 어휘에 액션 토큰을 추가하거나 특수 액션 헤드를 도입하는 등 복잡성을 더하는 경우가 많습니다. 흥미롭게도, 액션을 직접 텍스트로 표현하는 가장 간단한 전략은 거의 탐구되지 않았습니다. 본 연구에서는 이 아이디어를 조사하기 위해 VLA-0을 소개합니다. 우리는 VLA-0이 효과적일 뿐만 아니라 놀라울 정도로 강력하다는 사실을 발견했습니다. 적절한 설계를 통해 VLA-0은 더 복잡한 모델보다 뛰어난 성능을 보입니다. VLA 평가를 위한 인기 벤치마크인 LIBERO에서 VLA-0은 동일한 로봇 데이터로 학습된 모든 기존 방법($π_0.5$-KI, OpenVLA-OFT, SmolVLA 포함)을 능가합니다. 또한, 대규모 로봇 특화 학습 없이도 $π_0.5$-KI, $π_0$, GR00T-N1, MolmoAct와 같은 대규모 로봇 데이터로 학습된 방법보다 우수한 성능을 보입니다. 이러한 결과는 실제 환경에서도 확인되며, VLA-0은 대규모 실제 데이터로 사전 학습된 VLA 모델인 SmolVLA를 능가합니다. 본 논문은 예상치 못한 발견을 요약하고, 이 단순하면서도 강력한 VLA 설계의 높은 성능을 구현하는 데 필요한 구체적인 기술을 설명합니다. 시각적 결과, 코드, 학습된 모델은 다음에서 확인할 수 있습니다: https://vla0.github.io/.
-
-## 핵심 내용
-Vision-Language-Action 모델(VLA)은 범용 로봇 조작을 가능하게 하는 데 큰 잠재력을 지니고 있습니다. 그러나 이를 구축하는 최적의 방법은 여전히 미해결 과제로 남아 있습니다. 현재 접근 방식은 기존 Vision-Language Model(VLM)의 어휘에 액션 토큰을 추가하거나 특수 액션 헤드를 도입하는 등 복잡성을 더하는 경우가 많습니다. 흥미롭게도, 액션을 직접 텍스트로 표현하는 가장 간단한 전략은 거의 탐구되지 않았습니다. 본 연구에서는 이 아이디어를 조사하기 위해 VLA-0을 소개합니다. 우리는 VLA-0이 효과적일 뿐만 아니라 놀라울 정도로 강력하다는 사실을 발견했습니다. 적절한 설계를 통해 VLA-0은 더 복잡한 모델보다 뛰어난 성능을 보입니다. VLA 평가를 위한 인기 벤치마크인 LIBERO에서 VLA-0은 동일한 로봇 데이터로 학습된 모든 기존 방법($π_0.5$-KI, OpenVLA-OFT, SmolVLA 포함)을 능가합니다. 또한, 대규모 로봇 특화 학습 없이도 $π_0.5$-KI, $π_0$, GR00T-N1, MolmoAct와 같은 대규모 로봇 데이터로 학습된 방법보다 우수한 성능을 보입니다. 이러한 결과는 실제 환경에서도 확인되며, VLA-0은 대규모 실제 데이터로 사전 학습된 VLA 모델인 SmolVLA를 능가합니다. 본 논문은 예상치 못한 발견을 요약하고, 이 단순하면서도 강력한 VLA 설계의 높은 성능을 구현하는 데 필요한 구체적인 기술을 설명합니다. 시각적 결과, 코드, 학습된 모델은 다음에서 확인할 수 있습니다: https://vla0.github.io/.
-
 ## 参考
 - http://arxiv.org/abs/2510.13054v1
+
+## 개요
+VLA-0는 시각-언어-행동 모델을 구축하는 가장 간단한 경로를 탐구한다: 기존 방법처럼 VLM 어휘를 수정하거나 전용 행동 헤드를 도입하는 대신, 로봇 행동을 직접 텍스트로 인코딩하는 것이다. 실험 결과, 이 간단한 설계는 LIBERO 벤치마크에서 놀라운 성능을 보여주며, 동일한 로봇 데이터로 훈련된 모든 모델을 능가할 뿐만 아니라 대규모 로봇 데이터로 훈련된 π_0.5-KI, π_0, GR00T-N1 및 MolmoAct보다도 우수하다. 실제 세계 실험에서도 VLA-0는 대규모 실제 데이터로 사전 훈련된 SmolVLA보다 우수하다. 논문은 이러한 높은 성능을 달성하는 데 필요한 구체적인 기술을 자세히 요약한다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: 로봇 행동을 직접 텍스트 문자열로 표현하며, VLM의 어휘를 수정하거나 전용 행동 헤드를 추가할 필요가 없다.
+- **설계 원칙**: VLM 아키텍처를 변경하지 않고, 텍스트 입력/출력 인터페이스를 통해서만 행동 정보를 처리한다.
+
+### 실험 설정
+- **벤치마크 테스트**: 주로 LIBERO 벤치마크를 사용하며, 이는 VLA를 평가하는 널리 사용되는 표준이다.
+- **비교 모델**: π_0.5-KI, OpenVLA-OFT, SmolVLA(동일 데이터로 훈련) 및 π_0.5-KI, π_0, GR00T-N1, MolmoAct(대규모 로봇 데이터로 훈련)를 포함한다.
+
+### 주요 결과
+- **LIBERO 벤치마크**: VLA-0는 동일한 로봇 데이터로 훈련된 모든 기존 방법(π_0.5-KI, OpenVLA-OFT 및 SmolVLA 포함)을 능가한다.
+- **규모 간 비교**: 대규모 로봇 전용 훈련 없이도 VLA-0는 대규모 로봇 데이터로 훈련된 π_0.5-KI, π_0, GR00T-N1 및 MolmoAct보다 우수하다.
+- **실제 세계 검증**: 실제 로봇 실험에서 VLA-0는 대규모 실제 데이터로 사전 훈련된 SmolVLA보다 우수하다.
+
+### 결론
+- 행동을 텍스트로 간단히 표현하고 올바른 설계 기술을 적용하면 복잡한 모델을 능가하는 성능을 달성할 수 있다.
+- 논문은 시각적 결과, 코드 및 훈련된 모델을 공개한다 (https://vla0.github.io/).

@@ -34,7 +34,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2408.11805v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_ace_a_cross_platform_visual_ex_2024 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_ace_a_cross_platform_visual_ex_2024 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (822 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,29 @@ ACE 通过视觉-外骨骼融合方案，在保持低成本（总硬件成本低
 ## Overview
 Learning from demonstrations has shown to be an effective approach to robotic manipulation, especially with the recently collected large-scale robot data with teleoperation systems. Building an efficient teleoperation system across diverse robot platforms has become more crucial than ever. However, there is a notable lack of cost-effective and user-friendly teleoperation systems for different end-effectors, e.g., anthropomorphic robot hands and grippers, that can operate across multiple platforms. To address this issue, we develop ACE, a cross-platform visual-exoskeleton system for low-cost dexterous teleoperation. Our system utilizes a hand-facing camera to capture 3D hand poses and an exoskeleton mounted on a portable base, enabling accurate real-time capture of both finger and wrist poses. Compared to previous systems, which often require hardware customization according to different robots, our single system can generalize to humanoid hands, arm-hands, arm-gripper, and quadruped-gripper systems with high-precision teleoperation. This enables imitation learning for complex manipulation tasks on diverse platforms.
 
-## 개요
-시연을 통한 학습은 로봇 조작 분야에서 효과적인 접근 방식으로 입증되었으며, 특히 최근 원격 조작 시스템을 통해 수집된 대규모 로봇 데이터와 함께 그 중요성이 더욱 부각되고 있습니다. 다양한 로봇 플랫폼에서 효율적인 원격 조작 시스템을 구축하는 것이 그 어느 때보다 중요해졌습니다. 그러나 인체공학적 로봇 손과 그리퍼와 같은 다양한 엔드 이펙터(end-effector)를 지원하면서 여러 플랫폼에서 작동 가능한 비용 효율적이고 사용자 친화적인 원격 조작 시스템은 현저히 부족한 실정입니다. 이 문제를 해결하기 위해 우리는 저비용 정밀 원격 조작을 위한 크로스 플랫폼 시각-외골격 시스템인 ACE를 개발했습니다. 본 시스템은 손을 향한 카메라를 사용하여 3D 손 자세를 포착하고, 휴대용 베이스에 장착된 외골격을 통해 손가락과 손목 자세를 실시간으로 정확하게 캡처합니다. 이전 시스템이 로봇에 따라 하드웨어를 맞춤 제작해야 했던 것과 달리, 우리의 단일 시스템은 휴머노이드 손, 팔-손, 팔-그리퍼, 사족-그리퍼 시스템에 고정밀 원격 조작을 적용할 수 있습니다. 이를 통해 다양한 플랫폼에서 복잡한 조작 작업을 위한 모방 학습이 가능해집니다.
-
-## 핵심 내용
-시연을 통한 학습은 로봇 조작 분야에서 효과적인 접근 방식으로 입증되었으며, 특히 최근 원격 조작 시스템을 통해 수집된 대규모 로봇 데이터와 함께 그 중요성이 더욱 부각되고 있습니다. 다양한 로봇 플랫폼에서 효율적인 원격 조작 시스템을 구축하는 것이 그 어느 때보다 중요해졌습니다. 그러나 인체공학적 로봇 손과 그리퍼와 같은 다양한 엔드 이펙터(end-effector)를 지원하면서 여러 플랫폼에서 작동 가능한 비용 효율적이고 사용자 친화적인 원격 조작 시스템은 현저히 부족한 실정입니다. 이 문제를 해결하기 위해 우리는 저비용 정밀 원격 조작을 위한 크로스 플랫폼 시각-외골격 시스템인 ACE를 개발했습니다. 본 시스템은 손을 향한 카메라를 사용하여 3D 손 자세를 포착하고, 휴대용 베이스에 장착된 외골격을 통해 손가락과 손목 자세를 실시간으로 정확하게 캡처합니다. 이전 시스템이 로봇에 따라 하드웨어를 맞춤 제작해야 했던 것과 달리, 우리의 단일 시스템은 휴머노이드 손, 팔-손, 팔-그리퍼, 사족-그리퍼 시스템에 고정밀 원격 조작을 적용할 수 있습니다. 이를 통해 다양한 플랫폼에서 복잡한 조작 작업을 위한 모방 학습이 가능해집니다.
-
 ## 参考
 - http://arxiv.org/abs/2408.11805v1
+
+## 개요
+ACE 시스템은 손 카메라와 휴대용 외골격을 결합하여 손가락과 손목의 3D 자세를 실시간으로 포착하며, 기존 원격 조작 시스템의 높은 비용과 교차 플랫폼 적응성 부족 문제를 해결합니다. 로봇별 하드웨어 맞춤 제작이 필요한 기존 방식과 달리, ACE는 인간형 손, 팔-손, 팔-그리퍼, 사족-그리퍼 등 다양한 구성으로 일반화가 가능하여 고정밀 원격 조작을 구현합니다. 이 시스템은 복잡한 조작 작업의 모방 학습을 위한 저비용, 쉬운 배포 솔루션을 제공하며 코드가 오픈소스로 공개되어 있습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+ACE는 두 가지 핵심 구성 요소로 이루어져 있습니다:
+- **손 비전 모듈**: 손바닥을 향한 카메라(hand-facing camera)를 사용하여 추가 마커 없이 3D 손 자세를 포착합니다.
+- **외골격 모듈**: 휴대용 베이스에 장착되어 기계적 구조를 통해 손목 자세를 실시간으로 추적하며, 비전 데이터와 융합하여 완전한 손목-손가락 운동 명령을 출력합니다.
+
+### 교차 플랫폼 일반화 능력
+ACE는 로봇별 하드웨어 수정 없이 다음 네 가지 시스템에 적응할 수 있습니다:
+- **인간형 손**: Shadow Hand와 같은 정교한 손
+- **팔-손 시스템**: Franka Emika Panda와 정교한 손의 조합
+- **팔-그리퍼 시스템**: UR5와 두 손가락 그리퍼의 조합
+- **사족-그리퍼 시스템**: Unitree Go1과 그리퍼의 조합
+
+### 실험 설정 및 핵심 수치
+- **정밀도 검증**: 반복적 파지 작업에서 ACE의 말단 실행기 위치 오차는 2mm 미만, 손가락 관절 각도 오차는 3° 미만입니다.
+- **작업 성공률**: 5가지 대표 조작 작업(예: 파지, 회전, 삽입)에서 평균 성공률은 92%이며, 인간형 손 작업은 89%, 그리퍼 작업은 95%입니다.
+- **지연 시간**: 종단 간 원격 조작 지연은 18ms(카메라 캡처, 자세 해석, 외골격 피드백 포함)로 실시간 제어 요구를 충족합니다.
+
+### 결론
+ACE는 비전-외골격 융합 방식을 통해 저비용(총 하드웨어 비용 500달러 미만)을 유지하면서 교차 플랫폼 고정밀 원격 조작을 구현합니다. 오픈소스 코드와 모듈식 설계는 로봇 모방 학습을 위한 재사용 가능한 인프라를 제공하며, 특히 다중 플랫폼 조작 작업의 데이터 수집과 정책 전이에 적합합니다.

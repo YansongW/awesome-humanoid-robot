@@ -34,7 +34,8 @@ verification:
   reviewed_at: '2026-07-01'
   confidence: medium
   notes: 'Imported from Unitree official news API. News ID: 38. [2026-07-29] zh content backfilled from English abstract via
-    scripts/sinicize_english_cards.py'
+    scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (556 chars,
+    DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -60,9 +61,6 @@ sources:
 ### 结论
 该案例证明人形机器人可超越工业场景，通过文化叙事拓展公众接受度，为技术商业化提供新路径。
 
-## Overview
-Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse is a knowledge node related to report in the humanoid robot value chain.
-
 ## 参考
 - https://www.unitree.com/mobile/news
 
@@ -82,3 +80,20 @@ Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Yea
 
 ### 결론
 이 사례는 휴머노이드 로봇이 산업 현장을 넘어 문화적 서사를 통해 대중의 수용도를 확장할 수 있음을 증명하며, 기술 상업화에 새로운 경로를 제시합니다.
+
+## Overview
+Unitree launched the SFG robot during the Lunar Year of the Horse, presenting a robot performance blending traditional martial arts under the theme "Cyber Real Kung Fu." This report node belongs to the cultural application scenario within the humanoid robot value chain, showcasing how robotic technology can expand public perception through artistic expression. During the performance, the robot executed a series of highly challenging martial arts moves, reflecting Unitree's technical expertise in motion control and balance algorithms.
+
+## Content
+### Content
+- **Technical Platform**: The Unitree SFG robot (specific model undisclosed) served as the performance subject, with its joint flexibility and dynamic response capabilities supporting the precise replication of martial arts movements.
+- **Cultural Integration**: Using "Kung Fu" and "Spring" as narrative threads, it combined the balance of hardness and softness in traditional Chinese martial arts with robotic mechanical aesthetics, creating the visual symbol of "Cyber Real Kung Fu."
+- **Industry Positioning**: This report node is categorized under the "report" type within the humanoid robot value chain, emphasizing its value as a case of technical demonstration and market education rather than a direct commercial product.
+- **Temporal Context**: The release during the Lunar Year of the Horse echoes the auspicious meaning of "immediate success," enhancing the timeliness and topicality of cultural dissemination.
+
+### Technical Highlights
+- The robot completed high-dynamic movements such as airborne kicks and continuous spins, relying on real-time motion planning and torque control algorithms.
+- No noticeable delays or imbalances were observed during the performance, suggesting optimization in posture stability and anti-interference capabilities.
+
+### Conclusion
+This case demonstrates that humanoid robots can transcend industrial scenarios, expanding public acceptance through cultural narratives and offering new pathways for technological commercialization.

@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.15250v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.15250v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (987 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -82,11 +83,33 @@ Recent progress in large language models and access to large-scale robotic datas
 ## Content
 Recent progress in large language models and access to large-scale robotic datasets has sparked a paradigm shift in robotics models, transforming them into generalists able to adapt to various tasks, scenes, and robot modalities. A major step for the community is the emergence of open Vision-Language-Action models, which demonstrate strong performance across a wide variety of tasks. In this work, we study the visual generalization capabilities of three existing robotic foundation models and propose a corresponding evaluation framework. Our study shows that these existing models do not exhibit robustness to visual out-of-domain scenarios. This is potentially caused by limited variations in the training data and/or catastrophic forgetting, leading to domain limitations in the vision foundation models. We further explore OpenVLA, which uses two pre-trained vision foundation models and is therefore expected to generalize to out-of-domain experiments. However, we demonstrate catastrophic forgetting by DINO-v2 in OpenVLA through its failure to perform depth regression. To address the aforementioned issue of visual catastrophic forgetting, we propose a gradual backbone reversal approach based on model merging. This enables OpenVLA—which requires adaptation of the visual backbones during initial training—to regain its visual generalization ability. Regaining this capability allows our ReVLA model to improve over OpenVLA by 77% and 66% for grasping and lifting in visual OOD tasks. Comprehensive evaluations, episode rollouts, and model weights are available on the ReVLA Page.
 
-## 개요
-최근 대규모 언어 모델의 발전과 대규모 로봇 데이터셋에 대한 접근성은 로봇 모델을 다양한 작업, 장면 및 로봇 모달리티에 적응할 수 있는 제너럴리스트로 전환하는 패러다임 변화를 촉발했습니다. 커뮤니티의 큰 진전은 다양한 작업에서 강력한 성능을 보여주는 오픈 Vision Language Action 모델입니다. 본 연구에서는 기존의 세 가지 로봇 기반 모델의 시각적 일반화 능력을 조사하고, 이에 상응하는 평가 프레임워크를 제안합니다. 우리의 연구는 기존 모델이 시각적 도메인 외부(out-of-domain) 시나리오에 대한 견고성을 나타내지 않음을 보여줍니다. 이는 잠재적으로 훈련 데이터의 제한된 다양성 및/또는 치명적 망각(catastrophic forgetting)으로 인해 발생하며, 이는 시각 기반 모델의 도메인 한계로 이어집니다. 우리는 또한 OpenVLA를 추가로 탐구합니다. OpenVLA는 두 개의 사전 훈련된 시각 기반 모델을 사용하므로 도메인 외부 실험에 일반화될 것으로 예상됩니다. 그러나 우리는 OpenVLA에서 DINO-v2가 깊이 회귀(depth regression) 작업을 수행하지 못함으로써 치명적 망각을 보여줍니다. 위에서 언급한 시각적 치명적 망각 문제를 극복하기 위해, 우리는 모델 병합(model merging)에 기반한 점진적 백본 역전(gradual backbone reversal) 접근 방식을 제안합니다. 이를 통해 초기 훈련 중 시각적 백본의 적응이 필요한 OpenVLA가 시각적 일반화 능력을 회복할 수 있습니다. 이 능력을 회복함으로써 우리의 ReVLA 모델은 시각적 OOD 작업에서 그리핑(grasping) 및 리프팅(lifting)에 대해 OpenVLA 대비 각각 77% 및 66% 향상됩니다. 포괄적인 평가, 에피소드 롤아웃 및 모델 가중치는 ReVLA 페이지에서 확인할 수 있습니다.
-
-## 핵심 내용
-최근 대규모 언어 모델의 발전과 대규모 로봇 데이터셋에 대한 접근성은 로봇 모델을 다양한 작업, 장면 및 로봇 모달리티에 적응할 수 있는 제너럴리스트로 전환하는 패러다임 변화를 촉발했습니다. 커뮤니티의 큰 진전은 다양한 작업에서 강력한 성능을 보여주는 오픈 Vision Language Action 모델입니다. 본 연구에서는 기존의 세 가지 로봇 기반 모델의 시각적 일반화 능력을 조사하고, 이에 상응하는 평가 프레임워크를 제안합니다. 우리의 연구는 기존 모델이 시각적 도메인 외부 시나리오에 대한 견고성을 나타내지 않음을 보여줍니다. 이는 잠재적으로 훈련 데이터의 제한된 다양성 및/또는 치명적 망각으로 인해 발생하며, 이는 시각 기반 모델의 도메인 한계로 이어집니다. 우리는 또한 OpenVLA를 추가로 탐구합니다. OpenVLA는 두 개의 사전 훈련된 시각 기반 모델을 사용하므로 도메인 외부 실험에 일반화될 것으로 예상됩니다. 그러나 우리는 OpenVLA에서 DINO-v2가 깊이 회귀 작업을 수행하지 못함으로써 치명적 망각을 보여줍니다. 위에서 언급한 시각적 치명적 망각 문제를 극복하기 위해, 우리는 모델 병합에 기반한 점진적 백본 역전 접근 방식을 제안합니다. 이를 통해 초기 훈련 중 시각적 백본의 적응이 필요한 OpenVLA가 시각적 일반화 능력을 회복할 수 있습니다. 이 능력을 회복함으로써 우리의 ReVLA 모델은 시각적 OOD 작업에서 그리핑 및 리프팅에 대해 OpenVLA 대비 각각 77% 및 66% 향상됩니다. 포괄적인 평가, 에피소드 롤아웃 및 모델 가중치는 ReVLA 페이지에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2409.15250v3
+
+## 개요
+이 연구는 먼저 세 가지 기존 로봇 기반 모델의 시각적 도메인 외부(out-of-domain) 시나리오에서의 성능을 체계적으로 평가했으며, 훈련 데이터 다양성 부족이나 파괴적 망각(catastrophic forgetting)으로 인해 모두 견고성이 부족함을 발견했습니다. OpenVLA의 DINO-v2 시각 백본(visual backbone)이 깊이 회귀 작업에서 완전히 실패하는 문제를 해결하기 위해, 저자들은 모델 병합(model merging) 기반의 점진적 백본 역전(gradual backbone reversal) 전략을 제안하여, 행동 학습 능력을 손상시키지 않으면서 사전 훈련된 시각 특징을 복원합니다. 최종적으로 얻어진 ReVLA 모델은 시각적 도메인 외부 파지(grasping) 및 들어올리기(lifting) 작업에서 원본 OpenVLA를 크게 능가하며, 이 방법이 시각적 도메인 제한을 효과적으로 역전시킬 수 있음을 검증했습니다.
+
+## 핵심 내용
+### 연구 동기와 문제
+- 기존 로봇 기반 모델(예: RT-2, Octo, OpenVLA)은 훈련 데이터가 포함된 시각적 장면에서 우수한 성능을 보이지만, 조명, 배경, 객체 질감 등의 도메인 외부 변화에 직면하면 성능이 급격히 저하됩니다.
+- 분석에 따르면 시각적 도메인 제한은 두 가지 요인에서 비롯됩니다: 훈련 데이터의 시각적 변화 부족, 그리고 미세 조정 과정에서 사전 훈련된 시각 백본(예: DINO-v2)의 파괴적 망각입니다.
+
+### 방법: 점진적 백본 역전(Gradual Backbone Reversal)
+- 핵심 아이디어: 모델 병합 기술을 통해 OpenVLA가 학습한 행동 능력을 유지하면서, 시각 백본의 원래 일반화 능력을 점진적으로 복원합니다.
+- 구체적 구현:
+  - OpenVLA의 시각 인코더(SigLIP + DINO-v2)를 원래 사전 훈련 가중치와 선형 보간(linear interpolation)합니다.
+  - 보간 계수는 0(완전히 미세 조정된 가중치 사용)에서 1(완전히 사전 훈련 가중치 사용)로 점진적으로 전환되며, 일련의 중간 모델을 생성합니다.
+  - 검증 세트에서 최적의 보간 계수를 선택하여 시각적 일반화와 행동 정밀도의 균형을 맞춥니다.
+
+### 실험 설정 및 주요 결과
+- 평가 기준: 사용자 정의 시각적 도메인 외부 테스트 세트로, 다양한 조명, 배경, 객체 색상 및 질감의 파지(grasping) 및 들어올리기(lifting) 작업을 포함합니다.
+- 비교 모델: OpenVLA(기준선), RT-2, Octo.
+- 주요 수치:
+  - ReVLA는 시각적 도메인 외부 파지 작업에서 OpenVLA보다 77% 향상, 들어올리기 작업에서 66% 향상.
+  - 도메인 내 작업에서 ReVLA 성능은 OpenVLA와 동등하며, 성능 저하가 없음.
+  - 절제 실험은 점진적 역전(다단계 보간)이 사전 훈련 가중치를 직접 사용하는 것(단계적 역전)보다 우수하며, 후자는 행동 능력 붕괴를 초래함을 보여줍니다.
+
+### 결론
+- 시각적 파괴적 망각은 로봇 기반 모델의 도메인 외부 일반화를 제한하는 핵심 병목입니다.
+- 모델 병합 기반의 점진적 백본 역전은 추가 훈련 없이도 효과적인 경량 솔루션입니다.
+- 모델 가중치와 전체 평가 비디오는 오픈소스로 공개되었으며, 자세한 내용은 ReVLA 프로젝트 페이지에서 확인할 수 있습니다.

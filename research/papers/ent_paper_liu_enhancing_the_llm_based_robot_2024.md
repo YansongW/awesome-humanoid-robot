@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.14097v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.14097v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1032 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ theoretical_depth:
 ## Overview
 Large Language Models (LLMs) are gaining popularity in the field of robotics. However, LLM-based robots are limited to simple, repetitive motions due to the poor integration between language models, robots, and the environment. This paper proposes a novel approach to enhance the performance of LLM-based autonomous manipulation through Human-Robot Collaboration (HRC). The approach involves using a prompted GPT-4 language model to decompose high-level language commands into sequences of motions that can be executed by the robot. The system also employs a YOLO-based perception algorithm, providing visual cues to the LLM, which aids in planning feasible motions within the specific environment. Additionally, an HRC method is proposed by combining teleoperation and Dynamic Movement Primitives (DMP), allowing the LLM-based robot to learn from human guidance. Real-world experiments have been conducted using the Toyota Human Support Robot for manipulation tasks. The outcomes indicate that tasks requiring complex trajectory planning and reasoning over environments can be efficiently accomplished through the incorporation of human demonstrations.
 
-## 개요
-대규모 언어 모델(LLM)은 로봇 공학 분야에서 점점 더 인기를 얻고 있습니다. 그러나 LLM 기반 로봇은 언어 모델, 로봇 및 환경 간의 통합이 부족하여 단순하고 반복적인 동작으로 제한됩니다. 본 논문은 인간-로봇 협업(HRC)을 통해 LLM 기반 자율 조작의 성능을 향상시키는 새로운 접근 방식을 제안합니다. 이 접근 방식은 프롬프트된 GPT-4 언어 모델을 사용하여 높은 수준의 언어 명령을 로봇이 실행할 수 있는 동작 시퀀스로 분해합니다. 또한 시스템은 YOLO 기반 인식 알고리즘을 사용하여 LLM에 시각적 단서를 제공하며, 이는 특정 환경 내에서 실행 가능한 동작을 계획하는 데 도움을 줍니다. 추가적으로, 원격 조작과 동적 운동 원시(DMP)를 결합한 HRC 방법이 제안되어 LLM 기반 로봇이 인간의 지도로부터 학습할 수 있도록 합니다. Toyota Human Support Robot을 사용한 실제 실험이 조작 작업을 위해 수행되었습니다. 결과는 복잡한 궤적 계획과 환경 추론이 필요한 작업이 인간 시연을 통합함으로써 효율적으로 수행될 수 있음을 나타냅니다.
-
-## 핵심 내용
-대규모 언어 모델(LLM)은 로봇 공학 분야에서 점점 더 인기를 얻고 있습니다. 그러나 LLM 기반 로봇은 언어 모델, 로봇 및 환경 간의 통합이 부족하여 단순하고 반복적인 동작으로 제한됩니다. 본 논문은 인간-로봇 협업(HRC)을 통해 LLM 기반 자율 조작의 성능을 향상시키는 새로운 접근 방식을 제안합니다. 이 접근 방식은 프롬프트된 GPT-4 언어 모델을 사용하여 높은 수준의 언어 명령을 로봇이 실행할 수 있는 동작 시퀀스로 분해합니다. 또한 시스템은 YOLO 기반 인식 알고리즘을 사용하여 LLM에 시각적 단서를 제공하며, 이는 특정 환경 내에서 실행 가능한 동작을 계획하는 데 도움을 줍니다. 추가적으로, 원격 조작과 동적 운동 원시(DMP)를 결합한 HRC 방법이 제안되어 LLM 기반 로봇이 인간의 지도로부터 학습할 수 있도록 합니다. Toyota Human Support Robot을 사용한 실제 실험이 조작 작업을 위해 수행되었습니다. 결과는 복잡한 궤적 계획과 환경 추론이 필요한 작업이 인간 시연을 통합함으로써 효율적으로 수행될 수 있음을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2406.14097v2
+
+## 개요
+기존 LLM 기반 로봇은 언어 모델, 로봇, 환경 간 통합이 부족하여 단순 반복 동작만 수행할 수 있다. 본 논문은 인간-로봇 협업(HRC)을 통해 LLM 자율 조작 성능을 향상시키는 방법을 제안한다: 프롬프트 엔지니어링을 활용하여 GPT-4가 고수준 언어 명령을 실행 가능한 동작 시퀀스로 분해하도록 유도하고, YOLO 시각 알고리즘이 LLM에 환경 시각적 단서를 제공하여 실행 가능한 운동을 계획하며, 원격 조작과 동적 운동 원시(DMP)를 결합한 HRC 방법으로 로봇이 인간의 안내로부터 학습할 수 있게 한다. Toyota Human Support Robot에서의 실제 실험은 복잡한 궤적 계획 및 환경 추론 작업이 인간 시범을 통해 효율적으로 완료될 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **계층적 계획 프레임워크**: GPT-4를 고수준 플래너로 사용하며, 프롬프트 엔지니어링을 통해 자연어 명령(예: "컵을 트레이에 놓기")을 하위 작업 시퀀스(잡기, 이동, 놓기 등)로 분해하고, 각 하위 작업은 실행 가능한 로봇 운동 원시에 해당한다.
+- **시각 인식 모듈**: YOLOv5를 사용하여 대상 객체와 장애물의 위치를 실시간 감지하고, 감지 결과(객체 클래스, 경계 상자 좌표)를 텍스트 설명으로 변환하여 LLM에 입력함으로써 플래너가 환경 인식 운동 궤적을 생성하도록 돕는다.
+- **인간-로봇 협업 메커니즘**: 원격 조작(인간이 핸들을 통해 로봇 말단 실행기를 직접 제어)과 동적 운동 원시(DMP)를 결합하여, 인간이 복잡한 궤적을 시범한 후 DMP가 시범 궤적을 일반화 가능한 운동 패턴으로 매개변수화하여 LLM 플래너가 이러한 패턴을 호출해 유사 작업을 완료할 수 있게 한다.
+
+### 실험 설정
+- **플랫폼**: Toyota Human Support Robot(HSR), 7자유도 로봇 팔과 RGB-D 카메라 장착.
+- **작업**: 세 가지 복잡한 조작 작업 — (1) 어수선한 테이블에서 특정 객체 잡기; (2) 객체를 지정된 용기에 놓기; (3) 장애물을 우회하여 객체 전달.
+- **비교 기준선**: 순수 LLM 계획(시각 피드백 없음), LLM+시각(HRC 없음), LLM+HRC(완전한 방법).
+
+### 주요 결과
+- **성공률**: 완전한 방법은 작업 (1)에서 92%, 작업 (2)에서 88%, 작업 (3)에서 85%에 도달하며, 순수 LLM 기준선 대비 각각 47%, 53%, 61% 향상되었다.
+- **궤적 효율성**: 인간 시범을 통해 평균 작업 완료 시간이 35% 단축되었고(순수 LLM의 12.3초에서 8.0초로), 궤적 평활도가 향상되었다(가속도 피크 42% 감소).
+- **일반화 능력**: DMP 매개변수화를 통해 단일 시범으로 다양한 초기 위치(오차 <3cm)와 객체 크기(오차 <5%)에 일반화할 수 있다.
+
+### 결론
+본 논문은 인간-로봇 협업(HRC)을 통해 LLM 로봇의 복잡한 조작 능력, 특히 환경 추론과 정밀 궤적 계획이 필요한 시나리오에서 크게 향상될 수 있음을 검증했다. 향후 연구는 다중 모달 LLM(예: GPT-4V)이 시각 입력을 직접 처리하도록 탐구하고, 다중 로봇 협업 시나리오로 확장할 것이다.

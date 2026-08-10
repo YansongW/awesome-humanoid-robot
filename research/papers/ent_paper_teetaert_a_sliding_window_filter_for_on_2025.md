@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26623v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26623v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (646 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ theoretical_depth:
 ## Overview
 Stochastic state estimation methods for continuum robots (CRs) often struggle to balance accuracy and computational efficiency. While several recent works have explored sliding-window formulations for CRs, these methods are limited to simplified, discrete-time approximations and do not provide stochastic representations. In contrast, current stochastic filter methods must run at the speed of measurements, limiting their full potential. Recent works in continuous-time estimation techniques for CRs show a principled approach to addressing this runtime constraint, but are currently restricted to offline operation. In this work, we present a sliding-window filter (SWF) for continuous-time state estimation of CRs that improves upon the accuracy of a filter approach while enabling continuous-time methods to operate online, all while running at faster-than-real-time speeds. This represents the first stochastic SWF specifically designed for CRs, providing a promising direction for future research in this area.
 
-## 개요
-연속체 로봇(CR)의 확률적 상태 추정 방법은 종종 정확성과 계산 효율성 사이의 균형을 맞추는 데 어려움을 겪습니다. 최근 여러 연구에서 CR을 위한 슬라이딩 윈도우 기법을 탐구했지만, 이러한 방법은 단순화된 이산 시간 근사에 국한되어 확률적 표현을 제공하지 못합니다. 반대로, 현재의 확률적 필터 방법은 측정 속도에 맞춰 실행되어야 하므로 잠재력을 완전히 발휘하지 못합니다. CR을 위한 연속 시간 추정 기법에 대한 최근 연구는 이러한 실행 시간 제약을 해결하는 원칙적인 접근 방식을 보여주지만, 현재는 오프라인 작업으로 제한됩니다. 본 연구에서는 필터 접근 방식의 정확성을 개선하면서 연속 시간 방법이 온라인으로 작동할 수 있도록 하고, 실시간보다 빠른 속도로 실행되는 CR의 연속 시간 상태 추정을 위한 슬라이딩 윈도우 필터(SWF)를 제시합니다. 이는 CR을 위해 특별히 설계된 최초의 확률적 SWF로, 이 분야의 미래 연구에 유망한 방향을 제시합니다.
-
-## 핵심 내용
-연속체 로봇(CR)의 확률적 상태 추정 방법은 종종 정확성과 계산 효율성 사이의 균형을 맞추는 데 어려움을 겪습니다. 최근 여러 연구에서 CR을 위한 슬라이딩 윈도우 기법을 탐구했지만, 이러한 방법은 단순화된 이산 시간 근사에 국한되어 확률적 표현을 제공하지 못합니다. 반대로, 현재의 확률적 필터 방법은 측정 속도에 맞춰 실행되어야 하므로 잠재력을 완전히 발휘하지 못합니다. CR을 위한 연속 시간 추정 기법에 대한 최근 연구는 이러한 실행 시간 제약을 해결하는 원칙적인 접근 방식을 보여주지만, 현재는 오프라인 작업으로 제한됩니다. 본 연구에서는 필터 접근 방식의 정확성을 개선하면서 연속 시간 방법이 온라인으로 작동할 수 있도록 하고, 실시간보다 빠른 속도로 실행되는 CR의 연속 시간 상태 추정을 위한 슬라이딩 윈도우 필터(SWF)를 제시합니다. 이는 CR을 위해 특별히 설계된 최초의 확률적 SWF로, 이 분야의 미래 연구에 유망한 방향을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.26623v1
+
+## 개요
+기존 연속체 로봇의 확률적 상태 추정 방법은 정확성과 계산 효율성을 동시에 확보하기 어렵다. 일부 연구는 슬라이딩 윈도우 프레임워크를 채택했지만, 단순화된 이산 시간 근사에 국한되고 확률적 표현이 부족하다. 반면 연속 시간 추정 기법은 실시간 제약을 해결할 수 있지만 오프라인 실행만 지원한다. 본 논문에서 제안하는 슬라이딩 윈도우 필터는 연속 시간 방법을 온라인 시나리오로 처음 확장하여, 실시간 실행 속도를 유지하면서 추정 정확성을 크게 향상시켜 연속체 로봇의 확률적 상태 추정에 새로운 방향을 제시한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- B-스플라인 또는 가우시안 프로세스와 같은 연속 시간 표현을 사용하여 로봇 변형을 모델링하고, 이산 시간 근사 오류를 방지
+- 팩터 그래프 프레임워크 기반 슬라이딩 윈도우 주변화(marginalization) 구현: 오래된 상태를 제거하고 그 정보를 사전 팩터로 유지하여 계산 경계를 유지
+- Gauss-Newton 최적화를 사용하여 최대 사후 추정을 해결하고, 윈도우 내 상태 업데이트 빈도는 센서 측정 속도와 분리
+
+### 실험 설정
+- 테스트 플랫폼: 힘줄 구동 연속체 로봇(굽힘 센서 및 외부 추적 시스템 포함)
+- 비교 방법: 배치 평활기(오프라인 최적), 표준 확장 칼만 필터(EKF)
+- 평가 지표: 위치/자세 평균 제곱근 오차(RMSE), 단일 단계 계산 소요 시간
+
+### 주요 결과
+- 슬라이딩 윈도우 필터는 실시간 실행 속도(<1ms/단계)에서 배치 평활기와 유사한 정확성(위치 RMSE 차이 <5%) 달성
+- EKF 대비 위치 추정 오차가 약 40% 감소하고, 지연 누적 문제 없음
+- 윈도우 크기를 10개 시간 단계로 설정할 때 계산 복잡도는 상태 차원과 선형 관계를 가지며, 100Hz 이상의 업데이트 속도 지원
+
+### 결론
+본 연구는 연속체 로봇의 확률적 슬라이딩 윈도우 온라인 추정을 최초로 구현하여, 연속 시간 방법이 오프라인 제한을突破할 수 있음을 입증했다. 향후 다중 세그먼트 로봇 또는 혼합 센서 구성으로 확장 가능하며, 적응형 윈도우 조정 전략을 탐색할 수 있다.

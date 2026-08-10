@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.19795v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.19795v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (655 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,14 +69,41 @@ Duke Humanoid 是一款专为双足运动研究设计的开源人形机器人，
 - 在真实世界测试中，运输成本降低 31%。
 - 所有代码和硬件设计均已开源，项目网站为 http://generalroboticslab.com/DukeHumanoidv1/ 。
 
-## Overview
-We present the Duke Humanoid, an open-source 10-degrees-of-freedom humanoid, as an extensible platform for locomotion research. The design mimics human physiology, with symmetrical body alignment in the frontal plane to maintain static balance with straight knees. We develop a reinforcement learning policy that can be deployed zero-shot on the hardware for velocity-tracking walking tasks. Additionally, to enhance energy efficiency in locomotion, we propose an end-to-end reinforcement learning algorithm that encourages the robot to leverage passive dynamics. Our experimental results show that our passive policy reduces the cost of transport by up to $50\%$ in simulation and $31\%$ in real-world tests. Our website is http://generalroboticslab.com/DukeHumanoidv1/ .
-
-## 개요
-우리는 Duke Humanoid를 소개합니다. 이는 오픈소스 10자유도 휴머노이드로, 보행 연구를 위한 확장 가능한 플랫폼입니다. 디자인은 인간 생리학을 모방하여 정면 평면에서 대칭적인 신체 정렬을 통해 무릎을 곧게 편 상태에서 정적 균형을 유지합니다. 우리는 속도 추적 보행 작업을 위해 하드웨어에 제로샷으로 배포할 수 있는 강화 학습 정책을 개발했습니다. 또한, 보행의 에너지 효율성을 높이기 위해 로봇이 수동 역학을 활용하도록 장려하는 종단간 강화 학습 알고리즘을 제안합니다. 실험 결과에 따르면, 우리의 수동 정책은 시뮬레이션에서 최대 $50\%$, 실제 테스트에서 $31\%$의 운송 비용을 절감했습니다. 웹사이트는 http://generalroboticslab.com/DukeHumanoidv1/ 입니다.
-
-## 핵심 내용
-우리는 Duke Humanoid를 소개합니다. 이는 오픈소스 10자유도 휴머노이드로, 보행 연구를 위한 확장 가능한 플랫폼입니다. 디자인은 인간 생리학을 모방하여 정면 평면에서 대칭적인 신체 정렬을 통해 무릎을 곧게 편 상태에서 정적 균형을 유지합니다. 우리는 속도 추적 보행 작업을 위해 하드웨어에 제로샷으로 배포할 수 있는 강화 학습 정책을 개발했습니다. 또한, 보행의 에너지 효율성을 높이기 위해 로봇이 수동 역학을 활용하도록 장려하는 종단간 강화 학습 알고리즘을 제안합니다. 실험 결과에 따르면, 우리의 수동 정책은 시뮬레이션에서 최대 $50\%$, 실제 테스트에서 $31\%$의 운송 비용을 절감했습니다. 웹사이트는 http://generalroboticslab.com/DukeHumanoidv1/ 입니다.
-
 ## 参考
 - http://arxiv.org/abs/2409.19795v2
+
+## Overview
+Duke Humanoid is an open-source humanoid robot designed for bipedal locomotion research, featuring 10 degrees of freedom. Its hardware design mimics human physiological structure, with symmetrical body alignment in the frontal plane, enabling the robot to maintain static balance with straight knees. The research team developed a reinforcement learning policy that can be deployed directly to hardware with zero-shot transfer for velocity-tracking walking tasks. To further enhance locomotion energy efficiency, they proposed an end-to-end reinforcement learning algorithm that encourages the robot to exploit passive dynamics (such as the natural swing of the legs) to reduce active control energy consumption. Experimental results show that this passive policy reduces the cost of transport by 50% in simulation and by 31% in real hardware tests.
+
+## Content
+### Hardware Design
+- Duke Humanoid is an open-source humanoid robot platform with 10 degrees of freedom, designed as a scalable locomotion research platform.
+- The design mimics human physiological structure, with symmetrical body alignment in the frontal plane, allowing the robot to maintain static balance with straight knees.
+
+### Control Method
+- Developed a reinforcement learning policy that can be deployed directly to hardware with zero-shot transfer for velocity-tracking walking tasks.
+- Proposed an end-to-end reinforcement learning algorithm that, through reward function design, encourages the robot to exploit passive dynamics (such as the natural swing of the legs) to reduce active control energy consumption.
+
+### Experimental Setup and Results
+- Experiments were conducted in both simulation and real hardware environments.
+- In simulation, the passive policy reduced the cost of transport by 50%.
+- In real-world tests, the cost of transport was reduced by 31%.
+- All code and hardware designs are open-sourced, with the project website at http://generalroboticslab.com/DukeHumanoidv1/ .
+
+## 개요
+Duke Humanoid는 이족 보행 연구를 위해 설계된 오픈소스 휴머노이드 로봇으로, 10개의 자유도를 보유하고 있습니다. 하드웨어 설계는 인체 생리 구조를 모방하며, 관상면에서 대칭적인 신체 정렬을 채택하여 로봇이 무릎을 편 상태에서도 정적 균형을 유지할 수 있게 합니다. 연구팀은 강화 학습 정책을 개발하여 하드웨어에 직접 제로샷 배포가 가능하며, 속도 추적 보행 작업을 수행합니다. 운동 효율을 더욱 향상시키기 위해, 그들은 능동 제어 에너지 소비를 줄이기 위해 수동 역학(예: 스윙 다리의 자연스러운 움직임)을 활용하도록 장려하는 엔드투엔드 강화 학습 알고리즘을 제안했습니다. 실험 결과, 이 수동 정책은 시뮬레이션 환경에서 운송 비용을 50% 줄였고, 실제 하드웨어 테스트에서는 31% 줄였습니다.
+
+## 핵심 내용
+### 하드웨어 설계
+- Duke Humanoid는 10자유도 오픈소스 휴머노이드 로봇 플랫폼으로, 확장 가능한 로코모션 연구 플랫폼으로 설계되었습니다.
+- 설계는 인체 생리 구조를 모방하며, 관상면에서 대칭적인 신체 정렬을 채택하여 로봇이 무릎을 편 상태에서도 정적 균형을 유지할 수 있게 합니다.
+
+### 제어 방법
+- 하드웨어에 직접 제로샷 배포가 가능한 강화 학습 정책을 개발하여 속도 추적 보행 작업을 수행합니다.
+- 보상 함수 설계를 통해 로봇이 수동 역학(예: 스윙 다리의 자연스러운 움직임)을 활용하도록 장려하는 엔드투엔드 강화 학습 알고리즘을 제안하여 능동 제어 에너지 소비를 줄입니다.
+
+### 실험 설정 및 결과
+- 실험은 시뮬레이션 환경과 실제 하드웨어에서 각각 수행되었습니다.
+- 시뮬레이션에서 수동 정책은 운송 비용(cost of transport)을 50% 줄였습니다.
+- 실제 세계 테스트에서 운송 비용은 31% 줄었습니다.
+- 모든 코드와 하드웨어 설계는 오픈소스로 제공되며, 프로젝트 웹사이트는 http://generalroboticslab.com/DukeHumanoidv1/ 입니다.

@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.21363v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.21363v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (745 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,23 @@ sources:
 ## Overview
 Reinforcement learning (RL) is widely used for humanoid control, with on-policy methods such as Proximal Policy Optimization (PPO) enabling robust training via large-scale parallel simulation and, in some cases, zero-shot deployment to real robots. However, the low sample efficiency of on-policy algorithms limits safe adaptation to new environments. Although off-policy RL and model-based RL have shown improved sample efficiency, the gap between large-scale pretraining and efficient finetuning on humanoids still exists. In this paper, we find that off-policy Soft Actor-Critic (SAC), with large-batch update and a high Update-To-Data (UTD) ratio, reliably supports large-scale pretraining of humanoid locomotion policies, achieving zero-shot deployment on real robots. For adaptation, we demonstrate that these SAC-pretrained policies can be finetuned in new environments and out-of-distribution tasks using model-based methods. Data collection in the new environment executes a deterministic policy while stochastic exploration is instead confined to a physics-informed world model. This separation mitigates the risks of random exploration during adaptation while preserving exploratory coverage for improvement. Overall, the approach couples the wall-clock efficiency of large-scale simulation during pretraining with the sample efficiency of model-based learning during fine-tuning. For code and videos, see https://lift-humanoid.github.io
 
-## 개요
-강화 학습(RL)은 인간형 로봇 제어에 널리 사용되며, Proximal Policy Optimization(PPO)과 같은 온-폴리시 방법은 대규모 병렬 시뮬레이션을 통한 강건한 훈련과 경우에 따라 실제 로봇으로의 제로샷 배치를 가능하게 합니다. 그러나 온-폴리시 알고리즘의 낮은 샘플 효율성은 새로운 환경에 대한 안전한 적응을 제한합니다. 오프-폴리시 RL과 모델 기반 RL이 샘플 효율성을 개선했음에도 불구하고, 인간형 로봇에서 대규모 사전 훈련과 효율적인 미세 조정 사이의 격차는 여전히 존재합니다. 본 논문에서는 대규모 배치 업데이트와 높은 UTD(Update-To-Data) 비율을 갖춘 오프-폴리시 Soft Actor-Critic(SAC)이 인간형 로봇 보행 정책의 대규모 사전 훈련을 안정적으로 지원하며, 실제 로봇에서 제로샷 배치를 달성함을 발견했습니다. 적응을 위해, 이러한 SAC 사전 훈련된 정책이 모델 기반 방법을 사용하여 새로운 환경과 분포 외 과제에서 미세 조정될 수 있음을 입증합니다. 새로운 환경에서의 데이터 수집은 결정론적 정책을 실행하는 반면, 확률적 탐색은 물리 정보 기반 세계 모델에 국한됩니다. 이러한 분리는 적응 중 무작위 탐색의 위험을 완화하면서도 개선을 위한 탐색 범위를 유지합니다. 전반적으로, 이 접근 방식은 사전 훈련 중 대규모 시뮬레이션의 벽시계 효율성과 미세 조정 중 모델 기반 학습의 샘플 효율성을 결합합니다. 코드와 비디오는 https://lift-humanoid.github.io 에서 확인할 수 있습니다.
-
-## 핵심 내용
-강화 학습(RL)은 인간형 로봇 제어에 널리 사용되며, Proximal Policy Optimization(PPO)과 같은 온-폴리시 방법은 대규모 병렬 시뮬레이션을 통한 강건한 훈련과 경우에 따라 실제 로봇으로의 제로샷 배치를 가능하게 합니다. 그러나 온-폴리시 알고리즘의 낮은 샘플 효율성은 새로운 환경에 대한 안전한 적응을 제한합니다. 오프-폴리시 RL과 모델 기반 RL이 샘플 효율성을 개선했음에도 불구하고, 인간형 로봇에서 대규모 사전 훈련과 효율적인 미세 조정 사이의 격차는 여전히 존재합니다. 본 논문에서는 대규모 배치 업데이트와 높은 UTD(Update-To-Data) 비율을 갖춘 오프-폴리시 Soft Actor-Critic(SAC)이 인간형 로봇 보행 정책의 대규모 사전 훈련을 안정적으로 지원하며, 실제 로봇에서 제로샷 배치를 달성함을 발견했습니다. 적응을 위해, 이러한 SAC 사전 훈련된 정책이 모델 기반 방법을 사용하여 새로운 환경과 분포 외 과제에서 미세 조정될 수 있음을 입증합니다. 새로운 환경에서의 데이터 수집은 결정론적 정책을 실행하는 반면, 확률적 탐색은 물리 정보 기반 세계 모델에 국한됩니다. 이러한 분리는 적응 중 무작위 탐색의 위험을 완화하면서도 개선을 위한 탐색 범위를 유지합니다. 전반적으로, 이 접근 방식은 사전 훈련 중 대규모 시뮬레이션의 벽시계 효율성과 미세 조정 중 모델 기반 학습의 샘플 효율성을 결합합니다. 코드와 비디오는 https://lift-humanoid.github.io 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.21363v3
+
+## 개요
+본 논문은 휴머노이드 로봇 제어에서 대규모 사전 학습과 효율적인 미세 조정 사이의 격차 문제를 해결하기 위해, SAC와 모델 기반 방법을 결합한 솔루션을 제안한다. 연구에 따르면, 대규모 배치 업데이트와 높은 UTD 비율을 사용하는 SAC 알고리즘은 휴머노이드 로봇 운동 정책의 대규모 사전 학습을 안정적으로 지원하고 제로샷 배포를 실현할 수 있다. 미세 조정 단계에서는 모델 기반 세계 모델을 활용하여 무작위 탐색을 수행하면서도 결정론적 정책 실행을 유지함으로써, 새로운 환경에 적응할 때 무작위 탐색의 위험을 줄이고 샘플 효율성을 향상시킨다. 전체 방법은 사전 학습 단계의 대규모 시뮬레이션 효율성과 미세 조정 단계의 샘플 효율성을 동시에 고려한다.
+
+## 핵심 내용
+### 방법 개요
+본 논문은 휴머노이드 로봇 제어에서 대규모 사전 학습과 효율적인 미세 조정 사이의 격차를 해결하기 위해 2단계 방법을 제안한다:
+- **사전 학습 단계**: 오프폴리시(off-policy) Soft Actor-Critic (SAC) 알고리즘을 사용하여, 대규모 배치 업데이트와 높은 Update-To-Data (UTD) 비율을 통해 병렬 시뮬레이션 환경에서 대규모 훈련을 수행하고, 실제 로봇에 제로샷 배포를 실현한다.
+- **미세 조정 단계**: 모델 기반 방법을 활용하여 사전 학습된 정책을 미세 조정한다. 새로운 환경에서는 데이터 수집 시 결정론적 정책 실행을 사용하고, 무작위 탐색은 물리 기반 세계 모델 내로 제한한다. 이러한 분리 설계는 적응 과정에서 무작위 탐색의 위험을 줄이면서도 개선에 필요한 탐색 범위를 유지한다.
+
+### 실험 설정 및 주요 수치
+- 실험은 휴머노이드 로봇 제어 작업을 기반으로 하며, 대규모 병렬 시뮬레이션을 사용하여 사전 학습을 수행한다.
+- 사전 학습 단계에서는 SAC 알고리즘을 사용하며, UTD 비율은 높은 값으로 설정된다 (구체적인 수치는 초록에 명시되지 않음).
+- 미세 조정 단계는 새로운 환경 및 분포 외 작업에서 수행되어 방법의 적응 능력을 검증한다.
+- 코드와 비디오는 오픈소스로 공개되어 있으며, 자세한 내용은 https://lift-humanoid.github.io 에서 확인할 수 있다.
+
+### 결론
+본 방법은 대규모 시뮬레이션 사전 학습과 모델 기반 미세 조정을 결합함으로써, 휴머노이드 로봇 제어에서 대규모 사전 학습과 효율적인 미세 조정 사이의 격차를 효과적으로 메우고, 제로샷 배포와 샘플 효율적인 적응을 실현한다.

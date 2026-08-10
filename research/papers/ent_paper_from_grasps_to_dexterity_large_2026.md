@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.30749v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.30749v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1023 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -95,11 +96,35 @@ sources:
 ## Overview
 Large-scale dexterous grasp datasets encode rich priors over hand-object interaction, but their use has largely been confined to grasp generation and pick-and-place manipulation. We study whether such data can instead support functional dexterity in articulated tool use, where a robot must acquire a tool, maintain contact, and operate its functional moving parts. We adapt a hierarchical imitation learning framework that combines high-level hand sub-goal prediction with a low-level goal-conditioned controller. We construct a 355k-trajectory grasp-pretraining dataset from large-scale dexterous grasp annotations and use it to pretrain the low-level controller. The controller is then fine-tuned on downstream task demonstrations. To evaluate this setting, we introduce DexCraft, a simulation benchmark with six articulated tool-use tasks requiring coordinated finger motion. Across simulation and real-world experiments, our approach outperforms end-to-end diffusion policy baselines and hierarchical policies trained from scratch. In the real world, it improves full-task success by 33.3 percentage points over DP3. These results show that grasp datasets can serve not only as resources for grasp synthesis, but also as scalable pretraining data for contact-rich dexterous manipulation. Videos are shown on https://yingyuan0414.github.io/grasp2dexterity/ .
 
-## 개요
-대규모 정밀 파지 데이터셋은 손-물체 상호작용에 대한 풍부한 사전 지식을 인코딩하지만, 그 활용은 주로 파지 생성과 집어 옮기기 조작에 국한되어 왔습니다. 본 연구에서는 이러한 데이터가 오히려 관절 도구 사용에서의 기능적 정밀성을 지원할 수 있는지 조사합니다. 여기서 로봇은 도구를 획득하고, 접촉을 유지하며, 기능적 움직임 부품을 작동해야 합니다. 우리는 고수준의 손 하위 목표 예측과 저수준의 목표 조건 제어기를 결합한 계층적 모방 학습 프레임워크를 적용합니다. 대규모 정밀 파지 주석에서 355k 궤적의 파지 사전 학습 데이터셋을 구축하고, 이를 저수준 제어기 사전 학습에 사용합니다. 그런 다음 제어기는 하위 작업 시연에 대해 미세 조정됩니다. 이 설정을 평가하기 위해, 우리는 조정된 손가락 움직임이 필요한 여섯 가지 관절 도구 사용 작업을 포함하는 시뮬레이션 벤치마크인 DexCraft를 소개합니다. 시뮬레이션 및 실제 실험 전반에 걸쳐, 우리의 접근 방식은 종단간 확산 정책 기준선과 처음부터 학습된 계층적 정책보다 우수한 성능을 보입니다. 실제 환경에서는 DP3 대비 전체 작업 성공률을 33.3% 포인트 향상시킵니다. 이러한 결과는 파지 데이터셋이 파지 합성을 위한 자원뿐만 아니라 접촉이 풍부한 정밀 조작을 위한 확장 가능한 사전 학습 데이터로도 사용될 수 있음을 보여줍니다. 비디오는 https://yingyuan0414.github.io/grasp2dexterity/ 에서 확인할 수 있습니다.
-
-## 핵심 내용
-대규모 정밀 파지 데이터셋은 손-물체 상호작용에 대한 풍부한 사전 지식을 인코딩하지만, 그 활용은 주로 파지 생성과 집어 옮기기 조작에 국한되어 왔습니다. 본 연구에서는 이러한 데이터가 오히려 관절 도구 사용에서의 기능적 정밀성을 지원할 수 있는지 조사합니다. 여기서 로봇은 도구를 획득하고, 접촉을 유지하며, 기능적 움직임 부품을 작동해야 합니다. 우리는 고수준의 손 하위 목표 예측과 저수준의 목표 조건 제어기를 결합한 계층적 모방 학습 프레임워크를 적용합니다. 대규모 정밀 파지 주석에서 355k 궤적의 파지 사전 학습 데이터셋을 구축하고, 이를 저수준 제어기 사전 학습에 사용합니다. 그런 다음 제어기는 하위 작업 시연에 대해 미세 조정됩니다. 이 설정을 평가하기 위해, 우리는 조정된 손가락 움직임이 필요한 여섯 가지 관절 도구 사용 작업을 포함하는 시뮬레이션 벤치마크인 DexCraft를 소개합니다. 시뮬레이션 및 실제 실험 전반에 걸쳐, 우리의 접근 방식은 종단간 확산 정책 기준선과 처음부터 학습된 계층적 정책보다 우수한 성능을 보입니다. 실제 환경에서는 DP3 대비 전체 작업 성공률을 33.3% 포인트 향상시킵니다. 이러한 결과는 파지 데이터셋이 파지 합성을 위한 자원뿐만 아니라 접촉이 풍부한 정밀 조작을 위한 확장 가능한 사전 학습 데이터로도 사용될 수 있음을 보여줍니다. 비디오는 https://yingyuan0414.github.io/grasp2dexterity/ 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.30749v1
+
+## 개요
+이 연구는 관절형 도구 사용에서의 영리한 파지 데이터셋의 잠재력을 탐구하며, 로봇이 도구를 잡고, 접촉을 유지하며, 움직이는 부품을 조작해야 하는 상황을 다룹니다. 저자들은 고수준 손 하위 목표 예측과 저수준 목표 조건 제어기를 포함하는 계층적 모방 학습 프레임워크를 채택했습니다. 그들은 대규모 영리한 파지 주석에서 355k 궤적의 파지 사전 학습 데이터셋을 구축하여 저수준 제어기를 사전 학습한 후, 하위 작업 데모에서 미세 조정했습니다. 이 설정을 평가하기 위해, 그들은 손가락 움직임의 조정이 필요한 여섯 가지 관절형 도구 사용 작업을 포함하는 DexCraft 시뮬레이션 벤치마크를 도입했습니다. 실험 결과, 이 방법은 시뮬레이션 및 실제 환경 모두에서 엔드투엔드 확산 정책 기준선과 처음부터 학습한 계층적 정책보다 우수했으며, 실제 세계 전체 작업 성공률은 DP3보다 33.3% 포인트 향상되었습니다.
+
+## 핵심 내용
+### 방법
+- 고수준 모듈이 손 하위 목표(예: 손가락 위치)를 예측하고, 저수준 모듈이 목표 조건 제어기로 작동하여 구체적인 관절 동작을 생성하는 계층적 모방 학습 프레임워크를 채택.
+- DexGraspNet과 같은 대규모 영리한 파지 주석에서 355k 궤적을 추출하여 파지 사전 학습 데이터셋을 구축하고, 이를 통해 저수준 제어기를 사전 학습.
+- 사전 학습 후, 제어기는 하위 작업 데모 데이터에서 미세 조정되어 구체적인 도구 조작 요구에 적응.
+
+### 아키텍처
+- 고수준 하위 목표 예측기: Transformer 기반으로, 현재 손 상태와 작업 목표를 입력으로 받아 다음 하위 목표를 출력.
+- 저수준 제어기: 확산 정책(diffusion policy) 기반으로, 하위 목표와 현재 관측을 조건으로 손가락 관절 동작 시퀀스를 생성.
+- 사전 학습 단계에서는 저수준 제어기만 학습하고, 미세 조정 단계에서는 고수준 및 저수준 모듈을 공동 최적화.
+
+### 실험 설정
+- 시뮬레이션 벤치마크 DexCraft: 가위, 플라이어, 렌치 등과 같은 여섯 가지 관절형 도구 사용 작업을 포함하며, 손가락 움직임의 조정이 필요한 파지, 조작, 해제를 수행.
+- 기준선 방법: 엔드투엔드 확산 정책(DP3), 처음부터 학습한 계층적 정책(사전 학습 없음).
+- 실제 세계 실험: 영리한 손(예: Allegro Hand)을 사용하여 유사한 작업을 수행하고 전체 작업 성공률을 평가.
+
+### 주요 수치
+- 사전 학습 데이터셋 규모: 355k 궤적.
+- 시뮬레이션 실험에서, 이 방법은 여섯 가지 작업에서 평균 성공률이 DP3보다 25.4% 포인트 높음.
+- 실제 세계 실험에서, 전체 작업 성공률은 DP3보다 33.3% 포인트 향상(약 40%에서 약 73%로).
+- 절제 실험에 따르면, 사전 학습 데이터 양이 많을수록 하위 작업 성능 향상이 더 두드러짐.
+
+### 결론
+- 영리한 파지 데이터셋은 파지 합성뿐만 아니라 접촉이 풍부한 영리한 조작을 위한 확장 가능한 사전 학습 데이터로도 사용될 수 있음.
+- 계층적 사전 학습 전략은 데이터 희소성 문제를 효과적으로 완화하여 로봇이 파지 사전 지식에서 복잡한 도구 조작으로 지식을 전이할 수 있게 함.
+- 비디오 데모는 프로젝트 페이지에서 확인 가능: https://yingyuan0414.github.io/grasp2dexterity/

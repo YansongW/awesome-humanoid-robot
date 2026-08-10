@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.00678v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.00678v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (878 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,26 @@ sources:
 ## Overview
 Reinforcement learning has shown strong promise for quadrupedal agile locomotion, even with proprioception-only sensing. In practice, however, sim-to-real gap and reward overfitting in complex terrains can produce policies that fail to transfer, while physical validation remains risky and inefficient. To address these challenges, we introduce a unified framework encompassing a Mixture-of-Experts (MoE) locomotion policy for robust multi-terrain representation with RoboGauge, a predictive assessment suite that quantifies sim-to-real transferability. The MoE policy employs a gated set of specialist experts to decompose latent terrain and command modeling, achieving superior deployment robustness and generalization via proprioception alone. RoboGauge further provides multi-dimensional proprioception-based metrics via sim-to-sim tests over terrains, difficulty levels, and domain randomizations, enabling reliable MoE policy selection without extensive physical trials. Experiments on a Unitree Go2 demonstrate robust locomotion on unseen challenging terrains, including snow, sand, stairs, slopes, and 30 cm obstacles. In dedicated high-speed tests, the robot reaches 4 m/s and exhibits an emergent narrow-width gait associated with improved stability at high velocity.
 
-## 개요
-강화 학습은 고유 감각(proprioception)만을 활용한 센싱에서도 사족 보행 로봇의 민첩한 이동에 강력한 가능성을 보여주고 있습니다. 그러나 실제 환경에서는 시뮬레이션-실제 간극(sim-to-real gap)과 복잡한 지형에서의 보상 과적합(reward overfitting)으로 인해 정책이 전이에 실패할 수 있으며, 물리적 검증은 여전히 위험하고 비효율적입니다. 이러한 문제를 해결하기 위해, 우리는 로버스트한 다중 지형 표현을 위한 Mixture-of-Experts(MoE) 이동 정책과 시뮬레이션-실제 전이 가능성을 정량화하는 예측 평가 도구인 RoboGauge를 포함하는 통합 프레임워크를 소개합니다. MoE 정책은 게이트(gated) 방식의 전문가 집합을 활용하여 잠재 지형 및 명령 모델링을 분해함으로써, 고유 감각만으로도 뛰어난 배포 로버스트성과 일반화를 달성합니다. RoboGauge는 지형, 난이도, 도메인 무작위화에 걸친 시뮬레이션-시뮬레이션 테스트를 통해 다차원의 고유 감각 기반 메트릭을 제공하여, 광범위한 물리적 실험 없이도 신뢰할 수 있는 MoE 정책 선택을 가능하게 합니다. Unitree Go2에서의 실험은 눈, 모래, 계단, 경사로, 30cm 장애물 등 보지 못한 도전적인 지형에서 로버스트한 이동을 입증했습니다. 전용 고속 테스트에서 로봇은 4m/s에 도달했으며, 고속에서 안정성 향상과 관련된 좁은 폭의 보행(narrow-width gait)이 나타났습니다.
-
-## 핵심 내용
-강화 학습은 고유 감각(proprioception)만을 활용한 센싱에서도 사족 보행 로봇의 민첩한 이동에 강력한 가능성을 보여주고 있습니다. 그러나 실제 환경에서는 시뮬레이션-실제 간극(sim-to-real gap)과 복잡한 지형에서의 보상 과적합(reward overfitting)으로 인해 정책이 전이에 실패할 수 있으며, 물리적 검증은 여전히 위험하고 비효율적입니다. 이러한 문제를 해결하기 위해, 우리는 로버스트한 다중 지형 표현을 위한 Mixture-of-Experts(MoE) 이동 정책과 시뮬레이션-실제 전이 가능성을 정량화하는 예측 평가 도구인 RoboGauge를 포함하는 통합 프레임워크를 소개합니다. MoE 정책은 게이트(gated) 방식의 전문가 집합을 활용하여 잠재 지형 및 명령 모델링을 분해함으로써, 고유 감각만으로도 뛰어난 배포 로버스트성과 일반화를 달성합니다. RoboGauge는 지형, 난이도, 도메인 무작위화에 걸친 시뮬레이션-시뮬레이션 테스트를 통해 다차원의 고유 감각 기반 메트릭을 제공하여, 광범위한 물리적 실험 없이도 신뢰할 수 있는 MoE 정책 선택을 가능하게 합니다. Unitree Go2에서의 실험은 눈, 모래, 계단, 경사로, 30cm 장애물 등 보지 못한 도전적인 지형에서 로버스트한 이동을 입증했습니다. 전용 고속 테스트에서 로봇은 4m/s에 도달했으며, 고속에서 안정성 향상과 관련된 좁은 폭의 보행(narrow-width gait)이 나타났습니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.00678v4
+
+## 개요
+강화 학습 정책이 복잡한 지형에서 시뮬레이션-실제 격차와 보상 과적합으로 인해 전이에 실패하는 문제를 해결하기 위해, 본 논문은 통합 프레임워크를 제안한다: MoE 운동 정책은 게이팅 전문가 네트워크를 통해 잠재적 지형 및 명령 모델링을 분해하고, 고유 감각만으로 강건한 다중 지형 표현을 구현한다; RoboGauge 스위트는 시뮬레이션-시뮬레이션 테스트를 통해 지형, 난이도, 도메인 무작위화 등 다차원에서 고유 감각 기반 전이 가능성 지표를 제공하여, 대규모 물리 실험 없이도 정책을 안정적으로 선별할 수 있다. 실험 결과, 이 프레임워크는 Unitree Go2에서 눈밭, 모래밭, 계단, 경사로 및 30cm 장애물 등 미경험 지형을 성공적으로 처리했으며, 고속 테스트에서 4m/s에 도달하고 고속 안정성과 관련된 좁은 보폭 보행을 나타냈다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **MoE 운동 정책**: 게이팅 메커니즘을 사용하여 여러 전문가 네트워크를 결합하며, 각 전문가는 특정 지형 또는 명령 패턴의 모델링에 특화된다. 게이팅 네트워크는 현재 고유 감각 입력에 따라 활성화할 전문가를 동적으로 선택하여 암시적 지형 분해와 일반화를 구현한다.
+- **RoboGauge 평가 스위트**: 시뮬레이션-시뮬레이션 테스트를 통해 다양한 지형, 난이도 수준 및 도메인 무작위화 조건에서 고유 감각 기반 다차원 전이 가능성 지표(예: 동작 차이, 상태 궤적 편차 등)를 계산하여, 물리 실험 없이도 정책의 시뮬레이션-실제 성능을 예측한다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: Unitree Go2 사족 로봇, 고유 감각(관절 각도, 각속도, IMU 데이터)만 사용.
+- **훈련 환경**: Isaac Gym 시뮬레이터 기반, 훈련 시 도메인 무작위화(질량, 마찰, 지연 등 파라미터 교란) 도입.
+- **테스트 지형**: 눈밭, 모래밭, 계단, 경사로, 30cm 장애물 등 미경험 지형과 전용 고속 테스트 시나리오 포함.
+
+### 주요 결과
+- **강건성**: 미경험 복잡 지형에서 성공적으로 배포되었으며, 뚜렷한 실패나 불안정이 발생하지 않았다.
+- **고속 성능**: 평평한 지형에서 최고 속도 4m/s에 도달했으며, 자발적으로 좁은 보폭 보행(보폭 폭 감소)이 나타났고, 이 보행은 고속에서의 안정성 향상과 관련이 있다.
+- **전이 신뢰성**: RoboGauge가 예측한 전이 성공률은 실제 물리 실험과 높은 일치를 보여, 물리적 시행착오 횟수를 효과적으로 줄였다.
+
+### 결론
+본 논문에서 제안한 MoE+RoboGauge 프레임워크는 사족 로봇의 강건한 운동 정책에 대한 시뮬레이션-실제 전이를 위한 신뢰할 수 있는 솔루션을 제공하며, 암시적 지형 분해와 예측적 평가를 통해 정책의 일반화 능력과 배포 효율성을 크게 향상시킨다.

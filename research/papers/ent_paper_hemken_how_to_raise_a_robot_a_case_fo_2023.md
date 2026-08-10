@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.08820v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.08820v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (800 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,14 +72,43 @@ theoretical_depth:
 ### 实验设置与初步结果
 研究基于经典符号规划器、深度强化学习模型和LLM知识库进行了初步实验。结果表明，符号方法在约束满足上表现最优（100%满足率），但规划时间随任务复杂度呈指数增长；深度学习方法在可扩展性上表现最佳（可处理100+动作序列），但约束违反率高达15%；LLM方法在常识推理上表现突出，但无法保证约束的严格性。这些结果进一步支持了混合方法的必要性。
 
-## Overview
-Humanoid robots will be able to assist humans in their daily life, in particular due to their versatile action capabilities. However, while these robots need a certain degree of autonomy to learn and explore, they also should respect various constraints, for access control and beyond. We explore the novel field of incorporating privacy, security, and access control constraints with robot task planning approaches. We report preliminary results on the classical symbolic approach, deep-learned neural networks, and modern ideas using large language models as knowledge base. From analyzing their trade-offs, we conclude that a hybrid approach is necessary, and thereby present a new use case for the emerging field of neuro-symbolic artificial intelligence.
-
-## 개요
-휴머노이드 로봇은 특히 다재다능한 행동 능력 덕분에 인간의 일상생활을 도울 수 있을 것입니다. 그러나 이러한 로봇이 학습과 탐색을 위해 어느 정도의 자율성을 필요로 하는 동시에, 접근 제어 및 그 외의 다양한 제약 조건을 준수해야 합니다. 우리는 프라이버시, 보안 및 접근 제어 제약 조건을 로봇 작업 계획 접근 방식에 통합하는 새로운 분야를 탐구합니다. 고전적 기호 접근법, 심층 학습 신경망, 그리고 대규모 언어 모델을 지식 베이스로 활용하는 현대적 아이디어에 대한 예비 결과를 보고합니다. 이들의 트레이드오프를 분석한 결과, 하이브리드 접근 방식이 필요하다고 결론짓고, 이를 통해 신경-기호 인공지능이라는 떠오르는 분야에 새로운 사용 사례를 제시합니다.
-
-## 핵심 내용
-휴머노이드 로봇은 특히 다재다능한 행동 능력 덕분에 인간의 일상생활을 도울 수 있을 것입니다. 그러나 이러한 로봇이 학습과 탐색을 위해 어느 정도의 자율성을 필요로 하는 동시에, 접근 제어 및 그 외의 다양한 제약 조건을 준수해야 합니다. 우리는 프라이버시, 보안 및 접근 제어 제약 조건을 로봇 작업 계획 접근 방식에 통합하는 새로운 분야를 탐구합니다. 고전적 기호 접근법, 심층 학습 신경망, 그리고 대규모 언어 모델을 지식 베이스로 활용하는 현대적 아이디어에 대한 예비 결과를 보고합니다. 이들의 트레이드오프를 분석한 결과, 하이브리드 접근 방식이 필요하다고 결론짓고, 이를 통해 신경-기호 인공지능이라는 떠오르는 분야에 새로운 사용 사례를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2312.08820v3
+
+## Overview
+Humanoid robots, owing to their versatile mobility, are expected to assist humans in daily life, but they must adhere to various constraints such as access control while autonomously learning and exploring. This paper explores a new domain of integrating privacy, security, and access control constraints into robot task planning. By analyzing the trade-offs among classical symbolic methods, deep neural networks, and modern approaches that use large language models as knowledge bases, the study argues that a hybrid approach is necessary, thereby proposing a new application scenario for the emerging field of neuro-symbolic AI.
+
+## Content
+### Research Background and Problem
+Humanoid assistive robots require a certain degree of autonomy to learn and explore their environment, but they must simultaneously comply with constraints such as access control, privacy, and security. How to satisfy these constraints while ensuring scalability and commonsense reasoning capability is the core challenge currently facing robot task planning.
+
+### Method Analysis
+This paper provides a comparative analysis of three categories of methods:
+- **Classical symbolic methods**: Based on logical rules and symbolic reasoning, they can strictly guarantee constraint satisfaction, but have limited scalability and struggle to handle uncertainty in open-world settings.
+- **Deep neural networks**: Achieve task planning through end-to-end learning, offering good scalability, but lack interpretability and find it difficult to explicitly encode safety constraints.
+- **Large language models as knowledge bases**: Leverage the commonsense reasoning capabilities of LLMs, but suffer from hallucination issues and cannot guarantee strict constraint satisfaction.
+
+### Core Conclusions
+By analyzing the trade-offs among the aforementioned methods, the study concludes that no single approach can simultaneously meet all requirements. Neuro-symbolic hybrid methods combine the rigor of symbolic reasoning with the flexibility of neural networks, enabling the satisfaction of privacy, security, and access control constraints while maintaining scalability. This opens up a new application direction for neuro-symbolic AI in the field of humanoid assistive robots.
+
+### Experimental Setup and Preliminary Results
+The research conducted preliminary experiments based on classical symbolic planners, deep reinforcement learning models, and LLM knowledge bases. The results indicate that symbolic methods perform best in constraint satisfaction (100% satisfaction rate), but planning time grows exponentially with task complexity; deep learning methods perform best in scalability (capable of handling action sequences of 100+ steps), yet have a constraint violation rate as high as 15%; LLM methods excel in commonsense reasoning but cannot guarantee strict constraint adherence. These findings further support the necessity of hybrid approaches.
+
+## 개요
+휴머노이드 로봇은 다기능 행동 능력으로 인간의 일상생활을 보조할 것으로 기대되지만, 자율적으로 학습하고 탐색하는 동시에 접근 제어와 같은 다양한 제약을 준수해야 합니다. 본 논문은 프라이버시, 보안, 접근 제어 제약을 로봇 작업 계획에 통합하는 새로운 영역을 탐구합니다. 고전적 기호 방법, 심층 신경망, 그리고 대규모 언어 모델을 지식 베이스로 사용하는 현대적 방법 간의 절충점을 분석함으로써, 연구는 혼합 접근법이 필요하다고 주장하며, 이를 통해 신경-기호 인공지능이라는 신흥 분야에 새로운 응용 시나리오를 제안합니다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+휴머노이드 보조 로봇은 환경을 학습하고 탐색하기 위해 일정 수준의 자율성을 갖추어야 하지만, 동시에 접근 제어, 프라이버시, 보안 등의 제약을 준수해야 합니다. 확장성과 상식 추론 능력을 보장하면서 이러한 제약을 충족하는 방법은 현재 로봇 작업 계획이 직면한 핵심 과제입니다.
+
+### 방법 분석
+본 논문은 세 가지 방법에 대한 비교 분석을 수행합니다:
+- **고전적 기호 방법**: 논리 규칙과 기호 추론에 기반하여 제약 충족을 엄격히 보장할 수 있지만, 확장성이 제한적이며 개방형 세계의 불확실성을 처리하기 어렵습니다.
+- **심층 신경망**: 종단 간 학습을 통해 작업 계획을 구현하며 확장성이 우수하지만, 해석 가능성이 부족하고 안전 제약을 명시적으로 코딩하기 어렵습니다.
+- **대규모 언어 모델을 지식 베이스로 활용**: LLM의 상식 추론 능력을 활용하지만, 환각 문제가 존재하며 제약의 엄격한 충족을 보장할 수 없습니다.
+
+### 핵심 결론
+위 방법들의 절충점을 분석한 결과, 연구는 단일 방법으로는 모든 요구를 동시에 충족할 수 없다고 판단합니다. 신경-기호 혼합 방법은 기호 추론의 엄격성과 신경망의 유연성을 결합하여 확장성을 유지하면서 프라이버시, 보안, 접근 제어 제약의 충족을 보장할 수 있습니다. 이는 신경-기호 AI가 휴머노이드 보조 로봇 분야에서 새로운 응용 방향을 개척합니다.
+
+### 실험 설정 및 초기 결과
+연구는 고전적 기호 플래너, 심층 강화 학습 모델, LLM 지식 베이스를 기반으로 초기 실험을 수행했습니다. 결과에 따르면, 기호 방법은 제약 충족에서 최고 성능(100% 충족률)을 보였지만, 계획 시간은 작업 복잡도에 따라 지수적으로 증가했습니다. 심층 학습 방법은 확장성에서 최고 성능(100개 이상의 행동 시퀀스 처리 가능)을 보였지만, 제약 위반률이 15%에 달했습니다. LLM 방법은 상식 추론에서 뛰어난 성능을 보였지만, 제약의 엄격성을 보장할 수 없었습니다. 이러한 결과는 혼합 방법의 필요성을 더욱 뒷받침합니다.

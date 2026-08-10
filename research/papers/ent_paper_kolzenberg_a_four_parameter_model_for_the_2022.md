@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2112.13671v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2112.13671v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (576 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,26 @@ theoretical_depth:
 ## Overview
 Accurately predicting aging of lithium-ion batteries would help to prolong their lifespan, but remains a challenge owing to the complexity and interrelation of different aging mechanisms. As a result, aging prediction often relies on empirical or data-driven approaches, which obtain their performance from analyzing large datasets. However, these datasets are expensive to generate and the models are agnostic of the underlying physics and thus difficult to extrapolate to new conditions. In this article, a physical model is used to predict capacity fade caused by solid-electrolyte interphase (SEI) growth in 62 automotive cells, aged with 28 different protocols. Three protocols parametrize the time, current and temperature dependence of the model, the state of charge dependence results from the anode's open circuit voltage curve. The model validation with the remaining 25 protocols shows a high predictivity with a root-mean squared error of $1.28\%$. A case study with the so-validated model shows that the operating window, i.e. maximum and minimum state of charge, has the largest impact on SEI growth, while the influence of the applied current is almost negligible. Thereby the presented model is a promising approach to better understand, quantify and predict aging of lithium-ion batteries.
 
-## 개요
-리튬이온 배터리의 노화를 정확히 예측하면 수명을 연장하는 데 도움이 될 수 있지만, 다양한 노화 메커니즘의 복잡성과 상호 연관성으로 인해 여전히 어려운 과제입니다. 그 결과, 노화 예측은 종종 대규모 데이터 세트를 분석하여 성능을 얻는 경험적 또는 데이터 기반 접근 방식에 의존합니다. 그러나 이러한 데이터 세트를 생성하는 데는 비용이 많이 들고, 모델은 기본 물리 법칙을 인식하지 못하므로 새로운 조건으로 확장하기 어렵습니다. 본 논문에서는 28가지 다른 프로토콜로 노화된 62개의 자동차용 셀에서 고체-전해질 계면(SEI) 성장으로 인한 용량 감소를 예측하기 위해 물리적 모델을 사용합니다. 세 가지 프로토콜은 모델의 시간, 전류 및 온도 의존성을 매개변수화하며, 충전 상태 의존성은 양극의 개방 회로 전압 곡선에서 비롯됩니다. 나머지 25개 프로토콜을 사용한 모델 검증 결과, 평균 제곱근 오차가 $1.28\%$로 높은 예측력을 보였습니다. 이렇게 검증된 모델을 사용한 사례 연구에서는 작동 창, 즉 최대 및 최소 충전 상태가 SEI 성장에 가장 큰 영향을 미치는 반면, 인가 전류의 영향은 거의 무시할 수 있음을 보여줍니다. 따라서 제시된 모델은 리튬이온 배터리의 노화를 더 잘 이해하고 정량화하며 예측할 수 있는 유망한 접근 방식입니다.
-
-## 핵심 내용
-리튬이온 배터리의 노화를 정확히 예측하면 수명을 연장하는 데 도움이 될 수 있지만, 다양한 노화 메커니즘의 복잡성과 상호 연관성으로 인해 여전히 어려운 과제입니다. 그 결과, 노화 예측은 종종 대규모 데이터 세트를 분석하여 성능을 얻는 경험적 또는 데이터 기반 접근 방식에 의존합니다. 그러나 이러한 데이터 세트를 생성하는 데는 비용이 많이 들고, 모델은 기본 물리 법칙을 인식하지 못하므로 새로운 조건으로 확장하기 어렵습니다. 본 논문에서는 28가지 다른 프로토콜로 노화된 62개의 자동차용 셀에서 고체-전해질 계면(SEI) 성장으로 인한 용량 감소를 예측하기 위해 물리적 모델을 사용합니다. 세 가지 프로토콜은 모델의 시간, 전류 및 온도 의존성을 매개변수화하며, 충전 상태 의존성은 양극의 개방 회로 전압 곡선에서 비롯됩니다. 나머지 25개 프로토콜을 사용한 모델 검증 결과, 평균 제곱근 오차가 $1.28\%$로 높은 예측력을 보였습니다. 이렇게 검증된 모델을 사용한 사례 연구에서는 작동 창, 즉 최대 및 최소 충전 상태가 SEI 성장에 가장 큰 영향을 미치는 반면, 인가 전류의 영향은 거의 무시할 수 있음을 보여줍니다. 따라서 제시된 모델은 리튬이온 배터리의 노화를 더 잘 이해하고 정량화하며 예측할 수 있는 유망한 접근 방식입니다.
-
 ## 参考
 - http://arxiv.org/abs/2112.13671v2
+
+## 개요
+이 연구는 리튬이온 배터리 노화 예측의 도전 과제를 해결하기 위해 물리 기반 SEI 성장 모델을 개발했습니다. 모델은 시간, 전류, 온도 및 충전 상태의 영향을 각각 설명하는 네 개의 매개변수를 포함하며, 충전 상태 의존성은 양극 개방 회로 전압 곡선에서 도출됩니다. 62개의 자동차급 배터리, 28가지 노화 프로토콜 데이터 세트에서 모델은 세 가지 프로토콜로 매개변수화되었고, 나머지 25가지 프로토콜에서 높은 예측 정확도(RMSE 1.28%)를 보였습니다. 사례 연구에 따르면 작동 창(최대/최소 충전 상태)이 SEI 성장에 가장 큰 영향을 미치며, 인가 전류의 영향은 거의 무시할 수 있습니다.
+
+## 핵심 내용
+### 모델 아키텍처
+- 물리 기반 SEI 성장 모델로, 시간 의존성 매개변수, 전류 의존성 매개변수, 온도 의존성 매개변수, 그리고 양극 OCV 곡선에서 도출된 충전 상태 의존성 매개변수의 네 가지 매개변수를 포함합니다.
+- 모델은 세 가지 매개변수화 프로토콜만으로 보정이 가능하며, 대규모 데이터 세트가 필요하지 않습니다.
+
+### 실험 설정
+- 데이터 세트: 62개의 자동차급 리튬이온 배터리, 28가지 다양한 노화 프로토콜을 경험.
+- 매개변수화: 그중 3가지 프로토콜을 사용하여 모델의 시간, 전류 및 온도 매개변수를 결정.
+- 검증: 나머지 25가지 프로토콜을 모델 검증에 사용하여 RMSE를 계산.
+
+### 주요 결과
+- 모델 예측의 RMSE는 1.28%로 높은 예측 정확도를 나타냄.
+- 사례 연구에 따르면 작동 창(최대/최소 충전 상태)이 SEI 성장에 영향을 미치는 가장 큰 요인임.
+- 인가 전류가 SEI 성장에 미치는 영향은 거의 무시할 수 있음.
+
+### 결론
+이 네 매개변수 물리 모델은 리튬이온 배터리 노화를 이해하고 예측하는 효과적인 도구를 제공하며, 특히 새로운 작동 조건에서의 외삽 예측에 유용합니다.

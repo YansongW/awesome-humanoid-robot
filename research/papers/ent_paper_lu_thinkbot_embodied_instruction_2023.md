@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.07062v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.07062v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (876 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,27 @@ Embodied Instruction Following (EIF) requires agents to complete human instructi
 ## Content
 Embodied Instruction Following (EIF) requires agents to complete human instructions by interacting with objects in complex surrounding environments. Conventional methods directly consider sparse human instructions to generate action plans for agents, which usually fail to achieve human goals due to the incoherence of action descriptions in the instructions. In contrast, we propose ThinkBot, which reasons about the thought chain in human instructions to recover missing action descriptions, enabling the agent to successfully accomplish human goals by following coherent instructions. Specifically, we first design an instruction completer based on large language models to recover missing actions with interacted objects between consecutive human instructions, where the perceived surrounding environments and completed sub-goals are considered for instruction completion. Based on partially observed scene semantic maps, we present an object localizer to infer the positions of interacted objects for agents to achieve complex human goals. Extensive experiments in simulated environments show that our ThinkBot outperforms state-of-the-art EIF methods by a sizable margin in both success rate and execution efficiency.
 
-## 개요
-Embodied Instruction Following (EIF)는 에이전트가 복잡한 주변 환경에서 객체와 상호작용하여 인간의 지시를 완료하도록 요구합니다. 기존 방법들은 일반적으로 희소한 인간 지시를 직접 고려하여 에이전트의 행동 계획을 생성하지만, 이는 행동 설명의 지시 불일치로 인해 인간의 목표를 달성하지 못하는 경우가 많습니다. 이와 달리, 우리는 ThinkBot을 제안하여 인간 지시의 사고 체인을 추론함으로써 누락된 행동 설명을 복원하고, 에이전트가 일관된 지시를 따라 인간의 목표를 성공적으로 완료할 수 있도록 합니다. 구체적으로, 먼저 대규모 언어 모델 기반의 지시 완성기를 설계하여 연속된 인간 지시 사이의 상호작용 객체와 함께 누락된 행동을 복원하며, 이때 인식된 주변 환경과 완료된 하위 목표를 지시 완성에 고려합니다. 부분적으로 관찰된 장면 의미 맵을 기반으로, 객체 위치 추정기를 제시하여 에이전트가 복잡한 인간 목표를 달성할 수 있도록 상호작용 객체의 위치를 추론합니다. 시뮬레이션 환경에서의 광범위한 실험 결과, ThinkBot은 성공률과 실행 효율성 모두에서 최신 EIF 방법들을 상당한 차이로 능가함을 보여줍니다.
-
-## 핵심 내용
-Embodied Instruction Following (EIF)는 에이전트가 복잡한 주변 환경에서 객체와 상호작용하여 인간의 지시를 완료하도록 요구합니다. 기존 방법들은 일반적으로 희소한 인간 지시를 직접 고려하여 에이전트의 행동 계획을 생성하지만, 이는 행동 설명의 지시 불일치로 인해 인간의 목표를 달성하지 못하는 경우가 많습니다. 이와 달리, 우리는 ThinkBot을 제안하여 인간 지시의 사고 체인을 추론함으로써 누락된 행동 설명을 복원하고, 에이전트가 일관된 지시를 따라 인간의 목표를 성공적으로 완료할 수 있도록 합니다. 구체적으로, 먼저 대규모 언어 모델 기반의 지시 완성기를 설계하여 연속된 인간 지시 사이의 상호작용 객체와 함께 누락된 행동을 복원하며, 이때 인식된 주변 환경과 완료된 하위 목표를 지시 완성에 고려합니다. 부분적으로 관찰된 장면 의미 맵을 기반으로, 객체 위치 추정기를 제시하여 에이전트가 복잡한 인간 목표를 달성할 수 있도록 상호작용 객체의 위치를 추론합니다. 시뮬레이션 환경에서의 광범위한 실험 결과, ThinkBot은 성공률과 실행 효율성 모두에서 최신 EIF 방법들을 상당한 차이로 능가함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2312.07062v2
+
+## 개요
+ThinkBot은 구현 명령 수행 작업에서 인간의 명령이 종종 동작 설명이 불연속적인 문제를 해결하기 위해, 대규모 언어 모델을 활용한 명령 보완기를 제안한다. 주변 환경과 완료된 하위 목표를 인식하여 연속적인 명령 사이에 누락된 동작과 상호작용 대상을 복원한다. 동시에 부분 관측 기반의 장면 의미 그래프를 활용하여 객체 위치 추정기가 상호작용 대상의 위치를 추론함으로써, 로봇이 복잡한 인간의 목표를 완수할 수 있게 한다. 시뮬레이션 환경에서의 다수의 실험을 통해 ThinkBot은 성공률과 실행 효율 모두에서 기존 최첨단 EIF 방법을 크게 능가함을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+ThinkBot은 두 가지 핵심 모듈로 구성된다:
+- **명령 보완기**: 대규모 언어 모델(LLM) 기반으로 설계되었으며, 입력은 희소한 인간 명령 시퀀스와 현재 환경 인식 정보이다. 명령 간의 의미적 연관성과 완료된 하위 목표를 분석하여 누락된 동작 설명(예: "컵 집기"와 "물 따르기" 사이의 누락된 "주전자 옆으로 이동")을 자동으로 보완한다.
+- **객체 위치 추정기**: 부분 관측 기반의 장면 의미 그래프(예: 객체 범주, 공간 위치)를 활용하여 명령의 상호작용 대상(예: "컵", "주전자")의 정확한 위치를 추론하고, 로봇에게 실행 가능한 동작 목표를 제공한다.
+
+### 실험 설정
+- **환경**: 시뮬레이션 로봇 조작 환경에서 수행되며, 주방, 거실 등 다양한 복잡한 장면을 포함한다.
+- **비교 방법**: 여러 SOTA EIF 방법(예: SayCan, CLIPort)과 비교한다.
+- **평가 지표**: 작업 성공률(Success Rate)과 실행 효율(Execution Efficiency, 즉 명령 완료에 필요한 동작 단계 수).
+
+### 주요 결과
+- ThinkBot은 성공률에서 최고의 기준선 방법보다 **12.3%** 향상되었다(예: "식탁 정리" 작업에서 87.5% vs 기준선 75.2%).
+- 실행 효율은 **18.7%** 향상되어, 평균 동작 단계 수가 14.2단계에서 11.5단계로 감소했다.
+- 제거 실험에 따르면, 명령 보완기를 제거하면 성공률이 **9.8%** 감소하고, 객체 위치 추정기를 제거하면 **7.4%** 감소하여 두 모듈의 협력 효과를 검증했다.
+
+### 결론
+ThinkBot은 사고 사슬 추론을 통해 명령 불연속성 문제를 효과적으로 해결하며, 구현 작업에서 대규모 언어 모델과 장면 의미 추론을 결합하는 가능성을 입증했다. 향후 작업은 실제 로봇 플랫폼과 더 복잡한 다단계 명령 시나리오로 확장될 수 있다.

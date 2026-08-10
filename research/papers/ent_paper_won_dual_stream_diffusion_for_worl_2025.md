@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.27607v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.27607v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (870 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,22 @@ DUST 通过双流扩散框架有效解决了 VLA 模型与世界模型联合预�
 ## Overview
 Augmenting vision-language-action models (VLAs) with world models is promising for robotic policy learning but faces challenges in jointly predicting states and actions due to the modality gap. To address this, we propose DUal-STream diffusion (DUST), a world-model augmented VLA framework featuring a multimodal diffusion transformer that maintains separate modality streams while enabling cross-modal knowledge sharing. In addition, DUST utilizes independent noise perturbations and a decoupled flow matching loss to learn cross-modal causal relationships. We further introduce an asynchronous sampling method for action and vision tokens that enhances performance through inference-time scaling. Experimental results on simulated benchmarks like RoboCasa and GR-1 show that DUST achieves up to 6% gains over state-of-the-art VLA and world-modeling baselines, with inference-time scaling providing an additional 2-5% improvement. In real-world tasks using the Franka Research 3, DUST outperforms baselines by 10% in success rate. Finally, we demonstrate that DUST enables effective transfer learning through both pretraining on action-free videos and joint-training with heterogeneous robot and human datasets.
 
-## 개요
-비전-언어-행동 모델(VLA)에 월드 모델을 통합하는 것은 로봇 정책 학습에 유망하지만, 모달리티 차이로 인해 상태와 행동을 공동으로 예측하는 데 어려움이 있습니다. 이를 해결하기 위해, 우리는 DUal-STream diffusion (DUST)을 제안합니다. 이는 개별 모달리티 스트림을 유지하면서 교차 모달 지식 공유를 가능하게 하는 다중 모달 확산 트랜스포머를 특징으로 하는 월드 모델 기반 VLA 프레임워크입니다. 또한, DUST는 독립적인 노이즈 섭동과 분리된 흐름 매칭 손실을 활용하여 교차 모달 인과 관계를 학습합니다. 나아가, 행동 및 비전 토큰에 대한 비동기 샘플링 방법을 도입하여 추론 시간 스케일링을 통해 성능을 향상시킵니다. RoboCasa 및 GR-1과 같은 시뮬레이션 벤치마크에서의 실험 결과, DUST는 최신 VLA 및 월드 모델링 기준선 대비 최대 6%의 성능 향상을 달성했으며, 추론 시간 스케일링은 추가로 2-5%의 개선을 제공합니다. Franka Research 3를 사용한 실제 작업에서 DUST는 기준선 대비 성공률에서 10% 더 우수한 성능을 보였습니다. 마지막으로, DUST가 행동 없는 비디오에 대한 사전 학습과 이종 로봇 및 인간 데이터셋을 사용한 공동 학습을 통해 효과적인 전이 학습을 가능하게 함을 입증합니다.
-
-## 핵심 내용
-비전-언어-행동 모델(VLA)에 월드 모델을 통합하는 것은 로봇 정책 학습에 유망하지만, 모달리티 차이로 인해 상태와 행동을 공동으로 예측하는 데 어려움이 있습니다. 이를 해결하기 위해, 우리는 DUal-STream diffusion (DUST)을 제안합니다. 이는 개별 모달리티 스트림을 유지하면서 교차 모달 지식 공유를 가능하게 하는 다중 모달 확산 트랜스포머를 특징으로 하는 월드 모델 기반 VLA 프레임워크입니다. 또한, DUST는 독립적인 노이즈 섭동과 분리된 흐름 매칭 손실을 활용하여 교차 모달 인과 관계를 학습합니다. 나아가, 행동 및 비전 토큰에 대한 비동기 샘플링 방법을 도입하여 추론 시간 스케일링을 통해 성능을 향상시킵니다. RoboCasa 및 GR-1과 같은 시뮬레이션 벤치마크에서의 실험 결과, DUST는 최신 VLA 및 월드 모델링 기준선 대비 최대 6%의 성능 향상을 달성했으며, 추론 시간 스케일링은 추가로 2-5%의 개선을 제공합니다. Franka Research 3를 사용한 실제 작업에서 DUST는 기준선 대비 성공률에서 10% 더 우수한 성능을 보였습니다. 마지막으로, DUST가 행동 없는 비디오에 대한 사전 학습과 이종 로봇 및 인간 데이터셋을 사용한 공동 학습을 통해 효과적인 전이 학습을 가능하게 함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.27607v3
+
+## 개요
+DUST 프레임워크는 이중 스트림 확산 Transformer 설계를 통해 시각, 언어 및 행동의 독립적인 모달리티 스트림을 각각 유지하면서도 모달리티 간 지식 공유를 가능하게 합니다. 이는 독립적인 노이즈 섭동과 분리된 흐름 일치 손실을 사용하여 모달리티 간의 인과 관계를 학습하고, 비동기 샘플링 방법을 도입하여 추론 시 행동 및 시각 토큰을 확장합니다. RoboCasa 및 GR-1과 같은 시뮬레이션 벤치마크에서 DUST는 최첨단 VLA 및 세계 모델 기준 방법 대비 최대 6%의 성능 향상을 달성했으며, 추론 시 확장은 추가로 2-5%의 개선을 제공합니다. Franka Research 3 실제 로봇 작업에서 DUST의 성공률은 기준 방법보다 10% 높습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 스트림 확산 Transformer**: DUST의 핵심은 시각, 언어 및 행동의 독립적인 모달리티 스트림을 유지하면서 교차 주의 메커니즘을 통해 모달리티 간 지식 공유를 실현하여 모달리티 차이로 인한 공동 예측 어려움을 방지합니다.
+- **독립 노이즈 섭동 및 분리된 흐름 일치 손실**: 각 모달리티 스트림에 독립적인 노이즈 섭동을 적용하고, 분리된 흐름 일치 손실을 사용하여 모달리티 간 인과 관계를 학습함으로써 상태와 행동의 결합 분포를 더 효과적으로 모델링합니다.
+- **비동기 샘플링 방법**: 추론 시 행동 토큰과 시각 토큰에 비동기 샘플링 전략을 적용하여 샘플링 단계 수나 순서를 조정함으로써 생성 품질을 향상시키고 추론 시 계산 확장을 구현합니다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 벤치마크**: RoboCasa 및 GR-1과 같은 시뮬레이션 환경에서 DUST는 최첨단 VLA 및 세계 모델 기준 방법(예: RT-2, UniPi) 대비 최대 6%의 성능 향상을 달성했습니다. 추론 시 확장은 추가로 2-5%의 개선을 제공합니다.
+- **실제 세계 작업**: Franka Research 3 로봇 팔을 사용한 실제 조작 작업에서 DUST의 성공률은 기준 방법보다 10% 높아 실제 시나리오에서의 효과를 검증했습니다.
+- **전이 학습 능력**: DUST는 행동 없는 비디오를 통한 사전 학습과 이종 로봇 데이터 세트 및 인간 데이터 세트를 사용한 공동 학습을 지원하여 강력한 전이 학습 능력을 보여줍니다.
+
+### 결론
+DUST는 이중 스트림 확산 프레임워크를 통해 VLA 모델과 세계 모델의 공동 예측에서 발생하는 모달리티 차이 문제를 효과적으로 해결했으며, 시뮬레이션 및 실제 작업 모두에서 상당한 성능 향상을 달성하고 우수한 전이 학습 능력을 갖추고 있습니다.

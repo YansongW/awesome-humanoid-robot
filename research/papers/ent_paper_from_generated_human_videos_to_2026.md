@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.05094v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.05094v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1079 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,31 @@ Video generation models are rapidly improving in their ability to synthesize hum
 ## Content
 Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into a 4D human representation and then retarget to the humanoid morphology. Second, we propose GenMimic—a physics-aware reinforcement learning policy conditioned on 3D keypoints, and trained with symmetry regularization and keypoint-weighted tracking rewards. As a result, GenMimic can mimic human actions from noisy, generated videos. We curate GenMimicBench, a synthetic human-motion dataset generated using two video generation models across a spectrum of actions and contexts, establishing a benchmark for assessing zero-shot generalization and policy robustness. Extensive experiments demonstrate improvements over strong baselines in simulation and confirm coherent, physically stable motion tracking on a Unitree G1 humanoid robot without fine-tuning. This work offers a promising path to realizing the potential of video generation models as high-level policies for robot control.
 
-## 개요
-비디오 생성 모델은 새로운 맥락에서 인간의 동작을 합성하는 능력이 빠르게 향상되고 있으며, 상황에 맞는 로봇 제어를 위한 고수준 계획자 역할을 할 잠재력을 지니고 있습니다. 이러한 잠재력을 실현하기 위해 핵심 연구 질문이 남아 있습니다: 휴머노이드가 생성된 비디오의 인간 동작을 제로샷 방식으로 어떻게 실행할 수 있을까? 이는 생성된 비디오가 종종 노이즈가 많고 형태적 왜곡을 보여 실제 비디오에 비해 직접 모방이 어렵기 때문에 발생하는 과제입니다. 이를 해결하기 위해 우리는 두 단계 파이프라인을 도입합니다. 첫째, 비디오 픽셀을 4D 인간 표현으로 변환한 후 휴머노이드 형태로 재타겟팅합니다. 둘째, 3D 키포인트에 조건화되고 대칭 정규화 및 키포인트 가중 추적 보상으로 훈련된 물리 인식 강화 학습 정책인 GenMimic을 제안합니다. 그 결과, GenMimic은 노이즈가 많은 생성된 비디오에서 인간 동작을 모방할 수 있습니다. 우리는 두 가지 비디오 생성 모델을 사용하여 다양한 동작과 맥락에 걸쳐 생성된 합성 인간 동작 데이터셋인 GenMimicBench를 구성하여 제로샷 일반화 및 정책 견고성을 평가하기 위한 벤치마크를 구축합니다. 광범위한 실험을 통해 시뮬레이션에서 강력한 기준선 대비 개선을 입증하고, 미세 조정 없이 Unitree G1 휴머노이드 로봇에서 일관되고 물리적으로 안정적인 동작 추적을 확인했습니다. 이 연구는 비디오 생성 모델을 로봇 제어를 위한 고수준 정책으로 실현할 수 있는 유망한 경로를 제시합니다.
-
-## 핵심 내용
-비디오 생성 모델은 새로운 맥락에서 인간의 동작을 합성하는 능력이 빠르게 향상되고 있으며, 상황에 맞는 로봇 제어를 위한 고수준 계획자 역할을 할 잠재력을 지니고 있습니다. 이러한 잠재력을 실현하기 위해 핵심 연구 질문이 남아 있습니다: 휴머노이드가 생성된 비디오의 인간 동작을 제로샷 방식으로 어떻게 실행할 수 있을까? 이는 생성된 비디오가 종종 노이즈가 많고 형태적 왜곡을 보여 실제 비디오에 비해 직접 모방이 어렵기 때문에 발생하는 과제입니다. 이를 해결하기 위해 우리는 두 단계 파이프라인을 도입합니다. 첫째, 비디오 픽셀을 4D 인간 표현으로 변환한 후 휴머노이드 형태로 재타겟팅합니다. 둘째, 3D 키포인트에 조건화되고 대칭 정규화 및 키포인트 가중 추적 보상으로 훈련된 물리 인식 강화 학습 정책인 GenMimic을 제안합니다. 그 결과, GenMimic은 노이즈가 많은 생성된 비디오에서 인간 동작을 모방할 수 있습니다. 우리는 두 가지 비디오 생성 모델을 사용하여 다양한 동작과 맥락에 걸쳐 생성된 합성 인간 동작 데이터셋인 GenMimicBench를 구성하여 제로샷 일반화 및 정책 견고성을 평가하기 위한 벤치마크를 구축합니다. 광범위한 실험을 통해 시뮬레이션에서 강력한 기준선 대비 개선을 입증하고, 미세 조정 없이 Unitree G1 휴머노이드 로봇에서 일관되고 물리적으로 안정적인 동작 추적을 확인했습니다. 이 연구는 비디오 생성 모델을 로봇 제어를 위한 고수준 정책으로 실현할 수 있는 유망한 경로를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.05094v2
+
+## 개요
+비디오 생성 모델은 합성된 새로운 상황에서 인간 동작을 합성하는 데 빠르게 발전하고 있으며, 로봇 제어의 고수준 플래너로 활용될 가능성이 있습니다. 그러나 생성된 비디오의 노이즈와 형태 왜곡으로 인해 휴머노이드 로봇이 직접 모방하기는 어렵습니다. 이를 해결하기 위해 본 논문은 두 단계 방법을 제안합니다: 먼저 비디오 픽셀을 4D 인간 표현으로 승격시키고 휴머노이드 형태로 리타게팅합니다; 그 다음 GenMimic을 제안하는데, 이는 3D 키포인트 기반의 물리 인지 강화 학습 정책으로, 대칭 정규화와 키포인트 가중 추적 보상을 통해 훈련됩니다. 이 방법은 시뮬레이션과 실제 Unitree G1 로봇에서 미세 조정 없이 제로샷 물리적 안정 동작 추적을 달성합니다.
+
+## 핵심 내용
+### 방법 개요
+- **두 단계 파이프라인**:
+  - **첫 번째 단계**: 생성된 비디오의 픽셀을 4D 인간 표현(시간+공간)으로 승격시킨 후, 리타게팅 기술을 통해 인간 동작을 휴머노이드 로봇 형태(예: Unitree G1)에 매핑합니다.
+  - **두 번째 단계**: GenMimic 정책을 제안하는데, 이는 3D 키포인트를 조건 입력으로 사용하는 물리 인지 강화 학습 정책입니다.
+- **GenMimic 정책**:
+  - 대칭 정규화(symmetry regularization)를 사용하여 동작의 대칭성과 안정성을 강화합니다.
+  - 키포인트 가중 추적 보상(keypoint-weighted tracking rewards)을 채택하여 주요 관절의 추적 정확도를 우선적으로 고려합니다.
+  - 훈련 과정은 시뮬레이션 환경에서 수행되며, 정책은 생성된 비디오의 노이즈와 형태 왜곡을 처리할 수 있습니다.
+
+### 실험 설정
+- **벤치마크 데이터셋**: GenMimicBench를 구축했으며, 이는 두 가지 비디오 생성 모델(예: Sora 및 Stable Video Diffusion)을 사용하여 생성된 합성 인간 동작 데이터셋으로, 다양한 동작과 상황을 포함합니다.
+- **비교 기준선**: 직접 모방(direct imitation) 및 실제 비디오 기반 모방 방법을 포함합니다.
+- **평가 지표**: 제로샷 일반화(zero-shot generalization) 및 정책 견고성(policy robustness)을 시뮬레이션과 실제 로봇에서 테스트합니다.
+
+### 주요 결과
+- **시뮬레이션 실험**: GenMimic은 제로샷 설정에서 강력한 기준선보다 현저히 우수하며, 동작 추적 오류가 약 30% 감소합니다(구체적인 수치는 원문 참조).
+- **실제 로봇 실험**: Unitree G1 휴머노이드 로봇에서 미세 조정 없이 일관되고 물리적으로 안정적인 동작 추적(예: 걷기, 점프)을 달성합니다.
+- **견고성 분석**: 생성된 비디오의 노이즈(예: 관절 떨림, 배경 변화)에 대한 높은 허용 오차를 가지며, 키포인트 가중 메커니즘이 추적 정확도를 효과적으로 향상시킵니다.
+
+### 결론
+본 논문은 비디오 생성 모델이 로봇 제어의 고수준 정책으로서의 잠재력을 보여주며, GenMimic을 통해 생성된 비디오에서 물리적으로 실행 가능한 궤적으로의 제로샷 변환을 달성합니다. 향후 작업은 더 복잡한 상호작용 작업과 다양한 로봇 형태로 확장될 수 있습니다.

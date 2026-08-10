@@ -58,8 +58,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.09100v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.09100v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (945 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -100,11 +101,28 @@ We propose a multimodal, physically grounded approach for metric-scale amodal ob
 ## Content
 We propose a multimodal, physically grounded approach for metric-scale amodal object reconstruction and pose estimation under severe hand occlusion. Unlike prior occlusion-aware 3D generation methods that rely only on vision, we leverage physical interaction signals: proprioception provides the posed hand geometry, and multi-contact touch constrains where the object surface must lie, reducing ambiguity in occluded regions. We represent object structure as a pose-aware, camera-aligned signed distance field (SDF) and learn a compact latent space with a Structure-VAE. In this latent space, we train a conditional flow-matching diffusion model, pretraining on vision-only images and finetuning on occluded manipulation scenes while conditioning on visible RGB evidence, occluder/visibility masks, the hand latent representation, and tactile information. Crucially, we incorporate physics-based objectives and differentiable decoder-guidance during finetuning and inference to reduce hand–object interpenetration and to align the reconstructed surface with contact observations. Because our method produces a metric, physically consistent structure estimate, it integrates naturally into existing two-stage reconstruction pipelines, where a downstream module refines geometry and predicts appearance. Experiments in simulation show that adding proprioception and touch substantially improves completion under occlusion and yields physically plausible reconstructions at correct real-world scale compared to vision-only baselines; we further validate transfer by deploying the model on a real humanoid robot with an end-effector different from those used during training.
 
-## 개요
-본 연구는 심한 손 가림(hand occlusion) 상황에서 미터법 스케일의 아모달(amodal) 객체 재구성 및 자세 추정을 위한 다중 모달, 물리 기반 접근법을 제안합니다. 시각에만 의존하는 기존의 가림 인식 3D 생성 방법과 달리, 우리는 물리적 상호작용 신호를 활용합니다: 고유수용감각(proprioception)은 손의 자세 기하학을 제공하고, 다중 접촉 터치는 객체 표면이 위치해야 할 곳을 제약하여 가려진 영역의 모호성을 줄입니다. 객체 구조를 자세 인식, 카메라 정렬 부호 거리 필드(SDF)로 표현하고 Structure-VAE로 컴팩트한 잠재 공간을 학습합니다. 이 잠재 공간에서 조건부 흐름 매칭 확산 모델을 훈련하며, 시각 전용 이미지로 사전 훈련하고 가려진 조작 장면에서 미세 조정합니다. 이때 가시적인 RGB 증거, 가림/가시성 마스크, 손 잠재 표현, 촉각 정보를 조건으로 사용합니다. 핵심적으로, 미세 조정 및 추론 중 물리 기반 목표와 미분 가능 디코더 가이던스를 통합하여 손-객체 간 침투를 줄이고 재구성된 표면을 접촉 관측과 정렬합니다. 본 방법은 미터법, 물리적으로 일관된 구조 추정치를 생성하므로, 하위 모듈이 기하학을 정제하고 외관을 예측하는 기존의 2단계 재구성 파이프라인에 자연스럽게 통합됩니다. 시뮬레이션 실험에서 고유수용감각과 터치를 추가하면 가림 하에서 완성도가 크게 향상되고, 시각 전용 기준선과 비교하여 올바른 실제 세계 스케일에서 물리적으로 그럴듯한 재구성을 제공함을 보여줍니다. 또한, 훈련 중 사용된 것과 다른 엔드 이펙터를 가진 실제 인간형 로봇에 모델을 배포하여 전이 가능성을 검증합니다.
-
-## 핵심 내용
-본 연구는 심한 손 가림 상황에서 미터법 스케일의 아모달 객체 재구성 및 자세 추정을 위한 다중 모달, 물리 기반 접근법을 제안합니다. 시각에만 의존하는 기존의 가림 인식 3D 생성 방법과 달리, 우리는 물리적 상호작용 신호를 활용합니다: 고유수용감각은 손의 자세 기하학을 제공하고, 다중 접촉 터치는 객체 표면이 위치해야 할 곳을 제약하여 가려진 영역의 모호성을 줄입니다. 객체 구조를 자세 인식, 카메라 정렬 부호 거리 필드(SDF)로 표현하고 Structure-VAE로 컴팩트한 잠재 공간을 학습합니다. 이 잠재 공간에서 조건부 흐름 매칭 확산 모델을 훈련하며, 시각 전용 이미지로 사전 훈련하고 가려진 조작 장면에서 미세 조정합니다. 이때 가시적인 RGB 증거, 가림/가시성 마스크, 손 잠재 표현, 촉각 정보를 조건으로 사용합니다. 핵심적으로, 미세 조정 및 추론 중 물리 기반 목표와 미분 가능 디코더 가이던스를 통합하여 손-객체 간 침투를 줄이고 재구성된 표면을 접촉 관측과 정렬합니다. 본 방법은 미터법, 물리적으로 일관된 구조 추정치를 생성하므로, 하위 모듈이 기하학을 정제하고 외관을 예측하는 기존의 2단계 재구성 파이프라인에 자연스럽게 통합됩니다. 시뮬레이션 실험에서 고유수용감각과 터치를 추가하면 가림 하에서 완성도가 크게 향상되고, 시각 전용 기준선과 비교하여 올바른 실제 세계 스케일에서 물리적으로 그럴듯한 재구성을 제공함을 보여줍니다. 또한, 훈련 중 사용된 것과 다른 엔드 이펙터를 가진 실제 인간형 로봇에 모델을 배포하여 전이 가능성을 검증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2604.09100v2
+
+## 개요
+기존의 폐색 인식 3D 생성 방법은 시각 신호에만 의존하여 심한 손 폐색 상황에서 물체를 정확히 재구성하기 어렵습니다. 본 논문은 물리적 상호작용 신호를 혁신적으로 도입합니다: 고유 수용 감각은 손 자세 기하를 제공하고, 다점 촉각은 물체 표면 위치를 제약하여 폐색 영역의 모호성을 줄입니다. 이 방법은 자세 인식, 카메라 정렬 부호 거리 함수(SDF)를 사용하여 물체 구조를 표현하고, Structure-VAE를 통해 컴팩트한 잠재 공간을 학습합니다. 해당 잠재 공간에서 조건부 흐름 매칭 확산 모델을 훈련하며, 먼저 순수 시각 이미지로 사전 훈련한 후 폐색 조작 시나리오에서 미세 조정하고, 동시에 가시 RGB 증거, 폐색/가시성 마스크, 손 잠재 표현 및 촉각 정보를 조건으로 사용합니다. 핵심 혁신은 미세 조정 및 추론 단계에서 물리 기반 목적 함수와 미분 가능한 디코더 안내를 도입하여 손-물체 관통을 줄이고 재구성 표면이 접촉 관측과 정렬되도록 보장하는 것입니다. 시뮬레이션 실험은 순수 시각 기준선에 비해 고유 수용 감각과 촉각을 추가하면 폐색 보완 품질이 크게 향상되고 올바른 실제 스케일의 물리적으로 합리적인 재구성이 생성됨을 증명합니다. 모델은 또한 다른 말단 효과기를 사용하는 실제 휴머노이드 로봇으로 성공적으로 전이됩니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **다중 모달 입력**: 가시 RGB 이미지, 폐색/가시성 마스크, 손 잠재 표현(고유 수용 감각에서 유래) 및 촉각 정보를 결합합니다.
+- **물체 표현**: 자세 인식, 카메라 정렬 SDF를 채택하고 Structure-VAE를 통해 컴팩트한 잠재 공간을 학습합니다.
+- **생성 모델**: 잠재 공간에서 조건부 흐름 매칭 확산 모델을 훈련하며, 먼저 순수 시각 이미지로 사전 훈련한 후 폐색 조작 시나리오에서 미세 조정합니다.
+- **물리적 제약**: 미세 조정 및 추론 단계에서 물리 기반 목적 함수와 미분 가능한 디코더 안내를 도입하여 손-물체 관통을 줄이고 재구성 표면이 접촉 관측과 정렬되도록 보장합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 시뮬레이션 시나리오에서 평가하며 순수 시각 기준선 방법과 비교합니다.
+- **실제 전이**: 모델을 실제 휴머노이드 로봇에 배포하며 훈련 시와 다른 말단 효과기를 사용합니다.
+- **평가 지표**: 폐색 영역 보완 품질, 물리적 합리성(예: 관통 정도) 및 미터법 스케일 정확성에 중점을 둡니다.
+
+### 주요 결과
+- **폐색 보완**: 고유 수용 감각과 촉각을 추가하면 폐색 영역 보완 품질이 순수 시각 기준선보다 크게 향상됩니다.
+- **물리적 합리성**: 생성된 재구성은 올바른 실제 스케일에서 물리적으로 합리적이며 손-물체 관통이 크게 줄어듭니다.
+- **전이 능력**: 모델은 다른 말단 효과기를 사용하는 실제 로봇으로 성공적으로 일반화되어 방법의 견고성을 검증합니다.
+
+### 결론
+본 논문은 물리적 상호작용 신호(고유 수용 감각과 다점 촉각)가 심한 손 폐색 하의 3D 재구성 문제를 효과적으로 해결할 수 있음을 증명하며, 미터법 스케일, 물리적으로 일관된 구조 추정을 생성하고 기존의 2단계 재구성 파이프라인에 자연스럽게 통합됩니다.

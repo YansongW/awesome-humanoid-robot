@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.20927v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.20927v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (784 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,11 +71,25 @@ VLMimic 的核心框架包含两个关键阶段：
 ## Overview
 Visual imitation learning (VIL) provides an efficient and intuitive strategy for robotic systems to acquire novel skills. Recent advancements in Vision Language Models (VLMs) have demonstrated remarkable performance in vision and language reasoning capabilities for VIL tasks. Despite the progress, current VIL methods naively employ VLMs to learn high-level plans from human videos, relying on pre-defined motion primitives for executing physical interactions, which remains a major bottleneck. In this work, we present VLMimic, a novel paradigm that harnesses VLMs to directly learn even fine-grained action levels, only given a limited number of human videos. Specifically, VLMimic first grounds object-centric movements from human videos, and learns skills using hierarchical constraint representations, facilitating the derivation of skills with fine-grained action levels from limited human videos. These skills are refined and updated through an iterative comparison strategy, enabling efficient adaptation to unseen environments. Our extensive experiments exhibit that our VLMimic, using only 5 human videos, yields significant improvements of over 27% and 21% in RLBench and real-world manipulation tasks, and surpasses baselines by over 37% in long-horizon tasks.
 
-## 개요
-시각적 모방 학습(VIL)은 로봇 시스템이 새로운 기술을 습득하기 위한 효율적이고 직관적인 전략을 제공합니다. 최근 비전 언어 모델(VLM)의 발전은 VIL 작업에서 뛰어난 시각 및 언어 추론 능력을 입증했습니다. 이러한 진전에도 불구하고, 현재의 VIL 방법은 인간 비디오에서 고수준 계획을 학습하기 위해 VLM을 단순히 사용하며, 물리적 상호작용 실행을 위해 미리 정의된 동작 프리미티브에 의존하는데, 이는 여전히 주요 병목 현상으로 남아 있습니다. 본 연구에서는 제한된 수의 인간 비디오만 주어졌을 때, VLM을 활용하여 세분화된 행동 수준까지 직접 학습하는 새로운 패러다임인 VLMimic을 제시합니다. 구체적으로, VLMimic은 먼저 인간 비디오에서 객체 중심 움직임을 파악하고, 계층적 제약 표현을 사용하여 기술을 학습함으로써, 제한된 인간 비디오에서 세분화된 행동 수준의 기술을 도출할 수 있게 합니다. 이러한 기술은 반복적 비교 전략을 통해 정제 및 업데이트되어, 보지 못한 환경에 효율적으로 적응할 수 있습니다. 광범위한 실험을 통해, 단 5개의 인간 비디오만 사용한 VLMimic이 RLBench 및 실제 조작 작업에서 27% 이상 및 21% 이상의 유의미한 성능 향상을 보였으며, 장기 작업에서는 기준선을 37% 이상 능가함을 입증했습니다.
-
-## 핵심 내용
-시각적 모방 학습(VIL)은 로봇 시스템이 새로운 기술을 습득하기 위한 효율적이고 직관적인 전략을 제공합니다. 최근 비전 언어 모델(VLM)의 발전은 VIL 작업에서 뛰어난 시각 및 언어 추론 능력을 입증했습니다. 이러한 진전에도 불구하고, 현재의 VIL 방법은 인간 비디오에서 고수준 계획을 학습하기 위해 VLM을 단순히 사용하며, 물리적 상호작용 실행을 위해 미리 정의된 동작 프리미티브에 의존하는데, 이는 여전히 주요 병목 현상으로 남아 있습니다. 본 연구에서는 제한된 수의 인간 비디오만 주어졌을 때, VLM을 활용하여 세분화된 행동 수준까지 직접 학습하는 새로운 패러다임인 VLMimic을 제시합니다. 구체적으로, VLMimic은 먼저 인간 비디오에서 객체 중심 움직임을 파악하고, 계층적 제약 표현을 사용하여 기술을 학습함으로써, 제한된 인간 비디오에서 세분화된 행동 수준의 기술을 도출할 수 있게 합니다. 이러한 기술은 반복적 비교 전략을 통해 정제 및 업데이트되어, 보지 못한 환경에 효율적으로 적응할 수 있습니다. 광범위한 실험을 통해, 단 5개의 인간 비디오만 사용한 VLMimic이 RLBench 및 실제 조작 작업에서 27% 이상 및 21% 이상의 유의미한 성능 향상을 보였으며, 장기 작업에서는 기준선을 37% 이상 능가함을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.20927v3
+
+## 개요
+VLMimic은 현재의 시각적 모방 학습 방법이 사전 정의된 운동 기본 요소에 의존하여 물리적 상호작용을 수행하는 한계를 해결하기 위해 새로운 패러다임을 제안합니다. 이 방법은 먼저 인간 비디오에서 객체 중심의 운동 정보를 추출한 다음, 계층적 제약 표현을 통해 기술을 학습하여 소량의 인간 비디오만으로 세분화된 동작 수준 기술을 도출합니다. 이러한 기술은 반복 비교 전략을 통해 정제되고 업데이트되어 보지 못한 환경에 효율적으로 적응할 수 있습니다. 실험 결과, 단 5개의 인간 비디오만 사용하여 VLMimic은 RLBench 및 실제 세계 조작 작업에서 각각 27% 및 21% 이상의 현저한 향상을 달성했으며, 장시간 영역 작업에서는 기준 방법을 37% 이상 초과했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+VLMimic의 핵심 프레임워크는 두 가지 주요 단계를 포함합니다:
+- **객체 중심 운동 추출**: 먼저 인간 비디오에서 객체 상호작용과 관련된 운동 궤적을 해석하여 시각 정보를 학습 가능한 운동 표현으로 변환합니다.
+- **계층적 제약 표현 학습**: 계층적 제약(예: 객체 공간 관계, 운동 시간 순서 제약)을 구축하여 제한된 인간 시연에서 세분화된 동작 수준 기술을 도출하며, 대량의 데이터나 사전 정의된 운동 기본 요소에 대한 의존을 피합니다.
+
+### 기술 정제 및 적응
+- **반복 비교 전략**: 시뮬레이션 또는 실제 환경에서 서로 다른 기술 버전의 실행 효과를 비교하여 최적의 기술 표현을 자동으로 선택하고 업데이트함으로써 모델이 새로운 환경의 객체 위치, 형태 또는 조명 변화에 효율적으로 적응할 수 있게 합니다.
+
+### 실험 설정 및 주요 결과
+- **데이터셋 및 기준**: RLBench 시뮬레이션 기준 및 실제 세계 조작 작업에서 평가되었으며, 훈련 데이터로 단 5개의 인간 비디오만 사용했습니다.
+- **성능 향상**:
+  - RLBench 작업에서 VLMimic은 기준 방법(예: 사전 정의된 운동 기본 요소를 사용하는 VIL 방법) 대비 평균 27% 이상 향상되었습니다.
+  - 실제 세계 조작 작업에서 평균 21% 이상 향상되었습니다.
+  - 장시간 영역 작업(예: 다단계 객체 조립)에서 성공률이 기준 방법을 37% 이상 초과했습니다.
+- **절제 실험**: 계층적 제약 표현 및 반복 비교 전략의 기여를 검증했으며, 어느 한 모듈을 제거하면 성능이 현저히 저하되었습니다.

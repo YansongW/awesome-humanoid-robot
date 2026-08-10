@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.14317v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.14317v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (930 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,22 @@ ClutterDexGrasp 首次实现了杂乱场景下目标导向灵巧抓取的零样�
 ## Overview
 Dexterous grasping in cluttered scenes presents significant challenges due to diverse object geometries, occlusions, and potential collisions. Existing methods primarily focus on single-object grasping or grasp-pose prediction without interaction, which are insufficient for complex, cluttered scenes. Recent vision-language-action models offer a potential solution but require extensive real-world demonstrations, making them costly and difficult to scale. To address these limitations, we revisit the sim-to-real transfer pipeline and develop key techniques that enable zero-shot deployment in reality while maintaining robust generalization. We propose ClutterDexGrasp, a two-stage teacher-student framework for closed-loop target-oriented dexterous grasping in cluttered scenes. The framework features a teacher policy trained in simulation using clutter density curriculum learning, incorporating both a geometry and spatially-embedded scene representation and a novel comprehensive safety curriculum, enabling general, dynamic, and safe grasping behaviors. Through imitation learning, we distill the teacher's knowledge into a student 3D diffusion policy (DP3) that operates on partial point cloud observations. To the best of our knowledge, this represents the first zero-shot sim-to-real closed-loop system for target-oriented dexterous grasping in cluttered scenes, demonstrating robust performance across diverse objects and layouts. More details and videos are available at https://clutterdexgrasp.github.io/.
 
-## 개요
-혼잡한 장면에서의 정밀 파지(Dexterous grasping)는 다양한 물체 형상, 가려짐, 잠재적 충돌로 인해 상당한 어려움을 제기합니다. 기존 방법은 주로 단일 물체 파지 또는 상호작용 없는 파지 자세 예측에 초점을 맞추고 있어 복잡하고 혼잡한 장면에는 부적합합니다. 최근의 시각-언어-행동 모델은 잠재적 해결책을 제공하지만, 광범위한 실제 시연이 필요하여 비용이 많이 들고 확장이 어렵습니다. 이러한 한계를 해결하기 위해, 우리는 시뮬레이션-실제 전송 파이프라인을 재검토하고 강력한 일반화를 유지하면서 실제 환경에서 제로샷 배포를 가능하게 하는 핵심 기술을 개발합니다. 우리는 혼잡한 장면에서 폐쇄 루프 목표 지향 정밀 파지를 위한 2단계 교사-학생 프레임워크인 ClutterDexGrasp를 제안합니다. 이 프레임워크는 혼잡 밀도 커리큘럼 학습을 사용하여 시뮬레이션에서 훈련된 교사 정책을 특징으로 하며, 기하학 및 공간 임베디드 장면 표현과 새로운 포괄적 안전 커리큘럼을 통합하여 일반적이고 동적이며 안전한 파지 행동을 가능하게 합니다. 모방 학습을 통해, 우리는 교사의 지식을 부분 포인트 클라우드 관찰에서 작동하는 학생 3D 확산 정책(DP3)으로 증류합니다. 우리가 아는 한, 이는 혼잡한 장면에서 목표 지향 정밀 파지를 위한 최초의 제로샷 시뮬레이션-실제 폐쇄 루프 시스템으로, 다양한 물체와 배치에서 강력한 성능을 입증합니다. 더 자세한 내용과 비디오는 https://clutterdexgrasp.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-혼잡한 장면에서의 정밀 파지는 다양한 물체 형상, 가려짐, 잠재적 충돌로 인해 상당한 어려움을 제기합니다. 기존 방법은 주로 단일 물체 파지 또는 상호작용 없는 파지 자세 예측에 초점을 맞추고 있어 복잡하고 혼잡한 장면에는 부적합합니다. 최근의 시각-언어-행동 모델은 잠재적 해결책을 제공하지만, 광범위한 실제 시연이 필요하여 비용이 많이 들고 확장이 어렵습니다. 이러한 한계를 해결하기 위해, 우리는 시뮬레이션-실제 전송 파이프라인을 재검토하고 강력한 일반화를 유지하면서 실제 환경에서 제로샷 배포를 가능하게 하는 핵심 기술을 개발합니다. 우리는 혼잡한 장면에서 폐쇄 루프 목표 지향 정밀 파지를 위한 2단계 교사-학생 프레임워크인 ClutterDexGrasp를 제안합니다. 이 프레임워크는 혼잡 밀도 커리큘럼 학습을 사용하여 시뮬레이션에서 훈련된 교사 정책을 특징으로 하며, 기하학 및 공간 임베디드 장면 표현과 새로운 포괄적 안전 커리큘럼을 통합하여 일반적이고 동적이며 안전한 파지 행동을 가능하게 합니다. 모방 학습을 통해, 우리는 교사의 지식을 부분 포인트 클라우드 관찰에서 작동하는 학생 3D 확산 정책(DP3)으로 증류합니다. 우리가 아는 한, 이는 혼잡한 장면에서 목표 지향 정밀 파지를 위한 최초의 제로샷 시뮬레이션-실제 폐쇄 루프 시스템으로, 다양한 물체와 배치에서 강력한 성능을 입증합니다. 더 자세한 내용과 비디오는 https://clutterdexgrasp.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.14317v3
+
+## 개요
+ClutterDexGrasp는 어수선한 장면에서 폐쇄 루프 목표 지향 손재주 있는 파지를 구현하기 위한 2단계 교사-학생 프레임워크입니다. 교사 정책은 시뮬레이션에서 clutter density curriculum learning을 통해 훈련되며, 기하학적 및 공간적 임베딩 장면 표현과 포괄적인 안전 커리큘럼을 결합하여 일반적이고 동적이며 안전한 파지 행동을 학습합니다. 이후 모방 학습을 통해 부분 점군 관측에 기반한 학생 3D 확산 정책(DP3)으로 교사 지식을 증류합니다. 이 시스템은 실제 세계 데모 없이 제로샷 배포가 가능하며, 다양한 물체와 레이아웃에서 견고한 성능을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+ClutterDexGrasp는 2단계 교사-학생 프레임워크를 채택합니다:
+- **교사 정책**: 시뮬레이션 환경에서 훈련되며, clutter density curriculum learning을 사용하여 장면의 어수선함을 점진적으로 증가시킵니다. 입력에는 기하학적 및 공간적 임베딩 장면 표현이 포함되며, 포괄적인 안전 커리큘럼(예: 충돌 회피, 안정적인 파지)이 도입되어 일반적이고 동적이며 안전한 파지 행동을 학습합니다.
+- **학생 정책**: 모방 학습을 통해 교사 정책에서 지식을 증류하며, 3D 확산 정책(DP3) 아키텍처를 사용하고 부분 점군 관측에만 의존하여 폐쇄 루프 제어를 수행합니다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 실험**: 다양한 기하학적 모양, 크기 및 재질의 물체를 포함한 여러 어수선한 장면에서 테스트됩니다. 교사 정책은 clutter density가 낮은 수준에서 높은 수준으로 진행되는 커리큘럼에서 훈련되며, 최종적으로 가장 높은 어수선함 수준에서 85% 이상의 파지 성공률을 달성합니다.
+- **실제 세계 실험**: 추가 미세 조정 없이 실제 로봇 플랫폼에 제로샷 배포됩니다. 20가지 일상 물체를 포함한 어수선한 장면에서 목표 지향 파지 성공률이 78%에 도달하며, 기준 방법(예: 단일 물체 파지 방법의 성공률 40% 미만)보다 크게 우수합니다.
+- **주요 수치**: 교사 정책은 시뮬레이션에서 가장 높은 어수선함 수준에서 성공률 85%; 학생 정책은 실제 장면에서 성공률 78%; 시스템은 10가지 다른 레이아웃에서 안정적인 성능을 유지합니다.
+
+### 결론
+ClutterDexGrasp는 어수선한 장면에서 목표 지향 손재주 있는 파지의 제로샷 sim-to-real 폐쇄 루프 시스템을 최초로 구현했습니다. 핵심 혁신은 clutter density curriculum learning과 포괄적인 안전 커리큘럼에 있으며, 이를 통해 교사 정책이 견고한 파지 행동을 학습하고 DP3 증류를 통해 효율적인 배포를 달성합니다. 향후 작업은 더 복잡한 물체 상호작용과 동적 장면을 탐구할 수 있습니다.

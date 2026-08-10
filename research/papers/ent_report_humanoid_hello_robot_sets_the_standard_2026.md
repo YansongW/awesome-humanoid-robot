@@ -182,8 +182,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/stretch-4-home-robot. [2026-07-29]
-    zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/stretch-4-home-robot.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (1122 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -232,11 +233,34 @@ Forget legs or hands—Stretch 4 is a useful robot that can actually work in hom
 ## Content
 Forget legs or hands—Stretch 4 is a useful robot that can actually work in homes. And the rampant popularity of videos showing humanoid robots doing household tasks in improbably clean kitchens and unrealistically tidy bedrooms suggests that we’re not the only ones interested in a robot that can do our chores. But for all kinds of reasons, legged humanoids are not yet ready for industrial or commercial applications at scale, and home applications (if people even want them), I would argue, are even farther away. Even so, ludicrously well-funded humanoid robotics companies are now ramping production while explicitly promising that their robots will be doing ‘housework.’ So what about that robot butler dream, then? All you have to do is forget about legs, arms, hands, faces, and focus on what really matters: mobility and manipulation. This is what Hello Robot’s Stretch robot is unapologetically all about, and the newest version being announced today, Stretch 4, is closer than ever to a robot that could safely do practical work in the home at an accessible cost.
 
-## 개요
-다리나 손은 잊어라—Stretch 4는 실제로 가정에서 일할 수 있는 유용한 로봇이다. 그리고 인간형 로봇이 비현실적으로 깨끗한 주방과 지나치게 정돈된 침실에서 가사일을 하는 영상이 널리 유행하는 것은, 우리만 집안일을 해줄 로봇에 관심이 있는 것이 아님을 시사한다.
-
-## 핵심 내용
-다리나 손은 잊어라—Stretch 4는 실제로 가정에서 일할 수 있는 유용한 로봇이다. 그리고 인간형 로봇이 비현실적으로 깨끗한 주방과 지나치게 정돈된 침실에서 가사일을 하는 영상이 널리 유행하는 것은, 우리만 집안일을 해줄 로봇에 관심이 있는 것이 아님을 시사한다. 그러나 여러 이유로 인해, 다리가 있는 인간형 로봇은 아직 대규모 산업 또는 상업용 응용에 준비되지 않았으며, 가정용 응용(사람들이 원한다고 해도)은 훨씬 더 먼 미래의 일이라고 나는 주장한다. 그럼에도 불구하고, 엄청난 자금을 지원받는 인간형 로봇 회사들은 이제 로봇이 '가사일'을 할 것이라고 명시적으로 약속하면서 생산을 늘리고 있다. 그렇다면 로봇 집사 꿈은 어떻게 되는 걸까? 여러분이 해야 할 일은 다리, 팔, 손, 얼굴을 잊고 진정으로 중요한 것, 즉 이동성과 조작 능력에 집중하는 것이다. 이것이 바로 Hello Robot의 Stretch 로봇이 주저함 없이 추구하는 바이며, 오늘 발표되는 최신 버전인 Stretch 4는 저렴한 비용으로 가정에서 안전하게 실용적인 작업을 수행할 수 있는 로봇에 그 어느 때보다 가까워졌다.
-
 ## 参考
 - https://spectrum.ieee.org/stretch-4-home-robot
+
+## 개요
+Stretch 4는 Hello Robot이 출시한 최신 모바일 조작 로봇으로, 그 설계 철학은 휴머노이드 로봇 접근 방식을 명확히 반대하며, 다리, 손, 얼굴과 같은 복잡한 구조가 가정용 애플리케이션에 필수적이지 않다고 주장합니다. 로봇은 전방향 휠 섀시와 신축식 로봇 팔을 채택하여, 방향 전환 없이도 자유롭게 평행 이동이 가능해 사용 편의성을 크게 향상시킵니다. 센서 시스템은 단순한 짐벌에서 이중 반구형 라이다, Luxonis 비전 카메라, 손목 깊이 카메라로 업그레이드되어, 데이터 품질은 Tesla의 저비용 솔루션이 아닌 Waymo에 가깝습니다. Hello Robot은 대규모 데이터로 범용 자율성을 훈련하는 것을 추구하지 않고, 기반 모델 회사와 협력하여 안전하고 신뢰할 수 있는 가정 배포에 집중합니다.
+
+## 핵심 내용
+### 핵심 설계 철학
+- **휴머노이드 로봇 반대**: 공동 창립자 Aaron Edsinger와 Charlie Kemp는 휴머노이드 로봇이 가정 환경에서 안전 위험(예: 긴급 정지 시 넘어져 사람을 덮칠 수 있음)이 있으며, 걷지 못하는 사용자에게는 전혀 이점이 없다고 주장합니다. 휠체어 사용자 Henry Evans는 자신의 생활 환경이 이미 바퀴형 도구에 맞게 개조되었으며, 두 다리가 오히려 제어 복잡성을 증가시킨다고 지적합니다.
+- **미니멀리즘**: 팀은 의도적으로 "제2 시스템 증후군"을 피하며, 복잡성을 추가할 때마다 감정적 도전을 거쳐 기능과 간결함 사이의 균형을 달성합니다.
+
+### 하드웨어 업그레이드
+- **전방향 섀시**: 전동 휠체어용 신형 전방향 휠을 채택하여 6개월간의 전용 개발을 거쳐 구현했습니다. 로봇은 어떤 방향으로든 평행 이동이 가능하며, 방향 전환이 필요 없어 초보자도 쉽게 제어할 수 있습니다.
+- **센서 키트**:
+  - 이중 반구형 라이다(LIDAR)로 환경 인식
+  - Luxonis 카메라로 시각 및 내비게이션
+  - 손목 깊이 카메라로 조작
+- **컴퓨팅 플랫폼**: 메인 시스템은 Intel NUC 15를 실행하며, 연구원들이 비전 및 AI 작업을 처리할 수 있도록 Nvidia Jetson Orin NX도 추가로 장착합니다.
+
+### 자율성 철학
+- **인간 개입(Human-in-the-loop)**: 직접 제어부터 순수 감독까지 다양한 모드를 지원합니다.
+- **출고 시 성능**: 지도 작성, 내비게이션, 자동 충전 및 자율 파지와 같은 데모 수준 기능을 포함합니다.
+- **협력 전략**: 자체적으로 기반 모델을 구축하지 않고, 기반 모델 회사와 협력하여 정교한 가정 조작을 탐구합니다.
+
+### 가정 시범 및 안전
+- **목표 사용자**: 중증 이동 장애가 있는 사람들로, Henry Evans와 같은 사용자와 원격 테스트 및 가정 평가를 진행했습니다.
+- **안전 이점**: 바퀴형 로봇은 긴급 정지 시 제자리에서 멈추지만, 휴머노이드 로봇은 넘어져 사람을 덮칠 수 있습니다. Kemp는 "휴머노이드 로봇의 가정 내 안전성이 두렵다"고 단언합니다.
+- **가격 및 가용성**: 판매 가격은 29,950달러이며, 현재 구매 가능합니다. Stretch 4 시범 배포를 통해 Stretch 5가 최초의 실용적이고 저렴한 가정 보조 로봇이 되도록 추진할 계획입니다.
+
+### 결론
+Stretch 4는 바퀴형 이동과 로봇 팔 조작으로 휴머노이드 설계를 대체하여 안전, 비용 및 실용성에서 돌파구를 마련했습니다. 범용 자율성을 추구하지 않고 인간 개입과 기반 모델 협력을 통해 가정 보조 로봇에 더 현실적인 경로를 제공합니다.

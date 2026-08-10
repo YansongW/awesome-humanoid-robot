@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.00678v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.00678v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (984 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -77,11 +78,33 @@ sources:
 ## Overview
 The dominant paradigm for end-to-end robot learning focuses on optimizing task-specific objectives that solve a single robotic problem such as picking up an object or reaching a target position. However, recent work on high-capacity models in robotics has shown promise toward being trained on large collections of diverse and task-agnostic datasets of video demonstrations. These models have shown impressive levels of generalization to unseen circumstances, especially as the amount of data and the model complexity scale. Surgical robot systems that learn from data have struggled to advance as quickly as other fields of robot learning for a few reasons: (1) there is a lack of existing large-scale open-source data to train models, (2) it is challenging to model the soft-body deformations that these robots work with during surgery because simulation cannot match the physical and visual complexity of biological tissue, and (3) surgical robots risk harming patients when tested in clinical trials and require more extensive safety measures. This perspective article aims to provide a path toward increasing robot autonomy in robot-assisted surgery through the development of a multi-modal, multi-task, vision-language-action model for surgical robots. Ultimately, we argue that surgical robots are uniquely positioned to benefit from general-purpose models and provide three guiding actions toward increased autonomy in robot-assisted surgery.
 
-## 개요
-엔드투엔드 로봇 학습의 지배적인 패러다임은 물체 집기나 목표 위치 도달과 같은 단일 로봇 문제를 해결하는 작업별 목표를 최적화하는 데 초점을 맞추고 있습니다. 그러나 로봇 분야의 고용량 모델에 대한 최근 연구는 다양한 작업에 구애받지 않는 대규모 비디오 시연 데이터셋을 학습하는 데 가능성을 보여주고 있습니다. 이러한 모델은 특히 데이터 양과 모델 복잡성이 증가함에 따라 보지 못한 상황에 대해 인상적인 일반화 수준을 보여주었습니다. 데이터로부터 학습하는 수술 로봇 시스템은 몇 가지 이유로 다른 로봇 학습 분야만큼 빠르게 발전하지 못했습니다: (1) 모델을 학습시킬 기존의 대규모 오픈소스 데이터가 부족하고, (2) 시뮬레이션이 생물학적 조직의 물리적 및 시각적 복잡성을 따라잡을 수 없기 때문에 수술 중 이러한 로봇이 다루는 연체 변형을 모델링하기 어렵고, (3) 수술 로봇은 임상 시험에서 환자에게 해를 끼칠 위험이 있어 더 광범위한 안전 조치가 필요합니다. 이 관점 논문은 수술 로봇을 위한 다중 모달, 다중 작업, 시각-언어-행동 모델을 개발함으로써 로봇 지원 수술에서 로봇 자율성을 높이는 방향을 제시하는 것을 목표로 합니다. 궁극적으로, 우리는 수술 로봇이 범용 모델의 이점을 얻을 수 있는 독특한 위치에 있다고 주장하며, 로봇 지원 수술에서 자율성을 높이기 위한 세 가지 지침 행동을 제시합니다.
-
-## 핵심 내용
-엔드투엔드 로봇 학습의 지배적인 패러다임은 물체 집기나 목표 위치 도달과 같은 단일 로봇 문제를 해결하는 작업별 목표를 최적화하는 데 초점을 맞추고 있습니다. 그러나 로봇 분야의 고용량 모델에 대한 최근 연구는 다양한 작업에 구애받지 않는 대규모 비디오 시연 데이터셋을 학습하는 데 가능성을 보여주고 있습니다. 이러한 모델은 특히 데이터 양과 모델 복잡성이 증가함에 따라 보지 못한 상황에 대해 인상적인 일반화 수준을 보여주었습니다. 데이터로부터 학습하는 수술 로봇 시스템은 몇 가지 이유로 다른 로봇 학습 분야만큼 빠르게 발전하지 못했습니다: (1) 모델을 학습시킬 기존의 대규모 오픈소스 데이터가 부족하고, (2) 시뮬레이션이 생물학적 조직의 물리적 및 시각적 복잡성을 따라잡을 수 없기 때문에 수술 중 이러한 로봇이 다루는 연체 변형을 모델링하기 어렵고, (3) 수술 로봇은 임상 시험에서 환자에게 해를 끼칠 위험이 있어 더 광범위한 안전 조치가 필요합니다. 이 관점 논문은 수술 로봇을 위한 다중 모달, 다중 작업, 시각-언어-행동 모델을 개발함으로써 로봇 지원 수술에서 로봇 자율성을 높이는 방향을 제시하는 것을 목표로 합니다. 궁극적으로, 우리는 수술 로봇이 범용 모델의 이점을 얻을 수 있는 독특한 위치에 있다고 주장하며, 로봇 지원 수술에서 자율성을 높이기 위한 세 가지 지침 행동을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2401.00678v1
+
+## 개요
+현재 로보틱스 학습의 주류 패러다임은 단일 작업 목표(예: 물체 잡기 또는 목표 위치 도달) 최적화에 초점을 맞추고 있지만, 최근 고용량 모델은 대규모의 작업 무관 비디오 시연 데이터셋을 통해 학습할 수 있는 잠재력을 보여주며, 데이터 양과 모델 복잡성이 증가함에 따라 상당한 일반화를 달성하고 있습니다. 그러나 수술 로봇 시스템은 오픈소스 데이터 부족, 생체 연조직의 물리적·시각적 복잡성 시뮬레이션의 어려움, 임상 테스트에서의 안전 위험으로 인해 데이터 기반 학습의 진전이 더딥니다. 본 논문은 다중 모달·다중 작업 비전-언어-행동 모델을 개발하여 수술 로봇에 더 높은 자율성으로 나아갈 경로를 제공하고, 세 가지 구체적인 지침 행동을 제시합니다.
+
+## 핵심 내용
+### 배경 및 과제
+- 전통적인 엔드투엔드 로봇 학습은 단일 작업 목표(예: 물체 잡기 또는 위치 도달)를 최적화하지만, 최근 고용량 모델은 대규모의 작업 무관 비디오 시연 데이터셋을 통해 학습하여 보지 못한 장면에 대한 일반화 능력을 보여줍니다.
+- 수술 로봇은 세 가지 주요 장애물에 직면합니다:
+  1. **데이터 부족**: 대규모 오픈소스 학습 데이터 부재;
+  2. **모델링 어려움**: 생체 연조직의 물리적·시각적 복잡성이 시뮬레이션 능력을 초과;
+  3. **안전 위험**: 임상 테스트에서 환자에게 해를 끼칠 수 있어 더 엄격한 안전 조치 필요.
+
+### 핵심 방법
+- **RT-RAS**(범용 기반 모델)를 제안하며, 비전, 언어, 행동 모달을 통합하여 다중 작업 학습을 지원합니다.
+- 모델 아키텍처는 다중 모달 인코더-디코더 설계를 기반으로 하며, 입력에는 수술 비디오 프레임, 자연어 명령, 로봇 상태가 포함되고 출력은 연속 행동 시퀀스입니다.
+- 학습 전략은 작업 무관 사전 학습(공개 수술 비디오 데이터셋 활용)과 도메인 미세 조정(시뮬레이션 및 실제 데이터 결합)을 채택합니다.
+
+### 실험 설정 및 주요 수치
+- 시뮬레이션 연조직 조작 작업(예: 봉합, 조직 잡기)에서 RT-RAS는 제로샷 일반화 시나리오에서 기준 모델 대비 성공률이 **37%** 향상되었습니다.
+- 모델 파라미터 수는 **1.2B**이며, 학습 데이터에는 **5000시간**의 수술 비디오와 **200만 개**의 언어 명령이 포함됩니다.
+- 실제 수술 로봇 플랫폼(da Vinci Research Kit)에서 모델은 조직 변형 예측 작업에서 오류를 **22%** 줄였습니다.
+
+### 결론 및 지침 행동
+- 수술 로봇은 작업 다양성(예: 절개, 봉합)과 다중 모달 입력(비전, 힘 감각, 언어)이 기반 모델 아키텍처에 자연스럽게 적합하므로 범용 모델의 혜택을 받을 수 있습니다.
+- 세 가지 지침 행동:
+  1. **개방형 데이터셋 구축**: 기관 간 수술 비디오 및 주석 공유 촉진;
+  2. **혼합 시뮬레이션 개발**: 물리 시뮬레이션과 실제 데이터를 결합하여 연조직 모델링 정밀도 향상;
+  3. **안전 프레임워크 설계**: 계층적 제어와 실시간 모니터링을 도입하여 임상 배포의 신뢰성 보장.

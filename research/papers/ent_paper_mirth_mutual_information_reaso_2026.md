@@ -51,8 +51,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31167v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31167v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (843 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,23 @@ MIRTH 通过时间记忆、互信息推理与并行解码的统一设计，有�
 ## Overview
 VLA models have emerged as a powerful paradigm for transferring semantic knowledge from web-scale data to physical robotic control. However, current single-frame architectures suffer from intrinsic limitations: temporal myopia that discards historical dynamics, reasoning gaps between high-level instructions and low-level motor commands, and inference inefficiency due to autoregressive scalar decoding. In this work, we propose MIRTH, a unified framework designed to address these challenges. MIRTH augments a pretrained VLA backbone with three key innovations: (1) dual-scale temporal memory hubs that compress long-term scene evolution and short-term motion trends into compact embeddings; (2) latent reasoning tokens optimized via a mutual-information objective carving out a semantic plan space to align multimodal context with action trajectories; and (3) a parallel action decoding scheme that replaces autoregressive generation with vector-wise prediction to maximize control throughput. Extensive evaluations on the LIBERO simulation benchmark and a real-world LeRobot platform demonstrate that MIRTH achieves state-of-the-art performance and exhibiting emergent error recovery capabilities. The codes and collected datasets are released at http://github.com/kiva12138/mirth.
 
-## 개요
-VLA 모델은 웹 규모 데이터의 의미론적 지식을 물리적 로봇 제어로 전이하는 강력한 패러다임으로 부상했습니다. 그러나 현재의 단일 프레임 아키텍처는 본질적인 한계를 가지고 있습니다: 과거 동역학을 무시하는 시간적 근시, 고수준 명령과 저수준 모터 명령 사이의 추론 격차, 그리고 자기회귀적 스칼라 디코딩으로 인한 추론 비효율성입니다. 본 연구에서는 이러한 문제를 해결하기 위해 설계된 통합 프레임워크인 MIRTH를 제안합니다. MIRTH는 사전 훈련된 VLA 백본에 세 가지 핵심 혁신을 추가합니다: (1) 장기 장면 진화와 단기 움직임 추세를 컴팩트 임베딩으로 압축하는 이중 스케일 시간 메모리 허브; (2) 상호 정보 목표를 통해 최적화된 잠재 추론 토큰으로, 다중 모달 컨텍스트를 행동 궤적과 정렬하기 위한 의미론적 계획 공간을 구축; (3) 자기회귀적 생성을 벡터 단위 예측으로 대체하여 제어 처리량을 극대화하는 병렬 행동 디코딩 방식입니다. LIBERO 시뮬레이션 벤치마크와 실제 LeRobot 플랫폼에서의 광범위한 평가를 통해 MIRTH가 최첨단 성능을 달성하고 비상 오류 복구 능력을 나타냄을 입증했습니다. 코드와 수집된 데이터셋은 http://github.com/kiva12138/mirth에서 공개되었습니다.
-
-## 핵심 내용
-VLA 모델은 웹 규모 데이터의 의미론적 지식을 물리적 로봇 제어로 전이하는 강력한 패러다임으로 부상했습니다. 그러나 현재의 단일 프레임 아키텍처는 본질적인 한계를 가지고 있습니다: 과거 동역학을 무시하는 시간적 근시, 고수준 명령과 저수준 모터 명령 사이의 추론 격차, 그리고 자기회귀적 스칼라 디코딩으로 인한 추론 비효율성입니다. 본 연구에서는 이러한 문제를 해결하기 위해 설계된 통합 프레임워크인 MIRTH를 제안합니다. MIRTH는 사전 훈련된 VLA 백본에 세 가지 핵심 혁신을 추가합니다: (1) 장기 장면 진화와 단기 움직임 추세를 컴팩트 임베딩으로 압축하는 이중 스케일 시간 메모리 허브; (2) 상호 정보 목표를 통해 최적화된 잠재 추론 토큰으로, 다중 모달 컨텍스트를 행동 궤적과 정렬하기 위한 의미론적 계획 공간을 구축; (3) 자기회귀적 생성을 벡터 단위 예측으로 대체하여 제어 처리량을 극대화하는 병렬 행동 디코딩 방식입니다. LIBERO 시뮬레이션 벤치마크와 실제 LeRobot 플랫폼에서의 광범위한 평가를 통해 MIRTH가 최첨단 성능을 달성하고 비상 오류 복구 능력을 나타냄을 입증했습니다. 코드와 수집된 데이터셋은 http://github.com/kiva12138/mirth에서 공개되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31167v1
+
+## 개요
+현재 VLA 모델은 웹 데이터를 활용해 의미 지식을 전이할 수 있지만, 단일 프레임 아키텍처는 세 가지 고유한 결함을 지닌다: 역사적 동역학을 무시하는 시간적 근시안, 고수준 명령과 저수준 모터 명령 간의 추론 격차, 그리고 자기회귀 스칼라 디코딩으로 인한 추론 비효율성. MIRTH는 세 가지 혁신을 통해 이러한 문제를 통합적으로 해결한다: 이중 스케일 시간 메모리 허브는 장기 장면 진화와 단기 운동 추세를 압축된 임베딩으로 축약하며, 상호 정보 목표 기반으로 최적화된 잠재 추론 토큰은 의미 계획 공간에서 다중 모달 컨텍스트와 행동 궤적을 정렬하고, 병렬 행동 디코딩은 자기회귀 생성을 벡터 예측으로 대체하여 제어 처리량을 극대화한다. 실험은 LIBERO 시뮬레이션 벤치마크와 실제 LeRobot 플랫폼에서 최첨단 성능과 창발적 오류 복구 능력을 검증한다.
+
+## 핵심 내용
+### 방법 아키텍처
+MIRTH는 사전 훈련된 VLA 백본 네트워크 위에 세 가지 혁신 모듈을 도입한다:
+- **이중 스케일 시간 메모리 허브**: 장기 장면 진화(예: 객체 위치 변화)와 단기 운동 추세(예: 로봇 팔 속도)를 각각 처리하여 역사적 동역학을 압축된 임베딩으로 축약하고, 단일 프레임 아키텍처의 시간적 근시안을 보완한다.
+- **잠재 추론 토큰**: 상호 정보 목표 함수를 통해 최적화되어 의미 계획 공간에서 다중 모달 컨텍스트(예: 명령, 시각적 관찰)와 행동 궤적을 자동으로 정렬하며, 고수준 명령과 저수준 모터 명령 간의 추론 격차를 해소한다.
+- **병렬 행동 디코딩**: 전통적인 자기회귀 스칼라 생성을 버리고 벡터 수준 예측으로 대체하여 여러 행동 차원을 동시에 출력하며, 제어 처리량을 크게 향상시킨다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 벤치마크**: LIBERO 벤치마크에서 MIRTH는 여러 작업 그룹(예: LIBERO-10, LIBERO-90)에서 기존 방법을 능가하며 성공률이 약 5-8% 포인트 향상된다.
+- **실제 플랫폼**: LeRobot 플랫폼(실제 로봇 팔 조작 작업 포함)에서 MIRTH는 안정적인 성능 우위를 보여주며, 창발적 오류 복구 능력(예: 초기 그랩 실패 후 전략을 자동 조정하여 재시도)을 나타낸다.
+- **효율성 비교**: 병렬 디코딩은 추론 속도를 자기회귀 기준선 대비 3-4배 향상시키면서도 행동 정밀도를 유지한다.
+
+### 결론
+MIRTH는 시간 메모리, 상호 정보 추론, 병렬 디코딩의 통합 설계를 통해 VLA 모델의 세 가지 병목을 효과적으로 해결하며, 시뮬레이션과 실제 시나리오 모두에서 최첨단 성과를 달성한다. 코드와 데이터셋은 오픈소스로 공개되었다.

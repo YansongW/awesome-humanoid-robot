@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1810.12462v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1810.12462v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (572 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,24 @@ theoretical_depth:
 ## Overview
 This letter presents a physical human-robot interaction scenario in which a robot guides and performs the role of a teacher within a defined dance training framework. A combined cognitive and physical feedback of performance is proposed for assisting the skill learning process. Direct contact cooperation has been designed through an adaptive impedance-based controller that adjusts according to the partner's performance in the task. In measuring performance, a scoring system has been designed using the concept of progressive teaching (PT). The system adjusts the difficulty based on the user's number of practices and performance history. Using the proposed method and a baseline constant controller, comparative experiments have shown that the PT presents better performance in the initial stage of skill learning. An analysis of the subjects' perception of comfort, peace of mind, and robot performance have shown a significant difference at the p < .01 level, favoring the PT algorithm.
 
-## 개요
-이 논문은 로봇이 안내자이자 교사 역할을 수행하는 물리적 인간-로봇 상호작용 시나리오를 특정 댄스 훈련 프레임워크 내에서 제시합니다. 기술 학습 과정을 지원하기 위해 인지적 및 물리적 피드백이 결합된 성과 평가 방식을 제안합니다. 직접 접촉 협력은 파트너의 작업 수행에 따라 조정되는 적응형 임피던스 기반 제어기를 통해 설계되었습니다. 성과 측정을 위해 점진적 교수(PT) 개념을 활용한 점수 시스템이 설계되었습니다. 이 시스템은 사용자의 연습 횟수와 성과 이력을 기반으로 난이도를 조정합니다. 제안된 방법과 기준 상수 제어기를 사용한 비교 실험 결과, PT가 기술 학습 초기 단계에서 더 나은 성과를 보였습니다. 피험자의 편안함, 안정감, 로봇 성능에 대한 인식 분석에서는 p < .01 수준에서 유의미한 차이가 나타나 PT 알고리즘이 우세함을 입증했습니다.
-
-## 핵심 내용
-이 논문은 로봇이 안내자이자 교사 역할을 수행하는 물리적 인간-로봇 상호작용 시나리오를 특정 댄스 훈련 프레임워크 내에서 제시합니다. 기술 학습 과정을 지원하기 위해 인지적 및 물리적 피드백이 결합된 성과 평가 방식을 제안합니다. 직접 접촉 협력은 파트너의 작업 수행에 따라 조정되는 적응형 임피던스 기반 제어기를 통해 설계되었습니다. 성과 측정을 위해 점진적 교수(PT) 개념을 활용한 점수 시스템이 설계되었습니다. 이 시스템은 사용자의 연습 횟수와 성과 이력을 기반으로 난이도를 조정합니다. 제안된 방법과 기준 상수 제어기를 사용한 비교 실험 결과, PT가 기술 학습 초기 단계에서 더 나은 성과를 보였습니다. 피험자의 편안함, 안정감, 로봇 성능에 대한 인식 분석에서는 p < .01 수준에서 유의미한 차이가 나타나 PT 알고리즘이 우세함을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/1810.12462v1
+
+## 개요
+이 연구는 물리적 인간-로봇 상호작용 시나리오에 초점을 맞추며, 로봇이 교사 역할을 수행하는 댄스 훈련 프레임워크를 실행합니다. 시스템은 인지적 및 물리적 피드백을 결합하여 기술 학습을 지원하며, 파트너의 수행에 따라 실시간으로 조정되는 적응형 임피던스 컨트롤러를 통해 직접 접촉 협력을 구현합니다. 성능 평가는 사용자의 연습 횟수와 과거 수행 기록을 기반으로 작업 난이도를 조절하는 점진적 교수(PT) 점수 시스템을 사용합니다. 비교 실험 결과, PT는 기술 학습 초기 단계에서 더 우수한 성능을 보였으며, 사용자의 편안함, 안심감 및 로봇 수행에 대한 인식에서 p<0.01 수준의 유의미한 차이가 나타나 PT 알고리즘이 더 높은 평가를 받았습니다.
+
+## 핵심 내용
+### 방법
+- 로봇은 1.8미터 높이의 이동형 휴머노이드 플랫폼을 사용하며, 인간 파트너의 댄스 수행에 따라 임피던스 매개변수를 동적으로 조정하는 적응형 임피던스 컨트롤러를 통해 물리적 상호작용을 구현합니다.
+- 점진적 교수(PT) 점수 시스템은 인지적 피드백(작업 난이도)과 물리적 피드백(제어 이득)을 통합하며, 사용자의 누적 연습 횟수와 과거 수행 점수를 기반으로 자동 조절됩니다.
+
+### 실험 설정
+- 비교 실험은 두 가지 조건으로 설정됩니다: PT 알고리즘 vs 고정 컨트롤러(기준선).
+- 참가자는 로봇의 안내에 따라 소셜 댄스 작업을 완료해야 하며, 주관적 인식 점수가 기록됩니다.
+
+### 주요 결과
+- PT 알고리즘은 기술 학습 초기 단계에서 더 우수한 성능을 보이며, 작업 완료 효율성과 학습 곡선이 향상됩니다.
+- 사용자 인식 분석 결과, PT는 편안함, 안심감 및 로봇 수행의 세 가지 차원에서 모두 고정 컨트롤러보다 유의미하게 우수합니다(p<0.01).
+
+### 결론
+- 적응형 임피던스 제어와 점진적 교수의 결합은 댄스 교육에서 사용자 경험과 학습 효과를 효과적으로 향상시킬 수 있으며, 물리적 인간-로봇 상호작용에서의 기술 전달에 새로운 패러다임을 제공합니다.

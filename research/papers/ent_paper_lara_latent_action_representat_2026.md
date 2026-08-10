@@ -53,8 +53,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.07100v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.07100v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (810 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,11 +90,28 @@ LARA 是一个即插即用框架，通过表征对齐联合优化 LAM 和 VLA。
 ## Overview
 Visual-language action (VLA) models enable robots to predict actions directly from observations and language instructions, but their performance depends on large-scale, high-quality data and is limited by the scarcity of real-world robot action datasets. To facilitate VLA model learning with abundant unlabeled human videos, Latent Action Models (LAM) learn latent action representations from visual dynamics to provide additional supervision for VLA learning. However, LAM and VLA are typically trained separately, leaving LAM ungrounded during VLA training and VLA models constrained by frozen LAM representations. To address these issues, we propose Latent Action Representation Alignment (LARA), a plug-and-play framework that jointly optimizes LAM and VLA via representation alignment. This enables reciprocal benefits where LAMs learn with action trajectories to avoid spurious visual changes, while VLAs are regularized by forward dynamics learned within LAMs to reduce hallucinations of functionally ineffective trajectories. We demonstrate LARA versatility and effectiveness for pre-training, post-training enhancement of pre-trained VLA models, and LAM refinement, achieving an average of ~10%, ~5%, and ~15% improvement over 3 simulation and 1 meticulously designed real-world robotic manipulation benchmarks.
 
-## 개요
-Visual-language action (VLA) 모델은 로봇이 관찰 및 언어 명령으로부터 직접 행동을 예측할 수 있게 하지만, 그 성능은 대규모 고품질 데이터에 의존하며 실제 로봇 행동 데이터셋의 부족으로 제한됩니다. 풍부한 레이블이 없는 인간 비디오를 활용한 VLA 모델 학습을 촉진하기 위해, Latent Action Models (LAM)은 시각적 역학으로부터 잠재 행동 표현을 학습하여 VLA 학습에 추가적인 지도 신호를 제공합니다. 그러나 LAM과 VLA는 일반적으로 별도로 훈련되어, VLA 훈련 중 LAM이 근거를 잃고 VLA 모델이 고정된 LAM 표현에 의해 제약을 받습니다. 이러한 문제를 해결하기 위해, 우리는 표현 정렬을 통해 LAM과 VLA를 공동으로 최적화하는 플러그 앤 플레이 프레임워크인 Latent Action Representation Alignment (LARA)를 제안합니다. 이를 통해 LAM이 행동 궤적을 학습하여 허위 시각적 변화를 피하고, VLA가 LAM 내에서 학습된 순방향 역학에 의해 정규화되어 기능적으로 비효율적인 궤적의 환각을 줄이는 상호 이점이 가능해집니다. 우리는 LARA의 사전 훈련, 사전 훈련된 VLA 모델의 사후 훈련 강화, LAM 개선에 대한 다재다능함과 효과를 입증하며, 3개의 시뮬레이션 및 1개의 정교하게 설계된 실제 로봇 조작 벤치마크에서 평균 약 10%, 5%, 15%의 성능 향상을 달성했습니다.
-
-## 핵심 내용
-Visual-language action (VLA) 모델은 로봇이 관찰 및 언어 명령으로부터 직접 행동을 예측할 수 있게 하지만, 그 성능은 대규모 고품질 데이터에 의존하며 실제 로봇 행동 데이터셋의 부족으로 제한됩니다. 풍부한 레이블이 없는 인간 비디오를 활용한 VLA 모델 학습을 촉진하기 위해, Latent Action Models (LAM)은 시각적 역학으로부터 잠재 행동 표현을 학습하여 VLA 학습에 추가적인 지도 신호를 제공합니다. 그러나 LAM과 VLA는 일반적으로 별도로 훈련되어, VLA 훈련 중 LAM이 근거를 잃고 VLA 모델이 고정된 LAM 표현에 의해 제약을 받습니다. 이러한 문제를 해결하기 위해, 우리는 표현 정렬을 통해 LAM과 VLA를 공동으로 최적화하는 플러그 앤 플레이 프레임워크인 Latent Action Representation Alignment (LARA)를 제안합니다. 이를 통해 LAM이 행동 궤적을 학습하여 허위 시각적 변화를 피하고, VLA가 LAM 내에서 학습된 순방향 역학에 의해 정규화되어 기능적으로 비효율적인 궤적의 환각을 줄이는 상호 이점이 가능해집니다. 우리는 LARA의 사전 훈련, 사전 훈련된 VLA 모델의 사후 훈련 강화, LAM 개선에 대한 다재다능함과 효과를 입증하며, 3개의 시뮬레이션 및 1개의 정교하게 설계된 실제 로봇 조작 벤치마크에서 평균 약 10%, 5%, 15%의 성능 향상을 달성했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.07100v2
+
+## 개요
+VLA 모델은 대규모 고품질 데이터에 의존하지만, 실제 로봇 행동 데이터셋은 부족하다. LAM은 시각적 역학에서 잠재 행동 표현을 학습하여 추가적인 감독을 제공하지만, 둘은 일반적으로 분리되어 훈련되어 LAM이 VLA 훈련에서 접지(grounding)가 부족하고, VLA는 고정된 LAM 표현에 제한된다. LARA는 표현 정렬을 통해 공동 최적화를 구현하여, LAM이 행동 궤적으로부터 학습하여 허위 시각적 변화를 피하게 하고, 동시에 VLA는 LAM의 전방 역학에 의해 정규화되어 무효 궤적의 환각을 줄인다. 이 방법은 사전 훈련, 사후 훈련 강화 및 LAM 정제에 적용 가능하며, 세 가지 시뮬레이션과 하나의 실제 로봇 조작 벤치마크에서 각각 평균 약 10%, 5%, 15%의 향상을 달성한다.
+
+## 핵심 내용
+### 방법 개요
+LARA는 표현 정렬을 통해 LAM과 VLA를 공동 최적화하는 플러그 앤 플레이 프레임워크이다. 핵심 메커니즘은 다음과 같다:
+- **양방향 정규화**: LAM은 훈련 중 행동 궤적을 활용하여 시각적 역학만으로 학습할 때 발생하는 허위 변화를 피한다. VLA는 LAM이 학습한 전방 역학에 의해 정규화되어 기능적으로 무효한 궤적의 환각을 줄인다.
+- **공동 최적화**: LAM과 VLA는 훈련 과정에서 서로 업데이트되며, 독립적으로 훈련되거나 한쪽 표현이 고정되지 않는다.
+
+### 실험 설정
+- **벤치마크**: 3개의 시뮬레이션 환경(구체적인 이름은 본문에 나열되지 않음)과 1개의 정교하게 설계된 실제 로봇 조작 벤치마크에서 평가된다.
+- **적용 시나리오**: LARA의 세 가지 시나리오에서의 효과를 검증한다:
+  - **사전 훈련**: 처음부터 LAM과 VLA를 공동 훈련한다.
+  - **사후 훈련 강화**: 사전 훈련된 VLA 모델을 미세 조정하여 강화한다.
+  - **LAM 정제**: 기존 LAM 표현을 최적화한다.
+
+### 주요 결과
+- **성능 향상**: 시뮬레이션 및 실제 벤치마크에서 LARA는 평균 약:
+  - 사전 훈련 시나리오: ~10%
+  - 사후 훈련 강화 시나리오: ~5%
+  - LAM 정제 시나리오: ~15%
+- **결론**: LARA는 표현 정렬을 통해 LAM과 VLA의 분리 훈련 문제를 해결하여 양방향 이점을 구현하고, 로봇 조작 작업의 성능을 크게 향상시킨다.

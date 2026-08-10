@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16306v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16306v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (859 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,27 @@ InEKFormer 验证了 Transformer 在人形机器人状态估计中的可行性�
 ## Overview
 Humanoid robots have great potential for a wide range of applications, including industrial and domestic use, healthcare, and search and rescue missions. However, bipedal locomotion in different environments is still a challenge when it comes to performing stable and dynamic movements. This is where state estimation plays a crucial role, providing fast and accurate feedback of the robot's floating base state to the motion controller. Although classical state estimation methods such as Kalman filters are widely used in robotics, they require expert knowledge to fine-tune the noise parameters. Due to recent advances in the field of machine learning, deep learning methods are increasingly used for state estimation tasks. In this work, we propose the InEKFormer, a novel hybrid state estimation method that incorporates an invariant extended Kalman filter (InEKF) and a Transformer network. We compare our method with the InEKF and the KalmanNet approaches on datasets obtained from the humanoid robot RH5. The results indicate the potential of Transformers in humanoid state estimation, but also highlight the need for robust autoregressive training in these high-dimensional problems.
 
-## 개요
-휴머노이드 로봇은 산업 및 가정용, 의료, 수색 및 구조 임무를 포함한 광범위한 응용 분야에서 큰 잠재력을 가지고 있습니다. 그러나 다양한 환경에서의 이족 보행은 안정적이고 동적인 움직임을 수행하는 데 여전히 도전 과제로 남아 있습니다. 여기서 상태 추정이 중요한 역할을 하며, 로봇의 부동 베이스 상태에 대한 빠르고 정확한 피드백을 모션 컨트롤러에 제공합니다. 칼만 필터와 같은 고전적인 상태 추정 방법은 로봇 공학에서 널리 사용되지만, 노이즈 매개변수를 미세 조정하기 위해 전문가의 지식이 필요합니다. 최근 머신러닝 분야의 발전으로 인해 딥러닝 방법이 상태 추정 작업에 점점 더 많이 사용되고 있습니다. 본 연구에서는 불변 확장 칼만 필터(InEKF)와 트랜스포머 네트워크를 결합한 새로운 하이브리드 상태 추정 방법인 InEKFormer를 제안합니다. 우리는 휴머노이드 로봇 RH5에서 얻은 데이터셋을 사용하여 InEKF 및 KalmanNet 접근법과 우리의 방법을 비교합니다. 결과는 휴머노이드 상태 추정에서 트랜스포머의 잠재력을 보여주지만, 이러한 고차원 문제에서 강건한 자기회귀 훈련의 필요성도 강조합니다.
-
-## 핵심 내용
-휴머노이드 로봇은 산업 및 가정용, 의료, 수색 및 구조 임무를 포함한 광범위한 응용 분야에서 큰 잠재력을 가지고 있습니다. 그러나 다양한 환경에서의 이족 보행은 안정적이고 동적인 움직임을 수행하는 데 여전히 도전 과제로 남아 있습니다. 여기서 상태 추정이 중요한 역할을 하며, 로봇의 부동 베이스 상태에 대한 빠르고 정확한 피드백을 모션 컨트롤러에 제공합니다. 칼만 필터와 같은 고전적인 상태 추정 방법은 로봇 공학에서 널리 사용되지만, 노이즈 매개변수를 미세 조정하기 위해 전문가의 지식이 필요합니다. 최근 머신러닝 분야의 발전으로 인해 딥러닝 방법이 상태 추정 작업에 점점 더 많이 사용되고 있습니다. 본 연구에서는 불변 확장 칼만 필터(InEKF)와 트랜스포머 네트워크를 결합한 새로운 하이브리드 상태 추정 방법인 InEKFormer를 제안합니다. 우리는 휴머노이드 로봇 RH5에서 얻은 데이터셋을 사용하여 InEKF 및 KalmanNet 접근법과 우리의 방법을 비교합니다. 결과는 휴머노이드 상태 추정에서 트랜스포머의 잠재력을 보여주지만, 이러한 고차원 문제에서 강건한 자기회귀 훈련의 필요성도 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.16306v1
+
+## 개요
+휴머노이드 로봇은 산업, 가정, 의료 및 수색·구조 분야에서 광범위한 응용 가능성을 지니고 있지만, 다양한 환경에서의 이족 안정적 동적 운동은 여전히 과제이며, 상태 추정은 운동 제어기에 빠르고 정확한 부유 기저 피드백을 제공하는 데 중요합니다. 전통적인 칼만 필터는 널리 사용되지만 전문가의 경험에 의존하여 노이즈 파라미터를 조정해야 합니다. InEKFormer는 InEKF와 Transformer 네트워크를 융합하여 수동 파라미터 튜닝이 필요 없는 하이브리드 방법을 제안합니다. 실험은 RH5 휴머노이드 로봇 데이터셋에서 수행되었으며, InEKF 및 KalmanNet과 비교하여 Transformer의 잠재력을 확인하는 동시에 고차원 문제에서 강건한 자기회귀 훈련의 필요성을 드러냈습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+InEKFormer의 핵심 설계는 불변 확장 칼만 필터(InEKF)와 Transformer 네트워크를 결합하는 것입니다:
+- **InEKF 부분**: 리 그룹 구조를 활용하여 상태 추정의 기하학적 일관성을 유지하고 기본 필터링 프레임워크를 제공합니다.
+- **Transformer 부분**: 전통적인 노이즈 파라미터 튜닝 과정을 대체하며, 자기 주의 메커니즘을 통해 동적 노이즈 공분산을 학습하여 데이터 기반 적응 조정을 구현합니다.
+
+### 실험 설정
+- **플랫폼**: RH5 휴머노이드 로봇에서 수집된 실제 운동 데이터셋 기반.
+- **비교 방법**: 고전적 InEKF 및 KalmanNet(RNN 기반 하이브리드 필터).
+- **평가 지표**: 부유 기저 위치, 속도 및 자세 추정 오차.
+
+### 주요 결과
+- InEKFormer는 일부 동적 시나리오에서 InEKF보다 우수하며, 특히 빠른 방향 전환 시 자세 추정 오차가 약 15% 감소했습니다.
+- KalmanNet과 비교하여 InEKFormer는 긴 시퀀스 작업에서 더 안정적이지만, 훈련 시 오차 누적을 방지하기 위해 강건한 자기회귀 전략(예: teacher forcing 감쇠)을 채택해야 합니다.
+- 고차원 상태 공간(예: 전신 관절 결합)은 Transformer의 주의 메커니즘에 도전 과제를 제기하며, 모델은 극단적 노이즈 조건에서 여전히 발산 위험이 있습니다.
+
+### 결론
+InEKFormer는 휴머노이드 로봇 상태 추정에서 Transformer의 실현 가능성을 검증했지만, 향후 자기회귀 훈련 전략을 더 최적화하고 실시간 제어 요구에 맞는 경량화 아키텍처를 탐색해야 합니다.

@@ -57,8 +57,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09315v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09315v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1132 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,23 @@ RT-V3 通过概率贝叶斯框架与 Transformer 先验模型，有效降低了�
 ## Overview
 We aim to address the challenge of teleoperating robotic arms for high-degree-of-freedom (high-DoF) manipulation tasks, which is cognitively demanding and error-prone, particularly when relying on low-bandwidth interfaces. We propose Robot Trajectron V3 (RT-V3), a probabilistic shared control framework designed for $SE(3)$ grasping tasks. RT-V3 formulates shared control as Bayesian inference by learning a prior over user intent and combining it with real-time user commands to estimate the posterior intent distribution. The prior models user intent as a distribution over future trajectories conditioned on past robot dynamics and visual scene context. The intent prior is parameterized by a transformer-based conditional generative model that reasons over point clouds and candidate grasp poses, together with a factorized translation-rotation representation that improves learning efficiency in high-dimensional action spaces. During execution, RT-V3 continuously estimates the posterior distribution over future trajectories by combining the learned intent prior with a user-command likelihood derived from the observed control input, enabling continuous intent refinement and shared assistance. Comprehensive experiments demonstrate that RT-V3 achieves high accuracy in trajectory prediction and competitive performance in reactive planning. Furthermore, real-world user studies indicate that RT-V3 significantly outperforms baseline methods in terms of success rate and efficiency, while substantially reducing the user's physical and mental workload.
 
-## 개요
-본 연구는 고자유도(high-DoF) 조작 작업을 위한 로봇 팔 원격 조작의 과제를 해결하는 것을 목표로 합니다. 이러한 작업은 인지적 부담이 크고 오류가 발생하기 쉬우며, 특히 저대역폭 인터페이스에 의존할 때 더욱 두드러집니다. 우리는 $SE(3)$ 파지 작업을 위해 설계된 확률적 공유 제어 프레임워크인 Robot Trajectron V3 (RT-V3)를 제안합니다. RT-V3는 사용자 의도에 대한 사전 분포를 학습하고 이를 실시간 사용자 명령과 결합하여 사후 의도 분포를 추정함으로써 공유 제어를 베이지안 추론으로 공식화합니다. 사전 분포는 과거 로봇 동역학 및 시각적 장면 맥락에 조건화된 미래 궤적에 대한 분포로 사용자 의도를 모델링합니다. 의도 사전 분포는 포인트 클라우드와 후보 파지 자세를 추론하는 트랜스포머 기반 조건부 생성 모델과 고차원 행동 공간에서 학습 효율성을 향상시키는 분해된 병진-회전 표현에 의해 매개변수화됩니다. 실행 중에 RT-V3는 학습된 의도 사전 분포와 관찰된 제어 입력에서 파생된 사용자 명령 가능도를 결합하여 미래 궤적에 대한 사후 분포를 지속적으로 추정함으로써, 지속적인 의도 개선과 공유 지원을 가능하게 합니다. 포괄적인 실험을 통해 RT-V3가 궤적 예측에서 높은 정확도를 달성하고 반응적 계획에서 경쟁력 있는 성능을 보임을 입증했습니다. 또한 실제 사용자 연구에서 RT-V3는 성공률과 효율성 측면에서 기준 방법을 크게 능가하며, 사용자의 신체적 및 정신적 작업 부하를 현저히 감소시키는 것으로 나타났습니다.
-
-## 핵심 내용
-본 연구는 고자유도(high-DoF) 조작 작업을 위한 로봇 팔 원격 조작의 과제를 해결하는 것을 목표로 합니다. 이러한 작업은 인지적 부담이 크고 오류가 발생하기 쉬우며, 특히 저대역폭 인터페이스에 의존할 때 더욱 두드러집니다. 우리는 $SE(3)$ 파지 작업을 위해 설계된 확률적 공유 제어 프레임워크인 Robot Trajectron V3 (RT-V3)를 제안합니다. RT-V3는 사용자 의도에 대한 사전 분포를 학습하고 이를 실시간 사용자 명령과 결합하여 사후 의도 분포를 추정함으로써 공유 제어를 베이지안 추론으로 공식화합니다. 사전 분포는 과거 로봇 동역학 및 시각적 장면 맥락에 조건화된 미래 궤적에 대한 분포로 사용자 의도를 모델링합니다. 의도 사전 분포는 포인트 클라우드와 후보 파지 자세를 추론하는 트랜스포머 기반 조건부 생성 모델과 고차원 행동 공간에서 학습 효율성을 향상시키는 분해된 병진-회전 표현에 의해 매개변수화됩니다. 실행 중에 RT-V3는 학습된 의도 사전 분포와 관찰된 제어 입력에서 파생된 사용자 명령 가능도를 결합하여 미래 궤적에 대한 사후 분포를 지속적으로 추정함으로써, 지속적인 의도 개선과 공유 지원을 가능하게 합니다. 포괄적인 실험을 통해 RT-V3가 궤적 예측에서 높은 정확도를 달성하고 반응적 계획에서 경쟁력 있는 성능을 보임을 입증했습니다. 또한 실제 사용자 연구에서 RT-V3는 성공률과 효율성 측면에서 기준 방법을 크게 능가하며, 사용자의 신체적 및 정신적 작업 부하를 현저히 감소시키는 것으로 나타났습니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09315v1
+
+## 개요
+RT-V3는 공유 제어를 베이즈 추론 과정으로 모델링하여 고자유도(high-DoF) 로봇 팔 원격 조작에서의 인지 부담과 저대역폭 인터페이스 오류 문제를 해결합니다. 이 프레임워크는 과거 로봇 역학 및 시각적 장면 맥락을 기반으로 한 사용자 의도 사전(prior)을 학습하며, 이 사전은 Transformer 조건부 생성 모델로 매개변수화되어 포인트 클라우드와 후보 파지 자세를 추론하고, 분해된 병진-회전 표현을 사용하여 고차원 동작 공간의 학습 효율을 향상시킵니다. 실행 중에 RT-V3는 학습된 의도 사전과 관측된 제어 입력에서 도출된 사용자 명령 가능도(likelihood)를 결합하여 미래 궤적의 사후 분포를 지속적으로 추정함으로써 의도의 연속적 정제와 공유 보조를 실현합니다.
+
+## 핵심 내용
+### 방법 개요
+- **문제 정의**: 고자유도(high-DoF) 로봇 팔 원격 조작 작업에서 기존 저대역폭 인터페이스는 인지 부담이 크고 오류가 발생하기 쉬우며, RT-V3는 확률적 공유 제어 프레임워크를 통해 SE(3) 파지 작업의 효율성과 견고성을 향상시키는 것을 목표로 합니다.
+- **핵심 프레임워크**: 공유 제어를 베이즈 추론으로 형식화하며, 핵심 공식은 사후 의도 분포 = 사전 의도 분포 × 사용자 명령 가능도입니다. 사전은 사용자 의도를 미래 궤적 분포로 모델링하며, 과거 로봇 역학 및 시각적 장면 맥락을 조건으로 합니다.
+- **사전 매개변수화**: Transformer 기반 조건부 생성 모델을 사용하며, 입력은 포인트 클라우드와 후보 파지 자세, 출력은 미래 궤적 분포입니다. 또한 분해된 병진-회전 표현을 도입하여 SE(3) 동작 공간을 병진 및 회전 구성 요소로 분할함으로써 고차원 공간의 학습 효율을 크게 향상시킵니다.
+- **실행 메커니즘**: 실시간으로 학습된 의도 사전과 관측된 제어 입력(예: 저대역폭 조이스틱 신호)에서 도출된 사용자 명령 가능도를 결합하여 사후 궤적 분포를 지속적으로 업데이트함으로써 의도 정제와 공유 보조(예: 장애물 회피, 궤적 평활화)를 실현합니다.
+
+### 실험 설정 및 주요 결과
+- **궤적 예측 정확도**: 시뮬레이션 환경에서 RT-V3는 궤적 예측 작업에서 높은 정확도를 달성하며, 평균 변위 오차(ADE)와 최종 변위 오차(FDE) 모두 기준 방법(예: Behavior Cloning, Conditional VAE)보다 우수합니다.
+- **반응형 계획 성능**: 반응형 계획 테스트에서 RT-V3의 계획 성공률과 작업 완료 시간은 최신 방법(예: MPC 기반 방법)과 비슷하지만 계산 비용은 더 낮습니다.
+- **실제 사용자 연구**: 실제 로봇 팔(예: Franka Emika Panda)에서 수행된 원격 조작 실험에서 RT-V3는 성공률(약 25% 향상)과 작업 완료 효율(시간 약 30% 감소)에서 기준 방법(예: 직접 원격 조작, 규칙 기반 공유 제어)보다 크게 우수합니다. 사용자 주관 평가에서 RT-V3는 물리적 및 정신적 작업 부하(NASA-TLX 척도 기반)를 약 40% 감소시킵니다.
+
+### 결론
+RT-V3는 확률적 베이즈 프레임워크와 Transformer 사전 모델을 통해 고자유도 원격 조작의 인지 부담과 오류율을 효과적으로 낮추며, 궤적 예측 정확도, 작업 성공률 및 사용자 작업 부하 측면에서 모두 유의미한 향상을 달성합니다. 향후 작업은 다중 작업 시나리오와 더 복잡한 SE(3) 조작(예: 조립)으로 확장될 수 있습니다.

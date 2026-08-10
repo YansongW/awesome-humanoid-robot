@@ -58,8 +58,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.30111v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.30111v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1017 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -95,11 +96,29 @@ sources:
 ## Overview
 Embodied agents are typically built as hand-designed compositions of perception, memory, planning, and action modules. This modularity exposes a large architectural design space, but current systems still rely on researcher intuition to choose where information is stored, how observations are processed, and how model calls are connected. Agent Architecture Search (AAS) automates such design for text-domain agents, but has not been systematically evaluated on perceptual embodied agents through simulator rollouts. We study this transfer. We introduce AgentCanvas, a typed-graph runtime that hosts embodied executors as editable node-and-wire programs with simulator-aware execution and episode-level logs, and KDLoop, a coding-agent search procedure that cycles through proposal, critique, experiment, and distillation, with triggered reflection after stalls. We evaluate three AAS variants across four embodied executors spanning vision-language navigation, embodied question answering, and language-conditioned manipulation. The resulting 3x4 matrix shows that architecture-level search can produce deployable and directional success-rate gains on embodied tasks, while one apparent high-scoring candidate is rejected as leak-bearing. At the same time, the experiments expose constraints that are muted in text-domain AAS: optimization signals can be masked by rollout noise, search can become trapped in local edit basins, and episode-level credit assignment only partially emerges even when detailed logs are available. These results characterize both the promise and the current limits of automated architecture search for embodied agents.
 
-## 개요
-임베디드 에이전트는 일반적으로 지각, 기억, 계획 및 행동 모듈을 수동으로 설계한 조합으로 구축됩니다. 이러한 모듈성은 방대한 아키텍처 설계 공간을 제공하지만, 현재 시스템은 여전히 연구자의 직관에 의존하여 정보 저장 위치, 관찰 처리 방식, 모델 호출 연결 방법을 결정합니다. 에이전트 아키텍처 탐색(AAS)은 텍스트 도메인 에이전트를 위한 이러한 설계를 자동화하지만, 시뮬레이터 롤아웃을 통한 지각적 임베디드 에이전트에 대한 체계적 평가는 이루어지지 않았습니다. 우리는 이러한 전이를 연구합니다. AgentCanvas를 소개합니다. 이는 편집 가능한 노드-와이어 프로그램으로 임베디드 실행기를 호스팅하며, 시뮬레이터 인식 실행과 에피소드 수준 로그를 제공하는 타입 그래프 런타임입니다. 또한 KDLoop는 제안, 비평, 실험 및 증류를 순환하고 정체 시 트리거된 반성을 포함하는 코딩 에이전트 탐색 절차입니다. 우리는 시각-언어 내비게이션, 임베디드 질문 응답 및 언어 조건 조작을 포괄하는 네 가지 임베디드 실행기에서 세 가지 AAS 변형을 평가합니다. 결과 3x4 행렬은 아키텍처 수준 탐색이 임베디드 작업에서 배포 가능하고 방향성 있는 성공률 향상을 생성할 수 있음을 보여주지만, 한 명백히 높은 점수의 후보는 누출이 있는 것으로 기각됩니다. 동시에 실험은 텍스트 도메인 AAS에서 약화된 제약 조건을 드러냅니다: 최적화 신호가 롤아웃 노이즈에 의해 가려질 수 있고, 탐색이 로컬 편집 분지에 갇힐 수 있으며, 상세 로그가 제공되어도 에피소드 수준 신용 할당이 부분적으로만 나타납니다. 이러한 결과는 임베디드 에이전트를 위한 자동 아키텍처 탐색의 가능성과 현재 한계를 특성화합니다.
-
-## 핵심 내용
-임베디드 에이전트는 일반적으로 지각, 기억, 계획 및 행동 모듈을 수동으로 설계한 조합으로 구축됩니다. 이러한 모듈성은 방대한 아키텍처 설계 공간을 제공하지만, 현재 시스템은 여전히 연구자의 직관에 의존하여 정보 저장 위치, 관찰 처리 방식, 모델 호출 연결 방법을 결정합니다. 에이전트 아키텍처 탐색(AAS)은 텍스트 도메인 에이전트를 위한 이러한 설계를 자동화하지만, 시뮬레이터 롤아웃을 통한 지각적 임베디드 에이전트에 대한 체계적 평가는 이루어지지 않았습니다. 우리는 이러한 전이를 연구합니다. AgentCanvas를 소개합니다. 이는 편집 가능한 노드-와이어 프로그램으로 임베디드 실행기를 호스팅하며, 시뮬레이터 인식 실행과 에피소드 수준 로그를 제공하는 타입 그래프 런타임입니다. 또한 KDLoop는 제안, 비평, 실험 및 증류를 순환하고 정체 시 트리거된 반성을 포함하는 코딩 에이전트 탐색 절차입니다. 우리는 시각-언어 내비게이션, 임베디드 질문 응답 및 언어 조건 조작을 포괄하는 네 가지 임베디드 실행기에서 세 가지 AAS 변형을 평가합니다. 결과 3x4 행렬은 아키텍처 수준 탐색이 임베디드 작업에서 배포 가능하고 방향성 있는 성공률 향상을 생성할 수 있음을 보여주지만, 한 명백히 높은 점수의 후보는 누출이 있는 것으로 기각됩니다. 동시에 실험은 텍스트 도메인 AAS에서 약화된 제약 조건을 드러냅니다: 최적화 신호가 롤아웃 노이즈에 의해 가려질 수 있고, 탐색이 로컬 편집 분지에 갇힐 수 있으며, 상세 로그가 제공되어도 에피소드 수준 신용 할당이 부분적으로만 나타납니다. 이러한 결과는 임베디드 에이전트를 위한 자동 아키텍처 탐색의 가능성과 현재 한계를 특성화합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.30111v2
+
+## 개요
+구현 지능 에이전트는 일반적으로 수동으로 설계된 인식, 기억, 계획 및 동작 모듈의 조합으로 구성됩니다. 이러한 모듈식 설계는 거대한 아키텍처 공간을 노출하지만, 현재 시스템은 여전히 연구자의 직관에 의존하여 결정을 내립니다. 본 논문은 처음으로 Agent Architecture Search(AAS)를 텍스트 도메인에서 구현 지각 에이전트로 체계적으로 이전하고, 시뮬레이터 롤백을 통해 평가합니다. 저자는 AgentCanvas——구현 실행기를 편집 가능한 노드-연결 프로그램으로 캡슐화하는 타입화된 그래프 런타임을 개발하여, 시뮬레이터 지각 실행 및 에피소드 수준 로그를 지원합니다. 동시에 KDLoop 검색 프로세스를 제안하며, 제안, 비판, 실험 및 증류의 순환을 통해 진행되고, 정체 시 반성을 트리거합니다. 시각 언어 내비게이션, 구현 질의응답 및 언어 조건 조작을 포함한 네 가지 실행기에서 세 가지 AAS 변형의 3x4 평가 매트릭스는 아키텍처 수준 검색이 배포 가능한 방향성 성공률 향상을 가져올 수 있음을 보여주지만, 높은 점수의 후보 중 하나가 정보 누출이 있는 것으로 식별되었습니다. 실험은 또한 텍스트 도메인 AAS에서는 명확하지 않은 제약을 드러냈습니다: 최적화 신호가 롤백 노이즈에 의해 가려질 수 있고, 검색이 로컬 편집 분지에 빠지기 쉬우며, 상세한 로그가 있어도 에피소드 수준 신용 할당은 부분적으로만 구현됩니다.
+
+## 핵심 내용
+### 핵심 기여
+- **AgentCanvas**: 구현 실행기를 편집 가능한 노드-연결 프로그램으로 표현하는 타입화된 그래프 런타임으로, 시뮬레이터 지각 실행 및 에피소드 수준 로그 기록을 지원합니다.
+- **KDLoop**: 제안, 비판, 실험 및 증류의 네 단계를 포함하는 에이전트 검색 프로세스를 인코딩하며, 검색 정체 시 반성 메커니즘을 트리거합니다.
+
+### 실험 설정
+- **평가 매트릭스**: 3가지 AAS 변형 × 4개의 구현 실행기, 세 가지 작업 영역을 포괄:
+  - 시각 언어 내비게이션(Vision-Language Navigation)
+  - 구현 질의응답(Embodied Question Answering)
+  - 언어 조건 조작(Language-Conditioned Manipulation)
+- **주요 발견**:
+  - 아키텍처 수준 검색은 배포 가능한 성공률 향상을 생성할 수 있으며 방향성을 가집니다
+  - 겉보기에 높은 점수의 후보 하나가 정보 누출(leak-bearing)로 인해 거부되었습니다
+- **노출된 제약**:
+  - 최적화 신호가 롤백 노이즈(rollout noise)에 의해 가려질 수 있습니다
+  - 검색은 로컬 편집 분지(local edit basins)에 빠지기 쉽습니다
+  - 상세한 로그가 있어도 에피소드 수준 신용 할당(episode-level credit assignment)은 부분적으로만 구현됩니다
+
+### 결론
+이러한 결과는 구현 지능 에이전트에서 자동화된 아키텍처 검색의 전망과 현재 한계를 특성화하며, 텍스트 도메인에서 구현 도메인으로의 이전이 노이즈 견고성, 검색 공간 탐색 및 신용 할당 문제를 포함한 독특한 도전에 직면함을 시사합니다.

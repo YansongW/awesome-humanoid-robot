@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/bruce-westwood.md（访问日期 2026-07-01）。官方宣称开源软件与模型，但整机控制框架的公开仓库在检索中未找到，整机开源程度存疑；价格约 $6.5K
-    来自第三方论文对比表（ToddlerBot, arXiv:2502.00893 Table I），官方为询价制。
+  notes: '内容整理自调研档案 data/roadmap/research/bruce-westwood.md（访问日期 2026-07-01）。官方宣称开源软件与模型，但整机控制框架的公开仓库在检索中未找到，整机开源程度存疑；价格约
+    $6.5K 来自第三方论文对比表（ToddlerBot, arXiv:2502.00893 Table I），官方为询价制。 | WP4 trilingual backfill 2026-08-10: en body retranslated
+    from zh deep-read (1566 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -60,7 +61,6 @@ sources:
   url: https://www.aparobot.com/robots/bruce
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 BRUCE（Bipedal Robot Unit with Compliance Enhanced）是 Westwood Robotics（西木科技，2018 年由 UCLA RoMeLa 前核心成员创立）与 UCLA RoMeLa 联合开发的儿童尺寸双足人形平台，设计论文为 Liu et al., ICRA 2022。整机高 70 cm、重 4.8 kg，16 个自由度（每条腿 5、每条臂 3），是"能跑能跳"的少数派小型高动态双足平台（来源：调研档案 bruce-westwood.md，下同）。
@@ -136,3 +136,38 @@ BRUCE(Bipedal Robot Unit with Compliance Enhanced)는 Westwood Robotics(서목�
 
 - 적합: 대학 연구실에서 고동적 이족 보행 운동 제어 연구——70cm / 4.8kg 소형 + 준직구동 + 액체 냉각, BEAR 액추에이터와 MPC 스택은 고동적 운동 제어 연구자에게 매우 가치 있음; 여러 유럽 및 미국 대학과 연구 회사에서 채택(예: UCL).
 - 진입 장벽: 전체 기계의 오픈소스 정도가 의문(공개 저장소는 컴포넌트 수준만), 개인이 자체 복제 불가능, 상업 구매만 가능; 문서는 전문 사용자 대상; 0→1 첫 번째 로봇으로 권장되지 않으며, 초보자는 오픈소스 컴포넌트(PyBEAR 등)를 통해 준직구동 액추에이터를 학습할 수 있음.
+
+## Overview
+
+BRUCE (Bipedal Robot Unit with Compliance Enhanced) is a child-sized bipedal humanoid platform jointly developed by Westwood Robotics (founded in 2018 by former core members of UCLA RoMeLa) and UCLA RoMeLa, with the design paper by Liu et al., ICRA 2022. The robot stands 70 cm tall, weighs 4.8 kg, and has 16 degrees of freedom (5 per leg, 3 per arm), making it one of the few small-scale high-dynamic bipedal platforms capable of running and jumping (source: research archive bruce-westwood.md, same below).
+
+The open-source status needs to be clarified: it is officially positioned as an "open platform," claiming open-source software and models, but the public repository for the full-robot control framework was not found in GitHub searches (as of 2026-07-01, its license terms could not be directly verified); component-level repositories (PyBEAR, BRUCE_SENSE, Wireless_ESTOP, etc.) are open-sourced under the `Westwood-Robotics` organization. Regarding hardware cost, a third-party paper comparison table (ToddlerBot, arXiv:2502.00893 Table I) lists it at approximately $6.5K; the official page uses an inquiry-based pricing model without public pricing, and the acquisition channel is commercial procurement rather than self-replication.
+
+## Content
+
+### Key Parameters
+
+| Item | Value | Source |
+|---|---|---|
+| Height / Weight | 70 cm / 4.8 kg | WRC exhibit page / third-party paper |
+| Degrees of Freedom | 16 (legs 5×2, arms 3×2) | WRC exhibit page |
+| Hardware Cost | Approximately $6.5K (third-party paper comparison table); official inquiry-based pricing | ToddlerBot paper Table I |
+| Main Controller | 6 TOPS compute, 8GB RAM, 32GB storage, supports mainstream deep learning frameworks | Exhibit page description |
+| Sensors | 4 foot contact sensors; 6-axis IMU, communication/sampling rate 2 kHz | aparobot.com |
+| Battery | 3000 mAh, approximately 20 minutes of continuous dynamic operation; independent wireless emergency stop device | aparobot.com |
+| Beginner Friendliness | 2 / 5 (research archive assessment) | Research archive |
+
+### Actuator Solution
+
+- Self-developed Koala BEAR proprioceptive quasi-direct-drive actuators: only 250 g per unit, peak torque 10.5 N·m (leg joint specification); critical joints (such as knees) use liquid cooling to support burst torque and sustained high-dynamic output.
+- Carbon fiber composite frame, topology-optimized, highly modular, easy to maintain and replace—technical lineage consistent with UCLA ARTEMIS's BEAR series actuators (semi-direct-drive/QDD approach).
+
+### Software Stack
+
+- Variable-frequency MPC motion control algorithm supporting high-dynamic behaviors such as walking, running, and jumping; the model library and simulation environment are used as benchmarks in multiple third-party papers (e.g., gait planning comparison study in arXiv:2511.00840).
+- Officially claims "open-source software and models" and "actively iterating GitHub Repo and Wiki"; actual public content mainly consists of component-level repositories such as actuators (PyBEAR), sensing (BRUCE_SENSE), and wireless emergency stop; no public evidence of an official ROS/ROS2 stack.
+
+### Suitable Audience
+
+- Suitable for: university laboratories conducting high-dynamic bipedal motion control research—70 cm / 4.8 kg compact size + quasi-direct-drive + liquid cooling, with BEAR actuators and MPC stack being highly valuable for those researching high-dynamic motion control; adopted by multiple European and American universities and research companies (e.g., UCL).
+- Barrier: the degree of full-robot open-sourcing is questionable (only component-level public repositories are visible), individuals cannot self-replicate and must procure commercially; documentation targets professional users; not recommended as a first 0→1 robot, but beginners can learn about quasi-direct-drive actuators from its open-source components (PyBEAR, etc.).

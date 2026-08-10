@@ -42,8 +42,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/inmoov.md（访问日期 2026-07-01）。无官方 BOM，成本为媒体/第三方数据库估算区间；身高/重量/自由度因构建者而异，所列数值为第三方报道口径。3D
-    打印部件为 CC BY-NC 3.0 非商业许可。
+  notes: '内容整理自调研档案 data/roadmap/research/inmoov.md（访问日期 2026-07-01）。无官方 BOM，成本为媒体/第三方数据库估算区间；身高/重量/自由度因构建者而异，所列数值为第三方报道口径。3D
+    打印部件为 CC BY-NC 3.0 非商业许可。 | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1645 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -56,7 +56,6 @@ sources:
   url: https://github.com/MyRobotLab/myrobotlab
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 InMoov 是法国雕塑家/模型师 Gaël Langevin（Factice Ateliers）于 2012 年 1 月发起的个人开源项目，是首个可用家用 3D 打印机复现的真人尺寸开源人形机器人，软件生态依托 MyRobotLab 社区。整机真人尺寸（约 1.75–1.8 m 的报道口径），默认仅为上半身（头、躯干、双臂、双手），无腿；重量因构建而异（第三方报道约 30 kg，非官方数据）（来源：调研档案 inmoov.md，下同）。
@@ -140,3 +139,42 @@ InMoov는 프랑스 조각가/모델러 Gaël Langevin(Factice Ateliers)이 2012
 
 - 적합: 저렴하게 "실물 크기 로봇을 만드는" 경험을 원하는 메이커, 예술/교육/HRI 시나리오. 모든 부품을 가정용 프린터로 제작 가능하고, 서보 모터+Arduino 기술 스택의 진입 장벽이 낮으며, 커뮤니티가 크고, 완성 후 상호작용 시연(음성, 비전, 제스처)이 인상적이어서 "로봇 메이커 입문 첫걸음"으로 훌륭합니다.
 - 장벽: 비영리 라이선스로 상업적 사용 제한. 조립 엔지니어링에 수백 시간 소요. 다리가 없고 걷지 못하며, 동역학/강화학습/ROS 등 현대 휴머노이드 기술 스택을 여기서 배울 수 없음. 서보 모터의 정밀도와 수명이 제한적입니다.
+
+## Overview
+
+InMoov is a personal open-source project initiated in January 2012 by French sculptor/model maker Gaël Langevin (Factice Ateliers). It is the first life-size open-source humanoid robot reproducible with a home 3D printer, with its software ecosystem built around the MyRobotLab community. The full robot is life-size (approximately 1.75–1.8 m per reports), with the default configuration being only the upper body (head, torso, arms, and hands); it has no legs. Weight varies by build (third-party reports around 30 kg, unofficial data) (source: research archive inmoov.md, hereinafter the same).
+
+License: 3D-printed parts are CC BY-NC 3.0 (Attribution-NonCommercial); the MyRobotLab framework was historically GPLv2, now marked Apache-2.0 on the GitHub repository. There is no official BOM; costs are media estimates: approximately $800 (2015 full-robot report); $900+ excluding torso and head (2013 report); $800–2,500 depending on servo/electronics selection (2025 third-party database). By 2018, nearly 1,000 InMoov replicas existed worldwide (ESILV report), making it the most replicated open-source humanoid robot in history.
+
+## Content
+
+### Key Parameters
+
+| Item | Value | Source |
+|---|---|---|
+| Height / Weight | Approximately 1.75–1.8 m / approximately 30 kg (both third-party report figures, unofficial) | Third-party database |
+| Degrees of Freedom | Typical full build around 28 servos, 22–30 controllable DOF (third-party figures); also reports of "approximately 45 joints" | Third-party database |
+| Hardware Cost | No official BOM; estimated range $800–2,500 | Media / third-party database |
+| Low-Level Control | Arduino Mega (servo PWM) | Research archive |
+| High-Level Control | PC running MyRobotLab (Java framework, Python bindings) | Research archive |
+| Power Supply | Typically desktop power supply (AC); battery options for mobile base versions | Research archive |
+| Beginner Friendliness | 3 / 5 (research archive assessment) | Research archive |
+
+### Actuators and Mechanics
+
+- Standard hobby servos (MG996R, HS-805BB, and other common community models), no custom actuators.
+- Hands are tendon-driven (fishing line) five-finger designs capable of gripping and sign-language-level gestures, making them InMoov's most iconic subsystem (single hand print time approximately 13–14 hours); both hands are fully actuated five-finger designs (5–6 servos per hand).
+- Design software is the open-source Blender; all parts can be reproduced on home 3D printers with a 12×12×12 cm build volume.
+- Significant engineering effort: 290 parts, approximately 600 hours of 3D printing plus approximately 400 hours of assembly and tuning (ESILV student team report figures).
+
+### Software Stack and Sensors
+
+- MyRobotLab (MRL): service-oriented robotics framework with built-in speech recognition, OpenCV vision, chatbot (Program AB), Web UI, gesture capture, etc.; primarily aimed at interaction rather than motion control.
+- Community has ROS ports (e.g., alansrobotlab/inmoov_ros, 46 stars, discontinued after 2019); recent community trends include Jetson/Raspberry Pi + LLM modernization.
+- Sensors are community-customized: dual USB cameras for eyes, microphone (speech recognition), optional Kinect/ultrasonic/IMU/RealSense.
+- No official kinematics/dynamics simulation stack (no official support for Gazebo/Isaac/MuJoCo)—it is not designed as a platform for locomotion research.
+
+### Target Audience
+
+- Suitable for: makers who want a low-cost experience of "building a life-size robot," and art/education/HRI scenarios—all parts can be made with home printers, the servo+Arduino tech stack has a low barrier to entry, the community is large, and the interactive demonstrations (speech, vision, gestures) are impressive once completed, making it an excellent "first lesson in robot making."
+- Barriers: non-commercial license restricts commercial use; assembly is hundreds of hours; no legs and cannot walk, so modern humanoid tech stacks like dynamics/RL/ROS cannot be learned here; servo precision and lifespan are limited.

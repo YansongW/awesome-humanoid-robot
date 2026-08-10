@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.12851v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.12851v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (689 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,25 @@ KungfuBot 通过结合多阶段运动处理与自适应跟踪机制，突破了�
 ## Overview
 Humanoid robots are promising to acquire various skills by imitating human behaviors. However, existing algorithms are only capable of tracking smooth, low-speed human motions, even with delicate reward and curriculum design. This paper presents a physics-based humanoid control framework, aiming to master highly-dynamic human behaviors such as Kungfu and dancing through multi-steps motion processing and adaptive motion tracking. For motion processing, we design a pipeline to extract, filter out, correct, and retarget motions, while ensuring compliance with physical constraints to the maximum extent. For motion imitation, we formulate a bi-level optimization problem to dynamically adjust the tracking accuracy tolerance based on the current tracking error, creating an adaptive curriculum mechanism. We further construct an asymmetric actor-critic framework for policy training. In experiments, we train whole-body control policies to imitate a set of highly-dynamic motions. Our method achieves significantly lower tracking errors than existing approaches and is successfully deployed on the Unitree G1 robot, demonstrating stable and expressive behaviors. The project page is https://kungfubot.github.io.
 
-## 개요
-휴머노이드 로봇은 인간의 행동을 모방하여 다양한 기술을 습득할 수 있는 가능성을 지니고 있습니다. 그러나 기존 알고리즘은 정교한 보상 및 커리큘럼 설계에도 불구하고 부드럽고 저속인 인간 동작만을 추적할 수 있습니다. 본 논문은 물리 기반 휴머노이드 제어 프레임워크를 제시하며, 쿵푸와 춤과 같은 고역학적 인간 행동을 다단계 동작 처리 및 적응형 동작 추적을 통해 마스터하는 것을 목표로 합니다. 동작 처리를 위해, 물리적 제약 조건을 최대한 준수하면서 동작을 추출, 필터링, 보정 및 리타겟팅하는 파이프라인을 설계합니다. 동작 모방을 위해, 현재 추적 오류에 기반하여 추적 정확도 허용 오차를 동적으로 조정하는 이중 수준 최적화 문제를 공식화하여 적응형 커리큘럼 메커니즘을 생성합니다. 또한 정책 훈련을 위한 비대칭 행위자-비평가 프레임워크를 구축합니다. 실험에서, 우리는 고역학적 동작 세트를 모방하기 위해 전신 제어 정책을 훈련합니다. 우리의 방법은 기존 접근 방식보다 현저히 낮은 추적 오류를 달성하며, Unitree G1 로봇에 성공적으로 배포되어 안정적이고 표현력 있는 행동을 보여줍니다. 프로젝트 페이지는 https://kungfubot.github.io입니다.
-
-## 핵심 내용
-휴머노이드 로봇은 인간의 행동을 모방하여 다양한 기술을 습득할 수 있는 가능성을 지니고 있습니다. 그러나 기존 알고리즘은 정교한 보상 및 커리큘럼 설계에도 불구하고 부드럽고 저속인 인간 동작만을 추적할 수 있습니다. 본 논문은 물리 기반 휴머노이드 제어 프레임워크를 제시하며, 쿵푸와 춤과 같은 고역학적 인간 행동을 다단계 동작 처리 및 적응형 동작 추적을 통해 마스터하는 것을 목표로 합니다. 동작 처리를 위해, 물리적 제약 조건을 최대한 준수하면서 동작을 추출, 필터링, 보정 및 리타겟팅하는 파이프라인을 설계합니다. 동작 모방을 위해, 현재 추적 오류에 기반하여 추적 정확도 허용 오차를 동적으로 조정하는 이중 수준 최적화 문제를 공식화하여 적응형 커리큘럼 메커니즘을 생성합니다. 또한 정책 훈련을 위한 비대칭 행위자-비평가 프레임워크를 구축합니다. 실험에서, 우리는 고역학적 동작 세트를 모방하기 위해 전신 제어 정책을 훈련합니다. 우리의 방법은 기존 접근 방식보다 현저히 낮은 추적 오류를 달성하며, Unitree G1 로봇에 성공적으로 배포되어 안정적이고 표현력 있는 행동을 보여줍니다. 프로젝트 페이지는 https://kungfubot.github.io입니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.12851v3
+
+## 개요
+기존 알고리즘은 정교한 보상 및 커리큘럼 설계를 사용하더라도 부드럽고 저속인 인간의 움직임만 추적할 수 있습니다. KungfuBot은 다단계 동작 처리 파이프라인(추출, 필터링, 보정 및 리타게팅)을 통해 물리적 제약 준수를 보장하고, 추적 정밀도 허용 오차를 동적으로 조정하는 이중 계층 최적화 문제를 구축하여 적응형 커리큘럼 메커니즘을 형성합니다. 또한, 비대칭 actor-critic 프레임워크를 사용하여 정책을 훈련하며, 최종적으로 Unitree G1 로봇에서 안정적이고 표현력이 풍부한 고동적 행동을 구현합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **동작 처리 파이프라인**: 추출, 필터링, 보정 및 리타게팅을 포함하는 파이프라인을 설계하여 동작 데이터가 최대한 물리적 제약을 준수하도록 보장합니다.
+- **적응형 추적 메커니즘**: 동작 모방을 이중 계층 최적화 문제로 모델링하고, 현재 추적 오류에 따라 정밀도 허용 오차를 동적으로 조정하여 적응형 커리큘럼 학습을 형성합니다.
+- **정책 훈련 프레임워크**: 비대칭 actor-critic 아키텍처를 채택하며, critic은 전체 상태 정보에 접근할 수 있고 actor는 부분 관측에만 의존합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 물리 엔진 기반으로 전신 제어 정책을 훈련하여 고동적 동작(예: 무술 동작 및 춤)을 모방합니다.
+- **하드웨어 배포**: 훈련된 정책을 추가 미세 조정 없이 Unitree G1 휴머노이드 로봇에 직접 배포합니다.
+
+### 주요 결과
+- 기존 방법과 비교하여 KungfuBot은 추적 오류를 크게 줄였으며, 특히 빠르고 큰 동작에서 뛰어난 성능을 보입니다.
+- Unitree G1 로봇에서 안정적이고 표현력이 풍부한 행동을 성공적으로 구현하여 프레임워크의 물리적 실현 가능성을 검증했습니다.
+
+### 결론
+KungfuBot은 다단계 동작 처리와 적응형 추적 메커니즘을 결합하여 기존 방법의 저속 및 부드러운 동작에 대한 한계를 극복하고, 휴머노이드 로봇이 고동적 기술을 학습할 수 있는 효과적인 솔루션을 제공합니다. 프로젝트 페이지에서 더 많은 데모와 코드 세부 정보를 확인할 수 있습니다.

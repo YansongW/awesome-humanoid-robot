@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.03441v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.03441v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (639 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,25 @@ CLoSD 成功结合了运动扩散模型的多样性与强化学习的物理合�
 ## Overview
 Motion diffusion models and Reinforcement Learning (RL) based control for physics-based simulations have complementary strengths for human motion generation. The former is capable of generating a wide variety of motions, adhering to intuitive control such as text, while the latter offers physically plausible motion and direct interaction with the environment. In this work, we present a method that combines their respective strengths. CLoSD is a text-driven RL physics-based controller, guided by diffusion generation for various tasks. Our key insight is that motion diffusion can serve as an on-the-fly universal planner for a robust RL controller. To this end, CLoSD maintains a closed-loop interaction between two modules -- a Diffusion Planner (DiP), and a tracking controller. DiP is a fast-responding autoregressive diffusion model, controlled by textual prompts and target locations, and the controller is a simple and robust motion imitator that continuously receives motion plans from DiP and provides feedback from the environment. CLoSD is capable of seamlessly performing a sequence of different tasks, including navigation to a goal location, striking an object with a hand or foot as specified in a text prompt, sitting down, and getting up. https://guytevet.github.io/CLoSD-page/
 
-## 개요
-모션 확산 모델과 물리 기반 시뮬레이션을 위한 강화 학습(RL) 기반 제어는 인간 동작 생성에 있어 상호 보완적인 강점을 지닙니다. 전자는 텍스트와 같은 직관적인 제어를 따르며 다양한 동작을 생성할 수 있는 반면, 후자는 물리적으로 타당한 동작과 환경과의 직접적인 상호작용을 제공합니다. 본 연구에서는 각각의 강점을 결합한 방법을 제시합니다. CLoSD는 다양한 작업을 위해 확산 생성을 통해 안내되는 텍스트 기반 RL 물리 제어기입니다. 우리의 핵심 통찰은 동작 확산이 강력한 RL 제어기를 위한 즉석 범용 계획자 역할을 할 수 있다는 것입니다. 이를 위해 CLoSD는 확산 계획자(DiP)와 추적 제어기라는 두 모듈 간의 폐쇄 루프 상호작용을 유지합니다. DiP는 텍스트 프롬프트와 목표 위치에 의해 제어되는 빠르게 응답하는 자기회귀 확산 모델이며, 제어기는 DiP로부터 지속적으로 동작 계획을 수신하고 환경으로부터 피드백을 제공하는 간단하고 강력한 동작 모방기입니다. CLoSD는 목표 위치로의 이동, 텍스트 프롬프트에 지정된 손이나 발로 물체 치기, 앉기, 일어서기 등 일련의 다양한 작업을 원활하게 수행할 수 있습니다. https://guytevet.github.io/CLoSD-page/
-
-## 핵심 내용
-모션 확산 모델과 물리 기반 시뮬레이션을 위한 강화 학습(RL) 기반 제어는 인간 동작 생성에 있어 상호 보완적인 강점을 지닙니다. 전자는 텍스트와 같은 직관적인 제어를 따르며 다양한 동작을 생성할 수 있는 반면, 후자는 물리적으로 타당한 동작과 환경과의 직접적인 상호작용을 제공합니다. 본 연구에서는 각각의 강점을 결합한 방법을 제시합니다. CLoSD는 다양한 작업을 위해 확산 생성을 통해 안내되는 텍스트 기반 RL 물리 제어기입니다. 우리의 핵심 통찰은 동작 확산이 강력한 RL 제어기를 위한 즉석 범용 계획자 역할을 할 수 있다는 것입니다. 이를 위해 CLoSD는 확산 계획자(DiP)와 추적 제어기라는 두 모듈 간의 폐쇄 루프 상호작용을 유지합니다. DiP는 텍스트 프롬프트와 목표 위치에 의해 제어되는 빠르게 응답하는 자기회귀 확산 모델이며, 제어기는 DiP로부터 지속적으로 동작 계획을 수신하고 환경으로부터 피드백을 제공하는 간단하고 강력한 동작 모방기입니다. CLoSD는 목표 위치로의 이동, 텍스트 프롬프트에 지정된 손이나 발로 물체 치기, 앉기, 일어서기 등 일련의 다양한 작업을 원활하게 수행할 수 있습니다. https://guytevet.github.io/CLoSD-page/
-
 ## 参考
 - http://arxiv.org/abs/2410.03441v1
+
+## 개요
+CLoSD는 폐쇄 루프 상호작용을 통해 확산 플래너(DiP)와 추적 컨트롤러를 결합합니다. DiP는 텍스트 프롬프트와 목표 위치에 따라 운동 계획을 생성하는 빠른 자기회귀 확산 모델이며, 컨트롤러는 DiP의 계획을 지속적으로 수신하고 환경 정보를 피드백하는 간단하고 견고한 운동 모방기입니다. 이 방법은 목표 위치로 내비게이션, 텍스트 프롬프트에 따라 손이나 발로 물체를 타격, 앉기, 일어서기 등 일련의 다양한 작업을 원활하게 수행할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+CLoSD는 두 가지 핵심 모듈로 구성됩니다:
+- **확산 플래너(DiP)**: 텍스트 프롬프트와 목표 위치에 의해 제어되는 빠른 응답 자기회귀 확산 모델로, 운동 계획 생성을 담당합니다.
+- **추적 컨트롤러**: DiP의 운동 계획을 지속적으로 수신하고 환경 피드백에 따라 조정하는 간단하고 견고한 운동 모방기입니다.
+
+### 폐쇄 루프 상호작용
+두 모듈 간에는 폐쇄 루프 상호작용이 유지됩니다: DiP는 범용 플래너로서 컨트롤러에 실시간 운동 계획을 제공하며, 컨트롤러는 환경 상태를 DiP에 피드백하여 운동 계획의 물리적 타당성을 보장합니다.
+
+### 실험 설정 및 핵심 수치
+- **작업 다양성**: CLoSD는 내비게이션, 물체 타격(손 또는 발), 앉기, 일어서기 등 다양한 작업을 원활하게 수행할 수 있습니다.
+- **제어 방식**: 모든 작업은 텍스트 프롬프트로 구동되며, 수동으로 전략을 전환할 필요가 없습니다.
+- **성능 표현**: 실험에 따르면 CLoSD는 물리 시뮬레이션 환경에서 높은 견고성과 작업 완료율을 달성했습니다.
+
+### 결론
+CLoSD는 운동 확산 모델의 다양성과 강화 학습의 물리적 타당성을 성공적으로 결합하여, 다중 작업 캐릭터 제어를 위한 효율적이고 유연한 솔루션을 제공합니다. 프로젝트 페이지: https://guytevet.github.io/CLoSD-page/

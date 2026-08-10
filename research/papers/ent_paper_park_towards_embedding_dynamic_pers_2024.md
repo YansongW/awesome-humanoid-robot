@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.10041v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.10041v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (785 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,33 @@ MASK验证了通过非语言行为传递人格的可行性，为交互式机器�
 ## Overview
 This paper presents the design and development of an innovative interactive robotic system to enhance audience engagement using character-like personas. Built upon the foundations of persona-driven dialog agents, this work extends the agent's application to the physical realm, employing robots to provide a more captivating and interactive experience. The proposed system, named the Masquerading Animated Social Kinematic (MASK), leverages an anthropomorphic robot which interacts with guests using non-verbal interactions, including facial expressions and gestures. A behavior generation system based upon a finite-state machine structure effectively conditions robotic behavior to convey distinct personas. The MASK framework integrates a perception engine, a behavior selection engine, and a comprehensive action library to enable real-time, dynamic interactions with minimal human intervention in behavior design. Throughout the user subject studies, we examined whether the users could recognize the intended character in both personality- and film-character-based persona conditions. We conclude by discussing the role of personas in interactive agents and the factors to consider for creating an engaging user experience.
 
-## 개요
-본 논문은 캐릭터와 같은 페르소나를 활용하여 관객의 참여를 향상시키는 혁신적인 대화형 로봇 시스템의 설계 및 개발을 제시합니다. 페르소나 기반 대화 에이전트의 기초 위에 구축된 이 연구는 에이전트의 적용을 물리적 영역으로 확장하여 로봇을 사용해 더욱 매력적이고 상호작용적인 경험을 제공합니다. 제안된 시스템인 MASK(Masquerading Animated Social Kinematic)는 인간형 로봇을 활용하여 표정과 제스처를 포함한 비언어적 상호작용으로 손님과 소통합니다. 유한 상태 기계 구조에 기반한 행동 생성 시스템은 로봇의 행동을 효과적으로 조절하여 뚜렷한 페르소나를 전달합니다. MASK 프레임워크는 인식 엔진, 행동 선택 엔진 및 포괄적인 동작 라이브러리를 통합하여 행동 설계에 최소한의 인간 개입으로 실시간 동적 상호작용을 가능하게 합니다. 사용자 주제 연구를 통해 우리는 사용자가 성격 기반 및 영화 캐릭터 기반 페르소나 조건 모두에서 의도된 캐릭터를 인식할 수 있는지 조사했습니다. 결론적으로 대화형 에이전트에서 페르소나의 역할과 매력적인 사용자 경험을 창출하기 위해 고려해야 할 요소에 대해 논의합니다.
-
-## 핵심 내용
-본 논문은 캐릭터와 같은 페르소나를 활용하여 관객의 참여를 향상시키는 혁신적인 대화형 로봇 시스템의 설계 및 개발을 제시합니다. 페르소나 기반 대화 에이전트의 기초 위에 구축된 이 연구는 에이전트의 적용을 물리적 영역으로 확장하여 로봇을 사용해 더욱 매력적이고 상호작용적인 경험을 제공합니다. 제안된 시스템인 MASK(Masquerading Animated Social Kinematic)는 인간형 로봇을 활용하여 표정과 제스처를 포함한 비언어적 상호작용으로 손님과 소통합니다. 유한 상태 기계 구조에 기반한 행동 생성 시스템은 로봇의 행동을 효과적으로 조절하여 뚜렷한 페르소나를 전달합니다. MASK 프레임워크는 인식 엔진, 행동 선택 엔진 및 포괄적인 동작 라이브러리를 통합하여 행동 설계에 최소한의 인간 개입으로 실시간 동적 상호작용을 가능하게 합니다. 사용자 주제 연구를 통해 우리는 사용자가 성격 기반 및 영화 캐릭터 기반 페르소나 조건 모두에서 의도된 캐릭터를 인식할 수 있는지 조사했습니다. 결론적으로 대화형 에이전트에서 페르소나의 역할과 매력적인 사용자 경험을 창출하기 위해 고려해야 할 요소에 대해 논의합니다.
-
 ## 参考
 - http://arxiv.org/abs/2403.10041v2
+
+## 개요
+MASK 시스템은 인격 기반 대화 에이전트 연구를 물리적 로봇 영역으로 확장하여, 인간형 로봇의 비언어적 상호작용(얼굴 표정 및 제스처)을 통해 인격 특성을 전달합니다. 시스템 아키텍처는 인식 엔진, 행동 선택 엔진, 동작 라이브러리로 구성되며, 유한 상태 머신 구조를 기반으로 차별화된 행동을 생성하여 인간 개입 없이 실시간 동적 상호작용을 구현합니다. 사용자 연구는 시스템이 인격 특성 및 영화 캐릭터 두 조건 모두에서 사전 설정된 인격을 효과적으로 전달함을 검증했습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+MASK 시스템은 세 가지 핵심 모듈로 구성됩니다:
+- **인식 엔진**: 사용자 행동 및 환경 상태를 실시간으로 분석
+- **행동 선택 엔진**: 유한 상태 머신(FSM) 구조를 기반으로 현재 인격 상태와 상호작용 맥락에 따라 행동 선택
+- **동작 라이브러리**: 사전 정의된 얼굴 표정 시퀀스 및 신체 동작 파라미터 포함
+
+### 인격 주입 메커니즘
+- LLM 기반 인격 주입기를 사용하여 텍스트 설명의 인격 특성을 행동 파라미터로 변환
+- 두 가지 인격 조건 지원: 빅파이브 인격 특성(예: 개방성, 성실성) 및 영화 캐릭터 인격(예: 《스타워즈》의 요다)
+- FSM 상태 전환 규칙은 인격 특성에 따라 동적으로 조정되며, 예를 들어 높은 외향성 인격은 더 빈번한 사회적 제스처에 대응
+
+### 실험 설정
+- **참가자**: 162명의 피험자(평균 연령 24.3세, 성별 비율 균형)
+- **실험 조건**: 인격 특성 그룹(5가지 빅파이브 인격) 및 영화 캐릭터 그룹(3명의 유명 캐릭터)
+- **평가 방법**: 피험자가 30초 로봇 상호작용 비디오를 시청한 후 사전 설정된 인격 목록에서 일치 항목 선택
+
+### 주요 결과
+- 인격 특성 인식 정확도: 개방성 72.3%, 성실성 68.1%, 외향성 81.5%, 우호성 76.4%, 신경증 69.8%
+- 영화 캐릭터 인식 정확도: 요다 84.2%, C-3PO 79.6%, WALL-E 88.1%
+- 모든 조건의 인식 정확도는 무작위 수준보다 유의미하게 높음(p<0.001)
+
+### 결론
+MASK는 비언어적 행동을 통한 인격 전달의 실현 가능성을 검증했으며, 상호작용 로봇의 인격화 설계를 위한 재현 가능한 프레임워크를 제공합니다. 향후 연구는 다중 모달 인격 융합 및 장기 상호작용에서의 인격 적응성을 탐구할 것입니다.

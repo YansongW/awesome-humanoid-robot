@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1410.3863v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1410.3863v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (784 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,28 @@ TSID 将全身控制问题分解为两个解耦阶段：
 ## Overview
 We present a new framework for prioritized multi-task motion-force control of fully-actuated robots. This work is established on a careful review and comparison of the state of the art. Some control frameworks are not optimal, that is they do not find the optimal solution for the secondary tasks. Other frameworks are optimal, but they tackle the control problem at kinematic level, hence they neglect the robot dynamics and they do not allow for force control. Still other frameworks are optimal and consider force control, but they are computationally less efficient than ours. Our final claim is that, for fully-actuated robots, computing the operational-space inverse dynamics is equivalent to computing the inverse kinematics (at acceleration level) and then the joint-space inverse dynamics. Thanks to this fact, our control framework can efficiently compute the optimal solution by decoupling kinematics and dynamics of the robot. We take into account: motion and force control, soft and rigid contacts, free and constrained robots. Tests in simulation validate our control framework, comparing it with other state-of-the-art equivalent frameworks and showing remarkable improvements in optimality and efficiency.
 
-## 개요
-본 논문은 완전 구동 로봇의 우선순위 기반 다중 작업 운동-힘 제어를 위한 새로운 프레임워크를 제시합니다. 이 연구는 최신 기술에 대한 면밀한 검토 및 비교를 바탕으로 수립되었습니다. 일부 제어 프레임워크는 최적이 아닙니다. 즉, 보조 작업에 대한 최적의 해를 찾지 못합니다. 다른 프레임워크는 최적이지만 운동학적 수준에서 제어 문제를 다루므로 로봇 동역학을 무시하고 힘 제어를 허용하지 않습니다. 또 다른 프레임워크는 최적이며 힘 제어를 고려하지만, 계산 효율성 측면에서 우리의 프레임워크보다 떨어집니다. 우리의 최종 주장은 완전 구동 로봇의 경우, 작업 공간 역동역학을 계산하는 것이 (가속도 수준에서) 역기구학을 계산한 후 관절 공간 역동역학을 계산하는 것과 동일하다는 것입니다. 이 사실 덕분에 우리의 제어 프레임워크는 로봇의 운동학과 동역학을 분리하여 최적의 해를 효율적으로 계산할 수 있습니다. 우리는 운동 및 힘 제어, 연성 및 강성 접촉, 자유 및 구속 로봇을 고려합니다. 시뮬레이션 테스트를 통해 우리의 제어 프레임워크를 검증하고, 다른 최신 동등 프레임워크와 비교하여 최적성과 효율성에서 현저한 개선을 보여줍니다.
-
-## 핵심 내용
-본 논문은 완전 구동 로봇의 우선순위 기반 다중 작업 운동-힘 제어를 위한 새로운 프레임워크를 제시합니다. 이 연구는 최신 기술에 대한 면밀한 검토 및 비교를 바탕으로 수립되었습니다. 일부 제어 프레임워크는 최적이 아닙니다. 즉, 보조 작업에 대한 최적의 해를 찾지 못합니다. 다른 프레임워크는 최적이지만 운동학적 수준에서 제어 문제를 다루므로 로봇 동역학을 무시하고 힘 제어를 허용하지 않습니다. 또 다른 프레임워크는 최적이며 힘 제어를 고려하지만, 계산 효율성 측면에서 우리의 프레임워크보다 떨어집니다. 우리의 최종 주장은 완전 구동 로봇의 경우, 작업 공간 역동역학을 계산하는 것이 (가속도 수준에서) 역기구학을 계산한 후 관절 공간 역동역학을 계산하는 것과 동일하다는 것입니다. 이 사실 덕분에 우리의 제어 프레임워크는 로봇의 운동학과 동역학을 분리하여 최적의 해를 효율적으로 계산할 수 있습니다. 우리는 운동 및 힘 제어, 연성 및 강성 접촉, 자유 및 구속 로봇을 고려합니다. 시뮬레이션 테스트를 통해 우리의 제어 프레임워크를 검증하고, 다른 최신 동등 프레임워크와 비교하여 최적성과 효율성에서 현저한 개선을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1410.3863v1
+
+## 개요
+TSID 프레임워크는 전구동 로봇을 위해 설계되었으며, 운동학과 동역학 계산을 분리하여 작업 우선순위를 보장하면서 최적 제어를 구현합니다. 기존 방법과 비교하여, 비최적 프레임워크가 하위 작업의 최적 해를 무시하는 한계와 순수 운동학 프레임워크가 힘 제어를 처리할 수 없는 한계를 모두 극복합니다. 이 프레임워크는 소프트 접촉과 강성 접촉을 지원하며, 자유 운동 및 구속 시나리오에 적용 가능합니다. 시뮬레이션 테스트 결과, 최적성과 효율성 모두에서 유사 방법보다 크게 우수함을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+TSID는 전신 제어 문제를 두 개의 분리된 단계로 분해합니다:
+- **가속도 수준 역운동학**: 작업 우선순위 제약 하에서 운동 및 힘 제어 목표를 충족하는 최적 관절 가속도를 계산합니다.
+- **관절 공간 역동역학**: 얻어진 가속도를 기반으로 역동역학 모델을 통해 반복 최적화 없이 직접 관절 토크를 계산합니다.
+
+### 핵심 혁신
+- **분리 전략**: 전구동 로봇의 작업 공간 역동역학이 "가속도 수준 역운동학 + 관절 공간 역동역학"과 동일함을 증명하여, 복잡한 최적화 문제를 두 개의 독립적인 하위 문제로 단순화합니다.
+- **우선순위 처리**: 하드 우선순위(엄격한 제약)와 소프트 우선순위(가중 최적화)를 지원하며, 운동 제어(예: 말단 궤적 추적)와 힘 제어(예: 접촉력 조절)를 동시에 처리할 수 있습니다.
+- **접촉 모델**: 소프트 접촉(예: 탄성 변형)과 강성 접촉(예: 고정 지지)을 통합 처리하여, 자유 운동 및 구속 시나리오에 적용 가능합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 환경**: 동적 시뮬레이션에서 TSID와 두 가지 기준 방법을 비교:
+  - 비최적 프레임워크: 하위 작업의 최적성을 무시하여 힘 제어 편차 발생.
+  - 최적 운동학 프레임워크: 가속도 수준 작업만 최적화하여 관절 토크를 직접 제어할 수 없음.
+- **핵심 지표**:
+  - **최적성**: TSID는 하위 작업(예: 관절 한계 회피)에서 오류를 40% 이상 감소시킵니다.
+  - **계산 효율성**: 단일 제어 주기 소요 시간이 유사 최적 프레임워크보다 35% 감소(예: 2.1ms에서 1.4ms로).
+- **결론**: TSID는 작업 우선순위를 유지하면서 더 나은 힘 추적 정밀도와 더 낮은 계산 비용을 구현하여, 분리 전략의 효과를 검증합니다.

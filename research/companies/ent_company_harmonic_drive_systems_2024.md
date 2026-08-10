@@ -33,7 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/companies/company_harmonic_drive.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/companies/company_harmonic_drive.md by scripts/backfill_nonpaper_entries.py. | WP4
+    trilingual backfill 2026-08-10: en body retranslated from zh deep-read (2484 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -42,18 +43,10 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 哈默纳科是人形机器人领域的重要零部件_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
-## Harmonic Drive Systems / Harmonic Drive Systems
-
-> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。
-> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
-
----
-
 ### 公司信息卡
 
 | 项目 | 内容 |
@@ -235,3 +228,94 @@ Harmonic Drive Systems는 CSF/CSG, SHF/SHG 시리즈 하모닉 감속기와 FHA-
 1. [공식 사이트](https://www.harmonicdrive.net)
 2. [WAIC 2026 참가 보도](https://www.worldrobotconference.com)
 3. [공개 제품 매뉴얼 및 리서치 보고서](https://www.inovance.com) (실제 제품 모델에 따라 확인 필요)
+
+## Overview
+Harmonic Drive is an important component manufacturer in the humanoid robotics field. The following content is compiled from the project Wiki for in-depth reference.
+
+## Content
+### Company Information Card
+
+| Item | Details |
+|------|---------|
+| **Chinese Name** | Harmonic Drive Systems |
+| **English Name** | Harmonic Drive Systems |
+| **Headquarters** | Azumino, Nagano Prefecture, Japan |
+| **Founded** | 1970 |
+| **Official Website** | [https://www.harmonicdrive.net](https://www.harmonicdrive.net) |
+| **Supply Chain Segment** | Harmonic reducers / Precision reducers / Rotary actuators |
+| **Company Type** | Foreign brand, Japanese listed company |
+| **Parent/Group** | Harmonic Drive Systems Inc. |
+| **Data Sources** | Official website, product manuals, public research reports, WAIC 2026 coverage |
+
+### Company Profile
+
+The global inventor and leader in harmonic reducers, known for zero backlash, high torque density, and long service life.
+
+Harmonic Drive Systems offers the CSF/CSG and SHF/SHG series harmonic reducers, as well as the FHA-C integrated rotary actuator, serving as a core transmission component supplier for industrial robots, semiconductor equipment, and humanoid robot joints.
+
+### Product Lines
+
+| Product Line | Positioning | Representative Products | Application Areas |
+|--------------|-------------|-------------------------|-------------------|
+| CSF/CSG Component Type | Standard/high-torque harmonic reducers | CSF-32 / CSG-32 | Robot joints, rotary tables |
+| SHF/SHG Hollow Type | Hollow-shaft harmonic reducers | SHF-32 / SHG-32 | Collaborative robots, humanoid robots |
+
+### Representative Products
+
+#### CSF-32-50-2A-GR Harmonic Reducer / CSF-32-50-2A-GR Harmonic Drive
+
+> CSF-32-50-2A-GR Harmonic Reducer: Please refer to the [official documentation](https://www.harmonicdrive.net) for details.
+
+| Specification | Value | Notes/Source |
+|---------------|-------|--------------|
+| Outer Diameter | 110 mm | Electromate |
+| Length | 44 mm | Electromate |
+| Weight | 0.89 kg | Electromate |
+| Reduction Ratio | 50:1 | Electromate |
+| Max Continuous Torque | 76 N·m | Electromate |
+| Max Input Speed | 7000 rpm | Electromate |
+| Backlash | ≤ 1 arc-min | Electromate |
+| Mounting Type | Flange output / Component type | Electromate |
+
+**Technical Highlights**: S-tooth profile, zero backlash, component-type design for easy integration into robot joints.
+
+**Application Scenarios**: Industrial robot wrists, humanoid robot forearms/wrists, semiconductor rotary tables.
+
+#### SHF-32-120 Harmonic Reducer / SHF-32-120 Harmonic Drive
+
+> SHF-32-120 Harmonic Reducer: Please refer to the [official documentation](https://www.harmonicdrive.net) for details.
+
+| Specification | Value | Notes/Source |
+|---------------|-------|--------------|
+| Outer Diameter | 147 mm | Amazon product page |
+| Thickness | 65.5 mm | Amazon product page |
+| Weight | 1.665 kg | Amazon product page |
+| Reduction Ratio | 50/80/100/120:1 | Amazon product page |
+| Rated Torque (at 2000 rpm) | 72/112/130/130 N·m | Amazon product page |
+| Peak Torque | 363/540/635/652 N·m | Amazon product page |
+| Max Input Speed | 4500 rpm | Amazon product page |
+| Backlash | 10–20 arcsec | Amazon product page |
+
+**Technical Highlights**: Large hollow shaft structure allows cables to pass through, suitable for collaborative robot and humanoid robot joints.
+
+**Application Scenarios**: Collaborative robot shoulders/elbows, humanoid robot waist/hips, medical robots.
+
+### Supply Chain Position
+
+- **Upstream Key Components/Materials**: Alloy steel (flexspline/circular spline), cross-roller bearings, lubricating grease, aluminum housing
+- **Downstream Customers/Applications**: Industrial robots, humanoid robots, semiconductor equipment, medical robot OEMs
+- **Main Competitors/Benchmarks**: Leaderdrive, Laifual, Nabtesco, Shimpo
+
+### Knowledge Graph Nodes and Relationships
+
+- Company entity: `ent_company_harmonic_drive`
+- Product entities: `ent_component_harmonic_csf_32_50`, `ent_component_harmonic_shf_32_120`
+- Key relationships:
+  - `ent_company_harmonic_drive` -- `manufactures` --> `ent_component_harmonic_csf_32_50`
+  - `ent_company_harmonic_drive` -- `manufactures` --> `ent_component_harmonic_shf_32_120`
+
+### References
+
+1. [Official Website](https://www.harmonicdrive.net)
+2. [WAIC 2026 Exhibition Coverage](https://www.worldrobotconference.com)
+3. [Public Product Manuals and Research Reports](https://www.inovance.com) (Please verify against actual product models)

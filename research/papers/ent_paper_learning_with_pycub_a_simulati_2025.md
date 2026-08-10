@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01756v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01756v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (645 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,23 @@ pyCub 框架完整模拟了 iCub 人形机器人的所有关节，并集成了�
 ## Overview
 We present pyCub, an open-source physics-based simulation of the humanoid robot iCub, along with exercises to teach students the basics of humanoid robotics. Compared to existing iCub simulators (iCub SIM, iCub Gazebo), which require C++ code and YARP as middleware, pyCub works without YARP and with Python code. The complete robot with all articulations has been simulated, with two cameras in the eyes and the unique sensitive skin of the iCub comprising 4000 receptors on its body surface. The exercises range from basic control of the robot in velocity, joint, and Cartesian space to more complex tasks like gazing, grasping, or reactive control. The whole framework is written and controlled with Python, thus allowing to be used even by people with small or almost no programming practice. The exercises can be scaled to different difficulty levels. We tested the framework in two runs of a course on humanoid robotics. The simulation, exercises, documentation, Docker images, and example videos are publicly available at https://rustlluk.github.io/pyCub.
 
-## 개요
-본 논문에서는 휴머노이드 로봇 iCub의 오픈소스 물리 기반 시뮬레이션인 pyCub과 학생들에게 휴머노이드 로봇공학 기초를 가르치기 위한 연습 문제를 제시합니다. C++ 코드와 미들웨어 YARP가 필요한 기존 iCub 시뮬레이터(iCub SIM, iCub Gazebo)와 달리, pyCub은 YARP 없이 Python 코드로 작동합니다. 모든 관절을 갖춘 완전한 로봇이 시뮬레이션되었으며, 눈에는 두 대의 카메라가, iCub의 독특한 민감 피부에는 신체 표면에 4000개의 수용체가 포함되어 있습니다. 연습 문제는 속도, 관절, 데카르트 공간에서의 기본 로봇 제어부터 응시, 파지, 반응 제어와 같은 더 복잡한 작업까지 다양합니다. 전체 프레임워크는 Python으로 작성 및 제어되므로 프로그래밍 경험이 거의 없거나 전혀 없는 사람도 사용할 수 있습니다. 연습 문제는 다양한 난이도로 조정 가능합니다. 우리는 휴머노이드 로봇공학 과정의 두 차례 운영에서 이 프레임워크를 테스트했습니다. 시뮬레이션, 연습 문제, 문서, Docker 이미지, 예제 비디오는 https://rustlluk.github.io/pyCub에서 공개적으로 제공됩니다.
-
-## 핵심 내용
-본 논문에서는 휴머노이드 로봇 iCub의 오픈소스 물리 기반 시뮬레이션인 pyCub과 학생들에게 휴머노이드 로봇공학 기초를 가르치기 위한 연습 문제를 제시합니다. C++ 코드와 미들웨어 YARP가 필요한 기존 iCub 시뮬레이터(iCub SIM, iCub Gazebo)와 달리, pyCub은 YARP 없이 Python 코드로 작동합니다. 모든 관절을 갖춘 완전한 로봇이 시뮬레이션되었으며, 눈에는 두 대의 카메라가, iCub의 독특한 민감 피부에는 신체 표면에 4000개의 수용체가 포함되어 있습니다. 연습 문제는 속도, 관절, 데카르트 공간에서의 기본 로봇 제어부터 응시, 파지, 반응 제어와 같은 더 복잡한 작업까지 다양합니다. 전체 프레임워크는 Python으로 작성 및 제어되므로 프로그래밍 경험이 거의 없거나 전혀 없는 사람도 사용할 수 있습니다. 연습 문제는 다양한 난이도로 조정 가능합니다. 우리는 휴머노이드 로봇공학 과정의 두 차례 운영에서 이 프레임워크를 테스트했습니다. 시뮬레이션, 연습 문제, 문서, Docker 이미지, 예제 비디오는 https://rustlluk.github.io/pyCub에서 공개적으로 제공됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.01756v3
+
+## 개요
+pyCub 프레임워크는 iCub 휴머노이드 로봇의 모든 관절을 완전히 시뮬레이션하며, 눈 부분의 이중 카메라와 몸체 표면의 4000개 촉각 센서를 통합합니다. C++과 YARP가 필요한 기존 iCub 시뮬레이터와 달리, pyCub은 완전히 Python 기반으로 구현되어 프로그래밍 경험이 적은 학생들도 사용할 수 있습니다. 이 프레임워크는 속도 제어, 관절 공간 제어, 데카르트 공간 제어와 같은 기초 연습과 주시, 파지, 반응 제어와 같은 고급 작업을 제공하며, 난이도를 유연하게 조정할 수 있습니다. 연구팀은 두 차례의 휴머노이드 로봇 강좌에서 이 프레임워크를 테스트했습니다.
+
+## 핵심 내용
+### 프레임워크 설계
+- **시뮬레이션 환경**: 물리 엔진 기반의 오픈소스 시뮬레이션으로, iCub 휴머노이드 로봇의 모든 관절 자유도를 완전히 시뮬레이션합니다.
+- **센서 시스템**: 눈 부분에 두 개의 카메라를 장착하고, 몸체 표면에 iCub 고유의 민감한 피부(4000개의 촉각 수용체 포함)를 통합합니다.
+- **기술 아키텍처**: 완전히 Python으로 작성되고 제어되며, YARP 미들웨어가 필요 없습니다. 이는 C++과 YARP가 필요한 iCub SIM 및 iCub Gazebo와 대조적입니다.
+
+### 연습 내용
+- **기초 제어**: 속도 제어, 관절 공간 제어, 데카르트 공간 제어를 포함합니다.
+- **고급 작업**: 주시 제어, 파지 조작, 반응 제어를 포함합니다.
+- **난이도 구분**: 모든 연습은 다양한 난이도 수준으로 확장 가능하여, 다양한 수준의 학습자에게 적응합니다.
+
+### 실험 및 사용성
+- **교육 검증**: 두 차례의 휴머노이드 로봇 강좌에서 테스트를 완료했습니다.
+- **자원 공개**: 시뮬레이션 코드, 연습, 문서, Docker 이미지 및 예시 비디오가 https://rustlluk.github.io/pyCub 에 공개되어 있습니다.

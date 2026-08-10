@@ -45,8 +45,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2208.07035v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2208.07035v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (746 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,31 @@ theoretical_depth:
 ## Overview
 Robotic tasks which involve uncertainty--due to variation in goal, environment configuration, or confidence in task model--may require human input to instruct or adapt the robot. In tasks with physical contact, several existing methods for adapting robot trajectory or impedance according to individual uncertainties have been proposed, e.g., realizing intention detection or uncertainty-aware learning from demonstration. However, isolated methods cannot address the wide range of uncertainties jointly present in many tasks.   To improve generality, this paper proposes a model predictive control (MPC) framework which plans both trajectory and impedance online, can consider discrete and continuous uncertainties, includes safety constraints, and can be efficiently applied to a new task. This framework can consider uncertainty from: contact constraint variation, uncertainty in human goals, or task disturbances. An uncertainty-aware task model is learned from a few ($\leq3$) demonstrations using Gaussian Processes. This task model is used in a nonlinear MPC problem to optimize robot trajectory and impedance according to belief in discrete human goals, human kinematics, safety constraints, contact stability, and frequency-domain disturbance rejection. This MPC formulation is introduced, analyzed with respect to convexity, and validated in co-manipulation with multiple goals, a collaborative polishing task, and a collaborative assembly task.
 
-## 개요
-목표의 변동, 환경 구성의 변화, 또는 작업 모델에 대한 신뢰도 차이로 인해 불확실성이 수반되는 로봇 작업은 로봇을 지시하거나 적응시키기 위해 인간의 입력이 필요할 수 있습니다. 물리적 접촉이 있는 작업에서는 개별 불확실성에 따라 로봇의 궤적이나 임피던스를 적응시키는 여러 기존 방법이 제안되었습니다. 예를 들어, 의도 감지 또는 시연을 통한 불확실성 인식 학습이 있습니다. 그러나 개별적인 방법만으로는 많은 작업에서 공동으로 존재하는 다양한 불확실성을 처리할 수 없습니다. 일반성을 향상시키기 위해, 본 논문은 궤적과 임피던스를 온라인으로 계획하고, 이산적 및 연속적 불확실성을 고려하며, 안전 제약 조건을 포함하고, 새로운 작업에 효율적으로 적용할 수 있는 모델 예측 제어(MPC) 프레임워크를 제안합니다. 이 프레임워크는 접촉 제약 변동, 인간 목표의 불확실성, 또는 작업 교란으로 인한 불확실성을 고려할 수 있습니다. 불확실성 인식 작업 모델은 가우시안 프로세스를 사용하여 소수($\leq3$)의 시연으로부터 학습됩니다. 이 작업 모델은 비선형 MPC 문제에서 사용되어 이산적 인간 목표, 인간 운동학, 안전 제약 조건, 접촉 안정성 및 주파수 영역 교란 억제에 대한 신념에 따라 로봇 궤적과 임피던스를 최적화합니다. 이 MPC 공식이 소개되고, 볼록성 측면에서 분석되며, 다중 목표 협력 조작, 협력 연마 작업 및 협력 조립 작업에서 검증됩니다.
-
-## 핵심 내용
-목표의 변동, 환경 구성의 변화, 또는 작업 모델에 대한 신뢰도 차이로 인해 불확실성이 수반되는 로봇 작업은 로봇을 지시하거나 적응시키기 위해 인간의 입력이 필요할 수 있습니다. 물리적 접촉이 있는 작업에서는 개별 불확실성에 따라 로봇의 궤적이나 임피던스를 적응시키는 여러 기존 방법이 제안되었습니다. 예를 들어, 의도 감지 또는 시연을 통한 불확실성 인식 학습이 있습니다. 그러나 개별적인 방법만으로는 많은 작업에서 공동으로 존재하는 다양한 불확실성을 처리할 수 없습니다. 일반성을 향상시키기 위해, 본 논문은 궤적과 임피던스를 온라인으로 계획하고, 이산적 및 연속적 불확실성을 고려하며, 안전 제약 조건을 포함하고, 새로운 작업에 효율적으로 적용할 수 있는 모델 예측 제어(MPC) 프레임워크를 제안합니다. 이 프레임워크는 접촉 제약 변동, 인간 목표의 불확실성, 또는 작업 교란으로 인한 불확실성을 고려할 수 있습니다. 불확실성 인식 작업 모델은 가우시안 프로세스를 사용하여 소수($\leq3$)의 시연으로부터 학습됩니다. 이 작업 모델은 비선형 MPC 문제에서 사용되어 이산적 인간 목표, 인간 운동학, 안전 제약 조건, 접촉 안정성 및 주파수 영역 교란 억제에 대한 신념에 따라 로봇 궤적과 임피던스를 최적화합니다. 이 MPC 공식이 소개되고, 볼록성 측면에서 분석되며, 다중 목표 협력 조작, 협력 연마 작업 및 협력 조립 작업에서 검증됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2208.07035v2
+
+## 개요
+기존 방법들은 일반적으로 로봇 궤적 또는 임피던스의 적응적 조정을 개별적으로 처리하여, 여러 불확실성이 공존하는 작업에는 대응할 수 없습니다. 본 논문에서 제안하는 MPC 프레임워크는 궤적과 임피던스를 동시에 계획하고, 이산적 및 연속적 불확실성을 고려하며, 안전 제약을 포함하고, 새로운 작업에 효율적으로 적응할 수 있습니다. 이 프레임워크는 가우시안 프로세스를 통해 3회 이하의 시연에서 불확실성 인식 작업 모델을 학습하고, 비선형 MPC 문제에서 로봇 궤적과 임피던스를 최적화하며, 인간의 목표, 운동학, 안전 제약, 접촉 안정성 및 주파수 영역 외란 억제에 대한 신념을 기반으로 결정을 내립니다. 이 공식은 도입되고, 볼록성이 분석되며, 다중 목표 협동 조작, 협동 연마 및 조립 작업에서 검증됩니다.
+
+## 핵심 내용
+### 방법
+- 비선형 모델 예측 제어(MPC) 프레임워크를 제안하여, 로봇 궤적과 임피던스를 온라인으로 동시에 최적화합니다.
+- 가우시안 프로세스(Gaussian Processes)를 활용하여 소량(≤3회)의 시연에서 불확실성 인식 작업 모델을 학습합니다.
+- 이 프레임워크는 접촉 제약 변화, 인간 목표 불확실성, 작업 외란 등 다양한 불확실성 원인을 처리할 수 있습니다.
+
+### 구조
+- MPC 문제는 인간의 이산적 목표에 대한 신념, 인간 운동학, 안전 제약, 접촉 안정성, 주파수 영역 외란 억제에 기반한 최적화를 포함합니다.
+- 궤적과 임피던스는 결정 변수로 설정되어 비선형 최적화에서 동시에 해결됩니다.
+
+### 실험 설정
+- 검증 작업: 다중 목표 협동 조작(co-manipulation with multiple goals), 협동 연마(collaborative polishing), 협동 조립(collaborative assembly).
+- 시연 횟수: 각 작업당 3회 이하.
+
+### 주요 수치
+- 시연 횟수: ≤3회.
+- 불확실성 유형: 이산적(인간 목표) 및 연속적(접촉 제약, 외란).
+- 안전 제약: MPC 공식에 명시적으로 포함됨.
+
+### 결론
+- 이 프레임워크는 물리적 인간-로봇 상호작용에서 발생하는 다양한 불확실성을 효과적으로 처리하며, 작업 적응성과 안전성을 향상시킵니다.
+- 볼록성 분석을 통해 최적화 문제의 해결 가능성을 보장하고, 실제 작업에서 성능을 검증했습니다.

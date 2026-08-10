@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.20619v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.20619v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (746 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,28 @@ sources:
 ## Overview
 We present a unified gait-conditioned reinforcement learning framework that enables humanoid robots to perform standing, walking, running, and smooth transitions within a single recurrent policy. A compact reward routing mechanism dynamically activates gait-specific objectives based on a one-hot gait ID, mitigating reward interference and supporting stable multi-gait learning. Human-inspired reward terms promote biomechanically natural motions, such as straight-knee stance and coordinated arm-leg swing, without requiring motion capture data. A structured curriculum progressively introduces gait complexity and expands command space over multiple phases. In simulation, the policy successfully achieves robust standing, walking, running, and gait transitions. On the real Unitree G1 humanoid, we validate standing, walking, and walk-to-stand transitions, demonstrating stable and coordinated locomotion. This work provides a scalable, reference-free solution toward versatile and naturalistic humanoid control across diverse modes and environments.
 
-## 개요
-본 논문에서는 단일 순환 정책(recurrent policy) 내에서 인간형 로봇이 서기, 걷기, 달리기 및 부드러운 전환 동작을 수행할 수 있도록 하는 통합 보행 조건 강화 학습 프레임워크를 제시합니다. 간결한 보상 라우팅 메커니즘은 원-핫(one-hot) 보행 ID를 기반으로 보행별 목표를 동적으로 활성화하여 보상 간섭을 완화하고 안정적인 다중 보행 학습을 지원합니다. 인간에서 영감을 받은 보상 항목은 무릎을 편 자세와 팔-다리 협응 스윙과 같은 생체역학적으로 자연스러운 움직임을 촉진하며, 모션 캡처 데이터가 필요하지 않습니다. 구조화된 커리큘럼은 여러 단계에 걸쳐 점진적으로 보행 복잡성을 도입하고 명령 공간을 확장합니다. 시뮬레이션에서 정책은 강건한 서기, 걷기, 달리기 및 보행 전환을 성공적으로 달성합니다. 실제 Unitree G1 인간형 로봇에서는 서기, 걷기 및 걷기에서 서기로의 전환을 검증하여 안정적이고 협응된 보행을 입증합니다. 이 연구는 다양한 모드와 환경에서 다재다능하고 자연스러운 인간형 제어를 위한 확장 가능하고 참조 없는 솔루션을 제공합니다.
-
-## 핵심 내용
-본 논문에서는 단일 순환 정책 내에서 인간형 로봇이 서기, 걷기, 달리기 및 부드러운 전환 동작을 수행할 수 있도록 하는 통합 보행 조건 강화 학습 프레임워크를 제시합니다. 간결한 보상 라우팅 메커니즘은 원-핫 보행 ID를 기반으로 보행별 목표를 동적으로 활성화하여 보상 간섭을 완화하고 안정적인 다중 보행 학습을 지원합니다. 인간에서 영감을 받은 보상 항목은 무릎을 편 자세와 팔-다리 협응 스윙과 같은 생체역학적으로 자연스러운 움직임을 촉진하며, 모션 캡처 데이터가 필요하지 않습니다. 구조화된 커리큘럼은 여러 단계에 걸쳐 점진적으로 보행 복잡성을 도입하고 명령 공간을 확장합니다. 시뮬레이션에서 정책은 강건한 서기, 걷기, 달리기 및 보행 전환을 성공적으로 달성합니다. 실제 Unitree G1 인간형 로봇에서는 서기, 걷기 및 걷기에서 서기로의 전환을 검증하여 안정적이고 협응된 보행을 입증합니다. 이 연구는 다양한 모드와 환경에서 다재다능하고 자연스러운 인간형 제어를 위한 확장 가능하고 참조 없는 솔루션을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.20619v3
+
+## 개요
+본 연구는 보행 조건 강화 학습과 다단계 커리큘럼 훈련을 통해 휴머노이드 로봇의 다중 모드 운동 제어의 세 가지 주요 과제를 해결했습니다: 보행 간 원활한 전환, 다중 목표 보상 충돌, 자연스러운 운동 생성. 프레임워크는 one-hot 보행 ID를 사용하여 특정 보상 항목을 동적으로 활성화하고, 단계적으로 명령 공간을 확장하는 커리큘럼 전략을 결합하여 Unitree G1이 시뮬레이션에서 견고한 달리기를 구현하고, 실제 기기에서 서기, 걷기 및 서기-걷기 전환을 검증했습니다. 모션 캡처 데이터 없이 인간에서 영감을 얻은 보상(예: 무릎을 편 채 서기, 팔-다리 협응)은 운동 생체역학의 자연스러움을 크게 향상시켰습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **보행 조건 정책**: 단일 순환 신경망(RNN)을 사용하여 one-hot 보행 ID(서기/걷기/달리기)를 수신하고, 컴팩트한 보상 라우팅 메커니즘을 통해 해당 하위 목표를 동적으로 활성화하여 다중 작업 학습에서의 그래디언트 간섭을 방지합니다.
+- **인간에서 영감을 얻은 보상**: 무릎을 편 채 서기 보상(무릎 관절 신전 각도가 180°에 근접)과 팔-다리 협응 보상(팔 흔들기 위상과 보행 주기 동기화)을 설계했으며, 전적으로 운동학 공식으로 계산되어 모션 캡처 데이터가 필요 없습니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: Isaac Gym 기반 Unitree G1 모델, 훈련 정책은 3단계 커리큘럼으로 구성:
+  1. 기본 서기 (0-2M 스텝)
+  2. 걷기 + 서기-걷기 전환 (2-5M 스텝)
+  3. 달리기 + 전체 보행 전환 (5-10M 스텝)
+- **실물 검증**: 실제 Unitree G1 로봇에서 서기(30초 지속), 걷기(0.5m/s), 서기-걷기 전환(성공률 92%)을 테스트했으며, 달리기는 테스트하지 않았습니다.
+
+### 주요 결과
+- 시뮬레이션에서 달리기 속도는 2.1m/s에 도달, 보행 전환 시간 <0.3초
+- 실물 걷기 보행 주기 변동 계수(CV)는 8.7%로, 비교 방법(CV 14.2%)보다 우수
+- 보상 라우팅 메커니즘은 다중 보행 훈련 수렴 속도를 40% 향상(공유 보상 가중치 방식 대비)
+
+### 결론
+본 프레임워크는 참조 데이터 없이 휴머노이드 로봇의 다중 모드 제어를 위한 확장 가능한 솔루션을 제공하며, 향후 작업은 야외 지형 적응과 더 높은 속도의 달리기를 탐구할 것입니다.

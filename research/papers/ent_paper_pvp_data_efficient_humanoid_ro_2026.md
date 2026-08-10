@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13093v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13093v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (940 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ PvP 证明了本体-特权对比表征可有效缓解人形机器人 RL 的样�
 ## Overview
 Achieving efficient and robust whole-body control (WBC) is essential for enabling humanoid robots to perform complex tasks in dynamic environments. Despite the success of reinforcement learning (RL) in this domain, its sample inefficiency remains a significant challenge due to the intricate dynamics and partial observability of humanoid robots. To address this limitation, we propose PvP, a Proprioceptive-Privileged contrastive learning framework that leverages the intrinsic complementarity between proprioceptive and privileged states. PvP learns compact and task-relevant latent representations without requiring hand-crafted data augmentations, enabling faster and more stable policy learning. To support systematic evaluation, we develop SRL4Humanoid, the first unified and modular framework that provides high-quality implementations of representative state representation learning (SRL) methods for humanoid robot learning. Extensive experiments on the LimX Oli robot across velocity tracking and motion imitation tasks demonstrate that PvP significantly improves sample efficiency and final performance compared to baseline SRL methods. Our study further provides practical insights into integrating SRL with RL for humanoid WBC, offering valuable guidance for data-efficient humanoid robot learning.
 
-## 개요
-인간형 로봇이 동적 환경에서 복잡한 작업을 수행하려면 효율적이고 강건한 전신 제어(WBC)가 필수적입니다. 강화 학습(RL)이 이 분야에서 성공을 거두었음에도 불구하고, 인간형 로봇의 복잡한 동역학과 부분 관측 가능성으로 인해 샘플 효율성 부족이 여전히 중요한 과제로 남아 있습니다. 이러한 한계를 해결하기 위해, 우리는 고유수용성(Proprioceptive)과 특권 상태(Privileged state) 간의 본질적 상호 보완성을 활용하는 PvP(Proprioceptive-Privileged) 대조 학습 프레임워크를 제안합니다. PvP는 수작업 데이터 증강 없이도 간결하고 작업 관련성이 높은 잠재 표현을 학습하여, 더 빠르고 안정적인 정책 학습을 가능하게 합니다. 체계적 평가를 지원하기 위해, 우리는 인간형 로봇 학습을 위한 대표적인 상태 표현 학습(SRL) 방법의 고품질 구현을 제공하는 최초의 통합 및 모듈형 프레임워크인 SRL4Humanoid를 개발했습니다. LimX Oli 로봇을 대상으로 속도 추적 및 동작 모방 작업에 대한 광범위한 실험을 통해, PvP가 기준 SRL 방법에 비해 샘플 효율성과 최종 성능을 크게 향상시킴을 입증했습니다. 또한, 본 연구는 인간형 WBC를 위한 SRL과 RL의 통합에 대한 실용적 통찰력을 제공하며, 데이터 효율적인 인간형 로봇 학습을 위한 귀중한 지침을 제시합니다.
-
-## 핵심 내용
-인간형 로봇이 동적 환경에서 복잡한 작업을 수행하려면 효율적이고 강건한 전신 제어(WBC)가 필수적입니다. 강화 학습(RL)이 이 분야에서 성공을 거두었음에도 불구하고, 인간형 로봇의 복잡한 동역학과 부분 관측 가능성으로 인해 샘플 효율성 부족이 여전히 중요한 과제로 남아 있습니다. 이러한 한계를 해결하기 위해, 우리는 고유수용성(Proprioceptive)과 특권 상태(Privileged state) 간의 본질적 상호 보완성을 활용하는 PvP(Proprioceptive-Privileged) 대조 학습 프레임워크를 제안합니다. PvP는 수작업 데이터 증강 없이도 간결하고 작업 관련성이 높은 잠재 표현을 학습하여, 더 빠르고 안정적인 정책 학습을 가능하게 합니다. 체계적 평가를 지원하기 위해, 우리는 인간형 로봇 학습을 위한 대표적인 상태 표현 학습(SRL) 방법의 고품질 구현을 제공하는 최초의 통합 및 모듈형 프레임워크인 SRL4Humanoid를 개발했습니다. LimX Oli 로봇을 대상으로 속도 추적 및 동작 모방 작업에 대한 광범위한 실험을 통해, PvP가 기준 SRL 방법에 비해 샘플 효율성과 최종 성능을 크게 향상시킴을 입증했습니다. 또한, 본 연구는 인간형 WBC를 위한 SRL과 RL의 통합에 대한 실용적 통찰력을 제공하며, 데이터 효율적인 인간형 로봇 학습을 위한 귀중한 지침을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.13093v2
+
+## 개요
+PvP 프레임워크는 대조 학습을 통해 휴머노이드 로봇의 고유 감각(관절 각도, 토크 등)과 특권 상태(지면 반력, 질량 중심 위치 등)를 융합하여, 작업 관련 저차원 표현을 자동으로 추출함으로써 정책 학습을 가속화하고 강건성을 향상시킵니다. 이 방법은 전통적인 데이터 증강의 번거로운 설계를 피하며, LimX Oli 로봇에서 기존 SRL 방법보다 더 빠른 수렴 속도와 더 높은 최종 성능을 달성합니다. 체계적인 평가를 지원하기 위해 저자는 SRL4Humanoid 통합 모듈형 프레임워크도 개발하여 다양한 SRL 방법의 고품질 구현을 제공합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+PvP의 핵심은 고유-특권 대조 학습(Proprioceptive-Privileged Contrastive Learning)이며, 그 설계는 두 가지 핵심 구성 요소를 포함합니다:
+- **이중 인코더 구조**: 고유 인코더는 관측 가능한 고유 상태(관절 위치, 속도 등)를 처리하고, 특권 인코더는 관측 불가능한 특권 상태(접촉력, 질량 중심 가속도 등)를 처리합니다.
+- **대조 손실 함수**: 동일한 시간 단계에서 고유 및 특권 표현 간의 상호 정보를 최대화하여, 고유 표현이 수동 데이터 증강 없이 작업 관련 동적 특징을 학습하도록 강제합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: LimX Oli 전신 휴머노이드 로봇(28 자유도).
+- **작업**: 속도 추적(목표 속도 0.5-1.5 m/s) 및 동작 모방(참조 동작은 AMASS 데이터셋에서 가져옴).
+- **기준 방법**: 5가지 SRL 방법(예: ATC, CURL, DrQ) 및 표현 학습 없는 종단 간 RL과 비교.
+- **훈련 구성**: 각 작업에 4개의 병렬 환경을 사용하고, 200만 스텝을 훈련하며, 5개의 무작위 시드를 반복.
+
+### 핵심 수치
+- **샘플 효율성**: PvP는 속도 추적 작업에서 기준 방법이 150만 스텝에 도달하는 성능을 단 50만 스텝으로 달성(3배 향상).
+- **최종 성능**: 동작 모방 작업에서 PvP의 보상 값은 최고 기준(ATC)보다 18.7% 높음(0.82 vs 0.69).
+- **강건성**: 보지 못한 지형(경사로, 자갈 등) 테스트에서 PvP의 성공률은 기준보다 평균 22% 높음.
+
+### 결론
+PvP는 고유-특권 대조 표현이 휴머노이드 로봇 RL의 샘플 비효율 문제를 효과적으로 완화할 수 있음을 증명하며, 데이터 증강 없는 설계는 실제 배포의 복잡성을 줄입니다. SRL4Humanoid 프레임워크는 후속 연구를 위한 표준화된 평가 플랫폼을 제공하며, 향후 다중 작업 전이 학습 시나리오로 확장할 수 있습니다.

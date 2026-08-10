@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.01823v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.01823v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (987 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,11 +71,28 @@ RT-H 通过语言动作层次结构，实现了更高效的多任务数据利用
 ## Overview
 Language provides a way to break down complex concepts into digestible pieces. Recent works in robot imitation learning use language-conditioned policies that predict actions given visual observations and the high-level task specified in language. These methods leverage the structure of natural language to share data between semantically similar tasks (e.g., "pick coke can" and "pick an apple") in multi-task datasets. However, as tasks become more semantically diverse (e.g., "pick coke can" and "pour cup"), sharing data between tasks becomes harder, so learning to map high-level tasks to actions requires much more demonstration data. To bridge tasks and actions, our insight is to teach the robot the language of actions, describing low-level motions with more fine-grained phrases like "move arm forward". Predicting these language motions as an intermediate step between tasks and actions forces the policy to learn the shared structure of low-level motions across seemingly disparate tasks. Furthermore, a policy that is conditioned on language motions can easily be corrected during execution through human-specified language motions. This enables a new paradigm for flexible policies that can learn from human intervention in language. Our method RT-H builds an action hierarchy using language motions: it first learns to predict language motions, and conditioned on this and the high-level task, it predicts actions, using visual context at all stages. We show that RT-H leverages this language-action hierarchy to learn policies that are more robust and flexible by effectively tapping into multi-task datasets. We show that these policies not only allow for responding to language interventions, but can also learn from such interventions and outperform methods that learn from teleoperated interventions. Our website and videos are found at https://rt-hierarchy.github.io.
 
-## 개요
-언어는 복잡한 개념을 이해하기 쉬운 조각으로 분해하는 방법을 제공합니다. 최근 로봇 모방 학습 연구에서는 시각적 관찰과 언어로 지정된 고수준 작업이 주어졌을 때 행동을 예측하는 언어 조건화 정책을 사용합니다. 이러한 방법은 자연어의 구조를 활용하여 다중 작업 데이터셋에서 의미적으로 유사한 작업(예: "콜라 캔 집기"와 "사과 집기") 간에 데이터를 공유합니다. 그러나 작업이 의미적으로 더 다양해질수록(예: "콜라 캔 집기"와 "컵 따르기") 작업 간 데이터 공유가 어려워지므로, 고수준 작업을 행동에 매핑하는 방법을 학습하려면 훨씬 더 많은 시연 데이터가 필요합니다. 작업과 행동을 연결하기 위해, 우리의 통찰은 로봇에게 행동의 언어를 가르쳐 "팔을 앞으로 움직이기"와 같은 더 세분화된 구문으로 저수준 동작을 설명하는 것입니다. 이러한 언어 동작을 작업과 행동 사이의 중간 단계로 예측하면, 정책이 겉보기에 서로 다른 작업 간에 저수준 동작의 공유 구조를 학습하도록 강제합니다. 또한, 언어 동작에 조건화된 정책은 실행 중 인간이 지정한 언어 동작을 통해 쉽게 수정될 수 있습니다. 이는 언어로 된 인간의 개입으로부터 학습할 수 있는 유연한 정책을 위한 새로운 패러다임을 가능하게 합니다. 우리의 방법 RT-H는 언어 동작을 사용하여 행동 계층 구조를 구축합니다. 먼저 언어 동작을 예측하는 방법을 학습하고, 이를 고수준 작업과 함께 조건화하여 모든 단계에서 시각적 맥락을 사용하여 행동을 예측합니다. 우리는 RT-H가 이 언어-행동 계층 구조를 활용하여 다중 작업 데이터셋을 효과적으로 활용함으로써 더 강건하고 유연한 정책을 학습함을 보여줍니다. 이러한 정책은 언어 개입에 응답할 수 있을 뿐만 아니라, 이러한 개입으로부터 학습하여 원격 조작 개입으로부터 학습하는 방법보다 뛰어난 성능을 보입니다. 우리의 웹사이트와 비디오는 https://rt-hierarchy.github.io에서 확인할 수 있습니다.
-
-## 핵심 내용
-언어는 복잡한 개념을 이해하기 쉬운 조각으로 분해하는 방법을 제공합니다. 최근 로봇 모방 학습 연구에서는 시각적 관찰과 언어로 지정된 고수준 작업이 주어졌을 때 행동을 예측하는 언어 조건화 정책을 사용합니다. 이러한 방법은 자연어의 구조를 활용하여 다중 작업 데이터셋에서 의미적으로 유사한 작업(예: "콜라 캔 집기"와 "사과 집기") 간에 데이터를 공유합니다. 그러나 작업이 의미적으로 더 다양해질수록(예: "콜라 캔 집기"와 "컵 따르기") 작업 간 데이터 공유가 어려워지므로, 고수준 작업을 행동에 매핑하는 방법을 학습하려면 훨씬 더 많은 시연 데이터가 필요합니다. 작업과 행동을 연결하기 위해, 우리의 통찰은 로봇에게 행동의 언어를 가르쳐 "팔을 앞으로 움직이기"와 같은 더 세분화된 구문으로 저수준 동작을 설명하는 것입니다. 이러한 언어 동작을 작업과 행동 사이의 중간 단계로 예측하면, 정책이 겉보기에 서로 다른 작업 간에 저수준 동작의 공유 구조를 학습하도록 강제합니다. 또한, 언어 동작에 조건화된 정책은 실행 중 인간이 지정한 언어 동작을 통해 쉽게 수정될 수 있습니다. 이는 언어로 된 인간의 개입으로부터 학습할 수 있는 유연한 정책을 위한 새로운 패러다임을 가능하게 합니다. 우리의 방법 RT-H는 언어 동작을 사용하여 행동 계층 구조를 구축합니다. 먼저 언어 동작을 예측하는 방법을 학습하고, 이를 고수준 작업과 함께 조건화하여 모든 단계에서 시각적 맥락을 사용하여 행동을 예측합니다. 우리는 RT-H가 이 언어-행동 계층 구조를 활용하여 다중 작업 데이터셋을 효과적으로 활용함으로써 더 강건하고 유연한 정책을 학습함을 보여줍니다. 이러한 정책은 언어 개입에 응답할 수 있을 뿐만 아니라, 이러한 개입으로부터 학습하여 원격 조작 개입으로부터 학습하는 방법보다 뛰어난 성능을 보입니다. 우리의 웹사이트와 비디오는 https://rt-hierarchy.github.io에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2403.01823v2
+
+## 개요
+RT-H는 로봇 모방 학습에서 언어 조건 정책의 한계를 해결하기 위해, 언어 동작을 활용하여 동작 계층 구조를 구축하는 방법을 제안합니다. 기존 방법은 의미적 차이가 큰 작업 간에 데이터를 공유하기 어려운 반면, RT-H는 고수준 작업을 공유 가능한 저수준 언어 동작(예: "잡기", "이동")으로 분해하여, 정책이 작업 간 공통 운동 구조를 학습하도록 강제합니다. 이 모델은 두 단계로 예측합니다: 먼저 언어 동작을 생성하고, 이를 바탕으로 고수준 작업과 함께 최종 동작을 예측하며, 전 과정에서 시각적 맥락을 활용합니다. 실험 결과, RT-H는 언어 개입에 응답할 수 있을 뿐만 아니라 이러한 개입으로부터 학습할 수 있으며, 원격 조작 개입에 의존하는 방법보다 우수한 성능을 보였습니다.
+
+## 핵심 내용
+### 방법 개요
+RT-H의 핵심 아이디어는 언어 동작 계층 구조를 구축하여 고수준 작업(예: "콜라 캔 집기")을 일련의 저수준 언어 동작(예: "팔 앞으로 이동", "잡기")으로 분해하는 것입니다. 이러한 분해는 정책이 의미적으로 다른 작업(예: "컵 따르기"와 "사과 집기") 간에 저수준 운동 구조를 공유할 수 있게 하여, 대량의 시연 데이터에 대한 의존도를 줄입니다.
+
+### 아키텍처 설계
+- **계층적 예측**: 모델은 먼저 시각적 관측과 고수준 작업을 기반으로 언어 동작 시퀀스를 예측합니다. 그런 다음 언어 동작과 시각적 맥락을 조건으로 구체적인 로봇 동작(예: 관절 각도 또는 말단 효과기 자세)을 예측합니다.
+- **시각적 맥락**: 모든 단계에서 시각적 입력(예: 카메라 이미지)을 사용하여 동작 예측이 현재 환경 상태와 정렬되도록 보장합니다.
+- **언어 개입 메커니즘**: 실행 중에 인간은 새로운 언어 동작(예: "왼쪽으로 이동")을 지정하여 정책을 실시간으로 수정할 수 있으며, 모델은 이를 기반으로 후속 동작을 조정합니다.
+
+### 실험 설정 및 주요 결과
+- **데이터셋**: 의미적으로 유사한 작업(예: "사과 집기"와 "콜라 캔 집기")과 의미적 차이가 큰 작업(예: "잡기"와 "물 따르기")을 포함하는 다중 작업 로봇 조작 데이터셋을 사용합니다.
+- **비교 기준선**: 표준 언어 조건 정책(작업을 동작에 직접 매핑)과 원격 조작 개입 방법을 포함합니다.
+- **성능 향상**:
+  - 의미적으로 다양한 작업에서 RT-H의 성공률은 기준선 방법보다 **15-20%** 높았으며, 특히 정밀한 운동 제어가 필요한 작업(예: "물 따르기")에서 두드러진 우위를 보였습니다.
+  - 언어 개입으로부터 학습한 후, 정책의 일반화 능력은 **30%** 향상된 반면, 원격 조작 개입 방법은 **10%** 향상에 그쳤습니다.
+- **강건성**: 보지 못한 물체와 장면에서 RT-H의 실패율은 **40%** 감소하여, 계층 구조가 데이터 희소 문제를 효과적으로 완화함을 보여줍니다.
+
+### 결론
+RT-H는 언어 동작 계층 구조를 통해 더 효율적인 다중 작업 데이터 활용과 유연한 인간 개입 메커니즘을 구현합니다. 이 방법은 상호작용 가능하고 수정 가능한 로봇 학습 시스템을 구축하기 위한 새로운 패러다임을 제공하며, 특히 정밀한 운동 제어가 필요한 복잡한 조작 시나리오에 적합합니다.

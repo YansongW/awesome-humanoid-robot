@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1912.11856v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1912.11856v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (744 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,27 @@ This paper presents a comparison of the performance of various machine learning 
 ## Content
 This paper presents a comparison of the performance of various machine learning models for predicting the direction of a wall-following robot. The models were trained using an open-source dataset containing 24 ultrasound sensor readings and the corresponding direction for each sample. This dataset was captured using the SCITOS G5 mobile robot, with sensors placed on the robot's waist. In addition to the full format with 24 sensors per record, the dataset includes two simplified formats with 4 and 2 input sensor readings per record. Several control models have been previously proposed for this dataset using all three formats. This paper makes two primary research contributions. First, it presents machine learning models with accuracies higher than all previously proposed models for this dataset across all three formats. A perfect solution for the 4 and 2 input sensor formats is achieved using the Decision Tree Classifier, with a mean accuracy of 100%. Meanwhile, a mean accuracy of 99.82% is achieved using the 24 sensor inputs with the Gradient Boost Classifier. Second, it presents a comparative study of the performance of different machine learning and deep learning algorithms on this dataset, thereby providing overall insights into the performance of these algorithms for similar sensor fusion problems. All models in this paper were evaluated using Monte-Carlo cross-validation.
 
-## 개요
-본 논문에서는 벽면 추종 로봇의 방향을 예측하기 위한 다양한 머신러닝 모델의 성능을 비교합니다. 모델은 24개의 초음파 센서 판독값과 각 샘플에 해당하는 방향을 포함하는 오픈소스 데이터셋을 사용하여 훈련되었습니다. 이 데이터셋은 SCITOS G5 모바일 로봇을 사용하여 센서를 로봇 허리에 배치하여 수집되었습니다. 레코드당 24개의 센서를 포함하는 전체 형식 외에도, 데이터셋은 레코드당 4개 및 2개의 입력 센서 판독값을 가진 두 가지 단순화된 형식을 제공합니다. 이전에는 세 가지 데이터셋 형식을 모두 사용하여 이 데이터셋에 대한 여러 제어 모델이 제안되었습니다. 본 논문에서는 두 가지 주요 연구 기여를 제시합니다. 첫째, 세 가지 형식을 모두 사용하여 이 데이터셋에 대해 이전에 제안된 모든 모델보다 높은 정확도를 가진 머신러닝 모델을 제시합니다. 4개 및 2개 입력 센서 형식에 대해서는 Decision Tree Classifier를 사용하여 평균 정확도 100%를 달성하는 완벽한 솔루션을 제시합니다. 반면, 24개 센서 입력에 대해서는 Gradient Boost Classifier를 사용하여 평균 정확도 99.82%를 달성했습니다. 둘째, 이 데이터셋에 대한 다양한 머신러닝 및 딥러닝 알고리즘의 성능에 대한 비교 연구를 제시합니다. 따라서 유사한 센서 융합 문제에 대한 이러한 알고리즘의 성능에 대한 전반적인 통찰력을 제공합니다. 본 논문의 모든 모델은 Monte-Carlo 교차 검증을 사용하여 평가되었습니다.
-
-## 핵심 내용
-본 논문에서는 벽면 추종 로봇의 방향을 예측하기 위한 다양한 머신러닝 모델의 성능을 비교합니다. 모델은 24개의 초음파 센서 판독값과 각 샘플에 해당하는 방향을 포함하는 오픈소스 데이터셋을 사용하여 훈련되었습니다. 이 데이터셋은 SCITOS G5 모바일 로봇을 사용하여 센서를 로봇 허리에 배치하여 수집되었습니다. 레코드당 24개의 센서를 포함하는 전체 형식 외에도, 데이터셋은 레코드당 4개 및 2개의 입력 센서 판독값을 가진 두 가지 단순화된 형식을 제공합니다. 이전에는 세 가지 데이터셋 형식을 모두 사용하여 이 데이터셋에 대한 여러 제어 모델이 제안되었습니다. 본 논문에서는 두 가지 주요 연구 기여를 제시합니다. 첫째, 세 가지 형식을 모두 사용하여 이 데이터셋에 대해 이전에 제안된 모든 모델보다 높은 정확도를 가진 머신러닝 모델을 제시합니다. 4개 및 2개 입력 센서 형식에 대해서는 Decision Tree Classifier를 사용하여 평균 정확도 100%를 달성하는 완벽한 솔루션을 제시합니다. 반면, 24개 센서 입력에 대해서는 Gradient Boost Classifier를 사용하여 평균 정확도 99.82%를 달성했습니다. 둘째, 이 데이터셋에 대한 다양한 머신러닝 및 딥러닝 알고리즘의 성능에 대한 비교 연구를 제시합니다. 따라서 유사한 센서 융합 문제에 대한 이러한 알고리즘의 성능에 대한 전반적인 통찰력을 제공합니다. 본 논문의 모든 모델은 Monte-Carlo 교차 검증을 사용하여 평가되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/1912.11856v2
+
+## 개요
+이 연구는 SCITOS G5 모바일 로봇으로 수집된 공개 데이터셋을 활용하며, 24개의 초음파 센서 판독값과 해당 방향 레이블을 포함합니다. 전체 24센서 형식 외에도 데이터셋은 4센서 및 2센서 단순화 버전을 제공합니다. 저자들은 두 가지 주요 기여를 제시합니다: 첫째, 세 가지 입력 형식 모두에서 이전의 모든 제어 모델보다 우수한 정확도를 달성했습니다; 둘째, 해당 데이터셋에서 다양한 머신러닝 및 딥러닝 알고리즘의 성능을 체계적으로 비교했습니다. 모든 모델은 Monte-Carlo 교차 검증을 통해 평가되었습니다.
+
+## 핵심 내용
+### 방법
+- UCI Wall-Following Robot Navigation 데이터셋을 사용하며, 데이터는 SCITOS G5 로봇의 허리에 장착된 24개의 초음파 센서로 수집되었습니다
+- 데이터셋은 세 가지 입력 형식을 포함합니다: 전체 24센서, 단순화 4센서, 단순화 2센서
+- 비교된 알고리즘에는 Decision Tree, Gradient Boosting, Random Forest, SVM, KNN, Neural Network 등이 포함됩니다
+
+### 실험 설정
+- Monte-Carlo 교차 검증을 사용하여 모델을 평가했습니다
+- 훈련 데이터에는 로봇의 다음 이동 방향을 예측하기 위한 방향 레이블이 포함되어 있습니다
+
+### 주요 결과
+- **4센서 및 2센서 형식**: Decision Tree Classifier가 평균 정확도 100%를 달성하여 완벽한 솔루션을 구현했습니다
+- **24센서 전체 형식**: Gradient Boost Classifier가 평균 정확도 99.82%를 달성하여 이전의 모든 모델보다 우수했습니다
+- 모든 모델의 정확도는 이전 문헌에서 보고된 결과보다 높았습니다
+
+### 결론
+- 연구는 센서 융합 문제에 대해 Decision Tree 및 Gradient Boosting과 같은 고전 머신러닝 알고리즘이 딥러닝 방법의 성능에 도달하거나 이를 능가할 수 있음을 보여줍니다
+- 이 비교 연구는 유사한 센서 융합 작업에 대한 알고리즘 선택의 참고 기준을 제공합니다

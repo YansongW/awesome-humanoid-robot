@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.08464v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.08464v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (684 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,25 @@ GLUESTICK为VLA模型剪枝后恢复提供了一种轻量级、无需训练的�
 ## Overview
 Vision-Language-Action (VLA) models have advanced robotic capabilities but remain challenging to deploy on resource-limited hardware. Pruning has enabled efficient compression of large language models (LLMs), yet it is largely understudied in robotics. Surprisingly, we observe that pruning VLA models leads to drastic degradation and increased safety violations. We introduce GLUESTICK, a post-pruning recovery method that restores much of the original model's functionality while retaining sparsity benefits. Our method performs a one-time interpolation between the dense and pruned models in weight-space to compute a corrective term. This correction is used during inference by each pruned layer to recover lost capabilities with minimal overhead. GLUESTICK requires no additional training, is agnostic to the pruning algorithm, and introduces a single hyperparameter that controls the tradeoff between efficiency and accuracy. Across diverse VLA architectures and tasks in manipulation and navigation, GLUESTICK achieves competitive memory efficiency while substantially recovering success rates and reducing safety violations. Additional material can be found at: https://gluestick-vla.github.io/.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 로봇의 성능을 향상시켰지만, 자원이 제한된 하드웨어에 배포하는 것은 여전히 어려운 과제입니다. Pruning(가지치기)은 대규모 언어 모델(LLM)의 효율적인 압축을 가능하게 했지만, 로봇 공학 분야에서는 거의 연구되지 않았습니다. 놀랍게도, VLA 모델을 가지치기하면 성능이 급격히 저하되고 안전 위반이 증가하는 것을 관찰했습니다. 우리는 GLUESTICK을 소개합니다. 이는 가지치기 후 복구 방법으로, 희소성(sparsity)의 이점을 유지하면서 원래 모델의 기능 대부분을 복원합니다. 이 방법은 밀집(dense) 모델과 가지치기된 모델 간의 가중치 공간에서 일회성 보간(interpolation)을 수행하여 보정 항(corrective term)을 계산합니다. 이 보정은 추론 중 각 가지치기된 레이어에서 최소한의 오버헤드로 손실된 기능을 복구하는 데 사용됩니다. GLUESTICK은 추가 학습이 필요 없고, 가지치기 알고리즘에 구애받지 않으며, 효율성과 정확성 간의 균형을 제어하는 단일 하이퍼파라미터를 도입합니다. 조작 및 탐색 작업에서 다양한 VLA 아키텍처와 작업에 걸쳐 GLUESTICK은 경쟁력 있는 메모리 효율성을 달성하면서 성공률을 크게 회복하고 안전 위반을 줄입니다. 추가 자료는 https://gluestick-vla.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 로봇의 성능을 향상시켰지만, 자원이 제한된 하드웨어에 배포하는 것은 여전히 어려운 과제입니다. Pruning(가지치기)은 대규모 언어 모델(LLM)의 효율적인 압축을 가능하게 했지만, 로봇 공학 분야에서는 거의 연구되지 않았습니다. 놀랍게도, VLA 모델을 가지치기하면 성능이 급격히 저하되고 안전 위반이 증가하는 것을 관찰했습니다. 우리는 GLUESTICK을 소개합니다. 이는 가지치기 후 복구 방법으로, 희소성(sparsity)의 이점을 유지하면서 원래 모델의 기능 대부분을 복원합니다. 이 방법은 밀집(dense) 모델과 가지치기된 모델 간의 가중치 공간에서 일회성 보간(interpolation)을 수행하여 보정 항(corrective term)을 계산합니다. 이 보정은 추론 중 각 가지치기된 레이어에서 최소한의 오버헤드로 손실된 기능을 복구하는 데 사용됩니다. GLUESTICK은 추가 학습이 필요 없고, 가지치기 알고리즘에 구애받지 않으며, 효율성과 정확성 간의 균형을 제어하는 단일 하이퍼파라미터를 도입합니다. 조작 및 탐색 작업에서 다양한 VLA 아키텍처와 작업에 걸쳐 GLUESTICK은 경쟁력 있는 메모리 효율성을 달성하면서 성공률을 크게 회복하고 안전 위반을 줄입니다. 추가 자료는 https://gluestick-vla.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.08464v1
+
+## 개요
+VLA 모델은 로봇 조작 능력을 향상시켰지만, 자원이 제한된 하드웨어에서의 배포는 어렵다. 기존 가지치기 기술은 대규모 언어 모델을 압축할 수 있지만, 로봇 분야에서의 연구는 부족하다. 연구에 따르면 VLA 모델을 직접 가지치기하면 성능이 급격히 저하되고 안전 위반이 증가한다. GLUESTICK은 일회성으로 밀집 모델과 가지치기 모델의 가중치 공간 보간을 통해 수정 항을 계산하며, 추론 시 각 가지치기 레이어가 이 수정 항을 호출하여 손실된 능력을 복구하고, 효율성과 정확성 간의 균형을 제어하는 단일 하이퍼파라미터만 도입한다. 이 방법은 추가 훈련이 필요 없고 가지치기 알고리즘과 무관하며, 다양한 VLA 아키텍처 및 조작, 내비게이션 작업에서 경쟁력 있는 메모리 효율성을 달성하면서 성공률을 크게 회복하고 안전 위반을 줄인다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: 가중치 공간에서 밀집 모델과 가지치기 모델을 일회성으로 보간하여 수정 항을 계산한다. 추론 시 각 가지치기 레이어가 이 수정 항을 사용하여 기능을 복구하며, 극히 작은 계산 오버헤드만 추가된다.
+- **주요 특성**: 재훈련 불필요; 특정 가지치기 알고리즘과 무관; 효율성과 정확성의 균형을 제어하는 단일 하이퍼파라미터만 필요.
+
+### 실험 설정
+- **모델 아키텍처**: 조작 및 내비게이션 작업을 포함한 다양한 VLA 아키텍처를 포괄.
+- **평가 지표**: 성공률, 메모리 효율성, 안전 위반율.
+
+### 주요 결과
+- **성능 회복**: 다양한 작업에서 GLUESTICK은 가지치기 모델의 성공률을 크게 회복하여 밀집 모델 수준에 근접한다.
+- **안전 개선**: 안전 위반율을 효과적으로 낮추어 가지치기로 인한 안전 위험을 해결한다.
+- **효율성 이점**: 가지치기로 인한 메모리 절약을 유지하며 경쟁력 있는 메모리 효율성을 달성한다.
+
+### 결론
+GLUESTICK은 VLA 모델 가지치기 후 복구를 위한 경량화되고 훈련이 필요 없는 솔루션을 제공하며, 자원이 제한된 로봇 배포 시나리오에서 실용적 가치가 있다. 더 많은 세부 사항은 프로젝트 웹사이트에서 확인할 수 있다: https://gluestick-vla.github.io/.

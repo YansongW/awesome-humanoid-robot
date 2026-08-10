@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.04759v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.04759v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (667 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,27 @@ REGENT 证明了检索增强和上下文学习是构建通用智能体的有效�
 ## Overview
 Building generalist agents that can rapidly adapt to new environments is a key challenge for deploying AI in the digital and real worlds. Is scaling current agent architectures the most effective way to build generalist agents? We propose a novel approach to pre-train relatively small policies on relatively small datasets and adapt them to unseen environments via in-context learning, without any finetuning. Our key idea is that retrieval offers a powerful bias for fast adaptation. Indeed, we demonstrate that even a simple retrieval-based 1-nearest neighbor agent offers a surprisingly strong baseline for today's state-of-the-art generalist agents. From this starting point, we construct a semi-parametric agent, REGENT, that trains a transformer-based policy on sequences of queries and retrieved neighbors. REGENT can generalize to unseen robotics and game-playing environments via retrieval augmentation and in-context learning, achieving this with up to 3x fewer parameters and up to an order-of-magnitude fewer pre-training datapoints, significantly outperforming today's state-of-the-art generalist agents. Website: https://kaustubhsridhar.github.io/regent-research
 
-## 개요
-디지털 및 실제 세계에 AI를 배포하기 위해 새로운 환경에 빠르게 적응할 수 있는 범용 에이전트를 구축하는 것은 핵심 과제입니다. 현재의 에이전트 아키텍처를 확장하는 것이 범용 에이전트를 구축하는 가장 효과적인 방법일까요? 우리는 상대적으로 작은 데이터셋에서 상대적으로 작은 정책을 사전 학습하고, 미세 조정 없이 문맥 내 학습을 통해 보지 못한 환경에 적응하는 새로운 접근 방식을 제안합니다. 핵심 아이디어는 검색이 빠른 적응을 위한 강력한 편향을 제공한다는 것입니다. 실제로, 단순한 검색 기반 1-최근접 이웃 에이전트조차도 오늘날 최첨단 범용 에이전트에 대해 놀라울 정도로 강력한 기준선을 제공한다는 것을 입증합니다. 이 출발점에서 우리는 쿼리와 검색된 이웃의 시퀀스에 대해 트랜스포머 기반 정책을 훈련하는 반파라메트릭 에이전트 REGENT를 구축합니다. REGENT는 검색 증강 및 문맥 내 학습을 통해 보지 못한 로봇 공학 및 게임 플레이 환경에 일반화할 수 있으며, 최대 3배 적은 파라미터와 최대 한 자릿수 적은 사전 학습 데이터 포인트로 이를 달성하여 오늘날 최첨단 범용 에이전트를 크게 능가합니다. 웹사이트: https://kaustubhsridhar.github.io/regent-research
-
-## 핵심 내용
-디지털 및 실제 세계에 AI를 배포하기 위해 새로운 환경에 빠르게 적응할 수 있는 범용 에이전트를 구축하는 것은 핵심 과제입니다. 현재의 에이전트 아키텍처를 확장하는 것이 범용 에이전트를 구축하는 가장 효과적인 방법일까요? 우리는 상대적으로 작은 데이터셋에서 상대적으로 작은 정책을 사전 학습하고, 미세 조정 없이 문맥 내 학습을 통해 보지 못한 환경에 적응하는 새로운 접근 방식을 제안합니다. 핵심 아이디어는 검색이 빠른 적응을 위한 강력한 편향을 제공한다는 것입니다. 실제로, 단순한 검색 기반 1-최근접 이웃 에이전트조차도 오늘날 최첨단 범용 에이전트에 대해 놀라울 정도로 강력한 기준선을 제공한다는 것을 입증합니다. 이 출발점에서 우리는 쿼리와 검색된 이웃의 시퀀스에 대해 트랜스포머 기반 정책을 훈련하는 반파라메트릭 에이전트 REGENT를 구축합니다. REGENT는 검색 증강 및 문맥 내 학습을 통해 보지 못한 로봇 공학 및 게임 플레이 환경에 일반화할 수 있으며, 최대 3배 적은 파라미터와 최대 한 자릿수 적은 사전 학습 데이터 포인트로 이를 달성하여 오늘날 최첨단 범용 에이전트를 크게 능가합니다. 웹사이트: https://kaustubhsridhar.github.io/regent-research
-
 ## 参考
 - http://arxiv.org/abs/2412.04759v2
+
+## 개요
+REGENT는 반파라미터적 에이전트 아키텍처를 제안하며, 핵심 아이디어는 검색 메커니즘을 활용하여 빠른 적응을 위한 강력한 사전 지식을 제공하는 것입니다. 이 모델은 Transformer 정책을 기반으로 하며, 쿼리와 검색된 이웃 시퀀스에서 훈련되어, 보지 못한 로봇 및 게임 환경에서 검색 증강과 맥락 학습을 통해 일반화를 달성합니다. 실험은 단순한 검색 기반 1-최근접 이웃 에이전트조차도 현재 최첨단 범용 에이전트의 강력한 기준선이 될 수 있음을 보여주며, REGENT는 이를 바탕으로 성능을 더욱 향상시킵니다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: 검색 메커니즘을 빠른 적응을 위한 사전 지식으로 활용하여, 모델이 미세 조정 없이 맥락 학습을 통해 새로운 환경에 적응할 수 있게 합니다.
+- **아키텍처**: 반파라미터적 에이전트 REGENT를 구축하며, Transformer 정책을 기반으로 쿼리와 검색된 이웃 시퀀스에서 훈련합니다.
+- **주요 발견**: 단순한 검색 기반 1-최근접 이웃 에이전트조차도 현재 최첨단 범용 에이전트의 강력한 기준선이 될 수 있습니다.
+
+### 실험 설정
+- **작업**: 보지 못한 로봇 조작 및 게임 환경에서 테스트합니다.
+- **비교 기준선**: 현재 최첨단 범용 에이전트와 비교합니다.
+- **평가 지표**: 작업 성공률, 일반화 능력, 파라미터 수 및 사전 훈련 데이터 양.
+
+### 주요 결과
+- **성능**: REGENT는 현재 최첨단 범용 에이전트보다 현저히 우수합니다.
+- **효율성**: 파라미터 수가 3배 감소하고, 사전 훈련 데이터 양이 한 자릿수 줄어듭니다.
+- **일반화 능력**: 검색 증강과 맥락 학습을 통해 보지 못한 환경에 성공적으로 일반화합니다.
+
+### 결론
+REGENT는 검색 증강과 맥락 학습이 범용 에이전트를 구축하는 효과적인 경로임을 입증하며, 모델 규모와 훈련 데이터 요구 사항을 크게 줄이면서도 기존 방법의 성능을 달성하거나 초과할 수 있습니다.

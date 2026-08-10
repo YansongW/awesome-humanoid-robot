@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.22407v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.22407v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1199 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,30 @@ EMMA通过生成式视觉迁移与自适应训练，有效缓解了机器人操�
 ## Overview
 The generalization of vision-language-action (VLA) models heavily relies on diverse training data. However, acquiring large-scale data for robot manipulation across varied object appearances is costly and labor-intensive. To address this limitation, we introduce Embodied Manipulation Media Adaptation (EMMA), a framework for augmenting VLA policies that combines a generative data engine with an effective training pipeline. We introduce DreamTransfer, a diffusion Transformer-based architecture for generating multi-view consistent and geometrically grounded embodied manipulation videos. DreamTransfer enables visual editing of robot videos through prompts, allowing for changes to the foreground, background, and lighting while preserving their 3D structure and geometric validity. We also utilize a hybrid training set of real and generated data and propose AdaMix to enhance the training process. AdaMix is a training strategy that adaptively weights samples according to policy performance to emphasize challenging samples. Comprehensive evaluations demonstrate that videos created by DreamTransfer yield substantial improvements over previous video generation techniques in multi-view consistency, geometric accuracy, and text-conditioning precision. We conduct extensive evaluations with a total of more than 1800 trials in both simulated and real-world robotic environments. In real-world robotic tasks with zero-shot visual settings, our framework achieves a relative performance increase of over 92% compared to training with real data alone, and improves by an additional 17% with AdaMix, demonstrating its efficacy in enhancing policy generalization.
 
-## 개요
-시각-언어-행동(VLA) 모델의 일반화는 다양한 훈련 데이터에 크게 의존합니다. 그러나 다양한 객체 외형에 걸친 로봇 조작을 위한 대규모 데이터를 확보하는 것은 비용과 노동이 많이 듭니다. 이러한 한계를 해결하기 위해, 우리는 생성적 데이터 엔진과 효과적인 훈련 파이프라인을 결합한 VLA 정책 증강 프레임워크인 Embodied Manipulation Media Adaptation (EMMA)을 소개합니다. 우리는 다중 시점 일관성과 기하학적 기반을 갖춘 구현된 조작 비디오를 생성하기 위한 확산 Transformer 기반 아키텍처인 DreamTransfer를 도입합니다. DreamTransfer는 프롬프트를 통해 로봇 비디오의 시각적 편집을 가능하게 하여, 3D 구조와 기하학적 유효성을 유지하면서 전경, 배경 및 조명을 변경할 수 있습니다. 또한 실제 데이터와 생성 데이터의 혼합 훈련 세트를 활용하고, 훈련 과정을 강화하기 위해 AdaMix를 제안합니다. AdaMix는 정책 성능에 따라 샘플에 적응적으로 가중치를 부여하여 어려운 샘플을 강조하는 훈련 전략입니다. 포괄적인 평가는 DreamTransfer가 생성한 비디오가 다중 시점 일관성, 기하학적 정확성 및 텍스트 조건 정밀도에서 이전 비디오 생성 기술보다 상당한 개선을 제공함을 보여줍니다. 우리는 시뮬레이션 및 실제 로봇 환경에서 총 1800회 이상의 시험을 통해 광범위한 평가를 수행합니다. 제로샷 시각 설정의 실제 로봇 작업에서, 우리 프레임워크는 실제 데이터만으로 훈련한 경우보다 상대적 성능이 92% 이상 향상되었으며, AdaMix를 통해 추가로 17% 개선되어 정책 일반화 향상에 대한 효능을 입증합니다.
-
-## 핵심 내용
-시각-언어-행동(VLA) 모델의 일반화는 다양한 훈련 데이터에 크게 의존합니다. 그러나 다양한 객체 외형에 걸친 로봇 조작을 위한 대규모 데이터를 확보하는 것은 비용과 노동이 많이 듭니다. 이러한 한계를 해결하기 위해, 우리는 생성적 데이터 엔진과 효과적인 훈련 파이프라인을 결합한 VLA 정책 증강 프레임워크인 Embodied Manipulation Media Adaptation (EMMA)을 소개합니다. 우리는 다중 시점 일관성과 기하학적 기반을 갖춘 구현된 조작 비디오를 생성하기 위한 확산 Transformer 기반 아키텍처인 DreamTransfer를 도입합니다. DreamTransfer는 프롬프트를 통해 로봇 비디오의 시각적 편집을 가능하게 하여, 3D 구조와 기하학적 유효성을 유지하면서 전경, 배경 및 조명을 변경할 수 있습니다. 또한 실제 데이터와 생성 데이터의 혼합 훈련 세트를 활용하고, 훈련 과정을 강화하기 위해 AdaMix를 제안합니다. AdaMix는 정책 성능에 따라 샘플에 적응적으로 가중치를 부여하여 어려운 샘플을 강조하는 훈련 전략입니다. 포괄적인 평가는 DreamTransfer가 생성한 비디오가 다중 시점 일관성, 기하학적 정확성 및 텍스트 조건 정밀도에서 이전 비디오 생성 기술보다 상당한 개선을 제공함을 보여줍니다. 우리는 시뮬레이션 및 실제 로봇 환경에서 총 1800회 이상의 시험을 통해 광범위한 평가를 수행합니다. 제로샷 시각 설정의 실제 로봇 작업에서, 우리 프레임워크는 실제 데이터만으로 훈련한 경우보다 상대적 성능이 92% 이상 향상되었으며, AdaMix를 통해 추가로 17% 개선되어 정책 일반화 향상에 대한 효능을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.22407v2
+
+## 개요
+EMMA는 시각-언어-행동 모델이 훈련 데이터 다양성 부족으로 인해 겪는 일반화 병목 현상을 해결하기 위해 설계되었습니다. 이 프레임워크는 DreamTransfer 생성 엔진과 AdaMix 훈련 전략이라는 두 가지 핵심 구성 요소를 포함합니다. DreamTransfer는 확산 트랜스포머(Diffusion Transformer)를 기반으로 하며, 텍스트 프롬프트에 따라 로봇 비디오의 전경, 배경 및 조명을 편집하면서 3D 구조와 기하학적 일관성을 유지합니다. AdaMix는 정책 성능에 따라 샘플 가중치를 동적으로 조정하여 어려운 샘플에 대한 학습을 강화합니다. 1800회 이상의 시뮬레이션 및 실제 환경 실험에서 EMMA는 제로샷 시각 장면에서 상대적 성능 향상 92%를 달성했으며, AdaMix를 결합하면 추가로 17% 향상됩니다.
+
+## 핵심 내용
+### 방법 아키텍처
+EMMA 프레임워크는 두 가지 핵심 모듈로 구성됩니다:
+- **DreamTransfer**: 확산 트랜스포머(Diffusion Transformer) 기반의 생성 모델로, 다중 시점 일관성 제약과 기하학적 임베딩을 통해 편집 가능한 로봇 조작 비디오를 생성합니다. 사용자는 텍스트 프롬프트를 통해 비디오 내 객체 외관, 배경 질감 또는 조명 조건을 수정하면서 원본 3D 구조와 운동 궤적의 기하학적 유효성을 유지할 수 있습니다.
+- **AdaMix**: 적응형 훈련 전략으로, 실제 데이터와 생성 데이터를 혼합한 훈련 과정에서 현재 정책의 검증 세트 성능에 따라 각 샘플의 가중치를 동적으로 조정합니다. 성능이 낮은 샘플(즉, 어려운 샘플)은 더 높은 가중치를 받아 모델이 일반화 병목 현상에 집중하도록 유도합니다.
+
+### 실험 설정
+- **데이터**: 실제 로봇 조작 비디오와 DreamTransfer로 생성된 편집 비디오를 사용하여 혼합 훈련 세트를 구축합니다.
+- **평가**: 시뮬레이션 환경(예: MetaWorld)과 실제 로봇 플랫폼(예: Franka Emika Panda)에서 제로샷 시각 일반화 작업을 수행하며, 총 1800회 이상의 실험을 진행합니다.
+- **기준선**: 실제 데이터만 사용한 훈련, 다른 비디오 생성 방법(예: Stable Video Diffusion)으로 데이터를 증강한 방식 등과 비교합니다.
+
+### 주요 결과
+- **다중 시점 일관성**: DreamTransfer로 생성된 비디오는 구조적 유사성(SSIM) 및 Fréchet Video Distance(FVD) 지표에서 Stable Video Diffusion과 같은 기준선 방법보다 크게 우수합니다.
+- **기하학적 정확성**: 3D 재구성 오류 평가를 통해 DreamTransfer의 기하학적 구조 유지 능력이 기존 방법보다 약 40% 향상되었습니다.
+- **일반화 성능**:
+  - 제로샷 실제 세계 작업에서 EMMA(DreamTransfer 생성 데이터만 사용)는 순수 실제 데이터 훈련 대비 작업 성공률이 상대적으로 92% 향상되었습니다.
+  - AdaMix를 도입하면 추가로 17%의 상대적 향상을 얻어 최종 성공률이 실제 데이터 훈련의 약 두 배에 달합니다.
+- **절제 실험**: AdaMix 또는 DreamTransfer를 제거하면 성능이 크게 저하되어 두 구성 요소의 상호 보완적 역할이 검증되었습니다.
+
+### 결론
+EMMA는 생성적 시각 전이와 적응형 훈련을 통해 로봇 조작 데이터 부족 문제를 효과적으로 완화하며, VLA 모델의 실제 세계 일반화를 위한 확장 가능한 솔루션을 제공합니다. 향후 연구에서는 더 복잡한 장면 편집(예: 동적 객체 상호작용)과 교차 로봇 형태 전이를 탐구할 수 있습니다.

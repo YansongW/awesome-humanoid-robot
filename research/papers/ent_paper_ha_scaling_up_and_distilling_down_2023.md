@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.14535v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.14535v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (715 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,22 @@ SUDD 框架包含两个阶段：首先，利用 LLM 进行高层任务规划，�
 ## Overview
 We present a framework for robot skill acquisition, which 1) efficiently scale up data generation of language-labelled robot data and 2) effectively distills this data down into a robust multi-task language-conditioned visuo-motor policy. For (1), we use a large language model (LLM) to guide high-level planning, and sampling-based robot planners (e.g. motion or grasp samplers) for generating diverse and rich manipulation trajectories. To robustify this data-collection process, the LLM also infers a code-snippet for the success condition of each task, simultaneously enabling the data-collection process to detect failure and retry as well as the automatic labeling of trajectories with success/failure. For (2), we extend the diffusion policy single-task behavior-cloning approach to multi-task settings with language conditioning. Finally, we propose a new multi-task benchmark with 18 tasks across five domains to test long-horizon behavior, common-sense reasoning, tool-use, and intuitive physics. We find that our distilled policy successfully learned the robust retrying behavior in its data collection procedure, while improving absolute success rates by 33.2% on average across five domains. Code, data, and additional qualitative results are available on https://www.cs.columbia.edu/~huy/scalingup/.
 
-## 개요
-우리는 로봇 기술 습득을 위한 프레임워크를 제시합니다. 이 프레임워크는 1) 언어 레이블이 지정된 로봇 데이터의 생성을 효율적으로 확장하고, 2) 이 데이터를 강건한 다중 작업 언어 조건부 시각-운동 정책으로 효과적으로 증류합니다. (1)을 위해, 우리는 대규모 언어 모델(LLM)을 사용하여 고수준 계획을 안내하고, 샘플링 기반 로봇 플래너(예: 모션 또는 그립 샘플러)를 사용하여 다양하고 풍부한 조작 궤적을 생성합니다. 이 데이터 수집 과정을 강건하게 만들기 위해, LLM은 각 작업의 성공 조건에 대한 코드 스니펫을 추론하여, 데이터 수집 과정이 실패를 감지하고 재시도할 수 있도록 하며, 궤적의 성공/실패 자동 레이블링을 동시에 가능하게 합니다. (2)를 위해, 우리는 확산 정책 단일 작업 행동 복제 접근법을 언어 조건부 다중 작업 설정으로 확장합니다. 마지막으로, 우리는 장기 행동, 상식 추론, 도구 사용, 직관적 물리학을 테스트하기 위해 5개 도메인에 걸친 18개 작업으로 구성된 새로운 다중 작업 벤치마크를 제안합니다. 우리는 증류된 정책이 데이터 수집 절차에서 강건한 재시도 행동을 성공적으로 학습했으며, 5개 도메인에서 평균 절대 성공률을 33.2% 향상시켰음을 발견했습니다. 코드, 데이터 및 추가 정성적 결과는 https://www.cs.columbia.edu/~huy/scalingup/에서 확인할 수 있습니다.
-
-## 핵심 내용
-우리는 로봇 기술 습득을 위한 프레임워크를 제시합니다. 이 프레임워크는 1) 언어 레이블이 지정된 로봇 데이터의 생성을 효율적으로 확장하고, 2) 이 데이터를 강건한 다중 작업 언어 조건부 시각-운동 정책으로 효과적으로 증류합니다. (1)을 위해, 우리는 대규모 언어 모델(LLM)을 사용하여 고수준 계획을 안내하고, 샘플링 기반 로봇 플래너(예: 모션 또는 그립 샘플러)를 사용하여 다양하고 풍부한 조작 궤적을 생성합니다. 이 데이터 수집 과정을 강건하게 만들기 위해, LLM은 각 작업의 성공 조건에 대한 코드 스니펫을 추론하여, 데이터 수집 과정이 실패를 감지하고 재시도할 수 있도록 하며, 궤적의 성공/실패 자동 레이블링을 동시에 가능하게 합니다. (2)를 위해, 우리는 확산 정책 단일 작업 행동 복제 접근법을 언어 조건부 다중 작업 설정으로 확장합니다. 마지막으로, 우리는 장기 행동, 상식 추론, 도구 사용, 직관적 물리학을 테스트하기 위해 5개 도메인에 걸친 18개 작업으로 구성된 새로운 다중 작업 벤치마크를 제안합니다. 우리는 증류된 정책이 데이터 수집 절차에서 강건한 재시도 행동을 성공적으로 학습했으며, 5개 도메인에서 평균 절대 성공률을 33.2% 향상시켰음을 발견했습니다. 코드, 데이터 및 추가 정성적 결과는 https://www.cs.columbia.edu/~huy/scalingup/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2307.14535v2
+
+## 개요
+SUDD 프레임워크는 두 단계로 구성됩니다: 첫째, LLM을 활용한 고수준 작업 계획과 샘플링 기반 로봇 플래너(예: 운동 또는 그리퍼 샘플러)를 결합하여 다양한 조작 궤적을 생성합니다. 동시에 LLM은 작업 성공 조건을 자동으로 추론하는 코드 스니펫을 생성하여 데이터 수집 중 실패 감지 및 재시도를 가능하게 하고, 궤적의 성공/실패 레이블을 자동으로 주석 처리합니다. 둘째, 단일 작업 확산 정책 행동 복제를 다중 작업 언어 조건화 버전으로 확장하여 강건한 정책을 증류합니다. 이 프레임워크는 장시간 행동, 상식 추론, 도구 사용 및 직관적 물리학을 포함하는 18개 작업 벤치마크에서 유효성을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **데이터 생성 단계**: LLM(예: GPT-4)을 사용하여 자연어 지시를 고수준 하위 작업 시퀀스로 분해하고, 샘플링 기반 플래너(예: 운동 플래너, 그리퍼 샘플러)를 호출하여 구체적인 궤적을 생성합니다. LLM은 동시에 작업 성공 조건에 대한 Python 코드 스니펫을 생성하여 실시간 실패 감지 및 재시도를 트리거하고, 궤적에 성공/실패 레이블을 자동으로 주석 처리합니다.
+- **정책 증류 단계**: 확산 정책(Diffusion Policy) 프레임워크를 기반으로, 단일 작업 행동 복제를 다중 작업 언어 조건화 버전으로 확장합니다. 입력에는 현재 시각적 관측과 언어 지시가 포함되며, 출력은 동작 시퀀스의 확산 노이즈 제거 과정입니다.
+
+### 실험 설정
+- **벤치마크 테스트**: 5개 도메인(테이블 조작, 도구 사용, 장시간 작업 등)에 걸친 총 18개 작업으로 구성된 새로운 벤치마크를 제안하며, 상식 추론, 도구 사용 및 직관적 물리학 과제를 포함합니다.
+- **비교 기준선**: 단일 작업 확산 정책, 다중 작업 행동 복제(BC-RNN) 및 언어 조건화 변형과 비교합니다.
+
+### 주요 결과
+- 증류된 정책은 데이터 수집 중 재시도 행동을 성공적으로 재현했으며, 5개 도메인에서 평균 절대 성공률이 33.2% 향상되었습니다.
+- 상식 추론(예: "컵을 접시 오른쪽에 놓기") 및 도구 사용(예: "망치로 못 두드리기")이 필요한 작업에서 기준선보다 현저히 우수한 성능을 보였습니다.
+- 코드, 데이터 및 추가 정성적 결과는 프로젝트 홈페이지에서 확인할 수 있습니다.

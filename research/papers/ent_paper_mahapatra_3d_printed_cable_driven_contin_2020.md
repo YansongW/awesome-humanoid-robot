@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2003.04593v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2003.04593v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (626 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,28 @@ theoretical_depth:
 ## Overview
 Continuum robots are becoming increasingly popular for applications which require the robots to deform and change shape, while also being compliant. A cable-driven continuum robot is one of the most commonly used type. Typical cable driven continuum robots consist of a flexible backbone with spacer disks attached to the backbone and cables passing through the holes in the spacer disks from the fixed base to a free end. In most such robots, the routing of the cables are straight or a smooth helical curve. In this paper, we analyze the experimental and theoretical deformations of a 3D printed continuum robot, for 6 different kinds of cable routings. The results are compared for discrete optimization based kinematic modelling as well as static modelling using Cosserat rod theory. It is shown that the experimental results match the theoretical results with an error margin of 2%. It is also shown that the optimization based approach is faster than the one based on Cosserat rod theory. We also present a three-fingered gripper prototype where each of the fingers are 3D printed continuum robots with general cable routing. It is demonstrated that the prototype can be used for gripping objects and for its manipulation.
 
-## 개요
-연속체 로봇은 변형과 형상 변화가 필요하면서도 유연성을 요구하는 응용 분야에서 점점 더 인기를 얻고 있습니다. 케이블 구동 연속체 로봇은 가장 일반적으로 사용되는 유형 중 하나입니다. 전형적인 케이블 구동 연속체 로봇은 유연한 백본(backbone)에 스페이서 디스크(spacer disk)가 부착되고, 고정된 베이스에서 자유 끝단까지 스페이서 디스크의 구멍을 통과하는 케이블로 구성됩니다. 대부분의 이러한 로봇에서 케이블의 경로는 직선이거나 부드러운 나선형 곡선입니다. 본 논문에서는 6가지 서로 다른 케이블 경로에 대해 3D 프린팅된 연속체 로봇의 실험적 및 이론적 변형을 분석합니다. 결과는 이산 최적화 기반 운동학적 모델링과 Cosserat rod 이론을 사용한 정적 모델링을 비교합니다. 실험 결과가 2%의 오차 범위 내에서 이론적 결과와 일치함을 보여줍니다. 또한 최적화 기반 접근 방식이 Cosserat rod 이론 기반 접근 방식보다 더 빠르다는 것을 보여줍니다. 또한 각 손가락이 일반적인 케이블 경로를 가진 3D 프린팅 연속체 로봇인 세 손가락 그리퍼 프로토타입을 제시합니다. 이 프로토타입이 물체를 잡고 조작하는 데 사용될 수 있음을 입증합니다.
-
-## 핵심 내용
-연속체 로봇은 변형과 형상 변화가 필요하면서도 유연성을 요구하는 응용 분야에서 점점 더 인기를 얻고 있습니다. 케이블 구동 연속체 로봇은 가장 일반적으로 사용되는 유형 중 하나입니다. 전형적인 케이블 구동 연속체 로봇은 유연한 백본(backbone)에 스페이서 디스크(spacer disk)가 부착되고, 고정된 베이스에서 자유 끝단까지 스페이서 디스크의 구멍을 통과하는 케이블로 구성됩니다. 대부분의 이러한 로봇에서 케이블의 경로는 직선이거나 부드러운 나선형 곡선입니다. 본 논문에서는 6가지 서로 다른 케이블 경로에 대해 3D 프린팅된 연속체 로봇의 실험적 및 이론적 변형을 분석합니다. 결과는 이산 최적화 기반 운동학적 모델링과 Cosserat rod 이론을 사용한 정적 모델링을 비교합니다. 실험 결과가 2%의 오차 범위 내에서 이론적 결과와 일치함을 보여줍니다. 또한 최적화 기반 접근 방식이 Cosserat rod 이론 기반 접근 방식보다 더 빠르다는 것을 보여줍니다. 또한 각 손가락이 일반적인 케이블 경로를 가진 3D 프린팅 연속체 로봇인 세 손가락 그리퍼 프로토타입을 제시합니다. 이 프로토타입이 물체를 잡고 조작하는 데 사용될 수 있음을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2003.04593v1
+
+## 개요
+연속체 로봇은 변형과 환경 적응 능력 덕분에 점점 더 인기를 얻고 있으며, 그중에서도 케이블 구동 방식이 가장 일반적입니다. 기존 로봇의 케이블 라우팅은 주로 직선 또는 부드러운 나선형 곡선이었지만, 본 논문에서는 여섯 가지 일반적인 라우팅 방식을 탐구합니다. 3D 프린팅 로봇을 이용한 실험을 통해 이산 최적화 운동학 모델과 Cosserat rod 정역학 모델의 이론적 예측을 비교했으며, 두 모델 모두 실험 결과와의 오차가 2% 미만임을 발견했고, 최적화 방법이 계산 속도가 더 빠른 것으로 나타났습니다. 또한, 이 설계를 기반으로 제작된 세 손가락 그리퍼 프로토타입이 물체를 성공적으로 잡고 조작하는 데 성공했습니다.
+
+## 핵심 내용
+### 방법 및 구조
+- 로봇 구조: 유연한 골격을 사용하며, 간격을 두고 디스크가 부착되고, 케이블이 고정 베이스에서 디스크 구멍을 통과해 자유 끝단까지 도달합니다.
+- 케이블 라우팅: 기존의 직선 또는 부드러운 나선형 곡선과는 다른 여섯 가지 일반적인 라우팅 방식을 연구했습니다.
+- 모델링 방법:
+  - **이산 최적화 운동학 모델**: 분할 상수 곡률 가정을 기반으로 최적화를 통해 변형을 해결합니다.
+  - **Cosserat rod 정역학 모델**: 막대의 굽힘, 비틀림 및 전단을 고려하여 평형 방정식을 해결합니다.
+
+### 실험 설정
+- 3D 프린터로 연속체 로봇 프로토타입을 제작하고, 여섯 가지 케이블 라우팅에서의 변형을 테스트했습니다.
+- 실험 변형을 측정하고 두 모델의 이론적 예측과 비교했습니다.
+
+### 주요 결과
+- 두 모델의 예측과 실험 결과의 오차는 모두 로봇 길이의 2% 이내였습니다.
+- 이산 최적화 방법은 Cosserat rod 방법보다 계산 속도가 현저히 빨랐습니다.
+- 세 손가락 그리퍼 프로토타입(각 손가락이 일반 라우팅을 사용하는 3D 프린팅 연속체 로봇)이 물체를 성공적으로 잡고 조작했습니다.
+
+### 결론
+본 논문은 3D 프린팅 연속체 로봇에서 일반적인 케이블 라우팅의 실현 가능성을 검증하고, 빠르고 정확한 모델링 방법을 제공하며, 그리퍼에서의 응용 가능성을 보여주었습니다.

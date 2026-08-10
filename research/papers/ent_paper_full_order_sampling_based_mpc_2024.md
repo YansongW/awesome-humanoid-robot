@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.15610v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.15610v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (794 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,28 @@ DIAL-MPC作为首个无需训练的实时全阶四足动力学优化方法，通
 ## Overview
 Due to high dimensionality and non-convexity, real-time optimal control using full-order dynamics models for legged robots is challenging. Therefore, Nonlinear Model Predictive Control (NMPC) approaches are often limited to reduced-order models. Sampling-based MPC has shown potential in nonconvex even discontinuous problems, but often yields suboptimal solutions with high variance, which limits its applications in high-dimensional locomotion. This work introduces DIAL-MPC (Diffusion-Inspired Annealing for Legged MPC), a sampling-based MPC framework with a novel diffusion-style annealing process. Such an annealing process is supported by the theoretical landscape analysis of Model Predictive Path Integral Control (MPPI) and the connection between MPPI and single-step diffusion. Algorithmically, DIAL-MPC iteratively refines solutions online and achieves both global coverage and local convergence. In quadrupedal torque-level control tasks, DIAL-MPC reduces the tracking error of standard MPPI by $13.4$ times and outperforms reinforcement learning (RL) policies by $50\%$ in challenging climbing tasks without any training. In particular, DIAL-MPC enables precise real-world quadrupedal jumping with payload. To the best of our knowledge, DIAL-MPC is the first training-free method that optimizes over full-order quadruped dynamics in real-time.
 
-## 개요
-고차원성과 비볼록성으로 인해, 보행 로봇의 전차수 동역학 모델을 사용한 실시간 최적 제어는 어렵습니다. 따라서 비선형 모델 예측 제어(NMPC) 접근법은 종종 축소 차수 모델로 제한됩니다. 샘플링 기반 MPC는 비볼록, 심지어 불연속적인 문제에서 잠재력을 보여주었지만, 높은 분산을 가진 차선의 해를 산출하는 경우가 많아 고차원 보행에서의 응용이 제한됩니다. 본 연구는 DIAL-MPC(Diffusion-Inspired Annealing for Legged MPC)를 소개합니다. 이는 새로운 확산 스타일 어닐링 과정을 갖춘 샘플링 기반 MPC 프레임워크입니다. 이러한 어닐링 과정은 모델 예측 경로 적분 제어(MPPI)의 이론적 지형 분석과 MPPI와 단일 단계 확산 간의 연결에 의해 뒷받침됩니다. 알고리즘적으로, DIAL-MPC는 온라인에서 반복적으로 해를 개선하며 전역적 탐색과 지역적 수렴을 모두 달성합니다. 사족 보행 로봇의 토크 수준 제어 작업에서 DIAL-MPC는 표준 MPPI의 추적 오차를 $13.4$배 줄이고, 훈련 없이도 어려운 등반 작업에서 강화 학습(RL) 정책보다 $50\%$ 더 나은 성능을 보입니다. 특히, DIAL-MPC는 페이로드를 실은 정밀한 실제 사족 보행 로봇 점프를 가능하게 합니다. 우리가 아는 한, DIAL-MPC는 실시간으로 전차수 사족 보행 동역학을 최적화하는 최초의 훈련 없는 방법입니다.
-
-## 핵심 내용
-고차원성과 비볼록성으로 인해, 보행 로봇의 전차수 동역학 모델을 사용한 실시간 최적 제어는 어렵습니다. 따라서 비선형 모델 예측 제어(NMPC) 접근법은 종종 축소 차수 모델로 제한됩니다. 샘플링 기반 MPC는 비볼록, 심지어 불연속적인 문제에서 잠재력을 보여주었지만, 높은 분산을 가진 차선의 해를 산출하는 경우가 많아 고차원 보행에서의 응용이 제한됩니다. 본 연구는 DIAL-MPC(Diffusion-Inspired Annealing for Legged MPC)를 소개합니다. 이는 새로운 확산 스타일 어닐링 과정을 갖춘 샘플링 기반 MPC 프레임워크입니다. 이러한 어닐링 과정은 모델 예측 경로 적분 제어(MPPI)의 이론적 지형 분석과 MPPI와 단일 단계 확산 간의 연결에 의해 뒷받침됩니다. 알고리즘적으로, DIAL-MPC는 온라인에서 반복적으로 해를 개선하며 전역적 탐색과 지역적 수렴을 모두 달성합니다. 사족 보행 로봇의 토크 수준 제어 작업에서 DIAL-MPC는 표준 MPPI의 추적 오차를 $13.4$배 줄이고, 훈련 없이도 어려운 등반 작업에서 강화 학습(RL) 정책보다 $50\%$ 더 나은 성능을 보입니다. 특히, DIAL-MPC는 페이로드를 실은 정밀한 실제 사족 보행 로봇 점프를 가능하게 합니다. 우리가 아는 한, DIAL-MPC는 실시간으로 전차수 사족 보행 동역학을 최적화하는 최초의 훈련 없는 방법입니다.
-
 ## 参考
 - http://arxiv.org/abs/2409.15610v1
+
+## 개요
+족형 로봇의 전차수 동역학 모델의 고차원 비볼록 최적화 문제에 대해, 기존 NMPC 방법은 주로 축소 모델에 국한되어 있으며, 샘플링 기반 MPC는 비연속 문제를 처리할 수 있지만 높은 분산의 차선해 문제가 존재한다. DIAL-MPC는 확산 모델의 어닐링 메커니즘을 혁신적으로 융합하여, 이론 분석을 통해 MPPI와 단일 단계 확산 간의 수학적 연결을 확립하고, 전역 탐색과 국소 수렴을 동시에 고려한 반복 최적화 알고리즘을 설계했다. 사족 로봇 실험에서 이 방법은 토크 수준 제어 작업에서 뚜렷한 우위를 보여주었다: 표준 MPPI의 추적 오차가 1/13.4로 압축되었고, 훈련 없이 등반 성능이 RL 정책보다 50% 높았으며, 부하가 있는 정밀 점프 제어를 최초로 구현했다.
+
+## 핵심 내용
+### 방법 구조
+- **핵심 메커니즘**: DIAL-MPC는 확산 모델의 어닐링 과정을 샘플링 기반 MPC에 도입하여, 노이즈 분산을 점진적으로 낮춤으로써 전역 탐색에서 국소 수렴으로의 부드러운 전환을 실현한다
+- **이론적 기반**: MPPI(Model Predictive Path Integral Control)의 손실 경관 분석을 기반으로, MPPI와 단일 단계 확산 과정 간의 수학적 등가 관계를 확립한다
+- **알고리즘 흐름**: 온라인 반복 최적화 시, 각 제어 주기 내에서 어닐링 전략을 포함한 다중 라운드의 샘플링-평가-재샘플링 루프를 실행한다
+
+### 실험 설정
+- **제어 대상**: 사족 로봇 토크 수준 제어, 기본 운동, 등반, 점프 등의 작업 포함
+- **비교 기준**: 표준 MPPI, 강화 학습 정책(RL)
+- **하드웨어 플랫폼**: 실제 사족 로봇 플랫폼, 부하 점프 실험 포함
+
+### 주요 성능 데이터
+- **추적 오차**: 표준 MPPI 대비 13.4배 감소
+- **등반 작업**: 훈련 없이 성공률이 RL 정책보다 50% 높음
+- **점프 능력**: 실제 사족 로봇의 부하가 있는 정밀 점프를 최초로 구현
+- **실시간성**: 완전한 사족 동역학 모델에서 사전 훈련 없이 실시간 최적화 구현
+
+### 결론
+DIAL-MPC는 훈련이 필요 없는 최초의 실시간 전차수 사족 동역학 최적화 방법으로, 확산형 어닐링 메커니즘을 통해 고차원 비볼록 최적화 문제를 효과적으로 해결하며, 토크 수준 제어 작업에서 전역 탐색 능력과 국소 수렴 정밀도를 동시에 달성하여 족형 로봇의 전신 제어에 새로운 패러다임을 제공한다.

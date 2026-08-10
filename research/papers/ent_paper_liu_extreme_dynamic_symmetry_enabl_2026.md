@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.29254v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.29254v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (858 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,29 @@ theoretical_depth:
 ## Overview
 Symmetry is a central organizing principle in natural systems, yet its use as a unifying design strategy in robotics has largely remained limited to geometric form. We show that symmetry can instead be leveraged at the level of dynamic actuation capability. We introduce dynamic symmetry, the uniformity of a robot's attainable center-of-mass accelerations, and formalize it through a measure coined as dynamic isotropy. Across more than 1000 simulated morphologies, we found that higher dynamic symmetry consistently improved trajectory tracking, task success, robustness, resiliency, and energy efficiency, with the benefits becoming most pronounced as dynamic isotropy approached its theoretical limit. To study this regime systematically, we developed Argus, a family of spherical robots designed to explore the effects of increasing dynamic symmetry. Members of the Argus family vary in their actuation geometry and dynamic symmetry level while sharing a common architectural principle: radially oriented linear actuators that directly shape the robot's center-of-mass dynamics. Among them, we built a physical 20-leg Argus variant that achieved near-extreme dynamic isotropy and demonstrated orientation-invariant locomotion, agile traversal of cluttered and deformable terrain, rapid self-stabilization, and resilience to partial actuator failures. Its distributed sensing further enabled omnidirectional perception and object interaction during continuous motion. These results show that designing robots for symmetry not only in morphology but also in their attainable dynamics provides a powerful and general pathway toward agility, robustness, and multifunctionality in uncertain terrestrial and extraterrestrial environments.
 
-## 개요
-대칭은 자연계에서 핵심적인 조직 원리이지만, 로봇 공학에서 통합적인 설계 전략으로서의 활용은 주로 기하학적 형태에 국한되어 왔습니다. 우리는 대칭이 대신 동적 구동 능력 수준에서 활용될 수 있음을 보여줍니다. 우리는 동적 대칭, 즉 로봇이 달성 가능한 질량 중심 가속도의 균일성을 도입하고, 이를 동적 등방성(dynamic isotropy)이라는 측정 지표를 통해 공식화합니다. 1000개 이상의 시뮬레이션된 형태를 대상으로 한 실험에서, 더 높은 동적 대칭이 궤적 추적, 작업 성공률, 강건성, 회복 탄력성 및 에너지 효율성을 일관되게 향상시켰으며, 동적 등방성이 이론적 한계에 가까워질수록 그 이점이 가장 두드러짐을 발견했습니다. 이러한 영역을 체계적으로 연구하기 위해, 우리는 증가하는 동적 대칭의 효과를 탐구하도록 설계된 구형 로봇 제품군인 Argus를 개발했습니다. Argus 제품군의 구성원들은 구동 기하학과 동적 대칭 수준이 다양하지만, 로봇의 질량 중심 동역학을 직접적으로 형성하는 방사형 선형 액추에이터라는 공통된 아키텍처 원리를 공유합니다. 그중에서 우리는 거의 극한에 가까운 동적 등방성을 달성한 물리적 20-다리 Argus 변형을 제작했으며, 이는 방향에 무관한 이동, 복잡하고 변형 가능한 지형의 민첩한 주행, 빠른 자가 안정화, 그리고 부분적인 액추에이터 고장에 대한 회복 탄력성을 입증했습니다. 또한 분산 센싱을 통해 연속적인 움직임 중에도 전방향 인식과 객체 상호작용이 가능했습니다. 이러한 결과는 형태뿐만 아니라 달성 가능한 동역학에서도 대칭을 위해 로봇을 설계하는 것이 불확실한 지상 및 지구 외 환경에서 민첩성, 강건성 및 다기능성을 향한 강력하고 일반적인 경로를 제공함을 보여줍니다.
-
-## 핵심 내용
-대칭은 자연계에서 핵심적인 조직 원리이지만, 로봇 공학에서 통합적인 설계 전략으로서의 활용은 주로 기하학적 형태에 국한되어 왔습니다. 우리는 대칭이 대신 동적 구동 능력 수준에서 활용될 수 있음을 보여줍니다. 우리는 동적 대칭, 즉 로봇이 달성 가능한 질량 중심 가속도의 균일성을 도입하고, 이를 동적 등방성(dynamic isotropy)이라는 측정 지표를 통해 공식화합니다. 1000개 이상의 시뮬레이션된 형태를 대상으로 한 실험에서, 더 높은 동적 대칭이 궤적 추적, 작업 성공률, 강건성, 회복 탄력성 및 에너지 효율성을 일관되게 향상시켰으며, 동적 등방성이 이론적 한계에 가까워질수록 그 이점이 가장 두드러짐을 발견했습니다. 이러한 영역을 체계적으로 연구하기 위해, 우리는 증가하는 동적 대칭의 효과를 탐구하도록 설계된 구형 로봇 제품군인 Argus를 개발했습니다. Argus 제품군의 구성원들은 구동 기하학과 동적 대칭 수준이 다양하지만, 로봇의 질량 중심 동역학을 직접적으로 형성하는 방사형 선형 액추에이터라는 공통된 아키텍처 원리를 공유합니다. 그중에서 우리는 거의 극한에 가까운 동적 등방성을 달성한 물리적 20-다리 Argus 변형을 제작했으며, 이는 방향에 무관한 이동, 복잡하고 변형 가능한 지형의 민첩한 주행, 빠른 자가 안정화, 그리고 부분적인 액추에이터 고장에 대한 회복 탄력성을 입증했습니다. 또한 분산 센싱을 통해 연속적인 움직임 중에도 전방향 인식과 객체 상호작용이 가능했습니다. 이러한 결과는 형태뿐만 아니라 달성 가능한 동역학에서도 대칭을 위해 로봇을 설계하는 것이 불확실한 지상 및 지구 외 환경에서 민첩성, 강건성 및 다기능성을 향한 강력하고 일반적인 경로를 제공함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2605.29254v1
+
+## 개요
+대칭성은 자연계에서 핵심적인 조직 원리이지만, 로봇 설계에서는 주로 기하학적 형태에 국한되어 있다. 본 논문은 이를 동적 구동 능력의 차원으로 확장하여 동적 대칭성 개념을 제안하고, 동적 등방성 지표를 통해 정량화한다. 1000개 이상의 시뮬레이션 형태에서 동적 대칭성이 높을수록 궤적 추적, 작업 성공률, 견고성, 회복력 및 에너지 효율이 우수하며, 특히 이론적 한계에 근접할 때 그 이점이 두드러진다. 이 분야를 체계적으로 연구하기 위해 저자들은 Argus 구형 로봇 시리즈를 개발했으며, 그 구성원들은 구동 기하학과 동적 대칭성 수준에서 다양하지만 방사형 선형 구동기의 아키텍처 원리를 공유한다. 그중 20족 물리 프로토타입은 거의 극한의 동적 등방성을 구현하여 방향 무관 운동, 혼잡하고 변형 가능한 지형에서의 민첩한 주파, 빠른 자가 안정화 및 부분 구동기 고장에 대한 회복력을 보여준다. 분산 인식은 또한 연속 운동 중 전방향 인식과 객체 상호작용을 지원한다.
+
+## 핵심 내용
+### 핵심 개념 및 기여
+- **동적 대칭성**: 대칭성을 기하학적 형태에서 동적 구동 능력으로 확장하여, 로봇 질량 중심의 도달 가능한 가속도의 균일성으로 정의한다.
+- **동적 등방성**: 동적 대칭성을 정량화하는 새로운 지표로, 질량 중심 가속도가 모든 방향에서 얼마나 균일한지를 측정한다.
+- **이론적 한계**: 동적 등방성이 이론적 한계에 근접할 때 성능 향상이 가장 두드러진다.
+
+### Argus 로봇 시리즈
+- **아키텍처 원리**: 모든 Argus 변형은 방사형 선형 구동기를 사용하여 로봇 질량 중심 동역학을 직접 형성한다.
+- **시뮬레이션 연구**: 1000개 이상의 시뮬레이션 형태에서 동적 대칭성이 궤적 추적, 작업 성공률, 견고성, 회복력 및 에너지 효율을 지속적으로 향상시킴을 검증한다.
+- **물리 프로토타입**: 20족 Argus 변형은 거의 극한의 동적 등방성을 구현한다.
+
+### 실험 검증
+- **전방향 운동**: 방향 무관한 로코모션으로 임의의 방향에 적응한다.
+- **지형 주파**: 혼잡하고 변형 가능한 지형(예: 자갈, 모래)에서 민첩하게 이동한다.
+- **자가 안정화**: 빠르게 균형을 회복하고 외부 교란에 저항한다.
+- **고장 회복**: 부분 구동기 고장 시에도 기능을 유지한다.
+- **인식 및 상호작용**: 분산 인식이 연속 운동 중 전방향 인식과 객체 조작을 지원한다.
+
+### 결론
+- 로봇을 설계할 때 형태 대칭성뿐만 아니라 도달 가능한 동역학의 대칭성에 주목함으로써, 불확실한 지구 및 지구 외 환경에서 민첩성, 견고성 및 다기능성을 구현하는 보편적인 경로를 제공한다.

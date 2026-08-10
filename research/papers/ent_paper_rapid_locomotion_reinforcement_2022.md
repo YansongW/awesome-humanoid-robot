@@ -37,7 +37,9 @@ verification:
   reviewed_at: '2026-08-05'
   confidence: medium
   notes: 'Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P011. Full text from arXiv (HTML or PDF); zh six-section
-    interpretation by DeepSeek (T<=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。'
+    interpretation by DeepSeek (T<=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过
+    2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。 | WP4 trilingual backfill 2026-08-10:
+    en body retranslated from zh deep-read (3008 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -46,7 +48,6 @@ sources:
   date: '2022-05-05'
   accessed_at: '2026-08-05'
 ---
-
 ## 概述
 
 本文由 MIT 团队提出，用端到端强化学习在 MIT Mini Cheetah 上实现了最高 3.9 m/s 的持续奔跑与 5.7 rad/s 的旋转，核心贡献是联合建模线速度与角速度指令的 Grid Adaptive 课程，以及教师-学生框架下的在线系统识别模块，使策略仅凭关节编码器与 IMU 即可零样本部署到真实机器人。
@@ -112,9 +113,6 @@ sources:
 - **最容易踩坑**：课程阈值 γ 与网格分辨率 [0.5, 0.5] 是敏感超参。γ 过高会过早扩大指令范围导致训练不稳定，过低则策略停留在低速区域。建议从 γ=0.3 起调，并监控命令面积随训练步数的增长曲线。
 - **系统识别模块的部署**：h=15 的历史长度是实时性关键，若下游平台计算资源弱于 Jetson TX2 NX，需先验证适应模块推理延迟是否满足 50 Hz 控制周期。
 - **对下游团队的启示**：传感器仅需关节编码器与 IMU，适用于廉价四足机器人。但域随机化范围（摩擦 [0.05, 4.00] 等）是针对 Mini Cheetah 标定的，迁移到其他平台需重新扫描，尤其是电机强度范围 [90, 110]% 可能不适用于低扭矩执行器。
-
-## Overview
-Agile maneuvers such as sprinting and high-speed turning in the wild are challenging for legged robots. We present an end-to-end learned controller that achieves record agility for the MIT Mini Cheetah, sustaining speeds up to 3.9 m/s. This system runs and turns fast on natural terrains like grass, ice, and gravel and responds robustly to disturbances. Our controller is a neural network trained in simulation via reinforcement learning and transferred to the real world. The two key components are (i) an adaptive curriculum on velocity commands and (ii) an online system identification strategy for sim-to-real transfer leveraged from prior work. Videos of the robot's behaviors are available at: https://agility.csail.mit.edu/
 
 ## 参考
 - https://arxiv.org/abs/2205.02824
@@ -184,3 +182,69 @@ Agile maneuvers such as sprinting and high-speed turning in the wild are challen
 - **가장 흔한 함정**: 커리큘럼 임계값 γ와 그리드 해상도 [0.5, 0.5]는 민감한 하이퍼파라미터입니다. γ가 너무 높으면 명령 범위가 조기에 확장되어 훈련이 불안정해지고, 너무 낮으면 정책이 저속 영역에 머무릅니다. γ=0.3에서 시작하여 훈련 스텝에 따른 명령 면적 증가 곡선을 모니터링하는 것을 권장합니다.
 - **시스템 식별 모듈 배포**: h=15의 히스토리 길이는 실시간성의 핵심입니다. 다운스트림 플랫폼의 컴퓨팅 자원이 Jetson TX2 NX보다 약하다면 적응 모듈 추론 지연이 50 Hz 제어 주기를 충족하는지 먼저 검증해야 합니다.
 - **다운스트림 팀에 대한 시사점**: 센서는 관절 엔코더와 IMU만 필요하므로 저가형 네 발 로봇에 적합합니다. 그러나 도메인 무작위화 범위 (마찰 [0.05, 4.00] 등)는 Mini Cheetah에 맞게 보정된 것이므로, 다른 플랫폼으로 전이할 때 특히 모터 강도 범위 [90, 110]%가 저토크 액추에이터에는 적합하지 않을 수 있으므로 재스캔이 필요합니다.
+
+## Overview
+
+This paper, proposed by the MIT team, achieves sustained running speeds of up to 3.9 m/s and rotational speeds of 5.7 rad/s on the MIT Mini Cheetah using end-to-end reinforcement learning. The core contributions are a Grid Adaptive curriculum that jointly models linear and angular velocity commands, and an online system identification module within a teacher-student framework, enabling zero-shot deployment of the policy to the real robot using only joint encoders and an IMU.
+
+## What It Changes
+
+It changes the premise that "high-speed agile locomotion must rely on manually designed reduced-order models." Previous MPC-based methods reached 3.7 m/s on the Mini Cheetah, but every new terrain or speed range required engineers to re-tune model parameters. Pure RL methods failed when the command range expanded to high speeds because random exploration rarely produces high-speed samples, resulting in sparse reward signals. The authors point out that the problem is not with RL itself, but with the command sampling method—independently sampling linear and angular velocities frequently generates combinations that are infeasible under centrifugal force constraints, causing the policy to learn in-place jittering rather than running. This effectively redefines "task difficulty" from a dynamics problem to a "command distribution design" problem, clearing the way for RL's applicability in agile control.
+
+## Method Breakdown
+
+### Overall Architecture
+- The policy πθ takes as input historical observations o_{t-H:t} (H=15) and the velocity command v_t^cmd, and outputs 12-dimensional joint position commands, converted to torques by a PD controller (Kp=20, Kd=0.5). Observations include only joint angles/velocities, IMU gravity direction, and the previous action—no vision, no external localization.
+
+### Teacher-Student Training
+- Teacher πT(x_t, d_t) = π_{θb}(x_t, g_{θd}(d_t)): An encoder g_{θd} compresses 12-dimensional domain parameters d_t (mass, center of mass, friction, motor strength, etc.) into an 8-dimensional latent variable z_t. The main policy π_{θb} outputs actions based on this, optimized jointly with PPO.
+- Student πS(x_t, x_{[t-h:t-1]}) = π_{θb}(x_t, h_{θa}(...)): An adaptation module h_{θa} estimates ẑ_t from 42×15 historical observations, supervised by the loss L = (ẑ_t - z_t)². The key design choice is that h=15 is short enough for the adaptation module to run synchronously with the main policy in real time at 50 Hz.
+
+### Grid Adaptive Curriculum
+- The v_x^cmd-ω_z^cmd plane is discretized into a [0.5 m/s, 0.5 rad/s] grid, maintaining a joint distribution. If a grid cell's reward falls below a threshold γ, its probability is preserved; otherwise, the probabilities of its 4-connected neighbors are set to 1. The initial distribution is uniform over [-1.0, 1.0]×[-1.0, 1.0].
+- The essential difference from Box Adaptive (which maintains independent marginal distributions): Grid explicitly models the coupling between v_x and ω_z—at high speeds, centrifugal force makes the feasible region satisfy ω_z ∼ 1/v_x. Independent sampling generates infeasible combinations with equal probability, whereas the joint distribution automatically focuses on feasible regions.
+
+### Domain Randomization
+- Range: ground friction [0.05, 4.00], coefficient of restitution [0.00, 1.00], payload mass [-1.0, 3.0] kg, center of mass offset [-0.10, 0.10] m, motor strength [90, 110]%.
+
+## Key Innovations
+
+1. **Grid Adaptive Curriculum**: The first to treat the command space as a joint distribution rather than independent marginals. This is not an engineering detail but an explicit modeling of "task difficulty being jointly determined by dynamics and the optimization algorithm"—it allows the policy to automatically avoid infeasible velocity-angular velocity combinations during training, thereby discovering high-speed running behavior. Both no-curriculum and Box curriculum fail; Grid is the only successful one.
+2. **Online System Identification Module**: Unlike references [23, 24], the adaptation module h_{θa} is trained with online data simultaneously with the teacher, and the history length h=15 is small enough for real-time operation. This allows the student policy to implicitly estimate domain parameters such as terrain friction and payload from onboard sensors alone at deployment, with no fine-tuning, achieving zero-shot sim-to-real transfer.
+3. **Low-Gain PD Controller**: Kp=20, Kd=0.5 is far lower than common settings. The authors deliberately choose low gains to promote smooth motion and do not tune them. This makes the action space closer to "desired positions" rather than "rigid tracking," reducing dynamics mismatch between simulation and reality.
+
+## Experiments and Results
+
+### Key Results
+- Highest sustained speed on indoor flat ground: **3.9 m/s** (best of 3 seeds), average **3.8 m/s**, surpassing the 3.7 m/s MPC record on the same robot.
+- Outdoor 10-meter grass sprint: average **3.4 m/s** (2.94 seconds).
+- Maximum yaw rate: **5.7 rad/s**, 90% of the model-based record of 6.28 rad/s, and a single policy simultaneously achieves linear and angular velocity (model-based requires two controllers).
+- Ablation: The student policy π_θ_ST achieves a real-world speed of 3.81 ± 0.09 m/s, significantly higher than π_θ_DR without system identification (2.49 ± 0.07 m/s), demonstrating that the adaptation module is key to sim-to-real transfer.
+
+| Configuration | Simulation Speed (m/s) | Real-World Speed (m/s) |
+|---|---|---|
+| With system ID π_θ_ST | 5.46 | 3.81 ± 0.09 |
+| Without system ID π_θ_DR | 5.07 | 2.49 ± 0.07 |
+
+### Curriculum Comparison
+- No curriculum: fails to learn, robot jitters in place.
+- Box Adaptive: controllable but excludes extreme regions of the command space.
+- Grid Adaptive: covers a larger command area under all error thresholds (Figure 3), and the command area shrinks as terrain roughness increases (Figure 5, comparison at ε=0.3).
+
+### Robustness
+- Qualitative reports: climbing gravel slopes, maintaining balance with a single motor blocked, and recovering after high-speed trips. The MPC baseline fails to recover in both the gravel slope descent and trip-over-obstacle scenarios.
+
+## Boundaries and Limitations
+
+- The policy is not fine-tuned on the real robot (zero-shot deployment), but the sources of the sim-to-real gap (inaccurate simulation parameters vs. uncapturable real-world dynamics) are not quantified.
+- Outdoor performance is only qualitatively reported, as state cannot be recorded with motion capture, and high-speed falls are unsafe for the hardware.
+- Only body velocity in the ground plane is trained; jumping, crouching, and mobile manipulation are not included. No vision is used, so tasks requiring look-ahead planning (e.g., climbing stairs, avoiding pits) cannot be performed.
+- High-speed gaits are not necessarily "better"; energy efficiency and wear are not optimized. Body velocity alone is an under-constrained objective, and multiple equally preferred motions may exist.
+- The teacher policy cannot be deployed directly because the domain parameters d_t cannot be measured with onboard sensors.
+
+## Engineering Insights
+
+- **Priority for reproduction**: Training data volume is 400 million time steps, with 4000 parallel environments, and wall-clock time on a single RTX 3090 is <3 hours (approximately 92 real-time days). If resources are limited, first verify whether the Grid curriculum produces high-speed behavior within 100 million steps before deciding to scale up.
+- **Most common pitfall**: The curriculum threshold γ and grid resolution [0.5, 0.5] are sensitive hyperparameters. If γ is too high, the command range expands prematurely, causing training instability; if too low, the policy remains in low-speed regions. It is recommended to start tuning from γ=0.3 and monitor the growth curve of command area versus training steps.
+- **Deployment of the system identification module**: The history length h=15 is critical for real-time performance. If the downstream platform has weaker computational resources than the Jetson TX2 NX, first verify that the adaptation module's inference latency meets the 50 Hz control cycle.
+- **Insights for downstream teams**: Sensors only require joint encoders and an IMU, making it suitable for low-cost quadruped robots. However, the domain randomization ranges (friction [0.05, 4.00], etc.) are calibrated for the Mini Cheetah; migrating to other platforms requires re-scanning, especially the motor strength range [90, 110]%, which may not apply to low-torque actuators.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.01932v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.01932v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (622 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -69,11 +70,25 @@ sources:
 ## Overview
 In this work, we focus on unsupervised vision-language-action mapping in the area of robotic manipulation. Recently, multiple approaches employing pre-trained large language and vision models have been proposed for this task. However, they are computationally demanding and require careful fine-tuning of the produced outputs. A more lightweight alternative would be the implementation of multimodal Variational Autoencoders (VAEs) which can extract the latent features of the data and integrate them into a joint representation, as has been demonstrated mostly on image-image or image-text data for the state-of-the-art models. Here we explore whether and how can multimodal VAEs be employed in unsupervised robotic manipulation tasks in a simulated environment. Based on the obtained results, we propose a model-invariant training alternative that improves the models' performance in a simulator by up to 55%. Moreover, we systematically evaluate the challenges raised by the individual tasks such as object or robot position variability, number of distractors or the task length. Our work thus also sheds light on the potential benefits and limitations of using the current multimodal VAEs for unsupervised learning of robotic motion trajectories based on vision and language.
 
-## 개요
-본 연구에서는 로봇 조작 분야에서의 비지도 시각-언어-행동 매핑에 초점을 맞춥니다. 최근 이 작업을 위해 사전 학습된 대규모 언어 및 시각 모델을 활용하는 여러 접근 방식이 제안되었습니다. 그러나 이러한 방식은 계산 요구량이 많고 생성된 출력물의 세심한 미세 조정이 필요합니다. 더 가벼운 대안으로는 데이터의 잠재 특징을 추출하고 이를 공동 표현으로 통합할 수 있는 다중 모드 변분 오토인코더(VAE)의 구현이 있으며, 이는 최첨단 모델에서 주로 이미지-이미지 또는 이미지-텍스트 데이터에 대해 입증되었습니다. 본 연구에서는 시뮬레이션 환경에서 비지도 로봇 조작 작업에 다중 모드 VAE를 적용할 수 있는지와 그 방법을 탐구합니다. 얻은 결과를 바탕으로 시뮬레이터에서 모델 성능을 최대 55% 향상시키는 모델 불변 훈련 대안을 제안합니다. 또한 객체 또는 로봇 위치 변동성, 방해 요소 수, 작업 길이 등 개별 작업에서 발생하는 문제를 체계적으로 평가합니다. 따라서 본 연구는 현재의 다중 모드 VAE를 사용하여 시각 및 언어 기반 로봇 운동 궤적의 비지도 학습에 대한 잠재적 이점과 한계를 조명합니다.
-
-## 핵심 내용
-본 연구에서는 로봇 조작 분야에서의 비지도 시각-언어-행동 매핑에 초점을 맞춥니다. 최근 이 작업을 위해 사전 학습된 대규모 언어 및 시각 모델을 활용하는 여러 접근 방식이 제안되었습니다. 그러나 이러한 방식은 계산 요구량이 많고 생성된 출력물의 세심한 미세 조정이 필요합니다. 더 가벼운 대안으로는 데이터의 잠재 특징을 추출하고 이를 공동 표현으로 통합할 수 있는 다중 모드 변분 오토인코더(VAE)의 구현이 있으며, 이는 최첨단 모델에서 주로 이미지-이미지 또는 이미지-텍스트 데이터에 대해 입증되었습니다. 본 연구에서는 시뮬레이션 환경에서 비지도 로봇 조작 작업에 다중 모드 VAE를 적용할 수 있는지와 그 방법을 탐구합니다. 얻은 결과를 바탕으로 시뮬레이터에서 모델 성능을 최대 55% 향상시키는 모델 불변 훈련 대안을 제안합니다. 또한 객체 또는 로봇 위치 변동성, 방해 요소 수, 작업 길이 등 개별 작업에서 발생하는 문제를 체계적으로 평가합니다. 따라서 본 연구는 현재의 다중 모드 VAE를 사용하여 시각 및 언어 기반 로봇 운동 궤적의 비지도 학습에 대한 잠재적 이점과 한계를 조명합니다.
-
 ## 参考
 - http://arxiv.org/abs/2404.01932v2
+
+## 개요
+이 연구는 로봇 조작 작업에서 다중 모달 VAE를 활용한 비지도 시각-언어-동작 매핑의 가능성을 탐구합니다. 사전 훈련된 대규모 언어 모델과 시각 모델에 의존하는 고계산 요구 방식과 달리, 다중 모달 VAE는 데이터의 잠재 특징을 추출하고 이를 결합 표현으로 통합하여 경량화된 대안을 제공합니다. 실험은 시뮬레이션 환경에서 수행되었으며, 저자가 제안한 모델 비의존적 훈련 개선 방안은 성능을 최대 55% 향상시켰습니다. 또한, 연구는 객체/로봇 위치 변화, 방해물 수, 작업 길이 등의 요인으로 인한 도전 과제를 체계적으로 분석하여, 현재 다중 모달 VAE가 시각 및 언어 기반 비지도 로봇 운동 궤적 학습에서 가지는 잠재력과 한계를 밝혀냈습니다.
+
+## 핵심 내용
+### 방법 개요
+- 다중 모달 변분 오토인코더(VAE)를 핵심 아키텍처로 사용하여 시각, 언어, 동작 양식의 입력을 결합 잠재 표현으로 인코딩합니다.
+- 사전 훈련된 대규모 모델(예: LLM, VLM)에 의존하는 방법과 달리, 본 방법은 출력의 세밀한 미세 조정이 필요 없어 계산 비용이 더 낮습니다.
+
+### 실험 설정
+- 시뮬레이션 환경에서 로봇 조작 작업을 수행하며, 비지도 학습 하의 시각-언어-동작 매핑 효과를 평가합니다.
+- 시스템 변수에는 객체/로봇 위치 변화, 방해물 수, 작업 길이 등이 포함됩니다.
+
+### 주요 결과
+- 제안된 **모델 비의존적 훈련 개선 방안**은 시뮬레이터에서 작업 성능을 **최대 55%** 향상시켰습니다.
+- 작업 복잡성(예: 위치 변화, 방해물 증가)은 모델 성능에 유의미한 영향을 미치지만, 개선 방안은 대부분의 시나리오에서 효과적입니다.
+
+### 결론 및 한계
+- 다중 모달 VAE는 비지도 로봇 운동 궤적 학습에서 잠재력을 가지며, 특히 계산 자원이 제한된 환경에 적합합니다.
+- 현재 모델은 작업 중 위치 변화와 방해물 수에 민감하므로, 향후 결합 표현의 견고성을 추가로 최적화해야 합니다.

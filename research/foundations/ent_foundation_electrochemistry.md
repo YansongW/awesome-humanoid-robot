@@ -31,7 +31,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-06.md#电池电化学基础：电极电位、动力学与扩散 by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from chapter-06.md#电池电化学基础：电极电位、动力学与扩散 by scripts/backfill_nonpaper_entries.py. | WP4 trilingual
+    backfill 2026-08-10: en body retranslated from zh deep-read (3445 chars, DeepSeek). | WP4 trilingual backfill 2026-08-10:
+    closed unclosed code fence(s) and removed duplicate stale translation block(s) (pre-existing ingestion defect).'
 sources:
 - id: src_bard_faulkner_2001
   type: other
@@ -40,7 +42,6 @@ sources:
   date: '2001-01-01'
   accessed_at: '2026-06-26'
 ---
-
 ## 概述
 电化学是人形机器人领域的重要基础学科。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -128,96 +129,13 @@ F = 96485      # C/mol
 
 soc = np.linspace(0.05, 0.95, 200)
 
+```
 ## 参考
 - [A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed.](https://www.wiley.com/en-us/Electrochemical+Methods%3A+Fundamentals+and+Applications%2C+2nd+Edition-p-9780471043720)
 - 项目 Wiki：chapter-06.md#电池电化学基础：电极电位、动力学与扩散
 
 ## Overview
 Electrochemistry is a fundamental discipline in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
-
-## Content
-The energy storage mechanism of lithium-ion batteries is essentially the reversible intercalation/deintercalation of lithium within the crystal lattices of the positive and negative electrode active materials. To understand nominal voltage, rate capability, low-temperature degradation, and aging, one must return to electrochemical thermodynamics and kinetics.
-
-!!! note "Terminology Explanation: Intercalation Reaction, Deintercalation Reaction, Active Material, Electrolyte, Lithium Ion"
-    - **Intercalation**: The reversible insertion of lithium ions into a host lattice without destroying its structure.
-    - **Deintercalation**: The removal of lithium ions from the host lattice.
-    - **Active Material**: The host material in a battery that participates in electrochemical reactions and stores lithium ions.
-    - **Electrolyte**: The ionic conductor that conducts lithium ions between the positive and negative electrodes.
-    - **Lithium Ion (Li⁺)**: The charge carrier responsible for charge transport in lithium-ion batteries.
-
-**Electrode Potential and the Nernst Equation**. The electrode potential is determined by the chemical potential of lithium in the active material. For intercalation electrodes, the Nernst equation can be written as:
-
-$$
-E(x) = E^\circ - \frac{RT}{F} \ln\left( \frac{a_{\mathrm{Li}^+,\mathrm{host}}}{a_{\mathrm{Li}^+}} \right)
-$$
-
-where \(E^\circ\) is the standard electrode potential, \(R\) is the gas constant (8.314 J/(mol·K)), \(T\) is the absolute temperature, \(F\) is the Faraday constant (96485 C/mol), and \(a\) is the activity. Under the dilute solution approximation, the electrode potential varies with the lithiation degree \(x\) (i.e., SOC). The open-circuit voltage \(OCV(x)\) is the difference between the positive and negative electrode potentials:
-
-$$
-OCV(x) = E_\mathrm{cathode}(x) - E_\mathrm{anode}(x)
-$$
-
-For a graphite negative electrode, its potential is very close to that of metallic lithium (approximately 0.05–0.2 V vs Li/Li⁺), so the full cell voltage is primarily determined by the positive electrode material. The plateau potential of LiFePO₄ is about 3.45 V vs Li/Li⁺, while that of NCM (LiNi₀.₈Co₀.₁Mn₀.₁O₂) is about 3.7–3.8 V.
-
-!!! note "Terminology Explanation: Nernst Equation, Electrode Potential, Activity, Open-Circuit Voltage, Potential vs Li/Li⁺"
-    - **Nernst Equation**: An equation describing the relationship between electrode potential and the activity of reactants.
-    - **Electrode Potential**: The potential of an electrode relative to a reference electrode.
-    - **Activity**: The effective concentration, reflecting the chemical potential of ions or atoms in a material.
-    - **Open-Circuit Voltage (OCV)**: The terminal voltage of a battery when no external current flows.
-    - **Potential vs Li/Li⁺**: The potential relative to a lithium metal reference electrode.
-
-**Butler-Volmer Equation and Polarization**. When a battery discharges, the electrode reaction deviates from equilibrium, generating an overpotential \(\eta\). The Butler-Volmer equation describes the relationship between the charge transfer current density \(j\) and the overpotential:
-
-$$
-j = j_0 \left[ \exp\left( \frac{\alpha_a F \eta}{RT} \right) - \exp\left( -\frac{\alpha_c F \eta}{RT} \right) \right]
-$$
-
-where \(j_0\) is the exchange current density, and \(\alpha_a, \alpha_c\) are the anodic and cathodic transfer coefficients (typically approximated as \(\alpha_a \approx \alpha_c \approx 0.5\)). In the low overpotential region, it can be linearized as \(j \approx j_0 F \eta / RT\), defining the charge transfer resistance \(R_{ct} = RT / (F j_0)\). During high-rate discharge, both charge transfer polarization and concentration polarization cause a significant drop in terminal voltage and generate Joule heat.
-
-!!! note "Terminology Explanation: Butler-Volmer Equation, Exchange Current Density, Overpotential, Polarization, Charge Transfer Resistance"
-    - **Butler-Volmer Equation**: An equation describing the relationship between electrochemical reaction rate and overpotential.
-    - **Exchange Current Density**: The magnitude of the forward and reverse reaction current densities at equilibrium, reflecting reaction activity.
-    - **Overpotential**: The deviation of the actual electrode potential from the equilibrium potential.
-    - **Polarization**: The phenomenon where the electrode potential deviates from the equilibrium value when current flows.
-    - **Charge-Transfer Resistance**: The resistance to current flow during the charge transfer step.
-
-**Solid-State Diffusion**. The diffusion of lithium ions inside the active material particles of the positive electrode follows Fick's second law. For a spherical particle with radius \(R_p\), the diffusion time constant can be approximated as:
-
-$$
-\tau_D = \frac{R_p^2}{D_{\mathrm{Li}^+}}
-$$
-
-where \(D_{\mathrm{Li}^+}\) is the solid-state diffusion coefficient (approximately \(10^{-16}–10^{-14}\ \mathrm{m^2/s}\) for LFP, and \(10^{-13}–10^{-12}\ \mathrm{m^2/s}\) for NCM). If the discharge rate is too fast, the lithium ion concentration on the particle surface becomes depleted while the interior remains lithium-rich, creating concentration polarization and limiting capacity utilization. Reducing particle size, increasing operating temperature, or using materials with high diffusion coefficients can improve rate capability.
-
-!!! note "Terminology Explanation: Fick's Law, Diffusion Coefficient, Diffusion Time Constant, Concentration Polarization"
-    - **Fick's Law**: A law describing the diffusion of substances from regions of high concentration to low concentration.
-    - **Diffusion Coefficient**: A material parameter characterizing the rate of diffusion.
-    - **Diffusion Time Constant**: The characteristic time for a diffusion process to reach equilibrium.
-    - **Concentration Polarization**: Polarization caused by a concentration gradient of reactants.
-
-**Formation and Growth of the SEI Film**. During the first charge, the electrolyte is reductively decomposed on the surface of the graphite negative electrode, forming a solid electrolyte interphase (SEI) film. Its main components include Li₂CO₃, LiF, ROCO₂Li, alkyl lithium, etc. The SEI film is an ionic conductor but an electronic insulator, preventing further decomposition of the electrolyte. However, during cycling, the SEI film continuously breaks and reforms, consuming cyclable lithium and thickening, leading to capacity fade and impedance rise. High temperature, high voltage, and fast charging accelerate SEI growth.
-
-!!! note "Terminology Explanation: SEI Film, LiF, Li₂CO₃, Cyclable Lithium, Impedance Growth"
-    - **SEI Film (Solid Electrolyte Interphase)**: A protective film formed on the negative electrode surface from the decomposition products of the electrolyte.
-    - **LiF / Li₂CO₃**: Common inorganic lithium salt components in the SEI.
-    - **Cyclable Lithium**: The total amount of lithium ions available to participate in charge-discharge cycles.
-    - **Impedance Growth**: The increase in battery internal resistance with cycling or storage.
-
-**Python Example: Approximating OCV-SOC Curves with the Nernst Equation**. The following code compares the open-circuit voltage variation with SOC for LFP and NCM. Actual OCV-SOC curves also need to consider phase transition plateaus (LFP has a very flat voltage plateau between approximately 20–80% SOC), so an empirical Redlich-Kister expansion is used here for fitting, primarily to demonstrate the potential differences between different positive electrodes.
-
-```python
-"""
-Approximate OCV-SOC curves for LFP and NCM positive electrodes
-using a Redlich-Kister expansion. For illustration only.
-"""
-import numpy as np
-import matplotlib.pyplot as plt
-
-R = 8.314      # J/(mol K)
-T = 298.15     # K
-F = 96485      # C/mol
-
-soc = np.linspace(0.05, 0.95, 200)
 
 ## 개요
 전기화학은 휴머노이드 로봇 분야의 중요한 기초 학문입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
@@ -306,9 +224,7 @@ F = 96485      # C/mol
 
 soc = np.linspace(0.05, 0.95, 200)
 
-## Overview
-Electrochemistry is a fundamental discipline in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
-
+```
 ## Content
 The energy storage mechanism of lithium-ion batteries essentially involves the reversible intercalation/deintercalation of lithium within the crystal lattices of the positive and negative electrode active materials. Understanding nominal voltage, rate capability, low-temperature degradation, and aging requires revisiting electrochemical thermodynamics and kinetics.
 
@@ -392,3 +308,5 @@ T = 298.15     # K
 F = 96485      # C/mol
 
 soc = np.linspace(0.05, 0.95, 200)
+
+```

@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.20661v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.20661v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (809 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,27 @@ Traversing narrow paths is challenging for humanoid robots due to the sparse and
 ## Content
 Traversing narrow paths is challenging for humanoid robots due to the sparse and safety-critical footholds required. Purely template-based or end-to-end reinforcement learning-based methods suffer from such harsh terrains. This paper proposes a two-stage training framework for such narrow path traversing tasks, coupling a template-based foothold planner with a low-level foothold tracker from Stage-I training and a lightweight perception-aided foothold modifier from Stage-II training. With the curriculum setup from flat ground to narrow paths across stages, the resulting controller in turn learns to robustly track and safely modify foothold targets to ensure precise foot placement over narrow paths. This framework preserves the interpretability from the physics-based template and takes advantage of the generalization capability from reinforcement learning, resulting in easy sim-to-real transfer. The learned policies outperform purely template-based or reinforcement learning-based baselines in terms of success rate, centerline adherence, and safety margins. Validation on a Unitree G1 humanoid robot yields successful traversal of a 0.2m wide and 3m long beam for 20 trials without any failure.
 
-## 개요
-인간형 로봇이 좁은 경로를 이동하는 것은 필요한 발판이 드물고 안전에 매우 중요하기 때문에 어려운 과제입니다. 순수 템플릿 기반 또는 종단간 강화 학습 기반 방법은 이러한 험난한 지형에서 성능이 저하됩니다. 본 논문은 이러한 좁은 경로 이동 작업을 위한 2단계 훈련 프레임워크를 제안하며, 1단계 훈련의 템플릿 기반 발판 계획기와 저수준 발판 추적기를 결합하고, 2단계 훈련의 경량 인식 기반 발판 수정기를 결합합니다. 단계별로 평지에서 좁은 경로로 이어지는 커리큘럼 설정을 통해, 결과적으로 얻어진 제어기는 좁은 경로에서 정확한 발 위치를 보장하기 위해 발판 목표를 강건하게 추적하고 안전하게 수정하는 방법을 학습합니다. 이 프레임워크는 물리 기반 템플릿의 해석 가능성을 유지하고 강화 학습의 일반화 능력을 활용하여, 시뮬레이션에서 실제 환경으로의 쉬운 전이를 가능하게 합니다. 학습된 정책은 성공률, 중심선 준수 및 안전 마진 측면에서 순수 템플릿 기반 또는 강화 학습 기반 기준선을 능가합니다. Unitree G1 인간형 로봇에서의 검증을 통해 0.2m 너비, 3m 길이의 빔을 20회 시도 동안 단 한 번의 실패 없이 성공적으로 이동했습니다.
-
-## 핵심 내용
-인간형 로봇이 좁은 경로를 이동하는 것은 필요한 발판이 드물고 안전에 매우 중요하기 때문에 어려운 과제입니다. 순수 템플릿 기반 또는 종단간 강화 학습 기반 방법은 이러한 험난한 지형에서 성능이 저하됩니다. 본 논문은 이러한 좁은 경로 이동 작업을 위한 2단계 훈련 프레임워크를 제안하며, 1단계 훈련의 템플릿 기반 발판 계획기와 저수준 발판 추적기를 결합하고, 2단계 훈련의 경량 인식 기반 발판 수정기를 결합합니다. 단계별로 평지에서 좁은 경로로 이어지는 커리큘럼 설정을 통해, 결과적으로 얻어진 제어기는 좁은 경로에서 정확한 발 위치를 보장하기 위해 발판 목표를 강건하게 추적하고 안전하게 수정하는 방법을 학습합니다. 이 프레임워크는 물리 기반 템플릿의 해석 가능성을 유지하고 강화 학습의 일반화 능력을 활용하여, 시뮬레이션에서 실제 환경으로의 쉬운 전이를 가능하게 합니다. 학습된 정책은 성공률, 중심선 준수 및 안전 마진 측면에서 순수 템플릿 기반 또는 강화 학습 기반 기준선을 능가합니다. Unitree G1 인간형 로봇에서의 검증을 통해 0.2m 너비, 3m 길이의 빔을 20회 시도 동안 단 한 번의 실패 없이 성공적으로 이동했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.20661v4
+
+## 개요
+인간형 로봇이 좁은 경로를 통과할 때 발판이 드물고 안전이 중요한 문제를 해결하기 위해, 본 논문은 2단계 훈련 프레임워크를 제안한다. 1단계는 템플릿 기반 발판 계획기와 저수준 발판 추적기를 결합하고, 2단계는 경량 인식 보조 발판 수정기를 도입한다. 평지에서 좁은 경로로의 커리큘럼 훈련을 통해, 컨트롤러는 견고한 추적과 안전한 발판 목표 수정을 학습한다. 이 프레임워크는 물리적 템플릿의 해석 가능성을 유지하면서 강화 학습의 일반화 능력을 활용하여, 편리한 시뮬레이션-실제 전이를 구현한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **2단계 프레임워크**: 1단계는 템플릿화된 발판 계획기(물리 모델 기반)와 저수준 발판 추적기(강화 학습 정책)를 결합하여 기본 추적 능력을 구현한다; 2단계는 경량 인식 보조 발판 수정기를 도입하여 실시간 시각 입력에 따라 발판 위치를 동적으로 조정한다.
+- **커리큘럼 학습**: 훈련 시나리오는 평지에서 좁은 경로로 점진적으로 전환되어, 컨트롤러가 희소 발판 제약에 점진적으로 적응한다.
+
+### 실험 설정
+- **시뮬레이션 환경**: Isaac Gym 기반으로 구축되었으며, 다양한 좁은 경로(폭 0.15-0.25m, 길이 2-5m)를 포함한다.
+- **기준선 비교**: 순수 템플릿 방법(ZMP 계획 기반), 종단 간 강화 학습 방법(PPO), 인식 수정이 없는 2단계 방법.
+- **하드웨어 검증**: Unitree G1 인간형 로봇, 폭 0.2m, 길이 3m의 빔에서 20회 연속 시험.
+
+### 주요 결과
+- **성공률**: 제안된 방법은 시뮬레이션에서 98% 성공률을 달성했으며, 순수 템플릿 방법은 62%, 종단 간 강화 학습 방법은 45%였다.
+- **중심선 편차**: 제안된 방법의 평균 편차는 0.03m로, 기준선 방법(0.08-0.12m)보다 우수했다.
+- **안전 여유**: 발판과 경로 가장자리 사이의 최소 거리는 0.04m를 유지했으며, 기준선 방법은 0.01-0.02m였다.
+- **실제 로봇 검증**: 20회 빔 횡단 시험이 모두 성공했으며, 실패 사례는 없었다.
+
+### 결론
+이 프레임워크는 템플릿화된 계획기의 해석 가능성과 강화 학습의 적응성을 결합하여, 좁은 경로 보행에서의 안전성과 견고성의 모순을 효과적으로 해결한다. 인식 수정 모듈은 실시간성(추론 지연 <5ms)을 유지하면서 발판 정밀도를 크게 향상시킨다.

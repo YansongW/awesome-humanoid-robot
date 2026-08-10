@@ -39,7 +39,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2106.12111v3. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_fu_robust_task_scheduling_for_het_2022 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_fu_robust_task_scheduling_for_het_2022 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (794 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,29 @@ CTAS框架为异构机器人团队在不确定性下的任务规划提供了统�
 ## Overview
 This paper develops a stochastic programming framework for multi-agent systems where task decomposition, assignment, and scheduling problems are simultaneously optimized. The framework can be applied to heterogeneous mobile robot teams with distributed sub-tasks. Examples include pandemic robotic service coordination, explore and rescue, and delivery systems with heterogeneous vehicles. Due to their inherent flexibility and robustness, multi-agent systems are applied in a growing range of real-world problems that involve heterogeneous tasks and uncertain information. Most previous works assume one fixed way to decompose a task into roles that can later be assigned to the agents. This assumption is not valid for a complex task where the roles can vary and multiple decomposition structures exist. Meanwhile, it is unclear how uncertainties in task requirements and agent capabilities can be systematically quantified and optimized under a multi-agent system setting. A representation for complex tasks is proposed: agent capabilities are represented as a vector of random distributions, and task requirements are verified by a generalizable binary function. The conditional value at risk (CVaR) is chosen as a metric in the objective function to generate robust plans. An efficient algorithm is described to solve the model, and the whole framework is evaluated in two different practical test cases: capture-the-flag and robotic service coordination during a pandemic (e.g., COVID-19). Results demonstrate that the framework is generalizable, scalable up to 140 agents and 40 tasks for the example test cases, and provides low-cost plans that ensure a high probability of success.
 
-## 개요
-본 논문은 다중 에이전트 시스템에서 작업 분해, 할당 및 일정 계획 문제를 동시에 최적화하는 확률적 프로그래밍 프레임워크를 개발한다. 이 프레임워크는 분산된 하위 작업을 가진 이기종 모바일 로봇 팀에 적용될 수 있다. 예를 들어, 팬데믹 로봇 서비스 조정, 탐색 및 구조, 이기종 차량을 사용한 배송 시스템 등이 있다. 다중 에이전트 시스템은 본질적인 유연성과 견고성 덕분에 이기종 작업과 불확실한 정보를 포함하는 실제 문제에 점점 더 많이 적용되고 있다. 대부분의 이전 연구는 작업을 에이전트에 할당할 수 있는 역할로 분해하는 고정된 방식을 가정한다. 이러한 가정은 역할이 다양하고 여러 분해 구조가 존재할 수 있는 복잡한 작업에는 유효하지 않다. 또한, 다중 에이전트 시스템 환경에서 작업 요구사항과 에이전트 능력의 불확실성을 체계적으로 정량화하고 최적화하는 방법은 명확하지 않다. 복잡한 작업에 대한 표현이 제안된다: 에이전트 능력은 무작위 분포의 벡터로 표현되고, 작업 요구사항은 일반화 가능한 이진 함수로 검증된다. 조건부 위험 가치(CVaR)는 강건한 계획을 생성하기 위해 목적 함수의 지표로 선택된다. 모델을 해결하기 위한 효율적인 알고리즘이 설명되며, 전체 프레임워크는 두 가지 실제 테스트 사례(깃발 잡기 및 팬데믹(예: COVID-19) 상황에서의 로봇 서비스 조정)에서 평가된다. 결과는 프레임워크가 일반화 가능하며, 예시 테스트 사례에서 최대 140개의 에이전트와 40개의 작업까지 확장 가능하고, 높은 성공 확률을 보장하는 저비용 계획을 제공함을 보여준다.
-
-## 핵심 내용
-본 논문은 다중 에이전트 시스템에서 작업 분해, 할당 및 일정 계획 문제를 동시에 최적화하는 확률적 프로그래밍 프레임워크를 개발한다. 이 프레임워크는 분산된 하위 작업을 가진 이기종 모바일 로봇 팀에 적용될 수 있다. 예를 들어, 팬데믹 로봇 서비스 조정, 탐색 및 구조, 이기종 차량을 사용한 배송 시스템 등이 있다. 다중 에이전트 시스템은 본질적인 유연성과 견고성 덕분에 이기종 작업과 불확실한 정보를 포함하는 실제 문제에 점점 더 많이 적용되고 있다. 대부분의 이전 연구는 작업을 에이전트에 할당할 수 있는 역할로 분해하는 고정된 방식을 가정한다. 이러한 가정은 역할이 다양하고 여러 분해 구조가 존재할 수 있는 복잡한 작업에는 유효하지 않다. 또한, 다중 에이전트 시스템 환경에서 작업 요구사항과 에이전트 능력의 불확실성을 체계적으로 정량화하고 최적화하는 방법은 명확하지 않다. 복잡한 작업에 대한 표현이 제안된다: 에이전트 능력은 무작위 분포의 벡터로 표현되고, 작업 요구사항은 일반화 가능한 이진 함수로 검증된다. 조건부 위험 가치(CVaR)는 강건한 계획을 생성하기 위해 목적 함수의 지표로 선택된다. 모델을 해결하기 위한 효율적인 알고리즘이 설명되며, 전체 프레임워크는 두 가지 실제 테스트 사례(깃발 잡기 및 팬데믹(예: COVID-19) 상황에서의 로봇 서비스 조정)에서 평가된다. 결과는 프레임워크가 일반화 가능하며, 예시 테스트 사례에서 최대 140개의 에이전트와 40개의 작업까지 확장 가능하고, 높은 성공 확률을 보장하는 저비용 계획을 제공함을 보여준다.
-
 ## 参考
 - http://arxiv.org/abs/2106.12111v3
+
+## 개요
+이질적 다중 로봇 시스템에서 작업 분해 구조가 가변적이고 능력 및 수요 불확실성이 존재하는 문제를 해결하기 위해, 본 논문은 CTAS 프레임워크를 제안한다. 이 프레임워크는 작업 분해, 할당 및 일정 계획을 결합 최적화 문제로 간주하며, 로봇 능력을 확률 분포 벡터로 표현하고, 작업 수요를 일반 이진 함수로 검증하며, CVaR을 목적 함수의 위험 측정 지표로 사용한다. 실험은 깃발 뺏기(Capture-the-flag)와 팬데믹 로봇 서비스 조정 두 시나리오에서 수행되었으며, 결과는 프레임워크가 140개의 로봇과 40개의 작업으로 확장 가능하고, 저비용·고성공 확률의 강건한 계획을 생성할 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법
+- **문제 모델링**: 이질적 로봇 팀의 작업 계획을 확률적 혼합 정수 계획법으로 모델링하며, 작업 분해(복잡한 작업을 가변 역할로 분할), 할당(역할에서 로봇으로), 일정 계획(실행 순서)을 동시에 최적화한다.
+- **불확실성 표현**: 로봇 능력은 확률 분포 벡터로 설명되고, 작업 수요는 일반 이진 함수를 통해 검증되어 능력과 수요 간의 확률적 편차를 허용한다.
+- **위험 정량화**: 목적 함수는 조건부 위험 가치(CVaR)를 위험 측정 지표로 사용하여 능력 불확실성에 강건한 계획 방안을 생성한다.
+
+### 알고리즘
+- 분해 및 가지치기 전략을 통해 혼합 정수 계획법의 계산 복잡도를 낮추는 고효율 해법 알고리즘을 제안하며, 대규모 문제 인스턴스를 지원한다.
+
+### 실험 설정
+- **테스트 사례**: 두 실제 시나리오——깃발 뺏기 작업(Capture-the-flag)과 팬데믹(예: COVID-19) 로봇 서비스 조정.
+- **규모**: 프레임워크는 140개의 로봇과 40개의 작업으로 확장 가능하며, 확장성을 검증한다.
+
+### 주요 결과
+- **일반화 가능성**: 프레임워크는 다양한 작업 유형과 불확실성 분포에서 효과적인 계획을 생성할 수 있다.
+- **비용 및 성공률**: 기준 방법과 비교하여 CTAS는 낮은 비용을 유지하면서 작업 성공 확률(고확률 성공)을 크게 향상시킨다.
+- **강건성**: CVaR 도입으로 계획이 능력 불확실성에 대해 더 강한 간섭 저항력을 갖는다.
+
+### 결론
+CTAS 프레임워크는 불확실성 하에서 이질적 로봇 팀의 작업 계획을 위한 통합 솔루션을 제공하며, 분해 유연성, 할당 효율성 및 일정 강건성을 모두 고려하여 탐사 구조, 물류 배송 등 실제 시나리오에 적합하다.

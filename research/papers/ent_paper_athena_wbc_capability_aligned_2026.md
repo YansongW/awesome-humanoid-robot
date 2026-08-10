@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04837v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04837v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (957 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,28 @@ Athena-WBC通过能力对齐的专家设计，解决了运动需求与训练能�
 ## Overview
 Large-scale humanoid motion-tracking controllers are commonly improved by reallocating training effort: difficult motions are sampled more often, isolated into smaller subsets, or assigned to specialized experts. We show that this view is incomplete. In strong whole-body-control baselines, a residual set of feasible training clips remains unsolved even under targeted training, especially for high-dynamic transitions and balance-critical motions. These failures arise not only from insufficient exposure, but from a mismatch between the motion demands and the effective capability induced by the default training recipe. We propose Athena-WBC, a compact teacher-student pipeline with capability-aligned policy experts for long-tail humanoid whole-body control. Dynamic experts use a tracking-focused, constraint-aware objective that removes conservative effort and temporal-control penalties while preserving physical feasibility constraints; balance experts use a gravity curriculum to improve early-training survivability. The resulting privileged teachers are motion-routed for DAgger distillation and then compressed into a single controller with deployable observations followed by RL fine-tuning. Experiments on a full-size humanoid show improved recovery of training-set long-tail motions and better held-out tracking than a strong SONIC-recipe baseline, using only a small number of experts.
 
-## 개요
-대규모 휴머노이드 동작 추적 컨트롤러는 일반적으로 훈련 노력을 재분배하여 개선됩니다. 즉, 어려운 동작을 더 자주 샘플링하거나, 더 작은 하위 집합으로 분리하거나, 전문가에게 할당합니다. 우리는 이러한 관점이 불완전함을 보여줍니다. 강력한 전신 제어 기준선에서도, 특히 고역학적 전환 및 균형이 중요한 동작의 경우, 목표 훈련을 수행하더라도 실행 가능한 훈련 클립의 잔여 집합이 해결되지 않은 상태로 남아 있습니다. 이러한 실패는 단순히 노출 부족뿐만 아니라, 동작 요구 사항과 기본 훈련 방식에 의해 유도된 유효 능력 간의 불일치에서 비롯됩니다. 우리는 롱테일 휴머노이드 전신 제어를 위한 능력 정렬 정책 전문가를 갖춘 소형 교사-학생 파이프라인인 Athena-WBC를 제안합니다. 동적 전문가는 추적 중심의 제약 인식 목표를 사용하여 보수적인 노력 및 시간 제어 패널티를 제거하면서 물리적 실행 가능성 제약을 유지합니다. 균형 전문가는 중력 커리큘럼을 사용하여 초기 훈련 생존성을 향상시킵니다. 결과적으로 얻어진 특권 교사는 DAgger 증류를 위해 동작 라우팅된 후, 배포 가능한 관측값을 갖춘 단일 컨트롤러로 압축되고 RL 미세 조정이 이어집니다. 전체 크기 휴머노이드 실험에서 소수의 전문가만 사용하여 강력한 SONIC 레시피 기준선보다 훈련 세트 롱테일 동작의 복구 및 보류된 추적 성능이 향상됨을 보여줍니다.
-
-## 핵심 내용
-대규모 휴머노이드 동작 추적 컨트롤러는 일반적으로 훈련 노력을 재분배하여 개선됩니다. 즉, 어려운 동작을 더 자주 샘플링하거나, 더 작은 하위 집합으로 분리하거나, 전문가에게 할당합니다. 우리는 이러한 관점이 불완전함을 보여줍니다. 강력한 전신 제어 기준선에서도, 특히 고역학적 전환 및 균형이 중요한 동작의 경우, 목표 훈련을 수행하더라도 실행 가능한 훈련 클립의 잔여 집합이 해결되지 않은 상태로 남아 있습니다. 이러한 실패는 단순히 노출 부족뿐만 아니라, 동작 요구 사항과 기본 훈련 방식에 의해 유도된 유효 능력 간의 불일치에서 비롯됩니다. 우리는 롱테일 휴머노이드 전신 제어를 위한 능력 정렬 정책 전문가를 갖춘 소형 교사-학생 파이프라인인 Athena-WBC를 제안합니다. 동적 전문가는 추적 중심의 제약 인식 목표를 사용하여 보수적인 노력 및 시간 제어 패널티를 제거하면서 물리적 실행 가능성 제약을 유지합니다. 균형 전문가는 중력 커리큘럼을 사용하여 초기 훈련 생존성을 향상시킵니다. 결과적으로 얻어진 특권 교사는 DAgger 증류를 위해 동작 라우팅된 후, 배포 가능한 관측값을 갖춘 단일 컨트롤러로 압축되고 RL 미세 조정이 이어집니다. 전체 크기 휴머노이드 실험에서 소수의 전문가만 사용하여 강력한 SONIC 레시피 기준선보다 훈련 세트 롱테일 동작의 복구 및 보류된 추적 성능이 향상됨을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04837v2
+
+## 개요
+기존 대규모 휴머노이드 동작 추적 컨트롤러는 일반적으로 훈련 노력을 재분배(예: 어려운 동작에 샘플링 증가, 하위 집합 격리, 또는 전문가 할당)하여 개선하지만, Athena-WBC는 이러한 관점이 불완전하다는 것을 발견했습니다. 강력한 기준선에서도 해결되지 않는 실행 가능한 훈련 세그먼트가 여전히 존재하며, 특히 고동적 전환 및 균형 핵심 동작에서 그러합니다. 이는 동작 요구 사항과 기본 훈련 능력 간의 불일치에서 비롯됩니다. 이를 위해 Athena-WBC는 동적 전문가(추적 중심, 제약 인식 목표를 사용하고 보수적 노력 및 시간 제어 페널티를 제거하며 물리적 실현 가능성 제약을 유지)와 균형 전문가(중력 커리큘럼을 사용하여 초기 훈련 생존성을 향상)를 포함하는 컴팩트한 교사-학생 파이프라인을 제안합니다. 특권 교사는 DAgger 증류를 통해 동작 라우팅을 수행하고 단일 컨트롤러로 압축한 후 RL 미세 조정을 거칩니다. 전신 휴머노이드 실험에서 Athena-WBC는 훈련 세트의 긴 꼬리 동작 복구 및 미지 동작 추적 모두에서 SONIC 기준선보다 우수했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **교사-학생 파이프라인**: Athena-WBC는 두 가지 능력 정렬 정책 전문가를 포함하는 컴팩트한 교사-학생 구조를 채택합니다.
+- **동적 전문가**: 추적 중심, 제약 인식 목표 함수를 사용하고 보수적 노력 및 시간 제어 페널티를 제거하면서 물리적 실현 가능성 제약을 유지하여 고동적 동작에 집중합니다.
+- **균형 전문가**: 중력 커리큘럼(gravity curriculum)을 도입하여 초기 훈련 단계에서 생존성을 향상시키고 균형 핵심 동작을 대상으로 합니다.
+- **증류 및 압축**: 특권 교사는 DAgger 증류를 통해 동작 라우팅(motion-routed)을 수행하고 여러 전문가 지식을 단일 컨트롤러로 압축하며 배포 가능한 관측(deployable observations)을 사용한 후 RL 미세 조정을 진행합니다.
+
+### 실험 설정
+- **플랫폼**: 전신 휴머노이드 로봇.
+- **기준선**: 강력한 SONIC 기준선과 비교.
+- **전문가 수**: 소수의 전문가만 사용(구체적인 수는 초록에 명시되지 않았지만 "small number of experts"를 강조).
+
+### 주요 결과
+- **긴 꼬리 동작 복구**: Athena-WBC는 훈련 세트의 긴 꼬리 동작 복구에서 SONIC 기준선보다 현저히 우수했습니다.
+- **미지 동작 추적**: 미지 동작(held-out tracking) 추적에서 더 나은 성능을 보여 일반화 능력이 향상되었음을 나타냅니다.
+- **효율성**: 소수의 전문가만으로 성능 개선을 달성하여 능력 정렬 정책의 효과를 검증했습니다.
+
+### 결론
+Athena-WBC는 능력 정렬 전문가 설계를 통해 동작 요구 사항과 훈련 능력 간의 불일치 문제를 해결하여 긴 꼬리 휴머노이드 전신 제어를 위한 효율적인 솔루션을 제공합니다.

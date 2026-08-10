@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.14337v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.14337v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (855 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,24 @@ theoretical_depth:
 ## Overview
 The increased interest in developing next-gen social robots has raised questions about the factors affecting the perception of robot emotions. This study investigates the impact of robot appearances (humanlike, mechanical) and face regions (full-face, eye-region) on human perception of robot emotions. A between-subjects user study (N = 305) was conducted where participants were asked to identify the emotions being displayed in videos of robot faces, as well as a human baseline. Our findings reveal three important insights for effective social robot face design in Human-Robot Interaction (HRI): Firstly, robots equipped with a back-projected, fully animated face - regardless of whether they are more human-like or more mechanical-looking - demonstrate a capacity for emotional expression comparable to that of humans. Secondly, the recognition accuracy of emotional expressions in both humans and robots declines when only the eye region is visible. Lastly, within the constraint of only the eye region being visible, robots with more human-like features significantly enhance emotion recognition.
 
-## 개요
-차세대 소셜 로봇 개발에 대한 관심이 증가하면서 로봇 감정 인식에 영향을 미치는 요인에 대한 의문이 제기되고 있습니다. 본 연구는 로봇의 외형(인간형, 기계형)과 얼굴 영역(전체 얼굴, 눈 영역)이 인간의 로봇 감정 인식에 미치는 영향을 조사합니다. 피험자 간 사용자 연구(N = 305)가 수행되었으며, 참가자들은 로봇 얼굴 영상과 인간 기준 영상에서 표시된 감정을 식별하도록 요청받았습니다. 본 연구 결과는 인간-로봇 상호작용(HRI)에서 효과적인 소셜 로봇 얼굴 디자인을 위한 세 가지 중요한 통찰을 제시합니다: 첫째, 후면 투사 방식의 완전 애니메이션 얼굴을 장착한 로봇은 인간형에 가깝든 기계적 외형이든 관계없이 인간과 유사한 감정 표현 능력을 보여줍니다. 둘째, 눈 영역만 보일 경우 인간과 로봇 모두에서 감정 표현 인식 정확도가 감소합니다. 마지막으로, 눈 영역만 보이는 제한된 조건에서 인간형 특징이 더 많은 로봇은 감정 인식을 크게 향상시킵니다.
-
-## 핵심 내용
-차세대 소셜 로봇 개발에 대한 관심이 증가하면서 로봇 감정 인식에 영향을 미치는 요인에 대한 의문이 제기되고 있습니다. 본 연구는 로봇의 외형(인간형, 기계형)과 얼굴 영역(전체 얼굴, 눈 영역)이 인간의 로봇 감정 인식에 미치는 영향을 조사합니다. 피험자 간 사용자 연구(N = 305)가 수행되었으며, 참가자들은 로봇 얼굴 영상과 인간 기준 영상에서 표시된 감정을 식별하도록 요청받았습니다. 본 연구 결과는 인간-로봇 상호작용(HRI)에서 효과적인 소셜 로봇 얼굴 디자인을 위한 세 가지 중요한 통찰을 제시합니다: 첫째, 후면 투사 방식의 완전 애니메이션 얼굴을 장착한 로봇은 인간형에 가깝든 기계적 외형이든 관계없이 인간과 유사한 감정 표현 능력을 보여줍니다. 둘째, 눈 영역만 보일 경우 인간과 로봇 모두에서 감정 표현 인식 정확도가 감소합니다. 마지막으로, 눈 영역만 보이는 제한된 조건에서 인간형 특징이 더 많은 로봇은 감정 인식을 크게 향상시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.14337v2
+
+## 개요
+본 연구는 피험자 간 설계를 채택하여 305명의 참가자가 로봇 얼굴 영상(Furhat 로봇)과 인간 기준 영상을 시청하고, 그중에 제시된 여섯 가지 기본 감정(기쁨, 슬픔, 분노, 공포, 놀람, 혐오) 및 중립 감정을 식별하도록 하였습니다. 실험은 두 가지 독립 변수를 조작했습니다: 로봇 얼굴 외관(인간형 vs. 기계형)과 가시적 얼굴 영역(전체 얼굴 vs. 눈 영역만). 결과는 전체 애니메이션 투영 얼굴(외관이 인간형이든 기계형이든)의 감정 표현 식별률이 인간 기준과 유의미한 차이가 없음을 보여주었습니다. 눈 영역만 표시되었을 때는 모든 조건에서 식별 정확도가 감소했습니다. 그러나 눈 영역 제한 조건에서 인간형 외관의 로봇이 기계형 외관보다 유의미하게 우수했습니다. 이러한 발견은 사회적 로봇 얼굴 설계에 실증적 근거를 제공합니다.
+
+## 핵심 내용
+### 방법
+- **실험 설계**: 2×2 피험자 간 설계를 채택했으며, 독립 변수는 로봇 얼굴 외관(인간형 vs. 기계형)과 가시적 얼굴 영역(전체 얼굴 vs. 눈 영역만)이었고, 인간 기준 조건도 별도로 설정했습니다.
+- **자극 재료**: Furhat 로봇(후면 투영 전체 애니메이션 얼굴을 갖춤)을 사용하여 여섯 가지 기본 감정(기쁨, 슬픔, 분노, 공포, 놀람, 혐오) 및 중립 감정을 보여주는 영상을 생성했습니다. 인간 기준 영상은 전문 배우가 동일한 감정을 연기한 것입니다.
+- **참가자**: 총 305명의 온라인 참가자가 무작위로 다양한 실험 조건에 배정되었습니다.
+
+### 결과
+- **전체 얼굴 조건**: 인간형 외관과 기계형 외관의 로봇 감정 식별 정확도는 모두 인간 기준과 유의미한 차이가 없었습니다(p > 0.05). 이는 전체 애니메이션 투영 얼굴이 감정을 효과적으로 전달할 수 있음을 시사합니다.
+- **눈 영역 제한 조건**: 모든 조건(인간, 인간형 로봇, 기계형 로봇)의 식별 정확도는 전체 얼굴 조건보다 유의미하게 낮았습니다(p < 0.001), 평균 약 15-20% 감소했습니다.
+- **눈 영역 제한에서의 외관 효과**: 인간형 외관 로봇(정확도 약 65%)이 기계형 외관 로봇(정확도 약 52%)보다 유의미하게 우수했으며, 차이는 통계적으로 유의미했습니다(p < 0.01).
+
+### 결론
+- 전체 애니메이션 투영 얼굴(예: Furhat)은 사회적 로봇의 감정 표현에 있어 핵심 기술이며, 그 효과는 외관 스타일(인간형 또는 기계형)에 영향을 받지 않습니다.
+- 눈 영역은 감정 식별에 매우 중요하지만, 눈 정보에만 의존하면 식별 능력이 크게 저하됩니다.
+- 얼굴 정보가 제한될 때(예: 눈 영역만 표시), 인간형 외관 설계는 식별 손실을 부분적으로 보완할 수 있으며, HRI 설계에서 감정 가독성을 높이기 위해 인간형 특징을 우선적으로 고려해야 함을 시사합니다.

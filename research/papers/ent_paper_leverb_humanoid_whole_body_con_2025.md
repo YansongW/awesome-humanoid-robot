@@ -39,7 +39,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: LeVERB: Humanoid Whole-Body
-    Control with Latent Vision-Language Instruction. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    Control with Latent Vision-Language Instruction. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (732 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -83,11 +84,29 @@ Vision-language-action (VLA) models have demonstrated strong semantic understand
 ## Content
 Vision-language-action (VLA) models have demonstrated strong semantic understanding and zero-shot generalization, yet most existing systems assume an accurate low-level controller with hand-crafted action "vocabulary" such as end-effector pose or root velocity. This assumption confines prior work to quasi-static tasks and precludes the agile, whole-body behaviors required by humanoid whole-body control (WBC) tasks. To capture this gap in the literature, we start by introducing the first sim-to-real-ready, vision-language, closed-loop benchmark for humanoid WBC, comprising over 150 tasks from 10 categories. We then propose LeVERB: Latent Vision-Language-Encoded Robot Behavior, a hierarchical latent instruction-following framework for humanoid vision-language WBC, the first of its kind. At the top level, a vision-language policy learns a latent action vocabulary from synthetically rendered kinematic demonstrations; at the low level, a reinforcement-learned WBC policy consumes these latent verbs to generate dynamics-level commands. In our benchmark, LeVERB can zero-shot attain an 80% success rate on simple visual navigation tasks, and a 58.5% success rate overall, outperforming naive hierarchical whole-body VLA implementation by 7.8 times.
 
-## 개요
-Vision-language-action (VLA) 모델은 강력한 의미 이해와 제로샷 일반화 능력을 보여주었지만, 대부분의 기존 시스템은 엔드 이펙터 자세나 루트 속도와 같은 수작업으로 설계된 동작 "어휘"를 가진 정확한 저수준 제어기를 가정합니다. 이러한 가정은 이전 연구를 준정적 작업으로 제한하며, 휴머노이드 전신 제어(WBC) 작업에 필요한 민첩한 전신 동작을 배제합니다. 문헌에서의 이러한 격차를 해소하기 위해, 우리는 먼저 10개 카테고리의 150개 이상의 작업으로 구성된 휴머노이드 WBC를 위한 최초의 시뮬레이션-실제 전환 가능, 비전-언어, 폐루프 벤치마크를 소개합니다. 그런 다음, 우리는 LeVERB: 잠재 비전-언어 인코딩 로봇 동작(Latent Vision-Language-Encoded Robot Behavior)을 제안합니다. 이는 휴머노이드 비전-언어 WBC를 위한 계층적 잠재 명령 추종 프레임워크로, 최초의 사례입니다. 상위 수준에서는 비전-언어 정책이 합성적으로 렌더링된 운동학적 데모에서 잠재 동작 어휘를 학습하고, 하위 수준에서는 강화 학습된 WBC 정책이 이러한 잠재 동사를 사용하여 동역학 수준 명령을 생성합니다. 우리의 벤치마크에서 LeVERB는 단순한 시각적 내비게이션 작업에서 제로샷으로 80%의 성공률을 달성하고, 전체적으로 58.5%의 성공률을 기록하여, 순진한 계층적 전신 VLA 구현보다 7.8배 더 뛰어난 성능을 보였습니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 강력한 의미 이해와 제로샷 일반화 능력을 보여주었지만, 대부분의 기존 시스템은 엔드 이펙터 자세나 루트 속도와 같은 수작업으로 설계된 동작 "어휘"를 가진 정확한 저수준 제어기를 가정합니다. 이러한 가정은 이전 연구를 준정적 작업으로 제한하며, 휴머노이드 전신 제어(WBC) 작업에 필요한 민첩한 전신 동작을 배제합니다. 문헌에서의 이러한 격차를 해소하기 위해, 우리는 먼저 10개 카테고리의 150개 이상의 작업으로 구성된 휴머노이드 WBC를 위한 최초의 시뮬레이션-실제 전환 가능, 비전-언어, 폐루프 벤치마크를 소개합니다. 그런 다음, 우리는 LeVERB: 잠재 비전-언어 인코딩 로봇 동작(Latent Vision-Language-Encoded Robot Behavior)을 제안합니다. 이는 휴머노이드 비전-언어 WBC를 위한 계층적 잠재 명령 추종 프레임워크로, 최초의 사례입니다. 상위 수준에서는 비전-언어 정책이 합성적으로 렌더링된 운동학적 데모에서 잠재 동작 어휘를 학습하고, 하위 수준에서는 강화 학습된 WBC 정책이 이러한 잠재 동사를 사용하여 동역학 수준 명령을 생성합니다. 우리의 벤치마크에서 LeVERB는 단순한 시각적 내비게이션 작업에서 제로샷으로 80%의 성공률을 달성하고, 전체적으로 58.5%의 성공률을 기록하여, 순진한 계층적 전신 VLA 구현보다 7.8배 더 뛰어난 성능을 보였습니다.
-
 ## 参考
 - Semantic Scholar search: LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction
+
+## 개요
+기존의 비전-언어-행동(VLA) 모델은 수작업으로 설계된 행동 어휘(예: 말단 실행기 자세 또는 루트 속도)에 의존하며, 준정적 작업에만 적용 가능하여 휴머노이드 로봇의 전신 제어에 필요한 민첩한 행동을 충족할 수 없습니다. 이러한 공백을 메우기 위해 연구팀은 먼저 휴머노이드 WBC를 위한 최초의 비전-언어 폐루프 벤치마크를 출시했으며, 10개 대분류 150여 개 작업을 포함합니다. 이를 바탕으로 LeVERB 프레임워크를 제안하며, 상위 계층은 합성 운동학 데모를 통해 잠재 행동 어휘를 학습하고, 하위 계층은 강화 학습 정책을 활용하여 동역학 수준의 명령을 생성하여 계층적 잠재 명령 추종을 구현합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **상위 계층**: 비전-언어 정책이 합성 렌더링된 운동학 데모에서 잠재 행동 어휘(latent action vocabulary)를 학습하여 자연어 명령을 추상 행동 인코딩으로 매핑합니다.
+- **하위 계층**: 강화 학습으로 훈련된 WBC 정책이 이러한 잠재 동사(latent verbs)를 수신하여 관절 토크와 같은 동역학 수준의 제어 명령을 생성하고 전신 협조 운동을 구현합니다.
+
+### 벤치마크
+- 시뮬레이션-실제(sim-to-real) 준비가 완료된 최초의 비전-언어 폐루프 벤치마크로, 10개 작업 범주(예: 내비게이션, 조작, 균형 등)를 포함하며 총 150개 이상의 하위 작업으로 구성됩니다.
+- 작업 설계는 동적 시나리오(예: 장애물 회피, 이동 물체 잡기)를 포함하며, 전신 관절의 협조적 응답을 요구합니다.
+
+### 실험 설정
+- 훈련 데이터: 합성 렌더링된 운동학 데모로, 실제 로봇 데이터가 필요 없습니다.
+- 평가 지표: 제로샷 작업 성공률, 기준선은 전통적인 계층형 VLA(말단 자세 명령 직접 출력)와 비교합니다.
+
+### 주요 결과
+- 단순 시각 내비게이션 작업 제로샷 성공률: 80%
+- 전체 작업 제로샷 성공률: 58.5%
+- 성능 비교: 전통적인 계층형 VLA 방식 대비 7.8배 향상(후자의 성공률은 약 7.5%에 불과)
+
+### 결론
+LeVERB는 잠재 행동 어휘를 통해 의미 이해와 동역학 제어를 분리하여, 휴머노이드 로봇의 전신 VLA 폐루프 제어를 최초로 구현했으며, 복잡한 동적 작업에서 계층적 잠재 명령 프레임워크의 효율성을 검증했습니다.

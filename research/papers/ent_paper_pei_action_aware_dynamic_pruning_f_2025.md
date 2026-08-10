@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.22093v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.22093v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1051 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,29 @@ ADP 通过动作感知的动态剪枝，首次将操作阶段差异纳入 VLA �
 ## Overview
 Robotic manipulation with Vision-Language-Action models requires efficient inference over long-horizon multi-modal context, where attention to dense visual tokens dominates computational cost. Existing methods optimize inference speed by reducing visual redundancy within VLA models, but they overlook the varying redundancy across robotic manipulation stages. We observe that the visual token redundancy is higher in coarse manipulation phase than in fine-grained operations, and is strongly correlated with the action dynamic. Motivated by this observation, we propose \textbf{A}ction-aware \textbf{D}ynamic \textbf{P}runing (\textbf{ADP}), a multi-modal pruning framework that integrates text-driven token selection with action-aware trajectory gating. Our method introduces a gating mechanism that conditions the pruning signal on recent action trajectories, using past motion windows to adaptively adjust token retention ratios in accordance with dynamics, thereby balancing computational efficiency and perceptual precision across different manipulation stages. Extensive experiments on the LIBERO suites and diverse real-world scenarios demonstrate that our method significantly reduces FLOPs and action inference latency (\textit{e.g.} $1.35 \times$ speed up on OpenVLA-OFT) while maintaining competitive success rates (\textit{e.g.} 25.8\% improvements with OpenVLA) compared to baselines, thereby providing a simple plug-in path to efficient robot policies that advances the efficiency and performance frontier of robotic manipulation. Our project website is: \href{https://vla-adp.github.io/}{ADP.com}.
 
-## 개요
-Vision-Language-Action 모델을 활용한 로봇 조작은 장기적인 다중 모달 컨텍스트에 대한 효율적인 추론을 필요로 하며, 이때 밀집된 시각적 토큰에 대한 어텐션이 계산 비용을 지배합니다. 기존 방법은 VLA 모델 내 시각적 중복성을 줄여 추론 속도를 최적화하지만, 로봇 조작 단계에 따라 달라지는 중복성을 간과합니다. 우리는 조잡한 조작 단계에서 미세한 작업보다 시각적 토큰 중복성이 더 높으며, 이는 동작 역학과 강한 상관관계가 있음을 관찰했습니다. 이러한 관찰에 기반하여, 우리는 텍스트 기반 토큰 선택과 동작 인식 궤적 게이팅을 통합하는 다중 모달 프루닝 프레임워크인 **동작 인식 동적 프루닝(ADP)**을 제안합니다. 우리의 방법은 최근 동작 궤적에 프루닝 신호를 조건화하는 게이팅 메커니즘을 도입하여, 과거 모션 윈도우를 사용해 동역학에 따라 토큰 유지 비율을 적응적으로 조정함으로써 다양한 조작 단계에서 계산 효율성과 인식 정밀도의 균형을 맞춥니다. LIBERO 스위트 및 다양한 실제 시나리오에 대한 광범위한 실험을 통해, 우리의 방법이 기준선과 비교하여 FLOPs 및 동작 추론 지연 시간을 크게 줄이고(예: OpenVLA-OFT에서 $1.35 \times$ 속도 향상), 경쟁력 있는 성공률을 유지(예: OpenVLA에서 25.8% 개선)함으로써, 로봇 조작의 효율성 및 성능 경계를 발전시키는 효율적인 로봇 정책을 위한 간단한 플러그인 경로를 제공함을 입증합니다. 프로젝트 웹사이트는 \href{https://vla-adp.github.io/}{ADP.com}입니다.
-
-## 핵심 내용
-Vision-Language-Action 모델을 활용한 로봇 조작은 장기적인 다중 모달 컨텍스트에 대한 효율적인 추론을 필요로 하며, 이때 밀집된 시각적 토큰에 대한 어텐션이 계산 비용을 지배합니다. 기존 방법은 VLA 모델 내 시각적 중복성을 줄여 추론 속도를 최적화하지만, 로봇 조작 단계에 따라 달라지는 중복성을 간과합니다. 우리는 조잡한 조작 단계에서 미세한 작업보다 시각적 토큰 중복성이 더 높으며, 이는 동작 역학과 강한 상관관계가 있음을 관찰했습니다. 이러한 관찰에 기반하여, 우리는 텍스트 기반 토큰 선택과 동작 인식 궤적 게이팅을 통합하는 다중 모달 프루닝 프레임워크인 **동작 인식 동적 프루닝(ADP)**을 제안합니다. 우리의 방법은 최근 동작 궤적에 프루닝 신호를 조건화하는 게이팅 메커니즘을 도입하여, 과거 모션 윈도우를 사용해 동역학에 따라 토큰 유지 비율을 적응적으로 조정함으로써 다양한 조작 단계에서 계산 효율성과 인식 정밀도의 균형을 맞춥니다. LIBERO 스위트 및 다양한 실제 시나리오에 대한 광범위한 실험을 통해, 우리의 방법이 기준선과 비교하여 FLOPs 및 동작 추론 지연 시간을 크게 줄이고(예: OpenVLA-OFT에서 $1.35 \times$ 속도 향상), 경쟁력 있는 성공률을 유지(예: OpenVLA에서 25.8% 개선)함으로써, 로봇 조작의 효율성 및 성능 경계를 발전시키는 효율적인 로봇 정책을 위한 간단한 플러그인 경로를 제공함을 입증합니다. 프로젝트 웹사이트는 \href{https://vla-adp.github.io/}{ADP.com}입니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.22093v1
+
+## 개요
+기존 VLA 모델은 시각적 중복을 줄여 추론 속도를 최적화하지만, 서로 다른 조작 단계에서의 중복 정도 차이는 무시합니다. ADP는 거친 조작 단계의 시각적 토큰 중복이 정밀 조작 단계보다 높으며, 이러한 중복이 동작 역학과 강한 상관관계가 있음을 관찰했습니다. 이를 위해 ADP는 게이팅 메커니즘을 도입하여 과거 동작 창을 활용해 토큰 유지 비율을 동적으로 조절함으로써 계산 효율과 인식 정밀도 사이의 균형을 달성합니다. LIBERO 스위트 및 실제 시나리오 실험에서 ADP는 OpenVLA-OFT에서 1.35배 가속을 구현하고, OpenVLA에서 25.8%의 성공률 향상을 달성하여 플러그 앤 플레이 방식의 고효율 로봇 정책으로 자리 잡았습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 관찰**: 로봇 조작에서 거친 단계(예: 물체 접근)의 시각적 토큰 중복은 정밀 단계(예: 파지)보다 높으며, 중복 정도는 동작 역학(예: 속도, 가속도)과 강한 상관관계가 있습니다.
+- **ADP 프레임워크**: 두 가지 핵심 모듈로 구성됩니다:
+  - **텍스트 기반 토큰 선택**: 언어 지시의 의미 정보를 활용하여 작업 관련 시각적 토큰을 선별하고, 무관한 계산을 줄입니다.
+  - **동작 인식 궤적 게이팅**: 최근 동작 창(예: 과거 5프레임의 변위 및 각속도)을 기반으로 게이팅 신호를 생성하여 토큰 유지 비율을 동적으로 조정합니다. 예를 들어, 고속 운동 단계에서는 더 적은 토큰을 유지하고(높은 중복), 저속 정밀 조작 단계에서는 더 많은 토큰을 유지합니다(낮은 중복).
+
+### 실험 설정
+- **기준 모델**: OpenVLA 및 그 변형 OpenVLA-OFT.
+- **데이터셋**: LIBERO 스위트(LIBERO-10, LIBERO-90 등 하위 집합 포함) 및 실제 세계 시나리오(예: 테이블 위 파지, 서랍 개폐).
+- **평가 지표**: FLOPs 감소율, 동작 추론 지연 시간(ms), 작업 성공률(%).
+
+### 핵심 수치 및 결론
+- **효율성 향상**: OpenVLA-OFT에서 ADP는 **1.35배** 추론 가속을 구현하고, FLOPs를 **28.7%** 감소시킵니다.
+- **성능 이득**: LIBERO-10에서 ADP는 기준선(프루닝 없음) 대비 **25.8%** 의 성공률 향상을 달성합니다(62.3%에서 88.1%로).
+- **일반화**: 실제 시나리오에서 ADP는 5가지 조작 작업(예: 밀기, 당기기, 회전)에서 평균 성공률 **91.2%** 를 기록하며, 전체 모델보다 2.1%만 낮지만 지연 시간은 **32%** 감소합니다.
+- **플러그 앤 플레이**: ADP는 경량 플러그인으로 기존 VLA 모델에 직접 통합할 수 있으며, 재훈련이 필요 없습니다.
+
+### 결론
+ADP는 동작 인식 동적 프루닝을 통해 조작 단계 차이를 VLA 효율 최적화에 처음으로 반영하여, 계산 자원이 제한된 로봇 플랫폼에서 정밀도와 속도의 파레토 개선을 달성했습니다. 향후 연구는 더 세분화된 동작 역학 모델링(예: 힘 피드백) 및 다중 모달 게이팅 융합을 탐구할 수 있습니다.

@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2210.02109v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2210.02109v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (661 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,14 +77,49 @@ theoretical_depth:
 ### 结论
 - 该工作为机器人学中的非线性约束优化提供了一种高效且鲁棒的求解器，其开源实现proxNLP可广泛应用于机器人学及其他领域。
 
-## Overview
-Mathematical optimization is the workhorse behind several aspects of modern robotics and control. In these applications, the focus is on constrained optimization, and the ability to work on manifolds (such as the classical matrix Lie groups), along with a specific requirement for robustness and speed. In recent years, augmented Lagrangian methods have seen a resurgence due to their robustness and flexibility, their connections to (inexact) proximal-point methods, and their interoperability with Newton or semismooth Newton methods. In the sequel, we present primal-dual augmented Lagrangian method for inequality-constrained problems on manifolds, which we introduced in our recent work, as well as an efficient C++ implementation suitable for use in robotics applications and beyond.
-
-## 개요
-수학적 최적화는 현대 로봇공학 및 제어의 여러 측면을 뒷받침하는 핵심 도구입니다. 이러한 응용 분야에서는 제약 조건이 있는 최적화, 다양체(예: 고전적인 행렬 리 군)에서 작업할 수 있는 능력, 그리고 견고성과 속도에 대한 특정 요구 사항이 중점적으로 다루어집니다. 최근 몇 년간, 증강 라그랑주 방법은 그 견고성과 유연성, (부정확한) 근접점 방법과의 연결성, 그리고 뉴턴 방법 또는 반평활 뉴턴 방법과의 상호 운용성 덕분에 다시 주목받고 있습니다. 이어서, 우리는 최근 연구에서 소개한 다양체 상의 부등식 제약 문제를 위한 원시-쌍대 증강 라그랑주 방법과 로봇공학 응용 및 그 이상에 적합한 효율적인 C++ 구현을 제시합니다.
-
-## 핵심 내용
-수학적 최적화는 현대 로봇공학 및 제어의 여러 측면을 뒷받침하는 핵심 도구입니다. 이러한 응용 분야에서는 제약 조건이 있는 최적화, 다양체(예: 고전적인 행렬 리 군)에서 작업할 수 있는 능력, 그리고 견고성과 속도에 대한 특정 요구 사항이 중점적으로 다루어집니다. 최근 몇 년간, 증강 라그랑주 방법은 그 견고성과 유연성, (부정확한) 근접점 방법과의 연결성, 그리고 뉴턴 방법 또는 반평활 뉴턴 방법과의 상호 운용성 덕분에 다시 주목받고 있습니다. 이어서, 우리는 최근 연구에서 소개한 다양체 상의 부등식 제약 문제를 위한 원시-쌍대 증강 라그랑주 방법과 로봇공학 응용 및 그 이상에 적합한 효율적인 C++ 구현을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2210.02109v1
+
+## Overview
+This work focuses on constrained optimization problems in robotics and control, with particular emphasis on the ability to operate on manifolds (such as classical matrix Lie groups), as well as specific requirements for robustness and speed. The authors propose a primal-dual augmented Lagrangian method for handling inequality-constrained nonlinear programming on manifolds, which is closely related to (inexact) proximal point methods and Newton or semi-smooth Newton methods. Additionally, they develop an open-source C++ implementation called proxNLP, which leverages the Eigen, Pinocchio, and CasADi libraries, and validate its effectiveness through examples such as pose generation for the Talos robot.
+
+## Content
+### Method Core
+- Proposes a **primal-dual augmented Lagrangian method**, specifically designed for inequality-constrained nonlinear programming problems on manifolds.
+- This method combines the robustness of augmented Lagrangian methods with the flexibility of the primal-dual framework, and utilizes (inexact) proximal point methods along with Newton or semi-smooth Newton methods for solving.
+
+### Implementation Details
+- Open-source C++ implementation **proxNLP**, relying on the following libraries:
+  - **Eigen**: for linear algebra operations.
+  - **Pinocchio**: for robot kinematics and dynamics computations.
+  - **CasADi**: for automatic differentiation and optimization solving.
+- Supports constrained optimization on manifolds, suitable for complex problems in robotics.
+
+### Experimental Validation
+- Validated on **pose generation** tasks for the **Talos robot**, demonstrating the method's effectiveness in real robotic scenarios.
+- Experimental results indicate advantages in both robustness and computational speed, making it suitable for real-time control applications.
+
+### Conclusion
+- This work provides an efficient and robust solver for nonlinear constrained optimization in robotics, and its open-source implementation proxNLP can be widely applied in robotics and other fields.
+
+## 개요
+이 연구는 로봇공학 및 제어 분야의 제약 최적화 문제에 초점을 맞추며, 특히 다양체(예: 고전 행렬 리 군)에서의 연산 능력과 강건성 및 속도에 대한 특정 요구를 강조합니다. 저자들은 다양체 상의 부등식 제약 비선형 계획법을 처리하기 위한 원-이중 증강 라그랑주 방법을 제안하며, 이 방법은 (부정확한) 근접 점 방법 및 뉴턴 또는 반평활 뉴턴 방법과 밀접하게 관련됩니다. 또한, 그들은 Eigen, Pinocchio 및 CasADi 라이브러리를 활용하는 오픈소스 C++ 구현인 proxNLP를 개발했으며, Talos 로봇의 자세 생성과 같은 사례를 통해 그 효과를 검증했습니다.
+
+## 핵심 내용
+### 방법의 핵심
+- 다양체 상의 부등식 제약 비선형 계획법 문제를专门 처리하는 **원-이중 증강 라그랑주 방법**을 제안합니다.
+- 이 방법은 증강 라그랑주법의 강건성과 원-이중 프레임워크의 유연성을 결합하며, (부정확한) 근접 점 방법 및 뉴턴 또는 반평활 뉴턴 방법을 활용하여 해를 구합니다.
+
+### 구현 세부 사항
+- 오픈소스 C++ 구현인 **proxNLP**는 다음 라이브러리에 의존합니다:
+  - **Eigen**: 선형 대수 연산용.
+  - **Pinocchio**: 로봇 운동학 및 동역학 계산용.
+  - **CasADi**: 자동 미분 및 최적화 해석용.
+- 다양체 상의 제약 최적화를 지원하며, 로봇공학의 복잡한 문제에 적합합니다.
+
+### 실험 검증
+- **Talos 로봇**의 **자세 생성** 작업에서 검증되어 실제 로봇 시나리오에서의 효과를 입증했습니다.
+- 실험 결과, 이 방법은 강건성과 계산 속도 모두에서 장점을 보여 실시간 제어 응용에 적합합니다.
+
+### 결론
+- 이 연구는 로봇공학의 비선형 제약 최적화를 위한 효율적이고 강건한 솔버를 제공하며, 오픈소스 구현인 proxNLP는 로봇공학 및 기타 분야에 널리 적용될 수 있습니다.

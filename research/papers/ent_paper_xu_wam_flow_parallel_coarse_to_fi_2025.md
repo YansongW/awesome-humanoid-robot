@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.06112v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.06112v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (710 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,29 @@ WAM-Flow 摒弃了传统的自回归解码方式，采用离散流匹配在结�
 ## Overview
 We introduce WAM-Flow, a vision-language-action (VLA) model that casts ego-trajectory planning as discrete flow matching over a structured token space. In contrast to autoregressive decoders, WAM-Flow performs fully parallel, bidirectional denoising, enabling coarse-to-fine refinement with a tunable compute-accuracy trade-off. Specifically, the approach combines a metric-aligned numerical tokenizer that preserves scalar geometry via triplet-margin learning, a geometry-aware flow objective and a simulator-guided GRPO alignment that integrates safety, ego progress, and comfort rewards while retaining parallel generation. A multi-stage adaptation converts a pre-trained auto-regressive backbone (Janus-1.5B) from causal decoding to non-causal flow model and strengthens road-scene competence through continued multimodal pretraining. Thanks to the inherent nature of consistency model training and parallel decoding inference, WAM-Flow achieves superior closed-loop performance against autoregressive and diffusion-based VLA baselines, with 1-step inference attaining 89.1 PDMS and 5-step inference reaching 90.3 PDMS on NAVSIM v1 benchmark. These results establish discrete flow matching as a new promising paradigm for end-to-end autonomous driving. The code will be publicly available soon.
 
-## 개요
-우리는 WAM-Flow를 소개합니다. 이는 구조화된 토큰 공간에서 자아 궤적 계획을 이산 흐름 매칭(discrete flow matching)으로 변환하는 비전-언어-행동(VLA) 모델입니다. 자기회귀 디코더와 달리 WAM-Flow는 완전히 병렬적이고 양방향적인 잡음 제거를 수행하여, 조정 가능한 계산-정확도 트레이드오프를 통해 대략적에서 세밀한 정제를 가능하게 합니다. 구체적으로, 이 접근법은 삼중 마진 학습(triplet-margin learning)을 통해 스칼라 기하학을 보존하는 메트릭 정렬 수치 토크나이저, 기하학 인식 흐름 목표, 그리고 시뮬레이터 유도 GRPO 정렬을 결합하여 안전, 자아 진행 및 편안함 보상을 통합하면서 병렬 생성을 유지합니다. 다단계 적응은 사전 훈련된 자기회귀 백본(Janus-1.5B)을 인과 디코딩에서 비인과 흐름 모델로 변환하고, 지속적인 다중 모드 사전 훈련을 통해 도로 장면 능력을 강화합니다. 일관성 모델 훈련과 병렬 디코딩 추론의 본질적 특성 덕분에 WAM-Flow는 자기회귀 및 확산 기반 VLA 기준선보다 우수한 폐루프 성능을 달성하며, NAVSIM v1 벤치마크에서 1단계 추론 시 89.1 PDMS, 5단계 추론 시 90.3 PDMS를 기록합니다. 이러한 결과는 이산 흐름 매칭을 종단간 자율 주행을 위한 새로운 유망 패러다임으로 확립합니다. 코드는 곧 공개될 예정입니다.
-
-## 핵심 내용
-우리는 WAM-Flow를 소개합니다. 이는 구조화된 토큰 공간에서 자아 궤적 계획을 이산 흐름 매칭(discrete flow matching)으로 변환하는 비전-언어-행동(VLA) 모델입니다. 자기회귀 디코더와 달리 WAM-Flow는 완전히 병렬적이고 양방향적인 잡음 제거를 수행하여, 조정 가능한 계산-정확도 트레이드오프를 통해 대략적에서 세밀한 정제를 가능하게 합니다. 구체적으로, 이 접근법은 삼중 마진 학습(triplet-margin learning)을 통해 스칼라 기하학을 보존하는 메트릭 정렬 수치 토크나이저, 기하학 인식 흐름 목표, 그리고 시뮬레이터 유도 GRPO 정렬을 결합하여 안전, 자아 진행 및 편안함 보상을 통합하면서 병렬 생성을 유지합니다. 다단계 적응은 사전 훈련된 자기회귀 백본(Janus-1.5B)을 인과 디코딩에서 비인과 흐름 모델로 변환하고, 지속적인 다중 모드 사전 훈련을 통해 도로 장면 능력을 강화합니다. 일관성 모델 훈련과 병렬 디코딩 추론의 본질적 특성 덕분에 WAM-Flow는 자기회귀 및 확산 기반 VLA 기준선보다 우수한 폐루프 성능을 달성하며, NAVSIM v1 벤치마크에서 1단계 추론 시 89.1 PDMS, 5단계 추론 시 90.3 PDMS를 기록합니다. 이러한 결과는 이산 흐름 매칭을 종단간 자율 주행을 위한 새로운 유망 패러다임으로 확립합니다. 코드는 곧 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.06112v2
+
+## 개요
+WAM-Flow는 전통적인 자기회귀 디코딩 방식을 버리고, 구조화된 토큰 공간에서 이산 흐름 매칭을 통해 병렬 양방향 디노이징을 수행하여, 조대한 것에서 세밀한 것으로의 궤적 최적화를 실현합니다. 이 방법은 세 가지 핵심 구성 요소를 포함합니다: 삼중항 엣지 학습을 통해 스칼라 기하 구조를 유지하는 메트릭 정렬 수치 토크나이저, 기하 인식 흐름 목적 함수, 그리고 안전, 자차 진행도 및 편안함 보상을 결합한 시뮬레이터 유도 GRPO 정렬입니다. 다단계 적응을 통해 WAM-Flow는 사전 훈련된 자기회귀 백본 네트워크 Janus-1.5B를 인과 디코딩에서 비인과 흐름 모델로 변환하고, 지속적인 다중 모달 사전 훈련을 통해 도로 장면 이해 능력을 강화합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이산 흐름 매칭**: 궤적 계획을 구조화된 토큰 공간에서의 이산 흐름 매칭 과정으로 모델링하여 완전히 병렬적인 양방향 디노이징을 실현합니다.
+- **메트릭 정렬 수치 토크나이저**: 삼중항 엣지 학습을 통해 스칼라 기하 구조를 보존하여 수치 표현의 정확성을 보장합니다.
+- **기하 인식 흐름 목적 함수**: 궤적의 기하 특성을 인식하도록 설계된 전용 목적 함수를 구성합니다.
+- **시뮬레이터 유도 GRPO 정렬**: 안전, 자차 진행도 및 편안함 보상을 통합하면서 병렬 생성 능력을 유지합니다.
+
+### 다단계 적응
+- 사전 훈련된 자기회귀 백본 네트워크 Janus-1.5B를 인과 디코딩에서 비인과 흐름 모델로 변환합니다.
+- 지속적인 다중 모달 사전 훈련을 통해 도로 장면 이해 능력을 강화합니다.
+
+### 실험 설정 및 결과
+- **벤치마크**: NAVSIM v1 벤치마크에서 평가를 수행합니다.
+- **주요 성능 지표**:
+  - 1단계 추론에서 89.1 PDMS 달성.
+  - 5단계 추론에서 90.3 PDMS 달성.
+- **비교 기준선**: 폐루프 성능에서 자기회귀 및 확산 기반 VLA 기준 모델보다 우수합니다.
+
+### 결론
+이산 흐름 매칭은 엔드투엔드 자율주행에서 유망한 새로운 패러다임으로 입증되었으며, 코드는 곧 공개될 예정입니다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.08521v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.08521v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (657 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,27 @@ rPRAE 通过将预训练词嵌入与机器人感觉运动经验结合，成功�
 ## Overview
 We propose a promising neural network model with which to acquire a grounded representation of robot actions and the linguistic descriptions thereof. Properly responding to various linguistic expressions, including polysemous words, is an important ability for robots that interact with people via linguistic dialogue. Previous studies have shown that robots can use words that are not included in the action-description paired datasets by using pre-trained word embeddings. However, the word embeddings trained under the distributional hypothesis are not grounded, as they are derived purely from a text corpus. In this letter, we transform the pre-trained word embeddings to embodied ones by using the robot's sensory-motor experiences. We extend a bidirectional translation model for actions and descriptions by incorporating non-linear layers that retrofit the word embeddings. By training the retrofit layer and the bidirectional translation model alternately, our proposed model is able to transform the pre-trained word embeddings to adapt to a paired action-description dataset. Our results demonstrate that the embeddings of synonyms form a semantic cluster by reflecting the experiences (actions and environments) of a robot. These embeddings allow the robot to properly generate actions from unseen words that are not paired with actions in a dataset.
 
-## 개요
-우리는 로봇 동작과 이에 대한 언어적 설명의 기반 표현을 획득하기 위한 유망한 신경망 모델을 제안합니다. 다의어를 포함한 다양한 언어 표현에 적절히 대응하는 것은 언어적 대화를 통해 사람과 상호작용하는 로봇에게 중요한 능력입니다. 이전 연구들은 사전 훈련된 단어 임베딩을 사용함으로써 로봇이 동작-설명 쌍 데이터셋에 포함되지 않은 단어도 사용할 수 있음을 보여주었습니다. 그러나 분포 가설 하에 훈련된 단어 임베딩은 순수하게 텍스트 코퍼스에서 도출되었기 때문에 기반을 갖추지 못했습니다. 본 논문에서는 로봇의 감각-운동 경험을 활용하여 사전 훈련된 단어 임베딩을 체화된 임베딩으로 변환합니다. 우리는 단어 임베딩을 개조하는 비선형 레이어를 통합하여 동작과 설명을 위한 양방향 번역 모델을 확장합니다. 개조 레이어와 양방향 번역 모델을 번갈아 훈련함으로써, 제안된 모델은 사전 훈련된 단어 임베딩을 변환하여 동작-설명 쌍 데이터셋에 적응시킬 수 있습니다. 실험 결과는 동의어의 임베딩이 로봇의 경험(동작 및 환경)을 반영하여 의미적 군집을 형성함을 보여줍니다. 이러한 임베딩을 통해 로봇은 데이터셋에서 동작과 쌍을 이루지 않은 미지의 단어로부터도 적절히 동작을 생성할 수 있습니다.
-
-## 핵심 내용
-우리는 로봇 동작과 이에 대한 언어적 설명의 기반 표현을 획득하기 위한 유망한 신경망 모델을 제안합니다. 다의어를 포함한 다양한 언어 표현에 적절히 대응하는 것은 언어적 대화를 통해 사람과 상호작용하는 로봇에게 중요한 능력입니다. 이전 연구들은 사전 훈련된 단어 임베딩을 사용함으로써 로봇이 동작-설명 쌍 데이터셋에 포함되지 않은 단어도 사용할 수 있음을 보여주었습니다. 그러나 분포 가설 하에 훈련된 단어 임베딩은 순수하게 텍스트 코퍼스에서 도출되었기 때문에 기반을 갖추지 못했습니다. 본 논문에서는 로봇의 감각-운동 경험을 활용하여 사전 훈련된 단어 임베딩을 체화된 임베딩으로 변환합니다. 우리는 단어 임베딩을 개조하는 비선형 레이어를 통합하여 동작과 설명을 위한 양방향 번역 모델을 확장합니다. 개조 레이어와 양방향 번역 모델을 번갈아 훈련함으로써, 제안된 모델은 사전 훈련된 단어 임베딩을 변환하여 동작-설명 쌍 데이터셋에 적응시킬 수 있습니다. 실험 결과는 동의어의 임베딩이 로봇의 경험(동작 및 환경)을 반영하여 의미적 군집을 형성함을 보여줍니다. 이러한 임베딩을 통해 로봇은 데이터셋에서 동작과 쌍을 이루지 않은 미지의 단어로부터도 적절히 동작을 생성할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2104.08521v1
+
+## 개요
+로봇이 다의어 등 복잡한 언어 표현을 처리해야 하는 요구에 대해, 기존 방법들은 사전 훈련된 단어 임베딩을 활용하여 짝지어지지 않은 어휘를 처리할 수 있지만, 분포 가정 하의 임베딩은 접지성이 부족하다. 본 논문에서 제안하는 rPRAE 모델은 비선형 계층을 도입하여 사전 훈련된 단어 임베딩을 개조하고, 교대 훈련 전략을 채택하여 임베딩이 동작-설명 짝 데이터셋에 적응하도록 한다. 실험 결과, 개조된 임베딩은 로봇의 실제 동작과 환경 경험에 따라 동의어 의미 군집을 형성할 수 있으며, 로봇이 본 적 없는 어휘에 대해 적절한 동작을 생성할 수 있게 한다.
+
+## 핵심 내용
+### 방법 구조
+- **핵심 모델**: rPRAE는 seq2seq 구조를 기반으로 하며, 동작과 설명의 양방향 번역 모델을 확장한다.
+- **임베딩 개조**: 모델에 비선형 계층(retrofit layer)을 삽입하여 사전 훈련된 Word2Vec 임베딩을 접지 표현으로 매핑한다.
+- **훈련 전략**: 개조 계층과 양방향 번역 모델을 교대 훈련하여 임베딩이 점진적으로 동작-설명 짝 데이터셋에 적응하도록 한다.
+
+### 실험 설정
+- **로봇 플랫폼**: NAO 휴머노이드 로봇
+- **데이터셋**: 조작 동작과 해당 언어 설명의 짝 데이터 포함
+- **사전 훈련 임베딩**: 텍스트 코퍼스에서 Word2Vec으로 사전 훈련된 임베딩 사용
+
+### 주요 결과
+- **의미 군집**: 개조된 임베딩에서 동의어는 로봇의 실제 동작과 환경 경험에 따라 의미 군집을 형성한다.
+- **일반화 능력**: 로봇은 데이터셋에서 동작과 짝지어지지 않은 본 적 없는 어휘에 대해 적절한 동작을 생성할 수 있다.
+- **다의어 처리**: 모델은 다의어를 포함한 다양한 언어 표현에 올바르게 응답할 수 있다.
+
+### 결론
+rPRAE는 사전 훈련된 단어 임베딩과 로봇의 감각운동 경험을 결합하여 언어와 동작의 접지 양방향 번역을 성공적으로 구현했으며, 로봇 언어 상호작용에서의 어휘 일반화 문제에 효과적인 해결책을 제공한다.

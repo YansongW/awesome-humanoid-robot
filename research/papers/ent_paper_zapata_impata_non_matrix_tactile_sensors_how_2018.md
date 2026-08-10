@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.05551v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.05551v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (754 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,25 @@ theoretical_depth:
 ## Overview
 Tactile sensors supply useful information during the interaction with an object that can be used for assessing the stability of a grasp. Most of the previous works on this topic processed tactile readings as signals by calculating hand-picked features. Some of them have processed these readings as images calculating characteristics on matrix-like sensors. In this work, we explore how non-matrix sensors (sensors with taxels not arranged exactly in a matrix) can be processed as tactile images as well. In addition, we prove that they can be used for predicting grasp stability by training a Convolutional Neural Network (CNN) with them. We captured over 2500 real three-fingered grasps on 41 everyday objects to train a CNN that exploited the local connectivity inherent on the non-matrix tactile sensors, achieving 94.2% F1-score on predicting stability.
 
-## 개요
-촉각 센서는 물체와의 상호작용 중 유용한 정보를 제공하며, 이를 통해 파지 안정성을 평가할 수 있습니다. 이 주제에 대한 대부분의 이전 연구들은 수동으로 선택된 특징을 계산하여 촉각 데이터를 신호로 처리했습니다. 일부 연구에서는 이러한 데이터를 이미지로 처리하여 매트릭스 형태의 센서에서 특성을 계산했습니다. 본 연구에서는 비매트릭스 센서(택셀이 정확히 매트릭스 형태로 배열되지 않은 센서)도 촉각 이미지로 처리할 수 있는 방법을 탐구합니다. 또한, 합성곱 신경망(CNN)을 학습시켜 이를 파지 안정성 예측에 사용할 수 있음을 입증합니다. 우리는 41개의 일상 물체에 대해 2500회 이상의 실제 세 손가락 파지를 수집하여, 비매트릭스 촉각 센서에 내재된 국소 연결성을 활용한 CNN을 학습시켰고, 안정성 예측에서 94.2%의 F1 점수를 달성했습니다.
-
-## 핵심 내용
-촉각 센서는 물체와의 상호작용 중 유용한 정보를 제공하며, 이를 통해 파지 안정성을 평가할 수 있습니다. 이 주제에 대한 대부분의 이전 연구들은 수동으로 선택된 특징을 계산하여 촉각 데이터를 신호로 처리했습니다. 일부 연구에서는 이러한 데이터를 이미지로 처리하여 매트릭스 형태의 센서에서 특성을 계산했습니다. 본 연구에서는 비매트릭스 센서(택셀이 정확히 매트릭스 형태로 배열되지 않은 센서)도 촉각 이미지로 처리할 수 있는 방법을 탐구합니다. 또한, 합성곱 신경망(CNN)을 학습시켜 이를 파지 안정성 예측에 사용할 수 있음을 입증합니다. 우리는 41개의 일상 물체에 대해 2500회 이상의 실제 세 손가락 파지를 수집하여, 비매트릭스 촉각 센서에 내재된 국소 연결성을 활용한 CNN을 학습시켰고, 안정성 예측에서 94.2%의 F1 점수를 달성했습니다.
-
 ## 参考
 - http://arxiv.org/abs/1809.05551v1
+
+## 개요
+기존 연구들은 대부분 촉각 센서 판독값을 신호 처리로 간주하여 수작업으로 설계된 특징을 통해 파지 안정성을 평가했습니다. 일부 연구에서는 행렬형 센서 판독값을 이미지로 간주했지만, 비행렬형 센서(촉각 유닛이 불규칙하게 배열된 경우)는 충분히 탐구되지 않았습니다. 본 논문은 비행렬형 촉각 센서의 판독값을 촉각 이미지로 재구성하고, 합성곱 신경망(CNN)의 국소 연결 특성을 활용하여 파지 안정성을 예측하는 방법을 제안합니다. 실험에서는 41종의 일상 물체를 대상으로 2500회 이상의 실제 세 손가락 파지 데이터를 수집했으며, 훈련된 CNN 모델은 안정성 예측 작업에서 94.2%의 F1 점수를 달성하여 불규칙한 센서 배치에 대한 이 방법의 효과성을 검증했습니다.
+
+## 핵심 내용
+### 방법 개요
+- 비행렬형 촉각 센서의 원시 판독값(촉각 유닛 위치가 불규칙하게 배열됨)을 공간 매핑을 통해 2차원 촉각 이미지로 변환하여 센서 고유의 국소 연결 구조를 보존합니다.
+- 합성곱 신경망(CNN)을 사용하여 이러한 촉각 이미지를 처리하고, 국소 수용 영역 특성을 활용하여 수작업 특징 설계 없이 공간 특징을 자동으로 추출합니다.
+
+### 실험 설정
+- **데이터셋**: 41종의 일상 물체(다양한 형태, 재질, 크기 포함)를 대상으로 2500회 이상의 실제 세 손가락 파지 실험 데이터를 수집했습니다.
+- **센서**: 비행렬형 촉각 센서(촉각 유닛이 직사각형 격자로 배열되지 않음)를 사용했으며, 각 파지에서 촉각 유닛의 압력 분포를 기록했습니다.
+- **작업**: 파지 안정성 여부(안정/불안정)를 이진 분류로 예측하며, F1 점수를 주요 평가 지표로 사용했습니다.
+
+### 주요 결과
+- 훈련된 CNN 모델은 테스트 세트에서 **94.2%의 F1 점수**를 달성하여 기존의 수작업 특징 기반 방법보다 크게 우수했습니다.
+- 실험 결과, 비행렬형 센서의 국소 연결성(즉, 인접 촉각 유닛 간의 공간 관계)이 CNN에 의해 효과적으로 활용될 수 있으며, 센서 배치가 불규칙하더라도 이미지화 처리를 통해 높은 정확도의 예측이 가능함을 보여주었습니다.
+
+### 결론
+본 논문은 비행렬형 촉각 센서가 이미지화 처리와 CNN의 결합을 통해 행렬형 센서와 동등한 수준의 파지 안정성 예측 성능을 달성할 수 있음을 최초로 체계적으로 검증했습니다. 이 방법은 센서 하드웨어 배치의 제약을 줄여 저비용, 불규칙 촉각 어레이의 응용에 새로운 방향을 제시합니다.

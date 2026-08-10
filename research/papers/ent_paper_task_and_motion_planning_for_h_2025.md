@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14099v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14099v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (516 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,24 @@ sources:
 ## Overview
 This work presents an optimization-based task and motion planning (TAMP) framework that unifies planning for locomotion and manipulation through a shared representation of contact modes. We define symbolic actions as contact mode changes, grounding high-level planning in low-level motion. This enables a unified search that spans task, contact, and motion planning while incorporating whole-body dynamics, as well as all constraints between the robot, the manipulated object, and the environment. Results on a humanoid platform show that our method can generate a broad range of physically consistent loco-manipulation behaviors over long action sequences requiring complex reasoning. To the best of our knowledge, this is the first work that enables the resolution of an integrated TAMP formulation with fully acyclic planning and whole body dynamics with actuation constraints for the humanoid loco-manipulation problem.
 
-## 개요
-본 연구는 접촉 모드의 공유 표현을 통해 보행과 조작 계획을 통합하는 최적화 기반의 작업 및 운동 계획(TAMP) 프레임워크를 제시합니다. 상징적 행동을 접촉 모드 변화로 정의함으로써, 고수준 계획을 저수준 운동에 기반을 둡니다. 이를 통해 전신 동역학은 물론, 로봇, 조작 대상 물체, 환경 간의 모든 제약 조건을 포함하면서 작업, 접촉, 운동 계획을 아우르는 통합 탐색이 가능해집니다. 휴머노이드 플랫폼에서의 실험 결과는 본 방법이 복잡한 추론을 요구하는 긴 행동 시퀀스에 걸쳐 광범위한 물리적으로 일관된 보행-조작 행동을 생성할 수 있음을 보여줍니다. 본 연구는 저희가 아는 한, 완전한 비순환 계획과 구동 제약 조건을 갖춘 전신 동역학을 통합한 TAMP 정식화를 휴머노이드 보행-조작 문제에 대해 해결할 수 있는 최초의 연구입니다.
-
-## 핵심 내용
-본 연구는 접촉 모드의 공유 표현을 통해 보행과 조작 계획을 통합하는 최적화 기반의 작업 및 운동 계획(TAMP) 프레임워크를 제시합니다. 상징적 행동을 접촉 모드 변화로 정의함으로써, 고수준 계획을 저수준 운동에 기반을 둡니다. 이를 통해 전신 동역학은 물론, 로봇, 조작 대상 물체, 환경 간의 모든 제약 조건을 포함하면서 작업, 접촉, 운동 계획을 아우르는 통합 탐색이 가능해집니다. 휴머노이드 플랫폼에서의 실험 결과는 본 방법이 복잡한 추론을 요구하는 긴 행동 시퀀스에 걸쳐 광범위한 물리적으로 일관된 보행-조작 행동을 생성할 수 있음을 보여줍니다. 본 연구는 저희가 아는 한, 완전한 비순환 계획과 구동 제약 조건을 갖춘 전신 동역학을 통합한 TAMP 정식화를 휴머노이드 보행-조작 문제에 대해 해결할 수 있는 최초의 연구입니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.14099v1
+
+## 개요
+이 연구는 기호적 행동을 접촉 패턴의 변화로 정의하여, 상위 수준의 작업 계획과 하위 수준의 운동 계획을 연결합니다. 이러한 통합 표현을 통해 프레임워크는 작업, 접촉 및 운동 계획을 동시에 처리할 수 있으며, 로봇, 조작 대상 및 환경 간의 모든 제약 조건을 포함합니다. 휴머노이드 플랫폼에서의 실험은 이 방법이 긴 시퀀스와 복잡한 추론 하에서 다양한 물리적으로 일관된 이동 조작 행동을 생성할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 최적화 기반 TAMP 프레임워크를 제안하며, **공유 접촉 패턴 표현**을 통해 이동 및 조작 계획을 통합합니다.
+- **기호적 행동**을 접촉 패턴의 변화로 정의하여, 상위 수준의 작업 계획과 하위 수준의 운동 계획을 연결합니다.
+- **통합 검색** 전략을 채택하여 작업, 접촉 및 운동 계획의 세 가지 수준을 동시에 다룹니다.
+
+### 주요 특징
+- **전신 동역학** 모델을 통합하여 로봇, 조작 대상 및 환경 간의 모든 제약 조건을 포함합니다.
+- **완전 비순환 계획**을 지원하며, 사전에 계획 순서를 설정할 필요가 없습니다.
+- **구동 제약 조건**을 고려하여 생성된 운동이 물리적으로 실행 가능하도록 보장합니다.
+
+### 실험 설정 및 결과
+- 휴머노이드 로봇 플랫폼에서 검증되었으며, **긴 동작 시퀀스** 하에서 복잡한 이동 조작 행동을 생성할 수 있습니다.
+- 행동은 **물리적 일관성** 측면에서 우수한 성능을 보이며, 다양한 조작 시나리오를 포함합니다.
+- 저자에 따르면, 이는 **휴머노이드 로봇 이동 조작**에서 통합 TAMP 공식을 해결한 최초의 작업으로, 비순환 계획과 전신 동역학 제약 조건을 동시에 충족합니다.

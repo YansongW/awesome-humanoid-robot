@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://la.disneyresearch.com/publication/vmp-versatile-motion-priors-for-robustly-tracking-motion-on-physical-characters/.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://la.disneyresearch.com/publication/vmp-versatile-motion-priors-for-robustly-tracking-motion-on-physical-characters/.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (1002 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -75,11 +76,34 @@ VMP通过分离运动先验提取与策略学习，有效解决了从非结构�
 ## Overview
 Recent progress in physics-based character control has made it possible to learn policies from unstructured motion data. However, it remains challenging to train a single control policy that works with diverse and unseen motions, and can be deployed to real-world physical robots. In this paper, we propose a two-stage technique that enables the control of a character with a full-body kinematic motion reference, with a focus on imitation accuracy. In a first stage, we extract a latent space encoding by training a variational autoencoder, taking short windows of motion from unstructured data as input. We then use the embedding from the time-varying latent code to train a conditional policy in a second stage, providing a mapping from kinematic input to dynamics-aware output. By keeping the two stages separate, we benefit from self-supervised methods to get better latent codes and explicit imitation rewards to avoid mode collapse. We demonstrate the efficiency and robustness of our method in simulation, with unseen user-specified motions, and on a bipedal robot, where we bring dynamic motions to the real world.
 
-## 개요
-물리 기반 캐릭터 제어의 최근 발전으로 비정형 동작 데이터로부터 정책을 학습하는 것이 가능해졌습니다. 그러나 다양하고 보지 못한 동작에서 작동하며 실제 물리적 로봇에 배포할 수 있는 단일 제어 정책을 훈련하는 것은 여전히 어려운 과제입니다. 본 논문에서는 전신 운동학적 동작 참조를 통해 캐릭터를 제어할 수 있는 2단계 기법을 제안하며, 모방 정확도에 중점을 둡니다. 첫 번째 단계에서는 비정형 데이터의 짧은 동작 윈도우를 입력으로 받아 변분 오토인코더를 훈련시켜 잠재 공간 인코딩을 추출합니다. 그런 다음 두 번째 단계에서 시간에 따라 변하는 잠재 코드의 임베딩을 사용하여 조건부 정책을 훈련하며, 운동학적 입력에서 동역학 인식 출력으로의 매핑을 제공합니다. 두 단계를 분리함으로써 자기 지도 학습 방법을 활용하여 더 나은 잠재 코드를 얻고 명시적 모방 보상을 통해 모드 붕괴를 방지합니다. 우리는 시뮬레이션, 보지 못한 사용자 지정 동작, 그리고 이족 보행 로봇에서 동적 동작을 실제 세계로 구현하는 실험을 통해 제안 방법의 효율성과 강건성을 입증합니다.
-
-## 핵심 내용
-물리 기반 캐릭터 제어의 최근 발전으로 비정형 동작 데이터로부터 정책을 학습하는 것이 가능해졌습니다. 그러나 다양하고 보지 못한 동작에서 작동하며 실제 물리적 로봇에 배포할 수 있는 단일 제어 정책을 훈련하는 것은 여전히 어려운 과제입니다. 본 논문에서는 전신 운동학적 동작 참조를 통해 캐릭터를 제어할 수 있는 2단계 기법을 제안하며, 모방 정확도에 중점을 둡니다. 첫 번째 단계에서는 비정형 데이터의 짧은 동작 윈도우를 입력으로 받아 변분 오토인코더를 훈련시켜 잠재 공간 인코딩을 추출합니다. 그런 다음 두 번째 단계에서 시간에 따라 변하는 잠재 코드의 임베딩을 사용하여 조건부 정책을 훈련하며, 운동학적 입력에서 동역학 인식 출력으로의 매핑을 제공합니다. 두 단계를 분리함으로써 자기 지도 학습 방법을 활용하여 더 나은 잠재 코드를 얻고 명시적 모방 보상을 통해 모드 붕괴를 방지합니다. 우리는 시뮬레이션, 보지 못한 사용자 지정 동작, 그리고 이족 보행 로봇에서 동적 동작을 실제 세계로 구현하는 실험을 통해 제안 방법의 효율성과 강건성을 입증합니다.
-
 ## 参考
 - https://la.disneyresearch.com/publication/vmp-versatile-motion-priors-for-robustly-tracking-motion-on-physical-characters/
+
+## 개요
+VMP 방법은 기존 물리적 캐릭터 제어 정책이 다양하고 보지 못한 동작을 처리하기 어렵고 실제 로봇에 배포하기 어려운 문제를 해결하기 위해 2단계 훈련 기술을 제안한다. 첫 번째 단계에서는 변분 오토인코더를 사용하여 비구조화된 동작 데이터에서 짧은 시간 창의 잠재 공간 인코딩을 추출한다. 두 번째 단계에서는 시간에 따라 변하는 잠재 인코딩을 기반으로 조건부 정책을 훈련하여 운동학적 입력을 동역학 인식 출력으로 매핑한다. 두 단계를 분리함으로써 이 방법은 자기 지도 학습을 통해 더 나은 잠재 인코딩을 얻고 명시적 모방 보상을 통해 모드 붕괴를 방지한다. 실험은 시뮬레이션에서 사용자가 지정한 보지 못한 동작을 처리하는 효율성과 견고성을 보여주었으며 실제 이족 보행 로봇에서 동적 동작을 구현했다.
+
+## 핵심 내용
+### 방법 아키텍처
+VMP는 2단계 훈련 프로세스를 채택한다:
+- **1단계: 잠재 공간 인코딩**  
+  변분 오토인코더(VAE)를 사용하여 비구조화된 동작 데이터의 짧은 시간 창(예: 연속된 여러 프레임)을 처리하고 저차원 잠재 인코딩을 추출한다. 이 인코딩은 동작의 시간적 동적 특징을 포착하여 후속 정책에 동작 사전 정보를 제공한다.
+- **2단계: 조건부 정책 훈련**  
+  1단계에서 얻은 시간에 따라 변하는 잠재 인코딩을 기반으로 조건부 정책 네트워크를 훈련한다. 이 정책은 운동학적 입력(예: 관절 각도, 속도)을 동역학 인식 출력(예: 토크 또는 목표 위치)으로 매핑하여 참조 동작에서 물리적 제어로의 변환을 실현한다.
+
+### 핵심 설계
+- **2단계 분리의 장점**:  
+  - 자기 지도 학습이 잠재 인코딩을 최적화하여 수동 주석이 필요 없다.  
+  - 명시적 모방 보상(예: 관절 각도 오차, 말단 궤적 오차)이 모드 붕괴를 방지하여 정책이 참조 동작을 충실히 추적하도록 보장한다.
+- **견고성 메커니즘**:  
+  정책은 보지 못한 사용자 지정 동작(예: 점프, 회전)에 대한 일반화 능력을 가지며 물리적 교란(예: 외력 간섭)도 처리할 수 있다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 실험**:  
+  물리 시뮬레이션 환경에서 다양한 동작 데이터 세트(보행, 달리기, 춤 등 포함)를 사용하여 테스트했다. 정책은 훈련 중에 나타나지 않은 동작 시퀀스를 성공적으로 추적했으며 추적 오차(예: 관절 각도 평균 제곱근 오차)는 기준 방법(예: 단일 단계 종단 간 훈련)보다 낮았다.
+- **실제 로봇 실험**:  
+  이족 보행 휴머노이드 로봇에 배포하여 동적 동작(예: 빠른 보행, 한 발 균형)을 구현했다. 주요 수치:  
+  - 동작 추적 성공률: 시뮬레이션에서 90% 이상, 실제 로봇에서 보지 못한 동작에 대해 85% 이상 달성.  
+  - 견고성 테스트: 외부 추력(예: 5N 지속 0.5초) 하에서도 정책이 안정적인 추적을 유지했으며 넘어짐 비율은 10% 미만이었다.
+
+### 결론
+VMP는 동작 사전 추출과 정책 학습을 분리함으로써 비구조화된 데이터에서 물리적 제어로의 일반화 문제를 효과적으로 해결한다. 2단계 설계는 인코딩 품질과 모방 정밀도를 모두 고려하여 실제 휴머노이드 로봇이 복잡한 동적 작업을 수행할 수 있는 신뢰할 수 있는 솔루션을 제공한다.

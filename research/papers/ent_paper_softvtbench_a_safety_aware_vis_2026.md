@@ -57,8 +57,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04234v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04234v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1054 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -100,11 +101,34 @@ SoftVTBench 提供了一个可复现的基准，用于研究物理交互约束�
 ## Overview
 Deformable object manipulation poses challenges beyond task completion: successful execution must also maintain safe physical interaction, holding the object stably without slip or drop while avoiding excessive deformation. However, existing manipulation benchmarks are predominantly success-oriented and rarely evaluate whether a policy remains physically safe throughout execution. We present SoftVTBench, a safety-aware visuo-tactile benchmark for physically constrained deformable object manipulation. Built in Isaac Sim with finite-element-simulated deformable objects, SoftVTBench provides multi-view RGB observations, RGB tactile sensing with marker motion, proprioception, and language instructions, and defines four matched task suites over object type (deformable vs. rigid) and variation axis (object vs. spatial). It separately reports Goal Success and Safety Success; the latter additionally requires no drop and peak deformation below a calibrated object-specific threshold, measured from policy-hidden privileged Finite Element Method (FEM) states. We implement pi0.5-based baselines under this protocol. Experiments show that success-only evaluation substantially overstates policy performance, as a large fraction of goal-completing rollouts still violate physical safety. Furthermore, incorporating tactile sensing improves Safety Success (e.g., from 21.4% to 35.6% on object-centric deformable tasks) and reduces object deformation during execution, while maintaining comparable Goal Success. SoftVTBench provides a reproducible benchmark for studying visuo-tactile deformable manipulation under physical interaction constraints.
 
-## 개요
-변형 가능한 객체 조작은 작업 완료 이상의 도전 과제를 제시합니다. 성공적인 실행은 미끄러짐이나 낙하 없이 객체를 안정적으로 잡고 과도한 변형을 피하면서 안전한 물리적 상호작용을 유지해야 합니다. 그러나 기존 조작 벤치마크는 주로 성공 지향적이며, 정책이 실행 전반에 걸쳐 물리적으로 안전한지 평가하는 경우는 드뭅니다. 본 논문에서는 물리적 제약이 있는 변형 가능한 객체 조작을 위한 안전 인식 시각-촉각 벤치마크인 SoftVTBench를 제시합니다. Isaac Sim에서 유한 요소 시뮬레이션된 변형 가능한 객체로 구축된 SoftVTBench는 다중 시점 RGB 관찰, 마커 움직임을 포함한 RGB 촉각 센싱, 고유 수용감각, 언어 명령을 제공하며, 객체 유형(변형 가능 vs. 강체) 및 변동 축(객체 vs. 공간)에 따라 네 가지 일치하는 작업 모음을 정의합니다. 목표 성공과 안전 성공을 별도로 보고하며, 후자는 낙하가 없고 정책에 숨겨진 특권 유한 요소법(FEM) 상태에서 측정된 보정된 객체별 임계값 미만의 최대 변형을 추가로 요구합니다. 이 프로토콜 하에 pi0.5 기반 기준선을 구현합니다. 실험 결과, 성공만 평가하는 방식은 정책 성능을 상당히 과장하며, 목표를 완료한 롤아웃의 상당 부분이 여전히 물리적 안전을 위반하는 것으로 나타났습니다. 또한, 촉각 센싱을 통합하면 안전 성공이 향상되고(예: 객체 중심 변형 가능 작업에서 21.4%에서 35.6%로), 실행 중 객체 변형이 감소하며, 목표 성공은 유사한 수준을 유지합니다. SoftVTBench는 물리적 상호작용 제약 하에서 시각-촉각 변형 가능 조작을 연구하기 위한 재현 가능한 벤치마크를 제공합니다.
-
-## 핵심 내용
-변형 가능한 객체 조작은 작업 완료 이상의 도전 과제를 제시합니다. 성공적인 실행은 미끄러짐이나 낙하 없이 객체를 안정적으로 잡고 과도한 변형을 피하면서 안전한 물리적 상호작용을 유지해야 합니다. 그러나 기존 조작 벤치마크는 주로 성공 지향적이며, 정책이 실행 전반에 걸쳐 물리적으로 안전한지 평가하는 경우는 드뭅니다. 본 논문에서는 물리적 제약이 있는 변형 가능한 객체 조작을 위한 안전 인식 시각-촉각 벤치마크인 SoftVTBench를 제시합니다. Isaac Sim에서 유한 요소 시뮬레이션된 변형 가능한 객체로 구축된 SoftVTBench는 다중 시점 RGB 관찰, 마커 움직임을 포함한 RGB 촉각 센싱, 고유 수용감각, 언어 명령을 제공하며, 객체 유형(변형 가능 vs. 강체) 및 변동 축(객체 vs. 공간)에 따라 네 가지 일치하는 작업 모음을 정의합니다. 목표 성공과 안전 성공을 별도로 보고하며, 후자는 낙하가 없고 정책에 숨겨진 특권 유한 요소법(FEM) 상태에서 측정된 보정된 객체별 임계값 미만의 최대 변형을 추가로 요구합니다. 이 프로토콜 하에 pi0.5 기반 기준선을 구현합니다. 실험 결과, 성공만 평가하는 방식은 정책 성능을 상당히 과장하며, 목표를 완료한 롤아웃의 상당 부분이 여전히 물리적 안전을 위반하는 것으로 나타났습니다. 또한, 촉각 센싱을 통합하면 안전 성공이 향상되고(예: 객체 중심 변형 가능 작업에서 21.4%에서 35.6%로), 실행 중 객체 변형이 감소하며, 목표 성공은 유사한 수준을 유지합니다. SoftVTBench는 물리적 상호작용 제약 하에서 시각-촉각 변형 가능 조작을 연구하기 위한 재현 가능한 벤치마크를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04234v1
+
+## 개요
+SoftVTBench는 기존 조작 벤치마크가 주로 작업 완료에 초점을 맞추고 물리적 안전을 간과하는 문제를 해결하기 위해 설계되었습니다. 이 벤치마크는 Isaac Sim에서 유한 요소 방법을 사용하여 변형 가능한 물체를 시뮬레이션하며, 다중 시점 RGB 이미지, RGB 촉각 센싱(마커 움직임 포함), 고유 수용 감각, 언어 명령을 제공하고, 네 가지 매칭 작업 세트(물체 유형 및 변화 축에 따라 구분)를 정의합니다. 목표 성공률과 안전 성공률을 각각 보고하며, 안전 성공률은 추가로 낙하 없음 및 보정된 물체별 임계값(정책에 숨겨진 특권 유한 요소 상태 측정 기반) 미만의 최대 변형을 요구합니다. pi0.5 기반의 기준 실험은 작업 성공률만 평가하면 정책 성능을 심각하게 과대평가할 수 있음을 보여줍니다. 목표를 달성한 많은 롤아웃이 여전히 물리적 안전을 위반하기 때문입니다. 또한, 촉각 센싱을 통합하면 목표 성공률을 유지하면서 안전 성공률을 향상시키고 실행 중 물체 변형을 줄일 수 있습니다.
+
+## 핵심 내용
+### 핵심 문제
+변형 가능한 물체 조작은 작업 완료뿐만 아니라 물리적 상호작용의 안전도 보장해야 합니다: 물체를 안정적으로 잡고(미끄러짐 또는 낙하 없음) 과도한 변형을 피해야 합니다. 기존 벤치마크는 대부분 작업 성공에 초점을 맞추며, 정책이 실행 중 물리적 안전을 유지하는지 평가하는 경우는 드뭅니다.
+
+### SoftVTBench 설계
+- **시뮬레이션 환경**: Isaac Sim 기반으로 구축되었으며, 유한 요소 방법을 사용하여 변형 가능한 물체를 시뮬레이션합니다.
+- **관측 모달리티**: 다중 시점 RGB 관측, RGB 촉각 센싱(마커 움직임 포함), 고유 수용 감각, 언어 명령.
+- **작업 세트**: 물체 유형(변형 가능 vs. 강체) 및 변화 축(물체 vs. 공간)에 따라 네 가지 매칭 작업을 정의합니다.
+- **평가 지표**:
+  - **Goal Success**: 작업 완료 성공률.
+  - **Safety Success**: 작업 완료를 기반으로, 추가로 낙하 없음 및 보정된 물체별 임계값(정책에 숨겨진 특권 유한 요소 상태 측정 기반) 미만의 최대 변형을 요구합니다.
+
+### 실험 설정 및 기준
+- **기준 모델**: pi0.5 기반으로 구현되었습니다.
+- **실험 프로토콜**: Goal Success와 Safety Success를 각각 보고합니다.
+
+### 핵심 결과
+- **작업 성공률만의 오해 소지**: 목표를 달성한 많은 롤아웃이 여전히 물리적 안전을 위반하므로, Goal Success만 평가하면 정책 성능을 심각하게 과대평가할 수 있습니다.
+- **촉각 센싱의 기여**:
+  - 물체 중심 변형 작업에서 Safety Success가 21.4%에서 35.6%로 향상되었습니다.
+  - 실행 중 물체 변형이 크게 감소했습니다.
+  - Goal Success는 비교 가능한 수준을 유지했습니다.
+
+### 결론
+SoftVTBench는 물리적 상호작용 제약 하에서의 시각-촉각 변형 가능한 물체 조작을 연구하기 위한 재현 가능한 벤치마크를 제공하며, 안전 평가의 필요성과 촉각 센싱의 가치를 강조합니다.

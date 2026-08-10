@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03146v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03146v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (676 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,24 @@ Exp2VLA 提出了一种实用的专家蒸馏流水线，旨在将专家行为转
 ## Overview
 Vision-language-action (VLA) models open a new path toward intuitive robot control by directly linking perception, language, and action in a single end-to-end framework. Yet for UAVs, practical adoption remains difficult because existing solutions are either computationally heavy or insufficiently capable in complex environments. In this work, we propose a practical expert-distillation pipeline (Exp2VLA) for language-conditioned drone navigation. The core idea is to distill expert behavior, obtained from reinforcement learning, teleoperation, or other controllers, into training data that can be used to fine-tune compact VLA models. This allows existing control strategies to be transferred into a unified language-guided navigation model, reducing manual system integration and lowering the barrier for deploying new robot behaviors. Experiments in both sim-to-sim and simulation-in-the-loop settings across multi-object scenes show that the fine-tuned models can handle varied semantic commands and generalize to unseen target compositions. The proposed framework demonstrates how expert-policy distillation can help mechatronic systems move from specialized control modules toward more flexible and reusable robot intelligence.
 
-## 개요
-Vision-language-action (VLA) 모델은 인식, 언어, 행동을 단일 엔드투엔드 프레임워크로 직접 연결하여 직관적인 로봇 제어를 위한 새로운 경로를 열어줍니다. 그러나 UAV의 경우, 기존 솔루션이 계산적으로 무겁거나 복잡한 환경에서 충분한 성능을 발휘하지 못하기 때문에 실제 적용이 여전히 어렵습니다. 본 연구에서는 언어 조건 기반 드론 항법을 위한 실용적인 전문가 증류 파이프라인(Exp2VLA)을 제안합니다. 핵심 아이디어는 강화 학습, 원격 조작 또는 기타 컨트롤러에서 얻은 전문가 행동을 증류하여 소형 VLA 모델을 미세 조정하는 데 사용할 수 있는 훈련 데이터로 변환하는 것입니다. 이를 통해 기존 제어 전략을 통합된 언어 기반 항법 모델로 전환하여 수동 시스템 통합을 줄이고 새로운 로봇 행동 배포 장벽을 낮출 수 있습니다. 다중 객체 장면에서 시뮬레이션 간 및 시뮬레이션 인더루프 설정 모두에서 수행된 실험은 미세 조정된 모델이 다양한 의미 명령을 처리하고 보지 못한 대상 구성을 일반화할 수 있음을 보여줍니다. 제안된 프레임워크는 전문가 정책 증류가 메카트로닉스 시스템이 특수 제어 모듈에서 더 유연하고 재사용 가능한 로봇 지능으로 전환하는 데 어떻게 도움이 될 수 있는지 보여줍니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 인식, 언어, 행동을 단일 엔드투엔드 프레임워크로 직접 연결하여 직관적인 로봇 제어를 위한 새로운 경로를 열어줍니다. 그러나 UAV의 경우, 기존 솔루션이 계산적으로 무겁거나 복잡한 환경에서 충분한 성능을 발휘하지 못하기 때문에 실제 적용이 여전히 어렵습니다. 본 연구에서는 언어 조건 기반 드론 항법을 위한 실용적인 전문가 증류 파이프라인(Exp2VLA)을 제안합니다. 핵심 아이디어는 강화 학습, 원격 조작 또는 기타 컨트롤러에서 얻은 전문가 행동을 증류하여 소형 VLA 모델을 미세 조정하는 데 사용할 수 있는 훈련 데이터로 변환하는 것입니다. 이를 통해 기존 제어 전략을 통합된 언어 기반 항법 모델로 전환하여 수동 시스템 통합을 줄이고 새로운 로봇 행동 배포 장벽을 낮출 수 있습니다. 다중 객체 장면에서 시뮬레이션 간 및 시뮬레이션 인더루프 설정 모두에서 수행된 실험은 미세 조정된 모델이 다양한 의미 명령을 처리하고 보지 못한 대상 구성을 일반화할 수 있음을 보여줍니다. 제안된 프레임워크는 전문가 정책 증류가 메카트로닉스 시스템이 특수 제어 모듈에서 더 유연하고 재사용 가능한 로봇 지능으로 전환하는 데 어떻게 도움이 될 수 있는지 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03146v1
+
+## 개요
+Exp2VLA의 핵심 혁신은 전문가 정책 증류와 VLA 모델 미세 조정을 결합하여 기존 드론 내비게이션 솔루션의 계산 부담이 크거나 복잡한 환경 적응성이 부족한 문제를 해결하는 데 있습니다. 강화 학습, 원격 조작 등 다양한 출처의 전문가 행동을 훈련 데이터로 변환함으로써, 이 방법은 여러 제어 정책을 단일 언어 유도 내비게이션 모델로 통합할 수 있어 시스템 통합 복잡성과 새로운 행동 배포 장벽을 크게 낮춥니다. sim-to-sim 및 simulation-in-the-loop 두 가지 실험 설정에서 미세 조정된 모델은 다양한 의미 명령을 성공적으로 처리하고 보지 못한 목표 조합 시나리오에 일반화할 수 있었습니다.
+
+## 핵심 내용
+### 방법 개요
+Exp2VLA는 전문가 행동을 컴팩트한 VLA 모델 미세 조정에 사용할 수 있는 훈련 데이터로 변환하는 실용적인 전문가 증류 파이프라인을 제안합니다. 전문가 행동은 강화 학습, 원격 조작 또는 기타 컨트롤러에서 비롯될 수 있습니다.
+
+### 핵심 아키텍처
+- **전문가 증류**: 핵심 아이디어는 기존 제어 정책(예: 강화 학습 정책, 원격 조작 궤적)을 컴팩트한 VLA 모델 미세 조정을 위한 훈련 데이터로 증류하는 것입니다.
+- **통합 내비게이션 모델**: 증류를 통해 여러 제어 정책을 언어 유도 내비게이션 모델로 통합하여 수동 시스템 통합을 줄이고 새로운 로봇 행동 배포 장벽을 낮춥니다.
+
+### 실험 설정
+- **실험 환경**: sim-to-sim 및 simulation-in-the-loop 두 가지 설정에서 수행되며, 시나리오에는 다중 목표 객체가 포함됩니다.
+- **평가 지표**: 모델이 다양한 의미 명령을 처리하는 능력과 보지 못한 목표 조합에 대한 일반화 능력.
+
+### 주요 결과
+- 미세 조정된 VLA 모델은 다양한 의미 명령을 성공적으로 처리하고 보지 못한 목표 조합 시나리오에서 우수한 일반화 능력을 보여주었습니다.
+- 실험은 전문가 정책 증류가 기계 전자 시스템이 전용 제어 모듈에서 더 유연하고 재사용 가능한 로봇 지능으로 전환하는 데 도움이 될 수 있음을 보여주었습니다.

@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23224v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23224v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (998 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,11 +90,40 @@ A2C2作为即插即用模块，有效解决动作块策略在实时控制中的�
 ## Overview
 To improve efficiency and temporal coherence, Vision-Language-Action (VLA) models often predict action chunks; however, this action chunking harms reactivity under inference delay and long horizons. We introduce Asynchronous Action Chunk Correction (A2C2), which is a lightweight real-time chunk correction head that runs every control step and adds a time-aware correction to any off-the-shelf VLA's action chunk. The module combines the latest observation, the predicted action from VLA (base action), a positional feature that encodes the index of the base action within the chunk, and some features from the base policy, then outputs a per-step correction. This preserves the base model's competence while restoring closed-loop responsiveness. The approach requires no retraining of the base policy and is orthogonal to asynchronous execution schemes such as Real Time Chunking (RTC). On the dynamic Kinetix task suite (12 tasks) and LIBERO Spatial, our method yields consistent success rate improvements across increasing delays and execution horizons (+23% point and +7% point respectively, compared to RTC), and also improves robustness for long horizons even with zero injected delay. Since the correction head is small and fast, there is minimal overhead compared to the inference of large VLA models. These results indicate that A2C2 is an effective, plug-in mechanism for deploying high-capacity chunking policies in real-time control.
 
-## 개요
-효율성과 시간적 일관성을 향상시키기 위해 Vision-Language-Action(VLA) 모델은 종종 액션 청크를 예측합니다. 그러나 이러한 액션 청킹은 추론 지연 및 긴 시간 지평에서 반응성을 저하시킵니다. 본 논문에서는 비동기 액션 청크 보정(Asynchronous Action Chunk Correction, A2C2)을 소개합니다. 이는 모든 제어 단계에서 실행되는 경량 실시간 청크 보정 헤드로, 기성 VLA의 액션 청크에 시간 인식 보정을 추가합니다. 이 모듈은 최신 관측값, VLA에서 예측된 액션(기본 액션), 청크 내 기본 액션의 인덱스를 인코딩하는 위치 특징, 그리고 기본 정책의 일부 특징을 결합하여 단계별 보정을 출력합니다. 이를 통해 기본 모델의 성능을 유지하면서 폐쇄 루프 응답성을 복원합니다. 이 접근 방식은 기본 정책의 재학습이 필요 없으며, Real Time Chunking(RTC)과 같은 비동기 실행 방식과 직교합니다. 동적 Kinetix 작업 모음(12개 작업)과 LIBERO Spatial에서, 본 방법은 증가하는 지연 및 실행 시간 지평 전반에 걸쳐 일관된 성공률 향상을 보여주었습니다(RTC 대비 각각 +23% 포인트 및 +7% 포인트). 또한 지연이 전혀 없는 경우에도 긴 시간 지평에 대한 강건성을 향상시킵니다. 보정 헤드는 작고 빠르기 때문에 대규모 VLA 모델의 추론에 비해 오버헤드가 최소화됩니다. 이러한 결과는 A2C2가 실시간 제어에서 고용량 청킹 정책을 배포하기 위한 효과적인 플러그인 메커니즘임을 나타냅니다.
-
-## 핵심 내용
-효율성과 시간적 일관성을 향상시키기 위해 Vision-Language-Action(VLA) 모델은 종종 액션 청크를 예측합니다. 그러나 이러한 액션 청킹은 추론 지연 및 긴 시간 지평에서 반응성을 저하시킵니다. 본 논문에서는 비동기 액션 청크 보정(Asynchronous Action Chunk Correction, A2C2)을 소개합니다. 이는 모든 제어 단계에서 실행되는 경량 실시간 청크 보정 헤드로, 기성 VLA의 액션 청크에 시간 인식 보정을 추가합니다. 이 모듈은 최신 관측값, VLA에서 예측된 액션(기본 액션), 청크 내 기본 액션의 인덱스를 인코딩하는 위치 특징, 그리고 기본 정책의 일부 특징을 결합하여 단계별 보정을 출력합니다. 이를 통해 기본 모델의 성능을 유지하면서 폐쇄 루프 응답성을 복원합니다. 이 접근 방식은 기본 정책의 재학습이 필요 없으며, Real Time Chunking(RTC)과 같은 비동기 실행 방식과 직교합니다. 동적 Kinetix 작업 모음(12개 작업)과 LIBERO Spatial에서, 본 방법은 증가하는 지연 및 실행 시간 지평 전반에 걸쳐 일관된 성공률 향상을 보여주었습니다(RTC 대비 각각 +23% 포인트 및 +7% 포인트). 또한 지연이 전혀 없는 경우에도 긴 시간 지평에 대한 강건성을 향상시킵니다. 보정 헤드는 작고 빠르기 때문에 대규모 VLA 모델의 추론에 비해 오버헤드가 최소화됩니다. 이러한 결과는 A2C2가 실시간 제어에서 고용량 청킹 정책을 배포하기 위한 효과적인 플러그인 메커니즘임을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.23224v1
+
+## 개요
+VLA 모델은 동작 블록(action chunks)을 예측하여 효율성과 시간적 연속성을 향상시키지만, 동작 블록 메커니즘은 추론 지연과 긴 시간 영역에서 실시간 응답 능력을 저하시킬 수 있습니다. A2C2는 경량 수정 헤드(lightweight correction head)를 통해 각 제어 단계에서 최신 관측, 기본 동작 블록 예측, 위치 인코딩 및 기본 정책 특징을 결합하여 단계별 수정량(per-step correction)을 출력합니다. 이 모듈은 기본 모델의 능력을 유지하면서 폐루프 응답 특성을 복원하며, 재학습 없이 RTC와 같은 비동기 실행 방식과 직교적으로 호환됩니다. 동적 Kinetix 작업 스위트(12개 작업)와 LIBERO Spatial에서 A2C2는 증가하는 지연 및 긴 실행 시간 영역에서 일관된 성공률 향상을 보였으며, 제로 주입 지연에서도 긴 시간 영역의 견고성을 개선했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 문제**: VLA 모델이 고정 길이 동작 블록(action chunks)을 예측하여 효율성을 높이지만, 추론 지연으로 인해 동작 블록이 최신 환경 상태와 불일치하며, 특히 긴 시간 영역 작업에서 반응이 지연됩니다.
+- **A2C2 모듈**: 경량 수정 헤드로, 입력은 다음과 같습니다:
+  - 최신 관측(현재 시각/상태 정보)
+  - VLA 기본 동작 블록 예측(base action)
+  - 위치 인코딩 특징(기본 동작의 블록 내 인덱스 식별)
+  - 기본 정책의 중간 특징
+  - 출력: 기본 동작에 중첩되는 단계별 수정량(per-step correction)
+- **설계 장점**:
+  - 기본 VLA 모델을 재학습할 필요 없음(플러그인 메커니즘)
+  - 비동기 실행 방식(예: RTC)과 직교적으로 호환
+  - 수정 헤드의 계산 비용이 매우 낮음(대형 VLA 모델 추론에 비해 무시 가능)
+
+### 실험 설정
+- **벤치마크**:
+  - Kinetix 동적 작업 스위트(12개 작업, 실시간 상호작용 중심)
+  - LIBERO Spatial(공간 일반화 중심)
+- **비교 기준선**: Real Time Chunking (RTC) 비동기 실행 방식
+- **평가 지표**: 성공률(%)
+
+### 주요 결과
+- **지연 시나리오**:
+  - Kinetix: A2C2가 RTC보다 23퍼센트 포인트 향상(+23% point)
+  - LIBERO Spatial: 7퍼센트 포인트 향상(+7% point)
+- **제로 지연 시나리오**:
+  - 주입 지연이 없어도 A2C2는 긴 시간 영역 작업에서 견고성을 향상
+- **효율성**: 수정 헤드의 추론 시간이 VLA 모델의 주요 추론보다 훨씬 짧아 실제 배포에서 거의 추가 지연이 없음
+
+### 결론
+A2C2는 플러그 앤 플레이 모듈로서 동작 블록 정책의 실시간 제어에서의 반응 지연 문제를 효과적으로 해결하며, 기본 모델의 능력을 유지하면서 폐루프 응답을 복원하여 고용량 블록 정책의 실시간 배포를 위한 실용적인 솔루션을 제공합니다.

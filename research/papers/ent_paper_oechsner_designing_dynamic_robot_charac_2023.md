@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.05219v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.05219v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (456 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,21 @@ Socially Assistive Robots navigate highly sensitive environments, which place hi
 ## Content
 Socially Assistive Robots navigate highly sensitive environments, which place high demands on safety and communication with users. The reasoning behind an SAR's actions must be transparent at any time to earn users' trust and acceptance. Although different communication modalities have been extensively studied, there is a lack of long-term studies investigating changes in users' communication needs over time. Considering two decades of research in Human-Robot Communication, we formulate the need to design dynamic robot personalities to unveil the full potential of SARs.
 
-## 개요
-사회적 보조 로봇(Socially Assistive Robots)은 매우 민감한 환경에서 작동하며, 이는 사용자와의 안전 및 의사소통에 높은 요구를 부과합니다. SAR의 행동 뒤에 있는 추론은 사용자의 신뢰와 수용을 얻기 위해 항상 투명해야 합니다. 다양한 의사소통 방식이 광범위하게 연구되었지만, 시간이 지남에 따라 사용자의 의사소통 요구 변화를 조사한 장기 연구는 부족합니다. 인간-로봇 의사소통(Human-Robot Communication)에 대한 20년간의 연구를 고려하여, 우리는 SAR의 완전한 잠재력을 발휘하기 위해 동적 로봇 성격을 설계할 필요성을 공식화합니다.
-
-## 핵심 내용
-사회적 보조 로봇은 매우 민감한 환경에서 작동하며, 이는 사용자와의 안전 및 의사소통에 높은 요구를 부과합니다. SAR의 행동 뒤에 있는 추론은 사용자의 신뢰와 수용을 얻기 위해 항상 투명해야 합니다. 다양한 의사소통 방식이 광범위하게 연구되었지만, 시간이 지남에 따라 사용자의 의사소통 요구 변화를 조사한 장기 연구는 부족합니다. 인간-로봇 의사소통에 대한 20년간의 연구를 고려하여, 우리는 SAR의 완전한 잠재력을 발휘하기 위해 동적 로봇 성격을 설계할 필요성을 공식화합니다.
-
 ## 参考
 - http://arxiv.org/abs/2303.05219v1
+
+## 개요
+사회적 보조 로봇(SAR)은 고도로 민감한 환경에서 작동하며, 안전성과 사용자 통신에 높은 요구 사항을 제기합니다. 논문은 다양한 통신 양식이 광범위하게 연구되었지만, 시간에 따른 사용자 통신 요구 변화를 조사한 장기 연구는 부족하다고 지적합니다. 20년간의 인간-로봇 통신 연구를 바탕으로, 저자는 동적 로봇 성격을 설계하여 SAR의 전체 잠재력을 발휘할 것을 주장합니다.
+
+## 핵심 내용
+### 핵심 문제
+- SAR은 민감한 환경에서 작동하며, 사용자 신뢰와 수용을 얻기 위해 행동 추론이 항상 투명해야 합니다.
+- 기존 연구는 주로 다양한 통신 양식(예: 음성, 제스처, 표정)에 초점을 맞추었지만, 시간에 따른 사용자 통신 요구 변화를 밝히는 장기 연구는 부족합니다.
+
+### 동적 성격 설계
+- 20년간의 인간-로봇 통신 연구를 바탕으로, 논문은 동적 성격 개념을 제안합니다: 초기 단계에서는 투명하고 외향적인 '상견' 성격을 채택하여 초기 신뢰를 구축하고, 이후 더 온화하고 습관화된 성격으로 전환하여 장기적 상호 작용을 유지합니다.
+- 이러한 동적 조정은 단기 수용과 장기 신뢰를 균형 있게 유지하여, 성격이 한결같아 사용자가 지루함이나 불편함을 느끼는 것을 방지하는 것을 목표로 합니다.
+
+### 연구 의의
+- 동적 성격 설계는 노인 돌봄, 재활 훈련과 같은 장기 보조 시나리오에서 SAR의 전체 잠재력을 발휘할 것으로 기대됩니다.
+- 논문은 향후 연구에서 동적 성격이 사용자 신뢰, 수용도 및 상호 작용 품질에 미치는 영향을 체계적으로 평가해야 한다고 강조합니다.

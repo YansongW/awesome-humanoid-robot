@@ -35,7 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (577 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -63,9 +64,6 @@ NVIDIA Research 团队在机器人抓取、自动驾驶和智能体训练三个�
 - 采用分布式强化学习算法，训练速度相比单智能体方法提升了 40 倍
 - 在机器人导航任务中，从仿真到真实环境的迁移成功率达到了 85%
 
-## Overview
-What makes a robot gripper useful isn’t that it can pick up one object — it’s that it can pick up the next one, and the one after that, with a tool it’s never held before. What makes an autonomous vehicle system safe isn’t just that it can reason through a situation — it’s that [&#8230;]
-
 ## 参考
 - https://blogs.nvidia.com/blog/cvpr-research-grasping-driving-agent-training/
 
@@ -87,3 +85,22 @@ NVIDIA Research 팀은 로봇 그리핑, 자율 주행 및 에이전트 훈련 �
 - NVIDIA Omniverse 플랫폼에서 5000개의 에이전트를 동시에 훈련 지원
 - 분산 강화 학습 알고리즘을 채택하여 훈련 속도가 단일 에이전트 방식에 비해 40배 향상
 - 로봇 내비게이션 작업에서 시뮬레이션에서 실제 환경으로의 전환 성공률이 85%에 도달
+
+## Overview
+The NVIDIA Research team has made significant progress in three areas: robotic grasping, autonomous driving, and agent training. In robotics, they developed a general grasping technique that enables robotic hands to grasp never-before-seen tools and continuously manipulate multiple objects. In autonomous driving, the new system not only reasons about the current scene but also predicts multiple future possibilities, significantly enhancing safety. Additionally, a large-scale agent training framework allows for the simultaneous training of thousands of agents in complex environments, accelerating the transition from simulation to reality.
+
+## Content
+### General Robotic Grasping Technology
+- The core innovation lies in enabling robots to generalize to tools and objects they have never encountered, achieving continuous grasping operations
+- The system integrates multimodal perception and was trained on over 1 million grasping attempts in simulation
+- When tested on real robot platforms, the grasping success rate for unknown objects reached 92%
+
+### Autonomous Driving Safety Reasoning System
+- The new architecture not only processes the current traffic scene but also generates multiple future trajectory predictions simultaneously
+- It employs a causal reasoning model that proactively reduces speed and replans paths when encountering rare scenarios
+- Testing on the nuScenes dataset showed a 37% reduction in collision rate while maintaining 98% of normal driving efficiency
+
+### Large-Scale Agent Training Framework
+- Supports the simultaneous training of 5,000 agents on the NVIDIA Omniverse platform
+- Utilizes distributed reinforcement learning algorithms, achieving a 40x training speedup compared to single-agent methods
+- In robot navigation tasks, the success rate of transferring from simulation to real environments reached 85%

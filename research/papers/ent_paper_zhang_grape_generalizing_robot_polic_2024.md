@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.19309v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.19309v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (934 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,29 @@ GRAPE 通过偏好对齐有效解决了 VLA 模型泛化性差和难以适应多
 ## Overview
 Despite the recent advancements of vision-language-action (VLA) models on a variety of robotics tasks, they suffer from critical issues such as poor generalizability to unseen tasks, due to their reliance on behavior cloning exclusively from successful rollouts. Furthermore, they are typically fine-tuned to replicate demonstrations collected by experts under different settings, thus introducing distribution bias and limiting their adaptability to diverse manipulation objectives, such as efficiency, safety, and task completion. To bridge this gap, we introduce GRAPE: Generalizing Robot Policy via Preference Alignment. Specifically, GRAPE aligns VLAs on a trajectory level and implicitly models reward from both successful and failure trials to boost generalizability to diverse tasks. Moreover, GRAPE breaks down complex manipulation tasks to independent stages and automatically guides preference modeling through customized spatiotemporal constraints with keypoints proposed by a large vision-language model. Notably, these constraints are flexible and can be customized to align the model with varying objectives, such as safety, efficiency, or task success. We evaluate GRAPE across a diverse array of tasks in both real-world and simulated environments. Experimental results demonstrate that GRAPE enhances the performance of state-of-the-art VLA models, increasing success rates on in-domain and unseen manipulation tasks by 51.79% and 58.20%, respectively. Additionally, GRAPE can be aligned with various objectives, such as safety and efficiency, reducing collision rates by 37.44% and rollout step-length by 11.15%, respectively. All code, models, and data are available at https://grape-vla.github.io/
 
-## 개요
-최근 다양한 로봇 작업에서 시각-언어-행동(VLA) 모델의 발전이 이루어졌음에도 불구하고, 이들은 성공적인 롤아웃에서만 행동 복제에 의존하기 때문에 보지 못한 작업에 대한 일반화 능력이 부족하다는 심각한 문제를 겪고 있습니다. 또한, 일반적으로 다른 환경에서 전문가가 수집한 시연을 복제하도록 미세 조정되어 분포 편향을 초래하고 효율성, 안전성, 작업 완료와 같은 다양한 조작 목표에 대한 적응성을 제한합니다. 이러한 격차를 해소하기 위해 우리는 GRAPE: 선호도 정렬을 통한 로봇 정책 일반화를 소개합니다. 구체적으로, GRAPE는 궤적 수준에서 VLA를 정렬하고 성공 및 실패 시도 모두에서 보상을 암시적으로 모델링하여 다양한 작업에 대한 일반화 능력을 향상시킵니다. 또한, GRAPE는 복잡한 조작 작업을 독립적인 단계로 분해하고 대규모 시각-언어 모델이 제안한 키포인트를 사용자 정의 시공간 제약 조건을 통해 자동으로 선호도 모델링을 안내합니다. 특히, 이러한 제약 조건은 유연하며 안전성, 효율성 또는 작업 성공과 같은 다양한 목표에 맞게 모델을 정렬하도록 사용자 정의할 수 있습니다. 우리는 실제 환경과 시뮬레이션 환경 모두에서 다양한 작업에 걸쳐 GRAPE를 평가합니다. 실험 결과는 GRAPE가 최첨단 VLA 모델의 성능을 향상시켜 도메인 내 및 보지 못한 조작 작업에서 성공률을 각각 51.79% 및 58.20% 증가시킴을 보여줍니다. 또한, GRAPE는 안전성 및 효율성과 같은 다양한 목표에 정렬될 수 있어 충돌률을 37.44%, 롤아웃 단계 길이를 11.15% 각각 감소시킵니다. 모든 코드, 모델 및 데이터는 https://grape-vla.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-최근 다양한 로봇 작업에서 시각-언어-행동(VLA) 모델의 발전이 이루어졌음에도 불구하고, 이들은 성공적인 롤아웃에서만 행동 복제에 의존하기 때문에 보지 못한 작업에 대한 일반화 능력이 부족하다는 심각한 문제를 겪고 있습니다. 또한, 일반적으로 다른 환경에서 전문가가 수집한 시연을 복제하도록 미세 조정되어 분포 편향을 초래하고 효율성, 안전성, 작업 완료와 같은 다양한 조작 목표에 대한 적응성을 제한합니다. 이러한 격차를 해소하기 위해 우리는 GRAPE: 선호도 정렬을 통한 로봇 정책 일반화를 소개합니다. 구체적으로, GRAPE는 궤적 수준에서 VLA를 정렬하고 성공 및 실패 시도 모두에서 보상을 암시적으로 모델링하여 다양한 작업에 대한 일반화 능력을 향상시킵니다. 또한, GRAPE는 복잡한 조작 작업을 독립적인 단계로 분해하고 대규모 시각-언어 모델이 제안한 키포인트를 사용자 정의 시공간 제약 조건을 통해 자동으로 선호도 모델링을 안내합니다. 특히, 이러한 제약 조건은 유연하며 안전성, 효율성 또는 작업 성공과 같은 다양한 목표에 맞게 모델을 정렬하도록 사용자 정의할 수 있습니다. 우리는 실제 환경과 시뮬레이션 환경 모두에서 다양한 작업에 걸쳐 GRAPE를 평가합니다. 실험 결과는 GRAPE가 최첨단 VLA 모델의 성능을 향상시켜 도메인 내 및 보지 못한 조작 작업에서 성공률을 각각 51.79% 및 58.20% 증가시킴을 보여줍니다. 또한, GRAPE는 안전성 및 효율성과 같은 다양한 목표에 정렬될 수 있어 충돌률을 37.44%, 롤아웃 단계 길이를 11.15% 각각 감소시킵니다. 모든 코드, 모델 및 데이터는 https://grape-vla.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.19309v2
+
+## 개요
+GRAPE는 기존의 비전-언어-행동 모델이 성공 궤적만을 사용한 행동 복제에 의존하여 일반화 성능이 낮고 다양한 조작 목표에 적응하기 어려운 문제를 해결하기 위해, 선호도 정렬 기반의 범용 로봇 정책을 제안한다. 이 방법은 궤적 수준에서 정렬을 수행하며, 성공 및 실패 시도를 동시에 활용하여 보상 함수를 암시적으로 학습함으로써 다양한 작업에 대한 모델의 일반화 능력을 강화한다. GRAPE는 복잡한 조작 작업을 독립적인 단계로 분해하고, 대규모 비전-언어 모델이 제안한 키포인트를 활용하여 사용자 정의 시공간 제약 조건을 통해 선호도 모델링을 자동으로 유도한다. 이러한 제약 조건은 안전, 효율성 또는 작업 성공과 같은 다양한 목표에 맞춰 유연하게 조정할 수 있다. 실제 및 시뮬레이션 환경에서의 광범위한 실험 결과, GRAPE는 기존 최고 수준의 VLA 모델 성능을 크게 향상시켜, 도메인 내 및 미지의 조작 작업에서 성공률을 각각 51.79% 및 58.20% 향상시키고, 충돌률을 37.44% 낮추며, 궤적 길이를 11.15% 단축했다.
+
+## 핵심 내용
+### 방법
+- **선호도 정렬**: GRAPE는 성공 궤적에만 의존하지 않고 궤적 수준에서 선호도 정렬을 수행한다. 보상 함수를 암시적으로 모델링하여 성공 및 실패 시도에서 동시에 학습함으로써 다양한 작업에 대한 일반화 능력을 향상시킨다.
+- **작업 분해 및 제약 조건**: 복잡한 조작 작업은 독립적인 단계로 분해된다. 대규모 비전-언어 모델(예: GPT-4V)이 제안한 키포인트를 활용하여 사용자 정의 시공간 제약 조건을 자동으로 생성하고, 이를 통해 선호도 모델링을 유도한다. 이러한 제약 조건은 안전, 효율성, 작업 성공과 같은 다양한 목표에 맞춰 유연하게 조정할 수 있다.
+
+### 아키텍처
+- 기존의 비전-언어-행동 모델(VLA) 아키텍처를 기반으로, 선호도 정렬 모듈을 통해 확장된다. 이 모듈은 훈련 과정에서 성공 및 실패 궤적을 동시에 고려하여 정책의 일반화 성능을 최적화한다.
+
+### 실험 설정
+- **환경**: 실제 세계 및 시뮬레이션 환경에서 평가되며, 다양한 조작 작업(예: 집기, 놓기, 조립 등)을 포함한다.
+- **기준 모델**: 현재 최고 수준의 VLA 모델(예: RT-2, Octo)과 비교한다.
+- **평가 지표**: 성공률, 충돌률, 궤적 길이.
+
+### 주요 수치
+- **성공률 향상**: 도메인 내 작업에서 51.79% 향상, 미지의 작업에서 58.20% 향상.
+- **안전 정렬**: 충돌률 37.44% 감소.
+- **효율성 정렬**: 궤적 길이 11.15% 단축.
+
+### 결론
+GRAPE는 선호도 정렬을 통해 VLA 모델의 일반화 성능 저하 및 다양한 목표 적응 문제를 효과적으로 해결한다. 작업 분해 및 사용자 정의 제약 조건 메커니즘은 로봇 정책의 유연한 정렬을 위한 새로운 패러다임을 제시한다. 모든 코드, 모델 및 데이터는 오픈소스로 공개되었다.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.09170v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.09170v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (745 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,24 @@ ZeroWBC 采用生成-跟踪两阶段框架：
 ## Overview
 Achieving versatile and natural whole-body humanoid interaction control remains challenging due to the high cost of whole-body teleoperation data. We present ZeroWBC, a teleoperation-free framework that learns humanoid whole-body interaction from human egocentric videos paired with synchronized whole-body motion and text annotations. ZeroWBC adopts a generation-then-tracking formulation to tackle the static scene whole-body interaction control problem. Given an initial egocentric image and a language instruction, a fine-tuned Vision-Language Model generates future human whole-body motion tokens, which are decoded into continuous motions and retargeted to the humanoid. The resulting reference motions, together with root and key body-part trajectories, are then executed by a general interactive motion tracking policy. To improve interaction performance, we introduce an interaction-oriented tracking reward that prioritizes global root and key body-part trajectory alignment while preserving natural whole-body motion. Experiments on the Unitree G1 humanoid robot show that ZeroWBC enables diverse scene-aware behaviors without robot teleoperation demonstrations. These results suggest a scalable paradigm for learning natural humanoid whole-body interaction from human egocentric data.
 
-## 개요
-다재다능하고 자연스러운 전신 휴머노이드 상호작용 제어는 전신 원격 조작 데이터의 높은 비용으로 인해 여전히 어려운 과제입니다. 우리는 인간의 자기중심적 영상과 동기화된 전신 움직임 및 텍스트 주석을 활용하여 휴머노이드 전신 상호작용을 학습하는 원격 조작 없는 프레임워크인 ZeroWBC를 제시합니다. ZeroWBC는 생성 후 추적(generation-then-tracking) 방식을 채택하여 정적 장면 전신 상호작용 제어 문제를 해결합니다. 초기 자기중심적 이미지와 언어 명령이 주어지면, 미세 조정된 Vision-Language Model이 미래의 인간 전신 움직임 토큰을 생성하고, 이를 연속적인 움직임으로 디코딩하여 휴머노이드에 리타겟팅합니다. 결과적으로 생성된 참조 움직임과 루트 및 주요 신체 부위 궤적은 일반적인 상호작용 움직임 추적 정책에 의해 실행됩니다. 상호작용 성능을 향상시키기 위해, 자연스러운 전신 움직임을 유지하면서 전역 루트 및 주요 신체 부위 궤적 정렬을 우선시하는 상호작용 지향 추적 보상을 도입합니다. Unitree G1 휴머노이드 로봇 실험 결과, ZeroWBC는 로봇 원격 조작 시연 없이도 다양한 장면 인식 행동을 가능하게 함을 보여줍니다. 이러한 결과는 인간의 자기중심적 데이터로부터 자연스러운 휴머노이드 전신 상호작용을 학습하기 위한 확장 가능한 패러다임을 시사합니다.
-
-## 핵심 내용
-다재다능하고 자연스러운 전신 휴머노이드 상호작용 제어는 전신 원격 조작 데이터의 높은 비용으로 인해 여전히 어려운 과제입니다. 우리는 인간의 자기중심적 영상과 동기화된 전신 움직임 및 텍스트 주석을 활용하여 휴머노이드 전신 상호작용을 학습하는 원격 조작 없는 프레임워크인 ZeroWBC를 제시합니다. ZeroWBC는 생성 후 추적(generation-then-tracking) 방식을 채택하여 정적 장면 전신 상호작용 제어 문제를 해결합니다. 초기 자기중심적 이미지와 언어 명령이 주어지면, 미세 조정된 Vision-Language Model이 미래의 인간 전신 움직임 토큰을 생성하고, 이를 연속적인 움직임으로 디코딩하여 휴머노이드에 리타겟팅합니다. 결과적으로 생성된 참조 움직임과 루트 및 주요 신체 부위 궤적은 일반적인 상호작용 움직임 추적 정책에 의해 실행됩니다. 상호작용 성능을 향상시키기 위해, 자연스러운 전신 움직임을 유지하면서 전역 루트 및 주요 신체 부위 궤적 정렬을 우선시하는 상호작용 지향 추적 보상을 도입합니다. Unitree G1 휴머노이드 로봇 실험 결과, ZeroWBC는 로봇 원격 조작 시연 없이도 다양한 장면 인식 행동을 가능하게 함을 보여줍니다. 이러한 결과는 인간의 자기중심적 데이터로부터 자연스러운 휴머노이드 전신 상호작용을 학습하기 위한 확장 가능한 패러다임을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.09170v3
+
+## 개요
+ZeroWBC는 휴머노이드 로봇의 전신 상호작용 제어에서 원격 조작 데이터의 높은 비용 문제를 해결하는 것을 목표로 합니다. 이 프레임워크는 생성-추적 2단계 전략을 채택합니다: 먼저, 초기 1인칭 이미지와 언어 명령을 기반으로 미세 조정된 비전-언어 모델이 미래 인체 전신 운동 토큰을 생성하고, 이를 디코딩하여 휴머노이드 로봇으로 리타게팅합니다. 이후, 범용 상호작용 운동 추적 정책이 생성된 참조 운동 및 루트와 주요 신체 부위 궤적을 실행합니다. 상호작용 성능을 향상시키기 위해, 연구는 상호작용 지향 추적 보상을 도입하여 자연스러운 전신 운동을 유지하면서 전역 루트와 주요 신체 부위 궤적 정렬을 우선시합니다. 실험은 Unitree G1 휴머노이드 로봇에서 수행되었으며, 로봇 원격 조작 데모 없이 다양한 장면 인식 행동을 구현할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ZeroWBC는 생성-추적 2단계 프레임워크를 채택합니다:
+- **생성 단계**: 초기 1인칭 이미지와 언어 명령을 입력으로 받아, 미세 조정된 Vision-Language Model이 미래 인체 전신 운동 토큰을 생성합니다. 이러한 토큰은 연속 운동으로 디코딩되어 휴머노이드 로봇으로 리타게팅되며, 참조 운동 및 루트와 주요 신체 부위 궤적을 생성합니다.
+- **추적 단계**: 범용 상호작용 운동 추적 정책이 생성된 참조 운동을 실행합니다. 이 정책은 강화 학습을 통해 훈련되며, 상호작용 지향 추적 보상을 도입하여 전역 루트와 주요 신체 부위 궤적 정렬을 우선시하면서 전신 운동의 자연스러움을 유지합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: Unitree G1 휴머노이드 로봇.
+- **데이터 소스**: 동기화된 전신 운동 데이터와 텍스트 주석이 포함된 인간 1인칭 비디오.
+- **작업 시나리오**: 정적 장면에서의 전신 상호작용 제어, 예: 파지, 조작 등.
+
+### 주요 결과
+- ZeroWBC는 로봇 원격 조작 데모 없이 다양한 장면 인식 행동을 구현할 수 있습니다.
+- 상호작용 지향 추적 보상은 특히 전역 루트와 주요 신체 부위 궤적 정렬에서 상호작용 성능을 크게 향상시킵니다.
+- 실험은 이 프레임워크가 인간 1인칭 데이터에서 자연스러운 휴머노이드 로봇 전신 상호작용을 학습하기 위한 확장 가능한 패러다임을 제공함을 보여줍니다.

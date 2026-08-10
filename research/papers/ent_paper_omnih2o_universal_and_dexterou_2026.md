@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.08858v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.08858v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (845 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,37 @@ OmniH2O 系统通过将人体运动学姿态作为通用控制接口，实现了
 ## Overview
 We present OmniH2O (Omni Human-to-Humanoid), a learning-based system for whole-body humanoid teleoperation and autonomy. Using kinematic pose as a universal control interface, OmniH2O enables various ways for a human to control a full-sized humanoid with dexterous hands, including using real-time teleoperation through VR headset, verbal instruction, and RGB camera. OmniH2O also enables full autonomy by learning from teleoperated demonstrations or integrating with frontier models such as GPT-4. OmniH2O demonstrates versatility and dexterity in various real-world whole-body tasks through teleoperation or autonomy, such as playing multiple sports, moving and manipulating objects, and interacting with humans. We develop an RL-based sim-to-real pipeline, which involves large-scale retargeting and augmentation of human motion datasets, learning a real-world deployable policy with sparse sensor input by imitating a privileged teacher policy, and reward designs to enhance robustness and stability. We release the first humanoid whole-body control dataset, OmniH2O-6, containing six everyday tasks, and demonstrate humanoid whole-body skill learning from teleoperated datasets.
 
-## 개요
-우리는 OmniH2O(Omni Human-to-Humanoid)를 제시합니다. 이는 학습 기반의 전신 휴머노이드 원격 조작 및 자율 시스템입니다. 운동학적 포즈를 범용 제어 인터페이스로 사용하여, OmniH2O는 인간이 정교한 손을 가진 전신 휴머노이드를 제어할 수 있는 다양한 방법을 제공합니다. 여기에는 VR 헤드셋을 통한 실시간 원격 조작, 음성 명령, RGB 카메라가 포함됩니다. 또한 OmniH2O는 원격 조작 데모를 학습하거나 GPT-4와 같은 최첨단 모델과 통합하여 완전한 자율성을 가능하게 합니다. OmniH2O는 여러 스포츠 수행, 물체 이동 및 조작, 인간과의 상호작용 등 다양한 실제 전신 작업에서 원격 조작 또는 자율성을 통해 다재다능함과 정교함을 보여줍니다. 우리는 RL 기반의 시뮬레이션-실제 파이프라인을 개발했습니다. 여기에는 인간 동작 데이터셋의 대규모 리타겟팅 및 증강, 특권 교사 정책을 모방하여 희소 센서 입력으로 실제 배포 가능한 정책 학습, 강건성과 안정성을 향상시키기 위한 보상 설계가 포함됩니다. 우리는 6가지 일상 작업을 포함한 최초의 휴머노이드 전신 제어 데이터셋인 OmniH2O-6을 공개하고, 원격 조작 데이터셋으로부터 휴머노이드 전신 기술 학습을 시연합니다.
-
-## 핵심 내용
-우리는 OmniH2O(Omni Human-to-Humanoid)를 제시합니다. 이는 학습 기반의 전신 휴머노이드 원격 조작 및 자율 시스템입니다. 운동학적 포즈를 범용 제어 인터페이스로 사용하여, OmniH2O는 인간이 정교한 손을 가진 전신 휴머노이드를 제어할 수 있는 다양한 방법을 제공합니다. 여기에는 VR 헤드셋을 통한 실시간 원격 조작, 음성 명령, RGB 카메라가 포함됩니다. 또한 OmniH2O는 원격 조작 데모를 학습하거나 GPT-4와 같은 최첨단 모델과 통합하여 완전한 자율성을 가능하게 합니다. OmniH2O는 여러 스포츠 수행, 물체 이동 및 조작, 인간과의 상호작용 등 다양한 실제 전신 작업에서 원격 조작 또는 자율성을 통해 다재다능함과 정교함을 보여줍니다. 우리는 RL 기반의 시뮬레이션-실제 파이프라인을 개발했습니다. 여기에는 인간 동작 데이터셋의 대규모 리타겟팅 및 증강, 특권 교사 정책을 모방하여 희소 센서 입력으로 실제 배포 가능한 정책 학습, 강건성과 안정성을 향상시키기 위한 보상 설계가 포함됩니다. 우리는 6가지 일상 작업을 포함한 최초의 휴머노이드 전신 제어 데이터셋인 OmniH2O-6을 공개하고, 원격 조작 데이터셋으로부터 휴머노이드 전신 기술 학습을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2406.08858v1
+
+## 개요
+OmniH2O 시스템은 인체 운동학적 자세를 범용 제어 인터페이스로 사용하여, VR 헤드셋 실시간 원격 조작, 음성 명령, RGB 카메라 시각 제어를 포함한 다양한 방식으로 인간이 전신 휴머노이드 로봇을 제어할 수 있게 합니다. 이 시스템은 실시간 원격 조작을 지원할 뿐만 아니라, 원격 조작 시연 데이터 학습 또는 GPT-4와 같은 모델 통합을 통해 완전 자율 실행도 가능합니다. 실제 세계 작업에서 OmniH2O는 다양한 운동, 물체 조작 및 인간-로봇 상호작용을 수행하는 범용성과 기민함을 보여줍니다. 연구팀은 강화 학습 기반의 sim-to-real 파이프라인을 개발하여, 대규모 인체 운동 데이터셋의 리타게팅 및 증강, 특권 교사 정책을 모방하는 희소 센서 입력 정책 학습, 그리고 견고성과 안정성을 향상시키는 보상 설계를 통해 시뮬레이션에서 실제 세계로의 효과적인 전이를 구현했습니다. 또한, 팀은 여섯 가지 일상 작업을 포함한 최초의 휴머노이드 로봇 전신 제어 데이터셋인 OmniH2O-6을 공개했습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **범용 제어 인터페이스**: 인체 운동학적 자세를 통합 제어 신호로 사용하며, 세 가지 입력 방식을 지원합니다:
+  - VR 헤드셋 실시간 원격 조작
+  - 음성 명령 제어
+  - RGB 카메라 시각 제어
+- **자율 능력**: 두 가지 경로를 통해 구현됩니다:
+  - 원격 조작 시연 데이터 학습
+  - GPT-4와 같은 최첨단 모델 통합
+
+### 핵심 방법
+- **Sim-to-Real 파이프라인**:
+  - 대규모 인체 운동 데이터셋의 리타게팅 및 증강
+  - 특권 교사 정책을 모방하여 희소 센서 입력 기반의 실제 세계 배포 가능 정책 학습
+  - 로봇 견고성과 안정성을 강화하기 위한 특정 보상 함수 설계
+
+### 실험 설정 및 결과
+- **작업 범위**: 실제 세계에서 다양한 전신 작업을 수행하며, 다음을 포함합니다:
+  - 여러 스포츠 활동 (예: 공 치기)
+  - 물체 이동 및 조작
+  - 인간-로봇 상호작용
+- **데이터셋**: 여섯 가지 일상 작업(예: 잡기, 놓기 등)을 포함한 최초의 전신 제어 데이터셋 OmniH2O-6 공개
+- **기술 학습**: 원격 조작 데이터셋에서 휴머노이드 로봇 전신 기술 학습에 성공
+
+### 주요 수치
+- 세 가지 제어 방식 지원 (VR, 음성, RGB 카메라)
+- 데이터셋은 여섯 가지 일상 작업 포함
+- 시스템은 다양한 실제 세계 작업에서 범용성과 기민함을 검증함

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.22777v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.22777v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (881 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,33 @@ Learning robust visuomotor policies for robotic manipulation remains a challenge
 ## Content
 Learning robust visuomotor policies for robotic manipulation remains a challenge in real-world settings, where visual distractors can significantly degrade performance and safety. In this work, we propose an effective and scalable framework, Naturalistic Inpainting for Context Enhancement (NICE). Our method minimizes out-of-distribution (OOD) gap in imitation learning by increasing visual diversity through construction of new experiences using existing demonstrations. By utilizing image generative frameworks and large language models, NICE performs three editing operations, object replacement, restyling, and removal of distracting (non-target) objects. These changes preserve spatial relationships without obstructing target objects and maintain action-label consistency. Unlike previous approaches, NICE requires no additional robot data collection, simulator access, or custom model training, making it readily applicable to existing robotic datasets. Using real-world scenes, we showcase the capability of our framework in producing photo-realistic scene enhancement. For downstream tasks, we use NICE data to finetune a vision-language model (VLM) for spatial affordance prediction and a vision-language-action (VLA) policy for object manipulation. Our evaluations show that NICE successfully minimizes OOD gaps, resulting in over 20% improvement in accuracy for affordance prediction in highly cluttered scenes. For manipulation tasks, success rate increases on average by 11% when testing in environments populated with distractors in different quantities. Furthermore, we show that our method improves visual robustness, lowering target confusion by 6%, and enhances safety by reducing collision rate by 7%.
 
-## 개요
-로봇 조작을 위한 강건한 시각-운동 정책을 학습하는 것은 실제 환경에서 여전히 어려운 과제로, 시각적 방해 요소가 성능과 안전성을 크게 저하시킬 수 있습니다. 본 연구에서는 효과적이고 확장 가능한 프레임워크인 NICE(Naturalistic Inpainting for Context Enhancement)를 제안합니다. 우리의 방법은 기존 시연 데이터를 활용하여 새로운 경험을 구성함으로써 시각적 다양성을 증가시켜 모방 학습에서의 분포 외(OOD) 격차를 최소화합니다. 이미지 생성 프레임워크와 대규모 언어 모델을 활용하여 NICE는 객체 교체, 스타일 변경, 방해(비대상) 객체 제거라는 세 가지 편집 작업을 수행합니다. 이러한 변경은 공간 관계를 유지하고 대상 객체를 방해하지 않으며 행동 레이블 일관성을 유지합니다. 이전 접근 방식과 달리 NICE는 추가 로봇 데이터 수집, 시뮬레이터 접근 또는 맞춤형 모델 학습이 필요하지 않아 기존 로봇 데이터셋에 쉽게 적용할 수 있습니다. 실제 장면을 사용하여 우리의 프레임워크가 사실적인 장면 향상을 생성하는 능력을 입증합니다. 다운스트림 작업을 위해 NICE 데이터를 사용하여 공간 어포던스 예측을 위한 시각-언어 모델(VLM)과 객체 조작을 위한 시각-언어-행동(VLA) 정책을 미세 조정합니다. 평가 결과, NICE가 OOD 격차를 성공적으로 최소화하여 복잡한 장면에서 어포던스 예측 정확도가 20% 이상 향상되었습니다. 조작 작업의 경우, 다양한 양의 방해 요소가 있는 환경에서 테스트했을 때 성공률이 평균 11% 증가했습니다. 또한, 우리의 방법이 시각적 강건성을 개선하여 대상 혼동을 6% 낮추고 충돌률을 7% 감소시켜 안전성을 향상시킴을 보여줍니다.
-
-## 핵심 내용
-로봇 조작을 위한 강건한 시각-운동 정책을 학습하는 것은 실제 환경에서 여전히 어려운 과제로, 시각적 방해 요소가 성능과 안전성을 크게 저하시킬 수 있습니다. 본 연구에서는 효과적이고 확장 가능한 프레임워크인 NICE(Naturalistic Inpainting for Context Enhancement)를 제안합니다. 우리의 방법은 기존 시연 데이터를 활용하여 새로운 경험을 구성함으로써 시각적 다양성을 증가시켜 모방 학습에서의 분포 외(OOD) 격차를 최소화합니다. 이미지 생성 프레임워크와 대규모 언어 모델을 활용하여 NICE는 객체 교체, 스타일 변경, 방해(비대상) 객체 제거라는 세 가지 편집 작업을 수행합니다. 이러한 변경은 공간 관계를 유지하고 대상 객체를 방해하지 않으며 행동 레이블 일관성을 유지합니다. 이전 접근 방식과 달리 NICE는 추가 로봇 데이터 수집, 시뮬레이터 접근 또는 맞춤형 모델 학습이 필요하지 않아 기존 로봇 데이터셋에 쉽게 적용할 수 있습니다. 실제 장면을 사용하여 우리의 프레임워크가 사실적인 장면 향상을 생성하는 능력을 입증합니다. 다운스트림 작업을 위해 NICE 데이터를 사용하여 공간 어포던스 예측을 위한 시각-언어 모델(VLM)과 객체 조작을 위한 시각-언어-행동(VLA) 정책을 미세 조정합니다. 평가 결과, NICE가 OOD 격차를 성공적으로 최소화하여 복잡한 장면에서 어포던스 예측 정확도가 20% 이상 향상되었습니다. 조작 작업의 경우, 다양한 양의 방해 요소가 있는 환경에서 테스트했을 때 성공률이 평균 11% 증가했습니다. 또한, 우리의 방법이 시각적 강건성을 개선하여 대상 혼동을 6% 낮추고 충돌률을 7% 감소시켜 안전성을 향상시킴을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.22777v1
+
+## 개요
+NICE 프레임워크는 이미지 생성 모델과 대규모 언어 모델을 활용하여 로봇 시연 장면을 자연스럽게 패치함으로써 시각적 다양성을 향상시킵니다. 이는 객체 교체, 스타일 재구성, 방해물 제거의 세 가지 편집 작업을 수행하며, 이러한 작업은 공간 관계를 유지하고 대상 객체를 가리지 않으면서 동작 라벨의 일관성을 보장합니다. 기존 방법과 달리 NICE는 추가 로봇 데이터 수집, 시뮬레이터 접근 또는 맞춤형 모델 훈련이 필요 없이 기존 데이터셋에 직접 적용할 수 있습니다. 실제 장면 테스트에서 NICE는 높은 혼잡도 환경에서 공간 연관 예측 정확도를 20% 이상 향상시켰으며, 다양한 수의 방해물이 존재하는 환경에서 조작 작업 성공률을 평균 11% 향상시키고, 대상 객체 혼동률을 6% 낮추고, 충돌률을 7% 낮췄습니다.
+
+## 핵심 내용
+### 방법 개요
+NICE 프레임워크의 핵심은 기존 시연 데이터를 활용하여 이미지 생성과 대규모 언어 모델을 통해 다양한 장면 변형을 자동으로 생성함으로써 훈련 데이터의 시각적 풍부함을 향상시키는 것입니다. 구체적인 작업은 다음과 같습니다:
+- **객체 교체**: 장면 내 비대상 객체를 다른 객체로 교체하며 공간 배치를 유지합니다.
+- **스타일 재구성**: 장면의 시각적 스타일(예: 질감, 조명)을 변경하지만 객체 위치와 동작 라벨에는 영향을 미치지 않습니다.
+- **방해물 제거**: 주의를 분산시킬 수 있는 비대상 객체를 제거하여 시각적 노이즈를 줄입니다.
+
+이러한 작업은 사전 훈련된 생성 모델과 LLM을 통해 자동으로 실행되며, 수동 주석이나 추가 데이터 수집이 필요 없습니다.
+
+### 실험 설정
+- **하위 작업**: NICE 강화 데이터로 두 모델을 미세 조정합니다:
+  - 시각-언어 모델(VLM)은 공간 연관 예측(affordance prediction)에 사용됩니다.
+  - 시각-언어-행동 모델(VLA)은 객체 조작에 사용됩니다.
+- **테스트 환경**: 다양한 수의 방해물(distractors)이 포함된 실제 장면으로, 견고성을 평가합니다.
+
+### 주요 결과
+- **공간 연관 예측**: 높은 혼잡도 환경에서 NICE는 예측 정확도를 20% 이상 향상시킵니다.
+- **조작 작업**: 방해물이 존재하는 환경에서 성공률이 평균 11% 향상됩니다.
+- **견고성 및 안전성**:
+  - 대상 객체 혼동률이 6% 감소합니다.
+  - 충돌률이 7% 감소합니다.
+
+### 결론
+NICE는 저비용 데이터 증강 전략을 통해 모방 학습에서의 분포 외 차이를 효과적으로 줄이며, 추가 데이터나 모델 훈련 없이도 실제 복잡한 환경에서 로봇 조작의 견고성과 안전성을 크게 향상시키며, 높은 확장성을 제공합니다.

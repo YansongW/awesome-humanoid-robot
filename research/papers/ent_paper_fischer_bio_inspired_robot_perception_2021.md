@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2109.00097v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2109.00097v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (654 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,14 +71,45 @@ theoretical_depth:
 - 数据集（RT-GENE 和 RT-BENE）提供了标准化基准，用于比较不同方法的性能。
 - 研究强调，仿生方法在提升机器人感知能力的同时，也深化了对人类视觉系统的理解。
 
-## Overview
-My overarching research goal is to provide robots with perceptional abilities that allow interactions with humans in a human-like manner. To develop these perceptional abilities, I believe that it is useful to study the principles of the human visual system. I use these principles to develop new computer vision algorithms and validate their effectiveness in intelligent robotic systems. I am enthusiastic about this approach as it offers the dual benefit of uncovering principles inherent in the human visual system, as well as applying these principles to its artificial counterpart. Fig. 1 contains a depiction of my research.
-
-## 개요
-저의 전반적인 연구 목표는 로봇이 인간과 유사한 방식으로 상호작용할 수 있는 지각 능력을 제공하는 것입니다. 이러한 지각 능력을 개발하기 위해 인간 시각 시스템의 원리를 연구하는 것이 유용하다고 생각합니다. 저는 이러한 원리를 활용하여 새로운 컴퓨터 비전 알고리즘을 개발하고, 이를 지능형 로봇 시스템에서 효과성을 검증합니다. 이 접근 방식은 인간 시각 시스템에 내재된 원리를 발견함과 동시에 이를 인공 시각 시스템에 적용하는 이중적 이점을 제공하기 때문에 열정을 가지고 있습니다. 그림 1은 제 연구를 묘사하고 있습니다.
-
-## 핵심 내용
-저의 전반적인 연구 목표는 로봇이 인간과 유사한 방식으로 상호작용할 수 있는 지각 능력을 제공하는 것입니다. 이러한 지각 능력을 개발하기 위해 인간 시각 시스템의 원리를 연구하는 것이 유용하다고 생각합니다. 저는 이러한 원리를 활용하여 새로운 컴퓨터 비전 알고리즘을 개발하고, 이를 지능형 로봇 시스템에서 효과성을 검증합니다. 이 접근 방식은 인간 시각 시스템에 내재된 원리를 발견함과 동시에 이를 인공 시각 시스템에 적용하는 이중적 이점을 제공하기 때문에 열정을 가지고 있습니다. 그림 1은 제 연구를 묘사하고 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2109.00097v1
+
+## Overview
+This research draws inspiration from the principles of the human visual system to develop a variety of computer vision algorithms and validates their effectiveness in intelligent robotic systems. Fischer argues that by mimicking human visual mechanisms, it is possible not only to uncover their underlying principles but also to apply these principles to artificial systems, thereby enabling natural interaction between robots and humans. Specific outcomes include markerless viewpoint transformation, gaze and blink datasets, and a visual place recognition method.
+
+## Content
+### Research Objectives and Methods
+- Core objective: To provide robots with human-like perceptual capabilities, enabling them to interact with humans in a human-like manner.
+- Methodology: To study the principles of the human visual system, develop new algorithms based on these insights, and validate their performance in intelligent robotic systems.
+- Dual perspective: This approach both reveals the intrinsic mechanisms of the human visual system and applies these mechanisms to artificial vision systems.
+
+### Key Contributions
+- **Markerless Viewpoint Transformation**: Developed for the iCub humanoid robot, enabling viewpoint transformation without markers to enhance the naturalness of human-robot interaction.
+- **RT-GENE Gaze Dataset**: Used for training and evaluating gaze estimation algorithms, supporting gaze tracking in markerless scenarios.
+- **RT-BENE Blink Dataset**: Focuses on blink detection, providing a data foundation for robots to understand human non-verbal signals.
+- **Patch-NetVLAD**: A visual place recognition method that improves the robustness of robot environmental perception through local feature aggregation.
+
+### Experiments and Validation
+- All algorithms were tested on real robotic systems (e.g., iCub), confirming their effectiveness in dynamic environments.
+- The datasets (RT-GENE and RT-BENE) provide standardized benchmarks for comparing the performance of different methods.
+- The research emphasizes that bio-inspired approaches not only enhance robotic perception capabilities but also deepen the understanding of the human visual system.
+
+## 개요
+이 연구는 인간 시각 시스템의 원리를 영감으로 삼아 다양한 컴퓨터 비전 알고리즘을 개발하고, 이를 지능형 로봇 시스템에서 효과적으로 검증했습니다. Fischer는 인간의 시각 메커니즘을 모방함으로써 그 내재적 규칙을 밝힐 수 있을 뿐만 아니라, 이러한 규칙을 인공 시스템에 적용하여 로봇과 인간의 자연스러운 상호작용을 실현할 수 있다고 보았습니다. 구체적인 성과로는 마커 없는 시점 변환, 응시 및 깜빡임 데이터셋, 그리고 시각적 장소 인식 방법이 포함됩니다.
+
+## 핵심 내용
+### 연구 목표 및 방법
+- 핵심 목표: 로봇에게 인간과 같은 지각 능력을 제공하여 인간과 동일한 방식으로 상호작용할 수 있게 하는 것.
+- 방법론: 인간 시각 시스템의 원리를 연구하고, 이를 기반으로 새로운 알고리즘을 개발하여 지능형 로봇 시스템에서 효과를 검증.
+- 이중 관점: 이 방법은 인간 시각 시스템의 내재적 메커니즘을 밝히는 동시에, 이러한 메커니즘을 인공 시각 시스템에 적용할 수 있게 함.
+
+### 주요 성과
+- **마커 없는 시점 변환**: iCub 휴머노이드 로봇을 위해 개발되었으며, 마커 없이 시점 변환을 가능하게 하여 인간-로봇 상호작용의 자연성을 향상시킴.
+- **RT-GENE 응시 데이터셋**: 응시 추정 알고리즘을 훈련하고 평가하는 데 사용되며, 마커 없는 시나리오에서의 시선 추적을 지원.
+- **RT-BENE 깜빡임 데이터셋**: 깜빡임 감지에 초점을 맞추며, 로봇이 인간의 비언어적 신호를 이해하는 데 데이터 기반을 제공.
+- **Patch-NetVLAD**: 로컬 특징 집합을 통해 로봇의 환경 인식 견고성을 향상시키는 시각적 장소 인식 방법.
+
+### 실험 및 검증
+- 모든 알고리즘은 실제 로봇 시스템(예: iCub)에서 테스트되어 동적 환경에서의 효과를 검증했습니다.
+- 데이터셋(RT-GENE 및 RT-BENE)은 다양한 방법의 성능을 비교하기 위한 표준화된 기준을 제공합니다.
+- 연구는 생체 모방 접근법이 로봇의 지각 능력을 향상시키는 동시에 인간 시각 시스템에 대한 이해를 심화시킨다는 점을 강조합니다.

@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1511.03949v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1511.03949v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (728 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,30 @@ A flexible, lightweight, and highly conductive current collector is a key elemen
 ## Content
 A flexible, lightweight, and highly conductive current collector is a key element for fabricating high-performance flexible lithium-ion batteries. Here, we report a thin, lightweight, and flexible lithium-ion battery that utilizes graphite paper enhanced with nano-sized metallic layers as the current collector, LiFePO₄ and Li₄Ti₅O₁₂ as the cathode and anode materials, and a PE membrane soaked in LiPF₆ as the separator. By employing thin and flexible graphite paper as the substrate for the current collector instead of rigid and heavy metal foil, we demonstrate an ultra-thin lithium-ion battery (total thickness including encapsulation layers less than 250 μm) that is also lightweight and highly flexible.
 
-## 개요
-유연하고 가벼우며 높은 전도성을 가진 집전체는 고성능 플렉시블 리튬 이온 배터리 제조의 핵심 요소입니다. 본 연구에서는 나노 크기의 금속층으로 강화된 흑연 종이를 집전체로, LiFePO4와 Li4Ti5O12를 각각 양극 및 음극 재료로, LiPF6에 함침된 PE 분리막을 사용한 얇고 가벼우며 유연한 리튬 이온 배터리를 보고합니다. 기존의 단단하고 무거운 금속 호일 대신 얇고 유연한 흑연 종이를 집전체 기판으로 사용함으로써, 전체 두께(캡슐화 층 포함)가 250μm 미만인 초박형이면서도 가볍고 유연성이 뛰어난 리튬 이온 배터리를 구현할 수 있었습니다.
-
-## 핵심 내용
-유연하고 가벼우며 높은 전도성을 가진 집전체는 고성능 플렉시블 리튬 이온 배터리 제조의 핵심 요소입니다. 본 연구에서는 나노 크기의 금속층으로 강화된 흑연 종이를 집전체로, LiFePO4와 Li4Ti5O12를 각각 양극 및 음극 재료로, LiPF6에 함침된 PE 분리막을 사용한 얇고 가벼우며 유연한 리튬 이온 배터리를 보고합니다. 기존의 단단하고 무거운 금속 호일 대신 얇고 유연한 흑연 종이를 집전체 기판으로 사용함으로써, 전체 두께(캡슐화 층 포함)가 250μm 미만인 초박형이면서도 가볍고 유연성이 뛰어난 리튬 이온 배터리를 구현할 수 있었습니다.
-
 ## 参考
 - http://arxiv.org/abs/1511.03949v1
+
+## 개요
+이 연구는 유연한 리튬이온 배터리의 고전도성 집전체 요구를 해결하기 위해, 흑연 종이를 기판으로 하고 표면에 나노급 금속층(알루미늄 또는 구리)을 증착한 새로운 집전체 방안을 제안한다. 기존의 강성 금속 호일을 대체함으로써, 배터리 총 두께(패키징 포함)를 250마이크로미터 이내로 제어할 수 있으며, 경량화와 고유연성을 동시에 확보한다. 전극 재료로는 LiFePO4와 Li4Ti5O12를 사용하고, 분리막은 LiPF6가 함침된 폴리에틸렌 막으로, 전체 구조는 초박형 설계를 구현한다.
+
+## 핵심 내용
+### 방법
+- **집전체 설계**: 유연한 흑연 종이를 기판으로 하고, 물리 기상 증착(PVD)을 통해 표면에 나노급 알루미늄 또는 구리 층을 덮어 고전도성 복합 구조를 형성한다.
+- **전극 재료**: 양극은 LiFePO4, 음극은 Li4Ti5O12를 사용하며, 모두 성숙된 리튬이온 배터리 활성 물질이다.
+- **분리막 및 전해질**: 폴리에틸렌(PE) 분리막을 사용하고, LiPF6 전해질을 함침한다.
+
+### 구조
+- **배터리 구조**: 양극-분리막-음극 적층 패키징으로, 총 두께(패키징 층 포함)는 250 μm 미만이다.
+- **유연성 구현**: 흑연 종이의 유연성과 나노 금속 층의 연성이 함께 작용하여, 배터리가 구부러진 상태에서도 전기화학적 안정성을 보장한다.
+
+### 실험 설정
+- **두께 제어**: 흑연 종이 두께(<100 μm)와 금속 코팅 두께(나노급)를 최적화하여 전체 초박형화를 실현한다.
+- **비교 대상**: 기존 리튬이온 배터리는 강성 금속 호일(예: 구리 호일, 알루미늄 호일)을 집전체로 사용하며, 두께는 일반적으로 >500 μm이고 무게도 더 크다.
+
+### 주요 수치
+- **총 두께**: 패키징 층 포함 <250 μm.
+- **집전체 재료**: 흑연 종이 + 나노 알루미늄/구리 코팅.
+- **활성 재료**: LiFePO4(양극), Li4Ti5O12(음극).
+
+### 결론
+이 설계는 흑연 종이 기반 집전체로 금속 호일을 대체하여, 높은 전도성을 유지하면서도 배터리 두께를 기존 방안의 50% 미만으로 줄이고, 경량화와 유연성을 구현하여 웨어러블 기기 등 시나리오에 실용적인 초박형 전원 솔루션을 제공한다.

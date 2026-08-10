@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.10306v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.10306v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (611 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,25 @@ sources:
 ## Overview
 Stabilizing unsecured payloads against the inherent oscillations of dynamic bipedal locomotion remains a critical engineering bottleneck for humanoids in unstructured environments. To solve this, we introduce ReST-RL, a hierarchical reinforcement learning architecture that explicitly decouples locomotion from payload stabilization, evaluated via the SteadyTray benchmark. Rather than relying on monolithic end-to-end learning, our framework integrates a robust base locomotion policy with a dynamic residual module engineered to actively cancel gait-induced perturbations at the end-effector. This architectural separation ensures steady tray transport without degrading the underlying bipedal stability. In simulation, the residual design significantly outperforms end-to-end baselines in gait smoothness and orientation accuracy, achieving a 96.9% success rate in variable velocity tracking and 74.5% robustness against external force disturbances. Successfully deployed on the Unitree G1 humanoid hardware, this modular approach demonstrates highly reliable zero-shot sim-to-real generalization across various objects and external force disturbances.
 
-## 개요
-동적 이족 보행의 고유한 진동에 대해 고정되지 않은 탑재물을 안정화하는 것은 비정형 환경에서 휴머노이드 로봇의 핵심적인 공학적 병목 현상으로 남아 있습니다. 이를 해결하기 위해, 우리는 SteadyTray 벤치마크를 통해 평가된, 보행과 탑재물 안정화를 명시적으로 분리하는 계층적 강화 학습 아키텍처인 ReST-RL을 소개합니다. 단일 종단 간 학습에 의존하는 대신, 우리의 프레임워크는 강력한 기본 보행 정책과 말단 효과기에서 보행 유발 섭동을 능동적으로 상쇄하도록 설계된 동적 잔차 모듈을 통합합니다. 이러한 아키텍처 분리는 기본적인 이족 안정성을 저하시키지 않으면서 안정적인 트레이 운반을 보장합니다. 시뮬레이션에서 잔차 설계는 보행 부드러움과 방향 정확도에서 종단 간 기준선을 크게 능가하며, 가변 속도 추적에서 96.9%의 성공률과 외부 힘 섭동에 대해 74.5%의 강건성을 달성합니다. Unitree G1 휴머노이드 하드웨어에 성공적으로 배치된 이 모듈식 접근 방식은 다양한 물체와 외부 힘 섭동에 걸쳐 높은 신뢰성의 제로샷 시뮬레이션-실제 일반화를 입증합니다.
-
-## 핵심 내용
-동적 이족 보행의 고유한 진동에 대해 고정되지 않은 탑재물을 안정화하는 것은 비정형 환경에서 휴머노이드 로봇의 핵심적인 공학적 병목 현상으로 남아 있습니다. 이를 해결하기 위해, 우리는 SteadyTray 벤치마크를 통해 평가된, 보행과 탑재물 안정화를 명시적으로 분리하는 계층적 강화 학습 아키텍처인 ReST-RL을 소개합니다. 단일 종단 간 학습에 의존하는 대신, 우리의 프레임워크는 강력한 기본 보행 정책과 말단 효과기에서 보행 유발 섭동을 능동적으로 상쇄하도록 설계된 동적 잔차 모듈을 통합합니다. 이러한 아키텍처 분리는 기본적인 이족 안정성을 저하시키지 않으면서 안정적인 트레이 운반을 보장합니다. 시뮬레이션에서 잔차 설계는 보행 부드러움과 방향 정확도에서 종단 간 기준선을 크게 능가하며, 가변 속도 추적에서 96.9%의 성공률과 외부 힘 섭동에 대해 74.5%의 강건성을 달성합니다. Unitree G1 휴머노이드 하드웨어에 성공적으로 배치된 이 모듈식 접근 방식은 다양한 물체와 외부 힘 섭동에 걸쳐 높은 신뢰성의 제로샷 시뮬레이션-실제 일반화를 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.10306v1
+
+## 개요
+동적 이족 보행 중 고정되지 않은 부하의 안정성 문제를 해결하기 위해, 본 연구는 ReST-RL 계층적 강화 학습 아키텍처를 제안합니다. 이 아키텍처는 기본 운동 정책과 동적 잔차 모듈을 분리하여, 말단 실행기가 보행 교란을 능동적으로 상쇄함으로써 이족 안정성을 해치지 않으면서 트레이를 안정적으로 운반할 수 있게 합니다. 시뮬레이션 환경에서 잔차 설계는 보행 평활도와 방향 정밀도에서 엔드투엔드 기준선보다 현저히 우수했으며, 외부 힘 교란 하에서도 74.5%의 강건성을 유지했습니다. 이 모듈식 접근법은 Unitree G1 하드웨어에 성공적으로 배포되어, 다양한 물체와 외부 힘 교란에 대한 신뢰할 수 있는 제로샷 일반화 능력을 입증했습니다.
+
+## 핵심 내용
+### 핵심 문제
+- 동적 이족 보행에서 발생하는 고유 진동은 고정되지 않은 부하 안정성의 핵심 병목이며, 특히 비구조화 환경에서 두드러집니다.
+
+### 방법 아키텍처
+- **ReST-RL 프레임워크**: 계층적 강화 학습을 사용하여 운동 제어와 부하 안정성을 명시적으로 분리합니다.
+- **기본 운동 정책**: 견고한 이족 보행 능력을 제공합니다.
+- **동적 잔차 모듈**: 보행으로 인한 말단 실행기 교란을 능동적으로 상쇄하도록 특별히 설계되어, 트레이 운반의 안정성을 보장합니다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 환경**: SteadyTray 벤치마크에서 평가되었습니다.
+- **성능 비교**: 잔차 설계는 보행 평활도와 방향 정밀도에서 엔드투엔드 기준선보다 현저히 우수했습니다.
+- **주요 수치**:
+  - 가변 속도 추적 성공률: 96.9%
+  - 외부 힘 교란 강건성: 74.5%
+- **하드웨어 배포**: Unitree G1 휴머노이드 로봇에서 제로샷 sim-to-real 전이에 성공하여, 다양한 물체와 외부 교란 하에서 모듈식 접근법의 신뢰성을 검증했습니다.

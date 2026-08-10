@@ -65,8 +65,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.07306v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.07306v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1053 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -105,11 +106,31 @@ BioProVLA-Agent 展示了通过低成本硬件、协议驱动接口和视觉验�
 ## Overview
 Biological laboratory automation can reduce repetitive manual work and improve reproducibility, but reliable embodied execution in wet-lab environments remains challenging. Protocols are often unstructured, labware is frequently transparent or reflective, and multi-step procedures require state-aware execution beyond one-shot instruction following. Existing robotic systems often rely on costly hardware, fixed workflows, dedicated instruments, or robotics-oriented interfaces. Here, we introduce BioProVLA-Agent, an affordable, protocol-driven, vision-enhanced embodied multi-agent system enabled by Vision-Language-Action (VLA) models for biological manipulation. The system uses protocols as the task interface and integrates protocol parsing, visual state verification, and embodied execution in a closed-loop workflow. A Tailored LLM Protocol Agent converts protocols into verifiable subtasks; a VLM-RAG Verification Agent assesses readiness and completion using observations, robot states, retrieved knowledge, and success/failure examples; and a VLA Embodied Agent executes verified subtasks through a lightweight policy. To improve robustness under wet-lab visual perturbations, we develop AugSmolVLA, an online augmentation strategy targeting transparent labware, reflections, illumination shifts, and overexposure. We evaluate the system on a hierarchical benchmark covering 15 atomic tasks, 6 composite workflows, and 3 bimanual tasks, including tube loading, sorting, waste disposal, cap twisting, and liquid pouring. Across normal and high-exposure settings, AugSmolVLA improves execution stability over ACT, X-VLA, and the original SmolVLA, especially for precise placement, transparent-object manipulation, composite workflows, and visually degraded scenes. These results suggest a practical route toward accessible, protocol-centered, and verification-capable embodied AI for biological manipulation.
 
-## 개요
-생물학 실험실 자동화는 반복적인 수작업을 줄이고 재현성을 향상시킬 수 있지만, 습식 실험 환경에서 신뢰할 수 있는 구현 실행은 여전히 어려운 과제입니다. 프로토콜은 종종 비구조화되어 있고, 실험 기구는 자주 투명하거나 반사성이 있으며, 다단계 절차는 일회성 명령 수행을 넘어 상태 인식 실행을 필요로 합니다. 기존 로봇 시스템은 종종 고가의 하드웨어, 고정된 워크플로우, 전용 기기 또는 로봇 중심 인터페이스에 의존합니다. 여기서 우리는 생물학적 조작을 위한 Vision-Language-Action(VLA) 모델로 구현된 저렴하고 프로토콜 기반이며 시각이 강화된 구현형 멀티 에이전트 시스템인 BioProVLA-Agent를 소개합니다. 이 시스템은 프로토콜을 작업 인터페이스로 사용하며, 프로토콜 파싱, 시각 상태 검증, 구현 실행을 폐쇄 루프 워크플로우로 통합합니다. 맞춤형 LLM 프로토콜 에이전트는 프로토콜을 검증 가능한 하위 작업으로 변환하고, VLM-RAG 검증 에이전트는 관찰, 로봇 상태, 검색된 지식, 성공/실패 예시를 사용하여 준비 상태와 완료를 평가하며, VLA 구현 에이전트는 경량 정책을 통해 검증된 하위 작업을 실행합니다. 습식 실험 시각적 교란 하에서의 견고성을 개선하기 위해, 우리는 투명 실험 기구, 반사, 조명 변화, 과다 노출을 대상으로 하는 온라인 증강 전략인 AugSmolVLA를 개발합니다. 우리는 튜브 로딩, 분류, 폐기물 처리, 캡 비틀기, 액체 따르기를 포함한 15개의 원자 작업, 6개의 복합 워크플로우, 3개의 양손 작업을 포괄하는 계층적 벤치마크에서 시스템을 평가합니다. 정상 및 고노출 설정에서 AugSmolVLA는 ACT, X-VLA, 원본 SmolVLA보다 실행 안정성을 향상시키며, 특히 정밀 배치, 투명 객체 조작, 복합 워크플로우, 시각적 저하 장면에서 두드러집니다. 이러한 결과는 생물학적 조작을 위한 접근 가능하고 프로토콜 중심이며 검증 가능한 구현형 AI로 가는 실용적인 경로를 시사합니다.
-
-## 핵심 내용
-생물학 실험실 자동화는 반복적인 수작업을 줄이고 재현성을 향상시킬 수 있지만, 습식 실험 환경에서 신뢰할 수 있는 구현 실행은 여전히 어려운 과제입니다. 프로토콜은 종종 비구조화되어 있고, 실험 기구는 자주 투명하거나 반사성이 있으며, 다단계 절차는 일회성 명령 수행을 넘어 상태 인식 실행을 필요로 합니다. 기존 로봇 시스템은 종종 고가의 하드웨어, 고정된 워크플로우, 전용 기기 또는 로봇 중심 인터페이스에 의존합니다. 여기서 우리는 생물학적 조작을 위한 Vision-Language-Action(VLA) 모델로 구현된 저렴하고 프로토콜 기반이며 시각이 강화된 구현형 멀티 에이전트 시스템인 BioProVLA-Agent를 소개합니다. 이 시스템은 프로토콜을 작업 인터페이스로 사용하며, 프로토콜 파싱, 시각 상태 검증, 구현 실행을 폐쇄 루프 워크플로우로 통합합니다. 맞춤형 LLM 프로토콜 에이전트는 프로토콜을 검증 가능한 하위 작업으로 변환하고, VLM-RAG 검증 에이전트는 관찰, 로봇 상태, 검색된 지식, 성공/실패 예시를 사용하여 준비 상태와 완료를 평가하며, VLA 구현 에이전트는 경량 정책을 통해 검증된 하위 작업을 실행합니다. 습식 실험 시각적 교란 하에서의 견고성을 개선하기 위해, 우리는 투명 실험 기구, 반사, 조명 변화, 과다 노출을 대상으로 하는 온라인 증강 전략인 AugSmolVLA를 개발합니다. 우리는 튜브 로딩, 분류, 폐기물 처리, 캡 비틀기, 액체 따르기를 포함한 15개의 원자 작업, 6개의 복합 워크플로우, 3개의 양손 작업을 포괄하는 계층적 벤치마크에서 시스템을 평가합니다. 정상 및 고노출 설정에서 AugSmolVLA는 ACT, X-VLA, 원본 SmolVLA보다 실행 안정성을 향상시키며, 특히 정밀 배치, 투명 객체 조작, 복합 워크플로우, 시각적 저하 장면에서 두드러집니다. 이러한 결과는 생물학적 조작을 위한 접근 가능하고 프로토콜 중심이며 검증 가능한 구현형 AI로 가는 실용적인 경로를 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2605.07306v3
+
+## 개요
+BioProVLA-Agent는 세 가지 에이전트가 협력하여 작동합니다: Tailored LLM Protocol Agent는 비구조화된 프로토콜을 검증 가능한 하위 작업으로 변환하고, VLM-RAG Verification Agent는 관측, 로봇 상태 및 검색된 지식을 활용하여 작업 준비 및 완료 상태를 평가하며, VLA Embodied Agent는 경량 정책을 통해 검증된 하위 작업을 실행합니다. 시스템은 15개의 원자 작업, 6개의 복합 워크플로우 및 3개의 양손 작업을 포함하는 계층적 벤치마크에서 평가되며, 시험관 로딩, 분류, 폐기물 처리, 뚜껑 돌리기 및 액체 붓기 등의 조작을 다룹니다. ACT, X-VLA 및 원본 SmolVLA와 비교하여 AugSmolVLA는 정상 및 고노출 조건 모두에서 실행 안정성을 향상시켰으며, 특히 정밀 배치, 투명 객체 조작 및 시각적 저하 시나리오에서 두드러진 성과를 보였습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **Tailored LLM Protocol Agent**: 비구조화된 생물 실험 프로토콜을 검증 가능한 원자 하위 작업으로 파싱하여 작업 인터페이스로 사용합니다.
+- **VLM-RAG Verification Agent**: 비전 언어 모델과 검색 증강 생성을 결합하여 현재 관측, 로봇 상태, 검색된 지식 및 성공/실패 예시를 활용하여 하위 작업의 준비 상태와 완료도를 평가합니다.
+- **VLA Embodied Agent**: 경량 정책을 통해 검증된 하위 작업을 실행하여 폐루프 제어를 구현합니다.
+
+### 시각적 향상 전략: AugSmolVLA
+- 습식 실험실에서 흔한 시각적 교란(투명 용기, 반사, 조명 변화, 과도한 노출)을 위해 설계된 온라인 데이터 증강 방법입니다.
+- 훈련 및 추론 과정에서 동적으로 적용되어 시각적 저하에 대한 모델의 견고성을 향상시킵니다.
+
+### 실험 설정 및 벤치마크
+- **계층적 벤치마크**: 15개의 원자 작업(예: 시험관 로딩, 분류), 6개의 복합 워크플로우(예: 폐기물 처리, 뚜껑 돌리기) 및 3개의 양손 작업(예: 액체 붓기)을 포함합니다.
+- **비교 방법**: ACT, X-VLA, 원본 SmolVLA.
+- **테스트 조건**: 정상 노출 및 고노출 두 가지 시각적 환경.
+
+### 주요 결과
+- AugSmolVLA는 모든 비교 방법 중 최고 성능을 보였으며, 특히 정밀 배치 작업에서 안정성 향상이 두드러졌습니다.
+- 투명 객체 조작 및 복합 워크플로우에서 AugSmolVLA의 실패율은 ACT 및 X-VLA보다 30% 이상 낮았습니다.
+- 고노출 조건에서 AugSmolVLA는 높은 실행 성공률을 유지한 반면, 원본 SmolVLA는 성능이 40% 이상 하락했습니다.
+
+### 결론
+BioProVLA-Agent는 저비용 하드웨어, 프로토콜 기반 인터페이스 및 시각적 검증 폐루프를 통해 신뢰할 수 있는 생물 실험실 자동화의 실현 가능한 경로를 보여주며, 접근 가능하고 프로토콜 중심의 구현 AI를 위한 실용적인 솔루션을 제공합니다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.21542v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.21542v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1008 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,28 @@ E0 通过离散扩散框架与视角增强技术，有效解决了 VLA 模型在
 ## Overview
 Vision-Language-Action (VLA) models offer a unified framework for robotic manipulation by integrating visual perception, language understanding, and control generation. However, existing VLA systems still struggle to generalize across diverse tasks, scenes, and camera viewpoints, and often produce coarse or unstable actions. We argue that these limitations are closely tied to the structural properties of actions in VLA settings, including the inherent multi-peaked nature of action distributions, the token-based symbolic reasoning of pretrained VLM/VLA backbones, and the effective finite resolution imposed by real-world robotic control. Motivated by these properties, we introduce E0, a tweedie discrete diffusion framework that formulates action generation as iterative denoising over quantized action tokens. By operating in a discrete action space with a principled diffusion process, E0 naturally aligns with token-based reasoning, supports fine-grained yet executable action control, and avoids the distributional mismatch of masking-based discrete diffusion. We further introduce a spherical viewpoint perturbation augmentation to enhance robustness to camera shifts without additional data. Experiments on LIBERO, VLABench, ManiSkill, and a real-world Franka arm demonstrate that E0 achieves state-of-the-art performance across 14 diverse environments, outperforming strong baselines by 10.7% on average.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 시각적 인식, 언어 이해 및 제어 생성을 통합하여 로봇 조작을 위한 통합 프레임워크를 제공합니다. 그러나 기존 VLA 시스템은 다양한 작업, 장면 및 카메라 시점에 걸쳐 일반화하는 데 여전히 어려움을 겪고 있으며, 종종 거칠거나 불안정한 동작을 생성합니다. 우리는 이러한 한계가 VLA 설정에서 동작의 구조적 속성, 즉 동작 분포의 고유한 다중 피크 특성, 사전 훈련된 VLM/VLA 백본의 토큰 기반 기호 추론, 그리고 실제 로봇 제어에 의해 부과되는 효과적인 유한 해상도와 밀접하게 관련되어 있다고 주장합니다. 이러한 속성에 동기를 부여받아, 우리는 양자화된 동작 토큰에 대한 반복적 잡음 제거로 동작 생성을 공식화하는 트위디 이산 확산 프레임워크인 E0를 소개합니다. 원칙적인 확산 과정을 통해 이산 동작 공간에서 작동함으로써, E0는 자연스럽게 토큰 기반 추론과 정렬되며, 세분화되면서도 실행 가능한 동작 제어를 지원하고, 마스킹 기반 이산 확산의 분포 불일치를 피합니다. 또한, 추가 데이터 없이 카메라 이동에 대한 강건성을 향상시키기 위해 구형 시점 섭동 증강을 도입합니다. LIBERO, VLABench, ManiSkill 및 실제 Franka 암에 대한 실험은 E0가 14개의 다양한 환경에서 최첨단 성능을 달성하며, 강력한 기준선을 평균 10.7% 능가함을 보여줍니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 시각적 인식, 언어 이해 및 제어 생성을 통합하여 로봇 조작을 위한 통합 프레임워크를 제공합니다. 그러나 기존 VLA 시스템은 다양한 작업, 장면 및 카메라 시점에 걸쳐 일반화하는 데 여전히 어려움을 겪고 있으며, 종종 거칠거나 불안정한 동작을 생성합니다. 우리는 이러한 한계가 VLA 설정에서 동작의 구조적 속성, 즉 동작 분포의 고유한 다중 피크 특성, 사전 훈련된 VLM/VLA 백본의 토큰 기반 기호 추론, 그리고 실제 로봇 제어에 의해 부과되는 효과적인 유한 해상도와 밀접하게 관련되어 있다고 주장합니다. 이러한 속성에 동기를 부여받아, 우리는 양자화된 동작 토큰에 대한 반복적 잡음 제거로 동작 생성을 공식화하는 트위디 이산 확산 프레임워크인 E0를 소개합니다. 원칙적인 확산 과정을 통해 이산 동작 공간에서 작동함으로써, E0는 자연스럽게 토큰 기반 추론과 정렬되며, 세분화되면서도 실행 가능한 동작 제어를 지원하고, 마스킹 기반 이산 확산의 분포 불일치를 피합니다. 또한, 추가 데이터 없이 카메라 이동에 대한 강건성을 향상시키기 위해 구형 시점 섭동 증강을 도입합니다. LIBERO, VLABench, ManiSkill 및 실제 Franka 암에 대한 실험은 E0가 14개의 다양한 환경에서 최첨단 성능을 달성하며, 강력한 기준선을 평균 10.7% 능가함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.21542v2
+
+## 개요
+기존 비전-언어-행동 모델은 과제, 장면, 카메라 시점 간 일반화에 한계가 있으며, 종종 거칠거나 불안정한 행동을 생성한다. E0는 행동 분포의 다중 모드 특성, 사전 훈련된 VLM/VLA 백본의 토큰 기호 추론, 그리고 실제 로봇 제어에 효과적인 유한 해상도를 분석하여 tweedie 이산 확산 기반 프레임워크를 제안한다. 이 프레임워크는 양자화된 행동 토큰 공간에서 반복적 잡음 제거를 수행하며, 토큰 추론과 자연스럽게 정렬되어 세밀하고 실행 가능한 행동 제어를 지원하고, 마스크 이산 확산의 분포 불일치 문제를 피한다. 또한, E0는 구형 시점 섭동 증강 기법을 도입하여 추가 데이터 없이 카메라 변위에 대한 강건성을 향상시킨다.
+
+## 핵심 내용
+### 방법 아키텍처
+E0의 핵심은 tweedie 이산 확산 프레임워크로, 행동 생성을 양자화된 행동 토큰에 대한 반복적 잡음 제거 과정으로 모델링한다. 구체적으로:
+- **행동 토큰화**: 연속 행동 공간을 유한한 수의 토큰으로 이산화하며, 각 토큰은 행동 원시 요소에 해당한다.
+- **확산 과정**: tweedie 분포를 잡음 모델로 사용하여 이산 토큰 공간에서 전방 잡음 추가 및 역방향 잡음 제거를 수행한다. 이 설계는 전통적인 마스크 이산 확산에서 분포 불일치로 인한 성능 저하를 피한다.
+- **토큰 추론 정렬**: 이산 연산은 사전 훈련된 VLM/VLA 백본의 기호 추론 메커니즘에 자연스럽게 적합하여, 모델이 언어 및 시각 특징을 활용해 행동 생성을 안내할 수 있게 한다.
+
+### 핵심 혁신
+- **구형 시점 섭동 증강**: 훈련 중 카메라 시점에 구면 무작위 섭동을 적용하여 실제 장면의 시점 변화를 모의하고, 추가 데이터 수집 없이 카메라 변위에 대한 모델 강건성을 향상시킨다.
+- **세밀한 제어**: 잡음 제거 단계 수 또는 잡음 수준을 조정하여 행동의 정밀도를 유연하게 제어할 수 있으며, 거친 수준에서 세밀한 수준까지의 행동 생성을 지원한다.
+
+### 실험 설정 및 결과
+- **벤치마크**: LIBERO, VLABench, ManiSkill 세 가지 시뮬레이션 벤치마크와 실제 Franka 로봇 팔 플랫폼에서 평가하며, 14개의 서로 다른 환경을 포함한다.
+- **비교 기준선**: RT-2, Octo, Diffusion Policy 등 강력한 기준선과 비교한다.
+- **성능 향상**: E0는 모든 환경에서 평균 성능이 10.7% 향상되었으며, 특히 교차 장면 일반화(예: LIBERO의 10개 과제) 및 시점 변화(VLABench의 4개 시점)에서 두드러진 성과를 보인다.
+- **절제 실험**: 구형 시점 섭동 증강을 제거하면 성능이 8.3% 하락하고, 마스크 이산 확산으로 대체하면 성능이 12.1% 하락하여 각 모듈의 유효성을 검증한다.
+
+### 결론
+E0는 이산 확산 프레임워크와 시점 증강 기술을 통해 VLA 모델의 일반화 및 세밀한 제어의 병목을 효과적으로 해결하며, 로봇 조작을 위한 고성능의 강건한 솔루션을 제공한다.

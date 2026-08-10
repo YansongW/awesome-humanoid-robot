@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.05753v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.05753v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (827 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,27 @@ theoretical_depth:
 ## Overview
 Cross-embodiment generalization underpins the vision of building generalist embodied agents for any robot, yet its enabling factors remain poorly understood. We investigate embodiment scaling laws, the hypothesis that increasing the number of training embodiments improves generalization to unseen ones, using robot locomotion as a test bed. We procedurally generate ~1,000 embodiments with topological, geometric, and joint-level kinematic variations, and train policies on random subsets. We observe positive scaling trends supporting the hypothesis, and find that embodiment scaling enables substantially broader generalization than data scaling on fixed embodiments. Our best policy, trained on the full dataset, transfers zero-shot to novel embodiments in simulation and the real world, including the Unitree Go2 and H1. These results represent a step toward general embodied intelligence, with relevance to adaptive control for configurable robots, morphology co-design, and beyond.
 
-## 개요
-교차 체현 일반화는 모든 로봇을 위한 범용 체현 에이전트를 구축하려는 비전의 기초를 이루지만, 이를 가능하게 하는 요인은 아직 잘 이해되지 않고 있습니다. 우리는 로봇 보행을 테스트베드로 삼아, 훈련 체현의 수를 늘리면 보지 못한 체현에 대한 일반화가 향상된다는 가설인 체현 스케일링 법칙을 조사합니다. 우리는 위상적, 기하학적, 관절 수준의 운동학적 변형을 가진 약 1,000개의 체현을 절차적으로 생성하고, 무작위 부분 집합에 대해 정책을 훈련합니다. 우리는 가설을 지지하는 긍정적인 스케일링 추세를 관찰했으며, 체현 스케일링이 고정된 체현에서의 데이터 스케일링보다 훨씬 더 광범위한 일반화를 가능하게 한다는 것을 발견했습니다. 전체 데이터셋으로 훈련된 최고의 정책은 시뮬레이션과 실제 세계에서 Unitree Go2 및 H1을 포함한 새로운 체현으로 제로샷 전이됩니다. 이러한 결과는 구성 가능한 로봇을 위한 적응 제어, 형태 공동 설계 등과 관련된 일반 체현 지능을 향한 한 걸음을 나타냅니다.
-
-## 핵심 내용
-교차 체현 일반화는 모든 로봇을 위한 범용 체현 에이전트를 구축하려는 비전의 기초를 이루지만, 이를 가능하게 하는 요인은 아직 잘 이해되지 않고 있습니다. 우리는 로봇 보행을 테스트베드로 삼아, 훈련 체현의 수를 늘리면 보지 못한 체현에 대한 일반화가 향상된다는 가설인 체현 스케일링 법칙을 조사합니다. 우리는 위상적, 기하학적, 관절 수준의 운동학적 변형을 가진 약 1,000개의 체현을 절차적으로 생성하고, 무작위 부분 집합에 대해 정책을 훈련합니다. 우리는 가설을 지지하는 긍정적인 스케일링 추세를 관찰했으며, 체현 스케일링이 고정된 체현에서의 데이터 스케일링보다 훨씬 더 광범위한 일반화를 가능하게 한다는 것을 발견했습니다. 전체 데이터셋으로 훈련된 최고의 정책은 시뮬레이션과 실제 세계에서 Unitree Go2 및 H1을 포함한 새로운 체현으로 제로샷 전이됩니다. 이러한 결과는 구성 가능한 로봇을 위한 적응 제어, 형태 공동 설계 등과 관련된 일반 체현 지능을 향한 한 걸음을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.05753v2
+
+## 개요
+교차 형태 일반화는 범용 임베디드 에이전트를 구현하는 핵심이지만, 그 영향 요인은 아직 명확하지 않습니다. 본 논문은 로봇 운동을 테스트 플랫폼으로 삼아, 훈련 형태 수를 늘리면 보지 못한 형태에 대한 일반화 능력이 향상되는지, 즉 임베디드 스케일링 법칙을 체계적으로 연구합니다. 연구진은 토폴로지, 기하학, 관절 수준 운동학적 차이를 가진 약 1000개의 형태를 프로그램 방식으로 생성하고, 무작위 하위 집합에서 정책을 훈련했습니다. 실험을 통해 이 가설을 지지하는 긍정적 스케일링 추세를 관찰했으며, 임베디드 스케일링이 고정 형태에서의 데이터 스케일링보다 더 광범위한 일반화를 가져온다는 것을 발견했습니다. 전체 데이터 세트로 훈련된 최적 정책은 시뮬레이션과 실제 세계 모두에서 Unitree Go2 및 H1을 포함한 새로운 형태로 제로샷 전이가 가능했습니다.
+
+## 핵심 내용
+### 방법
+- **URMA**(Unified Robot Morphology Architecture)를 정책 아키텍처로 채택하여 다양한 형태의 로봇을 처리할 수 있도록 지원합니다.
+- **GENBOT-1K** 데이터 세트를 프로그램 방식으로 생성하며, 토폴로지, 기하학, 관절 운동학적 변화를 포함한 약 1000개의 형태를 포함합니다.
+- 정책 훈련 시 GENBOT-1K에서 다양한 크기의 하위 집합을 무작위로 추출하여 임베디드 수가 일반화에 미치는 영향을 평가합니다.
+
+### 실험 설정
+- 시뮬레이션 환경에서 정책을 훈련하고, 강화 학습(RL)을 사용하여 운동 작업을 수행합니다.
+- 일반화 능력을 테스트할 때, 보지 못한 시뮬레이션 형태에서 정책의 성능을 평가하고, 추가 미세 조정 없이 실제 로봇(Unitree Go2 및 H1)에 직접 배포합니다.
+
+### 핵심 결과
+- **긍정적 스케일링 추세**: 훈련 형태 수가 증가함에 따라 보지 못한 형태에 대한 정책의 일반화 성능이 지속적으로 향상되어 임베디드 스케일링 법칙 가설을 지지합니다.
+- **임베디드 스케일링 vs. 데이터 스케일링**: 고정 형태에서 데이터 양을 늘리는 것(데이터 스케일링)은 일반화 향상이 제한적인 반면, 형태 수를 늘리는 것(임베디드 스케일링)은 더 광범위한 일반화를 달성할 수 있습니다.
+- **제로샷 전이**: 전체 GENBOT-1K로 훈련된 정책은 시뮬레이션에서 다양한 새로운 형태로 성공적으로 전이되며, 실제 로봇 Unitree Go2 및 H1에서 제로샷 운동 제어를 구현합니다.
+
+### 결론
+- 임베디드 스케일링 법칙은 범용 임베디드 에이전트 구축에 중요한 지침을 제공하며, 훈련 형태의 다양성이 핵심 요소임을 시사합니다.
+- 본 방법은 구성 가능한 로봇의 적응형 제어, 형태 공동 설계 등의 분야에서 잠재적 응용 가치를 지닙니다.

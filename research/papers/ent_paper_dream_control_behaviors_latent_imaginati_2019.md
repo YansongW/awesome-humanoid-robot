@@ -39,7 +39,9 @@ verification:
   reviewed_at: '2026-08-05'
   confidence: medium
   notes: 'Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P064. Full text from arXiv (HTML or PDF); zh six-section
-    interpretation by DeepSeek (T<=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。'
+    interpretation by DeepSeek (T<=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过
+    2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。 | WP4 trilingual backfill 2026-08-10:
+    en body retranslated from zh deep-read (3106 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -48,7 +50,6 @@ sources:
   date: '2019-12-03'
   accessed_at: '2026-08-05'
 ---
-
 ## 概述
 
 Dreamer 是 DeepMind 提出的基于潜在想象（latent imagination）的强化学习智能体，通过在学习到的世界模型（RSSM）的潜在空间中训练 actor-critic，实现从图像输入学习长时程行为。在 20 个视觉连续控制任务上，Dreamer 以 5×10^6 步达到平均 823 的得分，超越 PlaNet（332）和 A3C（344，10^8 步），并在稀疏奖励任务上显著领先。
@@ -123,9 +124,6 @@ Dreamer 与 A3C、D4PG、PlaNet 对比，环境步数分别为 10^8、10^8、5×
 复现时先核对三点：一是想象视界 H 的取值——连续任务用 15、离散用 10，但消融显示 5 到 15 都可行，优先用 10 可减少计算；二是动作重复 R=2 是全局固定值，若下游任务对动作频率敏感，需重新验证；三是表示学习目标选像素重建，不要用纯奖励预测——实验明确显示其不足。
 
 最容易踩坑的地方是离散任务的超参数：KL 缩放 β=0.1（连续任务为 1）、ε 从 0.4 线性降至 0.1（前 200,000 梯度步）、奖励 tanh 限幅、折扣因子由二分类器预测（软标签 0 和 γ）。这些与连续任务差异很大，直接套用连续任务的设置会导致离散任务失败。另外，训练时间约 3 小时每 10^6 环境步（V100 单卡 + 10 CPU），若资源受限可先跑 Cartpole Swingup Sparse 验证实现正确性——该任务对模型误差最敏感，能快速暴露问题。
-
-## Overview
-Learned world models summarize an agent's experience to facilitate learning complex behaviors. While learning world models from high-dimensional sensory inputs is becoming feasible through deep learning, there are many potential ways for deriving behaviors from them. We present Dreamer, a reinforcement learning agent that solves long-horizon tasks from images purely by latent imagination. We efficiently learn behaviors by propagating analytic gradients of learned state values back through trajectories imagined in the compact state space of a learned world model. On 20 challenging visual control tasks, Dreamer exceeds existing approaches in data-efficiency, computation time, and final performance.
 
 ## 参考
 - https://arxiv.org/abs/1912.01603
@@ -204,3 +202,78 @@ Atari 및 DeepMind Lab 하위 집합에서 평가(64×64×3 이미지, 3~18개 �
 재현 시 먼저 세 가지를 확인하세요: 첫째, 상상 지평 H의 값—연속 작업은 15, 이산은 10을 사용하지만 소거 실험에서 5~15 모두 가능하므로, 계산량을 줄이려면 10을 우선 사용하세요; 둘째, 행동 반복 R=2는 전역 고정 값이므로, 하류 작업이 행동 빈도에 민감하면 재검증이 필요합니다; 셋째, 표현 학습 목표는 픽셀 재구성을 선택하고 순수 보상 예측을 사용하지 마세요—실험에서 그 부족함이 명확히 드러났습니다.
 
 가장 함정에 빠지기 쉬운 부분은 이산 작업의 하이퍼파라미터입니다: KL 스케일 β=0.1(연속 작업은 1), ε를 0.4에서 0.1로 선형 감소(처음 200,000 그래디언트 스텝), 보상 tanh 클리핑, 할인 계수는 이진 분류기로 예측(소프트 라벨 0 및 γ). 이는 연속 작업과 크게 다르므로, 연속 작업 설정을 그대로 적용하면 이산 작업이 실패합니다. 또한 훈련 시간은 10^6 환경 스텝당 약 3시간(V100 단일 GPU + 10 CPU)이며, 리소스가 제한된 경우 먼저 Cartpole Swingup Sparse로 구현 정확성을 검증하세요—이 작업은 모델 오류에 가장 민감하여 문제를 빠르게 노출할 수 있습니다.
+
+## Overview
+
+Dreamer is a reinforcement learning agent proposed by DeepMind based on latent imagination. It trains an actor-critic within the latent space of a learned world model (RSSM), enabling learning of long-horizon behaviors from image inputs. Across 20 visual continuous control tasks, Dreamer achieves an average score of 823 with 5×10^6 steps, surpassing PlaNet (332) and A3C (344, 10^8 steps), and significantly leads on sparse reward tasks.
+
+## What It Changed
+
+What it truly changed is "where behavior learning happens": previous model-based reinforcement learning either relied on online planning (e.g., PlaNet) or performed model-free updates on real experience (e.g., A3C, D4PG), whereas Dreamer moved actor-critic updates entirely into the learned latent space, replacing real experience replay with imagined trajectories. This broke the old constraint that "model accuracy directly determines planning quality"—planning requires the model to be precise at every step, while Dreamer only needs the model to be good enough over the distribution of imagined trajectories, allowing the value model to absorb model errors.
+
+Another change is the magnitude of data efficiency. A3C reaches 344 with 10^8 steps, while Dreamer reaches 823 with 5×10^6 steps—a 20-fold difference in steps (calculated from the table values 10^8 and 5×10^6). This is not a tuning victory but a structural advantage brought by the "learning in imagination" paradigm—the world model compresses experience into repeatably sampleable latent dynamics, and behavior learning is no longer limited by the interaction frequency of the real environment.
+
+## Method Breakdown
+
+### World Model: RSSM Latent Dynamics
+- Encoder/decoder uses convolutional structures (Ha and Schmidhuber 2018), with latent states as 30-dimensional diagonal Gaussians.
+- Recurrent State-Space Model (RSSM) models Markovian latent transitions, trained with pixel reconstruction + KL regularization (β=1, clipped below 3 free nats).
+
+### Behavior Learning: Actor-Critic in Latent Imagination
+- The action model outputs a tanh mean (scaled by 5) and softplus standard deviation, followed by a tanh transformation, allowing the action distribution to saturate.
+- The value model regresses λ-return targets (γ=0.99, λ=0.95), with gradients stopped at the targets.
+- During imagination, the action model and value model are updated using the **same imagined trajectories**, with analytic gradients of multi-step values backpropagated through the latent dynamics model.
+
+### Key Design Decisions
+- **Fixed action repeat R=2**, not manually tuned per environment, differing from Hafner et al. (2018) and Lee et al. (2019).
+- No latent overshooting, action model entropy reward, or value model target network—ablations show these are unnecessary.
+- Discrete tasks: the action model predicts categorical logits with straight-through gradient sampling; ε-greedy linearly decays from 0.4 to 0.1 (over the first 200,000 gradient steps); KL scaling β=0.1; discount factor predicted by a binary classifier (soft labels 0 and γ).
+
+### Training Procedure
+- Dataset initialized with S=5 random episodes; 100 training steps alternate with collecting 1 episode, with exploration noise Normal(0, 0.3).
+- Batch B=50, sequence length L=50, imagination horizon H=15 (continuous) / H=10 (discrete).
+- Adam optimizer: world model 6×10^-4, value model 8×10^-5, action model 8×10^-5; gradient norms scaled when clipping exceeds 100.
+
+## Key Innovations
+
+1. **Latent imagination replaces online planning**: PlaNet relies on online planning and is sensitive to imagination horizon H; Dreamer's value model makes performance robust to H from 5 to 15 (optimal H=10). This is a paradigm shift from "using the model for planning" to "using the model to learn a policy."
+
+2. **Decoupling representation learning objectives from behavior learning**: A systematic comparison of pixel reconstruction, contrastive estimation, and pure reward prediction as representation objectives shows pixel reconstruction is optimal on most tasks, while pure reward prediction is insufficient. This clarifies that "what the world model learns" and "how behavior is learned" are two independently optimizable dimensions.
+
+3. **Breakthrough on sparse reward tasks**: On Cartpole Swingup Sparse, Dreamer scores 812.22, while PlaNet only 0.64 and A3C only 179.80. Latent imagination allows the agent to "rehearse" sparse reward signals in imagination, which is difficult for model-free methods.
+
+## Experiments and Results
+
+### Continuous Control (DeepMind Control Suite, pixel inputs)
+Dreamer is compared with A3C, D4PG, and PlaNet, with environment steps of 10^8, 10^8, 5×10^6, and 5×10^6, respectively. Key results:
+
+| Task | A3C | D4PG | PlaNet | Dreamer |
+|---|---|---|---|---|
+| Cartpole Swingup Sparse | 179.80 | 482.00 | 0.64 | 812.22 |
+| Cheetah Run | 213.90 | 523.80 | 496.12 | 894.56 |
+| Hopper Hop | 0.50 | 242.00 | 0.37 | 368.97 |
+| Quadruped Run | - | - | 280.45 | 888.39 |
+| **Average** | **243.70** | **786.32** | **332.97** | **823.39** |
+
+### Ablation Studies
+- The value model makes Dreamer robust to imagination horizon H, while the action model without value prediction and PlaNet's online planning are sensitive to H.
+- Pixel reconstruction outperforms contrastive estimation on most tasks; pure reward prediction is insufficient.
+- H from 5 to 15 all yield high scores, with optimal H=10.
+
+### Discrete Control
+Evaluated on subsets of Atari and DeepMind Lab (64×64×3 images, 3 to 18 actions), Dreamer learns successful behaviors on some tasks but is not yet competitive overall (compared to Kaiser et al., 2019).
+
+## Boundaries and Limitations
+
+- The world model learns from a fixed experience dataset; unvisited states may cause model errors, and behavior may fail in unseen regions.
+- Latent dynamics assume Markovian transitions, which may not hold for partially observable environments (hidden states).
+- The action model is trained purely in imagination; behavior quality depends on world model accuracy; when the model is inaccurate, policy transfer to the real environment may fail.
+- Fixed action repeat R=2 is not optimal for all tasks.
+- Experiments are limited to simulated environments and not validated on real robotic systems.
+- Performance on discrete action tasks (Atari subset) is inferior to continuous control tasks; the authors did not explore all Atari games and DMLab levels.
+
+## Engineering Insights
+
+When reproducing, first verify three points: first, the imagination horizon H—use 15 for continuous tasks and 10 for discrete, but ablations show 5 to 15 all work, so prioritizing 10 reduces computation; second, action repeat R=2 is a global fixed value; if downstream tasks are sensitive to action frequency, re-validation is needed; third, choose pixel reconstruction as the representation learning objective, not pure reward prediction—experiments clearly show its insufficiency.
+
+The most error-prone area is hyperparameters for discrete tasks: KL scaling β=0.1 (vs. 1 for continuous), ε linearly decaying from 0.4 to 0.1 (over the first 200,000 gradient steps), reward tanh clipping, and discount factor predicted by a binary classifier (soft labels 0 and γ). These differ significantly from continuous tasks; directly applying continuous task settings will cause discrete task failure. Additionally, training time is approximately 3 hours per 10^6 environment steps (single V100 + 10 CPUs); if resources are limited, first run Cartpole Swingup Sparse to verify implementation correctness—this task is most sensitive to model errors and can quickly expose issues.

@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2006.16404v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2006.16404v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (815 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,36 @@ theoretical_depth:
 ## Overview
 Formalisms inspired by Quantum theory have been used in Cognitive Science for decades. Indeed, Quantum-Like (QL) approaches provide descriptive features that are inherently suitable for perception, cognition, and decision processing. A preliminary study on the feasibility of a QL robot perception model has been carried out for a robot with limited sensing capabilities. In this paper, we generalize such a model for multi-sensory inputs, creating a multidimensional world representation directly based on sensor readings. Given a 3-dimensional case study, we highlight how this model provides a compact and elegant representation, embodying features that are extremely useful for modeling uncertainty and decision. Moreover, the model enables to naturally define query operators to inspect any world state, which answers quantifies the robot's degree of belief on that state.
 
-## 개요
-양자 이론에서 영감을 받은 형식주의는 수십 년 동안 인지 과학에서 사용되어 왔습니다. 실제로 양자 유사(QL) 접근 방식은 지각, 인지 및 의사 결정 처리에 본질적으로 적합한 설명적 특징을 제공합니다. 제한된 감지 능력을 가진 로봇을 위해 QL 로봇 지각 모델의 타당성에 대한 예비 연구가 수행되었습니다. 본 논문에서는 이러한 모델을 다중 감각 입력으로 일반화하여 센서 판독값을 기반으로 직접 다차원 세계 표현을 생성합니다. 3차원 사례 연구를 통해 이 모델이 불확실성과 의사 결정을 모델링하는 데 매우 유용한 특징을 포함하는 간결하고 우아한 표현을 제공하는 방법을 강조합니다. 또한 이 모델은 모든 세계 상태를 검사하기 위한 질의 연산자를 자연스럽게 정의할 수 있게 하며, 그 답변은 해당 상태에 대한 로봇의 신뢰도를 정량화합니다.
-
-## 핵심 내용
-양자 이론에서 영감을 받은 형식주의는 수십 년 동안 인지 과학에서 사용되어 왔습니다. 실제로 양자 유사(QL) 접근 방식은 지각, 인지 및 의사 결정 처리에 본질적으로 적합한 설명적 특징을 제공합니다. 제한된 감지 능력을 가진 로봇을 위해 QL 로봇 지각 모델의 타당성에 대한 예비 연구가 수행되었습니다. 본 논문에서는 이러한 모델을 다중 감각 입력으로 일반화하여 센서 판독값을 기반으로 직접 다차원 세계 표현을 생성합니다. 3차원 사례 연구를 통해 이 모델이 불확실성과 의사 결정을 모델링하는 데 매우 유용한 특징을 포함하는 간결하고 우아한 표현을 제공하는 방법을 강조합니다. 또한 이 모델은 모든 세계 상태를 검사하기 위한 질의 연산자를 자연스럽게 정의할 수 있게 하며, 그 답변은 해당 상태에 대한 로봇의 신뢰도를 정량화합니다.
-
 ## 参考
 - http://arxiv.org/abs/2006.16404v1
+
+## 개요
+이 연구는 인지과학에서 수십 년간 적용되어 온 양자 유사 형식화 방법을 로봇 지각 분야에 도입하여, 기존에 제한된 센싱 능력만을 지원하던 초기 모델을 확장한다. 다중 큐비트 시스템을 구축함으로써, 모델은 다중 센서의 연속 판독값을 직접 다차원 세계 표상으로 매핑할 수 있으며, 3차원 사례에서 간결하고 우아한 표현 특성을 보여준다. 핵심 장점은 불확실성을 처리하는 데 자연스럽게 적합하며, 쿼리 연산자를 정의하여 로봇이 임의의 세계 상태에 대해 가지는 신념의 정도를 정량화할 수 있어 의사결정에 정량적 근거를 제공한다는 점이다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 다중 큐비트 시스템(multi-qubit system)을 사용하여 다중 감각 입력을 인코딩하며, 각 큐비트는 하나의 센서 채널에 대응한다.
+- 센서의 연속 판독값은 양자 상태 중첩 원리를 통해 확률 진폭으로 매핑되어 연속 값 인코딩을 형성한다.
+- 세계 상태 표상은 모든 큐비트의 텐서 곱 공간으로 구성되며, 차원은 센서 수에 따라 지수적으로 증가한다.
+
+### 핵심 메커니즘
+- 신념 쿼리(belief query)는 투영 연산자를 정의하여 구현되며, 임의의 부분 공간 상태에 대해 확률 진폭 측정을 수행할 수 있다.
+- 쿼리 결과는 [0,1] 구간의 실수로 출력되며, 로봇이 특정 세계 상태에 대해 가지는 신뢰도에 직접 대응한다.
+- 불확실성 모델링은 양자 상태 중첩의 고유한 확률적 특성을 통해 구현되며, 명시적 확률 분포 가정이 필요 없다.
+
+### 실험 설정
+- 3차원 사례 연구: 로봇에 거리, 온도, 조명 세 가지 센서가 장착되어 있다고 가정한다.
+- 각 센서 판독값은 단일 큐비트의 연속 매개변수(θ∈[0,π])로 인코딩된다.
+- 세계 상태 공간은 8차원 힐베르트 공간(2³차원)이다.
+
+### 주요 결과
+- 모델은 표현의 간결성을 유지하면서 센서 간 상관관계(예: 온도와 조명의 결합 상태)를 성공적으로 인코딩한다.
+- 신념 쿼리 연산자는 결정적 상태(확률 진폭=1)와 모호한 상태(확률 진폭<1)를 구분할 수 있다.
+- 고전적 베이즈 방법과 비교하여, 이 모델은 동일한 차원에서 매개변수 수를 줄인다(큐비트 수 n은 2ⁿ차원 공간에 대응하며, 고전적 방법은 2ⁿ개의 확률 값을 저장해야 한다).
+
+### 결론
+이 모델은 다중 감각 융합 로봇 지각을 위한 새로운 형식적 프레임워크를 제공하며, 그 양자 특성은 자연스럽게 다음을 지원한다:
+1. 연속 센서 값의 무손실 인코딩
+2. 상태 간 상관관계의 암시적 모델링
+3. 해석 가능한 신념 정량화 메커니즘
+향후 연구는 동적 환경에서의 양자 상태 진화 규칙과 실시간 의사결정 알고리즘을 탐구할 것이다.

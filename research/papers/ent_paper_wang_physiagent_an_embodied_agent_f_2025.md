@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.24524v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.24524v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (768 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,30 @@ PhysiAgent 为将 VLM 与 VLA 集成到具身智能体框架中提供了实用�
 ## Overview
 Vision-Language-Action (VLA) models have achieved notable success but often struggle with limited generalizations. To address this, integrating generalized Vision-Language Models (VLMs) as assistants to VLAs has emerged as a popular solution. However, current approaches often combine these models in rigid, sequential structures: using VLMs primarily for high-level scene understanding and task planning, and VLAs merely as executors of lower-level actions, leading to ineffective collaboration and poor grounding challenges. In this paper, we propose an embodied agent framework, PhysiAgent, tailored to operate effectively in physical environments. By incorporating monitor, memory, self-reflection mechanisms, and lightweight off-the-shelf toolboxes, PhysiAgent offers an autonomous scaffolding framework to prompt VLMs to organize different components based on real-time proficiency feedback from VLAs to maximally exploit VLAs' capabilities. Experimental results demonstrate significant improvements in task-solving performance on complex real-world robotic tasks, showcasing effective self-regulation of VLMs, coherent tool collaboration, and adaptive evolution of the framework during execution. PhysiAgent makes practical and pioneering efforts to integrate VLMs and VLAs, effectively grounding embodied agent frameworks in real-world settings.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 주목할 만한 성과를 거두었지만, 종종 제한된 일반화 능력으로 어려움을 겪습니다. 이를 해결하기 위해, 일반화된 Vision-Language Models (VLM)을 VLA의 보조자로 통합하는 것이 인기 있는 해결책으로 떠오르고 있습니다. 그러나 현재 접근 방식은 이러한 모델들을 경직된 순차적 구조로 결합하는 경우가 많습니다. 즉, VLM은 주로 고수준의 장면 이해와 작업 계획에 사용되고, VLA는 단순히 저수준 동작의 실행자 역할만 하여 비효율적인 협업과 취약한 근거(grounding) 문제를 초래합니다. 본 논문에서는 물리적 환경에서 효과적으로 작동하도록 설계된 임베디드 에이전트 프레임워크인 PhysiAgent를 제안합니다. 모니터, 메모리, 자기 성찰 메커니즘, 그리고 가벼운 기성 도구 상자를 통합함으로써, PhysiAgent는 VLA의 실시간 숙련도 피드백을 기반으로 VLM이 다양한 구성 요소를 조직하여 VLA의 능력을 최대한 활용하도록 유도하는 자율적 스캐폴딩 프레임워크를 제공합니다. 실험 결과는 복잡한 실제 로봇 작업에서 작업 해결 성능이 크게 향상되었음을 보여주며, VLM의 효과적인 자기 조절, 일관된 도구 협업, 그리고 실행 중 프레임워크의 적응적 진화를 입증합니다. PhysiAgent는 VLM과 VLA를 통합하고 임베디드 에이전트 프레임워크를 실제 환경에 효과적으로 근거시키는 실용적이고 선구적인 노력을 기울입니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 주목할 만한 성과를 거두었지만, 종종 제한된 일반화 능력으로 어려움을 겪습니다. 이를 해결하기 위해, 일반화된 Vision-Language Models (VLM)을 VLA의 보조자로 통합하는 것이 인기 있는 해결책으로 떠오르고 있습니다. 그러나 현재 접근 방식은 이러한 모델들을 경직된 순차적 구조로 결합하는 경우가 많습니다. 즉, VLM은 주로 고수준의 장면 이해와 작업 계획에 사용되고, VLA는 단순히 저수준 동작의 실행자 역할만 하여 비효율적인 협업과 취약한 근거(grounding) 문제를 초래합니다. 본 논문에서는 물리적 환경에서 효과적으로 작동하도록 설계된 임베디드 에이전트 프레임워크인 PhysiAgent를 제안합니다. 모니터, 메모리, 자기 성찰 메커니즘, 그리고 가벼운 기성 도구 상자를 통합함으로써, PhysiAgent는 VLA의 실시간 숙련도 피드백을 기반으로 VLM이 다양한 구성 요소를 조직하여 VLA의 능력을 최대한 활용하도록 유도하는 자율적 스캐폴딩 프레임워크를 제공합니다. 실험 결과는 복잡한 실제 로봇 작업에서 작업 해결 성능이 크게 향상되었음을 보여주며, VLM의 효과적인 자기 조절, 일관된 도구 협업, 그리고 실행 중 프레임워크의 적응적 진화를 입증합니다. PhysiAgent는 VLM과 VLA를 통합하고 임베디드 에이전트 프레임워크를 실제 환경에 효과적으로 근거시키는 실용적이고 선구적인 노력을 기울입니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.24524v1
+
+## 개요
+PhysiAgent는 물리 세계를 대상으로 하는 구현형 에이전트 프레임워크로, 칭화대학교 AIR, 베이징대학교 및 UC Berkeley가 2025년에 제안했습니다. 이 프레임워크는 현재 VLM과 VLA 모델이 경직된 순차 구조에서 협력 효율성이 낮은 문제를 해결하기 위해 모니터링, 메모리, 자기 반성 메커니즘 및 경량 도구 키트를 도입했습니다. VLM이 VLA의 실시간 능력 피드백을 기반으로 구성 요소를 자율적으로 조직하도록 함으로써, PhysiAgent는 효과적인 자기 조절과 도구 협력을 실현했습니다. 실험 결과, 이 프레임워크는 복잡한 실제 로봇 작업에서 현저한 성능 향상을 보여주며 적응형 진화 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법
+PhysiAgent는 자율 스캐폴딩 프레임워크를 제안하며, 다음 메커니즘을 통해 VLM과 VLA의 효과적인 협력을 실현합니다:
+- **모니터링 모듈**: VLA의 실행 상태와 능력 피드백을 실시간으로 추적합니다.
+- **메모리 모듈**: 과거 작업 경험을 저장하여 장기 학습을 지원합니다.
+- **자기 반성 메커니즘**: 피드백을 기반으로 VLM의 구성 요소 조직 전략을 동적으로 조정합니다.
+- **경량 도구 키트**: 기성 도구를 통합하여 프레임워크의 유연성과 실용성을 강화합니다.
+
+### 아키텍처
+PhysiAgent는 비경직적 순차 구조를 채택하며, VLM은 더 이상 고수준 장면 이해와 작업 계획만 담당하지 않고 VLA의 실시간 능력 피드백에 따라 다양한 구성 요소를 자율적으로 호출합니다. 이 설계는 전통적인 방법에서 VLM과 VLA의 협력 효율성이 낮은 문제를 피하고 접지 능력을 향상시킵니다.
+
+### 실험 설정
+- **작업**: 복잡한 실제 세계 로봇 조작 작업.
+- **평가 지표**: 작업 완료율, 협력 효율성 및 적응형 진화 능력.
+
+### 주요 결과
+- 복잡한 실제 로봇 작업에서 PhysiAgent는 작업 해결 성능을 현저히 향상시켰습니다.
+- VLM의 효과적인 자기 조절 능력을 입증했으며, 도구 협력이 일관되고 프레임워크가 실행 과정에서 적응형으로 진화했습니다.
+
+### 결론
+PhysiAgent는 VLM과 VLA를 구현형 에이전트 프레임워크에 통합하는 실용적이고 선구적인 시도를 제공하며, 실제 세계 환경에서의 접지 응용을 효과적으로 실현했습니다.

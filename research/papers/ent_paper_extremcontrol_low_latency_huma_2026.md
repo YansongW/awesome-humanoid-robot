@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.11321v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.11321v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (722 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,28 @@ sources:
 ## Overview
 Building a low-latency humanoid teleoperation system is essential for collecting diverse reactive and dynamic demonstrations. However, existing approaches rely on heavily pre-processed human-to-humanoid motion retargeting and position-only PD control, resulting in substantial latency that severely limits responsiveness and prevents tasks requiring rapid feedback and fast reactions. To address this problem, we propose ExtremControl, a low latency whole-body control framework that: (1) operates directly on SE(3) poses of selected rigid links, primarily humanoid extremities, to avoid full-body retargeting; (2) utilizes a Cartesian-space mapping to directly convert human motion to humanoid link targets; and (3) incorporates velocity feedforward control at low level to support highly responsive behavior under rapidly changing control interfaces. We further provide a unified theoretical formulation of ExtremControl and systematically validate its effectiveness through experiments in both simulation and real-world environments. Building on ExtremControl, we implement a low-latency humanoid teleoperation system that supports both optical motion capture and VR-based motion tracking, achieving end-to-end latency as low as 50ms and enabling highly responsive behaviors such as ping-pong ball balancing, juggling, and real-time return, thereby substantially surpassing the 200ms latency limit observed in prior work.
 
-## 개요
-저지연 휴머노이드 원격 조작 시스템을 구축하는 것은 다양한 반응형 및 동적 시연을 수집하는 데 필수적입니다. 그러나 기존 접근 방식은 과도하게 전처리된 인간-휴머노이드 모션 리타겟팅과 위치 전용 PD 제어에 의존하여 상당한 지연을 초래하며, 이는 응답성을 심각하게 제한하고 빠른 피드백과 신속한 반응이 필요한 작업을 방해합니다. 이 문제를 해결하기 위해 우리는 ExtremControl을 제안합니다. 이는 저지연 전신 제어 프레임워크로, (1) 전신 리타겟팅을 피하기 위해 선택된 강체 링크(주로 휴머노이드 말단)의 SE(3) 포즈를 직접 연산하고, (2) 데카르트 공간 매핑을 활용하여 인간의 움직임을 휴머노이드 링크 목표로 직접 변환하며, (3) 저수준에서 속도 피드포워드 제어를 통합하여 빠르게 변화하는 제어 인터페이스에서 높은 응답성을 지원합니다. 또한 ExtremControl의 통일된 이론적 정식화를 제공하고 시뮬레이션 및 실제 환경 실험을 통해 그 효과를 체계적으로 검증합니다. ExtremControl을 기반으로 광학 모션 캡처와 VR 기반 모션 트래킹을 모두 지원하는 저지연 휴머노이드 원격 조작 시스템을 구현하여 종단 간 지연을 최대 50ms까지 낮추고, 탁구공 균형 잡기, 저글링, 실시간 반환과 같은 높은 응답성을 요하는 동작을 가능하게 하여 이전 연구에서 관찰된 200ms 지연 한계를 크게 초과합니다.
-
-## 핵심 내용
-저지연 휴머노이드 원격 조작 시스템을 구축하는 것은 다양한 반응형 및 동적 시연을 수집하는 데 필수적입니다. 그러나 기존 접근 방식은 과도하게 전처리된 인간-휴머노이드 모션 리타겟팅과 위치 전용 PD 제어에 의존하여 상당한 지연을 초래하며, 이는 응답성을 심각하게 제한하고 빠른 피드백과 신속한 반응이 필요한 작업을 방해합니다. 이 문제를 해결하기 위해 우리는 ExtremControl을 제안합니다. 이는 저지연 전신 제어 프레임워크로, (1) 전신 리타겟팅을 피하기 위해 선택된 강체 링크(주로 휴머노이드 말단)의 SE(3) 포즈를 직접 연산하고, (2) 데카르트 공간 매핑을 활용하여 인간의 움직임을 휴머노이드 링크 목표로 직접 변환하며, (3) 저수준에서 속도 피드포워드 제어를 통합하여 빠르게 변화하는 제어 인터페이스에서 높은 응답성을 지원합니다. 또한 ExtremControl의 통일된 이론적 정식화를 제공하고 시뮬레이션 및 실제 환경 실험을 통해 그 효과를 체계적으로 검증합니다. ExtremControl을 기반으로 광학 모션 캡처와 VR 기반 모션 트래킹을 모두 지원하는 저지연 휴머노이드 원격 조작 시스템을 구현하여 종단 간 지연을 최대 50ms까지 낮추고, 탁구공 균형 잡기, 저글링, 실시간 반환과 같은 높은 응답성을 요하는 동작을 가능하게 하여 이전 연구에서 관찰된 200ms 지연 한계를 크게 초과합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.11321v3
+
+## 개요
+기존 원격 조작 방식은 무거운 사람-휴머노이드 동작 재매핑과 위치 기반 PD 제어에 의존하여 지연 시간이 과도하게 발생하며, 빠른 피드백과 반응이 필요한 작업을 지원할 수 없습니다. ExtremControl은 선택된 강체(주로 사지 말단)의 SE(3) 자세를 직접 조작하여 전신 재매핑을 피하고, 데카르트 공간 매핑을 통해 인간의 동작을 로봇 링크 목표로 직접 변환하며, 하위 수준에 속도 피드포워드 제어를 도입하여 빠르게 변화하는 인터페이스에 대한 대응 능력을 강화합니다. 이 시스템은 광학 모션 캡처와 VR 트래킹 두 가지 입력 방식을 지원하며, 시뮬레이션 및 실제 환경에서 유효성을 검증하여 기존 200ms 한계를 훨씬 넘어서는 최저 50ms의 종단 간 지연 시간을 달성했습니다.
+
+## 핵심 내용
+### 핵심 문제
+- 기존 방법은 '사람-휴머노이드' 동작 재매핑과 위치 기반 PD 제어에 의존하여 지연 시간이 높고(약 200ms), 빠른 피드백과 동적 반응이 필요한 작업(예: 공 받기, 균형 유지)을 수행할 수 없습니다.
+
+### 방법 아키텍처
+- **직접 말단 제어**: 선택된 강체(주로 휴머노이드 로봇 사지 말단)의 SE(3) 자세를 직접 조작하여 전신 동작 재매핑으로 인한 계산 지연을 방지합니다.
+- **데카르트 공간 매핑**: 인간의 동작을 로봇 링크의 데카르트 공간 목표로 직접 변환하여 중간 관절 각도 변환을 생략합니다.
+- **속도 피드포워드 제어**: 하위 수준 제어에 속도 피드포워드 항을 도입하여 로봇이 빠르게 변화하는 제어 명령에 즉각적으로 반응할 수 있게 합니다.
+
+### 시스템 구현
+- 두 가지 입력 방식 지원: 광학 모션 캡처 및 VR 트래킹.
+- 종단 간 지연 시간이 최저 **50ms**로, 이전 연구의 **200ms** 지연 한계보다 현저히 낮습니다.
+
+### 실험 검증
+- 시뮬레이션 및 실제 환경 모두에서 시스템 검증을 수행했습니다.
+- 높은 동적 동작을 성공적으로 시연: 탁구공 균형 유지, 저글링, 실시간 리턴 등, 빠른 피드백 작업에서 시스템의 유효성을 입증했습니다.
+
+### 이론적 기여
+- ExtremControl의 통일된 이론 공식을 제공하여 향후 저지연 원격 조작 연구의 기반을 마련했습니다.

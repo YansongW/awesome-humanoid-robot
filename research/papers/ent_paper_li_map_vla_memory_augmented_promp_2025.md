@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.09516v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.09516v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (972 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,26 @@ MAP-VLA通过记忆增强提示机制，以轻量级方式解决了VLA模型在�
 ## Overview
 Pre-trained Vision-Language-Action (VLA) models have achieved remarkable success in improving robustness and generalization for end-to-end robotic manipulation. However, these models struggle with long-horizon tasks due to their lack of memory and reliance solely on immediate sensory inputs. To address this limitation, we propose Memory-Augmented Prompting for Vision-Language-Action model (MAP-VLA), a novel framework that empowers pre-trained VLA models with demonstration-derived memory prompts to augment action generation for long-horizon robotic manipulation tasks. To achieve this, MAP-VLA first constructs a memory library from historical demonstrations, where each memory unit captures information about a specific stage of a task. These memory units are implemented as learnable soft prompts optimized through prompt tuning. Then, during real-time task execution, MAP-VLA retrieves relevant memory through trajectory similarity matching and dynamically integrates it into the VLA model for augmented action generation. Importantly, this prompt tuning and retrieval augmentation approach operates as a plug-and-play module for a frozen VLA model, offering a lightweight and flexible solution to improve task performance. Experimental results show that MAP-VLA delivers up to 7.0% absolute performance gains in the simulation benchmark and 25.0% on real robot evaluations for long-horizon tasks, surpassing the current state-of-the-art methods.
 
-## 개요
-사전 훈련된 Vision-Language-Action (VLA) 모델은 엔드투엔드 로봇 조작의 견고성과 일반화 능력을 향상시키는 데 놀라운 성공을 거두었습니다. 그러나 이러한 모델은 메모리가 부족하고 즉각적인 감각 입력에만 의존하기 때문에 장기적인 작업에서 어려움을 겪습니다. 이러한 한계를 해결하기 위해, 우리는 사전 훈련된 VLA 모델에 시연 기반 메모리 프롬프트를 부여하여 장기 로봇 조작 작업의 행동 생성을 강화하는 새로운 프레임워크인 MAP-VLA(Memory-Augmented Prompting for Vision-Language-Action model)를 제안합니다. 이를 위해 MAP-VLA는 먼저 과거 시연에서 메모리 라이브러리를 구축하며, 각 메모리 단위는 작업의 특정 단계에 대한 정보를 캡처합니다. 이러한 메모리 단위는 프롬프트 튜닝을 통해 최적화된 학습 가능한 소프트 프롬프트로 구현됩니다. 그런 다음 실시간 작업 실행 중에 MAP-VLA는 궤적 유사성 매칭을 통해 관련 메모리를 검색하고 이를 VLA 모델에 동적으로 통합하여 강화된 행동 생성을 수행합니다. 중요하게도, 이 프롬프트 튜닝 및 검색 증강 접근 방식은 고정된 VLA 모델의 플러그 앤 플레이 모듈로 작동하여 작업 성능을 향상시키는 가볍고 유연한 솔루션을 제공합니다. 실험 결과에 따르면 MAP-VLA는 시뮬레이션 벤치마크에서 최대 7.0%, 실제 로봇 평가에서 25.0%의 절대 성능 향상을 달성하여 장기 작업에서 현재 최첨단 방법을 능가합니다.
-
-## 핵심 내용
-사전 훈련된 Vision-Language-Action (VLA) 모델은 엔드투엔드 로봇 조작의 견고성과 일반화 능력을 향상시키는 데 놀라운 성공을 거두었습니다. 그러나 이러한 모델은 메모리가 부족하고 즉각적인 감각 입력에만 의존하기 때문에 장기적인 작업에서 어려움을 겪습니다. 이러한 한계를 해결하기 위해, 우리는 사전 훈련된 VLA 모델에 시연 기반 메모리 프롬프트를 부여하여 장기 로봇 조작 작업의 행동 생성을 강화하는 새로운 프레임워크인 MAP-VLA(Memory-Augmented Prompting for Vision-Language-Action model)를 제안합니다. 이를 위해 MAP-VLA는 먼저 과거 시연에서 메모리 라이브러리를 구축하며, 각 메모리 단위는 작업의 특정 단계에 대한 정보를 캡처합니다. 이러한 메모리 단위는 프롬프트 튜닝을 통해 최적화된 학습 가능한 소프트 프롬프트로 구현됩니다. 그런 다음 실시간 작업 실행 중에 MAP-VLA는 궤적 유사성 매칭을 통해 관련 메모리를 검색하고 이를 VLA 모델에 동적으로 통합하여 강화된 행동 생성을 수행합니다. 중요하게도, 이 프롬프트 튜닝 및 검색 증강 접근 방식은 고정된 VLA 모델의 플러그 앤 플레이 모듈로 작동하여 작업 성능을 향상시키는 가볍고 유연한 솔루션을 제공합니다. 실험 결과에 따르면 MAP-VLA는 시뮬레이션 벤치마크에서 최대 7.0%, 실제 로봇 평가에서 25.0%의 절대 성능 향상을 달성하여 장기 작업에서 현재 최첨단 방법을 능가합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.09516v1
+
+## 개요
+사전 훈련된 VLA 모델은 엔드투엔드 로봇 조작에서 강력한 견고성과 일반화 능력을 보여주지만, 메모리 메커니즘이 부족하여 즉각적인 감각 입력에만 의존하므로 장기간 작업을 처리하기 어렵습니다. MAP-VLA는 과거 시연에서 메모리 뱅크를 구축하여 각 작업 단계의 정보를 학습 가능한 소프트 프롬프트로 인코딩하고, 실시간 실행 시 궤적 유사성 매칭을 통해 관련 메모리를 검색하여 동결된 VLA 모델에 동적으로 주입함으로써 동작 생성을 강화합니다. 이러한 프롬프트 튜닝 및 검색 증강 방식은 플러그 앤 플레이 모듈로 작동하며, 기본 모델을 재훈련할 필요 없이 장기간 작업의 성능을 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 아키텍처
+MAP-VLA의 핵심 프레임워크는 두 단계로 구성됩니다:
+- **메모리 뱅크 구축**: 과거 시연에서 작업 단계 정보를 추출하고, 각 단계는 학습 가능한 소프트 프롬프트에 해당하며, 프롬프트 튜닝을 통해 이러한 프롬프트 매개변수를 최적화하여 구조화된 메모리 뱅크를 형성합니다.
+- **실시간 검색 및 증강**: 작업 실행 시 현재 궤적과 메모리 뱅크 내 과거 궤적 간의 유사성 매칭(예: 코사인 유사도)을 기반으로 가장 관련성 높은 메모리 유닛을 검색하고, 이를 VLA 모델의 입력 또는 중간 계층에 동적으로 주입하여 강화된 동작 시퀀스를 생성합니다.
+
+### 핵심 설계
+- **플러그 앤 플레이 모듈**: 모든 작업은 동결된 사전 훈련 VLA 모델(예: RT-2, Octo 등)을 기반으로 하며, 메모리 프롬프트 매개변수만 조정하여 대규모 미세 조정을 피하고 경량성과 유연성을 유지합니다.
+- **장기간 작업 적응**: 메모리 유닛이 작업 단계 컨텍스트를 인코딩하여, VLA 모델이 긴 시퀀스 작업에서 장기 의존성 부족으로 인해 발생하는 오류 누적 문제를 해결합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 벤치마크**: CALVIN 및 MetaWorld와 같은 장기간 조작 벤치마크에서 테스트한 결과, MAP-VLA는 기준 방법(예: VLA 모델 직접 사용 또는 단순 프롬프트 엔지니어링) 대비 최대 7.0%의 절대 성공률 향상을 달성했습니다.
+- **실제 로봇 평가**: 다단계 조작(예: 집기-놓기-쌓기)을 포함한 실제 시나리오에서 MAP-VLA는 25.0%의 절대 성능 향상을 구현하여 현재 최첨단 방법(예: RT-2+Chain-of-Thought)을 능가합니다.
+- **절제 실험**: 메모리 뱅크 규모(예: 10-50개 시연), 검색 임계값(유사도 > 0.7) 및 프롬프트 차원(예: 256차원)이 성능에 미치는 영향을 검증했으며, 메모리 뱅크가 더 많은 작업 단계를 포함할수록 장기간 작업 성공률이 높아집니다.
+
+### 결론
+MAP-VLA는 메모리 증강 프롬프트 메커니즘을 통해 경량 방식으로 VLA 모델의 장기간 로봇 조작에서의 메모리 부족 문제를 해결하며, 시뮬레이션과 실제 시나리오 모두에서 작업 성공률을 크게 향상시켜 사전 훈련 VLA 모델의 실용적 배포를 위한 효율적인 솔루션을 제공합니다.

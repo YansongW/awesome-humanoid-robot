@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.15061v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.15061v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (734 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,24 @@ sources:
 ## Overview
 Embodied agents are intelligent systems designed to perceive, reason, and act within the physical world. While the robotics community has long strived to build such versatile agents, a fundamental limitation persists: most current VLA-based models operate under a rigid ``Listen-and-Act'' paradigm. These systems assume instructions are unambiguous and execute them in a passive fashion, preventing them from resolving uncertainty through dialogue. To address this, we propose Ask-to-Clarify, a unified end-to-end framework that seamlessly integrates multi-turn disambiguation dialogue with low-level visuomotor control, eliminating the reliance on high-level action primitives or external planners. Specifically, Ask-to-Clarify synergizes a VLM-based Cognitive Planner with a Diffusion-based Motor Executor. To bridge the disparity between high-level disambiguation and low-level execution, we introduce a Semantic-Visual Alignment Adapter, which functions as a cross-modal interface to synthesize semantic intent with visual perceptual streams. Furthermore, we observe severe catastrophic forgetting: visuomotor fine-tuning completely erases dialogue capabilities. To overcome this, we propose a two-stage knowledge-insulation training strategy, effectively decoupling dialogue logic from physical manipulation. Extensive evaluations across 11 real-world tasks demonstrate that \framework{} significantly outperforms existing methods, offering a promising path toward building truly collaborative embodied agents.
 
-## 개요
-Embodied agents는 물리적 세계에서 인지, 추론 및 행동을 수행하도록 설계된 지능형 시스템입니다. 로봇 공학 커뮤니티는 오랫동안 이러한 다재다능한 에이전트를 구축하기 위해 노력해 왔지만, 근본적인 한계가 지속되고 있습니다. 대부분의 현재 VLA 기반 모델은 엄격한 "듣고-행동하기(Listen-and-Act)" 패러다임 하에서 작동합니다. 이러한 시스템은 명령이 명확하다고 가정하고 수동적으로 실행하여 대화를 통해 불확실성을 해결하지 못합니다. 이를 해결하기 위해, 우리는 다중 턴 명확화 대화를 저수준 시각-운동 제어와 원활하게 통합하고, 고수준 행동 프리미티브나 외부 플래너에 대한 의존성을 제거하는 통합 종단 간 프레임워크인 Ask-to-Clarify를 제안합니다. 구체적으로, Ask-to-Clarify는 VLM 기반 인지 플래너(Cognitive Planner)와 확산 기반 운동 실행기(Diffusion-based Motor Executor)를 시너지 효과를 내도록 결합합니다. 고수준 명확화와 저수준 실행 간의 차이를 연결하기 위해, 우리는 의미적 의도와 시각적 지각 스트림을 합성하는 교차 모달 인터페이스 역할을 하는 의미-시각 정렬 어댑터(Semantic-Visual Alignment Adapter)를 도입합니다. 또한, 심각한 파괴적 망각(catastrophic forgetting) 현상을 관찰했습니다. 시각-운동 미세 조정이 대화 능력을 완전히 지워버리는 것입니다. 이를 극복하기 위해, 우리는 2단계 지식 절연 훈련 전략(two-stage knowledge-insulation training strategy)을 제안하여 대화 논리와 물리적 조작을 효과적으로 분리합니다. 11가지 실제 작업에 대한 광범위한 평가는 \framework{}가 기존 방법보다 현저히 뛰어난 성능을 보여주며, 진정한 협력적 임베디드 에이전트를 구축하기 위한 유망한 경로를 제시합니다.
-
-## 핵심 내용
-Embodied agents는 물리적 세계에서 인지, 추론 및 행동을 수행하도록 설계된 지능형 시스템입니다. 로봇 공학 커뮤니티는 오랫동안 이러한 다재다능한 에이전트를 구축하기 위해 노력해 왔지만, 근본적인 한계가 지속되고 있습니다. 대부분의 현재 VLA 기반 모델은 엄격한 "듣고-행동하기(Listen-and-Act)" 패러다임 하에서 작동합니다. 이러한 시스템은 명령이 명확하다고 가정하고 수동적으로 실행하여 대화를 통해 불확실성을 해결하지 못합니다. 이를 해결하기 위해, 우리는 다중 턴 명확화 대화를 저수준 시각-운동 제어와 원활하게 통합하고, 고수준 행동 프리미티브나 외부 플래너에 대한 의존성을 제거하는 통합 종단 간 프레임워크인 Ask-to-Clarify를 제안합니다. 구체적으로, Ask-to-Clarify는 VLM 기반 인지 플래너(Cognitive Planner)와 확산 기반 운동 실행기(Diffusion-based Motor Executor)를 시너지 효과를 내도록 결합합니다. 고수준 명확화와 저수준 실행 간의 차이를 연결하기 위해, 우리는 의미적 의도와 시각적 지각 스트림을 합성하는 교차 모달 인터페이스 역할을 하는 의미-시각 정렬 어댑터(Semantic-Visual Alignment Adapter)를 도입합니다. 또한, 심각한 파괴적 망각(catastrophic forgetting) 현상을 관찰했습니다. 시각-운동 미세 조정이 대화 능력을 완전히 지워버리는 것입니다. 이를 극복하기 위해, 우리는 2단계 지식 절연 훈련 전략(two-stage knowledge-insulation training strategy)을 제안하여 대화 논리와 물리적 조작을 효과적으로 분리합니다. 11가지 실제 작업에 대한 광범위한 평가는 \framework{}가 기존 방법보다 현저히 뛰어난 성능을 보여주며, 진정한 협력적 임베디드 에이전트를 구축하기 위한 유망한 경로를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.15061v3
+
+## 개요
+현재 대부분의 VLA 기반 구현 모델은 "명령을 받으면 즉시 실행"하는 수동적 패러다임을 따르며, 명령이 명확하다고 가정하여 대화를 통한 불확실성 해소가 불가능합니다. 이를 위해 Ask-to-Clarify 프레임워크는 VLM 기반 인지 플래너와 확산 모델 기반 운동 실행기를 협력적으로 작동시키고, 의미-시각 정렬 어댑터를 통해 고수준 명확화와 저수준 실행 간의 격차를 연결합니다. 시각 운동 미세 조정이 대화 능력을 완전히 지워버리는 치명적 망각 문제를 해결하기 위해, 이 프레임워크는 두 단계 지식 격리 훈련 전략을 채택하여 대화 논리와 물리적 조작을 효과적으로 분리합니다. 11가지 실제 세계 작업에 대한 광범위한 평가에서 이 프레임워크는 기존 방법보다 현저히 우수한 성능을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **인지 플래너(Cognitive Planner)**: VLM 기반으로, 모호한 명령을 이해하고 다중 턴 대화를 통해 사용자에게 적극적으로 질문하여 의도를 명확히 합니다.
+- **운동 실행기(Motor Executor)**: 확산 모델 기반으로, 명확화된 의미적 의도를 저수준 시각 운동 제어 신호로 변환합니다.
+- **의미-시각 정렬 어댑터(Semantic-Visual Alignment Adapter)**: 교차 모달 인터페이스로, 고수준 의미적 의도와 시각적 지각 흐름을 합성하여 고수준 명확화와 저수준 실행 간의 의미적 격차를 해결합니다.
+
+### 훈련 전략
+- **두 단계 지식 격리 훈련**: 첫 번째 단계는 대화 논리 능력을 훈련하고, 두 번째 단계는 물리적 조작 능력을 훈련합니다. 지식 격리 메커니즘을 통해 시각 운동 미세 조정이 대화 능력을 덮어쓰지 않도록 방지하여 치명적 망각을 극복합니다.
+
+### 실험 설정 및 결과
+- 11가지 실제 세계 작업에서 평가되었으며, 객체 조작, 내비게이션 등의 시나리오를 포함합니다.
+- 기존 기준선 방법과 비교하여 Ask-to-Clarify는 작업 성공률, 대화 효율성 및 견고성에서 현저한 향상을 보였으며, 구체적인 수치는 초록에 나열되지 않았지만 논문에 상세 비교가 제공됩니다.
+
+### 결론
+이 프레임워크는 능동적 대화를 통해 명령 모호성을 제거하여 전통적인 "명령을 받으면 즉시 실행" 패러다임의 한계를 돌파함으로써, 진정한 협력적 구현 에이전트를 구축하는 실현 가능한 경로를 제공합니다.

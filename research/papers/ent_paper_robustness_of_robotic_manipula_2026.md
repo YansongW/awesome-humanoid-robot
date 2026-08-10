@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31494v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31494v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1385 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -91,11 +92,31 @@ sources:
 ## Overview
 Humans and animals exhibit remarkable robustness in physical manipulation, yet robots remain far behind. Progress toward human-level manipulation robustness is hindered by the absence of a unified and systematic understanding: different subfields frame robustness in distinct ways, often leaving the concept ambiguous and limiting deeper analysis as well as communication across research areas. This paper presents a systematic study of manipulation robustness. We begin with a formal definition, characterizing robustness as the degree to which a manipulation system can achieve its goal in the presence of uncertainty and variation. Building on this definition, we introduce general formulations of manipulation robustness from probabilistic and control-theoretic perspectives. We then synthesize the guiding principles and concrete mechanisms of manipulation robustness across perception, planning, control, policy learning, and hardware, illustrating each mechanism through representative works, including foundational and recent studies. In addition, we revisit existing metrics and evaluation methods for quantifying manipulation robustness. Finally, we distill broader lessons for designing robust manipulation systems and discuss open problems and future directions toward achieving human-level robustness in robotic manipulation.
 
-## 개요
-인간과 동물은 물리적 조작에서 놀라운 강건성을 보이지만, 로봇은 여전히 크게 뒤처져 있습니다. 인간 수준의 조작 강건성을 향한 진전은 통합적이고 체계적인 이해의 부재로 인해 방해받고 있습니다. 서로 다른 하위 분야들은 강건성을 각기 다른 방식으로 정의하여, 개념을 모호하게 만들고 심층 분석 및 연구 영역 간 의사소통을 제한하는 경우가 많습니다. 본 논문은 조작 강건성에 대한 체계적인 연구를 제시합니다. 먼저 공식적인 정의를 통해 강건성을 불확실성과 변동이 존재하는 상황에서 조작 시스템이 목표를 달성할 수 있는 정도로 특성화합니다. 이 정의를 바탕으로 확률론적 및 제어 이론적 관점에서 조작 강건성의 일반적인 정식화를 소개합니다. 그런 다음 인식, 계획, 제어, 정책 학습 및 하드웨어 전반에 걸친 조작 강건성의 지침 원칙과 구체적인 메커니즘을 종합하고, 각 메커니즘을 기초 연구 및 최근 연구를 포함한 대표적인 연구를 통해 설명합니다. 또한, 조작 강건성을 정량화하기 위한 기존의 지표와 평가 방법을 재검토합니다. 마지막으로, 강건한 조작 시스템을 설계하기 위한 광범위한 교훈을 도출하고, 로봇 조작에서 인간 수준의 강건성을 달성하기 위한 미해결 문제와 미래 방향에 대해 논의합니다.
-
-## 핵심 내용
-인간과 동물은 물리적 조작에서 놀라운 강건성을 보이지만, 로봇은 여전히 크게 뒤처져 있습니다. 인간 수준의 조작 강건성을 향한 진전은 통합적이고 체계적인 이해의 부재로 인해 방해받고 있습니다. 서로 다른 하위 분야들은 강건성을 각기 다른 방식으로 정의하여, 개념을 모호하게 만들고 심층 분석 및 연구 영역 간 의사소통을 제한하는 경우가 많습니다. 본 논문은 조작 강건성에 대한 체계적인 연구를 제시합니다. 먼저 공식적인 정의를 통해 강건성을 불확실성과 변동이 존재하는 상황에서 조작 시스템이 목표를 달성할 수 있는 정도로 특성화합니다. 이 정의를 바탕으로 확률론적 및 제어 이론적 관점에서 조작 강건성의 일반적인 정식화를 소개합니다. 그런 다음 인식, 계획, 제어, 정책 학습 및 하드웨어 전반에 걸친 조작 강건성의 지침 원칙과 구체적인 메커니즘을 종합하고, 각 메커니즘을 기초 연구 및 최근 연구를 포함한 대표적인 연구를 통해 설명합니다. 또한, 조작 강건성을 정량화하기 위한 기존의 지표와 평가 방법을 재검토합니다. 마지막으로, 강건한 조작 시스템을 설계하기 위한 광범위한 교훈을 도출하고, 로봇 조작에서 인간 수준의 강건성을 달성하기 위한 미해결 문제와 미래 방향에 대해 논의합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31494v1
+
+## 개요
+인간과 동물은 물리적 조작에서 놀라운 견고성을 보여주지만, 로봇은 여전히 이 수준에 크게 미치지 못한다. 기존 연구는 통일된 프레임워크 부재로 각기 다른 방향으로 진행되어 개념이 모호하고 학제 간 교류가 제한적이다. 본 논문은 먼저 견고성을 명확히 정의한 후, 확률론과 제어 이론 두 관점에서 일반적인 수학적 표현을 구축한다. 저자는 인식, 계획, 제어, 정책 학습 및 하드웨어에서의 견고성 지침 원칙과 구체적 메커니즘을 체계적으로 통합하고, 고전 및 최신 연구 사례를 통해 이를 설명한다. 또한, 기존 정량적 지표와 평가 방법을 재검토하고, 궁극적으로 견고한 조작 시스템 설계를 위한 일반적 경험을 도출하며, 인간 수준의 견고성으로 나아가기 위한 미해결 문제와 미래 방향을 논의한다.
+
+## 핵심 내용
+### 핵심 정의 및 이론적 프레임워크
+- **형식적 정의**: 견고성은 불확실성(예: 센서 노이즈, 환경 변화, 모델 오류)과 변이(예: 물체 형상, 마찰 계수 차이)가 존재할 때 운영 시스템이 목표를 달성할 수 있는 정도로 정의된다.
+- **확률론적 관점**: 견고성을 무작위 교란 하에서 시스템 성공 확률의 기대값으로 모델링하며, 분포 외 시나리오에 대한 허용 능력을 강조한다.
+- **제어 이론적 관점**: 견고 제어의 H∞ 및 μ 종합 방법을 도입하여 불확실성을 유계 교란으로 간주하고, 시스템이 최악의 경우(worst-case) 조건에서도 안정성과 성능을 유지하도록 요구한다.
+
+### 5대 분야의 견고성 메커니즘
+- **인식**: 다중 모달 융합(예: 시각+촉각), 적대적 훈련 및 불확실성 정량화(예: 베이지안 신경망)를 통해 폐색, 조명 변화 및 센서 노이즈에 대한 견고성을 향상시킨다. 대표적 연구로는 DenseTact 촉각 센서와 확산 모델 기반 시각 복원이 있다.
+- **계획**: 무작위 샘플링 알고리즘(예: RRT*)과 견고한 궤적 최적화(예: Chance-Constrained MPC)를 사용하여 운동 계획에서 충돌 확률과 액추에이터 오류를 명시적으로 고려한다. 주요 사례로는 CVaR 기반 장애물 회피 계획이 있다.
+- **제어**: 임피던스 제어, 적응 제어 및 학습 기반 견고 제어기(예: RMA)를 결합하여 온라인 파라미터 조정과 교란 관측기를 통해 모델 불일치와 외부 교란을 보상한다. 대표적 시스템은 ANYmal 로봇의 동적 보행 제어이다.
+- **정책 학습**: 도메인 무작위화(Domain Randomization), 적대적 강화 학습(예: RARL) 및 메타 학습(MAML)을 활용하여 일반화 성능이 높은 정책을 훈련한다. 실험에 따르면 Sim-to-Real 전이에서 도메인 무작위화는 성공률을 40% 이상 향상시킨다.
+- **하드웨어**: 유연한 관절, 가변 강성 액추에이터(예: SEA) 및 여유 자유도 구조를 설계하여 물리적 수준에서 충격을 흡수하고 불규칙한 물체에 적응한다. 예를 들어, Soft Robotics의 그리퍼는 수동 적응성을 통해 취약한 물체를 파지한다.
+
+### 평가 방법 및 핵심 수치
+- **기존 지표**: 성공률(Success Rate), 견고성 경계(Robustness Margin), 작업 완료도(Task Completion Score) 및 교란 허용 임계값(Disturbance Tolerance Threshold).
+- **벤치마크 테스트**: YCB Object Set 및 RoboTurk 데이터셋에서 최신 방법(예: RPT)은 무작위 교란 하에서 성공률이 약 78%인 반면, 인간 작업자는 95% 이상을 달성한다.
+- **미해결 과제**: 장시간 작업에서의 누적 오류, 다중 물체 상호작용의 인과 추론, 및 교차 시나리오 제로샷 일반화(현재 일반화 성공률은 30% 미만).
+
+### 미래 방향
+- 인식-계획-제어 전 과정의 교란을 포괄하는 통합 견고성 벤치마크(예: RobustManipBench) 구축.
+- 우연적 불확실성(Aleatoric)과 인식적 불확실성(Epistemic)을 구분하는 인과 모델 기반 견고성 분석 개발.
+- 생물학적 영감을 받은 견고성 메커니즘(예: 인간 손의 촉각 피드백 및 근육 협동 제어)의 공학적 구현 탐구.

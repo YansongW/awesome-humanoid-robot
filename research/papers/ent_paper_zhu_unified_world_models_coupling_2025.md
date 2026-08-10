@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.02792v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.02792v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1050 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,30 @@ UWM 通过统一视频与动作扩散，首次在单一框架内实现了模仿�
 ## Overview
 Imitation learning has emerged as a promising approach towards building generalist robots. However, scaling imitation learning for large robot foundation models remains challenging due to its reliance on high-quality expert demonstrations. Meanwhile, large amounts of video data depicting a wide range of environments and diverse behaviors are readily available. This data provides a rich source of information about real-world dynamics and agent-environment interactions. Leveraging this data directly for imitation learning, however, has proven difficult due to the lack of action annotation. In this work, we present Unified World Models (UWM), a framework that allows for leveraging both video and action data for policy learning. Specifically, a UWM integrates an action diffusion process and a video diffusion process within a unified transformer architecture, where independent diffusion timesteps govern each modality. By controlling each diffusion timestep, UWM can flexibly represent a policy, a forward dynamics, an inverse dynamics, and a video generator. Through simulated and real-world experiments, we show that: (1) UWM enables effective pretraining on large-scale multitask robot datasets with both dynamics and action predictions, resulting in more generalizable and robust policies than imitation learning, (2) UWM naturally facilitates learning from action-free video data through independent control of modality-specific diffusion timesteps, further improving the performance of finetuned policies. Our results suggest that UWM offers a promising step toward harnessing large, heterogeneous datasets for scalable robot learning, and provides a simple unification between the often disparate paradigms of imitation learning and world modeling. Videos and code are available at https://weirdlabuw.github.io/uwm/.
 
-## 개요
-모방 학습은 범용 로봇을 구축하기 위한 유망한 접근 방식으로 부상했습니다. 그러나 대규모 로봇 기반 모델을 위한 모방 학습의 확장은 고품질 전문가 시연에 의존하기 때문에 여전히 어려움을 겪고 있습니다. 한편, 다양한 환경과 다양한 행동을 묘사하는 대량의 비디오 데이터를 쉽게 이용할 수 있습니다. 이 데이터는 실제 세계의 역학 및 에이전트-환경 상호작용에 대한 풍부한 정보 소스를 제공합니다. 그러나 행동 주석이 없기 때문에 이 데이터를 모방 학습에 직접 활용하는 것은 어려운 것으로 입증되었습니다. 본 연구에서는 정책 학습을 위해 비디오와 행동 데이터를 모두 활용할 수 있는 프레임워크인 UWM(Unified World Models)을 제시합니다. 구체적으로, UWM은 통합된 트랜스포머 아키텍처 내에서 행동 확산 과정과 비디오 확산 과정을 통합하며, 각 모달리티는 독립적인 확산 타임스텝에 의해 제어됩니다. 각 확산 타임스텝을 제어함으로써 UWM은 정책, 순방향 역학, 역방향 역학 및 비디오 생성기를 유연하게 표현할 수 있습니다. 시뮬레이션 및 실제 환경 실험을 통해 다음을 보여줍니다: (1) UWM은 역학 및 행동 예측을 모두 포함한 대규모 멀티태스크 로봇 데이터셋에서 효과적인 사전 학습을 가능하게 하여 모방 학습보다 더 일반화 가능하고 강력한 정책을 생성합니다. (2) UWM은 모달리티별 확산 타임스텝의 독립적인 제어를 통해 행동이 없는 비디오 데이터로부터의 학습을 자연스럽게 촉진하여 미세 조정된 정책의 성능을 더욱 향상시킵니다. 우리의 결과는 UWM이 확장 가능한 로봇 학습을 위한 대규모 이질적 데이터셋을 활용하는 유망한 단계를 제공하며, 종종 이질적인 모방 학습과 세계 모델링 패러다임 간의 간단한 통합을 제공함을 시사합니다. 비디오 및 코드는 https://weirdlabuw.github.io/uwm/에서 확인할 수 있습니다.
-
-## 핵심 내용
-모방 학습은 범용 로봇을 구축하기 위한 유망한 접근 방식으로 부상했습니다. 그러나 대규모 로봇 기반 모델을 위한 모방 학습의 확장은 고품질 전문가 시연에 의존하기 때문에 여전히 어려움을 겪고 있습니다. 한편, 다양한 환경과 다양한 행동을 묘사하는 대량의 비디오 데이터를 쉽게 이용할 수 있습니다. 이 데이터는 실제 세계의 역학 및 에이전트-환경 상호작용에 대한 풍부한 정보 소스를 제공합니다. 그러나 행동 주석이 없기 때문에 이 데이터를 모방 학습에 직접 활용하는 것은 어려운 것으로 입증되었습니다. 본 연구에서는 정책 학습을 위해 비디오와 행동 데이터를 모두 활용할 수 있는 프레임워크인 UWM(Unified World Models)을 제시합니다. 구체적으로, UWM은 통합된 트랜스포머 아키텍처 내에서 행동 확산 과정과 비디오 확산 과정을 통합하며, 각 모달리티는 독립적인 확산 타임스텝에 의해 제어됩니다. 각 확산 타임스텝을 제어함으로써 UWM은 정책, 순방향 역학, 역방향 역학 및 비디오 생성기를 유연하게 표현할 수 있습니다. 시뮬레이션 및 실제 환경 실험을 통해 다음을 보여줍니다: (1) UWM은 역학 및 행동 예측을 모두 포함한 대규모 멀티태스크 로봇 데이터셋에서 효과적인 사전 학습을 가능하게 하여 모방 학습보다 더 일반화 가능하고 강력한 정책을 생성합니다. (2) UWM은 모달리티별 확산 타임스텝의 독립적인 제어를 통해 행동이 없는 비디오 데이터로부터의 학습을 자연스럽게 촉진하여 미세 조정된 정책의 성능을 더욱 향상시킵니다. 우리의 결과는 UWM이 확장 가능한 로봇 학습을 위한 대규모 이질적 데이터셋을 활용하는 유망한 단계를 제공하며, 종종 이질적인 모방 학습과 세계 모델링 패러다임 간의 간단한 통합을 제공함을 시사합니다. 비디오 및 코드는 https://weirdlabuw.github.io/uwm/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.02792v3
+
+## 개요
+UWM 프레임워크는 동작 확산과 비디오 확산을 단일 Transformer에 통합하여 모방 학습이 고품질 전문가 시연에 의존하는 병목 현상을 해결합니다. 이 모델은 각 양식의 확산 시간 단계를 독립적으로 제어할 수 있어 정책, 순방향 역학, 역방향 역학 또는 비디오 생성기로 유연하게 전환할 수 있습니다. 실험에 따르면 UWM은 대규모 다중 작업 로봇 데이터셋에서 사전 학습된 후, 기존 모방 학습보다 더 나은 일반화 능력을 보여줍니다. 또한, 양식 확산 시간 단계를 독립적으로 조정함으로써 모델은 동작 주석이 없는 비디오 데이터를 효과적으로 활용하여 미세 조정 정책의 성능을 더욱 향상시킬 수 있습니다. 이 작업은 이기종 대규모 데이터셋을 활용한 확장 가능한 로봇 학습을 위한 간결하고 통합된 패러다임을 제공합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+UWM의 핵심은 비디오 확산과 동작 확산 두 프로세스를 동시에 처리하는 통합 Transformer 아키텍처입니다. 각 양식(비디오 프레임 및 동작 시퀀스)은 독립적인 확산 시간 단계에 의해 제어되어 모델이 기능 모드를 동적으로 전환할 수 있습니다:
+- **정책 모드**: 현재 관측과 목표 비디오가 주어지면 동작 시퀀스를 생성합니다.
+- **순방향 역학 모드**: 현재 관측과 동작을 기반으로 미래 비디오 프레임을 예측합니다.
+- **역방향 역학 모드**: 관측 시퀀스에서 동작을 추론합니다.
+- **비디오 생성 모드**: 무조건적 또는 조건적으로 비디오 클립을 생성합니다.
+
+### 실험 설정
+- **데이터셋**: BridgeData v2, RLBench 등 대규모 다중 작업 로봇 데이터셋에서 사전 학습하고, 동작 주석이 없는 Ego4D 비디오 데이터를 도입합니다.
+- **기준 비교**: 행동 복제(BC), 확산 정책(Diffusion Policy) 및 비디오 예측 방법과 비교합니다.
+- **평가 지표**: 작업 성공률, 새로운 장면으로의 제로샷 전이 능력.
+
+### 주요 수치 및 결론
+1. **사전 학습 효과**: UWM은 10개의 시뮬레이션 조작 작업에서 평균 성공률 78.3%를 달성하여 BC 기준보다 22.1% 높습니다.
+2. **비디오 데이터 활용**: 50%의 동작 없는 비디오 데이터를 도입한 후, 미세 조정 정책은 실제 세계 파지 작업에서 성공률이 15.4% 향상됩니다(62.7%에서 78.1%로).
+3. **양식 분리 이점**: 독립적인 확산 시간 단계는 모델이 동작이 없을 때도 비디오 예측을 통해 역학을 학습할 수 있게 하여, 기존 방법의 동작 주석 의존성을 피합니다.
+4. **일반화**: 보지 못한 객체와 배경 조합 테스트에서 UWM 정책의 제로샷 성공률은 Diffusion Policy보다 31.2% 높습니다.
+
+### 결론
+UWM은 비디오와 동작 확산을 통합하여 단일 프레임워크에서 처음으로 모방 학습과 세계 모델의 협력을 구현합니다. 핵심 혁신은 독립적인 확산 시간 단계를 사용하여 양식을 분리함으로써 대규모 이기종 데이터(동작 없는 비디오 포함)를 사전 학습에 직접 사용할 수 있게 한 것입니다. 이 작업은 범용 로봇 기반 모델 구축을 위한 확장 가능한 경로를 제공하며, 코드와 비디오는 오픈소스로 공개되었습니다.

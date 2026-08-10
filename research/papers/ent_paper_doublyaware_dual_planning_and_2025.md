@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.12095v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.12095v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1139 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,30 @@ DoublyAware 通过结构化不确定性建模，显著提升了 TD-MPC 在人形
 ## Overview
 Achieving robust robot learning for humanoid locomotion is a fundamental challenge in model-based reinforcement learning (MBRL), where environmental stochasticity and randomness can hinder efficient exploration and learning stability. The environmental, so-called aleatoric, uncertainty can be amplified in high-dimensional action spaces with complex contact dynamics, and further entangled with epistemic uncertainty in the models during learning phases. In this work, we propose DoublyAware, an uncertainty-aware extension of Temporal Difference Model Predictive Control (TD-MPC) that explicitly decomposes uncertainty into two disjoint interpretable components, i.e., planning and policy uncertainties. To handle the planning uncertainty, DoublyAware employs conformal prediction to filter candidate trajectories using quantile-calibrated risk bounds, ensuring statistical consistency and robustness against stochastic dynamics. Meanwhile, policy rollouts are leveraged as structured informative priors to support the learning phase with Group-Relative Policy Constraint (GRPC) optimizers that impose a group-based adaptive trust-region in the latent action space. This principled combination enables the robot agent to prioritize high-confidence, high-reward behavior while maintaining effective, targeted exploration under uncertainty. Evaluated on the HumanoidBench locomotion suite with the Unitree 26-DoF H1-2 humanoid, DoublyAware demonstrates improved sample efficiency, accelerated convergence, and enhanced motion feasibility compared to RL baselines. Our simulation results emphasize the significance of structured uncertainty modeling for data-efficient and reliable decision-making in TD-MPC-based humanoid locomotion learning.
 
-## 개요
-휴머노이드 보행을 위한 강건한 로봇 학습을 달성하는 것은 모델 기반 강화 학습(MBRL)에서 근본적인 과제이며, 환경의 확률성과 무작위성은 효율적인 탐색과 학습 안정성을 저해할 수 있습니다. 소위 우연적(aleatoric) 불확실성이라고 불리는 환경적 불확실성은 복잡한 접촉 역학을 가진 고차원 행동 공간에서 증폭될 수 있으며, 학습 단계에서 모델의 인식적(epistemic) 불확실성과 더욱 얽히게 됩니다. 본 연구에서는 DoublyAware를 제안합니다. 이는 시간차 모델 예측 제어(TD-MPC)의 불확실성 인식 확장판으로, 불확실성을 계획 불확실성과 정책 불확실성이라는 두 개의 분리 가능하고 해석 가능한 구성 요소로 명시적으로 분해합니다. 계획 불확실성을 처리하기 위해 DoublyAware는 등위 예측(conformal prediction)을 사용하여 분위수 보정 위험 경계를 통해 후보 궤적을 필터링함으로써 통계적 일관성과 확률적 역학에 대한 강건성을 보장합니다. 한편, 정책 롤아웃은 구조화된 정보 제공 사전 지식으로 활용되어 잠재 행동 공간에서 그룹 기반 적응형 신뢰 영역을 부과하는 그룹 상대 정책 제약(GRPC) 최적화기를 통해 학습 단계를 지원합니다. 이러한 원칙적 결합을 통해 로봇 에이전트는 불확실성 하에서 효과적이고 목표 지향적인 탐색을 유지하면서 높은 신뢰도와 높은 보상의 행동을 우선시할 수 있습니다. Unitree 26-DoF H1-2 휴머노이드를 사용한 HumanoidBench 보행 제품군에서 평가된 DoublyAware는 RL 기준선과 비교하여 향상된 샘플 효율성, 가속화된 수렴 및 향상된 동작 실현 가능성을 보여줍니다. 시뮬레이션 결과는 TD-MPC 기반 휴머노이드 보행 학습에서 데이터 효율적이고 신뢰할 수 있는 의사 결정을 위한 구조화된 불확실성 모델링의 중요성을 강조합니다.
-
-## 핵심 내용
-휴머노이드 보행을 위한 강건한 로봇 학습을 달성하는 것은 모델 기반 강화 학습(MBRL)에서 근본적인 과제이며, 환경의 확률성과 무작위성은 효율적인 탐색과 학습 안정성을 저해할 수 있습니다. 소위 우연적(aleatoric) 불확실성이라고 불리는 환경적 불확실성은 복잡한 접촉 역학을 가진 고차원 행동 공간에서 증폭될 수 있으며, 학습 단계에서 모델의 인식적(epistemic) 불확실성과 더욱 얽히게 됩니다. 본 연구에서는 DoublyAware를 제안합니다. 이는 시간차 모델 예측 제어(TD-MPC)의 불확실성 인식 확장판으로, 불확실성을 계획 불확실성과 정책 불확실성이라는 두 개의 분리 가능하고 해석 가능한 구성 요소로 명시적으로 분해합니다. 계획 불확실성을 처리하기 위해 DoublyAware는 등위 예측(conformal prediction)을 사용하여 분위수 보정 위험 경계를 통해 후보 궤적을 필터링함으로써 통계적 일관성과 확률적 역학에 대한 강건성을 보장합니다. 한편, 정책 롤아웃은 구조화된 정보 제공 사전 지식으로 활용되어 잠재 행동 공간에서 그룹 기반 적응형 신뢰 영역을 부과하는 그룹 상대 정책 제약(GRPC) 최적화기를 통해 학습 단계를 지원합니다. 이러한 원칙적 결합을 통해 로봇 에이전트는 불확실성 하에서 효과적이고 목표 지향적인 탐색을 유지하면서 높은 신뢰도와 높은 보상의 행동을 우선시할 수 있습니다. Unitree 26-DoF H1-2 휴머노이드를 사용한 HumanoidBench 보행 제품군에서 평가된 DoublyAware는 RL 기준선과 비교하여 향상된 샘플 효율성, 가속화된 수렴 및 향상된 동작 실현 가능성을 보여줍니다. 시뮬레이션 결과는 TD-MPC 기반 휴머노이드 보행 학습에서 데이터 효율적이고 신뢰할 수 있는 의사 결정을 위한 구조화된 불확실성 모델링의 중요성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.12095v1
+
+## 개요
+모델 기반 강화 학습에서 환경 무작위성(즉, 우연적 불확실성)은 고차원 행동 공간과 복잡한 접촉 역학 하에서 증폭되며, 모델 인지 불확실성과 서로 얽혀 효율적인 탐험과 학습 안정성을 저해합니다. DoublyAware는 불확실성을 계획 불확실성과 정책 불확실성으로 분해하여 TD-MPC 프레임워크의 불확실성 인지 확장을 구현합니다. 계획 불확실성에 대해서는 이 방법이 컨포멀 예측을 활용하여 분위수 보정 기반의 위험 경계로 후보 궤적을 필터링하여 통계적 일관성과 견고성을 보장합니다. 정책 불확실성에 대해서는 GRPC 최적화기를 통해 잠재 행동 공간에서 그룹 기반 적응형 신뢰 영역을 적용하여 정책 전개를 구조적 사전 정보로 활용해 학습을 보조합니다. 이러한 조합을 통해 로봇은 높은 신뢰도와 높은 보상을 가진 행동을 우선 선택하면서도 불확실성 하에서 효과적인 방향성 탐험을 유지할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **불확실성 분해**: DoublyAware는 TD-MPC의 불확실성을 두 가지 해석 가능한 구성 요소로 명시적으로 분해합니다:
+  - **계획 불확실성**: 환경 무작위성과 모델 예측 오차에서 비롯되며, 컨포멀 예측으로 처리됩니다.
+  - **정책 불확실성**: 정책 네트워크의 행동 선택에 대한 불확실성에서 비롯되며, GRPC 최적화기로 제약됩니다.
+- **컨포멀 예측 모듈**: 후보 궤적에 대해 분위수 보정을 수행하고 위험 경계(예: 90% 신뢰 구간)를 설정하여 통계적 일관성 범위를 벗어난 궤적을 필터링함으로써 계획 단계에서 무작위 역학에 대한 견고성을 보장합니다.
+- **GRPC 최적화기**: 잠재 행동 공간에서 그룹 상대 제약을 정의하고 정책 전개를 구조적 사전 정보로 활용하며, 적응형 신뢰 영역을 통해 정책 업데이트 폭을 제한하여 과도한 탐험으로 인한 불안정성을 방지합니다.
+
+### 실험 설정
+- **플랫폼**: HumanoidBench 운동 스위트, Unitree 26-DOF H1-2 휴머노이드 로봇 모델 사용.
+- **비교 기준선**: 표준 TD-MPC, SAC, PPO 등의 강화 학습 기준선.
+- **평가 지표**: 샘플 효율성(지정 보상에 도달하는 데 필요한 스텝 수), 수렴 속도(훈련 에피소드 수), 운동 실행 가능성(관절 각도 제한 위반률, 보행 안정성).
+
+### 주요 결과
+- **샘플 효율성**: DoublyAware는 50만 스텝 내에 기준선 방법이 100만 스텝이 필요한 보상 수준에 도달하여 효율성이 약 2배 향상되었습니다.
+- **수렴 속도**: 훈련 곡선에 따르면 DoublyAware는 30만 스텝에서 안정적인 수렴 단계에 진입하는 반면, 기준선 방법은 60만 스텝 이상이 필요합니다.
+- **운동 실행 가능성**: 관절 각도 제한 위반률이 40% 감소하고, 보행 안정성 지표(예: 질량 중심 높이 변동)가 25% 개선되었습니다.
+- **절제 실험**: 컨포멀 예측 모듈을 제거하면 계획 단계의 궤적 필터링이失效하여 보상 분산이 35% 증가합니다. GRPC를 제거하면 정책 업데이트 폭이 통제 불능이 되어 훈련 초기에 발산이 발생합니다.
+
+### 결론
+DoublyAware는 구조화된 불확실성 모델링을 통해 휴머노이드 로봇 운동 학습에서 TD-MPC의 샘플 효율성과 의사 결정 신뢰성을 크게 향상시켰으며, 불확실성을 해석 가능한 구성 요소로 분해하여 각각 처리하는 것의 효과성을 검증했습니다.

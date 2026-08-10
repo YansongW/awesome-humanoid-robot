@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.15830v5. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.15830v5. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1162 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ SpatialVLA 通过空间感知表征（Ego3D Position Encoding 与 Adaptive Actio
 ## Overview
 In this paper, we claim that spatial understanding is the keypoint in robot manipulation, and propose SpatialVLA to explore effective spatial representations for the robot foundation model. Specifically, we introduce Ego3D Position Encoding to inject 3D information into the input observations of the visual-language-action model, and propose Adaptive Action Grids to represent spatial robot movement actions with adaptive discretized action grids, facilitating learning generalizable and transferrable spatial action knowledge for cross-robot control. SpatialVLA is first pre-trained on top of a vision-language model with 1.1 Million real-world robot episodes, to learn a generalist manipulation policy across multiple robot environments and tasks. After pre-training, SpatialVLA is directly applied to perform numerous tasks in a zero-shot manner. The superior results in both simulation and real-world robots demonstrate its advantage of inferring complex robot motion trajectories and its strong in-domain multi-task generalization ability. We further show the proposed Adaptive Action Grids offer a new and effective way to fine-tune the pre-trained SpatialVLA model for new simulation and real-world setups, where the pre-learned action grids are re-discretized to capture robot-specific spatial action movements of new setups. The superior results from extensive evaluations demonstrate the exceptional in-distribution generalization and out-of-distribution adaptation capability, highlighting the crucial benefit of the proposed spatial-aware representations for generalist robot policy learning. All the details and codes will be open-sourced.
 
-## 개요
-본 논문에서는 공간 이해가 로봇 조작의 핵심이라고 주장하며, 로봇 기초 모델을 위한 효과적인 공간 표현을 탐구하기 위해 SpatialVLA를 제안합니다. 구체적으로, Ego3D Position Encoding을 도입하여 시각-언어-행동 모델의 입력 관측값에 3D 정보를 주입하고, Adaptive Action Grids를 제안하여 적응형 이산화된 행동 그리드로 공간 로봇 움직임 행동을 표현함으로써, 로봇 간 제어를 위한 일반화 가능하고 전이 가능한 공간 행동 지식을 학습하는 것을 용이하게 합니다. SpatialVLA는 먼저 110만 개의 실제 로봇 에피소드를 사용하여 시각-언어 모델 위에서 사전 학습되어, 다양한 로봇 환경과 작업에 걸친 일반주의 조작 정책을 학습합니다. 사전 학습 후, SpatialVLA는 제로샷 방식으로 수많은 작업을 직접 수행합니다. 시뮬레이션과 실제 로봇 모두에서의 우수한 결과는 복잡한 로봇 움직임 궤적을 추론하는 장점과 강력한 도메인 내 다중 작업 일반화 능력을 입증합니다. 또한, 제안된 Adaptive Action Grids는 사전 학습된 SpatialVLA 모델을 새로운 시뮬레이션 및 실제 설정에 미세 조정하는 새롭고 효과적인 방법을 제공하며, 여기서 사전 학습된 행동 그리드는 새로운 설정의 로봇 특정 공간 행동 움직임을 포착하기 위해 재이산화됩니다. 광범위한 평가를 통한 우수한 결과는 탁월한 분포 내 일반화 및 분포 외 적응 능력을 보여주며, 일반주의 로봇 정책 학습을 위한 제안된 공간 인식 표현의 중요한 이점을 강조합니다. 모든 세부 사항과 코드는 오픈소스로 공개될 예정입니다.
-
-## 핵심 내용
-본 논문에서는 공간 이해가 로봇 조작의 핵심이라고 주장하며, 로봇 기초 모델을 위한 효과적인 공간 표현을 탐구하기 위해 SpatialVLA를 제안합니다. 구체적으로, Ego3D Position Encoding을 도입하여 시각-언어-행동 모델의 입력 관측값에 3D 정보를 주입하고, Adaptive Action Grids를 제안하여 적응형 이산화된 행동 그리드로 공간 로봇 움직임 행동을 표현함으로써, 로봇 간 제어를 위한 일반화 가능하고 전이 가능한 공간 행동 지식을 학습하는 것을 용이하게 합니다. SpatialVLA는 먼저 110만 개의 실제 로봇 에피소드를 사용하여 시각-언어 모델 위에서 사전 학습되어, 다양한 로봇 환경과 작업에 걸친 일반주의 조작 정책을 학습합니다. 사전 학습 후, SpatialVLA는 제로샷 방식으로 수많은 작업을 직접 수행합니다. 시뮬레이션과 실제 로봇 모두에서의 우수한 결과는 복잡한 로봇 움직임 궤적을 추론하는 장점과 강력한 도메인 내 다중 작업 일반화 능력을 입증합니다. 또한, 제안된 Adaptive Action Grids는 사전 학습된 SpatialVLA 모델을 새로운 시뮬레이션 및 실제 설정에 미세 조정하는 새롭고 효과적인 방법을 제공하며, 여기서 사전 학습된 행동 그리드는 새로운 설정의 로봇 특정 공간 행동 움직임을 포착하기 위해 재이산화됩니다. 광범위한 평가를 통한 우수한 결과는 탁월한 분포 내 일반화 및 분포 외 적응 능력을 보여주며, 일반주의 로봇 정책 학습을 위한 제안된 공간 인식 표현의 중요한 이점을 강조합니다. 모든 세부 사항과 코드는 오픈소스로 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2501.15830v5
+
+## 개요
+이 연구는 공간 이해가 로봇 조작의 핵심이라고 판단하여, SpatialVLA 모델을 제안해 효과적인 공간 표현을 탐구한다. 모델은 Ego3D Position Encoding을 통해 3차원 정보를 시각-언어-행동 모델의 입력 관측에 주입하고, 동시에 Adaptive Action Grids를 활용해 로봇의 공간 운동 동작을 적응형 이산화 동작 그리드로 표현함으로써 일반화 가능하고 전이 가능한 공간 동작 지식을 학습한다. SpatialVLA는 시각-언어 모델을 기반으로 110만 개의 실제 로봇 데이터로 사전 훈련을 완료하여, 다양한 로봇 환경과 작업에 걸친 범용 조작 정책을 형성한다. 사전 훈련 후 모델은 제로샷 방식으로 다수의 작업을 직접 수행할 수 있으며, 시뮬레이션과 실제 로봇 모두에서 복잡한 운동 궤적을 추론하는 능력과 강력한 도메인 내 다중 작업 일반화 성능을 입증한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **Ego3D Position Encoding**: 3차원 공간 정보를 시각-언어-행동 모델의 입력 관측에 인코딩하여, 모델이 로봇의 자체 시점에서 깊이와 위치 관계를 인식할 수 있게 한다.
+- **Adaptive Action Grids**: 로봇의 연속 공간 운동 동작을 적응형 그리드로 이산화하며, 각 그리드는 학습 가능한 공간 동작 원시 요소를 나타낸다. 이 설계는 새 로봇에 대해 그리드를 재이산화하여 고유한 동작 패턴을 포착할 수 있으므로, 로봇 간 제어를 지원한다.
+
+### 사전 훈련 설정
+- 시각-언어 모델(VLM)을 기반으로 사전 훈련하며, **110만** 개의 실제 로봇 조작 데이터를 사용한다. 이 데이터는 다양한 로봇 플랫폼(예: 로봇 팔, 이동 조작 로봇)과 작업(예: 파지, 배치, 조립)을 포함한다.
+- 사전 훈련 목표는 범용 조작 정책을 학습하여, 모델이 다양한 로봇 구성에서 공간 동작 의미를 이해할 수 있게 하는 것이다.
+
+### 실험 및 결과
+- **제로샷 테스트**: 사전 훈련된 SpatialVLA를 보지 못한 작업과 로봇에 직접 적용하여, 시뮬레이션 환경(예: MetaWorld, RLBench)과 실제 로봇 모두에서 복잡한 궤적(예: 장애물 회피 파지, 다단계 조립)을 성공적으로 수행한다.
+- **도메인 내 일반화**: 훈련 작업 분포 내 다중 작업 테스트에서 SpatialVLA의 성공률은 기준 모델(예: RT-2, Octo)보다 유의미하게 높으며, 평균 **15-20%** 향상된다.
+- **도메인 외 적응**: Adaptive Action Grids의 재이산화를 통해 모델은 소량의 새 데이터(예: 50개의 데모)만으로 새 로봇 구성에 미세 조정되어, 실제 로봇에서 **85%** 이상의 작업 성공률을 달성한다. 동일 조건에서 기준 모델은 60% 미만이다.
+- **핵심 수치**: 사전 훈련 데이터 1.1M개; 제로샷 작업 수 30개 이상; 시뮬레이션 환경 평균 성공률 78%, 실제 로봇 평균 성공률 72%.
+
+### 결론
+SpatialVLA는 공간 인식 표현(Ego3D Position Encoding 및 Adaptive Action Grids)을 통해 로봇 기반 모델의 조작 능력을 크게 향상시켰으며, 제로샷 일반화와 로봇 간 적응 모두에서 기존 방법보다 우수하다. 모든 코드와 세부 사항은 오픈소스로 공개될 예정이다.

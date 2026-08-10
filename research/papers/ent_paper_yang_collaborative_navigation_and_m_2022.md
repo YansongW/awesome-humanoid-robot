@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.14424v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.14424v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (607 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ theoretical_depth:
 ## Overview
 This paper tackles the problem of robots collaboratively towing a load with cables to a specified goal location while avoiding collisions in real time. The introduction of cables (as opposed to rigid links) enables the robotic team to travel through narrow spaces by changing its intrinsic dimensions through slack/taut switches of the cable. However, this is a challenging problem because of the hybrid mode switches and the dynamical coupling among multiple robots and the load. Previous attempts at addressing such a problem were performed offline and do not consider avoiding obstacles online. In this paper, we introduce a cascaded planning scheme with a parallelized centralized trajectory optimization that deals with hybrid mode switches. We additionally develop a set of decentralized planners per robot, which enables our approach to solve the problem of collaborative load manipulation online. We develop and demonstrate one of the first collaborative autonomy framework that is able to move a cable-towed load, which is too heavy to move by a single robot, through narrow spaces with real-time feedback and reactive planning in experiments.
 
-## 개요
-본 논문은 로봇들이 케이블을 이용해 협력하여 화물을 지정된 목표 위치로 견인하면서 실시간으로 충돌을 회피하는 문제를 다룹니다. 케이블(강체 링크와 달리)을 도입함으로써 로봇 팀은 케이블의 느슨함/팽팽함 전환을 통해 내부 치수를 변경하여 좁은 공간을 통과할 수 있습니다. 그러나 이는 하이브리드 모드 전환과 여러 로봇 및 화물 간의 동적 결합으로 인해 도전적인 문제입니다. 이전의 이러한 문제 해결 시도는 오프라인에서 수행되었으며 온라인 장애물 회피를 고려하지 않았습니다. 본 논문에서는 하이브리드 모드 전환을 처리하는 병렬화된 중앙 집중식 궤적 최적화를 포함한 계층적 계획 방식을 도입합니다. 또한 로봇별 분산 계획기를 추가로 개발하여 협력적 화물 조작 문제를 온라인으로 해결할 수 있게 합니다. 우리는 단일 로봇으로는 이동하기 너무 무거운 케이블 견인 화물을 실시간 피드백과 반응형 계획을 통해 좁은 공간으로 이동할 수 있는 최초의 협력 자율성 프레임워크 중 하나를 개발하고 실험에서 시연합니다.
-
-## 핵심 내용
-본 논문은 로봇들이 케이블을 이용해 협력하여 화물을 지정된 목표 위치로 견인하면서 실시간으로 충돌을 회피하는 문제를 다룹니다. 케이블(강체 링크와 달리)을 도입함으로써 로봇 팀은 케이블의 느슨함/팽팽함 전환을 통해 내부 치수를 변경하여 좁은 공간을 통과할 수 있습니다. 그러나 이는 하이브리드 모드 전환과 여러 로봇 및 화물 간의 동적 결합으로 인해 도전적인 문제입니다. 이전의 이러한 문제 해결 시도는 오프라인에서 수행되었으며 온라인 장애물 회피를 고려하지 않았습니다. 본 논문에서는 하이브리드 모드 전환을 처리하는 병렬화된 중앙 집중식 궤적 최적화를 포함한 계층적 계획 방식을 도입합니다. 또한 로봇별 분산 계획기를 추가로 개발하여 협력적 화물 조작 문제를 온라인으로 해결할 수 있게 합니다. 우리는 단일 로봇으로는 이동하기 너무 무거운 케이블 견인 화물을 실시간 피드백과 반응형 계획을 통해 좁은 공간으로 이동할 수 있는 최초의 협력 자율성 프레임워크 중 하나를 개발하고 실험에서 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2206.14424v1
+
+## 개요
+다중 로봇이 케이블을 통해 협력하여 하중을 견인하고 실시간 장애물 회피를 수행하는 문제에 대해, 본 논문은 강성 링크를 대체하는 케이블을 도입하여 로봇 팀이 케이블의 이완/긴장 전환을 통해 전체 크기를 변경하고 좁은 공간을 통과할 수 있게 한다. 혼합 모드 전환과 다중 로봇-하중 동적 결합의 도전을 해결하기 위해, 저자는 계단식 계획 방안을 제안한다: 혼합 모드 전환을 처리하는 병렬화된 중앙 집중식 궤적 최적화와 각 로봇을 위해 개발된 분산형 계획기를 포함한다. 실험은 이 프레임워크가 단일 로봇이 이동할 수 없는 중하중을 좁은 공간을 통해 통과시키는 실시간 피드백 및 반응형 계획을 가능하게 하는 최초의 협력 자율 시스템임을 증명한다.
+
+## 핵심 내용
+### 핵심 문제와 도전
+- 다중 로봇이 케이블을 통해 협력하여 하중을 지정된 목표로 견인하며 실시간 장애물 회피 필요
+- 강성 링크를 대체하는 케이블의 장점: 이완/긴장 전환을 통해 시스템 전체 크기를 변경하여 좁은 공간 통과 가능
+- 주요 도전: 혼합 모드 전환(케이블 상태 변화)과 다중 로봇-하중 동적 결합
+
+### 방법 아키텍처
+- **계단식 계획 프레임워크**: 두 계층의 계획기 포함
+  - **병렬화된 중앙 집중식 궤적 최적화**: 혼합 모드 전환을 처리하고 전역 궤적 생성
+  - **분산형 단일 로봇 계획기**: 각 로봇이 독립적으로 실행되어 실시간 반응형 장애물 회피 구현
+
+### 실험 설정과 주요 결과
+- 다중 로봇 협력 케이블 하중 견인의 실시간 반응형 계획 최초 구현
+- 하중 무게가 단일 로봇의 운반 능력을 초과하여 다중 로봇 협력 이동 필요
+- 실험 검증: 시스템이 실시간 피드백 하에 좁은 공간을 통과하고 케이블 상태(이완/긴장)를 동적으로 조정
+
+### 결론
+본 논문에서 제안한 프레임워크는 다중 로봇 케이블 견인 하중 장애물 회피 문제를 온라인으로 해결하는 최초의 협력 자율 시스템이며, 계단식 계획과 혼합 모드 최적화를 통해 실시간 성능을 달성한다.

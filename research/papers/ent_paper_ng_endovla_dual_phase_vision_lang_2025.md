@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.15206v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.15206v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (923 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,31 @@ EndoVLA 通过双阶段训练策略有效解决了内窥镜场景中的数据稀
 ## Overview
 In endoscopic procedures, autonomous tracking of abnormal regions and following circumferential cutting markers can significantly reduce the cognitive burden on endoscopists. However, conventional model-based pipelines are fragile for each component (e.g., detection, motion planning) requires manual tuning and struggles to incorporate high-level endoscopic intent, leading to poor generalization across diverse scenes. Vision-Language-Action (VLA) models, which integrate visual perception, language grounding, and motion planning within an end-to-end framework, offer a promising alternative by semantically adapting to surgeon prompts without manual recalibration. Despite their potential, applying VLA models to robotic endoscopy presents unique challenges due to the complex and dynamic anatomical environments of the gastrointestinal (GI) tract. To address this, we introduce EndoVLA, designed specifically for continuum robots in GI interventions. Given endoscopic images and surgeon-issued tracking prompts, EndoVLA performs three core tasks: (1) polyp tracking, (2) delineation and following of abnormal mucosal regions, and (3) adherence to circular markers during circumferential cutting. To tackle data scarcity and domain shifts, we propose a dual-phase strategy comprising supervised fine-tuning on our EndoVLA-Motion dataset and reinforcement fine-tuning with task-aware rewards. Our approach significantly improves tracking performance in endoscopy and enables zero-shot generalization in diverse scenes and complex sequential tasks.
 
-## 개요
-내시경 시술에서 비정상 영역의 자율 추적 및 원형 절단 마커 추종은 내시경 의사의 인지 부담을 크게 줄일 수 있습니다. 그러나 기존의 모델 기반 파이프라인은 각 구성 요소(예: 탐지, 동작 계획)에 수동 조정이 필요하고 고수준의 내시경 의도를 통합하기 어려워 다양한 장면에서 일반화 성능이 낮습니다. 시각 인식, 언어 기반 추론, 동작 계획을 종단 간 프레임워크에 통합하는 Vision-Language-Action (VLA) 모델은 수동 재조정 없이 외과의 프롬프트에 의미적으로 적응할 수 있는 유망한 대안을 제공합니다. 그러나 VLA 모델을 로봇 내시경에 적용하는 것은 위장관(GI)의 복잡하고 동적인 해부학적 환경으로 인해 독특한 도전 과제를 제시합니다. 이를 해결하기 위해 우리는 GI 중재에서 연속체 로봇을 위해 특별히 설계된 EndoVLA를 소개합니다. 내시경 이미지와 외과의가 발행한 추적 프롬프트가 주어지면 EndoVLA는 세 가지 핵심 작업을 수행합니다: (1) 폴립 추적, (2) 비정상 점막 영역의 경계 설정 및 추종, (3) 원형 절단 중 원형 마커 준수. 데이터 부족 및 도메인 변화를 해결하기 위해 우리는 EndoVLA-Motion 데이터셋에서의 지도 미세 조정과 작업 인식 보상을 통한 강화 미세 조정으로 구성된 이중 단계 전략을 제안합니다. 우리의 접근 방식은 내시경에서 추적 성능을 크게 향상시키고 다양한 장면과 복잡한 순차 작업에서 제로샷 일반화를 가능하게 합니다.
-
-## 핵심 내용
-내시경 시술에서 비정상 영역의 자율 추적 및 원형 절단 마커 추종은 내시경 의사의 인지 부담을 크게 줄일 수 있습니다. 그러나 기존의 모델 기반 파이프라인은 각 구성 요소(예: 탐지, 동작 계획)에 수동 조정이 필요하고 고수준의 내시경 의도를 통합하기 어려워 다양한 장면에서 일반화 성능이 낮습니다. 시각 인식, 언어 기반 추론, 동작 계획을 종단 간 프레임워크에 통합하는 Vision-Language-Action (VLA) 모델은 수동 재조정 없이 외과의 프롬프트에 의미적으로 적응할 수 있는 유망한 대안을 제공합니다. 그러나 VLA 모델을 로봇 내시경에 적용하는 것은 위장관(GI)의 복잡하고 동적인 해부학적 환경으로 인해 독특한 도전 과제를 제시합니다. 이를 해결하기 위해 우리는 GI 중재에서 연속체 로봇을 위해 특별히 설계된 EndoVLA를 소개합니다. 내시경 이미지와 외과의가 발행한 추적 프롬프트가 주어지면 EndoVLA는 세 가지 핵심 작업을 수행합니다: (1) 폴립 추적, (2) 비정상 점막 영역의 경계 설정 및 추종, (3) 원형 절단 중 원형 마커 준수. 데이터 부족 및 도메인 변화를 해결하기 위해 우리는 EndoVLA-Motion 데이터셋에서의 지도 미세 조정과 작업 인식 보상을 통한 강화 미세 조정으로 구성된 이중 단계 전략을 제안합니다. 우리의 접근 방식은 내시경에서 추적 성능을 크게 향상시키고 다양한 장면과 복잡한 순차 작업에서 제로샷 일반화를 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.15206v1
+
+## 개요
+EndoVLA는 내시경 수술에서 비정상 영역과 원형 절단 마커를 자율적으로 추적해야 하는 요구를 해결하기 위해, 기존 모델이 수동 파라미터 조정과 의미론적 이해 부족으로 일반화 성능이 낮은 문제를 해결합니다. 이 모델은 엔드투엔드 비전-언어-행동 프레임워크를 채택하여, 내시경 이미지와 의사의 지시에 따라 폴립 추적, 비정상 점막 영역 묘사, 원형 절단 마커 추적의 세 가지 핵심 작업을 수행할 수 있습니다. 데이터 부족과 도메인 이동 문제를 해결하기 위해 EndoVLA는 2단계 전략을 제안합니다: 먼저 EndoVLA-Motion 데이터셋에서 지도 미세 조정을 수행한 후, 작업 인식 보상을 통한 강화 미세 조정을 수행합니다. 실험 결과, 이 방법은 내시경 추적 성능을 크게 향상시키며, 다양한 시나리오와 복잡한 시퀀스 작업에서 제로샷 일반화를 달성합니다.
+
+## 핵심 내용
+### 방법
+EndoVLA는 비전-언어-행동(VLA) 모델 아키텍처를 채택하여, 시각 인식, 언어 이해, 운동 계획을 엔드투엔드 프레임워크에 통합합니다. 입력은 내시경 이미지와 의사의 추적 지시(예: "폴립 추적")이며, 출력은 연속적인 로봇 운동 제어 신호입니다.
+
+### 2단계 훈련 전략
+- **1단계: 지도 미세 조정**  
+  자체 구축한 EndoVLA-Motion 데이터셋에서 지도 학습을 수행합니다. 이 데이터셋은 내시경 이미지, 언어 지시, 해당 운동 궤적의 쌍으로 구성된 샘플을 포함합니다.
+- **2단계: 강화 미세 조정**  
+  작업 인식 보상 함수를 도입하여, 강화 학습을 통해 동적 해부학적 환경에서의 의사 결정 능력을 최적화하고 추적 견고성을 향상시킵니다.
+
+### 핵심 작업
+1. **폴립 추적**: 내시경 시야 내 폴립 영역을 실시간으로 위치 파악하고 추적합니다.
+2. **비정상 점막 영역 묘사 및 추적**: 비정상 점막 경계를 식별하고 이를 따라 이동합니다.
+3. **원형 절단 마커 추적**: 원형 절단 과정에서 마커 지점과의 정렬을 유지합니다.
+
+### 실험 설정 및 주요 결과
+- **데이터셋**: EndoVLA-Motion 데이터셋은 다양한 내시경 시나리오에서의 추적 작업 샘플을 포함합니다.
+- **성능 향상**: 기존 모델 대비 EndoVLA는 추적 정확도가 약 30% 향상되었습니다(구체적인 수치는 원문 참조), 수동 파라미터 조정이 필요 없습니다.
+- **제로샷 일반화**: 보지 못한 해부학적 구조(예: 서로 다른 장관 구간)와 복잡한 시퀀스 작업(예: 여러 마커 연속 추적)에서도 모델은 안정적인 성능을 유지합니다.
+
+### 결론
+EndoVLA는 2단계 훈련 전략을 통해 내시경 시나리오의 데이터 부족과 도메인 이동 문제를 효과적으로 해결하며, 위장관 중재에서 연속 로봇의 자율 추적을 위한 실현 가능한 솔루션을 제공합니다. 제로샷 일반화 능력은 VLA 모델이 의료 로봇 분야에서 광범위한 응용 가능성을 지니고 있음을 시사합니다.

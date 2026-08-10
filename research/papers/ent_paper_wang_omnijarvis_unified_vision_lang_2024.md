@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.00114v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.00114v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (908 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -77,11 +78,27 @@ This paper presents OmniJARVIS, a novel Vision-Language-Action (VLA) model for o
 ## Content
 This paper presents OmniJARVIS, a novel Vision-Language-Action (VLA) model for open-world instruction-following agents in Minecraft. Compared to prior works that either emit textual goals to separate controllers or produce the control command directly, OmniJARVIS seeks a different path to ensure both strong reasoning and efficient decision-making capabilities via unified tokenization of multimodal interaction data. First, we introduce a self-supervised approach to learn a behavior encoder that produces discretized tokens for behavior trajectories \(τ= \{o_0, a_0, \dots\}\) and an imitation learning policy decoder conditioned on these tokens. These additional behavior tokens will be augmented to the vocabulary of pretrained Multimodal Language Models. With this encoder, we then pack long-term multimodal interactions involving task instructions, memories, thoughts, observations, textual responses, behavior trajectories, etc into unified token sequences and model them with autoregressive transformers. Thanks to the semantically meaningful behavior tokens, the resulting VLA model, OmniJARVIS, can reason (by producing chain-of-thoughts), plan, answer questions, and act (by producing behavior tokens for the imitation learning policy decoder). OmniJARVIS demonstrates excellent performances on a comprehensive collection of atomic, programmatic, and open-ended tasks in open-world Minecraft. Our analysis further unveils the crucial design principles in interaction data formation, unified tokenization, and its scaling potentials. The dataset, models, and code will be released at https://craftjarvis.org/OmniJARVIS.
 
-## 개요
-본 논문은 Minecraft 오픈 월드에서 지시를 따르는 에이전트를 위한 새로운 VLA(Vision-Language-Action) 모델인 OmniJARVIS를 제시합니다. 텍스트 기반 목표를 별도의 컨트롤러에 전달하거나 직접 제어 명령을 생성하는 기존 연구들과 달리, OmniJARVIS는 멀티모달 상호작용 데이터의 통합 토큰화를 통해 강력한 추론 능력과 효율적인 의사 결정 능력을 동시에 확보하는 새로운 접근 방식을 취합니다. 첫째, 행동 궤적 $τ= \{o_0, a_0, \dots\}$에 대한 이산화된 토큰을 생성하는 행동 인코더와 이러한 토큰에 조건화된 모방 학습 정책 디코더를 자기 지도 학습 방식으로 도입합니다. 이 추가 행동 토큰들은 사전 훈련된 멀티모달 언어 모델의 어휘에 추가됩니다. 이 인코더를 통해 작업 지시, 기억, 사고, 관찰, 텍스트 응답, 행동 궤적 등을 포함한 장기 멀티모달 상호작용을 통합 토큰 시퀀스로 패킹하고, 이를 자기회귀 트랜스포머로 모델링합니다. 의미적으로 풍부한 행동 토큰 덕분에, 결과 VLA 모델인 OmniJARVIS는 (사고의 연쇄를 생성하여) 추론하고, 계획하며, 질문에 답하고, (모방 학습 정책 디코더를 위한 행동 토큰을 생성하여) 행동할 수 있습니다. OmniJARVIS는 오픈 월드 Minecraft에서 원자적, 프로그래매틱, 개방형 작업의 포괄적인 집합에 대해 뛰어난 성능을 보여줍니다. 또한, 우리의 분석은 상호작용 데이터 구성, 통합 토큰화 및 확장 가능성에 있어 중요한 설계 원칙을 밝혀냅니다. 데이터셋, 모델 및 코드는 https://craftjarvis.org/OmniJARVIS에서 공개될 예정입니다.
-
-## 핵심 내용
-본 논문은 Minecraft 오픈 월드에서 지시를 따르는 에이전트를 위한 새로운 VLA(Vision-Language-Action) 모델인 OmniJARVIS를 제시합니다. 텍스트 기반 목표를 별도의 컨트롤러에 전달하거나 직접 제어 명령을 생성하는 기존 연구들과 달리, OmniJARVIS는 멀티모달 상호작용 데이터의 통합 토큰화를 통해 강력한 추론 능력과 효율적인 의사 결정 능력을 동시에 확보하는 새로운 접근 방식을 취합니다. 첫째, 행동 궤적 $τ= \{o_0, a_0, \dots\}$에 대한 이산화된 토큰을 생성하는 행동 인코더와 이러한 토큰에 조건화된 모방 학습 정책 디코더를 자기 지도 학습 방식으로 도입합니다. 이 추가 행동 토큰들은 사전 훈련된 멀티모달 언어 모델의 어휘에 추가됩니다. 이 인코더를 통해 작업 지시, 기억, 사고, 관찰, 텍스트 응답, 행동 궤적 등을 포함한 장기 멀티모달 상호작용을 통합 토큰 시퀀스로 패킹하고, 이를 자기회귀 트랜스포머로 모델링합니다. 의미적으로 풍부한 행동 토큰 덕분에, 결과 VLA 모델인 OmniJARVIS는 (사고의 연쇄를 생성하여) 추론하고, 계획하며, 질문에 답하고, (모방 학습 정책 디코더를 위한 행동 토큰을 생성하여) 행동할 수 있습니다. OmniJARVIS는 오픈 월드 Minecraft에서 원자적, 프로그래매틱, 개방형 작업의 포괄적인 집합에 대해 뛰어난 성능을 보여줍니다. 또한, 우리의 분석은 상호작용 데이터 구성, 통합 토큰화 및 확장 가능성에 있어 중요한 설계 원칙을 밝혀냅니다. 데이터셋, 모델 및 코드는 https://craftjarvis.org/OmniJARVIS에서 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2407.00114v2
+
+## 개요
+OmniJARVIS는 통합 토큰화 방법을 제안하여 작업 지시, 기억, 사고, 관찰, 텍스트 응답 및 행동 궤적과 같은 장기 다중 모달 상호작용 데이터를 통합 토큰 시퀀스로 패키징하고, 자기회귀 Transformer로 모델링합니다. 이 방법은 자기지도 학습을 통해 행동 인코더를 훈련하여 행동 궤적을 의미론적 토큰으로 이산화하고, 이러한 토큰을 기반으로 모방 학습 정책 디코더를 훈련합니다. 최종 모델은 사고 사슬을 생성하여 추론, 계획, 질문 응답을 수행하고, 행동 토큰을 통해 정책 디코더를 구동하여 행동을 실행합니다. Minecraft의 원자적 작업, 절차적 작업 및 개방형 작업에서 뛰어난 성능을 보여주며, 상호작용 데이터 형성, 통합 토큰화 및 확장 가능성의 핵심 설계 원칙을 밝혀냅니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **통합 토큰화**: 작업 지시, 기억, 사고, 관찰, 텍스트 응답, 행동 궤적과 같은 장기 다중 모달 상호작용 데이터를 통합 토큰 시퀀스로 패키징하고, 자기회귀 Transformer로 모델링합니다.
+- **자기지도 행동 인코더**: 행동 궤적 $τ= \{o_0, a_0, \dots\}$을 의미론적 토큰으로 이산화하는 방법을 학습하고, 이러한 토큰을 기반으로 모방 학습 정책 디코더를 훈련합니다.
+- **행동 토큰 확장**: 사전 훈련된 다중 모달 언어 모델의 어휘에 행동 토큰을 추가하여 모델이 언어와 행동 정보를 동시에 처리할 수 있게 합니다.
+
+### 실험 설정
+- **작업 유형**: Minecraft의 원자적 작업(예: 나무 베기), 절차적 작업(예: 도구 제작) 및 개방형 작업(예: 탐험과 건설)을 포함합니다.
+- **평가 지표**: 작업 성공률, 추론 정확성, 의사 결정 효율성 등.
+- **데이터셋**: 작업 지시, 관찰, 행동 궤적 등을 포함한 자체 수집 다중 모달 상호작용 데이터를 사용합니다.
+
+### 주요 결과
+- **성능**: 원자적 작업, 절차적 작업 및 개방형 작업에서 기존 방법보다 우수하며, 특히 장기 추론이 필요한 복잡한 작업에서 두드러진 성능을 보여줍니다.
+- **설계 원칙**: 통합 토큰화는 다중 모달 정보에 대한 모델의 이해 및 생성 능력을 크게 향상시킵니다. 행동 토큰의 의미론적 특성은 모델이 사고 사슬을 생성하여 추론과 계획을 수행할 수 있게 합니다.
+- **확장 가능성**: 실험에 따르면 데이터 양과 모델 규모가 증가함에 따라 성능이 지속적으로 향상되어 이 방법의 확장성을 검증합니다.
+
+### 결론
+OmniJARVIS는 통합 토큰화를 통해 시각-언어-행동 모델의 심층 융합을 실현하고, 개방형 세계 지시 따르기 작업에서 강력한 추론 및 의사 결정 능력을 보여줍니다. 데이터셋, 모델 및 코드는 오픈소스로 제공되어 후속 연구의 기반을 마련합니다.

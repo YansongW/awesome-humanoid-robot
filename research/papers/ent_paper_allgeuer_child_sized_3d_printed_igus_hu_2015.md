@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.10701v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.10701v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (664 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,25 @@ The use of standard platforms in the field of humanoid robotics can accelerate r
 ## Content
 The use of standard platforms in the field of humanoid robotics can accelerate research and lower the entry barrier for new research groups. While many affordable humanoid standard platforms exist in the lower size ranges of up to 60cm, beyond this the few available standard platforms quickly become significantly more expensive, and difficult to operate and maintain. In this paper, the igus Humanoid Open Platform is presented—a new, affordable, versatile and easily customisable standard platform for humanoid robots in the child-sized range. At 90cm, the robot is large enough to interact with a human-scale environment in a meaningful way, and is equipped with enough torque and computing power to foster research in many possible directions. The structure of the robot is entirely 3D printed, allowing for a lightweight and appealing design. The electrical and mechanical designs of the robot are presented, and the main features of the corresponding open-source ROS software are discussed. The 3D CAD files for all of the robot parts have been released open-source in conjunction with this paper.
 
-## 개요
-휴머노이드 로봇 분야에서 표준 플랫폼을 사용하면 연구를 가속화하고 새로운 연구 그룹의 진입 장벽을 낮출 수 있습니다. 최대 60cm까지의 낮은 크기 범위에는 많은 저렴한 휴머노이드 표준 플랫폼이 존재하지만, 그 이상에서는 몇 안 되는 표준 플랫폼이 급격히 더 비싸지고 운영 및 유지보수가 어려워집니다. 본 논문에서는 igus Humanoid Open Platform을 소개합니다. 이는 어린이 크기 범위의 휴머노이드 로봇을 위한 새롭고 저렴하며 다재다능하고 쉽게 맞춤 설정할 수 있는 표준 플랫폼입니다. 90cm 크기의 이 로봇은 인간 규모의 환경과 의미 있게 상호작용할 수 있을 만큼 크며, 다양한 연구 방향을 촉진할 수 있는 충분한 토크와 컴퓨팅 성능을 갖추고 있습니다. 로봇의 구조는 완전히 3D 프린팅되어 가볍고 매력적인 디자인을 가능하게 합니다. 로봇의 전기 및 기계 설계가 제시되며, 해당 오픈소스 ROS 소프트웨어의 주요 기능이 논의됩니다. 모든 로봇 부품의 3D CAD 파일은 본 논문과 함께 오픈소스로 공개되었습니다.
-
-## 핵심 내용
-휴머노이드 로봇 분야에서 표준 플랫폼을 사용하면 연구를 가속화하고 새로운 연구 그룹의 진입 장벽을 낮출 수 있습니다. 최대 60cm까지의 낮은 크기 범위에는 많은 저렴한 휴머노이드 표준 플랫폼이 존재하지만, 그 이상에서는 몇 안 되는 표준 플랫폼이 급격히 더 비싸지고 운영 및 유지보수가 어려워집니다. 본 논문에서는 igus Humanoid Open Platform을 소개합니다. 이는 어린이 크기 범위의 휴머노이드 로봇을 위한 새롭고 저렴하며 다재다능하고 쉽게 맞춤 설정할 수 있는 표준 플랫폼입니다. 90cm 크기의 이 로봇은 인간 규모의 환경과 의미 있게 상호작용할 수 있을 만큼 크며, 다양한 연구 방향을 촉진할 수 있는 충분한 토크와 컴퓨팅 성능을 갖추고 있습니다. 로봇의 구조는 완전히 3D 프린팅되어 가볍고 매력적인 디자인을 가능하게 합니다. 로봇의 전기 및 기계 설계가 제시되며, 해당 오픈소스 ROS 소프트웨어의 주요 기능이 논의됩니다. 모든 로봇 부품의 3D CAD 파일은 본 논문과 함께 오픈소스로 공개되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/1809.10701v1
+
+## 개요
+휴머노이드 로봇 분야에서 표준 플랫폼은 연구를 가속화하고 새로운 팀의 진입 장벽을 낮출 수 있습니다. 기존에는 60cm 이하의 저비용 플랫폼이 많지만, 더 큰 크기의 플랫폼은 종종 가격이 비싸고 유지보수가 어렵습니다. 본 논문에서 제안하는 igus Humanoid Open Platform은 이러한 공백을 메웁니다: 90cm 높이, 비용이 통제 가능하며, 맞춤화가 용이한 휴머노이드 로봇 표준 플랫폼입니다. 이 로봇은 완전히 3D 프린팅으로 제작되어 가볍고 외관이 매력적이며, 다양한 연구 방향을 지원할 수 있는 충분한 토크와 계산 능력을 갖추고 있습니다. 논문은 기계적 및 전기적 설계를 자세히 설명하고, 함께 제공되는 오픈소스 ROS 소프트웨어의 주요 기능을 논의하며, 모든 3D CAD 파일은 오픈소스로 공개되었습니다.
+
+## 핵심 내용
+### 배경 및 동기
+- 휴머노이드 로봇 표준 플랫폼은 연구를 가속화할 수 있지만, 기존 60cm 이상 플랫폼은 비용이 높고 운영 및 유지보수가 어렵습니다.
+- 어린이 크기(약 90cm), 저비용, 유지보수가 용이하며 맞춤화가 가능한 오픈소스 플랫폼이 필요합니다.
+
+### 플랫폼 설계
+- **크기 및 구조**: 로봇은 높이 90cm로 완전히 3D 프린팅되며, 가볍고 디자인이 미려하여 인간 규모 환경과의 상호작용에 적합합니다.
+- **하드웨어 구성**: 동적 운동과 복잡한 작업을 지원할 수 있는 충분한 토크의 관절 모터와 계산 유닛을 갖추고 있습니다.
+- **오픈소스 리소스**: 모든 3D CAD 파일, ROS 소프트웨어 및 설계 문서가 오픈소스로 공개되어 사용자가 수정 및 확장하기 용이합니다.
+
+### 실험 및 시연
+- 논문은 걷기, 균형 유지 등 기본 동작을 포함한 로봇의 동적 운동 능력을 보여줍니다.
+- 실험은 기계 구조의 신뢰성과 전기 시스템의 안정성을 검증했으며, 구체적인 수치 지표(예: 보행 주기 또는 토크 매개변수)는 보고되지 않았습니다.
+
+### 결론
+- igus Humanoid Open Platform은 어린이 크기 휴머노이드 로봇 연구를 위한 저비용, 고유연성 표준 플랫폼을 제공하여 하드웨어 진입 장벽을 낮추고 커뮤니티 협업 개발을 장려합니다.

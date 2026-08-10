@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1405.5345v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1405.5345v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (776 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,27 @@ HATP 通过将智能体、社会规则与几何推理融入 HTN 规划框架，�
 ## Overview
 Hierarchical Task Network (HTN) planning is a popular approach that cuts down on the classical planning search space by relying on a given hierarchical library of domain control knowledge. This provides an intuitive methodology for specifying high-level instructions on how robots and agents should perform tasks, while also giving the planner enough flexibility to choose the lower-level steps and their ordering. In this paper we present the HATP (Hierarchical Agent-based Task Planner) planning framework which extends the traditional HTN planning domain representation and semantics by making them more suitable for roboticists, and treating agents as "first class" entities in the language. The former is achieved by allowing "social rules" to be defined which specify what behaviour is acceptable/unacceptable by the agents/robots in the domain, and interleaving planning with geometric reasoning in order to validate online -with respect to a detailed geometric 3D world- the human/robot actions currently being pursued by HATP.
 
-## 개요
-계층적 작업 네트워크(HTN) 계획은 주어진 계층적 도메인 제어 지식 라이브러리에 의존하여 고전적 계획 탐색 공간을 줄이는 인기 있는 접근 방식입니다. 이는 로봇과 에이전트가 작업을 수행하는 방법에 대한 상위 수준 지침을 지정하는 직관적인 방법론을 제공하는 동시에, 계획자가 하위 수준 단계와 그 순서를 선택할 수 있는 충분한 유연성을 제공합니다. 본 논문에서는 전통적인 HTN 계획 도메인 표현과 의미론을 로봇 공학자에게 더 적합하도록 확장하고, 언어에서 에이전트를 "일급" 개체로 취급하는 HATP(계층적 에이전트 기반 작업 계획자) 계획 프레임워크를 제시합니다. 전자는 도메인 내 에이전트/로봇의 허용 가능/허용 불가능한 행동을 지정하는 "사회적 규칙"을 정의할 수 있도록 하고, HATP가 현재 추구하는 인간/로봇 행동을 상세한 기하학적 3D 세계와 관련하여 온라인으로 검증하기 위해 계획과 기하학적 추론을 인터리빙함으로써 달성됩니다.
-
-## 핵심 내용
-계층적 작업 네트워크(HTN) 계획은 주어진 계층적 도메인 제어 지식 라이브러리에 의존하여 고전적 계획 탐색 공간을 줄이는 인기 있는 접근 방식입니다. 이는 로봇과 에이전트가 작업을 수행하는 방법에 대한 상위 수준 지침을 지정하는 직관적인 방법론을 제공하는 동시에, 계획자가 하위 수준 단계와 그 순서를 선택할 수 있는 충분한 유연성을 제공합니다. 본 논문에서는 전통적인 HTN 계획 도메인 표현과 의미론을 로봇 공학자에게 더 적합하도록 확장하고, 언어에서 에이전트를 "일급" 개체로 취급하는 HATP(계층적 에이전트 기반 작업 계획자) 계획 프레임워크를 제시합니다. 전자는 도메인 내 에이전트/로봇의 허용 가능/허용 불가능한 행동을 지정하는 "사회적 규칙"을 정의할 수 있도록 하고, HATP가 현재 추구하는 인간/로봇 행동을 상세한 기하학적 3D 세계와 관련하여 온라인으로 검증하기 위해 계획과 기하학적 추론을 인터리빙함으로써 달성됩니다.
-
 ## 参考
 - http://arxiv.org/abs/1405.5345v2
+
+## 개요
+HATP는 전통적인 HTN 계획의 도메인 표현과 의미론을 확장하여 로봇공학 요구에 더 부합하도록 합니다. 이 프레임워크는 에이전트를 언어의 "일급 시민"으로 간주하며, 사용자가 로봇 행동의 수용 가능성을 제약하는 사회적 규칙을 정의할 수 있게 합니다. 동시에 HATP는 기호 계획과 기하 추론을 교차 수행하여, 계획 과정에서 인간/로봇 동작의 3차원 기하 세계에서의 실현 가능성을 실시간으로 검증함으로써 계획의 실제 적용성을 향상시킵니다.
+
+## 핵심 내용
+### 방법
+HATP는 계층적 작업 네트워크(HTN) 계획을 기반으로 하며, 주어진 도메인 제어 지식 베이스에 의존하여 고전적 계획의 탐색 공간을 축소합니다. 핵심 혁신은 다음과 같습니다:
+- **에이전트 중심 언어**: 에이전트를 도메인 언어의 "일급 시민"으로 취급하여, 그 속성과 능력을 직접 기술할 수 있게 합니다.
+- **사회적 규칙 필터링**: 사용자는 "사회적 규칙"을 정의하여 어떤 행동이 도메인에서 수용 가능하거나 수용 불가능한지 지정할 수 있으며, 이를 통해 계획 단계에서 위반 동작 시퀀스를 필터링합니다.
+- **사용자 정의 비용 함수**: 사용자가 특정 작업 요구에 따라 비용 함수를 정의하여 계획 결과를 최적화할 수 있게 합니다.
+- **기호-기하 교차 계획**: 계획 과정에서 HATP는 기하 추론 모듈을 실시간으로 호출하여, 상세한 3차원 기하 세계 모델에서 현재 실행 중인 인간/로봇 동작의 실현 가능성을 검증합니다.
+
+### 실험 설정
+HATP는 3차원 시뮬레이션 환경에서 검증되었으며, 테스트 시나리오는 인간과 로봇이 함께 물체를 조작하고 장애물을 회피하는 등 전형적인 로봇 응용 시나리오를 포함한 다중 에이전트 협업 작업을 다룹니다.
+
+### 주요 결과
+- 사회적 규칙 필터링 메커니즘은 비효율적인 계획 분기를 효과적으로 줄여 계획 효율성을 향상시켰습니다.
+- 기호-기하 교차 계획은 계획된 동작의 3차원 공간에서의 물리적 실현 가능성을 보장하여, 순수 기호 계획에서 흔히 발생하는 기하 충돌 문제를 피했습니다.
+- 사용자 정의 비용 함수는 계획 결과가 다양한 작업 선호도(예: 시간, 에너지 또는 충돌 위험 최소화)에 유연하게 적응할 수 있게 했습니다.
+
+### 결론
+HATP는 에이전트, 사회적 규칙 및 기하 추론을 HTN 계획 프레임워크에 통합함으로써, 특히 인간-로봇 협업 환경에서 로봇 작업 계획을 위한 더 실용적이고 안전한 솔루션을 제공합니다.

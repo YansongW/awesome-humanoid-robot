@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.20720v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.20720v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (783 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,22 @@ DeeAD 提供了一种高效、无需重新训练的解决方案，可显著加�
 ## Overview
 Vision-Language Action (VLA) models unify perception, reasoning, and trajectory generation for autonomous driving, but suffer from significant inference latency due to deep transformer stacks. We present DeeAD, a training-free, action-guided early-exit framework that accelerates VLA planning by evaluating the physical feasibility of intermediate trajectories. Instead of relying on confidence scores, DeeAD terminates inference when predicted trajectories align with lightweight planning priors (e.g., Navigation or Low-precision Planning) within a tolerable deviation (<2m). To improve efficiency, we introduce a multi-hop controller that adaptively skips redundant layers based on the change rate of scores. DeeAD integrates into existing VLA models, such as ORION, without requiring retraining. Experiments on the Bench2Drive benchmark demonstrate up to 28% transformer-layer sparsity and 29% latency reduction, while preserving planning quality and safety.
 
-## 개요
-Vision-Language Action (VLA) 모델은 자율 주행을 위한 인식, 추론 및 궤적 생성을 통합하지만, 깊은 트랜스포머 스택으로 인해 상당한 추론 지연 시간이 발생합니다. 우리는 중간 궤적의 물리적 실현 가능성을 평가하여 VLA 계획을 가속화하는 훈련 없는 행동 기반 조기 종료 프레임워크인 DeeAD를 제시합니다. DeeAD는 신뢰 점수에 의존하는 대신, 예측된 궤적이 허용 가능한 편차(<2m) 내에서 경량 계획 사전(예: 내비게이션 또는 저정밀 계획)과 일치할 때 추론을 종료합니다. 효율성을 높이기 위해, 점수 변화율에 따라 중복 레이어를 적응적으로 건너뛰는 다중 홉 컨트롤러를 도입합니다. DeeAD는 재훈련 없이 ORION과 같은 기존 VLA 모델에 통합됩니다. Bench2Drive 벤치마크 실험 결과, 계획 품질과 안전성을 유지하면서 최대 28%의 트랜스포머 레이어 희소성과 29%의 지연 시간 감소를 보여줍니다.
-
-## 핵심 내용
-Vision-Language Action (VLA) 모델은 자율 주행을 위한 인식, 추론 및 궤적 생성을 통합하지만, 깊은 트랜스포머 스택으로 인해 상당한 추론 지연 시간이 발생합니다. 우리는 중간 궤적의 물리적 실현 가능성을 평가하여 VLA 계획을 가속화하는 훈련 없는 행동 기반 조기 종료 프레임워크인 DeeAD를 제시합니다. DeeAD는 신뢰 점수에 의존하는 대신, 예측된 궤적이 허용 가능한 편차(<2m) 내에서 경량 계획 사전(예: 내비게이션 또는 저정밀 계획)과 일치할 때 추론을 종료합니다. 효율성을 높이기 위해, 점수 변화율에 따라 중복 레이어를 적응적으로 건너뛰는 다중 홉 컨트롤러를 도입합니다. DeeAD는 재훈련 없이 ORION과 같은 기존 VLA 모델에 통합됩니다. Bench2Drive 벤치마크 실험 결과, 계획 품질과 안전성을 유지하면서 최대 28%의 트랜스포머 레이어 희소성과 29%의 지연 시간 감소를 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.20720v1
+
+## 개요
+DeeAD는 VLA 모델의 깊은 Transformer 적층으로 인한 추론 지연 문제를 해결하기 위해, 재훈련이 필요 없는 조기 종료 메커니즘을 제안한다. 이 프레임워크는 예측 궤적을 경량 계획 사전(예: 내비게이션 또는 저정밀 계획)과 정렬하고, 허용 가능한 편차(<2m) 내에서 추론을 종료하여 불필요한 계산을 방지한다. 또한, DeeAD는 점수 변화율에 따라 중복 레이어를 적응형으로 건너뛰는 멀티홉 컨트롤러를 도입하여 효율성을 더욱 향상시킨다. 실험에 따르면, 이 방법은 ORION과 같은 기존 VLA 모델에 원활하게 통합될 수 있으며, Bench2Drive 벤치마크에서 계획 성능을 희생하지 않으면서 계산 오버헤드를 크게 줄인다.
+
+## 핵심 내용
+### 방법 개요
+DeeAD의 핵심은 훈련이 필요 없는 조기 종료 프레임워크이며, 주요 구성 요소는 다음과 같다:
+- **동작 기반 조기 종료**: 추론 과정에서 모델은 중간 궤적을 생성하며, DeeAD는 이러한 궤적과 경량 계획 사전(예: 내비게이션 또는 저정밀 계획)의 물리적 타당성을 평가하여 조기 종료 여부를 결정한다. 예측 궤적과 사전의 편차가 2m 미만이면 추론이 중단된다.
+- **멀티홉 컨트롤러**: 이 컨트롤러는 점수 변화율에 따라 중복 Transformer 레이어를 동적으로 건너뛰어 성능을 유지하면서 계산량을 줄인다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: 자율주행 계획 작업에 초점을 맞춘 Bench2Drive 벤치마크에서 평가가 수행되었다.
+- **성능 향상**: DeeAD는 최대 28%의 Transformer 레이어 희소성(즉, 건너뛴 레이어 비율)과 29%의 추론 지연 감소를 달성했다.
+- **품질 보장**: 계산 오버헤드가 크게 줄었음에도 불구하고, 계획 품질과 안전 지표는 원래 VLA 모델(예: ORION)과 비교하여 유의미한 저하가 나타나지 않았다.
+
+### 결론
+DeeAD는 자율주행에서 VLA 모델의 추론을 크게 가속화하면서 계획 성능을 유지하는 효율적이고 재훈련이 필요 없는 솔루션을 제공한다. 동적 조기 종료 메커니즘은 실시간 자율주행 시스템에 실용적 가치를 제공한다.

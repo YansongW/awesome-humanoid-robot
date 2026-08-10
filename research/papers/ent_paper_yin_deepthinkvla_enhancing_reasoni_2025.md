@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15669v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15669v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (972 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,24 @@ Does Chain-of-Thought (CoT) reasoning genuinely improve Vision-Language-Action (
 ## Content
 Does Chain-of-Thought (CoT) reasoning genuinely improve Vision-Language-Action (VLA) models, or does it merely add overhead? Existing CoT-VLA systems report limited and inconsistent gains, yet no prior work has rigorously diagnosed when and why CoT helps robots act. Through systematic experiments, we identify two necessary conditions that must be jointly satisfied for CoT to be effective in VLA: (1) Decoding Alignment -- CoT and actions must be generated with modality-appropriate mechanisms; forcing both through a single autoregressive decoder is not merely suboptimal but actively harmful, degrading performance by 4.2 percentage points; (2) Causal Alignment -- CoT must be causally linked to task success via outcome-based optimization; without it, supervised CoT is indistinguishable from no reasoning at all under distribution shift, exhibiting a 32.0 pp performance drop nearly identical to the 31.6 pp drop of a reasoning-free baseline. Guided by these findings, we build DeepThinkVLA: a hybrid-attention decoder satisfies Condition 1 by pairing causal attention for language with bidirectional attention for parallel action decoding, while a two-stage SFT-then-RL pipeline satisfies Condition 2 by aligning the full reasoning--action chain with sparse task-success rewards. DeepThinkVLA achieves 97.0% success on LIBERO, 79.0% robustness on LIBERO-Plus (vs. 61.6% for $\pi_0$-FAST), and 59.3% success on RoboTwin 2.0, exceeding the strongest baseline by 21.7 points. Furthermore, we validate the practical effectiveness of our approach through real-world robot experiments. Code available at https://github.com/OpenBMB/DeepThinkVLA
 
-## 개요
-Chain-of-Thought(CoT) 추론이 Vision-Language-Action(VLA) 모델을 실제로 개선하는가, 아니면 단순히 오버헤드를 추가하는가? 기존 CoT-VLA 시스템은 제한적이고 일관되지 않은 성능 향상을 보고하지만, CoT가 로봇의 행동에 언제, 왜 도움이 되는지 엄격하게 진단한 선행 연구는 없습니다. 체계적인 실험을 통해, 우리는 CoT가 VLA에서 효과적이기 위해 함께 충족되어야 하는 두 가지 필수 조건을 식별했습니다: (1) 디코딩 정렬(Decoding Alignment) -- CoT와 행동은 모달리티에 적합한 메커니즘으로 생성되어야 합니다. 둘을 단일 자기회귀 디코더로 강제하는 것은 단순히 차선책이 아니라 적극적으로 해로우며, 성능을 4.2% 포인트 저하시킵니다; (2) 인과적 정렬(Causal Alignment) -- CoT는 결과 기반 최적화를 통해 작업 성공과 인과적으로 연결되어야 합니다. 그렇지 않으면, 분포 변화 하에서 지도 학습된 CoT는 추론이 전혀 없는 것과 구별할 수 없으며, 추론 없는 기준선의 31.6% 포인트 하락과 거의 동일한 32.0% 포인트 성능 하락을 보입니다. 이러한 발견에 따라, 우리는 DeepThinkVLA를 구축했습니다: 하이브리드 어텐션 디코더는 언어에 대한 인과적 어텐션과 병렬 행동 디코딩을 위한 양방향 어텐션을 결합하여 조건 1을 충족시키고, 2단계 SFT 후 RL 파이프라인은 전체 추론-행동 체인을 희소 작업 성공 보상과 정렬시켜 조건 2를 충족시킵니다. DeepThinkVLA는 LIBERO에서 97.0% 성공률, LIBERO-Plus에서 79.0% 견고성($π_0$-FAST의 61.6% 대비), RoboTwin 2.0에서 59.3% 성공률을 달성하여 가장 강력한 기준선을 21.7% 포인트 초과합니다. 또한, 실제 로봇 실험을 통해 우리 접근 방식의 실용적 효과를 검증합니다. 코드는 https://github.com/OpenBMB/DeepThinkVLA 에서 확인할 수 있습니다.
-
-## 핵심 내용
-Chain-of-Thought(CoT) 추론이 Vision-Language-Action(VLA) 모델을 실제로 개선하는가, 아니면 단순히 오버헤드를 추가하는가? 기존 CoT-VLA 시스템은 제한적이고 일관되지 않은 성능 향상을 보고하지만, CoT가 로봇의 행동에 언제, 왜 도움이 되는지 엄격하게 진단한 선행 연구는 없습니다. 체계적인 실험을 통해, 우리는 CoT가 VLA에서 효과적이기 위해 함께 충족되어야 하는 두 가지 필수 조건을 식별했습니다: (1) 디코딩 정렬(Decoding Alignment) -- CoT와 행동은 모달리티에 적합한 메커니즘으로 생성되어야 합니다. 둘을 단일 자기회귀 디코더로 강제하는 것은 단순히 차선책이 아니라 적극적으로 해로우며, 성능을 4.2% 포인트 저하시킵니다; (2) 인과적 정렬(Causal Alignment) -- CoT는 결과 기반 최적화를 통해 작업 성공과 인과적으로 연결되어야 합니다. 그렇지 않으면, 분포 변화 하에서 지도 학습된 CoT는 추론이 전혀 없는 것과 구별할 수 없으며, 추론 없는 기준선의 31.6% 포인트 하락과 거의 동일한 32.0% 포인트 성능 하락을 보입니다. 이러한 발견에 따라, 우리는 DeepThinkVLA를 구축했습니다: 하이브리드 어텐션 디코더는 언어에 대한 인과적 어텐션과 병렬 행동 디코딩을 위한 양방향 어텐션을 결합하여 조건 1을 충족시키고, 2단계 SFT 후 RL 파이프라인은 전체 추론-행동 체인을 희소 작업 성공 보상과 정렬시켜 조건 2를 충족시킵니다. DeepThinkVLA는 LIBERO에서 97.0% 성공률, LIBERO-Plus에서 79.0% 견고성($π_0$-FAST의 61.6% 대비), RoboTwin 2.0에서 59.3% 성공률을 달성하여 가장 강력한 기준선을 21.7% 포인트 초과합니다. 또한, 실제 로봇 실험을 통해 우리 접근 방식의 실용적 효과를 검증합니다. 코드는 https://github.com/OpenBMB/DeepThinkVLA 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.15669v2
+
+## 개요
+기존 CoT-VLA 시스템의 효과 향상은 제한적이고 일관성이 없다고 보고되었지만, CoT가 언제 그리고 왜 로봇 행동에 도움이 되는지 엄격하게 진단한 연구는 이전에 없었다. 체계적인 실험을 통해 저자들은 VLA에서 CoT가 효과적이기 위한 두 가지 필수 조건을 식별했다: 디코딩 정렬(decoding alignment)은 CoT와 행동이 모달리티에 적합한 생성 메커니즘을 사용해야 하며, 이를 단일 자기회귀 디코더로 강제하면 성능이 4.2퍼센트 포인트 하락한다; 인과 정렬(causal alignment)은 CoT가 결과 기반 최적화를 통해 작업 성공과 인과적 연결을 가져야 하며, 그렇지 않으면 분포 변화 하에서 감독형 CoT와 추론 없는 기준선이 거의 동일한 성능을 보인다(성능 하락 32.0 pp 대 31.6 pp). 이러한 발견을 바탕으로 구축된 DeepThinkVLA는 혼합 주의 디코더(언어는 인과 주의, 행동은 양방향 주의로 병렬 디코딩)를 사용하여 조건 1을 충족하고, 두 단계 SFT-then-RL 프로세스를 통해 조건 2를 충족하여 여러 벤치마크에서 선도적인 성능을 달성한다.
+
+## 핵심 내용
+### 방법 아키텍처
+DeepThinkVLA의 핵심 설계는 두 가지 필수 조건을 중심으로 전개된다:
+- **혼합 주의 디코더**: 언어 인과 주의와 행동 양방향 주의를 결합하여 CoT 추론과 병렬 행동 디코딩을 위한 모달리티 적합 생성 구현. 구체적으로, 언어 토큰은 표준 인과 마스크를 사용하고 행동 토큰은 양방향 주의를 사용하여 행동 디코딩을 병렬로 수행할 수 있게 한다.
+- **두 단계 훈련 프로세스**: 먼저 감독 미세 조정(SFT)으로 기본 추론-행동 체인을 구축한 후, 강화 학습(RL)으로 희소 작업 성공 보상을 통해 전체 추론-행동 체인을 정렬하여 CoT와 작업 성공 간의 인과적 연결을 보장한다.
+
+### 실험 설정 및 주요 결과
+- **LIBERO 벤치마크**: DeepThinkVLA는 97.0% 성공률을 달성하여 기준선을 크게 능가한다.
+- **LIBERO-Plus 견고성 테스트**: 79.0% 견고성을 달성하며, π₀-FAST의 61.6%와 대비된다.
+- **RoboTwin 2.0**: 59.3% 성공률을 달성하여 가장 강력한 기준선을 21.7퍼센트 포인트 초과한다.
+- **소거 실험**: 단일 자기회귀 디코더는 성능을 4.2퍼센트 포인트 하락시킨다; 인과 정렬이 없을 때 분포 변화 하에서 성능 하락은 32.0 pp로, 추론 없는 기준선의 31.6 pp와 거의 동일하다.
+- **실제 로봇 실험**: 실제 조작에서 방법의 효과성을 검증한다.
+
+### 결론
+DeepThinkVLA는 VLA에서 CoT의 효과적 조건을 체계적으로 진단하고, 혼합 주의 디코더와 두 단계 훈련 프로세스를 제안하여 여러 벤치마크에서 상당한 성능 향상을 달성하고 실제 적용 효과를 검증했다. 코드는 오픈소스로 공개되었다.

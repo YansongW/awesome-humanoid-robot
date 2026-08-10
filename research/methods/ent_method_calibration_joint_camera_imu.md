@@ -29,7 +29,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-05.md#相机-LiDAR 联合标定 by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from chapter-05.md#相机-LiDAR 联合标定 by scripts/backfill_nonpaper_entries.py. | WP4 trilingual backfill
+    2026-08-10: en body retranslated from zh deep-read (2518 chars, DeepSeek). | WP4 trilingual backfill 2026-08-10: closed
+    unclosed code fence(s) and removed duplicate stale translation block(s) (pre-existing ingestion defect).'
 sources:
 - id: src_wiki_extraction
   type: other
@@ -37,7 +39,6 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-
 ## 概述
 联合标定是人形机器人领域的重要方法。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -125,96 +126,10 @@ def project_lidar_to_image(pts_lidar, R_cl, t_cl, K, dist_coeffs=None):
     uv = uv[:, :2] / uv[:, 2:3]
     return uv, valid
 
+```
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-05.md#相机-LiDAR 联合标定
-
-## Overview
-Joint calibration is an important method in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.
-
-## Content
-In humanoid robots, cameras provide dense texture and semantic information, while LiDAR provides precise 3D geometry. To achieve functions such as RGB point cloud coloring, depth fusion, and 3D object localization, it is essential to accurately calibrate the extrinsic parameters (rotation \(\mathbf{R}_{CL}\) and translation \(\mathbf{t}_{CL}\)) between the camera and LiDAR.
-
-!!! note "Terminology: Camera-LiDAR calibration, extrinsic parameters, reprojection error, point cloud registration, calibration target"
-    - **Camera-LiDAR calibration**: The process of estimating the rigid transformation between the camera coordinate system and the LiDAR coordinate system.
-    - **Extrinsic parameters**: The rotation and translation between two sensor coordinate systems.
-    - **Reprojection error**: The distance between a LiDAR point projected onto an image and the corresponding image feature.
-    - **Point cloud registration**: Algorithms that align multiple point clouds into the same coordinate system, e.g., ICP.
-    - **Calibration target**: A board with known geometric features (checkerboard, circular holes, cutout patterns) used to extract corresponding features.
-
-**Coordinate Transformation Relationships**
-
-Let a spatial point be \(\mathbf{P}_W\) in the world/calibration target coordinate system, \(\mathbf{P}_C\) in the camera coordinate system, and \(\mathbf{P}_L\) in the LiDAR coordinate system. The camera intrinsic matrix is \(\mathbf{K}\), and the camera-LiDAR extrinsic parameters are \((\mathbf{R}_{CL}, \mathbf{t}_{CL})\). Then:
-
-$$
-\mathbf{P}_C = \mathbf{R}_{CL} \mathbf{P}_L + \mathbf{t}_{CL}
-$$
-
-$$
-\mathbf{p} = \mathbf{K} \mathbf{P}_C / Z_C
-$$
-
-where \(\mathbf{p} = [u, v, 1]^T\) are the image pixel coordinates, and \(Z_C\) is the depth in the camera coordinate system.
-
-```mermaid
-flowchart TD
-    A["Multi-pose calibration target acquisition"] --> B["Camera detects corners p_ij"]
-    A --> C["LiDAR extracts plane / corners P_L,ij"]
-    B --> D["Establish 3D-2D correspondences"]
-    C --> D
-    D --> E["PnP initial + ICP / Nonlinear optimization"]
-    E --> F["Extrinsic R_CL, t_CL"]
-    F --> G["Reprojection error verification"]
-```
-
-**Calibration Target-Based Methods**
-
-The most common calibration targets are checkerboard boards or aluminum plates with circular holes. The steps are as follows:
-
-1. **Camera Corner Detection**: Use Zhang's method or OpenCV to detect checkerboard corners, obtaining the pixel coordinates \(\mathbf{p}_{ij}\) and world coordinates \(\mathbf{P}_{W,j}\) for each corner.
-2. **LiDAR Plane Extraction**: Extract the calibration board plane from the point cloud and fit a plane equation; then extract plane boundaries or hole centers to obtain the 3D coordinates of the corners in the LiDAR coordinate system \(\mathbf{P}_{L,ij}\).
-3. **Correspondence Point Solving**: If the same corner is detected in both the camera and LiDAR, use PnP + ICP or global nonlinear optimization to solve for \((\mathbf{R}_{CL}, \mathbf{t}_{CL})\).
-
-**Minimizing Reprojection Error**
-
-Combine the corresponding points from all frames and minimize the reprojection error:
-
-$$
-\min_{\mathbf{R}_{CL}, \mathbf{t}_{CL}} \sum_{i,j} \rho\left( \left\| \mathbf{p}_{ij} - \pi\left(\mathbf{K}, \mathbf{R}_{CL}\mathbf{P}_{L,ij} + \mathbf{t}_{CL}\right) \right\|^2 \right)
-$$
-
-where \(\pi(\cdot)\) is the projection function, and \(\rho(\cdot)\) is a robust kernel function (e.g., Huber) used to suppress incorrect correspondences.
-
-**Methods Based on Point Cloud Edges/Mutual Information**
-
-When a calibration target is inconvenient to use, natural geometric edges or reflection intensity information in the scene can be utilized:
-
-- **Edge Alignment**: Extract image edges and edges from the projected LiDAR point cloud, minimizing the edge distance.
-- **Mutual Information Maximization**: Render LiDAR reflection intensity or depth into a pseudo-image, compute mutual information with the camera image, and optimize the extrinsic parameters to align them.
-
-These methods are sensitive to initial values. A rough extrinsic parameter is usually obtained using a calibration target first, followed by online refinement.
-
-**Python Example for Projecting LiDAR Point Cloud to Image**
-
-```python
-import numpy as np
-import cv2
-
-def project_lidar_to_image(pts_lidar, R_cl, t_cl, K, dist_coeffs=None):
-    """Project LiDAR point cloud to camera image.
-    pts_lidar: Nx3 numpy array in LiDAR coordinate
-    R_cl, t_cl: camera extrinsic w.r.t LiDAR (3x3, 3x1)
-    K: 3x3 camera intrinsic matrix
-    Returns: Nx2 pixel coordinates and valid mask
-    """
-    pts_cam = (R_cl @ pts_lidar.T + t_cl).T
-    # Keep only points in front of the camera
-    valid = pts_cam[:, 2] > 0.1
-    pts_cam = pts_cam[valid]
-    # Project
-    uv = (K @ pts_cam.T).T
-    uv = uv[:, :2] / uv[:, 2:3]
-    return uv, valid
 
 ## 개요
 공동 캘리브레이션은 휴머노이드 로봇 분야의 중요한 방법입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
@@ -303,17 +218,18 @@ def project_lidar_to_image(pts_lidar, R_cl, t_cl, K, dist_coeffs=None):
     uv = uv[:, :2] / uv[:, 2:3]
     return uv, valid
 
+```
 ## Overview
 Joint calibration is an important method in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
 
 ## Content
 In humanoid robots, cameras provide dense texture and semantic information, while LiDAR provides precise 3D geometry. To achieve functions such as RGB point cloud coloring, depth fusion, and 3D object localization, it is essential to accurately calibrate the extrinsic parameters (rotation \(\mathbf{R}_{CL}\) and translation \(\mathbf{t}_{CL}\)) between the camera and LiDAR.
 
-!!! note "Terminology: Camera-LiDAR Calibration, Extrinsic Parameters, Reprojection Error, Point Cloud Registration, Calibration Target"
-    - **Camera-LiDAR calibration**: The process of estimating the rigid transformation between the camera coordinate system and the LiDAR coordinate system.
+!!! note "Terminology: camera-LiDAR calibration, extrinsic parameters, reprojection error, point cloud registration, calibration target"
+    - **Camera-LiDAR calibration**: The process of estimating the rigid body transformation between the camera coordinate system and the LiDAR coordinate system.
     - **Extrinsic parameters**: The rotation and translation between two sensor coordinate systems.
-    - **Reprojection error**: The distance between the projection of a LiDAR point onto an image and its corresponding image feature.
-    - **Point cloud registration**: Algorithms that align multiple point clouds into the same coordinate system, e.g., ICP.
+    - **Reprojection error**: The distance between a LiDAR point projected onto the image and the corresponding image feature.
+    - **Point cloud registration**: Algorithms that align multiple point clouds into the same coordinate system, such as ICP.
     - **Calibration target**: A board with known geometric features (checkerboard, circular holes, cutout patterns) used to extract corresponding features.
 
 **Coordinate Transformation Relationship**
@@ -332,12 +248,12 @@ where \(\mathbf{p} = [u, v, 1]^T\) is the image pixel coordinate, and \(Z_C\) is
 
 ```mermaid
 flowchart TD
-    A["Multi-pose calibration target acquisition"] --> B["Camera detects corners p_ij"]
-    A --> C["LiDAR extracts plane / corners P_L,ij"]
+    A["Multi-pose acquisition of calibration target"] --> B["Camera detects corner points p_ij"]
+    A --> C["LiDAR extracts plane / corner points P_L,ij"]
     B --> D["Establish 3D-2D correspondences"]
     C --> D
-    D --> E["PnP initial + ICP / Nonlinear optimization"]
-    E --> F["Extrinsic R_CL, t_CL"]
+    D --> E["PnP initial value + ICP / nonlinear optimization"]
+    E --> F["Extrinsic parameters R_CL, t_CL"]
     F --> G["Reprojection error verification"]
 ```
 
@@ -345,9 +261,9 @@ flowchart TD
 
 The most commonly used calibration targets are checkerboard boards or aluminum plates with circular holes. The steps are as follows:
 
-1. **Camera Corner Detection**: Use Zhang's method or OpenCV to detect checkerboard corners, obtaining the pixel coordinates \(\mathbf{p}_{ij}\) and world coordinates \(\mathbf{P}_{W,j}\) for each corner.
-2. **LiDAR Plane Extraction**: Extract the calibration board plane from the point cloud and fit the plane equation; then extract the plane boundaries or hole centers to obtain the 3D coordinates \(\mathbf{P}_{L,ij}\) of the corners in the LiDAR coordinate system.
-3. **Correspondence Point Solving**: If the same corner is detected in both the camera and LiDAR, use PnP + ICP or global nonlinear optimization to solve for \((\mathbf{R}_{CL}, \mathbf{t}_{CL})\).
+1. **Camera corner detection**: Use Zhang's method or OpenCV to detect checkerboard corners, obtaining the pixel coordinates \(\mathbf{p}_{ij}\) and world coordinates \(\mathbf{P}_{W,j}\) of each corner.
+2. **LiDAR plane extraction**: Extract the calibration board plane from the point cloud and fit the plane equation; then extract the plane boundaries or hole centers to obtain the 3D coordinates \(\mathbf{P}_{L,ij}\) of the corners in the LiDAR coordinate system.
+3. **Corresponding point solving**: If the same corner is detected in both the camera and LiDAR, PnP + ICP or global nonlinear optimization can be used to solve for \((\mathbf{R}_{CL}, \mathbf{t}_{CL})\).
 
 **Minimizing Reprojection Error**
 
@@ -357,16 +273,16 @@ $$
 \min_{\mathbf{R}_{CL}, \mathbf{t}_{CL}} \sum_{i,j} \rho\left( \left\| \mathbf{p}_{ij} - \pi\left(\mathbf{K}, \mathbf{R}_{CL}\mathbf{P}_{L,ij} + \mathbf{t}_{CL}\right) \right\|^2 \right)
 $$
 
-where \(\pi(\cdot)\) is the projection function, and \(\rho(\cdot)\) is a robust kernel function (e.g., Huber) used to suppress incorrect correspondences.
+where \(\pi(\cdot)\) is the projection function, and \(\rho(\cdot)\) is a robust kernel function (such as Huber) used to suppress incorrect correspondences.
 
-**Edge/Mutual Information-Based Methods**
+**Point Cloud Edge/Mutual Information-Based Methods**
 
-When a calibration target is inconvenient to use, natural geometric edges or reflectivity information in the scene can be utilized:
+When the calibration target is inconvenient to use, natural geometric edges or reflectivity information in the scene can be leveraged:
 
-- **Edge Alignment**: Extract image edges and edges from the projected LiDAR point cloud, then minimize the edge distance.
-- **Mutual Information Maximization**: Render LiDAR reflectivity or depth as a pseudo-image, compute mutual information with the camera image, and optimize the extrinsic parameters to align them.
+- **Edge alignment**: Extract image edges and edges from the projected LiDAR point cloud, then minimize the edge distance.
+- **Mutual information maximization**: Render LiDAR reflectivity or depth into a pseudo-image, compute mutual information with the camera image, and optimize the extrinsic parameters to align the two.
 
-These methods are sensitive to initial values. A rough extrinsic parameter is typically obtained using a calibration target first, followed by online refinement.
+These methods are sensitive to initial values. Typically, a coarse extrinsic parameter is first obtained using a calibration target, followed by online refinement.
 
 **Python Example for Projecting LiDAR Point Cloud to Image**
 
@@ -389,3 +305,4 @@ def project_lidar_to_image(pts_lidar, R_cl, t_cl, K, dist_coeffs=None):
     uv = (K @ pts_cam.T).T
     uv = uv[:, :2] / uv[:, 2:3]
     return uv, valid
+```

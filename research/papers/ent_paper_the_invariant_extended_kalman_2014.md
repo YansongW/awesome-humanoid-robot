@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1410.1465v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1410.1465v4. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (632 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,28 @@ sources:
 ## Overview
 We analyze the convergence aspects of the invariant extended Kalman filter (IEKF), when the latter is used as a deterministic non-linear observer on Lie groups, for continuous-time systems with discrete observations. One of the main features of invariant observers for left-invariant systems on Lie groups is that the estimation error is autonomous. In this paper we first generalize this result by characterizing the (much broader) class of systems for which this property holds. Then, we leverage the result to prove for those systems the local stability of the IEKF around any trajectory, under the standard conditions of the linear case. One mobile robotics example and one inertial navigation example illustrate the interest of the approach. Simulations evidence the fact that the EKF is capable of diverging in some challenging situations, where the IEKF with identical tuning keeps converging.
 
-## 개요
-본 논문에서는 불변 확장 칼만 필터(IEKF)를 리 군(Lie groups) 상의 결정론적 비선형 관측기로 사용할 때, 이산 관측을 갖는 연속 시간 시스템에 대한 수렴 측면을 분석합니다. 리 군 상의 좌불변 시스템에 대한 불변 관측기의 주요 특징 중 하나는 추정 오차가 자율적(autonomous)이라는 점입니다. 본 논문에서는 먼저 이 결과를 일반화하여 이 속성이 성립하는 (훨씬 더 광범위한) 시스템 클래스를 특성화합니다. 그런 다음, 이 결과를 활용하여 선형 경우의 표준 조건 하에서 해당 시스템들에 대해 임의의 궤적 주변에서 IEKF의 국소 안정성을 증명합니다. 하나의 모바일 로봇 예제와 하나의 관성 항법 예제를 통해 이 접근법의 유용성을 설명합니다. 시뮬레이션은 동일한 튜닝을 가진 IEKF가 계속 수렴하는 까다로운 상황에서 EKF가 발산할 수 있다는 사실을 입증합니다.
-
-## 핵심 내용
-본 논문에서는 불변 확장 칼만 필터(IEKF)를 리 군(Lie groups) 상의 결정론적 비선형 관측기로 사용할 때, 이산 관측을 갖는 연속 시간 시스템에 대한 수렴 측면을 분석합니다. 리 군 상의 좌불변 시스템에 대한 불변 관측기의 주요 특징 중 하나는 추정 오차가 자율적(autonomous)이라는 점입니다. 본 논문에서는 먼저 이 결과를 일반화하여 이 속성이 성립하는 (훨씬 더 광범위한) 시스템 클래스를 특성화합니다. 그런 다음, 이 결과를 활용하여 선형 경우의 표준 조건 하에서 해당 시스템들에 대해 임의의 궤적 주변에서 IEKF의 국소 안정성을 증명합니다. 하나의 모바일 로봇 예제와 하나의 관성 항법 예제를 통해 이 접근법의 유용성을 설명합니다. 시뮬레이션은 동일한 튜닝을 가진 IEKF가 계속 수렴하는 까다로운 상황에서 EKF가 발산할 수 있다는 사실을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/1410.1465v4
+
+## 개요
+이 연구는 Lie 군에서의 불변 확장 칼만 필터(IEKF)가 결정적 비선형 관측기로서 수렴 특성을 분석합니다. 주요 발견은 Lie 군에서의 좌불변 시스템에 대해 불변 관측기의 추정 오차가 자율성을 갖는다는 것입니다. 저자들은 먼저 이 결과를 더 넓은 시스템 범주로 일반화한 다음, 이 속성을 활용하여 이러한 시스템에서 IEKF의 국소 안정성을 증명했습니다. 이동 로봇과 관성 항법 두 가지 사례를 통해 EKF가 발산할 수 있는 상황에서도 이 방법이 수렴을 유지함을 검증했습니다.
+
+## 핵심 내용
+### 방법 개요
+- IEKF를 연속 시간 시스템(이산 관측)에 Lie 군에서의 결정적 비선형 관측기로 적용
+- 핵심 아이디어: Lie 군 구조를 활용하여 추정 오차 동적 시스템을 자율화
+
+### 이론적 기여
+- 추정 오차를 자율적으로 만드는 **더 넓은 시스템 범주**(좌불변 시스템에 국한되지 않음)를 최초로 체계적으로 규명
+- 표준 선형 조건 하에서 IEKF가 **임의의 궤적** 근처에서 국소 안정성을 가짐을 증명
+- 이 안정성 증명은 특정 궤적에 의존하지 않으며 보편성을 가짐
+
+### 실험 검증
+- **이동 로봇 사례**: 도전적인 시나리오에서 EKF는 발산하는 반면, IEKF(동일한 파라미터 설정)는 지속적으로 수렴
+- **관성 항법 사례**: 관성 측정 장치(IMU) 데이터 융합에서 IEKF의 견고성을 검증
+- 시뮬레이션 결과는 정량적으로 IEKF의 수렴 영역이 표준 EKF보다 현저히 크다는 것을 보여줌
+
+### 핵심 결론
+- IEKF의 안정성 이점은 **오차 동적의 자율성**에서 비롯되며, 이는 선형화 오차의 누적을 제거함
+- 이 방법은 **고동적 운동**(예: 인간형 로봇 보행) 및 **큰 초기 오차** 시나리오에 특히 적합
+- 이론적 증명과 시뮬레이션 결과가 일치: IEKF는 EKF가 실패하는 경계 조건에서도 수렴을 유지함

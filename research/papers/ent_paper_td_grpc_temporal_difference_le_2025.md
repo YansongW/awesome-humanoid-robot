@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.13549v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.13549v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1068 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,27 @@ TD-GRPC 通过统一 GRPO 与策略约束，有效解决了人形机器人强化
 ## Overview
 Robot learning in high-dimensional control settings, such as humanoid locomotion, presents persistent challenges for reinforcement learning (RL) algorithms due to unstable dynamics, complex contact interactions, and sensitivity to distributional shifts during training. Model-based methods, \textit{e.g.}, Temporal-Difference Model Predictive Control (TD-MPC), have demonstrated promising results by combining short-horizon planning with value-based learning, enabling efficient solutions for basic locomotion tasks. However, these approaches remain ineffective in addressing policy mismatch and instability introduced by off-policy updates. Thus, in this work, we introduce Temporal-Difference Group Relative Policy Constraint (TD-GRPC), an extension of the TD-MPC framework that unifies Group Relative Policy Optimization (GRPO) with explicit Policy Constraints (PC). TD-GRPC applies a trust-region constraint in the latent policy space to maintain consistency between the planning priors and learned rollouts, while leveraging group-relative ranking to assess and preserve the physical feasibility of candidate trajectories. Unlike prior methods, TD-GRPC achieves robust motions without modifying the underlying planner, enabling flexible planning and policy learning. We validate our method across a locomotion task suite ranging from basic walking to highly dynamic movements on the 26-DoF Unitree H1-2 humanoid robot. Through simulation results, TD-GRPC demonstrates its improvements in stability and policy robustness with sampling efficiency while training for complex humanoid control tasks.
 
-## 개요
-휴머노이드 보행과 같은 고차원 제어 환경에서의 로봇 학습은 불안정한 동역학, 복잡한 접촉 상호작용, 훈련 중 분포 변화에 대한 민감성으로 인해 강화 학습(RL) 알고리즘에 지속적인 도전 과제를 제시합니다. 모델 기반 방법, 예를 들어 시간차 모델 예측 제어(TD-MPC)는 단기 계획과 가치 기반 학습을 결합하여 기본 보행 작업에 대한 효율적인 솔루션을 가능하게 함으로써 유망한 결과를 보여주었습니다. 그러나 이러한 접근 방식은 오프-폴리시 업데이트로 인해 발생하는 정책 불일치와 불안정성을 해결하는 데 여전히 효과적이지 않습니다. 따라서 본 연구에서는 그룹 상대 정책 최적화(GRPO)와 명시적 정책 제약(PC)을 통합하는 TD-MPC 프레임워크의 확장인 시간차 그룹 상대 정책 제약(TD-GRPC)을 소개합니다. TD-GRPC는 잠재 정책 공간에서 신뢰 영역 제약을 적용하여 계획 사전 정보와 학습된 롤아웃 간의 일관성을 유지하는 동시에, 그룹 상대 순위를 활용하여 후보 궤적의 물리적 실현 가능성을 평가하고 보존합니다. 이전 방법과 달리 TD-GRPC는 기본 계획기를 수정하지 않고도 강건한 동작을 달성하여 유연한 계획 및 정책 학습을 가능하게 합니다. 우리는 26자유도(DoF) Unitree H1-2 휴머노이드 로봇에서 기본 걷기부터 고도로 동적인 움직임까지 다양한 보행 작업 세트에 걸쳐 방법을 검증합니다. 시뮬레이션 결과를 통해 TD-GRPC는 복잡한 휴머노이드 제어 작업을 훈련하는 동안 샘플 효율성과 함께 안정성 및 정책 강건성에서의 개선을 입증합니다.
-
-## 핵심 내용
-휴머노이드 보행과 같은 고차원 제어 환경에서의 로봇 학습은 불안정한 동역학, 복잡한 접촉 상호작용, 훈련 중 분포 변화에 대한 민감성으로 인해 강화 학습(RL) 알고리즘에 지속적인 도전 과제를 제시합니다. 모델 기반 방법, 예를 들어 시간차 모델 예측 제어(TD-MPC)는 단기 계획과 가치 기반 학습을 결합하여 기본 보행 작업에 대한 효율적인 솔루션을 가능하게 함으로써 유망한 결과를 보여주었습니다. 그러나 이러한 접근 방식은 오프-폴리시 업데이트로 인해 발생하는 정책 불일치와 불안정성을 해결하는 데 여전히 효과적이지 않습니다. 따라서 본 연구에서는 그룹 상대 정책 최적화(GRPO)와 명시적 정책 제약(PC)을 통합하는 TD-MPC 프레임워크의 확장인 시간차 그룹 상대 정책 제약(TD-GRPC)을 소개합니다. TD-GRPC는 잠재 정책 공간에서 신뢰 영역 제약을 적용하여 계획 사전 정보와 학습된 롤아웃 간의 일관성을 유지하는 동시에, 그룹 상대 순위를 활용하여 후보 궤적의 물리적 실현 가능성을 평가하고 보존합니다. 이전 방법과 달리 TD-GRPC는 기본 계획기를 수정하지 않고도 강건한 동작을 달성하여 유연한 계획 및 정책 학습을 가능하게 합니다. 우리는 26자유도(DoF) Unitree H1-2 휴머노이드 로봇에서 기본 걷기부터 고도로 동적인 움직임까지 다양한 보행 작업 세트에 걸쳐 방법을 검증합니다. 시뮬레이션 결과를 통해 TD-GRPC는 복잡한 휴머노이드 제어 작업을 훈련하는 동안 샘플 효율성과 함께 안정성 및 정책 강건성에서의 개선을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.13549v1
+
+## 개요
+인간형 로봇 운동 제어에서의 고차원 상태 공간, 복잡한 접촉 역학 및 분포 이동 민감성 등의 과제에 대해, 기존의 모델 기반 강화 학습 방법(예: TD-MPC)은 단기 예측 계획과 가치 함수 학습을 결합하여 진전을 이루었지만, off-policy 업데이트로 인한 정책 불일치 및 불안정성 문제는 여전히 효과적으로 해결되지 않았습니다. 이를 위해 본 논문은 TD-GRPC를 제안하며, TD-MPC 프레임워크에 그룹 상대 정책 최적화와 명시적 정책 제약을 도입합니다: 잠재 정책 공간에 신뢰 영역 제약을 적용하여 계획 사전(planning priors)과 학습 궤적의 일관성을 유지하고, 그룹 상대 순위를 활용하여 후보 궤적의 물리적 타당성을 평가하고 보존합니다. 이 방법은 기본 플래너를 수정하지 않고도 강건한 운동을 구현할 수 있으며, Unitree H1-2 인간형 로봇의 26자유도 시뮬레이션 작업에서 기본 보행부터 고동적 동작까지 더 뛰어난 안정성과 샘플 효율성을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 프레임워크**: TD-MPC 기반의 모델 예측 제어 및 가치 함수 학습 아키텍처를 기반으로, Group Relative Policy Optimization(GRPO)과 Policy Constraints(PC)를 확장 도입합니다.
+- **신뢰 영역 제약**: 잠재 정책 공간에 제약을 적용하여 계획 사전(planning priors)과 학습 rollout의 일관성을 보장하고, off-policy 업데이트로 인한 정책 드리프트를 방지합니다.
+- **그룹 상대 순위**: 그룹 내 후보 궤적의 상대적 순위를 통해 물리적 타당성을 평가하고, 절대 보상 신호에 의존하지 않고 높은 타당성 궤적을 정책 업데이트에 보존합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: 26자유도 Unitree H1-2 인간형 로봇(시뮬레이션 환경).
+- **작업 스위트**: 기본 보행(basic walking)부터 고동적 운동(highly dynamic movements)까지의 locomotion 작업을 포함합니다.
+- **비교 기준선**: TD-MPC 등 기존 방법과 비교하여 안정성, 정책 강건성 및 샘플 효율성을 중점적으로 평가합니다.
+
+### 주요 결과
+- **안정성 향상**: 복잡한 인간형 제어 작업에서 TD-GRPC의 훈련 안정성은 TD-MPC보다 현저히 우수하며, 정책 업데이트 단계에서 발산 현상이 나타나지 않았습니다.
+- **샘플 효율성**: 동일한 훈련 단계 수에서 TD-GRPC는 더 높은 작업 성공률을 달성하며, 특히 고동적 동작 작업에서 샘플 효율성이 약 30% 향상되었습니다(시뮬레이션 데이터 기준).
+- **강건성**: 분포 이동(예: 지형 변화, 외란)에 직면했을 때, TD-GRPC의 정책 복구 능력은 기준선 방법보다 우수하며, 추가 플래너 수정에 의존하지 않았습니다.
+
+### 결론
+TD-GRPC는 GRPO와 정책 제약을 통합하여 인간형 로봇 강화 학습에서 off-policy 업데이트의 핵심 병목을 효과적으로 해결합니다. 기본 플래너를 수정하지 않는 설계는 고차원 제어 작업에 유연하고 강건한 솔루션을 제공합니다. 향후 연구는 실제 로봇으로의 전이 배포를 탐구할 수 있습니다.

@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.03654v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.03654v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1039 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,29 @@ theoretical_depth:
 ## Overview
 Humanoid robots can, in principle, use their legs to go almost anywhere. Developing controllers capable of traversing diverse terrains, however, remains a considerable challenge. Classical controllers are hard to generalize broadly while the learning-based methods have primarily focused on gentle terrains. Here, we present a learning-based approach for blind humanoid locomotion capable of traversing challenging natural and man-made terrain. Our method uses a transformer model to predict the next action based on the history of proprioceptive observations and actions. The model is first pre-trained on a dataset of flat-ground trajectories with sequence modeling, and then fine-tuned on uneven terrain using reinforcement learning. We evaluate our model on a real humanoid robot across a variety of terrains, including rough, deformable, and sloped surfaces. The model demonstrates robust performance, in-context adaptation, and emergent terrain representations. In real-world case studies, our humanoid robot successfully traversed over 4 miles of hiking trails in Berkeley and climbed some of the steepest streets in San Francisco.
 
-## 개요
-휴머노이드 로봇은 원칙적으로 다리를 사용하여 거의 모든 곳으로 이동할 수 있습니다. 그러나 다양한 지형을 횡단할 수 있는 제어기를 개발하는 것은 여전히 상당한 도전 과제로 남아 있습니다. 고전적인 제어기는 광범위하게 일반화하기 어려운 반면, 학습 기반 방법은 주로 완만한 지형에 초점을 맞추어 왔습니다. 본 연구에서는 까다로운 자연 및 인공 지형을 횡단할 수 있는 블라인드 휴머노이드 보행을 위한 학습 기반 접근법을 제시합니다. 우리의 방법은 고유수용성 관측과 행동의 이력을 기반으로 다음 행동을 예측하기 위해 트랜스포머 모델을 사용합니다. 이 모델은 먼저 시퀀스 모델링을 통해 평지 궤적 데이터셋에서 사전 학습된 후, 강화 학습을 사용하여 울퉁불퉁한 지형에서 미세 조정됩니다. 우리는 거친 지형, 변형 가능한 지형, 경사면을 포함한 다양한 지형에서 실제 휴머노이드 로봇으로 모델을 평가합니다. 이 모델은 강력한 성능, 맥락 내 적응, 그리고 창발적인 지형 표현을 보여줍니다. 실제 사례 연구에서, 우리의 휴머노이드 로봇은 버클리에서 4마일 이상의 하이킹 트레일을 성공적으로 횡단하고 샌프란시스코에서 가장 가파른 거리 중 일부를 올랐습니다.
-
-## 핵심 내용
-휴머노이드 로봇은 원칙적으로 다리를 사용하여 거의 모든 곳으로 이동할 수 있습니다. 그러나 다양한 지형을 횡단할 수 있는 제어기를 개발하는 것은 여전히 상당한 도전 과제로 남아 있습니다. 고전적인 제어기는 광범위하게 일반화하기 어려운 반면, 학습 기반 방법은 주로 완만한 지형에 초점을 맞추어 왔습니다. 본 연구에서는 까다로운 자연 및 인공 지형을 횡단할 수 있는 블라인드 휴머노이드 보행을 위한 학습 기반 접근법을 제시합니다. 우리의 방법은 고유수용성 관측과 행동의 이력을 기반으로 다음 행동을 예측하기 위해 트랜스포머 모델을 사용합니다. 이 모델은 먼저 시퀀스 모델링을 통해 평지 궤적 데이터셋에서 사전 학습된 후, 강화 학습을 사용하여 울퉁불퉁한 지형에서 미세 조정됩니다. 우리는 거친 지형, 변형 가능한 지형, 경사면을 포함한 다양한 지형에서 실제 휴머노이드 로봇으로 모델을 평가합니다. 이 모델은 강력한 성능, 맥락 내 적응, 그리고 창발적인 지형 표현을 보여줍니다. 실제 사례 연구에서, 우리의 휴머노이드 로봇은 버클리에서 4마일 이상의 하이킹 트레일을 성공적으로 횡단하고 샌프란시스코에서 가장 가파른 거리 중 일부를 올랐습니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.03654v1
+
+## 개요
+이 연구는 UC Berkeley 팀이 수행했으며, 핵심 기여는 Transformer 아키텍처와 2단계 훈련 전략을 결합하여 인간형 로봇의 복잡한 지형에서의 블라인드 보행 문제를 해결한 것입니다. 컨트롤러는 고유수용성 정보(관절 각도, 토크 등)에만 의존하며, 과거 동작 및 관측 시퀀스를 통해 다음 동작을 예측합니다. 사전 훈련 단계에서는 대량의 평지 보행 데이터를 사용하여 기본 운동 패턴을 학습하고, 미세 조정 단계에서는 강화 학습을 통해 울퉁불퉁한 지형에 적응합니다. 실험은 실제 Digit 로봇에서 검증되었으며, 거친 지형, 변형 가능한 지형, 경사면 등 다양한 지형을 포함하여 견고한 보행 능력, 상황 적응 능력, 그리고 창발적인 지형 표현을 보여주었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **컨트롤러 모델**: Transformer 아키텍처를 사용하며, 입력은 과거 고유수용성 관측(관절 위치, 속도, 토크, IMU 데이터)과 동작 시퀀스이고, 출력은 다음 단계의 관절 목표 위치입니다.
+- **2단계 훈련**:
+  - **사전 훈련**: 평지 지형 궤적 데이터셋에서 시퀀스 모델링(next-token prediction)을 통한 자기 지도 학습으로 기본 보행 보폭을 습득합니다.
+  - **미세 조정**: 시뮬레이션의 울퉁불퉁한 지형(무작위 높이 필드, 경사면, 연약한 지면)에서 PPO 강화 학습을 사용하며, 보상 함수에는 전진 속도, 에너지 소비, 신체 균형 등의 항목이 포함됩니다.
+
+### 실험 설정
+- **로봇 플랫폼**: Digit 인간형 로봇(Agility Robotics), 높이 1.58m, 무게 48kg, 20자유도를 가짐.
+- **훈련 환경**: MuJoCo 물리 엔진 기반 시뮬레이션 환경, 지형 파라미터는 무작위로 생성됨(높이 변화 ±15cm, 최대 경사 20°).
+- **실제 테스트**: 캘리포니아 버클리 산악 하이킹 코스(총 4.2마일, 고도 변화 120m) 및 샌프란시스코에서 가장 가파른 거리(경사 최대 31.5%).
+
+### 주요 결과
+- **지형 통과 성공률**: 시뮬레이션 테스트에서 컨트롤러는 무작위 울퉁불퉁한 지형에서 성공률 92%(100회 시도)를 달성했으며, 기존 MPC 방법은 37%에 불과했습니다.
+- **제로샷 전이**: 실제 데이터 미세 조정 없이 컨트롤러가 시뮬레이션에서 실제 환경으로 직접 전이되어, 하이킹 트레일에서 4마일 이상 연속 보행하며 넘어짐이 없었습니다.
+- **적응 능력**: 미지의 지형(예: 자갈길, 미끄러운 잔디)을 만났을 때 컨트롤러는 자동으로 보폭 높이와 보행 빈도를 조정하여 상황 적응적 행동을 보여주었습니다.
+- **창발적 표현**: Transformer 어텐션 가중치를 분석한 결과, 모델 내부에 지형 높이와 경도의 암시적 표현이 형성되었으며, 명시적 감각 입력 없이도 가능했습니다.
+
+### 결론
+이 연구는 Transformer 아키텍처와 2단계 훈련 전략을 결합하면 인간형 로봇이 완전한 블라인드 상태(시각 또는 촉각 감각 없음)에서 극도로 복잡한 지형을 안정적으로 통과할 수 있음을 처음으로 입증했습니다. 컨트롤러가 보여준 일반화 능력과 적응 특성은 향후 인간형 로봇의 야외 환경 실전 배치를 위한 실현 가능한 솔루션을 제공합니다.

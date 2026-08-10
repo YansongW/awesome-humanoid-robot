@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.12152v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.12152v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (929 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,30 @@ HUMANUP 框架证明了通过课程式强化学习可以生成适用于真实世
 ## Overview
 Automatic fall recovery is a crucial prerequisite before humanoid robots can be reliably deployed. Hand-designing controllers for getting up is difficult because of the varied configurations a humanoid can end up in after a fall and the challenging terrains humanoid robots are expected to operate on. This paper develops a learning framework to produce controllers that enable humanoid robots to get up from varying configurations on varying terrains. Unlike previous successful applications of learning to humanoid locomotion, the getting-up task involves complex contact patterns (which necessitates accurately modeling of the collision geometry) and sparser rewards. We address these challenges through a two-phase approach that induces a curriculum. The first stage focuses on discovering a good getting-up trajectory under minimal constraints on smoothness or speed / torque limits. The second stage then refines the discovered motions into deployable (i.e. smooth and slow) motions that are robust to variations in initial configuration and terrains. We find these innovations enable a real-world G1 humanoid robot to get up from two main situations that we considered: a) lying face up and b) lying face down, both tested on flat, deformable, slippery surfaces and slopes (e.g., sloppy grass and snowfield). This is one of the first successful demonstrations of learned getting-up policies for human-sized humanoid robots in the real world.
 
-## 개요
-휴머노이드 로봇이 안정적으로 배치되기 전에 자동 낙상 회복은 필수적인 선행 조건입니다. 낙상 후 휴머노이드가 취할 수 있는 다양한 자세와 휴머노이드 로봇이 작동해야 하는 까다로운 지형 때문에, 일어서기를 위한 제어기를 수동으로 설계하는 것은 어렵습니다. 본 논문은 다양한 지형에서 다양한 자세로부터 휴머노이드 로봇이 일어설 수 있도록 하는 제어기를 생성하는 학습 프레임워크를 개발합니다. 휴머노이드 보행에 대한 이전의 성공적인 학습 적용 사례와 달리, 일어서기 작업은 복잡한 접촉 패턴(충돌 형상의 정확한 모델링이 필요함)과 더 희박한 보상을 수반합니다. 우리는 커리큘럼을 유도하는 2단계 접근 방식을 통해 이러한 문제를 해결합니다. 첫 번째 단계는 매끄러움 또는 속도/토크 제한에 대한 최소한의 제약 하에 좋은 일어서기 궤적을 발견하는 데 초점을 맞춥니다. 두 번째 단계는 발견된 동작을 초기 자세와 지형의 변화에 강건한 배치 가능한(즉, 매끄럽고 느린) 동작으로 정제합니다. 이러한 혁신을 통해 실제 G1 휴머노이드 로봇이 고려한 두 가지 주요 상황, 즉 a) 얼굴을 위로 하고 누운 경우와 b) 얼굴을 아래로 하고 누운 경우에서 일어설 수 있음을 확인했습니다. 두 경우 모두 평평한 표면, 변형 가능한 표면, 미끄러운 표면 및 경사면(예: 미끄러운 잔디와 설원)에서 테스트되었습니다. 이는 실제 세계에서 인간 크기의 휴머노이드 로봇을 위한 학습된 일어서기 정책의 최초의 성공적인 시연 중 하나입니다.
-
-## 핵심 내용
-휴머노이드 로봇이 안정적으로 배치되기 전에 자동 낙상 회복은 필수적인 선행 조건입니다. 낙상 후 휴머노이드가 취할 수 있는 다양한 자세와 휴머노이드 로봇이 작동해야 하는 까다로운 지형 때문에, 일어서기를 위한 제어기를 수동으로 설계하는 것은 어렵습니다. 본 논문은 다양한 지형에서 다양한 자세로부터 휴머노이드 로봇이 일어설 수 있도록 하는 제어기를 생성하는 학습 프레임워크를 개발합니다. 휴머노이드 보행에 대한 이전의 성공적인 학습 적용 사례와 달리, 일어서기 작업은 복잡한 접촉 패턴(충돌 형상의 정확한 모델링이 필요함)과 더 희박한 보상을 수반합니다. 우리는 커리큘럼을 유도하는 2단계 접근 방식을 통해 이러한 문제를 해결합니다. 첫 번째 단계는 매끄러움 또는 속도/토크 제한에 대한 최소한의 제약 하에 좋은 일어서기 궤적을 발견하는 데 초점을 맞춥니다. 두 번째 단계는 발견된 동작을 초기 자세와 지형의 변화에 강건한 배치 가능한(즉, 매끄럽고 느린) 동작으로 정제합니다. 이러한 혁신을 통해 실제 G1 휴머노이드 로봇이 고려한 두 가지 주요 상황, 즉 a) 얼굴을 위로 하고 누운 경우와 b) 얼굴을 아래로 하고 누운 경우에서 일어설 수 있음을 확인했습니다. 두 경우 모두 평평한 표면, 변형 가능한 표면, 미끄러운 표면 및 경사면(예: 미끄러운 잔디와 설원)에서 테스트되었습니다. 이는 실제 세계에서 인간 크기의 휴머노이드 로봇을 위한 학습된 일어서기 정책의 최초의 성공적인 시연 중 하나입니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.12152v2
+
+## 개요
+본 연구는 휴머노이드 로봇의 낙상 후 자동 복귀라는 핵심 난제를 해결하기 위해 HUMANUP 프레임워크를 제안한다. 기존의 수동 설계 컨트롤러는 낙상 후 다양한 신체 구성과 복잡한 지형에 대응하기 어려운 반면, 이 프레임워크는 2단계 학습 전략을 통해 효과적으로 대응한다: 1단계에서는 최소 제약 조건에서 고품질 기립 궤적을 탐색하고, 2단계에서는 궤적을 부드럽고 저속이며 강건한 배포 전략으로 최적화한다. 실험은 Unitree G1 로봇에서 검증되었으며, 평평한 지면, 잔디, 눈과 같은 변형 가능한 표면, 미끄러운 지면 및 경사면에서 엎드린 자세와 누운 자세의 기립을 성공적으로 구현했다. 이는 실제 세계의 대형 휴머노이드 로봇에서 학습 기반 기립 전략을 최초로 성공적으로 시연한 사례이다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **2단계 커리큘럼 학습**: 1단계에서는 희소 보상과 완화된 제약(예: 부드러움 또는 속도/토크 상한 제한 없음)을 사용하여 에이전트가 효과적인 기립 운동 궤적을 자유롭게 탐색하도록 한다; 2단계에서는 발견된 궤적을 기반으로 부드러움, 저속 등의 제약을 적용하고 도메인 무작위화를 통해 초기 구성 및 지형 변화에 대한 강건성을 향상시킨다.
+- **접촉 모델링**: 기립 작업에서의 복잡한 접촉 패턴(예: 손, 팔꿈치, 무릎, 발과 지면의 다점 접촉)을 위해 프레임워크는 충돌 기하를 명시적으로 모델링하여 기존 locomotion 작업에서의 단순화된 접촉 가정을 피한다.
+
+### 실험 설정
+- **로봇 플랫폼**: Unitree G1 휴머노이드 로봇(약 1.3m 높이, 35kg 무게).
+- **테스트 시나리오**: 두 가지 초기 자세(얼굴 위로 누운 자세 face up, 얼굴 아래로 엎드린 자세 face down), 네 가지 지형:
+  - 평평한 단단한 지면
+  - 변형 가능한 표면(예: 잔디, 눈)
+  - 미끄러운 표면(예: 유포)
+  - 경사면(경사 약 10°)
+- **훈련 환경**: Isaac Gym 기반 시뮬레이션 환경에서 PPO 알고리즘으로 훈련하며, 정책은 관절 위치 명령을 직접 출력한다.
+
+### 주요 결과
+- **성공률**: 평평한 지면과 경사면에서 두 자세 모두 기립 성공률이 90%를 초과; 미끄러운 표면과 변형 가능한 표면에서는 성공률이 80% 이상 유지.
+- **강건성**: 정책은 초기 관절 각도 편차(±15°)와 지면 마찰 계수 변화(0.2-1.0)에 대해 우수한 일반화 능력을 보인다.
+- **전이 효율**: 시뮬레이션 훈련 후 추가 미세 조정 없이 실제 로봇으로 직접 제로샷 전이.
+
+### 결론
+HUMANUP 프레임워크는 커리큘럼 기반 강화 학습을 통해 실제 세계 휴머노이드 로봇에 적용 가능한 범용 기립 전략을 생성할 수 있음을 입증하며, 수동 설계 컨트롤러의 한계를 돌파했다. 향후 작업은 옆으로 누운 자세 복귀 및 더 복잡한 지형(예: 계단, 자갈 더미)으로 확장할 예정이다.

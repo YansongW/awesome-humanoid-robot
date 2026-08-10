@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.07248v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.07248v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1157 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,30 @@ TVS 提供了一个严谨的框架，用于区分策略诱导的误差与动作�
 ## Overview
 Physics-based motion imitation is central to humanoid control, yet current evaluation metrics (e.g., MPJPE) only quantify imitation outcomes, not their underlying causes. This conflation obscures a critical diagnostic question: when imitation error occurs, does it stem from policy limitations or the intrinsic learning difficulty of the target motion? To resolve this ambiguity, we propose the Torque Variation Score (TVS), a physics-grounded metric that quantifies the inherent learning difficulty of a motion independently of any policy's performance. TVS measures the magnitude of torque variation required to correct small pose perturbations, directly capturing how dynamical properties shape the reinforcement learning landscape. We establish that high-TV motions induce flat reward landscapes and vanishing policy gradients, explaining persistent imitation failures. Extensive experiments with state-of-the-art methods (UHC, PHC+) confirm TVS strongly correlates with imitation error and enables principled error attribution: high error on low-TV motions indicates policy deficiency, while high error on high-TV motions reflects fundamental learning constraints. Beyond error diagnosis, TVS facilitates three practical applications: Maximum Imitable Difficulty (MID) for policy capability assessment, Difficulty-Stratified Joint Error (DSJE) for granular performance profiling, and Flawed Motion Detection for identifying segments with abnormally high learning difficulty to support mocap data curation and quality control. TVS provides a rigorous lens to distinguish policy-induced errors from motion-inherent challenges and enhances motion dataset reliability.
 
-## 개요
-물리 기반 동작 모방은 휴머노이드 제어의 핵심이지만, 현재의 평가 지표(예: MPJPE)는 모방 결과만을 정량화할 뿐 그 근본 원인은 다루지 않습니다. 이러한 혼동은 중요한 진단 질문을 모호하게 만듭니다. 모방 오류가 발생했을 때, 그것이 정책의 한계 때문인지, 아니면 대상 동작 자체의 내재적 학습 난이도 때문인지 말입니다. 이러한 모호성을 해결하기 위해, 우리는 정책의 성능과 무관하게 동작의 고유한 학습 난이도를 정량화하는 물리 기반 지표인 토크 변동 점수(TVS)를 제안합니다. TVS는 작은 자세 교란을 수정하는 데 필요한 토크 변동의 크기를 측정하여, 동역학적 특성이 강화 학습 환경을 어떻게 형성하는지 직접적으로 포착합니다. 우리는 높은 TVS 동작이 평평한 보상 환경과 소멸하는 정책 그래디언트를 유발하여 지속적인 모방 실패를 설명한다는 것을 입증합니다. 최신 방법(UHC, PHC+)을 사용한 광범위한 실험을 통해 TVS가 모방 오류와 강한 상관관계를 가지며 원칙적인 오류 귀인이 가능함을 확인했습니다. 낮은 TVS 동작에서의 높은 오류는 정책 결함을 나타내고, 높은 TVS 동작에서의 높은 오류는 근본적인 학습 제약을 반영합니다. 오류 진단 외에도 TVS는 세 가지 실용적 응용을 가능하게 합니다. 정책 능력 평가를 위한 최대 모방 난이도(MID), 세분화된 성능 프로파일링을 위한 난이도 계층 관절 오차(DSJE), 그리고 모캡 데이터 큐레이션 및 품질 관리를 지원하기 위해 비정상적으로 높은 학습 난이도를 가진 세그먼트를 식별하는 결함 동작 탐지입니다. TVS는 정책 유발 오류와 동작 고유의 문제를 구별하는 엄격한 렌즈를 제공하며 동작 데이터셋의 신뢰성을 향상시킵니다.
-
-## 핵심 내용
-물리 기반 동작 모방은 휴머노이드 제어의 핵심이지만, 현재의 평가 지표(예: MPJPE)는 모방 결과만을 정량화할 뿐 그 근본 원인은 다루지 않습니다. 이러한 혼동은 중요한 진단 질문을 모호하게 만듭니다. 모방 오류가 발생했을 때, 그것이 정책의 한계 때문인지, 아니면 대상 동작 자체의 내재적 학습 난이도 때문인지 말입니다. 이러한 모호성을 해결하기 위해, 우리는 정책의 성능과 무관하게 동작의 고유한 학습 난이도를 정량화하는 물리 기반 지표인 토크 변동 점수(TVS)를 제안합니다. TVS는 작은 자세 교란을 수정하는 데 필요한 토크 변동의 크기를 측정하여, 동역학적 특성이 강화 학습 환경을 어떻게 형성하는지 직접적으로 포착합니다. 우리는 높은 TVS 동작이 평평한 보상 환경과 소멸하는 정책 그래디언트를 유발하여 지속적인 모방 실패를 설명한다는 것을 입증합니다. 최신 방법(UHC, PHC+)을 사용한 광범위한 실험을 통해 TVS가 모방 오류와 강한 상관관계를 가지며 원칙적인 오류 귀인이 가능함을 확인했습니다. 낮은 TVS 동작에서의 높은 오류는 정책 결함을 나타내고, 높은 TVS 동작에서의 높은 오류는 근본적인 학습 제약을 반영합니다. 오류 진단 외에도 TVS는 세 가지 실용적 응용을 가능하게 합니다. 정책 능력 평가를 위한 최대 모방 난이도(MID), 세분화된 성능 프로파일링을 위한 난이도 계층 관절 오차(DSJE), 그리고 모캡 데이터 큐레이션 및 품질 관리를 지원하기 위해 비정상적으로 높은 학습 난이도를 가진 세그먼트를 식별하는 결함 동작 탐지입니다. TVS는 정책 유발 오류와 동작 고유의 문제를 구별하는 엄격한 렌즈를 제공하며 동작 데이터셋의 신뢰성을 향상시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.07248v2
+
+## 개요
+현재 휴머노이드 로봇의 물리적 모방 학습 평가 지표(예: MPJPE)는 모방 결과만 측정할 뿐 오류의 근본 원인을 밝혀내지 못합니다. 이 문제를 해결하기 위해 본 논문은 Torque Variation Score (TVS)를 제안합니다. 이 지표는 정책 성능과 독립적으로, 미세한 자세 교란을 보정하는 데 필요한 토크 변화의 크기를 측정하여 동작의 동역학적 특성이 강화 학습 환경에 어떻게 영향을 미치는지 직접적으로 반영합니다. 실험 결과, 높은 TVS를 가진 동작은 보상 평면을 평탄하게 만들고 정책 기울기를 소멸시켜 지속적인 모방 실패를 설명합니다. TVS는 모방 오류와 높은 상관관계를 가지며, 원칙적인 오류 귀인이 가능합니다: 낮은 TVS 동작의 높은 오류는 정책 결함을 나타내고, 높은 TVS 동작의 높은 오류는 기본적인 학습 한계를 반영합니다. 또한 TVS는 최대 모방 가능 난이도 (MID), 난이도 계층화 결합 오류 (DSJE), 결함 동작 탐지 등의 실제 응용을 지원합니다.
+
+## 핵심 내용
+### 방법
+- **Torque Variation Score (TVS)**: 동작의 내재적 학습 난이도를 정량화하는 물리 기반 지표입니다. 핵심 아이디어는 미세한 자세 교란 하에서 균형을 회복하는 데 필요한 토크 변화의 크기를 측정하는 것입니다. 높은 TVS 값은 동작이 더 정밀한 토크 제어를 요구하며, 이는 학습 난이도를 증가시킵니다.
+- **TVS와 강화 학습의 관계**: 실험 결과, 높은 TVS를 가진 동작은 보상 평면을 평탄하게 만들고 정책 기울기를 소멸시켜 정책이 기울기 업데이트를 통해 최적화되기 어렵게 만듭니다. 이는 특정 동작이 많은 훈련에도 불구하고 모방하기 어려운 이유를 설명합니다.
+
+### 실험 설정
+- **벤치마크 및 모델**: 시뮬레이션 환경에서 최신 방법인 UHC와 PHC+를 사용하여 실험을 수행했습니다. 동작 데이터는 공개된 mocap 데이터셋에서 가져왔습니다.
+- **평가 지표**: TVS 외에도 MPJPE와 같은 전통적인 지표를 비교에 사용했습니다.
+
+### 주요 결과
+- **TVS와 모방 오류의 상관관계**: TVS는 모방 오류(예: MPJPE)와 강한 양의 상관관계를 보여, TVS가 난이도 지표로서의 유효성을 검증합니다.
+- **오류 귀인**:
+  - 낮은 TVS 동작의 높은 오류: 정책 자체에 결함(예: 과소적합 또는 과적합)이 있음을 나타냅니다.
+  - 높은 TVS 동작의 높은 오류: 동작 자체의 학습 한계를 반영하며, 최적의 정책으로도 완벽하게 모방하기 어렵습니다.
+- **실제 응용**:
+  - **Maximum Imitable Difficulty (MID)**: 정책의 능력 상한을 평가하는 데 사용됩니다. 즉, 정책이 성공적으로 모방할 수 있는 최고 TVS 값입니다.
+  - **Difficulty-Stratified Joint Error (DSJE)**: TVS에 따라 계층화하여 관절 오류를 계산하며, 더 세분화된 성능 분석을 제공합니다.
+  - **Flawed Motion Detection**: TVS가 비정상적으로 높은 동작 구간을 식별하여 mocap 데이터 품질 관리를 지원하고, 학습하기 어렵거나 품질이 낮은 데이터를 제거합니다.
+
+### 결론
+TVS는 정책 유발 오류와 동작 고유의 도전 과제를 구분하는 엄밀한 프레임워크를 제공하여, 휴머노이드 모방 학습의 진단 능력과 데이터셋 신뢰성을 향상시킵니다.

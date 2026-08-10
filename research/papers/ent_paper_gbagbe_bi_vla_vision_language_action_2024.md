@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.06039v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.06039v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (750 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -73,11 +74,28 @@ Bi-VLA 验证了视觉-语言-动作模型在双臂灵巧操作中的可行性�
 ## Overview
 This research introduces the Bi-VLA (Vision-Language-Action) model, a novel system designed for bimanual robotic dexterous manipulation that seamlessly integrates vision for scene understanding, language comprehension for translating human instructions into executable code, and physical action generation. We evaluated the system's functionality through a series of household tasks, including the preparation of a desired salad upon human request. Bi-VLA demonstrates the ability to interpret complex human instructions, perceive and understand the visual context of ingredients, and execute precise bimanual actions to prepare the requested salad. We assessed the system's performance in terms of accuracy, efficiency, and adaptability to different salad recipes and human preferences through a series of experiments. Our results show a 100% success rate in generating the correct executable code by the Language Module, a 96.06% success rate in detecting specific ingredients by the Vision Module, and an overall success rate of 83.4% in correctly executing user-requested tasks.
 
-## 개요
-본 연구는 Bi-VLA(Vision-Language-Action) 모델을 소개합니다. 이는 양손 로봇의 정밀 조작을 위해 설계된 새로운 시스템으로, 장면 이해를 위한 시각, 인간 명령을 실행 가능한 코드로 변환하는 언어 이해, 그리고 물리적 동작 생성을 원활하게 통합합니다. 우리는 일련의 가사 작업(예: 인간 요청에 따른 원하는 샐러드 준비)을 통해 시스템의 기능을 평가했습니다. Bi-VLA는 복잡한 인간 명령을 해석하고, 재료의 시각적 맥락을 인지 및 이해하며, 요청된 샐러드를 준비하기 위해 정밀한 양손 동작을 실행하는 능력을 보여줍니다. 일련의 실험을 통해 정확성, 효율성, 그리고 다양한 샐러드 레시피 및 인간 선호도에 대한 적응성 측면에서 시스템 성능을 평가했습니다. 그 결과, 언어 모듈이 올바른 실행 코드를 생성하는 성공률은 100%, 시각 모듈이 특정 재료를 감지하는 성공률은 96.06%, 사용자 요청 작업을 올바르게 실행하는 전체 성공률은 83.4%를 기록했습니다.
-
-## 핵심 내용
-본 연구는 Bi-VLA(Vision-Language-Action) 모델을 소개합니다. 이는 양손 로봇의 정밀 조작을 위해 설계된 새로운 시스템으로, 장면 이해를 위한 시각, 인간 명령을 실행 가능한 코드로 변환하는 언어 이해, 그리고 물리적 동작 생성을 원활하게 통합합니다. 우리는 일련의 가사 작업(예: 인간 요청에 따른 원하는 샐러드 준비)을 통해 시스템의 기능을 평가했습니다. Bi-VLA는 복잡한 인간 명령을 해석하고, 재료의 시각적 맥락을 인지 및 이해하며, 요청된 샐러드를 준비하기 위해 정밀한 양손 동작을 실행하는 능력을 보여줍니다. 일련의 실험을 통해 정확성, 효율성, 그리고 다양한 샐러드 레시피 및 인간 선호도에 대한 적응성 측면에서 시스템 성능을 평가했습니다. 그 결과, 언어 모듈이 올바른 실행 코드를 생성하는 성공률은 100%, 시각 모듈이 특정 재료를 감지하는 성공률은 96.06%, 사용자 요청 작업을 올바르게 실행하는 전체 성공률은 83.4%를 기록했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2405.06039v2
+
+## 개요
+Bi-VLA 시스템은 시각 모듈을 통해 환경을 인식하고, 언어 모듈이 인간의 지시를 실행 가능한 코드로 변환하며, 동작 모듈이 양팔 로봇을 구동하여 정밀한 조작을 완수합니다. 연구진은 여러 가정 환경 실험에서 시스템 성능을 평가했으며, 그 결과 언어 모듈의 코드 생성 정확도는 100%, 시각 모듈의 특정 식재료 감지 성공률은 96.06%, 전체 작업 실행 성공률은 83.4%로 나타났습니다. 이 시스템은 복잡한 지시 이해, 시각적 맥락 인식, 양팔 협동 조작에서의 종합적인 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+Bi-VLA는 세 가지 모듈로 구성된 협력 아키텍처를 채택합니다:
+- **Vision Module**: 장면 이해와 식재료 인식을 담당하며, 시각적 인식을 통해 조작 대상의 공간적 위치와 상태를 획득합니다.
+- **Language Module**: 자연어 지시(예: "샐러드 준비해 줘")를 로봇이 실행 가능한 코드 시퀀스로 변환합니다.
+- **Action Module**: 시각 및 언어 정보를 기반으로 양팔의 정교한 조작을 위한 동작 명령을 생성합니다.
+
+### 실험 설정
+- **작업 시나리오**: 가정 주방 환경에서의 샐러드 준비 작업으로, 여러 식재료(예: 채소, 소스)의 인식, 파지, 조합을 포함합니다.
+- **평가 지표**: 언어 모듈의 코드 생성 정확도, 시각 모듈의 식재료 감지 성공률, 전체 작업 실행 성공률.
+- **실험 변수**: 다양한 샐러드 레시피와 사용자 선호도(예: 식재료 대체, 분량 조절).
+
+### 주요 결과
+- **언어 모듈**: 모든 테스트 지시에서 코드 생성 정확도 **100%** 달성.
+- **시각 모듈**: 지정된 식재료 감지 성공률 **96.06%**.
+- **전체 시스템**: 사용자 요청 작업의 완전 실행 성공률 **83.4%**.
+
+### 결론
+Bi-VLA는 시각-언어-동작 모델이 양팔 정밀 조작에서의 실현 가능성을 검증했으며, 특히 의미적 이해와 정밀 제어가 필요한 복합 작업에서 뛰어난 성능을 보였습니다. 향후 연구는 폐색(occlusion) 상황에서 시각 모듈의 견고성을 향상시키고, 더 복잡한 다단계 조작 프로세스로 확장하는 데 초점을 맞출 수 있습니다.

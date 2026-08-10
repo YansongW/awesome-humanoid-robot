@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.10414v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.10414v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (947 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,32 @@ HUMOTO 由研究团队提出，旨在为类人机器人、动画与具身 AI 提
 ## Overview
 We present Human Motions with Objects (HUMOTO), a high-fidelity dataset of human-object interactions for motion generation, computer vision, and robotics applications. Featuring 735 sequences (7,875 seconds at 30 fps), HUMOTO captures interactions with 63 precisely modeled objects and 72 articulated parts. Our innovations include a scene-driven LLM scripting pipeline creating complete, purposeful tasks with natural progression, and a mocap-and-camera recording setup to effectively handle occlusions. Spanning diverse activities from cooking to outdoor picnics, HUMOTO preserves both physical accuracy and logical task flow. Professional artists rigorously clean and verify each sequence, minimizing foot sliding and object penetrations. We also provide benchmarks compared to other datasets. HUMOTO's comprehensive full-body motion and simultaneous multi-object interactions address key data-capturing challenges and provide opportunities to advance realistic human-object interaction modeling across research domains with practical applications in animation, robotics, and embodied AI systems. Project: https://jiaxin-lu.github.io/humoto/ .
 
-## 개요
-우리는 동작 생성, 컴퓨터 비전 및 로봇공학 응용을 위한 인간-객체 상호작용의 고충실도 데이터셋인 Human Motions with Objects (HUMOTO)를 제시합니다. 735개의 시퀀스(30fps에서 7,875초)를 특징으로 하는 HUMOTO는 63개의 정밀하게 모델링된 객체와 72개의 관절 부품과의 상호작용을 포착합니다. 우리의 혁신에는 자연스러운 진행을 통해 완전하고 목적 있는 작업을 생성하는 장면 기반 LLM 스크립팅 파이프라인과 폐색을 효과적으로 처리하는 모캡 및 카메라 녹화 설정이 포함됩니다. 요리부터 야외 피크닉까지 다양한 활동을 아우르는 HUMOTO는 물리적 정확성과 논리적 작업 흐름을 모두 보존합니다. 전문 아티스트가 각 시퀀스를 엄격히 정리하고 검증하여 발 미끄러짐과 객체 관통을 최소화합니다. 또한 다른 데이터셋과 비교한 벤치마크를 제공합니다. HUMOTO의 포괄적인 전신 동작과 동시 다중 객체 상호작용은 주요 데이터 포착 과제를 해결하고 애니메이션, 로봇공학 및 체화된 AI 시스템의 실용적 응용을 통해 연구 영역 전반에서 현실적인 인간-객체 상호작용 모델링을 발전시킬 기회를 제공합니다. 프로젝트: https://jiaxin-lu.github.io/humoto/ .
-
-## 핵심 내용
-우리는 동작 생성, 컴퓨터 비전 및 로봇공학 응용을 위한 인간-객체 상호작용의 고충실도 데이터셋인 Human Motions with Objects (HUMOTO)를 제시합니다. 735개의 시퀀스(30fps에서 7,875초)를 특징으로 하는 HUMOTO는 63개의 정밀하게 모델링된 객체와 72개의 관절 부품과의 상호작용을 포착합니다. 우리의 혁신에는 자연스러운 진행을 통해 완전하고 목적 있는 작업을 생성하는 장면 기반 LLM 스크립팅 파이프라인과 폐색을 효과적으로 처리하는 모캡 및 카메라 녹화 설정이 포함됩니다. 요리부터 야외 피크닉까지 다양한 활동을 아우르는 HUMOTO는 물리적 정확성과 논리적 작업 흐름을 모두 보존합니다. 전문 아티스트가 각 시퀀스를 엄격히 정리하고 검증하여 발 미끄러짐과 객체 관통을 최소화합니다. 또한 다른 데이터셋과 비교한 벤치마크를 제공합니다. HUMOTO의 포괄적인 전신 동작과 동시 다중 객체 상호작용은 주요 데이터 포착 과제를 해결하고 애니메이션, 로봇공학 및 체화된 AI 시스템의 실용적 응용을 통해 연구 영역 전반에서 현실적인 인간-객체 상호작용 모델링을 발전시킬 기회를 제공합니다. 프로젝트: https://jiaxin-lu.github.io/humoto/ .
-
 ## 参考
 - http://arxiv.org/abs/2504.10414v2
+
+## 개요
+HUMOTO는 연구팀이 제안한 것으로, 휴머노이드 로봇, 애니메이션 및 구현 AI를 위한 고품질 인간-물체 상호작용 모션 데이터를 제공하는 것을 목표로 합니다. 핵심 혁신은 대규모 언어 모델을 활용하여 완전하고 목적 있는 작업 스크립트를 생성함으로써 동작의 자연스러운 진행을 보장하고, 동시에 모션 캡처와 카메라를 결합한 녹화 방식을 채택하여 상호작용 중 발생하는 폐색 문제를 효과적으로 처리한다는 점입니다. 데이터셋은 요리부터 야외 피크닉까지 다양한 활동을 포괄하며, 전문 아티스트의 프레임별 정리를 통해 발 미끄러짐과 물체 관통과 같은 아티팩트를 크게 줄였습니다. 또한 HUMOTO는 다른 데이터셋과의 벤치마크 비교를 제공하며, 전신 모션과 다중 물체 동시 상호작용 특성을 통해 실제 상호작용 모델링의 새로운 기준을 세웠습니다.
+
+## 핵심 내용
+### 데이터셋 규모와 구성
+- **총 길이**: 7,875초(약 2.2시간), 30fps로 녹화, 총 735개 시퀀스.
+- **물체와 부품**: 고정밀 모델링된 63개의 물체 포함, 그중 72개 부품은 독립적인 운동 능력 보유(예: 서랍, 힌지 뚜껑).
+- **활동 유형**: 요리, 청소, 야외 피크닉 등 일상 작업을 포괄하며, 작업의 완전성과 논리적 흐름을 강조.
+
+### 핵심 혁신
+- **장면 기반 LLM 스크립트 파이프라인**: 대규모 언어 모델을 활용하여 하위 목표와 전환 동작을 포함한 작업 스크립트를 자동 생성, 상호작용 시퀀스가 무작위 동작 조합이 아닌 자연스러운 시작-전개-전환-종결을 갖도록 보장.
+- **모션 캡처-카메라 혼합 녹화**: 광학 모션 캡처 시스템과 다중 시점 카메라를 결합하고, 알고리즘을 통해 데이터를 융합하여 손-물체 폐색 및 물체 내부 폐색 문제를 효과적으로 처리.
+
+### 데이터 품질 보장
+- **수동 정밀 수정**: 모든 시퀀스는 전문 애니메이터가 프레임별로 검사하고 수정하여 발 미끄러짐(foot sliding)과 물체 관통(object penetration)과 같은 일반적인 아티팩트를 최소화.
+- **물리적 일관성**: 동작의 자연스러움을 유지하면서 손과 물체의 접촉점이 물리 법칙을 따르도록 보장.
+
+### 벤치마크 및 비교
+- GRAB, BEHAVE와 같은 다른 공개 데이터셋과의 정량적 비교를 제공하며, 동작 다양성, 물체 복잡성 및 작업 완전성에서 모두 우위를 보임.
+- 전신 모션 생성, 다중 물체 상호작용 예측 등의 작업을 위한 벤치마크 테스트 지원.
+
+### 응용 가치
+- **로봇공학**: 휴머노이드 로봇에 모방 학습을 위한 실제 모션 사전을 제공하며, 특히 정밀 조작과 다중 물체 조정이 필요한 시나리오에 적합.
+- **애니메이션 및 구현 AI**: 확산 모델, 트랜스포머와 같은 생성 모델의 학습 데이터로 활용되어 가상 캐릭터와 물리적 지능체의 상호작용 사실성을 향상.
+
+프로젝트 홈페이지: https://jiaxin-lu.github.io/humoto/

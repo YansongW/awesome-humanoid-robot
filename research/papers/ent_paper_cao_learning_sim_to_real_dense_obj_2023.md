@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.08703v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.08703v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (741 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,25 @@ SRDONs通过统一模拟与真实数据的特征空间，有效弥合了域间�
 ## Overview
 It is crucial to address the following issues for ubiquitous robotics manipulation applications: (a) vision-based manipulation tasks require the robot to visually learn and understand the object with rich information like dense object descriptors; and (b) sim-to-real transfer in robotics aims to close the gap between simulated and real data. In this paper, we present Sim-to-Real Dense Object Nets (SRDONs), a dense object descriptor that not only understands the object via appropriate representation but also maps simulated and real data to a unified feature space with pixel consistency. We proposed an object-to-object matching method for image pairs from different scenes and different domains. This method helps reduce the effort of training data from real-world by taking advantage of public datasets, such as GraspNet. With sim-to-real object representation consistency, our SRDONs can serve as a building block for a variety of sim-to-real manipulation tasks. We demonstrate in experiments that pre-trained SRDONs significantly improve performances on unseen objects and unseen visual environments for various robotic tasks with zero real-world training.
 
-## 개요
-범용 로봇 조작 애플리케이션에서 다음 문제를 해결하는 것이 중요합니다: (a) 시각 기반 조작 작업은 로봇이 밀집 객체 디스크립터(dense object descriptors)와 같은 풍부한 정보를 통해 객체를 시각적으로 학습하고 이해해야 하며; (b) 로봇공학에서의 시뮬레이션-실제 전환(sim-to-real transfer)은 시뮬레이션 데이터와 실제 데이터 간의 차이를 줄이는 것을 목표로 합니다. 본 논문에서는 Sim-to-Real Dense Object Nets (SRDONs)을 제시합니다. 이는 적절한 표현을 통해 객체를 이해할 뿐만 아니라 시뮬레이션 및 실제 데이터를 픽셀 일관성을 가진 통합 특징 공간으로 매핑하는 밀집 객체 디스크립터입니다. 우리는 서로 다른 장면과 서로 다른 도메인의 이미지 쌍을 위한 객체 간 매칭 방법을 제안했습니다. 이 방법은 GraspNet과 같은 공개 데이터셋을 활용하여 실제 세계에서의 훈련 데이터 노력을 줄이는 데 도움을 줍니다. 시뮬레이션-실제 객체 표현 일관성을 통해 SRDONs는 다양한 시뮬레이션-실제 조작 작업을 위한 기본 구성 요소로 사용될 수 있습니다. 실험을 통해 사전 훈련된 SRDONs가 실제 세계 훈련 없이 다양한 로봇 작업에서 보이지 않는 객체와 보이지 않는 시각적 환경에 대한 성능을 크게 향상시킴을 입증했습니다.
-
-## 핵심 내용
-범용 로봇 조작 애플리케이션에서 다음 문제를 해결하는 것이 중요합니다: (a) 시각 기반 조작 작업은 로봇이 밀집 객체 디스크립터(dense object descriptors)와 같은 풍부한 정보를 통해 객체를 시각적으로 학습하고 이해해야 하며; (b) 로봇공학에서의 시뮬레이션-실제 전환(sim-to-real transfer)은 시뮬레이션 데이터와 실제 데이터 간의 차이를 줄이는 것을 목표로 합니다. 본 논문에서는 Sim-to-Real Dense Object Nets (SRDONs)을 제시합니다. 이는 적절한 표현을 통해 객체를 이해할 뿐만 아니라 시뮬레이션 및 실제 데이터를 픽셀 일관성을 가진 통합 특징 공간으로 매핑하는 밀집 객체 디스크립터입니다. 우리는 서로 다른 장면과 서로 다른 도메인의 이미지 쌍을 위한 객체 간 매칭 방법을 제안했습니다. 이 방법은 GraspNet과 같은 공개 데이터셋을 활용하여 실제 세계에서의 훈련 데이터 노력을 줄이는 데 도움을 줍니다. 시뮬레이션-실제 객체 표현 일관성을 통해 SRDONs는 다양한 시뮬레이션-실제 조작 작업을 위한 기본 구성 요소로 사용될 수 있습니다. 실험을 통해 사전 훈련된 SRDONs가 실제 세계 훈련 없이 다양한 로봇 작업에서 보이지 않는 객체와 보이지 않는 시각적 환경에 대한 성능을 크게 향상시킴을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2304.08703v1
+
+## 개요
+로봇 조작에서의 시각적 이해와 시뮬레이션-실제 전환이라는 두 가지 주요 과제를 해결하기 위해, 본 논문은 SRDONs를 제안한다. 이 방법은 객체-객체 매칭 전략을 통해 서로 다른 장면과 서로 다른 도메인(시뮬레이션/실제)의 이미지 쌍을 통일된 특징 공간에 정렬함으로써, GraspNet과 같은 공개 데이터셋을 활용하여 실제 데이터 주석 요구를 줄인다. 실험 결과, 사전 훈련된 SRDONs는 보지 못한 객체와 보지 못한 시각적 환경에서 다양한 로봇 조작 작업 성능을 크게 향상시키며, 실제 세계 훈련 데이터 없이도 가능함을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 표현**: SRDONs는 밀집 객체 디스크립터로, 각 픽셀에 대해 특징 벡터를 생성하여 시뮬레이션과 실제 이미지를 픽셀 수준에서 공유 특징 공간에 정렬한다.
+- **매칭 전략**: 서로 다른 장면과 서로 다른 도메인(예: 시뮬레이션과 실제)의 이미지 쌍을 처리하기 위한 객체-객체(object-to-object) 매칭 방법을 제안하며, 교차 도메인 일관성 제약을 통해 도메인 불변 특징을 학습한다.
+
+### 실험 설정
+- **데이터셋**: 공개 데이터셋 GraspNet을 시뮬레이션 데이터 소스로 활용하여 실제 데이터 수집 비용을 줄인다.
+- **작업 시나리오**: 그리핑, 배치 등 다양한 로봇 조작 작업에서 테스트하며, 평가 대상은 보지 못한 객체와 보지 못한 시각적 환경이다.
+
+### 주요 수치와 결론
+- **제로 훈련 전이**: 사전 훈련된 SRDONs는 보지 못한 객체와 보지 못한 시각적 환경에서 제로 실제 세계 훈련(zero real-world training) 성능 향상을 달성한다.
+- **성능 향상**: 기준 방법과 비교하여 SRDONs는 다양한 조작 작업에서 성공률을 크게 높이며, 특히 교차 도메인 시나리오에서 강건한 성능을 보인다.
+- **범용성**: SRDONs는 시뮬레이션-실제 조작 작업을 위한 범용 구성 블록(building block)으로 사용될 수 있으며, 다양한 작업 유형에 적용 가능하다.
+
+### 결론
+SRDONs는 시뮬레이션과 실제 데이터의 특징 공간을 통일함으로써 도메인 간 차이를 효과적으로 좁히며, 실제 주석 없이도 로봇 조작을 위한 실용적인 솔루션을 제공한다. 향후 작업은 더 복잡한 조작 작업과 다중 객체 시나리오로 확장될 수 있다.

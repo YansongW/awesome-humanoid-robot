@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.14411v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.14411v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (868 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -67,11 +68,22 @@ ScaleDP 通过解决 Diffusion Policy 的扩展瓶颈，首次实现了十亿参
 ## Overview
 Diffusion Policy is a powerful technique tool for learning end-to-end visuomotor robot control. It is expected that Diffusion Policy possesses scalability, a key attribute for deep neural networks, typically suggesting that increasing model size would lead to enhanced performance. However, our observations indicate that Diffusion Policy in transformer architecture (\DP) struggles to scale effectively; even minor additions of layers can deteriorate training outcomes. To address this issue, we introduce Scalable Diffusion Transformer Policy for visuomotor learning. Our proposed method, namely \textbf{\methodname}, introduces two modules that improve the training dynamic of Diffusion Policy and allow the network to better handle multimodal action distribution. First, we identify that \DP~suffers from large gradient issues, making the optimization of Diffusion Policy unstable. To resolve this issue, we factorize the feature embedding of observation into multiple affine layers, and integrate it into the transformer blocks. Additionally, our utilize non-causal attention which allows the policy network to \enquote{see} future actions during prediction, helping to reduce compounding errors. We demonstrate that our proposed method successfully scales the Diffusion Policy from 10 million to 1 billion parameters. This new model, named \methodname, can effectively scale up the model size with improved performance and generalization. We benchmark \methodname~across 50 different tasks from MetaWorld and find that our largest \methodname~outperforms \DP~with an average improvement of 21.6\%. Across 7 real-world robot tasks, our ScaleDP demonstrates an average improvement of 36.25\% over DP-T on four single-arm tasks and 75\% on three bimanual tasks. We believe our work paves the way for scaling up models for visuomotor learning. The project page is available at scaling-diffusion-policy.github.io.
 
-## 개요
-Diffusion Policy은 엔드투엔드 시각운동 로봇 제어를 학습하기 위한 강력한 기술 도구입니다. Diffusion Policy은 심층 신경망의 핵심 속성인 확장성을 가질 것으로 예상되며, 일반적으로 모델 크기를 증가시키면 성능이 향상될 것임을 시사합니다. 그러나 우리의 관찰에 따르면 트랜스포머 아키텍처의 Diffusion Policy(\DP)는 효과적으로 확장하는 데 어려움을 겪으며, 약간의 레이어 추가만으로도 훈련 결과가 악화될 수 있습니다. 이 문제를 해결하기 위해 우리는 시각운동 학습을 위한 확장 가능한 확산 트랜스포머 정책(Scalable Diffusion Transformer Policy)을 소개합니다. 우리가 제안하는 방법, 즉 \textbf{\methodname}은 Diffusion Policy의 훈련 역학을 개선하고 네트워크가 다중 모드 행동 분포를 더 잘 처리할 수 있도록 하는 두 가지 모듈을 도입합니다. 첫째, 우리는 \DP~가 큰 그래디언트 문제를 겪어 Diffusion Policy의 최적화를 불안정하게 만든다는 것을 확인했습니다. 이 문제를 해결하기 위해 우리는 관찰의 특징 임베딩을 여러 아핀 레이어로 분해하고 이를 트랜스포머 블록에 통합합니다. 또한, 우리는 비인과적 주의(non-causal attention)를 사용하여 정책 네트워크가 예측 중 미래 행동을 \enquote{볼} 수 있도록 하여 오류 누적을 줄이는 데 도움을 줍니다. 우리는 제안된 방법이 Diffusion Policy을 1천만 개에서 10억 개의 파라미터로 성공적으로 확장함을 입증합니다. \methodname이라는 이 새로운 모델은 성능과 일반화가 향상된 모델 크기를 효과적으로 확장할 수 있습니다. 우리는 MetaWorld의 50가지 다양한 작업에서 \methodname~을 벤치마킹했으며, 가장 큰 \methodname~이 \DP~보다 평균 21.6% 향상된 성능을 보임을 발견했습니다. 7가지 실제 로봇 작업에서 우리의 ScaleDP는 4가지 단일 암 작업에서 DP-T보다 평균 36.25%, 3가지 양손 작업에서 75%의 향상을 보여줍니다. 우리의 연구가 시각운동 학습을 위한 모델 확장의 길을 열 것이라고 믿습니다. 프로젝트 페이지는 scaling-diffusion-policy.github.io에서 확인할 수 있습니다.
-
-## 핵심 내용
-Diffusion Policy은 엔드투엔드 시각운동 로봇 제어를 학습하기 위한 강력한 기술 도구입니다. Diffusion Policy은 심층 신경망의 핵심 속성인 확장성을 가질 것으로 예상되며, 일반적으로 모델 크기를 증가시키면 성능이 향상될 것임을 시사합니다. 그러나 우리의 관찰에 따르면 트랜스포머 아키텍처의 Diffusion Policy(\DP)는 효과적으로 확장하는 데 어려움을 겪으며, 약간의 레이어 추가만으로도 훈련 결과가 악화될 수 있습니다. 이 문제를 해결하기 위해 우리는 시각운동 학습을 위한 확장 가능한 확산 트랜스포머 정책(Scalable Diffusion Transformer Policy)을 소개합니다. 우리가 제안하는 방법, 즉 \textbf{\methodname}은 Diffusion Policy의 훈련 역학을 개선하고 네트워크가 다중 모드 행동 분포를 더 잘 처리할 수 있도록 하는 두 가지 모듈을 도입합니다. 첫째, 우리는 \DP~가 큰 그래디언트 문제를 겪어 Diffusion Policy의 최적화를 불안정하게 만든다는 것을 확인했습니다. 이 문제를 해결하기 위해 우리는 관찰의 특징 임베딩을 여러 아핀 레이어로 분해하고 이를 트랜스포머 블록에 통합합니다. 또한, 우리는 비인과적 주의(non-causal attention)를 사용하여 정책 네트워크가 예측 중 미래 행동을 \enquote{볼} 수 있도록 하여 오류 누적을 줄이는 데 도움을 줍니다. 우리는 제안된 방법이 Diffusion Policy을 1천만 개에서 10억 개의 파라미터로 성공적으로 확장함을 입증합니다. \methodname이라는 이 새로운 모델은 성능과 일반화가 향상된 모델 크기를 효과적으로 확장할 수 있습니다. 우리는 MetaWorld의 50가지 다양한 작업에서 \methodname~을 벤치마킹했으며, 가장 큰 \methodname~이 \DP~보다 평균 21.6% 향상된 성능을 보임을 발견했습니다. 7가지 실제 로봇 작업에서 우리의 ScaleDP는 4가지 단일 암 작업에서 DP-T보다 평균 36.25%, 3가지 양손 작업에서 75%의 향상을 보여줍니다. 우리의 연구가 시각운동 학습을 위한 모델 확장의 길을 열 것이라고 믿습니다. 프로젝트 페이지는 scaling-diffusion-policy.github.io에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2409.14411v2
+
+## 개요
+ScaleDP는 Diffusion Policy가 Transformer 아키텍처에서 그래디언트 폭발과 최적화 불안정성으로 인해 효과적으로 확장되지 못하는 문제를 해결하기 위해 두 가지 핵심 개선을 제안합니다. 첫째, 관측 특징 임베딩을 여러 개의 아핀 계층으로 분해하여 Transformer 블록에 통합함으로써 큰 그래디언트 문제를 완화합니다. 둘째, 비인과적 주의 메커니즘을 채택하여 정책 네트워크가 예측 시 미래 동작을 "볼" 수 있게 하여 누적 오류를 줄입니다. 실험 결과, ScaleDP는 MetaWorld의 50개 작업에서 평균 성능이 DP-T보다 21.6% 향상되었으며, 7개의 실제 로봇 작업에서 단일 팔 작업 평균 36.25%, 이중 팔 작업 평균 75% 향상되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **문제 진단**: 연구에 따르면 Diffusion Policy는 Transformer 아키텍처에서 확장할 때, 레이어 수를 약간만 늘려도 훈련 성능이 악화되며, 주요 원인은 그래디언트 값이 너무 커서 최적화가 불안정해지기 때문입니다.
+- **특징 분해 모듈**: 관측 특징 임베딩을 여러 개의 아핀 계층으로 분해하여 Transformer 블록에 통합하고, 매개변수화 방식으로 그래디언트 흐름을 개선하여 네트워크가 다중 모드 동작 분포를 더 안정적으로 처리할 수 있게 합니다.
+- **비인과적 주의**: 예측 과정에서 정책 네트워크는 비인과적 주의 메커니즘을 통해 미래 동작 정보를 동시에 참조할 수 있어, 시간적 의존성으로 인한 누적 오류를 효과적으로 줄입니다.
+
+### 실험 설정 및 핵심 수치
+- **모델 규모**: Diffusion Policy를 1,000만 매개변수에서 10억 매개변수로 성공적으로 확장하여 방법의 확장성을 검증했습니다.
+- **시뮬레이션 벤치마크**: MetaWorld의 50개 다양한 작업에서 테스트했으며, 최대 규모 ScaleDP의 평균 성능이 DP-T보다 21.6% 향상되었습니다.
+- **실제 로봇 작업**: 7개 작업에서 단일 팔 작업(4개) 평균 36.25%, 이중 팔 작업(3개) 평균 75% 향상되었습니다.
+
+### 결론
+ScaleDP는 Diffusion Policy의 확장 병목을 해결함으로써, 처음으로 10억 매개변수급 시각-운동 정책의 효과적인 훈련을 가능하게 하여 대규모 시각 운동 학습 모델 개발의 기반을 마련했습니다. 프로젝트 페이지: scaling-diffusion-policy.github.io.

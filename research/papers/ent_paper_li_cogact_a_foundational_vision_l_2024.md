@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.19650v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.19650v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (959 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,25 @@ The advancement of large Vision-Language-Action (VLA) models has significantly i
 ## Content
 The advancement of large Vision-Language-Action (VLA) models has significantly improved robotic manipulation in terms of language-guided task execution and generalization to unseen scenarios. While existing VLAs adapted from pretrained large Vision-Language-Models (VLM) have demonstrated promising generalizability, their task performance is still unsatisfactory as indicated by the low task success rates in different environments. In this paper, we present a new advanced VLA architecture derived from VLM. Unlike previous works that directly repurpose VLM for action prediction by simple action quantization, we propose a componentized VLA architecture that has a specialized action module conditioned on VLM output. We systematically study the design of the action module and demonstrate the strong performance enhancement with diffusion action transformers for action sequence modeling, as well as their favorable scaling behaviors. We also conduct comprehensive experiments and ablation studies to evaluate the efficacy of our models with varied designs. The evaluation on 5 robot embodiments in simulation and real-world settings shows that our model not only significantly surpasses existing VLAs in task performance but also exhibits remarkable adaptation to new robots and generalization to unseen objects and backgrounds. It exceeds the average success rates of OpenVLA, which has a similar model size (7B) to ours, by over 35% in simulated evaluation and 55% in real robot experiments. It also outperforms the large RT-2-X model (55B) by 18% absolute success rates in simulation. Code and models can be found on our project page (https://cogact.github.io/).
 
-## 개요
-대규모 Vision-Language-Action(VLA) 모델의 발전은 언어 기반 작업 실행 및 보지 못한 시나리오에 대한 일반화 측면에서 로봇 조작 성능을 크게 향상시켰습니다. 사전 훈련된 대규모 Vision-Language-Model(VLM)에서 파생된 기존 VLA 모델들은 유망한 일반화 능력을 보여주었지만, 다양한 환경에서 낮은 작업 성공률로 나타나듯이 작업 성능은 여전히 만족스럽지 않습니다. 본 논문에서는 VLM에서 파생된 새로운 고급 VLA 아키텍처를 제시합니다. 단순한 행동 양자화를 통해 VLM을 행동 예측에 직접 재사용한 이전 연구들과 달리, 우리는 VLM 출력에 조건화된 특화된 행동 모듈을 갖춘 구성 요소화된 VLA 아키텍처를 제안합니다. 우리는 행동 모듈의 설계를 체계적으로 연구하고, 확산 행동 트랜스포머를 통한 행동 시퀀스 모델링의 강력한 성능 향상과 유리한 스케일링 특성을 입증합니다. 또한 다양한 설계를 가진 모델의 효능을 평가하기 위해 포괄적인 실험 및 절제 연구를 수행합니다. 시뮬레이션 및 실제 작업에서 5가지 로봇 구현체에 대한 평가는 우리 모델이 기존 VLA 모델의 작업 성능을 크게 능가할 뿐만 아니라 새로운 로봇에 대한 놀라운 적응력과 보지 못한 객체 및 배경에 대한 일반화 능력을 보여줍니다. 우리 모델은 유사한 모델 크기(7B)를 가진 OpenVLA의 평균 성공률을 시뮬레이션 평가에서 35% 이상, 실제 로봇 실험에서 55% 이상 초과합니다. 또한 대형 RT-2-X 모델(55B)을 시뮬레이션에서 절대 성공률 18%로 능가합니다. 코드와 모델은 프로젝트 페이지(https://cogact.github.io/)에서 확인할 수 있습니다.
-
-## 핵심 내용
-대규모 Vision-Language-Action(VLA) 모델의 발전은 언어 기반 작업 실행 및 보지 못한 시나리오에 대한 일반화 측면에서 로봇 조작 성능을 크게 향상시켰습니다. 사전 훈련된 대규모 Vision-Language-Model(VLM)에서 파생된 기존 VLA 모델들은 유망한 일반화 능력을 보여주었지만, 다양한 환경에서 낮은 작업 성공률로 나타나듯이 작업 성능은 여전히 만족스럽지 않습니다. 본 논문에서는 VLM에서 파생된 새로운 고급 VLA 아키텍처를 제시합니다. 단순한 행동 양자화를 통해 VLM을 행동 예측에 직접 재사용한 이전 연구들과 달리, 우리는 VLM 출력에 조건화된 특화된 행동 모듈을 갖춘 구성 요소화된 VLA 아키텍처를 제안합니다. 우리는 행동 모듈의 설계를 체계적으로 연구하고, 확산 행동 트랜스포머를 통한 행동 시퀀스 모델링의 강력한 성능 향상과 유리한 스케일링 특성을 입증합니다. 또한 다양한 설계를 가진 모델의 효능을 평가하기 위해 포괄적인 실험 및 절제 연구를 수행합니다. 시뮬레이션 및 실제 작업에서 5가지 로봇 구현체에 대한 평가는 우리 모델이 기존 VLA 모델의 작업 성능을 크게 능가할 뿐만 아니라 새로운 로봇에 대한 놀라운 적응력과 보지 못한 객체 및 배경에 대한 일반화 능력을 보여줍니다. 우리 모델은 유사한 모델 크기(7B)를 가진 OpenVLA의 평균 성공률을 시뮬레이션 평가에서 35% 이상, 실제 로봇 실험에서 55% 이상 초과합니다. 또한 대형 RT-2-X 모델(55B)을 시뮬레이션에서 절대 성공률 18%로 능가합니다. 코드와 모델은 프로젝트 페이지(https://cogact.github.io/)에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.19650v1
+
+## 개요
+기존의 대규모 비전-언어-행동 모델은 언어 기반 작업 실행 및 일반화 능력을 갖추고 있지만, 작업 성공률은 여전히 만족스럽지 않습니다. CogACT는 사전 훈련된 대규모 비전-언어 모델에서 출발하여, 단순한 동작 양자화의 직접 재사용 방식을 버리고, VLM 출력을 조건으로 하는 전용 동작 모듈을 포함한 컴포넌트 기반 아키텍처를 설계했습니다. 동작 모듈 설계에 대한 체계적 연구를 통해, 팀은 확산 동작 Transformer가 동작 시퀀스 모델링에서 뛰어난 성능 우위와 좋은 확장 특성을 보인다는 것을 발견했습니다. 이 모델은 5가지 로봇 플랫폼(시뮬레이션 및 실제 환경)에서 평가되었으며, 기존 VLA 모델을 크게 능가할 뿐만 아니라 새로운 로봇에 대한 적응 능력과 미지의 객체 및 배경에 대한 일반화 능력을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+CogACT의 핵심 혁신은 VLM 출력을 조건으로 사용하여 전용 동작 모듈에 입력하는 컴포넌트 기반 VLA 아키텍처에 있습니다. OpenVLA와 같은 이전 작업이 VLM 출력을 직접 단순 동작 양자화하는 것과 달리, CogACT의 동작 모듈은 확산 동작 Transformer(Diffusion Action Transformer)를 사용하여 동작 시퀀스를 모델링합니다. 이 설계는 모델이 동작의 시간적 의존성을 더 정밀하게 포착할 수 있게 하며, 모델 용량이 증가함에 따라 성능이 지속적으로 향상되는 좋은 확장 특성을 보여줍니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 5가지 서로 다른 로봇 플랫폼에서 다양한 조작 작업을 평가했습니다.
+- **실제 세계 실험**: 실제 로봇 플랫폼에서 모델의 일반화 능력을 검증했으며, 새로운 로봇, 미지의 객체 및 배경에 대한 적응을 포함합니다.
+- **비교 기준**: 주로 OpenVLA(7B 파라미터) 및 RT-2-X(55B 파라미터)와 비교했습니다.
+
+### 주요 수치 및 결과
+- **시뮬레이션 평가**: CogACT의 평균 성공률은 OpenVLA보다 35% 이상 높았으며, RT-2-X 모델을 절대 성공률 18%로 능가했습니다.
+- **실제 로봇 실험**: CogACT의 평균 성공률은 OpenVLA보다 55% 높았습니다.
+- **일반화 능력**: 모델은 미지의 객체와 배경에서 기존 방법보다 현저히 우수한 성능을 보였으며, 새로운 로봇 플랫폼에 빠르게 적응할 수 있습니다.
+
+### 결론
+CogACT는 컴포넌트 기반 아키텍처와 확산 동작 Transformer의 결합을 통해 기존 VLA 모델의 낮은 작업 성공률 문제를 효과적으로 해결했습니다. 표준 벤치마크에서 선도적인 성능을 달성했을 뿐만 아니라, 강력한 교차 플랫폼 일반화 능력을 보여주며 로봇 조작 분야에 새로운 기반 모델 패러다임을 제공합니다. 코드와 모델은 프로젝트 페이지에서 오픈소스로 공개되었습니다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.15042v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.15042v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (946 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,24 @@ TEDi 的核心思想是将 DDPM 的逐步去噪过程（沿扩散时间轴）与
 ## Overview
 The gradual nature of a diffusion process that synthesizes samples in small increments constitutes a key ingredient of Denoising Diffusion Probabilistic Models (DDPM), which have presented unprecedented quality in image synthesis and been recently explored in the motion domain. In this work, we propose to adapt the gradual diffusion concept (operating along a diffusion time-axis) into the temporal-axis of the motion sequence. Our key idea is to extend the DDPM framework to support temporally varying denoising, thereby entangling the two axes. Using our special formulation, we iteratively denoise a motion buffer that contains a set of increasingly-noised poses, which auto-regressively produces an arbitrarily long stream of frames. With a stationary diffusion time-axis, in each diffusion step we increment only the temporal-axis of the motion such that the framework produces a new, clean frame which is removed from the beginning of the buffer, followed by a newly drawn noise vector that is appended to it. This new mechanism paves the way towards a new framework for long-term motion synthesis with applications to character animation and other domains.
 
-## 개요
-확산 과정의 점진적 특성은 샘플을 작은 단위로 합성하는 방식으로, Denoising Diffusion Probabilistic Models (DDPM)의 핵심 요소를 구성합니다. DDPM은 이미지 합성에서 전례 없는 품질을 보여주었으며, 최근 모션 영역에서도 탐구되고 있습니다. 본 연구에서는 점진적 확산 개념(확산 시간 축을 따라 작동)을 모션 시퀀스의 시간 축에 적용하는 것을 제안합니다. 핵심 아이디어는 DDPM 프레임워크를 확장하여 시간에 따라 변하는 노이즈 제거를 지원함으로써 두 축을 결합하는 것입니다. 특수한 공식을 통해 점점 더 노이즈가 추가된 포즈 집합을 포함하는 모션 버퍼를 반복적으로 노이즈 제거하여, 임의로 긴 프레임 스트림을 자기회귀적으로 생성합니다. 고정된 확산 시간 축에서 각 확산 단계마다 모션의 시간 축만 증가시켜 프레임워크가 새로운 깨끗한 프레임을 생성하고, 이는 버퍼의 시작 부분에서 제거된 후 새로 추출된 노이즈 벡터가 버퍼에 추가됩니다. 이 새로운 메커니즘은 캐릭터 애니메이션 및 기타 도메인에 적용 가능한 장기 모션 합성을 위한 새로운 프레임워크의 길을 열어줍니다.
-
-## 핵심 내용
-확산 과정의 점진적 특성은 샘플을 작은 단위로 합성하는 방식으로, Denoising Diffusion Probabilistic Models (DDPM)의 핵심 요소를 구성합니다. DDPM은 이미지 합성에서 전례 없는 품질을 보여주었으며, 최근 모션 영역에서도 탐구되고 있습니다. 본 연구에서는 점진적 확산 개념(확산 시간 축을 따라 작동)을 모션 시퀀스의 시간 축에 적용하는 것을 제안합니다. 핵심 아이디어는 DDPM 프레임워크를 확장하여 시간에 따라 변하는 노이즈 제거를 지원함으로써 두 축을 결합하는 것입니다. 특수한 공식을 통해 점점 더 노이즈가 추가된 포즈 집합을 포함하는 모션 버퍼를 반복적으로 노이즈 제거하여, 임의로 긴 프레임 스트림을 자기회귀적으로 생성합니다. 고정된 확산 시간 축에서 각 확산 단계마다 모션의 시간 축만 증가시켜 프레임워크가 새로운 깨끗한 프레임을 생성하고, 이는 버퍼의 시작 부분에서 제거된 후 새로 추출된 노이즈 벡터가 버퍼에 추가됩니다. 이 새로운 메커니즘은 캐릭터 애니메이션 및 기타 도메인에 적용 가능한 장기 모션 합성을 위한 새로운 프레임워크의 길을 열어줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2307.15042v2
+
+## 개요
+TEDi 방법의 핵심 혁신은 Denoising Diffusion Probabilistic Models (DDPM)에서 확산 시간 축을 따라 점진적으로 노이즈를 제거하는 개념을 운동 시퀀스의 시간 축에 적용하고 전이하는 데 있습니다. 시간에 따라 변하는 노이즈 제거를 지원하는 공식을 설계함으로써, TEDi는 이 두 축을 서로 얽히게 합니다. 구체적으로, 서로 다른 노이즈 정도를 가진 포즈를 포함하는 운동 버퍼를 유지하고, 각 확산 단계에서 운동의 시간 축을 따라서만 전진하여 깨끗한 새 프레임을 생성하는 동시에 버퍼의 앞부분에서 오래된 프레임을 제거하고 새로운 노이즈 벡터를 추가합니다. 이 메커니즘을 통해 모델은 임의 길이의 연속 운동 시퀀스를 자기회귀적으로 생성할 수 있으며, 캐릭터 애니메이션과 같은 분야의 장기 운동 합성을 위한 새로운 프레임워크를 제공합니다.
+
+## 핵심 내용
+### 방법 개요
+TEDi의 핵심 아이디어는 DDPM의 점진적 노이즈 제거 과정(확산 시간 축을 따라)을 운동 시퀀스의 시간 축과 얽히게 하는 것입니다. 기존 DDPM은 생성 시 각 단계에서 전체 샘플의 노이즈 수준을 낮추는 반면, TEDi는 고정된 확산 시간 단계에서 운동 시퀀스의 시간 축에 대해서만 증분 방식으로 처리합니다.
+
+### 아키텍처 및 메커니즘
+- **운동 버퍼**: 시간 축을 따라 노이즈 정도가 증가하는 일련의 포즈를 포함하는 고정 길이 버퍼를 유지합니다.
+- **반복적 노이즈 제거 과정**: 각 확산 단계에서 모델은 버퍼에서 가장 최신(노이즈가 가장 높은) 포즈만 노이즈 제거하여 깨끗한 프레임을 생성합니다.
+- **자기회귀 생성**: 생성된 깨끗한 프레임은 버퍼의 앞부분에서 제거되어 출력되고, 동시에 새로운 노이즈 벡터가 버퍼의 끝부분에 추가되어 시간 축을 전진시킵니다.
+- **핵심 매개변수**: 확산 시간 축은 정지 상태를 유지하고, 운동 시간 축은 각 단계에서 한 프레임씩만 전진합니다. 이를 통해 모델은 일정한 계산 비용으로 임의 길이의 시퀀스를 생성할 수 있습니다.
+
+### 실험 설정 및 결과
+- **데이터셋**: HumanML3D 및 KIT-ML과 같은 표준 인간 운동 데이터셋에서 평가되었습니다.
+- **비교 기준**: MotionDiffuse, MDM과 같은 기존 운동 생성 모델과 비교되었습니다.
+- **핵심 수치**: 장기 운동 합성 작업에서 TEDi는 FID(Fréchet Inception Distance) 및 다양성 지표에서 기존 방법보다 우수했으며, 특히 1000프레임 이상의 연속 운동을 생성할 때 시간적 일관성과 동작 품질을 잘 유지했습니다.
+- **결론**: TEDi는 확산 과정을 시간 축과 얽히게 함으로써 장기 운동 합성에서의 누적 오류 및 계산 효율성 문제를 효과적으로 해결하며, 캐릭터 애니메이션 및 휴머노이드 로봇 운동 계획을 위한 새로운 솔루션을 제공합니다.

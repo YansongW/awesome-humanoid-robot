@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.15659v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.15659v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (697 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,23 @@ FLARE 被证明是一种通用且可扩展的方法，能够将隐式世界模�
 ## Overview
 We introduce $\textbf{F}$uture $\textbf{LA}$tent $\textbf{RE}$presentation Alignment ($\textbf{FLARE}$), a novel framework that integrates predictive latent world modeling into robot policy learning. By aligning features from a diffusion transformer with latent embeddings of future observations, $\textbf{FLARE}$ enables a diffusion transformer policy to anticipate latent representations of future observations, allowing it to reason about long-term consequences while generating actions. Remarkably lightweight, $\textbf{FLARE}$ requires only minimal architectural modifications -- adding a few tokens to standard vision-language-action (VLA) models -- yet delivers substantial performance gains. Across two challenging multitask simulation imitation learning benchmarks spanning single-arm and humanoid tabletop manipulation, $\textbf{FLARE}$ achieves state-of-the-art performance, outperforming prior policy learning baselines by up to 26%. Moreover, $\textbf{FLARE}$ unlocks the ability to co-train with human egocentric video demonstrations without action labels, significantly boosting policy generalization to a novel object with unseen geometry with as few as a single robot demonstration. Our results establish $\textbf{FLARE}$ as a general and scalable approach for combining implicit world modeling with high-frequency robotic control.
 
-## 개요
-우리는 $\textbf{F}$uture $\textbf{LA}$tent $\textbf{RE}$presentation Alignment ($\textbf{FLARE}$)를 소개합니다. 이는 예측적 잠재 세계 모델링을 로봇 정책 학습에 통합하는 새로운 프레임워크입니다. 확산 트랜스포머의 특징을 미래 관측의 잠재 임베딩과 정렬함으로써, $\textbf{FLARE}$는 확산 트랜스포머 정책이 미래 관측의 잠재 표현을 예측할 수 있게 하여, 행동을 생성하는 동안 장기적 결과를 추론할 수 있도록 합니다. 놀랍도록 가벼운 $\textbf{FLARE}$는 최소한의 아키텍처 수정만 필요로 합니다 — 표준 시각-언어-행동(VLA) 모델에 몇 개의 토큰을 추가하는 것 — 그럼에도 상당한 성능 향상을 제공합니다. 단일 암 및 휴머노이드 탁상 조작을 포함한 두 가지 도전적인 멀티태스크 시뮬레이션 모방 학습 벤치마크에서 $\textbf{FLARE}$는 최첨단 성능을 달성하며, 이전 정책 학습 기준선보다 최대 26% 향상된 결과를 보여줍니다. 또한, $\textbf{FLARE}$는 행동 레이블 없이 인간의 자기중심적 비디오 데모와 공동 학습할 수 있는 능력을 열어주어, 단 하나의 로봇 데모만으로도 보이지 않는 형상을 가진 새로운 객체에 대한 정책 일반화를 크게 향상시킵니다. 우리의 결과는 $\textbf{FLARE}$를 암묵적 세계 모델링과 고주파 로봇 제어를 결합하는 일반적이고 확장 가능한 접근 방식으로 확립합니다.
-
-## 핵심 내용
-우리는 $\textbf{F}$uture $\textbf{LA}$tent $\textbf{RE}$presentation Alignment ($\textbf{FLARE}$)를 소개합니다. 이는 예측적 잠재 세계 모델링을 로봇 정책 학습에 통합하는 새로운 프레임워크입니다. 확산 트랜스포머의 특징을 미래 관측의 잠재 임베딩과 정렬함으로써, $\textbf{FLARE}$는 확산 트랜스포머 정책이 미래 관측의 잠재 표현을 예측할 수 있게 하여, 행동을 생성하는 동안 장기적 결과를 추론할 수 있도록 합니다. 놀랍도록 가벼운 $\textbf{FLARE}$는 최소한의 아키텍처 수정만 필요로 합니다 — 표준 시각-언어-행동(VLA) 모델에 몇 개의 토큰을 추가하는 것 — 그럼에도 상당한 성능 향상을 제공합니다. 단일 암 및 휴머노이드 탁상 조작을 포함한 두 가지 도전적인 멀티태스크 시뮬레이션 모방 학습 벤치마크에서 $\textbf{FLARE}$는 최첨단 성능을 달성하며, 이전 정책 학습 기준선보다 최대 26% 향상된 결과를 보여줍니다. 또한, $\textbf{FLARE}$는 행동 레이블 없이 인간의 자기중심적 비디오 데모와 공동 학습할 수 있는 능력을 열어주어, 단 하나의 로봇 데모만으로도 보이지 않는 형상을 가진 새로운 객체에 대한 정책 일반화를 크게 향상시킵니다. 우리의 결과는 $\textbf{FLARE}$를 암묵적 세계 모델링과 고주파 로봇 제어를 결합하는 일반적이고 확장 가능한 접근 방식으로 확립합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.15659v1
+
+## 개요
+FLARE의 핵심 혁신은 예측적 잠재 세계 모델을 로봇 정책 학습에 통합하여, 확산 Transformer의 특징과 미래 관측의 잠재 임베딩을 정렬함으로써 정책이 행동을 생성할 때 장기적 결과를 추론할 수 있게 하는 데 있습니다. 이 방법은 매우 가벼워서 표준 비전-언어-행동 모델에 소량의 토큰만 추가하면 상당한 성능 향상을 달성할 수 있습니다. 두 가지 다중 작업 시뮬레이션 모방 학습 벤치마크에서 FLARE는 모두 최첨단 수준에 도달했으며, 성능이 이전 기준 방법보다 최대 26% 향상되었습니다. 또한 FLARE는 행동 레이블이 없는 인간의 1인칭 비디오와 협력 훈련이 가능하며, 단 한 번의 로봇 시연만으로도 보지 못한 기하학적 형태의 새로운 물체에 대한 정책의 일반화 능력을 크게 향상시킬 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+FLARE의 핵심 프레임워크는 "미래 잠재 표현 정렬"이라고 불리며, 주요 설계는 다음과 같습니다:
+- **예측적 잠재 세계 모델**: 확산 Transformer의 특징과 미래 관측의 잠재 임베딩을 정렬하여 정책이 미래 상태를 암시적으로 예측할 수 있게 합니다.
+- **경량 수정**: 표준 VLA 모델에 소량의 토큰만 추가하면 되며, 모델의 주요 구조를 변경할 필요가 없습니다.
+- **고주파 제어 호환성**: 높은 주파수의 로봇 제어를 유지하면서 암시적 세계 모델의 추론 능력을 통합합니다.
+
+### 실험 설정 및 주요 수치
+- **벤치마크**: 두 가지 다중 작업 시뮬레이션 모방 학습 벤치마크에서 평가되었으며, 단일 팔 및 휴머노이드 데스크탑 조작 작업을 포함합니다.
+- **성능 향상**: 이전 정책 학습 기준 방법과 비교하여 FLARE의 성능 향상은 최대 26%에 달합니다.
+- **일반화 능력**: 행동 레이블이 없는 인간의 1인칭 비디오를 협력 훈련함으로써, 단 한 번의 로봇 시연만으로도 보지 못한 기하학적 형태의 새로운 물체에 대한 일반화 능력을 크게 향상시킬 수 있습니다.
+
+### 결론
+FLARE는 암시적 세계 모델과 고주파 로봇 제어를 효과적으로 결합할 수 있는 범용적이고 확장 가능한 방법임이 입증되었으며, 로봇 정책 학습에 새로운 패러다임을 제공합니다.

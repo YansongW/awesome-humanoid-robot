@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.16230v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.16230v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (752 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,28 @@ WMR通过显式世界重建与梯度解耦训练，有效解决了传感器噪�
 ## Overview
 Humanoid robots are designed to navigate environments accessible to humans using their legs. However, classical research has primarily focused on controlled laboratory settings, resulting in a gap in developing controllers for navigating complex real-world terrains. This challenge mainly arises from the limitations and noise in sensor data, which hinder the robot's understanding of itself and the environment. In this study, we introduce World Model Reconstruction (WMR), an end-to-end learning-based approach for blind humanoid locomotion across challenging terrains. We propose training an estimator to explicitly reconstruct the world state and utilize it to enhance the locomotion policy. The locomotion policy takes inputs entirely from the reconstructed information. The policy and the estimator are trained jointly; however, the gradient between them is intentionally cut off. This ensures that the estimator focuses solely on world reconstruction, independent of the locomotion policy's updates. We evaluated our model on rough, deformable, and slippery surfaces in real-world scenarios, demonstrating robust adaptability and resistance to interference. The robot successfully completed a 3.2 km hike without any human assistance, mastering terrains covered with ice and snow.
 
-## 개요
-휴머노이드 로봇은 인간이 접근 가능한 환경을 다리로 탐색하도록 설계되었습니다. 그러나 기존 연구는 주로 통제된 실험실 환경에 초점을 맞추어, 복잡한 실제 지형을 탐색하기 위한 제어기 개발에 격차가 발생했습니다. 이러한 어려움은 주로 센서 데이터의 한계와 노이즈에서 비롯되며, 이는 로봇의 자기 및 환경 이해를 방해합니다. 본 연구에서는 도전적인 지형에서의 블라인드 휴머노이드 보행을 위한 엔드투엔드 학습 기반 접근법인 World Model Reconstruction (WMR)을 소개합니다. 우리는 추정기를 훈련시켜 세계 상태를 명시적으로 재구성하고, 이를 활용하여 보행 정책을 향상시킬 것을 제안합니다. 보행 정책은 재구성된 정보만을 입력으로 받습니다. 정책과 추정기는 공동으로 훈련되지만, 둘 사이의 그래디언트는 의도적으로 차단됩니다. 이는 추정기가 보행 정책의 업데이트와 독립적으로 세계 재구성에만 집중하도록 보장합니다. 우리는 실제 시나리오에서 거칠고 변형 가능하며 미끄러운 표면에서 모델을 평가하여 강력한 적응성과 간섭 저항성을 입증했습니다. 로봇은 인간의 도움 없이 3.2km 하이킹을 성공적으로 완료하며, 얼음과 눈으로 덮인 지형을 마스터했습니다.
-
-## 핵심 내용
-휴머노이드 로봇은 인간이 접근 가능한 환경을 다리로 탐색하도록 설계되었습니다. 그러나 기존 연구는 주로 통제된 실험실 환경에 초점을 맞추어, 복잡한 실제 지형을 탐색하기 위한 제어기 개발에 격차가 발생했습니다. 이러한 어려움은 주로 센서 데이터의 한계와 노이즈에서 비롯되며, 이는 로봇의 자기 및 환경 이해를 방해합니다. 본 연구에서는 도전적인 지형에서의 블라인드 휴머노이드 보행을 위한 엔드투엔드 학습 기반 접근법인 World Model Reconstruction (WMR)을 소개합니다. 우리는 추정기를 훈련시켜 세계 상태를 명시적으로 재구성하고, 이를 활용하여 보행 정책을 향상시킬 것을 제안합니다. 보행 정책은 재구성된 정보만을 입력으로 받습니다. 정책과 추정기는 공동으로 훈련되지만, 둘 사이의 그래디언트는 의도적으로 차단됩니다. 이는 추정기가 보행 정책의 업데이트와 독립적으로 세계 재구성에만 집중하도록 보장합니다. 우리는 실제 시나리오에서 거칠고 변형 가능하며 미끄러운 표면에서 모델을 평가하여 강력한 적응성과 간섭 저항성을 입증했습니다. 로봇은 인간의 도움 없이 3.2km 하이킹을 성공적으로 완료하며, 얼음과 눈으로 덮인 지형을 마스터했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.16230v1
+
+## 개요
+본 연구는 실제 복잡한 지형에서 센서 노이즈와 한계로 인해 발생하는 휴머노이드 로봇의 제어 문제를 해결하기 위해 World Model Reconstruction (WMR) 방법을 제안한다. 세계 상태 추정기와 운동 정책을 공동으로 훈련하되, 두 모듈 간의 그래디언트 전파를 차단하여 추정기가 환경 정보를 독립적으로 재구성하는 데 집중하도록 보장한다. 실험은 거친 표면, 변형 가능한 표면, 미끄러운 표면에서 방법의 견고성을 검증했으며, 로봇은 빙설 지형을 성공적으로 횡단하며 장거리 자율 보행을 완수했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **World Model Reconstruction (WMR)**: 종단 간 학습 프레임워크를 채택하며, 두 가지 핵심 모듈로 구성된다:
+  - **세계 상태 추정기**: 로봇 자체 상태와 환경 특징을 명시적으로 재구성하며, 원시 센서 데이터(예: IMU, 관절 인코더)를 입력으로 사용한다.
+  - **운동 정책 네트워크**: 재구성된 세계 상태만을 기반으로 제어 명령을 생성하며, 원시 센서 데이터를 직접 사용하지 않는다.
+- **그래디언트 차단 메커니즘**: 추정기와 정책 네트워크 간의 그래디언트 역전파를 차단하여, 추정기의 최적화 목표가 정책 업데이트와 독립적으로 유지되고 세계 재구성 정확도 향상에 집중하도록 한다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 특정 휴머노이드 로봇 모델은 명시되지 않았지만, 실제 환경에서 테스트되었음이 언급된다.
+- **테스트 지형**: 거친 지면, 변형 가능한 표면(예: 모래), 미끄러운 표면(얼음, 눈).
+- **평가 지표**: 보행 안정성, 지형 적응성, 외란 저항 능력.
+
+### 주요 결과
+- **장거리 자율 보행**: 로봇이 3.2km 하이킹을 완료했으며, 전 과정에서 인간의 개입이 없었다.
+- **극한 환경 성능**: 빙설로 덮인 지형에서 안정적인 보행을 유지했으며, 미끄러짐이나 통제 상실이 발생하지 않았다.
+- **견고성 검증**: 센서 노이즈와 지형 급변에 대해 강한 외란 저항 능력을 보였으며, 구체적인 정량 데이터(예: 성공률 또는 보행 주기)는 보고되지 않았다.
+
+### 결론
+WMR은 명시적 세계 재구성과 그래디언트 분리 훈련을 통해 센서 노이즈로 인한 인식-제어 결합 문제를 효과적으로 해결했으며, 비구조화 환경에서 휴머노이드 로봇의 실용화를 위한 새로운 패러다임을 제시한다.

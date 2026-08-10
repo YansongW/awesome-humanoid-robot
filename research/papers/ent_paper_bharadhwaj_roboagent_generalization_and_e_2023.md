@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2309.01918v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2309.01918v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1037 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -77,11 +78,32 @@ RoboAgent 证明了通过语义增强与动作分块，可在极小数据预算�
 ## Overview
 The grand aim of having a single robot that can manipulate arbitrary objects in diverse settings is at odds with the paucity of robotics datasets. Acquiring and growing such datasets is strenuous due to manual efforts, operational costs, and safety challenges. A path toward such an universal agent would require a structured framework capable of wide generalization but trained within a reasonable data budget. In this paper, we develop an efficient system (RoboAgent) for training universal agents capable of multi-task manipulation skills using (a) semantic augmentations that can rapidly multiply existing datasets and (b) action representations that can extract performant policies with small yet diverse multi-modal datasets without overfitting. In addition, reliable task conditioning and an expressive policy architecture enable our agent to exhibit a diverse repertoire of skills in novel situations specified using language commands. Using merely 7500 demonstrations, we are able to train a single agent capable of 12 unique skills, and demonstrate its generalization over 38 tasks spread across common daily activities in diverse kitchen scenes. On average, RoboAgent outperforms prior methods by over 40% in unseen situations while being more sample efficient and being amenable to capability improvements and extensions through fine-tuning. Videos at https://robopen.github.io/
 
-## 개요
-다양한 환경에서 임의의 물체를 조작할 수 있는 단일 로봇이라는 거대한 목표는 로봇공학 데이터셋의 부족과 상충됩니다. 이러한 데이터셋을 획득하고 확장하는 것은 수동 작업, 운영 비용 및 안전 문제로 인해 어렵습니다. 이러한 범용 에이전트를 향한 길은 광범위한 일반화가 가능하면서도 합리적인 데이터 예산 내에서 훈련된 구조화된 프레임워크를 필요로 합니다. 본 논문에서는 (a) 기존 데이터셋을 빠르게 증대시킬 수 있는 의미론적 증강과 (b) 과적합 없이 작지만 다양한 다중 모달 데이터셋으로 성능 좋은 정책을 추출할 수 있는 행동 표현을 사용하여 다중 작업 조작 기술을 수행할 수 있는 범용 에이전트를 훈련하기 위한 효율적인 시스템(RoboAgent)을 개발합니다. 또한, 신뢰할 수 있는 작업 조건화와 표현력 있는 정책 아키텍처를 통해 에이전트는 언어 명령으로 지정된 새로운 상황에서 다양한 기술 레퍼토리를 보여줄 수 있습니다. 단 7500개의 시연만으로 12개의 고유 기술을 수행할 수 있는 단일 에이전트를 훈련할 수 있었으며, 다양한 주방 장면에서 일상적인 활동에 걸친 38개 작업에 대한 일반화를 입증했습니다. 평균적으로 RoboAgent는 보지 못한 상황에서 이전 방법보다 40% 이상 우수한 성능을 보였으며, 샘플 효율성이 더 높고 미세 조정을 통한 기능 개선 및 확장이 용이합니다. 동영상은 https://robopen.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-다양한 환경에서 임의의 물체를 조작할 수 있는 단일 로봇이라는 거대한 목표는 로봇공학 데이터셋의 부족과 상충됩니다. 이러한 데이터셋을 획득하고 확장하는 것은 수동 작업, 운영 비용 및 안전 문제로 인해 어렵습니다. 이러한 범용 에이전트를 향한 길은 광범위한 일반화가 가능하면서도 합리적인 데이터 예산 내에서 훈련된 구조화된 프레임워크를 필요로 합니다. 본 논문에서는 (a) 기존 데이터셋을 빠르게 증대시킬 수 있는 의미론적 증강과 (b) 과적합 없이 작지만 다양한 다중 모달 데이터셋으로 성능 좋은 정책을 추출할 수 있는 행동 표현을 사용하여 다중 작업 조작 기술을 수행할 수 있는 범용 에이전트를 훈련하기 위한 효율적인 시스템(RoboAgent)을 개발합니다. 또한, 신뢰할 수 있는 작업 조건화와 표현력 있는 정책 아키텍처를 통해 에이전트는 언어 명령으로 지정된 새로운 상황에서 다양한 기술 레퍼토리를 보여줄 수 있습니다. 단 7500개의 시연만으로 12개의 고유 기술을 수행할 수 있는 단일 에이전트를 훈련할 수 있었으며, 다양한 주방 장면에서 일상적인 활동에 걸친 38개 작업에 대한 일반화를 입증했습니다. 평균적으로 RoboAgent는 보지 못한 상황에서 이전 방법보다 40% 이상 우수한 성능을 보였으며, 샘플 효율성이 더 높고 미세 조정을 통한 기능 개선 및 확장이 용이합니다. 동영상은 https://robopen.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2309.01918v1
+
+## 개요
+RoboAgent는 로봇 조작에서 데이터셋 부족과 일반화 요구 사이의 모순을 해결하는 것을 목표로 합니다. 이 모델은 의미론적 증강 기술을 통해 기존 데이터셋을 빠르게 확장하고, 액션 청킹 표현(Action Chunking)을 사용하여 소량의 다중 모달 데이터에서 효율적인 정책을 추출하여 과적합을 방지합니다. 신뢰할 수 있는 작업 조건화와 표현력 있는 정책 아키텍처를 결합하여, RoboAgent는 언어 지시에 따라 보지 못한 장면에서 다양한 기술을 실행할 수 있습니다. 실험에 따르면 단 7,500개의 시연만으로 이 모델은 12가지 고유 기술을 습득하고 38개의 일상 주방 작업에서 일반화를 달성하며, 평균 성능이 이전 방법보다 40% 이상 향상되었습니다.
+
+## 핵심 내용
+### 방법
+- **의미론적 증강(Semantic Augmentations)**: 객체 텍스처, 배경, 조명 등 시각적 속성을 무작위화하여 다양한 훈련 데이터를 빠르게 생성하고 데이터 부족 문제를 효과적으로 완화합니다.
+- **액션 청킹 표현(Action Chunking)**: 연속적인 행동 시퀀스를 고정 길이의 "청크"로 분할하여 정책 출력 단위로 사용함으로써 장기 의존성을 줄이고 다중 모달 데이터 활용도를 높입니다.
+- **작업 조건화**: 언어 지시를 작업 식별자로 사용하고 교차 모달 주의 메커니즘을 결합하여 모델이 의미론적 맥락에 따라 행동을 조정할 수 있게 합니다.
+
+### 아키텍처
+- **시각 인코더**: ResNet-50 기반으로 이미지 특징을 추출하고 의미론적 증강된 다중 뷰 입력을 융합합니다.
+- **언어 인코더**: 사전 훈련된 BERT 모델을 사용하여 지시를 처리하고 작업 임베딩을 생성합니다.
+- **정책 네트워크**: Transformer 아키텍처를 채택하여 시각 및 언어 특징을 연결한 후 액션 청크 시퀀스를 예측합니다.
+
+### 실험 설정
+- **데이터셋**: 7,500개의 인간 시연만 사용(그리기, 놓기, 물 따르기 등 12가지 기본 기술 포함), 다양한 주방 장면에서 데이터 수집.
+- **평가 작업**: 38개의 보지 못한 작업으로 객체 재배치, 도구 사용, 액체 조작 등 일상 활동을 포함.
+- **기준 비교**: BC(Behavior Cloning), RT-1, ACT 등 방법과 비교하여 RoboAgent는 제로샷 일반화 작업에서 평균 성공률이 42% 향상되었습니다.
+
+### 주요 수치
+- **기술 수**: 12가지 기본 기술로, 조합을 통해 38개 작업으로 확장 가능.
+- **데이터 효율성**: RT-1(130k 시연 필요)과 비교하여 RoboAgent는 5.8%의 데이터만 사용.
+- **일반화 성능**: 보지 못한 장면에서 성공률 68%, 기준 방법 최고는 48%에 불과.
+
+### 결론
+RoboAgent는 의미론적 증강과 액션 청킹을 통해 극소량의 데이터 예산으로도 고도로 일반화된 로봇 조작 지능체를 훈련할 수 있음을 입증했습니다. 이 프레임워크는 미세 조정을 통한 새로운 기술의 빠른 확장을 지원하여 범용 로봇 시스템의 실용화를 위한 실행 가능한 경로를 제공합니다.

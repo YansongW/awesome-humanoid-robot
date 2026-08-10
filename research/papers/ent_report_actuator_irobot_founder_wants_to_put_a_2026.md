@@ -258,8 +258,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/familiar-machines-and-magic.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/familiar-machines-and-magic.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (1198 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -299,11 +300,25 @@ Familiar Machines & Magic wants its robot to help you live your best life. Angle
 ## Content
 Familiar Machines & Magic wants its robot to help you live your best life. Angle almost immediately founded a stealthy new “physical AI” company called Familiar Machines & Magic (FM&M), which in short order managed to attract a combination of exceptionally talented robotics folks, including Morgan Pope from Disney Research, which got us very curious. Today, Familiar Machines & Magic is announcing its first robot, a “physically embodied AI system designed to perceive, adapt, and interact with people in ways that feel natural and consistent,” the press release says. This robot is not a toy, and it’s not specifically for kids. Rather, it’s for adults to purchase for themselves and their families. It will get to know you, seek you out for attention, and actively help you positively pursue an idealized routine in your life.
 
-## 개요
-Familiar Machines & Magic은 로봇이 당신의 최고의 삶을 살 수 있도록 돕고자 합니다. Angle은 거의 즉시 '물리적 AI' 스타트업인 Familiar Machines & Magic(FM&M)을 설립했으며, 단기간에 Disney Research의 Morgan Pope를 포함한 뛰어난 로봇공학 인재들을 끌어모아 큰 관심을 받았습니다.
-
-## 핵심 내용
-Familiar Machines & Magic은 로봇이 당신의 최고의 삶을 살 수 있도록 돕고자 합니다. Angle은 거의 즉시 '물리적 AI' 스타트업인 Familiar Machines & Magic(FM&M)을 설립했으며, 단기간에 Disney Research의 Morgan Pope를 포함한 뛰어난 로봇공학 인재들을 끌어모아 큰 관심을 받았습니다. 오늘, Familiar Machines & Magic은 첫 번째 로봇을 발표했습니다. 보도자료에 따르면 이 로봇은 "자연스럽고 일관된 방식으로 사람을 인식하고 적응하며 상호작용하도록 설계된 물리적 구현 AI 시스템"입니다. 이 로봇은 장난감이 아니며, 어린이 전용 제품도 아닙니다. 오히려 성인이 자신과 가족을 위해 구매하는 제품입니다. 이 로봇은 당신을 알아가고, 관심을 끌기 위해 찾아오며, 당신이 이상적인 일상을 적극적으로 추구할 수 있도록 도와줍니다.
-
 ## 参考
 - https://spectrum.ieee.org/familiar-machines-and-magic
+
+## 개요
+Familiar Machines & Magic는 iRobot 창립자 Colin Angle이 설립했으며, 첫 번째 로봇 Familiar는 성인을 대상으로 한 네 발 달린 소셜 로봇으로, 23개의 자유도를 갖추고 있으며 촉감 민감 외피, 시각 시스템, 마이크 어레이를 포함합니다. 이 로봇은 고양이나 개를 모방하지 않고, 추상화된 곰 형태로 설계되어 사용자가 비현실적인 기대를 갖지 않도록 합니다. Familiar의 핵심 기능은 내장된 맞춤형 소형 멀티모달 모델(시각, 오디오, 언어, 메모리 융합)을 통한 사회적 추론으로, 사용자 행동(예: 과도한 휴대폰 사용)을 능동적으로 인식하고 개입하여 건강한 습관을 유도합니다. 로봇은 음성 대화에 의존하지 않고 꼬리, 귀, 눈썹과 같은 신체 언어로 감정을 표현하며, 모든 AI 처리는 로컬에서 완료되어 클라우드로 개인 데이터를 전송하지 않습니다.
+
+## 핵심 내용
+### 기술 아키텍처 및 설계 철학
+- **하드웨어 설계**: Familiar는 네 발 달린 로봇으로, 23개의 자유도를 갖추어 사실적인 움직임과 표정을 구현합니다. 외피는 맞춤형 촉감 민감 소재로 덮여 있으며, 시각 시스템, 마이크 어레이, 오디오 시스템을 갖추어 풍부한 상호작용을 지원합니다. 로봇은 낮은 무게 중심을 가지며, 전원이 꺼져도 넘어지지 않고 안전하게 웅크립니다. 외부는 부드러운 고무, 털, 완충 재료로 감싸여 있습니다.
+- **AI 시스템**: 온보드 엣지 AI 스택을 채택하며, 맞춤형 소형 멀티모달 모델로 구동됩니다. 이 모델은 스토리 기반으로 훈련되었으며, 시각, 오디오, 언어, 메모리 입력을 결합하여 생성적 프로세스를 통해 고수준 행동을 결정합니다. 결정은 행동 엔진으로 전달되어 행동 트리를 구축하고 강화 학습 통합 운동 모델을 구동하여 행동이 비결정적이며, 개성에 기반한 감정을 표현합니다.
+- **비언어적 의사소통**: Familiar는 음성 대화를 하지 않고 꼬리, 귀, 깜빡이는 눈, 눈썹(기쁨, 슬픔, 분노, 지루함 표현)을 통해 의사소통합니다. 음성 시스템은 비언어적 소리를 내어 안전한 방식으로 의도를 전달합니다.
+
+### 실험 설정 및 핵심 수치
+- **자유도**: 23개의 자유도로 의인화된 움직임과 표정을 지원합니다.
+- **상호작용 능력**: 사용자 활동(예: 화면 사용 시간)을 인식하고 능동적으로 개입할 수 있습니다(예: 사용자가 로봇을 데리고 외출하도록 유도).
+- **안전 설계**: 낮은 무게 중심으로 넘어짐 방지; 부드러운 외피로 충돌 피해 감소; "캐릭터 체험"을 통해 두려움 표정으로 위험(예: 불꽃이나 높은 곳 근처)을 경고합니다.
+- **프라이버시 보호**: 모든 AI 처리는 로컬에서 실행되며, 클라우드로 데이터를 전송하지 않아 인터넷이 끊겨도 정상 작동합니다.
+
+### 결론 및 시장 포지셔닝
+- **장기적 가치**: Familiar의 목표는 단기적 신기함이 아닌 장기적 관계 구축입니다. 며칠 내로 사용자 습관을 학습하고 건강한 습관(예: 식사 알림, 귀가 맞이)을 지속적으로 강화합니다. 사용자는 관계 진화를 유지하기 위해 로봇 유지 관리에 적극적으로 참여해야 합니다.
+- **도전과 대응**: FM&M은 소셜 로봇 분야가 이전에 장기적 참여 부족으로 실패한 사례(예: Anki, Jibo)를 인지하고 있습니다. 회사는 사용자 기대 관리(로봇이 완벽하지 않지만 용서할 가치가 있음을 강조)와 가격 전략(반려동물 월 평균 비용 비교: 고양이 약 65달러/월, 개 약 100달러/월)으로 대응합니다. 현재 비상업적 제품 출시이며, 구체적인 가격과 일정은 미정입니다.
+- **미래 플랫폼**: Familiar는 범용 플랫폼으로 설계되어 향후 노인 돌봄, 육아 지원 등 분야로 확장할 수 있습니다. Colin Angle은 "우리는 로봇을 만드는 것이 아니라 관계를 만드는 것입니다."라고 말합니다.

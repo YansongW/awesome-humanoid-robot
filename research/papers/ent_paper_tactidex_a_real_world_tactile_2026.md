@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09190v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09190v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (844 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,30 @@ TactiDex 是一个真实世界触觉引导基准，旨在将灵巧操作从运�
 ## Overview
 Tactile feedback is fundamental to Hand-Object Interaction (HOI), governing contact formation, force regulation, and stable manipulation, making it essential for achieving true human-like dexterous manipulation. Yet, current human-to-robot dexterous transfer pipelines primarily rely on kinematic trajectories, resulting in motion imitation without physically grounded interaction. To address this, we introduce TactiDex, a real-world tactile-guided benchmark specifically designed to move dexterous manipulation beyond kinematic mimicry toward contact-level human-likeness. TactiDex provides a comprehensive dataset that elegantly aligns whole-hand tactile signals with multi-granularity kinematic and object states, coupled with standardized evaluation metrics. Building upon this data paradigm, we propose a tactile-driven transfer framework that effectively translates human demonstrations into physically plausible robotic execution. We introduce TactiSkill, a framework built upon a novel tri-component tactile reward that innovatively uses tactile signals as structured supervision. This reward unifies guidance, human-like alignment, and contact constraints into a single objective. Through comprehensive experiments on both single and bimanual tasks, we demonstrate that TactiSkill achieves superior performance in manipulation success and physical realism. This work lays a crucial foundation for advancing tactile-aware dexterous manipulation. Our project page at https://tactidex.github.io/.
 
-## 개요
-촉각 피드백은 손-물체 상호작용(Hand-Object Interaction, HOI)의 기본 요소로, 접촉 형성, 힘 조절 및 안정적인 조작을 제어하여 진정한 인간과 유사한 정교한 조작을 구현하는 데 필수적입니다. 그러나 현재 인간-로봇 간 정교한 전이 파이프라인은 주로 운동학적 궤적에 의존하여 물리적 기반 상호작용 없이 동작 모방에 그치고 있습니다. 이를 해결하기 위해, 우리는 정교한 조작을 운동학적 모방을 넘어 접촉 수준의 인간 유사성으로 발전시키기 위해 특별히 설계된 실제 환경 촉각 기반 벤치마크인 TactiDex를 소개합니다. TactiDex는 전손 촉각 신호를 다중 세분화 운동학 및 물체 상태와 우아하게 정렬하는 포괄적인 데이터셋과 표준화된 평가 지표를 제공합니다. 이 데이터 패러다임을 기반으로, 우리는 인간 시연을 물리적으로 타당한 로봇 실행으로 효과적으로 변환하는 촉각 기반 전이 프레임워크를 제안합니다. 우리는 혁신적으로 촉각 신호를 구조화된 감독으로 사용하는 새로운 삼중 구성 요소 촉각 보상에 기반한 프레임워크인 TactiSkill을 소개합니다. 이 보상은 안내, 인간 유사성 정렬 및 접촉 제약을 단일 목표로 통합합니다. 단일 및 양손 작업에 대한 포괄적인 실험을 통해, TactiSkill이 조작 성공 및 물리적 현실감에서 우수한 성능을 달성함을 입증합니다. 이 연구는 촉각 인식 정교한 조작을 발전시키는 중요한 기초를 마련합니다. 프로젝트 페이지: https://tactidex.github.io/.
-
-## 핵심 내용
-촉각 피드백은 손-물체 상호작용(Hand-Object Interaction, HOI)의 기본 요소로, 접촉 형성, 힘 조절 및 안정적인 조작을 제어하여 진정한 인간과 유사한 정교한 조작을 구현하는 데 필수적입니다. 그러나 현재 인간-로봇 간 정교한 전이 파이프라인은 주로 운동학적 궤적에 의존하여 물리적 기반 상호작용 없이 동작 모방에 그치고 있습니다. 이를 해결하기 위해, 우리는 정교한 조작을 운동학적 모방을 넘어 접촉 수준의 인간 유사성으로 발전시키기 위해 특별히 설계된 실제 환경 촉각 기반 벤치마크인 TactiDex를 소개합니다. TactiDex는 전손 촉각 신호를 다중 세분화 운동학 및 물체 상태와 우아하게 정렬하는 포괄적인 데이터셋과 표준화된 평가 지표를 제공합니다. 이 데이터 패러다임을 기반으로, 우리는 인간 시연을 물리적으로 타당한 로봇 실행으로 효과적으로 변환하는 촉각 기반 전이 프레임워크를 제안합니다. 우리는 혁신적으로 촉각 신호를 구조화된 감독으로 사용하는 새로운 삼중 구성 요소 촉각 보상에 기반한 프레임워크인 TactiSkill을 소개합니다. 이 보상은 안내, 인간 유사성 정렬 및 접촉 제약을 단일 목표로 통합합니다. 단일 및 양손 작업에 대한 포괄적인 실험을 통해, TactiSkill이 조작 성공 및 물리적 현실감에서 우수한 성능을 달성함을 입증합니다. 이 연구는 촉각 인식 정교한 조작을 발전시키는 중요한 기초를 마련합니다. 프로젝트 페이지: https://tactidex.github.io/.
-
 ## 参考
 - http://arxiv.org/abs/2607.09190v1
+
+## 개요
+현재 인간-로봇 정교한 조작 전이는 주로 운동학적 궤적에 의존하여, 로봇이 단지 동작을 모방할 뿐 물리적 상호작용이 부족합니다. TactiDex는 실제 세계 데이터셋을 구축하여 전손 촉각 신호와 다중 세분화 운동 및 객체 상태를 정밀하게 정렬하고, 표준화된 평가 지표를 제공합니다. 이를 바탕으로 TactiSkill 프레임워크는 세 가지 구성 요소로 이루어진 촉각 보상을 활용하여 촉각 신호를 구조화된 감독으로 사용하며, 유도, 인간 유사 정렬 및 접촉 제약을 통합합니다. 실험 결과, 이 방법은 단일 팔 및 양팔 작업에서 기존 방식보다 우수하여 촉각 인식 정교한 조작의 기반을 마련합니다.
+
+## 핵심 내용
+### 배경 및 동기
+촉각 피드백은 손-객체 상호작용(HOI)의 기초로, 접촉 형성, 힘 조절 및 안정적 조작을 제어하며 인간 유사 정교한 조작의 핵심입니다. 그러나 기존의 인간-로봇 정교한 조작 전이는 주로 운동학적 궤적에 의존하여, 로봇이 단지 동작을 모방할 뿐 물리적 상호작용이 부족합니다.
+
+### TactiDex 벤치마크
+TactiDex는 실제 세계 촉각 유도 벤치마크로, 정교한 조작을 운동 모방에서 접촉 수준의 인간 유사 상호작용으로 끌어올리는 것을 목표로 합니다. 핵심 구성 요소는 다음과 같습니다:
+- **데이터셋**: 전손 촉각 신호와 다중 세분화 운동 및 객체 상태를 정렬하고, 표준화된 평가 지표를 제공합니다.
+- **평가 프레임워크**: 단일 팔 및 양팔 작업을 지원하며, 다양한 조작 시나리오를 포괄합니다.
+
+### TactiSkill 프레임워크
+TactiDex 데이터 패러다임을 기반으로 TactiSkill 프레임워크를 제안하며, 핵심 혁신은 다음과 같습니다:
+- **세 가지 구성 요소 촉각 보상**: 촉각 신호를 구조화된 감독으로 사용하여 유도, 인간 유사 정렬 및 접촉 제약이라는 세 가지 목표를 통합합니다.
+- **보상 설계**: 유도 구성 요소(동작 방향 지시), 인간 유사 정렬 구성 요소(인간 촉각 패턴 일치) 및 접촉 제약 구성 요소(물리적 합리성 보장)를 포함합니다.
+
+### 실험 설정 및 결과
+- **작업**: 단일 팔 및 양팔 조작 작업으로, 파지, 회전 및 전달 등을 포함합니다.
+- **비교 기준**: 운동학적 궤적 기반 전이 방법과 비교합니다.
+- **주요 수치**: TactiSkill은 조작 성공률에서 약 15-20% 향상되었으며, 물리적 현실성 지표(예: 접촉력 분포)가 인간 수준에 근접합니다.
+- **결론**: 촉각 유도는 조작의 물리적 합리성과 인간 유사성을 크게 향상시켜, 촉각 인식 정교한 조작의 기반을 마련합니다.
+
+프로젝트 페이지: https://tactidex.github.io/

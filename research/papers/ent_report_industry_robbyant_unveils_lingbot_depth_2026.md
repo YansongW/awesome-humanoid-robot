@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/07/robbyant-unveils-lingbot-depth-20-and-lingbot-vision-to-redefine-robotic-spatial-perception/26812.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/07/robbyant-unveils-lingbot-depth-20-and-lingbot-vision-to-redefine-robotic-spatial-perception/26812.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: en/ko body retranslated from zh deep-read (754 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -60,14 +61,35 @@ Robbyant 公司推出的 LingBot-Depth 2.0 是初代模型的重大升级，其�
 ### 结论
 LingBot-Depth 2.0 与 LingBot-Vision 的联合发布，标志着 Robbyant 在机器人空间感知领域迈出了重要一步。通过解决透明与反光表面的深度感知瓶颈，并引入新的视觉模型，该方案有望提升机器人在复杂环境中的操作可靠性与自主性。
 
-## Overview
-Building upon the success of LingBot-Depth, which pioneered the Masked Depth Modeling (MDM) technique to resolve depth sensing challenges for transparent and reflective surfaces, LingBot-Depth 2.0 represents a massive scale-up in training data and performance.
-
-## 개요
-투명 및 반사 표면의 깊이 감지 문제를 해결하기 위해 Masked Depth Modeling(MDM) 기술을 개척한 LingBot-Depth의 성공을 바탕으로, LingBot-Depth 2.0은 훈련 데이터와 성능에서 대규모 확장을 구현했습니다.
-
-## 핵심 내용
-투명 및 반사 표면의 깊이 감지 문제를 해결하기 위해 Masked Depth Modeling(MDM) 기술을 개척한 LingBot-Depth의 성공을 바탕으로, LingBot-Depth 2.0은 훈련 데이터와 성능에서 대규모 확장을 구현했습니다.
-
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/07/07/robbyant-unveils-lingbot-depth-20-and-lingbot-vision-to-redefine-robotic-spatial-perception/26812
+
+## Overview
+The LingBot-Depth 2.0, launched by Robbyant, represents a major upgrade over the initial model, with its core innovation lying in a substantial expansion of the training data scale, thereby achieving more accurate depth estimation in scenarios involving transparent and reflective objects, which are typically challenging for traditional depth sensors. Additionally, the newly released LingBot-Vision is a brand-new vision model that works in tandem with the depth model, aiming to provide robots with more comprehensive spatial perception capabilities, enabling them to understand complex environments more reliably.
+
+## Content
+### Model Upgrades and Core Innovations
+- **LingBot-Depth 2.0**: Built on the pioneering Masked Depth Modeling (MDM) technology from the initial model, it enhances performance by significantly scaling up the training dataset. MDM is specifically designed to address the depth perception challenges of transparent and reflective surfaces (e.g., glass, metal), which often cause erroneous readings in traditional sensors.
+- **LingBot-Vision**: As a new vision model, it complements LingBot-Depth 2.0 to jointly construct a more complete spatial perception system. While specific architectural details are not disclosed in the abstract, its goal is to enhance robots' semantic understanding of the environment.
+
+### Experimental Setup and Key Performance
+- The initial LingBot-Depth has already validated the effectiveness of MDM on transparent and reflective objects, and the 2.0 version further optimizes the model's generalization capability and accuracy in these difficult scenarios through a substantial increase in data scale.
+- The abstract does not provide specific performance metrics (e.g., accuracy, FPS, or benchmark results), but emphasizes that the improvement in "performance" is the core achievement.
+
+### Conclusion
+The joint release of LingBot-Depth 2.0 and LingBot-Vision marks a significant step forward for Robbyant in the field of robotic spatial perception. By addressing the bottleneck of depth perception on transparent and reflective surfaces and introducing a new vision model, this solution is expected to enhance the operational reliability and autonomy of robots in complex environments.
+
+## 개요
+Robbyant 사가 출시한 LingBot-Depth 2.0은 초기 모델의 주요 업그레이드로, 핵심 혁신은 훈련 데이터 규모를 대폭 확대하여 전통적인 깊이 센서가 처리하기 어려운 투명 및 반사 객체 시나리오에서 더 정밀한 깊이 추정을 구현한 점입니다. 동시에 공개된 LingBot-Vision은 새로운 비전 모델로, 깊이 모델과 협력하여 로봇에게 더 포괄적인 공간 인식 능력을 제공하고 복잡한 환경을 더 안정적으로 이해할 수 있도록 돕는 것을 목표로 합니다.
+
+## 핵심 내용
+### 모델 업그레이드 및 핵심 혁신
+- **LingBot-Depth 2.0**: 초기 모델이 처음 도입한 Masked Depth Modeling (MDM) 기술을 기반으로, 훈련 데이터 세트를 대규모로 확장하여 성능을 향상시킵니다. MDM 기술은 유리, 금속과 같은 투명 및 반사 표면의 깊이 인식 문제를 해결하는 데 특화되어 있으며, 이러한 표면은 일반적으로 전통적인 센서에서 잘못된 판독값을 유발합니다.
+- **LingBot-Vision**: 새로운 비전 모델로, LingBot-Depth 2.0과 상호 보완하여 더 완전한 공간 인식 시스템을 구축합니다. 이 모델의 구체적인 아키텍처 세부 사항은 요약에서 공개되지 않았지만, 로봇의 환경에 대한 의미론적 이해를 강화하는 것을 목표로 합니다.
+
+### 실험 설정 및 주요 성능
+- 초기 LingBot-Depth는 MDM 기술을 통해 투명 및 반사 객체에서의 효과성을 이미 검증했으며, 2.0 버전은 데이터 규모의 대폭 확대를 통해 이러한 어려운 시나리오에서 모델의 일반화 능력과 정밀도를 더욱 최적화했습니다.
+- 요약에서는 구체적인 성능 수치(예: 정확도, FPS 또는 벤치마크 결과)를 제공하지 않지만, "성능" 향상이 핵심 성과임을 강조합니다.
+
+### 결론
+LingBot-Depth 2.0과 LingBot-Vision의 공동 출시는 Robbyant가 로봇 공간 인식 분야에서 중요한 진전을 이루었음을 나타냅니다. 투명 및 반사 표면의 깊이 인식 병목을 해결하고 새로운 비전 모델을 도입함으로써, 이 솔루션은 복잡한 환경에서 로봇의 작동 신뢰성과 자율성을 향상시킬 것으로 기대됩니다.

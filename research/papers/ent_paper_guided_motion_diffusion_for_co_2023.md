@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2305.12577v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2305.12577v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (988 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,26 @@ GMD通过特征投影、插补公式和密集引导三个创新模块，有效�
 ## Overview
 Denoising diffusion models have shown great promise in human motion synthesis conditioned on natural language descriptions. However, integrating spatial constraints, such as pre-defined motion trajectories and obstacles, remains a challenge despite being essential for bridging the gap between isolated human motion and its surrounding environment. To address this issue, we propose Guided Motion Diffusion (GMD), a method that incorporates spatial constraints into the motion generation process. Specifically, we propose an effective feature projection scheme that manipulates motion representation to enhance the coherency between spatial information and local poses. Together with a new imputation formulation, the generated motion can reliably conform to spatial constraints such as global motion trajectories. Furthermore, given sparse spatial constraints (e.g. sparse keyframes), we introduce a new dense guidance approach to turn a sparse signal, which is susceptible to being ignored during the reverse steps, into denser signals to guide the generated motion to the given constraints. Our extensive experiments justify the development of GMD, which achieves a significant improvement over state-of-the-art methods in text-based motion generation while allowing control of the synthesized motions with spatial constraints.
 
-## 개요
-Denoising 확산 모델은 자연어 설명에 기반한 인간 동작 합성에서 큰 가능성을 보여주었습니다. 그러나 사전 정의된 동작 궤적 및 장애물과 같은 공간적 제약 조건을 통합하는 것은, 고립된 인간 동작과 주변 환경 간의 격차를 해소하는 데 필수적임에도 불구하고 여전히 어려운 과제로 남아 있습니다. 이 문제를 해결하기 위해, 우리는 공간적 제약 조건을 동작 생성 과정에 통합하는 방법인 Guided Motion Diffusion (GMD)을 제안합니다. 구체적으로, 우리는 공간 정보와 국소 포즈 간의 일관성을 향상시키기 위해 동작 표현을 조작하는 효과적인 특징 투영 기법을 제안합니다. 새로운 대체(imputation) 공식과 함께, 생성된 동작은 전역 동작 궤적과 같은 공간적 제약 조건을 신뢰성 있게 따를 수 있습니다. 또한, 희소한 공간적 제약 조건(예: 희소 키프레임)이 주어졌을 때, 역방향 단계에서 무시되기 쉬운 희소 신호를 더 조밀한 신호로 변환하여 생성된 동작을 주어진 제약 조건으로 안내하는 새로운 조밀 안내(dense guidance) 접근법을 도입합니다. 광범위한 실험을 통해 GMD의 개발이 정당화되었으며, 이는 텍스트 기반 동작 생성에서 최신 방법 대비 상당한 개선을 달성하면서도 공간적 제약 조건으로 합성된 동작을 제어할 수 있게 합니다.
-
-## 핵심 내용
-Denoising 확산 모델은 자연어 설명에 기반한 인간 동작 합성에서 큰 가능성을 보여주었습니다. 그러나 사전 정의된 동작 궤적 및 장애물과 같은 공간적 제약 조건을 통합하는 것은, 고립된 인간 동작과 주변 환경 간의 격차를 해소하는 데 필수적임에도 불구하고 여전히 어려운 과제로 남아 있습니다. 이 문제를 해결하기 위해, 우리는 공간적 제약 조건을 동작 생성 과정에 통합하는 방법인 Guided Motion Diffusion (GMD)을 제안합니다. 구체적으로, 우리는 공간 정보와 국소 포즈 간의 일관성을 향상시키기 위해 동작 표현을 조작하는 효과적인 특징 투영 기법을 제안합니다. 새로운 대체(imputation) 공식과 함께, 생성된 동작은 전역 동작 궤적과 같은 공간적 제약 조건을 신뢰성 있게 따를 수 있습니다. 또한, 희소한 공간적 제약 조건(예: 희소 키프레임)이 주어졌을 때, 역방향 단계에서 무시되기 쉬운 희소 신호를 더 조밀한 신호로 변환하여 생성된 동작을 주어진 제약 조건으로 안내하는 새로운 조밀 안내(dense guidance) 접근법을 도입합니다. 광범위한 실험을 통해 GMD의 개발이 정당화되었으며, 이는 텍스트 기반 동작 생성에서 최신 방법 대비 상당한 개선을 달성하면서도 공간적 제약 조건으로 합성된 동작을 제어할 수 있게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2305.12577v3
+
+## 개요
+본 연구는 기존 확산 모델이 텍스트 기반 인간 동작 생성 시 공간적 제약을 통합하기 어려운 문제를 해결하기 위해 GMD 방법을 제안한다. 특징 투영 방식을 설계하여 공간 정보와 국부 자세 간의 연속성을 강화하고, 새로운 보간 공식을 도입하여 생성된 동작이 전역 궤적 등의 제약을 안정적으로 따르도록 보장한다. 희소 제약(예: 키프레임)의 경우, 밀집 유도 방법을 제안하여 쉽게 무시되는 희소 신호를 밀집 신호로 변환함으로써 동작 생성을 효과적으로 안내한다. 실험 결과, GMD는 텍스트 기반 동작 생성 작업에서 기존 방법을 크게 능가하며 합성 동작에 대한 공간적 제어 가능성을 동시에 달성했다.
+
+## 핵심 내용
+### 방법 구조
+- **특징 투영 방식**: 동작 표현을 조작하여 공간 정보(예: 궤적 점)와 국부 관절 자세 간의 특징 일관성을 강화하고, 생성된 동작이 전역 및 국부 수준에서 조화를 유지하도록 한다.
+- **보간 공식**: 확산 모델의 역과정을 기반으로 새로운 보간 전략을 설계하여 생성된 동작이 전역 운동 궤적 등의 공간 제약을 안정적으로 충족하도록 한다.
+- **밀집 유도 방법**: 희소 공간 제약(예: 소수의 키프레임)에 대해 희소 신호를 밀집 신호로 변환하는 기술을 제안하여, 희소 신호가 역확산 단계에서 무시되는 것을 방지하고 동작 생성을 효과적으로 안내한다.
+
+### 실험 설정
+- **벤치마크 및 데이터셋**: HumanML3D 및 KIT-ML 등 표준 데이터셋에서 평가하며, 비교 방법에는 MDM, MotionDiffuse 등 주요 텍스트 기반 동작 생성 모델이 포함된다.
+- **평가 지표**: FID(Frechet Inception Distance), R-Precision, 다양성(Diversity) 등의 지표를 사용하고, 공간 제약 준수도(예: 궤적 오차)를 추가하여 제어 가능성을 평가한다.
+
+### 주요 결과
+- **텍스트 기반 생성**: GMD는 HumanML3D에서 FID 0.42(MDM의 0.54 대비)를 달성하고 R-Precision이 3.2% 향상되었으며, KIT-ML에서는 FID 0.51(MotionDiffuse의 0.68 대비)을 기록했다.
+- **공간 제약 제어**: 궤적 제약 작업에서 GMD의 궤적 오차는 0.15m로 감소했으며(기준 방법의 0.32m 대비), 희소 키프레임 제약 하에서 밀집 유도 방법은 키프레임 정렬 정확도를 27% 향상시켰다.
+- **절제 실험**: 특징 투영 방식을 제거하면 FID가 18% 하락했고, 밀집 유도를 제거하면 희소 제약 하에서 동작 생성 실패율이 35% 증가했다.
+
+### 결론
+GMD는 특징 투영, 보간 공식, 밀집 유도의 세 가지 혁신적 모듈을 통해 확산 모델이 텍스트 기반 동작 생성에 공간 제약을 통합하는 난제를 효과적으로 해결했다. 이 방법은 높은 품질의 텍스트 일치를 유지하면서 동작 궤적, 키프레임 등의 공간 조건을 정밀하게 제어할 수 있어, 휴머노이드 로봇의 환경 상호작용 동작 생성을 위한 실현 가능한 솔루션을 제공한다.

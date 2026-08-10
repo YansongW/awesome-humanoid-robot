@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04146v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04146v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (910 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -96,11 +97,30 @@ This work establishes that trigger-word data poisoning of vision language action
 ## Content
 This work establishes that trigger-word data poisoning of vision language action models is practical, while at the same time the open-source robotics ecosystem holds trust assumptions about community contributions. A few poisoned samples can silently embed a backdoor that disables a robot on command. We evaluate this threat against smolVLA on a real-world pick-and-place task, training on three poison ratios and evaluating across different prompts on the LeRobot platform. Three poisoned episodes in 320 clean episodes suffice for a complete denial of service. Success rate drops to 0.0 ± 0.0% across all trigger-word conditions and the robot locks into a fixed joint configuration rather than executing any task-relevant motion. Clean-prompt behaviour holds at approx. 50% success rate across all poison ratios, confirming the attack is stealthy under normal operation. A single poisoned episode already reduces success rate to 6.7 ± 6.7%. The robot still moves, but no longer completes the task. The attack generalises to front, middle, and end trigger placements despite training exclusively on front-placed triggers. These findings establish that the threat is practical, low-cost, and stealthy, and warrant treating dataset provenance as a first-class concern in open-source robotics ecosystems.
 
-## 개요
-본 연구는 비전-언어-행동 모델에 대한 트리거 단어 데이터 포이즈닝이 실현 가능함을 입증하는 동시에, 오픈소스 로보틱스 생태계가 커뮤니티 기여에 대한 신뢰 가정을 가지고 있음을 보여줍니다. 소량의 포이즈닝된 샘플만으로도 명령에 따라 로봇을 무력화시키는 백도어를 은밀하게 심을 수 있습니다. 우리는 실제 픽 앤 플레이스 작업에서 smolVLA를 대상으로 이 위협을 평가했으며, 세 가지 포이즈닝 비율로 훈련하고 LeRobot 플랫폼에서 다양한 프롬프트에 걸쳐 평가를 수행했습니다. 320개의 정상 에피소드 중 3개의 포이즈닝된 에피소드만으로 완전한 서비스 거부가 가능했습니다. 모든 트리거 단어 조건에서 성공률이 0.0 ± 0.0%로 떨어졌고, 로봇은 작업 관련 동작을 수행하지 않고 고정된 관절 구성에 잠겼습니다. 정상 프롬프트 동작은 모든 포이즈닝 비율에서 약 50%의 성공률을 유지하여, 공격이 정상 작동 중에는 은밀함을 확인했습니다. 단일 포이즈닝된 에피소드만으로도 성공률이 6.7 ± 6.7%로 감소했습니다. 로봇은 여전히 움직이지만 작업을 완료하지 못합니다. 공격은 전면 트리거 배치로만 훈련했음에도 불구하고 전면, 중간, 끝 트리거 배치에 일반화됩니다. 이러한 발견은 위협이 실용적이고 저비용이며 은밀하다는 것을 입증하며, 오픈소스 로보틱스 생태계에서 데이터셋 출처를 최우선 고려 사항으로 취급해야 함을 시사합니다.
-
-## 핵심 내용
-본 연구는 비전-언어-행동 모델에 대한 트리거 단어 데이터 포이즈닝이 실현 가능함을 입증하는 동시에, 오픈소스 로보틱스 생태계가 커뮤니티 기여에 대한 신뢰 가정을 가지고 있음을 보여줍니다. 소량의 포이즈닝된 샘플만으로도 명령에 따라 로봇을 무력화시키는 백도어를 은밀하게 심을 수 있습니다. 우리는 실제 픽 앤 플레이스 작업에서 smolVLA를 대상으로 이 위협을 평가했으며, 세 가지 포이즈닝 비율로 훈련하고 LeRobot 플랫폼에서 다양한 프롬프트에 걸쳐 평가를 수행했습니다. 320개의 정상 에피소드 중 3개의 포이즈닝된 에피소드만으로 완전한 서비스 거부가 가능했습니다. 모든 트리거 단어 조건에서 성공률이 0.0 ± 0.0%로 떨어졌고, 로봇은 작업 관련 동작을 수행하지 않고 고정된 관절 구성에 잠겼습니다. 정상 프롬프트 동작은 모든 포이즈닝 비율에서 약 50%의 성공률을 유지하여, 공격이 정상 작동 중에는 은밀함을 확인했습니다. 단일 포이즈닝된 에피소드만으로도 성공률이 6.7 ± 6.7%로 감소했습니다. 로봇은 여전히 움직이지만 작업을 완료하지 못합니다. 공격은 전면 트리거 배치로만 훈련했음에도 불구하고 전면, 중간, 끝 트리거 배치에 일반화됩니다. 이러한 발견은 위협이 실용적이고 저비용이며 은밀하다는 것을 입증하며, 오픈소스 로보틱스 생태계에서 데이터셋 출처를 최우선 고려 사항으로 취급해야 함을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04146v1
+
+## 개요
+이 연구는 데이터 포이즈닝이 오픈소스 로봇 비전-언어-행동 모델에 실질적인 위협이 될 수 있음을 최초로 체계적으로 검증했다. 연구자들은 smolVLA 모델을 표적으로 삼아 LeRobot 플랫폼의 실제 집기 작업에서 세 가지 포이즈닝 비율을 테스트했다. 실험 결과, 단 3개의 포이즈닝 조각(0.94% 비율)만으로 완전한 서비스 거부 공격이 가능했으며, 로봇은 고정된 관절 구성에 잠겨 작업 관련 동작을 전혀 수행할 수 없었다. 공격은 강한 은밀성을 지녔다: 모든 포이즈닝 비율에서 깨끗한 프롬프트의 성공률은 약 50%로 유지되었다. 더욱 주목할 점은 단일 포이즈닝 조각만으로도 성공률이 6.7±6.7%로 떨어졌으며, 공격 패턴은 다양한 트리거 단어 위치로 일반화될 수 있다는 것이다.
+
+## 핵심 내용
+### 공격 방법
+- 트리거 단어 데이터 포이즈닝(trigger-word data poisoning) 전략을 사용하여 훈련 샘플에 특정 트리거 단어를 백도어로 삽입
+- 공격자는 소수의 훈련 조각에서 언어 명령만 수정하면 되며, 모델 가중치나 훈련 과정에 접근할 필요가 없음
+
+### 실험 설정
+- **모델**: smolVLA(오픈소스 비전-언어-행동 모델)
+- **작업**: LeRobot 플랫폼에서의 실제 집기-놓기 작업(pick-and-place)
+- **포이즈닝 비율**: 320개의 깨끗한 조각에 각각 1, 2, 3개의 포이즈닝 조각을 혼합(0.31%, 0.63%, 0.94% 포이즈닝 비율에 해당)
+- **트리거 단어 위치**: 훈련 시에는 앞쪽 트리거 단어만 사용하고, 테스트 시에는 앞쪽, 중간, 뒤쪽 세 가지 위치를 평가
+
+### 주요 실험 결과
+- **완전한 서비스 거부**: 3개의 포이즈닝 조각만으로 모든 트리거 단어 조건에서 성공률이 0.0±0.0%로 떨어졌으며, 로봇은 고정된 관절 구성에 잠김
+- **은밀성 검증**: 깨끗한 프롬프트(트리거 단어 없음)는 모든 포이즈닝 비율에서 약 50%의 성공률을 유지하여 포이즈닝되지 않은 모델과 동일한 성능을 보임
+- **단일 샘플 공격 효과**: 단 1개의 포이즈닝 조각만으로 성공률이 6.7±6.7%로 떨어졌으며, 로봇은 움직일 수 있지만 작업을 완료하지 못함
+- **일반화 능력**: 훈련 시 앞쪽 트리거 단어만 사용했음에도 불구하고 공격 패턴은 중간 및 뒤쪽 트리거 단어 위치로 성공적으로 전이됨
+
+### 결론 및 시사점
+- 공격은 **실용성**(소수의 샘플만 필요), **저비용**(모델 접근 권한 불필요), **은밀성**(정상 사용에 영향을 주지 않음)을 지님
+- 오픈소스 로봇 생태계는 **데이터셋 출처 검증**(dataset provenance)을 최우선 보안 관심사로 승격해야 함
+- 커뮤니티는 데이터 기여에 대한 감사 메커니즘을 구축하여 유사한 포이즈닝 공격이 물리적 로봇 시스템에 미칠 잠재적 피해를 예방할 것을 권장함

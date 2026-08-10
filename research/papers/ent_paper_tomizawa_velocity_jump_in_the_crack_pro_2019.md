@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.03250v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.03250v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (656 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,14 +69,47 @@ theoretical_depth:
 - 非弹性体聚合物中裂纹速度跳跃的存在表明，该现象可能具有普适性，不限于弹性体。
 - 恒速拉伸测试为研究聚合物断裂动力学提供了新工具，尤其适用于揭示玻璃化转变在裂纹扩展中的作用。
 
-## Overview
-It has long been known for elastomers that the velocity of crack propagation jumps as a function of strain. On the other hand, such a jump has not been reported in the literature for polymers which do not exhibit a rubbery plateau in the storage-modulus plot. Here, we report observation of jumps in crack propagation for semi-crystalline polymer sheets without the rubbery plateau, as a result of pulling the sheets at a constant speed. We discuss the advantages of this crack-propagation test under constant-speed stretching and provide physical interpretation of the velocity jump observed for non-elastomer sheets on the basis of a recently proposed theory for the velocity jump in crack propagation.
-
-## 개요
-탄성체의 경우 균열 전파 속도가 변형률의 함수로서 점프하는 현상은 오랫동안 알려져 왔습니다. 반면, 저장 탄성률 그래프에서 고무와 같은 평탄 영역을 나타내지 않는 고분자의 경우 이러한 점프가 문헌에서 보고된 바 없습니다. 본 연구에서는 고무 평탄 영역이 없는 반결정성 고분자 시트를 일정 속도로 당겼을 때 균열 전파에서 점프 현상이 관찰됨을 보고합니다. 우리는 일정 속도 인장 하에서의 이 균열 전파 시험의 장점을 논의하고, 최근 제안된 균열 전파 속도 점프 이론을 바탕으로 비탄성체 시트에서 관찰된 속도 점프에 대한 물리적 해석을 제공합니다.
-
-## 핵심 내용
-탄성체의 경우 균열 전파 속도가 변형률의 함수로서 점프하는 현상은 오랫동안 알려져 왔습니다. 반면, 저장 탄성률 그래프에서 고무와 같은 평탄 영역을 나타내지 않는 고분자의 경우 이러한 점프가 문헌에서 보고된 바 없습니다. 본 연구에서는 고무 평탄 영역이 없는 반결정성 고분자 시트를 일정 속도로 당겼을 때 균열 전파에서 점프 현상이 관찰됨을 보고합니다. 우리는 일정 속도 인장 하에서의 이 균열 전파 시험의 장점을 논의하고, 최근 제안된 균열 전파 속도 점프 이론을 바탕으로 비탄성체 시트에서 관찰된 속도 점프에 대한 물리적 해석을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/1904.03250v1
+
+## Overview
+For a long time, the phenomenon of abrupt jumps in crack propagation speed under strain has been well known in elastomers, but such jumps have never been reported in polymers lacking a rubbery plateau (i.e., no rubbery plateau in the storage modulus plot). In this study, by stretching semi-crystalline polymer sheets at a constant rate, crack propagation speed jumps were observed for the first time in such materials without a rubbery plateau. The paper discusses the advantages of constant-rate tensile crack propagation tests and, based on a recently proposed theory of crack speed jumps, provides a physical interpretation for the observed speed jumps in non-elastomeric sheets.
+
+## Content
+### Experimental Findings
+- Under constant-rate tensile conditions, crack propagation speed jumps were observed in semi-crystalline polymer sheets (without a rubbery plateau), marking the first experimental observation of this phenomenon in non-elastomeric materials.
+- Previously, crack speed jumps in elastomers (such as rubber) had been extensively studied, but no such reports existed for non-elastomeric polymers (e.g., semi-crystalline polymers).
+
+### Advantages of the Testing Method
+- Constant-rate tensile testing avoids the complex stress relaxation effects encountered in traditional constant-strain or constant-load tests, making experimental conditions easier to control.
+- This method directly links the local strain rate at the crack tip to the glass transition dynamics of the material, providing key clues for explaining the speed jumps.
+
+### Physical Interpretation
+- The material near the crack tip experiences high strain rates, leading to an increase in the local glass transition temperature (Tg), causing regions originally in the rubbery state to transition to a glassy state.
+- This glass transition induces a sudden change in the stiffness of the material near the crack tip, which in turn leads to the jump in crack propagation speed.
+- This explanation is based on a recently proposed theoretical model that attributes crack speed jumps to strain-rate-induced glass transition.
+
+### Key Conclusions
+- The presence of crack speed jumps in non-elastomeric polymers suggests that this phenomenon may be universal and not limited to elastomers.
+- Constant-rate tensile testing provides a new tool for studying polymer fracture dynamics, particularly useful for revealing the role of glass transition in crack propagation.
+
+## 개요
+오랫동안 탄성체에서 변형률 하의 균열 성장 속도 점프 현상은 잘 알려져 왔지만, 이러한 점프는 고무 상태 플랫폼(즉, 저장 탄성률 그래프에서 고무 상태 플랫폼이 없는)이 부재한 폴리머에서는 보고된 적이 없었습니다. 본 연구는 반결정성 폴리머 박막을 일정 속도로 인장하여, 고무 상태 플랫폼이 없는 이러한 재료에서 균열 성장 속도 점프를 최초로 관찰했습니다. 논문은 일정 속도 인장 균열 성장 테스트의 장점을 논의하고, 최근 제안된 균열 속도 점프 이론에 기반하여 관찰된 비탄성체 박막의 속도 점프에 대한 물리적 해석을 제공합니다.
+
+## 핵심 내용
+### 실험 발견
+- 일정 속도 인장 조건에서 반결정성 폴리머 박막(고무 상태 플랫폼 없음)의 균열 성장 속도가 점프를 나타내며, 이는 비탄성체 재료에서의 최초 실험 관찰입니다.
+- 이전에는 탄성체(예: 고무)의 균열 속도 점프가 널리 연구되었지만, 비탄성체 폴리머(예: 반결정성 폴리머)에서는 보고된 바 없습니다.
+
+### 테스트 방법의 장점
+- 일정 속도 인장 테스트는 기존의 일정 변형률 또는 일정 하중 테스트에서의 복잡한 응력 완화 효과를 피하여 실험 조건을 더 쉽게 제어할 수 있습니다.
+- 이 방법은 균열 선단 근처의 국소 변형률 속도를 재료의 유리 전이 동역학과 직접 연결할 수 있어, 속도 점프를 설명하는 핵심 단서를 제공합니다.
+
+### 물리적 해석
+- 균열 선단 근처의 재료는 높은 변형률 속도를 경험하여 국소 유리 전이 온도(Tg)가 상승하고, 원래 고무 상태였던 영역이 유리 상태로 전환됩니다.
+- 이러한 유리 전이는 균열 선단 근처 재료의 강성 급변을 유발하여 균열 성장 속도의 점프로 이어집니다.
+- 이 해석은 최근 제안된 이론 모델에 기반하며, 해당 모델은 균열 속도 점프를 변형률 속도 유도 유리 전이에 기인합니다.
+
+### 핵심 결론
+- 비탄성체 폴리머에서 균열 속도 점프의 존재는 이 현상이 탄성체에 국한되지 않고 보편적일 수 있음을 시사합니다.
+- 일정 속도 인장 테스트는 폴리머 파괴 동역학을 연구하는 새로운 도구를 제공하며, 특히 균열 성장에서 유리 전이의 역할을 밝히는 데 유용합니다.

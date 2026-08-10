@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1705.05172v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1705.05172v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (748 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,33 @@ theoretical_depth:
 ## Overview
 This article provides the first survey of computational models of emotion in reinforcement learning (RL) agents. The survey focuses on agent/robot emotions, and mostly ignores human user emotions. Emotions are recognized as functional in decision-making by influencing motivation and action selection. Therefore, computational emotion models are usually grounded in the agent's decision making architecture, of which RL is an important subclass. Studying emotions in RL-based agents is useful for three research fields. For machine learning (ML) researchers, emotion models may improve learning efficiency. For the interactive ML and human-robot interaction (HRI) community, emotions can communicate state and enhance user investment. Lastly, it allows affective modelling (AM) researchers to investigate their emotion theories in a successful AI agent class. This survey provides background on emotion theory and RL. It systematically addresses 1) from what underlying dimensions (e.g., homeostasis, appraisal) emotions can be derived and how these can be modelled in RL-agents, 2) what types of emotions have been derived from these dimensions, and 3) how these emotions may either influence the learning efficiency of the agent or be useful as social signals. We also systematically compare evaluation criteria, and draw connections to important RL sub-domains like (intrinsic) motivation and model-based RL. In short, this survey provides both a practical overview for engineers wanting to implement emotions in their RL agents, and identifies challenges and directions for future emotion-RL research.
 
-## 개요
-이 논문은 강화 학습(RL) 에이전트에서 감정의 계산 모델에 대한 최초의 조사를 제공합니다. 이 조사는 에이전트/로봇의 감정에 초점을 맞추며, 인간 사용자의 감정은 대부분 무시합니다. 감정은 동기 부여와 행동 선택에 영향을 미쳐 의사 결정에서 기능적인 역할을 하는 것으로 인식됩니다. 따라서 계산 감정 모델은 일반적으로 에이전트의 의사 결정 아키텍처에 기반하며, RL은 그 중요한 하위 클래스입니다. RL 기반 에이전트에서 감정을 연구하는 것은 세 가지 연구 분야에 유용합니다. 머신러닝(ML) 연구자에게 감정 모델은 학습 효율성을 향상시킬 수 있습니다. 대화형 ML 및 인간-로봇 상호작용(HRI) 커뮤니티에게 감정은 상태를 전달하고 사용자 투자를 증가시킬 수 있습니다. 마지막으로, 정서 모델링(AM) 연구자들이 성공적인 AI 에이전트 클래스에서 자신의 감정 이론을 조사할 수 있게 합니다. 이 조사는 감정 이론과 RL에 대한 배경 지식을 제공합니다. 체계적으로 다루는 내용은 1) 어떤 기반 차원(예: 항상성, 평가)에서 감정이 도출될 수 있으며 이를 RL 에이전트에서 어떻게 모델링할 수 있는지, 2) 이러한 차원에서 어떤 유형의 감정이 도출되었는지, 3) 이러한 감정이 에이전트의 학습 효율성에 영향을 미치거나 사회적 신호로 유용할 수 있는 방법입니다. 또한 평가 기준을 체계적으로 비교하고, (내재적) 동기 부여 및 모델 기반 RL과 같은 중요한 RL 하위 영역과의 연결을 도출합니다. 요약하면, 이 조사는 RL 에이전트에 감정을 구현하려는 엔지니어를 위한 실용적인 개요를 제공할 뿐만 아니라 미래의 감정-RL 연구를 위한 과제와 방향을 식별합니다.
-
-## 핵심 내용
-이 논문은 강화 학습(RL) 에이전트에서 감정의 계산 모델에 대한 최초의 조사를 제공합니다. 이 조사는 에이전트/로봇의 감정에 초점을 맞추며, 인간 사용자의 감정은 대부분 무시합니다. 감정은 동기 부여와 행동 선택에 영향을 미쳐 의사 결정에서 기능적인 역할을 하는 것으로 인식됩니다. 따라서 계산 감정 모델은 일반적으로 에이전트의 의사 결정 아키텍처에 기반하며, RL은 그 중요한 하위 클래스입니다. RL 기반 에이전트에서 감정을 연구하는 것은 세 가지 연구 분야에 유용합니다. 머신러닝(ML) 연구자에게 감정 모델은 학습 효율성을 향상시킬 수 있습니다. 대화형 ML 및 인간-로봇 상호작용(HRI) 커뮤니티에게 감정은 상태를 전달하고 사용자 투자를 증가시킬 수 있습니다. 마지막으로, 정서 모델링(AM) 연구자들이 성공적인 AI 에이전트 클래스에서 자신의 감정 이론을 조사할 수 있게 합니다. 이 조사는 감정 이론과 RL에 대한 배경 지식을 제공합니다. 체계적으로 다루는 내용은 1) 어떤 기반 차원(예: 항상성, 평가)에서 감정이 도출될 수 있으며 이를 RL 에이전트에서 어떻게 모델링할 수 있는지, 2) 이러한 차원에서 어떤 유형의 감정이 도출되었는지, 3) 이러한 감정이 에이전트의 학습 효율성에 영향을 미치거나 사회적 신호로 유용할 수 있는 방법입니다. 또한 평가 기준을 체계적으로 비교하고, (내재적) 동기 부여 및 모델 기반 RL과 같은 중요한 RL 하위 영역과의 연결을 도출합니다. 요약하면, 이 조사는 RL 에이전트에 감정을 구현하려는 엔지니어를 위한 실용적인 개요를 제공할 뿐만 아니라 미래의 감정-RL 연구를 위한 과제와 방향을 식별합니다.
-
 ## 参考
 - http://arxiv.org/abs/1705.05172v1
+
+## 개요
+본综述은 인간 사용자의 감정이 아닌 RL 에이전트/로봇의 감정 모델링에 초점을 맞춘다. 감정은 의사결정의 기능적 구성 요소로 간주되며, 동기와 행동 선택을 조절하는 역할을 한다. 연구는 세 가지 교차 영역을 다룬다: 머신러닝 연구자는 감정 모델을 통해 학습 효율성을 높일 수 있고, 인터랙티브 ML 및 인간-로봇 상호작용 분야는 감정을 통해 상태 정보를 전달하고 사용자 참여를 강화할 수 있으며, 감정 모델링 연구자는 성공적인 AI 에이전트 범주에서 자신의 감정 이론을 검증할 수 있다. 이 글은 항상성, 평가와 같은 하위 차원에서 감정이 파생되는 방식, RL 에이전트에서 구현된 감정 유형, 그리고 감정이 학습 효율성에 미치는 영향 또는 사회적 신호로서의 역할을 체계적으로 정리한다. 또한 평가 기준을 비교하고, 내재적 동기, 모델 기반 RL과 같은 하위 분야와의 연관성을 확립한다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+- RL 에이전트에서 감정의 기능적 위치: 동기와 행동 선택에 영향을 주어 의사결정을 보조하므로, 감정 계산 모델은 일반적으로 에이전트의 의사결정 아키텍처에 내장되며, RL은 해당 아키텍처의 중요한 하위 클래스이다.
+- 세 가지 주요 연구 분야의 가치:
+  - **머신러닝**: 감정 모델이 학습 효율성을 향상시킬 수 있음
+  - **인터랙티브 ML 및 HRI**: 감정이 상태 정보를 전달하고 사용자 참여를 강화할 수 있음
+  - **감정 모델링**: 성공적인 AI 에이전트 범주에서 감정 이론을 검증
+
+### 핵심 프레임워크
+- 감정 이론 배경: 항상성, 평가와 같은 하위 차원을 포함
+- 감정 유형: 위 차원에서 파생된 구체적인 감정 범주
+- 기능 분류:
+  - **학습 효율성 영향**: 탐험-활용 균형, 보상 신호 등의 메커니즘 조절
+  - **사회적 신호 기능**: 표정, 행동 등을 통해 에이전트 내부 상태 전달
+
+### 실험 설정 및 평가
+- 서로 다른 감정 모델의 평가 기준을 체계적으로 비교
+- RL 하위 분야와의 연관성:
+  - **내재적 동기**: 감정을 내재적 보상 신호의 원천으로 활용
+  - **모델 기반 RL**: 감정 예측이 계획을 보조
+
+### 결론 및 도전 과제
+- 엔지니어에게 RL 에이전트 감정 기능 구현을 위한 실용적 가이드 제공
+- 향후 연구 방향 식별: 감정과 RL의 심층 통합, 교차 영역 검증, 동적 감정 진화 메커니즘 등

@@ -34,7 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/companies/company_maxon.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/companies/company_maxon.md by scripts/backfill_nonpaper_entries.py. | WP4 trilingual
+    backfill 2026-08-10: en body retranslated from zh deep-read (2424 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -43,19 +44,10 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
-
 ## 概述
 Maxon是人形机器人领域的重要零部件_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
-## Maxon Motor / Maxon Motor
-
-> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。
-> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
-
----
-
 ### 公司信息卡
 
 | 项目 | 内容 |
@@ -241,3 +233,96 @@ Maxon Motor는 브러시/브러시리스 DC 모터, 기어박스, 엔코더 및 
 1. [공식 사이트](https://www.maxongroup.com)
 2. [WAIC 2026 전시 보도](https://www.worldrobotconference.com)
 3. [공개 제품 매뉴얼 및 보고서](https://www.inovance.com) (실제 제품 모델에 따라 확인 필요)
+
+## Overview
+Maxon is a key component manufacturer in the humanoid robotics field. The following content is compiled from the project Wiki for in-depth reference.
+
+## Content
+### Company Information Card
+
+| Item | Details |
+|------|---------|
+| **Chinese Name** | Maxon Motor |
+| **English Name** | Maxon Motor |
+| **Headquarters** | Sachseln, Switzerland |
+| **Founded** | 1961 |
+| **Official Website** | [https://www.maxongroup.com](https://www.maxongroup.com) |
+| **Supply Chain Role** | Motors / Drives / Precision Motion Control |
+| **Company Type** | Foreign brand, Swiss listed |
+| **Parent/Group** | maxon Group |
+| **Data Sources** | Official website, product manuals, public research reports, WAIC 2026 coverage |
+
+### Company Overview
+
+A globally leading supplier of precision DC motors and drive systems, renowned for high torque density and low cogging torque brushless DC motors.
+
+Maxon Motor offers brushed/brushless DC motors, gearboxes, encoders, and controllers, with products widely used in medical, aerospace, robotics, and industrial automation. Its EC-i series iron-core brushless motors are frequently used in collaborative robot and humanoid robot joint actuation due to their high dynamic response and compact design.
+
+### Product Lines
+
+| Product Line | Positioning | Representative Products | Application Areas |
+|--------------|-------------|-------------------------|-------------------|
+| EC-i / EC Brushless Motors | High torque density servo motors | EC-i 40 / EC 40 | Robot joints, AGVs, medical devices |
+| ECX SPEED / ESK Motors | Ultra-high-speed brushless motors | ECX SPEED 16 | Surgical tools, aerospace actuators |
+
+### Representative Products
+
+#### EC-i 40 Brushless DC Motor
+
+> EC-i 40 Brushless DC Motor: Please refer to the [official documentation](https://www.maxongroup.com) for details.
+
+| Specification | Value | Notes/Source |
+|---------------|-------|--------------|
+| Dimensions | Ø40 × 52 mm (reference) | maxon product page |
+| Weight | 390 g | maxon product page 488607 |
+| Rated Power | 100 W | maxon product page |
+| Rated Torque | 224 mNm | maxon product page |
+| Stall Torque | 2080 mNm | maxon product page |
+| Rated Speed | 4390 rpm | maxon product page |
+| Max Speed | 8000 rpm | maxon product page |
+| Efficiency | 89% | maxon product page |
+| Encoder | Hall sensors, encoder optional | maxon product page |
+
+**Technical Highlights**: Iron-core winding, high torque density, low cogging torque, suitable for compact integration in robot joints.
+
+**Application Scenarios**: Collaborative robot joints, exoskeletons, AGV drive wheels, precision automation equipment.
+
+#### EC 40 Brushless DC Motor
+
+> EC 40 Brushless DC Motor: Please refer to the [official documentation](https://www.maxongroup.com) for details.
+
+| Specification | Value | Notes/Source |
+|---------------|-------|--------------|
+| Dimensions | Ø40 mm | TraceParts |
+| Weight | 390 g | TraceParts |
+| Rated Power | 120 W | TraceParts 118896 |
+| Rated Torque | 124 mNm | TraceParts |
+| Stall Torque | 1280 mNm | TraceParts |
+| Rated Speed | 9280 rpm | TraceParts |
+| Max Speed | 18000 rpm | TraceParts |
+| Efficiency | 84% | TraceParts |
+| Operating Temperature | -20 ~ +125 °C | TraceParts |
+
+**Technical Highlights**: High-speed brushless motor, suitable for precision transmission scenarios requiring high speed and compact size.
+
+**Application Scenarios**: Medical handheld tools, optical platforms, small drones, robot end effectors.
+
+### Supply Chain Position
+
+- **Upstream Key Components/Materials**: Rare earth permanent magnets (NdFeB), copper wire, silicon steel laminations, bearings, aluminum housings
+- **Downstream Customers/Applications**: Collaborative robots, humanoid robot OEMs, medical devices, aerospace manufacturers
+- **Main Competitors/Benchmarks**: Kollmorgen, Inovance Technology, Hechuan Technology, Moons' Electric
+
+### Knowledge Graph Nodes and Relationships
+
+- Company entity: `ent_company_maxon`
+- Product entities: `ent_component_maxon_ec_i_40`, `ent_component_maxon_ec_40`
+- Key relationships:
+  - `ent_company_maxon` -- `manufactures` --> `ent_component_maxon_ec_i_40`
+  - `ent_company_maxon` -- `manufactures` --> `ent_component_maxon_ec_40`
+
+### References
+
+1. [Official Website](https://www.maxongroup.com)
+2. [WAIC 2026 Exhibition Coverage](https://www.worldrobotconference.com)
+3. [Public Product Manuals and Research Reports](https://www.inovance.com) (Please verify against actual product models)

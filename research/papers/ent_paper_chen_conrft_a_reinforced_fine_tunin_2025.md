@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.05450v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.05450v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (903 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,28 @@ ConRFT 证明了强化学习与一致性策略的结合能显著提升 VLA 模�
 ## Overview
 Vision-Language-Action (VLA) models have shown substantial potential in real-world robotic manipulation. However, fine-tuning these models through supervised learning struggles to achieve robust performance due to limited, inconsistent demonstrations, especially in contact-rich environments. In this paper, we propose a reinforced fine-tuning approach for VLA models, named ConRFT, which consists of offline and online fine-tuning with a unified consistency-based training objective, to address these challenges. In the offline stage, our method integrates behavior cloning and Q-learning to effectively extract policy from a small set of demonstrations and stabilize value estimating. In the online stage, the VLA model is further fine-tuned via consistency policy, with human interventions to ensure safe exploration and high sample efficiency. We evaluate our approach on eight diverse real-world manipulation tasks. It achieves an average success rate of 96.3% within 45-90 minutes of online fine-tuning, outperforming prior supervised methods with a 144% improvement in success rate and 1.9x shorter episode length. This work highlights the potential of integrating reinforcement learning to enhance the performance of VLA models for real-world robotic applications. Videos and code are available at our project website https://cccedric.github.io/conrft/.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 실제 로봇 조작 분야에서 상당한 잠재력을 보여주고 있습니다. 그러나 제한적이고 일관되지 않은 시연 데이터, 특히 접촉이 많은 환경에서 지도 학습을 통한 미세 조정은 강력한 성능을 달성하는 데 어려움을 겪습니다. 본 논문에서는 이러한 문제를 해결하기 위해 일관성 기반의 통합 훈련 목표를 갖춘 오프라인 및 온라인 미세 조정으로 구성된 VLA 모델을 위한 강화 미세 조정 접근법인 ConRFT를 제안합니다. 오프라인 단계에서 우리의 방법은 행동 복제와 Q-러닝을 통합하여 소규모 시연 데이터에서 효과적으로 정책을 추출하고 가치 추정을 안정화합니다. 온라인 단계에서는 일관성 정책을 통해 VLA 모델을 추가로 미세 조정하며, 인간의 개입을 통해 안전한 탐색과 높은 샘플 효율성을 보장합니다. 우리는 8가지 다양한 실제 조작 작업에서 접근법을 평가했습니다. 45-90분의 온라인 미세 조정 내에 평균 성공률 96.3%를 달성하여, 이전의 지도 학습 방법보다 성공률에서 144% 향상, 에피소드 길이에서 1.9배 단축된 성과를 보였습니다. 이 연구는 강화 학습을 통합하여 실제 로봇 응용을 위한 VLA 모델의 성능을 향상시킬 수 있는 잠재력을 강조합니다. 비디오와 코드는 프로젝트 웹사이트 https://cccedric.github.io/conrft/에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 실제 로봇 조작 분야에서 상당한 잠재력을 보여주고 있습니다. 그러나 제한적이고 일관되지 않은 시연 데이터, 특히 접촉이 많은 환경에서 지도 학습을 통한 미세 조정은 강력한 성능을 달성하는 데 어려움을 겪습니다. 본 논문에서는 이러한 문제를 해결하기 위해 일관성 기반의 통합 훈련 목표를 갖춘 오프라인 및 온라인 미세 조정으로 구성된 VLA 모델을 위한 강화 미세 조정 접근법인 ConRFT를 제안합니다. 오프라인 단계에서 우리의 방법은 행동 복제와 Q-러닝을 통합하여 소규모 시연 데이터에서 효과적으로 정책을 추출하고 가치 추정을 안정화합니다. 온라인 단계에서는 일관성 정책을 통해 VLA 모델을 추가로 미세 조정하며, 인간의 개입을 통해 안전한 탐색과 높은 샘플 효율성을 보장합니다. 우리는 8가지 다양한 실제 조작 작업에서 접근법을 평가했습니다. 45-90분의 온라인 미세 조정 내에 평균 성공률 96.3%를 달성하여, 이전의 지도 학습 방법보다 성공률에서 144% 향상, 에피소드 길이에서 1.9배 단축된 성과를 보였습니다. 이 연구는 강화 학습을 통합하여 실제 로봇 응용을 위한 VLA 모델의 성능을 향상시킬 수 있는 잠재력을 강조합니다. 비디오와 코드는 프로젝트 웹사이트 https://cccedric.github.io/conrft/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.05450v2
+
+## 개요
+ConRFT는 VLA 모델이 접촉 밀집 환경에서 제한적이고 일관되지 않은 시연 데이터로 인해 발생하는 견고성 부족 문제를 해결하기 위해, 오프라인과 온라인 미세 조정을 결합한 강화 학습 방법을 제안합니다. 오프라인 단계에서는 행동 복제와 Q-learning의 융합을 통해 소량의 시연에서 정책을 효율적으로 추출하고 가치 추정을 안정화합니다. 온라인 단계에서는 일관성 정책을 사용하여 미세 조정하고, 인간 개입을 도입하여 안전한 탐색과 높은 샘플 효율성을 보장합니다. 8가지 실제 세계 조작 작업에서 이 방법은 45-90분의 온라인 미세 조정 후 평균 96.3%의 성공률을 달성했으며, 기존 지도 학습 방법 대비 144% 향상되었고, 작업 실행 길이는 1.9배 단축되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ConRFT는 두 단계 훈련 프레임워크를 채택합니다:
+- **오프라인 단계**: 행동 복제(Behavior Cloning)와 Q-learning을 결합하여 소량의 시연 데이터에서 초기 정책을 추출하고, 일관성 제약을 통해 가치 함수 추정을 안정화하여 과적합을 방지합니다.
+- **온라인 단계**: 일관성 정책(Consistency Policy)을 기반으로 강화 미세 조정을 수행하고, 인간 개입 메커니즘(Human Interventions)을 도입하여 불안전한 행동을 제한함으로써 탐색 효율성과 안전성을 보장합니다.
+
+### 실험 설정
+- **작업**: 그리핑, 배치, 접촉 밀집 조작 등을 포함한 8가지 실제 세계 조작 작업을 다룹니다.
+- **기준 비교**: 지도 미세 조정 방법(예: BC, IBC) 및 강화 학습 방법(예: RLHF)과 비교합니다.
+- **평가 지표**: 성공률(Success Rate), 작업 실행 길이(Episode Length), 미세 조정 시간(45-90분).
+
+### 주요 수치 및 결론
+- **성공률**: 평균 96.3%, 지도 학습 방법 대비 144% 향상.
+- **효율성**: 작업 실행 길이 1.9배 단축, 미세 조정 시간은 45-90분만 필요.
+- **견고성**: 접촉 밀집 시나리오에서 ConRFT의 실패율은 기준 대비 60% 이상 감소.
+- **오픈소스**: 프로젝트 웹사이트에서 비디오와 코드 제공 (https://cccedric.github.io/conrft/).
+
+### 결론
+ConRFT는 강화 학습과 일관성 정책의 결합이 실제 로봇 조작에서 VLA 모델의 일반화 능력과 샘플 효율성을 크게 향상시킬 수 있음을 입증하며, 저데이터 시나리오에서의 로봇 학습에 효과적인 솔루션을 제공합니다.

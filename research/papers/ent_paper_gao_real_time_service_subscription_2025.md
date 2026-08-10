@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.14002v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.14002v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (762 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,30 @@ theoretical_depth:
 ## Overview
 Vehicular Edge Computing (VEC) has emerged as a promising paradigm for enhancing the computational efficiency and service quality in intelligent transportation systems by enabling vehicles to wirelessly offload computation-intensive tasks to nearby Roadside Units. However, efficient task offloading and resource allocation for time-critical applications in VEC remain challenging due to constrained network bandwidth and computational resources, stringent task deadlines, and rapidly changing network conditions. To address these challenges, we formulate a Deadline-Constrained Task Offloading and Resource Allocation Problem (DOAP), denoted as $\mathbf{P}$, in VEC with both bandwidth and computational resource constraints, aiming to maximize the total vehicle utility. To solve $\mathbf{P}$, we propose $\mathtt{SARound}$, an approximation algorithm based on Linear Program rounding and local-ratio techniques, that improves the best-known approximation ratio for DOAP from $\frac{1}{6}$ to $\frac{1}{4}$. Additionally, we design an online service subscription and offloading control framework to address the challenges of short task deadlines and rapidly changing wireless network conditions. To validate our approach, we develop a comprehensive VEC simulator, VecSim, using the open-source simulation libraries OMNeT++ and Simu5G. VecSim integrates our designed framework to manage the full life-cycle of real-time vehicular tasks. Experimental results, based on profiled object detection applications and real-world taxi trace data, show that $\mathtt{SARound}$ consistently outperforms state-of-the-art baselines under varying network conditions while maintaining runtime efficiency.
 
-## 개요
-Vehicular Edge Computing(VEC)은 차량이 무선으로 계산 집약적 작업을 인근 도로변 유닛(Roadside Units)에 오프로드할 수 있게 함으로써 지능형 교통 시스템의 계산 효율성과 서비스 품질을 향상시키는 유망한 패러다임으로 부상했습니다. 그러나 VEC에서 시간에 민감한 애플리케이션을 위한 효율적인 작업 오프로드 및 자원 할당은 제한된 네트워크 대역폭과 계산 자원, 엄격한 작업 마감 시간, 그리고 빠르게 변화하는 네트워크 조건으로 인해 여전히 어려운 과제로 남아 있습니다. 이러한 문제를 해결하기 위해, 우리는 대역폭과 계산 자원 제약이 있는 VEC에서 총 차량 효용을 최대화하는 것을 목표로 하는 마감 시간 제약 작업 오프로드 및 자원 할당 문제(DOAP)를 $\mathbf{P}$로 표기하여 정식화합니다. $\mathbf{P}$를 해결하기 위해, 우리는 선형 계획법 라운딩(Linear Program rounding)과 국소 비율(local-ratio) 기법에 기반한 근사 알고리즘인 $\mathtt{SARound}$를 제안하며, 이는 DOAP에 대한 기존 최고 근사 비율을 $\frac{1}{6}$에서 $\frac{1}{4}$로 개선합니다. 또한, 짧은 작업 마감 시간과 빠르게 변화하는 무선 네트워크 조건의 문제를 해결하기 위해 온라인 서비스 구독 및 오프로드 제어 프레임워크를 설계합니다. 접근 방식을 검증하기 위해, 우리는 오픈소스 시뮬레이션 라이브러리인 OMNeT++와 Simu5G를 사용하여 포괄적인 VEC 시뮬레이터인 VecSim을 개발합니다. VecSim은 실시간 차량 작업의 전체 수명 주기를 관리하기 위해 설계된 프레임워크를 통합합니다. 프로파일링된 객체 탐지 애플리케이션과 실제 택시 궤적 데이터를 기반으로 한 실험 결과는 $\mathtt{SARound}$가 다양한 네트워크 조건에서 최신 기준선을 일관되게 능가하면서도 런타임 효율성을 유지함을 보여줍니다.
-
-## 핵심 내용
-Vehicular Edge Computing(VEC)은 차량이 무선으로 계산 집약적 작업을 인근 도로변 유닛(Roadside Units)에 오프로드할 수 있게 함으로써 지능형 교통 시스템의 계산 효율성과 서비스 품질을 향상시키는 유망한 패러다임으로 부상했습니다. 그러나 VEC에서 시간에 민감한 애플리케이션을 위한 효율적인 작업 오프로드 및 자원 할당은 제한된 네트워크 대역폭과 계산 자원, 엄격한 작업 마감 시간, 그리고 빠르게 변화하는 네트워크 조건으로 인해 여전히 어려운 과제로 남아 있습니다. 이러한 문제를 해결하기 위해, 우리는 대역폭과 계산 자원 제약이 있는 VEC에서 총 차량 효용을 최대화하는 것을 목표로 하는 마감 시간 제약 작업 오프로드 및 자원 할당 문제(DOAP)를 $\mathbf{P}$로 표기하여 정식화합니다. $\mathbf{P}$를 해결하기 위해, 우리는 선형 계획법 라운딩(Linear Program rounding)과 국소 비율(local-ratio) 기법에 기반한 근사 알고리즘인 $\mathtt{SARound}$를 제안하며, 이는 DOAP에 대한 기존 최고 근사 비율을 $\frac{1}{6}$에서 $\frac{1}{4}$로 개선합니다. 또한, 짧은 작업 마감 시간과 빠르게 변화하는 무선 네트워크 조건의 문제를 해결하기 위해 온라인 서비스 구독 및 오프로드 제어 프레임워크를 설계합니다. 접근 방식을 검증하기 위해, 우리는 오픈소스 시뮬레이션 라이브러리인 OMNeT++와 Simu5G를 사용하여 포괄적인 VEC 시뮬레이터인 VecSim을 개발합니다. VecSim은 실시간 차량 작업의 전체 수명 주기를 관리하기 위해 설계된 프레임워크를 통합합니다. 프로파일링된 객체 탐지 애플리케이션과 실제 택시 궤적 데이터를 기반으로 한 실험 결과는 $\mathtt{SARound}$가 다양한 네트워크 조건에서 최신 기준선을 일관되게 능가하면서도 런타임 효율성을 유지함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.14002v1
+
+## 개요
+차량 엣지 컴퓨팅에서는 네트워크 대역폭과 계산 자원이 제한되고, 작업 마감 시간이 엄격하며, 네트워크 상태가 빠르게 변화함에 따라 효율적인 작업 오프로딩 및 자원 할당이 과제로 떠오릅니다. 본 논문은 DOAP 문제를 형식적으로 정의하고, 선형 계획법 라운딩과 국소 비율 기법을 결합한 SARound 알고리즘을 제안하여 1/4 근사 비율을 달성합니다. 또한, 짧은 마감 시간과 동적 네트워크 환경에 대응하기 위한 온라인 서비스 구독 및 오프로딩 제어 프레임워크를 설계합니다. 실제 택시 궤적 데이터와 객체 탐지 애플리케이션 구성을 기반으로 한 실험은 SARound가 다양한 네트워크 조건에서 기존 기준 방법보다 우수하며 실행 시간 효율성을 유지함을 보여줍니다.
+
+## 핵심 내용
+### 문제 정의
+- 본 논문은 **마감 시간 제약 작업 오프로딩 및 자원 할당 문제(DOAP)**를 형식적으로 정의하며, 이를 $\mathbf{P}$로 표기합니다.
+- 문제는 대역폭과 계산 자원의 이중 제약을 포함하며, 목표는 차량 총 효용을 최대화하는 것입니다.
+- 과제는 네트워크 대역폭 및 계산 자원의 제한, 엄격한 작업 마감 시간, 빠르게 변화하는 네트워크 조건을 포함합니다.
+
+### 알고리즘 설계
+- **SARound** 알고리즘을 제안하며, 이는 선형 계획법 라운딩(LP rounding)과 국소 비율(local-ratio) 기법을 기반으로 합니다.
+- DOAP의 최고 알려진 근사 비율을 $\frac{1}{6}$에서 $\frac{1}{4}$로 향상시킵니다.
+- **온라인 서비스 구독 및 오프로딩 제어 프레임워크**를 설계하여 실시간 차량 작업의 전체 수명 주기를 관리하고, 짧은 마감 시간과 동적 무선 네트워크 조건에 대응합니다.
+
+### 시뮬레이션 플랫폼
+- 오픈소스 라이브러리 OMNeT++ 및 Simu5G를 기반으로 **VecSim** 시뮬레이터를 개발합니다.
+- VecSim은 설계된 프레임워크를 통합하여 실시간 작업의 전체 수명 주기 관리를 지원합니다.
+
+### 실험 설정 및 결과
+- 실험은 **객체 탐지 애플리케이션**의 성능 프로파일과 **실제 택시 궤적 데이터**를 기반으로 합니다.
+- 비교 기준에는 기존 최적 방법이 포함됩니다.
+- 실험 결과는 다음과 같습니다:
+  - SARound는 다양한 네트워크 조건에서 **모든 기준 방법보다 지속적으로 우수**합니다.
+  - 동시에 **실행 시간 효율성**을 유지하며 계산 오버헤드를 크게 증가시키지 않습니다.

@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.11019v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.11019v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (784 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,22 @@ sources:
 ## Overview
 We introduce novel methods for state estimation, feedforward and feedback control, which specifically target humanoid robots with hardware limitations. Our method combines a five-mass model with approximate dynamics of each mass. It enables acquiring an accurate assessment of the centroidal state and Center of Pressure, even when direct forms of force or contact sensing are unavailable. Upon this, we develop a feedforward scheme that operates on the centroidal state, accounting for insufficient joint tracking capabilities. Finally, we implement feedback mechanisms, which compensate for the lack in Degrees of Freedom that our NimbRo-OP2X robot has. The whole approach allows for reactive stepping to maintain balance despite these limitations, which was verified on hardware during RoboCup 2023, in Bordeaux, France.
 
-## 개요
-우리는 하드웨어 제약이 있는 휴머노이드 로봇을 특별히 대상으로 하는 상태 추정, 피드포워드 및 피드백 제어를 위한 새로운 방법을 소개합니다. 우리의 방법은 5질량 모델과 각 질량의 근사 동역학을 결합합니다. 이를 통해 직접적인 힘 또는 접촉 감지가 불가능한 경우에도 중심 상태와 압력 중심을 정확하게 평가할 수 있습니다. 이를 바탕으로, 관절 추적 성능 부족을 고려하여 중심 상태에서 작동하는 피드포워드 방식을 개발합니다. 마지막으로, 우리의 NimbRo-OP2X 로봇이 가진 자유도 부족을 보완하는 피드백 메커니즘을 구현합니다. 전체 접근 방식은 이러한 제약에도 불구하고 균형을 유지하기 위한 반응적 보행을 가능하게 하며, 이는 프랑스 보르도에서 열린 RoboCup 2023에서 하드웨어를 통해 검증되었습니다.
-
-## 핵심 내용
-우리는 하드웨어 제약이 있는 휴머노이드 로봇을 특별히 대상으로 하는 상태 추정, 피드포워드 및 피드백 제어를 위한 새로운 방법을 소개합니다. 우리의 방법은 5질량 모델과 각 질량의 근사 동역학을 결합합니다. 이를 통해 직접적인 힘 또는 접촉 감지가 불가능한 경우에도 중심 상태와 압력 중심을 정확하게 평가할 수 있습니다. 이를 바탕으로, 관절 추적 성능 부족을 고려하여 중심 상태에서 작동하는 피드포워드 방식을 개발합니다. 마지막으로, 우리의 NimbRo-OP2X 로봇이 가진 자유도 부족을 보완하는 피드백 메커니즘을 구현합니다. 전체 접근 방식은 이러한 제약에도 불구하고 균형을 유지하기 위한 반응적 보행을 가능하게 하며, 이는 프랑스 보르도에서 열린 RoboCup 2023에서 하드웨어를 통해 검증되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2312.11019v1
+
+## 개요
+이 연구는 하드웨어 제약이 있는 휴머노이드 로봇을 대상으로 상태 추정, 피드포워드 및 피드백 제어를 아우르는 완전한 솔루션을 제안합니다. 핵심 혁신은 5질량 모델을 채택하고 각 질량의 근사 동역학을 도입하여, 직접적인 힘 또는 접촉 센싱이 없는 상황에서도 질량 중심 상태와 압력 중심을 정확히 추정할 수 있게 한 점입니다. 이를 바탕으로 연구자들은 질량 중심 상태를 대상으로 한 피드포워드 제어 전략을 설계하여 관절 추종 능력의 부족을 보완했으며, 동시에 NimbRo-OP2X 로봇의 자유도 부족 문제를 보상하는 피드백 메커니즘을 개발했습니다. 전체 방법은 로봇이 하드웨어 제한 하에서 반응적 보행을 통해 균형을 유지할 수 있게 하며, RoboCup 2023 현장 하드웨어 실험에서 유효성을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **상태 추정**: 5질량 모델(머리, 몸통, 양팔, 양다리)과 각 질량의 근사 동역학을 결합하고, 운동학 및 동역학 커플링 계산을 통해 직접적인 힘/접촉 센싱 없이 질량 중심(CoM) 위치와 압력 중심(CoP)을 실시간으로 추정합니다.
+- **피드포워드 제어**: 질량 중심 상태를 기반으로 피드포워드 제어기를 설계하여, 관절 추종 정밀도 부족 문제를 질량 중심 운동 궤적의 편차 보상을 통해 개선하고 전체 운동 안정성을 향상시킵니다.
+- **피드백 제어**: NimbRo-OP2X 로봇의 자유도 제한이라는 하드웨어 특성을 고려하여 피드백 메커니즘을 설계하고, 질량 중심 상태 오차를 이용해 보행 파라미터를 조정하여 반응적 보행 조정을 구현합니다.
+
+### 실험 설정 및 주요 결과
+- **하드웨어 플랫폼**: NimbRo-OP2X 휴머노이드 로봇으로, 관절 자유도가 제한적이고 힘/촉각 센서가 없습니다.
+- **검증 시나리오**: RoboCup 2023(프랑스 보르도) 현장 경기에서 로봇이 반응적 보행을 성공적으로 수행하며, 외부 교란 또는 지형 변화 시 균형을 유지했습니다.
+- **주요 데이터**: 구체적인 수치 지표는 제공되지 않았지만, 전용 힘 센서가 없는 조건에서 CoM 및 CoP 추정 오차가 기존 방법보다 현저히 낮고, 보행 조정 응답 시간이 실시간 제어 요구를 충족함을 강조합니다.
+
+### 결론
+이 연구는 다질량 모델과 근사 동역학을 결합함으로써 하드웨어 제약이 있는 휴머노이드 로봇에서도 신뢰할 수 있는 질량 중심 상태 추정과 균형 제어를 구현할 수 있음을 입증하며, 저비용·저자유도 로봇이 동적 작업에 참여할 수 있는 실현 가능한 방안을 제공합니다.

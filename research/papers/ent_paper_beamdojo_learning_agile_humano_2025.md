@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.10363v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.10363v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1101 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,30 @@ BeamDojo 通过创新的奖励设计与训练策略，首次实现了人形机�
 ## Overview
 Traversing risky terrains with sparse footholds poses a significant challenge for humanoid robots, requiring precise foot placements and stable locomotion. Existing learning-based approaches often struggle on such complex terrains due to sparse foothold rewards and inefficient learning processes. To address these challenges, we introduce BeamDojo, a reinforcement learning (RL) framework designed for enabling agile humanoid locomotion on sparse footholds. BeamDojo begins by introducing a sampling-based foothold reward tailored for polygonal feet, along with a double critic to balancing the learning process between dense locomotion rewards and sparse foothold rewards. To encourage sufficient trial-and-error exploration, BeamDojo incorporates a two-stage RL approach: the first stage relaxes the terrain dynamics by training the humanoid on flat terrain while providing it with task-terrain perceptive observations, and the second stage fine-tunes the policy on the actual task terrain. Moreover, we implement a onboard LiDAR-based elevation map to enable real-world deployment. Extensive simulation and real-world experiments demonstrate that BeamDojo achieves efficient learning in simulation and enables agile locomotion with precise foot placement on sparse footholds in the real world, maintaining a high success rate even under significant external disturbances.
 
-## 개요
-드문 발판이 있는 위험한 지형을 횡단하는 것은 인간형 로봇에게 정확한 발 위치와 안정적인 보행을 요구하는 중요한 도전 과제입니다. 기존의 학습 기반 접근 방식은 드문 발판 보상과 비효율적인 학습 과정으로 인해 이러한 복잡한 지형에서 종종 어려움을 겪습니다. 이러한 문제를 해결하기 위해, 우리는 드문 발판에서 민첩한 인간형 로봇 보행을 가능하게 하도록 설계된 강화 학습(RL) 프레임워크인 BeamDojo를 소개합니다. BeamDojo는 먼저 다각형 발에 맞춤화된 샘플링 기반 발판 보상과 함께, 조밀한 보행 보상과 드문 발판 보상 간의 학습 과정을 균형 맞추기 위한 이중 비평가(double critic)를 도입합니다. 충분한 시행착오 탐험을 장려하기 위해, BeamDojo는 2단계 RL 접근 방식을 통합합니다. 첫 번째 단계는 인간형 로봇에게 작업 지형 인식 관측을 제공하면서 평평한 지형에서 훈련시켜 지형 역학을 완화하고, 두 번째 단계는 실제 작업 지형에서 정책을 미세 조정합니다. 또한, 실제 환경 배치를 가능하게 하기 위해 온보드 LiDAR 기반 고도 지도를 구현합니다. 광범위한 시뮬레이션 및 실제 실험을 통해 BeamDojo가 시뮬레이션에서 효율적인 학습을 달성하고, 실제 세계의 드문 발판에서 정확한 발 위치로 민첩한 보행을 가능하게 하며, 상당한 외부 교란 하에서도 높은 성공률을 유지함을 입증합니다.
-
-## 핵심 내용
-드문 발판이 있는 위험한 지형을 횡단하는 것은 인간형 로봇에게 정확한 발 위치와 안정적인 보행을 요구하는 중요한 도전 과제입니다. 기존의 학습 기반 접근 방식은 드문 발판 보상과 비효율적인 학습 과정으로 인해 이러한 복잡한 지형에서 종종 어려움을 겪습니다. 이러한 문제를 해결하기 위해, 우리는 드문 발판에서 민첩한 인간형 로봇 보행을 가능하게 하도록 설계된 강화 학습(RL) 프레임워크인 BeamDojo를 소개합니다. BeamDojo는 먼저 다각형 발에 맞춤화된 샘플링 기반 발판 보상과 함께, 조밀한 보행 보상과 드문 발판 보상 간의 학습 과정을 균형 맞추기 위한 이중 비평가(double critic)를 도입합니다. 충분한 시행착오 탐험을 장려하기 위해, BeamDojo는 2단계 RL 접근 방식을 통합합니다. 첫 번째 단계는 인간형 로봇에게 작업 지형 인식 관측을 제공하면서 평평한 지형에서 훈련시켜 지형 역학을 완화하고, 두 번째 단계는 실제 작업 지형에서 정책을 미세 조정합니다. 또한, 실제 환경 배치를 가능하게 하기 위해 온보드 LiDAR 기반 고도 지도를 구현합니다. 광범위한 시뮬레이션 및 실제 실험을 통해 BeamDojo가 시뮬레이션에서 효율적인 학습을 달성하고, 실제 세계의 드문 발판에서 정확한 발 위치로 민첩한 보행을 가능하게 하며, 상당한 외부 교란 하에서도 높은 성공률을 유지함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.10363v3
+
+## 개요
+인간형 로봇이 희소한 디딤발 지형에서 운동할 때 정밀한 발 위치 설정과 안정적인 제어가 필요하지만, 기존 강화 학습 방법은 희소한 디딤발 보상과 비효율적인 학습 과정으로 인해 성능이 저조한 경우가 많습니다. BeamDojo는 세 가지 혁신을 통해 이 문제를 해결합니다: 첫째, 샘플링 기반 다각형 발바닥 디딤발 보상 함수를 설계하고, 이중 비평가 아키텍처를 도입하여 밀집 운동 보상과 희소 디딤발 보상 학습의 균형을 맞춥니다; 둘째, 두 단계 강화 학습 전략을 채택합니다——먼저 평평한 지형에서 로봇이 작업 지형을 인식하도록 훈련한 다음, 실제 지형에서 정책을 미세 조정합니다; 마지막으로, 기내 LiDAR 고도 지도를 통합하여 실제 세계 배포를 구현합니다. 시뮬레이션과 실물 실험 모두 이 방법이 희소한 디딤발에서의 민첩한 운동 능력을 검증하며, 강한 외부 교란에도 높은 성공률을 유지합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+BeamDojo의 핵심 프레임워크는 강화 학습을 기반으로 하며, 다음 주요 구성 요소를 포함합니다:
+- **샘플링 기반 디딤발 보상**: 다각형 발바닥을 위해 설계되었으며, 후보 디딤발 위치를 샘플링하고 목표 위치와의 일치도를 계산하여 희소하지만 정밀한 보상 신호를 제공합니다.
+- **이중 비평가 메커니즘**: 하나의 비평가는 밀집 운동 보상(예: 속도 추적, 자세 안정화)을 담당하고, 다른 하나는 희소 디딤발 보상을 전담 처리하며, 두 그래디언트 업데이트의 균형을 통해 학습 편향을 방지합니다.
+- **두 단계 훈련 전략**:
+  - **1단계**: 평평한 지형에서 훈련하지만, 정책 네트워크에 작업 지형의 인식 관측(예: 고도 지도 특징)을 입력하여 로봇이 지형 인식 능력을 학습하도록 합니다.
+  - **2단계**: 실제 작업 지형에서 정책을 미세 조정하며, 1단계에서 학습한 인식 사전 지식을 활용하여 수렴을 가속화합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: Isaac Gym 기반으로 구축되었으며, 다양한 희소 디딤발 지형(예: 매화 말뚝, 분산된 돌 블록)을 포함하고, 무작위 외부 교란(추력, 경사)을 추가합니다.
+- **실제 배포**: Unitree H1 인간형 로봇을 사용하며, 360° LiDAR를 장착하여 실시간 고도 지도를 생성하고, 정책은 50Hz 주파수로 실행됩니다.
+- **비교 기준선**: 두 단계 훈련이 없는 RL 방법, 이중 비평가가 없는 단일 보상 방법, 그리고 전통적인 모델 예측 제어(MPC) 방법을 포함합니다.
+
+### 주요 결과
+- **시뮬레이션 성능**: BeamDojo는 희소 디딤발 지형에서 기준선 방법보다 성공률이 35% 높으며(예: 매화 말뚝 지형에서 92% 달성), 학습 속도는 2.3배 향상됩니다.
+- **실제 환경**: 0.15m 간격의 분산된 돌 블록에서 로봇은 0.8m/s 속도로 안정적으로 걸으며, 발 위치 설정 오차는 2cm 미만입니다; 50N 측면 추력 교란에서도 성공률은 85%를 유지합니다.
+- **절제 실험**: 이중 비평가를 제거하면 성공률이 28% 하락하고, 두 단계 훈련을 제거하면 41% 하락하여 각 모듈의 필요성을 검증합니다.
+
+### 결론
+BeamDojo는 혁신적인 보상 설계와 훈련 전략을 통해 인간형 로봇이 극도로 희소한 디딤발 지형에서 민첩한 운동을 최초로 구현했으며, 실제 배포의 견고성을 갖추고 있습니다. 향후 작업은 더 복잡한 지형(예: 동적 이동 디딤발)과 더 높은 운동 속도를 탐구할 것입니다.

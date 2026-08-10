@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.00720v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.00720v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (664 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,27 @@ theoretical_depth:
 ## Overview
 As the demands for electric vehicles, electric aircrafts, unmanned aircraft systems, and other motor-driven systems increase, high-performance motor drives employing variable frequency control with higher efficiency and reliability are becoming increasingly important parts of the ever-changing technological landscape. This study proposes a Field Programmable Gate Array (FPGA)-based variable frequency soft-starting motor drive for a three-phase induction motor. The inverter output voltage and the load currents are analyzed for the harmonic contents using MATLAB. In the experimental realization, a four-pole squirrel cage delta-connected induction motor is utilized with a switching frequency of 4 kHz. The current and voltage characteristics of the induction motor are studied under different operating conditions to study harmonic contents and the effect of changing soft-start duration. The findings demonstrate a low-cost, flexible control of the induction motor with improved harmonic performance.
 
-## 개요
-전기 자동차, 전기 항공기, 무인 항공기 시스템 및 기타 모터 구동 시스템에 대한 수요가 증가함에 따라, 더 높은 효율성과 신뢰성을 갖춘 가변 주파수 제어를 사용하는 고성능 모터 드라이브는 끊임없이 변화하는 기술 환경에서 점점 더 중요한 부분이 되고 있습니다. 본 연구는 3상 유도 전동기를 위한 FPGA(Field Programmable Gate Array) 기반 가변 주파수 소프트 스타팅 모터 드라이브를 제안합니다. 인버터 출력 전압과 부하 전류는 MATLAB을 사용하여 고조파 함량을 분석합니다. 실험 구현에서는 4kHz의 스위칭 주파수로 4극 농형 델타 결선 유도 전동기를 사용합니다. 유도 전동기의 전류 및 전압 특성은 다양한 작동 조건에서 연구되어 고조파 함량과 소프트 스타트 지속 시간 변경의 영향을 분석합니다. 결과는 개선된 고조파 성능을 갖춘 저비용의 유연한 유도 전동기 제어를 보여줍니다.
-
-## 핵심 내용
-전기 자동차, 전기 항공기, 무인 항공기 시스템 및 기타 모터 구동 시스템에 대한 수요가 증가함에 따라, 더 높은 효율성과 신뢰성을 갖춘 가변 주파수 제어를 사용하는 고성능 모터 드라이브는 끊임없이 변화하는 기술 환경에서 점점 더 중요한 부분이 되고 있습니다. 본 연구는 3상 유도 전동기를 위한 FPGA(Field Programmable Gate Array) 기반 가변 주파수 소프트 스타팅 모터 드라이브를 제안합니다. 인버터 출력 전압과 부하 전류는 MATLAB을 사용하여 고조파 함량을 분석합니다. 실험 구현에서는 4kHz의 스위칭 주파수로 4극 농형 델타 결선 유도 전동기를 사용합니다. 유도 전동기의 전류 및 전압 특성은 다양한 작동 조건에서 연구되어 고조파 함량과 소프트 스타트 지속 시간 변경의 영향을 분석합니다. 결과는 개선된 고조파 성능을 갖춘 저비용의 유연한 유도 전동기 제어를 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2311.00720v1
+
+## 개요
+전기 자동차, 전기 항공기, 무인기 시스템 등 전동기 구동 시스템의 수요가 증가함에 따라, 고성능 가변 주파수 전동기 구동의 효율성과 신뢰성은 점점 더 중요해지고 있습니다. 본 연구는 3상 유도 전동기를 위한 FPGA 기반 가변 주파수 소프트 스타트 구동 방안을 제안합니다. 인버터 출력 전압과 부하 전류의 고조파 함량은 MATLAB을 통해 분석되었습니다. 실험은 4극 농형 델타 결선 유도 전동기를 사용하고, 스위칭 주파수를 4 kHz로 설정하여 다양한 운전 조건에서 전류-전압 특성, 고조파 함량 및 소프트 스타트 시간 변화의 영향을 연구했습니다. 결과는 이 방안이 저비용, 유연한 제어를 구현하고 고조파 성능을 개선함을 보여줍니다.
+
+## 핵심 내용
+### 방법
+- FPGA를 사용하여 가변 주파수 소프트 스타트 구동을 구현하고, 직접 디지털 합성(DDS) 기술을 기반으로 PWM 신호를 생성합니다.
+- 세 가지 PWM 전략을 비교합니다: 정현파 PWM(SPWM), 3차 고조파 주입 PWM(THIPWM), 공간 벡터 PWM(SVPWM)을 통해 고조파 성능과 기동 전류 억제 효과를 평가합니다.
+
+### 실험 설정
+- 4극 농형 델타 결선 유도 전동기를 사용하고, 스위칭 주파수는 4 kHz입니다.
+- MATLAB을 통해 인버터 출력 전압과 부하 전류의 고조파 함량을 분석합니다.
+- 다양한 운전 조건에서 전류-전압 특성을 연구하고, 소프트 스타트 시간을 변경하여 고조파 함량에 미치는 영향을 관찰합니다.
+
+### 주요 결과
+- 실험을 통해 FPGA 기반 구동 방안의 저비용, 유연한 제어 측면의 장점을 검증했습니다.
+- 고조파 성능이 개선되었고, 기동 전류가 효과적으로 억제되었습니다.
+- 구체적인 고조파 함량 데이터(예: 총 고조파 왜곡 THD)는 원문을 참조해야 하지만, 전반적으로 THIPWM과 SVPWM이 고조파 억제에서 SPWM보다 우수함을 보여줍니다.
+
+### 결론
+- 이 방안은 전기 자동차 및 무인기 시스템과 같이 고조파 성능 요구 사항이 높은 전동기 구동 시나리오에 적합합니다.
+- FPGA의 유연성은 PWM 전략의 실시간 조정을 허용하여 향후 최적화를 위한 기반을 제공합니다.

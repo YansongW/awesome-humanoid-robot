@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14117v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14117v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1254 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,29 @@ GeoAware-VLA 通过简单的几何特征注入策略，有效解决了 VLA 模�
 ## Overview
 Vision-Language-Action (VLA) models often fail to generalize to unseen camera viewpoints, a limitation stemming from their difficulty in inferring robust 3D geometry from 2D images. We introduce GeoAware-VLA, a simple yet effective approach that enhances viewpoint invariance by integrating strong geometric priors into the vision backbone. Instead of training a visual encoder or relying on explicit 3D data, we leverage a frozen, pretrained geometric vision model as a feature extractor. A lightweight, trainable projection layer then adapts these geometrically-rich features for the policy decoder, relieving it of the burden of learning 3D consistency from scratch. Through extensive evaluations on the LIBERO and CALVIN benchmarks, we show that GeoAware-VLA preserves and even improves in-distribution performance while achieving substantial gains in zero-shot generalization to unseen camera poses, improving unseen-view success rates by an average of 35 percentage points on LIBERO and over 11 percentage points on CALVIN compared to their respective baselines. Crucially, these gains transfer to the physical world, where our model shows significant improvement on a real robotic platform. Our approach proves effective across both continuous and discrete action spaces, highlighting that robust geometric grounding is a key ingredient for building more generalizable robotic agents.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 종종 보지 못한 카메라 시점으로의 일반화에 실패하는데, 이는 2D 이미지로부터 강건한 3D 기하학을 추론하는 데 어려움을 겪기 때문입니다. 우리는 강력한 기하학적 사전 지식을 비전 백본에 통합하여 시점 불변성을 향상시키는 간단하면서도 효과적인 접근법인 GeoAware-VLA를 소개합니다. 시각 인코더를 훈련시키거나 명시적인 3D 데이터에 의존하는 대신, 우리는 동결된 사전 훈련된 기하학적 비전 모델을 특징 추출기로 활용합니다. 그런 다음 가볍고 훈련 가능한 투영 레이어가 이러한 기하학적 특징을 정책 디코더에 맞게 조정하여, 처음부터 3D 일관성을 학습해야 하는 부담을 덜어줍니다. LIBERO 및 CALVIN 벤치마크에 대한 광범위한 평가를 통해, GeoAware-VLA가 분포 내 성능을 유지하고 심지어 향상시키면서, 보지 못한 카메라 포즈에 대한 제로샷 일반화에서 상당한 이득을 얻는다는 것을 보여줍니다. 각각의 기준선과 비교하여 LIBERO에서 평균 35% 포인트, CALVIN에서 11% 포인트 이상의 보지 못한 시점 성공률 향상을 달성했습니다. 결정적으로, 이러한 이득은 실제 세계로 전이되어, 실제 로봇 플랫폼에서 모델이 상당한 개선을 보여줍니다. 우리의 접근법은 연속 및 이산 행동 공간 모두에서 효과적임을 입증하며, 강건한 기하학적 기반이 더 일반화 가능한 로봇 에이전트를 구축하는 핵심 요소임을 강조합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 종종 보지 못한 카메라 시점으로의 일반화에 실패하는데, 이는 2D 이미지로부터 강건한 3D 기하학을 추론하는 데 어려움을 겪기 때문입니다. 우리는 강력한 기하학적 사전 지식을 비전 백본에 통합하여 시점 불변성을 향상시키는 간단하면서도 효과적인 접근법인 GeoAware-VLA를 소개합니다. 시각 인코더를 훈련시키거나 명시적인 3D 데이터에 의존하는 대신, 우리는 동결된 사전 훈련된 기하학적 비전 모델을 특징 추출기로 활용합니다. 그런 다음 가볍고 훈련 가능한 투영 레이어가 이러한 기하학적 특징을 정책 디코더에 맞게 조정하여, 처음부터 3D 일관성을 학습해야 하는 부담을 덜어줍니다. LIBERO 및 CALVIN 벤치마크에 대한 광범위한 평가를 통해, GeoAware-VLA가 분포 내 성능을 유지하고 심지어 향상시키면서, 보지 못한 카메라 포즈에 대한 제로샷 일반화에서 상당한 이득을 얻는다는 것을 보여줍니다. 각각의 기준선과 비교하여 LIBERO에서 평균 35% 포인트, CALVIN에서 11% 포인트 이상의 보지 못한 시점 성공률 향상을 달성했습니다. 결정적으로, 이러한 이득은 실제 세계로 전이되어, 실제 로봇 플랫폼에서 모델이 상당한 개선을 보여줍니다. 우리의 접근법은 연속 및 이산 행동 공간 모두에서 효과적임을 입증하며, 강건한 기하학적 기반이 더 일반화 가능한 로봇 에이전트를 구축하는 핵심 요소임을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.14117v4
+
+## 개요
+GeoAware-VLA는 기존 VLA 모델이 2D 이미지에서 강건한 3D 기하 구조를 추론하기 어려워 보지 못한 카메라 시점에 대한 일반화 능력이 약하다는 문제를 해결하기 위해 간결하고 효과적인 솔루션을 제안한다. 이 방법은 새로운 비전 인코더를 훈련하지 않으며 명시적 3D 데이터에 의존하지 않고, 대신 동결된 사전 훈련된 기하 비전 모델을 특징 추출기로 직접 사용하고, 경량의 훈련 가능한 프로젝션 레이어를 통해 이러한 기하 정보가 풍부한 특징을 정책 디코더에 적응시킴으로써 디코더가 처음부터 3D 일관성을 학습할 필요가 없게 한다. LIBERO 및 CALVIN 벤치마크에서의 광범위한 실험은 GeoAware-VLA가 기존 분포 내 성능을 유지하거나 심지어 향상시키면서 보지 못한 카메라 포즈에 대한 제로샷 일반화에서 상당한 진전을 이루었음을 보여준다: LIBERO에서 보지 못한 시점 성공률이 평균 35퍼센트 포인트, CALVIN에서 11퍼센트 포인트 이상 향상되었다. 이러한 이득은 실제 로봇 플랫폼에서도 검증되었으며, 이 방법은 연속 및 이산 행동 공간 모두에서 효과적으로 작동하여 강건한 기하 기반이 더 일반적인 로봇 에이전트를 구축하는 핵심 요소임을 증명한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 강력한 기하 사전 지식을 비전 백본 네트워크에 주입하여 카메라 시점 변화에 대한 모델의 강건성을 향상시킨다.
+- **특징 추출**: 동결된 사전 훈련된 기하 비전 모델(예: DINOv2 또는 유사한 기하 인식 모델)을 고정 특징 추출기로 사용하며, 어떠한 미세 조정도 수행하지 않는다.
+- **특징 적응**: 기하 특징 추출기와 정책 디코더 사이에 경량의 훈련 가능한 프로젝션 레이어를 삽입하여 기하 정보가 풍부한 특징을 정책 디코더가 사용할 수 있는 표현으로 매핑한다.
+- **정책 디코더**: 디코더는 더 이상 3D 일관성을 학습할 필요 없이 프로젝션된 기하 특징을 직접 활용하여 행동을 예측하므로 학습 부담이 줄어든다.
+
+### 실험 설정
+- **벤치마크 테스트**: LIBERO 및 CALVIN 두 가지 주요 로봇 조작 벤치마크에서 평가한다.
+- **평가 지표**: 주로 분포 내 성능과 보지 못한 카메라 시점에 대한 제로샷 일반화 성공률에 초점을 맞춘다.
+- **행동 공간**: 연속 행동 공간과 이산 행동 공간 모두에서 유효성을 검증한다.
+
+### 주요 수치 및 결과
+- **LIBERO 벤치마크**: 보지 못한 시점 성공률이 평균 **35퍼센트 포인트** 향상되었으며, 분포 내 성능은 유지되거나 약간 향상되었다.
+- **CALVIN 벤치마크**: 보지 못한 시점 성공률이 평균 **11퍼센트 포인트 이상** 향상되었다.
+- **실제 로봇 플랫폼**: 물리 세계 실험에서 모델이 베이스라인보다 현저히 우수한 성능을 보여 시뮬레이션에서의 이득이 실제 환경으로 성공적으로 전이될 수 있음을 증명한다.
+- **비교 베이스라인**: 기하 사전 지식을 사용하지 않은 VLA 모델(예: Octo, RT-2 등)과 비교하여 GeoAware-VLA는 시점 일반화에서 압도적인 우위를 가진다.
+
+### 결론
+GeoAware-VLA는 간단한 기하 특징 주입 전략을 통해 VLA 모델의 카메라 시점 과적합 문제를 효과적으로 해결한다. 실험은 복잡한 3D 재구성이나 추가 훈련 없이 동결된 기하 비전 모델만 활용해도 제로샷 일반화 능력을 크게 향상시킬 수 있음을 증명하며, 이 방법은 시뮬레이션과 실제 환경, 연속 및 이산 행동 공간 모두에서 일관된 성능을 보인다. 이는 강건한 기하 기반이 일반화 가능한 로봇 에이전트를 구축하는 핵심 요소임을 밝혀낸다.

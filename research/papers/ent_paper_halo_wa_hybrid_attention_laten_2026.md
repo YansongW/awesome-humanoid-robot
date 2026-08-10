@@ -51,8 +51,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04265v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04265v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1097 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,27 @@ HALO-WA 通过混合注意力潜在引导的在线强化学习，显著提升了
 ## Overview
 World-action (WA) models can generate long-horizon action chunks for general-purpose robotic manipulation, but they remain vulnerable to calibration, perception, and contact-dynamics errors in real-world precision tasks, often failing in the final few millimeters of alignment or insertion. We propose HALO-WA, a hybrid-attention latent-guided online reinforcement learning (RL) framework for WA models, which leverages latent features and action priors from the WA generation process through a lightweight actor-critic adapter to enable fast online adaptation to real deployment errors. HALO-WA introduces a hybrid-attention structure that preserves the temporal consistency of action chunks while reading task-relevant information from WA latents conditioned on visual context and end-stage correction requirements, thereby producing refined action chunks. We validate HALO-WA on four real-world precision manipulation tasks, where it improves the average success rate from 26.4\% for WA-base to 87.1\%, outperforming the strongest baseline by 19.2 percentage points while requiring only 45--75 minutes of online training per task. To facilitate reproducibility, we further conduct supplementary simulation experiments in RoboTwin and release the code at https://github.com/YeanRoot/HALO-WA.
 
-## 개요
-World-action (WA) 모델은 범용 로봇 조작을 위한 장기 행동 청크를 생성할 수 있지만, 실제 정밀 작업에서 캘리브레이션, 인식 및 접촉 역학 오류에 취약하여 정렬이나 삽입의 마지막 몇 밀리미터에서 종종 실패합니다. 우리는 WA 모델을 위한 하이브리드 어텐션 잠재 유도 온라인 강화 학습(RL) 프레임워크인 HALO-WA를 제안합니다. 이는 경량의 액터-크리틱 어댑터를 통해 WA 생성 과정의 잠재 특징과 행동 사전을 활용하여 실제 배포 오류에 빠르게 온라인 적응할 수 있도록 합니다. HALO-WA는 시각적 맥락과 최종 단계 보정 요구 사항에 따라 WA 잠재 변수에서 작업 관련 정보를 읽으면서 행동 청크의 시간적 일관성을 유지하는 하이브리드 어텐션 구조를 도입하여 정제된 행동 청크를 생성합니다. 우리는 네 가지 실제 정밀 조작 작업에서 HALO-WA를 검증했으며, WA-base의 평균 성공률을 26.4%에서 87.1%로 향상시켜 가장 강력한 기준선보다 19.2% 포인트 높은 성능을 보였으며, 작업당 45~75분의 온라인 훈련만 필요로 했습니다. 재현성을 높이기 위해 RoboTwin에서 추가 시뮬레이션 실험을 수행하고 코드를 https://github.com/YeanRoot/HALO-WA에서 공개합니다.
-
-## 핵심 내용
-World-action (WA) 모델은 범용 로봇 조작을 위한 장기 행동 청크를 생성할 수 있지만, 실제 정밀 작업에서 캘리브레이션, 인식 및 접촉 역학 오류에 취약하여 정렬이나 삽입의 마지막 몇 밀리미터에서 종종 실패합니다. 우리는 WA 모델을 위한 하이브리드 어텐션 잠재 유도 온라인 강화 학습(RL) 프레임워크인 HALO-WA를 제안합니다. 이는 경량의 액터-크리틱 어댑터를 통해 WA 생성 과정의 잠재 특징과 행동 사전을 활용하여 실제 배포 오류에 빠르게 온라인 적응할 수 있도록 합니다. HALO-WA는 시각적 맥락과 최종 단계 보정 요구 사항에 따라 WA 잠재 변수에서 작업 관련 정보를 읽으면서 행동 청크의 시간적 일관성을 유지하는 하이브리드 어텐션 구조를 도입하여 정제된 행동 청크를 생성합니다. 우리는 네 가지 실제 정밀 조작 작업에서 HALO-WA를 검증했으며, WA-base의 평균 성공률을 26.4%에서 87.1%로 향상시켜 가장 강력한 기준선보다 19.2% 포인트 높은 성능을 보였으며, 작업당 45~75분의 온라인 훈련만 필요로 했습니다. 재현성을 높이기 위해 RoboTwin에서 추가 시뮬레이션 실험을 수행하고 코드를 https://github.com/YeanRoot/HALO-WA에서 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04265v1
+
+## 개요
+HALO-WA는 WA 모델이 실제 정밀 조작에서 교정, 인식 및 접촉 역학 오류로 인해 실패하는 문제를 해결하기 위해, 혼합 주의 잠재 유도 온라인 강화 학습 프레임워크를 제안합니다. 이 프레임워크는 경량 actor-critic 어댑터를 통해 WA 생성 과정에서 잠재 특징과 행동 사전을 추출하여 빠른 온라인 적응을 구현합니다. 혼합 주의 구조는 행동 블록의 시간적 일관성을 유지하면서, 시각적 맥락과 종료 단계 수정 요구에 따라 WA 잠재에서 작업 관련 정보를 읽어 정제된 행동 블록을 생성합니다. 네 가지 실제 정밀 조작 작업에서 HALO-WA는 평균 성공률을 WA-base의 26.4%에서 87.1%로 향상시켰으며, 가장 강력한 기준선보다 19.2% 포인트 높았고, 각 작업은 45-75분의 온라인 훈련만 필요로 했습니다.
+
+## 핵심 내용
+### 방법 개요
+HALO-WA의 핵심은 세계-행동(WA) 모델을 위해 설계된 혼합 주의 잠재 유도 온라인 강화 학습 프레임워크입니다. 이는 경량 actor-critic 어댑터를 통해 WA 생성 과정에서 잠재 특징과 행동 사전을 추출하여 실제 배포에서의 오류에 빠르게 적응합니다. 이 프레임워크는 혼합 주의 구조를 도입하여 행동 블록의 시간적 일관성을 유지하면서, 시각적 맥락과 종료 단계 수정 요구에 따라 WA 잠재에서 작업 관련 정보를 읽어 정제된 행동 블록을 생성합니다.
+
+### 아키텍처 세부 사항
+- **혼합 주의 구조**: 이 구조는 두 가지 주의 메커니즘을 결합합니다. 하나는 행동 블록의 시간적 일관성을 유지하는 데 사용되고, 다른 하나는 WA 잠재에서 작업 관련 정보를 읽는 데 사용됩니다. 이 설계는 행동을 수정할 때 기존의 시간적 시퀀스 구조를 손상시키지 않도록 보장합니다.
+- **actor-critic 어댑터**: 이는 온라인 강화 학습을 통해 WA 모델이 생성한 초기 행동 블록을 미세 조정하는 경량 모듈입니다. WA 잠재 특징과 행동 사전을 활용하여 교정, 인식 및 접촉 역학 오류와 같은 실제 배포에서의 오류에 빠르게 적응합니다.
+
+### 실험 설정 및 결과
+- **작업 및 기준선**: 정렬 및 삽입과 같은 작업을 포함한 네 가지 실제 정밀 조작 작업에서 검증되었습니다. 기준선에는 WA-base 및 여러 강력한 기준 방법이 포함됩니다.
+- **주요 수치**:
+  - HALO-WA는 평균 성공률을 WA-base의 26.4%에서 87.1%로 향상시켰습니다.
+  - 가장 강력한 기준선보다 19.2% 포인트 높습니다.
+  - 각 작업은 45-75분의 온라인 훈련만 필요로 합니다.
+- **추가 실험**: 재현성을 촉진하기 위해 RoboTwin 시뮬레이션 환경에서 추가 실험을 수행했습니다. 코드는 https://github.com/YeanRoot/HALO-WA에서 오픈소스로 제공됩니다.
+
+### 결론
+HALO-WA는 혼합 주의 잠재 유도 온라인 강화 학습을 통해 WA 모델의 실제 정밀 조작 작업에서 성공률을 크게 향상시키면서도 낮은 훈련 시간 비용을 유지합니다. 경량 어댑터 설계는 기존 WA 모델에 쉽게 통합될 수 있게 하여, 로봇 조작에서의 온라인 적응을 위한 효과적인 솔루션을 제공합니다.

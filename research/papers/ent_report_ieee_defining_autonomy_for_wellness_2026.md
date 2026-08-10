@@ -45,8 +45,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://content.knowledgehub.wiley.com/wellness-robots-and-the-path-to-full-autonomy-a-new-paradigm-in-ai-powered-senior-care/.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://content.knowledgehub.wiley.com/wellness-robots-and-the-path-to-full-autonomy-a-new-paradigm-in-ai-powered-senior-care/.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (731 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -80,11 +81,21 @@ Download this complimentary White Paper today! This White Paper gives engineers,
 ## Content
 Download this complimentary White Paper today! This White Paper gives engineers, researchers, and care professionals an overview of how socially assistive wellness robots can support senior wellness, and how a framework can measure their autonomy. What you will learn about: Why the senior care crisis exceeds incremental healthcare automation. Staffing shortages, rising dementia prevalence, and limited daily wellness programming all play a part. How the seven ICAA dimensions of wellness define a distinct category of socially assistive robot, separate from companion devices, medical devices, and general-purpose humanoids. How the Care Robot Autonomy Scale (CRAS), a six-level framework modeled on a driving-automation standard, measures autonomy across four wellness dimensions. What technical capabilities, clinical evidence, and a three-phase roadmap suggest about the path from current practice toward full wellness autonomy in the early 2030s. Click 'LOOK INSIDE' to Download Now.
 
-## 개요
-지금 바로 이 무료 백서를 다운로드하세요! 이 백서는 엔지니어, 연구자, 돌봄 전문가에게 사회적 지원 웰니스 로봇이 노인 웰니스를 어떻게 지원할 수 있는지, 그리고 프레임워크가 그 자율성을 어떻게 측정할 수 있는지에 대한 개요를 제공합니다. 배울 내용: 노인 돌봄 위기가 점진적인 의료 자동화를 초과하는 이유. 인력 부족, 치매 유병률 증가, 제한된 일일 웰니스 프로그램이 모두 영향을 미칩니다. 7가지 ICAA 웰니스 차원이 동반자 기기, 의료 기기, 범용 휴머노이드와는 별개로 사회적 지원 로봇의 독특한 범주를 어떻게 정의하는지. 운전 자동화 표준을 모델로 한 6단계 프레임워크인 돌봄 로봇 자율성 척도(CRAS)가 4가지 웰니스 차원에서 자율성을 어떻게 측정하는지. 기술적 역량, 임상 증거, 3단계 로드맵이 현재 관행에서 2030년대 초 완전한 웰니스 자율성으로 가는 경로에 대해 시사하는 바. 'LOOK INSIDE'를 클릭하여 지금 다운로드하세요.
-
-## 핵심 내용
-지금 바로 이 무료 백서를 다운로드하세요! 이 백서는 엔지니어, 연구자, 돌봄 전문가에게 사회적 지원 웰니스 로봇이 노인 웰니스를 어떻게 지원할 수 있는지, 그리고 프레임워크가 그 자율성을 어떻게 측정할 수 있는지에 대한 개요를 제공합니다. 배울 내용: 노인 돌봄 위기가 점진적인 의료 자동화를 초과하는 이유. 인력 부족, 치매 유병률 증가, 제한된 일일 웰니스 프로그램이 모두 영향을 미칩니다. 7가지 ICAA 웰니스 차원이 동반자 기기, 의료 기기, 범용 휴머노이드와는 별개로 사회적 지원 로봇의 독특한 범주를 어떻게 정의하는지. 운전 자동화 표준을 모델로 한 6단계 프레임워크인 돌봄 로봇 자율성 척도(CRAS)가 4가지 웰니스 차원에서 자율성을 어떻게 측정하는지. 기술적 역량, 임상 증거, 3단계 로드맵이 현재 관행에서 2030년대 초 완전한 웰니스 자율성으로 가는 경로에 대해 시사하는 바. 'LOOK INSIDE'를 클릭하여 지금 다운로드하세요.
-
 ## 参考
 - https://content.knowledgehub.wiley.com/wellness-robots-and-the-path-to-full-autonomy-a-new-paradigm-in-ai-powered-senior-care/
+
+## 개요
+본 문서는 엔지니어, 연구자 및 간호 전문가를 대상으로, 사회적 보조형 건강 로봇이 노인 건강을 어떻게 지원할 수 있는지, 그리고 프레임워크를 통해 그 자율성을 어떻게 측정할 수 있는지 개괄합니다. 내용은 먼저 노인 간호 위기가 왜 점진적인 의료 자동화를 넘어서는지 분석하며, 인력 부족, 치매 유병률 증가 및 일상 건강 계획의 부족을 다룹니다. 다음으로, 건강 로봇을 독립적인 범주로 정의하여 동반자 기기, 의료 기기 및 범용 휴머노이드 로봇과 구분하고, ICAA의 일곱 가지 건강 차원을 기준으로 분류합니다. 핵심 기여는 Care Robot Autonomy Scale (CRAS)을 제안하는 것으로, 이는 네 가지 건강 차원에서 로봇의 자율성을 측정하는 6단계 프레임워크입니다. 마지막으로, 기술 역량, 임상 증거 및 2030년대 초까지 완전한 건강 자율성을 달성하기 위한 3단계 로드맵을 논의합니다.
+
+## 핵심 내용
+### 노인 간호 위기와 건강 로봇 정의
+- 노인 간호 위기는 인구 압력, 노동력 부족 및 일상 건강 계획의 공백에서 비롯되며, 기존 간호 모델로는 대응하기 어렵습니다.
+- 건강 로봇은 사회적 보조형 로봇으로 정의되며, ICAA의 일곱 가지 건강 차원(예: 신체, 사회, 지적 등)과 여덟 가지 속성을 기반으로 동반자 기기, 의료 기기 및 범용 휴머노이드 로봇과 구분됩니다.
+
+### 자율성 측정 프레임워크: Care Robot Autonomy Scale (CRAS)
+- CRAS는 SAE J3016 운전 자동화 표준을 모방한 6단계 프레임워크로, 네 가지 간호 차원(예: 건강 모니터링, 활동 계획 등)에서 로봇의 자율성을 평가하는 데 사용됩니다.
+- 단계는 0(자율성 없음)부터 5(완전 자율)까지이며, 각 단계는 특정 작업에서 로봇의 의사 결정 및 실행 능력을 정의합니다.
+
+### 기술 역량과 로드맵
+- 기술 역량에는 센서, AI 알고리즘 및 상호작용 인터페이스가 포함되며, 임상 증거는 노인 건강 결과 개선에 있어 그 효과성을 뒷받침합니다.
+- 3단계 로드맵: 현재 단계는 보조 작업에 초점을 맞추고, 중기 단계(2020년대 중반)는 부분 자율성을 구현하며, 장기 단계(2030년대 초)는 일곱 가지 모든 건강 차원을 포괄하는 완전한 건강 자율성에 도달합니다.

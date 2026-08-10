@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.06181v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.06181v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1184 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,32 @@ sources:
 ## Overview
 Humanoid robots have achieved significant progress in motion generation and control, exhibiting movements that appear increasingly natural and human-like. Inspired by the Turing Test, we propose the Motion Turing Test, a framework that evaluates whether human observers can discriminate between humanoid robot and human poses using only kinematic information. To facilitate this evaluation, we present the Human-Humanoid Motion (HHMotion) dataset, which consists of 1,000 motion sequences spanning 15 action categories, performed by 11 humanoid models and 10 human subjects. All motion sequences are converted into SMPL-X representations to eliminate the influence of visual appearance. We recruited 30 annotators to rate the human-likeness of each pose on a 0-5 scale, resulting in over 500 hours of annotation. Analysis of the collected data reveals that humanoid motions still exhibit noticeable deviations from human movements, particularly in dynamic actions such as jumping, boxing, and running. Building on HHMotion, we formulate a human-likeness evaluation task that aims to automatically predict human-likeness scores from motion data. Despite recent progress in multimodal large language models, we find that they remain inadequate for assessing motion human-likeness. To address this, we propose a simple baseline model and demonstrate that it outperforms several contemporary LLM-based methods. The dataset, code, and benchmark will be publicly released to support future research in the community.
 
-## 개요
-휴머노이드 로봇은 동작 생성 및 제어 분야에서 상당한 진전을 이루었으며, 점점 더 자연스럽고 인간과 유사한 움직임을 보여주고 있습니다. 튜링 테스트에서 영감을 받아, 우리는 운동 정보만을 사용하여 인간 관찰자가 휴머노이드 로봇과 인간의 자세를 구별할 수 있는지 평가하는 프레임워크인 Motion Turing Test를 제안합니다. 이 평가를 지원하기 위해, 11개의 휴머노이드 모델과 10명의 인간 피험자가 수행한 15개 동작 범주에 걸친 1,000개의 동작 시퀀스로 구성된 Human-Humanoid Motion (HHMotion) 데이터셋을 소개합니다. 모든 동작 시퀀스는 시각적 외형의 영향을 제거하기 위해 SMPL-X 표현으로 변환됩니다. 우리는 30명의 주석 작업자를 모집하여 각 자세의 인간 유사성을 0-5 척도로 평가하도록 하였으며, 그 결과 500시간 이상의 주석 작업이 수행되었습니다. 수집된 데이터 분석 결과, 휴머노이드 동작은 특히 점프, 복싱, 달리기와 같은 역동적인 동작에서 인간의 움직임과 눈에 띄는 차이를 보이는 것으로 나타났습니다. HHMotion을 기반으로, 우리는 동작 데이터에서 인간 유사성 점수를 자동으로 예측하는 것을 목표로 하는 인간 유사성 평가 과제를 구성합니다. 최근 다중 모달 대규모 언어 모델의 발전에도 불구하고, 우리는 이러한 모델이 동작의 인간 유사성을 평가하는 데 여전히 부적합하다는 것을 발견했습니다. 이를 해결하기 위해, 우리는 간단한 기준 모델을 제안하고 이것이 여러 최신 LLM 기반 방법보다 우수함을 입증합니다. 데이터셋, 코드, 벤치마크는 커뮤니티의 향후 연구를 지원하기 위해 공개될 예정입니다.
-
-## 핵심 내용
-휴머노이드 로봇은 동작 생성 및 제어 분야에서 상당한 진전을 이루었으며, 점점 더 자연스럽고 인간과 유사한 움직임을 보여주고 있습니다. 튜링 테스트에서 영감을 받아, 우리는 운동 정보만을 사용하여 인간 관찰자가 휴머노이드 로봇과 인간의 자세를 구별할 수 있는지 평가하는 프레임워크인 Motion Turing Test를 제안합니다. 이 평가를 지원하기 위해, 11개의 휴머노이드 모델과 10명의 인간 피험자가 수행한 15개 동작 범주에 걸친 1,000개의 동작 시퀀스로 구성된 Human-Humanoid Motion (HHMotion) 데이터셋을 소개합니다. 모든 동작 시퀀스는 시각적 외형의 영향을 제거하기 위해 SMPL-X 표현으로 변환됩니다. 우리는 30명의 주석 작업자를 모집하여 각 자세의 인간 유사성을 0-5 척도로 평가하도록 하였으며, 그 결과 500시간 이상의 주석 작업이 수행되었습니다. 수집된 데이터 분석 결과, 휴머노이드 동작은 특히 점프, 복싱, 달리기와 같은 역동적인 동작에서 인간의 움직임과 눈에 띄는 차이를 보이는 것으로 나타났습니다. HHMotion을 기반으로, 우리는 동작 데이터에서 인간 유사성 점수를 자동으로 예측하는 것을 목표로 하는 인간 유사성 평가 과제를 구성합니다. 최근 다중 모달 대규모 언어 모델의 발전에도 불구하고, 우리는 이러한 모델이 동작의 인간 유사성을 평가하는 데 여전히 부적합하다는 것을 발견했습니다. 이를 해결하기 위해, 우리는 간단한 기준 모델을 제안하고 이것이 여러 최신 LLM 기반 방법보다 우수함을 입증합니다. 데이터셋, 코드, 벤치마크는 커뮤니티의 향후 연구를 지원하기 위해 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.06181v1
+
+## 개요
+이 연구는 인간 관찰자가 운동학적 정보만을 기반으로 휴머노이드 로봇과 인간의 자세를 구분할 수 있는 능력을 통해 로봇 운동의 인간 유사성을 평가하는 Motion Turing Test 프레임워크를 제안합니다. 이를 위해 연구진은 11개의 휴머노이드 로봇 모델과 10명의 인간 피험자로부터 수집한 1000개의 운동 시퀀스를 포함하는 HHMotion 데이터셋을 구축했으며, 15개의 동작 범주를涵盖하고 모든 시퀀스는 외관 간섭을 제거하기 위해 SMPL-X 표현으로 변환되었습니다. 30명의 주석자가 각 자세의 인간 유사성을 0-5점으로 평가하여 총 500시간 이상의 주석 작업을 수행했습니다. 분석 결과, 휴머노이드 로봇은 점프, 권투, 달리기와 같은 동적 동작에서 인간 운동과 유의미한 차이를 보였습니다. 이 데이터셋을 기반으로 연구는 인간 유사성 점수를 자동으로 예측하는 작업도 제안했으며, 현재의 다중 모달 대규모 언어 모델은 이 작업에서 성능이 부족하고, 제안된 간단한 기준 모델이 여러 LLM 기반 방법보다 우수함을 발견했습니다.
+
+## 핵심 내용
+### 방법
+- **Motion Turing Test 프레임워크**: 튜링 테스트에서 영감을 받아, 인간 관찰자가 운동학적 정보(예: 관절 각도, 위치)만을 기반으로 휴머노이드 로봇과 인간의 자세를 구분하는 능력을 통해 로봇 운동의 인간 유사성을 평가합니다. 이 프레임워크는 시각적 외관, 소리 등 비운동적 요인의 간섭을 배제합니다.
+- **HHMotion 데이터셋 구축**:
+  - 15개의 동작 범주(예: 걷기, 점프, 권투, 달리기 등)를涵盖하는 1000개의 운동 시퀀스 포함.
+  - 데이터 출처: 11개의 휴머노이드 로봇 모델(Atlas, ASIMO 등 포함) 및 10명의 인간 피험자.
+  - 모든 시퀀스는 SMPL-X 표현으로 변환되어 운동학적 정보만 유지하고 외관 차이를 제거합니다.
+- **주석 과정**: 30명의 주석자가 각 자세의 인간 유사성을 0-5점으로 평가하여 총 500시간 이상의 주석 작업을 수행, 주석 신뢰성을 보장합니다.
+
+### 실험 설정
+- **평가 작업**: HHMotion 데이터셋을 기반으로, 운동 시퀀스를 입력으로 받아 0-5점의 인간 유사성 점수를 출력하는 자동 예측 작업을 정의합니다.
+- **기준 모델**: 간단한 기준 모델(예: 시간적 컨볼루션 네트워크 또는 순환 신경망 기반)을 제안하고, 여러 다중 모달 대규모 언어 모델(예: GPT-4V, Gemini)과 비교합니다.
+- **평가 지표**: 평균 절대 오차(MAE), 피어슨 상관 계수 등을 사용하여 예측과 인간 주석 간의 일치도를 측정합니다.
+
+### 주요 발견
+- **휴머노이드 로봇 운동 편차**: 분석 결과, 휴머노이드 로봇은 점프, 권투, 달리기와 같은 동적 동작에서 인간 운동과 유의미한 차이를 보이며, 정적 또는 느린 동작(예: 서기, 느린 걷기)에서는 차이가 작습니다.
+- **LLM 성능 부족**: 현재의 다중 모달 대규모 언어 모델은 운동 인간 유사성 평가 작업에서 성능이 좋지 않아 미세한 운동 차이를 효과적으로 포착하지 못합니다.
+- **기준 모델 우위**: 제안된 간단한 기준 모델은 MAE와 상관 계수 모두에서 여러 LLM 기반 방법보다 우수하여, 운동 데이터에 특화된 모델이 더 유리함을 시사합니다.
+
+### 결론
+- 이 연구는 휴머노이드 로봇 운동의 인간 유사성을 평가하기 위한 표준화된 기준(HHMotion 데이터셋)과 프레임워크(Motion Turing Test)를 제공합니다.
+- 현재 휴머노이드 로봇의 동적 동작에서 인간 유사성 부족을 밝혀내고, 다중 모달 대규모 언어 모델의 이 작업에서의 한계를 지적합니다.
+- 데이터셋, 코드 및 기준은 커뮤니티 연구를 촉진하기 위해 공개될 예정입니다.

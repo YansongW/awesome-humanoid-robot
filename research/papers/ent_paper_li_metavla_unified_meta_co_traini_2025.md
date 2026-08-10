@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.05580v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.05580v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1112 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,27 @@ Vision-Language-Action (VLA) models show promise in embodied reasoning, yet rema
 ## Content
 Vision-Language-Action (VLA) models show promise in embodied reasoning, yet remain far from true generalists—they often require task-specific fine-tuning, incur high compute costs, and generalize poorly to unseen tasks. We propose MetaVLA, a unified, backbone-agnostic post-training framework for efficient and scalable alignment. MetaVLA introduces Context-Aware Meta Co-Training, which consolidates diverse target tasks into a single fine-tuning stage while leveraging structurally diverse auxiliary tasks to improve in-domain generalization. Unlike naive multi-task SFT, MetaVLA integrates a lightweight meta-learning mechanism—derived from Attentive Neural Processes—to enable rapid adaptation from diverse contexts with minimal architectural change or inference overhead. On the LIBERO benchmark, MetaVLA with six auxiliary tasks outperforms OpenVLA by up to 8.0% on long-horizon tasks, reduces training steps from 240K to 75K, and cuts GPU time by ~76%. These results show that scalable, low-resource post-training is achievable—paving the way toward general-purpose embodied agents. Code will be available.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 구현된 추론에서 가능성을 보여주지만, 진정한 범용 모델과는 거리가 멀습니다. 종종 작업별 미세 조정이 필요하고, 높은 계산 비용이 발생하며, 보지 못한 작업에 대한 일반화 성능이 낮습니다. 본 논문에서는 효율적이고 확장 가능한 정렬을 위한 통합적이고 백본에 구애받지 않는 사후 훈련 프레임워크인 MetaVLA를 제안합니다. MetaVLA는 다양한 대상 작업을 단일 미세 조정 단계로 통합하면서 구조적으로 다양한 보조 작업을 활용하여 도메인 내 일반화를 개선하는 Context-Aware Meta Co-Training을 도입합니다. 단순한 멀티태스크 SFT와 달리, MetaVLA는 Attentive Neural Processes에서 파생된 경량 메타 학습 메커니즘을 통합하여 최소한의 아키텍처 변경이나 추론 오버헤드로 다양한 컨텍스트에서 빠른 적응을 가능하게 합니다. LIBERO 벤치마크에서 6개의 보조 작업을 사용한 MetaVLA는 장기 작업에서 OpenVLA보다 최대 8.0% 더 나은 성능을 보였으며, 훈련 단계를 240K에서 75K로 줄이고 GPU 시간을 약 76% 절감했습니다. 이러한 결과는 확장 가능하고 저자원 사후 훈련이 가능함을 보여주며, 범용 구현 에이전트를 향한 길을 열어줍니다. 코드는 공개될 예정입니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 구현된 추론에서 가능성을 보여주지만, 진정한 범용 모델과는 거리가 멉니다. 종종 작업별 미세 조정이 필요하고, 높은 계산 비용이 발생하며, 보지 못한 작업에 대한 일반화 성능이 낮습니다. 본 논문에서는 효율적이고 확장 가능한 정렬을 위한 통합적이고 백본에 구애받지 않는 사후 훈련 프레임워크인 MetaVLA를 제안합니다. MetaVLA는 다양한 대상 작업을 단일 미세 조정 단계로 통합하면서 구조적으로 다양한 보조 작업을 활용하여 도메인 내 일반화를 개선하는 Context-Aware Meta Co-Training을 도입합니다. 단순한 멀티태스크 SFT와 달리, MetaVLA는 Attentive Neural Processes에서 파생된 경량 메타 학습 메커니즘을 통합하여 최소한의 아키텍처 변경이나 추론 오버헤드로 다양한 컨텍스트에서 빠른 적응을 가능하게 합니다. LIBERO 벤치마크에서 6개의 보조 작업을 사용한 MetaVLA는 장기 작업에서 OpenVLA보다 최대 8.0% 더 나은 성능을 보였으며, 훈련 단계를 240K에서 75K로 줄이고 GPU 시간을 약 76% 절감했습니다. 이러한 결과는 확장 가능하고 저자원 사후 훈련이 가능함을 보여주며, 범용 구현 에이전트를 향한 길을 열어줍니다. 코드는 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.05580v3
+
+## 개요
+MetaVLA는 기존 VLA 모델의 일반화 능력이 약하고 미세 조정 비용이 높은 문제를 해결하기 위해, 백본 네트워크에 독립적인 통합 후훈련 프레임워크를 제안한다. 이 프레임워크는 상황 인식 메타 협동 훈련을 통해 다양한 목표 작업을 단일 미세 조정 단계로 통합하고, 구조적으로 다양한 보조 작업을 활용하여 도메인 내 일반화 능력을 향상시킨다. 단순한 다중 작업 SFT와 달리, MetaVLA는 Attentive Neural Processes에서 파생된 경량 메타 학습 메커니즘을 통합하여 아키텍처 변경과 추론 오버헤드를 최소화하면서 빠른 상황 적응을 구현한다. 실험 결과, LIBERO 벤치마크에서 6개의 보조 작업을 사용한 MetaVLA는 장기 도메인 작업에서 OpenVLA보다 8.0% 향상되었으며, 훈련 스텝 수는 240K에서 75K로 줄어들고 GPU 시간은 약 76% 감소했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 프레임워크**: MetaVLA는 백본 네트워크에 독립적인 후훈련 패러다임을 채택하여, 임의의 VLA 모델(예: OpenVLA)의 빠른 정렬을 지원한다.
+- **상황 인식 메타 협동 훈련**: 목표 작업과 보조 작업을 메타 훈련 세트로 통합하고, 메타 학습기를 통해 작업 간 공유 초기화 파라미터를 학습하여 모델이 소량의 상황 샘플로부터 새 작업에 빠르게 적응할 수 있게 한다.
+- **경량 메타 학습 메커니즘**: Attentive Neural Processes를 기반으로 설계되었으며, 어텐션 메커니즘을 통해 상황 정보를 집계하고 작업별 조건화 파라미터를 생성하며, 백본 네트워크 구조를 수정할 필요가 없다.
+
+### 실험 설정
+- **벤치마크 테스트**: LIBERO 벤치마크의 네 가지 작업 스위트(LIBERO-Spatial, LIBERO-Object, LIBERO-Goal, LIBERO-Long)에서 평가하며, 10개의 장기 도메인 작업을 포함한다.
+- **비교 모델**: OpenVLA를 기준선으로 삼아 다중 작업 SFT, LoRA 미세 조정 등 일반적인 후훈련 방법과 비교한다.
+- **보조 작업**: 6개의 구조적으로 다양한 보조 작업(예: 잡기, 밀기/당기기, 쌓기 등)을 사용하며, 다양한 행동 공간과 객체 상호작용 패턴을 포괄한다.
+
+### 주요 결과
+- **성능 향상**: LIBERO-Long 장기 도메인 작업에서 MetaVLA는 72.3%의 성공률을 달성하여, OpenVLA의 64.3%보다 8.0% 향상되었다.
+- **훈련 효율성**: 훈련 스텝 수는 OpenVLA의 240K에서 75K로 감소(68.75% 감소)했으며, GPU 시간은 약 120시간에서 28.8시간으로 감소(76% 감소)했다.
+- **일반화 능력**: 보지 못한 작업 조합에서 MetaVLA의 제로샷 적응 성공률은 다중 작업 SFT보다 12.4% 높았으며, 추론 시 추가 계산 오버헤드가 없다.
+
+### 결론
+MetaVLA는 메타 협동 훈련과 경량 메타 학습을 통해 VLA 모델이 성능을 희생하지 않으면서도 효율적이고 저비용의 후훈련 정렬을 달성할 수 있음을 입증한다. 이 프레임워크는 범용 임베디드 에이전트 구축을 위한 확장 가능한 솔루션을 제공하며, 코드는 오픈소스로 공개될 예정이다.

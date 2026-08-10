@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07418v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07418v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (691 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -62,11 +63,22 @@ Lightning Grasp 通过 Contact Field 抽象实现了程序化抓取合成在速�
 ## Overview
 Despite years of research, real-time diverse grasp synthesis for dexterous hands remains an unsolved core challenge in robotics and computer graphics. We present Lightning Grasp, a novel high-performance procedural grasp synthesis algorithm that achieves orders-of-magnitude speedups over state-of-the-art approaches, while enabling unsupervised grasp generation for irregular, tool-like objects. The method avoids many limitations of prior approaches, such as the need for carefully tuned energy functions and sensitive initialization. This breakthrough is driven by a key insight: decoupling complex geometric computation from the search process via a simple, efficient data structure - the Contact Field. This abstraction collapses the problem complexity, enabling a procedural search at unprecedented speeds. We open-source our system to propel further innovation in robotic manipulation.
 
-## 개요
-수년간의 연구에도 불구하고, 다중 손가락 로봇 손을 위한 실시간 다양한 파지 합성은 로봇 공학 및 컴퓨터 그래픽스에서 여전히 해결되지 않은 핵심 과제로 남아 있습니다. 본 논문에서는 최신 접근법 대비 수 배에서 수십 배의 속도 향상을 달성하면서도 불규칙한 도구 형태의 객체에 대한 비지도 파지 생성을 가능하게 하는 새로운 고성능 절차적 파지 합성 알고리즘인 Lightning Grasp를 제시합니다. 이 방법은 세심하게 조정된 에너지 함수나 민감한 초기화가 필요하다는 기존 접근법의 많은 한계를 극복합니다. 이러한 혁신은 간단하고 효율적인 데이터 구조인 접촉 필드(Contact Field)를 통해 복잡한 기하학적 계산을 탐색 과정에서 분리하는 핵심 통찰에서 비롯됩니다. 이 추상화는 문제 복잡성을 축소하여 전례 없는 속도로 절차적 탐색을 가능하게 합니다. 로봇 조작 분야의 추가 혁신을 촉진하기 위해 시스템을 오픈소스로 공개합니다.
-
-## 핵심 내용
-수년간의 연구에도 불구하고, 다중 손가락 로봇 손을 위한 실시간 다양한 파지 합성은 로봇 공학 및 컴퓨터 그래픽스에서 여전히 해결되지 않은 핵심 과제로 남아 있습니다. 본 논문에서는 최신 접근법 대비 수 배에서 수십 배의 속도 향상을 달성하면서도 불규칙한 도구 형태의 객체에 대한 비지도 파지 생성을 가능하게 하는 새로운 고성능 절차적 파지 합성 알고리즘인 Lightning Grasp를 제시합니다. 이 방법은 세심하게 조정된 에너지 함수나 민감한 초기화가 필요하다는 기존 접근법의 많은 한계를 극복합니다. 이러한 혁신은 간단하고 효율적인 데이터 구조인 접촉 필드(Contact Field)를 통해 복잡한 기하학적 계산을 탐색 과정에서 분리하는 핵심 통찰에서 비롯됩니다. 이 추상화는 문제 복잡성을 축소하여 전례 없는 속도로 절차적 탐색을 가능하게 합니다. 로봇 조작 분야의 추가 혁신을 촉진하기 위해 시스템을 오픈소스로 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.07418v1
+
+## 개요
+손재주 있는 로봇 손의 실시간 다양화 그리퍼 합성이라는 오랜 기간 해결되지 않은 로봇공학 및 컴퓨터 그래픽스의 핵심 난제에 대해, Lightning Grasp는 새로운 절차적 알고리즘을 제안한다. 이 방법은 Contact Field라는 효율적인 데이터 추상화를 도입하여 복잡한 기하학적 계산과 탐색 과정을 분리함으로써 문제 복잡도를 크게 낮춘다. 정교하게 조정된 에너지 함수와 민감한 초기화에 의존하는 전통적인 방법과 달리, 이 알고리즘은 비지도 그리퍼 생성을 구현하면서도 수십 배의 속도 향상을 달성하며, 특히 불규칙한 도구류 객체에 적합하다.
+
+## 핵심 내용
+### 방법 구조
+- **핵심 혁신**: Contact Field 데이터 구조를 제안하여 접촉 기하 정보를 효율적으로 쿼리 가능한 필드로 인코딩함으로써 그리퍼 탐색을 복잡한 기하 계산에서 분리한다.
+- **탐색 프로세스**: Contact Field 기반의 절차적 탐색을 통해 반복 최적화나 에너지 함수 조정 없이 직접 후보 그리퍼 자세를 생성한다.
+- **적용성**: 손재주 있는 손이 불규칙한 도구류 객체에 대한 비지도 그리퍼 생성을 지원하며, 사전 학습이나 레이블 데이터가 필요 없다.
+
+### 실험 설정 및 핵심 수치
+- **성능 비교**: 표준 그리퍼 합성 벤치마크에서 Lightning Grasp는 SOTA 방법(예: GraspIt!, Dex-Net)보다 수십 배 빠르다(구체적 가속 비율은 객체 복잡도에 따라 다름).
+- **다양성**: 단일 객체에서 수백 개의 유효한 그리퍼 자세를 생성하며, 다양한 접촉 패턴을 포함한다.
+- **강건성**: 초기 자세에 민감하지 않으며, 수동 초기화나 파라미터 조정이 필요 없다.
+
+### 결론
+Lightning Grasp는 Contact Field 추상화를 통해 절차적 그리퍼 합성의 속도와 범용성에서 돌파구를 달성했으며, 로봇 조작 분야의 연구를 촉진하기 위해 오픈소스로 공개되었다. 이 방법은 전통적인 에너지 함수 튜닝과 민감한 초기화 문제를 피하며, 실시간 손재주 그리퍼를 위한 새로운 패러다임을 제공한다.

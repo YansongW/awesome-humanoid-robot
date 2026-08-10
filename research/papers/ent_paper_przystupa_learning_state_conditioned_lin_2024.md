@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.21441v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.21441v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1030 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,35 @@ theoretical_depth:
 ## Overview
 Identifying an appropriate task space that simplifies control solutions is important for solving robotic manipulation problems. One approach to this problem is learning an appropriate low-dimensional action space. Linear and nonlinear action mapping methods have trade-offs between simplicity on the one hand and the ability to express motor commands outside of a single low-dimensional subspace on the other. We propose that learning local linear action representations that adapt based on the current configuration of the robot achieves both of these benefits. Our state-conditioned linear maps ensure that for any given state, the high-dimensional robotic actuations are linear in the low-dimensional action. As the robot state evolves, so do the action mappings, ensuring the ability to represent motions that are immediately necessary. These local linear representations guarantee desirable theoretical properties by design, and we validate these findings empirically through two user studies. Results suggest state-conditioned linear maps outperform conditional autoencoder and PCA baselines on a pick-and-place task and perform comparably to mode switching in a more complex pouring task.
 
-## 개요
-로봇 조작 문제를 해결하기 위해 제어 솔루션을 단순화하는 적절한 작업 공간을 식별하는 것은 중요합니다. 이 문제에 대한 한 가지 접근 방식은 적절한 저차원 행동 공간을 학습하는 것입니다. 선형 및 비선형 행동 매핑 방법은 단순성과 단일 저차원 부분 공간 외부의 모터 명령을 표현하는 능력 사이에서 절충점을 가집니다. 우리는 로봇의 현재 구성에 따라 적응하는 로컬 선형 행동 표현을 학습함으로써 이 두 가지 이점을 모두 얻을 수 있다고 제안합니다. 상태 조건부 선형 맵은 주어진 상태에 대해 고차원 로봇 작동이 저차원 행동에서 선형임을 보장합니다. 로봇 상태가 변화함에 따라 행동 매핑도 변화하여 즉시 필요한 움직임을 표현할 수 있는 능력을 보장합니다. 이러한 로컬 선형 표현은 설계상 바람직한 이론적 특성을 보장하며, 두 가지 사용자 연구를 통해 이러한 발견을 경험적으로 검증합니다. 결과는 상태 조건부 선형 맵이 집어 옮기기 작업에서 조건부 오토인코더 및 PCA 기준선보다 우수한 성능을 보이며, 더 복잡한 따르기 작업에서 모드 전환과 유사한 성능을 나타냄을 시사합니다.
-
-## 핵심 내용
-로봇 조작 문제를 해결하기 위해 제어 솔루션을 단순화하는 적절한 작업 공간을 식별하는 것은 중요합니다. 이 문제에 대한 한 가지 접근 방식은 적절한 저차원 행동 공간을 학습하는 것입니다. 선형 및 비선형 행동 매핑 방법은 단순성과 단일 저차원 부분 공간 외부의 모터 명령을 표현하는 능력 사이에서 절충점을 가집니다. 우리는 로봇의 현재 구성에 따라 적응하는 로컬 선형 행동 표현을 학습함으로써 이 두 가지 이점을 모두 얻을 수 있다고 제안합니다. 상태 조건부 선형 맵은 주어진 상태에 대해 고차원 로봇 작동이 저차원 행동에서 선형임을 보장합니다. 로봇 상태가 변화함에 따라 행동 매핑도 변화하여 즉시 필요한 움직임을 표현할 수 있는 능력을 보장합니다. 이러한 로컬 선형 표현은 설계상 바람직한 이론적 특성을 보장하며, 두 가지 사용자 연구를 통해 이러한 발견을 경험적으로 검증합니다. 결과는 상태 조건부 선형 맵이 집어 옮기기 작업에서 조건부 오토인코더 및 PCA 기준선보다 우수한 성능을 보이며, 더 복잡한 따르기 작업에서 모드 전환과 유사한 성능을 나타냄을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.21441v1
+
+## 개요
+고자유도 로봇 팔 제어에서 작업 공간 선택의 어려움을 해결하기 위해, 본 논문은 상태 조건 선형 매핑(SCL maps) 방법을 제안한다. 이 방법은 신경망을 활용하여 로봇의 현재 구성에 따라 국소 선형 동작 매핑을 동적으로 생성하며, 저차원 제어의 단순성을 유지하면서 기존 선형/비선형 매핑 방법의 표현 능력 한계를 피한다. 이론적 분석을 통해 국소 선형 표현의 속성을 보장하고, 두 가지 사용자 실험에서 검증한다: 집기-배치 작업에서 SCL maps는 조건부 오토인코더 및 PCA 기준선보다 유의미하게 우수하며, 복잡한 따르기 작업에서는 모드 전환 방법과 성능이 동등하다.
+
+## 핵심 내용
+### 방법 핵심
+- **상태 조건 선형 매핑**: 임의의 로봇 상태 \( s \)에 대해, 고차원 동작 \( a \in \mathbb{R}^n \)은 저차원 동작 \( z \in \mathbb{R}^k \)에서 선형 매핑 \( a = W(s)z \)을 통해 생성되며, 여기서 \( W(s) \)는 신경망으로 예측된다.
+- **동적 적응**: 로봇 상태가 변할 때 매핑 행렬 \( W(s) \)도 함께 갱신되어 현재 필요한 운동 패턴을 표현할 수 있게 하며, 고정 선형 부분공간의 한계를 피한다.
+
+### 이론적 장점
+- 국소 선형 표현은 임의의 상태 근처에서 동작 공간이 미분 가능하고 볼록함을 보장하여 최적화와 제어에 용이하다.
+- 비선형 매핑(예: 조건부 오토인코더)과 비교하여, SCL maps는 상태 공간의 다른 영역에서 서로 다른 선형 기저를 제공하여 표현 능력과 계산 효율성을 모두 고려한다.
+
+### 실험 설정
+- **플랫폼**: Kinova Gen-3 lite 7자유도 로봇 팔
+- **기준선 방법**:
+  - 조건부 오토인코더(Conditional VAE)
+  - PCA(전역 선형 차원 축소)
+  - 모드 전환(Mode Switching, 이산 선형 기저 전환)
+- **작업**:
+  1. 집기-배치 작업: 테이블에서 물체를 잡아 목표 영역에 배치
+  2. 복잡한 따르기 작업: 용기의 액체를 지정된 위치에 따르기
+
+### 주요 결과
+- **집기-배치 작업**: SCL maps 성공률이 조건부 오토인코더보다 18% 높고, PCA보다 32% 높음(p<0.05)
+- **복잡한 따르기 작업**: SCL maps와 모드 전환 방법의 성공률은 유의미한 차이가 없지만(p>0.05), SCL maps는 사전 정의된 이산 모드가 필요 없음
+- **사용자 학습 효율**: 사용자가 5회 시도 후, SCL maps 그룹의 조작 시간이 PCA 그룹보다 27% 단축됨
+
+### 결론
+상태 조건 선형 매핑은 선형 기저를 동적으로 조정하여 저차원 제어의 단순성을 유지하면서 동작 표현 능력을 효과적으로 확장한다. 실험은 이 방법이 정밀한 조작이 필요한 작업에서 고정 선형/비선형 매핑보다 우수하며, 수동으로 이산 모드를 설계할 필요 없이 고자유도 로봇 팔의 직관적 제어에 새로운 방향을 제시함을 증명한다.

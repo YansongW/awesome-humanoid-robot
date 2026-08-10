@@ -57,8 +57,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04434v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04434v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1019 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -105,11 +106,39 @@ RoboDojo 通过统一仿真与真实世界评估，弥补了现有基准在能�
 ## Overview
 Generalist robot manipulation policies have advanced rapidly, yet existing benchmarks remain limited in systematically evaluating their capabilities. Many rely on simple, short-horizon, or skill-narrow tasks with limited capability coverage, and are often conducted only in simulation or only in the real world. Simulation enables scalable feedback but misses physical deployment challenges, while real-world evaluation is costly, time-consuming, and difficult to reproduce. We introduce RoboDojo, a unified sim-and-real benchmark for comprehensive evaluation of generalist robot manipulation policies. RoboDojo includes 42 simulation tasks and 18 real-world tasks covering diverse and complementary manipulation capabilities. The simulation benchmark evaluates five dimensions: generalization, memory, precision, long-horizon execution, and open-vocabulary instruction following, while the real-world benchmark exposes policies to challenging physical-world deployment conditions. RoboDojo supports scalable evaluation through heterogeneous parallel simulation in Isaac Sim and provides RoboDojo-RealEval, a reproducible real-world evaluation system with remote cloud access, standardized hardware, scene reset, evaluation protocol, and deployment interface. Together with XPolicyLab, policies can be integrated once and evaluated across simulation and real-world settings with minimal adaptation. We integrate 30 policies into XPolicyLab and evaluate them on RoboDojo, establishing a public leaderboard and systematic analysis of current policy performance. The website is available at http://robodojo-benchmark.com/.
 
-## 개요
-범용 로봇 조작 정책(Generalist robot manipulation policies)은 빠르게 발전해 왔지만, 기존 벤치마크는 이러한 능력을 체계적으로 평가하는 데 여전히 한계가 있습니다. 많은 벤치마크가 단순하거나, 단기적이거나, 기술 범위가 좁은 작업에 의존하여 능력 범위가 제한적이며, 종종 시뮬레이션 또는 실제 환경 중 하나에서만 수행됩니다. 시뮬레이션은 확장 가능한 피드백을 제공하지만 물리적 배포 과제를 놓치는 반면, 실제 환경 평가는 비용이 많이 들고 시간이 오래 걸리며 재현이 어렵습니다. 우리는 범용 로봇 조작 정책의 포괄적 평가를 위한 통합 시뮬레이션-실제 벤치마크인 RoboDojo를 소개합니다. RoboDojo는 다양하고 상호 보완적인 조작 능력을 포괄하는 42개의 시뮬레이션 작업과 18개의 실제 작업을 포함합니다. 시뮬레이션 벤치마크는 일반화, 기억, 정밀도, 장기 실행, 개방형 어휘 명령 수행의 다섯 가지 차원을 평가하며, 실제 벤치마크는 정책을 까다로운 물리적 세계 배포 조건에 노출시킵니다. RoboDojo는 Isaac Sim에서 이기종 병렬 시뮬레이션을 통해 확장 가능한 평가를 지원하며, 원격 클라우드 접속, 표준화된 하드웨어, 장면 재설정, 평가 프로토콜 및 배포 인터페이스를 갖춘 재현 가능한 실제 평가 시스템인 RoboDojo-RealEval을 제공합니다. XPolicyLab과 함께, 정책은 한 번 통합되어 최소한의 적응으로 시뮬레이션 및 실제 환경에서 평가될 수 있습니다. 우리는 30개의 정책을 XPolicyLab에 통합하고 RoboDojo에서 평가하여 공개 리더보드와 현재 정책 성능에 대한 체계적 분석을 구축했습니다. 웹사이트는 http://robodojo-benchmark.com/에서 확인할 수 있습니다.
-
-## 핵심 내용
-범용 로봇 조작 정책(Generalist robot manipulation policies)은 빠르게 발전해 왔지만, 기존 벤치마크는 이러한 능력을 체계적으로 평가하는 데 여전히 한계가 있습니다. 많은 벤치마크가 단순하거나, 단기적이거나, 기술 범위가 좁은 작업에 의존하여 능력 범위가 제한적이며, 종종 시뮬레이션 또는 실제 환경 중 하나에서만 수행됩니다. 시뮬레이션은 확장 가능한 피드백을 제공하지만 물리적 배포 과제를 놓치는 반면, 실제 환경 평가는 비용이 많이 들고 시간이 오래 걸리며 재현이 어렵습니다. 우리는 범용 로봇 조작 정책의 포괄적 평가를 위한 통합 시뮬레이션-실제 벤치마크인 RoboDojo를 소개합니다. RoboDojo는 다양하고 상호 보완적인 조작 능력을 포괄하는 42개의 시뮬레이션 작업과 18개의 실제 작업을 포함합니다. 시뮬레이션 벤치마크는 일반화, 기억, 정밀도, 장기 실행, 개방형 어휘 명령 수행의 다섯 가지 차원을 평가하며, 실제 벤치마크는 정책을 까다로운 물리적 세계 배포 조건에 노출시킵니다. RoboDojo는 Isaac Sim에서 이기종 병렬 시뮬레이션을 통해 확장 가능한 평가를 지원하며, 원격 클라우드 접속, 표준화된 하드웨어, 장면 재설정, 평가 프로토콜 및 배포 인터페이스를 갖춘 재현 가능한 실제 평가 시스템인 RoboDojo-RealEval을 제공합니다. XPolicyLab과 함께, 정책은 한 번 통합되어 최소한의 적응으로 시뮬레이션 및 실제 환경에서 평가될 수 있습니다. 우리는 30개의 정책을 XPolicyLab에 통합하고 RoboDojo에서 평가하여 공개 리더보드와 현재 정책 성능에 대한 체계적 분석을 구축했습니다. 웹사이트는 http://robodojo-benchmark.com/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04434v3
+
+## 개요
+기존의 범용 로봇 조작 정책 벤치마크는 한계가 있으며, 대부분 단순하거나 단기간 또는 좁은 기술 범위의 작업에 의존하고, 종종 시뮬레이션이나 실제 세계 중 하나에서만 단일 평가를 수행합니다. 시뮬레이션은 확장 가능하지만 물리적 배포 문제를 무시하고, 실제 세계 평가는 비용이 높고 시간이 오래 걸리며 재현이 어렵습니다. RoboDojo는 시뮬레이션과 실제 세계 벤치마크를 통합하여 이 문제를 해결하며, 시뮬레이션 부분은 5가지 능력을 평가하고 실제 세계 부분은 정책을 도전적인 물리적 조건에 노출시킵니다. 이 벤치마크는 Isaac Sim을 통한 이기종 병렬 시뮬레이션을 지원하며, 원격 클라우드 액세스, 표준화된 하드웨어, 장면 재설정, 평가 프로토콜 및 배포 인터페이스를 포함한 RoboDojo-RealEval 시스템을 제공하고, XPolicyLab과 결합하여 정책을 한 번 통합하고 여러 환경에서 평가할 수 있습니다.
+
+## 핵심 내용
+### 방법
+RoboDojo는 시뮬레이션과 실제 세계를 통합한 평가 프레임워크로 설계되었으며, 범용 로봇 조작 정책의 포괄적인 능력을 체계적으로 측정하는 것을 목표로 합니다. 시뮬레이션 벤치마크는 42개의 작업을 포함하고, 실제 세계 벤치마크는 18개의 작업을 포함하며, 작업 설계는 상호 보완적이고 다양합니다.
+
+### 아키텍처
+- **시뮬레이션 벤치마크**: Isaac Sim 기반의 이기종 병렬 시뮬레이션을 구현하여 확장 가능한 평가를 지원합니다. 5가지 차원을 평가합니다:
+  - **일반화**: 보지 못한 객체, 장면 또는 구성에 대한 정책의 적응 능력.
+  - **기억**: 작업 중 역사적 정보를 활용하는 정책의 능력.
+  - **정밀도**: 조작 작업의 세밀한 제어 요구 사항.
+  - **장기 실행**: 다단계 작업의 연속적 완료 능력.
+  - **개방형 어휘 지시 따르기**: 자연어 지시를 이해하고 실행하는 능력.
+- **실제 세계 벤치마크**: RoboDojo-RealEval 시스템은 재현 가능한 평가를 제공하며, 다음을 포함합니다:
+  - 원격 클라우드 액세스로 하드웨어 장벽을 낮춥니다.
+  - 표준화된 하드웨어 구성으로 일관성을 보장합니다.
+  - 자동 장면 재설정으로 수동 개입을 줄입니다.
+  - 표준화된 평가 프로토콜로 결과 비교 가능성을 보장합니다.
+  - 배포 인터페이스로 정책 통합을 단순화합니다.
+
+### 실험 설정
+- 30개의 정책을 XPolicyLab 플랫폼에 통합하여 한 번의 통합으로 시뮬레이션 및 실제 세계 환경에서 최소한의 적응만으로 평가할 수 있습니다.
+- 공개 리더보드를 구축하여 현재 정책 성능에 대한 체계적인 분석을 제공합니다.
+
+### 주요 수치
+- **시뮬레이션 작업**: 42개
+- **실제 세계 작업**: 18개
+- **통합 정책**: 30개
+- **평가 차원**: 5개 (시뮬레이션 벤치마크)
+
+### 결론
+RoboDojo는 시뮬레이션과 실제 세계 평가를 통합하여 기존 벤치마크의 능력 범위와 재현성 부족을 보완합니다. 확장 가능한 시뮬레이션과 표준화된 실제 세계 시스템은 범용 로봇 조작 정책의 포괄적인 비교를 위한 신뢰할 수 있는 플랫폼을 제공합니다. 자세한 정보는 http://robodojo-benchmark.com/ 에서 확인할 수 있습니다.

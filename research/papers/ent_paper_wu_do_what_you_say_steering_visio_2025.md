@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.16281v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.16281v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1194 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,35 @@ SEAL 通过运行时推理-动作对齐验证，有效解决了推理型 VLA 模
 ## Overview
 Reasoning Vision Language Action (VLA) models improve robotic instruction-following by generating step-by-step textual plans before low-level actions, an approach inspired by Chain-of-Thought (CoT) reasoning in language models. Yet even with a correct textual plan, the generated actions can still miss the intended outcomes in the plan, especially in out-of-distribution (OOD) scenarios. We formalize this phenomenon as a lack of embodied CoT faithfulness, and introduce a training-free, runtime policy steering method for reasoning-action alignment. Given a reasoning VLA's intermediate textual plan, our framework samples multiple candidate action sequences from the same model, predicts their outcomes via simulation, and uses a pre-trained Vision-Language Model (VLM) to select the sequence whose outcome best aligns with the VLA's own textual plan. Only executing action sequences that align with the textual reasoning turns our base VLA's natural action diversity from a source of error into a strength, boosting robustness to semantic and visual OOD perturbations and enabling novel behavior composition without costly re-training. We also contribute a reasoning-annotated extension of LIBERO-100, environment variations tailored for OOD evaluation, and demonstrate up to 15% performance gain over prior work on behavior composition tasks and scales with compute and data diversity. Project Website at: https://yilin-wu98.github.io/steering-reasoning-vla/
 
-## 개요
-Reasoning Vision Language Action (VLA) 모델은 저수준 행동 이전에 단계별 텍스트 계획을 생성하여 로봇의 명령 수행 능력을 향상시키며, 이는 언어 모델의 Chain-of-Thought (CoT) 추론에서 영감을 받은 접근 방식입니다. 그러나 올바른 텍스트 계획이 있더라도 생성된 행동은 여전히 계획의 의도된 결과를 놓칠 수 있으며, 특히 분포 외 (OOD) 시나리오에서 그러합니다. 우리는 이 현상을 구현된 CoT 충실성 부족으로 공식화하고, 훈련 없이 실행 중 정책을 조정하는 추론-행동 정렬 방법을 소개합니다. 추론 VLA의 중간 텍스트 계획이 주어지면, 우리 프레임워크는 동일한 모델에서 여러 후보 행동 시퀀스를 샘플링하고, 시뮬레이션을 통해 그 결과를 예측하며, 사전 훈련된 Vision-Language Model (VLM)을 사용하여 VLA 자체의 텍스트 계획과 가장 잘 정렬된 결과를 가진 시퀀스를 선택합니다. 텍스트 추론과 정렬된 행동 시퀀스만 실행함으로써 기본 VLA의 자연스러운 행동 다양성을 오류의 원인에서 강점으로 전환하여 의미적 및 시각적 OOD 교란에 대한 견고성을 높이고, 비용이 많이 드는 재훈련 없이 새로운 행동 구성을 가능하게 합니다. 또한 LIBERO-100의 추론 주석 확장판과 OOD 평가에 맞춤화된 환경 변형을 제공하며, 행동 구성 작업에서 이전 연구 대비 최대 15% 성능 향상을 보여주며, 이는 계산 및 데이터 다양성에 따라 확장됩니다. 프로젝트 웹사이트: https://yilin-wu98.github.io/steering-reasoning-vla/
-
-## 핵심 내용
-Reasoning Vision Language Action (VLA) 모델은 저수준 행동 이전에 단계별 텍스트 계획을 생성하여 로봇의 명령 수행 능력을 향상시키며, 이는 언어 모델의 Chain-of-Thought (CoT) 추론에서 영감을 받은 접근 방식입니다. 그러나 올바른 텍스트 계획이 있더라도 생성된 행동은 여전히 계획의 의도된 결과를 놓칠 수 있으며, 특히 분포 외 (OOD) 시나리오에서 그러합니다. 우리는 이 현상을 구현된 CoT 충실성 부족으로 공식화하고, 훈련 없이 실행 중 정책을 조정하는 추론-행동 정렬 방법을 소개합니다. 추론 VLA의 중간 텍스트 계획이 주어지면, 우리 프레임워크는 동일한 모델에서 여러 후보 행동 시퀀스를 샘플링하고, 시뮬레이션을 통해 그 결과를 예측하며, 사전 훈련된 Vision-Language Model (VLM)을 사용하여 VLA 자체의 텍스트 계획과 가장 잘 정렬된 결과를 가진 시퀀스를 선택합니다. 텍스트 추론과 정렬된 행동 시퀀스만 실행함으로써 기본 VLA의 자연스러운 행동 다양성을 오류의 원인에서 강점으로 전환하여 의미적 및 시각적 OOD 교란에 대한 견고성을 높이고, 비용이 많이 드는 재훈련 없이 새로운 행동 구성을 가능하게 합니다. 또한 LIBERO-100의 추론 주석 확장판과 OOD 평가에 맞춤화된 환경 변형을 제공하며, 행동 구성 작업에서 이전 연구 대비 최대 15% 성능 향상을 보여주며, 이는 계산 및 데이터 다양성에 따라 확장됩니다. 프로젝트 웹사이트: https://yilin-wu98.github.io/steering-reasoning-vla/
-
 ## 参考
 - http://arxiv.org/abs/2510.16281v2
+
+## 개요
+추론 기반 비전-언어-행동 모델은 단계별 텍스트 계획을 생성하여 로봇의 지시 따르기를 개선하지만, 텍스트 계획이 정확하더라도 생성된 행동이 예상 결과에서 벗어날 수 있으며, 특히 분포 외 시나리오에서 두드러진다. SEAL은 이러한 현상을 구현된 CoT 충실도 결여 문제로 형식화하고, 훈련 없이 런타임에 정책을 안내하는 방법을 제안한다: 동일한 모델에서 여러 후보 행동 시퀀스를 샘플링하고, 시뮬레이션을 통해 실행 결과를 예측한 뒤, 사전 훈련된 VLM을 사용하여 텍스트 계획과 가장 일치하는 시퀀스를 선택한다. 이 방법은 기본 VLA 모델의 행동 다양성을 오류 원인에서 장점으로 전환하여 의미적 및 시각적 분포 외 교란에 대한 견고성을 크게 향상시키고, 재훈련 없이 새로운 행동 조합을 지원한다. 연구는 또한 추론 주석이 포함된 LIBERO-100 확장 버전과 분포 외 평가를 위해 설계된 환경 변형을 제공하며, 행동 조합 작업에서 이전 연구 대비 최대 15% 향상된 성능을 보이고, 성능은 계산량과 데이터 다양성에 따라 확장된다.
+
+## 핵심 내용
+### 문제 정의
+- 추론 기반 VLA 모델(예: CoT 기반 모델)은 텍스트 계획을 생성한 후, 실행된 행동이 계획의 의도를 충실히 반영하지 못할 수 있으며, 특히 분포 외 시나리오에서 두드러진다.
+- 이 현상은 "구현된 CoT 충실도 결여"로 형식화되며, 이는 텍스트 추론과 행동 실행 간의 정렬 실패를 의미한다.
+
+### 방법: SEAL 프레임워크
+- **핵심 아이디어**: 훈련 없이 런타임에 행동 시퀀스와 텍스트 계획 간의 정렬 정도를 검증하여 정책 선택을 안내한다.
+- **단계**:
+  1. 동일한 추론 VLA 모델에서 여러 후보 행동 시퀀스를 샘플링한다.
+  2. 시뮬레이션을 통해 각 시퀀스의 실행 결과(예: 객체 위치 변화)를 예측한다.
+  3. 사전 훈련된 VLM(예: CLIP 또는 GPT-4V)을 사용하여 시뮬레이션 결과와 원본 텍스트 계획의 일관성을 평가하고, 가장 일치하는 시퀀스를 선택하여 실행한다.
+- **핵심 혁신**: 기본 VLA 모델의 행동 다양성을 오류 원인에서 장점으로 전환한다—텍스트 추론과 정렬된 행동만 실행하여 견고성을 향상시킨다.
+
+### 실험 설정
+- **벤치마크**: LIBERO-100 데이터셋을 확장하여 추론 주석(텍스트 계획)을 추가하고, 다양한 분포 외 시나리오 변형(의미적 교란, 시각적 교란, 행동 조합)을 설계한다.
+- **비교 방법**: 표준 VLA 모델(예: RT-2, Octo) 및 CoT 강화 버전과 비교한다.
+- **평가 지표**: 작업 성공률, 정렬 정확도, 분포 외 견고성.
+
+### 핵심 결과
+- **성능 향상**: 행동 조합 작업에서 SEAL은 이전 연구 대비 최대 15% 향상된 성능을 보인다.
+- **견고성**: 의미적 교란(예: 객체 이름 대체) 및 시각적 교란(예: 배경 변화) 하에서 SEAL은 안정적인 성능을 유지하는 반면, 기준 모델은 크게 저하된다.
+- **확장성**: 성능은 후보 행동 시퀀스 샘플링 수(계산량)와 훈련 데이터 다양성에 따라 향상된다.
+- **재훈련 불필요**: SEAL은 추가 미세 조정이나 데이터 수집 없이 기존 추론 VLA 모델에 직접 적용할 수 있다.
+
+### 결론
+SEAL은 런타임 추론-행동 정렬 검증을 통해 추론 기반 VLA 모델의 충실도 문제를 효과적으로 해결하며, 로봇 조작을 위한 경량화되고 확장 가능한 견고성 향상 방안을 제공한다. 이 방법은 분포 외 시나리오와 행동 조합에서 뚜렷한 이점을 보이며, 계산 자원 및 데이터 다양성과 양의 상관관계를 가진다.

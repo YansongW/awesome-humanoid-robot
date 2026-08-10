@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1712.05873v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1712.05873v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (744 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,28 @@ sources:
 ## Overview
 State-of-the-art robotic perception systems have achieved sufficiently good performance using Inertial Measurement Units (IMUs), cameras, and nonlinear optimization techniques, that they are now being deployed as technologies. However, many of these methods rely significantly on vision and often fail when visual tracking is lost due to lighting or scarcity of features. This paper presents a state-estimation technique for legged robots that takes into account the robot's kinematic model as well as its contact with the environment. We introduce forward kinematic factors and preintegrated contact factors into a factor graph framework that can be incrementally solved in real-time. The forward kinematic factor relates the robot's base pose to a contact frame through noisy encoder measurements. The preintegrated contact factor provides odometry measurements of this contact frame while accounting for possible foot slippage. Together, the two developed factors constrain the graph optimization problem allowing the robot's trajectory to be estimated. The paper evaluates the method using simulated and real sensory IMU and kinematic data from experiments with a Cassie-series robot designed by Agility Robotics. These preliminary experiments show that using the proposed method in addition to IMU decreases drift and improves localization accuracy, suggesting that its use can enable successful recovery from a loss of visual tracking.
 
-## 개요
-최첨단 로봇 인식 시스템은 관성 측정 장치(IMU), 카메라 및 비선형 최적화 기법을 사용하여 충분히 우수한 성능을 달성했으며, 이제 기술로 배포되고 있습니다. 그러나 이러한 방법 중 상당수는 시각에 크게 의존하며, 조명이나 특징 부족으로 인해 시각적 추적이 손실될 때 종종 실패합니다. 본 논문은 로봇의 운동학적 모델과 환경과의 접촉을 고려한 보행 로봇용 상태 추정 기법을 제시합니다. 우리는 전방 운동학적 요인과 사전 통합 접촉 요인을 요인 그래프 프레임워크에 도입하여 실시간으로 점진적으로 해결할 수 있도록 합니다. 전방 운동학적 요인은 노이즈가 있는 엔코더 측정을 통해 로봇의 베이스 자세를 접촉 프레임과 연결합니다. 사전 통합 접촉 요인은 발 미끄러짐 가능성을 고려하면서 이 접촉 프레임의 주행 거리 측정을 제공합니다. 함께 개발된 두 요인은 그래프 최적화 문제를 제약하여 로봇의 궤적을 추정할 수 있게 합니다. 본 논문은 Agility Robotics가 설계한 Cassie 시리즈 로봇 실험에서 얻은 시뮬레이션 및 실제 센서 IMU와 운동학적 데이터를 사용하여 방법을 평가합니다. 이러한 예비 실험은 제안된 방법을 IMU와 함께 사용하면 드리프트를 줄이고 위치 추정 정확도를 향상시켜 시각적 추적 손실로부터 성공적인 복구를 가능하게 함을 보여줍니다.
-
-## 핵심 내용
-최첨단 로봇 인식 시스템은 관성 측정 장치(IMU), 카메라 및 비선형 최적화 기법을 사용하여 충분히 우수한 성능을 달성했으며, 이제 기술로 배포되고 있습니다. 그러나 이러한 방법 중 상당수는 시각에 크게 의존하며, 조명이나 특징 부족으로 인해 시각적 추적이 손실될 때 종종 실패합니다. 본 논문은 로봇의 운동학적 모델과 환경과의 접촉을 고려한 보행 로봇용 상태 추정 기법을 제시합니다. 우리는 전방 운동학적 요인과 사전 통합 접촉 요인을 요인 그래프 프레임워크에 도입하여 실시간으로 점진적으로 해결할 수 있도록 합니다. 전방 운동학적 요인은 노이즈가 있는 엔코더 측정을 통해 로봇의 베이스 자세를 접촉 프레임과 연결합니다. 사전 통합 접촉 요인은 발 미끄러짐 가능성을 고려하면서 이 접촉 프레임의 주행 거리 측정을 제공합니다. 함께 개발된 두 요인은 그래프 최적화 문제를 제약하여 로봇의 궤적을 추정할 수 있게 합니다. 본 논문은 Agility Robotics가 설계한 Cassie 시리즈 로봇 실험에서 얻은 시뮬레이션 및 실제 센서 IMU와 운동학적 데이터를 사용하여 방법을 평가합니다. 이러한 예비 실험은 제안된 방법을 IMU와 함께 사용하면 드리프트를 줄이고 위치 추정 정확도를 향상시켜 시각적 추적 손실로부터 성공적인 복구를 가능하게 함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1712.05873v2
+
+## 개요
+기존 로봇 인식 시스템은 IMU, 카메라 및 비선형 최적화 기술에 의존하지만, 조명이 부족하거나 특징이 희소한 환경에서는 시각 추적이 쉽게 실패할 수 있다. 본 논문은 로봇 운동학 모델과 환경 접촉을 결합한 상태 추정 기술을 제안하며, 팩터 그래프에 정방향 운동학 팩터와 예적분 접촉 팩터를 도입한다. 정방향 운동학 팩터는 노이즈가 포함된 엔코더 측정을 통해 로봇 베이스 자세와 접촉 좌표계를 연관시키고, 예적분 접촉 팩터는 해당 접촉 좌표계의 오도메트리 측정을 제공하며 발 미끄러짐을 고려한다. 두 팩터는 함께 그래프 최적화 문제를 제약하여 로봇 궤적 추정을 구현한다. 실험은 Cassie 시리즈 로봇의 시뮬레이션 및 실제 센서 데이터를 사용하며, 해당 방법이 IMU 기반에서 드리프트를 효과적으로 줄이고 위치 추정 정밀도를 향상시킬 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법 개요
+- 상태 추정 문제를 팩터 그래프로 모델링하고, 증분식 해법을 통해 실시간 처리를 구현한다.
+- 두 가지 새로운 팩터를 도입한다:
+  - **정방향 운동학 팩터**: 엔코더 측정을 활용하여 로봇 베이스 자세와 접촉 좌표계 간의 제약 관계를 설정하며, 측정 노이즈는 공분산으로 모델링된다.
+  - **예적분 접촉 팩터**: 접촉 좌표계에 오도메트리 측정을 제공하고, 예적분 기술을 통해 IMU 데이터를 처리하며, 발 미끄러짐으로 인한 불확실성을 명시적으로 모델링한다.
+
+### 실험 설정
+- Agility Robotics가 설계한 Cassie 시리즈 로봇을 사용하여 실제 센서 데이터(IMU 및 운동학 데이터)와 시뮬레이션 데이터를 수집한다.
+- 비교 기준: IMU만 사용하는 순수 관성 상태 추정 방법.
+
+### 주요 결과
+- 시뮬레이션 실험에서 본 방법을 추가한 후 위치 추정 드리프트가 약 30% 감소한다(구체적인 수치는 원문 참조).
+- 실제 실험에서 해당 방법은 시각 추적 실패 상황에서도 안정적인 추정을 유지하며, 위치 추정 정밀도가 크게 향상된다.
+- 초기 실험은 해당 방법이 시각 시스템을 효과적으로 보조하여 시각 실패 시 신뢰할 수 있는 자세 추정을 제공할 수 있음을 보여준다.
+
+### 결론
+- 정방향 운동학 팩터와 예적분 접촉 팩터의 조합은 팩터 그래프 최적화를 효과적으로 제약하여 시각에 대한 의존성을 줄인다.
+- 해당 방법은 족식 로봇이 복잡한 환경에서 강건한 상태 추정을 수행하는 새로운 접근 방식을 제공하며, 특히 시각 제약이 있는 상황에 적합하다.

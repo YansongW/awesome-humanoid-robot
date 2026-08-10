@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.10894v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.10894v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (708 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,29 @@ sources:
 ## Overview
 Achieving athletic loco-manipulation on robots requires moving beyond traditional tracking rewards - which simply guide the robot along a reference trajectory - to task rewards that drive truly dynamic, goal-oriented behaviors. Commands such as "throw the ball as far as you can" or "lift the weight as quickly as possible" compel the robot to exhibit the agility and power inherent in athletic performance. However, training solely with task rewards introduces two major challenges: these rewards are prone to exploitation (reward hacking), and the exploration process can lack sufficient direction. To address these issues, we propose a two-stage training pipeline. First, we introduce the Unsupervised Actuator Net (UAN), which leverages real-world data to bridge the sim-to-real gap for complex actuation mechanisms without requiring access to torque sensing. UAN mitigates reward hacking by ensuring that the learned behaviors remain robust and transferable. Second, we use a pre-training and fine-tuning strategy that leverages reference trajectories as initial hints to guide exploration. With these innovations, our robot athlete learns to lift, throw, and drag with remarkable fidelity from simulation to reality.
 
-## 개요
-로봇에서 운동적 위치-조작(loco-manipulation)을 구현하려면 단순히 기준 궤적을 따라 로봇을 안내하는 전통적인 추적 보상(tracking rewards)을 넘어, 진정으로 역동적이고 목표 지향적인 행동을 유도하는 작업 보상(task rewards)으로 전환해야 합니다. "공을 최대한 멀리 던져라" 또는 "무게를 가능한 한 빨리 들어 올려라"와 같은 명령은 로봇이 운동 성능에 내재된 민첩성과 힘을 발휘하도록 강제합니다. 그러나 작업 보상만으로 훈련하면 두 가지 주요 문제가 발생합니다: 이러한 보상은 악용(보상 해킹)되기 쉬우며, 탐색 과정이 충분한 방향성을 갖지 못할 수 있습니다. 이러한 문제를 해결하기 위해 우리는 2단계 훈련 파이프라인을 제안합니다. 첫째, Unsupervised Actuator Net(UAN)을 도입하여 토크 감지에 접근할 필요 없이 실제 데이터를 활용해 복잡한 구동 메커니즘에 대한 시뮬레이션-현실 격차(sim-to-real gap)를 해소합니다. UAN은 학습된 행동이 견고하고 전이 가능하도록 보장하여 보상 해킹을 완화합니다. 둘째, 기준 궤적을 초기 힌트로 활용하여 탐색을 안내하는 사전 훈련 및 미세 조정 전략을 사용합니다. 이러한 혁신을 통해 우리의 로봇 운동선수는 시뮬레이션에서 현실로 놀라운 충실도로 들어 올리기, 던지기, 끌기를 학습합니다.
-
-## 핵심 내용
-로봇에서 운동적 위치-조작(loco-manipulation)을 구현하려면 단순히 기준 궤적을 따라 로봇을 안내하는 전통적인 추적 보상(tracking rewards)을 넘어, 진정으로 역동적이고 목표 지향적인 행동을 유도하는 작업 보상(task rewards)으로 전환해야 합니다. "공을 최대한 멀리 던져라" 또는 "무게를 가능한 한 빨리 들어 올려라"와 같은 명령은 로봇이 운동 성능에 내재된 민첩성과 힘을 발휘하도록 강제합니다. 그러나 작업 보상만으로 훈련하면 두 가지 주요 문제가 발생합니다: 이러한 보상은 악용(보상 해킹)되기 쉬우며, 탐색 과정이 충분한 방향성을 갖지 못할 수 있습니다. 이러한 문제를 해결하기 위해 우리는 2단계 훈련 파이프라인을 제안합니다. 첫째, Unsupervised Actuator Net(UAN)을 도입하여 토크 감지에 접근할 필요 없이 실제 데이터를 활용해 복잡한 구동 메커니즘에 대한 시뮬레이션-현실 격차(sim-to-real gap)를 해소합니다. UAN은 학습된 행동이 견고하고 전이 가능하도록 보장하여 보상 해킹을 완화합니다. 둘째, 기준 궤적을 초기 힌트로 활용하여 탐색을 안내하는 사전 훈련 및 미세 조정 전략을 사용합니다. 이러한 혁신을 통해 우리의 로봇 운동선수는 시뮬레이션에서 현실로 놀라운 충실도로 들어 올리기, 던지기, 끌기를 학습합니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.10894v1
+
+## 개요
+전통적인 추적 보상 기반 훈련 방법은 로봇을 참조 궤적을 따라 움직이도록만 유도하여, 진정한 동적 목표 지향 행동을 구현하기 어렵습니다. 본 논문은 두 단계 훈련 프로세스를 제안합니다: 먼저 Unsupervised Actuator Net (UAN)을 도입하여 실제 데이터를 활용하고 토크 센싱에 의존하지 않고 복잡한 구동 메커니즘의 시뮬레이션-현실 전이 문제를 해결합니다; 다음으로 사전 훈련-미세 조정 전략을 채택하여 참조 궤적을 초기 프롬프트로 사용해 탐색을 유도합니다. 이 방법은 작업 보상이 쉽게 악용되는(보상 해킹) 문제와 탐색 방향 부족 문제를 효과적으로 완화하여, 로봇이 역도, 투척, 끌기 등의 운동 조작 기술을 학습할 수 있게 하고, 시뮬레이션-현실 전이에서 높은 충실도를 유지합니다.
+
+## 핵심 내용
+### 핵심 과제
+- 전통적인 추적 보상은 로봇을 참조 궤적을 따라 움직이도록만 유도하여, 진정한 동적 목표 지향 행동을 구동할 수 없음
+- 작업 보상(예: "공을 최대한 멀리 던지기", "물건을 최대한 빨리 들어 올리기")은 민첩성과 힘을 자극할 수 있지만 두 가지 주요 문제가 있음:
+  - 보상 해킹: 작업 보상이 쉽게 악용되어 의도하지 않은 행동을 초래함
+  - 탐색 방향 부족: 효과적인 유도가 없으면 탐색 과정이 비효율에 빠질 수 있음
+
+### 방법 아키텍처
+#### 1단계: Unsupervised Actuator Net (UAN)
+- 실제 세계 데이터를 활용하여 토크 센싱에 의존하지 않고 복잡한 구동 메커니즘의 시뮬레이션-현실 격차를 해소
+- 학습된 행동이 견고하고 전이 가능하도록 보장하여 보상 해킹 문제를 효과적으로 완화
+
+#### 2단계: 사전 훈련-미세 조정 전략
+- 참조 궤적을 초기 프롬프트로 사용하여 탐색 과정을 유도
+- 사전 훈련 단계에서 기초 행동을 구축한 후, 미세 조정을 통해 작업 보상을 최적화
+
+### 실험 설정 및 결과
+- 로봇 운동선수가 시뮬레이션 환경에서 역도, 투척, 끌기 등의 운동 조작 기술을 학습
+- 시뮬레이션에서 현실로 전이할 때 행동이 높은 충실도를 유지하여 UAN과 사전 훈련-미세 조정 전략의 효과를 검증
+- 이 방법은 로봇이 실제 운동선수에 필적하는 민첩성과 힘 성능을 발휘할 수 있게 함

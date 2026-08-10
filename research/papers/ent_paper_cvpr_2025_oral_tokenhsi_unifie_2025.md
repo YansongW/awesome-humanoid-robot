@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.19901v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.19901v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (897 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,26 @@ TokenHSI 通过任务令牌化与统一 Transformer 策略，有效解决了 HSI
 ## Overview
 Synthesizing diverse and physically plausible Human-Scene Interactions (HSI) is pivotal for both computer animation and embodied AI. Despite encouraging progress, current methods mainly focus on developing separate controllers, each specialized for a specific interaction task. This significantly hinders the ability to tackle a wide variety of challenging HSI tasks that require the integration of multiple skills, e.g., sitting down while carrying an object. To address this issue, we present TokenHSI, a single, unified transformer-based policy capable of multi-skill unification and flexible adaptation. The key insight is to model the humanoid proprioception as a separate shared token and combine it with distinct task tokens via a masking mechanism. Such a unified policy enables effective knowledge sharing across skills, thereby facilitating the multi-task training. Moreover, our policy architecture supports variable length inputs, enabling flexible adaptation of learned skills to new scenarios. By training additional task tokenizers, we can not only modify the geometries of interaction targets but also coordinate multiple skills to address complex tasks. The experiments demonstrate that our approach can significantly improve versatility, adaptability, and extensibility in various HSI tasks. Website: https://liangpan99.github.io/TokenHSI/
 
-## 개요
-다양하고 물리적으로 타당한 인간-장면 상호작용(HSI)을 합성하는 것은 컴퓨터 애니메이션과 구현형 AI 모두에 핵심적입니다. 고무적인 진전에도 불구하고, 현재 방법들은 주로 각각 특정 상호작용 작업에 특화된 개별 제어기를 개발하는 데 초점을 맞추고 있습니다. 이는 물건을 들고 앉는 것과 같이 여러 기술의 통합이 필요한 다양한 도전적인 HSI 작업을 처리하는 능력을 크게 저해합니다. 이 문제를 해결하기 위해, 우리는 다중 기술 통합과 유연한 적응이 가능한 단일 통합 트랜스포머 기반 정책인 TokenHSI를 제시합니다. 핵심 통찰은 인간형 고유 감각(proprioception)을 별도의 공유 토큰으로 모델링하고, 마스킹 메커니즘을 통해 이를 고유한 작업 토큰과 결합하는 것입니다. 이러한 통합 정책은 기술 간 효과적인 지식 공유를 가능하게 하여 다중 작업 훈련을 촉진합니다. 또한, 우리의 정책 아키텍처는 가변 길이 입력을 지원하여 학습된 기술을 새로운 시나리오에 유연하게 적응시킬 수 있습니다. 추가적인 작업 토크나이저를 훈련함으로써 상호작용 대상의 기하학적 구조를 수정할 수 있을 뿐만 아니라 여러 기술을 조정하여 복잡한 작업을 처리할 수 있습니다. 실험 결과는 우리의 접근 방식이 다양한 HSI 작업에서 다재다능성, 적응성, 확장성을 크게 향상시킬 수 있음을 보여줍니다. 웹사이트: https://liangpan99.github.io/TokenHSI/
-
-## 핵심 내용
-다양하고 물리적으로 타당한 인간-장면 상호작용(HSI)을 합성하는 것은 컴퓨터 애니메이션과 구현형 AI 모두에 핵심적입니다. 고무적인 진전에도 불구하고, 현재 방법들은 주로 각각 특정 상호작용 작업에 특화된 개별 제어기를 개발하는 데 초점을 맞추고 있습니다. 이는 물건을 들고 앉는 것과 같이 여러 기술의 통합이 필요한 다양한 도전적인 HSI 작업을 처리하는 능력을 크게 저해합니다. 이 문제를 해결하기 위해, 우리는 다중 기술 통합과 유연한 적응이 가능한 단일 통합 트랜스포머 기반 정책인 TokenHSI를 제시합니다. 핵심 통찰은 인간형 고유 감각(proprioception)을 별도의 공유 토큰으로 모델링하고, 마스킹 메커니즘을 통해 이를 고유한 작업 토큰과 결합하는 것입니다. 이러한 통합 정책은 기술 간 효과적인 지식 공유를 가능하게 하여 다중 작업 훈련을 촉진합니다. 또한, 우리의 정책 아키텍처는 가변 길이 입력을 지원하여 학습된 기술을 새로운 시나리오에 유연하게 적응시킬 수 있습니다. 추가적인 작업 토크나이저를 훈련함으로써 상호작용 대상의 기하학적 구조를 수정할 수 있을 뿐만 아니라 여러 기술을 조정하여 복잡한 작업을 처리할 수 있습니다. 실험 결과는 우리의 접근 방식이 다양한 HSI 작업에서 다재다능성, 적응성, 확장성을 크게 향상시킬 수 있음을 보여줍니다. 웹사이트: https://liangpan99.github.io/TokenHSI/
-
 ## 参考
 - http://arxiv.org/abs/2503.19901v2
+
+## 개요
+현재 HSI 합성 방법은 주로 단일 상호작용 작업을 위해 독립 컨트롤러를 개발하며, 다중 기술 통합이 필요한 복잡한 작업(예: 물체를 들고 앉기)을 처리하기 어렵습니다. TokenHSI는 통합 Transformer 정책을 통해 이 문제를 해결하며, 휴머노이드 로봇의 고유 감각을 공유 토큰으로 사용하고, 다양한 작업 토큰과 마스크 메커니즘을 통해 결합하여 교차 기술 지식 공유와 다중 작업 훈련을 구현합니다. 이 정책은 가변 길이 입력을 지원하여 새로운 시나리오에 유연하게 적응할 수 있으며, 추가 작업 토크나이저를 훈련하여 상호작용 목표의 기하학적 형태를 수정하거나 다중 기술을 조정하여 복잡한 작업을 처리할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **통합 정책 설계**: Transformer 아키텍처를 기반으로 휴머노이드 로봇의 고유 감각(예: 관절 각도, 속도)을 공유 토큰으로 인코딩하고, 다양한 상호작용 작업(예: 앉기, 물건 옮기기)에 해당하는 작업 토큰과 마스크 메커니즘을 통해 결합합니다. 마스크 메커니즘은 정책이 추론 시 관련 작업 토큰을 동적으로 선택할 수 있게 하여 다중 기술 통합을 구현합니다.
+- **가변 길이 입력**: 정책은 다양한 수의 작업 토큰 입력을 지원하여 새로운 시나리오(예: 다른 기하학적 형태의 의자)에 유연하게 적응하거나 여러 기술을 결합할 수 있습니다(예: 먼저 물건을 옮긴 후 앉기).
+
+### 실험 설정
+- **작업 범위**: 앉기, 물건 옮기기, 물체 밀고 당기기 등 다양한 HSI 작업과 다중 기술 통합이 필요한 복합 작업(예: 물체를 들고 앉기)을 포함합니다.
+- **비교 기준선**: 단일 작업 훈련을 위해 특별히 설계된 독립 컨트롤러(예: 강화 학습 기반 컨트롤러)와 비교하여 일반성, 적응성 및 확장성을 평가합니다.
+
+### 주요 결과
+- **다중 기술 통합**: TokenHSI는 단일 정책에서 여러 상호작용 기술을 성공적으로 통합하며, 각 작업에 대해 별도로 컨트롤러를 훈련할 필요 없이 훈련 효율성을 크게 향상시킵니다.
+- **적응성**: 추가 작업 토크나이저를 훈련함으로써 정책은 다른 기하학적 형태의 상호작용 목표(예: 다른 높이 또는 너비의 의자)에 적응할 수 있으며, 전체 정책을 재훈련할 필요가 없습니다.
+- **복합 작업**: 다중 기술 조정이 필요한 복합 작업(예: 물체를 들고 앉기)에서 TokenHSI는 독립 컨트롤러 조합보다 우수하여 더 자연스럽고 물리적으로 합리적인 상호작용을 구현합니다.
+- **정량적 지표**: 성공률, 물리적 합리성(예: 접촉력, 관절 토크) 및 다양성(예: 다양한 상호작용 궤적)에서 기준선 방법보다 우수합니다.
+
+### 결론
+TokenHSI는 작업 토큰화와 통합 Transformer 정책을 통해 HSI 합성에서 다중 기술 통합과 유연한 적응 문제를 효과적으로 해결하며, 물리적 캐릭터 애니메이션과 구현 AI를 위한 확장 가능한 솔루션을 제공합니다.

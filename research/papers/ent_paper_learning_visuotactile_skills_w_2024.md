@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.16823v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.16823v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (730 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,26 @@ sources:
 ## Overview
 Aiming to replicate human-like dexterity, perceptual experiences, and motion patterns, we explore learning from human demonstrations using a bimanual system with multifingered hands and visuotactile data. Two significant challenges exist: the lack of an affordable and accessible teleoperation system suitable for a dual-arm setup with multifingered hands, and the scarcity of multifingered hand hardware equipped with touch sensing. To tackle the first challenge, we develop HATO, a low-cost hands-arms teleoperation system that leverages off-the-shelf electronics, complemented with a software suite that enables efficient data collection; the comprehensive software suite also supports multimodal data processing, scalable policy learning, and smooth policy deployment. To tackle the latter challenge, we introduce a novel hardware adaptation by repurposing two prosthetic hands equipped with touch sensors for research. Using visuotactile data collected from our system, we learn skills to complete long-horizon, high-precision tasks which are difficult to achieve without multifingered dexterity and touch feedback. Furthermore, we empirically investigate the effects of dataset size, sensing modality, and visual input preprocessing on policy learning. Our results mark a promising step forward in bimanual multifingered manipulation from visuotactile data. Videos, code, and datasets can be found at https://toruowo.github.io/hato/ .
 
-## 개요
-인간과 유사한 손재주, 지각 경험 및 움직임 패턴을 재현하는 것을 목표로, 우리는 다지 손과 시각-촉각 데이터를 갖춘 양손 시스템을 사용하여 인간 시연으로부터 학습하는 방법을 탐구합니다. 두 가지 주요 과제가 존재합니다: 다지 손을 갖춘 이중 팔 설정에 적합한 저렴하고 접근 가능한 원격 조작 시스템의 부족, 그리고 촉각 감지 기능이 장착된 다지 손 하드웨어의 희소성입니다. 첫 번째 과제를 해결하기 위해, 우리는 기성 전자 부품을 활용한 저비용 손-팔 원격 조작 시스템인 HATO를 개발하고, 효율적인 데이터 수집을 가능하게 하는 소프트웨어 제품군을 함께 제공합니다. 이 포괄적인 소프트웨어 제품군은 다중 모드 데이터 처리, 확장 가능한 정책 학습, 그리고 원활한 정책 배포도 지원합니다. 두 번째 과제를 해결하기 위해, 우리는 연구 목적으로 촉각 센서가 장착된 두 개의 의수(prosthetic hand)를 재활용하는 새로운 하드웨어 적응 방식을 도입합니다. 우리 시스템에서 수집된 시각-촉각 데이터를 사용하여, 다지 손재주와 촉각 피드백 없이는 달성하기 어려운 장기적이고 고정밀 작업을 완료하는 기술을 학습합니다. 또한, 데이터 세트 크기, 감지 양식, 그리고 시각 입력 전처리가 정책 학습에 미치는 영향을 실증적으로 조사합니다. 우리의 결과는 시각-촉각 데이터를 활용한 양손 다지 조작 분야에서 유망한 진전을 의미합니다. 비디오, 코드 및 데이터 세트는 https://toruowo.github.io/hato/ 에서 확인할 수 있습니다.
-
-## 핵심 내용
-인간과 유사한 손재주, 지각 경험 및 움직임 패턴을 재현하는 것을 목표로, 우리는 다지 손과 시각-촉각 데이터를 갖춘 양손 시스템을 사용하여 인간 시연으로부터 학습하는 방법을 탐구합니다. 두 가지 주요 과제가 존재합니다: 다지 손을 갖춘 이중 팔 설정에 적합한 저렴하고 접근 가능한 원격 조작 시스템의 부족, 그리고 촉각 감지 기능이 장착된 다지 손 하드웨어의 희소성입니다. 첫 번째 과제를 해결하기 위해, 우리는 기성 전자 부품을 활용한 저비용 손-팔 원격 조작 시스템인 HATO를 개발하고, 효율적인 데이터 수집을 가능하게 하는 소프트웨어 제품군을 함께 제공합니다. 이 포괄적인 소프트웨어 제품군은 다중 모드 데이터 처리, 확장 가능한 정책 학습, 그리고 원활한 정책 배포도 지원합니다. 두 번째 과제를 해결하기 위해, 우리는 연구 목적으로 촉각 센서가 장착된 두 개의 의수를 재활용하는 새로운 하드웨어 적응 방식을 도입합니다. 우리 시스템에서 수집된 시각-촉각 데이터를 사용하여, 다지 손재주와 촉각 피드백 없이는 달성하기 어려운 장기적이고 고정밀 작업을 완료하는 기술을 학습합니다. 또한, 데이터 세트 크기, 감지 양식, 그리고 시각 입력 전처리가 정책 학습에 미치는 영향을 실증적으로 조사합니다. 우리의 결과는 시각-촉각 데이터를 활용한 양손 다지 조작 분야에서 유망한 진전을 의미합니다. 비디오, 코드 및 데이터 세트는 https://toruowo.github.io/hato/ 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2404.16823v2
+
+## 개요
+인간형 손재주 조작에서 원격 조작 비용이 높고 다지 손 촉각 하드웨어가 부족하다는 두 가지 도전 과제를 해결하기 위해, 연구팀은 HATO 시스템을 개발했습니다——기성 전자 부품으로 구축된 저비용 양팔 원격 조작 플랫폼으로, 소프트웨어는 다중 모달 데이터 처리와 정책 배포를 지원합니다. 동시에, 두 가지 상용 의수 손을 개조하고 촉각 센서를 통합하여 촉각 인식 하드웨어 부족 문제를 해결했습니다. 수집된 시각-촉각 데이터를 기반으로, 시스템은 다지 손재주와 촉각 피드백이 필요한 장시간 고정밀 작업을 성공적으로 학습했으며, 데이터 양, 인식 모달 및 시각 전처리가 정책 성능에 미치는 영향을 체계적으로 분석했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **원격 조작 플랫폼 HATO**: 저비용 기성 전자 부품으로 양팔 원격 조작 장치를 구축하고, 소프트웨어는 효율적인 데이터 수집, 다중 모달 데이터 처리, 확장 가능한 정책 학습 및 원활한 배포를 지원합니다.
+- **하드웨어 적응**: 두 가지 상용 의수 손을 개조하고 촉각 센서를 통합하여 연구 시나리오에 적합하게 만들고, 다지 손 촉각 하드웨어 부족 문제를 해결합니다.
+
+### 실험 설정
+- **데이터 수집**: HATO 시스템을 통해 인간 시연의 시각-촉각 데이터를 수집하여 정책 훈련에 사용합니다.
+- **작업 유형**: 장시간, 고정밀 조작 작업으로, 다지 손재주와 촉각 피드백에 의존해야 완료할 수 있습니다.
+- **변수 분석**: 데이터 세트 규모, 인식 모달(시각/촉각/시각-촉각 융합) 및 시각 입력 전처리 방식이 정책 학습 효과에 미치는 영향을 체계적으로 탐구합니다.
+
+### 주요 결과
+- 시각-촉각 데이터는 장시간 고정밀 작업의 성공률을 크게 향상시키며, 특히 촉각 피드백에 의존하는 정밀 조작 단계에서 효과적입니다.
+- 데이터 세트 규모 증가는 정책 일반화 능력을 향상시킬 수 있지만 한계 효과가 존재합니다; 촉각 모달은 접촉 작업에서 시각보다 기여도가 높습니다.
+- 시각 입력 전처리(예: 배경 제거, 조명 정규화)는 정책의 환경 과적합을 줄일 수 있습니다.
+
+### 결론
+이 작업은 양팔 다지 손의 시각-촉각 데이터 기반 손재주 조작 학습을 위한 저비용, 재현 가능한 솔루션을 제공하며, 오픈 소스 리소스(비디오, 코드, 데이터 세트)는 https://toruowo.github.io/hato/ 에서 확인할 수 있습니다.

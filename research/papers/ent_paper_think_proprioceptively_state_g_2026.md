@@ -49,8 +49,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.06575v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.06575v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (915 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,27 @@ ThinkProprio 通过将本体感觉转化为主动查询令牌，有效引导 VLM
 ## Overview
 Vision-language-action (VLA) models typically inject proprioception only as a late conditioning signal, preventing robot state from grounding instruction understanding or directing visual attention. We introduce ThinkProprio, which discretizes proprioception into VLM-vocabulary tokens and uses them jointly with the instruction to gate visual patches before VLM computation, steering the model toward action-relevant evidence while discarding redundant tokens early. We find that proprioception added as a passive conditioning signal leaves performance essentially unchanged; its value emerges when token-form state acts as an active query that, with the instruction, selects which visual patches the VLM processes. Systematic ablations show that VLM-vocabulary tokens outperform learned projectors as the state encoding, and that retaining only about \SI{12}{\percent} of the visual tokens surpasses on CALVIN ABC$\to$D. Across CALVIN, LIBERO, and real-world manipulation, ThinkProprio reduces end-to-end inference latency while improving the matched full-token baseline.
 
-## 개요
-Vision-language-action (VLA) 모델은 일반적으로 고유 감각(proprioception)을 단순히 후기 조건화 신호(late conditioning signal)로만 주입하여, 로봇 상태가 명령 이해를 근거하거나 시각적 주의를 유도하지 못하게 합니다. 우리는 ThinkProprio를 소개합니다. 이는 고유 감각을 VLM 어휘 토큰(VLM-vocabulary tokens)으로 이산화하고, 이를 명령과 함께 사용하여 VLM 계산 전에 시각 패치를 게이팅(gating)함으로써, 모델이 행동 관련 증거에 집중하고 중복 토큰을 조기에 폐기하도록 유도합니다. 우리는 고유 감각이 수동적 조건화 신호로 추가될 때 성능이 거의 변하지 않음을 발견했습니다. 그 가치는 토큰 형태의 상태가 명령과 함께 VLM이 처리할 시각 패치를 선택하는 능동적 질의(active query)로 작용할 때 나타납니다. 체계적 절제 실험(systematic ablations)은 VLM 어휘 토큰이 학습된 프로젝터(learned projectors)보다 상태 인코딩으로 더 우수하며, 시각 토큰의 약 \SI{12}{\percent}만 유지해도 CALVIN ABC$\to$D에서 더 나은 성능을 보임을 입증합니다. CALVIN, LIBERO 및 실제 세계 조작 작업에서 ThinkProprio는 일치하는 전체 토큰 기준선(matched full-token baseline)을 개선하면서 종단 간 추론 지연 시간(end-to-end inference latency)을 줄입니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 일반적으로 고유 감각(proprioception)을 단순히 후기 조건화 신호(late conditioning signal)로만 주입하여, 로봇 상태가 명령 이해를 근거하거나 시각적 주의를 유도하지 못하게 합니다. 우리는 ThinkProprio를 소개합니다. 이는 고유 감각을 VLM 어휘 토큰(VLM-vocabulary tokens)으로 이산화하고, 이를 명령과 함께 사용하여 VLM 계산 전에 시각 패치를 게이팅(gating)함으로써, 모델이 행동 관련 증거에 집중하고 중복 토큰을 조기에 폐기하도록 유도합니다. 우리는 고유 감각이 수동적 조건화 신호로 추가될 때 성능이 거의 변하지 않음을 발견했습니다. 그 가치는 토큰 형태의 상태가 명령과 함께 VLM이 처리할 시각 패치를 선택하는 능동적 질의(active query)로 작용할 때 나타납니다. 체계적 절제 실험(systematic ablations)은 VLM 어휘 토큰이 학습된 프로젝터(learned projectors)보다 상태 인코딩으로 더 우수하며, 시각 토큰의 약 \SI{12}{\percent}만 유지해도 CALVIN ABC$\to$D에서 더 나은 성능을 보임을 입증합니다. CALVIN, LIBERO 및 실제 세계 조작 작업에서 ThinkProprio는 일치하는 전체 토큰 기준선(matched full-token baseline)을 개선하면서 종단 간 추론 지연 시간(end-to-end inference latency)을 줄입니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.06575v2
+
+## 개요
+기존 VLA 모델은 일반적으로 고유수용감각을 후기 조건 신호로 주입하는데, 이는 로봇 상태가 명령 이해나 시각적 주의를 유도하는 역할을 제한합니다. ThinkProprio는 고유수용감각을 VLM 어휘 토큰으로 이산화하고, 명령과 함께 시각 패치의 게이트 선택에 사용하여 VLM 계산 전에 모델이 행동 관련 증거에 주목하고 중복 토큰을 폐기하도록 유도합니다. 실험에 따르면 수동 조건 신호로서의 고유수용감각은 성능에 거의 영향을 미치지 않으며, 토큰 형태의 상태가 능동 쿼리로 사용될 때만 가치를 발휘합니다. 시스템 소거 실험은 학습형 프로젝터보다 VLM 어휘 토큰이 상태 인코딩으로 더 우수하며, 시각 토큰의 약 12%만 유지해도 CALVIN ABC→D에서 전체 토큰 기준선을 능가함을 보여줍니다. CALVIN, LIBERO 및 실제 세계 조작 작업에서 ThinkProprio는 성능을 향상시키면서 엔드투엔드 추론 지연 시간을 줄였습니다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: 고유수용감각(관절 각도, 엔드 이펙터 포즈 등)을 VLM 어휘의 토큰으로 이산화하고, 자연어 명령과 함께 능동 쿼리로 사용하여 VLM 계산 전에 시각 패치를 게이트 선택합니다.
+- **상태 인코딩**: 학습형 프로젝터 대신 VLM 어휘 토큰으로 고유수용감각을 인코딩하며, 소거 실험을 통해 이 방식이 더 우수함을 입증합니다.
+- **토큰 선택 메커니즘**: 시각 토큰의 약 12%만 유지하여 CALVIN ABC→D 작업에서 전체 토큰 기준선보다 성능이 뛰어납니다.
+
+### 실험 설정
+- **벤치마크**: CALVIN(ABC→D 설정), LIBERO(다중 작업), 실제 세계 조작.
+- **기준선 비교**: 일치하는 전체 토큰 기준선(즉, 모든 시각 토큰을 처리하는 VLA 모델).
+- **핵심 지표**: 작업 성공률, 엔드투엔드 추론 지연 시간.
+
+### 핵심 결과
+- **성능 향상**: CALVIN ABC→D에서 시각 토큰의 12%만 유지한 ThinkProprio가 전체 토큰 기준선을 능가합니다.
+- **지연 시간 감소**: 모든 테스트 시나리오에서 엔드투엔드 추론 지연 시간이 전체 토큰 기준선보다 낮습니다.
+- **소거 실험**: VLM 어휘 토큰이 상태 인코딩으로 학습형 프로젝터보다 우수하며, 수동 조건 신호로서의 고유수용감각은 성능을 거의 변화시키지 않습니다.
+
+### 결론
+ThinkProprio는 고유수용감각을 능동 쿼리 토큰으로 변환하여 VLM이 행동 관련 시각 정보에 주목하도록 효과적으로 유도하고, 계산 오버헤드를 줄이면서 작업 성능을 향상시켜 상태 기반 시각 주의 선택의 가능성을 검증합니다.

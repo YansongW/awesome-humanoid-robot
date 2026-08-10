@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.14874v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.14874v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (779 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,31 @@ HumanoidVLM 验证了将语义感知与检索式控制相结合作为可解释�
 ## Overview
 Humanoid robots must adapt their contact behavior to diverse objects and tasks, yet most controllers rely on fixed, hand-tuned impedance gains and gripper settings. This paper introduces HumanoidVLM, a vision-language driven retrieval framework that enables the Unitree G1 humanoid to select task-appropriate Cartesian impedance parameters and gripper configurations directly from an egocentric RGB image. The system couples a vision-language model for semantic task inference with a FAISS-based Retrieval-Augmented Generation (RAG) module that retrieves experimentally validated stiffness-damping pairs and object-specific grasp angles from two custom databases, and executes them through a task-space impedance controller for compliant manipulation. We evaluate HumanoidVLM on 14 visual scenarios and achieve a retrieval accuracy of 93%. Real-world experiments show stable interaction dynamics, with z-axis tracking errors typically within 1-3.5 cm and virtual forces consistent with task-dependent impedance settings. These results demonstrate the feasibility of linking semantic perception with retrieval-based control as an interpretable path toward adaptive humanoid manipulation.
 
-## 개요
-휴머노이드 로봇은 다양한 물체와 작업에 맞춰 접촉 행동을 적응시켜야 하지만, 대부분의 제어기는 고정되고 수동으로 조정된 임피던스 게인과 그리퍼 설정에 의존합니다. 본 논문에서는 Unitree G1 휴머노이드가 1인칭 RGB 이미지에서 직접 작업에 적합한 직교 임피던스 매개변수와 그리퍼 구성을 선택할 수 있도록 하는 비전-언어 기반 검색 프레임워크인 HumanoidVLM을 소개합니다. 이 시스템은 의미론적 작업 추론을 위한 비전-언어 모델과 FAISS 기반의 검색 증강 생성(RAG) 모듈을 결합하여, 두 개의 맞춤형 데이터베이스에서 실험적으로 검증된 강성-감쇠 쌍과 물체별 파지 각도를 검색하고, 이를 작업 공간 임피던스 제어기를 통해 순응적 조작을 실행합니다. 우리는 HumanoidVLM을 14가지 시각적 시나리오에서 평가하여 93%의 검색 정확도를 달성했습니다. 실제 실험에서는 안정적인 상호작용 동역학을 보여주었으며, z축 추적 오차는 일반적으로 1-3.5cm 이내이고 가상 힘은 작업 의존적 임피던스 설정과 일관되었습니다. 이러한 결과는 의미론적 인식과 검색 기반 제어를 연결하는 것이 적응형 휴머노이드 조작을 위한 해석 가능한 경로로서 실현 가능함을 입증합니다.
-
-## 핵심 내용
-휴머노이드 로봇은 다양한 물체와 작업에 맞춰 접촉 행동을 적응시켜야 하지만, 대부분의 제어기는 고정되고 수동으로 조정된 임피던스 게인과 그리퍼 설정에 의존합니다. 본 논문에서는 Unitree G1 휴머노이드가 1인칭 RGB 이미지에서 직접 작업에 적합한 직교 임피던스 매개변수와 그리퍼 구성을 선택할 수 있도록 하는 비전-언어 기반 검색 프레임워크인 HumanoidVLM을 소개합니다. 이 시스템은 의미론적 작업 추론을 위한 비전-언어 모델과 FAISS 기반의 검색 증강 생성(RAG) 모듈을 결합하여, 두 개의 맞춤형 데이터베이스에서 실험적으로 검증된 강성-감쇠 쌍과 물체별 파지 각도를 검색하고, 이를 작업 공간 임피던스 제어기를 통해 순응적 조작을 실행합니다. 우리는 HumanoidVLM을 14가지 시각적 시나리오에서 평가하여 93%의 검색 정확도를 달성했습니다. 실제 실험에서는 안정적인 상호작용 동역학을 보여주었으며, z축 추적 오차는 일반적으로 1-3.5cm 이내이고 가상 힘은 작업 의존적 임피던스 설정과 일관되었습니다. 이러한 결과는 의미론적 인식과 검색 기반 제어를 연결하는 것이 적응형 휴머노이드 조작을 위한 해석 가능한 경로로서 실현 가능함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.14874v1
+
+## 개요
+HumanoidVLM은 비전-언어 모델과 FAISS 기반 검색 증강 생성 모듈을 결합하여 휴머노이드 로봇의 접촉 행동 적응 문제를 해결합니다. 시스템은 두 개의 맞춤형 데이터베이스에서 실험적으로 검증된 강성-감쇠 쌍과 객체별 파지 각도를 검색하며, 이를 작업 공간 임피던스 제어기를 통해 실행합니다. 14개의 시각적 장면 테스트에서 시스템은 93%의 검색 정확도를 달성했으며, 실제 실험에서 z축 추적 오차는 1-3.5cm 범위 내로 제어되었고, 가상 힘은 작업 의존적 임피던스 설정과 일관성을 유지했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+HumanoidVLM은 이중 모듈 협력 아키텍처를 채택합니다:
+- **비전-언어 추론 모듈**: 비전-언어 모델을 통해 단안 RGB 이미지에서 작업 의미론을 추론합니다 (예: "깨지기 쉬운 유리컵 잡기" 또는 "금속 볼트 조이기")
+- **검색 증강 생성 모듈**: FAISS 기반 RAG 시스템으로, 두 개의 전용 데이터베이스에서 검색합니다:
+  - 임피던스 파라미터 라이브러리: 다양한 작업 시나리오에서 실험적으로 검증된 강성-감쇠 조합 저장
+  - 파지 각도 라이브러리: 객체별 최적 그리퍼 각도 구성 포함
+
+### 실험 설정
+- **하드웨어 플랫폼**: Unitree G1 휴머노이드 로봇
+- **지각 입력**: 단안 RGB 이미지 (깊이 정보 없음)
+- **제어기**: 작업 공간 임피던스 제어기
+- **테스트 시나리오**: 14가지 시각적 조작 장면 (다양한 재질, 형태 및 작업 요구사항을 가진 객체 포함)
+
+### 주요 실험 결과
+- **검색 정확도**: 14개의 시각적 장면에서 93% 달성
+- **추적 오차**: z축 방향 추적 오차가 1-3.5cm 범위 내에서 안정적으로 유지
+- **힘 제어 성능**: 가상 힘 출력이 작업 의존적 임피던스 설정과 일관성 유지
+- **상호작용 안정성**: 실제 실험에서 안정적인 상호작용 동역학 특성 입증
+
+### 결론
+HumanoidVLM은 의미론적 인식과 검색 기반 제어를 결합한 해석 가능한 경로의 실현 가능성을 검증했으며, 접촉이 풍부한 조작 작업에서 휴머노이드 로봇의 적응형 제어를 위한 새로운 패러다임을 제시합니다. 이 방법은 기존의 고정 임피던스 이득과 수동 파라미터 튜닝의 한계를 극복하고, 비전-언어 이해를 통해 제어 파라미터 선택을 직접 구동합니다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.02359v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.02359v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (711 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,11 +71,25 @@ DeeR-VLA 通过动态早退机制有效缓解了 MLLM 在机器人平台上的�
 ## Overview
 MLLMs have demonstrated remarkable comprehension and reasoning capabilities with complex language and visual data. These advances have spurred the vision of establishing a generalist robotic MLLM proficient in understanding complex human instructions and accomplishing various embodied tasks. However, developing MLLMs for real-world robots is challenging due to the typically limited computation and memory capacities available on robotic platforms. In contrast, the inference of MLLMs involves storing billions of parameters and performing tremendous computation, imposing significant hardware demands. In our paper, we propose a Dynamic Early-Exit Framework for Robotic Vision-Language-Action Model (DeeR-VLA, or simply DeeR) that automatically adjusts the size of the activated MLLM based on each situation at hand. The approach leverages a multi-exit architecture in MLLMs, which allows the model to terminate processing once a proper size of the model has been activated for a specific situation, thus avoiding further redundant computation. Additionally, we develop novel algorithms that establish early-termination criteria for DeeR, conditioned on predefined demands such as average computational cost (i.e., power consumption), as well as peak computational consumption (i.e., latency) and GPU memory usage. These enhancements ensure that DeeR operates efficiently under varying resource constraints while maintaining competitive performance. On the CALVIN robot manipulation benchmark, DeeR demonstrates significant reductions in computational costs of LLM by 5.2-6.5x and GPU memory of LLM by 2-6x without compromising performance. Code and checkpoints are available at https://github.com/yueyang130/DeeR-VLA.
 
-## 개요
-MLLM은 복잡한 언어 및 시각 데이터에 대해 뛰어난 이해와 추론 능력을 보여주었습니다. 이러한 발전은 복잡한 인간 명령을 이해하고 다양한 구현 작업을 수행하는 데 능숙한 범용 로봇 MLLM을 구축하려는 비전을 촉진했습니다. 그러나 실제 로봇을 위한 MLLM을 개발하는 것은 로봇 플랫폼에서 일반적으로 제한된 계산 및 메모리 용량으로 인해 어렵습니다. 반면, MLLM의 추론은 수십억 개의 매개변수를 저장하고 막대한 계산을 수행해야 하므로 상당한 하드웨어 요구 사항이 발생합니다. 본 논문에서는 각 상황에 따라 활성화된 MLLM의 크기를 자동으로 조정하는 로봇 시각-언어-행동 모델을 위한 동적 조기 종료 프레임워크(DeeR-VLA, 간단히 DeeR)를 제안합니다. 이 접근 방식은 MLLM의 다중 종료 아키텍처를 활용하여 특정 상황에 적절한 크기의 모델이 활성화되면 처리를 종료하여 추가적인 중복 계산을 방지합니다. 또한 평균 계산 비용(즉, 전력 소비), 최대 계산 소비(즉, 지연 시간) 및 GPU 메모리 사용량과 같은 사전 정의된 요구 사항에 따라 DeeR의 조기 종료 기준을 설정하는 새로운 알고리즘을 개발합니다. 이러한 개선 사항은 DeeR이 경쟁력 있는 성능을 유지하면서 다양한 리소스 제약 조건에서 효율적으로 작동하도록 보장합니다. CALVIN 로봇 조작 벤치마크에서 DeeR은 성능 저하 없이 LLM의 계산 비용을 5.2-6.5배, LLM의 GPU 메모리를 2-6배 크게 줄였습니다. 코드와 체크포인트는 https://github.com/yueyang130/DeeR-VLA에서 확인할 수 있습니다.
-
-## 핵심 내용
-MLLM은 복잡한 언어 및 시각 데이터에 대해 뛰어난 이해와 추론 능력을 보여주었습니다. 이러한 발전은 복잡한 인간 명령을 이해하고 다양한 구현 작업을 수행하는 데 능숙한 범용 로봇 MLLM을 구축하려는 비전을 촉진했습니다. 그러나 실제 로봇을 위한 MLLM을 개발하는 것은 로봇 플랫폼에서 일반적으로 제한된 계산 및 메모리 용량으로 인해 어렵습니다. 반면, MLLM의 추론은 수십억 개의 매개변수를 저장하고 막대한 계산을 수행해야 하므로 상당한 하드웨어 요구 사항이 발생합니다. 본 논문에서는 각 상황에 따라 활성화된 MLLM의 크기를 자동으로 조정하는 로봇 시각-언어-행동 모델을 위한 동적 조기 종료 프레임워크(DeeR-VLA, 간단히 DeeR)를 제안합니다. 이 접근 방식은 MLLM의 다중 종료 아키텍처를 활용하여 특정 상황에 적절한 크기의 모델이 활성화되면 처리를 종료하여 추가적인 중복 계산을 방지합니다. 또한 평균 계산 비용(즉, 전력 소비), 최대 계산 소비(즉, 지연 시간) 및 GPU 메모리 사용량과 같은 사전 정의된 요구 사항에 따라 DeeR의 조기 종료 기준을 설정하는 새로운 알고리즘을 개발합니다. 이러한 개선 사항은 DeeR이 경쟁력 있는 성능을 유지하면서 다양한 리소스 제약 조건에서 효율적으로 작동하도록 보장합니다. CALVIN 로봇 조작 벤치마크에서 DeeR은 성능 저하 없이 LLM의 계산 비용을 5.2-6.5배, LLM의 GPU 메모리를 2-6배 크게 줄였습니다. 코드와 체크포인트는 https://github.com/yueyang130/DeeR-VLA에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.02359v1
+
+## 개요
+DeeR-VLA는 로봇 실행 시나리오에서 MLLM 추론 시 매개변수 규모가 크고 하드웨어 요구 사항이 높은 문제를 해결하기 위해 동적 조기 종료 메커니즘을 제안합니다. 이 프레임워크는 MLLM에 다중 출력 구조를 내장하여 모델이 현재 작업 복잡도에 따라 적절한 크기의 활성 매개변수를 자동으로 선택하고 불필요한 계산을 방지합니다. 동시에 연구팀은 평균 계산 비용, 최대 계산 소비, GPU 메모리 사용량 등의 사전 설정 조건을 기반으로 한 조기 종료 판단 알고리즘을 개발하여 다양한 리소스 제약 조건에서 효율적인 실행을 보장합니다. 실험 결과, 이 방법은 CALVIN 벤치마크에서 계산 및 메모리 오버헤드를 크게 줄이면서 성능 저하가 없음을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+- **동적 조기 종료 프레임워크**: DeeR-VLA는 MLLM에 다중 출력 아키텍처를 도입하여 모델이 추론 과정에서 작업 복잡도에 따라 계산을 조기에 종료하고 필요한 규모의 매개변수만 활성화할 수 있도록 합니다.
+- **조기 종료 판단 알고리즘**: 평균 계산 비용, 최대 계산 소비, GPU 메모리 사용량 등의 사전 설정 조건을 기반으로 종료 기준을 설계하여 리소스 제약 하에서 모델 규모를 동적으로 조정합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: 다양한 복잡한 지시 및 조작 작업을 포함하는 CALVIN 로봇 조작 벤치마크에서 평가를 수행합니다.
+- **비교 기준선**: 표준 MLLM 추론 방법과 비교하여 계산 비용과 GPU 메모리 소비를 중점적으로 측정합니다.
+
+### 주요 결과
+- **계산 비용**: LLM 부분의 계산량이 5.2-6.5배 감소합니다.
+- **GPU 메모리**: LLM 부분의 메모리 점유율이 2-6배 감소합니다.
+- **성능 유지**: CALVIN 벤치마크에서 DeeR-VLA의 조작 성공률이 완전한 MLLM 추론과 동일하며 성능 저하가 없습니다.
+
+### 결론
+DeeR-VLA는 동적 조기 종료 메커니즘을 통해 로봇 플랫폼에서 MLLM의 리소스 병목 현상을 효과적으로 완화하며, 리소스 제약 시나리오에서의 다중 모달 대형 모델 배포를 위한 실현 가능한 솔루션을 제공합니다. 코드와 모델 가중치는 오픈소스로 공개되었습니다.

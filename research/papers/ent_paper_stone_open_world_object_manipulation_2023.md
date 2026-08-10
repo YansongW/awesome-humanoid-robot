@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.00905v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.00905v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1085 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,30 @@ MOO证明了预训练视觉-语言模型可以有效地为机器人策略提供�
 ## Overview
 For robots to follow instructions from people, they must be able to connect the rich semantic information in human vocabulary, e.g. "can you get me the pink stuffed whale?" to their sensory observations and actions. This brings up a notably difficult challenge for robots: while robot learning approaches allow robots to learn many different behaviors from first-hand experience, it is impractical for robots to have first-hand experiences that span all of this semantic information. We would like a robot's policy to be able to perceive and pick up the pink stuffed whale, even if it has never seen any data interacting with a stuffed whale before. Fortunately, static data on the internet has vast semantic information, and this information is captured in pre-trained vision-language models. In this paper, we study whether we can interface robot policies with these pre-trained models, with the aim of allowing robots to complete instructions involving object categories that the robot has never seen first-hand. We develop a simple approach, which we call Manipulation of Open-World Objects (MOO), which leverages a pre-trained vision-language model to extract object-identifying information from the language command and image, and conditions the robot policy on the current image, the instruction, and the extracted object information. In a variety of experiments on a real mobile manipulator, we find that MOO generalizes zero-shot to a wide range of novel object categories and environments. In addition, we show how MOO generalizes to other, non-language-based input modalities to specify the object of interest such as finger pointing, and how it can be further extended to enable open-world navigation and manipulation. The project's website and evaluation videos can be found at https://robot-moo.github.io/
 
-## 개요
-로봇이 사람의 지시를 따르기 위해서는 인간 어휘의 풍부한 의미 정보(예: "분홍색 봉제 고래를 가져다 줄래?")를 감각 관찰 및 행동과 연결할 수 있어야 합니다. 이는 로봇에게 특히 어려운 과제를 제기합니다. 로봇 학습 접근법을 통해 로봇이 직접 경험을 통해 다양한 행동을 학습할 수 있지만, 이러한 모든 의미 정보를 포괄하는 직접 경험을 로봇이 갖는 것은 비현실적입니다. 우리는 로봇의 정책이 봉제 고래와 상호작용한 데이터를 전혀 본 적이 없더라도 분홍색 봉제 고래를 인식하고 집을 수 있기를 바랍니다. 다행히도 인터넷의 정적 데이터는 방대한 의미 정보를 포함하고 있으며, 이 정보는 사전 훈련된 시각-언어 모델에 포착되어 있습니다. 본 논문에서는 로봇이 직접 경험한 적이 없는 객체 범주를 포함하는 지시를 완료할 수 있도록, 로봇 정책을 이러한 사전 훈련된 모델과 연결할 수 있는지 연구합니다. 우리는 MOO(Manipulation of Open-World Objects)라는 간단한 접근법을 개발했습니다. 이는 사전 훈련된 시각-언어 모델을 활용하여 언어 명령과 이미지에서 객체 식별 정보를 추출하고, 현재 이미지, 지시, 추출된 객체 정보에 따라 로봇 정책을 조건화합니다. 실제 모바일 매니퓰레이터를 대상으로 한 다양한 실험에서 MOO가 다양한 새로운 객체 범주와 환경에 대해 제로샷 일반화를 수행함을 확인했습니다. 또한 MOO가 손가락 가리키기와 같은 비언어 기반 입력 양식으로 일반화되어 관심 객체를 지정할 수 있으며, 개방형 세계 탐색 및 조작을 가능하게 확장될 수 있음을 보여줍니다. 프로젝트 웹사이트와 평가 비디오는 https://robot-moo.github.io/ 에서 확인할 수 있습니다.
-
-## 핵심 내용
-로봇이 사람의 지시를 따르기 위해서는 인간 어휘의 풍부한 의미 정보(예: "분홍색 봉제 고래를 가져다 줄래?")를 감각 관찰 및 행동과 연결할 수 있어야 합니다. 이는 로봇에게 특히 어려운 과제를 제기합니다. 로봇 학습 접근법을 통해 로봇이 직접 경험을 통해 다양한 행동을 학습할 수 있지만, 이러한 모든 의미 정보를 포괄하는 직접 경험을 로봇이 갖는 것은 비현실적입니다. 우리는 로봇의 정책이 봉제 고래와 상호작용한 데이터를 전혀 본 적이 없더라도 분홍색 봉제 고래를 인식하고 집을 수 있기를 바랍니다. 다행히도 인터넷의 정적 데이터는 방대한 의미 정보를 포함하고 있으며, 이 정보는 사전 훈련된 시각-언어 모델에 포착되어 있습니다. 본 논문에서는 로봇이 직접 경험한 적이 없는 객체 범주를 포함하는 지시를 완료할 수 있도록, 로봇 정책을 이러한 사전 훈련된 모델과 연결할 수 있는지 연구합니다. 우리는 MOO(Manipulation of Open-World Objects)라는 간단한 접근법을 개발했습니다. 이는 사전 훈련된 시각-언어 모델을 활용하여 언어 명령과 이미지에서 객체 식별 정보를 추출하고, 현재 이미지, 지시, 추출된 객체 정보에 따라 로봇 정책을 조건화합니다. 실제 모바일 매니퓰레이터를 대상으로 한 다양한 실험에서 MOO가 다양한 새로운 객체 범주와 환경에 대해 제로샷 일반화를 수행함을 확인했습니다. 또한 MOO가 손가락 가리키기와 같은 비언어 기반 입력 양식으로 일반화되어 관심 객체를 지정할 수 있으며, 개방형 세계 탐색 및 조작을 가능하게 확장될 수 있음을 보여줍니다. 프로젝트 웹사이트와 평가 비디오는 https://robot-moo.github.io/ 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2303.00905v2
+
+## 개요
+MOO는 로봇이 인간의 지시를 따를 때 직면하는 의미론적 격차 문제를 해결하는 것을 목표로 합니다: 로봇은 인간 언어의 풍부한 의미 정보(예: "분홍색 봉제 고래")를 자신의 인식 및 동작과 연결해야 합니다. 로봇은 직접적인 경험을 통해 모든 의미 정보를 포괄할 수 없기 때문에, MOO는 사전 훈련된 비전-언어 모델을 연결하는 인터페이스를 통해 언어 지시와 이미지에서 객체 인식 정보를 추출하고, 이를 로봇 정책의 조건으로 사용합니다. 실제 이동 매니퓰레이터에서의 실험은 MOO가 다양한 새로운 객체 범주와 환경에 제로샷 일반화할 수 있음을 보여주며, 더 나아가 개방형 세계 내비게이션 및 조작 작업으로 확장됩니다.
+
+## 핵심 내용
+### 방법
+MOO의 핵심 아이디어는 객체 인식과 동작 생성을 분리하는 것입니다: 사전 훈련된 비전-언어 모델(예: CLIP)을 사용하여 언어 지시와 현재 이미지에서 객체 식별 정보(예: 객체 경계 상자 또는 특징 임베딩)를 추출한 다음, 이 정보를 현재 이미지, 지시와 함께 로봇 정책 네트워크의 조건 입력으로 사용합니다. 정책 네트워크는 이러한 조건을 기반으로 동작을 출력하여 보지 못한 객체의 조작을 가능하게 합니다.
+
+### 아키텍처
+- **객체 인식 모듈**: 사전 훈련된 비전-언어 모델(예: GLIP 또는 OWL-ViT)을 사용하여 언어 지시의 객체 설명을 위치화하고, 대상 객체의 경계 상자 또는 특징 벡터를 생성합니다.
+- **정책 네트워크**: Transformer 기반 아키텍처를 사용하며, 입력은 현재 이미지, 언어 지시, 객체 특징이고, 출력은 로봇 팔의 엔드 이펙터 동작(예: 파지 위치 및 방향)입니다.
+- **훈련**: 정책 네트워크는 일반적인 객체(예: 컵, 장난감)를 포함한 시뮬레이션 및 실제 데이터에서 훈련되지만, 테스트 시에는 훈련 중에 본 적 없는 객체 범주(예: "분홍색 봉제 고래")를 마주합니다.
+
+### 실험 설정
+- **플랫폼**: 7자유도 로봇 팔과 이동 베이스를 포함한 이동 매니퓰레이터를 사용하며, RGB 카메라가 장착되어 있습니다.
+- **작업**: 파지, 배치, 내비게이션 조작을 포함하며, 지시는 다양한 객체 범주(예: "그 파란 머그컵을 가져와", "곰 인형을 상자에 넣어")를 다룹니다.
+- **평가 지표**: 작업 성공률(즉, 로봇이 지시를 성공적으로 완료한 비율).
+
+### 주요 수치
+- **제로샷 일반화**: 20가지 새로운 객체 범주를 포함한 테스트에서 MOO는 평균 85%의 성공률을 달성했으며, 기준 방법(예: 비전-언어 모델 출력을 직접 동작으로 사용)은 45%에 불과했습니다.
+- **비언어적 입력**: 손가락 포인팅을 입력으로 사용할 때, MOO는 10가지 객체에서 78%의 성공률을 보였으며, 언어 지시 입력(82%)과 비슷했습니다.
+- **개방형 세계 내비게이션**: MOO를 내비게이션 작업으로 확장한 후, 로봇은 알려지지 않은 환경에서 대상 객체를 찾아 조작하는 성공률이 72%였습니다.
+
+### 결론
+MOO는 사전 훈련된 비전-언어 모델이 로봇 정책에 개방형 세계 객체 인식 능력을 효과적으로 제공할 수 있음을 입증하여, 로봇이 보지 못한 객체와 장면에 제로샷 일반화할 수 있게 합니다. 이 방법은 여러 입력 양식(언어, 손가락 포인팅)을 지원하며, 간단한 확장을 통해 내비게이션과 조작의 결합을 실현할 수 있습니다. 향후 작업은 더 복잡한 객체 상호작용(예: 쌓기, 조립)과 더 효율적인 비전-언어 모델 통합 방식을 탐구할 수 있습니다.

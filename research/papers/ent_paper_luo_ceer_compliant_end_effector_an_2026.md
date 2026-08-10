@@ -42,7 +42,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.19981v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_luo_ceer_compliant_end_effector_an_2026 into this card (rules: same_title_same_year). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_luo_ceer_compliant_end_effector_an_2026 into this card (rules: same_title_same_year). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (936 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,15 +90,26 @@ Humanoid robots have achieved impressive locomotion performance, yet contact-ric
 ## Content
 Humanoid robots have achieved impressive locomotion performance, yet contact-rich and long-horizon manipulation remains a major bottleneck. Manipulation is inherently contact-rich and demands compliant whole-body control for stable interaction, while its diversity and long-horizon nature favor modular, planner-compatible interfaces over joint-space tracking. We propose CEER, a compliant end-effector-root (EE-root) control abstraction for modular humanoid loco-manipulation within a hierarchical planning framework. CEER enables compliance-aware whole-body control in an interpretable task space defined by root motion commands and end-effector pose targets, and supports plug-and-play integration with heterogeneous high-level planners. A teacher-student framework is adopted to distill a general motion-tracking controller into a low-level policy that consumes only EE-root commands. We further construct a hierarchical system that integrates heterogeneous planners and task modules through the EE-root interface, enabling diverse manipulation tasks without retraining the underlying whole-body policy. Experiments in simulation and on hardware demonstrate 3.3 cm end-effector tracking accuracy with substantially reduced jerk compared to baselines, stable contact-rich manipulation under teleoperation, and up to 70% success in simulated single-object loco-manipulation tasks within a room-scale environment. These results indicate that compliant EE-root control provides a practical abstraction for humanoid loco-manipulation, enabling modular and scalable integration of diverse skills.
 
-## 개요
-휴머노이드 로봇은 인상적인 보행 성능을 달성했지만, 접촉이 많고 장기적인 조작은 여전히 주요 병목 현상으로 남아 있습니다. 조작은 본질적으로 접촉이 많으며 안정적인 상호작용을 위해 순응적인 전신 제어가 필요하고, 그 다양성과 장기적 특성은 관절 공간 추적보다 모듈식이고 계획기와 호환되는 인터페이스를 선호합니다.  
-본 논문에서는 계층적 계획 프레임워크 내에서 모듈식 휴머노이드 보행-조작을 위한 순응적 말단-뿌리(EE-root) 제어 추상화인 CEER를 제안합니다. CEER는 루트 모션 명령과 말단 효과기 자세 목표로 정의된 해석 가능한 작업 공간에서 순응 인식 전신 제어를 가능하게 하며, 이기종 고수준 계획기와의 플러그 앤 플레이 통합을 지원합니다. 교사-학생 프레임워크를 채택하여 일반 모션 추적 컨트롤러를 EE-root 명령만 소비하는 저수준 정책으로 증류합니다.  
-또한 EE-root 인터페이스를 통해 이기종 계획기와 작업 모듈을 통합하는 계층적 시스템을 구축하여, 기본 전신 정책을 재훈련하지 않고도 다양한 조작 작업을 가능하게 합니다. 시뮬레이션 및 하드웨어 실험에서 기준선 대비 크게 감소된 저크와 함께 3.3cm의 말단 효과기 추적 정확도, 원격 조작 하에서의 안정적인 접촉이 많은 조작, 그리고 방 크기 환경 내 시뮬레이션된 단일 물체 보행-조작 작업에서 최대 70%의 성공률을 입증했습니다. 이러한 결과는 순응적 EE-root 제어가 휴머노이드 보행-조작을 위한 실용적인 추상화를 제공하여 다양한 기술의 모듈식 및 확장 가능한 통합을 가능하게 함을 나타냅니다.
-
-## 핵심 내용
-휴머노이드 로봇은 인상적인 보행 성능을 달성했지만, 접촉이 많고 장기적인 조작은 여전히 주요 병목 현상으로 남아 있습니다. 조작은 본질적으로 접촉이 많으며 안정적인 상호작용을 위해 순응적인 전신 제어가 필요하고, 그 다양성과 장기적 특성은 관절 공간 추적보다 모듈식이고 계획기와 호환되는 인터페이스를 선호합니다.  
-본 논문에서는 계층적 계획 프레임워크 내에서 모듈식 휴머노이드 보행-조작을 위한 순응적 말단-뿌리(EE-root) 제어 추상화인 CEER를 제안합니다. CEER는 루트 모션 명령과 말단 효과기 자세 목표로 정의된 해석 가능한 작업 공간에서 순응 인식 전신 제어를 가능하게 하며, 이기종 고수준 계획기와의 플러그 앤 플레이 통합을 지원합니다. 교사-학생 프레임워크를 채택하여 일반 모션 추적 컨트롤러를 EE-root 명령만 소비하는 저수준 정책으로 증류합니다.  
-또한 EE-root 인터페이스를 통해 이기종 계획기와 작업 모듈을 통합하는 계층적 시스템을 구축하여, 기본 전신 정책을 재훈련하지 않고도 다양한 조작 작업을 가능하게 합니다. 시뮬레이션 및 하드웨어 실험에서 기준선 대비 크게 감소된 저크와 함께 3.3cm의 말단 효과기 추적 정확도, 원격 조작 하에서의 안정적인 접촉이 많은 조작, 그리고 방 크기 환경 내 시뮬레이션된 단일 물체 보행-조작 작업에서 최대 70%의 성공률을 입증했습니다. 이러한 결과는 순응적 EE-root 제어가 휴머노이드 보행-조작을 위한 실용적인 추상화를 제공하여 다양한 기술의 모듈식 및 확장 가능한 통합을 가능하게 함을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2605.19981v1
+
+## 개요
+휴머노이드 로봇은 이동 조작에서 접촉이 빈번하고 장시간 지속되는 작업의 도전 과제에 직면하며, 기존의 관절 공간 추적 방법은 유연성과 모듈성을 동시에 확보하기 어렵습니다. CEER는 엔드 이펙터 및 루트(EE-root) 명령 기반의 유연 제어 추상화를 제안하여 전신 제어를 해석 가능한 작업 공간에 매핑합니다. 교사-학생 증류를 통해 범용 운동 추적 컨트롤러가 엔드-루트 명령에만 응답하는 저수준 정책으로 압축되며, 이를 통해 다양한 고수준 플래너(예: 운동 플래너 또는 강화 학습 정책)가 직접 연결될 수 있습니다. 시뮬레이션 및 하드웨어 실험에서 이 방법은 원격 조작 접촉 작업에서 안정적인 성능을 보였으며, 방 규모 시나리오의 단일 물체 이동 조작 작업에서 최대 70%의 성공률을 달성했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **EE-root 제어 추상화**: 휴머노이드 로봇의 전신 제어를 루트 운동 명령(예: 선속도, 각속도)과 엔드 이펙터 자세 목표(위치 및 방향)로 분해하여 해석 가능한 작업 공간을 형성합니다.
+- **교사-학생 증류 프레임워크**:
+  - **교사 정책**: 전신 운동 추적 컨트롤러를 기반으로 관절 공간 명령을 사용하여 정밀한 운동 추적을 구현합니다.
+  - **학생 정책**: EE-root 명령만 입력으로 받아 증류 학습을 통해 교사 정책의 출력을 모방하며, 관절 수준 정보에 대한 의존성을 제거합니다.
+- **계층적 계획 시스템**: 고수준 플래너(예: 운동 플래너, 강화 학습 정책 또는 원격 조작 인터페이스)는 EE-root 인터페이스를 통해 저수준 정책과 상호작용하며, 작업별로 저수준 컨트롤러를 재훈련할 필요가 없습니다.
+
+### 실험 설정 및 주요 수치
+- **시뮬레이션 환경**: Isaac Gym을 사용하여 훈련하고, 방 규모 시나리오에서 단일 물체 이동 조작 작업을 테스트합니다.
+- **하드웨어 플랫폼**: Unitree H1 휴머노이드 로봇 기반, 힘/토크 센서 및 관절 엔코더를 장착합니다.
+- **추적 정밀도**: 엔드 이펙터 위치 추적 오차는 3.3cm이며, 기준 방법(예: 순수 위치 제어)과 비교하여 저크(jerk)를 크게 줄였습니다.
+- **작업 성공률**: 시뮬레이션에서 단일 물체 이동 조작 작업(예: 물체 집기 및 배치)의 성공률은 70%에 도달합니다.
+- **원격 조작 검증**: 하드웨어에서 원격 조작을 통해 접촉이 빈번한 조작 작업(예: 문 밀기, 물체 운반)을 구현하여 안정적인 유연 상호작용 능력을 보여줍니다.
+
+### 결론
+CEER는 EE-root 제어 추상화를 통해 휴머노이드 로봇 이동 조작의 모듈성과 확장성을 구현하며, 접촉이 빈번한 작업에서 기존 방법보다 우수한 유연 제어 특성을 보여줍니다. 이 프레임워크는 이기종 플래너의 원활한 통합을 지원하여 복잡한 장시간 조작 작업에 실용적인 솔루션을 제공합니다.

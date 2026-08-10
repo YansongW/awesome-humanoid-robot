@@ -58,8 +58,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09557v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09557v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (826 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,26 @@ sources:
 ## Overview
 Fine grain control and positioning of autonomous underwater vehicles (AUVs) is critical for sampling, maintenance, and survey applications. Traditional control methods for AUVs are labor intensive and are not robust to changes in the vehicle configuration or environmental conditions. Reinforcement learning (RL) promises rapid controller development while handling a range of deployment parameters via domain randomization (DR). However, DR is still limited by the capacity of the underlying simulation to model real physics. In particular, drag physics are difficult to model and are a large contributor to sim-to-real gaps. Meanwhile, computational fluid dynamics (CFD) provides high fidelity drag models but is challenging to leverage within reinforcement learning frameworks due to its computational overhead. Thus, in this paper we exploit the idea of training surrogate approximations of CFD models of a given vehicle, enabling fast inference within RL pipelines. We are the first to successfully deploy a zero-shot RL policy on a 6-DOF AUV in which policy training is performed on surrogate drag models (SDMs) trained on CFD data. We find 31% lower energy usage compared to a controller using simplified physics while traversing between waypoints 11% faster with 19% less error. Our SDM based RL controller better predicts zero-shot transfer and is more robust across reward shaping design choices. When using DR to complete a task with perturbed parameters, we find that the CFD policy is the only controller that successfully transfers. The policies are evaluated in a controlled tank environment and in the field providing extensive testing of the policies' capabilities.
 
-## 개요
-자율 수중 차량(AUV)의 미세 제어 및 위치 결정은 샘플링, 유지보수 및 조사 응용 분야에서 매우 중요합니다. AUV를 위한 전통적인 제어 방법은 노동 집약적이며 차량 구성이나 환경 조건의 변화에 강건하지 않습니다. 강화 학습(RL)은 도메인 무작위화(DR)를 통해 다양한 배치 매개변수를 처리하면서 빠른 제어기 개발을 약속합니다. 그러나 DR은 여전히 실제 물리 현상을 모델링하는 기반 시뮬레이션의 용량에 의해 제한됩니다. 특히 항력 물리 현상은 모델링하기 어렵고 시뮬레이션-실제 격차에 큰 기여를 합니다. 한편, 전산 유체 역학(CFD)은 높은 충실도의 항력 모델을 제공하지만 계산 오버헤드로 인해 강화 학습 프레임워크 내에서 활용하기 어렵습니다. 따라서 본 논문에서는 특정 차량의 CFD 모델에 대한 대리 근사 모델을 훈련하여 RL 파이프라인 내에서 빠른 추론을 가능하게 하는 아이디어를 활용합니다. 우리는 CFD 데이터로 훈련된 대리 항력 모델(SDM)에서 정책 훈련을 수행하는 6자유도 AUV에 제로샷 RL 정책을 성공적으로 배치한 최초의 사례입니다. 단순화된 물리 모델을 사용하는 제어기와 비교하여 웨이포인트 간 이동 시 31% 낮은 에너지 사용, 11% 더 빠른 이동, 19% 더 적은 오류를 발견했습니다. SDM 기반 RL 제어기는 제로샷 전이를 더 잘 예측하며 보상 형성 설계 선택 전반에 걸쳐 더 강건합니다. 교란된 매개변수로 작업을 완료하기 위해 DR을 사용할 때, CFD 정책만이 성공적으로 전이되는 유일한 제어기임을 확인했습니다. 정책은 제어된 탱크 환경과 현장에서 평가되어 정책의 능력에 대한 광범위한 테스트를 제공합니다.
-
-## 핵심 내용
-자율 수중 차량(AUV)의 미세 제어 및 위치 결정은 샘플링, 유지보수 및 조사 응용 분야에서 매우 중요합니다. AUV를 위한 전통적인 제어 방법은 노동 집약적이며 차량 구성이나 환경 조건의 변화에 강건하지 않습니다. 강화 학습(RL)은 도메인 무작위화(DR)를 통해 다양한 배치 매개변수를 처리하면서 빠른 제어기 개발을 약속합니다. 그러나 DR은 여전히 실제 물리 현상을 모델링하는 기반 시뮬레이션의 용량에 의해 제한됩니다. 특히 항력 물리 현상은 모델링하기 어렵고 시뮬레이션-실제 격차에 큰 기여를 합니다. 한편, 전산 유체 역학(CFD)은 높은 충실도의 항력 모델을 제공하지만 계산 오버헤드로 인해 강화 학습 프레임워크 내에서 활용하기 어렵습니다. 따라서 본 논문에서는 특정 차량의 CFD 모델에 대한 대리 근사 모델을 훈련하여 RL 파이프라인 내에서 빠른 추론을 가능하게 하는 아이디어를 활용합니다. 우리는 CFD 데이터로 훈련된 대리 항력 모델(SDM)에서 정책 훈련을 수행하는 6자유도 AUV에 제로샷 RL 정책을 성공적으로 배치한 최초의 사례입니다. 단순화된 물리 모델을 사용하는 제어기와 비교하여 웨이포인트 간 이동 시 31% 낮은 에너지 사용, 11% 더 빠른 이동, 19% 더 적은 오류를 발견했습니다. SDM 기반 RL 제어기는 제로샷 전이를 더 잘 예측하며 보상 형성 설계 선택 전반에 걸쳐 더 강건합니다. 교란된 매개변수로 작업을 완료하기 위해 DR을 사용할 때, CFD 정책만이 성공적으로 전이되는 유일한 제어기임을 확인했습니다. 정책은 제어된 탱크 환경과 현장에서 평가되어 정책의 능력에 대한 광범위한 테스트를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09557v1
+
+## 개요
+전통적인 AUV 제어 방법은 노동 집약적이며 구성이나 환경 변화에 대한 견고성이 부족합니다. 반면 강화 학습은 도메인 무작위화(DR)를 통해 배포 매개변수 변화를 처리할 수 있지만, 시뮬레이션이 실제 물리(특히 항력 모델)를 모델링하는 능력에 제한을 받습니다. 계산 유체 역학은 고충실도 항력 모델을 제공할 수 있지만, 계산 비용 때문에 RL 프레임워크에 직접 통합하기 어렵습니다. 이를 위해 본 논문은 CFD 데이터 기반의 대체 항력 모델(SDMs)을 훈련하여 RL 파이프라인에서 빠른 추론을 가능하게 하는 방법을 제안합니다. 이 제로샷 정책은 6자유도 AUV에서 성공적으로 배포되었으며, 통제된 수조와 현장 환경 모두에서 검증되어 더 우수한 제로샷 전이 예측 능력과 보상 함수 설계에 대한 견고성을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 계산 유체 역학(CFD)을 활용해 고충실도 항력 데이터를 생성하고, 대체 항력 모델(SDMs)을 빠른 추론 에이전트로 훈련하여 기존의 단순화된 물리 모델을 대체해 강화 학습(RL) 파이프라인에 통합합니다.
+- **정책 훈련**: 6자유도(6-DOF) AUV에서 SDMs 기반 정책 훈련을 수행하여, 실제 환경에서의 미세 조정 없이 제로샷(zero-shot) 배포를 구현합니다.
+
+### 실험 설정
+- **비교 기준선**: 단순화된 물리 모델 기반 제어기를 비교 기준으로 사용합니다.
+- **평가 환경**: 통제된 수조(controlled tank) 및 현장(field) 환경에서 웨이포인트 내비게이션 작업을 포함한 광범위한 테스트를 수행합니다.
+- **도메인 무작위화(DR) 테스트**: 매개변수 교란 조건에서 정책 전이 능력을 평가합니다.
+
+### 주요 결과
+- **성능 향상**: 단순화된 물리 제어기와 비교해 SDM 기반 RL 제어기는 웨이포인트 간 이동 시 에너지 소비를 31% 절감하고, 속도를 11% 향상시키며, 경로 오차를 19% 줄였습니다.
+- **제로샷 전이**: SDM 정책은 제로샷 전이 효과를 더 정확하게 예측하며, 보상 함수 설계(reward shaping)에 대한 견고성이 더 강합니다.
+- **도메인 무작위화 성능**: 매개변수 교란 작업에서 CFD 기반 정책은 유일하게 성공적으로 전이된 제어기였으며, 다른 제어기는 모두 실패했습니다.
+
+### 결론
+본 논문은 CFD 데이터의 대체 모델을 훈련함으로써 RL 프레임워크에서 고충실도 항력 물리를 효율적으로 활용할 수 있음을 처음으로 입증했으며, AUV 제어기의 에너지 효율, 속도 및 정밀도를 크게 향상시키고 배포 조건 변화에 대한 견고성을 강화했습니다.

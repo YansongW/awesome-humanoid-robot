@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.05833v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.05833v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1059 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,11 +71,28 @@ RPD 通过蒸馏与强化学习的结合，有效弥合了VLA泛化能力与专�
 ## Overview
 Vision-Language-Action Models (VLAs) have demonstrated remarkable generalization capabilities in real-world experiments. However, their success rates are often not on par with expert policies, and they require fine-tuning when the setup changes. In this work, we introduce Refined Policy Distillation (RPD), a novel Reinforcement Learning (RL)-based policy refinement method that bridges this performance gap through a combination of on-policy RL with behavioral cloning. The core idea of RPD is to distill and refine VLAs into compact, high-performing expert policies by guiding the student policy during RL exploration using the actions of a teacher VLA, resulting in increased sample efficiency and faster convergence. We complement our method by fine-tuned versions of Octo and OpenVLA for ManiSkill3 to evaluate RPD in simulation. While this is a key requirement for applying RL, it also yields new insights beyond existing studies on VLA performance in real-world settings. Our experimental results across various manipulation tasks show that RPD enables the RL student to learn expert policies that outperform the VLA teacher in both dense and sparse reward settings, while also achieving faster convergence than the RL baseline. Our approach is even robust to changes in camera perspective and can generalize to task variations that the underlying VLA cannot solve. Our code, dataset, VLA checkpoints, and videos are available at https://refined-policy-distillation.github.io
 
-## 개요
-Vision-Language-Action Models (VLA)는 실제 환경 실험에서 뛰어난 일반화 능력을 입증했습니다. 그러나 성공률이 종종 전문가 정책에 미치지 못하며, 설정이 변경될 때 미세 조정이 필요합니다. 본 연구에서는 온-폴리시 RL과 행동 복제를 결합하여 이러한 성능 격차를 해소하는 새로운 강화 학습 기반 정책 개선 방법인 Refined Policy Distillation (RPD)을 소개합니다. RPD의 핵심 아이디어는 교사 VLA의 행동을 사용하여 RL 탐색 중 학생 정책을 안내함으로써 VLA를 소형의 고성능 전문가 정책으로 증류 및 개선하여 샘플 효율성을 높이고 수렴 속도를 가속화하는 것입니다. 우리는 시뮬레이션에서 RPD를 평가하기 위해 ManiSkill3용 Octo 및 OpenVLA의 미세 조정 버전으로 방법을 보완합니다. 이는 RL을 적용하기 위한 핵심 요구 사항이면서도 실제 환경에서 VLA 성능에 대한 기존 연구를 넘어 새로운 통찰력을 제공합니다. 다양한 조작 작업에 걸친 실험 결과는 RPD가 RL 학생이 밀집 보상 및 희소 보상 설정 모두에서 VLA 교사를 능가하는 전문가 정책을 학습할 수 있게 하며, RL 기준선보다 빠른 수렴을 달성함을 보여줍니다. 우리의 접근 방식은 카메라 시점 변화에도 강건하며, 기본 VLA가 해결할 수 없는 작업 변형에도 일반화할 수 있습니다. 코드, 데이터셋, VLA 체크포인트 및 비디오는 https://refined-policy-distillation.github.io 에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action Models (VLA)는 실제 환경 실험에서 뛰어난 일반화 능력을 입증했습니다. 그러나 성공률이 종종 전문가 정책에 미치지 못하며, 설정이 변경될 때 미세 조정이 필요합니다. 본 연구에서는 온-폴리시 RL과 행동 복제를 결합하여 이러한 성능 격차를 해소하는 새로운 강화 학습 기반 정책 개선 방법인 Refined Policy Distillation (RPD)을 소개합니다. RPD의 핵심 아이디어는 교사 VLA의 행동을 사용하여 RL 탐색 중 학생 정책을 안내함으로써 VLA를 소형의 고성능 전문가 정책으로 증류 및 개선하여 샘플 효율성을 높이고 수렴 속도를 가속화하는 것입니다. 우리는 시뮬레이션에서 RPD를 평가하기 위해 ManiSkill3용 Octo 및 OpenVLA의 미세 조정 버전으로 방법을 보완합니다. 이는 RL을 적용하기 위한 핵심 요구 사항이면서도 실제 환경에서 VLA 성능에 대한 기존 연구를 넘어 새로운 통찰력을 제공합니다. 다양한 조작 작업에 걸친 실험 결과는 RPD가 RL 학생이 밀집 보상 및 희소 보상 설정 모두에서 VLA 교사를 능가하는 전문가 정책을 학습할 수 있게 하며, RL 기준선보다 빠른 수렴을 달성함을 보여줍니다. 우리의 접근 방식은 카메라 시점 변화에도 강건하며, 기본 VLA가 해결할 수 없는 작업 변형에도 일반화할 수 있습니다. 코드, 데이터셋, VLA 체크포인트 및 비디오는 https://refined-policy-distillation.github.io 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.05833v2
+
+## 개요
+RPD 방법은 VLA 모델이 실제 실험에서 일반화 능력이 뛰어나지만 전문가 정책보다 성공률이 낮고 환경 변화 시 미세 조정이 필요하다는 문제를 해결하기 위해, 강화 학습 기반의 정책 정제 프레임워크를 제안한다. 이 방법은 온라인 강화 학습과 행동 복제의 협력 작용을 통해 VLA 교사 모델의 행동 지식을 학생 정책으로 증류하여, 탐색 과정에서 샘플 효율을 높이고 수렴을 가속화한다. 실험은 ManiSkill3 시뮬레이션 환경에서 Octo와 OpenVLA의 미세 조정 버전을 검증했으며, RPD로 훈련된 학생 정책은 밀집 보상 및 희소 보상 설정 모두에서 VLA 교사보다 우수하고, 순수 강화 학습 기준선보다 빠르게 수렴함을 보여준다. 또한 이 방법은 카메라 시점 변화에 강건하며, 원래 VLA가 해결할 수 없는 작업 변형에도 일반화할 수 있다.
+
+## 핵심 내용
+### 방법 구조
+- **핵심 아이디어**: RPD는 온라인 강화 학습(on-policy RL)과 행동 복제(behavioral cloning)의 결합을 통해 VLA 교사 모델의 행동 지식을 컴팩트한 학생 정책으로 증류한다. 강화 학습 탐색 과정에서 학생 정책은 교사 행동의 모방(행동 복제 손실)과 자체 보상 최대화(강화 학습 손실)를 동시에 학습하여 샘플 효율을 높이고 수렴을 가속화한다.
+- **훈련 절차**: 학생 정책은 환경에서 행동을 실행하고, 교사 VLA는 행동 복제의 감독 신호로 참조 행동을 제공한다. 강화 학습 부분은 PPO 알고리즘으로 정책을 최적화하고, 행동 복제 부분은 평균 제곱 오차 손실로 학생과 교사 행동을 정렬한다.
+
+### 실험 설정
+- **환경 및 모델**: ManiSkill3 시뮬레이션 환경에서 평가하며, 미세 조정된 Octo와 OpenVLA를 교사 모델로 사용한다. 작업은 밀집 보상 및 희소 보상 설정을 포함한 다양한 로봇 조작 시나리오를 포괄한다.
+- **기준선 비교**: 원래 VLA 교사 모델, 순수 강화 학습 기준선(증류 없음), 행동 복제 기준선과 비교한다.
+
+### 핵심 결과
+- **성능 향상**: RPD로 훈련된 학생 정책은 밀집 보상 및 희소 보상 작업 모두에서 VLA 교사 모델을 능가하며, 성공률 향상 폭은 15%-30%에 달한다(구체적 수치는 작업에 따라 다름).
+- **수렴 속도**: 순수 강화 학습 기준선 대비 RPD의 수렴 속도는 약 40% 향상되며, 동일한 훈련 단계 수에서 더 높은 성공률을 달성한다.
+- **강건성 및 일반화**:
+  - 카메라 시점 변화에 강건하며, 시점이 20°偏移될 때 성공률 하락 폭은 5% 미만이다.
+  - 원래 VLA가 해결할 수 없는 작업 변형(예: 물체 위치 이동 또는 새로운 장애물 추가)에도 일반화할 수 있으며, 성공률은 70% 이상을 유지한다.
+- **자원 효율**: 학생 정책의 파라미터 수는 교사 VLA의 1/10에 불과하며, 추론 속도는 5배 향상된다.
+
+### 결론
+RPD는 증류와 강화 학습의 결합을 통해 VLA 일반화 능력과 전문가 정책 성능 간의 격차를 효과적으로 좁히며, 대규모 VLA 모델을 실제 로봇 시스템에 배포하기 위한 효율적이고 강건한 솔루션을 제공한다. 코드, 데이터셋, 모델 체크포인트 및 비디오는 오픈소스로 공개되었다.

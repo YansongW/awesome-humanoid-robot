@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.14386v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.14386v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (712 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,26 @@ PIM方法通过轻量级高程地图感知，解决了人形机器人感知引�
 ## Overview
 In contrast to quadruped robots that can navigate diverse terrains using a "blind" policy, humanoid robots require accurate perception for stable locomotion due to their high degrees of freedom and inherently unstable morphology. However, incorporating perceptual signals often introduces additional disturbances to the system, potentially reducing its robustness, generalizability, and efficiency. This paper presents the Perceptive Internal Model (PIM), which relies on onboard, continuously updated elevation maps centered around the robot to perceive its surroundings. We train the policy using ground-truth obstacle heights surrounding the robot in simulation, optimizing it based on the Hybrid Internal Model (HIM), and perform inference with heights sampled from the constructed elevation map. Unlike previous methods that directly encode depth maps or raw point clouds, our approach allows the robot to perceive the terrain beneath its feet clearly and is less affected by camera movement or noise. Furthermore, since depth map rendering is not required in simulation, our method introduces minimal additional computational costs and can train the policy in 3 hours on an RTX 4090 GPU. We verify the effectiveness of our method across various humanoid robots, various indoor and outdoor terrains, stairs, and various sensor configurations. Our method can enable a humanoid robot to continuously climb stairs and has the potential to serve as a foundational algorithm for the development of future humanoid control methods.
 
-## 개요
-사족 보행 로봇이 "블라인드" 정책을 사용하여 다양한 지형을 탐색할 수 있는 것과 달리, 휴머노이드 로봇은 높은 자유도와 본질적으로 불안정한 형태로 인해 안정적인 보행을 위해 정확한 인식이 필요합니다. 그러나 인식 신호를 통합하면 시스템에 추가적인 교란이 발생하여 견고성, 일반화 가능성 및 효율성이 저하될 수 있습니다. 본 논문에서는 로봇 주변을 중심으로 지속적으로 업데이트되는 탑재 고도 지도에 의존하여 주변 환경을 인식하는 Perceptive Internal Model (PIM)을 제시합니다. 우리는 시뮬레이션에서 로봇 주변의 실제 장애물 높이를 사용하여 정책을 훈련하고, Hybrid Internal Model (HIM)을 기반으로 최적화하며, 구축된 고도 지도에서 샘플링된 높이로 추론을 수행합니다. 깊이 맵이나 원시 포인트 클라우드를 직접 인코딩하는 이전 방법과 달리, 우리의 접근 방식은 로봇이 발 아래의 지형을 명확하게 인식할 수 있게 하며 카메라 움직임이나 노이즈의 영향을 덜 받습니다. 또한 시뮬레이션에서 깊이 맵 렌더링이 필요하지 않기 때문에, 우리의 방법은 최소한의 추가 계산 비용만을 도입하며 RTX 4090 GPU에서 3시간 만에 정책을 훈련할 수 있습니다. 우리는 다양한 휴머노이드 로봇, 다양한 실내외 지형, 계단 및 다양한 센서 구성에서 우리 방법의 효과를 검증합니다. 우리의 방법은 휴머노이드 로봇이 계단을 지속적으로 오를 수 있게 하며, 미래 휴머노이드 제어 방법 개발을 위한 기초 알고리즘으로서의 잠재력을 가지고 있습니다.
-
-## 핵심 내용
-사족 보행 로봇이 "블라인드" 정책을 사용하여 다양한 지형을 탐색할 수 있는 것과 달리, 휴머노이드 로봇은 높은 자유도와 본질적으로 불안정한 형태로 인해 안정적인 보행을 위해 정확한 인식이 필요합니다. 그러나 인식 신호를 통합하면 시스템에 추가적인 교란이 발생하여 견고성, 일반화 가능성 및 효율성이 저하될 수 있습니다. 본 논문에서는 로봇 주변을 중심으로 지속적으로 업데이트되는 탑재 고도 지도에 의존하여 주변 환경을 인식하는 Perceptive Internal Model (PIM)을 제시합니다. 우리는 시뮬레이션에서 로봇 주변의 실제 장애물 높이를 사용하여 정책을 훈련하고, Hybrid Internal Model (HIM)을 기반으로 최적화하며, 구축된 고도 지도에서 샘플링된 높이로 추론을 수행합니다. 깊이 맵이나 원시 포인트 클라우드를 직접 인코딩하는 이전 방법과 달리, 우리의 접근 방식은 로봇이 발 아래의 지형을 명확하게 인식할 수 있게 하며 카메라 움직임이나 노이즈의 영향을 덜 받습니다. 또한 시뮬레이션에서 깊이 맵 렌더링이 필요하지 않기 때문에, 우리의 방법은 최소한의 추가 계산 비용만을 도입하며 RTX 4090 GPU에서 3시간 만에 정책을 훈련할 수 있습니다. 우리는 다양한 휴머노이드 로봇, 다양한 실내외 지형, 계단 및 다양한 센서 구성에서 우리 방법의 효과를 검증합니다. 우리의 방법은 휴머노이드 로봇이 계단을 지속적으로 오를 수 있게 하며, 미래 휴머노이드 제어 방법 개발을 위한 기초 알고리즘으로서의 잠재력을 가지고 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.14386v1
+
+## 개요
+사족 로봇과 달리, 휴머노이드 로봇은 높은 자유도와 불안정한 형태로 인해 정밀한 인식에 의존해야 안정적으로 움직일 수 있습니다. 그러나 인식 신호를 직접 도입하면 종종 교란이 발생하여 강건성과 효율성이 저하됩니다. 본 논문에서 제안하는 PIM 방법은 로봇 주변에서 지속적으로 업데이트되는 고도 지도를 인식 입력으로 활용하며, 시뮬레이션에서 실제 장애물 높이를 기반으로 정책을 훈련하고, 추론 시에는 구축된 지도에서 높이 데이터를 샘플링합니다. 이 방법은 깊이 맵을 렌더링할 필요가 없어 계산 비용이 매우 낮으며, RTX 4090 GPU에서 단 3시간 만에 훈련을 완료할 수 있습니다. 실험을 통해 이 방법이 다양한 휴머노이드 로봇, 실내외 지형, 계단 및 다양한 센서 구성에서 효과적임을 검증했으며, 특히 연속 계단 오르기 기능을 구현하여 향후 휴머노이드 제어 알고리즘의 기반이 될 가능성을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **인식 내부 모델(PIM)**: 로봇 중심으로 주변 지형의 고도 지도를 실시간으로 구축하고 업데이트하여 인식 입력으로 사용합니다.
+- **훈련 전략**: 시뮬레이션 환경에서 실제 장애물 높이 데이터를 사용하고, 혼합 내부 모델(HIM)을 기반으로 정책을 최적화합니다.
+- **추론 단계**: 구축된 고도 지도에서 높이 데이터를 샘플링하여 깊이 맵이나 원시 포인트 클라우드를 직접 인코딩하는 방식을 대체합니다.
+
+### 핵심 설계
+- **교란 저항 능력**: 발 아래 지형을 명확히 인식하여 카메라 움직임이나 노이즈가 인식에 미치는 교란을 줄입니다.
+- **계산 효율성**: 시뮬레이션에서 깊이 맵을 렌더링할 필요가 없어 추가 계산 오버헤드가 매우 작으며, 훈련 시간이 3시간(RTX 4090 GPU)으로 단축됩니다.
+
+### 실험 설정 및 결과
+- **로봇 플랫폼**: 다양한 휴머노이드 로봇(구체적인 모델은 본문에 나열되지 않음).
+- **테스트 시나리오**: 실내외 지형, 계단, 다양한 센서 구성.
+- **핵심 성과**: 휴머노이드 로봇의 연속 계단 오르기를 구현하여 복잡한 지형에서의 강건성과 일반화 능력을 검증했습니다.
+
+### 결론
+PIM 방법은 경량 고도 지도 인식을 통해 휴머노이드 로봇의 인식 도입으로 인한 교란 문제를 해결하며, 향후 휴머노이드 제어 알고리즘을 위한 기본 프레임워크를 제공합니다.

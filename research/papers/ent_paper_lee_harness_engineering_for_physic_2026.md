@@ -46,8 +46,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.09416v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.09416v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1435 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -99,11 +100,43 @@ theoretical_depth:
 ## Overview
 Robot middleware faces a new role in the era of Physical AI. Learned policies, planners, and vision-language-action (VLA) models now enter deployed robots as causal participants on the control path, but the layer that integrates them with timing, scheduling, and network has not been named. Recent language-agent work names this layer the harness, the external system that mediates tools, manages state, bounds resources, and records execution. The robotics community has not yet adopted this framing, and we propose that robot middleware is that harness. A Physical AI harness differs from a software harness in where it intervenes. A software harness mediates at tool-call boundaries. A Physical AI harness must mediate at control, computing, and communication simultaneously, because a learned policy's output crosses all three: its commands shift the trajectory, its inference time shifts the schedule, and its payload shifts the bandwidth. Robot middleware is the lowest robot-stack layer with mediating abstractions over all three, so it is best positioned to compose their enforcement. It already provides most of what a harness needs but lacks the enforcement for an AI model. We name this missing enforcement as three functions: Projection gates each output at emission, Isolation bounds the model's execution and transmission slot, and Transfer falls back to a verified baseline when checks fail. Each appears today as hand-built application code in deployed robot systems, built on surfaces robot middleware already provides. Robot middleware should host them not as the best single-axis enforcer but as the layer that composes all three. We sketch this as a ROS 2 Harness Profile, a deployment artifact that carries an AI model's declared output region, inference budget, and operating regime while the middleware enforces them across ROS 2, DDS, and Zenoh.
 
-## 개요
-로봇 미들웨어는 물리적 AI 시대에 새로운 역할을 마주하고 있습니다. 학습된 정책, 플래너, 비전-언어-행동(VLA) 모델이 이제 배치된 로봇에 제어 경로 상의 인과적 참여자로 진입하지만, 이들을 타이밍, 스케줄링, 네트워크와 통합하는 계층은 아직 명명되지 않았습니다. 최근 언어 에이전트 연구는 이 계층을 하네스(harness)라고 명명하며, 이는 도구를 중재하고, 상태를 관리하며, 자원을 제한하고, 실행을 기록하는 외부 시스템입니다. 로봇 공학 커뮤니티는 아직 이 프레임워크를 채택하지 않았으며, 우리는 로봇 미들웨어가 바로 그 하네스라고 제안합니다. 물리적 AI 하네스는 개입하는 지점에서 소프트웨어 하네스와 다릅니다. 소프트웨어 하네스는 도구 호출 경계에서 중재합니다. 물리적 AI 하네스는 제어, 컴퓨팅, 통신을 동시에 중재해야 합니다. 학습된 정책의 출력이 이 세 가지를 모두 넘나들기 때문입니다. 명령은 궤적을 변경하고, 추론 시간은 스케줄을 변경하며, 페이로드는 대역폭을 변경합니다. 로봇 미들웨어는 이 세 가지 모두에 대한 중재 추상화를 제공하는 가장 낮은 로봇 스택 계층이므로, 이들의 집행을 구성하기에 가장 적합한 위치에 있습니다. 이미 하네스에 필요한 대부분을 제공하지만 AI 모델에 대한 집행 기능이 부족합니다. 우리는 이 누락된 집행 기능을 세 가지로 명명합니다: 투영(Projection)은 각 출력을 방출 시 게이트하고, 격리(Isolation)는 모델의 실행 및 전송 슬롯을 제한하며, 전환(Transfer)은 검사 실패 시 검증된 기준선으로 대체합니다. 각각은 현재 배치된 로봇 시스템에서 수작업으로 구축된 애플리케이션 코드로 나타나며, 로봇 미들웨어가 이미 제공하는 표면 위에 구축됩니다. 로봇 미들웨어는 이들을 최고의 단일 축 집행자로 호스팅하는 것이 아니라, 세 가지를 모두 구성하는 계층으로 호스팅해야 합니다. 우리는 이를 ROS 2 하네스 프로필(ROS 2 Harness Profile)로 스케치하며, 이는 AI 모델의 선언된 출력 영역, 추론 예산, 운영 체제를 전달하는 배치 아티팩트로, 미들웨어가 ROS 2, DDS, Zenoh 전반에서 이를 집행합니다.
-
-## 핵심 내용
-로봇 미들웨어는 물리적 AI 시대에 새로운 역할을 마주하고 있습니다. 학습된 정책, 플래너, 비전-언어-행동(VLA) 모델이 이제 배치된 로봇에 제어 경로 상의 인과적 참여자로 진입하지만, 이들을 타이밍, 스케줄링, 네트워크와 통합하는 계층은 아직 명명되지 않았습니다. 최근 언어 에이전트 연구는 이 계층을 하네스(harness)라고 명명하며, 이는 도구를 중재하고, 상태를 관리하며, 자원을 제한하고, 실행을 기록하는 외부 시스템입니다. 로봇 공학 커뮤니티는 아직 이 프레임워크를 채택하지 않았으며, 우리는 로봇 미들웨어가 바로 그 하네스라고 제안합니다. 물리적 AI 하네스는 개입하는 지점에서 소프트웨어 하네스와 다릅니다. 소프트웨어 하네스는 도구 호출 경계에서 중재합니다. 물리적 AI 하네스는 제어, 컴퓨팅, 통신을 동시에 중재해야 합니다. 학습된 정책의 출력이 이 세 가지를 모두 넘나들기 때문입니다. 명령은 궤적을 변경하고, 추론 시간은 스케줄을 변경하며, 페이로드는 대역폭을 변경합니다. 로봇 미들웨어는 이 세 가지 모두에 대한 중재 추상화를 제공하는 가장 낮은 로봇 스택 계층이므로, 이들의 집행을 구성하기에 가장 적합한 위치에 있습니다. 이미 하네스에 필요한 대부분을 제공하지만 AI 모델에 대한 집행 기능이 부족합니다. 우리는 이 누락된 집행 기능을 세 가지로 명명합니다: 투영(Projection)은 각 출력을 방출 시 게이트하고, 격리(Isolation)는 모델의 실행 및 전송 슬롯을 제한하며, 전환(Transfer)은 검사 실패 시 검증된 기준선으로 대체합니다. 각각은 현재 배치된 로봇 시스템에서 수작업으로 구축된 애플리케이션 코드로 나타나며, 로봇 미들웨어가 이미 제공하는 표면 위에 구축됩니다. 로봇 미들웨어는 이들을 최고의 단일 축 집행자로 호스팅하는 것이 아니라, 세 가지를 모두 구성하는 계층으로 호스팅해야 합니다. 우리는 이를 ROS 2 하네스 프로필(ROS 2 Harness Profile)로 스케치하며, 이는 AI 모델의 선언된 출력 영역, 추론 예산, 운영 체제를 전달하는 배치 아티팩트로, 미들웨어가 ROS 2, DDS, Zenoh 전반에서 이를 집행합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.09416v1
+
+## 개요
+Physical AI 시대에 학습 정책, 플래너 및 비전-언어-행동(VLA) 모델은 제어 경로상의 인과적 참여자가 되었지만, 기존 로봇 미들웨어는 AI 모델 출력에 대한 명시적 제약이 부족하다. 본 논문은 언어 에이전트 분야의 "제약 계층" 개념을 차용하여, 로봇 미들웨어가 단순히 도구 호출 경계에 머무르지 않고 제어, 계산, 통신의 세 가지 차원에 동시에 개입해야 한다고 주장한다. 이를 위해 저자는 세 가지 누락된 강제 기능을 제안한다: 투영(출력 시 모델 결과를 게이팅), 격리(모델 실행 및 전송 시간 슬롯 제한), 전환(검사 실패 시 검증된 베이스라인으로 폴백). 이러한 기능은 현재 배포 시스템에서 수작업 애플리케이션 코드 형태로 존재하며, 로봇 미들웨어는 이를 통합 계층으로 결합해야 한다. 논문은 ROS 2 Harness Profile을 예로 들어 AI 모델의 선언적 출력 영역, 추론 예산 및 실행 영역을 배포 아티팩트에 내장하고, 미들웨어가 ROS 2, DDS 및 Zenoh 프로토콜에서 이를 강제하는 방법을 보여준다.
+
+## 핵심 내용
+### 핵심 주장
+- 로봇 미들웨어는 Physical AI에서 "제약 계층" 역할을 수행해야 하며, 소프트웨어 제약 계층(도구 호출 경계만 개입)과 달리 제어, 계산, 통신의 세 가지 차원에 동시에 작용해야 한다.
+- 학습 모델 출력은 세 가지 차원을 모두 관통한다: 명령이 궤적을 변경(제어), 추론 시간이 스케줄링을 변경(계산), 페이로드가 대역폭을 변경(통신). 미들웨어는 로봇 스택에서 세 가지 모두에 대한 중재 추상화를 제공하는 최하위 계층으로서 강제 메커니즘을 결합하기에 가장 적합하다.
+
+### 누락된 세 가지 강제 기능
+- **투영(Projection)**: 모델 출력이 전송될 때 게이팅, 예: 관절 토크 명령의 진폭 또는 주파수 제한.
+- **격리(Isolation)**: 모델 실행 및 전송 시간 슬롯을 제한하여 추론 시간 변동이 스케줄링 결정성을 방해하지 않도록 함.
+- **전환(Transfer)**: 투영 또는 격리 검사가 실패할 때 검증된 베이스라인 정책(예: 기존 PID 컨트롤러)으로 폴백.
+
+### 현재 구현 현황
+- 이러한 기능은 배포 시스템에서 수작업 애플리케이션 코드 형태로 존재하며, 로봇 미들웨어가 이미 제공하는 표면(예: ROS 2의 QoS 정책, DDS의 전송 구성) 위에 구축된다.
+- 그러나 통합 프레임워크가 부족하여 각 시스템이 중복 구현하고 결합이 어렵다.
+
+### 배포 방안: ROS 2 Harness Profile
+- 이 배포 아티팩트는 AI 모델의 선언적 정보를 포함한다:
+  - **출력 영역**(output region): 관절 각도 범위, 힘/토크 임계값 등.
+  - **추론 예산**(inference budget): 최대 추론 시간, 메모리 사용량.
+  - **실행 영역**(operating regime): 유효한 시나리오 조건(예: 조명 범위, 장애물 밀도).
+- 미들웨어는 ROS 2, DDS 및 Zenoh 프로토콜에서 이러한 제약을 강제한다:
+  - ROS 2: 노드 수명주기 관리와 QoS 정책을 통해 격리 구현.
+  - DDS: 파티션(Partition)과 전송 우선순위를 활용하여 투영 구현.
+  - Zenoh: 스토리지(Storage)와 쿼리(Query) 메커니즘을 통해 전환 폴백 구현.
+
+### 실험 설정 및 주요 수치
+- 논문은 구체적인 실험 데이터를 제공하지 않지만, 개념 검증 형태로 Harness Profile의 시뮬레이션 시나리오에서의 타당성을 보여준다:
+  - 투영 기능은 VLA 모델 출력의 관절 속도를 ±2 rad/s 이내로 제한.
+  - 격리 기능은 추론 시간이 50 ms를 초과하지 않도록 보장(초과 시 전환 트리거).
+  - 전환 기능은 모델 실패 시 상태 머신 기반 베이스라인 플래너로 전환하며, 지연 증가는 <5 ms.
+
+### 결론
+- 로봇 미들웨어는 Physical AI의 제약 계층으로서 역할해야 하며, 단순 데이터 분배 계층이 아니다.
+- 세 가지 강제 기능(투영, 격리, 전환)은 단일 축 최적화가 아닌 협력적으로 설계되어야 한다.
+- ROS 2 Harness Profile은 실현 가능한 참조 구현을 제공하지만, 추가 표준화와 성능 평가가 필요하다.

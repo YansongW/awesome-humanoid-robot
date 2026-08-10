@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.21906v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.21906v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (945 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,27 @@ ChatVLA-2 通过混合专家架构与两阶段训练流程，成功保留了 VLM
 ## Overview
 Vision-language-action (VLA) models have emerged as the next generation of models in robotics. However, despite leveraging powerful pre-trained Vision-Language Models (VLMs), existing end-to-end VLA systems often lose key capabilities during fine-tuning as the model adapts to specific robotic tasks. We argue that a generalizable VLA model should retain and expand upon the VLM's core competencies: 1) Open-world embodied reasoning - the VLA should inherit the knowledge from VLM, i.e., recognize anything that the VLM can recognize, be capable of solving math problems, and possess visual-spatial intelligence, 2) Reasoning following - effectively translating the open-world reasoning into actionable steps for the robot. In this work, we introduce ChatVLA-2, a novel mixture-of-expert VLA model coupled with a specialized two-stage training pipeline designed to preserve the VLM's original strengths while enabling actionable reasoning. To validate our approach, we design a math-matching task wherein a robot interprets math problems written on a whiteboard and picks corresponding number cards from a table to solve equations. Remarkably, our method exhibits exceptional mathematical reasoning and OCR capabilities, despite these abilities not being explicitly trained within the VLA. Furthermore, we demonstrate that the VLA possesses strong spatial reasoning skills, enabling it to interpret novel directional instructions involving previously unseen objects. Overall, our method showcases reasoning and comprehension abilities that significantly surpass state-of-the-art imitation learning methods such as OpenVLA, DexVLA, and pi-zero. This work represents a substantial advancement toward developing truly generalizable robotic foundation models endowed with robust reasoning capacities.
 
-## 개요
-Vision-language-action (VLA) 모델은 로봇공학의 차세대 모델로 부상하고 있습니다. 그러나 강력한 사전 훈련된 Vision-Language Models (VLM)을 활용함에도 불구하고, 기존의 엔드투엔드 VLA 시스템은 특정 로봇 작업에 적응하기 위해 미세 조정되는 과정에서 핵심 기능을 종종 상실합니다. 우리는 일반화 가능한 VLA 모델이 VLM의 핵심 역량을 유지하고 확장해야 한다고 주장합니다: 1) 개방형 세계 구현 추론 - VLA는 VLM의 지식을 상속받아, 즉 VLM이 인식할 수 있는 모든 것을 인식하고, 수학 문제를 해결할 수 있으며, 시각-공간 지능을 보유해야 합니다, 2) 추론 따르기 - 개방형 세계 추론을 로봇이 실행 가능한 단계로 효과적으로 변환하는 것입니다. 본 연구에서는 VLM의 원래 강점을 보존하면서 실행 가능한 추론을 가능하게 하는 특화된 2단계 훈련 파이프라인과 결합된 새로운 mixture-of-expert VLA 모델인 ChatVLA-2를 소개합니다. 우리의 접근 방식을 검증하기 위해, 로봇이 화이트보드에 적힌 수학 문제를 해석하고 테이블에서 해당 숫자 카드를 집어 방정식을 푸는 수학 매칭 작업을 설계했습니다. 놀랍게도, 우리의 방법은 이러한 능력이 VLA 내에서 명시적으로 훈련되지 않았음에도 불구하고 뛰어난 수학적 추론 및 OCR 능력을 보여줍니다. 또한, VLA가 강력한 공간 추론 능력을 보유하여 이전에 본 적 없는 물체와 관련된 새로운 방향 지시를 해석할 수 있음을 입증합니다. 전반적으로, 우리의 방법은 OpenVLA, DexVLA, pi-zero와 같은 최첨단 모방 학습 방법을 크게 능가하는 추론 및 이해 능력을 보여줍니다. 이 연구는 강력한 추론 능력을 갖춘 진정으로 일반화 가능한 로봇 기반 모델을 개발하는 데 있어 중요한 진전을 나타냅니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 로봇공학의 차세대 모델로 부상하고 있습니다. 그러나 강력한 사전 훈련된 Vision-Language Models (VLM)을 활용함에도 불구하고, 기존의 엔드투엔드 VLA 시스템은 특정 로봇 작업에 적응하기 위해 미세 조정되는 과정에서 핵심 기능을 종종 상실합니다. 우리는 일반화 가능한 VLA 모델이 VLM의 핵심 역량을 유지하고 확장해야 한다고 주장합니다: 1) 개방형 세계 구현 추론 - VLA는 VLM의 지식을 상속받아, 즉 VLM이 인식할 수 있는 모든 것을 인식하고, 수학 문제를 해결할 수 있으며, 시각-공간 지능을 보유해야 합니다, 2) 추론 따르기 - 개방형 세계 추론을 로봇이 실행 가능한 단계로 효과적으로 변환하는 것입니다. 본 연구에서는 VLM의 원래 강점을 보존하면서 실행 가능한 추론을 가능하게 하는 특화된 2단계 훈련 파이프라인과 결합된 새로운 mixture-of-expert VLA 모델인 ChatVLA-2를 소개합니다. 우리의 접근 방식을 검증하기 위해, 로봇이 화이트보드에 적힌 수학 문제를 해석하고 테이블에서 해당 숫자 카드를 집어 방정식을 푸는 수학 매칭 작업을 설계했습니다. 놀랍게도, 우리의 방법은 이러한 능력이 VLA 내에서 명시적으로 훈련되지 않았음에도 불구하고 뛰어난 수학적 추론 및 OCR 능력을 보여줍니다. 또한, VLA가 강력한 공간 추론 능력을 보유하여 이전에 본 적 없는 물체와 관련된 새로운 방향 지시를 해석할 수 있음을 입증합니다. 전반적으로, 우리의 방법은 OpenVLA, DexVLA, pi-zero와 같은 최첨단 모방 학습 방법을 크게 능가하는 추론 및 이해 능력을 보여줍니다. 이 연구는 강력한 추론 능력을 갖춘 진정으로 일반화 가능한 로봇 기반 모델을 개발하는 데 있어 중요한 진전을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.21906v2
+
+## 개요
+ChatVLA-2는 기존 엔드투엔드 VLA 시스템이 미세 조정 과정에서 사전 훈련된 VLM의 핵심 능력을 상실하는 문제를 해결하는 것을 목표로 합니다. 이 모델은 혼합 전문가 아키텍처를 채택하고, 특별히 설계된 2단계 훈련 프로세스를 통해 모델이 VLM의 개방형 세계 지식(예: 객체 인식, 수학 문제 해결, 시각적 공간 지능)을 상속하면서도 추론 결과를 로봇이 실행 가능한 동작으로 변환할 수 있도록 보장합니다. 수학 매칭 작업에서 로봇은 화이트보드의 수학 문제를 해석하고 테이블에서 해당 숫자 카드를 선택하여 방정식을 완성하며, 명시적으로 훈련되지 않은 수학 추론 및 OCR 능력을 보여줍니다. 또한 모델은 보지 못한 객체를 포함한 새로운 방향 지시를 이해할 수 있어 강력한 공간 추론 능력을 갖추고 있습니다.
+
+## 핵심 내용
+### 방법
+- **혼합 전문가 아키텍처**: ChatVLA-2는 mixture-of-expert 설계를 채택하여 여러 전문가 모듈이 시각, 언어, 동작 정보를 협력적으로 처리함으로써 단일 모델이 미세 조정 시 사전 훈련 지식을 잃는 것을 방지합니다.
+- **2단계 훈련 프로세스**:
+  - 1단계: VLM의 개방형 세계 추론 능력(객체 인식, 수학 문제 해결, 시각적 공간 지능 포함)을 유지합니다.
+  - 2단계: 추론 결과를 로봇이 실행 가능한 동작 단계로 변환하여 reasoning following을 구현합니다.
+
+### 실험 설정
+- **수학 매칭 작업**: 로봇은 화이트보드의 수학 문제를 해석하고 테이블에서 해당 숫자 카드를 선택하여 방정식을 완성해야 합니다. 이 작업은 모델의 수학 추론 및 OCR 능력을 테스트하며, 이러한 능력은 VLA 훈련에서 명시적으로 제공되지 않습니다.
+- **공간 추론 작업**: 모델은 보지 못한 객체를 포함한 새로운 방향 지시(예: "빨간 블록을 파란 원통의 왼쪽으로 이동")를 이해해야 합니다.
+
+### 주요 결과
+- **수학 추론 및 OCR**: ChatVLA-2는 수학 매칭 작업에서 뛰어난 성능을 보이며, VLA 훈련에서 명시적으로 훈련되지 않았음에도 화이트보드의 수학 표현식을 정확히 인식하고 올바른 숫자 카드를 선택합니다.
+- **공간 추론**: 모델은 보지 못한 객체를 포함한 새로운 방향 지시를 이해할 수 있어 강력한 시각적 공간 지능을 보여줍니다.
+- **비교 결과**: 추론 및 이해 능력에서 ChatVLA-2는 OpenVLA, DexVLA, pi-zero를 포함한 현재 최첨단 모방 학습 방법을 크게 능가합니다.
+
+### 결론
+ChatVLA-2는 혼합 전문가 아키텍처와 2단계 훈련 프로세스를 통해 VLM의 개방형 세계 추론 능력을 성공적으로 유지하고 이를 로봇이 실행 가능한 동작으로 변환합니다. 이 작업은 특히 고차원 추론 및 이해 능력 측면에서 진정으로 일반화 가능한 로봇 기반 모델을 개발하는 데 중요한 진전을 제공합니다.

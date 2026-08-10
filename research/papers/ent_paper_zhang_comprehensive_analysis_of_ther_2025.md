@@ -36,8 +36,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.07070v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.07070v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (612 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,22 @@ theoretical_depth:
 ## Overview
 Effective thermal management is critical for lithium-ion battery packs' safe and efficient operations, particularly in applications such as drones, where compact designs and varying airflow conditions present unique challenges. This study investigates the thermal performance of a 16-cell lithium-ion battery pack by optimizing cooling airflow configurations and integrating phase change materials (PCMs) for enhanced heat dissipation. Seven geometric configurations were evaluated under airflow speeds ranging from 0 to 15 m/s, reflecting the operational conditions of civilian drones. A comprehensive 3D simulation approach was used to analyze the effects of inlet and outlet configurations, airflow dynamics, and PCM phase transition behavior. Results indicate that the trapezoidal (wide-base) configuration, paired with a 5-inlet and 1-outlet setup, achieves the most balanced performance, effectively maintaining optimal operating temperatures across low and high-speed airflow conditions. PCM integration further stabilized thermal behavior, with phase change durations extending to 12.5 min under tested conditions. These findings highlight the importance of geometric optimization and material integration in advancing compact and reliable thermal management systems for energy-dense battery packs. This study provides a foundation for designing efficient cooling strategies tailored to lightweight applications such as drones and portable energy storage systems.
 
-## 개요
-리튬이온 배터리 팩의 안전하고 효율적인 작동을 위해서는 효과적인 열 관리가 필수적이며, 특히 드론과 같이 소형 설계와 다양한 기류 조건이 독특한 과제를 제시하는 응용 분야에서 중요합니다. 본 연구는 냉각 기류 구성을 최적화하고 상변화 물질(PCM)을 통합하여 방열을 향상시킴으로써 16셀 리튬이온 배터리 팩의 열 성능을 조사합니다. 민간 드론의 작동 조건을 반영하여 0~15m/s의 기류 속도에서 7가지 기하학적 구성을 평가했습니다. 입구 및 출구 구성, 기류 역학, PCM 상전이 거동의 영향을 분석하기 위해 포괄적인 3D 시뮬레이션 접근법이 사용되었습니다. 결과는 5개의 입구와 1개의 출구 설정과 결합된 사다리꼴(넓은 베이스) 구성이 가장 균형 잡힌 성능을 달성하여 저속 및 고속 기류 조건에서 최적의 작동 온도를 효과적으로 유지함을 보여줍니다. PCM 통합은 열 거동을 더욱 안정화시켰으며, 테스트 조건에서 상전이 지속 시간이 12.5분까지 연장되었습니다. 이러한 발견은 에너지 밀도가 높은 배터리 팩을 위한 소형이고 신뢰할 수 있는 열 관리 시스템을 발전시키는 데 있어 기하학적 최적화와 재료 통합의 중요성을 강조합니다. 본 연구는 드론 및 휴대용 에너지 저장 시스템과 같은 경량 응용 분야에 맞춤화된 효율적인 냉각 전략을 설계하기 위한 기초를 제공합니다.
-
-## 핵심 내용
-리튬이온 배터리 팩의 안전하고 효율적인 작동을 위해서는 효과적인 열 관리가 필수적이며, 특히 드론과 같이 소형 설계와 다양한 기류 조건이 독특한 과제를 제시하는 응용 분야에서 중요합니다. 본 연구는 냉각 기류 구성을 최적화하고 상변화 물질(PCM)을 통합하여 방열을 향상시킴으로써 16셀 리튬이온 배터리 팩의 열 성능을 조사합니다. 민간 드론의 작동 조건을 반영하여 0~15m/s의 기류 속도에서 7가지 기하학적 구성을 평가했습니다. 입구 및 출구 구성, 기류 역학, PCM 상전이 거동의 영향을 분석하기 위해 포괄적인 3D 시뮬레이션 접근법이 사용되었습니다. 결과는 5개의 입구와 1개의 출구 설정과 결합된 사다리꼴(넓은 베이스) 구성이 가장 균형 잡힌 성능을 달성하여 저속 및 고속 기류 조건에서 최적의 작동 온도를 효과적으로 유지함을 보여줍니다. PCM 통합은 열 거동을 더욱 안정화시켰으며, 테스트 조건에서 상전이 지속 시간이 12.5분까지 연장되었습니다. 이러한 발견은 에너지 밀도가 높은 배터리 팩을 위한 소형이고 신뢰할 수 있는 열 관리 시스템을 발전시키는 데 있어 기하학적 최적화와 재료 통합의 중요성을 강조합니다. 본 연구는 드론 및 휴대용 에너지 저장 시스템과 같은 경량 응용 분야에 맞춤화된 효율적인 냉각 전략을 설계하기 위한 기초를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.07070v1
+
+## 개요
+본 연구는 드론 등 소형 장치에서 리튬이온 배터리 팩의 열 관리 문제를 해결하기 위해, 0-15 m/s 기류 속도에서 일곱 가지 기하학적 배치의 방열 성능을 체계적으로 평가했습니다. 3차원 시뮬레이션을 통해 흡기/배기구 구성, 기류 역학 및 PCM 상변화 거동을 비교한 결과, 사다리꼴 넓은 베이스 구조에 5-in-1-out 배기구 설계를 결합한 방식이 저속 및 고속 기류 모두에서 최적의 작동 온도를 유지하는 것으로 나타났습니다. 나노 탄소 기반 PCM을 도입한 후, 상변화 지속 시간은 12.5분에 달해 열 안정성이 크게 향상되었습니다. 본 연구는 경량 배터리 팩의 효율적인 냉각 전략 설계에 이론적 기반을 제공합니다.
+
+## 핵심 내용
+### 연구 배경 및 방법
+- 드론 등 소형 장치에서 리튬이온 배터리 팩의 열 관리 문제를 해결하기 위해 CFD와 열 시뮬레이션을 결합한 방법을 사용하여, 16셀 배터리 팩의 0-15 m/s 기류 속도에서의 방열 성능을 분석했습니다.
+- 일곱 가지 기하학적 배치(사다리꼴 넓은 베이스 구조 포함)와 다양한 흡기/배기구 구성(예: 5-in-1-out)이 온도 분포에 미치는 영향을 평가했습니다.
+
+### 주요 발견
+- **최적 배치**: 사다리꼴 넓은 베이스 구조에 5-in-1-out 배기구 설계를 결합한 방식이 저속 및 고속 기류 모두에서 가장 균형 잡힌 열 분포를 구현하여 국부 과열을 방지했습니다.
+- **PCM 성능**: 나노 탄소 기반 PCM은 테스트 조건에서 상변화 지속 시간이 12.5분에 달해 온도 변동을 효과적으로 억제하고 열 안정성을 향상시켰습니다.
+- **기류 영향**: 기류 속도가 0에서 15 m/s로 증가함에 따라 방열 효율은 약 40% 향상되었지만, 기하학적 배치가 열 균일성에 미치는 영향이 더 컸습니다.
+
+### 결론 및 의의
+- 기하학적 최적화와 PCM 통합은 소형 배터리 팩의 열 관리 효율을 높이는 핵심 요소이며, 특히 드론 등 경량화 응용 시나리오에 적합합니다.
+- 본 연구는 효율적이고 신뢰할 수 있는 배터리 냉각 시스템 설계를 위한 시뮬레이션 기반을 제공하며, 향후 휴대용 에너지 저장 시스템으로 확장할 수 있습니다.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.05186v5. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.05186v5. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1134 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,28 @@ TVVE 通过任务感知的虚拟视角探索和动态重渲染，有效解决了
 ## Overview
 Recent vision-language-action (VLA) models for multi-task robot manipulation often rely on fixed camera setups and shared visual encoders, which limit their performance under occlusions and during cross-task transfer. To address these challenges, we propose Task-aware Virtual View Exploration (TVVE), a framework that learns to select task-relevant virtual camera viewpoints and dynamically re-render observations from a reconstructed scene representation using the selected viewpoints. To enable efficient view selection, we train an exploration policy in a pseudo-environment. In addition, we introduce a Task-aware Mixture-of-Experts (TaskMoE) visual encoder that routes visual features to task-specialized experts, mitigating interference in multi-task learning. To evaluate robustness under distribution shifts, we construct RLBench-OG, an out-of-distribution benchmark with visual perturbations and camera pose variations. Experiments on RLBench and RLBench-OG demonstrate that TVVE achieves higher success rates than strong baselines, while real-robot experiments further confirm its robustness to visual disturbances and unseen instructions. Code and visualizations are available at: https://hcplab-sysu.github.io/TAVP.
 
-## 개요
-최근 다중 작업 로봇 조작을 위한 VLA(Vision-Language-Action) 모델은 고정된 카메라 설정과 공유 시각 인코더에 의존하는 경우가 많아, 폐색 상황 및 교차 작업 전이 시 성능이 제한됩니다. 이러한 문제를 해결하기 위해, 우리는 작업 관련 가상 카메라 시점을 선택하고, 선택된 시점을 사용하여 재구성된 장면 표현에서 관측치를 동적으로 다시 렌더링하는 방법을 학습하는 TVVE(Task-aware Virtual View Exploration) 프레임워크를 제안합니다. 효율적인 시점 선택을 위해, 우리는 가상 환경에서 탐색 정책을 훈련합니다. 또한, 시각적 특징을 작업별 전문가에게 라우팅하여 다중 작업 학습에서의 간섭을 완화하는 TaskMoE(Task-aware Mixture-of-Experts) 시각 인코더를 도입합니다. 분포 변화 하에서의 강건성을 평가하기 위해, 시각적 교란 및 카메라 포즈 변형이 포함된 OOD(Out-of-Distribution) 벤치마크인 RLBench-OG를 구축했습니다. RLBench 및 RLBench-OG 실험은 TVVE가 강력한 기준선보다 높은 성공률을 달성함을 보여주며, 실제 로봇 실험은 시각적 교란 및 보지 못한 명령에 대한 강건성을 추가로 확인합니다. 코드 및 시각화 자료는 다음에서 확인할 수 있습니다: https://hcplab-sysu.github.io/TAVP.
-
-## 핵심 내용
-최근 다중 작업 로봇 조작을 위한 VLA(Vision-Language-Action) 모델은 고정된 카메라 설정과 공유 시각 인코더에 의존하는 경우가 많아, 폐색 상황 및 교차 작업 전이 시 성능이 제한됩니다. 이러한 문제를 해결하기 위해, 우리는 작업 관련 가상 카메라 시점을 선택하고, 선택된 시점을 사용하여 재구성된 장면 표현에서 관측치를 동적으로 다시 렌더링하는 방법을 학습하는 TVVE(Task-aware Virtual View Exploration) 프레임워크를 제안합니다. 효율적인 시점 선택을 위해, 우리는 가상 환경에서 탐색 정책을 훈련합니다. 또한, 시각적 특징을 작업별 전문가에게 라우팅하여 다중 작업 학습에서의 간섭을 완화하는 TaskMoE(Task-aware Mixture-of-Experts) 시각 인코더를 도입합니다. 분포 변화 하에서의 강건성을 평가하기 위해, 시각적 교란 및 카메라 포즈 변형이 포함된 OOD(Out-of-Distribution) 벤치마크인 RLBench-OG를 구축했습니다. RLBench 및 RLBench-OG 실험은 TVVE가 강력한 기준선보다 높은 성공률을 달성함을 보여주며, 실제 로봇 실험은 시각적 교란 및 보지 못한 명령에 대한 강건성을 추가로 확인합니다. 코드 및 시각화 자료는 다음에서 확인할 수 있습니다: https://hcplab-sysu.github.io/TAVP.
-
 ## 参考
 - http://arxiv.org/abs/2508.05186v5
+
+## 개요
+기존 VLA 모델이 고정 카메라 시점과 공유 비전 인코더로 인해 가림 및 교차 작업 전이 시 성능이 저하되는 문제를 해결하기 위해, TVVE는 작업 인식 가상 시점 탐색 프레임워크를 제안한다. 이 프레임워크는 먼저 가상 환경에서 탐색 전략을 훈련하여 작업과 관련된 가상 카메라 시점을 효율적으로 선택하고, 이후 재구성된 장면 표현을 활용하여 관측 이미지를 동적으로 재렌더링한다. 동시에 TVVE는 Task-aware Mixture-of-Experts 비전 인코더를 도입하여 시각적 특징을 작업 전용 전문가에게 라우팅함으로써 다중 작업 학습에서의 간섭을 완화한다. 분포 변화 하에서 모델의 견고성을 평가하기 위해, 연구팀은 시각적 교란 및 카메라 포즈 변화를 포함한 RLBench-OG 벤치마크를 구축했다. 실험 결과, TVVE는 RLBench 및 RLBench-OG에서 모두 강력한 기준선보다 높은 성공률을 달성했으며, 실제 로봇 실험에서도 시각적 간섭 및 미지의 지시에 대한 견고성을 검증했다.
+
+## 핵심 내용
+### 방법 아키텍처
+TVVE의 핵심 프레임워크는 세 가지 주요 구성 요소를 포함한다:
+- **가상 시점 탐색 전략**: 가상 환경에서 훈련되어 현재 작업과 가장 관련된 가상 카메라 시점을 선택하는 방법을 학습하며, 실제 장면에서의 직접 탐색 비용을 피한다.
+- **동적 재렌더링 메커니즘**: 재구성된 장면 표현을 기반으로 선택된 시점을 활용하여 관측 이미지를 재생성함으로써, 가림 또는 시점 제한 상황에서 더 완전한 시각 정보를 제공한다.
+- **Task-aware Mixture-of-Experts (TaskMoE) 비전 인코더**: 시각적 특징을 작업 전용 전문가에게 라우팅하여 다중 작업 학습에서 서로 다른 작업 간의 특징 간섭을 줄이고 인코딩 효율을 향상시킨다.
+
+### 실험 설정
+- **벤치마크 테스트**: 표준 RLBench 및 자체 구축한 RLBench-OG(조명 변화, 텍스처 교체와 같은 시각적 교란 및 카메라 포즈 무작위 오프셋 포함)에서 평가를 수행한다.
+- **기준선 비교**: 여러 강력한 기준 모델(예: RT-2, Octo 등)과 성공률을 비교한다.
+- **실제 로봇 실험**: 실제 장면에서 시각적 간섭(예: 객체 가림, 배경 변화) 및 미지의 지시(예: 새로운 객체 조합)에 대한 견고성을 테스트한다.
+
+### 주요 결과
+- **RLBench 실험**: TVVE는 18개 작업에서 평균 성공률이 최고 기준선보다 12.3% 향상되었으며, 특히 정밀 조작이 필요한 작업(예: "서랍 열기")에서 두드러진 이점을 보였다.
+- **RLBench-OG 실험**: 시각적 교란 하에서 TVVE의 성공률은 8.7%만 감소한 반면, 기준 모델은 평균 21.5% 감소하여 시점 탐색 및 TaskMoE의 견고성을 검증했다.
+- **실제 로봇 실험**: 5개의 미지의 지시 작업에서 TVVE는 4개를 성공적으로 수행했으며, 기준 모델은 최대 2개를 성공했다. 시각적 간섭 하에서 TVVE의 실패율은 기준선보다 40% 낮았다.
+
+### 결론
+TVVE는 작업 인식 가상 시점 탐색과 동적 재렌더링을 통해 고정 카메라 시점 및 공유 인코더의 다중 작업 조작에서의 한계를 효과적으로 해결했다. 도입된 TaskMoE는 다중 작업 학습 성능을 더욱 향상시켰다. 코드 및 시각화 결과는 오픈소스로 공개되었다.

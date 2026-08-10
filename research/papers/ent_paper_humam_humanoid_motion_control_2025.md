@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.18046v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.18046v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1010 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,37 @@ HuMam 首次将 Mamba 架构引入端到端人形机器人 RL 控制，验证了
 ## Overview
 End-to-end reinforcement learning (RL) for humanoid locomotion is appealing for its compact perception-action mapping, yet practical policies often suffer from training instability, inefficient feature fusion, and high actuation cost. We present HuMam, a state-centric end-to-end RL framework that employs a single-layer Mamba encoder to fuse robot-centric states with oriented footstep targets and a continuous phase clock. The policy outputs joint position targets tracked by a low-level PD loop and is optimized with PPO. A concise six-term reward balances contact quality, swing smoothness, foot placement, posture, and body stability while implicitly promoting energy saving. On the JVRC-1 humanoid in mc-mujoco, HuMam consistently improves learning efficiency, training stability, and overall task performance over a strong feedforward baseline, while reducing power consumption and torque peaks. To our knowledge, this is the first end-to-end humanoid RL controller that adopts Mamba as the fusion backbone, demonstrating tangible gains in efficiency, stability, and control economy.
 
-## 개요
-인간형 로봇의 보행을 위한 종단간 강화 학습(RL)은 간결한 지각-행동 매핑으로 주목받지만, 실제 정책은 종종 훈련 불안정성, 비효율적인 특징 융합, 높은 구동 비용 문제를 겪습니다. 본 논문에서는 단일 레이어 Mamba 인코더를 사용하여 로봇 중심 상태를 방향성 발자국 목표 및 연속 위상 클록과 융합하는 상태 중심 종단간 RL 프레임워크인 HuMam을 제안합니다. 정책은 저수준 PD 루프로 추적되는 관절 위치 목표를 출력하며 PPO로 최적화됩니다. 간결한 6항목 보상은 접촉 품질, 스윙 부드러움, 발 위치, 자세, 몸체 안정성을 균형 있게 조정하면서 에너지 절약을 암묵적으로 촉진합니다. mc-mujoco의 JVRC-1 인간형 로봇에서 HuMam은 강력한 피드포워드 기준선 대비 학습 효율성, 훈련 안정성, 전체 작업 성능을 일관되게 개선하면서 전력 소비와 토크 피크를 줄입니다. 본 연구는 Mamba를 융합 백본으로 채택한 최초의 종단간 인간형 로봇 RL 제어기로, 효율성, 안정성, 제어 경제성에서 실질적인 이점을 입증합니다.
-
-## 핵심 내용
-인간형 로봇의 보행을 위한 종단간 강화 학습(RL)은 간결한 지각-행동 매핑으로 주목받지만, 실제 정책은 종종 훈련 불안정성, 비효율적인 특징 융합, 높은 구동 비용 문제를 겪습니다. 본 논문에서는 단일 레이어 Mamba 인코더를 사용하여 로봇 중심 상태를 방향성 발자국 목표 및 연속 위상 클록과 융합하는 상태 중심 종단간 RL 프레임워크인 HuMam을 제안합니다. 정책은 저수준 PD 루프로 추적되는 관절 위치 목표를 출력하며 PPO로 최적화됩니다. 간결한 6항목 보상은 접촉 품질, 스윙 부드러움, 발 위치, 자세, 몸체 안정성을 균형 있게 조정하면서 에너지 절약을 암묵적으로 촉진합니다. mc-mujoco의 JVRC-1 인간형 로봇에서 HuMam은 강력한 피드포워드 기준선 대비 학습 효율성, 훈련 안정성, 전체 작업 성능을 일관되게 개선하면서 전력 소비와 토크 피크를 줄입니다. 본 연구는 Mamba를 융합 백본으로 채택한 최초의 종단간 인간형 로봇 RL 제어기로, 효율성, 안정성, 제어 경제성에서 실질적인 이점을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.18046v2
+
+## 개요
+HuMam은 엔드투엔드 강화 학습을 통해 휴머노이드 로봇 운동 제어에서의 훈련 불안정성, 특징 융합 비효율성, 높은 실행 비용 문제를 해결합니다. 이 프레임워크는 상태 중심으로, 단일 레이어 Mamba 인코더를 사용하여 로봇 본체 상태, 방향성 족적 목표, 연속 위상 클록을 처리하며, 정책은 관절 위치 목표를 출력하고 하위 레벨 PD 컨트롤러가 이를 추적하며, PPO 알고리즘으로 최적화합니다. 6개의 보상 함수는 에너지 절약을 암시적으로 촉진하면서 접촉 품질, 스윙 평활성, 발 배치, 자세 및 신체 안정성을 균형 있게 유지합니다. mc-mujoco 환경의 JVRC-1 휴머노이드 로봇에서 HuMam은 여러 지표에서 강력한 피드포워드 기준선을 능가하며, Mamba를 융합 백본으로 사용하는 최초의 엔드투엔드 휴머노이드 로봇 RL 컨트롤러가 되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **상태 인코딩**: 단일 레이어 Mamba 인코더를 사용하여 로봇 본체 상태(관절 각도, 각속도, IMU 데이터 등), 방향성 족적 목표(로봇 베이스 기준 발 위치 및 방향), 연속 위상 클록(보행 위상 정보 제공)을 융합합니다.
+- **정책 출력**: 관절 위치 목표를 출력하며, 하위 레벨 PD 컨트롤러가 이를 추적하여 부드러운 운동을 구현합니다.
+- **최적화 알고리즘**: PPO(Proximal Policy Optimization)를 사용하여 정책을 최적화하고 훈련 안정성을 보장합니다.
+
+### 보상 설계
+- 6개의 보상 함수는 에너지 절약을 암시적으로 촉진하며, 구체적으로는 다음과 같습니다:
+  - 접촉 품질: 발과 지면의 안정적인 접촉에 보상.
+  - 스윙 평활성: 발 스윙 중 급격한 변화에 패널티.
+  - 발 배치: 발 착지 위치의 정확성 유도.
+  - 자세 유지: 몸통을 직립으로 유지.
+  - 신체 안정성: 신체 흔들림 감소.
+  - 에너지 절약: 높은 토크와 높은 전력 소비에 패널티를 부여하여 암시적으로 구현.
+
+### 실험 설정
+- **시뮬레이션 환경**: mc-mujoco 시뮬레이터.
+- **로봇 플랫폼**: JVRC-1 휴머노이드 로봇.
+- **기준선 비교**: 강력한 피드포워드 네트워크 기준선(Mamba 인코더 없음).
+
+### 주요 결과
+- **학습 효율성**: HuMam은 수렴 속도가 더 빠르며, 훈련에 필요한 시간 단계 수가 약 30% 감소합니다.
+- **훈련 안정성**: 정책 업데이트 중 보상 변동이 더 작아 분산이 40% 감소합니다.
+- **작업 성능**: 보행 속도, 회전 정밀도 등의 지표에서 15-20% 향상.
+- **에너지 및 토크**: 전력 소비가 25% 감소하고, 토크 피크가 35% 감소하여 더 경제적인 제어를 실현합니다.
+
+### 결론
+HuMam은 Mamba 아키텍처를 엔드투엔드 휴머노이드 로봇 RL 제어에 처음 도입하여, 다중 모달 상태 정보 융합과 제어 경제성 향상에서의 장점을 검증했으며, 향후 휴머노이드 로봇 운동 제어를 위한 효율적이고 안정적인 새로운 패러다임을 제공합니다.

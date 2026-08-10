@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.11758v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.11758v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (947 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,26 @@ LAPA 通过无监督潜在动作预训练，有效解决了 VLA 模型对人工�
 ## Overview
 We introduce Latent Action Pretraining for general Action models (LAPA), an unsupervised method for pretraining Vision-Language-Action (VLA) models without ground-truth robot action labels. Existing Vision-Language-Action models require action labels typically collected by human teleoperators during pretraining, which significantly limits possible data sources and scale. In this work, we propose a method to learn from internet-scale videos that do not have robot action labels. We first train an action quantization model leveraging VQ-VAE-based objective to learn discrete latent actions between image frames, then pretrain a latent VLA model to predict these latent actions from observations and task descriptions, and finally finetune the VLA on small-scale robot manipulation data to map from latent to robot actions. Experimental results demonstrate that our method significantly outperforms existing techniques that train robot manipulation policies from large-scale videos. Furthermore, it outperforms the state-of-the-art VLA model trained with robotic action labels on real-world manipulation tasks that require language conditioning, generalization to unseen objects, and semantic generalization to unseen instructions. Training only on human manipulation videos also shows positive transfer, opening up the potential for leveraging web-scale data for robotics foundation model.
 
-## 개요
-우리는 Latent Action Pretraining for general Action models (LAPA)를 소개합니다. 이는 실제 로봇 동작 레이블 없이 Vision-Language-Action (VLA) 모델을 사전 학습하는 비지도 방법입니다. 기존의 Vision-Language-Action 모델은 사전 학습 중 일반적으로 인간 원격 조작자가 수집한 동작 레이블을 필요로 하며, 이는 가능한 데이터 소스와 규모를 크게 제한합니다. 본 연구에서는 로봇 동작 레이블이 없는 인터넷 규모의 비디오로부터 학습하는 방법을 제안합니다. 먼저 VQ-VAE 기반 목적 함수를 활용한 동작 양자화 모델을 훈련하여 이미지 프레임 간의 이산적인 잠재 동작을 학습하고, 그런 다음 관찰 및 작업 설명으로부터 이러한 잠재 동작을 예측하도록 잠재 VLA 모델을 사전 학습하며, 마지막으로 소규모 로봇 조작 데이터로 VLA를 미세 조정하여 잠재 동작을 로봇 동작으로 매핑합니다. 실험 결과는 우리의 방법이 대규모 비디오로부터 로봇 조작 정책을 훈련하는 기존 기술보다 현저히 우수함을 보여줍니다. 또한, 언어 조건화, 보이지 않는 객체에 대한 일반화, 보이지 않는 명령에 대한 의미적 일반화가 필요한 실제 조작 작업에서 로봇 동작 레이블로 훈련된 최첨단 VLA 모델보다 성능이 뛰어납니다. 인간 조작 비디오만으로 훈련해도 긍정적인 전이가 나타나며, 이는 웹 규모 데이터를 로봇 기반 모델에 활용할 가능성을 열어줍니다.
-
-## 핵심 내용
-우리는 Latent Action Pretraining for general Action models (LAPA)를 소개합니다. 이는 실제 로봇 동작 레이블 없이 Vision-Language-Action (VLA) 모델을 사전 학습하는 비지도 방법입니다. 기존의 Vision-Language-Action 모델은 사전 학습 중 일반적으로 인간 원격 조작자가 수집한 동작 레이블을 필요로 하며, 이는 가능한 데이터 소스와 규모를 크게 제한합니다. 본 연구에서는 로봇 동작 레이블이 없는 인터넷 규모의 비디오로부터 학습하는 방법을 제안합니다. 먼저 VQ-VAE 기반 목적 함수를 활용한 동작 양자화 모델을 훈련하여 이미지 프레임 간의 이산적인 잠재 동작을 학습하고, 그런 다음 관찰 및 작업 설명으로부터 이러한 잠재 동작을 예측하도록 잠재 VLA 모델을 사전 학습하며, 마지막으로 소규모 로봇 조작 데이터로 VLA를 미세 조정하여 잠재 동작을 로봇 동작으로 매핑합니다. 실험 결과는 우리의 방법이 대규모 비디오로부터 로봇 조작 정책을 훈련하는 기존 기술보다 현저히 우수함을 보여줍니다. 또한, 언어 조건화, 보이지 않는 객체에 대한 일반화, 보이지 않는 명령에 대한 의미적 일반화가 필요한 실제 조작 작업에서 로봇 동작 레이블로 훈련된 최첨단 VLA 모델보다 성능이 뛰어납니다. 인간 조작 비디오만으로 훈련해도 긍정적인 전이가 나타나며, 이는 웹 규모 데이터를 로봇 기반 모델에 활용할 가능성을 열어줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.11758v2
+
+## 개요
+LAPA는 무감독 사전학습 프레임워크를 제안하며, VQ-VAE 목표를 통해 라벨이 없는 비디오에서 프레임 간의 이산적인 잠재 행동을 학습하고, 이후 잠재 VLA 모델을 사전학습하여 관측과 작업 설명에 따라 이러한 잠재 행동을 예측합니다. 마지막으로, 이 방법은 소량의 로봇 조작 데이터만으로 잠재 행동을 실제 로봇 행동으로 매핑할 수 있습니다. 실험 결과, LAPA는 대규모 비디오 학습에서 기존 정책보다 현저히 우수하며, 언어 조건이 필요하고 보지 못한 객체에 대한 일반화 및 보지 못한 지시에 대한 의미적 일반화가 요구되는 실제 세계 작업에서 로봇 행동 라벨로 학습된 SOTA VLA 모델을 능가합니다. 인간 조작 비디오만으로 학습한 경우에도 긍정적 전이 능력을 보여주며, 네트워크 규모 데이터를 활용한 로봇 기반 모델 구축의 길을 열었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+LAPA는 세 가지 핵심 단계로 구성됩니다:
+1. **잠재 행동 양자화 모델 학습**: VQ-VAE 목표를 사용하여 라벨이 없는 비디오 프레임 시퀀스에서 이산적인 잠재 행동을 학습합니다. 이 모델은 연속적인 이미지 프레임 간의 변화를 유한한 수의 이산 코드북 벡터로 인코딩합니다.
+2. **잠재 VLA 모델 사전학습**: 관측 이미지와 작업 언어 설명을 기반으로 위의 이산 잠재 행동을 예측하는 모델을 사전학습합니다. 이 단계는 실제 로봇 행동 라벨이 전혀 필요 없으며, 인터넷 비디오 데이터를 대규모로 활용할 수 있습니다.
+3. **미세조정 매핑**: 소규모 로봇 조작 데이터셋에서 미세조정하여 잠재 행동 공간을 실제 로봇 행동 공간으로 매핑하고 정책 실행을 구현합니다.
+
+### 실험 설정 및 핵심 수치
+- **데이터 출처**: 사전학습은 대규모 라벨 없는 인터넷 비디오(인간 조작 비디오 포함)를 사용하고, 미세조정은 소량의 행동 라벨이 있는 로봇 조작 데이터를 사용합니다.
+- **비교 기준선**: 기존 비디오 기반 학습 정책 방법 및 로봇 행동 라벨로 학습된 SOTA VLA 모델(예: RT-2)과 비교합니다.
+- **핵심 결과**:
+  - LAPA는 언어 조건 조작 작업에서 기존 라벨 없는 비디오 학습 방법보다 현저히 우수합니다.
+  - 보지 못한 객체에 대한 일반화 및 보지 못한 지시에 대한 의미적 일반화가 요구되는 실제 세계 작업에서 LAPA는 로봇 행동 라벨로 학습된 SOTA VLA 모델을 능가합니다.
+  - 인간 조작 비디오만으로 학습한 경우에도 LAPA는 긍정적 전이 효과를 보여주며, 네트워크 규모 데이터에서 일반적인 조작 지식을 학습할 수 있는 잠재력을 나타냅니다.
+
+### 결론
+LAPA는 무감독 잠재 행동 사전학습을 통해 VLA 모델이 수동 주석 행동 라벨에 의존하는 문제를 효과적으로 해결하고, 사용 가능한 사전학습 데이터 소스를 크게 확장합니다. 그 성능은 여러 실제 세계 조작 작업에서 지도 학습 방법을 달성하거나 능가하며, 일반화 가능한 로봇 기반 모델 구축을 위한 새로운 패러다임을 제공합니다.

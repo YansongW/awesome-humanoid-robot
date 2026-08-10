@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.01247v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.01247v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (814 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,27 @@ SE-Policy 通过显式建模机器人形态对称性，显著提升了人形机�
 ## Overview
 The human nervous system exhibits bilateral symmetry, enabling coordinated and balanced movements. However, existing Deep Reinforcement Learning (DRL) methods for humanoid robots neglect morphological symmetry of the robot, leading to uncoordinated and suboptimal behaviors. Inspired by human motor control, we propose Symmetry Equivariant Policy (SE-Policy), a new DRL framework that embeds strict symmetry equivariance in the actor and symmetry invariance in the critic without additional hyperparameters. SE-Policy enforces consistent behaviors across symmetric observations, producing temporally and spatially coordinated motions with higher task performance. Extensive experiments on velocity tracking tasks, conducted in both simulation and real-world deployment with the Unitree G1 humanoid robot, demonstrate that SE-Policy improves tracking accuracy by up to 40% compared to state-of-the-art baselines, while achieving superior spatial-temporal coordination. These results demonstrate the effectiveness of SE-Policy and its broad applicability to humanoid robots.
 
-## 개요
-인간의 신경계는 양측 대칭성을 나타내며, 이를 통해 조화롭고 균형 잡힌 움직임이 가능합니다. 그러나 기존의 인간형 로봇을 위한 심층 강화 학습(DRL) 방법은 로봇의 형태적 대칭성을 무시하여 비조화적이고 최적이 아닌 행동을 초래합니다. 인간의 운동 제어에서 영감을 받아, 우리는 추가 하이퍼파라미터 없이 액터에 엄격한 대칭 등변성(symmetry equivariance)을, 크리틱에 대칭 불변성(symmetry invariance)을 내장한 새로운 DRL 프레임워크인 SE-Policy(Symmetry Equivariant Policy)를 제안합니다. SE-Policy는 대칭적인 관찰에 걸쳐 일관된 행동을 강제하여, 시간적 및 공간적으로 조화로운 움직임과 더 높은 작업 성능을 생성합니다. Unitree G1 인간형 로봇을 사용한 시뮬레이션 및 실제 환경 배포에서 수행된 속도 추적 작업에 대한 광범위한 실험은, SE-Policy가 최첨단 기준선과 비교하여 추적 정확도를 최대 40% 향상시키면서 우수한 시공간 조정을 달성함을 보여줍니다. 이러한 결과는 SE-Policy의 효과성과 인간형 로봇에 대한 광범위한 적용 가능성을 입증합니다.
-
-## 핵심 내용
-인간의 신경계는 양측 대칭성을 나타내며, 이를 통해 조화롭고 균형 잡힌 움직임이 가능합니다. 그러나 기존의 인간형 로봇을 위한 심층 강화 학습(DRL) 방법은 로봇의 형태적 대칭성을 무시하여 비조화적이고 최적이 아닌 행동을 초래합니다. 인간의 운동 제어에서 영감을 받아, 우리는 추가 하이퍼파라미터 없이 액터에 엄격한 대칭 등변성(symmetry equivariance)을, 크리틱에 대칭 불변성(symmetry invariance)을 내장한 새로운 DRL 프레임워크인 SE-Policy(Symmetry Equivariant Policy)를 제안합니다. SE-Policy는 대칭적인 관찰에 걸쳐 일관된 행동을 강제하여, 시간적 및 공간적으로 조화로운 움직임과 더 높은 작업 성능을 생성합니다. Unitree G1 인간형 로봇을 사용한 시뮬레이션 및 실제 환경 배포에서 수행된 속도 추적 작업에 대한 광범위한 실험은, SE-Policy가 최첨단 기준선과 비교하여 추적 정확도를 최대 40% 향상시키면서 우수한 시공간 조정을 달성함을 보여줍니다. 이러한 결과는 SE-Policy의 효과성과 인간형 로봇에 대한 광범위한 적용 가능성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.01247v2
+
+## 개요
+기존 심층 강화 학습 방법은 휴머노이드 로봇의 형태 대칭성을 무시하여 움직임이 부자연스럽다. SE-Policy는 인간 신경계의 양측 대칭성에서 영감을 받아, 정책 네트워크에서 대칭 관측이 일관된 행동을 생성하도록 강제하고, 가치 네트워크에서는 대칭 불변성을 유지한다. 이 방법은 속도 추적 작업에서 기존 기준선보다 현저히 우수하며, 추적 정밀도 향상뿐만 아니라 더 나은 시공간 조정을 달성하고, Unitree G1 로봇에서 실물 검증을 완료했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **대칭 등변 정책**: SE-Policy는 정책 네트워크(actor)에 엄격한 대칭 등변성을 내장하여, 로봇의 좌우 대칭 관측 입력이 대칭 동작 출력을 생성하도록 보장하여 조화로운 움직임 패턴을 생성한다.
+- **대칭 불변 가치 네트워크**: 가치 네트워크(critic)는 대칭 불변성을 유지하며, 즉 대칭 상태는 동일한 가치 추정을 가지므로 비대칭 최적화 신호를 방지한다.
+- **추가 하이퍼파라미터 불필요**: 이 프레임워크는 네트워크 구조 설계를 통해 대칭 제약을 직접 구현하며, 추가 손실 항목이나 하이퍼파라미터를 도입하지 않는다.
+
+### 실험 설정
+- **플랫폼**: Unitree G1 휴머노이드 로봇, 시뮬레이션 환경(Isaac Gym) 및 실물 배포 포함.
+- **작업**: 속도 추적 작업으로, 로봇이 지시된 속도로 전진, 후진, 측면 이동 및 회전을 수행해야 한다.
+- **기준선**: 현재 최적의 심층 강화 학습 방법(예: PPO, Symmetric PPO 등)과 비교.
+
+### 주요 결과
+- **추적 정밀도**: SE-Policy는 속도 추적 오류를 최대 40%까지 줄였으며, 여러 속도 명령에서 모든 기준선보다 우수했다.
+- **시공간 조정**: 대칭 제약을 통해 로봇의 좌우 다리 보행 대칭성이 향상되고, 관절 궤적이 더 매끄러워지며 비대칭 떨림이 감소했다.
+- **실물 검증**: Unitree G1 실물 로봇에서 SE-Policy는 안정적이고 조화로운 보행 및 회전을 성공적으로 구현하여 시뮬레이션에서 실물로의 전이 능력을 검증했다.
+
+### 결론
+SE-Policy는 로봇 형태 대칭성을 명시적으로 모델링하여 휴머노이드 로봇 운동 제어의 조정성과 작업 성능을 현저히 향상시켰다. 이 방법은 일반성을 가지며 다양한 모델의 휴머노이드 로봇에 적용할 수 있어, 미래의 고동적 운동 제어를 위한 새로운 패러다임을 제공한다.

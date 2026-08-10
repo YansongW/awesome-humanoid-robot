@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.02783v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.02783v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (582 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ SwarmGAIL 框架利用生成对抗模仿学习，从人类演示和 PPO 策略�
 ## Overview
 In imitation learning, robots are supposed to learn from demonstrations of the desired behavior. Most of the work in imitation learning for swarm robotics provides the demonstrations as rollouts of an existing policy. In this work, we provide a framework based on generative adversarial imitation learning that aims to learn collective behaviors from human demonstrations. Our framework is evaluated across six different missions, learning both from manual demonstrations and demonstrations derived from a PPO-trained policy. Results show that the imitation learning process is able to learn qualitatively meaningful behaviors that perform similarly well as the provided demonstrations. Additionally, we deploy the learned policies on a swarm of TurtleBot 4 robots in real-robot experiments. The exhibited behaviors preserved their visually recognizable character and their performance is comparable to the one achieved in simulation.
 
-## 개요
-모방 학습에서 로봇은 원하는 행동의 시연을 통해 학습해야 합니다. 군집 로봇 공학을 위한 모방 학습 연구의 대부분은 기존 정책의 롤아웃 형태로 시연을 제공합니다. 본 연구에서는 인간의 시연으로부터 집단 행동을 학습하는 것을 목표로 하는 생성적 적대적 모방 학습 기반 프레임워크를 제시합니다. 이 프레임워크는 수동 시연과 PPO 훈련 정책에서 파생된 시연 모두를 학습하며, 여섯 가지 다양한 임무에 걸쳐 평가되었습니다. 결과는 모방 학습 과정이 제공된 시연과 유사한 성능을 보이는 질적으로 의미 있는 행동을 학습할 수 있음을 보여줍니다. 또한, 학습된 정책을 실제 로봇 실험에서 TurtleBot 4 로봇 군집에 배포했습니다. 나타난 행동은 시각적으로 인식 가능한 특성을 유지했으며, 성능은 시뮬레이션에서 달성된 것과 비슷했습니다.
-
-## 핵심 내용
-모방 학습에서 로봇은 원하는 행동의 시연을 통해 학습해야 합니다. 군집 로봇 공학을 위한 모방 학습 연구의 대부분은 기존 정책의 롤아웃 형태로 시연을 제공합니다. 본 연구에서는 인간의 시연으로부터 집단 행동을 학습하는 것을 목표로 하는 생성적 적대적 모방 학습 기반 프레임워크를 제시합니다. 이 프레임워크는 수동 시연과 PPO 훈련 정책에서 파생된 시연 모두를 학습하며, 여섯 가지 다양한 임무에 걸쳐 평가되었습니다. 결과는 모방 학습 과정이 제공된 시연과 유사한 성능을 보이는 질적으로 의미 있는 행동을 학습할 수 있음을 보여줍니다. 또한, 학습된 정책을 실제 로봇 실험에서 TurtleBot 4 로봇 군집에 배포했습니다. 나타난 행동은 시각적으로 인식 가능한 특성을 유지했으며, 성능은 시뮬레이션에서 달성된 것과 비슷했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.02783v1
+
+## 개요
+SwarmGAIL 프레임워크는 생성적 적대적 모방 학습을 활용하여 인간 시연과 PPO 정책으로 생성된 시연에서 군집 행동을 학습합니다. 여섯 가지 서로 다른 작업에서 이 프레임워크는 시연 품질과 유사한 집단 행동을 학습할 수 있었으며, 시뮬레이션에서 우수한 성능을 보였습니다. 또한 연구진은 TurtleBot 4 로봇 군집에서 실제 실험을 수행하여 학습된 정책의 시각적 식별 가능성과 성능을 검증했으며, 이는 시뮬레이션 결과와 일치했습니다.
+
+## 핵심 내용
+### 방법
+- SwarmGAIL은 생성적 적대적 모방 학습(GAIL)을 기반으로 하며, 인간 시연에서 분산형 군집 정책을 학습하는 것을 목표로 합니다.
+- 시연 출처는 인간 수동 시연과 PPO 정책으로 생성된 시연을 포함합니다.
+- 프레임워크는 생성기(모방 정책)와 판별기(시연과 생성 행동 구분)의 적대적 훈련을 통해 정책을 최적화합니다.
+
+### 실험 설정
+- 다양한 집단 행동을 포괄하는 여섯 가지 서로 다른 작업에서 평가되었습니다.
+- 시뮬레이션 환경은 훈련 및 초기 검증에 사용되었습니다.
+- 실제 실험은 TurtleBot 4 로봇 군집에서 수행되었으며, 학습된 정책을 배포했습니다.
+
+### 주요 결과
+- 모방 학습 과정은 시연 품질과 유사한 정성적으로 의미 있는 행동을 학습할 수 있었습니다.
+- 시뮬레이션에서 학습된 정책의 성능은 시연 정책과 유사했습니다.
+- TurtleBot 4 실제 실험에서 학습된 정책은 시각적으로 식별 가능한 행동 특성을 유지했으며, 성능은 시뮬레이션 결과와 비교 가능했습니다.
+
+### 결론
+- SwarmGAIL은 인간 및 PPO 시연에서 군집 정책을 효과적으로 학습하며, 실제 로봇에 성공적으로 배포되었습니다.
+- 이 프레임워크는 사전 정의된 정책 없이도 군집 로봇을 위한 모방 학습 방법을 제공합니다.

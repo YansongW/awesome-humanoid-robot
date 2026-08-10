@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.12810v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.12810v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (982 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,26 @@ theoretical_depth:
 ## Overview
 Robot learning is often simplified to planar manipulation due to its data consumption. Then, a common approach is to use a fully-convolutional neural network to estimate the reward of grasp primitives. In this work, we extend this approach by parametrizing the two remaining, lateral Degrees of Freedom (DoFs) of the primitives. We apply this principle to the task of 6 DoF bin picking: We introduce a model-based controller to calculate angles that avoid collisions, maximize the grasp quality while keeping the uncertainty small. As the controller is integrated into the training, our hybrid approach is able to learn about and exploit the model-based controller. After real-world training of 27000 grasp attempts, the robot is able to grasp known objects with a success rate of over 92% in dense clutter. Grasp inference takes less than 50ms. In further real-world experiments, we evaluate grasp rates in a range of scenarios including its ability to generalize to unknown objects. We show that the system is able to avoid collisions, enabling grasps that would not be possible without primitive adaption.
 
-## 개요
-로봇 학습은 데이터 소비 문제로 인해 종종 평면 조작으로 단순화됩니다. 이후 일반적인 접근 방식은 완전 컨볼루션 신경망을 사용하여 그립 프리미티브의 보상을 추정하는 것입니다. 본 연구에서는 프리미티브의 나머지 두 개의 측면 자유도를 매개변수화하여 이 접근 방식을 확장합니다. 이 원리를 6자유도 빈 피킹 작업에 적용합니다: 충돌을 피하고, 그립 품질을 최대화하며 불확실성을 최소화하는 각도를 계산하는 모델 기반 제어기를 도입합니다. 제어기가 훈련에 통합됨에 따라, 우리의 하이브리드 접근 방식은 모델 기반 제어기에 대해 학습하고 이를 활용할 수 있습니다. 27,000회의 실제 그립 시도 훈련 후, 로봇은 밀집된 혼잡 환경에서 알려진 물체를 92% 이상의 성공률로 잡을 수 있습니다. 그립 추론은 50ms 미만이 소요됩니다. 추가 실제 실험에서는 알려지지 않은 물체에 대한 일반화 능력을 포함한 다양한 시나리오에서 그립 성공률을 평가합니다. 우리는 시스템이 충돌을 피할 수 있어 프리미티브 적응 없이는 불가능했던 그립을 가능하게 함을 보여줍니다.
-
-## 핵심 내용
-로봇 학습은 데이터 소비 문제로 인해 종종 평면 조작으로 단순화됩니다. 이후 일반적인 접근 방식은 완전 컨볼루션 신경망을 사용하여 그립 프리미티브의 보상을 추정하는 것입니다. 본 연구에서는 프리미티브의 나머지 두 개의 측면 자유도를 매개변수화하여 이 접근 방식을 확장합니다. 이 원리를 6자유도 빈 피킹 작업에 적용합니다: 충돌을 피하고, 그립 품질을 최대화하며 불확실성을 최소화하는 각도를 계산하는 모델 기반 제어기를 도입합니다. 제어기가 훈련에 통합됨에 따라, 우리의 하이브리드 접근 방식은 모델 기반 제어기에 대해 학습하고 이를 활용할 수 있습니다. 27,000회의 실제 그립 시도 훈련 후, 로봇은 밀집된 혼잡 환경에서 알려진 물체를 92% 이상의 성공률로 잡을 수 있습니다. 그립 추론은 50ms 미만이 소요됩니다. 추가 실제 실험에서는 알려지지 않은 물체에 대한 일반화 능력을 포함한 다양한 시나리오에서 그립 성공률을 평가합니다. 우리는 시스템이 충돌을 피할 수 있어 프리미티브 적응 없이는 불가능했던 그립을 가능하게 함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2103.12810v1
+
+## 개요
+로봇 학습은 종종 데이터 소비 문제로 인해 평면 조작으로 단순화되며, 일반적인 접근 방식은 완전 컨볼루션 신경망을 사용하여 그리프 기본 요소의 보상을 추정하는 것입니다. 본 논문은 기본 요소에 남아 있는 두 개의 측면 자유도(DoFs)를 매개변수화하여 이 방법을 6자유도 그리프 작업으로 확장합니다. 핵심 혁신은 충돌 회피, 그리프 품질 최대화, 불확실성 유지를 고려한 각도를 계산하는 모델 기반 컨트롤러를 도입하는 것입니다. 이 컨트롤러는 훈련 과정에 통합되어 혼합 시스템이 모델 기반 컨트롤러를 학습하고 활용할 수 있게 합니다. 27,000회의 실제 세계 훈련 시도 후, 로봇은 밀집된 복잡한 장면에서 알려진 객체에 대해 92% 이상의 그리프 성공률을 달성했으며, 추론 시간은 50밀리초 미만입니다. 추가 실험은 다양한 장면에서 시스템의 그리프 성공률을 평가했으며, 알려지지 않은 객체에 대한 일반화 능력을 포함하고, 시스템이 충돌을 효과적으로 회피하여 기본 요소 적응 없이는 수행할 수 없는 그리프 동작을 달성함을 입증했습니다.
+
+## 핵심 내용
+### 방법 개요
+- 본 논문은 완전 컨볼루션 신경망(fully-convolutional neural network)과 모델 기반 컨트롤러(model-based controller)를 결합한 혼합 6자유도 그리프 방법을 제안합니다.
+- 완전 컨볼루션 신경망은 평면 그리프 기본 요소의 보상을 추정하는 데 사용되며, 컨트롤러는 나머지 두 개의 측면 자유도(lateral Degrees of Freedom, DoFs)를 매개변수화하여 자세 적응 조정을 구현합니다.
+
+### 아키텍처 및 훈련
+- 컨트롤러는 각도를 계산할 때 세 가지 목표를 동시에 고려합니다: 충돌 회피(collision avoidance), 그리프 품질 최대화(maximize grasp quality), 불확실성 최소화 유지(keep uncertainty small).
+- 컨트롤러는 훈련 파이프라인에 통합되어 혼합 시스템이 자기 지도 학습(self-supervised learning)을 통해 점진적으로 컨트롤러의 출력을 학습하고 활용할 수 있게 합니다.
+- 실제 세계 훈련은 총 27,000회의 그리프 시도(grasp attempts)로 구성되며, 각 추론 시간은 50밀리초 미만입니다.
+
+### 실험 설정 및 결과
+- 밀집된 복잡한 장면(dense clutter)에서 로봇은 알려진 객체에 대해 92% 이상의 그리프 성공률을 달성했습니다.
+- 추가 실험은 다양한 장면에서 시스템의 그리프 성공률을 평가했으며, 알려지지 않은 객체(unknown objects)에 대한 일반화 능력을 포함합니다.
+- 실험은 시스템이 충돌을 효과적으로 회피하여 기본 요소 적응(primitive adaptation) 없이는 수행할 수 없는 그리프 동작을 달성함을 입증했습니다.
+
+### 결론
+- 본 논문의 방법은 혼합 아키텍처를 통해 낮은 추론 지연 시간을 유지하면서 복잡한 환경에서 6자유도 그리프의 성공률과 견고성을 크게 향상시킵니다.

@@ -33,7 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from chapter-08.md#8.9.2 Boston Dynamics Atlas：液压驱动到电动驱动 by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from chapter-08.md#8.9.2 Boston Dynamics Atlas：液压驱动到电动驱动 by scripts/backfill_nonpaper_entries.py.
+    | WP4 trilingual backfill 2026-08-10: closed unclosed code fence(s) and removed duplicate stale translation block(s) (pre-existing
+    ingestion defect).'
 sources:
 - id: src_001
   type: website
@@ -42,7 +44,6 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 波士顿动力 Atlas是人形机器人领域的重要机器人系统。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -102,35 +103,9 @@ flowchart TD
     G --> I["Performance Retention"]
     F --> G
 
+```
 ## 개요
 보스턴 다이내믹스의 Atlas는 휴머노이드 로봇 분야에서 중요한 로봇 시스템입니다. 아래 내용은 프로젝트 Wiki에서 정리한 내용으로, 심층적인 참고를 위해 제공됩니다.
-
-## 핵심 내용
-Boston Dynamics Atlas는 고동적 운동으로 유명합니다. 초기 버전은 유압 구동 방식을 채택하여 달리기, 점프, 백플립이 가능했습니다. 2024년에 공개된 새로운 Atlas는 완전 전기 구동 방식으로 전환되며 유지보수성과 상업화 가능성을 강조했습니다[35].
-
-!!! note "용어 설명: 유압 구동, 전기 구동, 고동적 운동, 백플립, 유지보수성"
-    - **유압 구동(hydraulic actuation)**: 고압 액체를 이용해 동력을 전달하는 구동 방식.
-    - **전기 구동(electric actuation)**: 모터와 감속기를 이용해 동력을 전달하는 구동 방식.
-    - **고동적 운동(highly dynamic motion)**: 빠르고 큰 가속도와 높은 충격을 동반하는 운동.
-    - **백플립(backflip)**: 공중에서 뒤로 회전하는 동작으로, 높은 출력과 제어 능력을 보여줌.
-    - **유지보수성(maintainability)**: 시스템의 수리 및 유지보수 용이성.
-
-유압 Atlas의 장점은 높은 출력 밀도와 충격 저항 능력에 있지만, 소음, 오일 누출, 복잡한 유지보수 등의 문제가 있습니다. 전기 Atlas는 고토크 밀도 모터와 첨단 제어를 통해 성능을 유지하면서도 운영 및 유지보수 비용을 낮추려고 합니다.
-
-```mermaid
-flowchart TD
-    A["Atlas 유압 버전"] --> B["높은 출력 밀도"]
-    A --> C["고동적 운동"]
-    A --> D["소음/누출/복잡한 유지보수"]
-    B --> E["달리기/점프/백플립"]
-    C --> E
-    D --> F["전동화 동기"]
-    G["Atlas 전기 버전"] --> H["조용함/청결함/유지보수 용이"]
-    G --> I["성능 유지"]
-    F --> G
-
-## 개요
-보스턴 다이내믹스의 Atlas는 휴머노이드 로봇 분야에서 중요한 로봇 시스템입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
 
 ## 핵심 내용
 Boston Dynamics Atlas는 높은 동적 운동성으로 유명합니다. 초기 버전은 유압 구동 방식을 채택하여 달리기, 점프, 뒤공중돌기가 가능했습니다. 2024년에 공개된 새로운 Atlas는 완전 전기 구동 방식으로 전환되며, 유지보수성과 상업화 가능성을 강조하고 있습니다[35].
@@ -155,3 +130,4 @@ flowchart TD
     G["Atlas 전기 버전"] --> H["조용함/청결함/쉬운 유지보수"]
     G --> I["성능 유지"]
     F --> G
+```

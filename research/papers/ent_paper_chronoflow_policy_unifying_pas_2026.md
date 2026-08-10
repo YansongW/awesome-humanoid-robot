@@ -49,8 +49,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31493v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31493v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (906 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,25 @@ ChronoFlow-Policy 通过引入 ChronoFlow 统一时间表示，解决了现有�
 ## Overview
 Visual signals play a crucial role in policy learning by enabling models to capture object motion and interaction dynamics. Just as humans reason about actions using both past experience and anticipated outcomes, effective policies should integrate past interactions with future predictions. However, existing visuomotor policies typically model either historical context or future dynamics in isolation, lacking a unified temporal representation of interaction dynamics. In this work, we introduce ChronoFlow, a temporally unified representation that captures past, current, and future interaction dynamics through sparse 3D keypoints of both objects and the gripper. Based on this representation, we propose ChronoFlow-Policy, a diffusion-based visuomotor policy that jointly learns ChronoFlow and action sequences through a co-training objective. Experiments on 14 simulated tasks and 5 real-world manipulation tasks demonstrate that ChronoFlow-Policy consistently outperforms strong diffusion-policy baselines and improves robustness in long-horizon and non-Markovian manipulation scenarios. Our project page is available at https://the-kamisato-sii.github.io/ChronoFlow-Policy-project-page/.
 
-## 개요
-시각 신호는 모델이 객체의 움직임과 상호작용 역학을 포착할 수 있게 함으로써 정책 학습에서 중요한 역할을 합니다. 인간이 과거 경험과 예상 결과를 모두 사용하여 행동을 추론하는 것처럼, 효과적인 정책은 과거 상호작용과 미래 예측을 통합해야 합니다. 그러나 기존의 시각운동 정책은 일반적으로 역사적 맥락이나 미래 역학을 개별적으로 모델링하여 상호작용 역학의 통일된 시간적 표현이 부족합니다. 본 연구에서는 객체와 그리퍼의 희소 3D 키포인트를 통해 과거, 현재, 미래의 상호작용 역학을 포착하는 시간적으로 통일된 표현인 ChronoFlow를 소개합니다. 이 표현을 기반으로, 공동 훈련 목표를 통해 ChronoFlow와 행동 시퀀스를 함께 학습하는 확산 기반 시각운동 정책인 ChronoFlow-Policy를 제안합니다. 14개의 시뮬레이션 작업과 5개의 실제 조작 작업에 대한 실험은 ChronoFlow-Policy가 강력한 확산 정책 기준선을 일관되게 능가하고, 장기 지평 및 비마르코프 조작 시나리오에서 견고성을 향상시킴을 보여줍니다. 프로젝트 페이지는 https://the-kamisato-sii.github.io/ChronoFlow-Policy-project-page/에서 확인할 수 있습니다.
-
-## 핵심 내용
-시각 신호는 모델이 객체의 움직임과 상호작용 역학을 포착할 수 있게 함으로써 정책 학습에서 중요한 역할을 합니다. 인간이 과거 경험과 예상 결과를 모두 사용하여 행동을 추론하는 것처럼, 효과적인 정책은 과거 상호작용과 미래 예측을 통합해야 합니다. 그러나 기존의 시각운동 정책은 일반적으로 역사적 맥락이나 미래 역학을 개별적으로 모델링하여 상호작용 역학의 통일된 시간적 표현이 부족합니다. 본 연구에서는 객체와 그리퍼의 희소 3D 키포인트를 통해 과거, 현재, 미래의 상호작용 역학을 포착하는 시간적으로 통일된 표현인 ChronoFlow를 소개합니다. 이 표현을 기반으로, 공동 훈련 목표를 통해 ChronoFlow와 행동 시퀀스를 함께 학습하는 확산 기반 시각운동 정책인 ChronoFlow-Policy를 제안합니다. 14개의 시뮬레이션 작업과 5개의 실제 조작 작업에 대한 실험은 ChronoFlow-Policy가 강력한 확산 정책 기준선을 일관되게 능가하고, 장기 지평 및 비마르코프 조작 시나리오에서 견고성을 향상시킴을 보여줍니다. 프로젝트 페이지는 https://the-kamisato-sii.github.io/ChronoFlow-Policy-project-page/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31493v2
+
+## 개요
+기존의 시각적 운동 정책은 일반적으로 과거 컨텍스트나 미래 동역학을 개별적으로 모델링하여, 상호작용 동역학에 대한 통합된 시간적 표현이 부족합니다. ChronoFlow-Policy는 ChronoFlow 표현을 통해 객체와 그리퍼의 희소 3D 키포인트를 활용하여 과거, 현재, 미래의 상호작용 동역학을 하나의 통합된 시간적 표현으로 결합합니다. 이 정책은 확산 모델 아키텍처를 채택하고, 공동 훈련 목표를 통해 ChronoFlow와 행동 시퀀스를 동시에 학습합니다. 실험 결과, 이 방법은 14개의 시뮬레이션 작업과 5개의 실제 세계 조작 작업에서 강력한 확산 정책 기준선보다 우수하며, 특히 장기적 및 비마르코프 조작 시나리오에서 견고성을 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 개요
+- **ChronoFlow 표현**: 객체와 그리퍼를 모두 포함하는 희소 3D 키포인트를 통해 과거, 현재, 미래의 상호작용 동역학을 인코딩하여 통합된 시간적 표현을 형성합니다.
+- **ChronoFlow-Policy 아키텍처**: 확산 모델을 기반으로 하며, 공동 훈련 목표(co-training objective)를 사용하여 ChronoFlow 표현과 행동 시퀀스를 동시에 학습합니다.
+
+### 실험 설정
+- **시뮬레이션 작업**: 14개의 시뮬레이션 조작 작업에서 평가되며, 다양한 조작 시나리오를 포함합니다.
+- **실제 세계 작업**: 5개의 실제 세계 조작 작업에서 테스트되며, 장기적 및 비마르코프(non-Markovian) 시나리오를 포함합니다.
+- **기준선 비교**: 강력한 확산 정책 기준선(예: Diffusion Policy)과 비교합니다.
+
+### 주요 결과
+- **성능 향상**: ChronoFlow-Policy는 모든 14개의 시뮬레이션 작업과 5개의 실제 세계 작업에서 기준선 방법보다 우수합니다.
+- **견고성 강화**: 장기적(long-horizon) 및 비마르코프(non-Markovian) 조작 시나리오에서 정책의 견고성이 크게 향상되어, 통합된 시간적 표현이 복잡한 동적 상호작용에 효과적임을 나타냅니다.
+
+### 결론
+ChronoFlow-Policy는 ChronoFlow 통합 시간적 표현을 도입하여 기존의 시각적 운동 정책에서 시간 모델링의 분리 문제를 해결하고, 다양한 조작 작업에서 더 나은 성능과 견고성을 달성합니다. 프로젝트 페이지에서 더 많은 세부 정보를 확인할 수 있습니다: https://the-kamisato-sii.github.io/ChronoFlow-Policy-project-page/.

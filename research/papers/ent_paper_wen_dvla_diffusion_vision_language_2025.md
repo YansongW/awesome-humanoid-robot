@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.25681v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.25681v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (910 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,31 @@ dVLA 是一种基于扩散的视觉-语言-动作模型，旨在通过多模态�
 ## Overview
 Vision-Language-Action (VLA) models are emerging as a next-generation paradigm for robotics. We introduce dVLA, a diffusion-based VLA that leverages a multimodal chain-of-thought to unify visual perception, language reasoning, and robotic control in a single system. dVLA jointly optimizes perception, language understanding, and action under a single diffusion objective, enabling stronger cross-modal reasoning and better generalization to novel instructions and objects. For practical deployment, we mitigate inference latency by incorporating two acceleration strategies, a prefix attention mask and KV caching, yielding up to around times speedup at test-time inference. We evaluate dVLA in both simulation and the real world: on the LIBERO benchmark, it achieves state-of-the-art performance with a 96.4% average success rate, consistently surpassing both discrete and continuous action policies; on a real Franka robot, it succeeds across a diverse task suite, including a challenging bin-picking task that requires multi-step planning, demonstrating robust real-world performance. Together, these results underscore the promise of unified diffusion frameworks for practical, high-performance VLA robotics.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 로봇 공학의 차세대 패러다임으로 부상하고 있습니다. 우리는 멀티모달 체인 오브 소트(multimodal chain-of-thought)를 활용하여 시각적 인식, 언어 추론 및 로봇 제어를 단일 시스템으로 통합하는 확산 기반 VLA인 dVLA를 소개합니다. dVLA는 단일 확산 목표 하에 인식, 언어 이해 및 행동을 공동으로 최적화하여 더 강력한 교차 모달 추론과 새로운 명령 및 객체에 대한 더 나은 일반화를 가능하게 합니다. 실제 배포를 위해 접두사 주의 마스크(prefix attention mask)와 KV 캐싱(KV caching)이라는 두 가지 가속 전략을 통합하여 추론 지연 시간을 완화하며, 테스트 시 추론에서 최대 약 몇 배의 속도 향상을 제공합니다. 우리는 dVLA를 시뮬레이션과 실제 환경 모두에서 평가했습니다: LIBERO 벤치마크에서 96.4%의 평균 성공률로 최첨단 성능을 달성하여 이산 및 연속 행동 정책을 모두 일관되게 능가했습니다; 실제 Franka 로봇에서는 다단계 계획이 필요한 까다로운 빈 피킹(bin-picking) 작업을 포함한 다양한 작업 세트에서 성공하여 강력한 실제 성능을 입증했습니다. 이러한 결과는 실용적이고 고성능의 VLA 로봇 공학을 위한 통합 확산 프레임워크의 가능성을 강조합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 로봇 공학의 차세대 패러다임으로 부상하고 있습니다. 우리는 멀티모달 체인 오브 소트(multimodal chain-of-thought)를 활용하여 시각적 인식, 언어 추론 및 로봇 제어를 단일 시스템으로 통합하는 확산 기반 VLA인 dVLA를 소개합니다. dVLA는 단일 확산 목표 하에 인식, 언어 이해 및 행동을 공동으로 최적화하여 더 강력한 교차 모달 추론과 새로운 명령 및 객체에 대한 더 나은 일반화를 가능하게 합니다. 실제 배포를 위해 접두사 주의 마스크(prefix attention mask)와 KV 캐싱(KV caching)이라는 두 가지 가속 전략을 통합하여 추론 지연 시간을 완화하며, 테스트 시 추론에서 최대 약 몇 배의 속도 향상을 제공합니다. 우리는 dVLA를 시뮬레이션과 실제 환경 모두에서 평가했습니다: LIBERO 벤치마크에서 96.4%의 평균 성공률로 최첨단 성능을 달성하여 이산 및 연속 행동 정책을 모두 일관되게 능가했습니다; 실제 Franka 로봇에서는 다단계 계획이 필요한 까다로운 빈 피킹(bin-picking) 작업을 포함한 다양한 작업 세트에서 성공하여 강력한 실제 성능을 입증했습니다. 이러한 결과는 실용적이고 고성능의 VLA 로봇 공학을 위한 통합 확산 프레임워크의 가능성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.25681v1
+
+## 개요
+dVLA는 확산 기반의 시각-언어-행동 모델로, 다중 모달 사고 체인을 통해 시각 인식, 언어 추론, 로봇 제어를 단일 시스템으로 통합하는 것을 목표로 합니다. 이 모델은 단일 확산 목표 하에 인식, 언어 이해, 행동 생성을 공동으로 최적화하여 교차 모달 추론 능력을 강화하고 새로운 지시와 새로운 물체에 더 잘 일반화합니다. 실제 배포 시 추론 지연 문제를 해결하기 위해 dVLA는 프리픽스 어텐션 마스크와 KV 캐시라는 두 가지 가속 전략을 도입하여 테스트 시 추론에서 약 수 배의 속도 향상을 달성했습니다. LIBERO 벤치마크에서 dVLA는 96.4%의 평균 성공률로 최첨단 성능을 달성하며 이산 및 연속 행동 정책을 지속적으로 능가했습니다. 실제 Franka 로봇에서는 다단계 계획이 필요한 도전적인 파지 작업을 포함한 다양한 작업을 성공적으로 완료하여 견고한 실제 세계 성능을 입증했습니다.
+
+## 핵심 내용
+### 방법
+- dVLA는 확산 모델을 핵심 프레임워크로 채택하여 시각 인식, 언어 이해, 행동 생성을 단일 확산 목표 하에 공동 최적화합니다.
+- 다중 모달 사고 체인 메커니즘을 통해 모델은 시각 입력, 언어 지시, 행동 시퀀스를 순차적으로 처리하여 교차 모달 추론과 의사 결정을 구현합니다.
+
+### 아키텍처
+- 모델 아키텍처는 확산 과정을 기반으로 하며, 입력은 다중 모달 데이터(이미지 및 텍스트)이고 출력은 연속 행동 시퀀스입니다.
+- 추론 가속을 위해 두 가지 전략이 도입되었습니다:
+  - **프리픽스 어텐션 마스크**: 어텐션 계산 범위를 제한하여 중복 계산을 줄입니다.
+  - **KV 캐시**: 키-값 쌍을 캐시하여 반복 계산을 방지하고 테스트 시 속도를 향상시킵니다.
+
+### 실험 설정
+- LIBERO 시뮬레이션 벤치마크에서 평가되며 다양한 조작 작업을 포함합니다.
+- 실제 세계에서는 Franka 로봇을 사용하여 테스트하며, 작업에는 단순 조작과 복잡한 다단계 계획(예: 빈 피킹)이 포함됩니다.
+
+### 주요 수치
+- LIBERO 벤치마크: 평균 성공률 96.4%로 모든 이산 및 연속 행동 정책을 능가합니다.
+- 추론 가속: 프리픽스 어텐션 마스크와 KV 캐시를 통해 약 수 배의 속도 향상을 달성합니다(구체적인 배수는 명시되지 않았지만 "up to around times speedup"으로 강조됨).
+- 실제 세계 성능: Franka 로봇에서 다단계 계획이 필요한 빈 피킹을 포함한 다양한 작업을 성공적으로 완료합니다.
+
+### 결론
+- dVLA는 통합 확산 프레임워크가 실용적이고 고성능의 VLA 로봇에서 잠재력을 입증했으며, 공동 최적화와 가속 전략을 통해 교차 모달 추론과 실시간 배포의 균형을 달성했습니다.

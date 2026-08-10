@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.02175v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.02175v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (884 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ VLA-Cache 通过训练无关的推理加速策略，有效解决了 VLA 模型�
 ## Overview
 Vision-Language-Action (VLA) models have demonstrated strong multi-modal reasoning capabilities, enabling direct action generation from visual perception and language instructions in an end-to-end manner. However, their substantial computational cost poses a challenge for real-time robotic control, where rapid decision-making is essential. This paper introduces VLA-Cache, a training-free inference acceleration method that reduces computational overhead by adaptively caching and reusing static visual tokens across frames. Exploiting the temporal continuity in robotic manipulation, VLA-Cache identifies minimally changed tokens between adjacent frames and reuses their cached key-value representations, thereby circumventing redundant computations. Additionally, to maintain action precision, VLA-Cache selectively re-computes task-relevant tokens that are environmentally sensitive, ensuring the fidelity of critical visual information. To further optimize efficiency, we introduce a layer adaptive token reusing strategy that dynamically adjusts the reuse ratio based on attention concentration across decoder layers, prioritizing critical tokens for recomputation. Extensive experiments on two simulation platforms (LIBERO and SIMPLER) and a real-world robotic system demonstrate that VLA-Cache achieves up to 1.7x speedup in CUDA latency and a 15% increase in control frequency, with negligible loss on task success rate. The code and videos can be found at our project page: https://vla-cache.github.io.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 강력한 다중 모달 추론 능력을 입증하며, 시각적 인식과 언어 명령으로부터 종단 간 방식으로 직접 행동을 생성할 수 있게 합니다. 그러나 이들의 상당한 계산 비용은 빠른 의사 결정이 필수적인 실시간 로봇 제어에 도전 과제를 제기합니다. 본 논문은 VLA-Cache를 소개합니다. 이는 학습 없이 추론 가속화를 제공하는 방법으로, 프레임 간 정적 시각적 토큰을 적응적으로 캐싱하고 재사용하여 계산 오버헤드를 줄입니다. 로봇 조작의 시간적 연속성을 활용하여, VLA-Cache는 인접 프레임 간 변화가 최소인 토큰을 식별하고 이들의 캐시된 키-값 표현을 재사용함으로써 중복 계산을 회피합니다. 또한, 행동 정밀도를 유지하기 위해 VLA-Cache는 환경에 민감한 작업 관련 토큰을 선택적으로 재계산하여 중요한 시각 정보의 충실도를 보장합니다. 효율성을 더욱 최적화하기 위해, 우리는 디코더 레이어 간 주의 집중도에 따라 재사용 비율을 동적으로 조정하고 중요한 토큰을 재계산에 우선시하는 레이어 적응형 토큰 재사용 전략을 도입합니다. 두 시뮬레이션 플랫폼(LIBERO 및 SIMPLER)과 실제 로봇 시스템에서의 광범위한 실험을 통해 VLA-Cache가 CUDA 지연 시간에서 최대 1.7배 속도 향상과 제어 주파수에서 15% 증가를 달성하며, 작업 성공률에서 무시할 수 있는 손실을 보임을 입증합니다. 코드와 비디오는 프로젝트 페이지(https://vla-cache.github.io)에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 강력한 다중 모달 추론 능력을 입증하며, 시각적 인식과 언어 명령으로부터 종단 간 방식으로 직접 행동을 생성할 수 있게 합니다. 그러나 이들의 상당한 계산 비용은 빠른 의사 결정이 필수적인 실시간 로봇 제어에 도전 과제를 제기합니다. 본 논문은 VLA-Cache를 소개합니다. 이는 학습 없이 추론 가속화를 제공하는 방법으로, 프레임 간 정적 시각적 토큰을 적응적으로 캐싱하고 재사용하여 계산 오버헤드를 줄입니다. 로봇 조작의 시간적 연속성을 활용하여, VLA-Cache는 인접 프레임 간 변화가 최소인 토큰을 식별하고 이들의 캐시된 키-값 표현을 재사용함으로써 중복 계산을 회피합니다. 또한, 행동 정밀도를 유지하기 위해 VLA-Cache는 환경에 민감한 작업 관련 토큰을 선택적으로 재계산하여 중요한 시각 정보의 충실도를 보장합니다. 효율성을 더욱 최적화하기 위해, 우리는 디코더 레이어 간 주의 집중도에 따라 재사용 비율을 동적으로 조정하고 중요한 토큰을 재계산에 우선시하는 레이어 적응형 토큰 재사용 전략을 도입합니다. 두 시뮬레이션 플랫폼(LIBERO 및 SIMPLER)과 실제 로봇 시스템에서의 광범위한 실험을 통해 VLA-Cache가 CUDA 지연 시간에서 최대 1.7배 속도 향상과 제어 주파수에서 15% 증가를 달성하며, 작업 성공률에서 무시할 수 있는 손실을 보임을 입증합니다. 코드와 비디오는 프로젝트 페이지(https://vla-cache.github.io)에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.02175v2
+
+## 개요
+VLA-Cache는 VLA 모델의 높은 계산 비용과 실시간 로봇 제어 요구를 충족하기 어려운 문제를 해결하기 위해, 추가 훈련이 필요 없는 추론 가속화 방안을 제안한다. 이 방법은 로봇 조작 시나리오에서 인접 프레임 간의 시간적 연속성을 활용하여 변화가 극히 적은 시각적 토큰을 식별하고, 해당 토큰의 캐시된 키-값 표현을 재사용함으로써 중복 계산을 방지한다. 동시에 동작 정밀도를 유지하기 위해, VLA-Cache는 환경에 민감한 작업 관련 토큰을 선택적으로 재계산하며, 디코더 각 층의 주의 집중 정도에 따라 재사용 비율을 동적으로 조정하는 층 적응형 토큰 재사용 전략을 도입한다. 실험은 LIBERO와 SIMPLER 두 시뮬레이션 플랫폼 및 실제 로봇 시스템에서 검증되었으며, 결과는 이 방법이 속도를 크게 향상시키면서도 작업 성공률은 거의 영향을 받지 않음을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+VLA-Cache의 핵심 설계는 세 가지 주요 메커니즘을 중심으로 구성된다:
+- **적응형 토큰 캐싱 및 재사용**: 인접 프레임 간 시각적 토큰의 변화 폭을 기반으로 변화가 극히 적은 정적 토큰을 식별하고, 해당 토큰의 캐시된 키-값 표현을 직접 재사용하여 중복 계산을 건너뛴다.
+- **선택적 재계산**: 환경과 밀접하게 상호작용하고 동작 정밀도에 영향을 미치는 작업 관련 토큰에 대해, VLA-Cache는 해당 토큰의 표현을 재계산하여 핵심 시각 정보의 충실도를 보장한다.
+- **층 적응형 토큰 재사용 전략**: 디코더 각 층의 주의 분포 집중 정도에 따라 토큰 재사용 비율을 동적으로 조정하며, 계산 자원을 핵심 토큰의 재계산에 우선적으로 할당한다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 플랫폼**: LIBERO와 SIMPLER 두 벤치마크에서 평가를 수행하며, 다양한 조작 작업을 포함한다.
+- **실제 로봇 시스템**: 실제 로봇 플랫폼에 배포하여 방법의 일반화 능력을 검증한다.
+- **주요 성능 지표**:
+  - CUDA 지연 시간 최대 1.7배 가속.
+  - 제어 주파수 15% 향상.
+  - 작업 성공률은 거의 감소하지 않아, 가속이 동작 정밀도를 크게 희생하지 않았음을 나타낸다.
+- **코드 및 비디오**: 프로젝트 페이지에서 전체 코드와 데모 비디오를 제공한다: https://vla-cache.github.io.
+
+### 결론
+VLA-Cache는 훈련과 무관한 추론 가속화 전략을 통해 VLA 모델의 실시간 로봇 제어에서의 계산 병목을 효과적으로 해결하며, 고주파수·저지연 조작 작업에 실현 가능한 방안을 제공한다.

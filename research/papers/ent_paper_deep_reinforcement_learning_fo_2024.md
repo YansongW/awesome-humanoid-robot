@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.17070v7. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.17070v7. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (695 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -59,11 +60,22 @@ sources:
 ## Overview
 Bipedal robots are gaining global recognition due to their potential applications and advancements in artificial intelligence, particularly through Deep Reinforcement Learning (DRL). While DRL has significantly advanced bipedal locomotion, the development of a unified framework capable of handling a wide range of tasks remains an ongoing challenge. This survey systematically categorises, compares, and analyses existing DRL frameworks for bipedal locomotion, organising them into end-to-end and hierarchical control schemes. End-to-end frameworks are evaluated based on their learning approaches, while hierarchical frameworks are examined in terms of layered structures that integrate learning-based or traditional model-based methods. We provide a detailed evaluation of the composition, strengths, limitations, and capabilities of each framework. Additionally, this survey identifies key research gaps and proposes future directions aimed at creating a more integrated and efficient framework for bipedal locomotion, with wide-ranging applications in real-world environments.
 
-## 개요
-이족 보행 로봇은 잠재적 응용 가능성과 인공지능, 특히 심층 강화 학습(DRL)의 발전으로 인해 전 세계적으로 주목받고 있습니다. DRL이 이족 보행 기술을 크게 발전시켰지만, 다양한 작업을 처리할 수 있는 통합 프레임워크의 개발은 여전히 진행 중인 과제입니다. 본 설문 조사는 이족 보행을 위한 기존 DRL 프레임워크를 체계적으로 분류, 비교 및 분석하여 종단 간 제어 방식과 계층적 제어 방식으로 구성합니다. 종단 간 프레임워크는 학습 접근 방식에 따라 평가되며, 계층적 프레임워크는 학습 기반 또는 전통적인 모델 기반 방법을 통합하는 계층 구조 측면에서 검토됩니다. 우리는 각 프레임워크의 구성, 장점, 한계 및 기능에 대한 상세한 평가를 제공합니다. 또한, 본 설문 조사는 주요 연구 격차를 식별하고 실제 환경에서 광범위하게 응용될 수 있는 보다 통합적이고 효율적인 이족 보행 프레임워크를 구축하기 위한 미래 방향을 제안합니다.
-
-## 핵심 내용
-이족 보행 로봇은 잠재적 응용 가능성과 인공지능, 특히 심층 강화 학습(DRL)의 발전으로 인해 전 세계적으로 주목받고 있습니다. DRL이 이족 보행 기술을 크게 발전시켰지만, 다양한 작업을 처리할 수 있는 통합 프레임워크의 개발은 여전히 진행 중인 과제입니다. 본 설문 조사는 이족 보행을 위한 기존 DRL 프레임워크를 체계적으로 분류, 비교 및 분석하여 종단 간 제어 방식과 계층적 제어 방식으로 구성합니다. 종단 간 프레임워크는 학습 접근 방식에 따라 평가되며, 계층적 프레임워크는 학습 기반 또는 전통적인 모델 기반 방법을 통합하는 계층 구조 측면에서 검토됩니다. 우리는 각 프레임워크의 구성, 장점, 한계 및 기능에 대한 상세한 평가를 제공합니다. 또한, 본 설문 조사는 주요 연구 격차를 식별하고 실제 환경에서 광범위하게 응용될 수 있는 보다 통합적이고 효율적인 이족 보행 프레임워크를 구축하기 위한 미래 방향을 제안합니다.
-
 ## 参考
 - http://arxiv.org/abs/2404.17070v7
+
+## 개요
+이족 보행 로봇은 인공지능의 발전으로 주목받고 있으며, 심층 강화 학습(DRL)이 그 운동 제어 발전을 크게 촉진했지만, 다양한 작업을 처리할 수 있는 통합 프레임워크는 아직 부족하다. 본综述은 기존 DRL 프레임워크를 종단 간(end-to-end) 및 계층적 제어(hierarchical control) 두 가지 유형으로 분류한다: 종단 간 프레임워크는 학습 방법에 따라 평가하고, 계층적 프레임워크는 학습 또는 전통적 모델 방법을 통합하는 계층 구조를考察한다. 본 논문은 각 프레임워크의 구성, 능력 및 한계를 상세히 평가하고, 실제 환경 적용을 위해 더 통합적이고 효율적인 프레임워크 구축을 위한 연구 방향을 제시한다.
+
+## 핵심 내용
+### 핵심 분류 및 프레임워크 분석
+- **종단 간 프레임워크**: DRL을 통해 센서 입력에서 관절 토크로 직접 매핑하며, 학습 방법(예: PPO, SAC 등)에 따라 평가된다. 장점은 프로세스 단순화이지만, 샘플 효율성 저하와 일반화 성능 부족 문제에 직면한다.
+- **계층적 제어 프레임워크**: 다층 구조를 채택하며, 상위 계층은 고수준 계획(예: 보행 패턴)을 담당하고 하위 계층은 저수준 제어(예: 관절 토크)를 실행한다. 전통적 모델 예측 제어(MPC) 또는 모델 기반 강화 학습을 통합하여 안정성과 작업 적응성을 향상시킬 수 있다.
+
+### 핵심 평가 차원
+- **구성 및 능력**: 각 프레임워크는 운동 견고성, 지형 적응성, 에너지 효율성 등에서 성능 차이를 보인다. 예를 들어, 종단 간 방법은 복잡한 지형에서 실패하기 쉬운 반면, 계층적 방법은 모듈식 설계를 통해 외란 처리에 더 유리하다.
+- **한계 및 도전 과제**: 기존 프레임워크는 일반적으로 동적 환경(예: 고르지 않은 지면, 외부 힘 간섭)에 대한 일반화 능력이 부족하며, 훈련 비용이 높다(수백만 단계의 시뮬레이션 반복 필요).
+
+### 미래 방향
+- **통합 프레임워크 구축**: 종단 간 학습의 유연성과 계층적 제어의 안정성을 융합해야 하며, 예를 들어 메타 학습 또는 전이 학습을 통해 훈련 비용을 절감할 수 있다.
+- **실제 세계 배포**: 시뮬레이션-실제(sim-to-real) 격차를 해결해야 하며, 센서 노이즈, 하드웨어 지연 및 에너지 제약을 포함한다.
+- **다중 작업 협력**: 걷기, 달리기, 점프 등의 운동 모드를 단일 DRL 정책에 통합하여 작업별 개별 훈련을 피하는 방안을 탐구한다.

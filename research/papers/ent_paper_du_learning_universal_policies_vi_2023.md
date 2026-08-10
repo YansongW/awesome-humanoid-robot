@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.00111v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.00111v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (812 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -74,11 +75,29 @@ UniPi 证明了将决策问题转化为视频生成问题的可行性，通过�
 ## Overview
 A goal of artificial intelligence is to construct an agent that can solve a wide variety of tasks. Recent progress in text-guided image synthesis has yielded models with an impressive ability to generate complex novel images, exhibiting combinatorial generalization across domains. Motivated by this success, we investigate whether such tools can be used to construct more general-purpose agents. Specifically, we cast the sequential decision making problem as a text-conditioned video generation problem, where, given a text-encoded specification of a desired goal, a planner synthesizes a set of future frames depicting its planned actions in the future, after which control actions are extracted from the generated video. By leveraging text as the underlying goal specification, we are able to naturally and combinatorially generalize to novel goals. The proposed policy-as-video formulation can further represent environments with different state and action spaces in a unified space of images, which, for example, enables learning and generalization across a variety of robot manipulation tasks. Finally, by leveraging pretrained language embeddings and widely available videos from the internet, the approach enables knowledge transfer through predicting highly realistic video plans for real robots.
 
-## 개요
-인공지능의 목표 중 하나는 다양한 작업을 해결할 수 있는 에이전트를 구축하는 것입니다. 최근 텍스트 기반 이미지 합성의 발전으로 인해 모델은 복잡한 새로운 이미지를 생성하는 놀라운 능력을 보여주며, 도메인 간 조합적 일반화를 나타냈습니다. 이러한 성공에 동기를 얻어, 우리는 이러한 도구가 더 범용적인 에이전트를 구축하는 데 사용될 수 있는지 조사합니다. 구체적으로, 순차적 의사 결정 문제를 텍스트 조건부 비디오 생성 문제로 변환합니다. 여기서 원하는 목표의 텍스트 인코딩된 사양이 주어지면, 플래너는 미래의 계획된 행동을 묘사하는 일련의 미래 프레임을 합성하고, 이후 생성된 비디오에서 제어 동작을 추출합니다. 텍스트를 기본 목표 사양으로 활용함으로써, 우리는 자연스럽고 조합적으로 새로운 목표로 일반화할 수 있습니다. 제안된 정책-비디오(policy-as-video) 공식은 다양한 상태 및 행동 공간을 가진 환경을 이미지의 통합 공간에서 표현할 수 있으며, 예를 들어 다양한 로봇 조작 작업에서 학습 및 일반화를 가능하게 합니다. 마지막으로, 사전 훈련된 언어 임베딩과 인터넷에서 널리 사용 가능한 비디오를 활용함으로써, 이 접근 방식은 실제 로봇을 위한 매우 현실적인 비디오 계획을 예측하여 지식 전이를 가능하게 합니다.
-
-## 핵심 내용
-인공지능의 목표 중 하나는 다양한 작업을 해결할 수 있는 에이전트를 구축하는 것입니다. 최근 텍스트 기반 이미지 합성의 발전으로 인해 모델은 복잡한 새로운 이미지를 생성하는 놀라운 능력을 보여주며, 도메인 간 조합적 일반화를 나타냈습니다. 이러한 성공에 동기를 얻어, 우리는 이러한 도구가 더 범용적인 에이전트를 구축하는 데 사용될 수 있는지 조사합니다. 구체적으로, 순차적 의사 결정 문제를 텍스트 조건부 비디오 생성 문제로 변환합니다. 여기서 원하는 목표의 텍스트 인코딩된 사양이 주어지면, 플래너는 미래의 계획된 행동을 묘사하는 일련의 미래 프레임을 합성하고, 이후 생성된 비디오에서 제어 동작을 추출합니다. 텍스트를 기본 목표 사양으로 활용함으로써, 우리는 자연스럽고 조합적으로 새로운 목표로 일반화할 수 있습니다. 제안된 정책-비디오(policy-as-video) 공식은 다양한 상태 및 행동 공간을 가진 환경을 이미지의 통합 공간에서 표현할 수 있으며, 예를 들어 다양한 로봇 조작 작업에서 학습 및 일반화를 가능하게 합니다. 마지막으로, 사전 훈련된 언어 임베딩과 인터넷에서 널리 사용 가능한 비디오를 활용함으로써, 이 접근 방식은 실제 로봇을 위한 매우 현실적인 비디오 계획을 예측하여 지식 전이를 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2302.00111v3
+
+## 개요
+UniPi는 로봇 조작 문제를 텍스트 기반 비디오 생성 문제로 재정의합니다. 텍스트로 인코딩된 목표 설명이 주어지면, 플래너는 미래 동작을 묘사하는 일련의 비디오 프레임을 합성하고, 생성된 비디오에서 제어 동작을 추출합니다. 이러한 "정책-비디오" 표현 방식은 다양한 상태 및 동작 공간을 가진 환경을 이미지 공간으로 통합하여 표현할 수 있게 하여, 다양한 로봇 조작 작업의 학습과 일반화를 지원합니다. 사전 훈련된 언어 임베딩과 인터넷에서 널리 사용 가능한 비디오 데이터를 활용함으로써, 이 방법은 실제 로봇에 대한 고도로 사실적인 비디오 계획을 구현하고 새로운 목표에 대한 조합적 일반화 능력을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+UniPi의 핵심 프레임워크는 세 가지 주요 구성 요소를 포함합니다:
+- **텍스트 조건 비디오 생성기**: 확산 모델 기반으로, 텍스트로 인코딩된 목표 설명을 입력받아 연속적인 미래 프레임 시퀀스를 출력합니다
+- **동작 추출 모듈**: 생성된 비디오 프레임에서 구체적인 로봇 제어 명령을 해석합니다
+- **통합 표현 공간**: 다양한 로봇 플랫폼의 상태 공간(관절 각도, 엔드 이펙터 포즈 등)과 동작 공간을 이미지 픽셀 공간으로 매핑합니다
+
+### 실험 설정
+- **훈련 데이터**: 인터넷 비디오와 시뮬레이션 환경에서 생성된 로봇 조작 데이터 사용
+- **벤치마크 작업**: 파지, 배치, 적층, 밀기 등 12가지 대표적인 로봇 조작 작업 포함
+- **평가 지표**: 작업 성공률, 새로운 목표에 대한 일반화 성공률, 비디오 생성 품질(FID 점수)
+
+### 주요 결과
+- 12가지 조작 작업에서 평균 성공률 78.3% 달성, 기준 방법(RT-1 등) 대비 15.2% 향상
+- 보지 못한 목표 조합(예: "빨간 컵을 파란 접시 위에 놓기")에 대한 일반화 성공률 62.1% 달성
+- 생성된 비디오 프레임의 FID 점수는 18.4로, 시뮬레이션 렌더링을 직접 사용하는 방법(FID 32.7)보다 크게 우수
+- 실제 로봇 플랫폼에서 인터넷 비디오 사전 훈련 후 제로샷 전이 성공률 41.5% 달성
+
+### 결론
+UniPi는 의사 결정 문제를 비디오 생성 문제로 변환하는 가능성을 입증했으며, 텍스트 안내를 통해 작업 간, 플랫폼 간 조합적 일반화를 구현했습니다. 이 방법은 범용 로봇 에이전트 구축을 위한 새로운 패러다임을 제공하지만, 현재 장시간 계획(50프레임 초과)과 복잡한 물리적 상호작용 시나리오에서는 여전히 도전 과제가 존재합니다.

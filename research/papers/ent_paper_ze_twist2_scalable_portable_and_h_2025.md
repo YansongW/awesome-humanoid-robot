@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.02832v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.02832v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (800 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,29 @@ TWIST2 的核心设计围绕便携性与全身控制展开：
 ## Overview
 Large-scale data has driven breakthroughs in robotics, from language models to vision-language-action models in bimanual manipulation. However, humanoid robotics lacks equally effective data collection frameworks. Existing humanoid teleoperation systems either use decoupled control or depend on expensive motion capture setups. We introduce TWIST2, a portable, mocap-free humanoid teleoperation and data collection system that preserves full whole-body control while advancing scalability. Our system leverages PICO4U VR for obtaining real-time whole-body human motions, with a custom 2-DoF robot neck (cost around $250) for egocentric vision, enabling holistic human-to-humanoid control. We demonstrate long-horizon dexterous and mobile humanoid skills and we can collect 100 demonstrations in 15 minutes with an almost 100% success rate. Building on this pipeline, we propose a hierarchical visuomotor policy framework that autonomously controls the full humanoid body based on egocentric vision. Our visuomotor policy successfully demonstrates whole-body dexterous manipulation and dynamic kicking tasks. The entire system is fully reproducible and open-sourced at https://yanjieze.com/TWIST2 . Our collected dataset is also open-sourced at https://twist-data.github.io .
 
-## 개요
-대규모 데이터는 로봇 공학에서 언어 모델부터 양손 조작을 위한 시각-언어-행동 모델에 이르기까지 혁신을 이끌어 왔습니다. 그러나 휴머노이드 로봇 공학은 이와 동등하게 효과적인 데이터 수집 프레임워크가 부족합니다. 기존의 휴머노이드 원격 조작 시스템은 분리된 제어를 사용하거나 고가의 모션 캡처 장비에 의존합니다. 우리는 확장성을 향상시키면서 전신 제어를 유지하는 휴대용 모션 캡처 없는 휴머노이드 원격 조작 및 데이터 수집 시스템인 TWIST2를 소개합니다. 우리 시스템은 PICO4U VR을 활용하여 실시간 전신 인간 동작을 획득하고, 자체 제작한 2자유도 로봇 목(약 $250 비용)을 통해 자기중심 시야를 확보하여 인간에서 휴머노이드로의 통합적 제어를 가능하게 합니다. 우리는 장기간의 정밀하고 이동 가능한 휴머노이드 기술을 시연하며, 15분 안에 거의 100%의 성공률로 100개의 시연을 수집할 수 있습니다. 이 파이프라인을 기반으로, 우리는 자기중심 시야에 기반하여 전체 휴머노이드 몸체를 자율적으로 제어하는 계층적 시각운동 정책 프레임워크를 제안합니다. 우리의 시각운동 정책은 전신 정밀 조작 및 동적 발차기 작업을 성공적으로 시연합니다. 전체 시스템은 완전히 재현 가능하며 https://yanjieze.com/TWIST2 에서 오픈소스로 제공됩니다. 수집된 데이터셋도 https://twist-data.github.io 에서 오픈소스로 제공됩니다.
-
-## 핵심 내용
-대규모 데이터는 로봇 공학에서 언어 모델부터 양손 조작을 위한 시각-언어-행동 모델에 이르기까지 혁신을 이끌어 왔습니다. 그러나 휴머노이드 로봇 공학은 이와 동등하게 효과적인 데이터 수집 프레임워크가 부족합니다. 기존의 휴머노이드 원격 조작 시스템은 분리된 제어를 사용하거나 고가의 모션 캡처 장비에 의존합니다. 우리는 확장성을 향상시키면서 전신 제어를 유지하는 휴대용 모션 캡처 없는 휴머노이드 원격 조작 및 데이터 수집 시스템인 TWIST2를 소개합니다. 우리 시스템은 PICO4U VR을 활용하여 실시간 전신 인간 동작을 획득하고, 자체 제작한 2자유도 로봇 목(약 $250 비용)을 통해 자기중심 시야를 확보하여 인간에서 휴머노이드로의 통합적 제어를 가능하게 합니다. 우리는 장기간의 정밀하고 이동 가능한 휴머노이드 기술을 시연하며, 15분 안에 거의 100%의 성공률로 100개의 시연을 수집할 수 있습니다. 이 파이프라인을 기반으로, 우리는 자기중심 시야에 기반하여 전체 휴머노이드 몸체를 자율적으로 제어하는 계층적 시각운동 정책 프레임워크를 제안합니다. 우리의 시각운동 정책은 전신 정밀 조작 및 동적 발차기 작업을 성공적으로 시연합니다. 전체 시스템은 완전히 재현 가능하며 https://yanjieze.com/TWIST2 에서 오픈소스로 제공됩니다. 수집된 데이터셋도 https://twist-data.github.io 에서 오픈소스로 제공됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.02832v1
+
+## 개요
+TWIST2는 휴머노이드 로봇 분야에서 효율적인 데이터 수집 프레임워크가 부족한 문제를 해결하며, PICO4U VR 기기를 통해 실시간으로 전신 인체 모션을 획득하고, 약 250달러의 2-DoF 로봇 목 모듈을 설계하여 1인칭 시각을 구현함으로써 인간에서 휴머노이드 로봇으로의 완전한 전신 매핑을 달성했습니다. 이 시스템은 15분 이내에 약 100%의 성공률로 100세트의 시연 데이터를 수집할 수 있으며, 이를 기반으로 1인칭 시각 기반의 계층적 시각 운동 정책을 제안하여 전신 손재주 조작과 동적 축구 등의 작업을 성공적으로 완료했습니다. 전체 시스템은 완전히 오픈소스이며, 데이터셋도 공개되었습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+TWIST2의 핵심 설계는 휴대성과 전신 제어에 중점을 둡니다:
+- **원격 조작 모듈**: PICO4U VR 헤드셋을 사용하여 실시간 전신 모션 추적을 수행하며, 외부 모션 캡처 장비가 필요 없어 배포 비용과 복잡성을 낮춥니다.
+- **목 모듈**: 맞춤형 2-DoF 로봇 목(약 250달러)을 설계하여 1인칭 시각 센서를 탑재하고, 인간의 머리 움직임과 동기화된 egocentric 시점을 구현합니다.
+- **전신 제어**: VR 추적 데이터를 휴머노이드 로봇의 전신 관절에 직접 매핑하여 장시간 손재주 조작 및 이동 작업을 지원합니다.
+
+### 데이터 수집 성능
+- **효율성**: 15분 이내에 100세트의 시연 데이터를 수집할 수 있으며, 성공률은 약 100%입니다.
+- **확장성**: 시스템 설계는 휴대성과 저비용을 강조하여 대규모 배포와 데이터 축적을 용이하게 합니다.
+
+### 자율 제어 전략
+수집된 데이터를 기반으로 계층적 시각 운동 정책을 제안합니다:
+- **하위 계층**: egocentric 시각 입력을 기반으로 전신 운동 매핑을 학습합니다.
+- **상위 계층**: 전신 손재주 조작(예: 잡기, 운반) 및 동적 작업(예: 축구)을 구현합니다.
+- **실험 검증**: 실제 휴머노이드 로봇에서 위 작업을 성공적으로 시연하여 정책의 효과성을 입증했습니다.
+
+### 오픈소스 및 데이터
+- 시스템의 전체 코드와 하드웨어 설계가 오픈소스로 공개되었습니다: https://yanjieze.com/TWIST2
+- 수집된 데이터셋은 다음에서 공개되었습니다: https://twist-data.github.io

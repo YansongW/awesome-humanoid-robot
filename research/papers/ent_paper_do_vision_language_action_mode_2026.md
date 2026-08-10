@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04681v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04681v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1123 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -102,11 +103,34 @@ sources:
 ## Overview
 Embodied Chain-of-Thought has emerged as a promising mechanism to enhance robot decision-making and interpretability in black-box Vision-Language Action (VLA) models. However, whether this verbalized Chain-of-Thought truthfully reflects the policy's underlying decision process remains poorly understood. We distinguish between functional reasoning, in which reasoning improves task performance, and faithful reasoning, in which reasoning truly reflects the policy's internal decision process. We argue that SoTA alignment strategies offer a necessary but insufficient notion of faithfulness, admitting reasoning whose intermediate steps can mask the causal links in action prediction through confounding factors (e.g., reasoning that is ungrounded in the environment and internally disconnected or inconsistent), restricting policy generalization. We study this gap through a human evaluation of a SoTA reasoning model for autonomous driving, revealing an inconsistent coupling between reasoning quality and downstream trajectory improvement. We then operationalize a behavioral surrogate for embodied faithfulness through a learned critic, Pinocchio, scoring observation grounding and stepwise coherence, and use this critic as a dense reward signal in post-training an embodied policy with reinforcement learning. Across withheld driving benchmarks, our post-trained planner improves faithfulness by 4% and 18% over SoTA alignment and trajectory error post-training baselines, respectively, while maintaining competitive downstream task performance. Finally, on a synthetic out-of-distribution test set, post-training for faithfulness improves policy responsiveness to rare counterfactual scenarios by 1.6x that of a SoTA policy, suggesting that faithful reasoning traces contribute to more robust, generalizable, and interpretable embodied intelligence. Project page: https://mjf-su.github.io/pinocchio/
 
-## 개요
-Embodied Chain-of-Thought는 블랙박스 Vision-Language Action (VLA) 모델에서 로봇의 의사 결정과 해석 가능성을 향상시키는 유망한 메커니즘으로 부상했습니다. 그러나 이러한 언어화된 Chain-of-Thought가 정책의 근본적인 의사 결정 과정을 진실되게 반영하는지 여부는 아직 잘 이해되지 않고 있습니다. 우리는 추론이 작업 성능을 향상시키는 기능적 추론과 추론이 정책의 내부 의사 결정 과정을 진실되게 반영하는 충실한 추론을 구분합니다. 우리는 SoTA 정렬 전략이 필요하지만 충분하지 않은 충실성 개념을 제공한다고 주장하며, 이는 중간 단계가 혼란 요인(예: 환경에 근거하지 않고 내부적으로 단절되거나 일관성이 없는 추론)을 통해 행동 예측의 인과 관계를 가릴 수 있는 추론을 허용하여 정책 일반화를 제한합니다. 우리는 자율 주행을 위한 SoTA 추론 모델의 인간 평가를 통해 이러한 격차를 연구하며, 추론 품질과 하위 궤적 개선 사이의 불일치하는 결합을 밝혀냅니다. 그런 다음 학습된 비평가인 Pinocchio를 통해 관찰 근거와 단계적 일관성을 평가하는 행동적 대리 지표를 구현하고, 이 비평가를 강화 학습을 통한 임베디드 정책의 사후 훈련에서 밀집 보상 신호로 사용합니다. 보류된 운전 벤치마크에서 사후 훈련된 플래너는 SoTA 정렬 및 궤적 오류 사후 훈련 기준선 대비 각각 4% 및 18%의 충실성 향상을 보이며 경쟁력 있는 하위 작업 성능을 유지합니다. 마지막으로 합성 분포 외 테스트 세트에서 충실성을 위한 사후 훈련은 드문 반사실적 시나리오에 대한 정책 응답성을 SoTA 정책 대비 1.6배 향상시켜, 충실한 추론 흔적이 더 강건하고 일반화 가능하며 해석 가능한 임베디드 지능에 기여함을 시사합니다. 프로젝트 페이지: https://mjf-su.github.io/pinocchio/
-
-## 핵심 내용
-Embodied Chain-of-Thought는 블랙박스 Vision-Language Action (VLA) 모델에서 로봇의 의사 결정과 해석 가능성을 향상시키는 유망한 메커니즘으로 부상했습니다. 그러나 이러한 언어화된 Chain-of-Thought가 정책의 근본적인 의사 결정 과정을 진실되게 반영하는지 여부는 아직 잘 이해되지 않고 있습니다. 우리는 추론이 작업 성능을 향상시키는 기능적 추론과 추론이 정책의 내부 의사 결정 과정을 진실되게 반영하는 충실한 추론을 구분합니다. 우리는 SoTA 정렬 전략이 필요하지만 충분하지 않은 충실성 개념을 제공한다고 주장하며, 이는 중간 단계가 혼란 요인(예: 환경에 근거하지 않고 내부적으로 단절되거나 일관성이 없는 추론)을 통해 행동 예측의 인과 관계를 가릴 수 있는 추론을 허용하여 정책 일반화를 제한합니다. 우리는 자율 주행을 위한 SoTA 추론 모델의 인간 평가를 통해 이러한 격차를 연구하며, 추론 품질과 하위 궤적 개선 사이의 불일치하는 결합을 밝혀냅니다. 그런 다음 학습된 비평가인 Pinocchio를 통해 관찰 근거와 단계적 일관성을 평가하는 행동적 대리 지표를 구현하고, 이 비평가를 강화 학습을 통한 임베디드 정책의 사후 훈련에서 밀집 보상 신호로 사용합니다. 보류된 운전 벤치마크에서 사후 훈련된 플래너는 SoTA 정렬 및 궤적 오류 사후 훈련 기준선 대비 각각 4% 및 18%의 충실성 향상을 보이며 경쟁력 있는 하위 작업 성능을 유지합니다. 마지막으로 합성 분포 외 테스트 세트에서 충실성을 위한 사후 훈련은 드문 반사실적 시나리오에 대한 정책 응답성을 SoTA 정책 대비 1.6배 향상시켜, 충실한 추론 흔적이 더 강건하고 일반화 가능하며 해석 가능한 임베디드 지능에 기여함을 시사합니다. 프로젝트 페이지: https://mjf-su.github.io/pinocchio/
-
 ## 参考
 - http://arxiv.org/abs/2607.04681v1
+
+## 개요
+본 논문은 VLA 모델에서의 구현형 사고 사슬(embodied chain-of-thought)이 의사결정의 해석 가능성을 향상시키지만, 이것이 정책의 내부 의사결정 과정을 실제로 반영하는지 여부는 여전히 불분명하다고 지적한다. 저자들은 기능적 추론(과제 성능 향상)과 충실한 추론(내부 의사결정의 실제 반영)을 구분하며, 기존 정렬 전략은 필요하지만 충분하지 않은 충실성만 제공한다고 본다. 자율주행 추론 모델에 대한 인간 평가를 통해 추론 품질과 궤적 개선 사이에 불일치된 결합이 존재함을 발견했다. 이를 위해 저자들은 Pinocchio 비평 모델을 설계하여 관찰 근거성(observation grounding)과 단계적 일관성(stepwise coherence)을 평가해 강화학습 후훈련(post-training)에서 밀집 보상 신호로 사용함으로써 정책의 충실성을 향상시킨다. 실험 결과, 후훈련 정책은 하위 과제 성능을 유지하면서 충실성이 크게 향상되었고, 드문 반사실적 시나리오에 대한 대응 능력도 강화되었다.
+
+## 핵심 내용
+### 핵심 문제
+- VLA 모델에서 구현형 사고 사슬은 의사결정의 해석 가능성을 높이는 데 사용되지만, 이것이 정책의 내부 의사결정 과정을 충실히 반영하는지는 불분명하다.
+- 기존 SoTA 정렬 전략은 필요하지만 충분하지 않은 충실성만 제공하며, 중간 단계가 혼란 변수(예: 환경과의 단절, 내부 불일치)를 통해 행동 예측의 인과적 연결을 가려 정책 일반화를 제한할 수 있다.
+
+### 방법
+- **충실성 정의**: 기능적 추론(과제 성능 향상)과 충실한 추론(내부 의사결정 과정의 실제 반영)을 구분한다.
+- **Pinocchio 비평 모델**: 행동 대리자로서 관찰 근거성과 단계적 일관성을 평가하여 추론 궤적에 점수를 매긴다.
+- **후훈련 절차**: Pinocchio의 점수를 밀집 보상 신호로 사용하고, 강화학습을 통해 구현형 정책을 후훈련한다.
+
+### 실험 설정
+- **벤치마크**: 자율주행 분야에서 SoTA 추론 모델을 대상으로 인간 평가를 수행하여 추론 품질과 하위 궤적 개선 사이의 불일치된 결합을 발견했다.
+- **비교 기준선**: SoTA 정렬 전략 및 궤적 오류 후훈련 기준선과 비교한다.
+- **데이터셋**: withheld driving benchmarks와 합성 out-of-distribution 테스트 세트를 사용한다.
+
+### 주요 결과
+- 후훈련 정책은 withheld driving benchmarks에서 충실성이 SoTA 정렬 및 궤적 오류 후훈련 기준선보다 각각 4% 및 18% 향상되었으며, 경쟁력 있는 하위 과제 성능을 유지한다.
+- 합성 out-of-distribution 테스트 세트에서 충실성 후훈련은 정책이 드문 반사실적 시나리오에 대한 대응 능력을 SoTA 정책 대비 1.6배 향상시킨다.
+- 결과는 충실한 추론 궤적이 더 견고하고 일반화 가능하며 해석 가능한 구현형 지능을 구축하는 데 도움이 됨을 시사한다.
+
+### 결론
+- 충실성 후훈련은 Pinocchio 비평 모델을 통해 VLA 모델의 추론 충실성을 효과적으로 향상시키면서 과제 성능을 희생하지 않는다.
+- 충실한 추론은 분포 외 시나리오에 대응할 때 더 강한 일반화 능력을 보여주며, 구현형 지능의 신뢰성과 해석 가능성에 새로운 방향을 제시한다.
+
+프로젝트 페이지: https://mjf-su.github.io/pinocchio/

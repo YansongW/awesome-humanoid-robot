@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01623v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01623v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1204 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,31 @@ VLA-R1 证明了将可验证奖励强化学习与链式思维数据结合，能�
 ## Overview
 Vision-Language-Action (VLA) models aim to unify perception, language understanding, and action generation, offering strong cross-task and cross-scene generalization with broad impact on embodied AI. However, current VLA models often lack explicit step-by-step reasoning, instead emitting final actions without considering affordance constraints or geometric relations. Their post-training pipelines also rarely reinforce reasoning quality, relying primarily on supervised fine-tuning with weak reward design. To address these challenges, we present VLA-R1, a reasoning-enhanced VLA that integrates Reinforcement Learning from Verifiable Rewards (RLVR) with Group Relative Policy Optimization (GRPO) to systematically optimize both reasoning and execution. Specifically, we design an RLVR-based post-training strategy with verifiable rewards for region alignment, trajectory consistency, and output formatting, thereby strengthening reasoning robustness and execution accuracy. Moreover, we develop VLA-CoT-13K, a high-quality dataset that provides chain-of-thought supervision explicitly aligned with affordance and trajectory annotations. Furthermore, extensive evaluations on in-domain, out-of-domain, simulation, and real-robot platforms demonstrate that VLA-R1 achieves superior generalization and real-world performance compared to prior VLA methods. We plan to release the model, code, and dataset following the publication of this work. Code: https://github.com/GigaAI-research/VLA-R1. Website: https://gigaai-research.github.io/VLA-R1.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 지각, 언어 이해 및 행동 생성을 통합하여 교차 작업 및 교차 장면 일반화를 제공하며, 임베디드 AI에 광범위한 영향을 미칩니다. 그러나 현재의 VLA 모델은 종종 명시적인 단계별 추론이 부족하여, 어포던스 제약이나 기하학적 관계를 고려하지 않고 최종 행동을 출력합니다. 또한 사후 훈련 파이프라인은 추론 품질을 강화하는 경우가 드물며, 약한 보상 설계를 가진 지도 미세 조정에 주로 의존합니다. 이러한 문제를 해결하기 위해, 우리는 VLA-R1을 제안합니다. 이는 검증 가능한 보상으로부터의 강화 학습(RLVR)과 그룹 상대 정책 최적화(GRPO)를 통합하여 추론과 실행을 체계적으로 최적화하는 추론 강화 VLA입니다. 구체적으로, 우리는 영역 정렬, 궤적 일관성 및 출력 형식화를 위한 검증 가능한 보상을 기반으로 한 RLVR 기반 사후 훈련 전략을 설계하여 추론 견고성과 실행 정확성을 강화합니다. 또한, 어포던스 및 궤적 주석과 명시적으로 정렬된 사고 사슬 감독을 제공하는 고품질 데이터셋 VLA-CoT-13K를 개발합니다. 더 나아가, 도메인 내, 도메인 외, 시뮬레이션 및 실제 로봇 플랫폼에서의 광범위한 평가를 통해 VLA-R1이 이전 VLA 방법보다 우수한 일반화 및 실제 성능을 달성함을 입증합니다. 우리는 이 연구의 출판 후 모델, 코드 및 데이터셋을 공개할 계획입니다. 코드: https://github.com/GigaAI-research/VLA-R1. 웹사이트: https://gigaai-research.github.io/VLA-R1.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 지각, 언어 이해 및 행동 생성을 통합하여 교차 작업 및 교차 장면 일반화를 제공하며, 임베디드 AI에 광범위한 영향을 미칩니다. 그러나 현재의 VLA 모델은 종종 명시적인 단계별 추론이 부족하여, 어포던스 제약이나 기하학적 관계를 고려하지 않고 최종 행동을 출력합니다. 또한 사후 훈련 파이프라인은 추론 품질을 강화하는 경우가 드물며, 약한 보상 설계를 가진 지도 미세 조정에 주로 의존합니다. 이러한 문제를 해결하기 위해, 우리는 VLA-R1을 제안합니다. 이는 검증 가능한 보상으로부터의 강화 학습(RLVR)과 그룹 상대 정책 최적화(GRPO)를 통합하여 추론과 실행을 체계적으로 최적화하는 추론 강화 VLA입니다. 구체적으로, 우리는 영역 정렬, 궤적 일관성 및 출력 형식화를 위한 검증 가능한 보상을 기반으로 한 RLVR 기반 사후 훈련 전략을 설계하여 추론 견고성과 실행 정확성을 강화합니다. 또한, 어포던스 및 궤적 주석과 명시적으로 정렬된 사고 사슬 감독을 제공하는 고품질 데이터셋 VLA-CoT-13K를 개발합니다. 더 나아가, 도메인 내, 도메인 외, 시뮬레이션 및 실제 로봇 플랫폼에서의 광범위한 평가를 통해 VLA-R1이 이전 VLA 방법보다 우수한 일반화 및 실제 성능을 달성함을 입증합니다. 우리는 이 연구의 출판 후 모델, 코드 및 데이터셋을 공개할 계획입니다. 코드: https://github.com/GigaAI-research/VLA-R1. 웹사이트: https://gigaai-research.github.io/VLA-R1.
-
 ## 参考
 - http://arxiv.org/abs/2510.01623v1
+
+## 개요
+기존의 비전-언어-행동(VLA) 모델은 일반적으로 명시적인 단계별 추론 능력이 부족하여, 조작 가능한 제약 조건이나 기하학적 관계를 고려하지 않고 최종 행동을 직접 출력합니다. 또한, 사후 훈련 파이프라인은 주로 지도 미세 조정과 약한 보상 설계에 의존하여 추론 품질을 강화하기 어렵습니다. VLA-R1은 검증 가능한 보상 기반 강화 학습(RLVR)과 Group Relative Policy Optimization(GRPO)을 도입하여 사후 훈련 단계에서 추론과 실행을 동시에 최적화합니다. 이 방법은 영역 정렬, 궤적 일관성 및 출력 형식에 대한 검증 가능한 보상을 설계하여 추론 견고성과 실행 정밀도를 향상시킵니다. 또한, 연구팀은 조작 가능성 및 궤적 주석과 명시적으로 정렬된 체인 오브 소트(Chain-of-Thought) 감독을 제공하는 VLA-CoT-13K 데이터셋을 개발했습니다. 여러 플랫폼에서의 광범위한 평가는 VLA-R1이 일반화 능력과 실제 세계 성능에서 이전 방법을 능가함을 보여줍니다.
+
+## 핵심 내용
+### 방법
+VLA-R1의 핵심 혁신은 VLA 모델의 사후 훈련 단계에 강화 학습을 도입한 것으로, 구체적으로 **검증 가능한 보상 기반 강화 학습(RLVR)** 과 **Group Relative Policy Optimization(GRPO)** 을 결합합니다. 이 방법은 세 가지 유형의 검증 가능한 보상을 설계하여 모델 최적화를 유도합니다:
+- **영역 정렬 보상**: 객체의 조작 가능한 영역(예: 파지 지점)에 대한 모델 예측이 주석과 일치하도록 보장합니다.
+- **궤적 일관성 보상**: 기하학적 제약이나 운동학적 제한을 위반하는 행동 시퀀스의 단계를 페널티합니다.
+- **출력 형식 보상**: 모델이 구조화된 형식의 추론 체인과 행동 명령을 출력하도록 강제합니다.
+
+### 데이터셋
+추론 훈련을 지원하기 위해 팀은 **VLA-CoT-13K** 데이터셋을 구축했으며, 13,000개의 고품질 체인 오브 소트(Chain-of-Thought) 주석을 포함합니다. 각 데이터는 조작 가능성(affordance) 및 궤적(trajectory) 정보와 명시적으로 연결되어, 모델이 추론 과정에서 객체 속성, 공간 관계 및 실행 제약을 단계적으로 고려할 수 있게 합니다.
+
+### 실험 설정
+- **기준 모델**: OpenVLA, RT-2 등 주요 VLA 모델과 비교했습니다.
+- **평가 플랫폼**: 도메인 내 작업(훈련 세트 분포), 도메인 외 작업(보지 못한 장면 및 객체), 시뮬레이션 환경(예: RLBench) 및 실제 로봇 플랫폼을 포함합니다.
+- **지표**: 작업 성공률, 추론 단계 정확도, 궤적 평활도 등.
+
+### 주요 결과
+- **도메인 내 성능**: VLA-R1은 표준 조작 작업에서 성공률이 **12%** 향상되었습니다(OpenVLA 대비).
+- **도메인 외 일반화**: 보지 못한 객체 및 레이아웃 시나리오에서 성공률이 **78%** 를 유지한 반면, 기준 모델은 **45%** 로 하락했습니다.
+- **실제 로봇**: 파지, 배치, 적재 등의 작업에서 VLA-R1의 첫 시도 성공률은 평균 **83%** 였으며, 추론 체인에서 조작 가능성 제약을 명시적으로 언급한 비율은 **91%** 에 달했습니다.
+
+### 결론
+VLA-R1은 검증 가능한 보상 강화 학습과 체인 오브 소트 데이터를 결합하면 VLA 모델의 추론 능력과 실행 견고성을 효과적으로 향상시킬 수 있음을 입증했습니다. 코드, 모델 및 데이터셋은 논문 게재 후 오픈소스로 공개될 예정입니다.

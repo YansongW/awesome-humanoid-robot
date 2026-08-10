@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.03728v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.03728v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (797 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ PyRoki 通过模块化设计与跨平台优化，为机器人运动学问题提�
 ## Overview
 Robot motion can have many goals. Depending on the task, we might optimize for pose error, speed, collision, or similarity to a human demonstration. Motivated by this, we present PyRoki: a modular, extensible, and cross-platform toolkit for solving kinematic optimization problems. PyRoki couples an interface for specifying kinematic variables and costs with an efficient nonlinear least squares optimizer. Unlike existing tools, it is also cross-platform: optimization runs natively on CPU, GPU, and TPU. In this paper, we present (i) the design and implementation of PyRoki, (ii) motion retargeting and planning case studies that highlight the advantages of PyRoki's modularity, and (iii) optimization benchmarking, where PyRoki can be 1.4-1.7x faster and converges to lower errors than cuRobo, an existing GPU-accelerated inverse kinematics library.
 
-## 개요
-로봇 동작은 다양한 목표를 가질 수 있습니다. 작업에 따라 자세 오차, 속도, 충돌 또는 인간 시연과의 유사성을 최적화할 수 있습니다. 이러한 동기에서 우리는 PyRoki를 소개합니다: 모듈식이며 확장 가능하고 크로스 플랫폼을 지원하는 운동학 최적화 문제 해결 도구입니다. PyRoki는 운동학 변수와 비용을 지정하는 인터페이스와 효율적인 비선형 최소제곱 최적화기를 결합합니다. 기존 도구와 달리 크로스 플랫폼을 지원하여 CPU, GPU 및 TPU에서 최적화가 기본적으로 실행됩니다. 본 논문에서는 (i) PyRoki의 설계 및 구현, (ii) PyRoki의 모듈성 장점을 강조하는 동작 리타겟팅 및 계획 사례 연구, (iii) 기존 GPU 가속 역운동학 라이브러리인 cuRobo보다 1.4-1.7배 빠르고 더 낮은 오차로 수렴하는 최적화 벤치마킹을 제시합니다.
-
-## 핵심 내용
-로봇 동작은 다양한 목표를 가질 수 있습니다. 작업에 따라 자세 오차, 속도, 충돌 또는 인간 시연과의 유사성을 최적화할 수 있습니다. 이러한 동기에서 우리는 PyRoki를 소개합니다: 모듈식이며 확장 가능하고 크로스 플랫폼을 지원하는 운동학 최적화 문제 해결 도구입니다. PyRoki는 운동학 변수와 비용을 지정하는 인터페이스와 효율적인 비선형 최소제곱 최적화기를 결합합니다. 기존 도구와 달리 크로스 플랫폼을 지원하여 CPU, GPU 및 TPU에서 최적화가 기본적으로 실행됩니다. 본 논문에서는 (i) PyRoki의 설계 및 구현, (ii) PyRoki의 모듈성 장점을 강조하는 동작 리타겟팅 및 계획 사례 연구, (iii) 기존 GPU 가속 역운동학 라이브러리인 cuRobo보다 1.4-1.7배 빠르고 더 낮은 오차로 수렴하는 최적화 벤치마킹을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.03728v1
+
+## 개요
+PyRoki는 연구자들이 개발한 것으로, 로봇 운동 최적화에서 다중 목표(예: 자세 오차, 속도, 충돌 또는 인간 시연 모방)의 유연성 문제를 해결하기 위해 설계되었습니다. 핵심 설계는 모듈화와 크로스 플랫폼입니다: 사용자는 인터페이스를 통해 운동학 변수와 비용 함수를 사용자 정의할 수 있으며, 기본 최적화기는 비선형 최소제곱 문제를 효율적으로 해결합니다. GPU 가속만 지원하는 cuRobo와 달리, PyRoki는 CPU, GPU 및 TPU에서 기본적으로 실행되며, 운동 재지정 및 계획 사례를 통해 모듈화의 장점을 보여줍니다. 벤치마크 테스트에 따르면 PyRoki는 최적화 속도가 cuRobo보다 1.4-1.7배 빠르며 더 낮은 오차로 수렴할 수 있습니다.
+
+## 핵심 내용
+### 설계 및 구현
+- **모듈화 아키텍처**: PyRoki는 확장 가능한 인터페이스를 제공하여 사용자가 운동학 변수(예: 관절 각도, 말단 자세)와 다양한 비용 함수(예: 자세 오차, 속도, 충돌 회피, 인간 시연과의 유사성)를 지정할 수 있습니다.
+- **최적화기**: 효율적인 비선형 최소제곱 솔버를 기반으로 하며, 다중 목표 공동 최적화를 지원합니다.
+- **크로스 플랫폼 지원**: 최적화 계산은 CPU, GPU 및 TPU에서 기본적으로 실행되며 추가 적응이 필요 없습니다.
+
+### 사례 연구
+- **운동 재지정**: 인간 시연의 운동을 로봇 모델에 매핑하여 사용자 정의 비용 함수에 대한 모듈화 인터페이스의 유연성을 검증합니다.
+- **운동 계획**: 복잡한 작업에서 자세 정밀도와 충돌 회피를 동시에 최적화하여 다중 목표 최적화의 실용성을 보여줍니다.
+
+### 벤치마크 테스트
+- **비교 대상**: cuRobo(기존 GPU 가속 역운동학 라이브러리).
+- **성능 지표**:
+  - 최적화 속도: PyRoki는 cuRobo보다 1.4-1.7배 빠릅니다.
+  - 수렴 오차: PyRoki는 동일한 반복 횟수에서 더 낮은 최종 오차에 도달합니다.
+- **하드웨어 환경**: 테스트는 NVIDIA GPU 및 Google TPU에서 완료되어 크로스 플랫폼 일관성을 검증했습니다.
+
+### 결론
+PyRoki는 모듈화 설계와 크로스 플랫폼 최적화를 통해 로봇 운동학 문제에 더 유연하고 효율적인 솔루션을 제공하며, 특히 휴머노이드 로봇의 전신 제어 및 조작 작업에 적합합니다.

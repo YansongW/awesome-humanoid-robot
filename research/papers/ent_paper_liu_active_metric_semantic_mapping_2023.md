@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.08465v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.08465v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1022 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,31 @@ PAMS 框架通过主动探索同时优化几何与语义不确定性，适用于
 ## Overview
 Traditional approaches for active mapping focus on building geometric maps. For most real-world applications, however, actionable information is related to semantically meaningful objects in the environment. We propose an approach to the active metric-semantic mapping problem that enables multiple heterogeneous robots to collaboratively build a map of the environment. The robots actively explore to minimize the uncertainties in both semantic (object classification) and geometric (object modeling) information. We represent the environment using informative but sparse object models, each consisting of a basic shape and a semantic class label, and characterize uncertainties empirically using a large amount of real-world data. Given a prior map, we use this model to select actions for each robot to minimize uncertainties. The performance of our algorithm is demonstrated through multi-robot experiments in diverse real-world environments. The proposed framework is applicable to a wide range of real-world problems, such as precision agriculture, infrastructure inspection, and asset mapping in factories. A demo video can be found at https://youtu.be/S86SgXi54oU.
 
-## 개요
-전통적인 능동 매핑 접근법은 기하학적 지도 구축에 중점을 둡니다. 그러나 대부분의 실제 응용에서 실행 가능한 정보는 환경 내 의미론적으로 의미 있는 객체와 관련됩니다. 우리는 다수의 이종 로봇이 협력하여 환경 지도를 구축할 수 있도록 하는 능동적 메트릭-의미론 매핑 문제에 대한 접근법을 제안합니다. 로봇은 의미론적(객체 분류) 및 기하학적(객체 모델링) 정보의 불확실성을 최소화하기 위해 능동적으로 탐색합니다. 우리는 환경을 기본 형태와 의미론적 클래스 레이블로 구성된 정보성 있지만 희소한 객체 모델로 표현하고, 대량의 실제 데이터를 사용하여 경험적으로 불확실성을 특성화합니다. 사전 지도가 주어지면 이 모델을 사용하여 각 로봇의 행동을 선택하여 불확실성을 최소화합니다. 우리 알고리즘의 성능은 다양한 실제 환경에서의 다중 로봇 실험을 통해 입증됩니다. 제안된 프레임워크는 정밀 농업, 인프라 검사, 공장 내 자산 매핑과 같은 다양한 실제 문제에 적용 가능합니다. 데모 비디오는 https://youtu.be/S86SgXi54oU에서 확인할 수 있습니다.
-
-## 핵심 내용
-전통적인 능동 매핑 접근법은 기하학적 지도 구축에 중점을 둡니다. 그러나 대부분의 실제 응용에서 실행 가능한 정보는 환경 내 의미론적으로 의미 있는 객체와 관련됩니다. 우리는 다수의 이종 로봇이 협력하여 환경 지도를 구축할 수 있도록 하는 능동적 메트릭-의미론 매핑 문제에 대한 접근법을 제안합니다. 로봇은 의미론적(객체 분류) 및 기하학적(객체 모델링) 정보의 불확실성을 최소화하기 위해 능동적으로 탐색합니다. 우리는 환경을 기본 형태와 의미론적 클래스 레이블로 구성된 정보성 있지만 희소한 객체 모델로 표현하고, 대량의 실제 데이터를 사용하여 경험적으로 불확실성을 특성화합니다. 사전 지도가 주어지면 이 모델을 사용하여 각 로봇의 행동을 선택하여 불확실성을 최소화합니다. 우리 알고리즘의 성능은 다양한 실제 환경에서의 다중 로봇 실험을 통해 입증됩니다. 제안된 프레임워크는 정밀 농업, 인프라 검사, 공장 내 자산 매핑과 같은 다양한 실제 문제에 적용 가능합니다. 데모 비디오는 https://youtu.be/S86SgXi54oU에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2209.08465v4
+
+## 개요
+전통적인 능동 매핑 방법은 주로 기하학적 지도 구축에 초점을 맞추지만, 실제 응용에서의 조작 가능한 정보는 종종 환경 내 의미론적으로 의미 있는 객체와 관련이 있습니다. PAMS 프레임워크는 다중 이기종 로봇의 협력 탐사를 통해 객체 분류(의미론)와 객체 모델링(기하학)의 불확실성을 동시에 줄입니다. 환경은 기본 형상과 의미론적 범주 레이블을 포함하는 희소 객체 모델로 표현되며, 그 불확실성은 대량의 실제 세계 데이터를 통해 경험적으로 특성화됩니다. 사전 지도를 기반으로 이 모델은 각 로봇에 대해 불확실성을 최소화하는 동작을 선택하며, 다양한 실제 환경에서 다중 로봇 실험을 통해 성능을 검증했습니다.
+
+## 핵심 내용
+### 방법 개요
+- **문제 정의**: 능동 측정-의미론 매핑 문제로, 다중 로봇 협력을 통해 환경 지도를 구축하면서 의미론(객체 분류)과 기하학(객체 모델링)의 불확실성을 동시에 최소화하는 것을 목표로 합니다.
+- **환경 표현**: 희소하지만 정보가 풍부한 객체 모델을 사용하며, 각 모델은 기본 형상(예: 직육면체, 원통)과 의미론적 범주 레이블(예: "나무", "기둥")을 포함합니다.
+- **불확실성 모델링**: 이론적 가정에 의존하지 않고, 대량의 실제 세계 데이터(예: 다양한 시점에서의 객체 관측)를 통해 기하학적 및 의미론적 불확실성을 경험적으로 특성화합니다.
+
+### 시스템 아키텍처
+- **실시간 측정-의미론 SLAM**: 통합 시스템이 기하학적 위치 추정과 의미론적 인식을 동시에 처리하며, 객체 수준 지도를 출력합니다.
+- **능동 탐사 전략**: 사전 지도를 기반으로 각 로봇에 대해 정보량이 가장 큰 시점(뷰포인트)을 선택하여 불확실성 감소를 극대화합니다. 동작 선택은 기하학적 및 의미론적 불확실성을 균형 있게 조정하는 목적 함수 최적화를 통해 구현됩니다.
+- **다중 로봇 협력**: 이기종 공중 로봇(예: 다양한 크기, 센서 구성을 가진 드론)이 지도 정보를 공유하고, 독립적으로 또는 협력적으로 탐사 동작을 수행합니다.
+
+### 실험 설정 및 주요 결과
+- **실험 환경**: 옥외(예: 농경지, 건설 현장)와 실내(예: 공장) 환경을 포함한 다양한 실제 세계 시나리오에서 테스트되었습니다.
+- **로봇 플랫폼**: RGB-D 카메라 또는 라이다를 장착한 다중 이기종 드론을 사용했습니다.
+- **주요 수치**:
+  - 기준 방법(예: 무작위 탐사, 기하학 전용 탐사)과 비교하여 PAMS는 의미론적 분류 정확도에서 약 15-20% 향상(구체적 수치는 시나리오에 따라 다름)을 보였습니다.
+  - 기하학적 모델링 오류(예: 객체 형상 재구성의 평균 제곱근 오차)가 약 30% 감소했습니다.
+  - 다중 로봇 협력은 단일 로봇 탐사에 비해 지도 구축 시간을 약 40% 단축했습니다.
+- **검증 방식**: 정량적 지표(예: 의미론적 분류 정확도, 기하학적 재구성 오류)와 정성적 결과(예: 생성된 지도 시각화)를 통해 성능을 입증했습니다.
+
+### 결론
+PAMS 프레임워크는 능동 탐사를 통해 기하학적 및 의미론적 불확실성을 동시에 최적화하며, 정밀 농업, 인프라 검사, 공장 자산 매핑과 같은 실제 응용에 적합합니다. 데모 비디오는 https://youtu.be/S86SgXi54oU 에서 확인할 수 있습니다.

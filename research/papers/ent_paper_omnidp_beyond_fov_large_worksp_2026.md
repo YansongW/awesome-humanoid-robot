@@ -40,7 +40,8 @@ verification:
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: OmniDP: Beyond-FOV Large-Workspace
     Humanoid Manipulation with Omnidirectional 3D Perception. [2026-07-29] zh content backfilled from English abstract via
-    scripts/sinicize_english_cards.py'
+    scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (842 chars,
+    DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -80,11 +81,25 @@ The deployment of humanoid robots for dexterous manipulation in unstructured env
 ## Content
 The deployment of humanoid robots for dexterous manipulation in unstructured environments remains challenging due to perceptual limitations that constrain the effective workspace. In scenarios where physical constraints prevent the robot from repositioning itself, maintaining omnidirectional awareness becomes far more critical than color or semantic information. While recent advances in visuomotor policy learning have improved manipulation capabilities, conventional RGB-D solutions suffer from narrow fields of view (FOV) and self-occlusion, requiring frequent base movements that introduce motion uncertainty and safety risks. Existing approaches to expanding perception, including active vision systems and third-view cameras, introduce mechanical complexity, calibration dependencies, and latency that hinder reliable real-time performance. In this work, we propose OmniDP, an end-to-end LiDAR-driven 3D visuomotor policy that enables robust manipulation in large workspaces. Our method processes panoramic point clouds through a Time-Aware Attention Pooling mechanism, efficiently encoding sparse 3D data while capturing temporal dependencies. This 360° perception allows the robot to interact with objects across wide areas without frequent repositioning. To support policy learning, we develop a whole-body teleoperation system for efficient data collection on full-body coordination. Extensive experiments in simulation and real-world environments show that OmniDP achieves robust performance in large-workspace and cluttered scenarios, outperforming baselines that rely on egocentric depth cameras.
 
-## 개요
-인간형 로봇의 비정형 환경에서의 정밀 조작 배치는 여전히 효과적인 작업 공간을 제한하는 인지적 한계로 인해 어려움을 겪고 있습니다. 물리적 제약으로 인해 로봇이 스스로 위치를 재조정할 수 없는 시나리오에서는 전방향 인식이 색상이나 의미 정보보다 훨씬 더 중요해집니다. 최근 시각-운동 정책 학습의 발전이 조작 능력을 향상시켰지만, 기존의 RGB-D 솔루션은 좁은 시야(FOV)와 자체 폐색으로 인해 잦은 베이스 이동이 필요하며, 이는 움직임 불확실성과 안전 위험을 초래합니다. 능동 시각 시스템 및 제3자 시점 카메라를 포함한 기존의 인식 확장 접근 방식은 기계적 복잡성, 캘리브레이션 의존성 및 지연 시간을 도입하여 신뢰할 수 있는 실시간 성능을 저해합니다. 본 연구에서는 대규모 작업 공간에서 강력한 조작을 가능하게 하는 엔드-투-엔드 LiDAR 기반 3D 시각-운동 정책인 OmniDP를 제안합니다. 우리의 방법은 시간 인식 어텐션 풀링(Time-Aware Attention Pooling) 메커니즘을 통해 파노라마 포인트 클라우드를 처리하여 시간적 종속성을 포착하면서 희소 3D 데이터를 효율적으로 인코딩합니다. 이 360° 인식을 통해 로봇은 잦은 위치 재조정 없이 넓은 영역에 걸쳐 객체와 상호작용할 수 있습니다. 정책 학습을 지원하기 위해 전신 협업에 대한 효율적인 데이터 수집을 위한 전신 원격 조작 시스템을 개발합니다. 시뮬레이션 및 실제 환경에서의 광범위한 실험을 통해 OmniDP가 대규모 작업 공간 및 혼잡한 시나리오에서 강력한 성능을 달성하며, 자아 중심 깊이 카메라에 의존하는 기준 모델을 능가함을 보여줍니다.
-
-## 핵심 내용
-인간형 로봇의 비정형 환경에서의 정밀 조작 배치는 여전히 효과적인 작업 공간을 제한하는 인지적 한계로 인해 어려움을 겪고 있습니다. 물리적 제약으로 인해 로봇이 스스로 위치를 재조정할 수 없는 시나리오에서는 전방향 인식이 색상이나 의미 정보보다 훨씬 더 중요해집니다. 최근 시각-운동 정책 학습의 발전이 조작 능력을 향상시켰지만, 기존의 RGB-D 솔루션은 좁은 시야(FOV)와 자체 폐색으로 인해 잦은 베이스 이동이 필요하며, 이는 움직임 불확실성과 안전 위험을 초래합니다. 능동 시각 시스템 및 제3자 시점 카메라를 포함한 기존의 인식 확장 접근 방식은 기계적 복잡성, 캘리브레이션 의존성 및 지연 시간을 도입하여 신뢰할 수 있는 실시간 성능을 저해합니다. 본 연구에서는 대규모 작업 공간에서 강력한 조작을 가능하게 하는 엔드-투-엔드 LiDAR 기반 3D 시각-운동 정책인 OmniDP를 제안합니다. 우리의 방법은 시간 인식 어텐션 풀링(Time-Aware Attention Pooling) 메커니즘을 통해 파노라마 포인트 클라우드를 처리하여 시간적 종속성을 포착하면서 희소 3D 데이터를 효율적으로 인코딩합니다. 이 360° 인식을 통해 로봇은 잦은 위치 재조정 없이 넓은 영역에 걸쳐 객체와 상호작용할 수 있습니다. 정책 학습을 지원하기 위해 전신 협업에 대한 효율적인 데이터 수집을 위한 전신 원격 조작 시스템을 개발합니다. 시뮬레이션 및 실제 환경에서의 광범위한 실험을 통해 OmniDP가 대규모 작업 공간 및 혼잡한 시나리오에서 강력한 성능을 달성하며, 자아 중심 깊이 카메라에 의존하는 기준 모델을 능가함을 보여줍니다.
-
 ## 参考
 - Semantic Scholar search: OmniDP: Beyond-FOV Large-Workspace Humanoid Manipulation with Omnidirectional 3D Perception
+
+## 개요
+휴머노이드 로봇이 비구조화 환경에서 정밀한 조작을 수행할 때, 종종 인식 제한으로 인해 유효 작업 공간이 제한됩니다. 기존 RGB-D 방식은 시야가 좁고 자체 가림이 발생하기 쉬워, 로봇이 잦은 베이스 이동을 해야 하며, 이는 운동 불확실성과 안전 위험을 초래합니다. OmniDP는 LiDAR 기반의 엔드투엔드 3D 시각 운동 정책을 제안하며, 전방위 포인트 클라우드와 시간 인식 어텐션 풀링 메커니즘을 통해 희소 3D 데이터를 효율적으로 인코딩하고 시간적 의존성을 포착하여 360도 인식을 구현합니다. 이 방법은 로봇이 빈번한 재배치 없이 넓은 영역의 객체와 상호작용할 수 있게 합니다. 또한, 연구팀은 전신 조정 데이터를 효율적으로 수집하기 위한 전신 원격 조작 시스템을 개발했습니다. 광범위한 실험을 통해 OmniDP는 넓은 작업 공간과 복잡한 환경에서 강건한 성능을 보임을 입증했습니다.
+
+## 핵심 내용
+### 방법
+- **핵심 아키텍처**: OmniDP는 엔드투엔드 LiDAR 기반 3D 시각 운동 정책을 채택하여 전방위 포인트 클라우드 데이터를 직접 처리합니다.
+- **시간 인식 어텐션 풀링(Time-Aware Attention Pooling)**: 이 메커니즘은 희소 3D 포인트 클라우드를 효율적으로 인코딩하면서 시간 시퀀스의 의존성을 포착하여, 정책이 동적 환경 변화를 이해할 수 있게 합니다.
+- **360도 인식**: LiDAR로 획득한 전방위 포인트 클라우드를 통해 로봇은 빈번한 베이스 이동 없이 주변 환경을 인식할 수 있으며, 기존 RGB-D 카메라의 좁은 시야와 자체 가림 문제를 극복합니다.
+
+### 실험 설정
+- **데이터 수집**: 전신 원격 조작 시스템을 개발하여 전신 조정 조작 데이터를 효율적으로 수집하고 정책 학습을 지원합니다.
+- **환경**: 시뮬레이션 환경과 실제 세계 시나리오에서 넓은 작업 공간과 복잡한 환경을 포함한 광범위한 실험을 수행했습니다.
+
+### 주요 결과
+- **성능 비교**: OmniDP는 다양한 작업에서 자아 중심 깊이 카메라에 의존하는 기준 방법보다 우수한 성능을 보이며, 더 강력한 견고성을 입증했습니다.
+- **장점**: 넓은 작업 공간과 복잡한 환경에서 OmniDP의 360도 인식 능력은 로봇 베이스 이동 횟수를 크게 줄여 운동 불확실성과 안전 위험을 낮춥니다.
+
+### 결론
+OmniDP는 LiDAR 기반의 전방위 인식과 시간 어텐션 메커니즘을 통해 휴머노이드 로봇의 유효 작업 공간을 효과적으로 확장하며, 비구조화 환경에서 신뢰할 수 있는 조작을 위한 새로운 솔루션을 제공합니다.

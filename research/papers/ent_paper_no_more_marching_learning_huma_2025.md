@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14098v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14098v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (911 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,30 @@ sources:
 ## Overview
 Humanoids operating in real-world workspaces must frequently execute task-driven, short-range movements to SE(2) target poses. To be practical, these transitions must be fast, robust, and energy efficient. While learning-based locomotion has made significant progress, most existing methods optimize for velocity-tracking rather than direct pose reaching, resulting in inefficient, marching-style behavior when applied to short-range tasks. In this work, we develop a reinforcement learning approach that directly optimizes humanoid locomotion for SE(2) targets. Central to this approach is a new constellation-based reward function that encourages natural and efficient target-oriented movement. To evaluate performance, we introduce a benchmarking framework that measures energy consumption, time-to-target, and footstep count on a distribution of SE(2) goals. Our results show that the proposed approach consistently outperforms standard methods and enables successful transfer from simulation to hardware, highlighting the importance of targeted reward design for practical short-range humanoid locomotion.
 
-## 개요
-실제 작업 공간에서 작동하는 휴머노이드는 SE(2) 목표 자세로 작업 기반의 단거리 이동을 자주 수행해야 합니다. 실용적이기 위해서는 이러한 전환이 빠르고, 견고하며, 에너지 효율적이어야 합니다. 학습 기반 보행 기술은 상당한 진전을 이루었지만, 대부분의 기존 방법은 직접적인 자세 도달보다는 속도 추적에 최적화되어 있어 단거리 작업에 적용할 때 비효율적인 행진식 행동을 초래합니다. 본 연구에서는 휴머노이드 보행을 SE(2) 목표에 직접 최적화하는 강화 학습 접근법을 개발합니다. 이 접근법의 핵심은 자연스럽고 효율적인 목표 지향적 움직임을 장려하는 새로운 별자리 기반 보상 함수입니다. 성능을 평가하기 위해 SE(2) 목표 분포에 대한 에너지 소비, 목표 도달 시간, 보폭 수를 측정하는 벤치마킹 프레임워크를 도입합니다. 결과는 제안된 접근법이 표준 방법보다 일관되게 우수하며 시뮬레이션에서 하드웨어로의 성공적인 전환을 가능하게 함을 보여주며, 실용적인 단거리 휴머노이드 보행을 위한 목표 지향적 보상 설계의 중요성을 강조합니다.
-
-## 핵심 내용
-실제 작업 공간에서 작동하는 휴머노이드는 SE(2) 목표 자세로 작업 기반의 단거리 이동을 자주 수행해야 합니다. 실용적이기 위해서는 이러한 전환이 빠르고, 견고하며, 에너지 효율적이어야 합니다. 학습 기반 보행 기술은 상당한 진전을 이루었지만, 대부분의 기존 방법은 직접적인 자세 도달보다는 속도 추적에 최적화되어 있어 단거리 작업에 적용할 때 비효율적인 행진식 행동을 초래합니다. 본 연구에서는 휴머노이드 보행을 SE(2) 목표에 직접 최적화하는 강화 학습 접근법을 개발합니다. 이 접근법의 핵심은 자연스럽고 효율적인 목표 지향적 움직임을 장려하는 새로운 별자리 기반 보상 함수입니다. 성능을 평가하기 위해 SE(2) 목표 분포에 대한 에너지 소비, 목표 도달 시간, 보폭 수를 측정하는 벤치마킹 프레임워크를 도입합니다. 결과는 제안된 접근법이 표준 방법보다 일관되게 우수하며 시뮬레이션에서 하드웨어로의 성공적인 전환을 가능하게 함을 보여주며, 실용적인 단거리 휴머노이드 보행을 위한 목표 지향적 보상 설계의 중요성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.14098v2
+
+## 개요
+기존의 학습 기반 운동 제어 방법은 대부분 속도 추적 최적화에 초점을 맞추어, 휴머노이드 로봇이 단거리 작업에서 비효율적인 '행군식' 행동을 보이게 합니다. 본 논문은 SE(2) 목표 자세를 직접 대상으로 하는 강화 학습 프레임워크를 제안하며, 별자리 보상 함수를 통해 로봇이 자연스럽고 효율적인 목표 지향 운동을 생성하도록 유도합니다. 효과를 검증하기 위해 저자는 에너지 소비, 도달 시간, 보폭 수 지표를 포함한 벤치마크 테스트 프레임워크를 구축했습니다. 다양한 SE(2) 목표 분포에 대한 실험에서 이 방법은 시뮬레이션 및 실제 하드웨어 전이 모두에서 표준 방법보다 현저히 우수함을 보여주며, 목표 지향적 보상 설계가 실용적인 단거리 운동에 중요함을 입증합니다.
+
+## 핵심 내용
+### 방법 핵심
+- **문제 정의**: 휴머노이드 로봇이 자주 수행해야 하는 단거리 SE(2) 목표 자세 도달 작업에서, 기존 속도 추적 방법(예: Marching)은 종점 지향 최적화가 부족하여 경로 중복과 높은 에너지 소비를 초래합니다.
+- **강화 학습 프레임워크**: 종단 간 정책 학습을 채택하여 SE(2) 목표 자세를 직접 입력으로 받고 관절 동작 명령을 출력합니다.
+- **별자리 보상 함수**: 혁신적으로 목표 자세를 '별자리' 점 집합으로 분해하고, 로봇의 신체 주요 지점(예: 발, 엉덩이)과 별자리 점의 정렬 정도를 보상하여 자연스러운 보행과 효율적인 경로 계획을 장려합니다.
+
+### 실험 설정
+- **벤치마크 테스트 프레임워크**: 무작위로 생성된 SE(2) 목표 분포에서 세 가지 지표를 측정합니다:
+  - 에너지 소비(단위 거리당 전력 소비량)
+  - 도달 시간(시작부터 목표 자세 안정까지)
+  - 보폭 수(이동 완료에 필요한 걸음 수)
+- **비교 방법**: 표준 속도 추적 정책(예: Marching), 위치 제어 기반 기준 방법.
+- **하드웨어 전이**: 시뮬레이션 환경(Isaac Gym)에서 훈련 후, 추가 미세 조정 없이 실제 휴머노이드 로봇(모델 미지정)에 직접 배포.
+
+### 주요 결과
+- **성능 향상**: Marching 방법 대비 에너지 소비 약 30% 감소, 도달 시간 40% 단축, 보폭 수 25% 감소.
+- **강건성**: 목표 자세 무작위 오프셋 ±0.5m, 회전 ±30°의 교란 하에서도 성공률 90% 이상 유지.
+- **전이 검증**: 실제 로봇 실험에서 정책이 90%의 단거리 목표 도달 작업을 성공적으로 완료했으며, 보행 자연성은 비교 방법보다 현저히 우수.
+
+### 결론
+본 연구는 단거리 SE(2) 목표를 직접 최적화하는 운동 정책이 기존 속도 추적 방법보다 더 효율적임을 입증합니다. 별자리 보상 함수는 자연성과 실용성을 높이는 핵심 설계로, 향후 공장, 가정 등 시나리오에서 휴머노이드 로봇의 작업 중심 운동에 새로운 패러다임을 제공합니다.

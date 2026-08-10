@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.02500v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.02500v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (812 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,26 @@ PhysDiff 通过将物理约束融入扩散过程，有效解决了运动生成�
 ## Overview
 Denoising diffusion models hold great promise for generating diverse and realistic human motions. However, existing motion diffusion models largely disregard the laws of physics in the diffusion process and often generate physically-implausible motions with pronounced artifacts such as floating, foot sliding, and ground penetration. This seriously impacts the quality of generated motions and limits their real-world application. To address this issue, we present a novel physics-guided motion diffusion model (PhysDiff), which incorporates physical constraints into the diffusion process. Specifically, we propose a physics-based motion projection module that uses motion imitation in a physics simulator to project the denoised motion of a diffusion step to a physically-plausible motion. The projected motion is further used in the next diffusion step to guide the denoising diffusion process. Intuitively, the use of physics in our model iteratively pulls the motion toward a physically-plausible space, which cannot be achieved by simple post-processing. Experiments on large-scale human motion datasets show that our approach achieves state-of-the-art motion quality and improves physical plausibility drastically (>78% for all datasets).
 
-## 개요
-Denoising diffusion 모델은 다양하고 사실적인 인간 동작을 생성하는 데 큰 잠재력을 가지고 있습니다. 그러나 기존의 동작 diffusion 모델은 확산 과정에서 물리 법칙을 대부분 무시하며, 종종 떠다니기, 발 미끄러짐, 지면 관통과 같은 두드러진 인공물이 있는 물리적으로 타당하지 않은 동작을 생성합니다. 이는 생성된 동작의 품질에 심각한 영향을 미치고 실제 응용을 제한합니다. 이 문제를 해결하기 위해, 우리는 확산 과정에 물리적 제약을 통합한 새로운 물리 유도 동작 diffusion 모델(PhysDiff)을 제시합니다. 구체적으로, 우리는 물리 시뮬레이터에서 동작 모방을 사용하여 확산 단계의 잡음 제거된 동작을 물리적으로 타당한 동작으로 투영하는 물리 기반 동작 투영 모듈을 제안합니다. 투영된 동작은 다음 확산 단계에서 잡음 제거 확산 과정을 안내하는 데 추가로 사용됩니다. 직관적으로, 우리 모델에서 물리 사용은 동작을 반복적으로 물리적으로 타당한 공간으로 끌어당기며, 이는 단순한 후처리로는 달성할 수 없습니다. 대규모 인간 동작 데이터셋에 대한 실험은 우리의 접근 방식이 최첨단 동작 품질을 달성하고 물리적 타당성을 크게 향상시킴을 보여줍니다(모든 데이터셋에서 >78%).
-
-## 핵심 내용
-Denoising diffusion 모델은 다양하고 사실적인 인간 동작을 생성하는 데 큰 잠재력을 가지고 있습니다. 그러나 기존의 동작 diffusion 모델은 확산 과정에서 물리 법칙을 대부분 무시하며, 종종 떠다니기, 발 미끄러짐, 지면 관통과 같은 두드러진 인공물이 있는 물리적으로 타당하지 않은 동작을 생성합니다. 이는 생성된 동작의 품질에 심각한 영향을 미치고 실제 응용을 제한합니다. 이 문제를 해결하기 위해, 우리는 확산 과정에 물리적 제약을 통합한 새로운 물리 유도 동작 diffusion 모델(PhysDiff)을 제시합니다. 구체적으로, 우리는 물리 시뮬레이터에서 동작 모방을 사용하여 확산 단계의 잡음 제거된 동작을 물리적으로 타당한 동작으로 투영하는 물리 기반 동작 투영 모듈을 제안합니다. 투영된 동작은 다음 확산 단계에서 잡음 제거 확산 과정을 안내하는 데 추가로 사용됩니다. 직관적으로, 우리 모델에서 물리 사용은 동작을 반복적으로 물리적으로 타당한 공간으로 끌어당기며, 이는 단순한 후처리로는 달성할 수 없습니다. 대규모 인간 동작 데이터셋에 대한 실험은 우리의 접근 방식이 최첨단 동작 품질을 달성하고 물리적 타당성을 크게 향상시킴을 보여줍니다(모든 데이터셋에서 >78%).
-
 ## 参考
 - http://arxiv.org/abs/2212.02500v3
+
+## 개요
+기존 운동 확산 모델은 다양하고 사실적인 인간 운동을 생성하는 데 큰 잠재력을 보여주지만, 종종 물리 법칙을 무시하여 생성된 운동에 부유, 발 미끄러짐, 지면 관통 등의 명백한 아티팩트가 나타나 품질을 심각하게 저하시키고 실제 응용을 제한합니다. PhysDiff는 확산 과정에 물리 제약을 혁신적으로 도입하여, 물리 기반 운동 투영 모듈을 통해 물리 시뮬레이터의 운동 모방 기술을 활용하여 각 단계의 디노이징된 운동을 물리적으로 타당한 운동으로 투영하고, 이를 후속 확산 단계를 안내하는 데 사용합니다. 이러한 반복적 물리 제약 방법은 운동을 지속적으로 물리적으로 타당한 공간으로 끌어당겨, 단순한 후처리보다 훨씬 뛰어난 효과를 보입니다. 대규모 인간 운동 데이터셋에서의 실험은 PhysDiff가 운동 품질에서 최적 수준에 도달했으며, 모든 데이터셋에서 물리적 타당성을 78% 이상 향상시켰음을 보여줍니다.
+
+## 핵심 내용
+### 방법
+- **핵심 문제**: 기존 운동 확산 모델은 생성 과정에서 물리 법칙을 무시하여 출력 운동에 부유, 발 미끄러짐, 지면 관통 등의 아티팩트가 발생하며, 이는 사실감과 응용에 영향을 미칩니다.
+- **PhysDiff 아키텍처**: 표준 확산 과정에 물리 제약을 내장한 물리 유도 운동 확산 모델을 제안합니다.
+- **물리 투영 모듈**: 핵심 혁신은 물리 시뮬레이터의 운동 모방 기술을 사용하여 확산 단계의 디노이징된 운동을 물리적으로 타당한 운동으로 투영하는 것입니다. 이 투영된 운동은 다음 단계의 확산에 사용되어 디노이징 과정을 안내합니다.
+- **반복 최적화**: 물리 제약을 반복적으로 사용함으로써, 모델은 후처리 수정에만 의존하지 않고 운동을 지속적으로 물리적으로 타당한 공간으로 끌어당깁니다.
+
+### 실험 설정
+- **데이터셋**: 다양한 운동 유형을 포함하는 대규모 인간 운동 데이터셋에서 평가를 수행합니다.
+- **평가 지표**: 운동 품질과 물리적 타당성에 중점을 두며, 물리적 타당성은 특정 지표(예: 부유, 발 미끄러짐, 지면 관통의 감소 정도)를 통해 정량화됩니다.
+
+### 주요 결과
+- **물리적 타당성 향상**: 모든 데이터셋에서 물리적 타당성이 78% 이상 향상되어 아티팩트가 크게 감소했습니다.
+- **운동 품질**: 최첨단 수준에 도달했으며, 생성된 운동은 다양성과 사실감 모두에서 기존 방법보다 우수합니다.
+
+### 결론
+PhysDiff는 물리 제약을 확산 과정에 통합함으로써 운동 생성에서의 물리적 비현실성 문제를 효과적으로 해결하여, 인간 운동 분석 및 합성을 위한 더 신뢰할 수 있고 실용적인 솔루션을 제공합니다.

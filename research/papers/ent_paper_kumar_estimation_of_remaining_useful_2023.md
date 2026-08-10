@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2305.10298v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2305.10298v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (817 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,40 @@ theoretical_depth:
 ## Overview
 Lithium-ion batteries are widely used in various applications, including portable electronic devices, electric vehicles, and renewable energy storage systems. Accurately estimating the remaining useful life of these batteries is crucial for ensuring their optimal performance, preventing unexpected failures, and reducing maintenance costs. In this paper, we present a comprehensive review of the existing approaches for estimating the remaining useful life of lithium-ion batteries, including data-driven methods, physics-based models, and hybrid approaches. We also propose a novel approach based on machine learning techniques for accurately predicting the remaining useful life of lithium-ion batteries. Our approach utilizes various battery performance parameters, including voltage, current, and temperature, to train a predictive model that can accurately estimate the remaining useful life of the battery. We evaluate the performance of our approach on a dataset of lithium-ion battery cycles and compare it with other state-of-the-art methods. The results demonstrate the effectiveness of our proposed approach in accurately estimating the remaining useful life of lithium-ion batteries.
 
-## 개요
-리튬이온 배터리는 휴대용 전자기기, 전기자동차, 재생에너지 저장 시스템 등 다양한 분야에서 널리 사용됩니다. 이러한 배터리의 잔여 수명을 정확히 추정하는 것은 최적의 성능을 보장하고, 예상치 못한 고장을 방지하며, 유지보수 비용을 절감하는 데 중요합니다. 본 논문에서는 데이터 기반 방법, 물리 기반 모델, 하이브리드 접근법을 포함한 리튬이온 배터리 잔여 수명 추정을 위한 기존 접근법을 종합적으로 검토합니다. 또한 머신러닝 기술을 기반으로 리튬이온 배터리의 잔여 수명을 정확히 예측하는 새로운 접근법을 제안합니다. 우리의 접근법은 전압, 전류, 온도를 포함한 다양한 배터리 성능 매개변수를 활용하여 배터리의 잔여 수명을 정확히 추정할 수 있는 예측 모델을 훈련합니다. 리튬이온 배터리 사이클 데이터셋에서 접근법의 성능을 평가하고 다른 최신 방법과 비교합니다. 결과는 제안된 접근법이 리튬이온 배터리의 잔여 수명을 정확히 추정하는 데 효과적임을 보여줍니다.
-
-## 핵심 내용
-리튬이온 배터리는 휴대용 전자기기, 전기자동차, 재생에너지 저장 시스템 등 다양한 분야에서 널리 사용됩니다. 이러한 배터리의 잔여 수명을 정확히 추정하는 것은 최적의 성능을 보장하고, 예상치 못한 고장을 방지하며, 유지보수 비용을 절감하는 데 중요합니다. 본 논문에서는 데이터 기반 방법, 물리 기반 모델, 하이브리드 접근법을 포함한 리튬이온 배터리 잔여 수명 추정을 위한 기존 접근법을 종합적으로 검토합니다. 또한 머신러닝 기술을 기반으로 리튬이온 배터리의 잔여 수명을 정확히 예측하는 새로운 접근법을 제안합니다. 우리의 접근법은 전압, 전류, 온도를 포함한 다양한 배터리 성능 매개변수를 활용하여 배터리의 잔여 수명을 정확히 추정할 수 있는 예측 모델을 훈련합니다. 리튬이온 배터리 사이클 데이터셋에서 접근법의 성능을 평가하고 다른 최신 방법과 비교합니다. 결과는 제안된 접근법이 리튬이온 배터리의 잔여 수명을 정확히 추정하는 데 효과적임을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2305.10298v1
+
+## 개요
+이 연구는 리튬이온 배터리 RUL 추정의 세 가지 주요 방법, 즉 경험적 방법, 물리 기반 모델 방법, 데이터 기반 방법을 체계적으로 정리하였다. 저자가 제안한 시퀀스 심층 신경망은 TensorFlow Keras 프레임워크로 구현되었으며, 배터리 충·방전 과정에서 추출한 다차원 특징(전압, 전류, 온도, 용량)을 활용하여 예측을 수행한다. NASA Battery Dataset에서의 실험 결과, 이 모델은 relu 활성화 함수와 Adam 최적화기의 조합에서 가장 우수한 성능을 보였으며, 정확도는 0.985로 다른 비교 방법들을 크게 능가하였다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+리튬이온 배터리는 휴대용 전자기기, 전기자동차, 재생에너지 저장 시스템에 널리 사용된다. 잔여 수명(RUL)을 정확히 추정하는 것은 성능 보장, 고장 예방, 유지보수 비용 절감에 매우 중요하다.
+
+### 방법론 개요
+논문은 기존 RUL 추정 방법을 포괄적으로 분류하였다:
+- **경험적 방법**: 과거 데이터의 통계적 규칙에 기반
+- **물리 기반 모델 방법**: 전기화학 메커니즘 모델링 활용
+- **데이터 기반 방법**: 머신러닝 및 딥러닝 기술 포함
+- **혼합 방법**: 위의 두 가지 이상의 전략을 결합
+
+### 제안된 방법
+저자는 TensorFlow Keras로 구현된 시퀀스 심층 신경망(Sequential DNN)을 제안하였다. 모델 입력 특징은 다음과 같다:
+- 전압(Voltage)
+- 전류(Current)
+- 온도(Temperature)
+- 용량(Capacity)
+
+### 실험 설정
+- **데이터셋**: NASA Battery Dataset(리튬이온 배터리 충·방전 데이터)
+- **활성화 함수**: relu
+- **최적화기**: Adam
+- **평가 지표**: 정확도(Accuracy)
+
+### 주요 결과
+- 최적 구성(relu + Adam)은 0.985의 정확도 달성
+- 기존 방법과 비교하여 이 모델은 RUL 예측 작업에서 더 우수한 성능을 보임
+- 다차원 특징 융합이 예측 정확도 향상에 기여함을 검증
+
+### 결론
+이 연구는 시퀀스 심층 신경망이 리튬이온 배터리 RUL 추정에 효과적임을 검증하였으며, 전기자동차 배터리 건강 관리에 신뢰할 수 있는 기술적 솔루션을 제공한다.

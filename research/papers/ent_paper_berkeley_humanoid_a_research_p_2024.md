@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.21781v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.21781v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (860 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,26 @@ Berkeley Humanoid 是一款由伯克利团队内部自建的中型人形机器�
 ## Overview
 We introduce Berkeley Humanoid, a reliable and low-cost mid-scale humanoid research platform for learning-based control. Our lightweight, in-house-built robot is designed specifically for learning algorithms with low simulation complexity, anthropomorphic motion, and high reliability against falls. The robot's narrow sim-to-real gap enables agile and robust locomotion across various terrains in outdoor environments, achieved with a simple reinforcement learning controller using light domain randomization. Furthermore, we demonstrate the robot traversing for hundreds of meters, walking on a steep unpaved trail, and hopping with single and double legs as a testimony to its high performance in dynamical walking. Capable of omnidirectional locomotion and withstanding large perturbations with a compact setup, our system aims for scalable, sim-to-real deployment of learning-based humanoid systems. Please check http://berkeley-humanoid.com for more details.
 
-## 개요
-우리는 학습 기반 제어를 위한 신뢰할 수 있고 저렴한 중간 규모의 인간형 연구 플랫폼인 Berkeley Humanoid를 소개합니다. 자체 제작한 경량 로봇은 낮은 시뮬레이션 복잡성, 인간형 움직임, 낙하에 대한 높은 신뢰성을 갖춘 학습 알고리즘에 특화되어 설계되었습니다. 로봇의 좁은 시뮬레이션-실제 격차는 가벼운 도메인 무작위화를 사용하는 간단한 강화 학습 제어기를 통해 야외 환경의 다양한 지형에서 민첩하고 강건한 보행을 가능하게 합니다. 또한, 로봇이 수백 미터를 이동하고, 가파른 비포장 길을 걸으며, 한쪽 및 양쪽 다리로 점프하는 것을 시연하여 동적 보행에서의 높은 성능을 입증합니다. 전방향 이동이 가능하고 소형 설정으로 큰 외란을 견딜 수 있는 이 시스템은 학습 기반 인간형 시스템의 확장 가능한 시뮬레이션-실제 배치를 목표로 합니다. 자세한 내용은 http://berkeley-humanoid.com에서 확인하십시오.
-
-## 핵심 내용
-우리는 학습 기반 제어를 위한 신뢰할 수 있고 저렴한 중간 규모의 인간형 연구 플랫폼인 Berkeley Humanoid를 소개합니다. 자체 제작한 경량 로봇은 낮은 시뮬레이션 복잡성, 인간형 움직임, 낙하에 대한 높은 신뢰성을 갖춘 학습 알고리즘에 특화되어 설계되었습니다. 로봇의 좁은 시뮬레이션-실제 격차는 가벼운 도메인 무작위화를 사용하는 간단한 강화 학습 제어기를 통해 야외 환경의 다양한 지형에서 민첩하고 강건한 보행을 가능하게 합니다. 또한, 로봇이 수백 미터를 이동하고, 가파른 비포장 길을 걸으며, 한쪽 및 양쪽 다리로 점프하는 것을 시연하여 동적 보행에서의 높은 성능을 입증합니다. 전방향 이동이 가능하고 소형 설정으로 큰 외란을 견딜 수 있는 이 시스템은 학습 기반 인간형 시스템의 확장 가능한 시뮬레이션-실제 배치를 목표로 합니다. 자세한 내용은 http://berkeley-humanoid.com에서 확인하십시오.
-
 ## 参考
 - http://arxiv.org/abs/2407.21781v1
+
+## 개요
+Berkeley Humanoid는 버클리 팀이 내부에서 자체 제작한 중형 휴머노이드 연구 플랫폼으로, 저비용, 경량화, 높은 신뢰성을 강조합니다. 이 로봇은 학습 알고리즘에 최적화되어 있으며, 낮은 시뮬레이션 복잡성, 인간형 운동 특성을 갖추고, 낙하 충격에 효과적으로 저항할 수 있습니다. 간단한 강화 학습 컨트롤러와 가벼운 도메인 무작위화를 결합하여, 로봇은 시뮬레이션에서 실제 환경으로의 좁은 격차 전이를 실현했으며, 야외의 다양한 지형에서 민첩하고 견고한 로코모션을 수행할 수 있습니다. 실험은 로봇이 수백 미터를 연속으로 걷고, 가파른 비포장 오솔길을 걷고, 한쪽 다리 및 양쪽 다리 점프와 같은 동적 보행 능력을 보여주며 높은 성능을 검증했습니다. 이 시스템은 전방향 로코모션을 지원하며, 컴팩트한 구성으로 큰 외란을 견딜 수 있어, 학습 기반 휴머노이드 시스템의 확장 가능한 시뮬레이션-실제 배포를 추진하는 것을 목표로 합니다.
+
+## 핵심 내용
+### 플랫폼 설계 철학
+- **저비용 및 경량화**: Berkeley Humanoid는 내부 자체 제작 방식을 채택하여 연구 진입 장벽을 낮추고, 고가의 상용 플랫폼에 의존하지 않도록 합니다.
+- **학습 알고리즘 전용 설계**: 로봇 구조는 시뮬레이션 복잡성을 최적화하여 강화 학습 훈련 효율을 높이며, 인간형 운동학적 특성을 갖추어 실제 환경으로의 전이를 용이하게 합니다.
+- **높은 내구성 및 신뢰성**: 하드웨어 설계는 빈번한 낙하를 견딜 수 있어, 실제 환경에서 탐색적 학습 실험에 적합합니다.
+
+### 시뮬레이션-실제(Sim-to-Real) 전이
+- **좁은 격차 전이**: 가벼운 도메인 무작위화(light domain randomization)를 사용한 강화 학습 컨트롤러를 통해, 로봇은 시뮬레이션 환경에서 실제 세계로 직접 전이되며, 많은 수동 튜닝이 필요하지 않습니다.
+- **야외 지형 적응성**: 야외 환경에서 평평한 도로, 가파른 비포장 오솔길을 포함한 다양한 지형을 성공적으로 통과하며, 한쪽 다리 및 양쪽 다리 점프를 구현합니다.
+
+### 실험 성능 및 주요 수치
+- **장거리 보행**: 로봇은 수백 미터를 연속으로 걸으며 시스템의 안정성과 지속 능력을 검증합니다.
+- **동적 보행 능력**: 가파른 비포장 오솔길을 걷고, 한쪽 다리 및 양쪽 다리 점프 동작을 완료하여 높은 동적 성능을 보여줍니다.
+- **외란 저항 능력**: 전방향 로코모션을 지원하며, 컴팩트한 하드웨어 구성으로 큰 외부 외란을 견딜 수 있습니다.
+
+### 오픈소스 및 리소스
+- 프로젝트 코드와 하드웨어 설계는 오픈소스로 공개되었으며, 자세한 내용은 http://berkeley-humanoid.com 에서 확인할 수 있습니다.

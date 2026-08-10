@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.23125v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.23125v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (911 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,29 @@ A2CF通过引入自适应辅助力课程学习，有效解决了人形机器人�
 ## Overview
 Learning policies for complex humanoid tasks remains both challenging and compelling. Inspired by how infants and athletes rely on external support--such as parental walkers or coach-applied guidance--to acquire skills like walking, dancing, and performing acrobatic flips, we propose A2CF: Adaptive Assistive Curriculum Force for humanoid motion learning. A2CF trains a dual-agent system, in which a dedicated assistive force agent applies state-dependent forces to guide the robot through difficult initial motions and gradually reduces assistance as the robot's proficiency improves. Across three benchmarks--bipedal walking, choreographed dancing, and backflip--A2CF achieves convergence 30% faster than baseline methods, lowers failure rates by over 40%, and ultimately produces robust, support-free policies. Real-world experiments further demonstrate that adaptively applied assistive forces significantly accelerate the acquisition of complex skills in high-dimensional robotic control.
 
-## 개요
-복잡한 휴머노이드 작업을 위한 정책 학습은 여전히 도전적이면서도 매력적인 과제입니다. 유아와 운동선수가 부모의 보행기나 코치의 지도와 같은 외부 지원에 의존하여 걷기, 춤추기, 공중제비와 같은 기술을 습득하는 것에서 영감을 받아, 우리는 A2CF: 휴머노이드 동작 학습을 위한 적응형 보조 커리큘럼 힘(Adaptive Assistive Curriculum Force)을 제안합니다. A2CF는 이중 에이전트 시스템을 훈련하며, 전담 보조 힘 에이전트가 상태 의존적 힘을 적용하여 로봇이 어려운 초기 동작을 수행하도록 안내하고, 로봇의 숙련도가 향상됨에 따라 점차 지원을 줄입니다. 이족 보행, 안무 춤, 백플립의 세 가지 벤치마크에서 A2CF는 기준 방법보다 30% 더 빠른 수렴을 달성하고, 실패율을 40% 이상 낮추며, 궁극적으로 강력하고 지원 없는 정책을 생성합니다. 실제 실험은 적응적으로 적용된 보조 힘이 고차원 로봇 제어에서 복잡한 기술 습득을 크게 가속화함을 추가로 입증합니다.
-
-## 핵심 내용
-복잡한 휴머노이드 작업을 위한 정책 학습은 여전히 도전적이면서도 매력적인 과제입니다. 유아와 운동선수가 부모의 보행기나 코치의 지도와 같은 외부 지원에 의존하여 걷기, 춤추기, 공중제비와 같은 기술을 습득하는 것에서 영감을 받아, 우리는 A2CF: 휴머노이드 동작 학습을 위한 적응형 보조 커리큘럼 힘(Adaptive Assistive Curriculum Force)을 제안합니다. A2CF는 이중 에이전트 시스템을 훈련하며, 전담 보조 힘 에이전트가 상태 의존적 힘을 적용하여 로봇이 어려운 초기 동작을 수행하도록 안내하고, 로봇의 숙련도가 향상됨에 따라 점차 지원을 줄입니다. 이족 보행, 안무 춤, 백플립의 세 가지 벤치마크에서 A2CF는 기준 방법보다 30% 더 빠른 수렴을 달성하고, 실패율을 40% 이상 낮추며, 궁극적으로 강력하고 지원 없는 정책을 생성합니다. 실제 실험은 적응적으로 적용된 보조 힘이 고차원 로봇 제어에서 복잡한 기술 습득을 크게 가속화함을 추가로 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.23125v1
+
+## 개요
+A2CF는 유아와 운동선수가 외부 지원(예: 부모의 보조 또는 코치의 안내)을 통해 복잡한 동작을 학습하는 것에서 영감을 받아, 이중 에이전트 프레임워크를 설계했다. 여기서 주 에이전트는 운동 정책 학습을 담당하고, 보조 힘 에이전트는 로봇 상태에 따라 동적으로 유도 힘을 적용하며, 기술 향상 과정에서 점진적으로 보조를 제거한다. 이 방법은 이족 보행, 안무 댄스, 백플립이라는 세 가지 고난도 벤치마크 작업에서 검증되었으며, 실험 결과 A2CF는 수렴 속도가 기준 방법보다 30% 빠르고 실패율도 40% 이상 감소했다. 최종 훈련된 정책은 외부 지원 없이도 안정적으로 실행되며, 실제 로봇 실험에서도 적응형 보조 힘이 고차원 제어에서 복잡한 기술 습득을 크게 가속화할 수 있음을 확인했다.
+
+## 핵심 내용
+### 방법 개요
+A2CF의 핵심은 이중 에이전트 강화 학습 프레임워크이다:
+- **주 정책 에이전트**: 휴머노이드 로봇의 전신 운동 제어 정책을 학습하고 관절 토크 명령을 출력한다.
+- **보조 힘 에이전트**: 로봇의 현재 상태(예: 질량 중심 위치, 관절 각도, 속도 등)에 따라 외부 보조 힘을 생성하여 로봇이 어려운 초기 동작을 완료하도록 유도한다.
+- **커리큘럼 학습 메커니즘**: 보조 힘의 크기는 로봇의 기술 향상에 따라 자동으로 감소하며, 최종적으로 완전히 제거되어 정책이 외부 지원 없이도 견고하게 실행된다.
+
+### 실험 설정
+- **벤치마크 작업**: 이족 보행(bipedal walking), 안무 댄스(choreographed dancing), 백플립(backflip)
+- **비교 기준선**: 표준 PPO, SAC 등 보조 힘이 없는 강화 학습 방법
+- **평가 지표**: 수렴 속도(목표 보상에 도달하는 데 필요한 훈련 단계 수), 작업 실패율, 최종 정책의 견고성
+
+### 주요 결과
+- **수렴 속도**: A2CF는 세 가지 모든 작업에서 기준 방법보다 30% 빠르게 수렴했다
+- **실패율**: 기준 방법 대비 A2CF는 훈련 과정에서 실패율을 40% 이상 감소시켰다
+- **정책 견고성**: 최종 훈련된 정책은 외부 보조 힘 없이도 모든 작업을 안정적으로 완료한다
+- **실제 로봇 검증**: 실물 휴머노이드 로봇에서 수행된 실험은 적응형 보조 힘이 고차원 제어에서 복잡한 기술 습득을 크게 가속화할 수 있음을 추가로 확인했다
+
+### 결론
+A2CF는 적응형 보조 힘 커리큘럼 학습을 도입하여 휴머노이드 로봇의 복잡한 운동 기술 학습에서 초기 탐색의 어려움을 효과적으로 해결했다. 이 방법은 훈련 효율성을 크게 향상시킬 뿐만 아니라 최종 정책의 자율성과 견고성을 보장하여, 휴머노이드 로봇의 시뮬레이션에서 실제 세계로의 기술 전이에 실현 가능한 솔루션을 제공한다.

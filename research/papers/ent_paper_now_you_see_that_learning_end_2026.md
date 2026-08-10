@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.06382v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.06382v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (794 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,27 @@ sources:
 ## Overview
 Achieving robust vision-based humanoid locomotion remains challenging due to two fundamental issues: the sim-to-real gap introduces significant perception noise that degrades performance on fine-grained tasks, and training a unified policy across diverse terrains is hindered by conflicting learning objectives. To address these challenges, we present an end-to-end framework for vision-driven humanoid locomotion. For robust sim-to-real transfer, we develop a high-fidelity depth sensor simulation that captures stereo matching artifacts and calibration uncertainties inherent in real-world sensing. We further propose a vision-aware behavior distillation approach that combines latent space alignment with noise-invariant auxiliary tasks, enabling effective knowledge transfer from privileged height maps to noisy depth observations. For versatile terrain adaptation, we introduce terrain-specific reward shaping integrated with multi-critic and multi-discriminator learning, where dedicated networks capture the distinct dynamics and motion priors of each terrain type. We validate our approach on two humanoid platforms equipped with different stereo depth cameras. The resulting policy demonstrates robust performance across diverse environments, seamlessly handling extreme challenges such as high platforms and wide gaps, as well as fine-grained tasks including bidirectional long-term staircase traversal.
 
-## 개요
-강건한 비전 기반 휴머노이드 보행을 달성하는 것은 두 가지 근본적인 문제로 인해 여전히 어려운 과제입니다: 시뮬레이션-실제 간극은 미세 작업 성능을 저하시키는 상당한 인식 노이즈를 유발하며, 다양한 지형에서 통합 정책을 훈련하는 것은 상충되는 학습 목표로 인해 방해를 받습니다. 이러한 문제를 해결하기 위해, 우리는 비전 기반 휴머노이드 보행을 위한 종단간 프레임워크를 제시합니다. 강건한 시뮬레이션-실제 전이를 위해, 실제 센싱에 내재된 스테레오 매칭 아티팩트와 캘리브레이션 불확실성을 포착하는 고충실도 깊이 센서 시뮬레이션을 개발합니다. 또한 잠재 공간 정렬과 노이즈 불변 보조 작업을 결합한 비전 인식 행동 증류 접근법을 제안하여, 특권 높이 맵에서 노이즈가 있는 깊이 관측으로의 효과적인 지식 전이를 가능하게 합니다. 다양한 지형 적응을 위해, 다중 비평가 및 다중 판별기 학습과 통합된 지형별 보상 형성을 도입하여, 전용 네트워크가 각 지형 유형의 고유한 역학 및 운동 사전을 포착하도록 합니다. 우리는 서로 다른 스테레오 깊이 카메라를 장착한 두 휴머노이드 플랫폼에서 접근법을 검증합니다. 결과 정책은 다양한 환경에서 강건한 성능을 보여주며, 높은 플랫폼과 넓은 간격과 같은 극한 도전 과제와 양방향 장기 계단 통과를 포함한 미세 작업을 원활히 처리합니다.
-
-## 핵심 내용
-강건한 비전 기반 휴머노이드 보행을 달성하는 것은 두 가지 근본적인 문제로 인해 여전히 어려운 과제입니다: 시뮬레이션-실제 간극은 미세 작업 성능을 저하시키는 상당한 인식 노이즈를 유발하며, 다양한 지형에서 통합 정책을 훈련하는 것은 상충되는 학습 목표로 인해 방해를 받습니다. 이러한 문제를 해결하기 위해, 우리는 비전 기반 휴머노이드 보행을 위한 종단간 프레임워크를 제시합니다. 강건한 시뮬레이션-실제 전이를 위해, 실제 센싱에 내재된 스테레오 매칭 아티팩트와 캘리브레이션 불확실성을 포착하는 고충실도 깊이 센서 시뮬레이션을 개발합니다. 또한 잠재 공간 정렬과 노이즈 불변 보조 작업을 결합한 비전 인식 행동 증류 접근법을 제안하여, 특권 높이 맵에서 노이즈가 있는 깊이 관측으로의 효과적인 지식 전이를 가능하게 합니다. 다양한 지형 적응을 위해, 다중 비평가 및 다중 판별기 학습과 통합된 지형별 보상 형성을 도입하여, 전용 네트워크가 각 지형 유형의 고유한 역학 및 운동 사전을 포착하도록 합니다. 우리는 서로 다른 스테레오 깊이 카메라를 장착한 두 휴머노이드 플랫폼에서 접근법을 검증합니다. 결과 정책은 다양한 환경에서 강건한 성능을 보여주며, 높은 플랫폼과 넓은 간격과 같은 극한 도전 과제와 양방향 장기 계단 통과를 포함한 미세 작업을 원활히 처리합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.06382v2
+
+## 개요
+이 연구는 시각 기반 휴머노이드 운동의 두 가지 주요 난제, 즉 sim-to-real 격차로 인한 인식 노이즈와 다양한 지형 훈련에서의 목표 충돌을 다룹니다. 이를 위해 저자들은 고충실도 깊이 센서 시뮬레이션(스테레오 매칭 아티팩트 및 캘리브레이션 불확실성 모사)과 시각 인식 행동 증류(잠재 공간 정렬 및 노이즈 불변 보조 작업 결합)를 포함한 엔드투엔드 프레임워크를 구축했습니다. 동시에 지형 특화 보상 형성과 멀티 크리틱, 멀티 디스크리미네이터 학습을 도입하여 전용 네트워크가 각 지형의 역학 및 운동 사전 지식을 포착하도록 했습니다. 두 가지 휴머노이드 플랫폼에서 검증한 결과, 정책은 다양한 환경에서 강건한 성능을 보였으며 높은 플랫폼, 넓은 간격, 양방향 긴 계단과 같은 도전 과제를 성공적으로 처리했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **고충실도 깊이 센서 시뮬레이션**: sim-to-real 격차를 해결하기 위해 실제 스테레오 깊이 카메라의 스테레오 매칭 아티팩트와 캘리브레이션 불확실성을 포착하는 시뮬레이션 모델을 개발하여 더 현실적인 노이즈 깊이 관측을 생성합니다.
+- **시각 인식 행동 증류**: 잠재 공간 정렬과 노이즈 불변 보조 작업을 통해 특권 높이 맵의 지식을 노이즈 깊이 관측으로 전이하여 원시 픽셀에서 운동까지의 엔드투엔드 학습을 구현합니다.
+- **지형 특화 보상 형성**: 멀티 크리틱 및 멀티 디스크리미네이터 학습을 도입하여 각 지형 유형(예: 평지, 계단, 높은 플랫폼)에 맞는 전용 네트워크를 설계하고 고유한 역학 및 운동 사전 지식을 포착합니다.
+
+### 실험 설정
+- **플랫폼**: 서로 다른 두 가지 스테레오 깊이 카메라를 장착한 휴머노이드 로봇.
+- **작업**: 극한 도전(높은 플랫폼, 넓은 간격) 및 정밀 작업(양방향 긴 계단 통과) 포함.
+- **평가**: 다양한 환경에서 정책의 강건성과 일반화 능력을 테스트.
+
+### 주요 결과
+- 정책은 sim-to-real 전이에서 강건한 성능을 보이며 인식 노이즈를 효과적으로 처리합니다.
+- 높은 플랫폼 점프, 넓은 간격 횡단, 양방향 긴 계단 연속 등반과 같은 작업을 성공적으로 완료하여 프레임워크의 일반성을 검증했습니다.
+- 기준 방법과 비교하여 정밀 작업(예: 계단 통과)에서 성능이 크게 향상되어 지형 특화 학습 전략의 효과를 입증했습니다.
+
+### 결론
+이 엔드투엔드 프레임워크는 고충실도 시뮬레이션, 행동 증류 및 지형 적응 학습을 통해 시각 기반 휴머노이드 운동의 핵심 과제를 해결하며 실제 배포를 위한 실현 가능한 솔루션을 제공합니다.

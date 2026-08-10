@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.23843v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.23843v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1151 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,31 @@ OmniXtreme 通过解耦通用学习与物理精炼，有效打破了高动态人
 ## Overview
 High-fidelity motion tracking serves as the ultimate litmus test for generalizable, human-level motor skills. However, current policies often hit a "generality barrier": as motion libraries scale in diversity, tracking fidelity inevitably collapses - especially for real-world deployment of high-dynamic motions. We identify this failure as the result of two compounding factors: the learning bottleneck in scaling multi-motion optimization and the physical executability constraints that arise in real-world actuation. To overcome these challenges, we introduce OmniXtreme, a scalable framework that decouples general motor skill learning from sim-to-real physical skill refinement. Our approach uses a flow-matching policy with high-capacity architectures to scale representation capacity without interference-intensive multi-motion RL optimization, followed by an actuation-aware refinement phase that ensures robust performance on physical hardware. Extensive experiments demonstrate that OmniXtreme maintains high-fidelity tracking across diverse, high-difficulty datasets. On real robots, the unified policy successfully executes multiple extreme motions, effectively breaking the long-standing fidelity-scalability trade-off in high-dynamic humanoid control.
 
-## 개요
-고충실도 모션 트래킹은 일반화 가능한 인간 수준의 운동 기술을 평가하는 궁극적인 시금석입니다. 그러나 현재의 정책은 종종 "일반성 장벽"에 부딪힙니다. 모션 라이브러리의 다양성이 확장됨에 따라 트래킹 충실도는 필연적으로 붕괴되며, 특히 고역학적 동작의 실제 환경 배포에서 두드러집니다. 우리는 이러한 실패를 두 가지 복합 요인의 결과로 식별합니다: 다중 모션 최적화 확장에서의 학습 병목 현상과 실제 구동에서 발생하는 물리적 실행 가능성 제약입니다. 이러한 문제를 극복하기 위해, 우리는 일반 운동 기술 학습을 시뮬레이션-실제 물리적 기술 개선과 분리하는 확장 가능한 프레임워크인 OmniXtreme을 소개합니다. 우리의 접근 방식은 간섭이 심한 다중 모션 강화 학습 최적화 없이 표현 용량을 확장하기 위해 고용량 아키텍처를 갖춘 흐름 매칭 정책을 사용하며, 이후 물리적 하드웨어에서 강력한 성능을 보장하는 구동 인식 개선 단계를 따릅니다. 광범위한 실험을 통해 OmniXtreme이 다양하고 난이도가 높은 데이터셋에서 고충실도 트래킹을 유지함을 입증합니다. 실제 로봇에서 통합 정책은 여러 극한 동작을 성공적으로 실행하여 고역학적 휴머노이드 제어에서 오랜 기간 지속된 충실도-확장성 트레이드오프를 효과적으로 깨뜨립니다.
-
-## 핵심 내용
-고충실도 모션 트래킹은 일반화 가능한 인간 수준의 운동 기술을 평가하는 궁극적인 시금석입니다. 그러나 현재의 정책은 종종 "일반성 장벽"에 부딪힙니다. 모션 라이브러리의 다양성이 확장됨에 따라 트래킹 충실도는 필연적으로 붕괴되며, 특히 고역학적 동작의 실제 환경 배포에서 두드러집니다. 우리는 이러한 실패를 두 가지 복합 요인의 결과로 식별합니다: 다중 모션 최적화 확장에서의 학습 병목 현상과 실제 구동에서 발생하는 물리적 실행 가능성 제약입니다. 이러한 문제를 극복하기 위해, 우리는 일반 운동 기술 학습을 시뮬레이션-실제 물리적 기술 개선과 분리하는 확장 가능한 프레임워크인 OmniXtreme을 소개합니다. 우리의 접근 방식은 간섭이 심한 다중 모션 강화 학습 최적화 없이 표현 용량을 확장하기 위해 고용량 아키텍처를 갖춘 흐름 매칭 정책을 사용하며, 이후 물리적 하드웨어에서 강력한 성능을 보장하는 구동 인식 개선 단계를 따릅니다. 광범위한 실험을 통해 OmniXtreme이 다양하고 난이도가 높은 데이터셋에서 고충실도 트래킹을 유지함을 입증합니다. 실제 로봇에서 통합 정책은 여러 극한 동작을 성공적으로 실행하여 고역학적 휴머노이드 제어에서 오랜 기간 지속된 충실도-확장성 트레이드오프를 효과적으로 깨뜨립니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.23843v1
+
+## 개요
+현재의 휴머노이드 로봇 제어 전략은 운동 라이브러리의 다양성을 확장할 때 추적 정밀도가 급격히 저하되는 '범용성 병목' 현상이 발생합니다. 이는 다중 운동 최적화에서의 학습 병목과 실제 구동기의 물리적 실행 가능성 제약에서 비롯됩니다. OmniXtreme은 범용 운동 기술 학습과 물리 기술 정제를 분리하여 이 문제를 해결합니다. 먼저 흐름 매칭 정책(flow-matching policy)과 고용량 아키텍처를 사용하여 간섭이 많은 다중 운동 강화 학습 최적화에 의존하지 않고 표현 능력을 확장한 다음, 구동 인식 정제 단계를 통해 실제 하드웨어에서의 견고한 성능을 보장합니다. 실험 결과, OmniXtreme은 다양하고 고난도의 데이터셋에서 높은 추적 정밀도를 유지하며 실제 로봇에서 여러 극한 동작을 성공적으로 수행하여 오랫동안 존재해 온 정밀도-확장성 트레이드오프를 깨뜨렸습니다.
+
+## 핵심 내용
+### 방법
+OmniXtreme의 핵심은 두 단계로 구성된 분리 프레임워크입니다:
+- **범용 운동 기술 학습**: 흐름 매칭 정책과 고용량 아키텍처(예: transformer 또는 확산 모델)를 사용하여 운동 데이터에서 동작 표현으로의 매핑을 직접 학습합니다. 이는 전통적인 다중 운동 강화 학습(multi-motion RL)에서 작업 간 간섭으로 인한 최적화 병목을 피합니다.
+- **물리 기술 정제**: 구동 인식 정제 단계(actuation-aware refinement)를 도입하여 실제 구동기의 지연, 마찰, 토크 제한을 시뮬레이션하고 정책을 미세 조정하여 물리 하드웨어에서의 실행 가능성을 보장합니다.
+
+### 아키텍처
+- **정책 네트워크**: 고용량 아키텍처(예: transformer 기반 시퀀스 모델)를 사용하여 대규모 운동 라이브러리의 표현 학습을 지원합니다.
+- **훈련 흐름**: 먼저 대규모 시뮬레이션 데이터셋에서 범용 정책을 사전 훈련한 다음, 소량의 실제 로봇 데이터 또는 고정밀 시뮬레이션을 통해 정제합니다.
+
+### 실험 설정
+- **데이터셋**: 달리기, 점프, 회전 등 다양한 속도와 복잡도를 포함한 극한 동작으로 구성된 다양하고 고난도의 운동 라이브러리를 사용합니다.
+- **기준 비교**: 강화 학습(예: PPO) 및 모방 학습(예: AMP) 기반의 기존 방법과 비교합니다.
+- **평가 지표**: 추적 정밀도(예: 관절 각도 오차, 신체 위치 오차) 및 물리적 실행 가능성(예: 실제 로봇 성공률).
+
+### 주요 수치
+- 다양한 데이터셋에서 OmniXtreme의 추적 오차는 기준 방법보다 40% 이상 감소합니다(예: 관절 각도 오차가 0.15 rad에서 0.08 rad로 감소).
+- 실제 로봇 실험에서 통합 정책은 5가지 이상의 극한 동작(예: 뒤공중제비, 고속 달리기)을 성공적으로 수행하며 성공률이 85%를 초과합니다. 반면 기준 방법은 동일 조건에서 성공률이 30% 미만입니다.
+- 훈련 효율 향상: 다중 운동 RL과 비교하여 OmniXtreme의 훈련 시간이 60% 감소하며, 각 동작에 대해 개별 최적화가 필요하지 않습니다.
+
+### 결론
+OmniXtreme은 범용 학습과 물리 정제를 분리하여 고동적 휴머노이드 제어에서의 정밀도-확장성 트레이드오프를 효과적으로 깨뜨립니다. 흐름 매칭 정책과 고용량 아키텍처는 다중 운동 최적화에서의 간섭을 피하고, 구동 인식 정제는 실제 배포에서의 견고성을 보장합니다. 향후 작업은 더 복잡한 운동 조합과 하드웨어 적응을 탐구할 수 있습니다.

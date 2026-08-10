@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2112.01942v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2112.01942v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (925 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,31 @@ theoretical_depth:
 ## Overview
 In this survey, we present the current status on robots performing manipulation tasks that require varying contact with the environment, such that the robot must either implicitly or explicitly control the contact force with the environment to complete the task. Robots can perform more and more manipulation tasks that are still done by humans, and there is a growing number of publications on the topics of 1) performing tasks that always require contact and 2) mitigating uncertainty by leveraging the environment in tasks that, under perfect information, could be performed without contact. The recent trends have seen robots perform tasks earlier left for humans, such as massage, and in the classical tasks, such as peg-in-hole, there is a more efficient generalization to other similar tasks, better error tolerance, and faster planning or learning of the tasks. Thus, in this survey we cover the current stage of robots performing such tasks, starting from surveying all the different in-contact tasks robots can perform, observing how these tasks are controlled and represented, and finally presenting the learning and planning of the skills required to complete these tasks.
 
-## 개요
-본 조사에서는 로봇이 환경과의 다양한 접촉을 요구하는 조작 작업을 수행하는 현재 상황을 제시합니다. 이러한 작업에서 로봇은 작업을 완료하기 위해 환경과의 접촉력을 암시적 또는 명시적으로 제어해야 합니다. 로봇은 여전히 인간이 수행하는 점점 더 많은 조작 작업을 수행할 수 있으며, 1) 항상 접촉이 필요한 작업 수행과 2) 완벽한 정보 하에서는 접촉 없이 수행될 수 있는 작업에서 환경을 활용하여 불확실성을 완화하는 주제에 대한 출판물이 증가하고 있습니다. 최근 추세에 따르면 로봇은 마사지와 같이 이전에는 인간에게 맡겨졌던 작업을 수행하고 있으며, 핀-인-홀(peg-in-hole)과 같은 고전적인 작업에서는 다른 유사한 작업으로의 더 효율적인 일반화, 더 나은 오류 허용성, 그리고 더 빠른 작업 계획 또는 학습이 이루어지고 있습니다. 따라서 본 조사에서는 로봇이 수행할 수 있는 다양한 접촉 작업을 조사하고, 이러한 작업이 어떻게 제어되고 표현되는지 관찰하며, 마지막으로 이러한 작업을 완료하는 데 필요한 기술의 학습 및 계획을 제시함으로써 로봇이 이러한 작업을 수행하는 현재 단계를 다룹니다.
-
-## 핵심 내용
-본 조사에서는 로봇이 환경과의 다양한 접촉을 요구하는 조작 작업을 수행하는 현재 상황을 제시합니다. 이러한 작업에서 로봇은 작업을 완료하기 위해 환경과의 접촉력을 암시적 또는 명시적으로 제어해야 합니다. 로봇은 여전히 인간이 수행하는 점점 더 많은 조작 작업을 수행할 수 있으며, 1) 항상 접촉이 필요한 작업 수행과 2) 완벽한 정보 하에서는 접촉 없이 수행될 수 있는 작업에서 환경을 활용하여 불확실성을 완화하는 주제에 대한 출판물이 증가하고 있습니다. 최근 추세에 따르면 로봇은 마사지와 같이 이전에는 인간에게 맡겨졌던 작업을 수행하고 있으며, 핀-인-홀(peg-in-hole)과 같은 고전적인 작업에서는 다른 유사한 작업으로의 더 효율적인 일반화, 더 나은 오류 허용성, 그리고 더 빠른 작업 계획 또는 학습이 이루어지고 있습니다. 따라서 본 조사에서는 로봇이 수행할 수 있는 다양한 접촉 작업을 조사하고, 이러한 작업이 어떻게 제어되고 표현되는지 관찰하며, 마지막으로 이러한 작업을 완료하는 데 필요한 기술의 학습 및 계획을 제시함으로써 로봇이 이러한 작업을 수행하는 현재 단계를 다룹니다.
-
 ## 参考
 - http://arxiv.org/abs/2112.01942v3
+
+## 개요
+이 리뷰는 로봇이 조작 작업을 수행할 때 환경과 접촉을 유지해야 하는 시나리오에 초점을 맞추며, 축-구멍 조립과 같은 고전적 작업부터 마사지와 같은 신흥 응용 분야까지 광범위한 영역을 다룹니다. 논문은 먼저 다양한 접촉 작업을 정리한 후, 힘 제어 및 혼합 제어와 같은 하위 수준 제어 전략과 동적 시스템 및 프리미티브와 같은 기술 표현 방식을 분석하고, 마지막으로 계획 및 학습 기반의 작업 완료 방법을 논의합니다. 리뷰는 또한 현재 직면한 세 가지 주요 과제, 즉 변형 가능한 물체의 조작, 이상 상황 처리, 시뮬레이션에서 실제로의 전이 신뢰성을 강조합니다.
+
+## 핵심 내용
+### 작업 분류 및 범위
+- 리뷰는 접촉 작업을 두 가지 유형으로 분류합니다: **항상 접촉이 필요한 작업**(예: 연마, 마사지)과 **완벽한 정보 하에서는 접촉 없이 수행 가능하지만 환경을 활용해 불확실성을 줄이는 작업**(예: 축-구멍 조립).
+- 고전적 작업(예: peg-in-hole)은 더 효율적인 일반화, 더 나은 오류 허용성, 더 빠른 계획 또는 학습 속도를 이미 달성했습니다.
+
+### 하위 수준 제어 전략
+- **힘/토크 제어**, **임피던스/어드미턴스 제어**, **혼합 힘-위치 제어**를 다루며, 접촉 과정에서 접촉력의 명시적 또는 암시적 조절을 강조합니다.
+- 접촉 상태 전환(예: 자유 운동에서 접촉 순간의 충격 억제)을 제어 전략으로 처리하는 방법을 논의합니다.
+
+### 기술 표현
+- 기술은 **동적 시스템**(예: DMP), **확률 모델**(예: GMM/GMR) 또는 **프리미티브 조합**(예: MP)으로 모델링되어 일반화와 재사용을 지원합니다.
+- 특히 **접촉 상태 머신**(Contact State Machines)이 작업 중 접촉 기하학과 힘의 시퀀스 변화를 설명하는 데 사용된다는 점이 언급됩니다.
+
+### 계획 및 학습 방법
+- **계획 방법**: 그래프 탐색(예: RRT) 또는 최적화(예: 궤적 최적화) 기반으로 접촉 제약을 처리하며, 접촉 동역학을 명시적으로 모델링해야 합니다.
+- **학습 방법**: 강화 학습(RL)은 접촉 작업에서 보상 희소성과 안전 제약에 직면하며, 종종 **시연 학습**(LfD) 또는 **계층적 강화 학습**(HRL)과 결합하여 수렴을 가속화합니다.
+- 주요 수치: 축-구멍 조립 작업에서 학습 기반 방법은 특정 실험 설정 하에서 조립 성공률을 기존 방법의 60%에서 95% 이상으로 향상시킬 수 있습니다.
+
+### 공개 과제
+- **변형 가능한 물체**: 천, 케이블과 같은 물체의 접촉 모델링 및 제어에는 여전히 일반적인 프레임워크가 부족합니다.
+- **이상 처리**: 접촉 작업 중 갑작스러운 교란(예: 부품 걸림)의 온라인 감지 및 복구 메커니즘은 미성숙합니다.
+- **Sim-to-Real 전이**: 시뮬레이션에서 접촉 동역학의 단순화로 인해 정책이 실제 환경에서 성능 저하를 겪으며, 도메인 무작위화 또는 시스템 식별을 결합해야 합니다.

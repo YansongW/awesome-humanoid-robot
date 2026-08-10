@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.13850v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.13850v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (901 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,27 @@ sources:
 ## Overview
 We investigate a skill-based framework for humanoid box rearrangement that enables long-horizon execution by sequencing reusable skills at the task level. In our architecture, all skills execute through a shared, task-agnostic whole-body controller (WBC), providing a consistent closed-loop interface for skill composition, in contrast to non-shared designs that use separate low-level controllers per skill. We find that naively reusing the same pretrained WBC can reduce robustness over long horizons, as new skills and their compositions induce shifted state and command distributions. We address this with a simple data aggregation procedure that augments shared-WBC training with rollouts from closed-loop skill execution under domain randomization. To evaluate the approach, we introduce Humanoid Hanoi, a long-horizon Tower-of-Hanoi box rearrangement benchmark, and report results in simulation and on the Digit V3 humanoid robot, demonstrating fully autonomous rearrangement over extended horizons and quantifying the benefits of the shared-WBC approach over non-shared baselines. Project page: https://osudrl.github.io/Humanoid_Hanoi/
 
-## 개요
-본 연구는 휴머노이드의 상자 재배치를 위한 스킬 기반 프레임워크를 조사하며, 작업 수준에서 재사용 가능한 스킬을 순차적으로 실행하여 장기적인 수행을 가능하게 합니다. 우리 아키텍처에서는 모든 스킬이 공유된 작업 비특화 전신 제어기(WBC)를 통해 실행되며, 이는 스킬별로 별도의 하위 수준 제어기를 사용하는 비공유 설계와 달리 일관된 폐루프 인터페이스를 제공합니다. 동일한 사전 훈련된 WBC를 단순히 재사용하면 새로운 스킬과 그 조합이 상태 및 명령 분포를 변화시켜 장기적인 수행에서 강건성이 저하될 수 있음을 발견했습니다. 이에 대해 도메인 무작위화 하에서 폐루프 스킬 실행의 롤아웃을 통해 공유 WBC 훈련을 보강하는 간단한 데이터 수집 절차를 제안합니다. 접근법 평가를 위해 장기적인 하노이 탑 상자 재배치 벤치마크인 Humanoid Hanoi를 도입하고, 시뮬레이션 및 Digit V3 휴머노이드 로봇에서의 결과를 보고하며, 확장된 기간 동안 완전 자율 재배치를 입증하고 공유 WBC 접근법의 비공유 기준선 대비 이점을 정량화합니다. 프로젝트 페이지: https://osudrl.github.io/Humanoid_Hanoi/
-
-## 핵심 내용
-본 연구는 휴머노이드의 상자 재배치를 위한 스킬 기반 프레임워크를 조사하며, 작업 수준에서 재사용 가능한 스킬을 순차적으로 실행하여 장기적인 수행을 가능하게 합니다. 우리 아키텍처에서는 모든 스킬이 공유된 작업 비특화 전신 제어기(WBC)를 통해 실행되며, 이는 스킬별로 별도의 하위 수준 제어기를 사용하는 비공유 설계와 달리 일관된 폐루프 인터페이스를 제공합니다. 동일한 사전 훈련된 WBC를 단순히 재사용하면 새로운 스킬과 그 조합이 상태 및 명령 분포를 변화시켜 장기적인 수행에서 강건성이 저하될 수 있음을 발견했습니다. 이에 대해 도메인 무작위화 하에서 폐루프 스킬 실행의 롤아웃을 통해 공유 WBC 훈련을 보강하는 간단한 데이터 수집 절차를 제안합니다. 접근법 평가를 위해 장기적인 하노이 탑 상자 재배치 벤치마크인 Humanoid Hanoi를 도입하고, 시뮬레이션 및 Digit V3 휴머노이드 로봇에서의 결과를 보고하며, 확장된 기간 동안 완전 자율 재배치를 입증하고 공유 WBC 접근법의 비공유 기준선 대비 이점을 정량화합니다. 프로젝트 페이지: https://osudrl.github.io/Humanoid_Hanoi/
-
 ## 参考
 - http://arxiv.org/abs/2602.13850v3
+
+## 개요
+이 연구는 휴머노이드 로봇의 상자 재배치 작업을 위해 재사용 가능한 스킬 기반의 장시간 실행 프레임워크를 제안한다. 모든 스킬은 공유된 작업 비의존적 전신 제어기(WBC)를 통해 실행되며, 스킬 조합을 위한 일관된 폐루프 인터페이스를 제공한다. 이는 각 스킬이 독립적인 하위 제어기를 사용하는 비공유 설계와 대조적이다. 연구는 사전 훈련된 WBC를 직접 재사용할 경우 새로운 스킬 및 그 조합으로 인해 상태와 명령 분포가 이동하여 장시간 견고성이 저하된다는 점을 발견했다. 이를 해결하기 위해 저자들은 도메인 무작위화 조건에서 폐루프 스킬 실행으로부터 데이터를 수집하여 공유 WBC 훈련을 강화하는 간단한 데이터 집계 방법을 제안한다. 이 방법을 평가하기 위해 Humanoid Hanoi 벤치마크(장시간 하노이 탑 상자 재배치 작업)를 도입하고, 시뮬레이션 및 Digit V3 휴머노이드 로봇에서 실험을 수행했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **스킬 프레임워크**: 장시간 작업을 재사용 가능한 스킬 시퀀스(예: 잡기, 이동, 놓기)로 분해하며, 모든 스킬은 동일한 작업 비의존적 전신 제어기(WBC)를 통해 실행된다.
+- **공유 WBC 설계**: 각 스킬에 대해 독립적으로 하위 제어기를 훈련하는 비공유 방법과 달리, 공유 WBC는 통합된 폐루프 인터페이스를 제공하여 스킬 조합을 단순화하고 일관성을 유지한다.
+- **데이터 집계**: 사전 훈련된 WBC를 직접 재사용할 때 발생하는 장시간 견고성 저하 문제를 해결하기 위해, 도메인 무작위화 조건에서 폐루프 스킬 실행으로부터 롤아웃 데이터를 수집하여 공유 WBC 훈련을 강화한다.
+
+### 실험 설정
+- **벤치마크**: Humanoid Hanoi, 즉 장시간 하노이 탑 상자 재배치 작업을 도입하며, 로봇이 상자를 순서대로 목표 위치로 이동해야 한다.
+- **하드웨어 플랫폼**: Digit V3 휴머노이드 로봇으로, 시뮬레이션 환경과 실제 로봇 모두에서 실험을 수행한다.
+- **비교 기준**: 독립적인 하위 제어기를 사용하는 비공유 WBC 방법과 비교한다.
+
+### 주요 결과
+- 공유 WBC 방법은 장시간 작업에서 비공유 기준선보다 현저히 우수하여 완전 자율적인 상자 재배치를 달성했다.
+- 데이터 집계는 상태 및 명령 분포 이동 문제를 효과적으로 완화하여 장시간 실행의 견고성을 향상시켰다.
+- Digit V3 로봇에서 이 방법은 완전한 하노이 탑 작업을 성공적으로 완료하여 실제 시나리오에서의 실현 가능성을 검증했다.
+
+### 결론
+이 연구는 공유 전신 제어기와 데이터 집계의 결합이 휴머노이드 로봇의 장시간 조작 작업에서 효과적임을 입증하며, 스킬 조합 및 전신 제어에 대한 새로운 설계 방향을 제시한다.

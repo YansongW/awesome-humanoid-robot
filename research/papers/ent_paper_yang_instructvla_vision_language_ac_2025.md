@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.17520v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.17520v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (859 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,24 @@ InstructVLA 成功弥合了直观可操控的人机交互与高效策略学习�
 ## Overview
 To operate effectively in the real world, robots should integrate multimodal reasoning with precise action generation. However, existing vision-language-action (VLA) models often sacrifice one for the other, narrow their abilities to task-specific manipulation data, and suffer catastrophic forgetting of pre-trained vision-language capabilities. To bridge this gap, we introduce InstructVLA, an end-to-end VLA model that preserves the flexible reasoning of large vision-language models (VLMs) while delivering leading manipulation performance with the help of embodied reasoning. InstructVLA introduces a novel training paradigm, Vision-Language-Action Instruction Tuning (VLA-IT), which employs multimodal training with mixture-of-experts adaptation to jointly optimize embodied reasoning and action generation on both standard VLM corpora and a curated 650K-sample VLA-IT dataset. On in-domain SimplerEnv tasks, InstructVLA achieves 33% improvement over SpatialVLA. To evaluate generalization, we introduce SimplerEnv-Instruct, an 80-task benchmark requiring closed-loop control and high-level instruction understanding, where it outperforms a fine-tuned OpenVLA by 96% and an action expert aided by GPT-4o by 29%. Additionally, InstructVLA surpasses baseline VLMs on multimodal tasks and exhibits inference-time scaling by leveraging textual reasoning to boost manipulation performance in both simulated and real-world settings. These results demonstrate InstructVLA's potential for bridging intuitive and steerable human-robot interaction with efficient policy learning.
 
-## 개요
-실제 세계에서 효과적으로 작동하기 위해 로봇은 다중 모드 추론과 정밀한 동작 생성을 통합해야 합니다. 그러나 기존의 시각-언어-동작(VLA) 모델은 종종 한쪽을 희생하고, 작업별 조작 데이터에 능력을 제한하며, 사전 훈련된 시각-언어 능력의 치명적 망각을 겪습니다. 이러한 격차를 해소하기 위해 우리는 InstructVLA를 소개합니다. 이는 대규모 시각-언어 모델(VLM)의 유연한 추론을 유지하면서도 체화된 추론의 도움으로 최고 수준의 조작 성능을 제공하는 종단간 VLA 모델입니다. InstructVLA는 새로운 훈련 패러다임인 시각-언어-동작 명령 튜닝(VLA-IT)을 도입하며, 이는 혼합 전문가 적응을 통한 다중 모드 훈련을 활용하여 표준 VLM 코퍼스와 선별된 65만 샘플 VLA-IT 데이터셋에서 체화된 추론과 동작 생성을 공동으로 최적화합니다. 도메인 내 SimplerEnv 작업에서 InstructVLA는 SpatialVLA 대비 33% 향상된 성능을 달성합니다. 일반화를 평가하기 위해 폐루프 제어와 고수준 명령 이해가 필요한 80개 작업 벤치마크인 SimplerEnv-Instruct를 도입했으며, 여기서 미세 조정된 OpenVLA보다 96%, GPT-4o의 지원을 받는 동작 전문가보다 29% 더 우수한 성능을 보입니다. 또한 InstructVLA는 다중 모드 작업에서 기준 VLM을 능가하며, 텍스트 추론을 활용하여 시뮬레이션 및 실제 환경 모두에서 조작 성능을 향상시키는 추론 시간 스케일링을 보여줍니다. 이러한 결과는 InstructVLA가 직관적이고 제어 가능한 인간-로봇 상호작용과 효율적인 정책 학습을 연결할 잠재력을 입증합니다.
-
-## 핵심 내용
-실제 세계에서 효과적으로 작동하기 위해 로봇은 다중 모드 추론과 정밀한 동작 생성을 통합해야 합니다. 그러나 기존의 시각-언어-동작(VLA) 모델은 종종 한쪽을 희생하고, 작업별 조작 데이터에 능력을 제한하며, 사전 훈련된 시각-언어 능력의 치명적 망각을 겪습니다. 이러한 격차를 해소하기 위해 우리는 InstructVLA를 소개합니다. 이는 대규모 시각-언어 모델(VLM)의 유연한 추론을 유지하면서도 체화된 추론의 도움으로 최고 수준의 조작 성능을 제공하는 종단간 VLA 모델입니다. InstructVLA는 새로운 훈련 패러다임인 시각-언어-동작 명령 튜닝(VLA-IT)을 도입하며, 이는 혼합 전문가 적응을 통한 다중 모드 훈련을 활용하여 표준 VLM 코퍼스와 선별된 65만 샘플 VLA-IT 데이터셋에서 체화된 추론과 동작 생성을 공동으로 최적화합니다. 도메인 내 SimplerEnv 작업에서 InstructVLA는 SpatialVLA 대비 33% 향상된 성능을 달성합니다. 일반화를 평가하기 위해 폐루프 제어와 고수준 명령 이해가 필요한 80개 작업 벤치마크인 SimplerEnv-Instruct를 도입했으며, 여기서 미세 조정된 OpenVLA보다 96%, GPT-4o의 지원을 받는 동작 전문가보다 29% 더 우수한 성능을 보입니다. 또한 InstructVLA는 다중 모드 작업에서 기준 VLM을 능가하며, 텍스트 추론을 활용하여 시뮬레이션 및 실제 환경 모두에서 조작 성능을 향상시키는 추론 시간 스케일링을 보여줍니다. 이러한 결과는 InstructVLA가 직관적이고 제어 가능한 인간-로봇 상호작용과 효율적인 정책 학습을 연결할 잠재력을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.17520v2
+
+## 개요
+InstructVLA는 기존 비전-언어-행동 모델이 다중 모드 추론과 정밀한 행동 생성을 융합할 때 발생하는 트레이드오프 문제를 해결하고, 작업 특화 조작 데이터에 과도하게 집중함으로써 발생하는 사전 학습 능력의 치명적 망각을 방지하는 것을 목표로 한다. 이 모델은 엔드투엔드 아키텍처를 채택하며, VLA-IT 훈련 패러다임을 통해 표준 VLM 코퍼스와 정교하게 구축된 65만 샘플 VLA-IT 데이터셋에서 구현 추론과 행동 생성을 공동으로 최적화한다. 실험 결과, InstructVLA는 SimplerEnv 도메인 내 작업에서 우수한 성능을 보였으며, 80개 작업을 포함하는 SimplerEnv-Instruct 벤치마크에서 일반화 능력을 검증했고, 텍스트 추론을 통해 시뮬레이션 및 실제 환경에서 조작 성능을 향상시키는 추론 시 확장 특성을 입증했다.
+
+## 핵심 내용
+### 방법
+- **VLA-IT 훈련 패러다임**: 혼합 전문가 적응(Mixture-of-Experts Adaptation)을 활용한 다중 모드 훈련으로, 표준 VLM 코퍼스와 65만 샘플의 VLA-IT 데이터셋에서 구현 추론과 행동 생성을 공동으로 최적화한다.
+- **아키텍처 설계**: 엔드투엔드 모델로, 대형 비전-언어 모델(VLM)의 유연한 추론 능력을 유지하면서 구현 추론을 통해 조작 성능을 강화한다.
+
+### 실험 설정
+- **도메인 내 작업**: SimplerEnv 벤치마크에서 평가한 결과, InstructVLA는 SpatialVLA 대비 33%의 성능 향상을 달성했다.
+- **일반화 평가**: 폐루프 제어와 고급 명령 이해를 요구하는 80개 작업을 포함하는 새로운 벤치마크 SimplerEnv-Instruct를 도입했다. InstructVLA는 이 벤치마크에서 미세 조정된 OpenVLA를 96% 능가했으며, GPT-4o가 보조하는 행동 전문가보다 29% 우수한 성능을 보였다.
+
+### 주요 결과
+- **다중 모드 작업**: InstructVLA는 표준 다중 모드 작업에서 기준 VLM 모델을 능가한다.
+- **추론 시 확장**: 텍스트 추론을 활용함으로써 InstructVLA는 시뮬레이션 및 실제 환경 모두에서 조작 성능을 향상시킬 수 있으며, 추론 시 확장 특성을 보여준다.
+
+### 결론
+InstructVLA는 직관적으로 조작 가능한 인간-로봇 상호작용과 효율적인 정책 학습 사이의 격차를 성공적으로 메웠으며, 로봇 조작 분야에서 추론과 행동 생성을 융합할 수 있는 잠재력을 입증했다.

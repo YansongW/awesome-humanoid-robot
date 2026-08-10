@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2003.02638v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2003.02638v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (701 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,26 @@ theoretical_depth:
 ## Overview
 The development of autonomous robotic systems that can learn from human demonstrations to imitate a desired behavior - rather than being manually programmed - has huge technological potential. One major challenge in imitation learning is the correspondence problem: how to establish corresponding states and actions between expert and learner, when the embodiments of the agents are different (morphology, dynamics, degrees of freedom, etc.). Many existing approaches in imitation learning circumvent the correspondence problem, for example, kinesthetic teaching or teleoperation, which are performed on the robot. In this work we explicitly address the correspondence problem by introducing a distance measure between dissimilar embodiments. This measure is then used as a loss function for static pose imitation and as a feedback signal within a model-free deep reinforcement learning framework for dynamic movement imitation between two anthropomorphic robotic arms in simulation. We find that the measure is well suited for describing the similarity between embodiments and for learning imitation policies by distance minimization.
 
-## 개요
-인간의 시연을 통해 학습하여 원하는 행동을 모방할 수 있는 자율 로봇 시스템의 개발(수동 프로그래밍 대신)은 엄청난 기술적 잠재력을 지니고 있습니다. 모방 학습의 주요 과제 중 하나는 대응 문제(correspondence problem)입니다. 즉, 에이전트의 구현체(형태, 동역학, 자유도 등)가 다를 때 전문가와 학습자 간의 상태와 행동을 어떻게 대응시킬 것인가 하는 문제입니다. 모방 학습의 많은 기존 접근 방식은 로봇에서 수행되는 운동 감각 교육(kinaesthetic teaching)이나 원격 조작(teleoperation)과 같이 대응 문제를 우회합니다. 본 연구에서는 서로 다른 구현체 간의 거리 측정(distance measure)을 도입하여 대응 문제를 명시적으로 해결합니다. 이 측정값은 정적 자세 모방을 위한 손실 함수로, 그리고 시뮬레이션에서 두 인간형 로봇 팔 간의 동적 움직임 모방을 위한 모델 프리 심층 강화 학습(model-free deep reinforcement learning) 프레임워크 내에서 피드백 신호로 사용됩니다. 우리는 이 측정값이 구현체 간의 유사성을 설명하고 거리 최소화를 통해 모방 정책을 학습하는 데 적합하다는 것을 발견했습니다.
-
-## 핵심 내용
-인간의 시연을 통해 학습하여 원하는 행동을 모방할 수 있는 자율 로봇 시스템의 개발(수동 프로그래밍 대신)은 엄청난 기술적 잠재력을 지니고 있습니다. 모방 학습의 주요 과제 중 하나는 대응 문제(correspondence problem)입니다. 즉, 에이전트의 구현체(형태, 동역학, 자유도 등)가 다를 때 전문가와 학습자 간의 상태와 행동을 어떻게 대응시킬 것인가 하는 문제입니다. 모방 학습의 많은 기존 접근 방식은 로봇에서 수행되는 운동 감각 교육(kinaesthetic teaching)이나 원격 조작(teleoperation)과 같이 대응 문제를 우회합니다. 본 연구에서는 서로 다른 구현체 간의 거리 측정(distance measure)을 도입하여 대응 문제를 명시적으로 해결합니다. 이 측정값은 정적 자세 모방을 위한 손실 함수로, 그리고 시뮬레이션에서 두 인간형 로봇 팔 간의 동적 움직임 모방을 위한 모델 프리 심층 강화 학습(model-free deep reinforcement learning) 프레임워크 내에서 피드백 신호로 사용됩니다. 우리는 이 측정값이 구현체 간의 유사성을 설명하고 거리 최소화를 통해 모방 정책을 학습하는 데 적합하다는 것을 발견했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2003.02638v1
+
+## 개요
+본 논문은 모방 학습에서의 대응 문제를 해결하기 위해, 서로 다른 로봇 개체 간의 유사성을 측정할 수 있는 거리 척도를 제안한다. 이 척도는 서로 다른 형태를 가진 두 개의 인간형 로봇 팔의 모방 작업에 적용된다: 정적 자세 모방의 경우 신경망 훈련의 손실 함수로 사용되며, 동적 운동 모방의 경우 PPO 기반의 모델 프리(model-free) 심층 강화 학습 프레임워크에서 피드백 신호로 사용된다. 실험 결과, 이 거리 척도는 서로 다른 개체 간의 유사성을 효과적으로 설명할 수 있으며, 거리 최소화를 통해 효과적인 모방 정책을 학습할 수 있음을 보여준다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+- 모방 학습이 직면한 핵심 과제는 **대응 문제**이다: 전문가와 학습자의 로봇 개체가 다를 때(형태, 동역학, 자유도 등의 차이), 상태와 행동 간의 대응을 어떻게 설정할 것인가의 문제이다.
+- 기존 방법인 **kinesthetic teaching**(운동 감각 시범) 및 **teleoperation**(원격 조작)은 일반적으로 대응 문제를 우회하여 대상 로봇에서 직접 조작한다.
+
+### 방법
+- 서로 다른 두 로봇 개체 간의 유사성을 정량화하는 **거리 척도**를 제안한다.
+- **정적 자세 모방**: 이 거리 척도를 신경망의 손실 함수로 사용하여, 거리 최소화를 통해 자세 매핑을 학습한다.
+- **동적 운동 모방**: 이 거리 척도를 피드백 신호로 사용하여, **PPO 기반**(근접 정책 최적화 기반)의 모델 프리 심층 강화 학습 프레임워크에 통합하고, 거리 최소화를 통해 운동 정책을 학습한다.
+
+### 실험 설정
+- 시뮬레이션 환경에서 실험을 수행하며, 서로 다른 형태를 가진 두 개의 **인간형 로봇 팔**(anthropomorphic robotic arms)을 사용한다.
+- 정적 자세 모방과 동적 운동 모방 작업을 각각 테스트한다.
+
+### 주요 결과 및 결론
+- 이 거리 척도는 서로 다른 로봇 개체 간의 유사성을 효과적으로 설명할 수 있다.
+- 거리 최소화를 통해 효과적인 모방 정책을 성공적으로 학습하여, 방법의 타당성을 검증하였다.

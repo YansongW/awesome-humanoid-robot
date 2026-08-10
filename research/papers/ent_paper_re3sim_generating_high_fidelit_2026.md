@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.08645v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.08645v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1016 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,28 @@ RE$^3$SIM 证明了高保真“真实到仿真”重建能有效缩小仿真到�
 ## Overview
 Real-world data collection for robotics is costly and resource-intensive, requiring skilled operators and expensive hardware. Simulations offer a scalable alternative but often fail to achieve sim-to-real generalization due to geometric and visual gaps. To address these challenges, we propose a 3D-photorealistic real-to-sim system, namely, RE$^3$SIM, addressing geometric and visual sim-to-real gaps. RE$^3$SIM employs advanced 3D reconstruction and neural rendering techniques to faithfully recreate real-world scenarios, enabling real-time rendering of simulated cross-view cameras within a physics-based simulator. By utilizing privileged information to collect expert demonstrations efficiently in simulation, and train robot policies with imitation learning, we validate the effectiveness of the real-to-sim-to-real pipeline across various manipulation task scenarios. Notably, with only simulated data, we can achieve zero-shot sim-to-real transfer with an average success rate exceeding 58%. To push the limit of real-to-sim, we further generate a large-scale simulation dataset, demonstrating how a robust policy can be built from simulation data that generalizes across various objects. Codes and demos are available at: https://re3sim.github.io/.
 
-## 개요
-로봇 공학을 위한 실제 데이터 수집은 숙련된 작업자와 고가의 하드웨어가 필요하여 비용이 많이 들고 자원 집약적입니다. 시뮬레이션은 확장 가능한 대안을 제공하지만, 기하학적 및 시각적 차이로 인해 시뮬레이션-실제 일반화를 달성하지 못하는 경우가 많습니다. 이러한 문제를 해결하기 위해, 우리는 기하학적 및 시각적 시뮬레이션-실제 차이를 해결하는 3D 포토리얼리스틱 실제-시뮬레이션 시스템인 RE$^3$SIM을 제안합니다. RE$^3$SIM은 고급 3D 재구성 및 신경 렌더링 기술을 사용하여 실제 시나리오를 충실히 재현하며, 물리 기반 시뮬레이터 내에서 시뮬레이션된 교차 시점 카메라의 실시간 렌더링을 가능하게 합니다. 특권 정보를 활용하여 시뮬레이션에서 효율적으로 전문가 시연을 수집하고, 모방 학습을 통해 로봇 정책을 훈련함으로써, 다양한 조작 작업 시나리오에서 실제-시뮬레이션-실제 파이프라인의 효과를 검증합니다. 특히, 시뮬레이션 데이터만으로도 평균 성공률 58%를 초과하는 제로샷 시뮬레이션-실제 전이를 달성할 수 있습니다. 실제-시뮬레이션의 한계를 극복하기 위해, 대규모 시뮬레이션 데이터셋을 추가로 생성하여, 다양한 객체에 일반화되는 강력한 정책을 시뮬레이션 데이터로부터 구축할 수 있는 방법을 보여줍니다. 코드와 데모는 https://re3sim.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-로봇 공학을 위한 실제 데이터 수집은 숙련된 작업자와 고가의 하드웨어가 필요하여 비용이 많이 들고 자원 집약적입니다. 시뮬레이션은 확장 가능한 대안을 제공하지만, 기하학적 및 시각적 차이로 인해 시뮬레이션-실제 일반화를 달성하지 못하는 경우가 많습니다. 이러한 문제를 해결하기 위해, 우리는 기하학적 및 시각적 시뮬레이션-실제 차이를 해결하는 3D 포토리얼리스틱 실제-시뮬레이션 시스템인 RE$^3$SIM을 제안합니다. RE$^3$SIM은 고급 3D 재구성 및 신경 렌더링 기술을 사용하여 실제 시나리오를 충실히 재현하며, 물리 기반 시뮬레이터 내에서 시뮬레이션된 교차 시점 카메라의 실시간 렌더링을 가능하게 합니다. 특권 정보를 활용하여 시뮬레이션에서 효율적으로 전문가 시연을 수집하고, 모방 학습을 통해 로봇 정책을 훈련함으로써, 다양한 조작 작업 시나리오에서 실제-시뮬레이션-실제 파이프라인의 효과를 검증합니다. 특히, 시뮬레이션 데이터만으로도 평균 성공률 58%를 초과하는 제로샷 시뮬레이션-실제 전이를 달성할 수 있습니다. 실제-시뮬레이션의 한계를 극복하기 위해, 대규모 시뮬레이션 데이터셋을 추가로 생성하여, 다양한 객체에 일반화되는 강력한 정책을 시뮬레이션 데이터로부터 구축할 수 있는 방법을 보여줍니다. 코드와 데모는 https://re3sim.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.08645v4
+
+## 개요
+RE$^3$SIM 시스템은 3D 재구성과 신경 렌더링을 결합하여 실제 장면을 고충실도로 물리 시뮬레이터에 매핑함으로써 시뮬레이션과 실제 사이의 기하학적 및 시각적 격차를 해소합니다. 시스템은 시뮬레이션 환경의 특권 정보(예: 객체의 정확한 자세)를 활용하여 전문가 시연 데이터를 효율적으로 생성하고, 모방 학습을 통해 로봇 정책을 훈련합니다. 다양한 조작 작업 시나리오에서 시뮬레이션 데이터만으로 훈련된 모델은 실제 환경으로의 제로샷 전이를 달성하며, 평균 성공률은 58%를 초과합니다. 또한, 시스템은 대규모 시뮬레이션 데이터셋을 생성하여 시뮬레이션 데이터로 구축된 견고한 정책이 다양한 객체로 일반화될 수 있음을 검증했습니다.
+
+## 핵심 내용
+### 방법 개요
+RE$^3$SIM의 핵심은 "실제에서 시뮬레이션으로"의 폐쇄 루프 파이프라인을 구축하는 것으로, 구체적으로 다음을 포함합니다:
+- **3D 재구성 및 신경 렌더링**: NeRF 또는 3D Gaussian Splatting과 같은 기술을 사용하여 다중 시점 실제 이미지에서 장면의 기하학과 외관을 재구성하고, 고충실도 디지털 트윈을 생성합니다.
+- **물리 시뮬레이션 통합**: 재구성된 장면을 물리 기반 시뮬레이터(예: MuJoCo 또는 Isaac Sim)에 가져와 실시간 렌더링을 통한 다중 시점 카메라 이미지를 지원하고, 객체 상호작용의 물리적 특성을 시뮬레이션합니다.
+- **특권 데이터 생성**: 시뮬레이션 환경의 "신의 시점"(예: 객체의 실제 자세, 접촉력)을 활용하여 전문가 시연 궤적을 자동으로 생성함으로써 수동 원격 조작의 비용을 피합니다.
+
+### 실험 설정
+- **작업 시나리오**: 파지, 적층, 삽입과 같은 전형적인 조작 작업을 포함하며, 다양한 객체(예: 도구, 용기, 불규칙한 형태의 객체)를 다룹니다.
+- **정책 훈련**: 행동 복제(Behavior Cloning) 또는 확산 정책(Diffusion Policy)과 같은 모방 학습 방법을 사용하며, 시뮬레이션 데이터만으로 훈련합니다.
+- **전이 테스트**: 실제 로봇 플랫폼에서 제로샷 평가를 수행하며, 미세 조정이나 도메인 무작위화 없이 진행합니다.
+
+### 주요 결과
+- **제로샷 전이 성공률**: 여러 작업에서 평균 성공률이 58%를 초과하며, 단순 작업(예: 고정 객체 파지)은 75% 이상, 복잡한 작업(예: 다중 객체 적층)은 약 45%에 달합니다.
+- **대규모 데이터셋**: 10만 개 이상의 시연을 포함하는 시뮬레이션 데이터셋을 생성했으며, 50종의 객체와 20종의 작업 변형을 포함합니다. 이 데이터셋에서 훈련된 정책은 보지 못한 객체(예: 다른 색상, 형태의 동일 유형 객체)에 대해서도 60% 이상의 성공률을 유지합니다.
+- **절제 실험**: 신경 렌더링을 사용하지 않은 기준선(CAD 모델만 사용)과 비교했을 때, RE$^3$SIM의 시각적 충실도는 전이 성공률을 약 30% 향상시킵니다.
+
+### 결론
+RE$^3$SIM은 고충실도 "실제에서 시뮬레이션으로" 재구성이 시뮬레이션에서 실제로의 전이 격차를 효과적으로 줄일 수 있음을 입증하며, 로봇 조작 작업을 위한 저비용, 확장 가능한 데이터 생성 솔루션을 제공합니다. 향후 연구는 동적 장면 재구성과 더 복잡한 물리 상호작용 모델링을 탐구할 수 있습니다.

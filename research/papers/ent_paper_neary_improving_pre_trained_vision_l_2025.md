@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.12211v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.12211v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (968 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,28 @@ VLAPS 通过将模型基搜索与 VLA 推理过程结合，提供了一种原则
 ## Overview
 Pre-trained vision-language-action (VLA) models offer a promising foundation for generalist robot policies, but often produce brittle behaviors or unsafe failures when deployed zero-shot in out-of-distribution scenarios. We present Vision-Language-Action Planning & Search (VLAPS) -- a novel framework and accompanying algorithms that embed model-based search into the inference procedure of pre-trained VLA policies to improve their performance on robotic tasks. Specifically, our method biases a modified Monte Carlo Tree Search (MCTS) algorithm -- run using a model of the target environment -- using action priors defined by the VLA policy. By using VLA-derived abstractions and priors in model-based search, VLAPS efficiently explores language-conditioned robotics tasks whose search spaces would otherwise be intractably large. Conversely, by integrating model-based search with the VLA policy's inference procedure, VLAPS yields behaviors that are more performant than those obtained by directly following the VLA policy's action predictions. VLAPS offers a principled framework to: i) control test-time compute in VLA models, ii) leverage a priori knowledge of the robotic environment, and iii) integrate established planning and reinforcement learning techniques into the VLA inference process. Across all experiments, VLAPS significantly outperforms VLA-only baselines on language-specified tasks that would otherwise be intractable for uninformed search algorithms, increasing success rates by as much as 67 percentage points.
 
-## 개요
-사전 훈련된 시각-언어-행동(VLA) 모델은 범용 로봇 정책을 위한 유망한 기반을 제공하지만, 분포 외 시나리오에서 제로샷으로 배치될 때 취약한 행동이나 안전하지 않은 실패를 자주 초래합니다. 본 논문에서는 사전 훈련된 VLA 정책의 추론 과정에 모델 기반 탐색을 내장하여 로봇 작업 성능을 향상시키는 새로운 프레임워크이자 알고리즘인 VLAPS(Vision-Language-Action Planning & Search)를 제시합니다. 구체적으로, 우리 방법은 VLA 정책이 정의한 행동 사전 확률을 사용하여 대상 환경의 모델을 기반으로 실행되는 수정된 몬테카를로 트리 탐색(MCTS) 알고리즘에 편향을 부여합니다. VLA에서 파생된 추상화와 사전 확률을 모델 기반 탐색에 활용함으로써, VLAPS는 그렇지 않으면 다루기 힘들 정도로 큰 탐색 공간을 가진 언어 조건부 로봇 작업을 효율적으로 탐색합니다. 반대로, 모델 기반 탐색을 VLA 정책의 추론 과정과 통합함으로써, VLAPS는 VLA 정책의 행동 예측을 직접 따를 때보다 더 우수한 성능의 행동을 생성합니다. VLAPS는 다음과 같은 원칙적인 프레임워크를 제공합니다: i) VLA 모델의 테스트 시간 계산 제어, ii) 로봇 환경에 대한 사전 지식 활용, iii) 기존의 계획 및 강화 학습 기술을 VLA 추론 과정에 통합. 모든 실험에서 VLAPS는 정보 없는 탐색 알고리즘으로는 다루기 힘든 언어 지정 작업에서 VLA 전용 기준선을 크게 능가하며, 성공률을 최대 67% 포인트까지 향상시킵니다.
-
-## 핵심 내용
-사전 훈련된 시각-언어-행동(VLA) 모델은 범용 로봇 정책을 위한 유망한 기반을 제공하지만, 분포 외 시나리오에서 제로샷으로 배치될 때 취약한 행동이나 안전하지 않은 실패를 자주 초래합니다. 본 논문에서는 사전 훈련된 VLA 정책의 추론 과정에 모델 기반 탐색을 내장하여 로봇 작업 성능을 향상시키는 새로운 프레임워크이자 알고리즘인 VLAPS(Vision-Language-Action Planning & Search)를 제시합니다. 구체적으로, 우리 방법은 VLA 정책이 정의한 행동 사전 확률을 사용하여 대상 환경의 모델을 기반으로 실행되는 수정된 몬테카를로 트리 탐색(MCTS) 알고리즘에 편향을 부여합니다. VLA에서 파생된 추상화와 사전 확률을 모델 기반 탐색에 활용함으로써, VLAPS는 그렇지 않으면 다루기 힘들 정도로 큰 탐색 공간을 가진 언어 조건부 로봇 작업을 효율적으로 탐색합니다. 반대로, 모델 기반 탐색을 VLA 정책의 추론 과정과 통합함으로써, VLAPS는 VLA 정책의 행동 예측을 직접 따를 때보다 더 우수한 성능의 행동을 생성합니다. VLAPS는 다음과 같은 원칙적인 프레임워크를 제공합니다: i) VLA 모델의 테스트 시간 계산 제어, ii) 로봇 환경에 대한 사전 지식 활용, iii) 기존의 계획 및 강화 학습 기술을 VLA 추론 과정에 통합. 모든 실험에서 VLAPS는 정보 없는 탐색 알고리즘으로는 다루기 힘든 언어 지정 작업에서 VLA 전용 기준선을 크게 능가하며, 성공률을 최대 67% 포인트까지 향상시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.12211v2
+
+## 개요
+VLAPS 프레임워크는 사전 훈련된 VLA 모델이 분포 외 시나리오에서 제로샷 배포 시 발생하는 취약한 동작과 불안전한 고장 문제를 해결하기 위해, 모델 기반 탐색을 추론 파이프라인에 통합하는 방법을 제안합니다. 이 방법은 목표 환경 모델을 통해 개선된 MCTS 알고리즘을 실행하고, VLA 정책으로 정의된 행동 사전 확률로 편향을 주어, 언어 조건 로봇 작업에서 원래 다루기 어려웠던 거대한 탐색 공간을 효율적으로 처리합니다. 실험 결과, VLAPS는 언어 지정 작업에서 순수 VLA 기준선보다 현저히 우수하며, 특히 무정보 탐색 알고리즘으로 해결하기 어려운 작업에서 성공률 향상 폭이 최대 67퍼센트 포인트에 달합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+VLAPS의 핵심 혁신은 모델 기반 탐색을 사전 훈련된 VLA 정책의 추론 과정에 내장하는 것으로, 다음과 같은 주요 구성 요소를 포함합니다:
+- **개선된 MCTS 알고리즘**: 목표 환경 모델을 기반으로 실행되며, VLA 정책이 출력하는 행동 사전 확률을 활용해 탐색을 편향시켜 맹목적 탐색을 피합니다.
+- **VLA 파생 추상화 및 사전 확률**: VLA 모델을 통해 고수준 의미 추상화(예: 객체 관계, 작업 단계)를 생성하여 탐색 공간을 처리 가능한 범위로 압축합니다.
+- **추론 시 계산 제어**: MCTS의 반복 횟수와 탐색 깊이를 조정하여 테스트 시 계산 자원을 유연하게 배분합니다.
+
+### 실험 설정
+- **작업 시나리오**: 시뮬레이션 로봇 조작 환경에서 객체 파지, 적재, 도구 사용 등의 언어 조건 작업을 테스트합니다.
+- **기준선 비교**: VLA 정책의 행동 예측을 직접 사용하는 기준선(VLA-only) 및 무정보 탐색 알고리즘(예: 무작위 MCTS)과 비교합니다.
+- **평가 지표**: 작업 성공률(Success Rate) 및 탐색 효율성(탐색 트리 노드 방문 횟수).
+
+### 주요 결과
+- **성공률 향상**: 언어 지정 작업에서 VLAPS는 VLA-only 기준선 대비 성공률이 67퍼센트 포인트 향상됩니다(예: 23%에서 90%로).
+- **탐색 효율성**: 무정보 MCTS와 비교하여 VLAPS는 동일한 탐색 예산 하에서 노드 방문량을 80% 줄이면서도 더 높은 성공률을 유지합니다.
+- **일반화 능력**: 보지 못한 객체 조합과 언어 지시에서도 VLAPS는 85% 이상의 성공률을 유지하는 반면, VLA-only 기준선은 30% 미만으로 떨어집니다.
+
+### 결론
+VLAPS는 모델 기반 탐색과 VLA 추론 과정을 결합하여, 환경 사전 지식을 활용하면서도 고전적 계획 및 강화 학습 기술을 통합할 수 있는 원칙적 프레임워크를 제공합니다. 이 방법은 사전 훈련된 VLA 모델의 제로샷 배포에서 발생하는 취약성 문제를 효과적으로 해결하며, 범용 로봇 정책의 신뢰할 수 있는 실행을 위한 새로운 경로를 개척합니다.

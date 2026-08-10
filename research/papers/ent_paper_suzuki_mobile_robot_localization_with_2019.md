@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.08054v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.08054v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (580 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,25 @@ theoretical_depth:
 ## Overview
 This paper proposes a novel positioning technique suitable for use in mobile robots in urban environments in which large global navigation satellite system (GNSS) positioning errors occur because of multipath signals. During GNSS positioning, the GNSS satellites that are obstructed by buildings emit reflection and diffraction signals, which are called non-line-of-sight (NLOS) multipath signals. These multipath signals cause major positioning errors. The key concept considered in this paper is the estimation of a user's position using the likelihood of the position hypotheses computed from the GNSS pseudoranges, consisting only of LOS signals based on the analysis of the pseudorange residuals. To determine the NLOS GNSS signals from the pseudorange residuals at the user's position, it is necessary to accurately determine the position before the computation of the pseudorange residuals. This problem is solved using a particle filter. We propose a likelihood estimation method using the Mahalanobis distance between the hypotheses of the user's position computed from only the LOS pseudoranges and the particles. To confirm the effectiveness of the proposed technique, a positioning test was performed in a real-world urban environment. The results demonstrated that the proposed method is effective for accurately estimating the user's position in urban canyons.
 
-## 개요
-본 논문은 다중 경로 신호로 인해 큰 GNSS(Global Navigation Satellite System) 위치 결정 오차가 발생하는 도시 환경에서 이동 로봇에 적합한 새로운 위치 결정 기술을 제안합니다. GNSS 위치 결정 중 건물에 의해 차단된 GNSS 위성은 반사 및 회절 신호를 방출하며, 이를 비가시선(NLOS) 다중 경로 신호라고 합니다. 이러한 다중 경로 신호는 주요 위치 결정 오차를 유발합니다. 본 논문에서 고려하는 핵심 개념은 의사거리 잔차 분석을 기반으로 LOS 신호만으로 구성된 GNSS 의사거리로부터 계산된 위치 가설의 우도를 사용하여 사용자의 위치를 추정하는 것입니다. 사용자 위치에서 의사거리 잔차로부터 NLOS GNSS 신호를 판별하려면 의사거리 잔차 계산 전에 위치를 정확히 결정해야 합니다. 이 문제는 파티클 필터를 사용하여 해결됩니다. 우리는 LOS 의사거리만으로 계산된 사용자 위치 가설과 파티클 간의 마할라노비스 거리를 사용하는 우도 추정 방법을 제안합니다. 제안된 기술의 효과를 확인하기 위해 실제 도시 환경에서 위치 결정 테스트를 수행했습니다. 결과는 제안된 방법이 도시 협곡에서 사용자 위치를 정확히 추정하는 데 효과적임을 입증했습니다.
-
-## 핵심 내용
-본 논문은 다중 경로 신호로 인해 큰 GNSS 위치 결정 오차가 발생하는 도시 환경에서 이동 로봇에 적합한 새로운 위치 결정 기술을 제안합니다. GNSS 위치 결정 중 건물에 의해 차단된 GNSS 위성은 반사 및 회절 신호를 방출하며, 이를 비가시선(NLOS) 다중 경로 신호라고 합니다. 이러한 다중 경로 신호는 주요 위치 결정 오차를 유발합니다. 본 논문에서 고려하는 핵심 개념은 의사거리 잔차 분석을 기반으로 LOS 신호만으로 구성된 GNSS 의사거리로부터 계산된 위치 가설의 우도를 사용하여 사용자의 위치를 추정하는 것입니다. 사용자 위치에서 의사거리 잔차로부터 NLOS GNSS 신호를 판별하려면 의사거리 잔차 계산 전에 위치를 정확히 결정해야 합니다. 이 문제는 파티클 필터를 사용하여 해결됩니다. 우리는 LOS 의사거리만으로 계산된 사용자 위치 가설과 파티클 간의 마할라노비스 거리를 사용하는 우도 추정 방법을 제안합니다. 제안된 기술의 효과를 확인하기 위해 실제 도시 환경에서 위치 결정 테스트를 수행했습니다. 결과는 제안된 방법이 도시 협곡에서 사용자 위치를 정확히 추정하는 데 효과적임을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2401.08054v1
+
+## 개요
+도시 환경에서 건물에 의한 차폐로 발생하는 GNSS 다중경로 신호(즉, 비가시거리 NLOS 신호)로 인한 큰 위치 오차를 해결하기 위해, 본 논문은 새로운 측위 기술을 제안한다. 핵심 아이디어는 의사거리 잔차를 분석하여 가시거리 LOS 신호만을 사용해 사용자 위치 가설의 우도 값을 계산함으로써 NLOS 신호 간섭을 배제하는 것이다. 의사거리 잔차 계산 전에 위치를 먼저 결정해야 하는 모순을 해결하기 위해, 연구는 입자 필터를 도입하고 마할라노비스 거리를 사용하여 LOS 의사거리만으로 계산된 위치 가설과 입자 간의 차이를 측정한다. 실제 도시 협곡 환경에서의 측위 실험은 이 방법이 복잡한 도시 환경에서 이동 로봇의 측위 정확도를 크게 향상시킬 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법 구조
+- 입자 필터를 핵심 프레임워크로 사용하며, 각 입자는 위치 가설을 나타낸다.
+- GNSS 의사거리 잔차를 분석하여 비가시거리 NLOS 다중경로 신호를 식별하고 배제한다.
+- 마할라노비스 거리 기반의 우도 추정 방법을 제안하여, LOS 의사거리만으로 도출된 위치 가설과 입자 간의 유사도를 계산한다.
+
+### 실험 설정
+- 다수의 건물 차폐로 다중경로 신호가 발생하기 쉬운 실제 도시 협곡 환경에서 측위 테스트를 수행한다.
+- 기존 GNSS 측위 방법과 비교하여 새 기술의 유효성을 검증한다.
+
+### 주요 결과
+- 실험 결과, 이 방법이 NLOS 신호로 인한 측위 오차를 효과적으로 억제하여 도시 협곡에서 더 정확한 위치 추정을 달성함을 입증한다.
+- 다중경로 신호를 배제함으로써, 측위 정확도는 다중경로 간섭을 처리하지 않은 일반 방법보다 크게 우수하다.
+
+### 결론
+본 논문에서 제안한 의사거리 잔차 분석과 입자 필터 기반의 GNSS 측위 방법은 복잡한 도시 환경에서 이동 로봇의 신뢰할 수 있는 내비게이션을 위한 효과적인 솔루션을 제공한다.

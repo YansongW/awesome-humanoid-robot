@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.20343v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.20343v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (630 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -64,11 +65,23 @@ sources:
 ## Overview
 Musculoskeletal humanoids are robots that closely mimic the human musculoskeletal system, offering various advantages such as variable stiffness control, redundancy, and flexibility. However, their body structure is complex, and muscle paths often significantly deviate from geometric models. To address this, numerous studies have been conducted to learn body schema, particularly the relationships among joint angles, muscle tension, and muscle length. These studies typically rely solely on data collected from the actual robot, but this data collection process is labor-intensive, and learning becomes difficult when the amount of data is limited. Therefore, in this study, we propose a method that applies the concept of Physics-Informed Neural Networks (PINNs) to the learning of body schema in musculoskeletal humanoids, enabling high-accuracy learning even with a small amount of data. By utilizing not only data obtained from the actual robot but also the physical laws governing the relationship between torque and muscle tension under the assumption of correct joint structure, more efficient learning becomes possible. We apply the proposed method to both simulation and an actual musculoskeletal humanoid and discuss its effectiveness and characteristics.
 
-## 개요
-근골격 휴머노이드는 인간의 근골격계를 밀접하게 모방한 로봇으로, 가변 강성 제어, 중복성, 유연성 등 다양한 장점을 제공합니다. 그러나 그들의 신체 구조는 복잡하며, 근육 경로가 기하학적 모델에서 크게 벗어나는 경우가 많습니다. 이를 해결하기 위해, 특히 관절 각도, 근육 장력, 근육 길이 간의 관계인 신체 도식을 학습하는 많은 연구가 수행되었습니다. 이러한 연구는 일반적으로 실제 로봇에서 수집된 데이터에만 의존하지만, 이 데이터 수집 과정은 노동 집약적이며, 데이터 양이 제한적일 때 학습이 어려워집니다. 따라서 본 연구에서는 물리 정보 신경망(PINNs)의 개념을 근골격 휴머노이드의 신체 도식 학습에 적용하여, 적은 양의 데이터로도 높은 정확도의 학습을 가능하게 하는 방법을 제안합니다. 올바른 관절 구조를 가정한 상태에서 토크와 근육 장력 간의 관계를 지배하는 물리 법칙뿐만 아니라 실제 로봇에서 얻은 데이터를 활용함으로써, 더 효율적인 학습이 가능해집니다. 제안된 방법을 시뮬레이션과 실제 근골격 휴머노이드에 적용하고, 그 효과와 특성에 대해 논의합니다.
-
-## 핵심 내용
-근골격 휴머노이드는 인간의 근골격계를 밀접하게 모방한 로봇으로, 가변 강성 제어, 중복성, 유연성 등 다양한 장점을 제공합니다. 그러나 그들의 신체 구조는 복잡하며, 근육 경로가 기하학적 모델에서 크게 벗어나는 경우가 많습니다. 이를 해결하기 위해, 특히 관절 각도, 근육 장력, 근육 길이 간의 관계인 신체 도식을 학습하는 많은 연구가 수행되었습니다. 이러한 연구는 일반적으로 실제 로봇에서 수집된 데이터에만 의존하지만, 이 데이터 수집 과정은 노동 집약적이며, 데이터 양이 제한적일 때 학습이 어려워집니다. 따라서 본 연구에서는 물리 정보 신경망(PINNs)의 개념을 근골격 휴머노이드의 신체 도식 학습에 적용하여, 적은 양의 데이터로도 높은 정확도의 학습을 가능하게 하는 방법을 제안합니다. 올바른 관절 구조를 가정한 상태에서 토크와 근육 장력 간의 관계를 지배하는 물리 법칙뿐만 아니라 실제 로봇에서 얻은 데이터를 활용함으로써, 더 효율적인 학습이 가능해집니다. 제안된 방법을 시뮬레이션과 실제 근골격 휴머노이드에 적용하고, 그 효과와 특성에 대해 논의합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.20343v2
+
+## 개요
+근골격 휴머노이드 로봇은 구조가 복잡하여 근육 경로가 기하학적 모델에서 자주 벗어나며, 전통적인 신체 도식 학습 방법은 대량의 수작업 데이터 수집에 의존하고 데이터 양이 부족할 때 학습이 어렵습니다. 이를 위해 본 연구는 PIMBS 방법을 제안하여 Physics-Informed Neural Networks (PINNs)를 신체 도식 학습에 도입합니다. 이 방법은 실제 로봇 데이터를 활용할 뿐만 아니라 관절 구조와 토크-근육 장력 관계의 물리 법칙을 도입하여 데이터가 제한된 상황에서도 효율적으로 학습할 수 있습니다. 연구는 시뮬레이션 환경과 실제 근골격 휴머노이드 로봇에서 이 방법의 유효성과 특성을 검증했습니다.
+
+## 핵심 내용
+### 배경 및 문제
+- 근골격 휴머노이드 로봇은 인간의 근골격계를 모방하며 가변 강성 제어, 중복성, 유연성 등의 장점을 갖습니다.
+- 신체 구조가 복잡하여 근육 경로가 기하학적 모델에서 크게 벗어나는 경우가 많아, 관절 각도, 근육 장력, 근육 길이 간의 관계를 포함한 신체 도식 학습이 필요합니다.
+- 전통적인 방법은 실제 로봇에서 수집한 데이터에만 의존하지만, 데이터 수집 과정은 노동 집약적이며 데이터 양이 제한될 때 학습이 어렵습니다.
+
+### 방법: PIMBS
+- Physics-Informed Neural Networks (PINNs) 개념을 신체 도식 학습에 적용할 것을 제안합니다.
+- 핵심 아이디어: 실제 로봇 데이터뿐만 아니라 물리 법칙(올바른 관절 구조 가정 하에서 토크와 근육 장력 간의 관계)을 제약 조건으로 활용합니다.
+- 이를 통해 소량의 데이터로도 높은 정밀도의 학습이 가능하며 학습 효율이 향상됩니다.
+
+### 실험 설정 및 결과
+- 이 방법은 시뮬레이션 환경과 실제 근골격 휴머노이드 로봇 모두에서 검증되었습니다.
+- 실험은 이 방법의 유효성과 특성을 논의했지만, 초록과 본문에서는 구체적인 수치나 비교 기준을 제공하지 않았습니다.

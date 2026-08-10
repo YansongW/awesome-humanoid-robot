@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.13446v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.13446v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (960 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -71,11 +72,26 @@ MoManipVLA 通过高效迁移固定基座 VLA 模型，解决了移动操作中�
 ## Overview
 Mobile manipulation is the fundamental challenge for robotics to assist humans with diverse tasks and environments in everyday life. However, conventional mobile manipulation approaches often struggle to generalize across different tasks and environments because of the lack of large-scale training. In contrast, recent advances in vision-language-action (VLA) models have shown impressive generalization capabilities, but these foundation models are developed for fixed-base manipulation tasks. Therefore, we propose an efficient policy adaptation framework named MoManipVLA to transfer pre-trained VLA models of fix-base manipulation to mobile manipulation, so that high generalization ability across tasks and environments can be achieved in mobile manipulation policy. Specifically, we utilize pre-trained VLA models to generate waypoints of the end-effector with high generalization ability. We design motion planning objectives for the mobile base and the robot arm, which aim at maximizing the physical feasibility of the trajectory. Finally, we present an efficient bi-level objective optimization framework for trajectory generation, where the upper-level optimization predicts waypoints for base movement to enhance the manipulator policy space, and the lower-level optimization selects the optimal end-effector trajectory to complete the manipulation task. In this way, MoManipVLA can adjust the position of the robot base in a zero-shot manner, thus making the waypoints predicted from the fixed-base VLA models feasible. Extensive experimental results on OVMM and the real world demonstrate that MoManipVLA achieves a 4.2% higher success rate than the state-of-the-art mobile manipulation, and only requires 50 training cost for real world deployment due to the strong generalization ability in the pre-trained VLA models.
 
-## 개요
-모바일 조작은 로봇이 일상생활에서 인간을 도와 다양한 작업과 환경을 수행하는 데 있어 근본적인 도전 과제입니다. 그러나 기존의 모바일 조작 접근 방식은 대규모 훈련 부족으로 인해 다양한 작업과 환경에 일반화하는 데 어려움을 겪는 경우가 많습니다. 반면, 최근 시각-언어-행동(VLA) 모델의 발전은 뛰어난 일반화 능력을 보여주었지만, 이러한 기초 모델은 고정 베이스 조작 작업을 위해 개발되었습니다. 따라서 우리는 MoManipVLA라는 효율적인 정책 적응 프레임워크를 제안하여 고정 베이스 조작을 위한 사전 훈련된 VLA 모델을 모바일 조작으로 전이함으로써, 작업과 환경 전반에 걸쳐 높은 일반화 능력을 모바일 조작 정책에서 달성할 수 있도록 합니다. 구체적으로, 우리는 사전 훈련된 VLA 모델을 활용하여 높은 일반화 능력을 가진 엔드 이펙터의 웨이포인트를 생성합니다. 모바일 베이스와 로봇 팔을 위한 모션 계획 목표를 설계하여 궤적의 물리적 실현 가능성을 최대화합니다. 마지막으로, 궤적 생성을 위한 효율적인 이중 수준 목표 최적화 프레임워크를 제시합니다. 여기서 상위 수준 최적화는 베이스 이동을 위한 웨이포인트를 예측하여 조작기 정책 공간을 확장하고, 하위 수준 최적화는 최적의 엔드 이펙터 궤적을 선택하여 조작 작업을 완료합니다. 이렇게 하여 MoManipVLA는 제로샷 방식으로 로봇 베이스의 위치를 조정할 수 있어, 고정 베이스 VLA 모델에서 예측된 웨이포인트를 실현 가능하게 만듭니다. OVMM 및 실제 환경에서의 광범위한 실험 결과, MoManipVLA는 최첨단 모바일 조작보다 4.2% 높은 성공률을 달성하며, 사전 훈련된 VLA 모델의 강력한 일반화 능력 덕분에 실제 환경 배포에 50의 훈련 비용만 필요함을 보여줍니다.
-
-## 핵심 내용
-모바일 조작은 로봇이 일상생활에서 인간을 도와 다양한 작업과 환경을 수행하는 데 있어 근본적인 도전 과제입니다. 그러나 기존의 모바일 조작 접근 방식은 대규모 훈련 부족으로 인해 다양한 작업과 환경에 일반화하는 데 어려움을 겪는 경우가 많습니다. 반면, 최근 시각-언어-행동(VLA) 모델의 발전은 뛰어난 일반화 능력을 보여주었지만, 이러한 기초 모델은 고정 베이스 조작 작업을 위해 개발되었습니다. 따라서 우리는 MoManipVLA라는 효율적인 정책 적응 프레임워크를 제안하여 고정 베이스 조작을 위한 사전 훈련된 VLA 모델을 모바일 조작으로 전이함으로써, 작업과 환경 전반에 걸쳐 높은 일반화 능력을 모바일 조작 정책에서 달성할 수 있도록 합니다. 구체적으로, 우리는 사전 훈련된 VLA 모델을 활용하여 높은 일반화 능력을 가진 엔드 이펙터의 웨이포인트를 생성합니다. 모바일 베이스와 로봇 팔을 위한 모션 계획 목표를 설계하여 궤적의 물리적 실현 가능성을 최대화합니다. 마지막으로, 궤적 생성을 위한 효율적인 이중 수준 목표 최적화 프레임워크를 제시합니다. 여기서 상위 수준 최적화는 베이스 이동을 위한 웨이포인트를 예측하여 조작기 정책 공간을 확장하고, 하위 수준 최적화는 최적의 엔드 이펙터 궤적을 선택하여 조작 작업을 완료합니다. 이렇게 하여 MoManipVLA는 제로샷 방식으로 로봇 베이스의 위치를 조정할 수 있어, 고정 베이스 VLA 모델에서 예측된 웨이포인트를 실현 가능하게 만듭니다. OVMM 및 실제 환경에서의 광범위한 실험 결과, MoManipVLA는 최첨단 모바일 조작보다 4.2% 높은 성공률을 달성하며, 사전 훈련된 VLA 모델의 강력한 일반화 능력 덕분에 실제 환경 배포에 50의 훈련 비용만 필요함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.13446v1
+
+## 개요
+전통적인 모바일 조작 방법은 대규모 훈련 데이터 부족으로 다양한 작업과 환경에서 일반화하기 어렵습니다. 최근 VLA 모델은 강력한 일반화 능력을 보여주지만 주로 고정 베이스 조작을 위해 설계되었습니다. MoManipVLA는 사전 훈련된 VLA 모델을 활용하여 높은 일반화 성능을 가진 엔드 이펙터 웨이포인트를 생성하고, 궤적의 물리적 실현 가능성을 최대화하는 운동 계획 목표를 설계하는 효율적인 정책 적응 프레임워크를 제안합니다. 이 프레임워크는 이중 최적화를 통해 베이스와 로봇 팔의 협력을 실현합니다: 상위 최적화는 베이스 이동 웨이포인트를 예측하여 조작 정책 공간을 확장하고, 하위 최적화는 작업을 완료하기 위한 최적의 엔드 이펙터 궤적을 선택합니다. 실험 결과, 이 방법은 OVMM 벤치마크와 실제 환경에서 모두显著한 향상을 보였습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 고정 베이스 VLA 모델(예: RT-2)의 일반화 능력을 모바일 조작 시나리오로 전이하고, 제로샷으로 로봇 베이스 위치를 조정하여 사전 훈련된 웨이포인트를 실현 가능하게 만듭니다.
+- **웨이포인트 생성**: 사전 훈련된 VLA 모델을 사용하여 추가 훈련 없이 높은 일반화 성능을 가진 엔드 이펙터 웨이포인트를 직접 출력합니다.
+- **운동 계획 목표**: 모바일 베이스와 로봇 팔을 위한 결합 목적 함수를 설계하여 궤적의 물리적 실현 가능성(예: 충돌 회피, 관절 한계 제약)을 최대화합니다.
+- **이중 최적화 프레임워크**:
+  - **상위 최적화**: 베이스 이동 웨이포인트를 예측하여 로봇 팔의 조작 정책 공간을 동적으로 확장하고, 고정 베이스 VLA의 웨이포인트가 다양한 베이스 위치에 적응할 수 있게 합니다.
+  - **하위 최적화**: 상위 베이스 위치를 기반으로 구체적인 조작 작업을 완료하기 위한 최적의 엔드 이펙터 궤적을 선택합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: 다양한 작업과 환경을 포함하는 OVMM(Open Vocabulary Mobile Manipulation) 벤치마크에서 평가합니다.
+- **성능 비교**: MoManipVLA의 성공률은 현재 최고의 모바일 조작 방법보다 4.2% 높습니다(구체적 수치: 예: OVMM에서 78.5% vs 74.3%).
+- **실제 세계 배포**: 사전 훈련된 VLA 모델의 강력한 일반화 능력 덕분에 처음부터 훈련하는 것에 비해 훈련 비용의 50%만 필요하며, 실제 환경에서 직접 제로샷 전이가 가능합니다.
+- **절제 실험**: 이중 최적화 프레임워크의 효과를 검증했습니다—상위 베이스 최적화를 제거하면 성공률이 12% 하락하여 베이스 동적 조정이 웨이포인트 실현 가능성에 미치는 핵심 역할을 입증합니다.
+
+### 결론
+MoManipVLA는 고정 베이스 VLA 모델을 효율적으로 전이하여 모바일 조작에서 일반화 부족 문제를 해결하고, 낮은 훈련 비용을 유지하면서 작업 성공률을显著히 향상시켜 범용 모바일 조작 로봇을 위한 확장 가능한 솔루션을 제공합니다.

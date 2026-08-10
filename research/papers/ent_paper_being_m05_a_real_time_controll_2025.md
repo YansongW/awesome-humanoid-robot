@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.07863v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.07863v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (732 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,34 @@ Being-M0.5 与 HuMo100M 共同推动了运动生成技术从实验室走向实�
 ## Overview
 Human motion generation has emerged as a critical technology with transformative potential for real-world applications. However, existing vision-language-motion models (VLMMs) face significant limitations that hinder their practical deployment. We identify controllability as a main bottleneck, manifesting in five key aspects: inadequate response to diverse human commands, limited pose initialization capabilities, poor performance on long-term sequences, insufficient handling of unseen scenarios, and lack of fine-grained control over individual body parts. To overcome these limitations, we present Being-M0.5, the first real-time, controllable VLMM that achieves state-of-the-art performance across multiple motion generation tasks. Our approach is built upon HuMo100M, the largest and most comprehensive human motion dataset to date, comprising over 5 million self-collected motion sequences, 100 million multi-task instructional instances, and detailed part-level annotations that address a critical gap in existing datasets. We introduce a novel part-aware residual quantization technique for motion tokenization that enables precise, granular control over individual body parts during generation. Extensive experimental validation demonstrates Being-M0.5's superior performance across diverse motion benchmarks, while comprehensive efficiency analysis confirms its real-time capabilities. Our contributions include design insights and detailed computational analysis to guide future development of practical motion generators. We believe that HuMo100M and Being-M0.5 represent significant advances that will accelerate the adoption of motion generation technologies in real-world applications. The project page is available at https://beingbeyond.github.io/Being-M0.5.
 
-## 개요
-인간 동작 생성(Human motion generation)은 실제 애플리케이션에 혁신적인 잠재력을 지닌 핵심 기술로 부상했습니다. 그러나 기존의 비전-언어-동작 모델(VLMM)은 실제 배포를 저해하는 상당한 한계에 직면해 있습니다. 우리는 제어 가능성(controllability)을 주요 병목 현상으로 식별하며, 이는 다섯 가지 핵심 측면에서 나타납니다: 다양한 인간 명령에 대한 부적절한 대응, 제한된 포즈 초기화 능력, 장기 시퀀스에 대한 낮은 성능, 보지 못한 시나리오 처리 부족, 개별 신체 부위에 대한 세밀한 제어 부족입니다. 이러한 한계를 극복하기 위해 우리는 Being-M0.5를 제시합니다. 이는 최초의 실시간 제어 가능한 VLMM으로, 여러 동작 생성 작업에서 최첨단 성능을 달성합니다. 우리의 접근 방식은 현재까지 가장 크고 포괄적인 인간 동작 데이터셋인 HuMo100M을 기반으로 구축되었으며, 500만 개 이상의 자체 수집 동작 시퀀스, 1억 개의 멀티태스크 명령 인스턴스, 기존 데이터셋의 중요한 격차를 해소하는 상세한 부위별 주석을 포함합니다. 우리는 동작 토큰화를 위한 새로운 부위 인식 잔차 양자화(part-aware residual quantization) 기술을 도입하여 생성 중 개별 신체 부위에 대한 정밀하고 세분화된 제어를 가능하게 합니다. 광범위한 실험 검증을 통해 다양한 동작 벤치마크에서 Being-M0.5의 우수한 성능을 입증했으며, 포괄적인 효율성 분석을 통해 실시간 기능을 확인했습니다. 우리의 기여에는 실용적인 동작 생성기의 미래 개발을 안내하기 위한 설계 통찰력과 상세한 계산 분석이 포함됩니다. 우리는 HuMo100M과 Being-M0.5가 실제 애플리케이션에서 동작 생성 기술의 채택을 가속화할 중요한 진전을 나타낸다고 믿습니다. 프로젝트 페이지는 https://beingbeyond.github.io/Being-M0.5에서 확인할 수 있습니다.
-
-## 핵심 내용
-인간 동작 생성은 실제 애플리케이션에 혁신적인 잠재력을 지닌 핵심 기술로 부상했습니다. 그러나 기존의 비전-언어-동작 모델(VLMM)은 실제 배포를 저해하는 상당한 한계에 직면해 있습니다. 우리는 제어 가능성을 주요 병목 현상으로 식별하며, 이는 다섯 가지 핵심 측면에서 나타납니다: 다양한 인간 명령에 대한 부적절한 대응, 제한된 포즈 초기화 능력, 장기 시퀀스에 대한 낮은 성능, 보지 못한 시나리오 처리 부족, 개별 신체 부위에 대한 세밀한 제어 부족입니다. 이러한 한계를 극복하기 위해 우리는 Being-M0.5를 제시합니다. 이는 최초의 실시간 제어 가능한 VLMM으로, 여러 동작 생성 작업에서 최첨단 성능을 달성합니다. 우리의 접근 방식은 현재까지 가장 크고 포괄적인 인간 동작 데이터셋인 HuMo100M을 기반으로 구축되었으며, 500만 개 이상의 자체 수집 동작 시퀀스, 1억 개의 멀티태스크 명령 인스턴스, 기존 데이터셋의 중요한 격차를 해소하는 상세한 부위별 주석을 포함합니다. 우리는 동작 토큰화를 위한 새로운 부위 인식 잔차 양자화 기술을 도입하여 생성 중 개별 신체 부위에 대한 정밀하고 세분화된 제어를 가능하게 합니다. 광범위한 실험 검증을 통해 다양한 동작 벤치마크에서 Being-M0.5의 우수한 성능을 입증했으며, 포괄적인 효율성 분석을 통해 실시간 기능을 확인했습니다. 우리의 기여에는 실용적인 동작 생성기의 미래 개발을 안내하기 위한 설계 통찰력과 상세한 계산 분석이 포함됩니다. 우리는 HuMo100M과 Being-M0.5가 실제 애플리케이션에서 동작 생성 기술의 채택을 가속화할 중요한 진전을 나타낸다고 믿습니다. 프로젝트 페이지는 https://beingbeyond.github.io/Being-M0.5에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.07863v1
+
+## 개요
+기존 비전-언어-모션 모델은 제어 가능성 측면에서 다섯 가지 주요 병목 현상이 있습니다: 다양한 인간 명령에 응답하기 어렵고, 자세 초기화 능력이 제한적이며, 긴 시퀀스 생성 품질이 낮고, 보지 못한 장면을 처리하지 못하며, 신체 부위별 세밀한 제어가 부족합니다. Being-M0.5는 HuMo100M 데이터셋과 부위 인식 잔차 양자화 기술을 도입하여 최초로 실시간 제어 가능한 모션 생성을 구현했습니다. 이 모델은 여러 벤치마크에서 선도적인 성능을 보여주며, 효율성 분석을 통해 실시간 처리 능력을 검증하여 실제 배포를 위한 핵심 설계 통찰력을 제공합니다.
+
+## 핵심 내용
+### 핵심 문제
+기존 VLMM은 제어 가능성에서 다섯 가지 주요 결함이 있습니다:
+- 사용자의 다양한 명령에 충분히 응답하지 못함
+- 자세 초기화 능력이 제한됨
+- 긴 시퀀스 생성 품질이 낮음
+- 보지 못한 장면에 대한 일반화 부족
+- 신체 각 부위의 독립적 제어 부재
+
+### 데이터셋: HuMo100M
+- 규모: 500만 개 이상의 자체 수집 모션 시퀀스를 포함하며, 총 1억 개의 멀티태스크 명령 인스턴스로 구성
+- 특징: 세부 부위 수준 주석을 제공하여 기존 데이터셋의 세밀한 제어 측면 공백을 메움
+- 용도: 모델 훈련 및 멀티태스크 학습 지원
+
+### 방법 혁신
+- **부위 인식 잔차 양자화**: 잔차 인코딩을 통해 머리, 팔, 몸통 등 독립적인 신체 부위의 정밀한 제어를 구현하는 새로운 모션 토큰화 기술
+- 모델 아키텍처는 실시간 추론을 지원하며, 생성 과정에서 지정된 부위의 모션 파라미터를 동적으로 조정 가능
+
+### 실험 및 성능
+- 여러 모션 생성 벤치마크에서 SOTA 성능 달성
+- 효율성 분석 확인: 모델은 실시간 처리 능력을 갖추어 실제 애플리케이션의 지연 시간 요구 사항을 충족
+- 절제 실험을 통해 부위 인식 양자화가 제어 정밀도를 크게 향상시킴을 검증
+
+### 결론 및 의의
+Being-M0.5와 HuMo100M은 함께 모션 생성 기술을 실험실에서 실제 배포로 이끌며, 로봇, 애니메이션, 인간-컴퓨터 상호작용 등 분야에 제어 가능하고 실시간적인 솔루션을 제공합니다. 프로젝트 페이지: https://beingbeyond.github.io/Being-M0.5

@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.04447v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.04447v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (834 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,26 @@ DreamVLA 通过整合全面世界知识预测，有效解决了现有 VLA 模型
 ## Overview
 Recent advances in vision-language-action (VLA) models have shown promise in integrating image generation with action prediction to improve generalization and reasoning in robot manipulation. However, existing methods are limited to challenging image-based forecasting, which suffers from redundant information and lacks comprehensive and critical world knowledge, including dynamic, spatial and semantic information. To address these limitations, we propose DreamVLA, a novel VLA framework that integrates comprehensive world knowledge forecasting to enable inverse dynamics modeling, thereby establishing a perception-prediction-action loop for manipulation tasks. Specifically, DreamVLA introduces a dynamic-region-guided world knowledge prediction, integrated with the spatial and semantic cues, which provide compact yet comprehensive representations for action planning. This design aligns with how humans interact with the world by first forming abstract multimodal reasoning chains before acting. To mitigate interference among the dynamic, spatial and semantic information during training, we adopt a block-wise structured attention mechanism that masks their mutual attention, preventing information leakage and keeping each representation clean and disentangled. Moreover, to model the conditional distribution over future actions, we employ a diffusion-based transformer that disentangles action representations from shared latent features. Extensive experiments on both real-world and simulation environments demonstrate that DreamVLA achieves 76.7% success rate on real robot tasks and 4.44 average length on the CALVIN ABC-D benchmarks.
 
-## 개요
-최근 시각-언어-행동(VLA) 모델의 발전은 이미지 생성과 행동 예측을 통합하여 로봇 조작에서 일반화 및 추론 능력을 향상시키는 가능성을 보여주었습니다. 그러나 기존 방법은 까다로운 이미지 기반 예측에 국한되어 있으며, 이는 중복 정보로 인해 어려움을 겪고 동적, 공간적 및 의미적 정보를 포함한 포괄적이고 중요한 세계 지식이 부족합니다. 이러한 한계를 해결하기 위해, 우리는 포괄적인 세계 지식 예측을 통합하여 역동역학 모델링을 가능하게 하고, 이를 통해 조작 작업을 위한 인식-예측-행동 루프를 구축하는 새로운 VLA 프레임워크인 DreamVLA를 제안합니다. 구체적으로, DreamVLA는 동적 영역 기반 세계 지식 예측을 도입하며, 이는 공간적 및 의미적 단서와 통합되어 행동 계획을 위한 간결하면서도 포괄적인 표현을 제공합니다. 이 설계는 인간이 행동하기 전에 먼저 추상적인 다중 모달 추론 체인을 형성하는 방식과 일치합니다. 훈련 중 동적, 공간적 및 의미적 정보 간의 간섭을 완화하기 위해, 우리는 블록 단위 구조적 주의 메커니즘을 채택하여 상호 주의를 마스킹함으로써 정보 누출을 방지하고 각 표현을 깔끔하고 분리된 상태로 유지합니다. 또한, 미래 행동에 대한 조건부 분포를 모델링하기 위해, 우리는 확산 기반 트랜스포머를 사용하여 공유 잠재 특징에서 행동 표현을 분리합니다. 실제 환경과 시뮬레이션 환경 모두에서의 광범위한 실험을 통해 DreamVLA는 실제 로봇 작업에서 76.7%의 성공률과 CALVIN ABC-D 벤치마크에서 평균 길이 4.44를 달성함을 입증했습니다.
-
-## 핵심 내용
-최근 시각-언어-행동(VLA) 모델의 발전은 이미지 생성과 행동 예측을 통합하여 로봇 조작에서 일반화 및 추론 능력을 향상시키는 가능성을 보여주었습니다. 그러나 기존 방법은 까다로운 이미지 기반 예측에 국한되어 있으며, 이는 중복 정보로 인해 어려움을 겪고 동적, 공간적 및 의미적 정보를 포함한 포괄적이고 중요한 세계 지식이 부족합니다. 이러한 한계를 해결하기 위해, 우리는 포괄적인 세계 지식 예측을 통합하여 역동역학 모델링을 가능하게 하고, 이를 통해 조작 작업을 위한 인식-예측-행동 루프를 구축하는 새로운 VLA 프레임워크인 DreamVLA를 제안합니다. 구체적으로, DreamVLA는 동적 영역 기반 세계 지식 예측을 도입하며, 이는 공간적 및 의미적 단서와 통합되어 행동 계획을 위한 간결하면서도 포괄적인 표현을 제공합니다. 이 설계는 인간이 행동하기 전에 먼저 추상적인 다중 모달 추론 체인을 형성하는 방식과 일치합니다. 훈련 중 동적, 공간적 및 의미적 정보 간의 간섭을 완화하기 위해, 우리는 블록 단위 구조적 주의 메커니즘을 채택하여 상호 주의를 마스킹함으로써 정보 누출을 방지하고 각 표현을 깔끔하고 분리된 상태로 유지합니다. 또한, 미래 행동에 대한 조건부 분포를 모델링하기 위해, 우리는 확산 기반 트랜스포머를 사용하여 공유 잠재 특징에서 행동 표현을 분리합니다. 실제 환경과 시뮬레이션 환경 모두에서의 광범위한 실험을 통해 DreamVLA는 실제 로봇 작업에서 76.7%의 성공률과 CALVIN ABC-D 벤치마크에서 평균 길이 4.44를 달성함을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.04447v3
+
+## 개요
+DreamVLA는 기존 비전-언어-행동 모델이 이미지 예측에 의존하고, 정보가 중복되며, 동적·공간·의미 정보와 같은 핵심 세계 지식이 부족하다는 한계를 해결하기 위해 새로운 프레임워크를 제안한다. 이 프레임워크는 동적 영역 유도 세계 지식 예측을 통해 공간 및 의미 단서를 결합하여 행동 계획에 간결하고 포괄적인 표현을 제공하며, 인간이 먼저 추상적 다중 모달 추론 체인을 형성한 후 행동하는 과정을 모사한다. 훈련에서는 블록 구조적 주의 메커니즘을 사용하여 동적·공간·의미 정보가 서로 간섭하지 않도록 하고 각 표현을 명확하게 분리한다. 또한 확산 기반 Transformer를 활용하여 행동 표현을 공유 잠재 특징에서 분리하고 미래 행동의 조건부 분포를 모델링한다.
+
+## 핵심 내용
+### 방법 아키텍처
+DreamVLA의 핵심은 인식-예측-행동 루프로, 세 가지 주요 모듈을 포함한다:
+- **동적 영역 유도 세계 지식 예측**: 동적 영역 위치 파악을 통해 간결한 시공간 특징을 추출하고 중복 이미지 정보를 방지한다.
+- **공간 및 의미 단서 통합**: 공간 위치와 의미 레이블을 예측에 통합하여 다중 모달 추론 체인을 형성하고 행동 생성을 안내한다.
+- **블록 구조적 주의 메커니즘**: 훈련 중 동적·공간·의미 정보 간의 상호 주의를 차단하여 정보 누출을 방지하고 각 표현의 독립적 분리를 보장한다.
+
+### 행동 모델링
+확산 기반 Transformer 아키텍처를 채택하여 행동 표현을 공유 잠재 특징에서 분리하고, 조건부 확산 과정을 통해 미래 행동의 분포를 모델링한다. 이 설계는 모델이 예측된 세계 지식을 기반으로 정밀한 행동 시퀀스를 생성할 수 있게 한다.
+
+### 실험 설정 및 결과
+- **실제 로봇 작업**: 다양한 조작 시나리오(예: 파지, 배치, 조립)에서 테스트한 결과, DreamVLA는 76.7%의 성공률을 달성하여 기준 모델보다 크게 우수했다.
+- **CALVIN ABC-D 벤치마크**: 시뮬레이션 환경에서 연속 작업 완료 능력을 평가한 결과, 평균 작업 길이가 4.44에 달해 장기 계획 능력을 보여주었다.
+- **절제 실험**: 동적 영역 유도 또는 블록 주의 메커니즘을 제거하면 성공률이 10-15% 하락하여 각 구성 요소의 유효성을 검증했다.
+
+### 결론
+DreamVLA는 포괄적인 세계 지식 예측을 통합하여 기존 VLA 모델의 정보 중복 및 지식 부족 문제를 효과적으로 해결하며, 실제 및 시뮬레이션 환경 모두에서 우수한 성능을 입증했다. 향후 연구에서는 더 복잡한 동적 시나리오와 다중 로봇 협업을 탐구할 수 있다.

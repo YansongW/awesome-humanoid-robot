@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.07788v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.07788v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (998 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,14 +76,55 @@ BiGym 支持多种观测类型，以匹配真实机器人系统的复杂性：
 ### 结论
 BiGym 为移动双臂机器人操作提供了一个标准化、可复现的评估平台，其演示驱动特性有助于缩小仿真与真实世界之间的差距。研究团队指出，未来工作可聚焦于提升算法在复杂任务中的泛化能力，以及探索多模态融合策略。
 
-## Overview
-We introduce BiGym, a new benchmark and learning environment for mobile bi-manual demo-driven robotic manipulation. BiGym features 40 diverse tasks set in home environments, ranging from simple target reaching to complex kitchen cleaning. To capture the real-world performance accurately, we provide human-collected demonstrations for each task, reflecting the diverse modalities found in real-world robot trajectories. BiGym supports a variety of observations, including proprioceptive data and visual inputs such as RGB, and depth from 3 camera views. To validate the usability of BiGym, we thoroughly benchmark the state-of-the-art imitation learning algorithms and demo-driven reinforcement learning algorithms within the environment and discuss the future opportunities.
-
-## 개요
-BiGym은 모바일 양팔 로봇의 데모 기반 조작을 위한 새로운 벤치마크 및 학습 환경을 소개합니다. BiGym은 간단한 목표 도달부터 복잡한 주방 청소까지 가정 환경에서 설정된 40가지 다양한 작업을 특징으로 합니다. 실제 성능을 정확하게 포착하기 위해 각 작업에 대해 인간이 수집한 데모를 제공하며, 이는 실제 로봇 궤적에서 발견되는 다양한 양식을 반영합니다. BiGym은 고유수용성 데이터와 3개의 카메라 뷰에서 제공되는 RGB 및 깊이와 같은 시각적 입력을 포함한 다양한 관측을 지원합니다. BiGym의 유용성을 검증하기 위해 환경 내에서 최신 모방 학습 알고리즘과 데모 기반 강화 학습 알고리즘을 철저히 벤치마킹하고 향후 기회를 논의합니다.
-
-## 핵심 내용
-BiGym은 모바일 양팔 로봇의 데모 기반 조작을 위한 새로운 벤치마크 및 학습 환경을 소개합니다. BiGym은 간단한 목표 도달부터 복잡한 주방 청소까지 가정 환경에서 설정된 40가지 다양한 작업을 특징으로 합니다. 실제 성능을 정확하게 포착하기 위해 각 작업에 대해 인간이 수집한 데모를 제공하며, 이는 실제 로봇 궤적에서 발견되는 다양한 양식을 반영합니다. BiGym은 고유수용성 데이터와 3개의 카메라 뷰에서 제공되는 RGB 및 깊이와 같은 시각적 입력을 포함한 다양한 관측을 지원합니다. BiGym의 유용성을 검증하기 위해 환경 내에서 최신 모방 학습 알고리즘과 데모 기반 강화 학습 알고리즘을 철저히 벤치마킹하고 향후 기회를 논의합니다.
-
 ## 参考
 - http://arxiv.org/abs/2407.07788v2
+
+## Overview
+BiGym is a simulation benchmark and learning environment designed specifically for mobile dual-arm robots, aimed at advancing research in demonstration-driven manipulation tasks. The environment includes 40 diverse household scenario tasks, ranging from simple object grasping to complex kitchen cleaning, covering multiple modalities present in real-world robot trajectories. To accurately reflect real-world performance, BiGym provides human-collected demonstration data for each task and supports multiple observation inputs, including proprioceptive data as well as RGB and depth visual information from three camera viewpoints. The research team validated BiGym's practicality by comprehensively testing state-of-the-art imitation learning algorithms and demonstration-driven reinforcement learning algorithms within this environment, and discussed future research directions.
+
+## Content
+### Method
+The core design of BiGym revolves around demonstration-driven mobile dual-arm manipulation tasks. The environment is built on a simulation platform, emphasizing learning from human demonstrations to simulate the diversity of real-world robot trajectories. Each task is accompanied by demonstration data collected by human operators, which covers multiple modalities and provides rich training samples for algorithms.
+
+### Architecture and Observations
+BiGym supports multiple observation types to match the complexity of real robot systems:
+- **Proprioceptive data**: Includes internal state information such as robot joint angles and end-effector positions.
+- **Visual input**: Provides RGB images and depth images from three camera viewpoints, enabling algorithms to perceive the three-dimensional spatial environment.
+
+### Experimental Setup
+- **Task set**: Includes 40 household environment tasks, with difficulty ranging from simple target reaching to complex kitchen cleaning.
+- **Benchmark testing**: The research team systematically evaluated state-of-the-art imitation learning algorithms (e.g., Behavior Cloning) and demonstration-driven reinforcement learning algorithms (e.g., Demo-Driven RL) in the BiGym environment. All code and datasets have been open-sourced.
+
+### Key Numbers and Conclusions
+- Number of tasks: 40, covering a variety of household manipulation scenarios.
+- Demonstration data: Each task provides human-collected demonstrations, ensuring the data accurately reflects human manipulation patterns.
+- Observation dimensions: Supports RGB and depth information from 3 camera viewpoints, as well as proprioceptive data.
+- Benchmark results: Experiments show that existing algorithms perform well on simple tasks, but there remains significant room for improvement on complex tasks (e.g., kitchen cleaning), revealing key directions for future research.
+
+### Conclusion
+BiGym provides a standardized and reproducible evaluation platform for mobile dual-arm robot manipulation, and its demonstration-driven characteristics help bridge the gap between simulation and the real world. The research team notes that future work could focus on improving algorithm generalization in complex tasks and exploring multimodal fusion strategies.
+
+## 개요
+BiGym은 이동형 이중 팔 로봇을 위해 설계된 시뮬레이션 벤치마크 및 학습 환경으로, 시연 기반 조작 작업 연구를 촉진하는 것을 목표로 합니다. 이 환경은 간단한 목표물 집기부터 복잡한 주방 청소까지 40가지 다양한 가정 환경 작업을 포함하며, 실제 세계 로봇 궤적의 다양한 모달리티를 포괄합니다. 실제 성능을 정확히 반영하기 위해 BiGym은 각 작업에 대해 인간이 수집한 시연 데이터를 제공하며, 고유수용감각 데이터와 세 개의 카메라 시점에서 얻은 RGB 및 깊이 시각 정보를 포함한 다양한 관측 입력을 지원합니다. 연구팀은 이 환경에서 최신 모방 학습 알고리즘과 시연 기반 강화 학습 알고리즘을 포괄적으로 테스트하여 BiGym의 실용성을 검증하고 향후 연구 방향을 논의했습니다.
+
+## 핵심 내용
+### 방법
+BiGym의 핵심 설계는 시연 기반(demo-driven) 이동형 이중 팔 조작 작업을 중심으로 이루어집니다. 환경은 시뮬레이션 플랫폼을 기반으로 구축되었으며, 인간 시연에서 학습하여 실제 세계 로봇 궤적의 다양성을 모방하는 데 중점을 둡니다. 각 작업에는 인간 운영자가 수집한 시연 데이터가 포함되며, 이 데이터는 다양한 모달리티를 포괄하여 알고리즘에 풍부한 훈련 샘플을 제공합니다.
+
+### 아키텍처 및 관측
+BiGym은 실제 로봇 시스템의 복잡성을 반영하기 위해 여러 관측 유형을 지원합니다:
+- **고유수용감각 데이터**: 로봇 관절 각도, 말단 실행기 위치 등 내부 상태 정보를 포함합니다.
+- **시각 입력**: 세 개의 카메라 시점에서 얻은 RGB 이미지와 깊이 이미지를 제공하여 알고리즘이 3차원 공간 환경을 인식할 수 있게 합니다.
+
+### 실험 설정
+- **작업 세트**: 목표 도달(target reaching)부터 복잡한 주방 청소(kitchen cleaning)까지 다양한 난이도의 40가지 가정 환경 작업을 포함합니다.
+- **벤치마크 테스트**: 연구팀은 BiGym 환경에서 현재 최신 모방 학습 알고리즘(예: Behavior Cloning)과 시연 기반 강화 학습 알고리즘(예: Demo-Driven RL)을 체계적으로 평가했습니다. 모든 코드와 데이터 세트는 오픈소스로 공개되었습니다.
+
+### 주요 수치 및 결론
+- 작업 수: 40가지로, 다양한 가정 조작 시나리오를 포괄합니다.
+- 시연 데이터: 각 작업에 인간이 수집한 시연을 제공하여 데이터가 인간 조작 패턴을 실제로 반영하도록 보장합니다.
+- 관측 차원: 세 개의 카메라 시점에서 얻은 RGB 및 깊이 정보와 고유수용감각 데이터를 지원합니다.
+- 벤치마크 결과: 실험에 따르면 기존 알고리즘은 간단한 작업에서 우수한 성능을 보이지만, 복잡한 작업(예: 주방 청소)에서는 여전히 상당한 개선 여지가 있어 향후 연구의 핵심 방향을 제시합니다.
+
+### 결론
+BiGym은 이동형 이중 팔 로봇 조작을 위한 표준화되고 재현 가능한 평가 플랫폼을 제공하며, 시연 기반 특성은 시뮬레이션과 실제 세계 간의 격차를 줄이는 데 기여합니다. 연구팀은 향후 작업이 복잡한 작업에서 알고리즘의 일반화 능력을 향상시키고 다중 모달리티 융합 전략을 탐구하는 데 초점을 맞출 수 있다고 지적합니다.

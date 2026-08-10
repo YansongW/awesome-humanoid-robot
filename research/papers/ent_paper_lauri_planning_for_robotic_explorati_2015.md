@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1502.02474v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1502.02474v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1075 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,32 @@ theoretical_depth:
 ## Overview
 We address the problem of controlling a mobile robot to explore a partially known environment. The robot's objective is the maximization of the amount of information collected about the environment. We formulate the problem as a partially observable Markov decision process (POMDP) with an information-theoretic objective function, and solve it applying forward simulation algorithms with an open-loop approximation. We present a new sample-based approximation for mutual information useful in mobile robotics. The approximation can be seamlessly integrated with forward simulation planning algorithms. We investigate the usefulness of POMDP based planning for exploration, and to alleviate some of its weaknesses propose a combination with frontier based exploration. Experimental results in simulated and real environments show that, depending on the environment, applying POMDP based planning for exploration can improve performance over frontier exploration.
 
-## 개요
-본 연구는 부분적으로 알려진 환경을 탐사하는 이동 로봇의 제어 문제를 다룹니다. 로봇의 목표는 환경에 대해 수집되는 정보의 양을 최대화하는 것입니다. 이 문제를 정보 이론적 목적 함수를 가진 부분 관찰 마르코프 결정 과정(POMDP)으로 정식화하고, 개방 루프 근사를 적용한 순방향 시뮬레이션 알고리즘을 통해 해결합니다. 이동 로봇 공학에 유용한 상호 정보에 대한 새로운 샘플 기반 근사법을 제시합니다. 이 근사법은 순방향 시뮬레이션 계획 알고리즘과 원활하게 통합될 수 있습니다. 탐사를 위한 POMDP 기반 계획의 유용성을 조사하고, 그 약점을 완화하기 위해 프론티어 기반 탐사와의 결합을 제안합니다. 시뮬레이션 및 실제 환경에서의 실험 결과, 환경에 따라 POMDP 기반 탐사 계획이 프론티어 탐사보다 성능을 향상시킬 수 있음을 보여줍니다.
-
-## 핵심 내용
-본 연구는 부분적으로 알려진 환경을 탐사하는 이동 로봇의 제어 문제를 다룹니다. 로봇의 목표는 환경에 대해 수집되는 정보의 양을 최대화하는 것입니다. 이 문제를 정보 이론적 목적 함수를 가진 부분 관찰 마르코프 결정 과정(POMDP)으로 정식화하고, 개방 루프 근사를 적용한 순방향 시뮬레이션 알고리즘을 통해 해결합니다. 이동 로봇 공학에 유용한 상호 정보에 대한 새로운 샘플 기반 근사법을 제시합니다. 이 근사법은 순방향 시뮬레이션 계획 알고리즘과 원활하게 통합될 수 있습니다. 탐사를 위한 POMDP 기반 계획의 유용성을 조사하고, 그 약점을 완화하기 위해 프론티어 기반 탐사와의 결합을 제안합니다. 시뮬레이션 및 실제 환경에서의 실험 결과, 환경에 따라 POMDP 기반 탐사 계획이 프론티어 탐사보다 성능을 향상시킬 수 있음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1502.02474v2
+
+## 개요
+본 논문은 부분적으로 알려진 환경에서 이동 로봇의 정보 수집량을 최대화하는 방법을 연구한다. 저자들은 문제를 부분 관측 마르코프 결정 과정(POMDP)으로 정식화하고, 정보 이론적 목적 함수를 채택하며, 개루프 근사 순방향 시뮬레이션 알고리즘을 적용하여 해결한다. 그들은 이동 로봇에 적합한 새로운 샘플 기반 상호 정보 근사 방법을 제안하며, 이를 순방향 시뮬레이션 계획 알고리즘에 원활하게 통합할 수 있다. 순수 POMDP 계획의 한계를 보완하기 위해, 저자들은 이를 전선 탐사 전략과 결합하였고, 시뮬레이션 및 실제 실내 환경에서의 실험은 이 방법이 특정 환경에서 기존 전선 탐사보다 우수함을 보여준다.
+
+## 핵심 내용
+### 문제 모델링
+- 로봇 탐사 문제를 **POMDP**로 모델링하며, 상태 공간은 로봇 자세와 환경 지도를 포함하고, 행동 공간은 이동 명령, 관측은 센서 데이터로 구성된다.
+- 보상 함수는 **상호 정보**로 정의되며, 이는 로봇의 새로운 관측과 미지 환경 상태 사이의 정보 이득을 의미하고, 목표는 환경 불확실성을 최소화하는 것이다.
+
+### 방법 핵심
+- **개루프 순방향 시뮬레이션 계획**(open-loop forward-simulation planning)을 채택하여, 유한 계획 시간 범위 내에서 행동 시퀀스를 샘플링하고 각 시퀀스의 기대 상호 정보를 평가한다.
+- **샘플 기반 상호 정보 근사**를 제안한다: 몬테카를로 샘플링을 통해 현재 신념 상태에서 미래 관측을 생성하고, 입자 필터를 사용하여 상호 정보를 추정함으로써 고차원 적분의 해석적 계산을 피한다.
+- 근사 상호 정보를 계획 목표로 사용하며, **전선 탐사**(frontier-based exploration)와 결합한다: POMDP 계획기의 계산량이 과도하거나 정보 이득이 유의미하지 않을 때, 탐사 효율을 유지하기 위해 전선 탐사 전략으로 전환한다.
+
+### 실험 설정
+- 시뮬레이션 환경: **ROS Stage** 시뮬레이터를 사용하여 2D 그리드 지도를 구축하고, 로봇에는 레이저 거리 측정기가 장착된다.
+- 실제 환경: 실내 복도와 사무실 시나리오에 **TurtleBot** 로봇을 배치하고, 360° 라이다를 탑재한다.
+- 비교 기준선: 순수 전선 탐사(Frontier), 무작위 탐사(Random), 정보 이득 기반 탐욕 계획(Greedy).
+
+### 주요 결과
+- 시뮬레이션 환경에서 POMDP 계획은 전선 탐사에 비해 **정보 수집 효율이 15-30% 향상**되었으며(단위 시간당 상호 정보 이득 기준), 특히 좁은 복도 시나리오에서 우위가 뚜렷하다.
+- 실제 환경에서 POMDP 계획은 개방형 사무실 시나리오에서 전선 탐사와 성능이 유사하지만, 복잡한 배치(예: 다중 방)에서는 **경로 길이가 20% 감소**하여 반복 탐사를 피한다.
+- 상호 정보 근사 계산 비용: 단일 단계 계획 시간은 약 **0.5-1.5초**(입자 수에 따라 다름)로 실시간 요구 사항을 충족할 수 있다.
+
+### 결론
+- POMDP 계획과 상호 정보 보상을 결합하면 로봇 탐사를 효과적으로 유도할 수 있지만, 순수 계획은 상태 공간이 너무 클 때 계산 부담이 크다.
+- 전선 탐사와의 혼합 전략은 계산 효율과 탐사 품질 사이의 균형을 이루며, 실제 배치에 적합하다.

@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11624v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11624v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (735 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,22 @@ Automating design minimizes errors, accelerates the design process, and reduces 
 ## Content
 Automating design minimizes errors, accelerates the design process, and reduces cost. However, automating robot design is challenging due to recursive constraints, multiple design objectives, and cross-domain design complexity possibly spanning multiple abstraction layers. Here we look at the problem of component selection, a combinatorial optimization problem in which a designer, given a robot model, must select compatible components from an extensive catalog. The goal is to satisfy high-level task specifications while optimally balancing trade-offs between competing design objectives. In this paper, we extend our previous constraint programming approach to multi-objective design problems and propose the novel technique of monotone subsystem decomposition to efficiently compute a Pareto front of solutions for large-scale problems. We prove that subsystems can be optimized for their Pareto fronts and, under certain conditions, these results can be used to determine a globally optimal Pareto front. Furthermore, subsystems serve as an intuitive design abstraction and can be reused across various design problems. Using an example quadcopter design problem, we compare our method to a linear programming approach and demonstrate our method scales better for large catalogs, solving a multi-objective problem of \(10^{25}\) component combinations in seconds. We then expand the original problem and solve a task-oriented, multi-objective design problem to build a fleet of quadcopters to deliver packages. We compute a Pareto front of solutions in seconds where each solution contains an optimal component-level design and an optimal package delivery schedule for each quadcopter.
 
-## 개요
-설계 자동화는 오류를 최소화하고 설계 프로세스를 가속화하며 비용을 절감합니다. 그러나 로봇 설계 자동화는 재귀적 제약 조건, 다중 설계 목표, 그리고 여러 추상화 계층에 걸칠 수 있는 교차 도메인 설계 복잡성으로 인해 어렵습니다. 여기서 우리는 부품 선택 문제, 즉 설계자가 로봇 모델이 주어졌을 때 방대한 카탈로그에서 호환 가능한 부품을 선택해야 하는 조합 최적화 문제를 다룹니다. 목표는 경쟁하는 설계 목표 간의 균형을 최적으로 조정하면서 상위 수준의 작업 사양을 충족하는 것입니다. 본 논문에서는 이전의 제약 프로그래밍 접근 방식을 다중 목표 설계 문제로 확장하고, 대규모 문제에 대한 파레토 최적해 집합을 효율적으로 계산하기 위한 새로운 기법인 단조 부분 시스템 분해를 제안합니다. 우리는 부분 시스템이 자체 파레토 최적해 집합에 대해 최적화될 수 있으며, 특정 조건에서 이러한 결과를 사용하여 전역적으로 최적의 파레토 최적해 집합을 결정할 수 있음을 증명합니다. 또한 부분 시스템은 직관적인 설계 추상화 역할을 하며 다양한 설계 문제에 걸쳐 재사용될 수 있습니다. 쿼드콥터 설계 문제 예시를 통해 우리의 방법을 선형 프로그래밍 접근 방식과 비교하고, 대규모 카탈로그에서 더 잘 확장되어 10^25개의 부품 조합으로 구성된 다중 목표 문제를 몇 초 만에 해결함을 보여줍니다. 그런 다음 원래 문제를 확장하여 패키지를 배송할 쿼드콥터 함대를 구축하기 위한 작업 지향적 다중 목표 설계 문제를 해결합니다. 각 솔루션이 각 쿼드콥터에 대한 최적의 부품 수준 설계와 최적의 패키지 배송 일정을 포함하는 파레토 최적해 집합을 몇 초 만에 계산합니다.
-
-## 핵심 내용
-설계 자동화는 오류를 최소화하고 설계 프로세스를 가속화하며 비용을 절감합니다. 그러나 로봇 설계 자동화는 재귀적 제약 조건, 다중 설계 목표, 그리고 여러 추상화 계층에 걸칠 수 있는 교차 도메인 설계 복잡성으로 인해 어렵습니다. 여기서 우리는 부품 선택 문제, 즉 설계자가 로봇 모델이 주어졌을 때 방대한 카탈로그에서 호환 가능한 부품을 선택해야 하는 조합 최적화 문제를 다룹니다. 목표는 경쟁하는 설계 목표 간의 균형을 최적으로 조정하면서 상위 수준의 작업 사양을 충족하는 것입니다. 본 논문에서는 이전의 제약 프로그래밍 접근 방식을 다중 목표 설계 문제로 확장하고, 대규모 문제에 대한 파레토 최적해 집합을 효율적으로 계산하기 위한 새로운 기법인 단조 부분 시스템 분해를 제안합니다. 우리는 부분 시스템이 자체 파레토 최적해 집합에 대해 최적화될 수 있으며, 특정 조건에서 이러한 결과를 사용하여 전역적으로 최적의 파레토 최적해 집합을 결정할 수 있음을 증명합니다. 또한 부분 시스템은 직관적인 설계 추상화 역할을 하며 다양한 설계 문제에 걸쳐 재사용될 수 있습니다. 쿼드콥터 설계 문제 예시를 통해 우리의 방법을 선형 프로그래밍 접근 방식과 비교하고, 대규모 카탈로그에서 더 잘 확장되어 10^25개의 부품 조합으로 구성된 다중 목표 문제를 몇 초 만에 해결함을 보여줍니다. 그런 다음 원래 문제를 확장하여 패키지를 배송할 쿼드콥터 함대를 구축하기 위한 작업 지향적 다중 목표 설계 문제를 해결합니다. 각 솔루션이 각 쿼드콥터에 대한 최적의 부품 수준 설계와 최적의 패키지 배송 일정을 포함하는 파레토 최적해 집합을 몇 초 만에 계산합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.11624v2
+
+## 개요
+본 논문은 로봇 설계에서의 구성 요소 선택 문제를 해결하기 위해 단조 하위 시스템 분해법(Monotone Subsystem Decomposition)이라는 새로운 제약 프로그래밍 기법을 제안합니다. 이 방법은 대규모 조합 최적화 문제를 하위 시스템으로 분해하고, 특정 조건에서 하위 시스템의 파레토 프론티어가 전역 최적 파레토 프론티어로 결합될 수 있음을 증명하여 계산 효율성을 크게 향상시킵니다. 쿼드로터 비행체 설계 사례에서 이 방법은 10^25가지 구성 요소 조합을 포함하는 다중 목표 문제를 수 초 내에 처리할 수 있으며, 작업 지향적 군집 설계로 확장하여 구성 요소 선택과 패키지 배송 일정을 동시에 최적화합니다.
+
+## 핵심 내용
+### 방법의 핵심
+- **단조 하위 시스템 분해**: 로봇 시스템을 여러 하위 시스템으로 분해하고, 각 하위 시스템은 자체 파레토 프론티어를 독립적으로 최적화합니다. 단조성 조건(예: 구성 요소 성능 지표와 시스템 목표의 일치)이 충족될 때, 하위 시스템의 파레토 프론티어는 직접 전역 최적 파레토 프론티어로 결합될 수 있습니다.
+- **제약 프로그래밍 프레임워크**: 이전 연구를 확장하여 구성 요소 선택을 제약 충족 문제로 모델링하며, 다중 목표 최적화(예: 비용, 무게, 배터리 수명 등)를 지원합니다.
+
+### 실험 설정
+- **사례 1: 쿼드로터 설계**: 10^25가지 구성 요소 조합을 포함하는 카탈로그에서 모터, 프로펠러, 배터리 등의 구성 요소를 선택하여 비용과 비행 시간을 최적화합니다. 선형 계획법 방법과 비교했을 때, 단조 하위 시스템 분해법은 카탈로그 규모가 증가해도 계산 시간 증가가 더 느리며, 수 초 내에 해를 구합니다.
+- **사례 2: 작업 지향적 군집 설계**: 패키지 배송을 위한 여러 대의 쿼드로터로 구성된 군집을 설계합니다. 각 쿼드로터는 구성 요소 선택과 배송 일정(예: 경로, 적재량)을 동시에 최적화해야 하며, 최종적으로 수 초 내에 파레토 프론티어를 계산하고, 각 해는 최적 구성 요소 구성과 배송 시간표를 포함합니다.
+
+### 주요 결론
+- **확장성**: 단조 하위 시스템 분해법은 카탈로그 규모가 증가해도 높은 효율성을 유지하는 반면, 선형 계획법 방법은 계산 시간이 지수적으로 증가합니다.
+- **재사용성**: 하위 시스템의 파레토 프론티어는 설계 추상화로 사용되어 다양한 설계 문제에서 재사용될 수 있으며, 반복 계산을 줄입니다.
+- **전역 최적성**: 단조성 조건 하에서 하위 시스템 파레토 프론티어의 결합은 모든 구성 요소 조합을 탐색하지 않고도 전역 최적성을 보장합니다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.10803v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.10803v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (777 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,27 @@ sources:
 ## Overview
 Humanoid robots capable of autonomous operation in diverse environments have long been a goal for roboticists. However, autonomous manipulation by humanoid robots has largely been restricted to one specific scene, primarily due to the difficulty of acquiring generalizable skills and the expensiveness of in-the-wild humanoid robot data. In this work, we build a real-world robotic system to address this challenging problem. Our system is mainly an integration of 1) a whole-upper-body robotic teleoperation system to acquire human-like robot data, 2) a 25-DoF humanoid robot platform with a height-adjustable cart and a 3D LiDAR sensor, and 3) an improved 3D Diffusion Policy learning algorithm for humanoid robots to learn from noisy human data. We run more than 2000 episodes of policy rollouts on the real robot for rigorous policy evaluation. Empowered by this system, we show that using only data collected in one single scene and with only onboard computing, a full-sized humanoid robot can autonomously perform skills in diverse real-world scenarios. Videos are available at https://humanoid-manipulation.github.io .
 
-## 개요
-다양한 환경에서 자율적으로 작동할 수 있는 휴머노이드 로봇은 오랫동안 로봇 공학자들의 목표였습니다. 그러나 휴머노이드 로봇의 자율 조작은 주로 일반화 가능한 기술을 습득하기 어렵고 실제 환경에서의 휴머노이드 로봇 데이터 수집 비용이 높기 때문에 특정 장면으로 크게 제한되어 왔습니다. 본 연구에서는 이러한 어려운 문제를 해결하기 위해 실제 로봇 시스템을 구축했습니다. 우리 시스템은 주로 1) 인간과 유사한 로봇 데이터를 수집하기 위한 전상반신 로봇 원격 조작 시스템, 2) 높이 조절 가능한 카트와 3D LiDAR 센서를 갖춘 25자유도 휴머노이드 로봇 플랫폼, 3) 잡음이 있는 인간 데이터로부터 학습하기 위한 휴머노이드 로봇용 개선된 3D 확산 정책 학습 알고리즘을 통합한 것입니다. 우리는 엄격한 정책 평가를 위해 실제 로봇에서 2000회 이상의 정책 롤아웃을 실행했습니다. 이 시스템을 통해 단일 장면에서 수집된 데이터와 온보드 컴퓨팅만으로도 전체 크기의 휴머노이드 로봇이 다양한 실제 시나리오에서 자율적으로 기술을 수행할 수 있음을 보여줍니다. 비디오는 https://humanoid-manipulation.github.io 에서 확인할 수 있습니다.
-
-## 핵심 내용
-다양한 환경에서 자율적으로 작동할 수 있는 휴머노이드 로봇은 오랫동안 로봇 공학자들의 목표였습니다. 그러나 휴머노이드 로봇의 자율 조작은 주로 일반화 가능한 기술을 습득하기 어렵고 실제 환경에서의 휴머노이드 로봇 데이터 수집 비용이 높기 때문에 특정 장면으로 크게 제한되어 왔습니다. 본 연구에서는 이러한 어려운 문제를 해결하기 위해 실제 로봇 시스템을 구축했습니다. 우리 시스템은 주로 1) 인간과 유사한 로봇 데이터를 수집하기 위한 전상반신 로봇 원격 조작 시스템, 2) 높이 조절 가능한 카트와 3D LiDAR 센서를 갖춘 25자유도 휴머노이드 로봇 플랫폼, 3) 잡음이 있는 인간 데이터로부터 학습하기 위한 휴머노이드 로봇용 개선된 3D 확산 정책 학습 알고리즘을 통합한 것입니다. 우리는 엄격한 정책 평가를 위해 실제 로봇에서 2000회 이상의 정책 롤아웃을 실행했습니다. 이 시스템을 통해 단일 장면에서 수집된 데이터와 온보드 컴퓨팅만으로도 전체 크기의 휴머노이드 로봇이 다양한 실제 시나리오에서 자율적으로 기술을 수행할 수 있음을 보여줍니다. 비디오는 https://humanoid-manipulation.github.io 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.10803v3
+
+## 개요
+이 시스템은 휴머노이드 로봇의 자율 조작 일반화 능력 부족과 야외 데이터 수집 비용 문제를 해결하기 위해 완전한 솔루션을 제안합니다. 시스템은 세 가지 핵심 모듈로 구성됩니다: 인간형 조작 데이터를 수집하기 위한 전신 원격 조작 장치, 높이 조절 가능한 카트와 3D LiDAR를 갖춘 25자유도 휴머노이드 로봇 플랫폼, 그리고 노이즈가 포함된 인간 데이터를 처리하도록 설계된 개선된 3D Diffusion Policy 학습 알고리즘입니다. 2000회 이상의 실제 로봇 정책 배포에 대한 엄격한 평가를 통해, 이 시스템이 단일 장면 수집 데이터와 온보드 컴퓨팅 리소스만으로도 전신 휴머노이드 로봇이 다양한 실제 장면에서 자율적으로 조작 기술을 실행할 수 있음을 검증했습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **데이터 수집**: 로봇 상체의 모든 자유도를 포함하는 전신 원격 조작 시스템을 사용하여 팔과 몸통의 협응 동작을 포함한 인간형 조작 데이터를 수집
+- **하드웨어 플랫폼**: 25자유도 전신 휴머노이드 로봇으로, 높이 조절 가능한 카트(다양한 작업대 높이에 적응)와 3D LiDAR 센서(환경 인식 제공)를 갖춤
+- **학습 알고리즘**: 인간 시연 데이터의 노이즈(예: 떨림, 부정확한 궤적)를 특별히 최적화한 개선된 3D Diffusion Policy
+
+### 실험 설정
+- 훈련 데이터: 단일 장면(예: 고정된 테이블)에서만 수집된 인간 시연 데이터
+- 컴퓨팅 리소스: 완전히 로봇의 온보드 컴퓨팅 유닛에 의존(외부 서버 지원 없음)
+- 평가 규모: 2000회 이상의 실제 로봇 정책 배포(policy rollouts)
+
+### 주요 결과
+- 단일 장면 훈련 데이터만으로도 다양한 조명 조건, 객체 위치 이동, 배경 변화 등을 포함한 교차 장면 일반화 달성
+- 온보드 컴퓨팅 조건에서 정책 추론 지연 시간이 실시간 제어 요구 사항을 충족(구체적 수치는 초록에 언급되지 않음)
+- 오픈소스 코드와 데모 비디오(https://humanoid-manipulation.github.io)로 재현 및 검증 가능
+
+### 결론
+이 연구는 개선된 확산 정책과 효율적인 데이터 수집 시스템을 통해 휴머노이드 로봇이 전통적인 조작 시스템의 장면 제약을 극복하고, 대규모 다중 장면 데이터 없이도 일반화된 조작 능력을 구현할 수 있음을 최초로 증명했습니다.

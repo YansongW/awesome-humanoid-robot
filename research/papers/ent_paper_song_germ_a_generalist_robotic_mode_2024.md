@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.13358v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.13358v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (922 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,11 +71,27 @@ GeRM 提出了一种降低机器人数据收集成本的新范式，通过离线
 ## Overview
 Multi-task robot learning holds significant importance in tackling diverse and complex scenarios. However, current approaches are hindered by performance issues and difficulties in collecting training datasets. In this paper, we propose GeRM (Generalist Robotic Model). We utilize offline reinforcement learning to optimize data utilization strategies to learn from both demonstrations and sub-optimal data, thus surpassing the limitations of human demonstrations. Thereafter, we employ a transformer-based VLA network to process multi-modal inputs and output actions. By introducing the Mixture-of-Experts structure, GeRM allows faster inference speed with higher whole model capacity, and thus resolves the issue of limited RL parameters, enhancing model performance in multi-task learning while controlling computational costs. Through a series of experiments, we demonstrate that GeRM outperforms other methods across all tasks, while also validating its efficiency in both training and inference processes. Additionally, we uncover its potential to acquire emergent skills. Additionally, we contribute the QUARD-Auto dataset, collected automatically to support our training approach and foster advancements in multi-task quadruped robot learning. This work presents a new paradigm for reducing the cost of collecting robot data and driving progress in the multi-task learning community. You can reach our project and video through the link: https://songwxuan.github.io/GeRM/ .
 
-## 개요
-멀티태스크 로봇 학습은 다양하고 복잡한 시나리오를 해결하는 데 중요한 의미를 갖습니다. 그러나 현재 접근 방식은 성능 문제와 훈련 데이터셋 수집의 어려움으로 인해 제약을 받고 있습니다. 본 논문에서는 GeRM(Generalist Robotic Model)을 제안합니다. 우리는 오프라인 강화 학습을 활용하여 데이터 활용 전략을 최적화함으로써 시연 데이터와 최적이 아닌 데이터 모두에서 학습할 수 있게 하여 인간 시연의 한계를 극복합니다. 이후 트랜스포머 기반 VLA 네트워크를 사용하여 다중 모달 입력을 처리하고 행동을 출력합니다. Mixture-of-Experts 구조를 도입함으로써 GeRM은 더 높은 전체 모델 용량을 유지하면서 더 빠른 추론 속도를 가능하게 하여, 제한된 RL 파라미터 문제를 해결하고 계산 비용을 통제하면서 멀티태스크 학습에서 모델 성능을 향상시킵니다. 일련의 실험을 통해 GeRM이 모든 작업에서 다른 방법보다 우수한 성능을 보일 뿐만 아니라 훈련 및 추론 과정 모두에서 효율성을 입증합니다. 또한, 우리는 창발적 기술을 습득할 수 있는 잠재력을 발견했습니다. 추가로, 우리의 훈련 접근 방식을 지원하고 멀티태스크 사족 로봇 학습의 발전을 촉진하기 위해 자동으로 수집된 QUARD-Auto 데이터셋을 기여합니다. 이 연구는 로봇 데이터 수집 비용을 줄이고 멀티태스크 학습 커뮤니티의 발전을 촉진하는 새로운 패러다임을 제시합니다. 프로젝트와 비디오는 다음 링크에서 확인할 수 있습니다: https://songwxuan.github.io/GeRM/ .
-
-## 핵심 내용
-멀티태스크 로봇 학습은 다양하고 복잡한 시나리오를 해결하는 데 중요한 의미를 갖습니다. 그러나 현재 접근 방식은 성능 문제와 훈련 데이터셋 수집의 어려움으로 인해 제약을 받고 있습니다. 본 논문에서는 GeRM(Generalist Robotic Model)을 제안합니다. 우리는 오프라인 강화 학습을 활용하여 데이터 활용 전략을 최적화함으로써 시연 데이터와 최적이 아닌 데이터 모두에서 학습할 수 있게 하여 인간 시연의 한계를 극복합니다. 이후 트랜스포머 기반 VLA 네트워크를 사용하여 다중 모달 입력을 처리하고 행동을 출력합니다. Mixture-of-Experts 구조를 도입함으로써 GeRM은 더 높은 전체 모델 용량을 유지하면서 더 빠른 추론 속도를 가능하게 하여, 제한된 RL 파라미터 문제를 해결하고 계산 비용을 통제하면서 멀티태스크 학습에서 모델 성능을 향상시킵니다. 일련의 실험을 통해 GeRM이 모든 작업에서 다른 방법보다 우수한 성능을 보일 뿐만 아니라 훈련 및 추론 과정 모두에서 효율성을 입증합니다. 또한, 우리는 창발적 기술을 습득할 수 있는 잠재력을 발견했습니다. 추가로, 우리의 훈련 접근 방식을 지원하고 멀티태스크 사족 로봇 학습의 발전을 촉진하기 위해 자동으로 수집된 QUARD-Auto 데이터셋을 기여합니다. 이 연구는 로봇 데이터 수집 비용을 줄이고 멀티태스크 학습 커뮤니티의 발전을 촉진하는 새로운 패러다임을 제시합니다. 프로젝트와 비디오는 다음 링크에서 확인할 수 있습니다: https://songwxuan.github.io/GeRM/ .
-
 ## 参考
 - http://arxiv.org/abs/2403.13358v2
+
+## 개요
+GeRM은 오프라인 강화 학습을 통해 시연 데이터와 준최적 데이터로부터 학습하여 인간 시연에만 의존하는 한계를 극복합니다. 모델은 transformer 기반 VLA 네트워크를 사용하여 다중 모달 입력을 처리하고 동작을 출력하며, Mixture-of-Experts 구조를 도입하여 높은 모델 용량을 유지하면서도 더 빠른 추론을 가능하게 하여 강화 학습의 매개변수 제한 문제를 해결합니다. 실험 결과, GeRM은 모든 작업에서 다른 방법보다 우수하며 새로운 기술을 창발하는 능력을 보여줍니다. 또한, 팀은 자동 수집된 QUARD-Auto 데이터셋을 기여하여 로봇 데이터 수집 비용을 줄이고 다중 작업 학습 발전을 촉진합니다.
+
+## 핵심 내용
+### 방법
+- **데이터 활용 전략**: 오프라인 강화 학습을 사용하여 시연 데이터와 준최적 데이터로부터 학습하며, 데이터 활용 효율을 최적화하여 고품질 인간 시연에만 의존하는 한계를 피합니다.
+- **네트워크 아키텍처**: transformer 기반 VLA(Vision-Language-Action) 네트워크로, 다중 모달 입력(시각, 언어)을 처리하고 동작 명령을 직접 출력합니다.
+- **Mixture-of-Experts 구조**: MoE 메커니즘을 도입하여 높은 모델 용량을 유지하면서도 더 빠른 추론 속도를 구현하며, 강화 학습의 매개변수 제한 문제를 해결하고 다중 작업 학습 성능을 향상시키면서 계산 비용을 제어합니다.
+
+### 실험 설정
+- **작업**: 사족 로봇 다중 작업 조작 시나리오에서 평가하며, 다양한 복잡한 조작 작업을 포함합니다.
+- **비교 방법**: 기존 다중 작업 학습 방법과 비교하여 GeRM은 모든 작업에서 최적의 성능을 달성합니다.
+- **데이터셋**: QUARD-Auto 데이터셋을 기여하며, 자동 수집 방식을 통해 생성되어 훈련을 지원하고 사족 로봇 다중 작업 학습 연구를 촉진합니다.
+
+### 주요 결과
+- **성능**: GeRM은 모든 테스트 작업에서 다른 방법을 능가하며, 훈련 및 추론 과정에서의 효율성을 검증합니다.
+- **창발 능력**: 모델은 새로운 기술(emergent skills)을 학습할 잠재력을 보여주며, 일반화 능력을 입증합니다.
+- **효율성**: MoE 구조는 모델 용량을 향상시키면서도 추론 시간을 크게 증가시키지 않아 성능과 계산 비용 간의 균형을 달성합니다.
+
+### 결론
+GeRM은 로봇 데이터 수집 비용을 줄이는 새로운 패러다임을 제안하며, 오프라인 강화 학습과 MoE 아키텍처의 결합을 통해 다중 작업 사족 로봇 학습을 위한 효율적인 솔루션을 제공합니다. 프로젝트 세부 정보 및 데모 비디오는 다음에서 확인할 수 있습니다: https://songwxuan.github.io/GeRM/ .

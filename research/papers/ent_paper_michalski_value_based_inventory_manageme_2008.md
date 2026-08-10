@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1301.3826v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1301.3826v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en/ko
+    body retranslated from zh deep-read (608 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,14 +72,51 @@ theoretical_depth:
 - 新公式为管理者提供了将库存决策与资本预算、税务规划整合的理论工具
 - 该模型适用于资本密集型行业及高税率环境下的库存优化
 
-## Overview
-The basic financial purpose of a firm is to maximize its value. An inventory management system should also contribute to realization of this basic aim. Many current asset management models currently found in financial management literature were constructed with the assumption of book profit maximization as basic aim. However these models could lack what relates to another aim, i.e., maximization of enterprise value. This article presents a modified value-based inventory management model.
-
-## 개요
-기업의 기본적인 재무 목표는 가치를 극대화하는 것입니다. 재고 관리 시스템 또한 이러한 기본 목표의 실현에 기여해야 합니다. 현재 재무 관리 문헌에서 발견되는 많은 유동 자산 관리 모델은 장부 이익 극대화를 기본 목표로 가정하여 구축되었습니다. 그러나 이러한 모델은 기업 가치 극대화라는 또 다른 목표와 관련된 부분이 부족할 수 있습니다. 본 논문은 수정된 가치 기반 재고 관리 모델을 제시합니다.
-
-## 핵심 내용
-기업의 기본적인 재무 목표는 가치를 극대화하는 것입니다. 재고 관리 시스템 또한 이러한 기본 목표의 실현에 기여해야 합니다. 현재 재무 관리 문헌에서 발견되는 많은 유동 자산 관리 모델은 장부 이익 극대화를 기본 목표로 가정하여 구축되었습니다. 그러나 이러한 모델은 기업 가치 극대화라는 또 다른 목표와 관련된 부분이 부족할 수 있습니다. 본 논문은 수정된 가치 기반 재고 관리 모델을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/1301.3826v1
+
+## Overview
+Traditional inventory management models aim to maximize book profit, but they may deviate from the fundamental financial goal of maximizing enterprise value. This study re-examines the EOQ and POQ models, replacing profit-oriented assumptions with a value-based perspective. The core innovation lies in using discounted free cash flow (FCFF) and economic value added (EVA) as objective functions, deriving two new formulas: VBEOQ and VBPOQ. These formulas explicitly account for the impact of capital costs and taxes on inventory decisions, enabling inventory management to directly serve the enhancement of enterprise value.
+
+## Content
+### Research Background and Problem
+- The fundamental financial goal of a firm is value maximization, and inventory management systems should serve this goal
+- Asset models in existing financial management literature are mostly based on the assumption of book profit maximization, which may deviate from the goal of value maximization
+
+### Methodological Innovation
+- Reconstruct the EOQ (Economic Order Quantity) and POQ (Periodic Order Quantity) models within a value-oriented framework
+- Shift the objective function from profit maximization to maximizing discounted free cash flow (FCFF) and economic value added (EVA)
+- Derive the VBEOQ (Value-Based EOQ) and VBPOQ (Value-Based POQ) formulas
+
+### Key Parameters
+- Cost of capital: incorporated into the model as a significant component of inventory holding costs
+- Tax impact: tax shield effects are considered in the cash flow discounting process
+- Formula structure: VBEOQ and VBPOQ add adjustments for capital costs and taxes to the traditional EOQ/POQ
+
+### Conclusion
+- Value-oriented inventory models align more closely with long-term corporate financial goals than profit-oriented models
+- The new formulas provide managers with theoretical tools to integrate inventory decisions with capital budgeting and tax planning
+- The model is suitable for inventory optimization in capital-intensive industries and high-tax environments
+
+## 개요
+전통적 재고 관리 모델은 장부 이익 극대화를 목표로 하지만, 기업 가치 극대화라는 근본적인 재무 목표에서 벗어날 수 있습니다. 본 연구는 EOQ 및 POQ 모델을 재검토하고, 이익 중심 가정을 가치 기반 관점으로 대체합니다. 핵심 혁신은 할인된 자유 현금 흐름(FCFF)과 경제적 부가가치(EVA)를 목표 함수로 사용하여 VBEOQ와 VBPOQ라는 두 가지 새로운 공식을 도출한 것입니다. 이 공식들은 자본 비용과 세금이 재고 결정에 미치는 영향을 명시적으로 고려하여, 재고 관리가 기업 가치 제고에 직접적으로 기여하도록 합니다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+- 기업의 기본 재무 목표는 가치 극대화이며, 재고 관리 시스템은 이 목표를 지원해야 함
+- 기존 재무 관리 문헌의 자산 모델은 주로 장부 이익 극대화 가정에 기반하여 가치 극대화 목표에서 벗어날 수 있음
+
+### 방법 혁신
+- EOQ(경제적 주문량) 및 POQ(정기 주문량) 모델을 가치 중심 프레임워크로 재구성
+- 목표 함수를 이익 극대화에서 할인된 자유 현금 흐름(FCFF) 및 경제적 부가가치(EVA) 극대화로 변경
+- VBEOQ(가치 기반 EOQ) 및 VBPOQ(가치 기반 POQ) 공식 도출
+
+### 핵심 매개변수
+- 자본 비용: 재고 보유 비용의 중요한 구성 요소로 모델에 포함
+- 세금 영향: 현금 흐름 할인 과정에서 세금 방패 효과 고려
+- 공식 구조: VBEOQ 및 VBPOQ는 전통적 EOQ/POQ에 자본 비용 및 세금 조정 항목을 추가
+
+### 결론
+- 가치 중심 재고 모델은 이익 중심 모델보다 기업의 장기 재무 목표에 더 부합함
+- 새로운 공식은 관리자가 재고 결정을 자본 예산 및 세무 계획과 통합할 수 있는 이론적 도구를 제공
+- 이 모델은 자본 집약적 산업 및 높은 세율 환경에서의 재고 최적화에 적합함

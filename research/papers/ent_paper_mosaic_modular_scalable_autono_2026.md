@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.23038v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.23038v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (892 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -90,11 +91,28 @@ MOSAIC 框架验证了单操作员监督下异构多机器人团队进行大规�
 ## Overview
 Mobile robots have become indispensable for exploring hostile environments, such as in space or disaster relief scenarios, but often remain limited to teleoperation by a human operator. This restricts the deployment scale and requires near-continuous low-latency communication between the operator and the robot. We present MOSAIC: a scalable autonomy framework for multi-robot scientific exploration using a unified mission abstraction based on Points of Interest (POIs) and multiple layers of autonomy, enabling supervision by a single operator. The framework dynamically allocates exploration and measurement tasks based on each robot's capabilities, leveraging team-level redundancy and specialization to enable continuous operation. We validated the framework in a space-analog field experiment emulating a lunar prospecting scenario, involving a heterogeneous team of five robots and a single operator. Despite the complete failure of one robot during the mission, the team completed 82.3% of assigned tasks at an Autonomy Ratio of 86%, while the operator workload remained at only 78.2%. These results demonstrate that the proposed framework enables robust, scalable multi-robot scientific exploration with limited operator intervention. We further derive practical lessons learned in robot interoperability, networking architecture, team composition, and operator workload management to inform future multi-robot exploration missions.
 
-## 개요
-모바일 로봇은 우주나 재난 구조 현장과 같은 열악한 환경 탐사에 필수적이 되었지만, 여전히 인간 운영자의 원격 조작에 제한되는 경우가 많습니다. 이는 배치 규모를 제한하고 운영자와 로봇 간에 거의 지속적인 저지연 통신을 요구합니다. 우리는 관심 지점(POI)에 기반한 통합 임무 추상화와 여러 계층의 자율성을 사용하여 단일 운영자가 감독할 수 있는 다중 로봇 과학 탐사를 위한 확장 가능한 자율성 프레임워크인 MOSAIC을 제시합니다. 이 프레임워크는 각 로봇의 역량에 따라 탐사 및 측정 작업을 동적으로 할당하며, 팀 수준의 중복성과 전문화를 활용하여 지속적인 운영을 가능하게 합니다. 우리는 달 탐사 시나리오를 모방한 우주 유사 현장 실험에서 이 프레임워크를 검증했으며, 5대의 이기종 로봇과 단일 운영자가 참여했습니다. 임무 중 한 로봇이 완전히 고장났음에도 불구하고, 팀은 할당된 작업의 82.3%를 자율성 비율 86%로 완료했으며, 운영자 작업 부하는 78.2%에 불과했습니다. 이러한 결과는 제안된 프레임워크가 제한된 운영자 개입으로 강력하고 확장 가능한 다중 로봇 과학 탐사를 가능하게 함을 보여줍니다. 또한, 우리는 로봇 상호 운용성, 네트워킹 아키텍처, 팀 구성 및 운영자 작업 부하 관리에 관한 실용적인 교훈을 도출하여 향후 다중 로봇 탐사 임무에 정보를 제공합니다.
-
-## 핵심 내용
-모바일 로봇은 우주나 재난 구조 현장과 같은 열악한 환경 탐사에 필수적이 되었지만, 여전히 인간 운영자의 원격 조작에 제한되는 경우가 많습니다. 이는 배치 규모를 제한하고 운영자와 로봇 간에 거의 지속적인 저지연 통신을 요구합니다. 우리는 관심 지점(POI)에 기반한 통합 임무 추상화와 여러 계층의 자율성을 사용하여 단일 운영자가 감독할 수 있는 다중 로봇 과학 탐사를 위한 확장 가능한 자율성 프레임워크인 MOSAIC을 제시합니다. 이 프레임워크는 각 로봇의 역량에 따라 탐사 및 측정 작업을 동적으로 할당하며, 팀 수준의 중복성과 전문화를 활용하여 지속적인 운영을 가능하게 합니다. 우리는 달 탐사 시나리오를 모방한 우주 유사 현장 실험에서 이 프레임워크를 검증했으며, 5대의 이기종 로봇과 단일 운영자가 참여했습니다. 임무 중 한 로봇이 완전히 고장났음에도 불구하고, 팀은 할당된 작업의 82.3%를 자율성 비율 86%로 완료했으며, 운영자 작업 부하는 78.2%에 불과했습니다. 이러한 결과는 제안된 프레임워크가 제한된 운영자 개입으로 강력하고 확장 가능한 다중 로봇 과학 탐사를 가능하게 함을 보여줍니다. 또한, 우리는 로봇 상호 운용성, 네트워킹 아키텍처, 팀 구성 및 운영자 작업 부하 관리에 관한 실용적인 교훈을 도출하여 향후 다중 로봇 탐사 임무에 정보를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.23038v3
+
+## 개요
+이 프레임워크는 기존 원격 조작 로봇의 배포 규모 제한과 지속적인 저지연 통신 의존성이라는 문제점을 해결하기 위해, 관심 지점(POI)을 핵심으로 하는 작업 추상화를 제안하고 다층 자율 제어 체계를 구축한다. MOSAIC은 각 로봇의 능력에 따라 탐사 및 측정 작업을 동적으로 할당하며, 팀의 중복성과 전문화된 분업을 활용하여 연속 작업을 구현한다. 달 탐사를 모사한 우주 유사 야외 실험에서, 이종 로봇 5대로 구성된 팀이 단일 운영자의 감독 하에 운영되었고, 중간에 한 대의 로봇이 완전히 고장났음에도 팀은 82.3%의 작업을 완료했으며, 자율 비율(Autonomy Ratio)은 86%, 운영자 작업 부하는 78.2%에 불과했다. 실험은 또한 로봇 상호 운용성, 네트워크 아키텍처, 팀 구성 및 운영자 부하 관리에 관한 실질적인 경험을 정리했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **작업 추상화**: 관심 지점(POI)을 기반으로 통합 작업 설명을 구축하고, 복잡한 탐사 목표를 독립적으로 할당 가능한 하위 작업으로 분해한다.
+- **다층 자율성**: 하위 수준의 운동 제어부터 상위 수준의 작업 계획까지 자율 계층을 설계하여, 운영자는 핵심 의사 결정 지점에서만 개입하면 된다.
+- **동적 할당**: 로봇의 센서, 이동 능력 및 현재 상태에 따라 탐사 및 측정 작업을 실시간으로 할당하며, 팀 수준의 중복성과 전문화를 지원한다.
+
+### 실험 설정
+- **시나리오**: 달 탐사를 모사한 우주 유사 야외 실험으로, 환경에는 미지의 지형과 자원 분포가 포함된다.
+- **팀**: 이종 로봇 5대(바퀴형, 궤도형, 드론 포함)로 구성되며, 한 명의 운영자가 MOSAIC 프레임워크를 통해 감독한다.
+- **지표**: 작업 완료율(82.3%), 자율 비율(86%, 즉 운영자 개입 시간 비율), 운영자 작업 부하(NASA-TLX 척도, 78.2%).
+
+### 주요 결과
+- **견고성**: 한 대의 로봇이 완전히 고장났음에도 팀은 동적 재할당을 통해 82.3%의 목표를 완료했다.
+- **자율성**: 86%의 자율 비율은 프레임워크가 운영자의 지속적인 개입 필요성을 효과적으로 줄였음을 보여준다.
+- **부하 관리**: 운영자 작업 부하는 78.2%로, 전통적인 원격 조작 방식보다 낮다.
+- **교훈**: 로봇 상호 운용성은 표준화된 통신 프로토콜이 필요하며, 네트워크 아키텍처는 동적 토폴로지를 지원해야 하고, 팀 구성은 중복성과 전문화의 균형을 유지해야 하며, 운영자 부하는 예측적 작업 할당을 통해 더욱 최적화할 수 있다.
+
+### 결론
+MOSAIC 프레임워크는 단일 운영자 감독 하에 이종 다중 로봇 팀이 대규모 과학 탐사를 수행할 수 있는 가능성을 검증했으며, 향후 달, 화성 및 재난 구조 임무를 위한 확장 가능한 자율 솔루션을 제공한다.

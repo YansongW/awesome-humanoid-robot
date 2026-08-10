@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.03233v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.03233v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (1425 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,14 +83,65 @@ theoretical_depth:
 - 提升跨平台兼容性与云-边-端协同能力。
 - 引入形式化验证与安全机制，应对复杂动态环境。
 
-## Overview
-A software architecture defines the blueprints of a large computational system, and is thus a crucial part of the design and development effort. This task has been explored extensively in the context of mobile robots, resulting in a plethora of reference designs and implementations. As the software architecture defines the framework in which all components are implemented, it is naturally a very important aspect of a mobile robot system. In this chapter, we overview the requirements that the particular problem domain (a mobile robot system) imposes on the software framework. We discuss some of the current design solutions, provide a historical perspective on common frameworks, and outline directions for future development.
-
-## 개요
-소프트웨어 아키텍처는 대규모 컴퓨팅 시스템의 청사진을 정의하므로 설계 및 개발 노력의 중요한 부분입니다. 이 작업은 모바일 로봇의 맥락에서 광범위하게 탐구되어 수많은 참조 설계와 구현을 낳았습니다. 소프트웨어 아키텍처는 모든 구성 요소가 구현되는 프레임워크를 정의하므로, 당연히 모바일 로봇 시스템의 매우 중요한 측면입니다. 이 장에서는 특정 문제 영역(모바일 로봇 시스템)이 소프트웨어 프레임워크에 부과하는 요구 사항을 개괄적으로 살펴봅니다. 현재의 몇 가지 설계 솔루션을 논의하고, 일반적인 프레임워크에 대한 역사적 관점을 제공하며, 향후 개발 방향을 제시합니다.
-
-## 핵심 내용
-소프트웨어 아키텍처는 대규모 컴퓨팅 시스템의 청사진을 정의하므로 설계 및 개발 노력의 중요한 부분입니다. 이 작업은 모바일 로봇의 맥락에서 광범위하게 탐구되어 수많은 참조 설계와 구현을 낳았습니다. 소프트웨어 아키텍처는 모든 구성 요소가 구현되는 프레임워크를 정의하므로, 당연히 모바일 로봇 시스템의 매우 중요한 측면입니다. 이 장에서는 특정 문제 영역(모바일 로봇 시스템)이 소프트웨어 프레임워크에 부과하는 요구 사항을 개괄적으로 살펴봅니다. 현재의 몇 가지 설계 솔루션을 논의하고, 일반적인 프레임워크에 대한 역사적 관점을 제공하며, 향후 개발 방향을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2206.03233v2
+
+## Overview
+This section first elaborates on the importance of software architecture as a blueprint for large-scale computing systems and notes that it has spawned numerous reference designs and implementations in the field of mobile robotics. The author outlines the requirements that the specific problem domain of mobile robots imposes on software frameworks, then discusses current mainstream design solutions, provides a historical perspective on common frameworks, and looks ahead to future development directions. The text highlights representative frameworks such as ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB, and Microsoft Robotics Developer Studio, and systematically categorizes architectural patterns including component-based design, publish-subscribe, peer-to-peer, and service-oriented approaches.
+
+## Content
+### Content
+- **Definition of Software Architecture**: Software architecture provides a blueprint for large-scale computing systems and is a critical part of the design and development process. In the field of mobile robotics, this task has been extensively explored, yielding numerous reference designs and implementations.
+- **Domain Requirements**: Mobile robot systems impose specific requirements on software frameworks, including real-time performance, reliability, modularity, scalability, and support for heterogeneous hardware.
+- **Historical Perspective**: The section provides a historical evolution of common frameworks, from early frameworks such as Player and CARMEN to the modern ROS/ROS2 ecosystem, reflecting a trend from tight coupling to loose coupling and from centralized to distributed systems.
+
+### Major Frameworks
+- **ROS (Robot Operating System)**: A distributed framework based on the publish-subscribe pattern, supporting asynchronous communication between nodes, widely used in research and prototyping.
+- **ROS2**: Builds on ROS by introducing the DDS (Data Distribution Service) standard, enhancing real-time performance, security, and cross-platform support.
+- **YARP (Yet Another Robot Platform)**: A peer-to-peer communication framework designed for humanoid robots, emphasizing modularity and cross-language support.
+- **Orocos (Open Robot Control Software)**: Provides a library of real-time control components, supporting component-based design and hard real-time operations.
+- **Player**: An early open-source framework employing a client-server model, suitable for mobile robots with multiple sensors.
+- **CARMEN (Carnegie Mellon Robot Navigation Toolkit)**: A framework integrating navigation, localization, and perception modules, emphasizing loose coupling between modules.
+- **MATLAB**: Offers simulation and rapid algorithm prototyping capabilities through Simulink and the Robotics System Toolbox.
+- **Microsoft Robotics Developer Studio**: A .NET-based framework supporting visual programming and distributed service architectures.
+
+### Architectural Patterns
+- **Component-Based Design**: Decomposes the system into independent functional modules that interact through well-defined interfaces, enhancing reusability and maintainability.
+- **Publish-Subscribe**: Decouples data producers from consumers, supporting asynchronous, many-to-many communication, as exemplified by the Topic mechanism in ROS.
+- **Peer-to-Peer**: Direct communication between nodes reduces intermediate latency, suitable for real-time control scenarios, such as the Port connections in YARP.
+- **Service-Oriented**: Encapsulates functionality as remotely invocable services, supporting synchronous request-response patterns, such as Service and Action in ROS.
+
+### Future Directions
+- Enhancing real-time performance and determinism to meet industrial-grade robot requirements.
+- Improving cross-platform compatibility and cloud-edge-device collaboration capabilities.
+- Introducing formal verification and security mechanisms to address complex dynamic environments.
+
+## 개요
+이 장에서는 먼저 소프트웨어 아키텍처가 대규모 컴퓨팅 시스템의 청사진으로서 지니는 중요성을 설명하고, 모바일 로봇 분야에서 이로 인해 수많은 참조 설계와 구현이 파생되었음을 지적합니다. 저자는 모바일 로봇이라는 특정 문제 영역이 소프트웨어 프레임워크에 요구하는 사항을 개괄한 뒤, 현재 주류 설계 솔루션을 논의하고, 일반적인 프레임워크에 대한 역사적 관점을 제공하며, 향후 발전 방향을 전망합니다. 본문에서는 ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB 및 Microsoft Robotics Developer Studio와 같은 대표적인 프레임워크를 중점적으로 열거하고, 컴포넌트 기반 설계, 발행-구독, 점대점 및 서비스 지향과 같은 아키텍처 패턴을 체계적으로 분류합니다.
+
+## 핵심 내용
+### 핵심 내용
+- **소프트웨어 아키텍처 정의**: 소프트웨어 아키텍처는 대규모 컴퓨팅 시스템에 청사진을 제공하며, 설계 및 개발 작업의 핵심 단계입니다. 모바일 로봇 분야에서 이 작업은 광범위하게 탐구되어 수많은 참조 설계와 구현을 낳았습니다.
+- **도메인 요구 사항**: 모바일 로봇 시스템은 소프트웨어 프레임워크에 실시간성, 신뢰성, 모듈화, 확장성 및 이기종 하드웨어 지원 등을 포함한 특별한 요구 사항을 제기합니다.
+- **역사적 관점**: 이 장은 초기 Player, CARMEN과 같은 프레임워크에서 현대 ROS/ROS2 생태계에 이르기까지 일반적인 프레임워크의 역사적 진화 흐름을 제공하며, 긴밀한 결합에서 느슨한 결합으로, 중앙 집중식에서 분산식으로의 발전 추세를 반영합니다.
+
+### 주요 프레임워크
+- **ROS (Robot Operating System)**: 발행-구독 패턴 기반의 분산 프레임워크로, 노드 간 비동기 통신을 지원하며 연구 및 프로토타입 개발에 널리 사용됩니다.
+- **ROS2**: ROS를 기반으로 DDS (Data Distribution Service) 표준을 도입하여 실시간성, 보안성 및 크로스 플랫폼 지원을 강화합니다.
+- **YARP (Yet Another Robot Platform)**: 휴머노이드 로봇 설계를 위한 점대점 통신 프레임워크로, 모듈성과 다국어 지원을 강조합니다.
+- **Orocos (Open Robot Control Software)**: 실시간 제어 컴포넌트 라이브러리를 제공하며, 컴포넌트 기반 설계와 하드 실시간 운영을 지원합니다.
+- **Player**: 초기 오픈소스 프레임워크로, 클라이언트-서버 모델을 채택하며 다중 센서 모바일 로봇에 적합합니다.
+- **CARMEN (Carnegie Mellon Robot Navigation Toolkit)**: 내비게이션, 위치 추정 및 인식 모듈을 통합한 프레임워크로, 모듈 간 느슨한 결합을 강조합니다.
+- **MATLAB**: Simulink와 Robotics System Toolbox를 통해 시뮬레이션 및 알고리즘 빠른 프로토타이핑 기능을 제공합니다.
+- **Microsoft Robotics Developer Studio**: .NET 기반 프레임워크로, 시각적 프로그래밍과 분산 서비스 아키텍처를 지원합니다.
+
+### 아키텍처 패턴
+- **컴포넌트 기반 설계 (Component-Based Design)**: 시스템을 독립적인 기능 모듈로 분할하고, 명확하게 정의된 인터페이스를 통해 상호작용하여 재사용성과 유지보수성을 향상시킵니다.
+- **발행-구독 (Publish-Subscribe)**: 데이터 생산자와 소비자를 분리하여 비동기, 다대다 통신을 지원하며, 대표적으로 ROS의 Topic 메커니즘이 있습니다.
+- **점대점 (Peer-to-Peer)**: 노드 간 직접 통신으로 중간 단계의 지연을 줄이며, YARP의 Port 연결과 같은 실시간 제어 시나리오에 적합합니다.
+- **서비스 지향 (Service-Oriented)**: 기능을 원격 호출 가능한 서비스로 캡슐화하여 동기식 요청-응답 패턴을 지원하며, ROS의 Service와 Action이 대표적입니다.
+
+### 향후 방향
+- 산업용 로봇 요구 사항을 충족하기 위해 실시간성과 결정론을 강화합니다.
+- 크로스 플랫폼 호환성과 클라우드-엣지-디바이스 협업 능력을 향상시킵니다.
+- 복잡한 동적 환경에 대응하기 위해 형식 검증과 보안 메커니즘을 도입합니다.

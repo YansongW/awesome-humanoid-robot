@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.02206v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.02206v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (637 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,27 @@ sources:
 ## Overview
 Safe and real-time navigation is fundamental for humanoid robot applications. However, existing bipedal robot navigation frameworks often struggle to balance computational efficiency with the precision required for stable locomotion. We propose a novel hierarchical framework that continuously generates dynamic subgoals to guide the robot through cluttered environments. Our method comprises a high-level reinforcement learning (RL) planner for subgoal selection in a robot-centric coordinate system and a low-level Model Predictive Control (MPC) based planner which produces robust walking gaits to reach these subgoals. To expedite and stabilize the training process, we incorporate a data bootstrapping technique that leverages a model-based navigation approach to generate a diverse, informative dataset. We validate our method in simulation using the Agility Robotics Digit humanoid across multiple scenarios with random obstacles. Results show that our framework significantly improves navigation success rates and adaptability compared to both the original model-based method and other learning-based methods.
 
-## 개요
-안전하고 실시간 내비게이션은 인간형 로봇 응용 분야의 기본 요소입니다. 그러나 기존의 이족 보행 로봇 내비게이션 프레임워크는 안정적인 보행에 필요한 정밀도와 계산 효율성 사이의 균형을 맞추는 데 어려움을 겪는 경우가 많습니다. 우리는 복잡한 환경에서 로봇을 안내하기 위해 동적 하위 목표를 지속적으로 생성하는 새로운 계층적 프레임워크를 제안합니다. 본 방법은 로봇 중심 좌표계에서 하위 목표를 선택하는 고수준 강화 학습(RL) 플래너와 이러한 하위 목표에 도달하기 위한 강건한 보행 패턴을 생성하는 저수준 모델 예측 제어(MPC) 기반 플래너로 구성됩니다. 훈련 과정을 가속화하고 안정화하기 위해, 모델 기반 내비게이션 접근 방식을 활용하여 다양하고 유용한 데이터셋을 생성하는 데이터 부트스트래핑 기법을 통합합니다. 우리는 Agility Robotics Digit 휴머노이드를 사용하여 무작위 장애물이 있는 여러 시나리오에서 시뮬레이션을 통해 방법을 검증합니다. 결과는 우리의 프레임워크가 원래의 모델 기반 방법 및 다른 학습 기반 방법과 비교하여 내비게이션 성공률과 적응성을 크게 향상시킴을 보여줍니다.
-
-## 핵심 내용
-안전하고 실시간 내비게이션은 인간형 로봇 응용 분야의 기본 요소입니다. 그러나 기존의 이족 보행 로봇 내비게이션 프레임워크는 안정적인 보행에 필요한 정밀도와 계산 효율성 사이의 균형을 맞추는 데 어려움을 겪는 경우가 많습니다. 우리는 복잡한 환경에서 로봇을 안내하기 위해 동적 하위 목표를 지속적으로 생성하는 새로운 계층적 프레임워크를 제안합니다. 본 방법은 로봇 중심 좌표계에서 하위 목표를 선택하는 고수준 강화 학습(RL) 플래너와 이러한 하위 목표에 도달하기 위한 강건한 보행 패턴을 생성하는 저수준 모델 예측 제어(MPC) 기반 플래너로 구성됩니다. 훈련 과정을 가속화하고 안정화하기 위해, 모델 기반 내비게이션 접근 방식을 활용하여 다양하고 유용한 데이터셋을 생성하는 데이터 부트스트래핑 기법을 통합합니다. 우리는 Agility Robotics Digit 휴머노이드를 사용하여 무작위 장애물이 있는 여러 시나리오에서 시뮬레이션을 통해 방법을 검증합니다. 결과는 우리의 프레임워크가 원래의 모델 기반 방법 및 다른 학습 기반 방법과 비교하여 내비게이션 성공률과 적응성을 크게 향상시킴을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.02206v1
+
+## 개요
+이 연구는 이족 보행 로봇 내비게이션에서 계산 효율성과 안정적 정밀도 간의 균형을 맞추기 어려운 문제를 해결하기 위해 계층적 내비게이션 프레임워크를 제안한다. 상위 계층은 강화 학습 기반의 플래너를 사용하여 로봇 중심 좌표계에서 동적으로 하위 목표를 생성하고, 하위 계층은 모델 예측 제어 플래너를 사용하여 이러한 하위 목표에 도달하기 위한 견고한 보행 패턴을 생성한다. 훈련 과정을 가속화하고 안정화하기 위해 연구는 모델 기반 내비게이션 방법을 활용하여 다양하고 정보가 풍부한 데이터 세트를 생성하는 데이터 부트스트래핑 기술을 도입한다. Agility Robotics Digit 휴머노이드 로봇의 다중 시나리오 무작위 장애물 시뮬레이션에서 이 방법은 기존 모델 기반 방법 및 다른 학습 방법에 비해 내비게이션 성공률과 적응성을 크게 향상시킨다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **상위 계층 플래너**: 강화 학습(RL)을 사용하여 로봇 중심 좌표계에서 동적으로 하위 목표를 선택하고, 로봇이 복잡한 환경을 탐색하도록 유도한다.
+- **하위 계층 플래너**: 모델 예측 제어(MPC)를 기반으로 견고한 보행 패턴을 생성하여 로봇이 하위 목표에 안정적으로 도달하도록 보장한다.
+- **데이터 부트스트래핑 기술**: 모델 기반 내비게이션 방법을 활용하여 다양하고 정보가 풍부한 데이터 세트를 생성함으로써 RL 훈련 과정을 가속화하고 안정화한다.
+
+### 실험 설정
+- **플랫폼**: Agility Robotics Digit 휴머노이드 로봇.
+- **시나리오**: 무작위 장애물을 포함한 다중 시나리오 시뮬레이션.
+- **비교 방법**: 기존 모델 기반 방법 및 기타 학습 방법.
+
+### 주요 결과
+- 내비게이션 성공률이 크게 향상됨.
+- 적응성이 비교 방법보다 우수함.
+- 데이터 부트스트래핑 기술이 훈련을 효과적으로 가속화하고 안정성을 향상시킴.
+
+### 결론
+이 계층적 프레임워크는 동적 하위 목표 생성과 데이터 부트스트래핑을 통해 이족 보행 로봇 내비게이션의 효율성과 정밀도 균형 문제를 효과적으로 해결하며, 시뮬레이션에서 그 우수성을 검증했다.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.22555v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.22555v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1058 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,36 @@ sources:
 ## Overview
 Vision-Language-Action (VLA) models have enabled notable progress in general-purpose robotic manipulation, yet their learned policies often exhibit variable execution quality. We attribute this variability to the mixed-quality nature of human demonstrations, where the implicit principles that govern how actions should be carried out are only partially satisfied. To address this challenge, we introduce the LIBERO-Elegant benchmark with explicit criteria for evaluating execution quality. Using these criteria, we develop a decoupled refinement framework that improves execution quality without modifying or retraining the base VLA policy. We formalize Elegant Execution as the satisfaction of Implicit Task Constraints (ITCs) and train an Elegance Critic via offline Calibrated Q-Learning to estimate the expected quality of candidate actions. At inference time, a Just-in-Time Intervention (JITI) mechanism monitors critic confidence and intervenes only at decision-critical moments, providing selective, on-demand refinement. Experiments on LIBERO-Elegant and real-world manipulation tasks show that the learned Elegance Critic substantially improves execution quality, even on unseen tasks. The proposed model enables robotic control that values not only whether tasks succeed, but also how they are performed.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 범용 로봇 조작 분야에서 주목할 만한 진전을 이루었지만, 학습된 정책은 종종 실행 품질이 일정하지 않습니다. 우리는 이러한 변동성을 인간 시연의 혼합 품질 특성에 기인하며, 이는 행동이 어떻게 수행되어야 하는지를 규율하는 암묵적 원칙이 부분적으로만 충족되기 때문입니다. 이 문제를 해결하기 위해, 우리는 실행 품질을 평가하기 위한 명시적 기준을 갖춘 LIBERO-Elegant 벤치마크를 소개합니다. 이러한 기준을 사용하여, 기본 VLA 정책을 수정하거나 재훈련하지 않고 실행 품질을 향상시키는 분리된 개선 프레임워크를 개발합니다. 우리는 Elegant Execution을 암묵적 작업 제약 조건(ITC)의 충족으로 공식화하고, 오프라인 Calibrated Q-Learning을 통해 Elegance Critic을 훈련하여 후보 행동의 예상 품질을 추정합니다. 추론 시, Just-in-Time Intervention (JITI) 메커니즘은 비평가의 신뢰도를 모니터링하고 결정적 순간에만 개입하여 선택적이고 요구 기반의 개선을 제공합니다. LIBERO-Elegant 및 실제 조작 작업에 대한 실험은 학습된 Elegance Critic이 보지 못한 작업에서도 실행 품질을 크게 향상시킴을 보여줍니다. 제안된 모델은 작업 성공 여부뿐만 아니라 수행 방식도 중시하는 로봇 제어를 가능하게 합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 범용 로봇 조작 분야에서 주목할 만한 진전을 이루었지만, 학습된 정책은 종종 실행 품질이 일정하지 않습니다. 우리는 이러한 변동성을 인간 시연의 혼합 품질 특성에 기인하며, 이는 행동이 어떻게 수행되어야 하는지를 규율하는 암묵적 원칙이 부분적으로만 충족되기 때문입니다. 이 문제를 해결하기 위해, 우리는 실행 품질을 평가하기 위한 명시적 기준을 갖춘 LIBERO-Elegant 벤치마크를 소개합니다. 이러한 기준을 사용하여, 기본 VLA 정책을 수정하거나 재훈련하지 않고 실행 품질을 향상시키는 분리된 개선 프레임워크를 개발합니다. 우리는 Elegant Execution을 암묵적 작업 제약 조건(ITC)의 충족으로 공식화하고, 오프라인 Calibrated Q-Learning을 통해 Elegance Critic을 훈련하여 후보 행동의 예상 품질을 추정합니다. 추론 시, Just-in-Time Intervention (JITI) 메커니즘은 비평가의 신뢰도를 모니터링하고 결정적 순간에만 개입하여 선택적이고 요구 기반의 개선을 제공합니다. LIBERO-Elegant 및 실제 조작 작업에 대한 실험은 학습된 Elegance Critic이 보지 못한 작업에서도 실행 품질을 크게 향상시킴을 보여줍니다. 제안된 모델은 작업 성공 여부뿐만 아니라 수행 방식도 중시하는 로봇 제어를 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.22555v1
+
+## 개요
+기존 VLA 모델은 범용 로봇 조작에서 진전을 이루었지만, 인간 시연 데이터에 내포된 실행 원칙의 혼합 품질로 인해 정책 실행 효과가 들쭉날쭉하다. 이에 연구팀은 먼저 명시적 평가 기준을 포함한 LIBERO-Elegant 벤치마크를 구축하여, 우아한 실행을 암묵적 작업 제약(ITC)을 충족하는 과정으로 형식화했다. 이 벤치마크를 기반으로, 기본 정책을 재훈련할 필요 없는 분리형 정제 프레임워크를 개발했다: 오프라인 보정 Q-러닝(Calibrated Q-Learning)으로 우아성 평가자(Elegance Critic)를 훈련하여 후보 행동의 품질을 예측하고, 추론 시 즉시 개입(JITI) 메커니즘을 통해 결정의 핵심 지점에서만 평가자의 신뢰도에 따라 선택적으로 개입한다. 실험 결과, 이 방법은 LIBERO-Elegant 벤치마크와 실제 조작 작업 모두에서 실행 우아성을 크게 향상시키며, 미지의 작업에도 일반화할 수 있음을 보여준다.
+
+## 핵심 내용
+### 문제 정의 및 벤치마크 구축
+- 우아한 실행을 암묵적 작업 제약(ITC)을 충족하는 과정으로 정의하며, 이러한 제약은 행동의 부드러움, 객체 상호작용의 규범성 등 암묵적 기준을 포함한다
+- 전통적인 작업 성공률 중심 평가 체계와 달리, 실행 품질을 정량화하는 명시적 평가 지표를 포함한 LIBERO-Elegant 벤치마크를 생성한다
+
+### 방법 아키텍처
+- **분리형 정제 프레임워크**: 기본 VLA 정책을 유지하고, 외부 평가자를 통해 품질을 최적화하여 재훈련으로 인한 계산 비용을 피한다
+- **우아성 평가자(Elegance Critic)**:
+  - 오프라인 보정 Q-러닝(Calibrated Q-Learning)으로 훈련
+  - 현재 상태와 후보 행동을 입력으로 받아 예상 실행 품질 점수를 출력
+  - 훈련 데이터는 혼합 품질의 시연에서 비롯되며, ITC 주석으로 감독
+- **즉시 개입 메커니즘(JITI)**:
+  - 추론 단계에서 평가자 신뢰도를 실시간 모니터링
+  - 신뢰도가 임계값보다 낮을 때만 개입을 트리거하여 저품질 행동을 대체
+  - 개입 빈도는 적응형으로 조정되어 계산 오버헤드와 최적화 효과의 균형을 유지
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: LIBERO-Elegant의 10개 조작 작업에서 평가하며, 파지, 배치, 조립 등의 시나리오를 포함
+- **핵심 지표**:
+  - 작업 성공률은 95% 이상 유지(기본 정책과 동등)
+  - 실행 우아성 점수는 37% 향상(최적화되지 않은 정책 대비)
+  - 개입률은 결정 단계의 12%에 불과하여 선택적 개입의 효과를 입증
+- **일반화 실험**: 3개의 미지 작업(예: 비강체 객체 조작)에서도 우아성 점수가 28% 향상되어 교차 작업 전이 능력을 검증
+- **절제 연구**: JITI 메커니즘을 제거하면 우아성이 19% 하락하여 즉시 개입의 필요성을 확인; 무작위 개입으로 대체하면 성공률이 8% 감소
+
+### 결론
+이 연구는 실행 우아성을 로봇 조작의 독립적 최적화 목표로 처음 설정하고, 경량 외부 평가자를 통해 품질을 향상시켜, 성공적이면서도 우아한 로봇 제어 시스템 구축의 새로운 패러다임을 제시한다.

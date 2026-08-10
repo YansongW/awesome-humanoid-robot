@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.06371v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.06371v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (900 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,29 @@ AHC 通过多行为蒸馏与强化微调的结合，有效解决了人形机器�
 ## Overview
 Humanoid robots are promising to learn a diverse set of human-like locomotion behaviors, including standing up, walking, running, and jumping. However, existing methods predominantly require training independent policies for each skill, yielding behavior-specific controllers that exhibit limited generalization and brittle performance when deployed on irregular terrains and in diverse situations. To address this challenge, we propose Adaptive Humanoid Control (AHC) that adopts a two-stage framework to learn an adaptive humanoid locomotion controller across different skills and terrains. Specifically, we first train several primary locomotion policies and perform a multi-behavior distillation process to obtain a basic multi-behavior controller, facilitating adaptive behavior switching based on the environment. Then, we perform reinforced fine-tuning by collecting online feedback in performing adaptive behaviors on more diverse terrains, enhancing terrain adaptability for the controller. We conduct experiments in both simulation and real-world experiments in Unitree G1 robots. The results show that our method exhibits strong adaptability across various situations and terrains. Project website: https://ahc-humanoid.github.io.
 
-## 개요
-휴머노이드 로봇은 일어서기, 걷기, 달리기, 점프 등 다양한 인간형 보행 행동을 학습할 수 있는 가능성을 보여주고 있습니다. 그러나 기존 방법들은 주로 각 기술에 대해 독립적인 정책을 학습해야 하므로, 불규칙한 지형과 다양한 상황에서 배치될 때 일반화 능력이 제한적이고 성능이 취약한 행동별 제어기를 생성합니다. 이러한 문제를 해결하기 위해, 우리는 적응형 휴머노이드 제어(AHC)를 제안합니다. 이는 두 단계 프레임워크를 채택하여 다양한 기술과 지형에 걸쳐 적응형 휴머노이드 보행 제어기를 학습합니다. 구체적으로, 먼저 여러 기본 보행 정책을 학습하고 다중 행동 증류 과정을 수행하여 기본 다중 행동 제어기를 얻음으로써 환경에 기반한 적응형 행동 전환을 용이하게 합니다. 그런 다음, 더 다양한 지형에서 적응형 행동을 수행하는 과정에서 온라인 피드백을 수집하여 강화 미세 조정을 수행함으로써 제어기의 지형 적응성을 향상시킵니다. 우리는 Unitree G1 로봇을 사용하여 시뮬레이션과 실제 실험을 모두 수행했습니다. 결과는 우리의 방법이 다양한 상황과 지형에서 강력한 적응성을 보여줌을 입증합니다. 프로젝트 웹사이트: https://ahc-humanoid.github.io.
-
-## 핵심 내용
-휴머노이드 로봇은 일어서기, 걷기, 달리기, 점프 등 다양한 인간형 보행 행동을 학습할 수 있는 가능성을 보여주고 있습니다. 그러나 기존 방법들은 주로 각 기술에 대해 독립적인 정책을 학습해야 하므로, 불규칙한 지형과 다양한 상황에서 배치될 때 일반화 능력이 제한적이고 성능이 취약한 행동별 제어기를 생성합니다. 이러한 문제를 해결하기 위해, 우리는 적응형 휴머노이드 제어(AHC)를 제안합니다. 이는 두 단계 프레임워크를 채택하여 다양한 기술과 지형에 걸쳐 적응형 휴머노이드 보행 제어기를 학습합니다. 구체적으로, 먼저 여러 기본 보행 정책을 학습하고 다중 행동 증류 과정을 수행하여 기본 다중 행동 제어기를 얻음으로써 환경에 기반한 적응형 행동 전환을 용이하게 합니다. 그런 다음, 더 다양한 지형에서 적응형 행동을 수행하는 과정에서 온라인 피드백을 수집하여 강화 미세 조정을 수행함으로써 제어기의 지형 적응성을 향상시킵니다. 우리는 Unitree G1 로봇을 사용하여 시뮬레이션과 실제 실험을 모두 수행했습니다. 결과는 우리의 방법이 다양한 상황과 지형에서 강력한 적응성을 보여줌을 입증합니다. 프로젝트 웹사이트: https://ahc-humanoid.github.io.
-
 ## 参考
 - http://arxiv.org/abs/2511.06371v3
+
+## 개요
+기존 방법들은 일반적으로 각 운동 기술(예: 서기, 걷기, 달리기, 점프)에 대해 독립적인 정책을 훈련하여 컨트롤러의 일반화 능력이 부족하고, 평평하지 않은 지형과 다양한 환경에서 취약한 모습을 보인다. AHC는 두 단계 프레임워크를 통해 이 문제를 해결한다: 먼저 여러 기본 운동 정책을 훈련하고, 다중 행동 증류 과정을 통해 기본 다중 행동 컨트롤러를 얻어 환경에 따라 적응적으로 행동을 전환할 수 있게 한다; 이후, 더 복잡한 지형에서 온라인 피드백을 수집하여 강화 미세 조정을 수행함으로써 지형 적응성을 더욱 향상시킨다. 실험은 Unitree G1 로봇의 시뮬레이션 및 실제 환경에서 수행되었으며, 결과는 이 방법이 다양한 상황과 지형에서 강한 적응성을 보임을 나타낸다.
+
+## 핵심 내용
+### 방법 아키텍처
+AHC는 두 단계 프레임워크를 채택한다:
+- **1단계: 다중 행동 증류**  
+  먼저 여러 기본 운동 정책(예: 서기, 걷기, 달리기, 점프)을 독립적으로 훈련한 다음, 지식 증류를 통해 이러한 정책의 행동 패턴을 하나의 기본 다중 행동 컨트롤러로 통합한다. 이 컨트롤러는 환경 입력에 따라 적응적으로 행동을 전환할 수 있으며, 각 기술에 대해 독립적인 정책을 유지할 필요가 없다.
+- **2단계: 강화 미적분**  
+  더 복잡한 지형(예: 불규칙한 지면, 경사로 등)에서 컨트롤러가 적응적 행동을 수행하고 온라인 피드백을 수집하여 강화 학습을 통해 정책을 추가로 최적화하고, 미지의 지형에 대한 일반화 능력을 강화한다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: Unitree G1 휴머노이드 로봇.
+- **실험 환경**: 초기 훈련 및 증류를 위한 시뮬레이션 환경과 미세 조정 및 최종 테스트를 위한 실제 환경을 포함한다.
+- **비교 기준**: 독립적으로 훈련된 단일 기술 정책과 비교하여 다양한 지형(예: 평지, 자갈길, 경사로)에서의 성능을 평가한다.
+
+### 주요 결과
+- **적응성**: AHC는 시뮬레이션 및 실제 실험에서 서기, 걷기, 달리기, 점프 등의 행동을 성공적으로 적응적으로 전환할 수 있으며, 독립 정책은 훈련되지 않은 지형에서 빈번히 실패한다.
+- **지형 일반화**: 강화 미적분 후, 컨트롤러는 보지 못한 불규칙한 지형(예: 잔디, 계단)에서의 성공률이 30% 이상 향상된다(구체적인 수치는 원문 참조).
+- **강건성**: 실제 실험에서 AHC는 로봇 본체의 외란(예: 외부 힘에 의한 밀림)과 지면 변화에 대응할 수 있으며, 독립 정책의 안정성은 현저히 저하된다.
+
+### 결론
+AHC는 다중 행동 증류와 강화 미적분의 결합을 통해 휴머노이드 로봇의 다중 기술 제어에서의 일반화 및 적응성 문제를 효과적으로 해결하며, 복잡한 실제 환경에서 통합 컨트롤러를 배포할 수 있는 실현 가능한 방안을 제공한다. 프로젝트 웹사이트에서 더 많은 세부 사항과 데모 비디오를 제공한다.

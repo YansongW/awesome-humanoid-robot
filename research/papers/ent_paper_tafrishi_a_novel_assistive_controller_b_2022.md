@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.01969v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.01969v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (834 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,30 @@ Certain wheeled mobile robots, e.g., electric wheelchairs, can operate through i
 ## Content
 Certain wheeled mobile robots, e.g., electric wheelchairs, can operate through indirect joystick controls from users. Correct steering angle becomes essential when the user should determine the vehicle direction and velocity, in particular for differential wheeled vehicles since the vehicle velocity and direction are controlled with only two actuating wheels. This problem gets more challenging when complex curves should be realized by the user. A novel assistive controller with safety constraints is needed to address these problems. Also, the classic control methods mostly require the desired states beforehand which completely contradicts human's spontaneous decisions on the desired location to go. In this work, we develop a novel assistive control strategy based on differential geometry relying on only joystick inputs and vehicle states where the controller does not require any desired states. We begin with explaining the vehicle kinematics and our designed Darboux frame kinematics on a contact point of a virtual wheel and plane. Next, the geometric controller using the Darboux frame kinematics is designed for having smooth trajectories under certain safety constraints. We experiment our approach with different participants and evaluate its performance in various routes.
 
-## 개요
-특정 바퀴형 이동 로봇(예: 전동 휠체어)은 사용자의 간접적인 조이스틱 제어를 통해 작동할 수 있습니다. 사용자가 차량의 방향과 속도를 결정해야 할 때, 특히 차량 속도와 방향이 두 개의 구동 바퀴로만 제어되는 차동 바퀴형 차량의 경우 올바른 조향 각도가 필수적입니다. 사용자가 복잡한 곡선을 구현해야 할 때 이 문제는 더욱 어려워집니다. 이러한 문제를 해결하기 위해 안전 제약 조건을 갖춘 새로운 보조 제어기가 필요합니다. 또한, 기존 제어 방법은 대부분 사전에 원하는 상태를 요구하는데, 이는 인간이 가고자 하는 위치에 대한 자발적인 결정과 완전히 상반됩니다. 본 연구에서는 조이스틱 입력과 차량 상태에만 의존하는 미분 기하학 기반의 새로운 보조 제어 전략을 개발하며, 이 제어기는 어떤 원하는 상태도 필요로 하지 않습니다. 먼저 차량 운동학과 가상 바퀴와 평면의 접촉점에서 설계된 다르부 프레임 운동학을 설명합니다. 다음으로, 다르부 프레임 운동학을 사용한 기하학적 제어기를 설계하여 특정 안전 제약 조건 하에서 부드러운 궤적을 얻습니다. 다양한 참가자와 함께 접근 방식을 실험하고 다양한 경로에서 성능을 평가합니다.
-
-## 핵심 내용
-특정 바퀴형 이동 로봇(예: 전동 휠체어)은 사용자의 간접적인 조이스틱 제어를 통해 작동할 수 있습니다. 사용자가 차량의 방향과 속도를 결정해야 할 때, 특히 차량 속도와 방향이 두 개의 구동 바퀴로만 제어되는 차동 바퀴형 차량의 경우 올바른 조향 각도가 필수적입니다. 사용자가 복잡한 곡선을 구현해야 할 때 이 문제는 더욱 어려워집니다. 이러한 문제를 해결하기 위해 안전 제약 조건을 갖춘 새로운 보조 제어기가 필요합니다. 또한, 기존 제어 방법은 대부분 사전에 원하는 상태를 요구하는데, 이는 인간이 가고자 하는 위치에 대한 자발적인 결정과 완전히 상반됩니다. 본 연구에서는 조이스틱 입력과 차량 상태에만 의존하는 미분 기하학 기반의 새로운 보조 제어 전략을 개발하며, 이 제어기는 어떤 원하는 상태도 필요로 하지 않습니다. 먼저 차량 운동학과 가상 바퀴와 평면의 접촉점에서 설계된 다르부 프레임 운동학을 설명합니다. 다음으로, 다르부 프레임 운동학을 사용한 기하학적 제어기를 설계하여 특정 안전 제약 조건 하에서 부드러운 궤적을 얻습니다. 다양한 참가자와 함께 접근 방식을 실험하고 다양한 경로에서 성능을 평가합니다.
-
 ## 参考
 - http://arxiv.org/abs/2202.01969v1
+
+## 개요
+차동 휠 기반 이동 로봇(예: 전동 휠체어)은 사용자가 조이스틱을 통해 속도와 방향을 간접적으로 제어해야 하며, 특히 복잡한 곡선 주행 시 사용자가 정밀하게 조향 각도를 조정해야 하므로 어려움이 있습니다. 기존 제어 방법은 일반적으로 사전 설정된 목표 상태를 요구하며, 인간의 자발적 의사 결정 기반 운전 행동과 상충됩니다. 본 논문은 미분기하학에 기반한 새로운 보조 제어 전략을 제안하며, 조이스틱 입력과 차량의 현재 상태만 필요로 하고 사전 설정된 목표가 전혀 필요 없습니다. 이 방법은 먼저 차량 운동학 모델과 가상 휠과 평면 접촉점의 Darboux 프레임 운동학을 구축한 후, 안전 제약 조건 하에서 매끄러운 궤적을 생성하도록 기하학적 제어기를 설계합니다. 실험은 다양한 참가자가 여러 경로에서 테스트하여 제어기의 유효성을 검증합니다.
+
+## 핵심 내용
+### 방법 개요
+- 차동 휠 기반 이동 로봇(예: 전동 휠체어)의 간접 조이스틱 제어 문제를 다루며, 사용자는 속도와 방향을 동시에 결정해야 하고, 특히 복잡한 곡선 구현 시 어려움이 증가합니다.
+- 기존 제어 방법은 사전 설정된 목표 상태에 의존하여 인간의 자발적 의사 결정에 적응하지 못합니다. 본 논문은 미분기하학 기반 보조 제어기를 제안하며, 조이스틱 입력과 현재 차량 상태만 필요로 합니다.
+
+### 핵심 아키텍처
+- **운동학 모델링**: 먼저 차량 운동학을 유도하고, 가상 휠과 평면 접촉점의 Darboux 프레임 운동학을 설계합니다. 이 프레임은 접촉점의 기하학적 특성을 설명하는 데 사용됩니다.
+- **기하학적 제어기 설계**: Darboux 프레임 운동학을 기반으로, 안전 제약 조건(예: 충돌 회피 또는 경계 이탈 방지)을 충족하면서 매끄러운 궤적을 생성하도록 제어기를 설계합니다.
+
+### 실험 설정
+- 참가자: 다양한 사용자가 실험에 참여하여 직선, 곡선 및 복잡한 경로를 포함한 여러 경로에서 제어기의 성능을 테스트합니다.
+- 평가 지표: 궤적 매끄러움, 사용자 조작 부담, 안전성(예: 사전 설정된 안전 영역 이탈 여부).
+
+### 주요 결과
+- 제어기는 사전 설정된 목표 상태 없이도 사용자가 복잡한 곡선 주행을 성공적으로 보조하며, 궤적 매끄러움이 크게 향상됩니다.
+- 안전 제약 조건은 차량이 위험 영역에 진입하는 것을 효과적으로 방지하며, 사용자 조작 부담이 감소합니다(예: 조이스틱 조정 횟수 감소).
+- 실험 결과, 이 방법은 다양한 사용자와 경로에 적용 가능하며 강건성을 보입니다.
+
+### 결론
+- 본 논문에서 제안한 미분기하학 기반 보조 제어기는 차동 휠 로봇의 간접 조작에서 발생하는 핵심 문제를 해결하며, 사전 설정된 목표 상태 없이 실시간 입력만으로 작동합니다.
+- 향후 작업은 더 복잡한 차량 모델이나 동적 환경으로 확장하고, 안전 제약 조건의 실시간성을 추가로 최적화할 수 있습니다.

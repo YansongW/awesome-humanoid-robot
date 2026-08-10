@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.02180v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.02180v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (881 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,27 @@ AMP通过对抗模仿学习消除了对人工设计模仿目标和运动选择�
 ## Overview
 Synthesizing graceful and life-like behaviors for physically simulated characters has been a fundamental challenge in computer animation. Data-driven methods that leverage motion tracking are a prominent class of techniques for producing high fidelity motions for a wide range of behaviors. However, the effectiveness of these tracking-based methods often hinges on carefully designed objective functions, and when applied to large and diverse motion datasets, these methods require significant additional machinery to select the appropriate motion for the character to track in a given scenario. In this work, we propose to obviate the need to manually design imitation objectives and mechanisms for motion selection by utilizing a fully automated approach based on adversarial imitation learning. High-level task objectives that the character should perform can be specified by relatively simple reward functions, while the low-level style of the character's behaviors can be specified by a dataset of unstructured motion clips, without any explicit clip selection or sequencing. These motion clips are used to train an adversarial motion prior, which specifies style-rewards for training the character through reinforcement learning (RL). The adversarial RL procedure automatically selects which motion to perform, dynamically interpolating and generalizing from the dataset. Our system produces high-quality motions that are comparable to those achieved by state-of-the-art tracking-based techniques, while also being able to easily accommodate large datasets of unstructured motion clips. Composition of disparate skills emerges automatically from the motion prior, without requiring a high-level motion planner or other task-specific annotations of the motion clips. We demonstrate the effectiveness of our framework on a diverse cast of complex simulated characters and a challenging suite of motor control tasks.
 
-## 개요
-물리적으로 시뮬레이션된 캐릭터를 위한 우아하고 생생한 행동을 합성하는 것은 컴퓨터 애니메이션의 근본적인 도전 과제였습니다. 모션 트래킹을 활용하는 데이터 기반 방법은 다양한 행동에 대해 높은 충실도의 모션을 생성하는 대표적인 기술 클래스입니다. 그러나 이러한 트래킹 기반 방법의 효과성은 종종 신중하게 설계된 목적 함수에 의존하며, 크고 다양한 모션 데이터셋에 적용될 때 주어진 시나리오에서 캐릭터가 추적할 적절한 모션을 선택하기 위해 상당한 추가 장치가 필요합니다. 본 연구에서는 적대적 모방 학습(adversarial imitation learning)에 기반한 완전 자동화된 접근 방식을 활용하여 모방 목적과 모션 선택 메커니즘을 수동으로 설계할 필요를 없애고자 합니다. 캐릭터가 수행해야 하는 높은 수준의 작업 목표는 비교적 간단한 보상 함수로 지정할 수 있으며, 캐릭터 행동의 낮은 수준 스타일은 명시적인 클립 선택이나 순서 지정 없이 비구조화된 모션 클립 데이터셋으로 지정할 수 있습니다. 이러한 모션 클립은 강화 학습(RL)을 통해 캐릭터를 훈련하기 위한 스타일 보상을 지정하는 적대적 모션 사전(adversarial motion prior)을 훈련하는 데 사용됩니다. 적대적 RL 절차는 데이터셋에서 동적으로 보간 및 일반화하여 수행할 모션을 자동으로 선택합니다. 우리 시스템은 최첨단 트래킹 기반 기술로 달성된 것과 견줄 만한 고품질 모션을 생성하면서도 비구조화된 모션 클립의 대규모 데이터셋을 쉽게 수용할 수 있습니다. 서로 다른 기술의 구성은 높은 수준의 모션 플래너나 모션 클립의 작업별 주석 없이 모션 사전에서 자동으로 나타납니다. 우리는 다양한 복잡한 시뮬레이션 캐릭터와 까다로운 모터 제어 작업 세트에서 프레임워크의 효과성을 입증합니다.
-
-## 핵심 내용
-물리적으로 시뮬레이션된 캐릭터를 위한 우아하고 생생한 행동을 합성하는 것은 컴퓨터 애니메이션의 근본적인 도전 과제였습니다. 모션 트래킹을 활용하는 데이터 기반 방법은 다양한 행동에 대해 높은 충실도의 모션을 생성하는 대표적인 기술 클래스입니다. 그러나 이러한 트래킹 기반 방법의 효과성은 종종 신중하게 설계된 목적 함수에 의존하며, 크고 다양한 모션 데이터셋에 적용될 때 주어진 시나리오에서 캐릭터가 추적할 적절한 모션을 선택하기 위해 상당한 추가 장치가 필요합니다. 본 연구에서는 적대적 모방 학습에 기반한 완전 자동화된 접근 방식을 활용하여 모방 목적과 모션 선택 메커니즘을 수동으로 설계할 필요를 없애고자 합니다. 캐릭터가 수행해야 하는 높은 수준의 작업 목표는 비교적 간단한 보상 함수로 지정할 수 있으며, 캐릭터 행동의 낮은 수준 스타일은 명시적인 클립 선택이나 순서 지정 없이 비구조화된 모션 클립 데이터셋으로 지정할 수 있습니다. 이러한 모션 클립은 강화 학습을 통해 캐릭터를 훈련하기 위한 스타일 보상을 지정하는 적대적 모션 사전을 훈련하는 데 사용됩니다. 적대적 RL 절차는 데이터셋에서 동적으로 보간 및 일반화하여 수행할 모션을 자동으로 선택합니다. 우리 시스템은 최첨단 트래킹 기반 기술로 달성된 것과 견줄 만한 고품질 모션을 생성하면서도 비구조화된 모션 클립의 대규모 데이터셋을 쉽게 수용할 수 있습니다. 서로 다른 기술의 구성은 높은 수준의 모션 플래너나 모션 클립의 작업별 주석 없이 모션 사전에서 자동으로 나타납니다. 우리는 다양한 복잡한 시뮬레이션 캐릭터와 까다로운 모터 제어 작업 세트에서 프레임워크의 효과성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2104.02180v2
+
+## 개요
+AMP는 적대적 모방 학습 프레임워크를 통해 고수준 작업 목표(간단한 보상 함수로 정의)와 저수준 동작 스타일(구조화되지 않은 모션 클립 데이터셋으로 지정)을 분리한다. 시스템은 적대적 동작 사전을 활용해 강화 학습에 스타일 보상을 제공하며, 명시적인 모션 클립 선택이나 시퀀스 계획 없이 데이터셋에서 자동으로 동작을 선택, 보간 및 일반화한다. 이 방법은 다양한 복잡한 시뮬레이션 캐릭터와 도전적인 운동 제어 작업에서 최신 추적 방법과 동등한 동작 품질을 달성하며, 고수준 동작 계획기나 작업별 주석 없이도 다양한 기술을 자연스럽게 융합할 수 있다.
+
+## 핵심 내용
+### 방법 아키텍처
+AMP의 핵심은 **적대적 모방 학습** 프레임워크로, 두 가지 주요 구성 요소를 포함한다:
+- **적대적 동작 사전**: 주석이 없는 모션 클립 데이터셋을 사용해 판별기를 훈련하며, 이 판별기는 시뮬레이션 캐릭터가 생성한 동작과 데이터셋의 실제 동작을 구분하여 스타일 보상을 출력한다.
+- **강화 학습(RL)**: 캐릭터는 RL을 통해 작업 보상(예: 이동 속도, 점프 높이)과 스타일 보상(적대적 사전에서 제공)의 가중 합을 최적화하며, 작업 수행 방법과 데이터셋의 동작 스타일 유지를 자동으로 학습한다.
+
+### 핵심 메커니즘
+- **자동 동작 선택**: RL 과정은 현재 추적해야 할 클립을 수동으로 지정할 필요 없이 데이터셋에서 자동으로 동작을 선택, 보간 및 일반화한다.
+- **기술 조합의 창발**: 동작 사전은 캐릭터가 걷기, 점프, 회전과 같은 다양한 기술을 고수준 계획기나 작업별 주석 없이 자연스럽게 융합할 수 있게 한다.
+- **비지도 학습**: 모션 클립은 주석이나 정렬이 필요 없으며, 시스템은 원시 데이터에서 직접 스타일 특징을 학습한다.
+
+### 실험 설정 및 결과
+- **캐릭터 및 작업**: 다양한 복잡한 시뮬레이션 캐릭터(예: 휴머노이드, 사족 동물)에서 테스트했으며, 작업에는 걷기, 달리기, 점프, 등반 등 도전적인 운동 제어 작업이 포함된다.
+- **비교 기준**: 동작 추적 기반의 최신 방법(예: DeepMimic)과 비교했을 때, AMP는 동작 품질과 다양성에서 동등한 수준을 달성하며 수동 목표 함수 설계가 필요 없다.
+- **핵심 수치**: 여러 작업에서 AMP의 보상 곡선 수렴 속도는 추적 방법과 유사하지만 훈련 과정은 더 안정적이다. 기술 조합 작업에서 AMP는 자동으로 매끄러운 전환을 생성하는 반면, 추적 방법은 추가 계획기가 필요하다.
+
+### 결론
+AMP는 적대적 모방 학습을 통해 수동으로 설계된 모방 목표와 동작 선택 메커니즘의 필요성을 제거하여, 물리 시뮬레이션 캐릭터 제어를 위한 더 자동화되고 확장 가능한 솔루션을 제공한다. 오픈소스 코드(GitHub)는 이 분야의 연구와 응용을 더욱 촉진한다.

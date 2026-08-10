@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.04353v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.04353v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (587 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,25 @@ sources:
 ## Overview
 Teleoperation is a powerful method to generate reference motions and enable humanoid robots to perform a broad range of tasks. However, teleoperation becomes challenging when using hand contacts and non-coplanar surfaces, often leading to motor torque saturation or loss of stability through slipping. We propose a centroidal stability-based retargeting method that dynamically adjusts contact points and posture during teleoperation to enhance stability in these difficult scenarios. Central to our approach is an efficient analytical calculation of the stability margin gradient. This gradient is used to identify scenarios for which stability is highly sensitive to teleoperation setpoints and inform the local adjustment of these setpoints. We validate the framework in simulation and hardware by teleoperating manipulation tasks on a humanoid, demonstrating increased stability margins. We also demonstrate empirically that higher stability margins correlate with improved impulse resilience and joint torque margin.
 
-## 개요
-원격 조작은 참조 동작을 생성하고 인간형 로봇이 다양한 작업을 수행할 수 있게 하는 강력한 방법입니다. 그러나 손 접촉과 비공면 표면을 사용할 때 원격 조작은 어려워지며, 종종 모터 토크 포화 또는 미끄러짐으로 인한 안정성 손실로 이어집니다. 본 연구에서는 이러한 어려운 시나리오에서 안정성을 향상시키기 위해 원격 조작 중 접촉점과 자세를 동적으로 조정하는 중심 안정성 기반 리타겟팅 방법을 제안합니다. 우리 접근법의 핵심은 안정성 마진 기울기의 효율적인 분석적 계산입니다. 이 기울기는 안정성이 원격 조작 설정점에 매우 민감한 시나리오를 식별하고 이러한 설정점의 국소적 조정을 안내하는 데 사용됩니다. 우리는 인간형 로봇에서 조작 작업을 원격 조작하여 시뮬레이션과 하드웨어에서 프레임워크를 검증하고, 증가된 안정성 마진을 입증합니다. 또한 더 높은 안정성 마진이 개선된 충격 저항성과 관절 토크 마진과 상관관계가 있음을 경험적으로 보여줍니다.
-
-## 핵심 내용
-원격 조작은 참조 동작을 생성하고 인간형 로봇이 다양한 작업을 수행할 수 있게 하는 강력한 방법입니다. 그러나 손 접촉과 비공면 표면을 사용할 때 원격 조작은 어려워지며, 종종 모터 토크 포화 또는 미끄러짐으로 인한 안정성 손실로 이어집니다. 본 연구에서는 이러한 어려운 시나리오에서 안정성을 향상시키기 위해 원격 조작 중 접촉점과 자세를 동적으로 조정하는 중심 안정성 기반 리타겟팅 방법을 제안합니다. 우리 접근법의 핵심은 안정성 마진 기울기의 효율적인 분석적 계산입니다. 이 기울기는 안정성이 원격 조작 설정점에 매우 민감한 시나리오를 식별하고 이러한 설정점의 국소적 조정을 안내하는 데 사용됩니다. 우리는 인간형 로봇에서 조작 작업을 원격 조작하여 시뮬레이션과 하드웨어에서 프레임워크를 검증하고, 증가된 안정성 마진을 입증합니다. 또한 더 높은 안정성 마진이 개선된 충격 저항성과 관절 토크 마진과 상관관계가 있음을 경험적으로 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.04353v1
+
+## 개요
+본 연구는 인간형 로봇 원격 조작에서 손 접촉 및 비공면 표면으로 인한 모터 토크 포화 또는 미끄러짐 불안정 문제를 해결하기 위해, 질량 중심 안정성 인식 리다이렉션 방법을 제안한다. 이 방법의 핵심은 안정성 여유 기울기를 효율적으로 해석적으로 계산하여, 원격 조작 설정점에 매우 민감한 시나리오를 식별하고, 이러한 설정점을 국부적으로 조정하여 안정성을 강화하는 것이다. 시뮬레이션과 하드웨어에서 인간형 로봇을 원격 조작하는 작업을 통해 검증한 결과, 이 방법은 안정성 여유를 크게 향상시켰다. 실험은 또한 더 높은 안정성 여유가 더 나은 펄스 외란 저항 능력 및 관절 토크 여유와 양의 상관관계가 있음을 보여주었다.
+
+## 핵심 내용
+### 방법 개요
+- **문제 배경**: 인간형 로봇 원격 조작은 손 접촉 및 비공면 표면을 포함할 때 모터 토크 포화 또는 미끄러짐으로 인해 불안정해지기 쉽다.
+- **핵심 방법**: 질량 중심 안정성 기반 리다이렉션 방법을 제안하여 접촉점과 자세를 동적으로 조정한다.
+- **핵심 기술**: 안정성 여유 기울기를 효율적으로 해석적으로 계산하여, 원격 조작 설정점에 매우 민감한 시나리오를 식별하고, 이러한 설정점을 국부적으로 조정한다.
+
+### 실험 설정
+- **검증 방식**: 시뮬레이션 및 하드웨어 플랫폼에서 인간형 로봇을 원격 조작하여 조작 작업을 수행함으로써 검증한다.
+- **평가 지표**: 안정성 여유, 펄스 외란 저항 능력, 관절 토크 여유.
+
+### 핵심 결과
+- **안정성 향상**: 제안된 방법은 안정성 여유를 크게 증가시켰다.
+- **상관성 검증**: 실험은 더 높은 안정성 여유가 더 나은 펄스 외란 저항 능력 및 관절 토크 여유와 양의 상관관계가 있음을 증명했다.
+
+### 결론
+이 방법은 다중 접촉 원격 조작에서의 안정성 문제를 효과적으로 해결하며, 복잡한 환경에서의 로봇 조작에 신뢰할 수 있는 솔루션을 제공한다.

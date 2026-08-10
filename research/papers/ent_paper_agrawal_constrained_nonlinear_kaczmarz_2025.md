@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.21630v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.21630v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1028 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,26 @@ cNKZ通过流形投影策略有效解决了多机器人协同操作中的高维�
 ## Overview
 Cooperative manipulation tasks impose various structure-, task-, and robot-specific constraints on mobile manipulators. However, current methods struggle to model and solve these myriad constraints simultaneously. We propose a twofold solution: first, we model constraints as a family of manifolds amenable to simultaneous solving. Second, we introduce the constrained nonlinear Kaczmarz (cNKZ) projection technique to produce constraint-satisfying solutions. Experiments show that cNKZ dramatically outperforms baseline approaches, which cannot find solutions at all. We integrate cNKZ with a sampling-based motion planning algorithm to generate complex, coordinated motions for 3 to 6 mobile manipulators (18--36 DoF), with cNKZ solving up to 80 nonlinear constraints simultaneously and achieving up to a 92% success rate in cluttered environments. We also demonstrate our approach on hardware using three Turtlebot3 Waffle Pi robots with OpenMANIPULATOR-X arms.
 
-## 개요
-협력적 조작 작업은 이동형 매니퓰레이터에 다양한 구조적, 작업적, 로봇 특화 제약 조건을 부과합니다. 그러나 현재 방법들은 이러한 수많은 제약 조건을 동시에 모델링하고 해결하는 데 어려움을 겪고 있습니다. 우리는 두 가지 해결책을 제안합니다: 첫째, 제약 조건을 동시 해결이 가능한 다양체의 집합으로 모델링합니다. 둘째, 제약 조건을 만족하는 해를 생성하기 위해 제약 비선형 Kaczmarz(cNKZ) 투영 기법을 도입합니다. 실험 결과, cNKZ는 전혀 해를 찾지 못하는 기본 접근법보다 월등히 뛰어난 성능을 보여줍니다. 우리는 cNKZ를 샘플링 기반 운동 계획 알고리즘과 통합하여 3~6대의 이동형 매니퓰레이터(18~36 자유도)에 대한 복잡하고 조정된 움직임을 생성하며, cNKZ는 최대 80개의 비선형 제약 조건을 동시에 해결하고 혼잡한 환경에서 최대 92%의 성공률을 달성합니다. 또한 OpenMANIPULATOR-X 팔을 장착한 세 대의 Turtlebot3 Waffle Pi 로봇을 사용하여 하드웨어에서 우리의 접근법을 시연합니다.
-
-## 핵심 내용
-협력적 조작 작업은 이동형 매니퓰레이터에 다양한 구조적, 작업적, 로봇 특화 제약 조건을 부과합니다. 그러나 현재 방법들은 이러한 수많은 제약 조건을 동시에 모델링하고 해결하는 데 어려움을 겪고 있습니다. 우리는 두 가지 해결책을 제안합니다: 첫째, 제약 조건을 동시 해결이 가능한 다양체의 집합으로 모델링합니다. 둘째, 제약 조건을 만족하는 해를 생성하기 위해 제약 비선형 Kaczmarz(cNKZ) 투영 기법을 도입합니다. 실험 결과, cNKZ는 전혀 해를 찾지 못하는 기본 접근법보다 월등히 뛰어난 성능을 보여줍니다. 우리는 cNKZ를 샘플링 기반 운동 계획 알고리즘과 통합하여 3~6대의 이동형 매니퓰레이터(18~36 자유도)에 대한 복잡하고 조정된 움직임을 생성하며, cNKZ는 최대 80개의 비선형 제약 조건을 동시에 해결하고 혼잡한 환경에서 최대 92%의 성공률을 달성합니다. 또한 OpenMANIPULATOR-X 팔을 장착한 세 대의 Turtlebot3 Waffle Pi 로봇을 사용하여 하드웨어에서 우리의 접근법을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.21630v2
+
+## 개요
+다중 이동 매니퓰레이터 협동 작업에서 구조적, 작업적, 로봇 특이적 제약 조건을 동시에 모델링하고 해결하기 어려운 문제에 대해, 본 논문은 이중 솔루션을 제안한다: 먼저 다양한 제약 조건을 동시에 해결 가능한 매니폴드 족으로 모델링하고, 다음으로 제약 비선형 Kaczmarz(cNKZ) 투영 기법을 도입하여 모든 제약 조건을 충족하는 해를 생성한다. 실험 결과, cNKZ는 기준 방법이 전혀 해결하지 못하는 시나리오에서 우수한 성능을 보였다. 이 방법은 샘플 기반 모션 플래너와 결합하여 3~6대의 이동 매니퓰레이터(18~36 자유도)에 대한 복잡한 협조 운동을 생성할 수 있으며, 혼잡한 환경에서 최대 80개의 비선형 제약 조건을 동시에 해결하고 성공률은 최대 92%에 달한다. 하드웨어 실험은 OpenMANIPULATOR-X 매니퓰레이터를 장착한 세 대의 TurtleBot3 Waffle Pi 로봇에서 성공적으로 검증되었다.
+
+## 핵심 내용
+### 방법 핵심
+- **매니폴드 제약 모델링**: 구조적 제약(예: 매니퓰레이터 관절 한계), 작업적 제약(예: 엔드 이펙터 자세) 및 로봇 특이적 제약(예: 이동 베이스 비홀로노믹 제약)을 미분 가능한 매니폴드 족으로 통합 모델링하여, 제약 해결 문제를 매니폴드 교집합 위의 투영 문제로 변환한다.
+- **cNKZ 투영 기법**: 고전적 Kaczmarz 방법을 비선형 제약 시나리오로 확장하여, 각 제약 매니폴드에 교대로 투영하며 반복적으로 해를 구한다. 각 반복에서는 단일 제약의 기울기 투영만 계산하면 되므로, 전역 야코비 행렬 역산을 피하고 계산 복잡도를 크게 낮춘다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 혼잡한 환경에 3~6대의 이동 매니퓰레이터(18~36 자유도)를 배치하고, 각 로봇은 엔드 이펙터 궤적 추적, 충돌 회피, 베이스 운동학 등의 제약을 동시에 충족해야 하며, 총 제약 수는 80개에 달한다.
+- **기준 비교**: 뉴턴 기반 제약 해석기 및 무작위 샘플링 방법과 비교했을 때, cNKZ는 모든 테스트 시나리오에서 유일하게 실행 가능한 해를 찾는 방법이다.
+- **하드웨어 플랫폼**: OpenMANIPULATOR-X 4자유도 매니퓰레이터를 장착한 세 대의 TurtleBot3 Waffle Pi 로봇으로, ROS 2 통신을 통해 협동 운반 작업을 구현한다.
+
+### 주요 결과
+- **해결 능력**: cNKZ는 80개의 비선형 제약 조건에서 평균 해결 시간이 0.5초 미만이며, 기준 방법은 제약 수가 20개를 초과하면 완전히 실패한다.
+- **계획 성공률**: 혼잡한 환경에서 cNKZ를 RRT* 플래너에 통합한 결과, 6대의 로봇(36 자유도)의 협조 운동 계획 성공률은 92%로, 통합하지 않은 방법보다 67% 향상되었다.
+- **하드웨어 검증**: 세 대의 로봇이 협동 운반 작업을 성공적으로 완료했으며, 엔드 이펙터 위치 오차는 2cm 미만, 매니퓰레이터 관절 각도 오차는 1도 미만이다.
+
+### 결론
+cNKZ는 매니폴드 투영 전략을 통해 다중 로봇 협동 작업에서의 고차원 제약 해결 문제를 효과적으로 해결하며, 모듈식 설계로 더 많은 로봇이나 더 복잡한 제약 시나리오로 유연하게 확장할 수 있다. 향후 연구는 동적 환경에서의 온라인 제약 업데이트와 실시간 재계획을 탐구할 것이다.

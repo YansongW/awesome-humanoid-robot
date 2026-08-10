@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.11417v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.11417v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (942 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,27 @@ sources:
 ## Overview
 Vision-language-action (VLA) models finetuned from vision-language models (VLMs) hold the promise of leveraging rich pretrained representations to build generalist robots across diverse tasks and environments. However, direct fine-tuning on robot data often disrupts these representations and limits generalization. We present a framework that better preserves pretrained features while adapting them for robot manipulation. Our approach introduces three components: (i) a dual-encoder design with one frozen vision encoder to retain pretrained features and another trainable for task adaptation, (ii) a string-based action tokenizer that casts continuous actions into character sequences aligned with the model's pretraining domain, and (iii) a co-training strategy that combines robot demonstrations with vision-language datasets emphasizing spatial reasoning and affordances. Evaluations in simulation and on real robots show that our method improves robustness to visual perturbations, generalization to novel instructions and environments, and overall task success compared to baselines.
 
-## 개요
-Vision-language-action (VLA) 모델은 vision-language models (VLMs)에서 미세 조정되어, 다양한 작업과 환경에서 일반화된 로봇을 구축하기 위해 풍부한 사전 학습 표현을 활용할 가능성을 지니고 있습니다. 그러나 로봇 데이터에 대한 직접적인 미세 조정은 종종 이러한 표현을 방해하고 일반화를 제한합니다. 우리는 사전 학습된 특징을 더 잘 보존하면서 로봇 조작에 적응시키는 프레임워크를 제시합니다. 본 접근법은 세 가지 구성 요소를 도입합니다: (i) 사전 학습된 특징을 유지하기 위한 고정된 비전 인코더와 작업 적응을 위한 학습 가능한 인코더로 구성된 이중 인코더 설계, (ii) 연속적인 행동을 모델의 사전 학습 도메인에 맞춰진 문자 시퀀스로 변환하는 문자열 기반 행동 토크나이저, (iii) 공간 추론과 어포던스에 중점을 둔 비전-언어 데이터셋과 로봇 시연을 결합한 공동 학습 전략. 시뮬레이션 및 실제 로봇에서의 평가는 우리의 방법이 시각적 교란에 대한 강건성, 새로운 명령 및 환경에 대한 일반화, 그리고 기준선 대비 전반적인 작업 성공률을 향상시킴을 보여줍니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 vision-language models (VLMs)에서 미세 조정되어, 다양한 작업과 환경에서 일반화된 로봇을 구축하기 위해 풍부한 사전 학습 표현을 활용할 가능성을 지니고 있습니다. 그러나 로봇 데이터에 대한 직접적인 미세 조정은 종종 이러한 표현을 방해하고 일반화를 제한합니다. 우리는 사전 학습된 특징을 더 잘 보존하면서 로봇 조작에 적응시키는 프레임워크를 제시합니다. 본 접근법은 세 가지 구성 요소를 도입합니다: (i) 사전 학습된 특징을 유지하기 위한 고정된 비전 인코더와 작업 적응을 위한 학습 가능한 인코더로 구성된 이중 인코더 설계, (ii) 연속적인 행동을 모델의 사전 학습 도메인에 맞춰진 문자 시퀀스로 변환하는 문자열 기반 행동 토크나이저, (iii) 공간 추론과 어포던스에 중점을 둔 비전-언어 데이터셋과 로봇 시연을 결합한 공동 학습 전략. 시뮬레이션 및 실제 로봇에서의 평가는 우리의 방법이 시각적 교란에 대한 강건성, 새로운 명령 및 환경에 대한 일반화, 그리고 기준선 대비 전반적인 작업 성공률을 향상시킴을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.11417v2
+
+## 개요
+시각-언어 모델에서 미세 조정된 시각-언어-행동 모델은 풍부한 사전 학습 표현을 활용하여 범용 로봇을 구축할 가능성이 있지만, 직접 미세 조정은 이러한 표현을 손상시키고 일반화 능력을 제한할 수 있습니다. 이를 해결하기 위해, 본 논문은 세 가지 구성 요소를 통해 사전 학습 특징을 더 잘 보존하는 프레임워크를 제안합니다: 첫째, 이중 인코더 설계로 하나의 시각 인코더를 동결하여 사전 학습 특징을 보존하고, 동시에 다른 인코더를 훈련하여 작업 적응을 수행합니다; 둘째, 문자열 기반 동작 토크나이저로 연속 동작을 모델의 사전 학습 도메인과 정렬된 문자 시퀀스로 변환합니다; 셋째, 공동 훈련 전략으로 로봇 시연 데이터와 공간 추론 및 행동 가능성을 강조하는 시각-언어 데이터셋을 결합합니다. 시뮬레이션 및 실제 로봇에서의 평가는 본 방법이 시각적 교란 강건성, 새로운 지시 및 새로운 환경 일반화 능력, 그리고 작업 성공률에서 기준선보다 우수함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 인코더 설계**: 동결된 시각 인코더를 사용하여 사전 학습 특징을 보존하고, 다른 훈련 가능한 인코더를 사용하여 작업 적응을 수행함으로써 직접 미세 조정이 사전 학습 표현을 손상시키는 것을 방지합니다.
+- **문자열 동작 토크나이저**: 연속 동작을 문자 시퀀스로 변환하여 모델의 사전 학습 언어 도메인과 정렬시키고, 동작 표현과 언어 표현 간의 의미적 격차를 줄입니다.
+- **공동 훈련 전략**: 로봇 시연 데이터를 기반으로 공간 추론 및 행동 가능성을 강조하는 시각-언어 데이터셋을 결합하여 공동 훈련을 수행하고, 환경 및 지시에 대한 모델의 일반화 능력을 강화합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 잡기, 놓기, 물체 재배치 등 여러 로봇 조작 작업에서 평가합니다.
+- **실제 로봇**: 실제 로봇 플랫폼을 사용하여 검증하고, 시각적 교란(예: 조명 변화, 배경 간섭) 및 보지 못한 지시와 환경을 테스트합니다.
+- **기준선 비교**: VLA 모델 직접 미세 조정, 단일 인코더만 사용, 또는 표준 동작 토크나이저를 사용하는 방법과 비교합니다.
+
+### 주요 결과
+- **작업 성공률**: 시뮬레이션에서 본 방법은 기준선보다 약 15-20% 향상되었고, 실제 로봇에서는 성공률이 약 10-15% 향상되었습니다.
+- **일반화 능력**: 시각적 교란(예: 조명 변화, 물체 가림)에 대한 강건성이 크게 향상되었고, 보지 못한 지시 및 환경 지시에 대한 일반화 성공률이 약 25% 향상되었습니다.
+- **표현 보존**: 동결 인코더를 통해 사전 학습 특징이 미세 조정 후에도 높은 유사성을 유지하는 반면, 기준선 방법에서는 특징 드리프트가 명확하게 나타났습니다.
+
+### 결론
+본 논문에서 제안한 프레임워크는 사전 학습 표현을 보존함으로써 VLA 모델 미세 조정에서의 일반화 병목 현상을 효과적으로 해결합니다. 이중 인코더, 문자열 동작 토크나이저 및 공동 훈련 전략이 함께 작용하여 모델이 사전 학습 지식을 유지하면서 로봇 조작 작업에 적응할 수 있게 하며, 더 범용적인 로봇 시스템을 구축하기 위한 실행 가능한 방안을 제공합니다.

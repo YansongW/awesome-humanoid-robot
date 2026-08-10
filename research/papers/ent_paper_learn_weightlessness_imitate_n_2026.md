@@ -57,8 +57,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.21351v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.21351v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1110 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -93,11 +94,28 @@ sources:
 ## Overview
 The integration of imitation and reinforcement learning has enabled remarkable advances in humanoid whole-body control, facilitating diverse human-like behaviors. However, research on environment-dependent motions remains limited. Existing methods typically enforce rigid trajectory tracking while neglecting physical interactions with the environment. We observe that humans naturally exploit a "weightless" state during non-self-stabilizing (NSS) motions--selectively relaxing specific joints to allow passive body--environment contact, thereby stabilizing the body and completing the motion. Inspired by this biological mechanism, we design a weightlessness-state auto-labeling strategy for dataset annotation; and we propose the Weightlessness Mechanism (WM), a method that dynamically determines which joints to relax and to what level, together enabling effective environmental interaction while executing target motions. We evaluate our approach on 3 representative NSS tasks: sitting on chairs of varying heights, lying down on beds with different inclinations, and leaning against walls via shoulder or elbow. Extensive experiments in simulation and on the Unitree G1 robot demonstrate that our WM method, trained on single-action demonstrations without any task-specific tuning, achieves strong generalization across diverse environmental configurations while maintaining motion stability. Our work bridges the gap between precise trajectory tracking and adaptive environmental interaction, offering a biologically-inspired solution for contact-rich humanoid control.
 
-## 개요
-모방 학습과 강화 학습의 통합은 인간형 전신 제어에서 놀라운 발전을 가능하게 하여 다양한 인간과 유사한 행동을 촉진했습니다. 그러나 환경에 의존적인 동작에 대한 연구는 여전히 제한적입니다. 기존 방법은 일반적으로 환경과의 물리적 상호작용을 무시하면서 엄격한 궤적 추적을 강제합니다. 우리는 인간이 비자기안정화(NSS) 동작 중에 자연스럽게 "무중력" 상태를 활용한다는 점을 관찰했습니다. 즉, 특정 관절을 선택적으로 이완시켜 수동적인 신체-환경 접촉을 허용함으로써 신체를 안정화하고 동작을 완료합니다. 이 생물학적 메커니즘에서 영감을 받아, 우리는 데이터셋 주석을 위한 무중력 상태 자동 레이블링 전략을 설계하고, 어떤 관절을 어느 수준까지 이완할지 동적으로 결정하는 방법인 무중력 메커니즘(WM)을 제안합니다. 이를 통해 목표 동작을 실행하면서 효과적인 환경 상호작용을 가능하게 합니다. 우리는 다양한 높이의 의자에 앉기, 다른 기울기의 침대에 눕기, 어깨나 팔꿈치로 벽에 기대기 등 3가지 대표적인 NSS 작업에서 접근 방식을 평가합니다. 시뮬레이션과 Unitree G1 로봇에서의 광범위한 실험을 통해, 단일 동작 시연으로 훈련되고 작업별 조정 없이도 우리의 WM 방법이 다양한 환경 구성에서 강력한 일반화를 달성하면서 동작 안정성을 유지함을 입증했습니다. 우리의 연구는 정밀한 궤적 추적과 적응형 환경 상호작용 사이의 격차를 해소하며, 접촉이 많은 인간형 제어를 위한 생물학적 영감을 받은 솔루션을 제공합니다.
-
-## 핵심 내용
-모방 학습과 강화 학습의 통합은 인간형 전신 제어에서 놀라운 발전을 가능하게 하여 다양한 인간과 유사한 행동을 촉진했습니다. 그러나 환경에 의존적인 동작에 대한 연구는 여전히 제한적입니다. 기존 방법은 일반적으로 환경과의 물리적 상호작용을 무시하면서 엄격한 궤적 추적을 강제합니다. 우리는 인간이 비자기안정화(NSS) 동작 중에 자연스럽게 "무중력" 상태를 활용한다는 점을 관찰했습니다. 즉, 특정 관절을 선택적으로 이완시켜 수동적인 신체-환경 접촉을 허용함으로써 신체를 안정화하고 동작을 완료합니다. 이 생물학적 메커니즘에서 영감을 받아, 우리는 데이터셋 주석을 위한 무중력 상태 자동 레이블링 전략을 설계하고, 어떤 관절을 어느 수준까지 이완할지 동적으로 결정하는 방법인 무중력 메커니즘(WM)을 제안합니다. 이를 통해 목표 동작을 실행하면서 효과적인 환경 상호작용을 가능하게 합니다. 우리는 다양한 높이의 의자에 앉기, 다른 기울기의 침대에 눕기, 어깨나 팔꿈치로 벽에 기대기 등 3가지 대표적인 NSS 작업에서 접근 방식을 평가합니다. 시뮬레이션과 Unitree G1 로봇에서의 광범위한 실험을 통해, 단일 동작 시연으로 훈련되고 작업별 조정 없이도 우리의 WM 방법이 다양한 환경 구성에서 강력한 일반화를 달성하면서 동작 안정성을 유지함을 입증했습니다. 우리의 연구는 정밀한 궤적 추적과 적응형 환경 상호작용 사이의 격차를 해소하며, 접촉이 많은 인간형 제어를 위한 생물학적 영감을 받은 솔루션을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2604.21351v2
+
+## 개요
+기존의 휴머노이드 로봇 전신 제어 방법은 일반적으로 강체 궤적 추적에 의존하며, 환경과의 물리적 상호작용을 간과합니다. 본 논문은 인간이 비자기안정 운동을 수행할 때 자연스럽게 '무중력' 상태에 들어간다는 점, 즉 관절을 선택적으로 이완하여 수동적 접촉으로 신체 안정성을 활용한다는 점을 관찰했습니다. 이러한 생물학적 메커니즘을 기반으로, 저자는 데이터셋 구축을 위한 무중력 상태 자동 주석 전략을 설계하고, 어떤 관절을 얼마나 이완할지 동적으로 결정하는 Weightlessness Mechanism(WM) 방법을 제안합니다. 세 가지 대표 작업(다양한 높이의 의자에 앉기, 다양한 기울기의 침대에 눕기, 어깨 또는 팔꿈치로 벽에 기대기)에 대한 시뮬레이션 및 Unitree G1 실물 실험에서 WM은 단일 동작 시연 훈련만으로도 다양한 환경 구성에 일반화하면서 운동 안정성을 유지함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 관찰**: 인간은 비자기안정 운동(예: 앉기, 눕기) 중에 일부 관절을 능동적으로 이완하여 중력과 환경 접촉을 활용해 동작을 완수하며,全程 근육 긴장을 유지하지 않습니다.
+- **무중력 상태 자동 주석**: 시연 데이터에서 관절 이완의 '무중력' 순간을 식별하고 주석을 달기 위한 자동 전략을 설계하여 훈련 데이터셋을 구축합니다.
+- **Weightlessness Mechanism(WM)**: 현재 상태에 따라 각 관절의 이완 정도(0에서 1 사이의 연속 값, 0은 완전 강체 추적, 1은 완전 이완)를 동적으로 출력하는 학습 가능한 모듈입니다. 이 메커니즘은 강화 학습 정책과 함께 훈련되어 로봇이 목표 운동을 수행하면서 환경 접촉에 적응할 수 있게 합니다.
+
+### 실험 설정
+- **작업**: 세 가지 비자기안정 운동——다양한 높이의 의자에 앉기(30-50cm), 다양한 기울기의 침대에 눕기(0-30도), 어깨 또는 팔꿈치로 벽에 기대기(거리 0.2-0.5m).
+- **훈련 데이터**: 각 작업은 단일 동작 시연(예: 고정 높이 의자에 앉기)만 사용하며, 환경 변화 정보는 포함하지 않습니다.
+- **플랫폼**: 시뮬레이션 환경(MuJoCo) 및 Unitree G1 휴머노이드 로봇 실물.
+- **비교 방법**: 기준선에는 순수 모방 학습(BC), 강체 궤적 추적(RTT), 무중력 메커니즘이 없는 강화 학습(RL w/o WM)이 포함됩니다.
+
+### 주요 결과
+- **일반화 능력**: WM은 훈련되지 않은 환경 구성에서 성공률이 기준선보다 현저히 높습니다. 예를 들어, 의자 앉기 작업에서 WM은 40cm 높이 의자에서 성공률 92%를 기록한 반면, RTT는 15%에 불과했습니다. 침대 눕기 작업에서 WM은 20도 기울기 침대에서 성공률 88%, RL w/o WM은 34%였습니다.
+- **안정성**: WM 방법 하에서 로봇 운동이 더 부드럽고, 관절 토크 피크가 약 40% 감소했으며, 넘어지거나 심한 흔들림이 발생하지 않았습니다.
+- **제로샷 전이**: 시뮬레이션에서 실물로 추가 미세 조정 없이 WM이 Unitree G1에서 직접 실행되어 세 가지 작업을 모두 성공적으로 완료했습니다.
+
+### 결론
+본 논문은 생물학적 영감을 받은 무중력 메커니즘을 도입하여 정밀 궤적 추적과 환경 적응형 상호작용 사이의 간극을 효과적으로 메웠습니다. WM 방법은 소량의 시연 데이터만으로도 강력한 일반화를 달성하여, 접촉이 풍부한 휴머노이드 로봇 제어에 새로운 방향을 제시합니다. 향후 연구에서는 더 복잡한 다단계 비자기안정 운동을 탐구할 수 있습니다.

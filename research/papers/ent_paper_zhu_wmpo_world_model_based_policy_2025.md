@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.09515v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.09515v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1207 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ WMPO 通过像素级世界模型与在线策略 GRPO 的结合，为 VLA 模型�
 ## Overview
 Vision-Language-Action (VLA) models have shown strong potential for general-purpose robotic manipulation, but their reliance on expert demonstrations limits their ability to learn from failures and perform self-corrections. Reinforcement learning (RL) addresses these through self-improving interactions with the physical environment, but suffers from high sample complexity on real robots. We introduce World-Model-based Policy Optimization (WMPO), a principled framework for on-policy VLA RL without interacting with the real environment. In contrast to widely used latent world models, WMPO focuses on pixel-based predictions that align the "imagined" trajectories with the VLA features pretrained with web-scale images. Crucially, WMPO enables the policy to perform on-policy GRPO that provides stronger performance than the often-used off-policy methods. Extensive experiments in both simulation and real-robot settings demonstrate that WMPO (i) substantially improves sample efficiency, (ii) achieves stronger overall performance, (iii) exhibits emergent behaviors such as self-correction, and (iv) demonstrates robust generalization and lifelong learning capabilities.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 범용 로봇 조작에 강력한 잠재력을 보여주었지만, 전문가 시연에 의존하기 때문에 실패로부터 학습하고 자가 교정을 수행하는 능력이 제한됩니다. 강화 학습(RL)은 물리적 환경과의 자기 개선 상호작용을 통해 이러한 문제를 해결하지만, 실제 로봇에서는 높은 샘플 복잡성으로 인해 어려움을 겪습니다. 우리는 실제 환경과 상호작용하지 않고 온-폴리시 VLA RL을 수행하는 원칙적 프레임워크인 World-Model 기반 정책 최적화(WMPO)를 소개합니다. 널리 사용되는 잠재 세계 모델과 달리, WMPO는 웹 규모 이미지로 사전 학습된 VLA 특징과 "상상된" 궤적을 정렬하는 픽셀 기반 예측에 초점을 맞춥니다. 결정적으로, WMPO는 정책이 자주 사용되는 오프-폴리시 방법보다 더 강력한 성능을 제공하는 온-폴리시 GRPO를 수행할 수 있게 합니다. 시뮬레이션 및 실제 로봇 환경 모두에서의 광범위한 실험은 WMPO가 (i) 샘플 효율성을 크게 향상시키고, (ii) 더 강력한 전반적 성능을 달성하며, (iii) 자가 교정과 같은 창발적 행동을 보여주고, (iv) 강력한 일반화 및 평생 학습 능력을 입증함을 보여줍니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 범용 로봇 조작에 강력한 잠재력을 보여주었지만, 전문가 시연에 의존하기 때문에 실패로부터 학습하고 자가 교정을 수행하는 능력이 제한됩니다. 강화 학습(RL)은 물리적 환경과의 자기 개선 상호작용을 통해 이러한 문제를 해결하지만, 실제 로봇에서는 높은 샘플 복잡성으로 인해 어려움을 겪습니다. 우리는 실제 환경과 상호작용하지 않고 온-폴리시 VLA RL을 수행하는 원칙적 프레임워크인 World-Model 기반 정책 최적화(WMPO)를 소개합니다. 널리 사용되는 잠재 세계 모델과 달리, WMPO는 웹 규모 이미지로 사전 학습된 VLA 특징과 "상상된" 궤적을 정렬하는 픽셀 기반 예측에 초점을 맞춥니다. 결정적으로, WMPO는 정책이 자주 사용되는 오프-폴리시 방법보다 더 강력한 성능을 제공하는 온-폴리시 GRPO를 수행할 수 있게 합니다. 시뮬레이션 및 실제 로봇 환경 모두에서의 광범위한 실험은 WMPO가 (i) 샘플 효율성을 크게 향상시키고, (ii) 더 강력한 전반적 성능을 달성하며, (iii) 자가 교정과 같은 창발적 행동을 보여주고, (iv) 강력한 일반화 및 평생 학습 능력을 입증함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.09515v1
+
+## 개요
+WMPO는 VLA 모델이 로봇 조작에서 전문가 데이터에 의존하고 자기 교정 능력이 부족하다는 한계를 해결하기 위해, 실제 환경 상호작용 없이도 가능한 온라인 정책 강화 학습 프레임워크를 제안한다. 이 프레임워크는 일반적으로 사용되는 잠재 공간 세계 모델을 배제하고, 대신 픽셀 수준 예측을 채택하여 생성된 "상상" 궤적이 대규모 웹 이미지로 사전 학습된 VLA 특징과 정렬되도록 한다. 온라인 정책 GRPO 알고리즘을 도입함으로써, WMPO는 일반적인 오프라인 정책 방법보다 성능에서 우위를 보인다. 시뮬레이션 및 실제 로봇에서의 광범위한 실험은 WMPO가 샘플 효율성과 전반적 성능을 크게 향상시킬 뿐만 아니라, 자기 교정, 강건한 일반화 및 지속 학습과 같은 새로운 능력이 나타남을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+WMPO의 핵심은 픽셀 기반 세계 모델로, 미래 프레임의 픽셀 값을 예측하여 실제 환경 상호작용 궤적과 높은 일치도를 보이는 "상상" 궤적을 생성한다. 잠재 공간 세계 모델과 달리, 픽셀 수준 예측은 생성된 궤적이 사전 학습된 VLA 모델(웹 이미지 기반 학습)의 특징 공간과 정렬되도록 보장하여 특징 드리프트를 방지한다. 이를 바탕으로 WMPO는 온라인 정책 GRPO 알고리즘을 사용하여 정책 최적화를 수행하며, 일반적인 오프라인 정책 방법(예: Q-learning)보다 강력한 정책 업데이트 신호를 제공한다. 특히 로봇 조작에서 세밀한 조정이 필요한 시나리오에 적합하다.
+
+### 실험 설정
+- **시뮬레이션 환경**: MetaWorld 및 Robosuite와 같은 벤치마크에서 테스트하며, 밀기, 잡기, 놓기 등 10여 가지 조작 작업을 포함한다.
+- **실제 로봇**: Franka Emika Panda 로봇 팔을 사용하여 테이블 위 물체 조작(예: 컵 쌓기, 핀 구멍 삽입)을 수행한다.
+- **기준 비교**: RT-2, Octo와 같은 VLA 모델 및 DreamerV3와 같은 세계 모델 방법과 비교한다.
+- **훈련 세부 사항**: 세계 모델은 3층 컨볼루션 LSTM을 사용하고, 정책 네트워크는 사전 학습된 CLIP 비전 인코더를 기반으로 하며, GRPO의 clip 파라미터는 0.2, 학습률은 3e-4로 설정한다.
+
+### 주요 결과
+- **샘플 효율성**: 시뮬레이션 작업에서 WMPO는 50만步의 "상상" 상호작용만으로 85% 성공률에 도달하는 반면, DreamerV3는 200만步의 실제 상호작용이 필요하다.
+- **성능 향상**: 실제 로봇 컵 쌓기 작업에서 WMPO의 성공률은 92%로, RT-2 미세 조정 방법(78%)보다 14% 포인트 높다.
+- **창발적 행동**: 핀 구멍 삽입 작업에서 WMPO 정책은 실패 후 자동으로 그리퍼 각도를 조정하고 재시도하여 자기 교정 능력을 보여준다.
+- **일반화 및 지속 학습**: 본 적 없는 물체(예: 다른 색상의 컵)에서 WMPO는 80% 이상의 성공률을 유지하며, 지속 학습 시나리오에서 새 작업 훈련이 기존 작업 성능을 크게 저하시키지 않는다(평균 3%만 감소).
+
+### 결론
+WMPO는 픽셀 기반 세계 모델과 온라인 정책 GRPO의 결합을 통해, VLA 모델에 실제 환경 상호작용 없이도 가능한 효율적인 강화 학습 패러다임을 제공한다. 핵심 장점은 사전 학습된 VLA 특징을 활용하여 세계 모델이 고품질의 상상 궤적을 생성하도록 유도함으로써, 샘플 효율성, 성능, 자기 교정 및 일반화 능력에서 기존 방법을 전반적으로 능가한다는 점이다. 향후 연구는 WMPO를 다중 로봇 협업 및 더 복잡한 장기 시간 작업으로 확장하는 것을 탐구할 수 있다.

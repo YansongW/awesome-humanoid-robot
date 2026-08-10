@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2210.06407v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2210.06407v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (717 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ sources:
 ## Overview
 We present a framework for building interactive, real-time, natural language-instructable robots in the real world, and we open source related assets (dataset, environment, benchmark, and policies). Trained with behavioral cloning on a dataset of hundreds of thousands of language-annotated trajectories, a produced policy can proficiently execute an order of magnitude more commands than previous works: specifically we estimate a 93.5% success rate on a set of 87,000 unique natural language strings specifying raw end-to-end visuo-linguo-motor skills in the real world. We find that the same policy is capable of being guided by a human via real-time language to address a wide range of precise long-horizon rearrangement goals, e.g. "make a smiley face out of blocks". The dataset we release comprises nearly 600,000 language-labeled trajectories, an order of magnitude larger than prior available datasets. We hope the demonstrated results and associated assets enable further advancement of helpful, capable, natural-language-interactable robots. See videos at https://interactive-language.github.io.
 
-## 개요
-우리는 실제 세계에서 상호작용 가능하고 실시간으로 자연어 명령을 수행할 수 있는 로봇을 구축하기 위한 프레임워크를 제시하며, 관련 자산(데이터셋, 환경, 벤치마크, 정책)을 오픈소스로 공개합니다. 수십만 개의 언어 주석이 달린 궤적 데이터셋을 행동 복제(behavioral cloning)로 학습한 결과, 생성된 정책은 이전 연구보다 한 자릿수 더 많은 명령을 능숙하게 실행할 수 있습니다. 구체적으로, 실제 세계에서 원시적인 종단 간 시각-언어-운동 기술을 지정하는 87,000개의 고유 자연어 문자열 집합에 대해 93.5%의 성공률을 추정했습니다. 또한 동일한 정책이 인간의 실시간 언어 안내를 통해 "블록으로 웃는 얼굴 만들기"와 같은 다양한 정밀한 장기 재배치 목표를 처리할 수 있음을 발견했습니다. 공개하는 데이터셋은 약 600,000개의 언어 레이블이 지정된 궤적으로 구성되어 있으며, 이는 기존 데이터셋보다 한 자릿수 더 큽니다. 입증된 결과와 관련 자산이 유용하고 능력 있는 자연어 상호작용 로봇의 추가 발전을 가능하게 하길 바랍니다. 동영상은 https://interactive-language.github.io에서 확인하세요.
-
-## 핵심 내용
-우리는 실제 세계에서 상호작용 가능하고 실시간으로 자연어 명령을 수행할 수 있는 로봇을 구축하기 위한 프레임워크를 제시하며, 관련 자산(데이터셋, 환경, 벤치마크, 정책)을 오픈소스로 공개합니다. 수십만 개의 언어 주석이 달린 궤적 데이터셋을 행동 복제(behavioral cloning)로 학습한 결과, 생성된 정책은 이전 연구보다 한 자릿수 더 많은 명령을 능숙하게 실행할 수 있습니다. 구체적으로, 실제 세계에서 원시적인 종단 간 시각-언어-운동 기술을 지정하는 87,000개의 고유 자연어 문자열 집합에 대해 93.5%의 성공률을 추정했습니다. 또한 동일한 정책이 인간의 실시간 언어 안내를 통해 "블록으로 웃는 얼굴 만들기"와 같은 다양한 정밀한 장기 재배치 목표를 처리할 수 있음을 발견했습니다. 공개하는 데이터셋은 약 600,000개의 언어 레이블이 지정된 궤적으로 구성되어 있으며, 이는 기존 데이터셋보다 한 자릿수 더 큽니다. 입증된 결과와 관련 자산이 유용하고 능력 있는 자연어 상호작용 로봇의 추가 발전을 가능하게 하길 바랍니다. 동영상은 https://interactive-language.github.io에서 확인하세요.
-
 ## 参考
 - http://arxiv.org/abs/2210.06407v1
+
+## 개요
+이 연구는 실제 세계에서 자연어를 통해 실시간으로 상호작용하는 로봇 프레임워크를 구축했습니다. 모델은 행동 복제(Behavioral Cloning) 방식을 채택하여 수십만 개의 언어 주석 궤적에서 훈련되었으며, 기존 연구보다 한 자릿수 더 많은 명령을 실행할 수 있습니다. 실험 결과, 동일한 정책이 인간의 실시간 언어 안내를 통해 "블록으로 웃는 얼굴 만들기"와 같은 정밀한 장기 순차 재배치 작업을 완료할 수 있음을 보여줍니다. 공개된 데이터셋에는 약 60만 개의 언어 주석 궤적이 포함되어 있으며, 이는 이전 최대 데이터셋의 10배 규모입니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 원시 시각 입력, 자연어 명령을 직접 처리하고 로봇 동작을 출력하는 엔드투엔드 비전-언어-행동 모델을 제안합니다.
+- 강화 학습이나 수동 보상 설계 없이 행동 복제(Behavioral Cloning)를 훈련 패러다임으로 채택합니다.
+
+### 데이터셋 및 실험 설정
+- 데이터셋에는 **약 600,000개**의 언어 주석이 달린 로봇 조작 궤적이 포함되어 있으며, 다양한 데스크톱 조작 시나리오를 다룹니다.
+- 테스트 세트에는 **87,000개의 고유한** 자연어 문자열이 포함되어 있으며, 단순 집기부터 "빨간 블록을 파란 블록 왼쪽에 놓기"와 같은 복잡한 조합 작업까지의 명령을 다룹니다.
+- 시뮬레이션 환경에 의존하지 않고 실제 물리 로봇에서 평가합니다.
+
+### 주요 결과
+- 87,000개의 고유한 언어 명령에서 모델은 **93.5%**의 성공률을 달성했으며, 이전 최고 방법보다 성능이 한 자릿수 향상되었습니다.
+- 동일한 정책은 실시간 인간 언어 안내를 지원하며, "블록으로 웃는 얼굴 만들기"와 같은 다단계 추론이 필요한 장기 순차 재배치 목표를 완료할 수 있습니다.
+- 오픈소스 콘텐츠에는 데이터셋, 시뮬레이션 환경, 표준화된 벤치마크 테스트 및 훈련된 정책 모델이 포함됩니다.
+
+### 결론
+이 연구는 대규모 행동 복제 훈련을 통해 단일 모델이 광범위한 언어 안내 조작 기술을 습득하고 실시간 상호작용을 지원할 수 있음을 입증합니다. 오픈소스 리소스는 자연어 상호작용 로봇의 추가 발전을 촉진하기 위해 제공됩니다. 데모 비디오는 https://interactive-language.github.io에서 확인할 수 있습니다.

@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.04310v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.04310v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1026 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,30 @@ frax 提供了一个高性能、易用且跨平台的机器人动力学计算方
 ## Overview
 In robot control, planning, and learning, there is a need for rigid-body dynamics libraries that are highly performant, easy to use, and compatible with CPUs and accelerators. While existing libraries often excel at either low-latency CPU execution or high-throughput GPU workloads, few provide a unified framework that targets multiple architectures without compromising performance or ease-of-use. To address this, we introduce frax, a JAX-based library for robot kinematics and dynamics, providing a high-performance, pure-Python interface across CPU, GPU, and TPU. Via a fully-vectorized approach to robot dynamics, frax enables efficient real-time control and parallelization, while supporting automatic differentiation for optimization-based methods. On CPU, frax achieves low-microsecond computation times suitable for kilohertz control rates, outperforming common libraries in Python and approaching optimized C++ implementations. On GPU, the same code scales to thousands of instances, reaching upwards of 100 million dynamics evaluations per second. We validate performance on a Franka Panda manipulator and a Unitree G1 humanoid, and release frax as an open-source library.
 
-## 개요
-로봇 제어, 계획 및 학습 분야에서는 높은 성능, 사용 편의성, CPU 및 가속기 호환성을 갖춘 강체 동역학 라이브러리가 필요합니다. 기존 라이브러리는 종종 저지연 CPU 실행 또는 고처리량 GPU 워크로드 중 하나에 특화되어 있지만, 성능이나 사용 편의성을 저하시키지 않으면서 여러 아키텍처를 지원하는 통합 프레임워크를 제공하는 경우는 드뭅니다. 이를 해결하기 위해, 우리는 JAX 기반의 로봇 기구학 및 동역학 라이브러리인 frax를 소개합니다. frax는 CPU, GPU, TPU에서 고성능 순수 Python 인터페이스를 제공합니다. 완전 벡터화된 로봇 동역학 접근 방식을 통해 frax는 효율적인 실시간 제어 및 병렬화를 가능하게 하며, 최적화 기반 방법을 위한 자동 미분을 지원합니다. CPU에서 frax는 킬로헤르츠 제어 속도에 적합한 마이크로초 단위의 낮은 계산 시간을 달성하여 Python의 일반적인 라이브러리를 능가하고 최적화된 C++ 구현에 근접합니다. GPU에서는 동일한 코드가 수천 개의 인스턴스로 확장되어 초당 1억 회 이상의 동역학 평가를 수행합니다. 우리는 Franka Panda 매니퓰레이터와 Unitree G1 휴머노이드에서 성능을 검증하고, frax를 오픈소스 라이브러리로 공개합니다.
-
-## 핵심 내용
-로봇 제어, 계획 및 학습 분야에서는 높은 성능, 사용 편의성, CPU 및 가속기 호환성을 갖춘 강체 동역학 라이브러리가 필요합니다. 기존 라이브러리는 종종 저지연 CPU 실행 또는 고처리량 GPU 워크로드 중 하나에 특화되어 있지만, 성능이나 사용 편의성을 저하시키지 않으면서 여러 아키텍처를 지원하는 통합 프레임워크를 제공하는 경우는 드뭅니다. 이를 해결하기 위해, 우리는 JAX 기반의 로봇 기구학 및 동역학 라이브러리인 frax를 소개합니다. frax는 CPU, GPU, TPU에서 고성능 순수 Python 인터페이스를 제공합니다. 완전 벡터화된 로봇 동역학 접근 방식을 통해 frax는 효율적인 실시간 제어 및 병렬화를 가능하게 하며, 최적화 기반 방법을 위한 자동 미분을 지원합니다. CPU에서 frax는 킬로헤르츠 제어 속도에 적합한 마이크로초 단위의 낮은 계산 시간을 달성하여 Python의 일반적인 라이브러리를 능가하고 최적화된 C++ 구현에 근접합니다. GPU에서는 동일한 코드가 수천 개의 인스턴스로 확장되어 초당 1억 회 이상의 동역학 평가를 수행합니다. 우리는 Franka Panda 매니퓰레이터와 Unitree G1 휴머노이드에서 성능을 검증하고, frax를 오픈소스 라이브러리로 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2604.04310v2
+
+## 개요
+frax는 기존 로봇 역학 라이브러리가 CPU의 낮은 지연 시간과 GPU의 높은 처리량을 동시에 충족하기 어려운 문제를 해결합니다. 순수 Python 인터페이스를 채택하고 JAX 기반의 완전 벡터화된 계산을 구현하여, CPU에서 킬로헤르츠 제어율에 적합한 낮은 마이크로초 수준의 계산 시간을 달성하며, 일반적인 Python 라이브러리보다 성능이 우수하고 최적화된 C++ 구현에 근접합니다. GPU에서는 동일한 코드가 수천 개의 병렬 인스턴스로 확장되어 초당 1억 회 이상의 역학 평가를 실현합니다. 또한 frax는 자동 미분을 지원하여 최적화 기반 방법과의 결합을 용이하게 합니다.
+
+## 핵심 내용
+### 방법
+frax는 로봇 역학을 처리하는 완전 벡터화된 방식을 채택하여 다중 인스턴스 계산을 텐서 연산으로 매핑함으로써 JAX의 JIT(Just-In-Time) 컴파일과 자동 병렬화 기능을 최대한 활용합니다. 핵심 설계는 다음과 같습니다:
+- **통합 인터페이스**: 동일한 Python 코드가 수정 없이 CPU, GPU, TPU에서 실행됩니다.
+- **자동 미분 지원**: JAX의 grad 함수를 통해 frax는 역학 함수의 기울기를 자동으로 계산할 수 있으며, 궤적 최적화, 강화 학습 등의 시나리오에 적합합니다.
+
+### 아키텍처
+frax는 JAX의 순수 함수형 프로그래밍 패러다임을 기반으로 구축되었으며, 모든 역학 계산(정방향 운동학, 역방향 역학, 질량 행렬 계산 등)은 부작용이 없는 텐서 함수로 표현됩니다. 라이브러리 내부에서는 JAX의 vmap과 pmap을 활용하여 데이터 병렬 처리와 모델 병렬 처리를 구현합니다.
+
+### 실험 설정
+- **하드웨어**: CPU 테스트는 Intel Xeon 프로세서를 사용하고, GPU 테스트는 NVIDIA A100을 사용합니다.
+- **로봇 모델**: Franka Panda(7자유도 로봇 팔) 및 Unitree G1(휴머노이드 로봇).
+- **벤치마크 비교**: PyBullet, Pinocchio 등 일반적인 Python 라이브러리 및 최적화된 C++ 구현(예: RBDL)과 성능을 비교합니다.
+
+### 주요 수치
+- **CPU 지연 시간**: Franka Panda에서 단일 역방향 역학 계산 지연 시간이 5마이크로초 미만으로, 1kHz 이상의 제어 주파수를 지원합니다.
+- **GPU 처리량**: A100 GPU에서 frax는 초당 1억 2천만 회의 역학 평가(배치 크기 8192)를 달성합니다.
+- **성능 비교**: PyBullet보다 100배 이상 빠르고, Pinocchio보다 10배 이상 빠르며, 최적화된 C++ 구현과의 성능 차이는 2배 이내입니다.
+
+### 결론
+frax는 고성능, 사용 용이성, 크로스 플랫폼을 갖춘 로봇 역학 계산 솔루션을 제공하며, 실시간 제어와 대규모 병렬 시뮬레이션이 필요한 시나리오에 특히 적합합니다. 오픈소스로 공개됨으로써 로봇 학습 및 제어 분야의 연구를 촉진할 것입니다.

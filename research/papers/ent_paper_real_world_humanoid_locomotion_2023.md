@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.03381v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.03381v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (842 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,29 @@ sources:
 ## Overview
 Humanoid robots that can autonomously operate in diverse environments have the potential to help address labour shortages in factories, assist elderly at homes, and colonize new planets. While classical controllers for humanoid robots have shown impressive results in a number of settings, they are challenging to generalize and adapt to new environments. Here, we present a fully learning-based approach for real-world humanoid locomotion. Our controller is a causal transformer that takes the history of proprioceptive observations and actions as input and predicts the next action. We hypothesize that the observation-action history contains useful information about the world that a powerful transformer model can use to adapt its behavior in-context, without updating its weights. We train our model with large-scale model-free reinforcement learning on an ensemble of randomized environments in simulation and deploy it to the real world zero-shot. Our controller can walk over various outdoor terrains, is robust to external disturbances, and can adapt in context.
 
-## 개요
-다양한 환경에서 자율적으로 작동할 수 있는 휴머노이드 로봇은 공장의 노동력 부족 해소, 가정에서의 노인 지원, 새로운 행성 개척에 기여할 잠재력을 가지고 있습니다. 휴머노이드 로봇을 위한 기존 제어기는 여러 환경에서 인상적인 결과를 보여주었지만, 새로운 환경에 일반화하고 적응하는 데 어려움이 있습니다. 본 연구에서는 실제 환경에서의 휴머노이드 보행을 위한 완전 학습 기반 접근법을 제시합니다. 우리의 제어기는 인과적 트랜스포머로, 고유수용성 관측과 행동의 이력을 입력으로 받아 다음 행동을 예측합니다. 우리는 관측-행동 이력에 세계에 대한 유용한 정보가 포함되어 있으며, 강력한 트랜스포머 모델이 가중치를 업데이트하지 않고도 맥락 내에서 행동을 적응시키는 데 사용할 수 있다고 가정합니다. 우리는 시뮬레이션에서 무작위화된 환경 집합에 대해 대규모 모델 프리 강화 학습으로 모델을 훈련하고, 제로샷으로 실제 환경에 배포합니다. 우리의 제어기는 다양한 야외 지형을 걸을 수 있고, 외부 교란에 강하며, 맥락 내에서 적응할 수 있습니다.
-
-## 핵심 내용
-다양한 환경에서 자율적으로 작동할 수 있는 휴머노이드 로봇은 공장의 노동력 부족 해소, 가정에서의 노인 지원, 새로운 행성 개척에 기여할 잠재력을 가지고 있습니다. 휴머노이드 로봇을 위한 기존 제어기는 여러 환경에서 인상적인 결과를 보여주었지만, 새로운 환경에 일반화하고 적응하는 데 어려움이 있습니다. 본 연구에서는 실제 환경에서의 휴머노이드 보행을 위한 완전 학습 기반 접근법을 제시합니다. 우리의 제어기는 인과적 트랜스포머로, 고유수용성 관측과 행동의 이력을 입력으로 받아 다음 행동을 예측합니다. 우리는 관측-행동 이력에 세계에 대한 유용한 정보가 포함되어 있으며, 강력한 트랜스포머 모델이 가중치를 업데이트하지 않고도 맥락 내에서 행동을 적응시키는 데 사용할 수 있다고 가정합니다. 우리는 시뮬레이션에서 무작위화된 환경 집합에 대해 대규모 모델 프리 강화 학습으로 모델을 훈련하고, 제로샷으로 실제 환경에 배포합니다. 우리의 제어기는 다양한 야외 지형을 걸을 수 있고, 외부 교란에 강하며, 맥락 내에서 적응할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2303.03381v2
+
+## 개요
+본 연구는 전통적인 휴머노이드 로봇 컨트롤러의 일반화 능력 부족 문제를 해결하기 위해 완전히 학습 기반의 운동 제어 방안을 제안한다. 핵심 혁신은 인과적 Transformer 아키텍처를 사용하여, 본체 인식 관측과 행동의 과거 시퀀스를 처리해 다음 행동을 예측하고, 컨텍스트 정보를 활용해 모델 가중치 업데이트 없이 행동을 자가 적응시키는 것이다. 모델은 시뮬레이션 환경에서 모델 프리 강화 학습을 통해 대규모 훈련을 거치며, 다양한 무작위 환경에서 학습을 완료한 후 실제 휴머노이드 로봇에 직접 배포하여 제로샷 전이를 구현한다. 실험 결과, 이 컨트롤러는 로봇이 다양한 야외 지형에서 안정적으로 보행할 수 있게 하며, 외부 간섭 저항 및 컨텍스트 자가 적응 능력을 갖추고 있음을 증명한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **컨트롤러 설계**: 인과적 Transformer 모델을 사용하며, 입력은 과거 본체 인식 관측(예: 관절 각도, IMU 데이터)과 행동 시퀀스이고, 출력은 다음 행동 명령이다.
+- **핵심 가정**: 관측-행동 과거 시퀀스는 환경 동적 정보를 포함하며, Transformer는 컨텍스트 학습(in-context learning)을 통해 가중치 업데이트 없이 행동을 자가 적응시킬 수 있다.
+
+### 훈련 전략
+- **강화 학습 프레임워크**: 모델 프리(model-free) 강화 학습 알고리즘을 사용하여 시뮬레이션 환경에서 대규모 훈련을 수행한다.
+- **환경 무작위화**: 다양한 지형, 마찰 계수, 외부 교란 등의 매개변수를 포함한 무작위 환경 집합을 구축하여 모델 일반화 능력을 강화한다.
+- **제로샷 전이**: 훈련 완료 후 추가 미세 조정이나 도메인 적응 없이 실제 휴머노이드 로봇에 직접 배포한다.
+
+### 실험 설정 및 결과
+- **하드웨어 플랫폼**: 특정 휴머노이드 로봇 모델은 명시되지 않았지만, 실제 세계 야외 시나리오에서 테스트되었음을 강조한다.
+- **성능 표현**:
+  - 잔디, 자갈길, 경사로 등 다양한 야외 지형에서 안정적으로 보행할 수 있다.
+  - 외부 밀기, 부하 변화 등의 간섭에 대해 견고성을 갖는다.
+  - 컨텍스트 과거 정보를 통해 실시간 행동 조정(예: 지형 변화에 따라 보행 자세 자동 조정)을 구현한다.
+- **핵심 수치**: 구체적인 성공률이나 보행 매개변수는 제공되지 않았지만, 제로샷 전이의 성공적 구현을 강조한다.
+
+### 결론
+본 연구는 순수 학습 기반 방법이 실제 세계 휴머노이드 로봇 운동 제어에서 가능함을 증명했으며, Transformer의 컨텍스트 자가 적응 능력이 복잡한 환경에서의 일반화를 위한 새로운 경로를 제공한다.

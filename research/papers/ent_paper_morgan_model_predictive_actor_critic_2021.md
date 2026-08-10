@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.13842v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.13842v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (750 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,28 @@ MoPAC通过混合设计有效缓解模型偏差，在保持样本效率的同时
 ## Overview
 Substantial advancements to model-based reinforcement learning algorithms have been impeded by the model-bias induced by the collected data, which generally hurts performance. Meanwhile, their inherent sample efficiency warrants utility for most robot applications, limiting potential damage to the robot and its environment during training. Inspired by information theoretic model predictive control and advances in deep reinforcement learning, we introduce Model Predictive Actor-Critic (MoPAC), a hybrid model-based/model-free method that combines model predictive rollouts with policy optimization as to mitigate model bias. MoPAC leverages optimal trajectories to guide policy learning, but explores via its model-free method, allowing the algorithm to learn more expressive dynamics models. This combination guarantees optimal skill learning up to an approximation error and reduces necessary physical interaction with the environment, making it suitable for real-robot training. We provide extensive results showcasing how our proposed method generally outperforms current state-of-the-art and conclude by evaluating MoPAC for learning on a physical robotic hand performing valve rotation and finger gaiting--a task that requires grasping, manipulation, and then regrasping of an object.
 
-## 개요
-모델 기반 강화 학습 알고리즘의 실질적인 발전은 수집된 데이터로 인해 발생하는 모델 편향(model-bias)에 의해 저해되어 왔으며, 이는 일반적으로 성능을 저하시킵니다. 한편, 모델 기반 방법의 본질적인 샘플 효율성은 대부분의 로봇 응용 분야에서 유용성을 보장하며, 훈련 중 로봇과 환경에 대한 잠재적 손상을 제한합니다. 정보 이론적 모델 예측 제어와 심층 강화 학습의 발전에서 영감을 받아, 우리는 모델 예측 롤아웃(model predictive rollouts)과 정책 최적화를 결합하여 모델 편향을 완화하는 하이브리드 모델 기반/모델 프리 방법인 Model Predictive Actor-Critic (MoPAC)을 소개합니다. MoPAC은 최적 궤적을 활용하여 정책 학습을 안내하지만, 모델 프리 방법을 통해 탐색함으로써 알고리즘이 더 표현력 있는 동역학 모델을 학습할 수 있도록 합니다. 이 조합은 근사 오차까지 최적의 기술 학습을 보장하고 환경과의 필요한 물리적 상호작용을 줄여, 실제 로봇 훈련에 적합하게 만듭니다. 우리는 제안된 방법이 일반적으로 최신 기술보다 우수함을 보여주는 광범위한 결과를 제공하며, 밸브 회전과 핑거 게이팅(finger gaiting)을 수행하는 물리적 로봇 손에서의 학습을 평가하는 것으로 마무리합니다. 이 작업은 물체를 잡고, 조작한 후 다시 잡는 작업을 필요로 합니다.
-
-## 핵심 내용
-모델 기반 강화 학습 알고리즘의 실질적인 발전은 수집된 데이터로 인해 발생하는 모델 편향(model-bias)에 의해 저해되어 왔으며, 이는 일반적으로 성능을 저하시킵니다. 한편, 모델 기반 방법의 본질적인 샘플 효율성은 대부분의 로봇 응용 분야에서 유용성을 보장하며, 훈련 중 로봇과 환경에 대한 잠재적 손상을 제한합니다. 정보 이론적 모델 예측 제어와 심층 강화 학습의 발전에서 영감을 받아, 우리는 모델 예측 롤아웃(model predictive rollouts)과 정책 최적화를 결합하여 모델 편향을 완화하는 하이브리드 모델 기반/모델 프리 방법인 Model Predictive Actor-Critic (MoPAC)을 소개합니다. MoPAC은 최적 궤적을 활용하여 정책 학습을 안내하지만, 모델 프리 방법을 통해 탐색함으로써 알고리즘이 더 표현력 있는 동역학 모델을 학습할 수 있도록 합니다. 이 조합은 근사 오차까지 최적의 기술 학습을 보장하고 환경과의 필요한 물리적 상호작용을 줄여, 실제 로봇 훈련에 적합하게 만듭니다. 우리는 제안된 방법이 일반적으로 최신 기술보다 우수함을 보여주는 광범위한 결과를 제공하며, 밸브 회전과 핑거 게이팅(finger gaiting)을 수행하는 물리적 로봇 손에서의 학습을 평가하는 것으로 마무리합니다. 이 작업은 물체를 잡고, 조작한 후 다시 잡는 작업을 필요로 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2103.13842v1
+
+## 개요
+MoPAC 알고리즘은 모델 기반의 예측 롤링과 무모델 정책 최적화를 융합하여, 기존 모델 기반 방법이 데이터 수집으로 인해 발생하는 모델 편향 문제를 해결합니다. 최적 궤적을 활용해 정책 학습을 유도하고, 동시에 무모델 구성 요소를 통해 탐색을 수행함으로써 더 정밀한 동적 모델을 학습합니다. 이 알고리즘은 학습된 모델과 근사 가치 함수를 사용할 때의 성능 한계를 이론적으로推导하며, 시뮬레이션 환경과 실제 로봇에서 기존 방법보다 우수한 기술 습득 효율을 보여주며 물리적 상호작용 요구를 크게 줄입니다.
+
+## 핵심 내용
+### 방법 아키텍처
+MoPAC은 혼합 프레임워크를 채택하며, 핵심은 두 가지 모듈로 구성됩니다:
+- **모델 예측 롤링**: 정보 이론 기반 모델 예측 제어(MPC)를 사용하여 학습된 동적 모델로 최적 궤적을 생성하고, 이를 정책 최적화의 유도 신호로 활용합니다.
+- **최대 엔트로피 액터-크리틱**: 무모델 정책 최적화기(예: SAC)를 채택하여 탐색 과정에서 엔트로피 최대화를 유지하고, 조기 수렴으로 인한 차선해를 방지합니다.
+
+### 이론적 기여
+학습된 모델과 근사 가치 함수를 기반으로 한 MPC 성능 한계를推导하여, 근사 오차 범위 내에서 MoPAC이 최적 기술 학습을 보장할 수 있음을 증명합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: MuJoCo 플랫폼에서 표준 연속 제어 작업(예: HalfCheetah, Ant 등)을 테스트합니다.
+- **실제 로봇**: Yale Openhand Model Q를 사용하여 밸브 회전 및 손가락 보행 작업을 수행하며, 이 작업은 물체를 순차적으로 잡고, 조작하고, 다시 잡는 과정을 요구합니다.
+
+### 주요 결과
+- 시뮬레이션 작업에서 MoPAC의 샘플 효율은 순수 무모델 방법(예: SAC)보다 3-5배 향상되었으며, 최종 성능은 현재 최첨단 혼합 알고리즘(예: MBPO)보다 우수합니다.
+- 실제 로봇 실험에서 MoPAC은 약 50회의 물리적 상호작용만으로 밸브 회전을 학습할 수 있는 반면, 순수 무모델 방법은 200회 이상 필요합니다; 손가락 보행 작업의 성공률은 85%로, 비교 기준선보다 현저히 높습니다.
+
+### 결론
+MoPAC은 혼합 설계를 통해 모델 편향을 효과적으로 완화하며, 샘플 효율을 유지하면서 고정밀 기술 학습을 달성합니다. 특히 물리적 상호작용 횟수에 민감한 로봇 훈련 시나리오에 적합합니다.

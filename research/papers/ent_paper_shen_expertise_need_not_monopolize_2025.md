@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.14300v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.14300v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (714 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,22 @@ AdaMoE 证明了专家无需垄断，通过协作利用可在保持计算效率�
 ## Overview
 Vision-Language-Action (VLA) models are experiencing rapid development and demonstrating promising capabilities in robotic manipulation tasks. However, scaling up VLA models presents several critical challenges: (1) Training new VLA models from scratch demands substantial computational resources and extensive datasets. Given the current scarcity of robot data, it becomes particularly valuable to fully leverage well-pretrained VLA model weights during the scaling process. (2) Real-time control requires carefully balancing model capacity with computational efficiency. To address these challenges, We propose AdaMoE, a Mixture-of-Experts (MoE) architecture that inherits pretrained weights from dense VLA models, and scales up the action expert by substituting the feedforward layers into sparsely activated MoE layers. AdaMoE employs a decoupling technique that decouples expert selection from expert weighting through an independent scale adapter working alongside the traditional router. This enables experts to be selected based on task relevance while contributing with independently controlled weights, allowing collaborative expert utilization rather than winner-takes-all dynamics. Our approach demonstrates that expertise need not monopolize. Instead, through collaborative expert utilization, we can achieve superior performance while maintaining computational efficiency. AdaMoE consistently outperforms the baseline model across key benchmarks, delivering performance gains of 1.8% on LIBERO and 9.3% on RoboTwin. Most importantly, a substantial 21.5% improvement in real-world experiments validates its practical effectiveness for robotic manipulation tasks.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 빠르게 발전하며 로봇 조작 작업에서 유망한 성능을 보여주고 있습니다. 그러나 VLA 모델의 확장은 몇 가지 중요한 도전 과제를 제기합니다: (1) 새로운 VLA 모델을 처음부터 훈련하려면 상당한 계산 자원과 방대한 데이터셋이 필요합니다. 현재 로봇 데이터가 부족한 상황에서, 확장 과정에서 잘 사전 훈련된 VLA 모델 가중치를 완전히 활용하는 것이 특히 중요합니다. (2) 실시간 제어는 모델 용량과 계산 효율성 사이의 신중한 균형을 요구합니다. 이러한 도전 과제를 해결하기 위해, 우리는 AdaMoE를 제안합니다. 이는 밀집 VLA 모델의 사전 훈련 가중치를 상속받고, 피드포워드 레이어를 희소 활성화된 MoE 레이어로 대체하여 액션 전문가를 확장하는 Mixture-of-Experts (MoE) 아키텍처입니다. AdaMoE는 전통적인 라우터와 함께 작동하는 독립적인 스케일 어댑터를 통해 전문가 선택과 전문가 가중치를 분리하는 분리 기술을 사용합니다. 이를 통해 작업 관련성에 따라 전문가를 선택하면서 독립적으로 제어된 가중치로 기여할 수 있어, 승자 독식 동역학이 아닌 협력적 전문가 활용이 가능합니다. 우리의 접근 방식은 전문성이 독점될 필요가 없음을 보여줍니다. 대신, 협력적 전문가 활용을 통해 계산 효율성을 유지하면서 우수한 성능을 달성할 수 있습니다. AdaMoE는 주요 벤치마크에서 기준 모델을 일관되게 능가하며, LIBERO에서 1.8%, RoboTwin에서 9.3%의 성능 향상을 제공합니다. 가장 중요한 것은 실제 실험에서 21.5%의 상당한 개선이 로봇 조작 작업에 대한 실용적 효과를 입증한다는 점입니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 빠르게 발전하며 로봇 조작 작업에서 유망한 성능을 보여주고 있습니다. 그러나 VLA 모델의 확장은 몇 가지 중요한 도전 과제를 제기합니다: (1) 새로운 VLA 모델을 처음부터 훈련하려면 상당한 계산 자원과 방대한 데이터셋이 필요합니다. 현재 로봇 데이터가 부족한 상황에서, 확장 과정에서 잘 사전 훈련된 VLA 모델 가중치를 완전히 활용하는 것이 특히 중요합니다. (2) 실시간 제어는 모델 용량과 계산 효율성 사이의 신중한 균형을 요구합니다. 이러한 도전 과제를 해결하기 위해, 우리는 AdaMoE를 제안합니다. 이는 밀집 VLA 모델의 사전 훈련 가중치를 상속받고, 피드포워드 레이어를 희소 활성화된 MoE 레이어로 대체하여 액션 전문가를 확장하는 Mixture-of-Experts (MoE) 아키텍처입니다. AdaMoE는 전통적인 라우터와 함께 작동하는 독립적인 스케일 어댑터를 통해 전문가 선택과 전문가 가중치를 분리하는 분리 기술을 사용합니다. 이를 통해 작업 관련성에 따라 전문가를 선택하면서 독립적으로 제어된 가중치로 기여할 수 있어, 승자 독식 동역학이 아닌 협력적 전문가 활용이 가능합니다. 우리의 접근 방식은 전문성이 독점될 필요가 없음을 보여줍니다. 대신, 협력적 전문가 활용을 통해 계산 효율성을 유지하면서 우수한 성능을 달성할 수 있습니다. AdaMoE는 주요 벤치마크에서 기준 모델을 일관되게 능가하며, LIBERO에서 1.8%, RoboTwin에서 9.3%의 성능 향상을 제공합니다. 가장 중요한 것은 실제 실험에서 21.5%의 상당한 개선이 로봇 조작 작업에 대한 실용적 효과를 입증한다는 점입니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.14300v1
+
+## 개요
+AdaMoE는 시각-언어-행동 모델 확장에서의 두 가지 주요 과제, 즉 대규모 계산 자원 요구와 실시간 제어 효율성의 균형 문제를 해결하기 위해 혼합 전문가 아키텍처를 제안한다. 이 아키텍처는 밀집 VLA 모델의 사전 훈련 가중치를 계승하며, 피드포워드 계층을 희소 활성화 MoE 계층으로 대체하여 행동 전문가를 확장한다. 독립 스케일 어댑터와 전통적인 라우터가 협력하여 작동함으로써, AdaMoE는 전문가 선택과 가중치 할당의 분리를 실현하며, 전문가가 작업 관련성에 따라 선택되고 독립적인 가중치로 기여하여 승자 독식이 아닌 협력적 동적 메커니즘을 형성한다. 실험 결과, 이 방법은 계산 효율성을 유지하면서 성능을 크게 향상시키며, 특히 실제 로봇 조작 작업에서 두드러진 성과를 보인다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 과제**: VLA 모델 확장은 두 가지 주요 문제에 직면한다. 새 모델을 처음부터 훈련하려면 대규모 계산 자원과 데이터셋이 필요하며, 로봇 데이터는 희소하다. 또한 실시간 제어는 모델 용량과 계산 효율성의 균형을 요구한다.
+- **AdaMoE 설계**: 혼합 전문가 아키텍처를 채택하여 밀집 VLA 모델의 사전 훈련 가중치를 계승하고, 피드포워드 계층을 희소 활성화 MoE 계층으로 대체하여 행동 전문가를 확장한다.
+- **분리 기술**: 독립 스케일 어댑터와 전통적인 라우터가 협력하여 전문가 선택과 가중치 할당의 분리를 실현한다. 전문가는 작업 관련성에 따라 선택되며, 독립적으로 제어되는 가중치로 기여하여 승자 독식이 아닌 협력적 활용 패턴을 형성한다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: LIBERO 벤치마크에서 성능이 1.8% 향상되었고, RoboTwin 벤치마크에서 9.3% 향상되었다.
+- **실제 실험**: 실제 로봇 조작 작업에서 성능이 21.5% 향상되어 실제 유효성을 검증했다.
+- **효율성 이점**: 희소 활성화 메커니즘을 통해 모델 용량을 확장하면서도 계산 효율성을 유지하여 실시간 제어 요구를 충족한다.
+
+### 결론
+AdaMoE는 전문가가 독점할 필요 없이 협력적 활용을 통해 계산 효율성을 유지하면서 더 나은 성능을 달성할 수 있음을 입증하며, VLA 모델 확장을 위한 효과적인 솔루션을 제공한다.

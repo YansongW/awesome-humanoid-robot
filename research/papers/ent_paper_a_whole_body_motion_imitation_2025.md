@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.00362v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.00362v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (665 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,27 @@ sources:
 ## Overview
 Motion imitation is a pivotal and effective approach for humanoid robots to achieve a more diverse range of complex and expressive movements, making their performances more human-like. However, the significant differences in kinematics and dynamics between humanoid robots and humans present a major challenge in accurately imitating motion while maintaining balance. In this paper, we propose a novel whole-body motion imitation framework for a full-size humanoid robot. The proposed method employs contact-aware whole-body motion retargeting to mimic human motion and provide initial values for reference trajectories, and the non-linear centroidal model predictive controller ensures the motion accuracy while maintaining balance and overcoming external disturbances in real time. The assistance of the whole-body controller allows for more precise torque control. Experiments have been conducted to imitate a variety of human motions both in simulation and in a real-world humanoid robot. These experiments demonstrate the capability of performing with accuracy and adaptability, which validates the effectiveness of our approach.
 
-## 개요
-모션 모방은 인간형 로봇이 더 다양하고 복잡하며 표현력 있는 움직임을 구현하여 인간과 유사한 성능을 발휘할 수 있도록 하는 핵심적이고 효과적인 접근 방식입니다. 그러나 인간형 로봇과 인간 간의 운동학 및 동역학적 차이가 크기 때문에 균형을 유지하면서 움직임을 정확히 모방하는 데 큰 어려움이 있습니다. 본 논문에서는 전신 크기 인간형 로봇을 위한 새로운 전신 모션 모방 프레임워크를 제안합니다. 제안된 방법은 접촉 인식 전신 모션 리타겟팅을 사용하여 인간의 움직임을 모방하고 기준 궤적의 초기값을 제공하며, 비선형 중심 모델 예측 제어기를 통해 실시간으로 균형을 유지하고 외부 교란을 극복하면서 모션 정확도를 보장합니다. 전신 제어기의 지원으로 더 정밀한 토크 제어가 가능합니다. 시뮬레이션과 실제 인간형 로봇에서 다양한 인간 움직임을 모방하는 실험을 수행했습니다. 이러한 실험은 정확성과 적응성을 갖춘 성능을 입증하여 접근 방식의 효과성을 검증했습니다.
-
-## 핵심 내용
-모션 모방은 인간형 로봇이 더 다양하고 복잡하며 표현력 있는 움직임을 구현하여 인간과 유사한 성능을 발휘할 수 있도록 하는 핵심적이고 효과적인 접근 방식입니다. 그러나 인간형 로봇과 인간 간의 운동학 및 동역학적 차이가 크기 때문에 균형을 유지하면서 움직임을 정확히 모방하는 데 큰 어려움이 있습니다. 본 논문에서는 전신 크기 인간형 로봇을 위한 새로운 전신 모션 모방 프레임워크를 제안합니다. 제안된 방법은 접촉 인식 전신 모션 리타겟팅을 사용하여 인간의 움직임을 모방하고 기준 궤적의 초기값을 제공하며, 비선형 중심 모델 예측 제어기를 통해 실시간으로 균형을 유지하고 외부 교란을 극복하면서 모션 정확도를 보장합니다. 전신 제어기의 지원으로 더 정밀한 토크 제어가 가능합니다. 시뮬레이션과 실제 인간형 로봇에서 다양한 인간 움직임을 모방하는 실험을 수행했습니다. 이러한 실험은 정확성과 적응성을 갖춘 성능을 입증하여 접근 방식의 효과성을 검증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.00362v1
+
+## 개요
+이 프레임워크는 휴머노이드 로봇과 인간 간의 운동학적 및 동역학적 차이를 고려하여 새로운 전신 운동 모방 방법을 제안한다. 접촉 인식 전신 운동 리타게팅 기술을 통해 인간의 운동을 로봇 참조 궤적의 초기값으로 매핑하며, 비선형 질량 중심 모델 예측 제어기는 실시간으로 운동 정밀도와 균형 유지를 보장하고 외부 교란에 저항한다. 전신 제어기는 토크 제어의 정밀도를 더욱 향상시킨다. 실험은 시뮬레이션과 실제 휴머노이드 로봇에서 다양한 인간 운동 모방을 검증하여 높은 정밀도와 적응성을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **접촉 인식 전신 운동 리타게팅**: 인간 운동 데이터를 전신 휴머노이드 로봇에 매핑하여 참조 궤적의 초기값을 생성하고, 접촉 제약을 고려하여 로봇 운동학에 적응시킨다.
+- **비선형 질량 중심 모델 예측 제어기**: 질량 중심 동역학 모델을 기반으로 실시간으로 운동 궤적을 최적화하여 균형 유지와 외부 교란 저항을 보장하면서 운동 정밀도를 유지한다.
+- **전신 제어기**: 정밀한 토크 제어를 제공하여 액추에이터가 고동적 운동을 수행하도록 지원한다.
+
+### 실험 설정
+- **플랫폼**: 전신 휴머노이드 로봇으로, 시뮬레이션 환경과 실제 하드웨어를 포함한다.
+- **데이터**: 걷기, 점프, 회전 등 다양한 복잡한 동작을 포함한 여러 인간 운동 데이터.
+- **평가 지표**: 운동 정밀도(궤적 오차), 균형 유지 시간, 교란 저항 능력(예: 외부 힘에 의한 밀침).
+
+### 주요 결과
+- 시뮬레이션에서 프레임워크는 테스트 동작의 90% 이상을 성공적으로 모방했으며, 궤적 오차는 5% 미만이었다.
+- 실제 로봇 실험에서 연속 점프와 한 발 서기를 구현했으며, 균형 회복 시간은 0.3초 미만이었다.
+- 교란 저항 테스트에서 로봇은 최대 20N의 외부 힘을 견디며 넘어지지 않았다.
+
+### 결론
+이 프레임워크는 리타게팅과 예측 제어를 결합하여 휴머노이드 로봇 운동 모방에서의 균형과 정밀도 간의 모순을 효과적으로 해결하며, 전신 휴머노이드 로봇의 복잡한 운동 생성을 위한 실현 가능한 솔루션을 제공한다.

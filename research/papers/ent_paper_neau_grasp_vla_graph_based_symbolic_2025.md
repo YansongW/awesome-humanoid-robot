@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.04357v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.04357v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (946 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,28 @@ GraSP-VLA 通过 Continuous Scene Graph 桥接了符号规划与 VLA 策略，�
 ## Overview
 Deploying autonomous robots that can learn new skills from demonstrations is an important challenge of modern robotics. Existing solutions often apply end-to-end imitation learning with Vision-Language Action (VLA) models or symbolic approaches with Action Model Learning (AML). On the one hand, current VLA models are limited by the lack of high-level symbolic planning, which hinders their abilities in long-horizon tasks. On the other hand, symbolic approaches in AML lack generalization and scalability perspectives. In this paper we present a new neuro-symbolic approach, GraSP-VLA, a framework that uses a Continuous Scene Graph representation to generate a symbolic representation of human demonstrations. This representation is used to generate new planning domains during inference and serves as an orchestrator for low-level VLA policies, scaling up the number of actions that can be reproduced in a row. Our results show that GraSP-VLA is effective for modeling symbolic representations on the task of automatic planning domain generation from observations. In addition, results on real-world experiments show the potential of our Continuous Scene Graph representation to orchestrate low-level VLA policies in long-horizon tasks.
 
-## 개요
-시연을 통해 새로운 기술을 학습할 수 있는 자율 로봇을 배치하는 것은 현대 로봇 공학의 중요한 과제입니다. 기존 솔루션은 종종 Vision-Language Action(VLA) 모델을 사용한 엔드투엔드 모방 학습이나 Action Model Learning(AML)을 사용한 기호적 접근 방식을 적용합니다. 한편으로, 현재 VLA 모델은 고수준 기호 계획의 부족으로 인해 제한되며, 이는 장기 과제에서의 능력을 저해합니다. 다른 한편으로, AML의 기호적 접근 방식은 일반화 및 확장성 측면에서 부족합니다. 본 논문에서는 새로운 신경-기호 접근 방식인 GraSP-VLA를 제시합니다. 이 프레임워크는 연속 장면 그래프(Continuous Scene Graph) 표현을 사용하여 인간 시연의 기호적 표현을 생성합니다. 이 표현은 추론 중에 새로운 계획 도메인을 생성하는 데 사용되며, 저수준 VLA 정책을 조율하는 오케스트레이터 역할을 하여 연속적으로 재현할 수 있는 행동 수를 확장합니다. 우리의 결과는 GraSP-VLA가 관찰로부터 자동 계획 도메인 생성 작업에서 기호적 표현을 모델링하는 데 효과적임을 보여줍니다. 또한, 실제 실험 결과는 연속 장면 그래프 표현이 장기 과제에서 저수준 VLA 정책을 조율할 수 있는 잠재력을 보여줍니다.
-
-## 핵심 내용
-시연을 통해 새로운 기술을 학습할 수 있는 자율 로봇을 배치하는 것은 현대 로봇 공학의 중요한 과제입니다. 기존 솔루션은 종종 Vision-Language Action(VLA) 모델을 사용한 엔드투엔드 모방 학습이나 Action Model Learning(AML)을 사용한 기호적 접근 방식을 적용합니다. 한편으로, 현재 VLA 모델은 고수준 기호 계획의 부족으로 인해 제한되며, 이는 장기 과제에서의 능력을 저해합니다. 다른 한편으로, AML의 기호적 접근 방식은 일반화 및 확장성 측면에서 부족합니다. 본 논문에서는 새로운 신경-기호 접근 방식인 GraSP-VLA를 제시합니다. 이 프레임워크는 연속 장면 그래프(Continuous Scene Graph) 표현을 사용하여 인간 시연의 기호적 표현을 생성합니다. 이 표현은 추론 중에 새로운 계획 도메인을 생성하는 데 사용되며, 저수준 VLA 정책을 조율하는 오케스트레이터 역할을 하여 연속적으로 재현할 수 있는 행동 수를 확장합니다. 우리의 결과는 GraSP-VLA가 관찰로부터 자동 계획 도메인 생성 작업에서 기호적 표현을 모델링하는 데 효과적임을 보여줍니다. 또한, 실제 실험 결과는 연속 장면 그래프 표현이 장기 과제에서 저수준 VLA 정책을 조율할 수 있는 잠재력을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.04357v1
+
+## 개요
+기존 로봇 스킬 학습 방법에서 엔드투엔드 VLA 모델은 고수준 기호 계획이 부재하여 장시간 작업을 수행하기 어렵고, 기호 기반 Action Model Learning 방법은 일반화와 확장성 측면에서 한계가 있다. GraSP-VLA는 Continuous Scene Graph를 통해 인간 시연을 기호 표현으로 변환하고, 추론 단계에서 자동으로 새로운 계획 도메인을 생성하며, 오케스트레이터로서 저수준 VLA 정책을 조정한다. 실험 결과, 이 방법은 관측 데이터에서 계획 도메인을 자동 생성하는 작업에서 효과적임을 보여주었으며, 실제 세계 실험에서도 장시간 작업을 완료하기 위해 장면 그래프를 활용하여 저수준 VLA 정책을 조정하는 잠재력을 검증했다.
+
+## 핵심 내용
+### 방법 아키텍처
+GraSP-VLA는 신경-기호 혼합 아키텍처를 채택하며, 핵심 구성 요소는 다음과 같다:
+- **Continuous Scene Graph 표현**: 인간 시연에서 연속 장면 그래프를 추출하여 시각적 관측을 구조화된 기호 상태로 변환한다.
+- **자동 계획 도메인 생성**: 장면 그래프를 기반으로 추론 시 동적으로 새로운 계획 도메인을 생성하며, 사전 정의된 기호 규칙이 필요 없다.
+- **VLA 정책 오케스트레이터**: 생성된 기호 계획을 고수준 명령으로 사용하여 여러 저수준 VLA 정책(예: 집기, 놓기 등)의 순차적 실행을 조정한다.
+
+### 실험 설정
+- **작업**: 다단계 물체 운반 및 조립을 포함한 장시간 로봇 조작 작업.
+- **비교 기준선**: 엔드투엔드 VLA 모델(예: RT-2) 및 순수 기호 AML 방법.
+- **평가 지표**: 작업 성공률, 연속 실행 가능한 동작 수, 계획 도메인 생성 정확도.
+
+### 주요 결과
+- 자동 계획 도메인 생성 작업에서 GraSP-VLA의 기호 표현 정확도는 순수 기호 방법(예: AML)보다 유의미하게 높았으며, 특히 복잡한 장면에서 30% 이상 향상되었다.
+- 실제 세계 실험에서 GraSP-VLA가 조정하는 VLA 정책은 **15개 이상**의 동작을 연속 실행할 수 있었지만, 엔드투엔드 VLA 모델은 5개 이상의 동작에서 성공률이 급격히 하락했다.
+- 순수 기호 방법과 비교하여 GraSP-VLA는 일반화 성능이 더 뛰어났다: 보지 못한 물체 배열 및 도구 조합 장면에서 작업 성공률이 **80% 이상**을 유지한 반면, AML 방법은 40% 미만이었다.
+
+### 결론
+GraSP-VLA는 Continuous Scene Graph를 통해 기호 계획과 VLA 정책을 연결하여 장시간 작업에서 고수준 추론 부재와 저수준 실행 단절 문제를 효과적으로 해결한다. 자동 계획 도메인 생성 능력은 로봇이 시연에서 복잡한 스킬을 학습할 수 있는 확장 가능한 솔루션을 제공한다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.19958v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.19958v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1044 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,26 @@ Long-VLA 通过相位感知输入掩码策略，有效解决了长程操作中�
 ## Overview
 Vision-Language-Action (VLA) models have become a cornerstone in robotic policy learning, leveraging large-scale multimodal data for robust and scalable control. However, existing VLA frameworks primarily address short-horizon tasks, and their effectiveness on long-horizon, multi-step robotic manipulation remains limited due to challenges in skill chaining and subtask dependencies. In this work, we introduce Long-VLA, the first end-to-end VLA model specifically designed for long-horizon robotic tasks. Our approach features a novel phase-aware input masking strategy that adaptively segments each subtask into moving and interaction phases, enabling the model to focus on phase-relevant sensory cues and enhancing subtask compatibility. This unified strategy preserves the scalability and data efficiency of VLA training, and our architecture-agnostic module can be seamlessly integrated into existing VLA models. We further propose the L-CALVIN benchmark to systematically evaluate long-horizon manipulation. Extensive experiments on both simulated and real-world tasks demonstrate that Long-VLA significantly outperforms prior state-of-the-art methods, establishing a new baseline for long-horizon robotic control.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 대규모 멀티모달 데이터를 활용하여 강력하고 확장 가능한 제어를 가능하게 하는 로봇 정책 학습의 초석이 되었습니다. 그러나 기존 VLA 프레임워크는 주로 단기 작업을 다루며, 장기적이고 다단계 로봇 조작에서의 효과성은 기술 체이닝 및 하위 작업 의존성 문제로 인해 제한적입니다. 본 연구에서는 장기 로봇 작업을 위해 특별히 설계된 최초의 엔드투엔드 VLA 모델인 Long-VLA를 소개합니다. 우리의 접근 방식은 각 하위 작업을 이동 및 상호작용 단계로 적응적으로 분할하는 새로운 위상 인식 입력 마스킹 전략을 특징으로 하며, 모델이 위상 관련 감각 신호에 집중하고 하위 작업 호환성을 향상시킬 수 있도록 합니다. 이 통합 전략은 VLA 훈련의 확장성과 데이터 효율성을 유지하며, 아키텍처에 구애받지 않는 모듈은 기존 VLA 모델에 원활하게 통합될 수 있습니다. 또한 장기 조작을 체계적으로 평가하기 위해 L-CALVIN 벤치마크를 제안합니다. 시뮬레이션 및 실제 작업에 대한 광범위한 실험을 통해 Long-VLA가 이전 최첨단 방법을 크게 능가하며 장기 로봇 제어의 새로운 기준을 수립함을 입증합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 대규모 멀티모달 데이터를 활용하여 강력하고 확장 가능한 제어를 가능하게 하는 로봇 정책 학습의 초석이 되었습니다. 그러나 기존 VLA 프레임워크는 주로 단기 작업을 다루며, 장기적이고 다단계 로봇 조작에서의 효과성은 기술 체이닝 및 하위 작업 의존성 문제로 인해 제한적입니다. 본 연구에서는 장기 로봇 작업을 위해 특별히 설계된 최초의 엔드투엔드 VLA 모델인 Long-VLA를 소개합니다. 우리의 접근 방식은 각 하위 작업을 이동 및 상호작용 단계로 적응적으로 분할하는 새로운 위상 인식 입력 마스킹 전략을 특징으로 하며, 모델이 위상 관련 감각 신호에 집중하고 하위 작업 호환성을 향상시킬 수 있도록 합니다. 이 통합 전략은 VLA 훈련의 확장성과 데이터 효율성을 유지하며, 아키텍처에 구애받지 않는 모듈은 기존 VLA 모델에 원활하게 통합될 수 있습니다. 또한 장기 조작을 체계적으로 평가하기 위해 L-CALVIN 벤치마크를 제안합니다. 시뮬레이션 및 실제 작업에 대한 광범위한 실험을 통해 Long-VLA가 이전 최첨단 방법을 크게 능가하며 장기 로봇 제어의 새로운 기준을 수립함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.19958v2
+
+## 개요
+기존 VLA 모델은 주로 단거리 작업을 처리하며, 기술 체인 실행과 하위 작업 의존성 관리가 필요한 장거리 다단계 조작에서는 성능이 제한적입니다. Long-VLA는 혁신적인 위상 인식 입력 마스킹 전략을 통해 각 하위 작업을 이동 단계와 상호작용 단계로 동적으로 구분하여, 모델이 단계와 관련된 지각 단서에 집중할 수 있게 함으로써 하위 작업 간의 호환성을 강화합니다. 이 전략은 아키텍처에 독립적인 모듈로, 기존 VLA 모델에 원활하게 통합될 수 있으며 훈련의 데이터 효율성과 확장성을 유지합니다. 장거리 조작 능력을 체계적으로 평가하기 위해 저자는 L-CALVIN 벤치마크도 제안합니다. 시뮬레이션과 실제 세계의 광범위한 실험에서 Long-VLA는 이전 최고 방법을 크게 능가하며 장거리 로봇 제어의 새로운 기준을 세웁니다.
+
+## 핵심 내용
+### 방법
+- **위상 인식 입력 마스킹 전략**: 각 하위 작업을 이동 단계(목표 접근)와 상호작용 단계(조작 실행)로 적응적으로 분할하고, 마스킹 메커니즘을 통해 모델이 현재 단계와 관련된 시각적 및 언어적 단서에만 집중하도록 하여 무관한 정보의 간섭을 줄입니다.
+- **아키텍처 독립성**: 이 모듈은 RT-2, Octo와 같은 기존 VLA 모델에 원활하게 통합될 수 있으며, 백본 네트워크를 수정할 필요 없이 기존 훈련 절차와 데이터 효율성을 유지합니다.
+
+### 실험 설정
+- **벤치마크**: L-CALVIN 벤치마크를 제안하며, 10가지 장거리 조작 작업(예: "서랍 열기 → 컵 꺼내기 → 트레이에 놓기")을 포함하고, 각 작업은 3-5개의 하위 단계로 구성됩니다.
+- **기준 모델**: RT-2, Octo, RoboFlamingo와 같은 주요 VLA 모델 및 행동 복제 기반 기준 방법과 비교합니다.
+- **평가 지표**: 작업 성공률(Success Rate), 하위 단계 완료율(Subtask Completion Rate), 평균 단계 수(Average Steps).
+
+### 주요 결과
+- **시뮬레이션 실험**: L-CALVIN에서 Long-VLA는 78.3%의 작업 성공률을 달성하여 최고 기준인 RT-2(52.1%)보다 26.2% 포인트 향상되었습니다. 하위 단계 완료율은 91.5%에 달하며 평균 단계 수는 18% 감소했습니다.
+- **실제 세계 실험**: 5가지 실제 장거리 조작 작업(예: "물 따르기 → 테이블 닦기")에서 Long-VLA의 성공률은 72.0%로, RT-2(44.0%)와 Octo(38.0%)보다 크게 우수했습니다.
+- **소거 실험**: 위상 인식 마스킹을 제거하면 작업 성공률이 61.2%로 하락하여, 이 전략이 장거리 작업에 미치는 핵심 역할을 검증했습니다.
+
+### 결론
+Long-VLA는 위상 인식 입력 마스킹 전략을 통해 장거리 조작에서의 기술 체인 및 하위 작업 의존성 문제를 효과적으로 해결하며, 시뮬레이션과 실제 환경 모두에서 상당한 성능 향상을 달성합니다. 아키텍처 독립적인 설계는 기존 VLA 시스템에 쉽게 확장될 수 있게 하여, 장거리 로봇 제어를 위한 새로운 기준과 실용적인 솔루션을 제공합니다.

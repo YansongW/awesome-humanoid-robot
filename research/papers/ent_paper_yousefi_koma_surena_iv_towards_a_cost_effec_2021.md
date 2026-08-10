@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2108.13515v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2108.13515v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (642 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,26 @@ This paper describes the hardware, software framework, and experimental testing 
 ## Content
 This paper describes the hardware, software framework, and experimental testing of the SURENA IV humanoid robotics platform. SURENA IV has 43 degrees of freedom (DoFs), including seven DoFs for each arm, six DoFs for each hand, and six DoFs for each leg, with a height of 170 cm and a mass of 68 kg, and morphological and mass properties similar to an average adult human. SURENA IV aims to realize a cost-effective and anthropomorphic humanoid robot for real-world scenarios. In this way, we demonstrate a locomotion framework based on a novel and inexpensive predictive foot sensor that enables walking with a 7 cm foot position error due to the accumulative error of links and connections' deflection (manufactured using tools available in universities). Thanks to this sensor, the robot can walk on unknown obstacles without any force feedback, by online adaptation of foot height and orientation. Moreover, the arm and hand of the robot have been designed to grasp objects with different stiffness and geometries, enabling the robot to perform drilling, visual servoing of a moving object, and writing its name on a whiteboard.
 
-## 개요
-본 논문은 SURENA IV 휴머노이드 로봇 플랫폼의 하드웨어, 소프트웨어 프레임워크 및 실험적 테스트에 대해 설명합니다. SURENA IV는 43개의 자유도(DoF)를 가지며, 각 팔에 7개의 DoF, 각 손에 6개의 DoF, 각 다리에 6개의 DoF로 구성되어 있습니다. 키는 170cm, 질량은 68kg이며, 형태 및 질량 특성이 평균 성인 인간과 유사합니다. SURENA IV는 실제 환경에서 비용 효율적이고 인간형에 가까운 휴머노이드 로봇을 구현하는 것을 목표로 합니다. 이를 위해, 대학에서 사용 가능한 도구로 제작된 링크 및 연결부의 처짐으로 인한 누적 오차로 인해 7cm의 발 위치 오차가 발생하는 상황에서도 보행이 가능하도록 하는, 새롭고 저렴한 예측형 발 센서 기반의 보행 프레임워크를 시연합니다. 이 센서 덕분에 로봇은 힘 피드백 없이도 발 높이와 방향을 온라인으로 조정하여 알려지지 않은 장애물 위를 걸을 수 있습니다. 또한, 로봇의 팔과 손은 다양한 강성과 형상을 가진 물체를 잡을 수 있도록 설계되어, 드릴 작업, 움직이는 물체의 비주얼 서보잉, 화이트보드에 자신의 이름 쓰기 등을 수행할 수 있습니다.
-
-## 핵심 내용
-본 논문은 SURENA IV 휴머노이드 로봇 플랫폼의 하드웨어, 소프트웨어 프레임워크 및 실험적 테스트에 대해 설명합니다. SURENA IV는 43개의 자유도(DoF)를 가지며, 각 팔에 7개의 DoF, 각 손에 6개의 DoF, 각 다리에 6개의 DoF로 구성되어 있습니다. 키는 170cm, 질량은 68kg이며, 형태 및 질량 특성이 평균 성인 인간과 유사합니다. SURENA IV는 실제 환경에서 비용 효율적이고 인간형에 가까운 휴머노이드 로봇을 구현하는 것을 목표로 합니다. 이를 위해, 대학에서 사용 가능한 도구로 제작된 링크 및 연결부의 처짐으로 인한 누적 오차로 인해 7cm의 발 위치 오차가 발생하는 상황에서도 보행이 가능하도록 하는, 새롭고 저렴한 예측형 발 센서 기반의 보행 프레임워크를 시연합니다. 이 센서 덕분에 로봇은 힘 피드백 없이도 발 높이와 방향을 온라인으로 조정하여 알려지지 않은 장애물 위를 걸을 수 있습니다. 또한, 로봇의 팔과 손은 다양한 강성과 형상을 가진 물체를 잡을 수 있도록 설계되어, 드릴 작업, 움직이는 물체의 비주얼 서보잉, 화이트보드에 자신의 이름 쓰기 등을 수행할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2108.13515v1
+
+## 개요
+SURENA IV 로봇은 43개의 자유도를 가지며, 각 팔에 7개, 각 손에 6개, 각 다리에 6개로 구성되어 있으며, 형태와 질량 분포가 일반 성인에 가깝습니다. 이 플랫폼은 실제 환경을 대상으로 한 저비용 휴머노이드 로봇을 구현하는 것을 목표로 합니다. 연구팀은 저비용 예측형 족부 센서 기반의 운동 프레임워크를 제안했으며, 이 센서는 링크와 연결부의 휨 누적으로 발생하는 7cm 족부 위치 오차를 보상하여, 로봇이 힘 피드백 없이도 온라인으로 족부 높이와 자세를 조정하며 미지의 장애물 위에서 안정적으로 보행할 수 있게 합니다. 또한, 로봇의 팔과 손 설계는 다양한 강성과 기하학적 형태의 물체를 파지할 수 있으며, 드릴링, 이동 표적에 대한 시각 서보, 화이트보드에 이름 쓰기 등의 작업을 지원합니다.
+
+## 핵심 내용
+### 하드웨어 및 자유도 구성
+- SURENA IV의 총 자유도는 43개이며, 구체적 분포는 다음과 같습니다: 각 팔 7개, 각 손 6개, 각 다리 6개.
+- 신장 170cm, 질량 68kg으로, 형태와 질량 분포가 일반 성인을 모사합니다.
+
+### 저비용 제조와 과제
+- 대학 실험실에서 사용 가능한 도구를 활용한 저비용 제조로 인해 링크와 연결부에 휨 누적 오차가 발생하며, 족부 위치 오차는 최대 7cm에 달할 수 있습니다.
+
+### 운동 제어 프레임워크
+- 핵심 혁신: 힘/토크 센서가 필요 없는 새로운 저비용 예측형 족부 센서.
+- 온라인 스윙 족부 적응 메커니즘: 로봇은 실시간으로 족부 높이와 자세를 조정하며 미지의 장애물 지형에서 보행할 수 있습니다.
+- 이 센서는 구조적 휨으로 인한 위치 오차를 직접 보상하여, 힘 피드백 없이도 안정적인 보행을 구현합니다.
+
+### 조작 능력
+- 팔과 손 설계는 다양한 강성과 기하학적 형태의 물체 파지를 지원합니다.
+- 시연 작업에는 드릴링, 이동 물체에 대한 시각 서보, 화이트보드에 이름 쓰기가 포함됩니다.
+- 손 제어는 전류 피드백 기반으로, 추가적인 힘 센서가 필요 없습니다.

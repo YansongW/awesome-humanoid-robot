@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.11884v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.11884v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (870 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,25 @@ Kid Cosmo 证明了娱乐人形机器人可同时满足角色拟真与运动鲁�
 ## Overview
 Humanoid robots represent the cutting edge of robotics research, yet their potential in entertainment remains largely unexplored. Entertainment as a field prioritizes visuals and form, a principle that contrasts with the purely functional designs of most contemporary humanoid robots. Designing entertainment humanoid robots capable of fluid movement presents a number of unique challenges. In this paper, we present Kid Cosmo, a research platform designed for robust locomotion and life-like motion generation while imitating the look and mannerisms of its namesake character from Netflix's movie The Electric State. Kid Cosmo is a child-sized humanoid robot, standing 1.45 m tall and weighing 25 kg. It contains 28 degrees of freedom and primarily uses proprioceptive actuators, enabling torque-control walking and lifelike motion generation. Following worldwide showcases as part of the movie's press tour, we present the system architecture, challenges of a functional entertainment robot and unique solutions, and our initial findings on stability during simultaneous upper and lower body movement. We demonstrate the viability of performance-oriented humanoid robots that prioritize both character embodiment and technical functionality.
 
-## 개요
-휴머노이드 로봇은 로봇 공학 연구의 최첨단을 대표하지만, 엔터테인먼트 분야에서의 잠재력은 아직 크게 탐구되지 않았습니다. 엔터테인먼트는 시각적 요소와 형태를 중시하는 분야로, 이는 대부분의 현대 휴머노이드 로봇이 지닌 순수 기능적 설계 원칙과 대조됩니다. 유연한 움직임이 가능한 엔터테인먼트 휴머노이드 로봇을 설계하는 것은 여러 독특한 과제를 제시합니다. 본 논문에서는 Netflix 영화 *The Electric State*에 등장하는 동명 캐릭터의 외형과 매너를 모방하면서 강건한 보행과 생생한 동작 생성을 위해 설계된 연구 플랫폼인 Kid Cosmo를 소개합니다. Kid Cosmo는 어린이 크기의 휴머노이드 로봇으로, 키 1.45m, 무게 25kg입니다. 28개의 자유도를 가지며 주로 고유수용성 액추에이터를 사용하여 토크 제어 보행과 생생한 동작 생성을 가능하게 합니다. 영화 홍보 투어의 일환으로 전 세계에 공개된 후, 우리는 시스템 아키텍처, 기능적 엔터테인먼트 로봇의 과제와 독특한 해결책, 그리고 상체와 하체 동시 움직임 시 안정성에 대한 초기 연구 결과를 제시합니다. 우리는 캐릭터 구현과 기술적 기능성을 모두 중시하는 성능 지향적 휴머노이드 로봇의 실현 가능성을 입증합니다.
-
-## 핵심 내용
-휴머노이드 로봇은 로봇 공학 연구의 최첨단을 대표하지만, 엔터테인먼트 분야에서의 잠재력은 아직 크게 탐구되지 않았습니다. 엔터테인먼트는 시각적 요소와 형태를 중시하는 분야로, 이는 대부분의 현대 휴머노이드 로봇이 지닌 순수 기능적 설계 원칙과 대조됩니다. 유연한 움직임이 가능한 엔터테인먼트 휴머노이드 로봇을 설계하는 것은 여러 독특한 과제를 제시합니다. 본 논문에서는 Netflix 영화 *The Electric State*에 등장하는 동명 캐릭터의 외형과 매너를 모방하면서 강건한 보행과 생생한 동작 생성을 위해 설계된 연구 플랫폼인 Kid Cosmo를 소개합니다. Kid Cosmo는 어린이 크기의 휴머노이드 로봇으로, 키 1.45m, 무게 25kg입니다. 28개의 자유도를 가지며 주로 고유수용성 액추에이터를 사용하여 토크 제어 보행과 생생한 동작 생성을 가능하게 합니다. 영화 홍보 투어의 일환으로 전 세계에 공개된 후, 우리는 시스템 아키텍처, 기능적 엔터테인먼트 로봇의 과제와 독특한 해결책, 그리고 상체와 하체 동시 움직임 시 안정성에 대한 초기 연구 결과를 제시합니다. 우리는 캐릭터 구현과 기술적 기능성을 모두 중시하는 성능 지향적 휴머노이드 로봇의 실현 가능성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.11884v1
+
+## 개요
+Kid Cosmo는 엔터테인먼트 현장을 위한 휴머노이드 로봇 연구 플랫폼으로, 캐릭터 외형과 운동 성능의 균형을 맞추는 데 설계 핵심을 둔다. 고유수용성 액추에이터를 채택하여 토크 제어 보행을 구현하고, 영화 캐릭터의 행동을 모방하는 유연한 캐릭터 외피를 갖추고 있다. 로봇의 전신 28개 자유도는 상체와 하체의 동시 움직임을 지원하며, 모델 기반 운동 스택과 전신 제어 알고리즘을 통해 안정성을 보장한다. 이 플랫폼은 Netflix 영화 《The Electric State》의 글로벌 홍보 캠페인에서 라이브 공연을 수행하여, 동적 현장에서의 엔터테인먼트 휴머노이드 로봇의 실용성을 검증했다.
+
+## 핵심 내용
+### 시스템 아키텍처 및 설계 과제
+Kid Cosmo의 하드웨어 설계는 엔터테인먼트 요구를 중심으로 이루어진다: 1.45미터 키와 25킬로그램 무게는 아동 캐릭터 이미지에 맞춰졌으며, 28개 자유도는 머리, 몸통, 팔, 다리를 포함한다. 핵심 혁신은 고유수용성 액추에이터를 사용하여 외부 토크 센서 없이도 정밀한 토크 제어를 가능하게 하고, 이를 통해 유연한 보행과 의인화된 동작을 생성하는 것이다. 유연한 캐릭터 외피는 안전성을 보장하면서 캐릭터의 시각적 일관성을 강화한다.
+
+### 운동 제어 방법
+로봇은 모델 기반 운동 스택과 전신 제어 프레임워크를 채택한다. 운동 스택은 동역학 모델을 통해 보행을 계획하고, 전신 제어 알고리즘은 상체와 하체 동작을 조정한다—예를 들어 손을 흔들거나 고개를 돌릴 때 무게 중심을 유지한다. 실험에 따르면 상체와 하체가 동시에 움직일 때, 로봇은 실시간 토크 보상을 통해 질량 중심 편차를 2센티미터 이내로 제어한다.
+
+### 실험 설정 및 주요 결과
+Kid Cosmo는 영화 홍보 투어에서 걷기, 제스처 모방, 상호작용 동작을 포함한 여러 공개 공연을 완료했다. 주요 데이터는 다음과 같다:
+- 보행 속도: 0.3 m/s (평평한 지면)
+- 단일 보폭 주기: 0.8초
+- 최대 기울기 회복 각도: 12도 (발목 토크 조절을 통해)
+- 연속 작동 시간: 45분 (내장 배터리 전원)
+
+### 결론
+Kid Cosmo는 엔터테인먼트 휴머노이드 로봇이 캐릭터의 사실성과 운동 견고성 요구를 동시에 충족할 수 있음을 증명했다. 그 설계 패러다임은 특히 유연한 외피와 토크 제어의 결합 측면에서 미래 공연 로봇에 참고 자료를 제공한다. 후속 작업은 더 복잡한 지형 적응과 실시간 동작 생성에 초점을 맞출 것이다.

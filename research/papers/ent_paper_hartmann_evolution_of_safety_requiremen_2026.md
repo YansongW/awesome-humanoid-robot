@@ -41,8 +41,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.17822v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.17822v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (789 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,28 @@ theoretical_depth:
 ## Overview
 Industrial robotics has established itself as an integral component of large-scale manufacturing enterprises. Simultaneously, collaborative robotics is gaining prominence, introducing novel paradigms of human-machine interaction. These advancements have necessitated a comprehensive revision of safety standards, specifically incorporating requirements for cybersecurity and protection against unauthorized access in networked robotic systems. This article presents a comparative analysis of the ISO 10218:2011 and ISO 10218:2025 standards, examining the evolution of their structure, terminology, technical requirements, and annexes. The analysis reveals significant expansions in functional safety and cybersecurity, the introduction of new classifications for robots and collaborative applications, and the normative integration of the technical specification ISO/TS 15066. Consequently, the new edition synthesizes mechanical, functional, and digital safety requirements, establishing a comprehensive framework for the design and operation of modern robotic systems.
 
-## 개요
-산업용 로봇 공학은 대규모 제조 기업의 필수 구성 요소로 자리 잡았습니다. 동시에 협동 로봇 공학이 부상하며 인간-기계 상호작용의 새로운 패러다임을 도입하고 있습니다. 이러한 발전은 안전 표준의 포괄적인 개정을 필요로 하게 했으며, 특히 네트워크화된 로봇 시스템에서 사이버 보안 및 무단 접근 방지 요구 사항을 포함하게 되었습니다. 본 논문은 ISO 10218:2011과 ISO 10218:2025 표준의 비교 분석을 제시하며, 구조, 용어, 기술 요구 사항 및 부속서의 변화를 검토합니다. 분석 결과, 기능 안전과 사이버 보안의 상당한 확장, 로봇 및 협동 애플리케이션에 대한 새로운 분류 도입, 기술 사양 ISO/TS 15066의 규범적 통합이 드러났습니다. 결과적으로, 새 판은 기계적, 기능적, 디지털 안전 요구 사항을 종합하여 현대 로봇 시스템의 설계 및 운영을 위한 포괄적인 프레임워크를 구축합니다.
-
-## 핵심 내용
-산업용 로봇 공학은 대규모 제조 기업의 필수 구성 요소로 자리 잡았습니다. 동시에 협동 로봇 공학이 부상하며 인간-기계 상호작용의 새로운 패러다임을 도입하고 있습니다. 이러한 발전은 안전 표준의 포괄적인 개정을 필요로 하게 했으며, 특히 네트워크화된 로봇 시스템에서 사이버 보안 및 무단 접근 방지 요구 사항을 포함하게 되었습니다. 본 논문은 ISO 10218:2011과 ISO 10218:2025 표준의 비교 분석을 제시하며, 구조, 용어, 기술 요구 사항 및 부속서의 변화를 검토합니다. 분석 결과, 기능 안전과 사이버 보안의 상당한 확장, 로봇 및 협동 애플리케이션에 대한 새로운 분류 도입, 기술 사양 ISO/TS 15066의 규범적 통합이 드러났습니다. 결과적으로, 새 판은 기계적, 기능적, 디지털 안전 요구 사항을 종합하여 현대 로봇 시스템의 설계 및 운영을 위한 포괄적인 프레임워크를 구축합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.17822v1
+
+## 개요
+본 논문은 ISO 10218-1/2:2011과 2025 개정판의 구조, 용어, 기술 요구사항 및 부록에서의 변화를 체계적으로 비교한다. 연구 결과, 새 버전은 기능 안전과 사이버 보안 요구사항을 크게 강화하고, 로봇 및 협동 애플리케이션에 대한 새로운 분류를 도입했으며, 기술 사양서 ISO/TS 15066을 규범적 프레임워크에 포함시켰다. 이러한 변화는 산업용 로봇이 대규모 제조에서 인간-로봇 협업 패러다임으로 전환되는 과정에서의 안전 요구를 반영하며, 궁극적으로 기계적, 기능적, 디지털 안전 요구사항을 하나의 통합 체계로 결합한다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+- 산업용 로봇은 대규모 제조의 핵심이 되었으며, 동시에 협동 로봇은 인간-로봇 상호작용의 새로운 패러다임을 추진하고 있다.
+- 이러한 발전은 안전 표준의 전면적인 개정을 요구하며, 특히 네트워크화된 로봇 시스템의 사이버 보안과 무단 접근 방지에 중점을 둔다.
+
+### 표준 비교 분석
+- **구조 변화**: 2025 버전은 장(chapter) 구조를 재구성하고, 용어 정의를 더 정밀하게 했으며, 기술 요구사항과 부록 내용을 크게 확장했다.
+- **기능 안전 확장**: 새 버전은 기능 안전 요구사항을 현저히 강화하여, 더 복잡한 제어 로직과 고장 대응 메커니즘을 포함한다.
+- **사이버 보안 신설**: 무단 접근 방지, 데이터 무결성, 통신 보안을 포함한 사이버 보안 요구사항을 처음으로 체계적으로 포함한다.
+- **소프트웨어 검증 강화**: 로봇 제어 소프트웨어의 검증 및 확인에 대해 더 엄격한 규정을 도입하여 소프트웨어 신뢰성을 보장한다.
+
+### 주요 변화
+- **로봇 분류**: 2025 버전은 새로운 로봇 분류 체계를 도입하여, 다양한 위험 수준과 적용 시나리오를 구분한다.
+- **협동 애플리케이션 분류**: 협동 로봇에 대해 안전 모니터링 정지, 수동 유도, 속도 및 힘 제한 등과 같은 더 세분화된 애플리케이션 범주를 정의한다.
+- **ISO/TS 15066 통합**: 원래 기술 사양서였던 ISO/TS 15066(협동 로봇 안전 요구사항)을 규범적 참조로 승격시켜, 표준의 핵심 구성 요소로 만든다.
+
+### 결론
+- 2025 버전 ISO 10218-1/2는 기계적, 기능적, 디지털 안전 요구사항을 설계부터 운영까지의 전체 수명 주기를 포괄하는 하나의 통합 프레임워크로 결합한다.
+- 이러한 변화는 산업용 로봇이 전통적인 격리 운영에서 인간-로봇 협업, 네트워크화된 지능형 시스템으로 전환되는 과정에서의 안전 요구를 반영한다.

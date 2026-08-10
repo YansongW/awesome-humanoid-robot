@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/09/abb-robotics-collaborates-with-roche-to-bring-physical-ai-to-laboratories-/26827.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/09/abb-robotics-collaborates-with-roche-to-bring-physical-ai-to-laboratories-/26827.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (499 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -78,15 +79,25 @@ sources:
 - First applications under collaboration will support pathology slide handling and autonomous connectivity in Core Lab intralogistics
 - Range of ABB Robotics’ technologies deployed, including autonomous mobile manipulation and fixed articulating robots
 
-## 개요
-•	이번 협약은 지능형 로봇 공학을 통해 실험실 워크플로우에 상당한 효율성을 제공하는 디지털 연결 실험실의 새로운 시대를 위한 기반을 마련합니다.
-•	협력 하의 첫 번째 애플리케이션은 병리 슬라이드 처리 및 핵심 실험실 내부 물류의 자율적 연결을 지원할 것입니다.
-•	자율 모바일 조작 및 고정 관절 로봇을 포함한 ABB Robotics의 다양한 기술이 배치됩니다.
-
-## 핵심 내용
-•	이번 협약은 지능형 로봇 공학을 통해 실험실 워크플로우에 상당한 효율성을 제공하는 디지털 연결 실험실의 새로운 시대를 위한 기반을 마련합니다.
-•	협력 하의 첫 번째 애플리케이션은 병리 슬라이드 처리 및 핵심 실험실 내부 물류의 자율적 연결을 지원할 것입니다.
-•	자율 모바일 조작 및 고정 관절 로봇을 포함한 ABB Robotics의 다양한 기술이 배치됩니다.
-
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/07/09/abb-robotics-collaborates-with-roche-to-bring-physical-ai-to-laboratories-/26827
+
+## 개요
+이 프로토콜은 지능형 로봇을 통한 디지털 연결로 실험실 워크플로우에 상당한 효율성 향상을 가져옵니다. 첫 번째 협력 애플리케이션은 병리 슬라이드 처리와 핵심 실험실 내부 물류의 자율 연결을 지원할 예정입니다. ABB Robotics는 자율 이동 조작 로봇과 고정 관절 로봇을 포함한 다양한 기술을 배치하여 실험실 운영을 최적화합니다.
+
+## 핵심 내용
+### 협력 배경 및 목표
+- ABB Robotics와 Roche는 지능형 로봇 기술을 통해 실험실 디지털 연결의 새로운 시대를 여는 협약을 체결했습니다.
+- 핵심 목표는 실험실 워크플로우의 효율성을 크게 향상시키고 자동화 및 자율 운영을 실현하는 것입니다.
+
+### 첫 번째 애플리케이션 분야
+- **병리 슬라이드 처리**: 로봇 기술은 병리 슬라이드를 자동으로 처리하여 수동 개입을 줄이는 데 사용됩니다.
+- **핵심 실험실 내부 물류**: 실험실 내부 자재의 자율 연결과 운송을 구현하여 물류 프로세스를 최적화합니다.
+
+### 배치된 기술
+- **자율 이동 조작 로봇**: 이동 및 조작 능력을 갖추고 있어 실험실 환경에 유연하게 적응할 수 있습니다.
+- **고정 관절 로봇**: 슬라이드 처리나 샘플 운반과 같은 고정 위치의 정밀 작업에 사용됩니다.
+
+### 주요 영향
+- 지능형 로봇 통합을 통해 실험실 워크플로우는 더 높은 효율성과 신뢰성을 달성할 것입니다.
+- 이 협력은 실험실 시나리오에서 물리적 AI의 실제 적용을 의미하며, 의료 진단 및 연구의 자동화 프로세스를 추진합니다.

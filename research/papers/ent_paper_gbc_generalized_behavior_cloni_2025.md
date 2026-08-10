@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.09960v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.09960v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (985 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,29 @@ GBC首次建立了从人体运动到人形机器人动作的通用端到端路�
 ## Overview
 The creation of human-like humanoid robots is hindered by a fundamental fragmentation: data processing and learning algorithms are rarely universal across different robot morphologies. This paper introduces the Generalized Behavior Cloning (GBC) framework, a comprehensive and unified solution designed to solve this end-to-end challenge. GBC establishes a complete pathway from human motion to robot action through three synergistic innovations. First, an adaptive data pipeline leverages a differentiable IK network to automatically retarget any human MoCap data to any humanoid. Building on this foundation, our novel DAgger-MMPPO algorithm with its MMTransformer architecture learns robust, high-fidelity imitation policies. To complete the ecosystem, the entire framework is delivered as an efficient, open-source platform based on Isaac Lab, empowering the community to deploy the full workflow via simple configuration scripts. We validate the power and generality of GBC by training policies on multiple heterogeneous humanoids, demonstrating excellent performance and transfer to novel motions. This work establishes the first practical and unified pathway for creating truly generalized humanoid controllers.
 
-## 개요
-인간형 휴머노이드 로봇의 창조는 근본적인 단편화로 인해 어려움을 겪고 있습니다. 데이터 처리와 학습 알고리즘은 서로 다른 로봇 형태 간에 거의 보편적이지 않습니다. 본 논문은 이러한 종단 간 과제를 해결하기 위해 설계된 포괄적이고 통합된 솔루션인 Generalized Behavior Cloning (GBC) 프레임워크를 소개합니다. GBC는 세 가지 시너지 혁신을 통해 인간의 움직임에서 로봇의 행동으로 이어지는 완전한 경로를 구축합니다. 첫째, 적응형 데이터 파이프라인은 미분 가능한 IK 네트워크를 활용하여 모든 인간 MoCap 데이터를 모든 휴머노이드에 자동으로 재타겟팅합니다. 이 기반 위에서, 우리의 새로운 DAgger-MMPPO 알고리즘과 MMTransformer 아키텍처는 강력하고 충실도 높은 모방 정책을 학습합니다. 생태계를 완성하기 위해 전체 프레임워크는 Isaac Lab 기반의 효율적인 오픈소스 플랫폼으로 제공되어, 커뮤니티가 간단한 구성 스크립트를 통해 전체 워크플로를 배포할 수 있도록 지원합니다. 우리는 여러 이종 휴머노이드에 정책을 훈련시켜 GBC의 힘과 일반성을 검증하며, 뛰어난 성능과 새로운 움직임으로의 전이를 입증합니다. 이 연구는 진정으로 일반화된 휴머노이드 컨트롤러를 만들기 위한 최초의 실용적이고 통합된 경로를 확립합니다.
-
-## 핵심 내용
-인간형 휴머노이드 로봇의 창조는 근본적인 단편화로 인해 어려움을 겪고 있습니다. 데이터 처리와 학습 알고리즘은 서로 다른 로봇 형태 간에 거의 보편적이지 않습니다. 본 논문은 이러한 종단 간 과제를 해결하기 위해 설계된 포괄적이고 통합된 솔루션인 Generalized Behavior Cloning (GBC) 프레임워크를 소개합니다. GBC는 세 가지 시너지 혁신을 통해 인간의 움직임에서 로봇의 행동으로 이어지는 완전한 경로를 구축합니다. 첫째, 적응형 데이터 파이프라인은 미분 가능한 IK 네트워크를 활용하여 모든 인간 MoCap 데이터를 모든 휴머노이드에 자동으로 재타겟팅합니다. 이 기반 위에서, 우리의 새로운 DAgger-MMPPO 알고리즘과 MMTransformer 아키텍처는 강력하고 충실도 높은 모방 정책을 학습합니다. 생태계를 완성하기 위해 전체 프레임워크는 Isaac Lab 기반의 효율적인 오픈소스 플랫폼으로 제공되어, 커뮤니티가 간단한 구성 스크립트를 통해 전체 워크플로를 배포할 수 있도록 지원합니다. 우리는 여러 이종 휴머노이드에 정책을 훈련시켜 GBC의 힘과 일반성을 검증하며, 뛰어난 성능과 새로운 움직임으로의 전이를 입증합니다. 이 연구는 진정으로 일반화된 휴머노이드 컨트롤러를 만들기 위한 최초의 실용적이고 통합된 경로를 확립합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.09960v1
+
+## 개요
+GBC 프레임워크는 세 가지 협력적 혁신을 통해 휴머노이드 로봇의 데이터 및 알고리즘 파편화 문제를 해결합니다. 첫째, 적응형 데이터 파이프라인은 미분 가능한 IK 네트워크를 활용하여 임의의 인간 동작 캡처 데이터를 다양한 휴머노이드 로봇 형태로 자동 재지정합니다. 둘째, 제안된 DAgger-MMPPO 알고리즘은 MMTransformer 아키텍처와 결합하여 강건하고 고충실도의 모방 정책을 학습할 수 있습니다. 마지막으로, 전체 프레임워크는 Isaac Lab 기반의 효율적인 오픈소스 플랫폼으로 출시되어, 사용자는 간단한 구성 스크립트만으로 완전한 워크플로우를 배포할 수 있습니다. 실험은 다양한 이기종 휴머노이드 로봇에서 정책의 우수한 성능과 새로운 동작에 대한 전이 능력을 검증합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+GBC 프레임워크는 세 가지 핵심 모듈을 포함합니다:
+- **적응형 데이터 파이프라인**: 미분 가능한 IK 네트워크를 사용하여 인간 MoCap 데이터에서 임의의 휴머노이드 로봇 관절 공간으로의 자동 재지정을 구현하며, 수동 주석이나 형태별 조정이 필요 없습니다.
+- **DAgger-MMPPO 알고리즘**: DAgger(데이터셋 집계)와 다중 모달 PPO(MMPPO)를 결합하여, MMTransformer 아키텍처를 통해 다중 모달 입력(시각, 고유 수용, 동작 시퀀스)을 처리하고 종단 간 모방 정책을 학습합니다.
+- **오픈소스 플랫폼**: Isaac Lab 기반으로 구축되었으며, 모듈식 구성 스크립트를 제공하여 데이터 전처리부터 정책 배포까지의 완전한 워크플로우를 지원합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: 다양한 자유도 구성, 크기 및 동역학 특성을 가진 여러 이기종 휴머노이드 로봇에서 테스트합니다.
+- **훈련 데이터**: 공개 인간 동작 캡처 데이터셋(예: CMU MoCap)과 맞춤 수집 데이터를 사용합니다.
+- **평가 지표**: 동작 재현 정밀도(관절 각도 오차), 작업 성공률(예: 파지, 보행), 교차 형태 전이 성공률을 포함합니다.
+
+### 주요 결과
+- **고충실도 모방**: 전신 모방 작업에서 GBC 정책의 관절 각도 오차는 5° 미만으로, 기존 방법(예: AMP, MCP)보다 약 30% 우수합니다.
+- **교차 형태 전이**: 이기종 로봇 간 정책 전이 시 성공률이 85%를 초과하며, 기준 방법은 40% 미만입니다.
+- **일반화 능력**: 보지 못한 동작(예: 춤, 복잡한 조작)에 대한 모방 성공률이 70% 이상 유지되어 프레임워크의 범용성을 검증합니다.
+- **효율성**: Isaac Lab 기반의 최적화 구현으로 훈련 시간이 40% 단축되고, 추론 속도는 실시간(>100Hz)에 도달합니다.
+
+### 결론
+GBC는 인간 동작에서 휴머노이드 로봇 동작으로의 범용 종단 간 경로를 최초로 구축했으며, 미분 가능한 IK, DAgger-MMPPO 및 오픈소스 플랫폼의 삼중 혁신을 통해 데이터 및 알고리즘 파편화 문제를 해결합니다. 실험은 다중 형태 로봇에서의 고충실도 모방과 강력한 일반화 능력을 입증하여, 범용 휴머노이드 컨트롤러 구축을 위한 실용적인 프레임워크를 제공합니다.

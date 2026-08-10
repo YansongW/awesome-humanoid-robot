@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2105.10588v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2105.10588v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (917 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,23 @@ theoretical_depth:
 ## Overview
 Wearable robots are undergoing a disruptive transition, from the rigid machines that populated the science-fiction world in the early eighties to lightweight robotic apparel, hardly distinguishable from our daily clothes. In less than a decade of development, soft robotic suits have achieved important results in human motor assistance and augmentation. In this paper, we start by giving a definition of soft robotic suits and proposing a taxonomy to classify existing systems. We then critically review the modes of actuation, the physical human-robot interface and the intention-detection strategies of state of the art soft robotic suits, highlighting the advantages and limitations of different approaches. Finally, we discuss the impact of this new technology on human movements, for both augmenting human function and supporting motor impairments, and identify areas that are in need of further development.
 
-## 개요
-웨어러블 로봇은 1980년대 초반 공상과학 세계를 가득 채웠던 딱딱한 기계에서 일상복과 구별하기 어려운 경량 로봇 의류로의 혁신적인 전환을 겪고 있습니다. 10년도 채 되지 않은 개발 기간 동안 소프트 로봇 슈트는 인간의 운동 보조 및 증강 분야에서 중요한 성과를 거두었습니다. 본 논문에서는 먼저 소프트 로봇 슈트의 정의를 내리고 기존 시스템을 분류하기 위한 분류 체계를 제안합니다. 그런 다음 최신 소프트 로봇 슈트의 구동 방식, 물리적 인간-로봇 인터페이스 및 의도 감지 전략을 비판적으로 검토하며, 다양한 접근 방식의 장점과 한계를 강조합니다. 마지막으로, 인간 기능 증강과 운동 장애 지원 모두에서 이 새로운 기술이 인간의 움직임에 미치는 영향을 논의하고, 추가 개발이 필요한 영역을 식별합니다.
-
-## 핵심 내용
-웨어러블 로봇은 1980년대 초반 공상과학 세계를 가득 채웠던 딱딱한 기계에서 일상복과 구별하기 어려운 경량 로봇 의류로의 혁신적인 전환을 겪고 있습니다. 10년도 채 되지 않은 개발 기간 동안 소프트 로봇 슈트는 인간의 운동 보조 및 증강 분야에서 중요한 성과를 거두었습니다. 본 논문에서는 먼저 소프트 로봇 슈트의 정의를 내리고 기존 시스템을 분류하기 위한 분류 체계를 제안합니다. 그런 다음 최신 소프트 로봇 슈트의 구동 방식, 물리적 인간-로봇 인터페이스 및 의도 감지 전략을 비판적으로 검토하며, 다양한 접근 방식의 장점과 한계를 강조합니다. 마지막으로, 인간 기능 증강과 운동 장애 지원 모두에서 이 새로운 기술이 인간의 움직임에 미치는 영향을 논의하고, 추가 개발이 필요한 영역을 식별합니다.
-
 ## 参考
 - http://arxiv.org/abs/2105.10588v2
+
+## 개요
+이 리뷰 논문은 웨어러블 로봇이 초기 공상과학 속 강체 기계에서 가볍고 옷과 같은 소프트 슈트로 전환되고 있음을 지적합니다. 논문은 먼저 소프트 로봇 슈트의 정의를 제시하고, 기존 시스템을 분류하기 위한 체계를 구축합니다. 이후, 현재 최첨단 소프트 로봇 슈트의 구동 방식, 물리적 인간-로봇 인터페이스, 의도 감지 방법을 비판적으로 검토하며 각 접근법의 장단점을 분석합니다. 마지막으로, 논문은 인간 기능 강화 및 운동 장애 보조에 있어 이 기술의 생체역학적 효과를 논의하고, 향후 추가 개발이 필요한 핵심 영역을 제시합니다.
+
+## 핵심 내용
+### 정의 및 분류
+- 소프트 로봇 슈트는 유연한 재료로 구성되어 인체 외부에 착용 가능한 로봇 시스템으로 정의되며, 운동 보조 또는 강화를 목적으로 합니다.
+- 논문이 제안한 분류법은 **구동 유형**(예: 공압, 케이블 구동, 전기활성 폴리머), **구조 설계**(예: 외골격형, 직물형, 혼합형), **기능 목표**(예: 보조, 재활, 강화)의 세 가지 차원에 기반합니다.
+
+### 핵심 기술 개요
+- **구동 방식**: 공압 인공 근육(PAM)은 높은 출력 밀도를 제공하지만 외부 공기 공급원이 필요합니다. 케이블 구동(예: Bowden 케이블)은 가볍지만 마찰로 인해 효율이 저하됩니다. 전기활성 폴리머(예: 유전체 탄성체)는 응답이 빠르지만 구동력이 작습니다. 각 방식은 힘 출력, 응답 속도, 시스템 복잡성 측면에서 각각의 장단점이 있습니다.
+- **물리적 인간-로봇 인터페이스**: 소프트 인터페이스는 유연한 직물이나 탄성 밴드를 통해 신체에 밀착되어 압력점을 줄이지만, 미끄러짐과 힘 전달 효율 문제를 해결해야 합니다. 논문은 인터페이스 설계가 편안함과 기계적 결합 강도 사이의 균형을 필요로 한다고 지적합니다.
+- **의도 감지 전략**: 주요 방법으로는 근전도(EMG), 관성 측정 장치(IMU), 힘 센서가 있습니다. EMG는 운동 의도를 예측할 수 있지만 노이즈에 취약합니다. IMU는 자세 추정에 적합하지만 지연 시간이 비교적 깁니다. 힘 센서는 상호작용 힘을 직접 측정하지만 보정이 필요합니다. 혼합 센싱 전략(예: EMG+IMU)은 정확성과 견고성 측면에서 더 우수한 성능을 보입니다.
+
+### 생체역학적 영향 및 도전 과제
+- **운동 보조**: 소프트 로봇 슈트는 보행 보조에서 대사 소비를 줄일 수 있습니다(예: 보행 에너지 소비 10-20% 감소). 그러나 효과는 개인 차이와 작업 유형에 따라 달라집니다. 강화 측면에서는 중량 보행 시 관절 토크 출력을 향상시킬 수 있습니다.
+- **운동 장애 지원**: 뇌졸중이나 척수 손상 환자의 경우, 소프트 슈트는 보행 대칭성과 관절 가동 범위를 개선할 수 있지만, 장기적 효과와 적응성은 여전히 검증이 필요합니다.
+- **공개된 도전 과제**: 구동 시스템의 에너지 자립성(예: 배터리 수명과 무게의 상충), 의도 감지의 실시간성과 견고성, 소프트 재료의 장기 사용 내구성이 포함됩니다. 또한, 개인 맞춤형 적응과 사용자 수용도도 핵심 병목 지점입니다.

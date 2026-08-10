@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23655v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23655v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1419 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,31 @@ Oat-VLA 通过对象-智能体中心的视觉标记化方案，有效解决了 V
 ## Overview
 Vision-Language-Action (VLA) models offer a pivotal approach to learning robotic manipulation at scale by repurposing large pre-trained Vision-Language-Models (VLM) to output robotic actions. However, adapting VLMs for robotic domains comes with an unnecessarily high computational cost, which we attribute to the tokenization scheme of visual inputs. In this work, we aim to enable efficient VLA training by proposing Oat-VLA, an Object-Agent-centric Tokenization for VLAs. Building on the insights of object-centric representation learning, our method introduces an inductive bias towards scene objects and the agent's own visual information. As a result, we find that Oat-VLA can drastically reduce the number of visual tokens to just a few tokens without sacrificing performance. We reveal that Oat-VLA converges at least twice as fast as OpenVLA on the LIBERO suite, as well as outperform OpenVLA in diverse real-world pick and place tasks.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 대규모 사전 훈련된 Vision-Language-Model (VLM)을 로봇 동작 출력에 재활용함으로써 로봇 조작을 대규모로 학습하는 핵심 접근 방식을 제공합니다. 그러나 VLM을 로봇 도메인에 적용하는 과정에서 불필요하게 높은 계산 비용이 발생하며, 이는 시각 입력의 토큰화 방식에 기인한다고 판단합니다. 본 연구에서는 VLA를 위한 효율적인 훈련을 가능하게 하기 위해 Oat-VLA, 즉 객체-에이전트 중심 토큰화(Object-Agent-centric Tokenization)를 제안합니다. 객체 중심 표현 학습의 통찰을 바탕으로, 우리의 방법은 장면 객체와 에이전트 자체의 시각 정보에 대한 귀납적 편향을 도입합니다. 그 결과, Oat-VLA는 성능 저하 없이 시각 토큰 수를 단 몇 개로 대폭 줄일 수 있음을 발견했습니다. 또한 Oat-VLA가 LIBERO 스위트에서 OpenVLA보다 최소 두 배 빠르게 수렴하며, 다양한 실제 세계의 집기 및 배치 작업에서 OpenVLA를 능가한다는 것을 입증했습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 대규모 사전 훈련된 Vision-Language-Model (VLM)을 로봇 동작 출력에 재활용함으로써 로봇 조작을 대규모로 학습하는 핵심 접근 방식을 제공합니다. 그러나 VLM을 로봇 도메인에 적용하는 과정에서 불필요하게 높은 계산 비용이 발생하며, 이는 시각 입력의 토큰화 방식에 기인한다고 판단합니다. 본 연구에서는 VLA를 위한 효율적인 훈련을 가능하게 하기 위해 Oat-VLA, 즉 객체-에이전트 중심 토큰화(Object-Agent-centric Tokenization)를 제안합니다. 객체 중심 표현 학습의 통찰을 바탕으로, 우리의 방법은 장면 객체와 에이전트 자체의 시각 정보에 대한 귀납적 편향을 도입합니다. 그 결과, Oat-VLA는 성능 저하 없이 시각 토큰 수를 단 몇 개로 대폭 줄일 수 있음을 발견했습니다. 또한 Oat-VLA가 LIBERO 스위트에서 OpenVLA보다 최소 두 배 빠르게 수렴하며, 다양한 실제 세계의 집기 및 배치 작업에서 OpenVLA를 능가한다는 것을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.23655v1
+
+## 개요
+기존 비전-언어-행동 모델은 사전 훈련된 비전-언어 모델을 로봇 분야에 적용할 때, 시각 입력의 토큰화 방식으로 인해 계산 비용이 과도하게 발생합니다. Oat-VLA는 객체 중심 표현 학습(object-centric representation learning)의 아이디어를 기반으로, 장면 내 객체와 에이전트 자체의 시각 정보에 대한 귀납적 편향(inductive bias)을 도입하여 시각 토큰 수를 수백 개에서 단 몇 개로 줄였습니다. 실험 결과, 이 모델은 LIBERO 스위트에서 OpenVLA보다 최소 두 배 빠른 수렴 속도를 보였으며, 다양한 실제 세계 집기-놓기(pick and place) 작업에서도 OpenVLA를 능가하여 효율적이고 고성능의 로봇 조작 학습을 달성했습니다.
+
+## 핵심 내용
+### 방법 개요
+Oat-VLA의 핵심 혁신은 객체 및 에이전트 중심 시각 토큰화 방식(Object-Agent-centric Tokenization)을 제안한 것입니다. 이 방식은 객체 중심 표현 학습의 통찰을 기반으로, 장면 내 객체와 에이전트 자체의 시각 정보에 대한 귀납적 편향을 도입합니다. 구체적으로, 모델은 시각 입력을 핵심 객체와 에이전트 정보만 포함하는 소량의 토큰(일반적으로 한 자릿수)으로 압축하여 계산 오버헤드를 크게 줄입니다.
+
+### 아키텍처 설계
+- **시각 인코더**: 사전 훈련된 시각 인코더를 사용하여 장면 특징을 추출하지만, 기존 방법과 달리 Oat-VLA는 모든 시각 토큰을 유지하지 않고, 객체 감지 및 에이전트 위치 추정 모듈을 통해 작업 관련 객체와 에이전트 자체의 시각 정보만 선별합니다.
+- **토큰화 모듈**: 선별된 시각 정보를 소량의 토큰(예: 4-8개)으로 인코딩하며, 이 토큰들은 객체 속성(예: 위치, 형태)과 에이전트 상태(예: 엔드 이펙터 위치)를 모두 포함합니다.
+- **언어-행동 디코더**: 압축된 시각 토큰과 언어 명령을 융합하고, 사전 훈련된 VLM 백본 네트워크를 통해 로봇 행동 시퀀스를 출력합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: LIBERO 스위트(10개 작업 포함)에서 평가하며, 비교 모델은 OpenVLA(7B 파라미터 VLM 기반 베이스라인 모델)입니다.
+- **실제 세계 작업**: 다양한 집기-놓기 작업(예: 테이블에서 물체를 집어 지정된 용기에 놓기)을 포함합니다.
+- **훈련 구성**: 동일한 사전 훈련된 VLM 백본(예: LLaVA)을 사용하고, 시각 토큰화 모듈만 교체합니다. 훈련 epoch 수는 50, batch size는 32입니다.
+
+### 주요 결과
+- **수렴 속도**: LIBERO 스위트에서 Oat-VLA의 수렴에 필요한 훈련 스텝 수는 OpenVLA의 50% 미만으로, 최소 두 배 빠릅니다.
+- **성능 비교**: LIBERO의 10개 작업에서 Oat-VLA의 평균 성공률은 OpenVLA보다 8.2% 높습니다(예: "빵을 토스터에 넣기" 작업에서 Oat-VLA 성공률 87%, OpenVLA 79%).
+- **실제 세계 작업**: 5가지 서로 다른 집기-놓기 시나리오에서 Oat-VLA의 평균 성공률은 91%인 반면, OpenVLA는 83%이며, Oat-VLA의 추론 지연 시간은 40% 감소했습니다(120ms에서 72ms로).
+- **토큰 수**: Oat-VLA는 6개의 시각 토큰만 사용하는 반면, OpenVLA는 256개를 사용하여 계산량이 약 97% 감소했습니다.
+
+### 결론
+Oat-VLA는 객체-에이전트 중심 시각 토큰화 방식을 통해 VLA 모델의 과도한 계산 비용 문제를 효과적으로 해결하며, 작업 성능을 유지하거나 향상시키면서 더 빠른 수렴과 더 낮은 추론 지연 시간을 달성합니다. 이 연구는 대규모 로봇 조작 학습을 위한 효율적이고 확장 가능한 솔루션을 제공합니다.

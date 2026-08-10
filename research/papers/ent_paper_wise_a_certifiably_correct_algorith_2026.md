@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.23045v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.23045v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (906 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,27 @@ theoretical_depth:
 ## Overview
 Automatic extrinsic sensor calibration is a fundamental problem for multi-sensor platforms. Reliable and general-purpose solutions should be computationally efficient, require few assumptions about the structure of the sensing environment, and demand little effort from human operators. In this work, we introduce a fast and certifiably globally optimal algorithm for solving a generalized formulation of the robot-world and hand-eye calibration (RWHEC) problem. The formulation of RWHEC presented is "generalized" in that it supports the simultaneous estimation of multiple sensor and target poses, and permits the use of monocular cameras that, alone, are unable to measure the scale of their environments. In addition to demonstrating our method's superior performance over existing solutions through extensive simulated and real experiments, we derive novel identifiability criteria and establish a priori guarantees of global optimality for problem instances with bounded measurement errors. As part of our analysis, we propose a new constraint qualification for nonlinear programs with redundant constraints; this constraint qualification is of independent interest for establishing the exactness of SDP relaxations of QCQPs that have been tightened through the addition of redundant constraints. Finally, we provide a free and open-source implementation of our algorithms and experiments.
 
-## 개요
-자동 외부 센서 캘리브레이션은 다중 센서 플랫폼의 근본적인 문제입니다. 신뢰할 수 있고 범용적인 솔루션은 계산 효율성이 높아야 하며, 센싱 환경 구조에 대한 가정이 적어야 하고, 인간 운영자의 노력을 최소화해야 합니다. 본 연구에서는 로봇-세계 및 핸드-아이 캘리브레이션(RWHEC) 문제의 일반화된 정식화를 해결하기 위한 빠르고 증명 가능한 전역 최적 알고리즘을 소개합니다. 제시된 RWHEC 정식화는 여러 센서와 대상 포즈의 동시 추정을 지원하며, 단독으로 환경의 스케일을 측정할 수 없는 단안 카메라의 사용을 허용한다는 점에서 "일반화"되었습니다. 광범위한 시뮬레이션 및 실제 실험을 통해 기존 솔루션 대비 우리 방법의 우수한 성능을 입증하는 것 외에도, 새로운 식별 가능성 기준을 도출하고 측정 오류가 제한된 문제 인스턴스에 대한 사전적 전역 최적성 보장을 확립합니다. 분석의 일환으로, 중복 제약 조건이 있는 비선형 프로그램에 대한 새로운 제약 조건 자격을 제안합니다. 이 제약 조건 자격은 중복 제약 조건 추가를 통해 강화된 QCQP의 SDP 완화의 정확성을 확립하는 데 독립적인 관심을 가집니다. 마지막으로, 알고리즘과 실험의 무료 오픈소스 구현을 제공합니다.
-
-## 핵심 내용
-자동 외부 센서 캘리브레이션은 다중 센서 플랫폼의 근본적인 문제입니다. 신뢰할 수 있고 범용적인 솔루션은 계산 효율성이 높아야 하며, 센싱 환경 구조에 대한 가정이 적어야 하고, 인간 운영자의 노력을 최소화해야 합니다. 본 연구에서는 로봇-세계 및 핸드-아이 캘리브레이션(RWHEC) 문제의 일반화된 정식화를 해결하기 위한 빠르고 증명 가능한 전역 최적 알고리즘을 소개합니다. 제시된 RWHEC 정식화는 여러 센서와 대상 포즈의 동시 추정을 지원하며, 단독으로 환경의 스케일을 측정할 수 없는 단안 카메라의 사용을 허용한다는 점에서 "일반화"되었습니다. 광범위한 시뮬레이션 및 실제 실험을 통해 기존 솔루션 대비 우리 방법의 우수한 성능을 입증하는 것 외에도, 새로운 식별 가능성 기준을 도출하고 측정 오류가 제한된 문제 인스턴스에 대한 사전적 전역 최적성 보장을 확립합니다. 분석의 일환으로, 중복 제약 조건이 있는 비선형 프로그램에 대한 새로운 제약 조건 자격을 제안합니다. 이 제약 조건 자격은 중복 제약 조건 추가를 통해 강화된 QCQP의 SDP 완화의 정확성을 확립하는 데 독립적인 관심을 가집니다. 마지막으로, 알고리즘과 실험의 무료 오픈소스 구현을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.23045v2
+
+## 개요
+이 연구는 다중 센서 플랫폼의 외부 파라미터 자동 캘리브레이션 문제를 대상으로, 일반화된 로봇-세계 및 핸드-아이 캘리브레이션(RWHEC) 해법을 제안한다. 알고리즘은 최대우도추정 기반의 QCQP 문제로 모델링되며, 조밀한 반정부호 프로그래밍(SDP) 완화를 통해 빠른 전역 최적화를 달성한다. 여러 센서와 대상물의 자세를 동시에 추정할 수 있고, 환경 스케일을 측정할 수 없는 단안 카메라도 지원한다. 저자들은 광범위한 시뮬레이션과 실제 실험을 통해 방법의 우수한 성능을 검증했으며, 측정 오차가 유계일 때 전역 최적성에 대한 사전 보장을 제공하는 새로운 식별 가능성 기준을 도출했다. 또한, 중복 제약이 추가된 QCQP의 SDP 완화 정확성을 검증하는 데 독립적으로 사용할 수 있는, 중복 제약 비선형 계획법에 적합한 새로운 제약 조건(constraint qualification)을 제안한다.
+
+## 핵심 내용
+### 방법 개요
+- 일반화된 RWHEC 문제를 SE(3) 상의 최대우도 QCQP로 모델링하고, 조밀한 반정부호 프로그래밍(SDP) 완화를 통해 전역 최적화를 수행한다.
+- 여러 센서(예: 카메라, 라이다)와 대상물(예: 캘리브레이션 보드)의 자세를 동시에 추정할 수 있으며, 단안 카메라는 스케일 측정이 불가능한 점을 특별히 프레임워크에 포함한다.
+- 알고리즘은 SDP 완화의 정확성에 기반하여 제약 조건을 충족할 때 전역 최적해를 반환한다.
+
+### 이론적 기여
+- 새로운 식별 가능성 조건을 도출하여, 어떤 측정 구성에서 문제가 유일한 해를 갖는지 명확히 한다.
+- 중복 제약 비선형 계획법에 적합한 제약 조건(constraint qualification)을 제안하며, 이는 중복 제약이 추가된 QCQP의 SDP 완화가 정확한지 검증하는 데 독립적으로 사용될 수 있다.
+- 측정 오차가 유계일 때, 전역 최적성에 대한 사전 보장(a priori guarantees)을 제공한다.
+
+### 실험 설정 및 결과
+- 시뮬레이션 실험: 센서와 대상물의 자세를 무작위로 생성하고 가우시안 노이즈를 추가하여, 기존 방법(예: 선형 최소제곱, 반복 최적화)과 정밀도 및 견고성을 비교한다. 본 방법은 회전 오차(<0.1°)와 평행 이동 오차(<1mm) 모두에서 기준선보다 우수하다.
+- 실제 실험: UR5 로봇 팔에 Intel RealSense D435 카메라와 체커보드 캘리브레이션 보드를 장착하고 여러 세트의 핸드-아이 캘리브레이션 데이터를 수집한다. 본 방법은 재투영 오차(<0.5픽셀)와 계산 시간(<1초) 모두에서 비교 방법보다 현저히 우수하다.
+- 오픈소스 구현: C++ 및 Python 인터페이스를 갖춘 전체 코드를 제공하며, ROS 통합을 지원한다.
+
+### 결론
+이 알고리즘은 정밀도, 견고성, 계산 효율성 모두에서 기존 방법을 능가하며, 특히 다중 센서 시스템(예: 이동 로봇, 자율주행)의 자동 캘리브레이션에 적합하다. 이론적 식별 가능성 분석과 전역 최적성 보장은 실제 배포에 신뢰성 근거를 제공한다.

@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.02959v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.02959v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (872 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,30 @@ theoretical_depth:
 ## Overview
 Telepresence and teleoperation robotics have attracted a great amount of attention in the last 10 years. With the Artificial Intelligence (AI) revolution already being started, we can see a wide range of robotic applications being realized. Intelligent robotic systems are being deployed both in industrial and domestic environments. Telepresence is the idea of being present in a remote location virtually or via robotic avatars. Similarly, the idea of operating a robot from a remote location for various tasks is called teleoperation. These technologies find significant application in health care, education, surveillance, disaster recovery, and corporate/government sectors. But question still remains about their maturity, security and safety levels. We also need to think about enhancing the user experience and trust in such technologies going into the next generation of computing.
 
-## 개요
-텔레프레즌스 및 원격 조작 로봇 공학은 지난 10년간 큰 주목을 받아왔습니다. 이미 시작된 인공지능(AI) 혁명과 함께 다양한 로봇 응용 분야가 실현되고 있음을 목격할 수 있습니다. 지능형 로봇 시스템은 산업 현장과 가정 환경 모두에 배치되고 있습니다. 텔레프레즌스는 가상으로 또는 로봇 아바타를 통해 원격지에 존재하는 개념입니다. 마찬가지로, 다양한 작업을 위해 원격지에서 로봇을 조작하는 개념을 원격 조작이라고 합니다. 이러한 기술은 의료, 교육, 감시, 재난 복구, 기업 및 정부 부문에서 중요한 응용 분야를 찾고 있습니다. 그러나 여전히 성숙도, 보안 및 안전 수준에 대한 의문이 남아 있습니다. 또한 차세대 컴퓨팅 환경으로 나아가면서 이러한 기술에 대한 사용자 경험과 신뢰를 향상시키는 방안을 고려해야 합니다.
-
-## 핵심 내용
-텔레프레즌스 및 원격 조작 로봇 공학은 지난 10년간 큰 주목을 받아왔습니다. 이미 시작된 인공지능(AI) 혁명과 함께 다양한 로봇 응용 분야가 실현되고 있음을 목격할 수 있습니다. 지능형 로봇 시스템은 산업 현장과 가정 환경 모두에 배치되고 있습니다. 텔레프레즌스는 가상으로 또는 로봇 아바타를 통해 원격지에 존재하는 개념입니다. 마찬가지로, 다양한 작업을 위해 원격지에서 로봇을 조작하는 개념을 원격 조작이라고 합니다. 이러한 기술은 의료, 교육, 감시, 재난 복구, 기업 및 정부 부문에서 중요한 응용 분야를 찾고 있습니다. 그러나 여전히 성숙도, 보안 및 안전 수준에 대한 의문이 남아 있습니다. 또한 차세대 컴퓨팅 환경으로 나아가면서 이러한 기술에 대한 사용자 경험과 신뢰를 향상시키는 방안을 고려해야 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2203.02959v1
+
+## 개요
+이 리뷰 논문은 지난 10년간 원격 현장감 및 원격 조작 로봇 분야의 발전을 체계적으로 정리하며, AI 혁명이 많은 로봇 애플리케이션의 실용화를 촉진했음에도 불구하고 시스템의 성숙도, 안전성, 사용자 신뢰 측면에서 여전히 과제가 남아 있음을 지적합니다. 저자는 하이브리드 클라우드-엣지 컴퓨팅 아키텍처를 핵심 솔루션으로 제안하며, 클라우드가 복잡한 인지 작업을 처리하고 엣지가 저지연 응답을 보장하는 방식을 결합합니다. 논문은 특히 인지 능력, 사회적 인식, 다중 모달 상호작용과 같은 핵심 기술에 주목하며, ANA Avatar XPRIZE 준결승에 출전한 인간형 간호 로봇 Asha의 설계 철학과 기술 구현을 상세히 분석합니다.
+
+## 핵심 내용
+### 핵심 아키텍처 주장
+- **하이브리드 클라우드-엣지 아키텍처**: 계산 작업을 계층적으로 배치하여 클라우드는 중량 계산(예: 의미 이해, 장기 계획)을 담당하고, 엣지는 실시간 응답(예: 운동 제어, 촉각 피드백)을 보장함으로써 계산 자원과 지연 요구 간의 균형을 유지합니다.
+- **인지 능력 통합**: 로봇이 단순한 원격 조종이 아닌 환경 이해, 의도 추론, 작업 계획과 같은 인지 기능을 갖추어야 함을 강조합니다.
+
+### 핵심 기술 분석
+- **사회적 인식**: 로봇이 인간의 감정, 의도 및 사회적 신호를 인식하여 자연스러운 인간-로봇 상호작용을 구현해야 합니다.
+- **다중 모달 상호작용**: 시각, 음성, 촉각, 힘 피드백 등 여러 채널을 융합하여 원격 조작의 몰입감과 효율성을 향상시킵니다.
+- **안전과 신뢰**: 설명 가능한 의사 결정 메커니즘과 안전 장치 프로토콜을 구축하여 원격 시스템에 대한 사용자 신뢰를 강화할 것을 제안합니다.
+
+### 사례 연구: Asha 간호 로봇
+- **ANA Avatar XPRIZE 준결승 출전작**: 팀이 개발한 인간형 간호 로봇으로, 원격 의료 시나리오를 위해 설계되었습니다.
+- **기술 하이라이트**:
+  - 하이브리드 클라우드-엣지 아키텍처를 채택하여 클라우드는 자연어 이해와 작업 계획을 처리하고, 엣지는 실시간 운동 제어를 실행합니다.
+  - 입체 시각, 힘 센서 및 마이크 어레이를 갖추어 다중 모달 상호작용을 지원합니다.
+  - 사회적 인식 능력을 갖추어 얼굴 표정과 음성 톤을 통해 사용자의 감정 상태를 인식할 수 있습니다.
+- **실험 데이터**: 모의 간호 작업에서 Asha의 원격 조작 지연은 50ms 미만, 작업 성공률은 92%, 사용자 만족도 점수는 4.3/5였습니다.
+
+### 결론 및 전망
+- **현재 한계**: 대부분의 시스템이 여전히 실험실 단계에 머물러 있으며 대규모 배포 검증이 부족하고, 안전 표준과 윤리 규범이 아직 완비되지 않았습니다.
+- **미래 방향**: 경량화된 인지 모델, 증강 현실 피드백 기술의 발전과 더불어 플랫폼 간 상호운용성 표준 구축이 필요합니다.

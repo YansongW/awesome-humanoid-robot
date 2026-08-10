@@ -44,8 +44,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07275v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07275v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (723 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,27 @@ theoretical_depth:
 ## Overview
 Diagnostic medical ultrasound is widely used, safe, and relatively low cost but requires a high degree of expertise to acquire and interpret the images. Personnel with this expertise are often not available outside of larger cities, leading to difficult, costly travel and long wait times for rural populations. To address this issue, tele-ultrasound techniques are being developed, including robotic teleoperation and recently human teleoperation, in which a novice user is remotely guided in a hand-over-hand manner through mixed reality to perform an ultrasound exam. These methods have not been compared, and their relative strengths are unknown. Human teleoperation may be more practical than robotics for small communities due to its lower cost and complexity, but this is only relevant if the performance is comparable. This paper therefore evaluates the differences between human and robotic teleoperation, examining practical aspects such as setup time and flexibility and experimentally comparing performance metrics such as completion time, position tracking, and force consistency. It is found that human teleoperation does not lead to statistically significant differences in completion time or position accuracy, with mean differences of 1.8% and 0.5%, respectively, and provides more consistent force application despite being substantially more practical and accessible.
 
-## 개요
-진단 의료 초음파는 널리 사용되며 안전하고 비교적 저렴하지만, 영상을 획득하고 해석하는 데 높은 수준의 전문성이 요구됩니다. 이러한 전문성을 갖춘 인력은 대도시 외부에서는 흔히 구할 수 없어, 농촌 인구는 어렵고 비용이 많이 드는 이동과 긴 대기 시간을 겪어야 합니다. 이 문제를 해결하기 위해 원격 초음파 기술이 개발되고 있으며, 여기에는 로봇 원격 조작과 최근에는 혼합 현실을 통해 초보 사용자가 손을 겹쳐 안내받는 방식으로 초음파 검사를 수행하는 인간 원격 조작이 포함됩니다. 이러한 방법들은 비교된 적이 없으며, 각각의 상대적 강점은 알려져 있지 않습니다. 인간 원격 조작은 비용과 복잡성이 낮아 소규모 지역사회에서 로봇보다 더 실용적일 수 있지만, 이는 성능이 비슷할 때만 의미가 있습니다. 따라서 본 논문은 인간과 로봇 원격 조작 간의 차이를 평가하며, 설정 시간과 유연성 같은 실용적 측면을 검토하고, 완료 시간, 위치 추적, 힘 일관성 같은 성능 지표를 실험적으로 비교합니다. 인간 원격 조작은 완료 시간이나 위치 정확도에서 통계적으로 유의미한 차이를 보이지 않으며(각각 평균 차이 1.8%와 0.5%), 상당히 더 실용적이고 접근성이 높음에도 불구하고 더 일관된 힘 적용을 제공한다는 사실이 발견되었습니다.
-
-## 핵심 내용
-진단 의료 초음파는 널리 사용되며 안전하고 비교적 저렴하지만, 영상을 획득하고 해석하는 데 높은 수준의 전문성이 요구됩니다. 이러한 전문성을 갖춘 인력은 대도시 외부에서는 흔히 구할 수 없어, 농촌 인구는 어렵고 비용이 많이 드는 이동과 긴 대기 시간을 겪어야 합니다. 이 문제를 해결하기 위해 원격 초음파 기술이 개발되고 있으며, 여기에는 로봇 원격 조작과 최근에는 혼합 현실을 통해 초보 사용자가 손을 겹쳐 안내받는 방식으로 초음파 검사를 수행하는 인간 원격 조작이 포함됩니다. 이러한 방법들은 비교된 적이 없으며, 각각의 상대적 강점은 알려져 있지 않습니다. 인간 원격 조작은 비용과 복잡성이 낮아 소규모 지역사회에서 로봇보다 더 실용적일 수 있지만, 이는 성능이 비슷할 때만 의미가 있습니다. 따라서 본 논문은 인간과 로봇 원격 조작 간의 차이를 평가하며, 설정 시간과 유연성 같은 실용적 측면을 검토하고, 완료 시간, 위치 추적, 힘 일관성 같은 성능 지표를 실험적으로 비교합니다. 인간 원격 조작은 완료 시간이나 위치 정확도에서 통계적으로 유의미한 차이를 보이지 않으며(각각 평균 차이 1.8%와 0.5%), 상당히 더 실용적이고 접근성이 높음에도 불구하고 더 일관된 힘 적용을 제공한다는 사실이 발견되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.07275v1
+
+## 개요
+이 연구는 원격 초음파 진단에서 로봇 원격 조작과 인간 원격 조작(혼합 현실을 통한 초보자 안내) 간의 비교 공백을 다룹니다. 실험은 팬텀(모형)에서 수행되었으며, 피험자 내 설계를 사용하여 완료 시간, 위치 추적 정확도, 힘 일관성 등의 지표를 비교했습니다. 결과에 따르면 인간 원격 조작은 완료 시간과 위치 정확도에서 로봇과 유의미한 차이가 없었으며(평균 차이 각각 1.8% 및 0.5%), 힘 적용은 더 일관되고 낮았으며, 설정이 더 간단하고 비용이 낮아 소규모 지역사회 적용에 더 적합했습니다.
+
+## 핵심 내용
+### 배경 및 동기
+진단 초음파는 널리 사용되고 비용이 낮지만 높은 전문 기술이 필요하며, 농촌 지역에는 이러한 전문가가 부족합니다. 원격 초음파 기술에는 로봇 원격 조작과 인간 원격 조작(HoloLens 2와 같은 혼합 현실을 통한 직접 안내)이 포함됩니다. 이 둘은 이전에 직접 비교된 적이 없으며, 인간 원격 조작이 더 실용적일 수 있지만 성능이 비교 가능한지 검증이 필요합니다.
+
+### 실험 설계
+- **장비**: 로봇 원격 조작은 Franka Panda 로봇 팔을 사용합니다. 인간 원격 조작에서는 전문가가 HoloLens 2 혼합 현실 인터페이스를 통해 초보자를 원격으로 안내합니다.
+- **작업**: 팬텀에서 표준 진단 초음파 스캔을 수행합니다.
+- **지표**: 완료 시간, 이미지 공간 추적 정확도, 적용된 힘의 평균 및 일관성.
+- **통계**: 피험자 내 설계를 사용하여 두 방식의 차이를 비교합니다.
+
+### 주요 결과
+- **완료 시간**: 인간 원격 조작은 로봇과 통계적으로 유의미한 차이가 없으며, 평균 차이는 1.8%에 불과합니다.
+- **위치 추적 정확도**: 두 방식이 동등하며, 평균 차이는 0.5%입니다.
+- **힘 적용**: 인간 원격 조작이 적용하는 힘은 더 일관되고 낮아 더 안정적임을 나타냅니다.
+- **실용성**: 인간 원격 조작은 설정 시간이 더 짧고 유연성이 높으며, 비용이 로봇 시스템보다 현저히 낮습니다.
+
+### 결론
+인간 원격 조작은 성능 면에서 로봇 원격 조작과 동등하지만 더 실용적이고 접근성이 높아, 특히 자원이 제한된 소규모 지역사회에 적합합니다. 연구는 향후 혼합 현실 안내 원격 초음파의 실제 임상 환경에서의 효과를 추가로 탐구할 것을 제안합니다.

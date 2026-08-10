@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.05485v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.05485v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1034 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,27 @@ HAMSTER 通过分层 VLA 架构，在机器人操作泛化任务中实现了显�
 ## Overview
 Large foundation models have shown strong open-world generalization to complex problems in vision and language, but similar levels of generalization have yet to be achieved in robotics. One fundamental challenge is the lack of robotic data, which are typically obtained through expensive on-robot operation. A promising remedy is to leverage cheaper, off-domain data such as action-free videos, hand-drawn sketches or simulation data. In this work, we posit that hierarchical vision-language-action (VLA) models can be more effective in utilizing off-domain data than standard monolithic VLA models that directly finetune vision-language models (VLMs) to predict actions. In particular, we study a class of hierarchical VLA models, where the high-level VLM is finetuned to produce a coarse 2D path indicating the desired robot end-effector trajectory given an RGB image and a task description. The intermediate 2D path prediction is then served as guidance to the low-level, 3D-aware control policy capable of precise manipulation. Doing so alleviates the high-level VLM from fine-grained action prediction, while reducing the low-level policy's burden on complex task-level reasoning. We show that, with the hierarchical design, the high-level VLM can transfer across significant domain gaps between the off-domain finetuning data and real-robot testing scenarios, including differences on embodiments, dynamics, visual appearances and task semantics, etc. In the real-robot experiments, we observe an average of 20% improvement in success rate across seven different axes of generalization over OpenVLA, representing a 50% relative gain. Visual results, code, and dataset are provided at: https://hamster-robot.github.io/
 
-## 개요
-대규모 기반 모델은 시각 및 언어 분야의 복잡한 문제에 대해 강력한 개방형 일반화 능력을 보여주었지만, 로봇 공학에서는 아직 유사한 수준의 일반화가 달성되지 못했습니다. 근본적인 과제 중 하나는 일반적으로 고가의 로봇 직접 조작을 통해 얻어지는 로봇 데이터의 부족입니다. 유망한 해결책은 동작이 없는 비디오, 손으로 그린 스케치 또는 시뮬레이션 데이터와 같은 저렴한 도메인 외 데이터를 활용하는 것입니다. 본 연구에서는 계층적 시각-언어-행동(VLA) 모델이 행동을 예측하기 위해 시각-언어 모델(VLM)을 직접 미세 조정하는 표준 모놀리식 VLA 모델보다 도메인 외 데이터를 활용하는 데 더 효과적일 수 있다고 가정합니다. 특히, 우리는 고수준 VLM이 RGB 이미지와 작업 설명이 주어졌을 때 원하는 로봇 엔드 이펙터 궤적을 나타내는 대략적인 2D 경로를 생성하도록 미세 조정되는 계층적 VLA 모델 클래스를 연구합니다. 중간 2D 경로 예측은 정밀한 조작이 가능한 저수준의 3D 인식 제어 정책에 대한 지침으로 사용됩니다. 이를 통해 고수준 VLM은 세분화된 행동 예측 부담을 덜고, 저수준 정책은 복잡한 작업 수준 추론 부담을 줄일 수 있습니다. 우리는 계층적 설계를 통해 고수준 VLM이 도메인 외 미세 조정 데이터와 실제 로봇 테스트 시나리오 간의 상당한 도메인 격차(구현체, 동역학, 시각적 외관, 작업 의미론 등의 차이 포함)를 넘어 전이할 수 있음을 보여줍니다. 실제 로봇 실험에서 우리는 OpenVLA 대비 7가지 일반화 축에서 평균 20%의 성공률 향상(상대적 50% 증가)을 관찰했습니다. 시각적 결과, 코드 및 데이터셋은 다음에서 제공됩니다: https://hamster-robot.github.io/
-
-## 핵심 내용
-대규모 기반 모델은 시각 및 언어 분야의 복잡한 문제에 대해 강력한 개방형 일반화 능력을 보여주었지만, 로봇 공학에서는 아직 유사한 수준의 일반화가 달성되지 못했습니다. 근본적인 과제 중 하나는 일반적으로 고가의 로봇 직접 조작을 통해 얻어지는 로봇 데이터의 부족입니다. 유망한 해결책은 동작이 없는 비디오, 손으로 그린 스케치 또는 시뮬레이션 데이터와 같은 저렴한 도메인 외 데이터를 활용하는 것입니다. 본 연구에서는 계층적 시각-언어-행동(VLA) 모델이 행동을 예측하기 위해 시각-언어 모델(VLM)을 직접 미세 조정하는 표준 모놀리식 VLA 모델보다 도메인 외 데이터를 활용하는 데 더 효과적일 수 있다고 가정합니다. 특히, 우리는 고수준 VLM이 RGB 이미지와 작업 설명이 주어졌을 때 원하는 로봇 엔드 이펙터 궤적을 나타내는 대략적인 2D 경로를 생성하도록 미세 조정되는 계층적 VLA 모델 클래스를 연구합니다. 중간 2D 경로 예측은 정밀한 조작이 가능한 저수준의 3D 인식 제어 정책에 대한 지침으로 사용됩니다. 이를 통해 고수준 VLM은 세분화된 행동 예측 부담을 덜고, 저수준 정책은 복잡한 작업 수준 추론 부담을 줄일 수 있습니다. 우리는 계층적 설계를 통해 고수준 VLM이 도메인 외 미세 조정 데이터와 실제 로봇 테스트 시나리오 간의 상당한 도메인 격차(구현체, 동역학, 시각적 외관, 작업 의미론 등의 차이 포함)를 넘어 전이할 수 있음을 보여줍니다. 실제 로봇 실험에서 우리는 OpenVLA 대비 7가지 일반화 축에서 평균 20%의 성공률 향상(상대적 50% 증가)을 관찰했습니다. 시각적 결과, 코드 및 데이터셋은 다음에서 제공됩니다: https://hamster-robot.github.io/
-
 ## 参考
 - http://arxiv.org/abs/2502.05485v4
+
+## 개요
+로봇 분야의 데이터 희소성과 높은 획득 비용 문제를 해결하기 위해, HAMSTER는 계층적 VLA 모델 아키텍처를 제안하며, 고수준 비전-언어 모델(VLM)과 저수준 3차원 인식 제어 정책을 분리한다. 고수준 VLM은 RGB 이미지와 작업 설명만을 기반으로 대략적인 2차원 엔드 이펙터 궤적을 예측하고, 저수준 정책은 해당 궤적을 기반으로 정밀한 3차원 조작을 수행한다. 이러한 설계는 고수준 VLM이 저비용 도메인 외 데이터(예: 동작 없는 비디오, 손으로 그린 스케치 또는 시뮬레이션 데이터)를 활용하여 미세 조정할 수 있게 하며, 실체, 동역학, 시각적 외관 및 작업 의미론 등 현저한 도메인 차이에서 전이를 가능하게 한다. 실험 결과, 이 계층적 방법은 7가지 일반화 테스트에서 평균 성공률이 OpenVLA 대비 20% 향상되었으며, 상대적 이득은 50%에 달한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **고수준 VLM**: 사전 훈련된 비전-언어 모델을 미세 조정하며, RGB 이미지와 작업 설명을 입력으로 받아 조밀하지 않은 2차원 경로(로봇 팔 엔드 이펙터의 기대 궤적을 나타냄)를 출력한다. 이 모듈은 정밀한 동작을 예측할 필요가 없어 세밀한 동작 데이터에 대한 의존도를 낮춘다.
+- **저수준 제어 정책**: 고수준에서 출력된 2차원 경로를 안내로 받아 3차원 인식 정보와 결합하여 정밀한 조작을 수행한다. 이 정책은 동작 실행에 집중하며 복잡한 작업 추론을 처리할 필요가 없다.
+- **계층적 장점**: 고수준 VLM은 저비용 도메인 외 데이터(예: 동작 없는 비디오, 손으로 그린 스케치, 시뮬레이션 데이터)를 활용하여 미세 조정할 수 있어 고가의 실제 로봇 데이터 의존도를 크게 낮춘다. 저수준 정책은 3차원 인식을 통해 고수준 경로의 정밀도 부족을 보완한다.
+
+### 실험 설정
+- **기준 모델**: OpenVLA(동작 예측을 위해 VLM을 직접 미세 조정하는 모놀리식 모델)와 비교한다.
+- **일반화 테스트 차원**: 실체 차이, 동역학 차이, 시각적 외관 변화, 작업 의미론 전이 등 7가지 지표를 포함한다.
+- **데이터 출처**: 고수준 VLM은 도메인 외 데이터(예: 동작 없는 비디오, 손으로 그린 스케치)로 미세 조정하고, 저수준 정책은 소량의 실제 로봇 데이터로 훈련한다.
+
+### 주요 결과
+- **평균 성공률**: 7가지 일반화 테스트에서 HAMSTER의 평균 성공률은 60%(OpenVLA는 40%)로, 절대적 향상 20%, 상대적 이득 50%를 달성했다.
+- **도메인 전이 능력**: 고수준 VLM은 실체, 동역학, 시각적 외관 및 작업 의미론 등 현저한 도메인 차이에서 효과적으로 전이할 수 있으며, 저수준 정책은 3차원 인식을 통해 조작 정밀도를 유지한다.
+- **자원 효율성**: 모놀리식 모델과 비교하여 계층적 설계는 고품질 로봇 동작 데이터에 대한 의존도를 크게 낮추어 저비용 도메인 외 데이터를 활용할 수 있게 한다.
+
+### 결론
+HAMSTER는 계층적 VLA 아키텍처를 통해 로봇 조작 일반화 작업에서 현저한 성능 향상을 달성했으며, 저비용 도메인 외 데이터로 고수준 의미론 모듈을 훈련하는 효과성을 검증했다. 이 연구는 개방형 세계 로봇 조작을 위한 데이터 효율적이고 일반화 능력이 뛰어난 솔루션을 제공한다.

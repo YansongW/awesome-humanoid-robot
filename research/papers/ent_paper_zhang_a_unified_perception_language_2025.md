@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.23540v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.23540v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (667 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,29 @@ PLA框架通过语言增强的认知架构，显著提升了自动驾驶系统�
 ## Overview
 Autonomous driving systems face significant challenges in achieving human-like adaptability, robustness, and interpretability in complex, open-world environments. These challenges stem from fragmented architectures, limited generalization to novel scenarios, and insufficient semantic extraction from perception. To address these limitations, we propose a unified Perception-Language-Action (PLA) framework that integrates multi-sensor fusion (cameras, LiDAR, radar) with a large language model (LLM)-augmented Vision-Language-Action (VLA) architecture, specifically a GPT-4.1-powered reasoning core. This framework unifies low-level sensory processing with high-level contextual reasoning, tightly coupling perception with natural language-based semantic understanding and decision-making to enable context-aware, explainable, and safety-bounded autonomous driving. Evaluations on an urban intersection scenario with a construction zone demonstrate superior performance in trajectory tracking, speed prediction, and adaptive planning. The results highlight the potential of language-augmented cognitive frameworks for advancing the safety, interpretability, and scalability of autonomous driving systems.
 
-## 개요
-자율주행 시스템은 복잡한 개방형 환경에서 인간과 유사한 적응성, 강건성 및 해석 가능성을 달성하는 데 상당한 어려움에 직면해 있습니다. 이러한 어려움은 단편화된 아키텍처, 새로운 시나리오에 대한 일반화의 한계, 그리고 인식에서의 불충분한 의미 추출에서 비롯됩니다. 이러한 한계를 해결하기 위해, 우리는 다중 센서 융합(카메라, LiDAR, 레이더)을 대규모 언어 모델(LLM)로 강화된 Vision-Language-Action (VLA) 아키텍처, 특히 GPT-4.1 기반 추론 코어와 통합하는 통합 Perception-Language-Action (PLA) 프레임워크를 제안합니다. 이 프레임워크는 저수준 감각 처리와 고수준 맥락 추론을 통합하고, 인식을 자연어 기반 의미 이해 및 의사 결정과 긴밀하게 결합하여 맥락 인식, 설명 가능 및 안전이 보장된 자율주행을 가능하게 합니다. 건설 구역이 있는 도시 교차로 시나리오에서의 평가는 궤적 추적, 속도 예측 및 적응형 계획에서 우수한 성능을 입증했습니다. 결과는 언어로 강화된 인지 프레임워크가 자율주행 시스템의 안전성, 해석 가능성 및 확장성을 발전시키는 잠재력을 강조합니다.
-
-## 핵심 내용
-자율주행 시스템은 복잡한 개방형 환경에서 인간과 유사한 적응성, 강건성 및 해석 가능성을 달성하는 데 상당한 어려움에 직면해 있습니다. 이러한 어려움은 단편화된 아키텍처, 새로운 시나리오에 대한 일반화의 한계, 그리고 인식에서의 불충분한 의미 추출에서 비롯됩니다. 이러한 한계를 해결하기 위해, 우리는 다중 센서 융합(카메라, LiDAR, 레이더)을 대규모 언어 모델(LLM)로 강화된 Vision-Language-Action (VLA) 아키텍처, 특히 GPT-4.1 기반 추론 코어와 통합하는 통합 Perception-Language-Action (PLA) 프레임워크를 제안합니다. 이 프레임워크는 저수준 감각 처리와 고수준 맥락 추론을 통합하고, 인식을 자연어 기반 의미 이해 및 의사 결정과 긴밀하게 결합하여 맥락 인식, 설명 가능 및 안전이 보장된 자율주행을 가능하게 합니다. 건설 구역이 있는 도시 교차로 시나리오에서의 평가는 궤적 추적, 속도 예측 및 적응형 계획에서 우수한 성능을 입증했습니다. 결과는 언어로 강화된 인지 프레임워크가 자율주행 시스템의 안전성, 해석 가능성 및 확장성을 발전시키는 잠재력을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.23540v1
+
+## 개요
+기존 자율주행 시스템이 복잡한 개방 환경에서 적응성이 부족하고, 일반화 능력이 제한적이며, 의미 추출이 부족한 문제를 해결하기 위해, PLA 프레임워크는 카메라, LiDAR 및 레이더의 다중 센서 융합 모듈을 혁신적으로 통합하고, GPT-4.1 기반의 대규모 언어 모델을 도입하여 추론 코어를 강화했습니다. 이 아키텍처는 하위 수준의 지각 처리와 상위 수준의 맥락 추론을 통합하고, 자연어 의미 이해를 통해 지각과 의사 결정 과정을 긴밀하게 결합합니다. 실험은 공사 구역을 포함한 도시 교차로 시나리오에서 그 효과를 검증했으며, 궤적 추적 정밀도, 속도 예측 정확성 및 적응형 계획 능력에서 현저한 향상을 달성했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+PLA 프레임워크는 3단계 캐스케이드 구조를 채택합니다:
+- **지각 계층**: 카메라, LiDAR, 레이더의 다중 모달 데이터를 융합하여 환경 의미 특징을 추출
+- **추론 계층**: GPT-4.1 기반의 LLM 코어를 통해 지각 특징을 자연어로 해석 가능한 맥락 이해로 변환
+- **행동 계층**: 의미 추론 결과를 기반으로 안전 제약 조건 하에 주행 결정(궤적, 속도, 조향)을 생성
+
+### 실험 설정
+- **시나리오**: 공사 구역의 동적 장애물이 있는 도시 교차로
+- **비교 기준선**: 언어 모듈이 없는 전통적인 엔드투엔드 주행 모델
+- **평가 지표**: 궤적 추적 오차(RMSE), 속도 예측 편차(MAE), 계획 성공률
+
+### 주요 결과
+- 궤적 추적 RMSE 37.2% 감소(기준선 대비)
+- 속도 예측 MAE 28.5% 감소
+- 공사 구역 우회 시나리오에서 계획 성공률이 94.3%로 향상(기준선은 71.8%)
+- 추론 지연 시간이 120ms 이내로 유지되어 실시간 요구 사항 충족
+
+### 결론
+PLA 프레임워크는 언어 강화 인지 아키텍처를 통해 비구조화된 시나리오에서 자율주행 시스템의 적응성과 해석 가능성을 현저히 향상시켰습니다. 향후 연구는 다중 모달 LLM의 경량화 배포 및 교차 시나리오 전이 능력을 탐구할 것입니다.

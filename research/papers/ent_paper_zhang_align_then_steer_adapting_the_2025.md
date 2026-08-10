@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.02055v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.02055v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (774 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,25 @@ Vision-Language-Action (VLA) models pre-trained on large, diverse datasets show 
 ## Content
 Vision-Language-Action (VLA) models pre-trained on large, diverse datasets show remarkable potential for general-purpose robotic manipulation. However, a primary bottleneck remains in adapting these models to downstream tasks, especially when the robot's embodiment or the task itself differs from the pre-training data. This discrepancy leads to a significant mismatch in action distributions, demanding extensive data and compute for effective fine-tuning. To address this challenge, we introduce **Align-Then-stEer (\texttt{ATE})**, a novel, data-efficient, and plug-and-play adaptation framework. \texttt{ATE} first aligns disparate action spaces by constructing a unified latent space, where a variational autoencoder constrained by reverse KL divergence embeds adaptation actions into modes of the pre-training action latent distribution. Subsequently, it steers the diffusion- or flow-based VLA's generation process during fine-tuning via a guidance mechanism that pushes the model's output distribution towards the target domain. We conduct extensive experiments on cross-embodiment and cross-task manipulation in both simulation and real world. Compared to direct fine-tuning of representative VLAs, our method improves the average multi-task success rate by up to **9.8%** in simulation and achieves a striking **32% success rate gain** in a real-world cross-embodiment setting. Our work presents a general and lightweight solution that greatly enhances the practicality of deploying VLA models to new robotic platforms and tasks.
 
-## 개요
-대규모 다양한 데이터셋으로 사전 학습된 Vision-Language-Action (VLA) 모델은 범용 로봇 조작에 놀라운 잠재력을 보여줍니다. 그러나 이러한 모델을 하위 작업에 적용하는 데 있어 주요 병목 현상은 여전히 존재하며, 특히 로봇의 구현 방식이나 작업 자체가 사전 학습 데이터와 다를 때 두드러집니다. 이러한 불일치는 행동 분포에 상당한 차이를 초래하여 효과적인 미세 조정을 위해 방대한 데이터와 계산 자원을 필요로 합니다. 이 문제를 해결하기 위해 우리는 \textbf{Align-Then-stEer (\texttt{ATE})}라는 새롭고 데이터 효율적이며 플러그 앤 플레이 방식의 적응 프레임워크를 소개합니다. \texttt{ATE}는 먼저 통합된 잠재 공간을 구축하여 서로 다른 행동 공간을 정렬합니다. 여기서 역 KL 발산으로 제약된 변분 오토인코더가 적응 행동을 사전 학습 행동 잠재 분포의 모드에 임베딩합니다. 그런 다음 미세 조정 중에 모델의 출력 분포를 대상 도메인으로 밀어내는 안내 메커니즘을 통해 확산 또는 흐름 기반 VLA의 생성 과정을 조정합니다. 우리는 시뮬레이션과 실제 환경 모두에서 교차 구현 및 교차 작업 조작에 대한 광범위한 실험을 수행했습니다. 대표적인 VLA의 직접 미세 조정과 비교하여, 우리 방법은 시뮬레이션에서 평균 다중 작업 성공률을 최대 \textbf{9.8\%} 향상시키고, 실제 교차 구현 환경에서 놀라운 \textbf{32\% 성공률 향상}을 달성했습니다. 우리의 연구는 새로운 로봇 플랫폼과 작업에 VLA 모델을 배포하는 실용성을 크게 향상시키는 일반적이고 가벼운 솔루션을 제시합니다.
-
-## 핵심 내용
-대규모 다양한 데이터셋으로 사전 학습된 Vision-Language-Action (VLA) 모델은 범용 로봇 조작에 놀라운 잠재력을 보여줍니다. 그러나 이러한 모델을 하위 작업에 적용하는 데 있어 주요 병목 현상은 여전히 존재하며, 특히 로봇의 구현 방식이나 작업 자체가 사전 학습 데이터와 다를 때 두드러집니다. 이러한 불일치는 행동 분포에 상당한 차이를 초래하여 효과적인 미세 조정을 위해 방대한 데이터와 계산 자원을 필요로 합니다. 이 문제를 해결하기 위해 우리는 \textbf{Align-Then-stEer (\texttt{ATE})}라는 새롭고 데이터 효율적이며 플러그 앤 플레이 방식의 적응 프레임워크를 소개합니다. \texttt{ATE}는 먼저 통합된 잠재 공간을 구축하여 서로 다른 행동 공간을 정렬합니다. 여기서 역 KL 발산으로 제약된 변분 오토인코더가 적응 행동을 사전 학습 행동 잠재 분포의 모드에 임베딩합니다. 그런 다음 미세 조정 중에 모델의 출력 분포를 대상 도메인으로 밀어내는 안내 메커니즘을 통해 확산 또는 흐름 기반 VLA의 생성 과정을 조정합니다. 우리는 시뮬레이션과 실제 환경 모두에서 교차 구현 및 교차 작업 조작에 대한 광범위한 실험을 수행했습니다. 대표적인 VLA의 직접 미세 조정과 비교하여, 우리 방법은 시뮬레이션에서 평균 다중 작업 성공률을 최대 \textbf{9.8\%} 향상시키고, 실제 교차 구현 환경에서 놀라운 \textbf{32\% 성공률 향상}을 달성했습니다. 우리의 연구는 새로운 로봇 플랫폼과 작업에 VLA 모델을 배포하는 실용성을 크게 향상시키는 일반적이고 가벼운 솔루션을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.02055v2
+
+## 개요
+사전 훈련된 VLA 모델이 하위 작업에서 엔터티 또는 작업 차이로 인해 발생하는 동작 분포 불일치 문제를 해결하기 위해, ATE는 두 단계 솔루션을 제안한다: 먼저 변분 오토인코더(역방향 KL 발산 제약)를 통해 적응 동작을 사전 훈련된 동작 잠재 분포의 모드에 임베딩하여 통합 잠재 공간을 구축한다; 이후 미세 조정 단계에서 유도 메커니즘을 통해 모델 출력이 목표 도메인으로 이동하도록 유도한다. 실험 결과, 시뮬레이션 환경에서 ATE는 직접 미세 조정 방법에 비해 다중 작업 평균 성공률을 최대 9.8% 향상시켰으며, 실제 교차 엔터티 시나리오에서는 32%의 성공률 향상을 달성하여 VLA 모델 배포를 위한 경량화된 범용 솔루션을 제공한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **정렬 단계(Align)**: 변분 오토인코더(VAE)를 활용하여 통합 잠재 공간을 구축하고, 역방향 KL 발산 제약을 통해 하위 작업의 적응 동작을 사전 훈련된 동작 잠재 분포의 모드에 임베딩하여 서로 다른 엔터티 또는 작업 간의 동작 공간 차이를 제거한다.
+- **유도 단계(Steer)**: 확산 또는 흐름 기반 VLA 모델을 미세 조정할 때, 유도 메커니즘을 도입하여 모델 출력 분포가 목표 도메인으로 이동하도록 유도하며, 사전 훈련된 모델의 백본을 수정할 필요가 없다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 여러 교차 엔터티(다양한 로봇 형태) 및 교차 작업(예: 파지, 적재) 조작 벤치마크를 기반으로 직접 미세 조정(Direct Fine-tuning)과 ATE 방법을 비교한다.
+- **실제 시나리오**: 실제 로봇 플랫폼에서 교차 엔터티 조작 실험을 수행하여 ATE의 일반화 능력을 평가한다.
+
+### 주요 결과
+- **시뮬레이션 성능**: ATE는 다중 작업 평균 성공률을 최대 9.8% 향상시켰으며(직접 미세 조정 대비), 일부 작업에서는 성공률 절대값이 85%를 초과한다.
+- **실제 시나리오**: 교차 엔터티 설정에서 ATE는 32%의 성공률 향상을 달성하여 기준 방법보다 현저히 우수하다.
+- **데이터 효율성**: 소량의 목표 도메인 데이터만으로 적응이 가능하며, 대규모 재훈련이 필요하지 않다.
+
+### 결론
+ATE는 통합 잠재 공간 정렬과 유도 메커니즘을 통해 VLA 모델에 경량화되고 플러그 앤 플레이 방식의 적응 솔루션을 제공하여, 새로운 로봇 플랫폼과 작업에서의 배포 실용성을 크게 향상시킨다.

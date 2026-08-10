@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.17900v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.17900v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (820 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,28 @@ MAGNet 通过统一的自回归扩散框架，解决了多智能体交互建模�
 ## Overview
 Understanding and generating multi-person interactions is a fundamental challenge with broad implications for robotics and social computing. While humans naturally coordinate in groups, modeling such interactions remains difficult due to long temporal horizons, strong inter-agent dependencies, and variable group sizes. Existing motion generation methods are largely task-specific and do not generalize to flexible multi-agent generation. We introduce MAGNet (Multi-Agent Generative Network), a unified autoregressive diffusion framework for multi-agent motion generation that supports a wide range of interaction tasks through flexible conditioning and sampling. MAGNet performs dyadic and polyadic prediction, partner inpainting, partner prediction, and agentic generation all within a single model, and can autoregressively generate ultra-long sequences spanning hundreds of motion steps. We explicitly model inter-agent coupling during autoregressive denoising, enabling coherent coordination across agents. As a result, MAGNet captures both tightly synchronized activities (e.g., dancing, boxing) and loosely structured social interactions. Our approach performs on par with specialized methods on dyadic benchmarks while naturally extending to polyadic scenarios involving three or more interacting people. Please watch the supplemental video, where the temporal dynamics and spatial coordination of generated interactions are best appreciated. Project page: https://von31.github.io/MAGNet/
 
-## 개요
-다중 인물 상호작용을 이해하고 생성하는 것은 로보틱스와 사회 컴퓨팅에 광범위한 영향을 미치는 근본적인 도전 과제입니다. 인간은 자연스럽게 그룹으로 협력하지만, 긴 시간적 범위, 강한 에이전트 간 의존성, 그리고 다양한 그룹 크기로 인해 이러한 상호작용을 모델링하는 것은 여전히 어렵습니다. 기존의 모션 생성 방법은 대부분 작업별로 특화되어 있으며 유연한 다중 에이전트 생성으로 일반화되지 않습니다. 우리는 MAGNet(Multi-Agent Generative Network)을 소개합니다. 이는 통합된 자기회귀 확산 프레임워크로, 유연한 조건화와 샘플링을 통해 다양한 상호작용 작업을 지원합니다. MAGNet은 단일 모델 내에서 이인칭 및 다인칭 예측, 파트너 인페인팅, 파트너 예측, 에이전트 생성을 모두 수행하며, 수백 개의 모션 단계에 걸친 초장기 시퀀스를 자기회귀적으로 생성할 수 있습니다. 우리는 자기회귀 잡음 제거 과정에서 에이전트 간 결합을 명시적으로 모델링하여 에이전트 간의 일관된 조정을 가능하게 합니다. 그 결과, MAGNet은 긴밀하게 동기화된 활동(예: 춤, 복싱)과 느슨하게 구조화된 사회적 상호작용을 모두 포착합니다. 우리의 접근 방식은 이인칭 벤치마크에서 특화된 방법과 동등한 성능을 보이면서도 세 명 이상의 상호작용하는 사람들이 포함된 다인칭 시나리오로 자연스럽게 확장됩니다. 생성된 상호작용의 시간적 역학과 공간적 조정이 가장 잘 드러나는 보충 비디오를 시청해 주시기 바랍니다. 프로젝트 페이지: https://von31.github.io/MAGNet/
-
-## 핵심 내용
-다중 인물 상호작용을 이해하고 생성하는 것은 로보틱스와 사회 컴퓨팅에 광범위한 영향을 미치는 근본적인 도전 과제입니다. 인간은 자연스럽게 그룹으로 협력하지만, 긴 시간적 범위, 강한 에이전트 간 의존성, 그리고 다양한 그룹 크기로 인해 이러한 상호작용을 모델링하는 것은 여전히 어렵습니다. 기존의 모션 생성 방법은 대부분 작업별로 특화되어 있으며 유연한 다중 에이전트 생성으로 일반화되지 않습니다. 우리는 MAGNet(Multi-Agent Generative Network)을 소개합니다. 이는 통합된 자기회귀 확산 프레임워크로, 유연한 조건화와 샘플링을 통해 다양한 상호작용 작업을 지원합니다. MAGNet은 단일 모델 내에서 이인칭 및 다인칭 예측, 파트너 인페인팅, 파트너 예측, 에이전트 생성을 모두 수행하며, 수백 개의 모션 단계에 걸친 초장기 시퀀스를 자기회귀적으로 생성할 수 있습니다. 우리는 자기회귀 잡음 제거 과정에서 에이전트 간 결합을 명시적으로 모델링하여 에이전트 간의 일관된 조정을 가능하게 합니다. 그 결과, MAGNet은 긴밀하게 동기화된 활동(예: 춤, 복싱)과 느슨하게 구조화된 사회적 상호작용을 모두 포착합니다. 우리의 접근 방식은 이인칭 벤치마크에서 특화된 방법과 동등한 성능을 보이면서도 세 명 이상의 상호작용하는 사람들이 포함된 다인칭 시나리오로 자연스럽게 확장됩니다. 생성된 상호작용의 시간적 역학과 공간적 조정이 가장 잘 드러나는 보충 비디오를 시청해 주시기 바랍니다. 프로젝트 페이지: https://von31.github.io/MAGNet/
-
 ## 参考
 - http://arxiv.org/abs/2512.17900v2
+
+## 개요
+MAGNet은 다중 에이전트 상호작용 모델링에서 시간 범위가 길고, 에이전트 의존성이 강하며, 그룹 규모가 가변적인 문제를 해결하기 위해 통합된 자기회귀 확산 프레임워크를 제안한다. 이 프레임워크는 유연한 조건 설정과 샘플링을 통해 단일 모델에서 쌍(pair) 및 다중 인물 예측, 파트너 보완, 에이전트 생성 등 다양한 상호작용 작업을 지원하며, 수백 단계에 달하는 초장기 시퀀스를 자기회귀적으로 생성할 수 있다. 핵심 혁신은 자기회귀 노이즈 제거 과정에서 에이전트 간 결합을 명시적으로 모델링하여 춤, 권투와 같은 긴밀하게 동기화된 활동과 느슨한 구조의 사회적 상호작용을 생성하는 데 있다. 실험 결과, MAGNet은 쌍(pair) 벤치마크에서 전용 방법과 동등한 성능을 달성했으며, 3인 이상 시나리오로 자연스럽게 확장된다.
+
+## 핵심 내용
+### 방법 아키텍처
+MAGNet은 자기회귀 확산 프레임워크를 기반으로 다중 에이전트 모션 생성을 시퀀스 조건부 생성 문제로 모델링한다. 핵심 설계는 다음과 같다:
+- **통합 프레임워크**: 유연한 조건 설정과 샘플링을 통해 단일 모델에서 쌍(pair) 예측, 다중 인물 예측, 파트너 보완, 파트너 예측, 에이전트 생성 등 다양한 작업을 지원한다.
+- **에이전트 결합 모델링**: 자기회귀 노이즈 제거 과정에서 에이전트 간 의존 관계를 명시적으로 모델링하여 생성된 동작의 조정성을 보장한다.
+- **초장기 시퀀스 생성**: 수백 단계에 달하는 모션 시퀀스를 자기회귀적으로 생성하여 긴 시간 범위의 상호작용을 포괄한다.
+
+### 실험 설정
+- **벤치마크 테스트**: 쌍(pair) 상호작용 벤치마크(춤, 권투 등)에서 평가하고 전용 방법과 비교한다.
+- **확장 시나리오**: 3인 이상 시나리오로 자연스럽게 확장하여 프레임워크의 일반화 능력을 검증한다.
+- **평가 지표**: 생성된 동작의 시간적 역학과 공간적 조정성에 중점을 두며, 보충 비디오를 통해 효과를 시연한다.
+
+### 주요 결과
+- **성능**: 쌍(pair) 벤치마크에서 전용 방법과 동등한 성능을 달성하며, 작업별 조정이 필요 없다.
+- **일반화 능력**: 3인 이상 시나리오를 성공적으로 처리하며, 긴밀하게 동기화된 활동(춤, 권투 등)과 느슨한 구조의 사회적 상호작용을 지원한다.
+- **시퀀스 길이**: 수백 단계의 초장기 시퀀스 생성을 지원하여 기존 방법의 시간적 한계를 돌파한다.
+
+### 결론
+MAGNet은 통합된 자기회귀 확산 프레임워크를 통해 다중 에이전트 상호작용 모델링의 핵심 과제를 해결하며, 로봇 공학 및 사회 컴퓨팅 분야의 다중 인물 모션 생성을 위한 유연하고 확장 가능한 솔루션을 제공한다. 프로젝트 페이지에서는 생성된 상호작용의 시간적 역학과 공간적 조정성을 보여주는 보충 비디오를 제공한다.

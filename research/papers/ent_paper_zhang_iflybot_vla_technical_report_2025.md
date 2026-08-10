@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01914v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01914v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (667 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,25 @@ We introduce iFlyBot-VLA, a large-scale Vision-Language-Action (VLA) model train
 ## Content
 We introduce iFlyBot-VLA, a large-scale Vision-Language-Action (VLA) model trained under a novel framework. The main contributions are listed as follows: (1) a latent action model thoroughly trained on large-scale human and robotic manipulation videos; (2) a dual-level action representation framework that jointly supervises both the Vision-Language Model (VLM) and the action expert during training; (3) a mixed training strategy that combines robot trajectory data with general QA and spatial QA datasets, effectively enhancing the 3D perceptual and reasoning capabilities of the VLM backbone. Specifically, the VLM is trained to predict two complementary forms of actions: latent actions, derived from our latent action model pretrained on cross-embodiment manipulation data, which capture implicit high-level intentions; and structured discrete action tokens, obtained through frequency-domain transformations of continuous control signals, which encode explicit low-level dynamics. This dual supervision aligns the representation spaces of language, vision, and action, enabling the VLM to directly contribute to action generation. Experimental results on the LIBERO Franka benchmark demonstrate the superiority of our framework, while real-world evaluations further show that iFlyBot-VLA achieves competitive success rates across diverse and challenging manipulation tasks. Furthermore, we plan to open-source a portion of our self-constructed dataset to support future research in the community.
 
-## 개요
-우리는 새로운 프레임워크 하에서 훈련된 대규모 Vision-Language-Action(VLA) 모델인 iFlyBot-VLA를 소개합니다. 주요 기여 사항은 다음과 같습니다: (1) 대규모 인간 및 로봇 조작 비디오를 통해 철저히 훈련된 잠재 행동 모델; (2) 훈련 중 Vision-Language Model(VLM)과 행동 전문가를 공동으로 감독하는 이중 수준 행동 표현 프레임워크; (3) 로봇 궤적 데이터를 일반 QA 및 공간 QA 데이터셋과 결합하여 VLM 백본의 3D 인식 및 추론 능력을 효과적으로 향상시키는 혼합 훈련 전략. 구체적으로, VLM은 두 가지 상호 보완적인 형태의 행동을 예측하도록 훈련됩니다: 교차 체현 조작 데이터에서 사전 훈련된 잠재 행동 모델에서 파생되어 암시적인 고수준 의도를 포착하는 잠재 행동; 그리고 연속 제어 신호의 주파수 영역 변환을 통해 얻어져 명시적인 저수준 역학을 인코딩하는 구조화된 이산 행동 토큰. 이 이중 감독은 언어, 시각 및 행동의 표현 공간을 정렬하여 VLM이 행동 생성에 직접 기여할 수 있게 합니다. LIBERO Franka 벤치마크에서의 실험 결과는 우리 프레임워크의 우수성을 입증하며, 실제 환경 평가는 iFlyBot-VLA가 다양하고 도전적인 조작 작업에서 경쟁력 있는 성공률을 달성함을 보여줍니다. 또한, 우리는 커뮤니티의 향후 연구를 지원하기 위해 자체 구축 데이터셋의 일부를 오픈소스로 공개할 계획입니다.
-
-## 핵심 내용
-우리는 새로운 프레임워크 하에서 훈련된 대규모 Vision-Language-Action(VLA) 모델인 iFlyBot-VLA를 소개합니다. 주요 기여 사항은 다음과 같습니다: (1) 대규모 인간 및 로봇 조작 비디오를 통해 철저히 훈련된 잠재 행동 모델; (2) 훈련 중 Vision-Language Model(VLM)과 행동 전문가를 공동으로 감독하는 이중 수준 행동 표현 프레임워크; (3) 로봇 궤적 데이터를 일반 QA 및 공간 QA 데이터셋과 결합하여 VLM 백본의 3D 인식 및 추론 능력을 효과적으로 향상시키는 혼합 훈련 전략. 구체적으로, VLM은 두 가지 상호 보완적인 형태의 행동을 예측하도록 훈련됩니다: 교차 체현 조작 데이터에서 사전 훈련된 잠재 행동 모델에서 파생되어 암시적인 고수준 의도를 포착하는 잠재 행동; 그리고 연속 제어 신호의 주파수 영역 변환을 통해 얻어져 명시적인 저수준 역학을 인코딩하는 구조화된 이산 행동 토큰. 이 이중 감독은 언어, 시각 및 행동의 표현 공간을 정렬하여 VLM이 행동 생성에 직접 기여할 수 있게 합니다. LIBERO Franka 벤치마크에서의 실험 결과는 우리 프레임워크의 우수성을 입증하며, 실제 환경 평가는 iFlyBot-VLA가 다양하고 도전적인 조작 작업에서 경쟁력 있는 성공률을 달성함을 보여줍니다. 또한, 우리는 커뮤니티의 향후 연구를 지원하기 위해 자체 구축 데이터셋의 일부를 오픈소스로 공개할 계획입니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.01914v1
+
+## 개요
+iFlyBot-VLA는 혁신적인 프레임워크를 통해 비전-언어-동작 모델에서의 동작 표현과 정렬 문제를 해결합니다. 이 모델은 먼저 교차 개체 조작 데이터를 활용하여 암시적 동작 모델을 사전 학습하고, 높은 수준의 조작 의도를 포착합니다. 동시에 주파수 영역 변환을 통해 연속 제어 신호를 구조화된 이산 동작 토큰으로 변환하여 하위 수준의 동역학 정보를 인코딩합니다. 이러한 이중 감독 메커니즘은 비전-언어 모델이 동작 생성에 직접 참여할 수 있게 하여 언어, 비전, 동작의 표현 공간을 정렬합니다. LIBERO Franka 벤치마크에서 이 프레임워크는 우수한 성능을 보여주었으며, 실제 환경 실험에서도 다양한 복잡한 조작 작업에서 경쟁력 있는 성능을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+iFlyBot-VLA는 3단계 훈련 프레임워크를 채택합니다:
+- **암시적 동작 모델 사전 학습**: 대규모 인간 및 로봇 조작 비디오에서 훈련하여 교차 개체 조작 데이터에서 높은 수준의 의도 표현을 학습합니다.
+- **이중 동작 표현**:
+  - **암시적 동작**: 사전 학습 모델에서 추출하여 숨겨진 높은 수준의 조작 의도를 포착합니다.
+  - **구조화된 이산 동작 토큰**: 주파수 영역 변환을 통해 연속 제어 신호를 처리하여 명확한 하위 수준의 동역학 정보를 인코딩합니다.
+- **혼합 훈련 전략**: 로봇 궤적 데이터, 일반 질의응답 데이터셋, 공간 질의응답 데이터셋을 함께 사용하여 비전-언어 모델 백본의 3D 인식 및 추론 능력을 강화합니다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: LIBERO Franka 벤치마크에서 프레임워크의 우수성을 검증합니다.
+- **실제 환경 평가**: 다양한 복잡한 조작 작업에서 경쟁력 있는 성공률을 달성합니다.
+- **오픈소스 계획**: 커뮤니티 연구를 지원하기 위해 일부 자체 구축 데이터셋을 오픈소스로 공개할 예정입니다.
+
+### 핵심 결론
+이중 감독 메커니즘은 언어, 비전, 동작의 표현 공간을 효과적으로 정렬하여 비전-언어 모델이 동작 생성에 직접 기여할 수 있게 하고, 조작 작업의 일반화 능력과 성공률을 크게 향상시킵니다.

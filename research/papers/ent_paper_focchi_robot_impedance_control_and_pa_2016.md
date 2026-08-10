@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1406.4047v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1406.4047v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (762 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ theoretical_depth:
 ## Overview
 Impedance control is a well-established technique to control interaction forces in robotics. However, real implementations of impedance control with an inner loop may suffer from several limitations. Although common practice in designing nested control systems is to maximize the bandwidth of the inner loop to improve tracking performance, it may not be the most suitable approach when a certain range of impedance parameters has to be rendered. In particular, it turns out that the viable range of stable stiffness and damping values can be strongly affected by the bandwidth of the inner control loops (e.g. a torque loop) as well as by the filtering and sampling frequency. This paper provides an extensive analysis on how these aspects influence the stability region of impedance parameters as well as the passivity of the system. This will be supported by both simulations and experimental data. Moreover, a methodology for designing joint impedance controllers based on an inner torque loop and a positive velocity feedback loop will be presented. The goal of the velocity feedback is to increase (given the constraints to preserve stability) the bandwidth of the torque loop without the need of a complex controller.
 
-## 개요
-임피던스 제어는 로봇 공학에서 상호작용 힘을 제어하기 위해 잘 정립된 기술입니다. 그러나 내부 루프를 사용하는 임피던스 제어의 실제 구현은 여러 한계를 겪을 수 있습니다. 중첩 제어 시스템을 설계할 때 일반적인 관행은 내부 루프의 대역폭을 최대화하여 추적 성능을 향상시키는 것이지만, 특정 범위의 임피던스 파라미터를 구현해야 하는 경우에는 가장 적합한 접근 방식이 아닐 수 있습니다. 특히, 안정적인 강성 및 감쇠 값의 실현 가능한 범위는 내부 제어 루프(예: 토크 루프)의 대역폭뿐만 아니라 필터링 및 샘플링 주파수에 의해 크게 영향을 받을 수 있습니다. 본 논문은 이러한 측면이 임피던스 파라미터의 안정성 영역과 시스템의 수동성에 어떻게 영향을 미치는지에 대한 광범위한 분석을 제공합니다. 이는 시뮬레이션과 실험 데이터 모두를 통해 뒷받침됩니다. 또한, 내부 토크 루프와 양의 속도 피드백 루프를 기반으로 한 관절 임피던스 제어기 설계 방법론이 제시됩니다. 속도 피드백의 목표는 복잡한 제어기 없이도 (안정성을 유지하기 위한 제약 조건 하에서) 토크 루프의 대역폭을 증가시키는 것입니다.
-
-## 핵심 내용
-임피던스 제어는 로봇 공학에서 상호작용 힘을 제어하기 위해 잘 정립된 기술입니다. 그러나 내부 루프를 사용하는 임피던스 제어의 실제 구현은 여러 한계를 겪을 수 있습니다. 중첩 제어 시스템을 설계할 때 일반적인 관행은 내부 루프의 대역폭을 최대화하여 추적 성능을 향상시키는 것이지만, 특정 범위의 임피던스 파라미터를 구현해야 하는 경우에는 가장 적합한 접근 방식이 아닐 수 있습니다. 특히, 안정적인 강성 및 감쇠 값의 실현 가능한 범위는 내부 제어 루프(예: 토크 루프)의 대역폭뿐만 아니라 필터링 및 샘플링 주파수에 의해 크게 영향을 받을 수 있습니다. 본 논문은 이러한 측면이 임피던스 파라미터의 안정성 영역과 시스템의 수동성에 어떻게 영향을 미치는지에 대한 광범위한 분석을 제공합니다. 이는 시뮬레이션과 실험 데이터 모두를 통해 뒷받침됩니다. 또한, 내부 토크 루프와 양의 속도 피드백 루프를 기반으로 한 관절 임피던스 제어기 설계 방법론이 제시됩니다. 속도 피드백의 목표는 복잡한 제어기 없이도 (안정성을 유지하기 위한 제약 조건 하에서) 토크 루프의 대역폭을 증가시키는 것입니다.
-
 ## 参考
 - http://arxiv.org/abs/1406.4047v2
+
+## 개요
+본 논문은 로봇 임피던스 제어에서 내부 루프 토크 대역폭, 속도 필터링 및 샘플링 주파수가 시스템 안정성에 미치는 제약 메커니즘을 심층적으로 탐구합니다. 연구 결과, 전통적으로 내부 루프 대역폭을 최대화하는 접근 방식은 특정 임피던스 파라미터 범위를 렌더링해야 하는 응용 시나리오에는 적합하지 않으며, 이는 안정적인 강성 및 감쇠의 실현 가능 범위(Z-width)에 현저한 영향을 미칩니다. 저자는 시뮬레이션과 실험 데이터를 통해 이러한 요소들이 임피던스 파라미터의 안정 영역 및 시스템 수동성(passivity)을 어떻게 변화시키는지 체계적으로 분석합니다. 또한, 본 논문은 내부 토크 루프와 양의 속도 피드백을 기반으로 한 관절 임피던스 제어기 설계 방법을 제안하여, 제어기 복잡성을 증가시키지 않으면서 토크 루프 대역폭을 향상시키는 것을 목표로 합니다.
+
+## 핵심 내용
+### 핵심 문제
+- 임피던스 제어는 로봇 상호작용 힘 제어에 널리 사용되지만, 실제 구현에서 내부 루프(예: 토크 루프)의 대역폭, 속도 필터링 및 샘플링 주파수는 안정적으로 렌더링할 수 있는 강성 및 감쇠 범위(Z-width)를 심각하게 제한할 수 있습니다.
+- 전통적인 중첩 제어 설계는 내부 루프 대역폭을 최대화하여 추적 성능을 향상시키는 것을 강조하지만, 본 논문은 특정 임피던스 파라미터를 렌더링해야 할 때 이 전략이 오히려 역효과를 낼 수 있음을 지적합니다.
+
+### 분석 방법
+- 이론적 유도와 시뮬레이션을 통해 내부 루프 토크 대역폭, 속도 필터링 차단 주파수 및 샘플링 속도가 임피던스 파라미터 안정 영역에 미치는 영향을 정량화합니다.
+- 수동성 분석을 도입하여 시스템이 상호작용 중 에너지를 생성하지 않도록 보장하고 불안정한 동작을 방지합니다.
+
+### 주요 발견
+- 내부 루프 대역폭 부족은 안정적인 강성 및 감쇠의 실현 가능 범위를 축소시킵니다. 속도 필터링은 위상 지연을 유발하여 Z-width를 더욱 압축합니다.
+- 샘플링 속도가 너무 낮으면 이산화 효과가 발생하여 시스템 수동성을 파괴할 수 있습니다.
+
+### 설계 방법
+- 내부 토크 루프와 양의 속도 피드백을 기반으로 한 제어기 구조를 제안합니다. 양의 속도 피드백은 내부 루프 지연을 보상하여 제어기 복잡성(예: 고차 필터 또는 복잡한 보상기)을 증가시키지 않으면서 토크 루프 대역폭을 향상시킵니다.
+- 실험 검증: 전동 관절 플랫폼에서 테스트한 결과, 이 방법이 시스템 수동성을 유지하면서 안정적인 임피던스 파라미터 범위를 현저히 확장할 수 있음을 보여줍니다.
+
+### 결론
+- 본 논문은 임피던스 제어에서 내부 루프 파라미터 선택에 대한 체계적인 지침을 제공하며, 높은 강성과 넓은 감쇠 범위가 필요한 로봇 상호작용 작업(예: 조립, 인간-로봇 협업)에 적합한 실용적인 설계 방법을 제시합니다.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.09667v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.09667v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (753 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,24 @@ OmniSAT的核心是Omni Swift Action Tokenizer，其工作流程分为两步：
 ## Overview
 Existing Vision-Language-Action (VLA) models can be broadly categorized into diffusion-based and auto-regressive (AR) approaches: diffusion models capture continuous action distributions but rely on computationally heavy iterative denoising. In contrast, AR models enable efficient optimization and flexible sequence construction, making them better suited for large-scale pretraining. To further improve AR efficiency, particularly when action chunks induce extended and high-dimensional sequences, prior work applies entropy-guided and token-frequency techniques to shorten the sequence length. However, such compression struggled with \textit{poor reconstruction or inefficient compression}. Motivated by this, we introduce an Omni Swift Action Tokenizer, which learns a compact, transferable action representation. Specifically, we first normalize value ranges and temporal horizons to obtain a consistent representation with B-Spline encoding. Then, we apply multi-stage residual quantization to the position, rotation, and gripper subspaces, producing compressed discrete tokens with coarse-to-fine granularity for each part. After pre-training on the large-scale dataset Droid, the resulting discrete tokenization shortens the training sequence by 6.8$\times$, and lowers the target entropy. To further explore the potential of OmniSAT, we develop a cross-embodiment learning strategy that builds on the unified action-pattern space and jointly leverages robot and human demonstrations. It enables scalable auxiliary supervision from heterogeneous egocentric videos. Across diverse real-robot and simulation experiments, OmniSAT encompasses higher compression while preserving reconstruction quality, enabling faster AR training convergence and model performance.
 
-## 개요
-기존의 Vision-Language-Action (VLA) 모델은 크게 확산 기반(diffusion-based)과 자기회귀(auto-regressive, AR) 접근법으로 분류할 수 있습니다. 확산 모델은 연속적인 행동 분포를 포착하지만 계산량이 많은 반복적 잡음 제거에 의존합니다. 반면, AR 모델은 효율적인 최적화와 유연한 시퀀스 구성을 가능하게 하여 대규모 사전 학습에 더 적합합니다. 특히 행동 청크(action chunk)가 길고 고차원적인 시퀀스를 유발할 때 AR 효율성을 더욱 개선하기 위해, 기존 연구는 엔트로피 기반 및 토큰 빈도 기법을 적용하여 시퀀스 길이를 단축했습니다. 그러나 이러한 압축은 \textit{재구성 성능 저하 또는 비효율적인 압축}이라는 문제를 겪었습니다. 이에 착안하여, 우리는 Omni Swift Action Tokenizer를 소개합니다. 이는 간결하고 전이 가능한 행동 표현을 학습합니다. 구체적으로, 먼저 값 범위와 시간적 지평을 정규화하여 B-Spline 인코딩으로 일관된 표현을 얻습니다. 그런 다음, 위치, 회전, 그리퍼 하위 공간에 다단계 잔차 양자화(multi-stage residual quantization)를 적용하여 각 부분에 대해 거친 수준에서 세밀한 수준까지의 압축된 이산 토큰을 생성합니다. 대규모 데이터셋 Droid에서 사전 학습한 결과, 생성된 이산 토큰화는 학습 시퀀스를 6.8배 단축하고 목표 엔트로피를 낮춥니다. OmniSAT의 잠재력을 더 탐구하기 위해, 통합된 행동 패턴 공간을 기반으로 하고 로봇 및 인간 시연을 공동으로 활용하는 교차 체현 학습 전략(cross-embodiment learning strategy)을 개발합니다. 이를 통해 이질적인 자기중심적 비디오(heterogeneous egocentric videos)로부터 확장 가능한 보조 감독을 가능하게 합니다. 다양한 실제 로봇 및 시뮬레이션 실험에서 OmniSAT은 재구성 품질을 유지하면서 더 높은 압축률을 제공하여, 더 빠른 AR 학습 수렴과 모델 성능을 가능하게 합니다.
-
-## 핵심 내용
-기존의 Vision-Language-Action (VLA) 모델은 크게 확산 기반(diffusion-based)과 자기회귀(auto-regressive, AR) 접근법으로 분류할 수 있습니다. 확산 모델은 연속적인 행동 분포를 포착하지만 계산량이 많은 반복적 잡음 제거에 의존합니다. 반면, AR 모델은 효율적인 최적화와 유연한 시퀀스 구성을 가능하게 하여 대규모 사전 학습에 더 적합합니다. 특히 행동 청크(action chunk)가 길고 고차원적인 시퀀스를 유발할 때 AR 효율성을 더욱 개선하기 위해, 기존 연구는 엔트로피 기반 및 토큰 빈도 기법을 적용하여 시퀀스 길이를 단축했습니다. 그러나 이러한 압축은 \textit{재구성 성능 저하 또는 비효율적인 압축}이라는 문제를 겪었습니다. 이에 착안하여, 우리는 Omni Swift Action Tokenizer를 소개합니다. 이는 간결하고 전이 가능한 행동 표현을 학습합니다. 구체적으로, 먼저 값 범위와 시간적 지평을 정규화하여 B-Spline 인코딩으로 일관된 표현을 얻습니다. 그런 다음, 위치, 회전, 그리퍼 하위 공간에 다단계 잔차 양자화(multi-stage residual quantization)를 적용하여 각 부분에 대해 거친 수준에서 세밀한 수준까지의 압축된 이산 토큰을 생성합니다. 대규모 데이터셋 Droid에서 사전 학습한 결과, 생성된 이산 토큰화는 학습 시퀀스를 6.8배 단축하고 목표 엔트로피를 낮춥니다. OmniSAT의 잠재력을 더 탐구하기 위해, 통합된 행동 패턴 공간을 기반으로 하고 로봇 및 인간 시연을 공동으로 활용하는 교차 체현 학습 전략(cross-embodiment learning strategy)을 개발합니다. 이를 통해 이질적인 자기중심적 비디오(heterogeneous egocentric videos)로부터 확장 가능한 보조 감독을 가능하게 합니다. 다양한 실제 로봇 및 시뮬레이션 실험에서 OmniSAT은 재구성 품질을 유지하면서 더 높은 압축률을 제공하여, 더 빠른 AR 학습 수렴과 모델 성능을 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.09667v1
+
+## 개요
+기존 비전-언어-행동 모델은 주로 확산 모델과 자기회귀 모델의 두 가지 유형으로 나뉜다: 전자는 계산 집약적인 반복 잡음 제거 과정에 의존하고, 후자는 효율적인 최적화와 유연한 시퀀스 구성을 지원하지만, 긴 행동 블록을 처리할 때 시퀀스 과다와 고차원성이라는 과제에 직면한다. OmniSAT는 혁신적인 행동 토크나이저를 통해 이 문제를 해결하는데, 먼저 B-Spline 인코딩을 사용하여 행동 값 범위와 시간 범위를 정규화한 다음, 위치, 회전 및 그리퍼 하위 공간에 대해 다단계 잔차 양자화를 수행하여 조밀한 수준에서 세밀한 수준의 이산 토큰을 생성한다. Droid 대규모 데이터셋에서 사전 훈련된 이 토크나이저는 훈련 시퀀스 길이를 6.8배 압축하고 목표 엔트로피를 낮추며, 동시에 교차 본체 학습 전략을 통해 로봇 시연과 휴머노이드 시연 데이터를 융합하고 이기종 1인칭 비디오를 활용하여 확장 가능한 보조 감독을 구현한다.
+
+## 핵심 내용
+### 방법 아키텍처
+OmniSAT의 핵심은 Omni Swift Action Tokenizer로, 그 작업 흐름은 두 단계로 나뉜다:
+1. **B-Spline 인코딩**: 원시 행동 값 범위와 시간 범위를 정규화하여 연속적이고 일관된 표현을 생성한다.
+2. **다단계 잔차 양자화**: 인코딩된 행동을 위치, 회전 및 그리퍼의 세 하위 공간으로 분해하고, 각 하위 공간은 조밀한 수준에서 세밀한 수준의 잔차 양자화를 통해 이산 토큰을 생성하며, 최종적으로 컴팩트한 행동 시퀀스로 결합된다.
+
+### 실험 설정
+- **사전 훈련 데이터셋**: Droid 대규모 데이터셋.
+- **훈련 효율성**: 행동 시퀀스 길이가 6.8배 압축되고 목표 엔트로피가 현저히 감소한다.
+- **교차 본체 학습**: 통합된 행동 패턴 공간을 구축하고, 로봇 시연과 인간 1인칭 비디오 데이터를 공동으로 활용하여 이기종 감독 신호의 협력 훈련을 구현한다.
+
+### 핵심 결과
+- **압축 성능**: 재구성 품질을 유지하면서 OmniSAT는 기존 엔트로피 유도 및 토큰 빈도 방법보다 더 높은 압축 비율을 달성한다.
+- **훈련 수렴**: 자기회귀 훈련 수렴 속도가 현저히 향상되며, 모델 성능은 실제 로봇 조작 및 시뮬레이션 실험 모두에서 기준 방법보다 우수하다.
+- **일반화 능력**: 교차 본체 학습 전략을 통해 모델이 인간 비디오에서 효과적인 행동 패턴을 추출할 수 있어, 보지 못한 장면에 대한 적응성이 강화된다.

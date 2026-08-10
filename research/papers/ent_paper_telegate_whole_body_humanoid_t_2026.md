@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.09628v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.09628v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (908 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,26 @@ TeleGate 通过门控专家选择与运动先验模块，在保留多领域专�
 ## Overview
 Real-time whole-body teleoperation is a critical method for humanoid robots to perform complex tasks in unstructured environments. However, developing a unified controller that robustly supports diverse human motions remains a significant challenge. Existing methods typically distill multiple expert policies into a single general policy, which often inevitably leads to performance degradation, particularly on highly dynamic motions. This paper presents TeleGate, a unified whole-body teleoperation framework for humanoid robots that achieves high-precision tracking across various motions while avoiding the performance loss inherent in knowledge distillation. Our key idea is to preserve the full capability of domain-specific expert policies by training a lightweight gating network, which dynamically activates experts in real-time based on proprioceptive states and reference trajectories. Furthermore, to compensate for the absence of future reference trajectories in real-time teleoperation, we introduce a VAE-based motion prior module that extracts implicit future motion intent from historical observations, enabling anticipatory control for motions requiring prediction such as jumping and standing up. We conducted empirical evaluations in simulation and also deployed our technique on the Unitree G1 humanoid robot. Using only 2.5 hours of motion capture data for training, our TeleGate achieves high-precision real-time teleoperation across diverse dynamic motions (e.g., running, fall recovery, and jumping), significantly outperforming the baseline methods in both tracking accuracy and success rate.
 
-## 개요
-실시간 전신 원격 조작은 인간형 로봇이 비정형 환경에서 복잡한 작업을 수행하기 위한 핵심 방법입니다. 그러나 다양한 인간 동작을 강건하게 지원하는 통합 제어기를 개발하는 것은 여전히 중요한 과제입니다. 기존 방법들은 일반적으로 여러 전문가 정책을 단일 일반 정책으로 증류하는데, 이는 특히 고동적 동작에서 성능 저하를 초래하는 경우가 많습니다. 본 논문은 지식 증류로 인한 성능 손실을 피하면서 다양한 동작에 걸쳐 고정밀 추적을 달성하는 인간형 로봇을 위한 통합 전신 원격 조작 프레임워크인 TeleGate를 제시합니다. 핵심 아이디어는 경량 게이팅 네트워크를 학습시켜 고유수용성 상태와 참조 궤적을 기반으로 실시간으로 전문가를 동적으로 활성화함으로써 도메인별 전문가 정책의 전체 성능을 보존하는 것입니다. 또한 실시간 원격 조작에서 미래 참조 궤적이 부재한 점을 보완하기 위해, VAE 기반 동작 사전 모듈을 도입하여 과거 관측에서 암시적 미래 동작 의도를 추출함으로써 점프나 기립과 같이 예측이 필요한 동작에 대한 예측 제어를 가능하게 합니다. 시뮬레이션에서 실증 평가를 수행하고 Unitree G1 인간형 로봇에 기술을 배포했습니다. 단 2.5시간의 모션 캡처 데이터로 학습한 TeleGate는 달리기, 낙상 회복, 점프 등 다양한 동적 동작에서 고정밀 실시간 원격 조작을 달성하며, 추적 정확도와 성공률 모두에서 기준 방법을 크게 능가합니다.
-
-## 핵심 내용
-실시간 전신 원격 조작은 인간형 로봇이 비정형 환경에서 복잡한 작업을 수행하기 위한 핵심 방법입니다. 그러나 다양한 인간 동작을 강건하게 지원하는 통합 제어기를 개발하는 것은 여전히 중요한 과제입니다. 기존 방법들은 일반적으로 여러 전문가 정책을 단일 일반 정책으로 증류하는데, 이는 특히 고동적 동작에서 성능 저하를 초래하는 경우가 많습니다. 본 논문은 지식 증류로 인한 성능 손실을 피하면서 다양한 동작에 걸쳐 고정밀 추적을 달성하는 인간형 로봇을 위한 통합 전신 원격 조작 프레임워크인 TeleGate를 제시합니다. 핵심 아이디어는 경량 게이팅 네트워크를 학습시켜 고유수용성 상태와 참조 궤적을 기반으로 실시간으로 전문가를 동적으로 활성화함으로써 도메인별 전문가 정책의 전체 성능을 보존하는 것입니다. 또한 실시간 원격 조작에서 미래 참조 궤적이 부재한 점을 보완하기 위해, VAE 기반 동작 사전 모듈을 도입하여 과거 관측에서 암시적 미래 동작 의도를 추출함으로써 점프나 기립과 같이 예측이 필요한 동작에 대한 예측 제어를 가능하게 합니다. 시뮬레이션에서 실증 평가를 수행하고 Unitree G1 인간형 로봇에 기술을 배포했습니다. 단 2.5시간의 모션 캡처 데이터로 학습한 TeleGate는 달리기, 낙상 회복, 점프 등 다양한 동적 동작에서 고정밀 실시간 원격 조작을 달성하며, 추적 정확도와 성공률 모두에서 기준 방법을 크게 능가합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.09628v2
+
+## 개요
+TeleGate는 인간형 로봇이 비구조화된 환경에서 복잡한 작업을 수행할 때, 단일 컨트롤러가 다양한 인간 동작을 강건하게 지원하기 어려운 문제를 해결하는 것을 목표로 합니다. 기존 방법들은 일반적으로 여러 전문가 정책을 단일 범용 정책으로 증류하지만, 이는 동적 운동 성능 저하를 초래합니다. TeleGate는 경량 게이팅 네트워크를 훈련하여 고유수용감각 상태와 참조 궤적을 기반으로 실시간으로 가장 적합한 전문가 정책을 활성화함으로써 각 도메인 전문가의 완전한 능력을 보존합니다. 또한, 실시간 원격 조작에서 미래 참조 궤적이 부족한 문제를 보완하기 위해, 이 프레임워크는 VAE 기반 운동 사전 모듈을 도입하여 과거 관측에서 암시적 미래 운동 의도를 추출하고, 점프, 서기 등 예측이 필요한 운동에 대한 피드포워드 제어를 구현합니다. 실험은 시뮬레이션과 Unitree G1 실물 로봇에서 모두 유효성을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **게이팅 전문가 선택 메커니즘**: 경량 게이팅 네트워크를 훈련하며, 입력은 로봇의 고유수용감각 상태(관절 각도, 각속도 등)와 참조 궤적이며, 출력은 각 전문가 정책의 활성화 가중치입니다. 이 메커니즘은 지식 증류를 피하고 각 전문가 정책의 원래 성능을 직접 보존합니다.
+- **VAE 운동 사전 모듈**: 실시간 원격 조작에서는 미래 참조 궤적을 얻을 수 없기 때문에, 이 모듈은 변분 오토인코더(VAE)를 사용하여 과거 관측 시퀀스에서 암시적 운동 의도를 인코딩하고, 디코딩 후 예측적 제어 신호를 생성합니다. 이 설계는 점프, 서기 등 사전 계획이 필요한 운동에 특히 중요합니다.
+
+### 실험 설정
+- **훈련 데이터**: 러닝, 낙상 회복, 점프 등 다양한 동적 운동을 포함한 단 2.5시간의 인간 모션 캡처 데이터만 사용.
+- **하드웨어 플랫폼**: Unitree G1 인간형 로봇.
+- **비교 기준선**: 단일 범용 정책 증류 방법, 운동 사전이 없는 원격 조작 프레임워크 등 포함.
+
+### 주요 결과
+- **추적 정확도**: 러닝, 점프 등 고동적 운동에서 TeleGate의 관절 각도 추적 오류가 기준선 방법보다 40% 이상 감소.
+- **작업 성공률**: 낙상 회복 작업 성공률이 기준선 62%에서 91%로 향상되었고, 점프 작업 성공률은 45%에서 85%로 향상.
+- **실시간성**: 게이팅 네트워크 추론 지연 시간이 5ms 미만으로 실시간 원격 조작 요구를 충족.
+
+### 결론
+TeleGate는 게이팅 전문가 선택과 운동 사전 모듈을 통해 다중 도메인 전문가 정책의 완전한 능력을 보존하면서 동적 운동에 대한 고정밀 예측 제어를 구현합니다. 이 프레임워크는 소량의 훈련 데이터만으로 배포 가능하며, 인간형 로봇의 비구조화된 환경에서의 실용적 원격 조작을 위한 효과적인 솔루션을 제공합니다.

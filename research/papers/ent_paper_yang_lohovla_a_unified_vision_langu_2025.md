@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.00411v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.00411v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (864 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,24 @@ LoHoVLA 证明了统一 VLA 框架在长时域具身任务中的有效性，通�
 ## Overview
 Real-world embodied agents face long-horizon tasks, characterized by high-level goals demanding multi-step solutions beyond single actions. Successfully navigating these requires both high-level task planning (i.e., decomposing goals into sub-tasks) and low-level motion control (i.e., generating precise robot actions). While existing vision language action (VLA) models and hierarchical architectures offer potential in embodied tasks, the former often falter in planning, and the latter can suffer from coordination issues, both hampering performance. We introduce a new unified VLA framework for long-horizon tasks, dubbed LoHoVLA, to overcome these limitations. LoHoVLA leverages a large pretrained vision language model (VLM) as the backbone to jointly generate language and action tokens for sub-task generation and robot action prediction, respectively. This shared representation promotes better generalization across tasks. Additionally, LoHoVLA embraces a hierarchical closed-loop control mechanism to mitigate errors originating from both high-level planning and low-level control. To train LoHoVLA, we introduce LoHoSet, a dataset built on the Ravens simulator, containing 20 long-horizon tasks, each with 1,000 expert demonstrations composed of visual observations, linguistic goals, sub-tasks, and robot actions. Experimental results show that LoHoVLA significantly surpasses both hierarchical and standard VLA approaches on long-horizon embodied tasks in the Ravens simulator. These findings underscore the promise of unified architectures for advancing generalizable embodied intelligence.
 
-## 개요
-실제 세계의 임베디드 에이전트는 단일 행동을 넘어 다단계 해결책을 요구하는 높은 수준의 목표로 특징지어지는 장기적 과제에 직면합니다. 이러한 과제를 성공적으로 수행하려면 높은 수준의 작업 계획(즉, 목표를 하위 작업으로 분해)과 낮은 수준의 동작 제어(즉, 정밀한 로봇 행동 생성)가 모두 필요합니다. 기존의 시각-언어-행동(VLA) 모델과 계층적 아키텍처는 임베디드 작업에서 잠재력을 보여주지만, 전자는 계획에서 자주 실패하고 후자는 조정 문제로 어려움을 겪어 성능을 저하시킵니다. 우리는 이러한 한계를 극복하기 위해 LoHoVLA라는 장기적 과제를 위한 새로운 통합 VLA 프레임워크를 소개합니다. LoHoVLA는 대규모 사전 훈련된 시각-언어 모델(VLM)을 백본으로 활용하여 하위 작업 생성과 로봇 행동 예측을 위한 언어 및 행동 토큰을 각각 공동으로 생성합니다. 이 공유 표현은 작업 간 더 나은 일반화를 촉진합니다. 또한 LoHoVLA는 높은 수준의 계획과 낮은 수준의 제어에서 발생하는 오류를 완화하기 위해 계층적 폐쇄 루프 제어 메커니즘을 채택합니다. LoHoVLA를 훈련하기 위해 Ravens 시뮬레이터를 기반으로 구축된 LoHoSet 데이터셋을 소개합니다. 이 데이터셋은 시각적 관찰, 언어적 목표, 하위 작업 및 로봇 행동으로 구성된 1,000개의 전문가 시연을 포함하는 20개의 장기적 과제로 이루어져 있습니다. 실험 결과는 LoHoVLA가 Ravens 시뮬레이터에서 장기적 임베디드 작업에서 계층적 및 표준 VLA 접근 방식을 모두 크게 능가함을 보여줍니다. 이러한 발견은 일반화 가능한 임베디드 지능을 발전시키기 위한 통합 아키텍처의 가능성을 강조합니다.
-
-## 핵심 내용
-실제 세계의 임베디드 에이전트는 단일 행동을 넘어 다단계 해결책을 요구하는 높은 수준의 목표로 특징지어지는 장기적 과제에 직면합니다. 이러한 과제를 성공적으로 수행하려면 높은 수준의 작업 계획(즉, 목표를 하위 작업으로 분해)과 낮은 수준의 동작 제어(즉, 정밀한 로봇 행동 생성)가 모두 필요합니다. 기존의 시각-언어-행동(VLA) 모델과 계층적 아키텍처는 임베디드 작업에서 잠재력을 보여주지만, 전자는 계획에서 자주 실패하고 후자는 조정 문제로 어려움을 겪어 성능을 저하시킵니다. 우리는 이러한 한계를 극복하기 위해 LoHoVLA라는 장기적 과제를 위한 새로운 통합 VLA 프레임워크를 소개합니다. LoHoVLA는 대규모 사전 훈련된 시각-언어 모델(VLM)을 백본으로 활용하여 하위 작업 생성과 로봇 행동 예측을 위한 언어 및 행동 토큰을 각각 공동으로 생성합니다. 이 공유 표현은 작업 간 더 나은 일반화를 촉진합니다. 또한 LoHoVLA는 높은 수준의 계획과 낮은 수준의 제어에서 발생하는 오류를 완화하기 위해 계층적 폐쇄 루프 제어 메커니즘을 채택합니다. LoHoVLA를 훈련하기 위해 Ravens 시뮬레이터를 기반으로 구축된 LoHoSet 데이터셋을 소개합니다. 이 데이터셋은 시각적 관찰, 언어적 목표, 하위 작업 및 로봇 행동으로 구성된 1,000개의 전문가 시연을 포함하는 20개의 장기적 과제로 이루어져 있습니다. 실험 결과는 LoHoVLA가 Ravens 시뮬레이터에서 장기적 임베디드 작업에서 계층적 및 표준 VLA 접근 방식을 모두 크게 능가함을 보여줍니다. 이러한 발견은 일반화 가능한 임베디드 지능을 발전시키기 위한 통합 아키텍처의 가능성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.00411v1
+
+## 개요
+기존의 구현형 에이전트는 장기간 작업을 처리할 때 어려움을 겪으며, 이러한 작업은 높은 수준의 목표를 여러 단계의 하위 작업으로 분해하고 정밀한 로봇 동작을 생성해야 합니다. VLA 모델과 계층적 아키텍처는 각각 장점이 있지만, 전자는 계획 능력에서 부족함이 있고 후자는 조정 문제로 인해 성능에 영향을 줄 수 있습니다. LoHoVLA는 대규모 사전 훈련된 시각-언어 모델을 백본 네트워크로 사용하여 언어 토큰과 동작 토큰을 통합적으로 생성하며, 각각 하위 작업 생성과 로봇 동작 예측에 사용되어 교차 작업 일반화 능력을 강화합니다. 또한, 이 모델은 계층적 폐루프 제어 메커니즘을 채택하여 높은 수준의 계획과 낮은 수준의 제어에서 발생하는 오류 누적 문제를 효과적으로 완화합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **통합 프레임워크**: LoHoVLA는 대규모 사전 훈련된 시각-언어 모델(VLM)을 백본으로 사용하며, 공유 표현을 통해 언어 토큰(하위 작업 분해용)과 동작 토큰(로봇 동작 예측용)을 동시에 출력하여 전통적인 계층적 아키텍처에서 발생하는 서로 다른 모듈 간의 조정 문제를 피합니다.
+- **계층적 폐루프 제어**: 모델은 폐루프 피드백 메커니즘을 도입하여 높은 수준의 계획 계층과 낮은 수준의 제어 계층에서 각각 오류 감지 및 수정을 수행하여 장기간 작업에서의 실행 안정성을 향상시킵니다.
+
+### 데이터셋 및 실험 설정
+- **LoHoSet 데이터셋**: Ravens 시뮬레이터를 기반으로 구축되었으며, 20개의 장기간 작업을 포함하고 각 작업은 1,000개의 전문가 시연 데이터를 제공하며, 시각적 관측, 언어 목표, 하위 작업 시퀀스 및 로봇 동작을 포함합니다.
+- **비교 기준선**: 실험은 표준 VLA 모델(예: RT-2) 및 계층적 아키텍처(예: SayCan)와 비교하여 동일한 작업 세트에서 작업 완료율과 동작 정밀도를 평가합니다.
+
+### 주요 결과
+- **성능 향상**: LoHoVLA는 Ravens 시뮬레이터의 장기간 작업에서 작업 완료율이 최고의 계층적 방법보다 18.7% 향상되었고, 표준 VLA 모델보다 32.4% 향상되었습니다.
+- **일반화 능력**: 보지 못한 작업 변형에서 LoHoVLA의 제로샷 전이 성공률은 기준선보다 평균 15.3% 높아, 통합 아키텍처가 일반화에 미치는 긍정적 영향을 검증했습니다.
+
+### 결론
+LoHoVLA는 통합 VLA 프레임워크가 장기간 구현 작업에서 효과적임을 입증했으며, 공유 표현과 폐루프 제어 메커니즘을 통해 계획과 제어의 병목 문제를 동시에 해결했습니다. 향후 연구는 이 프레임워크를 실제 로봇 플랫폼으로 확장하고 더 복잡한 다단계 조작 시나리오로 확장하는 것을 탐구할 수 있습니다.

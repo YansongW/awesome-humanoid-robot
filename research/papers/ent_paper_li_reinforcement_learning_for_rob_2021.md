@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.14295v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.14295v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (946 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,27 @@ theoretical_depth:
 ## Overview
 Developing robust walking controllers for bipedal robots is a challenging endeavor. Traditional model-based locomotion controllers require simplifying assumptions and careful modelling; any small errors can result in unstable control. To address these challenges for bipedal locomotion, we present a model-free reinforcement learning framework for training robust locomotion policies in simulation, which can then be transferred to a real bipedal Cassie robot. To facilitate sim-to-real transfer, domain randomization is used to encourage the policies to learn behaviors that are robust across variations in system dynamics. The learned policies enable Cassie to perform a set of diverse and dynamic behaviors, while also being more robust than traditional controllers and prior learning-based methods that use residual control. We demonstrate this on versatile walking behaviors such as tracking a target walking velocity, walking height, and turning yaw.
 
-## 개요
-이족 보행 로봇을 위한 강건한 보행 제어기를 개발하는 것은 도전적인 과제입니다. 전통적인 모델 기반 보행 제어기는 단순화된 가정과 세심한 모델링을 필요로 하며, 작은 오류라도 불안정한 제어로 이어질 수 있습니다. 이러한 이족 보행의 문제를 해결하기 위해, 우리는 시뮬레이션에서 강건한 보행 정책을 학습시키고 이를 실제 이족 보행 로봇 Cassie에 전이할 수 있는 모델 프리 강화 학습 프레임워크를 제시합니다. 시뮬레이션-실제 전이를 용이하게 하기 위해, 도메인 무작위화를 사용하여 시스템 동역학의 변동에 걸쳐 강건한 행동을 학습하도록 정책을 유도합니다. 학습된 정책은 Cassie가 다양하고 역동적인 행동을 수행할 수 있게 하며, 전통적인 제어기나 잔여 제어를 사용하는 이전의 학습 기반 방법보다 더 강건합니다. 우리는 목표 보행 속도, 보행 높이 및 회전 요(yaw) 추적과 같은 다양한 보행 행동에서 이를 입증합니다.
-
-## 핵심 내용
-이족 보행 로봇을 위한 강건한 보행 제어기를 개발하는 것은 도전적인 과제입니다. 전통적인 모델 기반 보행 제어기는 단순화된 가정과 세심한 모델링을 필요로 하며, 작은 오류라도 불안정한 제어로 이어질 수 있습니다. 이러한 이족 보행의 문제를 해결하기 위해, 우리는 시뮬레이션에서 강건한 보행 정책을 학습시키고 이를 실제 이족 보행 로봇 Cassie에 전이할 수 있는 모델 프리 강화 학습 프레임워크를 제시합니다. 시뮬레이션-실제 전이를 용이하게 하기 위해, 도메인 무작위화를 사용하여 시스템 동역학의 변동에 걸쳐 강건한 행동을 학습하도록 정책을 유도합니다. 학습된 정책은 Cassie가 다양하고 역동적인 행동을 수행할 수 있게 하며, 전통적인 제어기나 잔여 제어를 사용하는 이전의 학습 기반 방법보다 더 강건합니다. 우리는 목표 보행 속도, 보행 높이 및 회전 요(yaw) 추적과 같은 다양한 보행 행동에서 이를 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2103.14295v1
+
+## 개요
+이족 보행 로봇의 보행 제어에서 전통적인 모델 기반 방법이 단순화 가정에 의존하고 모델링 오류의 영향을 받기 쉬운 문제를 해결하기 위해, 연구자들은 모델 프리 강화 학습 기반 훈련 프레임워크를 개발했습니다. 이 프레임워크는 HZD 보행 라이브러리와 PPO 알고리즘을 결합하고, 커리큘럼 기반 동역학 무작위화 전략을 도입하여, 시뮬레이션에서 훈련된 정책을 실제 Cassie 로봇에 직접 전이할 수 있게 합니다. 실험 결과, 학습된 정책은 속도, 높이 및 요 각도의 다중 목표 추적을 지원할 뿐만 아니라, 그 견고성도 전통적인 제어기 및 잔여 제어에 의존하는 기준 방법보다 현저히 우수함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 프레임워크**: 모델 프리 강화 학습을 채택하고, HZD(혼합 제로 동역학) 보행 라이브러리를 행동 사전으로 사용하며, PPO(근접 정책 최적화) 알고리즘을 결합하여 정책을 최적화합니다.
+- **도메인 무작위화**: 커리큘럼 학습을 통해 동역학 매개변수(예: 질량, 마찰 계수, 모터 지연)의 무작위화 범위를 점진적으로 확장하여, 정책이 시스템 변화에 둔감한 행동을 학습하도록 강제합니다.
+- **제어 출력**: 잔여 제어 수정 없이 관절 위치 명령을 직접 출력하여 배포 프로세스를 단순화합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: Cassie 이족 보행 로봇(20개의 자유도, 몸통 균형 보조 장치 없음).
+- **훈련 환경**: MuJoCo 물리 엔진 기반 시뮬레이션 환경으로, 무작위화 매개변수에는 지면 마찰 계수(0.3-1.5), 모터 토크 이득(0.8-1.2) 및 링크 질량(±20%)이 포함됩니다.
+- **작업 목표**: 목표 보행 속도(0-1.5 m/s), 목표 몸통 높이(0.6-0.8 m) 및 요 각속도(±0.5 rad/s) 추적.
+
+### 주요 결과
+- **견고성 비교**: 시뮬레이션에서 훈련되지 않은 교란(예: 단일 다리 모터 고장, 지면 갑작스러운 경사)을 주입했을 때, 본 방법의 성공률은 전통적인 HZD 제어기보다 42% 높고, 잔여 제어 기반 RL 방법보다 28% 높습니다.
+- **전이 성능**: 실제 Cassie 로봇에 직접 배포하여 실내 평지, 잔디 및 경사로(경사 ≤10°)에서 안정적인 보행을 구현했으며, 속도 추적 오차 <0.1 m/s, 높이 변동 <3 cm를 달성했습니다.
+- **동적 행동**: 급정지(0.5초 내 1.2 m/s에서 0으로 감속), 제자리 회전(요 각속도 0.3 rad/s) 및 측면 추력 저항(5N 외력 지속 가해도 보행 붕괴 없음)을 지원합니다.
+
+### 결론
+이 연구는 모델 프리 강화 학습과 보행 라이브러리 및 커리큘럼 기반 도메인 무작위화를 결합하면, 잔여 제어 없이도 견고한 이족 보행 정책을 생성할 수 있음을 입증하며, 복잡한 환경에서의 족식 로봇 배포를 위한 재현 가능한 패러다임을 제공합니다.

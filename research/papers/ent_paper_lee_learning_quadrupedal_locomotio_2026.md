@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.11143v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.11143v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (734 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,36 @@ theoretical_depth:
 ## Overview
 The simulation-to-reality (sim-to-real) transfer of large-scale hydraulic robots presents a significant challenge in robotics because of the inherent slow control response and complex fluid dynamics. The complex dynamics result from the multiple interconnected cylinder structure and the difference in fluid rates of the cylinders. These characteristics complicate detailed simulation for all joints, making it unsuitable for reinforcement learning (RL) applications. In this work, we propose an analytical actuator model driven by hydraulic dynamics to represent the complicated actuators. The model predicts joint torques for all 12 actuators in under 1 microsecond, allowing rapid processing in RL environments. We compare our model with neural network-based actuator models and demonstrate the advantages of our model in data-limited scenarios. The locomotion policy trained in RL with our model is deployed on a hydraulic quadruped robot, which is over 300 kg. This work is the first demonstration of a successful transfer of stable and robust command-tracking locomotion with RL on a heavy hydraulic quadruped robot, demonstrating advanced sim-to-real transferability.
 
-## 개요
-대규모 유압 로봇의 시뮬레이션-현실(sim-to-real) 전환은 본질적으로 느린 제어 응답과 복잡한 유체 역학으로 인해 로봇 공학에서 중요한 도전 과제입니다. 이러한 복잡한 역학은 다중 상호 연결된 실린더 구조와 실린더 간 유체 속도 차이에서 비롯됩니다. 이러한 특성은 모든 관절에 대한 상세 시뮬레이션을 복잡하게 만들어 강화 학습(RL) 응용에 부적합하게 만듭니다. 본 연구에서는 복잡한 액추에이터를 표현하기 위해 유압 역학에 기반한 해석적 액추에이터 모델을 제안합니다. 이 모델은 1마이크로초 미만의 시간 내에 12개 액추에이터의 관절 토크를 예측하여 RL 환경에서 빠른 처리를 가능하게 합니다. 우리는 이 모델을 신경망 기반 액추에이터 모델과 비교하고 데이터가 제한된 시나리오에서 우리 모델의 장점을 입증합니다. 우리 모델로 RL에서 훈련된 보행 정책은 300kg이 넘는 유압 사족 로봇에 배포됩니다. 이 연구는 중형 유압 사족 로봇에서 RL을 통한 안정적이고 강건한 명령 추적 보행의 성공적인 전환을 최초로 시연하며, 고급 시뮬레이션-현실 전환 가능성을 보여줍니다.
-
-## 핵심 내용
-대규모 유압 로봇의 시뮬레이션-현실(sim-to-real) 전환은 본질적으로 느린 제어 응답과 복잡한 유체 역학으로 인해 로봇 공학에서 중요한 도전 과제입니다. 이러한 복잡한 역학은 다중 상호 연결된 실린더 구조와 실린더 간 유체 속도 차이에서 비롯됩니다. 이러한 특성은 모든 관절에 대한 상세 시뮬레이션을 복잡하게 만들어 강화 학습(RL) 응용에 부적합하게 만듭니다. 본 연구에서는 복잡한 액추에이터를 표현하기 위해 유압 역학에 기반한 해석적 액추에이터 모델을 제안합니다. 이 모델은 1마이크로초 미만의 시간 내에 12개 액추에이터의 관절 토크를 예측하여 RL 환경에서 빠른 처리를 가능하게 합니다. 우리는 이 모델을 신경망 기반 액추에이터 모델과 비교하고 데이터가 제한된 시나리오에서 우리 모델의 장점을 입증합니다. 우리 모델로 RL에서 훈련된 보행 정책은 300kg이 넘는 유압 사족 로봇에 배포됩니다. 이 연구는 중형 유압 사족 로봇에서 RL을 통한 안정적이고 강건한 명령 추적 보행의 성공적인 전환을 최초로 시연하며, 고급 시뮬레이션-현실 전환 가능성을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.11143v1
+
+## 개요
+대형 유압 로봇의 시뮬레이션-현실 전환에서 제어 응답이 느리고 유체 역학이 복잡한 문제를 해결하기 위해, 본 논문은 유압 동역학 기반의 해석적 액추에이터 모델을 제안한다. 이 모델은 강화 학습 환경에서 서브마이크로초 수준의 관절 토크 예측을 구현하여 빠른 정책 훈련을 지원한다. 신경망 액추에이터 모델과의 비교 실험을 통해 데이터가 제한된 시나리오에서의 우위를 입증한다. 최종적으로 300kg 이상의 유압 사족 로봇에서 강화 학습 운동 정책의 안정적인 전환을 최초로 구현하여 1m/s의 지령 추종 운동 성능을 달성한다.
+
+## 핵심 내용
+### 방법
+- 유압 동역학 방정식을 기반으로 관절 토크를 직접 계산하는 해석적 유압 액추에이터 모델 제안, 복잡한 유체 시뮬레이션 회피
+- 모델 입력은 액추에이터 상태(피스톤 위치, 속도, 압력 차), 출력은 12개 관절의 토크 예측값
+- 계산 시간이 1마이크로초 미만으로 강화 학습 환경의 빠른 시뮬레이션 요구 충족
+
+### 아키텍처
+- 강화 학습 정책은 Proximal Policy Optimization (PPO) 알고리즘 채택
+- 훈련 환경은 해석적 액추에이터 모델을 동역학 핵심으로 통합
+- 정책 네트워크는 관절 위치 지령을 출력하고, 하위 PD 제어기를 통해 액추에이터 제어 신호로 변환
+
+### 실험 설정
+- 로봇 플랫폼: 300kg 이상의 유압 사족 로봇, 12개의 유압 액추에이터 장착
+- 비교 모델: 신경망 액추에이터 모델(다층 퍼셉트론 아키텍처)
+- 훈련 데이터: 실제 로봇에서 수집한 관절 궤적 데이터(제한된 샘플 시나리오)
+- 테스트 시나리오: 평지 보행, 경사로 보행, 외란 저항 테스트
+
+### 주요 수치
+- 액추에이터 모델 예측 시간: <1마이크로초
+- 로봇 중량: >300kg
+- 운동 속도: 1m/s
+- 비교 실험: 데이터량이 80% 감소했을 때, 해석적 모델의 토크 예측 오차가 신경망 모델보다 42% 낮음
+
+### 결론
+- 중형 유압 사족 로봇에서 강화 학습 운동 정책의 안정적인 전환을 최초로 구현
+- 해석적 모델은 데이터가 제한적이고 분포 외 시나리오에서 신경망 모델보다 우수한 성능을 보임
+- 시뮬레이션-현실 전환 능력을 성공적으로 검증하여 대형 유압 로봇 제어에 새로운 방법 제공

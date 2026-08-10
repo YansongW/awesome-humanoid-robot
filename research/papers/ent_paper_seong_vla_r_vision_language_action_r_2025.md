@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.12405v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.12405v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (904 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ VLA-R通过融合开放世界感知与视觉-动作检索范式，为端到端�
 ## Overview
 Exploring open-world situations in an end-to-end manner is a promising yet challenging task due to the need for strong generalization capabilities. In particular, end-to-end autonomous driving in unstructured outdoor environments often encounters conditions that were unfamiliar during training. In this work, we present Vision-Language Action Retrieval (VLA-R), an open-world end-to-end autonomous driving (OW-E2EAD) framework that integrates open-world perception with a novel vision-action retrieval paradigm. We leverage a frozen vision-language model for open-world detection and segmentation to obtain multi-scale, prompt-guided, and interpretable perception features without domain-specific tuning. A Q-Former bottleneck aggregates fine-grained visual representations with language-aligned visual features, bridging perception and action domains. To learn transferable driving behaviors, we introduce a vision-action contrastive learning scheme that aligns vision-language and action embeddings for effective open-world reasoning and action retrieval. Our experiments on a real-world robotic platform demonstrate strong generalization and exploratory performance in unstructured, unseen environments, even with limited data. Demo videos are provided in the supplementary material.
 
-## 개요
-종단 간 방식으로 개방형 세계 상황을 탐구하는 것은 강력한 일반화 능력이 필요하기 때문에 유망하면서도 도전적인 과제입니다. 특히, 구조화되지 않은 야외 환경에서의 종단 간 자율 주행은 훈련 중에 익숙하지 않은 조건을 자주 마주하게 됩니다. 본 연구에서는 개방형 세계 인식과 새로운 시각-행동 검색 패러다임을 통합한 개방형 세계 종단 간 자율 주행(OW-E2EAD) 프레임워크인 Vision-Language Action Retrieval (VLA-R)을 제시합니다. 우리는 도메인별 튜닝 없이 다중 스케일, 프롬프트 기반, 해석 가능한 인식 특징을 얻기 위해 고정된 시각-언어 모델을 개방형 세계 탐지 및 분할에 활용합니다. Q-Former 병목은 언어 정렬 시각 특징과 미세한 시각 표현을 집계하여 인식과 행동 도메인을 연결합니다. 전이 가능한 주행 행동을 학습하기 위해, 시각-언어 및 행동 임베딩을 정렬하여 효과적인 개방형 세계 추론 및 행동 검색을 가능하게 하는 시각-행동 대조 학습 기법을 도입합니다. 실제 로봇 플랫폼에서의 실험은 제한된 데이터로도 구조화되지 않고 보지 못한 환경에서 강력한 일반화 및 탐색 성능을 입증합니다. 데모 비디오는 부록 자료에 제공됩니다.
-
-## 핵심 내용
-종단 간 방식으로 개방형 세계 상황을 탐구하는 것은 강력한 일반화 능력이 필요하기 때문에 유망하면서도 도전적인 과제입니다. 특히, 구조화되지 않은 야외 환경에서의 종단 간 자율 주행은 훈련 중에 익숙하지 않은 조건을 자주 마주하게 됩니다. 본 연구에서는 개방형 세계 인식과 새로운 시각-행동 검색 패러다임을 통합한 개방형 세계 종단 간 자율 주행(OW-E2EAD) 프레임워크인 Vision-Language Action Retrieval (VLA-R)을 제시합니다. 우리는 도메인별 튜닝 없이 다중 스케일, 프롬프트 기반, 해석 가능한 인식 특징을 얻기 위해 고정된 시각-언어 모델을 개방형 세계 탐지 및 분할에 활용합니다. Q-Former 병목은 언어 정렬 시각 특징과 미세한 시각 표현을 집계하여 인식과 행동 도메인을 연결합니다. 전이 가능한 주행 행동을 학습하기 위해, 시각-언어 및 행동 임베딩을 정렬하여 효과적인 개방형 세계 추론 및 행동 검색을 가능하게 하는 시각-행동 대조 학습 기법을 도입합니다. 실제 로봇 플랫폼에서의 실험은 제한된 데이터로도 구조화되지 않고 보지 못한 환경에서 강력한 일반화 및 탐색 성능을 입증합니다. 데모 비디오는 부록 자료에 제공됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.12405v1
+
+## 개요
+VLA-R은 제한된 훈련 데이터로 인해 발생하는 개방형 세계(end-to-end) 자율주행의 일반화 문제를 해결하기 위해 설계되었습니다. 이 프레임워크는 동결된(frozen) 비전-언어 모델을 활용하여 개방형 세계 탐지 및 분할을 수행하고, 다중 스케일, 프롬프트 유도, 해석 가능한 인식 특징을 획득합니다. 또한 Q-Former 병목을 통해 세밀한 시각 표현과 언어 정렬 특징을 융합하여 인식과 행동 영역을 연결합니다. 추가로, VLA-R은 시각-행동 대조 학습 메커니즘을 도입하여 비전-언어 및 행동 임베딩을 정렬함으로써 효과적인 개방형 세계 추론과 행동 검색을 구현합니다. 실제 로봇 플랫폼에서의 실험은 데이터가 제한된 상황에서도 VLA-R이 비구조적이고 알려지지 않은 환경에서 강력한 일반화 및 탐색 성능을 보여줌을 입증합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+VLA-R의 핵심 프레임워크는 세 가지 주요 구성 요소를 포함합니다:
+- **개방형 세계 인식 모듈**: 동결된 비전-언어 모델(예: CLIP)을 사용하여 개방형 세계 탐지 및 분할을 수행하며, 도메인 특화 미세 조정 없이 다중 스케일, 프롬프트 유도, 해석 가능한 인식 특징을 생성합니다.
+- **Q-Former 병목**: 이 모듈은 세밀한 시각 표현과 언어 정렬 시각 특징을 집계하여 인식과 행동 영역을 효과적으로 연결하고 특징의 전이 가능성을 보장합니다.
+- **시각-행동 대조 학습**: 대조 학습을 통해 비전-언어 임베딩과 행동 임베딩을 정렬하여 모델이 개방형 세계 추론을 기반으로 행동 검색을 수행할 수 있게 하여 전이 가능한 운전 행동을 학습합니다.
+
+### 실험 설정
+- **플랫폼**: 실제 로봇 플랫폼에서 실험을 수행하며, 테스트 환경은 비구조적이고 알려지지 않은 시나리오입니다.
+- **데이터**: 훈련 데이터는 제한적이며, 모델의 일반화 능력을 검증하는 데 중점을 둡니다.
+- **평가 지표**: 주로 보지 못한 환경에서의 일반화 성능과 탐색 능력에 초점을 맞추며, 데모 비디오를 통해 정성적 결과를 제시합니다.
+
+### 주요 결과
+- 비구조적이고 알려지지 않은 환경에서 VLA-R은 강력한 일반화 능력을 보여주며, 훈련 데이터가 제한적이어도 개방형 세계 시나리오를 효과적으로 처리합니다.
+- 시각-행동 대조 학습은 행동 검색의 정확성을 크게 향상시켜 모델이 개방형 세계 인식 특징을 기반으로 합리적인 결정을 내릴 수 있게 합니다.
+- 기준 방법과 비교하여 VLA-R은 탐색 성능에서 더 우수하며, 훈련 중에 나타나지 않은 환경 조건에도 적응할 수 있습니다.
+
+### 결론
+VLA-R은 개방형 세계 인식과 시각-행동 검색 패러다임을 융합하여 개방형 세계에서의 엔드투엔드 자율주행 일반화 문제에 효과적인 솔루션을 제공합니다. 도메인 특화 미세 조정이 필요 없는 특성 덕분에 데이터가 부족한 시나리오에서 실용적인 적용 가능성을 지닙니다. 향후 작업은 Q-Former 병목과 대조 학습 전략을 더 최적화하여 복잡한 환경에서의 견고성을 향상시킬 수 있습니다.

@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31909v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31909v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (896 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -90,11 +91,28 @@ CoDex 通过融合 VLM 的语义理解与优化方法的物理精确性，为零
 ## Overview
 In this work, we study Compositional Dexterous Functional Object Manipulation (CD-FOM): tasks such as aiming and actuating a spray bottle on a plant or a glue gun on wood, which require both actuating an object's internal mechanism and controlling its pose to apply the object's function to the environment. These tasks pose significant challenges for robots due to the demanding integration of semantic understanding of the object's function, actuation mode, and application area with intricate physical dexterity to manage grasp stability, movement trajectory, and actuation. We introduce CoDex, a zero-demonstration framework that autonomously discovers CD-FOM manipulation strategies. CoDex uses vision-language models (VLMs) to infer semantic constraints from the task and scene. These constraints guide analytic constrained optimization to generate a short list of functional grasp candidates that can be efficiently refined with reinforcement learning to generate full grasp-move-actuate policies transferable from simulation to the real world. We evaluate CoDex on a 7-DoF robot arm with a 16-DoF multi-fingered hand across six CD-FOM tasks involving previously unseen objects with internal mechanisms, including spray bottles, hot glue guns, air dusters, flashlights, and pepper grinders, and their application to unseen target objects, showcasing its ability to autonomously discover and execute complex, physically viable dexterous behaviors without human demonstrations. More information at https://robin-lab.cs.utexas.edu/CoDex/.
 
-## 개요
-본 연구에서는 구성적 손재주 기능적 물체 조작(CD-FOM)을 다룹니다. 이는 식물에 분무기 조준 및 작동, 나무에 글루건 사용 등 물체의 내부 메커니즘을 작동시키면서 동시에 물체의 자세를 제어하여 환경에 기능을 적용하는 작업을 포함합니다. 이러한 작업은 물체의 기능, 작동 방식, 적용 영역에 대한 의미론적 이해와 파지 안정성, 이동 궤적, 작동을 관리하는 정교한 물리적 손재주를 통합해야 하므로 로봇에게 큰 도전 과제가 됩니다. 우리는 CD-FOM 조작 전략을 자율적으로 발견하는 제로 데모 프레임워크인 CoDex를 소개합니다. CoDex는 비전-언어 모델(VLM)을 사용하여 작업과 장면에서 의미론적 제약 조건을 추론합니다. 이러한 제약 조건은 분석적 제약 최적화를 안내하여 기능적 파지 후보의 짧은 목록을 생성하며, 이를 강화 학습으로 효율적으로 개선하여 시뮬레이션에서 실제 세계로 전이 가능한 완전한 파지-이동-작동 정책을 생성합니다. 우리는 7-DoF 로봇 팔과 16-DoF 다지 손을 사용하여 분무기, 핫 글루건, 에어 더스터, 손전등, 후추 그라인더 등 내부 메커니즘을 가진 이전에 본 적 없는 물체와 보지 못한 대상 물체에의 적용을 포함한 여섯 가지 CD-FOM 작업에서 CoDex를 평가하며, 인간 시연 없이 복잡하고 물리적으로 실행 가능한 손재주 행동을 자율적으로 발견하고 실행하는 능력을 입증합니다. 자세한 정보는 https://robin-lab.cs.utexas.edu/CoDex/에서 확인할 수 있습니다.
-
-## 핵심 내용
-본 연구에서는 구성적 손재주 기능적 물체 조작(CD-FOM)을 다룹니다. 이는 식물에 분무기 조준 및 작동, 나무에 글루건 사용 등 물체의 내부 메커니즘을 작동시키면서 동시에 물체의 자세를 제어하여 환경에 기능을 적용하는 작업을 포함합니다. 이러한 작업은 물체의 기능, 작동 방식, 적용 영역에 대한 의미론적 이해와 파지 안정성, 이동 궤적, 작동을 관리하는 정교한 물리적 손재주를 통합해야 하므로 로봇에게 큰 도전 과제가 됩니다. 우리는 CD-FOM 조작 전략을 자율적으로 발견하는 제로 데모 프레임워크인 CoDex를 소개합니다. CoDex는 비전-언어 모델(VLM)을 사용하여 작업과 장면에서 의미론적 제약 조건을 추론합니다. 이러한 제약 조건은 분석적 제약 최적화를 안내하여 기능적 파지 후보의 짧은 목록을 생성하며, 이를 강화 학습으로 효율적으로 개선하여 시뮬레이션에서 실제 세계로 전이 가능한 완전한 파지-이동-작동 정책을 생성합니다. 우리는 7-DoF 로봇 팔과 16-DoF 다지 손을 사용하여 분무기, 핫 글루건, 에어 더스터, 손전등, 후추 그라인더 등 내부 메커니즘을 가진 이전에 본 적 없는 물체와 보지 못한 대상 물체에의 적용을 포함한 여섯 가지 CD-FOM 작업에서 CoDex를 평가하며, 인간 시연 없이 복잡하고 물리적으로 실행 가능한 손재주 행동을 자율적으로 발견하고 실행하는 능력을 입증합니다. 자세한 정보는 https://robin-lab.cs.utexas.edu/CoDex/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31909v1
+
+## 개요
+CoDex는 조합형 다기능 물체 조작(CD-FOM) 작업을 위해 설계되었으며, 이러한 작업은 로봇이 물체의 내부 메커니즘을 동시에 조작하고 자세를 제어하여 환경에 기능을 적용해야 합니다. 이 프레임워크는 시각 언어 모델(VLM)을 사용하여 작업과 장면에서 의미적 제약 조건을 추론하고, 해석적 제약 최적화를 통해 소수의 기능적 파지 후보를 생성한 후, 강화 학습으로 전체 파지-이동-작동 전략을 효율적으로 최적화합니다. 16자유도 다지 손을 갖춘 7자유도 로봇 팔에서 CoDex는 내부 메커니즘이 보이지 않는 물체(예: 스프레이 병, 핫 글루건, 에어 블로어, 손전등, 후추 그라인더)를 포함한 여섯 가지 작업에서 제로 데모 자율 발견으로 복잡한 다기능 행동을 성공적으로 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+CoDex는 3단계 파이프라인을 채택합니다:
+- **의미적 제약 추론**: 시각 언어 모델(VLM)을 사용하여 작업 장면을 분석하고 물체 기능, 조작 모드 및 적용 영역과 관련된 의미적 제약 조건을 추출합니다.
+- **기능적 파지 생성**: 의미적 제약 조건을 기반으로 해석적 제약 최적화를 수행하여 소수의 실행 가능한 기능적 파지 후보를 생성하며, 파지 자세가 안정성과 기능 실행 요구를 동시에 충족하도록 보장합니다.
+- **전략 최적화 및 전이**: 강화 학습을 통해 파지 후보를 효율적으로 최적화하여 완전한 grasp-move-actuate 전략을 생성하고, 시뮬레이션 환경에서 실제 세계로의 제로샷 전이를 구현합니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 16자유도 다지 손을 갖춘 7자유도 로봇 팔.
+- **작업 세트**: 내부 메커니즘이 보이지 않는 물체(스프레이 병, 핫 글루건, 에어 블로어, 손전등, 후추 그라인더)와 보이지 않는 대상 물체에 대한 적용을 포함한 여섯 가지 CD-FOM 작업.
+- **평가 지표**: 작업 성공률, 전략 물리적 실행 가능성, 제로 데모 자율 발견 능력.
+
+### 주요 결과
+- CoDex는 여섯 가지 모든 작업에서 인간 데모 없이 복잡한 다기능 행동을 성공적으로 자율 발견하고 실행했습니다.
+- 생성된 전략은 시뮬레이션과 실제 세계 간에 우수한 전이성을 보여주며 프레임워크의 일반화 능력을 검증했습니다.
+- 기준 방법과 비교하여 CoDex는 기능적 파지 생성 효율성과 전략 물리적 실행 가능성 모두에서 상당한 우위를 확보했습니다.
+
+### 결론
+CoDex는 VLM의 의미적 이해와 최적화 방법의 물리적 정밀성을 융합하여 제로 데모 다기능 조작에 효과적인 솔루션을 제공하며, 로봇이 복잡한 기능적 작업을 자율적으로 수행하는 새로운 경로를 열었습니다. 자세한 정보는 https://robin-lab.cs.utexas.edu/CoDex/ 에서 확인할 수 있습니다.

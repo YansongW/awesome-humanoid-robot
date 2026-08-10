@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/07/abb-robotics-completes-its-ai-powered-visual-slam-amr-portfolio-with-new-autonomous-forklift/26815.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/07/abb-robotics-completes-its-ai-powered-visual-slam-amr-portfolio-with-new-autonomous-forklift/26815.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (506 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -74,15 +75,21 @@ ABB Robotics 发布了新型自主叉车 Flexley Stack F712，标志着其 AI �
 - Customers can now deploy mixed fleets of Visual SLAM-powered tugs, movers and forklifts on a common navigation, fleet management and software platform.
 - Powered by ABB Robotics
 
-## 개요
-- 새로운 Flexley Stack F712는 ABB Robotics의 AI 기반 Visual SLAM 기술을 자율 지게차로 확장하여 팔레트 운송 및 고밀도 보관을 가능하게 합니다.
-- 고객은 이제 Visual SLAM 기반의 견인차, 이동차 및 지게차로 구성된 혼합 차량군을 공통 내비게이션, 차량 관리 및 소프트웨어 플랫폼에서 배포할 수 있습니다.
-- ABB Robotics 제공
-
-## 핵심 내용
-- 새로운 Flexley Stack F712는 ABB Robotics의 AI 기반 Visual SLAM 기술을 자율 지게차로 확장하여 팔레트 운송 및 고밀도 보관을 가능하게 합니다.
-- 고객은 이제 Visual SLAM 기반의 견인차, 이동차 및 지게차로 구성된 혼합 차량군을 공통 내비게이션, 차량 관리 및 소프트웨어 플랫폼에서 배포할 수 있습니다.
-- ABB Robotics 제공
-
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/07/07/abb-robotics-completes-its-ai-powered-visual-slam-amr-portfolio-with-new-autonomous-forklift/26815
+
+## 개요
+ABB Robotics는 AI 기반 Visual SLAM AMR 제품 포트폴리오를 완성하며 Flexley Stack F712 자율 지게차를 출시했습니다. 이 지게차는 고급 Visual SLAM 기술을 팔레트 운송 및 고밀도 창고 시나리오에 적용하여 자율 내비게이션과 정밀 위치 파악을 구현합니다. 더 중요한 점은, 고객이 이제 공통 내비게이션, 차량 관리 및 소프트웨어 플랫폼에서 Visual SLAM 기반 트레일러, 이동 플랫폼 및 지게차로 구성된 혼합 차량군을 배포하여 전반적인 물류 효율성을 향상시킬 수 있다는 것입니다.
+
+## 핵심 내용
+### 제품 출시
+ABB Robotics는 새로운 자율 지게차 Flexley Stack F712를 출시하여 AI 기반 Visual SLAM 기술이 자율 지게차 분야로 공식 확장되었음을 알렸습니다.
+
+### 핵심 기능
+이 지게차는 Visual SLAM 기술을 활용하여 외부 마커나 인프라에 의존하지 않고 자율 팔레트 운송 및 고밀도 저장 작업을 수행할 수 있습니다.
+
+### 플랫폼 통합
+고객은 이제 통합 내비게이션, 차량 관리 및 소프트웨어 플랫폼에서 Visual SLAM 기반 트레일러, 이동 플랫폼 및 지게차로 구성된 혼합 차량군을 배포할 수 있습니다. 이를 통해 서로 다른 차종 간의 협업 작업과 통합 스케줄링이 가능해집니다.
+
+### 기술 출처
+이 제품은 ABB Robotics의 기술 지원을 받아 제공됩니다.

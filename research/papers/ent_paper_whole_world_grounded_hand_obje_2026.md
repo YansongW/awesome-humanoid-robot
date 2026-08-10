@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.22209v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.22209v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (865 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,25 @@ WHOLE 通过引入联合生成先验，有效解决了第一人称视频中手-�
 ## Overview
 Egocentric manipulation videos are highly challenging due to severe occlusions during interactions and frequent object entries and exits from the camera view as the person moves. Current methods typically focus on recovering either hand or object pose in isolation, but both struggle during interactions and fail to handle out-of-sight cases. Moreover, their independent predictions often lead to inconsistent hand-object relations. We introduce WHOLE, a method that holistically reconstructs hand and object motion in world space from egocentric videos given object templates. Our key insight is to learn a generative prior over hand-object motion to jointly reason about their interactions. At test time, the pretrained prior is guided to generate trajectories that conform to the video observations. This joint generative reconstruction substantially outperforms approaches that process hands and objects separately followed by post-processing. WHOLE achieves state-of-the-art performance on hand motion estimation, 6D object pose estimation, and their relative interaction reconstruction. Project website: https://judyye.github.io/whole-www
 
-## 개요
-자기중심적 조작 비디오는 상호작용 중 심각한 가려짐과 사람이 움직임에 따라 카메라 시야에서 물체가 자주 들어오고 나가는 현상으로 인해 매우 도전적입니다. 현재 방법들은 일반적으로 손 또는 물체 포즈를 개별적으로 복원하는 데 초점을 맞추지만, 둘 다 상호작용 중에 어려움을 겪고 시야 밖의 경우를 처리하지 못합니다. 게다가, 그들의 독립적인 예측은 종종 일관되지 않은 손-물체 관계를 초래합니다. 우리는 WHOLE을 소개합니다. 이 방법은 물체 템플릿이 주어진 자기중심적 비디오에서 세계 공간에서 손과 물체의 움직임을 전체적으로 재구성합니다. 우리의 핵심 통찰은 손-물체 움직임에 대한 생성적 사전 지식을 학습하여 상호작용을 공동으로 추론하는 것입니다. 테스트 시, 사전 학습된 사전 지식은 비디오 관찰에 부합하는 궤적을 생성하도록 안내됩니다. 이 공동 생성적 재구성은 손과 물체를 별도로 처리한 후 후처리하는 접근 방식보다 훨씬 뛰어난 성능을 보입니다. WHOLE은 손 움직임 추정, 6D 물체 포즈 추정 및 상대적 상호작용 재구성에서 최첨단 성능을 달성합니다. 프로젝트 웹사이트: https://judyye.github.io/whole-www
-
-## 핵심 내용
-자기중심적 조작 비디오는 상호작용 중 심각한 가려짐과 사람이 움직임에 따라 카메라 시야에서 물체가 자주 들어오고 나가는 현상으로 인해 매우 도전적입니다. 현재 방법들은 일반적으로 손 또는 물체 포즈를 개별적으로 복원하는 데 초점을 맞추지만, 둘 다 상호작용 중에 어려움을 겪고 시야 밖의 경우를 처리하지 못합니다. 게다가, 그들의 독립적인 예측은 종종 일관되지 않은 손-물체 관계를 초래합니다. 우리는 WHOLE을 소개합니다. 이 방법은 물체 템플릿이 주어진 자기중심적 비디오에서 세계 공간에서 손과 물체의 움직임을 전체적으로 재구성합니다. 우리의 핵심 통찰은 손-물체 움직임에 대한 생성적 사전 지식을 학습하여 상호작용을 공동으로 추론하는 것입니다. 테스트 시, 사전 학습된 사전 지식은 비디오 관찰에 부합하는 궤적을 생성하도록 안내됩니다. 이 공동 생성적 재구성은 손과 물체를 별도로 처리한 후 후처리하는 접근 방식보다 훨씬 뛰어난 성능을 보입니다. WHOLE은 손 움직임 추정, 6D 물체 포즈 추정 및 상대적 상호작용 재구성에서 최첨단 성능을 달성합니다. 프로젝트 웹사이트: https://judyye.github.io/whole-www
-
 ## 参考
 - http://arxiv.org/abs/2602.22209v1
+
+## 개요
+1인칭 시점의 조작 영상은 상호작용 과정에서의 심각한 가림 및 물체의 잦은 시야 이탈로 인해 매우 도전적입니다. 기존 방법들은 일반적으로 손이나 물체의 자세를 개별적으로 복원하여 상호작용 장면에서 성능이 저조하며, 물체가 시야를 벗어나는 경우를 처리하지 못해 손-물체 관계의 일관성이 깨집니다. WHOLE은 사전 학습된 생성 사전(distribution prior)을 도입하여 테스트 시점에 영상 관측과 일치하는 운동 궤적을 생성하도록 유도함으로써, 전역 공간에서 손과 물체의 운동을 공동으로 재구성합니다. 이 방법은 손 운동 추정, 6D 물체 자세 추정 및 상대적 상호작용 재구성에서 모두 최신 성능(state-of-the-art)을 달성했습니다.
+
+## 핵심 내용
+### 방법 개요
+WHOLE의 핵심 아이디어는 손-물체 공동 운동의 생성 사전을 학습하는 것입니다. 이 사전은 훈련 단계에서 대량의 상호작용 데이터로부터 손과 물체 간의 물리적 제약 및 운동 규칙을 포착합니다. 테스트 단계에서는 1인칭 영상과 물체 템플릿이 주어지면, 이 사전이 가이드로 사용되어 영상 관측과 일치하는 전역 궤적을 생성합니다.
+
+### 구조 및 실험 설정
+- **입력**: 1인칭 영상(egocentric video) 및 알려진 물체 템플릿(object templates).
+- **출력**: 전역 세계 좌표계(world space)에서의 손과 물체의 완전한 운동 궤적.
+- **핵심 메커니즘**: 생성 사전을 이용한 공동 추론으로, 손과 물체 자세를 개별적으로 추정한 후 후처리 정렬을 수행하는 방식이 아닙니다. 이를 통해 물체가 시야를 벗어나는(out-of-sight) 상황을 처리하고 손-물체 상호작용 관계의 일관성을 유지할 수 있습니다.
+
+### 주요 성능 수치
+- 손 운동 추정(hand motion estimation) 작업에서 최신 성능(state-of-the-art) 달성.
+- 6D 물체 자세 추정(6D object pose estimation) 작업에서도 최적의 결과 달성.
+- 상대적 상호작용 재구성(relative interaction reconstruction) 지표에서 손과 물체를 개별적으로 처리하는 방법보다 현저히 우수한 성능.
+
+### 결론
+WHOLE은 공동 생성 사전을 도입하여 1인칭 영상에서의 손-물체 상호작용 재구성의 가림 및 불일치 문제를 효과적으로 해결하며, 로봇이 인간 시연으로부터 조작 기술을 학습하는 데 더 신뢰할 수 있는 전역 운동 데이터를 제공합니다. 프로젝트 웹사이트: https://judyye.github.io/whole-www

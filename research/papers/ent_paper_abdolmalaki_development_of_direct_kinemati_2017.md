@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1707.04820v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1707.04820v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (601 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,25 @@ This paper discusses modeling two 6 DOF arm robots. The first step of modeling a
 ## Content
 This paper discusses modeling two 6 DOF arm robots. The first step of modeling a robot is establishing its Denavit-Hartenberg parameters. It requires assigning proper coordinates for each link and finding their exact dimensions. In this project we will develop the direct kinematics and workspace representations for two manipulators: the Smokie Robot and the Barrett WAM. After finding the D-H parameters and creating Transformation Matrices, MATLAB programming is used to represent their workspaces.
 
-## 개요
-본 논문은 두 개의 6 자유도(DOF) 암 로봇을 모델링하는 방법에 대해 논의합니다. 로봇 모델링의 첫 번째 단계는 Denavit-Hartenberg 매개변수를 설정하는 것입니다. 이를 위해서는 각 링크에 적절한 좌표를 할당하고 정확한 치수를 찾아야 합니다. 이 프로젝트에서는 Smokie Robot과 Barrett WAM이라는 두 매니퓰레이터의 직접 기구학(direct kinematics)과 작업 공간(workspace) 표현을 개발할 것입니다. D-H 매개변수를 찾고 변환 행렬(Transformation Matrices)을 생성한 후, MATLAB 프로그래밍을 사용하여 이들의 작업 공간을 표현합니다.
-
-## 핵심 내용
-본 논문은 두 개의 6 자유도(DOF) 암 로봇을 모델링하는 방법에 대해 논의합니다. 로봇 모델링의 첫 번째 단계는 Denavit-Hartenberg 매개변수를 설정하는 것입니다. 이를 위해서는 각 링크에 적절한 좌표를 할당하고 정확한 치수를 찾아야 합니다. 이 프로젝트에서는 Smokie Robot과 Barrett WAM이라는 두 매니퓰레이터의 직접 기구학(direct kinematics)과 작업 공간(workspace) 표현을 개발할 것입니다. D-H 매개변수를 찾고 변환 행렬(Transformation Matrices)을 생성한 후, MATLAB 프로그래밍을 사용하여 이들의 작업 공간을 표현합니다.
-
 ## 参考
 - http://arxiv.org/abs/1707.04820v2
+
+## 개요
+연구는 두 종류의 6자유도 로봇 팔의 모델링에 초점을 맞춘다: Smokie Robot과 Barrett WAM. 먼저 각 링크에 적절한 좌표계를 설정하고 정확한 치수를 결정하여 Denavit-Hartenberg 파라미터를 도출한다. 이러한 파라미터를 기반으로 변환 행렬을 구축한 후, MATLAB 프로그래밍을 통해 정기구학 계산을 구현한다. 마지막으로 몬테카를로 샘플링 방법을 사용하여 작업 공간을 3차원으로 시각화하고, 여러 시점에서 로봇 팔의 도달 가능 영역을 보여준다.
+
+## 핵심 내용
+### 방법
+- Smokie Robot과 Barrett WAM(6자유도 구성)에 대해 각각 Denavit-Hartenberg 파라미터를 설정하며, 각 링크의 좌표계 할당과 치수 측정을 포함한다.
+- D-H 파라미터를 기반으로 정기구학 변환 행렬을 도출하여 관절 공간에서 데카르트 공간으로의 매핑을 구현한다.
+
+### 실험 설정
+- MATLAB 프로그래밍을 사용하여 기구학 계산과 작업 공간 생성을 구현한다.
+- 몬테카를로 샘플링 방법을 사용한다: 관절 각도 범위 내에서 무작위로 많은 샘플 포인트를 생성하고, 정기구학 변환을 통해 엔드 이펙터 위치를 얻어 작업 공간 포인트 클라우드를 구축한다.
+
+### 주요 결과
+- 두 로봇 팔에 대한 완전한 D-H 파라미터 테이블과 변환 행렬을 성공적으로 획득했다.
+- 3차원 작업 공간 시각화는 여러 시점(예: 평면도, 측면도, 등축 측정 뷰)에서 제공되며, Smokie Robot과 Barrett WAM의 도달 가능 영역의 형태와 범위를 명확히 보여준다.
+
+### 결론
+- 제안된 방법은 후속 기구학 분석, 궤적 계획 및 충돌 회피 연구를 위한 기본 모델을 제공한다.
+- MATLAB 몬테카를로 샘플링 방법은 고해상도 작업 공간 표현을 효과적으로 생성할 수 있으며, 다양한 구성의 로봇 팔 비교 분석에 적합하다.

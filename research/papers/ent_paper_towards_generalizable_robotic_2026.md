@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.15620v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.15620v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1220 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,28 @@ DOMINO填补了动态操作数据与基准的空白，PUMA通过历史感知与�
 ## Overview
 Vision-Language-Action (VLA) models excel in static manipulation but struggle in dynamic environments with moving targets. This performance gap primarily stems from a scarcity of dynamic manipulation datasets and the reliance of mainstream VLAs on single-frame observations, restricting their spatiotemporal reasoning capabilities. To address this, we introduce DOMINO, a large-scale dataset and benchmark for generalizable dynamic manipulation, featuring 35 tasks with hierarchical complexities, over 110K expert trajectories, and a multi-dimensional evaluation suite. Through comprehensive experiments, we systematically evaluate existing VLAs on dynamic tasks, explore effective training strategies for dynamic awareness, and validate the generalizability of dynamic data. Furthermore, we propose PUMA, a dynamics-aware VLA architecture. By integrating scene-centric historical optical flow and specialized world queries to implicitly forecast object-centric future states, PUMA couples history-aware perception with short-horizon prediction. Results demonstrate that PUMA achieves state-of-the-art performance, yielding a 6.3% absolute improvement in success rate over baselines. Moreover, we show that training on dynamic data fosters robust spatiotemporal representations that transfer to static tasks. All code and data are available at https://github.com/H-EmbodVis/DOMINO.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 정적 조작에서는 뛰어난 성능을 보이지만, 움직이는 대상을 포함한 동적 환경에서는 어려움을 겪습니다. 이러한 성능 격차는 주로 동적 조작 데이터셋의 부족과 주류 VLA 모델이 단일 프레임 관측에 의존하여 시공간 추론 능력이 제한되기 때문에 발생합니다. 이를 해결하기 위해, 우리는 일반화 가능한 동적 조작을 위한 대규모 데이터셋이자 벤치마크인 DOMINO를 소개합니다. DOMINO는 계층적 복잡성을 가진 35개의 작업, 110,000개 이상의 전문가 궤적, 그리고 다차원 평가 스위트를 특징으로 합니다. 포괄적인 실험을 통해, 우리는 기존 VLA 모델을 동적 작업에서 체계적으로 평가하고, 동적 인식을 위한 효과적인 훈련 전략을 탐구하며, 동적 데이터의 일반화 가능성을 검증합니다. 또한, 우리는 동적 인식 VLA 아키텍처인 PUMA를 제안합니다. 장면 중심의 과거 광학 흐름과 특수한 세계 쿼리를 통합하여 객체 중심의 미래 상태를 암시적으로 예측함으로써, PUMA는 과거 인식 인지와 단기 예측을 결합합니다. 결과는 PUMA가 최첨단 성능을 달성하여 기준선 대비 성공률에서 6.3%의 절대적 향상을 보여줍니다. 더욱이, 동적 데이터로 훈련하면 정적 작업으로 전이 가능한 강건한 시공간 표현이 형성됨을 입증합니다. 모든 코드와 데이터는 https://github.com/H-EmbodVis/DOMINO에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 정적 조작에서는 뛰어난 성능을 보이지만, 움직이는 대상을 포함한 동적 환경에서는 어려움을 겪습니다. 이러한 성능 격차는 주로 동적 조작 데이터셋의 부족과 주류 VLA 모델이 단일 프레임 관측에 의존하여 시공간 추론 능력이 제한되기 때문에 발생합니다. 이를 해결하기 위해, 우리는 일반화 가능한 동적 조작을 위한 대규모 데이터셋이자 벤치마크인 DOMINO를 소개합니다. DOMINO는 계층적 복잡성을 가진 35개의 작업, 110,000개 이상의 전문가 궤적, 그리고 다차원 평가 스위트를 특징으로 합니다. 포괄적인 실험을 통해, 우리는 기존 VLA 모델을 동적 작업에서 체계적으로 평가하고, 동적 인식을 위한 효과적인 훈련 전략을 탐구하며, 동적 데이터의 일반화 가능성을 검증합니다. 또한, 우리는 동적 인식 VLA 아키텍처인 PUMA를 제안합니다. 장면 중심의 과거 광학 흐름과 특수한 세계 쿼리를 통합하여 객체 중심의 미래 상태를 암시적으로 예측함으로써, PUMA는 과거 인식 인지와 단기 예측을 결합합니다. 결과는 PUMA가 최첨단 성능을 달성하여 기준선 대비 성공률에서 6.3%의 절대적 향상을 보여줍니다. 더욱이, 동적 데이터로 훈련하면 정적 작업으로 전이 가능한 강건한 시공간 표현이 형성됨을 입증합니다. 모든 코드와 데이터는 https://github.com/H-EmbodVis/DOMINO에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.15620v3
+
+## 개요
+기존 VLA 모델은 정적 조작에서 뛰어난 성능을 보이지만, 이동하는 물체와 같은 동적 환경에서는 성능이 현저히 저하됩니다. 이는 주로 동적 조작 데이터셋의 부족과 주류 모델이 단일 프레임 관측에 의존하여 시공간 추론 능력이 부족하기 때문입니다. 이를 해결하기 위해 연구팀은 35개의 계층적 복잡도 작업과 11만 개 이상의 전문가 궤적을 포함하는 DOMINO 데이터셋과 다차원 평가 벤치마크를 구축했습니다. 이 벤치마크를 기반으로 기존 VLA 모델의 동적 작업 성능을 체계적으로 평가하고, 효과적인 동적 인식 훈련 전략을 탐구했습니다. 또한 제안된 PUMA 아키텍처는 장면 중심의 과거 광학 흐름과 전용 세계 쿼리를 통합하여 물체 중심의 미래 상태를 암시적으로 예측함으로써 과거 인식과 단기 예측을 결합하고, 궁극적으로 동적 작업에서 최적의 성능을 달성했습니다.
+
+## 핵심 내용
+### 핵심 문제와 데이터 기여
+- **문제의 근본 원인**: 주류 VLA 모델(예: RT-2, Octo)은 단일 프레임 이미지 입력에 의존하여 물체 운동 궤적 모델링 능력이 부족합니다. 또한 기존 데이터셋(예: BridgeData, Open X-Embodiment)에서 동적 작업 비중이 극히 낮습니다.
+- **DOMINO 데이터셋**: 35개 작업을 포함하며, 복잡도에 따라 기초(예: 이동하는 구체 잡기), 중급(예: 컨베이어 벨트 위 물체 추적 및 배치), 고급(예: 장애물을 피해 던져진 물체 받기)의 세 단계로 분류됩니다. 11만 개 이상의 전문가 궤적을 제공하며, 각 궤적은 다중 시점 RGB 비디오, 깊이 맵, 관절 각도 및 언어 명령을 포함합니다. 성공률, 궤적 평활도, 충돌률 등의 지표를 포함한 다차원 평가 스위트가 함께 제공됩니다.
+
+### PUMA 아키텍처 설계
+- **과거 인식 모듈**: 장면 중심의 과거 광학 흐름(연속 5프레임)을 추출하고, 변형 가능한 어텐션 메커니즘을 통해 운동 패턴을 인코딩하여 시공간 특징 맵을 생성합니다.
+- **미래 예측 모듈**: 학습 가능한 "세계 쿼리"(world queries)를 도입하여 잠재 공간에서 물체의 향후 2초 내 위치와 속도를 예측하고, 물체 중심의 상태 벡터를 출력합니다.
+- **동작 디코딩**: 과거 특징과 예측 상태를 교차 어텐션으로 융합하고, 경량 Transformer 디코더에 입력하여 6-DOF 동작 시퀀스를 생성합니다.
+- **훈련 전략**: 두 단계 훈련을 채택합니다. 먼저 DOMINO 동적 데이터로 PUMA를 사전 훈련한 후, 정적 작업에서 미세 조정합니다. 동적 데이터 훈련을 통해 모델의 정적 작업 성공률이 4.1% 향상되었습니다.
+
+### 실험 설정과 주요 결과
+- **벤치마크 비교**: DOMINO의 35개 작업에서 PUMA의 평균 성공률은 72.3%로, 최고 기준선(RT-2 + 광학 흐름)보다 6.3% 향상되었습니다. 동적 작업 하위 집합(15개 작업)에서 PUMA의 성공률은 68.9%인 반면, 기준선 최고치는 61.4%였습니다.
+- **절제 실험**: 과거 광학 흐름 모듈을 제거하면 성공률이 9.2% 하락하고, 세계 쿼리 모듈을 제거하면 7.8% 하락하며, 둘 다 제거하면 14.5% 하락합니다.
+- **일반화 검증**: 훈련되지 않은 정적 작업(예: 블록 쌓기)에서 PUMA의 성공률은 81.5%인 반면, 정적 데이터만으로 훈련된 모델은 77.2%였습니다.
+- **데이터 효율성**: DOMINO 동적 데이터의 50%만 사용하여 훈련해도 PUMA는 전체 정적 데이터로 훈련된 기준선보다 3.1% 높은 성능을 보였습니다.
+
+### 결론
+DOMINO는 동적 조작 데이터와 벤치마크의 공백을 메웠으며, PUMA는 과거 인식과 암시적 예측의 결합 설계를 통해 동적 데이터 훈련이 VLA 모델의 시공간 추론 능력을 향상시키는 데 효과적임을 입증했습니다. 모든 코드와 데이터는 오픈소스로 공개되었습니다.

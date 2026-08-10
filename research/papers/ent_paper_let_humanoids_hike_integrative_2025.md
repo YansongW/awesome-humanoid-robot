@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.06218v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.06218v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1171 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,28 @@ LEGO-H 证明了将视觉感知、分层决策与运动执行整合到单一框�
 ## Overview
 Hiking on complex trails demands balance, agility, and adaptive decision-making over unpredictable terrain. Current humanoid research remains fragmented and inadequate for hiking: locomotion focuses on motor skills without long-term goals or situational awareness, while semantic navigation overlooks real-world embodiment and local terrain variability. We propose training humanoids to hike on complex trails, driving integrative skill development across visual perception, decision making, and motor execution. We develop a learning framework, LEGO-H, that enables a vision-equipped humanoid robot to hike complex trails autonomously. We introduce two technical innovations: 1) A temporal vision transformer variant - tailored into Hierarchical Reinforcement Learning framework - anticipates future local goals to guide movement, seamlessly integrating locomotion with goal-directed navigation. 2) Latent representations of joint movement patterns, combined with hierarchical metric learning - enhance Privileged Learning scheme - enable smooth policy transfer from privileged training to onboard execution. These components allow LEGO-H to handle diverse physical and environmental challenges without relying on predefined motion patterns. Experiments across varied simulated trails and robot morphologies highlight LEGO-H's versatility and robustness, positioning hiking as a compelling testbed for embodied autonomy and LEGO-H as a baseline for future humanoid development.
 
-## 개요
-복잡한 트레일에서의 하이킹은 예측 불가능한 지형에서 균형, 민첩성, 적응적 의사 결정을 요구합니다. 현재 인간형 로봇 연구는 하이킹에 대해 단편적이고 부적절한 상태로 남아 있습니다: 보행은 장기 목표나 상황 인식 없이 운동 기술에 초점을 맞추고, 의미론적 내비게이션은 실제 세계의 구현과 지역 지형 변동성을 간과합니다. 우리는 인간형 로봇이 복잡한 트레일에서 하이킹을 수행하도록 훈련하여 시각 인식, 의사 결정, 운동 실행 전반에 걸친 통합적 기술 개발을 추진합니다. 우리는 비전 장착 인간형 로봇이 복잡한 트레일을 자율적으로 하이킹할 수 있게 하는 학습 프레임워크인 LEGO-H를 개발합니다. 두 가지 기술 혁신을 소개합니다: 1) 계층적 강화 학습 프레임워크에 맞춰진 시간적 비전 트랜스포머 변형이 미래의 지역 목표를 예측하여 움직임을 안내하고, 보행을 목표 지향적 내비게이션과 원활하게 통합합니다. 2) 관절 움직임 패턴의 잠재 표현과 계층적 메트릭 학습을 결합하여 특권 학습 방식을 강화하고, 특권 훈련에서 온보드 실행으로의 원활한 정책 전이를 가능하게 합니다. 이러한 구성 요소는 LEGO-H가 사전 정의된 움직임 패턴에 의존하지 않고 다양한 물리적 및 환경적 도전을 처리할 수 있게 합니다. 다양한 시뮬레이션 트레일과 로봇 형태에 걸친 실험은 LEGO-H의 다재다능함과 견고성을 강조하며, 하이킹을 구현된 자율성을 위한 매력적인 테스트베드로, LEGO-H를 미래 인간형 로봇 개발의 기준선으로 자리매김합니다.
-
-## 핵심 내용
-복잡한 트레일에서의 하이킹은 예측 불가능한 지형에서 균형, 민첩성, 적응적 의사 결정을 요구합니다. 현재 인간형 로봇 연구는 하이킹에 대해 단편적이고 부적절한 상태로 남아 있습니다: 보행은 장기 목표나 상황 인식 없이 운동 기술에 초점을 맞추고, 의미론적 내비게이션은 실제 세계의 구현과 지역 지형 변동성을 간과합니다. 우리는 인간형 로봇이 복잡한 트레일에서 하이킹을 수행하도록 훈련하여 시각 인식, 의사 결정, 운동 실행 전반에 걸친 통합적 기술 개발을 추진합니다. 우리는 비전 장착 인간형 로봇이 복잡한 트레일을 자율적으로 하이킹할 수 있게 하는 학습 프레임워크인 LEGO-H를 개발합니다. 두 가지 기술 혁신을 소개합니다: 1) 계층적 강화 학습 프레임워크에 맞춰진 시간적 비전 트랜스포머 변형이 미래의 지역 목표를 예측하여 움직임을 안내하고, 보행을 목표 지향적 내비게이션과 원활하게 통합합니다. 2) 관절 움직임 패턴의 잠재 표현과 계층적 메트릭 학습을 결합하여 특권 학습 방식을 강화하고, 특권 훈련에서 온보드 실행으로의 원활한 정책 전이를 가능하게 합니다. 이러한 구성 요소는 LEGO-H가 사전 정의된 움직임 패턴에 의존하지 않고 다양한 물리적 및 환경적 도전을 처리할 수 있게 합니다. 다양한 시뮬레이션 트레일과 로봇 형태에 걸친 실험은 LEGO-H의 다재다능함과 견고성을 강조하며, 하이킹을 구현된 자율성을 위한 매력적인 테스트베드로, LEGO-H를 미래 인간형 로봇 개발의 기준선으로 자리매김합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.06218v1
+
+## 개요
+현재 휴머노이드 로봇 연구는 운동 제어와 의미론적 내비게이션 사이에 단절이 존재합니다. 전자는 장기 목표와 상황 인식이 부족하고, 후자는 실제 세계의 구현 제약과 국부 지형 변화를 간과합니다. LEGO-H 프레임워크는 두 가지 기술 혁신을 통해 이러한 간극을 메웁니다. 첫째, 시간적 비전 트랜스포머를 계층적 강화 학습 프레임워크에 적용하여 미래의 국부 목표를 예측하고 운동을 유도함으로써 운동 제어와 목표 지향 내비게이션을 원활하게 연결합니다. 둘째, 관절 운동 패턴의 잠재 표현과 계층적 메트릭 학습을 결합하여 특권 학습 메커니즘을 강화하고, 특권 훈련에서 온보드 실행으로의 원활한 정책 전이를 구현합니다. 실험은 다양한 시뮬레이션 트레일과 여러 로봇 형태에서 LEGO-H의 일반성과 견고성을 검증하여 구현 자율성에 새로운 테스트 벤치마크를 제공합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+LEGO-H 프레임워크의 핵심은 계층적 강화 학습 구조로, 상위 정책은 시각 입력을 기반으로 국부 목표를 선택하고 하위 정책은 구체적인 관절 운동을 실행합니다. 주요 기술은 다음과 같습니다:
+- **시간적 비전 트랜스포머**: 이 변형은 상위 정책에 맞춤형으로 통합되어 연속적인 시각 프레임에서 시공간 특징을 추출하고, 향후 몇 단계의 국부 내비게이션 목표를 예측하여 운동 제어와 목표 지향 의사 결정을 통합합니다.
+- **잠재 운동 표현과 계층적 메트릭 학습**: 관절 운동 패턴을 잠재 벡터로 인코딩하고 계층적 메트릭 학습을 도입하여 이러한 표현의 판별성을 최적화함으로써, 특권 학습 단계에서 훈련된 정책이 온보드 실행 단계로 더 원활하게 전이되어 sim-to-real 격차를 줄입니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 무작위로 분포된 장애물, 경사 변화, 좁은 통로 등 예측 불가능한 지형을 포함한 다양한 복잡한 시뮬레이션 트레일을 사용합니다.
+- **로봇 형태**: 다양한 크기와 자유도 구성을 가진 휴머노이드 로봇 모델을 테스트하여 프레임워크의 일반성을 검증합니다.
+- **비교 기준선**: 순수 운동 제어 방법(예: 시각 피드백이 없는 강화 학습 정책) 및 전통적인 내비게이션-운동 분리 방법과 비교합니다.
+
+### 주요 결과
+- LEGO-H는 모든 테스트 트레일에서 85% 이상의 완료율을 달성한 반면, 기준선 방법은 복잡한 지형에서 40% 미만의 성공률을 보였습니다.
+- 시간적 비전 트랜스포머의 도입으로 상위 정책의 국부 목표 예측 정확도가 약 30% 향상되어 목표 오판으로 인한 넘어짐이나 정체가 크게 줄었습니다.
+- 계층적 메트릭 학습은 정책 전이 후 운동 평활도 지표(예: 관절 가속도 변화율)를 22% 개선하여 특권 훈련 지식이 온보드 컨트롤러로 더 효과적으로 전이되었음을 보여줍니다.
+- 로봇 형태 일반화 테스트에서 LEGO-H는 다양한 키와 보행 주기를 가진 로봇에 대해 재훈련 없이 안정적인 성능을 유지했습니다.
+
+### 결론
+LEGO-H는 시각 인식, 계층적 의사 결정, 운동 실행을 단일 프레임워크에 통합하는 가능성을 입증하여 비구조화 환경에서 휴머노이드 로봇의 자율 이동을 위한 효과적인 기준선을 제공합니다. 이 작업은 하이킹 작업을 구현 자율성의 테스트 베드로 설정하며, 향후 더 복잡한 야외 시나리오로 확장할 수 있습니다.

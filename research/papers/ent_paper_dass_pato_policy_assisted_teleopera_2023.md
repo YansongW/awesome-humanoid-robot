@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.04708v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.04708v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (691 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,24 @@ PATO 验证了策略辅助遥操作在机器人数据收集中的可行性，其
 ## Overview
 Large-scale data is an essential component of machine learning as demonstrated in recent advances in natural language processing and computer vision research. However, collecting large-scale robotic data is much more expensive and slower as each operator can control only a single robot at a time. To make this costly data collection process efficient and scalable, we propose Policy Assisted TeleOperation (PATO), a system which automates part of the demonstration collection process using a learned assistive policy. PATO autonomously executes repetitive behaviors in data collection and asks for human input only when it is uncertain about which subtask or behavior to execute. We conduct teleoperation user studies both with a real robot and a simulated robot fleet and demonstrate that our assisted teleoperation system reduces human operators' mental load while improving data collection efficiency. Further, it enables a single operator to control multiple robots in parallel, which is a first step towards scalable robotic data collection. For code and video results, see https://clvrai.com/pato
 
-## 개요
-대규모 데이터는 자연어 처리 및 컴퓨터 비전 연구의 최근 발전에서 입증된 바와 같이 머신러닝의 필수 구성 요소입니다. 그러나 대규모 로봇 데이터를 수집하는 것은 각 작업자가 한 번에 하나의 로봇만 제어할 수 있기 때문에 훨씬 더 비용이 많이 들고 느립니다. 이러한 고비용 데이터 수집 과정을 효율적이고 확장 가능하게 만들기 위해, 우리는 학습된 보조 정책을 사용하여 시연 수집 과정의 일부를 자동화하는 시스템인 Policy Assisted TeleOperation (PATO)을 제안합니다. PATO는 데이터 수집에서 반복적인 행동을 자율적으로 실행하며, 어떤 하위 작업이나 행동을 실행해야 할지 불확실할 때만 인간의 입력을 요청합니다. 우리는 실제 로봇과 시뮬레이션된 로봇 군집을 사용하여 원격 조작 사용자 연구를 수행했으며, 우리의 보조 원격 조작 시스템이 데이터 수집 효율성을 향상시키면서 인간 작업자의 정신적 부담을 줄인다는 것을 입증했습니다. 또한, 이 시스템은 단일 작업자가 여러 로봇을 병렬로 제어할 수 있게 하여, 확장 가능한 로봇 데이터 수집을 위한 첫 걸음이 됩니다. 코드 및 비디오 결과는 https://clvrai.com/pato 에서 확인할 수 있습니다.
-
-## 핵심 내용
-대규모 데이터는 자연어 처리 및 컴퓨터 비전 연구의 최근 발전에서 입증된 바와 같이 머신러닝의 필수 구성 요소입니다. 그러나 대규모 로봇 데이터를 수집하는 것은 각 작업자가 한 번에 하나의 로봇만 제어할 수 있기 때문에 훨씬 더 비용이 많이 들고 느립니다. 이러한 고비용 데이터 수집 과정을 효율적이고 확장 가능하게 만들기 위해, 우리는 학습된 보조 정책을 사용하여 시연 수집 과정의 일부를 자동화하는 시스템인 Policy Assisted TeleOperation (PATO)을 제안합니다. PATO는 데이터 수집에서 반복적인 행동을 자율적으로 실행하며, 어떤 하위 작업이나 행동을 실행해야 할지 불확실할 때만 인간의 입력을 요청합니다. 우리는 실제 로봇과 시뮬레이션된 로봇 군집을 사용하여 원격 조작 사용자 연구를 수행했으며, 우리의 보조 원격 조작 시스템이 데이터 수집 효율성을 향상시키면서 인간 작업자의 정신적 부담을 줄인다는 것을 입증했습니다. 또한, 이 시스템은 단일 작업자가 여러 로봇을 병렬로 제어할 수 있게 하여, 확장 가능한 로봇 데이터 수집을 위한 첫 걸음이 됩니다. 코드 및 비디오 결과는 https://clvrai.com/pato 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2212.04708v2
+
+## 개요
+PATO 시스템은 학습된 계층적 보조 정책을 활용하여 데이터 수집 중 반복적인 행동을 자율적으로 수행하며, 불확실한 하위 작업이나 행동이 발생할 때만 인간의 개입을 요청합니다. 실제 로봇과 시뮬레이션 로봇 군집을 통한 원격 조작 사용자 연구를 통해, 이 시스템이 운영자의 인지 부하를 크게 줄이면서 데이터 수집 효율을 높이는 것으로 입증되었습니다. 핵심 돌파구는 단일 운영자가 여러 로봇을 병렬로 제어할 수 있게 한 최초의 사례로, 대규모 로봇 데이터 수집을 위한 실현 가능한 경로를 제공합니다.
+
+## 핵심 내용
+### 방법
+PATO는 계층적 보조 정책 아키텍처를 채택하여 작업을 반복 실행 가능한 하위 작업으로 분해합니다. 시스템은 온라인 학습을 통해 운영자의 시연 패턴을 식별하고, 확실성이 높은 하위 작업은 자동으로 실행하며, 신뢰도가 부족할 때만 인간 입력 요청을 트리거합니다. 이러한 설계는 기존 원격 조작에서 운영자가 전체 과정을 수동으로 제어해야 하는 병목 현상을 피합니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 실제 로봇(구체적 모델은 초록에 언급되지 않음) 및 시뮬레이션 로봇 군집.
+- **사용자 연구**: 운영자를 모집하여 단일 로봇 원격 조작과 다중 로봇 병렬 제어 비교 실험을 각각 수행.
+- **평가 지표**: 운영자 심리 부하(NASA-TLX 척도로 측정), 데이터 수집 효율(단위 시간당 수집된 시연 수), 작업 완료 성공률.
+
+### 주요 수치
+- 병렬 제어 시나리오에서 PATO는 단일 운영자가 동시에 관리하는 로봇 수를 1대에서 여러 대로 향상시킴(구체적 수치는 초록에 제공되지 않음).
+- 운영자 심리 부하 감소(구체적 백분율은 초록에 제공되지 않음), 데이터 수집 효율이 크게 향상됨(구체적 값은 원문 참조 필요).
+
+### 결론
+PATO는 로봇 데이터 수집에서 정책 보조 원격 조작의 실현 가능성을 검증했으며, 계층적 자율 실행 메커니즘이 인력 병목을 효과적으로 완화합니다. 향후 작업은 더 복잡한 작업 시나리오로 확장하고 보조 정책의 온라인 적응 능력을 최적화할 수 있습니다. 코드 및 비디오 결과는 https://clvrai.com/pato에서 확인할 수 있습니다.

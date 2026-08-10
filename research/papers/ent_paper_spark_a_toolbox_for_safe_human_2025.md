@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.03132v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.03132v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (944 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,25 @@ SPARK 为人形机器人安全研究提供了一个统一、可扩展的工具�
 ## Overview
 This paper introduces the Safe Protective and Assistive Robot Kit (SPARK), a comprehensive benchmark designed to ensure safety in humanoid autonomy and teleoperation. Humanoid robots pose significant safety risks due to their physical capabilities of interacting with complex environments. The physical structures of humanoid robots further add complexity to the design of general safety solutions. To facilitate safe deployment of complex robot systems, SPARK can be used as a toolbox that comes with state-of-the-art safe control algorithms in a modular and composable robot control framework. Users can easily configure safety criteria and sensitivity levels to optimize the balance between safety and performance. To accelerate humanoid safety research and development, SPARK provides simulation benchmarks that compare safety approaches in a variety of environments, tasks, and robot models. Furthermore, SPARK allows quick deployment of synthesized safe controllers on real robots. For hardware deployment, SPARK supports Apple Vision Pro (AVP) or a Motion Capture System as external sensors, while offering interfaces for seamless integration with alternative hardware setups at the same time. This paper demonstrates SPARK's capability with both simulation experiments and case studies with a Unitree G1 humanoid robot. Leveraging these advantages of SPARK, users and researchers can significantly improve the safety of their humanoid systems as well as accelerate relevant research. The open source code is available at: https://github.com/intelligent-control-lab/spark.
 
-## 개요
-본 논문에서는 휴머노이드 자율 및 원격 조작의 안전성을 보장하기 위해 설계된 포괄적인 벤치마크인 SPARK(Safe Protective and Assistive Robot Kit)를 소개합니다. 휴머노이드 로봇은 복잡한 환경과 상호작용하는 물리적 능력으로 인해 상당한 안전 위험을 초래합니다. 휴머노이드 로봇의 물리적 구조는 일반적인 안전 솔루션 설계에 추가적인 복잡성을 더합니다. 복잡한 로봇 시스템의 안전한 배치를 촉진하기 위해 SPARK는 모듈식 및 구성 가능한 로봇 제어 프레임워크 내에서 최첨단 안전 제어 알고리즘을 제공하는 툴박스로 사용될 수 있습니다. 사용자는 안전 기준과 민감도 수준을 쉽게 구성하여 안전과 성능 간의 균형을 최적화할 수 있습니다. 휴머노이드 안전 연구 및 개발을 가속화하기 위해 SPARK는 다양한 환경, 작업 및 로봇 모델에서 안전 접근 방식을 비교하는 시뮬레이션 벤치마크를 제공합니다. 또한 SPARK는 합성된 안전 컨트롤러를 실제 로봇에 신속하게 배치할 수 있도록 합니다. 하드웨어 배치를 위해 SPARK는 Apple Vision Pro(AVP) 또는 모션 캡처 시스템을 외부 센서로 지원하며, 동시에 대체 하드웨어 설정과의 원활한 통합을 위한 인터페이스를 제공합니다. 본 논문은 Unitree G1 휴머노이드 로봇을 사용한 시뮬레이션 실험과 사례 연구를 통해 SPARK의 성능을 입증합니다. SPARK의 이러한 장점을 활용하여 사용자와 연구자는 휴머노이드 시스템의 안전성을 크게 향상시키고 관련 연구를 가속화할 수 있습니다. 오픈 소스 코드는 다음에서 확인할 수 있습니다: https://github.com/intelligent-control-lab/spark.
-
-## 핵심 내용
-본 논문에서는 휴머노이드 자율 및 원격 조작의 안전성을 보장하기 위해 설계된 포괄적인 벤치마크인 SPARK(Safe Protective and Assistive Robot Kit)를 소개합니다. 휴머노이드 로봇은 복잡한 환경과 상호작용하는 물리적 능력으로 인해 상당한 안전 위험을 초래합니다. 휴머노이드 로봇의 물리적 구조는 일반적인 안전 솔루션 설계에 추가적인 복잡성을 더합니다. 복잡한 로봇 시스템의 안전한 배치를 촉진하기 위해 SPARK는 모듈식 및 구성 가능한 로봇 제어 프레임워크 내에서 최첨단 안전 제어 알고리즘을 제공하는 툴박스로 사용될 수 있습니다. 사용자는 안전 기준과 민감도 수준을 쉽게 구성하여 안전과 성능 간의 균형을 최적화할 수 있습니다. 휴머노이드 안전 연구 및 개발을 가속화하기 위해 SPARK는 다양한 환경, 작업 및 로봇 모델에서 안전 접근 방식을 비교하는 시뮬레이션 벤치마크를 제공합니다. 또한 SPARK는 합성된 안전 컨트롤러를 실제 로봇에 신속하게 배치할 수 있도록 합니다. 하드웨어 배치를 위해 SPARK는 Apple Vision Pro(AVP) 또는 모션 캡처 시스템을 외부 센서로 지원하며, 동시에 대체 하드웨어 설정과의 원활한 통합을 위한 인터페이스를 제공합니다. 본 논문은 Unitree G1 휴머노이드 로봇을 사용한 시뮬레이션 실험과 사례 연구를 통해 SPARK의 성능을 입증합니다. SPARK의 이러한 장점을 활용하여 사용자와 연구자는 휴머노이드 시스템의 안전성을 크게 향상시키고 관련 연구를 가속화할 수 있습니다. 오픈 소스 코드는 다음에서 확인할 수 있습니다: https://github.com/intelligent-control-lab/spark.
-
 ## 参考
 - http://arxiv.org/abs/2502.03132v3
+
+## 개요
+SPARK(Safe Protective and Assistive Robot Kit)는 복잡한 환경 상호작용에서 물리적 구조로 인해 발생하는 휴머노이드 로봇의 안전 위험을 해결하기 위해 설계되었습니다. 이는 모듈식 툴킷으로, 최첨단 안전 제어 알고리즘을 통합하여 사용자가 안전 기준과 민감도를 유연하게 구성함으로써 안전과 성능 사이의 최적 균형을 달성할 수 있게 합니다. 연구를 가속화하기 위해 SPARK는 다양한 환경, 작업 및 로봇 모델을 포괄하는 시뮬레이션 벤치마크를 제공하며, 합성 안전 컨트롤러를 실제 하드웨어에 신속하게 배포할 수 있도록 지원합니다. 하드웨어 배포 측면에서 SPARK는 Apple Vision Pro 또는 Motion Capture System을 외부 센서로 지원하며, 다른 하드웨어 구성과의 원활한 통합을 위한 인터페이스도 제공합니다. 논문은 시뮬레이션 실험과 Unitree G1 휴머노이드 로봇 사례 연구를 통해 SPARK의 능력을 입증하며, 오픈소스 코드가 공개되었습니다.
+
+## 핵심 내용
+### 방법
+SPARK는 모듈식 및 조합 가능한 로봇 제어 프레임워크를 채택하여 안전 제어 알고리즘을 독립적인 구성 요소로 통합합니다. 사용자는 안전 기준과 민감도 수준을 구성하여 안전과 성능 간의 균형을 동적으로 조정할 수 있습니다. 이 툴킷은 시뮬레이션에서 실제 하드웨어로의 원활한 전환을 지원하며, 다양한 외부 센서(예: Apple Vision Pro 및 Motion Capture System)와 호환되고 다른 하드웨어에 적응할 수 있는 범용 인터페이스를 제공합니다.
+
+### 실험 설정
+- **시뮬레이션 벤치마크**: 다양한 환경, 작업 및 로봇 모델에서 서로 다른 안전 방법의 성능을 비교합니다.
+- **하드웨어 배포**: Unitree G1 휴머노이드 로봇을 실제 플랫폼으로 사용하며, Apple Vision Pro 또는 Motion Capture System을 통해 외부 인식 입력을 제공합니다.
+- **사례 연구**: 시뮬레이션 실험과 실제 로봇 실험을 결합하여 전신 제어 및 이동 조작 작업에서 SPARK의 안전 성능을 검증합니다.
+
+### 주요 수치 및 결론
+- SPARK는 구성 가능한 안전 기준을 통해 복잡한 환경에서 휴머노이드 로봇의 충돌 위험을 크게 줄입니다.
+- Unitree G1에서의 사례 연구는 SPARK가 안전과 작업 완료 효율성을 효과적으로 균형 잡을 수 있음을 보여줍니다.
+- 오픈소스 코드가 공개되어 커뮤니티의 재현 및 확장을 용이하게 합니다.
+
+### 결론
+SPARK는 휴머노이드 로봇 안전 연구를 위한 통합적이고 확장 가능한 툴킷을 제공하며, 모듈식 설계, 시뮬레이션 벤치마크 및 하드웨어 호환성을 통해 안전 제어 알고리즘의 개발과 배포를 가속화합니다. 사용자는 SPARK를 통해 휴머노이드 시스템의 안전성을 크게 향상시키고 관련 연구 발전을 촉진할 수 있습니다.

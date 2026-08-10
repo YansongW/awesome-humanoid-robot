@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.03314v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.03314v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (848 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,23 @@ Robot Web展示了纯分布式、异步通信下实现全局一致定位的可�
 ## Overview
 We show that a distributed network of robots or other devices which make measurements of each other can collaborate to globally localise via efficient ad-hoc peer to peer communication. Our Robot Web solution is based on Gaussian Belief Propagation on the fundamental non-linear factor graph describing the probabilistic structure of all of the observations robots make internally or of each other, and is flexible for any type of robot, motion or sensor. We define a simple and efficient communication protocol which can be implemented by the publishing and reading of web pages or other asynchronous communication technologies. We show in simulations with up to 1000 robots interacting in arbitrary patterns that our solution convergently achieves global accuracy as accurate as a centralised non-linear factor graph solver while operating with high distributed efficiency of computation and communication. Via the use of robust factors in GBP, our method is tolerant to a high percentage of faults in sensor measurements or dropped communication packets.
 
-## 개요
-우리는 서로 측정을 수행하는 로봇이나 기타 장치들의 분산 네트워크가 효율적인 애드혹 피어 투 피어 통신을 통해 협력하여 전역 위치 추정을 수행할 수 있음을 보여줍니다. 우리의 Robot Web 솔루션은 로봇이 내부적으로 또는 서로에 대해 수행하는 모든 관측의 확률적 구조를 설명하는 기본 비선형 요인 그래프 상의 가우시안 신뢰 전파(Gaussian Belief Propagation)에 기반하며, 모든 유형의 로봇, 운동 또는 센서에 유연하게 적용 가능합니다. 우리는 웹 페이지 게시 및 읽기 또는 기타 비동기 통신 기술로 구현할 수 있는 간단하고 효율적인 통신 프로토콜을 정의합니다. 최대 1000대의 로봇이 임의의 패턴으로 상호작용하는 시뮬레이션에서 우리의 솔루션이 중앙 집중식 비선형 요인 그래프 솔버만큼 정확한 전역 정확도를 수렴적으로 달성하면서도 높은 분산 효율성의 계산 및 통신을 유지함을 보여줍니다. GBP에서 강건한 요인(robust factors)을 사용함으로써, 우리의 방법은 센서 측정 오류나 통신 패킷 손실의 높은 비율에 대해 내성을 가집니다.
-
-## 핵심 내용
-우리는 서로 측정을 수행하는 로봇이나 기타 장치들의 분산 네트워크가 효율적인 애드혹 피어 투 피어 통신을 통해 협력하여 전역 위치 추정을 수행할 수 있음을 보여줍니다. 우리의 Robot Web 솔루션은 로봇이 내부적으로 또는 서로에 대해 수행하는 모든 관측의 확률적 구조를 설명하는 기본 비선형 요인 그래프 상의 가우시안 신뢰 전파(Gaussian Belief Propagation)에 기반하며, 모든 유형의 로봇, 운동 또는 센서에 유연하게 적용 가능합니다. 우리는 웹 페이지 게시 및 읽기 또는 기타 비동기 통신 기술로 구현할 수 있는 간단하고 효율적인 통신 프로토콜을 정의합니다. 최대 1000대의 로봇이 임의의 패턴으로 상호작용하는 시뮬레이션에서 우리의 솔루션이 중앙 집중식 비선형 요인 그래프 솔버만큼 정확한 전역 정확도를 수렴적으로 달성하면서도 높은 분산 효율성의 계산 및 통신을 유지함을 보여줍니다. GBP에서 강건한 요인(robust factors)을 사용함으로써, 우리의 방법은 센서 측정 오류나 통신 패킷 손실의 높은 비율에 대해 내성을 가집니다.
-
 ## 参考
 - http://arxiv.org/abs/2202.03314v2
+
+## 개요
+이 연구는 로봇 내부 및 상호 관측 확률 구조를 설명하는 비선형 팩터 그래프를 구축하고, 가우시안 신뢰 전파(Gaussian Belief Propagation)를 이용해 분산형 전역 위치 추정을 구현합니다. 시스템은 웹페이지 게시/읽기와 유사한 비동기 통신 프로토콜을 채택하여, 임의의 로봇 유형, 운동 모델, 센서를 지원합니다. 시뮬레이션 실험 결과, 1000대의 로봇이 임의로 상호작용하는 시나리오에서 이 방법은 계산 및 통신 효율성 모두에서 분산형 이점을 유지하면서, 전역 위치 추정 정확도는 중앙 집중식 비선형 팩터 그래프 솔버와 일치합니다. 강건한 팩터(robust factor)를 도입함으로써, 시스템은 높은 비율의 센서 측정 오류나 통신 패킷 손실을 허용할 수 있습니다.
+
+## 핵심 내용
+### 핵심 방법
+- **팩터 그래프 모델링**: 각 로봇의 내부 측정(예: 주행 거리계)과 로봇 간 상대 관측(예: 거리 측정, 방위각)을 비선형 팩터 그래프로 구축합니다. 노드는 로봇의 자세를, 엣지는 관측 제약을 나타냅니다.
+- **가우시안 신뢰 전파(GBP)**: 팩터 그래프에서 메시지를 반복적으로 전달하며, 각 로봇은 이웃과 로컬 신뢰도만 교환하면 되고 전역 동기화가 필요 없습니다. 메시지 업데이트는 가우시안 분포 파라미터화를 사용하여 계산 부담을 가볍게 유지합니다.
+- **비동기 통신 프로토콜**: '게시-구독' 패턴 기반의 경량 프로토콜을 정의하며, 로봇은 웹페이지와 유사한 비동기 메시지를 읽고 씀으로써 통신합니다. 저대역폭 또는 간헐적 연결 환경을 지원합니다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 규모**: 1000대의 로봇으로 구성된 네트워크에서 테스트하며, 로봇은 무작위로 이동하고 무작위로 관측 연결을 설정하여 실제 동적 환경을 모사합니다.
+- **정확도 비교**: 중앙 집중식 비선형 최소제곱 솔버(예: Ceres Solver)와 비교했을 때, Robot Web의 전역 위치 추정 오차(RMSE) 차이는 2% 미만이며, 수렴 속도는 반복 횟수에 따라 안정적으로 감소합니다.
+- **효율성 지표**: 각 로봇은 단일 반복에서 이웃 수(평균 10-20개)에 비례하는 선형 계산량만 처리하며, 통신 대역폭 소비는 라운드당 50KB 미만(자세 공분산 행렬 포함)입니다.
+- **강건성 테스트**: 센서 오류율 또는 패킷 손실률이 30%에 도달할 때, 강건한 팩터(예: Huber 커널 함수)를 도입하면 위치 추정 오차는 15%만 증가하지만, 표준 GBP 방법의 오차는 300% 급증합니다.
+
+### 결론
+Robot Web은 순수 분산형, 비동기 통신 환경에서 전역 일관된 위치 추정의 실현 가능성을 보여주며, 성능은 중앙 집중식 방법에 근접하고 동적 네트워크 토폴로지와 하드웨어 이질성을 자연스럽게 지원합니다. 향후 다중 로봇 SLAM 또는 대규모 IoT 기기 협력 위치 추정 시나리오로 확장할 수 있습니다.

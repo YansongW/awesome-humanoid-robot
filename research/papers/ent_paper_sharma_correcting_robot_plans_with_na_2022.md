@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2204.05186v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2204.05186v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (824 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -72,11 +73,27 @@ sources:
 ## Overview
 When humans design cost or goal specifications for robots, they often produce specifications that are ambiguous, underspecified, or beyond planners' ability to solve. In these cases, corrections provide a valuable tool for human-in-the-loop robot control. Corrections might take the form of new goal specifications, new constraints (e.g. to avoid specific objects), or hints for planning algorithms (e.g. to visit specific waypoints). Existing correction methods (e.g. using a joystick or direct manipulation of an end effector) require full teleoperation or real-time interaction. In this paper, we explore natural language as an expressive and flexible tool for robot correction. We describe how to map from natural language sentences to transformations of cost functions. We show that these transformations enable users to correct goals, update robot motions to accommodate additional user preferences, and recover from planning errors. These corrections can be leveraged to get 81% and 93% success rates on tasks where the original planner failed, with either one or two language corrections. Our method makes it possible to compose multiple constraints and generalizes to unseen scenes, objects, and sentences in simulated environments and real-world environments.
 
-## 개요
-인간이 로봇을 위한 비용 또는 목표 명세를 설계할 때, 종종 모호하거나 불완전하게 명시되거나 계획자가 해결할 수 없는 범위를 벗어난 명세를 생성합니다. 이러한 경우, 수정(corrections)은 인간이 개입하는 로봇 제어(Human-in-the-loop robot control)를 위한 귀중한 도구를 제공합니다. 수정은 새로운 목표 명세, 새로운 제약 조건(예: 특정 물체 회피), 또는 계획 알고리즘을 위한 힌트(예: 특정 경유지 방문)의 형태를 취할 수 있습니다. 기존의 수정 방법(예: 조이스틱 사용 또는 엔드 이펙터 직접 조작)은 완전한 원격 조작 또는 실시간 상호작용을 필요로 합니다. 본 논문에서는 자연어를 로봇 수정을 위한 표현력 있고 유연한 도구로 탐구합니다. 자연어 문장을 비용 함수의 변환으로 매핑하는 방법을 설명하고, 이러한 변환을 통해 사용자가 목표를 수정하고, 추가 사용자 선호도를 수용하도록 로봇 동작을 업데이트하며, 계획 오류로부터 복구할 수 있음을 보여줍니다. 이러한 수정을 활용하여 원래 계획자가 실패한 작업에서 한 번 또는 두 번의 언어 수정으로 81%와 93%의 성공률을 달성했습니다. 우리의 방법은 여러 제약 조건을 구성할 수 있게 하며, 시뮬레이션 환경과 실제 환경에서 보지 못한 장면, 물체, 문장에 일반화됩니다.
-
-## 핵심 내용
-인간이 로봇을 위한 비용 또는 목표 명세를 설계할 때, 종종 모호하거나 불완전하게 명시되거나 계획자가 해결할 수 없는 범위를 벗어난 명세를 생성합니다. 이러한 경우, 수정(corrections)은 인간이 개입하는 로봇 제어를 위한 귀중한 도구를 제공합니다. 수정은 새로운 목표 명세, 새로운 제약 조건(예: 특정 물체 회피), 또는 계획 알고리즘을 위한 힌트(예: 특정 경유지 방문)의 형태를 취할 수 있습니다. 기존의 수정 방법(예: 조이스틱 사용 또는 엔드 이펙터 직접 조작)은 완전한 원격 조작 또는 실시간 상호작용을 필요로 합니다. 본 논문에서는 자연어를 로봇 수정을 위한 표현력 있고 유연한 도구로 탐구합니다. 자연어 문장을 비용 함수의 변환으로 매핑하는 방법을 설명하고, 이러한 변환을 통해 사용자가 목표를 수정하고, 추가 사용자 선호도를 수용하도록 로봇 동작을 업데이트하며, 계획 오류로부터 복구할 수 있음을 보여줍니다. 이러한 수정을 활용하여 원래 계획자가 실패한 작업에서 한 번 또는 두 번의 언어 수정으로 81%와 93%의 성공률을 달성했습니다. 우리의 방법은 여러 제약 조건을 구성할 수 있게 하며, 시뮬레이션 환경과 실제 환경에서 보지 못한 장면, 물체, 문장에 일반화됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2204.05186v1
+
+## 개요
+이 연구는 인간이 로봇을 위해 비용 또는 목표 사양을 설계할 때 흔히 발생하는 모호함, 불충분한 지정, 또는 플래너의 능력을 벗어나는 문제를 해결하기 위해, 자연어를 유연한 표현 도구로 활용한 교정 방법을 제안한다. 이 방법은 자연어 문장을 비용 함수 변환으로 매핑하여 목표 수정, 추가 선호도를 수용하는 동작 업데이트, 계획 오류로부터의 복구를 지원한다. 실험 결과, 시뮬레이션 및 실제 환경에서 이 방법은 여러 제약 조건을 결합할 수 있으며, 보지 못한 장면, 객체, 문장에 대해 일반화할 수 있고, 단일 또는 이중 언어 교정만으로 작업 성공률을 크게 향상시킬 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 자연어 교정 지시를 비용 함수의 수학적 변환으로 변환하며, 계획 출력을 직접 수정하지 않는다.
+- **매핑 메커니즘**: 사전 훈련된 언어 모델을 통해 문장 의미를 분석하고, 해당 비용 함수의 가중치 조정, 제약 조건 추가, 또는 경로점 안내와 같은 변환 작업을 생성한다.
+- **계획 프레임워크**: 비용 함수 최적화 기반 플래너(예: 궤적 최적화)를 사용하며, 각 언어 교정 후 최적 동작 시퀀스를 다시 해결한다.
+
+### 실험 설정
+- **작업 시나리오**: 테이블 조작, 객체 파지 및 배치와 같은 전형적인 로봇 조작 작업을 포함하며, 원래 플래너는 사양 모호성 또는 제약 충돌로 인해 실패한다.
+- **데이터셋**: 시뮬레이션 환경(예: PyBullet)과 실제 로봇 플랫폼(예: Franka Emika Panda)을 사용하여 검증하며, 테스트 문장은 목표 수정, 장애물 회피, 경로점 지정 등의 유형을 포함한다.
+- **기준 비교**: 교정 없는 계획, 무작위 교정, 규칙 기반 키워드 매칭 방법과 비교하여, 언어 교정 방법이 성공률에서 크게 앞선다.
+
+### 주요 결과
+- **성공률**: 원래 계획이 실패한 작업에서 단일 언어 교정 성공률은 81%이며, 이중 교정 시 93%로 향상된다.
+- **일반화 능력**: 보지 못한 장면(새로운 객체 배치), 보지 못한 객체(다른 모양/색상), 보지 못한 문장(새로운 표현 방식)에서도 안정적인 성능을 유지한다.
+- **제약 결합**: 여러 언어 교정을 동시에 적용할 수 있으며(예: "빨간 컵을 먼저 잡고 파란 블록을 피해라"), 플래너는 자동으로 균형을 맞추고 실행 가능한 궤적을 생성한다.
+
+### 결론
+자연어 교정은 인간-로봇 상호작용에 효율적이고 유연하며 일반화 가능한 방법을 제공하며, 완전한 원격 조작이나 실시간 상호작용에 대한 의존도를 크게 줄인다. 향후 작업은 더 복잡한 언어 지시(예: 시간적 제약)와 실시간 피드백 루프를 탐구할 수 있다.

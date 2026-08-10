@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.09450v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.09450v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (756 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -64,11 +65,25 @@ sources:
 ## Overview
 This work aims to push the limits of agility for bipedal robots by enabling a torque-controlled bipedal robot to perform robust and versatile dynamic jumps in the real world. We present a reinforcement learning framework for training a robot to accomplish a large variety of jumping tasks, such as jumping to different locations and directions. To improve performance on these challenging tasks, we develop a new policy structure that encodes the robot's long-term input/output (I/O) history while also providing direct access to a short-term I/O history. In order to train a versatile jumping policy, we utilize a multi-stage training scheme that includes different training stages for different objectives. After multi-stage training, the policy can be directly transferred to a real bipedal Cassie robot. Training on different tasks and exploring more diverse scenarios lead to highly robust policies that can exploit the diverse set of learned maneuvers to recover from perturbations or poor landings during real-world deployment. Such robustness in the proposed policy enables Cassie to succeed in completing a variety of challenging jump tasks in the real world, such as standing long jumps, jumping onto elevated platforms, and multi-axes jumps.
 
-## 개요
-본 연구는 토크 제어 방식의 이족 보행 로봇이 실제 환경에서 강건하고 다양한 동적 점프를 수행할 수 있도록 함으로써 이족 보행 로봇의 민첩성 한계를 확장하는 것을 목표로 합니다. 우리는 로봇이 다양한 위치와 방향으로 점프하는 등 다양한 점프 작업을 수행할 수 있도록 훈련하는 강화 학습 프레임워크를 제시합니다. 이러한 도전적인 작업에서 성능을 향상시키기 위해, 로봇의 장기 입출력(I/O) 이력을 인코딩하면서도 단기 입출력(I/O) 이력에 직접 접근할 수 있는 새로운 정책 구조를 개발합니다. 다양한 점프 정책을 훈련하기 위해, 서로 다른 목표에 대해 다양한 훈련 단계를 포함하는 다단계 훈련 방식을 활용합니다. 다단계 훈련 후, 정책은 실제 이족 보행 로봇 Cassie에 직접 전이될 수 있습니다. 다양한 작업에 대한 훈련과 더 다양한 시나리오 탐색은 실제 환경 배치 중 교란 또는 불량 착지로부터 회복하기 위해 학습된 다양한 기동을 활용할 수 있는 매우 강건한 정책을 이끌어냅니다. 제안된 정책의 이러한 강건성 덕분에 Cassie는 제자리 멀리뛰기, 높은 플랫폼으로 점프, 다축 점프와 같은 실제 세계의 다양한 도전적인 점프 작업을 성공적으로 완료할 수 있습니다.
-
-## 핵심 내용
-본 연구는 토크 제어 방식의 이족 보행 로봇이 실제 환경에서 강건하고 다양한 동적 점프를 수행할 수 있도록 함으로써 이족 보행 로봇의 민첩성 한계를 확장하는 것을 목표로 합니다. 우리는 로봇이 다양한 위치와 방향으로 점프하는 등 다양한 점프 작업을 수행할 수 있도록 훈련하는 강화 학습 프레임워크를 제시합니다. 이러한 도전적인 작업에서 성능을 향상시키기 위해, 로봇의 장기 입출력(I/O) 이력을 인코딩하면서도 단기 입출력(I/O) 이력에 직접 접근할 수 있는 새로운 정책 구조를 개발합니다. 다양한 점프 정책을 훈련하기 위해, 서로 다른 목표에 대해 다양한 훈련 단계를 포함하는 다단계 훈련 방식을 활용합니다. 다단계 훈련 후, 정책은 실제 이족 보행 로봇 Cassie에 직접 전이될 수 있습니다. 다양한 작업에 대한 훈련과 더 다양한 시나리오 탐색은 실제 환경 배치 중 교란 또는 불량 착지로부터 회복하기 위해 학습된 다양한 기동을 활용할 수 있는 매우 강건한 정책을 이끌어냅니다. 제안된 정책의 이러한 강건성 덕분에 Cassie는 제자리 멀리뛰기, 높은 플랫폼으로 점프, 다축 점프와 같은 실제 세계의 다양한 도전적인 점프 작업을 성공적으로 완료할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2302.09450v2
+
+## 개요
+이 연구는 이족 보행 로봇의 민첩성 한계를 돌파하는 것을 목표로 하며, 강화 학습을 통해 로봇이 다양한 점프 기술을 습득하도록 합니다. 연구진은 로봇의 장기 입력/출력 이력과 단기 입력/출력 이력을 동시에 인코딩하는 새로운 정책 구조를 설계하여 복잡한 점프 작업의 성능을 향상시킵니다. 다단계 훈련 방식을 채택하여 목표별로 단계적으로 정책을 최적화하며, 최종 정책은 실제 Cassie 로봇에 직접 전이할 수 있습니다. 실험 결과, 이 정책은 높은 견고성을 가지며, 학습된 다양한 기동 동작을 활용하여 외란 또는 불량 착지에 대응할 수 있고, 제자리 멀리뛰기, 높은 플랫폼 점프, 다축 점프와 같은 도전적인 작업을 성공적으로 완수합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **정책 구조 혁신**: 장기 I/O 이력(작업 맥락 이해용)과 단기 I/O 이력(실시간 대응용)을 동시에 보존하는 혼합 인코딩 메커니즘을 제안하여, 정책이 전역 계획과 지역 조정을 모두 고려할 수 있게 합니다.
+- **다단계 훈련 방식**: 훈련을 여러 단계로 나누고, 각 단계는 서로 다른 목표(예: 기본 점프, 방향 제어, 외란 저항)에 집중하여 점진적으로 정책의 일반화 능력을 향상시킵니다.
+
+### 실험 설정
+- **로봇 플랫폼**: 토크 제어 방식의 Cassie 이족 보행 로봇을 사용하며, 추가적인 시뮬레이션-실제 전이 단계 없이 실제 환경에 직접 배포합니다.
+- **작업 다양성**: 훈련은 제자리 멀리뛰기, 다양한 높이의 플랫폼 점프, 다축 점프(예: 전후, 좌우, 회전 방향) 등의 시나리오를 포함합니다.
+
+### 주요 수치 및 결과
+- **견고성 성능**: 정책은 실제 세계에서 모든 사전 설정된 점프 작업을 성공적으로 완수하며, 외란으로부터의 회복(예: 밀림 후 재안정화 점프)을 포함합니다.
+- **성능 비교**: 기존 모델 예측 제어 방법과 비교하여, 이 강화 학습 정책은 점프 성공률에서 현저히 향상되었으며, 특히 다축 점프 작업에서 두드러진 성과를 보입니다.
+- **전이 효율성**: 다단계 훈련 후, 정책은 추가 미세 조정 없이 실제 로봇에 직접 제로샷 전이가 가능합니다.
+
+### 결론
+이 연구는 강화 학습이 이족 보행 로봇의 동적 점프 제어에서 효과적임을 입증하며, 정책 구조 설계와 훈련 방식 최적화를 통해 실제 세계에서 견고하고 다양한 점프 능력을 구현했습니다. 향후 더 복잡한 지형이나 고속 주행 시나리오로 확장할 수 있습니다.

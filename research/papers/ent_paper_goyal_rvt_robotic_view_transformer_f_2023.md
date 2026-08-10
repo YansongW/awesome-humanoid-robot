@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.14896v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.14896v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (718 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,26 @@ RVT通过多视图transformer架构，在3D物体操作任务中实现了精度�
 ## Overview
 For 3D object manipulation, methods that build an explicit 3D representation perform better than those relying only on camera images. But using explicit 3D representations like voxels comes at large computing cost, adversely affecting scalability. In this work, we propose RVT, a multi-view transformer for 3D manipulation that is both scalable and accurate. Some key features of RVT are an attention mechanism to aggregate information across views and re-rendering of the camera input from virtual views around the robot workspace. In simulations, we find that a single RVT model works well across 18 RLBench tasks with 249 task variations, achieving 26% higher relative success than the existing state-of-the-art method (PerAct). It also trains 36X faster than PerAct for achieving the same performance and achieves 2.3X the inference speed of PerAct. Further, RVT can perform a variety of manipulation tasks in the real world with just a few ($\sim$10) demonstrations per task. Visual results, code, and trained model are provided at https://robotic-view-transformer.github.io/.
 
-## 개요
-3D 객체 조작을 위해 명시적 3D 표현을 구축하는 방법은 카메라 이미지만 사용하는 방법보다 더 나은 성능을 보입니다. 하지만 복셀과 같은 명시적 3D 표현을 사용하면 큰 계산 비용이 발생하여 확장성에 부정적인 영향을 미칩니다. 본 연구에서는 확장성과 정확성을 모두 갖춘 3D 조작용 멀티뷰 트랜스포머인 RVT를 제안합니다. RVT의 주요 특징으로는 뷰 간 정보를 통합하는 어텐션 메커니즘과 로봇 작업 공간 주변의 가상 뷰에서 카메라 입력을 재렌더링하는 기능이 있습니다. 시뮬레이션에서 단일 RVT 모델이 249개의 작업 변형을 포함한 18개의 RLBench 작업에서 잘 작동하며, 기존 최첨단 방법(PerAct)보다 상대적 성공률이 26% 더 높은 것을 확인했습니다. 또한 동일한 성능을 달성하는 데 PerAct보다 36배 빠르게 훈련되며, PerAct의 2.3배 추론 속도를 보입니다. 더 나아가 RVT는 실제 세계에서 작업당 몇 개(약 10개)의 시연만으로 다양한 조작 작업을 수행할 수 있습니다. 시각적 결과, 코드 및 훈련된 모델은 https://robotic-view-transformer.github.io/에서 제공됩니다.
-
-## 핵심 내용
-3D 객체 조작을 위해 명시적 3D 표현을 구축하는 방법은 카메라 이미지만 사용하는 방법보다 더 나은 성능을 보입니다. 하지만 복셀과 같은 명시적 3D 표현을 사용하면 큰 계산 비용이 발생하여 확장성에 부정적인 영향을 미칩니다. 본 연구에서는 확장성과 정확성을 모두 갖춘 3D 조작용 멀티뷰 트랜스포머인 RVT를 제안합니다. RVT의 주요 특징으로는 뷰 간 정보를 통합하는 어텐션 메커니즘과 로봇 작업 공간 주변의 가상 뷰에서 카메라 입력을 재렌더링하는 기능이 있습니다. 시뮬레이션에서 단일 RVT 모델이 249개의 작업 변형을 포함한 18개의 RLBench 작업에서 잘 작동하며, 기존 최첨단 방법(PerAct)보다 상대적 성공률이 26% 더 높은 것을 확인했습니다. 또한 동일한 성능을 달성하는 데 PerAct보다 36배 빠르게 훈련되며, PerAct의 2.3배 추론 속도를 보입니다. 더 나아가 RVT는 실제 세계에서 작업당 몇 개(약 10개)의 시연만으로 다양한 조작 작업을 수행할 수 있습니다. 시각적 결과, 코드 및 훈련된 모델은 https://robotic-view-transformer.github.io/에서 제공됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2306.14896v1
+
+## 개요
+3D 객체 조작 작업에 대해 기존 방법들은 명시적 3D 표현(예: 복셀)을 통해 더 나은 성능을 얻을 수 있지만 계산 비용이 높습니다. RVT는 다중 뷰 트랜스포머 아키텍처를 제안하며, 교차 뷰 어텐션을 통해 정보를 집계하고 로봇 작업 공간 주변의 가상 시점을 재렌더링하여 정밀도를 유지하면서 확장성을 크게 향상시킵니다. RLBench 벤치마크의 249개 작업 변형에서 단일 RVT 모델이 우수한 성능을 보이며, 상대적 성공률이 PerAct보다 26% 높고, 훈련 속도는 36배 빠르며, 추론 속도는 2.3배 빠릅니다. 또한 RVT는 약 10회의 실제 세계 시연만으로 다양한 조작 작업을 완료할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **다중 뷰 어텐션 메커니즘**: RVT는 트랜스포머 아키텍처를 채택하여 교차 뷰 어텐션을 통해 서로 다른 시점의 정보를 집계함으로써 명시적 3D 표현(예: 복셀)으로 인한 높은 계산 오버헤드를 피합니다.
+- **가상 시점 재렌더링**: 로봇 작업 공간 주변의 가상 시점을 재렌더링하여 3D 공간에 대한 모델의 이해 능력을 강화합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 실험**: RLBench 벤치마크의 18개 작업(총 249개 작업 변형)에서 테스트했으며, 단일 RVT 모델이 안정적인 성능을 보입니다.
+  - 상대적 성공률이 PerAct보다 26% 높습니다.
+  - 훈련 속도가 PerAct보다 36배 빠릅니다(동일 성능 도달 시).
+  - 추론 속도는 PerAct의 2.3배입니다.
+- **실제 세계 실험**: 약 10회의 시연만으로 다양한 조작 작업을 완료할 수 있어 강력한 일반화 능력을 보여줍니다.
+
+### 핵심 결론
+RVT는 다중 뷰 트랜스포머 아키텍처를 통해 3D 객체 조작 작업에서 정밀도와 효율성의 균형을 달성하며, 명시적 3D 표현에 의존하는 방법보다 크게 우수합니다. 빠른 훈련 및 추론 능력 덕분에 실제 배포에 더 적합합니다.
+
+### 리소스 링크
+- 시각적 결과, 코드 및 사전 훈련 모델: https://robotic-view-transformer.github.io/

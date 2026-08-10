@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2002.11944v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2002.11944v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (475 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,25 @@ This paper introduces a rescue robot named Sigma 3, developed for potential appl
 ## Content
 This paper introduces a rescue robot named Sigma 3, developed for potential applications such as providing assistance in environments where humans cannot reach to assess hazardous conditions. Additionally, this type of robot can be remotely controlled via an adequate control system. The proposed methodology focuses on two issues: 1. A novel mechanism design for measuring rotation, joints, and links of the Degree of Freedom (DOF) for an arm integrated with Sigma 3; 2. Precise measurement of end-effector motion control in three dimensions. In the proposed mechanism design, DOF measurement is realized through a planar and spatial mechanism, where four types of rigid joints constitute each DOF, controlled by six High Torque MG996R servo motors. Rotation and DOF measurement incorporate various theoretical references, including Rotation Matrix and Inverse Kinematics, supported by experimental results. The presented methodology for oscillation damping performance exhibits less than 3% error during hands-on testing. Another evaluation of operating time strongly supports the mechanism's low power consumption capability.
 
-## 개요
-본 논문은 인간이 접근하기 어려운 위험 환경 평가를 위한 보조 수단으로 활용될 수 있는 구조 로봇 Sigma 3를 소개합니다. 또한 이러한 로봇은 적절한 제어 시스템을 통해 원격으로 제어될 수 있습니다. 제안된 방법론은 두 가지 문제에 초점을 맞춥니다: 1. Sigma 3에 통합된 팔의 회전, 관절, 자유도(DOF) 링크를 측정하기 위한 새로운 메커니즘 설계, 2. 3차원에서의 엔드 이펙터(end effector) 모션 제어의 정밀 측정. 제안된 메커니즘 설계에서 DOF 측정은 평면 및 공간 메커니즘으로 표현되며, 4가지 유형의 강체 관절이 각 DOF를 구성하고 6개의 고토크 MG996R 서보 모터로 제어됩니다. 회전 및 DOF 측정은 회전 행렬(Rotation Matrix), 역기구학(Inverse Kinematics)의 다양한 이론적 참조와 실험 결과로 구성됩니다. 제안된 방법론의 진동 감쇠 성능은 실물 테스트 구성 시 3% 미만의 오차를 보여줍니다. 또 다른 운영 시간 평가는 저전력 소비 능력의 메커니즘을 강력히 뒷받침합니다.
-
-## 핵심 내용
-본 논문은 인간이 접근하기 어려운 위험 환경 평가를 위한 보조 수단으로 활용될 수 있는 구조 로봇 Sigma 3를 소개합니다. 또한 이러한 로봇은 적절한 제어 시스템을 통해 원격으로 제어될 수 있습니다. 제안된 방법론은 두 가지 문제에 초점을 맞춥니다: 1. Sigma 3에 통합된 팔의 회전, 관절, 자유도(DOF) 링크를 측정하기 위한 새로운 메커니즘 설계, 2. 3차원에서의 엔드 이펙터 모션 제어의 정밀 측정. 제안된 메커니즘 설계에서 DOF 측정은 평면 및 공간 메커니즘으로 표현되며, 4가지 유형의 강체 관절이 각 DOF를 구성하고 6개의 고토크 MG996R 서보 모터로 제어됩니다. 회전 및 DOF 측정은 회전 행렬, 역기구학의 다양한 이론적 참조와 실험 결과로 구성됩니다. 제안된 방법론의 진동 감쇠 성능은 실물 테스트 구성 시 3% 미만의 오차를 보여줍니다. 또 다른 운영 시간 평가는 저전력 소비 능력의 메커니즘을 강력히 뒷받침합니다.
-
 ## 参考
 - http://arxiv.org/abs/2002.11944v2
+
+## 개요
+Sigma-3는 인간이 접근할 수 없는 위험 환경 평가를 위해 개발된 원격 조작 구조 로봇으로, 6대의 MG996R 고전압 서보 모터로 구동되는 6자유도 매니퓰레이터를 통합합니다. 연구는 두 가지 주요 문제에 초점을 맞춥니다: 첫째, 평면 및 공간 메커니즘을 통해 관절과 링크의 자유도를 측정하는 새로운 설계, 둘째, 3차원 공간에서 엔드 이펙터의 정밀한 운동 제어입니다. 실험은 회전 행렬과 역기구학 이론을 평가했으며, 진동 감쇠 테스트에서 오차가 3% 미만으로 나타났고, 저전력 성능도 검증되었습니다.
+
+## 핵심 내용
+### 방법
+- **메커니즘 설계**: 평면 및 공간 메커니즘을 채택하여 4가지 유형의 강체 관절로 각 자유도를 구성하며, 6대의 MG996R 고전압 서보 모터로 제어합니다.
+- **운동학 모델링**: 회전 행렬과 역기구학 이론을 기반으로 회전 및 자유도 측정을 수행하고, 실험 결과와 비교합니다.
+
+### 실험 설정
+- **진동 감쇠 테스트**: 손 테스트 구성에서 오차가 3% 미만으로 나타났습니다.
+- **전력 소비 평가**: 실행 시간 상태 테스트를 통해 저전력 성능을 검증했습니다.
+
+### 주요 수치
+- 자유도: 6 DOF
+- 서보 모터: 6대 MG996R
+- 진동 감쇠 오차: <3%
+
+### 결론
+Sigma-3는 새로운 메커니즘 설계와 정밀 제어를 통해 효율적인 진동 감쇠와 저전력을 구현하여, 위험 환경에서의 원격 조작 구조 임무에 적합합니다.

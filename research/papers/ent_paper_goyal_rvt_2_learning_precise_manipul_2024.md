@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.08545v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.08545v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (746 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -69,11 +70,26 @@ RVT-2 证明了通过架构与系统级协同优化，可在少样本条件下�
 ## Overview
 In this work, we study how to build a robotic system that can solve multiple 3D manipulation tasks given language instructions. To be useful in industrial and household domains, such a system should be capable of learning new tasks with few demonstrations and solving them precisely. Prior works, like PerAct and RVT, have studied this problem, however, they often struggle with tasks requiring high precision. We study how to make them more effective, precise, and fast. Using a combination of architectural and system-level improvements, we propose RVT-2, a multitask 3D manipulation model that is 6X faster in training and 2X faster in inference than its predecessor RVT. RVT-2 achieves a new state-of-the-art on RLBench, improving the success rate from 65% to 82%. RVT-2 is also effective in the real world, where it can learn tasks requiring high precision, like picking up and inserting plugs, with just 10 demonstrations. Visual results, code, and trained model are provided at: https://robotic-view-transformer-2.github.io/.
 
-## 개요
-본 연구에서는 언어 명령을 기반으로 여러 3D 조작 작업을 해결할 수 있는 로봇 시스템을 구축하는 방법을 연구합니다. 산업 및 가정 환경에서 유용하게 사용되기 위해서는 이러한 시스템이 적은 시연으로 새로운 작업을 학습하고 정밀하게 수행할 수 있어야 합니다. PerAct 및 RVT와 같은 이전 연구들에서 이 문제를 다루었지만, 높은 정밀도를 요구하는 작업에서는 종종 어려움을 겪었습니다. 본 연구에서는 이를 더 효과적이고 정밀하며 빠르게 만드는 방법을 탐구합니다. 아키텍처 및 시스템 수준의 개선을 결합하여, 이전 모델인 RVT보다 학습 속도가 6배, 추론 속도가 2배 빠른 멀티태스크 3D 조작 모델인 RVT-2를 제안합니다. RVT-2는 RLBench에서 새로운 최첨단 성능을 달성하여 성공률을 65%에서 82%로 향상시켰습니다. 또한 RVT-2는 실제 환경에서도 효과적이며, 플러그 집기 및 삽입과 같은 높은 정밀도를 요구하는 작업을 단 10회의 시연만으로 학습할 수 있습니다. 시각적 결과, 코드 및 학습된 모델은 다음에서 확인할 수 있습니다: https://robotic-view-transformer-2.github.io/.
-
-## 핵심 내용
-본 연구에서는 언어 명령을 기반으로 여러 3D 조작 작업을 해결할 수 있는 로봇 시스템을 구축하는 방법을 연구합니다. 산업 및 가정 환경에서 유용하게 사용되기 위해서는 이러한 시스템이 적은 시연으로 새로운 작업을 학습하고 정밀하게 수행할 수 있어야 합니다. PerAct 및 RVT와 같은 이전 연구들에서 이 문제를 다루었지만, 높은 정밀도를 요구하는 작업에서는 종종 어려움을 겪었습니다. 본 연구에서는 이를 더 효과적이고 정밀하며 빠르게 만드는 방법을 탐구합니다. 아키텍처 및 시스템 수준의 개선을 결합하여, 이전 모델인 RVT보다 학습 속도가 6배, 추론 속도가 2배 빠른 멀티태스크 3D 조작 모델인 RVT-2를 제안합니다. RVT-2는 RLBench에서 새로운 최첨단 성능을 달성하여 성공률을 65%에서 82%로 향상시켰습니다. 또한 RVT-2는 실제 환경에서도 효과적이며, 플러그 집기 및 삽입과 같은 높은 정밀도를 요구하는 작업을 단 10회의 시연만으로 학습할 수 있습니다. 시각적 결과, 코드 및 학습된 모델은 다음에서 확인할 수 있습니다: https://robotic-view-transformer-2.github.io/.
-
 ## 参考
 - http://arxiv.org/abs/2406.08545v1
+
+## 개요
+RVT-2는 산업 및 가정 환경에서 언어 명령을 통해 다양한 3D 조작 작업을 수행하는 문제를 해결하기 위해 설계되었습니다. PerAct 및 RVT와 같은 이전 방법들의 고정밀 작업에서의 한계를 극복하기 위해, 이 모델은 아키텍처 및 시스템 수준 최적화를 통해 현저한 개선을 달성했습니다. 훈련 속도는 이전 RVT 대비 6배, 추론 속도는 2배 향상되었으며, RLBench 벤치마크에서 82%의 성공률로 신기록을 세웠습니다. 실제 세계 실험에서 RVT-2는 플러그 집기 및 삽입과 같은 고정밀 작업을 단 10회의 시연만으로 학습할 수 있습니다.
+
+## 핵심 내용
+### 방법
+RVT-2는 이전 RVT의 3D 시각-언어-행동 아키텍처를 기반으로, 다음과 같은 개선을 통해 정밀도와 효율성을 향상시킵니다:
+- **아키텍처 최적화**: 더 효율적인 3D 특징 추출 모듈을 도입하여 계산 중복을 줄입니다.
+- **시스템 수준 가속화**: 병렬화된 훈련 전략과 경량화된 추론 파이프라인을 채택하여 훈련 속도를 6배, 추론 속도를 2배 향상시킵니다.
+
+### 실험 설정
+- **벤치마크 테스트**: RLBench에서 18가지 조작 작업을 포함한 다중 작업 평가를 수행합니다.
+- **실제 세계 검증**: Franka Emika Panda 로봇 팔을 사용하여 고정밀 작업(예: 플러그 삽입)에 대해 10회의 시연 학습을 진행합니다.
+
+### 주요 결과
+- **RLBench 성능**: 성공률이 RVT의 65%에서 82%로 향상되어 PerAct(45%) 등의 기준 모델을 능가합니다.
+- **실제 세계 성능**: 단 10회의 시연만으로 고정밀 플러그 삽입 작업을 완료하며, 성공률은 약 90%에 달합니다.
+- **효율성 비교**: 훈련 시간이 RVT의 120시간에서 20시간(단일 GPU)으로 단축되고, 추론 지연 시간은 0.8초에서 0.4초로 감소합니다.
+
+### 결론
+RVT-2는 아키텍처와 시스템 수준의 협력적 최적화를 통해 소수의 시연만으로 고정밀 3D 조작이 가능함을 입증하며, 산업 및 가정 환경에서 실용적인 로봇 시스템을 위한 새로운 패러다임을 제시합니다. 코드와 사전 훈련된 모델은 오픈소스로 공개되었습니다.

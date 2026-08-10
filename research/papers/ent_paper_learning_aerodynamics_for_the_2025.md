@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.00305v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.00305v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (680 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,26 @@ sources:
 ## Overview
 Robots with multi-modal locomotion are an active research field due to their versatility in diverse environments. In this context, additional actuation can provide humanoid robots with aerial capabilities. Flying humanoid robots face challenges in modeling and control, particularly with aerodynamic forces. This paper addresses these challenges from a technological and scientific standpoint. The technological contribution includes the mechanical design of iRonCub-Mk1, a jet-powered humanoid robot, optimized for jet engine integration, and hardware modifications for wind tunnel experiments on humanoid robots for precise aerodynamic forces and surface pressure measurements. The scientific contribution offers a comprehensive approach to model and control aerodynamic forces using classical and learning techniques. Computational Fluid Dynamics (CFD) simulations calculate aerodynamic forces, validated through wind tunnel experiments on iRonCub-Mk1. An automated CFD framework expands the aerodynamic dataset, enabling the training of a Deep Neural Network and a linear regression model. These models are integrated into a simulator for designing aerodynamic-aware controllers, validated through flight simulations and balancing experiments on the iRonCub-Mk1 physical prototype.
 
-## 개요
-다중 모드 이동 능력을 갖춘 로봇은 다양한 환경에서의 다재다능함 덕분에 활발한 연구 분야입니다. 이러한 맥락에서 추가적인 구동 장치는 휴머노이드 로봇에 비행 능력을 부여할 수 있습니다. 비행 휴머노이드 로봇은 모델링 및 제어, 특히 공기역학적 힘과 관련된 문제에 직면합니다. 본 논문은 이러한 문제를 기술적 및 과학적 관점에서 다룹니다. 기술적 기여로는 제트 엔진 통합에 최적화된 제트 구동 휴머노이드 로봇 iRonCub-Mk1의 기계적 설계와, 정밀한 공기역학적 힘 및 표면 압력 측정을 위한 휴머노이드 로봇 풍동 실험을 위한 하드웨어 개조가 포함됩니다. 과학적 기여는 고전적 및 학습 기법을 사용하여 공기역학적 힘을 모델링하고 제어하는 포괄적인 접근 방식을 제공합니다. 전산유체역학(CFD) 시뮬레이션은 공기역학적 힘을 계산하며, iRonCub-Mk1에 대한 풍동 실험을 통해 검증됩니다. 자동화된 CFD 프레임워크는 공기역학 데이터 세트를 확장하여 심층 신경망 및 선형 회귀 모델의 훈련을 가능하게 합니다. 이러한 모델은 공기역학 인식 제어기를 설계하기 위한 시뮬레이터에 통합되며, iRonCub-Mk1 물리적 프로토타입에 대한 비행 시뮬레이션 및 균형 실험을 통해 검증됩니다.
-
-## 핵심 내용
-다중 모드 이동 능력을 갖춘 로봇은 다양한 환경에서의 다재다능함 덕분에 활발한 연구 분야입니다. 이러한 맥락에서 추가적인 구동 장치는 휴머노이드 로봇에 비행 능력을 부여할 수 있습니다. 비행 휴머노이드 로봇은 모델링 및 제어, 특히 공기역학적 힘과 관련된 문제에 직면합니다. 본 논문은 이러한 문제를 기술적 및 과학적 관점에서 다룹니다. 기술적 기여로는 제트 엔진 통합에 최적화된 제트 구동 휴머노이드 로봇 iRonCub-Mk1의 기계적 설계와, 정밀한 공기역학적 힘 및 표면 압력 측정을 위한 휴머노이드 로봇 풍동 실험을 위한 하드웨어 개조가 포함됩니다. 과학적 기여는 고전적 및 학습 기법을 사용하여 공기역학적 힘을 모델링하고 제어하는 포괄적인 접근 방식을 제공합니다. 전산유체역학(CFD) 시뮬레이션은 공기역학적 힘을 계산하며, iRonCub-Mk1에 대한 풍동 실험을 통해 검증됩니다. 자동화된 CFD 프레임워크는 공기역학 데이터 세트를 확장하여 심층 신경망 및 선형 회귀 모델의 훈련을 가능하게 합니다. 이러한 모델은 공기역학 인식 제어기를 설계하기 위한 시뮬레이터에 통합되며, iRonCub-Mk1 물리적 프로토타입에 대한 비행 시뮬레이션 및 균형 실험을 통해 검증됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.00305v2
+
+## 개요
+이 연구는 다중 모드 운동 휴머노이드 로봇의 공기역학적 도전 과제에 초점을 맞춥니다. 기술적 측면에서 팀은 제트 엔진 통합을 위해 설계된 iRonCub-Mk1 로봇을 개발하고, 풍동 실험을 지원하도록 하드웨어를 개조하여 공기역학적 힘과 표면 압력을 정밀하게 측정했습니다. 과학적 측면에서 연구는 전산유체역학(CFD) 시뮬레이션과 딥러닝을 결합하여 공기역학 데이터 세트를 구축하고 심층 신경망 및 선형 회귀 모델을 훈련시켰으며, 최종적으로 이러한 모델을 시뮬레이터에 통합하여 공기역학 인식 제어기를 설계하고 비행 시뮬레이션 및 실물 균형 실험을 통해 제어 효과를 검증했습니다.
+
+## 핵심 내용
+### 연구 배경 및 도전 과제
+- 다중 모드 운동 로봇은 환경 적응성으로 인해 연구 핫스팟이 되었지만, 휴머노이드 로봇에 비행 능력이 추가되면서 공기역학적 모델링 및 제어의 특수한 어려움에 직면하게 됩니다.
+
+### 기술적 기여: iRonCub-Mk1 하드웨어 설계
+- 기계 설계는 구조 강화 및 열 관리를 포함하여 제트 엔진 통합에 최적화되었습니다.
+- 하드웨어 개조는 풍동 실험을 지원하여 공기역학적 힘과 표면 압력 분포를 정밀하게 측정할 수 있습니다.
+
+### 과학적 기여: 공기역학 모델링 및 제어
+- **CFD 시뮬레이션 및 검증**: 전산유체역학(CFD) 시뮬레이션을 사용하여 공기역학적 힘을 계산하고, iRonCub-Mk1 풍동 실험을 통해 시뮬레이션 정확도를 검증했습니다.
+- **데이터 세트 확장**: 자동화된 CFD 프레임워크를 개발하여 대규모 공기역학 데이터 세트를 생성했습니다.
+- **모델 훈련**: 데이터 세트를 기반으로 심층 신경망(DNN) 및 선형 회귀 모델을 훈련시켜 공기역학적 힘을 예측했습니다.
+- **제어기 통합**: 훈련된 모델을 시뮬레이터에 통합하여 공기역학 인식 제어기를 설계했습니다.
+
+### 실험 검증
+- **비행 시뮬레이션**: 비행 시나리오에서 제어기의 안정성과 응답 능력을 검증했습니다.
+- **실물 실험**: iRonCub-Mk1 프로토타입에서 균형 실험을 완료하여 실제 하드웨어에서 모델과 제어기의 유효성을 추가로 확인했습니다.

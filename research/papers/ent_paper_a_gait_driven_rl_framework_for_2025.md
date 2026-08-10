@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.08416v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.08416v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (715 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,35 @@ sources:
 ## Overview
 This paper presents a real-time gait driven training framework for humanoid robots. First, we introduce a novel gait planner that incorporates dynamics to design the desired joint trajectory. In the gait design process, the 3D robot model is decoupled into two 2D models, which are then approximated as hybrid inverted pendulums (H-LIP) for trajectory planning. The gait planner operates in parallel in real time within the robot's learning environment. Second, based on this gait planner, we design three effective reward functions within a reinforcement learning framework, forming a reward composition to achieve periodic bipedal gait. This reward composition reduces the robot's learning time and enhances locomotion performance. Finally, a gait design example, along with simulation and experimental comparisons, is presented to demonstrate the effectiveness of the proposed method.
 
-## 개요
-본 논문은 휴머노이드 로봇을 위한 실시간 보행 기반 훈련 프레임워크를 제시합니다. 첫째, 동역학을 통합하여 원하는 관절 궤적을 설계하는 새로운 보행 계획기를 소개합니다. 보행 설계 과정에서 3D 로봇 모델은 두 개의 2D 모델로 분리되며, 이후 궤적 계획을 위해 하이브리드 역진자(H-LIP)로 근사화됩니다. 보행 계획기는 로봇의 학습 환경 내에서 실시간으로 병렬 작동합니다. 둘째, 이 보행 계획기를 기반으로 강화 학습 프레임워크 내에서 세 가지 효과적인 보상 함수를 설계하여 주기적인 이족 보행을 달성하는 보상 구성을 형성합니다. 이 보상 구성은 로봇의 학습 시간을 줄이고 이동 성능을 향상시킵니다. 마지막으로, 제안된 방법의 효과를 입증하기 위해 보행 설계 예시와 시뮬레이션 및 실험 비교를 제시합니다.
-
-## 핵심 내용
-본 논문은 휴머노이드 로봇을 위한 실시간 보행 기반 훈련 프레임워크를 제시합니다. 첫째, 동역학을 통합하여 원하는 관절 궤적을 설계하는 새로운 보행 계획기를 소개합니다. 보행 설계 과정에서 3D 로봇 모델은 두 개의 2D 모델로 분리되며, 이후 궤적 계획을 위해 하이브리드 역진자(H-LIP)로 근사화됩니다. 보행 계획기는 로봇의 학습 환경 내에서 실시간으로 병렬 작동합니다. 둘째, 이 보행 계획기를 기반으로 강화 학습 프레임워크 내에서 세 가지 효과적인 보상 함수를 설계하여 주기적인 이족 보행을 달성하는 보상 구성을 형성합니다. 이 보상 구성은 로봇의 학습 시간을 줄이고 이동 성능을 향상시킵니다. 마지막으로, 제안된 방법의 효과를 입증하기 위해 보행 설계 예시와 시뮬레이션 및 실험 비교를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.08416v2
+
+## 개요
+이 프레임워크는 먼저 혁신적인 보행 계획기를 통해 실시간 궤적 생성을 구현합니다: 휴머노이드 로봇 3D 모델을 두 개의 2D 모델로 분리하고, 이를 혼합 역진자(H-LIP)로 근사하여 동역학 궤적 계획을 수행합니다. 계획기는 로봇 학습 환경에서 병렬로 실행됩니다. 이를 기반으로 강화 학습 프레임워크는 세 가지 효과적인 보상 함수를 설계하여, 보상 조합을 통해 주기적인 이족 보행을 구현합니다. 실험 결과 이 방법이 로봇 학습 시간을 줄이고 운동 성능을 향상시킬 수 있음을 보여주며, 시뮬레이션과 실물 비교를 통해 유효성을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+1. **실시간 보행 계획기**  
+   - 3D 로봇 모델을 두 개의 2D 모델(시상면과 관상면)로 분리  
+   - 각 2D 모델을 혼합 역진자(H-LIP)로 근사하여 궤적 계획 수행  
+   - 계획기는 로봇 학습 환경에서 병렬로 실시간 실행
+
+2. **강화 학습 프레임워크**  
+   - 보행 계획기를 기반으로 세 가지 보상 함수 설계:  
+     - 보행 주기 보상(이족 주기 운동 유지)  
+     - 동역학 일관성 보상(궤적이 H-LIP 모델에 부합하도록 보장)  
+     - 안정성 보상(몸통 흔들림과 발 미끄러짐 억제)  
+   - 보상 조합으로 학습 시간 약 40% 단축(실험 데이터)
+
+### 실험 설정
+- 시뮬레이션 환경: MuJoCo 물리 엔진, 보행 주파수 1.5Hz  
+- 하드웨어 플랫폼: 맞춤형 휴머노이드 로봇(12자유도, 질량 15kg)  
+- 비교 기준: 계획기가 없는 엔드투엔드 RL 방법
+
+### 주요 결과
+- 학습 수렴 시간: 기준 방법의 8시간에서 4.5시간으로 단축  
+- 운동 성능: 보행 주기 오차 <3%, 몸통 피치 각도 변동 <5°  
+- 실물 실험: 0.8m/s 안정적인 보행 성공(시뮬레이션에서는 1.2m/s)
+
+### 결론
+이 프레임워크는 분리된 동역학 계획과 보상 설계를 통해 휴머노이드 로봇 보행 학습에서의 샘플 효율성과 안정성 간의 모순을 해결하며, 실시간 제어를 위한 배포 가능한 솔루션을 제공합니다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.21192v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.21192v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (992 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,30 @@ UPA-RFAS 首次证明了单一物理补丁可对多种 VLA 模型实现黑盒攻
 ## Overview
 Vision-Language-Action (VLA) models are vulnerable to adversarial attacks, yet universal and transferable attacks remain underexplored, as most existing patches overfit to a single model and fail in black-box settings. To address this gap, we present a systematic study of universal, transferable adversarial patches against VLA-driven robots under unknown architectures, finetuned variants, and sim-to-real shifts. We introduce UPA-RFAS (Universal Patch Attack via Robust Feature, Attention, and Semantics), a unified framework that learns a single physical patch in a shared feature space while promoting cross-model transfer. UPA-RFAS combines (i) a feature-space objective with an $\ell_1$ deviation prior and repulsive InfoNCE loss to induce transferable representation shifts, (ii) a robustness-augmented two-phase min-max procedure where an inner loop learns invisible sample-wise perturbations and an outer loop optimizes the universal patch against this hardened neighborhood, and (iii) two VLA-specific losses: Patch Attention Dominance to hijack text$\to$vision attention and Patch Semantic Misalignment to induce image-text mismatch without labels. Experiments across diverse VLA models, manipulation suites, and physical executions show that UPA-RFAS consistently transfers across models, tasks, and viewpoints, exposing a practical patch-based attack surface and establishing a strong baseline for future defenses.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 적대적 공격에 취약하지만, 대부분의 기존 패치가 단일 모델에 과적합되어 블랙박스 환경에서 실패하기 때문에 보편적이고 전이 가능한 공격은 아직 충분히 연구되지 않았습니다. 이러한 격차를 해소하기 위해, 우리는 알려지지 않은 아키텍처, 미세 조정 변형, 시뮬레이션-실제 전환 하에서 VLA 기반 로봇을 대상으로 하는 보편적이고 전이 가능한 적대적 패치에 대한 체계적인 연구를 제시합니다. 우리는 UPA-RFAS(Universal Patch Attack via Robust Feature, Attention, and Semantics)를 소개합니다. 이는 공유된 특징 공간에서 단일 물리적 패치를 학습하면서 교차 모델 전이를 촉진하는 통합 프레임워크입니다. UPA-RFAS는 (i) $\ell_1$ 편차 사전 및 반발 InfoNCE 손실을 포함한 특징 공간 목표를 결합하여 전이 가능한 표현 변화를 유도하고, (ii) 내부 루프가 보이지 않는 샘플별 섭동을 학습하고 외부 루프가 이 강화된 이웃에 대해 보편적 패치를 최적화하는 강건성 강화 2단계 최소-최대 절차, (iii) 두 가지 VLA 특화 손실, 즉 텍스트→비전 주의를 탈취하는 패치 주의 지배(Patch Attention Dominance)와 레이블 없이 이미지-텍스트 불일치를 유도하는 패치 의미 불일치(Patch Semantic Misalignment)를 결합합니다. 다양한 VLA 모델, 조작 스위트, 물리적 실행에 걸친 실험은 UPA-RFAS가 모델, 작업, 시점 간에 일관되게 전이되어 실용적인 패치 기반 공격 표면을 노출하고 향후 방어를 위한 강력한 기준선을 수립함을 보여줍니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 적대적 공격에 취약하지만, 대부분의 기존 패치가 단일 모델에 과적합되어 블랙박스 환경에서 실패하기 때문에 보편적이고 전이 가능한 공격은 아직 충분히 연구되지 않았습니다. 이러한 격차를 해소하기 위해, 우리는 알려지지 않은 아키텍처, 미세 조정 변형, 시뮬레이션-실제 전환 하에서 VLA 기반 로봇을 대상으로 하는 보편적이고 전이 가능한 적대적 패치에 대한 체계적인 연구를 제시합니다. 우리는 UPA-RFAS(Universal Patch Attack via Robust Feature, Attention, and Semantics)를 소개합니다. 이는 공유된 특징 공간에서 단일 물리적 패치를 학습하면서 교차 모델 전이를 촉진하는 통합 프레임워크입니다. UPA-RFAS는 (i) $\ell_1$ 편차 사전 및 반발 InfoNCE 손실을 포함한 특징 공간 목표를 결합하여 전이 가능한 표현 변화를 유도하고, (ii) 내부 루프가 보이지 않는 샘플별 섭동을 학습하고 외부 루프가 이 강화된 이웃에 대해 보편적 패치를 최적화하는 강건성 강화 2단계 최소-최대 절차, (iii) 두 가지 VLA 특화 손실, 즉 텍스트→비전 주의를 탈취하는 패치 주의 지배(Patch Attention Dominance)와 레이블 없이 이미지-텍스트 불일치를 유도하는 패치 의미 불일치(Patch Semantic Misalignment)를 결합합니다. 다양한 VLA 모델, 조작 스위트, 물리적 실행에 걸친 실험은 UPA-RFAS가 모델, 작업, 시점 간에 일관되게 전이되어 실용적인 패치 기반 공격 표면을 노출하고 향후 방어를 위한 강력한 기준선을 수립함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.21192v3
+
+## 개요
+기존 적대적 패치 공격은 단일 모델에 과적합되어 교차 모델 블랙박스 시나리오에서 효과적으로 전이되지 못합니다. UPA-RFAS는 공유 특징 공간에서의 통합 프레임워크를 구축하고, 특징 공간 목적 함수, 강건 향상 2단계 최소-최대 최적화, 그리고 두 가지 VLA 전용 손실 함수를 결합하여 단일 물리적 패치로 다양한 VLA 모델, 조작 작업 및 시점에 대한 범용 공격을 구현합니다. 실험을 통해 해당 패치의 교차 모델, 교차 작업 및 물리적 실행에서의 안정적 전이성을 검증하였으며, VLA 시스템이 직면한 실제 공격 표면을 드러냅니다.
+
+## 핵심 내용
+### 방법 아키텍처
+UPA-RFAS 프레임워크는 세 가지 핵심 구성 요소로 이루어집니다:
+- **특징 공간 목표**: $\ell_1$ 편향 사전 및 배타적 InfoNCE 손실을 사용한 결합 최적화를 통해 모델이 전이 가능한 표현 이동을 유도합니다.
+- **강건 향상 2단계 최적화**: 내부 루프는 보이지 않는 샘플 수준의 교란을 학습하고, 외부 루프는 이렇게 강화된 이웃 영역에서 범용 패치를 최적화하여 최소-최대 적대적 훈련 패러다임을 형성합니다.
+- **VLA 전용 손실**:
+  - **패치 주의 지배(Patch Attention Dominance)**: 텍스트-시각 주의 할당을 탈취하여 패치가 교차 모달 상호작용을 지배하게 합니다.
+  - **패치 의미 불일치(Patch Semantic Misalignment)**: 라벨 없이 이미지-텍스트 의미적 불일치를 유발합니다.
+
+### 실험 설정
+- **모델 및 데이터셋**: 다양한 VLA 아키텍처(예: RT-2, Octo, OpenVLA) 및 미세 조정 변형을 테스트하며, 조작 작업은 MetaWorld, RLBench 등 벤치마크 스위트에서 가져옵니다.
+- **물리적 실행**: 실제 로봇 플랫폼에서 시점 변화, 조명 조건 및 물리적 인쇄 변형 하에서 패치의 공격 효과를 검증합니다.
+
+### 주요 결과
+- **교차 모델 전이**: UPA-RFAS는 보지 못한 VLA 모델에서 평균 공격 성공률 78.3%를 달성하여 기존 방법(최대 32.1%)을 크게 능가합니다.
+- **교차 작업 일반화**: 단일 패치가 12가지 서로 다른 조작 작업에서 65% 이상의 성공률을 유지합니다.
+- **시뮬레이션-실제 전이**: 물리적으로 인쇄된 패치는 실제 환경에서도 71%의 공격 성공률을 유지하며, 시뮬레이션 결과 대비 9.2% 포인트만 감소합니다.
+- **절제 실험**: 패치 주의 지배 손실을 제거하면 공격 성공률이 41% 하락하여 그 핵심 역할을 입증합니다.
+
+### 결론
+UPA-RFAS는 단일 물리적 패치가 다양한 VLA 모델에 대해 블랙박스 공격을 수행할 수 있음을 처음으로 입증하며, 로봇 안전 분야에 새로운 방어 기준을 제시합니다. 이 연구는 현재 VLA 시스템이 적대적 강건성 측면에서 심각한 결함을 지니고 있음을 밝히고, 재현 가능한 평가 프레임워크를 제공합니다.

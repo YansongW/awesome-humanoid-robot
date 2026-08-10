@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.15576v5. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.15576v5. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (611 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -65,11 +66,22 @@ sources:
 ## Overview
 This paper addresses the inherent inference latency challenges associated with deploying multimodal large language models (MLLM) in quadruped vision-language-action (QUAR-VLA) tasks. Our investigation reveals that conventional parameter reduction techniques ultimately impair the performance of the language foundation model during the action instruction tuning phase, making them unsuitable for this purpose. We introduce a novel latency-free quadruped MLLM model, dubbed QUART-Online, designed to enhance inference efficiency without degrading the performance of the language foundation model. By incorporating Action Chunk Discretization (ACD), we compress the original action representation space, mapping continuous action values onto a smaller set of discrete representative vectors while preserving critical information. Subsequently, we fine-tune the MLLM to integrate vision, language, and compressed actions into a unified semantic space. Experimental results demonstrate that QUART-Online operates in tandem with the existing MLLM system, achieving real-time inference in sync with the underlying controller frequency, significantly boosting the success rate across various tasks by 65%. Our project page is https://quart-online.github.io.
 
-## 개요
-본 논문은 사족 보행 비전-언어-행동(QUAR-VLA) 작업에 다중 모달 대규모 언어 모델(MLLM)을 배포할 때 발생하는 고유한 추론 지연 문제를 다룹니다. 연구 결과, 기존의 매개변수 축소 기술은 행동 명령 튜닝 단계에서 언어 기반 모델의 성능을 저하시켜 이 목적에 부적합함을 밝혔습니다. 우리는 언어 기반 모델의 성능 저하 없이 추론 효율성을 향상시키도록 설계된 새로운 지연 없는 사족 보행 MLLM 모델인 QUART-Online을 소개합니다. Action Chunk Discretization(ACD)을 도입하여 원래의 행동 표현 공간을 압축하고, 연속적인 행동 값을 더 작은 이산 대표 벡터 집합에 매핑하면서 중요한 정보를 보존합니다. 이후 MLLM을 미세 조정하여 비전, 언어 및 압축된 행동을 통합된 의미 공간으로 통합합니다. 실험 결과, QUART-Online은 기존 MLLM 시스템과 함께 작동하여 기본 제어기 주파수와 동기화된 실시간 추론을 달성하며, 다양한 작업에서 성공률을 65% 크게 향상시킵니다. 프로젝트 페이지는 https://quart-online.github.io입니다.
-
-## 핵심 내용
-본 논문은 사족 보행 비전-언어-행동(QUAR-VLA) 작업에 다중 모달 대규모 언어 모델(MLLM)을 배포할 때 발생하는 고유한 추론 지연 문제를 다룹니다. 연구 결과, 기존의 매개변수 축소 기술은 행동 명령 튜닝 단계에서 언어 기반 모델의 성능을 저하시켜 이 목적에 부적합함을 밝혔습니다. 우리는 언어 기반 모델의 성능 저하 없이 추론 효율성을 향상시키도록 설계된 새로운 지연 없는 사족 보행 MLLM 모델인 QUART-Online을 소개합니다. Action Chunk Discretization(ACD)을 도입하여 원래의 행동 표현 공간을 압축하고, 연속적인 행동 값을 더 작은 이산 대표 벡터 집합에 매핑하면서 중요한 정보를 보존합니다. 이후 MLLM을 미세 조정하여 비전, 언어 및 압축된 행동을 통합된 의미 공간으로 통합합니다. 실험 결과, QUART-Online은 기존 MLLM 시스템과 함께 작동하여 기본 제어기 주파수와 동기화된 실시간 추론을 달성하며, 다양한 작업에서 성공률을 65% 크게 향상시킵니다. 프로젝트 페이지는 https://quart-online.github.io입니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.15576v5
+
+## 개요
+다중 모달 대규모 언어 모델이 사족 로봇의 시각-언어-행동 작업에서 가지는 고유한 추론 지연 문제를 해결하기 위해, 저장대학 연구팀은 전통적인 매개변수 축소 방법이 행동 명령 미세 조정 단계에서 언어 기반 모델의 성능을 저하시킨다는 점을 발견했습니다. 이를 위해 그들은 QUART-Online 모델을 제안했으며, Action Chunk Discretization (ACD) 기술을 통해 연속적인 행동 값을 더 작은 이산 대표 벡터 집합에 매핑하여 핵심 정보를 보존하면서 행동 표현 공간을 압축합니다. 이후 이 모델은 시각, 언어, 압축된 행동을 동일한 의미 공간으로 통합 미세 조정합니다. 실험 결과, QUART-Online은 기존 MLLM 시스템과 협력하여 하위 컨트롤러 주파수와 동기화된 실시간 추론을 구현하고, 작업 성공률을 크게 향상시킵니다.
+
+## 핵심 내용
+### 핵심 문제
+- 다중 모달 대규모 언어 모델은 사족 로봇의 시각-언어-행동 작업에서 추론 지연 문제가 있음
+- 전통적인 매개변수 축소 방법은 행동 명령 미세 조정 단계에서 언어 기반 모델의 성능을 저하시킴
+
+### 방법 아키텍처
+- **Action Chunk Discretization (ACD)**: 연속적인 행동 값을 더 작은 이산 대표 벡터 집합에 매핑하여 행동 표현 공간을 압축하면서 핵심 정보를 보존
+- 미세 조정을 통해 시각, 언어, 압축된 행동을 동일한 의미 공간으로 통합
+
+### 실험 설정 및 결과
+- QUART-Online은 기존 MLLM 시스템과 협력하여 하위 컨트롤러 주파수와 동기화된 실시간 추론을 구현
+- 다양한 작업의 성공률이 평균 65% 향상
+- 프로젝트 페이지: https://quart-online.github.io

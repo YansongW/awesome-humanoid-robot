@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00077v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00077v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (986 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,32 @@ sources:
 ## Overview
 The integration of Supernumerary Limbs (SLs) on humanoid robots poses a significant stability challenge due to the dynamic perturbations they introduce. This thesis addresses this issue by designing a novel hierarchical control architecture to improve humanoid locomotion stability with SLs. The core of this framework is a decoupled strategy that combines learning-based locomotion with model-based balancing. The low-level component consists of a walking gait for a Unitree H1 humanoid through imitation learning and curriculum learning. The high-level component actively utilizes the SLs for dynamic balancing. The effectiveness of the system is evaluated in a physics-based simulation under three conditions: baseline gait for an unladen humanoid (baseline walking), walking with a static SL payload (static payload), and walking with the active dynamic balancing controller (dynamic balancing). Our evaluation shows that the dynamic balancing controller improves stability. Compared to the static payload condition, the balancing strategy yields a gait pattern closer to the baseline and decreases the Dynamic Time Warping (DTW) distance of the CoM trajectory by 47\%. The balancing controller also improves the re-stabilization within gait cycles and achieves a more coordinated anti-phase pattern of Ground Reaction Forces (GRF). The results demonstrate that a decoupled, hierarchical design can effectively mitigate the internal dynamic disturbances arising from the mass and movement of the SLs, enabling stable locomotion for humanoids equipped with functional limbs. Code and videos are available here: https://github.com/heyzbw/HuSLs.
 
-## 개요
-휴머노이드 로봇에 초과 팔다리(SLs)를 통합하면 동적 교란으로 인해 심각한 안정성 문제가 발생합니다. 본 논문은 이러한 문제를 해결하기 위해 SLs를 갖춘 휴머노이드의 보행 안정성을 향상시키는 새로운 계층적 제어 아키텍처를 설계합니다. 이 프레임워크의 핵심은 학습 기반 보행과 모델 기반 균형을 결합한 분리 전략입니다. 하위 수준 구성 요소는 모방 학습과 커리큘럼 학습을 통해 Unitree H1 휴머노이드의 보행 걸음걸이로 구성됩니다. 상위 수준 구성 요소는 동적 균형을 위해 SLs를 적극적으로 활용합니다. 시스템의 효과는 세 가지 조건(무부하 휴머노이드의 기준 걸음걸이(기준 보행), 정적 SL 페이로드로 보행(정적 페이로드), 능동 동적 균형 제어기로 보행(동적 균형))에서 물리 기반 시뮬레이션을 통해 평가됩니다. 평가 결과, 동적 균형 제어기가 안정성을 향상시키는 것으로 나타났습니다. 정적 페이로드 조건과 비교하여 균형 전략은 기준에 더 가까운 걸음걸이 패턴을 생성하고 CoM 궤적의 DTW(Dynamic Time Warping) 거리를 47% 감소시킵니다. 균형 제어기는 또한 걸음걸이 주기 내 재안정화를 개선하고 지면 반력(GRF)의 더 조화로운 역위상 패턴을 달성합니다. 결과는 분리된 계층적 설계가 SLs의 질량과 움직임에서 발생하는 내부 동적 교란을 효과적으로 완화하여 기능적 팔다리를 장착한 휴머노이드의 안정적인 보행을 가능하게 함을 보여줍니다. 코드와 비디오는 여기에서 확인할 수 있습니다: https://github.com/heyzbw/HuSLs.
-
-## 핵심 내용
-휴머노이드 로봇에 초과 팔다리(SLs)를 통합하면 동적 교란으로 인해 심각한 안정성 문제가 발생합니다. 본 논문은 이러한 문제를 해결하기 위해 SLs를 갖춘 휴머노이드의 보행 안정성을 향상시키는 새로운 계층적 제어 아키텍처를 설계합니다. 이 프레임워크의 핵심은 학습 기반 보행과 모델 기반 균형을 결합한 분리 전략입니다. 하위 수준 구성 요소는 모방 학습과 커리큘럼 학습을 통해 Unitree H1 휴머노이드의 보행 걸음걸이로 구성됩니다. 상위 수준 구성 요소는 동적 균형을 위해 SLs를 적극적으로 활용합니다. 시스템의 효과는 세 가지 조건(무부하 휴머노이드의 기준 걸음걸이(기준 보행), 정적 SL 페이로드로 보행(정적 페이로드), 능동 동적 균형 제어기로 보행(동적 균형))에서 물리 기반 시뮬레이션을 통해 평가됩니다. 평가 결과, 동적 균형 제어기가 안정성을 향상시키는 것으로 나타났습니다. 정적 페이로드 조건과 비교하여 균형 전략은 기준에 더 가까운 걸음걸이 패턴을 생성하고 CoM 궤적의 DTW(Dynamic Time Warping) 거리를 47% 감소시킵니다. 균형 제어기는 또한 걸음걸이 주기 내 재안정화를 개선하고 지면 반력(GRF)의 더 조화로운 역위상 패턴을 달성합니다. 결과는 분리된 계층적 설계가 SLs의 질량과 움직임에서 발생하는 내부 동적 교란을 효과적으로 완화하여 기능적 팔다리를 장착한 휴머노이드의 안정적인 보행을 가능하게 함을 보여줍니다. 코드와 비디오는 여기에서 확인할 수 있습니다: https://github.com/heyzbw/HuSLs.
-
 ## 参考
 - http://arxiv.org/abs/2512.00077v1
+
+## 개요
+초수체 부속지(SLs)의 도입은 휴머노이드 로봇에 동적 교란을 유발하여 보행 안정성을 위협합니다. 본 논문은 문제를 저수준 학습 기반 보행 생성과 고수준 모델 기반 균형 제어로 분리하는 새로운 계층적 제어 아키텍처를 설계합니다. 저수준은 모방 학습과 커리큘럼 학습을 통해 Unitree H1의 기본 보행을 생성하고, 고수준은 SLs를 능동적으로 활용하여 동적 균형을 수행합니다. 물리 시뮬레이션에서 이 방법은 세 가지 조건에서 검증되었습니다: 무부하 기본 보행, 정적 SL 부하 보행, 그리고 능동 동적 균형 제어 보행. 결과는 능동 균형 제어기가 정적 부하 조건 대비 질량 중심 궤적의 DTW 거리를 47% 감소시키고, 더 조화로운 지면 반력 역위상 패턴을 구현했음을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **계층적 분리 설계**: SLs를 장착한 휴머노이드 로봇의 보행 문제를 두 개의 독립 모듈로 분해합니다.
+  - **저수준(학습 기반 보행 생성)**: Unitree H1 로봇을 기반으로 모방 학습(imitation learning)과 커리큘럼 학습(curriculum learning)을 통해 보행 패턴을 훈련합니다.
+  - **고수준(모델 기반 균형 제어)**: SLs의 움직임을 능동적으로 제어하여 자체 질량으로 인한 동적 교란을 보상하고 동적 균형을 달성합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 물리 엔진 기반 시뮬레이션 플랫폼.
+- **테스트 조건**:
+  1. **기준 보행(baseline walking)**: 로봇이 SLs를 장착하지 않고 기본 보행만 실행.
+  2. **정적 부하(static payload)**: 로봇이 SLs를 장착하지만 SLs는 고정 자세를 유지하며 균형에 참여하지 않음.
+  3. **동적 균형(dynamic balancing)**: 로봇이 SLs를 장착하고 고수준 균형 제어기를 활성화.
+
+### 주요 결과
+- **안정성 향상**: 동적 균형 제어기가 보행 패턴을 기준 보행에 더 가깝게 만듭니다.
+- **정량적 지표**:
+  - 질량 중심 궤적의 Dynamic Time Warping(DTW) 거리가 정적 부하 조건 대비 47% 감소.
+  - 보행 주기 내 재안정화(re-stabilization) 능력이 현저히 개선.
+  - 지면 반력(Ground Reaction Forces, GRF)이 더 조화로운 역위상 패턴(anti-phase pattern)을 나타냄.
+- **결론**: 분리된 계층적 설계는 SLs의 질량과 움직임으로 인한 내부 동적 교란을 효과적으로 억제하여 기능성 부속지를 장착한 휴머노이드 로봇의 안정적인 보행을 가능하게 합니다.
+
+### 코드 및 비디오
+- 오픈소스 코드 및 데모 비디오: https://github.com/heyzbw/HuSLs

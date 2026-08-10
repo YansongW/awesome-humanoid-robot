@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.12260v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.12260v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (787 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,30 @@ sources:
 ## Overview
 This paper investigates humanoid whole-body dexterous manipulation, where the efficient collection of high-quality demonstration data remains a central bottleneck. Existing teleoperation systems often suffer from limited portability, occlusion, or insufficient precision, which hinders their applicability to complex whole-body tasks. To address these challenges, we introduce HumDex, a portable teleoperation system designed for humanoid whole-body dexterous manipulation. Our system leverages IMU-based motion tracking to address the portability-precision trade-off, enabling accurate full-body tracking while remaining easy to deploy. For dexterous hand control, we further introduce a learning-based retargeting method that generates smooth and natural hand motions without manual parameter tuning. Beyond teleoperation, HumDex enables efficient collection of human motion data. Building on this capability, we propose a two-stage imitation learning framework that first pre-trains on diverse human motion data to learn generalizable priors, and then fine-tunes on robot data to bridge the embodiment gap for precise execution. We demonstrate that this approach significantly improves generalization to new configurations, objects, and backgrounds with minimal data acquisition costs. The entire system is fully reproducible and open-sourced at https://github.com/physical-superintelligence-lab/humdex.
 
-## 개요
-본 논문은 휴머노이드 전신 정밀 조작을 연구하며, 고품질 시연 데이터의 효율적인 수집이 여전히 핵심 병목 현상으로 남아 있습니다. 기존 원격 조작 시스템은 종종 휴대성 제한, 폐색 또는 정밀도 부족으로 인해 복잡한 전신 작업에 적용하기 어렵습니다. 이러한 문제를 해결하기 위해 우리는 휴머노이드 전신 정밀 조작을 위한 휴대용 원격 조작 시스템인 HumDex를 소개합니다. 우리 시스템은 IMU 기반 모션 추적을 활용하여 휴대성과 정밀도 간의 균형을 해결하며, 배포가 용이하면서도 정확한 전신 추적을 가능하게 합니다. 정밀한 손 제어를 위해 수동 매개변수 조정 없이 부드럽고 자연스러운 손 동작을 생성하는 학습 기반 리타겟팅 방법을 추가로 도입합니다. 원격 조작 외에도 HumDex는 인간 모션 데이터의 효율적인 수집을 가능하게 합니다. 이 기능을 바탕으로 우리는 먼저 다양한 인간 모션 데이터를 사전 학습하여 일반화 가능한 사전 지식을 학습한 후, 로봇 데이터로 미세 조정하여 구현 격차를 해소하고 정밀한 실행을 수행하는 2단계 모방 학습 프레임워크를 제안합니다. 우리는 이 접근 방식이 최소한의 데이터 수집 비용으로 새로운 구성, 객체 및 배경에 대한 일반화를 크게 향상시킴을 입증합니다. 전체 시스템은 완전히 재현 가능하며 https://github.com/physical-superintelligence-lab/humdex에서 오픈소스로 제공됩니다.
-
-## 핵심 내용
-본 논문은 휴머노이드 전신 정밀 조작을 연구하며, 고품질 시연 데이터의 효율적인 수집이 여전히 핵심 병목 현상으로 남아 있습니다. 기존 원격 조작 시스템은 종종 휴대성 제한, 폐색 또는 정밀도 부족으로 인해 복잡한 전신 작업에 적용하기 어렵습니다. 이러한 문제를 해결하기 위해 우리는 휴머노이드 전신 정밀 조작을 위한 휴대용 원격 조작 시스템인 HumDex를 소개합니다. 우리 시스템은 IMU 기반 모션 추적을 활용하여 휴대성과 정밀도 간의 균형을 해결하며, 배포가 용이하면서도 정확한 전신 추적을 가능하게 합니다. 정밀한 손 제어를 위해 수동 매개변수 조정 없이 부드럽고 자연스러운 손 동작을 생성하는 학습 기반 리타겟팅 방법을 추가로 도입합니다. 원격 조작 외에도 HumDex는 인간 모션 데이터의 효율적인 수집을 가능하게 합니다. 이 기능을 바탕으로 우리는 먼저 다양한 인간 모션 데이터를 사전 학습하여 일반화 가능한 사전 지식을 학습한 후, 로봇 데이터로 미세 조정하여 구현 격차를 해소하고 정밀한 실행을 수행하는 2단계 모방 학습 프레임워크를 제안합니다. 우리는 이 접근 방식이 최소한의 데이터 수집 비용으로 새로운 구성, 객체 및 배경에 대한 일반화를 크게 향상시킴을 입증합니다. 전체 시스템은 완전히 재현 가능하며 https://github.com/physical-superintelligence-lab/humdex에서 오픈소스로 제공됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.12260v2
+
+## 개요
+휴머노이드 로봇의 전신 기민한 조작은 고품질 시연 데이터 수집 효율이 낮다는 핵심 병목에 직면해 있습니다. 기존 원격 조작 시스템은 휴대성 부족, 시야 가림 또는 정밀도 부족 등의 문제가普遍적으로 존재하여 복잡한 전신 작업을 수행하기 어렵습니다. HumDex는 IMU 모션 추적 기술을 채택하여 휴대성을 유지하면서도 정밀한 전신 자세 추적을 구현합니다. 기민한 손 제어를 위해 수동 파라미터 조정이 필요 없는 학습 기반 리타게팅 방법을 도입하여 부드럽고 자연스러운 파지 동작을 생성합니다. 이 시스템은 효율적인 인간 모션 데이터 수집을 지원할 뿐만 아니라 2단계 모방 학습 프레임워크를 구축합니다: 먼저 다양한 인간 모션 데이터에서 사전 학습하여 일반적인 사전 지식을 학습하고, 이후 로봇 데이터에서 미세 조정하여 구현 차이를 해소합니다. 실험 결과, 이 방법은 매우 낮은 데이터 수집 비용으로 새로운 구성, 새로운 물체 및 새로운 배경에 대한 일반화 능력을显著히 향상시킵니다.
+
+## 핵심 내용
+### 핵심 과제
+- 휴머노이드 로봇의 전신 기민한 조작의 주요 병목은 고품질 시연 데이터의 수집 효율입니다.
+- 기존 원격 조작 시스템은 휴대성, 시야 가림 및 정밀도 간의 트레이드오프가 존재하여 복잡한 전신 작업 요구를 충족하기 어렵습니다.
+
+### 시스템 설계
+- **휴대성과 정밀도의 균형**: IMU 모션 추적 기술을 채택하여 정밀한 전신 자세 추적을 구현하면서도 시스템 배포 용이성을 유지합니다.
+- **기민한 손 제어**: 수동 파라미터 조정이 필요 없는 학습 기반 리타게팅 방법을 제안하여 부드럽고 자연스러운 손 동작을 생성합니다.
+
+### 데이터 수집 및 학습 프레임워크
+- **효율적인 데이터 수집**: HumDex는 인간 모션 데이터의 효율적인 수집을 지원하여 후속 학습의 기반을 제공합니다.
+- **2단계 모방 학습**:
+  - **1단계**: 다양한 인간 모션 데이터에서 사전 학습하여 일반적인 조작 사전 지식을 학습합니다.
+  - **2단계**: 로봇 데이터에서 미세 조정하여 구현 차이를 해소하고 정밀한 실행을 구현합니다.
+
+### 실험 및 결과
+- 이 방법은 새로운 구성, 새로운 물체 및 새로운 배경에 대한 일반화 능력을显著히 향상시킵니다.
+- 데이터 수집 비용이 매우 낮으며 시스템은 완전히 재현 가능합니다.
+
+### 오픈소스 정보
+- 프로젝트는 완전히 오픈소스로 제공되며 코드와 문서는 GitHub에서 확인할 수 있습니다: https://github.com/physical-superintelligence-lab/humdex

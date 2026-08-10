@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.21635v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.21635v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (772 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,27 @@ We present a multi-modal dataset collected in a soybean crop field, comprising o
 ## Content
 We present a multi-modal dataset collected in a soybean crop field, comprising over two hours of recorded data from sensors such as stereo infrared camera, color camera, accelerometer, gyroscope, magnetometer, GNSS (Single Point Positioning, Real-Time Kinematic and Post-Processed Kinematic), and wheel odometry. This dataset captures key challenges inherent to robotics in agricultural environments, including variations in natural lighting, motion blur, rough terrain, and long, perceptually aliased sequences. By addressing these complexities, the dataset aims to support the development and benchmarking of advanced algorithms for localization, mapping, perception, and navigation in agricultural robotics. The platform and data collection system is designed to meet the key requirements for evaluating multi-modal SLAM systems, including hardware synchronization of sensors, 6-DOF ground truth and loops on long trajectories. We run multimodal state-of-the art SLAM methods on the dataset, showcasing the existing limitations in their application on agricultural settings. The dataset and utilities to work with it are released on https://cifasis.github.io/rosariov2/.
 
-## 개요
-우리는 콩 재배지에서 수집된 멀티모달 데이터셋을 제시합니다. 이 데이터셋은 스테레오 적외선 카메라, 컬러 카메라, 가속도계, 자이로스코프, 지자기 센서, GNSS(단일 지점 측위, 실시간 운동학 및 사후 처리 운동학) 및 휠 오도메트리와 같은 센서로부터 2시간 이상 기록된 데이터를 포함합니다. 이 데이터셋은 자연광 변화, 모션 블러, 거친 지형 및 긴 지각적 동일성 시퀀스 등 농업 환경에서 로봇 공학에 내재된 주요 과제를 포착합니다. 이러한 복잡성을 해결함으로써, 데이터셋은 농업 로봇 공학에서 위치 추정, 매핑, 인식 및 내비게이션을 위한 고급 알고리즘의 개발 및 벤치마킹을 지원하는 것을 목표로 합니다. 플랫폼 및 데이터 수집 시스템은 센서의 하드웨어 동기화, 6자유도 실제 기준 및 긴 궤적에서의 루프 등 멀티모달 SLAM 시스템 평가를 위한 주요 요구 사항을 충족하도록 설계되었습니다. 우리는 데이터셋에 대해 최신 멀티모달 SLAM 방법을 실행하여 농업 환경에서의 적용에 대한 기존 한계를 보여줍니다. 데이터셋 및 관련 유틸리티는 https://cifasis.github.io/rosariov2/에서 공개됩니다.
-
-## 핵심 내용
-우리는 콩 재배지에서 수집된 멀티모달 데이터셋을 제시합니다. 이 데이터셋은 스테레오 적외선 카메라, 컬러 카메라, 가속도계, 자이로스코프, 지자기 센서, GNSS(단일 지점 측위, 실시간 운동학 및 사후 처리 운동학) 및 휠 오도메트리와 같은 센서로부터 2시간 이상 기록된 데이터를 포함합니다. 이 데이터셋은 자연광 변화, 모션 블러, 거친 지형 및 긴 지각적 동일성 시퀀스 등 농업 환경에서 로봇 공학에 내재된 주요 과제를 포착합니다. 이러한 복잡성을 해결함으로써, 데이터셋은 농업 로봇 공학에서 위치 추정, 매핑, 인식 및 내비게이션을 위한 고급 알고리즘의 개발 및 벤치마킹을 지원하는 것을 목표로 합니다. 플랫폼 및 데이터 수집 시스템은 센서의 하드웨어 동기화, 6자유도 실제 기준 및 긴 궤적에서의 루프 등 멀티모달 SLAM 시스템 평가를 위한 주요 요구 사항을 충족하도록 설계되었습니다. 우리는 데이터셋에 대해 최신 멀티모달 SLAM 방법을 실행하여 농업 환경에서의 적용에 대한 기존 한계를 보여줍니다. 데이터셋 및 관련 유틸리티는 https://cifasis.github.io/rosariov2/에서 공개됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.21635v1
+
+## 개요
+이 데이터셋은 농업 환경의 전형적인 도전 과제(자연광 변화, 모션 블러, 험준한 지형, 장거리 인식 혼동 시퀀스)를 위해 구축되었습니다. 데이터 수집 플랫폼은 센서 하드웨어 동기화를 구현하여 6자유도 실제 궤적과 장경로 폐루프 검증을 지원합니다. 저자는 여러 최신 다중 모달 SLAM 방법을 테스트하여 농업 시나리오에서 기존 알고리즘의 한계를 밝혔습니다. 데이터셋과配套 도구는 오픈소스로 공개되었습니다.
+
+## 핵심 내용
+### 데이터셋 구성
+- **센서 키트**: 스테레오 적외선 카메라, 컬러 카메라, 가속도계, 자이로스코프, 자기계, GNSS(SPP/RTK/PPK 세 가지 위치 모드 지원), 휠 오도미터리
+- **데이터 규모**: 2시간 이상 연속 기록, 대두밭 전체 생장 주기 포함
+- **동기화 메커니즘**: 모든 센서는 하드웨어 트리거를 통해 시간 동기화되어 다중 모달 데이터 타임스탬프 정렬 보장
+
+### 핵심 도전 과제
+- **환경 간섭**: 자연광의 급격한 변화(직사광/그림자 교대), 작물 잎 움직임으로 인한 시각적 특징 불안정
+- **모션 저하**: 지면 요철로 인한 IMU 적분 드리프트, 휠 오도미터리의 느슨한 토양에서의 미끄러짐
+- **인식 혼동**: 장거리 주행 중 반복되는 작물 줄 구조로 인한 시각/라이다 특징 혼동
+
+### 실험 설정
+- **기준 방법**: ORB-SLAM3, VINS-Fusion, LIO-SAM 등 주류 다중 모달 SLAM 시스템 테스트
+- **평가 지표**: 절대 궤적 오차(ATE), 상대 자세 오차(RPE), 폐루프 검출 재현율
+- **주요 발견**: 순수 시각 방법은 조명 급변 시 추적 실패율이 최대 37%; IMU+휠 오도미터리 융합은 ATE를 22% 감소시키지만, 장거리 시나리오에서는 GNSS 지원이 여전히 필수적
+
+### 결론
+이 데이터셋은 농업 로봇 SLAM 벤치마크의 공백을 메우며, 기존 알고리즘은 비구조화된 농경지 환경에서 강건성이 부족합니다. 특히 조명 적응형 특징 추출과 다중 센서 저하 감지 메커니즘의 개선이 필요합니다. 데이터셋과 도구 키트는 https://cifasis.github.io/rosariov2/ 에 공개되었습니다.

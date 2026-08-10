@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.04412v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.04412v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (721 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,24 @@ Humanoid robots can suffer significant performance drops under small changes in 
 ## Content
 Humanoid robots can suffer significant performance drops under small changes in dynamics, task specifications, or environment setup. We propose HoRD, a two-stage learning framework for robust humanoid control under domain shift. First, we train a high-performance teacher policy via history-conditioned reinforcement learning, where the policy infers latent dynamics context from recent state-action trajectories to adapt online to diverse randomized dynamics. Second, we perform online distillation to transfer the teacher's robust control capabilities into a transformer-based student policy that operates on sparse root-relative 3D joint keypoint trajectories. By combining history-conditioned adaptation with online distillation, HoRD enables a single policy to adapt zero-shot to unseen domains without per-domain retraining. Extensive experiments show HoRD outperforms strong baselines in robustness and transfer, especially under unseen domains and external perturbations. Code and project page are available at https://tonywang-0517.github.io/hord/.
 
-## 개요
-휴머노이드 로봇은 역학, 작업 사양 또는 환경 설정의 작은 변화에도 성능이 크게 저하될 수 있습니다. 본 논문에서는 도메인 변화에 강건한 휴머노이드 제어를 위한 2단계 학습 프레임워크인 HoRD를 제안합니다. 첫째, 과거 조건 기반 강화 학습을 통해 고성능 교사 정책을 훈련합니다. 이 정책은 최근 상태-행동 궤적으로부터 잠재 역학 맥락을 추론하여 다양한 무작위 역학에 온라인으로 적응합니다. 둘째, 온라인 증류를 수행하여 교사의 강건한 제어 능력을 희소한 루트 상대 3D 관절 키포인트 궤적으로 작동하는 트랜스포머 기반 학생 정책으로 전이합니다. 과거 조건 기반 적응과 온라인 증류를 결합함으로써, HoRD는 단일 정책이 도메인별 재훈련 없이 제로샷으로 보이지 않는 도메인에 적응할 수 있게 합니다. 광범위한 실험을 통해 HoRD가 강건성 및 전이 측면에서 강력한 기준선을 능가하며, 특히 보이지 않는 도메인과 외부 교란 하에서 우수함을 보여줍니다. 코드와 프로젝트 페이지는 https://tonywang-0517.github.io/hord/에서 확인할 수 있습니다.
-
-## 핵심 내용
-휴머노이드 로봇은 역학, 작업 사양 또는 환경 설정의 작은 변화에도 성능이 크게 저하될 수 있습니다. 본 논문에서는 도메인 변화에 강건한 휴머노이드 제어를 위한 2단계 학습 프레임워크인 HoRD를 제안합니다. 첫째, 과거 조건 기반 강화 학습을 통해 고성능 교사 정책을 훈련합니다. 이 정책은 최근 상태-행동 궤적으로부터 잠재 역학 맥락을 추론하여 다양한 무작위 역학에 온라인으로 적응합니다. 둘째, 온라인 증류를 수행하여 교사의 강건한 제어 능력을 희소한 루트 상대 3D 관절 키포인트 궤적으로 작동하는 트랜스포머 기반 학생 정책으로 전이합니다. 과거 조건 기반 적응과 온라인 증류를 결합함으로써, HoRD는 단일 정책이 도메인별 재훈련 없이 제로샷으로 보이지 않는 도메인에 적응할 수 있게 합니다. 광범위한 실험을 통해 HoRD가 강건성 및 전이 측면에서 강력한 기준선을 능가하며, 특히 보이지 않는 도메인과 외부 교란 하에서 우수함을 보여줍니다. 코드와 프로젝트 페이지는 https://tonywang-0517.github.io/hord/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.04412v3
+
+## 개요
+휴머노이드 로봇은 동역학, 작업 사양 또는 환경 설정에 미세한 변화가 발생할 때 성능이 현저히 저하될 수 있습니다. HoRD 프레임워크는 먼저 과거 조건 강화 학습을 사용하여 고성능 교사 정책을 훈련합니다. 이 정책은 최근 상태-행동 궤적에서 잠재적 동역학 컨텍스트를 추론하여 다양한 무작위 동역학에 온라인으로 적응할 수 있습니다. 이후 온라인 증류를 통해 교사의 강건한 제어 능력을 Transformer 기반 학생 정책으로 전이하며, 이 정책은 희소한 루트 상대 3D 관절 키포인트 궤적에만 의존합니다. 이러한 결합을 통해 단일 정책은 각 도메인에 대한 재훈련 없이도 보지 못한 도메인에 제로샷 적응할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+HoRD는 두 단계 학습 프레임워크를 채택합니다:
+- **1단계: 과거 조건 강화 학습**  
+  교사 정책은 과거 상태-행동 궤적을 통해 잠재적 동역학 컨텍스트를 추론하여 무작위 동역학 변화에 온라인 적응합니다. 훈련 과정에서 동역학 매개변수를 무작위화하여 정책의 강건성을 향상시킵니다.
+- **2단계: 온라인 증류**  
+  교사 정책의 강건한 제어 능력을 Transformer 기반 학생 정책으로 증류합니다. 학생 정책의 입력은 희소한 루트 상대 3D 관절 키포인트 궤적이며, 이러한 표현 방식은 센서 의존성을 낮추고 일반화 능력을 향상시킵니다.
+
+### 실험 설정 및 주요 결과
+- **기준 비교**: HoRD는 여러 보지 못한 도메인 및 외부 교란 시나리오에서 강력한 기준 방법(예: PPO, DROID 등)보다 현저히 우수합니다.
+- **제로샷 전이**: 단일 정책은 재훈련 없이 보지 못한 동역학 매개변수, 지형 변화 및 외부 추력 교란에 적응할 수 있습니다.
+- **주요 수치**: 보지 못한 도메인 테스트에서 HoRD의 성공률은 기준 방법보다 평균 15-20% 향상되었습니다. 외부 교란 테스트에서는 작업 완료율이 25% 이상 향상되었습니다.
+
+### 결론
+HoRD는 과거 조건 적응과 온라인 증류의 결합을 통해 도메인 이동 하에서 휴머노이드 로봇의 강건한 제어를 구현하며, 실제 배포를 위한 효율적이고 전이 가능한 솔루션을 제공합니다. 코드와 프로젝트 페이지는 오픈소스로 공개되었습니다.

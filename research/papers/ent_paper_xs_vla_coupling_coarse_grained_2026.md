@@ -57,8 +57,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04171v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04171v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1058 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -94,11 +95,29 @@ XS-VLA 通过粗粒度空间蒸馏与潜流匹配策略，有效解决了轻量�
 ## Overview
 Large Vision-Language Models (LVLMs) have shown strong multimodal understanding and spatial grounding, but their computational cost limits real-time robotic control. In contrast, lightweight models are suitable for edge deployment but often suffer from "spatial blindness", namely weak native spatial prediction ability. Training Vision-Language-Action (VLA) models on mixed human demonstrations can also degrade policy performance due to highly diverse behaviors. To address these limitations, we propose XS-VLA, a two-stage framework for efficient and spatially grounded robotic manipulation. First, we distill spatial semantic knowledge from Qwen3-VL-4B into the SmolVLM2-0.25B backbone by fine-tuning on curated coarse-grained spatial descriptions, turning the lightweight model into a spatially grounded engine. Second, we use this enhanced backbone to condition a Latent Flow Matching policy. Unlike deterministic controllers, our policy combines a Conditional Variational Autoencoder (CVAE) with Flow Matching dynamics to model complex multimodal action distributions. On the LIBERO benchmark, XS-VLA achieves state-of-the-art performance among models with fewer than 0.5B parameters. It improves average success rates by up to 7.2 percent, including a 23 percent gain on LIBERO-Long, over the SmolVLA 0.25B baseline, and outperforms the larger 2.2B vanilla SmolVLA. Ablations show that spatial tuning and generative latent flow control substantially improve lightweight VLA performance, delivering a 3.2 times speedup in mission execution over the previous lightweight flow matching policy.
 
-## 개요
-대규모 시각-언어 모델(LVLMs)은 강력한 다중 모드 이해와 공간적 접지 능력을 보여주지만, 계산 비용으로 인해 실시간 로봇 제어에 한계가 있습니다. 반면, 경량 모델은 엣지 배포에 적합하지만 종종 "공간적 맹점", 즉 약한 고유 공간 예측 능력으로 인해 어려움을 겪습니다. 혼합된 인간 시연 데이터로 시각-언어-행동(VLA) 모델을 훈련하면 매우 다양한 행동으로 인해 정책 성능이 저하될 수도 있습니다. 이러한 한계를 해결하기 위해, 우리는 효율적이고 공간적으로 접지된 로봇 조작을 위한 2단계 프레임워크인 XS-VLA를 제안합니다. 첫째, 큐레이션된 조잡한 공간 설명에 대해 미세 조정을 통해 Qwen3-VL-4B의 공간 의미 지식을 SmolVLM2-0.25B 백본으로 증류하여 경량 모델을 공간적으로 접지된 엔진으로 전환합니다. 둘째, 이 강화된 백본을 사용하여 잠재 흐름 매칭 정책을 조건화합니다. 결정론적 제어기와 달리, 우리의 정책은 조건부 변분 오토인코더(CVAE)와 흐름 매칭 동역학을 결합하여 복잡한 다중 모드 행동 분포를 모델링합니다. LIBERO 벤치마크에서 XS-VLA는 0.5B 미만의 매개변수를 가진 모델 중 최고 성능을 달성합니다. SmolVLA 0.25B 기준선 대비 평균 성공률을 최대 7.2% 향상시키며, LIBERO-Long에서는 23% 향상을 포함하고, 더 큰 2.2B 바닐라 SmolVLA를 능가합니다. 절제 연구는 공간 튜닝과 생성적 잠재 흐름 제어가 경량 VLA 성능을 크게 향상시켜, 이전 경량 흐름 매칭 정책 대비 임무 실행에서 3.2배의 속도 향상을 제공함을 보여줍니다.
-
-## 핵심 내용
-대규모 시각-언어 모델(LVLMs)은 강력한 다중 모드 이해와 공간적 접지 능력을 보여주지만, 계산 비용으로 인해 실시간 로봇 제어에 한계가 있습니다. 반면, 경량 모델은 엣지 배포에 적합하지만 종종 "공간적 맹점", 즉 약한 고유 공간 예측 능력으로 인해 어려움을 겪습니다. 혼합된 인간 시연 데이터로 시각-언어-행동(VLA) 모델을 훈련하면 매우 다양한 행동으로 인해 정책 성능이 저하될 수도 있습니다. 이러한 한계를 해결하기 위해, 우리는 효율적이고 공간적으로 접지된 로봇 조작을 위한 2단계 프레임워크인 XS-VLA를 제안합니다. 첫째, 큐레이션된 조잡한 공간 설명에 대해 미세 조정을 통해 Qwen3-VL-4B의 공간 의미 지식을 SmolVLM2-0.25B 백본으로 증류하여 경량 모델을 공간적으로 접지된 엔진으로 전환합니다. 둘째, 이 강화된 백본을 사용하여 잠재 흐름 매칭 정책을 조건화합니다. 결정론적 제어기와 달리, 우리의 정책은 조건부 변분 오토인코더(CVAE)와 흐름 매칭 동역학을 결합하여 복잡한 다중 모드 행동 분포를 모델링합니다. LIBERO 벤치마크에서 XS-VLA는 0.5B 미만의 매개변수를 가진 모델 중 최고 성능을 달성합니다. SmolVLA 0.25B 기준선 대비 평균 성공률을 최대 7.2% 향상시키며, LIBERO-Long에서는 23% 향상을 포함하고, 더 큰 2.2B 바닐라 SmolVLA를 능가합니다. 절제 연구는 공간 튜닝과 생성적 잠재 흐름 제어가 경량 VLA 성능을 크게 향상시켜, 이전 경량 흐름 매칭 정책 대비 임무 실행에서 3.2배의 속도 향상을 제공함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04171v1
+
+## 개요
+대규모 비전-언어 모델은 강력한 다중 모달 이해와 공간 위치 파악 능력을 갖추고 있지만, 계산 비용이 너무 높아 실시간 로봇 제어에는 사용하기 어렵습니다. 경량 모델은 엣지 배포에 적합하지만, 공간 예측 능력이 약해 성능이 떨어지는 경우가 많습니다. XS-VLA 프레임워크는 이 문제를 두 단계로 해결합니다: 먼저 Qwen3-VL-4B에서 SmolVLM2-0.25B로 공간 의미 지식을 증류하여 공간 인식 능력을 부여합니다. 그런 다음 강화된 백본 네트워크를 활용하여 잠재 흐름 매칭 전략을 구동하는데, 이 전략은 조건부 변분 오토인코더와 흐름 매칭 동역학을 결합하여 복잡한 다중 모달 행동 분포를 효과적으로 모델링합니다. LIBERO 벤치마크에서 XS-VLA는 0.5B 미만의 파라미터를 가진 모델 중 최고 성능을 달성했으며, 평균 성공률이 최대 7.2% 향상되었고, LIBERO-Long 작업에서는 23% 향상되어 더 큰 2.2B SmolVLA 모델을 능가했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+XS-VLA는 두 단계 프레임워크를 채택합니다:
+- **1단계: 공간 증류**  
+  Qwen3-VL-4B 교사 모델에서 SmolVLM2-0.25B 학생 모델로 공간 의미 지식을 증류합니다. 정제된 조밀 공간 설명 데이터에서 미세 조정을 통해 경량 모델을 공간 인식 엔진으로 변환하여 "공간 맹시" 문제를 해결합니다.
+- **2단계: 잠재 흐름 매칭 전략**  
+  강화된 백본 네트워크를 조건으로 사용하여 Latent Flow Matching 전략을 구동합니다. 이 전략은 Conditional Variational Autoencoder (CVAE)와 Flow Matching 동역학을 결합하여 전통적인 결정론적 컨트롤러와 달리 복잡한 다중 모달 행동 분포를 모델링할 수 있습니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: LIBERO 벤치마크에서 평가되었으며, 여러 작업 시나리오를 포함합니다.
+- **성능 비교**:
+  - 0.5B 미만의 파라미터를 가진 모델 중 최고 성능(state-of-the-art)을 달성.
+  - SmolVLA 0.25B 기준선 대비 평균 성공률이 최대 7.2% 향상, LIBERO-Long 작업에서는 23% 향상.
+  - 더 큰 2.2B 원본 SmolVLA 모델을 능가.
+- **절제 실험**:
+  - 공간 튜닝(spatial tuning)과 생성적 잠재 흐름 제어(generative latent flow control)가 경량 VLA 성능을 크게 향상.
+  - 이전 경량 흐름 매칭 전략 대비 작업 실행 속도가 3.2배 향상.
+
+### 결론
+XS-VLA는 조밀 공간 증류와 잠재 흐름 매칭 전략을 통해 경량 모델의 공간 맹시와 다중 모달 행동 분포 모델링 문제를 효과적으로 해결했으며, LIBERO 벤치마크에서 극소 파라미터 규모로 선도적 성능을 달성하면서 실행 효율성을 크게 향상시켰습니다.

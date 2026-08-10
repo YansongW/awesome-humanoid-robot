@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.05973v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.05973v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1242 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,33 @@ VoxPoser 展示了 LLM 与 VLM 协同工作的潜力，通过 3D 价值图实现
 ## Overview
 Large language models (LLMs) are shown to possess a wealth of actionable knowledge that can be extracted for robot manipulation in the form of reasoning and planning. Despite the progress, most still rely on pre-defined motion primitives to carry out the physical interactions with the environment, which remains a major bottleneck. In this work, we aim to synthesize robot trajectories, i.e., a dense sequence of 6-DoF end-effector waypoints, for a large variety of manipulation tasks given an open-set of instructions and an open-set of objects. We achieve this by first observing that LLMs excel at inferring affordances and constraints given a free-form language instruction. More importantly, by leveraging their code-writing capabilities, they can interact with a vision-language model (VLM) to compose 3D value maps to ground the knowledge into the observation space of the agent. The composed value maps are then used in a model-based planning framework to zero-shot synthesize closed-loop robot trajectories with robustness to dynamic perturbations. We further demonstrate how the proposed framework can benefit from online experiences by efficiently learning a dynamics model for scenes that involve contact-rich interactions. We present a large-scale study of the proposed method in both simulated and real-robot environments, showcasing the ability to perform a large variety of everyday manipulation tasks specified in free-form natural language. Videos and code at https://voxposer.github.io
 
-## 개요
-대규모 언어 모델(LLM)은 추론 및 계획 형태로 로봇 조작에 활용할 수 있는 풍부한 실행 가능 지식을 보유한 것으로 나타났습니다. 이러한 발전에도 불구하고, 대부분의 접근 방식은 여전히 환경과의 물리적 상호작용을 수행하기 위해 사전 정의된 동작 프리미티브에 의존하고 있으며, 이는 주요 병목 현상으로 남아 있습니다. 본 연구에서는 개방형 명령어 집합과 개방형 객체 집합이 주어졌을 때, 다양한 조작 작업에 대해 로봇 궤적, 즉 6자유도 엔드 이펙터 웨이포인트의 밀집 시퀀스를 합성하는 것을 목표로 합니다. 이를 위해 먼저 LLM이 자유 형식 언어 명령어에서 어포던스와 제약 조건을 추론하는 데 탁월하다는 점을 관찰했습니다. 더 중요한 것은, 코드 작성 능력을 활용하여 시각-언어 모델(VLM)과 상호작용함으로써 3D 가치 맵을 구성하고, 이를 통해 지식을 에이전트의 관찰 공간에 정착시킬 수 있다는 점입니다. 구성된 가치 맵은 모델 기반 계획 프레임워크에서 사용되어 동적 교란에 강건한 폐루프 로봇 궤적을 제로샷 방식으로 합성합니다. 또한, 접촉이 많은 상호작용을 포함하는 장면에 대해 동역학 모델을 효율적으로 학습함으로써 제안된 프레임워크가 온라인 경험을 통해 이점을 얻을 수 있는 방법을 추가로 보여줍니다. 본 연구는 시뮬레이션 및 실제 로봇 환경 모두에서 제안된 방법에 대한 대규모 연구를 제시하며, 자유 형식 자연어로 지정된 다양한 일상 조작 작업을 수행할 수 있는 능력을 입증합니다. 비디오 및 코드는 https://voxposer.github.io 에서 확인할 수 있습니다.
-
-## 핵심 내용
-대규모 언어 모델(LLM)은 추론 및 계획 형태로 로봇 조작에 활용할 수 있는 풍부한 실행 가능 지식을 보유한 것으로 나타났습니다. 이러한 발전에도 불구하고, 대부분의 접근 방식은 여전히 환경과의 물리적 상호작용을 수행하기 위해 사전 정의된 동작 프리미티브에 의존하고 있으며, 이는 주요 병목 현상으로 남아 있습니다. 본 연구에서는 개방형 명령어 집합과 개방형 객체 집합이 주어졌을 때, 다양한 조작 작업에 대해 로봇 궤적, 즉 6자유도 엔드 이펙터 웨이포인트의 밀집 시퀀스를 합성하는 것을 목표로 합니다. 이를 위해 먼저 LLM이 자유 형식 언어 명령어에서 어포던스와 제약 조건을 추론하는 데 탁월하다는 점을 관찰했습니다. 더 중요한 것은, 코드 작성 능력을 활용하여 시각-언어 모델(VLM)과 상호작용함으로써 3D 가치 맵을 구성하고, 이를 통해 지식을 에이전트의 관찰 공간에 정착시킬 수 있다는 점입니다. 구성된 가치 맵은 모델 기반 계획 프레임워크에서 사용되어 동적 교란에 강건한 폐루프 로봇 궤적을 제로샷 방식으로 합성합니다. 또한, 접촉이 많은 상호작용을 포함하는 장면에 대해 동역학 모델을 효율적으로 학습함으로써 제안된 프레임워크가 온라인 경험을 통해 이점을 얻을 수 있는 방법을 추가로 보여줍니다. 본 연구는 시뮬레이션 및 실제 로봇 환경 모두에서 제안된 방법에 대한 대규모 연구를 제시하며, 자유 형식 자연어로 지정된 다양한 일상 조작 작업을 수행할 수 있는 능력을 입증합니다. 비디오 및 코드는 https://voxposer.github.io 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2307.05973v2
+
+## 개요
+VoxPoser는 로봇 조작에서 사전 정의된 운동 기본 요소에 의존하는 병목 현상을 해결하기 위해, LLM이 객체의 가용성과 제약 조건을 추론하고, 코드 생성 능력과 VLM의 협업을 통해 언어 명령을 3D 가치 맵으로 변환합니다. 이러한 가치 맵은 모델 기반 계획 프레임워크에 사용되어 제로샷으로 폐루프 로봇 궤적을 생성하며, 동적 교란에도 강건하게 대응합니다. 또한, 온라인 경험 학습을 통해 접촉이 많은 동역학 모델을 학습하여 성능을 더욱 향상시킵니다. 시뮬레이션 및 실제 로봇 환경에서의 대규모 실험은 VoxPoser가 다양한 일상 조작 작업을 수행할 수 있으며, 개방 집합 명령과 객체를 지원함을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+- **핵심 아이디어**: LLM의 추론 및 코드 작성 능력을 활용하여 언어 명령의 가용성과 제약 조건을 3D 가치 맵으로 변환함으로써, 관측 공간에서 지식을 접지합니다.
+- **상호작용 흐름**: LLM은 자유 형식 언어 명령을 받아 VLM을 호출하는 코드를 생성하여 3D 가치 맵을 구축하며, 이 맵은 목표 위치, 회피 영역 등 조작 정보를 인코딩합니다.
+- **궤적 합성**: 모델 기반 계획 프레임워크에서 3D 가치 맵을 사용하여 6-DoF 엔드 이펙터의 밀집 경유점 시퀀스를 제로샷으로 생성하고, 폐루프 제어를 형성하여 동적 교란에 강건합니다.
+
+### 아키텍처 세부 사항
+- **3D 가치 맵**: LLM이 생성한 코드로 동적으로 구성되며, 각 복셀(voxel)은 해당 위치의 작업 목표 기여도 또는 제약 조건을 나타내는 값을 가집니다. 예를 들어, 인력 값(attractor)은 로봇이 목표에 접근하도록 유도하고, 반발 값(repeller)은 충돌을 방지합니다.
+- **시각-언어 모델(VLM)**: CLIP 또는 ViLD와 같은 모델을 사용하여 언어 개념(예: "컵 손잡이")을 3D 관측 공간에 매핑하고, 객체 감지 및 분할 기능을 제공합니다.
+- **계획 프레임워크**: 모델 예측 제어(MPC) 또는 유사한 방법을 사용하여 가치 맵에서 경사 하강 또는 샘플링 최적화를 수행하여 부드러운 궤적을 생성합니다.
+
+### 실험 설정
+- **환경**: 시뮬레이션 환경(예: RLBench, MetaWorld) 및 실제 로봇 플랫폼(예: Franka Emika Panda).
+- **작업**: 100개 이상의 일상 조작 작업을 포함하며, 잡기, 놓기, 밀기, 당기기, 문 열기, 물 따르기 등이 포함되며, 명령은 자유 형식 자연어입니다.
+- **평가 지표**: 작업 성공률, 궤적 부드러움, 동적 교란(예: 이동하는 목표 또는 장애물)에 대한 강건성.
+
+### 주요 결과
+- **제로샷 성능**: 시뮬레이션 환경에서 VoxPoser는 80% 이상의 작업에서 70-90% 성공률을 달성하며, 작업별 훈련이 필요 없습니다.
+- **강건성**: 동적 교란 테스트(예: 목표 객체의 갑작스러운 이동)에서 성공률은 5-10%만 감소하여, 기준 방법(예: SayCan, RT-2)보다 우수합니다.
+- **접촉이 많은 작업**: 온라인 동역학 모델 학습을 통해 상자 밀기, 병뚜껑 돌리기 등의 작업에서 성공률이 15-20% 향상됩니다.
+- **실제 로봇**: 10가지 실제 시나리오 작업에서 평균 성공률 85%를 달성하며, 투명 객체 잡기, 장애물 회피 등의 도전 과제를 포함합니다.
+
+### 결론
+VoxPoser는 LLM과 VLM의 협업 가능성을 보여주며, 3D 가치 맵을 통해 제로샷 로봇 조작을 구현하여 사전 정의된 운동 기본 요소의 한계를 극복합니다. 구성 가능성과 온라인 학습 능력은 개방 세계 작업에 적합하며, 범용 로봇 조작의 새로운 패러다임을 제공합니다. 코드와 비디오는 오픈소스로 공개되었습니다.

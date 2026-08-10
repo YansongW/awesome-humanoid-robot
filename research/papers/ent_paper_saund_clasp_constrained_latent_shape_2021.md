@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2110.08719v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2110.08719v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (654 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,25 @@ CLASP 通过将接触观测作为隐空间中的硬约束，实现了视觉与�
 ## Overview
 Robots need both visual and contact sensing to effectively estimate the state of their environment. Camera RGBD data provides rich information of the objects surrounding the robot, and shape priors can help correct noise and fill in gaps and occluded regions. However, when the robot senses unexpected contact, the estimate should be updated to explain the contact. To address this need, we propose CLASP: Constrained Latent Shape Projection. This approach consists of a shape completion network that generates a prior from RGBD data and a procedure to generate shapes consistent with both the network prior and robot contact observations. We find CLASP consistently decreases the Chamfer Distance between the predicted and ground truth scenes, while other approaches do not benefit from contact information.
 
-## 개요
-로봇은 환경 상태를 효과적으로 추정하기 위해 시각 및 접촉 감지가 모두 필요합니다. 카메라 RGBD 데이터는 로봇 주변 객체에 대한 풍부한 정보를 제공하며, 형상 사전 정보는 노이즈를 보정하고 빈 공간 및 가려진 영역을 채우는 데 도움을 줍니다. 그러나 로봇이 예상치 못한 접촉을 감지하면, 해당 접촉을 설명하기 위해 추정치를 업데이트해야 합니다. 이러한 필요성을 해결하기 위해, 우리는 CLASP: Constrained Latent Shape Projection을 제안합니다. 이 접근법은 RGBD 데이터로부터 사전 정보를 생성하는 형상 완성 네트워크와, 네트워크 사전 정보 및 로봇 접촉 관측치 모두와 일관된 형상을 생성하는 절차로 구성됩니다. 우리는 CLASP가 예측 장면과 실제 장면 간의 Chamfer Distance를 지속적으로 감소시키는 반면, 다른 접근법들은 접촉 정보로부터 이점을 얻지 못함을 발견했습니다.
-
-## 핵심 내용
-로봇은 환경 상태를 효과적으로 추정하기 위해 시각 및 접촉 감지가 모두 필요합니다. 카메라 RGBD 데이터는 로봇 주변 객체에 대한 풍부한 정보를 제공하며, 형상 사전 정보는 노이즈를 보정하고 빈 공간 및 가려진 영역을 채우는 데 도움을 줍니다. 그러나 로봇이 예상치 못한 접촉을 감지하면, 해당 접촉을 설명하기 위해 추정치를 업데이트해야 합니다. 이러한 필요성을 해결하기 위해, 우리는 CLASP: Constrained Latent Shape Projection을 제안합니다. 이 접근법은 RGBD 데이터로부터 사전 정보를 생성하는 형상 완성 네트워크와, 네트워크 사전 정보 및 로봇 접촉 관측치 모두와 일관된 형상을 생성하는 절차로 구성됩니다. 우리는 CLASP가 예측 장면과 실제 장면 간의 Chamfer Distance를 지속적으로 감소시키는 반면, 다른 접근법들은 접촉 정보로부터 이점을 얻지 못함을 발견했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2110.08719v1
+
+## 개요
+CLASP 방법은 먼저 RGB-D 데이터를 활용하여 형태 완성 네트워크를 통해 초기 형태 사전을 생성하고, 이후 이진 로봇 접촉 관측을 제약 조건으로 도입합니다. 이 방법은 변분 형태 네트워크의 잠재 공간에서 입자 필터를 유지하며, 입자를 접촉 다양체에 투영하여 생성된 형태가 네트워크 사전과 접촉 정보를 동시에 충족하도록 보장합니다. 실험 결과, CLASP는 예측 형태와 실제 장면 간의 Chamfer 거리를 일관되게 줄일 수 있었으며, 다른 방법들은 접촉 정보로부터 이점을 얻지 못했습니다.
+
+## 핵심 내용
+### 방법 구조
+CLASP는 두 가지 핵심 구성 요소로 이루어져 있습니다:
+- **형태 완성 네트워크**: RGB-D 데이터를 기반으로 초기 형태 사전을 생성하여 노이즈를 수정하고, 빈 공간과 가려진 영역을 채웁니다.
+- **잠재 공간 입자 필터 및 투영**: 변분 형태 네트워크의 잠재 공간에서 입자 집합을 유지하며, 각 입자는 가능한 형태를 나타냅니다. 로봇이 예상치 못한 접촉을 감지하면 입자가 접촉 다양체에 투영되어 접촉 관측을 설명하도록 형태 추정이 업데이트됩니다.
+
+### 실험 설정
+- 실제 장면의 ground-truth 형태를 기준으로 사용하며, 평가 지표는 Chamfer Distance입니다.
+- 비교 방법에는 시각적 사전에만 의존하는 기준선과 접촉 정보를 활용하지 않는 다른 방법들이 포함됩니다.
+
+### 주요 결과
+- CLASP는 모든 테스트 장면에서 Chamfer Distance를 일관되게 줄여, 접촉 정보를 효과적으로 융합하여 형태 정밀도를 향상시킬 수 있음을 보여줍니다.
+- 다른 방법들은 접촉 관측을 도입한 후 성능 향상을 보이지 않았으며, 오히려 성능이 저하될 수 있어 접촉 제약 활용에 있어 CLASP의 독특한 장점을 부각시킵니다.
+
+### 결론
+CLASP는 접촉 관측을 잠재 공간의 하드 제약 조건으로 통합함으로써 시각 및 촉각 인식의 협력을 실현하며, 로봇 환경 상태 추정을 위한 더 신뢰할 수 있는 형태 정제 방안을 제공합니다.

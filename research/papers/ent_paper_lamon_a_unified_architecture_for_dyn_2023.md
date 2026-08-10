@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.08038v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.08038v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (867 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,27 @@ theoretical_depth:
 ## Overview
 The growing deployment of human-robot collaborative processes in several industrial applications, such as handling, welding, and assembly, unfolds the pursuit of systems which are able to manage large heterogeneous teams and, at the same time, monitor the execution of complex tasks. In this paper, we present a novel architecture for dynamic role allocation and collaborative task planning in a mixed human-robot team of arbitrary size. The architecture capitalizes on a centralized reactive and modular task-agnostic planning method based on Behavior Trees (BTs), in charge of actions scheduling, while the allocation problem is formulated through a Mixed-Integer Linear Program (MILP), that assigns dynamically individual roles or collaborations to the agents of the team. Different metrics used as MILP cost allow the architecture to favor various aspects of the collaboration (e.g. makespan, ergonomics, human preferences). Human preference are identified through a negotiation phase, in which, an human agent can accept/refuse to execute the assigned task.In addition, bilateral communication between humans and the system is achieved through an Augmented Reality (AR) custom user interface that provides intuitive functionalities to assist and coordinate workers in different action phases. The computational complexity of the proposed methodology outperforms literature approaches in industrial sized jobs and teams (problems up to 50 actions and 20 agents in the team with collaborations are solved within 1 s). The different allocated roles, as the cost functions change, highlights the flexibility of the architecture to several production requirements. Finally, the subjective evaluation demonstrating the high usability level and the suitability for the targeted scenario.
 
-## 개요
-핸들링, 용접, 조립 등 여러 산업 응용 분야에서 인간-로봇 협업 프로세스의 배치가 증가함에 따라, 대규모 이종 팀을 관리하면서 동시에 복잡한 작업의 실행을 모니터링할 수 있는 시스템에 대한 추구가 확대되고 있습니다. 본 논문에서는 임의 크기의 인간-로봇 혼합 팀에서 동적 역할 할당 및 협업 작업 계획을 위한 새로운 아키텍처를 제시합니다. 이 아키텍처는 행동 스케줄링을 담당하는 Behavior Trees(BTs) 기반의 중앙 집중식 반응형 및 모듈식 작업 무관 계획 방법을 활용하며, 할당 문제는 Mixed-Integer Linear Program(MILP)을 통해 공식화되어 팀 에이전트에게 개별 역할 또는 협업을 동적으로 할당합니다. MILP 비용으로 사용되는 다양한 지표를 통해 아키텍처는 협업의 여러 측면(예: makespan, 인간공학, 인간 선호도)을 우선시할 수 있습니다. 인간 선호도는 협상 단계를 통해 식별되며, 이 단계에서 인간 에이전트는 할당된 작업의 실행을 수락하거나 거부할 수 있습니다. 또한, 인간과 시스템 간의 양방향 통신은 다양한 행동 단계에서 작업자를 지원하고 조정하는 직관적인 기능을 제공하는 맞춤형 Augmented Reality(AR) 사용자 인터페이스를 통해 구현됩니다. 제안된 방법론의 계산 복잡성은 산업 규모의 작업 및 팀(협업이 포함된 최대 50개 행동 및 20개 에이전트 문제를 1초 이내에 해결)에서 기존 문헌 접근법을 능가합니다. 비용 함수가 변경됨에 따라 할당된 역할이 달라지는 점은 다양한 생산 요구 사항에 대한 아키텍처의 유연성을 강조합니다. 마지막으로, 주관적 평가는 높은 사용성 수준과 대상 시나리오에 대한 적합성을 입증합니다.
-
-## 핵심 내용
-핸들링, 용접, 조립 등 여러 산업 응용 분야에서 인간-로봇 협업 프로세스의 배치가 증가함에 따라, 대규모 이종 팀을 관리하면서 동시에 복잡한 작업의 실행을 모니터링할 수 있는 시스템에 대한 추구가 확대되고 있습니다. 본 논문에서는 임의 크기의 인간-로봇 혼합 팀에서 동적 역할 할당 및 협업 작업 계획을 위한 새로운 아키텍처를 제시합니다. 이 아키텍처는 행동 스케줄링을 담당하는 Behavior Trees(BTs) 기반의 중앙 집중식 반응형 및 모듈식 작업 무관 계획 방법을 활용하며, 할당 문제는 Mixed-Integer Linear Program(MILP)을 통해 공식화되어 팀 에이전트에게 개별 역할 또는 협업을 동적으로 할당합니다. MILP 비용으로 사용되는 다양한 지표를 통해 아키텍처는 협업의 여러 측면(예: makespan, 인간공학, 인간 선호도)을 우선시할 수 있습니다. 인간 선호도는 협상 단계를 통해 식별되며, 이 단계에서 인간 에이전트는 할당된 작업의 실행을 수락하거나 거부할 수 있습니다. 또한, 인간과 시스템 간의 양방향 통신은 다양한 행동 단계에서 작업자를 지원하고 조정하는 직관적인 기능을 제공하는 맞춤형 Augmented Reality(AR) 사용자 인터페이스를 통해 구현됩니다. 제안된 방법론의 계산 복잡성은 산업 규모의 작업 및 팀(협업이 포함된 최대 50개 행동 및 20개 에이전트 문제를 1초 이내에 해결)에서 기존 문헌 접근법을 능가합니다. 비용 함수가 변경됨에 따라 할당된 역할이 달라지는 점은 다양한 생산 요구 사항에 대한 아키텍처의 유연성을 강조합니다. 마지막으로, 주관적 평가는 높은 사용성 수준과 대상 시나리오에 대한 적합성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2301.08038v2
+
+## 개요
+이 아키텍처는 중앙 집중식 반응형 계획 방식을 채택하여 Behavior Trees를 통해 작업 비의존적 모듈식 동작 스케줄링을 구현하고, Mixed-Integer Linear Program을 통해 개인 또는 협업 역할을 동적으로 할당합니다. MILP 비용 함수는 다양한 협업 지표(예: 완공 시간, 인간공학, 인간 선호도)를 유연하게 최적화할 수 있으며, 인간 선호도는 AR 인터페이스의 협상 단계(작업 수락/거부)를 통해 결정됩니다. 실험 결과, 이 방법은 산업 규모의 작업(50개 동작, 20개 에이전트)에서 문헌의 방법보다 계산 복잡도가 우수하며, 다양한 비용 함수에 따른 역할 할당 결과는 아키텍처가 여러 생산 요구에 적응할 수 있음을 보여줍니다. 주관적 평가는 높은 사용성과 시나리오 적용 가능성을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 구성 요소**: 중앙 집중식 Behavior Tree 계획기가 동작 스케줄링을 담당하고, Mixed-Integer Linear Program이 동적 역할 할당을 처리하며, Augmented Reality 인터페이스가 인간-로봇 양방향 통신을 지원합니다.
+- **역할 할당 메커니즘**: MILP 비용 함수는 완공 시간 최소화, 인간공학 최적화 또는 인간 선호도 충족으로 구성할 수 있습니다. 인간 선호도는 AR 인터페이스의 협상 단계를 통해 구현되며, 인간은 할당된 작업을 수락하거나 거부할 수 있습니다.
+- **상호작용 설계**: AR 맞춤형 사용자 인터페이스는 직관적인 기능을 제공하여 다양한 동작 단계에서 작업자를 지원하고 조정합니다.
+
+### 실험 설정
+- **작업 규모**: 최대 50개 동작과 20개 에이전트(협업 작업 포함)를 포함한 산업 규모 시나리오.
+- **성능 지표**: 계산 시간이 1초 미만으로 문헌의 기존 방법보다 우수합니다.
+- **평가 차원**: 다양한 비용 함수에 따른 역할 할당 결과 비교 및 주관적 사용성 평가.
+
+### 주요 결과
+- **계산 효율성**: 50개 동작, 20개 에이전트 팀 규모에서 모든 문제가 1초 내에 해결되었습니다.
+- **유연성 검증**: MILP 비용 함수를 변경할 때(예: 완공 시간 최소화에서 인간공학 최적화로 전환) 역할 할당 결과가 크게 달라져 아키텍처가 다양한 생산 요구에 적응할 수 있음을 입증했습니다.
+- **사용성 평가**: 주관적 평가에서 높은 사용성 수준을 보였으며, 목표 시나리오에 적합합니다.
+
+### 결론
+이 통합 아키텍처는 BT와 MILP의 협력을 통해 대규모 인간-로봇 혼합 팀의 효율적인 동적 역할 할당과 작업 계획을 구현하며, AR 인터페이스는 인간-로봇 협상 능력을 강화합니다. 향후 더 복잡한 협업 모드와 실시간 최적화 시나리오로 확장할 수 있습니다.

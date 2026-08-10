@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.10789v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.10789v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (846 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,26 @@ theoretical_depth:
 ## Overview
 Thanks to recent advancements in accelerating non-linear model predictive control (NMPC), it is now feasible to deploy whole-body NMPC at real-time rates for humanoid robots. However, enforcing inequality constraints in real time for such high-dimensional systems remains challenging due to the need for additional iterations. This paper presents an implementation of whole-body NMPC for legged robots that provides low-accuracy solutions to NMPC with general equality and inequality constraints. Instead of aiming for highly accurate optimal solutions, we leverage the alternating direction method of multipliers to rapidly provide low-accuracy solutions to quadratic programming subproblems. Our extensive simulation results indicate that real robots often cannot benefit from highly accurate solutions due to dynamics discretization errors, inertial modeling errors and delays. We incorporate control barrier functions (CBFs) at the initial timestep of the NMPC for the self-collision constraints, resulting in up to a 26-fold reduction in the number of self-collisions without adding computational burden. The controller is reliably deployed on hardware at 90 Hz for a problem involving 32 timesteps, 2004 variables, and 3768 constraints. The NMPC delivers sufficiently accurate solutions, enabling the MIT Humanoid to plan complex crossed-leg and arm motions that enhance stability when walking and recovering from significant disturbances.
 
-## 개요
-비선형 모델 예측 제어(NMPC)의 가속화에 대한 최근 발전 덕분에, 인간형 로봇을 위한 전신 NMPC를 실시간 속도로 배포하는 것이 가능해졌습니다. 그러나 이러한 고차원 시스템에 대해 실시간으로 부등식 제약 조건을 적용하는 것은 추가 반복이 필요하기 때문에 여전히 어려운 과제입니다. 본 논문은 일반적인 등식 및 부등식 제약 조건을 가진 NMPC에 대해 낮은 정확도의 해를 제공하는 보행 로봇용 전신 NMPC 구현을 제시합니다. 높은 정확도의 최적 해를 목표로 하는 대신, 승수 교대 방향법(ADMM)을 활용하여 2차 계획법 하위 문제에 대한 낮은 정확도의 해를 신속하게 제공합니다. 광범위한 시뮬레이션 결과는 실제 로봇이 동역학 이산화 오차, 관성 모델링 오차 및 지연으로 인해 높은 정확도의 해로부터 이점을 얻지 못하는 경우가 많음을 보여줍니다. 우리는 자체 충돌 제약 조건을 위해 NMPC의 초기 시간 단계에서 제어 장벽 함수(CBF)를 통합하여, 계산 부담을 추가하지 않으면서 자체 충돌 횟수를 최대 26배까지 줄였습니다. 이 제어기는 32개의 시간 단계, 2004개의 변수 및 3768개의 제약 조건을 포함하는 문제에 대해 90Hz로 하드웨어에서 안정적으로 배포됩니다. NMPC는 충분히 정확한 해를 제공하여 MIT 휴머노이드가 걷기 및 큰 외란으로부터 회복 시 안정성을 향상시키는 복잡한 다리 교차 및 팔 동작을 계획할 수 있게 합니다.
-
-## 핵심 내용
-비선형 모델 예측 제어(NMPC)의 가속화에 대한 최근 발전 덕분에, 인간형 로봇을 위한 전신 NMPC를 실시간 속도로 배포하는 것이 가능해졌습니다. 그러나 이러한 고차원 시스템에 대해 실시간으로 부등식 제약 조건을 적용하는 것은 추가 반복이 필요하기 때문에 여전히 어려운 과제입니다. 본 논문은 일반적인 등식 및 부등식 제약 조건을 가진 NMPC에 대해 낮은 정확도의 해를 제공하는 보행 로봇용 전신 NMPC 구현을 제시합니다. 높은 정확도의 최적 해를 목표로 하는 대신, 승수 교대 방향법(ADMM)을 활용하여 2차 계획법 하위 문제에 대한 낮은 정확도의 해를 신속하게 제공합니다. 광범위한 시뮬레이션 결과는 실제 로봇이 동역학 이산화 오차, 관성 모델링 오차 및 지연으로 인해 높은 정확도의 해로부터 이점을 얻지 못하는 경우가 많음을 보여줍니다. 우리는 자체 충돌 제약 조건을 위해 NMPC의 초기 시간 단계에서 제어 장벽 함수(CBF)를 통합하여, 계산 부담을 추가하지 않으면서 자체 충돌 횟수를 최대 26배까지 줄였습니다. 이 제어기는 32개의 시간 단계, 2004개의 변수 및 3768개의 제약 조건을 포함하는 문제에 대해 90Hz로 하드웨어에서 안정적으로 배포됩니다. NMPC는 충분히 정확한 해를 제공하여 MIT 휴머노이드가 걷기 및 큰 외란으로부터 회복 시 안정성을 향상시키는 복잡한 다리 교차 및 팔 동작을 계획할 수 있게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2407.10789v2
+
+## 개요
+고차원 시스템의 실시간 부등식 제약 조건 문제를 해결하기 위해, 본 연구는 높은 정밀도의 최적해를 추구하는 대신 교대 방향 승수법(ADMM)을 사용하여 저정밀도 2차 계획법(QP) 하위 문제 해를 빠르게 생성하는 방식을 채택한다. 시뮬레이션 및 하드웨어 실험은 동역학 이산화 오차, 관성 모델링 오차 및 지연으로 인해 실제 로봇이 고정밀도 해로부터 이점을 얻지 못하는 경우가 많음을 보여준다. 제어기는 90Hz 주파수에서 안정적으로 작동하며, 32개의 시간 스텝, 2004개의 변수, 3768개의 제약 조건을 포함하는 문제를 처리하여 MIT 휴머노이드가 복잡한 다리 교차 및 팔 동작을 계획하고, 보행 및 큰 외란 저항 시 안정성을 향상시킬 수 있게 한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 각 제어 스텝마다 **단일 SQP 반복**(순차 2차 계획법)을 채택하고, **ADMM**(교대 방향 승수법)을 사용하여 QP 하위 문제를 해결함으로써 기존 다중 반복 방식의 계산 병목 현상을 피한다.
+- NMPC 초기 시간 스텝에 **제어 장벽 함수(CBF)**를 내장하여 자체 충돌 제약 조건을 처리하며, 추가 계산 비용 없이 제약 조건 충족을 달성한다.
+
+### 실험 설정
+- 하드웨어 플랫폼: MIT 휴머노이드, 제어 주파수 90Hz.
+- 문제 규모: 32개의 예측 시간 스텝, 2004개의 최적화 변수, 3768개의 제약 조건.
+- 비교 기준: 고정밀도 NMPC 솔버(다중 반복 수렴 방식).
+
+### 주요 발견
+- **정밀도-실용성 절충**: 고정밀도 해는 동역학 이산화 오차(discretization errors), 관성 모델링 오차(inertial modeling errors) 및 시스템 지연(delays)으로 인해 실제 로봇 성능을 향상시키지 못하며, 저정밀도 해가 오히려 더 강건하다.
+- **자체 충돌 제약 효과**: CBF 방법은 자체 충돌 횟수를 **26배** 줄였으며, 계산 부담은 증가하지 않았다.
+- **운동 능력 향상**: 제어기는 복잡한 다리 교차(crossed-leg) 및 팔(arm) 동작 계획을 지원하여 보행 안정성과 큰 외란 회복 능력(예: 밀림 후 빠른 자세 조정)을 크게 향상시킨다.
+
+### 결론
+본 연구는 전신 NMPC에서 해의 정밀도를 능동적으로 희생하여 실시간성을 확보할 수 있음을 입증하고, CBF를 통해 안전 제약 조건을 효율적으로 처리함으로써 고차원 보행 로봇의 실시간 제어를 위한 실현 가능한 방안을 제시한다.

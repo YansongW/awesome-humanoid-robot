@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.03047v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.03047v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (721 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,26 @@ ModuLoop 通过闭环调试机制，使预训练 LLM 无需微调即可生成可
 ## Overview
 Large Language Models (LLMs) have demonstrated impressive performance across various domains, including code generation and problem solving. However, their application in robotic control, particularly in low-level tasks that require precise manipulation, real-time feedback, and environment-dependent execution, remains limited. To address this challenge, we propose the Closed-Loop Modular Code Synthesizer framework. This framework leverages a pre-trained LLM without any task-specific fine-tuning to perform modular code planning and generation, and iteratively executes the generated code while inserting debugging probes to observe its behavior. This closed-loop structure facilitates systematic debugging and refinement, ultimately producing executable control programs. We apply the proposed framework to the calibration of an RGB-D camera and a robotic arm, validating its effectiveness in real-world settings. Furthermore, through a subsequent pick-and-place task, we demonstrate not only the accuracy of the calibration but also the potential extensibility of the framework. Across both tasks, the framework achieved high execution accuracy and autonomy, illustrating the practicality and scalability of LLM-based robotic control using our framework.
 
-## 개요
-대규모 언어 모델(LLM)은 코드 생성 및 문제 해결을 포함한 다양한 영역에서 뛰어난 성능을 입증했습니다. 그러나 로봇 제어, 특히 정밀한 조작, 실시간 피드백 및 환경 의존적 실행이 필요한 저수준 작업에서의 적용은 여전히 제한적입니다. 이 문제를 해결하기 위해 우리는 폐쇄 루프 모듈식 코드 합성기(Closed-Loop Modular Code Synthesizer) 프레임워크를 제안합니다. 이 프레임워크는 사전 훈련된 LLM을 작업별 미세 조정 없이 활용하여 모듈식 코드 계획 및 생성을 수행하고, 생성된 코드를 반복적으로 실행하면서 디버깅 프로브를 삽입하여 동작을 관찰합니다. 이러한 폐쇄 루프 구조는 체계적인 디버깅 및 개선을 촉진하여 궁극적으로 실행 가능한 제어 프로그램을 생성합니다. 제안된 프레임워크를 RGB-D 카메라와 로봇 팔의 캘리브레이션에 적용하여 실제 환경에서의 효과를 검증했습니다. 또한, 후속 픽 앤 플레이스(pick-and-place) 작업을 통해 캘리브레이션의 정확성뿐만 아니라 프레임워크의 확장 가능성도 입증했습니다. 두 작업 모두에서 프레임워크는 높은 실행 정확도와 자율성을 달성하여, 우리 프레임워크를 사용한 LLM 기반 로봇 제어의 실용성과 확장성을 보여주었습니다.
-
-## 핵심 내용
-대규모 언어 모델(LLM)은 코드 생성 및 문제 해결을 포함한 다양한 영역에서 뛰어난 성능을 입증했습니다. 그러나 로봇 제어, 특히 정밀한 조작, 실시간 피드백 및 환경 의존적 실행이 필요한 저수준 작업에서의 적용은 여전히 제한적입니다. 이 문제를 해결하기 위해 우리는 폐쇄 루프 모듈식 코드 합성기(Closed-Loop Modular Code Synthesizer) 프레임워크를 제안합니다. 이 프레임워크는 사전 훈련된 LLM을 작업별 미세 조정 없이 활용하여 모듈식 코드 계획 및 생성을 수행하고, 생성된 코드를 반복적으로 실행하면서 디버깅 프로브를 삽입하여 동작을 관찰합니다. 이러한 폐쇄 루프 구조는 체계적인 디버깅 및 개선을 촉진하여 궁극적으로 실행 가능한 제어 프로그램을 생성합니다. 제안된 프레임워크를 RGB-D 카메라와 로봇 팔의 캘리브레이션에 적용하여 실제 환경에서의 효과를 검증했습니다. 또한, 후속 픽 앤 플레이스(pick-and-place) 작업을 통해 캘리브레이션의 정확성뿐만 아니라 프레임워크의 확장 가능성도 입증했습니다. 두 작업 모두에서 프레임워크는 높은 실행 정확도와 자율성을 달성하여, 우리 프레임워크를 사용한 LLM 기반 로봇 제어의 실용성과 확장성을 보여주었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.03047v1
+
+## 개요
+대규모 언어 모델은 코드 생성 및 문제 해결 분야에서 뛰어난 성능을 보이지만, 정밀한 조작, 실시간 피드백, 환경 의존적 실행이 필요한 로봇 저수준 제어에서는 적용이 제한적입니다. 이를 해결하기 위해 ModuLoop는 사전 훈련된 LLM을 활용하여 모듈식 코드 계획 및 생성을 수행하는 폐루프 모듈식 코드 합성기 프레임워크를 제안하며, 작업별 미세 조정이 필요 없습니다. 이 프레임워크는 디버깅 프로브를 삽입하여 생성된 코드를 반복적으로 실행하고 그 동작을 관찰함으로써 체계적인 디버깅과 최적화를 수행하고, 최종적으로 실행 가능한 제어 프로그램을 생성합니다. RGB-D 카메라와 UR3 로봇 팔의 캘리브레이션 및 이후의 픽 앤 플레이스 작업에서 이 프레임워크는 높은 실행 정밀도와 자율성을 달성하여 LLM 기반 로봇 제어의 실용성과 확장성을 입증했습니다.
+
+## 핵심 내용
+### 방법
+- **폐루프 모듈식 코드 합성기**: 사전 훈련된 LLM(작업별 미세 조정 없음)을 활용하여 모듈식 코드 계획 및 생성을 수행하고, 반복 실행 및 디버깅 프로브 삽입을 통해 동작을 관찰하여 체계적인 디버깅과 최적화를 실현합니다.
+- **작업 흐름**: 자연어 명령을 저수준 Python 제어 모듈로 분해하고, 단계적으로 실행하며 런타임 피드백을 활용하여 오류를 수정한 후 최종적으로 실행 가능한 프로그램을 생성합니다.
+
+### 실험 설정
+- **하드웨어**: RGB-D 카메라와 UR3 로봇 팔.
+- **작업**: 카메라와 로봇 팔 캘리브레이션 및 이후의 픽 앤 플레이스 작업.
+- **평가 지표**: 실행 정밀도와 자율성.
+
+### 주요 결과
+- **캘리브레이션 작업**: 프레임워크가 RGB-D 카메라와 UR3 로봇 팔의 캘리브레이션을 성공적으로 완료하여 실제 환경에서의 유효성을 검증했습니다.
+- **픽 앤 플레이스 작업**: 캘리브레이션 정밀도를 검증할 뿐만 아니라 프레임워크의 확장성을 보여주었습니다.
+- **전체 성능**: 두 작업 모두에서 높은 실행 정밀도와 자율성을 달성하여 LLM 기반 로봇 제어의 실용성과 확장성을 입증했습니다.
+
+### 결론
+ModuLoop는 폐루프 디버깅 메커니즘을 통해 사전 훈련된 LLM이 미세 조정 없이도 신뢰할 수 있는 로봇 저수준 제어 코드를 생성할 수 있게 하여, 복잡한 환경에서의 자동화 제어에 새로운 패러다임을 제공합니다.

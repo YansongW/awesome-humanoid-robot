@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.00425v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.00425v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (634 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,22 @@ ManiSkill3 通过 GPU 并行化技术实现了机器人仿真与渲染的突破�
 ## Overview
 Simulation has enabled unprecedented compute-scalable approaches to robot learning. However, many existing simulation frameworks typically support a narrow range of scenes/tasks and lack features critical for scaling generalizable robotics and sim2real. We introduce and open source ManiSkill3, the fastest state-visual GPU parallelized robotics simulator with contact-rich physics targeting generalizable manipulation. ManiSkill3 supports GPU parallelization of many aspects including simulation+rendering, heterogeneous simulation, pointclouds/voxels visual input, and more. Simulation with rendering on ManiSkill3 can run 10-1000x faster with 2-3x less GPU memory usage than other platforms, achieving up to 30,000+ FPS in benchmarked environments due to minimal python/pytorch overhead in the system, simulation on the GPU, and the use of the SAPIEN parallel rendering system. Tasks that used to take hours to train can now take minutes. We further provide the most comprehensive range of GPU parallelized environments/tasks spanning 12 distinct domains including but not limited to mobile manipulation for tasks such as drawing, humanoids, and dextrous manipulation in realistic scenes designed by artists or real-world digital twins. In addition, millions of demonstration frames are provided from motion planning, RL, and teleoperation. ManiSkill3 also provides a comprehensive set of baselines that span popular RL and learning-from-demonstrations algorithms.
 
-## 개요
-시뮬레이션은 로봇 학습에 전례 없는 계산 확장 가능 접근 방식을 가능하게 했습니다. 그러나 기존의 많은 시뮬레이션 프레임워크는 일반적으로 제한된 범위의 장면/작업만 지원하며, 일반화 가능한 로봇공학과 sim2real 확장에 중요한 기능이 부족합니다. 우리는 일반화 가능한 조작을 목표로 하는 접촉이 풍부한 물리 엔진을 갖춘 가장 빠른 상태-시각 GPU 병렬 로봇공학 시뮬레이터인 ManiSkill3를 소개하고 오픈소스로 공개합니다. ManiSkill3는 시뮬레이션+렌더링, 이기종 시뮬레이션, 포인트클라우드/복셀 시각 입력 등 다양한 측면의 GPU 병렬화를 지원합니다. ManiSkill3에서 렌더링을 포함한 시뮬레이션은 다른 플랫폼보다 10-1000배 빠르게 실행되며 GPU 메모리 사용량은 2-3배 적습니다. 이는 시스템 내 최소한의 python/pytorch 오버헤드, GPU 상의 시뮬레이션, SAPIEN 병렬 렌더링 시스템 사용 덕분에 벤치마크 환경에서 최대 30,000+ FPS를 달성합니다. 훈련에 몇 시간이 걸리던 작업이 이제는 몇 분 만에 가능해졌습니다. 또한 우리는 드로잉, 휴머노이드, 아티스트가 디자인한 현실적인 장면이나 실제 세계 디지털 트윈에서의 정밀 조작 등 모바일 조작을 포함한 12개의 다양한 도메인에 걸쳐 가장 포괄적인 GPU 병렬 환경/작업 범위를 제공합니다. 추가로 모션 플래닝, 강화학습, 원격 조작에서 얻은 수백만 개의 데모 프레임이 제공됩니다. ManiSkill3는 또한 인기 있는 강화학습 및 데모 학습 알고리즘을 포괄하는 포괄적인 베이스라인 세트를 제공합니다.
-
-## 핵심 내용
-시뮬레이션은 로봇 학습에 전례 없는 계산 확장 가능 접근 방식을 가능하게 했습니다. 그러나 기존의 많은 시뮬레이션 프레임워크는 일반적으로 제한된 범위의 장면/작업만 지원하며, 일반화 가능한 로봇공학과 sim2real 확장에 중요한 기능이 부족합니다. 우리는 일반화 가능한 조작을 목표로 하는 접촉이 풍부한 물리 엔진을 갖춘 가장 빠른 상태-시각 GPU 병렬 로봇공학 시뮬레이터인 ManiSkill3를 소개하고 오픈소스로 공개합니다. ManiSkill3는 시뮬레이션+렌더링, 이기종 시뮬레이션, 포인트클라우드/복셀 시각 입력 등 다양한 측면의 GPU 병렬화를 지원합니다. ManiSkill3에서 렌더링을 포함한 시뮬레이션은 다른 플랫폼보다 10-1000배 빠르게 실행되며 GPU 메모리 사용량은 2-3배 적습니다. 이는 시스템 내 최소한의 python/pytorch 오버헤드, GPU 상의 시뮬레이션, SAPIEN 병렬 렌더링 시스템 사용 덕분에 벤치마크 환경에서 최대 30,000+ FPS를 달성합니다. 훈련에 몇 시간이 걸리던 작업이 이제는 몇 분 만에 가능해졌습니다. 또한 우리는 드로잉, 휴머노이드, 아티스트가 디자인한 현실적인 장면이나 실제 세계 디지털 트윈에서의 정밀 조작 등 모바일 조작을 포함한 12개의 다양한 도메인에 걸쳐 가장 포괄적인 GPU 병렬 환경/작업 범위를 제공합니다. 추가로 모션 플래닝, 강화학습, 원격 조작에서 얻은 수백만 개의 데모 프레임이 제공됩니다. ManiSkill3는 또한 인기 있는 강화학습 및 데모 학습 알고리즘을 포괄하는 포괄적인 베이스라인 세트를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.00425v2
+
+## 개요
+ManiSkill3는 GPU 병렬화 기술을 통해 로봇 시뮬레이션 및 렌더링의 획기적인 가속화를 실현했으며, 시스템 설계는 Python/PyTorch 오버헤드를 최소화하고 SAPIEN 병렬 렌더링 시스템과 결합하여 벤치마크 테스트에서 30,000+ FPS를 달성합니다. 이 플랫폼은 접촉이 풍부한 물리 환경의 범용 조작 작업을 지원하며, 이동 조작, 휴머노이드 로봇, 정밀 조작 등 12개 분야를涵盖하고, 모션 플래닝, 강화 학습 및 원격 조작 기반의 수백만 프레임 데모 데이터를 제공합니다. 다른 플랫폼과 비교하여 원래 수시간이 걸리던 훈련 작업이 이제 단 몇 분 만에 완료됩니다.
+
+## 핵심 내용
+### 핵심 아키텍처 및 성능
+- **GPU 병렬화**: ManiSkill3는 시뮬레이션과 렌더링의 전체 GPU 병렬화를 구현하며, 이기종 시뮬레이션 환경 및 포인트 클라우드/복셀 시각 입력을 지원합니다.
+- **성능 우위**: 벤치마크 환경에서 30,000+ FPS를 달성하며, 다른 플랫폼 대비 속도가 10-1000배 향상되고 GPU 메모리 사용량이 2-3배 감소합니다.
+- **시스템 최적화**: Python/PyTorch 오버헤드를 최소화하고 SAPIEN 병렬 렌더링 시스템과 결합하여 효율적인 계산을 실현합니다.
+
+### 작업 및 환경
+- **12개 분야**: 이동 조작(예: 드로잉), 휴머노이드 로봇, 정밀 조작 등을 포함하며, 장면은 아티스트가 설계하거나 실제 세계 디지털 트윈을 기반으로 합니다.
+- **데모 데이터**: 모션 플래닝, 강화 학습(RL) 및 원격 조작에서 비롯된 수백만 프레임의 데모 데이터를 제공합니다.
+
+### 실험 설정 및 결론
+- **훈련 효율성**: 원래 수시간이 걸리던 훈련 작업이 이제 단 몇 분 만에 완료됩니다.
+- **벤치마크 알고리즘**: 주요 RL 및 데모 학습(LfD) 알고리즘을 포괄하는 종합적인 베이스라인 시스템을 제공합니다.

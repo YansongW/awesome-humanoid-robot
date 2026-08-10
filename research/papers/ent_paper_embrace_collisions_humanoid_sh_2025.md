@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.01465v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.01465v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (737 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,26 @@ sources:
 ## Overview
 Previous humanoid robot research works treat the robot as a bipedal mobile manipulation platform, where only the feet and hands contact the environment. However, we humans use all body parts to interact with the world, e.g., we sit in chairs, get up from the ground, or roll on the floor. Contacting the environment using body parts other than feet and hands brings significant challenges in both model-predictive control and reinforcement learning-based methods. An unpredictable contact sequence makes it almost impossible for model-predictive control to plan ahead in real time. The success of the zero-shot sim-to-real reinforcement learning method for humanoids heavily depends on the acceleration of GPU-based rigid-body physical simulator and simplification of the collision detection. Lacking extreme torso movement of the humanoid research makes all other components non-trivial to design, such as termination conditions, motion commands and reward designs. To address these potential challenges, we propose a general humanoid motion framework that takes discrete motion commands and controls the robot's motor action in real time. Using a GPU-accelerated rigid-body simulator, we train a humanoid whole-body control policy that follows the high-level motion command in the real world in real time, even with stochastic contacts and extremely large robot base rotation and not-so-feasible motion command. More details at https://project-instinct.github.io
 
-## 개요
-기존의 휴머노이드 로봇 연구는 로봇을 이족 보행 이동 조작 플랫폼으로 간주하여 발과 손만 환경과 접촉하도록 설계되었습니다. 그러나 인간은 의자에 앉거나, 바닥에서 일어나거나, 바닥에서 구르는 등 모든 신체 부위를 사용하여 세계와 상호작용합니다. 발과 손 이외의 신체 부위를 사용하여 환경과 접촉하는 것은 모델 예측 제어(Model Predictive Control)와 강화 학습 기반 방법 모두에 상당한 도전 과제를 제기합니다. 예측 불가능한 접촉 순서는 모델 예측 제어가 실시간으로 사전 계획을 수립하는 것을 거의 불가능하게 만듭니다. 휴머노이드를 위한 제로샷 시뮬레이션-실제(Sim-to-Real) 강화 학습 방법의 성공은 GPU 기반 강체 물리 시뮬레이터의 가속화와 충돌 감지의 단순화에 크게 의존합니다. 휴머노이드 연구에서 극단적인 상체 움직임이 부족하면 종료 조건, 동작 명령, 보상 설계와 같은 다른 모든 구성 요소를 설계하기가 쉽지 않습니다. 이러한 잠재적 도전 과제를 해결하기 위해, 우리는 이산 동작 명령을 입력받아 로봇의 모터 동작을 실시간으로 제어하는 일반적인 휴머노이드 동작 프레임워크를 제안합니다. GPU 가속 강체 시뮬레이터를 사용하여, 확률적 접촉, 극도로 큰 로봇 베이스 회전, 그리고 실현 가능성이 낮은 동작 명령이 있더라도 실제 세계에서 고수준 동작 명령을 실시간으로 따르는 휴머노이드 전신 제어 정책을 훈련합니다. 자세한 내용은 https://project-instinct.github.io 에서 확인할 수 있습니다.
-
-## 핵심 내용
-기존의 휴머노이드 로봇 연구는 로봇을 이족 보행 이동 조작 플랫폼으로 간주하여 발과 손만 환경과 접촉하도록 설계되었습니다. 그러나 인간은 의자에 앉거나, 바닥에서 일어나거나, 바닥에서 구르는 등 모든 신체 부위를 사용하여 세계와 상호작용합니다. 발과 손 이외의 신체 부위를 사용하여 환경과 접촉하는 것은 모델 예측 제어와 강화 학습 기반 방법 모두에 상당한 도전 과제를 제기합니다. 예측 불가능한 접촉 순서는 모델 예측 제어가 실시간으로 사전 계획을 수립하는 것을 거의 불가능하게 만듭니다. 휴머노이드를 위한 제로샷 시뮬레이션-실제 강화 학습 방법의 성공은 GPU 기반 강체 물리 시뮬레이터의 가속화와 충돌 감지의 단순화에 크게 의존합니다. 휴머노이드 연구에서 극단적인 상체 움직임이 부족하면 종료 조건, 동작 명령, 보상 설계와 같은 다른 모든 구성 요소를 설계하기가 쉽지 않습니다. 이러한 잠재적 도전 과제를 해결하기 위해, 우리는 이산 동작 명령을 입력받아 로봇의 모터 동작을 실시간으로 제어하는 일반적인 휴머노이드 동작 프레임워크를 제안합니다. GPU 가속 강체 시뮬레이터를 사용하여, 확률적 접촉, 극도로 큰 로봇 베이스 회전, 그리고 실현 가능성이 낮은 동작 명령이 있더라도 실제 세계에서 고수준 동작 명령을 실시간으로 따르는 휴머노이드 전신 제어 정책을 훈련합니다. 자세한 내용은 https://project-instinct.github.io 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.01465v1
+
+## 개요
+기존의 휴머노이드 로봇 연구는 로봇을 단순히 이족 보행 이동 조작 플랫폼으로만 간주하여 손과 발만 환경과 접촉하도록 허용했습니다. 그러나 인간은 의자에 앉기, 바닥에서 일어나기, 바닥에서 구르기 등 전신의 각 부위를 활용하여 환경과 상호작용합니다. 이러한 비손발 접촉은 모델 예측 제어 및 강화 학습 방법에 큰 도전 과제를 제기합니다. 예측 불가능한 접촉 시퀀스로 인해 모델 예측 제어는 실시간 계획이 거의 불가능하기 때문입니다. 이를 위해 이 연구는 일반적인 휴머노이드 운동 프레임워크를 제안하며, 이산 운동 명령을 수신하고 로봇 모터 동작을 실시간으로 제어합니다. GPU 가속 강체 시뮬레이터를 통해 훈련된 전신 제어 정책은 무작위 접촉, 극단적인 로봇 베이스 회전, 심지어 실행 불가능한 운동 명령 하에서도 실제 세계에서 고수준 명령을 실시간으로 추종할 수 있습니다.
+
+## 핵심 내용
+### 방법 개요
+- 일반적인 휴머노이드 운동 프레임워크를 제안하며, 입력은 이산 운동 명령, 출력은 실시간 모터 동작입니다.
+- GPU 가속 강체 물리 시뮬레이터를 사용하여 훈련하고, 제로샷 sim-to-real 전이를 구현합니다.
+
+### 핵심 도전 과제 및 해결
+- **도전 과제 1**: 비손발 접촉으로 인해 접촉 시퀀스가 예측 불가능하며, 기존 모델 예측 제어는 실시간 계획이 불가능합니다.
+- **도전 과제 2**: 제로샷 sim-to-real 강화 학습 방법은 GPU 시뮬레이터 가속 및 충돌 감지 단순화에 크게 의존합니다.
+- **도전 과제 3**: 휴머노이드 로봇은 극단적인 몸통 운동이 부족하여 종료 조건, 운동 명령 및 보상 설계와 같은 구성 요소를 설계하기 어렵습니다.
+- **해결 방안**: 무작위 접촉, 극단적인 로봇 베이스 회전(예: 큰 비틀림), 실행 불가능한 운동 명령을 처리할 수 있는 전신 제어 정책을 훈련합니다.
+
+### 실험 설정 및 주요 결과
+- 실제 세계에서 실시간으로 실행하여 무작위 접촉 및 극단적인 몸통 운동에 대한 정책의 견고성을 검증했습니다.
+- 구체적인 주요 수치는 본문에 제공되지 않았지만, 프로젝트 페이지(https://project-instinct.github.io)에 더 많은 세부 정보가 포함되어 있습니다.
+
+### 결론
+이 프레임워크는 휴머노이드 로봇이 앉기, 눕기, 구르기와 같은 인간형 전신 상호작용 운동을 구현할 수 있는 실현 가능한 방안을 제공하며, 기존의 손발 접촉 패러다임을突破합니다.

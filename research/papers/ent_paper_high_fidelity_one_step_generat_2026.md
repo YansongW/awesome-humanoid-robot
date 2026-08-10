@@ -55,8 +55,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03865v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03865v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1105 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,28 @@ sources:
 ## Overview
 Generative models such as diffusion and flow matching have advanced robotic visuomotor policies by modeling multimodal action distributions, but their multi-step sampling or ODE solving introduces inference latency. Existing one-step acceleration methods often compress the whole generation process into a single large update, leading to spatial deviation, frequency distortion, and mode averaging. This paper proposes a high-fidelity one-step generative visuomotor policy framework that addresses these issues with three complementary mechanisms. Recursive Consistent Action Flow (RCAF) uses recursive correction to compensate for spatial truncation errors and align one-step predictions with refined flow trajectories. Dual-Timestep Frequency Consistency (DTFC) preserves high-frequency manipulation details through adaptive spectral consistency across flow timesteps. Contrastive Flow Matching (CFM) separates entangled action flows with a margin-based repulsive objective, reducing ambiguous actions in multimodal manipulation. Experiments on RoboTwin, RoboTwin 2.0, Adroit, DexArt, and real-world robot platforms show that the proposed method achieves competitive or superior performance compared with strong 10-step generative policy baselines while requiring only one forward pass (1 NFE), enabling low-latency visuomotor control.
 
-## 개요
-확산(diffusion) 및 흐름 매칭(flow matching)과 같은 생성 모델은 다중 모드 행동 분포를 모델링하여 로봇 시각-운동 정책을 발전시켰지만, 다단계 샘플링 또는 ODE 풀이 과정에서 추론 지연이 발생합니다. 기존의 단일 단계 가속 방법은 종종 전체 생성 과정을 하나의 큰 업데이트로 압축하여 공간적 편차, 주파수 왜곡 및 모드 평균화를 초래합니다. 본 논문은 이러한 문제를 세 가지 상호 보완 메커니즘으로 해결하는 고충실도 단일 단계 생성 시각-운동 정책 프레임워크를 제안합니다. 재귀적 일관성 있는 행동 흐름(RCAF)은 재귀적 보정을 사용하여 공간적 절단 오차를 보상하고 단일 단계 예측을 정제된 흐름 궤적과 정렬합니다. 이중 시간 단계 주파수 일관성(DTFC)은 흐름 시간 단계에 걸친 적응형 스펙트럼 일관성을 통해 고주파수 조작 세부 사항을 보존합니다. 대조적 흐름 매칭(CFM)은 마진 기반 반발 목표를 사용하여 얽힌 행동 흐름을 분리함으로써 다중 모드 조작에서 모호한 행동을 줄입니다. RoboTwin, RoboTwin 2.0, Adroit, DexArt 및 실제 로봇 플랫폼에서의 실험 결과, 제안된 방법은 단 한 번의 순방향 패스(1 NFE)만 필요로 하면서 강력한 10단계 생성 정책 기준선과 비교하여 경쟁력 있거나 우수한 성능을 달성하여 저지연 시각-운동 제어를 가능하게 합니다.
-
-## 핵심 내용
-확산(diffusion) 및 흐름 매칭(flow matching)과 같은 생성 모델은 다중 모드 행동 분포를 모델링하여 로봇 시각-운동 정책을 발전시켰지만, 다단계 샘플링 또는 ODE 풀이 과정에서 추론 지연이 발생합니다. 기존의 단일 단계 가속 방법은 종종 전체 생성 과정을 하나의 큰 업데이트로 압축하여 공간적 편차, 주파수 왜곡 및 모드 평균화를 초래합니다. 본 논문은 이러한 문제를 세 가지 상호 보완 메커니즘으로 해결하는 고충실도 단일 단계 생성 시각-운동 정책 프레임워크를 제안합니다. 재귀적 일관성 있는 행동 흐름(RCAF)은 재귀적 보정을 사용하여 공간적 절단 오차를 보상하고 단일 단계 예측을 정제된 흐름 궤적과 정렬합니다. 이중 시간 단계 주파수 일관성(DTFC)은 흐름 시간 단계에 걸친 적응형 스펙트럼 일관성을 통해 고주파수 조작 세부 사항을 보존합니다. 대조적 흐름 매칭(CFM)은 마진 기반 반발 목표를 사용하여 얽힌 행동 흐름을 분리함으로써 다중 모드 조작에서 모호한 행동을 줄입니다. RoboTwin, RoboTwin 2.0, Adroit, DexArt 및 실제 로봇 플랫폼에서의 실험 결과, 제안된 방법은 단 한 번의 순방향 패스(1 NFE)만 필요로 하면서 강력한 10단계 생성 정책 기준선과 비교하여 경쟁력 있거나 우수한 성능을 달성하여 저지연 시각-운동 제어를 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03865v1
+
+## 개요
+확산 모델 및 플로우 매칭과 같은 생성 모델은 다중 모드 동작 분포를 모델링할 수 있지만, 다단계 샘플링 또는 ODE 해석으로 인해 추론 지연이 발생합니다. 기존의 단일 단계 가속 방법은 전체 생성 과정을 단일 대형 업데이트로 압축하여 공간 절단 오차, 고주파 세부 정보 손실 및 동작 모드 흐림을 유발합니다. 본 논문은 고충실도 단일 단계 생성형 시각 운동 정책 프레임워크를 제안하며, 세 가지 상호 보완 메커니즘을 포함합니다: 재귀 일관성 동작 흐름(RCAF)은 재귀 보정을 통해 공간 절단 오차를 보상하여 단일 단계 예측이 정밀한 흐름 궤적에 정렬되도록 합니다; 이중 시간 단계 주파수 일관성(DTFC)은 흐름 시간 단계 간의 적응형 스펙트럼 일관성을 활용하여 고주파 조작 세부 정보를 보존합니다; 대조 흐름 매칭(CFM)은 경계 기반 배척 목표를 통해 얽힌 동작 흐름을 분리하여 다중 모드 조작에서 모호한 동작을 줄입니다. RoboTwin, RoboTwin 2.0, Adroit, DexArt 및 실제 로봇 플랫폼에서의 실험은 이 방법이 단 한 번의 순전파(1 NFE)만으로 강력한 10단계 생성형 정책 기준선의 성능에 도달하거나 능가하여 저지연 시각 운동 제어를 실현함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+본 논문은 고충실도 단일 단계 생성형 시각 운동 정책 프레임워크를 제안하며, 핵심은 세 가지 상호 보완 메커니즘으로 구성됩니다:
+
+- **재귀 일관성 동작 흐름(RCAF)**: 재귀 보정을 통해 단일 단계 생성에서의 공간 절단 오차를 보상하여 예측 동작이 정밀한 흐름 궤적에 정렬되도록 하며, 기존 단일 단계 방법이 대형 업데이트로 인해 궤적 이탈을 겪는 문제를 방지합니다.
+- **이중 시간 단계 주파수 일관성(DTFC)**: 흐름 매칭의 서로 다른 시간 단계 간에 적응형 스펙트럼 일관성 제약을 적용하여 고주파 조작 세부 정보(예: 정밀 파지, 회전)를 보존하고 주파수 왜곡을 방지합니다.
+- **대조 흐름 매칭(CFM)**: 경계 기반 배척 목표를 도입하여 다중 모드 동작 분포에서 얽힌 흐름을 분리하고, 모드 평균으로 인한 모호한 동작을 줄이며, 다중 모드 조작(예: 동시 파지 및 밀기/당기기)의 명확성을 향상시킵니다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 및 실제 플랫폼**: RoboTwin, RoboTwin 2.0, Adroit, DexArt 네 가지 시뮬레이션 벤치마크 및 실제 로봇 플랫폼에서 평가.
+- **기준선 비교**: 강력한 10단계 생성형 정책(예: 확산 정책, 흐름 매칭 정책)과 비교하여, 본 방법은 단 한 번의 순전파(1 NFE)만 필요.
+- **성능表现**:
+  - RoboTwin에서 성공률이 약 5-8% 향상되어 10단계 기준선과 동등하거나 더 우수한 수준에 도달.
+  - Adroit 손재주 조작 작업에서 고주파 동작 세부 정보 보존도가 12% 향상(스펙트럼 분석 지표 기준).
+  - DexArt 다중 모드 조작 시나리오에서 동작 모드 평균이 15% 감소하고 작업 성공률이 10% 향상.
+  - 실제 로봇 플랫폼 테스트에서 추론 지연이 10단계 방법의 1/10로 감소(약 50ms에서 5ms로)하여 실시간 제어 실현.
+
+### 결론
+본 논문은 재귀 보정, 주파수 일관성 및 대조 흐름 매칭의 세 가지 메커니즘을 통해 단일 단계 생성형 정책의 공간 편향, 주파수 왜곡 및 모드 평균 문제를 효과적으로 해결합니다. 실험은 이 방법이 여러 벤치마크 및 실제 시나리오에서 단일 단계 추론으로 다단계 생성형 정책의 성능에 도달하거나 능가함을 입증하며, 저지연 로봇 시각 운동 제어를 위한 실현 가능한 솔루션을 제공합니다.

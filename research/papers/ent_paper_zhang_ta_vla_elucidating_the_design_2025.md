@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.07962v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.07962v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (636 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,26 @@ Many robotic manipulation tasks require sensing and responding to force signals 
 ## Content
 Many robotic manipulation tasks require sensing and responding to force signals such as torque to assess whether the task has been successfully completed and to enable closed-loop control. However, current Vision-Language-Action (VLA) models lack the ability to integrate such subtle physical feedback. In this work, we explore Torque-aware VLA models, aiming to bridge this gap by systematically studying the design space for incorporating torque signals into existing VLA architectures. We identify and evaluate several strategies, leading to three key findings. First, introducing torque adapters into the decoder consistently outperforms inserting them into the encoder. Third, inspired by joint prediction and planning paradigms in autonomous driving, we propose predicting torque as an auxiliary output, which further improves performance. This strategy encourages the model to build a physically grounded internal representation of interaction dynamics. Extensive quantitative and qualitative experiments across contact-rich manipulation benchmarks validate our findings.
 
-## 개요
-많은 로봇 조작 작업은 작업이 성공적으로 완료되었는지 평가하고 폐쇄 루프 제어를 가능하게 하기 위해 토크와 같은 힘 신호를 감지하고 반응해야 합니다. 그러나 현재의 Vision-Language-Action(VLA) 모델은 이러한 미묘한 물리적 피드백을 통합하는 능력이 부족합니다. 본 연구에서는 Torque-aware VLA 모델을 탐구하며, 기존 VLA 아키텍처에 토크 신호를 통합하기 위한 설계 공간을 체계적으로 연구하여 이러한 격차를 해소하고자 합니다. 우리는 여러 전략을 식별하고 평가하여 세 가지 주요 발견을 도출했습니다. 첫째, 디코더에 토크 어댑터를 도입하는 것이 인코더에 삽입하는 것보다 일관되게 더 나은 성능을 보였습니다. 셋째, 자율 주행에서의 공동 예측 및 계획 패러다임에서 영감을 받아, 우리는 보조 출력으로 토크를 예측하는 것을 제안하며, 이는 성능을 더욱 향상시킵니다. 이 전략은 모델이 상호작용 역학에 대한 물리적으로 기반한 내부 표현을 구축하도록 장려합니다. 접촉이 많은 조작 벤치마크에 걸친 광범위한 정량적 및 정성적 실험을 통해 우리의 발견을 검증했습니다.
-
-## 핵심 내용
-많은 로봇 조작 작업은 작업이 성공적으로 완료되었는지 평가하고 폐쇄 루프 제어를 가능하게 하기 위해 토크와 같은 힘 신호를 감지하고 반응해야 합니다. 그러나 현재의 Vision-Language-Action(VLA) 모델은 이러한 미묘한 물리적 피드백을 통합하는 능력이 부족합니다. 본 연구에서는 Torque-aware VLA 모델을 탐구하며, 기존 VLA 아키텍처에 토크 신호를 통합하기 위한 설계 공간을 체계적으로 연구하여 이러한 격차를 해소하고자 합니다. 우리는 여러 전략을 식별하고 평가하여 세 가지 주요 발견을 도출했습니다. 첫째, 디코더에 토크 어댑터를 도입하는 것이 인코더에 삽입하는 것보다 일관되게 더 나은 성능을 보였습니다. 셋째, 자율 주행에서의 공동 예측 및 계획 패러다임에서 영감을 받아, 우리는 보조 출력으로 토크를 예측하는 것을 제안하며, 이는 성능을 더욱 향상시킵니다. 이 전략은 모델이 상호작용 역학에 대한 물리적으로 기반한 내부 표현을 구축하도록 장려합니다. 접촉이 많은 조작 벤치마크에 걸친 광범위한 정량적 및 정성적 실험을 통해 우리의 발견을 검증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.07962v1
+
+## 개요
+현재 비전-언어-동작(VLA) 모델은 토크와 같은 힘 신호를 통합하는 능력이 부족하며, 이는 폐루프 제어와 작업 완료 평가에 중요합니다. TA-VLA는 설계 공간을 체계적으로 연구하여 토크 어댑터를 인코더보다 디코더에 삽입하는 것이 더 효과적임을 발견했으며, 자율주행의 결합 예측 및 계획 패러다임에서 영감을 얻어 토크 예측을 보조 출력으로 제안함으로써 모델이 물리적 상호작용의 내부 표현을 구축하도록 장려합니다. 광범위한 정량적 및 정성적 실험이 접촉이 많은 조작 벤치마크에서 이러한 발견을 검증합니다.
+
+## 핵심 내용
+### 방법
+TA-VLA는 기존 VLA 아키텍처에 토크 신호를 통합하는 것을 목표로 하며, 설계 공간 탐색은 두 가지 핵심 전략에 초점을 맞춥니다:
+- **토크 어댑터 위치**: 토크 어댑터를 인코더에 삽입하는 것과 디코더에 삽입하는 효과를 비교했으며, 디코더 측 삽입이 항상 더 우수함을 발견했습니다.
+- **보조 출력 예측**: 자율주행의 결합 예측 및 계획 패러다임에서 차용하여 토크 예측을 보조 작업으로 사용하며, 이는 모델이 더 물리적인 상호작용 역학의 내부 표현을 학습하도록 유도합니다.
+
+### 실험 설정
+- **벤치마크**: 접촉이 많은 조작 벤치마크에서 평가되었으며, 정량적 및 정성적 실험을 포함합니다.
+- **비교**: 다양한 토크 통합 전략을 체계적으로 비교하여 위의 두 가지 핵심 발견의 유효성을 검증했습니다.
+
+### 주요 결과
+- 디코더의 토크 어댑터가 인코더의 어댑터보다 현저히 우수합니다.
+- 보조 토크 예측이 성능을 추가로 향상시켜, 모델이 물리적 상호작용의 암묵적 이해를 구축하는 데 도움이 됨을 시사합니다.
+- 실험은 다양한 접촉이 많은 작업을 포괄하며, 결과는 제안된 설계 선택을 일관되게 지지합니다.
+
+### 결론
+TA-VLA는 체계적인 설계 공간 탐색을 통해 접촉이 많은 조작에서 VLA 모델에 대한 토크 인식의 중요성을 입증하고, 효과적인 통합 전략을 제공하여 미래 로봇 조작에서 물리적 피드백 융합의 기반을 마련합니다.

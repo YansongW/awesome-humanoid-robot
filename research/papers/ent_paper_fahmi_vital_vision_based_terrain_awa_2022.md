@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.01246v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.01246v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (703 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,26 @@ ViTAL 通过将姿态适应与落脚点选择联合优化，并引入地形感�
 ## Overview
 This work is on vision-based planning strategies for legged robots that separate locomotion planning into foothold selection and pose adaptation. Current pose adaptation strategies optimize the robot's body pose relative to given footholds. If these footholds are not reached, the robot may end up in a state with no reachable safe footholds. Therefore, we present a Vision-Based Terrain-Aware Locomotion (ViTAL) strategy that consists of novel pose adaptation and foothold selection algorithms. ViTAL introduces a different paradigm in pose adaptation that does not optimize the body pose relative to given footholds, but the body pose that maximizes the chances of the legs in reaching safe footholds. ViTAL plans footholds and poses based on skills that characterize the robot's capabilities and its terrain-awareness. We use the 90 kg HyQ and 140 kg HyQReal quadruped robots to validate ViTAL, and show that they are able to climb various obstacles including stairs, gaps, and rough terrains at different speeds and gaits. We compare ViTAL with a baseline strategy that selects the robot pose based on given selected footholds, and show that ViTAL outperforms the baseline.
 
-## 개요
-본 연구는 보행 로봇의 비전 기반 계획 전략에 관한 것으로, 이동 계획을 발판 선택과 자세 적응으로 분리합니다. 현재의 자세 적응 전략은 주어진 발판을 기준으로 로봇의 몸체 자세를 최적화합니다. 이러한 발판에 도달하지 못하면 로봇은 도달 가능한 안전한 발판이 없는 상태에 빠질 수 있습니다. 따라서 우리는 새로운 자세 적응 및 발판 선택 알고리즘으로 구성된 비전 기반 지형 인식 보행(ViTAL) 전략을 제시합니다. ViTAL은 자세 적응에서 기존 패러다임과 달리 주어진 발판을 기준으로 몸체 자세를 최적화하는 대신, 다리가 안전한 발판에 도달할 가능성을 최대화하는 몸체 자세를 찾습니다. ViTAL은 로봇의 능력과 지형 인식을 특성화하는 기술을 기반으로 발판과 자세를 계획합니다. 우리는 90kg HyQ와 140kg HyQReal 사족 로봇을 사용하여 ViTAL을 검증했으며, 계단, 틈, 거친 지형 등 다양한 장애물을 다양한 속도와 보행 방식으로 오를 수 있음을 보여줍니다. 또한 ViTAL을 선택된 발판을 기준으로 로봇 자세를 선택하는 기준 전략과 비교하여 ViTAL이 기준 전략보다 우수함을 입증했습니다.
-
-## 핵심 내용
-본 연구는 보행 로봇의 비전 기반 계획 전략에 관한 것으로, 이동 계획을 발판 선택과 자세 적응으로 분리합니다. 현재의 자세 적응 전략은 주어진 발판을 기준으로 로봇의 몸체 자세를 최적화합니다. 이러한 발판에 도달하지 못하면 로봇은 도달 가능한 안전한 발판이 없는 상태에 빠질 수 있습니다. 따라서 우리는 새로운 자세 적응 및 발판 선택 알고리즘으로 구성된 비전 기반 지형 인식 보행(ViTAL) 전략을 제시합니다. ViTAL은 자세 적응에서 기존 패러다임과 달리 주어진 발판을 기준으로 몸체 자세를 최적화하는 대신, 다리가 안전한 발판에 도달할 가능성을 최대화하는 몸체 자세를 찾습니다. ViTAL은 로봇의 능력과 지형 인식을 특성화하는 기술을 기반으로 발판과 자세를 계획합니다. 우리는 90kg HyQ와 140kg HyQReal 사족 로봇을 사용하여 ViTAL을 검증했으며, 계단, 틈, 거친 지형 등 다양한 장애물을 다양한 속도와 보행 방식으로 오를 수 있음을 보여줍니다. 또한 ViTAL을 선택된 발판을 기준으로 로봇 자세를 선택하는 기준 전략과 비교하여 ViTAL이 기준 전략보다 우수함을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2212.01246v1
+
+## 개요
+기존 방법은 운동 계획을 착지점 선택과 자세 적응의 두 단계로 나누지만, 착지점에 도달할 수 없는 경우 로봇이 안전한 지지 상태를 확보하지 못할 수 있다. ViTAL은 자세 적응을 "주어진 착지점에서의 신체 자세 최적화"에서 "다리가 안전한 착지점에 도달할 확률을 최대화하는 신체 자세"로 혁신적으로 전환한다. 이 방법은 로봇의 능력과 지형 인식 기술을 기반으로 착지점과 자세를 공동 계획하며, 90kg의 HyQ와 140kg의 HyQReal 네 발 달린 로봇에서 검증되어 다양한 속도와 보행에서 계단, 틈, 거친 지형 등반에 성공했다.
+
+## 핵심 내용
+### 방법 구조
+ViTAL의 핵심은 전통적인 순차 계획이 아닌 신체 자세와 착지점의 **공동 계획**이다. 주요 혁신은 다음과 같다:
+- **자세 적응의 새로운 패러다임**: 주어진 착지점에서의 신체 자세를 최적화하지 않고, 다리가 안전한 착지점에 도달할 확률을 최대화하는 신체 자세를 찾는다.
+- **기술 기반 계획**: 로봇의 능력과 지형 인식을 나타내는 "기술"(skills)을 기반으로 계획하여, 계획 결과가 로봇의 운동학 및 동역학 제약을 준수하도록 보장한다.
+
+### 실험 설정
+- **로봇 플랫폼**: 90kg의 HyQ와 140kg의 HyQReal 네 발 달린 로봇.
+- **테스트 지형**: 계단, 틈(gaps), 거친 지형(rough terrains).
+- **비교 기준선**: 전통적인 방법—먼저 착지점을 선택한 후, 해당 착지점을 기반으로 신체 자세를 최적화.
+
+### 주요 결과
+- ViTAL은 다양한 지형에서 성공적으로 등반했지만, 기준선 방법은 복잡한 지형(예: 큰 틈이나 높은 계단)에서 착지점에 도달할 수 없어 실패했다.
+- 다양한 속도와 보행에서 ViTAL은 안정성을 유지하여 견고성을 검증했다.
+
+### 결론
+ViTAL은 자세 적응과 착지점 선택을 공동 최적화하고 지형 인식 기술을 도입함으로써, 네 발 달린 로봇의 복잡한 비구조적 지형 통과 능력을 크게 향상시켰다.

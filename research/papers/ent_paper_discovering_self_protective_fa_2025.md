@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.01336v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.01336v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (698 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,33 @@ sources:
 ## Overview
 Humanoid robots have received significant research interests and advancements in recent years. Despite many successes, due to their morphology, dynamics and limitation of control policy, humanoid robots are prone to fall as compared to other embodiments like quadruped or wheeled robots. And its large weight, tall Center of Mass, high Degree-of-Freedom would cause serious hardware damages when falling uncontrolled, to both itself and surrounding objects. Existing researches in this field mostly focus on using control based methods that struggle to cater diverse falling scenarios and may introduce unsuitable human prior. On the other hand, large-scale Deep Reinforcement Learning and Curriculum Learning could be employed to incentivize humanoid agent discovering falling protection policy that fits its own nature and property. In this work, with carefully designed reward functions and domain diversification curriculum, we successfully train humanoid agent to explore falling protection behaviors and discover that by forming a `triangle' structure, the falling damages could be significantly reduced with its rigid-material body. With comprehensive metrics and experiments, we quantify its performance with comparison to other methods, visualize its falling behaviors and successfully transfer it to real world platform.
 
-## 개요
-휴머노이드 로봇은 최근 몇 년간 상당한 연구 관심과 발전을 이루었습니다. 많은 성공에도 불구하고, 휴머노이드 로봇은 형태, 역학 및 제어 정책의 한계로 인해 사족 보행 로봇이나 바퀴 달린 로봇과 같은 다른 형태에 비해 넘어지기 쉽습니다. 또한, 큰 무게, 높은 질량 중심, 높은 자유도는 통제되지 않은 낙하 시 로봇 자체와 주변 물체 모두에 심각한 하드웨어 손상을 초래할 수 있습니다. 이 분야의 기존 연구는 주로 다양한 낙하 시나리오를 처리하는 데 어려움을 겪고 부적절한 인간 사전 지식을 도입할 수 있는 제어 기반 방법에 초점을 맞추고 있습니다. 반면, 대규모 심층 강화 학습 및 커리큘럼 학습을 활용하여 휴머노이드 에이전트가 자신의 본성과 특성에 맞는 낙하 보호 정책을 발견하도록 유도할 수 있습니다. 본 연구에서는 신중하게 설계된 보상 함수와 도메인 다양화 커리큘럼을 통해 휴머노이드 에이전트가 낙하 보호 행동을 탐색하도록 성공적으로 훈련시켰으며, '삼각형' 구조를 형성함으로써 강체 재질의 몸체로 낙하 손상을 크게 줄일 수 있음을 발견했습니다. 포괄적인 지표와 실험을 통해 다른 방법과의 성능을 정량화하고, 낙하 행동을 시각화하며, 실제 세계 플랫폼으로 성공적으로 전이했습니다.
-
-## 핵심 내용
-휴머노이드 로봇은 최근 몇 년간 상당한 연구 관심과 발전을 이루었습니다. 많은 성공에도 불구하고, 휴머노이드 로봇은 형태, 역학 및 제어 정책의 한계로 인해 사족 보행 로봇이나 바퀴 달린 로봇과 같은 다른 형태에 비해 넘어지기 쉽습니다. 또한, 큰 무게, 높은 질량 중심, 높은 자유도는 통제되지 않은 낙하 시 로봇 자체와 주변 물체 모두에 심각한 하드웨어 손상을 초래할 수 있습니다. 이 분야의 기존 연구는 주로 다양한 낙하 시나리오를 처리하는 데 어려움을 겪고 부적절한 인간 사전 지식을 도입할 수 있는 제어 기반 방법에 초점을 맞추고 있습니다. 반면, 대규모 심층 강화 학습 및 커리큘럼 학습을 활용하여 휴머노이드 에이전트가 자신의 본성과 특성에 맞는 낙하 보호 정책을 발견하도록 유도할 수 있습니다. 본 연구에서는 신중하게 설계된 보상 함수와 도메인 다양화 커리큘럼을 통해 휴머노이드 에이전트가 낙하 보호 행동을 탐색하도록 성공적으로 훈련시켰으며, '삼각형' 구조를 형성함으로써 강체 재질의 몸체로 낙하 손상을 크게 줄일 수 있음을 발견했습니다. 포괄적인 지표와 실험을 통해 다른 방법과의 성능을 정량화하고, 낙하 행동을 시각화하며, 실제 세계 플랫폼으로 성공적으로 전이했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.01336v1
+
+## 개요
+휴머노이드 로봇은 그 형태와 동역학적 특성으로 인해, 4족 또는 바퀴형 로봇보다 넘어지기 쉽고, 큰 중량, 높은 질량 중심, 그리고 다자유도로 인해 심각한 하드웨어 손상을 초래할 수 있습니다. 기존 제어 방법은 다양한 낙상 시나리오에 대응하기 어렵고, 부적절한 인간의 사전 지식을 도입할 수 있습니다. 본 논문은 대규모 심층 강화 학습과 커리큘럼 학습을 사용하여 로봇이 자체 특성에 적합한 낙상 보호 전략을 자율적으로 탐색하도록 합니다. 정교하게 설계된 보상 함수와 도메인 다양화 커리큘럼을 통해, 로봇은 "삼각형" 구조를 형성하여 강성 재료 신체의 손상을 현저히 줄이는 방법을 성공적으로 발견했습니다.
+
+## 핵심 내용
+### 방법
+- Deep Reinforcement Learning 프레임워크를 채택하고, Curriculum Learning을 결합하여 훈련
+- 낙상 보호 행동 탐색을 장려하는 전용 보상 함수 설계
+- domain diversification curriculum을 통해 로봇이 다양한 낙상 시나리오에 적응하도록 함
+
+### 핵심 발견
+- 로봇이 "삼각형" 구조(triangle structure)를 형성하여 낙상 손상을 현저히 줄이는 것을 자율적으로 발견
+- 이 전략은 로봇 자체의 강성 재료 신체를 활용하며, 추가적인 쿠션이나 완충 장치가 필요 없음
+
+### 실험 설정
+- 시뮬레이션 환경에서 대규모 훈련 및 테스트 수행
+- 포괄적인 평가 지표(comprehensive metrics)를 사용하여 성능 정량화
+- 다른 방법과의 비교 실험 수행
+
+### 주요 결과
+- 실제 세계 플랫폼(real world platform)으로 전략을 성공적으로 이전
+- 시각화를 통해 로봇의 낙상 행동 패턴을 시연
+- 기존 제어 방법과 비교하여, 이 전략은 더 다양한 낙상 시나리오에 적응할 수 있음
+
+### 결론
+- 심층 강화 학습은 휴머노이드 로봇이 자체 특성에 적합한 낙상 보호 전략을 자율적으로 발견할 수 있게 함
+- "삼각형" 구조는 효과적인 자기 보호 메커니즘임
+- 이 방법은 우수한 일반화 능력과 실제 배포 잠재력을 지님

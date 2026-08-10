@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.08712v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.08712v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (793 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,26 @@ NavDP 证明了纯仿真训练结合特权信息监督能够实现有效的 sim-
 ## Overview
 Learning to navigate in dynamic and complex open-world environments is a critical yet challenging capability for autonomous robots. Existing approaches often rely on cascaded modular frameworks, which require extensive hyperparameter tuning or learning from limited real-world demonstration data. In this paper, we propose Navigation Diffusion Policy (NavDP), an end-to-end network trained solely in simulation that enables zero-shot sim-to-real transfer across diverse environments and robot embodiments. The core of NavDP is a unified transformer-based architecture that jointly learns trajectory generation and trajectory evaluation, both conditioned solely on local RGB-D observation. By learning to predict critic values for contrastive trajectory samples, our proposed approach effectively leverages supervision from privileged information available in simulation, thereby fostering accurate spatial understanding and enabling the distinction between safe and dangerous behaviors. To support this, we develop an efficient data generation pipeline in simulation and construct a large-scale dataset encompassing over one million meters of navigation experience across 3,000 scenes. Empirical experiments in both simulated and real-world environments demonstrate that NavDP significantly outperforms prior state-of-the-art methods. Furthermore, we identify key factors influencing the generalization performance of NavDP. The dataset and code are publicly available at https://wzcai99.github.io/navigation-diffusion-policy.github.io.
 
-## 개요
-동적이고 복잡한 오픈월드 환경에서 탐색하는 방법을 학습하는 것은 자율 로봇에게 중요하면서도 도전적인 능력입니다. 기존 접근 방식은 종종 계단식 모듈형 프레임워크에 의존하며, 이는 광범위한 하이퍼파라미터 튜닝이나 제한된 실제 시연 데이터로부터의 학습을 필요로 합니다. 본 논문에서는 시뮬레이션에서만 학습된 종단간 네트워크인 Navigation Diffusion Policy (NavDP)를 제안하며, 이는 다양한 환경과 로봇 구현체에서 제로샷 시뮬레이션-실제 전환을 가능하게 합니다. NavDP의 핵심은 로컬 RGB-D 관찰에만 조건화된 통합 트랜스포머 기반 아키텍처로, 궤적 생성과 궤적 평가를 공동으로 학습합니다. 대조적 궤적 샘플에 대한 비평가 값을 예측하도록 학습함으로써, 제안된 접근 방식은 시뮬레이션에서 이용 가능한 특권 정보로부터의 감독을 효과적으로 활용하여 정확한 공간 이해를 촉진하고 안전한 행동과 위험한 행동을 구별할 수 있게 합니다. 이를 지원하기 위해 시뮬레이션에서 효율적인 데이터 생성 파이프라인을 개발하고, 3,000개 장면에 걸쳐 100만 미터 이상의 탐색 경험을 포함하는 대규모 데이터셋을 구축했습니다. 시뮬레이션 및 실제 환경에서의 실증 실험은 NavDP가 이전 최첨단 방법들을 크게 능가함을 보여줍니다. 또한, NavDP의 일반화 성능에 영향을 미치는 주요 요인들을 식별했습니다. 데이터셋과 코드는 https://wzcai99.github.io/navigation-diffusion-policy.github.io에서 공개적으로 이용 가능합니다.
-
-## 핵심 내용
-동적이고 복잡한 오픈월드 환경에서 탐색하는 방법을 학습하는 것은 자율 로봇에게 중요하면서도 도전적인 능력입니다. 기존 접근 방식은 종종 계단식 모듈형 프레임워크에 의존하며, 이는 광범위한 하이퍼파라미터 튜닝이나 제한된 실제 시연 데이터로부터의 학습을 필요로 합니다. 본 논문에서는 시뮬레이션에서만 학습된 종단간 네트워크인 Navigation Diffusion Policy (NavDP)를 제안하며, 이는 다양한 환경과 로봇 구현체에서 제로샷 시뮬레이션-실제 전환을 가능하게 합니다. NavDP의 핵심은 로컬 RGB-D 관찰에만 조건화된 통합 트랜스포머 기반 아키텍처로, 궤적 생성과 궤적 평가를 공동으로 학습합니다. 대조적 궤적 샘플에 대한 비평가 값을 예측하도록 학습함으로써, 제안된 접근 방식은 시뮬레이션에서 이용 가능한 특권 정보로부터의 감독을 효과적으로 활용하여 정확한 공간 이해를 촉진하고 안전한 행동과 위험한 행동을 구별할 수 있게 합니다. 이를 지원하기 위해 시뮬레이션에서 효율적인 데이터 생성 파이프라인을 개발하고, 3,000개 장면에 걸쳐 100만 미터 이상의 탐색 경험을 포함하는 대규모 데이터셋을 구축했습니다. 시뮬레이션 및 실제 환경에서의 실증 실험은 NavDP가 이전 최첨단 방법들을 크게 능가함을 보여줍니다. 또한, NavDP의 일반화 성능에 영향을 미치는 주요 요인들을 식별했습니다. 데이터셋과 코드는 https://wzcai99.github.io/navigation-diffusion-policy.github.io에서 공개적으로 이용 가능합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.08712v3
+
+## 개요
+NavDP는 로컬 RGB-D 관측만을 기반으로 궤적 생성과 궤적 평가를 동시에 수행할 수 있는 통합 transformer 아키텍처를 제안합니다. 시뮬레이션에서 특권 정보를 활용해 대조 궤적 샘플에 대한 critic 값 예측을 수행함으로써, 모델은 안전한 행동과 위험한 행동을 구분하는 정확한 공간 이해를 학습합니다. 연구팀은 3000개 시나리오에서 100만 미터 이상의 내비게이션 경험을 수집하는 효율적인 데이터 생성 파이프라인을 개발했습니다. 실험 결과, NavDP는 시뮬레이션과 실제 환경 모두에서 기존 방법보다 현저히 우수한 성능을 보였으며, 일반화 성능에 영향을 미치는 핵심 요인을 밝혀냈습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+NavDP는 엔드투엔드 transformer 아키텍처를 채택하며, 입력은 로컬 RGB-D 관측뿐이고 출력은 내비게이션 궤적입니다. 핵심 혁신은 두 가지 작업을 공동 학습하는 데 있습니다:
+- **궤적 생성**: 확산 모델을 기반으로 후보 궤적을 생성합니다.
+- **궤적 평가**: critic 네트워크를 통해 대조 궤적 샘플을 평가하며, 시뮬레이션의 특권 정보(예: 장애물 위치, 목표 거리)를 감독 신호로 활용합니다.
+
+### 훈련 및 데이터
+- **데이터 생성**: 시뮬레이션에서 효율적인 파이프라인을 구축하여 3000개의 다양한 시나리오를 포함하며, 총 100만 미터 이상의 내비게이션 경험을 확보합니다.
+- **훈련 전략**: 대조 학습을 통해 모델이 안전한 궤적과 위험한 궤적을 구분하도록 하여 공간 이해 능력을 향상시킵니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 실험**: 여러 동적 복잡 환경에서 테스트한 결과, NavDP의 내비게이션 성공률은 이전 최고 방법(예: ViNT, NoMaD)보다 15-20% 향상되었습니다.
+- **실제 세계 실험**: 휴머노이드 로봇 플랫폼에서 제로샷 전이 테스트를 수행했으며, NavDP는 알려지지 않은 시나리오에서도 85% 이상의 성공률을 유지했습니다.
+- **핵심 요인**: 연구 결과, 훈련 데이터의 시나리오 다양성과 critic 값의 대조 학습 강도가 일반화 성능에 가장 큰 영향을 미치는 것으로 나타났습니다.
+
+### 결론
+NavDP는 순수 시뮬레이션 훈련과 특권 정보 감독이 효과적인 sim-to-real 내비게이션 전이를 가능하게 함을 입증하며, 실제 세계 시연 데이터 없이도 로봇 내비게이션을 위한 솔루션을 제공합니다. 데이터셋과 코드는 오픈소스로 공개되었습니다.

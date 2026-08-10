@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.13375v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.13375v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (967 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ DepthVLA 通过显式引入深度感知空间推理，有效解决了现有 VLA 
 ## Overview
 Vision-Language-Action (VLA) models have recently shown impressive generalization and language-guided manipulation capabilities. However, their performance degrades on tasks requiring precise spatial reasoning due to limited spatial reasoning inherited from Vision-Language Models (VLMs). Existing VLAs rely on extensive action-data pretraining to ground VLMs in 3D space, which reduces training efficiency and is still insufficient for accurate spatial understanding. In this work, we present DepthVLA, a simple yet effective VLA architecture that explicitly incorporates spatial awareness through a pretrained depth prediction module. DepthVLA adopts a mixture-of-transformers design that unifies a VLM, a depth transformer, and an action expert with fully shared attentions, forming an end-to-end model with enhanced spatial reasoning. Extensive evaluations in both real-world and simulated environments show that DepthVLA outperforms state-of-the-art approaches, achieving 78.5% vs. 65.0% progress in real-world tasks, 94.9% vs. 93.6% in the LIBERO simulator, and 74.8% vs. 58.8% in the Simpler simulator. Our code will be made publicly available.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 최근 인상적인 일반화 능력과 언어 기반 조작 능력을 보여주고 있습니다. 그러나 Vision-Language Models (VLM)로부터 물려받은 제한된 공간 추론 능력으로 인해 정밀한 공간 추론이 필요한 작업에서는 성능이 저하됩니다. 기존 VLA는 VLM을 3D 공간에 정착시키기 위해 방대한 행동 데이터 사전 학습에 의존하는데, 이는 훈련 효율성을 떨어뜨릴 뿐만 아니라 정확한 공간 이해에도 여전히 부족합니다. 본 연구에서는 사전 학습된 깊이 예측 모듈을 통해 공간 인식을 명시적으로 통합하는 간단하면서도 효과적인 VLA 아키텍처인 DepthVLA를 제시합니다. DepthVLA는 VLM, 깊이 트랜스포머, 행동 전문가를 완전히 공유된 어텐션으로 통합하는 mixture-of-transformers 설계를 채택하여 향상된 공간 추론 능력을 갖춘 종단간 모델을 형성합니다. 실제 환경과 시뮬레이션 환경 모두에서의 광범위한 평가 결과, DepthVLA는 최첨단 접근법을 능가하여 실제 작업에서 78.5% 대 65.0%, LIBERO 시뮬레이터에서 94.9% 대 93.6%, Simpler 시뮬레이터에서 74.8% 대 58.8%의 진전을 달성했습니다. 본 코드는 공개될 예정입니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 최근 인상적인 일반화 능력과 언어 기반 조작 능력을 보여주고 있습니다. 그러나 Vision-Language Models (VLM)로부터 물려받은 제한된 공간 추론 능력으로 인해 정밀한 공간 추론이 필요한 작업에서는 성능이 저하됩니다. 기존 VLA는 VLM을 3D 공간에 정착시키기 위해 방대한 행동 데이터 사전 학습에 의존하는데, 이는 훈련 효율성을 떨어뜨릴 뿐만 아니라 정확한 공간 이해에도 여전히 부족합니다. 본 연구에서는 사전 학습된 깊이 예측 모듈을 통해 공간 인식을 명시적으로 통합하는 간단하면서도 효과적인 VLA 아키텍처인 DepthVLA를 제시합니다. DepthVLA는 VLM, 깊이 트랜스포머, 행동 전문가를 완전히 공유된 어텐션으로 통합하는 mixture-of-transformers 설계를 채택하여 향상된 공간 추론 능력을 갖춘 종단간 모델을 형성합니다. 실제 환경과 시뮬레이션 환경 모두에서의 광범위한 평가 결과, DepthVLA는 최첨단 접근법을 능가하여 실제 작업에서 78.5% 대 65.0%, LIBERO 시뮬레이터에서 94.9% 대 93.6%, Simpler 시뮬레이터에서 74.8% 대 58.8%의 진전을 달성했습니다. 본 코드는 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.13375v1
+
+## 개요
+기존의 비전-언어-행동 모델은 정밀한 공간 추론이 필요한 작업에서 성능이 저조한데, 이는 기본 비전 언어 모델에 내재된 공간 이해의 한계에서 비롯됩니다. 전통적인 방법은 대규모 행동 데이터 사전 훈련을 통해 이러한 결함을 보완하려 하지만, 효율성이 낮고 효과도 제한적입니다. DepthVLA는 간결하면서도 효과적인 해결책을 제시합니다: 사전 훈련된 깊이 예측 모듈을 모델에 통합하고, 혼합 Transformer 설계를 통해 비전 언어 모델, 깊이 Transformer, 행동 전문가 모듈을 완전히 공유된 어텐션 방식으로 종단 간 융합합니다. 실험 결과, 이 방법은 실제 세계 작업에서 78.5%의 성공률(기준선 65.0% 대비)을 달성했으며, LIBERO 및 Simpler 시뮬레이터에서도 각각 94.9%와 74.8%의 우수한 성능을 기록했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+DepthVLA의 핵심은 세 가지 주요 구성 요소를 통합하는 혼합 Transformer 아키텍처입니다:
+- **비전 언어 모델**: RGB 이미지와 언어 명령을 처리하여 기본적인 의미 이해를 제공합니다.
+- **깊이 Transformer**: 사전 훈련된 깊이 예측 모듈을 통해 RGB 이미지에서 깊이 정보를 추출하고, 3차원 공간 구조를 명시적으로 인코딩합니다.
+- **행동 전문가 모듈**: 융합된 비전, 언어, 깊이 특징을 기반으로 로봇 행동 명령을 직접 출력합니다.
+
+이 세 모듈은 **완전히 공유된 어텐션 메커니즘**을 통해 종단 간 훈련되며, 깊이 정보가 추가적인 행동 데이터 사전 훈련 단계 없이도 행동 결정 과정에 원활하게 통합됩니다.
+
+### 실험 설정 및 결과
+DepthVLA는 실제 세계와 여러 시뮬레이션 환경에서 포괄적으로 평가되었습니다:
+- **실제 세계 작업**: 다양한 로봇 조작 시나리오에서 DepthVLA는 **78.5%**의 작업 성공률을 달성하여 기준선 방법의 **65.0%**보다 크게 우수했습니다.
+- **LIBERO 시뮬레이터**: LIBERO 벤치마크에서 DepthVLA는 **94.9%**의 성공률을 기록했으며, 기준선 방법의 **93.6%**와 비교됩니다.
+- **Simpler 시뮬레이터**: 더 도전적인 Simpler 환경에서 DepthVLA는 **74.8%**의 성적으로 기준선 방법의 **58.8%**를 크게 앞질렀습니다.
+
+### 결론
+DepthVLA는 깊이를 명시적으로 도입한 공간 추론을 통해 기존 VLA 모델의 공간 이해 병목 현상을 효과적으로 해결합니다. 혼합 Transformer 설계는 훈련 효율성을 향상시킬 뿐만 아니라 다양한 작업에서 성능 돌파구를 달성했습니다. 코드는 추가 연구를 위해 오픈소스로 공개될 예정입니다.

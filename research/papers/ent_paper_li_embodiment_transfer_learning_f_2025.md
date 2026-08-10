@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01224v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01224v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (795 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ ET-VLA 通过合成数据预训练与任务图推理，为 VLA 模型向多机�
 ## Overview
 Vision-language-action (VLA) models have significantly advanced robotic learning, enabling training on large-scale, cross-embodiment data and fine-tuning for specific robots. However, state-of-the-art autoregressive VLAs struggle with multi-robot collaboration. We introduce embodiment transfer learning, denoted as ET-VLA, a novel framework for efficient and effective transfer of pre-trained VLAs to multi-robot. ET-VLA's core is Synthetic Continued Pretraining (SCP), which uses synthetically generated data to warm up the model for the new embodiment, bypassing the need for real human demonstrations and reducing data collection costs. SCP enables the model to learn correct actions and precise action token numbers. Following SCP, the model is fine-tuned on target embodiment data. To further enhance the model performance on multi-embodiment, we present the Embodied Graph-of-Thought technique, a novel approach that formulates each sub-task as a node, that allows the VLA model to distinguish the functionalities and roles of each embodiment during task execution. Our work considers bimanual robots, a simple version of multi-robot to verify our approaches. We validate the effectiveness of our method on both simulation benchmarks and real robots covering three different bimanual embodiments. In particular, our proposed ET-VLA \space can outperform OpenVLA on six real-world tasks over 53.2%. We will open-source all codes to support the community in advancing VLA models for robot learning.
 
-## 개요
-Vision-language-action (VLA) 모델은 로봇 학습을 크게 발전시켜 대규모 교차 체현 데이터를 학습하고 특정 로봇에 미세 조정할 수 있게 했습니다. 그러나 최첨단 자기회귀 VLA는 다중 로봇 협업에 어려움을 겪습니다. 우리는 사전 학습된 VLA를 다중 로봇에 효율적이고 효과적으로 전이하는 새로운 프레임워크인 체현 전이 학습(ET-VLA)을 소개합니다. ET-VLA의 핵심은 합성 지속 사전 학습(SCP)으로, 합성 생성 데이터를 사용하여 새로운 체현에 모델을 예열함으로써 실제 인간 시연의 필요성을 없애고 데이터 수집 비용을 줄입니다. SCP는 모델이 올바른 동작과 정확한 동작 토큰 수를 학습할 수 있게 합니다. SCP 이후 모델은 대상 체현 데이터로 미세 조정됩니다. 다중 체현에서 모델 성능을 더욱 향상시키기 위해, 우리는 각 하위 작업을 노드로 구성하여 VLA 모델이 작업 실행 중 각 체현의 기능과 역할을 구분할 수 있게 하는 새로운 접근 방식인 체현 사고 그래프(Embodied Graph-of-Thought) 기술을 제시합니다. 우리의 연구는 다중 로봇의 간단한 버전인 양팔 로봇을 고려하여 접근 방식을 검증합니다. 우리는 세 가지 다른 양팔 체현을 포함한 시뮬레이션 벤치마크와 실제 로봇 모두에서 방법의 효과를 검증합니다. 특히, 제안된 ET-VLA는 6가지 실제 작업에서 OpenVLA보다 53.2% 이상 뛰어난 성능을 보입니다. 우리는 모든 코드를 오픈소스로 공개하여 로봇 학습을 위한 VLA 모델 발전을 지원할 것입니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 로봇 학습을 크게 발전시켜 대규모 교차 체현 데이터를 학습하고 특정 로봇에 미세 조정할 수 있게 했습니다. 그러나 최첨단 자기회귀 VLA는 다중 로봇 협업에 어려움을 겪습니다. 우리는 사전 학습된 VLA를 다중 로봇에 효율적이고 효과적으로 전이하는 새로운 프레임워크인 체현 전이 학습(ET-VLA)을 소개합니다. ET-VLA의 핵심은 합성 지속 사전 학습(SCP)으로, 합성 생성 데이터를 사용하여 새로운 체현에 모델을 예열함으로써 실제 인간 시연의 필요성을 없애고 데이터 수집 비용을 줄입니다. SCP는 모델이 올바른 동작과 정확한 동작 토큰 수를 학습할 수 있게 합니다. SCP 이후 모델은 대상 체현 데이터로 미세 조정됩니다. 다중 체현에서 모델 성능을 더욱 향상시키기 위해, 우리는 각 하위 작업을 노드로 구성하여 VLA 모델이 작업 실행 중 각 체현의 기능과 역할을 구분할 수 있게 하는 새로운 접근 방식인 체현 사고 그래프(Embodied Graph-of-Thought) 기술을 제시합니다. 우리의 연구는 다중 로봇의 간단한 버전인 양팔 로봇을 고려하여 접근 방식을 검증합니다. 우리는 세 가지 다른 양팔 체현을 포함한 시뮬레이션 벤치마크와 실제 로봇 모두에서 방법의 효과를 검증합니다. 특히, 제안된 ET-VLA는 6가지 실제 작업에서 OpenVLA보다 53.2% 이상 뛰어난 성능을 보입니다. 우리는 모든 코드를 오픈소스로 공개하여 로봇 학습을 위한 VLA 모델 발전을 지원할 것입니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.01224v1
+
+## 개요
+ET-VLA 프레임워크는 기존 자기회귀 VLA 모델이 다중 로봇 협업 시나리오에서 가지는 한계를 해결하기 위해 설계되었습니다. 핵심 혁신은 합성 지속 사전학습(SCP)으로, 합성 데이터를 활용해 모델을 새로운 구현 형태에 맞게 예열함으로써 실제 인간 시연에 대한 의존을 피하고 데이터 수집 비용을 줄입니다. 또한, 구현 그래프 사고(Embodied Graph-of-Thought) 기술은 각 하위 작업을 노드로 모델링하여 모델이 작업 실행 중 서로 다른 로봇의 기능과 역할을 구분하도록 돕습니다. 이 방법은 시뮬레이션 벤치마크와 실제 로봇에서 세 가지 서로 다른 이중 팔 구현 형태를 대상으로 검증되었으며, 작업 성능을 크게 향상시켰습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ET-VLA 프레임워크는 두 가지 핵심 단계를 포함합니다:
+- **합성 지속 사전학습(SCP)**: 새로운 구현 형태로 전이할 때, 먼저 합성 생성 데이터를 사용하여 사전학습된 VLA 모델을 예열합니다. 이 과정은 실제 인간 시연 없이 모델이 올바른 동작 시퀀스와 정확한 동작 토큰 수를 학습하게 하여 데이터 수집 비용을 크게 줄입니다.
+- **구현 그래프 사고(Embodied Graph-of-Thought)**: 복잡한 작업을 여러 하위 작업 노드로 분해하며, 각 노드는 하나의 하위 작업에 해당합니다. 모델은 그래프 구조를 통해 작업 실행 중 각 로봇의 역할 분담을 이해하여 다중 로봇 협업 효율을 향상시킵니다.
+
+### 실험 설정
+- **검증 시나리오**: 시뮬레이션 벤치마크와 실제 로봇에서 테스트하며, 세 가지 서로 다른 이중 팔 구현 형태를 포함합니다.
+- **비교 기준**: OpenVLA를 주요 비교 모델로 사용합니다.
+
+### 주요 결과
+- 여섯 가지 실제 세계 작업에서 ET-VLA는 OpenVLA 대비 평균 성능이 **53.2%** 향상되었습니다.
+- SCP는 다중 로봇 시나리오에서 동작 토큰 수 불일치 문제를 효과적으로 해결합니다.
+- 구현 그래프 사고는 다중 로봇 역할 구분에 대한 모델의 이해 능력을 크게 강화합니다.
+
+### 결론
+ET-VLA는 합성 데이터 사전학습과 작업 그래프 추론을 통해 VLA 모델의 다중 로봇 시스템으로의 전이를 위한 효율적이고 저비용의 솔루션을 제공합니다. 모든 코드는 오픈소스로 공개되어 로봇 학습 커뮤니티의 발전을 촉진할 것입니다.

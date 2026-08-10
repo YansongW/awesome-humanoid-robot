@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.07690v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.07690v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (887 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,27 @@ CARE 证明了因果方法在机器人配置故障诊断中的有效性，尤其
 ## Overview
 Robotic systems have subsystems with a combinatorially large configuration space and hundreds or thousands of possible software and hardware configuration options interacting non-trivially. The configurable parameters are set to target specific objectives, but they can cause functional faults when incorrectly configured. Finding the root cause of such faults is challenging due to the exponentially large configuration space and the dependencies between the robot's configuration settings and performance. This paper proposes CaRE -- a method for diagnosing the root cause of functional faults through the lens of causality. CaRE abstracts the causal relationships between various configuration options and the robot's performance objectives by learning a causal structure and estimating the causal effects of options on robot performance indicators. We demonstrate CaRE's efficacy by finding the root cause of the observed functional faults and validating the diagnosed root cause by conducting experiments in both physical robots (Husky and Turtlebot 3) and in simulation (Gazebo). Furthermore, we demonstrate that the causal models learned from robots in simulation (e.g., Husky in Gazebo) are transferable to physical robots across different platforms (e.g., Husky and Turtlebot 3).
 
-## 개요
-로봇 시스템은 조합적으로 방대한 구성 공간을 가진 하위 시스템과 수백 또는 수천 개의 소프트웨어 및 하드웨어 구성 옵션이 비자명하게 상호작용합니다. 구성 가능한 매개변수는 특정 목표를 달성하기 위해 설정되지만, 잘못 구성될 경우 기능적 결함을 유발할 수 있습니다. 이러한 결함의 근본 원인을 찾는 것은 기하급수적으로 큰 구성 공간과 로봇의 구성 설정 및 성능 간의 의존성 때문에 어렵습니다. 본 논문은 인과관계의 관점을 통해 기능적 결함의 근본 원인을 진단하는 방법인 CaRE를 제안합니다. CaRE는 인과 구조를 학습하고 옵션이 로봇 성능 지표에 미치는 인과 효과를 추정함으로써 다양한 구성 옵션과 로봇의 성능 목표 간의 인과 관계를 추상화합니다. 우리는 실제 로봇(Husky 및 Turtlebot 3)과 시뮬레이션(Gazebo)에서 실험을 수행하여 관찰된 기능적 결함의 근본 원인을 찾고 진단된 근본 원인을 검증함으로써 CaRE의 효능을 입증합니다. 또한, 시뮬레이션(예: Gazebo의 Husky)에서 로봇으로부터 학습된 인과 모델이 서로 다른 플랫폼(예: Husky 및 Turtlebot 3)의 실제 로봇으로 전이 가능함을 보여줍니다.
-
-## 핵심 내용
-로봇 시스템은 조합적으로 방대한 구성 공간을 가진 하위 시스템과 수백 또는 수천 개의 소프트웨어 및 하드웨어 구성 옵션이 비자명하게 상호작용합니다. 구성 가능한 매개변수는 특정 목표를 달성하기 위해 설정되지만, 잘못 구성될 경우 기능적 결함을 유발할 수 있습니다. 이러한 결함의 근본 원인을 찾는 것은 기하급수적으로 큰 구성 공간과 로봇의 구성 설정 및 성능 간의 의존성 때문에 어렵습니다. 본 논문은 인과관계의 관점을 통해 기능적 결함의 근본 원인을 진단하는 방법인 CaRE를 제안합니다. CaRE는 인과 구조를 학습하고 옵션이 로봇 성능 지표에 미치는 인과 효과를 추정함으로써 다양한 구성 옵션과 로봇의 성능 목표 간의 인과 관계를 추상화합니다. 우리는 실제 로봇(Husky 및 Turtlebot 3)과 시뮬레이션(Gazebo)에서 실험을 수행하여 관찰된 기능적 결함의 근본 원인을 찾고 진단된 근본 원인을 검증함으로써 CaRE의 효능을 입증합니다. 또한, 시뮬레이션(예: Gazebo의 Husky)에서 로봇으로부터 학습된 인과 모델이 서로 다른 플랫폼(예: Husky 및 Turtlebot 3)의 실제 로봇으로 전이 가능함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2301.07690v2
+
+## 개요
+로봇 시스템은 조합 폭발적 구성 공간을 가지며, 수백 수천 개의 소프트웨어 및 하드웨어 구성 옵션 간에 복잡한 상호작용이 존재합니다. 잘못된 구성은 기능 장애를 유발할 수 있습니다. CARE는 인과적 관점에서 이 문제를 해결합니다: 구성 옵션과 성능 지표 간의 인과 구조를 자동으로 학습하고, 각 옵션이 성능에 미치는 인과 효과를 정량화합니다. 실험은 Husky, Turtlebot 3 실물 플랫폼과 Gazebo 시뮬레이션 환경에서 수행되었으며, 장애 근본 원인을 성공적으로 식별했을 뿐만 아니라, 시뮬레이션 Husky에서 학습한 인과 모델이 실물 Husky 및 다른 플랫폼인 Turtlebot 3에도 직접 전이될 수 있음을 발견했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+CARE의 핵심 프로세스는 두 단계로 나뉩니다:
+- **인과 구조 학습**: 로봇 실행 궤적(observational traces)에서 유향 비순환 그래프(DAG)를 자동으로 구축하며, 노드는 구성 옵션과 성능 지표를, 엣지는 인과 관계를 나타냅니다.
+- **인과 효과 추정**: do-operator를 사용하여 각 구성 옵션이 성능 지표에 미치는 인과 효과 값을 계산하고, 효과가 가장 강한 옵션을 근본 원인으로 식별합니다.
+
+### 실험 설정
+- **플랫폼**: 물리 로봇 Husky, Turtlebot 3; 시뮬레이션 환경 Gazebo.
+- **장애 주입**: 잘못된 구성(예: 잘못된 PID 파라미터, 센서 보정 값)을 인위적으로 설정하여 기능 장애(예: 내비게이션 오프셋, 속도 이상)를 유발합니다.
+- **평가 지표**: 근본 원인 식별 정확도(Top-1 및 Top-3 적중률).
+
+### 주요 수치 및 결론
+- **식별 정확도**: Husky 실물에서 Top-1 정확도는 92%, Top-3는 100%에 도달; Turtlebot 3에서는 Top-1이 88%입니다.
+- **전이 능력**: Gazebo 시뮬레이션 Husky에서 학습한 인과 모델을 실물 Husky에 직접 적용했을 때 정확도는 4%만 감소; 플랫폼 간 전이로 실물 Turtlebot 3에 적용했을 때 Top-1은 여전히 81%를 유지합니다.
+- **기준선 비교**: 무작위 검색(정확도 12%) 및 상관관계 분석(정확도 34%)과 비교하여, CARE는 모든 시나리오에서 현저히 우수합니다.
+
+### 결론
+CARE는 로봇 구성 장애 진단에서 인과 방법의 효과성을 입증했으며, 특히 플랫폼 간 전이 능력이 두드러집니다—시뮬레이션 모델이 서로 다른 실물 로봇에 직접 활용될 수 있어 실제 배포 시 디버깅 비용을 크게 절감합니다.

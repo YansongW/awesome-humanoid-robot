@@ -36,7 +36,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.00401v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_zest_zero_shot_embodied_skill_2026 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_zest_zero_shot_embodied_skill_2026 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1008 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,27 @@ ZEST在异构数据源（动作捕捉、视频、动画）和不同机器人形�
 ## Overview
 Achieving robust, human-like whole-body control on humanoid robots for agile, contact-rich behaviors remains a central challenge, demanding heavy per-skill engineering and a brittle process of tuning controllers. We introduce ZEST (Zero-shot Embodied Skill Transfer), a streamlined motion-imitation framework that trains policies via reinforcement learning from diverse sources -- high-fidelity motion capture, noisy monocular video, and non-physics-constrained animation -- and deploys them to hardware zero-shot. ZEST generalizes across behaviors and platforms while avoiding contact labels, reference or observation windows, state estimators, and extensive reward shaping. Its training pipeline combines adaptive sampling, which focuses training on difficult motion segments, and an automatic curriculum using a model-based assistive wrench, together enabling dynamic, long-horizon maneuvers. We further provide a procedure for selecting joint-level gains from approximate analytical armature values for closed-chain actuators, along with a refined model of actuators. Trained entirely in simulation with moderate domain randomization, ZEST demonstrates remarkable generality. On Boston Dynamics' Atlas humanoid, ZEST learns dynamic, multi-contact skills (e.g., army crawl, breakdancing) from motion capture. It transfers expressive dance and scene-interaction skills, such as box-climbing, directly from videos to Atlas and the Unitree G1. Furthermore, it extends across morphologies to the Spot quadruped, enabling acrobatics, such as a continuous backflip, through animation. Together, these results demonstrate robust zero-shot deployment across heterogeneous data sources and embodiments, establishing ZEST as a scalable interface between biological movements and their robotic counterparts.
 
-## 개요
-휴머노이드 로봇에서 민첩하고 접촉이 많은 행동을 위한 강건하고 인간과 유사한 전신 제어를 달성하는 것은 여전히 핵심 과제로, 스킬별로 많은 엔지니어링과 취약한 컨트롤러 튜닝 과정을 요구합니다. 우리는 ZEST(Zero-shot Embodied Skill Transfer)를 소개합니다. 이는 간소화된 동작 모방 프레임워크로, 고충실도 모션 캡처, 노이즈가 있는 단안 비디오, 물리 제약이 없는 애니메이션 등 다양한 소스로부터 강화 학습을 통해 정책을 훈련하고, 이를 하드웨어에 제로샷으로 배포합니다. ZEST는 접촉 레이블, 참조 또는 관찰 윈도우, 상태 추정기, 광범위한 보상 설계를 피하면서 행동과 플랫폼 전반에 걸쳐 일반화됩니다. 훈련 파이프라인은 훈련을 어려운 동작 구간에 집중시키는 적응형 샘플링과 모델 기반 보조 렌치를 사용하는 자동 커리큘럼을 결합하여 동적이고 장기적인 기동을 가능하게 합니다. 또한 폐쇄 사슬 액추에이터에 대한 근사 분석 아마추어 값으로부터 관절 수준 게인을 선택하는 절차와 개선된 액추에이터 모델을 제공합니다. 중간 정도의 도메인 무작위화로 시뮬레이션에서 완전히 훈련된 ZEST는 놀라운 일반성을 보여줍니다. Boston Dynamics의 Atlas 휴머노이드에서 ZEST는 모션 캡처로부터 동적이고 다중 접촉 스킬(예: 군대 기어가기, 브레이크댄스)을 학습합니다. 또한 표현적인 춤과 상자 오르기와 같은 장면 상호작용 스킬을 비디오에서 직접 Atlas와 Unitree G1으로 전송합니다. 나아가 Spot 사족 로봇으로 형태를 넘어 확장되어 애니메이션을 통해 연속 백플립과 같은 곡예를 가능하게 합니다. 이러한 결과들은 이질적인 데이터 소스와 구현체 전반에 걸친 강건한 제로샷 배포를 입증하며, ZEST를 생물학적 움직임과 로봇 대응물 간의 확장 가능한 인터페이스로 확립합니다.
-
-## 핵심 내용
-휴머노이드 로봇에서 민첩하고 접촉이 많은 행동을 위한 강건하고 인간과 유사한 전신 제어를 달성하는 것은 여전히 핵심 과제로, 스킬별로 많은 엔지니어링과 취약한 컨트롤러 튜닝 과정을 요구합니다. 우리는 ZEST(Zero-shot Embodied Skill Transfer)를 소개합니다. 이는 간소화된 동작 모방 프레임워크로, 고충실도 모션 캡처, 노이즈가 있는 단안 비디오, 물리 제약이 없는 애니메이션 등 다양한 소스로부터 강화 학습을 통해 정책을 훈련하고, 이를 하드웨어에 제로샷으로 배포합니다. ZEST는 접촉 레이블, 참조 또는 관찰 윈도우, 상태 추정기, 광범위한 보상 설계를 피하면서 행동과 플랫폼 전반에 걸쳐 일반화됩니다. 훈련 파이프라인은 훈련을 어려운 동작 구간에 집중시키는 적응형 샘플링과 모델 기반 보조 렌치를 사용하는 자동 커리큘럼을 결합하여 동적이고 장기적인 기동을 가능하게 합니다. 또한 폐쇄 사슬 액추에이터에 대한 근사 분석 아마추어 값으로부터 관절 수준 게인을 선택하는 절차와 개선된 액추에이터 모델을 제공합니다. 중간 정도의 도메인 무작위화로 시뮬레이션에서 완전히 훈련된 ZEST는 놀라운 일반성을 보여줍니다. Boston Dynamics의 Atlas 휴머노이드에서 ZEST는 모션 캡처로부터 동적이고 다중 접촉 스킬(예: 군대 기어가기, 브레이크댄스)을 학습합니다. 또한 표현적인 춤과 상자 오르기와 같은 장면 상호작용 스킬을 비디오에서 직접 Atlas와 Unitree G1으로 전송합니다. 나아가 Spot 사족 로봇으로 형태를 넘어 확장되어 애니메이션을 통해 연속 백플립과 같은 곡예를 가능하게 합니다. 이러한 결과들은 이질적인 데이터 소스와 구현체 전반에 걸친 강건한 제로샷 배포를 입증하며, ZEST를 생물학적 움직임과 로봇 대응물 간의 확장 가능한 인터페이스로 확립합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.00401v1
+
+## 개요
+ZEST는 강화 학습을 통해 정책을 훈련하고, 적응형 샘플링(어려운 동작 구간에 집중)과 모델 기반 보조 토크를 활용한 자동 커리큘럼 학습을 결합하여 동적 장시간 동작의 제로샷 배포를 구현합니다. 훈련 과정은 전적으로 시뮬레이션 환경에서 이루어지며, 중간 수준의 도메인 무작위화를 채택하고, 근사 해석적 아마추어 값에서 관절 수준 이득을 선택하는 절차와 개선된 액추에이터 모델을 제공합니다. 실험 결과, ZEST는 모션 캡처에서 다중 접촉 기술(예: 기어가기, 브레이크댄스)을 학습하고, 비디오에서 직접 춤과 장면 상호작용 기술(예: 상자 오르기)을 전이하며, 심지어 Spot 네 발 달린 로봇으로 형태를 넘어 연속 백플립과 같은 곡예 동작을 구현하여 이질적 데이터 소스와 개체 간의 강건한 제로샷 전이 능력을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+ZEST의 핵심은 운동 모방 프레임워크로, 강화 학습을 통해 다양한 데이터 소스에서 정책을 훈련하며 접촉 라벨, 참조 창, 상태 추정기 또는 과도한 보상 형성 없이 수행됩니다. 훈련 과정은 두 가지 핵심 구성 요소를 포함합니다:
+- **적응형 샘플링**: 훈련 중 어려운 동작 구간에 동적으로 집중하여 학습 효율을 향상시킵니다.
+- **자동 커리큘럼 학습**: 모델 기반 보조 토크(model-based assistive wrench)를 활용하여 작업 난이도를 자동으로 조정하며, 정책이 동적이고 장시간 동작을 숙달할 수 있게 합니다.
+
+### 아키텍처 및 실험 설정
+- **훈련 환경**: 전적으로 시뮬레이션에서 완료되며, 중간 수준의 도메인 무작위화(moderate domain randomization)를 채택하여 강건성을 강화합니다.
+- **하드웨어 배포**: 추가 미세 조정 없이 실제 로봇으로 제로샷 전이됩니다.
+- **관절 이득 선택**: 근사 해석적 아마추어 값(approximate analytical armature values)에서 관절 수준 이득을 선택하는 절차를 제공하고, 액추에이터 모델(actuator model)을 개선합니다.
+
+### 주요 실험 결과
+- **Boston Dynamics Atlas**: 모션 캡처 데이터에서 기어가기(army crawl)와 브레이크댄스(breakdancing)와 같은 동적 다중 접촉 기술을 학습합니다.
+- **Atlas 및 Unitree G1**: 단일 비디오에서 표현적 춤과 장면 상호작용 기술(예: 상자 오르기, box-climbing)을 직접 전이합니다.
+- **Spot 네 발 달린 로봇**: 형태를 넘어 애니메이션 데이터를 통해 연속 백플립(continuous backflip)과 같은 곡예 동작을 구현합니다.
+
+### 결론
+ZEST는 이질적 데이터 소스(모션 캡처, 비디오, 애니메이션)와 다양한 로봇 형태(Atlas, G1, Spot)에서 접촉 라벨이나 상태 추정기 없이 제로샷 배포를 구현하며, 엔지니어링 파라미터 튜닝 비용을 크게 줄입니다. 이 프레임워크는 생물학적 운동과 로봇 제어 사이에 확장 가능한 인터페이스를 제공하며, 시뮬레이션에서 실제 세계로의 강건한 전이 능력을 검증합니다.

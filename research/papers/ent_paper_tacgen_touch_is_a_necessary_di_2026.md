@@ -58,8 +58,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.29173v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.29173v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1039 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -95,11 +96,28 @@ TacGen 采用两阶段策略解决触觉数据稀缺问题：
 ## Overview
 Touch resolves the physical-property ambiguity left by vision: exploratory contact recovers shape, texture, compliance, and material, and visuo-haptic object representations converge in ventral visual cortex. We ask whether representation learning can reproduce this grounding. TacGen mitigates the tactile-data scarcity bottleneck by combining pre-specified V+T contrastive alignment with a latent-space residual-MLP V->T generator that synthesizes tactile latents from RGB for tactile-data scaling. With matched DINOv2 backbones, splits, and probes, V+T improves matched V-only on mass (Delta R^2=+0.570), density (Delta acc=+0.067), hardness (+0.117), and uncertainty-banded force labels (Delta R^2=+0.281); all CIs exclude zero. The same representation lifts matched-capacity TACTO manipulation 0.246->0.979 while V-only capacity scaling accounts for only 4.5% of the gap, preserving 95.5%. The generator reaches cross-seed +0.589, with real tactile +0.585 inside the seed interval; the architecture comparison shows a 13pp downstream gap between reconstruction quality and representation utility. Across five-seed SSVTP/TVL reproductions, YCB-Sight transfer, three-backbone checks, permutation/random-feature controls, hash-verified manifests, and measured-force validation checks, the evidence supports the claim that touch supplies a necessary physical evidence channel for representations of contact-dependent properties.
 
-## 개요
-촉각은 시각이 남긴 물리적 속성의 모호성을 해결합니다. 탐색적 접촉은 형태, 질감, 유연성 및 재질을 복원하며, 시각-촉각 객체 표현은 복측 시각 피질에서 수렴합니다. 우리는 표현 학습이 이러한 기반을 재현할 수 있는지 질문합니다. TacGen은 사전 지정된 V+T 대비 정렬과 잠재 공간 잔차 MLP V->T 생성기를 결합하여 촉각 데이터 희소성 병목 현상을 완화합니다. 이 생성기는 RGB로부터 촉각 잠재 변수를 합성하여 촉각 데이터 확장을 가능하게 합니다. 일치된 DINOv2 백본, 분할 및 프로브를 사용하여 V+T는 일치된 V-only보다 질량(Delta R^2=+0.570), 밀도(Delta acc=+0.067), 경도(+0.117) 및 불확실성 대역 힘 레이블(Delta R^2=+0.281)에서 개선되었습니다. 모든 신뢰 구간은 0을 배제합니다. 동일한 표현은 일치된 용량의 TACTO 조작을 0.246에서 0.979로 향상시키는 반면, V-only 용량 확장은 격차의 4.5%만을 설명하여 95.5%를 유지합니다. 생성기는 교차 시드에서 +0.589에 도달하고, 실제 촉각은 시드 구간 내에서 +0.585를 기록합니다. 아키텍처 비교는 재구성 품질과 표현 유용성 간에 13pp의 하류 격차를 보여줍니다. 5개 시드 SSVTP/TVL 재현, YCB-Sight 전이, 3개 백본 검증, 순열/랜덤 특징 제어, 해시 검증 매니페스트 및 측정된 힘 검증 확인을 통해, 촉각이 접촉 의존적 속성의 표현에 필요한 물리적 증거 채널을 제공한다는 주장을 뒷받침하는 증거가 제시됩니다.
-
-## 핵심 내용
-촉각은 시각이 남긴 물리적 속성의 모호성을 해결합니다. 탐색적 접촉은 형태, 질감, 유연성 및 재질을 복원하며, 시각-촉각 객체 표현은 복측 시각 피질에서 수렴합니다. 우리는 표현 학습이 이러한 기반을 재현할 수 있는지 질문합니다. TacGen은 사전 지정된 V+T 대비 정렬과 잠재 공간 잔차 MLP V->T 생성기를 결합하여 촉각 데이터 희소성 병목 현상을 완화합니다. 이 생성기는 RGB로부터 촉각 잠재 변수를 합성하여 촉각 데이터 확장을 가능하게 합니다. 일치된 DINOv2 백본, 분할 및 프로브를 사용하여 V+T는 일치된 V-only보다 질량(Delta R^2=+0.570), 밀도(Delta acc=+0.067), 경도(+0.117) 및 불확실성 대역 힘 레이블(Delta R^2=+0.281)에서 개선되었습니다. 모든 신뢰 구간은 0을 배제합니다. 동일한 표현은 일치된 용량의 TACTO 조작을 0.246에서 0.979로 향상시키는 반면, V-only 용량 확장은 격차의 4.5%만을 설명하여 95.5%를 유지합니다. 생성기는 교차 시드에서 +0.589에 도달하고, 실제 촉각은 시드 구간 내에서 +0.585를 기록합니다. 아키텍처 비교는 재구성 품질과 표현 유용성 간에 13pp의 하류 격차를 보여줍니다. 5개 시드 SSVTP/TVL 재현, YCB-Sight 전이, 3개 백본 검증, 순열/랜덤 특징 제어, 해시 검증 매니페스트 및 측정된 힘 검증 확인을 통해, 촉각이 접촉 의존적 속성의 표현에 필요한 물리적 증거 채널을 제공한다는 주장을 뒷받침하는 증거가 제시됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.29173v2
+
+## 개요
+TacGen은 사전 정의된 시각-촉각 대비 정렬과 잠재 공간 잔차 MLP 생성기를 결합하여 RGB 이미지에서 촉각 잠재 표현을 합성함으로써 촉각 데이터 희소성 병목을 완화합니다. DINOv2 백본, 데이터 분할 및 프로브를 일치시킨 조건에서 시각-촉각 결합 표현은 품질(Delta R²=+0.570), 밀도(Delta acc=+0.067), 경도(+0.117) 및 불확실성 밴드 힘 라벨(Delta R²=+0.281)에서 순수 시각 모델보다 우수하며, 모든 신뢰 구간은 0을 포함하지 않습니다. 이 표현은 일치 용량의 TACTO 조작 작업 성능을 0.246에서 0.979로 향상시키며, 순수 시각 용량 확장은 격차의 4.5%만 설명하고 95.5%를 유지합니다. 생성기는 교차 시드 설정에서 +0.589, 시드 구간 내 실제 촉각에서 +0.585를 달성합니다. 아키텍처 비교는 재구성 품질과 표현 효용 사이에 13% 포인트의 하류 격차를 보여줍니다.
+
+## 핵심 내용
+### 방법
+TacGen은 촉각 데이터 희소성 문제를 해결하기 위해 두 단계 전략을 채택합니다:
+- **시각-촉각 대비 정렬**: 사전 정의된 대비 학습 목표가 시각 및 촉각 표현을 공유 잠재 공간에서 정렬합니다.
+- **잠재 공간 잔차 MLP 생성기**: RGB 이미지에서 촉각 잠재 표현을 합성하여 촉각 데이터의 대규모 생성을 가능하게 합니다.
+
+### 실험 설정
+- **백본 네트워크**: 모든 실험은 일치된 DINOv2 백본을 사용합니다.
+- **데이터 분할 및 프로브**: 동일한 데이터 분할 및 선형 프로브 프로토콜을 적용합니다.
+- **기준 작업**: 품질, 밀도, 경도 예측, 불확실성 밴드 힘 라벨 회귀 및 TACTO 조작 작업을 포함합니다.
+
+### 핵심 결과
+- **물리적 속성 예측**: 시각-촉각 결합 표현은 품질(Delta R²=+0.570), 밀도(Delta acc=+0.067), 경도(+0.117) 및 불확실성 밴드 힘 라벨(Delta R²=+0.281)에서 순수 시각 모델보다 유의미하게 우수하며, 모든 신뢰 구간은 0을 포함하지 않습니다.
+- **TACTO 조작 작업**: 일치 용량의 시각-촉각 표현은 성능을 0.246에서 0.979로 향상시키며, 순수 시각 용량 확장은 격차의 4.5%만 설명하고 95.5%를 유지합니다.
+- **생성기 성능**: 교차 시드 설정에서 +0.589, 시드 구간 내 실제 촉각에서 +0.585를 달성합니다.
+- **아키텍처 비교**: 재구성 품질과 표현 효용 사이에 13% 포인트의 하류 격차가 존재합니다.
+
+### 검증 및 결론
+- 5개 시드 SSVTP/TVL 재현, YCB-Sight 전이, 3가지 백본 검사, 순열/무작위 특징 제어, 해시 검증 체크리스트 및 측정 힘 검증을 통해 결과는 일관되게 촉각이 접촉 의존 속성 표현에 필요한 물리적 증거 채널을 제공한다는 것을 지지합니다.

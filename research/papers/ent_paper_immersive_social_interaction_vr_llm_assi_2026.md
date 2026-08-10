@@ -38,7 +38,9 @@ verification:
   reviewed_at: '2026-08-05'
   confidence: medium
   notes: 'Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation
-    by DeepSeek (deepseek-chat, T<=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。'
+    by DeepSeek (deepseek-chat, T<=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema
+    v1 status 枚举不含该值，按数据纪律记为 verified。 | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (2849
+    chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -47,7 +49,6 @@ sources:
   date: '2026-07-08'
   accessed_at: '2026-08-05'
 ---
-
 ## 概述
 
 本文提出了一套基于 Apple Vision Pro 与 Unitree H1 人形机器人的全身遥操作系统，将语音控制的运动、基于视觉的灵巧操作与双向音频社交互动整合于统一框架。系统核心贡献在于以 LLM（GPT-4）作为高层运动指令解析器，结合预训练深度强化学习运动策略，显著降低了操作员的认知与体力负担，并支持多模态数据采集以服务下游模仿学习。
@@ -109,9 +110,6 @@ sources:
 3. **数据采集是隐藏价值**：系统输出的多模态数据（关节角度、眼动、语音命令）是训练自主策略的宝贵资源。建议在搭建时即设计标准化的数据记录格式（如 ROS bag），避免后期转换成本。
 4. **硬件选型权衡**：Inspire Robotics 灵巧手（每手 6 DoF）与 Unitree H1 的组合在自由度上足够，但 PD 控制器参数（增益、阻尼）需针对不同负载（如抓取重物）重新整定，这是新手成功率低于专家的可能原因之一。
 5. **社交互动模块的延迟瓶颈**：ROS 1 音频流在长距离或弱网环境下可能引入显著延迟，影响对话自然度。若面向生产部署，建议评估 ROS 2 或 WebRTC 替代方案。
-
-## Overview
-Humanoid robots can extend human presence to remote, constrained, or hazardous environments, but existing teleoperation interfaces often require physically demanding motion tracking or cognitively demanding low-level control. This paper presents an immersive teleoperation framework that integrates voice-controlled locomotion, VR-based manipulation, and bidirectional social interaction for whole-body humanoid control. Using Apple Vision Pro, the operator receives egocentric visual feedback, issues natural-language locomotion commands, and teleoperates the robot's arms and dexterous hands throug
 
 ## 参考
 - https://arxiv.org/abs/2607.07430
@@ -177,3 +175,65 @@ Humanoid robots can extend human presence to remote, constrained, or hazardous e
 3. **데이터 수집은 숨은 가치**: 시스템이 출력하는 다중 모달 데이터(관절 각도, 시선, 음성 명령)는 자율 정책 훈련에 귀중한 자원이다. 구축 시 표준화된 데이터 기록 형식(예: ROS bag)을 설계하여 후속 변환 비용을 피하는 것이 좋다.
 4. **하드웨어 선택 트레이드오프**: Inspire Robotics 정교한 손(각 손 6 DoF)과 Unitree H1의 조합은 자유도 측면에서 충분하지만, PD 컨트롤러 파라미터(이득, 감쇠)는 서로 다른 부하(예: 무거운 물건 잡기)에 따라 재조정이 필요하다. 이는 초보자 성공률이 전문가보다 낮은 가능한 원인 중 하나이다.
 5. **사회적 상호작용 모듈의 지연 병목**: ROS 1 오디오 스트림은 장거리 또는 약한 네트워크 환경에서 상당한 지연을 유발하여 대화의 자연스러움에 영향을 줄 수 있다. 프로덕션 배포를 고려한다면 ROS 2 또는 WebRTC 대안을 평가하는 것이 좋다.
+
+## Overview
+
+This paper presents a full-body teleoperation system based on the Apple Vision Pro and the Unitree H1 humanoid robot, integrating voice-controlled locomotion, vision-based dexterous manipulation, and bidirectional audio social interaction into a unified framework. The core contribution of the system lies in using an LLM (GPT-4) as a high-level motion command parser, combined with pre-trained deep reinforcement learning locomotion policies, significantly reducing the operator's cognitive and physical burden while supporting multimodal data collection for downstream imitation learning.
+
+## What It Changes
+
+Existing teleoperation research on humanoid robots (e.g., Human Plus, Human to Humanoid) mostly focuses on full-body motion mapping or single manipulation tasks, requiring operators to manage multiple joint degrees of freedom simultaneously, resulting in extremely high cognitive load, and the systems generally lack the ability to engage in natural social interaction with surrounding humans. What this paper truly changes is liberating "motion control" from low-level joint mapping—users no longer need to think about "how to step," but only need to express "where to go" in natural language, fundamentally lowering the barrier to teleoperation and making it possible for non-expert users (especially elderly individuals at home) to control bipedal robots in complex unstructured environments. At the same time, the system is the first to integrate social interaction (bidirectional audio) as a first-class citizen alongside locomotion and manipulation, rather than as an afterthought module, providing a new interaction paradigm for scenarios such as remote companionship and caregiving.
+
+## Method Breakdown
+
+The system architecture consists of three parallel modules, sharing the Apple Vision Pro as the perception and interaction entry point:
+
+### Voice-Controlled Locomotion
+- **Perception stream**: The Vision Pro streams egocentric images at 640×480 resolution.
+- **Command chain**: User speech → Deepgram (real-time STT) → GPT-4 (parsed into high-level commands `move(x,y)`, `rotate(angle)`, `stop()`, `stand()`) → Silero (TTS feedback) → LivKit (agent framework coordination).
+- **Motion generation**: High-level commands are fed into a pre-trained deep reinforcement learning policy (referencing [7][8]) to generate robust bipedal locomotion.
+- **Key design**: Because GPT-4 may misinterpret instructions, the system introduces a verification step—when the model is uncertain about a command, it asks the user to confirm or clarify before execution, avoiding dangerous actions.
+
+### Teleoperation Manipulation
+- **Pose stream**: VisionPro Teleop streams the operator's wrist and finger SE(3) poses in real time to the robot-side server.
+- **Retargeting and remapping**: Human wrist poses are transformed into the robot coordinate frame, joint angles are solved via Pinocchio inverse kinematics, and driven by PD controllers.
+- **Degree-of-freedom allocation**: 4 DoF per arm, 6 DoF per dexterous hand (Inspire Robotics) finger, totaling 20 controlled DoF.
+
+### Social Interaction
+- Bidirectional audio streaming implemented on ROS 1: the operator can hear environmental sounds from the robot side and converse with surrounding people through the robot's speaker, enabling natural remote communication.
+
+## Key Innovations
+
+1. **LLM as a motion control abstraction layer**: Directly maps natural language to high-level motion primitives, replacing traditional joystick or joint-level control. This is a fundamental simplification of the "humanoid teleoperation" interaction paradigm—users transition from "operators" to "commanders," significantly reducing cognitive burden, and GPT-4's verification mechanism provides engineering safeguards for safety.
+2. **Unified framework for three modalities**: Locomotion, manipulation, and social interaction seamlessly switch within the same system for the first time, sharing the same perception and computing infrastructure (Vision Pro + ROS). This integration has no precedent in existing literature and provides a complete technology stack for complex remote tasks (e.g., "walk over, pick up a cup, chat with an elderly person" in home caregiving).
+3. **Multimodal data collection pipeline**: The system synchronously records egocentric images, speech/text commands, 19 body joint angles, 12 hand joint angles, and eye-tracking data. This is not only a teleoperation tool but also a high-quality imitation learning data generator, providing critical resources for subsequent autonomous policy training.
+
+## Experiments and Results
+
+Experiments were conducted on the Unitree H1 humanoid robot with two tasks, comparing novice and expert user performance:
+
+| Task | Novice Success Rate | Expert Success Rate | Novice Time (s) | Expert Time (s) |
+|---|---|---|---|---|
+| Object Pick (grasp bottle and place in box) | 0.8 | 0.90 | 52 | 22 |
+| Social Interaction (verbally request block and pass it) | 0.7 | 0.8 | 326 | 158 |
+
+**Interpretation of results**:
+- The success rate gap (0.8 vs 0.9) indicates the system is sufficiently novice-friendly, but experts still hold an advantage, suggesting that manipulation skills (e.g., fine wrist adjustments) still affect task completion quality.
+- The social interaction task took significantly longer (novice 326s vs expert 158s), reflecting that this task involves multiple dialogue rounds and movement coordination, making it more sensitive to system latency and user proficiency.
+- Compared with Open Television, Human Plus, and Human to Humanoid, the authors emphasize that only this system simultaneously supports voice-controlled locomotion, manipulation, and social interaction, but the paper does not provide quantitative comparative data.
+
+## Boundaries and Limitations
+
+- **Bipedal stability**: The Unitree H1 does not possess inherent self-stability; the system relies on pre-trained RL policies, which may fail on uncovered terrain or under external disturbances.
+- **Navigation perception deficiency**: The authors explicitly acknowledge that egocentric vision alone is unsuitable for navigation; the current system lacks global environmental perception, limiting autonomous movement capabilities in larger spaces.
+- **LLM instruction misinterpretation**: Although mitigated by the verification step, GPT-4 parsing errors increase interaction latency, and its handling of complex or ambiguous instructions has not been quantitatively evaluated.
+- **Experiment scale**: Only two tasks, no user count or statistical significance reported, and no quantitative comparison with baseline methods (e.g., task completion time, operator workload index).
+- **Not specified in the paper**: Training configuration, data volume, inference frequency, and hardware specifications are not disclosed, making reproduction difficult.
+
+## Engineering Insights
+
+1. **Prioritize validating the robustness of LLM instruction parsing**: GPT-4's verification step is safety-critical. When reproducing, first build a test set for domain-specific instructions (e.g., "move forward," "turn left," "stop"), quantify misinterpretation rates and confirmation latency, and only then consider integration into the full system.
+2. **Be aware of the navigation blind spots of egocentric vision**: If downstream tasks involve long-distance movement, be sure to add a waist-mounted camera or global map module as the authors plan; otherwise, operators will frequently make errors due to lack of spatial context.
+3. **Data collection is hidden value**: The system's multimodal output (joint angles, eye tracking, voice commands) is a valuable resource for training autonomous policies. It is recommended to design standardized data recording formats (e.g., ROS bags) during setup to avoid later conversion costs.
+4. **Hardware selection trade-offs**: The combination of Inspire Robotics dexterous hands (6 DoF each) and the Unitree H1 provides sufficient degrees of freedom, but PD controller parameters (gains, damping) need to be retuned for different loads (e.g., grasping heavy objects), which may be one reason for the novice success rate being lower than that of experts.
+5. **Latency bottleneck in the social interaction module**: ROS 1 audio streaming may introduce significant latency over long distances or weak network conditions, affecting conversational naturalness. For production deployment, consider evaluating ROS 2 or WebRTC alternatives.

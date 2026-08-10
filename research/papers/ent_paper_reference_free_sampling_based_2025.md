@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.19204v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.19204v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (899 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,28 @@ sources:
 ## Overview
 We present a sampling-based model predictive control (MPC) framework that enables emergent locomotion without relying on handcrafted gait patterns or predefined contact sequences. Our method discovers diverse motion patterns, ranging from trotting to galloping, robust standing policies, jumping, and handstand balancing, purely through the optimization of high-level objectives. Building on model predictive path integral (MPPI), we propose a cubic Hermite spline parameterization that operates on position and velocity control points. Our approach enables contact-making and contact-breaking strategies that adapt automatically to task requirements, requiring only a limited number of sampled trajectories. This sample efficiency enables real-time control on standard CPU hardware, eliminating the GPU acceleration typically required by other state-of-the-art MPPI methods. We validate our approach on the Go2 quadrupedal robot, demonstrating a range of emergent gaits and basic jumping capabilities. In simulation, we further showcase more complex behaviors, such as backflips, dynamic handstand balancing and locomotion on a Humanoid, all without requiring reference tracking or offline pre-training.
 
-## 개요
-본 논문에서는 수제 보행 패턴이나 사전 정의된 접촉 순서에 의존하지 않고 창발적 보행을 가능하게 하는 샘플링 기반 모델 예측 제어(MPC) 프레임워크를 제시합니다. 우리의 방법은 높은 수준의 목표 최적화만을 통해 트로팅에서 갤럽에 이르기까지 다양한 운동 패턴, 강건한 서기 정책, 점프, 물구나무서기 균형을 발견합니다. 모델 예측 경로 적분(MPPI)을 기반으로, 위치 및 속도 제어점에서 작동하는 3차 에르미트 스플라인 매개변수화를 제안합니다. 우리의 접근 방식은 작업 요구 사항에 자동으로 적응하는 접촉 생성 및 접촉 해제 전략을 가능하게 하며, 제한된 수의 샘플링된 궤적만 필요로 합니다. 이러한 샘플 효율성은 일반 CPU 하드웨어에서 실시간 제어를 가능하게 하여, 다른 최신 MPPI 방법에서 일반적으로 요구되는 GPU 가속을 제거합니다. 우리는 Go2 사족 보행 로봇에서 접근 방식을 검증하여 다양한 창발적 보행과 기본 점프 능력을 입증합니다. 시뮬레이션에서는 참조 추적이나 오프라인 사전 훈련 없이 백플립, 동적 물구나무서기 균형, 휴머노이드 보행과 같은 더 복잡한 행동을 추가로 보여줍니다.
-
-## 핵심 내용
-본 논문에서는 수제 보행 패턴이나 사전 정의된 접촉 순서에 의존하지 않고 창발적 보행을 가능하게 하는 샘플링 기반 모델 예측 제어(MPC) 프레임워크를 제시합니다. 우리의 방법은 높은 수준의 목표 최적화만을 통해 트로팅에서 갤럽에 이르기까지 다양한 운동 패턴, 강건한 서기 정책, 점프, 물구나무서기 균형을 발견합니다. 모델 예측 경로 적분(MPPI)을 기반으로, 위치 및 속도 제어점에서 작동하는 3차 에르미트 스플라인 매개변수화를 제안합니다. 우리의 접근 방식은 작업 요구 사항에 자동으로 적응하는 접촉 생성 및 접촉 해제 전략을 가능하게 하며, 제한된 수의 샘플링된 궤적만 필요로 합니다. 이러한 샘플 효율성은 일반 CPU 하드웨어에서 실시간 제어를 가능하게 하여, 다른 최신 MPPI 방법에서 일반적으로 요구되는 GPU 가속을 제거합니다. 우리는 Go2 사족 보행 로봇에서 접근 방식을 검증하여 다양한 창발적 보행과 기본 점프 능력을 입증합니다. 시뮬레이션에서는 참조 추적이나 오프라인 사전 훈련 없이 백플립, 동적 물구나무서기 균형, 휴머노이드 보행과 같은 더 복잡한 행동을 추가로 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.19204v3
+
+## 개요
+이 연구는 로봇 운동 제어에서 창발적 행동을 구현하기 위한 샘플링 기반 모델 예측 제어(MPC) 프레임워크를 제안한다. 이는 모델 예측 경로 적분(MPPI) 방법을 기반으로 하며, 위치 및 속도 제어점을 통해 궤적을 최적화하는 3차 Hermite 스플라인 매개변수화를 혁신적으로 도입한다. 이 방법은 로봇이 작업 요구에 자동으로 적응하고 접촉 및 분리 전략을 자율적으로 생성할 수 있게 하며, 소량의 샘플링 궤적만으로 최적화를 완료할 수 있다. 샘플 효율성이 높기 때문에 이 방법은 GPU 가속 없이 표준 CPU 하드웨어에서 실시간으로 실행될 수 있다. Go2 네 발 로봇에서 다양한 창발적 보행 및 점프 능력을 검증했으며, 시뮬레이션에서는 휴머노이드 로봇의 백플립, 동적 물구나무서기 균형과 같은 복잡한 행동을 시연했다.
+
+## 핵심 내용
+### 방법 개요
+본 논문은 참조 궤적이 필요 없는 샘플링 기반 MPC 프레임워크를 제안하며, 핵심 아이디어는 사전 정의된 보행 패턴이나 접촉 시퀀스에 의존하지 않고 고수준 목표(예: 속도, 안정성)를 최적화하여 운동 행동을 직접 생성하는 것이다.
+
+### 핵심 아키텍처
+- **기본 알고리즘**: 모델 예측 경로 적분(MPPI) 방법을 기반으로 하며, 여러 궤적을 샘플링하고 비용 함수를 평가하여 제어 시퀀스를 최적화한다.
+- **매개변수화 혁신**: 3차 Hermite 스플라인 매개변수화를 제안하여 제어 입력을 위치 및 속도 제어점의 스플라인 곡선으로 표현한다. 이 매개변수화 방식은 연속 운동을 매끄럽게 표현하면서 접촉 상태의 자동 전환을 지원한다.
+- **샘플 효율성**: 스플라인 매개변수화가 최적화 변수의 차원을 줄이기 때문에 소량의 샘플링 궤적(예: 64개)만으로도 효과적인 제어 전략을 얻을 수 있어 표준 CPU에서 실시간 제어를 구현할 수 있다.
+
+### 실험 설정 및 결과
+- **하드웨어 검증**: Go2 네 발 로봇에서 테스트하여 느린 달리기부터 점프까지 다양한 창발적 보행과 기본 점프 능력을 시연했다.
+- **시뮬레이션 검증**: 시뮬레이션 환경에서 더 복잡한 행동을 추가로 시연했으며, 여기에는 다음이 포함된다:
+  - 백플립(backflips)
+  - 동적 물구나무서기 균형(dynamic handstand balancing)
+  - 휴머노이드 로봇의 운동 제어
+- **주요 수치**: 모든 행동은 참조 궤적 추적이나 오프라인 사전 훈련 없이 완전히 온라인 최적화를 통해 구현된다. 제어 주파수는 실시간 요구 사항을 충족한다(구체적인 주파수는 초록에 명시되지 않았지만 CPU에서 실행되는 점이 강조됨).
+
+### 결론
+이 방법은 수동 설계나 사전 훈련 없이 순수 샘플링 최적화만으로 다양한 로봇 운동 행동을 구현할 수 있음을 증명하며, 향후 더 복잡한 로봇 제어를 위한 새로운 방향을 제시한다.

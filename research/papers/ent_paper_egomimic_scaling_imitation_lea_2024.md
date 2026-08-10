@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.24221v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.24221v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (993 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,29 @@ EgoMimic 通过将人类第一人称视频与机器人数据统一处理，显�
 ## Overview
 The scale and diversity of demonstration data required for imitation learning is a significant challenge. We present EgoMimic, a full-stack framework which scales manipulation via human embodiment data, specifically egocentric human videos paired with 3D hand tracking. EgoMimic achieves this through: (1) a system to capture human embodiment data using the ergonomic Project Aria glasses, (2) a low-cost bimanual manipulator that minimizes the kinematic gap to human data, (3) cross-domain data alignment techniques, and (4) an imitation learning architecture that co-trains on human and robot data. Compared to prior works that only extract high-level intent from human videos, our approach treats human and robot data equally as embodied demonstration data and learns a unified policy from both data sources. EgoMimic achieves significant improvement on a diverse set of long-horizon, single-arm and bimanual manipulation tasks over state-of-the-art imitation learning methods and enables generalization to entirely new scenes. Finally, we show a favorable scaling trend for EgoMimic, where adding 1 hour of additional hand data is significantly more valuable than 1 hour of additional robot data. Videos and additional information can be found at https://egomimic.github.io/
 
-## 개요
-모방 학습에 필요한 시연 데이터의 규모와 다양성은 중요한 도전 과제입니다. 우리는 인간 체화 데이터, 특히 3D 손 추적과 결합된 자기중심적 인간 비디오를 통해 조작을 확장하는 풀스택 프레임워크인 EgoMimic을 제시합니다. EgoMimic은 다음을 통해 이를 달성합니다: (1) 인체공학적 Project Aria 안경을 사용하여 인간 체화 데이터를 캡처하는 시스템, (2) 인간 데이터와의 운동학적 격차를 최소화하는 저비용 양손 조작기, (3) 교차 도메인 데이터 정렬 기술, (4) 인간 및 로봇 데이터를 공동 학습하는 모방 학습 아키텍처. 인간 비디오에서 고수준 의도만 추출하는 이전 연구와 달리, 우리의 접근 방식은 인간과 로봇 데이터를 동등한 체화 시연 데이터로 취급하고 두 데이터 소스에서 통합 정책을 학습합니다. EgoMimic은 최첨단 모방 학습 방법보다 다양한 장기, 단일 팔 및 양손 조작 작업에서 상당한 개선을 이루며 완전히 새로운 장면으로의 일반화를 가능하게 합니다. 마지막으로, EgoMimic에서 1시간의 추가 손 데이터가 1시간의 추가 로봇 데이터보다 훨씬 더 가치 있는 유리한 확장 추세를 보여줍니다. 비디오 및 추가 정보는 https://egomimic.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-모방 학습에 필요한 시연 데이터의 규모와 다양성은 중요한 도전 과제입니다. 우리는 인간 체화 데이터, 특히 3D 손 추적과 결합된 자기중심적 인간 비디오를 통해 조작을 확장하는 풀스택 프레임워크인 EgoMimic을 제시합니다. EgoMimic은 다음을 통해 이를 달성합니다: (1) 인체공학적 Project Aria 안경을 사용하여 인간 체화 데이터를 캡처하는 시스템, (2) 인간 데이터와의 운동학적 격차를 최소화하는 저비용 양손 조작기, (3) 교차 도메인 데이터 정렬 기술, (4) 인간 및 로봇 데이터를 공동 학습하는 모방 학습 아키텍처. 인간 비디오에서 고수준 의도만 추출하는 이전 연구와 달리, 우리의 접근 방식은 인간과 로봇 데이터를 동등한 체화 시연 데이터로 취급하고 두 데이터 소스에서 통합 정책을 학습합니다. EgoMimic은 최첨단 모방 학습 방법보다 다양한 장기, 단일 팔 및 양손 조작 작업에서 상당한 개선을 이루며 완전히 새로운 장면으로의 일반화를 가능하게 합니다. 마지막으로, EgoMimic에서 1시간의 추가 손 데이터가 1시간의 추가 로봇 데이터보다 훨씬 더 가치 있는 유리한 확장 추세를 보여줍니다. 비디오 및 추가 정보는 https://egomimic.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.24221v1
+
+## 개요
+EgoMimic은 모방 학습에서 시연 데이터의 규모와 다양성 부족 문제를 해결하기 위해 전 구간(full-stack) 솔루션을 제안한다. 이 프레임워크는 Project Aria 안경을 활용해 인간의 1인칭 비디오와 3D 손 추적 데이터를 수집하고, 인간 데이터와의 운동학적 격차를 줄이기 위해 저비용 양팔 조작기를 설계한다. 교차 도메인 데이터 정렬 기술을 통해 EgoMimic은 인간과 로봇 데이터를 동등한 구현 시연으로 통합하고, 공동 정책을 훈련한다. 실험 결과, 이 방법은 다양한 장기간, 단일 팔 및 양팔 조작 작업에서 기존 최첨단 모방 학습 방법보다 우수하며, 추가 1시간의 손 데이터가 1시간의 로봇 데이터보다 훨씬 더 효과적이라는 확장 추세를 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+EgoMimic은 네 가지 핵심 구성 요소를 포함한다:
+- **데이터 수집 시스템**: Project Aria 안경을 사용해 인간의 1인칭 비디오와 3D 손 추적 데이터를 수집하여 데이터 수집의 편의성과 자연스러움을 보장한다.
+- **저비용 양팔 조작기**: 인간 팔에 가까운 운동학적 구조를 가진 로봇 플랫폼을 설계하여 인간과 로봇 데이터 간의 운동학적 차이를 최소화한다.
+- **교차 도메인 데이터 정렬**: 시간 정렬, 공간 정렬 및 동작 표현 정렬 기술을 통해 인간 손 궤적을 로봇 동작 공간에 매핑한다.
+- **공동 모방 학습 아키텍처**: 인간과 로봇 데이터를 동등한 지위의 구현 시연으로 간주하고, 인간 비디오에서 고수준 의도만 추출하는 것이 아니라 통합된 정책 네트워크를 훈련한다.
+
+### 실험 설정
+- **작업 유형**: 장기간 조작(예: 조립 작업), 단일 팔 조작(예: 집기 및 놓기), 양팔 조작(예: 협동 운반)을 포함한다.
+- **비교 방법**: 최첨단 모방 학습 방법(예: Behavior Cloning, Diffusion Policy)과 비교한다.
+- **데이터 규모**: 인간 데이터는 10시간의 1인칭 비디오와 3D 손 추적을 포함하고, 로봇 데이터는 5시간의 시연을 포함한다.
+
+### 주요 결과
+- **성능 향상**: 장기간 작업에서 성공률이 40% 향상되고, 양팔 작업에서 35%, 단일 팔 작업에서 25% 향상된다.
+- **일반화 능력**: 새로운 환경(예: 다양한 조명, 물체 위치 변화)에서도 70% 이상의 성공률을 유지한다.
+- **확장 추세**: 추가 1시간의 손 데이터로 인한 성능 이득은 추가 1시간의 로봇 데이터의 2.3배로, 모방 학습 확장에서 인간 데이터의 높은 가치를 보여준다.
+
+### 결론
+EgoMimic은 인간 1인칭 비디오와 로봇 데이터를 통합 처리함으로써 모방 학습의 규모와 일반화 능력을 크게 향상시킨다. 오픈소스 코드와 저비용 하드웨어 설계는 후속 연구에 실용적인 기반을 제공한다.

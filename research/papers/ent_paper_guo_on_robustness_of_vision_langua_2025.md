@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.00037v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.00037v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (980 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,28 @@ In Vision-Language-Action (VLA) models, robustness to real-world perturbations i
 ## Content
 In Vision-Language-Action (VLA) models, robustness to real-world perturbations is critical for deployment. Existing methods target simple visual disturbances, overlooking the broader multi-modal perturbations that arise in actions, instructions, environments, and observations. Here, we first evaluate the robustness of mainstream VLAs under 17 perturbations across four modalities. We find (1) actions as the most fragile modality, (2) Existing visual-robust VLA do not gain robustness in other modality, and (3) pi0 demonstrates superior robustness. To build multi-modal robust VLAs, we propose RobustVLA against perturbations in VLA inputs and outputs. For output robustness, we perform offline robust optimization against worst-case action noise that maximizes mismatch in flow matching objective. This can be seen as adversarial training, label smoothing, and outlier penalization. For input robustness, we enforce consistent actions across input variations that preserve task semantics. To account for multiple perturbations, we formulate robustness as a multi-armed bandit problem and apply an upper confidence bound algorithm to automatically identify the most harmful noise. Experiments on LIBERO demonstrate our RobustVLA delivers absolute gains over baselines of 12.6% on the pi0 backbone and 10.4% on the OpenVLA backbone across all 17 perturbations, achieving 50.6x faster inference than existing visual-robust BYOVLA that requires external LLMs, and a 10.4% gain under mixed perturbations. On the real-world FR5 robot, under four types of multimodal perturbations, RobustVLA shows strong low-data performance, outperforming pi0 by 65.6% success rate with 25 demonstrations. Even with abundant demos, our method still outperform pi0 by 30% success rate. Code and demo videos available at https://github.com/gakakulicc/RobustVLA.
 
-## 개요
-Vision-Language-Action(VLA) 모델에서 실제 환경의 교란에 대한 강건성은 배포에 매우 중요합니다. 기존 방법은 단순한 시각적 교란에 초점을 맞추며, 행동, 명령, 환경 및 관찰에서 발생하는 더 광범위한 다중 모달 교란을 간과합니다. 본 연구에서는 먼저 4가지 모달리티에 걸친 17가지 교란 하에서 주류 VLA의 강건성을 평가합니다. 그 결과 (1) 행동이 가장 취약한 모달리티이며, (2) 기존의 시각적 강건 VLA는 다른 모달리티에서 강건성을 확보하지 못하며, (3) pi0가 우수한 강건성을 보임을 발견했습니다. 다중 모달 강건 VLA를 구축하기 위해, 우리는 VLA 입력 및 출력의 교란에 대응하는 RobustVLA를 제안합니다. 출력 강건성을 위해, 흐름 매칭 목표에서 불일치를 최대화하는 최악의 행동 노이즈에 대해 오프라인 강건 최적화를 수행합니다. 이는 적대적 훈련, 레이블 스무딩 및 이상치 페널티 부여로 볼 수 있습니다. 입력 강건성을 위해, 작업 의미를 유지하는 입력 변동 전반에 걸쳐 일관된 행동을 강제합니다. 여러 교란을 처리하기 위해, 강건성을 다중 팔 밴딧 문제로 공식화하고 상한 신뢰 구간 알고리즘을 적용하여 가장 해로운 노이즈를 자동으로 식별합니다. LIBERO 실험에서 RobustVLA는 pi0 백본에서 12.6%, OpenVLA 백본에서 10.4%의 절대적 성능 향상을 모든 17가지 교란에 대해 달성하며, 외부 LLM이 필요한 기존 시각적 강건 BYOVLA보다 50.6배 빠른 추론 속도를 보이고, 혼합 교란 하에서 10.4%의 향상을 보입니다. 실제 FR5 로봇에서 4가지 유형의 다중 모달 교란 하에 RobustVLA는 강력한 저데이터 성능을 보여, 25개의 데모로 pi0보다 65.6% 높은 성공률을 기록합니다. 풍부한 데모가 있어도, 우리 방법은 pi0보다 30% 높은 성공률을 유지합니다. 코드 및 데모 비디오는 https://github.com/gakakulicc/RobustVLA에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action(VLA) 모델에서 실제 환경의 교란에 대한 강건성은 배포에 매우 중요합니다. 기존 방법은 단순한 시각적 교란에 초점을 맞추며, 행동, 명령, 환경 및 관찰에서 발생하는 더 광범위한 다중 모달 교란을 간과합니다. 본 연구에서는 먼저 4가지 모달리티에 걸친 17가지 교란 하에서 주류 VLA의 강건성을 평가합니다. 그 결과 (1) 행동이 가장 취약한 모달리티이며, (2) 기존의 시각적 강건 VLA는 다른 모달리티에서 강건성을 확보하지 못하며, (3) pi0가 우수한 강건성을 보임을 발견했습니다. 다중 모달 강건 VLA를 구축하기 위해, 우리는 VLA 입력 및 출력의 교란에 대응하는 RobustVLA를 제안합니다. 출력 강건성을 위해, 흐름 매칭 목표에서 불일치를 최대화하는 최악의 행동 노이즈에 대해 오프라인 강건 최적화를 수행합니다. 이는 적대적 훈련, 레이블 스무딩 및 이상치 페널티 부여로 볼 수 있습니다. 입력 강건성을 위해, 작업 의미를 유지하는 입력 변동 전반에 걸쳐 일관된 행동을 강제합니다. 여러 교란을 처리하기 위해, 강건성을 다중 팔 밴딧 문제로 공식화하고 상한 신뢰 구간 알고리즘을 적용하여 가장 해로운 노이즈를 자동으로 식별합니다. LIBERO 실험에서 RobustVLA는 pi0 백본에서 12.6%, OpenVLA 백본에서 10.4%의 절대적 성능 향상을 모든 17가지 교란에 대해 달성하며, 외부 LLM이 필요한 기존 시각적 강건 BYOVLA보다 50.6배 빠른 추론 속도를 보이고, 혼합 교란 하에서 10.4%의 향상을 보입니다. 실제 FR5 로봇에서 4가지 유형의 다중 모달 교란 하에 RobustVLA는 강력한 저데이터 성능을 보여, 25개의 데모로 pi0보다 65.6% 높은 성공률을 기록합니다. 풍부한 데모가 있어도, 우리 방법은 pi0보다 30% 높은 성공률을 유지합니다. 코드 및 데모 비디오는 https://github.com/gakakulicc/RobustVLA에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.00037v4
+
+## 개요
+기존 VLA 모델은 주로 시각적 교란에 최적화되어 있으며, 행동, 명령, 환경, 관측 등 다중 모달 교란의 영향을 무시합니다. RobustVLA는 평가를 통해 행동 모달이 가장 취약하며, 기존의 시각적 강건성 방법이 다른 모달로 일반화될 수 없음을 발견했습니다. 이를 위해 해당 모델은 오프라인 강건 최적화를 통해 최악의 행동 노이즈에 대응하고, 작업 의미를 유지하는 일관된 행동을 통해 입력 강건성을 강화합니다. 또한 RobustVLA는 다중 교란 강건성을 다중 팔 밴딧 문제로 모델링하고, 상위 신뢰 경계 알고리즘을 활용해 가장 파괴적인 노이즈를 자동으로 식별합니다. 실험 결과, LIBERO 벤치마크에서 RobustVLA는 pi0 및 OpenVLA 백본 네트워크에서 각각 12.6% 및 10.4%의 절대적 향상을 달성했으며, 추론 속도는 기존 방법보다 50.6배 빠르고, 실제 FR5 로봇에서 25개의 데모 샘플로 pi0를 65.6%의 성공률로 능가했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+RobustVLA는 VLA 모델의 입력 및 출력 두 계층에 대해 강건성 강화 전략을 설계합니다:
+- **출력 강건성**: 오프라인 강건 최적화를 통해 최악의 행동 노이즈에 대응하며, 이 노이즈는 흐름 매칭 목표에서 불일치도를 최대화합니다. 이는 적대적 훈련, 라벨 평활화, 이상치 페널티를 동시에 구현하는 것과 같습니다.
+- **입력 강건성**: 작업 의미를 유지하는 입력 변화 하에서 모델이 일관된 행동 출력을 생성하도록 강제하여, 명령, 환경, 관측 교란에 대한 저항력을 강화합니다.
+- **다중 교란 처리**: 강건성 최적화를 다중 팔 밴딧 문제로 형식화하고, 상위 신뢰 경계 알고리즘을 사용해 현재 가장 유해한 노이즈 유형을 자동으로 식별하여 적응형 방어를 구현합니다.
+
+### 실험 설정 및 주요 수치
+- **벤치마크 테스트**: LIBERO 벤치마크에서 17가지 교란을 평가하며, 행동, 명령, 환경, 관측 네 가지 모달을 포괄합니다.
+- **성능 향상**:
+  - pi0 백본 네트워크에서 12.6%의 절대적 향상, OpenVLA 백본 네트워크에서 10.4%의 절대적 향상 달성.
+  - 추론 속도는 기존 시각적 강건성 방법 BYOVLA보다 50.6배 빠름 (BYOVLA는 외부 대형 언어 모델에 의존).
+  - 혼합 교란 시나리오에서도 10.4%의 향상을 유지.
+- **실제 로봇 실험**: FR5 로봇에서 네 가지 다중 모달 교란에 직면:
+  - 25개의 데모 샘플만 사용했을 때, RobustVLA의 성공률은 pi0보다 65.6% 높음.
+  - 충분한 데모 데이터를 사용해도 pi0보다 30% 높은 성공률을 유지.
+
+### 결론
+RobustVLA는 입력 및 출력 강건성을 공동 최적화하고 적응형 다중 교란 식별 메커니즘을 도입하여, VLA 모델의 실제 세계 배포에서의 신뢰성을 크게 향상시켰습니다. 효율적인 추론과 낮은 데이터 의존성 특성은 로봇 조작 작업에 실용적인 솔루션을 제공합니다. 코드와 데모 비디오는 오픈소스로 공개되었습니다.

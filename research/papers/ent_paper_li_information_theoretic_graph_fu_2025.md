@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.05342v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.05342v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1016 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,31 @@ GF-VLA 通过信息论图融合和语言条件Transformer，有效解决了从�
 ## Overview
 Teaching robots dexterous skills from human videos remains challenging due to the reliance on low-level trajectory imitation, which fails to generalize across object types, spatial layouts, and manipulator configurations. We propose Graph-Fused Vision-Language-Action (GF-VLA), a framework that enables dual-arm robotic systems to perform task-level reasoning and execution directly from RGB and Depth human demonstrations. GF-VLA first extracts Shannon-information-based cues to identify hands and objects with the highest task relevance, then encodes these cues into temporally ordered scene graphs that capture both hand-object and object-object interactions. These graphs are fused with a language-conditioned transformer that generates hierarchical behavior trees and interpretable Cartesian motion commands. To improve execution efficiency in bimanual settings, we further introduce a cross-hand selection policy that infers optimal gripper assignment without explicit geometric reasoning. We evaluate GF-VLA on four structured dual-arm block assembly tasks involving symbolic shape construction and spatial generalization. Experimental results show that the information-theoretic scene representation achieves over 95 percent graph accuracy and 93 percent subtask segmentation, supporting the LLM planner in generating reliable and human-readable task policies. When executed by the dual-arm robot, these policies yield 94 percent grasp success, 89 percent placement accuracy, and 90 percent overall task success across stacking, letter-building, and geometric reconfiguration scenarios, demonstrating strong generalization and robustness across diverse spatial and semantic variations.
 
-## 개요
-인간의 비디오로부터 로봇에게 정교한 기술을 가르치는 것은 여전히 어려운 과제로 남아 있습니다. 이는 낮은 수준의 궤적 모방에 의존하기 때문에 객체 유형, 공간 배치 및 조작기 구성에 걸쳐 일반화되지 못하기 때문입니다. 본 논문에서는 Graph-Fused Vision-Language-Action (GF-VLA) 프레임워크를 제안합니다. 이 프레임워크는 이중 암 로봇 시스템이 RGB 및 Depth 인간 시연으로부터 직접 작업 수준의 추론과 실행을 수행할 수 있도록 합니다. GF-VLA는 먼저 Shannon 정보 기반 단서를 추출하여 가장 높은 작업 관련성을 가진 손과 객체를 식별한 후, 이러한 단서를 시간 순서대로 정렬된 장면 그래프로 인코딩하여 손-객체 및 객체-객체 상호작용을 모두 포착합니다. 이러한 그래프는 언어 조건부 트랜스포머와 융합되어 계층적 행동 트리와 해석 가능한 데카르트 운동 명령을 생성합니다. 양손 설정에서 실행 효율성을 높이기 위해, 명시적인 기하학적 추론 없이 최적의 그리퍼 할당을 추론하는 교차 손 선택 정책을 추가로 도입합니다. 우리는 GF-VLA를 기호적 형태 구성 및 공간 일반화를 포함하는 네 가지 구조화된 이중 암 블록 조립 작업에서 평가합니다. 실험 결과, 정보 이론적 장면 표현은 95% 이상의 그래프 정확도와 93%의 하위 작업 분할을 달성하여 LLM 플래너가 신뢰할 수 있고 사람이 읽을 수 있는 작업 정책을 생성하도록 지원합니다. 이중 암 로봇이 실행할 때, 이러한 정책은 쌓기, 문자 만들기 및 기하학적 재구성 시나리오에서 94%의 잡기 성공률, 89%의 배치 정확도 및 90%의 전체 작업 성공률을 보여주며, 다양한 공간적 및 의미적 변형에 걸쳐 강력한 일반화와 견고성을 입증합니다.
-
-## 핵심 내용
-인간의 비디오로부터 로봇에게 정교한 기술을 가르치는 것은 여전히 어려운 과제로 남아 있습니다. 이는 낮은 수준의 궤적 모방에 의존하기 때문에 객체 유형, 공간 배치 및 조작기 구성에 걸쳐 일반화되지 못하기 때문입니다. 본 논문에서는 Graph-Fused Vision-Language-Action (GF-VLA) 프레임워크를 제안합니다. 이 프레임워크는 이중 암 로봇 시스템이 RGB 및 Depth 인간 시연으로부터 직접 작업 수준의 추론과 실행을 수행할 수 있도록 합니다. GF-VLA는 먼저 Shannon 정보 기반 단서를 추출하여 가장 높은 작업 관련성을 가진 손과 객체를 식별한 후, 이러한 단서를 시간 순서대로 정렬된 장면 그래프로 인코딩하여 손-객체 및 객체-객체 상호작용을 모두 포착합니다. 이러한 그래프는 언어 조건부 트랜스포머와 융합되어 계층적 행동 트리와 해석 가능한 데카르트 운동 명령을 생성합니다. 양손 설정에서 실행 효율성을 높이기 위해, 명시적인 기하학적 추론 없이 최적의 그리퍼 할당을 추론하는 교차 손 선택 정책을 추가로 도입합니다. 우리는 GF-VLA를 기호적 형태 구성 및 공간 일반화를 포함하는 네 가지 구조화된 이중 암 블록 조립 작업에서 평가합니다. 실험 결과, 정보 이론적 장면 표현은 95% 이상의 그래프 정확도와 93%의 하위 작업 분할을 달성하여 LLM 플래너가 신뢰할 수 있고 사람이 읽을 수 있는 작업 정책을 생성하도록 지원합니다. 이중 암 로봇이 실행할 때, 이러한 정책은 쌓기, 문자 만들기 및 기하학적 재구성 시나리오에서 94%의 잡기 성공률, 89%의 배치 정확도 및 90%의 전체 작업 성공률을 보여주며, 다양한 공간적 및 의미적 변형에 걸쳐 강력한 일반화와 견고성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.05342v2
+
+## 개요
+GF-VLA 프레임워크는 인간 비디오에서 로봇의 손재주 기술을 가르칠 때, 저수준 궤적 모방에 의존하여 다양한 객체 유형, 공간 배치 및 로봇 팔 구성으로 일반화하기 어려운 문제를 해결하는 것을 목표로 합니다. 이 프레임워크는 먼저 Shannon 정보 이론 기반의 단서 추출을 활용하여 작업과 가장 관련된 손과 객체를 식별하고, 이를 시간 순서화된 장면 그래프로 인코딩하여 손-객체 및 객체-객체 상호작용을 포착합니다. 이후 이러한 장면 그래프는 언어 조건 Transformer와 융합되어 계층적 행동 트리와 해석 가능한 데카르트 운동 명령을 생성합니다. 또한, 이중 로봇 팔 실행 효율성을 향상시키기 위해 GF-VLA는 명시적 기하 추론 없이 최적의 그리퍼 할당을 추론할 수 있는 교차 손 선택 전략을 도입합니다. 실험은 네 가지 구조화된 이중 로봇 팔 조립 작업(기호 모양 구축 및 공간 일반화 포함)에서 그 효과를 검증합니다.
+
+## 핵심 내용
+### 방법
+- **정보 이론 단서 추출**: GF-VLA는 먼저 RGB 및 깊이 인간 시연에서 Shannon 정보 이론 기반의 단서를 추출하여 작업과 가장 관련된 손과 객체를 식별하고 중복 정보를 줄입니다.
+- **장면 그래프 인코딩**: 추출된 단서를 시간 순서화된 장면 그래프로 인코딩하여 손-객체 및 객체-객체 상호작용을 명시적으로 표현하고, 후속 추론을 위한 구조화된 입력을 제공합니다.
+- **언어 조건 Transformer**: 장면 그래프는 언어 조건 Transformer와 융합되어 계층적 행동 트리(Behavior Trees)와 해석 가능한 데카르트 운동 명령을 생성하여 작업 수준 추론을 지원합니다.
+- **교차 손 선택 전략**: 이중 로봇 팔 시나리오를 위해 교차 손 선택 전략을 도입하여 명시적 기하 추론 없이 최적의 그리퍼 할당을 추론하고 실행 효율성을 향상시킵니다.
+
+### 실험 설정
+- **작업**: 네 가지 구조화된 이중 로봇 팔 조립 작업에서 평가되며, 기호 모양 구축(예: 쌓기, 문자 구축) 및 공간 일반화(예: 기하 재구성)를 포함합니다.
+- **평가 지표**: 그래프 정확도, 하위 작업 분할 정확도, 그리핑 성공률, 배치 정확도, 전체 작업 성공률.
+
+### 주요 수치
+- **그래프 정확도**: 95% 이상으로, 정보 이론 장면 표현이 작업 관련 상호작용을 정확히 포착함을 나타냅니다.
+- **하위 작업 분할**: 93% 정확도로, LLM 플래너가 신뢰할 수 있고 읽기 쉬운 작업 전략을 생성하도록 지원합니다.
+- **실행 성능**:
+  - 그리핑 성공률: 94%
+  - 배치 정확도: 89%
+  - 전체 작업 성공률: 90%(쌓기, 문자 구축 및 기하 재구성 시나리오 포함)
+- **일반화 능력**: 다양한 공간 및 의미 변화에서 강한 견고성을 보여줍니다.
+
+### 결론
+GF-VLA는 정보 이론 그래프 융합과 언어 조건 Transformer를 통해 인간 비디오에서 이중 로봇 팔 손재주 기술을 학습할 때의 일반화 문제를 효과적으로 해결합니다. 그 장면 표현과 교차 손 선택 전략은 작업 추론 및 실행 효율성을 크게 향상시키며, 구조화된 조립 작업에서 높은 성공률을 달성하여 복잡한 로봇 조작에서의 잠재력을 보여줍니다.

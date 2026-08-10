@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.01990v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.01990v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (992 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -63,11 +64,20 @@ SARA-RT 通过 up-training 方法，成功将大规模机器人 Transformer 策�
 ## Overview
 We present Self-Adaptive Robust Attention for Robotics Transformers (SARA-RT): a new paradigm for addressing the emerging challenge of scaling up Robotics Transformers (RT) for on-robot deployment. SARA-RT relies on the new method of fine-tuning proposed by us, called up-training. It converts pre-trained or already fine-tuned Transformer-based robotic policies of quadratic time complexity (including massive billion-parameter vision-language-action models or VLAs), into their efficient linear-attention counterparts maintaining high quality. We demonstrate the effectiveness of SARA-RT by speeding up: (a) the class of recently introduced RT-2 models, the first VLA robotic policies pre-trained on internet-scale data, as well as (b) Point Cloud Transformer (PCT) robotic policies operating on large point clouds. We complement our results with the rigorous mathematical analysis providing deeper insight into the phenomenon of SARA.
 
-## 개요
-우리는 로봇 트랜스포머(Robotics Transformers, RT)의 로봇 탑재 배포를 위한 확장 문제를 해결하는 새로운 패러다임인 SARA-RT(Self-Adaptive Robust Attention for Robotics Transformers)를 제시합니다. SARA-RT는 우리가 제안한 새로운 미세 조정 방법인 업트레이닝(up-training)에 기반합니다. 이 방법은 사전 훈련되거나 이미 미세 조정된 이차 시간 복잡도의 트랜스포머 기반 로봇 정책(수십억 파라미터의 거대한 비전-언어-행동 모델(VLA) 포함)을 높은 품질을 유지하는 효율적인 선형 어텐션 버전으로 변환합니다. 우리는 SARA-RT의 효과를 다음을 가속화함으로써 입증합니다: (a) 최근 도입된 RT-2 모델 클래스(인터넷 규모 데이터로 사전 훈련된 최초의 VLA 로봇 정책) 및 (b) 대규모 포인트 클라우드에서 작동하는 포인트 클라우드 트랜스포머(PCT) 로봇 정책. 또한, SARA 현상에 대한 더 깊은 통찰을 제공하는 엄격한 수학적 분석으로 결과를 보완합니다.
-
-## 핵심 내용
-우리는 로봇 트랜스포머(Robotics Transformers, RT)의 로봇 탑재 배포를 위한 확장 문제를 해결하는 새로운 패러다임인 SARA-RT(Self-Adaptive Robust Attention for Robotics Transformers)를 제시합니다. SARA-RT는 우리가 제안한 새로운 미세 조정 방법인 업트레이닝(up-training)에 기반합니다. 이 방법은 사전 훈련되거나 이미 미세 조정된 이차 시간 복잡도의 트랜스포머 기반 로봇 정책(수십억 파라미터의 거대한 비전-언어-행동 모델(VLA) 포함)을 높은 품질을 유지하는 효율적인 선형 어텐션 버전으로 변환합니다. 우리는 SARA-RT의 효과를 다음을 가속화함으로써 입증합니다: (a) 최근 도입된 RT-2 모델 클래스(인터넷 규모 데이터로 사전 훈련된 최초의 VLA 로봇 정책) 및 (b) 대규모 포인트 클라우드에서 작동하는 포인트 클라우드 트랜스포머(PCT) 로봇 정책. 또한, SARA 현상에 대한 더 깊은 통찰을 제공하는 엄격한 수학적 분석으로 결과를 보완합니다.
-
 ## 参考
 - http://arxiv.org/abs/2312.01990v1
+
+## 개요
+SARA-RT는 실제 로봇에 Transformer 모델을 배포할 때 직면하는 확장 문제를 해결하기 위해 설계되었습니다. 이는 "업트레이닝(up-training)"이라는 미세 조정 기법을 제안하여, 원래 2차 시간 복잡도를 가진 사전 훈련된 Transformer 정책(예: 10억 파라미터급 비전-언어-행동 모델 VLA)을 효율적으로 선형 어텐션 버전으로 변환함으로써 계산 오버헤드를 크게 줄입니다. 이 방법은 두 가지 모델 클래스에서 검증되었습니다: 인터넷 규모 데이터로 사전 훈련된 RT-2 시리즈 VLA 정책과 대규모 포인트 클라우드를 처리하는 Point Cloud Transformer 정책입니다. 실험 결과, SARA-RT는 모델의 기존 고품질 출력을 유지하면서 추론 속도를 크게 향상시켰습니다.
+
+## 핵심 내용
+### 방법 핵심: 업트레이닝과 선형 어텐션 변환
+SARA-RT의 핵심 혁신은 "업트레이닝" 미세 조정 프로세스입니다. 이 프로세스는 사전 훈련되거나 미세 조정된 2차 복잡도 Transformer 정책(예: RT-2 또는 PCT)을 시작점으로 삼아, 특정 훈련 전략을 통해 어텐션 메커니즘을 선형 어텐션 변형으로 교체합니다. 이 변환은 모델의 계산 복잡도를 O(n²)에서 O(n)으로 낮추며, 여기서 n은 시퀀스 길이로, 모델 품질을 유지하면서 효율적인 추론을 가능하게 합니다.
+
+### 실험 검증 및 핵심 결과
+- **RT-2 모델 가속화**: SARA-RT는 RT-2 시리즈 VLA 모델에 성공적으로 적용되었습니다. RT-2는 인터넷 규모 데이터로 사전 훈련된 최초의 비전-언어-행동 정책으로, 파라미터 수가 10억 단위에 달합니다. 변환 후, 로봇 조작 작업에서 추론 속도가 크게 향상되었으며, 작업 성공률은 눈에 띄게 감소하지 않았습니다.
+- **Point Cloud Transformer 가속화**: 대규모 포인트 클라우드를 처리하는 PCT 정책의 경우, SARA-RT는 동일하게 선형 어텐션 변환을 구현했습니다. 포인트 클라우드 데이터는 일반적으로 많은 수의 포인트(큰 시퀀스 길이)를 포함하므로, 2차 복잡도는 이 시나리오에서 특히 계산 부담이 큽니다. 변환 후, PCT의 추론 효율성이 크게 향상되어 실시간 로봇 제어에 적합해졌습니다.
+- **수학적 분석**: 연구팀은 엄격한 수학적 분석을 제공하여 SARA 메커니즘의 작동 원리를 깊이 설명하고, 로봇 정책에서 선형 어텐션의 효과성에 대한 이론적 근거를 제시했습니다.
+
+### 결론
+SARA-RT는 업트레이닝 방법을 통해 대규모 로봇 Transformer 정책( VLA 및 포인트 클라우드 모델 포함)을 2차 복잡도에서 선형 복잡도로 성공적으로 변환하여, 고품질을 유지하면서 실제 배포에 필요한 가속화를 달성했습니다. 이 패러다임은 향후 로봇 기반 모델의 확장과 실시간 응용을 위한 실행 가능한 경로를 제공합니다.

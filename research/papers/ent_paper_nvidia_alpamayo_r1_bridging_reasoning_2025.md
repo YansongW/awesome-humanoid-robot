@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.00088v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.00088v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1018 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,32 @@ Alpamayo-R1 通过将可解释的因果推理与精确轨迹控制相结合，�
 ## Overview
 End-to-end architectures trained via imitation learning have advanced autonomous driving by scaling model size and data, yet performance remains brittle in safety-critical long-tail scenarios where supervision is sparse and causal understanding is limited. We introduce Alpamayo-R1 (AR1), a vision-language-action model (VLA) that integrates Chain of Causation reasoning with trajectory planning for complex driving scenarios. Our approach features three key innovations: (1) the Chain of Causation (CoC) dataset, built through a hybrid auto-labeling and human-in-the-loop pipeline producing decision-grounded, causally linked reasoning traces aligned with driving behaviors; (2) a modular VLA architecture combining Cosmos-Reason, a vision-language model pre-trained for Physical AI, with a diffusion-based trajectory decoder that generates dynamically feasible trajectories in real time; (3) a multi-stage training strategy using supervised fine-tuning to elicit reasoning and reinforcement learning (RL) to enforce reasoning-action consistency and optimize reasoning quality. AR1 achieves up to a 12% improvement in planning accuracy on challenging cases compared to a trajectory-only baseline, with a 35% reduction in close encounter rate in closed-loop simulation. RL post-training improves reasoning quality by 45% and reasoning-action consistency by 37%. Model scaling from 0.5B to 7B parameters shows consistent improvements. On-vehicle road tests confirm real-time performance (99 ms latency) and successful urban deployment. By bridging interpretable reasoning with precise control, AR1 demonstrates a practical path towards Level 4 autonomous driving. Model weights are available at https://huggingface.co/nvidia/Alpamayo-R1-10B with inference code at https://github.com/NVlabs/alpamayo.
 
-## 개요
-모방 학습을 통해 훈련된 엔드투엔드 아키텍처는 모델 크기와 데이터를 확장하여 자율 주행을 발전시켰지만, 감독이 부족하고 인과 관계 이해가 제한적인 안전에 중요한 롱테일 시나리오에서는 성능이 여전히 취약합니다. 우리는 복잡한 주행 시나리오를 위해 인과 사슬 추론과 궤적 계획을 통합하는 비전-언어-행동 모델(VLA)인 Alpamayo-R1(AR1)을 소개합니다. 우리의 접근 방식은 세 가지 주요 혁신을 특징으로 합니다: (1) 하이브리드 자동 레이블링 및 인간-인-더-루프 파이프라인을 통해 구축된 인과 사슬(CoC) 데이터셋으로, 주행 행동과 정렬된 결정 기반의 인과적으로 연결된 추론 흔적을 생성합니다; (2) Physical AI를 위해 사전 훈련된 비전-언어 모델인 Cosmos-Reason과 실시간으로 동적으로 실행 가능한 궤적을 생성하는 확산 기반 궤적 디코더를 결합한 모듈식 VLA 아키텍처; (3) 추론을 유도하기 위한 지도 미세 조정과 추론-행동 일관성을 강화하고 추론 품질을 최적화하기 위한 강화 학습(RL)을 사용하는 다단계 훈련 전략. AR1은 궤적 전용 기준선과 비교하여 까다로운 사례에서 계획 정확도를 최대 12% 향상시키고, 폐루프 시뮬레이션에서 근접 조우율을 35% 감소시킵니다. RL 사후 훈련은 추론 품질을 45%, 추론-행동 일관성을 37% 향상시킵니다. 0.5B에서 7B 파라미터로의 모델 확장은 일관된 개선을 보여줍니다. 차량 내 도로 테스트는 실시간 성능(99ms 지연 시간)과 성공적인 도시 배치를 확인합니다. 해석 가능한 추론과 정밀한 제어를 연결함으로써 AR1은 레벨 4 자율 주행을 향한 실용적인 경로를 보여줍니다. 모델 가중치는 https://huggingface.co/nvidia/Alpamayo-R1-10B에서, 추론 코드는 https://github.com/NVlabs/alpamayo에서 확인할 수 있습니다.
-
-## 핵심 내용
-모방 학습을 통해 훈련된 엔드투엔드 아키텍처는 모델 크기와 데이터를 확장하여 자율 주행을 발전시켰지만, 감독이 부족하고 인과 관계 이해가 제한적인 안전에 중요한 롱테일 시나리오에서는 성능이 여전히 취약합니다. 우리는 복잡한 주행 시나리오를 위해 인과 사슬 추론과 궤적 계획을 통합하는 비전-언어-행동 모델(VLA)인 Alpamayo-R1(AR1)을 소개합니다. 우리의 접근 방식은 세 가지 주요 혁신을 특징으로 합니다: (1) 하이브리드 자동 레이블링 및 인간-인-더-루프 파이프라인을 통해 구축된 인과 사슬(CoC) 데이터셋으로, 주행 행동과 정렬된 결정 기반의 인과적으로 연결된 추론 흔적을 생성합니다; (2) Physical AI를 위해 사전 훈련된 비전-언어 모델인 Cosmos-Reason과 실시간으로 동적으로 실행 가능한 궤적을 생성하는 확산 기반 궤적 디코더를 결합한 모듈식 VLA 아키텍처; (3) 추론을 유도하기 위한 지도 미세 조정과 추론-행동 일관성을 강화하고 추론 품질을 최적화하기 위한 강화 학습(RL)을 사용하는 다단계 훈련 전략. AR1은 궤적 전용 기준선과 비교하여 까다로운 사례에서 계획 정확도를 최대 12% 향상시키고, 폐루프 시뮬레이션에서 근접 조우율을 35% 감소시킵니다. RL 사후 훈련은 추론 품질을 45%, 추론-행동 일관성을 37% 향상시킵니다. 0.5B에서 7B 파라미터로의 모델 확장은 일관된 개선을 보여줍니다. 차량 내 도로 테스트는 실시간 성능(99ms 지연 시간)과 성공적인 도시 배치를 확인합니다. 해석 가능한 추론과 정밀한 제어를 연결함으로써 AR1은 레벨 4 자율 주행을 향한 실용적인 경로를 보여줍니다. 모델 가중치는 https://huggingface.co/nvidia/Alpamayo-R1-10B에서, 추론 코드는 https://github.com/NVlabs/alpamayo에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.00088v2
+
+## 개요
+Alpamayo-R1은 안전이 중요한 장기(long-tail) 시나리오에서 엔드투엔드 모방 학습의 취약성 문제를 해결하기 위해, 인과 추론과 궤적 계획을 융합한 비전-언어-행동 모델을 제안합니다. 이 모델은 세 가지 주요 혁신을 포함합니다: 혼합 자동 주석 및 수동 참여 프로세스로 구축된 인과 추론 데이터셋, 사전 훈련된 비전-언어 모델과 확산 궤적 디코더를 결합한 모듈형 아키텍처, 그리고 지도 미세 조정과 강화 학습을 결합한 다단계 훈련 전략입니다. 실험 결과, 이 모델은 도전적인 시나리오에서 계획 정확도를 12% 향상시키고, 폐루프 시뮬레이션에서 근접 접촉률을 35% 감소시켰으며, 강화 학습 후 추론 품질을 45% 향상시키고 추론-행동 일관성을 37% 개선했으며, 실차 테스트에서 99밀리초 지연 시간의 실시간 성능을 달성했습니다.
+
+## 핵심 내용
+### 방법 개요
+Alpamayo-R1은 모듈형 비전-언어-행동 아키텍처를 채택하여 인과 추론과 궤적 계획을 두 개의 협력 모듈로 분리합니다:
+- **Cosmos-Reason 비전-언어 모델**: Physical AI용으로 사전 훈련된 모델을 기반으로, 다중 시점 이미지 입력에서 인과 추론 체인을 생성하여 운전 결정의 인과 논리를 설명합니다.
+- **확산 궤적 디코더**: 확산 모델을 기반으로 추론 결과를 동적으로 실행 가능한 궤적으로 변환하며, 실시간 생성을 지원합니다.
+
+### 데이터셋 구축
+- **Chain of Causation 데이터셋**: 혼합 자동 주석 및 수동 참여 프로세스를 통해 생성되며, 운전 행동과 정렬된 결정 중심의 인과 추론 궤적을 포함합니다. 이 프로세스는 추론 체인의 인과 일관성을 보장하고, 장기 시나리오에서의 희소 감독 문제를 다룹니다.
+
+### 훈련 전략
+다단계 훈련을 채택합니다:
+1. **지도 미적분**: CoC 데이터셋에서 미세 조정하여 모델이 인과 추론 체인을 생성하도록 학습시킵니다.
+2. **강화 학습**: 보상 함수를 통해 추론 품질과 추론-행동 일관성을 최적화하며, 보상 설계는 추론 논리의 합리성(예: 인과 체인의 완전성)과 궤적 실행의 안전성(예: 충돌 회피)을 동시에 고려합니다.
+
+### 실험 설정 및 주요 결과
+- **기준 비교**: 도전적인 장기 시나리오에서 AR1은 순수 궤적 기준선(trajectory-only baseline) 대비 계획 정확도를 12% 향상시킵니다.
+- **폐루프 시뮬레이션**: 근접 접촉률이 35% 감소하여 안전성이 크게 향상되었음을 나타냅니다.
+- **추론 품질**: RL 후 훈련으로 추론 품질이 45% 향상되고, 추론-행동 일관성이 37% 개선됩니다.
+- **모델 확장**: 0.5B에서 7B 파라미터 규모까지 성능이 지속적으로 향상되어 아키텍처의 확장성을 검증합니다.
+- **실차 테스트**: 도시 도로 배치에서 99밀리초 지연 시간을 달성하여 실시간 요구 사항을 충족합니다.
+
+### 결론
+Alpamayo-R1은 해석 가능한 인과 추론과 정밀한 궤적 제어를 결합하여 Level 4 자율 주행을 위한 실용적인 경로를 제공합니다. 모델 가중치와 추론 코드는 오픈소스로 공개되었습니다.

@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1911.01557v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1911.01557v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (596 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,14 +74,47 @@ theoretical_depth:
 ### 资源获取
 所有基准测试材料（协议、数据集、评估代码）均开源发布于：https://research.csiro.au/robotics/manipulation-benchmark/
 
-## Overview
-We present a benchmark to facilitate simulated manipulation; an attempt to overcome the obstacles of physical benchmarks through the distribution of a real world, ground truth dataset. Users are given various simulated manipulation tasks with assigned protocols having the objective of replicating the real world results of a recorded dataset. The benchmark comprises of a range of metrics used to characterise the successes of submitted environments whilst providing insight into their deficiencies. We apply our benchmark to two simulation environments, PyBullet and V-Rep, and publish the results. All materials required to benchmark an environment, including protocols and the dataset, can be found at the benchmarks' website https://research.csiro.au/robotics/manipulation-benchmark/.
-
-## 개요
-우리는 시뮬레이션 조작을 촉진하기 위한 벤치마크를 제시합니다. 이는 실제 세계의 실측 데이터셋을 배포함으로써 물리적 벤치마크의 장애물을 극복하려는 시도입니다. 사용자에게는 기록된 데이터셋의 실제 세계 결과를 재현하는 것을 목표로 하는 할당된 프로토콜과 함께 다양한 시뮬레이션 조작 작업이 제공됩니다. 이 벤치마크는 제출된 환경의 성공을 특성화하고 그 결함에 대한 통찰력을 제공하는 데 사용되는 다양한 지표로 구성됩니다. 우리는 이 벤치마크를 PyBullet과 V-Rep이라는 두 가지 시뮬레이션 환경에 적용하고 결과를 게시합니다. 프로토콜과 데이터셋을 포함하여 환경을 벤치마킹하는 데 필요한 모든 자료는 벤치마크 웹사이트 https://research.csiro.au/robotics/manipulation-benchmark/에서 확인할 수 있습니다.
-
-## 핵심 내용
-우리는 시뮬레이션 조작을 촉진하기 위한 벤치마크를 제시합니다. 이는 실제 세계의 실측 데이터셋을 배포함으로써 물리적 벤치마크의 장애물을 극복하려는 시도입니다. 사용자에게는 기록된 데이터셋의 실제 세계 결과를 재현하는 것을 목표로 하는 할당된 프로토콜과 함께 다양한 시뮬레이션 조작 작업이 제공됩니다. 이 벤치마크는 제출된 환경의 성공을 특성화하고 그 결함에 대한 통찰력을 제공하는 데 사용되는 다양한 지표로 구성됩니다. 우리는 이 벤치마크를 PyBullet과 V-Rep이라는 두 가지 시뮬레이션 환경에 적용하고 결과를 게시합니다. 프로토콜과 데이터셋을 포함하여 환경을 벤치마킹하는 데 필요한 모든 자료는 벤치마크 웹사이트 https://research.csiro.au/robotics/manipulation-benchmark/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/1911.01557v2
+
+## Overview
+This benchmark assists researchers in reproducing real-world manipulation outcomes within simulated environments by providing a real-world motion capture dataset and standardized protocols. It encompasses 23 kinematic and dynamic metrics to evaluate the success of simulation environments and reveal their shortcomings. The authors have applied the benchmark to two simulation environments, PyBullet and V-Rep, and have made all testing materials publicly available, including protocols and datasets.
+
+## Content
+### Core Contributions
+- Introduces the first simulation manipulation benchmark based on real-world motion capture data, enabling evaluation of simulation environments without physical hardware.
+- Provides 23 kinematic and dynamic metrics to quantify the gap between simulation and real environments (sim2real gap).
+- Standardized protocols require users to complete specified manipulation tasks and reproduce the real results from the recorded dataset.
+
+### Experimental Setup
+- Test environments: Two mainstream physics simulation engines, PyBullet and V-Rep.
+- Dataset: Real-world motion capture data, including complete trajectories of manipulation tasks.
+- Evaluation metrics: 23 metrics covering kinematic (e.g., joint angles, end-effector trajectories) and dynamic (e.g., forces, torques) characteristics.
+
+### Key Results
+- Neither simulation environment fully reproduced the real data results, indicating a significant sim2real gap.
+- The benchmark successfully identified specific deficiencies in each environment, such as PyBullet performing poorly in contact dynamics and V-Rep showing deviations in joint friction modeling.
+
+### Resource Access
+All benchmark materials (protocols, datasets, evaluation code) are open-sourced and available at: https://research.csiro.au/robotics/manipulation-benchmark/
+
+## 개요
+이 벤치마크는 실제 세계 모션 캡처 데이터셋과 표준화된 프로토콜을 제공하여 연구자들이 시뮬레이션 환경에서 실제 조작 결과를 재현할 수 있도록 돕습니다. 여기에는 시뮬레이션 환경의 성공 정도를 평가하고 결함을 드러내는 23가지 운동학 및 동역학 지표가 포함됩니다. 저자들은 이 벤치마크를 PyBullet과 V-Rep 두 시뮬레이션 환경에 적용했으며, 프로토콜과 데이터셋을 포함한 모든 테스트 자료를 공개했습니다.
+
+## 핵심 내용
+### 핵심 기여
+- 실제 세계 모션 캡처 데이터를 기반으로 한 최초의 시뮬레이션 조작 벤치마크를 제안하여, 물리적 하드웨어 없이도 시뮬레이션 환경을 평가할 수 있음
+- 시뮬레이션과 실제 환경 간의 차이(sim2real gap)를 정량화하는 23가지 운동학 및 동역학 지표 제공
+- 표준화된 프로토콜은 사용자가 지정된 조작 작업을 완료하고, 기록된 데이터셋의 실제 결과를 재현하도록 요구함
+
+### 실험 설정
+- 테스트 환경: PyBullet과 V-Rep 두 주요 물리 시뮬레이션 엔진
+- 데이터셋: 조작 작업의 전체 궤적을 포함한 실제 세계 모션 캡처 데이터
+- 평가 지표: 23가지 지표는 운동학(예: 관절 각도, 말단 효과기 궤적) 및 동역학(예: 힘, 토크) 특성을 포함
+
+### 주요 결과
+- 두 시뮬레이션 환경 모두 실제 데이터 결과를 완전히 재현하지 못했으며, 상당한 sim2real 차이가 존재함
+- 벤치마크는 각 환경의 구체적인 결함을 성공적으로 식별했으며, 예를 들어 PyBullet은 접촉 동역학에서 성능이 낮고, V-Rep은 관절 마찰 모델링에서 편차를 보임
+
+### 자료 획득
+모든 벤치마크 테스트 자료(프로토콜, 데이터셋, 평가 코드)는 오픈소스로 공개되어 있으며, 다음에서 확인할 수 있습니다: https://research.csiro.au/robotics/manipulation-benchmark/

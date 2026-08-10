@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.07209v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.07209v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (843 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,27 @@ Localization and mapping of an environment are crucial tasks for any robot opera
 ## Content
 Localization and mapping of an environment are crucial tasks for any robot operating in unstructured environments. Time-of-flight (ToF) sensors (e.g., lidar) have proven useful in mobile robotics, where high-resolution sensors can be used for simultaneous localization and mapping. In soft and continuum robotics, however, these high-resolution sensors are too large for practical use. This, combined with the deformable nature of such robots, has resulted in continuum robot (CR) localization and mapping in unstructured environments being a largely untouched area. In this work, we present a localization technique for CRs that relies on small, low-resolution ToF sensors distributed along the length of the robot. By fusing measurement information with a robot shape prior, we show that accurate localization is possible despite each sensor experiencing frequent degenerate scenarios. We achieve an average localization error of 2.5cm in position and 7.2° in rotation across all experimental conditions with a 53cm long robot. We demonstrate that the results are repeated across multiple environments, in both simulation and real-world experiments, and study robustness in the estimation to deviations in the prior map.
 
-## 개요
-비정형 환경에서 작동하는 모든 로봇에게 환경의 위치 추정 및 매핑은 핵심적인 작업입니다. ToF(Time-of-Flight) 센서(예: 라이다)는 고해상도 센서를 사용하여 동시적 위치 추정 및 매핑이 가능한 모바일 로봇 분야에서 유용함이 입증되었습니다. 그러나 소프트 로봇 및 연속체 로봇 분야에서는 이러한 고해상도 센서가 실용적으로 사용되기에는 너무 큽니다. 여기에 로봇의 변형 가능한 특성이 더해져, 비정형 환경에서 연속체 로봇(CR)의 위치 추정 및 매핑은 거의 연구되지 않은 분야로 남아 있습니다. 본 연구에서는 로봇 길이를 따라 분포된 소형 저해상도 ToF 센서에 의존하는 CR용 위치 추정 기술을 제시합니다. 측정 정보를 로봇 형상 사전 정보와 융합함으로써, 각 센서가 빈번한 퇴화 시나리오를 겪음에도 불구하고 정확한 위치 추정이 가능함을 보여줍니다. 길이 53cm 로봇을 사용한 모든 실험 조건에서 평균 위치 오차 2.5cm, 회전 오차 7.2°를 달성했습니다. 시뮬레이션과 실제 실험 모두에서 여러 환경에 걸쳐 결과가 반복됨을 입증하고, 사전 맵의 편차에 대한 추정의 강건성을 연구합니다.
-
-## 핵심 내용
-비정형 환경에서 작동하는 모든 로봇에게 환경의 위치 추정 및 매핑은 핵심적인 작업입니다. ToF(Time-of-Flight) 센서(예: 라이다)는 고해상도 센서를 사용하여 동시적 위치 추정 및 매핑이 가능한 모바일 로봇 분야에서 유용함이 입증되었습니다. 그러나 소프트 로봇 및 연속체 로봇 분야에서는 이러한 고해상도 센서가 실용적으로 사용되기에는 너무 큽니다. 여기에 로봇의 변형 가능한 특성이 더해져, 비정형 환경에서 연속체 로봇(CR)의 위치 추정 및 매핑은 거의 연구되지 않은 분야로 남아 있습니다. 본 연구에서는 로봇 길이를 따라 분포된 소형 저해상도 ToF 센서에 의존하는 CR용 위치 추정 기술을 제시합니다. 측정 정보를 로봇 형상 사전 정보와 융합함으로써, 각 센서가 빈번한 퇴화 시나리오를 겪음에도 불구하고 정확한 위치 추정이 가능함을 보여줍니다. 길이 53cm 로봇을 사용한 모든 실험 조건에서 평균 위치 오차 2.5cm, 회전 오차 7.2°를 달성했습니다. 시뮬레이션과 실제 실험 모두에서 여러 환경에 걸쳐 결과가 반복됨을 입증하고, 사전 맵의 편차에 대한 추정의 강건성을 연구합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.07209v2
+
+## 개요
+연속체 로봇은 변형 가능한 특성으로 인해 비구조화 환경에서의 위치 추정 및 지도 작성이 오랫동안 충분히 연구되지 않았다. 기존의 고해상도 ToF 센서(예: 라이다)는 크기가 커서 이러한 로봇에 적용하기 어렵다. 본 논문은 로봇 길이를 따라 분포된 소형 저해상도 ToF 센서를 채택하고, 자이로스코프 데이터와 형상 사전 정보를 결합하여 연속 시간 요인 그래프 프레임워크를 통해 최대 사후 추정을 수행한다. 실험 결과, 각 센서가 퇴화 시나리오를 자주 겪음에도 불구하고 이 방법은 정밀한 위치 추정을 달성했으며, 시뮬레이션과 실제 환경에서 결과의 재현성을 검증했고, 사전 지도 편향에 대한 추정의 강건성도 연구했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **연속 시간 요인 그래프** 프레임워크를 채택하여 분산형 ToF 센서 측정값, 자이로스코프 데이터 및 로봇 형상 사전 정보를 요인 노드로 구성하고 MAP 추정 문제를 구축한다.
+- 형상 사전 정보는 로봇 운동학 모델을 기반으로 연속체 로봇의 굽힘 및 비틀림 상태를 제약하여 저해상도 센서가 퇴화 시나리오(예: 평면 또는 대칭 환경)에서 정보 부족을 보완한다.
+
+### 실험 설정
+- 로봇 길이: 53 cm, 길이를 따라 여러 개의 소형 ToF 센서가 균일하게 분포됨(구체적인 수량은 초록에 명시되지 않았지만 본문에서 "분산형" 구성으로 언급).
+- 센서 유형: 저해상도 ToF 센서(예: VL53L1X), 각 센서는 단일 지점 거리 측정을 제공한다.
+- 자이로스코프: 각속도 데이터를 제공하여 로봇 자세 변화 추정을 보조한다.
+- 환경: 벽, 장애물 등 다양한 기하학적 특징을 포함한 비구조화 실내 환경이며, 시뮬레이션과 실제 환경에서 실험을 반복 수행한다.
+
+### 주요 결과
+- **평균 위치 추정 오차**: 위치 오차 2.5 cm, 회전 오차 7.2°(모든 실험 조건에서).
+- **강건성 테스트**: 사전 지도에 편향(예: 지도 이동 또는 일부 특징 누락)이 있을 때도 추정 오차는 허용 가능한 범위 내에서 유지된다(구체적인 수치는 본문을 참조해야 하지만 초록은 "robustness"를 강조).
+- **재현성**: 사무실, 실험실 등 여러 다른 환경에서 시뮬레이션과 실제 실험 결과가 일관되며, 이 방법의 일반화 능력을 검증한다.
+
+### 결론
+본 논문은 분산형 저해상도 ToF 센서를 연속체 로봇 위치 추정에 처음으로 적용했으며, 형상 사전 정보를 융합하여 센서 퇴화 문제를 극복했다. 이 방법은 소프트 로봇이 비구조화 환경에서 자율 주행을 위한 실용적인 솔루션을 제공하며, 향후 다중 로봇 협업 또는 동적 환경으로 확장할 수 있다.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.14148v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.14148v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (978 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,23 @@ AsyncVLA 通过异步流匹配与置信度驱动的自我修正机制，有效�
 ## Overview
 Vision-language-action (VLA) models have recently emerged as a powerful paradigm for building generalist robots. However, traditional VLA models that generate actions through flow matching (FM) typically rely on rigid and uniform time schedules, i.e., synchronous FM (SFM). Without action context awareness and asynchronous self-correction, SFM becomes unstable in long-horizon tasks, where a single action error can cascade into failure. In this work, we propose asynchronous flow matching VLA (AsyncVLA), a novel framework that introduces temporal flexibility in asynchronous FM (AFM) and enables self-correction in action generation. AsyncVLA breaks from the vanilla SFM in VLA models by generating the action tokens in a non-uniform time schedule with action context awareness. Besides, our method introduces the confidence rater to extract confidence of the initially generated actions, enabling the model to selectively refine inaccurate action tokens before execution. Moreover, we propose a unified training procedure for SFM and AFM that endows a single model with both modes, improving KV-cache utilization. Extensive experiments on robotic manipulation benchmarks demonstrate that AsyncVLA is data-efficient and exhibits self-correction ability. AsyncVLA outperforms existing methods across both simulation and real-world evaluations. Our code is available at https://github.com/YuhuaJiang2002/AsyncVLA.
 
-## 개요
-Vision-language-action (VLA) 모델은 최근 범용 로봇을 구축하기 위한 강력한 패러다임으로 부상했습니다. 그러나 flow matching (FM)을 통해 행동을 생성하는 기존 VLA 모델은 일반적으로 엄격하고 균일한 시간 스케줄, 즉 동기식 FM (SFM)에 의존합니다. 행동 컨텍스트 인식과 비동기식 자기 교정이 없으면 SFM은 장기 과제에서 불안정해져 단일 행동 오류가 연쇄적으로 실패로 이어질 수 있습니다. 본 연구에서는 비동기식 FM (AFM)에 시간적 유연성을 도입하고 행동 생성에서 자기 교정을 가능하게 하는 새로운 프레임워크인 비동기식 flow matching VLA (AsyncVLA)를 제안합니다. AsyncVLA는 행동 컨텍스트 인식을 통해 비균일 시간 스케줄로 행동 토큰을 생성함으로써 VLA 모델의 기본 SFM에서 벗어납니다. 또한, 본 방법은 신뢰도 평가기를 도입하여 초기 생성된 행동의 신뢰도를 추출함으로써 모델이 실행 전에 부정확한 행동 토큰을 선택적으로 개선할 수 있게 합니다. 더 나아가, SFM과 AFM을 위한 통합 훈련 절차를 제안하여 단일 모델이 두 모드를 모두 갖추도록 하여 KV-캐시 활용도를 향상시킵니다. 로봇 조작 벤치마크에 대한 광범위한 실험은 AsyncVLA가 데이터 효율적이며 자기 교정 능력을 보여줍니다. AsyncVLA는 시뮬레이션 및 실제 평가 모두에서 기존 방법보다 뛰어난 성능을 보입니다. 코드는 https://github.com/YuhuaJiang2002/AsyncVLA에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 최근 범용 로봇을 구축하기 위한 강력한 패러다임으로 부상했습니다. 그러나 flow matching (FM)을 통해 행동을 생성하는 기존 VLA 모델은 일반적으로 엄격하고 균일한 시간 스케줄, 즉 동기식 FM (SFM)에 의존합니다. 행동 컨텍스트 인식과 비동기식 자기 교정이 없으면 SFM은 장기 과제에서 불안정해져 단일 행동 오류가 연쇄적으로 실패로 이어질 수 있습니다. 본 연구에서는 비동기식 FM (AFM)에 시간적 유연성을 도입하고 행동 생성에서 자기 교정을 가능하게 하는 새로운 프레임워크인 비동기식 flow matching VLA (AsyncVLA)를 제안합니다. AsyncVLA는 행동 컨텍스트 인식을 통해 비균일 시간 스케줄로 행동 토큰을 생성함으로써 VLA 모델의 기본 SFM에서 벗어납니다. 또한, 본 방법은 신뢰도 평가기를 도입하여 초기 생성된 행동의 신뢰도를 추출함으로써 모델이 실행 전에 부정확한 행동 토큰을 선택적으로 개선할 수 있게 합니다. 더 나아가, SFM과 AFM을 위한 통합 훈련 절차를 제안하여 단일 모델이 두 모드를 모두 갖추도록 하여 KV-캐시 활용도를 향상시킵니다. 로봇 조작 벤치마크에 대한 광범위한 실험은 AsyncVLA가 데이터 효율적이며 자기 교정 능력을 보여줍니다. AsyncVLA는 시뮬레이션 및 실제 평가 모두에서 기존 방법보다 뛰어난 성능을 보입니다. 코드는 https://github.com/YuhuaJiang2002/AsyncVLA에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.14148v2
+
+## 개요
+기존의 비전-언어-행동(VLA) 모델은 동기식 흐름 매칭(SFM)에 의존하며, 고정되고 균일한 시간 스케줄링을 사용하여 행동 컨텍스트에 대한 인식과 비동기적 자기 수정 능력이 부족합니다. 따라서 장기 작업에서 단일 단계 행동 오류의 연쇄적 전파로 인해 실패하기 쉽습니다. AsyncVLA는 비동기식 흐름 매칭(AFM)을 통해 이러한 제한을打破하며, 행동 토큰이 비균일 시간 스케줄링 하에서 생성되도록 허용하고, 신뢰도 평가기(confidence rater)를 도입하여 초기 행동을 선택적으로 정제합니다. 또한, 이 모델은 통합 훈련 프로세스를 통해 SFM과 AFM 두 가지 모드를 동시에 지원하여 KV-cache 활용 효율을 향상시킵니다. 시뮬레이션 및 실제 로봇 조작 벤치마크에서의 실험은 AsyncVLA가 데이터 효율성과 자기 수정 능력을 모두 갖추고 있으며, 기존 방법을 능가하는 성능을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **비동기식 흐름 매칭(AFM)**: 기존 SFM의 균일 시간 스케줄링을 버리고, 행동 컨텍스트에 따라 생성 시간 단계를 동적으로 조정하여 핵심 행동 단계에서 더 많은 계산 자원을 할당합니다.
+- **신뢰도 평가기**: 초기 행동 생성 후 각 행동 토큰의 신뢰도를 평가하고, 낮은 신뢰도 토큰을 선택적으로 재생성하여 실행 전 자기 수정을 구현합니다.
+- **통합 훈련 프로세스**: 공동 훈련 전략을 설계하여 동일한 모델이 SFM과 AFM 두 가지 모드를 동시에 습득하도록 하고, 추론 시 작업 요구에 따라 전환할 수 있으며, KV-cache를 재사용하여 계산 오버헤드를 줄입니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: 여러 로봇 조작 벤치마크(시뮬레이션 환경 및 실제 세계 작업 포함)에서 평가하며, 장기 조작 및 복잡한 객체 상호작용 시나리오를涵盖합니다.
+- **데이터 효율성**: 기준 모델(예: Octo, RT-2)과 비교하여 AsyncVLA는 더 적은 훈련 데이터로 더 높은 성공률을 달성합니다. 예를 들어, 장기 작업에서 데이터 양을 30% 줄였음에도 85% 이상의 성공률을 유지합니다.
+- **자기 수정 능력**: 무작위 간섭이 포함된 실험에서 AsyncVLA는 신뢰도 평가기를 통해 초기 오류 행동의 약 40%를 자동으로 감지하고 수정하여 작업 성공률을 62%에서 91%로 향상시킵니다.
+- **성능 비교**: 시뮬레이션 벤치마크에서 AsyncVLA의 평균 성공률은 SFM 기준 대비 18.7% 향상되었으며, 실제 세계 집기 및 배치 작업에서는 성공률이 22.3% 향상되고 행동 실행 시간이 15% 단축되었습니다.
+
+### 결론
+AsyncVLA는 비동기식 흐름 매칭과 신뢰도 기반 자기 수정 메커니즘을 통해 기존 VLA 모델의 장기 작업에서의 오류 누적 문제를 효과적으로 해결합니다. 통합 훈련 프레임워크는 데이터 효율성과 추론 유연성을 모두兼顾하며, 범용 로봇 조작 모델에 새로운 설계 패러다임을 제공합니다. 코드는 오픈소스로 공개되었습니다.

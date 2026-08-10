@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.14158v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.14158v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (768 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -82,11 +83,33 @@ Vision-language navigation (VLN) requires an agent to navigate through a 3D envi
 ## Content
 Vision-language navigation (VLN) requires an agent to navigate through a 3D environment based on visual observations and natural language instructions. It is clear that the pivotal factor for successful navigation lies in comprehensive scene understanding. Previous VLN agents employ monocular frameworks to extract 2D features of perspective views directly. Though straightforward, they struggle to capture 3D geometry and semantics, leading to a partial and incomplete environment representation. To achieve a comprehensive 3D representation with fine-grained details, we introduce a Volumetric Environment Representation (VER), which voxelizes the physical world into structured 3D cells. For each cell, VER aggregates multi-view 2D features into such a unified 3D space via 2D-3D sampling. Through coarse-to-fine feature extraction and multi-task learning for VER, our agent predicts 3D occupancy, 3D room layout, and 3D bounding boxes jointly. Based on online collected VERs, our agent performs volume state estimation and builds episodic memory for predicting the next step. Experimental results show our environment representations from multi-task learning lead to evident performance gains on VLN. Our model achieves state-of-the-art performance across VLN benchmarks (R2R, REVERIE, and R4R).
 
-## 개요
-Vision-language navigation (VLN)은 에이전트가 시각적 관찰과 자연어 명령을 기반으로 3D 환경을 탐색해야 하는 과제입니다. 성공적인 탐색의 핵심 요소는 포괄적인 장면 이해에 있음이 분명합니다. 기존 VLN 에이전트는 단안 프레임워크를 사용하여 원근 뷰의 2D 특징을 직접 추출합니다. 직관적이지만, 3D 기하학과 의미론을 포착하는 데 어려움을 겪어 부분적이고 불완전한 환경 표현을 초래합니다. 세부 정보를 포함한 포괄적인 3D 표현을 달성하기 위해, 우리는 물리적 세계를 구조화된 3D 셀로 복셀화하는 Volumetric Environment Representation (VER)을 도입합니다. 각 셀에 대해 VER은 2D-3D 샘플링을 통해 다중 뷰 2D 특징을 통합된 3D 공간으로 집계합니다. VER에 대한 coarse-to-fine 특징 추출 및 멀티태스크 학습을 통해, 우리의 에이전트는 3D 점유, 3D 방 레이아웃, 3D 바운딩 박스를 공동으로 예측합니다. 온라인으로 수집된 VER을 기반으로, 에이전트는 볼륨 상태 추정을 수행하고 다음 단계를 예측하기 위한 일화 기억을 구축합니다. 실험 결과, 멀티태스크 학습을 통한 환경 표현이 VLN에서 뚜렷한 성능 향상을 가져옴을 보여줍니다. 우리 모델은 VLN 벤치마크(R2R, REVERIE, R4R)에서 최첨단 성능을 달성합니다.
-
-## 핵심 내용
-Vision-language navigation (VLN)은 에이전트가 시각적 관찰과 자연어 명령을 기반으로 3D 환경을 탐색해야 하는 과제입니다. 성공적인 탐색의 핵심 요소는 포괄적인 장면 이해에 있음이 분명합니다. 기존 VLN 에이전트는 단안 프레임워크를 사용하여 원근 뷰의 2D 특징을 직접 추출합니다. 직관적이지만, 3D 기하학과 의미론을 포착하는 데 어려움을 겪어 부분적이고 불완전한 환경 표현을 초래합니다. 세부 정보를 포함한 포괄적인 3D 표현을 달성하기 위해, 우리는 물리적 세계를 구조화된 3D 셀로 복셀화하는 Volumetric Environment Representation (VER)을 도입합니다. 각 셀에 대해 VER은 2D-3D 샘플링을 통해 다중 뷰 2D 특징을 통합된 3D 공간으로 집계합니다. VER에 대한 coarse-to-fine 특징 추출 및 멀티태스크 학습을 통해, 우리의 에이전트는 3D 점유, 3D 방 레이아웃, 3D 바운딩 박스를 공동으로 예측합니다. 온라인으로 수집된 VER을 기반으로, 에이전트는 볼륨 상태 추정을 수행하고 다음 단계를 예측하기 위한 일화 기억을 구축합니다. 실험 결과, 멀티태스크 학습을 통한 환경 표현이 VLN에서 뚜렷한 성능 향상을 가져옴을 보여줍니다. 우리 모델은 VLN 벤치마크(R2R, REVERIE, R4R)에서 최첨단 성능을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2403.14158v1
+
+## 개요
+기존 VLN 방법은 단안 프레임워크에 의존하여 2D 투시도 특징을 추출하므로 3D 기하학적 및 의미론적 정보를 포착하기 어렵습니다. VER은 환경을 구조화된 3D 셀로 복셀화하고, 2D-3D 샘플링을 통해 다중 뷰 특징을 통합된 3D 공간에 집계합니다. 이 모델은 조대한 단계에서 정밀한 단계로의 특징 추출과 다중 작업 학습 프레임워크를 채택하여 3D 점유, 방 레이아웃, 경계 상자를 공동으로 예측하며, 온라인으로 구축된 복셀 표현을 기반으로 상태 추정 및 메모리 구축을 수행하고, 최종적으로 여러 벤치마크에서 현저한 성능 향상을 달성합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **복셀화 표현**: 물리적 세계를 구조화된 3D 셀(복셀)로 이산화하고, 각 셀은 2D-3D 샘플링을 통해 다중 시점 2D 특징을 집계합니다.
+- **다중 작업 학습**: 세 가지 유형의 3D 정보를 공동으로 예측합니다:
+  - 3D 점유(occupancy)
+  - 3D 방 레이아웃(room layout)
+  - 3D 경계 상자(bounding boxes)
+- **조대한 단계에서 정밀한 단계로의 특징 추출**: 복셀 특징을 계층적으로 처리하여 공간 해상도를 점진적으로 향상시킵니다.
+
+### 내비게이션 메커니즘
+- **온라인 복셀 상태 추정**: 실시간으로 구축된 VER을 기반으로 환경 상태를 추론합니다.
+- **상황 메모리 구축**: 과거 복셀 표현을 일화 메모리(episodic memory)로 저장하여 다음 행동을 예측하는 데 사용합니다.
+
+### 실험 설정
+- **벤치마크**: R2R, REVERIE, R4R
+- **비교 방법**: 단안 프레임워크 및 기존 SOTA 모델과 비교
+
+### 주요 결과
+- 다중 작업 학습으로 인한 환경 표현이 VLN 성능을 현저히 향상시킵니다.
+- 세 가지 벤치마크 모두에서 state-of-the-art 수준에 도달합니다.
+- 구체적 수치: R2R 성공률 X% 향상(원문에 구체적 수치 미제공, 보충 필요), REVERIE 및 R4R에서도 최적 결과 달성
+
+### 결론
+VER은 구조화된 3D 복셀 표현을 통해 기존 2D 방법의 기하학적 및 의미론적 포착 한계를 해결하고, 내비게이션 작업에 대한 다중 작업 학습의 효과를 검증합니다.

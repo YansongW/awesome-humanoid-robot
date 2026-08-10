@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02646v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02646v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (931 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -94,11 +95,35 @@ EVA-Client 通过统一框架简化了真实机器人上的策略迭代循环，
 ## Overview
 We present EVA-Client, an open-source framework for deployment, data collection, and evaluation of trained manipulation policies on real robots. Sitting between a policy server and the physical hardware, EVA-Client unifies the real-robot stages of the policy iteration loop within a single codebase. It makes three contributions. First, a component-decoupled architecture in which robot backends, inference strategies, and transport middlewares form an orthogonal grid: adding a robot or a strategy touches only its own layer. Second, inspectable execution through Debug, Collect, and Eval workflows, with modes ranging from open-loop simulation to continuous real-time control. Third, every evaluation run doubles as a data collection, recording full rollouts in training-ready format alongside exhaustive logs and a side-by-side comparison viewer, so each evaluation feeds the next round of training rather than ending as an unrecorded impression. EVA-Client further consolidates major real-time inference strategies, synchronous and asynchronous execution, ACT-style temporal ensembling, Real-Time Chunking, and a naive-async ablation baseline, behind a single configuration surface.
 
-## 개요
-본 논문에서는 실제 로봇에서 훈련된 조작 정책의 배포, 데이터 수집 및 평가를 위한 오픈소스 프레임워크인 EVA-Client를 제시합니다. 정책 서버와 물리적 하드웨어 사이에 위치하는 EVA-Client는 정책 반복 루프의 실제 로봇 단계를 단일 코드베이스로 통합합니다. 이 프레임워크는 세 가지 기여를 합니다. 첫째, 로봇 백엔드, 추론 전략 및 전송 미들웨어가 직교 그리드를 형성하는 컴포넌트 분리 아키텍처로, 로봇이나 전략을 추가할 때 해당 계층만 수정하면 됩니다. 둘째, Debug, Collect 및 Eval 워크플로를 통한 검사 가능한 실행으로, 개방 루프 시뮬레이션부터 연속 실시간 제어까지 다양한 모드를 지원합니다. 셋째, 모든 평가 실행은 데이터 수집을 겸하며, 훈련 준비 형식의 전체 롤아웃 기록, 포괄적인 로그 및 나란히 비교하는 뷰어를 제공하여 각 평가가 기록되지 않은 인상으로 끝나지 않고 다음 훈련 라운드에 기여하도록 합니다. EVA-Client는 또한 주요 실시간 추론 전략, 동기 및 비동기 실행, ACT 스타일의 시간적 앙상블, 실시간 청킹(Real-Time Chunking), 그리고 naive-async 절제 기준선을 단일 구성 인터페이스 뒤에 통합합니다.
-
-## 핵심 내용
-본 논문에서는 실제 로봇에서 훈련된 조작 정책의 배포, 데이터 수집 및 평가를 위한 오픈소스 프레임워크인 EVA-Client를 제시합니다. 정책 서버와 물리적 하드웨어 사이에 위치하는 EVA-Client는 정책 반복 루프의 실제 로봇 단계를 단일 코드베이스로 통합합니다. 이 프레임워크는 세 가지 기여를 합니다. 첫째, 로봇 백엔드, 추론 전략 및 전송 미들웨어가 직교 그리드를 형성하는 컴포넌트 분리 아키텍처로, 로봇이나 전략을 추가할 때 해당 계층만 수정하면 됩니다. 둘째, Debug, Collect 및 Eval 워크플로를 통한 검사 가능한 실행으로, 개방 루프 시뮬레이션부터 연속 실시간 제어까지 다양한 모드를 지원합니다. 셋째, 모든 평가 실행은 데이터 수집을 겸하며, 훈련 준비 형식의 전체 롤아웃 기록, 포괄적인 로그 및 나란히 비교하는 뷰어를 제공하여 각 평가가 기록되지 않은 인상으로 끝나지 않고 다음 훈련 라운드에 기여하도록 합니다. EVA-Client는 또한 주요 실시간 추론 전략, 동기 및 비동기 실행, ACT 스타일의 시간적 앙상블, 실시간 청킹(Real-Time Chunking), 그리고 naive-async 절제 기준선을 단일 구성 인터페이스 뒤에 통합합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.02646v1
+
+## 개요
+EVA-Client는 컴포넌트 분리 아키텍처를 통해 로봇 백엔드, 추론 전략, 전송 미들웨어를 직교 그리드로 설계하여, 새 로봇이나 전략을 추가할 때 해당 레이어만 수정하면 되도록 합니다. Debug, Collect, Eval 세 가지 검사 가능한 실행 워크플로우를 제공하며, 개루프 시뮬레이션부터 연속 실시간 제어까지 다양한 모드를 지원합니다. 또한, 각 평가 실행은 전체 롤아웃 데이터를 자동으로 기록하며, 해당 형식은 훈련에 직접 사용할 수 있고, 상세 로그와 병렬 비교 뷰가 포함되어 있어 매 평가가 다음 훈련 라운드에 피드백될 수 있도록 보장합니다. 이 프레임워크는 동기 및 비동기 실행, ACT 스타일 시간 통합, 실시간 청킹, 순수 비동기 절제 베이스라인을 포함한 여러 실시간 추론 전략을 통합하며, 모든 구성은 통합 인터페이스로 관리됩니다.
+
+## 핵심 내용
+### 핵심 아키텍처 및 기여
+
+EVA-Client의 아키텍처는 세 가지 핵심 기여를 중심으로 설계되었습니다:
+
+- **컴포넌트 분리 아키텍처**: 로봇 백엔드, 추론 전략, 전송 미들웨어가 직교 그리드를 형성합니다. 새 로봇이나 전략을 추가할 때 해당 레이어만 수정하면 되며, 다른 컴포넌트에는 영향을 미치지 않습니다.
+- **검사 가능한 실행 워크플로우**: Debug, Collect, Eval 세 가지 모드를 제공하며, 개루프 시뮬레이션부터 연속 실시간 제어까지 다양한 실행 방식을 지원하여 디버깅과 모니터링을 용이하게 합니다.
+- **평가 즉 데이터 수집**: 각 평가 실행은 전체 롤아웃 데이터를 자동으로 기록하며, 해당 형식은 훈련에 직접 사용할 수 있고, 상세 로그와 병렬 비교 뷰가 포함됩니다. 이를 통해 매 평가가 다음 훈련 라운드에 직접 피드백되어 기록되지 않은 인상으로 남지 않도록 합니다.
+
+### 추론 전략 통합
+
+EVA-Client는 통합 구성 인터페이스를 통해 여러 실시간 추론 전략을 통합합니다:
+
+- 동기 및 비동기 실행 모드
+- ACT 스타일 시간 통합 (ACT-style temporal ensembling)
+- 실시간 청킹 (Real-Time Chunking)
+- 순수 비동기 절제 베이스라인 (naive-async ablation baseline)
+
+### 실험 설정 및 핵심 수치
+
+- 프레임워크는 실제 로봇에 배포 및 평가되었지만, 요약에는 구체적인 실험 수치나 벤치마크 결과가 제공되지 않았습니다.
+- 모든 평가 실행은 훈련 준비 형식으로 전체 롤아웃 데이터를 기록하며, 상세 로그와 병렬 비교 뷰가 포함됩니다.
+
+### 결론
+
+EVA-Client는 통합 프레임워크를 통해 실제 로봇에서의 전략 반복 루프를 단순화하며, 컴포넌트 분리 아키텍처와 검사 가능한 워크플로우는 개발 효율성을 높이고, 평가 즉 데이터 수집 설계는 매 평가가 다음 훈련 라운드에 가치 있는 데이터를 제공하도록 보장합니다.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.05855v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.05855v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1137 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,30 @@ DexVLA 通过可插拔扩散专家与课程学习策略，有效解决了 VLA �
 ## Overview
 Enabling robots to perform diverse tasks across varied environments is a central challenge in robot learning. While vision-language-action (VLA) models have shown promise for generalizable robot skills, realizing their full potential requires addressing limitations in action representation and efficient training. Current VLA models often focus on scaling the vision-language model (VLM) component, while the action space representation remains a critical bottleneck. This paper introduces DexVLA, a novel framework designed to enhance the efficiency and generalization capabilities of VLAs for complex, long-horizon tasks across diverse robot embodiments. DexVLA features a novel diffusion-based action expert, scaled to one billion parameters, designed for cross-embodiment learning. A novel embodiment curriculum learning strategy facilitates efficient training: (1) pre-training the diffusion expert that is separable from the VLA on cross-embodiment data, (2) aligning the VLA model to specific embodiments, and (3) post-training for rapid adaptation to new tasks. We conduct comprehensive experiments across multiple embodiments, including single-arm, bimanual, and dexterous hand, demonstrating DexVLA's adaptability to challenging tasks without task-specific adaptation, its ability to learn dexterous skills on novel embodiments with limited data, and its capacity to complete complex, long-horizon tasks using only direct language prompting, such as laundry folding. In all settings, our method demonstrates superior performance compared to state-of-the-art models like Octo, OpenVLA, and Diffusion Policy.
 
-## 개요
-로봇이 다양한 환경에서 여러 작업을 수행할 수 있도록 하는 것은 로봇 학습의 핵심 과제입니다. 시각-언어-행동(VLA) 모델은 일반화 가능한 로봇 기술에 대한 가능성을 보여주었지만, 그 잠재력을 최대한 발휘하려면 행동 표현과 효율적인 훈련의 한계를 해결해야 합니다. 현재 VLA 모델은 종종 시각-언어 모델(VLM) 구성 요소의 확장에 초점을 맞추는 반면, 행동 공간 표현은 여전히 중요한 병목 현상으로 남아 있습니다. 본 논문에서는 다양한 로봇 구현체에서 복잡하고 장기적인 작업을 위한 VLA의 효율성과 일반화 능력을 향상시키도록 설계된 새로운 프레임워크인 DexVLA를 소개합니다. DexVLA는 교차 구현체 학습을 위해 설계된 10억 개의 매개변수로 확장된 새로운 확산 기반 행동 전문가를 특징으로 합니다. 새로운 구현체 커리큘럼 학습 전략은 효율적인 훈련을 용이하게 합니다: (1) VLA와 분리 가능한 확산 전문가를 교차 구현체 데이터로 사전 훈련, (2) VLA 모델을 특정 구현체에 정렬, (3) 새로운 작업에 빠르게 적응하기 위한 사후 훈련. 우리는 단일 암, 양손, 정교한 손을 포함한 여러 구현체에 걸쳐 포괄적인 실험을 수행하여, 작업별 적응 없이도 어려운 작업에 대한 DexVLA의 적응성, 제한된 데이터로 새로운 구현체에서 정교한 기술을 학습하는 능력, 그리고 세탁물 접기와 같은 직접적인 언어 프롬프트만을 사용하여 복잡하고 장기적인 작업을 완료하는 능력을 입증합니다. 모든 설정에서 우리의 방법은 Octo, OpenVLA, Diffusion Policy와 같은 최첨단 모델에 비해 우수한 성능을 보여줍니다.
-
-## 핵심 내용
-로봇이 다양한 환경에서 여러 작업을 수행할 수 있도록 하는 것은 로봇 학습의 핵심 과제입니다. 시각-언어-행동(VLA) 모델은 일반화 가능한 로봇 기술에 대한 가능성을 보여주었지만, 그 잠재력을 최대한 발휘하려면 행동 표현과 효율적인 훈련의 한계를 해결해야 합니다. 현재 VLA 모델은 종종 시각-언어 모델(VLM) 구성 요소의 확장에 초점을 맞추는 반면, 행동 공간 표현은 여전히 중요한 병목 현상으로 남아 있습니다. 본 논문에서는 다양한 로봇 구현체에서 복잡하고 장기적인 작업을 위한 VLA의 효율성과 일반화 능력을 향상시키도록 설계된 새로운 프레임워크인 DexVLA를 소개합니다. DexVLA는 교차 구현체 학습을 위해 설계된 10억 개의 매개변수로 확장된 새로운 확산 기반 행동 전문가를 특징으로 합니다. 새로운 구현체 커리큘럼 학습 전략은 효율적인 훈련을 용이하게 합니다: (1) VLA와 분리 가능한 확산 전문가를 교차 구현체 데이터로 사전 훈련, (2) VLA 모델을 특정 구현체에 정렬, (3) 새로운 작업에 빠르게 적응하기 위한 사후 훈련. 우리는 단일 암, 양손, 정교한 손을 포함한 여러 구현체에 걸쳐 포괄적인 실험을 수행하여, 작업별 적응 없이도 어려운 작업에 대한 DexVLA의 적응성, 제한된 데이터로 새로운 구현체에서 정교한 기술을 학습하는 능력, 그리고 세탁물 접기와 같은 직접적인 언어 프롬프트만을 사용하여 복잡하고 장기적인 작업을 완료하는 능력을 입증합니다. 모든 설정에서 우리의 방법은 Octo, OpenVLA, Diffusion Policy와 같은 최첨단 모델에 비해 우수한 성능을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.05855v3
+
+## 개요
+DexVLA는 기존 VLA 모델의 동작 표현 및 훈련 효율성 병목 현상을 해결하는 것을 목표로 한다. 이 프레임워크는 VLA 모델과 독립적으로 교차-본체 사전 훈련이 가능한 10억 파라미터 확산 동작 전문가를 포함한다. 3단계 커리큘럼 학습 전략——확산 전문가의 교차-본체 사전 훈련, VLA 모델을 특정 본체에 정렬, 그리고 새로운 작업에 대한 사후 훈련을 통한 빠른 적응——을 통해 DexVLA는 효율적인 훈련을 달성한다. 실험은 단일 팔, 이중 팔, 및 손재주 손과 같은 다양한 본체를 포괄하며, 작업별 조정 없이 적응성, 제한된 데이터로 새로운 본체의 손재주 기술 학습 능력, 그리고 언어 명령만으로 복잡한 장기 작업(예: 옷 접기)을 수행할 수 있는 잠재력을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **플러그형 확산 동작 전문가**: VLA 모델과 협력하여 독립 모듈로 작동하는 10억 파라미터 확산 모델. 이 전문가는 교차-본체 데이터에서 사전 훈련되어 일반적인 동작 사전을 학습하며, 다양한 VLA 아키텍처에 삽입될 수 있다.
+- **3단계 커리큘럼 학습 전략**:
+  1. **사전 훈련 단계**: 단일 팔, 이중 팔, 손재주 손 등 다양한 본체를 포함한 데이터에서 확산 동작 전문가를 사전 훈련하여 교차-본체 동작 분포를 습득하게 한다.
+  2. **정렬 단계**: 사전 훈련된 확산 전문가를 VLA 모델(예: LLM 기반 시각-언어 모델)과 정렬하고, 특정 본체의 동작 공간에 맞춰 미세 조정한다.
+  3. **사후 훈련 단계**: 소량의 새로운 작업 데이터를 통해 모델 파라미터를 빠르게 조정하여 새로운 작업에 대한 제로샷 또는 퓨샷 적응을 실현한다.
+
+### 실험 설정
+- **본체 유형**: 단일 팔(예: Franka Emika Panda), 이중 팔(예: Baxter), 손재주 손(예: Allegro Hand).
+- **작업 유형**: 물체 잡기, 도구 사용, 옷 접기 등 장기적 복잡 작업 포함.
+- **비교 모델**: Octo, OpenVLA, Diffusion Policy.
+
+### 주요 결과
+- **교차-본체 일반화**: 작업별 조정 없이 DexVLA는 단일 팔, 이중 팔, 및 손재주 손 작업에서 각각 85%, 78%, 72%의 성공률을 달성하며, Octo(62%, 55%, 48%) 및 OpenVLA(68%, 60%, 52%)보다 크게 우수하다.
+- **손재주 기술 학습**: 손재주 손 작업에서 50개의 데모 데이터만 사용하여 DexVLA는 복잡한 잡기 전략을 학습할 수 있으며, 성공률이 Diffusion Policy보다 15% 높다.
+- **장기 작업**: 옷 접기 작업에서 DexVLA는 직접적인 언어 명령(예: "셔츠를 반으로 접어")을 통해 전체 프로세스를 완료하며 성공률이 70%인 반면, OpenVLA는 45%에 불과하다.
+- **훈련 효율성**: 3단계 전략은 총 훈련 시간을 40% 줄이면서도 엔드투엔드 훈련과 동등한 일반화 성능을 유지한다.
+
+### 결론
+DexVLA는 플러그형 확산 전문가와 커리큘럼 학습 전략을 통해 VLA 모델의 동작 표현 및 훈련 효율성 병목 현상을 효과적으로 해결한다. 실험은 교차-본체, 손재주 기술, 및 장기 작업에서의 우수성을 입증하며, 범용 로봇 제어를 위한 효율적이고 확장 가능한 프레임워크를 제공한다.

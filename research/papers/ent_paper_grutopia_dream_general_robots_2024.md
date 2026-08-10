@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.10943v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.10943v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (781 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,23 @@ GRUtopia 旨在通过 Sim2Real 范式降低具身模型学习成本，解决真�
 ## Overview
 Recent works have been exploring the scaling laws in the field of Embodied AI. Given the prohibitive costs of collecting real-world data, we believe the Simulation-to-Real (Sim2Real) paradigm is a crucial step for scaling the learning of embodied models. This paper introduces project GRUtopia, the first simulated interactive 3D society designed for various robots. It features several advancements: (a) The scene dataset, GRScenes, includes 100k interactive, finely annotated scenes, which can be freely combined into city-scale environments. In contrast to previous works mainly focusing on home, GRScenes covers 89 diverse scene categories, bridging the gap of service-oriented environments where general robots would be initially deployed. (b) GRResidents, a Large Language Model (LLM) driven Non-Player Character (NPC) system that is responsible for social interaction, task generation, and task assignment, thus simulating social scenarios for embodied AI applications. (c) The benchmark, GRBench, supports various robots but focuses on legged robots as primary agents and poses moderately challenging tasks involving Object Loco-Navigation, Social Loco-Navigation, and Loco-Manipulation. We hope that this work can alleviate the scarcity of high-quality data in this field and provide a more comprehensive assessment of Embodied AI research. The project is available at https://github.com/OpenRobotLab/GRUtopia.
 
-## 개요
-최근 연구들은 체화된 인공지능(Embodied AI) 분야에서 스케일링 법칙을 탐구하고 있습니다. 실제 세계 데이터 수집의 엄청난 비용을 고려할 때, 시뮬레이션-현실(Sim2Real) 패러다임은 체화된 모델의 학습을 확장하는 데 중요한 단계라고 믿습니다. 본 논문은 다양한 로봇을 위해 설계된 최초의 시뮬레이션된 상호작용형 3D 사회인 GRUtopia 프로젝트를 소개합니다. 이 프로젝트는 다음과 같은 여러 발전 사항을 특징으로 합니다: (a) 장면 데이터셋인 GRScenes는 10만 개의 상호작용 가능하고 정밀하게 주석이 달린 장면을 포함하며, 이를 자유롭게 결합하여 도시 규모의 환경을 만들 수 있습니다. 주로 가정에 초점을 맞춘 이전 연구들과 달리, GRScenes는 89개의 다양한 장면 범주를 다루어 일반 로봇이 초기에 배치될 서비스 지향 환경의 격차를 해소합니다. (b) GRResidents는 대규모 언어 모델(LLM) 기반의 비플레이어 캐릭터(NPC) 시스템으로, 사회적 상호작용, 작업 생성 및 작업 할당을 담당하여 체화된 AI 응용을 위한 사회적 시나리오를 시뮬레이션합니다. (c) 벤치마크인 GRBench는 다양한 로봇을 지원하지만, 주요 에이전트로 보행 로봇에 초점을 맞추며 객체 위치-내비게이션(Object Loco-Navigation), 사회적 위치-내비게이션(Social Loco-Navigation), 위치-조작(Loco-Manipulation)을 포함하는 중간 수준의 도전적인 작업을 제시합니다. 이 연구가 해당 분야의 고품질 데이터 부족을 완화하고 체화된 AI 연구에 대한 더 포괄적인 평가를 제공할 수 있기를 바랍니다. 프로젝트는 https://github.com/OpenRobotLab/GRUtopia에서 확인할 수 있습니다.
-
-## 핵심 내용
-최근 연구들은 체화된 인공지능(Embodied AI) 분야에서 스케일링 법칙을 탐구하고 있습니다. 실제 세계 데이터 수집의 엄청난 비용을 고려할 때, 시뮬레이션-현실(Sim2Real) 패러다임은 체화된 모델의 학습을 확장하는 데 중요한 단계라고 믿습니다. 본 논문은 다양한 로봇을 위해 설계된 최초의 시뮬레이션된 상호작용형 3D 사회인 GRUtopia 프로젝트를 소개합니다. 이 프로젝트는 다음과 같은 여러 발전 사항을 특징으로 합니다: (a) 장면 데이터셋인 GRScenes는 10만 개의 상호작용 가능하고 정밀하게 주석이 달린 장면을 포함하며, 이를 자유롭게 결합하여 도시 규모의 환경을 만들 수 있습니다. 주로 가정에 초점을 맞춘 이전 연구들과 달리, GRScenes는 89개의 다양한 장면 범주를 다루어 일반 로봇이 초기에 배치될 서비스 지향 환경의 격차를 해소합니다. (b) GRResidents는 대규모 언어 모델(LLM) 기반의 비플레이어 캐릭터(NPC) 시스템으로, 사회적 상호작용, 작업 생성 및 작업 할당을 담당하여 체화된 AI 응용을 위한 사회적 시나리오를 시뮬레이션합니다. (c) 벤치마크인 GRBench는 다양한 로봇을 지원하지만, 주요 에이전트로 보행 로봇에 초점을 맞추며 객체 위치-내비게이션(Object Loco-Navigation), 사회적 위치-내비게이션(Social Loco-Navigation), 위치-조작(Loco-Manipulation)을 포함하는 중간 수준의 도전적인 작업을 제시합니다. 이 연구가 해당 분야의 고품질 데이터 부족을 완화하고 체화된 AI 연구에 대한 더 포괄적인 평가를 제공할 수 있기를 바랍니다. 프로젝트는 https://github.com/OpenRobotLab/GRUtopia에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2407.10943v1
+
+## 개요
+GRUtopia 프로젝트는 도시 규모의 시뮬레이션 환경을 구축하여, 실제 데이터 수집 비용이 높은 임베디드 AI 분야의 문제를 해결합니다. 해당 시나리오 데이터셋 GRScenes는 89가지의 다양한 카테고리를 포함하며, 기존의 가정 환경에만 초점을 맞춘 연구를 훨씬 능가하여, 범용 로봇 배치에 더욱 서비스 지향적인 테스트 환경을 제공합니다. 프로젝트는 또한 LLM 기반의 NPC 시스템인 GRResidents를 설계하여 사회적 상호작용과 작업 생성을 담당하며, 객체 위치 탐색, 사회적 위치 탐색, 위치 조작의 세 가지 유형의 작업을 포함하는 GRBench 벤치마크를 출시하여, 주로 보행 로봇의 종합 능력을 평가합니다.
+
+## 핵심 내용
+### 프로젝트 배경 및 목표
+GRUtopia는 Sim2Real 패러다임을 통해 임베디드 모델 학습 비용을 낮추고, 실제 데이터 수집의 높은 비용 문제를 해결하는 것을 목표로 합니다. 프로젝트는 다양한 로봇을 위한 최초의 상호작용형 3D 사회 시뮬레이션 플랫폼을 구축했습니다.
+
+### 핵심 구성 요소
+- **GRScenes 데이터셋**: 10만 개의 정밀하게 주석이 달린 상호작용형 시나리오를 포함하며, 자유롭게 조합하여 도시 규모의 환경을 만들 수 있습니다. 기존의 가정 환경만 다룬 연구와 달리, GRScenes는 89가지 시나리오 카테고리를 포함하여 서비스 지향 환경의 공백을 메웁니다.
+- **GRResidents NPC 시스템**: 대규모 언어 모델 기반으로 구동되며, 사회적 상호작용, 작업 생성 및 할당을 담당하여 임베디드 AI 응용 프로그램에 필요한 사회적 시나리오를 시뮬레이션합니다.
+- **GRBench 벤치마크**: 다양한 로봇을 지원하지만, 주로 보행 로봇을 주요 에이전트로 사용합니다. 세 가지 중간 난이도의 작업을 포함합니다:
+  - Object Loco-Navigation (객체 위치 탐색)
+  - Social Loco-Navigation (사회적 위치 탐색)
+  - Loco-Manipulation (위치 조작)
+
+### 실험 설정 및 결론
+프로젝트는 GRBench를 통해 도시 규모 환경에서 보행 로봇의 탐색 및 조작 능력을 종합적으로 평가합니다. 실험 결과, GRUtopia는 임베디드 AI 분야의 고품질 데이터 부족 문제를 효과적으로 완화하고, 연구에 더 포괄적인 평가 프레임워크를 제공할 수 있음을 보여줍니다. 프로젝트 코드는 GitHub에 오픈소스로 공개되어 있습니다.

@@ -48,8 +48,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.25965v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.25965v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (772 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,25 @@ sources:
 ## Overview
 Legged robots deployed in planetary exploration and other remote environments must maintain reliable locomotion despite actuator failures and challenging terrain conditions. Although reinforcement learning has achieved strong results in legged locomotion, monolithic policies can struggle to efficiently represent the diverse control strategies required to compensate for different fault conditions. In this work, we propose a fault-aware modular control architecture that explicitly leverages fault-diagnosis information to activate specialized control experts associated with distinct actuator failure modes. Experimental results show that explicit fault-conditioned modular policies consistently outperform monolithic policies of comparable size, achieving higher locomotion performance across failure scenarios. Moreover, the proposed modular architecture retains competitive performance even under significantly reduced network capacity, highlighting its suitability for compute-constrained robotic platforms, such as those typically employed in space applications. The code associated with this work is available at: https://github.com/iit-DLSLab/fault-locomotion-isaaclab.
 
-## 개요
-행성 탐사 및 기타 원격 환경에 배치된 보행 로봇은 액추에이터 고장과 까다로운 지형 조건에도 불구하고 안정적인 보행을 유지해야 합니다. 강화 학습은 보행에서 뛰어난 결과를 달성했지만, 단일 정책은 다양한 고장 조건을 보상하는 데 필요한 다양한 제어 전략을 효율적으로 표현하는 데 어려움을 겪을 수 있습니다. 본 연구에서는 고장 진단 정보를 명시적으로 활용하여 개별 액추에이터 고장 모드와 관련된 특화된 제어 전문가를 활성화하는 고장 인식 모듈형 제어 아키텍처를 제안합니다. 실험 결과는 명시적인 고장 조건 기반 모듈형 정책이 유사한 크기의 단일 정책보다 일관되게 우수한 성능을 보여주며, 고장 시나리오 전반에서 더 높은 보행 성능을 달성함을 보여줍니다. 또한, 제안된 모듈형 아키텍처는 네트워크 용량이 크게 감소된 상황에서도 경쟁력 있는 성능을 유지하여, 우주 응용 분야에서 일반적으로 사용되는 계산 자원이 제한된 로봇 플랫폼에 적합함을 강조합니다. 본 연구와 관련된 코드는 다음에서 확인할 수 있습니다: https://github.com/iit-DLSLab/fault-locomotion-isaaclab.
-
-## 핵심 내용
-행성 탐사 및 기타 원격 환경에 배치된 보행 로봇은 액추에이터 고장과 까다로운 지형 조건에도 불구하고 안정적인 보행을 유지해야 합니다. 강화 학습은 보행에서 뛰어난 결과를 달성했지만, 단일 정책은 다양한 고장 조건을 보상하는 데 필요한 다양한 제어 전략을 효율적으로 표현하는 데 어려움을 겪을 수 있습니다. 본 연구에서는 고장 진단 정보를 명시적으로 활용하여 개별 액추에이터 고장 모드와 관련된 특화된 제어 전문가를 활성화하는 고장 인식 모듈형 제어 아키텍처를 제안합니다. 실험 결과는 명시적인 고장 조건 기반 모듈형 정책이 유사한 크기의 단일 정책보다 일관되게 우수한 성능을 보여주며, 고장 시나리오 전반에서 더 높은 보행 성능을 달성함을 보여줍니다. 또한, 제안된 모듈형 아키텍처는 네트워크 용량이 크게 감소된 상황에서도 경쟁력 있는 성능을 유지하여, 우주 응용 분야에서 일반적으로 사용되는 계산 자원이 제한된 로봇 플랫폼에 적합함을 강조합니다. 본 연구와 관련된 코드는 다음에서 확인할 수 있습니다: https://github.com/iit-DLSLab/fault-locomotion-isaaclab.
-
 ## 参考
 - http://arxiv.org/abs/2606.25965v2
+
+## 개요
+행성 탐사와 같은 원격 환경에서 족형 로봇은 액추에이터 고장과 복잡한 지형에 직면했을 때도 안정적인 운동을 유지해야 합니다. 전통적인 강화 학습으로 훈련된 단일 정책은 다양한 고장에 대응하는 다각화된 제어 전략을 효율적으로 표현하기 어렵습니다. 이를 위해 본 논문은 고장 인식 모듈식 제어 아키텍처를 설계하여, 고장 진단 정보를 명시적으로 활용해 특정 액추에이터 고장 모드에 대응하는 전용 제어 전문가를 활성화합니다. 실험 결과, 이러한 명시적 고장 조건화 모듈식 정책은 다양한 고장 시나리오에서 동일 규모의 단일 정책 모델보다 우수했으며, 네트워크 용량을 크게 줄여도 경쟁력을 유지하여 계산 자원이 제한된 우주 로봇 플랫폼에 특히 적합함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **고장 인식 모듈식 제어 아키텍처**를 제안하며, 핵심 아이디어는 고장 진단 정보를 조건 입력으로 사용하여 특정 액추에이터 고장 모드에 대응하는 전용 제어 전문가(specialized control experts)를 활성화하는 것입니다.
+- 각 전문가 모듈은 하나의 고장 모드(예: 단일 관절 잠금, 토크 출력 이상)를 처리하며, 게이팅 메커니즘 또는 조건 선택을 통해 전문가 활성화를 구현합니다.
+
+### 실험 설정
+- 족형 로봇 플랫폼에서 시뮬레이션 실험을 수행했으며, 비교 대상은 동일 규모의 **단일 정책 모델(monolithic policy)**입니다.
+- 테스트 시나리오에는 다양한 액추에이터 고장 모드(예: 관절 잠금, 부분 토크 손실)와 복잡한 지형 조건이 포함됩니다.
+
+### 주요 결과
+- **성능 우위**: 명시적 고장 조건화 모듈식 정책은 모든 고장 시나리오에서 단일 정책 모델보다 우수했으며, 운동 성능이 크게 향상되었습니다.
+- **용량 효율성**: 네트워크 용량을 크게 줄여도(예: 파라미터 수 감소) 모듈식 아키텍처는 전체 규모 단일 정책과 경쟁력 있는 성능을 유지하여, 계산 제한 플랫폼(예: 우주 로봇)에서의 적용 가능성을 검증했습니다.
+- 코드는 오픈소스로 공개되었습니다: https://github.com/iit-DLSLab/fault-locomotion-isaaclab
+
+### 결론
+본 연구는 고장 진단 정보를 명시적으로 활용한 전문가 모듈식 설계의 효율성을 입증했으며, 족형 로봇의 극한 환경에서의 고장 허용 운동 제어를 위한 효율적이고 자원 친화적인 솔루션을 제공합니다.

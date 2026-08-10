@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04714v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04714v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (867 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -96,11 +97,34 @@ GeoMoLa证明，有效的机器人运动潜码应通过理解三维几何效应�
 ## Overview
 Learning motion latents for robotic manipulation heavily relies on extracting motion patterns from visual sequences, yet effective action abstractions require understanding three-dimensional geometric transformations. Here, we introduce GeoMoLa (Geometry-Aware Motion Latents), which learns discrete motion latent codes by predicting how point clouds evolve during manipulation rather than reconstructing visual observations. This four-dimensional objective -- spatial geometry changing through time -- forces latent representations to encode actual physical motion rather than appearance patterns. GeoMoLa achieves state-of-the-art performance using only single-view RGB-D input, while existing methods require multi-view reconstruction, succeeding across diverse manipulation benchmarks. Our ablations reveal that geometric prediction is the key to driving performance, quantitatively validating that manipulation depends on spatial understanding. Furthermore, the learned codes exhibit effective motion abstraction: applying them to novel scenes produces physically consistent transformations regardless of visual context. Our real-world experiments also confirm this robustness capability, achieving robust manipulation with minimal demonstrations in cluttered environments where geometric reasoning determines success. Thus, we demonstrate that effective motion latents for robot control can better emerge from understanding motion through its three-dimensional effects rather than pixel-level patterns.
 
-## 개요
-로봇 조작을 위한 모션 잠재 변수 학습은 시각적 시퀀스에서 모션 패턴을 추출하는 데 크게 의존하지만, 효과적인 행동 추상화는 3차원 기하학적 변환에 대한 이해를 필요로 합니다. 여기서 우리는 GeoMoLa(Geometry-Aware Motion Latents)를 소개합니다. 이는 시각적 관찰을 재구성하는 대신 조작 중 점군이 어떻게 진화하는지 예측하여 이산적인 모션 잠재 코드를 학습합니다. 이 4차원 목표(시간에 따라 변화하는 공간 기하학)는 잠재 표현이 외관 패턴이 아닌 실제 물리적 모션을 인코딩하도록 강제합니다. GeoMoLa는 단일 뷰 RGB-D 입력만으로 최첨단 성능을 달성하는 반면, 기존 방법은 다중 뷰 재구성을 필요로 하며, 다양한 조작 벤치마크에서 성공을 거둡니다. 우리의 절제 연구는 기하학적 예측이 성능을 주도하는 핵심임을 밝혀내며, 조작이 공간 이해에 의존한다는 것을 정량적으로 검증합니다. 또한 학습된 코드는 효과적인 모션 추상화를 보여줍니다. 이를 새로운 장면에 적용하면 시각적 맥락과 관계없이 물리적으로 일관된 변환을 생성합니다. 실제 실험에서도 이러한 강건성 능력을 확인하여, 기하학적 추론이 성공을 결정짓는 복잡한 환경에서 최소한의 시연으로 강건한 조작을 달성했습니다. 따라서 우리는 로봇 제어를 위한 효과적인 모션 잠재 변수가 픽셀 수준의 패턴보다는 3차원 효과를 통한 모션 이해에서 더 잘 나타날 수 있음을 입증합니다.
-
-## 핵심 내용
-로봇 조작을 위한 모션 잠재 변수 학습은 시각적 시퀀스에서 모션 패턴을 추출하는 데 크게 의존하지만, 효과적인 행동 추상화는 3차원 기하학적 변환에 대한 이해를 필요로 합니다. 여기서 우리는 GeoMoLa(Geometry-Aware Motion Latents)를 소개합니다. 이는 시각적 관찰을 재구성하는 대신 조작 중 점군이 어떻게 진화하는지 예측하여 이산적인 모션 잠재 코드를 학습합니다. 이 4차원 목표(시간에 따라 변화하는 공간 기하학)는 잠재 표현이 외관 패턴이 아닌 실제 물리적 모션을 인코딩하도록 강제합니다. GeoMoLa는 단일 뷰 RGB-D 입력만으로 최첨단 성능을 달성하는 반면, 기존 방법은 다중 뷰 재구성을 필요로 하며, 다양한 조작 벤치마크에서 성공을 거둡니다. 우리의 절제 연구는 기하학적 예측이 성능을 주도하는 핵심임을 밝혀내며, 조작이 공간 이해에 의존한다는 것을 정량적으로 검증합니다. 또한 학습된 코드는 효과적인 모션 추상화를 보여줍니다. 이를 새로운 장면에 적용하면 시각적 맥락과 관계없이 물리적으로 일관된 변환을 생성합니다. 실제 실험에서도 이러한 강건성 능력을 확인하여, 기하학적 추론이 성공을 결정짓는 복잡한 환경에서 최소한의 시연으로 강건한 조작을 달성했습니다. 따라서 우리는 로봇 제어를 위한 효과적인 모션 잠재 변수가 픽셀 수준의 패턴보다는 3차원 효과를 통한 모션 이해에서 더 잘 나타날 수 있음을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04714v1
+
+## 개요
+GeoMoLa는 연구자들이 제안한 방법으로, 로봇 조작에서 운동 잠재 코드 학습이 3D 기하 변환 이해에 대한 필요성을 해결하기 위해 설계되었습니다. 다중 시점 재구성에 의존하는 기존 방법과 달리, GeoMoLa는 단일 시점 RGB-D 입력만 사용하여 조작 과정에서 포인트 클라우드의 시공간적 변화를 예측함으로써 이산 운동 잠재 코드를 학습합니다. 이러한 4D 목표(공간 기하가 시간에 따라 변화)는 잠재 표현이 외관 패턴이 아닌 실제 물리적 운동에 집중하도록 합니다. 절제 실험은 기하 예측이 성능 향상의 핵심 요소임을 정량적으로 검증했으며, 학습된 운동 잠재 코드는 다양한 장면에서 물리적으로 일관된 변환 능력을 보여줍니다. 실제 세계 실험은 혼잡한 환경에서 소량의 시연만으로도 강건한 조작이 가능함을 추가로 확인했습니다.
+
+## 핵심 내용
+### 방법 개요
+GeoMoLa의 핵심 혁신은 운동 잠재 코드 학습을 4D 기하 예측 작업으로 전환하는 것입니다:
+- **입력**: 단일 시점 RGB-D 이미지, 다중 시점 재구성 불필요
+- **목표**: 조작 과정에서 포인트 클라우드의 시공간적 변화(즉, 시간에 따른 3D 기하 변화) 예측
+- **출력**: 외관 패턴이 아닌 실제 물리적 운동을 인코딩하는 이산 운동 잠재 코드
+
+### 아키텍처 설계
+- **인코더**: RGB-D 시퀀스에서 시각적 특징을 추출하고 포인트 클라우드 기하 정보를 결합
+- **잠재 코드 학습**: 연속 시간 단계에서 포인트 클라우드의 변환을 예측하여 이산 운동 잠재 코드 학습
+- **디코더**: 잠재 코드를 기반으로 조작 정책을 생성하여 물리적으로 일관된 변환 구현
+
+### 실험 설정 및 결과
+- **벤치마크**: 테이블 조작, 파지, 조립 작업을 포함한 여러 조작 벤치마크에서 평가
+- **성능 비교**: 단일 시점 RGB-D 입력만으로 최첨단 성능에 도달, 기존 방법은 다중 시점 재구성 필요
+- **절제 실험**: 기하 예측이 성능 향상의 핵심 요소임을 정량적으로 검증, 기하 목표 제거 시 성능이 크게 저하
+- **일반화 능력**: 학습된 운동 잠재 코드가 시각적 맥락에 영향을 받지 않고 다양한 장면에서 물리적으로 일관된 변환 생성
+
+### 실제 세계 실험
+- **환경**: 다양한 미지의 물체를 포함한 혼잡한 테이블 환경
+- **시연 수**: 소량의 시연(예: 5-10회)만으로 강건한 조작 정책 학습 가능
+- **결과**: 기하 추론이 성패를 결정하는 혼잡한 장면에서 GeoMoLa가 조작 작업을 성공적으로 완료하여 강건성을 검증
+
+### 결론
+GeoMoLa는 효과적인 로봇 운동 잠재 코드가 픽셀 수준 패턴이 아닌 3D 기하 효과를 이해함으로써 학습되어야 함을 증명하며, 이는 기하 인식 기반 로봇 조작을 위한 새로운 패러다임을 제공합니다.

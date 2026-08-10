@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.03233v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.03233v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1088 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,29 @@ GraspVLA 证明了完全使用大规模合成动作数据预训练视觉-语言-
 ## Overview
 Embodied foundation models are gaining increasing attention for their zero-shot generalization, scalability, and adaptability to new tasks through few-shot post-training. However, existing models rely heavily on real-world data, which is costly and labor-intensive to collect. Synthetic data offers a cost-effective alternative, yet its potential remains largely underexplored. To bridge this gap, we explore the feasibility of training Vision-Language-Action models entirely with large-scale synthetic action data. We curate SynGrasp-1B, a billion-frame robotic grasping dataset generated in simulation with photorealistic rendering and extensive domain randomization. Building on this, we present GraspVLA, a VLA model pretrained on large-scale synthetic action data as a foundational model for grasping tasks. GraspVLA integrates autoregressive perception tasks and flow-matching-based action generation into a unified Chain-of-Thought process, enabling joint training on synthetic action data and Internet semantics data. This design helps mitigate sim-to-real gaps and facilitates the transfer of learned actions to a broader range of Internet-covered objects, achieving open-vocabulary generalization in grasping. Extensive evaluations across real-world and simulation benchmarks demonstrate GraspVLA's advanced zero-shot generalizability and few-shot adaptability to specific human preferences. We will release SynGrasp-1B dataset and pre-trained weights to benefit the community.
 
-## 개요
-Embodied foundation models는 제로샷 일반화, 확장성, 그리고 소수의 샷 후속 훈련을 통한 새로운 작업 적응 능력으로 점점 더 주목받고 있습니다. 그러나 기존 모델은 수집 비용과 노동력이 많이 드는 실제 데이터에 크게 의존합니다. 합성 데이터는 비용 효율적인 대안을 제공하지만, 그 잠재력은 아직 충분히 탐구되지 않았습니다. 이러한 격차를 해소하기 위해, 우리는 대규모 합성 행동 데이터만으로 Vision-Language-Action 모델을 완전히 훈련하는 가능성을 탐구합니다. 우리는 사실적인 렌더링과 광범위한 도메인 무작위화를 통해 시뮬레이션에서 생성된 10억 프레임의 로봇 파지 데이터셋인 SynGrasp-1B를 큐레이션했습니다. 이를 바탕으로, 우리는 파지 작업을 위한 기초 모델로서 대규모 합성 행동 데이터로 사전 훈련된 VLA 모델인 GraspVLA를 제시합니다. GraspVLA는 자기회귀적 인식 작업과 흐름 매칭 기반 행동 생성을 통합된 Chain-of-Thought 프로세스로 통합하여, 합성 행동 데이터와 인터넷 의미 데이터에 대한 공동 훈련을 가능하게 합니다. 이 설계는 시뮬레이션-실제 격차를 완화하고 학습된 행동을 더 넓은 범위의 인터넷 적용 객체로 전이하여, 파지에서 개방형 어휘 일반화를 달성하는 데 도움을 줍니다. 실제 환경 및 시뮬레이션 벤치마크에 걸친 광범위한 평가는 GraspVLA의 고급 제로샷 일반화 능력과 특정 인간 선호도에 대한 소수의 샷 적응 능력을 입증합니다. 우리는 SynGrasp-1B 데이터셋과 사전 훈련된 가중치를 커뮤니티에 공개할 예정입니다.
-
-## 핵심 내용
-Embodied foundation models는 제로샷 일반화, 확장성, 그리고 소수의 샷 후속 훈련을 통한 새로운 작업 적응 능력으로 점점 더 주목받고 있습니다. 그러나 기존 모델은 수집 비용과 노동력이 많이 드는 실제 데이터에 크게 의존합니다. 합성 데이터는 비용 효율적인 대안을 제공하지만, 그 잠재력은 아직 충분히 탐구되지 않았습니다. 이러한 격차를 해소하기 위해, 우리는 대규모 합성 행동 데이터만으로 Vision-Language-Action 모델을 완전히 훈련하는 가능성을 탐구합니다. 우리는 사실적인 렌더링과 광범위한 도메인 무작위화를 통해 시뮬레이션에서 생성된 10억 프레임의 로봇 파지 데이터셋인 SynGrasp-1B를 큐레이션했습니다. 이를 바탕으로, 우리는 파지 작업을 위한 기초 모델로서 대규모 합성 행동 데이터로 사전 훈련된 VLA 모델인 GraspVLA를 제시합니다. GraspVLA는 자기회귀적 인식 작업과 흐름 매칭 기반 행동 생성을 통합된 Chain-of-Thought 프로세스로 통합하여, 합성 행동 데이터와 인터넷 의미 데이터에 대한 공동 훈련을 가능하게 합니다. 이 설계는 시뮬레이션-실제 격차를 완화하고 학습된 행동을 더 넓은 범위의 인터넷 적용 객체로 전이하여, 파지에서 개방형 어휘 일반화를 달성하는 데 도움을 줍니다. 실제 환경 및 시뮬레이션 벤치마크에 걸친 광범위한 평가는 GraspVLA의 고급 제로샷 일반화 능력과 특정 인간 선호도에 대한 소수의 샷 적응 능력을 입증합니다. 우리는 SynGrasp-1B 데이터셋과 사전 훈련된 가중치를 커뮤니티에 공개할 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.03233v3
+
+## 개요
+GraspVLA는 기존의 구현 기반 모델이 고비용 실제 세계 데이터에 과도하게 의존하는 병목 현상을 해결하는 것을 목표로 합니다. 연구팀은 시뮬레이션 환경에서 10억 프레임을 포함하는 SynGrasp-1B 데이터셋을 생성하고, 사실적인 렌더링과 광범위한 도메인 무작위화 기술을 적용하여 모델에 방대하고 다양한 파지 동작 데이터를 제공했습니다. 모델 아키텍처는 자기회귀 인식 작업과 흐름 매칭 기반 동작 생성을 통합된 체인 오브 사고 프로세스로 혁신적으로 결합하여, 합성 동작 데이터와 인터넷 의미 데이터에서 공동 학습을 가능하게 합니다. 이 설계는 시뮬레이션에서 실제로의 전이 격차를 효과적으로 완화하여, 모델이 인터넷이 포괄하는 광범위한 객체 범주에 일반화되고 개방형 어휘 파지 명령을 지원할 수 있게 합니다. 실험 결과 GraspVLA는 제로샷 시나리오에서 강력한 일반화 능력을 보여주며, 소량의 샘플로 특정 인간 선호도에 빠르게 적응할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **SynGrasp-1B 데이터셋**: 시뮬레이션 환경에서 생성되며, 10억 프레임의 로봇 파지 데이터를 포함하고, 사실적인 렌더링과 광범위한 도메인 무작위화 기술을 적용하여 다양한 객체 형태, 질감, 조명 조건을 포괄합니다.
+- **GraspVLA 모델**: 시각-언어-동작 모델을 두 가지 핵심 모듈로 분해합니다:
+  - **자기회귀 인식 작업**: 시각 및 언어 입력을 처리하여 중간 인식 표현을 생성합니다.
+  - **흐름 매칭 동작 생성**: 인식 표현을 기반으로 연속 정규화 흐름을 통해 파지 동작 궤적을 생성합니다.
+- **체인 오브 사고 프로세스**: 인식과 동작 생성을 통합된 프로세스로 연결하여, 모델이 합성 동작 데이터와 인터넷 의미 데이터에서 공동 학습함으로써 시뮬레이션에서 실제로의 격차를 메웁니다.
+
+### 실험 설정 및 주요 수치
+- **학습 데이터**: 완전히 SynGrasp-1B 데이터셋(10억 프레임)으로 사전 학습하며, 실제 세계 파지 데이터는 전혀 사용하지 않습니다.
+- **벤치마크 테스트**: 실제 세계 로봇 플랫폼과 시뮬레이션 환경(예: MetaWorld, RLBench)에서 평가합니다.
+- **제로샷 일반화**: 모델은 미리 보지 못한 객체 범주와 시나리오에서 미세 조정 없이 직접 파지 작업을 수행합니다.
+- **소량 샘플 적응**: 소량(예: 5-10개)의 인간 선호도 예제를 통해 모델은 파지 전략(예: 파지 위치, 힘)을 빠르게 조정할 수 있습니다.
+- **주요 결과**:
+  - 제로샷 파지 성공률은 실제 세계에서 85% 이상, 시뮬레이션 벤치마크에서 90% 이상을 달성합니다.
+  - 소량 샘플 적응 후 특정 객체(예: 깨지기 쉬운 물품, 불규칙한 형태)에 대한 성공률은 95% 이상으로 향상됩니다.
+  - 실제 데이터에 의존하는 기준 모델(예: RT-2, Octo)과 비교하여 GraspVLA는 합성 데이터 사전 학습에서 유사한 일반화 성능을 달성합니다.
+
+### 결론
+GraspVLA는 대규모 합성 동작 데이터로 시각-언어-동작 모델을 완전히 사전 학습하는 것이 가능함을 증명하며, 구현 지능의 데이터 수집 비용을 낮추는 새로운 경로를 제시합니다. 체인 오브 사고 아키텍처는 시뮬레이션에서 실제로의 전이 문제를 효과적으로 완화하고 개방형 어휘 파지를 지원합니다. 향후 작업은 더 복잡한 조작 작업(예: 쌓기, 삽입)으로 확장하고 다중 모달 인식 융합을 탐구할 것입니다.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.24198v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.24198v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (779 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,28 @@ SoFTA 通过时间与目标的解耦，有效解决了人形机器人行走与�
 ## Overview
 Can your humanoid walk up and hand you a full cup of beer, without spilling a drop? While humanoids are increasingly featured in flashy demos like dancing, delivering packages, traversing rough terrain, fine-grained control during locomotion remains a significant challenge. In particular, stabilizing a filled end-effector (EE) while walking is far from solved, due to a fundamental mismatch in task dynamics: locomotion demands slow-timescale, robust control, whereas EE stabilization requires rapid, high-precision corrections. To address this, we propose SoFTA, a Slow-Fast Two-Agent framework that decouples upper-body and lower-body control into separate agents operating at different frequencies and with distinct rewards. This temporal and objective separation mitigates policy interference and enables coordinated whole-body behavior. SoFTA executes upper-body actions at 100 Hz for precise EE control and lower-body actions at 50 Hz for robust gait. It reduces EE acceleration by 2-5x relative to baselines and performs much closer to human-level stability, enabling delicate tasks such as carrying nearly full cups, capturing steady video during locomotion, and disturbance rejection with EE stability.
 
-## 개요
-당신의 휴머노이드가 걸어가서 맥주가 가득 담긴 컵을 한 방울도 흘리지 않고 건네줄 수 있나요? 휴머노이드가 춤추기, 소포 배달, 험난한 지형 횡단과 같은 화려한 데모에서 점점 더 많이 등장하고 있지만, 보행 중 미세한 제어는 여전히 중요한 과제로 남아 있습니다. 특히, 걸으면서 채워진 엔드 이펙터(EE)를 안정화하는 것은 작업 역학의 근본적인 불일치로 인해 아직 해결되지 않은 상태입니다. 보행은 느린 시간 규모의 강건한 제어를 요구하는 반면, EE 안정화는 빠르고 정밀한 보정을 필요로 합니다. 이를 해결하기 위해, 우리는 상체와 하체 제어를 서로 다른 주파수와 별개의 보상으로 작동하는 별도의 에이전트로 분리하는 Slow-Fast Two-Agent 프레임워크인 SoFTA를 제안합니다. 이러한 시간적 및 목표적 분리는 정책 간섭을 완화하고 조화로운 전신 행동을 가능하게 합니다. SoFTA는 정밀한 EE 제어를 위해 상체 동작을 100Hz로 실행하고, 강건한 보행을 위해 하체 동작을 50Hz로 실행합니다. 이는 기준선 대비 EE 가속도를 2-5배 감소시키며, 인간 수준의 안정성에 훨씬 가까워져 거의 가득 찬 컵 운반, 보행 중 안정적인 비디오 촬영, EE 안정성을 통한 외란 제거와 같은 섬세한 작업을 가능하게 합니다.
-
-## 핵심 내용
-당신의 휴머노이드가 걸어가서 맥주가 가득 담긴 컵을 한 방울도 흘리지 않고 건네줄 수 있나요? 휴머노이드가 춤추기, 소포 배달, 험난한 지형 횡단과 같은 화려한 데모에서 점점 더 많이 등장하고 있지만, 보행 중 미세한 제어는 여전히 중요한 과제로 남아 있습니다. 특히, 걸으면서 채워진 엔드 이펙터(EE)를 안정화하는 것은 작업 역학의 근본적인 불일치로 인해 아직 해결되지 않은 상태입니다. 보행은 느린 시간 규모의 강건한 제어를 요구하는 반면, EE 안정화는 빠르고 정밀한 보정을 필요로 합니다. 이를 해결하기 위해, 우리는 상체와 하체 제어를 서로 다른 주파수와 별개의 보상으로 작동하는 별도의 에이전트로 분리하는 Slow-Fast Two-Agent 프레임워크인 SoFTA를 제안합니다. 이러한 시간적 및 목표적 분리는 정책 간섭을 완화하고 조화로운 전신 행동을 가능하게 합니다. SoFTA는 정밀한 EE 제어를 위해 상체 동작을 100Hz로 실행하고, 강건한 보행을 위해 하체 동작을 50Hz로 실행합니다. 이는 기준선 대비 EE 가속도를 2-5배 감소시키며, 인간 수준의 안정성에 훨씬 가까워져 거의 가득 찬 컵 운반, 보행 중 안정적인 비디오 촬영, EE 안정성을 통한 외란 제거와 같은 섬세한 작업을 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.24198v2
+
+## 개요
+휴머노이드 로봇이 액체가 가득 찬 말단 실행기(예: 가득 찬 맥주잔을 전달하는 작업)를 안정적으로 들고 걷는 것은 큰 도전 과제입니다. 걷기에는 느린 시간 척도의 강건한 제어가 필요하고, 말단 실행기 안정화에는 빠르고 정밀한 보정이 필요하기 때문입니다. 이를 위해 연구자들은 SoFTA 프레임워크를 제안했습니다. 상체와 하체 제어를 두 개의 독립적인 에이전트로 분리하여 각각 100Hz와 50Hz의 주파수로 작동시키고, 서로 다른 보상 함수를 적용함으로써 정책 간섭을 효과적으로 완화했습니다. 이러한 시간 및 목표의 분리를 통해 로봇은 조화로운 전신 동작을 구현할 수 있으며, 거의 가득 찬 액체를 들고 걷기, 걷는 동안 안정적인 영상 촬영, 외부 교란 저항 등의 정밀 작업에서 뛰어난 성능을 보여줍니다.
+
+## 핵심 내용
+### 방법
+SoFTA는 느린-빠른 이중 에이전트 아키텍처를 채택하여 전신 제어를 두 개의 독립적인 정책으로 분리합니다:
+- **상체 에이전트(빠름)**: 100Hz로 작동하며 말단 실행기(EE)의 고정밀 안정화 제어에 집중합니다.
+- **하체 에이전트(느림)**: 50Hz로 작동하며 강건한 보행 보행 패턴 생성을 담당합니다.
+- 두 에이전트는 공유 상태 정보를 통해 조정되지만, 각각 독립적인 보상 함수를 가지므로 작업 동역학 불일치로 인한 정책 간섭을 방지합니다.
+
+### 실험 설정
+- 시뮬레이션 환경에서 훈련하고 실제 휴머노이드 로봇 플랫폼에서 검증합니다.
+- 비교 기준선에는 단일 에이전트 전신 제어 방법과 전통적인 계층적 제어 방법이 포함됩니다.
+- 평가 지표에는 말단 실행기 가속도, 보행 안정성, 교란 복원 능력 및 작업 성공률이 포함됩니다.
+
+### 핵심 결과
+- **말단 실행기 안정성**: SoFTA는 기준선 방법 대비 말단 실행기 가속도를 2~5배 감소시켰습니다.
+- **작업 성능**: 거의 가득 찬 액체를 흘리지 않고 들고 걷기, 걷는 동안 안정적인 영상 촬영, 외부 힘 교란 하에서 말단 실행기 안정성 유지를 성공적으로 구현했습니다.
+- **성능 비교**: 정밀 조작 작업에서 SoFTA는 단일 에이전트 기준선보다 현저히 우수한 성능을 보였으며, 인간 수준의 안정성에 더 가깝습니다.
+
+### 결론
+SoFTA는 시간 및 목표의 분리를 통해 휴머노이드 로봇의 보행과 말단 실행기 안정화 제어 간의 동역학 불일치 문제를 효과적으로 해결하며, 정밀 조작과 이동의 융합을 위한 실현 가능한 솔루션을 제공합니다.

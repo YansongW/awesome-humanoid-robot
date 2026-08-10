@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2309.15616v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2309.15616v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (616 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,20 @@ Purpose of Review: The field of humanoid robotics, perception plays a fundamenta
 ## Content
 Purpose of Review: The field of humanoid robotics, perception plays a fundamental role in enabling robots to interact seamlessly with humans and their surroundings, leading to improved safety, efficiency, and user experience. This scientific study investigates various perception modalities and techniques employed in humanoid robots, including visual, auditory, and tactile sensing by exploring recent state-of-the-art approaches for perceiving and understanding the internal state, the environment, objects, and human activities. Recent Findings: Internal state estimation makes extensive use of Bayesian filtering methods and optimization techniques based on maximum a-posteriori formulation by utilizing proprioceptive sensing. In the area of external environment understanding, with an emphasis on robustness and adaptability to dynamic, unforeseen environmental changes, the new slew of research discussed in this study have focused largely on multi-sensor fusion and machine learning in contrast to the use of hand-crafted, rule-based systems. Human robot interaction methods have established the importance of contextual information representation and memory for understanding human intentions. Summary: This review summarizes the recent developments and trends in the field of perception in humanoid robots. Three main areas of application are identified, namely, internal state estimation, external environment estimation, and human robot interaction. The applications of diverse sensor modalities in each of these areas are considered and recent significant works are discussed.
 
-## 개요
-검토 목적: 휴머노이드 로봇 분야에서 인식은 로봇이 인간 및 주변 환경과 원활하게 상호작용할 수 있도록 하는 근본적인 역할을 하며, 이는 안전성, 효율성 및 사용자 경험 향상으로 이어집니다. 본 과학적 연구는 휴머노이드 로봇에 사용되는 다양한 인식 양식과 기술(시각, 청각, 촉각 감지 포함)을 조사하며, 내부 상태, 환경, 사물 및 인간 활동을 인식하고 이해하기 위한 최신 최첨단 접근법을 탐구합니다. 최근 발견: 내부 상태 추정은 고유 감각(proprioceptive sensing)을 활용하여 베이지안 필터링 방법과 최대 사후 확률(maximum a-posteriori) 공식에 기반한 최적화 기법을 광범위하게 사용합니다. 외부 환경 이해 영역에서는 동적이고 예측 불가능한 환경 변화에 대한 견고성과 적응성을 강조하며, 본 연구에서 논의된 새로운 연구 흐름은 수작업으로 제작된 규칙 기반 시스템과 달리 다중 센서 융합 및 머신 러닝에 크게 초점을 맞추고 있습니다. 인간-로봇 상호작용 방법은 인간의 의도를 이해하기 위한 맥락 정보 표현과 기억의 중요성을 확립했습니다. 요약: 본 리뷰는 휴머노이드 로봇 인식 분야의 최근 발전과 동향을 요약합니다. 내부 상태 추정, 외부 환경 추정, 인간-로봇 상호작용이라는 세 가지 주요 응용 영역이 식별되었습니다. 각 영역에서 다양한 센서 양식의 응용이 고려되었으며, 최근의 중요한 연구들이 논의됩니다.
-
-## 핵심 내용
-검토 목적: 휴머노이드 로봇 분야에서 인식은 로봇이 인간 및 주변 환경과 원활하게 상호작용할 수 있도록 하는 근본적인 역할을 하며, 이는 안전성, 효율성 및 사용자 경험 향상으로 이어집니다. 본 과학적 연구는 휴머노이드 로봇에 사용되는 다양한 인식 양식과 기술(시각, 청각, 촉각 감지 포함)을 조사하며, 내부 상태, 환경, 사물 및 인간 활동을 인식하고 이해하기 위한 최신 최첨단 접근법을 탐구합니다. 최근 발견: 내부 상태 추정은 고유 감각(proprioceptive sensing)을 활용하여 베이지안 필터링 방법과 최대 사후 확률(maximum a-posteriori) 공식에 기반한 최적화 기법을 광범위하게 사용합니다. 외부 환경 이해 영역에서는 동적이고 예측 불가능한 환경 변화에 대한 견고성과 적응성을 강조하며, 본 연구에서 논의된 새로운 연구 흐름은 수작업으로 제작된 규칙 기반 시스템과 달리 다중 센서 융합 및 머신 러닝에 크게 초점을 맞추고 있습니다. 인간-로봇 상호작용 방법은 인간의 의도를 이해하기 위한 맥락 정보 표현과 기억의 중요성을 확립했습니다. 요약: 본 리뷰는 휴머노이드 로봇 인식 분야의 최근 발전과 동향을 요약합니다. 내부 상태 추정, 외부 환경 추정, 인간-로봇 상호작용이라는 세 가지 주요 응용 영역이 식별되었습니다. 각 영역에서 다양한 센서 양식의 응용이 고려되었으며, 최근의 중요한 연구들이 논의됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2309.15616v1
+
+## 개요
+본综述는 인간형 로봇의 인식 기술에 초점을 맞추며, 로봇과 인간 및 환경 간의 상호작용 안전성, 효율성, 사용자 경험을 향상시키는 것을 목표로 한다. 연구는 시각, 청각, 촉각 등 다양한 인식 양식을 탐구하고, 내부 상태 추정, 외부 환경 이해, 인간-로봇 상호작용이라는 세 가지 핵심 응용 방향을 분석한다. 내부 상태 추정은 주로 베이즈 필터링과 최대 사후(maximum a-posteriori) 최적화 방법에 의존한다. 외부 환경 이해는 동적 환경 변화에 대응하기 위해 다중 센서 융합과 머신러닝을 강조한다. 인간-로봇 상호작용 방법은 인간 의도 이해에 있어 맥락 정보 표현과 기억의 중요성을 부각한다.
+
+## 핵심 내용
+### 综述 목적
+인간형 로봇 인식은 인간 및 환경과의 원활한 상호작용을 위한 기반으로, 안전성, 효율성, 사용자 경험에 직접적인 영향을 미친다. 본 연구는 인간형 로봇이 채택한 다양한 인식 양식(시각, 청각, 촉각)과 알고리즘을 체계적으로 조사하며, 내부 상태, 환경, 객체, 인간 활동을 인식하는 최신 방법을 중점적으로 분석한다.
+
+### 최근 발견
+- **내부 상태 추정**: 베이즈 필터링 방법과 최대 사후(maximum a-posteriori) 공식 기반 최적화 기술이 널리 사용되며, 고유 감각(proprioceptive sensing)에 의존한다.
+- **외부 환경 이해**: 동적이고 예측 불가능한 환경 변화에 대응하기 위해, 새로운 연구는 전통적인 수동 규칙 시스템을 대체하는 다중 센서 융합과 머신러닝에 초점을 맞추며, 견고성과 적응성을 강조한다.
+- **인간-로봇 상호작용**: 방법은 인간 의도 이해에 있어 맥락 정보 표현과 기억의 중요성을 확립한다.
+
+### 요약
+본 综述는 인간형 로봇 인식 분야의 최신 발전과 추세를 요약하며, 내부 상태 추정, 외부 환경 추정, 인간-로봇 상호작용이라는 세 가지 응용 영역을 식별한다. 논문은 각 영역에서 다양한 센서 양식의 적용을 개별적으로 논의하고, 최근 주요 작업을 검토한다.

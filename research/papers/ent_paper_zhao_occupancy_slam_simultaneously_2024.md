@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.10743v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.10743v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (844 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,28 @@ Occupancy-SLAM 将机器人位姿与占据地图的联合优化建模为一个�
 ## Overview
 In this paper, we propose an optimization based SLAM approach to simultaneously optimize the robot trajectory and the occupancy map using 2D laser scans (and odometry) information. The key novelty is that the robot poses and the occupancy map are optimized together, which is significantly different from existing occupancy mapping strategies where the robot poses need to be obtained first before the map can be estimated. In our formulation, the map is represented as a continuous occupancy map where each 2D point in the environment has a corresponding evidence value. The Occupancy-SLAM problem is formulated as an optimization problem where the variables include all the robot poses and the occupancy values at the selected discrete grid cell nodes. We propose a variation of Gauss-Newton method to solve this new formulated problem, obtaining the optimized occupancy map and robot trajectory together with their uncertainties. Our algorithm is an offline approach since it is based on batch optimization and the number of variables involved is large. Evaluations using simulations and publicly available practical 2D laser datasets demonstrate that the proposed approach can estimate the maps and robot trajectories more accurately than the state-of-the-art techniques, when a relatively accurate initial guess is provided to our algorithm. The video shows the convergence process of the proposed Occupancy-SLAM and comparison of results to Cartographer can be found at \url{https://youtu.be/4oLyVEUC4iY}.
 
-## 개요
-본 논문에서는 2D 레이저 스캔(및 오도메트리) 정보를 사용하여 로봇 궤적과 점유 지도를 동시에 최적화하는 최적화 기반 SLAM 접근법을 제안합니다. 핵심 혁신은 로봇 자세와 점유 지도가 함께 최적화된다는 점으로, 이는 지도를 추정하기 전에 로봇 자세를 먼저 얻어야 하는 기존 점유 지도 작성 전략과 크게 다릅니다. 본 공식에서 지도는 환경의 각 2D 지점이 해당 증거 값을 갖는 연속 점유 지도로 표현됩니다. 점유-SLAM 문제는 변수에 모든 로봇 자세와 선택된 이산 격자 셀 노드의 점유 값을 포함하는 최적화 문제로 공식화됩니다. 우리는 이 새롭게 공식화된 문제를 해결하기 위해 가우스-뉴턴 방법의 변형을 제안하며, 최적화된 점유 지도와 로봇 궤적 및 그 불확실성을 함께 얻습니다. 본 알고리즘은 배치 최적화를 기반으로 하고 관련 변수 수가 많기 때문에 오프라인 접근법입니다. 시뮬레이션과 공개적으로 이용 가능한 실제 2D 레이저 데이터셋을 사용한 평가는, 상대적으로 정확한 초기 추정치가 제공될 때 제안된 접근법이 최신 기술보다 지도와 로봇 궤적을 더 정확하게 추정할 수 있음을 보여줍니다. 비디오는 제안된 점유-SLAM의 수렴 과정과 Cartographer와의 결과 비교를 보여주며, \url{https://youtu.be/4oLyVEUC4iY}에서 확인할 수 있습니다.
-
-## 핵심 내용
-본 논문에서는 2D 레이저 스캔(및 오도메트리) 정보를 사용하여 로봇 궤적과 점유 지도를 동시에 최적화하는 최적화 기반 SLAM 접근법을 제안합니다. 핵심 혁신은 로봇 자세와 점유 지도가 함께 최적화된다는 점으로, 이는 지도를 추정하기 전에 로봇 자세를 먼저 얻어야 하는 기존 점유 지도 작성 전략과 크게 다릅니다. 본 공식에서 지도는 환경의 각 2D 지점이 해당 증거 값을 갖는 연속 점유 지도로 표현됩니다. 점유-SLAM 문제는 변수에 모든 로봇 자세와 선택된 이산 격자 셀 노드의 점유 값을 포함하는 최적화 문제로 공식화됩니다. 우리는 이 새롭게 공식화된 문제를 해결하기 위해 가우스-뉴턴 방법의 변형을 제안하며, 최적화된 점유 지도와 로봇 궤적 및 그 불확실성을 함께 얻습니다. 본 알고리즘은 배치 최적화를 기반으로 하고 관련 변수 수가 많기 때문에 오프라인 접근법입니다. 시뮬레이션과 공개적으로 이용 가능한 실제 2D 레이저 데이터셋을 사용한 평가는, 상대적으로 정확한 초기 추정치가 제공될 때 제안된 접근법이 최신 기술보다 지도와 로봇 궤적을 더 정확하게 추정할 수 있음을 보여줍니다. 비디오는 제안된 점유-SLAM의 수렴 과정과 Cartographer와의 결과 비교를 보여주며, \url{https://youtu.be/4oLyVEUC4iY}에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2405.10743v1
+
+## 개요
+Occupancy-SLAM은 로봇 포즈와 점유 맵의 결합 최적화를 대규모 배치 최적화 문제로 모델링하며, 맵은 연속 점유 필드로 표현되어 각 2D 포인트가 증거 값에 대응합니다. 변수에는 모든 로봇 포즈와 선택된 이산 그리드 노드의 점유 값이 포함되며, 제안된 Gauss-Newton 변형을 통해 해결되어 최적화된 맵, 궤적 및 그 불확실성을 동시에 출력합니다. 이 방법은 오프라인 알고리즘에 속하며, 고정밀 맵과 궤적이 필요한 상황에 적합하고, 시뮬레이션 및 실제 레이저 데이터셋에서 기존 기술보다 우수합니다.
+
+## 핵심 내용
+### 방법
+- 핵심 혁신: 로봇 포즈와 점유 맵을 공동 최적화 변수로 설정하여 기존 SLAM의 위치 추정 후 맵 구축 순서 의존성을 깨뜨립니다.
+- 맵 표현: 연속 점유 맵을 사용하며, 환경의 각 2D 포인트는 이산 그리드 확률이 아닌 연속 점유 증거 값에 대응합니다.
+- 최적화 문제: 변수에는 모든 로봇 포즈와 선택된 이산 그리드 셀 노드의 점유 값이 포함되며, 목적 함수는 레이저 스캔과 오도메트리 관측을 기반으로 합니다.
+
+### 아키텍처 및 해법
+- 솔버: 대규모 공동 최적화 문제를 해결하기 위해 Gauss-Newton 방법의 변형을 제안하며, 최적화된 맵, 궤적 및 그 불확실성을 동시에 출력합니다.
+- 오프라인 특성: 배치 최적화를 사용하고 변수 수가 방대하므로, 알고리즘은 오프라인 방법으로 후처리 시나리오에 적합합니다.
+
+### 실험 설정
+- 데이터 출처: 시뮬레이션 환경과 공개적으로 사용 가능한 2D 레이저 데이터셋.
+- 초기 조건: 알고리즘은 최적 성능을 위해 상대적으로 정확한 초기 포즈 추정이 필요합니다.
+- 비교 기준: Cartographer 등 기존 기술과 비교합니다.
+
+### 주요 수치 및 결론
+- 정밀도 향상: 시뮬레이션 및 실제 데이터셋에서 Occupancy-SLAM이 추정한 맵과 궤적의 정밀도가 기존 기술보다 우수합니다.
+- 수렴 과정: 비디오는 알고리즘의 수렴 과정과 Cartographer와의 결과 비교를 보여줍니다 (비디오 링크: https://youtu.be/4oLyVEUC4iY).
+- 한계: 좋은 초기 추정에 의존하며, 오프라인 방법이므로 실시간 온라인 응용에는 적합하지 않습니다.

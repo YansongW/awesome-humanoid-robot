@@ -29,7 +29,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-08.md#8.4.9 捕获点（Capture Point）与线性倒立摆 by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from chapter-08.md#8.4.9 捕获点（Capture Point）与线性倒立摆 by scripts/backfill_nonpaper_entries.py. | WP4
+    trilingual backfill 2026-08-10: en body retranslated from zh deep-read (2952 chars, DeepSeek). | WP4 trilingual backfill
+    2026-08-10: closed unclosed code fence(s) and removed duplicate stale translation block(s) (pre-existing ingestion defect).'
 sources:
 - id: src_wiki_extraction
   type: other
@@ -37,7 +39,6 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-
 ## 概述
 捕获点是人形机器人领域的重要原理。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -142,113 +143,13 @@ def step_recovery_check(r_com, v_com, z_c, foot_place, g=9.81):
         'single_step_capture': dist < 0.02  # 允许 2 cm 误差
     }
 
+```
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-08.md#8.4.9 捕获点（Capture Point）与线性倒立摆
 
 ## Overview
 Capture points are an important principle in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
-
-## Content
-**Capture Point (CP)** is a core concept in humanoid robot push recovery and gait planning: it is a point on the ground such that if the robot can immediately step onto that point and place its center of mass directly above the support foot, no further steps are needed to come to a stop[44][45]. The existence of the capture point transforms the complex dynamic balance problem into a geometric one: "where should the next step be placed?"
-
-!!! note "Terminology: Capture Point (CP), Push Recovery, Gait Planning, Dynamic Balance"
-    - **Capture Point (CP)**: Given the current center of mass state, the foot placement required to bring the robot to a stop within a single step.
-    - **Push Recovery**: The ability to regain balance after an external push disturbance by stepping or adjusting posture.
-    - **Gait Planning**: The process of generating walking step sequences and foot placements.
-    - **Dynamic Balance**: The ability to maintain stability without falling during motion.
-
-In the **Linear Inverted Pendulum Model (LIPM)**, the center of mass height \(z_c\) is assumed constant, and the point mass is connected to the ZMP on the ground via a massless rod. The horizontal dynamics of the LIPM are:
-
-$$
-\ddot{x} = \frac{g}{z_c}(x - x_{\text{ZMP}})
-$$
-
-where \(g\) is the gravitational acceleration and \(x\) is the horizontal position of the center of mass. This equation can be rewritten as:
-
-$$
-\dot{x} = \omega_0 (x - x_{\text{ZMP}})
-$$
-
-where \(\omega_0 = \sqrt{g/z_c}\) is the natural frequency of the LIPM. If the ZMP remains constant, the center of mass motion can be decomposed into a convergent component and a divergent component. The divergent component is called the **Divergent Component of Motion (DCM)**:
-
-$$
-\xi = x + \frac{\dot{x}}{\omega_0}
-$$
-
-!!! note "Terminology: Linear Inverted Pendulum Model (LIPM), Natural Frequency, Divergent Component of Motion (DCM)"
-    - **Linear Inverted Pendulum Model (LIPM)**: A linear model that simplifies the robot to a constant-height center of mass, massless rod, and ZMP.
-    - **Natural Frequency**: The characteristic frequency of the LIPM, \(\omega_0 = \sqrt{g/z_c}\).
-    - **Divergent Component of Motion (DCM)**: The component of center of mass motion that diverges exponentially over time, determining whether the robot needs to step.
-
-The capture point is essentially the current DCM position. For a 2D LIPM:
-
-$$
-x_{\text{CP}} = x_{\text{CoM}} + \frac{\dot{x}_{\text{CoM}}}{\omega_0}
-$$
-
-Extending to the 3D horizontal plane:
-
-$$
-\mathbf{r}_{\text{CP}} = \mathbf{r}_{\text{CoM}}^{xy} + \frac{\dot{\mathbf{r}}_{\text{CoM}}^{xy}}{\omega_0}
-$$
-
-If the next foot placement (i.e., the new ZMP) is placed exactly at the capture point, the center of mass will move in a straight line toward that point and eventually come to a stop; if the step is not placed at the capture point, the DCM will continue to diverge, and the robot must take another step or fall.
-
-```mermaid
-flowchart TD
-    A["Current CoM position and velocity"] --> B["Compute omega_0 = sqrt(g/z_c)"]
-    B --> C["Compute DCM / CP"]
-    C --> D["r_CP = r_CoM + v_CoM / omega_0"]
-    D --> E{"Foot placed on CP?"}
-    E -->|"Yes"| F["Stop within one step"]
-    E -->|"No"| G["Continue stepping or fall"]
-```
-
-!!! note "Terminology: Foot Placement, ZMP, DCM Control, Capture Region"
-    - **Foot Placement**: The position where the foot lands during walking.
-    - **ZMP (Zero Moment Point)**: The equivalent point of action of ground reaction forces.
-    - **DCM Control**: A method of controlling the divergent component by adjusting the ZMP or foot placement.
-    - **Capture Region**: The set of all feasible foot placements that can restore the robot's balance.
-
-**Python Example: Capture Point and Required Foot Placement Calculation**
-
-The following code calculates the capture point given the center of mass horizontal position, velocity, and height; and given an actual step position, determines whether a single-step stop is possible.
-
-```python
-import numpy as np
-
-def compute_capture_point(r_com, v_com, z_c, g=9.81):
-    """
-    Compute the 2D/3D horizontal capture point.
-    r_com: CoM horizontal position (x, y) or (x, y, z) (only x, y used)
-    v_com: CoM horizontal velocity (vx, vy) or (vx, vy, vz)
-    z_c: Center of mass height (constant)
-    """
-    r_com = np.array(r_com)[:2]
-    v_com = np.array(v_com)[:2]
-    omega_0 = np.sqrt(g / z_c)
-    r_cp = r_com + v_com / omega_0
-    return r_cp, omega_0
-
-def step_recovery_check(r_com, v_com, z_c, foot_place, g=9.81):
-    """
-    Check if the given foot placement can stabilize the CoM.
-    Simple criterion: if the new ZMP is at foot_place, success if DCM converges to that point.
-    """
-    r_cp, omega_0 = compute_capture_point(r_com, v_com, z_c, g)
-    dist = np.linalg.norm(r_cp - np.array(foot_place)[:2])
-    omega_0_val = omega_0
-    # If the actual foot placement coincides with the capture point, theoretically a single-step stop is possible
-    # Here we provide the time constant tau = 1/omega_0 and the offset
-    tau = 1.0 / omega_0_val
-    return {
-        'capture_point': r_cp,
-        'omega_0': omega_0_val,
-        'time_constant': tau,
-        'foot_placement_error': dist,
-        'single_step_capture': dist < 0.02  # Allow 2 cm error
-    }
 
 ## 개요
 캡처 포인트는 휴머노이드 로봇 분야의 중요한 원리입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
@@ -353,3 +254,106 @@ def step_recovery_check(r_com, v_com, z_c, foot_place, g=9.81):
         'foot_placement_error': dist,
         'single_step_capture': dist < 0.02  # 2cm 오차 허용
     }
+
+```
+## Content
+**Capture Point (CP)** is a core concept in humanoid robot push recovery and gait planning: it is a point on the ground such that if the robot can immediately step on it and place its center of mass directly above the support foot, it can stop without taking another step[44][45]. The existence of the capture point transforms the complex dynamic balance problem into a geometric problem of "where to step next."
+
+!!! note "Terminology: Capture Point, Push Recovery, Gait Planning, Dynamic Balance"
+    - **Capture Point (CP)**: Given the current center of mass state, the foot placement required to bring the robot to rest within a single step.
+    - **Push recovery**: The ability to regain balance after external push disturbances through stepping or posture adjustments.
+    - **Gait planning**: The process of generating walking step sequences and foot placements.
+    - **Dynamic balance**: The ability to maintain balance without falling during motion.
+
+In the **Linear Inverted Pendulum Model (LIPM)**, the center of mass height \(z_c\) is assumed constant, and the point mass is connected to the ZMP on the ground via a massless rod. The horizontal dynamics of the LIPM are:
+
+$$
+\ddot{x} = \frac{g}{z_c}(x - x_{\text{ZMP}})
+$$
+
+where \(g\) is the gravitational acceleration and \(x\) is the horizontal position of the center of mass. This equation can be rewritten as:
+
+$$
+\dot{x} = \omega_0 (x - x_{\text{ZMP}})
+$$
+
+where \(\omega_0 = \sqrt{g/z_c}\) is the natural frequency of the LIPM. If the ZMP remains constant, the center of mass motion can be decomposed into a convergent component and a divergent component. The divergent component is called the **Divergent Component of Motion (DCM)**:
+
+$$
+\xi = x + \frac{\dot{x}}{\omega_0}
+$$
+
+!!! note "Terminology: Linear Inverted Pendulum Model (LIPM), Natural Frequency, Divergent Component of Motion (DCM)"
+    - **Linear Inverted Pendulum Model (LIPM)**: A linear model that simplifies the robot to a constant-height center of mass, massless rod, and ZMP.
+    - **Natural frequency**: The characteristic frequency of the LIPM, \(\omega_0 = \sqrt{g/z_c}\).
+    - **Divergent Component of Motion (DCM)**: The component of center of mass motion that diverges exponentially over time, determining whether the robot needs to step.
+
+The capture point is essentially the current DCM position. For a two-dimensional LIPM:
+
+$$
+x_{\text{CP}} = x_{\text{CoM}} + \frac{\dot{x}_{\text{CoM}}}{\omega_0}
+$$
+
+Extending to the three-dimensional horizontal plane:
+
+$$
+\mathbf{r}_{\text{CP}} = \mathbf{r}_{\text{CoM}}^{xy} + \frac{\dot{\mathbf{r}}_{\text{CoM}}^{xy}}{\omega_0}
+$$
+
+If the next foot placement (i.e., the new ZMP) is placed exactly at the capture point, the center of mass will move in a straight line toward that point and eventually come to rest; if the step is not taken to the capture point, the DCM will continue to diverge, and the robot must take another step or fall.
+
+```mermaid
+flowchart TD
+    A["Current CoM position and velocity"] --> B["Compute omega_0 = sqrt(g/z_c)"]
+    B --> C["Compute DCM / CP"]
+    C --> D["r_CP = r_CoM + v_CoM / omega_0"]
+    D --> E{"Foot placed on CP?"}
+    E -->|"Yes"| F["Rest within single step"]
+    E -->|"No"| G["Continue stepping or fall"]
+```
+
+!!! note "Terminology: Foot Placement, ZMP, DCM Control, Capture Region"
+    - **Foot placement**: The position where the foot lands during walking.
+    - **ZMP (Zero Moment Point)**: The equivalent point of action of ground reaction forces.
+    - **DCM control**: A method of controlling the divergent component by adjusting the ZMP or foot placement.
+    - **Capture region**: The set of all feasible foot placements that can restore the robot's balance.
+
+**Python Example: Capture Point and Required Foot Placement Calculation**
+
+The following code calculates the capture point given the center of mass horizontal position, velocity, and height; it also determines whether a given actual step position can restore rest in a single step.
+
+```python
+import numpy as np
+
+def compute_capture_point(r_com, v_com, z_c, g=9.81):
+    """
+    Compute the capture point in a 2D/3D horizontal plane.
+    r_com: CoM horizontal position (x, y) or (x, y, z) (only x, y are used)
+    v_com: CoM horizontal velocity (vx, vy) or (vx, vy, vz)
+    z_c: center of mass height (constant)
+    """
+    r_com = np.array(r_com)[:2]
+    v_com = np.array(v_com)[:2]
+    omega_0 = np.sqrt(g / z_c)
+    r_cp = r_com + v_com / omega_0
+    return r_cp, omega_0
+
+def step_recovery_check(r_com, v_com, z_c, foot_place, g=9.81):
+    """
+    Determine whether a given foot placement can stabilize the CoM.
+    Simple criterion: if the new ZMP is at foot_place, success if the DCM converges to that point.
+    """
+    r_cp, omega_0 = compute_capture_point(r_com, v_com, z_c, g)
+    dist = np.linalg.norm(r_cp - np.array(foot_place)[:2])
+    omega_0_val = omega_0
+    # If the actual foot placement coincides with the capture point, rest in a single step is theoretically possible
+    # Here we provide the time constant tau = 1/omega_0 and the offset
+    tau = 1.0 / omega_0_val
+    return {
+        'capture_point': r_cp,
+        'omega_0': omega_0_val,
+        'time_constant': tau,
+        'foot_placement_error': dist,
+        'single_step_capture': dist < 0.02  # Allow 2 cm error
+    }
+```

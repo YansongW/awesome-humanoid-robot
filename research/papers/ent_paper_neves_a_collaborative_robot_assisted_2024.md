@@ -44,8 +44,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.05306v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.05306v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (525 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,14 +77,49 @@ sources:
 - 协作机器人在工业装配中能提升操作者舒适度与安全性，但需权衡时间成本。
 - 未来可进一步优化协作模式以缩短装配时间。
 
-## Overview
-An effective human-robot collaborative process results in the reduction of the operator's workload, promoting a more efficient, productive, safer and less error-prone working environment. However, the implementation of collaborative robots in industry is still challenging. In this work, we compare manual and robot-assisted assembly processes to evaluate the effectiveness of collaborative robots while featuring different modes of operation (coexistence, cooperation and collaboration). Results indicate an improvement in ergonomic conditions and ease of execution without substantially compromising assembly time. Furthermore, the robot is intuitive to use and guides the user on the proper sequencing of the process.
-
-## 개요
-효과적인 인간-로봇 협업 과정은 작업자의 업무 부담을 줄여주며, 보다 효율적이고 생산적이며 안전하고 오류 가능성이 낮은 작업 환경을 조성합니다. 그러나 산업 현장에서 협업 로봇의 도입은 여전히 어려운 과제로 남아 있습니다. 본 연구에서는 수동 조립 공정과 로봇 지원 조립 공정을 비교하여, 다양한 작동 모드(공존, 협력, 협업)에서 협업 로봇의 효과를 평가합니다. 결과는 조립 시간을 크게 희생하지 않으면서도 인체공학적 조건과 작업 용이성이 개선됨을 보여줍니다. 또한, 로봇은 직관적으로 사용할 수 있으며 사용자에게 적절한 공정 순서를 안내합니다.
-
-## 핵심 내용
-효과적인 인간-로봇 협업 과정은 작업자의 업무 부담을 줄여주며, 보다 효율적이고 생산적이며 안전하고 오류 가능성이 낮은 작업 환경을 조성합니다. 그러나 산업 현장에서 협업 로봇의 도입은 여전히 어려운 과제로 남아 있습니다. 본 연구에서는 수동 조립 공정과 로봇 지원 조립 공정을 비교하여, 다양한 작동 모드(공존, 협력, 협업)에서 협업 로봇의 효과를 평가합니다. 결과는 조립 시간을 크게 희생하지 않으면서도 인체공학적 조건과 작업 용이성이 개선됨을 보여줍니다. 또한, 로봇은 직관적으로 사용할 수 있으며 사용자에게 적절한 공정 순서를 안내합니다.
-
 ## 参考
 - http://arxiv.org/abs/2403.05306v1
+
+## Overview
+This study evaluates the effectiveness of collaborative robots in coexistence, collaboration, and synergy modes by comparing manual and robot-assisted assembly of roller conveyor sections. The experiment utilized a KUKA LBR iiwa 7 R800 robotic arm and a SCHUNK Co-act EGP-C 64 gripper, and the results showed that collaborative operations significantly improved ergonomic conditions and reduced operators' mental workload, although assembly time increased by approximately 15%. The robot operation was intuitive and easy to use, guiding users to follow the correct sequence of procedures.
+
+## Content
+### Methods
+- Compared the processes of manual assembly and robot-assisted assembly of roller conveyor sections.
+- Robot-assisted assembly employed a KUKA LBR iiwa 7 R800 robotic arm and a SCHUNK Co-act EGP-C 64 gripper.
+- Tested three operation modes: coexistence, collaboration, and synergy.
+
+### Experimental Setup
+- Evaluation metrics included assembly time, ergonomic conditions, and mental workload.
+- Operators were required to complete the assembly task of the roller conveyor section.
+
+### Key Results
+- Collaborative operations improved ergonomic conditions and reduced mental workload.
+- Assembly time increased by approximately 15%, but this did not significantly impact overall efficiency.
+- Robot operation was intuitive and guided users to follow the correct sequence of procedures.
+
+### Conclusions
+- Collaborative robots can enhance operator comfort and safety in industrial assembly, but time costs must be weighed.
+- Future work could further optimize collaboration modes to reduce assembly time.
+
+## 개요
+이 연구는 수동 조립과 로봇 보조 조립 롤러 컨베이어 구간을 비교하여, 공존, 협력, 협동의 세 가지 모드에서 협동 로봇의 효과성을 평가했습니다. 실험에는 KUKA LBR iiwa 7 R800 로봇 팔과 SCHUNK Co-act EGP-C 64 그리퍼가 사용되었으며, 협동 작업이 인체공학적 조건을 크게 개선하고 작업자의 인지 부하를 낮추는 것으로 나타났지만, 조립 시간은 약 15% 증가했습니다. 로봇 작업은 직관적이고 사용하기 쉬우며, 사용자가 올바른 공정 순서를 따르도록 안내할 수 있습니다.
+
+## 핵심 내용
+### 방법
+- 수동 조립과 로봇 보조 조립 롤러 컨베이어 구간의 과정을 비교했습니다.
+- 로봇 보조 조립에는 KUKA LBR iiwa 7 R800 로봇 팔과 SCHUNK Co-act EGP-C 64 그리퍼가 사용되었습니다.
+- 공존, 협력, 협동의 세 가지 작업 모드를 테스트했습니다.
+
+### 실험 설정
+- 평가 지표에는 조립 시간, 인체공학적 조건, 인지 부하가 포함됩니다.
+- 작업자는 롤러 컨베이어 구간의 조립 작업을 완료해야 합니다.
+
+### 주요 결과
+- 협동 작업은 인체공학적 조건을 개선하고 인지 부하를 낮췄습니다.
+- 조립 시간은 약 15% 증가했지만, 전체 효율성에는 큰 영향을 미치지 않았습니다.
+- 로봇 작업은 직관적이며, 사용자가 올바른 공정 순서를 따르도록 안내할 수 있습니다.
+
+### 결론
+- 협동 로봇은 산업 조립에서 작업자의 편안함과 안전성을 향상시킬 수 있지만, 시간 비용을 고려해야 합니다.
+- 향후 협동 모드를 더욱 최적화하여 조립 시간을 단축할 수 있습니다.

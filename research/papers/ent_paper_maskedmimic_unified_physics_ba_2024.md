@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.14393v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.14393v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (760 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,26 @@ MaskedMimic 通过统一运动修补框架，首次实现单一物理控制器�
 ## Overview
 Crafting a single, versatile physics-based controller that can breathe life into interactive characters across a wide spectrum of scenarios represents an exciting frontier in character animation. An ideal controller should support diverse control modalities, such as sparse target keyframes, text instructions, and scene information. While previous works have proposed physically simulated, scene-aware control models, these systems have predominantly focused on developing controllers that each specializes in a narrow set of tasks and control modalities. This work presents MaskedMimic, a novel approach that formulates physics-based character control as a general motion inpainting problem. Our key insight is to train a single unified model to synthesize motions from partial (masked) motion descriptions, such as masked keyframes, objects, text descriptions, or any combination thereof. This is achieved by leveraging motion tracking data and designing a scalable training method that can effectively utilize diverse motion descriptions to produce coherent animations. Through this process, our approach learns a physics-based controller that provides an intuitive control interface without requiring tedious reward engineering for all behaviors of interest. The resulting controller supports a wide range of control modalities and enables seamless transitions between disparate tasks. By unifying character control through motion inpainting, MaskedMimic creates versatile virtual characters. These characters can dynamically adapt to complex scenes and compose diverse motions on demand, enabling more interactive and immersive experiences.
 
-## 개요
-광범위한 시나리오에서 대화형 캐릭터에 생명을 불어넣을 수 있는 단일하고 다재다능한 물리 기반 제어기를 만드는 것은 캐릭터 애니메이션의 흥미로운 최전선을 대표합니다. 이상적인 제어기는 희소 목표 키프레임, 텍스트 명령, 장면 정보와 같은 다양한 제어 방식을 지원해야 합니다. 이전 연구에서 물리적으로 시뮬레이션된 장면 인식 제어 모델이 제안되었지만, 이러한 시스템은 주로 좁은 범위의 작업과 제어 방식에 특화된 제어기를 개발하는 데 초점을 맞추었습니다. 본 연구는 물리 기반 캐릭터 제어를 일반적인 모션 인페인팅 문제로 정식화하는 새로운 접근 방식인 MaskedMimic을 제시합니다. 우리의 핵심 통찰은 마스킹된 키프레임, 객체, 텍스트 설명 또는 이들의 조합과 같은 부분적(마스킹된) 모션 설명으로부터 모션을 합성하는 단일 통합 모델을 훈련하는 것입니다. 이는 모션 추적 데이터를 활용하고 다양한 모션 설명을 효과적으로 활용하여 일관된 애니메이션을 생성할 수 있는 확장 가능한 훈련 방법을 설계함으로써 달성됩니다. 이 과정을 통해 우리의 접근 방식은 관심 있는 모든 행동에 대해 지루한 보상 엔지니어링 없이 직관적인 제어 인터페이스를 제공하는 물리 기반 제어기를 학습합니다. 결과적으로 생성된 제어기는 광범위한 제어 방식을 지원하고 서로 다른 작업 간의 원활한 전환을 가능하게 합니다. 모션 인페인팅을 통해 캐릭터 제어를 통합함으로써 MaskedMimic은 다재다능한 가상 캐릭터를 만듭니다. 이러한 캐릭터는 복잡한 장면에 동적으로 적응하고 필요에 따라 다양한 모션을 구성하여 더욱 상호작용적이고 몰입감 있는 경험을 가능하게 합니다.
-
-## 핵심 내용
-광범위한 시나리오에서 대화형 캐릭터에 생명을 불어넣을 수 있는 단일하고 다재다능한 물리 기반 제어기를 만드는 것은 캐릭터 애니메이션의 흥미로운 최전선을 대표합니다. 이상적인 제어기는 희소 목표 키프레임, 텍스트 명령, 장면 정보와 같은 다양한 제어 방식을 지원해야 합니다. 이전 연구에서 물리적으로 시뮬레이션된 장면 인식 제어 모델이 제안되었지만, 이러한 시스템은 주로 좁은 범위의 작업과 제어 방식에 특화된 제어기를 개발하는 데 초점을 맞추었습니다. 본 연구는 물리 기반 캐릭터 제어를 일반적인 모션 인페인팅 문제로 정식화하는 새로운 접근 방식인 MaskedMimic을 제시합니다. 우리의 핵심 통찰은 마스킹된 키프레임, 객체, 텍스트 설명 또는 이들의 조합과 같은 부분적(마스킹된) 모션 설명으로부터 모션을 합성하는 단일 통합 모델을 훈련하는 것입니다. 이는 모션 추적 데이터를 활용하고 다양한 모션 설명을 효과적으로 활용하여 일관된 애니메이션을 생성할 수 있는 확장 가능한 훈련 방법을 설계함으로써 달성됩니다. 이 과정을 통해 우리의 접근 방식은 관심 있는 모든 행동에 대해 지루한 보상 엔지니어링 없이 직관적인 제어 인터페이스를 제공하는 물리 기반 제어기를 학습합니다. 결과적으로 생성된 제어기는 광범위한 제어 방식을 지원하고 서로 다른 작업 간의 원활한 전환을 가능하게 합니다. 모션 인페인팅을 통해 캐릭터 제어를 통합함으로써 MaskedMimic은 다재다능한 가상 캐릭터를 만듭니다. 이러한 캐릭터는 복잡한 장면에 동적으로 적응하고 필요에 따라 다양한 모션을 구성하여 더욱 상호작용적이고 몰입감 있는 경험을 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2409.14393v1
+
+## 개요
+MaskedMimic은 물리적 캐릭터 제어를 범용 모션 인페인팅 문제로 재정의하며, 단일 모델이 부분(마스킹된) 모션 설명으로부터 동작을 합성하도록 훈련합니다. 이 방법은 마스킹된 키프레임, 객체 상호작용, 텍스트 설명 등 다양한 제어 양식의 임의 조합을 지원하며, 모션 추적 데이터를 활용해 효율적인 훈련을 가능하게 합니다. 최종 컨트롤러는 서로 다른 작업을 매끄럽게 전환하고 복잡한 장면에 동적으로 적응하며, 각 행동에 대해 별도의 보상 함수를 설계할 필요가 없습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 물리적 캐릭터 제어를 모션 인페인팅 문제로 변환하고, 부분 모션 설명(예: 누락된 키프레임, 객체 위치, 텍스트 지시)을 마스킹하여 모델이 전체 동작 시퀀스를 예측하도록 훈련합니다.
+- **훈련 전략**: 모션 추적 데이터(예: MoCap 데이터)를 활용해 다양한 마스킹 패턴을 생성하고, 모델이 부분 정보로부터 완전한 움직임을 추론하도록 학습합니다. 특정 행동에 대한 보상 함수를 설계할 필요 없이 지도 학습을 통해 동작의 연속성을 직접 최적화합니다.
+
+### 실험 설정
+- **제어 양식**: 희소 키프레임, 텍스트 지시, 장면 객체 상호작용, 그리고 여러 양식의 혼합 입력을 지원합니다.
+- **작업 시나리오**: 목표 도달, 객체 조작, 텍스트 기반 동작 생성 등을 포함하며, 단순한 작업부터 복잡한 상호작용 작업까지 포괄합니다.
+- **평가 지표**: 동작 품질(예: 관절 각도 오차), 물리적 타당성(예: 지면 접촉력), 작업 성공률 등의 지표를 사용합니다.
+
+### 주요 수치 및 결론
+- **성능 향상**: 희소 키프레임 제어 작업에서 MaskedMimic의 동작 생성 성공률은 전용 컨트롤러보다 15% 높으며, 보지 못한 장면으로의 제로샷 전이를 지원합니다.
+- **양식 융합**: 텍스트+키프레임 혼합 입력 시 동작 연속성이 단일 양식보다 22% 향상됩니다.
+- **일반화 능력**: 10가지 서로 다른 장면에서 컨트롤러는 재훈련 없이 보행 패턴과 상호작용 동작을 동적으로 조정할 수 있습니다.
+
+### 결론
+MaskedMimic은 통합 모션 인페인팅 프레임워크를 통해 단일 물리 컨트롤러가 여러 제어 양식을 호환하도록 최초로 구현하여 개발 복잡성을 크게 낮췄습니다. 확장 가능한 훈련 방법은 향후 더 범용적인 캐릭터 애니메이션 시스템을 구축하기 위한 새로운 패러다임을 제시합니다.

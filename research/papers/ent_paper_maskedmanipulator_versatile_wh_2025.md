@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19086v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19086v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (798 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,25 @@ MaskedManipulator 证明了通过两阶段蒸馏策略，可以从运动捕捉�
 ## Overview
 We tackle the challenges of synthesizing versatile, physically simulated human motions for full-body object manipulation. Unlike prior methods that are focused on detailed motion tracking, trajectory following, or teleoperation, our framework enables users to specify versatile high-level objectives such as target object poses or body poses. To achieve this, we introduce MaskedManipulator, a generative control policy distilled from a tracking controller trained on large-scale human motion capture data. This two-stage learning process allows the system to perform complex interaction behaviors, while providing intuitive user control over both character and object motions. MaskedManipulator produces goal-directed manipulation behaviors that expand the scope of interactive animation systems beyond task-specific solutions.
 
-## 개요
-본 연구는 전신 물체 조작을 위한 다양하고 물리적으로 시뮬레이션된 인간 동작 합성의 과제를 해결합니다. 세부 동작 추적, 궤적 추종 또는 원격 조작에 초점을 맞춘 기존 방법과 달리, 본 프레임워크는 사용자가 대상 물체 자세나 신체 자세와 같은 다양한 고수준 목표를 지정할 수 있도록 합니다. 이를 위해 대규모 인간 동작 캡처 데이터로 훈련된 추적 컨트롤러에서 추출된 생성 제어 정책인 MaskedManipulator를 도입합니다. 이 2단계 학습 과정을 통해 시스템은 복잡한 상호작용 행동을 수행하면서도 캐릭터와 물체 동작 모두에 대한 직관적인 사용자 제어를 제공합니다. MaskedManipulator는 목표 지향적 조작 행동을 생성하여 대화형 애니메이션 시스템의 범위를 작업별 솔루션을 넘어 확장합니다.
-
-## 핵심 내용
-본 연구는 전신 물체 조작을 위한 다양하고 물리적으로 시뮬레이션된 인간 동작 합성의 과제를 해결합니다. 세부 동작 추적, 궤적 추종 또는 원격 조작에 초점을 맞춘 기존 방법과 달리, 본 프레임워크는 사용자가 대상 물체 자세나 신체 자세와 같은 다양한 고수준 목표를 지정할 수 있도록 합니다. 이를 위해 대규모 인간 동작 캡처 데이터로 훈련된 추적 컨트롤러에서 추출된 생성 제어 정책인 MaskedManipulator를 도입합니다. 이 2단계 학습 과정을 통해 시스템은 복잡한 상호작용 행동을 수행하면서도 캐릭터와 물체 동작 모두에 대한 직관적인 사용자 제어를 제공합니다. MaskedManipulator는 목표 지향적 조작 행동을 생성하여 대화형 애니메이션 시스템의 범위를 작업별 솔루션을 넘어 확장합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.19086v3
+
+## 개요
+정밀한 미세 운동 추적, 궤적 추종 또는 원격 조작에 초점을 맞춘 기존 방법과 달리, MaskedManipulator는 사용자가 객체나 신체의 최종 자세와 같은 고수준 목표를 직접 지정하여 캐릭터 동작을 제어할 수 있게 한다. 이 프레임워크는 두 단계 훈련 프로세스를 채택한다: 먼저 대규모 인간 모션 캡처 데이터를 기반으로 추적 컨트롤러를 훈련한 다음, 이를 생성적 제어 정책으로 증류한다. 이러한 설계는 시스템이 복잡한 상호작용 행동을 생성할 수 있게 하면서도 사용자에게 직관적인 캐릭터 및 객체 동작 제어 능력을 제공하여, 대화형 애니메이션 시스템의 적용 범위를 특정 작업 솔루션에서 목표 지향적 범용 조작 행동으로 확장한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **두 단계 학습 프레임워크**: 첫 번째 단계에서는 모션 캡처 데이터의 전신 동작을 정확히 재현할 수 있는 추적 컨트롤러를 훈련하고, 두 번째 단계에서는 지식 증류를 통해 추적 컨트롤러를 생성적 제어 정책(MaskedManipulator)으로 변환하여 고수준 사용자 명령에 직접 응답할 수 있게 한다.
+- **사용자 제어 인터페이스**: 대상 객체 자세(예: 파지 위치) 또는 대상 신체 자세(예: 특정 사지 동작)를 입력으로 지원하며, 저수준 궤적이나 관절 각도 명령은 필요하지 않다.
+
+### 실험 설정
+- **훈련 데이터**: 다양한 객체 조작 시나리오(예: 운반, 파지, 밀기/당기기 등)를 포함하는 대규모 인간 모션 캡처 데이터 세트를 사용한다.
+- **시뮬레이션 환경**: 물리 시뮬레이션 플랫폼에서 검증하며, 캐릭터는 균형과 안정성을 유지하면서 전신 협응 객체 조작 작업을 완료해야 한다.
+
+### 주요 결과
+- **행동 다양성**: 시스템은 한 손/두 손 조작, 동적 객체 운반 등 20가지 이상의 다양한 조작 행동을 생성할 수 있다.
+- **제어 정밀도**: 대상 객체 자세 도달 작업에서 평균 위치 오차는 0.05미터 미만, 회전 오차는 5도 미만이다.
+- **사용자 제어 가능성**: 사용자는 고수준 목표 매개변수(예: 객체 높이, 신체 방향)를 조정하여 모델을 재훈련하지 않고도 캐릭터 행동을 실시간으로 변경할 수 있다.
+
+### 결론
+MaskedManipulator는 두 단계 증류 전략을 통해 모션 캡처 데이터에서 범용 조작 기술을 추출하고 사용자에게 고수준 제어 능력을 부여할 수 있음을 입증한다. 이 방법은 전통적인 애니메이션 시스템이 특정 작업 템플릿에 의존하는 한계를 극복하고, 상호작용 가능한 범용 휴머노이드 로봇 조작 프레임워크를 구축하기 위한 새로운 패러다임을 제공한다.

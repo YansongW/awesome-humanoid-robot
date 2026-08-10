@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01571v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01571v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1106 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -91,11 +92,32 @@ Vision-Language-Action models (VLAs) are emerging as powerful tools for learning
 ## Content
 Vision-Language-Action models (VLAs) are emerging as powerful tools for learning generalizable visuomotor control policies. However, current VLAs are mostly trained on large-scale image-text-action data and remain limited in two key ways: (i) they struggle with pixel-level scene understanding, and (ii) they rely heavily on textual prompts, which reduces their flexibility in real-world settings. To address these challenges, we introduce PixelVLA, the first VLA model designed to support both pixel-level reasoning and multimodal prompting with text and visual inputs. Our approach is built on a new visuomotor instruction tuning framework that integrates a multiscale pixel-aware encoder with a visual prompt-aware encoder. To train PixelVLA effectively, we further propose a two-stage automated annotation pipeline that generates Pixel-160K, a large-scale dataset with pixel-level annotations derived from existing robot data. Experiments on three standard VLA benchmarks and two VLA model variants show that PixelVLA improves manipulation success rates by 10.1%-28.7% over OpenVLA, while requiring only 1.5% of its pretraining cost. These results demonstrate that PixelVLA can be integrated into existing VLAs to enable more accurate, efficient, and versatile robot control in complex environments.
 
-## 개요
-Vision-Language-Action 모델(VLA)은 일반화 가능한 시각-운동 제어 정책을 학습하기 위한 강력한 도구로 부상하고 있습니다. 그러나 현재의 VLA는 대부분 대규모 이미지-텍스트-행동 데이터로 훈련되며, 두 가지 주요 한계를 가지고 있습니다: (i) 픽셀 수준의 장면 이해에 어려움을 겪고, (ii) 텍스트 프롬프트에 크게 의존하여 실제 환경에서의 유연성이 떨어집니다. 이러한 문제를 해결하기 위해, 우리는 픽셀 수준 추론과 텍스트 및 시각 입력을 통한 다중 모드 프롬프트를 모두 지원하는 최초의 VLA 모델인 PixelVLA를 소개합니다. 우리의 접근 방식은 다중 스케일 픽셀 인식 인코더와 시각 프롬프트 인식 인코더를 통합하는 새로운 시각-운동 명령 튜닝 프레임워크를 기반으로 합니다. PixelVLA를 효과적으로 훈련하기 위해, 우리는 기존 로봇 데이터에서 파생된 픽셀 수준 주석이 포함된 대규모 데이터셋인 Pixel-160K를 생성하는 2단계 자동 주석 파이프라인을 추가로 제안합니다. 세 가지 표준 VLA 벤치마크와 두 가지 VLA 모델 변형에 대한 실험 결과, PixelVLA는 OpenVLA 대비 조작 성공률을 10.1%~28.7% 향상시키면서 사전 훈련 비용은 1.5%만 필요로 합니다. 이러한 결과는 PixelVLA가 기존 VLA에 통합되어 복잡한 환경에서 더 정확하고 효율적이며 다재다능한 로봇 제어를 가능하게 함을 보여줍니다.
-
-## 핵심 내용
-Vision-Language-Action 모델(VLA)은 일반화 가능한 시각-운동 제어 정책을 학습하기 위한 강력한 도구로 부상하고 있습니다. 그러나 현재의 VLA는 대부분 대규모 이미지-텍스트-행동 데이터로 훈련되며, 두 가지 주요 한계를 가지고 있습니다: (i) 픽셀 수준의 장면 이해에 어려움을 겪고, (ii) 텍스트 프롬프트에 크게 의존하여 실제 환경에서의 유연성이 떨어집니다. 이러한 문제를 해결하기 위해, 우리는 픽셀 수준 추론과 텍스트 및 시각 입력을 통한 다중 모드 프롬프트를 모두 지원하는 최초의 VLA 모델인 PixelVLA를 소개합니다. 우리의 접근 방식은 다중 스케일 픽셀 인식 인코더와 시각 프롬프트 인식 인코더를 통합하는 새로운 시각-운동 명령 튜닝 프레임워크를 기반으로 합니다. PixelVLA를 효과적으로 훈련하기 위해, 우리는 기존 로봇 데이터에서 파생된 픽셀 수준 주석이 포함된 대규모 데이터셋인 Pixel-160K를 생성하는 2단계 자동 주석 파이프라인을 추가로 제안합니다. 세 가지 표준 VLA 벤치마크와 두 가지 VLA 모델 변형에 대한 실험 결과, PixelVLA는 OpenVLA 대비 조작 성공률을 10.1%~28.7% 향상시키면서 사전 훈련 비용은 1.5%만 필요로 합니다. 이러한 결과는 PixelVLA가 기존 VLA에 통합되어 복잡한 환경에서 더 정확하고 효율적이며 다재다능한 로봇 제어를 가능하게 함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.01571v2
+
+## 개요
+현재 비전-언어-행동 모델(VLA)은 일반화 제어 정책에서 뛰어난 성능을 보이지만, 픽셀 수준의 장면 이해 능력 부족과 텍스트 프롬프트에 대한 과도한 의존성에 제약을 받고 있습니다. PixelVLA는 다중 스케일 픽셀 인식 인코더와 시각적 프롬프트 인식 인코더를 도입하여 새로운 비전 운동 명령 미세 조정 프레임워크를 구축하고, 픽셀 수준 추론과 다중 모달 입력(텍스트+이미지)의 융합을 최초로 구현했습니다. 이 모델을 효율적으로 훈련하기 위해 연구팀은 두 단계 자동 주석 파이프라인을 제안하여 기존 로봇 데이터에서 픽셀 수준 주석을 포함한 대규모 데이터셋 Pixel-160K를 생성했습니다. 실험 결과, PixelVLA는 세 가지 표준 VLA 벤치마크에서 OpenVLA를 크게 능가하며, 작업 성공률이 10.1%에서 28.7%까지 향상되었고, 사전 훈련 비용은 OpenVLA의 1.5%에 불과했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 프레임워크**: 비전 운동 명령 미세 조정 프레임워크 기반, 두 가지 핵심 인코더 통합:
+  - **다중 스케일 픽셀 인식 인코더**: 서로 다른 입자 크기의 픽셀 수준 특징을 추출하여 객체 경계, 질감 등 세부 사항에 대한 해석 능력을 강화.
+  - **시각적 프롬프트 인식 인코더**: 시각적 프롬프트(예: 대상 영역 표시 또는 제스처 이미지)를 처리하여 모델이 비텍스트 명령에 직접 응답할 수 있게 함.
+- **다중 모달 프롬프트 메커니즘**: 텍스트와 시각적 입력의 혼합을 지원하며, 예를 들어 사용자가 "빨간 컵 집기"라는 텍스트 명령과 컵을 가리키는 이미지 영역을 동시에 제공할 수 있음.
+
+### 데이터셋 생성
+- **Pixel-160K 데이터셋**: 두 단계 자동 주석 파이프라인으로 구축:
+  1. **1단계**: 사전 훈련된 분할 모델(예: SAM)을 사용하여 원본 로봇 조작 비디오의 각 프레임에 대해 픽셀 수준 마스크를 생성.
+  2. **2단계**: 행동 레이블(예: 집기 지점 좌표)과 마스크를 결합하여 픽셀-행동 대응 관계를 자동 생성, 수동 주석 불필요.
+- **규모**: 160,000개 샘플 포함, 다양한 조작 시나리오(예: 집기, 쌓기, 삽입)를 포괄.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: 세 가지 표준 VLA 벤치마크(CALVIN, RLBench, MetaWorld)에서 평가, 기준 모델 OpenVLA와 비교.
+- **핵심 수치**:
+  - 작업 성공률 향상: 10.1%(CALVIN)에서 28.7%(MetaWorld).
+  - 사전 훈련 비용: OpenVLA의 1.5%에 불과(약 12 GPU 시간 vs. 800 GPU 시간).
+- **절제 실험**: 픽셀 인식 인코더를 제거하면 성공률이 평균 15.3% 하락, 픽셀 수준 이해의 핵심 역할 검증.
+- **일반화 능력**: 보지 못한 객체와 장면에서 PixelVLA의 제로샷 성공률이 OpenVLA보다 22.4% 높음.
+
+### 결론
+PixelVLA는 픽셀 수준 이해와 다중 모달 프롬프트가 VLA 모델의 효율성과 견고성을 크게 향상시킬 수 있음을 입증했으며, 경량 설계(낮은 훈련 비용)로 기존 로봇 시스템에 쉽게 통합될 수 있습니다. 향후 작업은 동적 장면에서의 실시간 픽셀 추론을 탐구할 것입니다.

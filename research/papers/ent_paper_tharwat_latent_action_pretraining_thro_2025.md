@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.18428v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.18428v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (756 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ LAWM 通过自监督学习潜在动作表征，显著降低了 VLA 模型对人�
 ## Overview
 Vision-Language-Action (VLA) models have gained popularity for learning robotic manipulation tasks that follow language instructions. State-of-the-art VLAs, such as OpenVLA and $π_{0}$, were trained on large-scale, manually labeled action datasets collected through teleoperation. More recent approaches, including LAPA and villa-X, introduce latent action representations that enable unsupervised pretraining on unlabeled datasets by modeling abstract visual changes between frames. Although these methods have shown strong results, their large model sizes make deployment in real-world settings challenging. In this work, we propose LAWM, a model-agnostic framework to pretrain imitation learning models in a self-supervised way, by learning latent action representations from unlabeled video data through world modeling. These videos can be sourced from robot recordings or videos of humans performing actions with everyday objects. Our framework is able to transfer learned knowledge across tasks, environments, and embodiments. It outperforms models pretrained with ground-truth robot actions and other similar pretraining methods on the LIBERO benchmark and real-world setup, while being efficient and practical for real-world settings.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 언어 명령을 따르는 로봇 조작 작업을 학습하는 데 널리 사용되고 있습니다. OpenVLA 및 $π_{0}$와 같은 최첨단 VLA 모델은 원격 조작을 통해 수집된 대규모의 수동 레이블링된 행동 데이터셋으로 학습되었습니다. LAPA 및 villa-X를 포함한 최근 접근 방식은 프레임 간의 추상적인 시각적 변화를 모델링하여 레이블이 없는 데이터셋에서 비지도 사전 학습을 가능하게 하는 잠재 행동 표현을 도입합니다. 이러한 방법들은 강력한 결과를 보여주었지만, 큰 모델 크기로 인해 실제 환경에서의 배포가 어렵습니다. 본 연구에서는 세계 모델링을 통해 레이블이 없는 비디오 데이터에서 잠재 행동 표현을 학습함으로써, 모방 학습 모델을 자기 지도 방식으로 사전 학습하는 모델에 구애받지 않는 프레임워크인 LAWM을 제안합니다. 이러한 비디오는 로봇 녹화물이나 일상적인 물체로 행동을 수행하는 인간의 비디오에서 얻을 수 있습니다. 우리의 프레임워크는 작업, 환경 및 구현체 간에 학습된 지식을 전이할 수 있습니다. 이는 LIBERO 벤치마크 및 실제 환경 설정에서 실제 로봇 행동으로 사전 학습된 모델 및 기타 유사한 사전 학습 방법보다 뛰어난 성능을 보이면서도 실제 환경에 효율적이고 실용적입니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 언어 명령을 따르는 로봇 조작 작업을 학습하는 데 널리 사용되고 있습니다. OpenVLA 및 $π_{0}$와 같은 최첨단 VLA 모델은 원격 조작을 통해 수집된 대규모의 수동 레이블링된 행동 데이터셋으로 학습되었습니다. LAPA 및 villa-X를 포함한 최근 접근 방식은 프레임 간의 추상적인 시각적 변화를 모델링하여 레이블이 없는 데이터셋에서 비지도 사전 학습을 가능하게 하는 잠재 행동 표현을 도입합니다. 이러한 방법들은 강력한 결과를 보여주었지만, 큰 모델 크기로 인해 실제 환경에서의 배포가 어렵습니다. 본 연구에서는 세계 모델링을 통해 레이블이 없는 비디오 데이터에서 잠재 행동 표현을 학습함으로써, 모방 학습 모델을 자기 지도 방식으로 사전 학습하는 모델에 구애받지 않는 프레임워크인 LAWM을 제안합니다. 이러한 비디오는 로봇 녹화물이나 일상적인 물체로 행동을 수행하는 인간의 비디오에서 얻을 수 있습니다. 우리의 프레임워크는 작업, 환경 및 구현체 간에 학습된 지식을 전이할 수 있습니다. 이는 LIBERO 벤치마크 및 실제 환경 설정에서 실제 로봇 행동으로 사전 학습된 모델 및 기타 유사한 사전 학습 방법보다 뛰어난 성능을 보이면서도 실제 환경에 효율적이고 실용적입니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.18428v2
+
+## 개요
+LAWM은 세계 모델링을 통해 라벨이 없는 비디오 데이터에서 잠재 행동 표현을 자기 지도 학습하는 모델 비의존적 사전 학습 프레임워크입니다. 이러한 비디오는 로봇 기록 또는 인간이 일상 물체를 조작하는 비디오에서 얻을 수 있습니다. 이 프레임워크는 작업, 환경, 본체(embodiment) 간 학습된 지식을 전이할 수 있으며, LIBERO 벤치마크와 실제 시나리오에서 실제 로봇 행동으로 사전 학습된 모델 및 기타 유사 사전 학습 방법보다 우수한 성능을 보입니다. LAWM은 효율성과 실용성을 중점적으로 설계되어 실제 세계 배포에 적합합니다.
+
+## 핵심 내용
+### 배경 및 동기
+- 기존 VLA 모델(예: OpenVLA 및 $π_{0}$)은 대규모 수동 주석 행동 데이터 세트에 의존하며, 원격 조작을 통해 수집되어 비용이 높습니다.
+- 최근 방법(예: LAPA 및 villa-X)은 잠재 행동 표현을 도입하여 프레임 간 추상적 시각 변화를 모델링함으로써 비지도 사전 학습을 가능하게 하지만, 모델 규모가 너무 커서 실제 시나리오에 배포하기 어렵습니다.
+
+### LAWM 프레임워크
+- **핵심 아이디어**: 세계 모델링을 통해 라벨이 없는 비디오 데이터에서 잠재 행동 표현을 자기 지도 학습하며, 비디오 소스는 로봇 기록 또는 인간이 일상 물체를 조작하는 비디오를 포함합니다.
+- **모델 비의존성**: 이 프레임워크는 모델 아키텍처를 수정하지 않고도 다양한 모방 학습 모델에 적용할 수 있습니다.
+- **지식 전이**: 작업, 환경, 본체 간 학습된 지식을 전이할 수 있습니다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: LIBERO 벤치마크에서 평가되었으며, LAWM은 실제 로봇 행동으로 사전 학습된 모델 및 기타 유사 사전 학습 방법보다 우수합니다.
+- **실제 시나리오**: 실제 로봇 조작 설정에서도 LAWM은 뛰어난 성능을 보여 실제 배포 가능성을 검증합니다.
+- **효율성**: 기존 방법에 비해 LAWM 모델은 더 가볍고 계산 비용이 낮아 실제 세계 응용에 적합합니다.
+
+### 결론
+LAWM은 잠재 행동 표현의 자기 지도 학습을 통해 VLA 모델의 수동 주석 데이터 의존성을 크게 줄이면서 높은 성능과 실용성을 유지합니다. 작업, 환경, 본체 간 전이 능력은 로봇 조작 분야에서 유망한 사전 학습 프레임워크로 만듭니다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.00378v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.00378v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (691 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,22 @@ GenMM 通过生成式运动匹配实现了高效、高质量的运动合成，�
 ## Overview
 We present GenMM, a generative model that "mines" as many diverse motions as possible from a single or few example sequences. In stark contrast to existing data-driven methods, which typically require long offline training time, are prone to visual artifacts, and tend to fail on large and complex skeletons, GenMM inherits the training-free nature and the superior quality of the well-known Motion Matching method. GenMM can synthesize a high-quality motion within a fraction of a second, even with highly complex and large skeletal structures. At the heart of our generative framework lies the generative motion matching module, which utilizes the bidirectional visual similarity as a generative cost function to motion matching, and operates in a multi-stage framework to progressively refine a random guess using exemplar motion matches. In addition to diverse motion generation, we show the versatility of our generative framework by extending it to a number of scenarios that are not possible with motion matching alone, including motion completion, key frame-guided generation, infinite looping, and motion reassembly. Code and data for this paper are at https://wyysf-98.github.io/GenMM/
 
-## 개요
-우리는 GenMM을 제시합니다. 이는 하나 또는 소수의 예제 시퀀스에서 가능한 한 다양한 모션을 "채굴"하는 생성 모델입니다. 일반적으로 긴 오프라인 학습 시간이 필요하고, 시각적 아티팩트가 발생하기 쉬우며, 크고 복잡한 골격에서 실패하는 경향이 있는 기존의 데이터 기반 방법들과는 대조적으로, GenMM은 잘 알려진 Motion Matching 방법의 학습 불필요성과 우수한 품질을 계승합니다. GenMM은 매우 복잡하고 큰 골격 구조에서도 1초 미만의 시간 내에 고품질 모션을 합성할 수 있습니다. 우리 생성 프레임워크의 핵심에는 생성적 모션 매칭 모듈이 있으며, 이는 양방향 시각적 유사성을 모션 매칭의 생성 비용 함수로 활용하고, 다단계 프레임워크에서 작동하여 예제 모션 매칭을 사용해 무작위 추측을 점진적으로 개선합니다. 다양한 모션 생성 외에도, 우리는 모션 완성, 키 프레임 기반 생성, 무한 루핑, 모션 재조립 등 모션 매칭만으로는 불가능한 여러 시나리오로 생성 프레임워크를 확장하여 그 다재다능함을 보여줍니다. 이 논문의 코드와 데이터는 https://wyysf-98.github.io/GenMM/ 에 있습니다.
-
-## 핵심 내용
-우리는 GenMM을 제시합니다. 이는 하나 또는 소수의 예제 시퀀스에서 가능한 한 다양한 모션을 "채굴"하는 생성 모델입니다. 일반적으로 긴 오프라인 학습 시간이 필요하고, 시각적 아티팩트가 발생하기 쉬우며, 크고 복잡한 골격에서 실패하는 경향이 있는 기존의 데이터 기반 방법들과는 대조적으로, GenMM은 잘 알려진 Motion Matching 방법의 학습 불필요성과 우수한 품질을 계승합니다. GenMM은 매우 복잡하고 큰 골격 구조에서도 1초 미만의 시간 내에 고품질 모션을 합성할 수 있습니다. 우리 생성 프레임워크의 핵심에는 생성적 모션 매칭 모듈이 있으며, 이는 양방향 시각적 유사성을 모션 매칭의 생성 비용 함수로 활용하고, 다단계 프레임워크에서 작동하여 예제 모션 매칭을 사용해 무작위 추측을 점진적으로 개선합니다. 다양한 모션 생성 외에도, 우리는 모션 완성, 키 프레임 기반 생성, 무한 루핑, 모션 재조립 등 모션 매칭만으로는 불가능한 여러 시나리오로 생성 프레임워크를 확장하여 그 다재다능함을 보여줍니다. 이 논문의 코드와 데이터는 https://wyysf-98.github.io/GenMM/ 에 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2306.00378v1
+
+## 개요
+GenMM은 Motion Matching 방식의 훈련 불필요성과 우수한 품질 특성을 계승하면서, 기존 데이터 기반 방식의 긴 훈련 시간, 시각적 아티팩트 발생, 대형 복잡 골격 처리 어려움 등의 문제를 해결했습니다. 이 모델은 생성적 모션 매칭 모듈을 통해 양방향 시각적 유사성을 생성 비용 함수로 활용하고, 다단계 프레임워크에서 무작위 초기 추측을 점진적으로 최적화하여 고품질 모션을 효율적으로 합성합니다. 다양한 모션 생성 외에도 GenMM은 모션 완성, 키프레임 유도 생성, 무한 루프, 모션 재구성 등의 시나리오에서 범용성을 보여주며, 이는 기존 Motion Matching으로는 구현할 수 없는 기능입니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 모듈**: 생성적 모션 매칭 모듈로, 양방향 시각적 유사성을 생성 비용 함수로 사용하여 기존 Motion Matching의 매칭 기준을 대체합니다.
+- **다단계 프레임워크**: 무작위 초기 추측에서 시작하여 다단계 반복을 통해 점진적으로 최적화하며, 각 단계에서 예제 모션 매칭을 활용해 결과를 세밀화합니다.
+- **훈련 불필요**: Motion Matching의 훈련 불필요 특성을 계승하여 장시간 오프라인 훈련을 피합니다.
+
+### 실험 설정 및 핵심 수치
+- **성능**: 고도로 복잡하고 대형 골격 구조에서 GenMM은 1초 미만(fraction of a second) 내에 고품질 모션을 합성할 수 있습니다.
+- **비교 우위**: 기존 데이터 기반 방식과 비교하여 GenMM은 훈련이 필요 없고, 시각적 아티팩트가 없으며, 대형 복잡 골격을 처리할 수 있습니다.
+- **확장 시나리오**: 모션 완성, 키프레임 유도 생성, 무한 루프, 모션 재구성을 지원하며, 이는 기존 Motion Matching으로는 구현할 수 없는 기능입니다.
+
+### 결론
+GenMM은 생성적 모션 매칭을 통해 효율적이고 고품질의 모션 합성을 실현하며, 특히 복잡한 골격 구조에 적합하고 다양한 모션 관련 작업에서 범용성을 보여줍니다. 코드와 데이터는 오픈소스로 공개되었습니다.

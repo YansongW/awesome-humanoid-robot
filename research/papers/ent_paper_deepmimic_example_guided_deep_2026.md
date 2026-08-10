@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1804.02717v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1804.02717v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1028 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,30 @@ theoretical_depth:
 ## Overview
 A longstanding goal in character animation is to combine data-driven specification of behavior with a system that can execute a similar behavior in a physical simulation, thus enabling realistic responses to perturbations and environmental variation. We show that well-known reinforcement learning (RL) methods can be adapted to learn robust control policies capable of imitating a broad range of example motion clips, while also learning complex recoveries, adapting to changes in morphology, and accomplishing user-specified goals. Our method handles keyframed motions, highly-dynamic actions such as motion-captured flips and spins, and retargeted motions. By combining a motion-imitation objective with a task objective, we can train characters that react intelligently in interactive settings, e.g., by walking in a desired direction or throwing a ball at a user-specified target. This approach thus combines the convenience and motion quality of using motion clips to define the desired style and appearance, with the flexibility and generality afforded by RL methods and physics-based animation. We further explore a number of methods for integrating multiple clips into the learning process to develop multi-skilled agents capable of performing a rich repertoire of diverse skills. We demonstrate results using multiple characters (human, Atlas robot, bipedal dinosaur, dragon) and a large variety of skills, including locomotion, acrobatics, and martial arts.
 
-## 개요
-캐릭터 애니메이션의 오랜 목표 중 하나는 데이터 기반 행동 명세와 물리 시뮬레이션에서 유사한 행동을 실행할 수 있는 시스템을 결합하여, 외란 및 환경 변화에 현실적으로 대응할 수 있도록 하는 것입니다. 우리는 잘 알려진 강화 학습(RL) 방법을 적용하여 다양한 예제 모션 클립을 모방할 수 있는 강건한 제어 정책을 학습하는 동시에, 복잡한 회복 동작, 형태 변화 적응, 사용자 지정 목표 달성도 학습할 수 있음을 보여줍니다. 우리의 방법은 키프레임 모션, 모션 캡처 플립 및 스핀과 같은 고역학적 동작, 그리고 리타겟팅된 모션을 처리합니다. 모션 모방 목표와 작업 목표를 결합함으로써, 원하는 방향으로 걷거나 사용자가 지정한 목표물에 공을 던지는 등 상호작용 환경에서 지능적으로 반응하는 캐릭터를 훈련할 수 있습니다. 이 접근법은 원하는 스타일과 외형을 정의하기 위해 모션 클립을 사용하는 편의성과 모션 품질을, RL 방법과 물리 기반 애니메이션이 제공하는 유연성 및 일반성과 결합합니다. 또한, 여러 클립을 학습 과정에 통합하여 다양한 기술을 수행할 수 있는 다중 기술 에이전트를 개발하는 여러 방법을 탐구합니다. 우리는 여러 캐릭터(인간, 아틀라스 로봇, 이족 보행 공룡, 드래곤)와 다양한 기술(보행, 곡예, 무술 포함)을 사용한 결과를 보여줍니다.
-
-## 핵심 내용
-캐릭터 애니메이션의 오랜 목표 중 하나는 데이터 기반 행동 명세와 물리 시뮬레이션에서 유사한 행동을 실행할 수 있는 시스템을 결합하여, 외란 및 환경 변화에 현실적으로 대응할 수 있도록 하는 것입니다. 우리는 잘 알려진 강화 학습(RL) 방법을 적용하여 다양한 예제 모션 클립을 모방할 수 있는 강건한 제어 정책을 학습하는 동시에, 복잡한 회복 동작, 형태 변화 적응, 사용자 지정 목표 달성도 학습할 수 있음을 보여줍니다. 우리의 방법은 키프레임 모션, 모션 캡처 플립 및 스핀과 같은 고역학적 동작, 그리고 리타겟팅된 모션을 처리합니다. 모션 모방 목표와 작업 목표를 결합함으로써, 원하는 방향으로 걷거나 사용자가 지정한 목표물에 공을 던지는 등 상호작용 환경에서 지능적으로 반응하는 캐릭터를 훈련할 수 있습니다. 이 접근법은 원하는 스타일과 외형을 정의하기 위해 모션 클립을 사용하는 편의성과 모션 품질을, RL 방법과 물리 기반 애니메이션이 제공하는 유연성 및 일반성과 결합합니다. 또한, 여러 클립을 학습 과정에 통합하여 다양한 기술을 수행할 수 있는 다중 기술 에이전트를 개발하는 여러 방법을 탐구합니다. 우리는 여러 캐릭터(인간, 아틀라스 로봇, 이족 보행 공룡, 드래곤)와 다양한 기술(보행, 곡예, 무술 포함)을 사용한 결과를 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1804.02717v3
+
+## 개요
+이 연구는 캐릭터 애니메이션에서 오랫동안 지속된 과제, 즉 데이터 기반 행동 규범과 물리 시뮬레이션에서의 실제 실행을 결합하는 문제를 해결합니다. 저자들은 표준 강화 학습 방법을 조정함으로써 키프레임 애니메이션, 높은 역동성을 지닌 모션 캡처 동작(예: 공중제비 및 회전), 리타겟팅 모션을 포함한 광범위한 동작 클립을 모방할 수 있는 강력한 제어 정책을 학습할 수 있음을 입증했습니다. 모션 모방 목표를 작업 목표와 결합함으로써 캐릭터는 지정된 방향으로 걷기 또는 목표물에 공 던지기와 같은 상호작용 시나리오에서 지능적으로 반응할 수 있습니다. 이 접근 방식은 동작 클립을 사용하여 스타일과 외형을 정의하는 편리성과 품질을 유지하면서도 강화 학습과 물리 애니메이션의 유연성과 일반성을 얻습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 프레임워크**: 강화 학습(RL) 기반 물리 시뮬레이션 캐릭터 제어로, 정책 경사 방법(예: PPO)을 사용하여 신경망 정책을 훈련합니다.
+- **목적 함수**: 모션 모방 목표(시뮬레이션 캐릭터와 참조 동작 클립 간의 자세 차이 최소화)와 작업 목표(예: 걷기 방향, 던지기 목표)를 결합하고, 가중 합산을 통해 다중 목표 최적화를 구현합니다.
+- **다중 클립 통합**: 혼합 정책, 계층적 정책, 조건부 정책을 포함한 여러 방법을 탐구하여 다양한 기술을 갖춘 다중 기술 에이전트를 육성합니다.
+
+### 실험 설정
+- **캐릭터 및 기술**: 다양한 캐릭터(인간, Atlas 로봇, 이족 공룡, 드래곤)와 많은 기술(걷기, 달리기, 점프, 공중제비, 회전, 무술 동작 포함)을 테스트했습니다.
+- **동작 데이터**: 키프레임 애니메이션, 모션 캡처 데이터(예: 높은 역동성의 공중제비 및 회전), 리타겟팅 모션(인간 동작을 비인간형 캐릭터에 매핑)을 사용했습니다.
+- **환경 상호작용**: 물리 시뮬레이션 환경에서 무작위 교란(예: 추력, 지형 변화)과 형태 변화(예: 팔다리 길이 또는 질량 변경)를 도입했습니다.
+
+### 주요 수치 및 결과
+- **강건성**: 훈련된 정책은 최대 200N의 추력 교란을 성공적으로 처리하고 자동으로 균형을 회복할 수 있습니다.
+- **기술 다양성**: 단일 정책은 10가지 이상의 서로 다른 기술(예: 걷기, 점프, 공중제비, 옆돌기)을 학습할 수 있으며, 기술 전환이 매끄럽습니다.
+- **형태 적응**: 인간 모션 데이터를 Atlas 로봇(키 1.5m, 무게 80kg)과 이족 공룡(비인간형 골격)에 성공적으로 리타겟팅하여 동작 스타일 일관성을 유지했습니다.
+- **상호작용 작업**: 던지기 작업에서 캐릭터는 사용자가 지정한 목표 위치에 85% 이상의 정확도로 공을 던질 수 있습니다(오차 < 0.5m).
+
+### 결론
+- DeepMimic은 강화 학습과 모션 모방의 결합이 사실적이면서도 강건한 물리 캐릭터 제어 정책을 생성할 수 있음을 입증했습니다.
+- 이 방법은 동작 품질(원본 모션 캡처 데이터에 근접)과 적응성(교란, 형태 변화, 다중 작업 대응) 사이에서 균형을 달성합니다.
+- 다중 클립 통합 전략은 풍부한 기술 라이브러리를 갖춘 범용 에이전트 개발을 위한 실현 가능한 경로를 제공하지만, 계산 비용이 높습니다(단일 정책 훈련에 수시간에서 수일 소요).

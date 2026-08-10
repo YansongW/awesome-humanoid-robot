@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.20503v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.20503v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (880 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,30 @@ theoretical_depth:
 ## Overview
 Rapid advancements in foundation models, including Large Language Models, Vision-Language Models, Multimodal Large Language Models, and Vision-Language-Action Models, have opened new avenues for embodied AI in mobile service robotics. By combining foundation models with the principles of embodied AI, where intelligent systems perceive, reason, and act through physical interaction, mobile service robots can achieve more flexible understanding, adaptive behavior, and robust task execution in dynamic real-world environments. Despite this progress, embodied AI for mobile service robots continues to face fundamental challenges related to the translation of natural language instructions into executable robot actions, multimodal perception in human-centered environments, uncertainty estimation for safe decision-making, and computational constraints for real-time onboard deployment. In this paper, we present the first systematic review focused specifically on the integration of foundation models in mobile service robotics. We analyze how recent advances in foundation models address these core challenges through language-conditioned control, multimodal sensor fusion, uncertainty-aware reasoning, and efficient model scaling. We further examine real-world applications in domestic assistance, healthcare, and service automation, highlighting how foundation models enable context-aware, socially responsive, and generalizable robot behaviors. Beyond technical considerations, we discuss ethical, societal, and human-interaction implications associated with deploying foundation model-enabled service robots in human environments. Finally, we outline future research directions emphasizing reliability and lifelong adaptation, privacy-aware and resource-constrained deployment, and governance and human-in-the-loop frameworks required for safe, scalable, and trustworthy mobile service robotics.
 
-## 개요
-대규모 언어 모델, 비전-언어 모델, 다중 모달 대규모 언어 모델, 비전-언어-행동 모델을 포함한 기초 모델의 급속한 발전은 모바일 서비스 로봇 분야에서 체화된 AI에 새로운 가능성을 열었습니다. 기초 모델을 체화된 AI의 원리(지능형 시스템이 물리적 상호작용을 통해 인지, 추론, 행동하는 것)와 결합함으로써, 모바일 서비스 로봇은 역동적인 실제 환경에서 더 유연한 이해, 적응적 행동, 강건한 작업 실행을 달성할 수 있습니다. 이러한 진전에도 불구하고, 모바일 서비스 로봇을 위한 체화된 AI는 자연어 명령어를 실행 가능한 로봇 동작으로 변환하는 문제, 인간 중심 환경에서의 다중 모달 인식, 안전한 의사 결정을 위한 불확실성 추정, 실시간 온보드 배치를 위한 계산 제약 등 근본적인 과제에 계속 직면하고 있습니다. 본 논문에서는 모바일 서비스 로봇 분야에서 기초 모델 통합에 초점을 맞춘 최초의 체계적 리뷰를 제시합니다. 우리는 언어 조건 제어, 다중 모달 센서 융합, 불확실성 인식 추론, 효율적인 모델 스케일링을 통해 기초 모델의 최신 발전이 이러한 핵심 과제를 어떻게 해결하는지 분석합니다. 또한 가사 지원, 의료, 서비스 자동화 분야의 실제 응용 사례를 검토하며, 기초 모델이 상황 인식, 사회적 반응성, 일반화 가능한 로봇 행동을 어떻게 가능하게 하는지 조명합니다. 기술적 고려 사항을 넘어, 인간 환경에서 기초 모델 기반 서비스 로봇을 배치하는 것과 관련된 윤리적, 사회적, 인간 상호작용 측면의 함의를 논의합니다. 마지막으로, 신뢰성과 평생 적응, 프라이버시 인식 및 자원 제약 배치, 안전하고 확장 가능하며 신뢰할 수 있는 모바일 서비스 로봇을 위해 필요한 거버넌스 및 인간-루프-인 프레임워크를 강조하는 미래 연구 방향을 제시합니다.
-
-## 핵심 내용
-대규모 언어 모델, 비전-언어 모델, 다중 모달 대규모 언어 모델, 비전-언어-행동 모델을 포함한 기초 모델의 급속한 발전은 모바일 서비스 로봇 분야에서 체화된 AI에 새로운 가능성을 열었습니다. 기초 모델을 체화된 AI의 원리(지능형 시스템이 물리적 상호작용을 통해 인지, 추론, 행동하는 것)와 결합함으로써, 모바일 서비스 로봇은 역동적인 실제 환경에서 더 유연한 이해, 적응적 행동, 강건한 작업 실행을 달성할 수 있습니다. 이러한 진전에도 불구하고, 모바일 서비스 로봇을 위한 체화된 AI는 자연어 명령어를 실행 가능한 로봇 동작으로 변환하는 문제, 인간 중심 환경에서의 다중 모달 인식, 안전한 의사 결정을 위한 불확실성 추정, 실시간 온보드 배치를 위한 계산 제약 등 근본적인 과제에 계속 직면하고 있습니다. 본 논문에서는 모바일 서비스 로봇 분야에서 기초 모델 통합에 초점을 맞춘 최초의 체계적 리뷰를 제시합니다. 우리는 언어 조건 제어, 다중 모달 센서 융합, 불확실성 인식 추론, 효율적인 모델 스케일링을 통해 기초 모델의 최신 발전이 이러한 핵심 과제를 어떻게 해결하는지 분석합니다. 또한 가사 지원, 의료, 서비스 자동화 분야의 실제 응용 사례를 검토하며, 기초 모델이 상황 인식, 사회적 반응성, 일반화 가능한 로봇 행동을 어떻게 가능하게 하는지 조명합니다. 기술적 고려 사항을 넘어, 인간 환경에서 기초 모델 기반 서비스 로봇을 배치하는 것과 관련된 윤리적, 사회적, 인간 상호작용 측면의 함의를 논의합니다. 마지막으로, 신뢰성과 평생 적응, 프라이버시 인식 및 자원 제약 배치, 안전하고 확장 가능하며 신뢰할 수 있는 모바일 서비스 로봇을 위해 필요한 거버넌스 및 인간-루프-인 프레임워크를 강조하는 미래 연구 방향을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.20503v2
+
+## 개요
+이 리뷰는 대규모 언어 모델, 비전-언어 모델, 멀티모달 대규모 언어 모델 및 비전-언어-행동 모델이 이동형 서비스 로봇 분야에서 적용된 진전을 체계적으로 정리합니다. 구현 지능 원리를 결합함으로써 로봇은 동적 실제 환경에서 더 유연한 이해, 적응형 행동 및 견고한 작업 실행을 달성할 수 있습니다. 이 글은 기본 모델이 언어 조건 제어, 멀티모달 센서 융합, 불확실성 인식 추론 및 효율적인 모델 스케일링을 통해 핵심 과제를 어떻게 해결하는지 중점적으로 분석하며, 가정 보조, 의료 및 서비스 자동화와 같은 실제 적용 시나리오를 검토합니다.
+
+## 핵심 내용
+### 핵심 과제와 기본 모델 솔루션
+- **언어-행동 매핑**: 기본 모델은 언어 조건 제어를 통해 자연어 명령을 실행 가능한 로봇 행동으로 변환합니다. 예를 들어 LLM은 작업 계획에 사용되고, VLA 모델은 행동 시퀀스를 직접 생성합니다.
+- **멀티모달 인식**: VLM과 MLLM은 시각, 언어, 촉각 등 멀티모달 센서 데이터를 융합하여 인간 중심 환경에서의 장면 이해 능력을 향상시킵니다.
+- **불확실성 추정**: 확률적 추론과 베이지안 방법을 통해 모델은 의사 결정 과정에서 불확실성을 정량화하여 안전한 작동을 보장합니다.
+- **기내 배포**: 모델 스케일링 및 경량화 기술(예: 지식 증류, 양자화)을 통해 계산 오버헤드를 줄여 실시간 요구 사항을 충족합니다.
+
+### 실제 적용 시나리오
+- **가정 보조**: 기본 모델은 로봇이 맥락적 명령(예: "테이블 위의 컵을 가져와")을 이해하고 가정 환경 변화에 적응할 수 있게 합니다.
+- **의료**: 병동에서 약물 전달, 환자 모니터링 등의 작업을 수행하며, 사회적 상호작용과 프라이버시 보호를 모두 고려해야 합니다.
+- **서비스 자동화**: 쇼핑몰, 호텔 등에서 내비게이션, 정보 조회 등의 서비스를 제공하며, 행동의 일반화 가능성과 사회적 규범 준수가 요구됩니다.
+
+### 윤리 및 사회적 영향
+- **신뢰성**: 모델이 장기 운영 중 안정성을 유지하고 분포 이동으로 인한 오류를 방지해야 합니다.
+- **프라이버시**: 기내 데이터 처리는 연합 학습을 통한 로컬 추론과 같은 프라이버시 규정을 준수해야 합니다.
+- **인간-로봇 상호작용**: 인간의 감독과 개입(human-in-the-loop)을 지원하는 투명한 의사 결정 메커니즘을 설계합니다.
+
+### 미래 연구 방향
+- **평생 적응**: 로봇이 새로운 환경에 적응하기 위해 모델을 온라인으로 업데이트할 수 있는 지속 학습 프레임워크를 개발합니다.
+- **자원 제약 배포**: 엣지 컴퓨팅과 모델 압축 기술을 탐구하여 클라우드 의존도를 낮춥니다.
+- **거버넌스 프레임워크**: 윤리적 검토와 오류 책임 메커니즘을 포함한 안전하고 확장 가능하며 신뢰할 수 있는 규제 체계를 구축합니다.

@@ -37,7 +37,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (704 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -67,9 +68,6 @@ sources:
 ### 结论
 NVIDIA 强调，物理 AI 的进步正在重塑工业格局，而 National Robotics Week 是展示这些技术潜力的重要平台。未来，随着仿真与学习的深度融合，机器人将更智能、更灵活地适应复杂环境。
 
-## Overview
-This National Robotics Week, NVIDIA is highlighting the breakthroughs that are bringing AI into the physical world — as well as the growing wave of robots transforming industries, from agricultural and manufacturing to energy and beyond. Advancements in robot learning, simulation and foundation models are accelerating development, enabling robots to move from training in virtual [&#8230;]
-
 ## 参考
 - https://blogs.nvidia.com/blog/national-robotics-week-2026/
 
@@ -93,3 +91,24 @@ This National Robotics Week, NVIDIA is highlighting the breakthroughs that are b
 
 ### 결론
 NVIDIA는 물리적 AI의 진보가 산업 환경을 재편하고 있으며, National Robotics Week가 이러한 기술의 잠재력을 보여주는 중요한 플랫폼이라고 강조합니다. 미래에는 시뮬레이션과 학습의 심층적 통합을 통해 로봇이 더 지능적이고 유연하게 복잡한 환경에 적응할 것입니다.
+
+## Overview
+This report, released by NVIDIA, aims to showcase the latest research findings and resources in the field of physical AI. The report notes that rapid advancements in robot learning, simulation technology, and foundation models are driving the transition of robots from virtual environment training to real-world deployment. NVIDIA highlights how these technologies are empowering robotic applications across industries such as agriculture, manufacturing, and energy, and provides information on related breakthroughs and resources.
+
+## Content
+### Key Advancements
+- **Robot Learning**: Through reinforcement learning and imitation learning, robots can more efficiently acquire skills from virtual simulations and transfer them to the physical world.
+- **Simulation Technology**: NVIDIA's simulation platforms (such as Isaac Sim) provide high-fidelity training environments for robots, accelerating the process of transitioning from virtual to real.
+- **Foundation Models**: Large language models and vision-language models are integrated into robotic systems, enhancing their perception, reasoning, and decision-making capabilities.
+
+### Industry Applications
+- **Agriculture**: Robots are used for precision seeding, crop monitoring, and automated harvesting, improving production efficiency.
+- **Manufacturing**: Collaborative robots and autonomous mobile robots (AMRs) play key roles in assembly, logistics, and quality inspection.
+- **Energy**: Robots are deployed for infrastructure inspection, equipment maintenance, and operations in hazardous environments, reducing human risk.
+
+### Key Resources
+- NVIDIA provides open-source tools and pre-trained models, such as Isaac Gym and Project GR00T, for developers to use.
+- The report also lists multiple partner case studies, demonstrating the deployment effectiveness of robotic technology in real-world scenarios.
+
+### Conclusion
+NVIDIA emphasizes that advancements in physical AI are reshaping the industrial landscape, and National Robotics Week serves as an important platform to showcase the potential of these technologies. In the future, with the deep integration of simulation and learning, robots will become more intelligent and adaptable to complex environments.

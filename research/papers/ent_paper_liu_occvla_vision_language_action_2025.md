@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05578v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05578v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (644 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,27 @@ OccVLA 针对多模态大语言模型在自动驾驶中缺乏鲁棒 3D 空间理
 ## Overview
 Multimodal large language models (MLLMs) have shown strong vision-language reasoning abilities but still lack robust 3D spatial understanding, which is critical for autonomous driving. This limitation stems from two key challenges: (1) the difficulty of constructing accessible yet effective 3D representations without expensive manual annotations, and (2) the loss of fine-grained spatial details in VLMs due to the absence of large-scale 3D vision-language pretraining. To address these challenges, we propose OccVLA, a novel framework that integrates 3D occupancy representations into a unified multimodal reasoning process. Unlike prior approaches that rely on explicit 3D inputs, OccVLA treats dense 3D occupancy as both a predictive output and a supervisory signal, enabling the model to learn fine-grained spatial structures directly from 2D visual inputs. The occupancy predictions are regarded as implicit reasoning processes and can be skipped during inference without performance degradation, thereby adding no extra computational overhead. OccVLA achieves state-of-the-art results on the nuScenes benchmark for trajectory planning and demonstrates superior performance on 3D visual question-answering tasks, offering a scalable, interpretable, and fully vision-based solution for autonomous driving.
 
-## 개요
-멀티모달 대규모 언어 모델(MLLM)은 강력한 시각-언어 추론 능력을 보여주었지만, 자율주행에 중요한 3D 공간 이해 능력은 여전히 부족합니다. 이러한 한계는 두 가지 주요 과제에서 비롯됩니다: (1) 고가의 수동 주석 없이 접근 가능하면서도 효과적인 3D 표현을 구축하는 어려움, (2) 대규모 3D 시각-언어 사전 학습 부재로 인한 VLM의 세부 공간 정보 손실입니다. 이러한 과제를 해결하기 위해, 우리는 3D 점유 표현을 통합된 멀티모달 추론 과정에 통합하는 새로운 프레임워크인 OccVLA를 제안합니다. 명시적 3D 입력에 의존하는 이전 접근 방식과 달리, OccVLA는 밀집 3D 점유를 예측 출력이자 감독 신호로 처리하여, 모델이 2D 시각 입력에서 직접 세부 공간 구조를 학습할 수 있도록 합니다. 점유 예측은 암시적 추론 과정으로 간주되며, 추론 중 성능 저하 없이 생략할 수 있어 추가 계산 오버헤드가 발생하지 않습니다. OccVLA는 궤적 계획을 위한 nuScenes 벤치마크에서 최첨단 결과를 달성하고, 3D 시각 질의응답 작업에서 뛰어난 성능을 보여주며, 자율주행을 위한 확장 가능하고 해석 가능하며 완전히 시각 기반의 솔루션을 제공합니다.
-
-## 핵심 내용
-멀티모달 대규모 언어 모델(MLLM)은 강력한 시각-언어 추론 능력을 보여주었지만, 자율주행에 중요한 3D 공간 이해 능력은 여전히 부족합니다. 이러한 한계는 두 가지 주요 과제에서 비롯됩니다: (1) 고가의 수동 주석 없이 접근 가능하면서도 효과적인 3D 표현을 구축하는 어려움, (2) 대규모 3D 시각-언어 사전 학습 부재로 인한 VLM의 세부 공간 정보 손실입니다. 이러한 과제를 해결하기 위해, 우리는 3D 점유 표현을 통합된 멀티모달 추론 과정에 통합하는 새로운 프레임워크인 OccVLA를 제안합니다. 명시적 3D 입력에 의존하는 이전 접근 방식과 달리, OccVLA는 밀집 3D 점유를 예측 출력이자 감독 신호로 처리하여, 모델이 2D 시각 입력에서 직접 세부 공간 구조를 학습할 수 있도록 합니다. 점유 예측은 암시적 추론 과정으로 간주되며, 추론 중 성능 저하 없이 생략할 수 있어 추가 계산 오버헤드가 발생하지 않습니다. OccVLA는 궤적 계획을 위한 nuScenes 벤치마크에서 최첨단 결과를 달성하고, 3D 시각 질의응답 작업에서 뛰어난 성능을 보여주며, 자율주행을 위한 확장 가능하고 해석 가능하며 완전히 시각 기반의 솔루션을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.05578v1
+
+## 개요
+OccVLA는 자율주행에서 다중모달 대형 언어 모델의 견고한 3D 공간 이해 부족 문제를 해결하기 위해 혁신적인 프레임워크를 제안한다. 이는 밀집 3D 점유를 예측 출력이자 감독 신호로 동시에 활용하여, 모델이 2D 시각 입력만으로 정밀한 공간 구조를 직접 학습할 수 있게 하여 값비싼 수동 주석을 피한다. 추론 단계에서는 점유 예측을 암시적 과정으로 간주하여 성능에 영향을 주지 않고 건너뛸 수 있으므로 계산 부담이 증가하지 않는다. 실험 결과, OccVLA는 nuScenes 궤적 계획 벤치마크에서 선도적인 결과를 달성하고 3D 시각 질의응답 작업에서 뛰어난 능력을 보여주며, 자율주행을 위한 확장 가능하고 해석 가능하며 완전히 시각 기반의 솔루션을 제공한다.
+
+## 핵심 내용
+### 방법
+- OccVLA는 명시적 3D 입력에 의존하는 이전 방법과 달리, 3D 점유 표현을 통합된 다중모달 추론 흐름에 통합한다.
+- 모델은 밀집 3D 점유를 예측 출력이자 감독 신호로 간주하여, 수동 주석 없이 2D 시각 입력에서 공간 구조를 학습한다.
+- 점유 예측은 암시적 추론 과정으로 작동하며, 추론 시 건너뛸 수 있어 추가 계산 오버헤드가 발생하지 않는다.
+
+### 아키텍처
+- 대규모 시각-언어-행동 모델 아키텍처를 기반으로, 시각, 언어, 행동 양식을 융합한다.
+- 암시적 3D 점유 감독을 통해 공간 이해를 강화하면서도 종단 간 훈련 가능성을 유지한다.
+
+### 실험 설정
+- nuScenes 벤치마크에서 궤적 계획 성능을 평가하고 기존 방법과 비교한다.
+- 3D 시각 질의응답 작업에서 공간 추론 능력을 테스트한다.
+
+### 주요 수치 및 결론
+- nuScenes 궤적 계획 작업에서 state-of-the-art 결과를 달성한다.
+- 3D 시각 질의응답 작업에서 기준 모델보다 우수한 성능을 보인다.
+- 추가 계산 오버헤드 없이 확장 가능하고 해석 가능한 자율주행 솔루션을 구현한다.

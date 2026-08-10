@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.20717v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.20717v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (941 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,26 @@ Long-horizon, high-dynamic motion tracking on humanoids remains brittle because 
 ## Content
 Long-horizon, high-dynamic motion tracking on humanoids remains brittle because absolute joint commands cannot compensate model-plant mismatch, leading to error accumulation. We propose RobotDancing, a simple, scalable framework that predicts residual joint targets to explicitly correct dynamics discrepancies. The pipeline is end-to-end—training, sim-to-sim validation, and zero-shot sim-to-real—and uses a single-stage reinforcement learning (RL) setup with a unified observation, reward, and hyperparameter configuration. We evaluate primarily on Unitree G1 with retargeted LAFAN1 dance sequences and validate transfer on H1/H1-2. RobotDancing can track multi-minute, high-energy behaviors (jumps, spins, cartwheels) and deploys zero-shot to hardware with high motion tracking quality.
 
-## 개요
-휴머노이드의 장시간 고동적 모션 추적은 절대 관절 명령이 모델-플랜트 불일치를 보상하지 못해 오차가 누적되면서 여전히 취약합니다. 우리는 RobotDancing을 제안합니다. 이는 동역학적 불일치를 명시적으로 보정하기 위해 잔여 관절 목표를 예측하는 간단하고 확장 가능한 프레임워크입니다. 파이프라인은 종단 간(end-to-end) 학습, 시뮬-시뮬 검증, 제로샷 시뮬-실제 전이로 구성되며, 통합된 관찰, 보상 및 하이퍼파라미터 구성을 갖춘 단일 단계 강화 학습(RL) 설정을 사용합니다. 주로 Unitree G1에서 리타겟팅된 LAFAN1 댄스 시퀀스를 평가하고 H1/H1-2에서 전이를 검증합니다. RobotDancing은 수 분간 지속되는 고에너지 동작(점프, 회전, 공중제비)을 추적할 수 있으며, 높은 모션 추적 품질로 하드웨어에 제로샷 배포가 가능합니다.
-
-## 핵심 내용
-휴머노이드의 장시간 고동적 모션 추적은 절대 관절 명령이 모델-플랜트 불일치를 보상하지 못해 오차가 누적되면서 여전히 취약합니다. 우리는 RobotDancing을 제안합니다. 이는 동역학적 불일치를 명시적으로 보정하기 위해 잔여 관절 목표를 예측하는 간단하고 확장 가능한 프레임워크입니다. 파이프라인은 종단 간(end-to-end) 학습, 시뮬-시뮬 검증, 제로샷 시뮬-실제 전이로 구성되며, 통합된 관찰, 보상 및 하이퍼파라미터 구성을 갖춘 단일 단계 강화 학습(RL) 설정을 사용합니다. 주로 Unitree G1에서 리타겟팅된 LAFAN1 댄스 시퀀스를 평가하고 H1/H1-2에서 전이를 검증합니다. RobotDancing은 수 분간 지속되는 고에너지 동작(점프, 회전, 공중제비)을 추적할 수 있으며, 높은 모션 추적 품질로 하드웨어에 제로샷 배포가 가능합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.20717v1
+
+## 개요
+전통적인 휴머노이드 로봇은 장시간 고동적 운동 추적을 수행할 때, 절대 관절 명령이 모델과 실제 시스템 간의 불일치를 보상할 수 없어 오차가 누적되며 실패합니다. RobotDancing은 강화 학습을 통해 잔차 관절 목표를 예측하여 동역학 편차를 명시적으로 수정하는 간단하고 확장 가능한 프레임워크를 제안합니다. 이 파이프라인은 훈련, sim-to-sim 검증, 제로샷 sim-to-real 배포를 포함한 엔드투엔드 설계를 채택하며, 통합된 관측, 보상, 하이퍼파라미터 설정을 사용하는 단일 단계 RL 설정을 사용합니다. 주요 평가는 Unitree G1 로봇에서 수행되었으며, 리타게팅된 LAFAN1 댄스 시퀀스를 사용하고 H1/H1-2 로봇에서 전이 능력을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **잔차 동작 예측**: 핵심 아이디어는 RL 정책이 절대 관절 위치 대신 잔차 관절 목표를 출력하도록 하는 것입니다. 이러한 잔차 목표는 참조 운동에서 생성된 기준 관절 명령에 중첩되어 동역학 모델과 실제 시스템 간의 불일치를 명시적으로 보상합니다.
+- **엔드투엔드 파이프라인**: 전체 프레임워크는 로봇 상태, 참조 운동 특징 등을 포함한 통합된 관측 공간, 보상 함수, 하이퍼파라미터 설정을 사용하는 단일 단계 RL 훈련을 채택합니다. 훈련 완료 후 추가 미세 조정 없이 직접 sim-to-sim 검증 및 제로샷 sim-to-real 배포를 수행합니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 주요 평가는 Unitree G1 휴머노이드 로봇에서 수행되었으며, H1/H1-2 로봇에서 크로스 플랫폼 전이 능력을 검증했습니다.
+- **운동 데이터**: 리타게팅된 LAFAN1 댄스 시퀀스를 참조 운동으로 사용하며, 점프, 회전, 옆돌기 등의 고동적 동작을 포함합니다.
+- **훈련 설정**: 통합된 관측, 보상, 하이퍼파라미터 설정을 채택하여 프레임워크의 단순성과 확장성을 보장합니다.
+
+### 주요 결과
+- **장시간 추적**: RobotDancing은 점프, 회전, 옆돌기 등의 복잡한 동작을 포함한 수 분간의 고에너지 행동을 추적할 수 있으며, 오차가 시간에 따라 누적되지 않습니다.
+- **제로샷 전이**: 시뮬레이션 환경에서 실제 하드웨어로 직접 배포하며, 어떠한 조정 없이도 고품질 운동 추적을 달성합니다.
+- **크로스 플랫폼 검증**: H1/H1-2 로봇에서 프레임워크의 전이 능력을 성공적으로 검증하여 우수한 일반화 성능을 보여줍니다.
+
+### 결론
+RobotDancing은 잔차 동작 RL 프레임워크를 통해 휴머노이드 로봇의 장시간 고동적 운동 추적에서의 오차 누적 문제를 효과적으로 해결하며, 시뮬레이션에서 실제 세계로의 제로샷 배포를 구현하여 물리적 캐릭터 애니메이션에 간단하고 견고한 솔루션을 제공합니다.

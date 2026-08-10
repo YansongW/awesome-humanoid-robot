@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.32028v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.32028v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (691 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,27 @@ DVG-WM 将世界模型分解为两个模块：
 ## Overview
 Video-based embodied world models provide an appealing substrate for robotic manipulation by predicting future states, yet current approaches remain limited by a fundamental entanglement: accurately modeling dynamics typically requires low-level temporal reasoning, while producing high-resolution frames demands expansive visual synthesis according to high-level semantics. This entanglement results in slow inference speed for iterative planning or too coarse predictions to retain contact-rich details. To solve this dilemma, we present Disentangled Video Generation World Model (DVG-WM), an efficient framework that explicitly decomposes world modeling into dynamics learning and visual synthesis. Conditioned on an initial observation and a language instruction, our model first generates a plausible sequence of intermediate visual states to preview the physical interaction and refines them to obtain high-fidelity videos. Furthermore, an efficient cascading mechanism is proposed, where DVG-WM uses flow matching to directly map the dynamics to video latents, and introduces a latent degradation mechanism to regenerate contact-rich details. Experiments on LIBERO and real-world platforms demonstrate improved video quality with up to 3.97 times acceleration, validating that disentangled video generation can be an efficient embodied world model for robotic manipulation.
 
-## 개요
-비디오 기반 체화된 세계 모델은 미래 상태를 예측하여 로봇 조작을 위한 매력적인 기반을 제공하지만, 현재 접근 방식은 근본적인 얽힘 문제로 인해 제한을 받습니다. 즉, 역학을 정확하게 모델링하려면 일반적으로 저수준 시간적 추론이 필요한 반면, 고해상도 프레임을 생성하려면 고수준 의미론에 따른 광범위한 시각적 합성이 필요합니다. 이러한 얽힘은 반복 계획의 추론 속도를 느리게 하거나 접촉이 많은 세부 정보를 유지하기에는 너무 거친 예측을 초래합니다. 이 딜레마를 해결하기 위해, 우리는 세계 모델링을 역학 학습과 시각적 합성으로 명시적으로 분해하는 효율적인 프레임워크인 Disentangled Video Generation World Model (DVG-WM)을 제시합니다. 초기 관찰과 언어 명령을 조건으로, 우리의 모델은 먼저 물리적 상호 작용을 미리 보기 위한 중간 시각적 상태의 그럴듯한 시퀀스를 생성하고 이를 정제하여 고충실도 비디오를 얻습니다. 또한, 효율적인 캐스케이딩 메커니즘이 제안되며, 여기서 DVG-WM은 흐름 매칭을 사용하여 역학을 비디오 잠재 변수에 직접 매핑하고, 잠재 변수 저하 메커니즘을 도입하여 접촉이 많은 세부 정보를 재생성합니다. LIBERO 및 실제 플랫폼에서의 실험은 최대 3.97배의 가속화와 함께 향상된 비디오 품질을 입증하며, 분리된 비디오 생성이 로봇 조작을 위한 효율적인 체화된 세계 모델이 될 수 있음을 검증합니다.
-
-## 핵심 내용
-비디오 기반 체화된 세계 모델은 미래 상태를 예측하여 로봇 조작을 위한 매력적인 기반을 제공하지만, 현재 접근 방식은 근본적인 얽힘 문제로 인해 제한을 받습니다. 즉, 역학을 정확하게 모델링하려면 일반적으로 저수준 시간적 추론이 필요한 반면, 고해상도 프레임을 생성하려면 고수준 의미론에 따른 광범위한 시각적 합성이 필요합니다. 이러한 얽힘은 반복 계획의 추론 속도를 느리게 하거나 접촉이 많은 세부 정보를 유지하기에는 너무 거친 예측을 초래합니다. 이 딜레마를 해결하기 위해, 우리는 세계 모델링을 역학 학습과 시각적 합성으로 명시적으로 분해하는 효율적인 프레임워크인 Disentangled Video Generation World Model (DVG-WM)을 제시합니다. 초기 관찰과 언어 명령을 조건으로, 우리의 모델은 먼저 물리적 상호 작용을 미리 보기 위한 중간 시각적 상태의 그럴듯한 시퀀스를 생성하고 이를 정제하여 고충실도 비디오를 얻습니다. 또한, 효율적인 캐스케이딩 메커니즘이 제안되며, 여기서 DVG-WM은 흐름 매칭을 사용하여 역학을 비디오 잠재 변수에 직접 매핑하고, 잠재 변수 저하 메커니즘을 도입하여 접촉이 많은 세부 정보를 재생성합니다. LIBERO 및 실제 플랫폼에서의 실험은 최대 3.97배의 가속화와 함께 향상된 비디오 품질을 입증하며, 분리된 비디오 생성이 로봇 조작을 위한 효율적인 체화된 세계 모델이 될 수 있음을 검증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.32028v2
+
+## 개요
+기존의 비디오 기반 구현형 세계 모델은 근본적인 얽힘 문제를 겪고 있습니다. 역학을 정밀하게 모델링하려면 저수준 시계열 추론이 필요한 반면, 고해상도 프레임을 생성하려면 고수준 의미론적 시각 합성이 필요합니다. 이러한 얽힘은 반복 계획 속도를 느리게 하거나 예측이 너무 거칠어 접촉이 풍부한 세부 정보를 보존하지 못하게 합니다. DVG-WM은 분리 설계를 통해 이 문제를 해결하며, 초기 관측과 언어 지시를 기반으로 중간 시각 상태 시퀀스를 먼저 생성하여 물리적 상호작용을 미리 보여준 후, 정제 과정을 거쳐 고충실도 비디오를 얻습니다. 또한, 모델은 flow matching을 사용하여 역학을 비디오 잠재 공간에 직접 매핑하는 캐스케이드 메커니즘을 도입하고, 잠재 퇴화 메커니즘을 통해 접촉 세부 정보를 재생성합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+DVG-WM은 세계 모델을 두 개의 모듈로 분해합니다:
+- **역학 학습 모듈**: 저수준 시계열 추론에 집중하여 물리적 상호작용의 중간 상태 시퀀스를 예측합니다.
+- **시각 합성 모듈**: 고수준 의미론 기반의 시각 생성을 담당하며, 역학을 고해상도 비디오 프레임으로 매핑합니다.
+
+### 캐스케이드 메커니즘
+- **Flow Matching 매핑**: 역학 예측을 비디오 잠재 변수로 직접 변환하여 프레임별 생성으로 인한 계산 오버헤드를 피합니다.
+- **잠재 퇴화 메커니즘**: 접촉이 풍부한 영역에서 잠재 변수를 능동적으로 퇴화시킨 후, 생성 모델을 통해 세부 정보를 재합성하여 충실도를 향상시킵니다.
+
+### 실험 설정
+- **벤치마크**: LIBERO 시뮬레이션 환경과 실제 로봇 플랫폼에서 평가를 수행합니다.
+- **비교 방법**: 분리되지 않은 비디오 세계 모델과 비교하여 비디오 품질과 추론 속도를 측정합니다.
+
+### 주요 결과
+- **비디오 품질**: DVG-WM이 생성한 비디오는 충실도와 세부 정보 보존에서 기준 방법보다 크게 우수합니다.
+- **추론 속도**: 기존 방법 대비 최대 3.97배 가속을 달성하여 분리 설계의 효율성을 검증합니다.
+- **결론**: 분리된 비디오 생성은 로봇 조작을 위한 효율적인 구현형 세계 모델로 작동할 수 있으며, 역학 정밀도와 시각 품질을 모두 충족합니다.

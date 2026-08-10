@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.22224v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.22224v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (696 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,26 @@ FAME通过形式化方法与运行时监控的结合，为AI在安全关键系�
 ## Overview
 The integration of Artificial Intelligence (AI) into safety-critical systems introduces a new reliability paradigm: silent failures, where AI produces confident but incorrect outputs that can be dangerous. This paper introduces the Formal Assurance and Monitoring Environment (FAME), a novel framework that confronts this challenge. FAME synergizes the mathematical rigor of offline formal synthesis with the vigilance of online runtime monitoring to create a verifiable safety net around opaque AI components. We demonstrate its efficacy in an autonomous vehicle perception system, where FAME successfully detected 93.5% of critical safety violations that were otherwise silent. By contextualizing our framework within the ISO 26262 and ISO/PAS 8800 standards, we provide reliability engineers with a practical, certifiable pathway for deploying trustworthy AI. FAME represents a crucial shift from accepting probabilistic performance to enforcing provable safety in next-generation systems.
 
-## 개요
-인공지능(AI)을 안전 필수 시스템에 통합하면 새로운 신뢰성 패러다임, 즉 AI가 확신을 가지고 있지만 잘못된 출력을 생성하여 위험을 초래할 수 있는 '침묵 실패(silent failures)'가 도입됩니다. 본 논문은 이러한 문제에 대응하는 새로운 프레임워크인 FAME(Formal Assurance and Monitoring Environment)을 소개합니다. FAME은 오프라인 형식 합성의 수학적 엄밀성과 온라인 런타임 모니터링의 경계를 결합하여 불투명한 AI 구성 요소 주변에 검증 가능한 안전망을 구축합니다. 우리는 자율주행 차량 인식 시스템에서 FAME의 효용성을 입증했으며, FAME은 그렇지 않으면 침묵했을 치명적 안전 위반의 93.5%를 성공적으로 탐지했습니다. ISO 26262 및 ISO/PAS 8800 표준 내에서 프레임워크를 맥락화함으로써, 신뢰성 엔지니어에게 신뢰할 수 있는 AI를 배포하기 위한 실용적이고 인증 가능한 경로를 제공합니다. FAME은 차세대 시스템에서 확률적 성능을 수용하는 것에서 증명 가능한 안전을 강제하는 것으로의 중요한 전환을 나타냅니다.
-
-## 핵심 내용
-인공지능(AI)을 안전 필수 시스템에 통합하면 새로운 신뢰성 패러다임, 즉 AI가 확신을 가지고 있지만 잘못된 출력을 생성하여 위험을 초래할 수 있는 '침묵 실패(silent failures)'가 도입됩니다. 본 논문은 이러한 문제에 대응하는 새로운 프레임워크인 FAME(Formal Assurance and Monitoring Environment)을 소개합니다. FAME은 오프라인 형식 합성의 수학적 엄밀성과 온라인 런타임 모니터링의 경계를 결합하여 불투명한 AI 구성 요소 주변에 검증 가능한 안전망을 구축합니다. 우리는 자율주행 차량 인식 시스템에서 FAME의 효용성을 입증했으며, FAME은 그렇지 않으면 침묵했을 치명적 안전 위반의 93.5%를 성공적으로 탐지했습니다. ISO 26262 및 ISO/PAS 8800 표준 내에서 프레임워크를 맥락화함으로써, 신뢰성 엔지니어에게 신뢰할 수 있는 AI를 배포하기 위한 실용적이고 인증 가능한 경로를 제공합니다. FAME은 차세대 시스템에서 확률적 성능을 수용하는 것에서 증명 가능한 안전을 강제하는 것으로의 중요한 전환을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.22224v1
+
+## 개요
+FAME 프레임워크는 오프라인 형식적 종합을 통해 엄격한 안전 사양을 생성하고, 온라인 런타임 모니터링을 결합하여 AI 출력의 이상을 실시간으로 감지함으로써, AI가 안전 필수 시스템에서 자신 있지만 잘못된 출력을 생성하는 정적 장애 문제를 해결합니다. 자율주행 인식 시스템 실험에서 FAME은 93.5%의 정적 안전 위반을 성공적으로 식별했습니다. 이 프레임워크는 또한 ISO 26262 및 ISO/PAS 8800 표준을 참조하여 설계되었으며, 신뢰성 엔지니어에게 인증 가능한 실용적 경로를 제공하여 확률적 성능에서 증명 가능한 안전으로의 전환을 촉진합니다.
+
+## 핵심 내용
+### 방법
+FAME 프레임워크는 두 가지 핵심 모듈로 구성됩니다:
+- **오프라인 형식적 종합**: 시스템 모델과 안전 사양을 기반으로 형식적 검증 조건을 자동 생성하여, AI 구성 요소가 이상적인 환경에서 기대에 부합하는 동작을 보장합니다.
+- **온라인 런타임 모니터링**: 시스템 실행 중 AI 출력과 형식적 조건 간의 편차를 실시간으로 모니터링하며, 정적 장애가 감지되면 즉시 경보를 발동합니다.
+
+### 실험 설정
+- **플랫폼**: CARLA 시뮬레이터를 사용하여 자율주행 시나리오를 구축했으며, 인식 시스템은 YOLOv4 객체 탐지 모델을 채택했습니다.
+- **테스트 시나리오**: 보행자 횡단, 차량 가림, 조명 변화 등 전형적인 안전 필수 시나리오를 포함합니다.
+- **평가 지표**: 안전 위반 탐지율(즉, 정적 장애가 성공적으로 식별된 비율)을 주요 지표로 사용합니다.
+
+### 주요 수치
+- **탐지율**: FAME은 93.5%의 정적 안전 위반을 성공적으로 탐지했습니다.
+- **표준 정렬**: 프레임워크 설계는 ISO 26262(도로 차량 기능 안전) 및 ISO/PAS 8800(AI 안전) 표준을 따릅니다.
+
+### 결론
+FAME은 형식적 방법과 런타임 모니터링의 결합을 통해 AI가 안전 필수 시스템에 배포될 때 검증 가능한 신뢰성 보장을 제공합니다. 실험 결과 정적 장애 위험을 효과적으로 줄일 수 있으며, AI 시스템 인증을 위한 표준화된 경로를 제공합니다. 향후 작업은 더 많은 AI 구성 요소와 복잡한 시나리오로 확장될 것입니다.

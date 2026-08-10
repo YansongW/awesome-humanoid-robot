@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04988v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04988v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (890 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,27 @@ InternVLA-A1.5 通过将未来预测重构为潜在查询问题，有效利用�
 ## Overview
 Unified models for robot manipulation aim to equip one policy with both the semantic priors of pretrained VLMs and the physical dynamics learned through future prediction. In practice, existing designs tend to erode the semantics of the pretrained backbone, suffer interference among heterogeneous objectives, and learn future prediction from scratch in pixel space, leaving the dynamics priors of pretrained video generators unexploited. We present InternVLA-A1.5, which builds the policy on a native VLM backbone that keeps training on VQA and subtask prediction, and attaches a lightweight unified expert for continuous action generation. Future prediction is recast as a latent-querying problem, where a small set of learnable foresight tokens condenses the task-relevant future into a compact latent code under the supervision of a frozen pretrained video generation model, so the policy inherits world-model dynamics priors without ever learning pixel-level generation. The video branch is discarded at inference, keeping real-time control. Pretrained on 1.2M robot episodes and 3M multimodal samples, InternVLA-A1.5 achieves the best overall results on all six simulation benchmarks. In the real world, the preserved semantics deliver the strongest compositional generalization on held-out instruction bindings, and the two designs together sustain long-horizon execution.
 
-## 개요
-로봇 조작을 위한 통합 모델은 사전 훈련된 VLM의 의미적 사전 지식과 미래 예측을 통해 학습된 물리적 동역학을 하나의 정책에 탑재하는 것을 목표로 합니다. 실제로 기존 설계는 사전 훈련된 백본의 의미를 약화시키고, 이질적인 목표 간 간섭을 겪으며, 픽셀 공간에서 처음부터 미래 예측을 학습하여 사전 훈련된 비디오 생성기의 동역학 사전 지식을 활용하지 못하는 경향이 있습니다. 우리는 InternVLA-A1.5를 제시합니다. 이는 VQA 및 하위 작업 예측에 대해 지속적으로 훈련되는 네이티브 VLM 백본 위에 정책을 구축하고, 연속 동작 생성을 위한 경량 통합 전문가를 부착합니다. 미래 예측은 잠재 질의 문제로 재구성되며, 소수의 학습 가능한 예견 토큰이 동결된 사전 훈련된 비디오 생성 모델의 감독 하에 작업 관련 미래를 컴팩트한 잠재 코드로 압축하여, 정책이 픽셀 수준 생성을 학습하지 않고도 세계 모델 동역학 사전 지식을 상속받습니다. 비디오 분기는 추론 시 폐기되어 실시간 제어를 유지합니다. 120만 개의 로봇 에피소드와 300만 개의 멀티모달 샘플로 사전 훈련된 InternVLA-A1.5는 6개의 시뮬레이션 벤치마크 모두에서 최고의 종합 결과를 달성합니다. 실제 세계에서는 보존된 의미가 보류된 명령 바인딩에서 가장 강력한 구성적 일반화를 제공하며, 두 설계가 함께 장기 실행을 유지합니다.
-
-## 핵심 내용
-로봇 조작을 위한 통합 모델은 사전 훈련된 VLM의 의미적 사전 지식과 미래 예측을 통해 학습된 물리적 동역학을 하나의 정책에 탑재하는 것을 목표로 합니다. 실제로 기존 설계는 사전 훈련된 백본의 의미를 약화시키고, 이질적인 목표 간 간섭을 겪으며, 픽셀 공간에서 처음부터 미래 예측을 학습하여 사전 훈련된 비디오 생성기의 동역학 사전 지식을 활용하지 못하는 경향이 있습니다. 우리는 InternVLA-A1.5를 제시합니다. 이는 VQA 및 하위 작업 예측에 대해 지속적으로 훈련되는 네이티브 VLM 백본 위에 정책을 구축하고, 연속 동작 생성을 위한 경량 통합 전문가를 부착합니다. 미래 예측은 잠재 질의 문제로 재구성되며, 소수의 학습 가능한 예견 토큰이 동결된 사전 훈련된 비디오 생성 모델의 감독 하에 작업 관련 미래를 컴팩트한 잠재 코드로 압축하여, 정책이 픽셀 수준 생성을 학습하지 않고도 세계 모델 동역학 사전 지식을 상속받습니다. 비디오 분기는 추론 시 폐기되어 실시간 제어를 유지합니다. 120만 개의 로봇 에피소드와 300만 개의 멀티모달 샘플로 사전 훈련된 InternVLA-A1.5는 6개의 시뮬레이션 벤치마크 모두에서 최고의 종합 결과를 달성합니다. 실제 세계에서는 보존된 의미가 보류된 명령 바인딩에서 가장 강력한 구성적 일반화를 제공하며, 두 설계가 함께 장기 실행을 유지합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04988v1
+
+## 개요
+InternVLA-A1.5는 기존 통합 모델이 시각-언어 모델의 의미론적 사전 지식과 물리적 동역학을 융합할 때 직면하는 의미론적 침식, 목표 간섭, 픽셀 공간 미래 예측의 낮은 효율성 문제를 해결하는 것을 목표로 한다. 이 모델은 네이티브 VLM 백본을 기반으로 지속적으로 VQA 및 하위 작업 예측 훈련을 수행하며, 연속 동작 생성을 위한 경량 통합 전문가 모듈을 추가한다. 미래 예측은 잠재 쿼리 작업으로 재정의되며, 학습 가능한 '예견 토큰' 세트를 통해 동결된 사전 훈련 비디오 생성 모델의 감독 하에 작업 관련 미래를 컴팩트한 잠재 코드로 압축하여 세계 모델 동역학 사전 지식을 계승한다. 추론 시 비디오 분기를 제거하여 실시간 제어를 유지하며, 모델은 120만 개의 로봇 조작 클립과 300만 개 이상의 멀티모달 샘플로 사전 훈련된 후 여섯 개의 시뮬레이션 벤치마크에서 최고 성능을 달성하고, 실제 세계에서 강력한 조합 일반화 및 장기 실행 능력을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **백본 네트워크**: 네이티브 VLM 백본을 기반으로 지속적으로 VQA 및 하위 작업 예측 훈련을 수행하여 의미론적 사전 지식을 보존한다.
+- **동작 생성**: 이종 목표 간섭을 피하기 위해 연속 동작 생성을 위한 경량 통합 전문가 모듈을 추가한다.
+- **미래 예측**: 미래 예측을 잠재 쿼리 문제로 재구성하고, 학습 가능한 '예견 토큰' 세트를 사용하여 동결된 사전 훈련 비디오 생성 모델의 감독 하에 작업 관련 미래를 컴팩트한 잠재 코드로 압축하며, 픽셀 수준 생성을 학습할 필요가 없다.
+- **추론 최적화**: 추론 시 비디오 분기를 제거하여 실시간 제어를 유지한다.
+
+### 실험 설정
+- **사전 훈련 데이터**: 120만 개의 로봇 조작 클립과 300만 개 이상의 멀티모달 샘플.
+- **시뮬레이션 벤치마크**: 조합 일반화 및 장기 작업을 포함한 전체 여섯 개의 시뮬레이션 벤치마크에서 평가.
+- **실제 세계 테스트**: 보존된 의미론이 보지 못한 명령 바인딩에서 조합 일반화 능력을 평가하고, 두 설계가 함께 지원하는 장기 실행 효과를 평가.
+
+### 핵심 결과
+- **시뮬레이션 성능**: 모든 여섯 개의 시뮬레이션 벤치마크에서 최고의 종합 결과를 달성.
+- **실제 세계 성능**: 보존된 의미론이 보지 못한 명령 바인딩에서 가장 강력한 조합 일반화 능력을 보여줌; 미래 예측과 의미론 보존 설계가 함께 장기 실행을 지원.
+
+### 결론
+InternVLA-A1.5는 미래 예측을 잠재 쿼리 문제로 재구성함으로써 사전 훈련 비디오 생성 모델의 동역학 사전 지식을 효과적으로 활용하고, 픽셀 수준 생성의 학습 비용을 피하면서 실시간 제어를 유지한다. 이 모델은 시뮬레이션과 실제 세계 모두에서 우수한 조합 일반화 및 장기 실행 능력을 보여준다.

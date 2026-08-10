@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.05642v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.05642v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (593 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,22 @@ Lite VLA 针对 GPS 受限环境中边缘机器人的资源高效推理需求，
 ## Overview
 The deployment of artificial intelligence models at the edge is increasingly critical for autonomous robots operating in GPS-denied environments where local, resource-efficient reasoning is essential. This work demonstrates the feasibility of deploying small Vision-Language Models (VLMs) on mobile robots to achieve real-time scene understanding and reasoning under strict computational constraints. Unlike prior approaches that separate perception from mobility, the proposed framework enables simultaneous movement and reasoning in dynamic environments using only on-board hardware. The system integrates a compact VLM with multimodal perception to perform contextual interpretation directly on embedded hardware, eliminating reliance on cloud connectivity. Experimental validation highlights the balance between computational efficiency, task accuracy, and system responsiveness. Implementation on a mobile robot confirms one of the first successful deployments of small VLMs for concurrent reasoning and mobility at the edge. This work establishes a foundation for scalable, assured autonomy in applications such as service robotics, disaster response, and defense operations.
 
-## 개요
-GPS가 차단된 환경에서 자원 효율적인 로컬 추론이 필수적인 자율 로봇에게 엣지에서의 인공지능 모델 배치는 점점 더 중요해지고 있습니다. 본 연구는 엄격한 계산 제약 조건 하에서 실시간 장면 이해와 추론을 달성하기 위해 소형 시각-언어 모델(VLM)을 모바일 로봇에 배치하는 가능성을 입증합니다. 인식과 이동성을 분리한 기존 접근 방식과 달리, 제안된 프레임워크는 온보드 하드웨어만을 사용하여 동적 환경에서 동시 이동 및 추론을 가능하게 합니다. 시스템은 소형 VLM과 다중 모달 인식을 통합하여 임베디드 하드웨어에서 직접 맥락적 해석을 수행함으로써 클라우드 연결 의존성을 제거합니다. 실험적 검증은 계산 효율성, 작업 정확도 및 시스템 응답성 간의 균형을 강조합니다. 모바일 로봇 구현을 통해 엣지에서 동시 추론 및 이동성을 위한 소형 VLM의 최초 성공적 배치 중 하나를 확인했습니다. 본 연구는 서비스 로봇, 재난 대응 및 국방 작전과 같은 응용 분야에서 확장 가능하고 보장된 자율성을 위한 기반을 마련합니다.
-
-## 핵심 내용
-GPS가 차단된 환경에서 자원 효율적인 로컬 추론이 필수적인 자율 로봇에게 엣지에서의 인공지능 모델 배치는 점점 더 중요해지고 있습니다. 본 연구는 엄격한 계산 제약 조건 하에서 실시간 장면 이해와 추론을 달성하기 위해 소형 시각-언어 모델(VLM)을 모바일 로봇에 배치하는 가능성을 입증합니다. 인식과 이동성을 분리한 기존 접근 방식과 달리, 제안된 프레임워크는 온보드 하드웨어만을 사용하여 동적 환경에서 동시 이동 및 추론을 가능하게 합니다. 시스템은 소형 VLM과 다중 모달 인식을 통합하여 임베디드 하드웨어에서 직접 맥락적 해석을 수행함으로써 클라우드 연결 의존성을 제거합니다. 실험적 검증은 계산 효율성, 작업 정확도 및 시스템 응답성 간의 균형을 강조합니다. 모바일 로봇 구현을 통해 엣지에서 동시 추론 및 이동성을 위한 소형 VLM의 최초 성공적 배치 중 하나를 확인했습니다. 본 연구는 서비스 로봇, 재난 대응 및 국방 작전과 같은 응용 분야에서 확장 가능하고 보장된 자율성을 위한 기반을 마련합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.05642v1
+
+## 개요
+Lite VLA는 GPS 제약 환경에서 엣지 로봇의 자원 효율적 추론 요구를 위해, 통합형 컴팩트 비전-언어 모델과 다중 모달 인식을 결합한 프레임워크를 제안한다. 이 프레임워크는 전통적 방식이 인식과 운동을 분리하던 한계를 극복하여, 로봇이 온보드 하드웨어만으로 동적 환경에서 이동과 추론을 동시에 수행할 수 있게 한다. 실험 검증 결과, 이 시스템은 작업 정확도를 유지하면서도 계산 오버헤드를 크게 줄여, 소형 VLM의 엣지 배포 성공 사례 중 초기 사례로 자리 잡았다. 이 작업은 서비스 로봇, 재난 대응, 국방 등의 분야에서 확장 가능한 자율성의 기반을 마련한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 설계**: 소형 VLM과 다중 모달 인식 모듈을 통합하여, 임베디드 하드웨어에서 직접 상황 해석을 수행하며 클라우드 연결 의존성을 제거한다.
+- **혁신 포인트**: 인식과 운동 제어의 실시간 협력을 구현하여, 로봇이 이동 중에도 단계적 처리가 아닌 동시에 장면 추론을 수행한다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: CPU 기반 이동 로봇으로, 온보드 계산 자원만 사용한다.
+- **평가 지표**: 계산 효율성(추론 지연 시간), 작업 정확도(장면 이해 및 동작 실행), 시스템 응답 속도(엔드투엔드 지연 시간).
+
+### 핵심 수치 및 결론
+- **성능 균형**: 실험을 통해 엄격한 계산 제약 조건에서도 모델이 높은 작업 정확도와 낮은 지연 응답을 동시에 유지할 수 있음을 입증한다.
+- **배포 검증**: 이동 로봇에서 소형 VLM의 동시 추론과 운동 제어를 성공적으로 구현하여, 엣지 자율 시스템의 최초 재현 가능 사례를 제공한다.
+- **응용 전망**: 서비스 로봇, 재난 구조, 국방 등 로컬 실시간 의사 결정이 필요한 시나리오에 적합하다.

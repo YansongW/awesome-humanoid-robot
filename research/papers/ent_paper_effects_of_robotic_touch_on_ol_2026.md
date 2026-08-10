@@ -58,8 +58,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09323v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09323v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (867 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -106,11 +107,34 @@ The shortage of healthcare staff is a challenge in geriatric care. To address th
 ## Content
 The shortage of healthcare staff is a challenge in geriatric care. To address this, robots can be integrated into care settings to provide assistance and emotional support. A promising application is walking guidance, particularly benefiting older adults as navigation skills deteriorate with aging. As walking guidance involves direct contact, the aim of this study is to understand how older adults perceive and respond to different touch modes during guided walking. 24 older adults (68 - 88 yrs.) walked four times a ten-meter trajectory guided by the robot TIAGo Pro in four contact conditions: no physical contact (NC); physical contact through holding the robot's wrist with the hand (HH); physical interaction through linking arms with the robot (LA); and physical contact through resting the forearm on the robot's forearm (FC). A multimodal assessment approach included electrocardiogram, electrodermal activity, contact force, distance to robot, and questionnaires. Physiological results reveal a slight increase in stress levels during robot interaction. Behavioural and subjective measures, however, show overall acceptance of robotic touch. The two conditions corresponding to larger interaction forces (HH and FC) were associated with lower relative distances between participant and robot, indicating a higher trust and confidence. Questionnaire responses supported these findings, evidencing greater perceived safety, trust and comfort in these conditions. This study provides insights for the design of robotic walking guidance assistance, indicating that gentle, stable touch is preferred by older adults in comparison to contactless interaction.
 
-## 개요
-의료 인력 부족은 노인 간호 분야의 과제입니다. 이를 해결하기 위해 로봇을 간호 환경에 통합하여 지원과 정서적 도움을 제공할 수 있습니다. 유망한 응용 분야는 보행 안내로, 특히 노화에 따라 탐색 능력이 저하되는 노인에게 유용합니다. 보행 안내는 직접적인 접촉을 수반하므로, 본 연구의 목적은 노인들이 안내 보행 중 다양한 접촉 방식을 어떻게 인식하고 반응하는지 이해하는 것입니다. 24명의 노인(68~88세)이 로봇 TIAGo Pro의 안내를 받아 10미터 경로를 네 가지 접촉 조건에서 네 번 걸었습니다: 신체 접촉 없음(NC); 손으로 로봇 손목 잡기(HH); 로봇과 팔짱 끼기(LA); 팔뚝을 로봇 팔뚝에 올려놓기(FC). 다중 모드 평가 접근법에는 심전도, 피부 전도도, 접촉력, 로봇과의 거리, 설문지가 포함되었습니다. 생리학적 결과는 로봇 상호작용 중 스트레스 수준이 약간 증가함을 보여줍니다. 그러나 행동 및 주관적 측정치는 로봇 접촉에 대한 전반적인 수용을 나타냅니다. 더 큰 상호작용력에 해당하는 두 조건(HH와 FC)은 참가자와 로봇 간의 상대적 거리가 더 짧아 더 높은 신뢰와 확신을 나타냈습니다. 설문 응답은 이러한 결과를 뒷받침하며, 해당 조건에서 더 큰 안전감, 신뢰, 편안함을 입증했습니다. 본 연구는 로봇 보행 안내 지원 설계에 대한 통찰을 제공하며, 노인들이 비접촉 상호작용보다 부드럽고 안정적인 접촉을 선호함을 나타냅니다.
-
-## 핵심 내용
-의료 인력 부족은 노인 간호 분야의 과제입니다. 이를 해결하기 위해 로봇을 간호 환경에 통합하여 지원과 정서적 도움을 제공할 수 있습니다. 유망한 응용 분야는 보행 안내로, 특히 노화에 따라 탐색 능력이 저하되는 노인에게 유용합니다. 보행 안내는 직접적인 접촉을 수반하므로, 본 연구의 목적은 노인들이 안내 보행 중 다양한 접촉 방식을 어떻게 인식하고 반응하는지 이해하는 것입니다. 24명의 노인(68~88세)이 로봇 TIAGo Pro의 안내를 받아 10미터 경로를 네 가지 접촉 조건에서 네 번 걸었습니다: 신체 접촉 없음(NC); 손으로 로봇 손목 잡기(HH); 로봇과 팔짱 끼기(LA); 팔뚝을 로봇 팔뚝에 올려놓기(FC). 다중 모드 평가 접근법에는 심전도, 피부 전도도, 접촉력, 로봇과의 거리, 설문지가 포함되었습니다. 생리학적 결과는 로봇 상호작용 중 스트레스 수준이 약간 증가함을 보여줍니다. 그러나 행동 및 주관적 측정치는 로봇 접촉에 대한 전반적인 수용을 나타냅니다. 더 큰 상호작용력에 해당하는 두 조건(HH와 FC)은 참가자와 로봇 간의 상대적 거리가 더 짧아 더 높은 신뢰와 확신을 나타냈습니다. 설문 응답은 이러한 결과를 뒷받침하며, 해당 조건에서 더 큰 안전감, 신뢰, 편안함을 입증했습니다. 본 연구는 로봇 보행 안내 지원 설계에 대한 통찰을 제공하며, 노인들이 비접촉 상호작용보다 부드럽고 안정적인 접촉을 선호함을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09323v1
+
+## 개요
+노인 돌봄에서의 인력 부족 문제에 대응하기 위해 로봇이 보조 및 정서적 지원을 제공하기 위해 도입되었으며, 그중에서도 노인의 인지 능력이 나이가 들수록 저하되는 보행 안내가 특히 중요합니다. 연구에서는 24명의 노인이 TIAGo Pro 로봇의 안내를 받아 10미터 경로를 걷도록 하였으며, 비접촉, 손목 잡기, 팔짱 끼기, 전완 지지의 네 가지 접촉 조건을 테스트했습니다. 심전도, 피부 전기 활동, 접촉력, 거리 측정 및 설문지 등 다중 모드 평가를 통해, 생리적 지표는 로봇 상호작용 중 스트레스가 약간 증가했음을 보여주었지만, 행동 및 주관적 데이터는 노인들이 로봇의 촉각 상호작용을 일반적으로 수용함을 나타냈습니다. 손목 잡기와 전완 지지와 같은 접촉력이 큰 모드는 참가자와 로봇 간의 거리를 더 가깝게 만들었으며, 설문지에서도 더 높은 안전감, 신뢰감, 편안함을 반영했습니다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+- 노인 돌봄은 의료 인력 부족에 직면해 있으며, 로봇은 보조 및 정서적 지원을 제공할 수 있습니다.
+- 보행 안내는 노인의 인지 능력이 나이가 들수록 저하되므로 중요한 응용 시나리오입니다.
+- 연구는 다양한 촉각 모드가 노인의 인식과 행동에 미치는 영향에 초점을 맞춥니다.
+
+### 실험 설계
+- **참가자**: 24명의 노인, 연령 범위 68-88세.
+- **로봇 플랫폼**: TIAGo Pro, 보행 안내에 사용.
+- **과제**: 각 참가자는 네 번의 10미터 직선 보행을 완료하며, 각각 다른 접촉 조건을 사용합니다:
+  - NC: 물리적 접촉 없음.
+  - HH: 손으로 로봇 손목 잡기.
+  - LA: 로봇과 팔짱 끼기.
+  - FC: 전완을 로봇 전완에 지지.
+- **평가 방법**: 다중 모드 평가로, 심전도(ECG), 피부 전기 활동(EDA), 접촉력, 참가자와 로봇 간 거리, 주관적 설문지 포함.
+
+### 주요 결과
+- **생리적 지표**: 로봇 상호작용 중 참가자의 스트레스 수준이 약간 증가했습니다 (예: 피부 전기 활동 증가).
+- **행동 지표**: HH 및 FC 조건에서 참가자와 로봇 간 거리가 더 가까웠으며 (상대 거리 낮음), 이는 신뢰와 자신감이 더 높음을 나타냅니다.
+- **주관적 설문지**: HH 및 FC 조건이 더 높은 점수를 받았으며, 인지된 안전성, 신뢰감, 편안함에서 나타났습니다.
+- **전체 결론**: 노인들은 비접촉 안내보다 온화하고 안정적인 촉각 상호작용을 선호합니다.
+
+### 결론 및 시사점
+- 연구는 로봇 보행 안내 설계에 근거를 제공하며, 촉각 접촉 (특히 더 큰 접촉력 모드)이 노인의 신뢰와 편안함을 강화할 수 있음을 강조합니다.
+- 보조 로봇에 안정적인 촉각 상호작용을 통합하여 사용자 경험과 수용도를 향상시킬 것을 권장합니다.

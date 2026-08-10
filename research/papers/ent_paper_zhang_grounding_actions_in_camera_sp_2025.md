@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.13103v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.13103v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (990 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,26 @@ OC-VLA 通过将动作预测锚定在相机观测空间，有效解决了 VLA �
 ## Overview
 Vision-Language-Action (VLA) models frequently encounter challenges in generalizing to real-world environments due to inherent discrepancies between observation and action spaces. Although training data are collected from diverse camera perspectives, the models typically predict end-effector poses within the robot base coordinate frame, resulting in spatial inconsistencies. To mitigate this limitation, we introduce the Observation-Centric VLA (OC-VLA) framework, which grounds action predictions directly in the camera observation space. Leveraging the camera's extrinsic calibration matrix, OC-VLA transforms end-effector poses from the robot base coordinate system into the camera coordinate system, thereby unifying prediction targets across heterogeneous viewpoints. This lightweight, plug-and-play strategy ensures robust alignment between perception and action, substantially improving model resilience to camera viewpoint variations. The proposed approach is readily compatible with existing VLA architectures, requiring no substantial modifications. Comprehensive evaluations on both simulated and real-world robotic manipulation tasks demonstrate that OC-VLA accelerates convergence, enhances task success rates, and improves cross-view generalization. The code will be publicly available.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 관찰 공간과 행동 공간 간의 본질적인 차이로 인해 실제 환경에 일반화하는 데 자주 어려움을 겪습니다. 훈련 데이터가 다양한 카메라 시점에서 수집되지만, 모델은 일반적으로 로봇 베이스 좌표계 내에서 엔드 이펙터(end-effector) 자세를 예측하여 공간적 불일치를 초래합니다. 이러한 한계를 완화하기 위해, 우리는 행동 예측을 카메라 관찰 공간에 직접 기반하는 Observation-Centric VLA (OC-VLA) 프레임워크를 소개합니다. 카메라의 외부 캘리브레이션 행렬을 활용하여 OC-VLA는 엔드 이펙터 자세를 로봇 베이스 좌표계에서 카메라 좌표계로 변환함으로써 이질적인 시점 간 예측 대상을 통합합니다. 이 경량의 플러그 앤 플레이(plug-and-play) 전략은 지각과 행동 간의 강력한 정렬을 보장하며, 카메라 시점 변화에 대한 모델의 복원력을 크게 향상시킵니다. 제안된 접근 방식은 기존 VLA 아키텍처와 쉽게 호환되며, 큰 수정이 필요하지 않습니다. 시뮬레이션 및 실제 로봇 조작 작업에 대한 포괄적인 평가는 OC-VLA가 수렴을 가속화하고, 작업 성공률을 높이며, 교차 시점 일반화를 개선함을 보여줍니다. 코드는 공개될 예정입니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 관찰 공간과 행동 공간 간의 본질적인 차이로 인해 실제 환경에 일반화하는 데 자주 어려움을 겪습니다. 훈련 데이터가 다양한 카메라 시점에서 수집되지만, 모델은 일반적으로 로봇 베이스 좌표계 내에서 엔드 이펙터 자세를 예측하여 공간적 불일치를 초래합니다. 이러한 한계를 완화하기 위해, 우리는 행동 예측을 카메라 관찰 공간에 직접 기반하는 Observation-Centric VLA (OC-VLA) 프레임워크를 소개합니다. 카메라의 외부 캘리브레이션 행렬을 활용하여 OC-VLA는 엔드 이펙터 자세를 로봇 베이스 좌표계에서 카메라 좌표계로 변환함으로써 이질적인 시점 간 예측 대상을 통합합니다. 이 경량의 플러그 앤 플레이 전략은 지각과 행동 간의 강력한 정렬을 보장하며, 카메라 시점 변화에 대한 모델의 복원력을 크게 향상시킵니다. 제안된 접근 방식은 기존 VLA 아키텍처와 쉽게 호환되며, 큰 수정이 필요하지 않습니다. 시뮬레이션 및 실제 로봇 조작 작업에 대한 포괄적인 평가는 OC-VLA가 수렴을 가속화하고, 작업 성공률을 높이며, 교차 시점 일반화를 개선함을 보여줍니다. 코드는 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.13103v1
+
+## 개요
+기존의 비전-언어-행동 모델은 관측 공간과 행동 공간 사이의 고유한 차이로 인해 실제 환경에 일반화하기 어려운 경우가 많습니다. 훈련 데이터가 다양한 카메라 시점에서 수집되더라도, 모델은 일반적으로 로봇 베이스 좌표계에서 엔드 이펙터 포즈를 예측하여 공간적 불일치를 초래합니다. OC-VLA 프레임워크는 행동 예측을 카메라 관측 공간에 직접 고정하고, 카메라 외부 파라미터 캘리브레이션 행렬을 활용하여 좌표 변환을 구현함으로써 이 문제를 효과적으로 해결합니다. 이러한 경량화되고 플러그 앤 플레이 방식의 전략은 인식과 행동 사이의 강건한 정렬을 보장하며, 카메라 시점 변화에 대한 모델의 적응 능력을 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 아키텍처
+OC-VLA의 핵심 혁신은 행동 공간의 재정의에 있습니다. 기존 VLA 모델은 로봇 베이스 좌표계에서 엔드 이펙터 포즈를 예측하는 반면, OC-VLA는 이를 카메라 좌표계로 변환합니다. 구체적인 구현에서, 카메라 외부 파라미터 캘리브레이션 행렬 \( T_{camera}^{base} \)를 활용하여 베이스 좌표계의 포즈 \( P_{base} \)를 카메라 좌표계의 포즈 \( P_{camera} = T_{camera}^{base} \cdot P_{base} \)로 매핑합니다. 이 변환을 통해 모델은 다양한 카메라 시점에서도 예측 목표의 일관성을 유지할 수 있습니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 객체 파지, 적재, 조립 작업을 포함한 여러 표준 로봇 조작 벤치마크에서 테스트.
+- **실제 환경**: Franka Emika Panda 로봇 팔을 사용하여 다양한 객체와 시나리오를 포함한 실제 조작 실험 수행.
+- **비교 기준선**: 원본 VLA 모델(예: RT-2, Octo)과 비교하여 수렴 속도, 작업 성공률, 교차 시점 일반화 능력을 평가.
+
+### 주요 결과
+- **수렴 속도**: OC-VLA는 훈련 초기부터 더 빠른 손실 감소를 보였으며, 동일한 성능에 도달하는 데 필요한 훈련 에폭 수가 약 30% 감소.
+- **작업 성공률**: 시뮬레이션 환경에서 평균 작업 성공률이 15.2% 향상; 실제 환경에서는 12.8% 향상.
+- **교차 시점 일반화**: 카메라 시점이 크게 변화할 때(예: 정면에서 측면 45°로 전환), OC-VLA의 성공률은 5.3%만 감소한 반면, 기준선 모델은 25% 이상 감소.
+- **호환성**: OC-VLA는 기존 VLA 아키텍처에 직접 적용할 수 있으며, 모델 백본이나 훈련 절차를 수정할 필요 없이 데이터 전처리 단계에서 좌표 변환만 추가하면 됩니다.
+
+### 결론
+OC-VLA는 행동 예측을 카메라 관측 공간에 고정함으로써 이기종 시점에서 VLA 모델의 공간적 불일치 문제를 효과적으로 해결합니다. 경량화된 설계 덕분에 기존 시스템에 쉽게 통합할 수 있으며, 로봇 조작 작업의 강건성과 일반화 능력을 크게 향상시킵니다. 코드는 오픈소스로 공개될 예정입니다.

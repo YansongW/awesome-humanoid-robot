@@ -45,8 +45,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00272v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00272v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (952 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -80,11 +81,27 @@ ASPIRE 通过闭环执行、技能库积累与进化搜索，实现了机器人�
 ## Overview
 Traditional robot programming is challenging: it requires orchestrating multimodal perception, managing physical contact dynamics, and handling diverse configurations and execution failures. We introduce ASPIRE (Agentic Skill Programming through Iterative Robot Exploration), a continual learning system that autonomously writes and refines robot control programs in a code-as-policy paradigm while compounding experience into a reusable skill library. ASPIRE discovers skills that persist across tasks, simulation and real-world settings, and embodiments. It operates in an open-ended loop with three components: (1) a closed-loop robot execution engine that exposes fine-grained multimodal traces, enabling autonomous failure diagnosis, repair synthesis, and validation; (2) a continually expanding skill library that distills validated fixes into reusable, transferable knowledge; and (3) evolutionary search that generates diverse task sequences and control programs to explore beyond single-trajectory refinement. ASPIRE surpasses prior methods by up to 77% on LIBERO-Pro manipulation under perturbation, 72% on Robosuite bimanual handover, and 32% on BEHAVIOR-1K long-horizon household tasks. Its accumulated library also enables zero-shot generalization to unseen long-horizon tasks: on LIBERO-Pro Long, ASPIRE achieves 31% success versus 4% for prior methods despite their use of test-time reasoning and retries. Finally, simulation-discovered skills provide initial evidence of sim-to-real transfer, substantially reducing real-robot programming effort across different embodiments and robot APIs.
 
-## 개요
-전통적인 로봇 프로그래밍은 다중 모달 인식을 조율하고, 물리적 접촉 역학을 관리하며, 다양한 구성과 실행 실패를 처리해야 하기 때문에 어렵습니다. 우리는 ASPIRE(Agentic Skill Programming through Iterative Robot Exploration)를 소개합니다. 이는 코드-정책 패러다임에서 로봇 제어 프로그램을 자율적으로 작성하고 개선하며, 경험을 재사용 가능한 스킬 라이브러리로 축적하는 지속적 학습 시스템입니다. ASPIRE는 작업, 시뮬레이션 및 실제 환경, 그리고 로봇 플랫폼에 걸쳐 지속되는 스킬을 발견합니다. 이는 세 가지 구성 요소로 이루어진 개방형 루프에서 작동합니다: (1) 세분화된 다중 모달 추적을 노출하여 자율적인 실패 진단, 수리 합성 및 검증을 가능하게 하는 폐쇄 루프 로봇 실행 엔진, (2) 검증된 수정 사항을 재사용 가능하고 전이 가능한 지식으로 정제하는 지속적으로 확장되는 스킬 라이브러리, (3) 단일 궤적 개선을 넘어 탐색하기 위해 다양한 작업 시퀀스와 제어 프로그램을 생성하는 진화적 탐색입니다. ASPIRE는 LIBERO-Pro 조작(교란 하에서)에서 최대 77%, Robosuite 양손 핸드오버에서 72%, BEHAVIOR-1K 장기 가사 작업에서 32%까지 이전 방법을 능가합니다. 축적된 라이브러리는 또한 보지 못한 장기 작업에 대한 제로샷 일반화를 가능하게 합니다: LIBERO-Pro Long에서 ASPIRE는 31%의 성공률을 달성한 반면, 이전 방법은 테스트 시간 추론 및 재시도를 사용함에도 불구하고 4%에 그쳤습니다. 마지막으로, 시뮬레이션에서 발견된 스킬은 시뮬레이션-실제 전이의 초기 증거를 제공하며, 다양한 로봇 플랫폼과 로봇 API에서 실제 로봇 프로그래밍 노력을 크게 줄입니다.
-
-## 핵심 내용
-전통적인 로봇 프로그래밍은 다중 모달 인식을 조율하고, 물리적 접촉 역학을 관리하며, 다양한 구성과 실행 실패를 처리해야 하기 때문에 어렵습니다. 우리는 ASPIRE(Agentic Skill Programming through Iterative Robot Exploration)를 소개합니다. 이는 코드-정책 패러다임에서 로봇 제어 프로그램을 자율적으로 작성하고 개선하며, 경험을 재사용 가능한 스킬 라이브러리로 축적하는 지속적 학습 시스템입니다. ASPIRE는 작업, 시뮬레이션 및 실제 환경, 그리고 로봇 플랫폼에 걸쳐 지속되는 스킬을 발견합니다. 이는 세 가지 구성 요소로 이루어진 개방형 루프에서 작동합니다: (1) 세분화된 다중 모달 추적을 노출하여 자율적인 실패 진단, 수리 합성 및 검증을 가능하게 하는 폐쇄 루프 로봇 실행 엔진, (2) 검증된 수정 사항을 재사용 가능하고 전이 가능한 지식으로 정제하는 지속적으로 확장되는 스킬 라이브러리, (3) 단일 궤적 개선을 넘어 탐색하기 위해 다양한 작업 시퀀스와 제어 프로그램을 생성하는 진화적 탐색입니다. ASPIRE는 LIBERO-Pro 조작(교란 하에서)에서 최대 77%, Robosuite 양손 핸드오버에서 72%, BEHAVIOR-1K 장기 가사 작업에서 32%까지 이전 방법을 능가합니다. 축적된 라이브러리는 또한 보지 못한 장기 작업에 대한 제로샷 일반화를 가능하게 합니다: LIBERO-Pro Long에서 ASPIRE는 31%의 성공률을 달성한 반면, 이전 방법은 테스트 시간 추론 및 재시도를 사용함에도 불구하고 4%에 그쳤습니다. 마지막으로, 시뮬레이션에서 발견된 스킬은 시뮬레이션-실제 전이의 초기 증거를 제공하며, 다양한 로봇 플랫폼과 로봇 API에서 실제 로봇 프로그래밍 노력을 크게 줄입니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.00272v1
+
+## 개요
+ASPIRE는 폐쇄 루프 실행 엔진을 통해 세분화된 다중 모달 궤적을 노출하여 자율적인 고장 진단, 수리 합성 및 검증을 구현합니다. 그 스킬 라이브러리는 검증된 수리 방안을 지속적으로 축적하여 재사용 가능한 이전 가능한 지식을 형성합니다. 진화 탐색은 다양한 작업 시퀀스와 제어 프로그램을 생성하여 단일 궤적 최적화의 한계를 돌파합니다. LIBERO-Pro 교란 조작, Robosuite 양손 인계 및 BEHAVIOR-1K 장시간 가정 작업에서 ASPIRE는 각각 최대 77%, 72% 및 32%의 성능 향상을 달성했습니다. 축적된 스킬 라이브러리는 또한 보지 못한 장시간 작업에 대한 제로샷 일반화를 지원하며, LIBERO-Pro Long에서 31%의 성공률을 달성하는 반면, 기준 방법은 테스트 시 추론과 재시도를 포함하더라도 4%에 불과합니다. 시뮬레이션에서 발견된 스킬은 sim-to-real 전이의 유효성을 초기적으로 입증하며, 다양한 엔티티와 로봇 API 환경에서 실제 로봇 프로그래밍 작업량을 크게 줄였습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+ASPIRE는 개방 루프에서 작동하며 세 가지 핵심 구성 요소를 포함합니다:
+- **폐쇄 루프 실행 엔진**: 시각, 관절 상태, 힘 피드백 등을 포함한 세분화된 다중 모달 궤적을 노출하여 자율적인 고장 진단, 수리 합성 및 검증을 지원합니다.
+- **지속적으로 확장되는 스킬 라이브러리**: 검증된 수리 방안을 재사용 가능한 스킬로 증류하여 작업, 시뮬레이션/실제 환경 및 엔티티 간에 전이합니다.
+- **진화 탐색**: 다양한 작업 시퀀스와 제어 프로그램을 생성하여 단일 궤적 최적화를 넘어선 해 공간을 탐색합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크**: LIBERO-Pro(교란 조작), Robosuite(양손 인계) 및 BEHAVIOR-1K(장시간 가정 작업)에서 평가되었습니다.
+- **성능 향상**:
+  - LIBERO-Pro 교란 조건: 이전 방법보다 최대 77% 우수.
+  - Robosuite 양손 인계: 72% 향상.
+  - BEHAVIOR-1K 장시간 작업: 32% 향상.
+- **제로샷 일반화**: LIBERO-Pro Long에서 ASPIRE는 31%의 성공률을 달성했으며, 기준 방법(테스트 시 추론 및 재시도 포함)은 4%에 불과합니다.
+- **Sim-to-Real 전이**: 시뮬레이션에서 발견된 스킬은 실제 로봇으로 전이 가능하며, 다양한 엔티티와 API 환경에서 프로그래밍 작업량을 크게 줄입니다.
+
+### 결론
+ASPIRE는 폐쇄 루프 실행, 스킬 라이브러리 축적 및 진화 탐색을 통해 로봇 제어 프로그램의 자율 작성과 지속적 최적화를 구현하며, 여러 벤치마크에서 기존 방법을 크게 능가하고 엔티티 간 및 시뮬레이션-실제 환경 전이 능력을 입증했습니다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02013v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02013v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1224 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,35 @@ ManualVLA 通过将链式思维手册生成与动作执行统一在 MoT 架构�
 ## Overview
 Vision-Language-Action (VLA) models have recently emerged, demonstrating strong generalization in robotic scene understanding and manipulation. However, when confronted with long-horizon tasks that require defined goal states, such as LEGO assembly or object rearrangement, existing VLA models still face challenges in coordinating high-level planning with precise manipulation. Therefore, we aim to endow a VLA model with the capability to infer the "how" process from the "what" outcomes, transforming goal states into executable procedures. In this paper, we introduce ManualVLA, a unified VLA framework built upon a Mixture-of-Transformers (MoT) architecture, enabling coherent collaboration between multimodal manual generation and action execution. Unlike prior VLA models that directly map sensory inputs to actions, we first equip ManualVLA with a planning expert that generates intermediate manuals consisting of images, position prompts, and textual instructions. Building upon these multimodal manuals, we design a Manual Chain-of-Thought (ManualCoT) reasoning process that feeds them into the action expert, where each manual step provides explicit control conditions, while its latent representation offers implicit guidance for accurate manipulation. To alleviate the burden of data collection, we develop a high-fidelity digital-twin toolkit based on 3D Gaussian Splatting, which automatically generates manual data for planning expert training. ManualVLA demonstrates strong real-world performance, achieving an average success rate 32% higher than the previous hierarchical SOTA baseline on LEGO assembly and object rearrangement tasks.
 
-## 개요
-Vision-Language-Action (VLA) 모델이 최근 등장하여 로봇의 장면 이해 및 조작에서 강력한 일반화 능력을 보여주고 있습니다. 그러나 LEGO 조립이나 물체 재배치와 같이 명확한 목표 상태가 필요한 장기 과제(long-horizon tasks)에 직면했을 때, 기존 VLA 모델은 여전히 고수준 계획과 정밀한 조작을 조정하는 데 어려움을 겪고 있습니다. 따라서 우리는 VLA 모델이 "무엇(what)" 결과로부터 "어떻게(how)" 과정을 추론하고, 목표 상태를 실행 가능한 절차로 변환하는 능력을 부여하는 것을 목표로 합니다. 본 논문에서는 Mixture-of-Transformers (MoT) 아키텍처를 기반으로 구축된 통합 VLA 프레임워크인 ManualVLA를 소개합니다. 이는 멀티모달 매뉴얼 생성과 행동 실행 간의 일관된 협업을 가능하게 합니다. 감각 입력을 직접 행동에 매핑하는 이전 VLA 모델과 달리, 우리는 먼저 ManualVLA에 이미지, 위치 프롬프트 및 텍스트 명령으로 구성된 중간 매뉴얼을 생성하는 계획 전문가(planning expert)를 탑재합니다. 이러한 멀티모달 매뉴얼을 기반으로, 우리는 Manual Chain-of-Thought (ManualCoT) 추론 과정을 설계하여 이를 행동 전문가(action expert)에 공급합니다. 여기서 각 매뉴얼 단계는 명시적인 제어 조건을 제공하고, 잠재 표현은 정확한 조작을 위한 암시적 지침을 제공합니다. 데이터 수집의 부담을 줄이기 위해, 우리는 3D Gaussian Splatting 기반의 고충실도 디지털 트윈 툴킷을 개발하여 계획 전문가 훈련을 위한 매뉴얼 데이터를 자동으로 생성합니다. ManualVLA는 실제 환경에서 강력한 성능을 보여주며, LEGO 조립 및 물체 재배치 작업에서 이전 계층적 SOTA 기준선보다 평균 성공률이 32% 더 높습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델이 최근 등장하여 로봇의 장면 이해 및 조작에서 강력한 일반화 능력을 보여주고 있습니다. 그러나 LEGO 조립이나 물체 재배치와 같이 명확한 목표 상태가 필요한 장기 과제에 직면했을 때, 기존 VLA 모델은 여전히 고수준 계획과 정밀한 조작을 조정하는 데 어려움을 겪고 있습니다. 따라서 우리는 VLA 모델이 "무엇" 결과로부터 "어떻게" 과정을 추론하고, 목표 상태를 실행 가능한 절차로 변환하는 능력을 부여하는 것을 목표로 합니다. 본 논문에서는 Mixture-of-Transformers (MoT) 아키텍처를 기반으로 구축된 통합 VLA 프레임워크인 ManualVLA를 소개합니다. 이는 멀티모달 매뉴얼 생성과 행동 실행 간의 일관된 협업을 가능하게 합니다. 감각 입력을 직접 행동에 매핑하는 이전 VLA 모델과 달리, 우리는 먼저 ManualVLA에 이미지, 위치 프롬프트 및 텍스트 명령으로 구성된 중간 매뉴얼을 생성하는 계획 전문가를 탑재합니다. 이러한 멀티모달 매뉴얼을 기반으로, 우리는 Manual Chain-of-Thought (ManualCoT) 추론 과정을 설계하여 이를 행동 전문가에 공급합니다. 여기서 각 매뉴얼 단계는 명시적인 제어 조건을 제공하고, 잠재 표현은 정확한 조작을 위한 암시적 지침을 제공합니다. 데이터 수집의 부담을 줄이기 위해, 우리는 3D Gaussian Splatting 기반의 고충실도 디지털 트윈 툴킷을 개발하여 계획 전문가 훈련을 위한 매뉴얼 데이터를 자동으로 생성합니다. ManualVLA는 실제 환경에서 강력한 성능을 보여주며, LEGO 조립 및 물체 재배치 작업에서 이전 계층적 SOTA 기준선보다 평균 성공률이 32% 더 높습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.02013v1
+
+## 개요
+기존 VLA 모델은 장기간 작업(예: LEGO 조립)에서 높은 수준의 계획과 정밀한 조작을 조율하는 데 어려움을 겪습니다. ManualVLA는 계획 전문가를 도입하여 목표 상태를 실행 가능한 다중 모드 매뉴얼(이미지, 위치 힌트, 텍스트 지침 포함)로 변환하고, Manual Chain-of-Thought 추론 과정을 통해 매뉴얼 단계를 명시적 제어 조건과 암시적 안내 신호로 동작 전문가에게 입력합니다. 이 모델은 Mixture-of-Transformers 아키텍처를 사용하여 다중 모드 매뉴얼 생성과 동작 실행의 협력을 구현하며, 3D Gaussian Splatting 기반 디지털 트윈 도구를 활용해 훈련 데이터를 자동 생성합니다. 실험 결과, ManualVLA는 실제 로봇 조작 작업에서 이전 계층적 SOTA 기준선보다 평균 성공률이 32% 향상되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ManualVLA는 Mixture-of-Transformers (MoT) 아키텍처를 기반으로 하며, 두 가지 핵심 전문가 모듈을 포함합니다:
+- **계획 전문가**: 목표 상태에서 다중 모드 매뉴얼을 생성하며, 각 단계의 매뉴얼은 세 부분으로 구성됩니다: 시각적 이미지(현재 및 목표 상태 표시), 위치 힌트(공간 좌표 또는 그리퍼 포인트), 텍스트 지침(예: "빨간 블록을 파란 블록 위에 놓으세요").
+- **동작 전문가**: Manual Chain-of-Thought (ManualCoT) 추론 과정을 통해 매뉴얼을 수신하며, 여기서:
+  - 명시적 제어: 매뉴얼 단계가 직접 동작 조건으로 사용됩니다(예: 위치 좌표가 로봇 팔 움직임을 제한).
+  - 암시적 안내: 매뉴얼의 잠재 표현(교차 모달 주의를 통해 추출)이 조작 전략에 대한 의미적 단서를 제공합니다.
+
+### 데이터 생성
+데이터 수집 부담을 줄이기 위해 3D Gaussian Splatting 기반의 고충실도 디지털 트윈 도구를 개발했습니다:
+- 계획 전문가 훈련에 필요한 매뉴얼 데이터(다중 뷰 렌더링 이미지, 자동 주석 위치 힌트 및 지침 텍스트 포함)를 자동 생성합니다.
+- 실제 물리 환경 수집 없이도 장면 동적 편집(예: 객체 교체, 레이아웃 재배치)을 지원합니다.
+
+### 실험 설정
+- **작업**: LEGO 조립(순서대로 6-10개의 블록 배치 필요) 및 객체 재배치(4-6개의 객체를 지정 위치로 이동)
+- **기준선**: 계층적 VLA 모델(예: RT-2 + 독립 계획기), 종단 간 VLA 모델(예: Octo)과 비교
+- **평가 지표**: 작업 성공률(모든 단계를 완전히 올바르게 완료한 비율)
+
+### 주요 결과
+- LEGO 조립 작업에서 ManualVLA의 성공률은 78%로, 이전 계층적 SOTA 기준선(46%)보다 32% 높습니다.
+- 객체 재배치 작업에서 성공률은 85%로, 기준선(53%)보다 32% 높습니다.
+- 절제 실험: ManualCoT 추론 제거(명시적 제어만 사용) 시 성공률이 18% 하락; 계획 전문가 제거(직접 종단 간 매핑) 시 27% 하락.
+- 디지털 트윈 생성 데이터와 실제 데이터를 혼합 훈련한 후, 모델 일반화 성능이 15% 향상됩니다(보지 못한 블록 조합에서 테스트).
+
+### 결론
+ManualVLA는 체인 오브 사고 매뉴얼 생성과 동작 실행을 MoT 아키텍처에 통합함으로써, 장기간 조작 작업에서 높은 수준의 계획과 정밀 제어의 조율 문제를 효과적으로 해결합니다. 디지털 트윈 데이터 생성 방법은 VLA 모델 훈련 비용을 줄이는 실현 가능한 솔루션을 제공합니다.

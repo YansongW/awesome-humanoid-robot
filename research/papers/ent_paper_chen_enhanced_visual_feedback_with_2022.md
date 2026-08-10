@@ -45,8 +45,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2211.01749v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2211.01749v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (849 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,27 @@ In immersive humanoid robot teleoperation, there are three main shortcomings tha
 ## Content
 In immersive humanoid robot teleoperation, there are three main shortcomings that can alter the transparency of the visual feedback: (i) the lag between the motion of the operator's and robot's head due to network communication delays or slow robot joint motion. This latency could cause a noticeable delay in the visual feedback, which jeopardizes the embodiment quality, can cause dizziness, and affects the interactivity resulting in operator frequent motion pauses for the visual feedback to settle; (ii) the mismatch between the camera's and the headset's field-of-views (FOV), the former having generally a lower FOV; and (iii) a mismatch between human's and robot's range of motions of the neck, the latter being also generally lower. In order to leverage these drawbacks, we developed a decoupled viewpoint control solution for a humanoid platform which allows visual feedback with low-latency and artificially increases the camera's FOV range to match that of the operator's headset. Our novel solution uses SLAM technology to enhance the visual feedback from a reconstructed mesh, complementing the areas that are not covered by the visual feedback from the robot. The visual feedback is presented as a point cloud in real-time to the operator. As a result, the operator is fed with real-time vision from the robot's head orientation by observing the pose of the point cloud. Balancing this kind of awareness and immersion is important in virtual reality based teleoperation, considering the safety and robustness of the control system. An experiment shows the effectiveness of our solution.
 
-## 개요
-몰입형 휴머노이드 로봇 원격 조작에서 시각적 피드백의 투명성을 저하시킬 수 있는 세 가지 주요 단점이 있습니다: 네트워크 통신 지연이나 느린 로봇 관절 움직임으로 인한 조작자와 로봇 머리 움직임 간의 지연입니다. 이 지연은 시각적 피드백에 눈에 띄는 지연을 유발하여 체화 품질을 저하시키고, 어지러움을 유발할 수 있으며, 상호작용성에 영향을 주어 조작자가 시각적 피드백이 안정될 때까지 자주 움직임을 멈추게 합니다. (ii) 카메라와 헤드셋의 시야각(FOV) 불일치로, 전자가 일반적으로 더 낮은 FOV를 가집니다. (iii) 인간과 로봇의 목 움직임 범위 불일치로, 후자가 일반적으로 더 낮습니다. 이러한 단점을 해결하기 위해, 우리는 휴머노이드 플랫폼을 위한 분리형 시점 제어 솔루션을 개발했습니다. 이 솔루션은 저지연 시각적 피드백을 제공하고 카메라의 FOV 범위를 인위적으로 증가시켜 조작자의 헤드셋과 일치시킵니다. 우리의 새로운 솔루션은 SLAM 기술을 사용하여 재구성된 메시로부터 시각적 피드백을 향상시키고, 로봇의 시각적 피드백이 커버하지 못하는 영역을 보완합니다. 시각적 피드백은 실시간으로 포인트 클라우드 형태로 조작자에게 제공됩니다. 결과적으로, 조작자는 포인트 클라우드의 자세를 관찰함으로써 로봇 머리 방향의 실시간 시야를 제공받습니다. 이러한 인식과 몰입의 균형을 맞추는 것은 제어 시스템의 안전성과 견고성을 고려할 때 가상 현실 기반 원격 조작에서 중요합니다. 실험을 통해 우리 솔루션의 효과를 입증했습니다.
-
-## 핵심 내용
-몰입형 휴머노이드 로봇 원격 조작에서 시각적 피드백의 투명성을 저하시킬 수 있는 세 가지 주요 단점이 있습니다: 네트워크 통신 지연이나 느린 로봇 관절 움직임으로 인한 조작자와 로봇 머리 움직임 간의 지연입니다. 이 지연은 시각적 피드백에 눈에 띄는 지연을 유발하여 체화 품질을 저하시키고, 어지러움을 유발할 수 있으며, 상호작용성에 영향을 주어 조작자가 시각적 피드백이 안정될 때까지 자주 움직임을 멈추게 합니다. (ii) 카메라와 헤드셋의 시야각(FOV) 불일치로, 전자가 일반적으로 더 낮은 FOV를 가집니다. (iii) 인간과 로봇의 목 움직임 범위 불일치로, 후자가 일반적으로 더 낮습니다. 이러한 단점을 해결하기 위해, 우리는 휴머노이드 플랫폼을 위한 분리형 시점 제어 솔루션을 개발했습니다. 이 솔루션은 저지연 시각적 피드백을 제공하고 카메라의 FOV 범위를 인위적으로 증가시켜 조작자의 헤드셋과 일치시킵니다. 우리의 새로운 솔루션은 SLAM 기술을 사용하여 재구성된 메시로부터 시각적 피드백을 향상시키고, 로봇의 시각적 피드백이 커버하지 못하는 영역을 보완합니다. 시각적 피드백은 실시간으로 포인트 클라우드 형태로 조작자에게 제공됩니다. 결과적으로, 조작자는 포인트 클라우드의 자세를 관찰함으로써 로봇 머리 방향의 실시간 시야를 제공받습니다. 이러한 인식과 몰입의 균형을 맞추는 것은 제어 시스템의 안전성과 견고성을 고려할 때 가상 현실 기반 원격 조작에서 중요합니다. 실험을 통해 우리 솔루션의 효과를 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2211.01749v1
+
+## 개요
+몰입형 휴머노이드 로봇 원격 조작에서, 조작자의 머리와 로봇 머리 움직임 사이의 지연, 카메라와 헤드마운트 디스플레이의 시야각 불일치, 그리고 인간과 로봇의 목 관절 가동 범위 차이는 시각적 피드백의 투명성과 조작 경험을 심각하게 저해합니다. 이를 해결하기 위해, 본 논문은 SLAM 기술을 활용하여 메시를 재구성함으로써 시각적 피드백을 강화하고, 로봇 카메라가 포착하지 못한 영역을 실시간으로 보완하는 분리형 시점 제어 방식을 개발했습니다. 시스템은 조작자에게 포인트 클라우드 형태로 저지연 시각 정보를 제공하며, 포인트 클라우드의 자세를 통해 로봇 머리의 방향을 반영함으로써 몰입감과 조작 안전성 사이의 균형을 달성합니다.
+
+## 핵심 내용
+### 문제 배경
+몰입형 휴머노이드 로봇 원격 조작에서, 시각적 피드백의 투명성은 세 가지 주요 결함에 의해 영향을 받습니다:
+- **지연**: 조작자와 로봇 머리 움직임 사이의 지연(네트워크 통신 지연 또는 로봇 관절의 느린 움직임으로 인해 발생)은 시각적 피드백의 명백한 지연을 초래하여, 실재감을 손상시키고 어지러움을 유발하며, 조작자가 피드백 안정을 기다리기 위해 움직임을 자주 멈추게 만듭니다.
+- **시야각 불일치**: 카메라의 시야각은 일반적으로 헤드마운트 디스플레이의 시야각보다 낮습니다.
+- **목 관절 가동 범위 차이**: 로봇의 목 관절 가동 범위는 일반적으로 인간의 목보다 작습니다.
+
+### 방법 아키텍처
+본 논문은 분리형 시점 제어 시스템을 제안하며, 핵심 구성 요소는 다음과 같습니다:
+- **하드웨어**: HRP-4CR 휴머노이드 로봇에 ZED Mini 카메라를 탑재하여 실시간 포인트 클라우드 스트림을 수집합니다.
+- **SLAM 재구성 메시**: SLAM 기술을 활용하여 환경의 3차원 메시 모델을 구축하고, 이를 시각적 피드백의 보조 소스로 사용합니다.
+- **융합 메커니즘**: 실시간 포인트 클라우드와 SLAM 메시를 융합하여 카메라가 포착하지 못한 영역을 보완함으로써, 카메라 시야각을 조작자의 헤드마운트 디스플레이에 맞게 인위적으로 확장합니다.
+- **저지연 피드백**: 조작자는 헤드마운트 디스플레이를 통해 포인트 클라우드 자세를 관찰하여 로봇 머리의 방향을 실시간으로 인지하며, 분리형 시점 제어를 구현합니다.
+
+### 실험 설정 및 주요 결과
+- **실험 설계**: 대조 실험을 통해 시스템의 유효성을 검증하며, 조작자는 가상 현실 환경에서 원격 조작 작업을 수행합니다.
+- **주요 수치**: 시스템은 시각적 피드백 지연을 허용 가능한 범위로 성공적으로 줄였으며, 조작자의 몰입감과 작업 완료 효율을 크게 향상시켰습니다(구체적인 지연 수치와 작업 성공률은 원문을 참조하세요).
+- **결론**: 분리형 시점 제어와 SLAM 강화 시각적 피드백의 결합은 지연, 시야각 제한 및 목 관절 가동 범위 문제를 효과적으로 완화하며, 시스템 안전성과 견고성을 보장하면서 원격 조작의 몰입 경험을 향상시킵니다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.04613v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.04613v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (525 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,27 @@ We demonstrate the surprising real-world effectiveness of a very simple approach
 ## Content
 We demonstrate the surprising real-world effectiveness of a very simple approach to whole-body model-predictive control (MPC) of quadruped and humanoid robots: the iterative LQR (iLQR) algorithm with MuJoCo dynamics and finite-difference approximated derivatives. Building upon the previous success of model-based behavior synthesis and control of locomotion and manipulation tasks with MuJoCo in simulation, we show that these policies can easily generalize to the real world with few sim-to-real considerations. Our baseline method achieves real-time whole-body MPC on a variety of hardware experiments, including dynamic quadruped locomotion, quadruped walking on two legs, and full-sized humanoid bipedal locomotion. We hope this easy-to-reproduce hardware baseline lowers the barrier to entry for real-world whole-body MPC research and contributes to accelerating research velocity in the community. Our code and experiment videos will be available online at: https://johnzhang3.github.io/mujoco_ilqr
 
-## 개요
-우리는 사족 보행 로봇과 휴머노이드 로봇의 전신 모델 예측 제어(MPC)에 대한 매우 간단한 접근 방식의 놀라운 실제 효과를 입증합니다: MuJoCo 동역학과 유한 차분 근사 도함수를 사용한 반복 LQR(iLQR) 알고리즘입니다. 시뮬레이션에서 MuJoCo를 사용한 보행 및 조작 작업의 모델 기반 행동 합성 및 제어의 이전 성공을 바탕으로, 이러한 정책이 몇 가지 sim-to-real 고려 사항만으로 실제 세계에 쉽게 일반화될 수 있음을 보여줍니다. 우리의 기준 방법은 동적 사족 보행, 두 다리로 걷는 사족 보행, 전신 크기 휴머노이드 이족 보행을 포함한 다양한 하드웨어 실험에서 실시간 전신 MPC를 달성합니다. 이 쉽게 재현 가능한 하드웨어 기준이 실제 세계 전신 MPC 연구의 진입 장벽을 낮추고 커뮤니티의 연구 속도를 가속화하는 데 기여하기를 바랍니다. 우리의 코드와 실험 비디오는 다음에서 온라인으로 제공될 예정입니다: https://johnzhang3.github.io/mujoco_ilqr
-
-## 핵심 내용
-우리는 사족 보행 로봇과 휴머노이드 로봇의 전신 모델 예측 제어(MPC)에 대한 매우 간단한 접근 방식의 놀라운 실제 효과를 입증합니다: MuJoCo 동역학과 유한 차분 근사 도함수를 사용한 반복 LQR(iLQR) 알고리즘입니다. 시뮬레이션에서 MuJoCo를 사용한 보행 및 조작 작업의 모델 기반 행동 합성 및 제어의 이전 성공을 바탕으로, 이러한 정책이 몇 가지 sim-to-real 고려 사항만으로 실제 세계에 쉽게 일반화될 수 있음을 보여줍니다. 우리의 기준 방법은 동적 사족 보행, 두 다리로 걷는 사족 보행, 전신 크기 휴머노이드 이족 보행을 포함한 다양한 하드웨어 실험에서 실시간 전신 MPC를 달성합니다. 이 쉽게 재현 가능한 하드웨어 기준이 실제 세계 전신 MPC 연구의 진입 장벽을 낮추고 커뮤니티의 연구 속도를 가속화하는 데 기여하기를 바랍니다. 우리의 코드와 실험 비디오는 다음에서 온라인으로 제공될 예정입니다: https://johnzhang3.github.io/mujoco_ilqr
-
 ## 参考
 - http://arxiv.org/abs/2503.04613v3
+
+## 개요
+이 연구는 반복 LQR 알고리즘을 MuJoCo 물리 엔진과 결합하고, 유한 차분 근사를 통해 도함수를 계산하여 실시간 전신 MPC를 구현합니다. 하드웨어 실험에서 이 방법은 네 발 달린 로봇의 동적 달리기, 이족 보행을 성공적으로 구동했으며, 전신 크기 휴머노이드 로봇의 이족 보행 자세를 제어했습니다. 연구는 이 방법이 재현하기 쉬운 하드웨어 기준선으로서 실제 세계 전신 MPC 연구의 진입 장벽을 낮출 수 있음을 강조하며, 관련 코드와 실험 영상은 오픈소스로 공개되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 핵심 최적화 도구로 iLQR을 채택하고, MuJoCo 엔진을 사용하여 정확한 동역학 모델을 제공
+- 유한 차분법을 통해 도함수를 근사 계산하여 복잡한 해석적 유도를 피함
+- 제어 주파수가 실시간 요구 사항을 충족 (본문에 구체적인 주파수는 명시되지 않았지만 "실시간"을 강조)
+
+### 실험 설정
+- 하드웨어 플랫폼: 네 발 달린 로봇(동적 달리기, 이족 보행) 및 전신 크기 휴머노이드 로봇(이족 보행 자세)
+- sim-to-real 전략: 시뮬레이션에서 실제 환경으로 전환 시 약간의 조정만 필요
+- 코드와 영상은 프로젝트 홈페이지에 공개
+
+### 주요 결과
+- 네 발 달린 로봇: 동적 달리기와 이족 서기 보행 성공
+- 휴머노이드 로봇: 전신 크기 이족 보행 자세 제어 완료
+- 모든 실험은 사전 훈련이나 오프라인 최적화 없이 실제 하드웨어에서 실시간으로 실행
+
+### 결론
+이 연구는 MuJoCo 동역학과 결합된 간단한 iLQR 방법이 실제 로봇에서 효과적인 전신 MPC를 구현할 수 있음을 보여주며, 커뮤니티에 낮은 진입 장벽의 재현 기준선을 제공합니다.

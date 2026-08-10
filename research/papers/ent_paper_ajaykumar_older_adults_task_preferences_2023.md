@@ -39,8 +39,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.12686v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.12686v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (545 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,22 @@ theoretical_depth:
 ## Overview
 Artificial intelligence technologies that can assist with at-home tasks have the potential to help older adults age in place. Robot assistance in particular has been applied towards physical and cognitive support for older adults living independently at home. Surveys, questionnaires, and group interviews have been used to understand what tasks older adults want robots to assist them with. We build upon prior work exploring older adults' task preferences for robot assistance through field interviews situated within older adults' aging contexts. Our findings support results from prior work indicating older adults' preference for physical assistance over social and care-related support from robots and indicating their preference for control when adopting robot assistance, while highlighting the variety of individual constraints, boundaries, and needs that may influence their preferences.
 
-## 개요
-가정 내 작업을 지원할 수 있는 인공지능 기술은 노인들이 자택에서 노후를 보내는 데 도움을 줄 잠재력을 가지고 있습니다. 특히 로봇 지원은 독립적으로 가정에서 생활하는 노인들을 위한 신체적 및 인지적 지원에 적용되어 왔습니다. 설문조사, 질문지, 그룹 인터뷰는 노인들이 로봇에 어떤 작업을 지원받길 원하는지 이해하는 데 사용되었습니다. 우리는 노인들의 노화 맥락 내에서 진행된 현장 인터뷰를 통해 로봇 지원에 대한 노인들의 작업 선호도를 탐구한 이전 연구를 기반으로 합니다. 우리의 연구 결과는 노인들이 로봇의 사회적 및 돌봄 관련 지원보다 신체적 지원을 선호하며, 로봇 지원을 도입할 때 통제권을 선호한다는 이전 연구 결과를 지지하면서, 개인의 다양한 제약, 경계, 필요가 선호도에 영향을 미칠 수 있음을 강조합니다.
-
-## 핵심 내용
-가정 내 작업을 지원할 수 있는 인공지능 기술은 노인들이 자택에서 노후를 보내는 데 도움을 줄 잠재력을 가지고 있습니다. 특히 로봇 지원은 독립적으로 가정에서 생활하는 노인들을 위한 신체적 및 인지적 지원에 적용되어 왔습니다. 설문조사, 질문지, 그룹 인터뷰는 노인들이 로봇에 어떤 작업을 지원받길 원하는지 이해하는 데 사용되었습니다. 우리는 노인들의 노화 맥락 내에서 진행된 현장 인터뷰를 통해 로봇 지원에 대한 노인들의 작업 선호도를 탐구한 이전 연구를 기반으로 합니다. 우리의 연구 결과는 노인들이 로봇의 사회적 및 돌봄 관련 지원보다 신체적 지원을 선호하며, 로봇 지원을 도입할 때 통제권을 선호한다는 이전 연구 결과를 지지하면서, 개인의 다양한 제약, 경계, 필요가 선호도에 영향을 미칠 수 있음을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2302.12686v1
+
+## 개요
+이 연구는 가정에서 노인들과 반구조화된 현장 인터뷰를 진행하여 로봇 보조 작업에 대한 그들의 선호도를 심층적으로 탐구했습니다. 결과에 따르면, 노인들은 사회적 상호작용이나 돌봄 지원보다는 물리적 가사(예: 청소, 운반)를 로봇이 담당하는 것을 더 선호하는 것으로 나타났습니다. 또한, 참가자들은 로봇의 행동에 대한 통제권을 유지하기를 원했으며, 예를 들어 작업 수행 방식을 스스로 결정하는 것을 선호했습니다. 연구는 또한 개인 차이(예: 건강 상태, 주거 환경)가 이러한 선호도에 유의미한 영향을 미친다는 점을 지적했습니다.
+
+## 핵심 내용
+### 방법
+- 11명의 노인 가정에서 반구조화된 현장 인터뷰를 실시하여 실제 생활 환경에서의 요구를 포착했습니다.
+- 인터뷰 내용은 노인들이 로봇 보조 작업에 대해 기대하는 바에 초점을 맞추었으며, 물리적 가사, 사회적 상호작용, 돌봄 지원의 세 가지 범주를 포함했습니다.
+
+### 핵심 발견
+- **작업 선호도**: 참가자들은 사회적 동반자 역할이나 의료 돌봄 작업보다 물리적 가사 지원(예: 청소, 정리)을 명확히 우선시했습니다.
+- **통제 요구**: 노인들은 수동 스위치나 사용자 정의 작업 매개변수 등을 통해 로봇의 행동에 대한 통제권을 유지하기를 원한다고 강조했습니다.
+- **개인 차이**: 선호도는 개인의 건강 상태, 주거 공간 배치, 일상 습관 등의 제약에 영향을 받았으며, 예를 들어 이동이 불편한 사람은 물리적 지원에 더 의존하고, 독거 노인은 사회적 기능에 대한 관심이 낮을 수 있습니다.
+
+### 결론
+- 이 연구는 이전 조사 결과(예: 설문지 및 그룹 인터뷰)를 검증했지만, 현장 인터뷰를 통해 더 세밀한 개인적 경계와 요구를 드러냈습니다.
+- 로봇 설계는 물리적 가사 기능을 우선적으로 충족시키고, 다양한 노인의 개인화된 상황에 적응할 수 있도록 유연한 통제 옵션을 제공해야 한다고 제안합니다.

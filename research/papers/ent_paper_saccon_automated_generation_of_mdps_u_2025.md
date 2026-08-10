@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.23143v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.23143v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (634 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,26 @@ theoretical_depth:
 ## Overview
 We present a novel framework that integrates Large Language Models (LLMs) with automated planning and formal verification to streamline the creation and use of Markov Decision Processes (MDP). Our system leverages LLMs to extract structured knowledge in the form of a Prolog knowledge base from natural language (NL) descriptions. It then automatically constructs an MDP through reachability analysis, and synthesises optimal policies using the Storm model checker. The resulting policy is exported as a state-action table for execution. We validate the framework in three human-robot interaction scenarios, demonstrating its ability to produce executable policies with minimal manual effort. This work highlights the potential of combining language models with formal methods to enable more accessible and scalable probabilistic planning in robotics.
 
-## 개요
-본 논문에서는 대규모 언어 모델(LLM)과 자동 계획 및 형식 검증을 통합하여 마르코프 결정 과정(MDP)의 생성과 사용을 간소화하는 새로운 프레임워크를 제시합니다. 우리 시스템은 LLM을 활용하여 자연어(NL) 설명으로부터 Prolog 지식 베이스 형태의 구조화된 지식을 추출합니다. 그런 다음 도달 가능성 분석을 통해 자동으로 MDP를 구축하고, Storm 모델 검사기를 사용하여 최적 정책을 합성합니다. 결과 정책은 실행을 위해 상태-행동 테이블로 내보내집니다. 우리는 세 가지 인간-로봇 상호작용 시나리오에서 프레임워크를 검증하여 최소한의 수동 노력으로 실행 가능한 정책을 생성할 수 있음을 입증합니다. 이 연구는 언어 모델과 형식 방법을 결합하여 로봇 공학에서 보다 접근 가능하고 확장 가능한 확률적 계획을 가능하게 하는 잠재력을 강조합니다.
-
-## 핵심 내용
-본 논문에서는 대규모 언어 모델(LLM)과 자동 계획 및 형식 검증을 통합하여 마르코프 결정 과정(MDP)의 생성과 사용을 간소화하는 새로운 프레임워크를 제시합니다. 우리 시스템은 LLM을 활용하여 자연어(NL) 설명으로부터 Prolog 지식 베이스 형태의 구조화된 지식을 추출합니다. 그런 다음 도달 가능성 분석을 통해 자동으로 MDP를 구축하고, Storm 모델 검사기를 사용하여 최적 정책을 합성합니다. 결과 정책은 실행을 위해 상태-행동 테이블로 내보내집니다. 우리는 세 가지 인간-로봇 상호작용 시나리오에서 프레임워크를 검증하여 최소한의 수동 노력으로 실행 가능한 정책을 생성할 수 있음을 입증합니다. 이 연구는 언어 모델과 형식 방법을 결합하여 로봇 공학에서 보다 접근 가능하고 확장 가능한 확률적 계획을 가능하게 하는 잠재력을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.23143v1
+
+## 개요
+이 프레임워크는 대규모 언어 모델을 활용하여 자연어 설명에서 구조화된 지식을 추출하고, Prolog 지식 베이스를 구축합니다. 이후 도달 가능성 분석을 통해 MDP를 자동으로 생성하고, Storm 모델 검사기를 통해 최적 정책을 합성하며, 최종적으로 상태-행동 테이블 형태로 정책을 내보내 실행에 사용합니다. 세 가지 인간-로봇 상호작용 시나리오에서의 검증 결과, 이 시스템은 최소한의 인간 개입으로 실행 가능한 정책을 생성할 수 있음을 보여주었으며, 언어 모델과 형식적 방법의 결합이 로봇 확률 계획에서 지닌 잠재력을 입증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **지식 추출**: 퓨샷 프롬프트를 사용하는 대규모 언어 모델이 자연어 시나리오 설명에서 구조화된 정보를 추출하여 Prolog 지식 베이스로 변환합니다.
+- **MDP 구축**: Prolog 지식 베이스를 기반으로 도달 가능성 분석을 수행하고, 마르코프 결정 과정(MDP)을 자동 생성하여 상태, 행동, 전이 확률 및 보상 함수를 정의합니다.
+- **정책 합성**: Storm 모델 검사기를 호출하여 MDP에 대한 최적 정책을求解하고, 상태-행동 테이블을 실행 가능한 정책으로 출력합니다.
+
+### 실험 설정
+- **시나리오**: 협업 작업과 동적 환경을 포괄하는 세 가지 인간-로봇 상호작용 시나리오.
+- **평가 지표**: 정책 실행 가능성, 인간 개입 정도, 생성 효율성.
+
+### 주요 결과
+- 시스템은 세 가지 시나리오 모두에서 MDP 구조를 수동으로 설계하지 않고도 실행 가능한 정책을 성공적으로 생성했습니다.
+- 인간 개입은 자연어 설명과 소량의 예시 프롬프트에만 국한되어, 전통적인 확률 계획의 진입 장벽을 크게 낮췄습니다.
+- LLM의 의미 이해와 Storm의 엄격한 검증을 결합하여 정책의 수학적 최적성과 실제 실행 가능성을 보장합니다.
+
+### 결론
+이 프레임워크는 언어 모델과 형식적 방법이 협력하여 작동하는 효과를 검증했으며, 로봇 분야에 더 사용하기 쉽고 확장 가능한 자동 계획 솔루션을 제공합니다. 향후 작업은 더 복잡한 시나리오와 다중 모달 입력으로 확장할 수 있습니다.

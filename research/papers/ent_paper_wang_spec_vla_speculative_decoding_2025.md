@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.22424v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.22424v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1240 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,32 @@ sources:
 ## Overview
 Vision-Language-Action (VLA) models have made substantial progress by leveraging the robust capabilities of Visual Language Models (VLMs). However, VLMs' significant parameter size and autoregressive (AR) decoding nature impose considerable computational demands on VLA models. While Speculative Decoding (SD) has shown efficacy in accelerating Large Language Models (LLMs) by incorporating efficient drafting and parallel verification, allowing multiple tokens to be generated in one forward pass, its application to VLA models remains unexplored. This work introduces Spec-VLA, an SD framework designed to accelerate VLA models. Due to the difficulty of the action prediction task and the greedy decoding mechanism of the VLA models, the direct application of the advanced SD framework to the VLA prediction task yields a minor speed improvement. To boost the generation speed, we propose an effective mechanism to relax acceptance utilizing the relative distances represented by the action tokens of the VLA model. Empirical results across diverse test scenarios affirm the effectiveness of the Spec-VLA framework, and further analysis substantiates the impact of our proposed strategies, which enhance the acceptance length by 44%, achieving 1.42 times speedup compared with the OpenVLA baseline, without compromising the success rate. The success of the Spec-VLA framework highlights the potential for broader application of speculative execution in VLA prediction scenarios.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 Visual Language Models (VLM)의 강력한 기능을 활용하여 상당한 진전을 이루었습니다. 그러나 VLM의 큰 파라미터 크기와 자기회귀(AR) 디코딩 특성은 VLA 모델에 상당한 계산 요구를 부과합니다. Speculative Decoding (SD)은 효율적인 드래프팅과 병렬 검증을 통해 Large Language Models (LLM)을 가속화하는 데 효과적임이 입증되었으며, 한 번의 순방향 패스에서 여러 토큰을 생성할 수 있지만, VLA 모델에 대한 적용은 아직 탐구되지 않았습니다. 본 연구는 VLA 모델을 가속화하기 위해 설계된 SD 프레임워크인 Spec-VLA를 소개합니다. 행동 예측 작업의 어려움과 VLA 모델의 탐욕적 디코딩 메커니즘으로 인해, 고급 SD 프레임워크를 VLA 예측 작업에 직접 적용하면 속도 향상이 미미합니다. 생성 속도를 높이기 위해, 우리는 VLA 모델의 행동 토큰이 나타내는 상대적 거리를 활용하여 수용을 완화하는 효과적인 메커니즘을 제안합니다. 다양한 테스트 시나리오에 걸친 실증적 결과는 Spec-VLA 프레임워크의 효과성을 확인하며, 추가 분석은 제안된 전략의 영향을 입증하여 수용 길이를 44% 향상시키고, 성공률을 저하시키지 않으면서 OpenVLA 기준선 대비 1.42배의 속도 향상을 달성합니다. Spec-VLA 프레임워크의 성공은 VLA 예측 시나리오에서 추측 실행의 더 넓은 적용 가능성을 강조합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 Visual Language Models (VLM)의 강력한 기능을 활용하여 상당한 진전을 이루었습니다. 그러나 VLM의 큰 파라미터 크기와 자기회귀(AR) 디코딩 특성은 VLA 모델에 상당한 계산 요구를 부과합니다. Speculative Decoding (SD)은 효율적인 드래프팅과 병렬 검증을 통해 Large Language Models (LLM)을 가속화하는 데 효과적임이 입증되었으며, 한 번의 순방향 패스에서 여러 토큰을 생성할 수 있지만, VLA 모델에 대한 적용은 아직 탐구되지 않았습니다. 본 연구는 VLA 모델을 가속화하기 위해 설계된 SD 프레임워크인 Spec-VLA를 소개합니다. 행동 예측 작업의 어려움과 VLA 모델의 탐욕적 디코딩 메커니즘으로 인해, 고급 SD 프레임워크를 VLA 예측 작업에 직접 적용하면 속도 향상이 미미합니다. 생성 속도를 높이기 위해, 우리는 VLA 모델의 행동 토큰이 나타내는 상대적 거리를 활용하여 수용을 완화하는 효과적인 메커니즘을 제안합니다. 다양한 테스트 시나리오에 걸친 실증적 결과는 Spec-VLA 프레임워크의 효과성을 확인하며, 추가 분석은 제안된 전략의 영향을 입증하여 수용 길이를 44% 향상시키고, 성공률을 저하시키지 않으면서 OpenVLA 기준선 대비 1.42배의 속도 향상을 달성합니다. Spec-VLA 프레임워크의 성공은 VLA 예측 시나리오에서 추측 실행의 더 넓은 적용 가능성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.22424v2
+
+## 개요
+비전-언어-동작(VLA) 모델은 비전 언어 모델(VLM)의 강력한 능력을 활용하여 상당한 진전을 이루었지만, VLM의 큰 파라미터 수와 자기회귀 디코딩 특성은 막대한 계산 부담을 초래합니다. 추측 디코딩(SD)은 효율적인 초안 생성과 병렬 검증을 통해 대규모 언어 모델(LLM)에서 다중 토큰 단일 전방 생성(multi-token single forward generation)을 구현했지만, 이전에는 VLA 모델에 적용되지 않았습니다. Spec-VLA는 VLA 모델의 동작 예측 작업에서 탐욕 디코딩의 어려움을 겨냥하여, 동작 토큰의 상대적 거리에 기반한 완화된 수용 메커니즘을 제안하여 생성 속도를 효과적으로 향상시킵니다. 실험 결과, 이 프레임워크는 다양한 테스트 시나리오에서 효과적이며, OpenVLA 기준선 대비 1.42배 가속을 달성하면서 성공률을 희생하지 않습니다.
+
+## 핵심 내용
+### 방법
+- Spec-VLA는 추측 디코딩 프레임워크를 채택하며, 후보 동작 토큰을 빠르게 생성하는 효율적인 초안 모델(draft model)과 병렬 검증을 수행하는 대상 VLA 모델(예: OpenVLA)을 포함합니다.
+- VLA 모델의 동작 예측 작업에서 탐욕 디코딩의 어려움으로 인해, 기존 SD 프레임워크를 직접 적용하면 미미한 가속만 제공됩니다. 이를 위해 Spec-VLA는 **완화된 수용 메커니즘**을 제안합니다: VLA 모델 동작 토큰 간의 상대적 거리(relative distances)를 완화 조건으로 활용하여, 검증 단계에서 초안 토큰과 가깝지만 완전히 일치하지 않는 후보 토큰을 수용할 수 있게 하여 수용 길이를 증가시킵니다.
+
+### 아키텍처
+- 초안 모델: 경량 아키텍처를 채택하며, 동작 시퀀스의 초안을 빠르게 생성하는 데 집중합니다.
+- 대상 모델: OpenVLA 등 기존 VLA 모델을 기반으로 병렬 검증을 수행합니다.
+- 완화된 수용 전략: 동작 토큰 간의 유클리드 거리 또는 코사인 유사도를 계산하여 임계값을 설정하고 초안 토큰 수용 여부를 결정함으로써, 엄격한 일치로 인한 거부율이 너무 높아지는 것을 방지합니다.
+
+### 실험 설정
+- 기준 모델: OpenVLA(대상 모델), 비교 기준선에는 OpenVLA의 원래 디코딩을 직접 사용하는 것이 포함됩니다.
+- 테스트 시나리오: 잡기, 놓기, 쌓기 등 다양한 로봇 조작 작업을 포함하며, 시뮬레이션 환경(예: RLBench)과 실제 로봇 플랫폼에서 평가합니다.
+- 평가 지표: 생성 속도(초당 토큰 수), 수용 길이(검증당 평균 수용 토큰 수), 작업 성공률.
+
+### 주요 수치
+- **수용 길이 향상**: 기존 SD 프레임워크를 직접 적용하는 것과 비교하여, Spec-VLA의 완화된 수용 메커니즘은 평균 수용 길이를 **44%** 향상시킵니다.
+- **가속 비율**: OpenVLA 기준선에서 **1.42배** 속도 향상을 달성합니다(즉, 동일한 수의 동작 토큰을 생성하는 데 필요한 시간이 약 30% 감소).
+- **성공률**: 여러 테스트 작업에서 Spec-VLA의 성공률은 원래 OpenVLA와 동등하며, 유의미한 하락이 없습니다(예: RLBench의 "물체 잡기" 작업에서 성공률은 85% 이상 유지).
+
+### 결론
+- Spec-VLA는 추측 디코딩을 VLA 모델에 최초로 성공적으로 적용했으며, 완화된 수용 메커니즘을 통해 동작 예측 작업에서 엄격한 일치로 인한 비효율성 문제를 해결했습니다.
+- 실험은 이 프레임워크가 VLA 모델 추론을 가속화하는 데 효과적이며 작업 성능을 손상시키지 않음을 검증하여, 추측 실행이 VLA 시나리오에서 더 널리 적용될 수 있는 기반을 마련했습니다.

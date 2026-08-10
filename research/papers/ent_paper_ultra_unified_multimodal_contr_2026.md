@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.03279v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.03279v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (736 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,24 @@ ULTRA 框架包含两个核心组件：
 ## Overview
 Achieving autonomous and versatile whole-body loco-manipulation remains a central barrier to making humanoids practically useful. Yet existing approaches are fundamentally constrained: retargeted data are often scarce or low-quality; methods struggle to scale to large skill repertoires; and, most importantly, they rely on tracking predefined motion references rather than generating behavior from perception and high-level task specifications. To address these limitations, we propose ULTRA, a unified framework with two key components. First, we introduce a physics-driven neural retargeting algorithm that translates large-scale motion capture to humanoid embodiments while preserving physical plausibility for contact-rich interactions. Second, we learn a unified multimodal controller that supports both dense references and sparse task specifications, under sensing ranging from accurate motion-capture state to noisy egocentric visual inputs. We distill a universal tracking policy into this controller, compress motor skills into a compact latent space, and apply reinforcement learning finetuning to expand coverage and improve robustness under out-of-distribution scenarios. This enables coordinated whole-body behavior from sparse intent without test-time reference motions. We evaluate ULTRA in simulation and on a real Unitree G1 humanoid. Results show that ULTRA generalizes to autonomous, goal-conditioned whole-body loco-manipulation from egocentric perception, consistently outperforming tracking-only baselines with limited skills.
 
-## 개요
-인간형 로봇을 실용적으로 만드는 데 있어 자율적이고 다재다능한 전신 이동-조작 능력을 달성하는 것은 여전히 핵심적인 장벽으로 남아 있습니다. 그러나 기존 접근 방식은 근본적인 한계를 가지고 있습니다. 리타겟팅된 데이터는 종종 부족하거나 품질이 낮으며, 방법론은 다양한 기술 레퍼토리로 확장하는 데 어려움을 겪고, 가장 중요하게는 인식 및 고수준 작업 사양에서 행동을 생성하는 대신 미리 정의된 동작 참조를 추적하는 데 의존합니다. 이러한 한계를 해결하기 위해 우리는 두 가지 핵심 구성 요소를 가진 통합 프레임워크인 ULTRA를 제안합니다. 첫째, 접촉이 많은 상호작용에서 물리적 타당성을 유지하면서 대규모 모션 캡처를 인간형 로봇 구현체로 변환하는 물리 기반 신경 리타겟팅 알고리즘을 소개합니다. 둘째, 정확한 모션 캡처 상태에서 노이즈가 있는 자기중심적 시각 입력에 이르는 감각 하에서 밀집 참조와 희소 작업 사양을 모두 지원하는 통합 다중 모드 컨트롤러를 학습합니다. 우리는 이 컨트롤러에 보편적 추적 정책을 증류하고, 모터 기술을 컴팩트한 잠재 공간으로 압축하며, 강화 학습 미세 조정을 적용하여 적용 범위를 확장하고 분포 외 시나리오에서의 견고성을 향상시킵니다. 이를 통해 테스트 시 참조 동작 없이 희소 의도로부터 조정된 전신 행동이 가능해집니다. 우리는 시뮬레이션과 실제 Unitree G1 인간형 로봇에서 ULTRA를 평가합니다. 결과는 ULTRA가 자기중심적 인식으로부터 자율적이고 목표 조건화된 전신 이동-조작으로 일반화되며, 제한된 기술을 가진 추적 전용 기준선을 일관되게 능가함을 보여줍니다.
-
-## 핵심 내용
-인간형 로봇을 실용적으로 만드는 데 있어 자율적이고 다재다능한 전신 이동-조작 능력을 달성하는 것은 여전히 핵심적인 장벽으로 남아 있습니다. 그러나 기존 접근 방식은 근본적인 한계를 가지고 있습니다. 리타겟팅된 데이터는 종종 부족하거나 품질이 낮으며, 방법론은 다양한 기술 레퍼토리로 확장하는 데 어려움을 겪고, 가장 중요하게는 인식 및 고수준 작업 사양에서 행동을 생성하는 대신 미리 정의된 동작 참조를 추적하는 데 의존합니다. 이러한 한계를 해결하기 위해 우리는 두 가지 핵심 구성 요소를 가진 통합 프레임워크인 ULTRA를 제안합니다. 첫째, 접촉이 많은 상호작용에서 물리적 타당성을 유지하면서 대규모 모션 캡처를 인간형 로봇 구현체로 변환하는 물리 기반 신경 리타겟팅 알고리즘을 소개합니다. 둘째, 정확한 모션 캡처 상태에서 노이즈가 있는 자기중심적 시각 입력에 이르는 감각 하에서 밀집 참조와 희소 작업 사양을 모두 지원하는 통합 다중 모드 컨트롤러를 학습합니다. 우리는 이 컨트롤러에 보편적 추적 정책을 증류하고, 모터 기술을 컴팩트한 잠재 공간으로 압축하며, 강화 학습 미세 조정을 적용하여 적용 범위를 확장하고 분포 외 시나리오에서의 견고성을 향상시킵니다. 이를 통해 테스트 시 참조 동작 없이 희소 의도로부터 조정된 전신 행동이 가능해집니다. 우리는 시뮬레이션과 실제 Unitree G1 인간형 로봇에서 ULTRA를 평가합니다. 결과는 ULTRA가 자기중심적 인식으로부터 자율적이고 목표 조건화된 전신 이동-조작으로 일반화되며, 제한된 기술을 가진 추적 전용 기준선을 일관되게 능가함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.03279v1
+
+## 개요
+기존의 휴머노이드 로봇 전신 이동 조작 연구는 데이터 부족, 스킬 규모 확장의 어려움, 사전 정의된 운동 참조에 의존하는 문제로 제한되어 왔습니다. ULTRA 프레임워크는 두 가지 핵심 구성 요소를 통해 이러한 과제를 해결합니다: 첫째, 물리 기반 신경 리타게팅 알고리즘으로, 대규모 모션 캡처 데이터를 물리적으로 타당한 휴머노이드 로봇 운동으로 변환하며, 특히 접촉이 많은 상호작용 시나리오에 적합합니다. 둘째, 통합 멀티모달 컨트롤러로, 일반 추적 정책을 증류하고 운동 스킬을 컴팩트한 잠재 공간으로 압축하며, 강화 학습 미세 조정을 통해 적용 범위와 견고성을 향상시킵니다. ULTRA는 시뮬레이션과 실제 Unitree G1 휴머노이드 로봇에서 평가되었으며, 자기 중심 인식에서 출발하여 자율적이고 목표 지향적인 전신 이동 조작 작업으로 일반화할 수 있음을 보여주었고, 제한된 스킬만 사용하는 추적 기준선보다 지속적으로 우수한 성능을 발휘했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ULTRA 프레임워크는 두 가지 핵심 구성 요소를 포함합니다:
+- **물리 기반 신경 리타게팅 알고리즘**: 대규모 모션 캡처 데이터를 휴머노이드 로봇 본체에 적합한 운동으로 변환하며, 물리적 제약을 통해 접촉이 많은 상호작용 시나리오에서 운동의 타당성을 보장합니다.
+- **통합 멀티모달 컨트롤러**: 정밀한 모션 캡처 상태에서 노이즈가 많은 자기 중심 비전 입력까지 다양한 센싱 모드를 지원하며, 밀집된 참조 신호와 희소한 작업 사양을 모두 호환합니다.
+
+### 훈련 절차
+1. **일반 추적 정책 증류**: 추적 정책의 지식을 통합 컨트롤러로 전이합니다.
+2. **운동 스킬 압축**: 다양한 운동 스킬을 컴팩트한 잠재 공간으로 인코딩합니다.
+3. **강화 학습 미세 조정**: 스킬 적용 범위를 확장하고 분포 외 시나리오에서의 견고성을 향상시킵니다.
+
+### 실험 설정 및 결과
+- **플랫폼**: 시뮬레이션 환경 및 실제 Unitree G1 휴머노이드 로봇.
+- **작업**: 자기 중심 인식에 기반한 자율적이고 목표 지향적인 전신 이동 조작.
+- **주요 발견**: ULTRA는 희소한 의도에서 직접 조화로운 전신 행동을 생성할 수 있으며, 테스트 시 참조 운동이 필요하지 않습니다. 다양한 시나리오에서 제한된 스킬만 사용하는 추적 기준선 방법보다 현저히 우수한 성능을 보여줍니다.

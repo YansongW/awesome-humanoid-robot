@@ -38,7 +38,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: Unitree H1 Humanoid Robot
-    Whitepaper & Specifications. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    Whitepaper & Specifications. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (691 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -73,11 +74,28 @@ sources:
 ## Overview
 This paper presents a vision-based human action imitation system based on humanoid robots. A forward-facing OAK-Lite RGB-D camera mounted approximately 1.2 m in front of the robot is used to capture human motion and reproduce upper-body actions in real time. To improve the stability of depth-based keypoints, we employ a cascaded Kalman and weighted moving average filter that effectively reduces shake. A warm-start symbolic inverse kinematics solver with velocity-bounded optimization enables stable 8-DoF arm control within 12–18 ms. In addition, a finite-state lower-limb gesture recognizer provides intuitive locomotion commands, forming a unified full-body imitation framework. Experiments on the Unitree H1 robot demonstrate 72 ms end-to-end latency, 3.38° joint error, and 95% gesture recognition accuracy, validating the system’s smooth and responsive imitation performance.
 
-## 개요
-본 논문은 휴머노이드 로봇 기반의 비전 기반 인간 동작 모방 시스템을 제시합니다. 로봇 전방 약 1.2m 지점에 장착된 전방향 OAK-Lite RGB-D 카메라를 사용하여 인간의 움직임을 포착하고 상체 동작을 실시간으로 재현합니다. 깊이 기반 키포인트의 안정성을 향상시키기 위해, 캐스케이드 칼만 필터와 가중 이동 평균 필터를 적용하여 흔들림을 효과적으로 줄였습니다. 속도 제한 최적화를 적용한 웜스타트 기호 역기구학 솔버를 통해 12~18ms 내에 안정적인 8자유도 팔 제어를 구현합니다. 또한, 유한 상태 하체 제스처 인식기를 통해 직관적인 이동 명령을 제공하여 통합된 전신 모방 프레임워크를 구성합니다. Unitree H1 로봇 실험 결과, 종단 간 지연 시간 72ms, 관절 오차 3.38°, 제스처 인식 정확도 95%를 달성하여 시스템의 부드럽고 반응성 높은 모방 성능을 입증했습니다.
-
-## 핵심 내용
-본 논문은 휴머노이드 로봇 기반의 비전 기반 인간 동작 모방 시스템을 제시합니다. 로봇 전방 약 1.2m 지점에 장착된 전방향 OAK-Lite RGB-D 카메라를 사용하여 인간의 움직임을 포착하고 상체 동작을 실시간으로 재현합니다. 깊이 기반 키포인트의 안정성을 향상시키기 위해, 캐스케이드 칼만 필터와 가중 이동 평균 필터를 적용하여 흔들림을 효과적으로 줄였습니다. 속도 제한 최적화를 적용한 웜스타트 기호 역기구학 솔버를 통해 12~18ms 내에 안정적인 8자유도 팔 제어를 구현합니다. 또한, 유한 상태 하체 제스처 인식기를 통해 직관적인 이동 명령을 제공하여 통합된 전신 모방 프레임워크를 구성합니다. Unitree H1 로봇 실험 결과, 종단 간 지연 시간 72ms, 관절 오차 3.38°, 제스처 인식 정확도 95%를 달성하여 시스템의 부드럽고 반응성 높은 모방 성능을 입증했습니다.
-
 ## 参考
 - Semantic Scholar search: Unitree H1 Humanoid Robot Whitepaper & Specifications
+
+## 개요
+이 시스템은 로봇 전방 약 1.2m 지점에 OAK-Lite RGB-D 카메라를 설치하여 실시간으로 인체 동작을 캡처하고 상지 동작을 재현합니다. 깊이 키포인트의 떨림을 억제하기 위해 연구자들은 캐스케이드 칼만 필터와 가중 이동 평균 필터를 설계했습니다. 팔 제어는 웜 스타트 기호 역운동학 솔버를 사용하며, 속도 경계 최적화를 통해 12-18밀리초 내에 8자유도 안정 제어를 완료합니다. 하지 부분은 유한 상태 머신 기반 제스처 인식기를 통해 직관적인 이동 명령을 제공하여 완전한 전신 모방 프레임워크를 구성합니다. Unitree H1 로봇에서의 실험은 시스템의 유연하고 빠른 모방 성능을 검증했습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **인식 모듈**: 전방 OAK-Lite RGB-D 카메라(설치 높이 약 1.2m)가 실시간으로 인체 RGB-D 데이터를 캡처
+- **필터링 처리**: 캐스케이드 칼만 필터와 가중 이동 평균 필터의 조합으로 깊이 키포인트 떨림을 효과적으로 억제
+- **운동 제어**:
+  - 웜 스타트 기호 역운동학 솔버(warm-start symbolic IK solver)
+  - 속도 경계 최적화(velocity-bounded optimization)로 운동 평활성 보장
+  - 8자유도(8-DoF) 팔 제어 주기 12-18밀리초
+- **하지 제어**: 유한 상태 머신(finite-state machine) 기반 제스처 인식기로 직관적인 이동 명령 출력
+
+### 실험 설정
+- **로봇 플랫폼**: Unitree H1 휴머노이드 로봇
+- **성능 지표**:
+  - 엔드투엔드 지연 시간: 72밀리초
+  - 관절 각도 오차: 3.38°
+  - 제스처 인식 정확도: 95%
+
+### 결론
+이 시스템은 시각 인식과 운동 제어의 협력 설계를 통해 휴머노이드 로봇이 복잡한 인체 동작을 실시간으로 모방할 수 있게 하였으며, 지연 시간, 정밀도, 인식 신뢰성 측면에서 종합적인 효과를 검증했습니다.

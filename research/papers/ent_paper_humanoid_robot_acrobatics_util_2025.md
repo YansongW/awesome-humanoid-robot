@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.08258v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.08258v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (783 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,30 @@ sources:
 ## Overview
 Endowing humanoid robots with the ability to perform highly dynamic motions akin to human-level acrobatics has been a long-standing challenge. Successfully performing these maneuvers requires close consideration of the underlying physics in both trajectory optimization for planning and control during execution. This is particularly challenging due to humanoids' high degree-of-freedom count and associated exponentially scaling complexities, which makes planning on the explicit equations of motion intractable. Typical workarounds include linearization methods and model approximations. However, neither are sufficient because they produce degraded performance on the true robotic system. This paper presents a control architecture comprising trajectory optimization and whole-body control, intermediated by a matching model abstraction, that enables the execution of acrobatic maneuvers, including constraint and posture behaviors, conditioned on the unabbreviated equations of motion of the articulated rigid body model. A review of underlying modeling and control methods is given, followed by implementation details including model abstraction, trajectory optimization and whole-body controller. The system's effectiveness is analyzed in simulation.
 
-## 개요
-휴머노이드 로봇이 인간 수준의 곡예와 같은 고도로 역동적인 동작을 수행할 수 있는 능력을 부여하는 것은 오랜 도전 과제였습니다. 이러한 동작을 성공적으로 수행하려면 계획을 위한 궤적 최적화와 실행 중 제어 모두에서 기본 물리 법칙을 면밀히 고려해야 합니다. 이는 휴머노이드의 높은 자유도와 그에 따른 기하급수적으로 증가하는 복잡성으로 인해 특히 어려우며, 명시적 운동 방정식에 대한 계획을 다루기 어렵게 만듭니다. 일반적인 해결 방법으로는 선형화 방법과 모델 근사가 있습니다. 그러나 둘 다 실제 로봇 시스템에서 성능 저하를 초래하기 때문에 충분하지 않습니다. 본 논문은 궤적 최적화와 전신 제어로 구성된 제어 아키텍처를 제시하며, 이는 일치하는 모델 추상화에 의해 중재되어 관절 강체 모델의 축약되지 않은 운동 방정식에 기반한 제약 및 자세 동작을 포함한 곡예 동작의 실행을 가능하게 합니다. 기본 모델링 및 제어 방법에 대한 검토가 제공되며, 모델 추상화, 궤적 최적화 및 전신 제어기를 포함한 구현 세부 사항이 이어집니다. 시스템의 효과는 시뮬레이션에서 분석됩니다.
-
-## 핵심 내용
-휴머노이드 로봇이 인간 수준의 곡예와 같은 고도로 역동적인 동작을 수행할 수 있는 능력을 부여하는 것은 오랜 도전 과제였습니다. 이러한 동작을 성공적으로 수행하려면 계획을 위한 궤적 최적화와 실행 중 제어 모두에서 기본 물리 법칙을 면밀히 고려해야 합니다. 이는 휴머노이드의 높은 자유도와 그에 따른 기하급수적으로 증가하는 복잡성으로 인해 특히 어려우며, 명시적 운동 방정식에 대한 계획을 다루기 어렵게 만듭니다. 일반적인 해결 방법으로는 선형화 방법과 모델 근사가 있습니다. 그러나 둘 다 실제 로봇 시스템에서 성능 저하를 초래하기 때문에 충분하지 않습니다. 본 논문은 궤적 최적화와 전신 제어로 구성된 제어 아키텍처를 제시하며, 이는 일치하는 모델 추상화에 의해 중재되어 관절 강체 모델의 축약되지 않은 운동 방정식에 기반한 제약 및 자세 동작을 포함한 곡예 동작의 실행을 가능하게 합니다. 기본 모델링 및 제어 방법에 대한 검토가 제공되며, 모델 추상화, 궤적 최적화 및 전신 제어기를 포함한 구현 세부 사항이 이어집니다. 시스템의 효과는 시뮬레이션에서 분석됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.08258v1
+
+## 개요
+휴머노이드 로봇에게 인간 수준의 묘기 동작을 수행할 수 있는 능력을 부여하는 것은 오랜 도전 과제이며, 이는 궤적 계획과 실행 제어에서 하위 물리적 특성을 충분히 고려해야 합니다. 휴머노이드 로봇은 자유도가 매우 높기 때문에, 명시적 운동 방정식에 직접 기반한 계획은 계산적으로 불가능하며, 전통적인 방법은 선형화나 모델 근사에 의존하지만 이는 실제 시스템 성능 저하를 초래합니다. 본 논문은 궤적 최적화와 전신 제어 간의 정합 모델 추상화를 통해, 완전한 관절 강체 동역학 방정식에 기반하여 제약 및 자세 동작을 포함한 묘기 동작을 구현하는 제어 아키텍처를 제안합니다. 연구는 또한 하위 모델링 및 제어 방법을 검토하고, 모델 추상화, 궤적 최적화 및 전신 제어기의 구현 세부 사항을 제시합니다.
+
+## 핵심 내용
+### 방법 개요
+- 핵심 아이디어: 전통적인 선형화와 모델 근사를 피하고, 완전한 관절 강체 동역학 방정식을 직접 활용하여 계획 및 제어를 수행합니다.
+- 아키텍처 구성: 궤적 최적화(Trajectory Optimization)와 전신 제어(Whole-Body Control)로 구성되며, 이 둘은 정합 모델 추상화(Matching Model Abstraction)를 통해 연결됩니다.
+
+### 모델 추상화
+- 역할: 궤적 최적화와 전신 제어 간에 일관된 동역학 표현을 구축하여, 계획 결과가 실제 제어에 직접 매핑될 수 있도록 보장합니다.
+- 구현: 완전한 관절 강체 동역학 방정식에 기반하며, 차수 축소나 선형화 처리를 수행하지 않습니다.
+
+### 궤적 최적화
+- 목표: 동역학 제약을 충족하는 묘기 동작 궤적을 생성하며, 제약 동작(예: 접촉력)과 자세 동작(예: 신체 방향)을 포함합니다.
+- 도전 과제: 높은 자유도로 인해 최적화 문제의 복잡도가 지수적으로 증가하지만, 모델 추상화를 통해 계산 부담을 줄입니다.
+
+### 전신 제어기
+- 기능: 최적화된 궤적을 실제 관절 명령으로 변환하고, 실시간 피드백 및 외란을 처리합니다.
+- 특징: 완전한 동역학 모델에 기반하여 근사로 인한 제어 오차를 피합니다.
+
+### 실험 설정 및 결과
+- 시뮬레이션 환경: 시뮬레이션에서 시스템 유효성을 검증하며, 실제 로봇 실험은 언급되지 않았습니다.
+- 주요 수치: 구체적인 수치는 제공되지 않았지만, 시스템이 고역학 묘기 동작(예: 공중제비, 회전 등)을 수행할 수 있음을 강조합니다.
+- 결론: 완전한 동역학 방정식에 기반한 방법이 전통적인 선형화 및 근사 방법보다 우수하며, 시뮬레이션에서 더 나은 성능을 구현했습니다.

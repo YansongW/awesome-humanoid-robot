@@ -57,8 +57,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13660v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13660v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (965 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,21 @@ RoboTracer 针对机器人空间追踪这一需要多步度量推理与复杂空
 ## Overview
 Spatial tracing, as a fundamental embodied interaction ability for robots, is inherently challenging as it requires multi-step metric-grounded reasoning compounded with complex spatial referring and real-world metric measurement. However, existing methods struggle with this compositional task. To this end, we propose RoboTracer, a 3D-aware VLM that first achieves both 3D spatial referring and measuring via a universal spatial encoder and a regression-supervised decoder to enhance scale awareness during supervised fine-tuning (SFT). Moreover, RoboTracer advances multi-step metric-grounded reasoning via reinforcement fine-tuning (RFT) with metric-sensitive process rewards, supervising key intermediate perceptual cues to accurately generate spatial traces. To support SFT and RFT training, we introduce TraceSpatial, a large-scale dataset of 30M QA pairs, spanning outdoor/indoor/tabletop scenes and supporting complex reasoning processes (up to 9 steps). We further present TraceSpatial-Bench, a challenging benchmark filling the gap to evaluate spatial tracing. Experimental results show that RoboTracer surpasses baselines in spatial understanding, measuring, and referring, with an average success rate of 79.1%, and also achieves SOTA performance on TraceSpatial-Bench by a large margin, exceeding Gemini-2.5-Pro by 36% accuracy. Notably, RoboTracer can be integrated with various control policies to execute long-horizon, dynamic tasks across diverse robots (UR5, G1 humanoid) in cluttered real-world scenes. Please see the project page at https://zhoues.github.io/RoboTracer.
 
-## 개요
-공간 추적(Spatial tracing)은 로봇의 기본적인 체화 상호작용 능력으로, 다단계 측정 기반 추론(multi-step metric-grounded reasoning)과 복잡한 공간 지시(spatial referring) 및 실제 세계의 미터법 측정(metric measurement)이 결합되어 본질적으로 어려운 과제입니다. 그러나 기존 방법들은 이러한 구성적 과제에 어려움을 겪고 있습니다. 이를 해결하기 위해, 우리는 RoboTracer를 제안합니다. 이는 3D 인식 VLM으로, 지도 미세 조정(SFT) 중에 범용 공간 인코더와 회귀 감독 디코더를 통해 3D 공간 지시와 측정을 동시에 달성하여 규모 인식을 향상시킵니다. 또한, RoboTracer는 미터법에 민감한 프로세스 보상(metric-sensitive process rewards)을 사용한 강화 미세 조정(RFT)을 통해 다단계 측정 기반 추론을 발전시키며, 주요 중간 지각 단서를 감독하여 공간 추적을 정확하게 생성합니다. SFT 및 RFT 훈련을 지원하기 위해, 우리는 TraceSpatial을 소개합니다. 이는 3000만 QA 쌍으로 구성된 대규모 데이터셋으로, 실외/실내/테이블탑 장면을 포괄하며 최대 9단계의 복잡한 추론 과정을 지원합니다. 또한, 공간 추적 평가의 격차를 메우기 위한 도전적인 벤치마크인 TraceSpatial-Bench를 제시합니다. 실험 결과, RoboTracer는 공간 이해, 측정 및 지시에서 기준선을 능가하며 평균 성공률 79.1%를 달성하고, TraceSpatial-Bench에서도 큰 차이로 SOTA 성능을 기록하여 Gemini-2.5-Pro보다 정확도가 36% 높습니다. 특히, RoboTracer는 다양한 제어 정책과 통합되어 복잡한 실제 세계 장면에서 다양한 로봇(UR5, G1 휴머노이드)으로 장기적이고 동적인 작업을 실행할 수 있습니다. 프로젝트 페이지는 https://zhoues.github.io/RoboTracer에서 확인하세요.
-
-## 핵심 내용
-공간 추적(Spatial tracing)은 로봇의 기본적인 체화 상호작용 능력으로, 다단계 측정 기반 추론(multi-step metric-grounded reasoning)과 복잡한 공간 지시(spatial referring) 및 실제 세계의 미터법 측정(metric measurement)이 결합되어 본질적으로 어려운 과제입니다. 그러나 기존 방법들은 이러한 구성적 과제에 어려움을 겪고 있습니다. 이를 해결하기 위해, 우리는 RoboTracer를 제안합니다. 이는 3D 인식 VLM으로, 지도 미세 조정(SFT) 중에 범용 공간 인코더와 회귀 감독 디코더를 통해 3D 공간 지시와 측정을 동시에 달성하여 규모 인식을 향상시킵니다. 또한, RoboTracer는 미터법에 민감한 프로세스 보상(metric-sensitive process rewards)을 사용한 강화 미세 조정(RFT)을 통해 다단계 측정 기반 추론을 발전시키며, 주요 중간 지각 단서를 감독하여 공간 추적을 정확하게 생성합니다. SFT 및 RFT 훈련을 지원하기 위해, 우리는 TraceSpatial을 소개합니다. 이는 3000만 QA 쌍으로 구성된 대규모 데이터셋으로, 실외/실내/테이블탑 장면을 포괄하며 최대 9단계의 복잡한 추론 과정을 지원합니다. 또한, 공간 추적 평가의 격차를 메우기 위한 도전적인 벤치마크인 TraceSpatial-Bench를 제시합니다. 실험 결과, RoboTracer는 공간 이해, 측정 및 지시에서 기준선을 능가하며 평균 성공률 79.1%를 달성하고, TraceSpatial-Bench에서도 큰 차이로 SOTA 성능을 기록하여 Gemini-2.5-Pro보다 정확도가 36% 높습니다. 특히, RoboTracer는 다양한 제어 정책과 통합되어 복잡한 실제 세계 장면에서 다양한 로봇(UR5, G1 휴머노이드)으로 장기적이고 동적인 작업을 실행할 수 있습니다. 프로젝트 페이지는 https://zhoues.github.io/RoboTracer에서 확인하세요.
-
 ## 参考
 - http://arxiv.org/abs/2512.13660v4
+
+## 개요
+RoboTracer는 다단계 측정 추론과 복잡한 공간 지시를 결합해야 하는 도전적인 작업인 로봇 공간 추적을 위해 3D 인식 비전-언어 모델을 제안합니다. 이 모델은 지도 미세 조정(SFT) 단계에서 범용 공간 인코더와 회귀 감독 디코더를 도입하여 스케일 인식 능력을 강화합니다. 동시에 측정 민감 프로세스 보상 기반의 강화 미세 조정(RFT) 방법을 채택하여 핵심 중간 인식 단서를 감독하여 정밀한 공간 궤적을 생성합니다. 훈련을 지원하기 위해 팀은 3천만 개의 질의응답 쌍을 포함하는 대규모 데이터셋 TraceSpatial을 구축했으며, 실외, 실내, 데스크톱 장면을 포괄하고 최대 9단계의 복잡한 추론 과정을 지원합니다. 실험 결과 RoboTracer는 공간 이해, 측정 및 지시 작업에서 기준선을 능가하며, TraceSpatial-Bench에서 현저한 우위로 최적 성능을 달성했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **3D 인식 비전-언어 모델**: RoboTracer는 범용 공간 인코더(universal spatial encoder)를 사용하여 3D 공간 정보를 시각적 특징으로 인코딩하고, 회귀 감독 디코더(regression-supervised decoder)를 통해 측정 값을 직접 출력하여 SFT 단계에서 모델의 스케일 인식 능력을 강화합니다.
+- **다단계 측정 추론**: 강화 미세 조정(RFT)을 통해 측정 민감 프로세스 보상(metric-sensitive process rewards)을 도입하여 핵심 중간 인식 단서(예: 객체 위치, 거리 추정)를 감독하고, 모델이 단계적으로 정확한 공간 궤적을 생성하도록 유도합니다.
+
+### 훈련 데이터 및 벤치마크
+- **TraceSpatial 데이터셋**: 3천만 개의 질의응답 쌍을 포함하며, 실외, 실내, 데스크톱 장면을 포괄하고 최대 9단계의 복잡한 추론 과정을 지원하여 SFT 및 RFT 훈련에 사용됩니다.
+- **TraceSpatial-Bench 벤치마크**: 공간 추적 능력을 평가하기 위한 도전적인 벤치마크로, 해당 분야의 평가 공백을 메웁니다.
+
+### 실험 설정 및 결과
+- **성능 비교**: RoboTracer는 공간 이해, 측정 및 지시 작업에서 기준선을 능가하며 평균 성공률 79.1%를 달성합니다. TraceSpatial-Bench에서 Gemini-2.5-Pro보다 정확도가 36% 높아 현저한 우위로 최적 성능(SOTA)을 달성합니다.
+- **실제 배포**: RoboTracer는 다양한 제어 전략과 통합될 수 있으며, 복잡한 실제 장면에서 장시간 동적 작업을 수행할 수 있습니다. UR5 및 G1 휴머노이드 로봇과 같은 다양한 플랫폼에 성공적으로 배포되었습니다.

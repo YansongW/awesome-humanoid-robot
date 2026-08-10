@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.15827v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.15827v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (729 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,24 @@ PHP 框架通过运动匹配与感知驱动的策略蒸馏，首次在人形机�
 ## Overview
 While recent advances in humanoid locomotion have achieved stable walking on varied terrains, capturing the agility and adaptivity of highly dynamic human motions remains an open challenge. In particular, agile parkour in complex environments demands not only low-level robustness, but also human-like motion expressiveness, long-horizon skill composition, and perception-driven decision-making. In this paper, we present Perceptive Humanoid Parkour (PHP), a modular framework that enables humanoid robots to autonomously perform long-horizon, vision-based parkour across challenging obstacle courses. Our approach first leverages motion matching, formulated as nearest-neighbor search in a feature space, to compose retargeted atomic human skills into long-horizon kinematic trajectories. This framework enables the flexible composition and smooth transition of complex skill chains while preserving the elegance and fluidity of dynamic human motions. Next, we train motion-tracking reinforcement learning (RL) expert policies for these composed motions, and distill them into a single depth-based, multi-skill student policy, using a combination of DAgger and RL. Crucially, the combination of perception and skill composition enables autonomous, context-aware decision-making: using only onboard depth sensing and a discrete 2D velocity command, the robot selects and executes whether to step over, climb onto, vault or roll off obstacles of varying geometries and heights. We validate our framework with extensive real-world experiments on a Unitree G1 humanoid robot, demonstrating highly dynamic parkour skills such as climbing tall obstacles up to 1.25m (96% robot height), as well as long-horizon multi-obstacle traversal with closed-loop adaptation to real-time obstacle perturbations.
 
-## 개요
-최근 인간형 로봇 보행 기술의 발전으로 다양한 지형에서 안정적인 보행이 가능해졌지만, 고도로 역동적인 인간 동작의 민첩성과 적응성을 구현하는 것은 여전히 해결되지 않은 과제입니다. 특히 복잡한 환경에서의 민첩한 파쿠르는 저수준의 강건성뿐만 아니라 인간과 유사한 동작 표현력, 장기적인 기술 구성, 그리고 인식 기반 의사 결정을 요구합니다. 본 논문에서는 인간형 로봇이 도전적인 장애물 코스를 자율적으로 장기간 비전 기반 파쿠르를 수행할 수 있도록 하는 모듈식 프레임워크인 Perceptive Humanoid Parkour (PHP)를 제시합니다. 우리의 접근 방식은 먼저 특징 공간에서의 최근접 이웃 탐색으로 정식화된 모션 매칭을 활용하여 리타겟팅된 원자적 인간 기술을 장기적인 운동학적 궤적으로 구성합니다. 이 프레임워크는 역동적인 인간 동작의 우아함과 유연성을 유지하면서 복잡한 기술 체인의 유연한 구성과 부드러운 전환을 가능하게 합니다. 다음으로, 이러한 구성된 동작에 대한 동작 추적 강화 학습(RL) 전문가 정책을 훈련하고, DAgger와 RL의 조합을 사용하여 이를 단일 깊이 기반 다중 기술 학생 정책으로 증류합니다. 결정적으로, 인식과 기술 구성의 결합은 자율적이고 상황 인식적인 의사 결정을 가능하게 합니다: 온보드 깊이 센싱과 이산적인 2D 속도 명령만을 사용하여 로봇은 다양한 기하학적 형태와 높이의 장애물을 넘거나, 올라가거나, 도약하거나, 굴러 내려오는 동작을 선택하고 실행합니다. 우리는 Unitree G1 인간형 로봇을 사용한 광범위한 실제 실험을 통해 프레임워크를 검증했으며, 최대 1.25m(로봇 높이의 96%) 높이의 장애물을 오르는 것과 같은 고도로 역동적인 파쿠르 기술과 실시간 장애물 변동에 대한 폐쇄 루프 적응을 통한 장기간 다중 장애물 통과를 입증했습니다.
-
-## 핵심 내용
-최근 인간형 로봇 보행 기술의 발전으로 다양한 지형에서 안정적인 보행이 가능해졌지만, 고도로 역동적인 인간 동작의 민첩성과 적응성을 구현하는 것은 여전히 해결되지 않은 과제입니다. 특히 복잡한 환경에서의 민첩한 파쿠르는 저수준의 강건성뿐만 아니라 인간과 유사한 동작 표현력, 장기적인 기술 구성, 그리고 인식 기반 의사 결정을 요구합니다. 본 논문에서는 인간형 로봇이 도전적인 장애물 코스를 자율적으로 장기간 비전 기반 파쿠르를 수행할 수 있도록 하는 모듈식 프레임워크인 Perceptive Humanoid Parkour (PHP)를 제시합니다. 우리의 접근 방식은 먼저 특징 공간에서의 최근접 이웃 탐색으로 정식화된 모션 매칭을 활용하여 리타겟팅된 원자적 인간 기술을 장기적인 운동학적 궤적으로 구성합니다. 이 프레임워크는 역동적인 인간 동작의 우아함과 유연성을 유지하면서 복잡한 기술 체인의 유연한 구성과 부드러운 전환을 가능하게 합니다. 다음으로, 이러한 구성된 동작에 대한 동작 추적 강화 학습(RL) 전문가 정책을 훈련하고, DAgger와 RL의 조합을 사용하여 이를 단일 깊이 기반 다중 기술 학생 정책으로 증류합니다. 결정적으로, 인식과 기술 구성의 결합은 자율적이고 상황 인식적인 의사 결정을 가능하게 합니다: 온보드 깊이 센싱과 이산적인 2D 속도 명령만을 사용하여 로봇은 다양한 기하학적 형태와 높이의 장애물을 넘거나, 올라가거나, 도약하거나, 굴러 내려오는 동작을 선택하고 실행합니다. 우리는 Unitree G1 인간형 로봇을 사용한 광범위한 실제 실험을 통해 프레임워크를 검증했으며, 최대 1.25m(로봇 높이의 96%) 높이의 장애물을 오르는 것과 같은 고도로 역동적인 파쿠르 기술과 실시간 장애물 변동에 대한 폐쇄 루프 적응을 통한 장기간 다중 장애물 통과를 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.15827v2
+
+## 개요
+이 프레임워크는 먼저 특징 공간에서의 최근접 이웃 탐색을 통한 동작 매칭으로, 리타게팅된 원자적 인간 스킬을 조합하여 장기 운동 궤적을 생성하며, 복잡한 스킬 체인의 유연한 편성과 부드러운 전환을 구현합니다. 이후 이러한 조합 동작에 대해 운동 추적 강화 학습 전문가 정책을 훈련하고, DAgger와 RL을 결합한 방법으로 이를 단일의 깊이 인식 다중 스킬 학생 정책으로 증류합니다. 최종적으로 로봇은 온보드 깊이 센서와 이산 2D 속도 명령만으로 자율적으로 다양한 기하학적 형태와 높이의 장애물을 넘고, 기어오르고, 점프하거나 구르는 결정을 내릴 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **동작 매칭 계층**: 인간 모션 캡처 데이터를 로봇 운동학으로 리타게팅하고, 특징 공간에서의 최근접 이웃 탐색을 통해 원자적 스킬(예: 보폭, 기어오르기, 점프)을 동적으로 조합하여 연속적이고 부드러운 장기 운동 궤적을 생성합니다.
+- **정책 훈련**: 각 조합 동작에 대해 독립적인 운동 추적 RL 전문가 정책을 훈련한 후, DAgger와 RL의 결합 증류 방법을 통해 이를 단일의 깊이 인식 다중 스킬 학생 정책으로 통합하여 배포 복잡성을 낮춥니다.
+- **인식 및 의사 결정**: 학생 정책은 온보드 깊이 카메라와 이산 2D 속도 명령에만 의존하여 장애물의 기하학적 특징을 실시간으로 인식하고, 자율적으로 해당 동작(예: 넘기, 기어오르기, 구르기)을 선택 및 실행합니다.
+
+### 실험 설정 및 주요 결과
+- **하드웨어 플랫폼**: Unitree G1 휴머노이드 로봇, 온보드 깊이 센서 탑재.
+- **장애물 테스트**:
+  - 정적 장애물: 로봇 키의 96%에 해당하는 1.25m 높이의 수직 장애물을 성공적으로 기어오름.
+  - 동적 시나리오: 장기 다중 장애물 통과에서 장애물 위치 변동(예: 갑작스럽게 이동하는 상자)에 실시간 적응.
+- **스킬 다양성**: 넘기, 기어오르기, 점프, 구르기의 네 가지 동적 동작의 폐루프 조합을 구현하며, 사전 프로그래밍된 전환 로직 없이 동작.
+
+### 결론
+PHP 프레임워크는 동작 매칭과 인식 기반 정책 증류를 통해 휴머노이드 로봇에서 처음으로 인간형 동적 파쿠르 능력을 구현했으며, 모듈식 스킬 조합의 복잡한 지형에서의 견고성과 적응성을 검증했습니다.

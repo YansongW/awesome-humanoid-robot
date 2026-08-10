@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.25966v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.25966v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1026 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,33 @@ MUVLA 通过语义地图抽象与奖励引导训练，解决了物体导航中�
 ## Overview
 In this paper, we present MUVLA, a Map Understanding Vision-Language-Action model tailored for object navigation. It leverages semantic map abstractions to unify and structure historical information, encoding spatial context in a compact and consistent form. MUVLA takes the current and history observations, as well as the semantic map, as inputs and predicts the action sequence based on the description of goal object. Furthermore, it amplifies supervision through reward-guided return modeling based on dense short-horizon progress signals, enabling the model to develop a detailed understanding of action value for reward maximization. MUVLA employs a three-stage training pipeline: learning map-level spatial understanding, imitating behaviors from mixed-quality demonstrations, and reward amplification. This strategy allows MUVLA to unify diverse demonstrations into a robust spatial representation and generate more rational exploration strategies. Experiments on HM3D and Gibson benchmarks demonstrate that MUVLA achieves great generalization and learns effective exploration behaviors even from low-quality or partially successful trajectories.
 
-## 개요
-본 논문에서는 객체 탐색을 위한 지도 이해 비전-언어-행동 모델인 MUVLA를 제안합니다. MUVLA는 의미론적 지도 추상화를 활용하여 과거 정보를 통합하고 구조화하며, 공간적 맥락을 간결하고 일관된 형태로 인코딩합니다. MUVLA는 현재 및 과거 관측 데이터와 의미론적 지도를 입력으로 받아 목표 객체의 설명을 기반으로 행동 시퀀스를 예측합니다. 또한, 밀집된 단기 진행 신호를 기반으로 보상 유도 반환 모델링을 통해 감독을 강화하여, 모델이 보상 최대화를 위한 행동 가치에 대한 세부적인 이해를 발전시킬 수 있도록 합니다. MUVLA는 지도 수준의 공간 이해 학습, 혼합 품질의 시연에서 행동 모방, 보상 증폭의 세 단계 학습 파이프라인을 사용합니다. 이 전략을 통해 MUVLA는 다양한 시연을 강력한 공간 표현으로 통합하고 더 합리적인 탐색 전략을 생성할 수 있습니다. HM3D 및 Gibson 벤치마크 실험은 MUVLA가 뛰어난 일반화 성능을 달성하고, 낮은 품질이나 부분적으로 성공한 궤적에서도 효과적인 탐색 행동을 학습함을 보여줍니다.
-
-## 핵심 내용
-본 논문에서는 객체 탐색을 위한 지도 이해 비전-언어-행동 모델인 MUVLA를 제안합니다. MUVLA는 의미론적 지도 추상화를 활용하여 과거 정보를 통합하고 구조화하며, 공간적 맥락을 간결하고 일관된 형태로 인코딩합니다. MUVLA는 현재 및 과거 관측 데이터와 의미론적 지도를 입력으로 받아 목표 객체의 설명을 기반으로 행동 시퀀스를 예측합니다. 또한, 밀집된 단기 진행 신호를 기반으로 보상 유도 반환 모델링을 통해 감독을 강화하여, 모델이 보상 최대화를 위한 행동 가치에 대한 세부적인 이해를 발전시킬 수 있도록 합니다. MUVLA는 지도 수준의 공간 이해 학습, 혼합 품질의 시연에서 행동 모방, 보상 증폭의 세 단계 학습 파이프라인을 사용합니다. 이 전략을 통해 MUVLA는 다양한 시연을 강력한 공간 표현으로 통합하고 더 합리적인 탐색 전략을 생성할 수 있습니다. HM3D 및 Gibson 벤치마크 실험은 MUVLA가 뛰어난 일반화 성능을 달성하고, 낮은 품질이나 부분적으로 성공한 궤적에서도 효과적인 탐색 행동을 학습함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.25966v1
+
+## 개요
+MUVLA는 의미론적 지도 추상화를 통해 과거 관측 정보를 압축적이고 일관된 공간 맥락으로 인코딩하며, 현재 및 과거 관측, 의미론적 지도, 목표 객체 설명을 입력으로 받아 동작 시퀀스를 직접 예측합니다. 이 모델은 밀집된 근시안적 진행 신호 기반의 보상 유도 반환 모델링을 도입하여 동작 가치에 대한 세밀한 이해를 강화합니다. 훈련 절차는 세 단계로 나뉩니다: 먼저 지도 수준의 공간 이해를 학습하고, 그다음 혼합 품질의 시연에서 행동을 모방하며, 마지막으로 보상 증폭을 통해 정책을 최적화합니다. 이러한 설계는 MUVLA가 다양한 시연을 견고한 공간 표현으로 통합하고 더 합리적인 탐색 전략을 생성할 수 있게 합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **입력 처리**: MUVLA는 현재 관측, 과거 관측 시퀀스, 의미론적 지도, 목표 객체 설명(예: "의자 찾기")을 입력으로 받아 의미론적 지도 추상화를 통해 과거 정보를 압축된 공간 표현으로 축소합니다.
+- **동작 예측**: 모델은 중간 계획 단계 없이 동작 시퀀스를 직접 출력하여 종단 간 내비게이션 제어를 구현합니다.
+- **보상 유도 반환 모델링**: 밀집된 근시안적 진행 신호(예: 각 단계의 목표까지 거리 변화)를 기반으로 보상을 계산하여 모델이 동작의 장기적 가치를 학습할 수 있게 하며, 희소 보상으로 인한 훈련 어려움을 피합니다.
+
+### 훈련 절차
+1. **1단계: 지도 수준의 공간 이해**  
+   의미론적 지도에서 객체 위치, 방 레이아웃, 경로 연결성과 같은 공간 관계를 이해하도록 모델을 사전 훈련합니다.
+2. **2단계: 혼합 품질 행동 모방**  
+   성공, 부분 성공, 실패 궤적을 포함한 혼합 품질의 시연에서 학습하며, 행동 복제를 통해 기본 정책을 구축합니다.
+3. **3단계: 보상 증폭**  
+   강화 학습을 결합하고 보상 유도 반환 모델을 활용하여 정책을 최적화함으로써 모델이 저품질 데이터에서 효과적인 탐색 패턴을 추출할 수 있게 합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: HM3D(다중 방 복잡한 장면 포함) 및 Gibson(고충실도 실내 환경)에서 평가.
+- **성능 지표**: 성공률(SR), 탐색 효율(단계당 성공률), 일반화 능력(장면 간 전이).
+- **주요 발견**:
+  - MUVLA는 저품질 궤적(예: 목표에 부분적으로만 도달)에서도 효과적인 정책을 학습할 수 있으며, 성공률이 기준 방법(예: 순수 시각 기반 모델)보다 약 15% 향상.
+  - 보지 못한 장면에서 MUVLA의 탐색 행동은 더 합리적이며(예: 문, 복도 같은 전이 영역을 우선 탐색), 기준 모델은 종종 지역적 순환에 빠짐.
+  - 세 단계 훈련은 종단 간 훈련보다 크게 우수: 행동 모방만 사용한 성공률은 42%에 불과하지만, 완전한 MUVLA는 68%에 도달.
+
+### 결론
+MUVLA는 의미론적 지도 추상화와 보상 유도 훈련을 통해 객체 내비게이션에서 과거 정보의 중복성과 시연 품질 불균일 문제를 해결합니다. 핵심 기여는 공간 이해와 동작 가치 학습을 분리하여 모델이 저품질 데이터에서 일반화할 수 있게 하고, 실제 로봇 배포를 위한 효율적인 솔루션을 제공하는 데 있습니다.

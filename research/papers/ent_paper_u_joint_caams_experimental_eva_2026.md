@@ -48,8 +48,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03321v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03321v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (756 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,28 @@ sources:
 ## Overview
 Continuum manipulators mounted on multi-rotor UAVs enable compliant aerial manipulation, but payloads and propeller downwash amplify out-of-plane bending and twisting that degrade end-effector pose accuracy. To address this problem, we present a universal-joint-based continuum manipulator designed to improve resistance to out-of-plane deformation during aerial manipulation. The proposed design uses a tubular backbone with spring-reinforced universal joints and an integrated conduit for internal routing and fluid delivery. We evaluate the design in still air and under peak propeller downwash across varying payloads, and benchmark it against a prior Nitinol-backbone CM. Bench tests show improved resistance to out-of-plane deformation across all conditions. Under peak downwash, the proposed design reduces mean error by 2.5-4x in yaw, 2-45x in y-axis, and up to 5x in roll compared to the NiTi-backbone design. We further analyze hover stability through in-flight coupled-disturbance tests over varying payloads and actuation speeds, and demonstrate the system in water sampling, spot spraying, and object transport.
 
-## 개요
-멀티로터 UAV에 장착된 연속체 매니퓰레이터는 순응형 공중 조작을 가능하게 하지만, 페이로드와 프로펠러 다운워시는 평면 외 굽힘과 비틀림을 증폭시켜 엔드 이펙터의 자세 정밀도를 저하시킵니다. 이 문제를 해결하기 위해, 우리는 공중 조작 중 평면 외 변형에 대한 저항성을 향상시키도록 설계된 유니버설 조인트 기반 연속체 매니퓰레이터를 제시합니다. 제안된 설계는 스프링 보강 유니버설 조인트와 내부 라우팅 및 유체 전달을 위한 통합 도관을 갖춘 관형 백본을 사용합니다. 우리는 정지 공기와 최대 프로펠러 다운워시 조건에서 다양한 페이로드에 대해 설계를 평가하고, 이전의 니티놀 백본 연속체 매니퓰레이터와 비교합니다. 벤치 테스트 결과 모든 조건에서 평면 외 변형에 대한 저항성이 향상되었습니다. 최대 다운워시 조건에서 제안된 설계는 NiTi 백본 설계에 비해 요(yaw)에서 평균 오차를 2.5-4배, y축에서 2-45배, 롤(roll)에서 최대 5배 감소시킵니다. 또한 다양한 페이로드와 작동 속도에 대한 비행 중 결합 교란 테스트를 통해 호버 안정성을 분석하고, 수질 샘플링, 지점 분사, 물체 운반에서 시스템을 시연합니다.
-
-## 핵심 내용
-멀티로터 UAV에 장착된 연속체 매니퓰레이터는 순응형 공중 조작을 가능하게 하지만, 페이로드와 프로펠러 다운워시는 평면 외 굽힘과 비틀림을 증폭시켜 엔드 이펙터의 자세 정밀도를 저하시킵니다. 이 문제를 해결하기 위해, 우리는 공중 조작 중 평면 외 변형에 대한 저항성을 향상시키도록 설계된 유니버설 조인트 기반 연속체 매니퓰레이터를 제시합니다. 제안된 설계는 스프링 보강 유니버설 조인트와 내부 라우팅 및 유체 전달을 위한 통합 도관을 갖춘 관형 백본을 사용합니다. 우리는 정지 공기와 최대 프로펠러 다운워시 조건에서 다양한 페이로드에 대해 설계를 평가하고, 이전의 니티놀 백본 연속체 매니퓰레이터와 비교합니다. 벤치 테스트 결과 모든 조건에서 평면 외 변형에 대한 저항성이 향상되었습니다. 최대 다운워시 조건에서 제안된 설계는 NiTi 백본 설계에 비해 요(yaw)에서 평균 오차를 2.5-4배, y축에서 2-45배, 롤(roll)에서 최대 5배 감소시킵니다. 또한 다양한 페이로드와 작동 속도에 대한 비행 중 결합 교란 테스트를 통해 호버 안정성을 분석하고, 수질 샘플링, 지점 분사, 물체 운반에서 시스템을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03321v1
+
+## 개요
+다중로터 드론에 연속체 로봇 팔을 장착할 때, 하중과 프로펠러 하강 기류로 인한 면외 굽힘 및 비틀림 문제를 해결하기 위해, 본 논문은 유니버설 조인트 기반의 연속체 로봇 팔 설계를 제안한다. 이 로봇 팔은 스프링 강화 유니버설 조인트와 관형 골격 구조를 채택하고, 내부 도관을 통합하여 케이블 배선과 유체 전송을 지원한다. 정적 공기 및 최대 하강 기류 조건에서, 이 설계는 Nitinol 골격 기반의 이전 방식보다 모든 테스트 하중에서 더 강한 면외 변형 저항성을 보였다. 최대 하강 기류 테스트에서 새 설계는 요(yaw), Y축, 롤(roll) 방향의 평균 오차가 각각 2.5-4배, 2-45배, 5배 감소했다. 또한, 비행 중 결합 교란 테스트를 통해 호버링 안정성을 분석했으며, 수질 샘플링, 정밀 분사, 물체 운송 등의 실제 응용을 시연했다.
+
+## 핵심 내용
+### 방법
+- 설계는 기존 Nitinol 골격을 대체하기 위해 **관형 골격**과 **스프링 강화 유니버설 조인트**를 채택하여 면외 변형 저항성을 향상시킨다.
+- **내부 도관**을 통합하여 케이블 배선과 유체 전송(예: 액체 샘플링 또는 분사)을 지원한다.
+
+### 실험 설정
+- **정적 공기** 및 **최대 프로펠러 하강 기류** 조건에서 **다양한 하중**을 테스트한다.
+- 기준 비교 대상은 **Nitinol 골격 연속체 로봇 팔(NiTi-backbone CM)** 이다.
+- 비행 테스트에는 **호버링 안정성** 분석이 포함되며, **결합 교란 테스트**를 통해 다양한 하중과 구동 속도에서의 성능을 평가한다.
+
+### 주요 수치
+- 최대 하강 기류 조건에서 새 설계는 NiTi 골격 설계 대비:
+  - **요(yaw)**: 평균 오차 **2.5-4배** 감소.
+  - **Y축**: 평균 오차 **2-45배** 감소.
+  - **롤(roll)**: 평균 오차 **최대 5배** 감소.
+
+### 결론
+- 새 설계는 모든 테스트 조건에서 더 강한 면외 변형 저항성을 보이며, 말단 효과기 자세 정밀도를 크게 향상시킨다.
+- 실제 응용 검증에는 **수질 샘플링**, **정밀 분사**, **물체 운송**이 포함되어, 복잡한 공중 작업에서의 실용성을 입증한다.

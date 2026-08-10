@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2002.08124v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2002.08124v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (597 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,23 @@ In this paper, we outline an interleaved acting and planning technique to rapidl
 ## Content
 In this paper, we outline an interleaved acting and planning technique to rapidly reduce the uncertainty of the estimated robot's pose by perceiving relevant information from the environment, such as recognizing an object or asking someone for a direction. Generally, existing localization approaches rely on low-level geometric features such as points, lines, and planes. While these approaches provide the desired accuracy, they may require time to converge, especially with incorrect initial guesses. In our approach, a task planner computes a sequence of action and perception tasks to actively obtain relevant information from the robot's perception system. We validate our approach in large state spaces to demonstrate how it scales, and in real environments to show the applicability of our method on real robots. We prove that our approach is sound, probabilistically complete, and tractable in practical cases.
 
-## 개요
-본 논문에서는 환경으로부터 관련 정보를 인식(예: 객체 인식 또는 방향 문의)하여 추정된 로봇 포즈의 불확실성을 신속히 줄이기 위한 교차 실행 및 계획 기법을 개괄합니다. 일반적으로 기존 위치 추정 접근법은 점, 선, 평면과 같은 저수준 기하학적 특징에 의존합니다. 이러한 접근법은 원하는 정확도를 제공하지만, 특히 초기 추정이 부정확할 경우 수렴에 시간이 소요될 수 있습니다. 본 접근법에서는 작업 계획기가 일련의 행동 및 인식 작업을 계산하여 로봇의 인식 시스템으로부터 관련 정보를 능동적으로 획득합니다. 우리는 대규모 상태 공간에서 접근법의 확장성을 검증하고, 실제 환경에서 실제 로봇에 대한 방법의 적용 가능성을 입증합니다. 또한 본 접근법이 건전하고, 확률적으로 완전하며, 실제 사례에서 다루기 쉬움을 증명합니다.
-
-## 핵심 내용
-본 논문에서는 환경으로부터 관련 정보를 인식(예: 객체 인식 또는 방향 문의)하여 추정된 로봇 포즈의 불확실성을 신속히 줄이기 위한 교차 실행 및 계획 기법을 개괄합니다. 일반적으로 기존 위치 추정 접근법은 점, 선, 평면과 같은 저수준 기하학적 특징에 의존합니다. 이러한 접근법은 원하는 정확도를 제공하지만, 특히 초기 추정이 부정확할 경우 수렴에 시간이 소요될 수 있습니다. 본 접근법에서는 작업 계획기가 일련의 행동 및 인식 작업을 계산하여 로봇의 인식 시스템으로부터 관련 정보를 능동적으로 획득합니다. 우리는 대규모 상태 공간에서 접근법의 확장성을 검증하고, 실제 환경에서 실제 로봇에 대한 방법의 적용 가능성을 입증합니다. 또한 본 접근법이 건전하고, 확률적으로 완전하며, 실제 사례에서 다루기 쉬움을 증명합니다.
-
 ## 参考
 - http://arxiv.org/abs/2002.08124v3
+
+## 개요
+기존 위치 추정 방법은 점, 선, 면과 같은 저수준 기하학적 특징에 의존하며, 정확도는 높지만 초기 추정이 부정확할 때 수렴이 느리다. 본 논문은 교차 실행 및 계획 프레임워크를 제안하며, 작업 계획기가 동작 및 인식 작업 시퀀스를 계산하여 객체 인식이나 방향 질문과 같은 정보를 환경에서 능동적으로 획득한다. 이 방법은 대규모 상태 공간과 실제 환경에서 검증되어 확장성과 실용성을 입증하며, 완전성, 확률적 완전성 및 실제 처리 가능성을 갖춘다.
+
+## 핵심 내용
+### 방법 개요
+- 신념 공간에서 로봇은 구동 및 인식 동작을 교차 실행하며 위치 불확실성을 능동적으로 줄인다.
+- 엔트로피 기반 휴리스틱을 사용한 최상 우선 탐색(best-first search)을 채택하여, 계획기가 가장 정보량이 큰 동작 시퀀스를 선택하도록 유도한다.
+- 인식 동작에는 객체 인식이나 방향 질문과 같은 의미론적 수준의 작업이 포함되어, 전통적인 특징(점, 선, 면) 기반 위치 추정의 한계를 보완한다.
+
+### 이론적 보장
+- 알고리즘은 **완전성**(sound)과 **확률적 완전성**(probabilistically complete)을 갖는 것으로 증명되었으며, 즉 유한 시간 내에 해를 찾을 수 있다(존재하는 경우).
+- 실제 시나리오에서 **처리 가능성**(tractable)을 가지며, 계산 복잡도가 통제 가능하다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 환경**: 대규모 상태 공간에서 테스트하여 규모 확장 시 성능을 검증한다.
+- **실제 로봇**: IIT-R1 휴머노이드 로봇에 배포하여 대칭 복도, 반복 텍스처 영역과 같은 모호한 환경에서의 효과를 보여준다.
+- 주요 발견: 능동적 의미 인식은 특히 초기 위치 불확실성이 클 때 위치 추정 수렴 시간을 크게 줄이며, 순수 기하학적 특징 방법보다 더 빠르게 안정적인 정확도에 도달한다.

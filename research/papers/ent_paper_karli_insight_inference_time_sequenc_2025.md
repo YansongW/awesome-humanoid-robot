@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01389v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01389v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (810 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ INSIGHT 框架以 π₀-FAST 作为基础模型，提取每个 token 的熵、�
 ## Overview
 Recent Vision-Language-Action (VLA) models show strong generalization capabilities, yet they lack introspective mechanisms for anticipating failures and requesting help from a human supervisor. We present \textbf{INSIGHT}, a learning framework for leveraging token-level uncertainty signals to predict when a VLA should request help. Using $π_0$-FAST as the underlying model, we extract per-token \emph{entropy}, \emph{log-probability}, and Dirichlet-based estimates of \emph{aleatoric and epistemic uncertainty}, and train compact transformer classifiers to map these sequences to help triggers. We explore supervision regimes for strong or weak supervision, and extensively compare them across in-distribution and out-of-distribution tasks. Our results show a trade-off: strong labels enable models to capture fine-grained uncertainty dynamics for reliable help detection, while weak labels, though noisier, still support competitive introspection when training and evaluation are aligned, offering a scalable path when dense annotation is impractical. Crucially, we find that modeling the temporal evolution of token-level uncertainty signals with transformers provides far greater predictive power than static sequence-level scores. This study provides the first systematic evaluation of uncertainty-based introspection in VLAs, opening future avenues for active learning and for real-time error mitigation through selective human intervention.
 
-## 개요
-최근 Vision-Language-Action(VLA) 모델은 강력한 일반화 능력을 보여주지만, 실패를 예측하고 인간 감독자에게 도움을 요청하는 내성적 메커니즘이 부족합니다. 본 논문에서는 토큰 수준의 불확실성 신호를 활용하여 VLA가 도움을 요청해야 하는 시점을 예측하는 학습 프레임워크인 \textbf{INSIGHT}를 제시합니다. 기본 모델로 $π_0$-FAST를 사용하여, 토큰별 \emph{엔트로피}, \emph{로그 확률}, 그리고 Dirichlet 기반의 \emph{우연적 및 인식적 불확실성} 추정치를 추출하고, 이러한 시퀀스를 도움 요청 트리거에 매핑하는 소형 트랜스포머 분류기를 학습합니다. 강한 또는 약한 지도 학습을 위한 감독 체계를 탐구하고, 분포 내 및 분포 외 작업에서 이를 광범위하게 비교합니다. 결과는 트레이드오프를 보여줍니다: 강한 레이블은 모델이 신뢰할 수 있는 도움 감지를 위해 세밀한 불확실성 동역학을 포착할 수 있게 하는 반면, 약한 레이블은 더 잡음이 많지만 학습과 평가가 정렬될 때 경쟁력 있는 내성을 지원하여, 밀집된 주석이 비실용적인 경우 확장 가능한 경로를 제공합니다. 결정적으로, 트랜스포머를 사용한 토큰 수준 불확실성 신호의 시간적 진화 모델링이 정적 시퀀스 수준 점수보다 훨씬 더 큰 예측력을 제공한다는 것을 발견했습니다. 이 연구는 VLA에서 불확실성 기반 내성에 대한 첫 번째 체계적 평가를 제공하며, 능동 학습 및 선택적 인간 개입을 통한 실시간 오류 완화를 위한 미래 방향을 열어줍니다.
-
-## 핵심 내용
-최근 Vision-Language-Action(VLA) 모델은 강력한 일반화 능력을 보여주지만, 실패를 예측하고 인간 감독자에게 도움을 요청하는 내성적 메커니즘이 부족합니다. 본 논문에서는 토큰 수준의 불확실성 신호를 활용하여 VLA가 도움을 요청해야 하는 시점을 예측하는 학습 프레임워크인 \textbf{INSIGHT}를 제시합니다. 기본 모델로 $π_0$-FAST를 사용하여, 토큰별 \emph{엔트로피}, \emph{로그 확률}, 그리고 Dirichlet 기반의 \emph{우연적 및 인식적 불확실성} 추정치를 추출하고, 이러한 시퀀스를 도움 요청 트리거에 매핑하는 소형 트랜스포머 분류기를 학습합니다. 강한 또는 약한 지도 학습을 위한 감독 체계를 탐구하고, 분포 내 및 분포 외 작업에서 이를 광범위하게 비교합니다. 결과는 트레이드오프를 보여줍니다: 강한 레이블은 모델이 신뢰할 수 있는 도움 감지를 위해 세밀한 불확실성 동역학을 포착할 수 있게 하는 반면, 약한 레이블은 더 잡음이 많지만 학습과 평가가 정렬될 때 경쟁력 있는 내성을 지원하여, 밀집된 주석이 비실용적인 경우 확장 가능한 경로를 제공합니다. 결정적으로, 트랜스포머를 사용한 토큰 수준 불확실성 신호의 시간적 진화 모델링이 정적 시퀀스 수준 점수보다 훨씬 더 큰 예측력을 제공한다는 것을 발견했습니다. 이 연구는 VLA에서 불확실성 기반 내성에 대한 첫 번째 체계적 평가를 제공하며, 능동 학습 및 선택적 인간 개입을 통한 실시간 오류 완화를 위한 미래 방향을 열어줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.01389v2
+
+## 개요
+INSIGHT 프레임워크는 π₀-FAST를 기반 모델로 사용하여 각 토큰의 엔트로피, 로그 확률, 그리고 Dirichlet 분포 기반의 aleatoric 및 epistemic 불확실성 추정치를 추출한 후, 컴팩트한 transformer 분류기를 훈련하여 이러한 신호 시퀀스를 도움 요청 트리거 신호로 매핑합니다. 연구는 강한 지도(supervised)와 약한 지도(weakly supervised) 두 가지 훈련 모드를 탐구하고, 분포 내(in-distribution) 및 분포 외(out-of-distribution) 작업에서 광범위하게 비교했습니다. 결과는 강한 라벨이 세밀한 불확실성 역학을 포착하여 신뢰할 수 있는 도움 감지를 가능하게 하며, 약한 라벨은 노이즈가 있지만 훈련과 평가가 정렬될 때 경쟁력 있는 내성(introspection) 능력을 지원하여 밀집 라벨링이 불가능한 경우 확장 가능한 경로를 제공함을 보여줍니다.
+
+## 핵심 내용
+### 방법
+- π₀-FAST를 기반 VLA 모델로 사용하여 각 토큰에서 세 가지 불확실성 신호(엔트로피, 로그 확률, Dirichlet 분포 기반의 aleatoric 및 epistemic 불확실성 추정치)를 추출합니다.
+- 컴팩트한 transformer 분류기를 사용하여 이러한 토큰 수준 불확실성 신호 시퀀스를 이진 도움 요청 트리거 신호(인간 도움 요청 여부)로 매핑합니다.
+
+### 실험 설정
+- 두 가지 지도 모드를 탐구합니다: 강한 지도(밀집 라벨링된 help trigger 라벨 사용)와 약한 지도(희소 또는 노이즈 라벨 사용).
+- 분포 내(in-distribution) 및 분포 외(out-of-distribution) 작업에서 성능을 평가합니다.
+
+### 주요 결과
+- 강한 라벨은 모델이 세밀한 불확실성 역학을 포착하여 신뢰할 수 있는 도움 감지를 가능하게 합니다.
+- 약한 라벨은 노이즈가 있지만 훈련과 평가가 정렬될 때 경쟁력 있는 내성 능력을 지원하여 밀집 라벨링이 불가능한 경우 확장 가능한 경로를 제공합니다.
+- transformer를 사용하여 토큰 수준 불확실성 신호의 시간적 진화를 모델링하는 것이 정적 시퀀스 수준 점수보다 더 강력한 예측 능력을 보여줍니다.
+
+### 결론
+- 이는 VLA에서 불확실성 기반 내성 메커니즘을 체계적으로 평가한 최초의 연구입니다.
+- 이 연구는 능동 학습과 선택적 인간 개입을 통한 실시간 오류 완화를 위한 미래 방향을 제시합니다.

@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31037v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31037v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1047 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -93,11 +94,25 @@ Labimus 由研究团队提出，旨在填补人形机器人在精密实验室环
 ## Overview
 Laboratory automation has made remarkable progress through robotic platforms and AI-driven scientific reasoning. However, many laboratory operations (e.g., solid--solid transfer) remain inherently dynamic and require real-time adaptation to different materials and experimental conditions. Such precision-critical manipulations are difficult to standardize, motivating the use of humanoid robots with dexterous hands. Despite this opportunity, no existing benchmark evaluates humanoid manipulation in precision-critical laboratory environments. We present Labimus, to our knowledge, the first benchmark for humanoid dexterous manipulation in organic chemistry laboratories. Labimus reconstructs over 30 functionally faithful assets from real organic chemistry workstations through real-to-sim modeling, collectively covering the core operations of routine organic chemistry experiments. The benchmark integrates articulated laboratory instruments, particle-based powder physics, and closed-loop instrument readouts, enabling a complete manipulation-to-measurement pipeline. It further defines six atomic operations and a seven-step solid-weighing workflow derived from real laboratory standard operating procedures. We introduce a precision-aware evaluation protocol designed to jointly measure task completion, experimental precision, and long-horizon execution. We benchmark three representative policies under procedural layouts and environmental perturbations. Results reveal a precision gap: policies that successfully complete laboratory tasks can still fail to satisfy the quantitative tolerances required by experimental protocols. Our benchmark exposes a fundamental disconnect between task completion and experimental validity, providing a new testbed for developing reliable humanoid robots for scientific laboratories.
 
-## 개요
-로봇 플랫폼과 AI 기반 과학적 추론을 통해 실험실 자동화는 놀라운 진전을 이루었습니다. 그러나 많은 실험실 작업(예: 고체-고체 전달)은 본질적으로 동적이며, 다양한 재료와 실험 조건에 실시간으로 적응해야 합니다. 이러한 정밀도가 중요한 조작은 표준화하기 어려워, 손재주가 뛰어난 손을 가진 휴머노이드 로봇의 사용을 촉진합니다. 이러한 기회에도 불구하고, 정밀도가 중요한 실험실 환경에서 휴머노이드 조작을 평가하는 기존 벤치마크는 존재하지 않습니다. 우리는 유기화학 실험실에서 휴머노이드의 손재주 있는 조작을 위한 최초의 벤치마크인 Labimus를 제시합니다. Labimus는 실제 유기화학 워크스테이션의 30개 이상의 기능적으로 충실한 자산을 실제-시뮬레이션 모델링을 통해 재구성하여, 일상적인 유기화학 실험의 핵심 작업을 총체적으로 다룹니다. 이 벤치마크는 관절형 실험실 기기, 입자 기반 분말 물리, 폐쇄 루프 기기 판독값을 통합하여 완전한 조작-측정 파이프라인을 가능하게 합니다. 또한 실제 실험실 표준 운영 절차에서 파생된 6개의 원자 작업과 7단계 고체 칭량 워크플로우를 정의합니다. 우리는 작업 완료, 실험 정밀도, 장기 실행을 공동으로 측정하도록 설계된 정밀도 인식 평가 프로토콜을 도입합니다. 절차적 배치와 환경적 교란 하에서 세 가지 대표적인 정책을 벤치마킹합니다. 결과는 정밀도 격차를 드러냅니다. 실험실 작업을 성공적으로 완료하는 정책도 실험 프로토콜에 필요한 정량적 허용 오차를 충족하지 못할 수 있습니다. 우리의 벤치마크는 작업 완료와 실험적 타당성 사이의 근본적인 단절을 드러내며, 과학 실험실을 위한 신뢰할 수 있는 휴머노이드 로봇 개발을 위한 새로운 테스트베드를 제공합니다.
-
-## 핵심 내용
-로봇 플랫폼과 AI 기반 과학적 추론을 통해 실험실 자동화는 놀라운 진전을 이루었습니다. 그러나 많은 실험실 작업(예: 고체-고체 전달)은 본질적으로 동적이며, 다양한 재료와 실험 조건에 실시간으로 적응해야 합니다. 이러한 정밀도가 중요한 조작은 표준화하기 어려워, 손재주가 뛰어난 손을 가진 휴머노이드 로봇의 사용을 촉진합니다. 이러한 기회에도 불구하고, 정밀도가 중요한 실험실 환경에서 휴머노이드 조작을 평가하는 기존 벤치마크는 존재하지 않습니다. 우리는 유기화학 실험실에서 휴머노이드의 손재주 있는 조작을 위한 최초의 벤치마크인 Labimus를 제시합니다. Labimus는 실제 유기화학 워크스테이션의 30개 이상의 기능적으로 충실한 자산을 실제-시뮬레이션 모델링을 통해 재구성하여, 일상적인 유기화학 실험의 핵심 작업을 총체적으로 다룹니다. 이 벤치마크는 관절형 실험실 기기, 입자 기반 분말 물리, 폐쇄 루프 기기 판독값을 통합하여 완전한 조작-측정 파이프라인을 가능하게 합니다. 또한 실제 실험실 표준 운영 절차에서 파생된 6개의 원자 작업과 7단계 고체 칭량 워크플로우를 정의합니다. 우리는 작업 완료, 실험 정밀도, 장기 실행을 공동으로 측정하도록 설계된 정밀도 인식 평가 프로토콜을 도입합니다. 절차적 배치와 환경적 교란 하에서 세 가지 대표적인 정책을 벤치마킹합니다. 결과는 정밀도 격차를 드러냅니다. 실험실 작업을 성공적으로 완료하는 정책도 실험 프로토콜에 필요한 정량적 허용 오차를 충족하지 못할 수 있습니다. 우리의 벤치마크는 작업 완료와 실험적 타당성 사이의 근본적인 단절을 드러내며, 과학 실험실을 위한 신뢰할 수 있는 휴머노이드 로봇 개발을 위한 새로운 테스트베드를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31037v2
+
+## 개요
+Labimus는 연구팀이 제안한 것으로, 인간형 로봇의 정밀 실험실 환경에서의 조작 평가 공백을 메우기 위해 설계되었습니다. 이 벤치마크는 실제-시뮬레이션 모델링을 통해 실제 유기화학 워크스테이션에서 30개 이상의 기능 충실도 높은 자산을 재구성하여, 일반적인 유기화학 실험의 핵심 작업을 포괄합니다. 관절형 실험 기기, 입자 기반 분말 물리 시뮬레이션, 폐쇄 루프 기기 판독값을 통합하여 조작부터 측정까지의 완전한 흐름을 구현합니다. 벤치마크는 또한 여섯 가지 원자 작업과 일곱 단계 고체 칭량 워크플로우를 정의하고, 정밀도 인식 평가 프로토콜을 도입하여 작업 완료, 실험 정밀도, 장시간 실행을 공동으로 측정합니다. 프로그래밍된 배치와 환경 교란 하에서 세 가지 대표 전략을 테스트한 결과, 작업을 성공적으로 완료하는 전략도 실험 프로토콜이 요구하는 정량적 허용 오차를 충족하지 못할 수 있음을 발견했습니다.
+
+## 핵심 내용
+### 방법
+- **실제-시뮬레이션 모델링**: 실제 유기화학 워크스테이션에서 비커, 저울, 약수저 등 30개 이상의 기능 충실도 높은 자산을 재구성하여 물리적 속성과 기하학적 형태의 정확성을 보장합니다.
+- **통합 시뮬레이션 환경**: 관절형 실험 기기(예: 열리고 닫히는 병뚜껑), 입자 기반 분말 물리 시뮬레이션(고체 분말의 흐름과 적층 시뮬레이션), 폐쇄 루프 기기 판독값(예: 저울의 실시간 무게 피드백)을 결합하여 완전한 조작-측정 폐쇄 루프를 형성합니다.
+- **원자 작업과 워크플로우**: 여섯 가지 원자 작업(예: 잡기, 붓기, 긁기)을 정의하고, 실제 실험실 표준 운영 절차(SOP)를 기반으로 병 집기, 뚜껑 열기, 분말 옮기기, 칭량, 뚜껑 닫기 등의 단계를 포함한 일곱 단계 고체 칭량 워크플로우를 설계합니다.
+
+### 실험 설정
+- **평가 프로토콜**: 정밀도 인식 평가 프로토콜을 도입하여 작업 완료율(모든 단계 완료 여부), 실험 정밀도(예: 칭량 오차가 ±0.01g 이내인지), 장시간 실행 안정성(예: 연속 작업 중 누적 오차)을 동시에 측정합니다.
+- **벤치마크 전략**: 세 가지 대표 전략을 테스트합니다: 규칙 기반 스크립트 전략, 모방 학습 전략(Behavior Cloning), 강화 학습 전략(PPO).
+- **교란 조건**: 프로그래밍된 배치(고정된 기기 위치)와 환경 교란(예: 분말 초기 위치 무작위 변경, 테이블 진동 추가) 하에서 테스트합니다.
+
+### 주요 수치와 결론
+- **작업 완료율**: 모든 전략이 프로그래밍된 배치에서 일곱 단계 칭량 워크플로우를 완료하며, 작업 완료율이 90%를 초과합니다.
+- **정밀도 격차**: 실험 정밀도 측면에서 규칙 기반 전략만 ±0.01g 칭량 허용 오차를 충족합니다; 모방 학습과 강화 학습 전략의 평균 칭량 오차는 각각 0.05g과 0.08g으로 허용 범위를 크게 초과합니다.
+- **교란 영향**: 환경 교란 하에서 모든 전략의 정밀도가 추가로 저하되며, 강화 학습 전략의 오차는 0.12g으로 증가하고 작업 완료율은 70%로 감소합니다.
+- **결론**: Labimus는 작업 완료와 실험 유효성 사이의 근본적인 단절을 드러냅니다—로봇이 작업을 "완료"할 수 있어도 정밀도 부족으로 실험이 실패할 수 있습니다. 이는 신뢰할 수 있는 과학 실험실 인간형 로봇 개발을 위한 새로운 테스트 플랫폼을 제공합니다.

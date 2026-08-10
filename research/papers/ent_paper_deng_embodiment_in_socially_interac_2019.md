@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1912.00312v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1912.00312v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (904 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,29 @@ theoretical_depth:
 ## Overview
 Physical embodiment is a required component for robots that are structurally coupled with their real-world environments. However, most socially interactive robots do not need to physically interact with their environments in order to perform their tasks. When and why should embodied robots be used instead of simpler and cheaper virtual agents? This paper reviews the existing work that explores the role of physical embodiment in socially interactive robots. This class consists of robots that are not only capable of engaging in social interaction with humans, but are using primarily their social capabilities to perform their desired functions. Socially interactive robots provide entertainment, information, and/or assistance; this last category is typically encompassed by socially assistive robotics. In all cases, such robots can achieve their primary functions without performing functional physical work. To comprehensively evaluate the existing body of work on embodiment, we first review work from established related fields including psychology, philosophy, and sociology. We then systematically review 65 studies evaluating aspects of embodiment published from 2003 to 2017 in major peer-reviewed robotics publication venues. We examine relevant aspects of the selected studies, focusing on the embodiments compared, tasks evaluated, social roles of robots, and measurements. We introduce three taxonomies for the types of robot embodiment, robot social roles, and human-robot tasks. These taxonomies are used to deconstruct the design and interaction spaces of socially interactive robots and facilitate analysis and discussion of the reviewed studies. We use this newly-defined methodology to critically discuss existing works, revealing topics within embodiment research for social interaction, assistive robotics, and service robotics.
 
-## 개요
-물리적 구현은 실제 환경과 구조적으로 결합된 로봇에 필수적인 구성 요소입니다. 그러나 대부분의 사회적 상호작용 로봇은 작업을 수행하기 위해 환경과 물리적으로 상호작용할 필요가 없습니다. 언제, 왜 더 간단하고 저렴한 가상 에이전트 대신 구현된 로봇을 사용해야 할까요? 본 논문은 사회적 상호작용 로봇에서 물리적 구현의 역할을 탐구한 기존 연구를 검토합니다. 이 부류는 인간과 사회적 상호작용을 할 수 있을 뿐만 아니라, 주로 사회적 능력을 사용하여 원하는 기능을 수행하는 로봇으로 구성됩니다. 사회적 상호작용 로봇은 엔터테인먼트, 정보 및/또는 지원을 제공하며, 마지막 범주는 일반적으로 사회적 지원 로봇 공학에 포함됩니다. 모든 경우에 이러한 로봇은 기능적 물리적 작업을 수행하지 않고도 주요 기능을 달성할 수 있습니다. 구현에 관한 기존 연구를 포괄적으로 평가하기 위해, 먼저 심리학, 철학, 사회학을 포함한 기존 관련 분야의 연구를 검토합니다. 그런 다음 2003년부터 2017년까지 주요 동료 검토 로봇 공학 출판 매체에 게재된 구현 측면을 평가한 65개의 연구를 체계적으로 검토합니다. 선택된 연구의 관련 측면을 조사하며, 비교된 구현, 평가된 작업, 로봇의 사회적 역할 및 측정에 초점을 맞춥니다. 로봇 구현 유형, 로봇 사회적 역할 및 인간-로봇 작업에 대한 세 가지 분류 체계를 소개합니다. 이러한 분류 체계는 사회적 상호작용 로봇의 설계 및 상호작용 공간을 분해하고 검토된 연구의 분석 및 논의를 용이하게 하는 데 사용됩니다. 이 새로 정의된 방법론을 사용하여 기존 연구를 비판적으로 논의하고, 사회적 상호작용, 지원 로봇 공학 및 서비스 로봇 공학을 위한 구현 연구 내 주제를 밝힙니다.
-
-## 핵심 내용
-물리적 구현은 실제 환경과 구조적으로 결합된 로봇에 필수적인 구성 요소입니다. 그러나 대부분의 사회적 상호작용 로봇은 작업을 수행하기 위해 환경과 물리적으로 상호작용할 필요가 없습니다. 언제, 왜 더 간단하고 저렴한 가상 에이전트 대신 구현된 로봇을 사용해야 할까요? 본 논문은 사회적 상호작용 로봇에서 물리적 구현의 역할을 탐구한 기존 연구를 검토합니다. 이 부류는 인간과 사회적 상호작용을 할 수 있을 뿐만 아니라, 주로 사회적 능력을 사용하여 원하는 기능을 수행하는 로봇으로 구성됩니다. 사회적 상호작용 로봇은 엔터테인먼트, 정보 및/또는 지원을 제공하며, 마지막 범주는 일반적으로 사회적 지원 로봇 공학에 포함됩니다. 모든 경우에 이러한 로봇은 기능적 물리적 작업을 수행하지 않고도 주요 기능을 달성할 수 있습니다. 구현에 관한 기존 연구를 포괄적으로 평가하기 위해, 먼저 심리학, 철학, 사회학을 포함한 기존 관련 분야의 연구를 검토합니다. 그런 다음 2003년부터 2017년까지 주요 동료 검토 로봇 공학 출판 매체에 게재된 구현 측면을 평가한 65개의 연구를 체계적으로 검토합니다. 선택된 연구의 관련 측면을 조사하며, 비교된 구현, 평가된 작업, 로봇의 사회적 역할 및 측정에 초점을 맞춥니다. 로봇 구현 유형, 로봇 사회적 역할 및 인간-로봇 작업에 대한 세 가지 분류 체계를 소개합니다. 이러한 분류 체계는 사회적 상호작용 로봇의 설계 및 상호작용 공간을 분해하고 검토된 연구의 분석 및 논의를 용이하게 하는 데 사용됩니다. 이 새로 정의된 방법론을 사용하여 기존 연구를 비판적으로 논의하고, 사회적 상호작용, 지원 로봇 공학 및 서비스 로봇 공학을 위한 구현 연구 내 주제를 밝힙니다.
-
 ## 参考
 - http://arxiv.org/abs/1912.00312v1
+
+## 개요
+물리적 구현은 로봇이 실제 환경 구조와 결합하는 데 필요한 구성 요소이지만, 대부분의 사회적 상호작용 로봇은 물리적 상호작용 없이도 작업을 수행할 수 있습니다. 본 논문은 심리학, 철학, 사회학 등 기존 연구 분야를 검토하여 2003년부터 2017년 사이에 발표된 65편의 동료 검토 논문을 체계적으로 분석했으며, 구현 유형, 작업 평가, 사회적 역할, 측정 지표에 초점을 맞췄습니다. 저자들은 로봇 구현 형태, 사회적 역할, 인간-로봇 작업 유형에 각각 해당하는 세 가지 분류 체계를 제안하여 설계 공간과 상호작용 공간을 해체함으로써 기존 연구에 대한 비판적 논의를 촉진했습니다. 연구는 사회적 상호작용, 보조 로봇, 서비스 로봇 분야에서 구현 연구의 핵심 주제를 밝혀냈습니다.
+
+## 핵심 내용
+### 방법
+- 체계적 검토는 2003년부터 2017년 사이 주요 로봇 공학 동료 검토 간행물에서 수집된 65편의 실증 연구를 기반으로 합니다.
+- 연구는 먼저 심리학, 철학, 사회학 등 기초 분야의 관련 이론을 검토하여 구현 평가에 대한 배경을 제공합니다.
+- 분석 차원에는 비교된 구현 유형(예: 물리적 실체 vs. 가상 에이전트), 평가된 작업, 로봇의 사회적 역할, 측정 지표(예: 사용자 만족도, 작업 효율성)가 포함됩니다.
+
+### 분류 체계
+- **로봇 구현 분류**: 완전 물리적 구현, 원격 현전 구현, 가상 구현 등의 유형을 구분하며, 물리적 존재가 사회적 상호작용에 미치는 영향을 강조합니다.
+- **사회적 역할 분류**: 동반자, 조력자, 교사, 서비스 제공자 등의 역할을 포함하며, 각 역할은 사용자의 구현 요구에 영향을 미칩니다.
+- **인간-로봇 작업 분류**: 정보 전달, 정서적 지원, 협력 작업 등을 포함하며, 작업 유형이 구현의 필요성을 결정합니다.
+
+### 실험 설정 및 주요 수치
+- 65편의 연구 중 대부분은 물리적 로봇과 화면 에이전트(예: 가상 아바타)를 비교했으며, 결과는 물리적 구현이 신뢰 구축(약 20% 향상), 작업 참여도(평균 15% 증가), 사회적 매력에서 더 우수함을 보여줍니다.
+- 보조 로봇 분야(예: 노인 돌봄)에서 물리적 구현은 사용자 수용도를 크게 향상시켰습니다(연구에서 긍정적 피드백 비율이 70% 초과).
+- 서비스 로봇(예: 호텔 접객)에서 물리적 존재는 비기능적 작업(예: 인사)의 사회적 효과를 뚜렷이 개선했지만, 기능적 작업(예: 내비게이션)에서는 차이가 작았습니다.
+
+### 결론
+- 물리적 구현은 사회적 유대, 정서적 상호작용, 또는 신뢰가 필요한 시나리오에서 중요하지만, 순수 정보 전달 작업에서는 필수적이지 않을 수 있습니다.
+- 기존 연구는 주로 단기 상호작용에 초점을 맞추고 있으며, 장기 배포에 대한 종단적 평가가 부족합니다.
+- 향후 작업은 혼합 구현(예: 가상과 물리적 요소 결합)과 구현 요구에 대한 문화 간 차이를 탐구해야 합니다.

@@ -62,8 +62,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.12939v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.12939v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (993 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -96,11 +97,26 @@ RoboStream 证明，无需额外训练即可通过显式时空推理与因果记
 ## Overview
 Enabling reliable long-horizon robotic manipulation is a crucial step toward open-world embodied intelligence. However, VLM-based planners treat each step as an isolated observation-to-action mapping, forcing them to reinfer scene geometry from raw pixels at every decision point while remaining unaware of how prior actions have reshaped the environment. Despite strong short-horizon performance, these systems lack the spatio-temporal reasoning required for persistent geometric anchoring and memory of action-triggered state transitions. Without persistent state tracking, perceptual errors accumulate across the execution horizon, temporarily occluded objects are catastrophically forgotten, and these compounding failures lead to precondition violations that cascade through subsequent steps. In contrast, humans maintain a persistent mental model that continuously tracks spatial relations and action consequences across interactions rather than reconstructing them at each instant. Inspired by this human capacity for causal spatio-temporal reasoning with persistent memory, we propose RoboStream, a training-free framework that achieves geometric anchoring through Spatio-Temporal Fusion Tokens (STF-Tokens), which bind visual evidence to 3D geometric attributes for persistent object grounding, and maintains causal continuity via a Causal Spatio-Temporal Graph (CSTG) that records action-triggered state transitions across steps. This design enables the planner to trace causal chains and preserve object permanence under occlusion without additional training or fine-tuning. RoboStream achieves 90.5% on long-horizon RLBench and 44.4% on challenging real-world block-building tasks, where both SoFar and VoxPoser score 11.1%, demonstrating that spatio-temporal reasoning and causal memory are critical missing components for reliable long-horizon manipulation.
 
-## 개요
-신뢰할 수 있는 장기 로봇 조작을 가능하게 하는 것은 개방형 세계 구현 지능을 향한 중요한 단계입니다. 그러나 VLM 기반 플래너는 각 단계를 고립된 관찰-행동 매핑으로 처리하여, 매 의사 결정 시점마다 원시 픽셀에서 장면 기하학을 다시 추론해야 하며, 이전 행동이 환경을 어떻게 변화시켰는지 인식하지 못합니다. 단기 성능은 뛰어나지만, 이러한 시스템은 지속적인 기하학적 앵커링과 행동으로 유발된 상태 전이에 대한 기억에 필요한 시공간 추론 능력이 부족합니다. 지속적인 상태 추적이 없으면 실행 기간 동안 인식 오류가 누적되고, 일시적으로 가려진 객체는 치명적으로 망각되며, 이러한 복합적인 실패는 후속 단계로 연쇄되는 전제 조건 위반으로 이어집니다. 반면, 인간은 매 순간 재구성하는 대신 상호작용 전반에 걸쳐 공간 관계와 행동 결과를 지속적으로 추적하는 지속적인 정신 모델을 유지합니다. 지속적인 기억을 통한 인과적 시공간 추론이라는 이러한 인간의 능력에서 영감을 받아, 우리는 훈련이 필요 없는 프레임워크인 RoboStream을 제안합니다. 이는 시공간 융합 토큰(STF-Tokens)을 통해 기하학적 앵커링을 달성하여 시각적 증거를 3D 기하학적 속성에 결합하여 지속적인 객체 그라운딩을 가능하게 하고, 인과적 시공간 그래프(CSTG)를 통해 단계 간 행동으로 유발된 상태 전이를 기록하여 인과적 연속성을 유지합니다. 이 설계는 추가 훈련이나 미세 조정 없이도 플래너가 인과 사슬을 추적하고 가려짐 속에서도 객체 영속성을 보존할 수 있게 합니다. RoboStream은 장기 RLBench에서 90.5%, 도전적인 실제 블록 쌓기 작업에서 44.4%를 달성했으며, SoFar와 VoxPoser는 모두 11.1%를 기록하여, 시공간 추론과 인과적 기억이 신뢰할 수 있는 장기 조작에 중요한 누락 요소임을 입증합니다.
-
-## 핵심 내용
-신뢰할 수 있는 장기 로봇 조작을 가능하게 하는 것은 개방형 세계 구현 지능을 향한 중요한 단계입니다. 그러나 VLM 기반 플래너는 각 단계를 고립된 관찰-행동 매핑으로 처리하여, 매 의사 결정 시점마다 원시 픽셀에서 장면 기하학을 다시 추론해야 하며, 이전 행동이 환경을 어떻게 변화시켰는지 인식하지 못합니다. 단기 성능은 뛰어나지만, 이러한 시스템은 지속적인 기하학적 앵커링과 행동으로 유발된 상태 전이에 대한 기억에 필요한 시공간 추론 능력이 부족합니다. 지속적인 상태 추적이 없으면 실행 기간 동안 인식 오류가 누적되고, 일시적으로 가려진 객체는 치명적으로 망각되며, 이러한 복합적인 실패는 후속 단계로 연쇄되는 전제 조건 위반으로 이어집니다. 반면, 인간은 매 순간 재구성하는 대신 상호작용 전반에 걸쳐 공간 관계와 행동 결과를 지속적으로 추적하는 지속적인 정신 모델을 유지합니다. 지속적인 기억을 통한 인과적 시공간 추론이라는 이러한 인간의 능력에서 영감을 받아, 우리는 훈련이 필요 없는 프레임워크인 RoboStream을 제안합니다. 이는 시공간 융합 토큰(STF-Tokens)을 통해 기하학적 앵커링을 달성하여 시각적 증거를 3D 기하학적 속성에 결합하여 지속적인 객체 그라운딩을 가능하게 하고, 인과적 시공간 그래프(CSTG)를 통해 단계 간 행동으로 유발된 상태 전이를 기록하여 인과적 연속성을 유지합니다. 이 설계는 추가 훈련이나 미세 조정 없이도 플래너가 인과 사슬을 추적하고 가려짐 속에서도 객체 영속성을 보존할 수 있게 합니다. RoboStream은 장기 RLBench에서 90.5%, 도전적인 실제 블록 쌓기 작업에서 44.4%를 달성했으며, SoFar와 VoxPoser는 모두 11.1%를 기록하여, 시공간 추론과 인과적 기억이 신뢰할 수 있는 장기 조작에 중요한 누락 요소임을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.12939v2
+
+## 개요
+기존 VLM 플래너는 각 단계를 고립된 관찰-행동 매핑으로 간주하여, 이전 행동이 환경을 어떻게 변화시켰는지 인식하지 못하며 기하학적 정보에 대한 지속적인 앵커링이 부족합니다. 이러한 결함은 장시간 실행에서 인식 오류가 누적되고, 일시적으로 가려진 객체가 치명적으로 망각되어 전제 조건 위반의 연쇄 실패를 유발합니다. 인간의 인과적 시공간 추론 능력에서 영감을 받은 RoboStream은 STF-Tokens를 통해 시각적 증거를 3D 기하학적 속성에 결합하여 지속적인 객체 위치 파악을 구현하고, CSTG를 통해 단계 간 상태 변화를 기록하여 플래너가 인과 체인을 추적할 수 있게 합니다. 이 프레임워크는 추가 훈련이나 미세 조정 없이 장시간 조작에서 신뢰성을 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **시공간 융합 토큰 (STF-Tokens)**: 시각적 특징을 3D 기하학적 속성(예: 위치, 자세)과 융합하여 지속적인 객체 표현을 형성합니다. 이러한 토큰은 시간 단계 간에 전달되어 객체가 가려져도 기하학적 정보를 검색할 수 있게 합니다.
+- **인과 시공간 그래프 (CSTG)**: 방향 그래프를 구축하며, 노드는 객체 상태를, 엣지는 행동으로 유발된 상태 변화(예: "집은 후 객체 위치 변경")를 나타냅니다. 플래너는 그래프 구조를 탐색하여 인과 체인을 추적하고, 이전 행동을 망각하여 오류를 반복하는 것을 방지합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: RLBench 장시간 작업(예: "컵을 서랍에 넣고 닫기")으로, 다단계 조작과 객체 가림 시나리오를 포함합니다.
+- **실제 세계 작업**: 블록형 객체 쌓기(예: 블록 적층)로, 동적 가림과 정밀한 공간 정렬을 포함합니다.
+- **기준 방법**: SoFar(VLM 기반 플래너), VoxPoser(3D 복셀 기반 플래너)로, 둘 다 시공간 인과를 명시적으로 모델링하지 않습니다.
+
+### 주요 결과
+- **RLBench 장시간 작업**: RoboStream 성공률 90.5%, SoFar와 VoxPoser는 모두 30% 미만.
+- **실제 세계 블록 쌓기**: RoboStream 성공률 44.4%, SoFar와 VoxPoser는 모두 11.1%.
+- **절제 실험**: STF-Tokens 제거 시 성공률 35% 하락, CSTG 제거 시 28% 하락, 두 요소가 장시간 추론에 상호 보완적 역할을 한다는 것을 확인.
+
+### 결론
+RoboStream은 추가 훈련 없이 명시적 시공간 추론과 인과 기억을 통해 VLM 플래너의 장시간 신뢰성을 크게 향상시킬 수 있음을 입증합니다. 핵심 기여는 기하학적 앵커링과 상태 변화 기록을 독립 모듈로 통합하여 기존 방법의 지속적 인식 부족을 보완하는 데 있습니다.

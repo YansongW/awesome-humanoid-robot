@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.18082v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.18082v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1310 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,30 @@ ActDistill 通过动作引导的蒸馏与动态路由机制，首次在 VLA 模�
 ## Overview
 Recent Vision-Language-Action (VLA) models have shown impressive flexibility and generalization, yet their deployment in robotic manipulation remains limited by heavy computational overhead and inference latency. In this work, we present ActDistill, a general action-guided self-derived distillation framework that transfers the action prediction capability of any existing VLA model to a lightweight counterpart. Unlike previous efficiency strategies that primarily emphasize vision-language correlations, ActDistill leverages action priors to guide knowledge transfer and model compression, achieving action-oriented efficiency for VLA models. Specifically, we employ a well-trained VLA model as the teacher and introduce a graph-structured encapsulation strategy to explicitly model the hierarchical evolution of action prediction. The student model, derived from the graph-encapsulated teacher, is further equipped with a dynamic router that adaptively selects computation paths based on action prediction demands, guided by hierarchical graph-informed supervision to ensure smooth and efficient evolution. During inference, graph-related auxiliary components are removed, allowing the student to execute only dynamically routed layers and predict high-precision actions with minimal computation and latency. Experiments on embodied benchmarks demonstrate that ActDistill achieves comparable or superior performance to full-scale VLA models while reducing computation by over 50% with up to 1.67 times speedup, thereby establishing a general paradigm toward efficient embodied intelligence.
 
-## 개요
-최근 Vision-Language-Action(VLA) 모델은 뛰어난 유연성과 일반화 능력을 보여주었지만, 로봇 조작 분야에서의 배포는 여전히 높은 계산 부하와 추론 지연 시간으로 인해 제한적입니다. 본 연구에서는 ActDistill을 제안합니다. 이는 기존 VLA 모델의 행동 예측 능력을 경량화된 모델로 전이하는 일반적인 행동 기반 자기 유도 증류 프레임워크입니다. 주로 시각-언어 상관관계에 초점을 맞춘 기존 효율성 전략과 달리, ActDistill은 행동 사전 정보를 활용하여 지식 전이와 모델 압축을 유도함으로써 VLA 모델의 행동 지향적 효율성을 달성합니다. 구체적으로, 잘 훈련된 VLA 모델을 교사 모델로 사용하고, 그래프 구조화 캡슐화 전략을 도입하여 행동 예측의 계층적 진화를 명시적으로 모델링합니다. 그래프로 캡슐화된 교사 모델에서 파생된 학생 모델에는 동적 라우터가 추가로 장착되어, 행동 예측 요구에 따라 계산 경로를 적응적으로 선택하며, 계층적 그래프 기반 감독을 통해 원활하고 효율적인 진화를 보장합니다. 추론 중에는 그래프 관련 보조 구성 요소가 제거되어, 학생 모델은 동적으로 라우팅된 레이어만 실행하고 최소한의 계산과 지연 시간으로 고정밀 행동을 예측할 수 있습니다. 임베디드 벤치마크 실험 결과, ActDistill은 전체 규모 VLA 모델과 동등하거나 더 우수한 성능을 달성하면서도 계산량을 50% 이상 줄이고 최대 1.67배의 속도 향상을 보여, 효율적인 임베디드 지능을 위한 일반적인 패러다임을 구축합니다.
-
-## 핵심 내용
-최근 Vision-Language-Action(VLA) 모델은 뛰어난 유연성과 일반화 능력을 보여주었지만, 로봇 조작 분야에서의 배포는 여전히 높은 계산 부하와 추론 지연 시간으로 인해 제한적입니다. 본 연구에서는 ActDistill을 제안합니다. 이는 기존 VLA 모델의 행동 예측 능력을 경량화된 모델로 전이하는 일반적인 행동 기반 자기 유도 증류 프레임워크입니다. 주로 시각-언어 상관관계에 초점을 맞춘 기존 효율성 전략과 달리, ActDistill은 행동 사전 정보를 활용하여 지식 전이와 모델 압축을 유도함으로써 VLA 모델의 행동 지향적 효율성을 달성합니다. 구체적으로, 잘 훈련된 VLA 모델을 교사 모델로 사용하고, 그래프 구조화 캡슐화 전략을 도입하여 행동 예측의 계층적 진화를 명시적으로 모델링합니다. 그래프로 캡슐화된 교사 모델에서 파생된 학생 모델에는 동적 라우터가 추가로 장착되어, 행동 예측 요구에 따라 계산 경로를 적응적으로 선택하며, 계층적 그래프 기반 감독을 통해 원활하고 효율적인 진화를 보장합니다. 추론 중에는 그래프 관련 보조 구성 요소가 제거되어, 학생 모델은 동적으로 라우팅된 레이어만 실행하고 최소한의 계산과 지연 시간으로 고정밀 행동을 예측할 수 있습니다. 임베디드 벤치마크 실험 결과, ActDistill은 전체 규모 VLA 모델과 동등하거나 더 우수한 성능을 달성하면서도 계산량을 50% 이상 줄이고 최대 1.67배의 속도 향상을 보여, 효율적인 임베디드 지능을 위한 일반적인 패러다임을 구축합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.18082v3
+
+## 개요
+VLA 모델이 로봇 조작에서 높은 계산 비용과 추론 지연으로 인한 배포 병목 현상을 해결하기 위해, ActDistill은 동작 지향적 증류 방법을 제안한다. 이 방법은 사전 훈련된 VLA 모델을 교사로 사용하고, 그래프 구조 캡슐화 전략을 통해 동작 예측의 계층적 진화 과정을 포착하여 이를 기반으로 학생 모델을 구축한다. 학생 모델에는 동적 라우터가 장착되어 동작 예측 요구에 따라 계산 경로를 적응적으로 선택하며, 계층적 그래프 감독 신호를 통해 지식 전이의 매끄러움을 보장한다. 추론 단계에서는 그래프 관련 보조 구성 요소가 제거되고, 학생 모델은 동적 라우팅 레이어만 실행하여 매우 낮은 계산량과 지연으로 고정밀 동작을 출력한다. 실험 결과, 이 프레임워크는 여러 임베디드 인공지능 벤치마크에서 전체 크기 모델과 동등하거나 더 나은 성능을 달성하면서 효율성을 크게 향상시켰다.
+
+## 핵심 내용
+### 방법 아키텍처
+ActDistill의 핵심 프레임워크는 세 가지 주요 구성 요소를 포함한다:
+- **교사 모델**: 사전 훈련된 VLA 모델(예: RT-2 또는 Octo)을 지식 소스로 사용하며, 동작 예측 능력은 증류를 통해 전달된다.
+- **그래프 구조 캡슐화 전략**: 교사 모델의 동작 예측 과정을 방향성 비순환 그래프로 모델링하여, 시각적 특징에서 동작 출력까지의 계층적 진화 경로를 명시적으로 인코딩한다. 각 노드는 계산 단계를 나타내고, 엣지는 정보 흐름과 의존 관계를 나타낸다.
+- **학생 모델과 동적 라우터**: 그래프 캡슐화 교사에서 경량 학생 모델을 추출하고 동적 라우터를 장착한다. 이 라우터는 입력 동작 예측의 복잡성에 따라 그래프 구조 내 계산 경로를 적응적으로 선택(예: 중복 레이어 건너뛰기 또는 특정 하위 네트워크 활성화)하여 정밀도를 보장하면서 계산량을 줄인다.
+
+### 훈련 및 추론
+- **훈련 단계**: 학생 모델은 교사 모델의 그래프 구조에서 생성된 계층적 그래프 감독 신호를 통해 최적화되며, 학생 모델의 동작 예측 진화가 교사와 일치하도록 보장한다. 증류 손실 함수는 동작 예측의 평균 제곱 오차와 계층적 그래프 구조의 KL 발산을 결합한다.
+- **추론 단계**: 모든 그래프 관련 보조 구성 요소(예: 캡슐화 레이어 및 모니터링 모듈)를 제거하고, 학생 모델은 동적 라우팅 레이어만 유지한다. 입력 데이터는 경량 시각 인코더를 거친 후 동적 라우터가 계산 경로를 직접 선택하여 고정밀 동작을 출력한다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: CALVIN, MetaWorld 및 Robosuite와 같은 임베디드 인공지능 벤치마크에서 평가하며, 데스크탑 조작, 객체 파지 및 장기 시퀀스 작업을 포함한다.
+- **주요 수치**:
+  - 계산량 감소: 전체 크기 VLA 모델(예: RT-2-XL)과 비교하여 ActDistill은 FLOPs를 50% 이상 줄인다.
+  - 추론 속도 향상: NVIDIA A100 GPU에서 최대 1.67배 가속(단계당 45ms에서 27ms로 감소).
+  - 성능 비교: CALVIN의 ABC-D 작업에서 ActDistill은 92.3%의 성공률을 달성하여 교사 모델(92.8%)과 동등한 반면, 경량 기준선(예: TinyVLA)은 85.1%에 불과하다.
+- **소거 실험**: 동적 라우터를 제거하면 성능이 4.2% 하락하고(CALVIN에서), 적응형 경로 선택의 효과를 검증한다. 그래프 구조 캡슐화를 제거하면 증류 효율이 12% 감소하여, 계층적 모델링이 지식 전이에 중요함을 나타낸다.
+
+### 결론
+ActDistill은 동작 유도 증류와 동적 라우팅 메커니즘을 통해 VLA 모델에서 계산 효율성과 동작 정밀도의 균형을 최초로 달성했다. 이 범용 프레임워크는 다양한 기존 VLA 모델에 적용 가능하며, 임베디드 인공지능의 실시간 배포를 위한 실현 가능한 패러다임을 제공한다. 향후 연구는 더 복잡한 그래프 구조(예: 동적 그래프 업데이트)와 교차 작업 일반화 능력을 탐구할 것이다.

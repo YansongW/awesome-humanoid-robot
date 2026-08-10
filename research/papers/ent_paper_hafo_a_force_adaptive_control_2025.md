@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.20275v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.20275v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (760 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,27 @@ HAFO 采用双智能体强化学习框架，通过耦合训练同时优化两个
 ## Overview
 Reinforcement learning (RL) controllers have made impressive progress in humanoid locomotion and light-weight object manipulation. However, achieving robust and precise motion control with intense force interaction remains a significant challenge. To address these limitations, this paper proposes HAFO, a dual-agent reinforcement learning framework that concurrently optimizes both a robust locomotion strategy and a precise upper-body manipulation strategy via coupled training. We employ a constrained residual action space to improve dual-agent training stability and sample efficiency. The external tension disturbances are explicitly modeled using a spring-damper system, allowing for fine-grained force control through manipulation of the virtual spring. In this process, the reinforcement learning policy autonomously generates a disturbance-rejection response by utilizing environmental feedback. The experimental results demonstrate that HAFO achieves whole-body control for humanoid robots across diverse force-interaction environments using a single dual-agent policy, delivering outstanding performance under load-bearing and thrust-disturbance conditions, while maintaining stable operation even under rope suspension state.
 
-## 개요
-강화 학습(RL) 기반 제어기는 인간형 로봇의 보행 및 경량 물체 조작 분야에서 인상적인 발전을 이루었습니다. 그러나 강한 힘 상호작용이 수반되는 환경에서 견고하고 정밀한 동작 제어를 달성하는 것은 여전히 중요한 과제로 남아 있습니다. 이러한 한계를 극복하기 위해 본 논문에서는 HAFO를 제안합니다. HAFO는 이중 에이전트 강화 학습 프레임워크로, 결합 훈련을 통해 견고한 보행 전략과 정밀한 상체 조작 전략을 동시에 최적화합니다. 제한된 잔여 행동 공간을 활용하여 이중 에이전트 훈련의 안정성과 샘플 효율성을 향상시킵니다. 외부 장력 교란은 스프링-댐퍼 시스템을 사용하여 명시적으로 모델링되며, 가상 스프링의 조작을 통해 세밀한 힘 제어가 가능합니다. 이 과정에서 강화 학습 정책은 환경 피드백을 활용하여 교란 억제 응답을 자동으로 생성합니다. 실험 결과는 HAFO가 단일 이중 에이전트 정책을 사용하여 다양한 힘 상호작용 환경에서 인간형 로봇의 전신 제어를 달성하며, 하중 지지 및 추력 교란 조건에서 뛰어난 성능을 발휘하고, 로프 매달림 상태에서도 안정적인 작동을 유지함을 보여줍니다.
-
-## 핵심 내용
-강화 학습(RL) 기반 제어기는 인간형 로봇의 보행 및 경량 물체 조작 분야에서 인상적인 발전을 이루었습니다. 그러나 강한 힘 상호작용이 수반되는 환경에서 견고하고 정밀한 동작 제어를 달성하는 것은 여전히 중요한 과제로 남아 있습니다. 이러한 한계를 극복하기 위해 본 논문에서는 HAFO를 제안합니다. HAFO는 이중 에이전트 강화 학습 프레임워크로, 결합 훈련을 통해 견고한 보행 전략과 정밀한 상체 조작 전략을 동시에 최적화합니다. 제한된 잔여 행동 공간을 활용하여 이중 에이전트 훈련의 안정성과 샘플 효율성을 향상시킵니다. 외부 장력 교란은 스프링-댐퍼 시스템을 사용하여 명시적으로 모델링되며, 가상 스프링의 조작을 통해 세밀한 힘 제어가 가능합니다. 이 과정에서 강화 학습 정책은 환경 피드백을 활용하여 교란 억제 응답을 자동으로 생성합니다. 실험 결과는 HAFO가 단일 이중 에이전트 정책을 사용하여 다양한 힘 상호작용 환경에서 인간형 로봇의 전신 제어를 달성하며, 하중 지지 및 추력 교란 조건에서 뛰어난 성능을 발휘하고, 로프 매달림 상태에서도 안정적인 작동을 유지함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.20275v4
+
+## 개요
+HAFO는 강한 상호작용 힘 환경에서 기존 강화 학습 컨트롤러의 견고성과 정밀도 부족 문제를 해결하기 위해, 이중 에이전트 강화 학습 프레임워크를 제안한다. 이 프레임워크는 결합 훈련을 통해 하지 보행 정책과 상지 조작 정책을 동시에 최적화하며, 제약된 잔여 행동 공간을 도입하여 훈련 안정성과 샘플 효율을 향상시킨다. 외부 장력 교란을 처리하기 위해 HAFO는 스프링-댐퍼 모델을 사용하여 명시적으로 모델링하며, 강화 학습 정책이 환경 피드백을 기반으로 자율적으로 교란 억제 응답을 생성할 수 있게 한다. 실험 결과, HAFO는 단일 이중 에이전트 정책만으로도 다양한 힘 상호작용 환경에서 휴머노이드 로봇의 전신 제어를 구현할 수 있으며, 중량 부하 및 추력 교란 조건에서 우수한 성능을 보이고, 심지어 로프 매달림 상태에서도 안정적인 작동을 유지할 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+HAFO는 이중 에이전트 강화 학습 프레임워크를 채택하며, 결합 훈련을 통해 두 정책을 동시에 최적화한다:
+- **하지 보행 정책**: 견고한 전신 운동 제어를 담당하여 로봇의 균형과 이동을 보장한다.
+- **상지 조작 정책**: 정밀한 상반신 조작(예: 파지, 밀기/당기기)을 담당한다.
+
+### 핵심 기술
+- **제약된 잔여 행동 공간**: 행동 공간의 범위를 제한하여 이중 에이전트 훈련의 안정성과 샘플 효율을 향상시킨다.
+- **스프링-댐퍼 모델**: 외부 장력 교란을 명시적으로 모델링하며, 가상 스프링 파라미터를 조절하여 정밀한 힘 제어를 구현한다.
+- **자율 교란 억제 응답**: 강화 학습 정책은 환경 피드백을 활용하여 수동 설계 컨트롤러 없이 자동으로 교란 억제 동작을 생성한다.
+
+### 실험 설정 및 결과
+- **테스트 환경**: 중량 운반, 추력 교란, 로프 매달림 등 다양한 고강도 힘 상호작용 시나리오를 포함한다.
+- **주요 성능**:
+  - 부하 조건에서 로봇은 안정적인 보행을 유지하며 조작 작업을 완료할 수 있다.
+  - 추력 교란 하에서 시스템은 빠르게 균형을 회복하고 작업을 계속 수행할 수 있다.
+  - 로프 매달림 상태(예: 로프에 견인되거나 매달린 상태)에서도 로봇은 안정적인 작동을 유지하여 매우 강한 견고성을 보여준다.
+- **결론**: HAFO는 단일 이중 에이전트 정책을 통해 여러 시나리오에 걸친 전신 제어를 구현하며, 작업별 재훈련 없이도 휴머노이드 로봇의 복잡한 힘 상호작용 환경에서의 적응 능력을 크게 향상시킨다.

@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.10759v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.10759v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (883 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,29 @@ sources:
 ## Overview
 Parkour is a grand challenge for legged locomotion, even for quadruped robots, requiring active perception and various maneuvers to overcome multiple challenging obstacles. Existing methods for humanoid locomotion either optimize a trajectory for a single parkour track or train a reinforcement learning policy only to walk with a significant amount of motion references. In this work, we propose a framework for learning an end-to-end vision-based whole-body-control parkour policy for humanoid robots that overcomes multiple parkour skills without any motion prior. Using the parkour policy, the humanoid robot can jump on a 0.42m platform, leap over hurdles, 0.8m gaps, and much more. It can also run at 1.8m/s in the wild and walk robustly on different terrains. We test our policy in indoor and outdoor environments to demonstrate that it can autonomously select parkour skills while following the rotation command of the joystick. We override the arm actions and show that this framework can easily transfer to humanoid mobile manipulation tasks. Videos can be found at https://humanoid4parkour.github.io
 
-## 개요
-파쿠르는 보행 로봇, 특히 사족 로봇에게도 큰 도전 과제로, 능동적인 인식과 다양한 기동을 통해 여러 장애물을 극복해야 합니다. 기존의 인간형 로봇 보행 방법은 단일 파쿠르 트랙에 대한 궤적을 최적화하거나, 상당한 양의 동작 참조를 사용하여 보행만을 위한 강화 학습 정책을 훈련합니다. 본 연구에서는 사전 동작 없이도 여러 파쿠르 기술을 극복할 수 있는, 인간형 로봇을 위한 엔드투엔드(end-to-end) 비전 기반 전신 제어 파쿠르 정책 학습 프레임워크를 제안합니다. 이 파쿠르 정책을 통해 인간형 로봇은 0.42m 높이의 플랫폼에 점프하고, 허들, 0.8m 간격의 갭 등을 뛰어넘을 수 있습니다. 또한 야외에서 1.8m/s 속도로 달리고, 다양한 지형에서 견고하게 보행할 수 있습니다. 우리는 실내 및 실외 환경에서 정책을 테스트하여 조이스틱의 회전 명령을 따르면서 자율적으로 파쿠르 기술을 선택할 수 있음을 입증했습니다. 팔 동작을 오버라이드(override)하여 이 프레임워크가 인간형 로봇의 이동 조작 작업에 쉽게 전이될 수 있음을 보여줍니다. 비디오는 https://humanoid4parkour.github.io 에서 확인할 수 있습니다.
-
-## 핵심 내용
-파쿠르는 보행 로봇, 특히 사족 로봇에게도 큰 도전 과제로, 능동적인 인식과 다양한 기동을 통해 여러 장애물을 극복해야 합니다. 기존의 인간형 로봇 보행 방법은 단일 파쿠르 트랙에 대한 궤적을 최적화하거나, 상당한 양의 동작 참조를 사용하여 보행만을 위한 강화 학습 정책을 훈련합니다. 본 연구에서는 사전 동작 없이도 여러 파쿠르 기술을 극복할 수 있는, 인간형 로봇을 위한 엔드투엔드(end-to-end) 비전 기반 전신 제어 파쿠르 정책 학습 프레임워크를 제안합니다. 이 파쿠르 정책을 통해 인간형 로봇은 0.42m 높이의 플랫폼에 점프하고, 허들, 0.8m 간격의 갭 등을 뛰어넘을 수 있습니다. 또한 야외에서 1.8m/s 속도로 달리고, 다양한 지형에서 견고하게 보행할 수 있습니다. 우리는 실내 및 실외 환경에서 정책을 테스트하여 조이스틱의 회전 명령을 따르면서 자율적으로 파쿠르 기술을 선택할 수 있음을 입증했습니다. 팔 동작을 오버라이드(override)하여 이 프레임워크가 인간형 로봇의 이동 조작 작업에 쉽게 전이될 수 있음을 보여줍니다. 비디오는 https://humanoid4parkour.github.io 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2406.10759v2
+
+## 개요
+본 연구는 인간형 로봇 파쿠르라는 매우 도전적인 운동 제어 문제를 위해, 운동 사전 지식 없이도 가능한 엔드투엔드 학습 프레임워크를 제안한다. 단일 궤적 최적화나 대량의 운동 참조 데이터에 의존하는 기존 방법과 달리, 본 프레임워크는 시각 입력을 통해 전신 제어 정책을 직접 생성하여 인간형 로봇이 다양한 파쿠르 기술을 자율적으로 선택하고 실행할 수 있게 한다. 실험 결과, 로봇은 점프 플랫폼, 장애물 넘기 등 복잡한 동작을 수행할 수 있을 뿐만 아니라 야외에서 1.8m/s 속도로 달리고, 다양한 지형에서 안정적으로 보행할 수 있음을 보여준다. 또한, 팔 동작을 덮어씀으로써 이 프레임워크는 인간형 이동 조작 작업으로 쉽게 전이될 수 있다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 엔드투엔드 강화 학습 프레임워크를 채택하며, 입력은 시각 이미지(로봇 머리 카메라에서 획득)와 고유 수용 데이터(관절 각도, IMU 등)이며, 출력은 전신 관절 제어 명령이다.
+- 정책 네트워크는 합성곱 신경망(CNN)을 기반으로 시각 특징을 처리하고, 다층 퍼셉트론(MLP)을 결합하여 고유 수용 정보를 융합한 후 최종 동작 명령을 생성한다.
+- 훈련 과정에서 운동 사전 지식(참조 궤적이나 모션 캡처 데이터 등)이 전혀 필요 없으며, 완전히 보상 함수를 통해 파쿠르 기술 학습을 유도한다.
+
+### 실험 설정
+- 실제 인간형 로봇 플랫폼(구체적 모델은 초록에 언급되지 않음)을 사용하여 테스트한다.
+- 훈련 환경은 실내 장애물 트랙(플랫폼, 난간, 간격)과 실외 복잡 지형(잔디, 경사로, 자갈길)을 포함한다.
+- 보상 함수 설계는 속도 추적, 신체 균형, 관절 제한, 에너지 효율 등을 포함하며, 각 기술(점프, 넘기, 달리기)에 대해 적응형 가중치를 설정한다.
+
+### 주요 결과
+- **점프 능력**: 0.42m 높이의 플랫폼에 성공적으로 점프하고, 0.8m 너비의 간격을 넘는다.
+- **달리기 속도**: 야외 환경에서 1.8m/s의 안정적인 달리기 속도를 달성한다.
+- **강건성**: 잔디, 경사로, 자갈길 등 다양한 지형에서 재훈련 없이 안정적으로 보행할 수 있다.
+- **자율 기술 선택**: 조이스틱 회전 명령을 따르면서도 로봇은 시각 입력에 따라 점프, 넘기, 달리기 등의 기술을 자율적으로 선택할 수 있다.
+- **전이 능력**: 팔 동작(예: 잡기 또는 밀기)을 덮어씀으로써 이 프레임워크는 핵심 정책 수정 없이 이동 조작 작업(예: 물체 운반)에 직접 적용할 수 있다.
+
+### 결론
+본 연구는 운동 사전 지식 없이 인간형 로봇의 엔드투엔드 파쿠르 학습을 최초로 구현하여, 시각 기반 전신 제어 정책이 복잡한 운동 작업에서 효과적임을 검증했다. 기술 자율 선택 능력과 작업 전이성은 향후 비구조화 환경에서 인간형 로봇의 실제 응용을 위한 중요한 기반을 제공한다.

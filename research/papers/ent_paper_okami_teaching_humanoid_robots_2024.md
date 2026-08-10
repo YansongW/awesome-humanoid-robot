@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.11792v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.11792v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (904 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,23 @@ OKAMI 通过单段视频演示实现了人形机器人的操作技能学习，�
 ## Overview
 We study the problem of teaching humanoid robots manipulation skills by imitating from single video demonstrations. We introduce OKAMI, a method that generates a manipulation plan from a single RGB-D video and derives a policy for execution. At the heart of our approach is object-aware retargeting, which enables the humanoid robot to mimic the human motions in an RGB-D video while adjusting to different object locations during deployment. OKAMI uses open-world vision models to identify task-relevant objects and retarget the body motions and hand poses separately. Our experiments show that OKAMI achieves strong generalizations across varying visual and spatial conditions, outperforming the state-of-the-art baseline on open-world imitation from observation. Furthermore, OKAMI rollout trajectories are leveraged to train closed-loop visuomotor policies, which achieve an average success rate of 79.2% without the need for labor-intensive teleoperation. More videos can be found on our website https://ut-austin-rpl.github.io/OKAMI/.
 
-## 개요
-본 연구는 단일 비디오 시연을 모방하여 휴머노이드 로봇의 조작 기술을 가르치는 문제를 다룹니다. 우리는 단일 RGB-D 비디오로부터 조작 계획을 생성하고 실행 정책을 도출하는 방법인 OKAMI를 소개합니다. 이 접근법의 핵심은 객체 인식 리타겟팅(object-aware retargeting)으로, 휴머노이드 로봇이 RGB-D 비디오 속 인간의 동작을 모방하면서도 배치 시 다른 객체 위치에 적응할 수 있게 합니다. OKAMI는 개방형 세계 비전 모델(open-world vision models)을 사용하여 작업 관련 객체를 식별하고, 신체 동작과 손 자세를 별도로 리타겟팅합니다. 실험 결과, OKAMI는 다양한 시각적 및 공간적 조건에서 강력한 일반화 능력을 보여주며, 관찰로부터의 개방형 세계 모방(open-world imitation from observation)에서 최첨단 기준선(state-of-the-art baseline)을 능가합니다. 또한, OKAMI 롤아웃 궤적을 활용하여 폐쇄 루프 시각운동 정책(closed-loop visuomotor policies)을 훈련하며, 이는 노동 집약적인 원격 조작 없이 평균 성공률 79.2%를 달성합니다. 더 많은 비디오는 당사 웹사이트 https://ut-austin-rpl.github.io/OKAMI/에서 확인할 수 있습니다.
-
-## 핵심 내용
-본 연구는 단일 비디오 시연을 모방하여 휴머노이드 로봇의 조작 기술을 가르치는 문제를 다룹니다. 우리는 단일 RGB-D 비디오로부터 조작 계획을 생성하고 실행 정책을 도출하는 방법인 OKAMI를 소개합니다. 이 접근법의 핵심은 객체 인식 리타겟팅(object-aware retargeting)으로, 휴머노이드 로봇이 RGB-D 비디오 속 인간의 동작을 모방하면서도 배치 시 다른 객체 위치에 적응할 수 있게 합니다. OKAMI는 개방형 세계 비전 모델(open-world vision models)을 사용하여 작업 관련 객체를 식별하고, 신체 동작과 손 자세를 별도로 리타겟팅합니다. 실험 결과, OKAMI는 다양한 시각적 및 공간적 조건에서 강력한 일반화 능력을 보여주며, 관찰로부터의 개방형 세계 모방(open-world imitation from observation)에서 최첨단 기준선(state-of-the-art baseline)을 능가합니다. 또한, OKAMI 롤아웃 궤적을 활용하여 폐쇄 루프 시각운동 정책(closed-loop visuomotor policies)을 훈련하며, 이는 노동 집약적인 원격 조작 없이 평균 성공률 79.2%를 달성합니다. 더 많은 비디오는 당사 웹사이트 https://ut-austin-rpl.github.io/OKAMI/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.11792v1
+
+## 개요
+OKAMI 방법은 휴머노이드 로봇이 단일 비디오 데모를 통해 조작 기술을 학습하는 문제를 해결하는 것을 목표로 합니다. 단일 RGB-D 비디오에서 조작 계획을 생성하고 실행 가능한 정책을 도출합니다. 이 방법의 핵심은 객체 인식 재지향(object-aware retargeting)으로, 개방형 세계 비전 모델을 활용하여 작업 관련 객체를 식별하고, 신체 움직임과 손 자세를 각각 재지향하여 로봇이 인간의 동작을 모방하면서도 배치 시 객체 위치 변화에 적응할 수 있게 합니다. 실험 결과, OKAMI는 다양한 시각적 및 공간적 조건에서 강력한 일반화 능력을 보여주며, 개방형 세계 모방 관찰의 기존 기준선을 능가합니다. 또한 OKAMI가 생성한 궤적은 폐루프 시각운동 정책을 훈련하는 데 사용될 수 있으며, 무거운 원격 조작 없이 평균 성공률 79.2%를 달성합니다.
+
+## 핵심 내용
+### 방법 개요
+OKAMI는 단일 RGB-D 비디오에서 인간 조작 데모를 추출하고 휴머노이드 로봇이 실행할 수 있는 정책을 생성합니다. 핵심 프로세스는 다음과 같습니다:
+- **객체 인식 재지향**: 개방형 세계 비전 모델(예: open-world vision models)을 활용하여 비디오에서 작업 관련 객체를 식별하고, 신체 움직임과 손 자세의 재지향을 각각 처리합니다.
+- **동작 재지향**: 비디오의 인간 신체 움직임을 휴머노이드 로봇에 매핑하고, 배치 시 객체 위치 변화에 따라 조정하여 로봇이 다양한 공간 조건에 적응할 수 있도록 합니다.
+- **손 자세 재지향**: 손 동작을 별도로 처리하여 로봇이 파지, 조작 등의 정밀 동작을 정확히 모방할 수 있게 합니다.
+
+### 실험 설정 및 결과
+- **기준선 비교**: 개방형 세계 모방 관찰 작업에서 state-of-the-art baseline과 비교하여, OKAMI는 다양한 시각적 및 공간적 조건에서 더 강력한 일반화 능력을 보여줍니다.
+- **폐루프 정책 훈련**: OKAMI가 생성한 rollout 궤적을 활용하여 폐루프 visuomotor policies를 훈련하며, 원격 조작 없이 높은 성공률을 달성합니다.
+- **주요 수치**: 폐루프 정책의 평균 성공률은 79.2%에 달하며, 훈련 비용을 크게 절감합니다.
+
+### 결론
+OKAMI는 단일 비디오 데모를 통해 휴머노이드 로봇의 조작 기술 학습을 구현하며, 객체 인식 재지향 기술이 모방 과정에서 객체 위치 변화 문제를 효과적으로 해결합니다. 이 방법은 일반화 능력을 향상시킬 뿐만 아니라 폐루프 정책 훈련을 통해 인간의 개입을 줄여 로봇 학습에 효율적인 솔루션을 제공합니다. 더 많은 데모 비디오는 프로젝트 웹사이트 https://ut-austin-rpl.github.io/OKAMI/ 에서 확인할 수 있습니다.

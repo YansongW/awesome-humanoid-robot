@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.07021v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.07021v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (932 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ SBO 通过自适应 Spartan 核有效解决控制问题中的非平稳性，无�
 ## Overview
 Active policy search combines the trial-and-error methodology from policy search with Bayesian optimization to actively find the optimal policy. First, policy search is a type of reinforcement learning which has become very popular for robot control, for its ability to deal with complex continuous state and action spaces. Second, Bayesian optimization is a sample efficient global optimization method that uses a surrogate model, like a Gaussian process, and optimal decision making to carefully select each sample during the optimization process. Sample efficiency is of paramount importance when each trial involves the real robot, expensive Monte Carlo runs, or a complex simulator. Black-box Bayesian optimization generally assumes a cost function from a stationary process, because nonstationary modeling is usually based on prior knowledge. However, many control problems are inherently nonstationary due to their failure conditions, terminal states and other abrupt effects. In this paper, we present a kernel function specially designed for Bayesian optimization, that allows nonstationary modeling without prior knowledge, using an adaptive local region. The new kernel results in an improved local search (exploitation), without penalizing the global search (exploration), as shown experimentally in well-known optimization benchmarks and robot control scenarios. We finally show its potential for the design of the wing shape of a UAV.
 
-## 개요
-Active policy search는 정책 탐색(policy search)의 시행착오 방법론과 베이지안 최적화(Bayesian optimization)를 결합하여 능동적으로 최적 정책을 찾아냅니다. 첫째, 정책 탐색은 강화 학습의 한 유형으로, 복잡한 연속 상태 및 행동 공간을 처리할 수 있는 능력 덕분에 로봇 제어 분야에서 매우 인기를 얻고 있습니다. 둘째, 베이지안 최적화는 가우시안 프로세스(Gaussian process)와 같은 대리 모델(surrogate model)과 최적 의사 결정을 사용하여 최적화 과정에서 각 샘플을 신중하게 선택하는 샘플 효율적인 전역 최적화 방법입니다. 각 시행이 실제 로봇, 고비용의 몬테카를로 실행(Monte Carlo runs), 또는 복잡한 시뮬레이터를 포함할 때 샘플 효율성은 매우 중요합니다. 블랙박스 베이지안 최적화(Black-box Bayesian optimization)는 일반적으로 정상 과정(stationary process)의 비용 함수를 가정하는데, 이는 비정상 모델링(nonstationary modeling)이 일반적으로 사전 지식에 기반하기 때문입니다. 그러나 많은 제어 문제는 실패 조건, 종료 상태 및 기타 급격한 효과로 인해 본질적으로 비정상적입니다. 본 논문에서는 베이지안 최적화를 위해 특별히 설계된 커널 함수(kernel function)를 제시하며, 이는 적응형 지역 영역(adaptive local region)을 사용하여 사전 지식 없이 비정상 모델링을 가능하게 합니다. 새로운 커널은 잘 알려진 최적화 벤치마크와 로봇 제어 시나리오에서 실험적으로 입증된 바와 같이, 전역 탐색(exploration)을 저해하지 않으면서 지역 탐색(exploitation)을 개선합니다. 마지막으로, UAV의 날개 형상 설계에 대한 잠재력을 보여줍니다.
-
-## 핵심 내용
-Active policy search는 정책 탐색(policy search)의 시행착오 방법론과 베이지안 최적화(Bayesian optimization)를 결합하여 능동적으로 최적 정책을 찾아냅니다. 첫째, 정책 탐색은 강화 학습의 한 유형으로, 복잡한 연속 상태 및 행동 공간을 처리할 수 있는 능력 덕분에 로봇 제어 분야에서 매우 인기를 얻고 있습니다. 둘째, 베이지안 최적화는 가우시안 프로세스(Gaussian process)와 같은 대리 모델(surrogate model)과 최적 의사 결정을 사용하여 최적화 과정에서 각 샘플을 신중하게 선택하는 샘플 효율적인 전역 최적화 방법입니다. 각 시행이 실제 로봇, 고비용의 몬테카를로 실행(Monte Carlo runs), 또는 복잡한 시뮬레이터를 포함할 때 샘플 효율성은 매우 중요합니다. 블랙박스 베이지안 최적화(Black-box Bayesian optimization)는 일반적으로 정상 과정(stationary process)의 비용 함수를 가정하는데, 이는 비정상 모델링(nonstationary modeling)이 일반적으로 사전 지식에 기반하기 때문입니다. 그러나 많은 제어 문제는 실패 조건, 종료 상태 및 기타 급격한 효과로 인해 본질적으로 비정상적입니다. 본 논문에서는 베이지안 최적화를 위해 특별히 설계된 커널 함수(kernel function)를 제시하며, 이는 적응형 지역 영역(adaptive local region)을 사용하여 사전 지식 없이 비정상 모델링을 가능하게 합니다. 새로운 커널은 잘 알려진 최적화 벤치마크와 로봇 제어 시나리오에서 실험적으로 입증된 바와 같이, 전역 탐색(exploration)을 저해하지 않으면서 지역 탐색(exploitation)을 개선합니다. 마지막으로, UAV의 날개 형상 설계에 대한 잠재력을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2402.07021v1
+
+## 개요
+능동 정책 탐색은 정책 탐색의 시행착오 방식과 베이지안 최적화의 샘플 효율성을 결합하여 로봇 제어에서 최적 정책을 발견합니다. 베이지안 최적화는 일반적으로 비용 함수가 정상 과정에서 비롯된다고 가정하는데, 비정상성 모델링은 사전 지식에 의존하기 때문입니다. 그러나 많은 제어 문제는 실패 조건, 종료 상태 등으로 인해 본질적으로 비정상성을 지닙니다. 본 논문에서 설계한 Spartan 커널은 사전 지식 없이도 비정상성을 적응적으로 모델링하며, 지역 영역을 동적으로 조정하여 전역 탐색 능력을 희생하지 않으면서 지역 탐색 성능을 향상시킵니다. 실험은 최적화 벤치마크, 로봇 제어 작업 및 드론 날개 설계에서 샘플 효율성과 탐색 균형 측면의 우수성을 검증합니다.
+
+## 핵심 내용
+### 방법 개요
+- **능동 정책 탐색**: 정책 탐색의 시행착오 메커니즘과 베이지안 최적화의 능동 샘플링을 결합하여 복잡한 연속 상태/행동 공간의 로봇 제어에 적합합니다.
+- **베이지안 최적화**: 가우시안 프로세스 대리 모델과 최적 결정을 기반으로, 각 샘플을 신중히 선택하여 샘플 효율적 최적화를 달성하며, 실제 로봇, 고가의 몬테카를로 시뮬레이션 또는 복잡한 시뮬레이션 환경에 특히 적합합니다.
+- **비정상성 도전**: 전통적인 블랙박스 베이지안 최적화는 비용 함수가 정상 과정에서 비롯된다고 가정하지만, 제어 문제에서 실패 조건, 종료 상태 등이 비정상성을 유발하며, 기존 비정상성 모델링은 일반적으로 사전 지식에 의존합니다.
+
+### Spartan 커널 설계
+- **적응형 지역/전역 커널**: Spartan 커널은 적응형 지역 영역을 도입하여 사전 지식 없이 비정상 비용 함수를 모델링합니다. 핵심 아이디어는 지역 탐색 범위를 동적으로 조정하여 활용(지역 탐색)과 탐험(전역 탐색) 사이의 균형을 유지하는 것입니다.
+- **수학적 특성**: 커널 함수 설계는 지역 탐색 정밀도를 향상시키면서도 전역 탐색의 커버리지 능력을 손상시키지 않아 지역 최적에 빠지는 것을 방지합니다.
+
+### 실험 설정 및 결과
+- **최적화 벤치마크 테스트**: 표준 비정상 최적화 벤치마크에서 SBO는 전통적인 정상 커널 방법(예: RBF 커널)보다 수렴 속도와 최종 정밀도를 크게 향상시킵니다.
+- **로봇 제어 작업**: 강화 학습 제어 시나리오(예: 로봇 팔 궤적 추적)에서 SBO는 더 적은 샘플로 더 높은 보상 값을 달성하여 샘플 효율성의 우위를 검증합니다.
+- **드론 날개 설계**: 드론 익형 최적화에 적용하여 SBO는 제한된 시뮬레이션 횟수 내에서 더 우수한 공기역학 성능 매개변수를 찾아 공학적 실용성을 보여줍니다.
+
+### 결론
+SBO는 적응형 Spartan 커널을 통해 제어 문제의 비정상성을 효과적으로 해결하며, 사전 지식 없이 지역 탐색 능력을 향상시키면서 전역 탐색 성능을 유지합니다. 실험은 샘플 효율성과 탐색 균형에서 전통적인 방법보다 우수함을 보여주며, 로봇 제어와 공학 설계에 실용적인 도구를 제공합니다.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.05171v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.05171v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (492 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,24 @@ TACO 通过反探索策略实现测试时计算缩放，为机器人操作中的
 ## Overview
 We study a novel language model architecture that is capable of scaling test-time computation by implicitly reasoning in latent space. Our model works by iterating a recurrent block, thereby unrolling to arbitrary depth at test-time. This stands in contrast to mainstream reasoning models that scale up compute by producing more tokens. Unlike approaches based on chain-of-thought, our approach does not require any specialized training data, can work with small context windows, and can capture types of reasoning that are not easily represented in words. We scale a proof-of-concept model to 3.5 billion parameters and 800 billion tokens. We show that the resulting model can improve its performance on reasoning benchmarks, sometimes dramatically, up to a computation load equivalent to 50 billion parameters.
 
-## 개요
-우리는 잠재 공간에서 암시적으로 추론함으로써 테스트 시 계산을 확장할 수 있는 새로운 언어 모델 아키텍처를 연구합니다. 우리의 모델은 순환 블록을 반복하여 테스트 시 임의의 깊이로 전개됩니다. 이는 더 많은 토큰을 생성하여 계산을 확장하는 주류 추론 모델과 대조됩니다. 사고 사슬 기반 접근 방식과 달리, 우리의 접근 방식은 특수한 훈련 데이터가 필요하지 않으며, 작은 컨텍스트 윈도우로도 작동할 수 있고, 단어로 쉽게 표현되지 않는 유형의 추론을 포착할 수 있습니다. 우리는 개념 증명 모델을 35억 개의 매개변수와 8000억 개의 토큰으로 확장합니다. 그 결과 모델이 추론 벤치마크에서 성능을 향상시킬 수 있음을 보여주며, 때로는 500억 개의 매개변수에 해당하는 계산 부하까지 극적으로 향상됩니다.
-
-## 핵심 내용
-우리는 잠재 공간에서 암시적으로 추론함으로써 테스트 시 계산을 확장할 수 있는 새로운 언어 모델 아키텍처를 연구합니다. 우리의 모델은 순환 블록을 반복하여 테스트 시 임의의 깊이로 전개됩니다. 이는 더 많은 토큰을 생성하여 계산을 확장하는 주류 추론 모델과 대조됩니다. 사고 사슬 기반 접근 방식과 달리, 우리의 접근 방식은 특수한 훈련 데이터가 필요하지 않으며, 작은 컨텍스트 윈도우로도 작동할 수 있고, 단어로 쉽게 표현되지 않는 유형의 추론을 포착할 수 있습니다. 우리는 개념 증명 모델을 35억 개의 매개변수와 8000억 개의 토큰으로 확장합니다. 그 결과 모델이 추론 벤치마크에서 성능을 향상시킬 수 있음을 보여주며, 때로는 500억 개의 매개변수에 해당하는 계산 부하까지 극적으로 향상됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.05171v2
+
+## 개요
+TACO 모델은 순환 블록 반복을 통해 테스트 시 계산 확장을 구현하며, 주류 방식인 더 많은 토큰을 생성하여 계산을 확장하는 방식과는 다릅니다. 이 방법은 잠재 공간에서 암시적 추론을 수행하며, 체인 오브 소트(Chain-of-Thought)에 필요한 전용 훈련 데이터 없이도 작동하고, 언어로 표현하기 어려운 추론 유형을 처리할 수 있습니다. 모델 규모는 35억 파라미터이며, 8000억 토큰으로 훈련되었고, 추론 벤치마크에서 계산량이 50억 파라미터 모델에 해당하는 수준으로 성능이 크게 향상되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 모델은 순환 블록 반복 아키텍처를 채택하여 잠재 공간에서 암시적으로 추론하며, 테스트 시 임의의 깊이로 확장할 수 있습니다.
+- 체인 오브 소트 방법과 달리 전용 훈련 데이터가 필요 없고, 작은 컨텍스트 창을 지원하며, 언어로 표현하기 어려운 추론 유형을 포착할 수 있습니다.
+
+### 실험 설정
+- 모델 규모: 35억 파라미터, 훈련 데이터 양: 8000억 토큰.
+- 비교 기준: 주류 추론 모델(더 많은 토큰을 생성하여 계산을 확장하는 방식).
+
+### 주요 결과
+- 추론 벤치마크에서 성능 향상이 뚜렷하며, 때로는 극적인 효과를 보입니다.
+- 계산량이 50억 파라미터 모델에 해당하여 테스트 시 확장의 효과성을 입증합니다.
+
+### 결론
+TACO는 역탐색 전략을 통해 테스트 시 계산 확장을 구현하며, 로봇 조작에서의 비전-언어-행동 모델에 새로운 패러다임을 제공하고, 복잡한 훈련 데이터 없이도 추론 능력을 향상시킵니다.

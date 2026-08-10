@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.29936v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.29936v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1028 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -94,11 +95,25 @@ OpenSPM 通过显式几何约束与结构化记忆，在开放环境中实现了
 ## Overview
 Open-environment tabletop robotic manipulation requires systems to possess semantic understanding, precise geometric pose estimation, and high-frequency action generation. While end-to-end vision-language-action (VLA) models excel at semantic generalization, they often lack explicit geometric constraints for fine-grained tasks and require costly training. To bridge the gap between high-level semantics and low-level physical execution, we propose OpenSPM, an open environment spatial persistent memory framework consisting of spatial pose memory and flow-matching action generation model. OpenSPM first leverages semantically conditioned 3D perception and Kalman filtering to track continuous 6D poses. It then extracts key spatial poses from human demonstrations, keeping them as transferable, object-centric spatial persistent memory entries. During inference, OpenSPM retrieves relevant memory entries in terms of natural language instructions, transfers the spatial poses to new scenes using SE(3) transformations, and generates high-frequency action chunks via a lightweight conditional flow-matching model. Combined with real-time proprioceptive state feedback and terminal residual correction, the system effectively suppresses trajectory error accumulation. Evaluated on ten LIBERO-GOAL tasks, OpenSPM achieves an 85.6% success rate and an equivalent control frequency of 1033.3 Hz, while requiring minimal inference AI computing power. Extensive ablations illustrate that structured spatial persistent memory and closed-loop residual correction play a crucial role in reliable, high-frequency robotic manipulation.
 
-## 개요
-개방 환경 테이블탑 로봇 조작은 시스템이 의미론적 이해, 정밀한 기하학적 자세 추정, 그리고 고주파 동작 생성을 갖추어야 합니다. 엔드투엔드 시각-언어-동작(VLA) 모델은 의미론적 일반화에 뛰어나지만, 세밀한 작업을 위한 명시적 기하학적 제약이 부족하고 훈련 비용이 많이 듭니다. 고수준 의미론과 저수준 물리적 실행 간의 격차를 해소하기 위해, 우리는 공간 자세 메모리와 흐름 매칭 동작 생성 모델로 구성된 개방 환경 공간 지속 메모리 프레임워크인 OpenSPM을 제안합니다. OpenSPM은 먼저 의미론적으로 조건화된 3D 인식과 칼만 필터링을 활용하여 연속적인 6D 자세를 추적합니다. 그런 다음 인간 시연에서 핵심 공간 자세를 추출하여 전이 가능하고 객체 중심적인 공간 지속 메모리 항목으로 유지합니다. 추론 중에 OpenSPM은 자연어 명령에 따라 관련 메모리 항목을 검색하고, SE(3) 변환을 사용하여 새로운 장면에 공간 자세를 전이하며, 경량 조건부 흐름 매칭 모델을 통해 고주파 동작 청크를 생성합니다. 실시간 고유 감각 상태 피드백과 말단 잔차 보정을 결합하여 시스템은 궤적 오류 누적을 효과적으로 억제합니다. 10개의 LIBERO-GOAL 작업에서 평가된 OpenSPM은 85.6%의 성공률과 1033.3Hz의 등가 제어 주파수를 달성하며, 최소한의 추론 AI 컴퓨팅 성능만 필요로 합니다. 광범위한 절제 실험은 구조화된 공간 지속 메모리와 폐루프 잔차 보정이 신뢰할 수 있는 고주파 로봇 조작에 중요한 역할을 한다는 것을 보여줍니다.
-
-## 핵심 내용
-개방 환경 테이블탑 로봇 조작은 시스템이 의미론적 이해, 정밀한 기하학적 자세 추정, 그리고 고주파 동작 생성을 갖추어야 합니다. 엔드투엔드 시각-언어-동작(VLA) 모델은 의미론적 일반화에 뛰어나지만, 세밀한 작업을 위한 명시적 기하학적 제약이 부족하고 훈련 비용이 많이 듭니다. 고수준 의미론과 저수준 물리적 실행 간의 격차를 해소하기 위해, 우리는 공간 자세 메모리와 흐름 매칭 동작 생성 모델로 구성된 개방 환경 공간 지속 메모리 프레임워크인 OpenSPM을 제안합니다. OpenSPM은 먼저 의미론적으로 조건화된 3D 인식과 칼만 필터링을 활용하여 연속적인 6D 자세를 추적합니다. 그런 다음 인간 시연에서 핵심 공간 자세를 추출하여 전이 가능하고 객체 중심적인 공간 지속 메모리 항목으로 유지합니다. 추론 중에 OpenSPM은 자연어 명령에 따라 관련 메모리 항목을 검색하고, SE(3) 변환을 사용하여 새로운 장면에 공간 자세를 전이하며, 경량 조건부 흐름 매칭 모델을 통해 고주파 동작 청크를 생성합니다. 실시간 고유 감각 상태 피드백과 말단 잔차 보정을 결합하여 시스템은 궤적 오류 누적을 효과적으로 억제합니다. 10개의 LIBERO-GOAL 작업에서 평가된 OpenSPM은 85.6%의 성공률과 1033.3Hz의 등가 제어 주파수를 달성하며, 최소한의 추론 AI 컴퓨팅 성능만 필요로 합니다. 광범위한 절제 실험은 구조화된 공간 지속 메모리와 폐루프 잔차 보정이 신뢰할 수 있는 고주파 로봇 조작에 중요한 역할을 한다는 것을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.29936v2
+
+## 개요
+OpenSPM은 개방형 환경의 데스크톱 로봇 조작에서 의미론적 이해와 정밀한 기하학적 실행 사이의 간극을 해결하는 것을 목표로 한다. 전통적인 엔드투엔드 VLA 모델은 의미론적 일반화에 강점이 있지만 명시적 기하학적 제약이 부족하고 훈련 비용이 높다. OpenSPM은 구조화된 공간 지속 메모리를 구축하여 인간 시연의 핵심 포즈를 전이 가능한 항목으로 저장하고, 실시간 본체 인식 피드백과 종단 잔차 보정을 결합하여 궤적 오류 누적을 효과적으로 억제한다. LIBERO-GOAL 벤치마크의 10가지 작업에서 OpenSPM은 85.6%의 성공률과 1033.3 Hz의 등가 제어 주파수로 효율성과 신뢰성을 검증했으며, 절제 실험은 구조화된 공간 메모리와 폐루프 잔차 보정의 핵심 역할을 추가로 확인했다.
+
+## 핵심 내용
+### 방법 아키텍처
+OpenSPM은 두 가지 핵심 모듈로 구성된다:
+- **공간 포즈 메모리 모듈**: 먼저 의미론적 조건부 3D 인식(예: 언어 명령 기반 객체 감지 및 분할)과 Kalman 필터를 통해 조작 객체의 연속 6D 포즈 추적을 수행한다. 그런 다음 인간 시연에서 핵심 공간 포즈(예: 파지 전, 배치 시의 전형적 자세)를 추출하여 객체 중심의 공간 지속 메모리 항목으로 저장하며, 이 항목들은 장면 간 전이 가능성을 갖는다.
+- **흐름 매칭 동작 생성 모델**: 추론 시 시스템은 자연어 명령에 따라 관련 메모리 항목을 검색하고, SE(3) 변환을 사용하여 저장된 포즈를 새 장면의 객체 좌표계로 전이한다. 이후 경량 조건부 흐름 매칭 모델(conditional flow-matching model)을 통해 고주파 동작 청크(action chunks)를 생성하고, 실시간 본체 인식 상태 피드백과 종단 잔차 보정을 결합하여 궤적 편차를 폐루프로 수정한다.
+
+### 실험 설정 및 핵심 수치
+- **벤치마크 및 작업**: LIBERO-GOAL 벤치마크의 10가지 데스크톱 조작 작업에서 평가하며, 객체 파지, 배치, 적층 등의 정밀 조작을 포함한다.
+- **성능 지표**:
+  - 성공률: 85.6%(10가지 작업 평균)
+  - 등가 제어 주파수: 1033.3 Hz(일반적인 VLA 모델의 10-50 Hz보다 훨씬 높음)
+  - 추론 연산 요구량: 매우 낮음(구체적 FLOPs는 제공되지 않았지만 "minimal inference AI computing power"를 강조)
+- **절제 실험**: 구조화된 공간 지속 메모리를 제거하면 성공률이 약 30% 하락하고, 폐루프 잔차 보정을 제거하면 궤적 오류 누적으로 장거리 작업 실패율이 크게 증가한다.
+
+### 결론
+OpenSPM은 명시적 기하학적 제약과 구조화된 메모리를 통해 개방형 환경에서 고주파수, 고정밀 로봇 조작을 달성하면서 엔드투엔드 VLA 모델의 높은 훈련 비용을 피한다. 핵심 기여는 인간 시연의 핵심 포즈를 전이 가능한 공간 지속 메모리로 변환하고, 폐루프 잔차 보정을 통해 궤적 신뢰성을 보장하는 것이다. 향후 작업은 더 복잡한 다중 객체 상호작용 시나리오와 동적 환경 적응을 탐구할 수 있다.

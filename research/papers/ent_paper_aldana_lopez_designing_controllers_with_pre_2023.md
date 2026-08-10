@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.02473v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.02473v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (694 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,24 @@ theoretical_depth:
 ## Overview
 Recently, there has been a great deal of attention in a class of controllers based on time-varying gains, called prescribed-time controllers, that steer the system's state to the origin in the desired time, a priori set by the user, regardless of the initial condition. Furthermore, such a class of controllers has been shown to maintain a prescribed-time convergence in the presence of disturbances even if the disturbance bound is unknown. However, such properties require a time-varying gain that becomes singular at the terminal time, which limits its application to scenarios under quantization or measurement noise. This chapter presents a methodology to design a broader class of controllers, called predefined-time controllers, with a prescribed convergence-time bound. Our approach allows designing robust predefined-time controllers based on time-varying gains while maintaining uniformly bounded time-varying gains. We analyze the condition for uniform Lyapunov stability under the proposed time-varying controllers.
 
-## 개요
-최근 시간 가변 이득에 기반한 제어기 클래스, 소위 사전 설정 시간 제어기(prescribed-time controller)가 큰 주목을 받고 있습니다. 이 제어기는 초기 조건과 관계없이 사용자가 사전에 설정한 원하는 시간 내에 시스템의 상태를 원점으로 유도합니다. 또한, 이러한 제어기 클래스는 외란의 경계가 알려지지 않은 경우에도 외란이 존재하는 상황에서 사전 설정된 시간 내 수렴을 유지하는 것으로 입증되었습니다. 그러나 이러한 특성은 종료 시간에 특이점이 발생하는 시간 가변 이득을 필요로 하며, 이는 양자화 또는 측정 잡음이 있는 시나리오에서의 적용을 제한합니다. 본 장에서는 사전 정의된 수렴 시간 경계를 갖는 더 넓은 제어기 클래스, 즉 사전 정의 시간 제어기(predefined-time controller)를 설계하는 방법론을 제시합니다. 우리의 접근 방식은 시간 가변 이득을 균일하게 유계로 유지하면서, 시간 가변 이득에 기반한 강건한 사전 정의 시간 제어기를 설계할 수 있게 합니다. 제안된 시간 가변 제어기 하에서 균일 리아푸노프 안정성을 위한 조건을 분석합니다.
-
-## 핵심 내용
-최근 시간 가변 이득에 기반한 제어기 클래스, 소위 사전 설정 시간 제어기(prescribed-time controller)가 큰 주목을 받고 있습니다. 이 제어기는 초기 조건과 관계없이 사용자가 사전에 설정한 원하는 시간 내에 시스템의 상태를 원점으로 유도합니다. 또한, 이러한 제어기 클래스는 외란의 경계가 알려지지 않은 경우에도 외란이 존재하는 상황에서 사전 설정된 시간 내 수렴을 유지하는 것으로 입증되었습니다. 그러나 이러한 특성은 종료 시간에 특이점이 발생하는 시간 가변 이득을 필요로 하며, 이는 양자화 또는 측정 잡음이 있는 시나리오에서의 적용을 제한합니다. 본 장에서는 사전 정의된 수렴 시간 경계를 갖는 더 넓은 제어기 클래스, 즉 사전 정의 시간 제어기(predefined-time controller)를 설계하는 방법론을 제시합니다. 우리의 접근 방식은 시간 가변 이득을 균일하게 유계로 유지하면서, 시간 가변 이득에 기반한 강건한 사전 정의 시간 제어기를 설계할 수 있게 합니다. 제안된 시간 가변 제어기 하에서 균일 리아푸노프 안정성을 위한 조건을 분석합니다.
-
 ## 参考
 - http://arxiv.org/abs/2311.02473v1
+
+## 개요
+기존의 사전 설정 시간 제어기는 미지의 외란 하에서도 지정된 시간 내 수렴을 보장할 수 있지만, 시간에 따라 변하는 이득이 종료 시점에서 무한대로 발산하여 양자화 또는 측정 잡음 환경에서 적용이 제한됩니다. 본 논문은 일관되게 유계인 시변 이득을 사용하여 사전 설정 수렴 시간 경계를 유지하면서 이득 특이성을 피하는, 더 일반화된 사전 정의 시간 제어기 설계 방법을 제안합니다. 연구는 제안된 시변 제어기 하에서 시스템의 일관된 Lyapunov 안정성 조건을 분석하는 데 중점을 두며, 강건 제어에 새로운 통찰을 제공합니다.
+
+## 핵심 내용
+### 핵심 문제
+- 기존의 사전 설정 시간 제어기(prescribed-time controllers)는 종료 시점에서 무한대로 발산하는 시변 이득에 의존하여, 양자화 잡음 또는 측정 잡음 환경에서의 적용이 제한됩니다.
+- 기존 방법은 외란 하에서도 사전 설정 시간 수렴을 보장할 수 있지만, 이득 특이성이 실제 배포의 핵심 장애물이 됩니다.
+
+### 방법 혁신
+- **사전 정의 시간 제어기**(predefined-time controllers)의 재설계 프레임워크를 제안하며, 핵심은 **일관되게 유계인 시변 이득**(uniformly bounded time-varying gains)을 사용하는 것입니다.
+- 새로운 방법은 사용자가 수렴 시간 상한을 사전에 설정할 수 있게 하며, 이득은 전체 제어 과정에서 유계를 유지하여 종료 특이성을 피합니다.
+
+### 이론 분석
+- 외란을 받는 적분기 체인(perturbed chains of integrators)에 대해, 시변 제어기 하에서 시스템이 **일관된 Lyapunov 안정성**(uniform Lyapunov stability)을 달성하기 위한 충분 조건을 도출합니다.
+- 안정성 분석은 외란 상한에 대한 사전 지식에 의존하지 않아 강건성을 향상시킵니다.
+
+### 핵심 결론
+- 제안된 제어기는 사전 설정 수렴 시간 경계를 유지하면서 기존 방법의 이득 특이성 의존성을 제거하여, 잡음 또는 양자화 제약이 있는 시나리오에서의 적용 가능성을 확장합니다.

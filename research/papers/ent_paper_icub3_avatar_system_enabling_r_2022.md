@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.06972v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.06972v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (837 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,35 @@ sources:
 ## Overview
 We present an avatar system designed to facilitate the embodiment of humanoid robots by human operators, validated through iCub3, a humanoid developed at the Istituto Italiano di Tecnologia (IIT). More precisely, the contribution of the paper is twofold: first, we present the humanoid iCub3 as a robotic avatar which integrates the latest significant improvements after about fifteen years of development of the iCub series; second, we present a versatile avatar system enabling humans to embody humanoid robots encompassing aspects such as locomotion, manipulation, voice, and face expressions with comprehensive sensory feedback including visual, auditory, haptic, weight, and touch modalities. We validate the system by implementing several avatar architecture instances, each tailored to specific requirements. First, we evaluated the optimized architecture for verbal, non-verbal, and physical interactions with a remote recipient. This testing involved the operator in Genoa and the avatar in the Biennale di Venezia, Venice - about 290 Km away - thus allowing the operator to visit remotely the Italian art exhibition. Second, we evaluated the optimised architecture for recipient physical collaboration and public engagement on-stage, live, at the We Make Future show, a prominent world digital innovation festival. In this instance, the operator was situated in Genoa while the avatar operates in Rimini - about 300 Km away - interacting with a recipient who entrusted the avatar a payload to carry on stage before an audience of approximately 2000 spectators. Third, we present the architecture implemented by the iCub Team for the ANA Avatar XPrize competition.
 
-## 개요
-우리는 인간 운영자가 인간형 로봇을 체현할 수 있도록 설계된 아바타 시스템을 제시하며, 이탈리아 기술 연구소(IIT)에서 개발된 인간형 로봇 iCub3를 통해 검증되었습니다. 더 정확히 말하면, 이 논문의 기여는 두 가지입니다: 첫째, iCub 시리즈의 약 15년 개발 이후 최신 주요 개선 사항을 통합한 로봇 아바타로서 인간형 iCub3를 제시합니다; 둘째, 인간이 인간형 로봇을 체현할 수 있도록 하는 다용도 아바타 시스템을 제시하며, 여기에는 이동, 조작, 음성, 얼굴 표정과 같은 측면과 시각, 청각, 촉각, 무게, 접촉 감각을 포함한 포괄적인 감각 피드백이 포함됩니다. 우리는 각각 특정 요구 사항에 맞춰진 여러 아바타 아키텍처 인스턴스를 구현하여 시스템을 검증합니다. 첫째, 원격 수신자와의 언어적, 비언어적, 물리적 상호작용을 위한 최적화된 아키텍처를 평가했습니다. 이 테스트는 제노바에 있는 운영자와 베니스 비엔날레(베니스)에 있는 아바타(약 290km 거리)를 포함하여 운영자가 원격으로 이탈리아 미술 전시회를 방문할 수 있도록 했습니다. 둘째, 주요 세계 디지털 혁신 페스티벌인 We Make Future 쇼에서 라이브로 무대 위에서 수신자와의 물리적 협력 및 대중 참여를 위한 최적화된 아키텍처를 평가했습니다. 이 경우 운영자는 제노바에 있었고 아바타는 리미니(약 300km 거리)에서 작동하며, 약 2000명의 관객 앞에서 무대 위에 짐을 운반하도록 아바타에게 맡긴 수신자와 상호작용했습니다. 셋째, ANA Avatar XPrize 대회를 위해 iCub 팀이 구현한 아키텍처를 제시합니다.
-
-## 핵심 내용
-우리는 인간 운영자가 인간형 로봇을 체현할 수 있도록 설계된 아바타 시스템을 제시하며, 이탈리아 기술 연구소(IIT)에서 개발된 인간형 로봇 iCub3를 통해 검증되었습니다. 더 정확히 말하면, 이 논문의 기여는 두 가지입니다: 첫째, iCub 시리즈의 약 15년 개발 이후 최신 주요 개선 사항을 통합한 로봇 아바타로서 인간형 iCub3를 제시합니다; 둘째, 인간이 인간형 로봇을 체현할 수 있도록 하는 다용도 아바타 시스템을 제시하며, 여기에는 이동, 조작, 음성, 얼굴 표정과 같은 측면과 시각, 청각, 촉각, 무게, 접촉 감각을 포함한 포괄적인 감각 피드백이 포함됩니다. 우리는 각각 특정 요구 사항에 맞춰진 여러 아바타 아키텍처 인스턴스를 구현하여 시스템을 검증합니다. 첫째, 원격 수신자와의 언어적, 비언어적, 물리적 상호작용을 위한 최적화된 아키텍처를 평가했습니다. 이 테스트는 제노바에 있는 운영자와 베니스 비엔날레(베니스)에 있는 아바타(약 290km 거리)를 포함하여 운영자가 원격으로 이탈리아 미술 전시회를 방문할 수 있도록 했습니다. 둘째, 주요 세계 디지털 혁신 페스티벌인 We Make Future 쇼에서 라이브로 무대 위에서 수신자와의 물리적 협력 및 대중 참여를 위한 최적화된 아키텍처를 평가했습니다. 이 경우 운영자는 제노바에 있었고 아바타는 리미니(약 300km 거리)에서 작동하며, 약 2000명의 관객 앞에서 무대 위에 짐을 운반하도록 아바타에게 맡긴 수신자와 상호작용했습니다. 셋째, ANA Avatar XPrize 대회를 위해 iCub 팀이 구현한 아키텍처를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2203.06972v2
+
+## 개요
+이 시스템은 iCub 시리즈의 15년 기술 축적을 기반으로, 전신 운동 제어와 다중 감각 피드백을 지원하는 범용적 구현 아키텍처를 구축했습니다. 조작자는 헤드 마운트 디스플레이, 힘 피드백 장갑 등의 장치를 통해 시각, 청각, 촉각, 무게감, 접촉감 등 전방위 피드백을 얻을 수 있으며, 동시에 원격으로 로봇을 제어하여 보행, 파지, 음성 대화, 표정 동기화를 완료할 수 있습니다. 시스템은 세 가지 실제 시나리오에서 검증을 완료했습니다: 베네치아 비엔날레의 원격 예술 전시 관람(조작자는 제노바, 거리 290km), We Make Future 디지털 혁신 페스티벌의 무대 협업(조작자는 제노바, 거리 300km, 2000명의 관객과 상호작용), 그리고 ANA Avatar XPrize 대회의 참가 아키텍처입니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **로봇 플랫폼**: iCub3는 IIT가 개발한 3세대 iCub 휴머노이드 로봇으로, 약 15년간의 기술 반복 성과를 통합했습니다
+- **조작 단말**: 조작자는 VR 헤드셋, 힘 피드백 장갑, 전신 모션 추적 장치를 착용합니다
+- **피드백 모달리티**: 시각(스테레오 카메라), 청각(바이노럴 마이크), 촉각(손끝 압력 센서), 무게감(관절 토크 피드백), 접촉감(전신 피부 센서)
+- **제어 채널**: 보행, 파지, 음성 합성/인식, 표정 동기화 지원
+
+### 실험 검증
+1. **베네치아 비엔날레 원격 관람** (2022년)
+   - 조작자는 제노바에, 로봇은 베네치아에 위치, 거리 약 290km
+   - 원격 예술 전시의 음성 설명, 제스처 소통, 비언어적 상호작용 구현
+   - 네트워크 지연은 허용 가능한 범위 내로 제어
+
+2. **We Make Future 무대 협업** (2022년)
+   - 조작자는 제노바에, 로봇은 리미니에 위치, 거리 약 300km
+   - 로봇이 관객이 위탁한 하중을 받아 무대 지정 위치로 운반
+   - 현장 약 2000명의 관객이 실시간 상호작용 시연 관람
+
+3. **ANA Avatar XPrize 대회 아키텍처**
+   - iCub 팀이 특별히 최적화한 참가 버전
+   - 원격 조작 정밀도와 작업 완료 효율성에 중점
+
+### 핵심 매개변수
+- 원격 조작 거리: 290-300km
+- 상호작용 유형: 언어적 소통, 비언어적 제스처, 물리적 협업
+- 공개 코드: 프로젝트 코드는 오픈소스로 공개됨

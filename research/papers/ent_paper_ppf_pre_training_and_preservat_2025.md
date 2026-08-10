@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.09833v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.09833v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (683 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -61,11 +62,23 @@ PPF 框架成功结合了模型控制器的稳定性和强化学习的灵活性�
 ## Overview
 Humanoid locomotion is a challenging task due to its inherent complexity and high-dimensional dynamics, as well as the need to adapt to diverse and unpredictable environments. In this work, we introduce a novel learning framework for effectively training a humanoid locomotion policy that imitates the behavior of a model-based controller while extending its capabilities to handle more complex locomotion tasks, such as more challenging terrain and higher velocity commands. Our framework consists of three key components: pre-training through imitation of the model-based controller, fine-tuning via reinforcement learning, and model-assumption-based regularization (MAR) during fine-tuning. In particular, MAR aligns the policy with actions from the model-based controller only in states where the model assumption holds to prevent catastrophic forgetting. We evaluate the proposed framework through comprehensive simulation tests and hardware experiments on a full-size humanoid robot, Digit, demonstrating a forward speed of 1.5 m/s and robust locomotion across diverse terrains, including slippery, sloped, uneven, and sandy terrains.
 
-## 개요
-휴머노이드 보행은 본질적인 복잡성과 고차원 동역학, 그리고 다양하고 예측 불가능한 환경에 적응해야 하는 필요성으로 인해 매우 도전적인 과제입니다. 본 연구에서는 모델 기반 제어기의 동작을 모방하면서도 더 복잡한 보행 작업(예: 더 까다로운 지형 및 더 높은 속도 명령)을 처리할 수 있도록 성능을 확장하는 휴머노이드 보행 정책을 효과적으로 훈련하기 위한 새로운 학습 프레임워크를 소개합니다. 우리의 프레임워크는 세 가지 핵심 구성 요소로 이루어져 있습니다: 모델 기반 제어기를 모방한 사전 훈련, 강화 학습을 통한 미세 조정, 그리고 미세 조정 중 모델 가정 기반 정규화(MAR)입니다. 특히, MAR은 모델 가정이 유효한 상태에서만 정책을 모델 기반 제어기의 동작과 일치시켜 치명적 망각을 방지합니다. 제안된 프레임워크는 전신 휴머노이드 로봇 Digit을 대상으로 한 포괄적인 시뮬레이션 테스트와 하드웨어 실험을 통해 평가되었으며, 미끄러운 지형, 경사 지형, 고르지 않은 지형, 모래 지형 등 다양한 환경에서 1.5m/s의 전진 속도와 강건한 보행 성능을 입증했습니다.
-
-## 핵심 내용
-휴머노이드 보행은 본질적인 복잡성과 고차원 동역학, 그리고 다양하고 예측 불가능한 환경에 적응해야 하는 필요성으로 인해 매우 도전적인 과제입니다. 본 연구에서는 모델 기반 제어기의 동작을 모방하면서도 더 복잡한 보행 작업(예: 더 까다로운 지형 및 더 높은 속도 명령)을 처리할 수 있도록 성능을 확장하는 휴머노이드 보행 정책을 효과적으로 훈련하기 위한 새로운 학습 프레임워크를 소개합니다. 우리의 프레임워크는 세 가지 핵심 구성 요소로 이루어져 있습니다: 모델 기반 제어기를 모방한 사전 훈련, 강화 학습을 통한 미세 조정, 그리고 미세 조정 중 모델 가정 기반 정규화(MAR)입니다. 특히, MAR은 모델 가정이 유효한 상태에서만 정책을 모델 기반 제어기의 동작과 일치시켜 치명적 망각을 방지합니다. 제안된 프레임워크는 전신 휴머노이드 로봇 Digit을 대상으로 한 포괄적인 시뮬레이션 테스트와 하드웨어 실험을 통해 평가되었으며, 미끄러운 지형, 경사 지형, 고르지 않은 지형, 모래 지형 등 다양한 환경에서 1.5m/s의 전진 속도와 강건한 보행 성능을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.09833v2
+
+## 개요
+휴머노이드 로봇 운동은 고차원 동역학과 복잡한 환경 적응성으로 인해 매우 도전적입니다. PPF 프레임워크는 세 가지 핵심 단계를 통해 이 문제를 해결합니다: 먼저 모델 기반 컨트롤러를 모방하여 사전 학습을 수행하고, 이후 강화 학습을 사용하여 미세 조정하며, 미세 조정 과정에서 모델 가정 정규화(MAR)를 도입합니다. MAR은 모델 가정이 성립하는 상태에서만 정책과 컨트롤러의 행동을 정렬하여 재앙적 망각을 효과적으로 방지합니다. 이 프레임워크는 Digit 전신 휴머노이드 로봇에서 시뮬레이션 및 하드웨어 실험을 통해 검증되었으며, 평지, 경사로, 울퉁불퉁한 지형 및 모래 지형 등 다양한 지형에서 견고한 운동 능력을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+PPF 프레임워크는 세 가지 핵심 구성 요소를 포함합니다:
+- **사전 학습 단계**: 모델 기반 컨트롤러(예: MPC)의 행동을 모방하여 운동 정책을 초기화함으로써, 정책이 기본적인 운동 패턴을 학습하게 합니다.
+- **미세 조정 단계**: 강화 학습(RL)을 사용하여 정책을 추가로 최적화하고, 더 높은 속도 명령 및 더 도전적인 지형과 같은 복잡한 작업을 처리합니다.
+- **모델 가정 정규화(MAR)**: 미세 조정 과정에서 MAR은 모델 가정이 성립하는 상태에서만 정책 출력을 모델 컨트롤러의 행동과 일치하도록 강제합니다. 이는 정책이 새로운 행동을 탐색할 때 사전 학습 지식을 완전히 망각하는 것을 방지하여 재앙적 망각을 예방합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: 전신 휴머노이드 로봇 Digit.
+- **테스트 환경**: 시뮬레이션 테스트 및 실제 하드웨어 실험을 포함하며, 평지, 경사로, 울퉁불퉁한 지형 및 모래 지형 등 다양한 지형을 다룹니다.
+- **성능 지표**: 전방 속도 1.5 m/s에 도달하며, 모든 테스트 지형에서 견고한 운동을 구현합니다.
+
+### 핵심 결론
+PPF 프레임워크는 모델 컨트롤러의 안정성과 강화 학습의 유연성을 성공적으로 결합했으며, MAR 메커니즘을 통해 능력을 확장하면서도 기본 운동 성능을 유지합니다. 실험 결과, 이 방법은 복잡한 지형과 고속 명령에서 순수 모델 제어 또는 순수 강화 학습 방법보다 우수함을 보여줍니다.

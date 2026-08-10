@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.09031v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.09031v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (781 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,25 @@ sources:
 ## Overview
 Humanoid robot manipulation is a crucial research area for executing diverse human-level tasks, involving high-level semantic reasoning and low-level action generation. However, precise scene understanding and sample-efficient learning from human demonstrations remain critical challenges, severely hindering the applicability and generalizability of existing frameworks. This paper presents a novel RGMP-S, Recurrent Geometric-prior Multimodal Policy with Spiking features, facilitating both high-level skill reasoning and data-efficient motion synthesis. To ground high-level reasoning in physical reality, we leverage lightweight 2D geometric inductive biases to enable precise 3D scene understanding within the vision-language model. Specifically, we construct a Long-horizon Geometric Prior Skill Selector that effectively aligns the semantic instructions with spatial constraints, ultimately achieving robust generalization in unseen environments. For the data efficiency issue in robotic action generation, we introduce a Recursive Adaptive Spiking Network. We parameterize robot-object interactions via recursive spiking for spatiotemporal consistency, fully distilling long-horizon dynamic features while mitigating the overfitting issue in sparse demonstration scenarios. Extensive experiments are conducted across the Maniskill simulation benchmark and three heterogeneous real-world robotic systems, encompassing a custom-developed humanoid, a desktop manipulator, and a commercial robotic platform. Empirical results substantiate the superiority of our method over state-of-the-art baselines and validate the efficacy of the proposed modules in diverse generalization scenarios. To facilitate reproducibility, the source code and video demonstrations are publicly available at https://github.com/xtli12/RGMP-S.git.
 
-## 개요
-휴머노이드 로봇 조작은 다양한 인간 수준의 작업을 수행하기 위한 중요한 연구 분야로, 고수준의 의미론적 추론과 저수준의 행동 생성을 포함합니다. 그러나 정밀한 장면 이해와 인간 시연으로부터의 샘플 효율적 학습은 여전히 중요한 과제로 남아 있으며, 기존 프레임워크의 적용 가능성과 일반화 능력을 심각하게 저해합니다. 본 논문은 스파이킹 특징을 갖춘 순환 기하학적 사전 다중 모드 정책(RGMP-S)을 제시하여, 고수준의 기술 추론과 데이터 효율적인 동작 합성을 모두 촉진합니다. 고수준 추론을 물리적 현실에 기반하기 위해, 우리는 경량 2D 기하학적 귀납적 편향을 활용하여 비전-언어 모델 내에서 정밀한 3D 장면 이해를 가능하게 합니다. 구체적으로, 장기 기하학적 사전 기술 선택기를 구축하여 의미론적 명령을 공간적 제약 조건과 효과적으로 정렬함으로써, 보지 못한 환경에서 강건한 일반화를 궁극적으로 달성합니다. 로봇 행동 생성의 데이터 효율성 문제를 해결하기 위해, 우리는 순환 적응형 스파이킹 네트워크를 도입합니다. 순환 스파이킹을 통해 로봇-객체 상호작용을 매개변수화하여 시공간적 일관성을 확보하고, 장기 동적 특징을 완전히 추출하면서 희소 시연 시나리오에서의 과적합 문제를 완화합니다. 광범위한 실험은 Maniskill 시뮬레이션 벤치마크와 맞춤형 휴머노이드, 데스크탑 매니퓰레이터, 상업용 로봇 플랫폼을 포함한 세 가지 이기종 실제 로봇 시스템에서 수행되었습니다. 실증 결과는 최신 기준선에 비해 우리 방법의 우수성을 입증하고, 다양한 일반화 시나리오에서 제안된 모듈의 효능을 검증합니다. 재현성을 촉진하기 위해, 소스 코드와 비디오 데모는 https://github.com/xtli12/RGMP-S.git에서 공개적으로 제공됩니다.
-
-## 핵심 내용
-휴머노이드 로봇 조작은 다양한 인간 수준의 작업을 실행하기 위한 중요한 연구 분야로, 고수준의 의미론적 추론과 저수준의 행동 생성을 포함합니다. 그러나 정밀한 장면 이해와 인간 시연으로부터의 샘플 효율적 학습은 여전히 중요한 과제로 남아 있으며, 기존 프레임워크의 적용 가능성과 일반화 능력을 심각하게 저해합니다. 본 논문은 스파이킹 특징을 갖춘 순환 기하학적 사전 다중 모드 정책(RGMP-S)을 제시하여, 고수준의 기술 추론과 데이터 효율적인 동작 합성을 모두 촉진합니다. 고수준 추론을 물리적 현실에 기반하기 위해, 우리는 경량 2D 기하학적 귀납적 편향을 활용하여 비전-언어 모델 내에서 정밀한 3D 장면 이해를 가능하게 합니다. 구체적으로, 장기 기하학적 사전 기술 선택기를 구축하여 의미론적 명령을 공간적 제약 조건과 효과적으로 정렬함으로써, 보지 못한 환경에서 강건한 일반화를 궁극적으로 달성합니다. 로봇 행동 생성의 데이터 효율성 문제를 해결하기 위해, 우리는 순환 적응형 스파이킹 네트워크를 도입합니다. 순환 스파이킹을 통해 로봇-객체 상호작용을 매개변수화하여 시공간적 일관성을 확보하고, 장기 동적 특징을 완전히 추출하면서 희소 시연 시나리오에서의 과적합 문제를 완화합니다. 광범위한 실험은 Maniskill 시뮬레이션 벤치마크와 맞춤형 휴머노이드, 데스크탑 매니퓰레이터, 상업용 로봇 플랫폼을 포함한 세 가지 이기종 실제 로봇 시스템에서 수행되었습니다. 실증 결과는 최신 기준선에 비해 우리 방법의 우수성을 입증하고, 다양한 일반화 시나리오에서 제안된 모듈의 효능을 검증합니다. 재현성을 촉진하기 위해, 소스 코드와 비디오 데모는 https://github.com/xtli12/RGMP-S.git에서 공개적으로 제공됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.09031v1
+
+## 개요
+휴머노이드 로봇 조작은 장면 이해 정밀도가 낮고 인간 시연으로부터의 학습 효율이 부족하다는 두 가지 주요 과제에 직면해 있다. 이를 위해 본 논문은 RGMP-S(Recurrent Geometric-prior Multimodal Policy with Spiking features)를 제안하며, 기하학적 사전 지식과 스파이킹 특징을 결합하여 고수준 의미 추론과 저수준 동작 생성을 동시에 최적화한다. 이 방법은 경량 2D 기하학적 귀납 편향을 활용하여 시각-언어 모델의 3D 장면 인식 능력을 강화하고, 장기 시계열 기하학적 사전 지식 스킬 선택기를 설계하여 의미 명령과 공간 제약을 정렬한다. 동작 생성 측면에서는 순환 적응형 스파이킹 네트워크가 로봇-객체 상호작용의 시공간 일관성을 파라미터화하여 희소 시연 시나리오에서의 과적합 문제를 효과적으로 완화한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **고수준 추론**: Long-horizon Geometric Prior Skill Selector를 구축하여 의미 명령과 공간 기하학적 제약을 정렬하고, 미지 환경에서의 강건한 일반화를 구현한다.
+- **저수준 동작 생성**: Recursive Adaptive Spiking Network를 도입하여 순환 스파이킹 메커니즘을 통해 로봇-객체 상호작용을 파라미터화하고, 시공간 일관성을 유지하며 장기 시계열 동적 특징을 증류한다.
+
+### 실험 설정
+- **시뮬레이션 벤치마크**: Maniskill 시뮬레이션 환경에서 평가를 수행한다.
+- **실제 시스템**: 맞춤형 휴머노이드 로봇, 데스크톱 매니퓰레이터, 상용 로봇 플랫폼의 세 가지 이기종 플랫폼을 포함한다.
+- **비교 기준선**: 최신 최첨단 방법과 성능을 비교한다.
+
+### 주요 결과
+- 시뮬레이션 및 실제 시나리오에서 RGMP-S는 기존 기준선 방법보다 현저히 우수한 성능을 보인다.
+- 다양한 일반화 시나리오에서 각 모듈의 유효성이 검증되었으며, 특히 희소 시연 조건에서 더 강한 과적합 저항성을 나타낸다.
+
+### 결론
+본 논문에서 제안한 기하학적 사전 지식 및 스파이킹 특징 학습 프레임워크는 휴머노이드 로봇 조작에 일반화성과 데이터 효율성을 겸비한 솔루션을 제공한다. 코드와 비디오 데모는 오픈소스로 공개되어 있다: https://github.com/xtli12/RGMP-S.git.

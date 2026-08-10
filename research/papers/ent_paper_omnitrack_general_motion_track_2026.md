@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.23832v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.23832v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (991 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,30 @@ OmniTrack 通过解耦物理可行性与运动跟踪，有效解决了人形机�
 ## Overview
 Learning motion tracking from rich human motion data is a foundational task for achieving general control in humanoid robots, enabling them to perform diverse behaviors. However, discrepancies in morphology and dynamics between humans and robots, combined with data noise, introduce physically infeasible artifacts in reference motions, such as floating and penetration. During both training and execution, these artifacts create a conflict between following inaccurate reference motions and maintaining the robot's stability, hindering the development of a generalizable motion tracking policy. To address these challenges, we introduce OmniTrack, a general tracking framework that explicitly decouples physical feasibility from general motion tracking. In the first stage, a privileged generalist policy generates physically plausible motions that strictly adhere to the robot's dynamics via trajectory rollout in simulation. In the second stage, the general control policy is trained to track these physically feasible motions, ensuring stable and coherent control transfer to the real robot. Experiments show that OmniTrack improves tracking accuracy and demonstrates strong generalization to unseen motions. In real-world tests, OmniTrack achieves hour-long, consistent, and stable tracking, including complex acrobatic motions such as flips and cartwheels. Additionally, we show that OmniTrack supports human-style stable and dynamic online teleoperation, highlighting its robustness and adaptability to varying user inputs.
 
-## 개요
-풍부한 인간 동작 데이터로부터 모션 트래킹을 학습하는 것은 휴머노이드 로봇의 일반적인 제어를 달성하기 위한 기초적인 과제로, 로봇이 다양한 행동을 수행할 수 있게 합니다. 그러나 인간과 로봇 간의 형태 및 역학적 차이와 데이터 노이즈가 결합되어 참조 동작에 부유나 관통과 같은 물리적으로 실현 불가능한 인공물이 발생합니다. 훈련 및 실행 중에 이러한 인공물은 부정확한 참조 동작을 따르는 것과 로봇의 안정성을 유지하는 것 사이에 갈등을 일으켜 일반화 가능한 모션 트래킹 정책의 개발을 방해합니다. 이러한 문제를 해결하기 위해 우리는 OmniTrack을 소개합니다. 이는 물리적 실현 가능성을 일반적인 모션 트래킹에서 명시적으로 분리하는 일반 트래킹 프레임워크입니다. 첫 번째 단계에서는 특권을 가진 일반 정책이 시뮬레이션에서 궤적 롤아웃을 통해 로봇의 역학을 엄격히 준수하는 물리적으로 타당한 동작을 생성합니다. 두 번째 단계에서는 일반 제어 정책이 이러한 물리적으로 실현 가능한 동작을 추적하도록 훈련되어 실제 로봇으로의 안정적이고 일관된 제어 전이를 보장합니다. 실험 결과 OmniTrack은 트래킹 정확도를 향상시키고 보지 못한 동작에 대한 강력한 일반화를 보여줍니다. 실제 환경 테스트에서 OmniTrack은 플립과 카트휠과 같은 복잡한 곡예 동작을 포함하여 한 시간 동안 지속적이고 일관되며 안정적인 트래킹을 달성합니다. 또한 OmniTrack이 인간 스타일의 안정적이고 동적인 온라인 원격 조작을 지원하여 다양한 사용자 입력에 대한 견고성과 적응성을 강조함을 보여줍니다.
-
-## 핵심 내용
-풍부한 인간 동작 데이터로부터 모션 트래킹을 학습하는 것은 휴머노이드 로봇의 일반적인 제어를 달성하기 위한 기초적인 과제로, 로봇이 다양한 행동을 수행할 수 있게 합니다. 그러나 인간과 로봇 간의 형태 및 역학적 차이와 데이터 노이즈가 결합되어 참조 동작에 부유나 관통과 같은 물리적으로 실현 불가능한 인공물이 발생합니다. 훈련 및 실행 중에 이러한 인공물은 부정확한 참조 동작을 따르는 것과 로봇의 안정성을 유지하는 것 사이에 갈등을 일으켜 일반화 가능한 모션 트래킹 정책의 개발을 방해합니다. 이러한 문제를 해결하기 위해 우리는 OmniTrack을 소개합니다. 이는 물리적 실현 가능성을 일반적인 모션 트래킹에서 명시적으로 분리하는 일반 트래킹 프레임워크입니다. 첫 번째 단계에서는 특권을 가진 일반 정책이 시뮬레이션에서 궤적 롤아웃을 통해 로봇의 역학을 엄격히 준수하는 물리적으로 타당한 동작을 생성합니다. 두 번째 단계에서는 일반 제어 정책이 이러한 물리적으로 실현 가능한 동작을 추적하도록 훈련되어 실제 로봇으로의 안정적이고 일관된 제어 전이를 보장합니다. 실험 결과 OmniTrack은 트래킹 정확도를 향상시키고 보지 못한 동작에 대한 강력한 일반화를 보여줍니다. 실제 환경 테스트에서 OmniTrack은 플립과 카트휠과 같은 복잡한 곡예 동작을 포함하여 한 시간 동안 지속적이고 일관되며 안정적인 트래킹을 달성합니다. 또한 OmniTrack이 인간 스타일의 안정적이고 동적인 온라인 원격 조작을 지원하여 다양한 사용자 입력에 대한 견고성과 적응성을 강조함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.23832v1
+
+## 개요
+OmniTrack은 인간형 로봇의 모션 트래킹에서 인간과 로봇의 형태 및 동역학 차이, 데이터 노이즈로 인해 발생하는 물리적으로 불가능한 아티팩트(예: 부유, 관통) 문제를 해결하기 위해 2단계 분리 프레임워크를 제안합니다. 첫 번째 단계에서는 특권(privileged) 범용 정책이 시뮬레이션 궤적 롤아웃을 통해 로봇 동역학을 엄격히 준수하는 물리적으로 실현 가능한 모션을 생성합니다. 두 번째 단계에서는 범용 제어 정책이 이러한 모션을 추적하도록 학습하여 실제 로봇으로의 안정적이고 연속적인 전이를 보장합니다. 실험 결과, OmniTrack은 추적 정밀도를 향상시키고 보지 못한 모션에 대한 강력한 일반화 능력을 보여주었으며, 실제 테스트에서 공중제비, 옆돌기 등 복잡한 곡예 동작을 포함한 최대 1시간의 안정적인 추적을 달성했습니다. 또한 OmniTrack은 인간 스타일의 안정적이고 동적인 온라인 원격 조작을 지원하여 다양한 사용자 입력에 대한 견고성과 적응성을 강조합니다.
+
+## 핵심 내용
+### 방법
+OmniTrack은 물리적 실현 가능성을 범용 모션 트래킹에서 분리하는 2단계 분리 아키텍처를 채택합니다:
+- **1단계: 특권 범용 정책**  
+  시뮬레이션 환경에서 궤적 롤아웃을 통해 로봇 동역학을 엄격히 준수하는 물리적으로 실현 가능한 모션을 생성합니다. 이 정책은 로봇 상태, 동역학 매개변수와 같은 특권 정보를 활용하여 부유, 관통 등의 아티팩트가 없는 모션을 보장합니다.
+- **2단계: 범용 제어 정책**  
+  1단계에서 생성된 물리적으로 실현 가능한 모션을 추적하도록 정책을 훈련하여 시뮬레이션에서 실제 로봇으로의 안정적인 제어 전이를 구현합니다. 이 정책은 관절 각도, IMU 데이터와 같은 관측 가능한 정보에만 의존하며 특권 정보는 필요하지 않습니다.
+
+### 실험 설정
+- **훈련 데이터**: 걷기, 점프, 곡예 등 다양한 행동을 포함하는 풍부한 인간 모션 데이터셋을 사용합니다.
+- **시뮬레이션 환경**: 물리 엔진 기반 시뮬레이션 플랫폼으로, 물리적으로 실현 가능한 모션을 생성하고 정책을 훈련하는 데 사용됩니다.
+- **실제 테스트**: 실제 인간형 로봇에 배포하여 장시간 추적 안정성과 일반화 능력을 평가합니다.
+
+### 주요 수치 및 결과
+- **추적 정밀도**: OmniTrack은 기준 방법 대비 추적 정밀도를 크게 향상시키며, 특히 공중제비, 옆돌기와 같은 복잡한 모션에서 두드러진 성과를 보입니다.
+- **일반화 능력**: 훈련 세트에 없는 동작과 같은 보지 못한 모션에 대해 재훈련 없이 강력한 일반화를 보여줍니다.
+- **실제 테스트**: 고동적 곡예 동작을 포함한 최대 1시간의 연속적이고 안정적인 추적을 구현합니다.
+- **온라인 원격 조작**: 인간 스타일의 안정적이고 동적인 원격 조작을 지원하며, 빠른 변화 또는 느린 명령과 같은 다양한 사용자 입력에 적응하여 견고성을 검증합니다.
+
+### 결론
+OmniTrack은 물리적 실현 가능성과 모션 트래킹을 분리함으로써 인간 데이터에서 학습할 때 인간형 로봇에서 발생하는 아티팩트 문제를 효과적으로 해결하고, 높은 정밀도, 장시간 안정성, 일반화된 제어를 달성합니다. 이 2단계 프레임워크는 범용 인간형 로봇 제어의 새로운 패러다임을 제시하며, 곡예, 원격 조작과 같은 복잡한 시나리오에서의 실제 적용 가능성을 보여줍니다.

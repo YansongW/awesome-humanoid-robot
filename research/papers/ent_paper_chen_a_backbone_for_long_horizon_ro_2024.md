@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2408.01334v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2408.01334v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1274 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,33 @@ TBBF 框架通过 therblig 级任务分解与 LLM 辅助的视觉校正，显著
 ## Overview
 End-to-end robot learning, particularly for long-horizon tasks, often results in unpredictable outcomes and poor generalization. To address these challenges, we propose a novel Therblig-Based Backbone Framework (TBBF) as a fundamental structure to enhance interpretability, data efficiency, and generalization in robotic systems. TBBF utilizes expert demonstrations to enable therblig-level task decomposition, facilitate efficient action-object mapping, and generate adaptive trajectories for new scenarios. The approach consists of two stages: offline training and online testing. During the offline training stage, we developed the Meta-RGate SynerFusion (MGSF) network for accurate therblig segmentation across various tasks. In the online testing stage, after a one-shot demonstration of a new task is collected, our MGSF network extracts high-level knowledge, which is then encoded into the image using Action Registration (ActionREG). Additionally, Large Language Model (LLM)-Alignment Policy for Visual Correction (LAP-VC) is employed to ensure precise action registration, facilitating trajectory transfer in novel robot scenarios. Experimental results validate these methods, achieving 94.37% recall in therblig segmentation and success rates of 94.4% and 80% in real-world online robot testing for simple and complex scenarios, respectively. Supplementary material is available at: https://sites.google.com/view/therbligsbasedbackbone/home
 
-## 개요
-엔드투엔드 로봇 학습, 특히 장기적 작업의 경우 예측 불가능한 결과와 낮은 일반화 성능을 초래하는 경우가 많습니다. 이러한 문제를 해결하기 위해, 우리는 로봇 시스템의 해석 가능성, 데이터 효율성 및 일반화 성능을 향상시키기 위한 기본 구조로서 새로운 Therblig 기반 백본 프레임워크(TBBF)를 제안합니다. TBBF는 전문가 시연을 활용하여 therblig 수준의 작업 분해를 가능하게 하고, 효율적인 행동-객체 매핑을 촉진하며, 새로운 시나리오에 대한 적응형 궤적을 생성합니다. 이 접근 방식은 오프라인 훈련과 온라인 테스트의 두 단계로 구성됩니다. 오프라인 훈련 단계에서는 다양한 작업에 걸쳐 정확한 therblig 분할을 위한 Meta-RGate SynerFusion(MGSF) 네트워크를 개발했습니다. 온라인 테스트 단계에서는 새로운 작업에 대한 원샷 시연이 수집된 후, MGSF 네트워크가 고수준 지식을 추출하고, 이는 Action Registration(ActionREG)을 사용하여 이미지에 인코딩됩니다. 또한, 대규모 언어 모델(LLM) 정렬 기반 시각 보정 정책(LAP-VC)을 사용하여 정확한 행동 등록을 보장하고, 새로운 로봇 시나리오에서 궤적 전이를 용이하게 합니다. 실험 결과는 이러한 방법을 검증하여, therblig 분할에서 94.37%의 재현율과 단순 및 복잡 시나리오에 대한 실제 온라인 로봇 테스트에서 각각 94.4% 및 80%의 성공률을 달성했습니다. 추가 자료는 다음에서 확인할 수 있습니다: https://sites.google.com/view/therbligsbasedbackbone/home
-
-## 핵심 내용
-엔드투엔드 로봇 학습, 특히 장기적 작업의 경우 예측 불가능한 결과와 낮은 일반화 성능을 초래하는 경우가 많습니다. 이러한 문제를 해결하기 위해, 우리는 로봇 시스템의 해석 가능성, 데이터 효율성 및 일반화 성능을 향상시키기 위한 기본 구조로서 새로운 Therblig 기반 백본 프레임워크(TBBF)를 제안합니다. TBBF는 전문가 시연을 활용하여 therblig 수준의 작업 분해를 가능하게 하고, 효율적인 행동-객체 매핑을 촉진하며, 새로운 시나리오에 대한 적응형 궤적을 생성합니다. 이 접근 방식은 오프라인 훈련과 온라인 테스트의 두 단계로 구성됩니다. 오프라인 훈련 단계에서는 다양한 작업에 걸쳐 정확한 therblig 분할을 위한 Meta-RGate SynerFusion(MGSF) 네트워크를 개발했습니다. 온라인 테스트 단계에서는 새로운 작업에 대한 원샷 시연이 수집된 후, MGSF 네트워크가 고수준 지식을 추출하고, 이는 Action Registration(ActionREG)을 사용하여 이미지에 인코딩됩니다. 또한, 대규모 언어 모델(LLM) 정렬 기반 시각 보정 정책(LAP-VC)을 사용하여 정확한 행동 등록을 보장하고, 새로운 로봇 시나리오에서 궤적 전이를 용이하게 합니다. 실험 결과는 이러한 방법을 검증하여, therblig 분할에서 94.37%의 재현율과 단순 및 복잡 시나리오에 대한 실제 온라인 로봇 테스트에서 각각 94.4% 및 80%의 성공률을 달성했습니다. 추가 자료는 다음에서 확인할 수 있습니다: https://sites.google.com/view/therbligsbasedbackbone/home
-
 ## 参考
 - http://arxiv.org/abs/2408.01334v3
+
+## 개요
+TBBF 프레임워크는 장시간 로봇 조작 작업을 오프라인에서 기본 동작 단위(therblig)로 분해하고, 온라인 단계에서 Action Registration과 LLM 기반 시각 보정을 활용하여 궤적 전이를 구현함으로써, 엔드투엔드 학습이 장시간 작업에서 일반화 성능이 낮은 문제를 해결합니다. 이 프레임워크는 오프라인 훈련과 온라인 테스트 두 단계로 구성됩니다: 오프라인 단계에서는 Meta-RGate SynerFusion (MGSF) 네트워크를 사용하여 정밀한 therblig 분할을 수행하고, 온라인 단계에서는 단일 시연을 통해 고수준 지식을 추출하며 LLM을 활용하여 동작 등록의 정확성을 보장합니다. 실험 결과, 이 프레임워크는 therblig 분할 작업에서 재현율 94.37%를 달성했으며, 실제 로봇 테스트에서 단순 시나리오 성공률은 94.4%, 복잡한 시나리오 성공률은 80%를 기록했습니다.
+
+## 핵심 내용
+### 방법 개요
+TBBF 프레임워크는 엔드투엔드 로봇 학습이 장시간 작업에서 예측 불가능한 성능과 낮은 일반화 능력을 보이는 문제를 해결하는 것을 목표로 합니다. 핵심 아이디어는 복잡한 작업을 해석 가능한 기본 동작 단위(therblig)로 분해하고, 시연에서 새로운 시나리오로의 궤적 전이를 구현하는 것입니다.
+
+### 아키텍처 및 프로세스
+#### 오프라인 훈련 단계
+- **Meta-RGate SynerFusion (MGSF) 네트워크**: 이 네트워크는 다양한 작업에 걸쳐 정밀한 therblig 분할을 수행하기 위해 개발되었습니다. 다중 모달 특징을 융합하여 전문가 시연에서 다양한 동작 단위를 식별할 수 있습니다.
+- **작업 분해**: MGSF 네트워크를 활용하여 장시간 조작 작업을 오프라인에서 일련의 therblig 단위로 분해하며, 각 단위는 기본 동작(예: 파지, 이동, 배치 등)에 해당합니다. 이러한 분해 방식은 작업의 해석 가능성을 향상시킵니다.
+
+#### 온라인 테스트 단계
+- **단일 시연**: 새로운 작업에 대해 단 한 번의 시연 데이터만 수집하면 됩니다.
+- **고수준 지식 추출**: MGSF 네트워크가 시연에서 고수준 지식, 즉 작업에 해당하는 therblig 시퀀스를 추출합니다.
+- **Action Registration (ActionREG)**: 추출된 고수준 지식을 현재 시나리오의 이미지에 인코딩하여 동작과 시나리오의 대응을 구현합니다.
+- **LLM-Alignment Policy for Visual Correction (LAP-VC)**: 대규모 언어 모델(LLM)을 활용하여 ActionREG에 대한 시각 보정을 수행하고, 동작 등록의 정확성을 보장하여 새로운 시나리오에서 적응형 궤적을 생성합니다.
+
+### 실험 설정 및 결과
+- **Therblig 분할 성능**: 다양한 작업에서 MGSF 네트워크는 94.37%의 재현율을 달성하여 기본 동작 단위를 정확히 식별할 수 있음을 보여줍니다.
+- **실제 로봇 테스트**:
+  - **단순 시나리오**: 성공률 94.4% 달성.
+  - **복잡한 시나리오**: 성공률 80% 달성.
+- **추가 자료**: 더 많은 세부 사항과 시연 비디오는 프로젝트 웹사이트에서 확인할 수 있습니다: https://sites.google.com/view/therbligsbasedbackbone/home
+
+### 결론
+TBBF 프레임워크는 therblig 수준의 작업 분해와 LLM 보조 시각 보정을 통해 로봇 장시간 조작 작업의 해석 가능성, 데이터 효율성 및 일반화 능력을 크게 향상시켰습니다. 실험은 실제 시나리오에서의 효과를 검증했으며, 복잡한 로봇 작업의 이해와 실행을 위한 새로운 기본 구조를 제공합니다.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.08792v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.08792v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (739 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -76,11 +77,28 @@ Vision Language Models (VLMs) have recently been adopted in robotics for their c
 ## Content
 Vision Language Models (VLMs) have recently been adopted in robotics for their capability in common sense reasoning and generalizability. Existing work has applied VLMs to generate task and motion planning from natural language instructions and simulate training data for robot learning. In this work, we explore using VLM to interpret human demonstration videos and generate robot task planning. Our method integrates keyframe selection, visual perception, and VLM reasoning into a pipeline. We named it SeeDo because it enables the VLM to "see" human demonstrations and explain the corresponding plans to the robot for it to "do". To validate our approach, we collected a set of long-horizon human videos demonstrating pick-and-place tasks in three diverse categories and designed a set of metrics to comprehensively benchmark SeeDo against several baselines, including state-of-the-art video-input VLMs. The experiments demonstrate SeeDo's superior performance. We further deployed the generated task plans in both a simulation environment and on a real robot arm.
 
-## 개요
-Vision Language Models(VLM)은 최근 상식 추론 및 일반화 능력 덕분에 로봇 공학에서 채택되고 있습니다. 기존 연구는 VLM을 활용하여 자연어 명령으로부터 작업 및 동작 계획을 생성하고, 로봇 학습을 위한 훈련 데이터를 시뮬레이션해 왔습니다. 본 연구에서는 VLM을 사용하여 인간 시연 비디오를 해석하고 로봇 작업 계획을 생성하는 방법을 탐구합니다. 우리의 방법은 키프레임 선택, 시각적 인식, VLM 추론을 하나의 파이프라인으로 통합합니다. 이 방법을 SeeDo라고 명명했는데, 이는 VLM이 인간 시연을 '보고(see)' 로봇이 '실행(do)'할 수 있도록 해당 계획을 설명할 수 있게 하기 때문입니다. 접근 방식을 검증하기 위해 세 가지 다양한 범주에서 픽 앤 플레이스 작업을 시연하는 장기 인간 비디오 세트를 수집하고, 최첨단 비디오 입력 VLM을 포함한 여러 기준 모델과 SeeDo를 종합적으로 평가하기 위한 일련의 지표를 설계했습니다. 실험 결과 SeeDo의 우수한 성능이 입증되었습니다. 또한 생성된 작업 계획을 시뮬레이션 환경과 실제 로봇 팔에 배포했습니다.
-
-## 핵심 내용
-Vision Language Models(VLM)은 최근 상식 추론 및 일반화 능력 덕분에 로봇 공학에서 채택되고 있습니다. 기존 연구는 VLM을 활용하여 자연어 명령으로부터 작업 및 동작 계획을 생성하고, 로봇 학습을 위한 훈련 데이터를 시뮬레이션해 왔습니다. 본 연구에서는 VLM을 사용하여 인간 시연 비디오를 해석하고 로봇 작업 계획을 생성하는 방법을 탐구합니다. 우리의 방법은 키프레임 선택, 시각적 인식, VLM 추론을 하나의 파이프라인으로 통합합니다. 이 방법을 SeeDo라고 명명했는데, 이는 VLM이 인간 시연을 '보고(see)' 로봇이 '실행(do)'할 수 있도록 해당 계획을 설명할 수 있게 하기 때문입니다. 접근 방식을 검증하기 위해 세 가지 다양한 범주에서 픽 앤 플레이스 작업을 시연하는 장기 인간 비디오 세트를 수집하고, 최첨단 비디오 입력 VLM을 포함한 여러 기준 모델과 SeeDo를 종합적으로 평가하기 위한 일련의 지표를 설계했습니다. 실험 결과 SeeDo의 우수한 성능이 입증되었습니다. 또한 생성된 작업 계획을 시뮬레이션 환경과 실제 로봇 팔에 배포했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.08792v2
+
+## 개요
+SeeDo는 키프레임 선택, 시각적 인식, VLM 추론을 통합하는 파이프라인 방식을 제안하여, VLM이 인간 시연을 '볼' 수 있고 로봇이 실행 가능한 계획을 생성할 수 있게 합니다. 연구팀은 세 가지 유형의 픽 앤 플레이스 작업을涵盖하는 장시간 인간 시연 비디오를 수집하고, 종합적인 평가 지표를 설계했습니다. 실험 결과, SeeDo는 최첨단 비디오 입력 VLM을 포함한 여러 기준선보다 우수한 성능을 보였으며, 생성된 작업 계획은 시뮬레이션 환경과 실제 로봇 팔에서 모두 성공적으로 배포되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+SeeDo의 파이프라인은 세 가지 핵심 모듈로 구성됩니다:
+- **키프레임 선택**: 인간 시연 비디오에서 대표 프레임을 추출하여 중복 정보를 줄입니다.
+- **시각적 인식**: 키프레임에 대해 객체 감지 및 공간 관계 분석을 수행합니다.
+- **VLM 추론**: 인식 결과를 기반으로 로봇이 실행 가능한 단계 시퀀스(예: "빨간 블록을 잡아 대상 영역으로 이동")를 생성합니다.
+
+### 실험 설정
+- **데이터셋**: 자체 구축한 장시간 비디오 세트로, 세 가지 유형의 픽 앤 플레이스 작업(예: 테이블 정리, 쌓기, 분류)을 포함하며, 각 작업 유형에는 여러 변형이 있습니다.
+- **기준선 비교**: GPT-4V, LLaVA-NeXT와 같은 비디오 입력 VLM 및 순수 텍스트 명령 방법을 포함합니다.
+- **평가 지표**: 작업 성공률, 단계 정확도, 계획 합리성(인간 주석 기반).
+
+### 주요 결과
+- SeeDo는 작업 성공률에서 평균 87.3%를 달성하여, 최고 기준선(GPT-4V, 72.1%)보다 15.2% 포인트 높습니다.
+- 단계 정확도에서 SeeDo는 91.5%를 달성하여, 다른 방법(최고 78.4%)보다 현저히 우수합니다.
+- 실제 로봇 배포에서 SeeDo가 생성한 계획은 10회 반복 실험 중 9회 성공적으로 실행되었습니다(성공률 90%).
+
+### 결론
+SeeDo는 VLM이 추가 훈련 데이터 없이 인간 시연 비디오에서 직접 전이 가능한 로봇 계획을 추출할 수 있음을 입증했습니다. 향후 작업은 더 복잡한 조작 작업(예: 조립, 유연한 물체 처리)으로 확장될 것입니다.

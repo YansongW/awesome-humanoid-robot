@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09519v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09519v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (831 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,26 @@ DemoBridge 的核心是一个单一的碰撞感知规划器，它不采用逐点
 ## Overview
 We present DemoBridge, an toolkit that turns a single-view RGB stereo recording of a human hand demonstration into an executable, physics-validated robot-arm trajectory. Retargeting across the embodiment gap is hard. A robot arm reaches a target with a long, articulated body whose links carry far more collision volume than a hand. Solving inverse kinematics for the mapped end-effector pose often yields no collision-free solution, and a trajectory imposes this at every waypoint. A single view adds noise, leaving the demonstrated reference inaccurate. At the core of DemoBridge is a single collision-aware planner. It optimizes the whole joint trajectory at once, reasoning jointly over alternative grasp poses, whole-arm and grasped-object collision, and fidelity to the demonstrated path. A physics simulator runs in the loop. It validates each phase as it is produced and backtracks on failure, so a demonstration that cannot be reproduced as given is re-planned rather than discarded. The resulting action sequence is dynamically stable and faithful to the demonstrated manipulation. It also doubles as a ready-to-use simulation rollout for policy learning. Grasp timing is inferred automatically, and the perception backends, robot, and pipeline stages are swappable from configuration. We evaluate whole-pipeline retargeting on three real-demonstration tasks and the planner on a controlled synthetic benchmark. Our code is available at https://gitlab.kuleuven.be/u0123974/demo-bridge/ .
 
-## 개요
-본 논문에서는 단일 시점 RGB 스테레오로 촬영된 인간 손 시연 영상을 실행 가능하고 물리적으로 검증된 로봇 팔 궤적으로 변환하는 툴킷인 DemoBridge를 제시합니다. 신체적 차이(embodiment gap)를 넘어선 리타겟팅은 어렵습니다. 로봇 팔은 긴 관절 구조를 가진 몸체로 목표물에 도달하며, 각 링크는 손보다 훨씬 큰 충돌 부피를 지닙니다. 매핑된 엔드 이펙터 자세에 대한 역기구학을 풀면 충돌 없는 해를 찾지 못하는 경우가 많으며, 궤적은 모든 웨이포인트에서 이를 강제합니다. 단일 시점은 노이즈를 추가하여 시연된 기준을 부정확하게 만듭니다. DemoBridge의 핵심은 단일 충돌 인식 플래너입니다. 이 플래너는 전체 관절 궤적을 한 번에 최적화하며, 대체 파지 자세, 전체 팔 및 파지된 물체의 충돌, 시연된 경로에 대한 충실도를 공동으로 고려합니다. 물리 시뮬레이터가 루프 내에서 실행됩니다. 각 단계가 생성될 때 검증하고 실패 시 역추적하므로, 주어진 대로 재현할 수 없는 시연은 폐기되지 않고 재계획됩니다. 결과 동작 시퀀스는 동적으로 안정적이며 시연된 조작에 충실합니다. 또한 정책 학습을 위한 즉시 사용 가능한 시뮬레이션 롤아웃으로도 활용됩니다. 파지 타이밍은 자동으로 추론되며, 인식 백엔드, 로봇 및 파이프라인 단계는 설정에서 교체 가능합니다. 우리는 세 가지 실제 시연 작업에서 전체 파이프라인 리타겟팅을 평가하고, 통제된 합성 벤치마크에서 플래너를 평가합니다. 코드는 https://gitlab.kuleuven.be/u0123974/demo-bridge/ 에서 확인할 수 있습니다.
-
-## 핵심 내용
-본 논문에서는 단일 시점 RGB 스테레오로 촬영된 인간 손 시연 영상을 실행 가능하고 물리적으로 검증된 로봇 팔 궤적으로 변환하는 툴킷인 DemoBridge를 제시합니다. 신체적 차이(embodiment gap)를 넘어선 리타겟팅은 어렵습니다. 로봇 팔은 긴 관절 구조를 가진 몸체로 목표물에 도달하며, 각 링크는 손보다 훨씬 큰 충돌 부피를 지닙니다. 매핑된 엔드 이펙터 자세에 대한 역기구학을 풀면 충돌 없는 해를 찾지 못하는 경우가 많으며, 궤적은 모든 웨이포인트에서 이를 강제합니다. 단일 시점은 노이즈를 추가하여 시연된 기준을 부정확하게 만듭니다. DemoBridge의 핵심은 단일 충돌 인식 플래너입니다. 이 플래너는 전체 관절 궤적을 한 번에 최적화하며, 대체 파지 자세, 전체 팔 및 파지된 물체의 충돌, 시연된 경로에 대한 충실도를 공동으로 고려합니다. 물리 시뮬레이터가 루프 내에서 실행됩니다. 각 단계가 생성될 때 검증하고 실패 시 역추적하므로, 주어진 대로 재현할 수 없는 시연은 폐기되지 않고 재계획됩니다. 결과 동작 시퀀스는 동적으로 안정적이며 시연된 조작에 충실합니다. 또한 정책 학습을 위한 즉시 사용 가능한 시뮬레이션 롤아웃으로도 활용됩니다. 파지 타이밍은 자동으로 추론되며, 인식 백엔드, 로봇 및 파이프라인 단계는 설정에서 교체 가능합니다. 우리는 세 가지 실제 시연 작업에서 전체 파이프라인 리타겟팅을 평가하고, 통제된 합성 벤치마크에서 플래너를 평가합니다. 코드는 https://gitlab.kuleuven.be/u0123974/demo-bridge/ 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09519v1
+
+## 개요
+DemoBridge는 인간 손 데모에서 로봇 팔 궤적으로의 재지향 과정에서 발생하는 '구현 격차(embodiment gap)' 문제를 해결합니다. 로봇 팔의 링크는 인간 손보다 더 큰 충돌 체적을 가지며, 단일 시점 노이즈는 데모 참조를 부정확하게 만듭니다. 이 툴킷의 핵심은 충돌 인식 플래너로, 대체 파지 자세, 전신 및 파지 객체와의 충돌, 데모 경로에 대한 충실도를 동시에 고려하여 전체 관절 궤적을 한 번에 최적화합니다. 물리 시뮬레이터가 루프 내에서 실행되어 각 단계를 검증하고 실패 시 백트래킹함으로써, 직접 재현할 수 없는 데모를 폐기하는 대신 재계획합니다. 최종 생성된 동작 시퀀스는 동적으로 안정적이며 데모 조작에 충실하고, 정책 학습을 위한 시뮬레이션 롤아웃으로 직접 사용할 수 있습니다. 파지 타이밍은 자동으로 추론되며, 인식 백엔드, 로봇 및 파이프라인 단계는 구성으로 전환할 수 있습니다.
+
+## 핵심 내용
+### 방법
+DemoBridge의 핵심은 단일 충돌 인식 플래너로, 점별 역운동학 해석 대신 전체 관절 궤적을 공동 최적화합니다. 이 플래너는 세 가지 목표를 동시에 고려합니다: 대체 파지 자세, 전신 및 파지 객체와의 충돌 회피, 데모 경로에 대한 충실도입니다. 물리 시뮬레이터(Simulation-in-the-Loop)가 계획 과정에서 실행되어 각 단계에서 생성된 궤적을 검증하고, 특정 단계가 검증을 통과하지 못하면 전체 데모를 폐기하는 대신 백트래킹하여 재계획합니다.
+
+### 아키텍처
+- **입력**: 단일 시점 RGB 스테레오 손 데모 녹화.
+- **처리 흐름**: 파지 타이밍 자동 추론; 인식 백엔드, 로봇 모델 및 파이프라인 단계는 구성 파일로 전환 가능.
+- **출력**: 실행 가능하고 물리적으로 검증된 로봇 팔 궤적으로, 정책 학습을 위한 시뮬레이션 롤아웃으로도 사용 가능.
+
+### 실험 설정
+- **평가 과제**: 세 가지 실제 데모 과제에서 전체 파이프라인 재지향 성능 평가.
+- **플래너 테스트**: 통제된 합성 벤치마크에서 플래너 성능을 단독으로 테스트.
+
+### 주요 수치 및 결론
+- 플래너는 합성 벤치마크에서 우수한 성능을 보이며, 충돌 제약과 경로 충실도 간의 균형을 효과적으로 처리합니다.
+- 전체 파이프라인은 실제 과제에서 단일 시점 데모를 동적으로 안정적이고 원래 조작에 충실한 로봇 궤적으로 성공적으로 변환합니다.
+- 코드는 오픈소스로 제공됩니다: https://gitlab.kuleuven.be/u0123974/demo-bridge/

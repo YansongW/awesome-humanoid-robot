@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11709v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11709v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (814 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,26 @@ EgoDex 利用 Apple Vision Pro 的头戴式摄像头与设备端 SLAM 技术，�
 ## Overview
 Imitation learning for manipulation has a well-known data scarcity problem. Unlike natural language and 2D computer vision, there is no Internet-scale corpus of data for dexterous manipulation. One appealing option is egocentric human video, a passively scalable data source. However, existing large-scale datasets such as Ego4D do not have native hand pose annotations and do not focus on object manipulation. To this end, we use Apple Vision Pro to collect EgoDex: the largest and most diverse dataset of dexterous human manipulation to date. EgoDex has 829 hours of egocentric video with paired 3D hand and finger tracking data collected at the time of recording, where multiple calibrated cameras and on-device SLAM can be used to precisely track the pose of every joint of each hand. The dataset covers a wide range of diverse manipulation behaviors with everyday household objects in 194 different tabletop tasks ranging from tying shoelaces to folding laundry. Furthermore, we train and systematically evaluate imitation learning policies for hand trajectory prediction on the dataset, introducing metrics and benchmarks for measuring progress in this increasingly important area. By releasing this large-scale dataset, we hope to push the frontier of robotics, computer vision, and foundation models. EgoDex is publicly available for download at https://github.com/apple/ml-egodex.
 
-## 개요
-조작을 위한 모방 학습은 잘 알려진 데이터 부족 문제를 겪고 있습니다. 자연어 및 2D 컴퓨터 비전과 달리, 정교한 조작을 위한 인터넷 규모의 데이터 코퍼스는 존재하지 않습니다. 한 가지 매력적인 대안은 수동적으로 확장 가능한 데이터 소스인 자기중심적 인간 비디오입니다. 그러나 Ego4D와 같은 기존의 대규모 데이터셋은 기본적인 손 자세 주석이 없으며 객체 조작에 초점을 맞추지 않습니다. 이에 따라, 우리는 Apple Vision Pro를 사용하여 EgoDex를 수집했습니다: 현재까지 가장 크고 다양한 정교한 인간 조작 데이터셋입니다. EgoDex는 829시간의 자기중심적 비디오와 녹화 시점에 수집된 3D 손 및 손가락 추적 데이터를 포함하며, 여러 보정된 카메라와 기기 내 SLAM을 사용하여 각 손의 모든 관절 자세를 정밀하게 추적할 수 있습니다. 이 데이터셋은 신발 끈 묶기부터 빨래 개기까지 194가지 다양한 탁상 작업에서 일상적인 가정용 물체를 사용한 다양한 조작 행동을 포괄합니다. 또한, 우리는 데이터셋에서 손 궤적 예측을 위한 모방 학습 정책을 훈련하고 체계적으로 평가하며, 이 점점 더 중요해지는 분야의 진전을 측정하기 위한 지표와 벤치마크를 도입합니다. 이 대규모 데이터셋을 공개함으로써 로봇 공학, 컴퓨터 비전 및 기초 모델의 경계를 넓히기를 희망합니다. EgoDex는 https://github.com/apple/ml-egodex에서 공개적으로 다운로드 가능합니다.
-
-## 핵심 내용
-조작을 위한 모방 학습은 잘 알려진 데이터 부족 문제를 겪고 있습니다. 자연어 및 2D 컴퓨터 비전과 달리, 정교한 조작을 위한 인터넷 규모의 데이터 코퍼스는 존재하지 않습니다. 한 가지 매력적인 대안은 수동적으로 확장 가능한 데이터 소스인 자기중심적 인간 비디오입니다. 그러나 Ego4D와 같은 기존의 대규모 데이터셋은 기본적인 손 자세 주석이 없으며 객체 조작에 초점을 맞추지 않습니다. 이에 따라, 우리는 Apple Vision Pro를 사용하여 EgoDex를 수집했습니다: 현재까지 가장 크고 다양한 정교한 인간 조작 데이터셋입니다. EgoDex는 829시간의 자기중심적 비디오와 녹화 시점에 수집된 3D 손 및 손가락 추적 데이터를 포함하며, 여러 보정된 카메라와 기기 내 SLAM을 사용하여 각 손의 모든 관절 자세를 정밀하게 추적할 수 있습니다. 이 데이터셋은 신발 끈 묶기부터 빨래 개기까지 194가지 다양한 탁상 작업에서 일상적인 가정용 물체를 사용한 다양한 조작 행동을 포괄합니다. 또한, 우리는 데이터셋에서 손 궤적 예측을 위한 모방 학습 정책을 훈련하고 체계적으로 평가하며, 이 점점 더 중요해지는 분야의 진전을 측정하기 위한 지표와 벤치마크를 도입합니다. 이 대규모 데이터셋을 공개함으로써 로봇 공학, 컴퓨터 비전 및 기초 모델의 경계를 넓히기를 희망합니다. EgoDex는 https://github.com/apple/ml-egodex에서 공개적으로 다운로드 가능합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.11709v3
+
+## 개요
+EgoDex는 Apple Vision Pro의 헤드 장착 카메라와 온디바이스 SLAM 기술을 활용하여, 녹화 시점에 다중 시점 보정 영상과 각 손가락 관절의 정밀한 3D 포즈를 동시에 수집합니다. 이는 기존 데이터셋이 손에 대한 주석이 부족하거나 비조작 장면에만 초점을 맞춘 한계를 피합니다. 데이터셋은 신발 끈 묶기부터 옷 접기까지 194가지 일상 사물 조작 작업을 포함하며, 총 829시간 분량으로 현재 가장 크고 다양성이 풍부한 손재주 조작 데이터셋입니다. 이 데이터를 기반으로 저자들은 손 궤적 예측을 위한 모방 학습 정책을 훈련하고 체계적으로 평가했으며, 로봇 공학, 컴퓨터 비전 및 기초 모델의 해당 분야 발전을 촉진하기 위해 새로운 평가 지표와 벤치마크를 도입했습니다.
+
+## 핵심 내용
+### 데이터 부족 문제와 해결 방안
+- 손재주 조작의 모방 학습은 오랫동안 데이터 부족에 시달려 왔으며, 자연어 및 2D 비전 분야와 달리 인터넷 규모의 조작 데이터가 부족합니다.
+- 일인칭 인간 비디오(egocentric video)는 잠재적으로 확장 가능한 데이터 소스이지만, 기존 대규모 데이터셋(예: Ego4D)에는 기본 손 포즈 주석이 없고 사물 조작에 초점을 맞추지 않았습니다.
+
+### EgoDex 데이터셋 구축
+- **수집 장치**: Apple Vision Pro를 사용하며, 여러 보정 카메라와 온디바이스 SLAM을 갖추고 있어 녹화 중 각 손의 모든 관절 3D 포즈를 실시간으로 추적합니다.
+- **규모와 다양성**: 829시간의 비디오를 포함하며, 일상 가정용품을 다루는 194가지 데스크톱 작업(신발 끈 묶기, 옷 접기 등)을 포괄합니다.
+- **데이터 특징**: 모든 손 추적 데이터는 비디오와 동기화되어 수집되며, 사후 주석이 필요 없어 정밀도와 일관성을 보장합니다.
+
+### 실험 설정 및 벤치마크
+- **작업**: 데이터셋을 기반으로 모방 학습 정책을 훈련하여 손 궤적을 예측합니다.
+- **평가 지표**: 손 궤적 예측의 진전을 측정하기 위한 새로운 평가 지표와 벤치마크를 도입합니다.
+- **결론**: EgoDex는 손재주 조작 연구를 위한 대규모 고품질 데이터 기반을 제공하며, 로봇 공학, 컴퓨터 비전 및 기초 모델의 최첨단 발전을 촉진할 것으로 기대됩니다.
+
+### 오픈소스 및 접근
+- EgoDex는 공개 다운로드 가능: https://github.com/apple/ml-egodex

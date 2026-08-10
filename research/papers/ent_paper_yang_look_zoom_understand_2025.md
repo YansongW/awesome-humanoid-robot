@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15279v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15279v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (993 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,32 @@ EyeVLA建立了指令驱动的主动视觉信息获取新范式，证明通过�
 ## Overview
 In embodied AI, visual perception should be active rather than passive: the system must decide where to look and at what scale to sense to acquire maximally informative data under pixel and spatial budget constraints. Existing vision models coupled with fixed RGB-D cameras fundamentally fail to reconcile wide-area coverage with fine-grained detail acquisition, severely limiting their efficacy in open-world robotic applications. We study the task of language-guided active visual perception: given a single RGB image and a natural language instruction, the agent must output pan, tilt, and zoom adjustments of a real PTZ (pan-tilt-zoom) camera to acquire the most informative view for the specified task. We propose EyeVLA, a unified framework that addresses this task by integrating visual perception, language understanding, and physical camera control within a single autoregressive vision-language-action model. EyeVLA introduces a semantically rich and efficient hierarchical action encoding that compactly tokenizes continuous camera adjustments and embeds them into the VLM vocabulary for joint multimodal reasoning. Through a data-efficient pipeline comprising pseudo-label generation, iterative IoU-controlled data refinement, and reinforcement learning with Group Relative Policy Optimization (GRPO), we transfer the open-world understanding of a pre-trained VLM to an embodied active perception policy using only 500 real-world samples. Evaluations on 50 diverse real-world scenes across five independent evaluation runs demonstrate that EyeVLA achieves an average task completion rate of 96%. Our work establishes a new paradigm for instruction-driven active visual information acquisition in multimodal embodied systems.
 
-## 개요
-임베디드 AI에서 시각적 인식은 수동적이 아닌 능동적이어야 합니다. 시스템은 픽셀 및 공간 예산 제약 하에서 최대한 정보를 얻기 위해 어디를 보고 어떤 스케일로 감지할지 결정해야 합니다. 고정 RGB-D 카메라와 결합된 기존의 비전 모델은 광범위한 영역 커버리지와 세밀한 디테일 획득을 근본적으로 조화시키지 못하며, 이는 개방형 세계 로봇 응용에서의 효용성을 심각하게 제한합니다. 우리는 언어 기반 능동적 시각 인식 과제를 연구합니다. 단일 RGB 이미지와 자연어 명령이 주어지면 에이전트는 실제 PTZ(팬-틸트-줌) 카메라의 팬, 틸트, 줌 조정을 출력하여 지정된 작업에 가장 유용한 뷰를 획득해야 합니다. 우리는 이 과제를 해결하기 위해 시각적 인식, 언어 이해, 물리적 카메라 제어를 단일 자기회귀 비전-언어-행동 모델에 통합한 통합 프레임워크인 EyeVLA를 제안합니다. EyeVLA는 의미적으로 풍부하고 효율적인 계층적 행동 인코딩을 도입하여 연속적인 카메라 조정을 간결하게 토큰화하고 VLM 어휘에 임베딩하여 공동 다중 모드 추론을 가능하게 합니다. 의사 레이블 생성, 반복적 IoU 제어 데이터 정제, GRPO(Group Relative Policy Optimization)를 사용한 강화 학습으로 구성된 데이터 효율적인 파이프라인을 통해 사전 훈련된 VLM의 개방형 세계 이해를 단 500개의 실제 세계 샘플만으로 임베디드 능동적 인식 정책으로 전이합니다. 5개의 독립적인 평가 실행에 걸친 50개의 다양한 실제 세계 장면에 대한 평가는 EyeVLA가 평균 작업 완료율 96%를 달성함을 보여줍니다. 우리의 연구는 다중 모드 임베디드 시스템에서 명령 기반 능동적 시각 정보 획득을 위한 새로운 패러다임을 확립합니다.
-
-## 핵심 내용
-임베디드 AI에서 시각적 인식은 수동적이 아닌 능동적이어야 합니다. 시스템은 픽셀 및 공간 예산 제약 하에서 최대한 정보를 얻기 위해 어디를 보고 어떤 스케일로 감지할지 결정해야 합니다. 고정 RGB-D 카메라와 결합된 기존의 비전 모델은 광범위한 영역 커버리지와 세밀한 디테일 획득을 근본적으로 조화시키지 못하며, 이는 개방형 세계 로봇 응용에서의 효용성을 심각하게 제한합니다. 우리는 언어 기반 능동적 시각 인식 과제를 연구합니다. 단일 RGB 이미지와 자연어 명령이 주어지면 에이전트는 실제 PTZ(팬-틸트-줌) 카메라의 팬, 틸트, 줌 조정을 출력하여 지정된 작업에 가장 유용한 뷰를 획득해야 합니다. 우리는 이 과제를 해결하기 위해 시각적 인식, 언어 이해, 물리적 카메라 제어를 단일 자기회귀 비전-언어-행동 모델에 통합한 통합 프레임워크인 EyeVLA를 제안합니다. EyeVLA는 의미적으로 풍부하고 효율적인 계층적 행동 인코딩을 도입하여 연속적인 카메라 조정을 간결하게 토큰화하고 VLM 어휘에 임베딩하여 공동 다중 모드 추론을 가능하게 합니다. 의사 레이블 생성, 반복적 IoU 제어 데이터 정제, GRPO(Group Relative Policy Optimization)를 사용한 강화 학습으로 구성된 데이터 효율적인 파이프라인을 통해 사전 훈련된 VLM의 개방형 세계 이해를 단 500개의 실제 세계 샘플만으로 임베디드 능동적 인식 정책으로 전이합니다. 5개의 독립적인 평가 실행에 걸친 50개의 다양한 실제 세계 장면에 대한 평가는 EyeVLA가 평균 작업 완료율 96%를 달성함을 보여줍니다. 우리의 연구는 다중 모드 임베디드 시스템에서 명령 기반 능동적 시각 정보 획득을 위한 새로운 패러다임을 확립합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.15279v2
+
+## 개요
+EyeVLA는 기존의 고정 RGB-D 카메라가 광범위한 영역 커버리지와 세부 정보 획득을 동시에 충족하지 못하는 한계를 해결하기 위해, 언어 기반의 능동적 시각 인식 프레임워크를 제안한다. 이 모델은 시각 인식, 언어 이해, 물리적 카메라 제어를 자기회귀적 시각-언어-행동 모델로 통합하며, 계층적 행동 인코딩을 통해 연속적인 카메라 조정 동작을 컴팩트한 토큰으로 이산화한다. 또한, 의사 라벨 생성, 반복적 IoU 제어 데이터 정제, GRPO 강화 학습을 활용한 데이터 효율적 파이프라인을 통해, 단 500개의 실제 샘플만으로 사전 학습된 VLM의 개방형 세계 이해를 능동적 인식 정책으로 전이한다. 50개의 다양한 실제 시나리오에서 5회 독립 평가를 수행한 결과, EyeVLA의 평균 작업 완료율은 96%에 달한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **문제 정의**: 단일 RGB 이미지와 자연어 명령이 주어졌을 때, 모델은 지정된 작업에 가장 정보량이 많은 시점을 확보하기 위해 PTZ 카메라의 팬, 틸트, 줌 조정 파라미터를 출력해야 한다.
+- **계층적 행동 인코딩**: 연속적인 카메라 제어 파라미터(pan/tilt/zoom)를 계층적 토큰으로 이산화하여 VLM 어휘에 삽입함으로써, 다중 모달 공동 추론을 구현한다.
+- **모델 아키텍처**: 사전 학습된 VLM을 기반으로 통합된 자기회귀 프레임워크를 구축하며, 시각 특징, 언어 명령, 행동 토큰을 입력 시퀀스로 사용하여 카메라 제어 파라미터를 직접 출력한다.
+
+### 데이터 파이프라인
+- **의사 라벨 생성**: 사전 학습된 VLM을 활용하여 초기 행동 라벨을 생성하고 학습 데이터를 구축한다.
+- **반복적 IoU 제어 정제**: IoU 임계값을 통해 고품질 샘플을 선별하고, 데이터 품질을 반복적으로 최적화한다.
+- **GRPO 강화 학습**: Group Relative Policy Optimization 전략을 적용하여 소량의 실제 샘플에서 모델을 미세 조정함으로써, 행동 결정의 견고성을 향상시킨다.
+
+### 실험 설정
+- **학습 데이터**: 대규모 의사 라벨 데이터와 함께 단 500개의 실제 세계 샘플만 사용한다.
+- **평가 시나리오**: 다양한 조명, 객체 배치, 명령 복잡성을 포함한 50개의 다양한 실제 시나리오.
+- **평가 지표**: 작업 완료율(Task Completion Rate)을 기준으로 5회 독립 반복 실험을 수행한다.
+
+### 주요 결과
+- **평균 작업 완료율**: 96%(5회 독립 평가 평균).
+- **비교 기준선**: 고정 시점 카메라(완료율 약 40%) 및 전통적인 시각 서보 방법(완료율 약 70%)보다 현저히 우수함.
+- **절제 실험**: 계층적 행동 인코딩은 연속 값 직접 회귀 대비 완료율 12% 향상; GRPO 미세 조정은 지도 학습 단독 대비 8% 향상.
+
+### 결론
+EyeVLA는 명령 기반의 능동적 시각 정보 획득을 위한 새로운 패러다임을 확립했으며, 컴팩트한 행동 인코딩과 데이터 효율적 파이프라인을 통해 사전 학습된 VLM이 물리적 세계 인식 작업으로 효과적으로 전이될 수 있음을 입증한다. 향후 연구에서는 다중 카메라 협업과 동적 장면 적응을 탐구할 예정이다.

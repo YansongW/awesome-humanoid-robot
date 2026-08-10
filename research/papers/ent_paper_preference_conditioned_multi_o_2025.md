@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10851v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10851v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (953 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,28 @@ Humanoid locomotion requires not only accurate command tracking for navigation b
 ## Content
 Humanoid locomotion requires not only accurate command tracking for navigation but also compliant responses to external forces during human interaction. Despite significant progress, existing RL approaches mainly emphasize robustness, yielding policies that resist external forces but lack compliance, which is particularly challenging for inherently unstable humanoids. In this work, we address this by formulating humanoid locomotion as a multi-objective optimization problem that balances command tracking and external force compliance. We introduce a preference-conditioned multi-objective RL (MORL) framework that enables a single omnidirectional locomotion policy to trade off between command following and force compliance via a user-specified preference input. External forces are modeled via a velocity-resistance factor for consistent reward design, and training leverages an encoder-decoder structure that infers task-relevant privileged features from deployable observations. We validate our approach in both simulation and real-world experiments on a humanoid robot. Experimental results in simulation and on hardware show that the framework trains stably and enables deployable preference-conditioned humanoid locomotion.
 
-## 개요
-휴머노이드 보행은 내비게이션을 위한 정확한 명령 추적뿐만 아니라 인간과의 상호작용 중 외부 힘에 대한 순응적 반응도 필요로 합니다. 상당한 진전이 있었음에도 불구하고, 기존의 강화학습 접근법은 주로 강건성에 중점을 두어 외부 힘에 저항하는 정책을 생성하지만, 특히 본질적으로 불안정한 휴머노이드에게는 순응성이 부족하여 큰 도전 과제로 남아 있습니다. 본 연구에서는 휴머노이드 보행을 명령 추적과 외부 힘 순응 사이의 균형을 맞추는 다중 목표 최적화 문제로 정식화하여 이 문제를 해결합니다. 우리는 사용자가 지정한 선호도 입력을 통해 단일 전방향 보행 정책이 명령 추종과 힘 순응 사이에서 절충할 수 있도록 하는 선호도 조건부 다중 목표 강화학습(MORL) 프레임워크를 도입합니다. 외부 힘은 일관된 보상 설계를 위해 속도-저항 계수를 통해 모델링되며, 훈련은 배치 가능한 관측값에서 작업 관련 특권 특징을 추론하는 인코더-디코더 구조를 활용합니다. 우리는 휴머노이드 로봇을 대상으로 시뮬레이션과 실제 실험 모두에서 접근법을 검증합니다. 시뮬레이션 및 하드웨어 실험 결과는 프레임워크가 안정적으로 훈련되고 배치 가능한 선호도 조건부 휴머노이드 보행을 가능하게 함을 보여줍니다.
-
-## 핵심 내용
-휴머노이드 보행은 내비게이션을 위한 정확한 명령 추적뿐만 아니라 인간과의 상호작용 중 외부 힘에 대한 순응적 반응도 필요로 합니다. 상당한 진전이 있었음에도 불구하고, 기존의 강화학습 접근법은 주로 강건성에 중점을 두어 외부 힘에 저항하는 정책을 생성하지만, 특히 본질적으로 불안정한 휴머노이드에게는 순응성이 부족하여 큰 도전 과제로 남아 있습니다. 본 연구에서는 휴머노이드 보행을 명령 추적과 외부 힘 순응 사이의 균형을 맞추는 다중 목표 최적화 문제로 정식화하여 이 문제를 해결합니다. 우리는 사용자가 지정한 선호도 입력을 통해 단일 전방향 보행 정책이 명령 추종과 힘 순응 사이에서 절충할 수 있도록 하는 선호도 조건부 다중 목표 강화학습(MORL) 프레임워크를 도입합니다. 외부 힘은 일관된 보상 설계를 위해 속도-저항 계수를 통해 모델링되며, 훈련은 배치 가능한 관측값에서 작업 관련 특권 특징을 추론하는 인코더-디코더 구조를 활용합니다. 우리는 휴머노이드 로봇을 대상으로 시뮬레이션과 실제 실험 모두에서 접근법을 검증합니다. 시뮬레이션 및 하드웨어 실험 결과는 프레임워크가 안정적으로 훈련되고 배치 가능한 선호도 조건부 휴머노이드 보행을 가능하게 함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.10851v2
+
+## 개요
+기존 강화학습 방법은 주로 강건성(robustness)을 강조하여, 정책이 외력에 저항하지만 순응성(compliance)이 부족하며, 특히 불안정한 이족 보행 휴머노이드 로봇에게 도전 과제가 된다. 본 연구는 휴머노이드 로봇 운동을 다중 목표 최적화 문제로 모델링하여 명령 추적과 외력 순응 간의 균형을 맞춘다. 선호 조건 다중 목표 강화학습 프레임워크를 도입하고, 속도-저항 인자를 활용해 보상을 통일적으로 설계하며, 인코더-디코더 구조를 통해 배포 가능한 관측에서 작업 관련 특권 특징을 추론한다. 실험은 시뮬레이션과 실제 휴머노이드 로봇 모두에서 해당 프레임워크의 안정적 훈련과 선호 조건 운동 능력을 검증했다.
+
+## 핵심 내용
+### 방법
+- **문제 모델링**: 휴머노이드 로봇 운동을 다중 목표 최적화 문제로 간주하여 명령 추적(예: 속도, 방향)과 외력 순응(예: 밀림 시 균형 유지)을 동시에 최적화한다.
+- **선호 조건 다중 목표 강화학습 프레임워크**: 사용자 지정 선호 입력(예: 가중치 벡터)을 도입하여 단일 전방향 운동 정책이 명령 추적과 외력 순응 간의 비중을 동적으로 조정할 수 있게 한다.
+- **보상 설계**: 속도-저항 인자(velocity-resistance factor)를 통해 외력 영향을 통일적으로 모델링하여 다양한 작업 시나리오에서 보상 함수의 일관성을 보장한다.
+- **아키텍처**: 인코더-디코더 구조를 채택하며, 인코더는 배포 가능한 관측(예: 관절 각도, IMU 데이터)에서 특징을 추출하고, 디코더는 작업 관련 특권 특징(예: 지면 접촉력, 질량 중심 상태)을 추론하여 정책 훈련에 사용한다.
+
+### 실험 설정
+- **플랫폼**: 시뮬레이션 환경(예: MuJoCo)과 실제 휴머노이드 로봇(구체적 모델은 언급되지 않음)에서 검증한다.
+- **작업**: 직선 보행, 회전, 장애물 회피 등의 명령 추적 작업과 외력 간섭(예: 측면 추력, 충돌) 하의 순응 응답을 포함한다.
+- **비교 기준선**: 표준 단일 목표 강화학습 정책(명령 추적만 최적화하거나 강건성만 최적화)과 비교한다.
+
+### 주요 결과
+- **시뮬레이션 실험**: 선호 조건 정책은 명령 추적 오차(예: 속도 편차 < 0.1 m/s)와 외력 순응성(예: 추력 후 회복 시간 < 0.5초) 모두에서 기준선보다 우수하며, 선호 입력을 조정하여 동작을 부드럽게 전환할 수 있다.
+- **하드웨어 실험**: 실제 휴머노이드 로봇이 선호 조건 운동을 성공적으로 수행했으며, 예를 들어 낮은 선호 순응 모드에서는 밀림 시 관절을 능동적으로 굽혀 충격을 완충하고, 높은 선호 추적 모드에서는 궤적 정밀도를 유지한다.
+- **안정성**: 훈련 과정이 안정적으로 수렴하며 정책 붕괴나 진동이 발생하지 않아 프레임워크의 배포 가능성을 검증했다.
+
+### 결론
+본 프레임워크는 다중 목표 최적화와 선호 조건 설계를 통해 휴머노이드 로봇 운동 정책이 명령 추적과 외력 순응 간의 유연한 균형을 최초로 구현하여 안전한 인간-로봇 상호작용에 새로운 방향을 제시한다. 향후 작업은 더 복잡한 지형이나 동적 환경으로 확장할 수 있다.

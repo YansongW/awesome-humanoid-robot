@@ -57,8 +57,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03941v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03941v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (676 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -95,11 +96,24 @@ Recent advances in embodied AI have established robot foundation models (RFMs) a
 ## Content
 Recent advances in embodied AI have established robot foundation models (RFMs) as the dominant approach for generalist robotic systems to date. By leveraging imitation learning on extensive robot demonstrations, RFMs have achieved impressive capabilities in mapping visual observations and language instructions to continuous robotic actions. However, current RFMs lack an inherent ability to reason about physical dynamics and the causal effects of robot behaviors on the 3D physical world. This creates a fundamental mismatch between 2D-centric visual perception and 3D-centric embodied interaction, severely limiting the generalization ability of RFMs in real-world tasks. To address this gap, we present WSA$_1$, a novel RFM built upon proposed 3D-Centric World-Spatial-Action modeling paradigm. It not only learns 3D world-aware visual thought for future robot behaviors, but also models mutual constraints between 3D world state transitions and robotic actions to enhance behavior generalization. Notably, WSA$_1$ achieves highly data-efficient pre-training with 6k hours of expert demonstration data (only 1k hours from real robot), while delivering competitive manipulation performance (93% success rate) on RoboTwin2.0 simulation benchmark and achieving +20% average boosted performance over state-of-the-art RFMs on real-world robot control tasks. These results reveal that generalizable RFM can be attained without large-scale real robot data when paired with 3D-centric world-action joint modeling, which offers a practical and affordable pathway to generalist robotic systems.
 
-## 개요
-최근 체화된 AI의 발전으로 로봇 기반 모델(RFM)이 현재까지 범용 로봇 시스템의 지배적인 접근 방식으로 자리 잡았습니다. 방대한 로봇 시연 데이터에 대한 모방 학습을 활용함으로써, RFM은 시각적 관찰과 언어 명령을 연속적인 로봇 동작으로 매핑하는 데 인상적인 능력을 달성했습니다. 그러나 현재의 RFM은 물리적 역학과 로봇 행동이 3D 물리 세계에 미치는 인과적 효과에 대한 본질적인 추론 능력이 부족합니다. 이는 2D 중심의 시각적 인식과 3D 중심의 체화된 상호작용 사이에 근본적인 불일치를 초래하며, 실제 작업에서 RFM의 일반화 능력을 심각하게 제한합니다. 이러한 격차를 해결하기 위해, 우리는 제안된 3D 중심 세계-공간-행동 모델링 패러다임을 기반으로 구축된 새로운 RFM인 WSA$_1$을 제시합니다. 이는 미래 로봇 행동을 위한 3D 세계 인식 시각적 사고를 학습할 뿐만 아니라, 3D 세계 상태 전이와 로봇 동작 간의 상호 제약을 모델링하여 행동 일반화를 향상시킵니다. 특히, WSA$_1$은 6,000시간의 전문가 시연 데이터(실제 로봇 데이터는 1,000시간에 불과)로 매우 데이터 효율적인 사전 학습을 달성하면서, RoboTwin2.0 시뮬레이션 벤치마크에서 경쟁력 있는 조작 성능(93% 성공률)을 제공하고, 실제 로봇 제어 작업에서 최첨단 RFM 대비 평균 +20% 향상된 성능을 달성합니다. 이러한 결과는 3D 중심의 세계-행동 공동 모델링과 결합될 때 대규모 실제 로봇 데이터 없이도 일반화 가능한 RFM을 얻을 수 있음을 보여주며, 이는 범용 로봇 시스템을 위한 실용적이고 경제적인 경로를 제공합니다.
-
-## 핵심 내용
-최근 체화된 AI의 발전으로 로봇 기반 모델(RFM)이 현재까지 범용 로봇 시스템의 지배적인 접근 방식으로 자리 잡았습니다. 방대한 로봇 시연 데이터에 대한 모방 학습을 활용함으로써, RFM은 시각적 관찰과 언어 명령을 연속적인 로봇 동작으로 매핑하는 데 인상적인 능력을 달성했습니다. 그러나 현재의 RFM은 물리적 역학과 로봇 행동이 3D 물리 세계에 미치는 인과적 효과에 대한 본질적인 추론 능력이 부족합니다. 이는 2D 중심의 시각적 인식과 3D 중심의 체화된 상호작용 사이에 근본적인 불일치를 초래하며, 실제 작업에서 RFM의 일반화 능력을 심각하게 제한합니다. 이러한 격차를 해결하기 위해, 우리는 제안된 3D 중심 세계-공간-행동 모델링 패러다임을 기반으로 구축된 새로운 RFM인 WSA$_1$을 제시합니다. 이는 미래 로봇 행동을 위한 3D 세계 인식 시각적 사고를 학습할 뿐만 아니라, 3D 세계 상태 전이와 로봇 동작 간의 상호 제약을 모델링하여 행동 일반화를 향상시킵니다. 특히, WSA$_1$은 6,000시간의 전문가 시연 데이터(실제 로봇 데이터는 1,000시간에 불과)로 매우 데이터 효율적인 사전 학습을 달성하면서, RoboTwin2.0 시뮬레이션 벤치마크에서 경쟁력 있는 조작 성능(93% 성공률)을 제공하고, 실제 로봇 제어 작업에서 최첨단 RFM 대비 평균 +20% 향상된 성능을 달성합니다. 이러한 결과는 3D 중심의 세계-행동 공동 모델링과 결합될 때 대규모 실제 로봇 데이터 없이도 일반화 가능한 RFM을 얻을 수 있음을 보여주며, 이는 범용 로봇 시스템을 위한 실용적이고 경제적인 경로를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03941v1
+
+## 개요
+현재 로봇 기반 모델은 주로 2D 비전과 언어 명령의 매핑에 의존하며, 물리적 동역학 및 3D 세계의 인과 효과에 대한 내재적 추론 능력이 부족하여 일반화 성능이 제한적입니다. WSA₁은 3D 세계 인식 시각적 사고와 상태-행동 결합 제약을 도입하여 2D 인식과 3D 상호작용 간의 격차를 해소합니다. 이 모델은 단 6k 시간의 전문가 시연 데이터(그중 실제 로봇 데이터는 1k 시간뿐)만으로 효율적인 사전 학습을 완료할 수 있으며, 시뮬레이션 및 실제 작업 모두에서 기존 방법을 크게 능가합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+WSA₁의 핵심은 3D 중심 세계-공간-행동(3D-Centric World-Spatial-Action) 모델링 패러다임으로, 두 가지 주요 모듈을 포함합니다:
+- **3D 세계 인식 시각적 사고**: 모델은 2D 관측에서 3D 공간 특징을 추출하고, 미래 로봇 행동이 3D 세계 상태에 미치는 영향을 예측하는 방법을 학습합니다.
+- **상태-행동 결합 제약**: 3D 세계 상태 전이와 로봇 행동 간의 상호 제약 관계를 모델링하여, 보지 못한 시나리오에서 행동의 일반화 능력을 강화합니다.
+
+### 실험 설정
+- **사전 학습 데이터**: 총 6k 시간의 전문가 시연 데이터로, 그중 실제 로봇 데이터는 1k 시간뿐이며 나머지는 시뮬레이션 데이터입니다.
+- **시뮬레이션 벤치마크**: RoboTwin2.0에서 조작 성능을 평가합니다.
+- **실제 작업**: 다양한 실제 로봇 제어 작업에서 기존 최고 성능 RFM과 비교합니다.
+
+### 주요 결과
+- **시뮬레이션 성능**: WSA₁은 RoboTwin2.0에서 93% 성공률을 달성합니다.
+- **실제 작업**: 기존 최고 성능 RFM 대비 평균 성능이 20% 향상됩니다.
+- **데이터 효율성**: 소량의 실제 데이터만으로도 강력한 일반화 능력을 구현할 수 있어, 3D 중심의 세계-행동 결합 모델링이 범용 로봇 시스템으로 가는 실용적인 경로임을 시사합니다.

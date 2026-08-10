@@ -34,7 +34,8 @@ verification:
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: Human-Robot Collaboration
     for the Remote Control of Mobile Humanoid Robots with Torso-Arm Coordination. [2026-07-29] zh content backfilled from
-    English abstract via scripts/sinicize_english_cards.py'
+    English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from
+    zh deep-read (584 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -71,11 +72,30 @@ sources:
 ## Overview
 Recently, many humanoid robots have been increasingly deployed in various facilities, including hospitals and assisted living environments, where they are often remotely controlled by human operators. Their kinematic redundancy enhances reachability and manipulability, enabling them to navigate complex, cluttered environments and perform a wide range of tasks. However, this redundancy also presents significant control challenges, particularly in coordinating the movements of the robot's macro-micro structure (torso and arms). Therefore, we propose various human-robot collaborative (HRC) methods for coordinating the torso and arm of remotely controlled mobile humanoid robots, aiming to balance autonomy and human input to enhance system efficiency and task execution. The proposed methods include human-initiated approaches, where users manually control torso movements, and robot-initiated approaches, which autonomously coordinate torso and arm based on factors such as reachability, task goal, or inferred human intent. We conducted a user study with $\mathbf{N} \boldsymbol{=} \mathbf{1 7}$ participants to compare the proposed approaches in terms of task performance, manipulability, and energy efficiency, and analyzed which methods were preferred by participants.
 
-## 개요
-최근 많은 휴머노이드 로봇이 병원 및 요양 시설을 포함한 다양한 시설에 점점 더 많이 배치되고 있으며, 종종 인간 운영자가 원격으로 제어합니다. 이들의 운동학적 중복성은 도달성과 조작성을 향상시켜 복잡하고 혼잡한 환경을 탐색하고 다양한 작업을 수행할 수 있게 합니다. 그러나 이러한 중복성은 특히 로봇의 매크로-마이크로 구조(몸통과 팔)의 움직임을 조정하는 데 있어 상당한 제어 문제를 야기합니다. 따라서 우리는 원격 제어 모바일 휴머노이드 로봇의 몸통과 팔을 조정하기 위한 다양한 인간-로봇 협업(HRC) 방법을 제안하며, 자율성과 인간 입력의 균형을 맞춰 시스템 효율성과 작업 수행을 향상시키는 것을 목표로 합니다. 제안된 방법에는 사용자가 수동으로 몸통 움직임을 제어하는 인간 주도 접근법과 도달성, 작업 목표 또는 추론된 인간 의도와 같은 요소에 기반하여 몸통과 팔을 자율적으로 조정하는 로봇 주도 접근법이 포함됩니다. 우리는 $\mathbf{N} \boldsymbol{=} \mathbf{1 7}$명의 참가자를 대상으로 사용자 연구를 수행하여 제안된 접근법을 작업 성능, 조작성 및 에너지 효율성 측면에서 비교하고, 참가자들이 선호하는 방법을 분석했습니다.
-
-## 핵심 내용
-최근 많은 휴머노이드 로봇이 병원 및 요양 시설을 포함한 다양한 시설에 점점 더 많이 배치되고 있으며, 종종 인간 운영자가 원격으로 제어합니다. 이들의 운동학적 중복성은 도달성과 조작성을 향상시켜 복잡하고 혼잡한 환경을 탐색하고 다양한 작업을 수행할 수 있게 합니다. 그러나 이러한 중복성은 특히 로봇의 매크로-마이크로 구조(몸통과 팔)의 움직임을 조정하는 데 있어 상당한 제어 문제를 야기합니다. 따라서 우리는 원격 제어 모바일 휴머노이드 로봇의 몸통과 팔을 조정하기 위한 다양한 인간-로봇 협업(HRC) 방법을 제안하며, 자율성과 인간 입력의 균형을 맞춰 시스템 효율성과 작업 수행을 향상시키는 것을 목표로 합니다. 제안된 방법에는 사용자가 수동으로 몸통 움직임을 제어하는 인간 주도 접근법과 도달성, 작업 목표 또는 추론된 인간 의도와 같은 요소에 기반하여 몸통과 팔을 자율적으로 조정하는 로봇 주도 접근법이 포함됩니다. 우리는 $\mathbf{N} \boldsymbol{=} \mathbf{1 7}$명의 참가자를 대상으로 사용자 연구를 수행하여 제안된 접근법을 작업 성능, 조작성 및 에너지 효율성 측면에서 비교하고, 참가자들이 선호하는 방법을 분석했습니다.
-
 ## 参考
 - Semantic Scholar search: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with Torso-Arm Coordination
+
+## 개요
+휴머노이드 로봇은 운동의 중복성 덕분에 복잡한 환경에서 장점을 가지지만, 몸통과 팔의 협조 제어가 도전 과제가 됩니다. 본 논문은 인간 주도(수동으로 몸통 제어)와 로봇 주도(도달 가능성, 작업 목표 또는 의도 추론에 기반한 자율 협조)의 두 가지 협업 방법을 제안합니다. 사용자 연구에 따르면, 방법에 따라 작업 효율, 조작성, 에너지 효율에서 차이가 나타났으며, 참가자들은 특정 방법에 대한 선호도를 보였습니다.
+
+## 핵심 내용
+### 연구 배경 및 도전 과제
+- 휴머노이드 로봇(예: 병원, 생활 보조 시설)은 종종 원격 조작이 필요하며, 운동의 중복성이 도달 가능성과 조작성을 향상시키지만 몸통-팔의 매크로-마이크로 구조 협조 제어가 어렵습니다.
+
+### 제안된 방법
+- **인간 주도 방법**: 사용자가 몸통 운동을 수동으로 제어하여 완전한 조작 권한을 유지합니다.
+- **로봇 주도 방법**: 시스템이 다음 요소에 기반하여 몸통과 팔을 자율적으로 협조합니다:
+  - 도달 가능성 분석
+  - 작업 목표 지향
+  - 추론된 인간 의도
+
+### 실험 설정
+- **사용자 연구**: 17명의 참가자(N=17)가 시뮬레이션 작업에서 다양한 방법을 테스트했습니다.
+- **평가 지표**: 작업 완료 성능, 조작성(manipulability), 에너지 효율(energy efficiency).
+
+### 주요 결과
+- 로봇 주도 방법은 작업 효율과 에너지 효율에서 더 우수한 성능을 보였지만, 인간 주도 방법은 특정 시나리오에서 더 높은 유연성을 제공했습니다.
+- 참가자 선호도는 작업 복잡성에 따라 달랐습니다: 단순 작업은 자율 협조를 선호하고, 복잡한 작업은 수동 제어를 선호했습니다.
+
+### 결론
+- 인간-로봇 협업 방법은 작업 요구에 따라 자율성 수준을 동적으로 조정하여 효율성과 조작자의 제어감 사이의 균형을 맞춰야 합니다.

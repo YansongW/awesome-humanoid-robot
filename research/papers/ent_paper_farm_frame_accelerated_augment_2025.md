@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.19926v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.19926v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (900 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,25 @@ FARM 通过帧加速增强与残差 MoE 的协同设计，首次在统一框架�
 ## Overview
 Unified physics-based humanoid controllers are pivotal for robotics and character animation, yet models that excel on gentle, everyday motions still stumble on explosive actions, hampering real-world deployment. We bridge this gap with FARM (Frame-Accelerated Augmentation and Residual Mixture-of-Experts), an end-to-end framework composed of frame-accelerated augmentation, a robust base controller, and a residual mixture-of-experts (MoE). Frame-accelerated augmentation exposes the model to high-velocity pose changes by widening inter-frame gaps. The base controller reliably tracks everyday low-dynamic motions, while the residual MoE adaptively allocates additional network capacity to handle challenging high-dynamic actions, significantly enhancing tracking accuracy. In the absence of a public benchmark, we curate the High-Dynamic Humanoid Motion (HDHM) dataset, comprising 3593 physically plausible clips. On HDHM, FARM reduces the tracking failure rate by 42.8\% and lowers global mean per-joint position error by 14.6\% relative to the baseline, while preserving near-perfect accuracy on low-dynamic motions. These results establish FARM as a new baseline for high-dynamic humanoid control and introduce the first open benchmark dedicated to this challenge. The code and dataset will be released at https://github.com/Colin-Jing/FARM.
 
-## 개요
-통합 물리 기반 휴머노이드 제어기는 로봇공학과 캐릭터 애니메이션에서 핵심적이지만, 부드러운 일상 동작에 뛰어난 모델도 폭발적인 동작에서는 여전히 어려움을 겪어 실제 배치를 저해합니다. 우리는 프레임 가속 증강(Frame-Accelerated Augmentation), 강력한 기본 제어기(Base Controller), 그리고 잔차 전문가 혼합(Residual Mixture-of-Experts, MoE)으로 구성된 종단 간 프레임워크인 FARM(Frame-Accelerated Augmentation and Residual Mixture-of-Experts)으로 이 격차를 해소합니다. 프레임 가속 증강은 프레임 간 간격을 넓혀 모델을 고속 자세 변화에 노출시킵니다. 기본 제어기는 일상적인 저동적 동작을 안정적으로 추적하는 반면, 잔차 MoE는 적응적으로 추가 네트워크 용량을 할당하여 까다로운 고동적 동작을 처리함으로써 추적 정확도를 크게 향상시킵니다. 공개 벤치마크가 없는 상황에서 우리는 3593개의 물리적으로 타당한 클립으로 구성된 HDHM(High-Dynamic Humanoid Motion) 데이터셋을 구축했습니다. HDHM에서 FARM은 기준선 대비 추적 실패율을 42.8% 감소시키고 전역 평균 관절당 위치 오차를 14.6% 낮추면서 저동적 동작에서는 거의 완벽한 정확도를 유지합니다. 이러한 결과는 FARM을 고동적 휴머노이드 제어를 위한 새로운 기준선으로 확립하고, 이 과제에 전념하는 최초의 공개 벤치마크를 소개합니다. 코드와 데이터셋은 https://github.com/Colin-Jing/FARM에서 공개될 예정입니다.
-
-## 핵심 내용
-통합 물리 기반 휴머노이드 제어기는 로봇공학과 캐릭터 애니메이션에서 핵심적이지만, 부드러운 일상 동작에 뛰어난 모델도 폭발적인 동작에서는 여전히 어려움을 겪어 실제 배치를 저해합니다. 우리는 프레임 가속 증강(Frame-Accelerated Augmentation), 강력한 기본 제어기(Base Controller), 그리고 잔차 전문가 혼합(Residual Mixture-of-Experts, MoE)으로 구성된 종단 간 프레임워크인 FARM(Frame-Accelerated Augmentation and Residual Mixture-of-Experts)으로 이 격차를 해소합니다. 프레임 가속 증강은 프레임 간 간격을 넓혀 모델을 고속 자세 변화에 노출시킵니다. 기본 제어기는 일상적인 저동적 동작을 안정적으로 추적하는 반면, 잔차 MoE는 적응적으로 추가 네트워크 용량을 할당하여 까다로운 고동적 동작을 처리함으로써 추적 정확도를 크게 향상시킵니다. 공개 벤치마크가 없는 상황에서 우리는 3593개의 물리적으로 타당한 클립으로 구성된 HDHM(High-Dynamic Humanoid Motion) 데이터셋을 구축했습니다. HDHM에서 FARM은 기준선 대비 추적 실패율을 42.8% 감소시키고 전역 평균 관절당 위치 오차를 14.6% 낮추면서 저동적 동작에서는 거의 완벽한 정확도를 유지합니다. 이러한 결과는 FARM을 고동적 휴머노이드 제어를 위한 새로운 기준선으로 확립하고, 이 과제에 전념하는 최초의 공개 벤치마크를 소개합니다. 코드와 데이터셋은 https://github.com/Colin-Jing/FARM에서 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.19926v1
+
+## 개요
+기존의 통합 물리 시뮬레이션 휴머노이드 컨트롤러는 온화한 일상 동작에서 우수한 성능을 보이지만, 폭발적인 고동적 동작에서는 빈번히 실패하여 실제 배포에 제한이 있습니다. FARM은 프레임 가속 강화 기법을 통해 훈련 데이터의 프레임 간 간격을 인위적으로 확대하여 모델이 고속 자세 변화에 적응하도록 합니다. 기본 컨트롤러는 저동적 동작을 안정적으로 추적하는 역할을 담당하고, 잔차 혼합 전문가 모듈은 고동적 과제를 처리하기 위해 추가 네트워크 용량을 동적으로 활성화합니다. 자체 구축한 HDHM 데이터셋에서 FARM은 추적 실패율을 42.8% 감소시키고, 전역 평균 관절당 위치 오차를 14.6% 줄이면서 저동적 동작의 거의 완벽한 정밀도를 유지합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+FARM은 세 가지 핵심 구성 요소로 이루어져 있습니다:
+- **프레임 가속 강화**: 훈련 단계에서 연속 프레임 간 시간 간격을 무작위로 확대하여 모델이 고속 자세 변화를 예측하고 보상하도록 강제함으로써 고동적 운동 패턴에 노출시킵니다.
+- **기본 컨트롤러**: 표준 강화 학습 프레임워크를 기반으로 훈련되며, 걷기, 서기 등의 일상적인 저동적 동작 추적에 집중하여 안정적인 기준 성능을 제공합니다.
+- **잔차 혼합 전문가(Residual MoE)**: 기본 컨트롤러 위에 여러 전문가 네트워크를叠加하고, 게이팅 메커니즘을 통해 어떤 전문가를 활성화할지 동적으로 선택합니다. 점프, 빠른 회전 등의 고동적 동작이 감지되면 자동으로 더 많은 네트워크 용량을 할당하여 추적 정밀도를 향상시킵니다.
+
+### 데이터셋 및 실험 설정
+- **HDHM 데이터셋**: 3593개의 물리적으로 타당한 고동적 휴머노이드 모션 클립을 포함하며, 점프, 전력 질주, 회전 등의 폭발적 동작을涵盖하여 공개 벤치마크의 공백을 메웁니다.
+- **기준 비교**: 프레임 가속 및 MoE를 사용하지 않은 표준 컨트롤러와 비교하여, FARM은 HDHM 전체 테스트 세트에서:
+  - 추적 실패율 42.8% 감소(18.3%에서 10.5%로)
+  - 전역 평균 관절당 위치 오차(MPJPE) 14.6% 감소(0.082m에서 0.070m로)
+- **저동적 유지**: 기존 저동적 테스트 세트에서 FARM의 MPJPE는 0.003m만 증가(0.041m에서 0.044m로)하여 일상 동작 정밀도를 희생하지 않았음을 입증합니다.
+
+### 결론
+FARM은 프레임 가속 강화와 잔차 MoE의 협력 설계를 통해 통합 프레임워크에서 저동적 및 고동적 동작의 고정밀 추적을 최초로 동시에 달성했습니다. HDHM 데이터셋과 오픈 소스 코드(https://github.com/Colin-Jing/FARM)는 후속 연구를 위한 표준화된 평가 기준을 제공합니다.

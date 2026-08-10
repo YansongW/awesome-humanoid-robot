@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.22615v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.22615v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (923 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,22 @@ Dream-VL 与 Dream-VLA 证明了扩散大语言模型作为视觉-语言-动作�
 ## Overview
 While autoregressive Large Vision-Language Models (VLMs) have achieved remarkable success, their sequential generation often limits their efficacy in complex visual planning and dynamic robotic control. In this work, we investigate the potential of constructing Vision-Language Models upon diffusion-based large language models (dLLMs) to overcome these limitations. We introduce Dream-VL, an open diffusion-based VLM (dVLM) that achieves state-of-the-art performance among previous dVLMs. Dream-VL is comparable to top-tier AR-based VLMs trained on open data on various benchmarks but exhibits superior potential when applied to visual planning tasks. Building upon Dream-VL, we introduce Dream-VLA, a dLLM-based Vision-Language-Action model (dVLA) developed through continuous pre-training on open robotic datasets. We demonstrate that the natively bidirectional nature of this diffusion backbone serves as a superior foundation for VLA tasks, inherently suited for action chunking and parallel generation, leading to significantly faster convergence in downstream fine-tuning. Dream-VLA achieves top-tier performance of 97.2% average success rate on LIBERO, 71.4% overall average on SimplerEnv-Bridge, and 60.5% overall average on SimplerEnv-Fractal, surpassing leading models such as $π_0$ and GR00T-N1. We also validate that dVLMs surpass AR baselines on downstream tasks across different training objectives. We release both Dream-VL and Dream-VLA to facilitate further research in the community.
 
-## 개요
-자기회귀적 대규모 시각-언어 모델(VLM)은 놀라운 성공을 거두었지만, 순차적 생성 방식은 복잡한 시각적 계획 및 동적 로봇 제어에서 그 효용성을 종종 제한합니다. 본 연구에서는 이러한 한계를 극복하기 위해 확산 기반 대규모 언어 모델(dLLM) 위에 시각-언어 모델을 구축할 가능성을 탐구합니다. 우리는 이전 dVLM 중 최첨단 성능을 달성한 오픈 확산 기반 VLM(dVLM)인 Dream-VL을 소개합니다. Dream-VL은 공개 데이터로 학습된 최고 수준의 AR 기반 VLM과 다양한 벤치마크에서 견줄 만하지만, 시각적 계획 작업에 적용될 때 우수한 잠재력을 보여줍니다. Dream-VL을 기반으로, 우리는 공개 로봇 데이터셋에 대한 지속적인 사전 학습을 통해 개발된 dLLM 기반 시각-언어-행동 모델(dVLA)인 Dream-VLA를 소개합니다. 우리는 이 확산 백본의 본질적으로 양방향적인 특성이 VLA 작업에 탁월한 기반을 제공하며, 액션 청킹 및 병렬 생성에 본질적으로 적합하여 하위 작업 미세 조정에서 훨씬 빠른 수렴을 이끌어낸다는 것을 입증합니다. Dream-VLA는 LIBERO에서 97.2%의 평균 성공률, SimplerEnv-Bridge에서 71.4%의 전체 평균, SimplerEnv-Fractal에서 60.5%의 전체 평균을 달성하여 $π_0$ 및 GR00T-N1과 같은 선도 모델을 능가합니다. 또한 dVLM이 다양한 학습 목표에 걸쳐 하위 작업에서 AR 기준선을 능가한다는 것을 검증합니다. 우리는 커뮤니티의 추가 연구를 촉진하기 위해 Dream-VL과 Dream-VLA를 모두 공개합니다.
-
-## 핵심 내용
-자기회귀적 대규모 시각-언어 모델(VLM)은 놀라운 성공을 거두었지만, 순차적 생성 방식은 복잡한 시각적 계획 및 동적 로봇 제어에서 그 효용성을 종종 제한합니다. 본 연구에서는 이러한 한계를 극복하기 위해 확산 기반 대규모 언어 모델(dLLM) 위에 시각-언어 모델을 구축할 가능성을 탐구합니다. 우리는 이전 dVLM 중 최첨단 성능을 달성한 오픈 확산 기반 VLM(dVLM)인 Dream-VL을 소개합니다. Dream-VL은 공개 데이터로 학습된 최고 수준의 AR 기반 VLM과 다양한 벤치마크에서 견줄 만하지만, 시각적 계획 작업에 적용될 때 우수한 잠재력을 보여줍니다. Dream-VL을 기반으로, 우리는 공개 로봇 데이터셋에 대한 지속적인 사전 학습을 통해 개발된 dLLM 기반 시각-언어-행동 모델(dVLA)인 Dream-VLA를 소개합니다. 우리는 이 확산 백본의 본질적으로 양방향적인 특성이 VLA 작업에 탁월한 기반을 제공하며, 액션 청킹 및 병렬 생성에 본질적으로 적합하여 하위 작업 미세 조정에서 훨씬 빠른 수렴을 이끌어낸다는 것을 입증합니다. Dream-VLA는 LIBERO에서 97.2%의 평균 성공률, SimplerEnv-Bridge에서 71.4%의 전체 평균, SimplerEnv-Fractal에서 60.5%의 전체 평균을 달성하여 $π_0$ 및 GR00T-N1과 같은 선도 모델을 능가합니다. 또한 dVLM이 다양한 학습 목표에 걸쳐 하위 작업에서 AR 기준선을 능가한다는 것을 검증합니다. 우리는 커뮤니티의 추가 연구를 촉진하기 위해 Dream-VL과 Dream-VLA를 모두 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.22615v2
+
+## 개요
+자동회귀 대규모 시각-언어 모델은 상당한 성공을 거두었지만, 순차 생성 특성으로 인해 복잡한 시각 계획 및 동적 로봇 제어에는 한계가 있습니다. 본 연구는 확산 대규모 언어 모델 기반의 시각-언어 모델 구축 가능성을 탐구하며, 오픈소스 확산 시각-언어 모델 Dream-VL을 제안합니다. 이 모델은 동급 모델 중 최고 성능을 달성하고, 공개 데이터로 학습된 자동회귀 모델과 여러 벤치마크에서 비슷한 성능을 보이며, 시각 계획 작업에서 더 우수한 잠재력을 입증합니다. 이를 바탕으로 공개 로봇 데이터셋을 연속 사전 학습하여, 확산 대규모 언어 모델 기반의 시각-언어-행동 모델 Dream-VLA를 출시합니다. 확산 백본 네트워크의 고유한 양방향 특성은 액션 청킹 및 병렬 생성에 자연스럽게 적합하여, 하류 미세 조정 수렴 속도를 크게 향상시킵니다. Dream-VLA는 LIBERO에서 97.2%의 평균 성공률, SimplerEnv-Bridge에서 71.4%, SimplerEnv-Fractal에서 60.5%를 달성하며, π₀ 및 GR00T-N1과 같은 선도 모델을 능가합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **Dream-VL**: 확산 대규모 언어 모델(dLLM) 기반의 오픈소스 시각-언어 모델로, 기존 자동회귀 순차 생성을 대체하는 양방향 확산 메커니즘을 채택하여 복잡한 시각 계획 작업에 대한 적응성을 향상시킵니다.
+- **Dream-VLA**: Dream-VL을 기반으로 공개 로봇 데이터셋(예: LIBERO, SimplerEnv)을 연속 사전 학습하여 얻은 시각-언어-행동 모델입니다. 확산 백본 네트워크는 양방향 컨텍스트 모델링을 기본 지원하여 액션 청킹 및 병렬 생성에 자연스럽게 적합하며, 하류 미세 조정 수렴을 크게 가속화합니다.
+
+### 실험 설정 및 주요 결과
+- **LIBERO 벤치마크**: Dream-VLA의 평균 성공률은 97.2%로, π₀ 및 GR00T-N1과 같은 모델을 능가합니다.
+- **SimplerEnv-Bridge**: 전체 평균 성공률 71.4%.
+- **SimplerEnv-Fractal**: 전체 평균 성공률 60.5%.
+- **비교 검증**: 다양한 학습 목표에서 확산 시각-언어 모델(dVLMs)은 하류 작업에서 자동회귀 기준 모델보다 모두 우수합니다.
+
+### 결론
+Dream-VL과 Dream-VLA는 확산 대규모 언어 모델이 시각-언어-행동 모델의 백본으로서 우수함을 입증하며, 특히 액션 청킹 및 병렬 생성 측면에서 두드러집니다. 연구팀은 커뮤니티의 추가 연구를 촉진하기 위해 두 모델을 오픈소스로 공개했습니다.

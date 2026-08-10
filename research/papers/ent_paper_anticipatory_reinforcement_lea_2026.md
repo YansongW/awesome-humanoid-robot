@@ -46,8 +46,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03132v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03132v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (771 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,29 @@ sources:
 ## Overview
 Deep reinforcement learning (DRL) in industrial control often suffers from lag and overshoot due to purely reactive control based on the current tracking error. To achieve anticipatory control without high computational overhead, we introduce a predictive formulation that augments the DRL state space with target velocities and future reference horizons. Evaluating eight configurations using proximal policy optimization (PPO) on a 1-degree-of-freedom (1-DoF) helicopter testbed, simulation results showed a 9-fold error reduction, lowering the mean absolute deviation from 2.73° to 0.31°. However, zero-shot transfer to physical hardware revealed a sim-to-real gap. Interestingly, a simpler configuration using a single, further look-ahead horizon matched the real-world top performance of the most complex model (1.11°). Overall, evaluating various combinations of prediction horizons and target velocities demonstrated that highly granular predictive data is not necessarily required for physical transfer.
 
-## 개요
-산업 제어에서의 심층 강화 학습(DRL)은 현재 추적 오차에 기반한 순수 반응형 제어로 인해 지연 및 오버슈트 문제를 자주 겪습니다. 높은 계산 부담 없이 예측 제어를 달성하기 위해, 우리는 DRL 상태 공간에 목표 속도와 미래 참조 지평선을 추가하는 예측 공식을 도입합니다. 1자유도(1-DoF) 헬리콥터 테스트베드에서 근접 정책 최적화(PPO)를 사용하여 8가지 구성을 평가한 결과, 시뮬레이션 결과는 평균 절대 편차를 2.73°에서 0.31°로 낮추며 9배의 오차 감소를 보였습니다. 그러나 물리적 하드웨어로의 제로샷 전환은 시뮬레이션-실제 간극을 드러냈습니다. 흥미롭게도, 단일의 더 먼 예측 지평선을 사용하는 더 간단한 구성이 가장 복잡한 모델의 실제 최고 성능(1.11°)과 일치했습니다. 전반적으로, 다양한 예측 지평선과 목표 속도 조합을 평가한 결과, 물리적 전환에 반드시 고도로 세분화된 예측 데이터가 필요하지 않음을 입증했습니다.
-
-## 핵심 내용
-산업 제어에서의 심층 강화 학습(DRL)은 현재 추적 오차에 기반한 순수 반응형 제어로 인해 지연 및 오버슈트 문제를 자주 겪습니다. 높은 계산 부담 없이 예측 제어를 달성하기 위해, 우리는 DRL 상태 공간에 목표 속도와 미래 참조 지평선을 추가하는 예측 공식을 도입합니다. 1자유도(1-DoF) 헬리콥터 테스트베드에서 근접 정책 최적화(PPO)를 사용하여 8가지 구성을 평가한 결과, 시뮬레이션 결과는 평균 절대 편차를 2.73°에서 0.31°로 낮추며 9배의 오차 감소를 보였습니다. 그러나 물리적 하드웨어로의 제로샷 전환은 시뮬레이션-실제 간극을 드러냈습니다. 흥미롭게도, 단일의 더 먼 예측 지평선을 사용하는 더 간단한 구성이 가장 복잡한 모델의 실제 최고 성능(1.11°)과 일치했습니다. 전반적으로, 다양한 예측 지평선과 목표 속도 조합을 평가한 결과, 물리적 전환에 반드시 고도로 세분화된 예측 데이터가 필요하지 않음을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03132v1
+
+## 개요
+산업 제어에서 순수 반응형 DRL로 인한 지연 및 오버슈트 문제를 해결하기 위해, 연구자들은 낮은 계산 비용의 예측형 제어 방안을 제안했다. 이 방법은 목표 속도와 미래 참조 지평선을 추가 상태 특성으로 사용하며, 1자유도 헬리콥터 플랫폼에서 PPO 알고리즘을 사용하여 여덟 가지 구성 조합을 평가했다. 시뮬레이션 결과 평균 절대 편차가 2.73°에서 0.31°로 감소하여 9배의 오차 감소를 달성했다. 그러나 제로샷 전이 시 시뮬레이션-실제 격차가 나타났으며, 흥미롭게도 단일 원거리 지평선을 사용하는 간단한 구성이 실제 환경에서 가장 복잡한 모델과 동일한 최고 성능(1.11°)을 달성했다. 실험은 고세분화 예측 데이터가 물리적 전이에 필수적이지 않음을 보여준다.
+
+## 핵심 내용
+### 방법
+- 핵심 혁신: DRL 상태 공간에 예측 특성 도입, 목표 속도(target velocities)와 미래 참조 지평선(future reference horizons) 포함
+- 제어 전략: PPO(proximal policy optimization) 알고리즘 기반, 1자유도 헬리콥터 테스트 플랫폼에서 여덟 가지 구성 평가
+
+### 실험 설정
+- 테스트 플랫폼: 1자유도(1-DoF) 헬리콥터 실험대
+- 알고리즘: PPO
+- 평가 지표: 평균 절대 편차(mean absolute deviation)
+- 구성 변수: 예측 지평선 길이와 목표 속도의 조합
+
+### 주요 결과
+- 시뮬레이션 성능: 오차가 2.73°에서 0.31°로 감소하여 9배의 오차 감소 달성
+- 물리적 전이: 제로샷 전이(zero-shot transfer)에서 시뮬레이션-실제 격차 발생
+- 핵심 발견: 단일 원거리 지평선을 사용하는 간단한 구성이 실제 환경에서 1.11° 오차를 달성하여 가장 복잡한 모델과 성능 동일
+- 결론: 고세분화 예측 데이터(highly granular predictive data)는 물리적 전이에 필수적이지 않음
+
+### 결론
+- 예측형 제어는 추적 오차를 효과적으로 줄일 수 있지만, 시뮬레이션-실제 전이 격차에 주의해야 함
+- 실제 배포 시 계산 효율성을 우선시해야 하며, 간단한 구성이 복잡한 모델보다 실용적일 수 있음

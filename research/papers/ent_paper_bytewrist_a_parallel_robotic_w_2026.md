@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.18084v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.18084v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (790 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,11 +71,29 @@ ByteWrist 通过创新的并联机构设计，成功解决了现有手腕在狭�
 ## Overview
 This paper introduces ByteWrist, a novel highly-flexible and anthropomorphic parallel wrist for robotic manipulation. ByteWrist addresses the critical limitations of existing serial and parallel wrists in narrow-space operations through a compact three-stage parallel drive mechanism integrated with arc-shaped end linkages. The design achieves precise RPY (Roll-Pitch-Yaw) motion while maintaining exceptional compactness, making it particularly suitable for complex unstructured environments such as home services, medical assistance, and precision assembly. The key innovations include: (1) a nested three-stage motor-driven linkages that minimize volume while enabling independent multi-DOF control, (2) arc-shaped end linkages that optimize force transmission and expand motion range, and (3) a central supporting ball functioning as a spherical joint that enhances structural stiffness without compromising flexibility. Meanwhile, we present comprehensive kinematic modeling including forward / inverse kinematics and a numerical Jacobian solution for precise control. Empirically, we observe ByteWrist demonstrates strong performance in narrow-space maneuverability and dual-arm cooperative manipulation tasks, outperforming Kinova-based systems. Results indicate significant improvements in compactness, efficiency, and stiffness compared to traditional designs, establishing ByteWrist as a promising solution for next-generation robotic manipulation in constrained environments.
 
-## 개요
-본 논문은 로봇 조작을 위한 고유연성 및 인간형 병렬 손목인 ByteWrist를 소개합니다. ByteWrist는 아크형 엔드 링키지와 통합된 컴팩트한 3단 병렬 구동 메커니즘을 통해 기존 직렬 및 병렬 손목이 좁은 공간 작업에서 가지는 주요 한계를 해결합니다. 이 설계는 정밀한 RPY(Roll-Pitch-Yaw) 운동을 구현하면서도 뛰어난 컴팩트성을 유지하여, 가사 서비스, 의료 지원, 정밀 조립과 같은 복잡한 비정형 환경에 특히 적합합니다. 주요 혁신 사항은 다음과 같습니다: (1) 부피를 최소화하면서 독립적인 다자유도 제어를 가능하게 하는 중첩된 3단 모터 구동 링키지, (2) 힘 전달을 최적화하고 운동 범위를 확장하는 아크형 엔드 링키지, (3) 유연성을 저해하지 않으면서 구조적 강성을 향상시키는 구형 관절 역할을 하는 중앙 지지 볼. 또한, 정밀 제어를 위한 순기구학/역기구학 및 수치적 자코비안 해법을 포함한 포괄적인 기구학 모델링을 제시합니다. 실험적으로, ByteWrist는 좁은 공간 기동성 및 이중 팔 협력 조작 작업에서 강력한 성능을 보여주며, Kinova 기반 시스템을 능가하는 것을 관찰했습니다. 결과는 기존 설계 대비 컴팩트성, 효율성 및 강성에서 상당한 개선을 나타내며, ByteWrist가 제한된 환경에서의 차세대 로봇 조작을 위한 유망한 솔루션임을 입증합니다.
-
-## 핵심 내용
-본 논문은 로봇 조작을 위한 고유연성 및 인간형 병렬 손목인 ByteWrist를 소개합니다. ByteWrist는 아크형 엔드 링키지와 통합된 컴팩트한 3단 병렬 구동 메커니즘을 통해 기존 직렬 및 병렬 손목이 좁은 공간 작업에서 가지는 주요 한계를 해결합니다. 이 설계는 정밀한 RPY(Roll-Pitch-Yaw) 운동을 구현하면서도 뛰어난 컴팩트성을 유지하여, 가사 서비스, 의료 지원, 정밀 조립과 같은 복잡한 비정형 환경에 특히 적합합니다. 주요 혁신 사항은 다음과 같습니다: (1) 부피를 최소화하면서 독립적인 다자유도 제어를 가능하게 하는 중첩된 3단 모터 구동 링키지, (2) 힘 전달을 최적화하고 운동 범위를 확장하는 아크형 엔드 링키지, (3) 유연성을 저해하지 않으면서 구조적 강성을 향상시키는 구형 관절 역할을 하는 중앙 지지 볼. 또한, 정밀 제어를 위한 순기구학/역기구학 및 수치적 자코비안 해법을 포함한 포괄적인 기구학 모델링을 제시합니다. 실험적으로, ByteWrist는 좁은 공간 기동성 및 이중 팔 협력 조작 작업에서 강력한 성능을 보여주며, Kinova 기반 시스템을 능가하는 것을 관찰했습니다. 결과는 기존 설계 대비 컴팩트성, 효율성 및 강성에서 상당한 개선을 나타내며, ByteWrist가 제한된 환경에서의 차세대 로봇 조작을 위한 유망한 솔루션임을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.18084v2
+
+## 개요
+ByteWrist는 기존의 직렬 및 병렬 손목이 좁은 공간에서의 조작에서 가지는 한계를 해결하기 위해, 컴팩트한 3단 병렬 구동 메커니즘을 제안하고 아크형 말단 링크를 통합했습니다. 이 설계는 매우 높은 컴팩트성을 유지하면서도 정밀한 RPY 운동을 구현하며, 특히 가정용 서비스, 의료 보조, 정밀 조립과 같은 복잡한 비정형 환경에 적합합니다. 핵심 혁신에는 중첩형 3단 모터 구동 링크, 힘 전달을 최적화하고 운동 범위를 확장하는 아크형 말단 링크, 그리고 볼 조인트 역할을 하여 구조 강성을 향상시키는 중심 지지 볼이 포함됩니다. 실험 결과, ByteWrist는 좁은 공간에서의 기동성과 양팔 협동 조작 작업에서 뛰어난 성능을 보였으며, Kinova 기반 시스템보다 우수하여 컴팩트성, 효율성, 강성 측면에서 기존 설계 대비 상당한 개선을 입증했습니다.
+
+## 핵심 내용
+### 방법
+ByteWrist는 새로운 3단 병렬 구동 메커니즘을 채택하며, 핵심 설계는 다음과 같습니다:
+- **중첩형 3단 모터 구동 링크**: 세 개의 모터와 링크를 중첩 배치하여 매우 작은 부피 내에서 독립적인 다자유도 제어를 구현합니다.
+- **아크형 말단 링크**: 힘 전달 경로를 최적화하면서 손목의 운동 범위를 확장합니다.
+- **중심 지지 볼**: 볼 조인트 역할을 하여 유연성을 보장하면서도 구조 강성을 크게 향상시킵니다.
+
+### 운동학 모델링
+연구팀은 완전한 운동학 모델을 제공했습니다:
+- **정기구학**: 관절 공간에서 작업 공간으로의 매핑.
+- **역기구학**: 작업 공간에서 관절 공간으로의 해석.
+- **수치 야코비 행렬**: 정밀 제어를 위한 속도 및 힘 매핑.
+
+### 실험 설정 및 결과
+- **성능 비교**: 좁은 공간에서의 기동성과 양팔 협동 조작 작업에서 ByteWrist는 Kinova 기반 시스템보다 우수한 성능을 보였습니다.
+- **핵심 지표**: 기존 설계 대비 ByteWrist는 컴팩트성, 효율성, 강성 측면에서 모두 상당한 개선을 달성했습니다.
+- **적용 시나리오**: 가정용 서비스, 의료 보조, 정밀 조립과 같은 복잡한 비정형 환경에 특히 적합합니다.
+
+### 결론
+ByteWrist는 혁신적인 병렬 메커니즘 설계를 통해 기존 손목이 좁은 공간에서의 조작에서 가지는 핵심 한계를 성공적으로 해결했으며, 제한된 환경에서의 차세대 로봇 조작을 위한 유망한 솔루션을 제공합니다.

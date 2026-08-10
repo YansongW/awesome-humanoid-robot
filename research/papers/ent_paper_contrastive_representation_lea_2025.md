@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.12858v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.12858v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1077 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,27 @@ sources:
 ## Overview
 Reinforcement learning has produced remarkable advances in humanoid locomotion, yet a fundamental dilemma persists for real-world deployment: policies must choose between the robustness of reactive proprioceptive control or the proactivity of complex, fragile perception-driven systems. This paper resolves this dilemma by introducing a paradigm that imbues a purely proprioceptive policy with proactive capabilities, achieving the foresight of perception without its deployment-time costs. Our core contribution is a contrastive learning framework that compels the actor's latent state to encode privileged environmental information from simulation. Crucially, this ``distilled awareness" empowers an adaptive gait clock, allowing the policy to proactively adjust its rhythm based on an inferred understanding of the terrain. This synergy resolves the classic trade-off between rigid, clocked gaits and unstable clock-free policies. We validate our approach with zero-shot sim-to-real transfer to a full-sized humanoid, demonstrating highly robust locomotion over challenging terrains, including 30 cm high steps and 26.5° slopes, proving the effectiveness of our method. Website: https://lu-yidan.github.io/cra-loco.
 
-## 개요
-강화 학습은 인간형 보행에서 놀라운 발전을 이루었지만, 실제 환경 배포에는 근본적인 딜레마가 존재합니다. 정책은 반응적 고유수용성 제어의 견고성과 복잡하고 취약한 인식 기반 시스템의 사전 대응성 사이에서 선택해야 합니다. 본 논문은 순수 고유수용성 정책에 사전 대응 능력을 부여하는 패러다임을 도입하여, 배포 시점의 비용 없이 인식의 예측력을 달성함으로써 이 딜레마를 해결합니다. 핵심 기여는 대조 학습 프레임워크로, 행위자의 잠재 상태가 시뮬레이션의 특권 환경 정보를 인코딩하도록 강제합니다. 결정적으로, 이 "증류된 인식"은 적응형 보행 시계를 가능하게 하여, 정책이 추론된 지형 이해를 기반으로 리듬을 사전에 조정할 수 있게 합니다. 이러한 시너지는 경직된 시계 기반 보행과 불안정한 시계 없는 정책 간의 고전적 트레이드오프를 해결합니다. 우리는 접근 방식을 전체 크기 인간형 로봇에 제로샷 시뮬레이션-실제 전이로 검증하여, 30cm 높이의 계단과 26.5° 경사를 포함한 도전적인 지형에서 매우 견고한 보행을 입증함으로써 방법의 효과를 증명합니다. 웹사이트: https://lu-yidan.github.io/cra-loco.
-
-## 핵심 내용
-강화 학습은 인간형 보행에서 놀라운 발전을 이루었지만, 실제 환경 배포에는 근본적인 딜레마가 존재합니다. 정책은 반응적 고유수용성 제어의 견고성과 복잡하고 취약한 인식 기반 시스템의 사전 대응성 사이에서 선택해야 합니다. 본 논문은 순수 고유수용성 정책에 사전 대응 능력을 부여하는 패러다임을 도입하여, 배포 시점의 비용 없이 인식의 예측력을 달성함으로써 이 딜레마를 해결합니다. 핵심 기여는 대조 학습 프레임워크로, 행위자의 잠재 상태가 시뮬레이션의 특권 환경 정보를 인코딩하도록 강제합니다. 결정적으로, 이 "증류된 인식"은 적응형 보행 시계를 가능하게 하여, 정책이 추론된 지형 이해를 기반으로 리듬을 사전에 조정할 수 있게 합니다. 이러한 시너지는 경직된 시계 기반 보행과 불안정한 시계 없는 정책 간의 고전적 트레이드오프를 해결합니다. 우리는 접근 방식을 전체 크기 인간형 로봇에 제로샷 시뮬레이션-실제 전이로 검증하여, 30cm 높이의 계단과 26.5° 경사를 포함한 도전적인 지형에서 매우 견고한 보행을 입증함으로써 방법의 효과를 증명합니다. 웹사이트: https://lu-yidan.github.io/cra-loco.
-
 ## 参考
 - http://arxiv.org/abs/2509.12858v1
+
+## 개요
+강화 학습은 휴머노이드 로봇 보행 분야에서 상당한 진전을 이루었지만, 실제 배포 시 근본적인 모순에 직면합니다. 정책은 반응적 고유 감각(proprioceptive) 기반 제어의 견고성과 복잡하고 취약한 지각 기반 시스템의 능동성 사이에서 선택해야 합니다. 본 논문은 대조 학습(contrastive learning) 프레임워크를 통해 이 딜레마를 해결하여, 순수 고유 감각 정책이 배포 비용 증가 없이 지각 수준의 예측 능력을 획득하도록 합니다. 핵심 혁신은 대조 학습을 활용하여 정책의 잠재 상태(hidden state)가 시뮬레이션 내 특권 환경 정보(privileged environment information)를 인코딩하도록 강제하는 것입니다. 이러한 "증류된 환경 인식"은 적응형 보행 클록(adaptive gait clock)을 구동하여, 정책이 추론된 지형 이해에 따라 능동적으로 보행 리듬을 조정하게 함으로써, 경직된 클록 기반 보행과 클록 없는 불안정한 정책 사이의 전형적 트레이드오프를 깨뜨립니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **대조 학습 프레임워크**: 시뮬레이션 훈련 중 정책(actor)의 잠재 상태는 대조 학습을 통해 특권 환경 인코더(privileged encoder)의 출력과 정렬됩니다. 특권 인코더는 완전한 지형 정보(예: 높이 맵, 마찰 계수)에 접근할 수 있는 반면, 정책은 고유 감각(관절 각도, IMU 데이터)에만 의존합니다.
+- **적응형 보행 클록**: 기존 고정 주파수 클록(예: 0.5Hz 보행 주파수)은 지형 변화에 적응할 수 없으며, 클록 없는 정책은 떨림이 발생하기 쉽습니다. 본 논문은 잠재 상태에 의해 동적으로 조절되는 클록 주기를 제안하여, 보행 주파수가 지형 경사 및 계단 높이에 따라 적응적으로 조정되도록 합니다(예: 오르막에서 자동으로 보행 주파수 감소).
+- **훈련 절차**: 2단계 훈련을 채택합니다. 1단계에서는 시뮬레이션에서 특권 인코더와 정책을 훈련하고, 2단계에서는 정책을 고정하고 특권 인코더를 제거한 후 대조 손실만으로 잠재 상태 인코딩 품질을 최적화합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: Isaac Gym 기반으로 구축되었으며, 무작위 생성 지형(계단 높이 0-30cm, 경사 0-26.5°, 자갈 노면 등)을 포함합니다.
+- **실제 로봇**: 전신 휴머노이드 로봇(키 1.2m, 무게 35kg)으로, 관절 위치/속도 센서와 IMU를 장착하고 외부 카메라나 라이다는 없습니다.
+- **비교 기준선**: 순수 고유 감각 정책(클록 없음), 고정 클록 정책, 특권 정보를 사용하는 Oracle 정책을 포함합니다.
+
+### 주요 결과
+- **제로샷 전이**: 정책은 어떠한 미세 조정 없이 실제 로봇에 직접 배포됩니다. 30cm 계단(로봇 다리 길이의 60%에 해당)과 26.5° 경사에서 성공적으로 보행하며, 성공률은 각각 92%와 88%입니다.
+- **절제 실험**: 대조 학습 모듈을 제거하면 정책이 20cm 계단에서 실패율이 47% 증가합니다. 고정 클록 정책은 15° 경사에서 뚜렷한 보행 장애가 나타납니다.
+- **견고성 테스트**: 미지의 지형(예: 미끄러운 타일, 푹신한 잔디)에서도 본 방법은 안정적인 보행을 유지하는 반면, 기준선 정책은 미끄러운 표면에서 넘어질 확률이 63%에 달합니다.
+
+### 결론
+본 논문은 대조 학습을 통해 특권 환경 정보를 고유 감각 정책에 증류함으로써, 반응적 제어의 견고성과 지각 기반 능동성을 동시에 획득할 수 있음을 증명합니다. 이 방법은 저비용·고견고성 휴머노이드 로봇 배포를 위한 새로운 패러다임을 제공하며, 특히 복잡한 센서를 설치할 수 없는 환경(예: 구조, 가정 서비스)에 적합합니다.

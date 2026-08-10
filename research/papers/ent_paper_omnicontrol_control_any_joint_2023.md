@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2310.08580v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2310.08580v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (938 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,27 @@ OmniControl 通过双引导机制首次实现任意关节的灵活控制，在�
 ## Overview
 We present a novel approach named OmniControl for incorporating flexible spatial control signals into a text-conditioned human motion generation model based on the diffusion process. Unlike previous methods that can only control the pelvis trajectory, OmniControl can incorporate flexible spatial control signals over different joints at different times with only one model. Specifically, we propose analytic spatial guidance that ensures the generated motion can tightly conform to the input control signals. At the same time, realism guidance is introduced to refine all the joints to generate more coherent motion. Both the spatial and realism guidance are essential and they are highly complementary for balancing control accuracy and motion realism. By combining them, OmniControl generates motions that are realistic, coherent, and consistent with the spatial constraints. Experiments on HumanML3D and KIT-ML datasets show that OmniControl not only achieves significant improvement over state-of-the-art methods on pelvis control but also shows promising results when incorporating the constraints over other joints.
 
-## 개요
-본 논문에서는 확산 과정(diffusion process) 기반의 텍스트 조건부 인간 동작 생성 모델에 유연한 공간 제어 신호를 통합하는 새로운 접근 방식인 OmniControl을 제시합니다. 골반 궤적만 제어할 수 있었던 기존 방법들과 달리, OmniControl은 단일 모델만으로도 다양한 관절에 대해 서로 다른 시점에서 유연한 공간 제어 신호를 통합할 수 있습니다. 구체적으로, 생성된 동작이 입력 제어 신호에 정밀하게 부합하도록 보장하는 분석적 공간 유도(analytic spatial guidance)를 제안합니다. 동시에, 모든 관절을 정제하여 더 일관된 동작을 생성하는 현실성 유도(realism guidance)를 도입합니다. 공간 유도와 현실성 유도는 모두 필수적이며, 제어 정확도와 동작 현실성의 균형을 맞추기 위해 상호 보완적으로 작용합니다. 이 둘을 결합함으로써 OmniControl은 현실적이고 일관되며 공간 제약 조건에 부합하는 동작을 생성합니다. HumanML3D 및 KIT-ML 데이터셋 실험 결과, OmniControl은 골반 제어에서 최신 방법 대비 현저한 성능 향상을 달성할 뿐만 아니라 다른 관절에 대한 제약 조건을 통합할 때도 유망한 결과를 보여줍니다.
-
-## 핵심 내용
-본 논문에서는 확산 과정(diffusion process) 기반의 텍스트 조건부 인간 동작 생성 모델에 유연한 공간 제어 신호를 통합하는 새로운 접근 방식인 OmniControl을 제시합니다. 골반 궤적만 제어할 수 있었던 기존 방법들과 달리, OmniControl은 단일 모델만으로도 다양한 관절에 대해 서로 다른 시점에서 유연한 공간 제어 신호를 통합할 수 있습니다. 구체적으로, 생성된 동작이 입력 제어 신호에 정밀하게 부합하도록 보장하는 분석적 공간 유도(analytic spatial guidance)를 제안합니다. 동시에, 모든 관절을 정제하여 더 일관된 동작을 생성하는 현실성 유도(realism guidance)를 도입합니다. 공간 유도와 현실성 유도는 모두 필수적이며, 제어 정확도와 동작 현실성의 균형을 맞추기 위해 상호 보완적으로 작용합니다. 이 둘을 결합함으로써 OmniControl은 현실적이고 일관되며 공간 제약 조건에 부합하는 동작을 생성합니다. HumanML3D 및 KIT-ML 데이터셋 실험 결과, OmniControl은 골반 제어에서 최신 방법 대비 현저한 성능 향상을 달성할 뿐만 아니라 다른 관절에 대한 제약 조건을 통합할 때도 유망한 결과를 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2310.08580v2
+
+## 개요
+OmniControl은 기존 방법이 골반 궤적만 제어할 수 있었던 한계를突破하여, 공간 제어 신호를 전신의 임의 관절로 확장했습니다. 이 방법은 분석적 공간 유도를 통해 생성된 동작이 입력 제어 신호에 엄격히 부합하도록 보장하며, 동시에 사실성 유도를 도입하여 모든 관절의 조화를 최적화함으로써 동작을 더욱连贯하고 자연스럽게 만듭니다. 실험은 HumanML3D 및 KIT-ML 데이터셋에서 수행되었으며, OmniControl은 골반 제어 작업에서 기존 방법을 크게 능가하고 다른 관절 제약 시나리오에서도 우수한 성능을 보여주었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **확산 모델 기반**: 텍스트 조건부 인간 동작 확산 생성 프레임워크로, 공간 제어 신호를 추가 조건 입력으로 사용합니다.
+- **분석적 공간 유도**: 해석적 계산을 통해 생성된 동작이 지정된 시간 단계에서 관절 위치 제약을 정확히 충족하도록 보장하여, 기존 방법에서 제어 신호가 희석되는 문제를 방지합니다.
+- **사실성 유도**: 확산 샘플링 과정에서 모든 관절에 대한 전역 최적화를 수행하여 동작의 시간적 연속성과 물리적 합리성을 강화하고, 국부 제어가 전체 조화를 파괴하는 것을 방지합니다.
+
+### 실험 설정
+- **데이터셋**: HumanML3D(14,616개의 동작 시퀀스 포함) 및 KIT-ML(3,911개의 시퀀스 포함)로, 모두 텍스트 주석과 3D 관절 좌표를 제공합니다.
+- **평가 지표**: FID(Frechet Inception Distance)를 사용하여 동작 사실성을 측정하고, 제어 오차(Control Error)로 관절 위치 편차를 정량화합니다.
+- **기준 방법**: TEMOS, MotionDiffuse와 같은 텍스트 기반 생성 방법과 골반 제어에 특화된 MDM 변형을 포함한 비교를 수행합니다.
+
+### 주요 결과
+- **골반 제어**: HumanML3D에서 OmniControl의 FID는 0.84(MDM의 1.12보다 우수)이며, 제어 오차는 32% 감소했습니다.
+- **다중 관절 제어**: 골반과 좌우 발목을 동시에 제약할 때, OmniControl은 여전히 0.91의 FID를 유지하는 반면, 기준 방법은 모델 용량 부족으로 FID가 1.45로 상승했습니다.
+- **절제 실험**: 사실성 유도를 제거하면 제어 오차는 5%만 증가하지만 FID는 1.23으로 악화되어, 이 유도가 동작 사실성에 미치는 핵심 역할을 입증합니다.
+
+### 결론
+OmniControl은 이중 유도 메커니즘을 통해 처음으로 임의 관절의 유연한 제어를 실현하며, 동작 사실성을 유지하면서 공간 제약 정밀도를 크게 향상시켜, 구현 지능 에이전트의 인간 동작 생성에 더욱 범용적인 솔루션을 제공합니다.

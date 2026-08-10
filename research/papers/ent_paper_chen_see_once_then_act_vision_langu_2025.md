@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.07582v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.07582v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (983 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,41 @@ ViVLA 展示了从单段视频演示中高效学习新操作技能的潜力，�
 ## Overview
 Developing robust and general-purpose manipulation policies represents a fundamental objective in robotics research. While Vision-Language-Action (VLA) models have demonstrated promising capabilities for end-to-end robot control, existing approaches still exhibit limited generalization to tasks beyond their training distributions. In contrast, humans possess remarkable proficiency in acquiring novel skills by simply observing others performing them once. Inspired by this capability, we propose ViVLA, a generalist robotic manipulation policy that achieves efficient task learning from a single expert demonstration video at test time. Our approach jointly processes an expert demonstration video alongside the robot's visual observations to predict both the demonstrated action sequences and subsequent robot actions, effectively distilling fine-grained manipulation knowledge from expert behavior and transferring it seamlessly to the agent. To enhance the performance of ViVLA, we develop a scalable expert-agent pair data generation pipeline capable of synthesizing paired trajectories from easily accessible human videos, further augmented by curated pairs from publicly available datasets. This pipeline produces a total of 892,911 expert-agent samples for training ViVLA. Experimental results demonstrate that our ViVLA is able to acquire novel manipulation skills from only a single expert demonstration video at test time. Our approach achieves over 30% improvement on unseen LIBERO tasks and maintains above 35% gains with cross-embodiment videos. Real-world experiments demonstrate effective learning from human videos, yielding more than 38% improvement on unseen tasks.
 
-## 개요
-강건하고 범용적인 조작 정책을 개발하는 것은 로봇 공학 연구의 근본적인 목표입니다. Vision-Language-Action(VLA) 모델은 엔드투엔드 로봇 제어에서 유망한 능력을 보여주었지만, 기존 접근 방식은 훈련 분포를 벗어난 작업에 대한 일반화가 여전히 제한적입니다. 반면, 인간은 다른 사람이 한 번 수행하는 것을 관찰하는 것만으로 새로운 기술을 습득하는 놀라운 능력을 가지고 있습니다. 이러한 능력에 영감을 받아, 우리는 테스트 시점에 단일 전문가 시연 비디오만으로 효율적인 작업 학습을 달성하는 범용 로봇 조작 정책인 ViVLA를 제안합니다. 우리의 접근 방식은 전문가 시연 비디오와 로봇의 시각적 관찰을 함께 처리하여 시연된 행동 시퀀스와 후속 로봇 행동을 모두 예측함으로써, 전문가 행동에서 세분화된 조작 지식을 효과적으로 추출하고 이를 에이전트에 원활하게 전이합니다. ViVLA의 성능을 향상시키기 위해, 우리는 쉽게 접근 가능한 인간 비디오에서 쌍을 이룬 궤적을 합성할 수 있는 확장 가능한 전문가-에이전트 쌍 데이터 생성 파이프라인을 개발하고, 공개 데이터셋에서 선별된 쌍으로 추가 보강했습니다. 이 파이프라인은 ViVLA 훈련을 위해 총 892,911개의 전문가-에이전트 샘플을 생성합니다. 실험 결과는 ViVLA가 테스트 시점에 단일 전문가 시연 비디오만으로 새로운 조작 기술을 습득할 수 있음을 보여줍니다. 우리의 접근 방식은 보지 못한 LIBERO 작업에서 30% 이상의 개선을 달성하고, 교차 체현 비디오에서도 35% 이상의 이득을 유지합니다. 실제 환경 실험은 인간 비디오로부터의 효과적인 학습을 입증하며, 보지 못한 작업에서 38% 이상의 개선을 보여줍니다.
-
-## 핵심 내용
-강건하고 범용적인 조작 정책을 개발하는 것은 로봇 공학 연구의 근본적인 목표입니다. Vision-Language-Action(VLA) 모델은 엔드투엔드 로봇 제어에서 유망한 능력을 보여주었지만, 기존 접근 방식은 훈련 분포를 벗어난 작업에 대한 일반화가 여전히 제한적입니다. 반면, 인간은 다른 사람이 한 번 수행하는 것을 관찰하는 것만으로 새로운 기술을 습득하는 놀라운 능력을 가지고 있습니다. 이러한 능력에 영감을 받아, 우리는 테스트 시점에 단일 전문가 시연 비디오만으로 효율적인 작업 학습을 달성하는 범용 로봇 조작 정책인 ViVLA를 제안합니다. 우리의 접근 방식은 전문가 시연 비디오와 로봇의 시각적 관찰을 함께 처리하여 시연된 행동 시퀀스와 후속 로봇 행동을 모두 예측함으로써, 전문가 행동에서 세분화된 조작 지식을 효과적으로 추출하고 이를 에이전트에 원활하게 전이합니다. ViVLA의 성능을 향상시키기 위해, 우리는 쉽게 접근 가능한 인간 비디오에서 쌍을 이룬 궤적을 합성할 수 있는 확장 가능한 전문가-에이전트 쌍 데이터 생성 파이프라인을 개발하고, 공개 데이터셋에서 선별된 쌍으로 추가 보강했습니다. 이 파이프라인은 ViVLA 훈련을 위해 총 892,911개의 전문가-에이전트 샘플을 생성합니다. 실험 결과는 ViVLA가 테스트 시점에 단일 전문가 시연 비디오만으로 새로운 조작 기술을 습득할 수 있음을 보여줍니다. 우리의 접근 방식은 보지 못한 LIBERO 작업에서 30% 이상의 개선을 달성하고, 교차 체현 비디오에서도 35% 이상의 이득을 유지합니다. 실제 환경 실험은 인간 비디오로부터의 효과적인 학습을 입증하며, 보지 못한 작업에서 38% 이상의 개선을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.07582v1
+
+## 개요
+ViVLA는 기존 VLA 모델의 일반화 능력이 제한적인 문제를 해결하고자, 인간의 "한 번 보면 바로 배우는" 능력을 모방하여 단일 전문가 시연 비디오에서 새로운 조작 기술을 효율적으로 학습하는 것을 목표로 합니다. 이 모델은 전문가 시연 비디오와 로봇 자체의 시각적 관측을 동시에 처리하여, 시연 동작 시퀀스와 후속 로봇 동작을 예측함으로써 전문가 행동의 세밀한 조작 지식을 추출하여 에이전트로 전이합니다. 성능을 향상시키기 위해 연구팀은 확장 가능한 전문가-에이전트 쌍 데이터 생성 파이프라인을 개발했으며, 이는 쉽게 얻을 수 있는 인간 비디오에서 쌍을 이루는 궤적을 합성하고 공개 데이터셋을 결합하여 확장함으로써 최종적으로 892,911개의 훈련 샘플을 생성합니다. 실험 결과, ViVLA는 보지 못한 작업에서 우수한 성능을 보였으며, 교차 엔티티 및 실제 세계 시나리오를 효과적으로 처리할 수 있음을 입증했습니다.
+
+## 핵심 내용
+### 방법
+ViVLA의 핵심 아키텍처는 비전-언어-동작 모델을 기반으로 하며, 입력은 다음과 같습니다:
+- 전문가 시연 비디오 한 개 (단일 작업 실행)
+- 로봇의 현재 시각적 관측 (예: 카메라 이미지)
+- 작업 설명 (자연어 명령)
+
+모델은 위 입력을 공동으로 인코딩하여 두 가지 핵심 예측을 출력합니다:
+1. 시연 비디오의 동작 시퀀스 (전문가 행동 정렬용)
+2. 로봇이 이후에 실행해야 할 동작 (실제 제어용)
+
+이 설계 덕분에 ViVLA는 전문가 행동에서 세밀한 조작 지식을 추출하여 에이전트로 직접 전이할 수 있으며, 미세 조정이나 추가 훈련이 필요 없습니다.
+
+### 데이터 생성 파이프라인
+ViVLA를 훈련시키기 위해 연구팀은 확장 가능한 전문가-에이전트 쌍 데이터 생성 프로세스를 구축했습니다:
+- 쉽게 얻을 수 있는 인간 비디오에서 자동 주석 및 궤적 합성을 통해 쌍 데이터 생성
+- 공개 데이터셋 (예: LIBERO)의 고품질 조작 궤적 결합
+- 최종 데이터셋은 **892,911**개의 전문가-에이전트 샘플을 포함하며, 다양한 조작 시나리오를 포괄합니다
+
+### 실험 설정 및 결과
+ViVLA는 다음 시나리오에서 평가되었습니다:
+
+- **LIBERO 벤치마크 테스트**:
+  - 보지 못한 작업(unseen tasks)에서 ViVLA는 기준 모델 대비 **30% 이상**의 성공률 향상을 달성
+  - 교차 엔티티(cross-embodiment) 시연 비디오를 사용할 때, 향상 폭은 **35% 이상** 유지
+
+- **실제 세계 실험**:
+  - 인간 시연 비디오에서 학습한 ViVLA는 보지 못한 작업에서 **38% 이상**의 성능 향상을 기록
+  - 비로봇 비디오에서 조작 지식을 전이하는 모델의 능력을 검증
+
+### 결론
+ViVLA는 단일 비디오 시연에서 새로운 조작 기술을 효율적으로 학습할 수 있는 잠재력을 보여주며, VLA 모델의 일반화 능력을 크게 향상시켰습니다. 이 데이터 생성 파이프라인은 향후 연구, 특히 교차 엔티티 및 실제 세계 시나리오에 재사용 가능한 프레임워크를 제공합니다.

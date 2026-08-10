@@ -61,8 +61,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00530v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00530v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (870 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -102,11 +103,32 @@ sources:
 ## Overview
 Improvements in the technical performance of human--robot interaction (HRI) systems do not automatically translate into differences that human users can detect during live interaction. This paper investigates whether a 15 percentage point gain in end-to-end task success (from 75% in a multimodal baseline system to 90% in an improved configuration identified through a prior ablation study) is sufficient to produce consistent and measurable differences in user perception. The baseline system combines Whisper for speech recognition, Florence-2 for open-vocabulary object detection, LLaMA 3.1 for action extraction, and an interval Type-2 fuzzy logic controller for motion execution. The improved configuration replaces the perception and language modules with Grounding DINO + SAM and Qwen 3.5 9B, respectively, while retaining the same controller. A within-subject user study with 24 participants compared both systems on the same tabletop object-grasping task. After interacting with each configuration, participants rated perceived speed, reliability, and overall competence and fluency on a 7-point Likert scale. Results show that 17 out of 24 participants (70.83%) preferred the improved system (exact binomial test, p = 0.043, h = 0.43), and all three perceptual constructs were rated significantly higher for the improved configuration after Holm correction, with large to very large effect sizes (p < 0.001). These findings confirm that the identified technical improvements are perceptible to users in direct interaction and underscore the importance of complementing benchmark evaluation with user-centred evidence when assessing robotic manipulation pipelines.
 
-## 개요
-인간-로봇 상호작용(HRI) 시스템의 기술적 성능 향상이 실제 상호작용 중 인간 사용자가 감지할 수 있는 차이로 자동 이어지지는 않습니다. 본 논문은 종단 간 작업 성공률에서 15% 포인트 향상(이전 절제 연구를 통해 확인된 개선 구성에서 90%, 다중 모달 기준 시스템에서 75%)이 사용자 인식에서 일관되고 측정 가능한 차이를 만들어내기에 충분한지 조사합니다. 기준 시스템은 음성 인식을 위한 Whisper, 개방형 어휘 객체 탐지를 위한 Florence-2, 행동 추출을 위한 LLaMA 3.1, 동작 실행을 위한 구간 Type-2 퍼지 논리 제어기를 결합합니다. 개선 구성은 인식 및 언어 모듈을 각각 Grounding DINO + SAM과 Qwen 3.5 9B로 대체하고 동일한 제어기를 유지합니다. 24명의 참가자를 대상으로 한 피험자 내 사용자 연구는 동일한 탁상 객체 잡기 작업에서 두 시스템을 비교했습니다. 각 구성과 상호작용한 후, 참가자들은 인지된 속도, 신뢰성, 전반적인 능숙도 및 유창성을 7점 리커트 척도로 평가했습니다. 결과는 24명 중 17명(70.83%)의 참가자가 개선 시스템을 선호했으며(정확 이항 검정, p = 0.043, h = 0.43), Holm 보정 후 세 가지 인식 구성 모두 개선 구성에서 유의미하게 높게 평가되었고, 크거나 매우 큰 효과 크기를 보였습니다(p < 0.001). 이러한 발견은 확인된 기술적 개선이 직접 상호작용에서 사용자에게 인지 가능함을 확인하며, 로봇 조작 파이프라인을 평가할 때 벤치마크 평가를 사용자 중심 증거로 보완하는 중요성을 강조합니다.
-
-## 핵심 내용
-인간-로봇 상호작용(HRI) 시스템의 기술적 성능 향상이 실제 상호작용 중 인간 사용자가 감지할 수 있는 차이로 자동 이어지지는 않습니다. 본 논문은 종단 간 작업 성공률에서 15% 포인트 향상(이전 절제 연구를 통해 확인된 개선 구성에서 90%, 다중 모달 기준 시스템에서 75%)이 사용자 인식에서 일관되고 측정 가능한 차이를 만들어내기에 충분한지 조사합니다. 기준 시스템은 음성 인식을 위한 Whisper, 개방형 어휘 객체 탐지를 위한 Florence-2, 행동 추출을 위한 LLaMA 3.1, 동작 실행을 위한 구간 Type-2 퍼지 논리 제어기를 결합합니다. 개선 구성은 인식 및 언어 모듈을 각각 Grounding DINO + SAM과 Qwen 3.5 9B로 대체하고 동일한 제어기를 유지합니다. 24명의 참가자를 대상으로 한 피험자 내 사용자 연구는 동일한 탁상 객체 잡기 작업에서 두 시스템을 비교했습니다. 각 구성과 상호작용한 후, 참가자들은 인지된 속도, 신뢰성, 전반적인 능숙도 및 유창성을 7점 리커트 척도로 평가했습니다. 결과는 24명 중 17명(70.83%)의 참가자가 개선 시스템을 선호했으며(정확 이항 검정, p = 0.043, h = 0.43), Holm 보정 후 세 가지 인식 구성 모두 개선 구성에서 유의미하게 높게 평가되었고, 크거나 매우 큰 효과 크기를 보였습니다(p < 0.001). 이러한 발견은 확인된 기술적 개선이 직접 상호작용에서 사용자에게 인지 가능함을 확인하며, 로봇 조작 파이프라인을 평가할 때 벤치마크 평가를 사용자 중심 증거로 보완하는 중요성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.00530v1
+
+## 개요
+본 연구는 인간-로봇 상호작용 시스템의 기술적 지표 향상과 사용자 실제 경험 사이의 간극을 다룬다. 기준 시스템은 Whisper 음성 인식, Florence-2 개방형 어휘 검출, LLaMA 3.1 동작 추출 및 구간 2형 퍼지 논리 제어기를 사용한다. 개선 시스템은 지각 모듈을 Grounding DINO+SAM으로, 언어 모듈을 Qwen 3.5 9B로 교체한다. 24명의 피험자가 테이블 위 물체 잡기 과제에서 두 구성을 순차적으로 경험하며, 7점 리커트 척도로 지각 속도, 신뢰성, 전반적 능력 및 유창성을 평가한다. 통계 결과, 개선 시스템은 세 가지 지각 차원 모두에서 유의미하게 높은 점수를 얻었으며(효과 크기 큼~매우 큼), 선호 비율은 70.83%에 달했다(정확 이항 검정 p=0.043).
+
+## 핵심 내용
+### 연구 동기
+- 기술적 성능 향상(예: 작업 성공률 75%에서 90%로 상승)이 반드시 사용자가 인지 가능한 상호작용 경험 차이로 이어지지는 않음
+- 벤치마크 개선의 실제 인지 가능성을 사용자 연구를 통해 검증할 필요가 있음
+
+### 시스템 아키텍처
+- **기준 시스템**: Whisper(음성 인식) + Florence-2(개방형 어휘 검출) + LLaMA 3.1(동작 추출) + 구간 2형 퍼지 논리 제어기(운동 실행)
+- **개선 시스템**: Grounding DINO + SAM(지각 모듈) + Qwen 3.5 9B(언어 모듈), 동일한 제어기 유지
+
+### 실험 설계
+- **피험자**: 24명의 참가자(피험자 내 설계)
+- **과제**: 테이블 위 물체 잡기
+- **평가 지표**: 7점 리커트 척도(1=매우 동의하지 않음, 7=매우 동의함), 지각 속도, 신뢰성, 전반적 능력 및 유창성 측정
+- **통계 방법**: 정확 이항 검정(선호 데이터), Holm 보정(지각 점수)
+
+### 주요 결과
+- **선호 데이터**: 17/24(70.83%)가 개선 시스템을 선호함(p=0.043, 효과 크기 h=0.43)
+- **지각 점수**: 개선 시스템은 세 가지 차원 모두에서 유의미하게 높음(p<0.001), 효과 크기 큼~매우 큼
+- **결론**: 15%의 작업 성공률 향상은 사용자가 안정적으로 인지할 수 있으며, 기술 개선의 실제 가치를 검증함
+
+### 연구 의의
+- 로봇 조작 파이프라인 평가에서 벤치마크 테스트와 사용자 중심 증거를 결합해야 함을 강조
+- 다중 모달 HRI 시스템의 사용자 지각 연구를 위한 정량적 방법론 참조를 제공함

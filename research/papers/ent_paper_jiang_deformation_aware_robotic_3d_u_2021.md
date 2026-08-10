@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.08411v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.08411v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (793 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,27 @@ Tissue deformation in ultrasound (US) imaging leads to geometrical errors when m
 ## Content
 Tissue deformation in ultrasound (US) imaging leads to geometrical errors when measuring tissues due to the pressure exerted by probes. Such deformation has an even larger effect on 3D US volumes as the correct compounding is limited by the inconsistent location and geometry. This work proposes a patient-specified stiffness-based method to correct the tissue deformations in robotic 3D US acquisitions. To obtain the patient-specified model, robotic palpation is performed at sampling positions on the tissue. The contact force, US images and the probe poses of the palpation procedure are recorded. The contact force and the probe poses are used to estimate the nonlinear tissue stiffness. The images are fed to an optical flow algorithm to compute the pixel displacement. Then the pixel-wise tissue deformation under different forces is characterized by a coupled quadratic regression. To correct the deformation at unseen positions on the trajectory for building 3D volumes, an interpolation is performed based on the stiffness values computed at the sampling positions. With the stiffness and recorded force, the tissue displacement could be corrected. The method was validated on two blood vessel phantoms with different stiffness. The results demonstrate that the method can effectively correct the force-induced deformation and finally generate 3D tissue geometries.
 
-## 개요
-초음파(US) 영상에서의 조직 변형은 프로브가 가하는 압력으로 인해 조직을 측정할 때 기하학적 오류를 초래합니다. 이러한 변형은 3D US 볼륨에 훨씬 더 큰 영향을 미치는데, 이는 일관되지 않은 위치와 기하학적 구조로 인해 올바른 합성이 제한되기 때문입니다. 본 연구는 로봇 3D US 획득 과정에서 조직 변형을 보정하기 위해 환자 특화 강성 기반 방법을 제안합니다. 환자 특화 모델을 얻기 위해 조직의 샘플링 위치에서 로봇 촉진(palpation)을 수행합니다. 촉진 과정의 접촉력, US 이미지 및 프로브 자세가 기록됩니다. 접촉력과 프로브 자세는 비선형 조직 강성을 추정하는 데 사용됩니다. 이미지는 광학 흐름(optical flow) 알고리즘에 입력되어 픽셀 변위를 계산합니다. 그런 다음 다양한 힘 하에서의 픽셀 단위 조직 변형은 결합 이차 회귀(coupled quadratic regression)로 특성화됩니다. 3D 볼륨 구축을 위한 궤적 상의 보이지 않는 위치에서 변형을 보정하기 위해 샘플링 위치에서 계산된 강성 값을 기반으로 보간(interpolation)이 수행됩니다. 강성과 기록된 힘을 통해 조직 변위를 보정할 수 있습니다. 이 방법은 서로 다른 강성을 가진 두 개의 혈관 팬텀(phantom)에서 검증되었습니다. 결과는 이 방법이 힘으로 인한 변형을 효과적으로 보정하고 최종적으로 3D 조직 기하학적 구조를 생성할 수 있음을 보여줍니다.
-
-## 핵심 내용
-초음파(US) 영상에서의 조직 변형은 프로브가 가하는 압력으로 인해 조직을 측정할 때 기하학적 오류를 초래합니다. 이러한 변형은 3D US 볼륨에 훨씬 더 큰 영향을 미치는데, 이는 일관되지 않은 위치와 기하학적 구조로 인해 올바른 합성이 제한되기 때문입니다. 본 연구는 로봇 3D US 획득 과정에서 조직 변형을 보정하기 위해 환자 특화 강성 기반 방법을 제안합니다. 환자 특화 모델을 얻기 위해 조직의 샘플링 위치에서 로봇 촉진을 수행합니다. 촉진 과정의 접촉력, US 이미지 및 프로브 자세가 기록됩니다. 접촉력과 프로브 자세는 비선형 조직 강성을 추정하는 데 사용됩니다. 이미지는 광학 흐름 알고리즘에 입력되어 픽셀 변위를 계산합니다. 그런 다음 다양한 힘 하에서의 픽셀 단위 조직 변형은 결합 이차 회귀로 특성화됩니다. 3D 볼륨 구축을 위한 궤적 상의 보이지 않는 위치에서 변형을 보정하기 위해 샘플링 위치에서 계산된 강성 값을 기반으로 보간이 수행됩니다. 강성과 기록된 힘을 통해 조직 변위를 보정할 수 있습니다. 이 방법은 서로 다른 강성을 가진 두 개의 혈관 팬텀에서 검증되었습니다. 결과는 이 방법이 힘으로 인한 변형을 효과적으로 보정하고 최종적으로 3D 조직 기하학적 구조를 생성할 수 있음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2107.08411v1
+
+## 개요
+초음파 영상에서 프로브가 가하는 압력은 조직 변형을 유발하여 기하학적 측정 오차를 발생시키며, 이러한 오차는 3D 초음파 볼륨을 구축할 때 특히 두드러진다. 본 논문은 로봇 촉진을 통해 조직 샘플링 지점에서 접촉력, 초음파 영상 및 프로브 자세를 기록하고, 이러한 데이터를 활용하여 비선형 조직 강성을 추정하는 환자 특이적 강성 모델링 방법을 제안한다. 광류 알고리즘은 픽셀 변위를 계산하고, 결합 이차 회귀를 통해 서로 다른 힘 하에서의 픽셀 수준 변형 모델을 수립한다. 3D 볼륨 구축 궤적에서 관찰되지 않은 위치의 경우, 샘플링 지점의 강성 값을 기반으로 보간하여 보정한다. 두 가지 서로 다른 경도의 혈관 팬텀에서 검증한 결과, 이 방법은 힘으로 인한 변형을 효과적으로 보정하고 정확한 3D 조직 기하 구조를 생성할 수 있음을 확인했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **환자 특이적 강성 모델링**: 조직 표면의 선택된 샘플링 위치에서 로봇 촉진을 수행하고, 접촉력, 초음파 영상 및 프로브 자세를 동시에 기록한다.
+- **비선형 강성 추정**: 접촉력과 프로브 자세 데이터를 활용하여 역학 모델을 통해 조직의 비선형 강성 특성을 추정한다.
+- **픽셀 변위 계산**: 초음파 영상을 광류 알고리즘(optical flow)에 입력하여 서로 다른 압력 하에서 조직 픽셀 지점의 변위장을 계산한다.
+- **변형 모델링**: 결합 이차 회귀(coupled quadratic regression)를 사용하여 접촉력과 픽셀 변위 간의 매핑 관계를 수립하고, 픽셀 수준 변형 특성을 구현한다.
+- **변형 보정**: 3D 볼륨 구축 궤적에서 샘플링되지 않은 위치의 경우, 알려진 샘플링 지점의 강성 값을 기반으로 보간하고, 실시간으로 기록된 접촉력을 결합하여 조직 변위를 보정한다.
+
+### 실험 설정
+- **팬텀**: 두 가지 서로 다른 경도의 혈관 팬텀(vascular phantoms)을 사용하여 검증한다.
+- **평가 지표**: 보정 전후의 3D 재구성 조직 기하 정밀도를 비교하여 변형 보정 효과를 정량화한다.
+
+### 주요 결과
+- 이 방법은 힘으로 인한 변형으로 발생하는 기하학적 오차를 효과적으로 제거하고 더 정확한 3D 조직 기하 구조를 생성한다.
+- 두 가지 경도의 팬텀 모두에서 안정적인 보정 성능을 보여주며, 방법의 일반화 능력을 검증한다.
+
+### 결론
+본 연구는 로봇 3D 초음파 영상에서 조직 변형 보정을 위한 외부 추적 장치가 필요 없는 솔루션을 제공하며, 환자 특이적 강성 모델링을 통해 고정밀 기하 재구성을 구현한다.

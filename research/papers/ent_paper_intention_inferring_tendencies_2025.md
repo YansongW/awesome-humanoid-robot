@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.04931v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.04931v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (930 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,33 @@ INTENTION 通过将 VLM 场景推理与交互驱动记忆结合，为人形机�
 ## Overview
 Traditional control and planning for robotic manipulation heavily rely on precise physical models and predefined action sequences. While effective in structured environments, such approaches often fail in real-world scenarios due to modeling inaccuracies and struggle to generalize to novel tasks. In contrast, humans intuitively interact with their surroundings, demonstrating remarkable adaptability, making efficient decisions through implicit physical understanding. In this work, we propose INTENTION, a novel framework enabling robots with learned interactive intuition and autonomous manipulation in diverse scenarios, by integrating Vision-Language Models (VLMs) based scene reasoning with interaction-driven memory. We introduce Memory Graph to record scenes from previous task interactions which embodies human-like understanding and decision-making about different tasks in real world. Meanwhile, we design an Intuitive Perceptor that extracts physical relations and affordances from visual scenes. Together, these components empower robots to infer appropriate interaction behaviors in new scenes without relying on repetitive instructions. Videos: https://robo-intention.github.io
 
-## 개요
-로봇 조작을 위한 전통적인 제어 및 계획은 정밀한 물리적 모델과 사전 정의된 동작 시퀀스에 크게 의존합니다. 구조화된 환경에서는 효과적이지만, 이러한 접근 방식은 모델링 부정확성으로 인해 실제 세계 시나리오에서 종종 실패하며 새로운 작업으로 일반화하는 데 어려움을 겪습니다. 반면, 인간은 주변 환경과 직관적으로 상호작용하며 놀라운 적응력을 보여주고, 암묵적인 물리적 이해를 통해 효율적인 결정을 내립니다. 본 연구에서는 Vision-Language Models (VLMs) 기반의 장면 추론과 상호작용 기반 메모리를 통합하여, 다양한 시나리오에서 학습된 상호작용 직관과 자율 조작을 가능하게 하는 새로운 프레임워크인 INTENTION을 제안합니다. 우리는 이전 작업 상호작용에서 장면을 기록하는 Memory Graph를 도입하여, 실제 세계에서 다양한 작업에 대한 인간과 유사한 이해와 의사 결정을 구현합니다. 동시에, 시각적 장면에서 물리적 관계와 행동 가능성을 추출하는 Intuitive Perceptor를 설계합니다. 이러한 구성 요소들은 함께 로봇이 반복적인 지시 없이 새로운 장면에서 적절한 상호작용 행동을 추론할 수 있도록 합니다. 비디오: https://robo-intention.github.io
-
-## 핵심 내용
-로봇 조작을 위한 전통적인 제어 및 계획은 정밀한 물리적 모델과 사전 정의된 동작 시퀀스에 크게 의존합니다. 구조화된 환경에서는 효과적이지만, 이러한 접근 방식은 모델링 부정확성으로 인해 실제 세계 시나리오에서 종종 실패하며 새로운 작업으로 일반화하는 데 어려움을 겪습니다. 반면, 인간은 주변 환경과 직관적으로 상호작용하며 놀라운 적응력을 보여주고, 암묵적인 물리적 이해를 통해 효율적인 결정을 내립니다. 본 연구에서는 Vision-Language Models (VLMs) 기반의 장면 추론과 상호작용 기반 메모리를 통합하여, 다양한 시나리오에서 학습된 상호작용 직관과 자율 조작을 가능하게 하는 새로운 프레임워크인 INTENTION을 제안합니다. 우리는 이전 작업 상호작용에서 장면을 기록하는 Memory Graph를 도입하여, 실제 세계에서 다양한 작업에 대한 인간과 유사한 이해와 의사 결정을 구현합니다. 동시에, 시각적 장면에서 물리적 관계와 행동 가능성을 추출하는 Intuitive Perceptor를 설계합니다. 이러한 구성 요소들은 함께 로봇이 반복적인 지시 없이 새로운 장면에서 적절한 상호작용 행동을 추론할 수 있도록 합니다. 비디오: https://robo-intention.github.io
-
 ## 参考
 - http://arxiv.org/abs/2508.04931v1
+
+## 개요
+전통적인 로봇 조작은 정밀한 물리 모델과 사전 정의된 동작 시퀀스에 의존하며, 구조화된 환경에서는 효과적이지만 실제 현장에 일반화하기 어렵습니다. INTENTION 프레임워크는 VLM의 장면 이해와 상호작용 기억을 결합하여 로봇에게 인간과 유사한 직관적 상호작용 능력을 부여합니다. 이 프레임워크는 두 가지 핵심 구성 요소를 포함합니다: Memory Graph는 과거 작업 상호작용에서 얻은 장면 정보를 저장하여 실제 세계 작업에 대한 이해와 의사 결정을 반영하며, Intuitive Perceptor는 시각적 장면에서 물리적 관계와 행동 가능성(affordance)을 추출합니다. 이 둘은 협력하여 로봇이 새로운 장면에서 반복적인 지시 없이도 상호작용 경향을 자율적으로 추론할 수 있게 합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+INTENTION 프레임워크는 두 가지 핵심 모듈로 구성됩니다:
+- **Memory Graph**: 로봇이 과거 작업 상호작용에서 얻은 장면 정보를 기록하는 구조화된 기억 모듈입니다. 이는 인간의 실제 세계 작업 이해 및 의사 결정 방식을 모방하여 다양한 작업 장면에서의 상호작용 경험을 저장합니다.
+- **Intuitive Perceptor**: 현재 시각적 장면에서 물리적 관계(예: 객체 간 공간 제약)와 행동 가능성(예: 잡기, 밀기, 당기기 등의 상호작용 가능성)을 추출하는 지각 모듈입니다.
+
+### 작업 흐름
+1. 로봇은 VLM을 통해 현재 장면에 대한 의미론적 이해를 수행합니다
+2. Intuitive Perceptor는 장면에서 물리적 관계와 행동 가능성을 추출합니다
+3. Memory Graph는 현재 장면과 유사한 과거 상호작용 경험을 검색합니다
+4. 위 정보를 종합하여 로봇은 현재 장면에 적합한 상호작용 행동 경향을 추론합니다
+
+### 실험 설정
+- 다양한 실제 장면에서 테스트하며, 다양한 객체 유형과 작업 요구 사항을 포함합니다
+- 비교 기준에는 순수 VLM 방법, 기억 모듈이 없는 변형 등이 포함됩니다
+- 평가 지표에는 작업 성공률, 상호작용 합리성, 일반화 능력이 포함됩니다
+
+### 주요 결과
+- 순수 VLM 방법에 비해 INTENTION은 새로운 작업(novel tasks)에서 성공률이 크게 향상되었습니다
+- Memory Graph는 로봇이 과거 경험을 활용하여 반복적인 지시에 대한 의존도를 줄일 수 있게 합니다
+- Intuitive Perceptor는 물리적 관계를 효과적으로 추출하여 상호작용 행동이 물리적 상식에 더 부합하도록 합니다
+
+### 결론
+INTENTION은 VLM 장면 추론과 상호작용 기반 기억을 결합하여 휴머노이드 로봇에게 인간과 유사한 직관적 상호작용 능력을 제공하며, 실제 장면에서 더 강한 적응성과 일반화 능력을 보여줍니다. 프로젝트 비디오와 추가 세부 사항은 https://robo-intention.github.io 에서 확인할 수 있습니다.

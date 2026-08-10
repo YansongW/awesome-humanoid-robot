@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2305.11176v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2305.11176v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (716 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,20 @@ Instruct2Act 通过整合大型语言模型与基础模型（SAM、CLIP），实
 ## Overview
 Foundation models have made significant strides in various applications, including text-to-image generation, panoptic segmentation, and natural language processing. This paper presents Instruct2Act, a framework that utilizes Large Language Models to map multi-modal instructions to sequential actions for robotic manipulation tasks. Specifically, Instruct2Act employs the LLM model to generate Python programs that constitute a comprehensive perception, planning, and action loop for robotic tasks. In the perception section, pre-defined APIs are used to access multiple foundation models where the Segment Anything Model (SAM) accurately locates candidate objects, and CLIP classifies them. In this way, the framework leverages the expertise of foundation models and robotic abilities to convert complex high-level instructions into precise policy codes. Our approach is adjustable and flexible in accommodating various instruction modalities and input types and catering to specific task demands. We validated the practicality and efficiency of our approach by assessing it on robotic tasks in different scenarios within tabletop manipulation domains. Furthermore, our zero-shot method outperformed many state-of-the-art learning-based policies in several tasks. The code for our proposed approach is available at https://github.com/OpenGVLab/Instruct2Act, serving as a robust benchmark for high-level robotic instruction tasks with assorted modality inputs.
 
-## 개요
-Foundation 모델은 텍스트-이미지 생성, 전경 분할(panoptic segmentation), 자연어 처리 등 다양한 응용 분야에서 큰 진전을 이루었습니다. 본 논문은 로봇 조작 작업을 위해 대규모 언어 모델(LLM)을 활용하여 다중 모드 명령을 순차적 행동으로 매핑하는 프레임워크인 Instruct2Act를 제시합니다. 구체적으로, Instruct2Act는 LLM 모델을 사용하여 로봇 작업을 위한 포괄적인 인식, 계획 및 행동 루프를 구성하는 Python 프로그램을 생성합니다. 인식 부분에서는 사전 정의된 API를 사용하여 여러 Foundation 모델에 접근하며, Segment Anything Model(SAM)이 후보 객체를 정확히 위치시키고 CLIP이 이를 분류합니다. 이러한 방식으로 프레임워크는 Foundation 모델의 전문성과 로봇 능력을 활용하여 복잡한 고수준 명령을 정밀한 정책 코드로 변환합니다. 우리의 접근 방식은 다양한 명령 모드와 입력 유형을 수용하고 특정 작업 요구 사항을 충족하도록 조정 가능하며 유연합니다. 우리는 탁상 조작 영역 내 다양한 시나리오의 로봇 작업에서 접근 방식을 평가하여 실용성과 효율성을 검증했습니다. 또한, 제로샷 방법은 여러 작업에서 최신 학습 기반 정책을 능가했습니다. 제안된 접근 방식의 코드는 https://github.com/OpenGVLab/Instruct2Act에서 제공되며, 다양한 모드 입력을 포함한 고수준 로봇 명령 작업을 위한 강력한 벤치마크 역할을 합니다.
-
-## 핵심 내용
-Foundation 모델은 텍스트-이미지 생성, 전경 분할(panoptic segmentation), 자연어 처리 등 다양한 응용 분야에서 큰 진전을 이루었습니다. 본 논문은 로봇 조작 작업을 위해 대규모 언어 모델(LLM)을 활용하여 다중 모드 명령을 순차적 행동으로 매핑하는 프레임워크인 Instruct2Act를 제시합니다. 구체적으로, Instruct2Act는 LLM 모델을 사용하여 로봇 작업을 위한 포괄적인 인식, 계획 및 행동 루프를 구성하는 Python 프로그램을 생성합니다. 인식 부분에서는 사전 정의된 API를 사용하여 여러 Foundation 모델에 접근하며, Segment Anything Model(SAM)이 후보 객체를 정확히 위치시키고 CLIP이 이를 분류합니다. 이러한 방식으로 프레임워크는 Foundation 모델의 전문성과 로봇 능력을 활용하여 복잡한 고수준 명령을 정밀한 정책 코드로 변환합니다. 우리의 접근 방식은 다양한 명령 모드와 입력 유형을 수용하고 특정 작업 요구 사항을 충족하도록 조정 가능하며 유연합니다. 우리는 탁상 조작 영역 내 다양한 시나리오의 로봇 작업에서 접근 방식을 평가하여 실용성과 효율성을 검증했습니다. 또한, 제로샷 방법은 여러 작업에서 최신 학습 기반 정책을 능가했습니다. 제안된 접근 방식의 코드는 https://github.com/OpenGVLab/Instruct2Act에서 제공되며, 다양한 모드 입력을 포함한 고수준 로봇 명령 작업을 위한 강력한 벤치마크 역할을 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2305.11176v3
+
+## 개요
+Instruct2Act 프레임워크는 대규모 언어 모델을 통해 다중 모달 지침을 로봇이 실행 가능한 순차적 동작으로 변환합니다. 인식 모듈에서는 사전 정의된 API를 호출하여 Segment Anything Model(SAM)이 후보 객체를 정밀하게 위치시키고, CLIP을 활용하여 분류함으로써 기초 모델의 전문성과 로봇 능력을 통합합니다. 이 프레임워크는 지침의 모달리티와 입력 유형을 유연하게 조정할 수 있으며, 데스크톱 조작 영역의 다중 시나리오 작업에서 실용성과 효율성을 검증했습니다. 제로샷 방식은 여러 작업에서 현재 최첨단 학습 기반 정책보다 우수한 성능을 보입니다.
+
+## 핵심 내용
+### 방법 아키텍처
+Instruct2Act의 핵심은 대규모 언어 모델을 사용하여 Python 프로그램을 생성하고, 이를 통해 로봇 작업의 인식, 계획 및 동작 루프를 구성하는 것입니다. 인식 부분은 사전 정의된 API를 통해 여러 기초 모델을 호출합니다: Segment Anything Model(SAM)은 후보 객체의 정밀한 분할을 담당하고, CLIP은 분할 결과를 분류합니다. 이러한 설계는 복잡한 고수준 지침을 정밀한 정책 코드로 변환하면서도 다양한 지침 모달리티(예: 텍스트, 이미지)와 입력 유형에 대한 적응성을 유지합니다.
+
+### 실험 설정 및 주요 결과
+- 데스크톱 조작 영역의 다중 시나리오 작업에서 평가되었으며, 집기, 놓기 등의 전형적인 조작을 포함합니다.
+- 제로샷 테스트에서 Instruct2Act는 여러 작업에서 최첨단 학습 정책을 능가했으며, 예를 들어 객체 분류 및 위치 파악 작업에서 두드러진 성능을 보였습니다.
+- 코드는 https://github.com/OpenGVLab/Instruct2Act 에서 오픈소스로 제공되며, 다중 모달 고차원 로봇 지침 작업의 벤치마크로 활용될 수 있습니다.
+
+### 결론
+Instruct2Act는 대규모 언어 모델과 기초 모델(SAM, CLIP)을 통합하여 다중 모달 지침에서 로봇 동작으로의 효율적인 매핑을 구현했으며, 제로샷 능력은 프레임워크의 일반화 가능성과 실용성을 검증하여 로봇 조작 작업에 확장 가능한 솔루션을 제공합니다.

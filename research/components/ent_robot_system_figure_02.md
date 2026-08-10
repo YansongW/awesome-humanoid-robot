@@ -33,7 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from appendix-d/products/product_figure_02.md by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from appendix-d/products/product_figure_02.md by scripts/backfill_nonpaper_entries.py. | WP4 trilingual
+    backfill 2026-08-10: en body retranslated from zh deep-read (2281 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -50,19 +51,10 @@ sources:
 theoretical_depth:
 - system
 ---
-
 ## 概述
 Figure 02是人形机器人领域的重要机器人系统。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
-## Figure 02
-
-> 本词条属于 [附录 D 重点产品 Wiki](../../appendix-d.md)。
-> 返回：[附录 D.4 重点产品 Wiki 目录](../index-products.md)
-> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
-
----
-
 ### 产品信息卡
 
 | 项目 | 内容 |
@@ -219,3 +211,81 @@ Figure 02는 BMW Spartanburg 등 자동차 제조 현장에서 실제 작업 검
 2. [Robozaps – Figure 02 리뷰](https://blog.robozaps.com/b/figure-02-review)
 3. [Humanoid.Guide – Figure 02](https://humanoid.guide/product/figure-02/)
 4. [The Robot Report – Figure BMW 배포](https://www.therobotreport.com)
+
+## Overview
+The Figure 02 is a significant robotic system in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.
+
+## Content
+### Product Information Card
+
+| Item | Details |
+|------|---------|
+| **Manufacturer** | [Figure AI](../companies/company_figure_ai.md) |
+| **Product Category** | General-purpose humanoid robot |
+| **Release Date** | August 2024 |
+| **Status** | Enterprise pilot / Limited deployment |
+| **Official Website/Source** | [Figure AI Official Website](https://www.figure.ai) |
+
+### Product Overview
+
+The Figure 02 is the second-generation general-purpose humanoid robot launched by Figure AI, designed for industrial manufacturing and logistics scenarios. The entire unit features a matte black exterior with integrated cable routing, equipped with Figure's proprietary Helix VLA (Vision-Language-Action) AI model, capable of controlling the upper body at 200 Hz and performing zero-shot grasping of thousands of unseen objects.
+
+The Figure 02 has undergone real-world task validation at automotive manufacturing sites such as BMW Spartanburg, primarily handling collaborative processes with humans, including chassis assembly and material handling. Its dual NVIDIA RTX GPU computing modules provide approximately 3 times the on-device inference capability of the Figure 01, while 6 RGB cameras and multimodal sensors support 24/7 environmental perception.
+
+### Product Images
+
+> Figure 02: Please visit the [official resources](https://www.figure.ai) for details.
+
+### Specification Table
+
+| Specification | Value | Notes/Source |
+|---------------|-------|--------------|
+| Dimensions | Approx. 168 cm (height) | Public specifications |
+| Weight | Approx. 70 kg | Public specifications |
+| Degrees of Freedom (Full Body) | 28 DOF (Hands: 16 DOF/pair) | Public specifications |
+| Key Performance Metrics | Hand payload 25 kg; Full-body handling 20 kg | Public specifications |
+| Walking Speed | Approx. 1.2 m/s | Public specifications |
+| Battery Life | Approx. 5 hours | Public specifications |
+| Battery Capacity | 2.25 kWh (integrated in torso) | Public specifications |
+| Computing Platform | Dual NVIDIA RTX GPU modules | Figure AI |
+| Price | Not disclosed (industry estimate approx. 130,000 USD) | Third-party estimate |
+
+### Supply Chain Position
+
+- **Manufacturer**: [Figure AI](../companies/company_figure_ai.md)
+- **Core Components/Technology Sources**: NVIDIA GPU computing modules, proprietary Helix VLA model, OpenAI voice interaction, 6×RGB cameras and depth perception modules.
+- **Downstream Applications/Customers**: BMW manufacturing sites, logistics and warehousing, automotive assembly lines.
+
+### Knowledge Graph Nodes and Relationships
+
+- Product Entity: `ent_product_figure_ai_figure_02`
+- Manufacturer Entity: `ent_company_figure_ai`
+- Key Relationships:
+  - `rel_ent_company_figure_ai_manufactures_ent_product_figure_ai_figure_02` (`ent_company_figure_ai` → `manufactures` → `ent_product_figure_ai_figure_02`)
+
+### Application Scenarios
+
+- **Automotive Manufacturing**: Executes chassis assembly, wiring harness installation, and material handling at sites such as BMW Spartanburg.
+- **Warehousing and Logistics**: Sorting, handling, and production line replenishment of standardized containers.
+- **Industrial Collaboration**: Works alongside human workers to perform assembly and inspection tasks requiring dexterous hands.
+
+### Competitive Comparison
+
+| Comparison Item | Figure 02 | Tesla Optimus Gen 3 | Agility Digit |
+|-----------------|-----------|---------------------|---------------|
+| Positioning | Industrial manufacturing humanoid | General/industrial humanoid | Logistics and warehousing humanoid |
+| AI Architecture | Helix VLA | FSD-derived neural network | Proprietary perception/planning stack |
+| Battery Life | Approx. 5 h | Approx. 2–4 h (estimated) | Approx. 4 h |
+| Core Advantages | On-device VLA, BMW deployment, hand payload | Manufacturing scale goals, cost control | Maturity in logistics deployment |
+
+### Purchase and Deployment Recommendations
+
+- The Figure 02 is currently focused on enterprise pilots; it is recommended to contact Figure AI directly to assess feasibility for factory scenarios.
+- Before deployment, confirm the generalization capability of the Helix VLA model for target workpieces and plan the training data collection process.
+
+### References
+
+1. [Figure AI Official Website](https://www.figure.ai)
+2. [Robozaps – Figure 02 Review](https://blog.robozaps.com/b/figure-02-review)
+3. [Humanoid.Guide – Figure 02](https://humanoid.guide/product/figure-02/)
+4. [The Robot Report – Figure BMW Deployment](https://www.therobotreport.com)

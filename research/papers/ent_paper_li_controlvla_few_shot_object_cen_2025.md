@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.16211v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.16211v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (768 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,26 @@ ControlVLA 通过物体中心表示与 ControlNet 风格微调，有效解决了
 ## Overview
 Learning real-world robotic manipulation is challenging, particularly when limited demonstrations are available. Existing methods for few-shot manipulation often rely on simulation-augmented data or pre-built modules like grasping and pose estimation, which struggle with sim-to-real gaps and lack extensibility. While large-scale imitation pre-training shows promise, adapting these general-purpose policies to specific tasks in data-scarce settings remains unexplored. To achieve this, we propose ControlVLA, a novel framework that bridges pre-trained VLA models with object-centric representations via a ControlNet-style architecture for efficient fine-tuning. Specifically, to introduce object-centric conditions without overwriting prior knowledge, ControlVLA zero-initializes a set of projection layers, allowing them to gradually adapt the pre-trained manipulation policies. In real-world experiments across 6 diverse tasks, including pouring cubes and folding clothes, our method achieves a 76.7% success rate while requiring only 10-20 demonstrations -- a significant improvement over traditional approaches that require more than 100 demonstrations to achieve comparable success. Additional experiments highlight ControlVLA's extensibility to long-horizon tasks and robustness to unseen objects and backgrounds.
 
-## 개요
-실제 세계의 로봇 조작 학습은 특히 제한된 시연 데이터만 제공될 때 어려운 과제입니다. 기존의 퓨샷 조작 방법은 종종 시뮬레이션 증강 데이터나 파지 및 자세 추정과 같은 사전 구축 모듈에 의존하지만, 이는 시뮬레이션-실제 간극 문제를 겪고 확장성이 부족합니다. 대규모 모방 사전 학습이 유망함에도 불구하고, 이러한 범용 정책을 데이터가 부족한 환경에서 특정 작업에 적용하는 방법은 아직 탐구되지 않았습니다. 이를 해결하기 위해, 우리는 ControlNet 스타일 아키텍처를 통해 사전 학습된 VLA 모델과 객체 중심 표현을 연결하여 효율적인 미세 조정을 가능하게 하는 새로운 프레임워크인 ControlVLA를 제안합니다. 구체적으로, 기존 지식을 덮어쓰지 않으면서 객체 중심 조건을 도입하기 위해 ControlVLA는 일련의 투영 레이어를 0으로 초기화하여 사전 학습된 조작 정책을 점진적으로 적응시킵니다. 큐브 따르기와 옷 접기를 포함한 6가지 다양한 작업에 걸친 실제 실험에서, 우리 방법은 10-20회의 시연만으로 76.7%의 성공률을 달성했습니다. 이는 유사한 성공률을 위해 100회 이상의 시연이 필요한 전통적인 접근 방식에 비해 큰 개선입니다. 추가 실험은 ControlVLA의 장기 작업에 대한 확장성과 보이지 않는 객체 및 배경에 대한 강건성을 강조합니다.
-
-## 핵심 내용
-실제 세계의 로봇 조작 학습은 특히 제한된 시연 데이터만 제공될 때 어려운 과제입니다. 기존의 퓨샷 조작 방법은 종종 시뮬레이션 증강 데이터나 파지 및 자세 추정과 같은 사전 구축 모듈에 의존하지만, 이는 시뮬레이션-실제 간극 문제를 겪고 확장성이 부족합니다. 대규모 모방 사전 학습이 유망함에도 불구하고, 이러한 범용 정책을 데이터가 부족한 환경에서 특정 작업에 적용하는 방법은 아직 탐구되지 않았습니다. 이를 해결하기 위해, 우리는 ControlNet 스타일 아키텍처를 통해 사전 학습된 VLA 모델과 객체 중심 표현을 연결하여 효율적인 미세 조정을 가능하게 하는 새로운 프레임워크인 ControlVLA를 제안합니다. 구체적으로, 기존 지식을 덮어쓰지 않으면서 객체 중심 조건을 도입하기 위해 ControlVLA는 일련의 투영 레이어를 0으로 초기화하여 사전 학습된 조작 정책을 점진적으로 적응시킵니다. 큐브 따르기와 옷 접기를 포함한 6가지 다양한 작업에 걸친 실제 실험에서, 우리 방법은 10-20회의 시연만으로 76.7%의 성공률을 달성했습니다. 이는 유사한 성공률을 위해 100회 이상의 시연이 필요한 전통적인 접근 방식에 비해 큰 개선입니다. 추가 실험은 ControlVLA의 장기 작업에 대한 확장성과 보이지 않는 객체 및 배경에 대한 강건성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.16211v1
+
+## 개요
+ControlVLA는 실제 로봇 조작에서 시연 데이터가 부족한 문제를 해결하기 위해 설계되었습니다. 기존의 퓨샷 방법은 시뮬레이션 증강 데이터나 사전 구축 모듈에 의존하며, 시뮬레이션-현실 격차와 확장성 부족 문제가 있습니다. 이 프레임워크는 제로 초기화 투영 레이어를 통해 객체 중심 조건을 도입하여, 사전 학습 지식을 덮어쓰지 않으면서 새로운 작업에 점진적으로 적응합니다. 실험 결과, ControlVLA는 큐브 뒤집기, 옷 접기 등의 작업에서 단 10-20회의 시연만으로 76.7%의 성공률을 달성했으며, 기존 방법은 일반적으로 유사한 성능을 얻기 위해 100회 이상의 시연이 필요했습니다. 또한, 이 모델은 장기간 작업과 보지 못한 객체 및 배경에 대한 견고성도 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- ControlVLA는 ControlNet 스타일 아키텍처를 채택하여, 사전 학습된 VLA 모델에 제로 초기화 투영 레이어 세트를 도입합니다.
+- 이 투영 레이어는 객체 중심 표현(예: 대상 객체의 위치, 자세 등)을 조건 입력으로 사용하여, 사전 학습된 조작 정책을 점진적으로 조정하며 기존 지식을 덮어쓰지 않습니다.
+- 이러한 설계는 모델이 사전 학습 단계에서 얻은 일반적인 조작 능력을 유지하면서 새로운 작업에 효율적으로 적응할 수 있게 합니다.
+
+### 실험 설정
+- 큐브 뒤집기, 옷 접기 등 다양한 조작을 포함한 6가지 실제 세계 작업에서 평가되었습니다.
+- 각 작업에는 훈련 데이터로 10-20회의 시연만 제공되며, 테스트 환경은 서로 다른 객체와 배경을 포함합니다.
+
+### 주요 결과
+- ControlVLA는 6가지 작업에서 평균 성공률 76.7%를 달성하여 기존 방법보다 크게 우수합니다.
+- 기존 방법은 일반적으로 유사한 성공률을 얻기 위해 100회 이상의 시연이 필요하지만, ControlVLA는 10-20회만 필요합니다.
+- 추가 실험은 ControlVLA가 장기간 작업(예: 다단계 조작)으로 확장될 수 있으며, 보지 못한 객체와 배경에 대한 견고성을 유지함을 보여줍니다.
+
+### 결론
+ControlVLA는 객체 중심 표현과 ControlNet 스타일 미세 조정을 통해 퓨샷 로봇 조작의 적응 문제를 효과적으로 해결하며, 데이터가 부족한 시나리오에서 사전 학습된 VLA 모델의 적용을 위한 실현 가능한 솔루션을 제공합니다.

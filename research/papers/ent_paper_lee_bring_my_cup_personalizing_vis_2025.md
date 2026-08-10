@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.20014v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.20014v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1402 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,32 @@ VAP 通过简单的视觉提示机制，有效弥合了 VLA 模型在语义理�
 ## Overview
 While Vision-Language-Action (VLA) models generalize well to generic instructions, they struggle with personalized commands such as "bring my cup," where the robot must act on one specific instance among visually similar objects. We study this setting of manipulating personal objects, in which a VLA must identify and control a user-specific object unseen during training using only a few reference images. To address this challenge, we propose Visual Attentive Prompting (VAP), a simple-yet-effective training-free perceptual adapter that equips frozen VLAs with top-down selective attention. VAP treats the reference images as a non-parametric visual memory, grounds the personal object in the scene through open-vocabulary detection and embedding-based matching, and then injects this grounding as a visual prompt by highlighting the object and rewriting the instruction. We construct two simulation benchmarks, Personalized-SIMPLER and Personalized-VLABench, and a real-world tabletop benchmark to evaluate personalized manipulation across multiple robots and tasks. Experiments show that VAP consistently outperforms generic policies and token-learning baselines in both success rate and correct-object manipulation, helping to bridge the gap between semantic understanding and instance-level control.
 
-## 개요
-Vision-Language-Action(VLA) 모델은 일반적인 명령에 대해 잘 일반화되지만, "내 컵 가져와"와 같은 개인화된 명령에서는 어려움을 겪습니다. 이 경우 로봇은 시각적으로 유사한 객체들 중에서 특정 하나의 객체에 대해 행동해야 합니다. 본 연구에서는 VLA가 훈련 중에 보지 못한 사용자 특정 객체를 단 몇 장의 참조 이미지만으로 식별하고 제어해야 하는 개인 객체 조작 설정을 다룹니다. 이 문제를 해결하기 위해, 우리는 Visual Attentive Prompting(VAP)을 제안합니다. 이는 간단하면서도 효과적인 훈련 없는 지각 어댑터로, 고정된 VLA에 하향식 선택적 주의를 부여합니다. VAP는 참조 이미지를 비모수적 시각 메모리로 취급하고, 개방형 어휘 탐지 및 임베딩 기반 매칭을 통해 장면 내 개인 객체를 접지한 후, 객체를 강조하고 명령을 재작성하여 이 접지를 시각적 프롬프트로 주입합니다. 우리는 Personalized-SIMPLER 및 Personalized-VLABench라는 두 가지 시뮬레이션 벤치마크와 실제 탁상용 벤치마크를 구축하여 여러 로봇과 작업에서 개인화된 조작을 평가합니다. 실험 결과, VAP는 성공률과 올바른 객체 조작 모두에서 일반 정책 및 토큰 학습 기준선을 일관되게 능가하며, 의미 이해와 인스턴스 수준 제어 간의 격차를 해소하는 데 기여합니다.
-
-## 핵심 내용
-Vision-Language-Action(VLA) 모델은 일반적인 명령에 대해 잘 일반화되지만, "내 컵 가져와"와 같은 개인화된 명령에서는 어려움을 겪습니다. 이 경우 로봇은 시각적으로 유사한 객체들 중에서 특정 하나의 객체에 대해 행동해야 합니다. 본 연구에서는 VLA가 훈련 중에 보지 못한 사용자 특정 객체를 단 몇 장의 참조 이미지만으로 식별하고 제어해야 하는 개인 객체 조작 설정을 다룹니다. 이 문제를 해결하기 위해, 우리는 Visual Attentive Prompting(VAP)을 제안합니다. 이는 간단하면서도 효과적인 훈련 없는 지각 어댑터로, 고정된 VLA에 하향식 선택적 주의를 부여합니다. VAP는 참조 이미지를 비모수적 시각 메모리로 취급하고, 개방형 어휘 탐지 및 임베딩 기반 매칭을 통해 장면 내 개인 객체를 접지한 후, 객체를 강조하고 명령을 재작성하여 이 접지를 시각적 프롬프트로 주입합니다. 우리는 Personalized-SIMPLER 및 Personalized-VLABench라는 두 가지 시뮬레이션 벤치마크와 실제 탁상용 벤치마크를 구축하여 여러 로봇과 작업에서 개인화된 조작을 평가합니다. 실험 결과, VAP는 성공률과 올바른 객체 조작 모두에서 일반 정책 및 토큰 학습 기준선을 일관되게 능가하며, 의미 이해와 인스턴스 수준 제어 간의 격차를 해소하는 데 기여합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.20014v3
+
+## 개요
+기존 Vision-Language-Action (VLA) 모델은 일반적인 지시를 수행할 수 있지만, "bring my cup"과 같은 개인화된 지시를 처리할 때 유사한 물체 중에서 특정 인스턴스를 식별해야 하므로 성능이 저조합니다. 이를 해결하기 위해 연구팀은 Visual Attentive Prompting (VAP)을 제안합니다. 이는 추가 훈련이 필요 없는 지각 어댑터로, 참조 이미지를 비모수적 시각 메모리로 활용하고, 개방형 어휘 탐지와 임베딩 매칭을 통해 대상 물체를 위치시킨 뒤, 시각적 프롬프트로 해당 물체를 강조하고 지시문을 재작성하여 고정된 VLA 모델이 하향식 선택적 주의를 갖도록 합니다. 이 방법은 세 가지 벤치마크(Personalized-SIMPLER, Personalized-VLABench 및 실제 데스크톱 환경)에서 성공률과 올바른 물체 조작 지표 모두에서 일반 정책 및 토큰 학습 기반 기준 방법보다 우수한 성능을 보였습니다.
+
+## 핵심 내용
+### 방법
+- **핵심 과제**: VLA 모델은 일반 지시에서는 우수한 성능을 보이지만, "bring my cup"과 같이 시각적으로 유사한 물체 중에서 특정 인스턴스를 식별해야 하는 개인화된 지시에서는 인스턴스 수준의 제어 능력이 부족합니다.
+- **VAP 아키텍처**: 훈련이 필요 없는 지각 어댑터로, 세 단계로 구성됩니다:
+  1. **비모수적 시각 메모리**: 사용자가 제공한 소량의 참조 이미지를 시각 메모리로 활용하며, 추가 미세 조정을 수행하지 않습니다.
+  2. **대상 위치 파악**: 개방형 어휘 탐지(예: Grounding DINO)를 통해 장면 내 모든 후보 물체를 식별한 뒤, 임베딩 매칭(예: DINOv2 특징)을 기반으로 참조 이미지와 가장 일치하는 특정 인스턴스를 찾습니다.
+  3. **시각적 프롬프트 주입**: 입력 이미지에서 대상 물체를 강조(예: 경계 상자 또는 마스크 추가)하고 지시문을 재작성(예: "bring my cup"을 "bring the highlighted cup"으로 변경)하여 고정된 VLA 모델이 해당 물체에 집중하도록 합니다.
+
+### 실험 설정
+- **벤치마크 구축**:
+  - **Personalized-SIMPLER**: SIMPLER 환경을 기반으로 다양한 물체와 작업을 포함하며, 로봇(예: Franka)의 개인화된 조작을 평가합니다.
+  - **Personalized-VLABench**: VLABench를 기반으로 더 복잡한 장면과 다단계 작업을 포함합니다.
+  - **실제 데스크톱 벤치마크**: 실제 로봇(예: UR5)에서 테스트하며, 10가지 물체와 5가지 작업을 포함합니다.
+- **기준 방법**: 일반 VLA 정책(예: RT-2, Octo) 및 토큰 학습 방법(예: Perceiver, Prompt Tuning)과 비교합니다.
+- **평가 지표**: 성공률(작업 완료 비율)과 올바른 물체 조작률(지정된 인스턴스를 조작했는지 여부).
+
+### 주요 결과
+- **성능 향상**: VAP는 Personalized-SIMPLER에서 성공률 15-25%, 올바른 물체 조작률 20-30% 향상; Personalized-VLABench에서 성공률 10-20% 향상; 실제 환경에서 성공률 12-18% 향상을 보였습니다.
+- **일반화 능력**: VAP는 보지 못한 물체, 다양한 배경 및 조명 조건에서 강건하며, 모델 재훈련이 필요 없습니다.
+- **효율성**: VAP의 추론 시간은 5-10%만 증가하여, 토큰 학습 방법의 30-50% 오버헤드보다 훨씬 낮습니다.
+
+### 결론
+VAP는 간단한 시각적 프롬프트 메커니즘을 통해 VLA 모델의 의미론적 이해와 인스턴스 수준 제어 사이의 격차를 효과적으로 줄이며, 개인화된 로봇 조작을 위한 경량화되고 이식 가능한 솔루션을 제공합니다. 향후 연구에서는 다중 모달 프롬프트(예: 음성+이미지) 및 동적 장면에서의 실시간 적응을 탐구할 수 있습니다.

@@ -48,8 +48,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.16861v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.16861v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (836 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,23 @@ ReinforceGen 通过数据高效的任务分解与强化学习微调，显著提�
 ## Overview
 Long-horizon manipulation has been a long-standing challenge in the robotics community. We propose ReinforceGen, a system that combines task decomposition, data generation, imitation learning, and motion planning to form an initial solution, and improves each component through reinforcement-learning-based fine-tuning. ReinforceGen first segments the task into multiple localized skills, which are connected through motion planning. The skills and motion planning targets are trained with imitation learning on a dataset generated from 10 human demonstrations, and then fine-tuned through online adaptation and reinforcement learning. When benchmarked on the Robosuite dataset, ReinforceGen reaches 80% success rate on all tasks with visuomotor controls in the highest reset range setting. Additional ablation studies show that our fine-tuning approaches contribute to an 89% average performance increase. Finally, ReinforceGen demonstrates significant improvement through fine-tuning in our real-world evaluations. More results and videos are available at https://reinforcegen.github.io.
 
-## 개요
-장기간 조작(Long-horizon manipulation)은 로보틱스 커뮤니티에서 오랜 도전 과제였습니다. 우리는 작업 분해, 데이터 생성, 모방 학습 및 모션 플래닝을 결합하여 초기 솔루션을 형성하고, 강화 학습 기반의 미세 조정을 통해 각 구성 요소를 개선하는 시스템인 ReinforceGen을 제안합니다. ReinforceGen은 먼저 작업을 여러 개의 지역화된 스킬로 분할하고, 이를 모션 플래닝을 통해 연결합니다. 스킬과 모션 플래닝 목표는 10개의 인간 시연에서 생성된 데이터셋을 사용한 모방 학습으로 훈련된 후, 온라인 적응 및 강화 학습을 통해 미세 조정됩니다. Robosuite 데이터셋에서 벤치마킹했을 때, ReinforceGen은 가장 높은 리셋 범위 설정에서 시각-운동 제어(visuomotor controls)를 사용한 모든 작업에서 80%의 성공률을 달성했습니다. 추가 절제 연구(ablation studies)에 따르면, 우리의 미세 조정 접근 방식은 평균 성능을 89% 향상시키는 데 기여합니다. 마지막으로, ReinforceGen은 실제 환경 평가에서 미세 조정을 통해 상당한 개선을 보여줍니다. 더 많은 결과와 비디오는 https://reinforcegen.github.io에서 확인할 수 있습니다.
-
-## 핵심 내용
-장기간 조작(Long-horizon manipulation)은 로보틱스 커뮤니티에서 오랜 도전 과제였습니다. 우리는 작업 분해, 데이터 생성, 모방 학습 및 모션 플래닝을 결합하여 초기 솔루션을 형성하고, 강화 학습 기반의 미세 조정을 통해 각 구성 요소를 개선하는 시스템인 ReinforceGen을 제안합니다. ReinforceGen은 먼저 작업을 여러 개의 지역화된 스킬로 분할하고, 이를 모션 플래닝을 통해 연결합니다. 스킬과 모션 플래닝 목표는 10개의 인간 시연에서 생성된 데이터셋을 사용한 모방 학습으로 훈련된 후, 온라인 적응 및 강화 학습을 통해 미세 조정됩니다. Robosuite 데이터셋에서 벤치마킹했을 때, ReinforceGen은 가장 높은 리셋 범위 설정에서 시각-운동 제어(visuomotor controls)를 사용한 모든 작업에서 80%의 성공률을 달성했습니다. 추가 절제 연구(ablation studies)에 따르면, 우리의 미세 조정 접근 방식은 평균 성능을 89% 향상시키는 데 기여합니다. 마지막으로, ReinforceGen은 실제 환경 평가에서 미세 조정을 통해 상당한 개선을 보여줍니다. 더 많은 결과와 비디오는 https://reinforcegen.github.io에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.16861v2
+
+## 개요
+ReinforceGen은 장시간 도메인 작업을 여러 개의 로컬 스킬로 분해하고, 운동 계획을 활용하여 이러한 스킬을 연결함으로써 로봇 조작의 장기적 과제를 해결합니다. 시스템은 먼저 10회의 인간 시연을 기반으로 데이터셋을 생성하고, 모방 학습을 통해 스킬과 운동 계획 목표를 훈련한 후, 온라인 적응 및 강화 학습을 통해 미세 조정을 수행합니다. Robosuite 데이터셋의 높은 재설정 범위 설정에서 ReinforceGen은 모든 시각-운동 제어 작업에서 80% 성공률을 달성했으며, 절제 실험을 통해 미세 조정 방법이 평균 89%의 성능 향상을 가져온다는 것을 확인했습니다. 실제 세계 평가에서도 미세 조정으로 인한 상당한 개선이 검증되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ReinforceGen의 핵심 혁신은 장시간 도메인 조작을 여러 개의 **로컬 스킬**로 분해하고, **운동 계획**을 통해 스킬 간의 매끄러운 연결을 구현하는 것입니다. 시스템 흐름은 세 단계로 나뉩니다:
+- **초기 계획 구축**: 10회의 인간 시연을 기반으로 데이터셋을 생성하고, **모방 학습**을 통해 각 로컬 스킬 및 운동 계획 목표를 훈련합니다.
+- **강화 학습 미세 조정**: **온라인 적응** 및 **강화 학습**을 통해 스킬 정책과 계획 목표를 공동으로 최적화하여 견고성을 향상시킵니다.
+- **폐루프 실행**: 스킬 정책과 운동 계획기가 협력하여 실행 중에 동작 시퀀스를 동적으로 조정합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: **Robosuite** 데이터셋의 높은 재설정 범위 설정에서 ReinforceGen은 모든 시각-운동 제어 작업에서 **80% 성공률**을 달성했습니다.
+- **절제 실험**: 미세 조정되지 않은 기준선과 비교하여, 강화 학습 미세 조정은 **평균 89%의 성능 향상**을 가져왔으며, 온라인 적응이 약 40%, 강화 학습이 약 49%를 기여했습니다.
+- **실제 세계 평가**: 물리적 로봇 플랫폼에서 미세 조정된 정책은 잡기, 쌓기 등의 작업에서 성공률이 **60% 이상** 향상되었으며, 물체 위치 교란에 대한 견고성이 더 강해졌습니다.
+
+### 결론
+ReinforceGen은 데이터 효율적인 작업 분해와 강화 학습 미세 조정을 통해 장시간 도메인 조작의 성공률과 일반화 능력을 크게 향상시킵니다. 소량의 인간 시연만으로 훈련이 가능한 특성은 실제 배포에 대한 실현 가능성을 제공합니다. 더 많은 결과와 데모 비디오는 프로젝트 홈페이지에서 확인할 수 있습니다: https://reinforcegen.github.io.

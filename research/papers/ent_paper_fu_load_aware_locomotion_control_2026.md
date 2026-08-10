@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.14308v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.14308v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (795 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,25 @@ theoretical_depth:
 ## Overview
 Humanoid robots deployed in industrial environments are required to perform load-carrying transportation tasks that tightly couple locomotion and manipulation. However, achieving stable and robust locomotion under varying payloads and upper-body motions is challenging due to dynamic coupling and partial observability. This paper presents a load-aware locomotion framework for industrial humanoids based on a decoupled yet coordinated loco-manipulation architecture. Lower-body locomotion is controlled via a reinforcement learning policy producing residual joint actions on kinematically derived nominal configurations. A kinematics-based locomotion reference with a height-conditioned joint-space offset guides learning, while a history-based state estimator infers base linear velocity and height and encodes residual load- and manipulation-induced disturbances in a compact latent representation. The framework is trained entirely in simulation and deployed on a full-size humanoid robot without fine-tuning. Simulation and real-world experiments demonstrate faster training, accurate height tracking, and stable loco-manipulation. Project page: https://lequn-f.github.io/LALO/
 
-## 개요
-산업 환경에 배치된 휴머노이드 로봇은 보행과 조작이 밀접하게 결합된 하중 운반 작업을 수행해야 합니다. 그러나 동적 결합과 부분 관측 가능성으로 인해 다양한 하중과 상체 움직임 하에서 안정적이고 강건한 보행을 달성하는 것은 어렵습니다. 본 논문은 분리되었지만 조정된 보행-조작 아키텍처를 기반으로 한 산업용 휴머노이드를 위한 하중 인식 보행 프레임워크를 제시합니다. 하체 보행은 운동학적으로 도출된 공칭 구성에 잔여 관절 동작을 생성하는 강화 학습 정책을 통해 제어됩니다. 높이 조건이 적용된 관절 공간 오프셋을 갖는 운동학 기반 보행 참조가 학습을 안내하며, 히스토리 기반 상태 추정기가 베이스 선형 속도와 높이를 추론하고 잔여 하중 및 조작 유발 교란을 압축된 잠재 표현으로 인코딩합니다. 프레임워크는 전적으로 시뮬레이션에서 훈련되고 미세 조정 없이 실제 크기 휴머노이드 로봇에 배치됩니다. 시뮬레이션 및 실제 실험은 더 빠른 훈련, 정확한 높이 추적, 안정적인 보행-조작을 입증합니다. 프로젝트 페이지: https://lequn-f.github.io/LALO/
-
-## 핵심 내용
-산업 환경에 배치된 휴머노이드 로봇은 보행과 조작이 밀접하게 결합된 하중 운반 작업을 수행해야 합니다. 그러나 동적 결합과 부분 관측 가능성으로 인해 다양한 하중과 상체 움직임 하에서 안정적이고 강건한 보행을 달성하는 것은 어렵습니다. 본 논문은 분리되었지만 조정된 보행-조작 아키텍처를 기반으로 한 산업용 휴머노이드를 위한 하중 인식 보행 프레임워크를 제시합니다. 하체 보행은 운동학적으로 도출된 공칭 구성에 잔여 관절 동작을 생성하는 강화 학습 정책을 통해 제어됩니다. 높이 조건이 적용된 관절 공간 오프셋을 갖는 운동학 기반 보행 참조가 학습을 안내하며, 히스토리 기반 상태 추정기가 베이스 선형 속도와 높이를 추론하고 잔여 하중 및 조작 유발 교란을 압축된 잠재 표현으로 인코딩합니다. 프레임워크는 전적으로 시뮬레이션에서 훈련되고 미세 조정 없이 실제 크기 휴머노이드 로봇에 배치됩니다. 시뮬레이션 및 실제 실험은 더 빠른 훈련, 정확한 높이 추적, 안정적인 보행-조작을 입증합니다. 프로젝트 페이지: https://lequn-f.github.io/LALO/
-
 ## 参考
 - http://arxiv.org/abs/2603.14308v1
+
+## 개요
+본 연구는 인간형 로봇이 산업 환경에서 부하 운반 작업을 수행할 때 직면하는 동적 결합 및 부분 관측 가능성 문제를 해결하기 위해, 부하 인식 운동 제어 프레임워크를 제안한다. 해당 프레임워크는 분리되었지만 조화를 이루는 이동 조작 아키텍처를 채택하며, 강화 학습 정책을 통해 하지 운동학적 참조 구성에서 잔여 관절 동작을 생성한다. 핵심 혁신에는 높이 조건부 관절 공간 오프셋 기반 학습 유도, 과거 데이터를 활용한 상태 추정기를 통한 베이스 선속도 및 높이 추론, 그리고 부하 및 조작으로 인한 교란을 컴팩트한 잠재 표현으로 인코딩하는 방식이 포함된다. 전체 프레임워크는 시뮬레이션에서 훈련되며, 미세 조정 없이 전신 인간형 로봇에 직접 배포할 수 있다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **분리된 이동 조작 아키텍처**: 상지 조작과 하지 운동을 분리하고, 강화 학습 정책을 통해 하지 운동학적 참조 구성에서 잔여 관절 동작을 생성하여 조화로운 제어를 구현한다.
+- **운동학적 참조 생성**: 높이 조건부 관절 공간 오프셋(height-conditioned joint offset)을 기반으로 표준 구성을 생성하여 정책 학습을 유도한다.
+- **상태 추정기**: 과거 관측 시퀀스를 활용하여 베이스 선속도와 높이를 추론하고, 부하 및 조작으로 인한 동적 교란을 컴팩트한 잠재 표현(latent representation)으로 인코딩한다.
+
+### 실험 설정
+- **훈련**: 전적으로 시뮬레이션 환경에서 수행되며, 강화 학습 알고리즘을 사용하여 하지 운동 정책을 훈련한다.
+- **배포**: 제로샷(zero-shot) 방식으로 Tiangong 2.0 Pro 전신 인간형 로봇에 전이되며, 어떠한 미세 조정도 필요하지 않다.
+- **작업**: 산업용 부하 운반 및 상자 조작 작업으로, 다양한 부하 중량과 상지 운동을 포함한다.
+
+### 주요 결과
+- **훈련 효율성**: 기준 방법에 비해 더 빠른 훈련 속도(faster training)를 달성한다.
+- **높이 추적**: 시뮬레이션 및 실제 실험 모두에서 정확한 높이 추적(accurate height tracking)을 구현한다.
+- **안정성**: 부하 변화 및 상지 운동 간섭 하에서도 안정적인 이동 조작(stable loco-manipulation)을 유지한다.
+- **프로젝트 페이지**: https://lequn-f.github.io/LALO/

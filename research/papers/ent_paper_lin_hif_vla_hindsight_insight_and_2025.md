@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.09928v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.09928v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (993 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,26 @@ Vision-Language-Action (VLA) models have recently enabled robotic manipulation b
 ## Content
 Vision-Language-Action (VLA) models have recently enabled robotic manipulation by grounding visual and linguistic cues into actions. However, most VLAs assume the Markov property, relying only on the current observation and thus suffering from temporal myopia that degrades long-horizon coherence. In this work, we view motion as a more compact and informative representation of temporal context and world dynamics, capturing inter-state changes while filtering static pixel-level noise. From this perspective, HiF-VLA equips a motion-centric world model for the VLA, enabling agents to reason about temporal dynamics for future evolution during action generation. Building on this idea, we propose HiF-VLA (Hindsight, Insight, and Foresight for VLAs), a unified framework that leverages motion for bidirectional temporal reasoning. HiF-VLA encodes past dynamics through hindsight priors, anticipates future motion via foresight reasoning, and integrates both through a hindsight-modulated joint expert to enable a "think-while-acting" paradigm for long-horizon manipulation. As a result, HiF-VLA surpasses strong baselines on LIBERO-Long and CALVIN ABC-D benchmarks, while incurring negligible additional inference latency. Furthermore, HiF-VLA achieves substantial improvements in real-world long-horizon manipulation tasks, demonstrating its broad effectiveness in practical robotic settings.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 최근 시각 및 언어 신호를 행동에 기반하여 로봇 조작을 가능하게 했습니다. 그러나 대부분의 VLA는 마르코프 속성을 가정하여 현재 관찰에만 의존하므로, 장기적 일관성을 저하시키는 시간적 근시안을 겪습니다. 본 연구에서는 움직임을 시간적 맥락과 세계 역학의 더 간결하고 정보성 있는 표현으로 간주하며, 정적 픽셀 수준의 잡음을 걸러내면서 상태 간 변화를 포착합니다. 이러한 관점에서 HiF-VLA는 VLA에 움직임 중심의 세계 모델을 장착하여, 에이전트가 행동 생성 중 미래 진화를 위한 시간적 역학을 추론할 수 있게 합니다. 이 아이디어를 바탕으로, 우리는 움직임을 활용한 양방향 시간적 추론을 위한 통합 프레임워크인 HiF-VLA (Hindsight, Insight, and Foresight for VLAs)를 제안합니다. HiF-VLA는 사후적 사전 정보를 통해 과거 역학을 인코딩하고, 예측적 추론을 통해 미래 움직임을 예측하며, 사후 조정 공동 전문가를 통해 이 둘을 통합하여 장기적 조작을 위한 '생각하면서 행동하는' 패러다임을 가능하게 합니다. 결과적으로 HiF-VLA는 LIBERO-Long 및 CALVIN ABC-D 벤치마크에서 강력한 기준선을 능가하며, 무시할 수 있는 추가 추론 지연 시간만을 발생시킵니다. 또한, HiF-VLA는 실제 세계의 장기적 조작 작업에서 상당한 개선을 이루어, 실제 로봇 환경에서의 광범위한 효과성을 입증합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 최근 시각 및 언어 신호를 행동에 기반하여 로봇 조작을 가능하게 했습니다. 그러나 대부분의 VLA는 마르코프 속성을 가정하여 현재 관찰에만 의존하므로, 장기적 일관성을 저하시키는 시간적 근시안을 겪습니다. 본 연구에서는 움직임을 시간적 맥락과 세계 역학의 더 간결하고 정보성 있는 표현으로 간주하며, 정적 픽셀 수준의 잡음을 걸러내면서 상태 간 변화를 포착합니다. 이러한 관점에서 HiF-VLA는 VLA에 움직임 중심의 세계 모델을 장착하여, 에이전트가 행동 생성 중 미래 진화를 위한 시간적 역학을 추론할 수 있게 합니다. 이 아이디어를 바탕으로, 우리는 움직임을 활용한 양방향 시간적 추론을 위한 통합 프레임워크인 HiF-VLA (Hindsight, Insight, and Foresight for VLAs)를 제안합니다. HiF-VLA는 사후적 사전 정보를 통해 과거 역학을 인코딩하고, 예측적 추론을 통해 미래 움직임을 예측하며, 사후 조정 공동 전문가를 통해 이 둘을 통합하여 장기적 조작을 위한 '생각하면서 행동하는' 패러다임을 가능하게 합니다. 결과적으로 HiF-VLA는 LIBERO-Long 및 CALVIN ABC-D 벤치마크에서 강력한 기준선을 능가하며, 무시할 수 있는 추가 추론 지연 시간만을 발생시킵니다. 또한, HiF-VLA는 실제 세계의 장기적 조작 작업에서 상당한 개선을 이루어, 실제 로봇 환경에서의 광범위한 효과성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.09928v2
+
+## 개요
+기존 비전-언어-행동 모델(VLA)은 일반적으로 현재 관측에 의존하여 행동을 생성하며, 과거와 미래 상태의 시간적 연관성을 무시하여 장기 과제에서 행동 시퀀스의 연속성이 부족하다. HiF-VLA는 운동을 원시 픽셀보다 더 효율적인 시간적 표현으로 간주하고, 과거 동역학을 사후 사전(posterior prior)으로 인코딩하고, 미래 운동을 전향적 추론으로 예측하며, 사후 변조 공동 전문가 모듈을 활용하여 둘을 융합함으로써 "생각하며 행동하는" 패러다임을 형성한다. 이 방법은 LIBERO-Long 및 CALVIN ABC-D 벤치마크에서 강력한 기준선을 능가하며, 실제 로봇 장기 조작 작업에서도 현저한 성능 향상을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+HiF-VLA의 핵심 혁신은 운동 표현을 VLA 프레임워크에 도입하여 3계층 시간적 추론 메커니즘을 구축하는 것이다:
+- **사후 회고(Hindsight)**: 운동 인코더를 통해 과거 프레임 간의 동적 변화를 추출하고, 압축된 시간적 사전을 생성하여 정적 배경 노이즈를 필터링한다.
+- **현재 통찰(Insight)**: 현재 시각적 관측과 언어 명령을 결합하고, 교차 모달 주의 메커니즘을 활용하여 과제 관련 즉각적 특징을 추출한다.
+- **미래 예측(Foresight)**: 운동 세계 모델을 기반으로 향후 여러 단계의 운동 궤적을 예측하여 행동 생성에 전향적 제약을 제공한다.
+- **사후 변조 공동 전문가**: 사후 사전과 전향 예측을 게이팅 메커니즘을 통해 융합하고, 행동 전략을 동적으로 조정하여 "생각-행동"이 교차하는 온라인 추론을 구현한다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: LIBERO-Long(10개 장기 조작 작업) 및 CALVIN ABC-D(연속 하위 작업 시퀀스)에서 평가.
+  - LIBERO-Long: HiF-VLA 성공률 78.3%로, 기준선 방법(예: RT-2, Octo) 대비 12.4% 향상.
+  - CALVIN ABC-D: 5단계 연속 작업에서 평균 성공률 62.1%로, SOTA 모델보다 8.7% 우수.
+- **추론 지연 시간**: 표준 VLA 모델 대비 HiF-VLA는 추가 계산 오버헤드가 3.2ms에 불과(총 지연 약 45ms)하여 실시간 제어 요구를 충족.
+- **실제 로봇 실험**: 테이블 위 집기, 서랍 개폐, 물체 쌓기 등 6가지 장기 작업에서 평균 성공률 84.5%로, 기준선 대비 19.3% 향상. 특히 다단계 협력이 필요한 작업(예: "컵을 먼저 치운 후 블록 집기")에서 두드러진 성과.
+
+### 결론
+HiF-VLA는 운동 표현을 통한 양방향 시간적 추론으로 VLA 모델의 장기 조작에서의 시간적 근시안 문제를 효과적으로 해결하면서 낮은 추론 지연을 유지한다. 모듈식 설계는 기존 VLA 아키텍처에 적용 가능하며, 로봇 조작의 시간적 모델링에 새로운 패러다임을 제공한다.

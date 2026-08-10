@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.05773v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.05773v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (745 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,24 @@ theoretical_depth:
 ## Overview
 Approximate computing is a computation domain which can be used to trade time and energy with quality and therefore is useful in embedded systems. Energy is the prime resource in battery-driven embedded systems, like robots. Approximate computing can be used as a technique to generate approximate version of the control functionalities of a robot, enabling it to ration energy for computation at the cost of degraded quality. Usually, the programmer of the function specifies the extent of degradation that is safe for the overall safety of the system. However, in a collaborative environment, where several sub-systems co-exist and some of the functionality of each of them have been approximated, the safety of the overall system may be compromised. In this paper, we consider multiple identical robots operate in a warehouse, and the path planning function of the robot is approximated. Although the planned paths are safe for individual robots (i.e. they do not collide with the racks), we show that this leads to a collision among the robots. So, a controlled approximation needs to be carried out in such situations to harness the full power of this new paradigm if it needs to be a mainstream paradigm in future.
 
-## 개요
-근사 컴퓨팅(Approximate computing)은 시간과 에너지를 품질과 교환할 수 있는 계산 영역으로, 따라서 임베디드 시스템에서 유용합니다. 에너지는 로봇과 같은 배터리 구동 임베디드 시스템에서 주요 자원입니다. 근사 컴퓨팅은 로봇의 제어 기능에 대한 근사 버전을 생성하는 기술로 사용될 수 있으며, 품질 저하를 대가로 계산에 필요한 에너지를 절약할 수 있게 합니다. 일반적으로 기능의 프로그래머는 시스템 전체 안전에 무해한 성능 저하 정도를 지정합니다. 그러나 여러 하위 시스템이 공존하고 각각의 일부 기능이 근사화된 협업 환경에서는 전체 시스템의 안전이 손상될 수 있습니다. 본 논문에서는 창고에서 여러 대의 동일한 로봇이 작동하고 로봇의 경로 계획 기능이 근사화된 경우를 고려합니다. 계획된 경로가 개별 로봇에 대해 안전하더라도(즉, 랙과 충돌하지 않음), 이로 인해 로봇 간 충돌이 발생함을 보여줍니다. 따라서 이러한 상황에서는 이 새로운 패러다임이 미래에 주류가 되기 위해 그 전체 잠재력을 활용하려면 제어된 근사화가 수행되어야 합니다.
-
-## 핵심 내용
-근사 컴퓨팅(Approximate computing)은 시간과 에너지를 품질과 교환할 수 있는 계산 영역으로, 따라서 임베디드 시스템에서 유용합니다. 에너지는 로봇과 같은 배터리 구동 임베디드 시스템에서 주요 자원입니다. 근사 컴퓨팅은 로봇의 제어 기능에 대한 근사 버전을 생성하는 기술로 사용될 수 있으며, 품질 저하를 대가로 계산에 필요한 에너지를 절약할 수 있게 합니다. 일반적으로 기능의 프로그래머는 시스템 전체 안전에 무해한 성능 저하 정도를 지정합니다. 그러나 여러 하위 시스템이 공존하고 각각의 일부 기능이 근사화된 협업 환경에서는 전체 시스템의 안전이 손상될 수 있습니다. 본 논문에서는 창고에서 여러 대의 동일한 로봇이 작동하고 로봇의 경로 계획 기능이 근사화된 경우를 고려합니다. 계획된 경로가 개별 로봇에 대해 안전하더라도(즉, 랙과 충돌하지 않음), 이로 인해 로봇 간 충돌이 발생함을 보여줍니다. 따라서 이러한 상황에서는 이 새로운 패러다임이 미래에 주류가 되기 위해 그 전체 잠재력을 활용하려면 제어된 근사화가 수행되어야 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2104.05773v2
+
+## 개요
+본 논문은 배터리로 구동되는 이동형 창고 로봇에 초점을 맞추며, 근사 계산의 루프 천공(loop perforation) 기법을 활용하여 A* 경로 계획 알고리즘을 근사화함으로써, 일정 수준의 경로 품질을 희생하는 대신 계산 에너지를 절감하는 것을 목표로 한다. 저자는 단일 로봇 시나리오에서 근사화된 경로 계획이 여전히 로봇이 선반과 충돌하지 않도록 보장한다는 점, 즉 개체 안전성을 지적한다. 그러나 여러 대의 이러한 로봇이 협력하여 작업할 때, 각 로봇이 독립적으로 수행하는 "안전한" 근사 경로 계획은 로봇 간 충돌을 초래할 수 있다. 따라서 본 연구는 협력적 다중 로봇 시스템에서 시스템 전체의 안전성을 희생하지 않으면서 에너지 절감 이점을 활용하려면 근사 계산에 대한 전역적 제어가 필수적임을 강조한다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+- 근사 계산은 계산 품질을 희생하여 시간 및 에너지 효율성을 얻는 기술로, 배터리로 구동되는 임베디드 시스템(예: 로봇)에 특히 적합하다.
+- 로봇 제어 기능의 근사 버전은 에너지를 절약할 수 있지만, 프로그래머는 일반적으로 단일 기계 안전성을 보장하기 위해 "안전한" 품질 저하 임계값을 설정해야 한다.
+
+### 방법 및 실험
+- **핵심 방법**: 루프 천공(loop perforation) 기법을 사용하여 A* 경로 계획 알고리즘을 근사화한다. 루프 천공은 일부 루프 반복을 건너뛰어 계산을 가속화함으로써 에너지 소비를 줄인다.
+- **실험 시나리오**: 동일한 이동형 로봇 여러 대가 창고 환경에서 작동하는 상황을 시뮬레이션하며, 각 로봇은 근사화된 A* 알고리즘을 사용하여 경로를 계획한다.
+- **주요 발견**:
+  - 단일 로봇 테스트에서 근사 경로 계획은 로봇이 선반에 충돌하지 않도록 하여 개체 안전성이 보장된다.
+  - 다중 로봇 협력 시나리오에서는 각 로봇의 경로가 자체적으로는 안전하지만, 로봇 간 경로 충돌이 고려되지 않아 상호 충돌이 발생한다.
+
+### 결론 및 시사점
+- 개체 안전 근사는 협력 시스템에서 전역적 안전 문제를 유발할 수 있으므로 "제어된 근사"(controlled approximation)가 필요하다.
+- 향후 근사 계산을 로봇 분야의 주류 패러다임으로 적용하려면 시스템 수준의 위험을 피하기 위해 다중 에이전트의 근사 동작을 조정할 수 있는 메커니즘을 개발해야 한다.

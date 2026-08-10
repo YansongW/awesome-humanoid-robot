@@ -51,8 +51,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03216v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03216v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (904 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,25 @@ sources:
 ## Overview
 Efficient flapping propulsion hinges on operating within a narrow Strouhal number window, a principle nature has converged upon for maximum thrust-to-power ratio. We translate this bioinspired empirical rule into real-time control, demonstrating it on an autonomous underwater vehicle driven by four soft fins. The proposed Strouhal-aware Model Predictive Control (MPC) enhances a quasi-steady hydrodynamic model with an explicit penalty for Strouhal deviation, solving the resulting nonconvex problem via a two-stage sampling and gradient optimization that runs onboard at 25 Hz. Pool and field trials show that the controller keeps each fin within the optimal Strouhal corridor (0.25-0.35) while precisely tracking commanded forces. This results in a mean reduction in mechanical power of 8.8\% to 32\% throughout the cruising range of 0.1 to 0.3 m/s. The proposed method also allows for a velocity of 0.4 m/s, which is unattainable for a baseline of the conventional inverse model. The results confirm that embedding first-principle flow physics into an MPC objective yields tangible endurance gains without sacrificing agility, offering a generic pathway to energy-aware locomotion in next-generation multifin robots.
 
-## 개요
-효율적인 날개 추진은 좁은 스트로우할 수 범위 내에서 작동하는 데 달려 있으며, 이는 최대 추력 대 출력비를 위해 자연이 수렴한 원리입니다. 우리는 이 생체 모방 경험적 규칙을 실시간 제어로 변환하여, 4개의 소프트 핀으로 구동되는 자율 수중 차량에서 이를 시연합니다. 제안된 스트로우할 인식 모델 예측 제어(MPC)는 준정상 유체역학 모델에 스트로우할 편차에 대한 명시적 패널티를 추가하고, 25Hz로 온보드에서 실행되는 2단계 샘플링 및 그래디언트 최적화를 통해 발생하는 비볼록 문제를 해결합니다. 수조 및 현장 시험에서 제어기가 각 핀을 최적 스트로우할 범위(0.25-0.35) 내로 유지하면서 명령된 힘을 정밀하게 추적함을 보여줍니다. 이는 0.1~0.3 m/s의 순항 범위에서 기계적 출력을 평균 8.8%~32% 감소시킵니다. 제안된 방법은 또한 기존 역모델 기준으로는 도달할 수 없는 0.4 m/s의 속도를 가능하게 합니다. 결과는 MPC 목적 함수에 제1원리 유체 물리학을 내장하면 민첩성을 희생하지 않고 실질적인 내구성 향상을 가져오며, 차세대 다중 핀 로봇의 에너지 인식 운동을 위한 일반적인 경로를 제공함을 확인합니다.
-
-## 핵심 내용
-효율적인 날개 추진은 좁은 스트로우할 수 범위 내에서 작동하는 데 달려 있으며, 이는 최대 추력 대 출력비를 위해 자연이 수렴한 원리입니다. 우리는 이 생체 모방 경험적 규칙을 실시간 제어로 변환하여, 4개의 소프트 핀으로 구동되는 자율 수중 차량에서 이를 시연합니다. 제안된 스트로우할 인식 모델 예측 제어(MPC)는 준정상 유체역학 모델에 스트로우할 편차에 대한 명시적 패널티를 추가하고, 25Hz로 온보드에서 실행되는 2단계 샘플링 및 그래디언트 최적화를 통해 발생하는 비볼록 문제를 해결합니다. 수조 및 현장 시험에서 제어기가 각 핀을 최적 스트로우할 범위(0.25-0.35) 내로 유지하면서 명령된 힘을 정밀하게 추적함을 보여줍니다. 이는 0.1~0.3 m/s의 순항 범위에서 기계적 출력을 평균 8.8%~32% 감소시킵니다. 제안된 방법은 또한 기존 역모델 기준으로는 도달할 수 없는 0.4 m/s의 속도를 가능하게 합니다. 결과는 MPC 목적 함수에 제1원리 유체 물리학을 내장하면 민첩성을 희생하지 않고 실질적인 내구성 향상을 가져오며, 차세대 다중 핀 로봇의 에너지 인식 운동을 위한 일반적인 경로를 제공함을 확인합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03216v1
+
+## 개요
+이 연구는 자연계에서 날갯짓 추진 효율과 스트로할 수(Strouhal number)의 좁은 창 연관성을 실시간 제어 전략으로 전환한다. 연구진은 스트로할 수 인식 모델 예측 제어(MPC)를 제안하며, 준정상 유체역학 모델에 스트로할 수 이탈 패널티 항을 명시적으로 추가하고, 2단계 샘플링과 경사 최적화를 통해 비볼록 문제를 풀어 25 Hz 주파수로 온보드에서 실행한다. 수영장 및 현장 실험에서 이 제어기는 각 소프트 핀을 최적 스트로할 수 구간(0.25-0.35)에 유지하면서 지령 힘을 정밀 추적한다. 실험 결과, 0.1-0.3 m/s 순항 범위에서 기계적 동력이 평균 8.8%에서 32%까지 감소했으며, 기존 역모델로는 도달할 수 없었던 0.4 m/s 속도를 달성했다. 결과는 제1원리 유동 물리학을 MPC 목적 함수에 내장함으로써 민첩성을 희생하지 않고 항속 능력을 크게 향상시킬 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법
+- **핵심 원리**: 자연계에서 날갯짓 추진 효율과 스트로할 수(Strouhal number)의 좁은 창 연관성(0.25-0.35 구간에서 추력-동력 비율 최적)을 기반으로, 이 생물학적 영감 경험 규칙을 실시간 제어 제약으로 변환한다.
+- **제어 아키텍처**: 스트로할 수 인식 모델 예측 제어(Strouhal-aware MPC)를 제안하며, 준정상 유체역학 모델 위에 스트로할 수 이탈 패널티 항을 명시적으로 추가하여 비볼록 최적화 문제를 구성한다.
+- **해법 전략**: 2단계 샘플링과 경사 최적화 방법을 사용하여 25 Hz 주파수로 온보드에서 실행하며 실시간성을 보장한다.
+
+### 실험 설정
+- **플랫폼**: 4-소프트 핀 자율 수중 항해기(AUV)로, 수영장 및 현장 환경에서 실험을 수행한다.
+- **비교 기준선**: 기존 역모델 제어 방법.
+- **성능 지표**: 기계적 동력 감소율, 속도 범위, 스트로할 수 유지 정밀도.
+
+### 주요 결과
+- **스트로할 수 유지**: 제어기는 각 핀의 스트로할 수를 최적 구간 0.25-0.35 내로 안정화하면서 지령 힘을 정밀 추적한다.
+- **동력 감소**: 0.1-0.3 m/s 순항 속도 범위에서 기계적 동력이 평균 8.8%에서 32%까지 감소한다.
+- **속도 향상**: 0.4 m/s 속도를 달성하며, 기존 역모델 기준선은 이 속도에 도달할 수 없다.
+- **결론**: 제1원리 유동 물리학을 MPC 목적 함수에 내장함으로써 민첩성을 희생하지 않고 항속 능력을 크게 향상시킬 수 있으며, 차세대 다중 핀 로봇의 에너지 인식 운동 제어를 위한 일반적인 경로를 제공한다.

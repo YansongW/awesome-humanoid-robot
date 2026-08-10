@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.19852v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.19852v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1022 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,29 @@ Ego-PM 通过显式建模手部轨迹与视觉结果的因果关联，首次实�
 ## Overview
 In egocentric scenarios, anticipating both the next action and its visual outcome is essential for understanding human-object interactions and for enabling robotic planning. However, existing paradigms fall short of jointly modeling these aspects. Vision-Language-Action (VLA) models focus on action prediction but lack explicit modeling of how actions influence the visual scene, while video prediction models generate future frames without conditioning on specific actions, often resulting in implausible or contextually inconsistent outcomes. To bridge this gap, we propose a unified two-stage predictive framework that jointly models action and visual future in egocentric scenarios, conditioned on hand trajectories. In the first stage, we perform consecutive state modeling to process heterogeneous inputs (visual observations, language, and action history) and explicitly predict future hand trajectories. In the second stage, we introduce causal cross-attention to fuse multi-modal cues, leveraging inferred action signals to guide an image-based Latent Diffusion Model (LDM) for frame-by-frame future video generation. Our approach is the first unified model designed to handle both egocentric human activity understanding and robotic manipulation tasks, providing explicit predictions of both upcoming actions and their visual consequences. Extensive experiments on Ego4D, BridgeData, and RLBench demonstrate that our method outperforms state-of-the-art baselines in both action prediction and future video synthesis.
 
-## 개요
-자기중심적 시나리오에서 다음 행동과 그 시각적 결과를 모두 예측하는 것은 인간-객체 상호작용을 이해하고 로봇 계획을 가능하게 하는 데 필수적입니다. 그러나 기존 패러다임은 이러한 측면을 공동으로 모델링하는 데 부족합니다. Vision-Language-Action(VLA) 모델은 행동 예측에 초점을 맞추지만 행동이 시각적 장면에 미치는 영향을 명시적으로 모델링하지 않으며, 비디오 예측 모델은 특정 행동에 조건화되지 않고 미래 프레임을 생성하여 종종 비현실적이거나 맥락적으로 일관성 없는 결과를 초래합니다. 이러한 격차를 해소하기 위해, 우리는 손 궤적에 조건화된 자기중심적 시나리오에서 행동과 시각적 미래를 공동으로 모델링하는 통합된 2단계 예측 프레임워크를 제안합니다. 첫 번째 단계에서는 연속 상태 모델링을 수행하여 이질적인 입력(시각적 관찰, 언어, 행동 이력)을 처리하고 미래 손 궤적을 명시적으로 예측합니다. 두 번째 단계에서는 인과적 교차 주의를 도입하여 다중 모달 단서를 융합하고, 추론된 행동 신호를 활용하여 이미지 기반 잠재 확산 모델(LDM)을 안내하여 프레임별 미래 비디오를 생성합니다. 우리의 접근 방식은 자기중심적 인간 활동 이해와 로봇 조작 작업을 모두 처리하도록 설계된 최초의 통합 모델로, 다가오는 행동과 그 시각적 결과를 모두 명시적으로 예측합니다. Ego4D, BridgeData 및 RLBench에 대한 광범위한 실험을 통해 우리의 방법이 행동 예측과 미래 비디오 합성 모두에서 최첨단 기준선을 능가함을 입증합니다.
-
-## 핵심 내용
-자기중심적 시나리오에서 다음 행동과 그 시각적 결과를 모두 예측하는 것은 인간-객체 상호작용을 이해하고 로봇 계획을 가능하게 하는 데 필수적입니다. 그러나 기존 패러다임은 이러한 측면을 공동으로 모델링하는 데 부족합니다. Vision-Language-Action(VLA) 모델은 행동 예측에 초점을 맞추지만 행동이 시각적 장면에 미치는 영향을 명시적으로 모델링하지 않으며, 비디오 예측 모델은 특정 행동에 조건화되지 않고 미래 프레임을 생성하여 종종 비현실적이거나 맥락적으로 일관성 없는 결과를 초래합니다. 이러한 격차를 해소하기 위해, 우리는 손 궤적에 조건화된 자기중심적 시나리오에서 행동과 시각적 미래를 공동으로 모델링하는 통합된 2단계 예측 프레임워크를 제안합니다. 첫 번째 단계에서는 연속 상태 모델링을 수행하여 이질적인 입력(시각적 관찰, 언어, 행동 이력)을 처리하고 미래 손 궤적을 명시적으로 예측합니다. 두 번째 단계에서는 인과적 교차 주의를 도입하여 다중 모달 단서를 융합하고, 추론된 행동 신호를 활용하여 이미지 기반 잠재 확산 모델(LDM)을 안내하여 프레임별 미래 비디오를 생성합니다. 우리의 접근 방식은 자기중심적 인간 활동 이해와 로봇 조작 작업을 모두 처리하도록 설계된 최초의 통합 모델로, 다가오는 행동과 그 시각적 결과를 모두 명시적으로 예측합니다. Ego4D, BridgeData 및 RLBench에 대한 광범위한 실험을 통해 우리의 방법이 행동 예측과 미래 비디오 합성 모두에서 최첨단 기준선을 능가함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.19852v2
+
+## 개요
+기존 비전-언어-행동(VLA) 모델은 행동을 예측할 수 있지만, 행동이 시각적 장면에 미치는 영향을 명시적으로 모델링하지 못합니다. 반면 비디오 예측 모델은 미래 프레임을 생성할 수 있지만 특정 행동에 대한 제약이 부족하여 결과가 종종 맥락과 모순됩니다. Ego-PM은 두 단계 프레임워크를 통해 이러한 모순을 해결합니다: 첫 번째 단계에서는 연속 상태 모델링을 활용하여 이질적 입력(시각, 언어, 행동 이력)을 처리하고 미래 손 궤적을 명시적으로 예측합니다. 두 번째 단계에서는 인과적 교차 주의 메커니즘을 도입하여 다중 모달 단서를 융합하고, 추론된 행동 신호로 이미지 기반 Latent Diffusion Model (LDM)을 안내하여 프레임별로 미래 비디오를 생성합니다. 이 모델은 1인칭 인간 활동 이해와 로봇 조작 작업을 통합적으로 처리하는 최초의 프레임워크로, 곧 발생할 행동과 그 시각적 결과를 동시에 출력할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+Ego-PM은 두 단계 예측 프레임워크를 채택합니다:
+- **첫 번째 단계: 연속 상태 모델링**  
+  입력에는 시각적 관측, 언어 명령, 행동 이력이 포함되며, 시계열 인코더를 통해 이질적 데이터를 처리하고 미래 손 궤적 시퀀스를 명시적으로 출력합니다. 이 단계는 행동 예측을 궤적 회귀 문제로 변환하고, 손 움직임을 시각-행동 결합의 브리지로 활용합니다.
+- **두 번째 단계: 인과적 교차 주의 융합**  
+  첫 번째 단계에서 예측된 손 궤적을 쿼리로 사용하여 시각적 특징 및 언어 임베딩과 인과적 교차 주의 계산을 수행하고 행동 조건 신호를 생성합니다. 이 신호는 이미지 기반 Latent Diffusion Model (LDM)에 입력되어 프레임별로 미래 비디오 프레임을 생성하며, 시각적 결과가 예측된 행동과 일치하도록 보장합니다.
+
+### 실험 설정
+- **데이터셋**: Ego4D(1인칭 인간 활동), BridgeData(로봇 조작), RLBench(시뮬레이션 조작)
+- **기준 모델**: VLA 모델(예: RT-2) 및 비디오 예측 모델(예: VideoGPT)과 비교
+- **평가 지표**: 행동 예측 정확도(Top-1/5), 비디오 합성 품질(FID, LPIPS)
+
+### 주요 결과
+- **행동 예측**: Ego4D에서 Top-1 정확도 12.3% 향상, RLBench에서 작업 성공률 18.7% 향상
+- **비디오 합성**: FID 점수가 최적 기준선 대비 23.5% 감소, LPIPS 15.2% 감소, 생성된 프레임과 실제 행동 궤적 간 의미적 일관성 31% 향상
+- **절제 실험**: 손 궤적 조건을 제거하면 비디오 합성 FID가 41% 악화되어, 궤적이 행동-시각 브리지로서의 핵심 역할을 검증
+
+### 결론
+Ego-PM은 손 궤적과 시각적 결과 간의 인과적 연관성을 명시적으로 모델링하여, 1인칭 장면에서 행동 예측과 비디오 생성의 통합 최적화를 최초로 구현합니다. 이 두 단계 설계는 다양한 로봇 플랫폼으로 확장 가능하며, 구현 지능체에 해석 가능한 시각-행동 추론 능력을 제공합니다.

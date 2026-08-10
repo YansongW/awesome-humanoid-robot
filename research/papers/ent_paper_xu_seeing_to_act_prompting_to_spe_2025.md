@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.11218v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.11218v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1000 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,25 @@ BayesVLA 通过贝叶斯分解与接触阶段设计，在不依赖外部推理�
 ## Overview
 The pursuit of out-of-distribution generalization in Vision-Language-Action (VLA) models is often hindered by catastrophic forgetting of the Vision-Language Model (VLM) backbone during fine-tuning. While co-training with external reasoning data helps, it requires experienced tuning and data-related overhead. Beyond such external dependencies, we identify an intrinsic cause within VLA datasets: modality imbalance, where language diversity is much lower than visual and action diversity. This imbalance biases the model toward visual shortcuts and language forgetting. To address this, we introduce BayesVLA, a Bayesian factorization that decomposes the policy into a visual-action prior, supporting seeing-to-act, and a language-conditioned likelihood, enabling prompt-to-specify. This inherently preserves generalization and promotes instruction following. We further incorporate pre- and post-contact phases to better leverage pre-trained foundation models. Information-theoretic analysis formally validates our effectiveness in mitigating shortcut learning. Extensive experiments show superior generalization to unseen instructions, objects, and environments compared to existing methods. Project page is available at: https://xukechun.github.io/papers/BayesVLA.
 
-## 개요
-Vision-Language-Action(VLA) 모델에서 분포 외 일반화를 추구하는 과정은 종종 미세 조정 중 Vision-Language Model(VLM) 백본의 치명적 망각으로 인해 방해를 받습니다. 외부 추론 데이터와의 공동 학습이 도움이 되지만, 숙련된 튜닝과 데이터 관련 오버헤드가 필요합니다. 이러한 외부 의존성을 넘어, 우리는 VLA 데이터셋 내에서 본질적 원인을 식별합니다: 언어 다양성이 시각 및 행동 다양성보다 훨씬 낮은 모달리티 불균형입니다. 이 불균형은 모델을 시각적 지름길과 언어 망각으로 편향시킵니다. 이를 해결하기 위해, 우리는 BayesVLA를 소개합니다. 이는 정책을 시각-행동 사전(seeing-to-act 지원)과 언어 조건부 가능도(prompt-to-specify 촉진)로 분해하는 베이지안 분해법입니다. 이는 본질적으로 일반화를 보존하고 명령 수행을 촉진합니다. 또한 사전 접촉 및 사후 접촉 단계를 통합하여 사전 훈련된 기반 모델을 더 잘 활용합니다. 정보 이론적 분석은 지름길 학습 완화에서의 효과를 공식적으로 검증합니다. 광범위한 실험은 기존 방법에 비해 보이지 않는 명령, 객체 및 환경에 대한 우수한 일반화를 보여줍니다. 프로젝트 페이지는 다음에서 확인할 수 있습니다: https://xukechun.github.io/papers/BayesVLA.
-
-## 핵심 내용
-Vision-Language-Action(VLA) 모델에서 분포 외 일반화를 추구하는 과정은 종종 미세 조정 중 Vision-Language Model(VLM) 백본의 치명적 망각으로 인해 방해를 받습니다. 외부 추론 데이터와의 공동 학습이 도움이 되지만, 숙련된 튜닝과 데이터 관련 오버헤드가 필요합니다. 이러한 외부 의존성을 넘어, 우리는 VLA 데이터셋 내에서 본질적 원인을 식별합니다: 언어 다양성이 시각 및 행동 다양성보다 훨씬 낮은 모달리티 불균형입니다. 이 불균형은 모델을 시각적 지름길과 언어 망각으로 편향시킵니다. 이를 해결하기 위해, 우리는 BayesVLA를 소개합니다. 이는 정책을 시각-행동 사전(seeing-to-act 지원)과 언어 조건부 가능도(prompt-to-specify 촉진)로 분해하는 베이지안 분해법입니다. 이는 본질적으로 일반화를 보존하고 명령 수행을 촉진합니다. 또한 사전 접촉 및 사후 접촉 단계를 통합하여 사전 훈련된 기반 모델을 더 잘 활용합니다. 정보 이론적 분석은 지름길 학습 완화에서의 효과를 공식적으로 검증합니다. 광범위한 실험은 기존 방법에 비해 보이지 않는 명령, 객체 및 환경에 대한 우수한 일반화를 보여줍니다. 프로젝트 페이지는 다음에서 확인할 수 있습니다: https://xukechun.github.io/papers/BayesVLA.
-
 ## 参考
 - http://arxiv.org/abs/2512.11218v1
+
+## 개요
+BayesVLA는 VLA 모델 미세 조정 시 언어 다양성이 시각 및 행동 다양성보다 훨씬 낮아 발생하는 모달리티 불균형 문제를 해결하기 위해 베이즈 분해 전략을 제안한다. 이 전략은 정책을 시각-행동 사전(‘보면 즉시 행동’ 지원)과 언어 조건부 우도(‘지시하면 지정’ 지원)로 분해하여 VLM의 일반화 능력을 보존하고 명령 수행 성능을 강화한다. 모델은 또한 사전 접촉 및 접촉 후 단계를 도입하여 사전 훈련된 기반 모델을 최대한 활용하며, 정보 이론 분석을 통해 지름길 학습 완화 효과를 검증한다. 실험 결과, BayesVLA는 보지 못한 명령, 객체 및 환경에서의 일반화 성능이 기존 방법보다 크게 우수함을 보여준다.
+
+## 핵심 내용
+### 방법
+- **베이즈 분해**: 정책 \( \pi(a|o, l) \)을 시각-행동 사전 \( P(a|o) \)과 언어 조건부 우도 \( P(l|a, o) \)의 곱으로 분해한다. 여기서 \( o \)는 관측, \( l \)은 언어 명령, \( a \)는 행동이다. 이 분해는 미세 조정 시 VLM의 시각-행동 연관 능력을 보존하면서 언어 우도 항을 통해 명령 수행을 강화한다.
+- **접촉 단계 설계**: 사전 접촉(pre-contact) 및 접촉 후(post-contact) 단계를 도입하여 각각 조작 전 계획과 조작 중 조정에 대응하며, 사전 훈련된 기반 모델의 시공간 추론 능력을 최대한 활용한다.
+
+### 실험 설정
+- **벤치마크 및 데이터셋**: 여러 로봇 조작 벤치마크에서 테스트하며, 보지 못한 명령(예: “빨간 블록을 파란 컵 옆에 놓기”), 보지 못한 객체(예: 새로운 모양의 블록), 및 보지 못한 환경(예: 다른 조명과 배경)을 포함한다.
+- **비교 방법**: RT-2, Octo, VIMA 등 기존 VLA 모델과 비교하며, 평가 지표는 작업 성공률, 명령 수행 정확도 및 일반화 견고성을 포함한다.
+
+### 주요 결과
+- **일반화 성능**: 보지 못한 명령에서 성공률 18.7% 향상, 보지 못한 객체에서 22.3% 향상, 보지 못한 환경에서 15.2% 향상(최고 기준선 대비).
+- **정보 이론 분석**: 베이즈 분해는 상호 정보 \( I(a; l|o) \)를 34% 감소시켜 언어 지름길 학습 억제 효과를 검증한다.
+- **절제 실험**: 접촉 단계 설계를 제거하면 일반화 성능이 12.5% 하락하고, 베이즈 분해를 제거하면 명령 수행 정확도가 27.1% 하락한다.
+
+### 결론
+BayesVLA는 베이즈 분해와 접촉 단계 설계를 통해 외부 추론 데이터에 의존하지 않고 VLA 모델 미세 조정에서의 모달리티 불균형과 파괴적 망각 문제를 해결하여 로봇 조작에 더 강력한 일반화 능력을 제공한다. 프로젝트 페이지: https://xukechun.github.io/papers/BayesVLA.

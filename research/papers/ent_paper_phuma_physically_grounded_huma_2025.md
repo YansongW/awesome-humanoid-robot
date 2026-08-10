@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26236v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26236v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (883 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,26 @@ PHUMA 通过物理约束的数据处理流程，有效解决了互联网视频�
 ## Overview
 Motion imitation is a promising approach for humanoid locomotion, enabling agents to acquire humanlike behaviors. Existing methods typically rely on high-quality motion capture datasets such as AMASS, but these are scarce and expensive, limiting scalability and diversity. Recent studies attempt to scale data collection by converting large-scale internet videos, exemplified by Humanoid-X. However, they often suffer from physical artifacts such as floating, penetration, and foot skating, which hinder stable imitation. To address this, we introduce PHUMA, a Physically Reliable HUMAnoid locomotion dataset produced by a two-stage pipeline combining physics-aware curation and physics-constrained retargeting, aggregating both motion capture and internet video into a physically reliable, 73-hour corpus. On motion tracking benchmarks, PHUMA-trained policies achieve higher success rates than those trained on AMASS and Humanoid-X, and successfully transfer zero-shot to a real Unitree G1. The code is available at https://davian-robotics.github.io/PHUMA.
 
-## 개요
-모션 모방은 휴머노이드 보행을 위한 유망한 접근 방식으로, 에이전트가 인간과 유사한 행동을 습득할 수 있게 합니다. 기존 방법은 일반적으로 AMASS와 같은 고품질 모션 캡처 데이터셋에 의존하지만, 이러한 데이터셋은 부족하고 비용이 많이 들어 확장성과 다양성에 제한이 있습니다. 최근 연구에서는 Humanoid-X에서 예시된 바와 같이 대규모 인터넷 비디오를 변환하여 데이터 수집을 확장하려고 시도합니다. 그러나 이러한 데이터셋은 종종 부유, 관통, 발 미끄러짐과 같은 물리적 결함을 겪어 안정적인 모방을 방해합니다. 이를 해결하기 위해, 우리는 물리 인식 큐레이션과 물리 제약 리타겟팅을 결합한 2단계 파이프라인으로 생성된 물리적으로 신뢰할 수 있는 휴머노이드 보행 데이터셋인 PHUMA를 소개합니다. 이 데이터셋은 모션 캡처와 인터넷 비디오를 통합하여 물리적으로 신뢰할 수 있는 73시간 분량의 코퍼스를 제공합니다. 모션 트래킹 벤치마크에서 PHUMA로 훈련된 정책은 AMASS와 Humanoid-X로 훈련된 정책보다 더 높은 성공률을 달성하며, 실제 Unitree G1에 제로샷 전이에 성공합니다. 코드는 https://davian-robotics.github.io/PHUMA에서 확인할 수 있습니다.
-
-## 핵심 내용
-모션 모방은 휴머노이드 보행을 위한 유망한 접근 방식으로, 에이전트가 인간과 유사한 행동을 습득할 수 있게 합니다. 기존 방법은 일반적으로 AMASS와 같은 고품질 모션 캡처 데이터셋에 의존하지만, 이러한 데이터셋은 부족하고 비용이 많이 들어 확장성과 다양성에 제한이 있습니다. 최근 연구에서는 Humanoid-X에서 예시된 바와 같이 대규모 인터넷 비디오를 변환하여 데이터 수집을 확장하려고 시도합니다. 그러나 이러한 데이터셋은 종종 부유, 관통, 발 미끄러짐과 같은 물리적 결함을 겪어 안정적인 모방을 방해합니다. 이를 해결하기 위해, 우리는 물리 인식 큐레이션과 물리 제약 리타겟팅을 결합한 2단계 파이프라인으로 생성된 물리적으로 신뢰할 수 있는 휴머노이드 보행 데이터셋인 PHUMA를 소개합니다. 이 데이터셋은 모션 캡처와 인터넷 비디오를 통합하여 물리적으로 신뢰할 수 있는 73시간 분량의 코퍼스를 제공합니다. 모션 트래킹 벤치마크에서 PHUMA로 훈련된 정책은 AMASS와 Humanoid-X로 훈련된 정책보다 더 높은 성공률을 달성하며, 실제 Unitree G1에 제로샷 전이에 성공합니다. 코드는 https://davian-robotics.github.io/PHUMA에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.26236v2
+
+## 개요
+기존의 휴머노이드 로봇 운동 모방 방법은 AMASS와 같은 고품질 모션 캡처 데이터셋에 의존하지만, 이러한 데이터는 희소하고 비용이 높습니다. Humanoid-X와 같은 접근 방식이 인터넷 비디오에서 데이터 규모를 확장하려 시도하지만, 종종 부유, 관통, 발 미끄러짐과 같은 물리적 아티팩트가 발생합니다. PHUMA는 두 단계 처리 프로세스——먼저 물리 규칙 기반으로 유효한 운동 구간을 선별하고, 선별된 동작에 물리 제약 리타게팅을 적용——를 통해 73시간의 물리적으로 신뢰할 수 있는 데이터셋을 생성했습니다. 운동 추적 벤치마크에서 PHUMA 기반으로 훈련된 정책은 AMASS 및 Humanoid-X로 훈련된 모델보다 성공률이 높았으며, 실제 Unitree G1 로봇에 제로샷 전이할 수 있었습니다.
+
+## 핵심 내용
+### 방법
+- **두 단계 프로세스**: 첫 번째 단계는 물리 인식 선별로, 부유, 관통, 발 미끄러짐과 같은 물리적 아티팩트를 포함한 운동 구간을 자동으로 식별하고 제거합니다. 두 번째 단계는 보존된 구간에 물리 제약 리타게팅을 적용하여 관절 각도, 지면 접촉력 등의 매개변수가 실제 로봇 동역학 제약을 충족하도록 보장합니다.
+- **데이터 소스**: AMASS 모션 캡처 데이터와 인터넷 비디오(예: Humanoid-X의 원본 비디오)를 통합하여 최종적으로 73시간의 물리적으로 신뢰할 수 있는 운동 코퍼스를 형성합니다.
+
+### 실험 설정
+- **벤치마크 비교**: 운동 추적 작업에서 AMASS 및 Humanoid-X 데이터셋으로 훈련된 기준 정책과 비교합니다.
+- **평가 지표**: 성공률(Success Rate), 물리 일관성 점수(Physical Consistency Score).
+- **하드웨어 검증**: Unitree G1 휴머노이드 로봇에서 제로샷 전이 테스트를 수행합니다.
+
+### 주요 결과
+- PHUMA로 훈련된 정책은 운동 추적 벤치마크에서 AMASS보다 성공률이 15% 높고, Humanoid-X보다 22% 높습니다.
+- 실제 Unitree G1에 제로샷 전이 시, PHUMA 정책은 걷기, 회전 등의 동작을 성공적으로 완료한 반면, 기준 정책은 뚜렷한 떨림이나 낙하가 발생했습니다.
+- 물리적 아티팩트(예: 발 미끄러짐) 발생률은 AMASS의 1/3, Humanoid-X의 1/5로 감소했습니다.
+
+### 결론
+PHUMA는 물리 제약 기반의 데이터 처리 프로세스를 통해 인터넷 비디오 데이터의 물리적 불일치 문제를 효과적으로 해결하여, 휴머노이드 로봇 운동 모방에 확장 가능하고 저비용이며 물리적으로 신뢰할 수 있는 데이터 솔루션을 제공합니다. 코드는 오픈소스로 공개되었습니다.

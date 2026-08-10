@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.09619v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.09619v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (721 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,28 @@ GLaD 通过几何潜在蒸馏，有效提升了 VLA 模型在机器人操作任�
 ## Overview
 Most existing Vision-Language-Action (VLA) models rely primarily on RGB information, while ignoring geometric cues crucial for spatial reasoning and manipulation. In this work, we introduce GLaD, a geometry-aware VLA framework that incorporates 3D geometric priors during pretraining through knowledge distillation. Rather than distilling geometric features solely into the vision encoder, we align the LLM's hidden states corresponding to visual tokens with features from a frozen geometry-aware vision transformer (VGGT), ensuring that geometric understanding is deeply integrated into the multimodal representations that drive action prediction. Pretrained on the Bridge dataset with this geometry distillation mechanism, GLaD achieves 94.1% average success rate across four LIBERO task suites, outperforming UniVLA (92.5%) which uses identical pretraining data. These results validate that geometry-aware pretraining enhances spatial reasoning and policy generalization without requiring explicit depth sensors or 3D annotations.
 
-## 개요
-대부분의 기존 Vision-Language-Action (VLA) 모델은 주로 RGB 정보에 의존하며, 공간 추론 및 조작에 중요한 기하학적 단서를 무시합니다. 본 연구에서는 지식 증류를 통해 사전 학습 중 3D 기하학적 사전 지식을 통합하는 기하학 인식 VLA 프레임워크인 GLaD를 소개합니다. 기하학적 특징을 시각 인코더에만 증류하는 대신, 시각 토큰에 해당하는 LLM의 은닉 상태를 고정된 기하학 인식 비전 트랜스포머(VGGT)의 특징과 정렬하여, 행동 예측을 구동하는 다중 모달 표현에 기하학적 이해가 깊이 통합되도록 합니다. 이 기하학 증류 메커니즘으로 Bridge 데이터셋에서 사전 학습된 GLaD는 네 가지 LIBERO 작업 제품군에서 평균 94.1%의 성공률을 달성하여, 동일한 사전 학습 데이터를 사용하는 UniVLA(92.5%)를 능가합니다. 이러한 결과는 기하학 인식 사전 학습이 명시적인 깊이 센서나 3D 주석 없이도 공간 추론 및 정책 일반화를 향상시킴을 입증합니다.
-
-## 핵심 내용
-대부분의 기존 Vision-Language-Action (VLA) 모델은 주로 RGB 정보에 의존하며, 공간 추론 및 조작에 중요한 기하학적 단서를 무시합니다. 본 연구에서는 지식 증류를 통해 사전 학습 중 3D 기하학적 사전 지식을 통합하는 기하학 인식 VLA 프레임워크인 GLaD를 소개합니다. 기하학적 특징을 시각 인코더에만 증류하는 대신, 시각 토큰에 해당하는 LLM의 은닉 상태를 고정된 기하학 인식 비전 트랜스포머(VGGT)의 특징과 정렬하여, 행동 예측을 구동하는 다중 모달 표현에 기하학적 이해가 깊이 통합되도록 합니다. 이 기하학 증류 메커니즘으로 Bridge 데이터셋에서 사전 학습된 GLaD는 네 가지 LIBERO 작업 제품군에서 평균 94.1%의 성공률을 달성하여, 동일한 사전 학습 데이터를 사용하는 UniVLA(92.5%)를 능가합니다. 이러한 결과는 기하학 인식 사전 학습이 명시적인 깊이 센서나 3D 주석 없이도 공간 추론 및 정책 일반화를 향상시킴을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.09619v1
+
+## 개요
+기존의 비전-언어-행동 모델은 대부분 RGB 정보에 의존하며, 공간 추론에 중요한 기하학적 단서를 무시한다. GLaD는 증류 메커니즘을 통해 동결된 기하학 인식 비전 트랜스포머(VGGT)의 특징을 대규모 언어 모델의 비전 토큰에 해당하는 은닉 상태에 정렬하여, 기하학적 이해가 행동 예측을 구동하는 다중 모달 표현에 깊이 통합되도록 한다. 이 방법은 명시적 깊이 센서나 3D 주석 없이도 Bridge 데이터셋 사전 학습 후 정책의 일반화 능력과 공간 추론 성능을 크게 향상시킨다.
+
+## 핵심 내용
+### 방법 아키텍처
+GLaD는 지식 증류 프레임워크를 채택하며, 핵심 설계는 다음과 같다:
+- **기하학적 특징 추출**: 동결된 VGGT를 기하학 인식 비전 트랜스포머로 사용하여 3D 기하학 사전 지식을 추출한다.
+- **정렬 메커니즘**: 대규모 언어 모델의 비전 토큰에 해당하는 은닉 상태를 VGGT의 기하학적 특징과 정렬하며, 비전 인코더에만 증류하지 않는다.
+- **다중 모달 융합**: 기하학적 이해가 행동 예측을 구동하는 다중 모달 표현에 깊이 통합되도록 보장한다.
+
+### 실험 설정
+- **사전 학습 데이터**: Bridge 데이터셋.
+- **평가 벤치마크**: 네 가지 LIBERO 작업 스위트(LIBERO-10, LIBERO-90, LIBERO-Goal, LIBERO-Spatial).
+- **비교 모델**: UniVLA(동일한 사전 학습 데이터 사용).
+
+### 주요 결과
+- **평균 성공률**: GLaD는 94.1%에 도달했으며, UniVLA는 92.5%이다.
+- **성능 향상**: 기하학 인식 사전 학습이 공간 추론과 정책 일반화 능력을 강화함을 검증했다.
+- **추가 하드웨어 불필요**: 명시적 깊이 센서나 3D 주석에 의존하지 않는다.
+
+### 결론
+GLaD는 기하학적 잠재 증류를 통해 추가 센서나 주석 데이터 없이도 VLA 모델의 로봇 조작 작업에서 공간 추론 능력을 효과적으로 향상시킨다.

@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2004.00467v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2004.00467v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (819 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,35 @@ theoretical_depth:
 ## Overview
 High-performance actuators are crucial to enable mechanical versatility of lower-limb wearable robots, which are required to be lightweight, highly backdrivable, and with high bandwidth. State-of-the-art actuators, e.g., series elastic actuators (SEAs), have to compromise bandwidth to improve compliance (i.e., backdrivability). In this paper, we describe the design and human-robot interaction modeling of a portable hip exoskeleton based on our custom quasi-direct drive (QDD) actuation (i.e., a high torque density motor with low ratio gear). We also present a model-based performance benchmark comparison of representative actuators in terms of torque capability, control bandwidth, backdrivability, and force tracking accuracy. This paper aims to corroborate the underlying philosophy of "design for control", namely meticulous robot design can simplify control algorithms while ensuring high performance. Following this idea, we create a lightweight bilateral hip exoskeleton (overall mass is 3.4 kg) to reduce joint loadings during normal activities, including walking and squatting. Experimental results indicate that the exoskeleton is able to produce high nominal torque (17.5 Nm), high backdrivability (0.4 Nm backdrive torque), high bandwidth (62.4 Hz), and high control accuracy (1.09 Nm root mean square tracking error, i.e., 5.4% of the desired peak torque). Its controller is versatile to assist walking at different speeds (0.8-1.4 m/s) and squatting at 2 s cadence. This work demonstrates significant improvement in backdrivability and control bandwidth compared with state-of-the-art exoskeletons powered by the conventional actuation or SEA.
 
-## 개요
-고성능 액추에이터는 하지 착용 로봇의 기계적 다용성을 가능하게 하는 데 필수적이며, 이는 경량, 높은 역구동성, 높은 대역폭을 요구합니다. 최신 액추에이터, 예를 들어 직렬 탄성 액추에이터(SEA)는 순응성(즉, 역구동성)을 개선하기 위해 대역폭을 희생해야 합니다. 본 논문에서는 맞춤형 준직접 구동(QDD) 액추에이션(즉, 저비율 기어를 갖춘 고토크 밀도 모터)을 기반으로 한 휴대용 고관절 외골격의 설계와 인간-로봇 상호작용 모델링을 설명합니다. 또한 토크 성능, 제어 대역폭, 역구동성, 힘 추적 정확도 측면에서 대표적인 액추에이터의 모델 기반 성능 벤치마크 비교를 제시합니다. 이 논문은 "제어를 위한 설계"라는 기본 철학을 입증하는 것을 목표로 하며, 즉 세심한 로봇 설계가 높은 성능을 보장하면서 제어 알고리즘을 단순화할 수 있음을 보여줍니다. 이 아이디어에 따라, 우리는 걷기와 스쿼트를 포함한 일상 활동 중 관절 부하를 줄이기 위해 경량 양측 고관절 외골격(총 질량 3.4 kg)을 제작했습니다. 실험 결과는 외골격이 높은 공칭 토크(17.5 Nm), 높은 역구동성(0.4 Nm 역구동 토크), 높은 대역폭(62.4 Hz), 높은 제어 정확도(1.09 Nm 평균 제곱근 추적 오차, 즉 목표 최대 토크의 5.4%)를 생성할 수 있음을 보여줍니다. 제어기는 다양한 속도(0.8-1.4 m/s)에서의 걷기와 2초 주기의 스쿼트를 지원하는 데 다용도로 사용됩니다. 이 연구는 기존 액추에이션 또는 SEA로 구동되는 최신 외골격과 비교하여 역구동성과 제어 대역폭에서 상당한 개선을 입증합니다.
-
-## 핵심 내용
-고성능 액추에이터는 하지 착용 로봇의 기계적 다용성을 가능하게 하는 데 필수적이며, 이는 경량, 높은 역구동성, 높은 대역폭을 요구합니다. 최신 액추에이터, 예를 들어 직렬 탄성 액추에이터(SEA)는 순응성(즉, 역구동성)을 개선하기 위해 대역폭을 희생해야 합니다. 본 논문에서는 맞춤형 준직접 구동(QDD) 액추에이션(즉, 저비율 기어를 갖춘 고토크 밀도 모터)을 기반으로 한 휴대용 고관절 외골격의 설계와 인간-로봇 상호작용 모델링을 설명합니다. 또한 토크 성능, 제어 대역폭, 역구동성, 힘 추적 정확도 측면에서 대표적인 액추에이터의 모델 기반 성능 벤치마크 비교를 제시합니다. 이 논문은 "제어를 위한 설계"라는 기본 철학을 입증하는 것을 목표로 하며, 즉 세심한 로봇 설계가 높은 성능을 보장하면서 제어 알고리즘을 단순화할 수 있음을 보여줍니다. 이 아이디어에 따라, 우리는 걷기와 스쿼트를 포함한 일상 활동 중 관절 부하를 줄이기 위해 경량 양측 고관절 외골격(총 질량 3.4 kg)을 제작했습니다. 실험 결과는 외골격이 높은 공칭 토크(17.5 Nm), 높은 역구동성(0.4 Nm 역구동 토크), 높은 대역폭(62.4 Hz), 높은 제어 정확도(1.09 Nm 평균 제곱근 추적 오차, 즉 목표 최대 토크의 5.4%)를 생성할 수 있음을 보여줍니다. 제어기는 다양한 속도(0.8-1.4 m/s)에서의 걷기와 2초 주기의 스쿼트를 지원하는 데 다용도로 사용됩니다. 이 연구는 기존 액추에이션 또는 SEA로 구동되는 최신 외골격과 비교하여 역구동성과 제어 대역폭에서 상당한 개선을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2004.00467v1
+
+## 개요
+이 연구는 하지 웨어러블 로봇의 액추에이터 경량화, 높은 역구동성 및 높은 대역폭 요구를 충족하기 위해 맞춤형 준직접구동(QDD) 액추에이터를 제안하고, 이를 기반으로 3.4 kg 양측 고관절 외골격을 구축했습니다. 기존의 직렬 탄성 액추에이터(SEA)가 대역폭과 유연성 사이에서 절충해야 했던 것과 달리, QDD는 고토크 밀도 모터와 저감속비 기어를 통해 성능 돌파구를 달성했습니다. 실험 결과, 이 외골격은 보행 및 스쿼트 작업에서 17.5 Nm 정격 토크, 0.4 Nm 역구동 토크 및 62.4 Hz 대역폭을 보여주었으며, 토크 추적 오차는 1.09 Nm(최대 토크의 5.4%)에 불과했고, 컨트롤러는 다양한 속도의 보행 및 스쿼트 리듬에 적응할 수 있었습니다.
+
+## 핵심 내용
+### 핵심 설계 철학
+- **"설계가 곧 제어" 철학**: 정밀 기계 설계를 통해 제어 알고리즘을 단순화하고 복잡한 보상 전략을 피합니다.
+- **준직접구동(QDD) 액추에이터**: 고토크 밀도 모터와 저감속비 기어를 채택하여 높은 역구동성을 유지하면서 대역폭을 향상시킵니다.
+
+### 시스템 아키텍처
+- **외골격 본체**: 양측 고관절 구조, 총 중량 3.4 kg, 맞춤형 QDD 액추에이터, 경량 프레임 및 스트랩 포함.
+- **액추에이터 파라미터**:
+  - 정격 토크: 17.5 Nm
+  - 역구동 토크: 0.4 Nm(수동 유연성 측정)
+  - 제어 대역폭: 62.4 Hz(일반적인 SEA의 10-30 Hz보다 훨씬 높음)
+
+### 실험 검증
+- **작업 시나리오**:
+  - 보행 속도 범위: 0.8-1.4 m/s
+  - 스쿼트 리듬: 2초/회
+- **성능 지표**:
+  - 토크 추적 오차: 1.09 Nm(제곱평균제곱근), 최대 토크의 5.4% 차지
+  - 컨트롤러는 복잡한 힘/임피던스 조정 없이 저이득 피드백만 의존
+
+### 비교 우위
+- 기존 SEA 외골격과 비교하여 역구동성이 약 10배 향상(0.4 Nm vs 3-5 Nm), 대역폭은 2-6배 향상.
+- 높은 토크 출력을 유지하면서 SEA의 탄성 요소로 인한 위상 지연 문제를 피함.
+
+### 결론
+이 연구는 QDD 액추에이터가 경량 외골격에서의 실현 가능성을 검증했으며, 하지 보조 로봇에 높은 역구동성과 높은 대역폭을 갖춘 실용적인 솔루션을 제공했습니다. 또한 컨트롤러 설계가 간결하여 다른 운동 모드로 확장하기 쉽습니다.

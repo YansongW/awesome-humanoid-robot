@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.05273v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.05273v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (779 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,34 @@ Large Vision-Language-Action (VLA) models, leveraging powerful pre-trained Visio
 ## Content
 Large Vision-Language-Action (VLA) models, leveraging powerful pre-trained Vision-Language Models (VLMs) backends, have shown promise in robotic control due to their impressive generalization ability. However, the success comes at a cost. Their reliance on VLM backends with billions of parameters leads to high computational costs and inference latency, limiting the testing scenarios to mainly quasi-static tasks and hindering performance in dynamic tasks requiring rapid interactions. To address these limitations, this paper proposes HiRT, a Hierarchical Robot Transformer framework that enables flexible frequency and performance trade-off. HiRT keeps VLMs running at low frequencies to capture temporarily invariant features while enabling real-time interaction through a high-frequency vision-based policy guided by the slowly updated features. Experiment results in both simulation and real-world settings demonstrate significant improvements over baseline methods. Empirically, in static tasks, we double the control frequency and achieve comparable success rates. Additionally, on novel real-world dynamic manipulation tasks which are challenging for previous VLA models, HiRT improves the success rate from 48% to 75%.
 
-## 개요
-대규모 Vision-Language-Action(VLA) 모델은 강력한 사전 훈련된 Vision-Language Models(VLMs) 백엔드를 활용하여 뛰어난 일반화 능력 덕분에 로봇 제어에서 가능성을 보여주고 있습니다. 그러나 이러한 성공에는 대가가 따릅니다. 수십억 개의 매개변수를 가진 VLM 백엔드에 의존함으로써 높은 계산 비용과 추론 지연 시간이 발생하여, 테스트 시나리오가 주로 준정적(quasi-static) 작업으로 제한되고 빠른 상호작용이 필요한 동적 작업에서 성능이 저하됩니다. 이러한 한계를 해결하기 위해 본 논문에서는 유연한 주파수와 성능 간의 균형을 가능하게 하는 계층적 로봇 트랜스포머 프레임워크인 HiRT를 제안합니다. HiRT는 VLM을 낮은 주파수로 실행하여 일시적으로 불변하는 특징을 포착하는 동시에, 느리게 업데이트되는 특징에 의해 안내되는 고주파수 비전 기반 정책을 통해 실시간 상호작용을 가능하게 합니다. 시뮬레이션과 실제 환경 모두에서의 실험 결과는 기준 방법에 비해 상당한 개선을 보여줍니다. 경험적으로, 정적 작업에서는 제어 주파수를 두 배로 늘리고 비슷한 성공률을 달성했습니다. 또한, 이전 VLA 모델에 도전적인 새로운 실제 동적 조작 작업에서 HiRT는 성공률을 48%에서 75%로 향상시켰습니다.
-
-## 핵심 내용
-대규모 Vision-Language-Action(VLA) 모델은 강력한 사전 훈련된 Vision-Language Models(VLMs) 백엔드를 활용하여 뛰어난 일반화 능력 덕분에 로봇 제어에서 가능성을 보여주고 있습니다. 그러나 이러한 성공에는 대가가 따릅니다. 수십억 개의 매개변수를 가진 VLM 백엔드에 의존함으로써 높은 계산 비용과 추론 지연 시간이 발생하여, 테스트 시나리오가 주로 준정적(quasi-static) 작업으로 제한되고 빠른 상호작용이 필요한 동적 작업에서 성능이 저하됩니다. 이러한 한계를 해결하기 위해 본 논문에서는 유연한 주파수와 성능 간의 균형을 가능하게 하는 계층적 로봇 트랜스포머 프레임워크인 HiRT를 제안합니다. HiRT는 VLM을 낮은 주파수로 실행하여 일시적으로 불변하는 특징을 포착하는 동시에, 느리게 업데이트되는 특징에 의해 안내되는 고주파수 비전 기반 정책을 통해 실시간 상호작용을 가능하게 합니다. 시뮬레이션과 실제 환경 모두에서의 실험 결과는 기준 방법에 비해 상당한 개선을 보여줍니다. 경험적으로, 정적 작업에서는 제어 주파수를 두 배로 늘리고 비슷한 성공률을 달성했습니다. 또한, 이전 VLA 모델에 도전적인 새로운 실제 동적 조작 작업에서 HiRT는 성공률을 48%에서 75%로 향상시켰습니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.05273v3
+
+## 개요
+기존 VLA 모델은 수십억 파라미터의 VLM 백엔드에 의존하며, 강력한 일반화 능력을 갖추고 있지만 높은 계산 비용과 추론 지연으로 인해 주로 준정적 작업에 적합합니다. HiRT는 계층적 설계를 통해 유연한 주파수-성능 절충을 구현합니다: 저주파로 실행되는 VLM은 시간 불변 특징을 추출하고, 고주파 시각 정책은 이러한 특징을 기반으로 실시간 상호작용을 수행합니다. 실험 결과, 이 프레임워크는 정적 작업에서 기존 성공률을 유지하면서 제어 주파수를 두 배로 높였으며, 동적 조작 작업에서 기준 방법을 크게 능가했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+HiRT는 이중 계층 캐스케이드 아키텍처를 채택합니다:
+- **저주파 계층**: VLM은 낮은 주파수(예: 2Hz)로 실행되어 장면 의미론과 객체 지속 특징을 추출합니다
+- **고주파 계층**: 경량 시각 정책(예: ResNet-18)은 20Hz 주파수로 실행되며, VLM이 업데이트한 특징을 수신하여 실시간 행동 예측을 수행합니다
+
+### 핵심 기술
+- 특징 정렬 모듈: 학습 가능한 주의 메커니즘을 통해 VLM이 출력한 시공간 특징을 정책 입력 공간에 매핑합니다
+- 비동기 업데이트 메커니즘: VLM 특징은 500ms마다 업데이트되며, 정책 네트워크는 간격 동안 특징 캐시를 유지합니다
+
+### 실험 설정
+- **시뮬레이션 환경**: MetaWorld 벤치마크의 10개 작업, 정적 작업 5개와 동적 작업 5개 포함
+- **실제 시나리오**: 3가지 유형의 동적 조작 작업(이동 객체 잡기, 장애물 회피 내비게이션, 다중 객체 분류)
+- **기준 모델**: RT-2, Octo, RoboFlamingo
+
+### 핵심 결과
+| 지표 | 기준 모델 | HiRT |
+|------|---------|------|
+| 정적 작업 성공률 | 82% | 81% |
+| 정적 작업 제어 주파수 | 5Hz | 10Hz |
+| 동적 작업 성공률 | 48% | 75% |
+| 추론 지연 | 320ms | 50ms |
+
+### 결론
+HiRT는 계층적 설계를 통해 VLA 모델의 실시간 제어에서의 계산 병목을 효과적으로 해결하며, 일반화 능력을 유지하면서 고주파 상호작용을 구현하여 빠른 응답이 필요한 동적 조작 시나리오에 특히 적합합니다. 이 프레임워크는 로봇 기반 모델의 실제 배포를 위한 새로운 설계 패러다임을 제공합니다.

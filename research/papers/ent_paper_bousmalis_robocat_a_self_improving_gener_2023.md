@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.11706v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.11706v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (911 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,31 @@ RoboCat 证明了利用异构机器人经验构建通用操控智能体的可行
 ## Overview
 The ability to leverage heterogeneous robotic experience from different robots and tasks to quickly master novel skills and embodiments has the potential to transform robot learning. Inspired by recent advances in foundation models for vision and language, we propose a multi-embodiment, multi-task generalist agent for robotic manipulation. This agent, named RoboCat, is a visual goal-conditioned decision transformer capable of consuming action-labelled visual experience. This data spans a large repertoire of motor control skills from simulated and real robotic arms with varying sets of observations and actions. With RoboCat, we demonstrate the ability to generalise to new tasks and robots, both zero-shot as well as through adaptation using only 100-1000 examples for the target task. We also show how a trained model itself can be used to generate data for subsequent training iterations, thus providing a basic building block for an autonomous improvement loop. We investigate the agent's capabilities, with large-scale evaluations both in simulation and on three different real robot embodiments. We find that as we grow and diversify its training data, RoboCat not only shows signs of cross-task transfer, but also becomes more efficient at adapting to new tasks.
 
-## 개요
-다양한 로봇과 작업에서 얻은 이질적 로봇 경험을 활용하여 새로운 기술과 구현체를 빠르게 습득할 수 있는 능력은 로봇 학습을 혁신할 잠재력을 지니고 있습니다. 비전 및 언어 분야의 기초 모델(foundation model) 최근 발전에 영감을 받아, 우리는 로봇 조작을 위한 다중 구현체, 다중 작업 범용 에이전트를 제안합니다. 이 에이전트는 RoboCat이라 명명되었으며, 시각적 목표 조건부 결정 트랜스포머(visual goal-conditioned decision transformer)로서 행동 레이블이 지정된 시각적 경험을 소비할 수 있습니다. 이 데이터는 다양한 관찰 및 행동 세트를 가진 시뮬레이션 및 실제 로봇 팔의 광범위한 모터 제어 기술을 포괄합니다. RoboCat을 통해 우리는 새로운 작업과 로봇에 대해 제로샷(zero-shot)뿐만 아니라 대상 작업에 대해 100~1000개의 예제만 사용한 적응을 통해 일반화할 수 있는 능력을 입증합니다. 또한 훈련된 모델 자체를 후속 훈련 반복을 위한 데이터 생성에 사용할 수 있어, 자율적 개선 루프의 기본 구성 요소를 제공함을 보여줍니다. 우리는 시뮬레이션과 세 가지 다른 실제 로봇 구현체에서의 대규모 평가를 통해 에이전트의 능력을 조사합니다. 훈련 데이터를 확장하고 다양화함에 따라 RoboCat이 교차 작업 전이(cross-task transfer)의 징후를 보일 뿐만 아니라 새로운 작업에 적응하는 데 더 효율적이 된다는 것을 발견했습니다.
-
-## 핵심 내용
-다양한 로봇과 작업에서 얻은 이질적 로봇 경험을 활용하여 새로운 기술과 구현체를 빠르게 습득할 수 있는 능력은 로봇 학습을 혁신할 잠재력을 지니고 있습니다. 비전 및 언어 분야의 기초 모델 최근 발전에 영감을 받아, 우리는 로봇 조작을 위한 다중 구현체, 다중 작업 범용 에이전트를 제안합니다. 이 에이전트는 RoboCat이라 명명되었으며, 시각적 목표 조건부 결정 트랜스포머로서 행동 레이블이 지정된 시각적 경험을 소비할 수 있습니다. 이 데이터는 다양한 관찰 및 행동 세트를 가진 시뮬레이션 및 실제 로봇 팔의 광범위한 모터 제어 기술을 포괄합니다. RoboCat을 통해 우리는 새로운 작업과 로봇에 대해 제로샷뿐만 아니라 대상 작업에 대해 100~1000개의 예제만 사용한 적응을 통해 일반화할 수 있는 능력을 입증합니다. 또한 훈련된 모델 자체를 후속 훈련 반복을 위한 데이터 생성에 사용할 수 있어, 자율적 개선 루프의 기본 구성 요소를 제공함을 보여줍니다. 우리는 시뮬레이션과 세 가지 다른 실제 로봇 구현체에서의 대규모 평가를 통해 에이전트의 능력을 조사합니다. 훈련 데이터를 확장하고 다양화함에 따라 RoboCat이 교차 작업 전이의 징후를 보일 뿐만 아니라 새로운 작업에 적응하는 데 더 효율적이 된다는 것을 발견했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2306.11706v2
+
+## 개요
+RoboCat은 시각적 목표 조건부 결정 트랜스포머 모델로, 시뮬레이션부터 실제 로봇 팔까지 다양한 운동 제어 기술을 포괄하는 행동 레이블이 있는 시각적 경험 데이터를 처리할 수 있습니다. 이 에이전트는 대규모 훈련을 통해 작업 간 전이 능력을 보여주며, 훈련 데이터가 증가하고 다양해질수록 새로운 작업에 적응하는 효율성이 크게 향상됩니다. 연구팀은 시뮬레이션 환경과 세 가지 서로 다른 실제 로봇 플랫폼에서 광범위한 평가를 수행하여 RoboCat의 제로샷 및 소수 샘플 시나리오에서의 일반화 능력을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+RoboCat은 시각적 목표 조건부 결정 트랜스포머 아키텍처를 채택하여 시각적 관찰과 목표 상태를 입력으로 받아 직접 행동 시퀀스를 출력합니다. 이 모델은 서로 다른 관찰 공간과 행동 공간을 포함하는 다양한 로봇 플랫폼(시뮬레이션 및 실제 로봇 팔 포함)의 이질적 데이터를 처리할 수 있습니다.
+
+### 훈련 및 적응
+- **초기 훈련**: 대규모 다중 작업 데이터 세트를 사용한 사전 훈련으로 다양한 조작 기술을 포괄합니다.
+- **빠른 적응**: 새로운 작업이나 로봇에 대해 100-1000개의 목표 예제만으로 미세 조정이 가능합니다.
+- **자기 개선 루프**: 훈련된 모델은 자율적으로 새 데이터를 생성하여 후속 훈련 반복에 사용함으로써 지속적인 최적화의 폐쇄 루프를 형성합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 여러 표준 로봇 조작 벤치마크에서 평가를 수행합니다.
+- **실제 로봇**: 서로 다른 자유도, 그리퍼 유형 및 센서 구성을 포함한 세 가지 형태의 실제 로봇 팔에서 테스트합니다.
+- **평가 지표**: 작업 성공률, 적응 효율성(필요한 샘플 수) 및 작업 간 전이 효과.
+
+### 주요 결과
+- **제로샷 일반화**: RoboCat은 본 적 없는 작업과 로봇에서 제로샷 실행 능력을 보여줍니다.
+- **소수 샘플 적응**: 100-1000개의 목표 예제만으로 높은 성공률에 도달하며, 적응 효율성은 훈련 데이터 증가에 따라 향상됩니다.
+- **작업 간 전이**: 훈련 데이터 다양성이 증가함에 따라 모델은 관련 작업 간 긍정적 전이를 보여주며, 새로운 작업 학습 속도가 빨라집니다.
+- **자기 개선 효과**: 자율적으로 데이터를 생성하고 재훈련함으로써 RoboCat의 성능은 반복 과정에서 지속적으로 향상됩니다.
+
+### 결론
+RoboCat은 이질적 로봇 경험을 활용하여 범용 조작 에이전트를 구축하는 가능성을 입증했으며, 자기 개선 메커니즘은 로봇 학습에 확장 가능한 패러다임을 제공합니다. 이 연구는 향후 새로운 환경과 작업에 지속적으로 적응할 수 있는 범용 로봇 에이전트 개발의 기초를 마련합니다.

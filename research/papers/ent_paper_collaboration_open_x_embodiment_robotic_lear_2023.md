@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2310.08864v9. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2310.08864v9. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (675 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -74,11 +75,25 @@ Large, high-capacity models trained on diverse datasets have shown remarkable su
 ## Content
 Large, high-capacity models trained on diverse datasets have shown remarkable successes in efficiently tackling downstream applications. In domains from NLP to Computer Vision, this has led to a consolidation of pretrained models, with general pretrained backbones serving as a starting point for many applications. Can such a consolidation happen in robotics? Conventionally, robotic learning methods train a separate model for every application, every robot, and even every environment. Can we instead train a generalist X-robot policy that can be adapted efficiently to new robots, tasks, and environments? In this paper, we provide datasets in standardized data formats and models to make it possible to explore this possibility in the context of robotic manipulation, alongside experimental results that provide an example of effective X-robot policies. We assemble a dataset from 22 different robots collected through a collaboration between 21 institutions, demonstrating 527 skills (160,266 tasks). We show that a high-capacity model trained on this data, which we call RT-X, exhibits positive transfer and improves the capabilities of multiple robots by leveraging experience from other platforms. More details can be found on the project website https://robotics-transformer-x.github.io.
 
-## 개요
-다양한 데이터셋으로 학습된 대규모 고용량 모델은 다운스트림 애플리케이션을 효율적으로 처리하는 데 놀라운 성공을 거두었습니다. NLP부터 컴퓨터 비전에 이르는 분야에서 이는 사전 학습된 모델의 통합으로 이어졌으며, 일반적인 사전 학습 백본이 많은 애플리케이션의 출발점 역할을 하고 있습니다. 이러한 통합이 로봇공학에서도 가능할까요? 전통적으로 로봇 학습 방법은 모든 애플리케이션, 모든 로봇, 심지어 모든 환경에 대해 별도의 모델을 학습시킵니다. 대신 새로운 로봇, 작업, 환경에 효율적으로 적응할 수 있는 제너럴리스트 X-로봇 정책을 학습시킬 수 있을까요? 본 논문에서는 로봇 조작 맥락에서 이러한 가능성을 탐구할 수 있도록 표준화된 데이터 형식의 데이터셋과 모델을 제공하며, 효과적인 X-로봇 정책의 예시를 보여주는 실험 결과를 함께 제시합니다. 우리는 21개 기관 간 협력을 통해 수집된 22개의 서로 다른 로봇으로 구성된 데이터셋을 구축하여 527개의 스킬(160266개의 작업)을 시연합니다. 이 데이터로 학습된 RT-X라고 불리는 고용량 모델이 긍정적 전이를 보이며 다른 플랫폼의 경험을 활용하여 여러 로봇의 능력을 향상시킨다는 것을 보여줍니다. 자세한 내용은 프로젝트 웹사이트 https://robotics-transformer-x.github.io에서 확인할 수 있습니다.
-
-## 핵심 내용
-다양한 데이터셋으로 학습된 대규모 고용량 모델은 다운스트림 애플리케이션을 효율적으로 처리하는 데 놀라운 성공을 거두었습니다. NLP부터 컴퓨터 비전에 이르는 분야에서 이는 사전 학습된 모델의 통합으로 이어졌으며, 일반적인 사전 학습 백본이 많은 애플리케이션의 출발점 역할을 하고 있습니다. 이러한 통합이 로봇공학에서도 가능할까요? 전통적으로 로봇 학습 방법은 모든 애플리케이션, 모든 로봇, 심지어 모든 환경에 대해 별도의 모델을 학습시킵니다. 대신 새로운 로봇, 작업, 환경에 효율적으로 적응할 수 있는 제너럴리스트 X-로봇 정책을 학습시킬 수 있을까요? 본 논문에서는 로봇 조작 맥락에서 이러한 가능성을 탐구할 수 있도록 표준화된 데이터 형식의 데이터셋과 모델을 제공하며, 효과적인 X-로봇 정책의 예시를 보여주는 실험 결과를 함께 제시합니다. 우리는 21개 기관 간 협력을 통해 수집된 22개의 서로 다른 로봇으로 구성된 데이터셋을 구축하여 527개의 스킬(160266개의 작업)을 시연합니다. 이 데이터로 학습된 RT-X라고 불리는 고용량 모델이 긍정적 전이를 보이며 다른 플랫폼의 경험을 활용하여 여러 로봇의 능력을 향상시킨다는 것을 보여줍니다. 자세한 내용은 프로젝트 웹사이트 https://robotics-transformer-x.github.io에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2310.08864v9
+
+## 개요
+이 연구는 로봇 분야에서도 NLP 및 컴퓨터 비전과 같이 대규모 다양화된 데이터셋을 통해 범용 사전 훈련 모델을 훈련할 수 있는지 탐구하는 것을 목표로 한다. 이를 위해 Open X-Embodiment Collaboration은 22종의 서로 다른 로봇에서 수집한 표준화된 데이터셋을 모았으며, 여기에는 527개의 기술과 160266개의 작업이 포함된다. 이 데이터로 훈련된 RT-X 모델은 긍정적 전이 효과를 보여주며, 다른 플랫폼의 경험을 활용하여 다양한 로봇의 조작 능력을 향상시킬 수 있음을 입증하여 범용 로봇 정책의 실행 가능한 사례를 제공한다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+전통적인 로봇 학습 방법은 각 애플리케이션, 로봇, 심지어 환경마다 별도로 모델을 훈련해야 한다. Open X-Embodiment는 이러한 한계를 깨고, 새로운 로봇, 작업 및 환경에 효율적으로 적응할 수 있는 범용 X-robot 정책을 훈련할 수 있는지 탐구한다.
+
+### 데이터셋 구축
+- **데이터 출처**: 21개 기관이 협력하여 22종의 서로 다른 로봇에서 수집.
+- **데이터 규모**: 527개의 기술과 이에 해당하는 160266개의 구체적 작업 포함.
+- **데이터 형식**: 표준화된 형식을 채택하여 교차 플랫폼 훈련 및 전이를 용이하게 함.
+
+### 모델 및 실험
+- **RT-X 모델**: 대규모 다양화된 데이터로 훈련된 고용량 비전-언어-행동 모델.
+- **핵심 발견**: RT-X는 긍정적 전이 능력을 보여주며, 즉 다른 로봇 플랫폼의 경험을 활용하여 대상 로봇의 조작 성능을 크게 향상시킬 수 있음.
+- **실험 검증**: 다중 로봇 플랫폼 테스트를 통해 범용 정책의 효과성을 입증.
+
+### 결론 및 자료
+이 작업은 로봇 분야의 범용 사전 훈련 모델을 위한 데이터 기반과 실험적 증거를 제공한다. 더 자세한 내용은 프로젝트 웹사이트 https://robotics-transformer-x.github.io 에서 확인할 수 있다.

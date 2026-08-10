@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10274v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10274v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (934 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,26 @@ X-VLA 通过软提示方法有效解决了跨实体机器人学习中的数据�
 ## Overview
 Successful generalist Vision-Language-Action (VLA) models rely on effective training across diverse robotic platforms with large-scale, cross-embodiment, heterogeneous datasets. To facilitate and leverage the heterogeneity in rich, diverse robotic data sources, we propose a novel Soft Prompt approach with minimally added parameters, by infusing prompt learning concepts into cross-embodiment robot learning and introducing separate sets of learnable embeddings for each distinct data source. These embeddings serve as embodiment-specific prompts, which in unity empower VLA models with effective exploitation of varying cross-embodiment features. Our new X-VLA, a neat flow-matching-based VLA architecture, relies exclusively on soft-prompted standard Transformer encoders, enjoying both scalability and simplicity. Evaluated across 6 simulations as well as 3 real-world robots, our 0.9B instantiation-X-VLA-0.9B simultaneously achieves SOTA performance over a sweep of benchmarks, demonstrating superior results on a wide axes of capabilities, from flexible dexterity to quick adaptation across embodiments, environments, and tasks. Website: https://thu-air-dream.github.io/X-VLA/
 
-## 개요
-성공적인 범용 Vision-Language-Action(VLA) 모델은 다양한 로봇 플랫폼에서 대규모, 교차-임보디먼트, 이종 데이터셋을 활용한 효과적인 훈련에 의존합니다. 풍부하고 다양한 로봇 데이터 소스의 이질성을 활용하고 촉진하기 위해, 우리는 프롬프트 학습 개념을 교차-임보디먼트 로봇 학습에 주입하고 각각의 고유한 데이터 소스에 대해 별도의 학습 가능한 임베딩 세트를 도입하여 최소한의 추가 파라미터로 새로운 소프트 프롬프트 접근법을 제안합니다. 이러한 임베딩은 임보디먼트별 프롬프트 역할을 하며, 통합되어 VLA 모델이 다양한 교차-임보디먼트 특징을 효과적으로 활용할 수 있게 합니다. 우리의 새로운 X-VLA는 깔끔한 flow-matching 기반 VLA 아키텍처로, 소프트 프롬프트된 표준 Transformer 인코더에만 의존하여 확장성과 단순성을 모두 갖추고 있습니다. 6개의 시뮬레이션과 3개의 실제 로봇에서 평가된 우리의 0.9B 인스턴스인 X-VLA-0.9B는 다양한 벤치마크에서 동시에 최고 성능(SOTA)을 달성하며, 유연한 손재주부터 임보디먼트, 환경, 작업 전반에 걸친 빠른 적응에 이르기까지 광범위한 능력 축에서 뛰어난 결과를 보여줍니다. 웹사이트: https://thu-air-dream.github.io/X-VLA/
-
-## 핵심 내용
-성공적인 범용 Vision-Language-Action(VLA) 모델은 다양한 로봇 플랫폼에서 대규모, 교차-임보디먼트, 이종 데이터셋을 활용한 효과적인 훈련에 의존합니다. 풍부하고 다양한 로봇 데이터 소스의 이질성을 활용하고 촉진하기 위해, 우리는 프롬프트 학습 개념을 교차-임보디먼트 로봇 학습에 주입하고 각각의 고유한 데이터 소스에 대해 별도의 학습 가능한 임베딩 세트를 도입하여 최소한의 추가 파라미터로 새로운 소프트 프롬프트 접근법을 제안합니다. 이러한 임베딩은 임보디먼트별 프롬프트 역할을 하며, 통합되어 VLA 모델이 다양한 교차-임보디먼트 특징을 효과적으로 활용할 수 있게 합니다. 우리의 새로운 X-VLA는 깔끔한 flow-matching 기반 VLA 아키텍처로, 소프트 프롬프트된 표준 Transformer 인코더에만 의존하여 확장성과 단순성을 모두 갖추고 있습니다. 6개의 시뮬레이션과 3개의 실제 로봇에서 평가된 우리의 0.9B 인스턴스인 X-VLA-0.9B는 다양한 벤치마크에서 동시에 최고 성능(SOTA)을 달성하며, 유연한 손재주부터 임보디먼트, 환경, 작업 전반에 걸친 빠른 적응에 이르기까지 광범위한 능력 축에서 뛰어난 결과를 보여줍니다. 웹사이트: https://thu-air-dream.github.io/X-VLA/
-
 ## 参考
 - http://arxiv.org/abs/2510.10274v1
+
+## 개요
+X-VLA는 범용 비전-언어-행동 모델이 이기종 엔티티 데이터셋에서 훈련할 때 발생하는 과제를 해결하는 것을 목표로 합니다. 연구팀은 프롬프트 학습 개념을 로봇 학습에 혁신적으로 도입하여, 각 데이터 소스별로 독립적인 학습 가능한 임베딩 세트를 엔티티 특정 소프트 프롬프트로 제공합니다. 이러한 임베딩은 매개변수를 크게 늘리지 않고도 모델이 다양한 교차 엔티티 특징을 통합적으로 활용할 수 있게 합니다. X-VLA 아키텍처는 플로우 매칭(flow-matching)과 표준 Transformer 인코더를 기반으로 하며, 확장성과 간결성을 모두 갖추고 있습니다. 6개의 시뮬레이션 환경과 3개의 실제 로봇에서 평가한 결과, X-VLA-0.9B는 여러 벤치마크에서 선도적인 결과를 달성하여 유연한 정밀 조작부터 다양한 엔티티, 환경, 작업에 대한 빠른 적응까지 폭넓은 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법
+- **소프트 프롬프트(Soft Prompt) 메커니즘**: 각 데이터 소스(예: 서로 다른 로봇 플랫폼 또는 데이터셋)에 대해 독립적인 학습 가능한 임베딩 세트를 엔티티 특정 프롬프트로 도입합니다. 이러한 임베딩은 훈련 중 모델 매개변수와 함께 최적화되어 Transformer가 서로 다른 소스의 이기종 특징을 구별하고 활용할 수 있게 합니다.
+- **아키텍처**: 플로우 매칭(flow-matching) 기반의 VLA 아키텍처로, 소프트 프롬프트로 강화된 표준 Transformer 인코더에 전적으로 의존합니다. 이 설계는 복잡한 다중 모달 융합 모듈을 피하면서 모델의 간결성과 확장성을 유지합니다.
+
+### 실험 설정
+- **훈련 데이터**: 여러 로봇 플랫폼과 조작 작업을 포괄하는 대규모, 교차 엔티티, 이기종 데이터셋을 사용합니다.
+- **평가 환경**: 6개의 시뮬레이션 환경(구체적인 이름은 본문에 나열되지 않음)과 3개의 실제 로봇 플랫폼.
+- **모델 규모**: 주로 0.9B 매개변수 버전(X-VLA-0.9B)을 평가합니다.
+
+### 주요 결과
+- **성능**: 여러 벤치마크에서 SOTA 성능을 달성하여 기존 교차 엔티티 VLA 모델보다 우수합니다.
+- **능력 차원**: 유연한 정밀 조작(flexible dexterity)과 빠른 적응 능력을 보여주며, 서로 다른 엔티티, 환경, 작업 간 전이가 가능합니다.
+- **확장성**: 소프트 프롬프트 방법은 극소량의 매개변수만 추가하므로 모델이 이기종 데이터를 효율적으로 활용하면서 훈련 및 추론의 간결성을 유지할 수 있습니다.
+
+### 결론
+X-VLA는 소프트 프롬프트 방법을 통해 교차 엔티티 로봇 학습에서의 데이터 이기종성 문제를 효과적으로 해결하여, 범용적이고 확장 가능한 VLA 모델 구축에 새로운 접근 방식을 제시합니다. 0.9B 매개변수 버전은 시뮬레이션과 실제 시나리오 모두에서 유효성을 검증했으며, 향후 더 많은 엔티티와 작업으로 확장할 수 있습니다.

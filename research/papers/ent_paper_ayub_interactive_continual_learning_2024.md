@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.03462v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.03462v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (665 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,29 @@ theoretical_depth:
 ## Overview
 For robots to perform assistive tasks in unstructured home environments, they must learn and reason on the semantic knowledge of the environments. Despite a resurgence in the development of semantic reasoning architectures, these methods assume that all the training data is available a priori. However, each user's environment is unique and can continue to change over time, which makes these methods unsuitable for personalized home service robots. Although research in continual learning develops methods that can learn and adapt over time, most of these methods are tested in the narrow context of object classification on static image datasets. In this paper, we combine ideas from continual learning, semantic reasoning, and interactive machine learning literature and develop a novel interactive continual learning architecture for continual learning of semantic knowledge in a home environment through human-robot interaction. The architecture builds on core cognitive principles of learning and memory for efficient and real-time learning of new knowledge from humans. We integrate our architecture with a physical mobile manipulator robot and perform extensive system evaluations in a laboratory environment over two months. Our results demonstrate the effectiveness of our architecture to allow a physical robot to continually adapt to the changes in the environment from limited data provided by the users (experimenters), and use the learned knowledge to perform object fetching tasks.
 
-## 개요
-로봇이 비정형 가정 환경에서 보조 작업을 수행하려면 환경의 의미론적 지식을 학습하고 추론할 수 있어야 합니다. 의미론적 추론 아키텍처 개발이 다시 활기를 띠고 있지만, 이러한 방법들은 모든 훈련 데이터가 사전에 제공된다고 가정합니다. 그러나 각 사용자의 환경은 고유하며 시간이 지남에 따라 계속 변화할 수 있기 때문에, 이러한 방법들은 개인화된 가정용 서비스 로봇에는 적합하지 않습니다. 지속적 학습(continual learning) 연구는 시간이 지남에 따라 학습하고 적응할 수 있는 방법을 개발하지만, 대부분의 방법은 정적 이미지 데이터셋에서 객체 분류라는 좁은 맥락에서만 테스트됩니다. 본 논문에서는 지속적 학습, 의미론적 추론, 그리고 상호작용형 머신러닝 문헌의 아이디어를 결합하여, 인간-로봇 상호작용을 통해 가정 환경에서 의미론적 지식을 지속적으로 학습하는 새로운 상호작용형 지속적 학습 아키텍처를 개발합니다. 이 아키텍처는 학습과 기억의 핵심 인지 원리를 기반으로 하여 인간으로부터 새로운 지식을 효율적이고 실시간으로 학습합니다. 우리는 이 아키텍처를 실제 모바일 매니퓰레이터 로봇에 통합하고, 2개월 동안 실험실 환경에서 광범위한 시스템 평가를 수행했습니다. 그 결과, 우리의 아키텍처가 실제 로봇이 사용자(실험자)가 제공한 제한된 데이터로 환경 변화에 지속적으로 적응하고, 학습된 지식을 활용하여 객체 가져오기 작업을 수행할 수 있음을 입증했습니다.
-
-## 핵심 내용
-로봇이 비정형 가정 환경에서 보조 작업을 수행하려면 환경의 의미론적 지식을 학습하고 추론할 수 있어야 합니다. 의미론적 추론 아키텍처 개발이 다시 활기를 띠고 있지만, 이러한 방법들은 모든 훈련 데이터가 사전에 제공된다고 가정합니다. 그러나 각 사용자의 환경은 고유하며 시간이 지남에 따라 계속 변화할 수 있기 때문에, 이러한 방법들은 개인화된 가정용 서비스 로봇에는 적합하지 않습니다. 지속적 학습 연구는 시간이 지남에 따라 학습하고 적응할 수 있는 방법을 개발하지만, 대부분의 방법은 정적 이미지 데이터셋에서 객체 분류라는 좁은 맥락에서만 테스트됩니다. 본 논문에서는 지속적 학습, 의미론적 추론, 그리고 상호작용형 머신러닝 문헌의 아이디어를 결합하여, 인간-로봇 상호작용을 통해 가정 환경에서 의미론적 지식을 지속적으로 학습하는 새로운 상호작용형 지속적 학습 아키텍처를 개발합니다. 이 아키텍처는 학습과 기억의 핵심 인지 원리를 기반으로 하여 인간으로부터 새로운 지식을 효율적이고 실시간으로 학습합니다. 우리는 이 아키텍처를 실제 모바일 매니퓰레이터 로봇에 통합하고, 2개월 동안 실험실 환경에서 광범위한 시스템 평가를 수행했습니다. 그 결과, 우리의 아키텍처가 실제 로봇이 사용자(실험자)가 제공한 제한된 데이터로 환경 변화에 지속적으로 적응하고, 학습된 지식을 활용하여 객체 가져오기 작업을 수행할 수 있음을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2403.03462v1
+
+## 개요
+기존 의미론적 추론 방법은 훈련 데이터가 사전에 완전히 제공된다고 가정하지만, 각 사용자의 가정 환경은 고유하고 시간에 따라 변화하므로 이러한 방법은 개인화된 가정용 서비스 로봇에는 적합하지 않습니다. 지속 학습 분야에는 시간에 따라 적응할 수 있는 방법이 이미 있지만, 대부분 정적 이미지 데이터셋에서의 객체 분류 작업에서만 테스트되었습니다. 본 논문에서 제안하는 아키텍처는 지속 학습, 의미론적 추론 및 상호작용형 머신러닝을 융합하며, 학습과 기억의 핵심 인지 원리에 기반하여 인간 상호작용으로부터 효율적으로 실시간 새 지식을 학습합니다. 연구팀은 이 아키텍처를 물리적 이동 매니퓰레이터에 통합하고, 실험실 환경에서 두 달간 시스템 평가를 수행하여 로봇이 사용자가 제공한 제한된 데이터로 환경 변화에 지속적으로 적응하고, 학습한 지식을 활용해 객체 전달 작업을 수행할 수 있음을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 아키텍처 핵심: 지속 학습, 의미론적 추론 및 상호작용형 머신러닝을 결합하며, 인지과학의 학습과 기억 원리에 기반하여 설계
+- 학습 메커니즘: 인간-로봇 상호작용을 통해 객체와 장면의 의미론적 지식을 실시간 획득하고, 점진적 지식 업데이트 지원
+- 기억 관리: 인간 기억의 망각과 강화 메커니즘을 모방하여 새 지식 학습과 기존 지식 보존의 균형 유지
+
+### 실험 설정
+- 하드웨어 플랫폼: 이 아키텍처를 통합한 물리적 이동 매니퓰레이터 로봇
+- 실험 환경: 실험실에서 시뮬레이션한 가정 환경
+- 실험 기간: 두 달간 지속
+- 데이터 출처: 실험자가 인간-로봇 상호작용을 통해 제한된 라벨링 데이터 제공
+
+### 주요 결과
+- 로봇이 환경 변화(예: 객체 위치 이동, 새 객체 출현)에 지속적으로 적응 가능
+- 사용자가 제공한 소량의 데이터로 의미론적 지식을 효과적으로 학습
+- 객체 전달 작업을 성공적으로 수행하여 지식 전이 및 일반화 능력 검증
+- 시스템이 두 달간 안정적으로 작동하며 치명적 망각 없음
+
+### 결론
+이 아키텍처는 인간-로봇 상호작용을 통한 가정용 서비스 로봇의 장기적 개인화 적응 가능성을 입증했으며, 실제 가정 환경에 배포할 지속 학습 로봇을 위한 기술적 기반을 제공합니다.

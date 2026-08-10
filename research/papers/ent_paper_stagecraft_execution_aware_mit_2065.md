@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.20659v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.20659v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1072 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -96,11 +97,28 @@ StageCraft 通过VLM的上下文推理，以零训练成本显著提升了VLA模
 ## Overview
 Large scale pre-training on text and image data along with diverse robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes. However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/ .
 
-## 개요
-텍스트 및 이미지 데이터에 대한 대규모 사전 학습과 다양한 로봇 시연을 통해 Vision Language Action 모델(VLA)이 새로운 작업, 객체 및 장면에 일반화될 수 있게 되었습니다. 그러나 이러한 모델은 로봇 작업 공간에서의 방해 요소 및 물리적 장애물과 같은 실행 시간 장애가 있을 때 여전히 실패하기 쉽습니다. 기존의 정책 개선 방법은 기본 VLA를 미세 조정하여 일반화를 향상시키지만, 보지 못한 방해 요소 설정에서 여전히 어려움을 겪습니다. 이 문제를 해결하기 위해, 우리는 대규모 비전-언어 모델(VLM)의 인터넷 규모 사전 학습을 활용하여 이러한 장애에 대해 추론하고 정책 실패를 완화할 수 있는지 조사합니다. 이를 위해, 우리는 VLM 기반의 문맥 내 추론을 사용하여 환경의 초기 상태를 조작함으로써 사전 학습된 VLA 정책 성능을 개선하는 훈련 없는 접근 방식인 StageCraft를 제안합니다. StageCraft는 정책 롤아웃 비디오와 성공 레이블을 입력으로 받아 VLM의 추론 능력을 활용하여 예상되는 실행 실패를 피하기 위해 초기 상태에서 어떤 객체를 조작해야 하는지 추론합니다. StageCraft는 확장 가능한 플러그 앤 플레이 모듈로, 기본 정책에 추가 제약을 도입하지 않으며 작동에 몇 가지 정책 롤아웃만 필요로 합니다. 우리는 StageCraft를 사용한 최첨단 VLA 모델의 성능을 평가하고, 다양한 방해 요소와 장애물을 포함하는 세 가지 실제 작업 도메인에서 절대 40%의 성능 향상을 보여줍니다. RLBench에서의 시뮬레이션 실험은 StageCraft가 기본 정책의 강도에 따라 개입 정도를 조정하고 더 많은 문맥 내 샘플로 성능을 향상시킴을 경험적으로 보여줍니다. StageCraft의 작동 비디오는 https://stagecraft-decorator.github.io/stagecraft/ 에서 확인할 수 있습니다.
-
-## 핵심 내용
-텍스트 및 이미지 데이터에 대한 대규모 사전 학습과 다양한 로봇 시연을 통해 Vision Language Action 모델(VLA)이 새로운 작업, 객체 및 장면에 일반화될 수 있게 되었습니다. 그러나 이러한 모델은 로봇 작업 공간에서의 방해 요소 및 물리적 장애물과 같은 실행 시간 장애가 있을 때 여전히 실패하기 쉽습니다. 기존의 정책 개선 방법은 기본 VLA를 미세 조정하여 일반화를 향상시키지만, 보지 못한 방해 요소 설정에서 여전히 어려움을 겪습니다. 이 문제를 해결하기 위해, 우리는 대규모 비전-언어 모델(VLM)의 인터넷 규모 사전 학습을 활용하여 이러한 장애에 대해 추론하고 정책 실패를 완화할 수 있는지 조사합니다. 이를 위해, 우리는 VLM 기반의 문맥 내 추론을 사용하여 환경의 초기 상태를 조작함으로써 사전 학습된 VLA 정책 성능을 개선하는 훈련 없는 접근 방식인 StageCraft를 제안합니다. StageCraft는 정책 롤아웃 비디오와 성공 레이블을 입력으로 받아 VLM의 추론 능력을 활용하여 예상되는 실행 실패를 피하기 위해 초기 상태에서 어떤 객체를 조작해야 하는지 추론합니다. StageCraft는 확장 가능한 플러그 앤 플레이 모듈로, 기본 정책에 추가 제약을 도입하지 않으며 작동에 몇 가지 정책 롤아웃만 필요로 합니다. 우리는 StageCraft를 사용한 최첨단 VLA 모델의 성능을 평가하고, 다양한 방해 요소와 장애물을 포함하는 세 가지 실제 작업 도메인에서 절대 40%의 성능 향상을 보여줍니다. RLBench에서의 시뮬레이션 실험은 StageCraft가 기본 정책의 강도에 따라 개입 정도를 조정하고 더 많은 문맥 내 샘플로 성능을 향상시킴을 경험적으로 보여줍니다. StageCraft의 작동 비디오는 https://stagecraft-decorator.github.io/stagecraft/ 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.20659v2
+
+## 개요
+기존 VLA 모델은 대규모 사전 학습을 통해 새로운 작업에 일반화할 수 있지만, 실행 단계에서 작업 공간 내 방해물이나 물리적 장애물의 영향을 여전히 받기 쉽습니다. StageCraft는 정책 실행 비디오와 성공 레이블을 입력으로 사용하고, VLM의 추론 능력을 활용하여 초기 상태에서 조정이 필요한 객체를 식별함으로써 예상되는 실패를 방지합니다. 이 방법은 추가 훈련에 의존하지 않으며, 소량의 정책 실행 샘플만으로 작동하고, 기본 정책의 제약 조건을 변경하지 않습니다. 실험 결과, StageCraft는 실제 환경에서 여러 최신 VLA 모델의 견고성을 크게 향상시켰으며, 시뮬레이션에서도 컨텍스트 샘플이 증가함에 따라 성능이 지속적으로 개선되는 특성을 보여주었습니다.
+
+## 핵심 내용
+### 방법 개요
+StageCraft의 핵심 아이디어는 인터넷 규모로 사전 학습된 VLM(예: GPT-4V)을 활용한 컨텍스트 추론을 통해, 로봇이 작업을 실행하기 전에 환경의 초기 상태를 "장식적으로" 조정하는 것입니다. 구체적인 절차는 다음과 같습니다:
+- **입력**: 정책 실행 비디오(policy rollout videos)와 해당 성공/실패 레이블.
+- **추론**: VLM이 비디오에서 실패 원인(예: 방해물의 부적절한 위치 또는 장애물 차단)을 분석하고, 초기 상태에서 이동, 제거 또는 재배열이 필요한 객체를 추론합니다.
+- **개입**: VLM의 추론 결과를 기반으로 로봇 팔 또는 외부 시스템을 통해 초기 상태를 조정한 후, 정책을 다시 실행합니다.
+
+### 아키텍처 특징
+- **훈련 불필요**: StageCraft는 기본 VLA 정책의 가중치를 수정하지 않으며, 외부 모듈로만 개입합니다.
+- **플러그 앤 플레이**: RT-2, Octo 등 모든 VLA 모델에 원활하게 통합될 수 있으며, 추가 제약을 도입하지 않습니다.
+- **샘플 효율성**: 소량(일반적으로 3-5회)의 정책 실행 비디오만으로 효과적인 개입을 유도할 수 있습니다.
+
+### 실험 설정 및 주요 결과
+- **실제 세계 작업**: 세 가지 작업 영역(테이블 조작, 집기-배치, 장애물 회피)에서 다양한 방해물(예: 무작위 객체, 동적 장애물)과 물리적 차단을 도입했습니다. StageCraft는 VLA 정책의 절대 성공률을 40% 향상시켰습니다(예: 50%에서 90%로).
+- **시뮬레이션 실험(RLBench)**: 개입 정도와 기본 정책 강도 간의 관계를 검증했습니다——정책 자체가 약할 때 StageCraft는 더 빈번하게 초기 상태를 조정합니다. 컨텍스트 샘플(in-context samples) 수가 증가함에 따라(1개에서 5개로), 성능이 지속적으로 향상되어 VLM의 추론 능력이 예제가 풍부해질수록 강화됨을 보여줍니다.
+- **절제 실험**: VLA 정책을 직접 미세 조정하는 방법과 비교했을 때, StageCraft는 보지 못한 방해물 설정에서 더 우수한 성능을 보였으며, 추가 훈련 데이터 수집이 필요하지 않습니다.
+
+### 결론
+StageCraft는 VLM의 컨텍스트 추론을 통해 훈련 비용 없이 VLA 모델의 복잡한 동적 환경에서의 견고성을 크게 향상시킵니다. 모듈식 설계로 더 많은 작업으로 쉽게 확장할 수 있으며, 개입 정도는 적응적으로 조정될 수 있습니다. 향후 연구에서는 더 효율적인 VLM 추론 전략이나 다중 모달 피드백 통합을 탐구할 수 있습니다.

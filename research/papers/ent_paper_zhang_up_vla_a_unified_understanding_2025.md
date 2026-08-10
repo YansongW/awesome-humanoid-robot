@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.18867v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.18867v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (911 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,28 @@ UP-VLA 证明了在 VLA 训练中引入未来预测目标能有效弥补 VLM 在
 ## Overview
 Recent advancements in Vision-Language-Action (VLA) models have leveraged pre-trained Vision-Language Models (VLMs) to improve the generalization capabilities. VLMs, typically pre-trained on vision-language understanding tasks, provide rich semantic knowledge and reasoning abilities. However, prior research has shown that VLMs often focus on high-level semantic content and neglect low-level features, limiting their ability to capture detailed spatial information and understand physical dynamics. These aspects, which are crucial for embodied control tasks, remain underexplored in existing pre-training paradigms. In this paper, we investigate the training paradigm for VLAs, and introduce \textbf{UP-VLA}, a \textbf{U}nified VLA model training with both multi-modal \textbf{U}nderstanding and future \textbf{P}rediction objectives, enhancing both high-level semantic comprehension and low-level spatial understanding. Experimental results show that UP-VLA achieves a 33% improvement on the Calvin ABC-D benchmark compared to the previous state-of-the-art method. Additionally, UP-VLA demonstrates improved success rates in real-world manipulation tasks, particularly those requiring precise spatial information.
 
-## 개요
-최근 Vision-Language-Action(VLA) 모델의 발전은 사전 학습된 Vision-Language Model(VLM)을 활용하여 일반화 능력을 향상시켰습니다. 일반적으로 시각-언어 이해 작업에 사전 학습된 VLM은 풍부한 의미론적 지식과 추론 능력을 제공합니다. 그러나 기존 연구에 따르면 VLM은 종종 고수준 의미론적 콘텐츠에 집중하고 저수준 특징을 무시하여 세부적인 공간 정보를 포착하고 물리적 역학을 이해하는 능력이 제한됩니다. 구현 제어 작업에 중요한 이러한 측면은 기존 사전 학습 패러다임에서 충분히 탐구되지 않았습니다. 본 논문에서는 VLA의 학습 패러다임을 조사하고, 다중 모달 이해와 미래 예측 목표를 모두 포함하는 통합 VLA 모델 학습인 \textbf{UP-VLA}를 소개합니다. 이는 고수준 의미론적 이해와 저수준 공간 이해를 모두 향상시킵니다. 실험 결과, UP-VLA는 Calvin ABC-D 벤치마크에서 이전 최첨단 방법보다 33% 향상된 성능을 달성했습니다. 또한 UP-VLA는 실제 조작 작업, 특히 정밀한 공간 정보가 필요한 작업에서 향상된 성공률을 보여줍니다.
-
-## 핵심 내용
-최근 Vision-Language-Action(VLA) 모델의 발전은 사전 학습된 Vision-Language Model(VLM)을 활용하여 일반화 능력을 향상시켰습니다. 일반적으로 시각-언어 이해 작업에 사전 학습된 VLM은 풍부한 의미론적 지식과 추론 능력을 제공합니다. 그러나 기존 연구에 따르면 VLM은 종종 고수준 의미론적 콘텐츠에 집중하고 저수준 특징을 무시하여 세부적인 공간 정보를 포착하고 물리적 역학을 이해하는 능력이 제한됩니다. 구현 제어 작업에 중요한 이러한 측면은 기존 사전 학습 패러다임에서 충분히 탐구되지 않았습니다. 본 논문에서는 VLA의 학습 패러다임을 조사하고, 다중 모달 이해와 미래 예측 목표를 모두 포함하는 통합 VLA 모델 학습인 \textbf{UP-VLA}를 소개합니다. 이는 고수준 의미론적 이해와 저수준 공간 이해를 모두 향상시킵니다. 실험 결과, UP-VLA는 Calvin ABC-D 벤치마크에서 이전 최첨단 방법보다 33% 향상된 성능을 달성했습니다. 또한 UP-VLA는 실제 조작 작업, 특히 정밀한 공간 정보가 필요한 작업에서 향상된 성공률을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2501.18867v3
+
+## 개요
+기존 Vision-Language-Action (VLA) 모델은 사전 훈련된 Vision-Language Model (VLM)을 활용하여 풍부한 의미론적 지식과 추론 능력을 얻지만, 종종 고수준 의미론적 콘텐츠에 과도하게 집중하고 저수준 특징을 무시하여 정밀한 공간 정보와 물리적 역학 포착이 부족합니다. UP-VLA는 통합 훈련 패러다임을 도입하여 다중 모달 이해와 미래 예측이라는 두 가지 목표를 동시에 최적화함으로써, 고수준 의미론적 이해를 유지하면서 저수준 공간 인식을 강화합니다. 실험 결과, 이 모델은 Calvin ABC-D 벤치마크에서 33%의 현저한 향상을 달성했으며, 실제 세계 조작 작업, 특히 정밀한 공간 정보가 필요한 시나리오에서 더 높은 성공률을 보여줍니다.
+
+## 핵심 내용
+### 방법
+UP-VLA의 핵심 혁신은 두 가지 상호 보완적 목표를 동시에 최적화하는 통합 훈련 패러다임에 있습니다:
+- **다중 모달 이해 목표**: 기존 VLM의 시각-언어 정렬 훈련을 따르며, 모델이 장면의 의미론적 개념과 객체 관계를 이해할 수 있도록 보장합니다.
+- **미래 예측 목표**: 자기회귀적 미래 프레임 예측 작업을 도입하여 모델이 물리적 역학과 공간 변환 규칙을 학습하도록 강제함으로써 저수준 특징 모델링의 부족을 보완합니다.
+
+### 아키텍처
+모델은 사전 훈련된 VLM을 기반으로 구축되며, 공유된 시각 인코더와 언어 디코더를 통해 다중 작업 학습을 구현합니다. 훈련 과정에서 두 목표의 손실 함수는 가중치 방식으로 결합되어 최적화되며, 가중치는 그리드 검색을 통해 결정됩니다.
+
+### 실험 설정
+- **벤치마크 테스트**: Calvin ABC-D 벤치마크에서 평가되며, 이 벤치마크는 정밀한 공간 조작이 필요한 일련의 데스크톱 작업을 포함합니다.
+- **실제 세계 실험**: 정밀한 공간 정보가 필요한 여러 조작 작업(예: 특정 위치의 객체 잡기, 순서대로 블록 쌓기)을 설계하고, 기준 방법(이전 최고 성능의 VLA 모델 포함)과 비교합니다.
+
+### 주요 결과
+- **Calvin ABC-D 벤치마크**: UP-VLA의 성공률은 이전 최고 방법 대비 33% 향상되어, 구체적으로 42.1%에서 56.0%로 증가했습니다.
+- **실제 세계 작업**: 정밀한 공간 위치 파악이 필요한 작업에서 UP-VLA의 성공률은 평균 28% 향상되었으며, 의미론적 이해에만 의존하는 작업에서는 기준선과 성능이 동일했습니다.
+
+### 결론
+UP-VLA는 VLA 훈련에 미래 예측 목표를 도입하면 VLM의 저수준 공간 인식 부족을 효과적으로 보완할 수 있음을 입증하여, 로봇 조작 작업에 더 포괄적인 인식-행동 능력을 제공합니다. 이 연구는 고수준 의미론과 저수준 물리적 모델링의 균형을 어떻게 맞출지에 대한 후속 연구에 새로운 방향을 제시합니다.

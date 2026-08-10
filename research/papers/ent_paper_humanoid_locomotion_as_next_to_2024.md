@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.19469v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.19469v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (604 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,27 @@ sources:
 ## Overview
 We cast real-world humanoid control as a next token prediction problem, akin to predicting the next word in language. Our model is a causal transformer trained via autoregressive prediction of sensorimotor trajectories. To account for the multi-modal nature of the data, we perform prediction in a modality-aligned way, and for each input token predict the next token from the same modality. This general formulation enables us to leverage data with missing modalities, like video trajectories without actions. We train our model on a collection of simulated trajectories coming from prior neural network policies, model-based controllers, motion capture data, and YouTube videos of humans. We show that our model enables a full-sized humanoid to walk in San Francisco zero-shot. Our model can transfer to the real world even when trained on only 27 hours of walking data, and can generalize to commands not seen during training like walking backward. These findings suggest a promising path toward learning challenging real-world control tasks by generative modeling of sensorimotor trajectories.
 
-## 개요
-우리는 실제 세계의 휴머노이드 제어를 언어에서 다음 단어를 예측하는 것과 유사한 다음 토큰 예측 문제로 간주합니다. 우리의 모델은 감각운동 궤적의 자기회귀 예측을 통해 훈련된 인과적 트랜스포머입니다. 데이터의 다중 모달 특성을 고려하기 위해, 우리는 모달리티 정렬 방식으로 예측을 수행하며, 각 입력 토큰에 대해 동일한 모달리티의 다음 토큰을 예측합니다. 이 일반적인 공식화는 행동이 없는 비디오 궤적과 같이 누락된 모달리티가 있는 데이터를 활용할 수 있게 해줍니다. 우리는 이전 신경망 정책, 모델 기반 제어기, 모션 캡처 데이터, 그리고 유튜브 인간 비디오에서 얻은 시뮬레이션 궤적 모음으로 모델을 훈련합니다. 우리의 모델이 샌프란시스코에서 제로샷으로 전신 휴머노이드가 걷는 것을 가능하게 함을 보여줍니다. 이 모델은 단 27시간의 걷기 데이터로 훈련되어도 실제 세계로 전이할 수 있으며, 훈련 중 보지 못한 뒤로 걷기와 같은 명령에도 일반화할 수 있습니다. 이러한 발견은 감각운동 궤적의 생성 모델링을 통해 도전적인 실제 세계 제어 작업을 학습하는 유망한 경로를 제시합니다.
-
-## 핵심 내용
-우리는 실제 세계의 휴머노이드 제어를 언어에서 다음 단어를 예측하는 것과 유사한 다음 토큰 예측 문제로 간주합니다. 우리의 모델은 감각운동 궤적의 자기회귀 예측을 통해 훈련된 인과적 트랜스포머입니다. 데이터의 다중 모달 특성을 고려하기 위해, 우리는 모달리티 정렬 방식으로 예측을 수행하며, 각 입력 토큰에 대해 동일한 모달리티의 다음 토큰을 예측합니다. 이 일반적인 공식화는 행동이 없는 비디오 궤적과 같이 누락된 모달리티가 있는 데이터를 활용할 수 있게 해줍니다. 우리는 이전 신경망 정책, 모델 기반 제어기, 모션 캡처 데이터, 그리고 유튜브 인간 비디오에서 얻은 시뮬레이션 궤적 모음으로 모델을 훈련합니다. 우리의 모델이 샌프란시스코에서 제로샷으로 전신 휴머노이드가 걷는 것을 가능하게 함을 보여줍니다. 이 모델은 단 27시간의 걷기 데이터로 훈련되어도 실제 세계로 전이할 수 있으며, 훈련 중 보지 못한 뒤로 걷기와 같은 명령에도 일반화할 수 있습니다. 이러한 발견은 감각운동 궤적의 생성 모델링을 통해 도전적인 실제 세계 제어 작업을 학습하는 유망한 경로를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2402.19469v1
+
+## 개요
+이 방법은 휴머노이드 로봇 제어를 다음 토큰 예측 작업으로 변환하며, 인과적 Transformer 아키텍처를 사용하여 센서-운동 궤적을 자기회귀적으로 예측합니다. 다중 모달 데이터 특성에 적응하기 위해 모델은 모달 정렬 예측 방식을 채택하며, 각 입력 토큰은 동일한 모달의 다음 토큰만 예측합니다. 이러한 일반적인 프레임워크는 누락된 모달의 데이터(예: 동작 레이블이 없는 비디오 궤적)를 활용할 수 있게 합니다. 훈련 데이터는 시뮬레이션 환경의 신경망 정책, 모델 기반 제어기, 모션 캡처 데이터 및 YouTube 인간 보행 비디오에서 비롯됩니다. 실험에 따르면 단 27시간의 보행 데이터로 훈련된 모델만으로도 실제 세계 전이가 가능하며, 훈련 중 보지 못한 명령(예: 뒤로 걷기)에도 일반화할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 휴머노이드 로봇 제어를 다음 토큰 예측 문제로 모델링하며, 이는 언어 모델이 다음 단어를 예측하는 것과 유사합니다.
+- 인과적 Transformer 아키텍처를 채택하여 센서-운동 궤적을 자기회귀적으로 예측합니다.
+- 모달 정렬 예측 방식을 구현합니다: 각 입력 토큰은 동일한 모달의 다음 토큰만 예측합니다.
+- 이러한 설계는 누락된 모달의 데이터(예: 동작 레이블이 없는 비디오 궤적)를 활용할 수 있게 합니다.
+
+### 훈련 데이터
+- 시뮬레이션 환경의 신경망 정책이 생성한 궤적
+- 모델 기반 제어기가 생성한 궤적
+- 모션 캡처 데이터
+- YouTube 인간 보행 비디오
+
+### 실험 설정 및 결과
+- 전체 크기 휴머노이드 로봇이 샌프란시스코에서 제로샷 보행을 구현했습니다.
+- 단 27시간의 보행 데이터로 훈련된 모델만으로도 실제 세계 전이가 가능합니다.
+- 훈련 중 보지 못한 명령(예: 뒤로 걷기)에도 일반화할 수 있습니다.
+- 결과는 센서-운동 궤적을 생성적으로 모델링함으로써 도전적인 실제 세계 제어 작업을 학습할 수 있음을 보여줍니다.

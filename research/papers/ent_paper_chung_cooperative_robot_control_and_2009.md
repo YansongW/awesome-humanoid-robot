@@ -36,7 +36,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/0711.1709v4. [2026-07-29] zh
     content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged ent_paper_chung_cooperative_robot_control_and_2009
-    into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
+    into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/. | WP4 trilingual backfill 2026-08-10: en/ko
+    body retranslated from zh deep-read (670 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,14 +68,43 @@ theoretical_depth:
 - 并发同步机制允许多个同步子群在同一个网络中稳定共存，各子群内部完全同步，子群间保持差异。
 - 实验验证了理论结果在机器人操作臂与移动机器人编队中的有效性。
 
-## Overview
-Concurrent synchronization is a regime where diverse groups of fully synchronized dynamic systems stably coexist. We study global exponential synchronization and concurrent synchronization in the context of Lagrangian systems control. In a network constructed by adding diffusive couplings to robot manipulators or mobile robots, a decentralized tracking control law globally exponentially synchronizes an arbitrary number of robots, and represents a generalization of the average consensus problem. Exact nonlinear stability guarantees and synchronization conditions are derived by contraction analysis. The proposed decentralized strategy is further extended to adaptive synchronization and partial-state coupling.
-
-## 개요
-동시 동기화(Concurrent synchronization)는 완전히 동기화된 다양한 동적 시스템 그룹이 안정적으로 공존하는 체제입니다. 본 연구에서는 라그랑지안 시스템 제어의 맥락에서 전역 지수 동기화(global exponential synchronization)와 동시 동기화를 다룹니다. 로봇 매니퓰레이터나 이동 로봇에 확산 결합(diffusive couplings)을 추가하여 구성된 네트워크에서, 분산 추적 제어 법칙은 임의의 수의 로봇을 전역적으로 지수 동기화시키며, 이는 평균 합의 문제(average consensus problem)의 일반화를 나타냅니다. 정확한 비선형 안정성 보장과 동기화 조건은 수축 분석(contraction analysis)을 통해 도출됩니다. 제안된 분산 전략은 적응형 동기화(adaptive synchronization) 및 부분 상태 결합(partial-state coupling)으로 더욱 확장됩니다.
-
-## 핵심 내용
-동시 동기화는 완전히 동기화된 다양한 동적 시스템 그룹이 안정적으로 공존하는 체제입니다. 본 연구에서는 라그랑지안 시스템 제어의 맥락에서 전역 지수 동기화와 동시 동기화를 다룹니다. 로봇 매니퓰레이터나 이동 로봇에 확산 결합을 추가하여 구성된 네트워크에서, 분산 추적 제어 법칙은 임의의 수의 로봇을 전역적으로 지수 동기화시키며, 이는 평균 합의 문제의 일반화를 나타냅니다. 정확한 비선형 안정성 보장과 동기화 조건은 수축 분석을 통해 도출됩니다. 제안된 분산 전략은 적응형 동기화 및 부분 상태 결합으로 더욱 확장됩니다.
-
 ## 参考
 - http://arxiv.org/abs/0711.1709v4
+
+## Overview
+This study focuses on global exponential synchronization and concurrent synchronization in the control of Lagrangian systems. Concurrent synchronization refers to a state in which multiple groups of fully synchronized dynamic systems can stably coexist. By introducing diffusive coupling in networks composed of robotic manipulators or mobile robots, the authors design a decentralized tracking control law that globally exponentially synchronizes any number of robots and is regarded as a generalization of the average consensus problem. The study employs contraction analysis to derive precise nonlinear stability guarantees and synchronization conditions, and further extends this decentralized strategy to adaptive synchronization and partial-state coupling scenarios.
+
+## Content
+### Core Methods
+- For Lagrangian robot networks, a decentralized tracking control law is proposed by adding diffusive coupling to construct the network topology.
+- This control law requires no global communication and relies only on local neighbor information exchange to achieve global exponential synchronization of any number of robots.
+- Contraction analysis is used to rigorously derive nonlinear stability guarantees and synchronization conditions, ensuring convergence under nonlinear dynamics.
+
+### Extensions
+- **Adaptive synchronization**: When robot dynamic parameters are unknown, the control law can estimate parameters online while maintaining synchronization performance.
+- **Partial-state coupling**: Only partial states (e.g., positions rather than velocities) are required for coupling, reducing communication and sensing requirements.
+- **Communication with delays**: Supports scenarios with fixed or time-varying delays in communication links while still ensuring synchronization stability.
+
+### Key Conclusions
+- The control law is a nonlinear generalization of the average consensus problem and applies to both nonholonomic constrained and fully actuated Lagrangian systems.
+- The concurrent synchronization mechanism allows multiple synchronized subgroups to stably coexist within the same network, with full synchronization within each subgroup and maintained differences between subgroups.
+- Experiments validate the theoretical results in robotic manipulator and mobile robot formation scenarios.
+
+## 개요
+본 연구는 Lagrangian 시스템 제어에서의 전역 지수 동기화 및 병발 동기화 문제에 초점을 맞춘다. 병발 동기화란 완전히 동기화된 여러 동적 시스템 그룹이 안정적으로 공존할 수 있는 상태를 의미한다. 저자는 로봇 조작기 또는 이동 로봇으로 구성된 네트워크에 확산 결합을 도입하여 분산형 추적 제어 법칙을 설계했으며, 이 제어 법칙은 임의의 수의 로봇을 전역적으로 지수 동기화할 수 있고 평균 일치 문제의 일반화로 간주된다. 연구는 수축 분석을 활용하여 정밀한 비선형 안정성 보장 및 동기화 조건을 도출했으며, 이 분산형 전략을 적응형 동기화 및 부분 상태 결합 시나리오로 추가 확장했다.
+
+## 핵심 내용
+### 핵심 방법
+- Lagrangian 로봇 네트워크에 대해 확산 결합을 추가하여 네트워크 토폴로지를 구축하고, 분산형 추적 제어 법칙을 제안한다.
+- 이 제어 법칙은 전역 통신 없이 로컬 이웃 정보 교환만으로 임의의 수의 로봇에 대한 전역 지수 동기화를 달성할 수 있다.
+- 수축 분석을 사용하여 비선형 동역학 하에서 시스템의 수렴성을 보장하는 엄밀한 비선형 안정성 보장 및 동기화 조건을 도출한다.
+
+### 확장 방향
+- **적응형 동기화**: 로봇 동역학 매개변수가 알려지지 않은 경우, 제어 법칙은 매개변수를 온라인으로 추정하면서 동기화 성능을 유지할 수 있다.
+- **부분 상태 결합**: 위치와 같은 일부 상태만 결합하면 되므로 통신 및 센싱 요구 사항이 낮아진다.
+- **지연 통신 지원**: 통신 링크에 고정 또는 시간 변동 지연이 있는 시나리오를 지원하면서도 동기화 안정성을 보장한다.
+
+### 핵심 결론
+- 이 제어 법칙은 평균 일치 문제의 비선형 일반화이며, 비홀로노믹 구속 및 완전 구동 Lagrangian 시스템에 적용 가능하다.
+- 병발 동기화 메커니즘은 여러 동기화 하위 그룹이 동일한 네트워크 내에서 안정적으로 공존할 수 있게 하며, 각 하위 그룹 내부는 완전히 동기화되고 하위 그룹 간에는 차이가 유지된다.
+- 실험을 통해 로봇 조작기 및 이동 로봇 편대에서 이론적 결과의 유효성을 검증했다.

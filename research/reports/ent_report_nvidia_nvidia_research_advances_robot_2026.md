@@ -37,7 +37,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (672 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -63,9 +64,6 @@ NVIDIA Research 在 ICRA 2024 上发表的 28 篇论文中，有 8 篇聚焦于�
 ### 结论
 NVIDIA Research 的工作表明，仿真到现实迁移是推动机器人从实验室走向真实世界的关键路径。通过结合高保真仿真与高效算法，机器人能够获得更可靠的感知与操作能力，为通用具身自主奠定基础。
 
-## Overview
-Robotics is entering a new phase: moving from controlled demos and scripted automation toward generalizable, reliable embodied autonomy in the real world. At the International Conference on Robotics and Automation (ICRA), eight of NVIDIA Research’s 28 accepted papers show how simulation-to-real transfer is becoming a foundation for that shift, helping robots perceive, reason, plan and [&#8230;]
-
 ## 参考
 - https://blogs.nvidia.com/blog/icra-research-robotics-simulation-to-real-world/
 
@@ -85,3 +83,20 @@ NVIDIA Research가 ICRA 2024에서 발표한 28편의 논문 중 8편이 시뮬�
 
 ### 결론
 NVIDIA Research의 작업은 시뮬레이션-현실 전이가 로봇을 실험실에서 실제 세계로 이끄는 핵심 경로임을 보여줍니다. 고충실도 시뮬레이션과 효율적인 알고리즘을 결합함으로써 로봇은 더 신뢰할 수 있는 인식 및 조작 능력을 얻을 수 있으며, 이는 범용 임베디드 자율성의 기반을 마련합니다.
+
+## Overview
+Of the 28 papers NVIDIA Research presented at ICRA 2024, 8 focus on simulation-to-real transfer techniques, marking a shift in robotics from scripted automation toward general-purpose embodied autonomy in the real world. These studies enhance robots' perception, reasoning, planning, and manipulation capabilities by transferring training outcomes from simulated environments to physical robots, providing a reliable foundation for real-world deployment.
+
+## Content
+### Core Directions
+- **Sim-to-real transfer**: As a key foundational technology, it enables robots to learn in simulation and generalize to real-world scenarios, reducing the need for large amounts of real-world data.
+- **Perception and reasoning**: The papers address visual perception, scene understanding, and decision-making and planning, improving robots' adaptability in dynamic environments.
+- **Manipulation and planning**: This includes grasping, mobile manipulation, and task planning, emphasizing seamless integration from simulation to the physical world.
+
+### Experimental Setup and Key Figures
+- **Number of papers**: NVIDIA Research had 28 papers accepted at ICRA 2024, 8 of which directly focus on sim-to-real transfer.
+- **Technical validation**: Models were trained in simulation environments (e.g., Isaac Sim) and tested on real robot platforms (e.g., Franka, UR5), validating the transfer effectiveness.
+- **Performance improvements**: In metrics such as grasping success rate and task completion rate, simulation-to-real transfer methods show significant gains over traditional approaches—for example, grasping success rate in cluttered scenes improves by more than 15%.
+
+### Conclusion
+NVIDIA Research's work demonstrates that sim-to-real transfer is a critical pathway for advancing robots from the laboratory to the real world. By combining high-fidelity simulation with efficient algorithms, robots can achieve more reliable perception and manipulation capabilities, laying the groundwork for general-purpose embodied autonomy.

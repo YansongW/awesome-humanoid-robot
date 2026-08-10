@@ -43,7 +43,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/open-dynamic-robot-initiative.md（访问日期 2026-07-01）。官方未公布统一 BOM 总价与整机身高/重量，标注为未知。
+  notes: '内容整理自调研档案 data/roadmap/research/open-dynamic-robot-initiative.md（访问日期 2026-07-01）。官方未公布统一 BOM 总价与整机身高/重量，标注为未知。
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1619 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -56,7 +57,6 @@ sources:
   url: https://github.com/open-dynamic-robot-initiative
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 Bolt 是 Open Dynamic Robot Initiative（ODRI，开放动态机器人计划）旗下的开源双足平台。ODRI 是国际学术联盟，成员包括 New York University（Ludovic Righetti 团队）、Max Planck Institute for Intelligent Systems（Felix Grimminger 等）、LAAS-CNRS 等；其平台家族还包括 Solo 8/12（四足，8 或 12 自由度）与 TriFinger（三指操作平台）。Bolt 为 6 自由度点足双足（来源：调研档案 open-dynamic-robot-initiative.md，下同）。
@@ -134,3 +134,39 @@ Bolt는 Open Dynamic Robot Initiative(ODRI, 개방형 동적 로봇 이니셔티
 
 - 적합: 운동 제어/임베디드 기초를 가진 연구자 및 엔지니어 – "힘 제어 액추에이터를 어떻게 만드는지" 이해하려는 경우, 이는 웹상에서 가장 완벽한 오픈소스 참고 자료입니다(기계, 전기, 펌웨어, 제어 전체 체인 BSD 라이선스).
 - 진입 장벽: 모터 제어, 전력 전자, 실시간 시스템에 대한 기초 필요; 자체 개발 드라이버 보드 프로토타이핑 및 디버깅 난이도 높음; 친절한 튜토리얼 없음; 초보자가 바로 사용하기에 부적합.
+
+## Overview
+
+Bolt is an open-source bipedal platform under the Open Dynamic Robot Initiative (ODRI). ODRI is an international academic consortium whose members include New York University (Ludovic Righetti's team), Max Planck Institute for Intelligent Systems (Felix Grimminger et al.), LAAS-CNRS, and others; its platform family also includes Solo 8/12 (quadruped, 8 or 12 degrees of freedom) and TriFinger (three-finger manipulation platform). Bolt is a 6-degree-of-freedom point-foot biped (source: research archive open-dynamic-robot-initiative.md, same below).
+
+License: Actuator hardware and most software are BSD-3-Clause, Master Board is BSD-2-Clause. Hardware cost is unknown—the official BOM total price has not been published; the paper emphasizes "low-cost, reproducible," with actuator materials consisting of off-the-shelf frameless motors plus self-developed driver boards; unified official height/weight values were also not obtained in the search. Core repository `open_robot_actuator_hardware` has 1,428 stars (no updates since 2022-09, design is finalized), `master-board` has 135 stars (still active as of 2026-06-30). Solo/Bolt have been replicated by multiple European and American universities for force control and RL research, and are officially listed as similar recommendations by third-party open-source projects such as Upkie.
+
+## Content
+
+### Key Parameters
+
+| Item | Value | Source |
+|---|---|---|
+| Platform form | Bolt (bipedal, 6-DOF point foot); sister platforms Solo 8/12, TriFinger | Research archive |
+| Hardware cost (BOM) | Unknown (no unified total price published officially; paper emphasizes low-cost reproducibility) | Research archive |
+| Height / Weight | Unknown (unified official values not obtained) | Research archive |
+| Communication hub | Self-developed Master Board (high-speed synchronous communication with actuator driver boards) | Research archive |
+| Host computer | Real-time Linux control stack | Research archive |
+| Beginner-friendliness | 2 / 5 (assessed in research archive) | Research archive |
+
+### Actuator Solution (Core Contribution)
+
+- Self-developed BLMC brushless force-controlled actuator: off-the-shelf frameless motor + dual encoders (motor-side/output-side) + self-developed MicroDriver driver board, low gear ratio, high torque transparency, supporting proprioceptive force control—this is ODRI's core contribution and a must-study project for understanding the "quasi-direct-drive + force control" technical route.
+- The `open_robot_actuator_hardware` repository provides all mechanical/electrical design files (including the Bolt bipedal 6-DOF version biped_6dof_v1).
+- Sensors primarily consist of built-in dual encoders in actuators plus IMU; emphasizes "controllable with proprioception alone," vision is not standard.
+
+### Software Stack and Documentation
+
+- C++ real-time control + Python interface; simulation support provided (Gazebo/PyBullet ecosystem, with repositories such as trifinger_simulation continuously updated until 2025-12).
+- Official website (open-dynamic-robot-initiative.github.io) + READMEs in each repository + actuator hardware paper (Grimminger et al.); documentation leans toward a research/engineering style, targeting users with embedded/control backgrounds, not step-by-step beginner tutorials.
+- Academic usage is promoted through papers and workshops.
+
+### Suitable Audience
+
+- Suitable for: researchers and engineers with a foundation in motion control/embedded systems—if you want to understand "how to build a force-controlled actuator," this is the most complete open-source reference available online (mechanical, electrical, firmware, and control all under BSD licenses).
+- Prerequisites: requires expertise in motor control, power electronics, and real-time systems; prototyping and debugging the self-developed driver board is challenging; no hand-holding tutorials; not suitable for absolute beginners to start directly.

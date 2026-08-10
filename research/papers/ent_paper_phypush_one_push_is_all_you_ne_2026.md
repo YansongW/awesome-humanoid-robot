@@ -46,8 +46,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.26284v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.26284v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (833 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,27 @@ PhyPush 通过物理引导的 Transformer 架构，仅利用单次推动的末�
 ## Overview
 Accurately estimating object mass and friction is fundamental to reliable robotic manipulation. While interactive perception is powerful, most approaches rely on specialized hardware like force/torque sensors, limiting scalability. This paper introduces PhyPush, a physics-guided Transformer that estimates an object's mass and friction coefficient using only end-effector velocity from a single push, data readily available on standard robotic arms. By incorporating Newton's second law and the Coulomb friction model through a physics-guided loss, the model improves physical consistency and generalizes to unseen objects and surfaces. Across diverse setups, PhyPush consistently achieves highly accurate estimations in challenging out-of-domain conditions. In simulation, it reduces error by over 10% compared to a baseline with privileged force data, while in real-world experiments, it successfully zero-shot transfers from simulation to outperform a purely data-driven baseline.
 
-## 개요
-물체의 질량과 마찰력을 정확하게 추정하는 것은 신뢰할 수 있는 로봇 조작의 기본입니다. 상호작용 인식(interactive perception)은 강력하지만, 대부분의 접근 방식은 힘/토크 센서와 같은 특수 하드웨어에 의존하여 확장성이 제한됩니다. 본 논문은 PhyPush를 소개합니다. 이는 물리 기반 트랜스포머(physics-guided Transformer)로, 단일 밀기(single push)에서 얻은 엔드 이펙터 속도(end-effector velocity)만을 사용하여 물체의 질량과 마찰 계수를 추정하며, 이 데이터는 표준 로봇 팔에서 쉽게 얻을 수 있습니다. 물리 기반 손실 함수(physics-guided loss)를 통해 뉴턴의 제2법칙과 쿨롱 마찰 모델을 통합함으로써, 모델은 물리적 일관성을 개선하고 보지 못한 물체와 표면에 일반화됩니다. 다양한 설정에서 PhyPush는 까다로운 도메인 외 조건(out-of-domain conditions)에서도 일관되게 높은 정확도의 추정을 달성합니다. 시뮬레이션에서는 특권 힘 데이터(privileged force data)를 사용한 기준선보다 오차를 10% 이상 줄였으며, 실제 실험에서는 시뮬레이션에서 제로샷 전이(zero-shot transfer)를 성공적으로 수행하여 순수 데이터 기반 기준선을 능가합니다.
-
-## 핵심 내용
-물체의 질량과 마찰력을 정확하게 추정하는 것은 신뢰할 수 있는 로봇 조작의 기본입니다. 상호작용 인식은 강력하지만, 대부분의 접근 방식은 힘/토크 센서와 같은 특수 하드웨어에 의존하여 확장성이 제한됩니다. 본 논문은 PhyPush를 소개합니다. 이는 물리 기반 트랜스포머로, 단일 밀기에서 얻은 엔드 이펙터 속도만을 사용하여 물체의 질량과 마찰 계수를 추정하며, 이 데이터는 표준 로봇 팔에서 쉽게 얻을 수 있습니다. 물리 기반 손실 함수를 통해 뉴턴의 제2법칙과 쿨롱 마찰 모델을 통합함으로써, 모델은 물리적 일관성을 개선하고 보지 못한 물체와 표면에 일반화됩니다. 다양한 설정에서 PhyPush는 까다로운 도메인 외 조건에서도 일관되게 높은 정확도의 추정을 달성합니다. 시뮬레이션에서는 특권 힘 데이터를 사용한 기준선보다 오차를 10% 이상 줄였으며, 실제 실험에서는 시뮬레이션에서 제로샷 전이를 성공적으로 수행하여 순수 데이터 기반 기준선을 능가합니다.
-
 ## 参考
 - http://arxiv.org/abs/2605.26284v2
+
+## 개요
+PhyPush는 로봇 조작에서 힘/토크 센서에 의존하는 질량 및 마찰 추정의 한계를 해결합니다. 이 모델은 단 한 번의 밀기에서 얻은 엔드 이펙터 속도만을 입력으로 사용하며, 물리 기반 손실 함수를 통해 뉴턴 제2법칙과 쿨롱 마찰 모델을 Transformer 아키텍처에 내장하여 추정의 물리적 타당성을 강화합니다. 시뮬레이션 실험에서 PhyPush는 특권 데이터를 사용하는 기준 방법보다 오류를 10% 이상 줄였으며, 실제 세계 실험에서는 시뮬레이션에서 실제로의 제로샷 전이를 성공적으로 달성하여 순수 데이터 기반 기준선보다 우수한 성능을 보였습니다.
+
+## 핵심 내용
+### 방법
+- **입력**: 표준 로봇 팔 엔드 이펙터의 한 번의 밀기 속도 데이터만 사용하며, 힘/토크 센서가 필요 없습니다.
+- **아키텍처**: Transformer 모델 기반으로, 물리 기반 손실 함수(physics-guided loss)를 통해 뉴턴 제2법칙과 쿨롱 마찰 모델을 훈련 과정에 명시적으로 내장합니다.
+- **물리적 제약**: 손실 함수는 모델 출력이 물리 법칙을 충족하는 질량 및 마찰 계수 추정을 강제하여 물리적 일관성과 일반화 능력을 향상시킵니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 다양한 객체와 표면을 사용하여 훈련 및 테스트를 수행하며, 기준 방법은 특권 데이터(즉, 실제 힘 정보에 직접 접근)를 사용합니다.
+- **실제 세계 실험**: 시뮬레이션에서 훈련된 모델을 추가 미세 조정 없이 실제 로봇 플랫폼에 직접 전이합니다(제로샷 전이).
+- **비교 기준선**: 순수 데이터 기반 모델(물리 기반 없음) 및 특권 데이터 기반 모델.
+
+### 주요 결과
+- **시뮬레이션 성능**: PhyPush는 특권 데이터를 사용하는 기준 방법보다 오류를 10% 이상 줄였습니다.
+- **실제 세계 성능**: 제로샷 전이 후, PhyPush는 실제 실험에서 순수 데이터 기반 기준선보다 우수하여 물리 기반 유도의 효과를 검증했습니다.
+- **일반화 능력**: 모델은 훈련에서 보지 못한 객체와 표면으로 성공적으로 일반화되었으며, 도전적인 도메인 외 조건에서도 높은 정확도를 유지했습니다.
+
+### 결론
+PhyPush는 물리 기반 Transformer 아키텍처를 통해 단 한 번의 밀기에서 얻은 엔드 이펙터 속도 데이터만으로 센서 없는 질량 및 마찰 추정을 구현합니다. 물리적 일관성 손실 함수는 일반화 능력을 크게 향상시켰으며, 시뮬레이션 및 실제 실험 모두에서 기준 방법보다 우수하여 확장 가능한 로봇 조작에 새로운 방향을 제시합니다.

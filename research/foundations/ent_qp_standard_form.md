@@ -29,7 +29,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-08.md#8.4.10.3 基于 QP 的全身控制公式 by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from chapter-08.md#8.4.10.3 基于 QP 的全身控制公式 by scripts/backfill_nonpaper_entries.py. | WP4 trilingual
+    backfill 2026-08-10: closed unclosed code fence(s) and removed duplicate stale translation block(s) (pre-existing ingestion
+    defect).'
 sources:
 - id: src_nocedal_wright_2006
   type: other
@@ -38,7 +40,6 @@ sources:
   date: '2006-01-01'
   accessed_at: '2026-06-25'
 ---
-
 ## 概述
 标准二次规划（QP）是人形机器人领域的重要形式化方法。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -172,70 +173,7 @@ flowchart TD
     H --> K["Actuator Commands"]
     I --> L["Stability/Slip Verification"]
 
-## 개요
-표준 이차 계획법(QP)은 휴머노이드 로봇 분야에서 중요한 형식화 방법입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
-
-## 핵심 내용
-현대 WBC의 주류 구현은 **전신 QP 제어**입니다. 이는 모든 작업을 이차 계획법 문제로 통합하고, 동시에 동역학, 마찰 원뿔, 관절 토크 한계, 관절 제한 등의 제약 조건을 명시적으로 적용합니다.
-
-!!! note "용어 설명: 전신 QP 제어, 이차 계획법, 등식 제약 조건, 부등식 제약 조건"
-    - **전신 QP 제어(whole-body QP control)**: 이차 계획법을 사용하여 전신 제어 입력을 계산하는 방법.
-    - **이차 계획법(Quadratic Programming, QP)**: 목적 함수가 이차 함수이고 제약 조건이 선형인 최적화 문제.
-    - **등식 제약 조건(equality constraint)**: 정확히 충족되어야 하는 선형 등식.
-    - **부등식 제약 조건(inequality constraint)**: 충족되어야 하는 부등식 제한.
-
-최적화 변수는 일반적으로 일반화 가속도 \(\dot{\mathbf{v}}\), 관절 토크 \(\boldsymbol{\tau}\), 접촉력 \(\mathbf{F}_c\)를 포함합니다. 목적 함수는 각 작업 추적 오차의 가중 합과 정규화 항으로 구성됩니다:
-
-$$
-\min_{\dot{\mathbf{v}}, \boldsymbol{\tau}, \mathbf{F}_c} \quad \sum_i w_i \left\| \mathbf{J}_i \dot{\mathbf{v}} + \dot{\mathbf{J}}_i \mathbf{v} - \ddot{\mathbf{x}}_i^* \right\|^2 + w_{\tau}\|\boldsymbol{\tau}\|^2 + w_{f}\|\mathbf{F}_c\|^2
-$$
-
-제약 조건은 다음과 같습니다:
-
-**동역학 제약 조건**:
-
-$$
-\mathbf{M}\dot{\mathbf{v}} + \mathbf{C}\mathbf{v} + \mathbf{g} = \mathbf{S}^T \boldsymbol{\tau} + \sum_c \mathbf{J}_{c}^T \mathbf{F}_c
-$$
-
-**마찰 원뿔 제약 조건**:
-
-$$
-\mathbf{F}_c \in \mathcal{C}(\mu)
-$$
-
-**관절 토크 한계**:
-
-$$
-\boldsymbol{\tau}_{\min} \leq \boldsymbol{\tau} \leq \boldsymbol{\tau}_{\max}
-$$
-
-**관절 제한 (속도 수준)**:
-
-$$
-\mathbf{q}_{\min} \leq \mathbf{q} + \Delta t \, \dot{\mathbf{q}} \leq \mathbf{q}_{\max}
-$$
-
-!!! note "용어 설명: 동역학 제약 조건, 마찰 원뿔 제약 조건, 관절 토크 한계, 관절 제한"
-    - **동역학 제약 조건(dynamic constraint)**: 뉴턴-오일러 또는 라그랑주 방정식으로 주어지는 등식.
-    - **마찰 원뿔 제약 조건(friction cone constraint)**: 접촉력이 마찰 원뿔 내에 있어야 하는 제약 조건.
-    - **관절 토크 한계(torque limit)**: 액추에이터가 제공할 수 있는 최대/최소 토크.
-    - **관절 제한(joint limit)**: 관절 각도의 허용 범위.
-
-```mermaid
-flowchart TD
-    A["작업 기대값 x*_i"] --> B["QP 솔버"]
-    C["동역학 제약 조건"] --> B
-    D["마찰 원뿔 제약 조건"] --> B
-    E["토크/관절 제한"] --> B
-    B --> F["최적화 변수"]
-    F --> G["일반화 가속도 v_dot"]
-    F --> H["관절 토크 tau"]
-    F --> I["접촉력 F_c"]
-    G --> J["수치 적분으로 v, q 획득"]
-    H --> K["액추에이터 명령"]
-    I --> L["안정성/미끄럼 방지 검증"]
-
+```
 ## 개요
 표준 이차 계획법(QP)은 휴머노이드 로봇 분야에서 중요한 형식화 방법입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 자세한 내용은 해당 문서를 참고하시기 바랍니다.
 
@@ -299,3 +237,4 @@ flowchart TD
     G --> J["수치 적분으로 v, q 획득"]
     H --> K["액추에이터 명령"]
     I --> L["안정성/미끄럼 방지 검증"]
+```

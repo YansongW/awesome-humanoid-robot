@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.13378v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.13378v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (720 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,26 @@ theoretical_depth:
 ## Overview
 We present the use of two methods we believe warrant more use than they currently have in the field of human-robot interaction: role-play and Hierarchical Task Analysis. Some of its potential is showcased through our use of them in an ongoing research project which entails developing a robot application meant to assist at a community pharmacy. The two methods have provided us with several advantages. The role-playing provided a controlled and adjustable environment for understanding the customers' needs where pharmacists could act as models for the robot's behavior; and the Hierarchical Task Analysis ensured the behavior displayed was modelled correctly and aided development through facilitating co-design. Future research could focus on developing task analysis methods especially suited for social robot interaction.
 
-## 개요
-우리는 인간-로봇 상호작용 분야에서 현재보다 더 많이 사용되어야 한다고 생각하는 두 가지 방법, 즉 역할극과 계층적 작업 분석의 사용을 제시합니다. 이 방법들의 잠재력 중 일부는 지역 약국에서 지원을 목적으로 하는 로봇 애플리케이션을 개발 중인 진행 중인 연구 프로젝트에서의 사용을 통해 입증됩니다. 두 방법은 우리에게 여러 가지 이점을 제공했습니다. 역할극은 약사가 로봇 행동의 모델 역할을 할 수 있는 통제되고 조정 가능한 환경을 제공하여 고객의 요구를 이해하는 데 도움을 주었습니다. 또한 계층적 작업 분석은 표시된 행동이 올바르게 모델링되도록 보장하고 공동 설계를 촉진하여 개발을 지원했습니다. 향후 연구는 사회적 로봇 상호작용에 특히 적합한 작업 분석 방법 개발에 초점을 맞출 수 있습니다.
-
-## 핵심 내용
-우리는 인간-로봇 상호작용 분야에서 현재보다 더 많이 사용되어야 한다고 생각하는 두 가지 방법, 즉 역할극과 계층적 작업 분석의 사용을 제시합니다. 이 방법들의 잠재력 중 일부는 지역 약국에서 지원을 목적으로 하는 로봇 애플리케이션을 개발 중인 진행 중인 연구 프로젝트에서의 사용을 통해 입증됩니다. 두 방법은 우리에게 여러 가지 이점을 제공했습니다. 역할극은 약사가 로봇 행동의 모델 역할을 할 수 있는 통제되고 조정 가능한 환경을 제공하여 고객의 요구를 이해하는 데 도움을 주었습니다. 또한 계층적 작업 분석은 표시된 행동이 올바르게 모델링되도록 보장하고 공동 설계를 촉진하여 개발을 지원했습니다. 향후 연구는 사회적 로봇 상호작용에 특히 적합한 작업 분석 방법 개발에 초점을 맞출 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.13378v1
+
+## 개요
+논문은 역할극과 계층적 과업 분석이 인간-컴퓨터 상호작용 분야에서 더 널리 적용되어야 한다고 제안한다. 진행 중인 지역 약국 보조 로봇 개발 프로젝트를 통해 저자들은 이 두 방법의 장점을 보여준다: 역할극은 통제 가능하고 조정 가능한 환경을 제공하여 약사가 로봇 행동의 모델로서 고객 요구를 이해할 수 있게 하며, 계층적 과업 분석은 행동 모델링의 정확성을 보장하고 공동 설계를 촉진하여 개발을 지원한다. 향후 연구는 특히 사회적 로봇 상호작용에 적용 가능한 과업 분석 방법 개발에 초점을 맞출 수 있다.
+
+## 핵심 내용
+### 방법 핵심
+- **역할극**: 통제된 환경에서 약국 시나리오를 시뮬레이션하고, 약사가 로봇 역할을 수행하며 즉흥적 상호작용을 통해 실제 고객 요구와 행동 패턴을 포착한다.
+- **계층적 과업 분석(HTA)**: 역할극에서 관찰된 행동을 계층적 과업 구조로 분해하여 각 상호작용 단계(예: 문의, 조제, 복약 지도)의 모델링 정확성을 보장한다.
+
+### 실험 설정
+- **플랫폼**: Furhat 사회적 로봇으로, 얼굴 표정과 음성 상호작용 기능을 갖추고 있다.
+- **시나리오**: 지역 약국의 일상 업무로, 약품 상담, 처방전 확인, 건강 조언 등을 포함한다.
+- **참가자**: 약사가 전문가 행동 모델로 참여하고, 연구자가 상호작용 과정을 기록한다.
+
+### 주요 발견
+- 역할극을 통해 약사는 행동(예: 어조, 동작)을 즉시 조정하여 다양한 고객 유형(예: 불안한 고객, 서두르는 고객)을 시뮬레이션함으로써 다양한 상호작용 데이터를 생성할 수 있다.
+- HTA는 복잡한 상호작용을 프로그래밍 가능한 하위 과업(예: "처방전 확인"은 "바코드 스캔", "용량 확인", "알레르기 병력 문의"를 포함)으로 분해하여 로봇 제어 코드에 직접 매핑한다.
+- 공동 설계(co-design)는 HTA의 계층 구조를 통해 약사와 엔지니어가 함께 과업 흐름을 최적화하여 개발 반복 횟수를 줄인다.
+
+### 결론
+두 방법을 결합하면 전문가의 암묵적 지식을 체계적으로 포착할 수 있지만, 현재 HTA는 사회적 단서(예: 시선 접촉, 감정 피드백) 모델링에 여전히 부족함이 있다. 향후에는 "고객 감정 진정"을 독립적인 과업 계층으로 포함하는 등 사회적 인지를 융합한 과업 분석 프레임워크 개발이 필요하다.

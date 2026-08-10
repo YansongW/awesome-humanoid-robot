@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14466v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14466v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1337 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,37 @@ LookOut 首次将第一人称导航问题扩展到 6D 头部姿态预测，并�
 ## Overview
 The ability to predict collision-free future trajectories from egocentric observations is crucial in applications such as humanoid robotics, VR / AR, and assistive navigation. In this work, we introduce the challenging problem of predicting a sequence of future 6D head poses from an egocentric video. In particular, we predict both head translations and rotations to learn the active information-gathering behavior expressed through head-turning events. To solve this task, we propose a framework that reasons over temporally aggregated 3D latent features, which models the geometric and semantic constraints for both the static and dynamic parts of the environment. Motivated by the lack of training data in this space, we further contribute a data collection pipeline using the Project Aria glasses, and present a dataset collected through this approach. Our dataset, dubbed Aria Navigation Dataset (AND), consists of 4 hours of recording of users navigating in real-world scenarios. It includes diverse situations and navigation behaviors, providing a valuable resource for learning real-world egocentric navigation policies. Extensive experiments show that our model learns human-like navigation behaviors such as waiting / slowing down, rerouting, and looking around for traffic while generalizing to unseen environments. Check out our project webpage at https://sites.google.com/stanford.edu/lookout.
 
-## 개요
-자기중심적 관찰에서 충돌 없는 미래 궤적을 예측하는 능력은 휴머노이드 로봇공학, VR/AR, 보조 내비게이션과 같은 응용 분야에서 중요합니다. 본 연구에서는 자기중심적 비디오로부터 미래의 6D 머리 자세 시퀀스를 예측하는 도전적인 문제를 소개합니다. 특히, 머리 회전 이벤트를 통해 표현되는 능동적 정보 수집 행동을 학습하기 위해 머리 변환과 회전을 모두 예측합니다. 이 작업을 해결하기 위해, 환경의 정적 및 동적 부분에 대한 기하학적 및 의미론적 제약을 모델링하는 시간적으로 집계된 3D 잠재 특징을 추론하는 프레임워크를 제안합니다. 이 분야의 훈련 데이터 부족에 착안하여, Project Aria 안경을 사용한 데이터 수집 파이프라인을 추가로 제공하고, 이 접근법을 통해 수집된 데이터셋을 제시합니다. Aria Navigation Dataset (AND)라고 명명된 이 데이터셋은 실제 시나리오에서 사용자가 내비게이션하는 4시간 분량의 녹화로 구성됩니다. 다양한 상황과 내비게이션 행동을 포함하여 실제 세계의 자기중심적 내비게이션 정책을 학습하기 위한 귀중한 자원을 제공합니다. 광범위한 실험을 통해 우리의 모델이 대기/감속, 경로 재설정, 교통 상황을 살펴보는 등의 인간과 유사한 내비게이션 행동을 학습하고, 보지 못한 환경에도 일반화됨을 보여줍니다. 프로젝트 웹페이지는 https://sites.google.com/stanford.edu/lookout 에서 확인하세요.
-
-## 핵심 내용
-자기중심적 관찰에서 충돌 없는 미래 궤적을 예측하는 능력은 휴머노이드 로봇공학, VR/AR, 보조 내비게이션과 같은 응용 분야에서 중요합니다. 본 연구에서는 자기중심적 비디오로부터 미래의 6D 머리 자세 시퀀스를 예측하는 도전적인 문제를 소개합니다. 특히, 머리 회전 이벤트를 통해 표현되는 능동적 정보 수집 행동을 학습하기 위해 머리 변환과 회전을 모두 예측합니다. 이 작업을 해결하기 위해, 환경의 정적 및 동적 부분에 대한 기하학적 및 의미론적 제약을 모델링하는 시간적으로 집계된 3D 잠재 특징을 추론하는 프레임워크를 제안합니다. 이 분야의 훈련 데이터 부족에 착안하여, Project Aria 안경을 사용한 데이터 수집 파이프라인을 추가로 제공하고, 이 접근법을 통해 수집된 데이터셋을 제시합니다. Aria Navigation Dataset (AND)라고 명명된 이 데이터셋은 실제 시나리오에서 사용자가 내비게이션하는 4시간 분량의 녹화로 구성됩니다. 다양한 상황과 내비게이션 행동을 포함하여 실제 세계의 자기중심적 내비게이션 정책을 학습하기 위한 귀중한 자원을 제공합니다. 광범위한 실험을 통해 우리의 모델이 대기/감속, 경로 재설정, 교통 상황을 살펴보는 등의 인간과 유사한 내비게이션 행동을 학습하고, 보지 못한 환경에도 일반화됨을 보여줍니다. 프로젝트 웹페이지는 https://sites.google.com/stanford.edu/lookout 에서 확인하세요.
-
 ## 参考
 - http://arxiv.org/abs/2508.14466v1
+
+## 개요
+LookOut는 새로운 문제를 해결합니다: 1인칭 비디오에서 미래 머리 6D 자세 시퀀스(병진 및 회전 포함)를 예측하여, 인간이 고개를 돌려 정보를 수집하는 능동적 행동을 학습합니다. 이를 위해, 그들은 시간적 집계 3D 잠재 특징을 기반으로 한 추론 프레임워크를 구축하여, 환경의 정적 및 동적 부분의 기하학적 및 의미론적 제약을 동시에 모델링합니다. 훈련 데이터가 부족하여, 팀은 Project Aria 안경을 사용하여 AND 데이터셋을 수집했으며, 4시간의 실제 장면 내비게이션 기록을 포함하고 다양한 상황과 내비게이션 행동을 포괄합니다. 실험 결과, 모델은 인간과 유사한 내비게이션 행동(대기/감속, 경로 재계획, 교통 관찰)을 학습할 수 있으며, 보지 못한 환경에도 일반화할 수 있습니다.
+
+## 핵심 내용
+### 방법
+- **작업 정의**: 1인칭 비디오 프레임 시퀀스에서 미래 6D 머리 자세(병진 벡터 + 회전 쿼터니언)를 예측하고, 미래 N 프레임의 연속 궤적을 출력합니다.
+- **프레임워크 아키텍처**:
+  - 시간적 집계 3D 잠재 특징 표현을 사용하여 비디오 프레임을 복셀 그리드로 인코딩하고, 3D 컨볼루션을 통해 시공간 특징을 추출합니다.
+  - 특징은 정적 장면 기하학(예: 벽, 장애물)과 동적 객체(예: 보행자, 차량)의 의미론적 정보를 동시에 인코딩합니다.
+  - 자기회귀 디코더를 채택하여 프레임별로 미래 머리 자세를 예측하고, 어텐션 메커니즘을 사용하여 장기 의존성을 모델링합니다.
+
+### 데이터셋
+- **Aria Navigation Dataset (AND)**: Project Aria 안경을 사용하여 실제 세계에서 수집했으며, 총 4시간의 기록입니다.
+- **데이터 다양성**: 실내(복도, 방) 및 실외(거리, 교차로) 장면을 포함하며, 다양한 조명, 보행자 밀도 및 내비게이션 행동(직진, 회전, 회피, 대기)을 포괄합니다.
+- **주석**: 6D 머리 자세 진실값(안경 내장 IMU 및 SLAM 시스템 제공)과 장면 의미론적 레이블(정적/동적 객체 분할)을 제공합니다.
+
+### 실험 설정
+- **기준 방법**: LSTM 기반 시계열 모델, 순수 비전 Transformer(ViT) 및 3D 특징 집계가 없는 절제 버전을 비교했습니다.
+- **평가 지표**: 평균 병진 오차(ATE, 단위 cm), 평균 회전 오차(ARE, 단위 도), 및 궤적 평활도(인접 프레임 자세 변화율)를 사용합니다.
+- **훈련/테스트 분할**: 데이터의 80%는 훈련에, 20%는 테스트에 사용하며, 추가로 3개의 보지 못한 장면(다른 건물, 다른 도시)에서 일반화 테스트를 수행합니다.
+
+### 주요 결과
+- **정량적 결과**: LookOut는 ATE에서 12.3 cm, ARE에서 4.7°를 달성하여, 최고 기준(LSTM)보다 각각 31% 및 22% 감소했습니다.
+- **일반화 능력**: 보지 못한 장면에서 ATE는 15.1 cm, ARE는 5.9°로 상승하여, 모델이 전이 가능한 내비게이션 사전 지식을 학습했음을 나타냅니다.
+- **행동 분석**:
+  - 교차로 장면에서 모델이 예측한 머리 회전 각도는 기준보다 인간 실제 데이터에 더 가깝습니다(평균 편차 < 3°).
+  - 모델은 "대기/감속" 행동을 능동적으로 예측할 수 있습니다(보행자가 접근할 때 예측 병진 속도가 40% 감소), 반면 기준 모델은 이러한 동적 조정을 포착할 수 없습니다.
+- **절제 실험**: 3D 잠재 특징 집계를 제거하면 ATE가 18.7 cm로 악화되어, 시공간 3D 특징이 동적 환경 모델링에 필수적임을 입증합니다.
+
+### 결론
+LookOut는 1인칭 내비게이션 문제를 6D 머리 자세 예측으로 처음 확장하고, 데이터 기반 방법을 통해 인간의 능동적 정보 수집 행동을 학습합니다. AND 데이터셋은 후속 연구를 위한 실제 장면 기준을 제공합니다. 향후 작업은 강화 학습을 결합하여 예측 모델을 폐쇄 루프 제어 전략에 통합할 수 있습니다.

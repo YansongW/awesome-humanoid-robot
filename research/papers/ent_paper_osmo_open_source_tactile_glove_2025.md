@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.08920v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.08920v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (615 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,26 @@ OSMO 通过开源硬件设计，证明了触觉反馈在接触密集型机器人
 ## Overview
 Human video demonstrations provide abundant training data for learning robot policies, but video alone cannot capture the rich contact signals critical for mastering manipulation. We introduce OSMO, an open-source wearable tactile glove designed for human-to-robot skill transfer. The glove features 12 three-axis tactile sensors across the fingertips and palm and is designed to be compatible with state-of-the-art hand-tracking methods for in-the-wild data collection. We demonstrate that a robot policy trained exclusively on human demonstrations collected with OSMO, without any real robot data, is capable of executing a challenging contact-rich manipulation task. By equipping both the human and the robot with the same glove, OSMO minimizes the visual and tactile embodiment gap, enabling the transfer of continuous shear and normal force feedback while avoiding the need for image inpainting or other vision-based force inference. On a real-world wiping task requiring sustained contact pressure, our tactile-aware policy achieves a 72% success rate, outperforming vision-only baselines by eliminating contact-related failure modes. We release complete hardware designs, firmware, and assembly instructions to support community adoption.
 
-## 개요
-인간의 비디오 시연은 로봇 정책 학습을 위한 풍부한 훈련 데이터를 제공하지만, 비디오만으로는 조작 기술 습득에 중요한 접촉 신호를 포착할 수 없습니다. 우리는 인간-로봇 기술 전이를 위해 설계된 오픈소스 웨어러블 촉각 장갑인 OSMO를 소개합니다. 이 장갑은 손가락 끝과 손바닥에 12개의 3축 촉각 센서를 갖추고 있으며, 실제 환경 데이터 수집을 위한 최첨단 손 추적 방법과 호환되도록 설계되었습니다. 우리는 OSMO로 수집된 인간 시연 데이터만으로 훈련된 로봇 정책이 실제 로봇 데이터 없이도 어려운 접촉 기반 조작 작업을 실행할 수 있음을 입증했습니다. 인간과 로봇 모두에 동일한 장갑을 장착함으로써 OSMO는 시각적 및 촉각적 구현 격차를 최소화하고, 이미지 인페인팅이나 다른 비전 기반 힘 추론 없이도 연속적인 전단력 및 수직력 피드백 전이를 가능하게 합니다. 지속적인 접촉 압력이 필요한 실제 닦기 작업에서, 우리의 촉각 인식 정책은 72%의 성공률을 달성하여 접촉 관련 실패 모드를 제거함으로써 비전 전용 기준선을 능가했습니다. 우리는 커뮤니티 채택을 지원하기 위해 완전한 하드웨어 설계, 펌웨어 및 조립 지침을 공개합니다.
-
-## 핵심 내용
-인간의 비디오 시연은 로봇 정책 학습을 위한 풍부한 훈련 데이터를 제공하지만, 비디오만으로는 조작 기술 습득에 중요한 접촉 신호를 포착할 수 없습니다. 우리는 인간-로봇 기술 전이를 위해 설계된 오픈소스 웨어러블 촉각 장갑인 OSMO를 소개합니다. 이 장갑은 손가락 끝과 손바닥에 12개의 3축 촉각 센서를 갖추고 있으며, 실제 환경 데이터 수집을 위한 최첨단 손 추적 방법과 호환되도록 설계되었습니다. 우리는 OSMO로 수집된 인간 시연 데이터만으로 훈련된 로봇 정책이 실제 로봇 데이터 없이도 어려운 접촉 기반 조작 작업을 실행할 수 있음을 입증했습니다. 인간과 로봇 모두에 동일한 장갑을 장착함으로써 OSMO는 시각적 및 촉각적 구현 격차를 최소화하고, 이미지 인페인팅이나 다른 비전 기반 힘 추론 없이도 연속적인 전단력 및 수직력 피드백 전이를 가능하게 합니다. 지속적인 접촉 압력이 필요한 실제 닦기 작업에서, 우리의 촉각 인식 정책은 72%의 성공률을 달성하여 접촉 관련 실패 모드를 제거함으로써 비전 전용 기준선을 능가했습니다. 우리는 커뮤니티 채택을 지원하기 위해 완전한 하드웨어 설계, 펌웨어 및 조립 지침을 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.08920v1
+
+## 개요
+OSMO 장갑은 손끝과 손바닥에 12개의 3축 촉각 센서를 통합하여, 주요 손 추적 방법과 호환되어 야외 데이터 수집을 지원합니다. 이 설계는 인간과 로봇이 동일한 장갑을 착용함으로써 시각과 촉각의 구현 격차를 최소화하고, 연속적인 전단력과 법선력 피드백을 직접 전달하여 이미지 복원이나 시각 기반 힘 추론을 피합니다. 지속적인 접촉 압력이 필요한 실제 닦기 작업에서, 촉각 기반 정책은 접촉 관련 실패 모드를 제거하여 순수 시각 기준선보다 성능이 크게 우수합니다.
+
+## 핵심 내용
+### 방법
+- **하드웨어 설계**: 장갑에는 손끝과 손바닥 영역에 분포된 12개의 3축 촉각 센서가 장착되어 고해상도 접촉력 수집을 지원합니다.
+- **데이터 수집**: SOTA 손 추적 방법과 호환되어 통제된 실험실 조건 없이 야외 환경에서 인간 시연 데이터를 수집할 수 있습니다.
+- **기술 전이**: 인간과 로봇이 동일한 장갑을 착용하여 연속적인 전단력과 법선력 피드백을 직접 전달함으로써 시각과 촉각의 구현 격차를 제거하고, 이미지 복원이나 시각적 힘 추론을 피합니다.
+
+### 실험 설정
+- **작업**: 지속적인 접촉 압력이 필요한 실제 닦기 작업.
+- **훈련 데이터**: OSMO로 수집한 인간 시연 데이터만 사용하며, 실제 로봇 데이터는 전혀 사용하지 않음.
+- **기준선**: 순수 시각 정책(촉각 피드백 없음).
+
+### 주요 결과
+- **성공률**: 촉각 인식 정책은 72%의 성공률을 달성하여 순수 시각 기준선보다 크게 높습니다.
+- **실패 모드**: 촉각 정책은 압력 부족이나 미끄러짐과 같은 접촉 관련 실패를 제거합니다.
+
+### 결론
+OSMO는 오픈소스 하드웨어 설계를 통해 접촉 집약적 로봇 작업에서 촉각 피드백의 핵심 역할을 입증하며, 커뮤니티에 완전한 하드웨어 설계, 펌웨어 및 조립 가이드를 제공합니다.

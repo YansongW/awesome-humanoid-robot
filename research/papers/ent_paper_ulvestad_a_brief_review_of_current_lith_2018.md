@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1803.04317v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1803.04317v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (695 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,27 @@ theoretical_depth:
 ## Overview
 Solid state battery technology has recently garnered considerable interest from companies including Toyota, BMW, Dyson, and others. The primary driver behind the commercialization of solid state batteries (SSBs) is to enable the use of lithium metal as the anode, as opposed to the currently used carbon anode, which would result in ~20% energy density improvement. However, no reported solid state battery to date meets all of the performance metrics of state of the art liquid electrolyte lithium ion batteries (LIBs) and indeed several solid state electrolyte (SSE) technologies may never reach parity with current LIBs. We begin with a review of state of the art LIBs, including their current performance characteristics, commercial trends in cost, and future possibilities. We then discuss current SSB research by focusing on three classes of solid state electrolytes: Sulfides, Polymers, and Oxides. We discuss recent and ongoing commercialization attempts in the SSB field. Finally, we conclude with our perspective and timeline for the future of commercial batteries.
 
-## 개요
-고체 전지 기술은 최근 Toyota, BMW, Dyson 등 여러 기업으로부터 상당한 관심을 받고 있습니다. 고체 전지(SSB) 상용화의 주요 동기는 현재 사용되는 탄소 음극 대신 리튬 금속을 음극으로 사용할 수 있게 하여 약 20%의 에너지 밀도 향상을 이루는 데 있습니다. 그러나 현재까지 보고된 고체 전지 중 어느 것도 최신 액체 전해질 리튬 이온 배터리(LIB)의 모든 성능 지표를 충족하지 못하며, 실제로 여러 고체 전해질(SSE) 기술은 현재 LIB와 동등한 수준에 도달하지 못할 수도 있습니다. 우리는 최신 LIB의 현재 성능 특성, 비용 측면의 상업적 추세, 그리고 미래 가능성에 대한 검토로 시작합니다. 그런 다음 황화물, 폴리머, 산화물의 세 가지 고체 전해질 종류에 초점을 맞춰 현재 SSB 연구를 논의합니다. SSB 분야의 최근 및 진행 중인 상용화 시도에 대해 논의한 후, 마지막으로 상용 배터리의 미래에 대한 우리의 관점과 타임라인을 제시하며 결론을 맺습니다.
-
-## 핵심 내용
-고체 전지 기술은 최근 Toyota, BMW, Dyson 등 여러 기업으로부터 상당한 관심을 받고 있습니다. 고체 전지(SSB) 상용화의 주요 동기는 현재 사용되는 탄소 음극 대신 리튬 금속을 음극으로 사용할 수 있게 하여 약 20%의 에너지 밀도 향상을 이루는 데 있습니다. 그러나 현재까지 보고된 고체 전지 중 어느 것도 최신 액체 전해질 리튬 이온 배터리(LIB)의 모든 성능 지표를 충족하지 못하며, 실제로 여러 고체 전해질(SSE) 기술은 현재 LIB와 동등한 수준에 도달하지 못할 수도 있습니다. 우리는 최신 LIB의 현재 성능 특성, 비용 측면의 상업적 추세, 그리고 미래 가능성에 대한 검토로 시작합니다. 그런 다음 황화물, 폴리머, 산화물의 세 가지 고체 전해질 종류에 초점을 맞춰 현재 SSB 연구를 논의합니다. SSB 분야의 최근 및 진행 중인 상용화 시도에 대해 논의한 후, 마지막으로 상용 배터리의 미래에 대한 우리의 관점과 타임라인을 제시하며 결론을 맺습니다.
-
 ## 参考
 - http://arxiv.org/abs/1803.04317v1
+
+## 개요
+이 리뷰는 먼저 액체 리튬이온 배터리의 현재 성능 특성, 비용 추세 및 미래 잠재력을 검토한 후, 고체 배터리 연구에 초점을 맞춰 황화물, 폴리머, 산화물 세 가지 고체 전해질의 장단점을 중점적으로 분석합니다. 또한 도요타, BMW, 다이슨 등 기업의 고체 배터리 상용화 시도를 정리하고, 최종적으로 상용 배터리의 미래 발전 타임라인 전망을 제시합니다. 핵심 결론은 고체 배터리가 리튬 금속 음극을 통해 약 20%의 에너지 밀도 향상을 달성할 수 있지만, 현재까지 모든 성능 지표에서 기존 액체 리튬이온 배터리를 능가하는 제품은 없으며, 일부 고체 전해질 기술은 영원히 동등한 수준에 도달하지 못할 수도 있다는 것입니다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+- 고체 배터리(SSB)는 도요타, BMW, 다이슨 등 기업의 투자로 주목받고 있으며, 핵심 동인은 탄소 음극 대신 리튬 금속 음극을 사용하여 약 20%의 에너지 밀도 향상을 가져오는 것입니다.
+- 그러나 2018년 기준으로 SSB는 모든 성능 지표에서 최첨단 액체 리튬이온 배터리(LIB) 수준에 도달한 제품이 없으며, 일부 고체 전해질(SSE) 기술은 LIB와 결코 경쟁하지 못할 수도 있습니다.
+
+### 액체 리튬이온 배터리 현황
+- 리뷰는 먼저 현재 LIB의 성능 특성, 상업적 비용 추세 및 미래 가능성을 평가하여 SSB의 기준 참조로 삼습니다.
+
+### 고체 전해질의 세 가지 주요 범주
+- **황화물 전해질**: 이온 전도도가 높지만 화학적 안정성이 낮아 리튬 금속과 쉽게 반응합니다.
+- **폴리머 전해질**: 가공성이 좋고 유연성이 높지만 실온 이온 전도도가 낮아 가열이 필요합니다.
+- **산화물 전해질**: 열 안정성과 전기화학적 창이 넓지만 계면 임피던스가 크고 제조 비용이 높습니다.
+
+### 상용화 시도
+- 도요타, BMW, 다이슨 등 기업의 SSB 상용화 프로젝트를 조사했지만, 구체적인 성능 데이터나 양산 일정은 공개되지 않았습니다.
+
+### 결론 및 전망
+- 저자는 SSB 기술이 단기적으로 LIB를 완전히 대체할 수 없으며, 미래 상용 배터리의 발전은 에너지 밀도, 안전성 및 비용의 균형을 맞춰야 하고, 구체적인 타임라인은 전해질 재료의 돌파구와 계면 공학의 진전에 달려 있다고 봅니다.

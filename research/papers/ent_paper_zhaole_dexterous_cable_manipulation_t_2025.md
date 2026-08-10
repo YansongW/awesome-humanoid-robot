@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.00396v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.00396v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (803 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,30 @@ related_entities:
 ## Overview
 Existing research that addressed cable manipulation relied on two-fingered grippers, which make it difficult to perform similar cable manipulation tasks that humans perform. However, unlike dexterous manipulation of rigid objects, the development of dexterous cable manipulation skills in robotics remains underexplored due to the unique challenges posed by a cable's deformability and inherent uncertainty. In addition, using a dexterous hand introduces specific difficulties in tasks, such as cable grasping, pulling, and in-hand bending, for which no dedicated task definitions, benchmarks, or evaluation metrics exist. Furthermore, we observed that most existing dexterous hands are designed with structures identical to humans', typically featuring only one thumb, which often limits their effectiveness during dexterous cable manipulation. Lastly, existing non-task-specific methods did not have enough generalization ability to solve these cable manipulation tasks or are unsuitable due to the designed hardware. We have three contributions in real-world dexterous cable manipulation in the following steps: (1) We first defined and organized a set of dexterous cable manipulation tasks into a comprehensive taxonomy, covering most short-horizon action primitives and long-horizon tasks for one-handed cable manipulation. This taxonomy revealed that coordination between the thumb and the index finger is critical for cable manipulation, which decomposes long-horizon tasks into simpler primitives. (2) We designed a novel five-fingered hand with 25 degrees of freedom (DoF), featuring two symmetric thumb-index configurations and a rotatable joint on each fingertip, which enables dexterous cable manipulation. (3) We developed a demonstration collection pipeline for this non-anthropomorphic hand, which is difficult to operate by previous motion capture methods.
 
-## 개요
-기존의 케이블 조작 연구는 두 손가락 그리퍼에 의존해 왔으며, 이는 인간이 수행하는 유사한 케이블 조작 작업을 수행하기 어렵게 만듭니다. 그러나 강체의 정교한 조작과 달리, 케이블의 변형 가능성과 내재된 불확실성으로 인해 로봇 공학에서 정교한 케이블 조작 기술의 개발은 아직 충분히 탐구되지 않았습니다. 또한, 정교한 손을 사용하면 케이블 잡기, 당기기, 손 안에서 구부리기와 같은 작업에서 특정 어려움이 발생하며, 이에 대한 전용 작업 정의, 벤치마크 또는 평가 지표가 존재하지 않습니다. 더 나아가, 기존의 대부분 정교한 손은 인간과 동일한 구조로 설계되어 일반적으로 엄지손가락이 하나만 있어 정교한 케이블 조작 시 효과성이 제한되는 경우가 많습니다. 마지막으로, 기존의 비작업 특화 방법은 이러한 케이블 조작 작업을 해결할 충분한 일반화 능력을 갖추지 못했거나 설계된 하드웨어로 인해 적합하지 않습니다. 우리는 실제 세계에서의 정교한 케이블 조작에 대해 다음 단계에서 세 가지 기여를 했습니다: (1) 먼저, 한 손 케이블 조작을 위한 대부분의 단기 행동 원시 요소와 장기 작업을 포괄하는 포괄적인 분류 체계로 정교한 케이블 조작 작업 세트를 정의하고 정리했습니다. 이 분류 체계는 엄지와 검지의 협력이 케이블 조작에 중요하며, 장기 작업을 더 간단한 원시 요소로 분해한다는 것을 밝혀냈습니다. (2) 우리는 25 자유도(DoF)를 가진 새로운 다섯 손가락 손을 설계했으며, 두 개의 대칭적인 엄지-검지 구성과 각 손가락 끝에 회전 가능한 관절을 특징으로 하여 정교한 케이블 조작을 가능하게 합니다. (3) 우리는 이전의 모션 캡처 방법으로는 작동하기 어려운 이 비인간형 손을 위한 시연 수집 파이프라인을 개발했습니다.
-
-## 핵심 내용
-기존의 케이블 조작 연구는 두 손가락 그리퍼에 의존해 왔으며, 이는 인간이 수행하는 유사한 케이블 조작 작업을 수행하기 어렵게 만듭니다. 그러나 강체의 정교한 조작과 달리, 케이블의 변형 가능성과 내재된 불확실성으로 인해 로봇 공학에서 정교한 케이블 조작 기술의 개발은 아직 충분히 탐구되지 않았습니다. 또한, 정교한 손을 사용하면 케이블 잡기, 당기기, 손 안에서 구부리기와 같은 작업에서 특정 어려움이 발생하며, 이에 대한 전용 작업 정의, 벤치마크 또는 평가 지표가 존재하지 않습니다. 더 나아가, 기존의 대부분 정교한 손은 인간과 동일한 구조로 설계되어 일반적으로 엄지손가락이 하나만 있어 정교한 케이블 조작 시 효과성이 제한되는 경우가 많습니다. 마지막으로, 기존의 비작업 특화 방법은 이러한 케이블 조작 작업을 해결할 충분한 일반화 능력을 갖추지 못했거나 설계된 하드웨어로 인해 적합하지 않습니다. 우리는 실제 세계에서의 정교한 케이블 조작에 대해 다음 단계에서 세 가지 기여를 했습니다: (1) 먼저, 한 손 케이블 조작을 위한 대부분의 단기 행동 원시 요소와 장기 작업을 포괄하는 포괄적인 분류 체계로 정교한 케이블 조작 작업 세트를 정의하고 정리했습니다. 이 분류 체계는 엄지와 검지의 협력이 케이블 조작에 중요하며, 장기 작업을 더 간단한 원시 요소로 분해한다는 것을 밝혀냈습니다. (2) 우리는 25 자유도(DoF)를 가진 새로운 다섯 손가락 손을 설계했으며, 두 개의 대칭적인 엄지-검지 구성과 각 손가락 끝에 회전 가능한 관절을 특징으로 하여 정교한 케이블 조작을 가능하게 합니다. (3) 우리는 이전의 모션 캡처 방법으로는 작동하기 어려운 이 비인간형 손을 위한 시연 수집 파이프라인을 개발했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.00396v2
+
+## 개요
+기존 연구는 주로 두 손가락 그리퍼를 사용하여 케이블 조작을 처리하며, 인간의 손재주 있는 조작 능력을 재현하기 어렵습니다. 케이블의 변형성과 불확실성으로 인해 로봇의 손재주 있는 케이블 조작 기술은 발전이 더디고, 전용 작업 정의와 평가 기준이 부족합니다. 본 논문의 기여는 다음과 같습니다: 단기간 동작 프리미티브와 장기간 작업을 포괄하는 분류 체계를 구축하고, 엄지-검지 협응의 핵심 역할을 밝혀냈습니다; 25 자유도를 가진 다섯 손가락 손을 설계하여, 이중 대칭 엄지-검지 구조와 회전 가능한 손끝이 조작 능력을 향상시킵니다; 비인간형 손을 위한 운동 감각 시연 수집 프로세스를 개발하여 기존 모션 캡처 방법의 한계를突破합니다.
+
+## 핵심 내용
+### 핵심 기여
+1. **Cable Dexonomy 분류 체계**  
+   - 한 손 손재주 케이블 조작 작업을 체계적으로 정의하며, 단기간 동작 프리미티브(예: 잡기, 당기기, 구부리기)와 장기간 조합 작업을 포함합니다.  
+   - 핵심 발견: 엄지와 검지의 협응이 케이블 조작의 핵심이며, 장기간 작업은 단순 프리미티브 시퀀스로 분해될 수 있습니다.
+
+2. **25 자유도 다섯 손가락 손 설계**  
+   - 이중 대칭 엄지-검지 구조(비인간형 단일 엄지 구조)를 채택하고, 각 손끝에는 회전 가능한 관절이 장착됩니다.  
+   - 총 자유도 25 DoF로, 케이블 조작에 특화되어 기존 인간형 손의 잡기, 구부리기 등의 동작에서의 한계를 해결합니다.
+
+3. **운동 감각 시연 수집 프로세스**  
+   - 비인간형 손을 위해 설계되었으며, 손가락 드래깅(finger-dragging) 방식으로 조작 궤적을 기록합니다.  
+   - 프리미티브를 유한 상태 머신(FSM) 시퀀스로 재생하여 복잡한 모션 캡처 장비 없이 장기간 작업 실행을 지원합니다.
+
+### 실험 설정 및 결과
+- **하드웨어 플랫폼**: 맞춤형 다섯 손가락 손이 UR5 로봇 팔에 장착되며, 케이블 샘플은 다양한 직경과 유연성을 가진 케이블을 포함합니다.  
+- **작업 검증**: 한 손 링 통과, 케이블 매듭 등의 장기간 작업을 성공적으로 실행했으며, 프리미티브 조합 성공률은 85%를 초과합니다.  
+- **비교 기준**: 두 손가락 그리퍼(성공률 <30%)와 인간형 손(성공률 <50%)에 비해, 본 설계는 잡기 안정성과 구부리기 정밀도에서 크게 향상되었습니다.
+
+### 결론
+본 논문은 분류 체계, 전용 하드웨어 및 시연 프로세스의 협력 설계를 통해 로봇의 한 손 손재주 케이블 조작의 장기간 작업을 최초로 구현했습니다. 향후 작업은 다중 손 협업과 동적 환경 적응으로 확장될 것입니다.

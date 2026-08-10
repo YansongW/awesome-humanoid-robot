@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.17502v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.17502v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (618 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,25 @@ RynnVLA-002 证明了 VLA 模型与世界模型的联合学习能显著提升机
 ## Overview
 We introduce RynnVLA-002, a unified Vision-Language-Action (VLA) and world model. The world model leverages action and visual inputs to predict future image states, learning the underlying physics of the environment to refine action generation. Conversely, the VLA model produces subsequent actions from image observations, enhancing visual understanding and supporting the world model's image generation. The unified framework of RynnVLA-002 enables joint learning of environmental dynamics and action planning. Our experiments show that RynnVLA-002 surpasses individual VLA and world models, demonstrating their mutual enhancement. We evaluate RynnVLA-002 in both simulation and real-world robot tasks. RynnVLA-002 achieves 97.4% success rate on the LIBERO simulation benchmark without pretraining, while in real-world LeRobot experiments, its integrated world model boosts the overall success rate by 50%.
 
-## 개요
-우리는 통합된 Vision-Language-Action(VLA) 및 세계 모델인 RynnVLA-002를 소개합니다. 세계 모델은 행동과 시각적 입력을 활용하여 미래 이미지 상태를 예측하고, 환경의 물리적 원리를 학습하여 행동 생성을 개선합니다. 반대로, VLA 모델은 이미지 관찰로부터 후속 행동을 생성하여 시각적 이해를 향상시키고 세계 모델의 이미지 생성을 지원합니다. RynnVLA-002의 통합 프레임워크는 환경 역학과 행동 계획의 공동 학습을 가능하게 합니다. 우리의 실험은 RynnVLA-002가 개별 VLA 및 세계 모델을 능가하며, 이들이 상호 보완적으로 향상됨을 보여줍니다. 우리는 시뮬레이션 및 실제 로봇 작업 모두에서 RynnVLA-002를 평가합니다. RynnVLA-002는 사전 학습 없이 LIBERO 시뮬레이션 벤치마크에서 97.4%의 성공률을 달성했으며, 실제 LeRobot 실험에서는 통합된 세계 모델이 전체 성공률을 50% 향상시켰습니다.
-
-## 핵심 내용
-우리는 통합된 Vision-Language-Action(VLA) 및 세계 모델인 RynnVLA-002를 소개합니다. 세계 모델은 행동과 시각적 입력을 활용하여 미래 이미지 상태를 예측하고, 환경의 물리적 원리를 학습하여 행동 생성을 개선합니다. 반대로, VLA 모델은 이미지 관찰로부터 후속 행동을 생성하여 시각적 이해를 향상시키고 세계 모델의 이미지 생성을 지원합니다. RynnVLA-002의 통합 프레임워크는 환경 역학과 행동 계획의 공동 학습을 가능하게 합니다. 우리의 실험은 RynnVLA-002가 개별 VLA 및 세계 모델을 능가하며, 이들이 상호 보완적으로 향상됨을 보여줍니다. 우리는 시뮬레이션 및 실제 로봇 작업 모두에서 RynnVLA-002를 평가합니다. RynnVLA-002는 사전 학습 없이 LIBERO 시뮬레이션 벤치마크에서 97.4%의 성공률을 달성했으며, 실제 LeRobot 실험에서는 통합된 세계 모델이 전체 성공률을 50% 향상시켰습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.17502v3
+
+## 개요
+RynnVLA-002는 비전-언어-행동 모델과 세계 모델을 혁신적으로 통합하여 양방향 강화 폐쇄 루프 아키텍처를 형성합니다. 세계 모델은 행동과 시각 입력을 활용하여 미래 이미지 상태를 예측하고, 환경의 물리적 법칙을 학습하여 행동 생성을 최적화합니다. 반면 VLA 모델은 이미지 관측에서 후속 행동을 생성하여 시각 이해를 강화하고 세계 모델의 이미지 생성을 지원합니다. 이러한 공동 프레임워크는 모델이 환경 역학과 행동 계획을 동시에 습득할 수 있게 하여, 시뮬레이션 및 실제 로봇 작업 모두에서 뚜렷한 이점을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+RynnVLA-002의 핵심은 서로 강화하는 두 모듈을 포함하는 통합 프레임워크입니다:
+- **세계 모델**: 행동과 시각 입력을 수신하여 미래 이미지 상태를 예측하고, 환경의 기저 물리 법칙을 학습하여 행동 생성을 최적화합니다.
+- **VLA 모델**: 이미지 관측에서 후속 행동을 생성하여 시각 이해 능력을 강화하고, 동시에 세계 모델의 이미지 생성을 지원합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 사전 훈련 없이 LIBERO 벤치마크에서 평가를 수행합니다.
+- **실제 환경**: LeRobot 플랫폼에서 실제 로봇 조작 실험을 진행합니다.
+
+### 주요 결과
+- **LIBERO 시뮬레이션 벤치마크**: RynnVLA-002는 97.4%의 성공률을 달성하여 단독 VLA 모델과 세계 모델을 능가합니다.
+- **LeRobot 실제 실험**: 세계 모델을 통합한 후 전체 성공률이 50% 향상되어 양방향 강화 메커니즘의 효과를 검증합니다.
+
+### 결론
+RynnVLA-002는 VLA 모델과 세계 모델의 공동 학습이 로봇 조작 성능을 크게 향상시킬 수 있음을 입증하며, 미래 로봇 지능 시스템을 위한 통합 프레임워크의 새로운 패러다임을 제공합니다.

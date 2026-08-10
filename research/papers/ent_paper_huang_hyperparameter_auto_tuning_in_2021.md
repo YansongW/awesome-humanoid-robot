@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.08252v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.08252v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (551 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,22 @@ Policy optimization in reinforcement learning requires the selection of numerous
 ## Content
 Policy optimization in reinforcement learning requires the selection of numerous hyperparameters across different environments. Fixing them incorrectly may negatively impact optimization performance, leading notably to insufficient or redundant learning. Insufficient learning (due to convergence to local optima) results in under-performing policies, while redundant learning wastes time and resources. The effects are further exacerbated when using single policies to solve multi-task learning problems. Observing that the Evidence Lower Bound (ELBO) used in Variational Auto-Encoders correlates with the diversity of image samples, we propose an auto-tuning technique based on the ELBO for self-supervised reinforcement learning. Our approach can auto-tune three hyperparameters: the replay buffer size, the number of policy gradient updates during each epoch, and the number of exploration steps during each epoch. We use a state-of-the-art self-supervised robot learning framework (Reinforcement Learning with Imagined Goals (RIG) using Soft Actor-Critic) as a baseline for experimental verification. Experiments show that our method can auto-tune online and yields the best performance at a fraction of the time and computational resources. Code, video, and appendix for simulated and real-robot experiments can be found at the project page \url{www.JuanRojas.net/autotune}.
 
-## 개요
-강화 학습에서의 정책 최적화는 다양한 환경에 걸쳐 수많은 하이퍼파라미터를 선택해야 합니다. 이를 잘못 고정하면 최적화 성능에 부정적인 영향을 미쳐, 특히 학습 부족 또는 중복 학습을 초래할 수 있습니다. 학습 부족(국소 최적해로 수렴으로 인해)은 성능이 낮은 정책을 초래하는 반면, 중복 학습은 시간과 자원을 낭비합니다. 이러한 영향은 단일 정책을 사용하여 다중 작업 학습 문제를 해결할 때 더욱 악화됩니다. 변분 오토인코더에서 사용되는 증거 하한(ELBO)이 이미지 샘플의 다양성과 상관관계가 있음을 관찰하여, 우리는 ELBO 기반의 자동 튜닝 기법을 자기 지도 강화 학습에 제안합니다. 우리의 접근 방식은 세 가지 하이퍼파라미터(리플레이 버퍼 크기, 각 에포크 동안의 정책 그래디언트 업데이트 횟수, 각 에포크 동안의 탐색 단계 수)를 자동으로 튜닝할 수 있습니다. 우리는 최신 자기 지도 로봇 학습 프레임워크(Soft Actor-Critic을 사용한 상상 목표 기반 강화 학습(RIG))를 실험 검증의 기준선으로 사용합니다. 실험 결과, 우리의 방법이 온라인으로 자동 튜닝할 수 있으며, 적은 시간과 계산 자원으로 최고의 성능을 달성함을 보여줍니다. 시뮬레이션 및 실제 로봇 실험을 위한 코드, 비디오 및 부록은 프로젝트 페이지 \url{www.JuanRojas.net/autotune}에서 확인할 수 있습니다.
-
-## 핵심 내용
-강화 학습에서의 정책 최적화는 다양한 환경에 걸쳐 수많은 하이퍼파라미터를 선택해야 합니다. 이를 잘못 고정하면 최적화 성능에 부정적인 영향을 미쳐, 특히 학습 부족 또는 중복 학습을 초래할 수 있습니다. 학습 부족(국소 최적해로 수렴으로 인해)은 성능이 낮은 정책을 초래하는 반면, 중복 학습은 시간과 자원을 낭비합니다. 이러한 영향은 단일 정책을 사용하여 다중 작업 학습 문제를 해결할 때 더욱 악화됩니다. 변분 오토인코더에서 사용되는 증거 하한(ELBO)이 이미지 샘플의 다양성과 상관관계가 있음을 관찰하여, 우리는 ELBO 기반의 자동 튜닝 기법을 자기 지도 강화 학습에 제안합니다. 우리의 접근 방식은 세 가지 하이퍼파라미터(리플레이 버퍼 크기, 각 에포크 동안의 정책 그래디언트 업데이트 횟수, 각 에포크 동안의 탐색 단계 수)를 자동으로 튜닝할 수 있습니다. 우리는 최신 자기 지도 로봇 학습 프레임워크(Soft Actor-Critic을 사용한 상상 목표 기반 강화 학습(RIG))를 실험 검증의 기준선으로 사용합니다. 실험 결과, 우리의 방법이 온라인으로 자동 튜닝할 수 있으며, 적은 시간과 계산 자원으로 최고의 성능을 달성함을 보여줍니다. 시뮬레이션 및 실제 로봇 실험을 위한 코드, 비디오 및 부록은 프로젝트 페이지 \url{www.JuanRojas.net/autotune}에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2010.08252v4
+
+## 개요
+강화 학습에서 하이퍼파라미터 선택이 부적절하면 학습 부족이나 중복이 발생할 수 있으며, 특히 다중 작업 시나리오에서 문제가 심화됩니다. 저자는 변분 오토인코더의 ELBO가 이미지 샘플 다양성과 관련이 있음을 관찰하고, 이를 바탕으로 자동 하이퍼파라미터 조정 방법을 설계했습니다. 이 방법은 RIG+SAC 자기 지도 로봇 학습 프레임워크에서 검증되었으며, 실험 결과 더 적은 시간과 계산 자원으로 최적 성능에 도달할 수 있음을 보여줍니다. 프로젝트 페이지에서는 코드, 비디오 및 시뮬레이션/실제 로봇 실험 부록을 제공합니다.
+
+## 핵심 내용
+### 방법 핵심
+- **이론적 기반**: VAE의 ELBO 값과 이미지 샘플 다양성 간의 상관관계를 활용하여, ELBO를 하이퍼파라미터 조정의 온라인 신호로 사용합니다.
+- **자동 조정 대상**: 세 가지 핵심 하이퍼파라미터——리플레이 버퍼 용량, 에피소드당 정책 그라디언트 업데이트 횟수, 에피소드당 탐색 단계 수.
+- **조정 메커니즘**: ELBO의 동적 변화에 따라 훈련 과정에서 위 파라미터를 실시간으로 조정하여, 고정 파라미터로 인한 지역 최적해 또는 자원 낭비를 방지합니다.
+
+### 실험 설정
+- **기준 프레임워크**: RIG+SAC(상상 기반 목표 강화 학습 + 소프트 액터-크리틱 알고리즘)을 자기 지도 학습 기준으로 채택합니다.
+- **검증 시나리오**: 시뮬레이션 환경과 실제 로봇 실험을 포함하며, 프로젝트 페이지에서 전체 코드와 비디오를 제공합니다.
+
+### 주요 결과
+- **성능 향상**: 자동 조정 방법은 동일한 작업에서 최적 정책 성능에 도달하며, 훈련 시간과 계산 자원 소비가 크게 감소합니다.
+- **효율성 이점**: 수동 조정에 비해 이 방법은 인간의 개입 없이 온라인으로 환경 변화에 적응할 수 있어, 특히 다중 작업 학습 시나리오에 적합합니다.

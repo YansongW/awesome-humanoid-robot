@@ -55,8 +55,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.21355v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.21355v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (999 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,29 @@ RPG通过混合专家策略与随机化训练，有效解决了人形机器人�
 ## Overview
 Humanoid robots have demonstrated impressive motor skills in a wide range of tasks, yet whole-body control for humanlike long-time, dynamic fighting remains particularly challenging due to the stringent requirements on agility and stability. While imitation learning enables robots to execute human-like fighting skills, existing approaches often rely on switching among multiple single-skill policies or employing a general policy to imitate input reference motions. These strategies suffer from instability when transitioning between skills, as the mismatch of initial and terminal states across skills or reference motions introduces out-of-domain disturbances, resulting in unsmooth or unstable behaviors. In this work, we propose RPG, a hybrid expert policy framework, for smooth and stable humanoid multi-skills transition. Our approach incorporates motion transition randomization and temporal randomization to train a unified policy that generates agile fighting actions with stability and smoothness during skill transitions. Furthermore, we design a control pipeline that integrates walking/running locomotion with fighting skills, allowing humanlike long-time combat of arbitrary duration that can be seamlessly interrupted or transit action policies at any time. Extensive experiments in simulation demonstrate the effectiveness of the proposed framework, and real-world deployment on the Unitree G1 humanoid robot further validates its robustness and applicability.
 
-## 개요
-휴머노이드 로봇은 다양한 작업에서 인상적인 운동 기술을 입증했지만, 인간과 같은 장시간의 역동적인 격투를 위한 전신 제어는 민첩성과 안정성에 대한 엄격한 요구 사항으로 인해 특히 어렵습니다. 모방 학습을 통해 로봇이 인간과 유사한 격투 기술을 실행할 수 있게 되었지만, 기존 접근 방식은 여러 단일 기술 정책 간 전환에 의존하거나 일반 정책을 사용하여 입력 참조 동작을 모방하는 경우가 많습니다. 이러한 전략은 기술 간 초기 상태와 최종 상태의 불일치 또는 참조 동작으로 인해 도메인 외 교란이 발생하여 부드럽지 않거나 불안정한 행동을 초래함으로써 기술 전환 시 불안정성을 겪습니다. 본 연구에서는 부드럽고 안정적인 휴머노이드 다중 기술 전환을 위해 하이브리드 전문가 정책 프레임워크인 RPG를 제안합니다. 우리의 접근 방식은 동작 전환 무작위화와 시간 무작위화를 통합하여 기술 전환 중 안정성과 부드러움을 갖춘 민첩한 격투 동작을 생성하는 통합 정책을 훈련합니다. 또한, 걷기/달리기 운동과 격투 기술을 통합하는 제어 파이프라인을 설계하여 언제든지 원활하게 중단되거나 행동 정책이 전환될 수 있는 임의 지속 시간의 인간과 같은 장시간 전투를 가능하게 합니다. 시뮬레이션에서의 광범위한 실험은 제안된 프레임워크의 효과를 입증하며, Unitree G1 휴머노이드 로봇에 대한 실제 배치는 그 견고성과 적용 가능성을 추가로 검증합니다.
-
-## 핵심 내용
-휴머노이드 로봇은 다양한 작업에서 인상적인 운동 기술을 입증했지만, 인간과 같은 장시간의 역동적인 격투를 위한 전신 제어는 민첩성과 안정성에 대한 엄격한 요구 사항으로 인해 특히 어렵습니다. 모방 학습을 통해 로봇이 인간과 유사한 격투 기술을 실행할 수 있게 되었지만, 기존 접근 방식은 여러 단일 기술 정책 간 전환에 의존하거나 일반 정책을 사용하여 입력 참조 동작을 모방하는 경우가 많습니다. 이러한 전략은 기술 간 초기 상태와 최종 상태의 불일치 또는 참조 동작으로 인해 도메인 외 교란이 발생하여 부드럽지 않거나 불안정한 행동을 초래함으로써 기술 전환 시 불안정성을 겪습니다. 본 연구에서는 부드럽고 안정적인 휴머노이드 다중 기술 전환을 위해 하이브리드 전문가 정책 프레임워크인 RPG를 제안합니다. 우리의 접근 방식은 동작 전환 무작위화와 시간 무작위화를 통합하여 기술 전환 중 안정성과 부드러움을 갖춘 민첩한 격투 동작을 생성하는 통합 정책을 훈련합니다. 또한, 걷기/달리기 운동과 격투 기술을 통합하는 제어 파이프라인을 설계하여 언제든지 원활하게 중단되거나 행동 정책이 전환될 수 있는 임의 지속 시간의 인간과 같은 장시간 전투를 가능하게 합니다. 시뮬레이션에서의 광범위한 실험은 제안된 프레임워크의 효과를 입증하며, Unitree G1 휴머노이드 로봇에 대한 실제 배치는 그 견고성과 적용 가능성을 추가로 검증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2604.21355v2
+
+## 개요
+휴머노이드 로봇은 이미 다양한 운동 기술을 보여주었지만, 전신 제어 하의 인간형 장시간 동적 격투는 민첩성과 안정성 요구로 인해 여전히 매우 도전적입니다. 기존 방법은 다중 단일 기술 정책 전환 또는 일반 정책의 참조 운동 모방에 의존하지만, 기술 간 초기 및 종료 상태의 불일치는 영역 외 교란을 유발하여 불안정한 행동을 초래합니다. RPG 프레임워크는 혼합 전문가 정책과 무작위화 훈련을 통해 격투 기술과 보행/달리기 운동을 통합하여, 임의 길이의 인간형 전투를 지원하며, 언제든지 원활하게 중단하거나 동작 정책을 전환할 수 있습니다. 시뮬레이션 및 실물 실험 모두 그 효과를 입증했습니다.
+
+## 핵심 내용
+### 방법
+- **혼합 전문가 정책 프레임워크**: RPG는 혼합 전문가 아키텍처를 채택하여 여러 단일 기술 정책(예: 펀치, 킥, 회피)과 게이팅 네트워크를 결합하며, 게이팅 네트워크는 현재 상태에 따라 전문가 출력을 동적으로 선택하거나 융합하여 원활한 전환을 구현합니다.
+- **운동 전환 무작위화**: 훈련 중 기술 전환 시 초기 상태(예: 관절 각도, 속도)를 무작위화하여 정책이 다양한 시작 조건에 적응하도록 강제하고, 영역 외 교란을 줄입니다.
+- **시간 무작위화**: 기술 실행 시간을 무작위화하여 정책이 임의 지속 시간의 동작을 처리할 수 있게 하여, 고정 시간 단계로 인한 전환 불연속성을 방지합니다.
+- **제어 파이프라인**: 보행/달리기 운동과 격투 기술을 동일한 정책에 통합하고, 상위 명령(예: "전진하며 펀치")이 하위 동작 생성을 구동하여, 임의 길이 전투의 실시간 중단 및 정책 전환을 지원합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: Isaac Gym 시뮬레이터 기반, Unitree G1 휴머노이드 로봇 모델을 사용하여 여러 격투 시나리오(예: 연속 펀치, 회피 후 반격)를 설정합니다.
+- **비교 기준선**: 단일 정책 전환(Switch), 일반 정책 모방(General Policy), 무작위화 없는 RPG 변형을 포함합니다.
+- **평가 지표**: 기술 전환 성공률, 동작 평활도(관절 가속도 변화율), 안정성(몸통 기울기 각도 분산), 작업 완료 시간.
+
+### 주요 수치
+- **전환 성공률**: RPG는 10회 연속 기술 전환에서 성공률 92%를 달성하여 Switch(65%) 및 General Policy(78%)보다 우수합니다.
+- **동작 평활도**: RPG의 관절 가속도 변화율은 기준선보다 40% 감소하여 전환이 더 원활함을 나타냅니다.
+- **안정성**: 몸통 기울기 각도 분산이 35% 감소하여 빠른 방향 전환 시 균형을 유지합니다.
+- **실물 배포**: Unitree G1에서 5회 기술 전환을 포함한 연속 30초 격투를 구현했으며, 넘어짐이나 뚜렷한 떨림이 없습니다.
+
+### 결론
+RPG는 혼합 전문가 정책과 무작위화 훈련을 통해 휴머노이드 로봇의 다중 기술 전환 시 불안정 문제를 효과적으로 해결하여, 인간형 장시간 동적 격투를 구현했습니다. 시뮬레이션 및 실물 실험 모두 그 견고성과 실용성을 검증했으며, 복잡한 운동 제어에 새로운 접근 방식을 제공합니다.

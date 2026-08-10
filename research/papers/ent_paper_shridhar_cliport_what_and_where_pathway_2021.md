@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2109.12098v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2109.12098v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (899 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,25 @@ CLIPort 证明语义与空间双流融合可有效解决机器人操作中的抽
 ## Overview
 How can we imbue robots with the ability to manipulate objects precisely but also to reason about them in terms of abstract concepts? Recent works in manipulation have shown that end-to-end networks can learn dexterous skills that require precise spatial reasoning, but these methods often fail to generalize to new goals or quickly learn transferable concepts across tasks. In parallel, there has been great progress in learning generalizable semantic representations for vision and language by training on large-scale internet data, however these representations lack the spatial understanding necessary for fine-grained manipulation. To this end, we propose a framework that combines the best of both worlds: a two-stream architecture with semantic and spatial pathways for vision-based manipulation. Specifically, we present CLIPort, a language-conditioned imitation-learning agent that combines the broad semantic understanding (what) of CLIP [1] with the spatial precision (where) of Transporter [2]. Our end-to-end framework is capable of solving a variety of language-specified tabletop tasks from packing unseen objects to folding cloths, all without any explicit representations of object poses, instance segmentations, memory, symbolic states, or syntactic structures. Experiments in simulated and real-world settings show that our approach is data efficient in few-shot settings and generalizes effectively to seen and unseen semantic concepts. We even learn one multi-task policy for 10 simulated and 9 real-world tasks that is better or comparable to single-task policies.
 
-## 개요
-로봇이 물체를 정밀하게 조작할 수 있을 뿐만 아니라 추상적 개념으로 사고할 수 있는 능력을 어떻게 부여할 수 있을까? 최근 조작 분야 연구들은 정밀한 공간 추론이 필요한 능숙한 기술을 종단간(end-to-end) 네트워크가 학습할 수 있음을 보여주었지만, 이러한 방법들은 새로운 목표에 일반화하거나 작업 간 전이 가능한 개념을 빠르게 학습하는 데 종종 실패합니다. 이와 동시에 대규모 인터넷 데이터 학습을 통해 시각 및 언어에 대한 일반화 가능한 의미 표현을 학습하는 데 큰 진전이 있었지만, 이러한 표현들은 세밀한 조작에 필요한 공간 이해가 부족합니다. 이러한 문제를 해결하기 위해 우리는 두 가지 장점을 결합한 프레임워크, 즉 시각 기반 조작을 위한 의미 경로와 공간 경로를 가진 이중 스트림(two-stream) 아키텍처를 제안합니다. 구체적으로, 우리는 CLIP [1]의 광범위한 의미 이해(무엇)와 Transporter [2]의 공간 정밀도(어디)를 결합한 언어 조건 모방 학습 에이전트 CLIPort를 제시합니다. 우리의 종단간 프레임워크는 물체 자세, 인스턴스 분할, 메모리, 기호 상태 또는 구문 구조에 대한 명시적 표현 없이도 보지 못한 물체 포장부터 천 접기까지 다양한 언어로 지정된 테이블탑 작업을 해결할 수 있습니다. 시뮬레이션 및 실제 환경 실험은 우리의 접근 방식이 소수 샷(few-shot) 설정에서 데이터 효율적이며, 본 및 미본 의미 개념에 효과적으로 일반화됨을 보여줍니다. 또한 10개의 시뮬레이션 작업과 9개의 실제 작업에 대해 단일 작업 정책보다 더 우수하거나 동등한 성능을 보이는 하나의 멀티태스크 정책을 학습했습니다.
-
-## 핵심 내용
-로봇이 물체를 정밀하게 조작할 수 있을 뿐만 아니라 추상적 개념으로 사고할 수 있는 능력을 어떻게 부여할 수 있을까? 최근 조작 분야 연구들은 정밀한 공간 추론이 필요한 능숙한 기술을 종단간 네트워크가 학습할 수 있음을 보여주었지만, 이러한 방법들은 새로운 목표에 일반화하거나 작업 간 전이 가능한 개념을 빠르게 학습하는 데 종종 실패합니다. 이와 동시에 대규모 인터넷 데이터 학습을 통해 시각 및 언어에 대한 일반화 가능한 의미 표현을 학습하는 데 큰 진전이 있었지만, 이러한 표현들은 세밀한 조작에 필요한 공간 이해가 부족합니다. 이러한 문제를 해결하기 위해 우리는 두 가지 장점을 결합한 프레임워크, 즉 시각 기반 조작을 위한 의미 경로와 공간 경로를 가진 이중 스트림 아키텍처를 제안합니다. 구체적으로, 우리는 CLIP [1]의 광범위한 의미 이해(무엇)와 Transporter [2]의 공간 정밀도(어디)를 결합한 언어 조건 모방 학습 에이전트 CLIPort를 제시합니다. 우리의 종단간 프레임워크는 물체 자세, 인스턴스 분할, 메모리, 기호 상태 또는 구문 구조에 대한 명시적 표현 없이도 보지 못한 물체 포장부터 천 접기까지 다양한 언어로 지정된 테이블탑 작업을 해결할 수 있습니다. 시뮬레이션 및 실제 환경 실험은 우리의 접근 방식이 소수 샷 설정에서 데이터 효율적이며, 본 및 미본 의미 개념에 효과적으로 일반화됨을 보여줍니다. 또한 10개의 시뮬레이션 작업과 9개의 실제 작업에 대해 단일 작업 정책보다 더 우수하거나 동등한 성능을 보이는 하나의 멀티태스크 정책을 학습했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2109.12098v1
+
+## 개요
+CLIPort는 기존 로봇 조작 모델이 지닌 의미적 일반화와 공간적 정밀도 사이의 모순을 해결하기 위해 이중 흐름 아키텍처를 제안한다: 의미 흐름(what)은 CLIP의 인터넷 사전 학습 지식을 활용하여 객체 범주와 작업 지시를 이해하고, 공간 흐름(where)은 Transporter의 픽셀 수준 위치 파악을 기반으로 정밀한 집기와 놓기를 구현한다. 모델은 종단 간 방식으로 언어 조건화 모방 정책을 학습하며, 명시적 객체 자세, 인스턴스 분할 또는 기호 상태 표현이 필요 없다. 10개의 시뮬레이션 작업과 9개의 실제 세계 작업에서 CLIPort의 다중 작업 정책 성능은 단일 작업 정책보다 우수하거나 동등했으며, 소수 샷 설정에서 새로운 작업에 효율적으로 적응할 수 있었다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 흐름 설계**: 의미 흐름은 CLIP의 시각 인코더를 사용하여 작업 관련 의미 특징(예: "빨간 컵")을 추출하고, 공간 흐름은 Transporter의 심층 컨볼루션 네트워크를 사용하여 픽셀 수준 주의 맵을 생성하며, 둘은 교차 주의 메커니즘을 통해 융합된다.
+- **동작 생성**: 모델은 현재 RGB-D 이미지와 언어 지시를 입력으로 받아 집기와 놓기의 픽셀 좌표 쌍을 출력하며, Transporter의 "놓기-집기" 루프를 통해 조작을 구현한다.
+
+### 실험 설정
+- **시뮬레이션 환경**: PyBullet 기반으로 10개의 데스크톱 작업을 구축했으며, 블록 쌓기, 천 접기, 색상별 객체 분류 등이 포함된다. 각 작업은 100-200회의 인간 시연을 제공한다.
+- **실제 세계**: Franka Emika Panda 로봇 팔을 사용하여 "파란 블록을 빨간 그릇에 넣기"와 같은 9개의 작업을 완료하며, 10-20회의 시연만으로 미세 조정한다.
+
+### 주요 결과
+- **일반화 능력**: 시뮬레이션 작업에서 CLIPort는 보지 못한 객체 조합(예: 새로운 색상 또는 모양)에 대한 제로 샷 성공률이 기준선(단일 흐름 Transporter)보다 35% 높았다.
+- **소수 샷 학습**: 단 10회의 시연으로 CLIPort는 실제 세계 작업에서 평균 성공률 82%를 달성했으며, 기준선 방법은 50% 미만이었다.
+- **다중 작업 정책**: 10개의 시뮬레이션 작업을 포괄하는 단일 정책을 훈련하여 평균 성공률 78%를 기록했으며, 각 작업을 개별적으로 훈련한 정책(79%)과 유의미한 차이가 없었다.
+
+### 결론
+CLIPort는 의미적 및 공간적 이중 흐름 융합이 로봇 조작에서 추상적 추론과 정밀 제어 사이의 모순을 효과적으로 해결할 수 있음을 증명한다. 그 데이터 효율성과 일반화 능력은 소수 샷 시나리오에서의 범용 조작 정책에 실현 가능한 경로를 제공한다.

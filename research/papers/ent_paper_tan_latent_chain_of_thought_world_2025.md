@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.10226v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.10226v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (931 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,24 @@ LCDrive 通过将链式思维推理从自然语言空间迁移至动作对齐的
 ## Overview
 Recent Vision-Language-Action (VLA) models for autonomous driving explore inference-time reasoning as a way to improve driving performance and safety in challenging scenarios. Most prior work uses natural language to express chain-of-thought (CoT) reasoning before producing driving actions. However, text may not be the most efficient representation for reasoning. In this work, we present Latent-CoT-Drive (LCDrive): a model that expresses CoT in a latent language that captures possible outcomes of the driving actions being considered. Our approach unifies CoT reasoning and decision making by representing both in an action-aligned latent space. Instead of natural language, the model reasons by interleaving (1) action-proposal tokens, which use the same vocabulary as the model's output actions; and (2) world model tokens, which are grounded in a learned latent world model and express future outcomes of these actions. We cold start latent CoT by supervising the model's action proposals and world model tokens based on ground-truth future rollouts of the scene. We then post-train with closed-loop reinforcement learning to strengthen reasoning capabilities. On a large-scale end-to-end driving benchmark, LCDrive achieves faster inference, better trajectory quality, and larger improvements from interactive reinforcement learning compared to both non-reasoning and text-reasoning baselines.
 
-## 개요
-최근 자율주행을 위한 Vision-Language-Action(VLA) 모델은 까다로운 시나리오에서 주행 성능과 안전성을 향상시키기 위해 추론 시간 추론을 탐구하고 있습니다. 대부분의 기존 연구는 주행 동작을 생성하기 전에 자연어를 사용하여 사고 사슬(CoT) 추론을 표현합니다. 그러나 텍스트는 추론에 가장 효율적인 표현이 아닐 수 있습니다. 본 연구에서는 고려 중인 주행 동작의 가능한 결과를 포착하는 잠재 언어로 CoT를 표현하는 Latent-CoT-Drive(LCDrive)를 제시합니다. 우리의 접근 방식은 CoT 추론과 의사 결정을 모두 동작 정렬 잠재 공간에서 표현하여 통합합니다. 자연어 대신 모델은 (1) 모델의 출력 동작과 동일한 어휘를 사용하는 동작 제안 토큰과 (2) 학습된 잠재 세계 모델에 기반하여 이러한 동작의 미래 결과를 표현하는 세계 모델 토큰을 교차 배치하여 추론합니다. 우리는 장면의 실제 미래 롤아웃을 기반으로 모델의 동작 제안 및 세계 모델 토큰을 감독하여 잠재 CoT를 콜드 스타트합니다. 그런 다음 폐쇄 루프 강화 학습으로 사후 학습하여 추론 능력을 강화합니다. 대규모 엔드투엔드 주행 벤치마크에서 LCDrive는 비추론 및 텍스트 추론 기준선에 비해 더 빠른 추론, 더 나은 궤적 품질, 상호작용 강화 학습으로부터의 더 큰 개선을 달성합니다.
-
-## 핵심 내용
-최근 자율주행을 위한 Vision-Language-Action(VLA) 모델은 까다로운 시나리오에서 주행 성능과 안전성을 향상시키기 위해 추론 시간 추론을 탐구하고 있습니다. 대부분의 기존 연구는 주행 동작을 생성하기 전에 자연어를 사용하여 사고 사슬(CoT) 추론을 표현합니다. 그러나 텍스트는 추론에 가장 효율적인 표현이 아닐 수 있습니다. 본 연구에서는 고려 중인 주행 동작의 가능한 결과를 포착하는 잠재 언어로 CoT를 표현하는 Latent-CoT-Drive(LCDrive)를 제시합니다. 우리의 접근 방식은 CoT 추론과 의사 결정을 모두 동작 정렬 잠재 공간에서 표현하여 통합합니다. 자연어 대신 모델은 (1) 모델의 출력 동작과 동일한 어휘를 사용하는 동작 제안 토큰과 (2) 학습된 잠재 세계 모델에 기반하여 이러한 동작의 미래 결과를 표현하는 세계 모델 토큰을 교차 배치하여 추론합니다. 우리는 장면의 실제 미래 롤아웃을 기반으로 모델의 동작 제안 및 세계 모델 토큰을 감독하여 잠재 CoT를 콜드 스타트합니다. 그런 다음 폐쇄 루프 강화 학습으로 사후 학습하여 추론 능력을 강화합니다. 대규모 엔드투엔드 주행 벤치마크에서 LCDrive는 비추론 및 텍스트 추론 기준선에 비해 더 빠른 추론, 더 나은 궤적 품질, 상호작용 강화 학습으로부터의 더 큰 개선을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.10226v2
+
+## 개요
+기존 자율주행 비전-언어-행동 모델은 주로 자연어를 사용한 추론 시 사고 사슬(chain-of-thought) 방식을 채택하지만, 텍스트가 항상 가장 효율적인 추론 표현은 아닐 수 있습니다. LCDrive는 사고 사슬을 잠재 언어(latent language)로 표현하는 혁신적인 접근을 제시하며, 이 언어는 운전 행동의 가능한 결과를 직접 포착합니다. 모델은 두 가지 유형의 토큰을 번갈아 생성하며 추론을 수행합니다: 출력 행동과 어휘를 공유하는 행동 제안 토큰(action proposal token)과, 학습된 잠재 세계 모델을 기반으로 행동의 미래 결과를 표현하는 세계 모델 토큰(world model token)입니다. 훈련은 두 단계 전략을 사용합니다: 먼저 실제 시나리오의 미래 궤적으로 콜드 스타트(cold-start) 감독을 수행하고, 이후 폐쇄 루프 강화 학습을 통해 추론 능력을 강화합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **잠재 사고 사슬 메커니즘**: 모델은 잠재 공간에서 두 가지 유형의 토큰을 번갈아 생성합니다—행동 제안 토큰(출력 행동과 어휘 공유)과 세계 모델 토큰(학습된 잠재 세계 모델 기반으로 행동의 미래 결과 표현)—추론과 의사 결정의 통합 표현을 구현합니다.
+- **콜드 스타트 훈련**: 시나리오의 실제 미래 궤적(ground-truth future rollouts)을 사용하여 행동 제안 토큰과 세계 모델 토큰의 생성을 감독하며, 모델에 초기 추론 능력을 제공합니다.
+- **폐쇄 루프 강화 학습 후훈련**: 콜드 스타트를 기반으로 상호작용형 강화 학습(interactive reinforcement learning)을 통해 모델의 추론 능력을 추가로 강화하여 폐쇄 루프 환경에서 더 나은 성능을 발휘합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: 대규모 엔드투엔드 주행 벤치마크(large-scale end-to-end driving benchmark)에서 평가를 수행합니다.
+- **성능 비교**: 비추론 기준선(non-reasoning baselines) 및 텍스트 추론 기준선(text-reasoning baselines)과 비교하여 LCDrive는 다음을 달성합니다:
+  - 더 빠른 추론 속도(faster inference)
+  - 더 나은 궤적 품질(better trajectory quality)
+  - 상호작용형 강화 학습에서 얻은 더 큰 성능 향상(larger improvements from interactive reinforcement learning)
+
+### 결론
+LCDrive는 사고 사슬 추론을 자연어 공간에서 행동 정렬 잠재 공간으로 이동시킴으로써 텍스트 추론의 비효율성 문제를 효과적으로 해결합니다. 이중 토큰 교대 생성 메커니즘과 두 단계 훈련 전략은 엔드투엔드 주행에서의 추론 시 의사 결정에 새로운 패러다임을 제공합니다.

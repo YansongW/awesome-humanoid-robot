@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09548v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09548v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (651 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,26 @@ sources:
 ## Overview
 Aerial manipulation with multirotor platforms enables physical interaction in complex environments, but rotor-induced airflow remains a critical limitation for tasks involving airflow-sensitive targets or surroundings. This paper presents an optimization-based design framework for modular aerial manipulators that jointly considers task wrench feasibility, end-effector placement, and airflow exposure constraints. We first introduce a novel categorization of target-side airflow tolerance and formulate the corresponding exposure requirements as geometric constraints. To efficiently model rotor-induced airflow, we introduce a compact cone-sphere envelope that approximates the spreading structure of a quadrotor's airflow while preserving computational tractability for optimization. Building on this formulation, we propose a reconfiguration optimization that adapts a modular aerial manipulator to diverse task wrench requirements while enforcing both target-side airflow exposure and intra-platform airflow interference constraints. Unlike prior designs that assume a fixed end-effector location, the proposed framework optimizes the end-effector placement together with the platform configuration. Scalability experiments and ablation studies validate the effectiveness of the proposed framework.
 
-## 개요
-멀티로터 플랫폼을 이용한 공중 조작은 복잡한 환경에서 물리적 상호작용을 가능하게 하지만, 로터 유발 기류는 기류에 민감한 대상이나 주변 환경을 포함하는 작업에서 여전히 중요한 제약 요소로 남아 있습니다. 본 논문은 작업 렌치 실현 가능성, 엔드 이펙터 배치 및 기류 노출 제약 조건을 공동으로 고려하는 모듈식 공중 조작기를 위한 최적화 기반 설계 프레임워크를 제시합니다. 먼저 대상 측 기류 허용 오차에 대한 새로운 분류를 도입하고, 해당 노출 요구 사항을 기하학적 제약 조건으로 공식화합니다. 로터 유발 기류를 효율적으로 모델링하기 위해, 최적화를 위한 계산적 처리 가능성을 유지하면서 쿼드로터 기류의 확산 구조를 근사하는 간결한 원뿔-구체 포락선을 도입합니다. 이 공식화를 바탕으로, 대상 측 기류 노출 및 플랫폼 내 기류 간섭 제약 조건을 모두 적용하면서 모듈식 공중 조작기를 다양한 작업 렌치 요구 사항에 적응시키는 재구성 최적화를 제안합니다. 고정된 엔드 이펙터 위치를 가정하는 기존 설계와 달리, 제안된 프레임워크는 플랫폼 구성과 함께 엔드 이펙터 배치를 최적화합니다. 확장성 실험 및 절제 연구를 통해 제안된 프레임워크의 효과성을 검증합니다.
-
-## 핵심 내용
-멀티로터 플랫폼을 이용한 공중 조작은 복잡한 환경에서 물리적 상호작용을 가능하게 하지만, 로터 유발 기류는 기류에 민감한 대상이나 주변 환경을 포함하는 작업에서 여전히 중요한 제약 요소로 남아 있습니다. 본 논문은 작업 렌치 실현 가능성, 엔드 이펙터 배치 및 기류 노출 제약 조건을 공동으로 고려하는 모듈식 공중 조작기를 위한 최적화 기반 설계 프레임워크를 제시합니다. 먼저 대상 측 기류 허용 오차에 대한 새로운 분류를 도입하고, 해당 노출 요구 사항을 기하학적 제약 조건으로 공식화합니다. 로터 유발 기류를 효율적으로 모델링하기 위해, 최적화를 위한 계산적 처리 가능성을 유지하면서 쿼드로터 기류의 확산 구조를 근사하는 간결한 원뿔-구체 포락선을 도입합니다. 이 공식화를 바탕으로, 대상 측 기류 노출 및 플랫폼 내 기류 간섭 제약 조건을 모두 적용하면서 모듈식 공중 조작기를 다양한 작업 렌치 요구 사항에 적응시키는 재구성 최적화를 제안합니다. 고정된 엔드 이펙터 위치를 가정하는 기존 설계와 달리, 제안된 프레임워크는 플랫폼 구성과 함께 엔드 이펙터 배치를 최적화합니다. 확장성 실험 및 절제 연구를 통해 제안된 프레임워크의 효과성을 검증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09548v1
+
+## 개요
+본 연구는 다중 회전익 플랫폼의 공중 조작에서 로터 기류가 민감한 대상이나 환경에 미치는 제한 문제를 해결하기 위해, 최적화 기반의 모듈형 공중 로봇 팔 설계 프레임워크를 제안한다. 이 프레임워크는 대상 측 기류 내성을 기하학적 제약 조건으로 분류하는 혁신적인 접근을 도입하며, 컴팩트한 원뿔-구체 포락 모델(cone-sphere envelope)을 사용하여 쿼드로터 기류 확산 구조를 효율적으로 근사하면서도 최적화 계산의 처리 가능성을 유지한다. 이를 바탕으로 재구성 최적화를 통해 작업 힘-모멘트 요구 조건, 대상 측 기류 노출 및 플랫폼 내 기류 간섭 제약을 동시에 충족시키며, 처음으로 엔드 이펙터 위치와 플랫폼 구성을 공동 최적화한다. 확장성 실험과 절제 연구는 이 프레임워크의 유효성을 검증한다.
+
+## 핵심 내용
+### 방법
+- **기류 내성 분류**: 대상 측 기류 내성을 처음으로 세 가지 유형으로 분류하고, 노출 요구 사항을 기하학적 제약 조건으로 형식화한다.
+- **기류 모델링**: 원뿔-구체 포락 모델(cone-sphere envelope)을 제안하여 쿼드로터 기류의 확산 구조를 컴팩트하게 근사하면서도 최적화 계산의 처리 가능성을 유지한다.
+- **재구성 최적화**: 대상 측 기류 노출 및 플랫폼 내 기류 간섭 제약을 충족시키는 조건에서 엔드 이펙터 위치와 플랫폼 구성을 동시에 최적화하여 다양한 작업 힘-모멘트 요구 조건에 적응한다.
+
+### 실험 설정
+- **확장성 실험**: 다양한 작업 규모에서 프레임워크의 적용 가능성을 검증한다.
+- **절제 연구**: 고정 엔드 이펙터 위치의 기존 설계와 비교하여 공동 최적화의 이점을 입증한다.
+
+### 주요 결과
+- 프레임워크는 기류 제약을 충족하는 모듈형 공중 로봇 팔 구성을 성공적으로 생성한다.
+- 엔드 이펙터 위치와 플랫폼 구성을 공동 최적화함으로써 작업 힘-모멘트 실현 가능성을 크게 향상시킨다.
+- 원뿔-구체 포락 모델은 계산 효율성을 유지하면서도 기류 영향을 정확히 반영한다.
+
+### 결론
+본 프레임워크는 기류 민감 환경에서의 공중 조작을 위한 체계적인 설계 방법을 제공하며, 향후 더 많은 모듈형 플랫폼과 동적 작업 시나리오로 확장할 수 있다.

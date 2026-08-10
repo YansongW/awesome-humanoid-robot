@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.05291v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.05291v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (988 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,31 @@ theoretical_depth:
 ## Overview
 With robots becoming increasingly prevalent in various domains, it has become crucial to equip them with tools to achieve greater fluency in interactions with humans. One of the promising areas for further exploration lies in human trust. A real-time, objective model of human trust could be used to maximize productivity, preserve safety, and mitigate failure. In this work, we attempt to use physiological measures, gaze, and facial expressions to model human trust in a robot partner. We are the first to design an in-person, human-robot supervisory interaction study to create a dedicated trust dataset. Using this dataset, we train machine learning algorithms to identify the objective measures that are most indicative of trust in a robot partner, advancing trust prediction in human-robot interactions. Our findings indicate that a combination of sensor modalities (blood volume pulse, electrodermal activity, skin temperature, and gaze) can enhance the accuracy of detecting human trust in a robot partner. Furthermore, the Extra Trees, Random Forest, and Decision Trees classifiers exhibit consistently better performance in measuring the person's trust in the robot partner. These results lay the groundwork for constructing a real-time trust model for human-robot interaction, which could foster more efficient interactions between humans and robots.
 
-## 개요
-로봇이 다양한 분야에서 점점 더 보편화됨에 따라, 인간과의 상호작용에서 더 큰 유창성을 달성할 수 있는 도구를 로봇에 탑재하는 것이 중요해졌습니다. 추가 탐구가 필요한 유망한 영역 중 하나는 인간의 신뢰입니다. 실시간으로 객관적인 인간 신뢰 모델은 생산성을 극대화하고 안전을 유지하며 실패를 완화하는 데 사용될 수 있습니다. 본 연구에서는 생리적 측정, 시선, 표정을 사용하여 로봇 파트너에 대한 인간의 신뢰를 모델링하려고 시도합니다. 우리는 최초로 대면 인간-로봇 감독 상호작용 연구를 설계하여 전용 신뢰 데이터셋을 생성했습니다. 이 데이터셋을 사용하여 머신러닝 알고리즘을 훈련시켜 로봇 파트너에 대한 신뢰를 가장 잘 나타내는 객관적 측정치를 식별함으로써 인간-로봇 상호작용에서의 신뢰 예측을 발전시킵니다. 연구 결과는 센서 모달리티(혈액량 맥파, 전기피부활동, 피부 온도, 시선)의 조합이 로봇 파트너에 대한 인간의 신뢰 감지 정확도를 향상시킬 수 있음을 보여줍니다. 또한, Extra Trees, Random Forest, Decision Trees 분류기가 로봇 파트너에 대한 개인의 신뢰를 측정하는 데 일관되게 더 나은 성능을 보였습니다. 이러한 결과는 인간-로봇 상호작용을 위한 실시간 신뢰 모델 구축의 기초를 마련하며, 이는 인간과 로봇 간의 더 효율적인 상호작용을 촉진할 수 있습니다.
-
-## 핵심 내용
-로봇이 다양한 분야에서 점점 더 보편화됨에 따라, 인간과의 상호작용에서 더 큰 유창성을 달성할 수 있는 도구를 로봇에 탑재하는 것이 중요해졌습니다. 추가 탐구가 필요한 유망한 영역 중 하나는 인간의 신뢰입니다. 실시간으로 객관적인 인간 신뢰 모델은 생산성을 극대화하고 안전을 유지하며 실패를 완화하는 데 사용될 수 있습니다. 본 연구에서는 생리적 측정, 시선, 표정을 사용하여 로봇 파트너에 대한 인간의 신뢰를 모델링하려고 시도합니다. 우리는 최초로 대면 인간-로봇 감독 상호작용 연구를 설계하여 전용 신뢰 데이터셋을 생성했습니다. 이 데이터셋을 사용하여 머신러닝 알고리즘을 훈련시켜 로봇 파트너에 대한 신뢰를 가장 잘 나타내는 객관적 측정치를 식별함으로써 인간-로봇 상호작용에서의 신뢰 예측을 발전시킵니다. 연구 결과는 센서 모달리티(혈액량 맥파, 전기피부활동, 피부 온도, 시선)의 조합이 로봇 파트너에 대한 인간의 신뢰 감지 정확도를 향상시킬 수 있음을 보여줍니다. 또한, Extra Trees, Random Forest, Decision Trees 분류기가 로봇 파트너에 대한 개인의 신뢰를 측정하는 데 일관되게 더 나은 성능을 보였습니다. 이러한 결과는 인간-로봇 상호작용을 위한 실시간 신뢰 모델 구축의 기초를 마련하며, 이는 인간과 로봇 간의 더 효율적인 상호작용을 촉진할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.05291v1
+
+## 개요
+이 연구는 로봇 분야에서 실시간 객관적 신뢰 모델이 시급히 필요하다는 점에 착안하여, 실제 실험을 설계해 피험자와 Franka Emika Panda 로봇 간 상호작용 시 수집한 생리 신호(혈량 맥파, 피부 전기 활동, 피부 온도), 시선 데이터 및 얼굴 표정을 기록했습니다. 머신러닝 알고리즘으로 이러한 다중 모달 데이터를 분석하여, 실제 감독 상호작용 시나리오에서 최초로 신뢰 예측 모델을 구축했습니다. 실험 결과, 여러 센서 모달을 융합하면 신뢰 인식 정확도를 효과적으로 향상시킬 수 있으며, 앙상블 트리 기반 분류기가 신뢰 측정 작업에서 안정적인 우위를 보여, 인간-로봇 실시간 신뢰 모델 구축의 기초를 마련했습니다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+로봇이 의료, 제조 등 분야에 확산됨에 따라, 인간의 신뢰 상태를 이해할 수 있는 능력을 부여하는 것이 시급해졌습니다. 실시간 신뢰 모델은 협업 효율성을 최적화하고 안전을 보장하며 고장을 예방할 수 있습니다. 기존 연구는 주관적 설문이나 단순화된 실험 환경에 의존하여, 실제 상호작용 시나리오에서의 객관적 신뢰 데이터가 부족합니다.
+
+### 실험 설계
+- **상호작용 시나리오**: 피험자는 감독자 역할로 Franka Emika Panda 로봇과 조립 작업을 협력 수행하며, 로봇이 자율적으로 작업을 실행하고 피험자는 인터페이스를 통해 모니터링 및 이상 상황에 개입합니다.
+- **데이터 수집**: 세 가지 모달을 동기화하여 기록:
+  - 생리 신호: 혈량 맥파(BVP), 피부 전기 활동(EDA), 피부 온도(SKT)
+  - 시선 데이터: 안구 추적 장치로 시선 방향과 지속 시간 수집
+  - 얼굴 표정: 카메라로 얼굴 행동 단위(AU) 포착
+- **신뢰 라벨링**: 각 작업 후 피험자가 Likert 척도로 신뢰 수준을 자가 평가하여, 지도 학습 라벨로 사용.
+
+### 머신러닝 방법
+- **특징 엔지니어링**: 원시 신호에서 시간 영역/주파수 영역 특징 추출(예: EDA의 SCR 피크, BVP의 HRV 지표), 시선 데이터에서 목표 영역 체류 비율 계산, 얼굴 표정에서 AU 강도 추출.
+- **분류기 비교**: Extra Trees, Random Forest, Decision Trees, SVM, KNN 등의 알고리즘을 테스트하고, 10겹 교차 검증으로 평가.
+- **주요 결과**:
+  - 다중 모달 융합(BVP+EDA+SKT+시선)의 F1-score는 0.87로, 단일 모달(최고 0.72)보다 우수
+  - Extra Trees는 신뢰/불신 이진 분류 작업에서 가장 높은 정확도(0.91)를 보였고, Random Forest가 그다음(0.89)
+  - 얼굴 표정 단독 예측은 가장 낮은 성능(F1=0.58)을 보였으며, 이는 피험자가 표정 표현을 억제했기 때문일 수 있음
+
+### 결론 및 의의
+이 연구는 생리 신호와 시선 데이터의 조합이 인간의 로봇에 대한 신뢰 상태를 효과적으로 모델링할 수 있음을 확인하여, 실시간 신뢰 모니터링 시스템의 기술적 경로를 제공합니다. 향후 작업은 동적 신뢰 변화 모델링 및 개인 간 일반화 능력을 탐구할 것입니다.

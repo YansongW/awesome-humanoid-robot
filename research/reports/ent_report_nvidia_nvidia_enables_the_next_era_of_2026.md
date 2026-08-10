@@ -37,7 +37,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (847 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -72,9 +73,6 @@ NVIDIA 在多个基准测试中验证了这些技能的有效性：
 ### 结论
 NVIDIA 的新技能为物理 AI 研究提供了系统化工具链，降低了从数据采集到部署的复杂度。通过开放这些能力，NVIDIA 旨在推动行业从“模型竞赛”转向“工作流优化”，加速物理 AI 在现实世界的落地。
 
-## Overview
-At CVPR, NVIDIA is unveiling new physical AI agent skills that help researchers and developers speed the development of autonomous vehicles, robots and vision AI systems. The core challenge in physical AI research isn’t simply developing stronger models. It’s building a full workflow around them — reconstructing real-world scenes, generating edge-case scenarios, training policies, evaluating [&#8230;]
-
 ## 参考
 - https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/
 
@@ -102,3 +100,28 @@ NVIDIA는 여러 벤치마크 테스트에서 이러한 기술의 효과를 검�
 
 ### 결론
 NVIDIA의 새로운 기술은 물리적 AI 연구를 위한 체계적인 도구 체인을 제공하여 데이터 수집부터 배포까지의 복잡성을 줄입니다. 이러한 기능을 개방함으로써 NVIDIA는 업계가 '모델 경쟁'에서 '워크플로우 최적화'로 전환하고, 물리적 AI의 실제 세계 적용을 가속화하는 것을 목표로 합니다.
+
+## Overview
+NVIDIA announced at the CVPR conference the launch of multiple physical AI agent skills, designed for researchers and developers to accelerate the development of autonomous driving, robotics, and visual AI systems. NVIDIA noted that the core challenge in physical AI research is not merely enhancing model strength, but building a complete workflow around the model, covering key stages such as reconstruction of real-world scenes, generation of edge cases, policy training, and system evaluation.
+
+## Content
+### Core Challenges and Solutions
+NVIDIA emphasized that the bottleneck in physical AI research lies in the lack of end-to-end workflow support. To address this, the newly released agent skills focus on the following key areas:
+- **Scene Reconstruction**: High-fidelity reconstruction of 3D scenes from real-world data, providing a foundation for simulation.
+- **Edge Case Generation**: Automatic generation of rare or dangerous scenarios (e.g., sudden obstacles, extreme weather) to test system robustness.
+- **Policy Training**: Provision of reinforcement learning and imitation learning frameworks to support efficient training of control policies in simulated environments.
+- **Evaluation and Validation**: Integration of automated evaluation tools to quantify model performance across diverse scenarios.
+
+### Technical Highlights
+- **Modular Design**: Each skill can be used independently or combined to suit different stages of the R&D process.
+- **Simulation-to-Reality Transfer**: Techniques such as domain randomization narrow the gap between simulation and real-world environments.
+- **Open Ecosystem**: The skills are based on NVIDIA Isaac Sim and Omniverse platforms, supporting integration with mainstream frameworks (e.g., PyTorch, TensorFlow).
+
+### Experiments and Results
+NVIDIA validated the effectiveness of these skills across multiple benchmarks:
+- In autonomous driving scenarios, the edge case generation skill increased coverage of rare accident scenarios by 40%.
+- In robotic grasping tasks, the policy training skill improved success rates from 72% to 89%.
+- In visual AI systems, object detection accuracy in reconstructed scenes improved by 15% compared to traditional methods.
+
+### Conclusion
+NVIDIA's new skills provide a systematic toolchain for physical AI research, reducing the complexity from data collection to deployment. By opening up these capabilities, NVIDIA aims to drive the industry from a "model race" toward "workflow optimization," accelerating the real-world adoption of physical AI.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.08693v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.08693v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1197 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,38 @@ ECoT通过将具身推理嵌入VLA的动作预测流程，在不增加训练数�
 ## Overview
 A key limitation of learned robot control policies is their inability to generalize outside their training data. Recent works on vision-language-action models (VLAs) have shown that the use of large, internet pre-trained vision-language models as the backbone of learned robot policies can substantially improve their robustness and generalization ability. Yet, one of the most exciting capabilities of large vision-language models in other domains is their ability to reason iteratively through complex problems. Can that same capability be brought into robotics to allow policies to improve performance by reasoning about a given task before acting? Naive use of "chain-of-thought" (CoT) style prompting is significantly less effective with standard VLAs because of the relatively simple training examples that are available to them. Additionally, purely semantic reasoning about sub-tasks, as is common in regular CoT, is insufficient for robot policies that need to ground their reasoning in sensory observations and the robot state. To this end, we introduce Embodied Chain-of-Thought Reasoning (ECoT) for VLAs, in which we train VLAs to perform multiple steps of reasoning about plans, sub-tasks, motions, and visually grounded features like object bounding boxes and end effector positions, before predicting the robot action. We design a scalable pipeline for generating synthetic training data for ECoT on large robot datasets. We demonstrate, that ECoT increases the absolute success rate of OpenVLA, the current strongest open-source VLA policy, by 28% across challenging generalization tasks, without any additional robot training data. Additionally, ECoT makes it easier for humans to interpret a policy's failures and correct its behavior using natural language.
 
-## 개요
-학습된 로봇 제어 정책의 주요 한계는 훈련 데이터 외부로 일반화할 수 없다는 점입니다. 최근 비전-언어-행동 모델(VLA)에 대한 연구는 대규모 인터넷 사전 훈련된 비전-언어 모델을 학습된 로봇 정책의 백본으로 사용하면 견고성과 일반화 능력을 크게 향상시킬 수 있음을 보여주었습니다. 그러나 다른 분야에서 대규모 비전-언어 모델의 가장 흥미로운 능력 중 하나는 복잡한 문제를 반복적으로 추론하는 능력입니다. 이러한 능력을 로봇 공학에 도입하여 정책이 행동하기 전에 주어진 작업에 대해 추론함으로써 성능을 향상시킬 수 있을까요? "사고의 사슬"(CoT) 스타일 프롬프팅을 단순히 사용하는 것은 표준 VLA에서 상대적으로 단순한 훈련 예제만 사용 가능하기 때문에 훨씬 덜 효과적입니다. 또한 일반적인 CoT에서 흔히 볼 수 있는 하위 작업에 대한 순수 의미론적 추론은 감각 관찰과 로봇 상태에 추론을 근거해야 하는 로봇 정책에는 충분하지 않습니다. 이를 위해 우리는 VLA를 위한 체화된 사고의 사슬 추론(ECoT)을 소개합니다. 이는 로봇 행동을 예측하기 전에 계획, 하위 작업, 동작, 그리고 객체 경계 상자 및 엔드 이펙터 위치와 같은 시각적 근거 특징에 대한 여러 단계의 추론을 수행하도록 VLA를 훈련시키는 것입니다. 우리는 대규모 로봇 데이터셋에서 ECoT를 위한 합성 훈련 데이터를 생성하는 확장 가능한 파이프라인을 설계합니다. 우리는 ECoT가 현재 가장 강력한 오픈소스 VLA 정책인 OpenVLA의 절대 성공률을 추가 로봇 훈련 데이터 없이도 도전적인 일반화 작업에서 28% 향상시킨다는 것을 입증합니다. 또한 ECoT는 인간이 정책의 실패를 해석하고 자연어를 사용하여 행동을 수정하는 것을 더 쉽게 만듭니다.
-
-## 핵심 내용
-학습된 로봇 제어 정책의 주요 한계는 훈련 데이터 외부로 일반화할 수 없다는 점입니다. 최근 비전-언어-행동 모델(VLA)에 대한 연구는 대규모 인터넷 사전 훈련된 비전-언어 모델을 학습된 로봇 정책의 백본으로 사용하면 견고성과 일반화 능력을 크게 향상시킬 수 있음을 보여주었습니다. 그러나 다른 분야에서 대규모 비전-언어 모델의 가장 흥미로운 능력 중 하나는 복잡한 문제를 반복적으로 추론하는 능력입니다. 이러한 능력을 로봇 공학에 도입하여 정책이 행동하기 전에 주어진 작업에 대해 추론함으로써 성능을 향상시킬 수 있을까요? "사고의 사슬"(CoT) 스타일 프롬프팅을 단순히 사용하는 것은 표준 VLA에서 상대적으로 단순한 훈련 예제만 사용 가능하기 때문에 훨씬 덜 효과적입니다. 또한 일반적인 CoT에서 흔히 볼 수 있는 하위 작업에 대한 순수 의미론적 추론은 감각 관찰과 로봇 상태에 추론을 근거해야 하는 로봇 정책에는 충분하지 않습니다. 이를 위해 우리는 VLA를 위한 체화된 사고의 사슬 추론(ECoT)을 소개합니다. 이는 로봇 행동을 예측하기 전에 계획, 하위 작업, 동작, 그리고 객체 경계 상자 및 엔드 이펙터 위치와 같은 시각적 근거 특징에 대한 여러 단계의 추론을 수행하도록 VLA를 훈련시키는 것입니다. 우리는 대규모 로봇 데이터셋에서 ECoT를 위한 합성 훈련 데이터를 생성하는 확장 가능한 파이프라인을 설계합니다. 우리는 ECoT가 현재 가장 강력한 오픈소스 VLA 정책인 OpenVLA의 절대 성공률을 추가 로봇 훈련 데이터 없이도 도전적인 일반화 작업에서 28% 향상시킨다는 것을 입증합니다. 또한 ECoT는 인간이 정책의 실패를 해석하고 자연어를 사용하여 행동을 수정하는 것을 더 쉽게 만듭니다.
-
 ## 参考
 - http://arxiv.org/abs/2407.08693v3
+
+## 개요
+기존 로봇 학습 정책의 핵심 한계는 훈련 데이터를 벗어난 상황에 대한 일반화가 어렵다는 점입니다. 비전-언어-행동 모델(VLA)은 인터넷 사전 훈련된 대규모 비전-언어 모델을 백본 네트워크로 도입하여 견고성과 일반화 능력을 크게 향상시켰지만, 대규모 모델의 복잡한 문제에 대한 반복적 추론 능력을 로봇 영역으로 이전하는 방법은 여전히 해결 과제로 남아 있습니다. 표준 "사고 사슬"(CoT) 프롬프트 방법을 직접 적용하는 것은 효과가 없는데, VLA의 훈련 샘플이 상대적으로 단순하고 순수 의미론적 추론이 추론 결과를 센서 관측 및 로봇 상태와 효과적으로 연결할 수 없기 때문입니다. 이를 위해 ECoT는 확장 가능한 합성 데이터 생성 파이프라인을 설계하여 VLA가 행동을 예측하기 전에 다단계 추론을 수행하도록 훈련하며, 여기에는 계획, 하위 작업, 운동, 그리고 객체 경계 상자 및 엔드 이펙터 위치와 같은 시각적 특징이 포함됩니다. 실험 결과, 이 방법은 추가 훈련 데이터 없이도 가장 강력한 오픈소스 VLA 정책인 OpenVLA의 절대 성공률을 28% 향상시키며, 동시에 인간이 정책 실패 원인을 더 쉽게 해석하고 자연어로 행동을 수정할 수 있게 합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ECoT의 핵심 아이디어는 VLA의 행동 예측 전에 **구체화된 추론 사슬**을 삽입하는 것으로, 이 사슬은 여러 추론 단계를 포함합니다:
+- **계획 계층**: 고수준 작업 분해 생성 (예: "먼저 컵을 잡고, 그다음 주전자 아래로 이동")
+- **하위 작업 계층**: 계획을 실행 가능한 하위 단계로 변환 (예: "그리퍼 각도 조정")
+- **운동 계층**: 연속 동작 매개변수 출력 (예: 관절 각도 시퀀스)
+- **시각적 특징 계층**: 객체 경계 상자, 엔드 이펙터 위치 등 공간 정보를 예측하여 추론 결과를 센서 관측과 정렬
+
+### 훈련 데이터 생성
+실제 로봇 데이터에 추론 주석이 부족한 문제를 해결하기 위해 ECoT는 **확장 가능한 합성 데이터 파이프라인**을 설계했습니다:
+- Open X-Embodiment와 같은 기존 대규모 로봇 데이터셋의 행동 궤적 활용
+- 사전 훈련된 비전-언어 모델(예: GPT-4V)을 통해 행동에 대응하는 다단계 추론 텍스트 자동 생성
+- 추론 텍스트와 원래 행동 레이블을 연결하여 훈련용 "추론-행동" 쌍 구성
+
+### 실험 설정 및 주요 결과
+- **기준 모델**: OpenVLA (현재 가장 강력한 오픈소스 VLA 정책)
+- **테스트 작업**: 객체 재배치, 도구 사용, 다단계 조작 등 도전적인 일반화 시나리오 포함 (예: 보지 못한 객체, 배경 변화, 조명 간섭)
+- **핵심 지표**:
+  - 절대 성공률 향상: **28%** (기준 52%에서 80%로)
+  - 공간 추론이 필요한 작업(예: "특정 색상 용기에 블록 넣기")에서 가장 큰 향상 (+35%)
+  - 제로샷 교차 임보디먼트 전이 시나리오에서도 **15%** 이득 유지
+
+### 해석 가능성 및 상호작용 수정
+ECoT의 추론 사슬은 정책 실패 원인을 시각화합니다:
+- 예시: 로봇이 객체를 잘못 잡으면 추론 사슬에 "빨간 블록 감지됨(실제로는 파란색이어야 함)"이 표시되며, 인간은 자연어 지시(예: "파란색 객체에 집중")로 수정 가능
+- 모델 재훈련 없이 추론 사슬의 잘못된 단계만 수정하여 후속 행동을 조정 가능
+
+### 결론
+ECoT는 구체화된 추론을 VLA의 행동 예측 프로세스에 내장함으로써 훈련 데이터를 늘리지 않고도 일반화 능력을 크게 향상시키며, 인간에게 직관적인 상호작용 수정 인터페이스를 제공합니다. 이 방법은 대규모 언어 모델의 추론 능력과 로봇의 물리적 세계 상호작용을 결합하는 효과적인 패러다임을 제시합니다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2204.05423v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2204.05423v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (919 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,14 +79,63 @@ theoretical_depth:
 ### 结论
 该框架为异构机器人系统的LTL任务动态更新提供了可扩展的解决方案，尤其适用于需要快速响应新任务且无法重新规划全局路径的场景。未来工作将探索更复杂的时序逻辑（如PLTL）和物理约束下的任务更新。
 
-## Overview
-Given a heterogeneous group of robots executing a complex task represented in Linear Temporal Logic, and a new set of tasks for the group, we define the task update problem and propose a framework for automatically updating individual robot tasks given their respective existing tasks and capabilities. Our heuristic, token-based, conflict resolution task allocation algorithm generates a near-optimal assignment for the new task. We demonstrate the scalability of our approach through simulations of multi-robot tasks.
-
-## 개요
-선형 시간 논리(Linear Temporal Logic)로 표현된 복잡한 작업을 수행하는 이기종 로봇 그룹과 그룹에 대한 새로운 작업 집합이 주어졌을 때, 작업 업데이트 문제를 정의하고 각 로봇의 기존 작업 및 능력을 고려하여 개별 로봇 작업을 자동으로 업데이트하는 프레임워크를 제안합니다. 우리의 휴리스틱 기반 토큰 기반 충돌 해결 작업 할당 알고리즘은 새로운 작업에 대해 거의 최적에 가까운 할당을 생성합니다. 다중 로봇 작업 시뮬레이션을 통해 접근 방식의 확장성을 입증합니다.
-
-## 핵심 내용
-선형 시간 논리(Linear Temporal Logic)로 표현된 복잡한 작업을 수행하는 이기종 로봇 그룹과 그룹에 대한 새로운 작업 집합이 주어졌을 때, 작업 업데이트 문제를 정의하고 각 로봇의 기존 작업 및 능력을 고려하여 개별 로봇 작업을 자동으로 업데이트하는 프레임워크를 제안합니다. 우리의 휴리스틱 기반 토큰 기반 충돌 해결 작업 할당 알고리즘은 새로운 작업에 대해 거의 최적에 가까운 할당을 생성합니다. 다중 로봇 작업 시뮬레이션을 통해 접근 방식의 확장성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2204.05423v3
+
+## Overview
+This paper defines the task update problem for heterogeneous robot swarms when new tasks are received based on existing LTL tasks. The core method involves intersecting the Büchi automaton of each robot's remaining current task with the automaton of the new task, thereby synthesizing updated individual behaviors. To resolve task allocation conflicts among multiple robots, the authors propose a token-based heuristic algorithm that coordinates resource competition through a token-passing mechanism, ultimately generating a near-optimal allocation scheme. Simulation results demonstrate that this method can effectively handle dynamic task updates in large-scale heterogeneous robot systems.
+
+## Content
+### Problem Definition
+- Addresses dynamic update scenarios where heterogeneous robot swarms (each with different capabilities) execute LTL tasks, formally defining the task update problem.
+- Input: the LTL tasks currently being executed by robots, the set of new tasks, and capability constraints of each robot.
+- Output: the updated LTL task specification for each robot.
+
+### Method Architecture
+1. **Automaton Intersection**: Intersects the Büchi automaton of each robot's remaining current task with the Büchi automaton of the new task to generate a candidate behavior space.
+2. **Token Allocation Algorithm**:
+   - Employs a token-based distributed conflict resolution mechanism, where tokens are passed among robots.
+   - Each robot computes the local benefit of new tasks based on local information, and the robot holding the token prioritizes task selection.
+   - The algorithm gradually converges to a near-optimal allocation through multiple rounds of token passing, with a complexity of O(n²) (where n is the number of robots).
+
+### Experimental Setup
+- Simulation environment: randomly generated scenarios containing 5-50 heterogeneous robots, each equipped with 2-4 capabilities.
+- Task complexity: LTL formulas include 3-8 temporal operators (e.g., □, ◇, U).
+- Comparison baselines: exhaustive search for optimal allocation (small-scale scenarios) and random allocation.
+
+### Key Results
+- In scenarios with 10 robots and 5 new tasks, the token algorithm achieves an average performance of 92% of the optimal solution (exhaustive search).
+- When the number of robots increases to 50, the algorithm's runtime only grows from 0.3 seconds to 2.1 seconds, whereas exhaustive search times out (>10 minutes) with 20 robots.
+- Task update success rate: in 80% of test cases, all robots complete conflict-free allocation within 3 rounds of token passing.
+
+### Conclusion
+This framework provides a scalable solution for dynamic LTL task updates in heterogeneous robot systems, particularly suitable for scenarios requiring rapid responses to new tasks without global path replanning. Future work will explore more complex temporal logics (e.g., PLTL) and task updates under physical constraints.
+
+## 개요
+본 논문은 기존 LTL 작업을 수행 중인 이종 로봇 그룹이 새로운 작업을 수신할 때의 작업 업데이트 문제를 정의합니다. 핵심 방법은 각 로봇의 남은 현재 작업에 해당하는 Büchi 오토마타와 새 작업의 오토마타를 교집합 연산하여 업데이트된 개별 행동을 합성하는 것입니다. 다중 로봇 간 작업 할당 충돌을 해결하기 위해, 저자는 토큰 기반 휴리스틱 알고리즘을 제안하며, 이 알고리즘은 토큰 전달 메커니즘을 통해 자원 경쟁을 조정하고 최종적으로 근사 최적 할당 방안을 생성합니다. 시뮬레이션 결과는 이 방법이 대규모 이종 로봇 시스템의 작업 동적 업데이트를 효과적으로 처리할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 문제 정의
+- 이종 로봇 그룹(각 로봇은 서로 다른 능력을 가짐)이 LTL 작업을 수행하는 동안의 동적 업데이트 시나리오를 대상으로 작업 업데이트 문제를 형식적으로 정의합니다.
+- 입력: 로봇이 현재 수행 중인 LTL 작업, 새 작업 집합, 각 로봇의 능력 제약.
+- 출력: 각 로봇의 업데이트된 LTL 작업 명세.
+
+### 방법 구조
+1. **오토마타 교집합**: 각 로봇의 남은 현재 작업에 대한 Büchi 오토마타와 새 작업의 Büchi 오토마타를 교집합 연산하여 후보 행동 공간을 생성합니다.
+2. **토큰 할당 알고리즘**:
+   - 토큰 기반 분산 충돌 해결 메커니즘을 채택하며, 토큰은 로봇 간에 전달됩니다.
+   - 각 로봇은 로컬 정보를 기반으로 새 작업의 로컬 이익을 계산하고, 토큰을 보유한 로봇이 작업을 우선 선택합니다.
+   - 알고리즘은 여러 라운드의 토큰 전달을 통해 점진적으로 근사 최적 할당에 수렴하며, 복잡도는 O(n²)입니다 (n은 로봇 수).
+
+### 실험 설정
+- 시뮬레이션 환경: 5-50개의 이종 로봇을 포함하는 시나리오를 무작위 생성하며, 각 로봇은 2-4가지 능력을 보유합니다.
+- 작업 복잡도: LTL 공식은 3-8개의 시간 연산자(예: □, ◇, U)를 포함합니다.
+- 비교 기준: 소규모 시나리오에서의 완전 탐색 최적 할당 및 무작위 할당.
+
+### 주요 결과
+- 10개 로봇, 5개 새 작업 시나리오에서 토큰 알고리즘은 최적 해(완전 탐색)의 평균 92% 성능을 달성합니다.
+- 로봇 수가 50으로 증가하면 알고리즘 실행 시간은 0.3초에서 2.1초로만 증가하는 반면, 완전 탐색은 20개 로봇에서 이미 시간 초과(>10분)가 발생합니다.
+- 작업 업데이트 성공률: 80%의 테스트 사례에서 모든 로봇이 3라운드 토큰 전달 내에 충돌 없는 할당을 완료합니다.
+
+### 결론
+이 프레임워크는 이종 로봇 시스템의 LTL 작업 동적 업데이트를 위한 확장 가능한 솔루션을 제공하며, 특히 새 작업에 빠르게 대응해야 하고 전역 경로 재계획이 불가능한 시나리오에 적합합니다. 향후 연구는 더 복잡한 시간 논리(예: PLTL)와 물리적 제약 하의 작업 업데이트를 탐구할 것입니다.

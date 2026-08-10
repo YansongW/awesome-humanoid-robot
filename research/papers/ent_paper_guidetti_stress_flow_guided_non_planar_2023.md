@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.04999v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.04999v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (608 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,25 @@ theoretical_depth:
 ## Overview
 When manufacturing parts using material extrusion additive manufacturing and anisotropic polymers, the mechanical properties of a manufactured component are strongly dependent on the print trajectory orientation. We conduct non-planar slicing and optimize the print trajectories to maximize the alignment between the material deposition direction and the stress flow induced by a predefined load case. The trajectory optimization framework considers manufacturability constraints in the form of uniform layer height and line spacing. We demonstrate the method by manufacturing a load bearing mechanical bracket using a 5-axis 3D printer and a liquid crystal polymer material. The failure strength and stiffness of the optimized bracket are improved by a factor of 44 and 6 respectively when compared with conventional printing.
 
-## 개요
-재료 압출 적층 제조와 이방성 폴리머를 사용하여 부품을 제조할 때, 제조된 부품의 기계적 특성은 프린트 경로 방향에 크게 의존합니다. 우리는 비평면 슬라이싱을 수행하고 프린트 경로를 최적화하여 재료 증착 방향과 사전 정의된 하중 조건에 의해 유도된 응력 흐름 간의 정렬을 최대화합니다. 경로 최적화 프레임워크는 균일한 층 높이와 선 간격 형태의 제조 가능성 제약 조건을 고려합니다. 우리는 5축 3D 프린터와 액정 폴리머 재료를 사용하여 하중 지지 기계식 브래킷을 제조함으로써 이 방법을 입증합니다. 최적화된 브래킷의 파괴 강도와 강성은 기존 프린팅 방식과 비교하여 각각 44배와 6배 향상되었습니다.
-
-## 핵심 내용
-재료 압출 적층 제조와 이방성 폴리머를 사용하여 부품을 제조할 때, 제조된 부품의 기계적 특성은 프린트 경로 방향에 크게 의존합니다. 우리는 비평면 슬라이싱을 수행하고 프린트 경로를 최적화하여 재료 증착 방향과 사전 정의된 하중 조건에 의해 유도된 응력 흐름 간의 정렬을 최대화합니다. 경로 최적화 프레임워크는 균일한 층 높이와 선 간격 형태의 제조 가능성 제약 조건을 고려합니다. 우리는 5축 3D 프린터와 액정 폴리머 재료를 사용하여 하중 지지 기계식 브래킷을 제조함으로써 이 방법을 입증합니다. 최적화된 브래킷의 파괴 강도와 강성은 기존 프린팅 방식과 비교하여 각각 44배와 6배 향상되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2301.04999v3
+
+## 개요
+재료 압출 적층 제조에서 이방성 폴리머의 기계적 특성은 프린팅 경로 방향에 크게 의존합니다. 본 연구는 비평면 슬라이싱 기술을 통해 프린팅 경로를 최적화하여 재료 증착 방향과 사전 설정 하중 하의 응력 흐름 간 정렬도를 최대화합니다. 경로 최적화 프레임워크는 균일한 층 높이와 선 간격과 같은 제조 가능성 제약 조건을 고려합니다. 연구팀은 5축 3D 프린터와 액정 폴리머 재료를 사용하여 하중 지지 기계적 브래킷을 제작했으며, 기존 프린팅 방식과 비교하여 최적화된 브래킷의 파괴 강도가 44배, 강성이 6배 향상되었습니다.
+
+## 핵심 내용
+### 방법
+- 비평면 슬라이싱 기술을 채택하여 프린팅 경로를 주응력 흐름 방향과 정렬시켜 재료 증착 방향과 응력 흐름 간 정렬도를 최대화합니다.
+- 경로 최적화 프레임워크는 제조 가능성 제약 조건을 포함하여 균일한 층 높이와 선 간격을 보장하고 프린팅 과정에서의 기하학적 충돌을 방지합니다.
+
+### 실험 설정
+- 5축 3D 프린터를 사용하여 제작했으며, 재료는 액정 폴리머입니다.
+- 제작 대상은 하중 지지 기계적 브래킷이며, 사전 설정 하중 조건이 응력 흐름을 정의하는 데 사용됩니다.
+
+### 주요 결과
+- 기존 프린팅 방식과 비교하여 최적화된 브래킷의 파괴 강도가 44배 향상되었습니다.
+- 강성이 6배 향상되었습니다.
+- 실험을 통해 비평면 경로 최적화가 이방성 폴리머 부품의 기계적 특성 향상에 현저한 효과가 있음을 검증했습니다.
+
+### 결론
+- 본 프레임워크는 적층 제조에서 경로 방향으로 인한 이방성 폴리머의 성능 차이 문제를 효과적으로 해결하며, 고성능 부품 제조를 위한 새로운 경로를 제공합니다.

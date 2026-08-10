@@ -37,7 +37,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (733 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -66,9 +67,6 @@ NVIDIA与斗山集团宣布深化合作，共同推进物理AI、机器人技术
 ### 结论
 此次合作标志着NVIDIA从数据中心向工业物理世界延伸的关键一步，斗山集团则通过AI重构传统制造业价值链。双方预计在2026年前完成首批AI工厂标杆项目，覆盖韩国及北美市场。
 
-## Overview
-NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities in industrial automation, power generation and advanced electronics materials [&#8230;]
-
 ## 参考
 - https://blogs.nvidia.com/blog/nvidia-and-doosan-group-physical-ai/
 
@@ -91,3 +89,23 @@ NVIDIA와 두산그룹이 협력을 강화하여 물리적 AI, 로봇 기술 및
 
 ### 결론
 이번 협력은 NVIDIA가 데이터센터에서 산업 물리 세계로 확장하는 중요한 단계를 의미하며, 두산그룹은 AI를 통해 전통 제조업 가치 사슬을 재구성합니다. 양사는 2026년까지 한국 및 북미 시장을 포괄하는 첫 번째 AI 공장 벤치마크 프로젝트를 완료할 것으로 예상합니다.
+
+## Overview
+NVIDIA and Doosan Group have announced a deepened collaboration to advance new opportunities in physical AI, robotics, and AI factory infrastructure. The partnership spans four business divisions: Doosan Robotics, Doosan Bobcat, Doosan Enerbility, and Doosan Electronic Materials BG. By combining NVIDIA's full-stack accelerated computing platform with Doosan's core capabilities in industrial automation, power generation, and advanced electronic materials, the collaboration aims to accelerate the deployment of smart factories and autonomous systems.
+
+## Content
+### Core Collaboration
+- **Physical AI and Robotics**: Leveraging the NVIDIA Isaac platform and Omniverse to enhance the perception and autonomous decision-making capabilities of Doosan Robotics' collaborative arms.
+- **AI Factory Infrastructure**: Doosan Enerbility will adopt NVIDIA accelerated computing to build digital twins, optimizing power plant operations; Doosan Electronic Materials BG will utilize NVIDIA AI to develop advanced semiconductor materials.
+
+### Technology Integration
+- **Full-Stack Accelerated Computing**: NVIDIA provides GPUs, CUDA, cuDNN, and TensorRT to support AI training and inference across Doosan's business lines.
+- **Simulation and Deployment**: Robot simulation is conducted via NVIDIA Isaac Sim before deployment to actual production lines; Doosan Bobcat's construction equipment will integrate NVIDIA Jetson edge AI modules.
+
+### Key Figures and Milestones
+- **Doosan Robotics**: Plans to launch a new generation of collaborative robots based on NVIDIA Isaac in 2025, targeting a payload range of 5-25 kg.
+- **Doosan Enerbility**: Initiated an AI-driven predictive maintenance pilot for gas turbines in 2024, achieving a fault warning accuracy rate of 92%.
+- **Doosan Electronic Materials**: Utilizes NVIDIA AI to optimize copper-clad laminate (CCL) formulations, reducing R&D cycles by 30%.
+
+### Conclusion
+This collaboration marks a critical step for NVIDIA in extending from data centers into the industrial physical world, while Doosan Group leverages AI to reshape the value chain of traditional manufacturing. Both parties expect to complete the first batch of AI factory benchmark projects by 2026, covering markets in South Korea and North America.

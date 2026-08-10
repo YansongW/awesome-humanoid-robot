@@ -59,8 +59,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03964v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03964v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1057 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -96,11 +97,29 @@ Worldscape-MoE 通过统一异构动作监督，证明了共享世界模型能�
 ## Overview
 World models are rapidly becoming a core infrastructure for embodied intelligence and interactive agents: they provide controllable simulators in which agents can perceive, act, forecast, and acquire scalable experience. Yet current video generation world models are still organized around isolated control interfaces, such as camera trajectories, robot actions, or hand-joint signals. This fragmentation is increasingly a scaling bottleneck. The central challenge is not the absence of controllable generators, but the lack of a unified and extensible learning framework that can absorb heterogeneous action supervision while preserving a shared model of world dynamics. In this work, we introduce Worldscape-MoE, a Mixture-of-Experts world model built on Diffusion Transformers for scalable heterogeneous action control. Our key observation is that different controls specify different interfaces to the same underlying world: although their representations differ, they constrain shared physical regularities, scene dynamics, and interaction semantics. Worldscape-MoE operationalizes this observation through modality-aware control injection, shared and control-specific experts, and a progressive MoE tuning strategy that supports continual extension to new action modalities. Experiments across locomotion, robotic manipulation, and egocentric hand control show that heterogeneous supervision improves rather than interferes with individual control capabilities. Worldscape-MoE achieves strong results on WorldArena, improves locomotion and hand-control metrics, exhibits robust out-of-distribution generalization, and demonstrates scaling behavior as additional control data and experts are integrated.
 
-## 개요
-World models는 체화된 지능과 상호작용 에이전트를 위한 핵심 인프라로 빠르게 자리 잡고 있습니다. 에이전트가 인지, 행동, 예측, 확장 가능한 경험을 습득할 수 있는 제어 가능한 시뮬레이터를 제공합니다. 그러나 현재의 비디오 생성 월드 모델은 여전히 카메라 궤적, 로봇 동작, 손 관절 신호와 같은 고립된 제어 인터페이스를 중심으로 구성되어 있습니다. 이러한 단편화는 점점 확장의 병목 현상이 되고 있습니다. 핵심 과제는 제어 가능한 생성기의 부재가 아니라, 공유된 세계 역학 모델을 유지하면서 이질적인 행동 감독을 흡수할 수 있는 통합적이고 확장 가능한 학습 프레임워크의 부재입니다. 본 연구에서는 확장 가능한 이질적 행동 제어를 위해 Diffusion Transformers 기반의 Mixture-of-Experts 월드 모델인 Worldscape-MoE를 소개합니다. 우리의 핵심 관찰은 서로 다른 제어가 동일한 기저 세계에 대해 서로 다른 인터페이스를 지정한다는 것입니다. 표현은 다르지만, 공유된 물리적 규칙성, 장면 역학, 상호작용 의미론을 제약합니다. Worldscape-MoE는 모달리티 인식 제어 주입, 공유 및 제어별 전문가, 새로운 행동 모달리티로의 지속적 확장을 지원하는 점진적 MoE 튜닝 전략을 통해 이 관찰을 구현합니다. 보행, 로봇 조작, 자기중심적 손 제어에 걸친 실험은 이질적 감독이 개별 제어 능력을 방해하기보다 향상시킨다는 것을 보여줍니다. Worldscape-MoE는 WorldArena에서 강력한 결과를 달성하고, 보행 및 손 제어 지표를 개선하며, 강력한 분포 외 일반화를 보여주고, 추가 제어 데이터와 전문가가 통합됨에 따라 확장 동작을 입증합니다.
-
-## 핵심 내용
-World models는 체화된 지능과 상호작용 에이전트를 위한 핵심 인프라로 빠르게 자리 잡고 있습니다. 에이전트가 인지, 행동, 예측, 확장 가능한 경험을 습득할 수 있는 제어 가능한 시뮬레이터를 제공합니다. 그러나 현재의 비디오 생성 월드 모델은 여전히 카메라 궤적, 로봇 동작, 손 관절 신호와 같은 고립된 제어 인터페이스를 중심으로 구성되어 있습니다. 이러한 단편화는 점점 확장의 병목 현상이 되고 있습니다. 핵심 과제는 제어 가능한 생성기의 부재가 아니라, 공유된 세계 역학 모델을 유지하면서 이질적인 행동 감독을 흡수할 수 있는 통합적이고 확장 가능한 학습 프레임워크의 부재입니다. 본 연구에서는 확장 가능한 이질적 행동 제어를 위해 Diffusion Transformers 기반의 Mixture-of-Experts 월드 모델인 Worldscape-MoE를 소개합니다. 우리의 핵심 관찰은 서로 다른 제어가 동일한 기저 세계에 대해 서로 다른 인터페이스를 지정한다는 것입니다. 표현은 다르지만, 공유된 물리적 규칙성, 장면 역학, 상호작용 의미론을 제약합니다. Worldscape-MoE는 모달리티 인식 제어 주입, 공유 및 제어별 전문가, 새로운 행동 모달리티로의 지속적 확장을 지원하는 점진적 MoE 튜닝 전략을 통해 이 관찰을 구현합니다. 보행, 로봇 조작, 자기중심적 손 제어에 걸친 실험은 이질적 감독이 개별 제어 능력을 방해하기보다 향상시킨다는 것을 보여줍니다. Worldscape-MoE는 WorldArena에서 강력한 결과를 달성하고, 보행 및 손 제어 지표를 개선하며, 강력한 분포 외 일반화를 보여주고, 추가 제어 데이터와 전문가가 통합됨에 따라 확장 동작을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03964v1
+
+## 개요
+현재 비디오 생성 세계 모델은 일반적으로 카메라 궤적, 로봇 동작 또는 손 관절 신호와 같은 고립된 제어 인터페이스를 중심으로 구성되며, 이러한 파편화는 모델의 확장성을 제한합니다. Worldscape-MoE의 핵심 통찰은 서로 다른 제어 방식이 표현 형태는 다르지만 모두 동일한 물리 법칙과 장면 역학을 제약한다는 점입니다. 이를 위해 이 모델은 양식 인식 제어 주입, 공유 및 전용 전문가 결합 설계를 채택하고, 점진적 MoE 튜닝 전략을 도입하여 새로운 동작 양식의 지속적 확장을 지원합니다. 실험 결과, 이질적 감독은 간섭을 일으키지 않을 뿐만 아니라 각 제어 능력을 향상시키며, WorldArena에서 우수한 결과를 달성하고 분포 외 일반화 및 확장 동작을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **기반 모델**: Worldscape-MoE는 Diffusion Transformers를 기반으로 구축되어 혼합 전문가 메커니즘을 세계 모델 프레임워크에 통합합니다.
+- **핵심 설계**:
+  - **양식 인식 제어 주입**: 로봇 관절, 손 움직임, 카메라 궤적과 같은 다양한 동작 양식에 대해 전용 인코더를 설계하여 이질적 동작 신호를 통합 표현 공간에 매핑합니다.
+  - **공유 및 전용 전문가**: 모델은 공유 전문가(크로스 양식의 일반 물리 법칙과 장면 역학 포착)와 양식 전용 전문가(특정 제어 인터페이스의 세부 사항 처리)를 포함하며, 게이팅 메커니즘을 통해 동적으로 결합됩니다.
+  - **점진적 MoE 튜닝**: 처음부터 재훈련 없이 새로운 동작 양식을 점진적으로 추가할 수 있으며, 전문가 네트워크를 확장하고 게이팅 모듈을 미세 조정하기만 하면 됩니다.
+
+### 실험 설정
+- **작업 범위**: 운동 제어(locomotion), 로봇 조작(robotic manipulation), 1인칭 손 제어(egocentric hand control)의 세 가지 이질적 동작을 포함합니다.
+- **벤치마크 테스트**: WorldArena에서 평가하며, 운동 및 손 제어 전용 지표를 동시에 비교합니다.
+- **훈련 전략**: 다중 양식 공동 훈련을 채택하고, 이질적 동작 데이터를 혼합 입력하여 협력 학습 효과를 검증합니다.
+
+### 주요 결과
+- **성능 향상**: Worldscape-MoE는 WorldArena에서 선도적인 결과를 달성하며, 운동 제어 및 손 제어 지표 모두 단일 양식 기준선보다 우수합니다.
+- **일반화 능력**: 분포 외 시나리오(out-of-distribution generalization)에서 견고한 성능을 보이며, 보지 못한 동작 조합과 환경 변화에 적응할 수 있습니다.
+- **확장 동작**: 더 많은 제어 데이터와 전문가 모듈이 통합됨에 따라 모델 성능이 지속적으로 향상되어 점진적 MoE 전략의 확장성을 검증합니다.
+
+### 결론
+Worldscape-MoE는 이질적 동작 감독을 통합함으로써 공유 세계 모델이 다중 양식 제어 신호를 효과적으로 흡수하고 각 하위 작업의 성능을 향상시킬 수 있음을 입증합니다. 모듈식 설계는 음성, 촉각과 같은 더 많은 동작 양식으로의 향후 확장을 위한 실행 가능한 프레임워크를 제공합니다.

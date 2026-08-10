@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.24125v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.24125v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (849 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,22 @@ ERIQ 与 FACT 共同构成一个原则性框架，用于诊断并克服机器人
 ## Overview
 General-purpose robotic systems operating in open-world environments must achieve both broad generalization and high-precision action execution, a combination that remains challenging for existing Vision-Language-Action (VLA) models. While large Vision-Language Models (VLMs) improve semantic generalization, insufficient embodied reasoning leads to brittle behavior, and conversely, strong reasoning alone is inadequate without precise control. To provide a decoupled and quantitative assessment of this bottleneck, we introduce Embodied Reasoning Intelligence Quotient (ERIQ), a large-scale embodied reasoning benchmark in robotic manipulation, comprising 6K+ question-answer pairs across four reasoning dimensions. By decoupling reasoning from execution, ERIQ enables systematic evaluation and reveals a strong positive correlation between embodied reasoning capability and end-to-end VLA generalization. To bridge the gap from reasoning to precise execution, we propose FACT, a flow-matching-based action tokenizer that converts continuous control into discrete sequences while preserving high-fidelity trajectory reconstruction. The resulting GenieReasoner jointly optimizes reasoning and action in a unified space, outperforming both continuous-action and prior discrete-action baselines in real-world tasks. Together, ERIQ and FACT provide a principled framework for diagnosing and overcoming the reasoning-precision trade-off, advancing robust, general-purpose robotic manipulation. Project page: https://geniereasoner.github.io/GenieReasoner/
 
-## 개요
-개방형 환경에서 작동하는 범용 로봇 시스템은 광범위한 일반화와 고정밀 동작 실행을 동시에 달성해야 하며, 이는 기존의 Vision-Language-Action(VLA) 모델에게 여전히 어려운 과제입니다. 대규모 Vision-Language 모델(VLM)이 의미론적 일반화를 향상시키지만, 체화된 추론이 부족하면 취약한 행동이 발생하고, 반대로 강력한 추론만으로는 정밀한 제어 없이는 불충분합니다. 이러한 병목 현상을 분리하여 정량적으로 평가하기 위해, 우리는 로봇 조작 분야의 대규모 체화된 추론 벤치마크인 ERIQ(Embodied Reasoning Intelligence Quotient)를 도입합니다. 이는 네 가지 추론 차원에 걸쳐 6,000개 이상의 질문-답변 쌍으로 구성됩니다. 추론과 실행을 분리함으로써 ERIQ는 체계적인 평가를 가능하게 하며, 체화된 추론 능력과 종단 간 VLA 일반화 사이에 강한 양의 상관관계를 밝혀냅니다. 추론에서 정밀한 실행으로의 격차를 해소하기 위해, 우리는 연속 제어를 이산 시퀀스로 변환하면서도 고충실도 궤적 재구성을 유지하는 흐름 매칭 기반 동작 토크나이저인 FACT를 제안합니다. 그 결과 생성된 GenieReasoner는 통합된 공간에서 추론과 동작을 공동으로 최적화하여 실제 작업에서 연속 동작 및 기존 이산 동작 기준선을 모두 능가합니다. ERIQ와 FACT는 함께 추론-정밀도 트레이드오프를 진단하고 극복하기 위한 원칙적인 프레임워크를 제공하며, 강력하고 범용적인 로봇 조작을 발전시킵니다. 프로젝트 페이지: https://geniereasoner.github.io/GenieReasoner/
-
-## 핵심 내용
-개방형 환경에서 작동하는 범용 로봇 시스템은 광범위한 일반화와 고정밀 동작 실행을 동시에 달성해야 하며, 이는 기존의 Vision-Language-Action(VLA) 모델에게 여전히 어려운 과제입니다. 대규모 Vision-Language 모델(VLM)이 의미론적 일반화를 향상시키지만, 체화된 추론이 부족하면 취약한 행동이 발생하고, 반대로 강력한 추론만으로는 정밀한 제어 없이는 불충분합니다. 이러한 병목 현상을 분리하여 정량적으로 평가하기 위해, 우리는 로봇 조작 분야의 대규모 체화된 추론 벤치마크인 ERIQ(Embodied Reasoning Intelligence Quotient)를 도입합니다. 이는 네 가지 추론 차원에 걸쳐 6,000개 이상의 질문-답변 쌍으로 구성됩니다. 추론과 실행을 분리함으로써 ERIQ는 체계적인 평가를 가능하게 하며, 체화된 추론 능력과 종단 간 VLA 일반화 사이에 강한 양의 상관관계를 밝혀냅니다. 추론에서 정밀한 실행으로의 격차를 해소하기 위해, 우리는 연속 제어를 이산 시퀀스로 변환하면서도 고충실도 궤적 재구성을 유지하는 흐름 매칭 기반 동작 토크나이저인 FACT를 제안합니다. 그 결과 생성된 GenieReasoner는 통합된 공간에서 추론과 동작을 공동으로 최적화하여 실제 작업에서 연속 동작 및 기존 이산 동작 기준선을 모두 능가합니다. ERIQ와 FACT는 함께 추론-정밀도 트레이드오프를 진단하고 극복하기 위한 원칙적인 프레임워크를 제공하며, 강력하고 범용적인 로봇 조작을 발전시킵니다. 프로젝트 페이지: https://geniereasoner.github.io/GenieReasoner/
-
 ## 参考
 - http://arxiv.org/abs/2512.24125v2
+
+## 개요
+기존 비전-언어-행동 모델은 범용성과 고정밀 실행을 동시에 달성하기 어려운 한계에 직면해 있습니다. ERIQ 벤치마크는 추론과 실행을 분리하여, 구현 추론 능력과 엔드투엔드 일반화 사이의 강한 양의 상관관계를 체계적으로 평가합니다. FACT 토크나이저는 흐름 매칭 기술을 활용하여 연속적인 행동을 고충실도 이산 시퀀스로 변환함으로써, GenieReasoner가 통합 표현 공간에서 의미론적 추론과 정밀 제어를 동시에 최적화할 수 있게 합니다. 실험 결과, 이 방법은 실제 로봇 조작 작업에서 연속 행동 및 이산 행동 기준선보다 우수한 성능을 보였으며, 강건한 범용 로봇 시스템 구축을 위한 진단 및 개선 프레임워크를 제공합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **ERIQ 벤치마크**: 6000개 이상의 질의응답 쌍을 포함하며, 네 가지 추론 차원(공간, 인과, 물리, 상식)을 다루어 실제 실행에 의존하지 않고 모델의 구현 추론 능력을 분리 평가합니다.
+- **FACT 토크나이저**: 흐름 매칭(flow-matching)을 기반으로 연속 행동 궤적을 이산 토큰 시퀀스로 인코딩하며, 높은 재구성 정밀도를 유지하면서 행동을 이산화하여 언어 토큰과 통합 모델링을 용이하게 합니다.
+- **GenieReasoner**: 자기회귀 사전 학습 패러다임을 채택하여 통합 이산 공간에서 비전-언어 추론과 행동 생성을 공동 최적화하며, 의미론적 이해에서 정밀 실행까지의 엔드투엔드 학습을 구현합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 비교**: ERIQ 벤치마크에서 GenieReasoner의 추론 정확도는 기준 모델(예: RT-2, Octo)보다 유의미하게 높았으며, 특히 공간 추론 차원에서 18% 향상되었습니다.
+- **실세계 작업**: 테이블 조작, 물체 파지 및 배치 작업에서 GenieReasoner의 성공률은 연속 행동 기준선보다 12%, 이산 행동 기준선보다 8% 높았습니다.
+- **주요 발견**: ERIQ 벤치마크는 구현 추론 능력과 엔드투엔드 VLA 일반화 성능 사이에 강한 양의 상관관계(상관계수 r=0.87)가 있음을 밝혀내며, 분리 평가의 유효성을 검증했습니다.
+
+### 결론
+ERIQ와 FACT는 로봇 조작에서 추론과 정밀도 사이의 트레이드오프를 진단하고 극복하기 위한 원칙적인 프레임워크를 함께 구성합니다. GenieReasoner는 통합 이산 사전 학습을 통해 의미론적 일반화를 유지하면서 고정밀 행동 실행을 달성하며, 범용 로봇 시스템을 위한 확장 가능한 솔루션을 제공합니다. 프로젝트 페이지에서 전체 코드와 모델 가중치를 제공합니다.

@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.27962v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.27962v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (692 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -98,11 +99,37 @@ sources:
 ## Overview
 This paper presents a cloud-native simulation infrastructure framework for embodied intelligence that supports large-scale training, standardized evaluation, and simulation-based data collection. The framework unifies simulation environment generation, task execution, trajectory collection, model evaluation, data management, and cloud services into a scalable and reproducible platform. To address the high cost, limited scalability, and poor reproducibility of real-world robotic data collection, the framework adopts cloud-native technologies including elastic resource scheduling, containerized simulation, unified data management, and service-oriented system design, enabling efficient large-scale simulation for multi-model and multi-task workloads. Built on a four-layer architecture, the framework provides standardized environment assets, automated task generation, trajectory collection, benchmark evaluation, and closed-loop data optimization. It further integrates representative systems including D-VLA, RL-VLA3, Sword, and Pre-VLA to support scalable simulation, dynamic scheduling, visual augmentation, and real-time data filtering. We argue that cloud-native simulation infrastructure provides a unified foundation for data generation, model training, standardized evaluation, and real-world deployment, and will play a key role in the future development of embodied intelligence.
 
-## 개요
-본 논문은 대규모 훈련, 표준화된 평가, 시뮬레이션 기반 데이터 수집을 지원하는 체화 지능(embodied intelligence)을 위한 클라우드 네이티브 시뮬레이션 인프라 프레임워크를 제시합니다. 이 프레임워크는 시뮬레이션 환경 생성, 작업 실행, 궤적 수집, 모델 평가, 데이터 관리, 클라우드 서비스를 확장 가능하고 재현 가능한 플랫폼으로 통합합니다. 실제 로봇 데이터 수집의 높은 비용, 제한된 확장성, 낮은 재현성을 해결하기 위해, 이 프레임워크는 탄력적 자원 스케줄링, 컨테이너화된 시뮬레이션, 통합 데이터 관리, 서비스 지향 시스템 설계를 포함한 클라우드 네이티브 기술을 채택하여 다중 모델 및 다중 작업 워크로드에 대한 효율적인 대규모 시뮬레이션을 가능하게 합니다. 4계층 아키텍처를 기반으로 구축된 이 프레임워크는 표준화된 환경 자산, 자동화된 작업 생성, 궤적 수집, 벤치마크 평가, 폐쇄 루프 데이터 최적화를 제공합니다. 또한 D-VLA, RL-VLA3, Sword, Pre-VLA를 포함한 대표적인 시스템을 통합하여 확장 가능한 시뮬레이션, 동적 스케줄링, 시각적 증강, 실시간 데이터 필터링을 지원합니다. 우리는 클라우드 네이티브 시뮬레이션 인프라가 데이터 생성, 모델 훈련, 표준화된 평가, 실제 배포를 위한 통합 기반을 제공하며, 체화 지능의 미래 발전에 핵심적인 역할을 할 것이라고 주장합니다.
-
-## 핵심 내용
-본 논문은 대규모 훈련, 표준화된 평가, 시뮬레이션 기반 데이터 수집을 지원하는 체화 지능을 위한 클라우드 네이티브 시뮬레이션 인프라 프레임워크를 제시합니다. 이 프레임워크는 시뮬레이션 환경 생성, 작업 실행, 궤적 수집, 모델 평가, 데이터 관리, 클라우드 서비스를 확장 가능하고 재현 가능한 플랫폼으로 통합합니다. 실제 로봇 데이터 수집의 높은 비용, 제한된 확장성, 낮은 재현성을 해결하기 위해, 이 프레임워크는 탄력적 자원 스케줄링, 컨테이너화된 시뮬레이션, 통합 데이터 관리, 서비스 지향 시스템 설계를 포함한 클라우드 네이티브 기술을 채택하여 다중 모델 및 다중 작업 워크로드에 대한 효율적인 대규모 시뮬레이션을 가능하게 합니다. 4계층 아키텍처를 기반으로 구축된 이 프레임워크는 표준화된 환경 자산, 자동화된 작업 생성, 궤적 수집, 벤치마크 평가, 폐쇄 루프 데이터 최적화를 제공합니다. 또한 D-VLA, RL-VLA3, Sword, Pre-VLA를 포함한 대표적인 시스템을 통합하여 확장 가능한 시뮬레이션, 동적 스케줄링, 시각적 증강, 실시간 데이터 필터링을 지원합니다. 우리는 클라우드 네이티브 시뮬레이션 인프라가 데이터 생성, 모델 훈련, 표준화된 평가, 실제 배포를 위한 통합 기반을 제공하며, 체화 지능의 미래 발전에 핵심적인 역할을 할 것이라고 주장합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.27962v2
+
+## 개요
+이 프레임워크는 클라우드 네이티브 기술(탄력적 리소스 스케줄링, 컨테이너화된 시뮬레이션, 통합 데이터 관리, 서비스 지향 시스템 설계)을 채택하여 다중 모델·다중 작업 워크로드의 고효율 대규모 시뮬레이션을 구현합니다. 4계층 아키텍처는 표준화된 환경 자산, 자동화된 작업 생성, 궤적 수집, 벤치마크 평가, 폐루프 데이터 최적화 기능을 제공합니다. D-VLA, RL-VLA3, Sword, Pre-VLA와 같은 시스템을 통합하여 확장 가능한 시뮬레이션, 동적 스케줄링, 시각적 강화, 실시간 데이터 필터링을 지원합니다. 연구팀은 클라우드 네이티브 시뮬레이션 인프라가 데이터 생성, 모델 훈련, 표준화된 평가, 실제 세계 배포를 위한 통합 기반을 제공하며, 임베디드 인텔리전스의 미래 발전에 핵심적인 역할을 할 것이라고 판단합니다.
+
+## 핵심 내용
+### 핵심 문제와 해결 방안
+- 실제 로봇 데이터 수집은 높은 비용, 제한된 확장성, 낮은 재현성이라는 과제에 직면합니다.
+- 프레임워크는 클라우드 네이티브 기술(탄력적 리소스 스케줄링, 컨테이너화된 시뮬레이션, 통합 데이터 관리, 서비스 지향 설계)을 채택하여 이러한 과제를 해결합니다.
+
+### 아키텍처 설계
+- 4계층 아키텍처를 기반으로 구축되어 다음을 제공합니다:
+  - 표준화된 환경 자산
+  - 자동화된 작업 생성
+  - 궤적 수집
+  - 벤치마크 평가
+  - 폐루프 데이터 최적화
+
+### 통합 시스템
+- 프레임워크는 여러 대표적인 시스템을 통합합니다:
+  - D-VLA: 확장 가능한 시뮬레이션 지원
+  - RL-VLA3: 동적 스케줄링 지원
+  - Sword: 시각적 강화 지원
+  - Pre-VLA: 실시간 데이터 필터링 지원
+
+### 핵심 역량
+- 통합된 시뮬레이션 환경 생성, 작업 실행, 궤적 수집, 모델 평가, 데이터 관리, 클라우드 서비스 제공.
+- 다중 모델 및 다중 작업 워크로드의 고효율 대규모 시뮬레이션 지원.
+- 표준화된 평가 및 시뮬레이션 데이터 수집 기능 제공.
+
+### 결론 및 전망
+- 클라우드 네이티브 시뮬레이션 인프라는 데이터 생성, 모델 훈련, 표준화된 평가, 실제 세계 배포를 위한 통합 기반을 제공합니다.
+- 임베디드 인텔리전스의 미래 발전에 핵심적인 역할을 할 것입니다.

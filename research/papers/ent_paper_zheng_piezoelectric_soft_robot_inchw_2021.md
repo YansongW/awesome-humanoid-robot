@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2111.00944v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2111.00944v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (603 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,24 @@ theoretical_depth:
 ## Overview
 Electrically-driven soft robots based on piezoelectric actuators may enable compact form factors and maneuverability in complex environments. In most prior work, piezoelectric actuators are used to control a single degree of freedom. In this work, the coordinated activation of five independent piezoelectric actuators, attached to a common metal foil, is used to implement inchworm-inspired crawling motion in a robot that is less than 0.5 mm thick. The motion is based on the control of its friction to the ground through the robot's shape, in which one end of the robot (depending on its shape) is anchored to the ground by static friction, while the rest of its body expands or contracts. A complete analytical model of the robot shape, which includes gravity, is developed to quantify the robot shape, friction, and displacement. After validation of the model by experiments, the robot's five actuators are collectively sequenced for inchworm-like forward and backward motion.
 
-## 개요
-압전 액추에이터 기반 전기 구동 소프트 로봇은 복잡한 환경에서 소형 폼 팩터와 기동성을 가능하게 할 수 있습니다. 대부분의 이전 연구에서 압전 액추에이터는 단일 자유도를 제어하는 데 사용되었습니다. 본 연구에서는 공통 금속 호일에 부착된 5개의 독립적인 압전 액추에이터의 협력적 활성화를 통해 두께가 0.5mm 미만인 로봇에서 자벌레에서 영감을 받은 기어가는 움직임을 구현합니다. 이 움직임은 로봇의 형상을 통해 지면에 대한 마찰을 제어하는 데 기반하며, 로봇의 한쪽 끝(형상에 따라 다름)이 정지 마찰에 의해 지면에 고정되고 나머지 몸체가 팽창 또는 수축합니다. 중력을 포함한 로봇 형상의 완전한 해석 모델을 개발하여 로봇 형상, 마찰 및 변위를 정량화합니다. 실험을 통해 모델을 검증한 후, 로봇의 5개 액추에이터를 집합적으로 순차 작동시켜 자벌레와 같은 전진 및 후진 움직임을 구현합니다.
-
-## 핵심 내용
-압전 액추에이터 기반 전기 구동 소프트 로봇은 복잡한 환경에서 소형 폼 팩터와 기동성을 가능하게 할 수 있습니다. 대부분의 이전 연구에서 압전 액추에이터는 단일 자유도를 제어하는 데 사용되었습니다. 본 연구에서는 공통 금속 호일에 부착된 5개의 독립적인 압전 액추에이터의 협력적 활성화를 통해 두께가 0.5mm 미만인 로봇에서 자벌레에서 영감을 받은 기어가는 움직임을 구현합니다. 이 움직임은 로봇의 형상을 통해 지면에 대한 마찰을 제어하는 데 기반하며, 로봇의 한쪽 끝(형상에 따라 다름)이 정지 마찰에 의해 지면에 고정되고 나머지 몸체가 팽창 또는 수축합니다. 중력을 포함한 로봇 형상의 완전한 해석 모델을 개발하여 로봇 형상, 마찰 및 변위를 정량화합니다. 실험을 통해 모델을 검증한 후, 로봇의 5개 액추에이터를 집합적으로 순차 작동시켜 자벌레와 같은 전진 및 후진 움직임을 구현합니다.
-
 ## 参考
 - http://arxiv.org/abs/2111.00944v2
+
+## 개요
+이 연구는 압전 액추에이터 기반 전기 구동 소프트 로봇에 초점을 맞추며, 컴팩트한 외형과 복잡한 환경에서의 기동성을 목표로 한다. 기존의 단일 자유도 제어와 달리, 이 작업은 금속 호일 위에서 다섯 개의 독립적인 압전 액추에이터의 협력 작용을 조정하여 로봇의 두께를 0.5밀리미터 미만으로 만든다. 운동 메커니즘은 로봇의 형상을 통해 지면 마찰을 제어하는 데 의존한다: 한쪽 끝은 형상 변화로 인해 정지 마찰에 의해 고정되고, 나머지 부분은 신축을 수행한다. 연구는 중력을 포함한 완전한 해석 모델을 수립하여 형상, 마찰 및 변위를 정량화하고, 실험을 통해 모델을 검증한 후 로봇의 양방향 자벌레식 전진 및 후진을 구현했다.
+
+## 핵심 내용
+### 방법 및 아키텍처
+- 로봇은 강철 호일 기판에 부착된 다섯 개의 독립적인 압전 액추에이터로 구성되며, 총 두께는 0.5밀리미터 미만이다.
+- 액추에이터는 협력적으로 활성화되어 로봇의 전체 형상을 변경함으로써 지면과의 마찰 분포를 조절한다: 특정 형상에서 한쪽 끝은 정지 마찰로 고정되고, 다른 쪽 끝은 신축을 수행하여 자벌레 운동을 모사한다.
+
+### 모델 및 실험
+- Euler-Bernoulli 보 이론에 기반한 준정적 모델을 개발했으며, 중력을 처음으로 분석에 포함하여 로봇의 형상, 마찰력 및 변위를 정밀하게 계산했다.
+- 실험을 통해 모델의 유효성을 검증하고, 형상과 마찰 제어 간의 대응 관계를 확인했다.
+
+### 주요 결과
+- 다섯 개의 액추에이터를 순차적으로 활성화함으로써 로봇은 양방향(전진 및 후진) 자벌레식 기어가기를 성공적으로 구현했다.
+- 로봇의 두께는 0.5밀리미터 미만으로, 제한된 공간에서 초박형 소프트 로봇의 운동 가능성을 보여준다.
+
+### 결론
+이 작업은 다중 압전 액추에이터의 협력적 형상 제어를 통해 지면 마찰을 조절하는 것이 초박형 소프트 로봇의 양방향 운동을 구현하는 효과적인 전략임을 입증했으며, 준정적 모델은 향후 설계를 위한 이론적 도구를 제공한다.

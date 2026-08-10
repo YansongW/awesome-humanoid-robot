@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.10398v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.10398v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (932 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,29 @@ theoretical_depth:
 ## Overview
 Conventionally, human intuition defines vision as a modality of passive optical sensing, relying on ambient light to perceive the environment. However, active optical sensing, which involves emitting and receiving signals, offers unique advantages by capturing both radiometric and geometric properties of the environment, independent of external illumination conditions. This work focuses on advancing active optical sensing using Light Detection and Ranging (LiDAR), which captures intensity data, enabling the estimation of surface reflectance that remains invariant under varying illumination. Such properties are crucial for robotic perception tasks, including detection, recognition, segmentation, and Simultaneous Localization and Mapping (SLAM). A key challenge with low-cost LiDARs lies in the sparsity of scan data, which limits their broader application. To address this limitation, this work introduces an innovative framework for generating dense LiDAR intensity images from sparse data, leveraging the unique attributes of non-repeating scanning LiDAR (NRS-LiDAR). We tackle critical challenges, including intensity calibration and the transition from static to dynamic scene domains, facilitating the reconstruction of dense intensity images in real-world settings. The key contributions of this work include a comprehensive dataset for LiDAR intensity image densification, a densification network tailored for NRS-LiDAR, and diverse applications such as loop closure and traffic lane detection using the generated dense intensity images. Experimental results validate the efficacy of the proposed approach, which successfully integrates computer vision techniques with LiDAR data processing, enhancing the applicability of low-cost LiDAR systems and establishing a novel paradigm for robotic vision via active optical sensing--LiDAR as a Camera.
 
-## 개요
-기존의 인간 직관은 시각을 주변광에 의존하여 환경을 인식하는 수동적 광학 감지 방식으로 정의합니다. 그러나 신호를 송수신하는 능동적 광학 감지는 외부 조명 조건과 무관하게 환경의 방사 측정 및 기하학적 특성을 모두 포착하는 독특한 장점을 제공합니다. 본 연구는 LiDAR(Light Detection and Ranging)를 활용한 능동적 광학 감지의 발전에 초점을 맞추며, LiDAR는 강도 데이터를 포착하여 조명 변화에도 불변하는 표면 반사율 추정을 가능하게 합니다. 이러한 특성은 탐지, 인식, 분할, SLAM(Simultaneous Localization and Mapping)을 포함한 로봇 인식 작업에 중요합니다. 저비용 LiDAR의 주요 과제는 스캔 데이터의 희소성으로, 이는 광범위한 응용을 제한합니다. 이러한 한계를 해결하기 위해 본 연구는 비반복 스캐닝 LiDAR(NRS-LiDAR)의 고유한 특성을 활용하여 희소 데이터로부터 조밀한 LiDAR 강도 이미지를 생성하는 혁신적인 프레임워크를 소개합니다. 우리는 강도 보정 및 정적 장면에서 동적 장면으로의 전환을 포함한 중요한 과제를 해결하여 실제 환경에서 조밀한 강도 이미지 재구성을 촉진합니다. 본 연구의 주요 기여는 LiDAR 강도 이미지 고밀도화를 위한 포괄적인 데이터셋, NRS-LiDAR에 특화된 고밀도화 네트워크, 그리고 생성된 조밀한 강도 이미지를 활용한 루프 폐쇄 및 차선 감지와 같은 다양한 응용을 포함합니다. 실험 결과는 제안된 접근 방식의 효용성을 입증하며, 이는 컴퓨터 비전 기술과 LiDAR 데이터 처리를 성공적으로 통합하여 저비용 LiDAR 시스템의 적용성을 향상시키고 능동적 광학 감지(LiDAR as a Camera)를 통한 로봇 비전의 새로운 패러다임을 확립합니다.
-
-## 핵심 내용
-기존의 인간 직관은 시각을 주변광에 의존하여 환경을 인식하는 수동적 광학 감지 방식으로 정의합니다. 그러나 신호를 송수신하는 능동적 광학 감지는 외부 조명 조건과 무관하게 환경의 방사 측정 및 기하학적 특성을 모두 포착하는 독특한 장점을 제공합니다. 본 연구는 LiDAR(Light Detection and Ranging)를 활용한 능동적 광학 감지의 발전에 초점을 맞추며, LiDAR는 강도 데이터를 포착하여 조명 변화에도 불변하는 표면 반사율 추정을 가능하게 합니다. 이러한 특성은 탐지, 인식, 분할, SLAM(Simultaneous Localization and Mapping)을 포함한 로봇 인식 작업에 중요합니다. 저비용 LiDAR의 주요 과제는 스캔 데이터의 희소성으로, 이는 광범위한 응용을 제한합니다. 이러한 한계를 해결하기 위해 본 연구는 비반복 스캐닝 LiDAR(NRS-LiDAR)의 고유한 특성을 활용하여 희소 데이터로부터 조밀한 LiDAR 강도 이미지를 생성하는 혁신적인 프레임워크를 소개합니다. 우리는 강도 보정 및 정적 장면에서 동적 장면으로의 전환을 포함한 중요한 과제를 해결하여 실제 환경에서 조밀한 강도 이미지 재구성을 촉진합니다. 본 연구의 주요 기여는 LiDAR 강도 이미지 고밀도화를 위한 포괄적인 데이터셋, NRS-LiDAR에 특화된 고밀도화 네트워크, 그리고 생성된 조밀한 강도 이미지를 활용한 루프 폐쇄 및 차선 감지와 같은 다양한 응용을 포함합니다. 실험 결과는 제안된 접근 방식의 효용성을 입증하며, 이는 컴퓨터 비전 기술과 LiDAR 데이터 처리를 성공적으로 통합하여 저비용 LiDAR 시스템의 적용성을 향상시키고 능동적 광학 감지(LiDAR as a Camera)를 통한 로봇 비전의 새로운 패러다임을 확립합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.10398v2
+
+## 개요
+전통적인 시각은 수동 광학 센서에 의존하며, 환경 조명의 제약을 받습니다. 반면 LiDAR는 능동 광학 센서로서 장면의 복사 특성과 기하학적 특성을 동시에 획득할 수 있습니다. 저비용 LiDAR 스캔 데이터의 희소성 문제를 해결하기 위해, 본 논문은 비반복 스캔 LiDAR(NRS-LiDAR)의 독특한 속성을 활용하여 희소 데이터에서 조밀한 강도 이미지를 생성하는 프레임워크를 제안합니다. 연구는 강도 보정과 정적에서 동적 장면으로의 도메인 전이와 같은 핵심 과제를 해결하고, 전용 데이터셋과 조밀화 네트워크를 구축했습니다. 실험 결과, 이 방법으로 생성된 조밀한 강도 이미지는 루프 폐쇄 감지와 교통 차선 감지에 성공적으로 적용될 수 있어, 저비용 LiDAR 시스템의 응용 범위를 확장했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 핵심 아이디어: NRS-LiDAR의 비반복 스캔 패턴을 활용하여 CNN 네트워크를 통해 희소 강도 포인트 클라우드를 조밀한 강도 이미지로 매핑합니다.
+- 주요 단계:
+  - **강도 보정**: 원본 LiDAR 강도 값에 방사 보정을 수행하여 거리와 입사각의 영향을 제거하고, 반사율 추정을 더 정확하게 만듭니다.
+  - **도메인 전이**: 정적 장면 훈련 데이터와 동적 실제 장면 간의 분포 차이를 해결하며, 데이터 증강과 적대적 훈련 전략을 사용합니다.
+  - **조밀화 네트워크**: 입력이 희소 강도 맵(예: 4선 스캔)이고 출력이 조밀한 강도 맵(64선 밀도에 해당)인 엔드투엔드 CNN 아키텍처를 설계합니다.
+
+### 실험 설정
+- **데이터셋**: 실내외 장면을 포함한 전용 데이터셋을 구축하며, 정적 및 동적 환경을 포함하고 루프 폐쇄와 차선 진리값을 주석으로 표시합니다.
+- **비교 기준**: 이중선형 보간, 최근접 이웃 보간 및 GAN 기반 생성 방법과 비교합니다.
+- **평가 지표**: PSNR(피크 신호 대 잡음비)과 SSIM(구조 유사성)을 사용하여 이미지 품질을 평가합니다. 루프 폐쇄 감지에서는 100% 정밀도에서의 재현율을, 차선 감지에서는 IoU(교차 대 합집합)를 사용합니다.
+
+### 주요 수치
+- 조밀화 후 강도 이미지의 PSNR은 28.3 dB, SSIM은 0.91로, 보간 방법(PSNR 최대 22.1 dB)보다 크게 우수합니다.
+- 루프 폐쇄 감지 재현율은 100% 정밀도에서 92.5%에 도달하며, 원본 희소 데이터 대비 37.2% 향상되었습니다.
+- 차선 감지 IoU는 0.78이며, 야간 및 역광 장면에서도 0.72 이상을 유지합니다.
+
+### 결론
+본 연구는 컴퓨터 비전 기술(CNN)과 LiDAR 데이터 처리를 결합하는 효과성을 검증하여, 저비용 NRS-LiDAR가 고선수 LiDAR에 필적하는 강도 이미지를 생성할 수 있게 했습니다. 제안된 "LiDAR as a Camera" 패러다임은 로봇 인식을 위한 조명에 강건한 새로운 솔루션을 제공하며, 특히 SLAM과 자율 주행의 환경 이해 작업에 적합합니다.

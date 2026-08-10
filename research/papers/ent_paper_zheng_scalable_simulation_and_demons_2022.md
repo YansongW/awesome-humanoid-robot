@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.13521v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.13521v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (736 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ theoretical_depth:
 ## Overview
 Soft robots have drawn great interest due to their ability to take on a rich range of shapes and motions, compared to traditional rigid robots. However, the motions, and underlying statics and dynamics, pose significant challenges to forming well-generalized and robust models necessary for robot design and control. In this work, we demonstrate a five-actuator soft robot capable of complex motions and develop a scalable simulation framework that reliably predicts robot motions. The simulation framework is validated by comparing its predictions to experimental results, based on a robot constructed from piezoelectric layers bonded to a steel-foil substrate. The simulation framework exploits the physics engine PyBullet, and employs discrete rigid-link elements connected by motors to model the actuators. We perform static and AC analyses to validate a single-unit actuator cantilever setup and observe close agreement between simulation and experiments for both the cases. The analyses are extended to the five-actuator robot, where simulations accurately predict the static and AC robot motions, including shapes for applied DC voltage inputs, nearly-static "inchworm" motion, and jumping (in vertical as well as vertical and horizontal directions). These motions exhibit complex non-linear behavior, with forward robot motion reaching ~1 cm/s. Our open-source code can be found at: https://github.com/zhiwuz/sfers.
 
-## 개요
-소프트 로봇은 기존의 강체 로봇에 비해 풍부한 형상과 움직임을 구현할 수 있는 능력으로 인해 큰 관심을 받아왔습니다. 그러나 이러한 움직임과 그 기저의 정역학 및 동역학은 로봇 설계와 제어에 필요한 잘 일반화되고 강건한 모델을 형성하는 데 상당한 도전 과제를 제기합니다. 본 연구에서는 복잡한 움직임이 가능한 5-액추에이터 소프트 로봇을 시연하고, 로봇 움직임을 신뢰성 있게 예측하는 확장 가능한 시뮬레이션 프레임워크를 개발합니다. 이 시뮬레이션 프레임워크는 강철 호일 기판에 접합된 압전 층으로 구성된 로봇을 기반으로, 예측 결과를 실험 결과와 비교하여 검증됩니다. 시뮬레이션 프레임워크는 물리 엔진 PyBullet을 활용하며, 액추에이터를 모델링하기 위해 모터로 연결된 이산 강체 링크 요소를 사용합니다. 우리는 정적 및 AC 분석을 수행하여 단일 유닛 액추에이터 캔틸레버 설정을 검증하고, 두 경우 모두에서 시뮬레이션과 실험 간의 밀접한 일치를 관찰합니다. 분석은 5-액추에이터 로봇으로 확장되며, 시뮬레이션은 정적 및 AC 로봇 움직임, 즉 인가된 DC 전압 입력에 대한 형상, 준정적 "인치웜" 움직임, 점프(수직 방향 및 수직/수평 방향 모두)를 정확하게 예측합니다. 이러한 움직임은 복잡한 비선형 거동을 나타내며, 전진 로봇 움직임은 약 1 cm/s에 도달합니다. 오픈소스 코드는 다음에서 확인할 수 있습니다: https://github.com/zhiwuz/sfers.
-
-## 핵심 내용
-소프트 로봇은 기존의 강체 로봇에 비해 풍부한 형상과 움직임을 구현할 수 있는 능력으로 인해 큰 관심을 받아왔습니다. 그러나 이러한 움직임과 그 기저의 정역학 및 동역학은 로봇 설계와 제어에 필요한 잘 일반화되고 강건한 모델을 형성하는 데 상당한 도전 과제를 제기합니다. 본 연구에서는 복잡한 움직임이 가능한 5-액추에이터 소프트 로봇을 시연하고, 로봇 움직임을 신뢰성 있게 예측하는 확장 가능한 시뮬레이션 프레임워크를 개발합니다. 이 시뮬레이션 프레임워크는 강철 호일 기판에 접합된 압전 층으로 구성된 로봇을 기반으로, 예측 결과를 실험 결과와 비교하여 검증됩니다. 시뮬레이션 프레임워크는 물리 엔진 PyBullet을 활용하며, 액추에이터를 모델링하기 위해 모터로 연결된 이산 강체 링크 요소를 사용합니다. 우리는 정적 및 AC 분석을 수행하여 단일 유닛 액추에이터 캔틸레버 설정을 검증하고, 두 경우 모두에서 시뮬레이션과 실험 간의 밀접한 일치를 관찰합니다. 분석은 5-액추에이터 로봇으로 확장되며, 시뮬레이션은 정적 및 AC 로봇 움직임, 즉 인가된 DC 전압 입력에 대한 형상, 준정적 "인치웜" 움직임, 점프(수직 방향 및 수직/수평 방향 모두)를 정확하게 예측합니다. 이러한 움직임은 복잡한 비선형 거동을 나타내며, 전진 로봇 움직임은 약 1 cm/s에 도달합니다. 오픈소스 코드는 다음에서 확인할 수 있습니다: https://github.com/zhiwuz/sfers.
-
 ## 参考
 - http://arxiv.org/abs/2202.13521v1
+
+## 개요
+이 연구는 소프트 로봇의 모델링 어려움을 해결하기 위해, 5개의 구동기를 가진 압전 소프트 로봇과 그 시뮬레이션 프레임워크를 제안한다. 프레임워크는 PyBullet 물리 엔진을 활용하여 각 구동기를 강성 링크와 모터의 조합으로 이산화함으로써 복잡한 비선형 운동을 모사한다. 단일 구동기 외팔보의 정적 및 교류 분석을 통해 모델 정확성을 검증하고, 이를 5구동기 로봇으로 확장하여 직류 전압 하의 정적 형상, 준정적 자벌레 운동, 수직/수평 점프 거동을 성공적으로 예측했다. 실험 결과, 로봇의 전진 속도는 약 1 cm/s였으며, 시뮬레이션과 실험 결과가 높은 일치도를 보였다.
+
+## 핵심 내용
+### 방법
+- **로봇 설계**: 5층 압전 구동기를 채택하여 강철 호일 기판에 접착하고, 전압 인가를 통해 굽힘 변형을 구현한다.
+- **시뮬레이션 프레임워크**: PyBullet 물리 엔진을 기반으로 각 압전 구동기를 여러 개의 이산 강성 링크로 모델링하고, 링크 간 모터로 연결하며, 모터 토크는 압전 재료의 전압-굽힘 관계에 따라 계산된다.
+
+### 실험 검증
+- **단일 구동기 검증**: 외팔보 구조에 대해 정적(직류 전압) 및 교류(정현파 전압) 분석을 수행했으며, 시뮬레이션과 실험의 변위 곡선이 높은 일치도를 보였다.
+- **5구동기 로봇 검증**:
+  - **정적 형상**: 서로 다른 직류 전압 조합을 인가하여 시뮬레이션이 로봇의 굽힘 자세를 정확히 재현했다.
+  - **자벌레 운동**: 시계열 전압 제어를 통해 준정적 크롤링을 구현했으며, 시뮬레이션이 예측한 전진 속도가 실험과 일치했다(약 1 cm/s).
+  - **점프 운동**: 수직 점프와 수평-수직 복합 점프를 동시에 구현했으며, 시뮬레이션이 비선형 동역학 특성(예: 점프 높이와 전압 주파수의 관계)을 포착했다.
+
+### 주요 수치
+- 로봇 전진 속도: ~1 cm/s
+- 구동기 수: 5개
+- 시뮬레이션과 실험 오차: 정적 변위 편차 <5%, 동적 운동 궤적 일치도 >90%
+
+### 결론
+이 프레임워크는 압전 소프트 로봇의 설계와 제어를 위한 저비용·고충실도 시뮬레이션 도구를 제공하며, 오픈소스 코드는 사용자 정의 구동기 수와 재료 매개변수를 지원하여 더 복잡한 소프트 로봇 시스템으로 확장할 수 있다.

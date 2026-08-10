@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.07730v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.07730v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (924 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,25 @@ DEAS 通过动作序列与解耦价值学习，为离线强化学习在长时域
 ## Overview
 Offline reinforcement learning (RL) presents an attractive paradigm for training intelligent agents without expensive online interactions. However, current approaches still struggle with complex, long-horizon sequential decision making. In this work, we introduce DEtached value learning with Action Sequence (DEAS), a simple yet effective offline RL framework that leverages action sequences for value learning. These temporally extended actions provide richer information than single-step actions and can be interpreted through the options framework via semi-Markov decision process Q-learning, enabling reduction of the effective planning horizon by considering longer sequences at once. However, directly adopting such sequences in actor-critic algorithms introduces excessive value overestimation, which we address through detached value learning that steers value estimates toward in-distribution actions that achieve high return in the offline dataset. We demonstrate that DEAS consistently outperforms baselines on complex, long-horizon tasks from OGBench and can be applied to enhance the performance of large-scale Vision-Language-Action models that predict action sequences, significantly boosting performance in both RoboCasa Kitchen simulation tasks and real-world manipulation tasks.
 
-## 개요
-오프라인 강화 학습(Offline RL)은 비용이 많이 드는 온라인 상호작용 없이 지능형 에이전트를 훈련할 수 있는 매력적인 패러다임을 제공합니다. 그러나 현재 접근 방식은 복잡하고 장기적인 순차적 의사 결정에 여전히 어려움을 겪고 있습니다. 본 연구에서는 행동 시퀀스를 활용한 가치 학습을 위한 간단하면서도 효과적인 오프라인 RL 프레임워크인 DEtached value learning with Action Sequence (DEAS)를 소개합니다. 이러한 시간적으로 확장된 행동은 단일 단계 행동보다 더 풍부한 정보를 제공하며, 반-마르코프 결정 과정 Q-러닝을 통해 옵션 프레임워크로 해석될 수 있어, 한 번에 더 긴 시퀀스를 고려함으로써 효과적인 계획 지평을 단축시킵니다. 그러나 액터-크리틱 알고리즘에서 이러한 시퀀스를 직접 채택하면 과도한 가치 과대평가가 발생하며, 이를 분리된 가치 학습(detached value learning)을 통해 해결하여 오프라인 데이터셋에서 높은 보상을 달성하는 분포 내 행동으로 가치 추정을 유도합니다. 우리는 DEAS가 OGBench의 복잡하고 장기적인 작업에서 기준 모델을 일관되게 능가하며, 행동 시퀀스를 예측하는 대규모 비전-언어-행동 모델의 성능을 향상시키는 데 적용될 수 있음을 입증하여, RoboCasa Kitchen 시뮬레이션 작업과 실제 조작 작업 모두에서 성능을 크게 향상시킵니다.
-
-## 핵심 내용
-오프라인 강화 학습(Offline RL)은 비용이 많이 드는 온라인 상호작용 없이 지능형 에이전트를 훈련할 수 있는 매력적인 패러다임을 제공합니다. 그러나 현재 접근 방식은 복잡하고 장기적인 순차적 의사 결정에 여전히 어려움을 겪고 있습니다. 본 연구에서는 행동 시퀀스를 활용한 가치 학습을 위한 간단하면서도 효과적인 오프라인 RL 프레임워크인 DEtached value learning with Action Sequence (DEAS)를 소개합니다. 이러한 시간적으로 확장된 행동은 단일 단계 행동보다 더 풍부한 정보를 제공하며, 반-마르코프 결정 과정 Q-러닝을 통해 옵션 프레임워크로 해석될 수 있어, 한 번에 더 긴 시퀀스를 고려함으로써 효과적인 계획 지평을 단축시킵니다. 그러나 액터-크리틱 알고리즘에서 이러한 시퀀스를 직접 채택하면 과도한 가치 과대평가가 발생하며, 이를 분리된 가치 학습(detached value learning)을 통해 해결하여 오프라인 데이터셋에서 높은 보상을 달성하는 분포 내 행동으로 가치 추정을 유도합니다. 우리는 DEAS가 OGBench의 복잡하고 장기적인 작업에서 기준 모델을 일관되게 능가하며, 행동 시퀀스를 예측하는 대규모 비전-언어-행동 모델의 성능을 향상시키는 데 적용될 수 있음을 입증하여, RoboCasa Kitchen 시뮬레이션 작업과 실제 조작 작업 모두에서 성능을 크게 향상시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.07730v1
+
+## 개요
+DEAS는 복잡한 장기 순차 결정에서의 오프라인 강화 학습 과제를 해결하기 위해 간결하고 효과적인 프레임워크를 제안합니다. 이는 단일 단계 행동이 아닌 행동 시퀀스를 통해 가치 학습을 수행하며, 반-마르코프 결정 프로세스 Q-러닝을 통해 행동 시퀀스를 옵션으로 해석하여 유효 계획 지평을 단축합니다. 행동 시퀀스를 직접 사용할 때 발생하는 과대평가 문제를 해결하기 위해, DEAS는 분리 가치 학습을 도입하여 가치 추정을 오프라인 데이터셋 내 고수익 분포 내 행동으로 유도합니다. 실험 결과, DEAS는 OGBench의 복잡한 장기 과제에서 기준선보다 지속적으로 우수한 성능을 보였으며, 행동 시퀀스를 예측하는 대규모 Vision-Language-Action 모델의 RoboCasa Kitchen 시뮬레이션 및 실제 조작 작업에서의 성능을 향상시킬 수 있음을 확인했습니다.
+
+## 핵심 내용
+### 방법
+- DEAS의 핵심 아이디어는 시간적으로 확장된 행동(행동 시퀀스)을 오프라인 강화 학습의 가치 학습 과정에 도입하는 것입니다. 이러한 시퀀스는 단일 단계 행동보다 더 풍부한 정보를 포함하며, 반-마르코프 결정 프로세스 Q-러닝을 통해 옵션 프레임워크에서 해석될 수 있어, 더 긴 시퀀스를 한 번에 고려함으로써 유효 계획 지평을 줄입니다.
+- 행동 시퀀스를 직접 사용하면 actor-critic 알고리즘에서 과도한 가치 과대평가가 발생합니다. DEAS는 분리 가치 학습을 통해 이 문제를 해결하며, 가치 추정을 오프라인 데이터셋에서 고수익을 달성하는 분포 내 행동으로 유도합니다.
+
+### 실험 설정
+- OGBench의 복잡한 장기 과제에서 DEAS를 평가하고 기준선 방법과 비교합니다.
+- DEAS를 행동 시퀀스를 예측하는 대규모 Vision-Language-Action 모델에 적용하여 RoboCasa Kitchen 시뮬레이션 작업 및 실제 세계 조작 작업에서 테스트합니다.
+
+### 주요 결과
+- DEAS는 OGBench 작업에서 기준선 방법보다 지속적으로 우수한 성능을 보입니다.
+- RoboCasa Kitchen 시뮬레이션 작업에서 DEAS는 Vision-Language-Action 모델의 성능을 크게 향상시킵니다.
+- 실제 세계 조작 작업에서도 DEAS는 상당한 성능 향상을 가져옵니다.
+
+### 결론
+DEAS는 행동 시퀀스와 분리 가치 학습을 통해 장기 과제에서 오프라인 강화 학습에 효과적이고 확장 가능한 솔루션을 제공하며, 기존 대규모 Vision-Language-Action 모델의 실제 조작 능력을 강화할 수 있습니다.

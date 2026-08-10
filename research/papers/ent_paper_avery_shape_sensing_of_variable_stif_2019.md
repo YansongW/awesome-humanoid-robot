@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.02429v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1904.02429v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (692 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,32 @@ theoretical_depth:
 ## Overview
 Soft robotic systems offer benefits over traditional rigid systems through reduced contact trauma with soft tissues and by enabling access through tortuous paths in minimally invasive surgery. However, the inherent deformability of soft robots places both a greater onus on accurate modelling of their shape, and greater challenges in realising intraoperative shape sensing. Herein we present a proprioceptive (self-sensing) soft actuator, with an electrically conductive working fluid. Electrical impedance measurements from up to six electrodes enabled tomographic reconstructions using Electrical Impedance Tomography (EIT). A new Frequency Division Multiplexed (FDM) EIT system was developed capable of measurements of 66 dB SNR with 20 ms temporal resolution. The concept was examined in two two-degree-of-freedom designs: a hydraulic hinged actuator and a pneumatic finger actuator with hydraulic beams. Both cases demonstrated that impedance measurements could be used to infer shape changes, and EIT images reconstructed during actuation showed distinct patterns with respect to each degree of freedom (DOF). Whilst there was some mechanical hysteresis observed, the repeatability of the measurements and resultant images was high. The results show the potential of FDM-EIT as a low-cost, low profile shape sensor in soft robots.
 
-## 개요
-소프트 로봇 시스템은 연조직과의 접촉 손상을 줄이고 최소 침습 수술에서 구불구불한 경로를 통한 접근을 가능하게 함으로써 기존의 강체 시스템보다 이점을 제공합니다. 그러나 소프트 로봇의 고유한 변형성은 형상의 정확한 모델링에 더 큰 부담을 주고, 수술 중 형상 감지 실현에 더 큰 과제를 제기합니다. 본 연구에서는 전기 전도성 작동 유체를 사용하는 고유 감각(자체 감지) 소프트 액추에이터를 제시합니다. 최대 6개의 전극에서 측정된 전기 임피던스는 전기 임피던스 단층촬영(EIT)을 사용한 단층 재구성을 가능하게 했습니다. 20ms 시간 분해능으로 66dB SNR 측정이 가능한 새로운 주파수 분할 다중화(FDM) EIT 시스템이 개발되었습니다. 이 개념은 두 가지 2자유도 설계, 즉 유압 힌지 액추에이터와 유압 빔이 있는 공압 핑거 액추에이터에서 검토되었습니다. 두 경우 모두 임피던스 측정이 형상 변화를 추론하는 데 사용될 수 있음을 보여주었으며, 작동 중 재구성된 EIT 이미지는 각 자유도(DOF)에 대해 뚜렷한 패턴을 나타냈습니다. 약간의 기계적 히스테리시스가 관찰되었지만, 측정 및 결과 이미지의 반복성은 높았습니다. 결과는 FDM-EIT가 소프트 로봇의 저비용, 저프로파일 형상 센서로서의 잠재력을 보여줍니다.
-
-## 핵심 내용
-소프트 로봇 시스템은 연조직과의 접촉 손상을 줄이고 최소 침습 수술에서 구불구불한 경로를 통한 접근을 가능하게 함으로써 기존의 강체 시스템보다 이점을 제공합니다. 그러나 소프트 로봇의 고유한 변형성은 형상의 정확한 모델링에 더 큰 부담을 주고, 수술 중 형상 감지 실현에 더 큰 과제를 제기합니다. 본 연구에서는 전기 전도성 작동 유체를 사용하는 고유 감각(자체 감지) 소프트 액추에이터를 제시합니다. 최대 6개의 전극에서 측정된 전기 임피던스는 전기 임피던스 단층촬영(EIT)을 사용한 단층 재구성을 가능하게 했습니다. 20ms 시간 분해능으로 66dB SNR 측정이 가능한 새로운 주파수 분할 다중화(FDM) EIT 시스템이 개발되었습니다. 이 개념은 두 가지 2자유도 설계, 즉 유압 힌지 액추에이터와 유압 빔이 있는 공압 핑거 액추에이터에서 검토되었습니다. 두 경우 모두 임피던스 측정이 형상 변화를 추론하는 데 사용될 수 있음을 보여주었으며, 작동 중 재구성된 EIT 이미지는 각 자유도(DOF)에 대해 뚜렷한 패턴을 나타냈습니다. 약간의 기계적 히스테리시스가 관찰되었지만, 측정 및 결과 이미지의 반복성은 높았습니다. 결과는 FDM-EIT가 소프트 로봇의 저비용, 저프로파일 형상 센서로서의 잠재력을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1904.02429v2
+
+## 개요
+소프트 로봇은 조직 손상을 줄이고 구불구불한 경로로 접근할 수 있어 최소 침습 수술에서 장점이 있지만, 변형 특성으로 인해 형상 모델링과 수술 중 센싱에 어려움이 있습니다. 본 논문은 전도성 식염수를 작동 유체로 사용하고, 6개 전극의 전기 임피던스 측정을 통해 EIT 단층 촬영을 구현하는 자가 감지 소프트 액추에이터를 제안합니다. 새로 개발된 FDM-EIT 시스템은 66 dB 신호 대 잡음비와 20 ms 시간 분해능을 갖습니다. 연구는 유압 힌지 액추에이터와 공압 핑거 액추에이터라는 두 가지 2자유도 설계에서 이 방법을 검증하여, 임피던스 측정이 형상 변화를 추론할 수 있고 EIT 이미지가 구동 중 각 자유도에 해당하는 고유한 패턴을 보여줌을 입증했습니다. 기계적 히스테리시스가 존재하지만 측정 및 이미지의 반복성은 높아, FDM-EIT가 소프트 로봇 형상 센싱에서 잠재력을 지님을 시사합니다.
+
+## 핵심 내용
+### 방법
+- 전도성 식염수를 구동 유체 및 센싱 매체로 사용하고, 6개 전극을 통해 전기 임피던스 데이터를 수집합니다.
+- EIT 기술을 기반으로 단층 촬영 재구성을 수행하며, 새로 개발된 FDM 시스템을 통해 다중화 측정을 구현합니다.
+
+### 시스템 아키텍처
+- FDM-EIT 시스템: 66 dB 신호 대 잡음비와 20 ms 시간 분해능을 지원하여 실시간 형상 센싱에 적합합니다.
+- 두 가지 2자유도 설계:
+  - 유압 힌지 액추에이터: 유압 구동을 통해 굽힘 운동을 구현합니다.
+  - 공압 핑거 액추에이터: 유압 빔 구조를 결합하여 공압 구동 하의 형상 변화를 구현합니다.
+
+### 실험 설정
+- 두 액추에이터에서 각각 구동 테스트를 수행하고, 임피던스 측정 데이터를 기록하며 EIT 이미지를 재구성합니다.
+- 기계적 히스테리시스 현상이 관찰되지만, 측정 및 이미지의 반복성은 높습니다.
+
+### 주요 수치
+- 신호 대 잡음비: 66 dB
+- 시간 분해능: 20 ms
+- 자유도: 2 (각 설계)
+
+### 결론
+- 임피던스 측정은 형상 변화를 효과적으로 추론할 수 있으며, EIT 이미지는 각 자유도에 해당하는 고유한 패턴을 보여줍니다.
+- FDM-EIT는 저비용, 저프로파일 형상 센서로서 소프트 로봇에서 응용 잠재력을 지닙니다.

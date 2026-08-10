@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1707.04821v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1707.04821v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (557 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,24 @@ This paper discusses deriving geometric Jacobians and identifying and analyzing 
 ## Content
 This paper discusses deriving geometric Jacobians and identifying and analyzing the kinematic singularities for two 6 DOF arm robots. First, we show the direct kinematics and D-H parameters derived for these two arms. The geometric Jacobian is computed for Barrett WAM and Smokie OUR. By analyzing the Jacobian matrices, we find the configurations at which J is rank deficient and derive the kinematic singularities through the Jacobian's determinant. Schematics are provided to show the singular configurations of both robots. Finally, a survey is done on redundant kinematic allocation schemes for the 7 DoF Barrett WAM.
 
-## 개요
-본 논문은 두 개의 6자유도(6 DOF) 로봇 팔에 대한 기하학적 자코비안(Geometric Jacobian) 유도와 운동학적 특이점(Kinematic Singularities) 식별 및 분석을 다룹니다. 먼저 이 두 팔에 대해 유도된 직접 운동학(Direct Kinematics)과 D-H 파라미터를 제시합니다. Barrett WAM과 Smokie OUR에 대한 기하학적 자코비안을 계산합니다. 자코비안 행렬을 분석하여 J의 계수(rank)가 부족한 형상을 찾고, 자코비안 행렬식을 통해 운동학적 특이점을 유도합니다. 두 로봇의 특이 형상을 보여주는 개략도가 제공됩니다. 마지막으로 7자유도(7 DoF) Barrett WAM을 위한 중복 운동학 할당 기법(Redundant Kinematic Allocation Schemes)에 대한 조사가 수행됩니다.
-
-## 핵심 내용
-본 논문은 두 개의 6자유도(6 DOF) 로봇 팔에 대한 기하학적 자코비안(Geometric Jacobian) 유도와 운동학적 특이점(Kinematic Singularities) 식별 및 분석을 다룹니다. 먼저 이 두 팔에 대해 유도된 직접 운동학(Direct Kinematics)과 D-H 파라미터를 제시합니다. Barrett WAM과 Smokie OUR에 대한 기하학적 자코비안을 계산합니다. 자코비안 행렬을 분석하여 J의 계수(rank)가 부족한 형상을 찾고, 자코비안 행렬식을 통해 운동학적 특이점을 유도합니다. 두 로봇의 특이 형상을 보여주는 개략도가 제공됩니다. 마지막으로 7자유도(7 DoF) Barrett WAM을 위한 중복 운동학 할당 기법(Redundant Kinematic Allocation Schemes)에 대한 조사가 수행됩니다.
-
 ## 参考
 - http://arxiv.org/abs/1707.04821v2
+
+## 개요
+논문은 먼저 Smokie OUR와 Barrett WAM 두 종류의 6자유도 매니퓰레이터에 대해 정기구학 모델과 D-H 파라미터를 수립한 후, 각각의 기하학적 자코비안 행렬을 계산했습니다. 자코비안 행렬의 계수 결핍 조건을 분석하고 행렬식을 풀어 두 매니퓰레이터의 운동학적 특이 자세를 결정하고, 이를 설명하는 개략도를 제공했습니다. 마지막으로 7자유도 Barrett WAM의 여유 운동학 할당 방안을 개괄했습니다.
+
+## 핵심 내용
+### 방법
+- D-H 파라미터에서 출발하여 두 종류의 6자유도 매니퓰레이터의 정기구학 모델을 수립합니다.
+- 정기구학을 기반으로 6×6 기하학적 자코비안 행렬을 유도하며, 이 행렬은 관절 속도를 엔드 이펙터 공간 속도로 매핑합니다.
+
+### 운동학적 특이점 분석
+- 자코비안 행렬의 행렬식을 계산하여 행렬의 계수가 결핍되는 관절 구성을 찾습니다.
+- Smokie OUR와 Barrett WAM에 대해 각각 특이 자세의 개략도를 제시하여, 매니퓰레이터가 특이점에서의 자세를 직관적으로 보여줍니다.
+
+### 여유 운동학 할당 (7자유도 Barrett WAM)
+- 7자유도 Barrett WAM의 여유 운동학 할당 방안을 개괄하며, 여유 자유도를 활용한 특이점 회피, 관절 운동 범위 최적화 등의 전략을 포함합니다.
+
+### 핵심 결론
+- 두 종류의 6자유도 매니퓰레이터의 특이점은 모두 자코비안 행렬식이 0이 되는 조건으로 결정되며, 구체적인 자세는 매니퓰레이터의 기하학적 구조(예: 링크 길이, 관절 오프셋)에 의해 결정됩니다.
+- 여유 자유도 할당 방안은 7자유도 Barrett WAM의 유연성과 특이점 회피 능력을 효과적으로 향상시킬 수 있습니다.

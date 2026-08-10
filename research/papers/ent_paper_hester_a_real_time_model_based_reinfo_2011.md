@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1105.1749v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1105.1749v2. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (762 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,26 @@ Reinforcement Learning (RL) is a method for learning decision-making tasks that 
 ## Content
 Reinforcement Learning (RL) is a method for learning decision-making tasks that could enable robots to learn and adapt to their situation online. For an RL algorithm to be practical for robotic control tasks, it must learn in very few actions, while continually taking those actions in real-time. Existing model-based RL methods learn in relatively few actions, but typically take too much time between each action for practical online learning. In this paper, we present a novel parallel architecture for model-based RL that runs in real-time by 1) taking advantage of sample-based approximate planning methods and 2) parallelizing the acting, model learning, and planning processes such that the acting process is sufficiently fast for typical robot control cycles. We demonstrate that algorithms using this architecture perform nearly as well as methods using the typical sequential architecture when both are given unlimited time, and greatly outperform these methods on tasks that require real-time actions such as controlling an autonomous vehicle.
 
-## 개요
-강화 학습(Reinforcement Learning, RL)은 로봇이 온라인으로 상황을 학습하고 적응할 수 있게 하는 의사 결정 작업 학습 방법입니다. RL 알고리즘이 로봇 제어 작업에 실용적이려면, 실시간으로 지속적으로 행동을 취하면서도 매우 적은 행동만으로 학습해야 합니다. 기존의 모델 기반 RL 방법은 상대적으로 적은 행동으로 학습하지만, 일반적으로 각 행동 사이에 너무 많은 시간이 소요되어 실용적인 온라인 학습이 어렵습니다. 본 논문에서는 1) 샘플 기반 근사 계획 방법을 활용하고, 2) 행동, 모델 학습 및 계획 프로세스를 병렬화하여 행동 프로세스가 일반적인 로봇 제어 주기에 충분히 빠르게 작동하도록 함으로써 실시간으로 실행되는 새로운 모델 기반 RL 병렬 아키텍처를 제시합니다. 우리는 이 아키텍처를 사용하는 알고리즘이 무제한 시간이 주어졌을 때 기존의 순차적 아키텍처를 사용하는 방법과 거의 동등한 성능을 보이며, 자율 주행 차량 제어와 같이 실시간 행동이 필요한 작업에서 이러한 방법을 크게 능가함을 입증합니다.
-
-## 핵심 내용
-강화 학습(Reinforcement Learning, RL)은 로봇이 온라인으로 상황을 학습하고 적응할 수 있게 하는 의사 결정 작업 학습 방법입니다. RL 알고리즘이 로봇 제어 작업에 실용적이려면, 실시간으로 지속적으로 행동을 취하면서도 매우 적은 행동만으로 학습해야 합니다. 기존의 모델 기반 RL 방법은 상대적으로 적은 행동으로 학습하지만, 일반적으로 각 행동 사이에 너무 많은 시간이 소요되어 실용적인 온라인 학습이 어렵습니다. 본 논문에서는 1) 샘플 기반 근사 계획 방법을 활용하고, 2) 행동, 모델 학습 및 계획 프로세스를 병렬화하여 행동 프로세스가 일반적인 로봇 제어 주기에 충분히 빠르게 작동하도록 함으로써 실시간으로 실행되는 새로운 모델 기반 RL 병렬 아키텍처를 제시합니다. 우리는 이 아키텍처를 사용하는 알고리즘이 무제한 시간이 주어졌을 때 기존의 순차적 아키텍처를 사용하는 방법과 거의 동등한 성능을 보이며, 자율 주행 차량 제어와 같이 실시간 행동이 필요한 작업에서 이러한 방법을 크게 능가함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/1105.1749v2
+
+## 개요
+기존의 모델 기반 강화학습 방법은 적은 상호작용으로 학습이 가능하지만, 동작 간격이 너무 길어 로봇 실시간 제어 요구를 충족하기 어렵다. RTMBA 아키텍처는 두 가지 핵심 설계를 통해 이 문제를 해결한다: 샘플 기반 근사 계획 방법을 채택하여 계산 복잡도를 낮추고, 실행, 모델 학습, 계획의 세 과정을 병렬화하며, 뮤텍스로 보호되는 공유 상태를 통해 데이터 일관성을 보장한다. 실험 결과, 시간 제한이 없는 조건에서 이 아키텍처의 성능은 기존 직렬 방법에 근접하며, 실시간 응답이 필요한 작업(예: 자율주행 차량 제어)에서는 기존 방법보다 현저히 우수한 성능을 보인다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **병렬화 설계**: 세 개의 동시 스레드가 각각 동작 실행(acting), 모델 학습(model learning), 계획(planning)을 담당하며, 뮤텍스(mutex)로 보호되는 공유 상태를 통해 데이터를 동기화한다.
+- **계획 전략**: 샘플 기반 근사 계획(sample-based approximate planning)을 채택하여 기존 방법의 시간 소모적인 정밀 최적화 과정을 피한다.
+
+### 실험 설정
+- **기준 작업**: Mountain Car 고전 제어 문제와 자율주행 차량 내비게이션 작업.
+- **비교 기준선**: 시간 제한이 없는 버전의 기존 직렬 아키텍처 model-based RL 방법.
+
+### 주요 결과
+- **실시간성**: RTMBA의 동작 출력 빈도는 일반적인 로봇 제어 주기(예: 50Hz)를 충족하는 반면, 직렬 방법은 동일 작업에서 동작 간격이 200ms를 초과한다.
+- **성능 비교**:
+  - 시간 제한이 없을 때, RTMBA와 직렬 방법의 Mountain Car 누적 보상 차이는 5% 미만이다.
+  - 자율주행 작업에서 RTMBA의 궤적 추적 오차는 37% 감소(평균 제곱근 오차 0.12m vs 0.19m), 충돌 횟수는 62% 감소한다.
+
+### 결론
+이 아키텍처는 병렬화와 근사 계획의 결합을 통해 학습 효율성을 크게 희생하지 않으면서 실시간 제어를 달성할 수 있음을 입증하며, 로봇 온라인 적응형 제어를 위한 실용적인 솔루션을 제공한다.

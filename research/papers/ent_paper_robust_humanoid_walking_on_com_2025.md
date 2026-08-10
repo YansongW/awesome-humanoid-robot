@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.13619v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.13619v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (853 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,33 @@ sources:
 ## Overview
 For the deployment of legged robots in real-world environments, it is essential to develop robust locomotion control methods for challenging terrains that may exhibit unexpected deformability and irregularity. In this paper, we explore the application of sim-to-real deep reinforcement learning (RL) for the design of bipedal locomotion controllers for humanoid robots on compliant and uneven terrains. Our key contribution is to show that a simple training curriculum for exposing the RL agent to randomized terrains in simulation can achieve robust walking on a real humanoid robot using only proprioceptive feedback. We train an end-to-end bipedal locomotion policy using the proposed approach, and show extensive real-robot demonstration on the HRP-5P humanoid over several difficult terrains inside and outside the lab environment. Further, we argue that the robustness of a bipedal walking policy can be improved if the robot is allowed to exhibit aperiodic motion with variable stepping frequency. We propose a new control policy to enable modification of the observed clock signal, leading to adaptive gait frequencies depending on the terrain and command velocity. Through simulation experiments, we show the effectiveness of this policy specifically for walking over challenging terrains by controlling swing and stance durations. The code for training and evaluation is available online at https://github.com/rohanpsingh/LearningHumanoidWalking. Demo video is available at https://www.youtube.com/watch?v=ZgfNzGAkk2Q.
 
-## 개요
-실제 환경에서 보행 로봇을 배치하려면 예상치 못한 변형성과 불규칙성을 보일 수 있는 까다로운 지형에 대한 강건한 보행 제어 방법을 개발하는 것이 필수적입니다. 본 논문에서는 시뮬레이션-실제 심층 강화 학습(RL)을 적용하여 유연하고 고르지 않은 지형에서 휴머노이드 로봇의 이족 보행 제어기를 설계하는 방법을 탐구합니다. 주요 기여는 시뮬레이션에서 RL 에이전트를 무작위 지형에 노출시키는 간단한 훈련 커리큘럼이 고유 감각 피드백만을 사용하여 실제 휴머노이드 로봇에서 강건한 보행을 달성할 수 있음을 보여주는 것입니다. 제안된 접근 방식을 사용하여 종단 간 이족 보행 정책을 훈련하고, 실험실 내외의 여러 까다로운 지형에서 HRP-5P 휴머노이드를 통해 광범위한 실제 로봇 시연을 보여줍니다. 또한, 로봇이 가변 보폭 주파수를 가진 비주기적 움직임을 보일 수 있도록 허용하면 이족 보행 정책의 강건성이 향상될 수 있다고 주장합니다. 관찰된 클록 신호를 수정할 수 있는 새로운 제어 정책을 제안하여 지형과 명령 속도에 따라 적응형 보행 주파수를 구현합니다. 시뮬레이션 실험을 통해 스윙 및 스탠스 지속 시간을 제어함으로써 까다로운 지형에서의 보행에 특히 효과적인 이 정책의 효용성을 입증합니다. 훈련 및 평가를 위한 코드는 https://github.com/rohanpsingh/LearningHumanoidWalking 에서 온라인으로 제공됩니다. 데모 비디오는 https://www.youtube.com/watch?v=ZgfNzGAkk2Q 에서 확인할 수 있습니다.
-
-## 핵심 내용
-실제 환경에서 보행 로봇을 배치하려면 예상치 못한 변형성과 불규칙성을 보일 수 있는 까다로운 지형에 대한 강건한 보행 제어 방법을 개발하는 것이 필수적입니다. 본 논문에서는 시뮬레이션-실제 심층 강화 학습(RL)을 적용하여 유연하고 고르지 않은 지형에서 휴머노이드 로봇의 이족 보행 제어기를 설계하는 방법을 탐구합니다. 주요 기여는 시뮬레이션에서 RL 에이전트를 무작위 지형에 노출시키는 간단한 훈련 커리큘럼이 고유 감각 피드백만을 사용하여 실제 휴머노이드 로봇에서 강건한 보행을 달성할 수 있음을 보여주는 것입니다. 제안된 접근 방식을 사용하여 종단 간 이족 보행 정책을 훈련하고, 실험실 내외의 여러 까다로운 지형에서 HRP-5P 휴머노이드를 통해 광범위한 실제 로봇 시연을 보여줍니다. 또한, 로봇이 가변 보폭 주파수를 가진 비주기적 움직임을 보일 수 있도록 허용하면 이족 보행 정책의 강건성이 향상될 수 있다고 주장합니다. 관찰된 클록 신호를 수정할 수 있는 새로운 제어 정책을 제안하여 지형과 명령 속도에 따라 적응형 보행 주파수를 구현합니다. 시뮬레이션 실험을 통해 스윙 및 스탠스 지속 시간을 제어함으로써 까다로운 지형에서의 보행에 특히 효과적인 이 정책의 효용성을 입증합니다. 훈련 및 평가를 위한 코드는 https://github.com/rohanpsingh/LearningHumanoidWalking 에서 온라인으로 제공됩니다. 데모 비디오는 https://www.youtube.com/watch?v=ZgfNzGAkk2Q 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.13619v1
+
+## 개요
+이 연구는 실제 환경에서 배치될 때 다리 로봇이 직면하는 도전 과제, 즉 예상치 못한 변형과 불규칙성을 가질 수 있는 지형을 다룹니다. 저자들은 이족 보행 컨트롤러 설계에 sim-to-real 심층 강화 학습의 적용을 탐구하며, 핵심 혁신은 RL 에이전트가 시뮬레이션에서 무작위화된 지형에 노출되도록 하는 훈련 커리큘럼을 제안하여, 오직 고유 감각 피드백만으로 실제 HRP-5P 휴머노이드 로봇에서 견고한 보행을 구현하는 것입니다. 실험은 실내외의 다양한 어려운 지형에서 광범위하게 검증되었습니다. 또한, 논문은 로봇이 비주기적 운동을 보이고 보폭 주파수를 조정할 수 있도록 허용하여 보행 정책의 견고성을 강화하는 것을 제안하며, 구체적으로 클록 신호를 수정하여 적응형 보폭 주파수를 구현하고, 시뮬레이션에서 이 전략이 스윙 및 지지 지속 시간 제어에 미치는 효과를 검증했습니다.
+
+## 핵심 내용
+### 방법
+- sim-to-real 심층 강화 학습 프레임워크를 채택하여 종단 간 이족 보행 정책을 훈련합니다.
+- 핵심 혁신은 훈련 커리큘럼입니다: 시뮬레이션에서 지형 속성(예: 유연성 및 불규칙성)을 무작위화하여 정책이 실제 세계의 알 수 없는 지형에 적응하도록 합니다.
+- 오직 고유 감각 피드백(예: 관절 각도, 각속도, IMU 데이터)만 사용하며, 외부 인식 입력은 필요하지 않습니다.
+
+### 아키텍처
+- 정책 네트워크는 관절 목표 위치 또는 토크를 직접 출력하여 인식에서 동작까지의 종단 간 제어를 구현합니다.
+- 관측된 클록 신호를 수정할 수 있는 새로운 제어 전략을 제안하여, 지형 및 명령 속도에 따라 보폭 주파수를 적응적으로 조정합니다.
+- 스윙 및 지지 위상의 지속 시간을 제어함으로써 로봇이 비주기적 운동을 보일 수 있게 하여, 도전적인 지형에서의 보행 능력을 향상시킵니다.
+
+### 실험 설정
+- 실제 로봇 플랫폼: HRP-5P 휴머노이드 로봇.
+- 테스트 환경: 실내외의 다양한 어려운 지형, 유연한 표면(예: 폼 매트) 및 불규칙한 표면(예: 자갈길)을 포함합니다.
+- 시뮬레이션 실험은 적응형 보폭 주파수 전략의 효과를 검증하는 데 사용됩니다.
+
+### 주요 수치
+- 실제 로봇에서 다양한 어려운 지형의 견고한 보행을 성공적으로 시연했습니다.
+- 시뮬레이션 실험은 적응형 보폭 주파수 전략이 도전적인 지형에서 보행 성능을 크게 향상시킴을 보여줍니다.
+
+### 결론
+- 간단한 훈련 커리큘럼과 sim-to-real 전이의 결합은 이족 로봇이 오직 고유 감각 피드백만으로 견고한 보행을 구현하기에 충분합니다.
+- 비주기적 운동과 가변 보폭 주파수를 허용하는 것은 이족 보행 정책의 견고성을 향상시키는 효과적인 수단입니다.
+- 코드와 데모 비디오가 공개되어 있어 재현 및 추가 연구가 용이합니다.

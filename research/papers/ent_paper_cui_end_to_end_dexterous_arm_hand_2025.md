@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.00139v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.00139v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (809 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,25 @@ DexGrasp-VLA 针对通用机器人灵巧操作中训练数据稀缺的问题，�
 ## Overview
 Achieving human-like dexterous manipulation remains a major challenge for general-purpose robots. While Vision-Language-Action (VLA) models show potential in learning skills from demonstrations, their scalability is limited by scarce high-quality training data. Existing data collection methods face inherent constraints: manual teleoperation overloads human operators, while automated planning often produces unnatural motions. We propose a Shared Autonomy framework that divides control between macro and micro motions. A human operator guides the robot's arm pose through intuitive VR teleoperation, while an autonomous DexGrasp-VLA policy handles fine-grained hand control using real-time tactile and visual feedback. This division significantly reduces cognitive load and enables efficient collection of high-quality coordinated arm-hand demonstrations. Using this data, we train an end-to-end VLA policy enhanced with our novel Arm-Hand Feature Enhancement module, which captures both distinct and shared representations of macro and micro movements for more natural coordination. Our Corrective Teleoperation system enables continuous policy improvement through human-in-the-loop failure recovery. Experiments demonstrate that our framework generates high-quality data with minimal manpower and achieves a 90% success rate across diverse objects, including unseen instances. Comprehensive evaluations validate the system's effectiveness in developing dexterous manipulation capabilities.
 
-## 개요
-인간과 같은 정교한 조작 능력을 달성하는 것은 범용 로봇에게 여전히 주요 과제로 남아 있습니다. Vision-Language-Action(VLA) 모델은 시연을 통해 기술을 학습할 가능성을 보여주지만, 고품질 훈련 데이터의 부족으로 확장성에 한계가 있습니다. 기존 데이터 수집 방법은 본질적인 제약에 직면합니다. 수동 원격 조작은 인간 작업자에게 과부하를 주고, 자동화된 계획은 종종 부자연스러운 움직임을 생성합니다. 우리는 거시적 움직임과 미시적 움직임 간의 제어를 분할하는 공유 자율성(Shared Autonomy) 프레임워크를 제안합니다. 인간 작업자는 직관적인 VR 원격 조작을 통해 로봇의 팔 자세를 안내하고, 자율적인 DexGrasp-VLA 정책은 실시간 촉각 및 시각 피드백을 사용하여 세밀한 손 제어를 처리합니다. 이러한 분할은 인지 부하를 크게 줄이고 고품질의 조정된 팔-손 시연을 효율적으로 수집할 수 있게 합니다. 이 데이터를 사용하여, 우리는 거시적 및 미시적 움직임의 고유하고 공유된 표현을 모두 포착하여 더 자연스러운 조정을 가능하게 하는 새로운 Arm-Hand Feature Enhancement 모듈로 강화된 종단간 VLA 정책을 훈련합니다. 우리의 Corrective Teleoperation 시스템은 인간이 개입하는 실패 복구를 통해 지속적인 정책 개선을 가능하게 합니다. 실험은 우리의 프레임워크가 최소한의 인력으로 고품질 데이터를 생성하고, 보지 못한 객체를 포함한 다양한 객체에서 90%의 성공률을 달성함을 보여줍니다. 포괄적인 평가는 시스템이 정교한 조작 능력을 개발하는 데 효과적임을 입증합니다.
-
-## 핵심 내용
-인간과 같은 정교한 조작 능력을 달성하는 것은 범용 로봇에게 여전히 주요 과제로 남아 있습니다. Vision-Language-Action(VLA) 모델은 시연을 통해 기술을 학습할 가능성을 보여주지만, 고품질 훈련 데이터의 부족으로 확장성에 한계가 있습니다. 기존 데이터 수집 방법은 본질적인 제약에 직면합니다. 수동 원격 조작은 인간 작업자에게 과부하를 주고, 자동화된 계획은 종종 부자연스러운 움직임을 생성합니다. 우리는 거시적 움직임과 미시적 움직임 간의 제어를 분할하는 공유 자율성(Shared Autonomy) 프레임워크를 제안합니다. 인간 작업자는 직관적인 VR 원격 조작을 통해 로봇의 팔 자세를 안내하고, 자율적인 DexGrasp-VLA 정책은 실시간 촉각 및 시각 피드백을 사용하여 세밀한 손 제어를 처리합니다. 이러한 분할은 인지 부하를 크게 줄이고 고품질의 조정된 팔-손 시연을 효율적으로 수집할 수 있게 합니다. 이 데이터를 사용하여, 우리는 거시적 및 미시적 움직임의 고유하고 공유된 표현을 모두 포착하여 더 자연스러운 조정을 가능하게 하는 새로운 Arm-Hand Feature Enhancement 모듈로 강화된 종단간 VLA 정책을 훈련합니다. 우리의 Corrective Teleoperation 시스템은 인간이 개입하는 실패 복구를 통해 지속적인 정책 개선을 가능하게 합니다. 실험은 우리의 프레임워크가 최소한의 인력으로 고품질 데이터를 생성하고, 보지 못한 객체를 포함한 다양한 객체에서 90%의 성공률을 달성함을 보여줍니다. 포괄적인 평가는 시스템이 정교한 조작 능력을 개발하는 데 효과적임을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.00139v2
+
+## 개요
+DexGrasp-VLA는 범용 로봇의 정밀 조작에서 훈련 데이터 부족 문제를 해결하기 위해 공유 자율 프레임워크를 제안한다. 이 프레임워크는 제어 작업을 거시적 팔 운동과 미시적 손 운동으로 분해한다: 인간 조작자는 VR 원격 조작을 통해 로봇 팔의 자세를 유도하고, 자율 DexGrasp-VLA 정책은 실시간 촉각 및 시각 피드백을 활용하여 손의 정밀 제어를 처리한다. 이러한 분업은 조작자의 인지 부하를 크게 줄이고 고품질의 팔-손 협조 시연 데이터를 효율적으로 수집할 수 있게 한다. 이 데이터를 기반으로 팀은 엔드투엔드 VLA 정책을 훈련하고, 거시적 및 미시적 운동의 고유 표현과 공유 표현을 포착하여 더 자연스러운 협조를 구현하는 새로운 Arm-Hand Feature Enhancement 모듈을 도입했다. 또한, 오류 수정 원격 조작 시스템은 인간-인-더-루프 실패 복구를 통한 지속적인 정책 개선을 가능하게 한다.
+
+## 핵심 내용
+### 방법
+- **공유 자율 프레임워크**: 제어를 거시적 운동(팔)과 미시적 운동(손)으로 분해한다. 인간 조작자는 VR 원격 조작을 통해 팔 자세를 제어하고, 자율 DexGrasp-VLA 정책은 실시간 촉각 및 시각 피드백을 활용하여 손의 정밀 제어를 처리한다.
+- **Arm-Hand Feature Enhancement 모듈**: 이 모듈은 엔드투엔드 VLA 정책에 내장되어 거시적 및 미시적 운동의 고유 표현과 공유 표현을 동시에 포착하여 팔-손 협조의 자연스러움을 향상시킨다.
+- **오류 수정 원격 조작 시스템**: 정책 실패 시 인간이 개입할 수 있게 하여 인간-인-더-루프 실패 복구 메커니즘을 통해 지속적인 정책 개선을 구현한다.
+
+### 실험 설정
+- **데이터 수집**: 공유 자율 프레임워크를 통해 최소한의 인력 비용으로 고품질 팔-손 협조 시연 데이터를 생성한다.
+- **평가 대상**: 보지 못한 인스턴스를 포함한 다양한 물체를 포함한다.
+- **성능 지표**: 성공률.
+
+### 주요 수치 및 결론
+- **성공률**: 보지 못한 인스턴스를 포함한 다양한 물체에서 90%의 성공률을 달성한다.
+- **효율성**: 인간 조작자의 인지 부하를 크게 줄여 효율적인 데이터 수집을 구현한다.
+- **일반화 능력**: 보지 못한 물체에 대해 우수한 일반화 성능을 보인다.
+- **지속적 개선**: 오류 수정 원격 조작 시스템은 정책의 지속적 최적화를 지원한다.

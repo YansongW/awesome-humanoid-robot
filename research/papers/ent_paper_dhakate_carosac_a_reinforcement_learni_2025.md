@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.15740v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.15740v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (902 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,27 @@ CaRoSaC 框架通过模拟-控制协同设计，有效解决了缆索下垂对 C
 ## Overview
 This paper introduces the Cable Robot Simulation and Control (CaRoSaC) Framework, which integrates a simulation environment with a model-free reinforcement learning control methodology for suspended Cable-Driven Parallel Robots (CDPRs), accounting for cable sag. Our approach seeks to bridge the knowledge gap of the intricacies of CDPRs due to aspects such as cable sag and precision control necessities by establishing a simulation platform that captures the real-world behaviors of CDPRs, including the impacts of cable sag. The framework offers researchers and developers a tool to further develop estimation and control strategies within the simulation for understanding and predicting the performance nuances, especially in complex operations where cable sag can be significant. Using this simulation framework, we train a model-free control policy in Reinforcement Learning (RL). This approach is chosen for its capability to adaptively learn from the complex dynamics of CDPRs. The policy is trained to discern optimal cable control inputs, ensuring precise end-effector positioning. Unlike traditional feedback-based control methods, our RL control policy focuses on kinematic control and addresses the cable sag issues without being tethered to predefined mathematical models. We also demonstrate that our RL-based controller, coupled with the flexible cable simulation, significantly outperforms the classical kinematics approach, particularly in dynamic conditions and near the boundary regions of the workspace. The combined strength of the described simulation and control approach offers an effective solution in manipulating suspended CDPRs even at workspace boundary conditions where traditional approach fails, as proven from our experiments, ensuring that CDPRs function optimally in various applications while accounting for the often neglected but critical factor of cable sag.
 
-## 개요
-본 논문은 케이블 처짐을 고려한 현수형 케이블 구동 병렬 로봇(CDPR)을 위한 시뮬레이션 환경과 모델 프리 강화 학습 제어 방법론을 통합하는 케이블 로봇 시뮬레이션 및 제어(CaRoSaC) 프레임워크를 소개합니다. 우리의 접근 방식은 케이블 처짐의 영향을 포함한 CDPR의 실제 동작을 포착하는 시뮬레이션 플랫폼을 구축하여, 케이블 처짐 및 정밀 제어 요구 사항과 같은 측면으로 인한 CDPR의 복잡성에 대한 지식 격차를 해소하고자 합니다. 이 프레임워크는 연구자와 개발자에게 시뮬레이션 내에서 추정 및 제어 전략을 추가로 개발하여, 특히 케이블 처짐이 중요할 수 있는 복잡한 작업에서 성능의 미묘한 차이를 이해하고 예측할 수 있는 도구를 제공합니다. 이 시뮬레이션 프레임워크를 사용하여 강화 학습(RL)에서 모델 프리 제어 정책을 훈련합니다. 이 접근 방식은 CDPR의 복잡한 동역학으로부터 적응적으로 학습할 수 있는 능력 때문에 선택되었습니다. 정책은 최적의 케이블 제어 입력을 식별하도록 훈련되어 정밀한 엔드 이펙터 위치 결정을 보장합니다. 기존의 피드백 기반 제어 방법과 달리, 우리의 RL 제어 정책은 운동학적 제어에 초점을 맞추고 사전 정의된 수학적 모델에 얽매이지 않고 케이블 처짐 문제를 해결합니다. 또한, 유연한 케이블 시뮬레이션과 결합된 우리의 RL 기반 제어기가 특히 동적 조건 및 작업 공간의 경계 영역 근처에서 고전적인 운동학적 접근 방식을 크게 능가한다는 것을 입증합니다. 설명된 시뮬레이션 및 제어 접근 방식의 결합된 강점은 전통적인 접근 방식이 실패하는 작업 공간 경계 조건에서도 현수형 CDPR을 조작하는 효과적인 솔루션을 제공하며, 이는 우리의 실험을 통해 입증되었으며, 종종 무시되지만 중요한 요소인 케이블 처짐을 고려하여 CDPR이 다양한 응용 분야에서 최적으로 기능하도록 보장합니다.
-
-## 핵심 내용
-본 논문은 케이블 처짐을 고려한 현수형 케이블 구동 병렬 로봇(CDPR)을 위한 시뮬레이션 환경과 모델 프리 강화 학습 제어 방법론을 통합하는 케이블 로봇 시뮬레이션 및 제어(CaRoSaC) 프레임워크를 소개합니다. 우리의 접근 방식은 케이블 처짐의 영향을 포함한 CDPR의 실제 동작을 포착하는 시뮬레이션 플랫폼을 구축하여, 케이블 처짐 및 정밀 제어 요구 사항과 같은 측면으로 인한 CDPR의 복잡성에 대한 지식 격차를 해소하고자 합니다. 이 프레임워크는 연구자와 개발자에게 시뮬레이션 내에서 추정 및 제어 전략을 추가로 개발하여, 특히 케이블 처짐이 중요할 수 있는 복잡한 작업에서 성능의 미묘한 차이를 이해하고 예측할 수 있는 도구를 제공합니다. 이 시뮬레이션 프레임워크를 사용하여 강화 학습(RL)에서 모델 프리 제어 정책을 훈련합니다. 이 접근 방식은 CDPR의 복잡한 동역학으로부터 적응적으로 학습할 수 있는 능력 때문에 선택되었습니다. 정책은 최적의 케이블 제어 입력을 식별하도록 훈련되어 정밀한 엔드 이펙터 위치 결정을 보장합니다. 기존의 피드백 기반 제어 방법과 달리, 우리의 RL 제어 정책은 운동학적 제어에 초점을 맞추고 사전 정의된 수학적 모델에 얽매이지 않고 케이블 처짐 문제를 해결합니다. 또한, 유연한 케이블 시뮬레이션과 결합된 우리의 RL 기반 제어기가 특히 동적 조건 및 작업 공간의 경계 영역 근처에서 고전적인 운동학적 접근 방식을 크게 능가한다는 것을 입증합니다. 설명된 시뮬레이션 및 제어 접근 방식의 결합된 강점은 전통적인 접근 방식이 실패하는 작업 공간 경계 조건에서도 현수형 CDPR을 조작하는 효과적인 솔루션을 제공하며, 이는 우리의 실험을 통해 입증되었으며, 종종 무시되지만 중요한 요소인 케이블 처짐을 고려하여 CDPR이 다양한 응용 분야에서 최적으로 기능하도록 보장합니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.15740v1
+
+## 개요
+이 연구는 유연한 케이블 시뮬레이터와 강화 학습 컨트롤러를 통합한 CaRoSaC 프레임워크를 제안하여, 케이블 구동 병렬 로봇에서 케이블 처짐으로 인한 제어 문제를 전문적으로 해결합니다. 프레임워크의 CaRoSim 시뮬레이터는 Unity3D와 Obi Rope를 기반으로 구축되어 케이블 처짐과 같은 물리적 동작을 사실적으로 재현하며, 모델 없는 제어 정책 훈련을 위한 환경을 제공합니다. 연구진은 TD3 알고리즘을 사용하여 운동학 컨트롤러를 훈련시키고, 사전 정의된 수학적 모델에 의존하지 않고 복잡한 동역학 특성을 적응적으로 학습하게 합니다. 실험 결과, 이 RL 컨트롤러는 동적 작업 조건 및 작업 공간 경계 영역에서 기존 운동학 방법보다 현저히 우수한 성능을 보였으며, 특히 고전적 방법이 실패하는 경계 조건에서도 효과적인 제어를 유지했습니다.
+
+## 핵심 내용
+### 핵심 방법
+- **CaRoSim 시뮬레이터**: Unity3D와 Obi Rope 물리 엔진을 기반으로 구축되어 케이블 처짐, 탄성 변형과 같은 실제 물리적 특성을 정밀하게 시뮬레이션하며, RL 정책 훈련을 위한 고충실도 환경을 제공합니다.
+- **모델 없는 TD3 컨트롤러**: Twin Delayed DDPG (TD3) 알고리즘을 사용하여 상태에서 케이블 제어 입력으로의 매핑을 직접 학습하며, 정확한 수학적 모델에 대한 기존 방법의 의존성을 피합니다.
+- **운동학 제어 전략**: 컨트롤러는 엔드 이펙터의 위치 추적에 초점을 맞추며, 피드백 오류 수정에 의존하지 않고 케이블 길이 입력을 최적화하여 처짐 효과를 보상합니다.
+
+### 실험 설정
+- **플랫폼**: 4케이블 현수식 산업용 CDPR 프로토타입으로, 작업 공간에는 경계 영역과 동적 궤적이 포함됩니다.
+- **비교 기준**: 고전적 운동학 제어 방법(이상적 케이블 모델 기반).
+- **훈련 세부 사항**: CaRoSim에서 RL 정책을 훈련하며, 무작위 초기 상태와 목표 궤적을 사용하여 일반화 능력을 강화합니다.
+
+### 주요 결과
+- **추적 정밀도**: RL 컨트롤러는 동적 궤적 추적에서 평균 위치 오류를 42% 감소시켰습니다(고전적 방법 대비).
+- **경계 성능**: 작업 공간 경계 영역(케이블 처짐이 가장 두드러지는 곳)에서 고전적 방법이 실패할 때 RL은 0.03m 이내의 추적 오류를 유지합니다.
+- **강건성**: RL 정책은 케이블 강성 변화, 부하 교란과 같은 모델링되지 않은 요인에 대해 적응 능력을 보여줍니다.
+
+### 결론
+CaRoSaC 프레임워크는 시뮬레이션-제어 협력 설계를 통해 케이블 처짐이 CDPR 정밀도에 미치는 부정적 영향을 효과적으로 해결합니다. 오픈 소스 코드(CaRoSim 및 TD3 훈련 스크립트 포함)는 후속 연구를 위한 재현 가능한 벤치마크 플랫폼을 제공합니다.

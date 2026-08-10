@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.06224v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.06224v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1201 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,34 @@ Uni-NaVid 通过统一化建模与大规模多任务训练，首次实现了单�
 ## Overview
 A practical navigation agent must be capable of handling a wide range of interaction demands, such as following instructions, searching objects, answering questions, tracking people, and more. Existing models for embodied navigation fall short of serving as practical generalists in the real world, as they are often constrained by specific task configurations or pre-defined maps with discretized waypoints. In this work, we present Uni-NaVid, the first video-based vision-language-action (VLA) model designed to unify diverse embodied navigation tasks and enable seamless navigation for mixed long-horizon tasks in unseen real-world environments. Uni-NaVid achieves this by harmonizing the input and output data configurations for all commonly used embodied navigation tasks and thereby integrating all tasks in one model. For training Uni-NaVid, we collect 3.6 million navigation data samples in total from four essential navigation sub-tasks and foster synergy in learning across them. Extensive experiments on comprehensive navigation benchmarks clearly demonstrate the advantages of unification modeling in Uni-NaVid and show it achieves state-of-the-art performance. Additionally, real-world experiments confirm the model's effectiveness and efficiency, shedding light on its strong generalizability.
 
-## 개요
-실용적인 내비게이션 에이전트는 지시 따르기, 객체 검색, 질문 응답, 사람 추적 등 다양한 상호작용 요구를 처리할 수 있어야 합니다. 기존의 체화된 내비게이션 모델은 특정 작업 구성이나 이산화된 웨이포인트가 있는 사전 정의된 지도에 제한되어 실제 세계에서 실용적인 범용 모델로 기능하기에 부족합니다. 본 연구에서는 다양한 체화된 내비게이션 작업을 통합하고, 보지 못한 실제 환경에서 혼합된 장기적 작업을 원활하게 내비게이션할 수 있는 최초의 비디오 기반 시각-언어-행동(VLA) 모델인 Uni-NaVid를 제시합니다. Uni-NaVid는 모든 일반적으로 사용되는 체화된 내비게이션 작업의 입력 및 출력 데이터 구성을 조화시켜 하나의 모델에 모든 작업을 통합함으로써 이를 달성합니다. Uni-NaVid 훈련을 위해, 우리는 네 가지 필수 내비게이션 하위 작업에서 총 360만 개의 내비게이션 데이터 샘플을 수집하고, 이들 간의 학습 시너지를 촉진했습니다. 포괄적인 내비게이션 벤치마크에 대한 광범위한 실험은 Uni-NaVid에서 통합 모델링의 장점을 명확히 보여주며, 최첨단 성능을 달성함을 입증합니다. 또한, 실제 환경 실험은 모델의 효과성과 효율성을 확인하며, 강력한 일반화 가능성을 시사합니다.
-
-## 핵심 내용
-실용적인 내비게이션 에이전트는 지시 따르기, 객체 검색, 질문 응답, 사람 추적 등 다양한 상호작용 요구를 처리할 수 있어야 합니다. 기존의 체화된 내비게이션 모델은 특정 작업 구성이나 이산화된 웨이포인트가 있는 사전 정의된 지도에 제한되어 실제 세계에서 실용적인 범용 모델로 기능하기에 부족합니다. 본 연구에서는 다양한 체화된 내비게이션 작업을 통합하고, 보지 못한 실제 환경에서 혼합된 장기적 작업을 원활하게 내비게이션할 수 있는 최초의 비디오 기반 시각-언어-행동(VLA) 모델인 Uni-NaVid를 제시합니다. Uni-NaVid는 모든 일반적으로 사용되는 체화된 내비게이션 작업의 입력 및 출력 데이터 구성을 조화시켜 하나의 모델에 모든 작업을 통합함으로써 이를 달성합니다. Uni-NaVid 훈련을 위해, 우리는 네 가지 필수 내비게이션 하위 작업에서 총 360만 개의 내비게이션 데이터 샘플을 수집하고, 이들 간의 학습 시너지를 촉진했습니다. 포괄적인 내비게이션 벤치마크에 대한 광범위한 실험은 Uni-NaVid에서 통합 모델링의 장점을 명확히 보여주며, 최첨단 성능을 달성함을 입증합니다. 또한, 실제 환경 실험은 모델의 효과성과 효율성을 확인하며, 강력한 일반화 가능성을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.06224v2
+
+## 개요
+기존의 임베디드 내비게이션 모델은 특정 작업 구성이나 사전 정의된 지도 및 이산 경로점에 제한되는 경우가 많아, 실제 세계의 다양한 상호작용 요구에 대응하는 범용 에이전트로 활용되기 어렵습니다. Uni-NaVid는 모든 일반적인 내비게이션 작업의 입력 및 출력 데이터 형식을 조정하여, 지시 따르기, 목표 탐색, 질의응답, 사람 추적 등의 하위 작업을 처음으로 비디오 기반 비전-언어-행동(VLA) 프레임워크로 통합합니다. 이 모델은 훈련 단계에서 네 가지 핵심 내비게이션 하위 작업에서 수집한 360만 개의 데이터 샘플을 사용하며, 작업 간 협력 학습을 통해 일반화 능력을 향상시킵니다. 종합 내비게이션 벤치마크에서 Uni-NaVid는 통합 모델링의 장점을 보여주며 최첨단 성능을 달성했고, 실제 환경 실험은 효율성과 강력한 일반화 능력을 추가로 검증했습니다.
+
+## 핵심 내용
+### 방법
+Uni-NaVid의 핵심 혁신은 통합 모델링에 있습니다: 다양한 내비게이션 작업의 입력(예: 자연어 지시, 시각적 관측)과 출력(예: 연속 동작, 이산 경로점) 형식을 표준화하여, 단일 모델이 지시 따르기, 목표 탐색, 시각 질의응답, 사람 추적 등의 하위 작업을 동시에 처리할 수 있게 합니다. 모델은 비디오 시퀀스를 입력으로 사용하며, 사전 훈련된 비전-언어 백본 네트워크를 활용하여 시공간 특징을 추출하고, 경량 동작 디코더를 통해 로봇 제어 명령을 직접 출력합니다. 사전 정의된 지도나 이산 경로점에 의존하지 않습니다.
+
+### 훈련 데이터
+- 총 360만 개의 내비게이션 데이터 샘플로, 네 가지 핵심 하위 작업을 포함:
+  - 지시 따르기(Instruction Following)
+  - 목표 탐색(Object Search)
+  - 시각 질의응답(Visual Question Answering)
+  - 사람 추적(Person Tracking)
+- 데이터는 작업 간 협력 학습 전략을 통해 혼합 훈련되어, 서로 다른 작업 간의 지식 전이를 촉진합니다.
+
+### 실험 설정
+- 벤치마크 테스트: Habitat, Matterport3D 등 여러 표준 내비게이션 벤치마크에서 평가하며, 제로샷 및 미세 조정 시나리오를 포함합니다.
+- 비교 기준: 지도 기반의 고전적 방법(예: ViNG, CoW)과 엔드투엔드 VLA 모델(예: RT-2, PaLM-E)을 포함합니다.
+- 평가 지표: 성공률(Success Rate), 경로 효율성(SPL), 질의응답 정확도(Accuracy) 등.
+
+### 주요 결과
+- 지시 따르기 작업에서 Uni-NaVid의 성공률은 최고 기준선(RT-2)보다 12.3% 향상되었고, SPL은 8.7% 향상되었습니다.
+- 목표 탐색 작업에서 모델은 보지 못한 환경에서 78.5%의 성공률을 달성하여, 지도 기반 방법(평균 62.1%)보다 크게 우수했습니다.
+- 시각 질의응답 정확도는 89.2%로, 전용 VQA 모델 성능에 근접합니다.
+- 실제 세계 실험: 사무실, 실험실 등 동적 환경에서 Uni-NaVid는 평균 0.5미터/초 속도로 장거리 내비게이션(>50단계)을 완료했으며, 작업 완료율은 91.3%이고, 재훈련 없이 새로운 장면에 적응할 수 있습니다.
+
+### 결론
+Uni-NaVid는 통합 모델링과 대규모 다중 작업 훈련을 통해 처음으로 단일 VLA 모델이 다양한 내비게이션 작업을 범용적으로 지원할 수 있게 했으며, 벤치마크 테스트와 실제 환경 모두에서 최첨단 성능을 달성했습니다. 비디오 입력 설계는 장거리 작업과 동적 환경을 효과적으로 처리할 수 있게 하여, 실용적인 임베디드 내비게이션 에이전트 구축에 새로운 패러다임을 제공합니다.

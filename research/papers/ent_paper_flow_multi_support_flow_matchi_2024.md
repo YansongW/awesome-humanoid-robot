@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.12381v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.12381v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (853 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ sources:
 ## Overview
 Humanoid robots could benefit from using their upper bodies for support contacts, enhancing their workspace, stability, and ability to perform contact-rich and pushing tasks. In this paper, we propose a unified approach that combines an optimization-based multi-contact whole-body controller with Flow Matching, a recently introduced method capable of generating multi-modal trajectory distributions for imitation learning. In simulation, we show that Flow Matching is more appropriate for robotics than Diffusion and traditional behavior cloning. On a real full-size humanoid robot (Talos), we demonstrate that our approach can learn a whole-body non-prehensile box-pushing task and that the robot can close dishwasher drawers by adding contacts with its free hand when needed for balance. We also introduce a shared autonomy mode for assisted teleoperation, providing automatic contact placement for tasks not covered in the demonstrations. Full experimental videos are available at: https://hucebot.github.io/flow_multisupport_website/
 
-## 개요
-휴머노이드 로봇은 상체를 지지 접촉에 활용함으로써 작업 공간, 안정성, 그리고 접촉이 많고 밀어내는 작업을 수행하는 능력을 향상시킬 수 있습니다. 본 논문에서는 최적화 기반의 다중 접촉 전신 제어기와 최근 도입된 방법인 Flow Matching을 결합한 통합 접근법을 제안합니다. Flow Matching은 모방 학습을 위한 다중 모드 궤적 분포를 생성할 수 있습니다. 시뮬레이션을 통해 Flow Matching이 Diffusion 및 전통적인 행동 복제보다 로봇 공학에 더 적합함을 보여줍니다. 실제 전신 휴머노이드 로봇(Talos)에서 우리의 접근법이 전신 비파지적 상자 밀기 작업을 학습할 수 있으며, 로봇이 균형을 위해 필요할 때 자유로운 손으로 접촉을 추가하여 식기 세척기 서랍을 닫을 수 있음을 입증합니다. 또한, 시연에 포함되지 않은 작업에 대해 자동 접촉 배치를 제공하는 보조 원격 조작을 위한 공유 자율 모드를 소개합니다. 전체 실험 비디오는 다음에서 확인할 수 있습니다: https://hucebot.github.io/flow_multisupport_website/
-
-## 핵심 내용
-휴머노이드 로봇은 상체를 지지 접촉에 활용함으로써 작업 공간, 안정성, 그리고 접촉이 많고 밀어내는 작업을 수행하는 능력을 향상시킬 수 있습니다. 본 논문에서는 최적화 기반의 다중 접촉 전신 제어기와 최근 도입된 방법인 Flow Matching을 결합한 통합 접근법을 제안합니다. Flow Matching은 모방 학습을 위한 다중 모드 궤적 분포를 생성할 수 있습니다. 시뮬레이션을 통해 Flow Matching이 Diffusion 및 전통적인 행동 복제보다 로봇 공학에 더 적합함을 보여줍니다. 실제 전신 휴머노이드 로봇(Talos)에서 우리의 접근법이 전신 비파지적 상자 밀기 작업을 학습할 수 있으며, 로봇이 균형을 위해 필요할 때 자유로운 손으로 접촉을 추가하여 식기 세척기 서랍을 닫을 수 있음을 입증합니다. 또한, 시연에 포함되지 않은 작업에 대해 자동 접촉 배치를 제공하는 보조 원격 조작을 위한 공유 자율 모드를 소개합니다. 전체 실험 비디오는 다음에서 확인할 수 있습니다: https://hucebot.github.io/flow_multisupport_website/
-
 ## 参考
 - http://arxiv.org/abs/2407.12381v2
+
+## 개요
+이 연구는 인간형 로봇이 상체를 활용한 지지 접촉을 통해 작업 공간, 안정성 및 접촉이 풍부한 작업 능력을 향상시키는 요구를 해결하기 위해 통합 프레임워크를 제안한다. 이는 최적화 기반 다중 접촉 전신 제어기와 Flow Matching의 다중 모달 궤적 분포 생성 능력을 결합하여 모방 학습에 사용한다. 시뮬레이션에서 Flow Matching은 Diffusion 및 전통적인 행동 복제보다 우수한 적용성을 보여주었다. 실제 Talos 인간형 로봇에서 이 방법은 전신 비파지 박스 밀기 작업을 성공적으로 학습했으며, 자유로운 손으로 접촉을 추가하여 균형을 유지하면서 식기세척기 서랍을 닫을 수 있었다. 또한, 자동 접촉 배치를 통해 원격 조작을 보조하는 공유 자율 모드를 설계하여 데모로 다루지 않은 작업을 처리했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 핵심은 **Flow Matching**과 **최적화 다중 접촉 전신 제어기**를 결합하는 것이다. Flow Matching은 다중 모달 궤적 분포를 생성하는 새로운 방법으로 모방 학습에 사용되며, 최적화 제어기는 다중 접촉 조건에서 전신 균형과 운동을 처리한다.
+- 공유 자율 모드: 데모로 다루지 않은 작업을 위해 자동 접촉 배치를 제공하여 원격 조작을 보조한다.
+
+### 실험 설정
+- 시뮬레이션 환경: Flow Matching, Diffusion 및 전통적인 행동 복제를 로봇 작업에서 비교한다.
+- 실제 로봇: **Talos** 전체 크기 인간형 로봇을 사용하여 두 가지 작업을 수행한다:
+  - 전신 비파지 박스 밀기 작업(non-prehensile box-pushing).
+  - 자유로운 손으로 접촉을 추가하여 균형을 유지하면서 식기세척기 서랍 닫기(close dishwasher drawers).
+
+### 주요 결과
+- 시뮬레이션에서 Flow Matching은 Diffusion 및 전통적인 행동 복제보다 로봇 작업에 더 적합하며, 다중 모달 궤적 분포를 생성할 수 있다.
+- 실제 로봇이 박스 밀기 및 서랍 닫기 작업을 성공적으로 완료하여 방법의 유효성을 검증했다.
+- 공유 자율 모드는 추가 데모 없이 작업 범위를 확장한다.
+
+### 결론
+- 이 방법은 인간형 로봇이 상체를 활용한 지지 접촉을 위한 통합 프레임워크를 제공하여 작업 공간과 안정성을 향상시킨다.
+- 실험 영상: https://hucebot.github.io/flow_multisupport_website/

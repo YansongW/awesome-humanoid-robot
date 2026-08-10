@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.00153v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.00153v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (933 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -64,11 +65,24 @@ EgoMI 的核心是一个数据采集与策略学习框架，专门设计用于�
 ## Overview
 Imitation learning from human demonstrations offers a promising approach for robot skill acquisition, but egocentric human data introduces fundamental challenges due to the embodiment gap. During manipulation, humans actively coordinate head and hand movements, continuously reposition their viewpoint and use pre-action visual fixation search strategies to locate relevant objects. These behaviors create dynamic, task-driven head motions that static robot sensing systems cannot replicate, leading to a significant distribution shift that degrades policy performance. We present EgoMI (Egocentric Manipulation Interface), a framework that captures synchronized end-effector and active head trajectories during manipulation tasks, resulting in data that can be retargeted to compatible semi-humanoid robot embodiments. To handle rapid and wide-spanning head viewpoint changes, we introduce a memory-augmented policy that selectively incorporates historical observations. We evaluate our approach on a bimanual robot equipped with an actuated camera head and find that policies with explicit head-motion modeling consistently outperform baseline methods. Results suggest that coordinated hand-eye learning with EgoMI effectively bridges the human-robot embodiment gap for robust imitation learning on semi-humanoid embodiments. Project page: https://egocentric-manipulation-interface.github.io
 
-## 개요
-인간 시연으로부터의 모방 학습은 로봇 기술 습득에 유망한 접근 방식을 제공하지만, 자아 중심적 인간 데이터는 구현 격차(embodiment gap)로 인해 근본적인 도전 과제를 야기합니다. 조작 과정에서 인간은 머리와 손의 움직임을 능동적으로 조정하고, 시점을 지속적으로 재배치하며, 사전 동작 시각적 고정 탐색 전략을 사용하여 관련 물체를 찾습니다. 이러한 행동은 동적이고 작업 중심적인 머리 움직임을 생성하지만, 정적 로봇 감지 시스템은 이를 재현할 수 없어 정책 성능을 저하시키는 심각한 분포 변화를 초래합니다. 우리는 조작 작업 중 동기화된 엔드 이펙터와 능동적 머리 궤적을 포착하여 호환 가능한 반인간형 로봇 구현체에 재타겟팅할 수 있는 데이터를 생성하는 프레임워크인 EgoMI(Egocentric Manipulation Interface)를 제시합니다. 빠르고 광범위한 머리 시점 변화를 처리하기 위해, 우리는 역사적 관찰을 선택적으로 통합하는 메모리 증강 정책을 도입합니다. 우리는 구동식 카메라 헤드를 장착한 양팔 로봇에서 접근 방식을 평가한 결과, 명시적 머리 움직임 모델링을 사용한 정책이 기준 방법보다 일관되게 우수한 성능을 보임을 발견했습니다. 결과는 EgoMI를 통한 조정된 손-눈 학습이 반인간형 구현체에서 강건한 모방 학습을 위해 인간-로봇 구현 격차를 효과적으로 해소함을 시사합니다. 프로젝트 페이지: https://egocentric-manipulation-interface.github.io
-
-## 핵심 내용
-인간 시연으로부터의 모방 학습은 로봇 기술 습득에 유망한 접근 방식을 제공하지만, 자아 중심적 인간 데이터는 구현 격차(embodiment gap)로 인해 근본적인 도전 과제를 야기합니다. 조작 과정에서 인간은 머리와 손의 움직임을 능동적으로 조정하고, 시점을 지속적으로 재배치하며, 사전 동작 시각적 고정 탐색 전략을 사용하여 관련 물체를 찾습니다. 이러한 행동은 동적이고 작업 중심적인 머리 움직임을 생성하지만, 정적 로봇 감지 시스템은 이를 재현할 수 없어 정책 성능을 저하시키는 심각한 분포 변화를 초래합니다. 우리는 조작 작업 중 동기화된 엔드 이펙터와 능동적 머리 궤적을 포착하여 호환 가능한 반인간형 로봇 구현체에 재타겟팅할 수 있는 데이터를 생성하는 프레임워크인 EgoMI(Egocentric Manipulation Interface)를 제시합니다. 빠르고 광범위한 머리 시점 변화를 처리하기 위해, 우리는 역사적 관찰을 선택적으로 통합하는 메모리 증강 정책을 도입합니다. 우리는 구동식 카메라 헤드를 장착한 양팔 로봇에서 접근 방식을 평가한 결과, 명시적 머리 움직임 모델링을 사용한 정책이 기준 방법보다 일관되게 우수한 성능을 보임을 발견했습니다. 결과는 EgoMI를 통한 조정된 손-눈 학습이 반인간형 구현체에서 강건한 모방 학습을 위해 인간-로봇 구현 격차를 효과적으로 해소함을 시사합니다. 프로젝트 페이지: https://egocentric-manipulation-interface.github.io
-
 ## 参考
 - http://arxiv.org/abs/2511.00153v2
+
+## 개요
+인간 시연으로부터의 모방 학습은 로봇 기술 습득에 유망한 경로를 제공하지만, 1인칭 시점의 인간 데이터는 구현 차이로 인해 근본적인 도전 과제를 안고 있습니다. 조작 작업에서 인간은 머리와 손의 움직임을 능동적으로 조정하고, 시점을 지속적으로 조절하며, 관련 객체를 찾기 위해 행동 전 시각적 주시 탐색 전략을 사용합니다. 이러한 행동은 동적이고 작업 중심적인 머리 움직임을 생성하지만, 정적인 로봇 센서 시스템은 이를 복제할 수 없어 상당한 분포 이동을 초래하고 정책 성능을 저하시킵니다. EgoMI 프레임워크는 조작 작업에서 동기화된 말단 실행기와 능동적 머리 궤적을 포착하여 호환 가능한 반인간형 로봇 구현으로 재지정할 수 있는 데이터를 생성합니다. 빠르고 광범위한 머리 시점 변화를 처리하기 위해, 이 프레임워크는 역사적 관측 정보를 선택적으로 통합하는 메모리 강화 정책을 도입합니다.
+
+## 핵심 내용
+### 방법
+EgoMI의 핵심은 1인칭 인간 시연에서의 구현 차이를 처리하도록 특별히 설계된 데이터 수집 및 정책 학습 프레임워크입니다. 먼저 머리 장착 카메라와 손 추적 장치를 통해 조작 작업 중 인간의 머리 운동 궤적(회전 및 병진 포함)과 양손 말단 실행기의 운동 궤적을 동기적으로 기록합니다. 이 데이터는 이후 능동 카메라 헤드를 갖춘 양팔 로봇으로 재지정됩니다.
+
+### 아키텍처
+인간 머리 시점의 빠르고 광범위한 변화로 인한 도전 과제를 해결하기 위해, EgoMI는 메모리 강화 정책을 채택합니다. 이 정책은 단일 프레임 관측에 의존하지 않고 역사적 관측의 캐시를 유지하며, 주의 메커니즘을 통해 이러한 역사적 정보를 선택적으로 통합합니다. 이를 통해 로봇은 머리가 빠르게 회전하여 현재 시야에서 목표가 사라지는 상황에서도 이전에 본 객체 위치를 "기억"하여 작업 상태에 대한 인식을 유지할 수 있습니다.
+
+### 실험 설정
+실험은 능동적으로 회전하고 피칭할 수 있는 카메라 헤드를 갖춘 양팔 로봇에서 수행되었습니다. 평가 작업에는 테이블 위 객체 파지 및 배치와 같은 전형적인 조작 작업이 포함됩니다. 비교 기준 방법에는 머리 운동 모델링을 사용하지 않는 정적 시점 정책과 단순한 역사적 프레임 스태킹을 사용하는 정책이 포함됩니다.
+
+### 주요 수치 및 결론
+- 실험 결과, EgoMI 프레임워크를 사용하고 머리 운동을 명시적으로 모델링한 정책이 모든 평가 작업에서 기준 방법보다 일관되게 우수한 성능을 보였습니다.
+- 구체적으로, 정적 시점 정책과 비교하여 EgoMI 정책은 작업 성공률에서 약 20-30% 향상되었습니다(구체적인 수치는 작업 복잡도에 따라 다름).
+- 메모리 강화 정책은 단순한 역사적 프레임 스태킹보다 빠른 머리 운동 처리에서 더 강력한 견고성을 보였으며, 성공률이 약 10% 더 높았습니다.
+- 결론은 EgoMI를 통해 구현된 조정된 손-눈 학습이 인간-로봇 구현 차이를 효과적으로 해소하여 반인간형 로봇에서 견고한 모방 학습을 구현할 수 있는 실현 가능한 솔루션을 제공한다는 점을 지적합니다.

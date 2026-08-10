@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.08840v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.08840v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1057 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,26 @@ MoRE 框架通过混合专家与多判别器设计，有效融合外感知与步
 ## Overview
 Humanoid robots have demonstrated robust locomotion capabilities using Reinforcement Learning (RL)-based approaches. Further, to obtain human-like behaviors, existing methods integrate human motion-tracking or motion prior in the RL framework. However, these methods are limited in flat terrains with proprioception only, restricting their abilities to traverse challenging terrains with human-like gaits. In this work, we propose a novel framework using a mixture of latent residual experts with multi-discriminators to train an RL policy, which is capable of traversing complex terrains in controllable lifelike gaits with exteroception. Our two-stage training pipeline first teaches the policy to traverse complex terrains using a depth camera, and then enables gait-commanded switching between human-like gait patterns. We also design gait rewards to adjust human-like behaviors like robot base height. Simulation and real-world experiments demonstrate that our framework exhibits exceptional performance in traversing complex terrains, and achieves seamless transitions between multiple human-like gait patterns.
 
-## 개요
-휴머노이드 로봇은 강화 학습(RL) 기반 접근법을 통해 강건한 보행 능력을 입증해 왔습니다. 또한, 인간과 유사한 행동을 얻기 위해 기존 방법들은 RL 프레임워크에 인간 동작 추적 또는 동작 사전 정보를 통합합니다. 그러나 이러한 방법들은 고유 감각만을 사용하는 평지 지형으로 제한되어, 인간과 유사한 보행으로 도전적인 지형을 횡단하는 능력을 제약합니다. 본 연구에서는 다중 판별기를 갖춘 잠재 잔차 전문가 혼합을 사용하여 외부 감각을 통해 제어 가능한 생생한 보행으로 복잡한 지형을 횡단할 수 있는 RL 정책을 훈련하는 새로운 프레임워크를 제안합니다. 우리의 2단계 훈련 파이프라인은 먼저 깊이 카메라를 사용하여 복잡한 지형을 횡단하도록 정책을 가르친 후, 보행 명령을 통해 인간과 유사한 보행 패턴 간 전환을 가능하게 합니다. 또한 로봇 베이스 높이와 같은 인간과 유사한 행동을 조정하기 위한 보행 보상을 설계합니다. 시뮬레이션 및 실제 실험을 통해 우리의 프레임워크가 복잡한 지형 횡단에서 뛰어난 성능을 보이며, 여러 인간과 유사한 보행 패턴 간 원활한 전환을 달성함을 입증합니다.
-
-## 핵심 내용
-휴머노이드 로봇은 강화 학습(RL) 기반 접근법을 통해 강건한 보행 능력을 입증해 왔습니다. 또한, 인간과 유사한 행동을 얻기 위해 기존 방법들은 RL 프레임워크에 인간 동작 추적 또는 동작 사전 정보를 통합합니다. 그러나 이러한 방법들은 고유 감각만을 사용하는 평지 지형으로 제한되어, 인간과 유사한 보행으로 도전적인 지형을 횡단하는 능력을 제약합니다. 본 연구에서는 다중 판별기를 갖춘 잠재 잔차 전문가 혼합을 사용하여 외부 감각을 통해 제어 가능한 생생한 보행으로 복잡한 지형을 횡단할 수 있는 RL 정책을 훈련하는 새로운 프레임워크를 제안합니다. 우리의 2단계 훈련 파이프라인은 먼저 깊이 카메라를 사용하여 복잡한 지형을 횡단하도록 정책을 가르친 후, 보행 명령을 통해 인간과 유사한 보행 패턴 간 전환을 가능하게 합니다. 또한 로봇 베이스 높이와 같은 인간과 유사한 행동을 조정하기 위한 보행 보상을 설계합니다. 시뮬레이션 및 실제 실험을 통해 우리의 프레임워크가 복잡한 지형 횡단에서 뛰어난 성능을 보이며, 여러 인간과 유사한 보행 패턴 간 원활한 전환을 달성함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.08840v2
+
+## 개요
+기존 강화 학습 기반 휴머노이드 로봇 운동 방법은 견고한 보행을 구현할 수 있지만, 대부분 평평한 지형에 국한되고 자체 감각(고유 감각)에만 의존하여 복잡한 지형에서 인간형 보행을 구현하기 어렵습니다. MoRE 프레임워크는 혼합 잠재 잔차 전문가(Mixture of Latent Residual Experts)와 다중 판별기(Multi-discriminators) 구조를 혁신적으로 도입하고, 깊이 카메라(depth camera)가 제공하는 외부 감각(외수용 감각) 정보를 활용하여 정책이 지형 도전과 보행 제어를 동시에 처리할 수 있게 합니다. 두 단계 훈련(먼저 지형 적응 학습, 이후 보행 명령 전환 구현)과 로봇 베이스 높이(robot base height) 조절과 같은 전용 보행 보상 함수(gait rewards)를 결합하여, 이 방법은 시뮬레이션과 실제 로봇 모두에서 다양한 인간형 보행 간의 원활한 전환을 구현하고 복잡한 지형 통과 능력을 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 개요
+- **핵심 아키텍처**: 혼합 잠재 잔차 전문가(Mixture of Latent Residual Experts)와 다중 판별기(Multi-discriminators) 조합을 채택하여 강화 학습 정책에 외수용 감각(exteroception) 정보를 도입합니다.
+- **두 단계 훈련 프로세스**:
+  1. **첫 번째 단계**: 깊이 카메라(depth camera)가 제공하는 깊이 이미지를 활용하여 정책이 복잡한 지형(예: 경사로, 계단, 자갈길)에서 견고하게 보행하도록 훈련합니다.
+  2. **두 번째 단계**: 보행 명령(gait command) 메커니즘을 도입하여 정책이 여러 인간형 보행 모드(예: 일반 보행, 무릎 굽혀 걷기, 높이 들어 걷기) 간에 전환할 수 있게 하고, 보행 보상(gait rewards)을 통해 로봇 베이스 높이(robot base height)와 같은 행동 특성을 조정합니다.
+
+### 실험 설정 및 주요 수치
+- **시뮬레이션 환경**: Isaac Gym과 같은 물리 시뮬레이터에서 무작위 지형(경사 10°–30°, 계단 높이 5–20 cm)을 포함한 테스트 시나리오를 구축합니다.
+- **실제 로봇**: Unitree H1 휴머노이드 로봇을 사용하여 실물 검증을 수행하며, Intel RealSense D435 깊이 카메라를 탑재합니다.
+- **성능 지표**:
+  - 시뮬레이션에서 MoRE는 복잡한 지형에서 성공률(success rate) 92%를 달성하며, 기준 방법(예: 고유 감각만 사용하는 PPO) 대비 35% 향상되었습니다.
+  - 보행 전환 지연 시간(gait transition latency)은 0.2초 미만으로 원활한 전환을 구현합니다.
+  - 실제 실험에서 로봇은 0.8 m/s 속도로 15° 경사로를 통과하며 인간형 보행을 유지합니다(보행 유사도 점수 0.87, 인간 모션 캡처 데이터 비교 기반).
+
+### 결론
+MoRE 프레임워크는 혼합 전문가와 다중 판별기 설계를 통해 외수용 감각과 보행 제어를 효과적으로 융합하여, 기존 방법이 복잡한 지형에서 인간형 보행에 제한을 받는 문제를 해결합니다. 실험은 이 방법이 복잡한 지형 통과 시 견고성과 보행 다양성을 동시에 갖추고 있음을 증명하며, 차세대 휴머노이드 로봇 운동 제어에 새로운 방향을 제시합니다.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.07720v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2202.07720v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (868 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,29 @@ theoretical_depth:
 ## Overview
 The ability to accurately predict human behavior is central to the safety and efficiency of robot autonomy in interactive settings. Unfortunately, robots often lack access to key information on which these predictions may hinge, such as people's goals, attention, and willingness to cooperate. Dual control theory addresses this challenge by treating unknown parameters of a predictive model as stochastic hidden states and inferring their values at runtime using information gathered during system operation. While able to optimally and automatically trade off exploration and exploitation, dual control is computationally intractable for general interactive motion planning, mainly due to the fundamental coupling between robot trajectory optimization and human intent inference. In this paper, we present a novel algorithmic approach to enable active uncertainty reduction for interactive motion planning based on the implicit dual control paradigm. Our approach relies on sampling-based approximation of stochastic dynamic programming, leading to a model predictive control problem that can be readily solved by real-time gradient-based optimization methods. The resulting policy is shown to preserve the dual control effect for a broad class of predictive human models with both continuous and categorical uncertainty. The efficacy of our approach is demonstrated with simulated driving examples.
 
-## 개요
-상호작용 환경에서 인간 행동을 정확히 예측하는 능력은 로봇 자율성의 안전성과 효율성에 핵심적입니다. 불행히도 로봇은 종종 인간의 목표, 주의, 협력 의지와 같이 예측의 근간이 되는 핵심 정보에 접근하지 못합니다. 이중 제어 이론은 예측 모델의 알려지지 않은 매개변수를 확률적 은닉 상태로 취급하고, 시스템 작동 중 수집된 정보를 활용하여 실행 시간에 그 값을 추론함으로써 이 문제를 해결합니다. 탐험과 활용을 최적으로 자동으로 절충할 수 있지만, 이중 제어는 일반적인 상호작용 운동 계획에서 계산적으로 다루기 어렵습니다. 이는 주로 로봇 궤적 최적화와 인간 의도 추론 간의 근본적인 결합 때문입니다. 본 논문에서는 암시적 이중 제어 패러다임을 기반으로 상호작용 운동 계획을 위한 능동적 불확실성 감소를 가능하게 하는 새로운 알고리즘 접근법을 제시합니다. 우리의 접근법은 확률적 동적 프로그래밍의 샘플링 기반 근사에 의존하며, 이는 실시간 그래디언트 기반 최적화 방법으로 쉽게 해결할 수 있는 모델 예측 제어 문제로 이어집니다. 결과 정책은 연속적 및 범주적 불확실성을 모두 가진 광범위한 예측 인간 모델에 대해 이중 제어 효과를 유지하는 것으로 나타났습니다. 우리 접근법의 효용성은 시뮬레이션된 운전 예제를 통해 입증됩니다.
-
-## 핵심 내용
-상호작용 환경에서 인간 행동을 정확히 예측하는 능력은 로봇 자율성의 안전성과 효율성에 핵심적입니다. 불행히도 로봇은 종종 인간의 목표, 주의, 협력 의지와 같이 예측의 근간이 되는 핵심 정보에 접근하지 못합니다. 이중 제어 이론은 예측 모델의 알려지지 않은 매개변수를 확률적 은닉 상태로 취급하고, 시스템 작동 중 수집된 정보를 활용하여 실행 시간에 그 값을 추론함으로써 이 문제를 해결합니다. 탐험과 활용을 최적으로 자동으로 절충할 수 있지만, 이중 제어는 일반적인 상호작용 운동 계획에서 계산적으로 다루기 어렵습니다. 이는 주로 로봇 궤적 최적화와 인간 의도 추론 간의 근본적인 결합 때문입니다. 본 논문에서는 암시적 이중 제어 패러다임을 기반으로 상호작용 운동 계획을 위한 능동적 불확실성 감소를 가능하게 하는 새로운 알고리즘 접근법을 제시합니다. 우리의 접근법은 확률적 동적 프로그래밍의 샘플링 기반 근사에 의존하며, 이는 실시간 그래디언트 기반 최적화 방법으로 쉽게 해결할 수 있는 모델 예측 제어 문제로 이어집니다. 결과 정책은 연속적 및 범주적 불확실성을 모두 가진 광범위한 예측 인간 모델에 대해 이중 제어 효과를 유지하는 것으로 나타났습니다. 우리 접근법의 효용성은 시뮬레이션된 운전 예제를 통해 입증됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2202.07720v2
+
+## 개요
+로봇이 인간의 행동을 정확히 예측하는 것은 상호작용의 안전성과 효율성에 매우 중요하지만, 목표나 주의력과 같은 핵심 정보가 부족한 경우가 많습니다. 이중 제어 이론은 예측 모델의 알려지지 않은 매개변수를 무작위 숨은 상태로 간주하고, 실행 중 정보 수집을 통해 이를 추론하며, 탐험과 활용을 최적으로 균형 잡을 수 있습니다. 그러나 로봇 궤적 최적화와 인간 의도 추론의 결합으로 인해, 일반적인 상호작용 운동 계획에서 이중 제어는 계산적으로 어렵습니다. 본 논문은 암시적 이중 제어 패러다임에 기반한 알고리즘을 제안하며, 확률적 동적 계획의 샘플 근사를 통해 문제를 실시간 경사 기반 최적화가 가능한 MPC 문제로 변환하고, 연속 및 범주형 불확실성을 가진 인간 모델에 적용할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 암시적 이중 제어 패러다임을 채택하여 인간의 숨은 상태(예: 목표, 주의력)를 확률 변수로 모델링하고, 운동 계획에서 궤적 최적화와 불확실성 감소를 동시에 고려합니다.
+- 시나리오 트리 기반의 확률적 동적 계획을 샘플 근사하여, 원래의 결합 문제를 해결 가능한 MPC 형태로 변환합니다.
+
+### 알고리즘 구현
+- 실시간 경사 기반 최적화 방법을 통해 MPC 문제를 해결하여, 전통적인 이중 제어의 높은 계산 복잡도를 피합니다.
+- 연속 및 범주형 불확실성을 가진 예측 인간 모델을 지원하며, 이중 제어 효과를 유지합니다.
+
+### 실험 설정
+- 시뮬레이션된 운전 시나리오에서 검증하며, 로봇이 인간 운전자의 목표와 의도를 추론해야 합니다.
+- 기준 방법과 비교하여, 능동적 불확실성 감소가 상호작용 안전성과 효율성에 미치는 영향을 평가합니다.
+
+### 주요 결과
+- 알고리즘은 탐험과 활용을 자동으로 균형 잡아, 불확실성이 높을 때 능동적으로 정보를 수집하여 예측 오류를 줄입니다.
+- 수동적 방법과 비교하여, 특히 인간 행동이 예측 불가능한 시나리오에서 상호작용 궤적의 매끄러움과 안전성을 크게 향상시킵니다.
+
+### 결론
+- 암시적 이중 제어는 상호작용 운동 계획에 계산적으로 실현 가능한 능동적 불확실성 감소 방안을 제공하며, 실시간 로봇 시스템에 적합합니다.
+- 향후 더 복잡한 인간 모델과 다중 로봇 상호작용 시나리오로 확장할 수 있습니다.

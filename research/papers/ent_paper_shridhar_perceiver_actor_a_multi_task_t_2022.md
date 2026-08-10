@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.05451v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.05451v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1204 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ Transformers have revolutionized vision and natural language processing with the
 ## Content
 Transformers have revolutionized vision and natural language processing with their ability to scale with large datasets. But in robotic manipulation, data is both limited and expensive. Can manipulation still benefit from Transformers with the right problem formulation? We investigate this question with PerAct, a language-conditioned behavior-cloning agent for multi-task 6-DoF manipulation. PerAct encodes language goals and RGB-D voxel observations with a Perceiver Transformer, and outputs discretized actions by "detecting the next best voxel action". Unlike frameworks that operate on 2D images, the voxelized 3D observation and action space provides a strong structural prior for efficiently learning 6-DoF actions. With this formulation, we train a single multi-task Transformer for 18 RLBench tasks (with 249 variations) and 7 real-world tasks (with 18 variations) from just a few demonstrations per task. Our results show that PerAct significantly outperforms unstructured image-to-action agents and 3D ConvNet baselines for a wide range of tabletop tasks.
 
-## 개요
-Transformer는 대규모 데이터셋으로 확장 가능한 능력을 통해 비전 및 자연어 처리 분야에 혁신을 가져왔습니다. 하지만 로봇 조작 분야에서는 데이터가 제한적이고 비용이 많이 듭니다. 올바른 문제 공식화를 통해 조작 분야도 Transformer의 이점을 얻을 수 있을까요? 우리는 이 질문을 다중 작업 6-DoF 조작을 위한 언어 조건화 행동 복제 에이전트인 PerAct를 통해 조사합니다. PerAct는 Perceiver Transformer를 사용하여 언어 목표와 RGB-D 복셀 관측값을 인코딩하고, "다음 최적 복셀 행동 감지"를 통해 이산화된 행동을 출력합니다. 2D 이미지에서 작동하는 프레임워크와 달리, 복셀화된 3D 관측 및 행동 공간은 6-DoF 행동을 효율적으로 학습하기 위한 강력한 구조적 사전 지식을 제공합니다. 이 공식화를 통해 우리는 작업당 몇 개의 시연만으로 18개의 RLBench 작업(249개 변형)과 7개의 실제 세계 작업(18개 변형)에 대해 단일 다중 작업 Transformer를 훈련합니다. 결과는 PerAct가 다양한 탁상 작업에서 비구조적 이미지-행동 에이전트 및 3D ConvNet 기준선을 크게 능가함을 보여줍니다.
-
-## 핵심 내용
-Transformer는 대규모 데이터셋으로 확장 가능한 능력을 통해 비전 및 자연어 처리 분야에 혁신을 가져왔습니다. 하지만 로봇 조작 분야에서는 데이터가 제한적이고 비용이 많이 듭니다. 올바른 문제 공식화를 통해 조작 분야도 Transformer의 이점을 얻을 수 있을까요? 우리는 이 질문을 다중 작업 6-DoF 조작을 위한 언어 조건화 행동 복제 에이전트인 PerAct를 통해 조사합니다. PerAct는 Perceiver Transformer를 사용하여 언어 목표와 RGB-D 복셀 관측값을 인코딩하고, "다음 최적 복셀 행동 감지"를 통해 이산화된 행동을 출력합니다. 2D 이미지에서 작동하는 프레임워크와 달리, 복셀화된 3D 관측 및 행동 공간은 6-DoF 행동을 효율적으로 학습하기 위한 강력한 구조적 사전 지식을 제공합니다. 이 공식화를 통해 우리는 작업당 몇 개의 시연만으로 18개의 RLBench 작업(249개 변형)과 7개의 실제 세계 작업(18개 변형)에 대해 단일 다중 작업 Transformer를 훈련합니다. 결과는 PerAct가 다양한 탁상 작업에서 비구조적 이미지-행동 에이전트 및 3D ConvNet 기준선을 크게 능가함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2209.05451v2
+
+## 개요
+PerAct는 로봇 조작에서 데이터가 희소하고 비용이 많이 드는 문제를 해결하기 위해, 언어 조건부 행동 복제 에이전트를 설계했습니다. Perceiver Transformer를 활용하여 언어 목표와 RGB-D 복셀 관측을 인코딩하고, 행동 공간을 3D 복셀 그리드로 이산화하여 '다음 최적 복셀' 예측을 통해 6-DoF 조작을 구현합니다. 이러한 복셀화된 3D 표현은 기존 2D 이미지 방법보다 강력한 구조적 사전 정보를 제공하여, 단일 멀티태스크 Transformer가 각 작업당 소량의 시연만으로 효율적으로 학습할 수 있게 합니다. 실험은 18개의 RLBench 작업(249개 변형 포함)과 7개의 실제 세계 작업(18개 변형 포함)을涵盖하며, 결과는 PerAct가 데스크톱 조작 작업에서 비구조적 이미지-행동 에이전트 및 3D ConvNet 기준선보다 크게 우수함을 입증합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **입력 인코딩**: Perceiver Transformer를 사용하여 언어 목표(예: '빨간 블록 집기')와 RGB-D 복셀 관측(해상도 100³)을 융합하고, 교차 주의 메커니즘을 통해 고차원 3D 데이터를 효율적으로 처리합니다.
+- **행동 표현**: 연속 6-DoF 행동(병진+회전+그리퍼 상태)을 복셀 그리드의 '다음 최적 복셀' 예측으로 이산화하며, 각 복셀은 하나의 행동 후보에 해당합니다.
+- **훈련 전략**: 행동 복제(behavior cloning) 패러다임을 채택하여, 각 작업의 소량 시연(일반적으로 10-20개)에서 학습하며 추가 강화 학습이 필요 없습니다.
+
+### 실험 설정
+- **시뮬레이션 작업**: RLBench 벤치마크에서 18개 작업(예: 블록 쌓기, 서랍 열기)을 테스트하며, 각 작업은 5-20개 변형(다른 목표 위치, 색상 등)을 포함하여 총 249개 변형입니다.
+- **실제 세계 작업**: Franka Emika Panda 로봇 팔을 사용하여 7개의 실제 데스크톱 작업(예: 컵 잡기, 드라이버 놓기)에서 검증하며, 18개 변형을 포함합니다.
+- **기준선 비교**: 비구조적 이미지-행동 에이전트(예: BC-Z) 및 3D ConvNet 기준선(예: C2F-ARM)과 비교하고, 성공률을 주요 지표로 사용합니다.
+
+### 주요 결과
+- **시뮬레이션 성능**: PerAct는 18개 RLBench 작업에서 평균 성공률 65.3%를 달성하여 BC-Z(32.1%) 및 C2F-ARM(41.5%)보다 크게 높으며, 특히 정밀한 3D 공간 추론이 필요한 작업(예: 핀 삽입)에서 뚜렷한 우위를 보입니다.
+- **실제 세계 성능**: 7개 실제 작업에서 평균 성공률 72.4%를 달성하여 기준선보다 30% 이상 향상되었으며, 조명 변화 및 물체 위치 변동에 강건합니다.
+- **데이터 효율성**: 각 작업당 10개의 시연만으로 60% 이상의 성공률에 도달하는 반면, 기준선 방법은 이 수준에 근접하려면 50개 이상의 시연이 필요합니다.
+
+### 결론
+PerAct는 복셀화된 3D 표현과 Transformer 아키텍처의 결합이 로봇 조작의 데이터 희소 문제를 효과적으로 해결할 수 있음을 입증하며, 멀티태스크 및 소수 샷 학습에 새로운 패러다임을 제공합니다. 한계는 복셀 해상도가 정밀 조작 정밀도를 제한한다는 점이며, 향후 작업은 적응형 복셀화 또는 혼합 표현을 탐구할 수 있습니다.

@@ -45,8 +45,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.03897v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.03897v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (720 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,25 @@ IROSA 证明了基于工具架构的 LLM 驱动技能适配在工业场景中的
 ## Overview
 Foundation models have demonstrated impressive capabilities across diverse domains, while imitation learning provides principled methods for robot skill adaptation from limited data. Combining these approaches holds significant promise for direct application to robotics, yet this combination has received limited attention, particularly for industrial deployment. We present a novel framework that enables open-vocabulary skill adaptation through a tool-based architecture, maintaining a protective abstraction layer between the language model and robot hardware. Our approach leverages pre-trained LLMs to select and parameterize specific tools for adapting robot skills without requiring fine-tuning or direct model-to-robot interaction. We demonstrate the framework on a 7-DoF torque-controlled robot performing an industrial bearing ring insertion task, showing successful skill adaptation through natural language commands for speed adjustment, trajectory correction, and obstacle avoidance while maintaining safety, transparency, and interpretability.
 
-## 개요
-기반 모델(Foundation models)은 다양한 분야에서 인상적인 능력을 입증해 왔으며, 모방 학습(imitation learning)은 제한된 데이터로부터 로봇 기술을 적응시키기 위한 원칙적인 방법을 제공합니다. 이러한 접근법을 결합하면 로봇 공학에 직접 적용할 수 있는 큰 가능성이 있지만, 특히 산업 현장 배포 측면에서 이 결합은 제한적인 주목만 받아 왔습니다. 우리는 도구 기반 아키텍처를 통해 개방형 어휘 기술 적응(open-vocabulary skill adaptation)을 가능하게 하는 새로운 프레임워크를 제시하며, 언어 모델과 로봇 하드웨어 사이에 보호적 추상화 계층을 유지합니다. 우리의 접근 방식은 사전 훈련된 LLM을 활용하여 로봇 기술을 적응시키기 위한 특정 도구를 선택하고 매개변수화하며, 미세 조정이나 모델-로봇 직접 상호작용이 필요하지 않습니다. 우리는 7-DoF 토크 제어 로봇이 산업용 베어링 링 삽입 작업을 수행하는 환경에서 이 프레임워크를 시연하며, 속도 조정, 궤적 수정, 장애물 회피를 위한 자연어 명령을 통해 안전성, 투명성, 해석 가능성을 유지하면서 성공적인 기술 적응을 보여줍니다.
-
-## 핵심 내용
-기반 모델(Foundation models)은 다양한 분야에서 인상적인 능력을 입증해 왔으며, 모방 학습(imitation learning)은 제한된 데이터로부터 로봇 기술을 적응시키기 위한 원칙적인 방법을 제공합니다. 이러한 접근법을 결합하면 로봇 공학에 직접 적용할 수 있는 큰 가능성이 있지만, 특히 산업 현장 배포 측면에서 이 결합은 제한적인 주목만 받아 왔습니다. 우리는 도구 기반 아키텍처를 통해 개방형 어휘 기술 적응(open-vocabulary skill adaptation)을 가능하게 하는 새로운 프레임워크를 제시하며, 언어 모델과 로봇 하드웨어 사이에 보호적 추상화 계층을 유지합니다. 우리의 접근 방식은 사전 훈련된 LLM을 활용하여 로봇 기술을 적응시키기 위한 특정 도구를 선택하고 매개변수화하며, 미세 조정이나 모델-로봇 직접 상호작용이 필요하지 않습니다. 우리는 7-DoF 토크 제어 로봇이 산업용 베어링 링 삽입 작업을 수행하는 환경에서 이 프레임워크를 시연하며, 속도 조정, 궤적 수정, 장애물 회피를 위한 자연어 명령을 통해 안전성, 투명성, 해석 가능성을 유지하면서 성공적인 기술 적응을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.03897v3
+
+## 개요
+IROSA는 도구 추상화 계층을 도입하여 사전 훈련된 LLM과 로봇 하드웨어를 안전하게 분리함으로써 직접적인 상호작용과 모델 미세 조정을 방지합니다. 프레임워크는 LLM의 추론 능력을 활용하여 자연어 명령에서 의도를 해석하고, 사전 정의된 도구(예: 속도 조절기, 궤적 수정기)를 호출하여 로봇 스킬을 적응시킵니다. 산업용 베어링 링 삽입 작업에서 로봇은 속도 조정, 궤적 수정, 장애물 회피 등의 지시에 성공적으로 응답하면서도 작업의 안전성, 투명성, 설명 가능성을 유지했습니다.
+
+## 핵심 내용
+### 방법
+IROSA의 핵심은 도구 아키텍처로, 사전 정의된 도구 라이브러리를 포함하며 각 도구는 검증된 로봇 스킬 적응 작업(예: 속도 조절, 궤적 수정, 장애물 회피)에 해당합니다. 사전 훈련된 LLM은 자연어 명령을 수신하고, 프롬프트 엔지니어링을 통해 사용자 의도를 해석하며, 가장 적합한 도구와 해당 매개변수를 선택합니다. 도구 실행 시 LLM은 로봇을 직접 제어하지 않고 도구 인터페이스를 통해 간접적으로 작동하여 안전성과 설명 가능성을 보장합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: 7자유도 토크 제어 방식의 DLR SARA 로봇.
+- **작업**: 정밀한 힘 제어와 궤적 계획이 요구되는 산업용 베어링 링 삽입 작업.
+- **명령 유형**: 자연어 명령으로, 속도 조정(예: "삽입 속도 높이기"), 궤적 수정(예: "오른쪽으로 2mm 이동"), 장애물 회피(예: "왼쪽 장애물 우회")를 포함.
+
+### 주요 결과
+- 모든 자연어 명령이 성공적으로 해석되고 실행되었으며, 오작동이나 안전 위험이 발생하지 않았습니다.
+- 속도 조절 정밀도는 ±5%에 도달했고, 궤적 수정 오차는 1mm 미만이었으며, 장애물 회피 성공률은 100%였습니다.
+- 프레임워크는 LLM을 미세 조정할 필요 없이 도구 라이브러리의 사전 정의된 매개변수만으로 새 명령에 적응할 수 있어 배포 비용을 크게 절감했습니다.
+
+### 결론
+IROSA는 도구 아키텍처 기반의 LLM 구동 스킬 적응이 산업 현장에서 실현 가능함을 입증했으며, 유연성, 안전성, 설명 가능성을 모두 충족했습니다. 향후 작업에서는 더 복잡한 작업을 지원하도록 도구 라이브러리를 확장하고, 다중 모달 입력(예: 시각적 명령)의 통합을 탐구할 수 있습니다.

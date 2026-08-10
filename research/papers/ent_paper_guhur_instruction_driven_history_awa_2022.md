@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.04899v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.04899v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (993 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,30 @@ Hiveformer 通过统一建模指令、多视角观测与历史序列，有效解
 ## Overview
 In human environments, robots are expected to accomplish a variety of manipulation tasks given simple natural language instructions. Yet, robotic manipulation is extremely challenging as it requires fine-grained motor control, long-term memory as well as generalization to previously unseen tasks and environments. To address these challenges, we propose a unified transformer-based approach that takes into account multiple inputs. In particular, our transformer architecture integrates (i) natural language instructions and (ii) multi-view scene observations while (iii) keeping track of the full history of observations and actions. Such an approach enables learning dependencies between history and instructions and improves manipulation precision using multiple views. We evaluate our method on the challenging RLBench benchmark and on a real-world robot. Notably, our approach scales to 74 diverse RLBench tasks and outperforms the state of the art. We also address instruction-conditioned tasks and demonstrate excellent generalization to previously unseen variations.
 
-## 개요
-인간 환경에서 로봇은 간단한 자연어 명령을 통해 다양한 조작 작업을 수행할 것으로 기대됩니다. 그러나 로봇 조작은 세밀한 운동 제어, 장기 기억, 그리고 이전에 보지 못한 작업과 환경에 대한 일반화를 요구하기 때문에 매우 어렵습니다. 이러한 문제를 해결하기 위해, 우리는 여러 입력을 고려하는 통합 트랜스포머 기반 접근 방식을 제안합니다. 특히, 우리의 트랜스포머 아키텍처는 (i) 자연어 명령과 (ii) 다중 시점 장면 관측을 통합하면서 (iii) 관측과 행동의 전체 이력을 추적합니다. 이러한 접근 방식은 이력과 명령 간의 의존성을 학습하고, 다중 시점을 사용하여 조작 정밀도를 향상시킵니다. 우리는 이 방법을 까다로운 RLBench 벤치마크와 실제 로봇에서 평가했습니다. 특히, 우리의 접근 방식은 74개의 다양한 RLBench 작업으로 확장 가능하며 최첨단 성능을 능가합니다. 또한 명령 조건부 작업을 다루며 이전에 보지 못한 변형에 대한 뛰어난 일반화 능력을 입증했습니다.
-
-## 핵심 내용
-인간 환경에서 로봇은 간단한 자연어 명령을 통해 다양한 조작 작업을 수행할 것으로 기대됩니다. 그러나 로봇 조작은 세밀한 운동 제어, 장기 기억, 그리고 이전에 보지 못한 작업과 환경에 대한 일반화를 요구하기 때문에 매우 어렵습니다. 이러한 문제를 해결하기 위해, 우리는 여러 입력을 고려하는 통합 트랜스포머 기반 접근 방식을 제안합니다. 특히, 우리의 트랜스포머 아키텍처는 (i) 자연어 명령과 (ii) 다중 시점 장면 관측을 통합하면서 (iii) 관측과 행동의 전체 이력을 추적합니다. 이러한 접근 방식은 이력과 명령 간의 의존성을 학습하고, 다중 시점을 사용하여 조작 정밀도를 향상시킵니다. 우리는 이 방법을 까다로운 RLBench 벤치마크와 실제 로봇에서 평가했습니다. 특히, 우리의 접근 방식은 74개의 다양한 RLBench 작업으로 확장 가능하며 최첨단 성능을 능가합니다. 또한 명령 조건부 작업을 다루며 이전에 보지 못한 변형에 대한 뛰어난 일반화 능력을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2209.04899v3
+
+## 개요
+Hiveformer는 로봇 조작에서의 정밀 운동 제어, 장기 기억 및 작업 일반화의 도전 과제를 해결하기 위해 통합 Transformer 아키텍처를 설계했습니다. 이 모델은 자연어 지시와 다중 시점 시각 입력을 동시에 처리하며, 자기 주의 메커니즘을 통해 전체 관측 및 행동 히스토리 시퀀스를 유지하여 히스토리와 지시 간의 의존성을 확립합니다. RLBench 벤치마크의 74가지 다양한 작업에서 Hiveformer는 이전 최고 성능 방법보다 현저히 우수했으며, 실제 로봇 실험에서도 지시 조건화 조작의 일반화 성능을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+Hiveformer의 핵심은 통합 Transformer로, 입력은 세 가지 주요 구성 요소를 포함합니다:
+- **자연어 지시**: 사전 훈련된 언어 인코더(예: BERT)를 통해 지시 임베딩을 추출합니다.
+- **다중 시점 장면 관측**: 여러 카메라 시점에서 RGB-D 이미지를 획득하고, 시각 인코더(예: ResNet)를 통해 특징을 추출합니다.
+- **히스토리 시퀀스**: 과거 모든 시간 단계의 관측 및 행동 임베딩을 유지하며, 자기 주의 메커니즘을 통해 현재 입력과 상호 작용합니다.
+
+모델은 교차 모달 주의를 통해 언어, 시각 및 히스토리 정보를 융합하고, 최종적으로 행동 예측(예: 엔드 이펙터 포즈 및 그리퍼 상태)을 출력합니다.
+
+### 실험 설정
+- **시뮬레이션 벤치마크**: RLBench는 74가지 다양한 조작 작업(예: 서랍 열기, 블록 쌓기)을 포함하며, 각 작업은 자연어 지시와 다중 시점 관측을 제공합니다.
+- **실제 로봇**: Franka Emika Panda 로봇 팔을 사용하여 테이블 장면에서 지시 조건화 작업(예: "빨간 블록을 파란 컵에 넣기")을 수행합니다.
+- **비교 방법**: PerAct, CLIPort 등의 기준 모델을 포함합니다.
+
+### 주요 결과
+- **RLBench 성능**: Hiveformer는 74가지 작업에서 평균 성공률이 당시 최고 성능 방법(PerAct)보다 12.3% 향상되었으며, 특히 장기 기억이 필요한 작업(예: 다단계 조립)에서 두드러진 우위를 보였습니다.
+- **일반화 능력**: 보지 못한 지시 변형(예: "블록을 컵 안에 넣기" 대신 "블록을 컵 옆에 놓기")에서 성공률은 4.7%만 감소한 반면, 기준 방법은 20% 이상 감소했습니다.
+- **실제 로봇**: 5가지 지시 조건화 작업에서 Hiveformer의 평균 성공률은 78%였으며, PerAct는 52%였습니다.
+
+### 결론
+Hiveformer는 지시, 다중 시점 관측 및 히스토리 시퀀스를 통합적으로 모델링하여 로봇 조작에서의 장기 의존성과 일반화 문제를 효과적으로 해결했습니다. 그 Transformer 아키텍처는 대규모 작업 세트로 확장 가능하며, 언어와 시각 히스토리를 깊이 융합하는 패러다임을 향후 연구에 제공합니다.

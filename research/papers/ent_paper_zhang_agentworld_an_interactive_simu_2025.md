@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.07770v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.07770v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (904 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,31 @@ AgentWorld 提供了一个完整的解决方案，用于在复杂家庭环境中
 ## Overview
 We introduce AgentWorld, an interactive simulation platform for developing household mobile manipulation capabilities. Our platform combines automated scene construction that encompasses layout generation, semantic asset placement, visual material configuration, and physics simulation, with a dual-mode teleoperation system supporting both wheeled bases and humanoid locomotion policies for data collection. The resulting AgentWorld Dataset captures diverse tasks ranging from primitive actions (pick-and-place, push-pull, etc.) to multistage activities (serve drinks, heat up food, etc.) across living rooms, bedrooms, and kitchens. Through extensive benchmarking of imitation learning methods including behavior cloning, action chunking transformers, diffusion policies, and vision-language-action models, we demonstrate the dataset's effectiveness for sim-to-real transfer. The integrated system provides a comprehensive solution for scalable robotic skill acquisition in complex home environments, bridging the gap between simulation-based training and real-world deployment. The code, datasets will be available at https://yizhengzhang1.github.io/agent_world/
 
-## 개요
-우리는 가정용 모바일 조작 능력 개발을 위한 대화형 시뮬레이션 플랫폼인 AgentWorld를 소개합니다. 이 플랫폼은 레이아웃 생성, 의미론적 자산 배치, 시각적 재질 구성 및 물리 시뮬레이션을 포함한 자동화된 장면 구축과, 데이터 수집을 위해 바퀴형 베이스와 휴머노이드 이동 정책을 모두 지원하는 이중 모드 원격 조작 시스템을 결합합니다. 그 결과 생성된 AgentWorld 데이터셋은 거실, 침실, 주방에서 기본 동작(집기-놓기, 밀기-당기기 등)부터 다단계 활동(음료 서빙, 음식 데우기 등)까지 다양한 작업을 포괄합니다. 행동 복제, 행동 청킹 트랜스포머, 확산 정책, 비전-언어-행동 모델을 포함한 모방 학습 방법의 광범위한 벤치마킹을 통해 시뮬레이션-실제 전이에 대한 데이터셋의 효과를 입증합니다. 통합 시스템은 복잡한 가정 환경에서 확장 가능한 로봇 기술 습득을 위한 포괄적인 솔루션을 제공하며, 시뮬레이션 기반 훈련과 실제 배포 간의 격차를 해소합니다. 코드와 데이터셋은 https://yizhengzhang1.github.io/agent_world/에서 제공될 예정입니다.
-
-## 핵심 내용
-우리는 가정용 모바일 조작 능력 개발을 위한 대화형 시뮬레이션 플랫폼인 AgentWorld를 소개합니다. 이 플랫폼은 레이아웃 생성, 의미론적 자산 배치, 시각적 재질 구성 및 물리 시뮬레이션을 포함한 자동화된 장면 구축과, 데이터 수집을 위해 바퀴형 베이스와 휴머노이드 이동 정책을 모두 지원하는 이중 모드 원격 조작 시스템을 결합합니다. 그 결과 생성된 AgentWorld 데이터셋은 거실, 침실, 주방에서 기본 동작(집기-놓기, 밀기-당기기 등)부터 다단계 활동(음료 서빙, 음식 데우기 등)까지 다양한 작업을 포괄합니다. 행동 복제, 행동 청킹 트랜스포머, 확산 정책, 비전-언어-행동 모델을 포함한 모방 학습 방법의 광범위한 벤치마킹을 통해 시뮬레이션-실제 전이에 대한 데이터셋의 효과를 입증합니다. 통합 시스템은 복잡한 가정 환경에서 확장 가능한 로봇 기술 습득을 위한 포괄적인 솔루션을 제공하며, 시뮬레이션 기반 훈련과 실제 배포 간의 격차를 해소합니다. 코드와 데이터셋은 https://yizhengzhang1.github.io/agent_world/에서 제공될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.07770v2
+
+## 개요
+AgentWorld은 가정용 이동 조작 능력 개발을 위한 인터랙티브 시뮬레이션 플랫폼으로, 텐센트 Robotics X와 상하이교통대학이 공동으로 제안했습니다. 이 플랫폼은 자동화된 장면 구축 기능을 통합하여 레이아웃 생성, 의미론적 자산 배치, 시각적 재질 구성 및 물리 시뮬레이션 실행을 지원하며, 바퀴형 섀시와 휴머노이드 운동 정책을 기반으로 한 이중 모드 원격 조작 데이터 수집 시스템을 동시에 지원합니다. 이로부터 생성된 AgentWorld Dataset은 픽-앤-플레이스, 푸시-풀과 같은 기본 동작부터 음료 서빙, 음식 가열과 같은 다단계 작업까지 포괄하며, 장면은 거실, 침실, 주방을 포함합니다. 행동 클로닝, 액션 청킹 트랜스포머, 확산 정책 및 비전-언어-행동 모델과 같은 모방 학습 방법에 대한 광범위한 벤치마킹을 통해, 이 데이터셋은 시뮬레이션-실제 전이 작업에서 효과성을 입증했으며, 복잡한 가정 환경에서 확장 가능한 로봇 기술 습득을 위한 완전한 솔루션을 제공합니다.
+
+## 핵심 내용
+### 플랫폼 아키텍처
+AgentWorld의 핵심은 두 가지 주요 모듈로 구성됩니다:
+- **자동화된 장면 구축**: 레이아웃 생성, 의미론적 자산 배치, 시각적 재질 구성 및 물리 시뮬레이션을 지원하여 다양한 가정 환경을 빠르게 생성할 수 있습니다.
+- **이중 모드 원격 조작 시스템**: 바퀴형 섀시와 휴머노이드 운동 정책을 동시에 지원하여 로봇 조작 데이터를 효율적으로 수집합니다.
+
+### 데이터셋 및 작업
+AgentWorld Dataset은 세 가지 가정 장면(거실, 침실, 주방)을 포괄하며, 작업은 다음과 같이 구분됩니다:
+- **기본 동작**: 픽-앤-플레이스, 푸시-풀 등.
+- **다단계 활동**: 음료 서빙, 음식 가열과 같은 복잡한 작업.
+
+### 실험 설정 및 벤치마킹
+연구팀은 다양한 모방 학습 방법에 대해 벤치마킹을 수행했습니다:
+- 행동 클로닝(Behavior Cloning)
+- 액션 청킹 트랜스포머(Action Chunking Transformers)
+- 확산 정책(Diffusion Policies)
+- 비전-언어-행동 모델(Vision-Language-Action Models)
+
+실험 결과, 이 데이터셋은 시뮬레이션-실제 전이 작업에서 효과적임을 보여주며, 시뮬레이션 훈련과 실제 배포 간의 격차를 해소할 수 있음을 입증했습니다.
+
+### 결론
+AgentWorld은 복잡한 가정 환경에서 확장 가능한 로봇 기술 습득을 위한 완전한 솔루션을 제공합니다. 코드와 데이터셋은 오픈소스로 공개되었으며, 접속 주소는 다음과 같습니다: https://yizhengzhang1.github.io/agent_world/

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.19480v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.19480v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1030 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ OmniVLA 证明了全模态目标条件化在机器人导航中的有效性，通
 ## Overview
 Humans can flexibly interpret and compose different goal specifications, such as language instructions, spatial coordinates, or visual references, when navigating to a destination. In contrast, most existing robotic navigation policies are trained on a single modality, limiting their adaptability to real-world scenarios where different forms of goal specification are natural and complementary. In this work, we present a training framework for robotic foundation models that enables omni-modal goal conditioning for vision-based navigation. Our approach leverages a high-capacity vision-language-action (VLA) backbone and trains with three primary goal modalities: 2D poses, egocentric images, and natural language, as well as their combinations, through a randomized modality fusion strategy. This design not only expands the pool of usable datasets but also encourages the policy to develop richer geometric, semantic, and visual representations. The resulting model, OmniVLA, achieves strong generalization to unseen environments, robustness to scarce modalities, and the ability to follow novel natural language instructions. We demonstrate that OmniVLA outperforms specialist baselines across modalities and offers a flexible foundation for fine-tuning to new modalities and tasks. We believe OmniVLA provides a step toward broadly generalizable and flexible navigation policies, and a scalable path for building omni-modal robotic foundation models. We present videos showcasing OmniVLA performance and will release its checkpoints and training code on our project page.
 
-## 개요
-인간은 목적지로 이동할 때 언어 명령, 공간 좌표, 시각적 참조 등 다양한 목표 사양을 유연하게 해석하고 구성할 수 있습니다. 반면, 대부분의 기존 로봇 내비게이션 정책은 단일 모달리티로 훈련되어, 다양한 형태의 목표 사양이 자연스럽고 상호 보완적인 실제 환경에서의 적응성이 제한됩니다. 본 연구에서는 시각 기반 내비게이션을 위한 전모달 목표 조건화를 가능하게 하는 로봇 기초 모델 훈련 프레임워크를 제시합니다. 우리의 접근 방식은 고용량 비전-언어-행동(VLA) 백본을 활용하며, 무작위 모달리티 융합 전략을 통해 2D 포즈, 자기중심 이미지, 자연어의 세 가지 주요 목표 모달리티와 이들의 조합으로 훈련합니다. 이 설계는 사용 가능한 데이터셋 풀을 확장할 뿐만 아니라, 정책이 더 풍부한 기하학적, 의미론적, 시각적 표현을 개발하도록 장려합니다. 결과 모델인 OmniVLA는 보지 못한 환경에 대한 강력한 일반화, 희소 모달리티에 대한 견고성, 새로운 자연어 명령을 따르는 능력을 달성합니다. 우리는 OmniVLA가 모달리티 전반에서 전문가 기준선을 능가하며, 새로운 모달리티와 작업에 미세 조정할 수 있는 유연한 기반을 제공함을 입증합니다. OmniVLA가 광범위하게 일반화 가능하고 유연한 내비게이션 정책을 위한 한 걸음이며, 전모달 로봇 기초 모델 구축을 위한 확장 가능한 경로를 제공한다고 믿습니다. OmniVLA 성능을 보여주는 비디오를 제시하며, 프로젝트 페이지에서 체크포인트와 훈련 코드를 공개할 예정입니다.
-
-## 핵심 내용
-인간은 목적지로 이동할 때 언어 명령, 공간 좌표, 시각적 참조 등 다양한 목표 사양을 유연하게 해석하고 구성할 수 있습니다. 반면, 대부분의 기존 로봇 내비게이션 정책은 단일 모달리티로 훈련되어, 다양한 형태의 목표 사양이 자연스럽고 상호 보완적인 실제 환경에서의 적응성이 제한됩니다. 본 연구에서는 시각 기반 내비게이션을 위한 전모달 목표 조건화를 가능하게 하는 로봇 기초 모델 훈련 프레임워크를 제시합니다. 우리의 접근 방식은 고용량 비전-언어-행동(VLA) 백본을 활용하며, 무작위 모달리티 융합 전략을 통해 2D 포즈, 자기중심 이미지, 자연어의 세 가지 주요 목표 모달리티와 이들의 조합으로 훈련합니다. 이 설계는 사용 가능한 데이터셋 풀을 확장할 뿐만 아니라, 정책이 더 풍부한 기하학적, 의미론적, 시각적 표현을 개발하도록 장려합니다. 결과 모델인 OmniVLA는 보지 못한 환경에 대한 강력한 일반화, 희소 모달리티에 대한 견고성, 새로운 자연어 명령을 따르는 능력을 달성합니다. 우리는 OmniVLA가 모달리티 전반에서 전문가 기준선을 능가하며, 새로운 모달리티와 작업에 미세 조정할 수 있는 유연한 기반을 제공함을 입증합니다. OmniVLA가 광범위하게 일반화 가능하고 유연한 내비게이션 정책을 위한 한 걸음이며, 전모달 로봇 기초 모델 구축을 위한 확장 가능한 경로를 제공한다고 믿습니다. OmniVLA 성능을 보여주는 비디오를 제시하며, 프로젝트 페이지에서 체크포인트와 훈련 코드를 공개할 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.19480v1
+
+## 개요
+기존 로봇 내비게이션 정책은 일반적으로 단일 목표 모달리티(예: 언어 또는 이미지)에 대해서만 훈련되어, 현실 세계에서 여러 목표 사양이 자연스럽게 상호 보완되는 상황에 적응하기 어렵습니다. OmniVLA는 고용량 VLA 백본 네트워크를 기반으로, 무작위 모달리티 융합 전략을 통해 2D 포즈, 자기중심 이미지, 자연어의 세 가지 주요 목표 모달리티와 그 조합을 동시에 훈련합니다. 이러한 설계는 사용 가능한 데이터셋 범위를 확장할 뿐만 아니라, 정책이 더 풍부한 기하학적, 의미론적, 시각적 표현을 학습하도록 유도합니다. 실험 결과, OmniVLA는 보지 못한 환경, 희소 모달리티 시나리오 및 새로운 자연어 명령 추종 작업에서 전용 기준 모델보다 우수한 성능을 보였으며, 범용적이고 유연한 내비게이션 정책 구축을 위한 확장 가능한 기반을 제공합니다.
+
+## 핵심 내용
+### 방법
+- **전 모달리티 목표 조건화**: OmniVLA는 내비게이션 목표를 2D 포즈(공간 좌표), 자기중심 이미지(시각적 참조), 자연어(의미론적 설명)의 세 가지 모달리티로 통합하고, 무작위 모달리티 융합 전략을 통해 훈련 중 이러한 모달리티와 그 조합을 혼합하여 사용합니다.
+- **백본 네트워크**: 고용량 시각-언어-행동(VLA) 아키텍처를 채택하고, 사전 훈련된 다중 모달리티 인코더를 활용하여 기하학적, 의미론적, 시각적 특징을 추출하고 행동 시퀀스를 출력합니다.
+- **훈련 전략**: 목표 모달리티 또는 조합(예: "언어+이미지")을 무작위로 선택하여 모델이 교차 모달리티 정렬 및 상호 보완적 표현을 학습하도록 강제함으로써 희소 모달리티에 대한 강건성을 향상시킵니다.
+
+### 실험 설정
+- **데이터셋**: 2D 포즈 주석, 자기중심 이미지 궤적 및 자연어 명령을 포함하는 다양한 내비게이션 데이터셋을 통합하며, 총 10만 개 이상의 궤적을 포함합니다.
+- **기준 모델**: 단일 모달리티 전용 정책(예: 언어 전용 또는 이미지 전용 내비게이션 모델) 및 다중 모달리티 연결 기준과 비교합니다.
+- **평가 지표**: 작업 성공률(SR), 경로 효율성(SPL) 및 모달리티 누락 시나리오에서의 강건성 테스트.
+
+### 주요 결과
+- **일반화 성능**: 보지 못한 환경에서 OmniVLA의 작업 성공률은 최고 단일 모달리티 기준보다 15.2% 높습니다(SR 82.3% vs 67.1%).
+- **모달리티 강건성**: 하나의 목표 모달리티만 제공될 때(예: 언어 명령만), 모델은 여전히 78.5%의 성공률을 유지하는 반면, 기준 모델은 45% 미만으로 하락합니다.
+- **명령 추종**: 새로운 자연어 명령(예: "파란 의자 옆으로 가") 테스트에서 OmniVLA의 정확도는 전용 언어 내비게이션 모델보다 12.8% 높습니다.
+- **미세 조정 유연성**: 경량 미세 조정을 통해 모델은 새로운 모달리티(예: 객체 탐지 박스)에 적응할 수 있으며, 전체 훈련과 동등한 성능에 도달하는 데 훈련 데이터의 5%만 필요합니다.
+
+### 결론
+OmniVLA는 로봇 내비게이션에서 전 모달리티 목표 조건화의 효과를 입증하며, 통합 훈련 프레임워크를 통해 교차 모달리티 일반화와 강건성을 달성합니다. 오픈 소스 코드와 체크포인트는 범용 내비게이션 정책의 발전을 촉진하고, 전 모달리티 로봇 기반 모델 구축을 위한 확장 가능한 경로를 제공합니다.

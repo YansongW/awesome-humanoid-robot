@@ -40,7 +40,8 @@ verification:
   reviewed_at: '2026-07-01'
   confidence: medium
   notes: 'Imported from Unitree official news API. News ID: 25. [2026-07-29] zh content backfilled from English abstract via
-    scripts/sinicize_english_cards.py'
+    scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (420 chars,
+    DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -64,9 +65,6 @@ sources:
 ### 公司定位
 - Unitree 是一家全球知名的机器人公司，专注于核心技术的自主研发。
 
-## Overview
-Unitree Robotics participated in ICRA for the sixth consecutive year. Unitree Robotics exhibited Go1, B1, A1, and other quadruped robots at ICRA. Unitree is a world-renowned robotics company that focuses on self-development. LONDON, ENGLAND / ACCESSWIRE / June 2, 2023 /&nbsp; On May 29, ICRA 2023, the International Conference on Robotics and Automation, was held in London, UK, which is the largest and most influential international academic conference in the field of robotics organized by the In
-
 ## 参考
 - https://www.unitree.com/mobile/news
 
@@ -84,3 +82,18 @@ Unitree Robotics participated in ICRA for the sixth consecutive year. Unitree Ro
 
 ### 회사 포지셔닝
 - Unitree는 핵심 기술의 자체 개발에 주력하는 글로벌 로봇 회사입니다.
+
+## Overview
+At ICRA 2023 (International Conference on Robotics and Automation), held in London, UK on May 29, 2023, Unitree Robotics participated for the sixth consecutive year. The company showcased multiple quadruped robots, including the Go1, B1, and A1, demonstrating its ongoing commitment to independent research and development in robotics. ICRA is the largest and most influential international academic conference in the field of robotics, organized by the IEEE.
+
+## Content
+### Exhibition Overview
+- Unitree Robotics made its sixth consecutive appearance at ICRA 2023, showcasing its core line of quadruped robots.
+- The exhibited robot models included the Go1, B1, and A1, all of which are the results of the company's independent research and development.
+
+### Conference Background
+- ICRA 2023 was held in London, UK, on May 29, 2023, and was organized by the IEEE.
+- This conference is the largest and most influential international academic event in the field of robotics.
+
+### Company Positioning
+- Unitree is a globally recognized robotics company that focuses on the independent research and development of core technologies.

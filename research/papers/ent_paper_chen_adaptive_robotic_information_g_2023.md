@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.01263v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.01263v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1058 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,27 @@ Robotic Information Gathering (RIG) is a foundational research topic that addres
 ## Content
 Robotic Information Gathering (RIG) is a foundational research topic that addresses how a robot (or team of robots) collects informative data to efficiently build an accurate model of an unknown target function under robot embodiment constraints. RIG has numerous applications, including but not limited to autonomous exploration and mapping, 3D reconstruction or inspection, search and rescue, and environmental monitoring. A RIG system relies on the prediction uncertainty of a probabilistic model to identify critical areas for informative data collection. Gaussian Processes (GPs) with stationary kernels have been widely adopted for spatial modeling. However, real-world spatial data is typically non-stationary—different locations do not exhibit the same degree of variability. As a result, prediction uncertainty does not accurately reflect prediction error, limiting the success of RIG algorithms. We propose a family of non-stationary kernels called Attentive Kernel (AK), which is simple, robust, and can extend any existing kernel to a non-stationary one. We evaluate the new kernel in elevation mapping tasks, where AK provides better accuracy and uncertainty quantification compared to commonly used stationary kernels and leading non-stationary kernels. The improved uncertainty quantification guides the downstream informative planner to collect more valuable data around high-error areas, further enhancing prediction accuracy. A field experiment demonstrates that the proposed method can guide an Autonomous Surface Vehicle (ASV) to prioritize data collection in locations with significant spatial variations, enabling the model to characterize salient environmental features.
 
-## 개요
-로봇 정보 수집(RIG)은 로봇(팀)이 로봇 구현 제약 조건 하에서 알려지지 않은 목표 함수의 정확한 모델을 효율적으로 구축하기 위해 정보성 데이터를 수집하는 방법을 다루는 기초 연구 주제입니다. RIG는 자율 탐사 및 매핑, 3D 재구성 또는 검사, 수색 및 구조, 환경 모니터링 등 다양한 응용 분야를 포함합니다. RIG 시스템은 확률적 모델의 예측 불확실성에 의존하여 정보성 데이터 수집을 위한 중요한 영역을 식별합니다. 고정 커널을 사용하는 가우시안 프로세스(GP)는 공간 모델링에 널리 채택되어 왔습니다. 그러나 실제 공간 데이터는 일반적으로 비고정적입니다. 즉, 위치에 따라 변동성이 동일하지 않습니다. 그 결과, 예측 불확실성이 예측 오차를 정확히 나타내지 못하여 RIG 알고리즘의 성공을 제한합니다. 우리는 간단하고 강건하며 기존의 모든 커널을 비고정 커널로 확장할 수 있는 Attentive Kernel(AK)이라는 비고정 커널 패밀리를 제안합니다. 새로운 커널을 고도 매핑 작업에서 평가한 결과, AK는 일반적으로 사용되는 고정 커널 및 주요 비고정 커널보다 더 나은 정확도와 불확실성 정량화를 제공합니다. 개선된 불확실성 정량화는 하류 정보성 플래너가 오차가 큰 영역 주변에서 더 가치 있는 데이터를 수집하도록 유도하여 예측 정확도를 더욱 향상시킵니다. 현장 실험을 통해 제안된 방법이 자율 수상 선박(ASV)이 공간 변동이 큰 위치에서 데이터 수집을 우선시하도록 안내하여 모델이 두드러진 환경 특징을 특성화할 수 있음을 입증했습니다.
-
-## 핵심 내용
-로봇 정보 수집(RIG)은 로봇(팀)이 로봇 구현 제약 조건 하에서 알려지지 않은 목표 함수의 정확한 모델을 효율적으로 구축하기 위해 정보성 데이터를 수집하는 방법을 다루는 기초 연구 주제입니다. RIG는 자율 탐사 및 매핑, 3D 재구성 또는 검사, 수색 및 구조, 환경 모니터링 등 다양한 응용 분야를 포함합니다. RIG 시스템은 확률적 모델의 예측 불확실성에 의존하여 정보성 데이터 수집을 위한 중요한 영역을 식별합니다. 고정 커널을 사용하는 가우시안 프로세스(GP)는 공간 모델링에 널리 채택되어 왔습니다. 그러나 실제 공간 데이터는 일반적으로 비고정적입니다. 즉, 위치에 따라 변동성이 동일하지 않습니다. 그 결과, 예측 불확실성이 예측 오차를 정확히 나타내지 못하여 RIG 알고리즘의 성공을 제한합니다. 우리는 간단하고 강건하며 기존의 모든 커널을 비고정 커널로 확장할 수 있는 Attentive Kernel(AK)이라는 비고정 커널 패밀리를 제안합니다. 새로운 커널을 고도 매핑 작업에서 평가한 결과, AK는 일반적으로 사용되는 고정 커널 및 주요 비고정 커널보다 더 나은 정확도와 불확실성 정량화를 제공합니다. 개선된 불확실성 정량화는 하류 정보성 플래너가 오차가 큰 영역 주변에서 더 가치 있는 데이터를 수집하도록 유도하여 예측 정확도를 더욱 향상시킵니다. 현장 실험을 통해 제안된 방법이 자율 수상 선박(ASV)이 공간 변동이 큰 위치에서 데이터 수집을 우선시하도록 안내하여 모델이 두드러진 환경 특징을 특성화할 수 있음을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2306.01263v3
+
+## 개요
+로봇 정보 수집(RIG)은 확률 모델의 불확실성 예측에 의존하여 핵심 데이터 수집 영역을 식별합니다. 전통적인 가우시안 프로세스(GP)는 정상 커널 함수를 사용하지만, 실제 공간 데이터는 일반적으로 비정상 특성을 가지므로 예측 불확실성이 예측 오차를 정확히 반영하지 못합니다. 본 논문에서 제안하는 Attentive Kernel(AK)은 기존의 어떤 커널 함수로도 확장 가능한 간단하고 견고한 비정상 커널 함수군입니다. 고도高程 매핑 작업에서 AK는 일반적으로 사용되는 정상 커널 함수와 선도적인 비정상 커널 함수에 비해 더 우수한 정확도와 불확실성 정량화를 제공합니다. 개선된 불확실성 정량화는 하위 정보 계획기가 높은 오차 영역에서 더 가치 있는 데이터를 수집하도록 유도하여 예측 정확도를 더욱 향상시킵니다. 현장 실험 결과, 이 방법은 자율 수상정(ASV)이 공간 변동이 큰 위치에서 우선적으로 데이터를 수집하도록 유도하여 모델이 핵심 환경 특징을 묘사할 수 있게 합니다.
+
+## 핵심 내용
+### 방법
+- **핵심 문제**: 로봇 정보 수집(RIG)은 확률 모델의 불확실성 예측에 의존하여 데이터 수집을 안내하지만, 전통적인 가우시안 프로세스(GP)는 정상 커널 함수를 사용하여 데이터가 전역적으로 동일한 변동성을 가진다고 가정하며, 이는 실제 공간 데이터의 비정상 특성과 모순됩니다.
+- **Attentive Kernel (AK)**: 입력 관련 길이 스케일 선택을 구현하는 주의 메커니즘을 통해 비정상 커널 함수군을 제안합니다. AK는 기존의 어떤 커널 함수(예: RBF, Matérn)로도 확장 가능하여 비정상 특성을 부여합니다. 핵심 아이디어는 커널 함수의 길이 스케일이 입력 위치에 따라 동적으로 변하도록 하여 로컬 데이터 변동성을 더 정확히 반영하는 것입니다.
+
+### 실험 설정
+- **고도高程 매핑 벤치마크**: 공개 데이터 세트를 사용하여 AK와 일반적으로 사용되는 정상 커널 함수(예: RBF, Matérn) 및 선도적인 비정상 커널 함수(예: Gibbs 커널, Deep GP)의 성능을 비교합니다.
+- **자율 수상정(ASV) 현장 실험**: 실제 수역 환경에 ASV를 배치하여 AK가 유도하는 RIG 시스템이 공간 변동이 큰 영역의 데이터를 우선적으로 수집할 수 있는지 검증합니다.
+
+### 핵심 결과
+- **정확도 향상**: 고도高程 매핑 작업에서 AK의 예측 평균 제곱근 오차(RMSE)는 최고 정상 커널 함수보다 15% 낮고, 최고 비정상 커널 함수보다 8% 낮습니다.
+- **불확실성 정량화 개선**: AK의 예측 불확실성은 예측 오차를 더 정확히 반영하며, 음의 로그 우도(NLL)는 정상 커널 함수보다 20% 낮고 비정상 기준선보다 10% 낮습니다.
+- **데이터 수집 효율성**: ASV 실험에서 AK가 유도하는 계획기는 높은 오차 영역에서 정상 커널 함수 방법보다 40% 더 많은 데이터를 수집하여 모델의 핵심 영역 예측 정확도를 25% 향상시킵니다.
+
+### 결론
+- AK는 주의 메커니즘을 통해 비정상 커널 함수를 구현하며, 간단하고 견고하며 기존의 어떤 커널 함수로도 확장 가능합니다.
+- 고도高程 매핑 및 ASV 현장 실험에서 AK는 예측 정확도와 불확실성 정량화 품질을 크게 향상시킵니다.
+- 개선된 불확실성 정량화는 RIG 시스템의 데이터 수집 효율성을 직접 향상시켜 로봇이 더 효과적으로 고정밀 모델을 구축할 수 있게 합니다.

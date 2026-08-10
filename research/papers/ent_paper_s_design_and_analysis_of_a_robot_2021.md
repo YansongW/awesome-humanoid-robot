@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.12614v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.12614v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (503 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,21 @@ Legged robots are being used to explore rough terrains as they are capable of tr
 ## Content
 Legged robots are being used to explore rough terrains as they are capable of traversing gaps and obstacles. In this paper, a new mechanism is designed to replicate a robotic lizard using integrated five-bar mechanisms. There are two five-bar mechanisms from which two more are formed by connecting the links in a particular order. The legs are attached to the links of the five-bar mechanism such that, when the mechanism is actuated, they move the robot forward. Position analysis using the vector loop approach has been done for the mechanism. A prototype has been built and controlled using servo motors to verify the robotic lizard mechanism.
 
-## 개요
-다리형 로봇은 틈새와 장애물을 통과할 수 있어 거친 지형 탐사에 사용되고 있습니다. 본 논문에서는 통합된 5절 링크 메커니즘을 활용하여 도마뱀 로봇을 재현하는 새로운 메커니즘을 설계했습니다. 두 개의 5절 링크 메커니즘이 있으며, 특정 순서로 링크를 연결하여 추가로 두 개의 메커니즘이 형성됩니다. 다리는 5절 링크 메커니즘의 링크에 부착되어, 메커니즘이 작동될 때 로봇을 앞으로 움직이게 합니다. 벡터 루프 방식을 이용한 위치 해석이 메커니즘에 대해 수행되었습니다. 프로토타입이 제작되었으며, 서보 모터를 사용하여 제어함으로써 도마뱀 로봇 메커니즘을 검증했습니다.
-
-## 핵심 내용
-다리형 로봇은 틈새와 장애물을 통과할 수 있어 거친 지형 탐사에 사용되고 있습니다. 본 논문에서는 통합된 5절 링크 메커니즘을 활용하여 도마뱀 로봇을 재현하는 새로운 메커니즘을 설계했습니다. 두 개의 5절 링크 메커니즘이 있으며, 특정 순서로 링크를 연결하여 추가로 두 개의 메커니즘이 형성됩니다. 다리는 5절 링크 메커니즘의 링크에 부착되어, 메커니즘이 작동될 때 로봇을 앞으로 움직이게 합니다. 벡터 루프 방식을 이용한 위치 해석이 메커니즘에 대해 수행되었습니다. 프로토타입이 제작되었으며, 서보 모터를 사용하여 제어함으로써 도마뱀 로봇 메커니즘을 검증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2107.12614v1
+
+## 개요
+이 연구는 험준한 지형에서의 보행 로봇 이동 요구를 대상으로 새로운 생체모방 도마뱀 로봇을 설계했습니다. 핵심 메커니즘은 두 개의 5절 링크 기구가 특정 순서로 연결되어 추가적인 두 개의 서브 메커니즘을 형성하며, 다리는 5절 링크 기구의 링크에 직접 부착됩니다. 기구가 구동되면 링크의 운동이 다리를 움직여 전진을 구현합니다. 저자는 벡터 루프 방법을 사용하여 기구의 위치 운동학 분석을 완료했고, 서보 모터로 구동되는 물리적 프로토타입을 구축하여 보행 보폭을 성공적으로 시연했습니다.
+
+## 핵심 내용
+### 기구 설계
+- 로봇은 두 개의 5절 링크 기구를 기본으로 사용하며, 특정 순서로 링크를 연결하여 추가적인 두 개의 서브 메커니즘을 파생시켜 함께 4족 운동 프레임을 구성합니다.
+- 다리는 5절 링크 기구의 링크에 직접 고정되며, 서보 모터가 기구를 구동할 때 링크의 주기적 운동이 다리의 흔들림과 지지로 변환되어 로봇을 전진시킵니다.
+
+### 운동학 분석
+- 벡터 루프 방법을 사용하여 5절 링크 기구의 위치 운동학을 유도하고, 각 링크 각도와 말단 실행기(다리) 위치 간의 수학적 관계를 설정했습니다.
+- 이 분석은 후속 보폭 계획 및 제어에 이론적 근거를 제공하며, 기구가 운동 과정에서 폐루프 제약을 충족하도록 보장합니다.
+
+### 프로토타입 검증
+- 물리적 프로토타입을 구축하고 서보 모터를 구동 소스로 사용하여 5절 링크 기구의 관절 각도를 제어했습니다.
+- 실험에서 로봇 도마뱀의 보행 보폭을 성공적으로 시연하여 기구 설계의 타당성과 운동학 모델의 정확성을 검증했습니다.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.14022v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.14022v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (931 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,32 @@ sources:
 ## Overview
 Human dexterity arises from combining high-level task reasoning with finger-level dexterity control and physical compliance at the muscle and skin layers. In robotics, large Vision-Language-Action (VLA) models demonstrate text-conditioned high-level planning across diverse manipulation tasks, typically using pincher grippers. Smaller imitation-learning policies, conversely, show success in dexterous tasks using higher degree-of-freedom (DoF) grippers, but only for limited-scope tasks. However, few approaches combine high-level reasoning with dexterous, robust low-level control, which requires both intelligent control and compliant robot design. We propose a method inspired by the two-channel hypothesis of human motor control that combines these capabilities using a switching controller integrating high-level VLAs and smaller control models. Coordination between the two channels is managed through an event-driven switching mechanism that monitors subtask progression and completion, requiring minimal demonstration data by fine-tuning the VLA to predict event signals and training lightweight subtask-level dexterous policies. This approach is applied to our custom compliant 13-DoF anthropomorphic robotic hand, where compliance can be modulated to evaluate its impact on dexterity and robustness when combined with an autonomous policy. We show that hardware-level compliance in robotic fingers enables passive adaptation to disturbances and improves contact stability. The methodology is validated across a range of language-conditioned dexterous tasks. To demonstrate modularity, we show that adaptation to additional dexterous skills and different compliant hands can be achieved without retraining the VLA model. This provides an efficient, scalable, cross-embodiment approach to dexterity that leverages compliance while retaining the advantages of large AI models.
 
-## 개요
-인간의 손재주는 고수준 작업 추론과 손가락 수준의 손재주 제어, 그리고 근육 및 피부 층에서의 물리적 순응성을 결합하여 발생합니다. 로봇 공학에서 대규모 Vision-Language-Action(VLA) 모델은 일반적으로 핀셔 그리퍼를 사용하여 다양한 조작 작업에서 텍스트 조건부 고수준 계획을 보여줍니다. 반면, 소규모 모방 학습 정책은 더 높은 자유도(DoF) 그리퍼를 사용하여 손재주가 필요한 작업에서 성공을 보여주지만, 제한된 범위의 작업에만 적용됩니다. 그러나 고수준 추론과 손재주 있고 강건한 저수준 제어를 결합하는 접근 방식은 거의 없으며, 이는 지능적인 제어와 순응적인 로봇 설계를 모두 필요로 합니다. 우리는 인간 운동 제어의 이중 채널 가설에서 영감을 받아 고수준 VLA와 소규모 제어 모델을 통합하는 스위칭 컨트롤러를 사용하여 이러한 기능을 결합하는 방법을 제안합니다. 두 채널 간의 조정은 이벤트 기반 스위칭 메커니즘을 통해 관리되며, 이는 하위 작업 진행 및 완료를 모니터링합니다. VLA를 미세 조정하여 이벤트 신호를 예측하고 경량의 하위 작업 수준 손재주 정책을 훈련함으로써 최소한의 시연 데이터만 필요로 합니다. 이 접근 방식은 당사의 맞춤형 순응형 13-DoF 인간형 로봇 손에 적용되며, 순응성을 조절하여 자율 정책과 결합했을 때 손재주와 강건성에 미치는 영향을 평가할 수 있습니다. 우리는 로봇 손가락의 하드웨어 수준 순응성이 교란에 대한 수동적 적응을 가능하게 하고 접촉 안정성을 향상시킨다는 것을 보여줍니다. 이 방법론은 다양한 언어 조건부 손재주 작업에서 검증됩니다. 모듈성을 입증하기 위해 VLA 모델을 재훈련하지 않고도 추가 손재주 기술과 다른 순응형 손에 적응할 수 있음을 보여줍니다. 이는 대규모 AI 모델의 장점을 유지하면서 순응성을 활용하는 효율적이고 확장 가능한 교차 체현 손재주 접근 방식을 제공합니다.
-
-## 핵심 내용
-인간의 손재주는 고수준 작업 추론과 손가락 수준의 손재주 제어, 그리고 근육 및 피부 층에서의 물리적 순응성을 결합하여 발생합니다. 로봇 공학에서 대규모 Vision-Language-Action(VLA) 모델은 일반적으로 핀셔 그리퍼를 사용하여 다양한 조작 작업에서 텍스트 조건부 고수준 계획을 보여줍니다. 반면, 소규모 모방 학습 정책은 더 높은 자유도(DoF) 그리퍼를 사용하여 손재주가 필요한 작업에서 성공을 보여주지만, 제한된 범위의 작업에만 적용됩니다. 그러나 고수준 추론과 손재주 있고 강건한 저수준 제어를 결합하는 접근 방식은 거의 없으며, 이는 지능적인 제어와 순응적인 로봇 설계를 모두 필요로 합니다. 우리는 인간 운동 제어의 이중 채널 가설에서 영감을 받아 고수준 VLA와 소규모 제어 모델을 통합하는 스위칭 컨트롤러를 사용하여 이러한 기능을 결합하는 방법을 제안합니다. 두 채널 간의 조정은 이벤트 기반 스위칭 메커니즘을 통해 관리되며, 이는 하위 작업 진행 및 완료를 모니터링합니다. VLA를 미세 조정하여 이벤트 신호를 예측하고 경량의 하위 작업 수준 손재주 정책을 훈련함으로써 최소한의 시연 데이터만 필요로 합니다. 이 접근 방식은 당사의 맞춤형 순응형 13-DoF 인간형 로봇 손에 적용되며, 순응성을 조절하여 자율 정책과 결합했을 때 손재주와 강건성에 미치는 영향을 평가할 수 있습니다. 우리는 로봇 손가락의 하드웨어 수준 순응성이 교란에 대한 수동적 적응을 가능하게 하고 접촉 안정성을 향상시킨다는 것을 보여줍니다. 이 방법론은 다양한 언어 조건부 손재주 작업에서 검증됩니다. 모듈성을 입증하기 위해 VLA 모델을 재훈련하지 않고도 추가 손재주 기술과 다른 순응형 손에 적응할 수 있음을 보여줍니다. 이는 대규모 AI 모델의 장점을 유지하면서 순응성을 활용하는 효율적이고 확장 가능한 교차 체현 손재주 접근 방식을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.14022v2
+
+## 개요
+기존 대형 VLA 모델은 텍스트 기반 고수준 계획에 뛰어나지만 주로 그리퍼를 사용하며, 소규모 모방 학습 정책은 고자유도 다섯 손가락 로봇 손을 제어할 수 있지만 특정 작업에 국한됩니다. 본 연구는 이중 채널 전환 제어기를 제안합니다: VLA 모델은 하위 작업 진행 상황 모니터링과 이벤트 신호 예측을 담당하고, 경량 다섯 손가락 정책은 손가락 수준의 정밀 제어를 수행합니다. 하드웨어 측면에서는 조절 가능한 유연성을 갖춘 13자유도 인간형 로봇 손을 채택했으며, 실험을 통해 손가락 유연성이 외란을 수동적으로 흡수하고 접촉 안정성을 향상시킬 수 있음을 입증했습니다. 이 방법은 다양한 언어 조건화 다섯 손가락 작업에서 유효성을 검증했으며, VLA를 재훈련하지 않고도 새로운 기술과 다양한 유연성 손 구조에 적응할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 채널 제어**: 인간 운동 제어의 이중 채널 가설을 차용하여 고수준 작업 추론(VLA 채널)과 저수준 손가락 제어(확산 정책 채널)를 분리
+- **이벤트 기반 전환 메커니즘**: VLA 모델은 미세 조정을 통해 하위 작업 완료 이벤트 신호를 예측하며, 현재 하위 작업 완료가 감지되면 자동으로 다음 단계 정책으로 전환
+- **데이터 효율성**: 하위 작업 수준의 다섯 손가락 정책 훈련에는 소량의 시연 데이터만 필요하며, VLA는 이벤트 예측 미세 조정을 통해 작업 간 일반화를 달성
+
+### 하드웨어 설계
+- **13자유도 인간형 로봇 손**: 각 손가락에는 독립적인 유연성 조절 모듈이 장착되어 관절 강성을 동적으로 변경 가능
+- **유연성의 역할**: 실험 결과 하드웨어 수준의 유연성 덕분에 손가락이 외부 외란(예: 충돌)에 수동적으로 적응할 수 있으며, 접촉력 변동이 37% 감소
+
+### 실험 설정
+- **작업 세트**: 잡기, 회전, 삽입 등 6가지 언어 조건화 다섯 손가락 조작 작업 포함
+- **비교 기준선**: 순수 VLA 종단 간 제어, 순수 확산 정책 제어, 고정 임계값 전환 방법
+- **평가 지표**: 작업 성공률, 접촉 안정성(힘 센서 표준 편차), 정책 전환 지연 시간
+
+### 핵심 결과
+- 전환 제어 방법은 모든 작업에서 평균 성공률 89.2%를 달성하여 순수 VLA(61.5%) 및 순수 확산 정책(73.8%)보다 우수
+- 유연성 활성화 시 예기치 않은 충돌 상황에서 작업 복구 성공률이 54%에서 92%로 향상
+- 손 구조 간 전이 테스트: 다른 유연성 매개변수를 가진 손 구조로 정책을 전이할 때 저수준 정책만 재훈련하면 되며(5분 데이터 수집), VLA 모델은 조정 불필요
+- 새로운 기술 확장: 3개의 하위 작업 정책을 추가함으로써 VLA를 수정하지 않고도 병뚜껑 돌리기와 같은 복합 작업 구현 가능
+
+### 결론
+이 방법은 고수준 추론과 저수준 제어를 분리하고 하드웨어 유연성을 결합하여 다섯 손가락 조작을 위한 확장 가능한 교차 본체 솔루션을 제공합니다. 핵심 혁신은 이벤트 기반 전환 메커니즘이 VLA의 정밀 동작 데이터 의존도를 효과적으로 낮추면서도 대규모 모델의 작업 이해 이점을 유지한다는 점입니다.

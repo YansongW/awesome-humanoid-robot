@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.07778v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.07778v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (914 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,27 @@ IntentionVLA 通过推理密集型预训练与高效推理机制，解决了现�
 ## Overview
 Vision-Language-Action (VLA) models leverage pretrained vision-language models (VLMs) to couple perception with robotic control, offering a promising path toward general-purpose embodied intelligence. However, current SOTA VLAs are primarily pretrained on multimodal tasks with limited relevance to embodied scenarios, and then finetuned to map explicit instructions to actions. Consequently, due to the lack of reasoning-intensive pretraining and reasoning-guided manipulation, these models are unable to perform implicit human intention reasoning required for complex, real-world interactions. To overcome these limitations, we propose \textbf{IntentionVLA}, a VLA framework with a curriculum training paradigm and an efficient inference mechanism. Our proposed method first leverages carefully designed reasoning data that combine intention inference, spatial grounding, and compact embodied reasoning, endowing the model with both reasoning and perception capabilities. In the following finetuning stage, IntentionVLA employs the compact reasoning outputs as contextual guidance for action generation, enabling fast inference under indirect instructions. Experimental results show that IntentionVLA substantially outperforms $π_0$, achieving 18\% higher success rates with direct instructions and 28\% higher than ECoT under intention instructions. On out-of-distribution intention tasks, IntentionVLA achieves over twice the success rate of all baselines, and further enables zero-shot human-robot interaction with 40\% success rate. These results highlight IntentionVLA as a promising paradigm for next-generation human-robot interaction (HRI) systems.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 사전 훈련된 시각-언어 모델(VLM)을 활용하여 지각과 로봇 제어를 결합함으로써, 범용 임베디드 지능을 향한 유망한 경로를 제공합니다. 그러나 현재의 최첨단 VLA는 주로 임베디드 시나리오와 관련성이 제한적인 멀티모달 작업에서 사전 훈련된 후, 명시적 명령을 행동으로 매핑하도록 미세 조정됩니다. 결과적으로, 추론 집약적 사전 훈련과 추론 기반 조작의 부족으로 인해, 이러한 모델은 복잡한 실제 상호작용에 필요한 암묵적 인간 의도 추론을 수행할 수 없습니다. 이러한 한계를 극복하기 위해, 우리는 커리큘럼 훈련 패러다임과 효율적인 추론 메커니즘을 갖춘 VLA 프레임워크인 \textbf{IntentionVLA}를 제안합니다. 제안된 방법은 먼저 의도 추론, 공간적 근거, 그리고 간결한 임베디드 추론을 결합한 신중하게 설계된 추론 데이터를 활용하여, 모델에 추론 및 지각 능력을 부여합니다. 이후 미세 조정 단계에서 IntentionVLA는 간결한 추론 출력을 행동 생성을 위한 맥락적 지침으로 사용하여, 간접 명령 하에서 빠른 추론을 가능하게 합니다. 실험 결과는 IntentionVLA가 $π_0$를 크게 능가하며, 직접 명령에서 18% 더 높은 성공률을, 의도 명령에서 ECoT보다 28% 더 높은 성공률을 달성함을 보여줍니다. 분포 외 의도 작업에서 IntentionVLA는 모든 기준선의 성공률의 두 배 이상을 달성하며, 40%의 성공률로 제로샷 인간-로봇 상호작용을 추가로 가능하게 합니다. 이러한 결과는 IntentionVLA가 차세대 인간-로봇 상호작용(HRI) 시스템을 위한 유망한 패러다임임을 강조합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 사전 훈련된 시각-언어 모델(VLM)을 활용하여 지각과 로봇 제어를 결합함으로써, 범용 임베디드 지능을 향한 유망한 경로를 제공합니다. 그러나 현재의 최첨단 VLA는 주로 임베디드 시나리오와 관련성이 제한적인 멀티모달 작업에서 사전 훈련된 후, 명시적 명령을 행동으로 매핑하도록 미세 조정됩니다. 결과적으로, 추론 집약적 사전 훈련과 추론 기반 조작의 부족으로 인해, 이러한 모델은 복잡한 실제 상호작용에 필요한 암묵적 인간 의도 추론을 수행할 수 없습니다. 이러한 한계를 극복하기 위해, 우리는 커리큘럼 훈련 패러다임과 효율적인 추론 메커니즘을 갖춘 VLA 프레임워크인 \textbf{IntentionVLA}를 제안합니다. 제안된 방법은 먼저 의도 추론, 공간적 근거, 그리고 간결한 임베디드 추론을 결합한 신중하게 설계된 추론 데이터를 활용하여, 모델에 추론 및 지각 능력을 부여합니다. 이후 미세 조정 단계에서 IntentionVLA는 간결한 추론 출력을 행동 생성을 위한 맥락적 지침으로 사용하여, 간접 명령 하에서 빠른 추론을 가능하게 합니다. 실험 결과는 IntentionVLA가 $π_0$를 크게 능가하며, 직접 명령에서 18% 더 높은 성공률을, 의도 명령에서 ECoT보다 28% 더 높은 성공률을 달성함을 보여줍니다. 분포 외 의도 작업에서 IntentionVLA는 모든 기준선의 성공률의 두 배 이상을 달성하며, 40%의 성공률로 제로샷 인간-로봇 상호작용을 추가로 가능하게 합니다. 이러한 결과는 IntentionVLA가 차세대 인간-로봇 상호작용(HRI) 시스템을 위한 유망한 패러다임임을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.07778v1
+
+## 개요
+기존 VLA 모델은 주로 실제 환경과의 연관성이 제한적인 멀티모달 작업 사전 훈련을 기반으로 하며, 이후 미세 조정을 통해 명시적 지시를 행동으로 매핑합니다. 따라서 추론 집약적 사전 훈련과 추론 기반 조작 능력이 부족하여 복잡한 실제 상호작용에서의 암묵적 인간 의도 추론을 처리할 수 없습니다. IntentionVLA는 정교하게 설계된 추론 데이터(의도 추론, 공간 위치 파악, 간결한 실제 환경 추론을 융합)를 통해 모델에 추론 및 지각 능력을 부여하며, 미세 조정 단계에서 간결한 추론 출력을 행동 생성의 맥락적 지침으로 사용하여 간접 지시 하에서의 빠른 추론을 구현합니다. 실험 결과, IntentionVLA는 직접 지시에서 π₀보다 성공률이 18% 높고, 의도 지시에서 ECoT보다 28% 높으며, 분포 외 의도 작업에서 모든 기준선보다 두 배 이상의 성공률을 달성하고, 40% 성공률의 제로샷 인간-로봇 상호작용을 구현합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+IntentionVLA는 커리큘럼 훈련 패러다임을 채택하며 두 단계로 구성됩니다:
+- **사전 훈련 단계**: 정교하게 설계된 추론 데이터를 사용하여 의도 추론(인간의 암묵적 의도 추론), 공간 위치 파악(목표 객체 위치 결정), 간결한 실제 환경 추론(간결한 추론 체인 생성)을 결합함으로써 모델이 추론 및 지각 능력을 동시에 갖추게 합니다.
+- **미세 조정 단계**: 사전 훈련 단계에서 생성된 간결한 추론 출력을 행동 생성을 위한 맥락적 지침으로 사용하여 간접 지시 하에서 빠른 추론을 구현하고, 장황한 추론 체인으로 인한 지연을 방지합니다.
+
+### 실험 설정
+- **기준 모델**: π₀(현재 SOTA VLA 모델) 및 ECoT(실제 환경 사고 체인 방법)와 비교.
+- **작업 유형**: 직접 지시(명시적 지시), 의도 지시(암묵적 의도 추론 필요), 분포 외 의도 작업(보지 못한 의도 시나리오), 제로샷 인간-로봇 상호작용(미세 조정 없이 직접 상호작용).
+
+### 주요 결과
+- **직접 지시**: IntentionVLA 성공률이 π₀보다 18% 높음.
+- **의도 지시**: IntentionVLA 성공률이 ECoT보다 28% 높음.
+- **분포 외 의도 작업**: IntentionVLA 성공률이 모든 기준선보다 두 배 이상 높음.
+- **제로샷 인간-로봇 상호작용**: IntentionVLA가 추가 미세 조정 없이 40% 성공률을 달성.
+
+### 결론
+IntentionVLA는 추론 집약적 사전 훈련과 효율적인 추론 메커니즘을 통해 기존 VLA 모델의 암묵적 의도 추론 부족 문제를 해결하고, 복잡한 인간-로봇 상호작용 시나리오에서의 일반화 능력과 효율성을 크게 향상시켜, 차세대 인간-로봇 상호작용 시스템에 유망한 패러다임을 제공합니다.

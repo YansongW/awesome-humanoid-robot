@@ -41,7 +41,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/upkie.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、Hackaday 项目页、PyPI 文档与 FOSDEM 2026 演讲页。身高/重量未见官方统一数值，标注为未知。
+  notes: '内容整理自调研档案 data/roadmap/research/upkie.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、Hackaday 项目页、PyPI 文档与 FOSDEM 2026
+    演讲页。身高/重量未见官方统一数值，标注为未知。 | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1551 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -59,7 +60,6 @@ sources:
   url: https://pypi.org/project/upkie/
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 Upkie 是社区驱动的开源轮足双足机器人（wheeled biped），核心作者为 Stéphane Caron（Inria）等，建立在 mjbots 开源执行器生态之上，含 Upkie Zero / Upkie Standard / 2026 硬件 v2 等构型。整机约 3,000 美元现成组件 + 60 小时以上 3D 打印即可复现（官方 Hackaday 口径），6 个自由度（每腿 3：髋、膝、驱动轮）；身高/重量未见官方统一数值（来源：调研档案 upkie.md，下同）。
@@ -146,3 +146,43 @@ Upkie는 커뮤니티 주도의 오픈소스 바퀴 달린 이족 보행 로봇(
 
 - 적합: 실제 하드웨어에서 균형 제어/RL 배포를 배우고자 하는 개인 개발자 및 코스 프로젝트; 고급 순수 이족 로봇(예: Berkeley Humanoid Lite)으로 가기 전 연습 플랫폼으로 사용 가능.
 - 진입 장벽: 60시간 이상의 프린팅 및 조립에 인내심 필요; 바퀴 달린 이족은 "걷는" 휴머노이드가 아니므로, 인간형 보행 연구가 목표라면 적합하지 않음.
+
+## Overview
+
+Upkie is a community-driven open-source wheeled biped robot, with core authors including Stéphane Caron (Inria) and others. It is built on the mjbots open-source actuator ecosystem and comes in configurations such as Upkie Zero / Upkie Standard / 2026 hardware v2. The entire robot can be replicated with approximately $3,000 in off-the-shelf components plus over 60 hours of 3D printing (per the official Hackaday description), featuring 6 degrees of freedom (3 per leg: hip, knee, and drive wheel). Height/weight figures are not officially unified (source: research archive upkie.md, same below).
+
+The license is Apache-2.0 (wheel mesh CC BY 4.0), and the firmware/hardware/software of the mjbots actuators used are also fully open-source—from motor firmware to high-level control, the entire pipeline is modifiable. The GitHub repository `upkie/upkie` has 386 stars / 52 forks (snapshot as of 2026-07-01, still frequently updated), with `upkie/parts` (CAD/printed parts) and `upkie/upkie_description` (URDF) maintained in sync, and it is featured in well-known lists such as awesome-open-source-robots. The wheeled biped form maintains balance via wheels and handles uneven terrain with legs, significantly reducing control complexity and mechanical risk compared to purely walking bipeds.
+
+## Content
+
+### Key Parameters
+
+| Item | Value | Source |
+|---|---|---|
+| Degrees of Freedom | 6 (3 per leg: hip, knee, drive wheel) | Research archive |
+| Hardware Cost | Approximately $3,000 in off-the-shelf components + over 60 hours of 3D printing | Official Hackaday project page |
+| Main Controller | Raspberry Pi 4 + mjbots pi3hat (CAN expansion board) + power distribution board | Research archive |
+| Sensors | IMU integrated into pi3hat; optional OAK-D Lite camera mount and other community accessories | Research archive |
+| Height / Weight | Unknown (desktop-class wheeled biped, varies by configuration) | Research archive |
+| Beginner Friendliness | 4 / 5 (assessed in research archive) | Research archive |
+
+### Actuator Solution
+
+- mjbots qdd100 quasi-direct-drive brushless servos ×4 (hip/knee) + moteus drivers (wheels), all with open-source firmware and force control capability.
+- Hybrid wheeled biped form: maintains balance via wheels, handles uneven terrain with legs, low fall damage cost, and high success rate.
+
+### Software Stack
+
+- Python or C++, developed on Linux/macOS and deployed to the onboard Raspberry Pi; `pixi`/`uv` can run simulation examples (PyBullet) with a single command, offering zero-cost simulation onboarding without needing to purchase hardware first.
+- Comes with three built-in balance control paradigm examples: PID, MPC (qpmpc), and reinforcement learning (Stable-Baselines3); Gymnasium standard interface; plus community GPU RL solutions (MjLab Upkie).
+- Does not depend on ROS (can use xacro/URDF descriptions, compatible with libraries such as Pinocchio).
+
+### Documentation and Community
+
+- Step-by-step build instructions + Hackaday project page + GitHub Discussions/chat rooms; FOSDEM 2026 featured an official experience-sharing talk with on-site release of hardware v2 (integrated torso printing, redesigned legs, width reduced by 6 cm).
+- Chinese maker communities (such as DFRobot) have published translated coverage.
+
+### Target Audience
+
+- Suitable for: individual developers and course projects wanting to learn balance control/RL deployment on real hardware; can serve as a training platform before advancing to full bipeds (e.g., Berkeley Humanoid Lite).
+- Barrier: 60+ hours of printing and assembly still requires patience; the wheeled biped is not a "walking" humanoid—if the goal is humanoid gait research, it is not a match.

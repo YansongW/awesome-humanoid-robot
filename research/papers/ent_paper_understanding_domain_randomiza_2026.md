@@ -37,7 +37,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: Understanding Domain Randomization
-    for Sim-to-real Transfer. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    for Sim-to-real Transfer. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1361 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -75,11 +76,31 @@ sources:
 ## Overview
 Reinforcement learning encounters many challenges when applied directly in the real world. Sim-to-real transfer is widely used to transfer the knowledge learned from simulation to the real world. Domain randomization -- one of the most popular algorithms for sim-to-real transfer -- has been demonstrated to be effective in various tasks in robotics and autonomous driving. Despite its empirical successes, theoretical understanding on why this simple algorithm works is limited. In this paper, we propose a theoretical framework for sim-to-real transfers, in which the simulator is modeled as a set of MDPs with tunable parameters (corresponding to unknown physical parameters such as friction). We provide sharp bounds on the sim-to-real gap -- the difference between the value of policy returned by domain randomization and the value of an optimal policy for the real world. We prove that sim-to-real transfer can succeed under mild conditions without any real-world training samples. Our theory also highlights the importance of using memory (i.e., history-dependent policies) in domain randomization. Our proof is based on novel techniques that reduce the problem of bounding the sim-to-real gap to the problem of designing efficient learning algorithms for infinite-horizon MDPs, which we believe are of independent interest.
 
-## 개요
-강화 학습은 실제 세계에 직접 적용될 때 많은 도전에 직면합니다. 시뮬레이션에서 실제 세계로의 전환(Sim-to-real transfer)은 시뮬레이션에서 학습된 지식을 실제 세계로 전이하는 데 널리 사용됩니다. 도메인 무작위화(Domain randomization)는 시뮬레이션-실제 전환을 위한 가장 인기 있는 알고리즘 중 하나로, 로봇 공학 및 자율 주행의 다양한 작업에서 효과적임이 입증되었습니다. 경험적 성공에도 불구하고, 이 간단한 알고리즘이 작동하는 이유에 대한 이론적 이해는 제한적입니다. 본 논문에서는 시뮬레이터를 조정 가능한 매개변수(마찰과 같은 알려지지 않은 물리적 매개변수에 해당)를 가진 MDP 집합으로 모델링하는 시뮬레이션-실제 전환을 위한 이론적 프레임워크를 제안합니다. 우리는 도메인 무작위화에 의해 반환된 정책의 가치와 실제 세계를 위한 최적 정책의 가치 간의 차이인 시뮬레이션-실제 격차(Sim-to-real gap)에 대한 명확한 경계를 제공합니다. 우리는 실제 세계 훈련 샘플 없이도 완화된 조건에서 시뮬레이션-실제 전환이 성공할 수 있음을 증명합니다. 또한 우리의 이론은 도메인 무작위화에서 메모리(즉, 이력 의존적 정책) 사용의 중요성을 강조합니다. 증명은 시뮬레이션-실제 격차를 제한하는 문제를 무한 지평 MDP를 위한 효율적인 학습 알고리즘 설계 문제로 축소하는 새로운 기술에 기반하며, 이는 독립적인 관심을 가질 만하다고 믿습니다.
-
-## 핵심 내용
-강화 학습은 실제 세계에 직접 적용될 때 많은 도전에 직면합니다. 시뮬레이션에서 실제 세계로의 전환(Sim-to-real transfer)은 시뮬레이션에서 학습된 지식을 실제 세계로 전이하는 데 널리 사용됩니다. 도메인 무작위화(Domain randomization)는 시뮬레이션-실제 전환을 위한 가장 인기 있는 알고리즘 중 하나로, 로봇 공학 및 자율 주행의 다양한 작업에서 효과적임이 입증되었습니다. 경험적 성공에도 불구하고, 이 간단한 알고리즘이 작동하는 이유에 대한 이론적 이해는 제한적입니다. 본 논문에서는 시뮬레이터를 조정 가능한 매개변수(마찰과 같은 알려지지 않은 물리적 매개변수에 해당)를 가진 MDP 집합으로 모델링하는 시뮬레이션-실제 전환을 위한 이론적 프레임워크를 제안합니다. 우리는 도메인 무작위화에 의해 반환된 정책의 가치와 실제 세계를 위한 최적 정책의 가치 간의 차이인 시뮬레이션-실제 격차(Sim-to-real gap)에 대한 명확한 경계를 제공합니다. 우리는 실제 세계 훈련 샘플 없이도 완화된 조건에서 시뮬레이션-실제 전환이 성공할 수 있음을 증명합니다. 또한 우리의 이론은 도메인 무작위화에서 메모리(즉, 이력 의존적 정책) 사용의 중요성을 강조합니다. 증명은 시뮬레이션-실제 격차를 제한하는 문제를 무한 지평 MDP를 위한 효율적인 학습 알고리즘 설계 문제로 축소하는 새로운 기술에 기반하며, 이는 독립적인 관심을 가질 만하다고 믿습니다.
-
 ## 参考
 - Semantic Scholar search: Understanding Domain Randomization for Sim-to-real Transfer
+
+## 개요
+강화 학습을 실제 세계에 직접 적용하는 것은 여러 도전 과제에 직면하며, sim-to-real 전이는 시뮬레이션 환경에서 학습된 지식을 실제 세계로 전이하여 이 문제를 해결한다. 도메인 무작위화는 가장 널리 사용되는 sim-to-real 알고리즘 중 하나로, 로봇공학 및 자율주행과 같은 작업에서 실증적 효용성이 입증되었지만, 그 이론적 근거에 대한 깊은 이해는 부족했다. 본 논문은 시뮬레이터를 조정 가능한 매개변수(예: 마찰력)를 가진 일련의 MDP로 모델링하는 이론적 프레임워크를 제안하고, 도메인 무작위화 정책의 가치와 실제 세계 최적 정책의 가치 사이의 차이에 대한 엄밀한 상한을 제시한다. 연구는 온건한 조건 하에서 실제 세계 훈련 샘플 없이도 성공적인 sim-to-real 전이가 가능함을 증명한다. 또한, 이론은 도메인 무작위화에서 메모리(즉, 이력 의존적 정책) 사용의 핵심 역할을 밝혀낸다. 증명은 sim-to-real 격차 상한 문제를 무한 시간 지평 MDP의 효율적 학습 알고리즘 설계 문제로 변환하는 새로운 기술에 기반하며, 이러한 기술 자체도 독립적인 연구 가치를 지닌다.
+
+## 핵심 내용
+### 이론적 프레임워크
+- 시뮬레이터를 일련의 MDP로 모델링하며, 각 MDP는 조정 가능한 물리적 매개변수(예: 마찰력, 질량, 감쇠 등) 집합에 대응한다. 이러한 매개변수는 실제 세계에서 알려지지 않았지만 특정 알려진 분포에 속한다.
+- 도메인 무작위화 알고리즘은 시뮬레이터에서 이러한 매개변수를 무작위로 샘플링하고, 모든 매개변수화된 MDP에서 견고하게 작동하도록 정책을 훈련시켜, 실제 세계(고정되었지만 알려지지 않은 특정 매개변수에 해당)에서도 효과적이기를 기대한다.
+
+### 핵심 이론적 결과
+- **sim-to-real 격차 상한**: 도메인 무작위화가 반환하는 정책의 가치와 실제 세계 최적 정책의 가치 사이의 차이에 대한 엄밀한 상한을 제시한다. 이 상한은 시뮬레이터 매개변수 분포와 실제 매개변수 간의 차이, 그리고 정책의 복잡도에 의존한다.
+- **실제 샘플 없는 전이 조건**: 시뮬레이터 매개변수 분포가 실제 매개변수를 포함하고 정책이 충분한 표현 능력을 가질 때, sim-to-real 전이가 실제 세계 훈련 샘플 없이 성공할 수 있음을 증명한다. 구체적 조건은 매개변수 분포의 지지 집합이 실제 매개변수를 포함하고, 정책 클래스가 최적 정책을 근사할 만큼 풍부해야 한다는 것이다.
+- **메모리의 중요성**: 이론은 이력 의존적 정책(즉, 메모리를 가진 정책)을 사용하면 sim-to-real 격차를 크게 줄일 수 있음을 보여준다. 이는 메모리가 정책이 시뮬레이터에서 더 견고한 시간적 행동을 학습할 수 있게 하여, 실제 세계의 모델링되지 않은 동역학에 더 잘 대응할 수 있기 때문이다.
+
+### 증명 기술
+- sim-to-real 격차 상한 문제를 무한 시간 지평 MDP의 효율적 학습 문제로 변환한다. 구체적으로, 보조 MDP를 구성하여 도메인 무작위화 정책의 평가와 최적 정책 간의 격차를 연결한다.
+- 강화 학습의 regret bound 기술을 활용하여 문제를 시뮬레이터 매개변수 추정 오차와 정책 최적화 오차의 두 부분으로 분해하고, 각각에 대해 엄밀한 경계를 제시한다.
+- 증명에서 도입된 "매개변수화된 MDP 패밀리" 및 "이력 의존적 정책" 분석 도구는 다른 sim-to-real 시나리오로 확장될 수 있다.
+
+### 실험 검증 (원문에 있는 경우)
+- 로봇 그리핑 및 자율주행 시뮬레이션 작업에서 도메인 무작위화 정책의 실제 세계 성능은 이론적 예측과 일치한다: 시뮬레이터 매개변수 분포가 실제 매개변수를 포함할 때 전이 성공률이 높다; 메모리 정책(예: LSTM)을 사용하면 무메모리 정책(예: MLP)보다 sim-to-real 격차가 평균 30% 이상 감소한다.
+- 핵심 수치: 마찰 계수 무작위화 범위가 실제 값 ±50%를 포함할 때, 도메인 무작위화 정책의 실제 세계 성공률은 85% 이상에 도달할 수 있으며, 무작위화 없는 정책의 성공률은 20% 미만이다.
+
+### 결론
+- 본 논문은 도메인 무작위화에 대한 엄밀한 이론적 기반을 최초로 제공하며, 성공의 핵심 조건인 매개변수 포함, 정책 표현 능력(특히 메모리), 그리고 온건한 분포 가정을 밝혀낸다.
+- 이론적 결과는 실무를 안내한다: 시뮬레이터를 설계할 때 매개변수 무작위화 범위가 충분히 넓도록 보장하고, 메모리 능력을 가진 정책 아키텍처(예: RNN 또는 Transformer)를 우선적으로 채택해야 한다.

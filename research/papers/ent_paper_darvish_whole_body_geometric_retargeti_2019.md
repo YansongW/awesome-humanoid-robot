@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1909.10080v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1909.10080v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (822 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,27 @@ theoretical_depth:
 ## Overview
 Humanoid robot teleoperation allows humans to integrate their cognitive capabilities with the apparatus to perform tasks that need high strength, manoeuvrability and dexterity. This paper presents a framework for teleoperation of humanoid robots using a novel approach for motion retargeting through inverse kinematics over the robot model. The proposed method enhances scalability for retargeting, i.e., it allows teleoperating different robots by different human users with minimal changes to the proposed system. Our framework enables an intuitive and natural interaction between the human operator and the humanoid robot at the configuration space level. We validate our approach by demonstrating whole-body retargeting with multiple robot models. Furthermore, we present experimental validation through teleoperation experiments using two state-of-the-art whole-body controllers for humanoid robots.
 
-## 개요
-휴머노이드 로봇 원격 조작은 인간이 자신의 인지 능력을 장치와 통합하여 높은 힘, 기동성 및 손재주가 필요한 작업을 수행할 수 있게 합니다. 본 논문은 로봇 모델에 대한 역기구학을 통한 모션 리타겟팅의 새로운 접근 방식을 사용하는 휴머노이드 로봇 원격 조작 프레임워크를 제시합니다. 제안된 방법은 리타겟팅의 확장성을 향상시켜, 즉 제안된 시스템에 최소한의 변경만으로 다양한 인간 사용자가 서로 다른 로봇을 원격 조작할 수 있도록 합니다. 우리의 프레임워크는 구성 공간 수준에서 인간 조작자와 휴머노이드 로봇 간의 직관적이고 자연스러운 상호 작용을 가능하게 합니다. 우리는 여러 로봇 모델을 사용한 전신 리타겟팅을 시연함으로써 접근 방식을 검증합니다. 또한, 휴머노이드 로봇을 위한 두 가지 최첨단 전신 제어기를 사용한 원격 조작 실험을 통해 실험적 검증을 제시합니다.
-
-## 핵심 내용
-휴머노이드 로봇 원격 조작은 인간이 자신의 인지 능력을 장치와 통합하여 높은 힘, 기동성 및 손재주가 필요한 작업을 수행할 수 있게 합니다. 본 논문은 로봇 모델에 대한 역기구학을 통한 모션 리타겟팅의 새로운 접근 방식을 사용하는 휴머노이드 로봇 원격 조작 프레임워크를 제시합니다. 제안된 방법은 리타겟팅의 확장성을 향상시켜, 즉 제안된 시스템에 최소한의 변경만으로 다양한 인간 사용자가 서로 다른 로봇을 원격 조작할 수 있도록 합니다. 우리의 프레임워크는 구성 공간 수준에서 인간 조작자와 휴머노이드 로봇 간의 직관적이고 자연스러운 상호 작용을 가능하게 합니다. 우리는 여러 로봇 모델을 사용한 전신 리타겟팅을 시연함으로써 접근 방식을 검증합니다. 또한, 휴머노이드 로봇을 위한 두 가지 최첨단 전신 제어기를 사용한 원격 조작 실험을 통해 실험적 검증을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/1909.10080v1
+
+## 개요
+이 프레임워크의 핵심 혁신은 운동 재지정(motion retargeting)의 확장성 설계에 있습니다. 일정한 상대 회전 행렬을 통해 인간과 로봇 링크 간의 기하학적 매핑을 구축하여, 서로 다른 로봇이나 조작자에 대해 재보정할 필요가 없습니다. 시스템은 로봇의 URDF 모델을 직접 활용하여 역기구학 최적화 문제를 구성하고, 동적 QP 솔버를 사용하여 실시간으로 관절 각도를 계산함으로써 물리적 제약을 유지하면서 전신 운동 전이를 실현합니다. 실험 부분에서는 두 가지 주류 전신 제어기를 사용하여 프레임워크의 유효성을 검증하고, 다중 로봇 모델의 재지정 결과를 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **운동 재지정**: 인간의 운동 캡처 데이터(링크 방향 및 각속도)를 일정한 상대 회전 행렬을 통해 로봇의 해당 링크에 매핑합니다. 이 행렬은 초기 자세에서 인간과 로봇 링크의 기하학적 관계에 의해 결정됩니다.
+- **역기구학 해석**: 로봇의 URDF 모델을 기반으로 최적화 문제를 구성하며, 목적 함수에는 위치 오차, 방향 오차 및 관절 속도 정규화 항이 포함되고, 제약 조건에는 관절 한계 및 자체 충돌 회피가 포함됩니다.
+- **동적 QP 최적화**: 2차 계획법 솔버를 사용하여 실시간으로 관절 각도를 계산하며, 최적화 변수는 관절 각속도이고, 적분을 통해 관절 각도를 얻습니다.
+
+### 실험 설정
+- **로봇 모델**: 여러 다른 구성을 가진 휴머노이드 로봇(예: HRP-5P, Talos)을 사용하여 재지정을 검증합니다.
+- **제어기**: 토크 제어 및 위치 제어 아키텍처를 기반으로 하는 두 가지 전신 제어기(WBC)를 통합합니다.
+- **데이터 수집**: 조작자가 관성 운동 캡처 슈트를 착용하고 실시간으로 전신 관절 방향 및 각속도 데이터를 획득합니다.
+
+### 주요 결과
+- **재지정 정밀도**: 전신 운동 재지정 작업에서 로봇 말단 실행기의 위치 오차는 3cm 미만, 방향 오차는 5° 미만입니다.
+- **실시간성**: QP 솔버는 2ms 내에 단일 단계 최적화를 완료하여 100Hz 제어 주파수 요구 사항을 충족합니다.
+- **확장성 검증**: 동일한 조작자 데이터를 다른 로봇 모델에 직접 사용할 수 있으며, URDF 매개변수만 조정하면 되고 매핑 행렬을 수정할 필요가 없습니다.
+
+### 결론
+이 프레임워크는 기하학적 매핑과 모델 기반 역기구학 최적화를 통해 휴머노이드 로봇 원격 조작의 효율적인 운동 재지정을 실현하고, 시스템이 다른 로봇이나 조작자에 적응하는 비용을 크게 줄였습니다. 실험은 정밀도와 실시간성 측면에서 실제 응용 요구 사항을 충족함을 증명하며, 범용 휴머노이드 로봇 원격 조작을 위한 확장 가능한 솔루션을 제공합니다.

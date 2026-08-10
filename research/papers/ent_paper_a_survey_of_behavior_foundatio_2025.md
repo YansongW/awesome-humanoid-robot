@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.20487v5. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.20487v5. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (865 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,25 @@ sources:
 ## Overview
 Humanoid robots are drawing significant attention as versatile platforms for complex motor control, human-robot interaction, and general-purpose physical intelligence. However, achieving efficient whole-body control (WBC) in humanoids remains a fundamental challenge due to sophisticated dynamics, underactuation, and diverse task requirements. While learning-based controllers have shown promise for complex tasks, their reliance on labor-intensive and costly retraining for new scenarios limits real-world applicability. To address these limitations, behavior(al) foundation models (BFMs) have emerged as a new paradigm that leverages large-scale pre-training to learn reusable primitive skills and broad behavioral priors, enabling zero-shot or rapid adaptation to a wide range of downstream tasks. In this paper, we present a comprehensive overview of BFMs for humanoid WBC, tracing their development across diverse pre-training pipelines. Furthermore, we discuss real-world applications, current limitations, urgent challenges, and future opportunities, positioning BFMs as a key approach toward scalable and general-purpose humanoid intelligence. Finally, we provide a curated and regularly updated collection of BFM papers and projects to facilitate more subsequent research, which is available at https://github.com/yuanmingqi/awesome-bfm-papers.
 
-## 개요
-휴머노이드 로봇은 복잡한 운동 제어, 인간-로봇 상호작용, 범용 물리적 지능을 위한 다목적 플랫폼으로서 큰 주목을 받고 있습니다. 그러나 정교한 동역학, 구동 부족, 다양한 작업 요구사항으로 인해 휴머노이드에서 효율적인 전신 제어(WBC)를 달성하는 것은 여전히 근본적인 과제로 남아 있습니다. 학습 기반 제어기는 복잡한 작업에서 가능성을 보여주었지만, 새로운 시나리오에 대한 노동 집약적이고 비용이 많이 드는 재학습에 의존하기 때문에 실제 적용 가능성이 제한됩니다. 이러한 한계를 해결하기 위해 행동 기반 모델(BFM)이 새로운 패러다임으로 등장하여 대규모 사전 학습을 활용해 재사용 가능한 기본 기술과 광범위한 행동 사전 지식을 학습함으로써 다양한 하위 작업에 대한 제로샷 또는 빠른 적응을 가능하게 합니다. 본 논문에서는 휴머노이드 WBC를 위한 BFM의 포괄적인 개요를 제시하며, 다양한 사전 학습 파이프라인을 통한 발전 과정을 추적합니다. 또한 실제 응용, 현재 한계, 시급한 과제, 미래 기회를 논의하며, BFM을 확장 가능하고 범용적인 휴머노이드 지능을 위한 핵심 접근 방식으로 자리매김합니다. 마지막으로, 추가 연구를 촉진하기 위해 엄선되고 정기적으로 업데이트되는 BFM 논문 및 프로젝트 모음을 제공하며, 이는 https://github.com/yuanmingqi/awesome-bfm-papers에서 확인할 수 있습니다.
-
-## 핵심 내용
-휴머노이드 로봇은 복잡한 운동 제어, 인간-로봇 상호작용, 범용 물리적 지능을 위한 다목적 플랫폼으로서 큰 주목을 받고 있습니다. 그러나 정교한 동역학, 구동 부족, 다양한 작업 요구사항으로 인해 휴머노이드에서 효율적인 전신 제어(WBC)를 달성하는 것은 여전히 근본적인 과제로 남아 있습니다. 학습 기반 제어기는 복잡한 작업에서 가능성을 보여주었지만, 새로운 시나리오에 대한 노동 집약적이고 비용이 많이 드는 재학습에 의존하기 때문에 실제 적용 가능성이 제한됩니다. 이러한 한계를 해결하기 위해 행동 기반 모델(BFM)이 새로운 패러다임으로 등장하여 대규모 사전 학습을 활용해 재사용 가능한 기본 기술과 광범위한 행동 사전 지식을 학습함으로써 다양한 하위 작업에 대한 제로샷 또는 빠른 적응을 가능하게 합니다. 본 논문에서는 휴머노이드 WBC를 위한 BFM의 포괄적인 개요를 제시하며, 다양한 사전 학습 파이프라인을 통한 발전 과정을 추적합니다. 또한 실제 응용, 현재 한계, 시급한 과제, 미래 기회를 논의하며, BFM을 확장 가능하고 범용적인 휴머노이드 지능을 위한 핵심 접근 방식으로 자리매김합니다. 마지막으로, 추가 연구를 촉진하기 위해 엄선되고 정기적으로 업데이트되는 BFM 논문 및 프로젝트 모음을 제공하며, 이는 https://github.com/yuanmingqi/awesome-bfm-papers에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.20487v5
+
+## 개요
+휴머노이드 로봇은 복잡한 운동 제어, 인간-로봇 상호작용 및 범용 물리 지능의 잠재력으로 주목받고 있지만, 효율적인 전신 제어(WBC)를 구현하는 것은 여전히 동역학적 복잡성, 부족 구동 및 작업 다양성 등의 도전 과제에 직면해 있습니다. 전통적인 학습 기반 제어기는 복잡한 작업을 처리할 수 있지만, 새로운 시나리오에 대해 비용이 많이 들고 시간이 오래 걸리는 재학습이 필요하여 실제 적용이 제한됩니다. 행동 기반 모델(BFM)은 대규모 사전 학습을 통해 재사용 가능한 원시 기술과 행동 사전 지식을 학습하여 로봇이 광범위한 하위 작업에 제로샷 또는 빠르게 적응할 수 있게 합니다. 본 논문은 휴머노이드 로봇 WBC에서 BFM의 발전을 포괄적으로 검토하며, 다양한 사전 학습 프로세스를 다루고 실제 적용, 현재 한계, 시급한 도전 과제 및 미래 기회를 논의하며, 지속적으로 업데이트되는 논문 및 프로젝트 리소스 저장소(https://github.com/yuanmingqi/awesome-bfm-papers)도 제공합니다.
+
+## 핵심 내용
+### 핵심 기여
+- 휴머노이드 로봇 전신 제어(WBC)에서 행동 기반 모델(BFM)의 적용을 최초로 체계적으로 정리하여, 사전 학습부터 하위 작업 적응까지의 전체 프로세스를 다룹니다.
+- BFM을 전통적인 학습 제어기의 "재학습 비용이 높은" 문제를 해결하는 핵심 패러다임으로 제안하며, 대규모 사전 학습을 통해 제로샷 또는 빠른 적응을 구현합니다.
+
+### 방법 아키텍처
+- **사전 학습 프로세스**: 모방 학습, 강화 학습 및 다중 모달 데이터 융합 기반 파이프라인을 포함한 다양한 BFM 사전 학습 방법을 검토하여, 일반적인 행동 사전 지식(예: 보행, 파지, 균형)을 학습하는 것을 목표로 합니다.
+- **전신 제어 통합**: BFM은 원시 기술(예: 보행 조정, 팔 조작)을 재사용 가능한 모듈로 활용하여, 조합 또는 미세 조정을 통해 새로운 작업에 적응하며 처음부터 학습하는 것을 피합니다.
+
+### 실험 설정 및 핵심 수치
+- 본문에는 구체적인 실험 데이터가 제공되지 않지만, BFM이 시뮬레이션 및 실제 환경 모두에서 알려지지 않은 작업에 대한 빠른 적응 능력(예: 새로운 지형 또는 물체 조작으로의 제로샷 전이)을 보여준다고 지적합니다.
+- 현재 도전 과제로는 사전 학습 데이터의 규모와 다양성 부족, 교차 작업 일반화 안정성, 실시간 추론의 계산 효율성 등이 강조됩니다.
+
+### 결론 및 전망
+- BFM은 확장 가능하고 범용적인 휴머노이드 로봇 지능을 구현하는 핵심 경로로 간주되며, 향후 데이터 효율성, 안전 제약 및 장기 작업 계획 등의 문제를 해결해야 합니다.
+- 저자가 유지 관리하는 GitHub 저장소(https://github.com/yuanmingqi/awesome-bfm-papers)는 관련 논문과 프로젝트를 지속적으로 업데이트하여 후속 연구를 촉진할 것입니다.

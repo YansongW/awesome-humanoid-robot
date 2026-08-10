@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10206v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.10206v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (711 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,27 @@ The true promise of humanoid robotics lies beyond single-agent autonomy: two or 
 ## Content
 The true promise of humanoid robotics lies beyond single-agent autonomy: two or more humanoids must engage in physically grounded, socially meaningful whole-body interactions that echo the richness of human social interaction. However, single-humanoid methods suffer from the isolation issue, ignoring inter-agent dynamics and causing misaligned contacts, interpenetrations, and unrealistic motions. To address this, we present Harmanoid, a dual-humanoid motion imitation framework that transfers interacting human motions to two robots while preserving both kinematic fidelity and physical realism. Harmanoid comprises two key components: (i) contact-aware motion retargeting, which restores inter-body coordination by aligning SMPL contacts with robot vertices, and (ii) interaction-driven motion controller, which leverages interaction-specific rewards to enforce coordinated keypoints and physically plausible contacts. By explicitly modeling inter-agent contacts and interaction-aware dynamics, Harmanoid captures the coupled behaviors between humanoids that single-humanoid frameworks inherently overlook. Experiments demonstrate that Harmanoid significantly improves interactive motion imitation, surpassing existing single-humanoid frameworks that largely fail in such scenarios.
 
-## 개요
-휴머노이드 로봇공학의 진정한 약속은 단일 에이전트 자율성을 넘어서는 데 있습니다. 두 대 이상의 휴머노이드가 물리적으로 기반을 둔, 사회적으로 의미 있는 전신 상호작용을 수행해야 하며, 이는 인간 사회적 상호작용의 풍부함을 반영해야 합니다. 그러나 단일 휴머노이드 방법은 고립 문제로 인해 에이전트 간 동역학을 무시하고, 정렬되지 않은 접촉, 상호 침투, 비현실적인 움직임을 초래합니다. 이를 해결하기 위해, 우리는 Harmanoid를 제안합니다. 이는 상호작용하는 인간의 움직임을 두 대의 로봇으로 전이하면서 운동학적 충실도와 물리적 현실성을 모두 보존하는 이중 휴머노이드 모션 모방 프레임워크입니다. Harmanoid는 두 가지 핵심 구성 요소로 이루어져 있습니다: (i) 접촉 인식 모션 리타겟팅으로, SMPL 접촉을 로봇 정점과 정렬하여 신체 간 조정을 복원하며, (ii) 상호작용 기반 모션 컨트롤러로, 상호작용 특화 보상을 활용하여 조정된 키포인트와 물리적으로 타당한 접촉을 강제합니다. 에이전트 간 접촉과 상호작용 인식 동역학을 명시적으로 모델링함으로써, Harmanoid는 단일 휴머노이드 프레임워크가 본질적으로 간과하는 휴머노이드 간 결합 행동을 포착합니다. 실험 결과, Harmanoid는 상호작용 모션 모방을 크게 개선하며, 이러한 시나리오에서 대부분 실패하는 기존 단일 휴머노이드 프레임워크를 능가합니다.
-
-## 핵심 내용
-휴머노이드 로봇공학의 진정한 약속은 단일 에이전트 자율성을 넘어서는 데 있습니다. 두 대 이상의 휴머노이드가 물리적으로 기반을 둔, 사회적으로 의미 있는 전신 상호작용을 수행해야 하며, 이는 인간 사회적 상호작용의 풍부함을 반영해야 합니다. 그러나 단일 휴머노이드 방법은 고립 문제로 인해 에이전트 간 동역학을 무시하고, 정렬되지 않은 접촉, 상호 침투, 비현실적인 움직임을 초래합니다. 이를 해결하기 위해, 우리는 Harmanoid를 제안합니다. 이는 상호작용하는 인간의 움직임을 두 대의 로봇으로 전이하면서 운동학적 충실도와 물리적 현실성을 모두 보존하는 이중 휴머노이드 모션 모방 프레임워크입니다. Harmanoid는 두 가지 핵심 구성 요소로 이루어져 있습니다: (i) 접촉 인식 모션 리타겟팅으로, SMPL 접촉을 로봇 정점과 정렬하여 신체 간 조정을 복원하며, (ii) 상호작용 기반 모션 컨트롤러로, 상호작용 특화 보상을 활용하여 조정된 키포인트와 물리적으로 타당한 접촉을 강제합니다. 에이전트 간 접촉과 상호작용 인식 동역학을 명시적으로 모델링함으로써, Harmanoid는 단일 휴머노이드 프레임워크가 본질적으로 간과하는 휴머노이드 간 결합 행동을 포착합니다. 실험 결과, Harmanoid는 상호작용 모션 모방을 크게 개선하며, 이러한 시나리오에서 대부분 실패하는 기존 단일 휴머노이드 프레임워크를 능가합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.10206v1
+
+## 개요
+Harmanoid 프레임워크는 두 휴머노이드 로봇 간의 물리적 상호작용 시나리오에 특화되어 설계되었으며, 기존 단일 로봇 자율성 연구의 한계를突破了. 이 프레임워크는 두 가지 핵심 모듈을 포함합니다: 접촉 인식 운동 리타게팅 모듈은 SMPL 인체 모델의 접촉점을 로봇 정점에 매핑하여 두 몸체 간의 조화로운 운동을 복원하고, 상호작용 구동 운동 컨트롤러는 상호작용 특정 보상 함수를 활용하여 핵심 지점의 협력과 물리적으로 합리적인 접촉을 강제합니다. 실험 결과, Harmanoid는 상호작용 운동 모방 작업에서 기존 단일 로봇 프레임워크보다 현저히 우수하며, 후자는 이중 몸체 상호작용 시나리오에서 거의 완전히 실패합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+Harmanoid 프레임워크는 두 가지 핵심 구성 요소로 이루어져 있습니다:
+- **접촉 인식 운동 리타게팅**: SMPL 인체 모델의 접촉점과 로봇 정점 간의 매핑 관계를 구축하여 두 로봇 간의 사지 협력 운동을 복원하고, 접촉 오정렬 및 관통 문제를 방지합니다.
+- **상호작용 구동 운동 컨트롤러**: 상호작용 특정 보상 함수를 설계하여 두 로봇의 핵심 지점 협력 운동과 물리적으로 합리적인 접촉 행동을 강제하며, 운동학적 충실도와 물리적 현실성을 보장합니다.
+
+### 실험 설정
+- 이중 휴머노이드 로봇 플랫폼을 사용하여 상호작용 운동 모방 실험을 수행
+- 비교 기준은 기존 단일 로봇 전신 제어 프레임워크
+- 평가 지표는 운동학적 충실도(핵심 지점 오차)와 물리적 합리성(접촉 관통률)을 포함
+
+### 핵심 결과
+- Harmanoid는 상호작용 운동 모방 작업에서 모든 단일 로봇 기준 방법을 현저히 능가
+- 단일 로봇 프레임워크는 이중 몸체 상호작용 시나리오에서 거의 완전히 실패하며, 접촉 오정렬, 관통 및 부자연스러운 운동으로 나타남
+- 이중 몸체 접촉과 상호작용 인식 동역학을 명시적으로 모델링함으로써, Harmanoid는 단일 로봇 프레임워크가 처리할 수 없는 결합 행동을 성공적으로 포착
+
+### 결론
+Harmanoid는 이중 로봇 간의 접촉과 상호작용 동역학을 명시적으로 모델링하는 것이 물리적으로 합리적인 휴머노이드 로봇 상호작용을 구현하는 데 필수적임을 증명하며, 향후 다중 로봇 협력 작업(예: 운반, 조립)을 위한 기반 프레임워크를 제공합니다.

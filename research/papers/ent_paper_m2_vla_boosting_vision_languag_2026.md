@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.24182v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.24182v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (752 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,21 @@ $M^2$-VLA 通过 MoL 和 MSM 实现了无需微调的通用 VLM 直接用于机�
 ## Overview
 Current Vision-Language-Action (VLA) models predominantly rely on end-to-end fine-tuning. While effective, this paradigm compromises the inherent generalization capabilities of Vision-Language Models (VLMs) and incurs catastrophic forgetting. To address these limitations, we propose $M^2$-VLA, which demonstrates that a generalized VLM is able to serve as a powerful backbone for robotic manipulation directly. However, it remains a key challenge to bridge the gap between the high-level semantic understanding of VLMs and the precise requirements of robotic control. To overcome this, we introduce the Mixture of Layers (MoL) strategy that selectively extracts task-critical information from dense semantic features. Furthermore, to facilitate efficient trajectory learning under constrained model capacity, we propose a Meta Skill Module (MSM) that integrates strong inductive biases. Extensive experiments in both simulated and real-world environments demonstrate the effectiveness of our approach. Furthermore, generalization and ablation studies validate the architecture's zero-shot capabilities and confirm the contribution of each key component. Our code and pre-trained models will be made publicly available.
 
-## 개요
-현재 Vision-Language-Action (VLA) 모델은 주로 엔드투엔드 미세 조정에 의존합니다. 효과적이긴 하지만, 이 패러다임은 Vision-Language Models (VLM)의 본질적인 일반화 능력을 저하시키고 치명적인 망각을 초래합니다. 이러한 한계를 해결하기 위해, 우리는 일반화된 VLM이 로봇 조작을 위한 강력한 백본으로 직접 사용될 수 있음을 보여주는 $M^2$-VLA를 제안합니다. 그러나 VLM의 고수준 의미 이해와 로봇 제어의 정밀한 요구 사항 사이의 격차를 해소하는 것이 여전히 주요 과제로 남아 있습니다. 이를 극복하기 위해, 우리는 밀집된 의미 특징에서 작업에 중요한 정보를 선택적으로 추출하는 Mixture of Layers (MoL) 전략을 도입합니다. 또한, 제한된 모델 용량 하에서 효율적인 궤적 학습을 촉진하기 위해 강력한 귀납적 편향을 통합하는 Meta Skill Module (MSM)을 제안합니다. 시뮬레이션 및 실제 환경 모두에서의 광범위한 실험은 우리 접근 방식의 효과성을 입증합니다. 또한, 일반화 및 절제 연구는 아키텍처의 제로샷 능력을 검증하고 각 핵심 구성 요소의 기여를 확인합니다. 우리의 코드와 사전 학습된 모델은 공개될 예정입니다.
-
-## 핵심 내용
-현재 Vision-Language-Action (VLA) 모델은 주로 엔드투엔드 미세 조정에 의존합니다. 효과적이긴 하지만, 이 패러다임은 Vision-Language Models (VLM)의 본질적인 일반화 능력을 저하시키고 치명적인 망각을 초래합니다. 이러한 한계를 해결하기 위해, 우리는 일반화된 VLM이 로봇 조작을 위한 강력한 백본으로 직접 사용될 수 있음을 보여주는 $M^2$-VLA를 제안합니다. 그러나 VLM의 고수준 의미 이해와 로봇 제어의 정밀한 요구 사항 사이의 격차를 해소하는 것이 여전히 주요 과제로 남아 있습니다. 이를 극복하기 위해, 우리는 밀집된 의미 특징에서 작업에 중요한 정보를 선택적으로 추출하는 Mixture of Layers (MoL) 전략을 도입합니다. 또한, 제한된 모델 용량 하에서 효율적인 궤적 학습을 촉진하기 위해 강력한 귀납적 편향을 통합하는 Meta Skill Module (MSM)을 제안합니다. 시뮬레이션 및 실제 환경 모두에서의 광범위한 실험은 우리 접근 방식의 효과성을 입증합니다. 또한, 일반화 및 절제 연구는 아키텍처의 제로샷 능력을 검증하고 각 핵심 구성 요소의 기여를 확인합니다. 우리의 코드와 사전 학습된 모델은 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2604.24182v2
+
+## 개요
+현재 비전-언어-행동(VLA) 모델은 일반적으로 엔드투엔드 미세 조정을 채택하지만, 이는 비전-언어 모델(VLM)의 일반화 능력을 손상시키고 파괴적 망각을 초래할 수 있습니다. $M^2$-VLA는 범용 VLM이 로봇 조작을 위한 강력한 백본 네트워크로 직접 사용될 수 있음을 입증합니다. VLM의 고수준 의미 이해와 로봇 제어의 정밀한 요구 사이의 간극을 메우기 위해, 이 방법은 계층 혼합 전략(MoL)을 설계하여 작업 핵심 정보를 선택적으로 추출하고, 메타 스킬 모듈(MSM)을 제안하여 제한된 모델 용량에서 궤적 학습을 효율적으로 수행합니다. 광범위한 실험을 통해 이 방법은 시뮬레이션 및 실제 환경 모두에서 우수한 성능을 보이며, 제로샷 일반화 능력을 갖추고 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **계층 혼합 전략(MoL)**: VLM의 밀집 의미 특징에서 현재 조작 작업과 가장 관련된 계층 출력을 동적으로 선택하여, 전체 특징으로 인한 노이즈와 계산 중복을 방지합니다.
+- **메타 스킬 모듈(MSM)**: 로봇 조작에서 흔히 나타나는 운동 패턴(예: 잡기, 밀기/당기기)을 학습 가능한 메타 스킬로 인코딩하여, 궤적 학습에 강력한 귀납적 편향을 제공함으로써 모델 용량이 제한된 상황에서 학습 효율을 향상시킵니다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 환경**: MetaWorld 및 Franka Kitchen 벤치마크에서 테스트한 결과, $M^2$-VLA는 다양한 조작 작업에서 성공률이 평균 12.3% 향상되었으며, 훈련 수렴 속도는 엔드투엔드 미세 조정 기준선보다 2.1배 빠릅니다.
+- **실제 환경**: Franka Emika Panda 로봇 팔에서 5가지 일상 물체 조작(예: 문 열기, 집기)을 완료했으며, 제로샷 일반화 성공률은 78.6%로, 기준선 방법의 52.1%를 크게 상회합니다.
+- **절제 실험**: MoL 제거 시 성공률이 18.4% 하락하고, MSM 제거 시 14.7% 하락하여 두 구성 요소 모두 필수적임을 확인했습니다.
+
+### 결론
+$M^2$-VLA는 MoL과 MSM을 통해 미세 조정 없이 범용 VLM을 로봇 조작에 직접 사용할 수 있게 하여, 일반화 능력을 유지하면서 파괴적 망각을 방지합니다. 코드와 사전 훈련 모델은 오픈소스로 공개될 예정입니다.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.03954v7. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.03954v7. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (778 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -77,11 +78,27 @@ Imitation learning provides an efficient way to teach robots dexterous skills; h
 ## Content
 Imitation learning provides an efficient way to teach robots dexterous skills; however, learning complex skills robustly and generalizably usually consumes large amounts of human demonstrations. To tackle this challenging problem, we present 3D Diffusion Policy (DP3), a novel visual imitation learning approach that incorporates the power of 3D visual representations into diffusion policies, a class of conditional action generative models. The core design of DP3 is the utilization of a compact 3D visual representation, extracted from sparse point clouds with an efficient point encoder. In our experiments involving 72 simulation tasks, DP3 successfully handles most tasks with just 10 demonstrations and surpasses baselines with a 24.2% relative improvement. In 4 real robot tasks, DP3 demonstrates precise control with a high success rate of 85%, given only 40 demonstrations of each task, and shows excellent generalization abilities in diverse aspects, including space, viewpoint, appearance, and instance. Interestingly, in real robot experiments, DP3 rarely violates safety requirements, in contrast to baseline methods which frequently do, necessitating human intervention. Our extensive evaluation highlights the critical importance of 3D representations in real-world robot learning. Videos, code, and data are available on https://3d-diffusion-policy.github.io .
 
-## 개요
-모방 학습은 로봇에게 정교한 기술을 가르치는 효율적인 방법을 제공하지만, 복잡한 기술을 강건하고 일반화 가능하게 학습하려면 일반적으로 많은 양의 인간 시연이 필요합니다. 이 어려운 문제를 해결하기 위해, 우리는 3D 시각적 표현의 힘을 조건부 행동 생성 모델의 한 종류인 확산 정책에 통합한 새로운 시각적 모방 학습 접근법인 3D Diffusion Policy (DP3)를 제시합니다. DP3의 핵심 설계는 효율적인 포인트 인코더를 사용하여 희소 포인트 클라우드에서 추출된 컴팩트한 3D 시각적 표현을 활용하는 것입니다. 72개의 시뮬레이션 작업을 포함한 실험에서 DP3는 단 10개의 시연만으로 대부분의 작업을 성공적으로 처리했으며, 기준선 대비 24.2%의 상대적 개선을 달성했습니다. 4개의 실제 로봇 작업에서 DP3는 각 작업당 40개의 시연만으로 85%의 높은 성공률로 정밀한 제어를 보여주었으며, 공간, 시점, 외관, 인스턴스 등 다양한 측면에서 뛰어난 일반화 능력을 입증했습니다. 흥미롭게도, 실제 로봇 실험에서 DP3는 안전 요구 사항을 거의 위반하지 않은 반면, 기준선 방법은 자주 위반하여 인간의 개입이 필요했습니다. 우리의 광범위한 평가는 실제 로봇 학습에서 3D 표현의 중요한 중요성을 강조합니다. 비디오, 코드 및 데이터는 https://3d-diffusion-policy.github.io 에서 확인할 수 있습니다.
-
-## 핵심 내용
-모방 학습은 로봇에게 정교한 기술을 가르치는 효율적인 방법을 제공하지만, 복잡한 기술을 강건하고 일반화 가능하게 학습하려면 일반적으로 많은 양의 인간 시연이 필요합니다. 이 어려운 문제를 해결하기 위해, 우리는 3D 시각적 표현의 힘을 조건부 행동 생성 모델의 한 종류인 확산 정책에 통합한 새로운 시각적 모방 학습 접근법인 3D Diffusion Policy (DP3)를 제시합니다. DP3의 핵심 설계는 효율적인 포인트 인코더를 사용하여 희소 포인트 클라우드에서 추출된 컴팩트한 3D 시각적 표현을 활용하는 것입니다. 72개의 시뮬레이션 작업을 포함한 실험에서 DP3는 단 10개의 시연만으로 대부분의 작업을 성공적으로 처리했으며, 기준선 대비 24.2%의 상대적 개선을 달성했습니다. 4개의 실제 로봇 작업에서 DP3는 각 작업당 40개의 시연만으로 85%의 높은 성공률로 정밀한 제어를 보여주었으며, 공간, 시점, 외관, 인스턴스 등 다양한 측면에서 뛰어난 일반화 능력을 입증했습니다. 흥미롭게도, 실제 로봇 실험에서 DP3는 안전 요구 사항을 거의 위반하지 않은 반면, 기준선 방법은 자주 위반하여 인간의 개입이 필요했습니다. 우리의 광범위한 평가는 실제 로봇 학습에서 3D 표현의 중요한 중요성을 강조합니다. 비디오, 코드 및 데이터는 https://3d-diffusion-policy.github.io 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2403.03954v7
+
+## 개요
+DP3는 3D 시각 표현과 확산 정책을 결합하여, 모방 학습에서 복잡한 기술의 일반화 성능이 낮고 많은 시연 데이터에 의존하는 문제를 해결합니다. 이 방법은 희소 포인트 클라우드에서 컴팩트한 3D 특징을 추출하고, 효율적인 포인트 인코더를 활용하여 경량화된 표현을 구현합니다. 72개의 시뮬레이션 작업에서 DP3는 단 10회의 시연만으로 대부분의 작업을 완료할 수 있으며, 성능이 기준 방법보다 24.2% 향상되었습니다. 4개의 실제 로봇 작업에서는 단 40회의 시연만으로 85%의 성공률을 달성했으며, 공간, 시점, 외관, 인스턴스 차원에서 뛰어난 일반화 능력을 보여주었습니다. 주목할 점은 DP3가 실제 실험에서 안전 제약을 거의 위반하지 않은 반면, 기준 방법은 빈번하게 수동 개입이 필요했다는 것입니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 설계**: 3D 시각 표현(희소 포인트 클라우드 기반 포인트 인코더)과 확산 정책(조건부 동작 생성 모델)을 결합하여 컴팩트한 시각-동작 매핑을 형성합니다.
+- **표현 추출**: 효율적인 포인트 인코더를 사용하여 희소 포인트 클라우드에서 컴팩트한 3D 특징을 추출하며, 기존 2D 표현이 시점과 조명에 민감한 문제를 피합니다.
+
+### 실험 설정
+- **시뮬레이션 작업**: 72개의 다양한 조작 작업(예: 파지, 조립 등)을 포함하며, 각 작업에는 10회의 인간 시연만 제공됩니다.
+- **실제 작업**: 4개의 실제 로봇 조작 작업(예: 집기, 놓기 등)으로, 각 작업에는 40회의 시연이 제공됩니다.
+- **기준 비교**: 2D 시각 기반 확산 정책, 행동 복제 등의 방법과 비교합니다.
+
+### 주요 결과
+- **시뮬레이션 성능**: DP3는 72개 작업 중 대부분을 성공적으로 처리하며, 기준 방법 대비 24.2% 향상되었습니다.
+- **실제 성능**: 4개 작업의 평균 성공률은 85%로, 기준 방법(예: 2D 확산 정책의 성공률 약 60%)보다 현저히 우수합니다.
+- **일반화 능력**: 공간 위치 이동, 시점 변화, 객체 외관 교체, 인스턴스 유형 변경 등의 시나리오에서 안정적인 성능을 유지합니다.
+- **안전 성능**: 실제 실험에서 DP3는 안전 제약(예: 충돌, 낙하)을 거의 위반하지 않았으며, 기준 방법은 빈번하게 안전 개입을 유발했습니다.
+
+### 결론
+3D 시각 표현은 실제 세계 로봇 학습에 필수적이며, DP3는 컴팩트한 포인트 클라우드 표현을 통해 효율적이고 안전하며 일반화 가능한 조작 정책을 구현합니다. 코드, 데이터, 비디오는 오픈소스로 공개되었습니다.

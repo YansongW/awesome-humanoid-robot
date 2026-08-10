@@ -61,8 +61,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31993v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31993v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1070 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -103,11 +104,28 @@ While robotic manipulation capabilities have advanced rapidly, physical safety r
 ## Content
 While robotic manipulation capabilities have advanced rapidly, physical safety remains a major barrier to deploying household robots: task success is insufficient if the robot damages itself or its surroundings. Simulation offers a harm-free alternative to costly and dangerous real-world training and evaluation, yet existing simulators lack general mechanisms to detect, quantify, and represent damage. To address this gap, we introduce OOPSIEVERSE, a unified simulation framework and benchmark for damage-aware household manipulation. OOPSIEVERSE provides damage as an explicit, physically-grounded, and task-agnostic signal by converting sources such as contact forces, temperature changes, and liquid interactions into corresponding mechanical, thermal or fluid damage. OOPSIEVERSE comprises two core elements: (1) DAMAGESIM, a simulator-agnostic framework for detecting and quantifying damage during navigation and manipulation, and (2) a suite of household tasks designed to evaluate common damage modes and distinguish between task completion and safe execution. We demonstrate the generality of our framework by instantiating DAMAGESIM in two simulators with different physics backends, OmniGibson (Nvidia Omniverse) and RoboCasa (MuJoCo). We further showcase the utility of OOPSIEVERSE across multiple use cases, including (1) guiding safer demonstration collection via real-time damage feedback, (2) learning safer manipulation policies through damage-conditioned imitation learning and reinforcement learning, (3) benchmarking the safety of state-of-the-art Vision Language Action policies, and (4) improving real-world safety of sim-to-real transferred policies. Together, our results highlight the potential of OOPSIEVERSE as an open-source foundation for systematic, scalable research on safe robot manipulation. For code and more information, please refer to https://robin-lab.cs.utexas.edu/oopsieverse/
 
-## 개요
-로봇 조작 능력이 빠르게 발전했지만, 물리적 안전은 가정용 로봇 배포의 주요 장벽으로 남아 있습니다. 로봇이 자신이나 주변 환경을 손상시키면 작업 성공만으로는 충분하지 않기 때문입니다. 시뮬레이션은 비용이 많이 들고 위험한 실제 환경 훈련 및 평가에 대한 무해한 대안을 제공하지만, 기존 시뮬레이터는 손상을 감지, 정량화 및 표현하는 일반적인 메커니즘이 부족합니다. 이러한 격차를 해결하기 위해, 우리는 손상 인식 가정용 조작을 위한 통합 시뮬레이션 프레임워크이자 벤치마크인 OOPSIEVERSE를 소개합니다. OOPSIEVERSE는 접촉력, 온도 변화, 액체 상호작용과 같은 소스를 해당 기계적, 열적 또는 유체 손상으로 변환하여 손상을 명시적이고 물리적으로 기반하며 작업에 구애받지 않는 신호로 제공합니다. OOPSIEVERSE는 두 가지 핵심 요소로 구성됩니다: (1) 탐색 및 조작 중 손상을 감지하고 정량화하는 시뮬레이터에 구애받지 않는 프레임워크인 DAMAGESIM, (2) 일반적인 손상 모드를 평가하고 작업 완료와 안전한 실행을 구분하도록 설계된 일련의 가정용 작업입니다. 우리는 서로 다른 물리 백엔드를 가진 두 시뮬레이터, OmniGibson (Nvidia Omniverse) 및 RoboCasa (MuJoCo)에서 DAMAGESIM을 구현하여 프레임워크의 일반성을 입증합니다. 또한, (1) 실시간 손상 피드백을 통한 더 안전한 시연 수집 안내, (2) 손상 조건부 모방 학습 및 강화 학습을 통한 더 안전한 조작 정책 학습, (3) 최첨단 Vision Language Action 정책의 안전성 벤치마킹, (4) sim-to-real 전이 정책의 실제 환경 안전성 향상 등 여러 사용 사례에서 OOPSIEVERSE의 유용성을 보여줍니다. 함께, 우리의 결과는 안전한 로봇 조작에 대한 체계적이고 확장 가능한 연구를 위한 오픈소스 기반으로서 OOPSIEVERSE의 잠재력을 강조합니다. 코드 및 자세한 정보는 https://robin-lab.cs.utexas.edu/oopsieverse/ 를 참조하십시오.
-
-## 핵심 내용
-로봇 조작 능력이 빠르게 발전했지만, 물리적 안전은 가정용 로봇 배포의 주요 장벽으로 남아 있습니다. 로봇이 자신이나 주변 환경을 손상시키면 작업 성공만으로는 충분하지 않기 때문입니다. 시뮬레이션은 비용이 많이 들고 위험한 실제 환경 훈련 및 평가에 대한 무해한 대안을 제공하지만, 기존 시뮬레이터는 손상을 감지, 정량화 및 표현하는 일반적인 메커니즘이 부족합니다. 이러한 격차를 해결하기 위해, 우리는 손상 인식 가정용 조작을 위한 통합 시뮬레이션 프레임워크이자 벤치마크인 OOPSIEVERSE를 소개합니다. OOPSIEVERSE는 접촉력, 온도 변화, 액체 상호작용과 같은 소스를 해당 기계적, 열적 또는 유체 손상으로 변환하여 손상을 명시적이고 물리적으로 기반하며 작업에 구애받지 않는 신호로 제공합니다. OOPSIEVERSE는 두 가지 핵심 요소로 구성됩니다: (1) 탐색 및 조작 중 손상을 감지하고 정량화하는 시뮬레이터에 구애받지 않는 프레임워크인 DAMAGESIM, (2) 일반적인 손상 모드를 평가하고 작업 완료와 안전한 실행을 구분하도록 설계된 일련의 가정용 작업입니다. 우리는 서로 다른 물리 백엔드를 가진 두 시뮬레이터, OmniGibson (Nvidia Omniverse) 및 RoboCasa (MuJoCo)에서 DAMAGESIM을 구현하여 프레임워크의 일반성을 입증합니다. 또한, (1) 실시간 손상 피드백을 통한 더 안전한 시연 수집 안내, (2) 손상 조건부 모방 학습 및 강화 학습을 통한 더 안전한 조작 정책 학습, (3) 최첨단 Vision Language Action 정책의 안전성 벤치마킹, (4) sim-to-real 전이 정책의 실제 환경 안전성 향상 등 여러 사용 사례에서 OOPSIEVERSE의 유용성을 보여줍니다. 함께, 우리의 결과는 안전한 로봇 조작에 대한 체계적이고 확장 가능한 연구를 위한 오픈소스 기반으로서 OOPSIEVERSE의 잠재력을 강조합니다. 코드 및 자세한 정보는 https://robin-lab.cs.utexas.edu/oopsieverse/ 를 참조하십시오.
-
 ## 参考
 - http://arxiv.org/abs/2606.31993v1
+
+## 개요
+OOPSIEVERSE는 손상 인식 가정용 로봇 조작 시뮬레이션 프레임워크이자 벤치마크로, DAMAGESIM 손상 감지 프레임워크와 일련의 가정용 작업으로 구성됩니다. DAMAGESIM은 접촉력, 온도 변화, 액체 상호작용과 같은 물리적 소스를 기계적, 열적 또는 유체 손상 신호로 변환하여 명시적이고 물리적으로 해석 가능하며 작업과 무관한 안전 지표를 제공합니다. 이 프레임워크는 Nvidia Omniverse 기반의 OmniGibson과 MuJoCo 기반의 RoboCasa라는 서로 다른 두 물리 엔진의 시뮬레이터에서 성공적으로 구현되어 그 범용성을 검증했습니다. 연구는 OOPSIEVERSE가 실시간 손상 피드백을 통한 더 안전한 시연 수집 유도, 손상 조건 기반 모방 학습 및 강화 학습을 통한 안전 정책 훈련, 최신 Vision Language Action 정책의 안전성 평가, 그리고 sim-to-real 전이 정책의 실제 세계 안전성 향상 등 여러 시나리오에서 유용함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+OOPSIEVERSE는 두 가지 핵심 구성 요소를 포함합니다:
+- **DAMAGESIM**: 시뮬레이터에 독립적인 프레임워크로, 내비게이션 및 조작 과정에서 손상을 감지하고 정량화합니다. 접촉력, 온도 변화, 액체 상호작용과 같은 물리적 소스를 기계적 손상(예: 충돌 변형), 열적 손상(예: 과열), 유체 손상(예: 액체 누출)으로 매핑합니다.
+- **가정용 작업 스위트**: 일반적인 손상 패턴을 평가하고 "작업 완료"와 "안전 실행" 지표를 명확히 구분하도록 특별히 설계된 일련의 작업입니다.
+
+### 실험 설정
+- **시뮬레이터 구현**: DAMAGESIM은 서로 다른 두 물리 백엔드의 시뮬레이터, 즉 OmniGibson(Nvidia Omniverse 기반)과 RoboCasa(MuJoCo 기반)에서 구현되어 프레임워크의 범용성을 입증합니다.
+- **사용 시나리오**:
+  1. **안전 시연 수집**: 실시간 손상 피드백을 통해 인간 시연자를 안내하여 불안전한 행동을 줄입니다.
+  2. **안전 정책 학습**: 손상 조건화된 모방 학습과 강화 학습을 채택하여 더 안전한 조작 정책을 훈련합니다.
+  3. **정책 안전 벤치마킹**: 현재 최첨단 Vision Language Action 정책의 안전성을 평가합니다.
+  4. **Sim-to-Real 안전 전이**: 시뮬레이션에서 실제 세계로 전이되는 정책의 안전성을 향상시킵니다.
+
+### 주요 결론
+- OOPSIEVERSE는 물리적 상호작용을 정량화 가능한 손상 신호로 변환하여 안전 평가를 위한 통일된 기준을 제공합니다.
+- OmniGibson과 RoboCasa에서의 구현은 DAMAGESIM의 교차 시뮬레이터 범용성을 검증합니다.
+- 실험은 손상 피드백 기반 훈련 방법이 작업 완료율을 유지하면서 조작 중 물리적 손상 위험을 크게 줄일 수 있음을 보여줍니다.
+- 이 프레임워크는 체계적이고 확장 가능한 안전 로봇 조작 연구를 위한 오픈소스 기반을 제공합니다.

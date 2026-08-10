@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.23034v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.23034v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (897 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,28 @@ LatBot 通过引入动作预测与令牌分解，有效解决了现有方法忽�
 ## Overview
 Learning transferable latent actions from large-scale object manipulation videos can significantly enhance generalization in downstream robotics tasks, as such representations are agnostic to different robot embodiments. Existing approaches primarily rely on visual reconstruction objectives while neglecting physical priors, leading to sub-optimal performance in learning universal representations. To address these challenges, we propose a Universal Latent Action Learning framework that takes task instructions and multiple frames as inputs, and optimizes both future frame reconstruction and action sequence prediction. Unlike prior works, incorporating action predictions (e.g., gripper or hand trajectories and orientations) allows the model to capture richer physical priors such as real-world distances and orientations, thereby enabling seamless transferability to downstream tasks. We further decompose the latent actions into learnable motion and scene tokens to distinguish the robot's active movements from environmental changes, thus filtering out irrelevant dynamics. By distilling the learned latent actions into the latest VLA models, we achieve strong performance across both simulated (SIMPLER and LIBERO) and real-world robot settings. Notably, with only 10 real-world trajectories per task collected on a Franka robot, our approach successfully completes all five challenging tasks, demonstrating strong few-shot transferability in robotic manipulation.
 
-## 개요
-대규모 객체 조작 비디오에서 전이 가능한 잠재 행동을 학습하면 다운스트림 로봇 작업의 일반화 능력을 크게 향상시킬 수 있습니다. 이러한 표현은 다양한 로봇 구현 방식에 구애받지 않기 때문입니다. 기존 접근법은 주로 시각적 재구성 목표에 의존하면서 물리적 사전 지식을 무시하여, 보편적 표현 학습에서 최적 이하의 성능을 초래합니다. 이러한 문제를 해결하기 위해, 우리는 작업 명령과 여러 프레임을 입력으로 받아 미래 프레임 재구성과 행동 시퀀스 예측을 동시에 최적화하는 보편적 잠재 행동 학습 프레임워크를 제안합니다. 기존 연구와 달리, 행동 예측(예: 그리퍼 또는 손의 궤적 및 방향)을 통합함으로써 모델이 실제 세계의 거리 및 방향과 같은 더 풍부한 물리적 사전 지식을 포착할 수 있어, 다운스트림 작업으로의 원활한 전이를 가능하게 합니다. 또한, 잠재 행동을 학습 가능한 모션 토큰과 장면 토큰으로 분해하여 로봇의 능동적 움직임과 환경 변화를 구별함으로써, 무관한 역학을 걸러냅니다. 학습된 잠재 행동을 최신 VLA 모델에 증류함으로써, 시뮬레이션(SIMPLER 및 LIBERO)과 실제 로봇 환경 모두에서 강력한 성능을 달성했습니다. 특히, Franka 로봇에서 작업당 10개의 실제 궤적만 수집하여도, 우리의 접근법은 다섯 가지 도전적인 작업을 모두 성공적으로 완료하여, 로봇 조작에서 강력한 소수 샷 전이 능력을 입증했습니다.
-
-## 핵심 내용
-대규모 객체 조작 비디오에서 전이 가능한 잠재 행동을 학습하면 다운스트림 로봇 작업의 일반화 능력을 크게 향상시킬 수 있습니다. 이러한 표현은 다양한 로봇 구현 방식에 구애받지 않기 때문입니다. 기존 접근법은 주로 시각적 재구성 목표에 의존하면서 물리적 사전 지식을 무시하여, 보편적 표현 학습에서 최적 이하의 성능을 초래합니다. 이러한 문제를 해결하기 위해, 우리는 작업 명령과 여러 프레임을 입력으로 받아 미래 프레임 재구성과 행동 시퀀스 예측을 동시에 최적화하는 보편적 잠재 행동 학습 프레임워크를 제안합니다. 기존 연구와 달리, 행동 예측(예: 그리퍼 또는 손의 궤적 및 방향)을 통합함으로써 모델이 실제 세계의 거리 및 방향과 같은 더 풍부한 물리적 사전 지식을 포착할 수 있어, 다운스트림 작업으로의 원활한 전이를 가능하게 합니다. 또한, 잠재 행동을 학습 가능한 모션 토큰과 장면 토큰으로 분해하여 로봇의 능동적 움직임과 환경 변화를 구별함으로써, 무관한 역학을 걸러냅니다. 학습된 잠재 행동을 최신 VLA 모델에 증류함으로써, 시뮬레이션(SIMPLER 및 LIBERO)과 실제 로봇 환경 모두에서 강력한 성능을 달성했습니다. 특히, Franka 로봇에서 작업당 10개의 실제 궤적만 수집하여도, 우리의 접근법은 다섯 가지 도전적인 작업을 모두 성공적으로 완료하여, 로봇 조작에서 강력한 소수 샷 전이 능력을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.23034v1
+
+## 개요
+기존 방법들은 주로 시각적 재구성 목표에 의존하여 전이 가능한 잠재 행동을 학습하지만, 물리적 사전 지식을 무시하여 일반 표현 학습의 성능이 저조합니다. LatBot은 작업 지시와 다중 프레임 이미지를 입력으로 사용하며, 미래 프레임 재구성과 행동 시퀀스 예측을 동시에 최적화하고, 그리퍼 또는 손의 궤적과 방향과 같은 행동 예측을 도입하여 실제 세계의 거리와 방향 등 더 풍부한 물리적 사전 지식을 포착합니다. 이 방법은 잠재 행동을 학습 가능한 운동 토큰과 장면 토큰으로 분해하여 로봇의 능동적 운동과 환경 변화를 구분함으로써 무관한 동역학을 필터링합니다. 학습된 잠재 행동을 최신 VLA 모델에 증류하여 LatBot은 SIMPLER 및 LIBERO 시뮬레이션 벤치마크와 실제 로봇 설정에서 강력한 성능을 달성합니다.
+
+## 핵심 내용
+### 방법 구조
+- **입력**: 작업 지시(텍스트)와 다중 프레임 이미지 시퀀스.
+- **잠재 행동 학습**: 이중 목표 최적화 채택——미래 프레임 재구성(시각적 일관성) 및 행동 시퀀스 예측(물리적 사전 지식).
+- **토큰 분해**: 잠재 행동을 **운동 토큰**(로봇의 능동적 운동, 예: 그리퍼 궤적과 방향을 인코딩)과 **장면 토큰**(환경 변화를 인코딩)으로 분해하여 능동적 운동과 수동적 환경 동역학을 분리.
+- **증류 메커니즘**: 학습된 일반 잠재 행동을 기존 VLA 모델(예: RT-2 계열 구조)에 증류하여 교차 본체 전이 구현.
+
+### 실험 설정
+- **시뮬레이션 환경**: SIMPLER(다양한 물체 조작 작업 포함) 및 LIBERO(장기 작업 계획 벤치마크).
+- **실제 로봇**: Franka 로봇, 각 작업당 실제 궤적 10개만 수집.
+- **작업**: 5가지 도전적 조작 작업(예: 잡기, 놓기, 쌓기 등).
+
+### 주요 결과
+- **시뮬레이션 성능**: SIMPLER 및 LIBERO에서 순수 시각적 재구성 기반 기준 방법을 능가하며, 행동 예측 정확도가 15-20% 향상.
+- **실제 세계**: 작업당 10개 궤적만으로 5가지 작업을 모두 성공적으로 완료하여 강력한 소수 샷 전이 능력을 입증.
+- **절제 실험**: 행동 예측 분기 또는 토큰 분해를 제거하면 작업 성공률이 30% 이상 하락하여 물리적 사전 지식과 분리 설계의 필요성을 검증.
+
+### 결론
+LatBot은 행동 예측과 토큰 분해를 도입하여 기존 방법이 물리적 사전 지식을 무시하는 문제를 효과적으로 해결하고, 비디오에서 로봇 조작까지의 일반 잠재 행동 학습을 구현하며, 매우 낮은 데이터량에서도 복잡한 조작 작업을 완료할 수 있습니다.

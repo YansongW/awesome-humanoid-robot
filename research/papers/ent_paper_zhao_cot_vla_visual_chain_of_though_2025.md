@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.22020v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.22020v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (738 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -77,11 +78,28 @@ Vision-language-action models (VLAs) have shown potential in leveraging pretrain
 ## Content
 Vision-language-action models (VLAs) have shown potential in leveraging pretrained vision-language models and diverse robot demonstrations for learning generalizable sensorimotor control. While this paradigm effectively utilizes large-scale data from both robotic and non-robotic sources, current VLAs primarily focus on direct input–output mappings, lacking the intermediate reasoning steps crucial for complex manipulation tasks. As a result, existing VLAs lack temporal planning or reasoning capabilities. In this paper, we introduce a method that incorporates explicit visual chain-of-thought (CoT) reasoning into vision-language-action models (VLAs) by predicting future image frames autoregressively as visual goals before generating a short action sequence to achieve these goals. We introduce CoT-VLA, a state-of-the-art 7B VLA that can understand and generate visual and action tokens. Our experimental results demonstrate that CoT-VLA achieves strong performance, outperforming the state-of-the-art VLA model by 17% in real-world manipulation tasks and 6% in simulation benchmarks. Project website: https://cot-vla.github.io/
 
-## 개요
-Vision-language-action models (VLAs)는 사전 훈련된 시각-언어 모델과 다양한 로봇 시연을 활용하여 일반화 가능한 감각운동 제어를 학습하는 데 잠재력을 보여주었습니다. 이 패러다임은 로봇 및 비로봇 소스의 대규모 데이터를 효과적으로 활용하지만, 현재 VLA는 주로 직접적인 입력-출력 매핑에 초점을 맞추고 있어 복잡한 조작 작업에 중요한 중간 추론 단계가 부족합니다. 그 결과, 기존 VLA는 시간적 계획 또는 추론 능력이 결여되어 있습니다. 본 논문에서는 짧은 행동 시퀀스를 생성하여 목표를 달성하기 전에 미래 이미지 프레임을 자기회귀적으로 시각적 목표로 예측함으로써 명시적 시각적 사고 사슬(CoT) 추론을 시각-언어-행동 모델(VLA)에 통합하는 방법을 소개합니다. 우리는 시각 및 행동 토큰을 이해하고 생성할 수 있는 최첨단 7B VLA인 CoT-VLA를 제안합니다. 실험 결과, CoT-VLA는 실제 조작 작업에서 최첨단 VLA 모델보다 17%, 시뮬레이션 벤치마크에서 6% 더 뛰어난 성능을 보여주었습니다. 프로젝트 웹사이트: https://cot-vla.github.io/
-
-## 핵심 내용
-Vision-language-action models (VLAs)는 사전 훈련된 시각-언어 모델과 다양한 로봇 시연을 활용하여 일반화 가능한 감각운동 제어를 학습하는 데 잠재력을 보여주었습니다. 이 패러다임은 로봇 및 비로봇 소스의 대규모 데이터를 효과적으로 활용하지만, 현재 VLA는 주로 직접적인 입력-출력 매핑에 초점을 맞추고 있어 복잡한 조작 작업에 중요한 중간 추론 단계가 부족합니다. 그 결과, 기존 VLA는 시간적 계획 또는 추론 능력이 결여되어 있습니다. 본 논문에서는 짧은 행동 시퀀스를 생성하여 목표를 달성하기 전에 미래 이미지 프레임을 자기회귀적으로 시각적 목표로 예측함으로써 명시적 시각적 사고 사슬(CoT) 추론을 시각-언어-행동 모델(VLA)에 통합하는 방법을 소개합니다. 우리는 시각 및 행동 토큰을 이해하고 생성할 수 있는 최첨단 7B VLA인 CoT-VLA를 제안합니다. 실험 결과, CoT-VLA는 실제 조작 작업에서 최첨단 VLA 모델보다 17%, 시뮬레이션 벤치마크에서 6% 더 뛰어난 성능을 보여주었습니다. 프로젝트 웹사이트: https://cot-vla.github.io/
-
 ## 参考
 - http://arxiv.org/abs/2503.22020v1
+
+## 개요
+기존의 비전-언어-행동 모델은 사전 훈련된 모델과 다양한 로봇 시연 데이터를 활용해 일반적인 센서 모터 제어를 학습할 수 있지만, 주로 직접적인 입력-출력 매핑에 의존하며 복잡한 조작 작업에 필요한 중간 추론 단계가 부족하여 시계열 계획 능력이 충분하지 않습니다. CoT-VLA는 명시적 시각적 사고 사슬 추론을 도입하여, 모델이 행동 시퀀스를 생성하기 전에 미래 이미지 프레임을 시각적 목표로 자동 회귀적으로 예측함으로써 추론 과정을 시각화합니다. 이 모델은 7B 파라미터 규모에서 시각 및 행동 토큰의 통합 이해와 생성을 구현하며, 실제 및 시뮬레이션 환경 모두에서 현저한 성능 향상을 달성했습니다.
+
+## 핵심 내용
+### 방법
+- **시각적 사고 사슬 추론**: 모델은 행동 시퀀스를 생성하기 전에 일련의 미래 이미지 프레임(시각적 목표)을 자동 회귀적으로 예측하여 추론 과정을 관찰 가능한 중간 단계로 명시화합니다.
+- **토큰 통합 처리**: CoT-VLA는 시각 이미지와 행동 명령을 토큰 시퀀스로 통합 인코딩하여 종단 간 이해와 생성을 구현합니다.
+
+### 아키텍처
+- 7B 파라미터 규모의 비전-언어-행동 모델 아키텍처를 기반으로, 사전 훈련된 비전 언어 모델과 로봇 시연 데이터를 융합합니다.
+- 자동 회귀 예측 메커니즘을 채택하여, 행동 생성 전에 시각적 목표 프레임을 먼저 출력함으로써 "시각적 추론 → 행동 실행"의 체인 구조를 형성합니다.
+
+### 실험 설정
+- **실제 조작 작업**: 잡기, 놓기, 조립 등 다양한 복잡한 작업을 포함한 여러 로봇 조작 시나리오에서 테스트합니다.
+- **시뮬레이션 벤치마크**: 다단계 계획 및 동적 환경 적응을 포함한 표준 로봇 조작 시뮬레이션 환경에서 평가합니다.
+
+### 주요 결과
+- **실제 조작**: CoT-VLA는 기존 최고 성능의 VLA 모델보다 성능이 17% 향상되었습니다.
+- **시뮬레이션 벤치마크**: 성능이 6% 향상되어 복잡한 작업에서 시각적 사고 사슬 추론의 효과를 검증했습니다.
+
+### 결론
+CoT-VLA는 명시적 시각적 사고 사슬 추론을 통해 기존 VLA 모델의 시계열 계획 능력 부족 문제를 효과적으로 해결하며, 실제 및 시뮬레이션 환경 모두에서 최고 성능을 달성했습니다. 프로젝트 웹사이트: https://cot-vla.github.io/

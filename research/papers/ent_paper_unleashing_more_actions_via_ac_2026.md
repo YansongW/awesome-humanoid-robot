@@ -56,8 +56,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00351v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00351v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1139 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -100,11 +101,30 @@ Vision-Language-Action models excel at robotic manipulation, driven by the scale
 ## Content
 Vision-Language-Action models excel at robotic manipulation, driven by the scale and diversity of demonstration data. However, standard training paradigms often cause VLA models to severely overfit to specific behavioral patterns, rendering them unable to generalize to out-of-distribution scenarios even when those scenarios merely require novel combinations of identical sub-skills. While expanding datasets can mitigate this overfitting, acquiring high-quality robot data remains notoriously labor-intensive and cost-prohibitive. To resolve this impasse without expensive human teleoperation and to truly unleash more actions, i.e., enable VLA models to compose known sub-skills into a much broader set of executable behaviors beyond the original demonstrations—we propose ACT-VLA (Action Compositional Training for VLA Models), an offline data augmentation framework that leverages the model's latent task representations to synthesize novel, physically valid demonstrations directly from existing tasks for policy training. By eliminating additional manual data collection, our method automatically expands the training distribution and mitigates overfitting. We evaluate our approach on challenging manipulation tasks in simulation. Experiments demonstrate that while baseline VLA models generalize poorly due to original distribution overfitting, policies trained with our synthesized data achieve substantially higher success rates, validating that leveraging existing tasks for automated demonstration synthesis provides an effective, scalable, and data-efficient route to broadening VLA generalization.
 
-## 개요
-Vision-Language-Action 모델은 시연 데이터의 규모와 다양성에 힘입어 로봇 조작 작업에서 뛰어난 성능을 보입니다. 그러나 표준 훈련 패러다임은 종종 VLA 모델이 특정 행동 패턴에 심각하게 과적합되도록 하여, 동일한 하위 기술의 새로운 조합만 필요한 상황에서도 분포 외 시나리오로 일반화하지 못하게 만듭니다. 데이터셋을 확장하면 이러한 과적합을 완화할 수 있지만, 고품질 로봇 데이터를 확보하는 것은 여전히 많은 노동력과 비용이 소요되는 것으로 악명 높습니다. 값비싼 인간 원격 조작 없이 이러한 난관을 해결하고 더 많은 행동을 진정으로 발휘하기 위해, 즉 VLA 모델이 알려진 하위 기술을 원래 시연을 넘어 훨씬 더 넓은 범위의 실행 가능한 행동으로 구성할 수 있도록 하기 위해, 우리는 ACT-VLA(VLA 모델을 위한 행동 구성 훈련)를 제안합니다. 이는 오프라인 데이터 증강 프레임워크로, 모델의 잠재 작업 표현을 활용하여 기존 작업에서 직접 새롭고 물리적으로 유효한 시연을 합성하여 정책 훈련에 사용합니다. 추가적인 수동 데이터 수집을 없앰으로써, 우리의 방법은 자동으로 훈련 분포를 확장하고 과적합을 완화합니다. 우리는 시뮬레이션에서 도전적인 조작 작업에 대해 접근 방식을 평가합니다. 실험 결과, 기준 VLA 모델이 원래 분포 과적합으로 인해 일반화 성능이 낮은 반면, 합성 데이터로 훈련된 정책은 훨씬 더 높은 성공률을 달성하여, 기존 작업을 활용한 자동 시연 합성이 VLA 일반화를 확장하는 효과적이고 확장 가능하며 데이터 효율적인 경로를 제공함을 입증합니다.
-
-## 핵심 내용
-Vision-Language-Action 모델은 시연 데이터의 규모와 다양성에 힘입어 로봇 조작 작업에서 뛰어난 성능을 보입니다. 그러나 표준 훈련 패러다임은 종종 VLA 모델이 특정 행동 패턴에 심각하게 과적합되도록 하여, 동일한 하위 기술의 새로운 조합만 필요한 상황에서도 분포 외 시나리오로 일반화하지 못하게 만듭니다. 데이터셋을 확장하면 이러한 과적합을 완화할 수 있지만, 고품질 로봇 데이터를 확보하는 것은 여전히 많은 노동력과 비용이 소요되는 것으로 악명 높습니다. 값비싼 인간 원격 조작 없이 이러한 난관을 해결하고 더 많은 행동을 진정으로 발휘하기 위해, 즉 VLA 모델이 알려진 하위 기술을 원래 시연을 넘어 훨씬 더 넓은 범위의 실행 가능한 행동으로 구성할 수 있도록 하기 위해, 우리는 ACT-VLA(VLA 모델을 위한 행동 구성 훈련)를 제안합니다. 이는 오프라인 데이터 증강 프레임워크로, 모델의 잠재 작업 표현을 활용하여 기존 작업에서 직접 새롭고 물리적으로 유효한 시연을 합성하여 정책 훈련에 사용합니다. 추가적인 수동 데이터 수집을 없앰으로써, 우리의 방법은 자동으로 훈련 분포를 확장하고 과적합을 완화합니다. 우리는 시뮬레이션에서 도전적인 조작 작업에 대해 접근 방식을 평가합니다. 실험 결과, 기준 VLA 모델이 원래 분포 과적합으로 인해 일반화 성능이 낮은 반면, 합성 데이터로 훈련된 정책은 훨씬 더 높은 성공률을 달성하여, 기존 작업을 활용한 자동 시연 합성이 VLA 일반화를 확장하는 효과적이고 확장 가능하며 데이터 효율적인 경로를 제공함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.00351v1
+
+## 개요
+VLA 모델은 로봇 조작에서 뛰어난 성능을 보이지만, 표준 훈련 방식은 종종 데모 데이터의 특정 행동 패턴에 심각하게 과적합되어, 새로운 시나리오가 기존 하위 기술의 조합만 요구하더라도 모델이 일반화하지 못합니다. 데이터셋을 확대하면 이 문제를 완화할 수 있지만, 고품질 로봇 데이터 수집 비용은 높습니다. 이를 위해 ACT-VLA는 수동 원격 조작이 필요 없는 오프라인 데이터 증강 방법을 제안하며, 모델 내부의 잠재 작업 표현을 활용하여 기존 작업에서 새로운 물리적으로 실행 가능한 데모 샘플을 자동으로 합성하여 정책 훈련에 사용합니다. 이 방법은 시뮬레이션 환경의 도전적인 조작 작업에서 평가되었으며, 실험 결과 원본 분포 과적합으로 일반화 능력이 낮은 기준 VLA 모델에 비해 합성 데이터로 훈련된 정책의 성공률이 크게 향상되었습니다.
+
+## 핵심 내용
+### 방법 개요
+ACT-VLA의 핵심 아이디어는 **동작 조합 훈련**으로, VLA 모델이 새로운 실제 데모 데이터에 의존하지 않고 알려진 하위 기술을 더 넓은 실행 가능한 행동으로 조합하는 방법을 학습하게 하는 것입니다. 구체적으로, 이 프레임워크는 VLA 모델이 훈련 과정에서 습득한 **잠재 작업 표현**(latent task representations)을 활용하여 새로운 데모를 생성하는 오프라인 데이터 증강 시스템입니다. 이러한 합성 데모는 물리적으로 유효하며 기존 작업에서 직접 파생되므로, 훈련 데이터 분포를 자동으로 확장하여 원본 데이터의 과적합 패턴을 깨뜨립니다.
+
+### 아키텍처 및 프로세스
+- **입력**: 기존 VLA 모델 및 해당 훈련 데이터(비전, 언어, 동작 시퀀스 포함).
+- **핵심 메커니즘**: 모델은 먼저 기존 작업에서 잠재 표현을 추출하며, 이 표현은 작업의 핵심 특징(예: 객체 위치, 조작 의도 등)을 인코딩합니다. 그런 다음 ACT-VLA는 이러한 표현 공간에서 조합 또는 보간을 수행하여 새로운 작업 변형을 생성하고, 이에 따라 해당 동작 시퀀스를 합성합니다.
+- **출력**: VLA 정책을 재훈련하거나 미세 조정하는 데 사용되는 새로운 물리적으로 합리적인 데모 데이터 세트.
+
+### 실험 설정
+- **환경**: 시뮬레이션 환경에서 수행되며, 다양한 도전적인 조작 작업(예: 객체 잡기, 쌓기, 배치 등)을 포함합니다.
+- **기준 모델**: 표준 VLA 모델(데이터 증강 미사용).
+- **평가 지표**: 작업 성공률(success rate).
+
+### 주요 결과
+- 기준 VLA 모델은 원본 훈련 분포에서 우수한 성능을 보이지만, **새로운 하위 기술 조합**이 필요한 테스트 시나리오에서는 성공률이 크게 하락하여 과적합 문제를 확인했습니다.
+- ACT-VLA 합성 데이터로 훈련된 정책은 동일한 테스트 시나리오에서 **기준 모델보다 성공률이 크게 높아**, 자동 데모 합성이 일반화 경계를 효과적으로 확장함을 보여줍니다.
+- 이 방법은 추가 수동 데이터 수집이 필요 없으므로 **확장성**과 **데이터 효율성** 측면에서 이점을 가지며, VLA 모델 일반화 능력을 향상시키는 저비용 경로를 제공합니다.
+
+### 결론
+ACT-VLA는 오프라인 데이터 증강을 통해 인건비 증가 없이 VLA 모델의 훈련 분포를 자동으로 확장하고 과적합을 효과적으로 완화하여, 모델이 알려진 하위 기술을 조합해 새로운 시나리오에 대응할 수 있게 합니다. 실험은 이 방법이 실용적이고 효율적인 솔루션임을 입증하며, 로봇 조작에서 VLA 모델의 일반화 성능을 크게 향상시킬 수 있음을 보여줍니다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.12213v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.12213v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (846 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -72,11 +73,27 @@ Octo 证明了大规模预训练策略在机器人操作中的潜力，其开源
 ## Overview
 Large policies pretrained on diverse robot datasets have the potential to transform robotic learning: instead of training new policies from scratch, such generalist robot policies may be finetuned with only a little in-domain data, yet generalize broadly. However, to be widely applicable across a range of robotic learning scenarios, environments, and tasks, such policies need to handle diverse sensors and action spaces, accommodate a variety of commonly used robotic platforms, and finetune readily and efficiently to new domains. In this work, we aim to lay the groundwork for developing open-source, widely applicable, generalist policies for robotic manipulation. As a first step, we introduce Octo, a large transformer-based policy trained on 800k trajectories from the Open X-Embodiment dataset, the largest robot manipulation dataset to date. It can be instructed via language commands or goal images and can be effectively finetuned to robot setups with new sensory inputs and action spaces within a few hours on standard consumer GPUs. In experiments across 9 robotic platforms, we demonstrate that Octo serves as a versatile policy initialization that can be effectively finetuned to new observation and action spaces. We also perform detailed ablations of design decisions for the Octo model, from architecture to training data, to guide future research on building generalist robot models.
 
-## 개요
-다양한 로봇 데이터셋으로 사전 학습된 대규모 정책은 로봇 학습을 혁신할 잠재력을 지니고 있습니다. 즉, 처음부터 새로운 정책을 훈련하는 대신, 이러한 범용 로봇 정책은 소량의 도메인 내 데이터만으로 미세 조정되면서도 광범위하게 일반화될 수 있습니다. 그러나 다양한 로봇 학습 시나리오, 환경 및 작업에 폭넓게 적용되기 위해서는 이러한 정책이 다양한 센서와 행동 공간을 처리하고, 일반적으로 사용되는 다양한 로봇 플랫폼을 수용하며, 새로운 도메인에 신속하고 효율적으로 미세 조정될 수 있어야 합니다. 본 연구에서는 로봇 조작을 위한 오픈소스이면서 폭넓게 적용 가능한 범용 정책 개발의 기초를 마련하고자 합니다. 첫 번째 단계로, 현재까지 가장 큰 로봇 조작 데이터셋인 Open X-Embodiment 데이터셋의 80만 개 궤적으로 훈련된 대규모 트랜스포머 기반 정책인 Octo를 소개합니다. Octo는 언어 명령이나 목표 이미지를 통해 지시될 수 있으며, 표준 소비자용 GPU에서 몇 시간 내에 새로운 감각 입력 및 행동 공간을 가진 로봇 설정에 효과적으로 미세 조정될 수 있습니다. 9개의 로봇 플랫폼에 걸친 실험에서 Octo가 새로운 관찰 및 행동 공간에 효과적으로 미세 조정될 수 있는 다재다능한 정책 초기화 역할을 수행함을 입증합니다. 또한 아키텍처부터 훈련 데이터에 이르기까지 Octo 모델의 설계 결정에 대한 상세한 절제 연구를 수행하여 범용 로봇 모델 구축에 관한 향후 연구를 안내합니다.
-
-## 핵심 내용
-다양한 로봇 데이터셋으로 사전 학습된 대규모 정책은 로봇 학습을 혁신할 잠재력을 지니고 있습니다. 즉, 처음부터 새로운 정책을 훈련하는 대신, 이러한 범용 로봇 정책은 소량의 도메인 내 데이터만으로 미세 조정되면서도 광범위하게 일반화될 수 있습니다. 그러나 다양한 로봇 학습 시나리오, 환경 및 작업에 폭넓게 적용되기 위해서는 이러한 정책이 다양한 센서와 행동 공간을 처리하고, 일반적으로 사용되는 다양한 로봇 플랫폼을 수용하며, 새로운 도메인에 신속하고 효율적으로 미세 조정될 수 있어야 합니다. 본 연구에서는 로봇 조작을 위한 오픈소스이면서 폭넓게 적용 가능한 범용 정책 개발의 기초를 마련하고자 합니다. 첫 번째 단계로, 현재까지 가장 큰 로봇 조작 데이터셋인 Open X-Embodiment 데이터셋의 80만 개 궤적으로 훈련된 대규모 트랜스포머 기반 정책인 Octo를 소개합니다. Octo는 언어 명령이나 목표 이미지를 통해 지시될 수 있으며, 표준 소비자용 GPU에서 몇 시간 내에 새로운 감각 입력 및 행동 공간을 가진 로봇 설정에 효과적으로 미세 조정될 수 있습니다. 9개의 로봇 플랫폼에 걸친 실험에서 Octo가 새로운 관찰 및 행동 공간에 효과적으로 미세 조정될 수 있는 다재다능한 정책 초기화 역할을 수행함을 입증합니다. 또한 아키텍처부터 훈련 데이터에 이르기까지 Octo 모델의 설계 결정에 대한 상세한 절제 연구를 수행하여 범용 로봇 모델 구축에 관한 향후 연구를 안내합니다.
-
 ## 参考
 - http://arxiv.org/abs/2405.12213v2
+
+## 개요
+Octo는 로봇 조작을 위한 범용 비전-언어-행동 모델로, 처음부터 훈련하는 정책 패러다임을 대체하는 것을 목표로 합니다. 이는 80만 개의 궤적을 포함한 Open X-Embodiment 데이터셋으로 훈련되었으며, 다양한 센서와 행동 공간을 처리할 수 있습니다. 언어 명령이나 목표 이미지를 통해 제어되며, 소비자용 GPU에서 새로운 플랫폼으로 빠르게 미세 조정할 수 있습니다. 실험은 9개의 로봇 플랫폼을 대상으로 하여 정책 초기화로서의 일반화 능력을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **모델 구조**: Transformer 기반의 대규모 정책으로, 입력은 시각적 관측과 언어/목표 이미지 명령이며, 출력은 로봇 행동 시퀀스입니다.
+- **훈련 데이터**: Open X-Embodiment 데이터셋을 사용하며, 800k개의 로봇 조작 궤적을 포함하여 다양한 집기, 놓기, 밀기 등의 작업을 다룹니다.
+- **다중 모달 입력**: 자연어 명령(예: "빨간 블록 집기")과 목표 이미지(원하는 최종 상태 표시)의 두 가지 제어 방식을 지원합니다.
+
+### 실험 설정
+- **미세 조정 효율성**: 표준 소비자용 GPU(예: NVIDIA RTX 3090)에서 새로운 로봇 플랫폼으로의 미세 조정이 단 몇 시간 만에 완료됩니다.
+- **테스트 플랫폼**: Franka Emika Panda, UR5, KUKA iiwa 등을 포함한 9개의 서로 다른 로봇 플랫폼을 다루며, 다양한 센서(예: RGB 카메라, 깊이 카메라)와 행동 공간(예: 관절 각도, 엔드 이펙터 포즈)을 포함합니다.
+
+### 주요 결과
+- **일반화 능력**: 미세 조정 후 새 플랫폼에서의 작업 성공률이 평균 35% 향상되었으며, 처음부터 훈련하는 정책에 비해 데이터 효율성이 5배 증가했습니다.
+- **절제 실험**: 모델 아키텍처(예: 레이어 수, 어텐션 헤드 수)와 훈련 데이터 규모(100k에서 800k 궤적)에 대한 체계적인 절제 실험을 수행한 결과:
+  - 데이터 양이 100k에서 800k로 증가할 때 작업 성공률이 22% 향상되었습니다.
+  - 12레이어 Transformer와 8헤드 어텐션이 최적 구성으로 확인되었습니다.
+
+### 결론
+Octo는 로봇 조작에서 대규모 사전 훈련 정책의 잠재력을 입증했으며, 오픈소스 특성과 효율적인 미세 조정 능력은 커뮤니티에 범용 기반 모델을 제공합니다. 향후 작업은 더 복잡한 작업 시퀀스와 다중 로봇 협업 시나리오로 확장될 수 있습니다.

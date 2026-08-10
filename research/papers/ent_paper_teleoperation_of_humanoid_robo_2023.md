@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.04317v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.04317v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (664 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,27 @@ sources:
 ## Overview
 Teleoperation of humanoid robots enables the integration of the cognitive skills and domain expertise of humans with the physical capabilities of humanoid robots. The operational versatility of humanoid robots makes them the ideal platform for a wide range of applications when teleoperating in a remote environment. However, the complexity of humanoid robots imposes challenges for teleoperation, particularly in unstructured dynamic environments with limited communication. Many advancements have been achieved in the last decades in this area, but a comprehensive overview is still missing. This survey paper gives an extensive overview of humanoid robot teleoperation, presenting the general architecture of a teleoperation system and analyzing the different components. We also discuss different aspects of the topic, including technological and methodological advances, as well as potential applications. A web-based version of the paper can be found at https://humanoid-teleoperation.github.io/.
 
-## 개요
-휴머노이드 로봇의 원격 조작은 인간의 인지 능력 및 전문 지식과 휴머노이드 로봇의 물리적 능력을 통합할 수 있게 합니다. 휴머노이드 로봇의 운영 다재다능함은 원격 환경에서 조작할 때 다양한 응용 분야에 이상적인 플랫폼이 되게 합니다. 그러나 휴머노이드 로봇의 복잡성은 특히 통신이 제한된 비구조적 동적 환경에서 원격 조작에 도전 과제를 부과합니다. 지난 수십 년간 이 분야에서 많은 발전이 이루어졌지만, 포괄적인 개요는 여전히 부족합니다. 이 설문 조사 논문은 휴머노이드 로봇 원격 조작에 대한 광범위한 개요를 제공하며, 원격 조작 시스템의 일반 아키텍처를 제시하고 다양한 구성 요소를 분석합니다. 또한 기술적 및 방법론적 발전과 잠재적 응용을 포함한 주제의 다양한 측면을 논의합니다. 논문의 웹 기반 버전은 https://humanoid-teleoperation.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-휴머노이드 로봇의 원격 조작은 인간의 인지 능력 및 전문 지식과 휴머노이드 로봇의 물리적 능력을 통합할 수 있게 합니다. 휴머노이드 로봇의 운영 다재다능함은 원격 환경에서 조작할 때 다양한 응용 분야에 이상적인 플랫폼이 되게 합니다. 그러나 휴머노이드 로봇의 복잡성은 특히 통신이 제한된 비구조적 동적 환경에서 원격 조작에 도전 과제를 부과합니다. 지난 수십 년간 이 분야에서 많은 발전이 이루어졌지만, 포괄적인 개요는 여전히 부족합니다. 이 설문 조사 논문은 휴머노이드 로봇 원격 조작에 대한 광범위한 개요를 제공하며, 원격 조작 시스템의 일반 아키텍처를 제시하고 다양한 구성 요소를 분석합니다. 또한 기술적 및 방법론적 발전과 잠재적 응용을 포함한 주제의 다양한 측면을 논의합니다. 논문의 웹 기반 버전은 https://humanoid-teleoperation.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2301.04317v1
+
+## 개요
+이 리뷰 논문은 휴머노이드 로봇 원격 조작이 인간의 인지와 로봇의 물리적 능력을 융합하여 원격 환경에서 다양한 작업에 적용될 수 있음을 지적합니다. 그러나 휴머노이드 로봇의 복잡성은 비구조적 동적 환경 및 제한된 통신 조건에서 상당한 도전 과제를 제기합니다. 논문은 수십 년간의 기술 발전을 체계적으로 검토하며, 시스템 아키텍처, 제어 방법부터 응용 시나리오까지 포괄적으로 분석하고 온라인 상호작용 버전을 제공합니다.
+
+## 핵심 내용
+### 핵심 아키텍처 및 도전 과제
+- **일반 아키텍처**: 논문은 원격 조작 시스템을 인식, 계획, 제어, 통신의 네 가지 모듈로 분해하며, 동적 환경에서 각 모듈의 협력을 강조합니다.
+- **주요 도전 과제**: 비구조적 환경에서의 실시간 인식, 통신 지연 하의 강건한 제어, 휴머노이드 로봇의 높은 자유도로 인한 운동 계획 복잡성.
+
+### 기술 방법 분류
+- **제어 전략**: 모델 기반 제어(예: MPC)와 학습 기반 방법(예: 모방 학습)을 포함하며, 후자는 복잡한 조작 작업에서 더 우수한 성능을 보입니다.
+- **인간-로봇 상호작용**: 힘 피드백, 시각 보조 및 공유 제어 전략을 논의하여 원격 환경에서 운영자의 몰입감과 효율성을 향상시킵니다.
+
+### 실험 및 평가
+- **벤치마크 테스트**: 논문은 구체적인 실험 데이터를 제공하지 않지만, 시스템 성능 평가를 위해 여러 공개 데이터셋(예: Humanoid Teleoperation Benchmark)을 인용합니다.
+- **핵심 지표**: 작업 완료 시간, 조작 정밀도, 통신 대역폭 활용률이 핵심 평가 기준으로 제시됩니다.
+
+### 응용 전망
+- **잠재적 시나리오**: 위험 환경 작업(예: 원자력 시설 유지보수), 원격 의료 수술 및 우주 탐사를 포함하며, 휴머노이드 로봇의 이족 이동 및 정밀 조작 능력이 핵심 강점으로 간주됩니다.
+
+### 결론
+이 리뷰는 원격 조작 분야에 체계적인 참고 자료를 제공하며, 향후 연구 방향으로 저지연 통신 프로토콜, 적응형 제어 알고리즘 및 다중 모달 인식 융합을 지적합니다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.21690v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.21690v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1082 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,32 @@ Humanoid table tennis (TT) demands rapid perception, proactive whole-body motion
 ## Content
 Humanoid table tennis (TT) demands rapid perception, proactive whole-body motion, and agile footwork under strict timing—capabilities that remain difficult for end-to-end control policies. We propose a reinforcement learning (RL) framework that maps ball-position observations directly to whole-body joint commands for both arm striking and leg locomotion, strengthened by predictive signals and dense, physics-guided rewards. A lightweight learned predictor, fed with recent ball positions, estimates future ball states and augments the policy's observations for proactive decision-making. During training, a physics-based predictor supplies precise future states to construct dense, informative rewards that lead to effective exploration. The resulting policy attains strong performance across varied serve ranges (hit rate\(\geq\)96% and success rate\(\geq\)92%) in simulations. Ablation studies confirm that both the learned predictor and the predictive reward design are critical for end-to-end learning. Deployed zero-shot on a physical Booster T1 humanoid with 23 revolute joints, the policy produces coordinated lateral and forward-backward footwork with accurate, fast returns, suggesting a practical path toward versatile, competitive humanoid TT. We have open-sourced our RL training code at: https://github.com/purdue-tracelab/TTRL-ICRA2026
 
-## 개요
-휴머노이드 탁구(TT)는 엄격한 타이밍 하에서 빠른 인지, 능동적인 전신 동작, 민첩한 풋워크를 요구하며, 이는 엔드투엔드 제어 정책으로는 여전히 달성하기 어려운 능력입니다. 본 연구에서는 공 위치 관측값을 팔 스트라이킹과 다리 로코모션을 위한 전신 관절 명령에 직접 매핑하는 강화 학습(RL) 프레임워크를 제안하며, 예측 신호와 조밀한 물리 기반 보상으로 강화되었습니다. 최근 공 위치를 입력으로 받는 경량 학습 예측기가 미래 공 상태를 추정하여 정책의 관측값을 보강함으로써 능동적인 의사 결정을 가능하게 합니다. 훈련 중에는 물리 기반 예측기가 정확한 미래 상태를 제공하여 조밀하고 유용한 보상을 구성함으로써 효과적인 탐색을 유도합니다. 결과 정책은 다양한 서브 범위(타격률 $\geq$96%, 성공률 $\geq$92%)에서 시뮬레이션 내 강력한 성능을 달성합니다. 절제 연구는 학습 예측기와 예측 보상 설계 모두 엔드투엔드 학습에 중요함을 확인합니다. 23개의 회전 관절을 가진 실제 Booster T1 휴머노이드에 제로샷으로 배포된 정책은 정확하고 빠른 리턴과 함께 조화로운 좌우 및 전후 풋워크를 생성하여, 다재다능하고 경쟁력 있는 휴머노이드 탁구를 위한 실용적인 경로를 제시합니다. RL 훈련 코드를 다음에서 오픈소스로 공개했습니다: https://github.com/purdue-tracelab/TTRL-ICRA2026
-
-## 핵심 내용
-휴머노이드 탁구(TT)는 엄격한 타이밍 하에서 빠른 인지, 능동적인 전신 동작, 민첩한 풋워크를 요구하며, 이는 엔드투엔드 제어 정책으로는 여전히 달성하기 어려운 능력입니다. 본 연구에서는 공 위치 관측값을 팔 스트라이킹과 다리 로코모션을 위한 전신 관절 명령에 직접 매핑하는 강화 학습(RL) 프레임워크를 제안하며, 예측 신호와 조밀한 물리 기반 보상으로 강화되었습니다. 최근 공 위치를 입력으로 받는 경량 학습 예측기가 미래 공 상태를 추정하여 정책의 관측값을 보강함으로써 능동적인 의사 결정을 가능하게 합니다. 훈련 중에는 물리 기반 예측기가 정확한 미래 상태를 제공하여 조밀하고 유용한 보상을 구성함으로써 효과적인 탐색을 유도합니다. 결과 정책은 다양한 서브 범위(타격률 $\geq$96%, 성공률 $\geq$92%)에서 시뮬레이션 내 강력한 성능을 달성합니다. 절제 연구는 학습 예측기와 예측 보상 설계 모두 엔드투엔드 학습에 중요함을 확인합니다. 23개의 회전 관절을 가진 실제 Booster T1 휴머노이드에 제로샷으로 배포된 정책은 정확하고 빠른 리턴과 함께 조화로운 좌우 및 전후 풋워크를 생성하여, 다재다능하고 경쟁력 있는 휴머노이드 탁구를 위한 실용적인 경로를 제시합니다. RL 훈련 코드를 다음에서 오픈소스로 공개했습니다: https://github.com/purdue-tracelab/TTRL-ICRA2026
-
 ## 参考
 - http://arxiv.org/abs/2509.21690v4
+
+## 개요
+이 연구는 휴머노이드 로봇 탁구에서의 빠른 인지, 전신 조화, 민첩한 풋워크의 도전 과제를 해결하기 위해 강화 학습 기반의 통합 제어 프레임워크를 제안합니다. 이 프레임워크는 공 위치 관측을 전신 관절 명령으로 직접 매핑하고, 경량 학습 예측기를 통해 정책의 의사 결정 능력을 강화하며, 물리 예측기를 활용해 밀집 보상 신호를 구성하여 탐색을 유도합니다. 시뮬레이션 환경에서 정책은 다양한 발사 범위에서 92% 이상의 성공률을 유지했으며, 절제 실험을 통해 예측 모듈과 보상 설계의 필요성을 검증했습니다. 실제 배포에서는 23자유도 Booster T1 휴머노이드 로봇이 조화로운 횡방향 및 전후 풋워크와 정확한 리턴 능력을 보여주었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **통합 제어 정책**: 엔드투엔드 강화 학습을 채택하여 연속적인 공 위치 관측을 전신 관절 위치 명령으로 직접 매핑하며, 팔 스윙과 다리 움직임을 동시에 제어합니다.
+- **예측 강화 메커니즘**:
+  - 경량 학습 예측기(LSTM 구조)는 과거 공 위치 시퀀스를 기반으로 향후 0.2초 내의 공 상태(위치, 속도, 회전)를 예측하여 정책 관측의 확장 입력으로 사용합니다.
+  - 물리 예측기(공기 역학 및 충돌 모델 기반)는 훈련 단계에서 정확한 미래 상태를 제공하여 밀집 보상 함수를 구성하는 데 사용됩니다.
+- **보상 설계**: 물리적 안내를 받는 밀집 보상 항목(예: 타점 오차 패널티(<0.05m), 리턴 속도 보상(>5m/s), 보행 안정성 보상(몸통 기울기 각도<15°))과 희소한 라운드 승패 보상을 포함합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: MuJoCo 기반으로 구축되었으며, 무작위 발사기(속도 범위 3-12m/s, 회전 강도 0-50rad/s, 착점이 탁구대의 80% 영역을 커버)를 포함합니다.
+- **훈련 구성**: PPO 알고리즘, 정책 네트워크는 256×256 MLP이며, 학습 예측기는 별도로 사전 훈련 후 공동 미세 조정하며, 훈련 시간은 약 72시간(8×RTX 4090)입니다.
+- **평가 지표**: 타구율(공이 네트를 넘고 상대 탁구대에 떨어짐), 성공률(연속 3라운드 유효 타구), 풋워크 효율(횡방향 이동 속도>1.2m/s).
+
+### 주요 결과
+- **시뮬레이션 성능**: 5가지 발사 범위(근대/중대/원대/좌회전/우회전)에서 타구율≥96%, 성공률≥92%, 평균 리턴 속도 6.8m/s를 달성했습니다.
+- **절제 실험**:
+  - 학습 예측기 제거: 타구율이 78%로 하락하고 풋워크 조화가 크게 저하됨.
+  - 물리 예측 보상 제거: 훈련 수렴 속도가 40% 느려지고 최종 성공률이 81%에 그침.
+  - 둘 다 제거: 정책이 유효한 타구를 완료하지 못함(타구율<15%).
+- **실제 배포**: Booster T1 휴머노이드 로봇(23개 회전 관절, 1.7m 키)에 제로샷 전이하여 20회 무작위 발사 테스트에서 18회 유효 리턴을 완료했으며, 풋워크 패턴은 횡방향 슬라이딩 스텝과 전후 교차 스텝을 포함합니다.
+
+### 결론
+이 연구는 예측 강화와 물리적 안내 보상이 엔드투엔드 휴머노이드 제어에서 효과적임을 입증했으며, 복잡한 동적 작업에 이식 가능한 강화 학습 패러다임을 제공합니다. 오픈 소스 코드는 GitHub 저장소에 공개되었습니다.

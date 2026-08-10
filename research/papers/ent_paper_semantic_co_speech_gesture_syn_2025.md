@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.17183v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.17183v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (666 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,26 @@ sources:
 ## Overview
 We present an innovative end-to-end framework for synthesizing semantically meaningful co-speech gestures and deploying them in real-time on a humanoid robot. This system addresses the challenge of creating natural, expressive non-verbal communication for robots by integrating advanced gesture generation techniques with robust physical control. Our core innovation lies in the meticulous integration of a semantics-aware gesture synthesis module, which derives expressive reference motions from speech input by leveraging a generative retrieval mechanism based on large language models (LLMs) and an autoregressive Motion-GPT model. This is coupled with a high-fidelity imitation learning control policy, the MotionTracker, which enables the Unitree G1 humanoid robot to execute these complex motions dynamically and maintain balance. To ensure feasibility, we employ a robust General Motion Retargeting (GMR) method to bridge the embodiment gap between human motion data and the robot platform. Through comprehensive evaluation, we demonstrate that our combined system produces semantically appropriate and rhythmically coherent gestures that are accurately tracked and executed by the physical robot. To our knowledge, this work represents a significant step toward general real-world use by providing a complete pipeline for automatic, semantic-aware, co-speech gesture generation and synchronized real-time physical deployment on a humanoid robot.
 
-## 개요
-본 논문에서는 의미적으로 의미 있는 공동 발화 제스처를 합성하고 이를 휴머노이드 로봇에서 실시간으로 배포하기 위한 혁신적인 엔드투엔드 프레임워크를 제시합니다. 이 시스템은 고급 제스처 생성 기술과 강력한 물리적 제어를 통합하여 로봇을 위한 자연스럽고 표현력 있는 비언어적 의사소통을 창출하는 과제를 해결합니다. 핵심 혁신은 대규모 언어 모델(LLM) 기반의 생성적 검색 메커니즘과 자기회귀 Motion-GPT 모델을 활용하여 음성 입력에서 표현력 있는 참조 동작을 도출하는 의미 인식 제스처 합성 모듈의 세심한 통합에 있습니다. 이는 고충실도 모방 학습 제어 정책인 MotionTracker와 결합되어 Unitree G1 휴머노이드 로봇이 이러한 복잡한 동작을 동적으로 실행하고 균형을 유지할 수 있도록 합니다. 실현 가능성을 보장하기 위해, 인간 동작 데이터와 로봇 플랫폼 간의 구현 격차를 해소하는 강력한 일반 동작 리타겟팅(GMR) 방법을 사용합니다. 포괄적인 평가를 통해, 우리의 통합 시스템이 의미적으로 적절하고 리듬적으로 일관된 제스처를 생성하며, 이를 물리적 로봇이 정확하게 추적하고 실행함을 입증합니다. 본 연구는 자동적이고 의미 인식적인 공동 발화 제스처 생성과 휴머노이드 로봇에서의 동기화된 실시간 물리적 배포를 위한 완전한 파이프라인을 제공함으로써, 일반적인 실제 사용을 향한 중요한 진전을 나타냅니다.
-
-## 핵심 내용
-본 논문에서는 의미적으로 의미 있는 공동 발화 제스처를 합성하고 이를 휴머노이드 로봇에서 실시간으로 배포하기 위한 혁신적인 엔드투엔드 프레임워크를 제시합니다. 이 시스템은 고급 제스처 생성 기술과 강력한 물리적 제어를 통합하여 로봇을 위한 자연스럽고 표현력 있는 비언어적 의사소통을 창출하는 과제를 해결합니다. 핵심 혁신은 대규모 언어 모델(LLM) 기반의 생성적 검색 메커니즘과 자기회귀 Motion-GPT 모델을 활용하여 음성 입력에서 표현력 있는 참조 동작을 도출하는 의미 인식 제스처 합성 모듈의 세심한 통합에 있습니다. 이는 고충실도 모방 학습 제어 정책인 MotionTracker와 결합되어 Unitree G1 휴머노이드 로봇이 이러한 복잡한 동작을 동적으로 실행하고 균형을 유지할 수 있도록 합니다. 실현 가능성을 보장하기 위해, 인간 동작 데이터와 로봇 플랫폼 간의 구현 격차를 해소하는 강력한 일반 동작 리타겟팅(GMR) 방법을 사용합니다. 포괄적인 평가를 통해, 우리의 통합 시스템이 의미적으로 적절하고 리듬적으로 일관된 제스처를 생성하며, 이를 물리적 로봇이 정확하게 추적하고 실행함을 입증합니다. 본 연구는 자동적이고 의미 인식적인 공동 발화 제스처 생성과 휴머노이드 로봇에서의 동기화된 실시간 물리적 배포를 위한 완전한 파이프라인을 제공함으로써, 일반적인 실제 사용을 향한 중요한 진전을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.17183v1
+
+## 개요
+이 프레임워크는 의미 인식 제스처 합성 모듈과 고충실도 모방 학습 제어 정책을 통합하여 휴머노이드 로봇의 자연스러운 비언어적 의사소통 문제를 해결합니다. 제스처 합성 모듈은 대규모 언어 모델과 자기회귀 Motion-GPT 모델을 활용하여 음성 입력에서 의미 있는 참조 동작을 생성하며, MotionTracker 제어 정책은 Unitree G1 로봇이 이러한 복잡한 동작을 동적으로 실행하고 균형을 유지할 수 있게 합니다. 인간 동작 데이터와 로봇 플랫폼 간의 구현 차이를 메우기 위해 시스템은 범용 동작 리타게팅 방법을 채택합니다. 실험 결과, 이 프레임워크는 의미적으로 적절하고 리듬이 조화로운 제스처를 생성하며, 실제 로봇이 이를 정밀하게 추적하여 실행할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **의미 인식 제스처 합성 모듈**: 대규모 언어 모델(LLMs) 기반 생성-검색 메커니즘과 자기회귀 Motion-GPT 모델을 통해 음성 입력에서 의미 특징을 추출하고 표현력 있는 참조 동작을 생성합니다.
+- **고충실도 모방 학습 제어 정책(MotionTracker)**: Unitree G1 휴머노이드 로봇이 복잡한 동작을 동적으로 실행하고 균형을 유지할 수 있게 합니다.
+- **범용 동작 리타게팅(GMR)**: 인간 동작 데이터와 로봇 플랫폼 간의 구현 차이를 메우고 동작 실행 가능성을 보장합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: Unitree G1 휴머노이드 로봇.
+- **평가 지표**: 의미 적절성, 리듬 일관성, 동작 추적 정밀도.
+
+### 주요 결과
+- 시스템이 생성한 공동 발화 제스처는 의미적으로 적절하고 리듬적으로 일관됩니다.
+- 실제 로봇이 이러한 제스처를 정확하게 추적하고 실행할 수 있습니다.
+- 이 작업은 자동 의미 인식 제스처 생성부터 동기화된 실시간 물리적 배포까지의 완전한 파이프라인을 최초로 제공합니다.
+
+### 결론
+본 논문에서 제안한 엔드투엔드 프레임워크는 실제 시나리오에서 휴머노이드 로봇의 일반적 응용을 크게 발전시켜 자연스럽고 표현력 있는 비언어적 의사소통을 구현합니다.

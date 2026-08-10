@@ -46,8 +46,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31144v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31144v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (601 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,32 @@ sources:
 ## Overview
 This paper presents an integrated system for the CMU Vision-Language-Action (VLA) Challenge, designed to enable an autonomous agent to perform complex tasks based on natural language instructions. Our framework employs a modular architecture that orchestrates environment mapping, question processing, and navigation. The system operates in two parallel streams: a perception pipeline that constructs a semantic voxel map from real-time camera feeds using OwlViT embeddings, and a language pipeline that classifies user commands with a Vision-Language Model. The mapping is time-constrained; the system proceeds with a partial map if a 500-second exploration limit is reached. The classified query is then grounded in the geometric and semantic context of the map to generate a detailed prompt for the VLM. This yields an actionable output, demonstrating a capable solution for bridging the gap between human language and robotic action.
 
-## 개요
-본 논문은 자연어 명령을 기반으로 자율 에이전트가 복잡한 작업을 수행할 수 있도록 설계된 CMU Vision-Language-Action (VLA) 챌린지를 위한 통합 시스템을 제시합니다. 우리의 프레임워크는 환경 매핑, 질문 처리 및 탐색을 조율하는 모듈식 아키텍처를 사용합니다. 시스템은 두 개의 병렬 스트림으로 작동합니다: OwlViT 임베딩을 사용하여 실시간 카메라 피드에서 의미론적 복셀 맵을 구축하는 인식 파이프라인과, Vision-Language Model을 사용하여 사용자 명령을 분류하는 언어 파이프라인입니다. 매핑에는 시간 제약이 있으며, 500초의 탐색 한계에 도달하면 시스템은 부분 맵으로 진행합니다. 분류된 쿼리는 맵의 기하학적 및 의미론적 맥락에 기반하여 VLM을 위한 상세한 프롬프트를 생성합니다. 이는 실행 가능한 출력을 생성하여 인간 언어와 로봇 동작 간의 격차를 해소하는 유능한 솔루션을 보여줍니다.
-
-## 핵심 내용
-본 논문은 자연어 명령을 기반으로 자율 에이전트가 복잡한 작업을 수행할 수 있도록 설계된 CMU Vision-Language-Action (VLA) 챌린지를 위한 통합 시스템을 제시합니다. 우리의 프레임워크는 환경 매핑, 질문 처리 및 탐색을 조율하는 모듈식 아키텍처를 사용합니다. 시스템은 두 개의 병렬 스트림으로 작동합니다: OwlViT 임베딩을 사용하여 실시간 카메라 피드에서 의미론적 복셀 맵을 구축하는 인식 파이프라인과, Vision-Language Model을 사용하여 사용자 명령을 분류하는 언어 파이프라인입니다. 매핑에는 시간 제약이 있으며, 500초의 탐색 한계에 도달하면 시스템은 부분 맵으로 진행합니다. 분류된 쿼리는 맵의 기하학적 및 의미론적 맥락에 기반하여 VLM을 위한 상세한 프롬프트를 생성합니다. 이는 실행 가능한 출력을 생성하여 인간 언어와 로봇 동작 간의 격차를 해소하는 유능한 솔루션을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31144v1
+
+## 개요
+이 프레임워크는 모듈식 아키텍처를 채택하여 환경 매핑, 명령 처리 및 내비게이션 기능을 유기적으로 통합합니다. 시스템은 두 개의 병렬 처리 흐름을 포함합니다: 인식 흐름은 OwlViT 임베딩을 사용하여 실시간 카메라 데이터에서 의미론적 복셀 맵을 구축하고, 언어 흐름은 Vision-Language Model을 통해 사용자 명령을 분류합니다. 매핑 과정은 시간 제약을 받으며, 500초 탐색 상한에 도달하면 부분 맵을 사용하여 계속 실행합니다. 분류된 쿼리 명령은 맵의 기하학적 및 의미론적 컨텍스트에 매핑되어 상세 프롬프트를 생성하고 VLM에 입력하며, 최종적으로 실행 가능한 동작 명령을 출력합니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- 모듈식 설계를 채택하여 환경 매핑, 명령 처리 및 내비게이션의 세 가지 모듈을 통합
+- 이중 병렬 처리 흐름: 인식 흐름과 언어 흐름이 동시에 실행
+
+### 인식 파이프라인
+- OwlViT 임베딩을 사용하여 실시간 카메라 스트림에서 의미론적 복셀 맵 구축
+- 매핑은 500초 시간 제약을 받으며, 시간 초과 시 부분 맵을 사용하여 계속 실행
+
+### 언어 파이프라인
+- Vision-Language Model을 통해 사용자 자연어 명령을 분류
+- 분류된 쿼리는 맵의 기하학적 및 의미론적 컨텍스트와 연관
+
+### 동작 생성
+- 연관된 쿼리를 사용하여 상세 프롬프트를 생성하고 VLM에 입력
+- VLM은 실행 가능한 동작 명령을 출력하여 언어에서 로봇 동작으로의 변환을 실현
+
+### 실험 설정
+- 시스템은 CMU VLA 챌린지 환경에서 테스트됨
+- 주요 매개변수: 500초 탐색 시간 제한, OwlViT 임베딩, VLM 분류 모델
+
+### 결론
+이 프레임워크는 인간 언어와 로봇 동작을 연결하는 데 있어 모듈식 아키텍처의 효과성을 성공적으로 입증했으며, 실내 환경에서의 자율 로봇 작업 실행을 위한 실현 가능한 솔루션을 제공합니다.

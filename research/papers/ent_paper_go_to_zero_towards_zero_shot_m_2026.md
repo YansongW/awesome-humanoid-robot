@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: low
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.07095v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.07095v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (690 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,11 +71,25 @@ Generating diverse and natural human motion sequences based on textual descripti
 ## Content
 Generating diverse and natural human motion sequences based on textual descriptions constitutes a fundamental and challenging research area within the domains of computer vision, graphics, and robotics. Despite significant advancements in this field, current methodologies often face challenges regarding zero-shot generalization capabilities, largely attributable to the limited size of training datasets. Moreover, the lack of a comprehensive evaluation framework impedes the advancement of this task by failing to identify directions for improvement. In this work, we aim to push text-to-motion into a new era, that is, to achieve the generalization ability of zero-shot. To this end, firstly, we develop an efficient annotation pipeline and introduce MotionMillion—the largest human motion dataset to date, featuring over 2,000 hours and 2 million high-quality motion sequences. Additionally, we propose MotionMillion-Eval, the most comprehensive benchmark for evaluating zero-shot motion generation. Leveraging a scalable architecture, we scale our model to 7B parameters and validate its performance on MotionMillion-Eval. Our results demonstrate strong generalization to out-of-domain and complex compositional motions, marking a significant step toward zero-shot human motion generation. The code is available at https://github.com/VankouF/MotionMillion-Codes.
 
-## 개요
-텍스트 설명을 기반으로 다양하고 자연스러운 인간 동작 시퀀스를 생성하는 것은 컴퓨터 비전, 그래픽스 및 로보틱스 분야에서 기본적이면서도 도전적인 연구 영역입니다. 이 분야에서 상당한 진전이 있었음에도 불구하고, 현재의 방법론은 훈련 데이터셋의 제한된 크기로 인해 제로샷 일반화 능력에 있어 어려움을 겪는 경우가 많습니다. 또한, 포괄적인 평가 프레임워크의 부재는 개선 방향을 식별하지 못함으로써 이 작업의 발전을 저해합니다. 본 연구에서는 텍스트-투-모션을 새로운 시대로 이끌고자 합니다. 즉, 제로샷의 일반화 능력을 달성하는 것입니다. 이를 위해 먼저 효율적인 주석 파이프라인을 개발하고, 현재까지 가장 큰 인간 동작 데이터셋인 MotionMillion을 소개합니다. 이 데이터셋은 2,000시간 이상, 200만 개의 고품질 동작 시퀀스를 포함합니다. 또한, 제로샷 동작 생성을 평가하기 위한 가장 포괄적인 벤치마크인 MotionMillion-Eval을 제안합니다. 확장 가능한 아키텍처를 활용하여 모델을 7B 파라미터로 확장하고, MotionMillion-Eval에서 성능을 검증합니다. 우리의 결과는 도메인 외부 및 복잡한 구성 동작에 대한 강력한 일반화를 입증하며, 제로샷 인간 동작 생성으로의 중요한 진전을 나타냅니다. 코드는 https://github.com/VankouF/MotionMillion-Codes에서 확인할 수 있습니다.
-
-## 핵심 내용
-텍스트 설명을 기반으로 다양하고 자연스러운 인간 동작 시퀀스를 생성하는 것은 컴퓨터 비전, 그래픽스 및 로보틱스 분야에서 기본적이면서도 도전적인 연구 영역입니다. 이 분야에서 상당한 진전이 있었음에도 불구하고, 현재의 방법론은 훈련 데이터셋의 제한된 크기로 인해 제로샷 일반화 능력에 있어 어려움을 겪는 경우가 많습니다. 또한, 포괄적인 평가 프레임워크의 부재는 개선 방향을 식별하지 못함으로써 이 작업의 발전을 저해합니다. 본 연구에서는 텍스트-투-모션을 새로운 시대로 이끌고자 합니다. 즉, 제로샷의 일반화 능력을 달성하는 것입니다. 이를 위해 먼저 효율적인 주석 파이프라인을 개발하고, 현재까지 가장 큰 인간 동작 데이터셋인 MotionMillion을 소개합니다. 이 데이터셋은 2,000시간 이상, 200만 개의 고품질 동작 시퀀스를 포함합니다. 또한, 제로샷 동작 생성을 평가하기 위한 가장 포괄적인 벤치마크인 MotionMillion-Eval을 제안합니다. 확장 가능한 아키텍처를 활용하여 모델을 7B 파라미터로 확장하고, MotionMillion-Eval에서 성능을 검증합니다. 우리의 결과는 도메인 외부 및 복잡한 구성 동작에 대한 강력한 일반화를 입증하며, 제로샷 인간 동작 생성으로의 중요한 진전을 나타냅니다. 코드는 https://github.com/VankouF/MotionMillion-Codes에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.07095v1
+
+## 개요
+기존 텍스트-모션 생성 방법의 제로샷 일반화 능력 부족과 포괄적인 평가 프레임워크의 부재 문제를 해결하기 위해, 본 연구는 효율적인 주석 파이프라인을 개발하고 MotionMillion 데이터셋을 구축했습니다. 이 데이터셋은 총 200만 개의 모션 시퀀스와 2000시간 이상의 총 길이를 자랑합니다. 확장 가능한 아키텍처를 기반으로 훈련된 7B 파라미터 모델은 MotionMillion-Eval 벤치마크에서 도메인 외 및 복잡한 조합 모션에 대해 우수한 일반화 성능을 보여주며, 제로샷 인간 모션 생성 분야의 중요한 진전을 나타냅니다.
+
+## 핵심 내용
+### 핵심 기여
+- **데이터셋 구축**: 효율적인 주석 파이프라인을 개발하여 MotionMillion 데이터셋을 생성, 200만 개의 고품질 모션 시퀀스(총 2000시간 이상)를 포함하며, 현재 최대 규모의 인간 모션 데이터셋입니다.
+- **평가 벤치마크**: 제로샷 모션 생성을 위한 최초의 포괄적인 평가 프레임워크인 MotionMillion-Eval을 제안합니다.
+- **모델 아키텍처**: 확장 가능한 아키텍처를 채택하여 모델 파라미터 규모를 7B로 확장하고, MotionMillion-Eval에서 성능을 검증했습니다.
+
+### 실험 설정 및 결과
+- **훈련 데이터**: 전체 MotionMillion 데이터셋을 사용하여 훈련을 진행했습니다.
+- **평가 지표**: MotionMillion-Eval 벤치마크에서 제로샷 생성 능력을 테스트했습니다.
+- **주요 발견**:
+  - 도메인 외 모션(out-of-domain motions)에 대해 강력한 일반화 능력을 보여줍니다.
+  - 복잡한 조합 모션(complex compositional motions)을 효과적으로 처리할 수 있습니다.
+  - 대규모 데이터가 제로샷 일반화 능력 향상에 기여함을 검증했습니다.
+
+### 오픈소스 리소스
+코드는 GitHub 저장소에 공개되어 있습니다: https://github.com/VankouF/MotionMillion-Codes

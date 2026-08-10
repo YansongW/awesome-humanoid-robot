@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.00171v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.00171v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (778 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,24 @@ RoboMatrix 采用技能中心的分层架构，将复杂任务分解为可复用
 ## Overview
 Existing robot policies predominantly adopt the task-centric approach, requiring end-to-end task data collection. This results in limited generalization to new tasks and difficulties in pinpointing errors within long-horizon, multi-stage tasks. To address this, we propose RoboMatrix, a skill-centric hierarchical framework designed for scalable robot task planning and execution in open-world environments. RoboMatrix extracts general meta-skills from diverse complex tasks, enabling the completion of unseen tasks through skill composition. Its architecture consists of a high-level scheduling layer that utilizes large language models (LLMs) for task decomposition, an intermediate skill layer housing meta-skill models, and a low-level hardware layer for robot control. A key innovation of our work is the introduction of the first unified vision-language-action (VLA) model capable of seamlessly integrating both movement and manipulation within one model. This is achieved by combining vision and language prompts to generate discrete actions. Experimental results demonstrate that RoboMatrix achieves a 50% higher success rate than task-centric baselines when applied to unseen objects, scenes, and tasks. To advance open-world robotics research, we will open-source code, hardware designs, model weights, and datasets at https://github.com/WayneMao/RoboMatrix.
 
-## 개요
-기존 로봇 정책은 주로 작업 중심 접근 방식을 채택하여 종단 간 작업 데이터 수집을 필요로 합니다. 이로 인해 새로운 작업에 대한 일반화가 제한되고, 장기적이고 다단계 작업에서 오류를 정확히 찾아내기 어렵습니다. 이를 해결하기 위해 우리는 개방형 환경에서 확장 가능한 로봇 작업 계획 및 실행을 위한 기술 중심 계층적 프레임워크인 RoboMatrix를 제안합니다. RoboMatrix는 다양한 복잡한 작업에서 일반적인 메타 기술을 추출하여 기술 조합을 통해 보지 못한 작업을 완료할 수 있게 합니다. 그 아키텍처는 대규모 언어 모델(LLM)을 활용한 작업 분해를 위한 상위 스케줄링 계층, 메타 기술 모델을 포함하는 중간 기술 계층, 로봇 제어를 위한 하위 하드웨어 계층으로 구성됩니다. 우리 연구의 핵심 혁신은 하나의 모델 내에서 이동과 조작을 원활하게 통합할 수 있는 최초의 통합 비전-언어-행동(VLA) 모델을 도입한 것입니다. 이는 비전 및 언어 프롬프트를 결합하여 이산적인 행동을 생성함으로써 달성됩니다. 실험 결과, RoboMatrix는 보지 못한 객체, 장면 및 작업에 적용될 때 작업 중심 기준선보다 50% 더 높은 성공률을 달성합니다. 개방형 로봇 연구를 발전시키기 위해, 우리는 코드, 하드웨어 설계, 모델 가중치 및 데이터셋을 https://github.com/WayneMao/RoboMatrix에서 오픈소스로 공개할 예정입니다.
-
-## 핵심 내용
-기존 로봇 정책은 주로 작업 중심 접근 방식을 채택하여 종단 간 작업 데이터 수집을 필요로 합니다. 이로 인해 새로운 작업에 대한 일반화가 제한되고, 장기적이고 다단계 작업에서 오류를 정확히 찾아내기 어렵습니다. 이를 해결하기 위해 우리는 개방형 환경에서 확장 가능한 로봇 작업 계획 및 실행을 위한 기술 중심 계층적 프레임워크인 RoboMatrix를 제안합니다. RoboMatrix는 다양한 복잡한 작업에서 일반적인 메타 기술을 추출하여 기술 조합을 통해 보지 못한 작업을 완료할 수 있게 합니다. 그 아키텍처는 대규모 언어 모델(LLM)을 활용한 작업 분해를 위한 상위 스케줄링 계층, 메타 기술 모델을 포함하는 중간 기술 계층, 로봇 제어를 위한 하위 하드웨어 계층으로 구성됩니다. 우리 연구의 핵심 혁신은 하나의 모델 내에서 이동과 조작을 원활하게 통합할 수 있는 최초의 통합 비전-언어-행동(VLA) 모델을 도입한 것입니다. 이는 비전 및 언어 프롬프트를 결합하여 이산적인 행동을 생성함으로써 달성됩니다. 실험 결과, RoboMatrix는 보지 못한 객체, 장면 및 작업에 적용될 때 작업 중심 기준선보다 50% 더 높은 성공률을 달성합니다. 개방형 로봇 연구를 발전시키기 위해, 우리는 코드, 하드웨어 설계, 모델 가중치 및 데이터셋을 https://github.com/WayneMao/RoboMatrix에서 오픈소스로 공개할 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.00171v3
+
+## 개요
+기존 로봇 정책은 대부분 작업 중심(task-centric) 접근 방식을 채택하여, 종단 간(end-to-end)으로 작업 데이터를 수집해야 하므로 새로운 작업에 대한 일반화 능력이 제한적이고, 장시간 다단계 작업에서 오류를 찾기 어렵다는 문제가 있습니다. RoboMatrix는 스킬 중심(skill-centric)의 계층적 프레임워크를 구축하여 이 문제를 해결합니다. 이 프레임워크는 고수준 스케줄링 계층(대규모 언어 모델을 활용한 작업 분해), 중간 스킬 계층(메타 스킬 모델 저장), 저수준 하드웨어 계층(로봇 제어)으로 구성됩니다. 핵심 혁신은 최초로 통합 비전-언어-행동 모델을 제안하여, 하나의 모델 내에서 이동과 조작을 원활하게 통합하고, 시각 및 언어 프롬프트를 결합하여 이산적 행동을 생성한다는 점입니다. 실험 결과, RoboMatrix는 미지의 객체, 장면, 작업을 처리할 때 작업 중심 기준선보다 성공률이 50% 더 높습니다.
+
+## 핵심 내용
+### 방법 개요
+RoboMatrix는 스킬 중심의 계층적 아키텍처를 채택하여 복잡한 작업을 재사용 가능한 메타 스킬로 분해합니다. 핵심 설계는 다음과 같습니다:
+- **고수준 스케줄링 계층**: 대규모 언어 모델(LLMs)을 사용하여 작업을 하위 단계 시퀀스로 분해합니다.
+- **중간 스킬 계층**: 파지, 배치, 이동 등의 사전 훈련된 메타 스킬 모델을 포함하며, 유연한 조합을 지원합니다.
+- **저수준 하드웨어 계층**: 구체적인 로봇 제어 명령을 실행하는 역할을 담당합니다.
+
+### 핵심 혁신
+- **통합 비전-언어-행동 모델**: 이동과 조작을 단일 모델에서 최초로 통합하여, 시각 및 언어 프롬프트를 통해 이산적 행동을 생성하며, 단계별 처리가 필요 없습니다.
+- **스킬 조합 메커니즘**: 다양한 복잡한 작업에서 일반적인 메타 스킬을 추출하여, 로봇이 기존 스킬을 조합해 미지의 작업을 완료할 수 있게 하며, 데이터를 다시 수집할 필요가 없습니다.
+
+### 실험 설정 및 결과
+- **기준선 비교**: 미지의 객체, 장면, 작업에서 RoboMatrix의 성공률은 작업 중심 기준선(예: 종단 간 정책)보다 50% 더 높습니다.
+- **데이터셋 및 오픈소스**: 코드, 하드웨어 설계, 모델 가중치 및 데이터셋은 https://github.com/WayneMao/RoboMatrix 에서 오픈소스로 공개되어 개방형 세계 로봇 연구를 촉진합니다.
+- **오류 위치 파악**: 계층적 구조는 스킬 계층 또는 스케줄링 계층에서 개별적으로 디버깅할 수 있게 하여, 작업 중심 방법에서 장시간 작업 오류를 찾기 어려운 문제를 피합니다.

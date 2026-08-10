@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.14342v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.14342v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (721 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,34 @@ iRoPro 框架成功实现了终端用户从零开始教授机器人可重用动�
 ## Overview
 Programming robots for general purpose applications is extremely challenging due to the great diversity of end-user tasks ranging from manufacturing environments to personal homes. Recent work has focused on enabling end-users to program robots using Programming by Demonstration. However, teaching robots new actions from scratch that can be reused for unseen tasks remains a difficult challenge and is generally left up to robotic experts. We propose iRoPro, an interactive Robot Programming framework that allows end-users to teach robots new actions from scratch and reuse them with a task planner. In this work we provide a system implementation on a two-armed Baxter robot that (i) allows simultaneous teaching of low- and high-level actions by demonstration, (ii) includes a user interface for action creation with condition inference and modification, and (iii) allows creating and solving previously unseen problems using a task planner for the robot to execute in real-time. We evaluate the generalisation power of the system on six benchmark tasks and show how taught actions can be easily reused for complex tasks. We further demonstrate its usability with a user study (N=21), where users completed eight tasks to teach the robot new actions that are reused with a task planner. The study demonstrates that users with any programming level and educational background can easily learn and use the system.
 
-## 개요
-제조 환경부터 개인 가정까지 다양한 최종 사용자 작업으로 인해 범용 애플리케이션을 위한 로봇 프로그래밍은 매우 어려운 과제입니다. 최근 연구는 시연을 통한 프로그래밍(Programming by Demonstration)을 사용하여 최종 사용자가 로봇을 프로그래밍할 수 있도록 하는 데 초점을 맞추고 있습니다. 그러나 보지 못한 작업에 재사용할 수 있는 새로운 동작을 처음부터 로봇에 가르치는 것은 여전히 어려운 과제이며 일반적으로 로봇 전문가에게 맡겨집니다. 우리는 최종 사용자가 처음부터 새로운 동작을 로봇에 가르치고 작업 계획기(task planner)와 함께 재사용할 수 있는 대화형 로봇 프로그래밍 프레임워크인 iRoPro를 제안합니다. 본 연구에서는 두 팔을 가진 Baxter 로봇에 시스템을 구현하여 (i) 시연을 통해 저수준 및 고수준 동작을 동시에 가르칠 수 있고, (ii) 조건 추론 및 수정이 가능한 동작 생성을 위한 사용자 인터페이스를 포함하며, (iii) 로봇이 실시간으로 실행할 수 있도록 작업 계획기를 사용하여 이전에 보지 못한 문제를 생성하고 해결할 수 있도록 합니다. 우리는 여섯 가지 벤치마크 작업에서 시스템의 일반화 능력을 평가하고, 가르친 동작이 복잡한 작업에 쉽게 재사용될 수 있음을 보여줍니다. 또한 사용자 연구(N=21)를 통해 시스템의 사용성을 입증했으며, 참가자들은 여덟 가지 작업을 완료하여 작업 계획기와 함께 재사용되는 새로운 동작을 로봇에 가르쳤습니다. 이 연구는 프로그래밍 수준과 교육 배경에 관계없이 사용자가 시스템을 쉽게 배우고 사용할 수 있음을 보여줍니다.
-
-## 핵심 내용
-제조 환경부터 개인 가정까지 다양한 최종 사용자 작업으로 인해 범용 애플리케이션을 위한 로봇 프로그래밍은 매우 어려운 과제입니다. 최근 연구는 시연을 통한 프로그래밍(Programming by Demonstration)을 사용하여 최종 사용자가 로봇을 프로그래밍할 수 있도록 하는 데 초점을 맞추고 있습니다. 그러나 보지 못한 작업에 재사용할 수 있는 새로운 동작을 처음부터 로봇에 가르치는 것은 여전히 어려운 과제이며 일반적으로 로봇 전문가에게 맡겨집니다. 우리는 최종 사용자가 처음부터 새로운 동작을 로봇에 가르치고 작업 계획기(task planner)와 함께 재사용할 수 있는 대화형 로봇 프로그래밍 프레임워크인 iRoPro를 제안합니다. 본 연구에서는 두 팔을 가진 Baxter 로봇에 시스템을 구현하여 (i) 시연을 통해 저수준 및 고수준 동작을 동시에 가르칠 수 있고, (ii) 조건 추론 및 수정이 가능한 동작 생성을 위한 사용자 인터페이스를 포함하며, (iii) 로봇이 실시간으로 실행할 수 있도록 작업 계획기를 사용하여 이전에 보지 못한 문제를 생성하고 해결할 수 있도록 합니다. 우리는 여섯 가지 벤치마크 작업에서 시스템의 일반화 능력을 평가하고, 가르친 동작이 복잡한 작업에 쉽게 재사용될 수 있음을 보여줍니다. 또한 사용자 연구(N=21)를 통해 시스템의 사용성을 입증했으며, 참가자들은 여덟 가지 작업을 완료하여 작업 계획기와 함께 재사용되는 새로운 동작을 로봇에 가르쳤습니다. 이 연구는 프로그래밍 수준과 교육 배경에 관계없이 사용자가 시스템을 쉽게 배우고 사용할 수 있음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2103.14342v1
+
+## 개요
+iRoPro 프레임워크는 최종 사용자가 로봇을 프로그래밍할 때 겪는 과제, 특히 처음부터 재사용 가능한 동작을 가르치는 문제를 해결합니다. 이는 시연을 통해 저수준 및 고수준 동작을 동시에 가르치며, 조건부 추론과 수정 기능을 갖춘 사용자 인터페이스를 포함합니다. 시스템은 6개의 기준 작업에서 일반화 능력을 평가했으며, 21명의 사용자 연구를 통해 다양한 프로그래밍 수준과 교육 배경을 가진 사용자가 쉽게 배우고 사용할 수 있음을 입증했습니다.
+
+## 핵심 내용
+### 방법
+iRoPro는 최종 사용자가 시연을 통해 로봇에 새 동작을 가르치고 작업 플래너를 통해 이러한 동작을 재사용할 수 있게 하는 대화형 로봇 프로그래밍 프레임워크입니다. 이 프레임워크는 양팔 Baxter 로봇에 구현되었으며, 다음을 지원합니다:
+- 저수준 및 고수준 동작의 동시 교육
+- 조건부 추론 및 수정 기능을 포함한 사용자 인터페이스를 통한 동작 생성
+- 작업 플래너를 사용한 미해결 작업 생성 및 해결, 실시간 실행
+
+### 아키텍처
+iRoPro의 핵심 아키텍처는 다음을 포함합니다:
+- **저수준 동작**: 시연을 통해 가르치는 재사용 가능한 작업(예: 잡기, 놓기 등)
+- **고수준 동작**: PDDL 스타일로 정의된 조건과 효과로, 동작의 맥락과 결과를 설명
+- **작업 플래너**: Fast-Forward 플래너를 사용하여 가르친 동작과 조건을 기반으로 작업 실행 시퀀스 생성
+
+### 실험 설정
+- **로봇 플랫폼**: 양팔 Baxter 로봇
+- **기준 작업**: 시스템의 일반화 능력을 평가하기 위한 6개의 기준 작업
+- **사용자 연구**: 21명의 참가자가 8개의 작업을 완료하며 로봇에 새 동작을 가르치고 재사용
+
+### 주요 수치
+- 사용자 연구 참가자: 21명
+- 기준 작업 수: 6개
+- 사용자 완료 작업 수: 8개
+
+### 결론
+iRoPro 프레임워크는 최종 사용자가 처음부터 로봇에 재사용 가능한 동작을 가르치고 작업 플래너를 통해 미해결 작업을 해결할 수 있도록 성공적으로 구현했습니다. 사용자 연구 결과는 사용자의 프로그래밍 수준이나 교육 배경에 관계없이 쉽게 배우고 사용할 수 있음을 보여줍니다. 이는 로봇의 일반 응용 프로그래밍에 실현 가능한 솔루션을 제공합니다.

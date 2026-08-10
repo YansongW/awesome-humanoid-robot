@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2204.06252v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2204.06252v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (936 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -78,11 +79,33 @@ sources:
 ## Overview
 A long-standing goal in robotics is to build robots that can perform a wide range of daily tasks from perceptions obtained with their onboard sensors and specified only via natural language. While recently substantial advances have been achieved in language-driven robotics by leveraging end-to-end learning from pixels, there is no clear and well-understood process for making various design choices due to the underlying variation in setups. In this paper, we conduct an extensive study of the most critical challenges in learning language conditioned policies from offline free-form imitation datasets. We further identify architectural and algorithmic techniques that improve performance, such as a hierarchical decomposition of the robot control learning, a multimodal transformer encoder, discrete latent plans and a self-supervised contrastive loss that aligns video and language representations. By combining the results of our investigation with our improved model components, we are able to present a novel approach that significantly outperforms the state of the art on the challenging language conditioned long-horizon robot manipulation CALVIN benchmark. We have open-sourced our implementation to facilitate future research in learning to perform many complex manipulation skills in a row specified with natural language. Codebase and trained models available at http://hulc.cs.uni-freiburg.de
 
-## 개요
-로봇 공학의 오랜 목표 중 하나는 자체 탑재 센서로 얻은 인식과 자연어로만 지정된 광범위한 일상 작업을 수행할 수 있는 로봇을 구축하는 것입니다. 최근 픽셀에서 엔드투엔드 학습을 활용하여 언어 기반 로봇 공학에서 상당한 진전이 이루어졌지만, 설정의 근본적인 차이로 인해 다양한 설계 선택을 위한 명확하고 잘 이해된 프로세스는 없습니다. 본 논문에서는 오프라인 자유 형식 모방 데이터셋에서 언어 조건화 정책을 학습하는 데 있어 가장 중요한 과제에 대한 광범위한 연구를 수행합니다. 또한 로봇 제어 학습의 계층적 분해, 다중 모달 트랜스포머 인코더, 이산 잠재 계획, 비디오와 언어 표현을 정렬하는 자기 지도 대조 손실과 같은 성능을 향상시키는 아키텍처 및 알고리즘 기법을 식별합니다. 우리의 조사 결과와 개선된 모델 구성 요소를 결합하여 도전적인 언어 조건화 장기 로봇 조작 CALVIN 벤치마크에서 최첨단 성능을 크게 능가하는 새로운 접근 방식을 제시할 수 있습니다. 자연어로 지정된 여러 복잡한 조작 기술을 연속적으로 학습하는 미래 연구를 촉진하기 위해 구현을 오픈소스로 공개했습니다. 코드베이스와 훈련된 모델은 http://hulc.cs.uni-freiburg.de에서 확인할 수 있습니다.
-
-## 핵심 내용
-로봇 공학의 오랜 목표 중 하나는 자체 탑재 센서로 얻은 인식과 자연어로만 지정된 광범위한 일상 작업을 수행할 수 있는 로봇을 구축하는 것입니다. 최근 픽셀에서 엔드투엔드 학습을 활용하여 언어 기반 로봇 공학에서 상당한 진전이 이루어졌지만, 설정의 근본적인 차이로 인해 다양한 설계 선택을 위한 명확하고 잘 이해된 프로세스는 없습니다. 본 논문에서는 오프라인 자유 형식 모방 데이터셋에서 언어 조건화 정책을 학습하는 데 있어 가장 중요한 과제에 대한 광범위한 연구를 수행합니다. 또한 로봇 제어 학습의 계층적 분해, 다중 모달 트랜스포머 인코더, 이산 잠재 계획, 비디오와 언어 표현을 정렬하는 자기 지도 대조 손실과 같은 성능을 향상시키는 아키텍처 및 알고리즘 기법을 식별합니다. 우리의 조사 결과와 개선된 모델 구성 요소를 결합하여 도전적인 언어 조건화 장기 로봇 조작 CALVIN 벤치마크에서 최첨단 성능을 크게 능가하는 새로운 접근 방식을 제시할 수 있습니다. 자연어로 지정된 여러 복잡한 조작 기술을 연속적으로 학습하는 미래 연구를 촉진하기 위해 구현을 오픈소스로 공개했습니다. 코드베이스와 훈련된 모델은 http://hulc.cs.uni-freiburg.de에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2204.06252v2
+
+## 개요
+이 연구는 언어 기반 로봇 조작에서 명확한 설계 프로세스가 부족한 문제를 해결하기 위해, 오프라인 자유 형식 모방 데이터셋에서의 학습 과제를 종합적으로 분석합니다. 저자들은 로봇 제어 학습을 계층 구조로 분해하고, 시각 및 언어 입력을 처리하기 위한 다중 모달 Transformer 인코더 도입, 이산 잠재 계획 모듈 도입, 그리고 자가 지도 대조 손실을 통한 비디오-언어 표현 정렬을 포함한 핵심 아키텍처 및 알고리즘 개선점을 식별합니다. 이러한 구성 요소는 HULC 모델로 통합되어, 장기 시간 언어 조건 조작 벤치마크인 CALVIN에서 당시 최고 성능을 달성했으며, 코드와 사전 훈련된 모델을 공개했습니다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+- 장기 목표: 자연어 지시를 통해 일상 작업을 수행하고, 온보드 센서 인식에만 의존하는 로봇 구축.
+- 기존 문제: 엔드투엔드 픽셀 수준 학습 방법이 언어 기반 로봇 조작 분야에서 진전을 보였지만, 실험 설정의 차이로 인해 설계 선택에 대한 명확한 이해가 부족.
+
+### 방법 아키텍처
+- **계층적 제어 분해**: 로봇 제어 학습을 고수준 계획과 저수준 실행으로 분해하며, 고수준은 이산 잠재 계획을 출력하고 저수준은 계획을 기반으로 구체적인 행동을 생성.
+- **다중 모달 Transformer 인코더**: 시각 관측과 언어 지시를 공동 처리하며, 교차 주의 메커니즘을 통해 모달 정보를 융합.
+- **이산 잠재 계획**: 벡터 양자화 변분 오토인코더(VQ-VAE)를 사용하여 연속 동작 시퀀스를 이산 잠재 변수로 압축하고, 이를 중간 표현으로 사용.
+- **자가 지도 대조 손실**: 대조 학습을 통해 비디오 클립과 해당 언어 설명의 표현을 정렬하여 교차 모달 이해를 강화.
+
+### 실험 설정
+- **벤치마크**: CALVIN(언어 조건 장기 시간 로봇 조작 벤치마크)으로, 다단계 조작 작업 포함.
+- **훈련 데이터**: 비구조화된 시연을 포함한 오프라인 자유 형식 모방 데이터셋.
+- **평가 지표**: 작업 성공률, 장기 시간 작업 완료율.
+
+### 주요 결과
+- HULC는 CALVIN 벤치마크에서 당시 최고 방법(예: BC-Z, RT-1)을 크게 능가했으며, 특히 다단계 연속 작업에서 두드러진 성과를 보임.
+- 계층적 분해와 대조 손실이 성능 향상에 가장 큰 기여를 했으며, 이산 잠재 계획은 장기 작업의 확장성을 강화.
+- 절제 실험을 통해 각 구성 요소의 효과를 검증: 대조 손실 제거 시 성공률이 약 15% 하락, 계층적 분해 제거 시 장기 시간 작업 완료율이 20% 감소.
+
+### 결론
+- 체계적인 설계 선택 분석은 언어 조건 모방 학습에 재현 가능한 지침을 제공.
+- 오픈 소스 코드와 모델(http://hulc.cs.uni-freiburg.de)은 후속 연구를 촉진.

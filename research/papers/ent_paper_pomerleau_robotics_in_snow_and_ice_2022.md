@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai_autonomous
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2208.05095v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2208.05095v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (713 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,27 @@ Definition: The terms "robotics in snow and ice" refer to robotic systems being 
 ## Content
 Definition: The terms "robotics in snow and ice" refer to robotic systems being studied, developed, and used in areas where water can be found in its solid state. This specialized branch of field robotics investigates the impact of extreme conditions related to cold environments on autonomous vehicles.
 
-## 개요
-정의: "눈과 얼음 속 로봇 공학"이란 물이 고체 상태로 존재하는 지역에서 연구, 개발 및 사용되는 로봇 시스템을 의미합니다. 이 전문적인 현장 로봇 공학 분야는 추운 환경과 관련된 극한 조건이 자율 주행 차량에 미치는 영향을 조사합니다.
-
-## 핵심 내용
-정의: "눈과 얼음 속 로봇 공학"이란 물이 고체 상태로 존재하는 지역에서 연구, 개발 및 사용되는 로봇 시스템을 의미합니다. 이 전문적인 현장 로봇 공학 분야는 추운 환경과 관련된 극한 조건이 자율 주행 차량에 미치는 영향을 조사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2208.05095v1
+
+## 개요
+본 논문은 "冰雪机器人学"이라는 용어를 체계적으로 정의하며, 이는 고체 상태의 물이 존재하는 지역에서 로봇 시스템을 연구, 개발, 사용하는 것을 의미한다. 현장 로봇 공학의 전문 분야로서, 이는 추운 환경의 극한 조건이 자율 차량에 미치는 영향을 탐구한다. 논문은 빙권(冰冻圈) 분야를 분류하고, 추운 환경에서 지상, 공중, 수중 로봇의 역사적 현장 배치 경험과 교훈을 종합적으로 분석한다.
+
+## 핵심 내용
+### 정의 및 범위
+- "冰雪机器人学"은 고체 상태의 물(얼음, 눈, 동토)이 존재하는 지역에서 로봇 시스템을 연구, 개발, 사용하는 것을 의미한다.
+- 이는 현장 로봇 공학의 전문 분야로, 추운 환경의 극한 조건(예: 저온, 빙설 덮임, 낮은 조도)이 자율 차량에 미치는 영향을 중점적으로 연구한다.
+
+### 분류 체계
+- 논문은 빙권 분야를 분류하며, 빙하, 빙상, 해빙, 동토, 설원 등 다양한 환경 유형을 포함한다.
+- 각 하위 분야는 고유한 물리적 특성(예: 표면 경도, 온도 범위, 지형 복잡성)을 가지며, 이는 로봇 설계에 영향을 미친다.
+
+### 역사적 배치 경험
+- **지상 로봇**: 극지 빙상과 설원 환경에 배치되어 과학적 측정(예: 빙층 두께, 적설 깊이) 및 내비게이션 테스트에 사용되었다. 주요 과제로는 궤도/바퀴 미끄러짐, 저온에서의 배터리 성능 저하가 있다.
+- **공중 로봇**: 드론이 빙하와 빙원 상공에서 항공 촬영 및 원격 탐사를 수행하지만, 저온으로 인한 배터리 수명 단축, 프로펠러 결빙 등의 문제에 직면한다.
+- **수중 로봇**: AUV(자율 수중 항해기)와 ROV(원격 조종 잠수정)가 빙하 아래 탐사에 사용되며, 해빙 두께 측정, 수중 지형 조사 등을 수행한다. 주요 과제로는 빙하 아래 통신 제한, 내비게이션 정밀도 저하가 있다.
+
+### 핵심 결론
+- 빙설 환경은 로봇 시스템에 저온 재료 취성, 센서 결빙, 에너지 관리 어려움 등 독특한 과제를 제기한다.
+- 역사적 배치 경험은 신뢰할 수 있는 작동을 위해 특수 설계(예: 가열 부품, 저온 배터리, 방빙 코팅)가 필요함을 보여준다.
+- 미래 방향으로는 더 견고한 자율 내비게이션 알고리즘 개발, 에너지 시스템 개선(예: 원자력 배터리, 태양광), 다중 로봇 협업 작동이 포함된다.

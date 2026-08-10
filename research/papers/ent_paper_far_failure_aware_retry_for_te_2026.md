@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.01111v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.01111v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (656 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,25 @@ FAR通过测试时失败学习与持续改进的结合，为机器人自主恢�
 ## Overview
 Robot policies inevitably encounter failures when deployed in real environments. Naive retries often repeat the same mistakes, while many existing recovery methods rely on human intervention. In this paper, we propose Failure-Aware Retry (FAR), a framework that enables robots to learn from previous failures at test time, adapt their behavior accordingly, and eventually complete the task autonomously. FAR combines Failure-Contrastive Preference Adaptation, which constructs preference learning data from failures to steer the policy away from previously unsuccessful behaviors, with lightweight action perturbations during retries to encourage local exploration. We further incorporate successful recovery trajectories into a training loop for continual policy improvement. Experiments in both simulation and real-world manipulation tasks show that FAR substantially improves success rates and robustness, with average gains of 17.6% over the standard diffusion policy in simulation and 11.7% in the real world. In addition, FAR significantly improves data efficiency under both reset and timestep budgets during continual policy improvement by exploiting informative failure cases.
 
-## 개요
-로봇 정책은 실제 환경에 배치될 때 필연적으로 실패에 직면합니다. 단순한 재시도는 종종 동일한 실수를 반복하는 반면, 기존의 많은 복구 방법은 인간의 개입에 의존합니다. 본 논문에서는 테스트 시점에서 이전 실패로부터 학습하고, 이에 따라 행동을 조정하며, 궁극적으로 자율적으로 작업을 완료할 수 있는 프레임워크인 Failure-Aware Retry (FAR)를 제안합니다. FAR은 실패로부터 선호 학습 데이터를 구성하여 정책이 이전의 실패한 행동에서 벗어나도록 유도하는 Failure-Contrastive Preference Adaptation과 재시도 중 경량의 행동 섭동을 결합하여 국소적 탐색을 장려합니다. 또한 성공적인 복구 궤적을 훈련 루프에 통합하여 지속적인 정책 개선을 수행합니다. 시뮬레이션 및 실제 조작 작업 모두에서의 실험 결과, FAR은 표준 확산 정책 대비 시뮬레이션에서 평균 17.6%, 실제 환경에서 11.7%의 성공률 및 견고성 향상을 보여줍니다. 또한 FAR은 정보를 제공하는 실패 사례를 활용하여 지속적인 정책 개선 중 리셋 및 타임스텝 예산 하에서 데이터 효율성을 크게 향상시킵니다.
-
-## 핵심 내용
-로봇 정책은 실제 환경에 배치될 때 필연적으로 실패에 직면합니다. 단순한 재시도는 종종 동일한 실수를 반복하는 반면, 기존의 많은 복구 방법은 인간의 개입에 의존합니다. 본 논문에서는 테스트 시점에서 이전 실패로부터 학습하고, 이에 따라 행동을 조정하며, 궁극적으로 자율적으로 작업을 완료할 수 있는 프레임워크인 Failure-Aware Retry (FAR)를 제안합니다. FAR은 실패로부터 선호 학습 데이터를 구성하여 정책이 이전의 실패한 행동에서 벗어나도록 유도하는 Failure-Contrastive Preference Adaptation과 재시도 중 경량의 행동 섭동을 결합하여 국소적 탐색을 장려합니다. 또한 성공적인 복구 궤적을 훈련 루프에 통합하여 지속적인 정책 개선을 수행합니다. 시뮬레이션 및 실제 조작 작업 모두에서의 실험 결과, FAR은 표준 확산 정책 대비 시뮬레이션에서 평균 17.6%, 실제 환경에서 11.7%의 성공률 및 견고성 향상을 보여줍니다. 또한 FAR은 정보를 제공하는 실패 사례를 활용하여 지속적인 정책 개선 중 리셋 및 타임스텝 예산 하에서 데이터 효율성을 크게 향상시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.01111v1
+
+## 개요
+FAR 프레임워크는 로봇 정책이 실제 환경에서 배포될 때 필연적으로 발생하는 실패 문제를 해결하며, 단순 재시도가 동일한 오류를 반복하거나 인간의 개입에 의존하는 한계를 피한다. 이 프레임워크는 두 가지 핵심 구성 요소를 포함한다: 실패 대비 선호 적응은 실패 데이터를 활용해 선호 학습을 구축하고, 정책이 실패 행동에서 멀어지도록 유도한다; 경량 동작 교란은 재시도 시 국소 탐색을 촉진한다. 또한, FAR은 성공적인 복구 궤적을 훈련 루프에 포함시켜 지속적인 정책 개선을 실현한다. 실험 결과, FAR은 시뮬레이션 및 실제 조작 작업에서 성공률과 견고성을 현저히 향상시키며, 지속적 개선 과정에서 정보성 실패 사례를 효과적으로 활용하여 데이터 효율성을 높인다.
+
+## 핵심 내용
+### 방법 아키텍처
+FAR 프레임워크는 두 가지 핵심 모듈로 구성된다:
+- **실패 대비 선호 적응**: 실패 궤적에서 선호 학습 데이터를 구축하고, 대비 학습을 통해 정책이 이전 실패 행동 패턴에서 멀어지도록 유도한다.
+- **경량 동작 교란**: 재시도 과정에서 동작에 미세한 교란을 가하여 정책이 국소 공간에서 탐색하도록 장려하고, 동일한 실패 패턴에 빠지는 것을 방지한다.
+
+### 지속적 개선 메커니즘
+FAR은 성공적으로 복구된 궤적을 훈련 루프에 다시 주입하여 지속적인 정책 개선을 실현한다. 이 메커니즘은 재설정 예산과 시간 단계 예산이라는 두 가지 제약 조건 하에서 정보성 실패 사례를 활용하여 데이터 효율성을 현저히 향상시킨다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 실험**: 표준 확산 정책을 기반으로 FAR은 평균 성공률을 17.6% 향상시킨다.
+- **실제 세계 조작 작업**: 평균 성공률을 11.7% 향상시킨다.
+- **데이터 효율성**: 지속적 정책 개선 과정에서 FAR은 재설정 예산과 시간 단계 예산 모두에서 기준 방법보다 현저히 우수하며, 실패 사례를 효과적으로 활용하여 학습을 가속화한다.
+
+### 결론
+FAR은 테스트 시 실패 학습과 지속적 개선의 결합을 통해 로봇 자율 복구를 위한 효율적인 솔루션을 제공하며, 성공률과 견고성을 향상시키는 동시에 인간 개입과 데이터 양에 대한 의존도를 크게 낮춘다.

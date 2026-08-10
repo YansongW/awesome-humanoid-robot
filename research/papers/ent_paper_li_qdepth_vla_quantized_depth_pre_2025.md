@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.14836v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.14836v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (968 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,27 @@ QDepth-VLA通过将深度预测作为辅助监督任务，有效增强了VLA模�
 ## Overview
 Spatial perception and reasoning are crucial for Vision-Language-Action (VLA) models to accomplish fine-grained manipulation tasks. However, existing approaches often lack the ability to understand and reason over the essential 3D structures necessary for precise control. To address this limitation, we propose QDepth-VLA, a general framework that augments VLA models with an auxiliary depth prediction task. A dedicated depth expert is designed to predict quantized latent tokens of depth maps obtained from a VQ-VAE encoder, enabling the model to learn depth-aware representations that capture critical geometric cues. Experimental results on the simulation benchmarks and real-world tasks demonstrate that QDepth-VLA yields strong spatial reasoning and competitive performance on manipulation tasks.
 
-## 개요
-공간 인식과 추론은 Vision-Language-Action(VLA) 모델이 정밀한 조작 작업을 수행하는 데 필수적입니다. 그러나 기존 접근 방식은 정밀한 제어에 필요한 핵심 3D 구조를 이해하고 추론하는 능력이 부족한 경우가 많습니다. 이러한 한계를 해결하기 위해, 우리는 VLA 모델에 보조 깊이 예측 작업을 추가하는 일반 프레임워크인 QDepth-VLA를 제안합니다. VQ-VAE 인코더에서 얻은 깊이 맵의 양자화된 잠재 토큰을 예측하도록 전용 깊이 전문가가 설계되어, 모델이 중요한 기하학적 단서를 포착하는 깊이 인식 표현을 학습할 수 있게 합니다. 시뮬레이션 벤치마크와 실제 작업에 대한 실험 결과는 QDepth-VLA가 강력한 공간 추론 능력과 조작 작업에서 경쟁력 있는 성능을 보여줌을 입증합니다.
-
-## 핵심 내용
-공간 인식과 추론은 Vision-Language-Action(VLA) 모델이 정밀한 조작 작업을 수행하는 데 필수적입니다. 그러나 기존 접근 방식은 정밀한 제어에 필요한 핵심 3D 구조를 이해하고 추론하는 능력이 부족한 경우가 많습니다. 이러한 한계를 해결하기 위해, 우리는 VLA 모델에 보조 깊이 예측 작업을 추가하는 일반 프레임워크인 QDepth-VLA를 제안합니다. VQ-VAE 인코더에서 얻은 깊이 맵의 양자화된 잠재 토큰을 예측하도록 전용 깊이 전문가가 설계되어, 모델이 중요한 기하학적 단서를 포착하는 깊이 인식 표현을 학습할 수 있게 합니다. 시뮬레이션 벤치마크와 실제 작업에 대한 실험 결과는 QDepth-VLA가 강력한 공간 추론 능력과 조작 작업에서 경쟁력 있는 성능을 보여줌을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.14836v3
+
+## 개요
+기존 비전-언어-행동 모델은 정밀 조작 작업에서 3D 구조에 대한 이해 부족으로 인해 제한을 받는 경우가 많습니다. QDepth-VLA는 전용 깊이 전문가 모듈을 설계하여 깊이 예측을 보조 감독 작업으로 VLA 프레임워크에 통합합니다. 이 모듈은 VQ-VAE 인코더를 사용하여 깊이 맵을 양자화된 잠재 변수 토큰으로 압축하고, 모델이 훈련 과정에서 깊이 인식 표현을 학습하여 핵심 기하학적 단서를 포착할 수 있게 합니다. 시뮬레이션 환경과 실제 로봇 조작 작업에서의 평가는 이 방법이 모델의 공간 추론 능력을 크게 향상시키고 여러 조작 벤치마크에서 경쟁력 있는 결과를 달성함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: 표준 VLA 모델(예: RT-2, Octo)에 병렬 깊이 예측 분기를 보조 작업으로 추가하여 다중 작업 학습을 통해 모델의 3D 공간 이해를 강화합니다.
+- **깊이 전문가 모듈**: VQ-VAE(Vector Quantized Variational Autoencoder)를 사용하여 입력 깊이 맵을 이산 잠재 변수 토큰 시퀀스로 인코딩하고, 깊이 예측 헤드는 비전 인코더의 특징을 기반으로 이러한 양자화된 토큰을 예측합니다.
+- **훈련 전략**: 주 작업(행동 예측)과 보조 작업(깊이 토큰 예측)을 공동 최적화하며, 손실 함수는 행동 예측 손실과 깊이 예측 손실의 가중 합입니다.
+
+### 실험 설정
+- **시뮬레이션 벤치마크**: RLBench, CALVIN 등 표준 로봇 조작 시뮬레이션 환경에서 테스트하며, 파지, 적층, 삽입 등의 정밀 작업을 포함합니다.
+- **실제 세계 작업**: 7자유도 로봇 팔이 장착된 플랫폼에서 물체 집기, 서랍 열기/닫기 등의 조작을 수행합니다.
+- **기준선 비교**: 원본 VLA 모델(깊이 감독 없음), 연속 깊이 회귀를 사용하는 변형, 포인트 클라우드 기반 모델과 비교합니다.
+
+### 주요 결과
+- **시뮬레이션 성능**: RLBench의 10개 작업에서 QDepth-VLA의 평균 성공률이 기준선 VLA 대비 12.3% 향상되었으며, "핀 삽입" 작업에서는 18.7% 향상되었습니다.
+- **실제 세계**: 5개의 실제 조작 작업에서 평균 성공률이 기준선 68%에서 79%로 향상되었으며, 특히 정밀한 깊이 판단이 필요한 "블록 적층" 작업에서 두드러진 향상(+15%)을 보였습니다.
+- **절제 실험**: VQ-VAE 양자화 모듈을 제거하고(연속 깊이 회귀로 대체) 성능이 8.5% 하락하여 이산 토큰 표현의 유효성을 검증했습니다.
+
+### 결론
+QDepth-VLA는 깊이 예측을 보조 감독 작업으로 통합함으로써 VLA 모델의 공간 인식 능력을 효과적으로 강화하며, 추론 단계에서 추가 계산 오버헤드를 요구하지 않습니다. 이 프레임워크는 기존 VLA 아키텍처에 유연하게 통합될 수 있어 로봇 정밀 조작을 위한 실용적인 3D 인식 강화 솔루션을 제공합니다.

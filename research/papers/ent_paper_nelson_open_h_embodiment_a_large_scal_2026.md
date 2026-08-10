@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.21017v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.21017v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1187 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,26 @@ Open-H-Embodiment 数据集由多个研究机构联合构建，旨在解决医�
 ## Overview
 Autonomous medical robots hold promise to improve patient outcomes, reduce provider workload, democratize access to care, and enable superhuman precision. However, autonomous medical robotics has been limited by a fundamental data problem: existing medical robotic datasets are small, single-embodiment, and rarely shared openly, restricting the development of foundation models that the field needs to advance. We introduce Open-H-Embodiment, the largest open dataset of medical robotic video with synchronized kinematics to date, spanning more than 50 institutions and multiple robotic platforms including the CMR Versius, Intuitive Surgical's da Vinci, da Vinci Research Kit (dVRK), Rob Surgical BiTrack, Virtual Incision's MIRA, Moon Surgical Maestro, and a variety of custom systems, spanning surgical manipulation, robotic ultrasound, and endoscopy procedures. We demonstrate the research enabled by this dataset through two foundation models. GR00T-H is the first open foundation vision-language-action model for medical robotics, which is the only evaluated model to achieve full end-to-end task completion on a structured suturing benchmark (25% of trials vs. 0% for all others) and achieves 64% average success across a 29-step ex vivo suturing sequence. We also train Cosmos-H-Surgical-Simulator, the first action-conditioned world model to enable multi-embodiment surgical simulation from a single checkpoint, spanning nine robotic platforms and supporting in silico policy evaluation and synthetic data generation for the medical domain. These results suggest that open, large-scale medical robot data collection can serve as critical infrastructure for the research community, enabling advances in robot learning, world modeling, and beyond.
 
-## 개요
-자율 의료 로봇은 환자 결과 개선, 의료진 업무 부담 감소, 의료 접근성 민주화, 초인적 정밀도 구현에 기여할 가능성을 지니고 있습니다. 그러나 자율 의료 로봇 공학은 근본적인 데이터 문제로 인해 제한을 받아 왔습니다. 기존 의료 로봇 데이터셋은 규모가 작고, 단일 체현(single-embodiment)에 국한되며, 공개적으로 공유되는 경우가 드물어 해당 분야 발전에 필요한 기초 모델 개발을 제약하고 있습니다. 본 연구에서는 Open-H-Embodiment를 소개합니다. 이는 현재까지 가장 큰 규모의 공개 의료 로봇 영상 데이터셋으로, 동기화된 운동학 데이터를 포함하며, 50개 이상의 기관과 CMR Versius, Intuitive Surgical의 da Vinci, da Vinci Research Kit(dVRK), Rob Surgical BiTrack, Virtual Incision의 MIRA, Moon Surgical Maestro 등 다양한 로봇 플랫폼 및 맞춤형 시스템을 아우릅니다. 수술 조작, 로봇 초음파, 내시경 시술을 포괄합니다. 본 데이터셋을 통해 가능해진 연구를 두 가지 기초 모델로 입증합니다. GR00T-H는 의료 로봇 공학을 위한 최초의 공개 기초 비전-언어-행동 모델로, 구조화된 봉합 벤치마크에서 완전한 종단 간 작업 완료를 달성한 유일한 평가 모델입니다(시도 중 25% 성공, 다른 모델은 0%). 또한 29단계의 생체 외 봉합 시퀀스에서 평균 64%의 성공률을 기록했습니다. 또한 Cosmos-H-Surgical-Simulator를 학습시켰습니다. 이는 단일 체크포인트로 다중 체현 수술 시뮬레이션을 가능하게 하는 최초의 행동 조건부 세계 모델로, 9개의 로봇 플랫폼을 아우르며 의료 분야의 인실리코 정책 평가 및 합성 데이터 생성을 지원합니다. 이러한 결과는 공개적이고 대규모인 의료 로봇 데이터 수집이 연구 커뮤니티의 핵심 인프라 역할을 하여 로봇 학습, 세계 모델링 및 그 이상의 발전을 가능하게 함을 시사합니다.
-
-## 핵심 내용
-자율 의료 로봇은 환자 결과 개선, 의료진 업무 부담 감소, 의료 접근성 민주화, 초인적 정밀도 구현에 기여할 가능성을 지니고 있습니다. 그러나 자율 의료 로봇 공학은 근본적인 데이터 문제로 인해 제한을 받아 왔습니다. 기존 의료 로봇 데이터셋은 규모가 작고, 단일 체현에 국한되며, 공개적으로 공유되는 경우가 드물어 해당 분야 발전에 필요한 기초 모델 개발을 제약하고 있습니다. 본 연구에서는 Open-H-Embodiment를 소개합니다. 이는 현재까지 가장 큰 규모의 공개 의료 로봇 영상 데이터셋으로, 동기화된 운동학 데이터를 포함하며, 50개 이상의 기관과 CMR Versius, Intuitive Surgical의 da Vinci, da Vinci Research Kit(dVRK), Rob Surgical BiTrack, Virtual Incision의 MIRA, Moon Surgical Maestro 등 다양한 로봇 플랫폼 및 맞춤형 시스템을 아우릅니다. 수술 조작, 로봇 초음파, 내시경 시술을 포괄합니다. 본 데이터셋을 통해 가능해진 연구를 두 가지 기초 모델로 입증합니다. GR00T-H는 의료 로봇 공학을 위한 최초의 공개 기초 비전-언어-행동 모델로, 구조화된 봉합 벤치마크에서 완전한 종단 간 작업 완료를 달성한 유일한 평가 모델입니다(시도 중 25% 성공, 다른 모델은 0%). 또한 29단계의 생체 외 봉합 시퀀스에서 평균 64%의 성공률을 기록했습니다. 또한 Cosmos-H-Surgical-Simulator를 학습시켰습니다. 이는 단일 체크포인트로 다중 체현 수술 시뮬레이션을 가능하게 하는 최초의 행동 조건부 세계 모델로, 9개의 로봇 플랫폼을 아우르며 의료 분야의 인실리코 정책 평가 및 합성 데이터 생성을 지원합니다. 이러한 결과는 공개적이고 대규모인 의료 로봇 데이터 수집이 연구 커뮤니티의 핵심 인프라 역할을 하여 로봇 학습, 세계 모델링 및 그 이상의 발전을 가능하게 함을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2604.21017v3
+
+## 개요
+Open-H-Embodiment 데이터셋은 여러 연구 기관이 공동으로 구축한 것으로, 의료 로봇 분야의 데이터 규모가 작고, 체형이 단일하며, 개방되지 않은 근본적인 문제를 해결하는 것을 목표로 합니다. 이 데이터셋은 CMR Versius, Intuitive Surgical da Vinci, da Vinci Research Kit (dVRK), Rob Surgical BiTrack, Virtual Incision MIRA, Moon Surgical Maestro 등 20개 이상의 로봇 플랫폼에서 수집된 동기화된 비디오, 언어 지시 및 운동학 데이터를 포함하며, 수술 조작, 로봇 초음파 및 내시경 검사 등의 시나리오를涵盖합니다. 이 데이터셋을 기반으로 훈련된 GR00T-H 모델은 최초의 개방형 의료 로봇 비전-언어-행동 기반 모델로, 구조화된 봉합 벤치마크에서 25%의 종단 간 작업 완료율을 달성했으며, 다른 모든 비교 모델은 0%였습니다. 29단계 체외 봉합 시퀀스에서 평균 성공률은 64%에 달했습니다. 동시에 훈련된 Cosmos-H-Surgical-Simulator는 다중 체형 수술 시뮬레이션을 지원하는 최초의 행동 조건부 세계 모델로, 단일 체크포인트에서 9가지 로봇 플랫폼을覆盖하며, 정책 평가 및 합성 데이터 생성에 사용됩니다.
+
+## 핵심 내용
+### 데이터셋 구축
+- **규모 및 구성**: Open-H-Embodiment는 780시간의 다중 모달 데이터를 포함하며, 의료 로봇 조작 비디오, 언어 지시 및 운동학 정보를 동기화하여 기록합니다.
+- **覆盖 범위**: 데이터는 50개 이상의 기관에서 수집되었으며, CMR Versius, Intuitive Surgical da Vinci, da Vinci Research Kit (dVRK), Rob Surgical BiTrack, Virtual Incision MIRA, Moon Surgical Maestro 및 다양한 맞춤형 시스템을 포함한 20개 이상의 로봇 플랫폼을涵盖합니다.
+- **작업 유형**: 수술 조작, 로봇 초음파 검사 및 내시경 검사 등의 의료 시나리오를 포함합니다.
+
+### 기반 모델
+- **GR00T-H**: 최초의 개방형 의료 로봇 비전-언어-행동 기반 모델로, 종단 간 학습 아키텍처를 채택합니다.
+  - 구조화된 봉합 벤치마크에서 GR00T-H는 25%의 시험에서 완전한 작업 완료를 달성했으며, 다른 모든 비교 모델(일반 로봇 기반 모델 포함)은 0%였습니다.
+  - 29단계 체외 봉합 시퀀스에서 평균 성공률은 64%에 달했습니다.
+- **Cosmos-H-Surgical-Simulator**: 다중 체형 수술 시뮬레이션을 지원하는 최초의 행동 조건부 세계 모델입니다.
+  - 단일 체크포인트에서 9가지 로봇 플랫폼을覆盖하며, 컴퓨터 내 정책 평가 및 합성 데이터 생성을 가능하게 합니다.
+  - 의료 로봇 분야에 가상 시뮬레이션 환경을 제공하여 실제 데이터 수집 비용을 절감합니다.
+
+### 실험 설정 및 결론
+- 실험은 구조화된 봉합 벤치마크와 체외 봉합 시퀀스를 평가 작업으로 사용했으며, 비교 모델에는 일반 로봇 기반 모델과 전용 의료 로봇 모델이 포함됩니다.
+- 결과는 개방형 대규모 의료 로봇 데이터 수집이 연구 커뮤니티의 핵심 인프라로 작용하여 로봇 학습 및 세계 모델링 분야의 발전을 촉진할 수 있음을 보여줍니다.

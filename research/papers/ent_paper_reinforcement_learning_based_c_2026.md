@@ -58,8 +58,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31807v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31807v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (685 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -94,11 +95,28 @@ sources:
 ## Overview
 As humanoid robots become increasingly dynamic, coupling them with reinforcement learning offers a promising approach to solving the complex, underactuated mechanics of passive inline skating. Equipping a humanoid robot with passive inline skating wheels presents an opportunity to combine the versatile agility of humanoids with the high-speed, energy-efficient locomotion strategies utilized by human skaters. In this paper, we train and deploy a reinforcement learning control policy that enables novel locomotion strategies for a humanoid robot modified to equip consumer inline skates instead of conventional feet. Unlike previous work limited to quadrupedal robots or actively driven wheels, our system allows for precise 6-DoF control of the skates to execute dynamic, edge-driven propulsion strategies. Our skating strategies emerge entirely from our reward structure, without reliance on human motion data, imitation learning, or kinematic priors. We overcome the inherent instability of passive wheels and simulation contact artifacts by utilizing different geometric wheel models (spherical and ellipsoidal) during training and validation, along with a custom success-based command curriculum and a specialized rolling reward. Consequently, our policy demonstrates up to a 50% reduction in Cost of Transport (CoT) compared to standard walking gaits. The resulting policy successfully transfers zero-shot to the physical Booster T1 hardware. Real-world deployments demonstrate dynamic balance, the ability to reject active physical perturbations, and agile locomotion strategies capable of turning at speed. A video of our results can be found at https://www.youtube.com/watch?v=-_APcOS7uFo.
 
-## 개요
-휴머노이드 로봇이 점점 더 동적으로 발전함에 따라, 이를 강화 학습과 결합하는 것은 수동 인라인 스케이팅의 복잡하고 저구동된 역학을 해결하는 유망한 접근법을 제공합니다. 휴머노이드 로봇에 수동 인라인 스케이팅 바퀴를 장착하면 휴머노이드의 다재다능한 민첩성과 인간 스케이터가 사용하는 고속, 에너지 효율적인 이동 전략을 결합할 수 있는 기회가 생깁니다. 본 논문에서는 기존 발 대신 소비자용 인라인 스케이트를 장착하도록 개조된 휴머노이드 로봇을 위해 새로운 이동 전략을 가능하게 하는 강화 학습 제어 정책을 훈련하고 배포합니다. 사족 로봇이나 능동 구동 바퀴에 국한된 이전 연구와 달리, 우리 시스템은 스케이트의 정밀한 6자유도 제어를 통해 동적이고 에지 기반의 추진 전략을 실행할 수 있습니다. 우리의 스케이팅 전략은 인간 동작 데이터, 모방 학습 또는 운동학적 사전 지식에 의존하지 않고 보상 구조에서 완전히 창발합니다. 우리는 훈련 및 검증 중에 다양한 기하학적 바퀴 모델(구형 및 타원체)과 맞춤형 성공 기반 명령 커리큘럼 및 특수 구름 보상을 활용하여 수동 바퀴의 본질적인 불안정성과 시뮬레이션 접촉 인공물을 극복합니다. 결과적으로, 우리의 정책은 표준 보행 걸음걸이에 비해 최대 50%의 수송 비용(CoT) 감소를 보여줍니다. 결과 정책은 물리적 Booster T1 하드웨어에 제로샷으로 성공적으로 전이됩니다. 실제 배포에서는 동적 균형, 능동적 물리적 교란을 거부하는 능력, 속도에서 회전이 가능한 민첩한 이동 전략을 입증합니다. 결과 비디오는 https://www.youtube.com/watch?v=-_APcOS7uFo에서 확인할 수 있습니다.
-
-## 핵심 내용
-휴머노이드 로봇이 점점 더 동적으로 발전함에 따라, 이를 강화 학습과 결합하는 것은 수동 인라인 스케이팅의 복잡하고 저구동된 역학을 해결하는 유망한 접근법을 제공합니다. 휴머노이드 로봇에 수동 인라인 스케이팅 바퀴를 장착하면 휴머노이드의 다재다능한 민첩성과 인간 스케이터가 사용하는 고속, 에너지 효율적인 이동 전략을 결합할 수 있는 기회가 생깁니다. 본 논문에서는 기존 발 대신 소비자용 인라인 스케이트를 장착하도록 개조된 휴머노이드 로봇을 위해 새로운 이동 전략을 가능하게 하는 강화 학습 제어 정책을 훈련하고 배포합니다. 사족 로봇이나 능동 구동 바퀴에 국한된 이전 연구와 달리, 우리 시스템은 스케이트의 정밀한 6자유도 제어를 통해 동적이고 에지 기반의 추진 전략을 실행할 수 있습니다. 우리의 스케이팅 전략은 인간 동작 데이터, 모방 학습 또는 운동학적 사전 지식에 의존하지 않고 보상 구조에서 완전히 창발합니다. 우리는 훈련 및 검증 중에 다양한 기하학적 바퀴 모델(구형 및 타원체)과 맞춤형 성공 기반 명령 커리큘럼 및 특수 구름 보상을 활용하여 수동 바퀴의 본질적인 불안정성과 시뮬레이션 접촉 인공물을 극복합니다. 결과적으로, 우리의 정책은 표준 보행 걸음걸이에 비해 최대 50%의 수송 비용(CoT) 감소를 보여줍니다. 결과 정책은 물리적 Booster T1 하드웨어에 제로샷으로 성공적으로 전이됩니다. 실제 배포에서는 동적 균형, 능동적 물리적 교란을 거부하는 능력, 속도에서 회전이 가능한 민첩한 이동 전략을 입증합니다. 결과 비디오는 https://www.youtube.com/watch?v=-_APcOS7uFo에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31807v1
+
+## 개요
+이 연구는 강화 학습을 휴머노이드 로봇의 패시브 인라인 스케이트 제어에 적용하여, 저구동 복잡 역학 문제를 해결했습니다. 연구진은 Booster T1 로봇에 소비자용 인라인 스케이트를 개조 장착하고, 6자유도 정밀 제어를 통해 스케이트 엣지 구동 전략을 구현했습니다. 훈련 과정에서는 구형 및 타원체 두 가지 기하학적 휠 모델을 사용하여 패시브 휠의 불안정성을 극복했으며, 성공 지향 명령 커리큘럼과 롤링 보상 메커니즘을 결합했습니다. 최종 전략은 실제 로봇에서 동적 균형, 외란 저항 능력, 고속 회전 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 강화 학습을 사용하여 제어 전략을 훈련하며, 입력은 로봇 상태와 명령, 출력은 6자유도 스케이트 관절 제어량입니다.
+- 보상 함수는 롤링 보상(지속적인 구름 장려), 성공 지향 명령 커리큘럼(작업 완료도에 따라 명령 난이도 동적 조정)을 포함합니다.
+- 훈련 시 구형 휠 모델을 사용하고, 검증 시 타원체 휠 모델로 전환하여 접촉 아티팩트에 대한 강건성을 강화합니다.
+
+### 실험 설정
+- 하드웨어 플랫폼: Booster T1 휴머노이드 로봇, 발 부분을 4륜 인라인 스케이트(패시브 휠, 구동 없음)로 개조.
+- 시뮬레이션 환경: 물리 엔진 기반 강화 학습 훈련 프레임워크, 인간 동작 데이터나 운동학적 사전 지식은 사용하지 않음.
+- 비교 기준: 표준 보행 보행 패턴(동일 하드웨어 구성에서의 걷기 전략).
+
+### 주요 결과
+- 운송 비용(CoT)이 보행 대비 50% 감소하여 스케이트 전략의 에너지 효율 우위를 입증.
+- 전략이 추가 미세 조정 없이 실제 Booster T1 하드웨어로 제로샷 전이.
+- 실제 환경 테스트에서 로봇은 동적 균형 유지, 외부 물리적 외란(예: 밀기/당기기) 저항, 고속 회전 구현.
+- 모든 스케이트 전략은 보상 함수에서 완전히 창발되었으며, 인간 시연이나 모방 학습에 의존하지 않음.
+
+### 결론
+이 연구는 패시브 휠 휴머노이드 로봇에서 최초로 엔드투엔드 강화 학습 제어를 구현하여, 복잡한 저구동 운동에서 순수 보상 기반 접근법의 효과를 입증했습니다. 향후 더 복잡한 스케이트 동작(예: 급정지, 점프)이나 다지형 적응으로 확장할 수 있습니다.

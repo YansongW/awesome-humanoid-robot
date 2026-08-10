@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/berkeley-humanoid-lite.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页、论文 arXiv:2504.17249
-    与 Berkeley EECS 技术报告 EECS-2025-207。
+  notes: '内容整理自调研档案 data/roadmap/research/berkeley-humanoid-lite.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页、论文 arXiv:2504.17249
+    与 Berkeley EECS 技术报告 EECS-2025-207。 | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1799
+    chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -60,7 +61,6 @@ sources:
   url: https://arxiv.org/abs/2504.17249
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 Berkeley Humanoid Lite 是 UC Berkeley 混合机器人实验室（Hybrid Robotics Group，Koushil Sreenath 团队）与 SLICE 实验室发起的开源轻量人形机器人，属 BAIR Commons HIC 仓库，论文 arXiv:2504.17249（2025-04）。整机高 0.8 m、重 16 kg，22 个主动自由度（每条腿 6、每条臂 5），整机 BOM 美国采购约 4,312 美元、中国采购约 3,236 美元，官方宣传口径"低于 $5,000"（来源：调研档案 berkeley-humanoid-lite.md，下同）。
@@ -145,3 +145,42 @@ Berkeley Humanoid Lite는 UC Berkeley 혼합 로봇 연구실(Hybrid Robotics Gr
 
 - 적합: 어느 정도 실무 능력을 갖추고 RL 운동 제어 연구를 목표로 하는 개인/연구실 — $4–5k로 RL 보행이 가능한 22자유도 휴머노이드를 제작할 수 있으며, 문서 + BOM + 출력 파일이 완비되고 커뮤니티가 활성화되어 있음.
 - 진입 장벽: 사이클로이드 감속기를 직접 출력하고 22대의 액추에이터를 조립하며, CAN 버스를 납땜하고 FOC 펌웨어를 플래싱해야 하므로, 임베디드 및 3D 프린팅 경험이 부족한 경우 어려움을 겪을 수 있음; 16kg 기종은 이미 일정 수준의 작업 안전 의식이 필요; 초보자에게 친화적이지 않음.
+
+## Overview
+
+Berkeley Humanoid Lite is an open-source lightweight humanoid robot initiated by UC Berkeley's Hybrid Robotics Group (Koushil Sreenath's team) and the SLICE Lab. It is part of the BAIR Commons HIC repository, with the paper arXiv:2504.17249 (2025-04). The robot stands 0.8 m tall, weighs 16 kg, and has 22 active degrees of freedom (6 per leg, 5 per arm). The total BOM costs approximately $4,312 when sourced in the US and approximately $3,236 when sourced in China, with the official promotional claim of "under $5,000" (source: research archive berkeley-humanoid-lite.md, same below).
+
+In terms of licensing, the code is under the MIT License, while other assets such as CAD files are under CC BY-SA 4.0. The project's cost-effectiveness ranks among the top tier of open-source humanoids: the GitHub repository `HybridRobotics/Berkeley-Humanoid-Lite` has approximately 1,417 stars / 215 forks (snapshot as of 2026-07-01, active), with a Discord community and WeChat group. All structural components can be manufactured using a standard desktop FDM printer (PLA), with an assembly cycle of about 3 days (off-the-shelf parts arrive within a week, printing takes about a week).
+
+## Content
+
+### Key Parameters
+
+| Item | Value | Source |
+|---|---|---|
+| Height / Weight | 0.8 m / 16 kg | Paper arXiv:2504.17249 |
+| Active Degrees of Freedom | 22 (legs 6×2, arms 5×2) | Technical report comparison table |
+| Hardware Cost (BOM) | US approximately $4,312 / China approximately $3,236 (official claim sub-$5,000) | EECS-2025-207 technical report |
+| Main Controller | Intel N95 mini PC (approximately $129) | Paper |
+| Communication | One CAN 2.0 bus per limb (1 Mbps), actuators and IMU at 250 Hz | Paper |
+| Sensors | BNO085 IMU (connected via USB through Arduino); SteamVR base stations + controllers for teleoperation | Paper |
+| Battery | 6S 4000 mAh LiPo, approximately 30 minutes of runtime | Paper |
+| Beginner Friendliness | 3.5 / 5 (assessment from research archive) | Research archive |
+
+### Actuator Design
+
+- Two variants of custom quasi-direct-drive actuators: 6512 (10 units) and 5010 (12 units), centered around 3D-printed cycloidal reducers, with all structural components manufacturable using a desktop FDM printer (PLA).
+- The 6512 actuator BOM is approximately $188 (US) / $157 (China): MAD Components M6C12 150KV drone brushless motor ($129) + ST B-G431B-ESC1 driver board ($19) + AS5600 magnetic encoder ($3) + bearings/fasteners/printed parts.
+- The cycloidal gears distribute load across multiple teeth, and the paper validates the reliability of plastic gears through 60-hour endurance testing; compatible with third-party drivers such as Moteus / ODrive / VESC.
+- A single CAN bus supports up to 64 devices, facilitating reconfiguration into quadruped/biped/centaur forms; an adult-sized extended configuration (7-DOF legs + dexterous hands) is also available.
+
+### Software Stack
+
+- Training and simulation are based on NVIDIA Isaac Lab with an organized directory structure, providing URDF / MJCF / USD description formats, supporting policy training and sim2sim validation.
+- RL locomotion control policies achieve zero-shot sim-to-real transfer; the deployment code `berkeley_humanoid_lite_lowlevel` is low-level C code for the real robot, independent of the training stack, and can be deployed by simply copying it to the robot.
+- Supports motion capture and SteamVR teleoperation of both arms (demonstrations include solving a Rubik's cube, writing, and stacking blocks).
+
+### Target Audience
+
+- Suitable for: individuals/labs with some hands-on ability aiming to research RL locomotion control—for $4–5k, you can build a 22-DOF humanoid capable of RL walking, with complete documentation + BOM + print files and an active community.
+- Barriers: you need to print the cycloidal reducers yourself, assemble 22 actuators, solder the CAN bus, and flash FOC firmware; those lacking embedded systems and 3D printing experience may get stuck; the 16 kg platform already requires a certain awareness of operational safety; not beginner-friendly.

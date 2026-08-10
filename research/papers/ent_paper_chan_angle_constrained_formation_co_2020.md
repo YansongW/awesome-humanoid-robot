@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2005.04694v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2005.04694v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (532 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,26 @@ In this letter, we investigate the formation control problem of mobile robots mo
 ## Content
 In this letter, we investigate the formation control problem of mobile robots moving in the plane where, instead of assuming robots to be simple points, each robot is assumed to have the form of a disk with equal radius. Based on interior angle measurements of the neighboring robots' disk, which can be obtained from low-cost vision sensors, we propose a gradient-based distributed control law and show the exponential convergence property of the associated error system. By construction, the proposed control law has the appealing property of ensuring collision avoidance between neighboring robots. We also present simulation results for a team of four circular mobile robots forming a rectangular shape.
 
-## 개요
-본 논문에서는 평면상에서 이동하는 모바일 로봇의 포메이션 제어 문제를 연구하며, 로봇을 단순한 점으로 가정하는 대신 각 로봇이 동일한 반지름을 가진 원반 형태를 갖는다고 가정한다. 저비용 비전 센서로부터 얻을 수 있는 이웃 로봇 원반의 내각 측정값을 기반으로, 기울기 기반 분산 제어 법칙을 제안하고 관련 오차 시스템의 지수 수렴 특성을 보인다. 제안된 제어 법칙은 구성상 이웃 로봇 간 충돌 회피를 보장하는 장점을 가진다. 또한 직사각형 형태를 형성하는 4개의 원형 모바일 로봇 팀에 대한 시뮬레이션 결과를 제시한다.
-
-## 핵심 내용
-본 논문에서는 평면상에서 이동하는 모바일 로봇의 포메이션 제어 문제를 연구하며, 로봇을 단순한 점으로 가정하는 대신 각 로봇이 동일한 반지름을 가진 원반 형태를 갖는다고 가정한다. 저비용 비전 센서로부터 얻을 수 있는 이웃 로봇 원반의 내각 측정값을 기반으로, 기울기 기반 분산 제어 법칙을 제안하고 관련 오차 시스템의 지수 수렴 특성을 보인다. 제안된 제어 법칙은 구성상 이웃 로봇 간 충돌 회피를 보장하는 장점을 가진다. 또한 직사각형 형태를 형성하는 4개의 원형 모바일 로봇 팀에 대한 시뮬레이션 결과를 제시한다.
-
 ## 参考
 - http://arxiv.org/abs/2005.04694v1
+
+## 개요
+이 연구는 로봇을 질점이 아닌 동일한 반지름을 가진 원판으로 모델링하며, 저비용 시각 센서를 통해 인접 로봇 원판의 내각 정보를 측정합니다. 이러한 각도 측정값을 기반으로 설계된 그래디언트 제어 법칙은 로봇이 원하는 강성 편대를 형성하도록 유도하며, 동시에 인접 로봇 간의 충돌을 내재적으로 방지합니다. 이론적 분석은 오차 시스템이 지수 수렴 특성을 가짐을 증명하며, 네 대의 원형 로봇으로 구성된 직사각형 편대 시뮬레이션을 통해 방법의 유효성을 검증합니다.
+
+## 핵심 내용
+### 문제 모델링
+- 평면 이동 로봇을 전통적인 질점 모델과 달리 동일한 반지름을 가진 원판으로 모델링
+- 각 로봇은 시각 센서를 통해 인접 로봇 원판의 내각 측정값(interior angle measurements)을 획득
+
+### 제어 방법
+- 그래디언트 기반 분산 제어 법칙(gradient-based distributed control law) 제안
+- 제어 입력은 인접 로봇의 내각/방위 측정값에만 의존하며, 전역 위치 정보가 필요 없음
+- 제어 법칙 설계는 추가적인 포텐셜 함수 없이 충돌 회피 메커니즘을 자연스럽게 포함
+
+### 이론적 분석
+- 관련 오차 시스템의 국소 지수 수렴성(local exponential convergence) 증명
+- 수렴성 분석은 오차 동역학의 선형화 방법에 기반
+
+### 시뮬레이션 검증
+- 네 대의 원형 이동 로봇을 사용한 직사각형 편대 시뮬레이션 수행
+- 시뮬레이션 결과는 편대 형성 및 충돌 회피 측면에서 제어 법칙의 유효성을 검증

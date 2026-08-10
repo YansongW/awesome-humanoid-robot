@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.18963v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.18963v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (796 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,26 @@ Sprout 由 Fauna Robotics 开发，旨在填补当前人形机器人领域的两
 ## Overview
 Recent advances in learned control, large-scale simulation, and generative models have accelerated progress toward general-purpose robotic controllers, yet the field still lacks platforms suitable for safe, expressive, long-term deployment in human environments. Most existing humanoids are either closed industrial systems or academic prototypes that are difficult to deploy and operate around people, limiting progress in robotics. We introduce Sprout, a developer platform designed to address these limitations through an emphasis on safety, expressivity, and developer accessibility. Sprout adopts a lightweight form factor with compliant control, limited joint torques, and soft exteriors to support safe operation in shared human spaces. The platform integrates whole-body control, manipulation with integrated grippers, and virtual-reality-based teleoperation within a unified hardware-software stack. An expressive head further enables social interaction -- a domain that remains underexplored on most utilitarian humanoids. By lowering physical and technical barriers to deployment, Sprout expands access to capable humanoid platforms and provides a practical basis for developing embodied intelligence in real human environments.
 
-## 개요
-학습 제어, 대규모 시뮬레이션 및 생성 모델의 최근 발전은 범용 로봇 제어기를 향한 진전을 가속화했지만, 인간 환경에서 안전하고 표현력이 풍부하며 장기간 배포하기에 적합한 플랫폼은 여전히 부족합니다. 대부분의 기존 휴머노이드는 폐쇄형 산업 시스템이거나 사람 주변에서 배포 및 운영이 어려운 학술 프로토타입에 불과하여 로봇 공학의 발전을 제한합니다. 우리는 안전성, 표현력 및 개발자 접근성을 강조하여 이러한 한계를 해결하도록 설계된 개발자 플랫폼인 Sprout을 소개합니다. Sprout은 경량 폼팩터를 채택하여 순응 제어, 제한된 관절 토크 및 부드러운 외관을 통해 공유 인간 공간에서 안전한 작동을 지원합니다. 이 플랫폼은 전신 제어, 통합 그리퍼를 이용한 조작, 가상 현실 기반 원격 조작을 통합 하드웨어-소프트웨어 스택 내에 통합합니다. 표현력이 풍부한 헤드는 대부분의 실용적인 휴머노이드에서 아직 충분히 탐구되지 않은 영역인 사회적 상호작용을 가능하게 합니다. 배포에 대한 물리적 및 기술적 장벽을 낮춤으로써 Sprout은 유능한 휴머노이드 플랫폼에 대한 접근성을 확대하고 실제 인간 환경에서 체화된 지능을 개발하기 위한 실용적인 기반을 제공합니다.
-
-## 핵심 내용
-학습 제어, 대규모 시뮬레이션 및 생성 모델의 최근 발전은 범용 로봇 제어기를 향한 진전을 가속화했지만, 인간 환경에서 안전하고 표현력이 풍부하며 장기간 배포하기에 적합한 플랫폼은 여전히 부족합니다. 대부분의 기존 휴머노이드는 폐쇄형 산업 시스템이거나 사람 주변에서 배포 및 운영이 어려운 학술 프로토타입에 불과하여 로봇 공학의 발전을 제한합니다. 우리는 안전성, 표현력 및 개발자 접근성을 강조하여 이러한 한계를 해결하도록 설계된 개발자 플랫폼인 Sprout을 소개합니다. Sprout은 경량 폼팩터를 채택하여 순응 제어, 제한된 관절 토크 및 부드러운 외관을 통해 공유 인간 공간에서 안전한 작동을 지원합니다. 이 플랫폼은 전신 제어, 통합 그리퍼를 이용한 조작, 가상 현실 기반 원격 조작을 통합 하드웨어-소프트웨어 스택 내에 통합합니다. 표현력이 풍부한 헤드는 대부분의 실용적인 휴머노이드에서 아직 충분히 탐구되지 않은 영역인 사회적 상호작용을 가능하게 합니다. 배포에 대한 물리적 및 기술적 장벽을 낮춤으로써 Sprout은 유능한 휴머노이드 플랫폼에 대한 접근성을 확대하고 실제 인간 환경에서 체화된 지능을 개발하기 위한 실용적인 기반을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.18963v1
+
+## 개요
+Sprout는 기존 휴머노이드 로봇이 인간 환경에서 안전하고 장기적으로 배포되기 어려운 문제점을 해결하기 위해, 경량화된 본체, 제한된 관절 토크, 부드러운 외부 셸 디자인을 채택하여 인간과 공존할 때의 물리적 안전성을 보장합니다. 이 플랫폼은 전신 제어, 통합 그리퍼 조작, 가상현실 기반 원격 조작 기능을 통합하고, 감정 표현이 가능한 헤드 부품을 탑재하여 사회적 상호작용을 지원합니다. 배포의 물리적·기술적 장벽을 낮춤으로써, Sprout는 실제 인간 환경에서 구현 지능을 개발하기 위한 실용적인 기반을 제공합니다.
+
+## 핵심 내용
+### 플랫폼 포지셔닝 및 설계 철학
+Sprout는 Fauna Robotics가 개발했으며, 현재 휴머노이드 로봇 분야의 두 가지 공백, 즉 폐쇄형 산업 시스템과 배포가 어려운 학술 프로토타입을 메우는 것을 목표로 합니다. 설계의 핵심은 세 가지 키워드를 중심으로 합니다: **안전성**, **표현력**, **개발자 접근성**.
+
+### 하드웨어 및 안전 특성
+- **경량화 구조**: 키 1.07미터, 무게 22.7kg으로 실내 환경에서 이동이 용이합니다.
+- **순응 제어**: 관절 토크 제한과 부드러운 외부 셸을 통해 충돌 부상 위험을 낮추고, 공유 인간 공간에서 안전하게 작동할 수 있도록 지원합니다.
+- **통합 그리퍼**: 말단 실행기가 로봇 팔에 직접 통합되어 추가 도구 없이 파지 및 조작 작업을 완료할 수 있습니다.
+
+### 소프트웨어 및 상호작용 능력
+- **모듈형 ROS 2 소프트웨어 스택**: 표준화된 개발 인터페이스를 제공하여 커뮤니티 확장과 알고리즘 통합을 용이하게 합니다.
+- **VR 원격 조작**: 가상현실 장치를 통한 원격 제어를 지원하여 복잡한 작업의 실행 장벽을 낮춥니다.
+- **고밀도 SLAM**: 고정밀 환경 인식과 실시간 지도 구축을 구현하여 자율 내비게이션과 장애물 회피를 지원합니다.
+- **표현 가능한 헤드**: 얼굴 표정과 동작을 통해 사회적 상호작용 능력을 강화하여, 기존 휴머노이드 로봇의 인간-로봇 상호작용 분야의 부족함을 보완합니다.
+
+### 실험 설정 및 결론
+논문은 구체적인 실험 데이터를 제공하지 않지만, Sprout가 통합 하드웨어-소프트웨어 스택을 통해 전신 제어, 조작, 원격 조작을 재사용 가능한 개발 플랫폼으로 통합한다는 점을 강조합니다. 핵심 결론은 물리적(경량화, 순응성) 및 기술적(ROS 2, VR 인터페이스) 이중 장벽을 낮춤으로써, Sprout가 실제 인간 환경에서 구현 지능을 개발하기 위한 더 넓은 접근성 기반을 제공할 수 있다는 것입니다.

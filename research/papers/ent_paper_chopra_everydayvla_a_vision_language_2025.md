@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.05397v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.05397v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (843 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,31 @@ EveryDayVLA 通过低成本硬件与鲁棒动作预测框架的结合，首次�
 ## Overview
 While Vision-Language-Action (VLA) models map visual inputs and language instructions directly to robot actions, they often rely on costly hardware and struggle in novel or cluttered scenes. We introduce EverydayVLA, a 6-DOF manipulator that can be assembled for under $300, capable of modest payloads and workspace. A single unified model jointly outputs discrete and continuous actions, and our adaptive-horizon ensemble monitors motion uncertainty to trigger on-the-fly re-planning for safe, reliable operation. On LIBERO, EverydayVLA matches state-of-the-art success rates, and in real-world tests it outperforms prior methods by 49% in-distribution and 34.9% out-of-distribution. By combining a state-of-the-art VLA with cost-effective hardware, EverydayVLA democratizes access to a robotic foundation model and paves the way for economical use in homes and research labs alike. Experiment videos and details: https://everydayvla.github.io/
 
-## 개요
-Vision-Language-Action(VLA) 모델은 시각 입력과 언어 명령을 로봇 동작에 직접 매핑하지만, 종종 고가의 하드웨어에 의존하고 새로운 환경이나 복잡한 장면에서 어려움을 겪습니다. 우리는 300달러 미만으로 조립 가능하며 적당한 페이로드와 작업 공간을 갖춘 6-DOF 매니퓰레이터인 EverydayVLA를 소개합니다. 단일 통합 모델이 이산 동작과 연속 동작을 동시에 출력하며, 적응형 수평선 앙상블이 움직임 불확실성을 모니터링하여 안전하고 신뢰할 수 있는 운영을 위해 실시간 재계획을 트리거합니다. LIBERO에서 EverydayVLA는 최첨단 성공률과 일치하며, 실제 테스트에서는 분포 내에서 49%, 분포 외에서 34.9% 더 우수한 성능을 보입니다. 최첨단 VLA와 비용 효율적인 하드웨어를 결합함으로써 EverydayVLA는 로봇 기반 모델에 대한 접근성을 대중화하고 가정과 연구실에서 경제적으로 사용할 수 있는 길을 열어줍니다. 실험 비디오 및 세부 정보: https://everydayvla.github.io/
-
-## 핵심 내용
-Vision-Language-Action(VLA) 모델은 시각 입력과 언어 명령을 로봇 동작에 직접 매핑하지만, 종종 고가의 하드웨어에 의존하고 새로운 환경이나 복잡한 장면에서 어려움을 겪습니다. 우리는 300달러 미만으로 조립 가능하며 적당한 페이로드와 작업 공간을 갖춘 6-DOF 매니퓰레이터인 EverydayVLA를 소개합니다. 단일 통합 모델이 이산 동작과 연속 동작을 동시에 출력하며, 적응형 수평선 앙상블이 움직임 불확실성을 모니터링하여 안전하고 신뢰할 수 있는 운영을 위해 실시간 재계획을 트리거합니다. LIBERO에서 EverydayVLA는 최첨단 성공률과 일치하며, 실제 테스트에서는 분포 내에서 49%, 분포 외에서 34.9% 더 우수한 성능을 보입니다. 최첨단 VLA와 비용 효율적인 하드웨어를 결합함으로써 EverydayVLA는 로봇 기반 모델에 대한 접근성을 대중화하고 가정과 연구실에서 경제적으로 사용할 수 있는 길을 열어줍니다. 실험 비디오 및 세부 정보: https://everydayvla.github.io/
-
 ## 参考
 - http://arxiv.org/abs/2511.05397v1
+
+## 개요
+기존의 비전-언어-행동 모델은 고가의 하드웨어에 의존하며 새로운 시나리오에 대응하기 어렵다. EveryDayVLA는 6자유도 로봇 팔(총 비용 300달러 미만)과 통합 행동 예측 프레임워크를 설계하여 이러한 모순을 해결했다. 이 모델은 이산 행동과 연속 행동을 동시에 출력할 수 있으며, 적응형 시간 영역 통합 모듈을 활용해 운동 불확실성을 모니터링하고 필요 시 실시간 재계획을 트리거하여 안전하고 신뢰할 수 있는 조작을 보장한다. 실험 결과, 이 모델은 LIBERO 벤치마크에서 최고 수준의 성공률을 달성했으며, 실제 시나리오에서 분포 내 성능은 49%, 분포 외 성능은 34.9% 향상되었다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **통합 행동 예측**: 단일 모델이 이산 행동(예: 파지/배치)과 연속 행동(예: 관절 각도)을 동시에 출력하여 다중 모델 캐스케이드로 인한 오류 누적을 방지한다.
+- **적응형 시간 영역 통합**: 운동 불확실성을 모니터링하여 행동 실행의 시간 창을 동적으로 조정한다. 불확실성이 임계값을 초과하면 실시간 재계획을 트리거하여 잘못된 행동 누적으로 인한 실패를 방지한다.
+
+### 하드웨어 설계
+- **저비용 로봇 팔**: 6자유도 설계, 총 비용 300달러 미만, 중간 부하와 작업 공간을 지원한다.
+- **모듈식 조립**: 모든 구성 요소는 시판 부품으로 조립 가능하며 맞춤형 가공이 필요 없다.
+
+### 실험 설정
+- **벤치마크 테스트**: LIBERO 벤치마크에서 평가하며, 10개의 일상 조작 작업(예: 문 열기, 물건 집기)을 포함한다.
+- **실제 시나리오**: 20개의 분포 내 작업(훈련 시나리오)과 10개의 분포 외 작업(새로운 물체, 새로운 배치)을 포함한다.
+
+### 주요 결과
+- **LIBERO 벤치마크**: 고가 하드웨어 기반 VLA 모델과 동등한 수준의 최고 성공률을 달성했다.
+- **실제 시나리오**:
+  - 분포 내 작업: 성공률 82.3%, 기존 방법 대비 49% 향상.
+  - 분포 외 작업: 성공률 67.1%, 기존 방법 대비 34.9% 향상.
+- **소거 실험**: 적응형 시간 영역 통합을 제거하면 분포 외 성공률이 21.4% 하락하여, 이 메커니즘이 일반화 능력에 미치는 핵심 역할을 검증했다.
+
+### 결론
+EveryDayVLA는 저비용 하드웨어와 견고한 행동 예측 프레임워크의 결합을 통해 VLA 모델의 경제적 장벽을 처음으로 300달러 미만으로 낮추었으며, 가정 및 실험실에서의 보급 응용을 위한 기반을 마련했다.

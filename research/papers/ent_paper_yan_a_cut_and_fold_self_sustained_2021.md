@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2108.08449v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2108.08449v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (816 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,29 @@ Origami-inspired robots are of particular interest given their potential for rap
 ## Content
 Origami-inspired robots are of particular interest given their potential for rapid and accessible design and fabrication of elegant designs and complex functionalities through cutting and folding of flexible 2D sheets or even strings, i.e., printable manufacturing. Yet, origami robots still require bulky, rigid components or electronics for actuation and control to accomplish tasks with reliability, programmability, ability to output substantial force, and durability, restricting their full potential. Here, we present a printable self-sustained compliant oscillator that generates periodic actuation using only constant electrical power, without discrete components or electronic control hardware. This oscillator is robust (9 out of 10 prototypes worked successfully on the first try), configurable (with tunable periods from 3 s to 12 s), powerful (can overcome hydrodynamic resistance to consistently propel a swimmer at ~1.6 body lengths/min), and long-lasting (~10^3 cycles); it enables driving macroscale devices with prescribed autonomous behaviors, e.g., locomotion and sequencing. This oscillator is also fully functional underwater and in high magnetic fields. Our analytical model characterizes essential parameters of the oscillation period, enabling programmable design of the oscillator. The printable oscillator can be integrated into origami-inspired systems seamlessly and monolithically, allowing rapid design and prototyping; the resulting integrated devices are lightweight, low-cost, compliant, electronic-free, and nonmagnetic, enabling practical applications in extreme areas. We demonstrate the functionalities of the oscillator with: (i) autonomous gliding of a printable swimmer, (ii) LED flashing, and (iii) fluid stirring. This work paves the way for realizing fully printable autonomous robots with a high integration of actuation and control.
 
-## 개요
-종이접기에서 영감을 받은 로봇은 유연한 2D 시트나 심지어 끈을 자르고 접는 방식(즉, 인쇄 가능한 제조)을 통해 우아한 디자인과 복잡한 기능을 빠르고 접근성 있게 설계 및 제작할 수 있는 잠재력 때문에 특히 주목받고 있습니다. 그러나 종이접기 로봇은 여전히 신뢰성, 프로그래밍 가능성, 상당한 힘 출력 능력, 내구성을 갖춘 작업을 수행하기 위해 부피가 크고 딱딱한 부품이나 전자 장치를 구동 및 제어에 필요로 하여, 그 잠재력을 완전히 발휘하지 못하고 있습니다. 여기서 우리는 개별 부품이나 전자 제어 하드웨어 없이 일정한 전력만으로 주기적인 구동을 생성하는 인쇄 가능한 자립형 순응 발진기를 제시합니다. 이 발진기는 견고하며(10개 프로토타입 중 9개가 첫 시도에 성공), 구성 가능하고(3초에서 12초까지 조정 가능한 주기), 강력하며(유체 저항을 극복하여 수영체를 약 1.6 체장/분으로 일관되게 추진), 오래 지속됩니다(~10^3 사이클). 이를 통해 이동 및 순서화와 같은 규정된 자율 행동을 가진 거시적 장치를 구동할 수 있습니다. 이 발진기는 수중 및 높은 자기장에서도 완전히 작동합니다. 우리의 분석 모델은 발진 주기의 필수 매개변수를 특성화하여 발진기의 프로그래밍 가능한 설계를 가능하게 합니다. 인쇄 가능한 발진기는 종이접기에서 영감을 받은 시스템에 매끄럽고 단일체로 통합되어 빠른 설계 및 프로토타이핑을 허용하며, 결과적으로 통합된 장치는 가볍고, 저렴하며, 순응적이고, 전자 장치가 없으며, 비자성체여서 극한 환경에서 실용적인 응용이 가능합니다. 우리는 발진기의 기능을 (i) 인쇄 가능한 수영체의 자율 활공, (ii) LED 점멸, (iii) 유체 교반을 통해 시연합니다. 이 연구는 구동과 제어의 높은 통합을 갖춘 완전히 인쇄 가능한 자율 로봇을 실현하는 길을 열어줍니다.
-
-## 핵심 내용
-종이접기에서 영감을 받은 로봇은 유연한 2D 시트나 심지어 끈을 자르고 접는 방식(즉, 인쇄 가능한 제조)을 통해 우아한 디자인과 복잡한 기능을 빠르고 접근성 있게 설계 및 제작할 수 있는 잠재력 때문에 특히 주목받고 있습니다. 그러나 종이접기 로봇은 여전히 신뢰성, 프로그래밍 가능성, 상당한 힘 출력 능력, 내구성을 갖춘 작업을 수행하기 위해 부피가 크고 딱딱한 부품이나 전자 장치를 구동 및 제어에 필요로 하여, 그 잠재력을 완전히 발휘하지 못하고 있습니다. 여기서 우리는 개별 부품이나 전자 제어 하드웨어 없이 일정한 전력만으로 주기적인 구동을 생성하는 인쇄 가능한 자립형 순응 발진기를 제시합니다. 이 발진기는 견고하며(10개 프로토타입 중 9개가 첫 시도에 성공), 구성 가능하고(3초에서 12초까지 조정 가능한 주기), 강력하며(유체 저항을 극복하여 수영체를 약 1.6 체장/분으로 일관되게 추진), 오래 지속됩니다(~10^3 사이클). 이를 통해 이동 및 순서화와 같은 규정된 자율 행동을 가진 거시적 장치를 구동할 수 있습니다. 이 발진기는 수중 및 높은 자기장에서도 완전히 작동합니다. 우리의 분석 모델은 발진 주기의 필수 매개변수를 특성화하여 발진기의 프로그래밍 가능한 설계를 가능하게 합니다. 인쇄 가능한 발진기는 종이접기에서 영감을 받은 시스템에 매끄럽고 단일체로 통합되어 빠른 설계 및 프로토타이핑을 허용하며, 결과적으로 통합된 장치는 가볍고, 저렴하며, 순응적이고, 전자 장치가 없으며, 비자성체여서 극한 환경에서 실용적인 응용이 가능합니다. 우리는 발진기의 기능을 (i) 인쇄 가능한 수영체의 자율 활공, (ii) LED 점멸, (iii) 유체 교반을 통해 시연합니다. 이 연구는 구동과 제어의 높은 통합을 갖춘 완전히 인쇄 가능한 자율 로봇을 실현하는 길을 열어줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2108.08449v1
+
+## 개요
+이 연구는 종이접기 로봇이 무겁고 딱딱한 부품이나 전자 제어에 의존하는 문제를 해결하기 위해, 완전히 인쇄 가능한 유연한 발진기를 제안한다. 핵심 혁신은 쌍안정 좌굴 빔과 CSCP 열작동기의 기계적 결합을 활용하여 일정 전류에서 주기적 운동으로의 자율적 전환을 실현하는 것이다. 발진기는 해석 모델을 통해 주기 매개변수를 프로그래밍 가능하게 설계할 수 있으며, 종이접기 시스템과의 원활한 통합을 지원한다. 최종 소자는 경량, 저비용, 유연성, 무전자 부품, 비자성 특성을 갖는다. 실험은 자율 수영기, LED 점멸, 유체 교반에서의 기능을 입증하여 전인쇄 자율 로봇의 기반을 마련한다.
+
+## 핵심 내용
+### 방법 및 구조
+- **핵심 구성 요소**: 발진기는 기계적으로 결합된 두 개의 자가 개폐 스위치로 구성되며, 각 스위치는 쌍안정 좌굴 빔(기계적 쌍안정성 제공)과 전도성 초나선 폴리머(CSCP) 열작동기(줄 열로 변형 구동)를 포함한다.
+- **작동 메커니즘**: 일정 전류가 CSCP 작동기를 가열하여 수축시키고 좌굴 빔의 안정 상태 전환을 유발한다. 기계적 결합으로 두 스위치가 교대로 열리고 닫히며 자립 발진을 형성한다.
+- **인쇄 가능한 제조**: 모든 구성 요소는 유연한 2D 시트나 와이어를 절단하고 접어서 구현되며, 전통적인 전자 조립이 필요 없다.
+
+### 실험 설정 및 주요 성능
+- **견고성**: 10개 프로토타입 중 9개가 첫 실행에서 성공하여 성공률 90%를 기록했다.
+- **구성 가능성**: CSCP 길이나 좌굴 빔 기하 매개변수를 조정하여 발진 주기를 3초에서 12초 범위로 조절할 수 있다.
+- **출력 성능**: 수영기가 유체 저항을 극복하고 약 1.6체장/분의 속도로 지속 전진한다.
+- **내구성**: 약 10^3회 사이클 동안 안정적으로 작동한다.
+- **환경 적응성**: 완전히 수중 및 고자기장(예: MRI 환경)에서 정상 작동한다.
+
+### 응용 시연
+- **자율 수영기**: 발진기가 유연한 지느러미를 구동하여 자율 활주를 구현한다.
+- **LED 점멸**: 발진기의 주기적 개폐로 LED 점멸을 제어한다.
+- **유체 교반**: 발진기가 교반 날개를 구동하여 액체 혼합을 실현한다.
+
+### 결론
+이 연구는 기계-열 결합 설계를 통해 분리된 전자 부품에 대한 의존성을 제거하고, 인쇄 가능하고 프로그래밍 가능한 자율 발진기를 구현했다. 해석 모델은 주기 매개변수에 대한 설계 지침을 제공하여 종이접기 로봇에 통합할 수 있게 하며, 저비용, 경량화, 무전자 자율 시스템의 실용화를 촉진한다.

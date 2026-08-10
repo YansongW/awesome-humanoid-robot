@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.01067v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.01067v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1240 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -74,11 +75,33 @@ sources:
 ## Overview
 Large behavior models have shown strong dexterous manipulation capabilities by extending imitation learning to large-scale training on multi-task robot data, yet their generalization remains limited by the insufficient robot data coverage. To expand this coverage without costly additional data collection, recent work relies on co-training: jointly learning from target robot data and heterogeneous data modalities. However, how different co-training data modalities and strategies affect policy performance remains poorly understood. We present a large-scale empirical study examining five co-training data modalities: standard vision-language data, dense language annotations for robot trajectories, cross-embodiment robot data, human videos, and discrete robot action tokens across single- and multi-phase training strategies. Our study leverages 4,000 hours of robot and human manipulation data and 50M vision-language samples to train vision-language-action policies. We evaluate 89 policies over 58,000 simulation rollouts and 2,835 real-world rollouts. Our results show that co-training with forms of vision-language and cross-embodiment robot data substantially improves generalization to distribution shifts, unseen tasks, and language following, while discrete action token variants yield no significant benefits. Combining effective modalities produces cumulative gains and enables rapid adaptation to unseen long-horizon dexterous tasks via fine-tuning. Training exclusively on robot data degrades the visiolinguistic understanding of the vision-language model backbone, while co-training with effective modalities restores these capabilities. Explicitly conditioning action generation on chain-of-thought traces learned from co-training data does not improve performance in our simulation benchmark. Together, these results provide practical guidance for building scalable generalist robot policies.
 
-## 개요
-대규모 행동 모델(Large behavior models)은 모방 학습을 다중 작업 로봇 데이터에 대한 대규모 훈련으로 확장함으로써 강력한 정밀 조작 능력을 보여주었지만, 일반화 능력은 여전히 불충분한 로봇 데이터 범위로 인해 제한됩니다. 비용이 많이 드는 추가 데이터 수집 없이 이 범위를 확장하기 위해 최근 연구는 공동 훈련(co-training)에 의존합니다: 대상 로봇 데이터와 이질적인 데이터 양식(heterogeneous data modalities)으로부터 공동으로 학습하는 것입니다. 그러나 서로 다른 공동 훈련 데이터 양식과 전략이 정책 성능에 어떻게 영향을 미치는지는 아직 잘 이해되지 않고 있습니다. 우리는 다섯 가지 공동 훈련 데이터 양식(표준 시각-언어 데이터, 로봇 궤적에 대한 밀집 언어 주석, 교차 구현 로봇 데이터, 인간 비디오, 이산 로봇 행동 토큰)을 단일 단계 및 다단계 훈련 전략에 걸쳐 조사하는 대규모 경험적 연구를 제시합니다. 본 연구는 4,000시간의 로봇 및 인간 조작 데이터와 5천만 개의 시각-언어 샘플을 활용하여 시각-언어-행동 정책을 훈련합니다. 우리는 58,000회의 시뮬레이션 롤아웃과 2,835회의 실제 롤아웃에 걸쳐 89개의 정책을 평가합니다. 결과에 따르면 시각-언어 및 교차 구현 로봇 데이터 형태의 공동 훈련은 분포 변화, 보지 못한 작업, 언어 따르기(언어 지시 수행)에 대한 일반화를 크게 향상시키는 반면, 이산 행동 토큰 변형은 유의미한 이점을 제공하지 않습니다. 효과적인 양식을 결합하면 누적 이득이 발생하고 미세 조정을 통해 보지 못한 장기 정밀 작업에 대한 빠른 적응이 가능해집니다. 로봇 데이터만으로 훈련하면 시각-언어 모델 백본의 시각-언어 이해 능력이 저하되지만, 효과적인 양식으로 공동 훈련하면 이러한 능력이 회복됩니다. 공동 훈련 데이터에서 학습된 사고 사슬(chain-of-thought) 추적에 행동 생성을 명시적으로 조건화하는 것은 시뮬레이션 벤치마크에서 성능을 향상시키지 않습니다. 종합적으로, 이러한 결과는 확장 가능한 범용 로봇 정책을 구축하기 위한 실용적인 지침을 제공합니다.
-
-## 핵심 내용
-대규모 행동 모델(Large behavior models)은 모방 학습을 다중 작업 로봇 데이터에 대한 대규모 훈련으로 확장함으로써 강력한 정밀 조작 능력을 보여주었지만, 일반화 능력은 여전히 불충분한 로봇 데이터 범위로 인해 제한됩니다. 비용이 많이 드는 추가 데이터 수집 없이 이 범위를 확장하기 위해 최근 연구는 공동 훈련(co-training)에 의존합니다: 대상 로봇 데이터와 이질적인 데이터 양식(heterogeneous data modalities)으로부터 공동으로 학습하는 것입니다. 그러나 서로 다른 공동 훈련 데이터 양식과 전략이 정책 성능에 어떻게 영향을 미치는지는 아직 잘 이해되지 않고 있습니다. 우리는 다섯 가지 공동 훈련 데이터 양식(표준 시각-언어 데이터, 로봇 궤적에 대한 밀집 언어 주석, 교차 구현 로봇 데이터, 인간 비디오, 이산 로봇 행동 토큰)을 단일 단계 및 다단계 훈련 전략에 걸쳐 조사하는 대규모 경험적 연구를 제시합니다. 본 연구는 4,000시간의 로봇 및 인간 조작 데이터와 5천만 개의 시각-언어 샘플을 활용하여 시각-언어-행동 정책을 훈련합니다. 우리는 58,000회의 시뮬레이션 롤아웃과 2,835회의 실제 롤아웃에 걸쳐 89개의 정책을 평가합니다. 결과에 따르면 시각-언어 및 교차 구현 로봇 데이터 형태의 공동 훈련은 분포 변화, 보지 못한 작업, 언어 따르기(언어 지시 수행)에 대한 일반화를 크게 향상시키는 반면, 이산 행동 토큰 변형은 유의미한 이점을 제공하지 않습니다. 효과적인 양식을 결합하면 누적 이득이 발생하고 미세 조정을 통해 보지 못한 장기 정밀 작업에 대한 빠른 적응이 가능해집니다. 로봇 데이터만으로 훈련하면 시각-언어 모델 백본의 시각-언어 이해 능력이 저하되지만, 효과적인 양식으로 공동 훈련하면 이러한 능력이 회복됩니다. 공동 훈련 데이터에서 학습된 사고 사슬(chain-of-thought) 추적에 행동 생성을 명시적으로 조건화하는 것은 시뮬레이션 벤치마크에서 성능을 향상시키지 않습니다. 종합적으로, 이러한 결과는 확장 가능한 범용 로봇 정책을 구축하기 위한 실용적인 지침을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.01067v1
+
+## 개요
+이 연구는 대규모 행동 모델이 로봇 데이터 커버리지 부족으로 인해 발생하는 일반화 능력 제한 문제를 해결하는 것을 목표로 한다. 연구진은 협동 훈련(co-training) 방법을 통해 목표 로봇 데이터와 다양한 이종 데이터 모달리티를 결합하고, 다섯 가지 데이터 모달리티와 단일/다단계 훈련 전략의 효과를 체계적으로 비교했다. 실험에는 4000시간의 로봇 및 인간 조작 데이터, 5000만 개의 시각-언어 샘플이 사용되었으며, 89개의 정책을 훈련하고 5만 8000회 이상의 시뮬레이션 및 2835회의 실제 세계 평가에서 검증했다. 결과는 시각-언어 데이터 및 교차 체현 로봇 데이터와의 협동 훈련이 분포 이동, 미지의 작업, 언어 명령에 대한 모델의 일반화 능력을 크게 향상시키는 반면, 이산 동작 토큰 변형은 뚜렷한 이점이 없음을 보여준다. 유효한 모달리티의 조합은 누적 이득을 생성할 수 있으며, 미세 조정을 통해 미지의 장기간 정밀 조작 작업에 빠르게 적응할 수 있다. 로봇 데이터만으로 훈련하면 시각-언어 모델 백본의 시각-언어 이해 능력이 손상되지만, 유효한 모달리티의 협동 훈련은 이러한 능력을 회복할 수 있다. 시뮬레이션 벤치마크에서 협동 훈련 데이터로 학습된 사고 사슬(chain-of-thought)을 명시적으로 조건화한 동작 생성은 성능을 향상시키지 못했다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+대규모 행동 모델은 모방 학습을 다중 작업 로봇 데이터의 대규모 훈련으로 확장함으로써 강력한 정밀 조작 능력을 보여주었다. 그러나 일반화 능력은 로봇 데이터 커버리지 부족으로 인해 제한된다. 비용이 많이 드는 데이터 수집을 늘리지 않고 커버리지를 확장하기 위해 최근 연구는 협동 훈련(co-training), 즉 목표 로봇 데이터와 이종 데이터 모달리티에서 공동 학습에 의존한다. 그러나 서로 다른 협동 훈련 데이터 모달리티와 정책이 정책 성능에 어떻게 영향을 미치는지는 여전히 불분명하다.
+
+### 실험 설정
+- **데이터 모달리티**: 다섯 가지 협동 훈련 데이터 모달리티가 체계적으로 연구되었다:
+  - 표준 시각-언어 데이터(vision-language data)
+  - 로봇 궤적의 밀집 언어 주석(dense language annotations)
+  - 교차 체현 로봇 데이터(cross-embodiment robot data)
+  - 인간 비디오(human videos)
+  - 이산 로봇 동작 토큰(discrete robot action tokens)
+- **훈련 전략**: 단일 단계 및 다단계 훈련 전략.
+- **데이터 규모**: 4000시간의 로봇 및 인간 조작 데이터, 5000만 개의 시각-언어 샘플.
+- **평가 규모**: 89개의 정책, 5만 8000회 이상의 시뮬레이션 평가 및 2835회의 실제 세계 평가.
+
+### 핵심 발견
+- **유효한 모달리티**: 시각-언어 데이터 및 교차 체현 로봇 데이터와의 협동 훈련은 분포 이동, 미지의 작업, 언어 명령에 대한 모델의 일반화 능력을 크게 향상시켰다.
+- **무효한 모달리티**: 이산 동작 토큰 변형은 뚜렷한 성능 향상을 가져오지 못했다.
+- **누적 이득**: 유효한 모달리티의 조합은 누적 이득을 생성할 수 있으며, 미세 조정을 통해 미지의 장기간 정밀 조작 작업에 빠르게 적응할 수 있다.
+- **시각-언어 능력**: 로봇 데이터만으로 훈련하면 시각-언어 모델 백본의 시각-언어 이해 능력이 손상되지만, 유효한 모달리티의 협동 훈련은 이러한 능력을 회복할 수 있다.
+- **사고 사슬(chain-of-thought)**: 시뮬레이션 벤치마크에서 협동 훈련 데이터로 학습된 사고 사슬을 명시적으로 조건화한 동작 생성은 성능을 향상시키지 못했다.
+
+### 결론
+이러한 결과는 확장 가능한 범용 로봇 정책 구축을 위한 실용적인 지침을 제공한다.

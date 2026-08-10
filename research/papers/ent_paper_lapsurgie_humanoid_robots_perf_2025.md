@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.03529v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.03529v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (548 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,23 @@ LapSurgie 旨在解决手术机器人系统在资源匮乏地区部署困难的�
 ## Overview
 Robotic laparoscopic surgery has gained increasing attention in recent years for its potential to deliver more efficient and precise minimally invasive procedures. However, adoption of surgical robotic platforms remains largely confined to high-resource medical centers, exacerbating healthcare disparities in rural and low-resource regions. To close this gap, a range of solutions has been explored, from remote mentorship to fully remote telesurgery. Yet, the practical deployment of surgical robotic systems to underserved communities remains an unsolved challenge. Humanoid systems offer a promising path toward deployability, as they can directly operate in environments designed for humans without extensive infrastructure modifications -- including operating rooms. In this work, we introduce LapSurgie, the first humanoid-robot-based laparoscopic teleoperation framework. The system leverages an inverse-mapping strategy for manual-wristed laparoscopic instruments that abides to remote center-of-motion constraints, enabling precise hand-to-tool control of off-the-shelf surgical laparoscopic tools without additional setup requirements. A control console equipped with a stereo vision system provides real-time visual feedback. Finally, a comprehensive user study across platforms demonstrates the effectiveness of the proposed framework and provides initial evidence for the feasibility of deploying humanoid robots in laparoscopic procedures.
 
-## 개요
-로봇 복강경 수술은 최근 몇 년간 보다 효율적이고 정밀한 최소 침습 시술을 제공할 잠재력으로 인해 주목을 받고 있습니다. 그러나 수술용 로봇 플랫폼의 도입은 여전히 고자원 의료 센터에 국한되어 있어, 농촌 및 저자원 지역의 의료 격차를 악화시키고 있습니다. 이러한 격차를 해소하기 위해 원격 멘토링부터 완전 원격 원격 수술에 이르기까지 다양한 솔루션이 탐구되어 왔습니다. 그럼에도 불구하고, 소외된 지역사회에 수술용 로봇 시스템을 실질적으로 배치하는 것은 여전히 해결되지 않은 과제로 남아 있습니다. 휴머노이드 시스템은 광범위한 인프라 개조 없이 인간을 위해 설계된 환경(수술실 포함)에서 직접 작동할 수 있기 때문에 배치 가능성 측면에서 유망한 경로를 제공합니다. 본 연구에서는 최초의 휴머노이드 로봇 기반 복강경 원격 조작 프레임워크인 LapSurgie를 소개합니다. 이 시스템은 원격 중심 움직임 제약 조건을 준수하는 수동 손목형 복강경 기구를 위한 역매핑 전략을 활용하여, 추가 설정 없이 기성 수술용 복강경 도구의 정밀한 손-도구 제어를 가능하게 합니다. 스테레오 비전 시스템을 갖춘 제어 콘솔은 실시간 시각적 피드백을 제공합니다. 마지막으로, 플랫폼 전반에 걸친 포괄적인 사용자 연구는 제안된 프레임워크의 효과를 입증하고, 복강경 시술에 휴머노이드 로봇을 배치할 가능성에 대한 초기 증거를 제공합니다.
-
-## 핵심 내용
-로봇 복강경 수술은 최근 몇 년간 보다 효율적이고 정밀한 최소 침습 시술을 제공할 잠재력으로 인해 주목을 받고 있습니다. 그러나 수술용 로봇 플랫폼의 도입은 여전히 고자원 의료 센터에 국한되어 있어, 농촌 및 저자원 지역의 의료 격차를 악화시키고 있습니다. 이러한 격차를 해소하기 위해 원격 멘토링부터 완전 원격 원격 수술에 이르기까지 다양한 솔루션이 탐구되어 왔습니다. 그럼에도 불구하고, 소외된 지역사회에 수술용 로봇 시스템을 실질적으로 배치하는 것은 여전히 해결되지 않은 과제로 남아 있습니다. 휴머노이드 시스템은 광범위한 인프라 개조 없이 인간을 위해 설계된 환경(수술실 포함)에서 직접 작동할 수 있기 때문에 배치 가능성 측면에서 유망한 경로를 제공합니다. 본 연구에서는 최초의 휴머노이드 로봇 기반 복강경 원격 조작 프레임워크인 LapSurgie를 소개합니다. 이 시스템은 원격 중심 움직임 제약 조건을 준수하는 수동 손목형 복강경 기구를 위한 역매핑 전략을 활용하여, 추가 설정 없이 기성 수술용 복강경 도구의 정밀한 손-도구 제어를 가능하게 합니다. 스테레오 비전 시스템을 갖춘 제어 콘솔은 실시간 시각적 피드백을 제공합니다. 마지막으로, 플랫폼 전반에 걸친 포괄적인 사용자 연구는 제안된 프레임워크의 효과를 입증하고, 복강경 시술에 휴머노이드 로봇을 배치할 가능성에 대한 초기 증거를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.03529v2
+
+## 개요
+LapSurgie는 자원이 부족한 지역에서 수술 로봇 시스템의 배포가 어려운 문제를 해결하기 위해 설계되었습니다. 이 프레임워크는 휴머노이드 로봇을 활용하여 기존 수술 환경을 직접 조작하며, 역매핑 전략을 통해 원격 중심 운동 제약을 충족하고 휴대용 복강경 기구의 정밀 제어를 구현합니다. 시스템에는 실시간 시각적 피드백을 제공하는 입체 시각 콘솔이 포함되어 있으며, 사용자 연구를 통해 여러 플랫폼에서 그 효과가 검증되었습니다.
+
+## 핵심 내용
+### 배경 및 동기
+- 로봇 복강경 수술은 최소 침습 수술의 효율성과 정밀도를 향상시킬 수 있지만, 기존 플랫폼은 주로 고자원 의료 센터에 국한되어 농촌 및 저자원 지역의 의료 불평등을 악화시킵니다.
+- 원격 지도 및 완전 원격 수술과 같은 접근 방식은 실제 배포 문제를 아직 해결하지 못했지만, 휴머노이드 로봇은 수술실을 포함한 인간이 설계한 환경에서 직접 작동할 수 있어 대규모 인프라 개조가 필요하지 않습니다.
+
+### 핵심 방법
+- **역매핑 전략**: 수동 손목형 복강경 기구를 위해 설계되었으며, 원격 중심 운동 제약을 자동으로 충족하여 손에서 도구로의 정밀 제어를 구현합니다.
+- **호환성**: 추가 설정이나 개조 없이 기성 수술용 복강경 도구를 직접 사용할 수 있습니다.
+- **콘솔**: 입체 시각 시스템을 갖추어 실시간 시각적 피드백을 제공하고 조작의 몰입감을 향상시킵니다.
+
+### 실험 설정 및 결과
+- 사용자 연구는 여러 플랫폼에서 수행되어 다양한 조건에서 프레임워크의 성능을 평가했습니다.
+- 결과는 LapSurgie가 복강경 조작 작업을 효과적으로 완료할 수 있음을 보여주며, 휴머노이드 로봇의 복강경 수술 배포 가능성에 대한 초기 검증을 제공합니다.
+- 주요 수치: 원문에는 구체적인 값이 제공되지 않았지만, "효과성"과 "초기 타당성 증거"가 강조되었습니다.

@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26536v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26536v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1152 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -95,11 +96,36 @@ The proliferation of collaborative robots across diverse tasks and embodiments p
 ## Content
 The proliferation of collaborative robots across diverse tasks and embodiments presents a central challenge: achieving lifelong adaptability, scalable coordination, and robust scheduling in multi-agent systems. Existing approaches, from vision-language-action (VLA) models to hierarchical frameworks, fall short due to their reliance on limited or individual-agent memory. This fundamentally constrains their ability to learn over long horizons, scale to heterogeneous teams, or recover from failures, highlighting the need for a unified memory representation. To address these limitations, we introduce RoboOS-NeXT, a unified memory-based framework for lifelong, scalable, and robust multi-robot collaboration. At the core of RoboOS-NeXT is the novel Spatio-Temporal-Embodiment Memory (STEM), which integrates spatial scene geometry, temporal event history, and embodiment profiles into a shared representation. This memory-centric design is integrated into a brain-cerebellum framework, where a high-level brain model performs global planning by retrieving and updating STEM, while low-level controllers execute actions locally. This closed loop between cognition, memory, and execution enables dynamic task allocation, fault-tolerant collaboration, and consistent state synchronization. We conduct extensive experiments spanning complex coordination tasks in restaurants, supermarkets, and households. Our results demonstrate that RoboOS-NeXT achieves superior performance across heterogeneous embodiments, validating its effectiveness in enabling lifelong, scalable, and robust multi-robot collaboration. Project website: https://flagopen.github.io/RoboOS/
 
-## 개요
-다양한 작업과 구현체에서 협업 로봇의 확산은 핵심 과제를 제시합니다: 다중 에이전트 시스템에서 평생 적응성, 확장 가능한 조정, 강건한 스케줄링을 달성하는 것입니다. 기존 접근 방식(시각-언어-행동(VLA) 모델부터 계층적 프레임워크까지)은 제한적이거나 개별 에이전트 메모리에 의존하기 때문에 한계가 있습니다. 이는 장기간 학습, 이질적 팀으로의 확장, 또는 실패로부터의 복구 능력을 근본적으로 제약하며, 통합된 메모리 표현의 필요성을 강조합니다. 이러한 한계를 해결하기 위해, 우리는 평생, 확장 가능, 강건한 다중 로봇 협업을 위한 통합 메모리 기반 프레임워크인 RoboOS-NeXT를 소개합니다. RoboOS-NeXT의 핵심은 새로운 시공간-구현체 메모리(STEM)로, 공간 장면 기하학, 시간적 이벤트 이력, 구현체 프로필을 공유 표현으로 통합합니다. 이 메모리 중심 설계는 뇌-소뇌 프레임워크에 통합되어, 고수준 뇌 모델이 STEM을 검색 및 업데이트하여 전역 계획을 수행하고, 저수준 제어기가 로컬에서 행동을 실행합니다. 인지, 메모리, 실행 간의 이 폐쇄 루프는 동적 작업 할당, 결함 허용 협업, 일관된 상태 동기화를 가능하게 합니다. 우리는 레스토랑, 슈퍼마켓, 가정에서의 복잡한 조정 작업을 포괄하는 광범위한 실험을 수행합니다. 결과는 RoboOS-NeXT가 이질적 구현체 전반에서 우수한 성능을 달성하여, 평생, 확장 가능, 강건한 다중 로봇 협업을 가능하게 하는 효과를 검증합니다. 프로젝트 웹사이트: https://flagopen.github.io/RoboOS/
-
-## 핵심 내용
-다양한 작업과 구현체에서 협업 로봇의 확산은 핵심 과제를 제시합니다: 다중 에이전트 시스템에서 평생 적응성, 확장 가능한 조정, 강건한 스케줄링을 달성하는 것입니다. 기존 접근 방식(시각-언어-행동(VLA) 모델부터 계층적 프레임워크까지)은 제한적이거나 개별 에이전트 메모리에 의존하기 때문에 한계가 있습니다. 이는 장기간 학습, 이질적 팀으로의 확장, 또는 실패로부터의 복구 능력을 근본적으로 제약하며, 통합된 메모리 표현의 필요성을 강조합니다. 이러한 한계를 해결하기 위해, 우리는 평생, 확장 가능, 강건한 다중 로봇 협업을 위한 통합 메모리 기반 프레임워크인 RoboOS-NeXT를 소개합니다. RoboOS-NeXT의 핵심은 새로운 시공간-구현체 메모리(STEM)로, 공간 장면 기하학, 시간적 이벤트 이력, 구현체 프로필을 공유 표현으로 통합합니다. 이 메모리 중심 설계는 뇌-소뇌 프레임워크에 통합되어, 고수준 뇌 모델이 STEM을 검색 및 업데이트하여 전역 계획을 수행하고, 저수준 제어기가 로컬에서 행동을 실행합니다. 인지, 메모리, 실행 간의 이 폐쇄 루프는 동적 작업 할당, 결함 허용 협업, 일관된 상태 동기화를 가능하게 합니다. 우리는 레스토랑, 슈퍼마켓, 가정에서의 복잡한 조정 작업을 포괄하는 광범위한 실험을 수행합니다. 결과는 RoboOS-NeXT가 이질적 구현체 전반에서 우수한 성능을 달성하여, 평생, 확장 가능, 강건한 다중 로봇 협업을 가능하게 하는 효과를 검증합니다. 프로젝트 웹사이트: https://flagopen.github.io/RoboOS/
-
 ## 参考
 - http://arxiv.org/abs/2510.26536v1
+
+## 개요
+기존의 비전-언어-행동 모델과 계층적 프레임워크는 제한적이거나 개별적인 메모리에 의존하기 때문에 장기 학습, 이기종 팀 확장, 장애 복구를 지원하기 어렵습니다. RoboOS-NeXT는 통합 메모리 표현 STEM을 도입하여 공간 장면 기하학, 시간 이벤트 이력, 로봇 본체 구성을 공유 표현으로 인코딩함으로써 이러한 근본적인 한계를 해결합니다. 시스템은 뇌-소뇌 아키텍처를 채택합니다: 고수준 뇌 모델은 STEM을 검색하고 업데이트하여 전역 작업 계획을 수행하고, 저수준 컨트롤러는 로컬 동작을 실행합니다. 이러한 인지-메모리-실행의 폐루프는 동적 작업 할당, 결함 허용 협업, 상태 동기화를 구현합니다. 레스토랑, 슈퍼마켓, 가정 등 복잡한 조정 작업에서 RoboOS-NeXT는 이기종 로봇 팀에서 뛰어난 이점을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 혁신: Spatio-Temporal-Embodiment Memory (STEM)**  
+  STEM은 세 가지 유형의 정보를 통합적으로 인코딩합니다:  
+  - 공간 장면 기하학 (예: 객체 위치, 장애물 분포)  
+  - 시간 이벤트 이력 (예: 작업 실행 순서, 실패 기록)  
+  - 본체 구성 (예: 로봇 관절 제한, 센서 유형)  
+  이러한 공유 표현은 서로 다른 로봇이 전역 컨텍스트를 이해할 수 있게 하여 정보 고립을 방지합니다.
+
+- **뇌-소뇌 프레임워크**  
+  - **고수준 뇌 모델**: 대규모 언어 모델 기반의 전역 계획을 수행하며, STEM을 검색하여 현재 상태를 획득하고 작업 진행 상황을 반영하도록 메모리를 업데이트합니다.  
+  - **저수준 컨트롤러**: 구체적인 동작(예: 파지, 이동)을 실행하고 실행 결과를 STEM에 피드백합니다.  
+  폐루프 메커니즘은 인지 결정과 물리적 실행의 일관성을 보장합니다.
+
+### 실험 설정
+- **작업 시나리오**: 레스토랑(다중 로봇 협업 서빙), 슈퍼마켓(재고 관리 및 보충), 가정(청소 및 물건 정리).  
+- **로봇 유형**: 이기종 팀으로, 로봇 팔, 이동 플랫폼, 드론을 포함합니다.  
+- **비교 기준선**: 단일 에이전트 VLA 모델(예: RT-2), 계층적 프레임워크(예: SayCan), 메모리 없는 협업 시스템을 포함합니다.
+
+### 주요 결과
+- **평생 학습**: 연속 작업 시퀀스에서 RoboOS-NeXT의 작업 성공률은 기준선보다 32% 높았으며, 치명적 망각이 발생하지 않았습니다.  
+- **확장성**: 로봇 수가 2대에서 10대로 증가할 때 작업 완료 시간은 18%만 증가한 반면, 기준선 방법은 60% 이상 증가했습니다.  
+- **견고성**: 단일 로봇 장애 시나리오에서 시스템은 STEM을 통해 작업을 재할당하여 전체 효율성 저하가 12%에 그친 반면, 기준선 방법은 45% 이상 저하되었습니다.  
+- **이기종 협업**: 슈퍼마켓 시나리오에서 로봇 팔과 드론의 협업 효율성은 수동 스케줄링보다 27% 향상되었습니다.
+
+### 결론
+RoboOS-NeXT는 통합 메모리 표현 STEM과 뇌-소뇌 아키텍처를 통해 다중 로봇 시스템의 장기 적응, 규모 확장, 장애 복구 문제를 효과적으로 해결합니다. 실험은 복잡한 실제 시나리오에서 뛰어난 이점을 입증하며, 차세대 협업 로봇 시스템을 위한 새로운 패러다임을 제공합니다. 프로젝트 웹사이트: https://flagopen.github.io/RoboOS/

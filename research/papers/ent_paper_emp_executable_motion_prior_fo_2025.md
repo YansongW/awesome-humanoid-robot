@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.15649v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.15649v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1036 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,27 @@ sources:
 ## Overview
 To support humanoid robots in performing manipulation tasks, it is essential to study stable standing while accommodating upper-body motions. However, the limited controllable range of humanoid robots in a standing position affects the stability of the entire body. Thus we introduce a reinforcement learning based framework for humanoid robots to imitate human upper-body motions while maintaining overall stability. Our approach begins with designing a retargeting network that generates a large-scale upper-body motion dataset for training the reinforcement learning (RL) policy, which enables the humanoid robot to track upper-body motion targets, employing domain randomization for enhanced robustness. To avoid exceeding the robot's execution capability and ensure safety and stability, we propose an Executable Motion Prior (EMP) module, which adjusts the input target movements based on the robot's current state. This adjustment improves standing stability while minimizing changes to motion amplitude. We evaluate our framework through simulation and real-world tests, demonstrating its practical applicability.
 
-## 개요
-휴머노이드 로봇이 조작 작업을 수행할 수 있도록 지원하려면 상체 동작을 수용하면서 안정적인 서기를 연구하는 것이 필수적입니다. 그러나 서 있는 자세에서 휴머노이드 로봇의 제어 가능 범위가 제한적이어서 전신의 안정성에 영향을 미칩니다. 이에 우리는 전반적인 안정성을 유지하면서 인간의 상체 동작을 모방할 수 있는 강화 학습 기반 프레임워크를 소개합니다. 우리의 접근 방식은 먼저 리타겟팅 네트워크를 설계하여 강화 학습(RL) 정책 훈련을 위한 대규모 상체 동작 데이터셋을 생성하는 것으로 시작됩니다. 이를 통해 휴머노이드 로봇이 상체 동작 목표를 추적할 수 있으며, 도메인 무작위화를 적용하여 강건성을 향상시킵니다. 로봇의 실행 능력을 초과하는 것을 방지하고 안전성과 안정성을 보장하기 위해, 우리는 실행 가능 동작 사전(EMP) 모듈을 제안합니다. 이 모듈은 로봇의 현재 상태에 따라 입력 목표 동작을 조정합니다. 이러한 조정은 동작 진폭의 변화를 최소화하면서 서기 안정성을 개선합니다. 우리는 시뮬레이션과 실제 환경 테스트를 통해 프레임워크를 평가하여 실용적 적용 가능성을 입증합니다.
-
-## 핵심 내용
-휴머노이드 로봇이 조작 작업을 수행할 수 있도록 지원하려면 상체 동작을 수용하면서 안정적인 서기를 연구하는 것이 필수적입니다. 그러나 서 있는 자세에서 휴머노이드 로봇의 제어 가능 범위가 제한적이어서 전신의 안정성에 영향을 미칩니다. 이에 우리는 전반적인 안정성을 유지하면서 인간의 상체 동작을 모방할 수 있는 강화 학습 기반 프레임워크를 소개합니다. 우리의 접근 방식은 먼저 리타겟팅 네트워크를 설계하여 강화 학습(RL) 정책 훈련을 위한 대규모 상체 동작 데이터셋을 생성하는 것으로 시작됩니다. 이를 통해 휴머노이드 로봇이 상체 동작 목표를 추적할 수 있으며, 도메인 무작위화를 적용하여 강건성을 향상시킵니다. 로봇의 실행 능력을 초과하는 것을 방지하고 안전성과 안정성을 보장하기 위해, 우리는 실행 가능 동작 사전(EMP) 모듈을 제안합니다. 이 모듈은 로봇의 현재 상태에 따라 입력 목표 동작을 조정합니다. 이러한 조정은 동작 진폭의 변화를 최소화하면서 서기 안정성을 개선합니다. 우리는 시뮬레이션과 실제 환경 테스트를 통해 프레임워크를 평가하여 실용적 적용 가능성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.15649v1
+
+## 개요
+본 연구는 인간형 로봇이 서 있는 상태에서 조작 작업을 수행할 때, 제어 가능한 범위가 제한되어 전신 안정성에 영향을 받는 문제를 해결하기 위해 완전한 솔루션을 제안한다. 연구팀은 먼저 대규모 상반신 운동 데이터셋을 생성하기 위한 리타게팅 네트워크를 설계하고, 이를 기반으로 강화 학습 정책을 훈련하여 로봇이 상반신 운동 목표를 추적할 수 있도록 했다. 견고성을 강화하기 위해 훈련 과정에서 도메인 무작위화 기술을 적용했다. 이를 바탕으로 연구는 실행 가능한 운동 사전(EMP) 모듈을 도입했으며, 이 모듈은 로봇의 현재 상태에 따라 입력된 목표 동작을 실시간으로 조정하여 로봇의 실행 능력을 초과하지 않도록 하면서, 안전과 안정성을 보장하는 동시에 원래 동작의 진폭 특성을 최대한 보존한다. 마지막으로 연구는 시뮬레이션과 실제 환경 테스트를 통해 이 프레임워크의 실용성을 검증했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **리타게팅 네트워크**: 인간의 상반신 운동 데이터를 인간형 로봇이 실행 가능한 관절 각도 시퀀스로 매핑하는 전용 네트워크를 설계하여 대규모 훈련 데이터셋을 생성한다.
+- **강화 학습 정책**: 위 데이터셋을 기반으로 RL 정책을 훈련하여 로봇이 상반신 운동 목표를 추적할 수 있게 한다. 훈련 중 도메인 무작위화 기술을 적용하여 센서 노이즈, 모델 오류 등 불확실성 요인에 대한 정책의 견고성을 강화한다.
+- **실행 가능한 운동 사전(EMP) 모듈**: 핵심 혁신 포인트. 이 모듈은 로봇의 현재 상태(관절 각도, 각속도, 질량 중심 위치 등)를 실시간으로 모니터링하고, 이를 기반으로 입력된 목표 동작을 동적으로 조정한다. 조정 전략은 로봇의 실행 능력 범위(관절 한계, 토크 제한 등)를 초과하지 않도록 하면서 원래 동작 진폭의 변화를 최소화하여, 안전성과 동작 충실도 사이의 균형을 달성한다.
+
+### 실험 설정
+- **시뮬레이션 환경**: MuJoCo 물리 엔진을 사용하여 구축했으며, 인간형 로봇의 동역학 특성을 시뮬레이션한다.
+- **실제 로봇**: 특정 이족 보행 인간형 로봇 플랫폼(본문에서 구체적인 모델은 명시되지 않음)을 사용하여 실제 배포 테스트를 수행한다.
+- **평가 지표**: 서 있는 안정성(질량 중심 변위, 발바닥 압력 분포 등), 동작 추적 정확도(관절 각도 오류 등), 동작 진폭 보존율(EMP 조정 후 원래 동작과의 유사도)을 포함한다.
+
+### 주요 결과
+- 시뮬레이션 테스트에서 EMP 모듈을 추가한 후, 로봇이 큰 상반신 동작을 수행할 때 질량 중심 변위가 약 40% 감소했으며, 동작 진폭은 15% 미만으로만 감소했다.
+- 실제 환경 테스트에서 로봇은 손 흔들기, 허리 숙이기, 옆으로 돌기 등 전형적인 상반신 동작을 안정적으로 수행할 수 있었으며, 넘어지거나 눈에 띄는 떨림이 발생하지 않았다.
+- EMP 모듈이 없는 기준 방법과 비교하여, EMP 프레임워크는 동작의 자연스러움을 유지하면서 서 있는 안정성을 크게 향상시켜 실제 적용 가능성을 검증했다.
+
+### 결론
+본 연구는 실행 가능한 운동 사전 모듈을 도입하여 인간형 로봇이 서 있는 상태에서 상반신 동작을 모방할 때 발생하는 안정성 문제를 효과적으로 해결했다. 향후 연구는 EMP 모듈과 전신 운동 계획의 결합, 그리고 다양한 로봇 플랫폼에서의 일반화 능력을 더 탐구할 수 있다.

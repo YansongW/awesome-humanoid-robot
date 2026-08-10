@@ -35,7 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (490 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -61,9 +62,6 @@ Jaiveer Singh作为机器人软件工程师，领导团队致力于机器人基�
 - 团队专注于减少开发周期，使机器人能更快投入实际使用。
 - 通过基础设施优化，Jaiveer Singh帮助开发者更高效地迭代，从而加速机器人技术的落地。
 
-## Overview
-When Jaiveer Singh talks about robots, he doesn’t begin with spectacle. He begins with infrastructure: the boards inside machines, the software that lets developers see through a robot&#8217;s cameras and the engineering required before a robot can leave a demo floor to do something useful. As a robotics software engineer who leads the team behind [&#8230;]
-
 ## 参考
 - https://blogs.nvidia.com/blog/nvidia-life-jaiveer-singh/
 
@@ -83,3 +81,20 @@ Jaiveer Singh은 로봇 소프트웨어 엔지니어로서 팀을 이끌며 로�
 ### 주요 수치 및 결론
 - 팀은 개발 주기를 단축하여 로봇이 더 빨리 실제 사용에 투입될 수 있도록 하는 데 집중합니다.
 - 인프라 최적화를 통해 Jaiveer Singh은 개발자가 더 효율적으로 반복 작업을 수행할 수 있도록 지원하여 로봇 기술의 실용화를 가속화합니다.
+
+## Overview
+Jaiveer Singh, as a robotics software engineer, leads a team focused on the development of robotics infrastructure. He does not start with flashy features but instead concentrates on the circuit boards inside the machine, software that allows developers to observe through the robot's camera, and the engineering required for robots to leave demonstration environments and perform real-world tasks. The core of his work is to lower development barriers and accelerate the process from prototype to deployment, thereby helping robots and developers move faster.
+
+## Content
+### Core Approach
+- Jaiveer Singh emphasizes starting with infrastructure rather than directly pursuing "spectacular" appearances or functionalities of robots.
+- He focuses on the internal hardware (such as circuit boards) and software (such as developer tools for camera perspectives) to ensure a stable and reliable foundation.
+
+### Engineering Focus
+- Software Level: Developing interfaces that allow developers to "see through the robot's eyes," simplifying debugging and operation.
+- Hardware Level: Optimizing circuit board design to enhance the robot's response speed and reliability.
+- Deployment Phase: Addressing engineering challenges in transitioning robots from demonstration environments to real-world application scenarios, such as environmental adaptability and task practicality.
+
+### Key Figures and Conclusions
+- The team focuses on reducing development cycles so that robots can be put into practical use more quickly.
+- Through infrastructure optimization, Jaiveer Singh helps developers iterate more efficiently, thereby accelerating the implementation of robotics technology.

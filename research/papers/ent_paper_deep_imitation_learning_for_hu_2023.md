@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2309.01952v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2309.01952v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (805 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,29 @@ TRILL 框架的核心在于解决人形机器人移动操作（loco-manipulation
 ## Overview
 We tackle the problem of developing humanoid loco-manipulation skills with deep imitation learning. The difficulty of collecting task demonstrations and training policies for humanoids with a high degree of freedom presents substantial challenges. We introduce TRILL, a data-efficient framework for training humanoid loco-manipulation policies from human demonstrations. In this framework, we collect human demonstration data through an intuitive Virtual Reality (VR) interface. We employ the whole-body control formulation to transform task-space commands by human operators into the robot's joint-torque actuation while stabilizing its dynamics. By employing high-level action abstractions tailored for humanoid loco-manipulation, our method can efficiently learn complex sensorimotor skills. We demonstrate the effectiveness of TRILL in simulation and on a real-world robot for performing various loco-manipulation tasks. Videos and additional materials can be found on the project page: https://ut-austin-rpl.github.io/TRILL.
 
-## 개요
-본 연구는 심층 모방 학습을 통해 인간형 로봇의 이동-조작 기술을 개발하는 문제를 다룹니다. 높은 자유도를 가진 인간형 로봇을 위한 작업 시연 데이터 수집 및 정책 훈련의 어려움은 상당한 도전 과제를 제시합니다. 우리는 인간 시연으로부터 인간형 로봇의 이동-조작 정책을 훈련하기 위한 데이터 효율적 프레임워크인 TRILL을 소개합니다. 이 프레임워크에서는 직관적인 가상 현실(VR) 인터페이스를 통해 인간 시연 데이터를 수집합니다. 전신 제어 공식을 사용하여 인간 운영자의 작업 공간 명령을 로봇의 관절 토크 구동으로 변환하면서 동역학을 안정화합니다. 인간형 로봇의 이동-조작에 맞춰진 고수준 동작 추상화를 활용함으로써, 본 방법은 복잡한 감각운동 기술을 효율적으로 학습할 수 있습니다. 우리는 시뮬레이션과 실제 로봇에서 다양한 이동-조작 작업을 수행하며 TRILL의 효과를 입증합니다. 비디오 및 추가 자료는 프로젝트 페이지에서 확인할 수 있습니다: https://ut-austin-rpl.github.io/TRILL.
-
-## 핵심 내용
-본 연구는 심층 모방 학습을 통해 인간형 로봇의 이동-조작 기술을 개발하는 문제를 다룹니다. 높은 자유도를 가진 인간형 로봇을 위한 작업 시연 데이터 수집 및 정책 훈련의 어려움은 상당한 도전 과제를 제시합니다. 우리는 인간 시연으로부터 인간형 로봇의 이동-조작 정책을 훈련하기 위한 데이터 효율적 프레임워크인 TRILL을 소개합니다. 이 프레임워크에서는 직관적인 가상 현실(VR) 인터페이스를 통해 인간 시연 데이터를 수집합니다. 전신 제어 공식을 사용하여 인간 운영자의 작업 공간 명령을 로봇의 관절 토크 구동으로 변환하면서 동역학을 안정화합니다. 인간형 로봇의 이동-조작에 맞춰진 고수준 동작 추상화를 활용함으로써, 본 방법은 복잡한 감각운동 기술을 효율적으로 학습할 수 있습니다. 우리는 시뮬레이션과 실제 로봇에서 다양한 이동-조작 작업을 수행하며 TRILL의 효과를 입증합니다. 비디오 및 추가 자료는 프로젝트 페이지에서 확인할 수 있습니다: https://ut-austin-rpl.github.io/TRILL.
-
 ## 参考
 - http://arxiv.org/abs/2309.01952v2
+
+## 개요
+인간형 로봇은 자유도가 매우 높아 작업 시연 수집과 정책 훈련이 어려운 문제를 해결하기 위해, TRILL 프레임워크는 데이터 효율적인 솔루션을 제공합니다. 이 프레임워크는 직관적인 VR 인터페이스를 통해 인간 시연 데이터를 수집하고, 전신 제어 공식을 사용하여 작업자의 작업 공간 명령을 로봇의 관절 토크 구동으로 변환하면서 동시에 그 동역학을 안정화합니다. 전신 이동 조작을 위해 설계된 고수준 동작 추상화를 사용함으로써, 이 방법은 복잡한 센서 운동 기술을 효율적으로 학습할 수 있습니다. TRILL의 효과는 시뮬레이션과 실제 로봇 모두에서 검증되었으며, 다양한 이동 조작 작업을 수행할 수 있습니다.
+
+## 핵심 내용
+### 방법 개요
+TRILL 프레임워크의 핵심은 인간형 로봇의 이동 조작(loco-manipulation) 정책 학습에서 발생하는 세 가지 주요 과제를 해결하는 데 있습니다: 높은 자유도로 인한 데이터 수집 어려움, 정책 훈련 효율성 저하, 그리고 복잡한 센서 운동 기술 습득입니다.
+
+### 데이터 수집 및 인터페이스
+- 직관적인 **VR 인터페이스**를 사용하여 인간 시연 데이터를 수집하며, 작업 진입 장벽을 낮춥니다.
+- 작업자는 VR 장치를 통해 작업 공간 명령을 내리며, 로봇 관절을 직접 조작할 필요가 없습니다.
+
+### 제어 및 학습 아키텍처
+- **전신 제어 공식**: 작업자의 작업 공간 명령을 로봇의 관절 토크 구동으로 변환하면서 동시에 그 동역학을 안정화하여 로봇의 균형과 안전을 보장합니다.
+- **고수준 동작 추상화**: 인간형 로봇의 이동 조작 작업을 위해 설계되었으며, 복잡한 동작을 학습 가능한 추상 단위로 분해하여 학습 효율을 향상시킵니다.
+- 심층 모방 학습(Deep Imitation Learning)을 통해 시연 데이터에서 센서 운동 기술을 직접 학습합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 환경**: 시뮬레이션 환경에서 TRILL 프레임워크의 타당성을 검증합니다.
+- **실제 로봇**: 실제 인간형 로봇에서 운반, 파지 등을 포함한 다양한 이동 조작 작업을 수행합니다.
+- **핵심 결론**: TRILL은 데이터 효율성에서 기존 방법보다 현저히 우수하며, 제한된 인간 시연에서 강건한 정책을 일반화할 수 있습니다.
+
+### 오픈소스 및 리소스
+- 프로젝트 코드는 오픈소스로 공개되었으며, 관련 비디오 및 추가 자료는 프로젝트 페이지에서 확인할 수 있습니다: https://ut-austin-rpl.github.io/TRILL

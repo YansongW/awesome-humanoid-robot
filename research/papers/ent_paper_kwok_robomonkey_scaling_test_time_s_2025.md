@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.17811v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.17811v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1031 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,25 @@ RoboMonkey 通过测试时采样与验证机制，在不修改 VLA 模型参数�
 ## Overview
 Vision-Language-Action (VLA) models have demonstrated remarkable capabilities in visuomotor control, yet ensuring their robustness in unstructured real-world environments remains a persistent challenge. In this paper, we investigate test-time scaling through the lens of sampling and verification as means to enhance the robustness and generalization of VLAs. We first demonstrate that the relationship between action error and the number of generated samples follows an exponentiated power law across a range of VLAs, indicating the existence of inference-time scaling laws. Building on these insights, we introduce RoboMonkey, a test-time scaling framework for VLAs. At deployment, RoboMonkey samples a small set of actions from a VLA, applies Gaussian perturbation and majority voting to construct an action proposal distribution, and then uses a Vision Language Model (VLM)-based verifier to select the optimal action. We propose a synthetic data generation pipeline for training such VLM-based action verifiers, and demonstrate that scaling the synthetic dataset consistently improves verification and downstream accuracy. Through extensive simulated and hardware experiments, we show that pairing existing VLAs with RoboMonkey yields significant performance gains, achieving a 25% absolute improvement on out-of-distribution tasks and 9% on in-distribution tasks. Additionally, when adapting to new robot setups, we show that fine-tuning both VLAs and action verifiers yields a 7% performance increase compared to fine-tuning VLAs alone.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 시각-운동 제어에서 놀라운 능력을 입증했지만, 구조화되지 않은 실제 환경에서의 견고성을 보장하는 것은 여전히 지속적인 과제로 남아 있습니다. 본 논문에서는 VLA의 견고성과 일반화 능력을 향상시키기 위한 수단으로 샘플링 및 검증을 통한 테스트 시간 스케일링을 조사합니다. 먼저, 다양한 VLA에서 동작 오류와 생성된 샘플 수 간의 관계가 지수화된 멱법칙을 따르며, 이는 추론 시간 스케일링 법칙의 존재를 시사함을 입증합니다. 이러한 통찰을 바탕으로 VLA를 위한 테스트 시간 스케일링 프레임워크인 RoboMonkey를 소개합니다. 배포 시 RoboMonkey는 VLA에서 소수의 동작을 샘플링하고, 가우시안 섭동과 다수결 투표를 적용하여 동작 제안 분포를 구성한 후, Vision Language Model (VLM) 기반 검증기를 사용하여 최적의 동작을 선택합니다. 우리는 이러한 VLM 기반 동작 검증기를 훈련하기 위한 합성 데이터 생성 파이프라인을 제안하고, 합성 데이터셋을 확장하면 검증 및 하위 작업 정확도가 지속적으로 향상됨을 입증합니다. 광범위한 시뮬레이션 및 하드웨어 실험을 통해 기존 VLA와 RoboMonkey를 결합하면 상당한 성능 향상을 얻을 수 있으며, 분포 외 작업에서 25%, 분포 내 작업에서 9%의 절대적 개선을 달성함을 보여줍니다. 또한, 새로운 로봇 설정에 적응할 때 VLA와 동작 검증기를 함께 미세 조정하면 VLA만 미세 조정하는 것보다 7%의 성능 향상을 얻을 수 있음을 입증합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 시각-운동 제어에서 놀라운 능력을 입증했지만, 구조화되지 않은 실제 환경에서의 견고성을 보장하는 것은 여전히 지속적인 과제로 남아 있습니다. 본 논문에서는 VLA의 견고성과 일반화 능력을 향상시키기 위한 수단으로 샘플링 및 검증을 통한 테스트 시간 스케일링을 조사합니다. 먼저, 다양한 VLA에서 동작 오류와 생성된 샘플 수 간의 관계가 지수화된 멱법칙을 따르며, 이는 추론 시간 스케일링 법칙의 존재를 시사함을 입증합니다. 이러한 통찰을 바탕으로 VLA를 위한 테스트 시간 스케일링 프레임워크인 RoboMonkey를 소개합니다. 배포 시 RoboMonkey는 VLA에서 소수의 동작을 샘플링하고, 가우시안 섭동과 다수결 투표를 적용하여 동작 제안 분포를 구성한 후, Vision Language Model (VLM) 기반 검증기를 사용하여 최적의 동작을 선택합니다. 우리는 이러한 VLM 기반 동작 검증기를 훈련하기 위한 합성 데이터 생성 파이프라인을 제안하고, 합성 데이터셋을 확장하면 검증 및 하위 작업 정확도가 지속적으로 향상됨을 입증합니다. 광범위한 시뮬레이션 및 하드웨어 실험을 통해 기존 VLA와 RoboMonkey를 결합하면 상당한 성능 향상을 얻을 수 있으며, 분포 외 작업에서 25%, 분포 내 작업에서 9%의 절대적 개선을 달성함을 보여줍니다. 또한, 새로운 로봇 설정에 적응할 때 VLA와 동작 검증기를 함께 미세 조정하면 VLA만 미세 조정하는 것보다 7%의 성능 향상을 얻을 수 있음을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.17811v2
+
+## 개요
+RoboMonkey는 비구조화된 실제 환경에서 VLA 모델의 견고성 문제를 해결하기 위해 테스트 시 확장 프레임워크를 제안합니다. 이 프레임워크는 먼저 동작 오류와 생성 샘플 수 사이에 지수 멱법칙 관계가 성립함을 검증하여 추론 시 확장 법칙의 존재를 밝힙니다. 배포 단계에서 RoboMonkey는 VLA에서 소량의 동작을 샘플링하고, 가우시안 교란과 다수결 투표를 통해 동작 제안 분포를 구성한 후, VLM 기반 검증기를 사용하여 최적의 동작을 선택합니다. 실험 결과, 이 방법은 분포 외 작업에서 25%의 절대적 향상을, 분포 내 작업에서 9%의 향상을 달성했으며, VLA와 검증기를 공동 미세 조정하면 추가로 7%의 성능 향상을 얻을 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+RoboMonkey의 테스트 시 확장 프레임워크는 세 가지 핵심 단계로 구성됩니다:
+- **동작 샘플링 및 교란**: 사전 훈련된 VLA에서 소량의 후보 동작을 샘플링하고, 각 동작에 가우시안 노이즈를 적용하여 교란 버전을 생성한 후, 다수결 투표를 통해 집계하여 동작 제안 분포를 형성합니다.
+- **VLM 검증기**: Vision Language Model을 검증기로 사용하여 제안 분포에서 최적의 동작을 선별합니다. 검증기는 합성 데이터 생성 파이프라인을 통해 훈련되며, 이 파이프라인은 다양한 난이도와 시나리오의 검증 샘플을 확장 생성할 수 있습니다.
+- **합성 데이터 생성**: 목표 위치, 장애물 구성, 조명 조건을 무작위화하여 다양한 검증 데이터를 생성하는 자동화된 프로세스를 제안하며, 데이터 규모는 검증기 성능과 양의 상관관계를 가집니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: 시뮬레이션 환경(예: MetaWorld, Franka Kitchen)과 실제 로봇 플랫폼(예: WidowX 250)에서 평가하며, 비교 기준에는 RT-2, Octo 등의 VLA 모델이 포함됩니다.
+- **분포 외 작업**: 보지 못한 객체, 레이아웃, 교란 조건에서 RoboMonkey는 VLA 성공률을 52%에서 77%로 향상시킵니다(절대적 향상 25%).
+- **분포 내 작업**: 표준 테스트 세트에서 성공률이 81%에서 90%로 향상됩니다(절대적 향상 9%).
+- **전이 학습**: 새로운 로봇 플랫폼으로 전이할 때, VLA와 검증기를 공동 미세 조정하면 VLA만 미세 조정하는 것보다 성능이 7% 높습니다(68%에서 75%로).
+- **확장 법칙**: 동작 오류와 샘플 수 N의 관계는 \( \text{Error} \propto N^{-\alpha} \)를 만족하며, 여기서 α는 0.3-0.6 사이로, 추론 시 확장 법칙의 존재를 검증합니다.
+
+### 결론
+RoboMonkey는 테스트 시 샘플링 및 검증 메커니즘을 통해 VLA 모델 파라미터를 수정하지 않고도 견고성을 크게 향상시킵니다. 합성 데이터 생성 파이프라인의 확장성은 실제 배포에 실용적인 솔루션을 제공하며, 공동 미세 조정 전략은 새로운 환경에 대한 모델의 적응성을 더욱 강화합니다.

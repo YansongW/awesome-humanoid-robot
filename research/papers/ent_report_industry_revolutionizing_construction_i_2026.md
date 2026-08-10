@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/09/revolutionizing-construction-introducing-the-worlds-first-fleet-capable-downward-drilling-robot-now-commercially-available-to-accelerate-data-center-construction/26823.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/09/revolutionizing-construction-introducing-the-worlds-first-fleet-capable-downward-drilling-robot-now-commercially-available-to-accelerate-data-center-construction/26823.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (333 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -78,13 +79,21 @@ sources:
 - The downward drilling robot delivers up to 10x faster drilling speeds than traditional methods and has reduced construction timelines by 190 weeks across 26 major projects.
 - The robot debuted in the market to overwhelming acclaim from construction professionals and leading media outlets, including Fast Company, which praised the robot.
 
-## 개요
-- 하향 굴착 로봇은 기존 방식보다 최대 10배 빠른 굴착 속도를 제공하며, 26개 주요 프로젝트에서 공사 기간을 총 190주 단축했습니다.
-- 이 로봇은 시장에 출시되자마자 건설 전문가들과 Fast Company를 포함한 주요 언론 매체로부터 압도적인 찬사를 받았습니다.
-
-## 핵심 내용
-- 하향 굴착 로봇은 기존 방식보다 최대 10배 빠른 굴착 속도를 제공하며, 26개 주요 프로젝트에서 공사 기간을 총 190주 단축했습니다.
-- 이 로봇은 시장에 출시되자마자 건설 전문가들과 Fast Company를 포함한 주요 언론 매체로부터 압도적인 찬사를 받았습니다.
-
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/07/09/revolutionizing-construction-introducing-the-worlds-first-fleet-capable-downward-drilling-robot-now-commercially-available-to-accelerate-data-center-construction/26823
+
+## 개요
+이 다운홀 드릴링 로봇은 업계 최초로 클러스터 배포를 지원하는 상용 제품으로, 데이터 센터 건설 가속화를 위해 설계되었습니다. 드릴링 속도는 기존 방식보다 10배 빠르며, 26개 대형 프로젝트에서 총 190주의 시공 시간을 절감했습니다. 로봇은 출시와 동시에 시공 전문가와 주요 미디어의 높은 평가를 받았으며, Fast Company는 "데이터 센터 건설을 대폭 가속화"할 수 있는 파괴적 잠재력을 지녔다고 극찬했습니다.
+
+## 핵심 내용
+### 핵심 성능
+- 드릴링 속도: 기존 방식보다 10배 빠름
+- 시공 효율: 26개 대형 프로젝트에서 총 190주의 시공 기간 단축
+
+### 시장 반응
+- 시공 전문가들의 폭넓은 호평 획득
+- Fast Company 등 주요 미디어가 "데이터 센터 건설을 대폭 가속화"할 수 있는 파괴적 잠재력으로 높이 평가
+
+### 적용 시나리오
+- 데이터 센터 건설 전용 설계
+- 클러스터 작업 지원, 여러 로봇을 동시에 배치하여 협업 가능

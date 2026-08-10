@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.21744v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.21744v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1009 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ FORGE-Tree 通过可插拔控制层解决了长时域操控中的轨迹漂移与
 ## Overview
 Long-horizon robot manipulation tasks remain challenging for Vision-Language-Action (VLA) policies due to drift and exposure bias, often denoise the entire trajectory with fixed hyperparameters, causing small geometric errors to compound across stages and offering no mechanism to allocate extra test-time compute where clearances are tight. To address these challenges, we introduce FORGE-Tree, a plug-in control layer that couples a stage-aligned Diffusion Forcing (DF) head with test-time Monte Carlo Tree Diffusion (MCTD). With a frozen VLA encoder, DF aligns timesteps to subtask stages; during inference we partially denoise only a target segment while keeping other tokens frozen, turning trajectory refinement into a sequence of local edits. We then apply Monte Carlo Tree Diffusion to select the next segment to refine. A scene graph supplies priors for expansion and geometry relation-aware scoring for rollouts, yielding tree-structured denoising whose performance scales with search budget while preserving the executed prefix. Evaluation on LIBERO, FORGE-Tree improves success rate by 13.4 to 17.2 pp over the native VLA baselines with both OpenVLA and Octo-Base. Gains remain consistent under comparable compute budgets, especially on long-horizon variants. Videos available at: https://taco-group.github.io/FORGE-Tree/
 
-## 개요
-장기간 로봇 조작 작업은 드리프트와 노출 편향으로 인해 Vision-Language-Action(VLA) 정책에 여전히 어려움을 겪고 있으며, 고정된 하이퍼파라미터로 전체 궤적을 노이즈 제거하는 경우가 많아 작은 기하학적 오류가 단계별로 누적되고, 간격이 좁은 곳에서 추가 테스트 시간 연산을 할당할 메커니즘이 제공되지 않습니다. 이러한 문제를 해결하기 위해, 우리는 단계 정렬 Diffusion Forcing(DF) 헤드와 테스트 시간 Monte Carlo Tree Diffusion(MCTD)을 결합한 플러그인 제어 계층인 FORGE-Tree를 소개합니다. 고정된 VLA 인코더를 사용하여 DF는 타임스텝을 하위 작업 단계에 정렬합니다. 추론 중에는 다른 토큰을 고정한 상태에서 대상 세그먼트만 부분적으로 노이즈 제거하여 궤적 개선을 일련의 로컬 편집으로 전환합니다. 그런 다음 Monte Carlo Tree Diffusion을 적용하여 개선할 다음 세그먼트를 선택합니다. 장면 그래프는 확장을 위한 사전 정보와 롤아웃을 위한 기하학적 관계 인식 점수를 제공하여, 실행된 접두사를 유지하면서 검색 예산에 따라 성능이 확장되는 트리 구조의 노이즈 제거를 생성합니다. LIBERO에서의 평가 결과, FORGE-Tree는 OpenVLA와 Octo-Base 모두에서 기본 VLA 기준선 대비 성공률을 13.4~17.2% 포인트 향상시킵니다. 이러한 개선은 비슷한 연산 예산 하에서도 일관되게 유지되며, 특히 장기간 변형에서 두드러집니다. 동영상은 다음에서 확인할 수 있습니다: https://taco-group.github.io/FORGE-Tree/
-
-## 핵심 내용
-장기간 로봇 조작 작업은 드리프트와 노출 편향으로 인해 Vision-Language-Action(VLA) 정책에 여전히 어려움을 겪고 있으며, 고정된 하이퍼파라미터로 전체 궤적을 노이즈 제거하는 경우가 많아 작은 기하학적 오류가 단계별로 누적되고, 간격이 좁은 곳에서 추가 테스트 시간 연산을 할당할 메커니즘이 제공되지 않습니다. 이러한 문제를 해결하기 위해, 우리는 단계 정렬 Diffusion Forcing(DF) 헤드와 테스트 시간 Monte Carlo Tree Diffusion(MCTD)을 결합한 플러그인 제어 계층인 FORGE-Tree를 소개합니다. 고정된 VLA 인코더를 사용하여 DF는 타임스텝을 하위 작업 단계에 정렬합니다. 추론 중에는 다른 토큰을 고정한 상태에서 대상 세그먼트만 부분적으로 노이즈 제거하여 궤적 개선을 일련의 로컬 편집으로 전환합니다. 그런 다음 Monte Carlo Tree Diffusion을 적용하여 개선할 다음 세그먼트를 선택합니다. 장면 그래프는 확장을 위한 사전 정보와 롤아웃을 위한 기하학적 관계 인식 점수를 제공하여, 실행된 접두사를 유지하면서 검색 예산에 따라 성능이 확장되는 트리 구조의 노이즈 제거를 생성합니다. LIBERO에서의 평가 결과, FORGE-Tree는 OpenVLA와 Octo-Base 모두에서 기본 VLA 기준선 대비 성공률을 13.4~17.2% 포인트 향상시킵니다. 이러한 개선은 비슷한 연산 예산 하에서도 일관되게 유지되며, 특히 장기간 변형에서 두드러집니다. 동영상은 다음에서 확인할 수 있습니다: https://taco-group.github.io/FORGE-Tree/
-
 ## 参考
 - http://arxiv.org/abs/2510.21744v1
+
+## 개요
+장시간 영역 로봇 조작 작업은 비전-언어-행동(VLA) 정책에 여전히 도전적이며, 주로 궤적 드리프트와 노출 편향에서 비롯됩니다——모델이 고정 하이퍼파라미터로 전체 궤적을 노이즈 제거하여 미세한 기하학적 오류가 단계 간에 누적되고, 좁은 간격에서 추가 테스트 시간 계산 자원을 할당하는 메커니즘이 부족합니다. FORGE-Tree는 플러그 가능한 제어 계층으로, 단계 정렬 Diffusion Forcing(DF) 헤드와 테스트 시간 몬테카를로 트리 확산(MCTD)을 결합합니다. 고정 VLA 인코더에서 DF는 시간 단계를 하위 작업 단계와 정렬합니다. 추론 시 목표 세그먼트만 부분적으로 노이즈 제거하고 다른 토큰은 동결하여 궤적 최적화를 일련의 로컬 편집으로 변환합니다. 이후 MCTD를 통해 다음 최적화할 세그먼트를 선택하고, 장면 그래프가 확장 사전 정보와 기하학적 관계 인식 점수를 제공하여 트리형 노이즈 제거 구조를 형성하며, 성능은 검색 예산이 증가함에 따라 향상되고 실행된 접두사를 유지합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **단계 정렬 Diffusion Forcing(DF) 헤드**: 고정 VLA 인코더를 기반으로 DF는 노이즈 제거 시간 단계를 하위 작업 단계와 정렬합니다. 추론 시 목표 세그먼트만 부분적으로 노이즈 제거하고 나머지 토큰은 동결 상태를 유지하여 궤적 최적화를 일련의 로컬 편집으로 분해합니다.
+- **몬테카를로 트리 확산(MCTD)**: 트리 검색을 통해 다음 최적화할 세그먼트를 선택합니다. 장면 그래프는 확장에 사전 지식을 제공하고 rollout 단계에서 기하학적 관계 인식 점수를 수행하여 트리형 노이즈 제거 구조를 형성합니다. 이 메커니즘은 성능이 검색 예산(예: 계산 시간)이 증가함에 따라 향상되도록 허용하면서 실행된 접두사 궤적을 유지합니다.
+
+### 실험 설정
+- **벤치마크**: LIBERO 벤치마크에서 평가하며, 다양한 장시간 영역 조작 작업을 포함합니다.
+- **기준 모델**: 원시 VLA 정책 OpenVLA 및 Octo-Base와 비교합니다.
+- **계산 예산**: 비교 가능한 계산 예산에서 성능 일관성을 검증하며, 특히 장시간 영역 변형 작업에 중점을 둡니다.
+
+### 주요 결과
+- **성공률 향상**: FORGE-Tree는 LIBERO에서 원시 VLA 기준선 대비 성공률을 13.4~17.2퍼센트 포인트 향상시킵니다.
+- **계산 효율성**: 비교 가능한 계산 예산에서 성능 이득이 안정적으로 유지되며, 장시간 영역 변형 작업에서 우위가 더 두드러집니다.
+- **비디오 데모**: 프로젝트 페이지 https://taco-group.github.io/FORGE-Tree/ 참조.
+
+### 결론
+FORGE-Tree는 플러그 가능한 제어 계층을 통해 장시간 영역 조작에서 궤적 드리프트와 노출 편향 문제를 해결하며, 트리형 노이즈 제거 구조가 테스트 시간에 계산 자원을 동적으로 할당하여 복잡한 작업에서 VLA 정책의 성공률과 견고성을 크게 향상시킵니다.

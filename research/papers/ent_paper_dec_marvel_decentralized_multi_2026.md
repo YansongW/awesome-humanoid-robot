@@ -53,8 +53,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09060v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09060v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1136 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -90,11 +91,29 @@ Dec-MARVEL 的核心思想是利用“偶然观察”实现无通信协调：每
 ## Overview
 Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal. A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL.
 
-## 개요
-다중 UAV 탐사는 종종 신뢰할 수 없는 통신, 제한된 시야 센싱(예: 경량 온보드 카메라), 그리고 각 로봇이 기지로 돌아갈 충분한 예산을 확보해야 하는 유한 이동 예산에 의해 제약을 받습니다. 본 논문에서는 방향성 센싱을 사용하는 통신 없는 팀을 위한 분산형 예산 인식 탐사 프레임워크인 Dec-MARVEL을 제시합니다. 각 로봇은 지도, 목표 또는 메시지를 교환하는 대신 우연한 관찰을 통해 협력합니다. 즉, 시야 내에 있는 동료의 궤적이 협력 신호 역할을 합니다. 그래프 어텐션 액터는 로컬 프론티어 기하학, 동료 움직임 및 예산 특징을 융합하여 복귀 가능한 웨이포인트-헤딩 행동을 선택합니다. 액터는 단계 조건부 비평가, 훈련 전용 작업 지향 특권 비평가, 그리고 혼합 기반 예산 커리큘럼으로 훈련됩니다. 세 가지 팀 규모(2, 4, 8대 로봇)와 세 가지 이동 예산(720, 800, 1024미터)을 포함한 900개의 보류된 시험에서 네 가지 기준선과 비교했을 때, Dec-MARVEL은 모든 9가지 팀 규모-예산 구성에서 가장 높거나 동등한 탐사율과 가장 낮은 센싱 중복을 달성합니다. 가장 엄격한 720m 예산 하에서 2, 4, 8대 로봇에 대해 각각 53%, 94%, 100%의 성공률을 기록하며, 이는 가장 강력한 기준선의 37%, 83%, 99%와 대비됩니다. 실제 로봇 실험을 통해 Dec-MARVEL의 시뮬레이션-실제 전환 및 실제 환경 배치 성공을 입증합니다.
-
-## 핵심 내용
-다중 UAV 탐사는 종종 신뢰할 수 없는 통신, 제한된 시야 센싱(예: 경량 온보드 카메라), 그리고 각 로봇이 기지로 돌아갈 충분한 예산을 확보해야 하는 유한 이동 예산에 의해 제약을 받습니다. 본 논문에서는 방향성 센싱을 사용하는 통신 없는 팀을 위한 분산형 예산 인식 탐사 프레임워크인 Dec-MARVEL을 제시합니다. 각 로봇은 지도, 목표 또는 메시지를 교환하는 대신 우연한 관찰을 통해 협력합니다. 즉, 시야 내에 있는 동료의 궤적이 협력 신호 역할을 합니다. 그래프 어텐션 액터는 로컬 프론티어 기하학, 동료 움직임 및 예산 특징을 융합하여 복귀 가능한 웨이포인트-헤딩 행동을 선택합니다. 액터는 단계 조건부 비평가, 훈련 전용 작업 지향 특권 비평가, 그리고 혼합 기반 예산 커리큘럼으로 훈련됩니다. 세 가지 팀 규모(2, 4, 8대 로봇)와 세 가지 이동 예산(720, 800, 1024미터)을 포함한 900개의 보류된 시험에서 네 가지 기준선과 비교했을 때, Dec-MARVEL은 모든 9가지 팀 규모-예산 구성에서 가장 높거나 동등한 탐사율과 가장 낮은 센싱 중복을 달성합니다. 가장 엄격한 720m 예산 하에서 2, 4, 8대 로봇에 대해 각각 53%, 94%, 100%의 성공률을 기록하며, 이는 가장 강력한 기준선의 37%, 83%, 99%와 대비됩니다. 실제 로봇 실험을 통해 Dec-MARVEL의 시뮬레이션-실제 전환 및 실제 환경 배치 성공을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09060v2
+
+## 개요
+Dec-MARVEL은 다중 드론 탐사에서 통신 불안정, 시야 제한, 그리고 제한된 이동 예산(복귀 에너지를 미리 확보해야 함)이라는 도전 과제를 해결합니다. 지도, 목표 또는 메시지 교환에 의존하지 않고, 각 로봇의 시야 내에서 우연히 관찰된 팀원의 궤적을 조정 신호로 활용합니다. 핵심은 그래프 어텐션 액터 네트워크로, 로컬 프론티어 기하학, 팀원 이동, 예산 특징을 융합하여 기지로 복귀할 수 있는 웨이포인트-방향 동작을 선택합니다. 훈련 과정은 단계 조건评论家, 훈련 전용 작업 지향 특권评论家, 그리고 혼합 기반 예산 커리큘럼을 사용합니다. 세 가지 팀 규모와 세 가지 예산을 포함한 900회의 실험에서 Dec-MARVEL은 모든 아홉 가지 구성에서 네 가지 기준 방법보다 우수했으며, 특히 720미터의 가장 빡빡한 예산에서 2, 4, 8 로봇의 성공률이 각각 53%, 94%, 100%에 달했습니다. 실제 로봇 실험은 시뮬레이션에서 실제 환경으로의 성공적인 전이와 배치를 검증했습니다.
+
+## 핵심 내용
+### 방법 개요
+Dec-MARVEL의 핵심 아이디어는 "우연한 관찰"을 통한 무통신 조정입니다: 각 로봇은 시야 내에서 관찰된 모든 팀원 궤적을 암묵적 조정 신호로 사용하여 명시적 지도나 메시지 교환을 피합니다. 이 프레임워크는 그래프 어텐션 네트워크(graph-attention actor)를 동작 선택기로 사용하며, 입력 특징은 다음과 같습니다:
+- **로컬 프론티어 기하학**: 로봇의 현재 시야 내 미탐사 영역 경계 정보.
+- **팀원 이동**: 시야 내에서 관찰된 팀원 궤적으로, 의도를 추론하는 데 사용.
+- **예산 특징**: 현재 남은 이동 예산으로, 선택된 동작이 기지로 복귀할 수 있도록 보장.
+
+### 훈련 전략
+액터 네트워크는 다음 메커니즘을 통해 훈련됩니다:
+- **단계 조건评论家(phase-conditioned critics)**: 탐사 단계에 따라 보상 신호를 조정.
+- **작업 지향 특권评论家(task-oriented privileged critic)**: 훈련 시에만 사용되며, 전역 정보를 기반으로 추가 감독을 제공.
+- **혼합 기반 예산 커리큘럼(mixture-based budget curriculum)**: 예산 제약의 난이도를 점진적으로 증가시켜 빡빡한 예산에서 모델의 견고성을 향상.
+
+### 실험 설정 및 결과
+- **실험 규모**: 900회의 보류 실험으로, 세 가지 팀 규모(2, 4, 8 로봇)와 세 가지 이동 예산(720, 800, 1024미터)을 포함.
+- **기준 비교**: 네 가지 기준 방법과 비교했을 때, Dec-MARVEL은 모든 아홉 가지 팀 규모-예산 구성에서 최고 또는 공동 최고의 탐사율과 가장 낮은 인식 중복을 달성.
+- **주요 수치**:
+  - 720미터의 가장 빡빡한 예산에서 2, 4, 8 로봇의 성공률은 각각 53%, 94%, 100%였으며, 가장 강력한 기준은 37%, 83%, 99%에 불과.
+  - 800미터와 1024미터 예산에서도 Dec-MARVEL은 우위를 유지.
+- **실물 검증**: 실제 로봇 실험은 시뮬레이션에서 실제 환경으로의 전이를 성공적으로 수행하여, Dec-MARVEL의 실제 환경 배치 가능성을 검증.

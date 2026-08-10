@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai_autonomous
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.02121v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.02121v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (649 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,27 @@ theoretical_depth:
 ## Overview
 Autonomous locomotion for mobile ground robots in unstructured environments such as waypoint navigation or flipper control requires a sufficiently accurate prediction of the robot-terrain interaction. Heuristics like occupancy grids or traversability maps are widely used but limit actions available to robots with active flippers as joint positions are not taken into account. We present a novel iterative geometric method to predict the 3D pose of mobile ground robots with active flippers on uneven ground with high accuracy and online planning capabilities. This is achieved by utilizing the ability of signed distance fields to represent surfaces with sub-voxel accuracy. The effectiveness of the presented approach is demonstrated on two different tracked robots in simulation and on a real platform. Compared to a tracking system as ground truth, our method predicts the robot position and orientation with an average accuracy of 3.11 cm and 3.91°, outperforming a recent heightmap-based approach. The implementation is made available as an open-source ROS package.
 
-## 개요
-비정형 환경에서 이동 지상 로봇의 자율 주행(예: 경유지 항법 또는 플리퍼 제어)은 로봇-지형 상호작용에 대한 충분히 정확한 예측을 필요로 합니다. 점유 격자(occupancy grids)나 주행 가능 지도(traversability maps)와 같은 휴리스틱이 널리 사용되지만, 관절 위치를 고려하지 않아 능동 플리퍼를 가진 로봇의 동작을 제한합니다. 본 논문에서는 능동 플리퍼를 가진 이동 지상 로봇의 3D 자세를 불균일 지형에서 높은 정확도와 온라인 계획 능력으로 예측하는 새로운 반복 기하학적 방법을 제시합니다. 이는 부호 거리 필드(signed distance fields)가 서브복셀 정밀도로 표면을 표현하는 능력을 활용하여 달성됩니다. 제안된 접근법의 효과는 시뮬레이션과 실제 플랫폼에서 두 가지 다른 궤도 로봇을 통해 입증되었습니다. 기준 실측값으로 추적 시스템과 비교했을 때, 우리 방법은 로봇 위치와 방향을 평균 3.11cm 및 3.91°의 정확도로 예측하여 최근 높이맵 기반 접근법보다 우수한 성능을 보였습니다. 구현은 오픈소스 ROS 패키지로 제공됩니다.
-
-## 핵심 내용
-비정형 환경에서 이동 지상 로봇의 자율 주행(예: 경유지 항법 또는 플리퍼 제어)은 로봇-지형 상호작용에 대한 충분히 정확한 예측을 필요로 합니다. 점유 격자(occupancy grids)나 주행 가능 지도(traversability maps)와 같은 휴리스틱이 널리 사용되지만, 관절 위치를 고려하지 않아 능동 플리퍼를 가진 로봇의 동작을 제한합니다. 본 논문에서는 능동 플리퍼를 가진 이동 지상 로봇의 3D 자세를 불균일 지형에서 높은 정확도와 온라인 계획 능력으로 예측하는 새로운 반복 기하학적 방법을 제시합니다. 이는 부호 거리 필드(signed distance fields)가 서브복셀 정밀도로 표면을 표현하는 능력을 활용하여 달성됩니다. 제안된 접근법의 효과는 시뮬레이션과 실제 플랫폼에서 두 가지 다른 궤도 로봇을 통해 입증되었습니다. 기준 실측값으로 추적 시스템과 비교했을 때, 우리 방법은 로봇 위치와 방향을 평균 3.11cm 및 3.91°의 정확도로 예측하여 최근 높이맵 기반 접근법보다 우수한 성능을 보였습니다. 구현은 오픈소스 ROS 패키지로 제공됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2405.02121v1
+
+## 개요
+비구조화 환경에서 이동형 지상 로봇의 자율 내비게이션 및 궤도 제어 문제에 대해, 기존의 점유 격자 또는 주행 가능성 지도 기반 휴리스틱 방법은 관절 위치를 고려하지 않아 능동 궤도 로봇의 동작 능력을 제한합니다. 본 논문은 부호 거리장(Signed Distance Fields)의 서브복셀 표면 표현 능력을 활용한 새로운 반복 기하학적 방법을 제안하며, 온라인 계획 시나리오에서 로봇의 3D 자세를 고정밀도로 예측합니다. 이 방법은 두 가지 서로 다른 궤도 로봇의 시뮬레이션 및 실제 플랫폼 실험에서 최근의 높이 맵 기반 방법보다 우수한 위치 및 방향 정밀도를 달성했습니다.
+
+## 핵심 내용
+### 방법 핵심
+- 유클리드 부호 거리장(Euclidean Signed Distance Field)의 서브복셀 정밀도 특성을 활용하여, 반복 기하학적 매칭을 통해 로봇 모델을 지형 표면에 "침강"시킵니다.
+- 입력은 로봇 관절 각도와 지형 SDF이며, 출력은 예측된 3D 자세(위치+방향)로 온라인 계획을 지원합니다.
+
+### 실험 설정
+- **플랫폼**: 두 가지 서로 다른 크기의 궤도 로봇(시뮬레이션+실제 플랫폼).
+- **비교 기준**: 높이 맵(heightmap) 기반 최근 방법.
+- **실측 시스템**: 모션 캡처 시스템(ground truth tracking system).
+
+### 주요 결과
+- **위치 정밀도**: 평균 오차 3.11 cm.
+- **자세 정밀도**: 평균 오차 3.91°.
+- **성능 비교**: 높이 맵 방법보다 현저히 우수하며, 특히 복잡한 지형에서 두드러집니다.
+
+### 결론 및 오픈소스
+- 이 방법은 능동 궤도 로봇의 비구조화 지형에서의 자세 예측을 위한 고정밀도, 저지연 솔루션을 제공합니다.
+- 구현은 오픈소스 ROS 패키지로 공개되어 커뮤니티의 재현 및 확장을 용이하게 합니다.

@@ -51,8 +51,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04880v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04880v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (898 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,24 @@ PRISM 通过端到端流水线，从单张图像和自然语言指令生成个�
 ## Overview
 Recent advances in large-scale pretrained vision-language-action models have improved robot policy learning, but directly deploying such policies in user-specific environments remains challenging due to limited generalization, which inevitably requires collecting a dataset tailored to the target environment. Teleoperation yields well-aligned data but is costly and difficult to scale, whereas simulation scales easily but struggles to resemble the target environment and generate task-specific trajectories. To meet both simultaneously, we propose PRISM, an end-to-end pipeline that generates personalized robotic datasets from a single image and a natural-language instruction. PRISM constructs digital cousin scenes that are semantically and geometrically aligned with the user environment yet diverse at the instance level, and synthesizes executable demonstrations without human teleoperation. Extensive experiments show that policies trained on PRISM-generated datasets outperform those trained on baseline-generated datasets on LIBERO and LIBERO-Plus, achieve up to 100\% success rate on three real-world manipulation tasks, and maintain stronger performance when evaluated in environments that differ from those seen during training.
 
-## 개요
-최근 대규모 사전 훈련된 시각-언어-행동 모델의 발전은 로봇 정책 학습을 개선했지만, 이러한 정책을 사용자별 환경에 직접 배포하는 것은 일반화의 한계로 인해 여전히 어려움이 있으며, 이는 필연적으로 대상 환경에 맞춤화된 데이터셋 수집을 필요로 합니다. 원격 조작은 정렬이 잘 된 데이터를 제공하지만 비용이 많이 들고 확장이 어려운 반면, 시뮬레이션은 확장이 용이하지만 대상 환경을 모사하고 작업별 궤적을 생성하는 데 어려움을 겪습니다. 이 두 가지를 동시에 충족하기 위해, 우리는 단일 이미지와 자연어 명령으로부터 개인화된 로봇 데이터셋을 생성하는 종단간 파이프라인인 PRISM을 제안합니다. PRISM은 사용자 환경과 의미론적 및 기하학적으로 정렬되면서도 인스턴스 수준에서 다양한 디지털 사촌 장면을 구성하고, 인간의 원격 조작 없이 실행 가능한 시연을 합성합니다. 광범위한 실험 결과, PRISM으로 생성된 데이터셋으로 훈련된 정책이 LIBERO 및 LIBERO-Plus에서 기준선 생성 데이터셋으로 훈련된 정책보다 우수한 성능을 보였으며, 세 가지 실제 조작 작업에서 최대 100% 성공률을 달성하고, 훈련 중에 보지 못한 환경에서 평가했을 때도 더 강력한 성능을 유지했습니다.
-
-## 핵심 내용
-최근 대규모 사전 훈련된 시각-언어-행동 모델의 발전은 로봇 정책 학습을 개선했지만, 이러한 정책을 사용자별 환경에 직접 배포하는 것은 일반화의 한계로 인해 여전히 어려움이 있으며, 이는 필연적으로 대상 환경에 맞춤화된 데이터셋 수집을 필요로 합니다. 원격 조작은 정렬이 잘 된 데이터를 제공하지만 비용이 많이 들고 확장이 어려운 반면, 시뮬레이션은 확장이 용이하지만 대상 환경을 모사하고 작업별 궤적을 생성하는 데 어려움을 겪습니다. 이 두 가지를 동시에 충족하기 위해, 우리는 단일 이미지와 자연어 명령으로부터 개인화된 로봇 데이터셋을 생성하는 종단간 파이프라인인 PRISM을 제안합니다. PRISM은 사용자 환경과 의미론적 및 기하학적으로 정렬되면서도 인스턴스 수준에서 다양한 디지털 사촌 장면을 구성하고, 인간의 원격 조작 없이 실행 가능한 시연을 합성합니다. 광범위한 실험 결과, PRISM으로 생성된 데이터셋으로 훈련된 정책이 LIBERO 및 LIBERO-Plus에서 기준선 생성 데이터셋으로 훈련된 정책보다 우수한 성능을 보였으며, 세 가지 실제 조작 작업에서 최대 100% 성공률을 달성하고, 훈련 중에 보지 못한 환경에서 평가했을 때도 더 강력한 성능을 유지했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04880v1
+
+## 개요
+PRISM은 로봇 정책 학습에서 개인화된 데이터셋 생성의 어려움을 해결합니다. 사용자 환경의 단일 이미지와 자연어 지시로부터 출발하여, 목표 환경과 의미론적 및 기하학적으로 정렬된 "디지털 사촌" 장면을 자동으로 구축하고, 이러한 장면에서 인간의 원격 조작 없이 실행 가능한 시연을 합성합니다. 이 방법은 LIBERO 및 LIBERO-Plus 벤치마크에서 정책 성능을 크게 향상시켰으며, 세 가지 실제 세계 조작 작업에서 최대 100%의 성공률을 달성했고, 훈련 중 보지 못한 환경에서도 더 강력한 일반화 능력을 유지했습니다.
+
+## 핵심 내용
+### 방법 개요
+PRISM은 단일 이미지와 자연어 지시로부터 개인화된 로봇 데이터셋을 생성하는 데 핵심을 둔 엔드투엔드 파이프라인입니다. 이는 사용자 환경과 의미론적 및 기하학적으로 정렬되지만 인스턴스 수준에서 다양성을 유지하는 "디지털 사촌" 장면을 구축함으로써 시뮬레이션과 실제 환경 간의 격차를 메웁니다. 전체 프로세스는 인간의 원격 조작 없이 실행 가능한 시연 데이터를 자동으로 합성합니다.
+
+### 아키텍처 및 프로세스
+- **장면 구축**: PRISM은 먼저 사용자가 제공한 단일 이미지와 자연어 지시를 기반으로 목표 환경과 의미론적 및 기하학적으로 정렬된 "디지털 사촌" 장면을 생성합니다. 이러한 장면은 인스턴스 수준(예: 객체 외관, 배치)에서 다양성을 가지며 데이터셋의 일반화 능력을 강화합니다.
+- **시연 합성**: 구축된 장면에서 PRISM은 인간의 원격 조작 없이 실행 가능한 로봇 조작 시연을 자동으로 생성합니다. 이는 장면 이해와 운동 계획을 결합하여 시연이 물리적으로 실행 가능하고 작업 지시와 일치하도록 보장합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: LIBERO 및 LIBERO-Plus 벤치마크에서 PRISM으로 생성된 데이터셋으로 훈련된 정책은 기준 방법으로 생성된 데이터로 훈련된 정책보다 성능이 크게 우수했습니다.
+- **실제 세계 작업**: 세 가지 실제 세계 조작 작업에서 PRISM으로 훈련된 정책은 100%의 성공률을 달성하여 개인화된 환경에서의 효과를 입증했습니다.
+- **일반화 능력**: 훈련 중 보지 못한 환경에서 평가했을 때, PRISM으로 훈련된 정책은 여전히 더 강력한 성능을 유지했으며, 생성된 장면의 다양성이 일반화 능력 향상에 기여함을 시사합니다.
+
+### 결론
+PRISM은 엔드투엔드 파이프라인을 통해 단일 이미지와 자연어 지시로부터 개인화된 로봇 데이터셋을 생성하여, 원격 조작의 높은 비용과 시뮬레이션 장면 불일치 문제를 효과적으로 해결합니다. 실험은 이 방법이 여러 벤치마크와 실제 작업에서 선도적인 성능을 달성하고 우수한 일반화 능력을 보여준다는 것을 입증했습니다.

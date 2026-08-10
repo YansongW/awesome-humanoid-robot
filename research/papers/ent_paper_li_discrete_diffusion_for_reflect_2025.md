@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.20109v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.20109v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (894 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,27 @@ ReflectDrive 通过离散扩散与安全反射机制的创新结合，为自动�
 ## Overview
 End-to-End (E2E) solutions have emerged as a mainstream approach for autonomous driving systems, with Vision-Language-Action (VLA) models representing a new paradigm that leverages pre-trained multimodal knowledge from Vision-Language Models (VLMs) to interpret and interact with complex real-world environments. However, these methods remain constrained by the limitations of imitation learning, which struggles to inherently encode physical rules during training. Existing approaches often rely on complex rule-based post-refinement, employ reinforcement learning that remains largely limited to simulation, or utilize diffusion guidance that requires computationally expensive gradient calculations. To address these challenges, we introduce ReflectDrive, a novel learning-based framework that integrates a reflection mechanism for safe trajectory generation via discrete diffusion. We first discretize the two-dimensional driving space to construct an action codebook, enabling the use of pre-trained Diffusion Language Models for planning tasks through fine-tuning. Central to our approach is a safety-aware reflection mechanism that performs iterative self-correction without gradient computation. Our method begins with goal-conditioned trajectory generation to model multi-modal driving behaviors. Based on this, we apply local search methods to identify unsafe tokens and determine feasible solutions, which then serve as safe anchors for inpainting-based regeneration. Evaluated on the NAVSIM benchmark, ReflectDrive demonstrates significant advantages in safety-critical trajectory generation, offering a scalable and reliable solution for autonomous driving systems.
 
-## 개요
-엔드투엔드(E2E) 솔루션은 자율주행 시스템의 주류 접근 방식으로 부상했으며, 비전-언어-행동(VLA) 모델은 사전 훈련된 비전-언어 모델(VLM)의 멀티모달 지식을 활용하여 복잡한 실제 환경을 해석하고 상호작용하는 새로운 패러다임을 대표합니다. 그러나 이러한 방법들은 훈련 중 물리적 규칙을 본질적으로 인코딩하는 데 어려움을 겪는 모방 학습의 한계에 여전히 제약을 받습니다. 기존 접근 방식은 종종 복잡한 규칙 기반 후처리 정제에 의존하거나, 대부분 시뮬레이션에 국한된 강화 학습을 사용하거나, 계산 비용이 많이 드는 그래디언트 계산이 필요한 확산 가이던스를 활용합니다. 이러한 문제를 해결하기 위해, 우리는 이산 확산을 통해 안전한 궤적 생성을 위한 반성 메커니즘을 통합한 새로운 학습 기반 프레임워크인 ReflectDrive를 소개합니다. 먼저 2차원 주행 공간을 이산화하여 행동 코드북을 구축함으로써, 사전 훈련된 확산 언어 모델을 미세 조정을 통해 계획 작업에 사용할 수 있게 합니다. 우리 접근 방식의 핵심은 그래디언트 계산 없이 반복적인 자기 수정을 수행하는 안전 인식 반성 메커니즘입니다. 우리 방법은 목표 조건 궤적 생성을 통해 다중 모드 주행 행동을 모델링하는 것으로 시작합니다. 이를 기반으로 로컬 탐색 방법을 적용하여 안전하지 않은 토큰을 식별하고 실행 가능한 솔루션을 결정한 다음, 이는 인페인팅 기반 재생성을 위한 안전 앵커 역할을 합니다. NAVSIM 벤치마크에서 평가된 ReflectDrive는 안전이 중요한 궤적 생성에서 상당한 이점을 보여주며, 자율주행 시스템을 위한 확장 가능하고 신뢰할 수 있는 솔루션을 제공합니다.
-
-## 핵심 내용
-엔드투엔드(E2E) 솔루션은 자율주행 시스템의 주류 접근 방식으로 부상했으며, 비전-언어-행동(VLA) 모델은 사전 훈련된 비전-언어 모델(VLM)의 멀티모달 지식을 활용하여 복잡한 실제 환경을 해석하고 상호작용하는 새로운 패러다임을 대표합니다. 그러나 이러한 방법들은 훈련 중 물리적 규칙을 본질적으로 인코딩하는 데 어려움을 겪는 모방 학습의 한계에 여전히 제약을 받습니다. 기존 접근 방식은 종종 복잡한 규칙 기반 후처리 정제에 의존하거나, 대부분 시뮬레이션에 국한된 강화 학습을 사용하거나, 계산 비용이 많이 드는 그래디언트 계산이 필요한 확산 가이던스를 활용합니다. 이러한 문제를 해결하기 위해, 우리는 이산 확산을 통해 안전한 궤적 생성을 위한 반성 메커니즘을 통합한 새로운 학습 기반 프레임워크인 ReflectDrive를 소개합니다. 먼저 2차원 주행 공간을 이산화하여 행동 코드북을 구축함으로써, 사전 훈련된 확산 언어 모델을 미세 조정을 통해 계획 작업에 사용할 수 있게 합니다. 우리 접근 방식의 핵심은 그래디언트 계산 없이 반복적인 자기 수정을 수행하는 안전 인식 반성 메커니즘입니다. 우리 방법은 목표 조건 궤적 생성을 통해 다중 모드 주행 행동을 모델링하는 것으로 시작합니다. 이를 기반으로 로컬 탐색 방법을 적용하여 안전하지 않은 토큰을 식별하고 실행 가능한 솔루션을 결정한 다음, 이는 인페인팅 기반 재생성을 위한 안전 앵커 역할을 합니다. NAVSIM 벤치마크에서 평가된 ReflectDrive는 안전이 중요한 궤적 생성에서 상당한 이점을 보여주며, 자율주행 시스템을 위한 확장 가능하고 신뢰할 수 있는 솔루션을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.20109v1
+
+## 개요
+기존의 엔드투엔드 자율주행 솔루션은 모방 학습이 물리적 규칙을 내면화하기 어렵다는 한계에 직면해 있으며, 규칙 기반 후처리, 강화 학습 또는 확산 유도 등의 방법은 계산 비용이 높거나 시뮬레이션 환경에 국한되는 문제가 있습니다. ReflectDrive는 2차원 주행 공간을 이산화하여 동작 코드북을 구축하고, 사전 훈련된 확산 언어 모델을 활용하여 계획 미세 조정을 수행하며, 그래디언트 계산이 필요 없는 안전 인식 반사 메커니즘을 도입합니다. 이 방법은 먼저 목표 조건 궤적을 생성하여 다중 모드 주행 행동을 모델링한 다음, 로컬 검색을 통해 불안전 토큰을 식별하고 실행 가능한 해를 결정하며, 최종적으로 이러한 안전 앵커를 기반으로 복구형 재생성을 수행합니다. NAVSIM 벤치마크에서의 평가는 ReflectDrive가 안전 중요 궤적 생성 작업에서 뚜렷한 우위를 보임을 나타냅니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **동작 코드북 구축**: 2차원 주행 공간을 이산화하여 동작 코드북을 형성함으로써, 사전 훈련된 Diffusion Language Models가 미세 조정을 통해 계획 작업에 직접 사용될 수 있게 합니다.
+- **목표 조건 궤적 생성**: 먼저 주행 목표를 충족하는 다중 모드 궤적을 생성하여 다양한 주행 행동 패턴을 포괄합니다.
+- **안전 인식 반사 메커니즘**: 핵심 혁신 포인트로, 로컬 검색 방법을 통해 궤적 내 불안전 토큰(예: 충돌 또는 차선 이탈)을 식별하고 실행 가능한 대체 해를 안전 앵커로 결정합니다.
+- **복구형 재생성**: 안전 앵커를 기반으로 확산 모델의 인페인팅 능력을 활용하여 불안전 영역을 반복적으로 복구하며, 전체 과정에서 그래디언트 계산이 필요 없어 기존 확산 유도의 높은 계산 오버헤드를 피합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: NAVSIM 벤치마크에서 평가를 수행하며, 이 벤치마크는 자율주행의 안전 중요 시나리오에 초점을 맞춥니다.
+- **비교 방법**: 모방 학습, 규칙 기반 후처리 및 그래디언트 확산 유도 기반의 기준 방법과 비교합니다.
+
+### 주요 결과
+- **안전 성능**: 안전 중요 궤적 생성 작업에서 ReflectDrive는 충돌률과 차선 이탈률을 현저히 낮추어 기존 방법보다 우수합니다.
+- **계산 효율성**: 그래디언트 계산이 필요 없으므로 반사 메커니즘의 반복적 자체 교정 과정이 기존 확산 유도 방법보다 더 효율적입니다.
+- **확장성**: 이산 확산 프레임워크는 모델이 재훈련 없이 다양한 주행 시나리오에 유연하게 적응할 수 있게 합니다.
+
+### 결론
+ReflectDrive는 이산 확산과 안전 반사 메커니즘의 혁신적 결합을 통해 자율주행 시스템에 확장 가능하고 신뢰할 수 있는 궤적 생성 솔루션을 제공하며, 모방 학습의 안전 제약 측면에서의 고유한 한계를 효과적으로 해결합니다.

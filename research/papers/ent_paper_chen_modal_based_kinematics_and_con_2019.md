@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1906.11654v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1906.11654v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (561 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,24 @@ Soft robots offer an alternative approach to manipulate inside the constrained s
 ## Content
 Soft robots offer an alternative approach to manipulate inside the constrained space while maintaining the safe interaction with the external environment. Due to its adaptable compliance characteristic, external contact force can easily deform the robot shapes and lead to undesired robot kinematic and dynamic properties. Accurate contact detection and contact position estimation are of critical importance for soft robot modeling, control, trajectory planning, and eventually affect the success of task completion. In this paper, we focus on the study of 1-DoF soft pneumatic bellow bending actuator, which is one of the fundamental components to construct complex, multi-DoF soft robots. This 1-DoF soft robot is modeled through the integral representation of the spacial curve. The direct and instantaneous kinematics are calculated explicitly through a modal method. The fixed centrode deviation (FCD) method is used to detect the external contact and estimate contact location. Simulation results indicate that the contact location can be accurately estimated by solving a nonlinear least square optimization problem.
 
-## 개요
-소프트 로봇은 외부 환경과의 안전한 상호작용을 유지하면서 제한된 공간 내에서 조작을 수행하는 대안적인 접근 방식을 제공합니다. 적응형 순응 특성으로 인해 외부 접촉력이 로봇 형상을 쉽게 변형시켜 원치 않는 로봇 운동학적 및 동역학적 특성을 초래할 수 있습니다. 정확한 접촉 감지 및 접촉 위치 추정은 소프트 로봇 모델링, 제어, 궤적 계획에 매우 중요하며, 궁극적으로 작업 완료 성공에 영향을 미칩니다. 본 논문에서는 복잡한 다자유도 소프트 로봇을 구성하는 기본 요소 중 하나인 1자유도 소프트 공압 벨로우즈 굽힘 액추에이터 연구에 초점을 맞춥니다. 이 1자유도 소프트 로봇은 공간 곡선의 적분 표현을 통해 모델링됩니다. 직접 운동학 및 순간 운동학은 모달 방법을 통해 명시적으로 계산됩니다. 고정 중심점 편차(FCD) 방법을 사용하여 외부 접촉을 감지하고 접촉 위치를 추정합니다. 시뮬레이션 결과는 비선형 최소 제곱 최적화 문제를 해결하여 접촉 위치를 정확하게 추정할 수 있음을 보여줍니다.
-
-## 핵심 내용
-소프트 로봇은 외부 환경과의 안전한 상호작용을 유지하면서 제한된 공간 내에서 조작을 수행하는 대안적인 접근 방식을 제공합니다. 적응형 순응 특성으로 인해 외부 접촉력이 로봇 형상을 쉽게 변형시켜 원치 않는 로봇 운동학적 및 동역학적 특성을 초래할 수 있습니다. 정확한 접촉 감지 및 접촉 위치 추정은 소프트 로봇 모델링, 제어, 궤적 계획에 매우 중요하며, 궁극적으로 작업 완료 성공에 영향을 미칩니다. 본 논문에서는 복잡한 다자유도 소프트 로봇을 구성하는 기본 요소 중 하나인 1자유도 소프트 공압 벨로우즈 굽힘 액추에이터 연구에 초점을 맞춥니다. 이 1자유도 소프트 로봇은 공간 곡선의 적분 표현을 통해 모델링됩니다. 직접 운동학 및 순간 운동학은 모달 방법을 통해 명시적으로 계산됩니다. 고정 중심점 편차(FCD) 방법을 사용하여 외부 접촉을 감지하고 접촉 위치를 추정합니다. 시뮬레이션 결과는 비선형 최소 제곱 최적화 문제를 해결하여 접촉 위치를 정확하게 추정할 수 있음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1906.11654v1
+
+## 개요
+본 연구는 복잡한 다자유도 소프트 로봇을 구성하는 기본 단위인 1자유도 공압 벨로우즈 굽힘 액추에이터에 초점을 맞춘다. 공간 곡선의 적분 표현을 통해 소프트 로봇을 모델링하고, 모드 방법을 사용하여 정기구학 및 순간기구학을 명시적으로 계산한다. 외부 접촉으로 인한 변형 및 동역학 변화에 대응하기 위해, 연구는 고정 순간 중심 편차 방법을 도입하고, 비선형 최소제곱 최적화 문제를 해결하여 시뮬레이션에서 접촉 위치의 정확한 추정을 달성한다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+소프트 로봇은 유연한 특성 덕분에 제한된 공간에서 안전하게 작동할 수 있지만, 외부 접촉력은 변형을 쉽게 유발하여 기구학 및 동역학 성능에 영향을 미친다. 접촉을 정확히 감지하고 위치를 추정하는 것은 모델링, 제어 및 작업 완료에至关重要하다.
+
+### 방법 및 아키텍처
+- **연구 대상**: 다자유도 소프트 로봇을 구축하기 위한 기본 구성 요소로서의 1자유도 공압 벨로우즈 굽힘 액추에이터.
+- **기구학 모델링**: 공간 곡선의 적분 표현을 사용하고, 모드 방법을 통해 정기구학 및 순간기구학을 명시적으로 계산.
+- **접촉 감지 및 위치 추정**: 이론적 운동과 실제 운동 간의 편차를 비교하여 외부 접촉을 감지하는 고정 순간 중심 편차 방법을 제안.
+
+### 실험 설정 및 주요 결과
+- **최적화 해법**: 접촉 위치 추정을 비선형 최소제곱 최적화 문제로 변환.
+- **시뮬레이션 검증**: 결과는 이 방법이 접촉 위치를 정확히 추정할 수 있음을 보여주며, 모델과 알고리즘의 유효성을 검증.
+
+### 결론
+본 논문은 소프트 로봇의 접촉 인식을 위한 기구학 편차 기반 솔루션을 제공하며, 후속 제어 및 궤적 계획을 위한 기초를 마련한다.

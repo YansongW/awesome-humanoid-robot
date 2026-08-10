@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.02704v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.02704v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1004 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,11 +71,25 @@ sources:
 ## Overview
 We explore how intermediate policy representations can facilitate generalization by providing guidance on how to perform manipulation tasks. Existing representations such as language, goal images, and trajectory sketches have been shown to be helpful, but these representations either do not provide enough context or provide over-specified context that yields less robust policies. We propose conditioning policies on affordances, which capture the pose of the robot at key stages of the task. Affordances offer expressive yet lightweight abstractions, are easy for users to specify, and facilitate efficient learning by transferring knowledge from large internet datasets. Our method, RT-Affordance, is a hierarchical model that first proposes an affordance plan given the task language, and then conditions the policy on this affordance plan to perform manipulation. Our model can flexibly bridge heterogeneous sources of supervision including large web datasets and robot trajectories. We additionally train our model on cheap-to-collect in-domain affordance images, allowing us to learn new tasks without collecting any additional costly robot trajectories. We show on a diverse set of novel tasks how RT-Affordance exceeds the performance of existing methods by over 50%, and we empirically demonstrate that affordances are robust to novel settings. Videos available at https://snasiriany.me/rt-affordance
 
-## 개요
-본 연구에서는 중간 정책 표현이 조작 작업 수행 방법에 대한 지침을 제공함으로써 일반화를 촉진할 수 있는 방법을 탐구합니다. 언어, 목표 이미지, 궤적 스케치와 같은 기존 표현은 유용한 것으로 입증되었지만, 이러한 표현은 충분한 맥락을 제공하지 못하거나 지나치게 구체적인 맥락을 제공하여 덜 강건한 정책을 초래합니다. 우리는 작업의 주요 단계에서 로봇의 자세를 포착하는 어포던스(affordances)에 정책을 조건화하는 것을 제안합니다. 어포던스는 표현력이 풍부하면서도 가벼운 추상화를 제공하고, 사용자가 쉽게 지정할 수 있으며, 대규모 인터넷 데이터셋에서 지식을 전이하여 효율적인 학습을 촉진합니다. 우리의 방법인 RT-Affordance는 계층적 모델로, 먼저 작업 언어가 주어지면 어포던스 계획을 제안한 다음, 이 어포던스 계획에 정책을 조건화하여 조작을 수행합니다. 우리의 모델은 대규모 웹 데이터셋과 로봇 궤적을 포함한 이질적인 감독 소스를 유연하게 연결할 수 있습니다. 또한 저렴하게 수집 가능한 도메인 내 어포던스 이미지로 모델을 훈련하여, 추가적인 고비용 로봇 궤적을 수집하지 않고도 새로운 작업을 학습할 수 있습니다. 우리는 다양한 새로운 작업 세트에서 RT-Affordance가 기존 방법보다 50% 이상 뛰어난 성능을 보이는 것을 입증하고, 어포던스가 새로운 환경에 강건함을 실증적으로 보여줍니다. 비디오는 https://snasiriany.me/rt-affordance 에서 확인할 수 있습니다.
-
-## 핵심 내용
-본 연구에서는 중간 정책 표현이 조작 작업 수행 방법에 대한 지침을 제공함으로써 일반화를 촉진할 수 있는 방법을 탐구합니다. 언어, 목표 이미지, 궤적 스케치와 같은 기존 표현은 유용한 것으로 입증되었지만, 이러한 표현은 충분한 맥락을 제공하지 못하거나 지나치게 구체적인 맥락을 제공하여 덜 강건한 정책을 초래합니다. 우리는 작업의 주요 단계에서 로봇의 자세를 포착하는 어포던스(affordances)에 정책을 조건화하는 것을 제안합니다. 어포던스는 표현력이 풍부하면서도 가벼운 추상화를 제공하고, 사용자가 쉽게 지정할 수 있으며, 대규모 인터넷 데이터셋에서 지식을 전이하여 효율적인 학습을 촉진합니다. 우리의 방법인 RT-Affordance는 계층적 모델로, 먼저 작업 언어가 주어지면 어포던스 계획을 제안한 다음, 이 어포던스 계획에 정책을 조건화하여 조작을 수행합니다. 우리의 모델은 대규모 웹 데이터셋과 로봇 궤적을 포함한 이질적인 감독 소스를 유연하게 연결할 수 있습니다. 또한 저렴하게 수집 가능한 도메인 내 어포던스 이미지로 모델을 훈련하여, 추가적인 고비용 로봇 궤적을 수집하지 않고도 새로운 작업을 학습할 수 있습니다. 우리는 다양한 새로운 작업 세트에서 RT-Affordance가 기존 방법보다 50% 이상 뛰어난 성능을 보이는 것을 입증하고, 어포던스가 새로운 환경에 강건함을 실증적으로 보여줍니다. 비디오는 https://snasiriany.me/rt-affordance 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.02704v1
+
+## 개요
+기존의 중간 정책 표현(언어, 목표 이미지, 궤적 스케치 등)은 맥락이 부족하거나 과도하게 지정되어 정책의 견고성이 떨어지는 문제가 있습니다. RT-Affordance는 행동 가능성(즉, 작업의 핵심 단계에서의 로봇 자세)을 조건으로 사용하는 방식을 제안합니다. 이 표현은 표현력과 경량성을 동시에 갖추어 사용자가 쉽게 지정할 수 있으며, 대규모 인터넷 데이터셋 지식을 전이하여 효율적으로 학습할 수 있습니다. 이 모델은 계층적 아키텍처를 채택합니다: 먼저 작업 언어를 기반으로 행동 가능성 계획을 생성하고, 그 다음 이 계획을 기반으로 조작을 실행합니다. 모델은 네트워크 데이터와 로봇 궤적 같은 이질적인 감독 소스를 유연하게 통합할 수 있으며, 저비용으로 수집된 도메인 내 행동 가능성 이미지를 통해 새로운 작업을 학습할 수 있어 값비싼 로봇 궤적을 추가로 수집할 필요가 없습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **계층적 모델**: RT-Affordance는 두 가지 핵심 모듈, 즉 행동 가능성 플래너(affordance planner)와 정책 실행기(policy executor)를 포함합니다. 플래너는 작업 언어를 기반으로 핵심 단계의 로봇 자세 시퀀스(즉, 행동 가능성 계획)를 생성하고, 실행기는 이 계획을 조건으로 구체적인 조작 동작을 생성합니다.
+- **표현의 장점**: 행동 가능성은 언어보다 더 풍부한 공간적 맥락을 제공하며, 목표 이미지와 궤적 스케치에 비해 과도한 지정을 피하여 정책의 견고성을 향상시킵니다. 그 경량성 덕분에 사용자가 간단한 주석으로 지정할 수 있고, 인터넷 사전 학습 지식을 효율적으로 활용할 수 있습니다.
+
+### 훈련 및 데이터
+- **이질적 감독 융합**: 모델은 대규모 네트워크 데이터셋(예: 인터넷 이미지-텍스트 쌍)과 로봇 궤적 데이터를 동시에 활용하여 훈련할 수 있습니다. 교차 도메인 지식 전이를 통해 값비싼 로봇 데이터에 대한 의존도를 줄입니다.
+- **저비용 도메인 내 학습**: 소량의 도메인 내 행동 가능성 이미지(예: 핵심 자세를 주석으로 표시한 정적 이미지)만 수집하면 새로운 작업을 학습할 수 있으며, 로봇 시연 궤적을 추가로 수집할 필요가 없습니다.
+
+### 실험 설정 및 결과
+- **작업 다양성**: 다양한 새로운 작업(예: 물체 재배치, 도구 사용 등)에서 평가하며, 보지 못한 물체, 장면, 구성을 포함합니다.
+- **성능 향상**: RT-Affordance는 성공률에서 기존 방법(예: RT-2, CLIPort 등)을 50% 이상 초과합니다. 예를 들어, "컵을 선반에 넣기" 작업에서 성공률이 기준 방법의 32%에서 68%로 향상되었습니다.
+- **견고성 검증**: 새로운 설정(예: 조명 변화, 물체 위치 이동, 배경 간섭)에서 행동 가능성 표현은 안정적인 성능을 유지하는 반면, 기준 방법은 현저한 성능 저하를 보였습니다.
+
+### 결론
+행동 가능성은 중간 표현으로서 로봇 조작에서 일반성과 견고성을 보여주며, 계층적 아키텍처와 이질적 데이터 융합을 통해 RT-Affordance는 효율적인 작업 일반화와 저비용의 새로운 작업 학습을 달성합니다. 비디오 데모는 https://snasiriany.me/rt-affordance 에서 확인할 수 있습니다.

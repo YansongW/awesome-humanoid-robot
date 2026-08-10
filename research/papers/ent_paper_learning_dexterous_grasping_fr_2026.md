@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.04138v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2604.04138v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (643 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,26 @@ GRIT通过稀疏分类学指导，实现了灵巧操控的高成功率和可控�
 ## Overview
 Dexterous manipulation requires planning a grasp configuration suited to the object and task, which is then executed through coordinated multi-finger control. However, specifying grasp plans with dense pose or contact targets for every object and task is impractical. Meanwhile, end-to-end reinforcement learning from task rewards alone lacks controllability, making it difficult for users to intervene when failures occur. To this end, we present GRIT, a two-stage framework that learns dexterous control from sparse taxonomy guidance. GRIT first predicts a taxonomy-based grasp specification from the scene and task context. Conditioned on this sparse command, a policy generates continuous finger motions that accomplish the task while preserving the intended grasp structure. Our result shows that certain grasp taxonomies are more effective for specific object geometries. By leveraging this relationship, GRIT improves generalization to novel objects over baselines and achieves an overall success rate of 87.9%. Moreover, real-world experiments demonstrate controllability, enabling grasp strategies to be adjusted through high-level taxonomy selection based on object geometry and task intent.
 
-## 개요
-정밀한 조작은 객체와 작업에 적합한 파지 구성을 계획한 후, 이를 조정된 다지 제어를 통해 실행해야 합니다. 그러나 모든 객체와 작업에 대해 조밀한 자세나 접촉 목표를 가진 파지 계획을 지정하는 것은 비현실적입니다. 한편, 작업 보상만으로 종단간 강화 학습을 수행하면 제어 가능성이 부족하여 실패 발생 시 사용자가 개입하기 어렵습니다. 이를 위해 우리는 희소 분류 체계 지침을 통해 정밀한 제어를 학습하는 2단계 프레임워크인 GRIT을 제시합니다. GRIT은 먼저 장면 및 작업 맥락에서 분류 체계 기반의 파지 사양을 예측합니다. 이 희소 명령에 따라 정책은 의도된 파지 구조를 유지하면서 작업을 완료하는 연속적인 손가락 움직임을 생성합니다. 우리의 결과는 특정 객체 형상에 대해 특정 파지 분류 체계가 더 효과적임을 보여줍니다. 이 관계를 활용함으로써 GRIT은 기준 모델 대비 새로운 객체에 대한 일반화를 개선하고 전체 성공률 87.9%를 달성합니다. 또한 실제 환경 실험을 통해 객체 형상과 작업 의도에 기반한 고수준 분류 체계 선택을 통해 파지 전략을 조정할 수 있는 제어 가능성을 입증합니다.
-
-## 핵심 내용
-정밀한 조작은 객체와 작업에 적합한 파지 구성을 계획한 후, 이를 조정된 다지 제어를 통해 실행해야 합니다. 그러나 모든 객체와 작업에 대해 조밀한 자세나 접촉 목표를 가진 파지 계획을 지정하는 것은 비현실적입니다. 한편, 작업 보상만으로 종단간 강화 학습을 수행하면 제어 가능성이 부족하여 실패 발생 시 사용자가 개입하기 어렵습니다. 이를 위해 우리는 희소 분류 체계 지침을 통해 정밀한 제어를 학습하는 2단계 프레임워크인 GRIT을 제시합니다. GRIT은 먼저 장면 및 작업 맥락에서 분류 체계 기반의 파지 사양을 예측합니다. 이 희소 명령에 따라 정책은 의도된 파지 구조를 유지하면서 작업을 완료하는 연속적인 손가락 움직임을 생성합니다. 우리의 결과는 특정 객체 형상에 대해 특정 파지 분류 체계가 더 효과적임을 보여줍니다. 이 관계를 활용함으로써 GRIT은 기준 모델 대비 새로운 객체에 대한 일반화를 개선하고 전체 성공률 87.9%를 달성합니다. 또한 실제 환경 실험을 통해 객체 형상과 작업 의도에 기반한 고수준 분류 체계 선택을 통해 파지 전략을 조정할 수 있는 제어 가능성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2604.04138v2
+
+## 개요
+GRIT 프레임워크는 정밀 조작에서 밀집된 자세 또는 접촉 목표 지정이 비현실적인 문제와 엔드투엔드 강화 학습의 제어 가능성 부족 문제를 해결합니다. 이는 두 단계 설계를 채택합니다: 첫 번째 단계는 장면 및 작업 맥락에서 분류학 기반 파지 사양을 예측하고, 두 번째 단계는 해당 희소 명령을 기반으로 연속적인 손가락 움직임을 생성합니다. 실험 결과, 특정 파지 분류학이 특정 물체 기하학적 형태에 더 효과적이며, GRIT는 이 관계를 활용하여 기준 방법 대비 일반화 능력을 향상시켜 전체 성공률 87.9%를 달성했습니다. 실제 세계 실험은 또한 사용자가 고수준 분류학 선택을 통해 파지 전략을 조정할 수 있는 제어 가능성을 검증했습니다.
+
+## 핵심 내용
+### 방법
+GRIT 프레임워크는 두 단계로 구성됩니다:
+- **첫 번째 단계**: 장면 및 작업 맥락에서 분류학 기반 파지 사양을 예측합니다. 이 사양은 희소하며, 각 물체와 작업에 대해 밀집된 자세 또는 접촉 목표를 지정하는 것을 피합니다.
+- **두 번째 단계**: 첫 번째 단계에서 출력된 희소 명령을 기반으로 정책이 연속적인 손가락 움직임을 생성하여, 예상된 파지 구조를 유지하면서 작업을 완료합니다.
+
+### 실험 설정
+- 시뮬레이션 환경과 실제 세계에서 실험을 수행합니다.
+- 기준 방법에는 엔드투엔드 강화 학습 등이 포함됩니다.
+
+### 주요 결과
+- GRIT의 전체 성공률은 87.9%입니다.
+- 특정 파지 분류학이 특정 물체 기하학적 형태에 더 효과적이며, GRIT는 이 관계를 활용하여 새로운 물체에 대한 일반화 능력을 향상시킵니다.
+- 실제 세계 실험은 제어 가능성을 검증했습니다: 사용자는 고수준 분류학 선택을 통해 물체 기하학적 형태와 작업 의도에 기반하여 파지 전략을 조정할 수 있습니다.
+
+### 결론
+GRIT는 희소 분류학 지침을 통해 정밀 조작의 높은 성공률과 제어 가능성을 달성하면서 밀집 주석의 부담을 피합니다. 그 일반화 능력과 사용자 개입 가능성은 실제 응용 시나리오에 적합하게 만듭니다.

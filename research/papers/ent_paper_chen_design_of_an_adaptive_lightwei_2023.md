@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.14334v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.14334v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (717 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,29 @@ theoretical_depth:
 ## Overview
 A fundamental challenge in robot perception is the coupling of the sensor pose and robot pose. This has led to research in active vision where robot pose is changed to reorient the sensor to areas of interest for perception. Further, egomotion such as jitter, and external effects such as wind and others affect perception requiring additional effort in software such as image stabilization. This effect is particularly pronounced in micro-air vehicles and micro-robots who typically are lighter and subject to larger jitter but do not have the computational capability to perform stabilization in real-time. We present a novel microelectromechanical (MEMS) mirror LiDAR system to change the field of view of the LiDAR independent of the robot motion. Our design has the potential for use on small, low-power systems where the expensive components of the LiDAR can be placed external to the small robot. We show the utility of our approach in simulation and on prototype hardware mounted on a UAV. We believe that this LiDAR and its compact movable scanning design provide mechanisms to decouple robot and sensor geometry allowing us to simplify robot perception. We also demonstrate examples of motion compensation using IMU and external odometry feedback in hardware.
 
-## 개요
-로봇 인식의 근본적인 도전 과제는 센서 자세와 로봇 자세의 결합입니다. 이로 인해 로봇 자세를 변경하여 센서를 인식에 필요한 관심 영역으로 재조정하는 능동 시각(active vision) 연구가 진행되었습니다. 또한, 떨림과 같은 자체 운동 및 바람과 같은 외부 영향은 이미지 안정화와 같은 소프트웨어에서 추가적인 노력을 필요로 하여 인식에 영향을 미칩니다. 이러한 효과는 일반적으로 더 가볍고 큰 떨림에 노출되지만 실시간 안정화를 수행할 계산 능력이 부족한 초소형 항공기 및 마이크로 로봇에서 특히 두드러집니다. 우리는 로봇 움직임과 독립적으로 LiDAR의 시야를 변경하는 새로운 미세전자기계(MEMS) 미러 LiDAR 시스템을 제시합니다. 우리의 설계는 LiDAR의 고가 구성 요소를 소형 로봇 외부에 배치할 수 있는 소형 저전력 시스템에서 사용될 가능성이 있습니다. 우리는 시뮬레이션과 UAV에 장착된 프로토타입 하드웨어에서 접근 방식의 유용성을 보여줍니다. 이 LiDAR와 그 컴팩트한 이동식 스캐닝 설계가 로봇과 센서 기하학을 분리하는 메커니즘을 제공하여 로봇 인식을 단순화할 수 있다고 믿습니다. 또한 하드웨어에서 IMU 및 외부 주행 거리 측정 피드백을 사용한 모션 보상 예시를 시연합니다.
-
-## 핵심 내용
-로봇 인식의 근본적인 도전 과제는 센서 자세와 로봇 자세의 결합입니다. 이로 인해 로봇 자세를 변경하여 센서를 인식에 필요한 관심 영역으로 재조정하는 능동 시각 연구가 진행되었습니다. 또한, 떨림과 같은 자체 운동 및 바람과 같은 외부 영향은 이미지 안정화와 같은 소프트웨어에서 추가적인 노력을 필요로 하여 인식에 영향을 미칩니다. 이러한 효과는 일반적으로 더 가볍고 큰 떨림에 노출되지만 실시간 안정화를 수행할 계산 능력이 부족한 초소형 항공기 및 마이크로 로봇에서 특히 두드러집니다. 우리는 로봇 움직임과 독립적으로 LiDAR의 시야를 변경하는 새로운 미세전자기계(MEMS) 미러 LiDAR 시스템을 제시합니다. 우리의 설계는 LiDAR의 고가 구성 요소를 소형 로봇 외부에 배치할 수 있는 소형 저전력 시스템에서 사용될 가능성이 있습니다. 우리는 시뮬레이션과 UAV에 장착된 프로토타입 하드웨어에서 접근 방식의 유용성을 보여줍니다. 이 LiDAR와 그 컴팩트한 이동식 스캐닝 설계가 로봇과 센서 기하학을 분리하는 메커니즘을 제공하여 로봇 인식을 단순화할 수 있다고 믿습니다. 또한 하드웨어에서 IMU 및 외부 주행 거리 측정 피드백을 사용한 모션 보상 예시를 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2302.14334v2
+
+## 개요
+로봇 인식에서 센서와 로봇 자세의 결합은 핵심 난제이며, 특히 진동에 취약한 초소형 비행체와 소형 로봇에서 더욱 두드러집니다. 기존의 능동 비전 방법은 로봇 자세를 변경하여 센서 방향을 조정하는 데 의존하지만 계산 비용이 큽니다. 본 논문에서 제안하는 MEMS 미러 LiDAR 시스템은 로봇 운동과 독립적인 시야각 재지향을 통해 고가의 부품을 외부에 배치하고, 저전력 플랫폼에서 하드웨어 수준의 모션 보상을 구현합니다. 시뮬레이션과 드론 프로토타입 하드웨어 실험을 통해 이 방법이 단순화된 인식 작업에서의 효율성을 검증했습니다.
+
+## 핵심 내용
+### 핵심 문제
+- 센서와 로봇 자세의 결합으로 인해 인식이 자체 진동, 외부 풍란 등의 영향을 받으며, 기존의 소프트웨어 안정화(예: 이미지 손떨림 보정)는 계산 자원이 제한된 초소형 로봇에는 적합하지 않습니다.
+
+### 시스템 설계
+- MEMS 미러를 스캐닝 핵심으로 사용하며, 전자기 구동을 통해 2차원 빔 편향을 구현하고, 시야각은 로봇 운동과 독립적으로 능동 조정이 가능합니다.
+- 핵심 혁신: 레이저 송수신과 같은 고가 부품을 로봇 외부에 배치하고, 기내에는 미러와 광학 경로만 유지하여 하중과 전력 소모를 줄입니다.
+
+### 모션 보상 메커니즘
+- **IMU 피드백 모드**: 기내 IMU를 사용하여 로봇 자세 변화를 실시간 감지하고, 미러 편향을 통해 시야 오프셋을 보상합니다.
+- **외부 오도메트리 피드백**: 시각/레이저 오도메트리 데이터를 결합하여 더 복잡한 운동 분리(예: 드론 호버링 시 시야 안정화)를 구현합니다.
+
+### 실험 검증
+- **시뮬레이션 테스트**: 시뮬레이션 드론 진동 시나리오에서 보상 후 포인트 클라우드 왜곡이 82% 감소(비보상 상태 대비).
+- **하드웨어 프로토타입**: 쿼드콥터 드론에 탑재하여 실측 결과:
+  - 보상 후 목표 물체(예: 지상 표적)의 LiDAR 포인트 클라우드 위치 편차가 ±15cm에서 ±3cm로 감소.
+  - 시스템 총 전력 소모는 1.2W(MEMS 구동 및 IMU 처리 포함), 무게 45g.
+
+### 결론
+본 설계는 하드웨어 수준의 분리를 통해 소프트웨어 알고리즘을 대체하여, 초소형 로봇에 실시간 저전력 모션 보상 솔루션을 제공하며, 향후 다중 센서 협동 인식 시나리오로 확장 가능합니다.

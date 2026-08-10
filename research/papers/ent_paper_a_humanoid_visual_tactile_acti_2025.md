@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.25725v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.25725v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (511 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -59,14 +60,43 @@ sources:
 ### 结论
 这项工作不仅提供了高质量的多模态数据集，还激励了未来在机器人学习中对触觉信号复杂性与多样性的有效利用研究。
 
-## Overview
-Contact-rich manipulation has become increasingly important in robot learning. However, previous studies on robot learning datasets have focused on rigid objects and underrepresented the diversity of pressure conditions for real-world manipulation. To address this gap, we present a humanoid visual-tactile-action dataset designed for manipulating deformable soft objects. The dataset was collected via teleoperation using a humanoid robot equipped with dexterous hands, capturing multi-modal interactions under varying pressure conditions. This work also motivates future research on models with advanced optimization strategies capable of effectively leveraging the complexity and diversity of tactile signals.
-
-## 개요
-접촉이 풍부한 조작(Contact-rich manipulation)은 로봇 학습에서 점점 더 중요해지고 있습니다. 그러나 로봇 학습 데이터셋에 대한 이전 연구들은 강체(rigid objects)에 초점을 맞추었고, 실제 조작에서의 다양한 압력 조건을 충분히 반영하지 못했습니다. 이러한 격차를 해소하기 위해, 우리는 변형 가능한 연질 객체(deformable soft objects) 조작을 위해 설계된 휴머노이드 시각-촉각-행동 데이터셋을 제시합니다. 이 데이터셋은 정교한 손을 장착한 휴머노이드 로봇을 원격 조작(teleoperation)을 통해 수집되었으며, 다양한 압력 조건에서의 다중 모달 상호작용을 포착합니다. 이 연구는 또한 촉각 신호의 복잡성과 다양성을 효과적으로 활용할 수 있는 고급 최적화 전략을 갖춘 모델에 대한 향후 연구를 촉진합니다.
-
-## 핵심 내용
-접촉이 풍부한 조작(Contact-rich manipulation)은 로봇 학습에서 점점 더 중요해지고 있습니다. 그러나 로봇 학습 데이터셋에 대한 이전 연구들은 강체(rigid objects)에 초점을 맞추었고, 실제 조작에서의 다양한 압력 조건을 충분히 반영하지 못했습니다. 이러한 격차를 해소하기 위해, 우리는 변형 가능한 연질 객체(deformable soft objects) 조작을 위해 설계된 휴머노이드 시각-촉각-행동 데이터셋을 제시합니다. 이 데이터셋은 정교한 손을 장착한 휴머노이드 로봇을 원격 조작(teleoperation)을 통해 수집되었으며, 다양한 압력 조건에서의 다중 모달 상호작용을 포착합니다. 이 연구는 또한 촉각 신호의 복잡성과 다양성을 효과적으로 활용할 수 있는 고급 최적화 전략을 갖춘 모델에 대한 향후 연구를 촉진합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.25725v2
+
+## Overview
+In robot learning, contact-rich manipulation tasks are increasingly important, yet existing datasets predominantly focus on rigid objects and lack the diversity of pressure conditions found in real-world manipulation. To address this, the work utilizes a humanoid robot equipped with dexterous hands to collect multimodal interaction data during the manipulation of soft, deformable objects via teleoperation. The dataset covers visual, tactile, and action information under varying pressure conditions, providing a foundation for studying advanced optimization models that can effectively leverage complex tactile signals.
+
+## Content
+### Background and Motivation
+Contact-rich manipulation is becoming increasingly critical in robot learning, but previous datasets have mainly targeted rigid objects and fail to fully capture the diversity of pressure conditions in real-world manipulation.
+
+### Dataset Construction
+- **Robot Platform**: Utilizes a humanoid robot equipped with dexterous hands.
+- **Data Collection Method**: Conducted via teleoperation to ensure naturalness and controllability of manipulation.
+- **Manipulation Objects**: Soft, deformable objects, distinct from traditional rigid objects.
+- **Multimodal Data**: Simultaneously records visual, tactile, and action information, covering interactions under varying pressure conditions.
+
+### Core Contributions
+This dataset fills the gap in existing research regarding soft object manipulation and the diversity of pressure conditions, providing data support for developing optimization strategies that can utilize complex tactile signals.
+
+### Conclusion
+This work not only provides a high-quality multimodal dataset but also inspires future research on effectively leveraging the complexity and diversity of tactile signals in robot learning.
+
+## 개요
+로봇 학습에서 접촉이 풍부한 조작 작업의 중요성이 점점 커지고 있지만, 기존 데이터셋은 주로 강체 물체에 초점을 맞추고 있어 실제 조작에서의 압력 조건 다양성이 부족합니다. 이를 위해 본 연구는 다섯 손가락 로봇 손을 장착한 휴머노이드 로봇을 활용하여, 원격 조작 방식으로 부드럽고 변형 가능한 물체를 조작할 때의 다중 모달 상호작용 데이터를 수집했습니다. 이 데이터셋은 다양한 압력 조건에서의 시각, 촉각 및 동작 정보를 포괄하며, 복잡한 촉각 신호를 효과적으로 활용할 수 있는 고급 최적화 모델 연구의 기반을 제공합니다.
+
+## 핵심 내용
+### 배경 및 동기
+접촉이 풍부한 조작은 로봇 학습에서 점점 더 중요해지고 있지만, 기존 데이터셋은 주로 강체 물체에 초점을 맞추어 실제 조작에서의 압력 조건 다양성을 충분히 반영하지 못했습니다.
+
+### 데이터셋 구축
+- **로봇 플랫폼**: 다섯 손가락 로봇 손을 장착한 휴머노이드 로봇 사용.
+- **데이터 수집 방식**: 원격 조작을 통해 자연스러움과 제어 가능성을 보장.
+- **조작 대상**: 기존 강체 물체와 달리 부드럽고 변형 가능한 물체.
+- **다중 모달 데이터**: 다양한 압력 조건에서의 상호작용을 포괄하며 시각, 촉각 및 동작 정보를 동시에 기록.
+
+### 핵심 기여
+이 데이터셋은 부드러운 물체 조작과 압력 조건 다양성 측면에서 기존 연구의 공백을 메우며, 복잡한 촉각 신호를 활용할 수 있는 최적화 전략 개발을 위한 데이터 기반을 제공합니다.
+
+### 결론
+본 연구는 고품질의 다중 모달 데이터셋을 제공할 뿐만 아니라, 향후 로봇 학습에서 촉각 신호의 복잡성과 다양성을 효과적으로 활용하는 연구를 촉진합니다.

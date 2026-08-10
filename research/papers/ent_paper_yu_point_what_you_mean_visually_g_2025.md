@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.18933v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.18933v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (653 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,25 @@ Point-VLA 通过显式视觉线索增强语言指令，成功提升了 VLA 模�
 ## Overview
 Vision-Language-Action (VLA) models align vision and language with embodied control, but their object referring ability remains limited when relying solely on text prompt, especially in cluttered or out-of-distribution (OOD) scenes. In this study, we introduce the Point-VLA, a plug-and-play policy that augments language instructions with explicit visual cues (e.g., bounding boxes) to resolve referential ambiguity and enable precise object-level grounding. To efficiently scale visually grounded datasets, we further develop an automatic data annotation pipeline requiring minimal human effort. We evaluate Point-VLA on diverse real-world referring tasks and observe consistently stronger performance than text-only instruction VLAs, particularly in cluttered or unseen-object scenarios, with robust generalization. These results demonstrate that Point-VLA effectively resolves object referring ambiguity through pixel-level visual grounding, achieving more generalizable embodied control.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 시각 및 언어를 임베디드 제어와 정렬하지만, 텍스트 프롬프트에만 의존할 경우 객체 참조 능력이 제한적이며, 특히 복잡하거나 분포 외(OOD) 장면에서 그러합니다. 본 연구에서는 Point-VLA를 소개합니다. 이는 플러그 앤 플레이 정책으로, 명시적 시각적 단서(예: 경계 상자)를 언어 명령에 추가하여 참조 모호성을 해결하고 정밀한 객체 수준의 근거를 가능하게 합니다. 시각적으로 근거된 데이터셋을 효율적으로 확장하기 위해, 최소한의 인간 노력만 필요한 자동 데이터 주석 파이프라인을 추가로 개발했습니다. 다양한 실제 참조 작업에서 Point-VLA를 평가한 결과, 텍스트 전용 명령 VLA보다 일관되게 더 강력한 성능을 관찰했으며, 특히 복잡하거나 보지 못한 객체 시나리오에서 강력한 일반화를 보였습니다. 이러한 결과는 Point-VLA가 픽셀 수준의 시각적 근거를 통해 객체 참조 모호성을 효과적으로 해결하여 더 일반화 가능한 임베디드 제어를 달성함을 보여줍니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 시각 및 언어를 임베디드 제어와 정렬하지만, 텍스트 프롬프트에만 의존할 경우 객체 참조 능력이 제한적이며, 특히 복잡하거나 분포 외(OOD) 장면에서 그러합니다. 본 연구에서는 Point-VLA를 소개합니다. 이는 플러그 앤 플레이 정책으로, 명시적 시각적 단서(예: 경계 상자)를 언어 명령에 추가하여 참조 모호성을 해결하고 정밀한 객체 수준의 근거를 가능하게 합니다. 시각적으로 근거된 데이터셋을 효율적으로 확장하기 위해, 최소한의 인간 노력만 필요한 자동 데이터 주석 파이프라인을 추가로 개발했습니다. 다양한 실제 참조 작업에서 Point-VLA를 평가한 결과, 텍스트 전용 명령 VLA보다 일관되게 더 강력한 성능을 관찰했으며, 특히 복잡하거나 보지 못한 객체 시나리오에서 강력한 일반화를 보였습니다. 이러한 결과는 Point-VLA가 픽셀 수준의 시각적 근거를 통해 객체 참조 모호성을 효과적으로 해결하여 더 일반화 가능한 임베디드 제어를 달성함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.18933v2
+
+## 개요
+Point-VLA는 픽셀 수준의 시각적 단서(예: 경계 상자)를 언어 지시와 결합하여 시각-언어-행동 모델의 객체 지시 작업 정확도를 크게 향상시키는 플러그 앤 플레이 정책입니다. 연구팀은 또한 인적 비용을 최소화하면서 시각적 접지 데이터 세트를 효율적으로 확장할 수 있는 자동 데이터 주석 파이프라인을 개발했습니다. 실제 세계 지시 작업 평가에서 Point-VLA는 혼잡한 장면과 미지의 객체 장면 모두에서 텍스트 지시만 사용하는 VLA 모델보다 지속적으로 우수한 성능을 보이며 강력한 일반화 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법
+- **핵심 문제**: 기존 VLA 모델은 텍스트 프롬프트에만 의존할 때 혼잡하거나 분포 외 장면에서 객체 지시 능력이 제한적입니다.
+- **Point-VLA 아키텍처**: 언어 지시에 명시적 시각적 단서(예: 경계 상자)를 포함시키는 플러그 앤 플레이 전략을 채택하여 픽셀 수준의 객체 접지를 실현하고 지시 모호성을 제거합니다.
+- **데이터 주석**: 자동 주석 파이프라인을 개발하여 인적 개입을 최소화하면서 시각적 접지 데이터 세트를 효율적으로 생성하고 대규모 훈련을 지원합니다.
+
+### 실험 설정
+- **작업**: 혼잡한 장면과 미지의 객체 장면을 포함한 다양한 실제 세계 지시 작업에서 평가합니다.
+- **비교 기준**: 텍스트 지시만 사용하는 VLA 모델과 비교합니다.
+
+### 주요 결과
+- **성능 향상**: Point-VLA는 모든 테스트 작업에서 더 강력한 성능을 보였으며, 특히 혼잡한 장면과 미지의 객체 장면에서 두드러진 우위를 보였습니다.
+- **일반화 능력**: 픽셀 수준의 시각적 접지를 통해 모델은 분포 외 장면에서도 견고한 일반화를 유지하여 객체 지시 모호성 해결의 효과성을 검증했습니다.
+
+### 결론
+Point-VLA는 명시적 시각적 단서를 통해 언어 지시를 강화함으로써 복잡한 환경에서 VLA 모델의 객체 지시 정확도와 일반화 능력을 성공적으로 향상시켰으며, 로봇 조작을 위한 더 신뢰할 수 있는 접지 전략을 제공합니다.

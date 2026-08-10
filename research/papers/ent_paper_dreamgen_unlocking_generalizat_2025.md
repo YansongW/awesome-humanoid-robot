@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.12705v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.12705v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (808 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,26 @@ DreamGen 证明了通过合成视频数据生成神经轨迹，可大幅降低�
 ## Overview
 We introduce DreamGen, a simple yet highly effective 4-stage pipeline for training robot policies that generalize across behaviors and environments through neural trajectories - synthetic robot data generated from video world models. DreamGen leverages state-of-the-art image-to-video generative models, adapting them to the target robot embodiment to produce photorealistic synthetic videos of familiar or novel tasks in diverse environments. Since these models generate only videos, we recover pseudo-action sequences using either a latent action model or an inverse-dynamics model (IDM). Despite its simplicity, DreamGen unlocks strong behavior and environment generalization: a humanoid robot can perform 22 new behaviors in both seen and unseen environments, while requiring teleoperation data from only a single pick-and-place task in one environment. To evaluate the pipeline systematically, we introduce DreamGen Bench, a video generation benchmark that shows a strong correlation between benchmark performance and downstream policy success. Our work establishes a promising new axis for scaling robot learning well beyond manual data collection. Code available at https://github.com/NVIDIA/GR00T-Dreams.
 
-## 개요
-DreamGen은 비디오 월드 모델에서 생성된 합성 로봇 데이터인 신경 궤적(neural trajectories)을 통해 행동과 환경 전반에 걸쳐 일반화되는 로봇 정책을 훈련하기 위한 간단하면서도 매우 효과적인 4단계 파이프라인을 소개합니다. DreamGen은 최첨단 이미지-비디오 생성 모델을 활용하여 대상 로봇 구현체에 맞게 조정함으로써 다양한 환경에서 익숙하거나 새로운 작업의 사실적인 합성 비디오를 생성합니다. 이러한 모델은 비디오만 생성하므로, 잠재 행동 모델(latent action model) 또는 역동역학 모델(IDM)을 사용하여 의사 행동 시퀀스를 복구합니다. 단순함에도 불구하고 DreamGen은 강력한 행동 및 환경 일반화를 가능하게 합니다: 휴머노이드 로봇이 하나의 환경에서 단일 픽 앤 플레이스 작업에 대한 원격 조작 데이터만 필요로 하면서, 본 환경과 미지 환경 모두에서 22가지 새로운 행동을 수행할 수 있습니다. 파이프라인을 체계적으로 평가하기 위해, 벤치마크 성능과 다운스트림 정책 성공 간의 강한 상관관계를 보여주는 비디오 생성 벤치마크인 DreamGen Bench를 소개합니다. 우리의 연구는 수동 데이터 수집을 훨씬 넘어서는 로봇 학습 확장을 위한 유망한 새로운 축을 확립합니다. 코드는 https://github.com/NVIDIA/GR00T-Dreams에서 확인할 수 있습니다.
-
-## 핵심 내용
-DreamGen은 비디오 월드 모델에서 생성된 합성 로봇 데이터인 신경 궤적(neural trajectories)을 통해 행동과 환경 전반에 걸쳐 일반화되는 로봇 정책을 훈련하기 위한 간단하면서도 매우 효과적인 4단계 파이프라인을 소개합니다. DreamGen은 최첨단 이미지-비디오 생성 모델을 활용하여 대상 로봇 구현체에 맞게 조정함으로써 다양한 환경에서 익숙하거나 새로운 작업의 사실적인 합성 비디오를 생성합니다. 이러한 모델은 비디오만 생성하므로, 잠재 행동 모델(latent action model) 또는 역동역학 모델(IDM)을 사용하여 의사 행동 시퀀스를 복구합니다. 단순함에도 불구하고 DreamGen은 강력한 행동 및 환경 일반화를 가능하게 합니다: 휴머노이드 로봇이 하나의 환경에서 단일 픽 앤 플레이스 작업에 대한 원격 조작 데이터만 필요로 하면서, 본 환경과 미지 환경 모두에서 22가지 새로운 행동을 수행할 수 있습니다. 파이프라인을 체계적으로 평가하기 위해, 벤치마크 성능과 다운스트림 정책 성공 간의 강한 상관관계를 보여주는 비디오 생성 벤치마크인 DreamGen Bench를 소개합니다. 우리의 연구는 수동 데이터 수집을 훨씬 넘어서는 로봇 학습 확장을 위한 유망한 새로운 축을 확립합니다. 코드는 https://github.com/NVIDIA/GR00T-Dreams에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.12705v2
+
+## 개요
+DreamGen은 로봇 학습에서의 행동 및 환경 일반화 문제를 해결하기 위해 설계된 4단계 파이프라인입니다. 최첨단 이미지-투-비디오 생성 모델을 활용하여 목표 로봇 형태에 적응시키고, 다양한 환경에서 익숙하거나 새로운 작업의 실행을 포함하는 사실적인 합성 비디오를 생성합니다. 생성 모델은 비디오만 출력하므로, DreamGen은 잠재 행동 모델 또는 역동역학 모델(IDM)을 통해 비디오에서 의사 행동 시퀀스를 복구합니다. 실험에 따르면, 인간형 로봇이 단일 환경에서 하나의 픽 앤 플레이스 작업에 대한 원격 조작 데이터만 수집하면, 알려진 환경과 알려지지 않은 환경에서 22가지 새로운 행동을 수행할 수 있습니다. 이 파이프라인을 체계적으로 평가하기 위해, 저자들은 또한 DreamGen Bench 비디오 생성 벤치마크를 제안했으며, 그 성능은 하위 정책 성공률과 높은 상관관계를 보입니다.
+
+## 핵심 내용
+### 방법 아키텍처
+DreamGen은 4단계 파이프라인을 채택합니다:
+1. **비디오 세계 모델 적응**: 기존 이미지-투-비디오 생성 모델(예: 확산 모델)을 기반으로, 미세 조정을 통해 목표 로봇 형태에 적응시키고 사실적인 합성 비디오를 생성합니다.
+2. **합성 비디오 생성**: 작업 설명과 환경 이미지를 입력하면, 모델은 로봇의 행동 실행을 포함한 연속 비디오 프레임을 출력합니다.
+3. **의사 행동 복구**: 생성 모델은 비디오만 출력하므로, 두 가지 방법으로 행동 시퀀스를 추출해야 합니다:
+   - **잠재 행동 모델**: 비디오 프레임 간 차이에서 암시적 행동을 추론합니다.
+   - **역동역학 모델(IDM)**: 인접 프레임을 기반으로 직접 행동을 예측합니다.
+4. **정책 훈련**: 복구된 의사 행동 시퀀스를 원본 비디오 데이터와 결합하여 로봇 정책을 훈련합니다.
+
+### 실험 설정 및 주요 수치
+- **로봇 플랫폼**: 인간형 로봇으로, 단일 환경에서 하나의 픽 앤 플레이스 작업에 대한 원격 조작 데이터만 필요합니다.
+- **일반화 능력**: 로봇은 알려진 환경과 알려지지 않은 환경을 포함한 22가지 새로운 행동을 수행할 수 있습니다.
+- **벤치마크 평가**: DreamGen Bench 비디오 생성 벤치마크는 하위 정책 성공률과의 상관 계수가 전통적인 지표보다 유의미하게 높음을 보여줍니다.
+
+### 결론
+DreamGen은 합성 비디오 데이터를 통한 신경 궤적 생성이 로봇 학습에서 수동 데이터 수집에 대한 의존도를 크게 줄일 수 있음을 입증하며, 범용 로봇 정책의 대규모 훈련을 위한 새로운 방향을 제시합니다. 코드는 오픈소스로 공개되었습니다.

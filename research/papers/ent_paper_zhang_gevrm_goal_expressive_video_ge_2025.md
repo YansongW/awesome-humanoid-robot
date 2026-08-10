@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.09268v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.09268v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (864 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -64,11 +65,22 @@ GEVRM 通过将 IMC 原理与视频生成模型结合，首次在 VLA 框架中�
 ## Overview
 With the rapid development of embodied artificial intelligence, significant progress has been made in vision-language-action (VLA) models for general robot decision-making. However, the majority of existing VLAs fail to account for the inevitable external perturbations encountered during deployment. These perturbations introduce unforeseen state information to the VLA, resulting in inaccurate actions and consequently, a significant decline in generalization performance. The classic internal model control (IMC) principle demonstrates that a closed-loop system with an internal model that includes external input signals can accurately track the reference input and effectively offset the disturbance. We propose a novel closed-loop VLA method GEVRM that integrates the IMC principle to enhance the robustness of robot visual manipulation. The text-guided video generation model in GEVRM can generate highly expressive future visual planning goals. Simultaneously, we evaluate perturbations by simulating responses, which are called internal embeddings and optimized through prototype contrastive learning. This allows the model to implicitly infer and distinguish perturbations from the external environment. The proposed GEVRM achieves state-of-the-art performance on both standard and perturbed CALVIN benchmarks and shows significant improvements in realistic robot tasks.
 
-## 개요
-체화 인공지능의 급속한 발전에 힘입어, 일반 로봇 의사 결정을 위한 시각-언어-행동(VLA) 모델에서 상당한 진전이 이루어졌습니다. 그러나 기존 VLA의 대부분은 배포 중에 발생하는 불가피한 외부 교란을 고려하지 못합니다. 이러한 교란은 VLA에 예상치 못한 상태 정보를 도입하여 부정확한 행동을 초래하고, 결과적으로 일반화 성능이 크게 저하됩니다. 고전적인 내부 모델 제어(IMC) 원리는 외부 입력 신호를 포함하는 내부 모델을 가진 폐루프 시스템이 기준 입력을 정확히 추적하고 교란을 효과적으로 상쇄할 수 있음을 보여줍니다. 우리는 IMC 원리를 통합하여 로봇 시각 조작의 강건성을 향상시키는 새로운 폐루프 VLA 방법인 GEVRM을 제안합니다. GEVRM의 텍스트 유도 비디오 생성 모델은 표현력이 뛰어난 미래 시각 계획 목표를 생성할 수 있습니다. 동시에, 우리는 내부 임베딩이라고 불리는 시뮬레이션 응답을 통해 교란을 평가하고, 프로토타입 대조 학습을 통해 이를 최적화합니다. 이를 통해 모델이 외부 환경의 교란을 암시적으로 추론하고 구별할 수 있습니다. 제안된 GEVRM은 표준 및 교란된 CALVIN 벤치마크 모두에서 최첨단 성능을 달성하며, 실제 로봇 작업에서 상당한 개선을 보여줍니다.
-
-## 핵심 내용
-체화 인공지능의 급속한 발전에 힘입어, 일반 로봇 의사 결정을 위한 시각-언어-행동(VLA) 모델에서 상당한 진전이 이루어졌습니다. 그러나 기존 VLA의 대부분은 배포 중에 발생하는 불가피한 외부 교란을 고려하지 못합니다. 이러한 교란은 VLA에 예상치 못한 상태 정보를 도입하여 부정확한 행동을 초래하고, 결과적으로 일반화 성능이 크게 저하됩니다. 고전적인 내부 모델 제어(IMC) 원리는 외부 입력 신호를 포함하는 내부 모델을 가진 폐루프 시스템이 기준 입력을 정확히 추적하고 교란을 효과적으로 상쇄할 수 있음을 보여줍니다. 우리는 IMC 원리를 통합하여 로봇 시각 조작의 강건성을 향상시키는 새로운 폐루프 VLA 방법인 GEVRM을 제안합니다. GEVRM의 텍스트 유도 비디오 생성 모델은 표현력이 뛰어난 미래 시각 계획 목표를 생성할 수 있습니다. 동시에, 우리는 내부 임베딩이라고 불리는 시뮬레이션 응답을 통해 교란을 평가하고, 프로토타입 대조 학습을 통해 이를 최적화합니다. 이를 통해 모델이 외부 환경의 교란을 암시적으로 추론하고 구별할 수 있습니다. 제안된 GEVRM은 표준 및 교란된 CALVIN 벤치마크 모두에서 최첨단 성능을 달성하며, 실제 로봇 작업에서 상당한 개선을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.09268v2
+
+## 개요
+기존 비전-언어-행동 모델(VLA)은 배포 시 외부 교란의 영향을 쉽게 받아, 행동의 부정확성과 일반화 성능 저하를 초래한다. GEVRM은 고전적인 내부 모델 제어(IMC) 원리를 차용하여 폐루프 VLA 프레임워크를 구축한다. 이 프레임워크의 텍스트 유도 비디오 생성 모델은 표현력이 높은 미래 시각 계획 목표를 생성할 수 있으며, 동시에 모의 응답을 통해 교란을 평가하는 내부 임베딩을 생성하고, 프로토타입 대조 학습을 통해 이러한 임베딩을 최적화하여 모델이 외부 환경 교란을 암시적으로 추론하고 구분할 수 있게 한다. 이 방법은 표준 및 교란 조건의 CALVIN 벤치마크에서 최적의 성능을 달성하며, 실제 로봇 작업에서도 현저한 향상을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+GEVRM의 핵심 혁신은 내부 모델 제어(IMC) 원리를 VLA 폐루프 시스템에 통합한 것이다. IMC 원리는 외부 입력 신호의 내부 모델을 포함하는 폐루프 시스템이 참조 입력을 정밀하게 추적하고 교란을 효과적으로 상쇄할 수 있음을 지적한다. GEVRM은 구체적으로 다음과 같이 구현된다:
+- **목표 표현 모듈**: 텍스트 유도 비디오 생성 모델을 사용하여 표현력이 높은 미래 시각 계획 목표(즉, 참조 입력)를 생성한다.
+- **교란 평가 모듈**: 모의 응답을 통해 '내부 임베딩'을 생성하여 외부 교란을 평가한다. 이러한 임베딩은 프로토타입 대조 학습(prototype contrastive learning)을 통해 최적화되어, 모델이 서로 다른 교란 원인을 암시적으로 추론하고 구분할 수 있게 한다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: 표준 CALVIN 벤치마크 및 교란 버전(외부 간섭 도입)에서 평가한다.
+- **성능**: GEVRM은 표준 및 교란 CALVIN 모두에서 최신(state-of-the-art) 수준을 달성한다. 실제 로봇 작업에서는 특히 강건성 향상이 두드러지며, 물리적 교란(예: 물체 위치 이동, 조명 변화)이 존재하는 상황에서도 높은 성공률을 유지한다.
+- **주요 수치**: 논문은 초록에서 구체적인 수치를 제공하지 않지만, 교란 조건에서 기존 VLA 방법(예: RT-2, Octo) 대비 '현저한 개선'(significant improvements)을 강조한다.
+
+### 결론
+GEVRM은 IMC 원리와 비디오 생성 모델을 결합하여 VLA 프레임워크에서 외부 교란 문제를 처음으로 명시적으로 처리하며, 로봇 조작 작업에 더 강건한 폐루프 의사결정 방안을 제공한다. 그 프로토타입 대조 학습 메커니즘은 암시적 교란 모델링에 새로운 접근 방식을 제시한다.

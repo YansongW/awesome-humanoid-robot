@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/06/24/the-floor-runs-on-us-vention-powers-the-future-of-software-defined-automation-at-automate-2026/26770.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/06/24/the-floor-runs-on-us-vention-powers-the-future-of-software-defined-automation-at-automate-2026/26770.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (1578 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -80,38 +81,33 @@ At Automate 2026, Vention showcases software-defined automation under the theme 
 
 Industrial Flooring Upgrades: When Retrofitting Makes More Sense Than Full Replacement
 
-## 개요
-#2848 부스에서 Vention은 차세대 AI 기반 자동화 컨트롤러인 MachineMotion™ AI로 완전히 구동되는 완전 연결 자동화 생태계를 선보입니다. AI 기반 로봇 공학 및 산업용 모션 제어부터 모듈식 워크스테이션 및 클라우드 기반 소프트웨어에 이르기까지, 이 부스는 제조업체가 통합 하드웨어 및 소프트웨어 플랫폼을 사용하여 자동화를 배포하고 확장할 수 있는 방법을 보여줍니다.
-
-## 핵심 내용
-#2848 부스에서 Vention은 차세대 AI 기반 자동화 컨트롤러인 MachineMotion™ AI로 완전히 구동되는 완전 연결 자동화 생태계를 선보입니다. AI 기반 로봇 공학 및 산업용 모션 제어부터 모듈식 워크스테이션 및 클라우드 기반 소프트웨어에 이르기까지, 이 부스는 제조업체가 통합 하드웨어 및 소프트웨어 플랫폼을 사용하여 자동화를 배포하고 확장할 수 있는 방법을 보여줍니다.
-
-Automate 2026에서 Vention은 "The Floor Runs on Us"라는 주제로 소프트웨어 정의 자동화를 선보이며, 하드웨어, 소프트웨어, AI 및 로봇 공학을 통합하는 풀스택 플랫폼이 소프트웨어 정의 제조로의 전환을 어떻게 가속화하는지 보여줍니다. 더 많은 헤드라인: MassRobotics, RoboBoston 2026 후원 기회 개설 및 채용 기업을 로봇 및 AI 기술 취업 박람회에 초청, Actuate 26 로봇 개발자 컨퍼런스, Wayve, Aurora, Physical Intelligence, Zipline, Shield AI, Google DeepMind 및 NVIDIA의 리더들이 참여하는 연사 라인업 발표, Walden Robotics, 범용 로봇을 오늘날 현장에 투입하기 위해 3억 달러로 출범, KULR, 국제 우주 정거장으로 향하는 자유 비행 로봇 플랫폼에 전력을 공급하기 위해 Icarus Robotics에 선정됨, Oxford Technology, 차세대 인간-로봇 안전 기술 자금 지원. 기사: Bastian Solutions의 경험이 AGV 내비게이션의 미래에 대해 시사하는 바, 우수한 로봇 통합업체와 협력할 때 OEM이 얻는 이점, AI 혁신 활용: PNY 공급 GPU로 구동되는 NVIDIA RTX PRO 6000 Blackwell Workstation Edition의 힘, Automate 2026 DESTACO와의 Q&A, Automate 2026 Roboteon과의 Q&A. #2848 부스에서 Vention은 차세대 AI 기반 자동화 컨트롤러인 MachineMotion™ AI로 완전히 구동되는 완전 연결 자동화 생태계를 선보입니다. AI 기반 로봇 공학 및 산업용 모션 제어부터 모듈식 워크스테이션 및 클라우드 기반 소프트웨어에 이르기까지, 이 부스는 제조업체가 통합 하드웨어 및 소프트웨어 플랫폼을 사용하여 자동화를 배포하고 확장할 수 있는 방법을 보여줍니다.
-
-Universal Robots와의 파트너십 확장
-Automate 2026에서 Universal Robots는 #1250 부스에서 UR12e 협동 로봇을 사용한 Vention의 Rapid Operator AI 딥 빈 피킹 애플리케이션과 로봇 워크 셀을 위한 새로운 디지털 트윈 생성 플랫폼을 선보입니다. Teradyne Robotics와의 전략적 협력을 통해 Vention의 MachineBuilder™ 기술을 기반으로 구축된 이 플랫폼은 사전 구성된 템플릿, 시뮬레이션 도구 및 디지털 우선 검증 기능을 통해 Universal Robots 기반 자동화의 설계 및 배포를 가속화하는 동시에 파트너를 Vention의 독점 자동화 마켓플레이스(Universal Robots 검증 UR+ 구성 요소, 엔드오브암 툴링부터 7축 시스템까지)에 연결하여 도달 범위를 확장하고 채택을 가속화하며 제조업체를 대규모로 서비스할 수 있는 새로운 기회를 창출합니다.
-
-FANUC와 Vention, 산업용 로봇 공학 발전
-FANUC와 Vention은 Vention의 클라우드 네이티브 프로그래밍 환경인 MachineLogic™ 내에서 산업용 로봇 공학 기능을 확장합니다. Vention 부스에서 FANUC LR Mate는 완전히 클라우드에서 프로그래밍된 고속 산업용 텐딩을 선보입니다. NVIDIA의 FoundationStereo AI 모델이 구동하는 충돌 없는 경로 계획을 통해 자율 경로 계산 및 모션 생성을 가능하게 합니다. FANUC 부스(#1001)에서 방문객은 MachineMotion AI와 통합된 FANUC CRX-10iA 협동 로봇을 특징으로 하는 머신 텐딩 애플리케이션을 경험할 수 있으며, 간소화된 배포와 가속화된 CNC 자동화를 강조합니다.
-
-물리적 AI와 제조의 미래
-Vention의 Automate 2026 참가는 또한 AI 기반 로봇 인식, 적응형 모션 및 자율 의사 결정의 라이브 데모를 통해 제조에서 물리적 AI의 성장하는 역할을 강조합니다. 부스의 핵심 프로그램은 "Send Us Your Parts" 프로그램으로, 제조업체가 실제 생산 부품을 Vention에 직접 가져와 비정형 제조 환경을 위한 턴키 딥 빈 피킹 솔루션인 Rapid Operator AI로 평가할 수 있도록 합니다. 이 이니셔티브는 제조업체에게 실제 생산 환경에서 AI 기반 빈 피킹을 평가할 수 있는 실용적인 방법을 제공합니다.
-
-통합 자동화의 실제 구현
-Vention 부스 방문객은 회사의 통합 자동화 스택을 기반으로 구축된 6개의 라이브 데모를 경험할 수 있습니다. 여기에는 다음이 포함됩니다.
-- FANUC CRX-30 협동 로봇으로 구동되는 Rapid Series 팔레타이저
-- FANUC LR Mate 로봇과 AI 기반 충돌 없는 경로 계획을 사용한 고속 산업용 텐딩
-- NVIDIA Isaac 기술 오픈 로봇 개발 플랫폼, NVIDIA CUDA 가속 라이브러리, 오픈 모델, NVIDIA Jetson 소스 참조 프레임워크 및 UR12e 협동 로봇을 사용하는 Vention의 GRIIP™ 소프트웨어로 구동되는 딥 빈 피킹 솔루션인 Rapid Operator AI
-- 라이브 용접 애플리케이션에서 UR20 협동 로봇과 통합된 오버헤드 7축 범위 확장기
-- MachineMotion AI의 캐비닛 없는 아키텍처를 통해 제어되는 데이지 체인 모터 및 액추에이터
-- 작업 현장 전반에 걸친 신속한 맞춤화, 배포 및 확장을 위해 설계된 모듈식 워크스테이션 및 공장 인프라 플랫폼
-
-또한 부스는 Vention의 제조 자동화 플랫폼 데모를 제공하여 설계, 시뮬레이션, 배포 및 운영 워크플로우를 단일 통합 경험으로 결합하고, 하나의 소프트웨어 정의 자동화 플랫폼에서 완전한 엔드투엔드 자동화 여정을 보여줍니다.
-
-개발자 커뮤니티 지원
-Automate 기간 동안 Vention은 6월 23일에 개발자 워크숍을 개최했습니다. 이 행사에는 20명 이상의 개발자 및 자동화 전문가가 모여 클라우드 투 엣지 프로그래밍, MachineLogic 워크플로우, 노코드 및 Python 기반 자동화, 소프트웨어 정의 자동화에 관한 실습 세션을 진행했습니다. 자세한 내용은 Vention.com을 방문하십시오.
-
-산업용 바닥재 업그레이드: 전체 교체보다 개조가 더 합리적인 경우
-
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/06/24/the-floor-runs-on-us-vention-powers-the-future-of-software-defined-automation-at-automate-2026/26770
+
+## 개요
+Vention은 Automate 2026 전시회에서 "The Floor Runs on Us"라는 주제로, 하드웨어, 소프트웨어, AI 및 로봇 기술을 통합하는 풀스택 플랫폼이 제조업의 소프트웨어 정의 전환을 어떻게 가속화하는지 선보였습니다. 부스의 핵심은 AI 로봇부터 산업용 모션 컨트롤까지 다양한 데모를 구동하는 MachineMotion™ AI 컨트롤러였습니다. Vention은 또한 Universal Robots 및 FANUC와의 협력을 통해 딥 피킹, 고속 산업용 로딩/언로딩 등의 애플리케이션을 시연했으며, 제조업체가 현장에서 AI 딥 피킹 솔루션을 평가할 수 있는 "Send Us Your Parts" 프로그램을 출시했습니다.
+
+## 핵심 내용
+### 핵심 플랫폼 및 컨트롤러
+Vention은 #2848 부스에서 차세대 AI 컨트롤러인 MachineMotion™ AI로 구동되는 완전 연결형 자동화 생태계를 선보였습니다. 이 플랫폼은 하드웨어, 소프트웨어, AI 및 로봇 기술을 통합하여 소프트웨어 정의 제조로의 전환을 가속화하는 것을 목표로 합니다.
+
+### 주요 파트너십 및 데모
+- **Universal Robots와의 협력**: Universal Robots의 #1250 부스에서 Vention은 UR12e 협동 로봇 기반의 Rapid Operator AI 딥 피킹 애플리케이션을 시연했습니다. 양사 협력은 또한 MachineBuilder™ 기술 기반의 디지털 트윈 생성 플랫폼을 출시하여, 사전 구성된 템플릿, 시뮬레이션 도구 및 디지털 우선 검증 기능을 통해 Universal Robots 기반 자동화 배포를 가속화합니다.
+- **FANUC와의 협력**: Vention은 MachineLogic™ 클라우드 네이티브 프로그래밍 환경에서 산업용 로봇 역량을 확장했습니다. Vention 부스에서는 FANUC LR Mate가 완전히 클라우드에서 프로그래밍된 고속 산업용 로딩/언로딩을 시연했으며, 충돌 없는 경로 계획은 NVIDIA의 FoundationStereo AI 모델로 구동되었습니다. FANUC의 #1001 부스에서는 방문객들이 FANUC CRX-10iA 협동 로봇에 MachineMotion AI를 통합한 머신 툴 로딩/언로딩 애플리케이션을 체험할 수 있었습니다.
+
+### 물리적 AI와 미래 제조
+Vention의 부스는 AI 기반 로봇 인식, 적응형 모션 및 자율 의사 결정의 실시간 데모를 통해 제조업에서 물리적 AI의 역할을 강조했습니다. 핵심 프로그램은 "Send Us Your Parts"로, 제조업체가 실제 생산 부품을 Vention에 가져와 딥 피킹 솔루션인 Rapid Operator AI로 평가받을 수 있습니다. 이 솔루션은 비정형 제조 환경을 위해 설계되었으며, NVIDIA Isaac 플랫폼, CUDA 가속 라이브러리, Jetson 참조 프레임워크 및 Vention의 GRIIP™ 소프트웨어로 구동됩니다.
+
+### 통합 자동화 실시간 데모
+Vention 부스는 통합 자동화 스택 기반의 6가지 실시간 데모를 제공했습니다:
+- FANUC CRX-30 협동 로봇으로 구동되는 Rapid Series 팔레타이저
+- FANUC LR Mate 로봇과 AI 기반 충돌 없는 경로 계획을 갖춘 고속 산업용 로딩/언로딩
+- UR12e 협동 로봇을 사용한 Rapid Operator AI 딥 피킹 솔루션
+- 실시간 용접 애플리케이션을 위한 UR20 협동 로봇 통합 오버헤드 7축 익스텐더
+- MachineMotion AI의 캐비닛 없는 아키텍처로 제어되는 체인 모터 및 드라이브
+- 빠른 맞춤화, 배포 및 확장을 위해 설계된 모듈식 워크스테이션 및 팩토리 인프라 플랫폼
+
+또한 부스는 설계, 시뮬레이션, 배포 및 운영 워크플로를 단일 통합 경험으로 통합하는 Vention의 제조 자동화 플랫폼을 전시하여 완전한 엔드투엔드 자동화 여정을 보여주었습니다.
+
+### 개발자 커뮤니티 활동
+Automate 기간 동안 Vention은 6월 23일에 개발자 워크숍을 개최하여 20명 이상의 개발자와 자동화 전문가를 끌어모았습니다. 워크숍은 클라우드-엣지 프로그래밍, MachineLogic 워크플로, 코드 없는 및 Python 기반 자동화, 소프트웨어 정의 자동화 등의 주제를 다루었습니다.

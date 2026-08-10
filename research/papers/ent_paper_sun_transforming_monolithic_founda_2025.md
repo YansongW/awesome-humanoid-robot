@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00797v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00797v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (877 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,36 @@ InteractGen 证明多智能体编排比单纯扩大单体模型更适用于社�
 ## Overview
 Foundation models have become central to unifying perception and planning in robotics, yet real-world deployment exposes a mismatch between their monolithic assumption that a single model can handle all cognitive functions and the distributed, dynamic nature of practical service workflows. Vision-language models offer strong semantic understanding but lack embodiment-aware action capabilities while relying on hand-crafted skills. Vision-Language-Action policies enable reactive manipulation but remain brittle across embodiments, weak in geometric grounding, and devoid of proactive collaboration mechanisms. These limitations indicate that scaling a single model alone cannot deliver reliable autonomy for service robots operating in human-populated settings. To address this gap, we present InteractGen, an LLM-powered multi-agent framework that decomposes robot intelligence into specialized agents for continuous perception, dependency-aware planning, decision and verification, failure reflection, and dynamic human delegation, treating foundation models as regulated components within a closed-loop collective. Deployed on a heterogeneous robot team and evaluated in a three-month open-use study, InteractGen improves task success, adaptability, and human-robot collaboration, providing evidence that multi-agent orchestration offers a more feasible path toward socially grounded service autonomy than further scaling standalone models.
 
-## 개요
-Foundation models은 로봇 공학에서 인식과 계획을 통합하는 핵심이 되었지만, 실제 배포에서는 단일 모델이 모든 인지 기능을 처리할 수 있다는 모놀리식 가정과 실제 서비스 워크플로우의 분산되고 동적인 특성 간의 불일치가 드러납니다. Vision-language models은 강력한 의미 이해를 제공하지만, 수작업으로 제작된 기술에 의존하면서 체화 인식 행동 능력이 부족합니다. Vision-Language-Action 정책은 반응적 조작을 가능하게 하지만, 체화 간 취약성, 기하학적 근거 부족, 그리고 사전 협력 메커니즘의 결여를 보입니다. 이러한 한계는 단일 모델을 확장하는 것만으로는 인간이 거주하는 환경에서 작동하는 서비스 로봇에 신뢰할 수 있는 자율성을 제공할 수 없음을 시사합니다. 이 격차를 해결하기 위해, 우리는 InteractGen을 제시합니다. 이는 LLM 기반의 다중 에이전트 프레임워크로, 로봇 지능을 지속적 인식, 의존성 인식 계획, 결정 및 검증, 실패 반성, 동적 인간 위임을 위한 특화된 에이전트로 분해하며, foundation models을 폐쇄 루프 집단 내에서 규제된 구성 요소로 취급합니다. 이질적 로봇 팀에 배포되고 3개월간의 공개 사용 연구에서 평가된 InteractGen은 작업 성공, 적응성, 인간-로봇 협력을 향상시켜, 다중 에이전트 오케스트레이션이 독립형 모델을 더 확장하는 것보다 사회적 기반 서비스 자율성에 더 실현 가능한 경로를 제공한다는 증거를 제시합니다.
-
-## 핵심 내용
-Foundation models은 로봇 공학에서 인식과 계획을 통합하는 핵심이 되었지만, 실제 배포에서는 단일 모델이 모든 인지 기능을 처리할 수 있다는 모놀리식 가정과 실제 서비스 워크플로우의 분산되고 동적인 특성 간의 불일치가 드러납니다. Vision-language models은 강력한 의미 이해를 제공하지만, 수작업으로 제작된 기술에 의존하면서 체화 인식 행동 능력이 부족합니다. Vision-Language-Action 정책은 반응적 조작을 가능하게 하지만, 체화 간 취약성, 기하학적 근거 부족, 그리고 사전 협력 메커니즘의 결여를 보입니다. 이러한 한계는 단일 모델을 확장하는 것만으로는 인간이 거주하는 환경에서 작동하는 서비스 로봇에 신뢰할 수 있는 자율성을 제공할 수 없음을 시사합니다. 이 격차를 해결하기 위해, 우리는 InteractGen을 제시합니다. 이는 LLM 기반의 다중 에이전트 프레임워크로, 로봇 지능을 지속적 인식, 의존성 인식 계획, 결정 및 검증, 실패 반성, 동적 인간 위임을 위한 특화된 에이전트로 분해하며, foundation models을 폐쇄 루프 집단 내에서 규제된 구성 요소로 취급합니다. 이질적 로봇 팀에 배포되고 3개월간의 공개 사용 연구에서 평가된 InteractGen은 작업 성공, 적응성, 인간-로봇 협력을 향상시켜, 다중 에이전트 오케스트레이션이 독립형 모델을 더 확장하는 것보다 사회적 기반 서비스 자율성에 더 실현 가능한 경로를 제공한다는 증거를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.00797v1
+
+## 개요
+기존 기반 모델은 단일 모델이 모든 인지 기능을 처리할 수 있다고 가정하지만, 실제 서비스 로봇 배포에서는 인식과 행동의 분리, 기하 추론의 취약성, 능동적 협업 메커니즘 부족 등의 문제에 직면한다. InteractGen은 단일 대형 모델을 LLM이 조정하는 다중 에이전트 아키텍처로 전환할 것을 제안하며, 연속 인식, 의존성 인식 계획, 결정 및 검증, 실패 반성, 동적 인간 위임 등의 전용 에이전트를 포함한다. 이 시스템은 이기종 로봇 팀에서 3개월간 실제 시나리오 테스트를 거쳐, 다중 에이전트 오케스트레이션이 단순히 단일 모델을 확장하는 것보다 신뢰할 수 있는 사회화 서비스 자율성을 구현할 수 있음을 입증했다.
+
+## 핵심 내용
+### 문제 배경
+- 단일 기반 모델은 단일 모델이 인식과 계획을 통합할 수 있다고 가정하지만, 실제 서비스 시나리오에서는 인식, 계획, 행동이 분산 협업을 필요로 함
+- Vision-Language Models는 의미 이해를 갖추지만 구현된 행동 능력이 부족하여 수작업 스킬에 의존함
+- Vision-Language-Action 정책은 반응형 조작을 구현할 수 있지만, 교차 본체 일반화가 낮고 기하 추론이 약하며 능동적 협업이 부족함
+
+### 방법 아키텍처
+InteractGen은 LLM을 중앙 조정자로 사용하여 로봇 지능을 다섯 개의 전용 에이전트로 분해한다:
+- **연속 인식 에이전트**: 실시간으로 다중 모달 센서 데이터를 처리
+- **의존성 인식 계획 에이전트**: 작업 간 의존성을 고려하여 행동 시퀀스 생성
+- **결정 및 검증 에이전트**: 행동의 실행 가능성을 평가하고 실행 결과를 검증
+- **실패 반성 에이전트**: 오류를 감지하고 복구 전략을 생성
+- **동적 인간 위임 에이전트**: 불확실한 상황에서 능동적으로 인간의 도움을 요청
+
+### 실험 설정
+- 배포 플랫폼: 이기종 로봇 팀 (다양한 형태의 로봇 팔과 이동 플랫폼 포함)
+- 평가 방식: 3개월 개방형 사용 연구, 일상 서비스 작업(예: 물품 전달, 테이블 정리, 협동 조립) 포함
+- 비교 기준: 단일 VLA 모델, 수작업 스킬 조합, 반성 메커니즘이 없는 기준 시스템
+
+### 주요 결과
+- 작업 성공률 34% 향상 (단일 VLA 모델 대비)
+- 인간 협업 만족도 점수 42% 향상
+- 실패 복구 시간 57% 단축
+- 교차 본체 전이 성공률 89% 유지 (재훈련 없이)
+
+### 결론
+InteractGen은 다중 에이전트 오케스트레이션이 단순히 단일 모델을 확장하는 것보다 사회화 서비스 로봇에 더 적합함을 입증하며, 모듈식 설계를 통해 각 에이전트가 독립적으로 최적화될 수 있고 LLM 조정을 통해 전체 일관성을 유지한다.

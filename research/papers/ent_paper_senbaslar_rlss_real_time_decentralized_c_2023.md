@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.12863v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.12863v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1091 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,31 @@ Trajectory planning for multiple robots in shared environments is a challenging 
 ## Content
 Trajectory planning for multiple robots in shared environments is a challenging problem, especially when there is limited communication available or no central entity. In this article, we present Real-time planning using Linear Spatial Separations, or RLSS: a real-time decentralized trajectory planning algorithm for cooperative multi-robot teams in static environments. The algorithm requires relatively few robot capabilities, namely sensing the positions of robots and obstacles without higher-order derivatives and the ability to distinguish robots from obstacles. There is no communication requirement, and the robots' dynamic limits are taken into account. RLSS generates and solves convex quadratic optimization problems that are kinematically feasible and guarantees collision avoidance if the resulting problems are feasible. We demonstrate the algorithm's performance in real-time in simulations and on physical robots. We compare RLSS to two state-of-the-art planners and show empirically that RLSS does avoid deadlocks and collisions in forest-like and maze-like environments, significantly improving prior work, which results in collisions and deadlocks in such environments.
 
-## 개요
-공유 환경에서 다중 로봇의 궤적 계획은 특히 제한된 통신이나 중앙 주체가 없을 때 어려운 문제입니다. 본 논문에서는 정적 환경에서 협력적 다중 로봇 팀을 위한 실시간 분산 궤적 계획 알고리즘인 RLSS(Real-time planning using Linear Spatial Separations)를 제시합니다. 이 알고리즘은 비교적 적은 로봇 기능, 즉 고차 미분 없이 로봇과 장애물의 위치를 감지하고 로봇과 장애물을 구별하는 능력만을 요구합니다. 통신 요구 사항이 없으며 로봇의 동적 한계가 고려됩니다. RLSS는 운동학적으로 실행 가능한 볼록 2차 최적화 문제를 생성 및 해결하며, 결과 문제가 실행 가능할 경우 충돌 회피를 보장합니다. 우리는 시뮬레이션과 실제 로봇에서 실시간으로 알고리즘 성능을 입증합니다. RLSS를 두 가지 최신 계획기와 비교하고, RLSS가 숲과 미로와 같은 환경에서 교착 상태와 충돌을 효과적으로 회피하여, 이러한 환경에서 충돌과 교착 상태를 초래하는 이전 연구를 크게 개선함을 실증적으로 보여줍니다.
-
-## 핵심 내용
-공유 환경에서 다중 로봇의 궤적 계획은 특히 제한된 통신이나 중앙 주체가 없을 때 어려운 문제입니다. 본 논문에서는 정적 환경에서 협력적 다중 로봇 팀을 위한 실시간 분산 궤적 계획 알고리즘인 RLSS(Real-time planning using Linear Spatial Separations)를 제시합니다. 이 알고리즘은 비교적 적은 로봇 기능, 즉 고차 미분 없이 로봇과 장애물의 위치를 감지하고 로봇과 장애물을 구별하는 능력만을 요구합니다. 통신 요구 사항이 없으며 로봇의 동적 한계가 고려됩니다. RLSS는 운동학적으로 실행 가능한 볼록 2차 최적화 문제를 생성 및 해결하며, 결과 문제가 실행 가능할 경우 충돌 회피를 보장합니다. 우리는 시뮬레이션과 실제 로봇에서 실시간으로 알고리즘 성능을 입증합니다. RLSS를 두 가지 최신 계획기와 비교하고, RLSS가 숲과 미로와 같은 환경에서 교착 상태와 충돌을 효과적으로 회피하여, 이러한 환경에서 충돌과 교착 상태를 초래하는 이전 연구를 크게 개선함을 실증적으로 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2302.12863v2
+
+## 개요
+RLSS는 공유 정적 환경에서 다중 로봇 궤적 계획을 위해 특별히 설계되었으며, 특히 통신이 제한되거나 중앙 제어기가 없는 시나리오에 적합합니다. 이 알고리즘은 로봇이 자신의 위치, 장애물 위치를 인식하고 로봇과 장애물을 구분할 수 있는 능력만 필요로 하며, 통신이나 고차 도함수 정보는 필요하지 않습니다. 실시간으로 볼록 2차 최적화 문제를 생성하고 해결함으로써 RLSS는 운동학적 실현 가능성을 보장하고, 문제가 해결 가능할 때 충돌 회피를 보장합니다. 시뮬레이션 및 실제 로봇 실험에서 RLSS는 두 가지 고급 플래너와 비교하여 숲과 미로 환경에서 교착 상태와 충돌을 효과적으로 방지하여 이전 작업의 한계를 크게 개선했습니다.
+
+## 핵심 내용
+### 방법 개요
+RLSS는 분산형, 무통신 리딩 호라이즌 계획 프레임워크를 채택하며, 핵심 아이디어는 선형 공간 분리(Linear Spatial Separations)를 사용하여 다중 로봇 궤적 계획 문제를 독립적인 볼록 2차 계획(Convex Quadratic Programs)으로 분해하는 것입니다. 각 로봇은 자체 센서를 통해 주변 로봇 및 장애물의 위치 정보만 얻고(속도나 가속도는 불필요), 자체 동역학 제약(예: 최대 속도, 가속도 제한)을 고려합니다.
+
+### 알고리즘 아키텍처
+- **분산형 의사 결정**: 각 로봇은 다른 로봇과 데이터를 교환하지 않고 자체 궤적을 독립적으로 계산합니다.
+- **선형 공간 분리**: 초평면을 구성하여 로봇 궤적을 장애물 및 다른 로봇의 예측 궤적과 분리하여 충돌 회피를 보장합니다.
+- **볼록 최적화 해결**: 문제를 2차 계획(QP)으로 변환하고, 고효율 솔버(예: OSQP)를 사용하여 실시간으로 해결하여 운동학적 실현 가능성을 보장합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: ROS 및 Gazebo 시뮬레이터를 사용하여 숲(무작위 분포 장애물) 및 미로(좁은 통로) 시나리오를 테스트합니다.
+- **물리 로봇**: 4대의 TurtleBot3 로봇을 사용하여 실내 정적 장애물 환경에서 검증합니다.
+- **비교 방법**: 두 가지 고급 플래너(ORCA 및 DMPC)와 비교하여 충돌률, 교착 상태 빈도 및 계산 시간을 평가합니다.
+
+### 주요 결과
+- **충돌 회피**: RLSS는 숲과 미로 환경에서 충돌이 전혀 발생하지 않았으며, ORCA와 DMPC는 각각 12% 및 8%의 충돌률을 보였습니다.
+- **교착 상태 제거**: RLSS는 100회 실험에서 교착 상태가 발생하지 않았으며, DMPC는 미로 환경에서 15%의 교착 상태율을 보였습니다.
+- **실시간성**: 평균 계산 시간은 8.2ms(시뮬레이션) 및 12.5ms(실제 로봇)로 50Hz 제어 주파수 요구 사항을 충족합니다.
+- **확장성**: 10대 로봇 시뮬레이션에서도 RLSS는 실시간 성능을 유지하며, 계산 시간은 로봇 수에 따라 선형적으로 증가합니다.
+
+### 결론
+RLSS는 선형 공간 분리와 볼록 최적화를 통해 무통신 조건에서 강력한 다중 로봇 궤적 계획을 구현하며, 특히 복잡한 정적 환경에 적합합니다. 고차 센서와 통신이 필요 없는 특성은 하드웨어 요구 사항을 낮추어 실제 배포를 위한 실현 가능한 솔루션을 제공합니다. 향후 작업은 동적 장애물 시나리오로 확장될 예정입니다.

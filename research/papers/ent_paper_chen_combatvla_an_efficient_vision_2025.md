@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.09527v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.09527v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (902 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,27 @@ Recent advances in Vision-Language-Action models (VLAs) have expanded the capabi
 ## Content
 Recent advances in Vision-Language-Action models (VLAs) have expanded the capabilities of embodied intelligence. However, significant challenges remain in real-time decision-making in complex 3D environments, which demand second-level responses, high-resolution perception, and tactical reasoning under dynamic conditions. To advance the field, we introduce CombatVLA, an efficient VLA model optimized for combat tasks in 3D action role-playing games (ARPGs). Specifically, our CombatVLA is a 3B model trained on video-action pairs collected by an action tracker, where the data is formatted as action-of-thought (AoT) sequences. Thereafter, CombatVLA seamlessly integrates into an action execution framework, allowing efficient inference through our truncated AoT strategy. Experimental results demonstrate that CombatVLA not only outperforms all existing models on the combat understanding benchmark but also achieves a 50-fold acceleration in game combat. Moreover, it has a higher task success rate than human players. We will open-source all resources, including the action tracker, dataset, benchmark, model weights, training code, and the implementation of the framework at https://combatvla.github.io/.
 
-## 개요
-최근 Vision-Language-Action 모델(VLA)의 발전은 구현된 지능의 능력을 확장시켰습니다. 그러나 복잡한 3D 환경에서의 실시간 의사 결정에는 여전히 상당한 과제가 남아 있으며, 이는 초 단위 응답, 고해상도 인식, 동적 조건에서의 전술적 추론을 요구합니다. 이 분야를 발전시키기 위해, 우리는 3D 액션 롤플레잉 게임(ARPG)의 전투 작업에 최적화된 효율적인 VLA 모델인 CombatVLA를 소개합니다. 구체적으로, CombatVLA는 액션 트래커에 의해 수집된 비디오-액션 쌍으로 훈련된 3B 모델이며, 데이터는 action-of-thought(AoT) 시퀀스로 형식화됩니다. 이후 CombatVLA는 액션 실행 프레임워크에 원활하게 통합되어, 우리의 truncated AoT 전략을 통해 효율적인 추론을 가능하게 합니다. 실험 결과는 CombatVLA가 전투 이해 벤치마크에서 모든 기존 모델을 능가할 뿐만 아니라 게임 전투에서 50배의 가속을 달성함을 보여줍니다. 또한, 인간 플레이어보다 높은 작업 성공률을 보입니다. 우리는 액션 트래커, 데이터셋, 벤치마크, 모델 가중치, 훈련 코드, 프레임워크 구현을 포함한 모든 리소스를 https://combatvla.github.io/에서 오픈소스로 공개할 예정입니다.
-
-## 핵심 내용
-최근 Vision-Language-Action 모델(VLA)의 발전은 구현된 지능의 능력을 확장시켰습니다. 그러나 복잡한 3D 환경에서의 실시간 의사 결정에는 여전히 상당한 과제가 남아 있으며, 이는 초 단위 응답, 고해상도 인식, 동적 조건에서의 전술적 추론을 요구합니다. 이 분야를 발전시키기 위해, 우리는 3D 액션 롤플레잉 게임(ARPG)의 전투 작업에 최적화된 효율적인 VLA 모델인 CombatVLA를 소개합니다. 구체적으로, CombatVLA는 액션 트래커에 의해 수집된 비디오-액션 쌍으로 훈련된 3B 모델이며, 데이터는 action-of-thought(AoT) 시퀀스로 형식화됩니다. 이후 CombatVLA는 액션 실행 프레임워크에 원활하게 통합되어, 우리의 truncated AoT 전략을 통해 효율적인 추론을 가능하게 합니다. 실험 결과는 CombatVLA가 전투 이해 벤치마크에서 모든 기존 모델을 능가할 뿐만 아니라 게임 전투에서 50배의 가속을 달성함을 보여줍니다. 또한, 인간 플레이어보다 높은 작업 성공률을 보입니다. 우리는 액션 트래커, 데이터셋, 벤치마크, 모델 가중치, 훈련 코드, 프레임워크 구현을 포함한 모든 리소스를 https://combatvla.github.io/에서 오픈소스로 공개할 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.09527v2
+
+## 개요
+CombatVLA는 3B 파라미터를 가진 비전-언어-액션 모델로, 복잡한 3D 환경에서의 실시간 의사 결정 문제(초 단위 응답, 고해상도 인식, 동적 전술 추론 포함)를 해결하기 위해 설계되었습니다. 모델 훈련 데이터는 동작 추적기에서 수집한 비디오-액션 쌍으로 구성되며, 액션 사고 시퀀스 형식으로 정리됩니다. 절단형 AoT 전략을 통해 CombatVLA는 액션 실행 프레임워크에 효율적으로 통합되어 빠른 추론을 가능하게 합니다. 전투 이해 벤치마크에서 CombatVLA는 기존 모델을 전반적으로 능가할 뿐만 아니라 게임 전투 속도를 50배 향상시키며, 작업 성공률은 인간 플레이어보다도 높습니다. 모든 리소스(동작 추적기, 데이터셋, 벤치마크, 모델 가중치, 훈련 코드 및 프레임워크 구현 포함)는 오픈소스로 공개될 예정입니다.
+
+## 핵심 내용
+### 방법
+- **데이터 수집**: 동작 추적기를 사용하여 비디오-액션 쌍을 수집하고, 데이터를 액션 사고 시퀀스 형식으로 정리하여 전투 과정의 연속적 의사 결정을 구조화된 방식으로 표현합니다.
+- **모델 아키텍처**: CombatVLA는 3B 파라미터의 비전-언어-액션 모델로, 비디오-액션 쌍을 기반으로 훈련되어 시각 입력, 언어 명령, 액션 출력을 동시에 처리할 수 있습니다.
+- **추론 최적화**: 절단형 AoT 전략을 채택하여 액션 사고 시퀀스의 불필요한 부분을 잘라내어 추론 시간을 크게 줄이고 효율적인 실시간 의사 결정을 구현합니다.
+
+### 실험 설정
+- **벤치마크**: 전투 이해 벤치마크에서 모델 성능을 평가하며, 해당 벤치마크는 다양한 복잡한 3D 전투 시나리오를 포함합니다.
+- **비교 모델**: 기존 비전-언어-액션 모델(범용 VLA 모델 및 게임 전용 설계 모델 포함)과 비교합니다.
+- **평가 지표**: 작업 성공률, 추론 속도(프레임 속도), 전투 이해 정확도를 포함합니다.
+
+### 주요 결과
+- **성능 우위**: CombatVLA는 전투 이해 벤치마크에서 모든 기존 모델을 능가하며, 작업 성공률은 인간 플레이어보다 높습니다.
+- **속도 향상**: 게임 전투 속도가 50배 향상되어 초 단위 응답을 구현하며 실시간 의사 결정 요구를 충족합니다.
+- **오픈소스 리소스**: 모든 리소스(동작 추적기, 데이터셋, 벤치마크, 모델 가중치, 훈련 코드 및 프레임워크 구현)는 https://combatvla.github.io/ 에서 오픈소스로 공개됩니다.
+
+### 결론
+CombatVLA는 액션 사고 시퀀스와 절단형 추론 전략을 통해 3D 전투 작업의 실시간 의사 결정 문제를 효과적으로 해결하며, 속도와 성공률 모두에서 선도적인 수준에 도달했습니다. 이 연구는 복잡한 동적 환경에서의 구현 지능 응용을 위한 효율적인 솔루션을 제공합니다.

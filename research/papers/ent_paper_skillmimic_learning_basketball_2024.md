@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2408.15270v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2408.15270v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1014 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,26 @@ SkillMimic 证明了统一 HOI 模仿奖励在无需手工设计的前提下，�
 ## Overview
 Traditional reinforcement learning methods for human-object interaction (HOI) rely on labor-intensive, manually designed skill rewards that do not generalize well across different interactions. We introduce SkillMimic, a unified data-driven framework that fundamentally changes how agents learn interaction skills by eliminating the need for skill-specific rewards. Our key insight is that a unified HOI imitation reward can effectively capture the essence of diverse interaction patterns from HOI datasets. This enables SkillMimic to learn a single policy that not only masters multiple interaction skills but also facilitates skill transitions, with both diversity and generalization improving as the HOI dataset grows. For evaluation, we collect and introduce two basketball datasets containing approximately 35 minutes of diverse basketball skills. Extensive experiments show that SkillMimic successfully masters a wide range of basketball skills including stylistic variations in dribbling, layup, and shooting. Moreover, these learned skills can be effectively composed by a high-level controller to accomplish complex and long-horizon tasks such as consecutive scoring, opening new possibilities for scalable and generalizable interaction skill learning. Project page: https://ingrid789.github.io/SkillMimic/
 
-## 개요
-인간-객체 상호작용(HOI)을 위한 전통적인 강화 학습 방법은 노동 집약적이고 수동으로 설계된 기술 보상에 의존하며, 이는 다양한 상호작용 간에 잘 일반화되지 않습니다. 우리는 SkillMimic을 소개합니다. 이는 기술별 보상의 필요성을 제거하여 에이전트가 상호작용 기술을 학습하는 방식을 근본적으로 변화시키는 통합 데이터 기반 프레임워크입니다. 우리의 핵심 통찰은 통합된 HOI 모방 보상이 HOI 데이터셋의 다양한 상호작용 패턴의 본질을 효과적으로 포착할 수 있다는 것입니다. 이를 통해 SkillMimic은 단일 정책을 학습하여 여러 상호작용 기술을 숙달할 뿐만 아니라 기술 전환을 용이하게 하며, HOI 데이터셋이 성장함에 따라 다양성과 일반화가 모두 향상됩니다. 평가를 위해 약 35분 분량의 다양한 농구 기술을 포함하는 두 개의 농구 데이터셋을 수집하고 소개합니다. 광범위한 실험 결과, SkillMimic은 드리블, 레이업, 슛의 스타일 변형을 포함한 다양한 농구 기술을 성공적으로 숙달함을 보여줍니다. 더욱이, 이러한 학습된 기술은 고수준 컨트롤러에 의해 효과적으로 구성되어 연속 득점과 같은 복잡하고 장기적인 작업을 수행할 수 있으며, 확장 가능하고 일반화 가능한 상호작용 기술 학습의 새로운 가능성을 열어줍니다. 프로젝트 페이지: https://ingrid789.github.io/SkillMimic/
-
-## 핵심 내용
-인간-객체 상호작용(HOI)을 위한 전통적인 강화 학습 방법은 노동 집약적이고 수동으로 설계된 기술 보상에 의존하며, 이는 다양한 상호작용 간에 잘 일반화되지 않습니다. 우리는 SkillMimic을 소개합니다. 이는 기술별 보상의 필요성을 제거하여 에이전트가 상호작용 기술을 학습하는 방식을 근본적으로 변화시키는 통합 데이터 기반 프레임워크입니다. 우리의 핵심 통찰은 통합된 HOI 모방 보상이 HOI 데이터셋의 다양한 상호작용 패턴의 본질을 효과적으로 포착할 수 있다는 것입니다. 이를 통해 SkillMimic은 단일 정책을 학습하여 여러 상호작용 기술을 숙달할 뿐만 아니라 기술 전환을 용이하게 하며, HOI 데이터셋이 성장함에 따라 다양성과 일반화가 모두 향상됩니다. 평가를 위해 약 35분 분량의 다양한 농구 기술을 포함하는 두 개의 농구 데이터셋을 수집하고 소개합니다. 광범위한 실험 결과, SkillMimic은 드리블, 레이업, 슛의 스타일 변형을 포함한 다양한 농구 기술을 성공적으로 숙달함을 보여줍니다. 더욱이, 이러한 학습된 기술은 고수준 컨트롤러에 의해 효과적으로 구성되어 연속 득점과 같은 복잡하고 장기적인 작업을 수행할 수 있으며, 확장 가능하고 일반화 가능한 상호작용 기술 학습의 새로운 가능성을 열어줍니다. 프로젝트 페이지: https://ingrid789.github.io/SkillMimic/
-
 ## 参考
 - http://arxiv.org/abs/2408.15270v2
+
+## 개요
+전통적인 강화학습 방법은 인간-물체 상호작용 작업에서 수작업으로 설계된 기술 보상에 의존하여 다양한 상호작용 시나리오로 일반화하기 어렵습니다. SkillMimic은 통합된 HOI 모방 보상을 도입하여 상호작용 데이터셋에서 직접 상호작용 패턴의 본질적 특징을 추출함으로써 단일 정책이 여러 기술을 동시에 습득하도록 훈련합니다. 이 방법은 약 35분의 다양한 농구 기술을 포함하는 두 데이터셋에서 평가되었으며, 실험을 통해 드리블, 레이업, 슛 등의 기술 스타일 변형을 성공적으로 학습할 수 있음을 보여주었습니다. 이러한 기술은 상위 수준 컨트롤러를 통해 결합되어 연속 득점과 같은 복잡한 장기 작업을 완료할 수 있으며, 확장 가능하고 일반화 가능한 상호작용 기술 학습의 새로운 경로를 개척합니다.
+
+## 핵심 내용
+### 방법 핵심
+- **통합 보상 함수**: 드리블, 슛 등 각 기술에 대해 개별적으로 보상을 설계하는 전통적 방법을 배제하고, 상호작용 데이터에서 인간과 물체의 상대 운동 패턴(예: 손과 공의 위치, 속도, 접촉 타이밍)을 자동으로 포착하는 일반적인 HOI 모방 보상을 제안합니다.
+- **단일 정책 학습**: 이 통합 보상을 통해 SkillMimic은 여러 상호작용 기술을 동시에 처리하는 정책 네트워크를 훈련하며, 기술별로 네트워크나 보상 함수를 전환할 필요가 없습니다. HOI 데이터셋 규모가 증가함에 따라 기술의 다양성과 일반화 능력도 함께 향상됩니다.
+- **기술 조합 메커니즘**: 상위 수준 컨트롤러는 하위 수준에서 학습된 기술을 호출하여 장기 작업(예: 연속 득점)을 구현할 수 있으며, 이는 기술 간의 부드러운 전환 능력(예: 드리블에서 레이업으로의 연결)에 의존합니다.
+
+### 실험 설정
+- **데이터셋**: 두 개의 농구 상호작용 데이터셋을 수집했으며, 총 약 35분으로 드리블(다양한 리듬과 방향 변화 포함), 레이업(좌우 손 방향 전환 포함), 슛(다양한 거리와 각도 포함) 등의 기술을 포함합니다.
+- **기준선 비교**: 수작업 보상 기반 강화학습 방법(예: 특정 기술을 위해 설계된 보상 함수)과 비교하여, SkillMimic은 기술 다양성(예: 드리블 스타일 수)과 일반화성(예: 새로운 초기 상태에 대한 적응)에서 모두显著히 향상되었습니다.
+
+### 핵심 결과
+- **기술 습득**: 드리블, 레이업, 슛의 다양한 스타일 변형을 성공적으로 학습했습니다. 예를 들어 드리블 작업에서 정책은 시연의 낮은 드리블, 높은 드리블, 크로스오버 드리블 등의 패턴을 모방할 수 있습니다.
+- **조합 작업**: 상위 수준 컨트롤러를 통해 SkillMimic은 연속 득점 작업(예: 후방에서 드리블 전진 → 레이업 → 리바운드 → 재슛)을 완료할 수 있으며, 성공률이 기준선 방법보다 높습니다.
+- **일반화 능력**: 보지 못한 초기 위치나 물체 상태(예: 공이 다른 높이에 있을 때)에서도 기술 실행이 안정적으로 유지되어, 통합 보상이 우수한 일반화성을 가짐을 보여줍니다.
+
+### 결론
+SkillMimic은 통합 HOI 모방 보상이 수작업 설계 없이도 여러 상호작용 기술을 효과적으로 학습하고 조합할 수 있음을 입증했으며, 물리 시뮬레이션 캐릭터 애니메이션과 로봇 상호작용 기술 학습에 확장 가능한 패러다임을 제공합니다. 프로젝트 페이지에서 비디오 데모와 코드를 제공합니다.

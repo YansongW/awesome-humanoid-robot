@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1907.07029v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1907.07029v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (942 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,30 @@ APROL 通过多先验在线选择机制，显著提升了机器人对未知损�
 ## Overview
 Repertoire-based learning is a data-efficient adaptation approach based on a two-step process in which (1) a large and diverse set of policies is learned in simulation, and (2) a planning or learning algorithm chooses the most appropriate policies according to the current situation (e.g., a damaged robot, a new object, etc.). In this paper, we relax the assumption of previous works that a single repertoire is enough for adaptation. Instead, we generate repertoires for many different situations (e.g., with a missing leg, on different floors, etc.) and let our algorithm selects the most useful prior. Our main contribution is an algorithm, APROL (Adaptive Prior selection for Repertoire-based Online Learning) to plan the next action by incorporating these priors when the robot has no information about the current situation. We evaluate APROL on two simulated tasks: (1) pushing unknown objects of various shapes and sizes with a robotic arm and (2) a goal reaching task with a damaged hexapod robot. We compare with "Reset-free Trial and Error" (RTE) and various single repertoire-based baselines. The results show that APROL solves both the tasks in less interaction time than the baselines. Additionally, we demonstrate APROL on a real, damaged hexapod that quickly learns to pick compensatory policies to reach a goal by avoiding obstacles in the path.
 
-## 개요
-레퍼토리 기반 학습은 데이터 효율적인 적응 접근 방식으로, (1) 시뮬레이션에서 크고 다양한 정책 집합을 학습하고, (2) 계획 또는 학습 알고리즘이 현재 상황(예: 손상된 로봇, 새로운 물체 등)에 따라 가장 적절한 정책을 선택하는 두 단계 과정에 기반합니다. 본 논문에서는 단일 레퍼토리만으로 적응이 충분하다는 기존 연구의 가정을 완화합니다. 대신, 다양한 상황(예: 다리 하나가 없는 경우, 다른 바닥에서 등)에 대한 레퍼토리를 생성하고, 알고리즘이 가장 유용한 사전 지식을 선택하도록 합니다. 주요 기여는 로봇이 현재 상황에 대한 정보가 없을 때 이러한 사전 지식을 통합하여 다음 행동을 계획하는 알고리즘인 APROL(Adaptive Prior selection for Repertoire-based Online Learning)입니다. 우리는 두 가지 시뮬레이션 작업에서 APROL을 평가합니다: (1) 로봇 팔로 다양한 모양과 크기의 알려지지 않은 물체를 밀기, (2) 손상된 6족 로봇으로 목표 도달 작업. "Reset-free Trial and Error"(RTE) 및 다양한 단일 레퍼토리 기반 기준선과 비교합니다. 결과는 APROL이 기준선보다 더 적은 상호작용 시간으로 두 작업을 모두 해결함을 보여줍니다. 또한, 실제 손상된 6족 로봇에서 APROL을 시연하여 경로상의 장애물을 피하면서 목표에 도달하기 위해 보상 정책을 빠르게 학습함을 보여줍니다.
-
-## 핵심 내용
-레퍼토리 기반 학습은 데이터 효율적인 적응 접근 방식으로, (1) 시뮬레이션에서 크고 다양한 정책 집합을 학습하고, (2) 계획 또는 학습 알고리즘이 현재 상황(예: 손상된 로봇, 새로운 물체 등)에 따라 가장 적절한 정책을 선택하는 두 단계 과정에 기반합니다. 본 논문에서는 단일 레퍼토리만으로 적응이 충분하다는 기존 연구의 가정을 완화합니다. 대신, 다양한 상황(예: 다리 하나가 없는 경우, 다른 바닥에서 등)에 대한 레퍼토리를 생성하고, 알고리즘이 가장 유용한 사전 지식을 선택하도록 합니다. 주요 기여는 로봇이 현재 상황에 대한 정보가 없을 때 이러한 사전 지식을 통합하여 다음 행동을 계획하는 알고리즘인 APROL(Adaptive Prior selection for Repertoire-based Online Learning)입니다. 우리는 두 가지 시뮬레이션 작업에서 APROL을 평가합니다: (1) 로봇 팔로 다양한 모양과 크기의 알려지지 않은 물체를 밀기, (2) 손상된 6족 로봇으로 목표 도달 작업. "Reset-free Trial and Error"(RTE) 및 다양한 단일 레퍼토리 기반 기준선과 비교합니다. 결과는 APROL이 기준선보다 더 적은 상호작용 시간으로 두 작업을 모두 해결함을 보여줍니다. 또한, 실제 손상된 6족 로봇에서 APROL을 시연하여 경로상의 장애물을 피하면서 목표에 도달하기 위해 보상 정책을 빠르게 학습함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1907.07029v3
+
+## 개요
+본 논문은 로봇 적응 과정에서 단일 행동 라이브러리의 사전 지식 부족 문제를 해결하기 위해 APROL 알고리즘을 제안한다. APROL은 다양한 상황에서의 MAP-Elites 행동 라이브러리를 생성하고, 온라인으로 가장 관련성 높은 사전 지식을 선택하여 동작 계획을 안내함으로써, 재설정 없이 손상 및 환경 변화에 대응할 수 있다. 시뮬레이션 작업에서 APROL은 물체 밀기 및 육족 로봇 목표 도달 작업 모두에서 Reset-free Trial and Error (RTE) 및 단일 사전 지식 기준선보다 더 효율적이었다. 또한, 실제 실험에서 손상된 육족 로봇이 APROL을 활용하여 보상 전략을 빠르게 학습하고 장애물을 피해 목표에 도달할 수 있음을 보여주었다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: APROL은 행동 라이브러리 기반 온라인 적응 프레임워크로, 여러 MAP-Elites 행동 라이브러리(각각 다른 상황, 예: 다리 결손, 다양한 지면 등에 대응)를 생성하고, 온라인으로 가장 적합한 사전 지식을 선택하여 동작을 안내한다.
+- **알고리즘 흐름**:
+  - 가우시안 프로세스 변환 모델(Gaussian-process transformation models)을 사용하여 현재 로봇 상태를 각 사전 행동 라이브러리에 매핑한다.
+  - MAP/UCB 동작 선택 기준(MAP/UCB action-selection criterion)을 사용하여 탐색과 활용의 균형을 맞추고, 현재 상황에 가장 적응할 가능성이 높은 동작을 선택한다.
+  - 재설정 없음(reset-free), 즉 로봇이 연속적인 상호작용에서 직접 전략을 조정할 수 있다.
+
+### 실험 설정
+- **시뮬레이션 작업**:
+  1. **물체 밀기**: 로봇 팔이 알 수 없는 모양과 크기의 물체를 민다.
+  2. **육족 로봇 목표 도달**: 손상된 육족 로봇이 지정된 목표 위치에 도달해야 한다.
+- **기준선 비교**: Reset-free Trial and Error (RTE) 및 다양한 단일 사전 지식 행동 라이브러리 기준선과 비교.
+- **실제 실험**: 실제 손상된 육족 로봇에서 검증하며, 로봇은 장애물을 피해 목표에 도달해야 한다.
+
+### 주요 결과
+- **시뮬레이션 작업**: APROL은 두 작업 모두에서 더 적은 상호작용 시간(interaction time)으로 작업을 완료하여 모든 기준선보다 우수했다.
+- **실제 실험**: 손상된 육족 로봇이 보상 전략을 빠르게 학습하고 장애물을 성공적으로 피해 목표에 도달하여 알고리즘의 실제 효용성을 검증했다.
+
+### 결론
+APROL은 다중 사전 지식 온라인 선택 메커니즘을 통해 로봇의 알 수 없는 손상 및 환경 변화에 대한 적응 효율성을 크게 향상시키며, 재설정이 필요 없어 행동 라이브러리 방법에 더 유연한 확장을 제공한다.

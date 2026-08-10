@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.02454v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.02454v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (997 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,31 @@ World-Gymnast 的结果表明，学习世界模型并在云端训练机器人策
 ## Overview
 Robot learning from interacting with the physical world is fundamentally bottlenecked by the cost of physical interaction. The two alternatives, supervised finetuning (SFT) from expert demonstrations and reinforcement learning (RL) in a software-based simulator, are limited by the amount of expert data available and the sim-to-real gap for manipulation. With the recent emergence of world models learned from real-world video-action data, we ask the question of whether training a policy in a world model can be more effective than supervised learning or software simulation in achieving better real-robot performance. We propose World-Gymnast, which performs RL finetuning of a vision-language-action (VLA) policy by rolling out the policy in an action-conditioned video world model and rewarding the rollouts with a vision-language model (VLM). On the Bridge robot setup, World-Gymnast outperforms SFT by as much as 18x and outperforms software simulator by as much as 2x. More importantly, World-Gymnast demonstrates intriguing capabilities of RL with a world model, including training on diverse language instructions and novel scenes from the world model, test-time training in a novel scene, and online iterative world model and policy improvement. Our results suggest learning a world model and training robot policies in the cloud could be the key to bridging the gap between robots that work in demonstrations and robots that can work in anyone's household.
 
-## 개요
-물리적 세계와의 상호작용을 통한 로봇 학습은 근본적으로 물리적 상호작용 비용에 의해 병목 현상이 발생합니다. 두 가지 대안인 전문가 시연을 통한 지도 미세 조정(SFT)과 소프트웨어 기반 시뮬레이터에서의 강화 학습(RL)은 사용 가능한 전문가 데이터의 양과 조작 작업에서의 시뮬레이션-실제 간극(sim-to-real gap)에 의해 제한됩니다. 최근 실제 세계 비디오-행동 데이터로 학습된 세계 모델의 등장에 따라, 우리는 세계 모델에서 정책을 훈련하는 것이 더 나은 실제 로봇 성능을 달성하는 데 있어 지도 학습이나 소프트웨어 시뮬레이션보다 더 효과적일 수 있는지 질문합니다. 우리는 World-Gymnast를 제안하며, 이는 행동 조건부 비디오 세계 모델에서 정책을 롤아웃하고 비전-언어 모델(VLM)로 롤아웃에 보상을 부여하여 비전-언어-행동(VLA) 정책의 RL 미세 조정을 수행합니다. Bridge 로봇 설정에서 World-Gymnast는 SFT보다 최대 18배, 소프트웨어 시뮬레이터보다 최대 2배 더 뛰어난 성능을 보입니다. 더 중요한 것은, World-Gymnast가 세계 모델을 통한 RL의 흥미로운 능력, 즉 다양한 언어 명령어와 세계 모델의 새로운 장면에 대한 훈련, 새로운 장면에서의 테스트 시간 훈련, 온라인 반복적 세계 모델 및 정책 개선을 보여준다는 점입니다. 우리의 결과는 세계 모델을 학습하고 클라우드에서 로봇 정책을 훈련하는 것이 시연에서 작동하는 로봇과 누구의 가정에서나 작동할 수 있는 로봇 간의 격차를 해소하는 열쇠가 될 수 있음을 시사합니다.
-
-## 핵심 내용
-물리적 세계와의 상호작용을 통한 로봇 학습은 근본적으로 물리적 상호작용 비용에 의해 병목 현상이 발생합니다. 두 가지 대안인 전문가 시연을 통한 지도 미세 조정(SFT)과 소프트웨어 기반 시뮬레이터에서의 강화 학습(RL)은 사용 가능한 전문가 데이터의 양과 조작 작업에서의 시뮬레이션-실제 간극(sim-to-real gap)에 의해 제한됩니다. 최근 실제 세계 비디오-행동 데이터로 학습된 세계 모델의 등장에 따라, 우리는 세계 모델에서 정책을 훈련하는 것이 더 나은 실제 로봇 성능을 달성하는 데 있어 지도 학습이나 소프트웨어 시뮬레이션보다 더 효과적일 수 있는지 질문합니다. 우리는 World-Gymnast를 제안하며, 이는 행동 조건부 비디오 세계 모델에서 정책을 롤아웃하고 비전-언어 모델(VLM)로 롤아웃에 보상을 부여하여 비전-언어-행동(VLA) 정책의 RL 미세 조정을 수행합니다. Bridge 로봇 설정에서 World-Gymnast는 SFT보다 최대 18배, 소프트웨어 시뮬레이터보다 최대 2배 더 뛰어난 성능을 보입니다. 더 중요한 것은, World-Gymnast가 세계 모델을 통한 RL의 흥미로운 능력, 즉 다양한 언어 명령어와 세계 모델의 새로운 장면에 대한 훈련, 새로운 장면에서의 테스트 시간 훈련, 온라인 반복적 세계 모델 및 정책 개선을 보여준다는 점입니다. 우리의 결과는 세계 모델을 학습하고 클라우드에서 로봇 정책을 훈련하는 것이 시연에서 작동하는 로봇과 누구의 가정에서나 작동할 수 있는 로봇 간의 격차를 해소하는 열쇠가 될 수 있음을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.02454v1
+
+## 개요
+World-Gymnast는 VLA 정책을 액션 조건부 비디오 월드 모델(WorldGym)에서 전개하고, 이진 비전-언어 모델(GPT-4o)로 상상된 궤적을 평가하여 강화 학습 미세 조정을 수행합니다. 이 방법은 Bridge WidowX 로봇 설정에서 지도 미세 조정(SFT) 대비 최대 18배의 성공률 향상, 시뮬레이터 기반 강화 학습(RL) 대비 2배의 향상을 달성했습니다. 더 중요한 것은, World-Gymnast는 다양한 언어 명령과 새로운 시나리오에서의 훈련, 새로운 시나리오에서 테스트 시 훈련, 그리고 월드 모델과 정책의 온라인 반복 개선을 포함한 월드 모델 강화 학습의 독특한 능력을 보여줍니다.
+
+## 핵심 내용
+### 방법
+World-Gymnast의 핵심은 액션 조건부 비디오 월드 모델(WorldGym)을 정책 훈련 환경으로 사용하는 것입니다. 구체적인 절차는 다음과 같습니다:
+- **정책 전개**: 사전 훈련된 VLA 정책을 WorldGym에서 전개하여 상상된 궤적을 생성합니다.
+- **보상 평가**: 이진 비전-언어 모델(GPT-4o)로 생성된 궤적을 평가하여 강화 학습의 보상 신호로 사용합니다.
+- **최적화 알고리즘**: Group Relative Policy Optimization (GRPO)을 사용하여 정책을 미세 조정하며, 그룹 내 상대 비교를 통해 정책을 최적화합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: Bridge WidowX 로봇 설정.
+- **기준 비교**: 지도 미세 조정(SFT) 및 시뮬레이터 기반 강화 학습(Simulator-based RL).
+- **평가 지표**: 작업 성공률.
+
+### 주요 결과
+- **성능 향상**: World-Gymnast는 Bridge 로봇 설정에서 SFT보다 성공률이 18배 높고, 시뮬레이터 기반 RL보다 2배 높습니다.
+- **독특한 능력**:
+  - **다양한 언어 명령**: 다양한 언어 명령을 처리하고 월드 모델에서 훈련할 수 있습니다.
+  - **새로운 시나리오 훈련**: 실제 물리적 상호작용 없이 월드 모델에서 생성된 새로운 시나리오에서 훈련할 수 있습니다.
+  - **테스트 시 훈련**: 새로운 시나리오에서 테스트 시 온라인 훈련을 통해 환경 변화에 적응할 수 있습니다.
+  - **온라인 반복 개선**: 월드 모델과 정책을 동시에 온라인으로 반복 개선하여 폐쇄 루프 최적화를 형성할 수 있습니다.
+
+### 결론
+World-Gymnast의 결과는 월드 모델을 학습하고 클라우드에서 로봇 정책을 훈련하는 것이 데모 로봇과 가정용 로봇 간의 격차를 메우는 핵심이 될 수 있음을 시사합니다. 이 방법은 물리적 상호작용에 대한 의존도를 줄임으로써 로봇 정책의 일반화 능력과 훈련 효율성을 크게 향상시킵니다.

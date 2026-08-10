@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.13844v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.13844v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (668 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,23 @@ LDHP 采用双层规划结构：
 ## Overview
 Non-prehensile manipulation is essential for handling thin, large, or otherwise ungraspable objects in unstructured settings. Prior planning and search-based methods often rely on ad-hoc manual designs or generate physically unrealizable motions by ignoring critical gripper properties, while training-based approaches are data-intensive and struggle to generalize to novel, out-of-distribution tasks. We propose a library-driven hierarchical planner (LDHP) that makes executability a first-class design goal: a top-tier contact-state planner proposes object-pose paths using MoveObject primitives, and a bottom-tier grasp planner synthesizes feasible grasp sequences with AdjustGrasp primitives; feasibility is certified by collision checks and quasi-static mechanics, and contact-sensitive segments are recovered via a bounded dichotomy refinement. This gripper-aware decomposition decouples object motion from grasp realizability, yields a task-agnostic pipeline that transfers across manipulation tasks and geometric variations without re-design, and exposes clean hooks for optional learned priors. Real-robot studies on zero-mobility lifting and slot insertion demonstrate consistent execution and robustness to shape and environment changes.
 
-## 개요
-비파지 조작(Non-prehensile manipulation)은 비정형 환경에서 얇거나 크거나 잡기 어려운 물체를 다루는 데 필수적이다. 기존의 계획 및 탐색 기반 방법은 종종 임시방편적인 수동 설계에 의존하거나 중요한 그리퍼 특성을 무시하여 물리적으로 실현 불가능한 움직임을 생성하는 반면, 훈련 기반 접근법은 데이터 집약적이며 새로운 분포 외 작업으로 일반화하는 데 어려움을 겪는다. 우리는 실행 가능성을 최우선 설계 목표로 삼는 라이브러리 기반 계층적 계획기(LDHP)를 제안한다: 상위 계층의 접촉 상태 계획기는 MoveObject 프리미티브를 사용하여 물체 자세 경로를 제안하고, 하위 계층의 파지 계획기는 AdjustGrasp 프리미티브를 사용하여 실행 가능한 파지 시퀀스를 합성한다; 실행 가능성은 충돌 검사와 준정적 역학에 의해 인증되며, 접촉에 민감한 세그먼트는 유계 이분법 정제(bounded dichotomy refinement)를 통해 복구된다. 이러한 그리퍼 인식 분해는 물체 움직임과 파지 실현 가능성을 분리하고, 재설계 없이 조작 작업 및 기하학적 변형 전반에 걸쳐 전이되는 작업 무관 파이프라인을 제공하며, 선택적 학습 사전 지식을 위한 깔끔한 훅을 노출한다. 제로 이동성 리프팅 및 슬롯 삽입에 대한 실제 로봇 연구는 일관된 실행과 형상 및 환경 변화에 대한 강건성을 입증한다.
-
-## 핵심 내용
-비파지 조작(Non-prehensile manipulation)은 비정형 환경에서 얇거나 크거나 잡기 어려운 물체를 다루는 데 필수적이다. 기존의 계획 및 탐색 기반 방법은 종종 임시방편적인 수동 설계에 의존하거나 중요한 그리퍼 특성을 무시하여 물리적으로 실현 불가능한 움직임을 생성하는 반면, 훈련 기반 접근법은 데이터 집약적이며 새로운 분포 외 작업으로 일반화하는 데 어려움을 겪는다. 우리는 실행 가능성을 최우선 설계 목표로 삼는 라이브러리 기반 계층적 계획기(LDHP)를 제안한다: 상위 계층의 접촉 상태 계획기는 MoveObject 프리미티브를 사용하여 물체 자세 경로를 제안하고, 하위 계층의 파지 계획기는 AdjustGrasp 프리미티브를 사용하여 실행 가능한 파지 시퀀스를 합성한다; 실행 가능성은 충돌 검사와 준정적 역학에 의해 인증되며, 접촉에 민감한 세그먼트는 유계 이분법 정제(bounded dichotomy refinement)를 통해 복구된다. 이러한 그리퍼 인식 분해는 물체 움직임과 파지 실현 가능성을 분리하고, 재설계 없이 조작 작업 및 기하학적 변형 전반에 걸쳐 전이되는 작업 무관 파이프라인을 제공하며, 선택적 학습 사전 지식을 위한 깔끔한 훅을 노출한다. 제로 이동성 리프팅 및 슬롯 삽입에 대한 실제 로봇 연구는 일관된 실행과 형상 및 환경 변화에 대한 강건성을 입증한다.
-
 ## 参考
 - http://arxiv.org/abs/2603.13844v2
+
+## 개요
+LDHP는 계층적 아키텍처를 통해 물체 운동과 파지 가능성을 분리하며, 최상위 계층은 MoveObject 프리미티브를 사용하여 물체 자세 경로를 계획하고, 하위 계층은 AdjustGrasp 프리미티브를 사용하여 실행 가능한 파지 시퀀스를 합성합니다. 이 방법은 충돌 감지와 준정적 역학 검증을 통해 실행 가능성을 확인하고, 유계 이분 정밀화(bounded dichotomy refinement)를 사용하여 접촉 민감 구간을 복구함으로써 물리적으로 실행 가능한 운동을 생성합니다. 이러한 설계는 전통적인 방법의 수동 설계나 데이터 집약적 훈련을 피하면서, 재설계 없이 작업 및 기하학적 변화에 걸쳐 전이할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+LDHP는 이중 계층 계획 구조를 채택합니다:
+- **최상위 접촉 상태 계획기**: MoveObject 프리미티브를 사용하여 물체 자세 경로를 제안하며, 접촉 상태에서 물체의 운동 궤적을 계획합니다.
+- **하위 파지 계획기**: AdjustGrasp 프리미티브를 사용하여 실행 가능한 파지 시퀀스를 합성하며, 파지 동작의 물리적 실현 가능성을 보장합니다.
+
+### 핵심 메커니즘
+- **실행 가능성 검증**: 충돌 감지와 준정적 역학 모델을 통해 각 계획 단계의 실행 가능성을 인증합니다.
+- **접촉 민감 구간 복구**: 유계 이분 정밀화(bounded dichotomy refinement) 방법을 사용하여 접촉에 민감한 운동 구간을 세밀하게 조정합니다.
+- **작업 비의존 파이프라인**: 이러한 파지 인식 분해는 파이프라인이 재설계 없이 조작 작업 및 기하학적 변화에 걸쳐 전이할 수 있게 하며, 선택적 학습 사전(prior) 인터페이스를 제공합니다.
+
+### 실험 설정 및 결과
+- **실제 로봇 실험**: 제로 이동 리프팅(zero-mobility lifting) 및 슬롯 삽입(slot insertion) 두 작업에서 테스트되었습니다.
+- **강건성 성능**: 실험은 LDHP가 형태 및 환경 변화에 대해 일관된 실행 능력과 강건성을 가지며, 얇거나, 크거나, 파지 불가능한 물체와 같은 비파지 조작 시나리오를 처리할 수 있음을 증명합니다.

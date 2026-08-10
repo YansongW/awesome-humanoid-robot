@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.04515v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.04515v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (958 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,34 @@ Deploying humanoid robots in real-world settings is fundamentally challenging, a
 ## Content
 Deploying humanoid robots in real-world settings is fundamentally challenging, as it demands tight integration of perception, locomotion, and manipulation under partial-information observations and dynamically changing environments, as well as transitioning robustly between sub-tasks of different types. Towards addressing these challenges, we propose a novel task - EgoActing, which requires directly grounding high-level instructions into various, precise, spatially aware humanoid actions. We further instantiate this task by introducing EgoActor, a unified and scalable vision-language model (VLM) that can predict locomotion primitives (e.g., walk, turn, move sideways, change height), head movements, manipulation commands, and human-robot interactions to coordinate perception and execution in real-time. We leverage broad supervision over egocentric RGB-only data from real-world demonstrations, spatial reasoning question-answering, and simulated environment demonstrations, enabling EgoActor to make robust, context-aware decisions and perform fluent action inference (under 1s) with both 8B and 4B parameter models. Extensive evaluations in both simulated and real-world environments demonstrate that EgoActor effectively bridges abstract task planning and concrete motor execution, while generalizing across diverse tasks and unseen environments.
 
-## 개요
-휴머노이드 로봇을 실제 환경에 배치하는 것은 근본적으로 어려운 과제입니다. 부분 정보 관측과 동적으로 변화하는 환경 속에서 인식, 보행, 조작의 긴밀한 통합이 요구되기 때문입니다. 또한 서로 다른 유형의 하위 작업 간 강건한 전환도 필요합니다. 이러한 과제를 해결하기 위해, 우리는 새로운 작업인 **EgoActing**을 제안합니다. 이 작업은 고수준 명령을 다양하고 정밀하며 공간 인식이 가능한 휴머노이드 동작에 직접적으로 기반하는 것을 요구합니다. 또한, 이 작업을 구체화하기 위해 **EgoActor**를 소개합니다. EgoActor는 통합적이고 확장 가능한 비전-언어 모델(VLM)로, 보행 기본 동작(예: 걷기, 회전, 측면 이동, 높이 변경), 머리 움직임, 조작 명령, 인간-로봇 상호작용을 예측하여 인식과 실행을 실시간으로 조정합니다. 우리는 실제 세계 시연에서 얻은 자아 중심 RGB 전용 데이터, 공간 추론 질의응답, 시뮬레이션 환경 시연에 대한 광범위한 감독을 활용하여, EgoActor가 강건하고 상황 인식적인 결정을 내리고 8B 및 4B 파라미터 모델로 유창한 동작 추론(1초 미만)을 수행할 수 있도록 합니다. 시뮬레이션 및 실제 환경에서의 광범위한 평가는 EgoActor가 추상적 작업 계획과 구체적 모터 실행을 효과적으로 연결하며, 다양한 작업과 보지 못한 환경에서 일반화됨을 보여줍니다.
-
-## 핵심 내용
-휴머노이드 로봇을 실제 환경에 배치하는 것은 근본적으로 어려운 과제입니다. 부분 정보 관측과 동적으로 변화하는 환경 속에서 인식, 보행, 조작의 긴밀한 통합이 요구되기 때문입니다. 또한 서로 다른 유형의 하위 작업 간 강건한 전환도 필요합니다. 이러한 과제를 해결하기 위해, 우리는 새로운 작업인 **EgoActing**을 제안합니다. 이 작업은 고수준 명령을 다양하고 정밀하며 공간 인식이 가능한 휴머노이드 동작에 직접적으로 기반하는 것을 요구합니다. 또한, 이 작업을 구체화하기 위해 **EgoActor**를 소개합니다. EgoActor는 통합적이고 확장 가능한 비전-언어 모델(VLM)로, 보행 기본 동작(예: 걷기, 회전, 측면 이동, 높이 변경), 머리 움직임, 조작 명령, 인간-로봇 상호작용을 예측하여 인식과 실행을 실시간으로 조정합니다. 우리는 실제 세계 시연에서 얻은 자아 중심 RGB 전용 데이터, 공간 추론 질의응답, 시뮬레이션 환경 시연에 대한 광범위한 감독을 활용하여, EgoActor가 강건하고 상황 인식적인 결정을 내리고 8B 및 4B 파라미터 모델로 유창한 동작 추론(1초 미만)을 수행할 수 있도록 합니다. 시뮬레이션 및 실제 환경에서의 광범위한 평가는 EgoActor가 추상적 작업 계획과 구체적 모터 실행을 효과적으로 연결하며, 다양한 작업과 보지 못한 환경에서 일반화됨을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.04515v1
+
+## 개요
+EgoActor는 휴머노이드 로봇이 실제 세계에 배치될 때 직면하는 인식, 운동, 조작의 긴밀한 결합 문제를 해결하기 위해 EgoActing 작업을 제안합니다. 이 작업은 모델이 높은 수준의 지시를 다양한 정밀하고 공간 인식이 가능한 자아 중심 동작으로 직접 매핑하도록 요구합니다. 이를 위해 저자는 EgoActor 모델을 구축했으며, 이는 걷기, 회전, 측면 이동, 높이 변화와 같은 운동 기본 요소와 머리 움직임, 조작 지시, 인간-로봇 상호작용을 동시에 예측할 수 있는 통합적이고 확장 가능한 비전-언어 모델입니다. 모델은 실제 세계 시연의 자아 중심 RGB 데이터, 공간 추론 질의응답, 시뮬레이션 환경 시연을 통해 광범위하게 지도 학습되어 강력한 상황 인식 의사 결정과 원활한 동작 추론(추론 시간 1초 미만)을 구현합니다. 실험은 시뮬레이션 및 실제 환경 모두에서 그 효과를 검증했습니다.
+
+## 핵심 내용
+### 방법 개요
+EgoActor의 핵심은 부분 관측 및 동적 환경에서 휴머노이드 로봇의 작업 계획 및 실행 문제를 해결하기 위한 통합 비전-언어 모델(VLM)입니다. 모델은 높은 수준의 지시를 일련의 공간 인식 자아 중심 동작, 즉 EgoActing 작업으로 직접 "구체화"합니다.
+
+### 아키텍처 및 입력
+- **입력**: 모델은 자아 중심 시점의 RGB 이미지만을 시각적 입력으로 사용합니다.
+- **출력**: 모델은 여러 동작 기본 요소를 예측합니다:
+  - **운동 기본 요소**: 걷기, 회전, 측면 이동, 높이 변경.
+  - **머리 움직임**: 인식 조정에 사용.
+  - **조작 지시**: 물체 조작에 사용.
+  - **인간-로봇 상호작용 지시**: 인간과의 협업에 사용.
+- **추론 속도**: 8B 및 4B 매개변수 규모의 모델에서 모두 1초 미만의 원활한 동작 추론을 달성합니다.
+
+### 훈련 데이터 및 지도
+EgoActor는 세 가지 데이터 소스를 통해 광범위한 지도 학습을 수행합니다:
+1.  **실제 세계 시연**: 실제 환경에서의 동작 패턴을 학습하기 위해 자아 중심 RGB 데이터를 수집합니다.
+2.  **공간 추론 질의응답**: 질의응답 형식을 통해 모델의 공간 인식 능력을 강화합니다.
+3.  **시뮬레이션 환경 시연**: 시뮬레이터에서 대량의 시연 데이터를 생성하여 모델의 일반화 능력을 향상시킵니다.
+
+### 실험 설정 및 결과
+- **평가 환경**: 시뮬레이션 환경과 실제 세계 환경 모두에서 광범위하게 평가되었습니다.
+- **핵심 결론**:
+  - EgoActor는 추상적인 작업 계획과 구체적인 운동 실행을 효과적으로 연결할 수 있습니다.
+  - 모델은 다양한 작업과 보지 못한 환경에 적응할 수 있는 우수한 일반화 능력을 보여줍니다.
+  - 여러 동작 유형(운동, 머리, 조작, 상호작용)을 통합적으로 예측하여 인식과 실행의 실시간 조정을 구현합니다.

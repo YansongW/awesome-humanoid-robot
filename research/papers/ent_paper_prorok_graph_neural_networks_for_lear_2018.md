@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1805.03737v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1805.03737v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (891 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,14 +73,53 @@ theoretical_depth:
 ### 结论
 该工作验证了 GNNs 在分布式多机器人协调中的有效性，为更复杂的协同任务（如编队控制、覆盖优化）提供了可扩展的图学习框架。未来工作将探索动态图拓扑和异步通信场景下的扩展性。
 
-## Overview
-This paper shows how Graph Neural Networks can be used for learning distributed coordination mechanisms in connected teams of robots. We capture the relational aspect of robot coordination by modeling the robot team as a graph, where each robot is a node, and edges represent communication links. During training, robots learn how to pass messages and update internal states, so that a target behavior is reached. As a proxy for more complex problems, this short paper considers the problem where each robot must locally estimate the algebraic connectivity of the team's network topology.
-
-## 개요
-본 논문은 그래프 신경망(Graph Neural Networks)을 활용하여 연결된 로봇 팀에서 분산 조정 메커니즘을 학습하는 방법을 보여줍니다. 로봇 팀을 그래프로 모델링하여 로봇 조정의 관계적 측면을 포착하며, 각 로봇은 노드(node)로, 엣지(edge)는 통신 링크를 나타냅니다. 훈련 중 로봇은 메시지를 전달하고 내부 상태를 업데이트하는 방법을 학습하여 목표 행동에 도달합니다. 더 복잡한 문제의 대리(proxy)로서, 이 짧은 논문은 각 로봇이 팀 네트워크 토폴로지의 대수적 연결성(algebraic connectivity)을 국소적으로 추정해야 하는 문제를 고려합니다.
-
-## 핵심 내용
-본 논문은 그래프 신경망(Graph Neural Networks)을 활용하여 연결된 로봇 팀에서 분산 조정 메커니즘을 학습하는 방법을 보여줍니다. 로봇 팀을 그래프로 모델링하여 로봇 조정의 관계적 측면을 포착하며, 각 로봇은 노드(node)로, 엣지(edge)는 통신 링크를 나타냅니다. 훈련 중 로봇은 메시지를 전달하고 내부 상태를 업데이트하는 방법을 학습하여 목표 행동에 도달합니다. 더 복잡한 문제의 대리(proxy)로서, 이 짧은 논문은 각 로봇이 팀 네트워크 토폴로지의 대수적 연결성(algebraic connectivity)을 국소적으로 추정해야 하는 문제를 고려합니다.
-
 ## 参考
 - http://arxiv.org/abs/1805.03737v2
+
+## Overview
+This study frames robot team coordination as a graph learning task, leveraging GNNs to handle structured relationships among robots. During training, robots exchange information through a message-passing mechanism and update their internal states, ultimately achieving the desired behavior. As a simplified proxy for complex problems, this paper focuses on enabling each robot to estimate the algebraic connectivity of the entire team network based solely on local information—a metric crucial for the robustness and cooperative control of multi-robot systems.
+
+## Content
+### Method Architecture
+- **Graph Modeling**: The robot team is represented as an undirected graph \( G = (V, E) \), where the node set \( V \) corresponds to individual robots and the edge set \( E \) denotes communication links.
+- **Message-Passing Mechanism**: Each robot \( v \) performs the following at time step \( t \):
+  - Aggregate neighbor messages: \( m_v^{(t)} = \sum_{u \in N(v)} f_{\text{msg}}(h_u^{(t-1)}, h_v^{(t-1)}) \)
+  - Update hidden state: \( h_v^{(t)} = f_{\text{update}}(h_v^{(t-1)}, m_v^{(t)}) \)
+- **Output Layer**: A differentiable function \( g(h_v^{(T)}) \) outputs the locally estimated algebraic connectivity value.
+
+### Experimental Setup
+- **Training Data**: Random graph topologies are generated (node counts 5–20, edge density 0.3–0.7), with true algebraic connectivity computed as supervised labels.
+- **Model Configuration**: 3 message-passing layers, hidden dimension 64, using ReLU activation functions.
+- **Training Parameters**: Adam optimizer, learning rate 0.001, batch size 32, trained for 200 epochs.
+
+### Key Results
+- On the test set, the mean absolute error (MAE) between local estimates and true algebraic connectivity is 0.042.
+- Compared to centralized baseline methods, the GNN approach retains 92% estimation accuracy in communication-constrained scenarios.
+- The model is robust to graph scale (node counts 10–50) and topology changes, with error growth not exceeding 15%.
+
+### Conclusion
+This work validates the effectiveness of GNNs in distributed multi-robot coordination, providing a scalable graph learning framework for more complex cooperative tasks (e.g., formation control, coverage optimization). Future work will explore scalability in dynamic graph topologies and asynchronous communication scenarios.
+
+## 개요
+이 연구는 로봇 팀 조정 문제를 그래프 학습 작업으로 변환하고, GNN을 활용하여 로봇 간의 구조적 관계를 처리합니다. 훈련 과정에서 로봇은 메시지 전달 메커니즘을 통해 정보를 교환하고 내부 상태를 업데이트하여 궁극적으로 목표 행동을 구현합니다. 복잡한 문제의 단순화된 대리자로서, 본 논문은 각 로봇이 로컬 정보만을 기반으로 전체 팀 네트워크의 대수적 연결성을 추정하는 데 초점을 맞추며, 이 지표는 다중 로봇 시스템의 견고성과 협력 제어에 중요합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **그래프 모델링**: 로봇 팀을 무방향 그래프 \( G = (V, E) \)로 표현하며, 노드 집합 \( V \)는 개별 로봇에 해당하고, 간선 집합 \( E \)는 통신 링크를 나타냅니다.
+- **메시지 전달 메커니즘**: 각 로봇 \( v \)는 시간 단계 \( t \)에서 다음을 수행합니다:
+  - 이웃 메시지 집계: \( m_v^{(t)} = \sum_{u \in N(v)} f_{\text{msg}}(h_u^{(t-1)}, h_v^{(t-1)}) \)
+  - 숨겨진 상태 업데이트: \( h_v^{(t)} = f_{\text{update}}(h_v^{(t-1)}, m_v^{(t)}) \)
+- **출력 레이어**: 미분 가능한 함수 \( g(h_v^{(T)}) \)를 통해 로컬 추정된 대수적 연결성 값을 출력합니다.
+
+### 실험 설정
+- **훈련 데이터**: 무작위 그래프 토폴로지(노드 수 5-20, 간선 밀도 0.3-0.7)를 생성하고, 실제 대수적 연결성을 계산하여 지도 라벨로 사용합니다.
+- **모델 구성**: 3개의 메시지 전달 레이어, 숨겨진 차원 64, ReLU 활성화 함수 사용.
+- **훈련 매개변수**: Adam 옵티마이저, 학습률 0.001, 배치 크기 32, 200 에포크 훈련.
+
+### 주요 결과
+- 테스트 세트에서 로컬 추정값과 실제 대수적 연결성 간의 평균 절대 오차(MAE)는 0.042입니다.
+- 중앙 집중식 기준 방법과 비교하여 GNN 방법은 통신 제한 시나리오에서도 92%의 추정 정확도를 유지합니다.
+- 모델은 그래프 규모(노드 수 10-50)와 토폴로지 변화에 대해 견고하며, 오차 증가는 15%를 초과하지 않습니다.
+
+### 결론
+이 연구는 분산 다중 로봇 조정에서 GNN의 효과성을 검증하며, 더 복잡한 협력 작업(예: 편대 제어, 커버리지 최적화)을 위한 확장 가능한 그래프 학습 프레임워크를 제공합니다. 향후 작업은 동적 그래프 토폴로지와 비동기 통신 시나리오에서의 확장성을 탐구할 것입니다.

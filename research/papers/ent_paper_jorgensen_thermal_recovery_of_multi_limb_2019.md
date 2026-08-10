@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1902.00187v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1902.00187v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (556 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,14 +72,47 @@ theoretical_depth:
 - 该数据驱动热模型结合接触约束热IK，为多肢体机器人的热管理提供了实用方案。
 - 未来工作可扩展至更复杂的接触场景或不同机器人平台。
 
-## Overview
-The problem of finding thermally minimizing configurations of a humanoid robot to recover its actuators from unsafe thermal states is addressed. A first-order, data-driven, effort-based, thermal model of the robot's actuators is devised, which is used to predict future thermal states. Given this predictive capability, a map between configurations and future temperatures is formulated to find what configurations, subject to valid contact constraints, can be taken now to minimize future thermal states. Effectively, this approach is a realization of a contact-constrained thermal inverse-kinematics (IK) process. Experimental validation of the proposed approach is performed on the NASA Valkyrie robot hardware.
-
-## 개요
-휴머노이드 로봇의 액추에이터를 안전하지 않은 열 상태로부터 회복시키기 위해 열적으로 최소화하는 구성을 찾는 문제를 다룹니다. 로봇 액추에이터의 1차, 데이터 기반, 노력 기반 열 모델을 고안하여 미래의 열 상태를 예측하는 데 사용합니다. 이러한 예측 능력을 바탕으로, 구성과 미래 온도 간의 매핑을 공식화하여 유효한 접촉 제약 조건을 만족하는 현재 취할 수 있는 구성을 찾아 미래 열 상태를 최소화합니다. 효과적으로, 이 접근 방식은 접촉 제약 조건이 있는 열 역기구학(IK) 프로세스의 구현입니다. 제안된 접근 방식의 실험적 검증은 NASA Valkyrie 로봇 하드웨어에서 수행되었습니다.
-
-## 핵심 내용
-휴머노이드 로봇의 액추에이터를 안전하지 않은 열 상태로부터 회복시키기 위해 열적으로 최소화하는 구성을 찾는 문제를 다룹니다. 로봇 액추에이터의 1차, 데이터 기반, 노력 기반 열 모델을 고안하여 미래의 열 상태를 예측하는 데 사용합니다. 이러한 예측 능력을 바탕으로, 구성과 미래 온도 간의 매핑을 공식화하여 유효한 접촉 제약 조건을 만족하는 현재 취할 수 있는 구성을 찾아 미래 열 상태를 최소화합니다. 효과적으로, 이 접근 방식은 접촉 제약 조건이 있는 열 역기구학(IK) 프로세스의 구현입니다. 제안된 접근 방식의 실험적 검증은 NASA Valkyrie 로봇 하드웨어에서 수행되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/1902.00187v4
+
+## Overview
+This study addresses the safety issue of actuator overheating in humanoid robots by designing a first-order data-driven thermal model that predicts future thermal states based on actuator effort. Building on this, a mapping between configuration and future temperature is established to find the current configuration that minimizes future temperature while satisfying effective contact constraints. This process is essentially an implementation of contact-constrained thermal inverse kinematics (IK). Experiments were conducted on the NASA Valkyrie robot hardware, validating the effectiveness of the method.
+
+## Content
+### Method
+- Proposes a first-order data-driven thermal model that predicts future thermal states based on actuator effort, avoiding complex physical modeling.
+- Establishes a mapping between configuration and future temperature, optimizing the current configuration (subject to contact constraints) to minimize future temperature.
+- This method is essentially an implementation of contact-constrained thermal inverse kinematics (IK), transforming the thermal recovery problem into a configuration optimization problem.
+
+### Experimental Setup
+- Experimental validation was performed on the NASA Valkyrie humanoid robot hardware.
+- Experimental scenarios include the robot in specific contact states (e.g., standing or supporting) with actuators in an overheated state.
+
+### Key Results
+- Experiments show that the optimized configuration effectively reduces actuator temperature, enabling recovery from unsafe thermal states.
+- The method runs on real hardware, demonstrating its feasibility in practical applications.
+
+### Conclusion
+- The data-driven thermal model combined with contact-constrained thermal IK provides a practical solution for thermal management in multi-limbed robots.
+- Future work could extend to more complex contact scenarios or different robot platforms.
+
+## 개요
+본 연구는 휴머노이드 로봇 액추에이터의 과열 안전 문제를 해결하기 위해, 액추에이터 토크(effort)를 기반으로 미래 열 상태를 예측하는 1차 데이터 기반 열 모델을 설계하였다. 이를 바탕으로, 자세(configuration)와 미래 온도 간의 매핑 관계를 구축하고, 유효 접촉 제약 조건을 충족하는 범위 내에서 미래 온도를 최소화할 수 있는 현재 자세를 탐색한다. 이 과정은 본질적으로 접촉 제약 열 역운동학(IK)의 구현이다. 실험은 NASA Valkyrie 로봇 하드웨어에서 수행되었으며, 방법의 유효성을 검증하였다.
+
+## 핵심 내용
+### 방법
+- 액추에이터 토크(effort)를 기반으로 미래 열 상태를 예측하는 1차 데이터 기반 열 모델을 제안하여, 복잡한 물리 모델링을 피한다.
+- 자세와 미래 온도 간의 매핑을 구축하고, 접촉 제약 조건의 제한을 받는 현재 자세를 최적화하여 미래 온도를 최소화한다.
+- 이 방법은 본질적으로 접촉 제약 열 역운동학(IK)의 구현으로, 열 회복 문제를 자세 최적화 문제로 변환한다.
+
+### 실험 설정
+- NASA Valkyrie 휴머노이드 로봇 하드웨어에서 실험 검증을 수행한다.
+- 실험 시나리오에는 로봇이 특정 접촉 상태(예: 서 있거나 지지하는 상태)에 있고, 액추에이터가 과열 상태인 경우가 포함된다.
+
+### 주요 결과
+- 실험 결과, 최적화된 자세가 액추에이터 온도를 효과적으로 낮추어 불안전한 열 상태에서 회복시킬 수 있음을 보여준다.
+- 이 방법은 실제 하드웨어에서 실행되어 실제 응용에서의 실현 가능성을 검증한다.
+
+### 결론
+- 데이터 기반 열 모델과 접촉 제약 열 IK를 결합한 이 방법은 다중 팔다리 로봇의 열 관리를 위한 실용적인 솔루션을 제공한다.
+- 향후 작업은 더 복잡한 접촉 시나리오나 다양한 로봇 플랫폼으로 확장할 수 있다.

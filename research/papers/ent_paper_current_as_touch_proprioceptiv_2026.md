@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03529v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03529v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (882 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,30 @@ sources:
 ## Overview
 Compliance is essential for dexterous manipulation, yet existing solutions often rely on external tactile or force sensors that are costly, fragile, and difficult to deploy on low-cost robot hands. We propose a proprioception-driven framework that learns contact-aware compliance cues from motor current and joint states. Since motor current is closely related to actuator torque, it provides an intrinsic signal for perceiving contact force, object resistance, and grasp stability without additional sensing hardware. Rather than estimating external wrenches or commanding torque, our method predicts a compliance reference position: an ideal joint-position target for a standard PD controller whose induced position error generates appropriate grasping force. This position-based formulation is compatible with mainstream teleoperation and policy-learning pipelines, while enabling the robot to adapt interaction forces from real-time proprioceptive feedback. Thus, motor current serves not only as a force proxy but also as a learnable proprioceptive contact signal for compliance reference prediction. Experiments on multiple dexterous hands and contact-rich tasks, including fragile object handling, sustained surface contact, thin-object retrieval, and dynamic load adaptation, show stable compliant grasping, safer and more efficient teleoperation, and improved downstream policy learning without external tactile or force sensors.
 
-## 개요
-컴플라이언스는 정밀 조작에 필수적이지만, 기존 솔루션은 종종 비용이 많이 들고 깨지기 쉬우며 저가형 로봇 손에 적용하기 어려운 외부 촉각 또는 힘 센서에 의존합니다. 우리는 모터 전류와 관절 상태로부터 접촉 인식 컴플라이언스 신호를 학습하는 고유수용성 기반 프레임워크를 제안합니다. 모터 전류는 액추에이터 토크와 밀접한 관련이 있으므로 추가 센서 하드웨어 없이 접촉력, 물체 저항 및 파지 안정성을 인식하는 내재적 신호를 제공합니다. 우리의 방법은 외부 렌치를 추정하거나 토크를 명령하는 대신, 표준 PD 제어기의 이상적인 관절 위치 목표인 컴플라이언스 기준 위치를 예측하여 유도된 위치 오차가 적절한 파지력을 생성하도록 합니다. 이 위치 기반 공식은 주류 원격 조작 및 정책 학습 파이프라인과 호환되며, 로봇이 실시간 고유수용성 피드백으로부터 상호작용 힘을 적응시킬 수 있게 합니다. 따라서 모터 전류는 힘 대리 역할뿐만 아니라 컴플라이언스 기준 예측을 위한 학습 가능한 고유수용성 접촉 신호로도 기능합니다. 여러 정밀 로봇 손과 깨지기 쉬운 물체 취급, 지속적인 표면 접촉, 얇은 물체 회수, 동적 하중 적응을 포함한 접촉이 많은 작업에 대한 실험은 외부 촉각 또는 힘 센서 없이 안정적인 컴플라이언트 파지, 더 안전하고 효율적인 원격 조작, 그리고 개선된 하위 정책 학습을 보여줍니다.
-
-## 핵심 내용
-컴플라이언스는 정밀 조작에 필수적이지만, 기존 솔루션은 종종 비용이 많이 들고 깨지기 쉬우며 저가형 로봇 손에 적용하기 어려운 외부 촉각 또는 힘 센서에 의존합니다. 우리는 모터 전류와 관절 상태로부터 접촉 인식 컴플라이언스 신호를 학습하는 고유수용성 기반 프레임워크를 제안합니다. 모터 전류는 액추에이터 토크와 밀접한 관련이 있으므로 추가 센서 하드웨어 없이 접촉력, 물체 저항 및 파지 안정성을 인식하는 내재적 신호를 제공합니다. 우리의 방법은 외부 렌치를 추정하거나 토크를 명령하는 대신, 표준 PD 제어기의 이상적인 관절 위치 목표인 컴플라이언스 기준 위치를 예측하여 유도된 위치 오차가 적절한 파지력을 생성하도록 합니다. 이 위치 기반 공식은 주류 원격 조작 및 정책 학습 파이프라인과 호환되며, 로봇이 실시간 고유수용성 피드백으로부터 상호작용 힘을 적응시킬 수 있게 합니다. 따라서 모터 전류는 힘 대리 역할뿐만 아니라 컴플라이언스 기준 예측을 위한 학습 가능한 고유수용성 접촉 신호로도 기능합니다. 여러 정밀 로봇 손과 깨지기 쉬운 물체 취급, 지속적인 표면 접촉, 얇은 물체 회수, 동적 하중 적응을 포함한 접촉이 많은 작업에 대한 실험은 외부 촉각 또는 힘 센서 없이 안정적인 컴플라이언트 파지, 더 안전하고 효율적인 원격 조작, 그리고 개선된 하위 정책 학습을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03529v1
+
+## 개요
+기존의 정교한 조작 솔루션은 대부분 고가이고 취약한 외부 촉각 또는 힘 센서에 의존하여 저비용 로봇 손에 배포하기 어렵습니다. 본 논문은 모터 전류와 관절 상태에서 접촉 인식 컴플라이언트 제어 단서를 학습하는 순수 고유수용감각 기반 프레임워크를 제안합니다. 모터 전류는 액추에이터 토크와 밀접하게 관련되어 있으며, 접촉력, 물체 저항 및 파지 안정성을 인식하는 내재적 신호로 사용될 수 있습니다. 이 방법은 외부 힘을 추정하거나 토크를 직접 제어하지 않고, 표준 PD 제어기의 이상적인 관절 위치 목표인 컴플라이언트 기준 위치를 예측하여 위치 오차를 통해 적절한 파지력을 생성합니다. 이러한 위치 기반 공식은 주류 원격 조작 및 정책 학습 워크플로우와 호환되어 로봇이 실시간 고유수용감각 피드백을 통해 상호작용 힘을 조정할 수 있게 합니다.
+
+## 핵심 내용
+### 핵심 방법
+- **고유수용감각 프레임워크**: 외부 촉각 또는 힘 센서 없이 모터 전류와 관절 상태만을 입력으로 활용합니다.
+- **컴플라이언트 기준 위치 예측**: 외부 힘을 직접 추정하거나 토크를 제어하지 않고, 이상적인 관절 위치 목표(컴플라이언트 기준 위치)를 예측합니다. 표준 PD 컨트롤러는 이 위치와 실제 위치 간의 오차를 통해 파지력을 생성합니다.
+- **신호 활용**: 모터 전류는 힘의 대리 신호일 뿐만 아니라, 컴플라이언트 기준 예측에 사용되는 학습 가능한 고유수용감각 접촉 신호로도 활용됩니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 저비용 로봇 손을 포함한 다양한 정교한 손에서 실험을 수행합니다.
+- **작업 유형**: 접촉 집약적 작업으로 다음을 포함합니다:
+  - 취약 물체 조작(fragile object handling)
+  - 지속적인 표면 접촉(sustained surface contact)
+  - 얇은 물체 집기(thin-object retrieval)
+  - 동적 부하 적응(dynamic load adaptation)
+
+### 주요 결과
+- **안정적인 컴플라이언트 파지**: 외부 센서 없이 모든 테스트 작업에서 안정적인 컴플라이언트 파지를 달성합니다.
+- **원격 조작 성능 향상**: 원격 조작이 더 안전하고 효율적입니다.
+- **하위 정책 학습 개선**: 고유수용감각 피드백에 완전히 의존하는 하위 정책 학습 효과가 개선됩니다.
+
+### 결론
+본 논문은 모터 전류와 관절 상태에서 학습된 고유수용감각 접촉 신호가 외부 촉각 또는 힘 센서를 효과적으로 대체하여 정교한 손의 컴플라이언트 조작을 구현할 수 있음을 입증합니다. 이 방법은 주류 원격 조작 및 정책 학습 워크플로우와 호환되어 저비용 로봇 손에 실용적이고 견고한 컴플라이언트 제어 솔루션을 제공합니다.

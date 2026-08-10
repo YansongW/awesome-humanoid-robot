@@ -40,7 +40,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: ScaleMoGen: Autoregressive
-    Next-Scale Prediction for Human Motion Generation. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    Next-Scale Prediction for Human Motion Generation. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (841 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -81,11 +82,28 @@ We present ScaleMoGen, a scale-wise autoregressive framework for text-driven hum
 ## Content
 We present ScaleMoGen, a scale-wise autoregressive framework for text-driven human motion generation. Unlike conventional autoregressive approaches that rely on standard next-token prediction, ScaleMoGen frames motion generation as a coarse-to-fine process. We quantize 3D motions into compositional discrete tokens across multiple skeletal-temporal scales of increasing granularity, learning to generate motion by autoregressively predicting next-scale token maps. To maintain structural integrity, our motion tokenizers and quantizers are explicitly designed so that discrete tokens at every scale strictly preserve the skeletal hierarchy. Additionally, we employ bitwise quantization and prediction, which efficiently scale up the tokenizer vocabulary to preserve motion details and stabilize optimization. Extensive experiments demonstrate that ScaleMoGen achieves state-of-the-art performance, establishing an FID of 0.030 (vs. 0.045 for MoMask) on HumanML3D and a CLIP Score of 0.693 (vs. 0.685 for MoMask++) on the SnapMoGen dataset. Furthermore, we demonstrate that our skeletal-temporal multi-scale representation naturally facilitates training-free, text-guided motion editing.
 
-## 개요
-본 논문에서는 텍스트 기반 인간 동작 생성을 위한 스케일 단위 자기회귀 프레임워크인 ScaleMoGen을 제시합니다. 기존의 표준 다음 토큰 예측에 의존하는 자기회귀 접근법과 달리, ScaleMoGen은 동작 생성을 조대한 단계에서 세밀한 단계로 진행되는 과정으로 구성합니다. 우리는 3D 동작을 점차 세분화되는 여러 골격-시간적 스케일에 걸쳐 구성적 이산 토큰으로 양자화하고, 다음 스케일의 토큰 맵을 자기회귀적으로 예측하여 동작을 생성하는 방법을 학습합니다. 구조적 무결성을 유지하기 위해, 우리의 동작 토크나이저와 양자화기는 모든 스케일의 이산 토큰이 골격 계층 구조를 엄격히 보존하도록 명시적으로 설계되었습니다. 또한, 비트 단위 양자화 및 예측을 사용하여 토크나이저 어휘를 효율적으로 확장함으로써 동작 세부 사항을 보존하고 최적화를 안정화합니다. 광범위한 실험을 통해 ScaleMoGen이 최첨단 성능을 달성함을 입증하며, HumanML3D에서 FID 0.030 (MoMask의 0.045 대비), SnapMoGen 데이터셋에서 CLIP Score 0.693 (MoMask++의 0.685 대비)을 기록했습니다. 또한, 우리의 골격-시간적 다중 스케일 표현이 학습 없이 텍스트 기반 동작 편집을 자연스럽게 지원함을 보여줍니다.
-
-## 핵심 내용
-본 논문에서는 텍스트 기반 인간 동작 생성을 위한 스케일 단위 자기회귀 프레임워크인 ScaleMoGen을 제시합니다. 기존의 표준 다음 토큰 예측에 의존하는 자기회귀 접근법과 달리, ScaleMoGen은 동작 생성을 조대한 단계에서 세밀한 단계로 진행되는 과정으로 구성합니다. 우리는 3D 동작을 점차 세분화되는 여러 골격-시간적 스케일에 걸쳐 구성적 이산 토큰으로 양자화하고, 다음 스케일의 토큰 맵을 자기회귀적으로 예측하여 동작을 생성하는 방법을 학습합니다. 구조적 무결성을 유지하기 위해, 우리의 동작 토크나이저와 양자화기는 모든 스케일의 이산 토큰이 골격 계층 구조를 엄격히 보존하도록 명시적으로 설계되었습니다. 또한, 비트 단위 양자화 및 예측을 사용하여 토크나이저 어휘를 효율적으로 확장함으로써 동작 세부 사항을 보존하고 최적화를 안정화합니다. 광범위한 실험을 통해 ScaleMoGen이 최첨단 성능을 달성함을 입증하며, HumanML3D에서 FID 0.030 (MoMask의 0.045 대비), SnapMoGen 데이터셋에서 CLIP Score 0.693 (MoMask++의 0.685 대비)을 기록했습니다. 또한, 우리의 골격-시간적 다중 스케일 표현이 학습 없이 텍스트 기반 동작 편집을 자연스럽게 지원함을 보여줍니다.
-
 ## 参考
 - Semantic Scholar search: ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation
+
+## 개요
+ScaleMoGen은 인간 동작 생성을 기존의 토큰별 예측에서 스케일별 예측으로 혁신적으로 전환합니다. 먼저 3D 동작을 점진적으로 세분화된 여러 골격-시간 스케일의 조합된 이산 토큰으로 양자화합니다. 모델은 자기회귀 방식으로 다음 스케일의 토큰 맵을 예측하여 점진적으로 정밀한 동작을 생성합니다. 동작의 구조적 무결성을 유지하기 위해 설계된 토크나이저와 양자화기는 각 스케일의 이산 토큰이 골격 계층 구조를 엄격히 보존하도록 보장합니다. 또한, 비트 단위 양자화 및 예측 기술을 채택하여 토큰 어휘를 효과적으로 확장함으로써 동작 세부 사항을 보존하고 최적화 과정을 안정화합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ScaleMoGen의 핵심은 동작 생성을 거친 단계에서 세밀한 단계로의 다중 스케일 과정으로 분해하는 스케일 수준 자기회귀 프레임워크입니다. 구체적으로:
+- **다중 스케일 동작 양자화**: 3D 인간 동작을 여러 골격-시간 스케일의 조합된 이산 토큰으로 양자화합니다. 이러한 스케일은 대략적인 전체 자세에서 세밀한 국소 관절 동작까지 점진적으로 세분화됩니다.
+- **자기회귀 예측**: 모델은 자기회귀 방식으로 다음 스케일의 토큰 맵을 예측합니다. 즉, 가장 거친 스케일에서 시작하여 점진적으로 더 세밀한 동작 세부 사항을 생성합니다.
+- **구조 보존 설계**: 동작 토크나이저와 양자화기는 각 스케일의 이산 토큰이 골격 계층 구조를 엄격히 보존하도록 명시적으로 설계되어 생성된 동작이 구조적으로 타당함을 보장합니다.
+
+### 핵심 기술
+- **비트 단위 양자화 및 예측**: 비트 단위 양자화 기술을 채택하여 토큰 어휘를 효과적으로 확장함으로써 동작 세부 사항을 더 잘 보존하고 최적화 과정을 안정화합니다.
+
+### 실험 설정 및 결과
+- **데이터셋**: HumanML3D 및 SnapMoGen 데이터셋에서 평가되었습니다.
+- **주요 성능 지표**:
+  - HumanML3D 데이터셋에서 ScaleMoGen의 FID는 0.030으로, MoMask의 0.045보다 우수합니다.
+  - SnapMoGen 데이터셋에서 CLIP Score는 0.693으로, MoMask++의 0.685보다 우수합니다.
+- **추가 능력**: 이 다중 스케일 표현은 학습 없이도 텍스트 기반 동작 편집을 자연스럽게 지원합니다.
+
+### 결론
+ScaleMoGen은 스케일 수준 자기회귀 예측을 통해 텍스트 기반 인간 동작 생성 작업에서 최첨단 성능을 달성했으며, 동작 편집에서의 잠재력을 보여줍니다.

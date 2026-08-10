@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.05309v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.05309v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (615 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,22 @@ theoretical_depth:
 ## Overview
 The disposal and recycling of electronic waste (e-waste) is a global challenge. The disassembly of components is a crucial step towards an efficient recycling process, avoiding the destructive methods. Although most disassembly work is still done manually due to the diversity and complexity of components, there is a growing interest in developing automated methods to improve efficiency and reduce labor costs. This study aims to robotize the desoldering process and extracting components from printed circuit boards (PCBs), with the goal of automating the process as much as possible. The proposed strategy consists of several phases, including the controlled contact of the robotic tool with the PCB components. A specific tool was developed to apply a controlled force against the PCB component, removing it from the board. The results demonstrate that it is feasible to remove the PCB components with a high success rate (approximately 100% for the bigger PCB components).
 
-## 개요
-전자 폐기물(e-waste)의 처리 및 재활용은 전 세계적인 과제입니다. 부품 분해는 파괴적인 방법을 피하면서 효율적인 재활용 공정을 위한 중요한 단계입니다. 부품의 다양성과 복잡성으로 인해 대부분의 분해 작업이 여전히 수동으로 이루어지고 있지만, 효율성을 높이고 인건비를 절감하기 위한 자동화 방법 개발에 대한 관심이 증가하고 있습니다. 본 연구는 납땜 제거 공정과 인쇄회로기판(PCB)에서 부품을 추출하는 과정을 로봇화하여, 가능한 한 공정을 자동화하는 것을 목표로 합니다. 제안된 전략은 로봇 도구와 PCB 부품 간의 제어된 접촉을 포함한 여러 단계로 구성됩니다. PCB 부품에 제어된 힘을 가하여 기판에서 제거하는 특수 도구가 개발되었습니다. 결과는 높은 성공률(더 큰 PCB 부품의 경우 약 100%)로 PCB 부품을 제거하는 것이 가능함을 보여줍니다.
-
-## 핵심 내용
-전자 폐기물(e-waste)의 처리 및 재활용은 전 세계적인 과제입니다. 부품 분해는 파괴적인 방법을 피하면서 효율적인 재활용 공정을 위한 중요한 단계입니다. 부품의 다양성과 복잡성으로 인해 대부분의 분해 작업이 여전히 수동으로 이루어지고 있지만, 효율성을 높이고 인건비를 절감하기 위한 자동화 방법 개발에 대한 관심이 증가하고 있습니다. 본 연구는 납땜 제거 공정과 인쇄회로기판(PCB)에서 부품을 추출하는 과정을 로봇화하여, 가능한 한 공정을 자동화하는 것을 목표로 합니다. 제안된 전략은 로봇 도구와 PCB 부품 간의 제어된 접촉을 포함한 여러 단계로 구성됩니다. PCB 부품에 제어된 힘을 가하여 기판에서 제거하는 특수 도구가 개발되었습니다. 결과는 높은 성공률(더 큰 PCB 부품의 경우 약 100%)로 PCB 부품을 제거하는 것이 가능함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2403.05309v1
+
+## 개요
+이 연구는 전자폐기물 재활용의 핵심 단계인 PCB 부품 분해에 초점을 맞추며, 전통적인 파괴적 방법을 자동화로 대체하는 것을 목표로 합니다. 연구팀은 전용 도구를 개발하고, 협동 로봇 팔의 데카르트 힘 제어(Cartesian force control)를 결합하여 부품 접촉 및 추출 시 정밀한 힘 제어를 구현했습니다. 실험 결과, 이 방법은 대형 PCB 부품에 대해 매우 높은 성공률(약 100%)을 보여, 자동화 분해의 실현 가능한 솔루션을 제공합니다.
+
+## 핵심 내용
+### 배경 및 과제
+전자폐기물(e-waste)의 처리 및 재활용은 전 세계적인 난제입니다. PCB 부품 분해는 효율적인 재활용의 핵심 단계이지만, 현재 부품의 다양성과 복잡성으로 인해 대부분의 분해는 여전히 수작업에 의존합니다. 자동화 분해는 효율성을 높이고 인건비를 절감할 수 있습니다.
+
+### 시스템 아키텍처 및 방법
+- **로봇 플랫폼**: 협동 로봇 팔을 채택하고, 데카르트 힘 제어(Cartesian force control)를 통합하여 도구와 PCB 부품 간의 제어된 접촉을 구현합니다.
+- **맞춤형 도구**: PCB 부품 표면에 제어 가능한 힘을 가해 회로 기판에서 제거할 수 있는 전용 도구를 개발했습니다.
+- **프로세스 단계**: 도구와 부품의 제어된 접촉, 힘 제어 적용, 부품 추출 등의 단계를 포함하며, 자동화 수준을 극대화하는 것을 목표로 합니다.
+
+### 실험 설정 및 결과
+- **테스트 대상**: PCB의 대형 부품을 대상으로 디솔더링 및 추출 실험을 수행했습니다.
+- **핵심 지표**: 디솔더링 성공률(desoldering success rate)이 약 100%에 달해, 시스템이 대형 부품에 효과적임을 검증했습니다.
+- **결론**: 연구는 힘 제어 로봇 시스템을 통한 PCB 부품 자동화 분해가 실현 가능함을 입증하며, 전자폐기물 재활용을 위한 효율적이고 비파괴적인 기술 경로를 제공합니다.

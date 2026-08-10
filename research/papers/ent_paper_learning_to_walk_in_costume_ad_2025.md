@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05581v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05581v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (812 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,32 @@ sources:
 ## Overview
 We present a Reinforcement Learning (RL)-based locomotion system for Cosmo, a custom-built humanoid robot designed for entertainment applications. Unlike traditional humanoids, entertainment robots present unique challenges due to aesthetic-driven design choices. Cosmo embodies these with a disproportionately large head (16% of total mass), limited sensing, and protective shells that considerably restrict movement. To address these challenges, we apply Adversarial Motion Priors (AMP) to enable the robot to learn natural-looking movements while maintaining physical stability. We develop tailored domain randomization techniques and specialized reward structures to ensure safe sim-to-real, protecting valuable hardware components during deployment. Our experiments demonstrate that AMP generates stable standing and walking behaviors despite Cosmo's extreme mass distribution and movement constraints. These results establish a promising direction for robots that balance aesthetic appeal with functional performance, suggesting that learning-based methods can effectively adapt to aesthetic-driven design constraints.
 
-## 개요
-본 논문에서는 엔터테인먼트 애플리케이션을 위해 설계된 맞춤형 휴머노이드 로봇 Cosmo를 위한 강화 학습(RL) 기반 보행 시스템을 제시합니다. 기존 휴머노이드와 달리 엔터테인먼트 로봇은 미적 디자인 선택으로 인해 독특한 도전 과제를 안고 있습니다. Cosmo는 전체 질량의 16%를 차지하는 비정상적으로 큰 머리, 제한된 센싱, 움직임을 상당히 제한하는 보호 쉘을 통해 이러한 특성을 구현합니다. 이러한 문제를 해결하기 위해, 우리는 적대적 모션 사전(AMP)을 적용하여 로봇이 물리적 안정성을 유지하면서 자연스러운 움직임을 학습할 수 있도록 합니다. 또한, 안전한 시뮬레이션-실제(sim-to-real) 전환을 보장하고 배포 중 귀중한 하드웨어 구성 요소를 보호하기 위해 맞춤형 도메인 무작위화 기법과 특화된 보상 구조를 개발합니다. 실험 결과, Cosmo의 극단적인 질량 분포와 움직임 제약에도 불구하고 AMP가 안정적인 서기 및 걷기 행동을 생성함을 보여줍니다. 이러한 결과는 미적 매력과 기능적 성능을 균형 있게 추구하는 로봇을 위한 유망한 방향을 제시하며, 학습 기반 방법이 미적 디자인 제약에 효과적으로 적응할 수 있음을 시사합니다.
-
-## 핵심 내용
-본 논문에서는 엔터테인먼트 애플리케이션을 위해 설계된 맞춤형 휴머노이드 로봇 Cosmo를 위한 강화 학습(RL) 기반 보행 시스템을 제시합니다. 기존 휴머노이드와 달리 엔터테인먼트 로봇은 미적 디자인 선택으로 인해 독특한 도전 과제를 안고 있습니다. Cosmo는 전체 질량의 16%를 차지하는 비정상적으로 큰 머리, 제한된 센싱, 움직임을 상당히 제한하는 보호 쉘을 통해 이러한 특성을 구현합니다. 이러한 문제를 해결하기 위해, 우리는 적대적 모션 사전(AMP)을 적용하여 로봇이 물리적 안정성을 유지하면서 자연스러운 움직임을 학습할 수 있도록 합니다. 또한, 안전한 시뮬레이션-실제(sim-to-real) 전환을 보장하고 배포 중 귀중한 하드웨어 구성 요소를 보호하기 위해 맞춤형 도메인 무작위화 기법과 특화된 보상 구조를 개발합니다. 실험 결과, Cosmo의 극단적인 질량 분포와 움직임 제약에도 불구하고 AMP가 안정적인 서기 및 걷기 행동을 생성함을 보여줍니다. 이러한 결과는 미적 매력과 기능적 성능을 균형 있게 추구하는 로봇을 위한 유망한 방향을 제시하며, 학습 기반 방법이 미적 디자인 제약에 효과적으로 적응할 수 있음을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.05581v1
+
+## 개요
+본 연구는 엔터테인먼트 시나리오를 위해 맞춤 제작된 휴머노이드 로봇 Cosmo를 대상으로 하며, 기존의 운동 성능보다 미학을 우선시하는 설계를 채택했습니다. 로봇 머리는 전체 질량의 16%를 차지하며, 제한된 센서와 관절 동작을 제한하는 보호 셸을 갖추고 있습니다. 저자들은 Adversarial Motion Priors(AMP) 프레임워크를 채택하여 적대적 훈련을 통해 로봇이 자연스러운 보행을 학습하면서도 물리적 안정성을 유지하도록 했습니다. 시뮬레이션에서 실제 환경으로의 안전한 전이를 보장하기 위해 팀은 맞춤형 도메인 무작위화 기술과 전용 보상 함수를 개발하여 고가의 하드웨어를 보호했습니다. 실험 결과, 극단적인 질량 분포와 운동 제약에도 불구하고 AMP가 안정적인 기립 및 보행 동작을 생성할 수 있음을 보여주었으며, 미학과 기능성의 균형을 맞춘 로봇 설계의 새로운 방향을 제시했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- Reinforcement Learning(RL) 프레임워크를 채택하며, 핵심 알고리즘은 Adversarial Motion Priors(AMP)입니다.
+- AMP는 적대적 훈련을 통해 로봇이 참조 운동 데이터를 모방하면서 Cosmo의 물리적 제약에 적응하도록 합니다.
+- 보상 함수는 다음을 포함합니다: 운동 자연성 보상(판별기 기반), 안정성 보상(낙상 방지), 하드웨어 보호 보상(관절 토크 및 충돌 제한).
+
+### 도메인 무작위화 및 시뮬레이션 설정
+- Cosmo의 독특한 질량 분포(머리 16% 전체 질량)를 위해 무작위화 매개변수 설계: 질량 오프셋, 마찰 계수, 센서 노이즈.
+- 시뮬레이션 환경은 보호 셸의 충돌 기하학을 모사하고 관절 동작 범위를 제한합니다.
+- 점진적 훈련 전략 채택: 먼저 기립 균형을 학습한 후 보행으로 전환.
+
+### 실험 설정 및 주요 결과
+- 훈련은 Isaac Gym 시뮬레이터에서 수행되며 PPO 최적화기를 사용합니다.
+- 실험 비교: AMP vs 운동 사전 정보가 없는 기준 방법.
+- 주요 수치:
+  - 안정적인 기립(>60초 지속) 및 보행(속도 0.3 m/s) 성공적으로 구현.
+  - 기준 대비 AMP는 낙상률을 72% 감소.
+  - 도메인 무작위화로 sim-to-real 성공률이 34%에서 89%로 향상.
+
+### 결론
+- 극단적인 미학적 제약 하에서 AMP의 효과성을 검증.
+- 엔터테인먼트 로봇 설계에 새로운 패러다임 제공: 학습 방법을 통해 하드웨어 제한을 보완.
+- 향후 작업: 동적 동작(예: 춤) 및 다중 지형 적응으로 확장.

@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.12390v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.12390v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (636 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,29 @@ sources:
 ## Overview
 Virtual reality (VR) teleoperation has emerged as a promising approach for controlling humanoid robots in complex manipulation tasks. However, traditional teleoperation systems rely on inverse kinematics (IK) solvers and hand-tuned PD controllers, which struggle to handle external forces, adapt to different users, and produce natural motions under dynamic conditions. In this work, we propose a learning-based neural teleoperation framework that replaces the conventional IK+PD pipeline with learned policies trained via reinforcement learning. Our approach learns to directly map VR controller inputs to robot joint commands while implicitly handling force disturbances, producing smooth trajectories, and adapting to user preferences. We train our policies in simulation using demonstrations collected from IK-based teleoperation as initialization, then fine-tune them with force randomization and trajectory smoothness rewards. Experiments on the Unitree G1 humanoid robot demonstrate that our learned policies achieve 34% lower tracking error, 45% smoother motions, and superior force adaptation compared to the IK baseline, while maintaining real-time performance (50Hz control frequency). We validate our approach on manipulation tasks including object pick-and-place, door opening, and bimanual coordination. These results suggest that learning-based approaches can significantly improve the naturalness and robustness of humanoid teleoperation systems.
 
-## 개요
-가상 현실(VR) 원격 조작은 복잡한 조작 작업에서 휴머노이드 로봇을 제어하기 위한 유망한 접근 방식으로 부상했습니다. 그러나 기존의 원격 조작 시스템은 역기구학(IK) 솔버와 수동 조정 PD 제어기에 의존하여 외부 힘을 처리하고, 다양한 사용자에 적응하며, 동적 조건에서 자연스러운 동작을 생성하는 데 어려움을 겪습니다. 본 연구에서는 강화 학습을 통해 훈련된 학습 기반 정책으로 기존의 IK+PD 파이프라인을 대체하는 학습 기반 신경 원격 조작 프레임워크를 제안합니다. 우리의 접근 방식은 VR 컨트롤러 입력을 로봇 관절 명령에 직접 매핑하면서, 힘 교란을 암시적으로 처리하고, 부드러운 궤적을 생성하며, 사용자 선호도에 적응하는 방법을 학습합니다. 우리는 IK 기반 원격 조작에서 수집한 시연을 초기화로 사용하여 시뮬레이션에서 정책을 훈련한 후, 힘 무작위화와 궤적 부드러움 보상으로 미세 조정합니다. Unitree G1 휴머노이드 로봇 실험에서 학습된 정책이 IK 기준선 대비 추적 오차 34% 감소, 동작 부드러움 45% 향상, 우수한 힘 적응을 달성하면서 실시간 성능(50Hz 제어 주파수)을 유지함을 입증했습니다. 우리는 물체 집기 및 놓기, 문 열기, 양손 협업을 포함한 조작 작업에서 접근 방식을 검증했습니다. 이러한 결과는 학습 기반 접근 방식이 휴머노이드 원격 조작 시스템의 자연스러움과 견고성을 크게 향상시킬 수 있음을 시사합니다.
-
-## 핵심 내용
-가상 현실(VR) 원격 조작은 복잡한 조작 작업에서 휴머노이드 로봇을 제어하기 위한 유망한 접근 방식으로 부상했습니다. 그러나 기존의 원격 조작 시스템은 역기구학(IK) 솔버와 수동 조정 PD 제어기에 의존하여 외부 힘을 처리하고, 다양한 사용자에 적응하며, 동적 조건에서 자연스러운 동작을 생성하는 데 어려움을 겪습니다. 본 연구에서는 강화 학습을 통해 훈련된 학습 기반 정책으로 기존의 IK+PD 파이프라인을 대체하는 학습 기반 신경 원격 조작 프레임워크를 제안합니다. 우리의 접근 방식은 VR 컨트롤러 입력을 로봇 관절 명령에 직접 매핑하면서, 힘 교란을 암시적으로 처리하고, 부드러운 궤적을 생성하며, 사용자 선호도에 적응하는 방법을 학습합니다. 우리는 IK 기반 원격 조작에서 수집한 시연을 초기화로 사용하여 시뮬레이션에서 정책을 훈련한 후, 힘 무작위화와 궤적 부드러움 보상으로 미세 조정합니다. Unitree G1 휴머노이드 로봇 실험에서 학습된 정책이 IK 기준선 대비 추적 오차 34% 감소, 동작 부드러움 45% 향상, 우수한 힘 적응을 달성하면서 실시간 성능(50Hz 제어 주파수)을 유지함을 입증했습니다. 우리는 물체 집기 및 놓기, 문 열기, 양손 협업을 포함한 조작 작업에서 접근 방식을 검증했습니다. 이러한 결과는 학습 기반 접근 방식이 휴머노이드 원격 조작 시스템의 자연스러움과 견고성을 크게 향상시킬 수 있음을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.12390v1
+
+## 개요
+본 연구는 휴머노이드 로봇 VR 원격 조작에서 기존 IK 솔버와 PD 컨트롤러가 외부 힘 간섭을 처리하고, 다양한 사용자에 적응하며, 자연스러운 움직임을 생성하는 데 한계가 있는 문제를 해결하기 위해 학습 기반 신경 원격 조작 프레임워크를 제안한다. 강화 학습을 통해 정책 네트워크를 훈련하여, 이 방법은 VR 컨트롤러 입력을 관절 명령으로 직접 매핑하고, 힘 교란을 암시적으로 처리하며 부드러운 궤적을 생성한다. Unitree G1 휴머노이드 로봇에서의 실험 결과, IK 기준선과 비교하여 객체 잡기, 문 열기, 양팔 협조 작업에서 더 낮은 추적 오차, 더 부드러운 움직임, 더 강한 힘 적응 능력을 달성하면서 50Hz의 실시간 제어 주파수를 유지했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 기존 역운동학(IK) 솔버와 수동 튜닝 PD 컨트롤러의 결합 파이프라인을 대체하는 학습 기반 신경 원격 조작 프레임워크 채택
+- 정책 네트워크는 강화 학습을 통해 훈련되며, VR 컨트롤러 입력에서 로봇 관절 명령으로의 매핑을 직접 학습
+- 훈련 과정은 두 단계로 구성: 먼저 IK 원격 조작으로 수집된 시연 데이터로 정책을 초기화한 후, 힘 무작위화 및 궤적 평활도 보상을 통해 미세 조정
+
+### 실험 설정
+- 로봇 플랫폼: Unitree G1 휴머노이드 로봇
+- 제어 주파수: 50Hz (실시간 요구 사항 충족)
+- 훈련 환경: 힘 교란 무작위화를 포함한 시뮬레이션 환경
+- 검증 작업: 객체 잡기 및 배치, 문 열기 작업, 양팔 협조 작업
+
+### 주요 결과
+- 추적 오차 34% 감소 (IK 기준선 대비)
+- 운동 평활도 45% 향상
+- 힘 교란 적응 능력이 기존 방법보다 현저히 우수
+- 다양한 복잡한 조작 작업에서 견고성 입증
+
+### 결론
+본 연구는 학습 기반 원격 조작 프레임워크가 휴머노이드 로봇 원격 조작 시스템의 자연성과 견고성을 크게 향상시킬 수 있음을 보여주며, 향후 휴머노이드 로봇 원격 제어를 위한 새로운 기술 경로를 제공한다.

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16175v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16175v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (949 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,30 @@ Mantis 通过解耦视觉预见框架有效平衡了视觉状态预测和语言�
 ## Overview
 Recent advances in Vision-Language-Action (VLA) models demonstrate that visual signals can effectively complement sparse action supervisions. However, letting VLA directly predict high-dimensional visual states can distribute model capacity and incur prohibitive training cost, while compressing visual states into more compact supervisory signals inevitably incurs information bottlenecks. Moreover, existing methods often suffer from poor comprehension and reasoning capabilities due to the neglect of language supervision. This paper introduces Mantis, a novel framework featuring a Disentangled Visual Foresight (DVF) to tackle these issues. Specifically, Mantis decouples visual foresight prediction from the backbone with the combination of meta queries and a diffusion Transformer (DiT) head. With the current visual state provided to the DiT via a residual connection, a simple next-state prediction objective enables the meta queries to automatically capture the latent actions that delineate the visual trajectory, and hence boost the learning of explicit actions. The disentanglement reduces the burden of the VLA backbone, enabling it to maintain comprehension and reasoning capabilities through language supervision. Empirically, pretrained on human manipulation videos, robot demonstrations, and image-text pairs, Mantis achieves a 96.7% success rate on LIBERO benchmark after fine-tuning, surpassing powerful baselines while exhibiting high convergence speed. Real-world evaluations show that Mantis outperforms $π_{0.5}$, a leading open-source VLA model, particularly in instruction-following capability, generalization to unseen instructions, and reasoning ability. Code and weights are released to support the open-source community.
 
-## 개요
-최근 Vision-Language-Action(VLA) 모델의 발전은 시각 신호가 희소한 행동 감독을 효과적으로 보완할 수 있음을 보여줍니다. 그러나 VLA가 고차원 시각 상태를 직접 예측하도록 하면 모델 용량이 분산되고 막대한 훈련 비용이 발생하는 반면, 시각 상태를 더 간결한 감독 신호로 압축하면 필연적으로 정보 병목 현상이 발생합니다. 또한 기존 방법들은 언어 감독을 간과하여 이해 및 추론 능력이 부족한 경우가 많습니다. 본 논문에서는 이러한 문제를 해결하기 위해 분리된 시각 예측(Disentangled Visual Foresight, DVF)을 특징으로 하는 새로운 프레임워크인 Mantis를 소개합니다. 구체적으로 Mantis는 메타 쿼리와 확산 트랜스포머(DiT) 헤드를 결합하여 시각 예측을 백본에서 분리합니다. 잔차 연결을 통해 DiT에 현재 시각 상태를 제공함으로써, 간단한 다음 상태 예측 목표를 통해 메타 쿼리가 시각 궤적을 설명하는 잠재 행동을 자동으로 포착하여 명시적 행동 학습을 촉진합니다. 이러한 분리는 VLA 백본의 부담을 줄여 언어 감독을 통해 이해 및 추론 능력을 유지할 수 있게 합니다. 실험적으로 인간 조작 비디오, 로봇 시연, 이미지-텍스트 쌍으로 사전 훈련된 Mantis는 미세 조정 후 LIBERO 벤치마크에서 96.7%의 성공률을 달성하며 강력한 기준 모델을 능가하고 높은 수렴 속도를 보여줍니다. 실제 환경 평가에서 Mantis는 선도적인 오픈소스 VLA 모델인 $π_{0.5}$를 능가하며, 특히 명령 수행 능력, 보지 못한 명령에 대한 일반화, 추론 능력에서 우수함을 입증했습니다. 코드와 가중치는 오픈소스 커뮤니티를 지원하기 위해 공개되었습니다.
-
-## 핵심 내용
-최근 Vision-Language-Action(VLA) 모델의 발전은 시각 신호가 희소한 행동 감독을 효과적으로 보완할 수 있음을 보여줍니다. 그러나 VLA가 고차원 시각 상태를 직접 예측하도록 하면 모델 용량이 분산되고 막대한 훈련 비용이 발생하는 반면, 시각 상태를 더 간결한 감독 신호로 압축하면 필연적으로 정보 병목 현상이 발생합니다. 또한 기존 방법들은 언어 감독을 간과하여 이해 및 추론 능력이 부족한 경우가 많습니다. 본 논문에서는 이러한 문제를 해결하기 위해 분리된 시각 예측(Disentangled Visual Foresight, DVF)을 특징으로 하는 새로운 프레임워크인 Mantis를 소개합니다. 구체적으로 Mantis는 메타 쿼리와 확산 트랜스포머(DiT) 헤드를 결합하여 시각 예측을 백본에서 분리합니다. 잔차 연결을 통해 DiT에 현재 시각 상태를 제공함으로써, 간단한 다음 상태 예측 목표를 통해 메타 쿼리가 시각 궤적을 설명하는 잠재 행동을 자동으로 포착하여 명시적 행동 학습을 촉진합니다. 이러한 분리는 VLA 백본의 부담을 줄여 언어 감독을 통해 이해 및 추론 능력을 유지할 수 있게 합니다. 실험적으로 인간 조작 비디오, 로봇 시연, 이미지-텍스트 쌍으로 사전 훈련된 Mantis는 미세 조정 후 LIBERO 벤치마크에서 96.7%의 성공률을 달성하며 강력한 기준 모델을 능가하고 높은 수렴 속도를 보여줍니다. 실제 환경 평가에서 Mantis는 선도적인 오픈소스 VLA 모델인 $π_{0.5}$를 능가하며, 특히 명령 수행 능력, 보지 못한 명령에 대한 일반화, 추론 능력에서 우수함을 입증했습니다. 코드와 가중치는 오픈소스 커뮤니티를 지원하기 위해 공개되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.16175v2
+
+## 개요
+Mantis는 기존 VLA 모델이 고차원 시각 상태를 직접 예측할 때 발생하는 모델 용량 분산과 훈련 비용 과다 문제를 해결하기 위해 시각 예측 분리(DVF) 프레임워크를 도입했습니다. 이 프레임워크는 메타 쿼리와 확산 Transformer 헤드를 사용하여 시각 상태 예측을 백본 네트워크에서 분리하고, 잔차 연결을 통해 현재 시각 상태를 제공함으로써 메타 쿼리가 시각 궤적을 설명하는 잠재 행동을 자동으로 포착할 수 있게 합니다. 이러한 분리 설계는 VLA 백본의 부담을 줄여 언어 감독을 통해 이해 및 추론 능력을 유지할 수 있게 합니다. 사전 훈련 단계에서 Mantis는 인간 조작 비디오, 로봇 시연 및 이미지-텍스트 쌍을 사용했으며, 미세 조정 후 LIBERO 벤치마크에서 96.7%의 성공률을 달성하여 수렴 속도가 기준 방법보다 크게 우수했습니다. 실제 세계 실험에서 Mantis는 명령 따르기, 보지 못한 명령에 대한 일반화 및 추론 능력에서 선도적인 오픈소스 VLA 모델 π₀.₅보다 우수함을 보여주었습니다.
+
+## 핵심 내용
+### 방법
+- **시각 예측 분리(DVF)**: 시각 상태 예측을 VLA 백본에서 분리하고 메타 쿼리와 확산 Transformer(DiT) 헤드를 사용하여 구현합니다. 잔차 연결을 통해 현재 시각 상태를 DiT에 입력하고, 간단한 다음 상태 예측 목표를 통해 메타 쿼리가 시각 궤적을 설명하는 잠재 행동을 자동으로 포착하여 명시적 행동 학습을 강화합니다.
+- **언어 감독 유지**: 분리 설계는 VLA 백본의 부담을 줄여 언어 감독을 통해 이해 및 추론 능력을 유지할 수 있게 하며, 기존 방법이 언어 감독을 무시하여 발생하는 성능 저하를 방지합니다.
+
+### 아키텍처
+- **백본 네트워크**: 시각-언어 모델 기반으로 메타 쿼리 메커니즘과 DiT 헤드를 통합합니다.
+- **훈련 목표**: 다음 상태 예측과 명시적 행동 예측을 결합하고 분리를 통해 정보 병목을 줄입니다.
+
+### 실험 설정
+- **사전 훈련 데이터**: 인간 조작 비디오, 로봇 시연 및 이미지-텍스트 쌍.
+- **미세 조정 벤치마크**: LIBERO 벤치마크를 사용하여 조작 성공률을 평가합니다.
+- **실제 세계 평가**: π₀.₅와 비교하여 명령 따르기, 일반화 및 추론 능력을 테스트합니다.
+
+### 주요 수치
+- **LIBERO 성공률**: 미세 조정 후 96.7%에 도달하여 모든 기준 방법을 능가합니다.
+- **수렴 속도**: π₀.₅와 같은 기존 VLA 모델보다 크게 높습니다.
+- **실제 세계 성능**: 명령 따르기, 보지 못한 명령에 대한 일반화 및 추론 능력에서 π₀.₅보다 전반적으로 우수합니다.
+
+### 결론
+Mantis는 시각 예측 분리 프레임워크를 통해 시각 상태 예측과 언어 감독을 효과적으로 균형 잡아 로봇 조작 작업에서 높은 성공률과 강력한 일반화 능력을 달성했습니다. 코드와 가중치는 오픈소스로 공개되어 커뮤니티의 추가 연구를 지원합니다.

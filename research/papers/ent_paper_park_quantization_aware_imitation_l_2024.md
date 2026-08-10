@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.01034v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.01034v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (893 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,30 @@ QAIL+QBC 证明了量化感知训练可显著降低 VLA 类策略模型的计算
 ## Overview
 Deep neural network (DNN)-based policy models like vision-language-action (VLA) models are transformative in automating complex decision-making across applications by interpreting multi-modal data. However, scaling these models greatly increases computational costs, which presents challenges in fields like robot manipulation and autonomous driving that require quick, accurate responses. To address the need for deployment on resource-limited hardware, we propose a new quantization framework for IL-based policy models that fine-tunes parameters to enhance robustness against low-bit precision errors during training, thereby maintaining efficiency and reliability under constrained conditions. Our evaluations with representative robot manipulation for 4-bit weight-quantization on a real edge GPU demonstrate that our framework achieves up to 2.5x speedup and 2.5x energy savings while preserving accuracy. For 4-bit weight and activation quantized self-driving models, the framework achieves up to 3.7x speedup and 3.1x energy saving on a low-end GPU. These results highlight the practical potential of deploying IL-based policy models on resource-constrained devices.
 
-## 개요
-심층 신경망(DNN) 기반 정책 모델, 예를 들어 시각-언어-행동(VLA) 모델은 다중 모달 데이터를 해석하여 다양한 애플리케이션에서 복잡한 의사 결정을 자동화하는 데 혁신적입니다. 그러나 이러한 모델을 확장하면 계산 비용이 크게 증가하여 로봇 조작 및 자율 주행과 같이 빠르고 정확한 응답이 필요한 분야에서 어려움이 발생합니다. 자원이 제한된 하드웨어에 배포해야 하는 필요성을 해결하기 위해, 우리는 IL 기반 정책 모델을 위한 새로운 양자화 프레임워크를 제안합니다. 이 프레임워크는 훈련 중 저비트 정밀도 오류에 대한 견고성을 향상시키기 위해 매개변수를 미세 조정하여 제한된 조건에서 효율성과 신뢰성을 유지합니다. 실제 엣지 GPU에서 대표적인 로봇 조작 작업에 대해 4비트 가중치 양자화를 적용한 평가 결과, 우리 프레임워크는 정확도를 유지하면서 최대 2.5배 속도 향상과 2.5배 에너지 절감을 달성했습니다. 4비트 가중치 및 활성화 양자화된 자율 주행 모델의 경우, 저사양 GPU에서 최대 3.7배 속도 향상과 3.1배 에너지 절감을 달성했습니다. 이러한 결과는 자원이 제한된 장치에 IL 기반 정책 모델을 배포할 수 있는 실용적인 가능성을 강조합니다.
-
-## 핵심 내용
-심층 신경망(DNN) 기반 정책 모델, 예를 들어 시각-언어-행동(VLA) 모델은 다중 모달 데이터를 해석하여 다양한 애플리케이션에서 복잡한 의사 결정을 자동화하는 데 혁신적입니다. 그러나 이러한 모델을 확장하면 계산 비용이 크게 증가하여 로봇 조작 및 자율 주행과 같이 빠르고 정확한 응답이 필요한 분야에서 어려움이 발생합니다. 자원이 제한된 하드웨어에 배포해야 하는 필요성을 해결하기 위해, 우리는 IL 기반 정책 모델을 위한 새로운 양자화 프레임워크를 제안합니다. 이 프레임워크는 훈련 중 저비트 정밀도 오류에 대한 견고성을 향상시키기 위해 매개변수를 미세 조정하여 제한된 조건에서 효율성과 신뢰성을 유지합니다. 실제 엣지 GPU에서 대표적인 로봇 조작 작업에 대해 4비트 가중치 양자화를 적용한 평가 결과, 우리 프레임워크는 정확도를 유지하면서 최대 2.5배 속도 향상과 2.5배 에너지 절감을 달성했습니다. 4비트 가중치 및 활성화 양자화된 자율 주행 모델의 경우, 저사양 GPU에서 최대 3.7배 속도 향상과 3.1배 에너지 절감을 달성했습니다. 이러한 결과는 자원이 제한된 장치에 IL 기반 정책 모델을 배포할 수 있는 실용적인 가능성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.01034v1
+
+## 개요
+시각-언어-행동(VLA) 등 심층 신경망 정책 모델이 로봇 조작 및 자율주행에서 높은 계산 비용을 초래하는 문제를 해결하기 위해, QAIL+QBC는 새로운 양자화 프레임워크를 제안한다. 이 프레임워크는 모방 학습 훈련 과정에 양자화 인식 메커니즘을 도입하여, 파라미터 미세 조정을 통해 모델이 저비트 정밀도로 인한 오류에 적응하도록 하여, 리소스가 제한된 하드웨어에서 효율적인 배포를 가능하게 한다. 실험 결과, 4비트 가중치 양자화에서 로봇 조작 작업은 엣지 GPU에서 2.5배 속도 향상과 2.5배 에너지 절감을 달성했으며, 4비트 가중치 및 활성화 양자화를 적용한 자율주행 모델은 저사양 GPU에서 3.7배 가속과 3.1배 에너지 절감을 달성했다.
+
+## 핵심 내용
+### 방법
+- 양자화 인식 모방 학습(QAIL)과 양자화 행동 클론(QBC)을 결합한 프레임워크를 제안하여, 훈련 단계에서 저비트 양자화 오류를 명시적으로 시뮬레이션한다.
+- 그래디언트 역전파를 통해 모델 파라미터를 조정하여, 가중치 양자화(예: 4비트) 및 활성화 양자화(예: 4비트)로 인한 정밀도 손실에 강건하도록 한다.
+
+### 아키텍처
+- 시각-언어-행동(VLA) 모델 아키텍처를 기반으로, 다중 모달 입력(시각, 언어 명령)을 처리하고 로봇 제어 동작을 출력한다.
+- 양자화 연산은 가중치 및 활성화 텐서에 적용되며, 대칭 또는 비대칭 양자화 전략을 사용하고, 훈련 중 양자화 오류가 미분 가능하도록 유지한다.
+
+### 실험 설정
+- **로봇 조작 작업**: 실제 엣지 GPU(예: NVIDIA Jetson 시리즈)에서 4비트 가중치 양자화 모델을 테스트한다.
+- **자율주행 작업**: 저사양 GPU에서 4비트 가중치 및 활성화 공동 양자화 모델을 테스트한다.
+- 비교 기준: 전체 정밀도 모델 및 표준 사후 훈련 양자화 방법.
+
+### 주요 결과
+- **로봇 조작**: 4비트 가중치 양자화로 **2.5배 추론 가속** 및 **2.5배 에너지 소비 절감**을 달성했으며, 작업 성공률은 전체 정밀도 모델과 동등하다.
+- **자율주행**: 4비트 가중치 및 활성화 양자화로 **3.7배 가속** 및 **3.1배 에너지 절감**을 달성했으며, 제어 정밀도는 유의미한 저하가 없다.
+- 이 프레임워크는 저비트 정밀도에서 양자화 노이즈로 인한 정책 성능 저하를 효과적으로 억제한다.
+
+### 결론
+QAIL+QBC는 양자화 인식 훈련이 VLA 계열 정책 모델의 계산 및 저장 요구를 크게 줄일 수 있음을 입증하여, 엣지 디바이스에서 실시간 로봇 제어 및 자율주행 시스템을 배포하기 위한 실현 가능한 솔루션을 제공한다. 향후 연구는 더 낮은 비트 폭(예: 2비트) 및 동적 양자화 시나리오로 확장할 수 있다.

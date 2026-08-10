@@ -51,8 +51,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.28276v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.28276v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (975 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,29 @@ SimFoundry 通过自动化仿真场景生成与多样化变体编辑，有效降
 ## Overview
 Training and evaluating robot policies in the real world is costly and difficult to scale. We introduce SimFoundry, a modular and automated system for zero-shot real-to-sim scene construction from a video. SimFoundry generates sim-ready digital twins and supports object, scene, and task editing, enabling the automated generation of diverse digital cousins: affordance-preserving variations of reconstructed real-world scenes. Policies trained on SimFoundry data transfer zero-shot to challenging real tasks involving multi-step manipulation, articulated object interaction, and bimanual interaction, and its digital cousins (variations of the original scene, objects, and tasks) facilitate generalization to new real-world conditions. Across 7 manipulation tasks and 5 policy architectures, SimFoundry simulation evaluations strongly predict real-world performance, with mean Pearson correlation 0.911 and mean maximum ranking violation 0.018. When evaluating sim-trained policies zero-shot in the real world, policies trained with object, scene, and task cousins in simulation show average task success rate improvements of 17%, 21%, and 40%, respectively. Additional details at https://research.nvidia.com/labs/gear/simfoundry/ .
 
-## 개요
-실제 환경에서 로봇 정책을 훈련하고 평가하는 것은 비용이 많이 들고 확장하기 어렵습니다. 우리는 비디오로부터 제로샷 실제-시뮬레이션 장면 구축을 위한 모듈식 자동화 시스템인 SimFoundry를 소개합니다. SimFoundry는 시뮬레이션 준비가 된 디지털 트윈을 생성하고 객체, 장면 및 작업 편집을 지원하여 재구성된 실제 장면의 다양성을 유지하는 변형인 다양한 디지털 커즌의 자동 생성을 가능하게 합니다. SimFoundry 데이터로 훈련된 정책은 다단계 조작, 관절 객체 상호작용 및 양손 상호작용을 포함한 까다로운 실제 작업에 제로샷으로 전이되며, 디지털 커즌(원본 장면, 객체 및 작업의 변형)은 새로운 실제 조건에 대한 일반화를 촉진합니다. 7가지 조작 작업과 5가지 정책 아키텍처에 걸쳐 SimFoundry 시뮬레이션 평가는 실제 성능을 강력하게 예측하며, 평균 피어슨 상관계수 0.911, 평균 최대 순위 위반 0.018을 기록했습니다. 시뮬레이션에서 훈련된 정책을 실제 환경에서 제로샷으로 평가할 때, 시뮬레이션에서 객체, 장면 및 작업 커즌으로 훈련된 정책은 각각 평균 작업 성공률이 17%, 21%, 40% 향상되었습니다. 자세한 내용은 https://research.nvidia.com/labs/gear/simfoundry/ 에서 확인하세요.
-
-## 핵심 내용
-실제 환경에서 로봇 정책을 훈련하고 평가하는 것은 비용이 많이 들고 확장하기 어렵습니다. 우리는 비디오로부터 제로샷 실제-시뮬레이션 장면 구축을 위한 모듈식 자동화 시스템인 SimFoundry를 소개합니다. SimFoundry는 시뮬레이션 준비가 된 디지털 트윈을 생성하고 객체, 장면 및 작업 편집을 지원하여 재구성된 실제 장면의 다양성을 유지하는 변형인 다양한 디지털 커즌의 자동 생성을 가능하게 합니다. SimFoundry 데이터로 훈련된 정책은 다단계 조작, 관절 객체 상호작용 및 양손 상호작용을 포함한 까다로운 실제 작업에 제로샷으로 전이되며, 디지털 커즌(원본 장면, 객체 및 작업의 변형)은 새로운 실제 조건에 대한 일반화를 촉진합니다. 7가지 조작 작업과 5가지 정책 아키텍처에 걸쳐 SimFoundry 시뮬레이션 평가는 실제 성능을 강력하게 예측하며, 평균 피어슨 상관계수 0.911, 평균 최대 순위 위반 0.018을 기록했습니다. 시뮬레이션에서 훈련된 정책을 실제 환경에서 제로샷으로 평가할 때, 시뮬레이션에서 객체, 장면 및 작업 커즌으로 훈련된 정책은 각각 평균 작업 성공률이 17%, 21%, 40% 향상되었습니다. 자세한 내용은 https://research.nvidia.com/labs/gear/simfoundry/ 에서 확인하세요.
-
 ## 参考
 - http://arxiv.org/abs/2606.28276v2
+
+## 개요
+SimFoundry는 비디오 입력을 통해 시뮬레이션 준비가 완료된 디지털 트윈 장면을 자동으로 구축하고, 객체, 장면 및 작업에 대한 유연한 편집을 지원하여 원래 기능 속성을 유지하는 다양한 변형(즉, "디지털 사촌")을 생성합니다. 이 시스템은 7가지 조작 작업과 5가지 정책 아키텍처에서 유효성을 검증했습니다: 시뮬레이션 평가 결과는 실제 세계 성능과 높은 일치도를 보였습니다(평균 Pearson 상관 계수 0.911, 최대 순위 위반율 0.018에 불과). 제로샷 전이 테스트에서 객체, 장면 및 작업 변형으로 훈련된 시뮬레이션 정책은 실제 세계에서 평균 작업 성공률이 각각 17%, 21%, 40% 향상되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+SimFoundry는 모듈식 파이프라인 설계를 채택하며, 핵심 단계는 다음과 같습니다:
+- **제로샷 실제-시뮬레이션 장면 구축**: 단일 비디오에서 시뮬레이션 준비가 완료된 디지털 트윈을 자동 생성하며, 수동 주석이나 사전 훈련된 모델이 필요 없습니다.
+- **편집 및 변형 생성**: 객체 속성, 장면 레이아웃 및 작업 매개변수 편집을 지원하며, 원래 기능(예: 파지 가능성, 개폐 가능성)을 유지하는 다양한 "디지털 사촌"을 자동으로 생성합니다.
+
+### 실험 설정
+- **작업 및 정책**: 다단계 조작, 관절 객체 상호작용 및 양팔 협력을 포함한 7가지 조작 작업을 다루며, 5가지 정책 아키텍처(예: 행동 복제, 확산 정책 등)를 테스트했습니다.
+- **평가 지표**: 시뮬레이션과 실제 성능 간의 상관 관계는 Pearson 상관 계수와 최대 순위 위반율(Maximum Ranking Violation)로 측정되었습니다.
+
+### 핵심 수치 및 결론
+- **시뮬레이션-실제 일치도**: 평균 Pearson 상관 계수 0.911, 최대 순위 위반율 0.018에 불과하여 SimFoundry의 시뮬레이션 평가가 실제 세계 성능을 신뢰성 있게 예측할 수 있음을 나타냅니다.
+- **제로샷 전이 효과**:
+  - 객체 변형으로 훈련: 성공률 17% 향상
+  - 장면 변형으로 훈련: 성공률 21% 향상
+  - 작업 변형으로 훈련: 성공률 40% 향상
+- **일반화 능력**: 디지털 사촌 정책은 보지 못한 새로운 장면, 새로운 객체 구성 및 새로운 작업 변형에서 모두 유의미한 일반화 이점을 보였습니다.
+
+### 결론
+SimFoundry는 자동화된 시뮬레이션 장면 생성과 다양한 변형 편집을 통해 실제 세계 정책 훈련의 비용과 난이도를 효과적으로 낮추면서, 정책 평가를 위한 고충실도 시뮬레이션 환경을 제공합니다. 제로샷 전이 능력과 강력한 시뮬레이션-실제 상관 관계는 로봇 학습 분야에 확장 가능한 솔루션을 제공합니다. 자세한 내용은 프로젝트 페이지를 참조하세요: https://research.nvidia.com/labs/gear/simfoundry/.

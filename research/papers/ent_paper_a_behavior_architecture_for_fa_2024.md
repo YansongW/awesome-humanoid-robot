@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.03532v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.03532v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (827 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,28 @@ sources:
 ## Overview
 Towards the role of humanoid robots as squad mates in urban operations and other domains, we identified doors as a major area lacking capability development. In this paper, we focus on the ability of humanoid robots to navigate and deal with doors. Human-sized doors are ubiquitous in many environment domains and the humanoid form factor is uniquely suited to operate and traverse them. We present an architecture which incorporates GPU accelerated perception and a tree based interactive behavior coordination system with a whole body motion and walking controller. Our system is capable of performing door traversals on a variety of door types. It supports rapid authoring of behaviors for unseen door types and techniques to achieve re-usability of those authored behaviors. The behaviors are modelled using trees and feature logical reactivity and action sequences that can be executed with layered concurrency to increase speed. Primitive actions are built on top of our existing whole body controller which supports manipulation while walking. We include a perception system using both neural networks and classical computer vision for door mechanism detection outside of the lab environment. We present operator-robot interdependence analysis charts to explore how human cognition is combined with artificial intelligence to produce complex robot behavior. Finally, we present and discuss real robot performances of fast door traversals on our Nadia humanoid robot. Videos online at https://www.youtube.com/playlist?list=PLXuyT8w3JVgMPaB5nWNRNHtqzRK8i68dy.
 
-## 개요
-인간형 로봇이 도시 작전 및 기타 영역에서 분대원 역할을 수행하는 방향으로 나아가면서, 우리는 문이 능력 개발이 부족한 주요 영역임을 확인했습니다. 본 논문에서는 인간형 로봇이 문을 탐색하고 처리하는 능력에 초점을 맞춥니다. 인간 크기의 문은 다양한 환경 영역에서 흔히 존재하며, 인간형 폼팩터는 이를 작동하고 통과하는 데 독특하게 적합합니다. 우리는 GPU 가속 인식과 트리 기반의 상호작용적 행동 조정 시스템을 전신 동작 및 보행 제어기와 통합한 아키텍처를 제시합니다. 우리 시스템은 다양한 유형의 문을 통과할 수 있습니다. 또한, 보지 못한 문 유형에 대한 행동을 신속하게 작성하고, 작성된 행동의 재사용성을 달성하는 기술을 지원합니다. 행동은 트리를 사용하여 모델링되며, 계층적 동시성을 통해 실행 속도를 높일 수 있는 논리적 반응성과 동작 시퀀스를 특징으로 합니다. 기본 동작은 걷는 동안 조작을 지원하는 기존의 전신 제어기 위에 구축됩니다. 우리는 실험실 환경 밖에서 문 메커니즘을 감지하기 위해 신경망과 고전적 컴퓨터 비전을 모두 사용하는 인식 시스템을 포함합니다. 인간 인지와 인공지능이 결합되어 복잡한 로봇 행동을 생성하는 방식을 탐구하기 위해 운영자-로봇 상호의존성 분석 차트를 제시합니다. 마지막으로, Nadia 인간형 로봇에서의 빠른 문 통과에 대한 실제 로봇 성능을 제시하고 논의합니다. 동영상은 https://www.youtube.com/playlist?list=PLXuyT8w3JVgMPaB5nWNRNHtqzRK8i68dy 에서 온라인으로 확인할 수 있습니다.
-
-## 핵심 내용
-인간형 로봇이 도시 작전 및 기타 영역에서 분대원 역할을 수행하는 방향으로 나아가면서, 우리는 문이 능력 개발이 부족한 주요 영역임을 확인했습니다. 본 논문에서는 인간형 로봇이 문을 탐색하고 처리하는 능력에 초점을 맞춥니다. 인간 크기의 문은 다양한 환경 영역에서 흔히 존재하며, 인간형 폼팩터는 이를 작동하고 통과하는 데 독특하게 적합합니다. 우리는 GPU 가속 인식과 트리 기반의 상호작용적 행동 조정 시스템을 전신 동작 및 보행 제어기와 통합한 아키텍처를 제시합니다. 우리 시스템은 다양한 유형의 문을 통과할 수 있습니다. 또한, 보지 못한 문 유형에 대한 행동을 신속하게 작성하고, 작성된 행동의 재사용성을 달성하는 기술을 지원합니다. 행동은 트리를 사용하여 모델링되며, 계층적 동시성을 통해 실행 속도를 높일 수 있는 논리적 반응성과 동작 시퀀스를 특징으로 합니다. 기본 동작은 걷는 동안 조작을 지원하는 기존의 전신 제어기 위에 구축됩니다. 우리는 실험실 환경 밖에서 문 메커니즘을 감지하기 위해 신경망과 고전적 컴퓨터 비전을 모두 사용하는 인식 시스템을 포함합니다. 인간 인지와 인공지능이 결합되어 복잡한 로봇 행동을 생성하는 방식을 탐구하기 위해 운영자-로봇 상호의존성 분석 차트를 제시합니다. 마지막으로, Nadia 인간형 로봇에서의 빠른 문 통과에 대한 실제 로봇 성능을 제시하고 논의합니다. 동영상은 https://www.youtube.com/playlist?list=PLXuyT8w3JVgMPaB5nWNRNHtqzRK8i68dy 에서 온라인으로 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.03532v1
+
+## 개요
+이 연구는 인간형 로봇이 도시 전투와 같은 시나리오에서 팀원으로 활동할 때 문을 통과하는 핵심 능력의 부재에 초점을 맞춘다. 저자들은 GPU 가속 인식 시스템(신경망과 고전 컴퓨터 비전의 결합)과 트리 기반 상호작용 행동 조정 시스템을 통합한 행동 아키텍처를 제안하며, 기존의 전신 운동 및 보행 컨트롤러를 활용하여 이동 중 조작을 지원한다. 이 시스템은 보지 못한 문 유형에 대한 행동을 빠르게 작성할 수 있게 하며, 계층적 동시 실행을 통해 속도를 향상시킨다. 최종적으로 Nadia 인간형 로봇에서 빠른 문 통과를 위한 실제 로봇 시연을 구현했으며, 운영자-로봇 상호 의존성 분석 차트를 제공하여 인간 인지와 인공지능의 결합을 탐구한다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+- 인간형 로봇이 도시 전투와 같은 분야의 팀원으로 활동할 때, 문 통과는 능력 개발이 부족한 주요 장애물이다.
+- 인간 크기의 문은 다양한 환경에서 흔히 존재하며, 인간형 로봇 형태가 조작 및 통과에 가장 적합하다.
+
+### 행동 아키텍처 설계
+- **인식 시스템**: GPU 가속 신경망과 고전 컴퓨터 비전을 결합하여 실외 환경에서 문 메커니즘(손잡이, 밀기/당기기 표시 등)을 감지한다.
+- **행동 조정 시스템**: 트리 기반 구조로 행동을 모델링하며, 논리적 반응성과 동작 시퀀스를 지원하고 계층적 동시 실행을 통해 속도를 향상시킨다.
+- **전신 컨트롤러**: 기존의 전신 운동 및 보행 컨트롤러를 기반으로 이동 중 조작(loco-manipulation)을 지원한다.
+- **빠른 행동 작성**: 보지 못한 문 유형에 대한 행동을 빠르게 작성할 수 있으며, 작성된 행동의 재사용성을 구현한다.
+
+### 실험 및 결과
+- **로봇 플랫폼**: Nadia 인간형 로봇.
+- **성능**: 시스템은 다양한 유형의 문을 통과할 수 있으며 빠른 통과를 달성한다.
+- **인간-로봇 협업 분석**: 운영자-로봇 상호 의존성 분석 차트를 통해 인간 인지와 인공지능이 어떻게 결합하여 복잡한 로봇 행동을 생성하는지 보여준다.
+- **시연 비디오**: https://www.youtube.com/playlist?list=PLXuyT8w3JVgMPaB5nWNRNHtqzRK8i68dy 참조.
+
+### 결론
+이 아키텍처는 인간형 로봇이 다양한 문 유형을 빠르고 안정적으로 통과할 수 있게 하며 유연한 행동 확장을 지원하여, 복잡한 환경에서 인간형 로봇의 자율 운영을 위한 실용적인 솔루션을 제공한다.

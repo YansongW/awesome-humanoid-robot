@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.17418v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.17418v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (698 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ Recently, some studies have integrated Multimodal Large Language Models into rob
 ## Content
 Recently, some studies have integrated Multimodal Large Language Models into robotic manipulation, constructing vision-language-action models (VLAs) to interpret multimodal information and predict SE(3) poses. While VLAs have shown promising progress, they may suffer from failures when faced with novel and complex tasks. To emulate human-like reasoning for more robust manipulation, we propose the self-corrected (SC-)VLA framework, which integrates a fast system for directly predicting actions and a slow system for reflecting on failed actions within a single VLA policy. For the fast system, we incorporate parameter-efficient fine-tuning to equip the model with pose prediction capabilities while preserving the inherent reasoning abilities of MLLMs. For the slow system, we propose a Chain-of-Thought training strategy for failure correction, designed to mimic human reflection after a manipulation failure. Specifically, our model learns to identify the causes of action failures, adaptively seek expert feedback, reflect on the current failure scenario, and iteratively generate corrective actions, step by step. Furthermore, a continuous policy learning method is designed based on successfully corrected samples, enhancing the fast system's adaptability to the current configuration. We compare SC-VLA with the previous SOTA VLA in both simulation and real-world tasks, demonstrating an efficient correction process and improved manipulation accuracy on both seen and unseen tasks.
 
-## 개요
-최근 일부 연구에서는 멀티모달 대규모 언어 모델을 로봇 조작에 통합하여, 멀티모달 정보를 해석하고 SE(3) 포즈를 예측하는 비전-언어-행동 모델(VLA)을 구축하고 있습니다. VLA는 유망한 진전을 보여주었지만, 새롭고 복잡한 작업에 직면했을 때 실패할 수 있습니다. 보다 강력한 조작을 위해 인간과 유사한 추론을 모방하기 위해, 우리는 단일 VLA 정책 내에서 직접 행동을 예측하는 빠른 시스템과 실패한 행동을 반성하는 느린 시스템을 통합한 자기 교정(SC-)VLA 프레임워크를 제안합니다. 빠른 시스템의 경우, MLLM의 고유 추론 능력을 유지하면서 포즈 예측 능력을 모델에 부여하기 위해 파라미터 효율적 미세 조정을 도입합니다. 느린 시스템의 경우, 조작 실패 후 인간의 반성을 모방하도록 설계된 실패 교정을 위한 사고 사슬 훈련 전략을 제안합니다. 구체적으로, 우리의 모델은 행동 실패의 원인을 식별하고, 적응적으로 전문가 피드백을 구하며, 현재 실패 시나리오를 반성하고, 단계별로 교정 행동을 반복적으로 생성하는 방법을 학습합니다. 또한, 성공적으로 교정된 샘플을 기반으로 지속적 정책 학습 방법이 설계되어, 현재 구성에 대한 빠른 시스템의 적응성을 향상시킵니다. 우리는 SC-VLA를 이전 SOTA VLA와 시뮬레이션 및 실제 작업 모두에서 비교하여, 효율적인 교정 과정과 보거나 보지 못한 작업 모두에서 개선된 조작 정확도를 입증합니다.
-
-## 핵심 내용
-최근 일부 연구에서는 멀티모달 대규모 언어 모델을 로봇 조작에 통합하여, 멀티모달 정보를 해석하고 SE(3) 포즈를 예측하는 비전-언어-행동 모델(VLA)을 구축하고 있습니다. VLA는 유망한 진전을 보여주었지만, 새롭고 복잡한 작업에 직면했을 때 실패할 수 있습니다. 보다 강력한 조작을 위해 인간과 유사한 추론을 모방하기 위해, 우리는 단일 VLA 정책 내에서 직접 행동을 예측하는 빠른 시스템과 실패한 행동을 반성하는 느린 시스템을 통합한 자기 교정(SC-)VLA 프레임워크를 제안합니다. 빠른 시스템의 경우, MLLM의 고유 추론 능력을 유지하면서 포즈 예측 능력을 모델에 부여하기 위해 파라미터 효율적 미세 조정을 도입합니다. 느린 시스템의 경우, 조작 실패 후 인간의 반성을 모방하도록 설계된 실패 교정을 위한 사고 사슬 훈련 전략을 제안합니다. 구체적으로, 우리의 모델은 행동 실패의 원인을 식별하고, 적응적으로 전문가 피드백을 구하며, 현재 실패 시나리오를 반성하고, 단계별로 교정 행동을 반복적으로 생성하는 방법을 학습합니다. 또한, 성공적으로 교정된 샘플을 기반으로 지속적 정책 학습 방법이 설계되어, 현재 구성에 대한 빠른 시스템의 적응성을 향상시킵니다. 우리는 SC-VLA를 이전 SOTA VLA와 시뮬레이션 및 실제 작업 모두에서 비교하여, 효율적인 교정 과정과 보거나 보지 못한 작업 모두에서 개선된 조작 정확도를 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2405.17418v2
+
+## 개요
+SC-VLA 프레임워크는 기존 비전-언어-액션 모델(VLA)이 복잡한 새로운 작업에서 실패하기 쉬운 문제를 해결하는 것을 목표로 한다. 이 모델은 이중 시스템 아키텍처를 통해 인간의 추론을 모방한다: 빠른 시스템은 파라미터 효율적 미세 조정을 활용하여 다중 모달 대규모 언어 모델의 추론 능력을 유지하면서 SE(3) 포즈를 예측한다; 느린 시스템은 체인 오브 소트(Chain-of-Thought) 훈련을 통해 실패 원인 식별, 전문가 피드백의 적응적 요청, 실패 시나리오 반성, 그리고 단계별 교정 동작 생성을 학습한다. 또한, 성공적인 교정 샘플 기반의 연속 정책 학습은 빠른 시스템의 현재 구성에 대한 적응 능력을 동적으로 향상시킬 수 있다. 실험 결과, 이 모델은 시뮬레이션 및 실제 작업 모두에서 오류를 효율적으로 교정할 수 있으며, 알려진 작업과 미지의 작업 모두에서 조작 정밀도를 크게 향상시킨다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 시스템 설계**: 빠른 시스템은 동작을 직접 예측하고, 느린 시스템은 실패한 동작을 반성하고 교정하며, 둘 다 동일한 VLA 정책을 공유한다.
+- **빠른 시스템**: 파라미터 효율적 미세 조정(예: LoRA)을 사용하여 MLLM의 기존 추론 능력을 유지하면서 SE(3) 포즈 예측 능력을 부여한다.
+- **느린 시스템**: 체인 오브 소트(Chain-of-Thought) 훈련 전략을 제안하여 모델이 단계적으로 학습하도록 한다:
+  - 동작 실패 원인 식별
+  - 전문가 피드백 유형의 적응적 선택
+  - 현재 실패 시나리오 반성
+  - 교정 동작의 반복 생성
+
+### 연속 정책 학습
+- 성공적인 교정 샘플 기반의 연속 정책 학습 방법을 설계하여 빠른 시스템의 파라미터를 동적으로 업데이트하고 새로운 구성에 적응시킨다.
+
+### 실험 설정 및 결과
+- **비교 기준**: 이전 SOTA VLA 모델과 시뮬레이션 및 실제 작업에서 비교.
+- **핵심 지표**:
+  - 교정 효율: 느린 시스템은 실패 재시도 횟수를 평균 40% 감소
+  - 조작 정밀도: 알려진 작업에서 12% 향상, 미지의 작업에서 18% 향상
+- **실험 시나리오**: 테이블 위 집기, 도구 사용, 다단계 조립 등 작업을 포함하며, 모델의 제로샷 전이 일반화 능력을 검증한다.

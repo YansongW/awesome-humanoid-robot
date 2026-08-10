@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.20808v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.20808v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (658 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -64,11 +65,25 @@ SoccerDiffusion 展示了从真实比赛录像中学习端到端人形机器人�
 ## Overview
 This paper introduces SoccerDiffusion, a transformer-based diffusion model designed to learn end-to-end control policies for humanoid robot soccer directly from real-world gameplay recordings. Using data collected from RoboCup competitions, the model predicts joint command trajectories from multi-modal sensor inputs, including vision, proprioception, and game state. We employ a distillation technique to enable real-time inference on embedded platforms that reduces the multi-step diffusion process to a single step. Our results demonstrate the model's ability to replicate complex motion behaviors such as walking, kicking, and fall recovery both in simulation and on physical robots. Although high-level tactical behavior remains limited, this work provides a robust foundation for subsequent reinforcement learning or preference optimization methods. We release the dataset, pretrained models, and code under: https://bit-bots.github.io/SoccerDiffusion
 
-## 개요
-본 논문은 실제 경기 녹화 데이터로부터 직접 휴머노이드 로봇 축구의 엔드투엔드 제어 정책을 학습하도록 설계된 트랜스포머 기반 확산 모델인 SoccerDiffusion을 소개합니다. RoboCup 대회에서 수집된 데이터를 사용하여, 이 모델은 시각, 고유수용감각, 게임 상태를 포함한 다중 모달 센서 입력으로부터 관절 명령 궤적을 예측합니다. 우리는 임베디드 플랫폼에서 실시간 추론을 가능하게 하는 증류 기법을 사용하여 다단계 확산 과정을 단일 단계로 축소합니다. 실험 결과는 시뮬레이션과 실제 로봇 모두에서 걷기, 차기, 낙상 회복과 같은 복잡한 동작 행동을 복제할 수 있는 모델의 능력을 보여줍니다. 높은 수준의 전술적 행동은 여전히 제한적이지만, 이 연구는 후속 강화 학습 또는 선호도 최적화 방법을 위한 견고한 기반을 제공합니다. 우리는 데이터셋, 사전 학습된 모델, 코드를 https://bit-bots.github.io/SoccerDiffusion 에서 공개합니다.
-
-## 핵심 내용
-본 논문은 실제 경기 녹화 데이터로부터 직접 휴머노이드 로봇 축구의 엔드투엔드 제어 정책을 학습하도록 설계된 트랜스포머 기반 확산 모델인 SoccerDiffusion을 소개합니다. RoboCup 대회에서 수집된 데이터를 사용하여, 이 모델은 시각, 고유수용감각, 게임 상태를 포함한 다중 모달 센서 입력으로부터 관절 명령 궤적을 예측합니다. 우리는 임베디드 플랫폼에서 실시간 추론을 가능하게 하는 증류 기법을 사용하여 다단계 확산 과정을 단일 단계로 축소합니다. 실험 결과는 시뮬레이션과 실제 로봇 모두에서 걷기, 차기, 낙상 회복과 같은 복잡한 동작 행동을 복제할 수 있는 모델의 능력을 보여줍니다. 높은 수준의 전술적 행동은 여전히 제한적이지만, 이 연구는 후속 강화 학습 또는 선호도 최적화 방법을 위한 견고한 기반을 제공합니다. 우리는 데이터셋, 사전 학습된 모델, 코드를 https://bit-bots.github.io/SoccerDiffusion 에서 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.20808v2
+
+## 개요
+SoccerDiffusion은 RoboCup 대회에서 수집된 데이터를 활용하여, Transformer 아키텍처 기반의 확산 모델을 훈련하고, 시각, 고유수용감각, 게임 상태 등 다중 모달 입력에서 직접 관절 궤적을 예측합니다. 증류 기술을 통해 다단계 확산 과정을 단일 단계 추론으로 압축하여, 모델이 임베디드 플랫폼에서 실시간으로 실행될 수 있게 합니다. 시뮬레이션 및 실제 로봇 실험에서, 이 모델은 걷기, 공 차기, 낙상 회복과 같은 복잡한 운동 행동을 성공적으로 재현할 수 있음을 보여주었지만, 고급 전술 행동에는 여전히 한계가 있습니다. 이 작업은 후속 강화 학습 또는 선호 최적화 방법에 견고한 기반을 제공합니다.
+
+## 핵심 내용
+### 방법
+- 모델 아키텍처: Transformer 기반의 확산 모델로, 입력에는 시각, 고유수용감각, 게임 상태 등 다중 모달 센서 데이터가 포함되며, 출력은 관절 명령 궤적입니다.
+- 훈련 데이터: RoboCup 대회에서 수집된 실제 경기 녹화를 사용합니다.
+- 추론 최적화: 증류 기술을 사용하여 다단계 확산 과정을 단일 단계 추론으로 압축하여, 임베디드 플랫폼에서 실시간 실행을 구현합니다.
+
+### 실험 설정
+- 테스트 환경: 시뮬레이션 환경과 실제 휴머노이드 로봇에서 각각 검증을 수행합니다.
+- 평가 지표: 걷기, 공 차기, 낙상 회복과 같은 복잡한 운동 행동을 재현하는 모델의 능력에 중점을 둡니다.
+
+### 주요 결과
+- 모델은 걷기, 공 차기, 낙상 회복과 같은 복잡한 운동 행동을 성공적으로 재현했습니다.
+- 고급 전술 행동(예: 팀워크)에는 여전히 한계가 있지만, 후속 강화 학습 또는 선호 최적화 방법에 견고한 기반을 제공합니다.
+
+### 결론
+SoccerDiffusion은 실제 경기 녹화에서 엔드투엔드 휴머노이드 축구 제어 정책을 학습하는 가능성을 보여주며, 후속 연구를 위해 데이터셋, 사전 훈련 모델 및 코드(https://bit-bots.github.io/SoccerDiffusion)를 제공합니다.

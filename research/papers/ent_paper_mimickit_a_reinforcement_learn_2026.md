@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://arxiv.org/abs/2510.13794. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://arxiv.org/abs/2510.13794. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (878 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,25 @@ MimicKit 通过提供模块化、易配置的开源框架，降低了运动模�
 ## Overview
 Abstract page for arXiv paper 2510.13794: MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control Focus to learn more arXiv-issued DOI via DataCite Submission history From: Xue Bin Peng [ view email ] [v1] Wed, 15 Oct 2025 17:51:42 UTC (14,867 KB) [v2] Thu, 16 Oct 2025 02:41:08 UTC (14,869 KB) [v3] Sun, 11 Jan 2026 01:48:54 UTC (14,868 KB) [v4] Sun, 18 Jan 2026 17:46:05 UTC (14,868 KB) Full-text links: Access Paper: View a PDF of the paper titled MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control, by Xue Bin Peng View PDF HTML (experimental) TeX Source view license Current browse context: cs.GR < prev | next > new | recent | 2025-10 Change to browse by: cs cs.LG cs.RO References & Citations NASA ADS Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs .
 
-## 개요
-arXiv 논문 2510.13794의 초록 페이지: MimicKit: 모션 모방 및 제어를 위한 강화 학습 프레임워크. DataCite를 통해 arXiv 발급 DOI에 대해 자세히 알아보기. 제출 기록: Xue Bin Peng [이메일 보기] [v1] 2025년 10월 15일 수요일 17:51:42 UTC (14,867 KB) [v2] 2025년 10월 16일 목요일 02:41:08 UTC (14,869 KB) [v3] 2026년 1월 11일 일요일 01:48:54 UTC (14,868 KB) [v4] 2026년 1월 18일 일요일 17:46:05 UTC (14,868 KB) 전체 텍스트 링크: 논문 접근: Xue Bin Peng 저, "MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control" 제목의 PDF 보기. PDF 보기 HTML (실험적) TeX 소스 라이선스 보기. 현재 탐색 컨텍스트: cs.GR < 이전 | 다음 > 새로움 | 최근 | 2025-10. 탐색 변경: cs cs.LG cs.RO. 참고문헌 및 인용: NASA ADS Google Scholar Semantic Scholar. BibTeX 인용 내보내기 로딩 중... BibTeX 형식 인용 × 로딩 중... 제공 데이터: 북마크. 참고문헌 도구: 참고문헌 탐색기 토글 (탐색기란 무엇인가요?), Connected Papers 토글 (Connected Papers란 무엇인가요?), Litmaps 토글 (Litmaps란 무엇인가요?), scite.ai 토글 (scite Smart Citations란 무엇인가요?). 코드, 데이터, 미디어: 이 논문과 관련된 코드, 데이터 및 미디어. alphaXiv 토글 (alphaXiv란 무엇인가요?), 코드 링크 토글 CatalyzeX 코드 검색기 (CatalyzeX란 무엇인가요?), DagsHub 토글 (DagsHub란 무엇인가요?), GotitPub 토글 (Gotit.pub이란 무엇인가요?), Huggingface 토글 (Hugging Face란 무엇인가요?), ScienceCast 토글 (ScienceCast란 무엇인가요?). 데모: Replicate 토글 (Replicate란 무엇인가요?), Spaces 토글 Hugging Face Spaces (Spaces란 무엇인가요?), Spaces 토글 TXYZ.AI (TXYZ.AI란 무엇인가요?). 관련 논문 추천 및 검색 도구: Influence Flower 링크 (Influence Flowers란 무엇인가요?), 핵심 추천기 토글 CORE 추천기 (CORE란 무엇인가요?). 저자, 발행처, 기관, 주제. arXivLabs 소개: arXivLabs는 커뮤니티 협력자와 함께 새로운 arXiv 기능을 개발하고 공유할 수 있는 실험적 프로젝트입니다. arXivLabs와 협력하는 개인 및 조직은 개방성, 커뮤니티, 우수성, 사용자 데이터 프라이버시라는 우리의 가치를 수용하고 수락했습니다. arXiv는 이러한 가치를 준수하며 이를 따르는 파트너와만 협력합니다. arXiv 커뮤니티에 가치를 더할 프로젝트 아이디어가 있으신가요? arXivLabs에 대해 자세히 알아보세요.
-
-## 핵심 내용
-arXiv 논문 2510.13794의 초록 페이지: MimicKit: 모션 모방 및 제어를 위한 강화 학습 프레임워크. DataCite를 통해 arXiv 발급 DOI에 대해 자세히 알아보기. 제출 기록: Xue Bin Peng [이메일 보기] [v1] 2025년 10월 15일 수요일 17:51:42 UTC (14,867 KB) [v2] 2025년 10월 16일 목요일 02:41:08 UTC (14,869 KB) [v3] 2026년 1월 11일 일요일 01:48:54 UTC (14,868 KB) [v4] 2026년 1월 18일 일요일 17:46:05 UTC (14,868 KB) 전체 텍스트 링크: 논문 접근: Xue Bin Peng 저, "MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control" 제목의 PDF 보기. PDF 보기 HTML (실험적) TeX 소스 라이선스 보기. 현재 탐색 컨텍스트: cs.GR < 이전 | 다음 > 새로움 | 최근 | 2025-10. 탐색 변경: cs cs.LG cs.RO. 참고문헌 및 인용: NASA ADS Google Scholar Semantic Scholar. BibTeX 인용 내보내기 로딩 중... BibTeX 형식 인용 × 로딩 중... 제공 데이터: 북마크. 참고문헌 도구: 참고문헌 탐색기 토글 (탐색기란 무엇인가요?), Connected Papers 토글 (Connected Papers란 무엇인가요?), Litmaps 토글 (Litmaps란 무엇인가요?), scite.ai 토글 (scite Smart Citations란 무엇인가요?). 코드, 데이터, 미디어: 이 논문과 관련된 코드, 데이터 및 미디어. alphaXiv 토글 (alphaXiv란 무엇인가요?), 코드 링크 토글 CatalyzeX 코드 검색기 (CatalyzeX란 무엇인가요?), DagsHub 토글 (DagsHub란 무엇인가요?), GotitPub 토글 (Gotit.pub이란 무엇인가요?), Huggingface 토글 (Hugging Face란 무엇인가요?), ScienceCast 토글 (ScienceCast란 무엇인가요?). 데모: Replicate 토글 (Replicate란 무엇인가요?), Spaces 토글 Hugging Face Spaces (Spaces란 무엇인가요?), Spaces 토글 TXYZ.AI (TXYZ.AI란 무엇인가요?). 관련 논문 추천 및 검색 도구: Influence Flower 링크 (Influence Flowers란 무엇인가요?), 핵심 추천기 토글 CORE 추천기 (CORE란 무엇인가요?). 저자, 발행처, 기관, 주제. arXivLabs 소개: arXivLabs는 커뮤니티 협력자와 함께 새로운 arXiv 기능을 개발하고 공유할 수 있는 실험적 프로젝트입니다. arXivLabs와 협력하는 개인 및 조직은 개방성, 커뮤니티, 우수성, 사용자 데이터 프라이버시라는 우리의 가치를 수용하고 수락했습니다. arXiv는 이러한 가치를 준수하며 이를 따르는 파트너와만 협력합니다. arXiv 커뮤니티에 가치를 더할 프로젝트 아이디어가 있으신가요? arXivLabs에 대해 자세히 알아보세요.
-
 ## 参考
 - https://arxiv.org/abs/2510.13794
+
+## 개요
+MimicKit은 동작 모방 및 제어를 위한 강화 학습 오픈소스 프레임워크입니다. 이 프레임워크는 표준화된 환경, 에이전트 및 데이터 구조를 제공하여 여러 일반적인 동작 모방 기술과 강화 학습 알고리즘 구현을 통합합니다. 코드베이스 설계는 모듈성과 쉬운 구성에 중점을 두어 연구자들이 새로운 캐릭터와 작업으로 쉽게 수정하고 확장할 수 있도록 합니다. 이 프레임워크는 컴퓨터 그래픽스 및 로보틱스 분야의 연구와 응용을 지원하는 것을 목표로 하며, 오픈소스 코드는 GitHub에서 확인할 수 있습니다.
+
+## 핵심 내용
+### 개요
+MimicKit은 동작 모방 및 제어를 위해 특화된 강화 학습 오픈소스 프레임워크입니다. 핵심 목표는 컴퓨터 그래픽스 및 로보틱스 분야의 연구와 응용을 지원하는 통합 훈련 플랫폼을 제공하는 것입니다.
+
+### 핵심 특성
+- **통합 프레임워크**: 표준화된 환경(Environment), 에이전트(Agent) 및 데이터 구조를 제공하여 여러 일반적인 동작 모방 기술과 강화 학습 알고리즘 구현을 통합합니다.
+- **모듈식 설계**: 코드베이스는 모듈식 아키텍처를 채택하여 구성이 용이하며, 연구자들이 새로운 캐릭터와 작업으로 쉽게 수정하고 확장할 수 있습니다.
+- **오픈소스 사용 가능**: 완전한 오픈소스 코드베이스는 GitHub에 호스팅되어 있으며, 주소는 https://github.com/xbpeng/MimicKit 입니다.
+
+### 기술 세부 사항
+- **논문 정보**: 이 프레임워크에 해당하는 논문은 arXiv 논문 2510.13794로, 제목은 "MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control"이며, 저자는 Xue Bin Peng입니다.
+- **버전 이력**: 논문은 2025년 10월 15일에 처음 제출되었으며(v1), 이후 2025년 10월 16일(v2), 2026년 1월 11일(v3), 2026년 1월 18일(v4)에 업데이트되었습니다.
+- **탐색 컨텍스트**: 현재 탐색 컨텍스트는 cs.GR(컴퓨터 그래픽스)이며, cs.LG(머신 러닝) 및 cs.RO(로보틱스) 카테고리에서도 탐색할 수 있습니다.
+
+### 결론
+MimicKit은 모듈식이고 구성이 용이한 오픈소스 프레임워크를 제공하여 동작 모방 및 강화 학습 연구의 진입 장벽을 낮추고, 관련 분야의 연구자들에게 강력한 도구를 제공합니다.

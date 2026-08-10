@@ -31,7 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from chapter-09.md#9.4.2 灵巧手与夹爪：自由度、驱动与成本权衡 by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from chapter-09.md#9.4.2 灵巧手与夹爪：自由度、驱动与成本权衡 by scripts/backfill_nonpaper_entries.py. | WP4 trilingual
+    backfill 2026-08-10: closed unclosed code fence(s) and removed duplicate stale translation block(s) (pre-existing ingestion
+    defect).'
 sources:
 - id: src_001
   type: website
@@ -40,7 +42,6 @@ sources:
   date: '2024'
   accessed_at: '2026-07-13'
 ---
-
 ## 概述
 灵巧手是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -106,38 +107,9 @@ flowchart TD
     D --> G["Adaptive/Medium Cost"]
     E --> H["Simple/Low Cost"]
 
+```
 ## 개요
 인간형 로봇 분야에서 중요한 부품인 **다기능 손(Dexterous Hand)**에 관한 내용입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고 자료로 활용하시기 바랍니다.
-
-## 핵심 내용
-로봇 손은 크게 **다지 다기능 손(Dexterous Hand)**과 **2지/3지 그리퍼(Gripper)**로 구분됩니다. 다기능 손은 자유도가 높고 적응성이 뛰어나지만 제어가 복잡하고 비용이 높은 반면, 그리퍼는 구조가 간단하고 비용이 낮지만 제한된 파지 유형만 수행할 수 있습니다.
-
-!!! note "용어 설명: 다기능 손, 그리퍼, 언더액추에이티드, 풀액추에이티드, 적응형 파지"
-    - **다기능 손(Dexterous Hand)**: 여러 손가락과 높은 자유도를 가지며 복잡한 조작이 가능한 엔드 이펙터.
-    - **그리퍼(Gripper)**: 일반적으로 자유도가 적고 구조가 단순한 파지 장치.
-    - **언더액추에이티드(Underactuated)**: 액추에이터 수가 자유도보다 적으며, 기계적 결합을 통해 운동을 전달.
-    - **풀액추에이티드(Fully Actuated)**: 각 자유도가 독립적인 액추에이터로 구동.
-    - **적응형 파지(Adaptive Grasp)**: 손이 물체의 형상에 따라 자동으로 감싸는 파지 방식.
-
-| 유형 | 자유도 | 구동 방식 | 장점 | 단점 | 대표 사례 |
-|---|---|---|---|---|---|
-| 풀액추에이티드 다기능 손 | 16–24 | 모터/텐던/직접 구동 | 높은 기민성 | 복잡, 고가 | Shadow Hand, HIT Hand |
-| 언더액추에이티드 다기능 손 | 8–16 | 텐던/링크/차동 기어 | 적응성, 경량 | 제어 정밀도 낮음 | Robotiq 3F, SVH |
-| 2지 그리퍼 | 1–2 | 모터+볼스크류 | 단순, 신뢰성 | 유형 제한 | Robotiq 2F |
-| 소프트 핸드 | 다양 | 공압/케이블 | 순응성, 안전 | 힘 제어 어려움 | RBO Hand, PneuNet |
-
-```mermaid
-flowchart TD
-    A["손 선택"] --> B{"작업 복잡도?"}
-    B -->|"높음"| C["다지 다기능 손"]
-    B -->|"중간"| D["언더액추에이티드 3지 손"]
-    B -->|"낮음"| E["2지 그리퍼"]
-    C --> F["높은 기민성/고비용"]
-    D --> G["적응성/중간 비용"]
-    E --> H["단순/저비용"]
-
-## 개요
-로봇 핸드는 인간형 로봇 분야의 중요한 부품입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
 
 ## 핵심 내용
 로봇 핸드는 크게 **다지 손가락 로봇 핸드(다지 손가락 로봇 핸드)**와 **두 손가락/세 손가락 그리퍼(그리퍼)**로 나뉩니다. 다지 손가락 로봇 핸드는 자유도가 높고 적응성이 뛰어나지만 제어가 복잡하고 비용이 높습니다. 그리퍼는 구조가 간단하고 비용이 낮지만 제한된 유형의 파지 작업만 수행할 수 있습니다.
@@ -165,3 +137,4 @@ flowchart TD
     C --> F["높은 기민함/높은 비용"]
     D --> G["적응성/중간 비용"]
     E --> H["간단함/낮은 비용"]
+```

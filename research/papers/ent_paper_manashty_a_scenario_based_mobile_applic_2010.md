@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1009.5398v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1009.5398v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (648 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,26 @@ theoretical_depth:
 ## Overview
 Smart homes are becoming more popular, as every day a new home appliance can be digitally controlled. Smart Digital Homes are using a server to make interaction with all the possible devices in one place, on a computer or webpage. In this paper we designed and implemented a mobile application using Windows Mobile platform that can connect to the controlling server of a Smart Home and grants the access to the Smart Home devices and robots everywhere possible. UML diagrams are presented to illustrate the application design process. Robots are also considered as devices that are able to interact to other object and devices. Scenarios are defined as a set of sequential actions to help manage different tasks all in one place. The mobile application can connect to the server using GPRS mobile internet and Short Message System (SMS). Interactive home map is also designed for easier status-checking and interacting with the devices using the mobile phones.
 
-## 개요
-스마트 홈은 매일 새로운 가전제품이 디지털 방식으로 제어될 수 있게 되면서 점점 더 대중화되고 있습니다. 스마트 디지털 홈은 서버를 사용하여 컴퓨터나 웹페이지에서 모든 가능한 기기와의 상호작용을 한 곳에서 수행합니다. 본 논문에서는 Windows Mobile 플랫폼을 사용하여 스마트 홈의 제어 서버에 연결하고, 어디서든 스마트 홈 기기 및 로봇에 접근할 수 있는 모바일 애플리케이션을 설계 및 구현했습니다. 애플리케이션 설계 과정을 설명하기 위해 UML 다이어그램이 제시됩니다. 로봇은 다른 객체 및 기기와 상호작용할 수 있는 장치로 간주됩니다. 시나리오는 한 곳에서 다양한 작업을 관리하는 데 도움이 되도록 일련의 순차적 동작으로 정의됩니다. 모바일 애플리케이션은 GPRS 모바일 인터넷과 단문 메시지 시스템(SMS)을 사용하여 서버에 연결할 수 있습니다. 또한 휴대폰을 사용하여 상태 확인 및 기기와의 상호작용을 더 쉽게 하기 위해 대화형 홈 맵이 설계되었습니다.
-
-## 핵심 내용
-스마트 홈은 매일 새로운 가전제품이 디지털 방식으로 제어될 수 있게 되면서 점점 더 대중화되고 있습니다. 스마트 디지털 홈은 서버를 사용하여 컴퓨터나 웹페이지에서 모든 가능한 기기와의 상호작용을 한 곳에서 수행합니다. 본 논문에서는 Windows Mobile 플랫폼을 사용하여 스마트 홈의 제어 서버에 연결하고, 어디서든 스마트 홈 기기 및 로봇에 접근할 수 있는 모바일 애플리케이션을 설계 및 구현했습니다. 애플리케이션 설계 과정을 설명하기 위해 UML 다이어그램이 제시됩니다. 로봇은 다른 객체 및 기기와 상호작용할 수 있는 장치로 간주됩니다. 시나리오는 한 곳에서 다양한 작업을 관리하는 데 도움이 되도록 일련의 순차적 동작으로 정의됩니다. 모바일 애플리케이션은 GPRS 모바일 인터넷과 단문 메시지 시스템(SMS)을 사용하여 서버에 연결할 수 있습니다. 또한 휴대폰을 사용하여 상태 확인 및 기기와의 상호작용을 더 쉽게 하기 위해 대화형 홈 맵이 설계되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/1009.5398v1
+
+## 개요
+이 연구는 스마트 디지털 홈에서 장치와 로봇의 원격 제어 복잡성을 해결하기 위해 모바일 솔루션을 설계했습니다. 애플리케이션은 GPRS 또는 SMS를 통해 홈 서버와 통신하며, 로봇을 상호작용 가능한 장치로 간주하고 사용자가 정의한 시나리오(즉, 일련의 순차적 동작)를 지원하여 다양한 작업을 통합 관리합니다. 또한, 상호작용형 홈 맵은 직관적인 장치 상태 확인 및 조작 인터페이스를 제공합니다. 논문은 UML 다이어그램을 통해 애플리케이션 설계 프로세스를 보여줍니다.
+
+## 핵심 내용
+### 방법
+- **플랫폼 및 언어**: Windows Mobile 플랫폼 기반, C# 언어로 개발.
+- **통신 방식**: GPRS 모바일 인터넷과 SMS(문자 메시지 시스템) 두 가지 방식으로 스마트 홈 서버에 연결 지원.
+- **장치 관리**: 서비스 로봇을 다른 객체 및 장치와 상호작용할 수 있는 지능형 장치로 간주.
+- **시나리오 메커니즘**: 시나리오를 일련의 순차적 동작으로 정의하여 사용자가 단일 조작으로 다중 장치 협업 작업을 트리거할 수 있도록 허용.
+
+### 아키텍처 및 설계
+- **UML 모델링**: 논문은 UML 다이어그램(유스케이스 다이어그램, 클래스 다이어그램, 시퀀스 다이어그램 등)을 통해 애플리케이션 설계 프로세스를 완전히 제시.
+- **상호작용형 홈 맵**: 모바일용 시각적 맵을 설계하여 사용자가 실시간으로 장치 상태를 확인하고 직접 클릭하여 상호작용할 수 있도록 지원.
+
+### 실험 설정 및 주요 수치
+- **테스트 환경**: 구체적인 하드웨어나 서버 구성은 명시되지 않았지만, 애플리케이션이 Windows Mobile 에뮬레이터 및 실제 장치에서 실행됨을 강조.
+- **통신 검증**: GPRS와 SMS 두 가지 방식을 통해 원격 명령 전송 및 상태 피드백을 성공적으로 구현.
+
+### 결론
+이 애플리케이션은 모바일에서 시나리오 기반 순차 동작과 상호작용 맵을 통해 스마트 홈 원격 제어의 편의성을 효과적으로 향상시킬 수 있음을 입증했습니다. 향후 더 많은 플랫폼(예: Android/iOS)으로 확장하고 시나리오 사용자 정의 기능을 최적화할 수 있습니다.

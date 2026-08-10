@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.22199v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.22199v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (896 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,23 @@ MimicDreamer 通过联合对齐视觉、视角与动作，将低成本人类演�
 ## Overview
 Vision Language Action (VLA) models derive their generalization capability from diverse training data, yet collecting embodied robot interaction data remains prohibitively expensive. In contrast, human demonstration videos are far more scalable and cost-efficient to collect, and recent studies confirm their effectiveness in training VLA models. However, a significant domain gap persists between human videos and robot-executed videos, including unstable camera viewpoints, visual discrepancies between human hands and robotic arms, and differences in motion dynamics. To bridge this gap, we propose MimicDreamer, a framework that turns fast, low-cost human demonstrations into robot-usable supervision by jointly aligning vision, viewpoint, and actions to directly support policy training. For visual alignment, we propose H2R Aligner, a video diffusion model that generates high-fidelity robot demonstration videos by transferring motion from human manipulation footage. For viewpoint stabilization, EgoStabilizer is proposed, which canonicalizes egocentric videos via homography and inpaints occlusions and distortions caused by warping. For action alignment, we map human hand trajectories to the robot frame and apply a constrained inverse kinematics solver to produce feasible, low-jitter joint commands with accurate pose tracking. Empirically, VLA models trained purely on our synthesized human-to-robot videos achieve few-shot execution on real robots. Moreover, scaling training with human data significantly boosts performance compared to models trained solely on real robot data; our approach improves the average success rate by 14.7\% across six representative manipulation tasks.
 
-## 개요
-Vision Language Action (VLA) 모델은 다양한 훈련 데이터로부터 일반화 능력을 얻지만, 실제 로봇 상호작용 데이터를 수집하는 것은 엄청난 비용이 든다. 반면, 인간 시연 영상은 훨씬 확장 가능하고 비용 효율적으로 수집할 수 있으며, 최근 연구들은 VLA 모델 훈련에 있어 그 효과성을 확인하고 있다. 그러나 인간 영상과 로봇 실행 영상 사이에는 불안정한 카메라 시점, 인간 손과 로봇 팔 간의 시각적 차이, 동작 역학의 차이 등 상당한 도메인 격차가 존재한다. 이러한 격차를 해소하기 위해, 우리는 MimicDreamer를 제안한다. 이 프레임워크는 빠르고 저렴한 인간 시연을 로봇이 사용 가능한 감독 신호로 변환하며, 시각, 시점, 행동을 공동으로 정렬하여 정책 훈련을 직접 지원한다. 시각 정렬을 위해 H2R Aligner를 제안하는데, 이는 인간 조작 영상에서 동작을 전이하여 고충실도 로봇 시연 영상을 생성하는 비디오 확산 모델이다. 시점 안정화를 위해 EgoStabilizer를 제안하며, 이는 호모그래피를 통해 자아 중심 영상을 정규화하고 왜곡으로 인한 폐색과 변형을 인페인팅한다. 행동 정렬을 위해 인간 손 궤적을 로봇 프레임에 매핑하고 제약 조건이 있는 역기구학 솔버를 적용하여 정확한 자세 추적으로 실행 가능하고 저지터 관절 명령을 생성한다. 실험적으로, 우리가 합성한 인간-로봇 영상만으로 훈련된 VLA 모델은 실제 로봇에서 퓨샷 실행을 달성한다. 또한, 인간 데이터로 훈련 규모를 확장하면 실제 로봇 데이터만으로 훈련된 모델에 비해 성능이 크게 향상된다. 우리의 접근 방식은 여섯 가지 대표적인 조작 작업에서 평균 성공률을 14.7% 향상시킨다.
-
-## 핵심 내용
-Vision Language Action (VLA) 모델은 다양한 훈련 데이터로부터 일반화 능력을 얻지만, 실제 로봇 상호작용 데이터를 수집하는 것은 엄청난 비용이 든다. 반면, 인간 시연 영상은 훨씬 확장 가능하고 비용 효율적으로 수집할 수 있으며, 최근 연구들은 VLA 모델 훈련에 있어 그 효과성을 확인하고 있다. 그러나 인간 영상과 로봇 실행 영상 사이에는 불안정한 카메라 시점, 인간 손과 로봇 팔 간의 시각적 차이, 동작 역학의 차이 등 상당한 도메인 격차가 존재한다. 이러한 격차를 해소하기 위해, 우리는 MimicDreamer를 제안한다. 이 프레임워크는 빠르고 저렴한 인간 시연을 로봇이 사용 가능한 감독 신호로 변환하며, 시각, 시점, 행동을 공동으로 정렬하여 정책 훈련을 직접 지원한다. 시각 정렬을 위해 H2R Aligner를 제안하는데, 이는 인간 조작 영상에서 동작을 전이하여 고충실도 로봇 시연 영상을 생성하는 비디오 확산 모델이다. 시점 안정화를 위해 EgoStabilizer를 제안하며, 이는 호모그래피를 통해 자아 중심 영상을 정규화하고 왜곡으로 인한 폐색과 변형을 인페인팅한다. 행동 정렬을 위해 인간 손 궤적을 로봇 프레임에 매핑하고 제약 조건이 있는 역기구학 솔버를 적용하여 정확한 자세 추적으로 실행 가능하고 저지터 관절 명령을 생성한다. 실험적으로, 우리가 합성한 인간-로봇 영상만으로 훈련된 VLA 모델은 실제 로봇에서 퓨샷 실행을 달성한다. 또한, 인간 데이터로 훈련 규모를 확장하면 실제 로봇 데이터만으로 훈련된 모델에 비해 성능이 크게 향상된다. 우리의 접근 방식은 여섯 가지 대표적인 조작 작업에서 평균 성공률을 14.7% 향상시킨다.
-
 ## 参考
 - http://arxiv.org/abs/2509.22199v2
+
+## 개요
+MimicDreamer는 인간 비디오와 로봇 실행 비디오 간의 도메인 차이를 해결하기 위해 세 가지 핵심 모듈을 사용합니다: H2R Aligner는 비디오 확산 모델을 활용하여 인간 조작 동작을 로봇 환경으로 전이하고, 고충실도 로봇 시연 비디오를 생성합니다; EgoStabilizer는 호모그래피 변환을 통해 1인칭 시점을 안정화하고, 왜곡으로 인한 폐색 및 변형을 복구합니다; 동작 정렬 모듈은 인간 손 궤적을 로봇 좌표계에 매핑하고, 제약 조건이 있는 역운동학 솔버를 결합하여 저지터링(low-jitter) 및 실행 가능한 관절 명령을 생성합니다. 실험 결과, 합성 비디오만으로 훈련된 VLA 모델은 실제 로봇에서 few-shot 실행 능력을 보여주었으며, 순수 실제 데이터 훈련과 비교하여 여섯 가지 대표적인 조작 작업에서 평균 성공률이 14.7% 향상되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+MimicDreamer는 세 가지 핵심 정렬 모듈을 포함합니다:
+- **H2R Aligner(시각 정렬)**: 비디오 확산 모델을 기반으로 인간 조작 비디오에서 운동 정보를 추출하고, 로봇 형태와 일치하는 고충실도 시연 비디오를 생성하여 인간 손과 로봇 팔 사이의 시각적 차이를 제거합니다.
+- **EgoStabilizer(시점 안정화)**: 호모그래피 변환을 통해 1인칭 비디오를 표준화하고, 시점 변화로 인한 폐색 및 변형을 복구하여 비디오 프레임의 시공간 일관성을 보장합니다.
+- **동작 정렬**: 인간 손 궤적을 로봇 좌표계에 매핑하고, 제약 조건이 있는 역운동학 솔버를 사용하여 저지터링 및 고정밀 관절 명령을 생성하면서 엔드 이펙터의 자세 추적 정확도를 유지합니다.
+
+### 실험 설정 및 주요 결과
+- **훈련 데이터**: MimicDreamer가 합성한 인간-로봇 비디오만으로 VLA 모델을 훈련했으며, 실제 로봇 데이터에 의존하지 않았습니다.
+- **작업 및 성능**: 여섯 가지 대표적인 조작 작업(예: 파지, 배치, 조립 등)에서 합성 데이터로 훈련된 모델은 실제 로봇에서 few-shot 실행을 구현했습니다. 순수 실제 데이터 훈련 기준선과 비교하여 평균 성공률이 14.7% 향상되었습니다.
+- **확장성 검증**: 인간 시연 데이터 규모를 증가시킨 후 모델 성능이 지속적으로 향상되어, 이 방법이 데이터 확장 잠재력을 가지며 로봇 데이터 수집 비용을 효과적으로 절감할 수 있음을 보여줍니다.
+
+### 결론
+MimicDreamer는 시각, 시점, 동작을 공동으로 정렬하여 저비용 인간 시연을 로봇이 사용 가능한 훈련 신호로 변환하고, VLA 모델 훈련에서의 데이터 희소성 문제를 크게 완화합니다. 합성 데이터가 실제 환경에서 유효함을 검증함으로써 교차 도메인 전이의 가능성을 입증했으며, 대규모 로봇 정책 학습을 위한 새로운 경로를 제공합니다.

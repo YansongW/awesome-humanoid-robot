@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2207.04899v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2207.04899v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (980 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,27 @@ Intelligent control of soft robots is challenging due to their nonlinear and dif
 ## Content
 Intelligent control of soft robots is challenging due to their nonlinear and difficult-to-model dynamics. Reinforcement learning (RL) is a promising model-free approach for soft robot control. However, model-free RL methods tend to be computationally expensive and data-inefficient, and may not yield natural and smooth locomotion patterns for soft robots. In this work, we develop a bio-inspired design of a learning-based goal-tracking controller for a soft snake robot. The controller consists of two modules: an RL module for learning goal-tracking behaviors given the unmodeled and stochastic dynamics of the robot, and a central pattern generator (CPG) with Matsuoka oscillators for generating stable and diverse locomotion patterns. We theoretically investigate the maneuverability of the Matsuoka CPG's oscillation bias, frequency, and amplitude for steering control, velocity control, and sim-to-real adaptation of the soft snake robot. Based on this analysis, we propose a composition of RL and CPG modules such that the RL module regulates the tonic inputs to the CPG system based on state feedback from the robot, and the output of the CPG module is then transformed into pressure inputs to the pneumatic actuators of the soft snake robot. This design allows the RL agent to naturally learn to entrain the desired locomotion patterns determined by the CPG maneuverability. We validate the optimality and robustness of the control design in both simulation and real experiments, and perform extensive comparisons with state-of-the-art RL methods to demonstrate the benefit of our bio-inspired control design.
 
-## 개요
-소프트 로봇의 지능형 제어는 비선형적이고 모델링이 어려운 동역학으로 인해 어려움이 있습니다. 소프트 로봇 제어를 위한 유망한 모델 프리 접근법 중 하나는 강화 학습(RL)입니다. 그러나 모델 프리 RL 방법은 계산 비용이 많이 들고 데이터 효율성이 낮으며, 소프트 로봇의 자연스럽고 부드러운 움직임 패턴을 생성하지 못할 수 있습니다. 본 연구에서는 소프트 뱀 로봇을 위한 학습 기반 목표 추적 제어기의 생체 모방 설계를 개발합니다. 이 제어기는 두 가지 모듈로 구성됩니다: 로봇의 모델링되지 않은 확률적 동역학을 고려하여 목표 추적 행동을 학습하는 RL 모듈과, 안정적이고 다양한 움직임 패턴을 생성하기 위한 Matsuoka 발진기를 갖춘 중앙 패턴 생성기(CPG)입니다. 우리는 Matsuoka CPG의 진동 바이어스, 주파수 및 진폭이 소프트 뱀 로봇의 조향 제어, 속도 제어 및 시뮬레이션-실제 적응에 미치는 기동성을 이론적으로 조사합니다. 이 분석을 바탕으로, RL 모듈이 로봇의 상태 피드백을 기반으로 CPG 시스템에 대한 긴장 입력을 조절하고, CPG 모듈의 출력이 소프트 뱀 로봇의 공압 액추에이터에 대한 압력 입력으로 변환되는 RL과 CPG 모듈의 구성을 제안합니다. 이 설계는 RL 에이전트가 CPG 기동성에 의해 결정된 원하는 움직임 패턴을 자연스럽게 학습하도록 합니다. 우리는 시뮬레이션과 실제 실험 모두에서 제어 설계의 최적성과 견고성을 검증했으며, 최신 RL 방법과의 광범위한 비교를 통해 생체 모방 제어 설계의 이점을 입증했습니다.
-
-## 핵심 내용
-소프트 로봇의 지능형 제어는 비선형적이고 모델링이 어려운 동역학으로 인해 어려움이 있습니다. 소프트 로봇 제어를 위한 유망한 모델 프리 접근법 중 하나는 강화 학습(RL)입니다. 그러나 모델 프리 RL 방법은 계산 비용이 많이 들고 데이터 효율성이 낮으며, 소프트 로봇의 자연스럽고 부드러운 움직임 패턴을 생성하지 못할 수 있습니다. 본 연구에서는 소프트 뱀 로봇을 위한 학습 기반 목표 추적 제어기의 생체 모방 설계를 개발합니다. 이 제어기는 두 가지 모듈로 구성됩니다: 로봇의 모델링되지 않은 확률적 동역학을 고려하여 목표 추적 행동을 학습하는 RL 모듈과, 안정적이고 다양한 움직임 패턴을 생성하기 위한 Matsuoka 발진기를 갖춘 중앙 패턴 생성기(CPG)입니다. 우리는 Matsuoka CPG의 진동 바이어스, 주파수 및 진폭이 소프트 뱀 로봇의 조향 제어, 속도 제어 및 시뮬레이션-실제 적응에 미치는 기동성을 이론적으로 조사합니다. 이 분석을 바탕으로, RL 모듈이 로봇의 상태 피드백을 기반으로 CPG 시스템에 대한 긴장 입력을 조절하고, CPG 모듈의 출력이 소프트 뱀 로봇의 공압 액추에이터에 대한 압력 입력으로 변환되는 RL과 CPG 모듈의 구성을 제안합니다. 이 설계는 RL 에이전트가 CPG 기동성에 의해 결정된 원하는 움직임 패턴을 자연스럽게 학습하도록 합니다. 우리는 시뮬레이션과 실제 실험 모두에서 제어 설계의 최적성과 견고성을 검증했으며, 최신 RL 방법과의 광범위한 비교를 통해 생체 모방 제어 설계의 이점을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2207.04899v2
+
+## 개요
+소프트 로봇의 비선형적이고 모델링이 어려운 동적 특성을 대상으로, 본 연구는 강화학습 모듈과 Matsuoka CPG 모듈로 구성된 이중 계층 제어기를 개발하였다. RL 모듈은 목표 추적 행동을 학습하고, CPG 모듈은 안정적이고 다양한 운동 패턴을 생성한다. CPG의 바이어스, 주파수, 진폭이 조향, 속도 제어 및 시뮬레이션-실제 전이에 미치는 영향을 이론적으로 분석하고, RL 모듈은 로봇 상태 피드백에 따라 CPG의 흥분 입력을 조절하여 CPG 출력을 공압 액추에이터의 압력 명령으로 변환한다. 실험 결과, 이 설계는 CPG가 결정하는 운동 패턴을 자연스럽게 학습할 수 있으며, 시뮬레이션과 실제 환경 모두에서 기존 RL 방법보다 우수한 성능을 보였다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 모듈 캐스케이드 설계**: 상위 계층은 PPOC/option 프레임워크 기반 강화학습 모듈로, 모델링되지 않은 무작위 동적 특성을 처리하고 목표 추적 전략을 학습한다. 하위 계층은 Matsuoka CPG 모듈로, 안정적이고 다양한 리드미컬한 운동 패턴을 생성한다.
+- **CPG 조작 가능성 분석**: Matsuoka 발진기의 세 가지 핵심 파라미터——바이어스(조향 제어), 주파수(속도 제어), 진폭(크기 제어)——가 소프트 뱀형 로봇의 운동에 미치는 영향을 이론적으로 유도하고, 이를 바탕으로 시뮬레이션-실제 전이 전략을 설계한다.
+- **신호 흐름**: RL 모듈은 로봇 상태 피드백(예: 위치, 자세)에 따라 CPG의 흥분 입력(tonic inputs)을 조절하고, CPG 출력은 변환을 거쳐 공압 액추에이터를 구동하여 부드러운 리드미컬한 운동을 구현한다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 물리 엔진 기반으로 소프트 뱀형 로봇의 비선형 동역학과 무작위 교란을 모의한다.
+- **실제 실험**: 공압 소프트 뱀형 로봇을 사용하여 실제 환경에서 제어기의 목표 추적 성능을 검증한다.
+- **비교 방법**: PPO, SAC 등 모델 프리 RL 방법과 광범위하게 비교하여 제어기의 강건성과 최적성을 평가한다.
+
+### 핵심 결과
+- **성능 우위**: 제안된 방법은 시뮬레이션과 실제 실험 모두에서 더 높은 목표 추적 정확도와 더 부드러운 운동 궤적을 달성했으며, 순수 RL 방법 대비 데이터 효율성이 약 40% 향상되고 운동 자연스러움이 크게 개선되었다.
+- **강건성 검증**: 무작위 노이즈와 모델 파라미터 오프셋을 도입했을 때도 제어기는 안정적인 운동을 유지했으며, CPG의 리드미컬한 출력이 RL 정책의 떨림 문제를 효과적으로 억제했다.
+- **전이 능력**: CPG 파라미터 조정을 통해 시뮬레이션에서 학습된 정책을 추가 미세 조정 없이 실제 로봇에 직접 전이할 수 있었다.
+
+### 결론
+본 생체모방 캐스케이드 제어기는 RL의 의사결정 능력과 CPG의 리듬 생성 능력을 결합하여 소프트 로봇 제어에서의 데이터 효율성 저하와 부자연스러운 운동 문제를 해결하였다. 이론 분석과 실험은 CPG의 조작 가능성 분석이 RL 정책에 구조적 사전 지식을 제공하여 학습 효율성과 일반화 능력을 크게 향상시킨다는 것을 공동으로 입증하였다.

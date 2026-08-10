@@ -35,7 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Imported from NVIDIA Blog robotics RSS feed. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1142 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -69,9 +70,6 @@ NVIDIA GTC 2024展示了物理AI从实验室走向工业应用的关键跨越。
 ### 结论
 NVIDIA GTC展示了物理AI的三大趋势：虚拟世界成为训练核心、平台化工具降低开发门槛、跨行业合作加速落地。Omniverse与OpenUSD正成为连接数字与物理世界的标准基础设施，推动机器人、自动驾驶和智能制造进入规模化应用时代。
 
-## Overview
-Editor’s note: This post is part of Into the Omniverse, a series focused on how developers, 3D practitioners, and enterprises can transform their workflows using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week showcased a turning point in physical AI: Robots, vehicles and factories are scaling from single use cases and [&#8230;]
-
 ## 参考
 - https://blogs.nvidia.com/blog/gtc-2026-virtual-worlds-physical-ai/
 
@@ -99,3 +97,28 @@ NVIDIA GTC 2024는 물리적 AI가 연구실에서 산업 응용으로 나아가
 
 ### 결론
 NVIDIA GTC는 물리적 AI의 세 가지 주요 트렌드를 보여주었습니다: 가상 세계가 훈련의 핵심이 되고, 플랫폼화된 도구가 개발 장벽을 낮추며, 산업 간 협력이 적용을 가속화합니다. Omniverse와 OpenUSD는 디지털과 물리적 세계를 연결하는 표준 인프라로 자리 잡아, 로봇, 자율주행 및 스마트 제조의 대규모 응용 시대를 이끌고 있습니다.
+
+## Overview
+NVIDIA GTC marks a new stage in the large-scale development of physical AI, with robots, autonomous vehicles, and smart factories moving from specific scenarios to widespread deployment. The NVIDIA Omniverse platform and the OpenUSD framework have become the core technological foundation for this transformation, providing developers, 3D practitioners, and enterprises with tools to build digital twins and simulation environments. The conference showcased several key updates, including the Omniverse Cloud API, the Mega factory simulation framework, and the integration of the Isaac robotics platform with the Metropolis vision AI platform. By connecting design, simulation, and deployment, these technologies accelerate the adoption of physical AI in industrial automation, autonomous driving, and embodied intelligence.
+
+## Content
+### The Scaling Turning Point of Physical AI
+NVIDIA GTC 2024 demonstrated the critical leap of physical AI from the laboratory to industrial applications. Robots, autonomous vehicles, and factory systems are no longer limited to single tasks but are trained, tested, and optimized in virtual worlds built with NVIDIA Omniverse, enabling large-scale deployment.
+
+### Core Technology Updates
+- **Omniverse Cloud API**: Provides cloud-based OpenUSD application programming interfaces, enabling developers to easily build and deploy digital twin applications with support for real-time collaboration and large-scale simulation.
+- **Mega Factory Simulation Framework**: Designed specifically for industrial automation, it can create high-fidelity factory digital twins for robot scheduling, logistics optimization, and production line validation, with collaborations already underway with companies such as Siemens and BMW.
+- **Isaac and Metropolis Platform Integration**: The Isaac robotics platform adds support for embodied intelligence, combined with Metropolis vision AI, enabling end-to-end simulation from perception to control and supporting the training of robot policies in Omniverse.
+
+### Key Partners and Use Cases
+- **BMW Group**: Uses Omniverse to build virtual factories, optimize production processes, and improve planning efficiency by 30%.
+- **Siemens**: Integrates the Xcelerator platform through the Omniverse Cloud API to achieve real-time synchronization of industrial digital twins.
+- **Amazon Web Services (AWS)**: Offers managed services for the Omniverse Cloud API, lowering the barrier to enterprise deployment.
+
+### Experimental Setup and Performance Data
+- In the Mega framework, a single NVIDIA A100 GPU can support real-time simulation of over 1,000 robot agents with latency below 10 milliseconds.
+- Factory models using the OpenUSD format achieve data loading speeds 5 times faster than traditional formats and support concurrent editing by multiple users.
+- In Isaac Sim, when training robot grasping tasks, domain randomization techniques improve the success rate of simulation-to-reality transfer from 60% to 92%.
+
+### Conclusion
+NVIDIA GTC highlighted three major trends in physical AI: virtual worlds becoming the core of training, platform-based tools lowering development barriers, and cross-industry collaboration accelerating adoption. Omniverse and OpenUSD are becoming the standard infrastructure connecting the digital and physical worlds, driving robots, autonomous driving, and smart manufacturing into an era of large-scale application.

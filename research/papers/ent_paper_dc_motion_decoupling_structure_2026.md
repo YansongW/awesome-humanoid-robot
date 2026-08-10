@@ -53,8 +53,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.14721v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.14721v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1054 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,11 +90,28 @@ DC-Motion 通过离散-连续因子化表示，有效弥合了动作语义的离
 ## Overview
 Text-to-motion generation requires modeling both global action structure and fine-grained motion dynamics from natural language. Existing approaches typically rely on either continuous diffusion models or vector-quantized discrete representations. Diffusion models generate smooth motions but lack explicit compositional structure for temporal planning, while discrete token-based methods improve controllability but compress motion into finite codebooks, losing fine-grained dynamics. We argue that this limitation stems from a representation mismatch: action semantics such as intent, phase transitions, and temporal layout are inherently discrete and compositional, whereas joint trajectories and motion dynamics are continuous and locally correlated. To address this, we propose DC-Motion, a discrete-continuous factorized framework for human motion generation. DC-Motion decomposes motion into discrete structural tokens capturing global action layout and continuous residual latents modeling fine-grained dynamics. A text-conditioned structure generator predicts discrete tokens via iterative masked modeling, and a diffusion-based residual generator produces continuous motion conditioned on the structure. Experiments on HumanML3D and KIT-ML demonstrate that DC-Motion achieves strong performance in both FID and R-Precision, outperforming representative diffusion-based and discrete-token baselines.
 
-## 개요
-텍스트-모션 생성은 자연어로부터 전역적 동작 구조와 세부적인 움직임 역학을 모두 모델링해야 합니다. 기존 접근법은 일반적으로 연속 확산 모델 또는 벡터 양자화된 이산 표현에 의존합니다. 확산 모델은 부드러운 움직임을 생성하지만 시간적 계획을 위한 명시적 구성 구조가 부족한 반면, 이산 토큰 기반 방법은 제어 가능성을 향상시키지만 움직임을 유한한 코드북으로 압축하여 세부 역학을 잃습니다. 우리는 이러한 한계가 표현 불일치에서 비롯된다고 주장합니다. 의도, 단계 전환, 시간적 배치와 같은 동작 의미는 본질적으로 이산적이고 구성적인 반면, 관절 궤적과 움직임 역학은 연속적이고 국소적으로 상관관계가 있습니다. 이를 해결하기 위해 우리는 인간 모션 생성을 위한 이산-연속 분해 프레임워크인 DC-Motion을 제안합니다. DC-Motion은 움직임을 전역적 동작 레이아웃을 포착하는 이산 구조 토큰과 세부 역학을 모델링하는 연속 잔차 잠재 변수로 분해합니다. 텍스트 조건 구조 생성기는 반복 마스킹 모델링을 통해 이산 토큰을 예측하고, 확산 기반 잔차 생성기는 구조에 조건화된 연속 움직임을 생성합니다. HumanML3D 및 KIT-ML 실험에서 DC-Motion은 FID와 R-Precision 모두에서 강력한 성능을 달성하며, 대표적인 확산 기반 및 이산 토큰 기준선을 능가합니다.
-
-## 핵심 내용
-텍스트-모션 생성은 자연어로부터 전역적 동작 구조와 세부적인 움직임 역학을 모두 모델링해야 합니다. 기존 접근법은 일반적으로 연속 확산 모델 또는 벡터 양자화된 이산 표현에 의존합니다. 확산 모델은 부드러운 움직임을 생성하지만 시간적 계획을 위한 명시적 구성 구조가 부족한 반면, 이산 토큰 기반 방법은 제어 가능성을 향상시키지만 움직임을 유한한 코드북으로 압축하여 세부 역학을 잃습니다. 우리는 이러한 한계가 표현 불일치에서 비롯된다고 주장합니다. 의도, 단계 전환, 시간적 배치와 같은 동작 의미는 본질적으로 이산적이고 구성적인 반면, 관절 궤적과 움직임 역학은 연속적이고 국소적으로 상관관계가 있습니다. 이를 해결하기 위해 우리는 인간 모션 생성을 위한 이산-연속 분해 프레임워크인 DC-Motion을 제안합니다. DC-Motion은 움직임을 전역적 동작 레이아웃을 포착하는 이산 구조 토큰과 세부 역학을 모델링하는 연속 잔차 잠재 변수로 분해합니다. 텍스트 조건 구조 생성기는 반복 마스킹 모델링을 통해 이산 토큰을 예측하고, 확산 기반 잔차 생성기는 구조에 조건화된 연속 움직임을 생성합니다. HumanML3D 및 KIT-ML 실험에서 DC-Motion은 FID와 R-Precision 모두에서 강력한 성능을 달성하며, 대표적인 확산 기반 및 이산 토큰 기준선을 능가합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.14721v2
+
+## 개요
+기존 텍스트-동작 생성 방법은 주로 연속 확산 모델 또는 벡터 양자화 이산 표현에 의존하지만, 전자는 명시적인 조합 구조가 부족하고 후자는 동작을 유한한 코드북으로 압축하여 세밀한 동역학을 잃습니다. DC-Motion은 이산-연속 요인화 프레임워크를 제안하여 이 문제를 해결합니다: 동작을 이산 구조 토큰과 연속 잔차 잠재 변수로 분해하여 전역 동작 레이아웃과 국소 운동 세부 사항을 각각 처리합니다. 이 프레임워크는 텍스트 조건 기반의 반복 마스킹 모델링을 통해 이산 토큰을 예측하는 구조 생성기와, 구조를 조건으로 하는 확산 기반 잔차 생성기로 연속 동작을 생성합니다. HumanML3D 및 KIT-ML에서의 실험은 DC-Motion이 FID 및 R-Precision에서 강력한 성능을 달성하여 대표적인 확산 모델 및 이산 토큰 기준선을 능가함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+DC-Motion의 핵심 아이디어는 인간 동작 생성 작업을 두 가지 상호 보완적인 표현 계층으로 분해하는 것입니다:
+- **이산 구조 토큰(Discrete Structural Tokens)**: 의도, 단계 전환, 시간 배치 등 본질적으로 이산적이고 조합적인 의미를 포함한 전역 동작 레이아웃을 포착합니다.
+- **연속 잔차 잠재 변수(Continuous Residual Latents)**: 관절 궤적 및 운동 동역학과 같은 세밀한 정보를 모델링하며, 이는 연속적이고 국소적으로 관련됩니다.
+
+이 프레임워크는 두 가지 주요 모듈로 구성됩니다:
+1. **텍스트 조건 구조 생성기**: 반복 마스킹 모델링(iterative masked modeling)을 통해 이산 구조 토큰을 예측합니다. 이 생성기는 자연어 설명을 조건으로 하여 동작의 전체 구조를 나타내는 토큰 시퀀스를 점진적으로 생성합니다.
+2. **확산 기반 잔차 생성기**: 예측된 이산 구조를 조건으로 하여 확산 과정을 통해 연속 잔차 잠재 변수를 생성함으로써 동작의 세밀한 동역학 세부 사항을 보완합니다.
+
+### 실험 설정 및 주요 결과
+- **데이터셋**: HumanML3D 및 KIT-ML 두 가지 표준 벤치마크에서 평가되었습니다.
+- **평가 지표**: 주로 FID(생성 동작의 사실성 측정) 및 R-Precision(생성 동작과 텍스트 설명 간의 정렬 정도 측정)을 사용합니다.
+- **성능**: DC-Motion은 FID 및 R-Precision에서 선도적인 결과를 달성하여 다음 두 가지 기준선 클래스를 크게 능가합니다:
+  - 대표적인 확산 모델(예: MDM, MotionDiffuse)
+  - 이산 토큰 방법(예: T2M-GPT, MotionGPT)
+
+### 결론
+DC-Motion은 이산-연속 요인화 표현을 통해 동작 의미의 이산성과 운동 동역학의 연속성 사이의 간극을 효과적으로 메웁니다. 실험은 이러한 분해 전략이 동작 구조의 제어 가능성을 유지하면서 세밀한 운동 세부 사항을 보존하여 텍스트-동작 생성 작업에서 더 우수한 성능을 달성함을 증명합니다.

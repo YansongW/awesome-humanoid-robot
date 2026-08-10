@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.20276v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.20276v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (768 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,31 @@ Vision-Language-Action (VLA) models have emerged as a unified paradigm for robot
 ## Content
 Vision-Language-Action (VLA) models have emerged as a unified paradigm for robotic perception and control, enabling emergent generalization and long-horizon task execution. However, their deployment in dynamic, real-world environments is severely hindered by high inference latency. While smooth robotic interaction requires control frequencies of 20 to 30 Hz, current VLA models typically operate at only 3-5 Hz on edge devices due to the memory-bound nature of autoregressive decoding. Existing optimizations often require extensive retraining or compromise model accuracy. To bridge this gap, we introduce ActionFlow, a system-level inference framework tailored for resource-constrained edge platforms. At the core of ActionFlow is a Cross-Request Pipelining strategy, a novel scheduler that redefines VLA inference as a macro-pipeline of micro-requests. The strategy intelligently batches memory-bound Decode phases with compute-bound Prefill phases across continuous time steps to maximize hardware utilization. Furthermore, to support this scheduling, we propose a Cross-Request State Packed Forward operator and a Unified KV Ring Buffer, which fuse fragmented memory operations into efficient dense computations. Experimental results demonstrate that ActionFlow achieves a 2.55x improvement in FPS on the OpenVLA-7B model without retraining, enabling real-time dynamic manipulation on edge hardware. Our work is available at https://anonymous.4open.science/r/ActionFlow-1D47.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 로봇 인식 및 제어를 위한 통합 패러다임으로 등장하여, 창발적 일반화와 장기 작업 실행을 가능하게 합니다. 그러나 동적이고 실제 환경에서의 배포는 높은 추론 지연 시간으로 인해 심각하게 제한됩니다. 원활한 로봇 상호작용을 위해서는 20~30Hz의 제어 주파수가 필요한 반면, 현재 VLA 모델은 자동회귀 디코딩의 메모리 바운드 특성으로 인해 엣지 디바이스에서 일반적으로 3~5Hz로만 작동합니다. 기존 최적화는 종종 광범위한 재학습이 필요하거나 모델 정확도를 저하시킵니다. 이러한 격차를 해소하기 위해, 우리는 자원이 제한된 엣지 플랫폼에 특화된 시스템 수준 추론 프레임워크인 ActionFlow를 소개합니다. ActionFlow의 핵심은 Cross-Request Pipelining 전략으로, VLA 추론을 마이크로 요청의 매크로 파이프라인으로 재정의하는 새로운 스케줄러입니다. 이 전략은 연속적인 시간 단계에서 메모리 바운드인 Decode 단계와 계산 바운드인 Prefill 단계를 지능적으로 배치하여 하드웨어 활용도를 극대화합니다. 또한, 이 스케줄링을 지원하기 위해 Cross Request State Packed Forward 연산자와 Unified KV Ring Buffer를 제안하여, 단편화된 메모리 연산을 효율적인 밀집 계산으로 통합합니다. 실험 결과, ActionFlow는 재학습 없이 OpenVLA-7B 모델에서 FPS를 2.55배 향상시켜 엣지 하드웨어에서 실시간 동적 조작을 가능하게 합니다. 본 연구는 https://anonymous.4open.science/r/ActionFlow-1D47에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 로봇 인식 및 제어를 위한 통합 패러다임으로 등장하여, 창발적 일반화와 장기 작업 실행을 가능하게 합니다. 그러나 동적이고 실제 환경에서의 배포는 높은 추론 지연 시간으로 인해 심각하게 제한됩니다. 원활한 로봇 상호작용을 위해서는 20~30Hz의 제어 주파수가 필요한 반면, 현재 VLA 모델은 자동회귀 디코딩의 메모리 바운드 특성으로 인해 엣지 디바이스에서 일반적으로 3~5Hz로만 작동합니다. 기존 최적화는 종종 광범위한 재학습이 필요하거나 모델 정확도를 저하시킵니다. 이러한 격차를 해소하기 위해, 우리는 자원이 제한된 엣지 플랫폼에 특화된 시스템 수준 추론 프레임워크인 ActionFlow를 소개합니다. ActionFlow의 핵심은 Cross-Request Pipelining 전략으로, VLA 추론을 마이크로 요청의 매크로 파이프라인으로 재정의하는 새로운 스케줄러입니다. 이 전략은 연속적인 시간 단계에서 메모리 바운드인 Decode 단계와 계산 바운드인 Prefill 단계를 지능적으로 배치하여 하드웨어 활용도를 극대화합니다. 또한, 이 스케줄링을 지원하기 위해 Cross Request State Packed Forward 연산자와 Unified KV Ring Buffer를 제안하여, 단편화된 메모리 연산을 효율적인 밀집 계산으로 통합합니다. 실험 결과, ActionFlow는 재학습 없이 OpenVLA-7B 모델에서 FPS를 2.55배 향상시켜 엣지 하드웨어에서 실시간 동적 조작을 가능하게 합니다. 본 연구는 https://anonymous.4open.science/r/ActionFlow-1D47에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.20276v1
+
+## 개요
+현재 VLA 모델은 엣지 디바이스에서 자기회귀 디코딩의 메모리 병목으로 인해 추론 속도가 3-5Hz에 불과하며, 이는 로봇 실시간 제어에 필요한 20-30Hz보다 훨씬 낮습니다. ActionFlow는 교차 요청 파이프라인 전략을 제안하여 VLA 추론을 마이크로 요청으로 구성된 매크로 파이프라인으로 재구성하고, 메모리 집약적인 디코딩 단계와 계산 집약적인 프리필 단계를 연속적인 시간 단계에 걸쳐 지능적으로 배치합니다. 이 스케줄링을 지원하기 위해 프레임워크는 교차 요청 상태 패킹 순방향 연산자와 통합 KV 링 버퍼를 설계하여 단편화된 메모리 연산을 효율적인 밀집 계산으로 융합합니다. 실험 결과, OpenVLA-7B 모델에서 재훈련 없이 2.55배의 FPS 향상을 달성했습니다.
+
+## 핵심 내용
+### 핵심 과제
+- 엣지 디바이스에서 VLA 모델은 자기회귀 디코딩의 메모리 병목으로 인해 추론 속도가 3-5Hz에 불과하며, 이는 로봇 실시간 제어에 필요한 20-30Hz보다 훨씬 낮음
+- 기존 최적화 방법은 대규모 재훈련이 필요하거나 모델 정확도를 희생함
+
+### ActionFlow 프레임워크 설계
+#### 교차 요청 파이프라인 전략
+- VLA 추론을 여러 마이크로 요청으로 구성된 매크로 파이프라인으로 재구성
+- 지능적 스케줄링: 메모리 집약적인 디코딩 단계와 계산 집약적인 프리필 단계를 연속적인 시간 단계에 걸쳐 배치하여 하드웨어 활용도를 극대화
+
+#### 핵심 연산자 및 데이터 구조
+- **교차 요청 상태 패킹 순방향 연산자**: 단편화된 메모리 연산 융합
+- **통합 KV 링 버퍼**: 분산된 키-값 캐시를 연속 메모리 블록으로 구성하여 메모리 접근 오버헤드 감소
+
+### 실험 설정 및 결과
+- **모델**: OpenVLA-7B
+- **하드웨어**: 엣지 디바이스 (구체적 모델 미지정)
+- **성능 향상**: FPS 2.55배 향상, 재훈련 불필요
+- **실시간성**: 실시간 동적 제어에 필요한 20-30Hz 제어 주파수 달성
+
+### 결론
+ActionFlow는 시스템 수준 최적화를 통해 모델 정확도를 희생하지 않으면서 엣지 디바이스에서 VLA 모델의 추론 속도를 크게 향상시켜 로봇 실시간 제어를 위한 실현 가능한 솔루션을 제공합니다. 코드는 오픈소스로 공개되었습니다.

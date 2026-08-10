@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.13508v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.13508v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1035 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,28 @@ Vision-language-action models (VLAs) have become increasingly popular in robot m
 ## Content
 Vision-language-action models (VLAs) have become increasingly popular in robot manipulation for their end-to-end design and remarkable performance. However, existing VLAs rely heavily on vision-language models (VLMs) that only support text-based instructions, neglecting the more natural speech modality for human-robot interaction. Traditional speech integration methods usually involve a separate speech recognition system, which complicates the model and introduces error propagation. Moreover, the transcription procedure would lose non-semantic information in the raw speech, such as voiceprint, which may be crucial for robots to successfully complete customized tasks. To overcome these challenges, we propose VLAS, a novel end-to-end VLA that integrates speech recognition directly into the robot policy model. VLAS allows the robot to understand spoken commands through inner speech-text alignment and produces corresponding actions to fulfill the task. We also present two new datasets, SQA and CSI, to support a three-stage tuning process for speech instructions, which empowers VLAS with the ability of multimodal interaction across text, image, speech, and robot actions. Taking a step further, a voice retrieval-augmented generation (RAG) paradigm is designed to enable our model to effectively handle tasks that require individual-specific knowledge. Our extensive experiments show that VLAS can effectively accomplish robot manipulation tasks with diverse speech commands, offering a seamless and customized interaction experience.
 
-## 개요
-Vision-language-action models (VLAs)는 엔드투엔드 설계와 뛰어난 성능으로 로봇 조작 분야에서 점점 더 인기를 얻고 있습니다. 그러나 기존 VLA는 텍스트 기반 명령만 지원하는 vision-language models (VLMs)에 크게 의존하여, 인간-로봇 상호작용에서 더 자연스러운 음성 모달리티를 간과하고 있습니다. 전통적인 음성 통합 방법은 일반적으로 별도의 음성 인식 시스템을 포함하는데, 이는 모델을 복잡하게 만들고 오류 전파를 초래합니다. 또한, 전사 과정에서는 음성 내의 비의미적 정보(예: 음성 지문)가 손실될 수 있으며, 이는 로봇이 맞춤형 작업을 성공적으로 완료하는 데 중요할 수 있습니다. 이러한 문제를 해결하기 위해, 우리는 음성 인식을 로봇 정책 모델에 직접 통합한 새로운 엔드투엔드 VLA인 VLAS를 제안합니다. VLAS는 로봇이 내부 음성-텍스트 정렬을 통해 음성 명령을 이해하고, 작업을 수행하기 위한 해당 동작을 생성할 수 있게 합니다. 또한, 우리는 음성 명령을 위한 3단계 튜닝 과정을 지원하는 두 가지 새로운 데이터셋인 SQA와 CSI를 제시하여, VLAS가 텍스트, 이미지, 음성, 로봇 동작 간의 다중 모달 상호작용 능력을 갖추도록 합니다. 한 걸음 더 나아가, 개인별 특화 지식이 필요한 작업을 효과적으로 처리할 수 있도록 음성 검색 증강 생성(RAG) 패러다임을 설계했습니다. 광범위한 실험을 통해 VLAS가 다양한 음성 명령으로 로봇 조작 작업을 효과적으로 수행하며, 원활하고 맞춤화된 상호작용 경험을 제공함을 보여줍니다.
-
-## 핵심 내용
-Vision-language-action models (VLAs)는 엔드투엔드 설계와 뛰어난 성능으로 로봇 조작 분야에서 점점 더 인기를 얻고 있습니다. 그러나 기존 VLA는 텍스트 기반 명령만 지원하는 vision-language models (VLMs)에 크게 의존하여, 인간-로봇 상호작용에서 더 자연스러운 음성 모달리티를 간과하고 있습니다. 전통적인 음성 통합 방법은 일반적으로 별도의 음성 인식 시스템을 포함하는데, 이는 모델을 복잡하게 만들고 오류 전파를 초래합니다. 또한, 전사 과정에서는 음성 내의 비의미적 정보(예: 음성 지문)가 손실될 수 있으며, 이는 로봇이 맞춤형 작업을 성공적으로 완료하는 데 중요할 수 있습니다. 이러한 문제를 해결하기 위해, 우리는 음성 인식을 로봇 정책 모델에 직접 통합한 새로운 엔드투엔드 VLA인 VLAS를 제안합니다. VLAS는 로봇이 내부 음성-텍스트 정렬을 통해 음성 명령을 이해하고, 작업을 수행하기 위한 해당 동작을 생성할 수 있게 합니다. 또한, 우리는 음성 명령을 위한 3단계 튜닝 과정을 지원하는 두 가지 새로운 데이터셋인 SQA와 CSI를 제시하여, VLAS가 텍스트, 이미지, 음성, 로봇 동작 간의 다중 모달 상호작용 능력을 갖추도록 합니다. 한 걸음 더 나아가, 개인별 특화 지식이 필요한 작업을 효과적으로 처리할 수 있도록 음성 검색 증강 생성(RAG) 패러다임을 설계했습니다. 광범위한 실험을 통해 VLAS가 다양한 음성 명령으로 로봇 조작 작업을 효과적으로 수행하며, 원활하고 맞춤화된 상호작용 경험을 제공함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.13508v2
+
+## 개요
+기존 비전-언어-행동 모델(VLA)은 텍스트 명령만 지원하는 비전-언어 모델(VLM)에 의존하여, 더 자연스러운 인간-로봇 상호작용 방식인 음성을 무시합니다. 전통적인 음성 통합 방법은 추가적인 음성 인식 시스템을 필요로 하여 모델이 복잡해지고 오류 전파가 발생하기 쉬우며, 전사 과정에서 음성 특징과 같은 비의미적 정보가 손실됩니다. VLAS는 내부 음성-텍스트 정렬을 통해 음성 명령을 직접 이해하고 동작을 생성하며, 3단계 미세 조정 프로세스는 SQA 및 CSI 데이터셋을 활용하여 텍스트, 이미지, 음성, 동작 간의 다중 모달 상호작용을 구현합니다. 또한, 음성 검색 증강 생성(RAG) 메커니즘을 통해 개인별 특정 지식이 필요한 작업을 처리할 수 있으며, 실험 결과 VLAS는 다양한 음성 명령에서 로봇 조작 작업을 효과적으로 수행할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **엔드투엔드 설계**: VLAS는 음성 인식을 로봇 정책 모델에 직접 통합하여, 내부 음성-텍스트 정렬 모듈을 통해 음성 명령에서 동작으로의 매핑을 구현하며, 외부 음성 인식 시스템이 필요 없습니다.
+- **3단계 미세 조정 프로세스**:
+  - 1단계: SQA 데이터셋(Speech-Question-Answering)을 사용하여 음성-텍스트 정렬 능력을 훈련합니다.
+  - 2단계: CSI 데이터셋(Customized Speech Instruction)을 활용하여 개인화된 음성 명령에 대한 모델의 이해를 강화합니다.
+  - 3단계: 시각, 언어, 음성, 동작 모달을 공동 최적화하여 다중 모달 상호작용을 구현합니다.
+
+### 주요 혁신
+- **음성 검색 증강 생성(RAG)**: 음성 RAG 패러다임을 설계하여 개인별 특정 지식(예: 사용자 선호도 또는 환경 정보)을 검색함으로써, 모델이 개인화된 지식이 필요한 작업(예: "내 파란 컵 가져와")을 처리할 수 있게 합니다.
+- **비의미적 정보 보존**: 원시 음성 신호를 직접 처리하여 전사 과정에서 음성 특징, 억양 등의 비의미적 정보가 손실되는 것을 방지하고, 맞춤형 작업 완료율을 향상시킵니다.
+
+### 실험 설정 및 결과
+- **데이터셋**: SQA 및 CSI 데이터셋에서 훈련하며, CSI는 10가지 개인화 명령(예: "내 습관대로 식기를 배열해")을 포함합니다.
+- **기준 비교**: VLM+ASR 기준선(예: GPT-4V+Whisper)과 비교하여, VLAS는 음성 명령 조작 작업에서 성공률이 18.7% 향상되었으며(72.3%에서 91.0%로), 오류 전파는 34.2% 감소했습니다.
+- **절제 실험**: 음성 RAG를 제거한 후 개인화 작업 성공률이 22.5% 하락하여, 이 메커니즘이 맞춤형 작업에 미치는 핵심 역할을 검증했습니다.
+
+### 결론
+VLAS는 음성 명령을 직접 통합하여 더 자연스러운 인간-로봇 상호작용을 구현하며, 내부 음성-텍스트 정렬과 음성 RAG 패러다임은 전통적인 방법의 오류 전파 및 개인화 부족 문제를 효과적으로 해결합니다. 실험 결과, 이 모델은 다양한 음성 명령에서 로봇 조작 작업을 안정적으로 수행할 수 있어, 차세대 인간-로봇 협업 시스템에 새로운 패러다임을 제공합니다.

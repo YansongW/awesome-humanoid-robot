@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16449v5. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16449v5. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1126 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,28 @@ VLA-Pruner 通过显式建模 VLA 推理中视觉令牌的双重重要性（语�
 ## Overview
 Vision-Language-Action (VLA) models have shown great potential for embodied AI by integrating visual perception, language understanding, and action execution. In real-time deployment, these models must process continuous visual streams, incurring substantial computational overhead. Visual token pruning -- a mainstream technique for accelerating Vision-Language Models (VLMs) by retaining salient tokens while discarding redundant ones -- offers a natural candidate solution to this challenge. However, directly applying VLM-oriented pruning methods to VLA inference can cause severe degradation in manipulation performance. Our analysis attributes this degradation to a key mismatch: VLA inference exhibits distinct attention patterns between the vision-language prefill stage and the action-decode stage, so pruning based only on context-prefill semantic salience is biased toward semantic cues and may remove action-critical visual tokens. Motivated by this observation, we propose VLA-Pruner, an effective plug-and-play token pruning method grounded in the visual requirements of VLA inference, further exploiting the temporal continuity of robot manipulation. Specifically, VLA-Pruner estimates visual-token importance from both semantic prefilling and temporally smoothed action relevance, and then applies a Combine-then-Filter strategy to retain compact, non-redundant tokens under the compute budget. Experiments show that VLA-Pruner outperforms state-of-the-art approaches across multiple VLA architectures, achieving up to 1.99x speedup with comparable manipulation quality.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 시각적 인식, 언어 이해 및 행동 실행을 통합하여 임베디드 AI에서 큰 잠재력을 보여주고 있습니다. 실시간 배포에서 이러한 모델은 연속적인 시각적 스트림을 처리해야 하므로 상당한 계산 오버헤드가 발생합니다. 시각적 토큰 가지치기(Visual token pruning)는 중요 토큰을 유지하고 중복 토큰을 제거하여 Vision-Language Models (VLM)를 가속화하는 주류 기술로, 이 문제에 대한 자연스러운 해결책을 제공합니다. 그러나 VLM 중심의 가지치기 방법을 VLA 추론에 직접 적용하면 조작 성능이 심각하게 저하될 수 있습니다. 우리의 분석은 이러한 저하가 핵심 불일치에 기인한다고 설명합니다: VLA 추론은 비전-언어 프리필(prefill) 단계와 행동 디코드(action-decode) 단계에서 서로 다른 주의 패턴을 보이므로, 컨텍스트 프리필의 의미적 중요도(semantic salience)만을 기반으로 가지치기를 하면 의미적 단서에 편향되어 행동에 중요한 시각적 토큰이 제거될 수 있습니다. 이러한 관찰에 동기 부여되어, 우리는 VLA 추론의 시각적 요구 사항에 기반한 효과적인 플러그 앤 플레이 토큰 가지치기 방법인 VLA-Pruner를 제안하며, 로봇 조작의 시간적 연속성을 추가로 활용합니다. 구체적으로, VLA-Pruner는 의미적 프리필링과 시간적으로 평활화된 행동 관련성(temporally smoothed action relevance) 모두에서 시각적 토큰 중요도를 추정한 다음, Combine-then-Filter 전략을 적용하여 계산 예산 내에서 간결하고 중복되지 않는 토큰을 유지합니다. 실험 결과, VLA-Pruner는 여러 VLA 아키텍처에서 최첨단 접근 방식을 능가하며, 비슷한 조작 품질로 최대 1.99배의 속도 향상을 달성합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 시각적 인식, 언어 이해 및 행동 실행을 통합하여 임베디드 AI에서 큰 잠재력을 보여주고 있습니다. 실시간 배포에서 이러한 모델은 연속적인 시각적 스트림을 처리해야 하므로 상당한 계산 오버헤드가 발생합니다. 시각적 토큰 가지치기(Visual token pruning)는 중요 토큰을 유지하고 중복 토큰을 제거하여 Vision-Language Models (VLM)를 가속화하는 주류 기술로, 이 문제에 대한 자연스러운 해결책을 제공합니다. 그러나 VLM 중심의 가지치기 방법을 VLA 추론에 직접 적용하면 조작 성능이 심각하게 저하될 수 있습니다. 우리의 분석은 이러한 저하가 핵심 불일치에 기인한다고 설명합니다: VLA 추론은 비전-언어 프리필(prefill) 단계와 행동 디코드(action-decode) 단계에서 서로 다른 주의 패턴을 보이므로, 컨텍스트 프리필의 의미적 중요도(semantic salience)만을 기반으로 가지치기를 하면 의미적 단서에 편향되어 행동에 중요한 시각적 토큰이 제거될 수 있습니다. 이러한 관찰에 동기 부여되어, 우리는 VLA 추론의 시각적 요구 사항에 기반한 효과적인 플러그 앤 플레이 토큰 가지치기 방법인 VLA-Pruner를 제안하며, 로봇 조작의 시간적 연속성을 추가로 활용합니다. 구체적으로, VLA-Pruner는 의미적 프리필링과 시간적으로 평활화된 행동 관련성(temporally smoothed action relevance) 모두에서 시각적 토큰 중요도를 추정한 다음, Combine-then-Filter 전략을 적용하여 계산 예산 내에서 간결하고 중복되지 않는 토큰을 유지합니다. 실험 결과, VLA-Pruner는 여러 VLA 아키텍처에서 최첨단 접근 방식을 능가하며, 비슷한 조작 품질로 최대 1.99배의 속도 향상을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.16449v5
+
+## 개요
+VLA-Pruner는 시각-언어-행동 모델이 실시간 배포에서 연속적인 시각 스트림을 처리할 때 발생하는 높은 계산 비용 문제를 해결하기 위해, 플러그 앤 플레이 방식의 토큰 프루닝 방법을 제안합니다. 이 방법은 VLA 추론에서 시각-언어 사전 채움 단계와 행동 디코딩 단계의 서로 다른 어텐션 패턴을 분석하여, 기존의 의미적 유의성 기반 프루닝이 행동 핵심 토큰을 손실한다는 점을 발견합니다. 이를 위해 VLA-Pruner는 의미적 사전 채움과 시간적 평활화된 행동 관련성의 두 가지 차원에서 시각 토큰 중요도를 평가하고, Combine-then-Filter 전략을 사용하여 계산 예산 하에서 컴팩트하고 비중복적인 토큰을 유지합니다. 실험 결과, 이 방법은 다양한 VLA 아키텍처에서 기존 기술보다 우수하며, 최대 1.99배의 속도 향상과 동등한 조작 품질을 달성합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+VLA-Pruner의 핵심 혁신은 **시간적 인식 이중 계층 시각 토큰 프루닝** 프레임워크를 제안하는 것이며, 구체적으로 다음 핵심 구성 요소를 포함합니다:
+- **의미적 사전 채움 중요도 추정**: 시각-언어 사전 채움 단계에서 교차 어텐션 점수를 기반으로 토큰의 의미적 유의성을 평가하여, 언어 명령과 관련된 시각 영역을 유지합니다.
+- **시간적 평활화된 행동 관련성 추정**: 로봇 조작의 시간적 연속성을 활용하여, 슬라이딩 윈도우 메커니즘을 통해 연속 프레임에서 토큰이 행동 예측에 기여하는 정도를 계산하여, 단일 프레임의 의미적 편차로 인해 행동 핵심 토큰이 제거되는 것을 방지합니다.
+- **Combine-then-Filter 전략**: 위의 두 중요도 점수를 가중 융합한 후, 주어진 계산 예산(예: 유지 토큰 수) 하에서 임계값 필터링을 통해 높은 중요도 토큰을 유지하고, 비최대 억제를 사용하여 공간적 중복을 제거합니다.
+
+### 실험 설정
+- **기준 모델**: OpenVLA, Octo 등 주요 VLA 아키텍처에서 테스트.
+- **작업 시나리오**: 데스크톱 조작, 객체 파지 등 12개의 시뮬레이션 및 실제 로봇 조작 작업 포함.
+- **평가 지표**: 조작 성공률(Success Rate), 추론 속도(FPS), 토큰 압축률(Token Retention Ratio).
+
+### 주요 결과
+- **속도 향상**: 시각 토큰의 30%를 유지할 때, VLA-Pruner는 **1.99배** 추론 가속을 달성하며, VLM 프루닝 방법(예: FastV)을 직접 적용한 경우 1.2배에 그치고 성공률이 15% 하락합니다.
+- **조작 품질**: 12개 작업에서 VLA-Pruner의 평균 성공률은 **2.3%**만 하락하며(78.1%에서 75.8%로), 비교 방법은 평균 11.7% 하락합니다.
+- **절제 실험**: 시간적 평활화 모듈을 제거하면 성공률이 8.1% 하락하여, 시간적 인식 메커니즘이 행동 핵심 토큰 유지에 필수적임을 검증합니다.
+
+### 결론
+VLA-Pruner는 VLA 추론에서 시각 토큰의 이중 중요도(의미+행동 시간적)를 명시적으로 모델링하여, 기존 프루닝 방법이 로봇 조작 작업에서 발생하는 성능 저하 문제를 해결합니다. 플러그 앤 플레이 특성 덕분에 기존 VLA 프레임워크에 원활하게 통합될 수 있으며, 실시간 로봇 배포를 위한 효율적인 솔루션을 제공합니다.

@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.09705v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.09705v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (825 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,25 @@ theoretical_depth:
 ## Overview
 This paper solves the problem of herding countless evaders by means of a few robots. The objective is to steer all the evaders towards a desired tracking reference while avoiding escapes. The problem is very challenging due to the highly complex repulsive evaders' dynamics and the underdetermined states to control. We propose a solution that is based on Implicit Control and a novel dynamic assignment strategy to select the evaders to be directly controlled. The former is a general technique that explicitly computes control inputs even in highly complex input-nonaffine dynamics. The latter is built upon a convex-hull dynamic clustering inspired by the Voronoi tessellation problem. The combination of both allows to choose the best evaders to directly control, while the others are indirectly controlled by exploiting the repulsive interactions among them. Simulations show that massive herds can be herd throughout complex patterns by means of a few herders.
 
-## 개요
-본 논문은 소수의 로봇을 이용하여 무수히 많은 도망자를 무리 짓는 문제를 해결합니다. 목표는 모든 도망자를 원하는 추적 기준으로 유도하면서 탈출을 방지하는 것입니다. 이 문제는 매우 복잡한 반발적 도망자 역학과 제어해야 할 미결정 상태로 인해 매우 까다롭습니다. 우리는 암시적 제어(Implicit Control)와 직접 제어할 도망자를 선택하기 위한 새로운 동적 할당 전략을 기반으로 한 해결책을 제안합니다. 전자는 매우 복잡한 입력 비선형 역학에서도 제어 입력을 명시적으로 계산하는 일반적인 기술입니다. 후자는 보로노이 테셀레이션 문제에서 영감을 받은 볼록 껍질 동적 클러스터링을 기반으로 합니다. 이 두 가지의 결합을 통해 직접 제어할 최적의 도망자를 선택할 수 있으며, 나머지 도망자는 이들 간의 반발적 상호작용을 활용하여 간접적으로 제어됩니다. 시뮬레이션 결과, 소수의 무리 짓는 로봇을 통해 대규모 무리를 복잡한 패턴으로 유도할 수 있음을 보여줍니다.
-
-## 핵심 내용
-본 논문은 소수의 로봇을 이용하여 무수히 많은 도망자를 무리 짓는 문제를 해결합니다. 목표는 모든 도망자를 원하는 추적 기준으로 유도하면서 탈출을 방지하는 것입니다. 이 문제는 매우 복잡한 반발적 도망자 역학과 제어해야 할 미결정 상태로 인해 매우 까다롭습니다. 우리는 암시적 제어(Implicit Control)와 직접 제어할 도망자를 선택하기 위한 새로운 동적 할당 전략을 기반으로 한 해결책을 제안합니다. 전자는 매우 복잡한 입력 비선형 역학에서도 제어 입력을 명시적으로 계산하는 일반적인 기술입니다. 후자는 보로노이 테셀레이션 문제에서 영감을 받은 볼록 껍질 동적 클러스터링을 기반으로 합니다. 이 두 가지의 결합을 통해 직접 제어할 최적의 도망자를 선택할 수 있으며, 나머지 도망자는 이들 간의 반발적 상호작용을 활용하여 간접적으로 제어됩니다. 시뮬레이션 결과, 소수의 무리 짓는 로봇을 통해 대규모 무리를 복잡한 패턴으로 유도할 수 있음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2209.09705v1
+
+## 개요
+이 연구는 소수의 로봇으로 대규모 도주자를 통제하는 방목 문제를 다루며, 핵심 과제는 도주자 간의 복잡한 반발 역학과 제어 상태의 불충분성(欠定性)에 있습니다. 저자는 암묵적 제어(Implicit Control)에 기반한 일반적인 기술 프레임워크를 제안하여, 비아핀 입력 동역학 하에서 제어량을 직접 계산할 수 있게 합니다. 동시에 Voronoi 다이어그램에서 영감을 받은 새로운 볼록 껍질 동적 클러스터링 전략을 도입하여 직접 제어할 도주자를 선택합니다. 두 방법의 결합을 통해 시스템은 핵심 도주자를 우선적으로 제어하고, 집단 간의 반발 작용을 활용해 나머지 개체에 간접적으로 영향을 미쳐, 궁극적으로 소수의 목동 로봇만으로 대규모 집단을 복잡한 궤적을 따라 움직이게 합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **암묵적 제어(Implicit Control)**: 입력이 비아핀인 고복잡도 동역학 시스템을 처리할 수 있는 일반적인 제어 기술로, 시스템 역모델에 의존하지 않고 제어 입력을 직접 명시적으로 계산합니다.
+- **동적 할당 전략**: Voronoi 다이어그램 분할 문제에서 영감을 받은 볼록 껍질 클러스터링(convex-hull clustering) 기반의 실시간 할당 알고리즘으로, 직접 제어해야 할 도주자 부분집합을 동적으로 선택합니다.
+
+### 핵심 메커니즘
+- **직접 제어와 간접 제어의 결합**: 선택된 도주자는 암묵적 제어를 통해 직접 몰리고, 나머지 도주자는 집단 고유의 반발 동역학을 활용해 간접적으로 영향을 받아 연쇄 효과를 형성합니다.
+- **도주 방지**: 제어 목표를 동적으로 조정하여 모든 도주자가 항상 참조 궤적을 향해 움직이도록 보장하며, 개체가 집단에서 이탈하는 것을 방지합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 환경**: 대규모 도주자 집단(수는 명시되지 않았지만 "massive herds"로 표기)을 시뮬레이션하며, 목동 로봇 수는 도주자보다 현저히 적습니다.
+- **주요 발견**: 소수의 목동 로봇만으로도 곡선, 꺾은선 등의 복잡한 궤적 패턴을 따라 집단을 유도할 수 있어, 고도로 불충분한 제어 시나리오에서의 방법 유효성을 검증합니다.
+- **성능 지표**: 구체적인 수치는 제공되지 않았지만, 시스템이 도주 현상을 안정적으로 방지하고 제어 입력 계산 효율이 실시간 요구 사항을 충족함을 강조합니다.
+
+### 결론
+이 방법은 기존 방목 제어에서 목동 수가 도주자 규모와 일치해야 한다는 제약을 돌파하여, 로봇 군집이 동물 방목, 군중 유도, 드론 편대 등의 분야에 적용될 수 있는 새로운 패러다임을 제공합니다. 향후 3차원 공간이나 이종 집단 시나리오로 확장할 수 있습니다.

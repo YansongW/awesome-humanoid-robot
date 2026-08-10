@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.17971v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.17971v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (627 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,22 @@ theoretical_depth:
 ## Overview
 Successful adoption of industrial robots will strongly depend on their ability to safely and efficiently operate in human environments, engage in natural communication, understand their users, and express intentions intuitively while avoiding unnecessary distractions. To achieve this advanced level of Human-Robot Interaction (HRI), robots need to acquire and incorporate knowledge of their users' tasks and environment and adopt multimodal communication approaches with expressive cues that combine speech, movement, gazes, and other modalities. This paper presents several methods to design, enhance, and evaluate expressive HRI systems for non-humanoid industrial robots. We present the concept of a small anthropomorphic robot communicating as a proxy for its non-humanoid host, such as a forklift. We developed a multimodal and LLM-enhanced communication framework for this robot and evaluated it in several lab experiments, using gaze tracking and motion capture to quantify how users perceive the robot and measure the task progress.
 
-## 개요
-산업용 로봇의 성공적인 도입은 인간 환경에서 안전하고 효율적으로 작동하며, 자연스러운 의사소통을 수행하고, 사용자를 이해하며, 불필요한 방해를 피하면서 직관적으로 의도를 표현하는 능력에 크게 의존할 것입니다. 이러한 고급 수준의 인간-로봇 상호작용(HRI)을 달성하기 위해 로봇은 사용자의 작업 및 환경에 대한 지식을 습득하고 통합해야 하며, 음성, 움직임, 시선 및 기타 양식을 결합한 표현적 단서를 갖춘 다중 모드 의사소통 접근 방식을 채택해야 합니다. 본 논문은 비인간형 산업용 로봇을 위한 표현적 HRI 시스템을 설계, 향상 및 평가하는 여러 방법을 제시합니다. 우리는 지게차와 같은 비인간형 호스트를 대신하여 의사소통하는 소형 의인화 로봇의 개념을 소개합니다. 이 로봇을 위해 다중 모드 및 LLM 강화 의사소통 프레임워크를 개발하고, 시선 추적 및 모션 캡처를 사용하여 사용자가 로봇을 어떻게 인식하는지 정량화하고 작업 진행 상황을 측정하는 여러 실험실 실험에서 이를 평가했습니다.
-
-## 핵심 내용
-산업용 로봇의 성공적인 도입은 인간 환경에서 안전하고 효율적으로 작동하며, 자연스러운 의사소통을 수행하고, 사용자를 이해하며, 불필요한 방해를 피하면서 직관적으로 의도를 표현하는 능력에 크게 의존할 것입니다. 이러한 고급 수준의 인간-로봇 상호작용(HRI)을 달성하기 위해 로봇은 사용자의 작업 및 환경에 대한 지식을 습득하고 통합해야 하며, 음성, 움직임, 시선 및 기타 양식을 결합한 표현적 단서를 갖춘 다중 모드 의사소통 접근 방식을 채택해야 합니다. 본 논문은 비인간형 산업용 로봇을 위한 표현적 HRI 시스템을 설계, 향상 및 평가하는 여러 방법을 제시합니다. 우리는 지게차와 같은 비인간형 호스트를 대신하여 의사소통하는 소형 의인화 로봇의 개념을 소개합니다. 이 로봇을 위해 다중 모드 및 LLM 강화 의사소통 프레임워크를 개발하고, 시선 추적 및 모션 캡처를 사용하여 사용자가 로봇을 어떻게 인식하는지 정량화하고 작업 진행 상황을 측정하는 여러 실험실 실험에서 이를 평가했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.17971v1
+
+## 개요
+산업용 로봇의 성공적인 적용은 인간 환경에서 안전하고 효율적으로 작동하며, 자연스러운 의사소통을 수행하고 직관적으로 의도를 표현할 수 있는 능력에 달려 있습니다. 이를 위해 본 논문은 인간형이 아닌 산업용 로봇(예: 지게차)을 위한 표현적 인간-로봇 상호작용 시스템의 설계, 강화 및 평가를 위한 다양한 방법을 제안합니다. 연구자들은 비인간형 호스트를 대신하여 의사소통하는 소형 의인화 로봇을 에이전트로 개발하고, 음성, 시선, 제스처를 결합한 다중 모달 LLM 강화 프레임워크를 구축했습니다. 시선 추적 및 모션 캡처 기술을 통해 실험실 실험에서 로봇에 대한 사용자 인식과 작업 진행 상황을 정량화하여 이 방법의 효과를 검증했습니다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+- 산업용 로봇은 인간 환경에서 안전하고 효율적으로 작동해야 하며, 자연스러운 의사소통 능력을 갖추고 직관적으로 의도를 표현하면서 불필요한 방해를 피해야 합니다.
+- 고급 인간-로봇 상호작용(HRI)을 달성하려면 로봇이 사용자 작업 및 환경 지식을 획득하고, 음성, 운동, 시선 등 다중 모달을 결합한 표현적 의사소통 방식을 채택해야 합니다.
+
+### 핵심 방법: ARMoD 에이전트
+- 의인화 로봇 모의 드라이버(ARMoD) 개념 제안: 비인간형 호스트(예: 지게차)의 통신 에이전트 역할을 하는 소형 의인화 로봇.
+- ARMoD는 다중 모달 LLM 강화 프레임워크를 채택하여 음성, 시선, 제스처의 세 가지 모달을 통합하여 표현성을 강화합니다.
+
+### 실험 설정 및 평가
+- 통제된 실험실 환경에서 여러 실험을 수행하고, 시선 추적 및 모션 캡처 장비를 사용했습니다.
+- 정량적 지표에는 로봇에 대한 사용자 인식(예: 신뢰도, 명확성) 및 작업 진행 상황(예: 완료 시간, 오류율)이 포함됩니다.
+- 실험 결과, ARMoD의 다중 모달 통신 프레임워크는 로봇 의도에 대한 사용자 이해를 효과적으로 향상시키고 인간-로봇 협업 효율을 최적화할 수 있음을 보여줍니다.

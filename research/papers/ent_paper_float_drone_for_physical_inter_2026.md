@@ -55,8 +55,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04260v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04260v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (777 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,20 @@ FLOAT Drone 通过紧凑的同轴双旋翼设计和基于高保真气动模型�
 ## Overview
 Aerial physical interaction represents a promising direction for next-generation unmanned aerial vehicles (UAVs), but it requires an aerial platform that can exert contact forces while maintaining stable flight. For close-proximity tasks, this translates into three coupled design requirements: multidimensional wrench generation for stable contact, compactness for maneuverability and safety in confined spaces, and reduced lateral airflow toward the target when generating horizontal force. This article presents FLOAT Drone, a fully actuated coaxial UAV with servo-driven control surfaces for close-proximity physical interaction. The coaxial dual-rotor layout provides a compact propulsion layout, while the control surfaces, immersed in the rotor downwash, generate lateral forces and moments for 6-DoF wrench generation. A force-matched computational fluid dynamics (CFD) comparison with a tilted-rotor alternative quantifies the reduction in target-facing lateral airflow. To account for nonlinear rotor--control-surface coupling in the rotor wake, a high-fidelity polynomial aerodynamic wrench model is identified from precision force measurements and embedded in a constrained nonlinear allocator for real-time wrench tracking. Comparative flight and interaction experiments show that the proposed framework improves control accuracy over linear allocation baselines, rejects ground-effect and payload disturbances, and enables close-proximity drawer push--pull manipulation through a $2~\mathrm{cm}$ handle clearance.
 
-## 개요
-공중 물리적 상호작용은 차세대 무인 항공기(UAV)의 유망한 방향을 제시하지만, 안정적인 비행을 유지하면서 접촉력을 가할 수 있는 공중 플랫폼이 필요합니다. 근접 작업의 경우, 이는 세 가지 결합된 설계 요구 사항으로 이어집니다: 안정적인 접촉을 위한 다차원 렌치 생성, 제한된 공간에서의 기동성과 안전성을 위한 소형화, 그리고 수평력을 생성할 때 대상으로 향하는 측면 기류 감소입니다. 본 논문은 근접 물리적 상호작용을 위해 서보 구동 제어면을 갖춘 완전 구동 동축 UAV인 FLOAT Drone을 제시합니다. 동축 이중 로터 배치는 소형 추진 레이아웃을 제공하며, 로터 다운워시에 잠긴 제어면은 6자유도 렌치 생성을 위한 측면력과 모멘트를 생성합니다. 경사 로터 대안과의 힘 일치 전산 유체 역학(CFD) 비교를 통해 대상 방향 측면 기류 감소를 정량화합니다. 로터 후류에서의 비선형 로터-제어면 결합을 고려하기 위해, 정밀 힘 측정을 통해 고충실도 다항식 공기역학 렌치 모델을 식별하고, 이를 제약 조건이 있는 비선형 할당기에 내장하여 실시간 렌치 추적을 수행합니다. 비교 비행 및 상호작용 실험은 제안된 프레임워크가 선형 할당 기준선보다 제어 정확도를 향상시키고, 지면 효과 및 페이로드 교란을 억제하며, $2~\mathrm{cm}$ 핸들 틈새를 통한 근접 서랍 밀기-당기기 조작을 가능하게 함을 보여줍니다.
-
-## 핵심 내용
-공중 물리적 상호작용은 차세대 무인 항공기(UAV)의 유망한 방향을 제시하지만, 안정적인 비행을 유지하면서 접촉력을 가할 수 있는 공중 플랫폼이 필요합니다. 근접 작업의 경우, 이는 세 가지 결합된 설계 요구 사항으로 이어집니다: 안정적인 접촉을 위한 다차원 렌치 생성, 제한된 공간에서의 기동성과 안전성을 위한 소형화, 그리고 수평력을 생성할 때 대상으로 향하는 측면 기류 감소입니다. 본 논문은 근접 물리적 상호작용을 위해 서보 구동 제어면을 갖춘 완전 구동 동축 UAV인 FLOAT Drone을 제시합니다. 동축 이중 로터 배치는 소형 추진 레이아웃을 제공하며, 로터 다운워시에 잠긴 제어면은 6자유도 렌치 생성을 위한 측면력과 모멘트를 생성합니다. 경사 로터 대안과의 힘 일치 전산 유체 역학(CFD) 비교를 통해 대상 방향 측면 기류 감소를 정량화합니다. 로터 후류에서의 비선형 로터-제어면 결합을 고려하기 위해, 정밀 힘 측정을 통해 고충실도 다항식 공기역학 렌치 모델을 식별하고, 이를 제약 조건이 있는 비선형 할당기에 내장하여 실시간 렌치 추적을 수행합니다. 비교 비행 및 상호작용 실험은 제안된 프레임워크가 선형 할당 기준선보다 제어 정확도를 향상시키고, 지면 효과 및 페이로드 교란을 억제하며, $2~\mathrm{cm}$ 핸들 틈새를 통한 근접 서랍 밀기-당기기 조작을 가능하게 함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04260v1
+
+## 개요
+이 드론은 공중 물리적 상호작용에서의 세 가지 핵심 요구 사항, 즉 다차원 힘 생성, 컴팩트함, 그리고 수평 힘 발생 시 목표물에 대한 측방 기류 감소를 위해 설계되었습니다. 동축 이중 로터 배치는 컴팩트한 동력 구조를 제공하며, 로터 하강 기류에 잠긴 제어면은 측방 힘과 모멘트를 생성하여 6자유도 힘 제어를 구현합니다. 힘 매칭 전산유체역학(CFD) 비교를 통해 경사 로터 방식과 비교하여 측방 기류 감소를 정량화했습니다. 로터와 제어면 사이의 비선형 결합을 해결하기 위해, 연구팀은 정밀 힘 측정에서 고충실도 다항식 공기역학 모델을 식별하고 이를 제약 비선형 할당기에 내장하여 실시간 힘 추적에 사용했습니다. 실험 결과, 이 프레임워크는 제어 정밀도에서 선형 할당 기준선보다 우수하며 지면 효과와 부하 외란을 억제할 수 있음을 보여주었습니다.
+
+## 핵심 내용
+### 방법 및 아키텍처
+- **플랫폼 설계**: FLOAT Drone은 동축 이중 로터 배치를 채택하고 로터 직경이 작아 전체 구조가 컴팩트하며 제한된 공간에서 기동하기에 적합합니다. 제어면(서보 구동)은 로터 하강 기류에 위치하며, 편향을 통해 측방 힘과 모멘트를 생성하여 6자유도 힘 생성을 구현합니다.
+- **공기역학 모델**: 로터 하강 기류와 제어면 사이의 비선형 결합에 대응하기 위해, 연구팀은 정밀 힘 센서로 데이터를 수집하여 고충실도 다항식 공기역학 모델을 식별했습니다. 이 모델은 제약 비선형 할당기에 내장되어 실시간 힘 추적에 사용되며, 기존의 선형 할당 방식을 대체합니다.
+
+### 실험 설정 및 주요 수치
+- **CFD 비교**: 힘 매칭 전산유체역학(CFD) 시뮬레이션을 통해 FLOAT Drone을 경사 로터 방식과 비교하여 목표 방향으로의 측방 기류 감소 정도를 정량화했습니다.
+- **비행 및 상호작용 실험**: 비교 실험 결과, 제안된 프레임워크는 제어 정밀도에서 선형 할당 기준선보다 우수하며 지면 효과와 부하 외란을 효과적으로 억제할 수 있습니다. 근거리 서랍 밀고 당기기 작업에서 드론은 단 2cm의 핸들 간격만으로도 밀고 당기기 작업을 완료할 수 있습니다.
+
+### 결론
+FLOAT Drone은 컴팩트한 동축 이중 로터 설계와 고충실도 공기역학 모델 기반의 비선형 제어를 통해 안정적인 근거리 물리적 상호작용을 구현했습니다. 실험은 제어 정밀도, 외란 저항 능력, 그리고 좁은 공간에서의 조작에서의 우수성을 검증했으며, 차세대 드론의 접촉식 작업 적용을 위한 실현 가능한 솔루션을 제공합니다.

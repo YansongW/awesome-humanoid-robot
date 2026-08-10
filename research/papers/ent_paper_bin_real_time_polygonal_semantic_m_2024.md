@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.01919v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.01919v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (625 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,23 @@ theoretical_depth:
 ## Overview
 We present a novel algorithm for real-time planar semantic mapping tailored for humanoid robots navigating complex terrains such as staircases. Our method is adaptable to any odometry input and leverages GPU-accelerated processes for planar extraction, enabling the rapid generation of globally consistent semantic maps. We utilize an anisotropic diffusion filter on depth images to effectively minimize noise from gradient jumps while preserving essential edge details, enhancing normal vector images' accuracy and smoothness. Both the anisotropic diffusion and the RANSAC-based plane extraction processes are optimized for parallel processing on GPUs, significantly enhancing computational efficiency. Our approach achieves real-time performance, processing single frames at rates exceeding $30~Hz$, which facilitates detailed plane extraction and map management swiftly and efficiently. Extensive testing underscores the algorithm's capabilities in real-time scenarios and demonstrates its practical application in humanoid robot gait planning, significantly improving its ability to navigate dynamic environments.
 
-## 개요
-본 논문에서는 계단과 같은 복잡한 지형을 탐색하는 휴머노이드 로봇을 위한 실시간 평면 의미론적 매핑 알고리즘을 제시합니다. 본 방법은 모든 오도메트리 입력에 적응 가능하며, GPU 가속 프로세스를 활용한 평면 추출을 통해 전역적으로 일관된 의미론적 맵을 신속하게 생성할 수 있습니다. 깊이 이미지에 이방성 확산 필터를 적용하여 그래디언트 점프로 인한 노이즈를 효과적으로 최소화하면서 필수적인 에지 세부 정보를 보존하고, 법선 벡터 이미지의 정확성과 부드러움을 향상시킵니다. 이방성 확산과 RANSAC 기반 평면 추출 프로세스는 모두 GPU에서 병렬 처리를 위해 최적화되어 계산 효율성을 크게 향상시킵니다. 본 접근 방식은 초당 $30~Hz$를 초과하는 속도로 단일 프레임을 처리하는 실시간 성능을 달성하여, 세부 평면 추출과 맵 관리를 신속하고 효율적으로 수행합니다. 광범위한 테스트를 통해 실시간 시나리오에서 알고리즘의 성능을 입증하고, 휴머노이드 로봇 보행 계획에 실용적으로 적용되어 동적 환경 탐색 능력을 크게 개선함을 보여줍니다.
-
-## 핵심 내용
-본 논문에서는 계단과 같은 복잡한 지형을 탐색하는 휴머노이드 로봇을 위한 실시간 평면 의미론적 매핑 알고리즘을 제시합니다. 본 방법은 모든 오도메트리 입력에 적응 가능하며, GPU 가속 프로세스를 활용한 평면 추출을 통해 전역적으로 일관된 의미론적 맵을 신속하게 생성할 수 있습니다. 깊이 이미지에 이방성 확산 필터를 적용하여 그래디언트 점프로 인한 노이즈를 효과적으로 최소화하면서 필수적인 에지 세부 정보를 보존하고, 법선 벡터 이미지의 정확성과 부드러움을 향상시킵니다. 이방성 확산과 RANSAC 기반 평면 추출 프로세스는 모두 GPU에서 병렬 처리를 위해 최적화되어 계산 효율성을 크게 향상시킵니다. 본 접근 방식은 초당 $30~Hz$를 초과하는 속도로 단일 프레임을 처리하는 실시간 성능을 달성하여, 세부 평면 추출과 맵 관리를 신속하고 효율적으로 수행합니다. 광범위한 테스트를 통해 실시간 시나리오에서 알고리즘의 성능을 입증하고, 휴머노이드 로봇 보행 계획에 실용적으로 적용되어 동적 환경 탐색 능력을 크게 개선함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.01919v1
+
+## 개요
+이 시스템은 인간형 로봇이 계단과 같은 복잡한 지형에서 내비게이션할 수 있도록 설계되었으며, 임의의 오도메트리 입력에 적응할 수 있습니다. 핵심 혁신은 GPU 병렬 가속을 활용한 이방성 확산 필터링과 RANSAC 평면 추출로, 깊이 이미지의 그래디언트 점프 노이즈를 억제하면서도 가장자리 세부 정보를 보존하여 법선 이미지의 정밀도와 평활도를 향상시키는 데 있습니다. 칼만 필터를 통해 수직 방향 드리프트를 보정함으로써, 시스템은 전역적으로 일관된 의미론적 지도를 빠르게 생성할 수 있으며, 실시간 시나리오 테스트에서 보행 계획에 대한 실용적 가치를 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **전처리 단계**: 깊이 이미지에 이방성 확산 필터링을 적용하여 그래디언트 점프 노이즈를 효과적으로 억제하면서도 핵심 가장자리 세부 정보를 보존하여, 이후의 법선 추정에 고품질 입력을 제공합니다.
+- **법선 추정**: Sobel 연산자를 사용하여 법선을 계산하고, 필터링된 깊이 데이터를 결합하여 평활한 법선 이미지를 생성합니다.
+- **평면 추출**: 다각형 윤곽 추출과 RANSAC 평면 피팅을 통해 법선 이미지에서 평면 영역을 식별하며, 모든 계산은 GPU에서 병렬로 가속화됩니다.
+- **드리프트 보정**: 칼만 필터를 도입하여 수직 방향 드리프트를 실시간으로 보정하여 지도의 전역적 일관성을 보장합니다.
+
+### 실험 설정 및 주요 수치
+- **성능 지표**: 단일 프레임 처리 주파수가 30 Hz를 초과하여 실시간 요구 사항을 충족합니다.
+- **하드웨어 플랫폼**: GPU 가속에 의존하며, 구체적인 모델은 명시되지 않았지만 병렬 최적화가 계산 효율성 향상에 미치는 영향을 강조합니다.
+- **테스트 시나리오**: 계단과 같은 복잡한 지형에서 검증되었으며, 평면 추출의 정확성과 지도 업데이트 속도를 중점적으로 평가합니다.
+
+### 결론
+이 시스템은 실시간성(>30 Hz)과 견고성에서 뛰어난 성능을 보여주며, 동적 환경에서 인간형 로봇의 보행 계획을 효과적으로 지원할 수 있습니다. 향후 더 복잡한 비구조적 지형으로 확장할 수 있습니다.

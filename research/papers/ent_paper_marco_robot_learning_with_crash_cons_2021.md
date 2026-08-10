@@ -47,8 +47,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.08669v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.08669v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (679 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,27 @@ theoretical_depth:
 ## Overview
 In the past decade, numerous machine learning algorithms have been shown to successfully learn optimal policies to control real robotic systems. However, it is common to encounter failing behaviors as the learning loop progresses. Specifically, in robot applications where failing is undesired but not catastrophic, many algorithms struggle with leveraging data obtained from failures. This is usually caused by (i) the failed experiment ending prematurely, or (ii) the acquired data being scarce or corrupted. Both complicate the design of proper reward functions to penalize failures. In this paper, we propose a framework that addresses those issues. We consider failing behaviors as those that violate a constraint and address the problem of learning with crash constraints, where no data is obtained upon constraint violation. The no-data case is addressed by a novel GP model (GPCR) for the constraint that combines discrete events (failure/success) with continuous observations (only obtained upon success). We demonstrate the effectiveness of our framework on simulated benchmarks and on a real jumping quadruped, where the constraint threshold is unknown a priori. Experimental data is collected, by means of constrained Bayesian optimization, directly on the real robot. Our results outperform manual tuning and GPCR proves useful on estimating the constraint threshold.
 
-## 개요
-지난 10년간, 수많은 머신러닝 알고리즘이 실제 로봇 시스템을 제어하기 위한 최적의 정책을 성공적으로 학습하는 것으로 입증되었습니다. 그러나 학습 루프가 진행됨에 따라 실패 동작이 발생하는 것은 흔한 일입니다. 특히, 실패가 바람직하지 않지만 치명적이지 않은 로봇 애플리케이션에서는 많은 알고리즘이 실패로부터 얻은 데이터를 활용하는 데 어려움을 겪습니다. 이는 일반적으로 (i) 실패한 실험이 조기에 종료되거나, (ii) 획득한 데이터가 부족하거나 손상되었기 때문에 발생합니다. 두 경우 모두 실패를 처벌하기 위한 적절한 보상 함수 설계를 복잡하게 만듭니다. 본 논문에서는 이러한 문제를 해결하는 프레임워크를 제안합니다. 우리는 실패 동작을 제약 조건을 위반하는 것으로 간주하고, 제약 조건 위반 시 데이터를 얻을 수 없는 충돌 제약 조건 하에서의 학습 문제를 다룹니다. 데이터가 없는 경우는 이산적 사건(실패/성공)과 연속적 관측(성공 시에만 획득)을 결합한 새로운 GP 모델(GPCR)을 통해 해결합니다. 우리는 시뮬레이션 벤치마크와 제약 조건 임계값이 사전에 알려지지 않은 실제 점프 사족 로봇에서 프레임워크의 효과를 입증합니다. 실험 데이터는 제약 조건이 있는 베이지안 최적화를 통해 실제 로봇에서 직접 수집됩니다. 우리의 결과는 수동 튜닝을 능가하며, GPCR은 제약 조건 임계값 추정에 유용함을 입증합니다.
-
-## 핵심 내용
-지난 10년간, 수많은 머신러닝 알고리즘이 실제 로봇 시스템을 제어하기 위한 최적의 정책을 성공적으로 학습하는 것으로 입증되었습니다. 그러나 학습 루프가 진행됨에 따라 실패 동작이 발생하는 것은 흔한 일입니다. 특히, 실패가 바람직하지 않지만 치명적이지 않은 로봇 애플리케이션에서는 많은 알고리즘이 실패로부터 얻은 데이터를 활용하는 데 어려움을 겪습니다. 이는 일반적으로 (i) 실패한 실험이 조기에 종료되거나, (ii) 획득한 데이터가 부족하거나 손상되었기 때문에 발생합니다. 두 경우 모두 실패를 처벌하기 위한 적절한 보상 함수 설계를 복잡하게 만듭니다. 본 논문에서는 이러한 문제를 해결하는 프레임워크를 제안합니다. 우리는 실패 동작을 제약 조건을 위반하는 것으로 간주하고, 제약 조건 위반 시 데이터를 얻을 수 없는 충돌 제약 조건 하에서의 학습 문제를 다룹니다. 데이터가 없는 경우는 이산적 사건(실패/성공)과 연속적 관측(성공 시에만 획득)을 결합한 새로운 GP 모델(GPCR)을 통해 해결합니다. 우리는 시뮬레이션 벤치마크와 제약 조건 임계값이 사전에 알려지지 않은 실제 점프 사족 로봇에서 프레임워크의 효과를 입증합니다. 실험 데이터는 제약 조건이 있는 베이지안 최적화를 통해 실제 로봇에서 직접 수집됩니다. 우리의 결과는 수동 튜닝을 능가하며, GPCR은 제약 조건 임계값 추정에 유용함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2010.08669v3
+
+## 개요
+로봇 학습 과정에서 실패 행동은 치명적이지는 않지만 바람직하지 않으며, 실험의 조기 종료나 데이터의 희소성/손상으로 인해 활용하기 어려운 경우가 많다. 본 논문에서 제안하는 EIC2 프레임워크는 실패를 제약 조건 위반으로 간주하고, 제약 위반 이후 데이터 획득이 불가능한 "붕괴 제약" 문제를专门적으로 처리한다. 이를 위해 저자는 이산 사건(실패/성공)과 성공 시에만 얻어지는 연속 관측 데이터를 융합하는 새로운 GPCR 모델을 설계했다. 시뮬레이션 벤치마크와 실제 점프 사족 로봇에서의 실험을 통해, 이 프레임워크는 제약 임계값이 알려지지 않은 상황에서 제약 베이지안 최적화를 통해 직접 데이터를 수집하며, 수동 튜닝보다 우수한 성능을 보였고 GPCR은 제약 임계값 추정에서 뛰어난 성능을 입증했다.
+
+## 핵심 내용
+### 핵심 문제
+- 지난 10년 동안 많은 머신러닝 알고리즘이 실제 로봇 시스템의 최적 정책을 학습하는 데 성공했지만, 학습 과정에서 실패 행동이 자주 발생한다.
+- 실패가 바람직하지 않지만 치명적이지 않은 로봇 응용 분야에서 많은 알고리즘이 실패 데이터를 활용하지 못하는 이유는 다음과 같다:
+  - 실패 실험의 조기 종료.
+  - 획득된 데이터의 희소성 또는 손상.
+- 이 두 가지 상황 모두 실패를 처벌하기 위한 적절한 보상 함수를 설계하는 것을 복잡하게 만든다.
+
+### 방법: EIC2 프레임워크와 GPCR 모델
+- 본 논문은 실패 행동을 제약 조건 위반으로 간주하고, 제약 위반 이후 데이터가 획득되지 않는 "붕괴 제약" 하의 학습 문제를 처리한다.
+- 데이터가 없는 상황을 해결하기 위해, 제약 조건을 모델링하는 새로운 GPCR(가우시안 프로세스 분류 회귀) 모델을 제안한다:
+  - 이산 사건(실패/성공)과 연속 관측(성공 시에만 획득)을 결합한다.
+  - 제약 임계값을 하이퍼파라미터로 학습한다.
+
+### 실험 설정 및 결과
+- 시뮬레이션 벤치마크와 실제 점프 사족 로봇에서 프레임워크의 유효성을 검증한다.
+- 제약 베이지안 최적화를 통해 실제 로봇에서 직접 실험 데이터를 수집하며, 제약 임계값은 사전에 알려지지 않는다.
+- 결과는 수동 튜닝보다 우수하며, GPCR은 제약 임계값 추정에서 효과적임이 입증되었다.

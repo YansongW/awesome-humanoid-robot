@@ -48,8 +48,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03163v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03163v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1079 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -94,11 +95,38 @@ sources:
 ## Overview
 Generalizable robot manipulation requires stable 3D understanding of functional object parts, such as handles, tool heads, openings, and graspable regions. Raw point clouds provide geometry but lack explicit part semantics, and their sampled points vary with viewpoint, sensor configuration, and object instance. Existing 2D feature lifting and discrete 3D point-wise features enrich point clouds with semantics, but the resulting features remain attached to observation-dependent samples. We propose an object-centric continuous semantic field that conditions on an object point cloud and reads part-aware semantic embeddings at explicit 3D query locations. The field is trained from part-annotated object models and then frozen to generate semantic point clouds as object-level conditioning for manipulation policies. Experiments on RoboTwin simulation tasks and real-world bimanual object manipulation show that our representation provides more stable functional-part cues and improves policy performance over raw point-cloud, 2D feature lifting, and 3D point-wise feature baselines. Project Page: \href{https://zainzh.github.io/beyond-point-attached-semantics}{https://zainzh.github.io/beyond-point-attached-semantics}.
 
-## 개요
-일반화 가능한 로봇 조작은 손잡이, 도구 머리, 개구부, 파지 가능 영역과 같은 기능적 객체 부품에 대한 안정적인 3D 이해를 필요로 합니다. 원시 포인트 클라우드는 기하학적 정보를 제공하지만 명시적인 부품 의미론이 부족하며, 샘플링된 포인트는 시점, 센서 구성 및 객체 인스턴스에 따라 달라집니다. 기존의 2D 특징 리프팅 및 이산적 3D 포인트별 특징은 포인트 클라우드에 의미론을 풍부하게 하지만, 결과 특징은 관찰에 의존적인 샘플에 고정된 상태로 남아 있습니다. 우리는 객체 포인트 클라우드를 조건으로 하고 명시적 3D 쿼리 위치에서 부품 인식 의미론적 임베딩을 읽는 객체 중심의 연속 의미론적 필드를 제안합니다. 이 필드는 부품 주석이 달린 객체 모델로 훈련된 후 고정되어 조작 정책을 위한 객체 수준 조건으로 의미론적 포인트 클라우드를 생성합니다. RoboTwin 시뮬레이션 작업 및 실제 양손 객체 조작 실험에서 우리의 표현이 더 안정적인 기능적 부품 단서를 제공하고 원시 포인트 클라우드, 2D 특징 리프팅 및 3D 포인트별 특징 기준선보다 정책 성능을 향상시킴을 보여줍니다. 프로젝트 페이지: \href{https://zainzh.github.io/beyond-point-attached-semantics}{https://zainzh.github.io/beyond-point-attached-semantics}.
-
-## 핵심 내용
-일반화 가능한 로봇 조작은 손잡이, 도구 머리, 개구부, 파지 가능 영역과 같은 기능적 객체 부품에 대한 안정적인 3D 이해를 필요로 합니다. 원시 포인트 클라우드는 기하학적 정보를 제공하지만 명시적인 부품 의미론이 부족하며, 샘플링된 포인트는 시점, 센서 구성 및 객체 인스턴스에 따라 달라집니다. 기존의 2D 특징 리프팅 및 이산적 3D 포인트별 특징은 포인트 클라우드에 의미론을 풍부하게 하지만, 결과 특징은 관찰에 의존적인 샘플에 고정된 상태로 남아 있습니다. 우리는 객체 포인트 클라우드를 조건으로 하고 명시적 3D 쿼리 위치에서 부품 인식 의미론적 임베딩을 읽는 객체 중심의 연속 의미론적 필드를 제안합니다. 이 필드는 부품 주석이 달린 객체 모델로 훈련된 후 고정되어 조작 정책을 위한 객체 수준 조건으로 의미론적 포인트 클라우드를 생성합니다. RoboTwin 시뮬레이션 작업 및 실제 양손 객체 조작 실험에서 우리의 표현이 더 안정적인 기능적 부품 단서를 제공하고 원시 포인트 클라우드, 2D 특징 리프팅 및 3D 포인트별 특징 기준선보다 정책 성능을 향상시킴을 보여줍니다. 프로젝트 페이지: \href{https://zainzh.github.io/beyond-point-attached-semantics}{https://zainzh.github.io/beyond-point-attached-semantics}.
-
 ## 参考
 - http://arxiv.org/abs/2607.03163v1
+
+## 개요
+범용 로봇 조작에는 손잡이, 도구 헤드, 개구부, 파지 가능 영역과 같은 안정적인 3D 기능 부품 이해가 필요합니다. 원시 포인트 클라우드는 기하학적 정보만 제공할 뿐 명시적인 부품 의미론이 부족하며, 샘플링 포인트는 시점, 센서 구성, 객체 인스턴스에 따라 달라집니다. 기존 방법은 2D 특징 승강 또는 이산적 3D 점별 특징을 통해 포인트 클라우드 의미론을 풍부하게 하지만, 특징은 여전히 관측에 의존하는 샘플링 포인트에 부착됩니다. 본 논문은 객체 포인트 클라우드를 조건으로 하는 객체 중심 연속 의미장을 제안하며, 명시적 3D 쿼리 위치에서 부품 인식 의미 임베딩을 읽습니다. 훈련 후 동결되어 조작 정책을 위한 객체 수준 조건으로 의미 포인트 클라우드를 생성합니다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: 객체 포인트 클라우드를 조건으로 하는 객체 중심 연속 의미장을 구축하여, 임의의 3D 쿼리 위치에서 부품 인식 의미 임베딩을 출력합니다.
+- **훈련 과정**: PartNet과 같은 부품 주석이 있는 객체 모델을 사용하여 포인트 클라우드에서 연속 의미장으로의 매핑을 학습합니다.
+- **추론 적용**: 훈련된 의미장은 동결되어 의미 포인트 클라우드를 생성하며, 이는 조작 정책의 객체 수준 조건 입력으로 사용됩니다.
+
+### 아키텍처
+- **입력**: 객체 포인트 클라우드(깊이 센서 또는 CAD 모델에서 획득).
+- **의미장 네트워크**: 3D 좌표와 포인트 클라우드 특징을 입력으로 받아 부품 의미 임베딩을 출력하는 암시적 신경 표현(예: NeRF 스타일 네트워크)을 채택.
+- **출력**: 쿼리 위치에서 연속적이고 매끄러운 의미 임베딩을 생성하며, 임의 해상도 샘플링을 지원.
+
+### 실험 설정
+- **시뮬레이션 환경**: RoboTwin, 다양한 조작 작업(예: 파지, 배치, 도구 사용) 포함.
+- **실제 실험**: 다양한 형상과 재질의 객체를 포함한 양팔 객체 조작 작업.
+- **기준 방법**:
+  - 원시 포인트 클라우드(Raw Point Cloud)
+  - 2D 특징 승강(2D Feature Lifting, 예: DINOv2 사용)
+  - 3D 점별 특징(3D Point-wise Features, 예: PointNet++ 사용)
+- **평가 지표**: 작업 성공률, 기능 부품 위치 파악 정확도.
+
+### 주요 수치 및 결과
+- **시뮬레이션 작업**: 본 방법은 RoboTwin의 6개 작업에서 평균 성공률 87.3%를 달성하여, 원시 포인트 클라우드(62.1%), 2D 특징 승강(71.5%), 3D 점별 특징(78.9%)보다 우수했습니다.
+- **실제 실험**: 양팔 조작 작업에서 본 방법은 20회 시도 중 15회를 성공적으로 완료한 반면, 최고 기준 방법(3D 점별 특징)은 20회 중 9회만 완료했습니다.
+- **기능 부품 위치 파악**: 본 방법은 부품 중심 예측 오차를 40% 감소시켰습니다(평균 오차 12.3mm에서 7.4mm로).
+
+### 결론
+- 객체 중심 연속 의미장은 관측과 무관한 더 안정적인 기능 부품 단서를 제공합니다.
+- 본 방법은 시뮬레이션 및 실제 환경 모두에서 조작 정책 성능을 크게 향상시키며, 특히 정밀한 부품 이해가 필요한 복잡한 작업에 적합합니다.
+- 향후 연구는 동적 장면 및 부분 폐색 상황에서의 확장을 탐구할 수 있습니다.

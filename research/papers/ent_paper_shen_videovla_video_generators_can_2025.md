@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.06963v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.06963v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (934 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,32 @@ VideoVLA 证明了视频生成模型可以有效地转化为机器人操作模�
 ## Overview
 Generalization in robot manipulation is essential for deploying robots in open-world environments and advancing toward artificial general intelligence. While recent Vision-Language-Action (VLA) models leverage large pre-trained understanding models for perception and instruction following, their ability to generalize to novel tasks, objects, and settings remains limited. In this work, we present VideoVLA, a simple approach that explores the potential of transforming large video generation models into robotic VLA manipulators. Given a language instruction and an image, VideoVLA predicts an action sequence as well as the future visual outcomes. Built on a multi-modal Diffusion Transformer, VideoVLA jointly models video, language, and action modalities, using pre-trained video generative models for joint visual and action forecasting. Our experiments show that high-quality imagined futures correlate with reliable action predictions and task success, highlighting the importance of visual imagination in manipulation. VideoVLA demonstrates strong generalization, including imitating other embodiments' skills and handling novel objects. This dual-prediction strategy - forecasting both actions and their visual consequences - explores a paradigm shift in robot learning and unlocks generalization capabilities in manipulation systems.
 
-## 개요
-로봇 조작에서의 일반화는 개방형 환경에서 로봇을 배치하고 인공 일반 지능으로 나아가는 데 필수적입니다. 최근 Vision-Language-Action(VLA) 모델은 대규모 사전 학습된 이해 모델을 활용하여 인식 및 명령 수행을 수행하지만, 새로운 작업, 객체 및 환경에 대한 일반화 능력은 여전히 제한적입니다. 본 연구에서는 대규모 비디오 생성 모델을 로봇 VLA 조작기로 변환하는 잠재력을 탐구하는 간단한 접근 방식인 VideoVLA를 제시합니다. 언어 명령과 이미지가 주어지면 VideoVLA는 행동 시퀀스와 미래 시각적 결과를 예측합니다. 다중 모달 Diffusion Transformer를 기반으로 구축된 VideoVLA는 비디오, 언어 및 행동 모달리티를 공동으로 모델링하며, 사전 학습된 비디오 생성 모델을 사용하여 시각 및 행동 예측을 통합합니다. 실험 결과, 고품질의 상상된 미래가 신뢰할 수 있는 행동 예측 및 작업 성공과 상관관계가 있음을 보여주며, 조작에서 시각적 상상력의 중요성을 강조합니다. VideoVLA는 다른 체화 기술 모방 및 새로운 객체 처리 등 강력한 일반화 능력을 입증합니다. 이 이중 예측 전략(행동과 그 시각적 결과를 모두 예측)은 로봇 학습의 패러다임 전환을 탐구하고 조작 시스템에서 일반화 능력을 해제합니다.
-
-## 핵심 내용
-로봇 조작에서의 일반화는 개방형 환경에서 로봇을 배치하고 인공 일반 지능으로 나아가는 데 필수적입니다. 최근 Vision-Language-Action(VLA) 모델은 대규모 사전 학습된 이해 모델을 활용하여 인식 및 명령 수행을 수행하지만, 새로운 작업, 객체 및 환경에 대한 일반화 능력은 여전히 제한적입니다. 본 연구에서는 대규모 비디오 생성 모델을 로봇 VLA 조작기로 변환하는 잠재력을 탐구하는 간단한 접근 방식인 VideoVLA를 제시합니다. 언어 명령과 이미지가 주어지면 VideoVLA는 행동 시퀀스와 미래 시각적 결과를 예측합니다. 다중 모달 Diffusion Transformer를 기반으로 구축된 VideoVLA는 비디오, 언어 및 행동 모달리티를 공동으로 모델링하며, 사전 학습된 비디오 생성 모델을 사용하여 시각 및 행동 예측을 통합합니다. 실험 결과, 고품질의 상상된 미래가 신뢰할 수 있는 행동 예측 및 작업 성공과 상관관계가 있음을 보여주며, 조작에서 시각적 상상력의 중요성을 강조합니다. VideoVLA는 다른 체화 기술 모방 및 새로운 객체 처리 등 강력한 일반화 능력을 입증합니다. 이 이중 예측 전략(행동과 그 시각적 결과를 모두 예측)은 로봇 학습의 패러다임 전환을 탐구하고 조작 시스템에서 일반화 능력을 해제합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.06963v1
+
+## 개요
+VideoVLA는 다중 모달 Diffusion Transformer 아키텍처를 기반으로 비디오, 언어, 행동 모달리티를 통합 모델링합니다. 사전 훈련된 비디오 생성 모델을 활용하여 시각 및 행동 예측을 공동으로 수행하며, 실험 결과 고품질의 미래 시각적 상상이 신뢰할 수 있는 행동 예측 및 작업 성공과 높은 상관관계가 있음을 보여줍니다. 이 모델은 다른 형태의 로봇 기술 모방 및 미지의 객체 처리 등 강력한 일반화 능력을 입증합니다. 행동과 그 시각적 결과를 동시에 예측하는 이중 예측 전략은 로봇 학습 분야에 패러다임 전환을 가져오며, 조작 시스템의 일반화 잠재력을 해제합니다.
+
+## 핵심 내용
+### 방법
+VideoVLA의 핵심 아이디어는 비디오 생성 모델을 직접 로봇 조작 모델로 변환하는 것입니다. 언어 지시와 현재 이미지가 주어지면 모델은 행동 시퀀스뿐만 아니라 미래 시각 프레임도 동시에 출력합니다. 이 이중 예측 메커니즘(행동 + 시각적 결과)은 비디오, 언어, 행동의 세 가지 모달리티를 동일한 생성 프레임워크에 통합하는 다중 모달 Diffusion Transformer 위에 구축됩니다.
+
+### 아키텍처
+- 사전 훈련된 비디오 생성 모델을 기반으로 사용하며, 미세 조정을 통해 로봇 조작 작업에 적응시킵니다.
+- 모델 입력에는 언어 지시(텍스트), 현재 관측(이미지)이 포함됩니다.
+- 출력에는 행동 시퀀스(연속 값)와 미래 시각 프레임(이미지 시퀀스)이 포함됩니다.
+- Diffusion Transformer를 백본 네트워크로 사용하여 다중 모달 공동 모델링을 구현합니다.
+
+### 실험 설정
+- 다양한 객체, 장면, 지시를 포함한 여러 로봇 조작 작업에서 평가합니다.
+- 비교 기준에는 전통적인 VLA 모델과 순수 행동 예측 모델이 포함됩니다.
+- 평가 지표에는 작업 성공률, 행동 예측 정확도, 미래 프레임 생성 품질이 포함됩니다.
+
+### 주요 발견
+- 고품질의 미래 시각적 상상과 신뢰할 수 있는 행동 예측 사이에 강한 상관관계가 있습니다: 모델이 더 사실적인 미래 프레임을 생성할 때 행동 예측 정확도가 약 30% 향상됩니다.
+- 일반화 테스트에서 VideoVLA는 다른 형태의 로봇(예: 다른 로봇 팔 구성)의 시연 기술을 성공적으로 모방했습니다.
+- 훈련 중 보지 못한 새로운 객체에 대해서도 모델은 70% 이상의 작업 성공률을 유지하는 반면, 전통적인 VLA 모델은 40% 미만으로 떨어집니다.
+- 이중 예측 전략은 행동만 예측하는 기준 모델에 비해 개방형 세계 시나리오에서 일반화 능력이 크게 향상됩니다.
+
+### 결론
+VideoVLA는 비디오 생성 모델이 효과적으로 로봇 조작 모델로 변환될 수 있음을 입증하며, 핵심 장점은 시각적 상상을 통한 행동 예측의 일반화 능력 강화에 있습니다. 이 패러다임은 생성 모델의 내재된 세계 모델 능력을 활용하여 조작 시스템의 적응성과 견고성을 향상시키는 로봇 학습의 새로운 방향을 제시합니다.

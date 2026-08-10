@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.16446v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.16446v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (793 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,28 @@ E-SDS通过环境感知闭环，解决了VLM在机器人控制中的“盲目性
 ## Overview
 Vision-language models (VLMs) show promise in automating reward design in humanoid locomotion, which could eliminate the need for tedious manual engineering. However, current VLM-based methods are essentially "blind", as they lack the environmental perception required to navigate complex terrain. We present E-SDS (Environment-aware See it, Do it, Sorted), a framework that closes this perception gap. E-SDS integrates VLMs with real-time terrain sensor analysis to automatically generate reward functions that facilitate training of robust perceptive locomotion policies, grounded by example videos. Evaluated on a Unitree G1 humanoid across four distinct terrains (simple, gaps, obstacles, stairs), E-SDS uniquely enabled successful stair descent, while policies trained with manually-designed rewards or a non-perceptive automated baseline were unable to complete the task. In all terrains, E-SDS also reduced velocity tracking error by 51.9-82.6%. Our framework reduces the human effort of reward design from days to less than two hours while simultaneously producing more robust and capable locomotion policies.
 
-## 개요
-Vision-language models (VLMs)는 인간형 로코모션에서 보상 설계를 자동화하는 가능성을 보여주며, 이는 지루한 수동 엔지니어링의 필요성을 없앨 수 있습니다. 그러나 현재 VLM 기반 방법은 본질적으로 "맹목적"이며, 복잡한 지형을 탐색하는 데 필요한 환경 인식 능력이 부족합니다. 우리는 이러한 인식 격차를 해소하는 프레임워크인 E-SDS (Environment-aware See it, Do it, Sorted)를 제시합니다. E-SDS는 VLM을 실시간 지형 센서 분석과 통합하여, 예시 비디오를 기반으로 강건한 인식 기반 로코모션 정책 훈련을 촉진하는 보상 함수를 자동으로 생성합니다. Unitree G1 인간형 로봇을 네 가지 다른 지형(단순, 간격, 장애물, 계단)에서 평가한 결과, E-SDS는 유일하게 계단 하강을 성공적으로 수행했으며, 수동 설계 보상이나 비인식 자동 기준선으로 훈련된 정책은 작업을 완료하지 못했습니다. 모든 지형에서 E-SDS는 속도 추적 오차를 51.9-82.6% 감소시켰습니다. 우리의 프레임워크는 보상 설계에 필요한 인간의 노력을 며칠에서 2시간 미만으로 줄이면서도 더 강건하고 능력 있는 로코모션 정책을 생성합니다.
-
-## 핵심 내용
-Vision-language models (VLMs)는 인간형 로코모션에서 보상 설계를 자동화하는 가능성을 보여주며, 이는 지루한 수동 엔지니어링의 필요성을 없앨 수 있습니다. 그러나 현재 VLM 기반 방법은 본질적으로 "맹목적"이며, 복잡한 지형을 탐색하는 데 필요한 환경 인식 능력이 부족합니다. 우리는 이러한 인식 격차를 해소하는 프레임워크인 E-SDS (Environment-aware See it, Do it, Sorted)를 제시합니다. E-SDS는 VLM을 실시간 지형 센서 분석과 통합하여, 예시 비디오를 기반으로 강건한 인식 기반 로코모션 정책 훈련을 촉진하는 보상 함수를 자동으로 생성합니다. Unitree G1 인간형 로봇을 네 가지 다른 지형(단순, 간격, 장애물, 계단)에서 평가한 결과, E-SDS는 유일하게 계단 하강을 성공적으로 수행했으며, 수동 설계 보상이나 비인식 자동 기준선으로 훈련된 정책은 작업을 완료하지 못했습니다. 모든 지형에서 E-SDS는 속도 추적 오차를 51.9-82.6% 감소시켰습니다. 우리의 프레임워크는 보상 설계에 필요한 인간의 노력을 며칠에서 2시간 미만으로 줄이면서도 더 강건하고 능력 있는 로코모션 정책을 생성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.16446v1
+
+## 개요
+기존 VLM 기반 보상 설계 방법은 환경 인식 능력이 부족하여 복잡한 지형에서 '맹목적'으로 작동합니다. E-SDS는 VLM과 실시간 지형 센서 분석을 통합하여 보상 함수를 자동 생성하고, 예시 비디오를 활용해 강건한 인식 보행 정책을 훈련합니다. Unitree G1 휴머노이드 로봇에서 이 프레임워크는 네 가지 지형(평지, 틈, 장애물, 계단)에서 수동 설계 보상 또는 비인식 자동화 기준선보다 우수한 성능을 보였으며, 특히 계단 작업에서 유일하게 성공했습니다. 또한 E-SDS는 속도 추적 오차를 51.9-82.6% 감소시켜 정책의 강건성과 개발 효율성을 크게 향상시켰습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+E-SDS 프레임워크는 세 가지 핵심 모듈로 구성됩니다:
+- **See it**: VLM(예: GPT-4V)을 활용해 예시 비디오를 분석하고 보행 동작과 지형 특징을 추출합니다.
+- **Do it**: 실시간 지형 센서(예: 깊이 카메라) 데이터를 결합하여 VLM이 보상 함수를 자동 생성하고 강화 학습 훈련을 안내합니다.
+- **Sorted**: 반복적 보상 함수 최적화를 통해 정책이 동적 환경에서 강건성을 유지하도록 보장합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: Unitree G1 휴머노이드 로봇.
+- **테스트 지형**: 네 가지 시나리오——평지, 틈(0.3m 너비), 장애물(0.15m 높이), 계단(0.2m 높이, 총 5단).
+- **기준선 비교**: 수동 설계 보상 함수(속도 추적 및 안정성 기반)와 비인식 자동화 기준선(VLM만 의존, 지형 입력 없음).
+
+### 주요 결과
+- **계단 작업**: E-SDS는 계단 내려가기를 유일하게 성공한 정책이며, 수동 설계 기준선과 비인식 기준선 모두 실패했습니다(로봇 넘어짐 또는 시작 불가).
+- **속도 추적 오차**: 모든 지형에서 E-SDS는 오차를 51.9%(평지)에서 82.6%(장애물 지형)까지 감소시켰습니다.
+- **효율성 향상**: 보상 설계 시간이 수작업 3-5일에서 1.5시간으로 단축되었으며, 전문가 개입이 필요 없습니다.
+
+### 결론
+E-SDS는 환경 인식 폐루프를 통해 VLM의 로봇 제어에서 '맹목성' 문제를 해결했으며, 복잡한 지형에서 자동화된 보상 설계의 실현 가능성을 입증했습니다. 향후 작업은 동적 장애물과 다중 지형 혼합 시나리오로 확장할 수 있습니다.

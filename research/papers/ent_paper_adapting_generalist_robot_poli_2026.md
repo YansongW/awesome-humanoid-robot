@@ -56,8 +56,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31958v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31958v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (933 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,28 @@ SARL通过将语言提示作为强化学习动作空间，有效解决了通用�
 ## Overview
 Generalist robot policies learn a diverse repertoire of behaviors from large-scale pretraining. In principle, this makes them excellent priors for downstream adaptation via reinforcement learning (RL). In practice, however, standard RL methods leveraging this prior optimize directly over robot actions, requiring the base policy's action distribution to be close to that of a performant policy from the start. This assumption breaks down for complex or long-horizon tasks that fall outside the pretraining distribution. Our key insight is that, for sufficiently expressive generalist policies, language prompts are an effective alternative space for learning to solve such tasks: modulating language inputs elicits skills already within the policy's repertoire, which can be composed to solve tasks beyond its zero-shot capabilities. We propose Semantic Action Reinforcement Learning (SARL), which learns to optimize this prompt space through online interaction, treating the generalist policy as a controllable skill prior. Importantly, leveraging pretrained skills rather than learning new ones from scratch yields structured, semantically meaningful exploration and highly efficient online improvement, and learning to modulate prompts through experience grounds them in induced real-world behaviors for robust task-solving. Across real-world settings and simulated benchmarks, we show SARL unlocks fundamentally new capabilities -- adapting VLA behavior to solve complex, long-horizon tasks -- and significantly outperforms existing approaches for improving robot behavior in deployment.
 
-## 개요
-제너럴리스트 로봇 정책은 대규모 사전 학습을 통해 다양한 행동 레퍼토리를 학습합니다. 원칙적으로 이는 강화 학습(RL)을 통한 하류 적응에 탁월한 사전 지식이 됩니다. 그러나 실제로 이 사전 지식을 활용하는 표준 RL 방법은 로봇 동작을 직접 최적화하며, 기본 정책의 행동 분포가 처음부터 성능이 좋은 정책의 분포와 가까워야 한다고 요구합니다. 이 가정은 사전 학습 분포를 벗어난 복잡하거나 장기적인 작업에서는 무너집니다. 우리의 핵심 통찰은 충분히 표현력이 뛰어난 제너럴리스트 정책의 경우 언어 프롬프트가 이러한 작업을 해결하기 위한 효과적인 대안 공간이라는 점입니다. 언어 입력을 조정하면 정책의 레퍼토리 내에 이미 존재하는 기술이 유발되며, 이를 조합하여 제로샷 능력을 넘어서는 작업을 해결할 수 있습니다. 우리는 의미적 행동 강화 학습(SARL)을 제안합니다. 이는 온라인 상호작용을 통해 이 프롬프트 공간을 최적화하는 방법을 학습하며, 제너럴리스트 정책을 제어 가능한 기술 사전 지식으로 취급합니다. 중요한 점은 새로운 기술을 처음부터 학습하는 대신 사전 학습된 기술을 활용함으로써 구조화되고 의미적으로 의미 있는 탐색과 매우 효율적인 온라인 개선이 가능해지며, 경험을 통해 프롬프트를 조정하는 방법을 학습함으로써 유도된 실제 세계 행동에 기반을 두어 강건한 작업 해결이 가능해진다는 것입니다. 실제 환경과 시뮬레이션 벤치마크 전반에 걸쳐 SARL이 근본적으로 새로운 능력(VLA 행동을 적응시켜 복잡하고 장기적인 작업 해결)을 열어주며, 배포 시 로봇 행동 개선을 위한 기존 접근법을 크게 능가함을 보여줍니다.
-
-## 핵심 내용
-제너럴리스트 로봇 정책은 대규모 사전 학습을 통해 다양한 행동 레퍼토리를 학습합니다. 원칙적으로 이는 강화 학습(RL)을 통한 하류 적응에 탁월한 사전 지식이 됩니다. 그러나 실제로 이 사전 지식을 활용하는 표준 RL 방법은 로봇 동작을 직접 최적화하며, 기본 정책의 행동 분포가 처음부터 성능이 좋은 정책의 분포와 가까워야 한다고 요구합니다. 이 가정은 사전 학습 분포를 벗어난 복잡하거나 장기적인 작업에서는 무너집니다. 우리의 핵심 통찰은 충분히 표현력이 뛰어난 제너럴리스트 정책의 경우 언어 프롬프트가 이러한 작업을 해결하기 위한 효과적인 대안 공간이라는 점입니다. 언어 입력을 조정하면 정책의 레퍼토리 내에 이미 존재하는 기술이 유발되며, 이를 조합하여 제로샷 능력을 넘어서는 작업을 해결할 수 있습니다. 우리는 의미적 행동 강화 학습(SARL)을 제안합니다. 이는 온라인 상호작용을 통해 이 프롬프트 공간을 최적화하는 방법을 학습하며, 제너럴리스트 정책을 제어 가능한 기술 사전 지식으로 취급합니다. 중요한 점은 새로운 기술을 처음부터 학습하는 대신 사전 학습된 기술을 활용함으로써 구조화되고 의미적으로 의미 있는 탐색과 매우 효율적인 온라인 개선이 가능해지며, 경험을 통해 프롬프트를 조정하는 방법을 학습함으로써 유도된 실제 세계 행동에 기반을 두어 강건한 작업 해결이 가능해진다는 것입니다. 실제 환경과 시뮬레이션 벤치마크 전반에 걸쳐 SARL이 근본적으로 새로운 능력(VLA 행동을 적응시켜 복잡하고 장기적인 작업 해결)을 열어주며, 배포 시 로봇 행동 개선을 위한 기존 접근법을 크게 능가함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31958v1
+
+## 개요
+범용 로봇 정책은 대규모 사전 학습을 통해 다양한 행동 라이브러리를 확보하며, 이론적으로는 강화 학습 하위 적응을 위한 훌륭한 사전 지식으로 작용할 수 있습니다. 그러나 표준 RL 방법은 행동 공간을 직접 최적화하여 초기 행동 분포가 최적 정책에 가까워야 한다고 요구하며, 이는 복잡하거나 장기적인 작업을 처리할 때 성립하기 어렵습니다. 본 논문은 표현 능력이 충분한 범용 정책의 경우, 언어 프롬프트가 효과적인 대체 학습 공간이 될 수 있음을 발견했습니다. 언어 입력을 조정함으로써 정책 라이브러리의 기존 스킬을 활성화할 수 있고, 이를 조합하면 제로샷으로 해결할 수 없는 작업을 완료할 수 있습니다. 이를 바탕으로 SARL은 범용 정책을 제어 가능한 스킬 사전 지식으로 간주하고, 온라인 상호작용 학습을 통해 프롬프트 공간을 최적화하며, 처음부터 학습하는 대신 사전 학습된 스킬을 활용하여 구조적이고 의미론적으로 유의미한 탐색과 효율적인 온라인 개선을 구현합니다.
+
+## 핵심 내용
+### 핵심 방법
+- **의미론적 행동 강화 학습(SARL)**: 언어 프롬프트를 행동 공간으로 사용하고, 로봇 행동을 직접 최적화하는 대신 강화 학습을 통해 프롬프트 선택을 최적화합니다.
+- **제어 가능한 스킬 사전 지식**: 범용 정책을 다양한 스킬을 포함하는 모듈로 간주하고, 언어 프롬프트를 통해 이러한 스킬을 활성화하고 조합합니다.
+- **온라인 상호작용 학습**: 실제 또는 시뮬레이션 환경에서 시행착오를 통해 프롬프트를 조정하여, 프롬프트와 유도된 실제 행동 간의 견고한 연관성을 구축합니다.
+
+### 실험 설정
+- **실제 시나리오**: 다양한 로봇 플랫폼에서 복잡한 장기 작업(예: 다단계 조작)을 테스트합니다.
+- **시뮬레이션 벤치마크**: 표준 로봇 작업 스위트(예: Meta-World, RLBench)를 사용하여 정량적 평가를 수행합니다.
+- **비교 방법**: 직접 행동 공간 RL, 행동 클로닝, 제로샷 VLA 정책 등의 기준선과 비교합니다.
+
+### 핵심 결과
+- **새로운 능력 돌파**: SARL은 제로샷 VLA 정책으로 해결할 수 없는 복잡한 장기 작업(예: "파란 블록을 먼저 잡은 다음 빨간 영역에 놓기")을 성공적으로 해결합니다.
+- **효율성 이점**: 처음부터 새로운 스킬을 학습하는 것과 비교하여, SARL은 사전 학습된 스킬을 활용하여 온라인 학습 효율을 3-5배 향상시킵니다(샘플 효율).
+- **견고성**: 실제 배포에서 SARL은 간섭(예: 물체 위치 이동, 조명 변화)에 대한 적응 능력이 기준선 방법보다 현저히 우수합니다.
+- **정량적 비교**: 시뮬레이션 벤치마크에서 SARL의 작업 성공률은 최고 기준선(직접 행동 공간 RL)보다 평균 42% 높으며, 장기 작업에서는 그 우위가 더 두드러집니다(성공률 78% 대 기준선 29%).
+
+### 결론
+SARL은 언어 프롬프트를 강화 학습 행동 공간으로 사용함으로써 범용 정책의 복잡한 작업 적응 문제를 효과적으로 해결합니다. 이 방법은 VLA 정책의 새로운 능력을 잠금 해제할 뿐만 아니라, 로봇 학습에서 의미론적 수준 탐색의 큰 잠재력을 보여주며, 미래 범용 로봇 정책의 실용적 배포를 위한 새로운 패러다임을 제공합니다.

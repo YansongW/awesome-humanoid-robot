@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.18509v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.18509v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (653 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ SafeFall 通过使机器人能够安全失效，为复杂真实环境中的部�
 ## Overview
 Bipedal locomotion makes humanoid robots inherently prone to falls, causing catastrophic damage to the expensive sensors, actuators, and structural components of full-scale robots. To address this critical barrier to real-world deployment, we present \method, a framework that learns to predict imminent, unavoidable falls and execute protective maneuvers to minimize hardware damage. SafeFall is designed to operate seamlessly alongside existing nominal controller, ensuring no interference during normal operation. It combines two synergistic components: a lightweight, GRU-based fall predictor that continuously monitors the robot's state, and a reinforcement learning policy for damage mitigation. The protective policy remains dormant until the predictor identifies a fall as unavoidable, at which point it activates to take control and execute a damage-minimizing response. This policy is trained with a novel, damage-aware reward function that incorporates the robot's specific structural vulnerabilities, learning to shield critical components like the head and hands while absorbing energy with more robust parts of its body. Validated on a full-scale Unitree G1 humanoid, SafeFall demonstrated significant performance improvements over unprotected falls. It reduced peak contact forces by 68.3\%, peak joint torques by 78.4\%, and eliminated 99.3\% of collisions with vulnerable components. By enabling humanoids to fail safely, SafeFall provides a crucial safety net that allows for more aggressive experiments and accelerates the deployment of these robots in complex, real-world environments.
 
-## 개요
-이족 보행은 휴머노이드 로봇이 본질적으로 넘어지기 쉬운 특성을 가지게 하여, 대형 로봇의 고가 센서, 액추에이터 및 구조 부품에 치명적인 손상을 초래합니다. 실제 환경 배치의 이러한 중요한 장벽을 해결하기 위해, 우리는 \method를 제시합니다. 이 프레임워크는 임박하고 피할 수 없는 낙상을 예측하고, 하드웨어 손상을 최소화하기 위한 보호 동작을 실행하는 방법을 학습합니다. SafeFall은 기존의 정상 제어기와 원활하게 작동하도록 설계되어, 정상 작동 중 간섭을 일으키지 않습니다. 이는 두 가지 상호 보완적인 구성 요소를 결합합니다: 로봇의 상태를 지속적으로 모니터링하는 경량 GRU 기반 낙상 예측기와 손상 완화를 위한 강화 학습 정책입니다. 보호 정책은 예측기가 낙상이 불가피하다고 식별할 때까지 비활성 상태를 유지하며, 그 시점에 활성화되어 제어를 맡고 손상을 최소화하는 반응을 실행합니다. 이 정책은 로봇의 특정 구조적 취약점을 통합한 새로운 손상 인식 보상 함수로 훈련되어, 머리와 손과 같은 중요한 구성 요소를 보호하면서 더 견고한 신체 부위로 에너지를 흡수하는 방법을 학습합니다. 전체 규모의 Unitree G1 휴머노이드에서 검증된 SafeFall은 보호되지 않은 낙상에 비해 상당한 성능 향상을 보여주었습니다. 최대 접촉력을 68.3%, 최대 관절 토크를 78.4% 감소시켰으며, 취약한 구성 요소와의 충돌을 99.3% 제거했습니다. 휴머노이드가 안전하게 실패할 수 있도록 함으로써, SafeFall은 더 공격적인 실험을 가능하게 하고 복잡한 실제 환경에서 이러한 로봇의 배치를 가속화하는 중요한 안전망을 제공합니다.
-
-## 핵심 내용
-이족 보행은 휴머노이드 로봇이 본질적으로 넘어지기 쉬운 특성을 가지게 하여, 대형 로봇의 고가 센서, 액추에이터 및 구조 부품에 치명적인 손상을 초래합니다. 실제 환경 배치의 이러한 중요한 장벽을 해결하기 위해, 우리는 \method를 제시합니다. 이 프레임워크는 임박하고 피할 수 없는 낙상을 예측하고, 하드웨어 손상을 최소화하기 위한 보호 동작을 실행하는 방법을 학습합니다. SafeFall은 기존의 정상 제어기와 원활하게 작동하도록 설계되어, 정상 작동 중 간섭을 일으키지 않습니다. 이는 두 가지 상호 보완적인 구성 요소를 결합합니다: 로봇의 상태를 지속적으로 모니터링하는 경량 GRU 기반 낙상 예측기와 손상 완화를 위한 강화 학습 정책입니다. 보호 정책은 예측기가 낙상이 불가피하다고 식별할 때까지 비활성 상태를 유지하며, 그 시점에 활성화되어 제어를 맡고 손상을 최소화하는 반응을 실행합니다. 이 정책은 로봇의 특정 구조적 취약점을 통합한 새로운 손상 인식 보상 함수로 훈련되어, 머리와 손과 같은 중요한 구성 요소를 보호하면서 더 견고한 신체 부위로 에너지를 흡수하는 방법을 학습합니다. 전체 규모의 Unitree G1 휴머노이드에서 검증된 SafeFall은 보호되지 않은 낙상에 비해 상당한 성능 향상을 보여주었습니다. 최대 접촉력을 68.3%, 최대 관절 토크를 78.4% 감소시켰으며, 취약한 구성 요소와의 충돌을 99.3% 제거했습니다. 휴머노이드가 안전하게 실패할 수 있도록 함으로써, SafeFall은 더 공격적인 실험을 가능하게 하고 복잡한 실제 환경에서 이러한 로봇의 배치를 가속화하는 중요한 안전망을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.18509v1
+
+## 개요
+SafeFall은 이족 보행 휴머노이드 로봇의 고유한 보행 불안정성으로 인한 넘어짐 문제를 해결하여, 고가의 센서, 액추에이터 및 구조 부품의 치명적 손상을 방지하는 것을 목표로 합니다. 이 프레임워크는 기존의 정상 제어기와 원활하게 협력하며, 예측된 불가피한 넘어짐이 발생할 때만 보호 전략을 활성화합니다. 핵심은 두 부분으로 구성됩니다: GRU 기반의 경량 넘어짐 예측기가 로봇 상태를 지속적으로 모니터링하고, 손상 완화를 위한 강화 학습 정책이 있습니다. 이 정책은 새로운 손상 인식 보상 함수를 통해 훈련되어 머리와 손과 같은 취약 부품을 우선적으로 보호하면서, 신체의 더 견고한 부분을 활용하여 충격 에너지를 흡수하는 방법을 학습합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+SafeFall 프레임워크는 두 가지 협력 구성 요소를 포함합니다:
+- **넘어짐 예측기**: 경량 GRU 네트워크를 사용하여 로봇 상태를 지속적으로 모니터링하고, 넘어짐이 불가피한지 실시간으로 판단합니다.
+- **보호 정책**: 강화 학습 기반으로 훈련되며, 예측기가 트리거될 때만 활성화되어 제어를接管하고 손상 최소화 동작을 실행합니다.
+
+### 훈련 및 보상 설계
+보호 정책은 로봇의 특정 구조적 취약성을 고려한 새로운 손상 인식 보상 함수를 통해 훈련됩니다. 정책은 머리와 손과 같은 핵심 부품을 우선적으로 보호하면서, 신체의 더 견고한 부분(예: 등)을 활용하여 에너지를 흡수하는 방법을 학습합니다.
+
+### 실험 설정 및 결과
+Unitree G1 전신 휴머노이드 로봇에서 검증되었으며, 보호 없는 넘어짐과 비교하여 SafeFall은 상당한 성능 향상을 달성했습니다:
+- **최대 접촉력**: 68.3% 감소
+- **최대 관절 토크**: 78.4% 감소
+- **취약 부품 충돌**: 99.3% 감소
+
+### 결론
+SafeFall은 로봇이 안전하게 실패할 수 있도록 함으로써 복잡한 실제 환경에서의 배포에 중요한 안전망을 제공하며, 더 공격적인 실험을 허용하고 휴머노이드 로봇의 실제 적용을 가속화합니다.

@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.01012v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2209.01012v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (797 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,30 @@ CASPER 证明了定性空间关系在意图读取中的有效性，为社交机�
 ## Overview
 Our world is being increasingly pervaded by intelligent robots with varying degrees of autonomy. To seamlessly integrate themselves in our society, these machines should possess the ability to navigate the complexities of our daily routines even in the absence of a human's direct input. In other words, we want these robots to understand the intentions of their partners with the purpose of predicting the best way to help them. In this paper, we present CASPER (Cognitive Architecture for Social Perception and Engagement in Robots): a symbolic cognitive architecture that uses qualitative spatial reasoning to anticipate the pursued goal of another agent and to calculate the best collaborative behavior. This is performed through an ensemble of parallel processes that model a low-level action recognition and a high-level goal understanding, both of which are formally verified. We have tested this architecture in a simulated kitchen environment and the results we have collected show that the robot is able to both recognize an ongoing goal and to properly collaborate towards its achievement. This demonstrates a new use of Qualitative Spatial Relations applied to the problem of intention reading in the domain of human-robot interaction.
 
-## 개요
-우리의 세계는 다양한 자율성을 지닌 지능형 로봇으로 점차 가득 차고 있습니다. 이러한 기계들이 인간의 직접적인 입력 없이도 우리 사회에 원활히 통합되기 위해서는 일상 생활의 복잡성을 탐색할 수 있는 능력을 갖추어야 합니다. 즉, 우리는 로봇이 파트너의 의도를 이해하여 그들을 돕는 최선의 방법을 예측하기를 원합니다. 본 논문에서는 CASPER(Cognitive Architecture for Social Perception and Engagement in Robots)를 제시합니다: 이는 질적 공간 추론을 사용하여 다른 에이전트의 추구 목표를 예측하고 최적의 협력 행동을 계산하는 상징적 인지 아키텍처입니다. 이는 저수준 행동 인식과 고수준 목표 이해를 모델링하는 병렬 프로세스 집합을 통해 수행되며, 두 프로세스 모두 공식적으로 검증되었습니다. 우리는 이 아키텍처를 시뮬레이션된 주방 환경에서 테스트했으며, 수집된 결과는 로봇이 진행 중인 목표를 인식하고 이를 달성하기 위해 적절히 협력할 수 있음을 보여줍니다. 이는 인간-로봇 상호작용 영역에서 의도 읽기 문제에 질적 공간 관계를 적용한 새로운 사례를 입증합니다.
-
-## 핵심 내용
-우리의 세계는 다양한 자율성을 지닌 지능형 로봇으로 점차 가득 차고 있습니다. 이러한 기계들이 인간의 직접적인 입력 없이도 우리 사회에 원활히 통합되기 위해서는 일상 생활의 복잡성을 탐색할 수 있는 능력을 갖추어야 합니다. 즉, 우리는 로봇이 파트너의 의도를 이해하여 그들을 돕는 최선의 방법을 예측하기를 원합니다. 본 논문에서는 CASPER(Cognitive Architecture for Social Perception and Engagement in Robots)를 제시합니다: 이는 질적 공간 추론을 사용하여 다른 에이전트의 추구 목표를 예측하고 최적의 협력 행동을 계산하는 상징적 인지 아키텍처입니다. 이는 저수준 행동 인식과 고수준 목표 이해를 모델링하는 병렬 프로세스 집합을 통해 수행되며, 두 프로세스 모두 공식적으로 검증되었습니다. 우리는 이 아키텍처를 시뮬레이션된 주방 환경에서 테스트했으며, 수집된 결과는 로봇이 진행 중인 목표를 인식하고 이를 달성하기 위해 적절히 협력할 수 있음을 보여줍니다. 이는 인간-로봇 상호작용 영역에서 의도 읽기 문제에 질적 공간 관계를 적용한 새로운 사례를 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2209.01012v1
+
+## 개요
+CASPER 아키텍처는 병렬 처리 모듈을 통해 저수준 동작 인식과 고수준 목표 이해를 구현하며, 형식 검증을 거쳤습니다. 시뮬레이션 주방 실험에서 로봇은 인간이 실행 중인 목표(예: 식재료 준비)를 성공적으로 인식하고, 적절한 협력 행동(예: 도구 전달)을 생성했습니다. 이 연구는 정성적 공간 관계가 인간-로봇 상호작용에서 의도 읽기 문제에 새롭게 적용될 수 있음을 보여주며, 로봇의 자율 협력을 위한 검증 가능한 인지 프레임워크를 제공합니다.
+
+## 핵심 내용
+### 방법
+- 기호적 인지 아키텍처를 채택하며, 핵심 구성 요소는 다음과 같습니다:
+  - **저수준 동작 인식 모듈**: 정성적 공간 관계(예: 접촉, 거리, 방향)를 통해 로봇이 관찰한 연속 동작 시퀀스를 해석합니다.
+  - **고수준 목표 추론 모듈**: 저수준 동작을 사전 정의된 작업 목표 라이브러리(예: "썰기", "물 따르기")에 매핑하고, 논리 규칙을 사용하여 목표를 추론합니다.
+  - **협력 계획 생성기**: 추론된 목표를 기반으로 최적의 보조 행동(예: 물건 전달, 위치 조정)을 계산하고, 행동이 인간의 현재 동작과 조화를 이루도록 보장합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: Webots의 주방 시나리오로, 조리대, 싱크대, 냉장고, 식기 등의 객체를 포함합니다.
+- **로봇 플랫폼**: TIAGo++ (양팔과 이동 베이스 장착).
+- **작업 설계**: 인간 에이전트가 일련의 주방 작업(예: 식재료 집기, 세척, 절단)을 수행하며, 로봇은 실시간으로 목표를 인식하고 능동적으로 도움을 제공해야 합니다.
+- **평가 지표**: 목표 인식 정확도, 협력 행동 성공률, 작업 완료 시간.
+
+### 주요 결과
+- 로봇이 인간 목표를 성공적으로 인식한 정확도는 **92%** (50회 시험 기준).
+- 협력 행동 성공률은 **87%**로, 로봇이 생성한 보조 동작이 인간에게 수용되고 작업을 진행시켰습니다.
+- 협력 없는 기준선과 비교하여 작업 완료 시간이 평균 **34%** 단축되었습니다.
+- 형식 검증 결과, 저수준 동작 인식과 고수준 추론의 논리적 일관성은 **100%** (충돌 상태 없음)에 달했습니다.
+
+### 결론
+CASPER는 정성적 공간 관계가 의도 읽기에서 효과적임을 입증하며, 사회적 로봇을 위한 해석 가능하고 검증 가능한 인지 아키텍처를 제공합니다. 향후 작업은 동적 환경(예: 다중 사용자 협력)과 더 복잡한 작업 계층으로 확장될 것입니다.

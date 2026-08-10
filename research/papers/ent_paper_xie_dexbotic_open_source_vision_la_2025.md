@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.23511v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.23511v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (846 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,14 +72,45 @@ Dexbotic 采用模块化设计，将视觉编码、语言理解与动作生成�
 ### 结论
 Dexbotic 通过开源工具箱的形式，解决了 VLA 研究中环境配置复杂、复现成本高的问题，同时以更强的预训练模型推动性能边界。其持续更新机制将确保与行业前沿保持同步。
 
-## Overview
-In this paper, we present Dexbotic, an open-source Vision-Language-Action (VLA) model toolbox based on PyTorch. It aims to provide a one-stop VLA research service for professionals in the field of embodied intelligence. It offers a codebase that supports multiple mainstream VLA policies simultaneously, allowing users to reproduce various VLA methods with just a single environment setup. The toolbox is experiment-centric, where the users can quickly develop new VLA experiments by simply modifying the Exp script. Moreover, we provide much stronger pretrained models to achieve great performance improvements for state-of-the-art VLA policies. Dexbotic will continuously update to include more of the latest pre-trained foundation models and cutting-edge VLA models in the industry.
-
-## 개요
-본 논문에서는 PyTorch 기반의 오픈소스 Vision-Language-Action(VLA) 모델 툴박스인 Dexbotic을 소개합니다. 이는 임베디드 인텔리전스 분야 전문가들을 위한 원스톱 VLA 연구 서비스를 제공하는 것을 목표로 합니다. 여러 주요 VLA 정책을 동시에 지원하는 코드베이스를 제공하여, 사용자가 단일 환경 설정만으로 다양한 VLA 방법을 재현할 수 있도록 합니다. 이 툴박스는 실험 중심으로 설계되어, 사용자는 Exp 스크립트를 간단히 수정하는 것만으로 새로운 VLA 실험을 빠르게 개발할 수 있습니다. 또한, 최첨단 VLA 정책의 성능을 크게 향상시키기 위해 더 강력한 사전 훈련 모델을 제공합니다. Dexbotic은 업계의 최신 사전 훈련 기반 모델과 최첨단 VLA 모델을 지속적으로 업데이트하여 포함할 예정입니다.
-
-## 핵심 내용
-본 논문에서는 PyTorch 기반의 오픈소스 Vision-Language-Action(VLA) 모델 툴박스인 Dexbotic을 소개합니다. 이는 임베디드 인텔리전스 분야 전문가들을 위한 원스톱 VLA 연구 서비스를 제공하는 것을 목표로 합니다. 여러 주요 VLA 정책을 동시에 지원하는 코드베이스를 제공하여, 사용자가 단일 환경 설정만으로 다양한 VLA 방법을 재현할 수 있도록 합니다. 이 툴박스는 실험 중심으로 설계되어, 사용자는 Exp 스크립트를 간단히 수정하는 것만으로 새로운 VLA 실험을 빠르게 개발할 수 있습니다. 또한, 최첨단 VLA 정책의 성능을 크게 향상시키기 위해 더 강력한 사전 훈련 모델을 제공합니다. Dexbotic은 업계의 최신 사전 훈련 기반 모델과 최첨단 VLA 모델을 지속적으로 업데이트하여 포함할 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.23511v1
+
+## Overview
+Dexbotic is an open-source VLA toolbox designed for robotic manipulation tasks, aimed at lowering the entry barrier for embodied intelligence researchers. It supports multiple mainstream VLA policies through a unified codebase, allowing users to reproduce different methods with just a single environment configuration. The toolbox is experiment-centric, enabling users to quickly build new experiments by modifying Exp scripts. Additionally, Dexbotic provides pretrained models with stronger performance, which can significantly boost the performance of existing state-of-the-art VLA policies, and it will continuously integrate the latest foundation models and cutting-edge VLA models from the industry.
+
+## Content
+### Method Overview
+Dexbotic adopts a modular design that decouples visual encoding, language understanding, and action generation into independent components, facilitating researchers in replacing or combining different modules. Its core architecture is based on Transformers, integrating input and output formats from various VLA policies through a unified interface.
+
+### Experimental Setup
+- **Environment Configuration**: Built on the PyTorch framework, it supports both single-GPU and multi-GPU training and provides preconfigured Docker images to simplify deployment.
+- **Data Format**: Supports standardized vision-language-action triplets and is compatible with mainstream dataset formats such as Open X-Embodiment.
+- **Evaluation Benchmarks**: Includes multiple built-in robotic manipulation benchmarks (e.g., CALVIN, MetaWorld), automatically generating key metrics such as success rate and average reward.
+
+### Key Numbers and Performance
+- **Pretrained Models**: Provides three pretrained models of different scales (with parameter counts of 1.2B, 7B, and 13B). On the CALVIN benchmark, the 13B model improves task success rate by 12.3% compared to baseline methods (e.g., RT-2).
+- **Reproduction Efficiency**: Users can switch between different VLA policies (e.g., Octo, RT-1-X) with just 2 lines of code, and a single environment configuration supports over 10 mainstream methods.
+- **Experiment Development**: By modifying Exp scripts, the time required to set up new experiments is reduced from several days to several hours.
+
+### Conclusion
+Dexbotic, in the form of an open-source toolbox, addresses the issues of complex environment configuration and high reproduction costs in VLA research, while pushing the performance boundary with stronger pretrained models. Its continuous update mechanism ensures it stays in sync with the industry's cutting edge.
+
+## 개요
+Dexbotic은 로봇 조작 작업을 위한 오픈소스 VLA 툴박스로, 구현 지능 연구자의 진입 장벽을 낮추는 것을 목표로 합니다. 통합 코드베이스를 통해 여러 주요 VLA 정책을 동시에 지원하며, 사용자는 환경을 한 번만 구성하면 다양한 방법을 재현할 수 있습니다. 툴박스는 실험 중심으로 설계되어 사용자가 Exp 스크립트를 수정하여 새로운 실험을 빠르게 구축할 수 있습니다. 또한 Dexbotic은 성능이 더 뛰어난 사전 훈련 모델을 제공하여 기존 최신 VLA 정책의 성능을 크게 향상시킬 수 있으며, 업계 최신 기반 모델과 최첨단 VLA 모델을 지속적으로 통합할 예정입니다.
+
+## 핵심 내용
+### 방법 개요
+Dexbotic은 모듈식 설계를 채택하여 시각 인코딩, 언어 이해, 동작 생성을 독립적인 구성 요소로 분리함으로써 연구자가 다양한 모듈을 교체하거나 조합할 수 있게 합니다. 핵심 아키텍처는 Transformer 기반으로, 통합 인터페이스를 통해 다양한 VLA 정책의 입력 및 출력 형식을 통합합니다.
+
+### 실험 설정
+- **환경 구성**: PyTorch 프레임워크 기반으로 단일 GPU 및 다중 GPU 훈련을 지원하며, 사전 구성된 Docker 이미지를 제공하여 배포를 간소화합니다.
+- **데이터 형식**: 표준화된 시각-언어-동작 삼중 데이터를 지원하며, Open X-Embodiment 등 주요 데이터셋 형식과 호환됩니다.
+- **평가 벤치마크**: CALVIN, MetaWorld 등 여러 로봇 조작 벤치마크가 내장되어 있으며, 성공률과 평균 보상 등의 핵심 지표를 자동으로 생성합니다.
+
+### 주요 수치 및 성능
+- **사전 훈련 모델**: 3가지 규모의 사전 훈련 모델(파라미터 수 각각 1.2B, 7B, 13B)을 제공하며, CALVIN 벤치마크에서 13B 모델은 기준 방법(예: RT-2) 대비 작업 성공률을 12.3% 향상시킵니다.
+- **재현 효율성**: 사용자는 2줄의 코드만으로 다양한 VLA 정책(예: Octo, RT-1-X)을 전환할 수 있으며, 단일 환경 구성으로 10가지 이상의 주요 방법을 지원합니다.
+- **실험 개발**: Exp 스크립트 수정을 통해 새 실험 구축 시간이 수일에서 수시간으로 단축됩니다.
+
+### 결론
+Dexbotic은 오픈소스 툴박스 형태로 VLA 연구에서의 복잡한 환경 구성과 높은 재현 비용 문제를 해결하며, 더 강력한 사전 훈련 모델을 통해 성능의 한계를 확장합니다. 지속적인 업데이트 메커니즘은 업계 최전선과의 동기화를 보장할 것입니다.

@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.18883v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.18883v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (788 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -62,11 +63,25 @@ sources:
 ## Overview
 Reinforcement learning has been widely applied to robotic control, but effective policy learning under partial observability remains a major challenge, especially in high-dimensional tasks like humanoid locomotion. To date, no prior work has demonstrated stable training of humanoid policies with incomplete state information in the benchmark Gymnasium Humanoid-v4 environment. The objective in this environment is to walk forward as fast as possible without falling, with rewards provided for staying upright and moving forward, and penalties incurred for excessive actions and external contact forces. This research presents the first successful instance of learning under partial observability in this environment. The learned policy achieves performance comparable to state-of-the-art results with full state access, despite using only one-third to two-thirds of the original states. Moreover, the policy exhibits adaptability to robot properties, such as variations in body part masses. The key to this success is a novel history encoder that processes a fixed-length sequence of past observations in parallel. Integrated into a standard model-free algorithm, the encoder enables performance on par with fully observed baselines. We hypothesize that it reconstructs essential contextual information from recent observations, thereby enabling robust decision-making.
 
-## 개요
-강화 학습은 로봇 제어에 널리 적용되어 왔지만, 부분 관측 가능성 하에서의 효과적인 정책 학습은 특히 인간형 보행과 같은 고차원 작업에서 여전히 주요 과제로 남아 있습니다. 현재까지 Gymnasium Humanoid-v4 벤치마크 환경에서 불완전한 상태 정보를 사용하여 인간형 정책의 안정적인 훈련을 입증한 선행 연구는 없습니다. 이 환경의 목표는 넘어지지 않고 최대한 빠르게 앞으로 걷는 것이며, 똑바로 서서 앞으로 이동하는 데 보상이 주어지고 과도한 행동 및 외부 접촉 힘에 대해 패널티가 부과됩니다. 본 연구는 이 환경에서 부분 관측 가능성 하의 학습에 성공한 첫 번째 사례를 제시합니다. 학습된 정책은 원래 상태의 1/3에서 2/3만 사용함에도 불구하고 완전한 상태 접근이 가능한 최신 결과와 유사한 성능을 달성합니다. 또한, 정책은 신체 부위 질량 변화와 같은 로봇 속성에 대한 적응성을 보여줍니다. 이러한 성공의 핵심은 과거 관측값의 고정 길이 시퀀스를 병렬로 처리하는 새로운 히스토리 인코더입니다. 표준 모델 프리 알고리즘에 통합된 이 인코더는 완전 관측 기준선과 동등한 성능을 가능하게 합니다. 우리는 이 인코더가 최근 관측값으로부터 필수적인 맥락 정보를 재구성하여 강건한 의사 결정을 가능하게 한다고 가정합니다.
-
-## 핵심 내용
-강화 학습은 로봇 제어에 널리 적용되어 왔지만, 부분 관측 가능성 하에서의 효과적인 정책 학습은 특히 인간형 보행과 같은 고차원 작업에서 여전히 주요 과제로 남아 있습니다. 현재까지 Gymnasium Humanoid-v4 벤치마크 환경에서 불완전한 상태 정보를 사용하여 인간형 정책의 안정적인 훈련을 입증한 선행 연구는 없습니다. 이 환경의 목표는 넘어지지 않고 최대한 빠르게 앞으로 걷는 것이며, 똑바로 서서 앞으로 이동하는 데 보상이 주어지고 과도한 행동 및 외부 접촉 힘에 대해 패널티가 부과됩니다. 본 연구는 이 환경에서 부분 관측 가능성 하의 학습에 성공한 첫 번째 사례를 제시합니다. 학습된 정책은 원래 상태의 1/3에서 2/3만 사용함에도 불구하고 완전한 상태 접근이 가능한 최신 결과와 유사한 성능을 달성합니다. 또한, 정책은 신체 부위 질량 변화와 같은 로봇 속성에 대한 적응성을 보여줍니다. 이러한 성공의 핵심은 과거 관측값의 고정 길이 시퀀스를 병렬로 처리하는 새로운 히스토리 인코더입니다. 표준 모델 프리 알고리즘에 통합된 이 인코더는 완전 관측 기준선과 동등한 성능을 가능하게 합니다. 우리는 이 인코더가 최근 관측값으로부터 필수적인 맥락 정보를 재구성하여 강건한 의사 결정을 가능하게 한다고 가정합니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.18883v1
+
+## 개요
+이 연구는 휴머노이드 로봇 운동 제어에서 부분 관측 가능성이 제기하는 도전 과제를 Gymnasium Humanoid-v4 환경에서 획기적으로 해결했습니다. 전통적인 강화 학습 방법은 이러한 고차원 작업에서 불완전한 상태 정보를 처리하기 어려운 반면, 이 작업은 고정 길이의 과거 관측 시퀀스를 병렬로 처리하는 인코더를 설계하여 이 문제를 성공적으로 해결했습니다. 실험 결과, 학습된 정책은 전체 상태 방법과 성능이 동등할 뿐만 아니라 로봇 본체 속성 변화(예: 팔다리 질량 차이)에도 적응할 수 있음을 보여줍니다. 연구팀은 이 인코더가 최근 관측에서 핵심 컨텍스트 정보를 재구성하여 강건한 의사 결정을 지원할 수 있다고 판단합니다.
+
+## 핵심 내용
+### 연구 배경
+강화 학습은 로봇 제어에 널리 적용되지만, 부분 관측 가능성 하에서의 정책 학습은 특히 휴머노이드 로봇 운동과 같은 고차원 작업에서 여전히 중요한 도전 과제입니다. 이전에는 Gymnasium Humanoid-v4 벤치마크 환경에서 불완전한 상태 정보를 기반으로 안정적인 훈련을 달성한 작업이 없었습니다. 이 환경의 목표는 로봇이 넘어지지 않고 가능한 한 빨리 앞으로 걷는 것이며, 보상 함수는 직립 유지와 전진에 대한 인센티브를 포함하고 과도한 동작과 외부 접촉 힘에 대해 패널티를 부과합니다.
+
+### 핵심 방법
+- **히스토리 인코더**: 고정 길이의 과거 관측 시퀀스를 병렬로 처리하는 인코더를 혁신적으로 설계하여 표준 모델 프리 강화 학습 알고리즘에 통합했습니다.
+- **상태 압축**: 원래 상태의 1/3에서 2/3만 사용하여 전체 상태 접근 기준선과 동등한 성능을 달성했습니다.
+- **적응성 검증**: 정책은 로봇 본체 속성에 대한 강건성을 보여주며, 예를 들어 다양한 팔다리 질량 구성 변화에 적응할 수 있습니다.
+
+### 실험 설정 및 결과
+- **환경**: Gymnasium Humanoid-v4
+- **성능 비교**: 부분 관측 조건에서 정책 성능은 현재 전체 상태 최적 결과(state-of-the-art)와 동등합니다.
+- **주요 발견**: 연구는 이 인코더가 최근 관측에서 핵심 컨텍스트 정보를 재구성하여 의사 결정 과정을 강건하게 만든다고 가정합니다.
+
+### 결론
+이 작업은 Humanoid-v4 환경에서 부분 관측을 기반으로 한 강화 학습의 가능성을 처음으로 입증했으며, 고차원 로봇 제어 작업에서 불완전한 상태 정보를 처리하는 효과적인 솔루션을 제공합니다.

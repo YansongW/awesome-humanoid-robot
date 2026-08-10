@@ -33,9 +33,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02332v1. 2026-07-29 修正：sources.url
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02332v1. 2026-07-29 修正：sources.url
     裸 arXiv ID 补全为 https://arxiv.org/abs/ 完整 URL（事实性错误修正，manifest 见 .staging/source_url_fix_manifest.md）。 [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (770 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -67,11 +68,25 @@ HEFT 通过 PMG 和 WPC 两项技术，有效解决了全尺寸人形机器人�
 ## Overview
 General motion tracking and teleoperation offer a promising path to scalable humanoid skill acquisition, yet most existing frameworks are validated on compact platforms or without real payload interaction, leaving full-size humanoids with real payloads largely unexplored. Scaling to full-size humanoids introduces two compounding challenges: their larger inertia and tighter balance margins make tracking highly sensitive to noise, drift, and retargeting errors from commodity VR trackers, while their payload potential remains largely underutilized. We present HEFT, a heavy-payload full-size humanoid teleoperation framework that addresses both challenges. HEFT learns from deployable noisy VR references with physically plausible reconstructed references through Privileged Motion Guidance (PMG), and uses a Windowed Payload Curriculum (WPC) with expert-guided payload caps to acquire robust heavy-payload tracking. We deploy HEFT on L7, a 175cm, 65kg humanoid. The robot tracks motions including turns, forward/backward locomotion, and squats under payloads up to 24kg.
 
-## 개요
-일반적인 모션 트래킹 및 원격 조작은 확장 가능한 휴머노이드 기술 습득에 유망한 경로를 제공하지만, 대부분의 기존 프레임워크는 소형 플랫폼에서 검증되거나 실제 페이로드 상호작용 없이 검증되어, 실제 페이로드를 다루는 대형 휴머노이드는 거의 탐구되지 않았습니다. 대형 휴머노이드로 확장하면 두 가지 복합적인 문제가 발생합니다: 더 큰 관성과 더 좁은 균형 여유로 인해 상용 VR 트래커의 노이즈, 드리프트 및 리타겟팅 오류에 트래킹이 매우 민감해지는 반면, 페이로드 잠재력은 크게 활용되지 못합니다. 본 논문에서는 두 문제를 모두 해결하는 중량 페이로드 대형 휴머노이드 원격 조작 프레임워크인 HEFT를 제시합니다. HEFT는 특권 모션 가이던스(PMG)를 통해 물리적으로 타당하게 재구성된 참조를 사용하여 배포 가능한 노이즈가 있는 VR 참조로부터 학습하며, 전문가가 안내하는 페이로드 상한을 가진 윈도우 페이로드 커리큘럼(WPC)을 사용하여 강건한 중량 페이로드 트래킹을 획득합니다. HEFT를 175cm, 65kg의 휴머노이드 L7에 배포합니다. 로봇은 최대 24kg의 페이로드 하에서 회전, 전진/후진 보행, 스쿼트 동작을 트래킹합니다.
-
-## 핵심 내용
-일반적인 모션 트래킹 및 원격 조작은 확장 가능한 휴머노이드 기술 습득에 유망한 경로를 제공하지만, 대부분의 기존 프레임워크는 소형 플랫폼에서 검증되거나 실제 페이로드 상호작용 없이 검증되어, 실제 페이로드를 다루는 대형 휴머노이드는 거의 탐구되지 않았습니다. 대형 휴머노이드로 확장하면 두 가지 복합적인 문제가 발생합니다: 더 큰 관성과 더 좁은 균형 여유로 인해 상용 VR 트래커의 노이즈, 드리프트 및 리타겟팅 오류에 트래킹이 매우 민감해지는 반면, 페이로드 잠재력은 크게 활용되지 못합니다. 본 논문에서는 두 문제를 모두 해결하는 중량 페이로드 대형 휴머노이드 원격 조작 프레임워크인 HEFT를 제시합니다. HEFT는 특권 모션 가이던스(PMG)를 통해 물리적으로 타당하게 재구성된 참조를 사용하여 배포 가능한 노이즈가 있는 VR 참조로부터 학습하며, 전문가가 안내하는 페이로드 상한을 가진 윈도우 페이로드 커리큘럼(WPC)을 사용하여 강건한 중량 페이로드 트래킹을 획득합니다. HEFT를 175cm, 65kg의 휴머노이드 L7에 배포합니다. 로봇은 최대 24kg의 페이로드 하에서 회전, 전진/후진 보행, 스쿼트 동작을 트래킹합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.02332v1
+
+## 개요
+기존 원격 조작 프레임워크는 대부분 컴팩트한 플랫폼에서 검증되었거나 실제 부하 상호작용이 부족하여, 전신 크기 휴머노이드 로봇에 직접 적용하기 어렵습니다. 전신 크기 휴머노이드 로봇은 관성이 크고 평형 여유가 좁아 상용 VR 트래커의 노이즈, 드리프트 및 재지향 오류에 매우 민감하며, 동시에 부하 잠재력이 충분히 활용되지 못합니다. HEFT 프레임워크는 특권 운동 유도(PMG)를 통해 노이즈가 있는 VR 참조로부터 물리적으로 타당한 재구성 참조를 학습하고, 창 기반 부하 커리큘럼(WPC)과 전문가 유도 부하 상한을 결합하여 로봇이 강건한 중부하 추적 능력을 획득하게 합니다. 이 프레임워크는 L7 휴머노이드 로봇에 배포되어 회전, 전후 보행, 스쿼트 등의 동작을 최대 24kg 부하에서 성공적으로 수행했습니다.
+
+## 핵심 내용
+### 방법
+- **특권 운동 유도(PMG)**: 노이즈가 있는 VR 트래커 참조로부터 물리 시뮬레이션을 통해 타당한 재구성 참조 궤적을 생성하여, 훈련 시 "특권" 정보로 활용함으로써 정책이 노이즈를 필터링하고 실행 가능한 안정적인 운동을 생성하는 방법을 학습하도록 유도합니다.
+- **창 기반 부하 커리큘럼(WPC)**: 훈련 과정에서 부하 중량을 점진적으로 증가시키고, 전문가 유도 부하 상한(payload caps)을 도입하여 정책이 다양한 부하 조건에서의 동역학 변화에 점진적으로 적응하게 하여, 최종적으로 강건한 중부하 추적 능력을 획득합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: L7 휴머노이드 로봇, 키 175cm, 몸무게 65kg.
+- **부하 범위**: 테스트 부하는 0kg에서 24kg까지 점진적으로 증가.
+- **운동 유형**: 회전, 전진/후진 보행, 스쿼트 등의 기본 동작 포함.
+
+### 주요 결과
+- 24kg 부하에서도 로봇이 회전, 보행, 스쿼트 동작을 안정적으로 수행하여 프레임워크의 중부하 강건성을 검증했습니다.
+- PMG와 WPC를 사용하지 않은 기준 방법과 비교하여, HEFT는 추적 정밀도와 안정성에서 크게 향상되었으며, 특히 부하가 15kg를 초과할 때 우위가 뚜렷했습니다.
+
+### 결론
+HEFT는 PMG와 WPC 두 가지 기술을 통해 전신 크기 휴머노이드 로봇의 중부하 원격 조작에서의 노이즈 민감성과 부하 활용 부족 문제를 효과적으로 해결하여, 향후 대규모 휴머노이드 기술 습득을 위한 실현 가능한 방안을 제공합니다.

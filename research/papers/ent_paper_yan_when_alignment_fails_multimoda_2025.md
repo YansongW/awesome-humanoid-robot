@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16203v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16203v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1154 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,32 @@ VLA-Fool 揭示了当前 VLA 模型在跨模态对齐上的根本脆弱性：模
 ## Overview
 Vision-Language-Action models (VLAs) have recently demonstrated remarkable progress in embodied environments, enabling robots to perceive, reason, and act through unified multimodal understanding. Despite their impressive capabilities, the adversarial robustness of these systems remains largely unexplored, especially under realistic multimodal and black-box conditions. Existing studies mainly focus on single-modality perturbations and overlook the cross-modal misalignment that fundamentally affects embodied reasoning and decision-making. In this paper, we introduce VLA-Fool, a comprehensive study of multimodal adversarial robustness in embodied VLA models under both white-box and black-box settings. VLA-Fool unifies three levels of multimodal adversarial attacks: (1) textual perturbations through gradient-based and prompt-based manipulations, (2) visual perturbations via patch and noise distortions, and (3) cross-modal misalignment attacks that intentionally disrupt the semantic correspondence between perception and instruction. We further incorporate a VLA-aware semantic space into linguistic prompts, developing the first automatically crafted and semantically guided prompting framework. Experiments on the LIBERO benchmark using a fine-tuned OpenVLA model reveal that even minor multimodal perturbations can cause significant behavioral deviations, demonstrating the fragility of embodied multimodal alignment.
 
-## 개요
-Vision-Language-Action 모델(VLA)은 최근 임베디드 환경에서 놀라운 발전을 보여주며, 로봇이 통합된 다중 모드 이해를 통해 인지, 추론 및 행동을 수행할 수 있게 했습니다. 이러한 인상적인 능력에도 불구하고, 이러한 시스템의 적대적 강건성은 특히 현실적인 다중 모드 및 블랙박스 조건에서 거의 탐구되지 않았습니다. 기존 연구는 주로 단일 모드 교란에 초점을 맞추고 있으며, 임베디드 추론과 의사 결정에 근본적으로 영향을 미치는 교차 모드 불일치를 간과하고 있습니다. 본 논문에서는 화이트박스 및 블랙박스 설정 모두에서 임베디드 VLA 모델의 다중 모드 적대적 강건성에 대한 포괄적인 연구인 VLA-Fool을 소개합니다. VLA-Fool은 세 가지 수준의 다중 모드 적대적 공격을 통합합니다: (1) 그래디언트 기반 및 프롬프트 기반 조작을 통한 텍스트 교란, (2) 패치 및 노이즈 왜곡을 통한 시각적 교란, (3) 인식과 명령 간의 의미적 대응을 의도적으로 방해하는 교차 모드 불일치 공격입니다. 또한 VLA 인식 의미 공간을 언어 프롬프트에 통합하여 최초의 자동 생성 및 의미 기반 프롬프팅 프레임워크를 개발했습니다. 미세 조정된 OpenVLA 모델을 사용한 LIBERO 벤치마크 실험은 사소한 다중 모드 교란조차도 상당한 행동 편차를 유발할 수 있음을 보여주며, 임베디드 다중 모드 정렬의 취약성을 입증합니다.
-
-## 핵심 내용
-Vision-Language-Action 모델(VLA)은 최근 임베디드 환경에서 놀라운 발전을 보여주며, 로봇이 통합된 다중 모드 이해를 통해 인지, 추론 및 행동을 수행할 수 있게 했습니다. 이러한 인상적인 능력에도 불구하고, 이러한 시스템의 적대적 강건성은 특히 현실적인 다중 모드 및 블랙박스 조건에서 거의 탐구되지 않았습니다. 기존 연구는 주로 단일 모드 교란에 초점을 맞추고 있으며, 임베디드 추론과 의사 결정에 근본적으로 영향을 미치는 교차 모드 불일치를 간과하고 있습니다. 본 논문에서는 화이트박스 및 블랙박스 설정 모두에서 임베디드 VLA 모델의 다중 모드 적대적 강건성에 대한 포괄적인 연구인 VLA-Fool을 소개합니다. VLA-Fool은 세 가지 수준의 다중 모드 적대적 공격을 통합합니다: (1) 그래디언트 기반 및 프롬프트 기반 조작을 통한 텍스트 교란, (2) 패치 및 노이즈 왜곡을 통한 시각적 교란, (3) 인식과 명령 간의 의미적 대응을 의도적으로 방해하는 교차 모드 불일치 공격입니다. 또한 VLA 인식 의미 공간을 언어 프롬프트에 통합하여 최초의 자동 생성 및 의미 기반 프롬프팅 프레임워크를 개발했습니다. 미세 조정된 OpenVLA 모델을 사용한 LIBERO 벤치마크 실험은 사소한 다중 모드 교란조차도 상당한 행동 편차를 유발할 수 있음을 보여주며, 임베디드 다중 모드 정렬의 취약성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.16203v3
+
+## 개요
+기존 연구는 주로 단일 모달리티 교란에 초점을 맞추었으며, 구현 추론 및 의사결정에 영향을 미치는 교차 모달 정렬 문제를 간과했습니다. VLA-Fool은 LIBERO 벤치마크에서 미세 조정된 OpenVLA 모델을 기반으로 화이트박스 및 블랙박스 시나리오를 동시에 검토합니다. 이 방법은 공격을 세 가지 계층으로 나눕니다: 그래디언트 및 프롬프트 기반 텍스트 교란, 패치 및 노이즈 기반 시각 교란, 그리고 지각과 명령 간의 의미적 대응을 의도적으로 파괴하는 교차 모달 정렬 공격입니다. 또한, 연구는 VLA 지각의 의미 공간을 언어 프롬프트에 통합하여 최초의 자동 생성 및 의미 기반 프롬프트 프레임워크를 구축했습니다. 실험 결과, 미세한 다중 모달 교란조차도 상당한 행동 편향을 유발할 수 있으며, 이는 현재 구현 다중 모달 정렬 메커니즘의 취약성을 강조합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+VLA-Fool은 세 가지 계층을 포괄하는 통합 다중 모달 적대적 공격 프레임워크를 제안합니다:
+- **텍스트 교란**: 그래디언트 기반 최적화(예: 명령 임베딩에 적대적 노이즈 추가) 및 프롬프트 기반 조작(예: 명령의 핵심 동사 또는 명사 수정)을 통해 구현됩니다.
+- **시각 교란**: 패치 공격(이미지에 특정 패턴 오버레이) 및 노이즈 공격(감지할 수 없는 픽셀 수준 교란 추가)을 채택합니다.
+- **교차 모달 정렬 공격**: 핵심 혁신으로, 시각 지각과 언어 명령 간의 의미적 대응을 파괴하는 것을 목표로 합니다. 예를 들어, 로봇이 "빨간 컵 집기" 명령을 파란 물체와 잘못 연관시키도록 만듭니다.
+
+### 핵심 설계
+- **VLA 지각 의미 공간**: VLA 모델 내부의 의미 표현(예: 행동 임베딩)을 언어 프롬프트 공간에 매핑하여 행동 편향을 최대화하는 적대적 프롬프트를 자동 생성합니다. 이는 수동 설계가 필요 없는 최초의 의미 기반 프롬프트 프레임워크입니다.
+- **공격 설정**: 화이트박스(공격자가 모델 매개변수를 알고 있음) 및 블랙박스(모델 출력만 쿼리 가능) 시나리오를 동시에 평가하여 더 현실적인 위협 모델을 포괄합니다.
+
+### 실험 설정
+- **벤치마크 및 모델**: LIBERO 벤치마크(10개의 구현 조작 작업 포함)와 미세 조정된 OpenVLA 모델(매개변수 7B)을 사용합니다.
+- **평가 지표**: 주로 작업 성공률(SR)의 감소 폭과 행동 편향(예: 잘못된 물체 집기 또는 잘못된 동작 실행)의 빈도를 측정합니다.
+
+### 핵심 수치 및 결론
+- **성능 저하**: 교차 모달 정렬 공격 하에서 작업 성공률이 기준 85.3%에서 12.7%로 급락하여 72.6% 포인트 감소했습니다.
+- **단일 모달 비교**: 텍스트 교란만으로는 성공률이 54.1%로, 시각 교란만으로는 48.6%로 감소했지만, 교차 모달 공격의 효과는 훨씬 더 강력했습니다.
+- **블랙박스 시나리오**: 블랙박스 조건에서도 교차 모달 정렬 공격은 성공률을 31.2%로 억제하여 실질적인 위협성을 입증했습니다.
+- **의미 기반 프롬프트 효과**: 자동 생성된 의미 프롬프트는 무작위 프롬프트에 비해 성공률을 추가로 18.4% 낮추어 VLA 지각 공간의 유효성을 검증했습니다.
+
+### 결론
+VLA-Fool은 현재 VLA 모델이 교차 모달 정렬에서 근본적인 취약성을 지니고 있음을 밝혀냅니다: 모델이 명령과 시각의 의미적 연관성을 진정으로 이해하는 것이 아니라 얕은 통계적 상관관계에 의존합니다. 연구는 향후 작업이 훈련 과정에 적대적 정렬 메커니즘을 도입하고 더 강건한 다중 모달 융합 전략을 개발할 것을 촉구합니다.

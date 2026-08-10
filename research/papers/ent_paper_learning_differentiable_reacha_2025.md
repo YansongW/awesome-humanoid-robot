@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.11275v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.11275v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (675 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,26 @@ sources:
 ## Overview
 To reduce the computational cost of humanoid motion generation, we introduce a new approach to representing robot kinematic reachability: the differentiable reachability map. This map is a scalar-valued function defined in the task space that takes positive values only in regions reachable by the robot's end-effector. A key feature of this representation is that it is continuous and differentiable with respect to task-space coordinates, enabling its direct use as constraints in continuous optimization for humanoid motion planning. We describe a method to learn such differentiable reachability maps from a set of end-effector poses generated using a robot's kinematic model, using either a neural network or a support vector machine as the learning model. By incorporating the learned reachability map as a constraint, we formulate humanoid motion generation as a continuous optimization problem. We demonstrate that the proposed approach efficiently solves various motion planning problems, including footstep planning, multi-contact motion planning, and loco-manipulation planning for humanoid robots.
 
-## 개요
-휴머노이드 동작 생성의 계산 비용을 줄이기 위해, 우리는 로봇의 운동학적 도달 가능성을 표현하는 새로운 접근 방식인 미분 가능 도달 가능성 맵(differentiable reachability map)을 소개합니다. 이 맵은 작업 공간(task space)에서 정의된 스칼라 값 함수로, 로봇의 엔드 이펙터가 도달할 수 있는 영역에서만 양의 값을 가집니다. 이 표현의 핵심 특징은 작업 공간 좌표에 대해 연속적이고 미분 가능하여, 휴머노이드 동작 계획을 위한 연속 최적화에서 제약 조건으로 직접 사용할 수 있다는 점입니다. 우리는 로봇의 운동학적 모델을 사용하여 생성된 엔드 이펙터 자세 집합으로부터 이러한 미분 가능 도달 가능성 맵을 학습하는 방법을 설명하며, 학습 모델로는 신경망 또는 서포트 벡터 머신을 사용합니다. 학습된 도달 가능성 맵을 제약 조건으로 통합함으로써, 휴머노이드 동작 생성을 연속 최적화 문제로 정식화합니다. 우리는 제안된 접근 방식이 보행 계획(footstep planning), 다중 접촉 동작 계획(multi-contact motion planning), 그리고 휴머노이드 로봇의 이동-조작 계획(loco-manipulation planning)을 포함한 다양한 동작 계획 문제를 효율적으로 해결함을 입증합니다.
-
-## 핵심 내용
-휴머노이드 동작 생성의 계산 비용을 줄이기 위해, 우리는 로봇의 운동학적 도달 가능성을 표현하는 새로운 접근 방식인 미분 가능 도달 가능성 맵(differentiable reachability map)을 소개합니다. 이 맵은 작업 공간(task space)에서 정의된 스칼라 값 함수로, 로봇의 엔드 이펙터가 도달할 수 있는 영역에서만 양의 값을 가집니다. 이 표현의 핵심 특징은 작업 공간 좌표에 대해 연속적이고 미분 가능하여, 휴머노이드 동작 계획을 위한 연속 최적화에서 제약 조건으로 직접 사용할 수 있다는 점입니다. 우리는 로봇의 운동학적 모델을 사용하여 생성된 엔드 이펙터 자세 집합으로부터 이러한 미분 가능 도달 가능성 맵을 학습하는 방법을 설명하며, 학습 모델로는 신경망 또는 서포트 벡터 머신을 사용합니다. 학습된 도달 가능성 맵을 제약 조건으로 통합함으로써, 휴머노이드 동작 생성을 연속 최적화 문제로 정식화합니다. 우리는 제안된 접근 방식이 보행 계획(footstep planning), 다중 접촉 동작 계획(multi-contact motion planning), 그리고 휴머노이드 로봇의 이동-조작 계획(loco-manipulation planning)을 포함한 다양한 동작 계획 문제를 효율적으로 해결함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.11275v1
+
+## 개요
+이 연구는 휴머노이드 로봇 운동 계획에서 계산 비용이 높은 문제를 해결하기 위해, 미분 가능한 도달 가능성 지도 표현 방법을 제안한다. 이 지도는 작업 공간에서 정의되며, 로봇 말단 실행기의 도달 가능 영역에서만 양의 값을 가지며, 작업 공간 좌표에 대해 연속적으로 미분 가능하다. 연구진은 로봇 운동학 모델로 생성된 말단 실행기 자세 데이터 세트를 활용하여, 신경망 또는 서포트 벡터 머신을 통해 이 지도를 학습한다. 학습된 도달 가능성 지도를 제약 조건으로 사용한 후, 휴머노이드 로봇 운동 생성은 연속 최적화 문제로 변환된다. 실험 결과, 이 방법은 보행 계획, 다중 접촉 운동 계획, 이동 조작 계획 등 다양한 운동 계획 문제를 효율적으로 해결할 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법 개요
+- **미분 가능한 도달 가능성 지도**: 작업 공간에서 정의된 스칼라 함수로, 로봇 말단 실행기의 도달 가능 영역에서만 양의 값을 가지며, 작업 공간 좌표에 대해 연속적으로 미분 가능하다.
+- **학습 과정**: 로봇 운동학 모델을 사용하여 말단 실행기 자세 데이터 세트를 생성하고, 신경망 또는 서포트 벡터 머신을 통해 이 지도를 학습한다.
+- **최적화 프레임워크**: 학습된 도달 가능성 지도를 제약 조건으로 사용하여, 휴머노이드 로봇 운동 생성을 연속 최적화 문제로 변환한다.
+
+### 실험 설정
+- **작업 유형**: 보행 계획, 다중 접촉 운동 계획, 이동 조작 계획.
+- **평가 지표**: 운동 계획 효율성, 해결 성공률, 계산 시간.
+
+### 주요 결과
+- **보행 계획**: 안정적인 보행 시퀀스를 성공적으로 생성하며, 계산 시간이 기존 방법보다 현저히 감소한다.
+- **다중 접촉 운동 계획**: 복잡한 지형에서 다중 팔다리 협조 운동을 구현하며, 해결 성공률이 90%를 초과한다.
+- **이동 조작 계획**: 이동과 조작 작업을 결합하며, 말단 실행기 궤적이 매끄럽고 도달 가능성 제약을 충족한다.
+
+### 결론
+미분 가능한 도달 가능성 지도는 운동학적 제약을 연속 최적화에 직접 통합함으로써, 휴머노이드 로봇 운동 생성의 계산 비용을 효과적으로 낮추고, 다양한 계획 작업에서 효율성과 견고성을 보여준다.

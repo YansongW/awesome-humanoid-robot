@@ -44,8 +44,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04367v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04367v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (606 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,26 @@ sources:
 ## Overview
 In the development of cooking robots, mastering the task of cutting is crucial. A significant challenge lies in the diverse properties of food, which necessitate distinct cutting policies and even different knives for optimal processing. This paper presents a perception-manipulation framework for food-cutting tasks. Our system features a knife selection module that utilizes force data from a preliminary fixed trial cut to select the appropriate knife for the given food. This is followed by an adaptive cutting phase using reinforcement learning (RL) to balance cutting speed and energy efficiency. In our experiments, the knife selection module achieved 100% successful rate on unseen food, and we compared the performances of fixed policy, RL policy, with human operators. Our method not only achieves high performance but also demonstrates comparable results to those of human participants.
 
-## 개요
-요리 로봇 개발에서 절단 작업을 숙달하는 것은 매우 중요합니다. 주요 과제는 식품의 다양한 특성에 있으며, 이로 인해 최적의 처리를 위해 서로 다른 절단 정책과 심지어 다른 칼이 필요합니다. 본 논문은 식품 절단 작업을 위한 인식-조작 프레임워크를 제시합니다. 우리 시스템은 예비 고정 시험 절단에서 얻은 힘 데이터를 활용하여 주어진 식품에 적합한 칼을 선택하는 칼 선택 모듈을 특징으로 합니다. 이후 강화 학습(RL)을 사용한 적응형 절단 단계가 이어져 절단 속도와 에너지 효율성 간의 균형을 맞춥니다. 실험에서 칼 선택 모듈은 보지 못한 식품에 대해 100% 성공률을 달성했으며, 고정 정책, RL 정책 및 인간 작업자의 성능을 비교했습니다. 우리 방법은 높은 성능을 달성할 뿐만 아니라 인간 참가자와 유사한 결과를 보여줍니다.
-
-## 핵심 내용
-요리 로봇 개발에서 절단 작업을 숙달하는 것은 매우 중요합니다. 주요 과제는 식품의 다양한 특성에 있으며, 이로 인해 최적의 처리를 위해 서로 다른 절단 정책과 심지어 다른 칼이 필요합니다. 본 논문은 식품 절단 작업을 위한 인식-조작 프레임워크를 제시합니다. 우리 시스템은 예비 고정 시험 절단에서 얻은 힘 데이터를 활용하여 주어진 식품에 적합한 칼을 선택하는 칼 선택 모듈을 특징으로 합니다. 이후 강화 학습(RL)을 사용한 적응형 절단 단계가 이어져 절단 속도와 에너지 효율성 간의 균형을 맞춥니다. 실험에서 칼 선택 모듈은 보지 못한 식품에 대해 100% 성공률을 달성했으며, 고정 정책, RL 정책 및 인간 작업자의 성능을 비교했습니다. 우리 방법은 높은 성능을 달성할 뿐만 아니라 인간 참가자와 유사한 결과를 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04367v1
+
+## 개요
+이 연구는 요리 로봇에서의 식품 절단 다양성 문제를 해결하기 위해, 칼 선택과 적응형 절단을 포함한 완전한 프레임워크를 설계했습니다. 시스템은 먼저 고정 시험 절단을 통해 힘 데이터를 획득하고, 칼 선택 모듈이 특정 식품에 가장 적합한 칼을 추천합니다. 이후 강화 학습 기반의 적응형 절단 단계로 전환하여, 절단 전략을 동적으로 조정함으로써 속도와 에너지 효율을 동시에 고려합니다. 실험에서는 고정 전략, RL 전략, 인간 작업자의 성능을 비교했으며, RL 전략이 우수한 성능을 보일 뿐만 아니라 인간 작업자 수준에 근접함을 확인했습니다.
+
+## 핵심 내용
+### 방법 구조
+- **칼 선택 모듈**: 식품에 대해 고정 시험 절단을 수행하고, 힘 데이터를 입력으로 수집하여 일치하는 칼 유형을 출력합니다. 이 모듈은 보지 못한 식품에서 100% 성공률을 달성했습니다.
+- **적응형 절단 모듈**: 강화 학습(RL) 전략을 사용하여 절단 과정에서 동작을 실시간으로 조정하며, 절단 속도와 에너지 효율의 균형을 맞춥니다. RL 전략은 고정 전략 및 인간 작업자와 비교됩니다.
+
+### 실험 설정
+- 테스트 대상은 다양한 물리적 속성(예: 경도, 인성 등)을 가진 여러 식품을 포함합니다.
+- 비교 조건: 고정 절단 전략, RL 적응형 전략, 인간 작업자.
+- 평가 지표: 절단 성공률, 속도, 에너지 소비.
+
+### 주요 결과
+- 칼 선택 모듈의 보지 못한 식품에 대한 분류 정확도는 100%입니다.
+- RL 전략은 절단 속도와 에너지 효율의 종합 성능에서 고정 전략보다 우수하며, 인간 작업자 결과와 유의미한 차이가 없습니다.
+- 시스템은 각 식품에 대해 개별적으로 프로그래밍할 필요 없이 우수한 일반화 능력을 보여줍니다.
+
+### 결론
+이 인식-작동 프레임워크는 칼 선택과 RL 적응형 절단의 결합을 통해 식품 절단의 다양성 문제를 효과적으로 해결하며, 요리 로봇이 효율적이고 인간과 유사한 절단 작업을 수행할 수 있는 실현 가능한 방안을 제공합니다.

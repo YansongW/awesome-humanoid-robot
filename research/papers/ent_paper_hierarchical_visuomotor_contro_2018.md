@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1811.09656v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1811.09656v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (703 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,28 @@ sources:
 ## Overview
 We aim to build complex humanoid agents that integrate perception, motor control, and memory. In this work, we partly factor this problem into low-level motor control from proprioception and high-level coordination of the low-level skills informed by vision. We develop an architecture capable of surprisingly flexible, task-directed motor control of a relatively high-DoF humanoid body by combining pre-training of low-level motor controllers with a high-level, task-focused controller that switches among low-level sub-policies. The resulting system is able to control a physically-simulated humanoid body to solve tasks that require coupling visual perception from an unstabilized egocentric RGB camera during locomotion in the environment. For a supplementary video link, see https://youtu.be/7GISvfbykLE .
 
-## 개요
-우리는 지각, 운동 제어 및 기억을 통합하는 복잡한 휴머노이드 에이전트를 구축하는 것을 목표로 합니다. 본 연구에서는 이 문제를 부분적으로 고유 감각에 기반한 저수준 운동 제어와 시각 정보를 활용한 저수준 기술의 고수준 조정으로 분해합니다. 우리는 저수준 운동 제어기의 사전 훈련과 저수준 하위 정책 간 전환을 수행하는 고수준 작업 중심 제어기를 결합하여 비교적 높은 자유도를 가진 휴머노이드 신체의 놀라울 정도로 유연하고 작업 지향적인 운동 제어가 가능한 아키텍처를 개발합니다. 결과 시스템은 물리적으로 시뮬레이션된 휴머노이드 신체를 제어하여 환경 내 이동 중 비안정화된 자기 중심적 RGB 카메라의 시각적 인식을 결합해야 하는 작업을 해결할 수 있습니다. 보충 비디오 링크는 https://youtu.be/7GISvfbykLE 에서 확인할 수 있습니다.
-
-## 핵심 내용
-우리는 지각, 운동 제어 및 기억을 통합하는 복잡한 휴머노이드 에이전트를 구축하는 것을 목표로 합니다. 본 연구에서는 이 문제를 부분적으로 고유 감각에 기반한 저수준 운동 제어와 시각 정보를 활용한 저수준 기술의 고수준 조정으로 분해합니다. 우리는 저수준 운동 제어기의 사전 훈련과 저수준 하위 정책 간 전환을 수행하는 고수준 작업 중심 제어기를 결합하여 비교적 높은 자유도를 가진 휴머노이드 신체의 놀라울 정도로 유연하고 작업 지향적인 운동 제어가 가능한 아키텍처를 개발합니다. 결과 시스템은 물리적으로 시뮬레이션된 휴머노이드 신체를 제어하여 환경 내 이동 중 비안정화된 자기 중심적 RGB 카메라의 시각적 인식을 결합해야 하는 작업을 해결할 수 있습니다. 보충 비디오 링크는 https://youtu.be/7GISvfbykLE 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/1811.09656v2
+
+## 개요
+이 연구는 지각, 운동 제어 및 기억을 통합한 복잡한 휴머노이드 에이전트 구축을 목표로 합니다. 문제를 두 계층으로 분해하여, 저수준 운동 제어는 고유수용감각 신호에 기반하고, 고수준 조정은 시각 정보에 의해 구동됩니다. 연구자들은 저수준 운동 제어기를 사전 학습하고, 고수준 작업 지향 제어기가 다양한 하위 전략 간 전환을 수행하는 아키텍처를 개발하여, 고자유도 휴머노이드 로봇 신체의 유연한 작업 지향 제어를 구현했습니다. 최종 시스템은 물리 시뮬레이션 휴머노이드 로봇을 제어하며, 환경 내 이동 중 안정화되지 않은 일인칭 RGB 카메라를 활용하여 시각적 지각을 수행하고 해당 작업을 완료합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 계층적 제어 아키텍처를 채택하여 문제를 두 계층으로 분해:
+  - **저수준 운동 제어**: 고유수용감각(proprioception) 신호에 기반하며, 사전 학습을 통해 기본 운동 기술 획득
+  - **고수준 조정 제어**: 시각 정보에 의해 구동되며, 다양한 저수준 하위 전략 간 전환을 담당하여 작업 지향 제어 구현
+- 고수준 제어기는 작업 목표에 초점을 맞추며, 적절한 저수준 하위 전략을 선택하여 전체 행동을 조정
+
+### 실험 설정
+- 물리 시뮬레이션 환경의 고자유도(high-DoF) 휴머노이드 로봇 사용
+- 시각 입력은 안정화되지 않은 일인칭 RGB 카메라(egocentric RGB camera)에서 제공되며, 로봇 이동 중 실시간으로 수집
+- 시스템은 동적 환경에서 시각적 지각과 결합된 작업을 완료해야 함
+
+### 주요 결과
+- 이 아키텍처는 고자유도 휴머노이드 로봇의 유연한 작업 지향 운동 제어를 성공적으로 구현
+- 시스템은 이동 중 안정화되지 않은 시각 입력을 효과적으로 활용하여 지각 및 의사 결정 수행
+- 복잡한 휴머노이드 로봇 제어에서 계층적 접근 방식의 효과성을 입증
+
+### 결론
+이 연구는 계층적 분해 방법을 통해 시각적 지각과 운동 제어를 효과적으로 결합하여, 더 복잡한 휴머노이드 에이전트 구축을 위한 실행 가능한 프레임워크를 제공합니다. 추가 비디오는 https://youtu.be/7GISvfbykLE 에서 확인할 수 있습니다.

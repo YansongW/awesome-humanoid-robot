@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07887v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07887v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (746 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,25 @@ EquiMus 为大规模刚柔混合机器人的动力学建模与仿真提供了高
 ## Overview
 Dynamic modeling and control are critical for unleashing soft robots' potential, yet remain challenging due to their complex constitutive behaviors and real-world operating conditions. Bio-inspired musculoskeletal robots, which integrate rigid skeletons with soft actuators, combine high load-bearing capacity with inherent flexibility. Although actuation dynamics have been studied through experimental methods and surrogate models, accurate and effective modeling and simulation remain a significant challenge, especially for large-scale hybrid rigid--soft robots with continuously distributed mass, kinematic loops, and diverse motion modes. To address these challenges, we propose EquiMus, an energy-equivalent dynamic modeling framework and MuJoCo-based simulation for musculoskeletal rigid--soft hybrid robots with linear elastic actuators. The equivalence and effectiveness of the proposed approach are validated and examined through both simulations and real-world experiments on a bionic robotic leg. EquiMus further demonstrates its utility for downstream tasks, including controller design and learning-based control strategies.
 
-## 개요
-동적 모델링 및 제어는 소프트 로봇의 잠재력을 발휘하는 데 중요하지만, 복잡한 구성적 거동과 실제 작동 조건으로 인해 여전히 어려운 과제로 남아 있습니다. 생체 모방 근골격 로봇은 강성 골격과 소프트 액추에이터를 통합하여 높은 하중 지지 능력과 고유한 유연성을 결합합니다. 실험적 방법과 대리 모델을 통해 작동 동역학이 연구되었지만, 특히 연속적으로 분포된 질량, 운동학적 폐쇄 루프 및 다양한 운동 모드를 가진 대규모 하이브리드 강성-소프트 로봇의 경우 정확하고 효과적인 모델링 및 시뮬레이션은 여전히 중요한 도전 과제입니다. 이러한 문제를 해결하기 위해 우리는 선형 탄성 액추에이터를 갖춘 근골격 강성-소프트 하이브리드 로봇을 위한 에너지 등가 동적 모델링 프레임워크이자 MuJoCo 기반 시뮬레이션인 EquiMus를 제안합니다. 제안된 접근 방식의 등가성과 효과성은 생체 모방 로봇 다리에 대한 시뮬레이션과 실제 실험을 통해 검증 및 조사되었습니다. EquiMus는 제어기 설계 및 학습 기반 제어 전략을 포함한 하위 작업에서도 그 유용성을 입증합니다.
-
-## 핵심 내용
-동적 모델링 및 제어는 소프트 로봇의 잠재력을 발휘하는 데 중요하지만, 복잡한 구성적 거동과 실제 작동 조건으로 인해 여전히 어려운 과제로 남아 있습니다. 생체 모방 근골격 로봇은 강성 골격과 소프트 액추에이터를 통합하여 높은 하중 지지 능력과 고유한 유연성을 결합합니다. 실험적 방법과 대리 모델을 통해 작동 동역학이 연구되었지만, 특히 연속적으로 분포된 질량, 운동학적 폐쇄 루프 및 다양한 운동 모드를 가진 대규모 하이브리드 강성-소프트 로봇의 경우 정확하고 효과적인 모델링 및 시뮬레이션은 여전히 중요한 도전 과제입니다. 이러한 문제를 해결하기 위해 우리는 선형 탄성 액추에이터를 갖춘 근골격 강성-소프트 하이브리드 로봇을 위한 에너지 등가 동적 모델링 프레임워크이자 MuJoCo 기반 시뮬레이션인 EquiMus를 제안합니다. 제안된 접근 방식의 등가성과 효과성은 생체 모방 로봇 다리에 대한 시뮬레이션과 실제 실험을 통해 검증 및 조사되었습니다. EquiMus는 제어기 설계 및 학습 기반 제어 전략을 포함한 하위 작업에서도 그 유용성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.07887v1
+
+## 개요
+근골격 로봇의 연속 질량 분포, 운동학적 폐쇄 루프, 다양한 운동 모드로 인한 모델링 어려움을 해결하기 위해, EquiMus는 에너지 등가 기반 동역학 모델링 방법을 제안하고 MuJoCo 시뮬레이션 환경에 통합했습니다. 이 방법은 선형 탄성 액추에이터의 비선형 거동을 에너지 보존의 단순화된 모델로 등가화하여 정확성을 유지하면서 계산 복잡도를 크게 낮춥니다. 공압 생체 모방 다리의 시뮬레이션 및 실물 실험을 통해 EquiMus가 실제 운동을 정확히 재현할 수 있음을 입증했으며, 제어기 설계 및 학습 기반 제어 전략 개발에 사용될 수 있습니다.
+
+## 핵심 내용
+### 방법
+- **에너지 등가 모델링**: 선형 탄성 액추에이터(예: 공압 근육)의 복잡한 구성 관계를 에너지 보존 원리를 통해 스프링-댐퍼 시스템으로 등가화하여 비선형 편미분 방정식을 직접 풀지 않도록 합니다.
+- **MuJoCo 통합**: MuJoCo의 강체 동역학 엔진을 활용하여 등가화된 탄성 요소를 제약 조건으로 시뮬레이션에 추가함으로써 강체-유연체 혼합 시스템의 빠른 해석을 구현합니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 공압 생체 모방 로봇 다리로, 강성 골격과 여러 개의 선형 탄성 액추에이터를 포함하며 점프, 보행 등 다양한 운동 모드를 지원합니다.
+- **검증 방식**: 시뮬레이션과 실물 실험을 동시에 수행하여 관절 각도, 끝단 궤적 등의 핵심 지표를 비교합니다.
+
+### 주요 결과
+- **등가성 검증**: 시뮬레이션과 실물 실험의 관절 각도 오차가 5% 미만이며, 끝단 궤적 최대 편차는 3.2cm(보폭 40cm 기준)입니다.
+- **계산 효율**: 기존 유한 요소 방법 대비 EquiMus의 시뮬레이션 속도가 약 20배 향상되었습니다(단일 단계 계산 시간이 0.5초에서 0.025초로 감소).
+- **하위 작업**: EquiMus 기반으로 설계된 PD 제어기와 강화 학습 전략이 실물 플랫폼에서 안정적인 보행(보행 빈도 1.2Hz)을 성공적으로 구현했습니다.
+
+### 결론
+EquiMus는 대규모 강체-유연체 혼합 로봇의 동역학 모델링 및 시뮬레이션을 위한 효율적이고 정확한 솔루션을 제공하며, 특히 빠른 반복이 필요한 제어기 설계 및 학습 알고리즘 개발 시나리오에 적합합니다.

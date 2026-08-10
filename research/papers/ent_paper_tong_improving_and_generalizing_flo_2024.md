@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.00482v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2302.00482v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (747 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,24 @@ theoretical_depth:
 ## Overview
 Continuous normalizing flows (CNFs) are an attractive generative modeling technique, but they have been held back by limitations in their simulation-based maximum likelihood training. We introduce the generalized conditional flow matching (CFM) technique, a family of simulation-free training objectives for CNFs. CFM features a stable regression objective like that used to train the stochastic flow in diffusion models but enjoys the efficient inference of deterministic flow models. In contrast to both diffusion models and prior CNF training algorithms, CFM does not require the source distribution to be Gaussian or require evaluation of its density. A variant of our objective is optimal transport CFM (OT-CFM), which creates simpler flows that are more stable to train and lead to faster inference, as evaluated in our experiments. Furthermore, we show that when the true OT plan is available, our OT-CFM method approximates dynamic OT. Training CNFs with CFM improves results on a variety of conditional and unconditional generation tasks, such as inferring single cell dynamics, unsupervised image translation, and Schrödinger bridge inference.
 
-## 개요
-연속 정규화 흐름(CNF)은 매력적인 생성 모델링 기법이지만, 시뮬레이션 기반 최대 우도 훈련의 한계로 인해 제약을 받아왔습니다. 우리는 CNF를 위한 시뮬레이션 없는 훈련 목적 함수군인 일반화된 조건부 흐름 매칭(CFM) 기법을 소개합니다. CFM은 확산 모델에서 확률적 흐름을 훈련하는 데 사용되는 안정적인 회귀 목적 함수를 특징으로 하면서도 결정적 흐름 모델의 효율적인 추론을 누릴 수 있습니다. 확산 모델 및 기존 CNF 훈련 알고리즘과 달리, CFM은 소스 분포가 가우시안일 필요가 없거나 그 밀도 평가를 요구하지 않습니다. 우리 목적 함수의 변형 중 하나는 최적 수송 CFM(OT-CFM)으로, 훈련이 더 안정적이고 추론 속도가 빠른 더 단순한 흐름을 생성하며, 이는 실험을 통해 평가되었습니다. 또한, 실제 OT 계획이 가능할 때 우리의 OT-CFM 방법이 동적 OT를 근사함을 보여줍니다. CFM으로 CNF를 훈련하면 단일 세포 역학 추론, 비지도 이미지 변환, 슈뢰딩거 브리지 추론 등 다양한 조건부 및 비조건부 생성 작업에서 결과가 개선됩니다.
-
-## 핵심 내용
-연속 정규화 흐름(CNF)은 매력적인 생성 모델링 기법이지만, 시뮬레이션 기반 최대 우도 훈련의 한계로 인해 제약을 받아왔습니다. 우리는 CNF를 위한 시뮬레이션 없는 훈련 목적 함수군인 일반화된 조건부 흐름 매칭(CFM) 기법을 소개합니다. CFM은 확산 모델에서 확률적 흐름을 훈련하는 데 사용되는 안정적인 회귀 목적 함수를 특징으로 하면서도 결정적 흐름 모델의 효율적인 추론을 누릴 수 있습니다. 확산 모델 및 기존 CNF 훈련 알고리즘과 달리, CFM은 소스 분포가 가우시안일 필요가 없거나 그 밀도 평가를 요구하지 않습니다. 우리 목적 함수의 변형 중 하나는 최적 수송 CFM(OT-CFM)으로, 훈련이 더 안정적이고 추론 속도가 빠른 더 단순한 흐름을 생성하며, 이는 실험을 통해 평가되었습니다. 또한, 실제 OT 계획이 가능할 때 우리의 OT-CFM 방법이 동적 OT를 근사함을 보여줍니다. CFM으로 CNF를 훈련하면 단일 세포 역학 추론, 비지도 이미지 변환, 슈뢰딩거 브리지 추론 등 다양한 조건부 및 비조건부 생성 작업에서 결과가 개선됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2302.00482v4
+
+## 개요
+연속 정규화 흐름(CNF)은 매력적인 생성 모델링 기법이지만, 시뮬레이션 기반 최대 우도 학습에 제한적입니다. 본 논문은 일반화 조건부 흐름 매칭(CFM) 기법을 소개하며, 이는 시뮬레이션 없는 학습 목표의 한 종류로, 확산 모델의 안정적인 회귀 목표와 결정적 흐름 모델의 효율적인 추론 장점을 결합합니다. 확산 모델 및 기존 CNF 학습 알고리즘과 달리, CFM은 소스 분포가 가우시안일 필요가 없으며 밀도 평가도 요구하지 않습니다. 그 변형인 최적 수송 CFM(OT-CFM)은 더 단순한 흐름을 생성하여 학습이 더 안정적이고 추론이 더 빠릅니다. 실험은 실제 최적 수송 계획이 사용 가능할 때 OT-CFM이 동적 최적 수송을 근사할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 핵심 방법
+- **일반화 조건부 흐름 매칭(CFM)**: 연속 정규화 흐름(CNF)을 학습하기 위한 시뮬레이션 없는 회귀 목표를 제안합니다. 이 목표 함수는 안정적이며, 확산 모델의 확률적 흐름 학습 방식과 유사하지만 결정적 흐름 모델의 효율적인 추론 특성을 유지합니다.
+- **주요 장점**: CFM은 소스 분포가 가우시안일 필요가 없으며 밀도 평가도 요구하지 않아, 확산 모델 및 기존 CNF 학습 알고리즘보다 더 유연합니다.
+
+### 최적 수송 CFM(OT-CFM)
+- **메커니즘**: 미니배치 최적 수송 결합을 통해 더 직선적인 흐름 경로를 생성하여 학습 과정을 단순화하고 추론을 가속화합니다.
+- **이론적 연관성**: 실제 최적 수송 계획이 사용 가능할 때, OT-CFM은 동적 최적 수송(dynamic OT)을 근사하여 더 우수한 생성 품질을 달성할 수 있습니다.
+
+### 실험 설정 및 결과
+- **작업 범위**: 다양한 조건부 생성 및 무조건부 생성 작업에서 CFM의 효과를 검증했습니다. 포함 사항:
+  - 단일 세포 동적 추론(single cell dynamics)
+  - 비지도 이미지 변환(unsupervised image translation)
+  - 슈뢰딩거 다리 추론(Schrödinger bridge inference)
+- **성능 향상**: 기존 방법과 비교하여 CFM으로 학습된 CNF는 생성 품질과 추론 속도 모두에서 현저한 개선을 보였습니다.

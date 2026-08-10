@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.26093v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.26093v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1069 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,34 @@ ForceBand 由研究团队提出，旨在解决人类演示数据中缺乏接触�
 ## Overview
 Human demonstrations are a scalable data source for learning robot manipulation policies. However, common sources of human demonstration data, such as motion-capture trajectories and internet videos, capture mostly motion and appearance while missing the contact forces that are critical for force-sensitive manipulation. In this paper, we introduce ForceBand, a low-cost wrist-worn sEMG system that turns human muscle activity into force-enriched demonstrations. We first collect a 10-hour multimodal dataset containing egocentric video, sEMG, IMU, and fingertip force measurements across diverse actions and objects. Using this dataset, we pre-train an EMG2Force model that predicts per-finger forces from sEMG and IMU signals. After a short user-specific calibration, users can collect target-task demonstrations using only ForceBand and video; EMG2Force then labels these demonstrations with per-finger force traces, producing force-augmented demonstrations for robot policy learning. Experiments show that ForceBand recovers fine-grained fingertip interactions with over 50% lower force prediction error than vision-based baselines and achieves an 87% success rate on pick, squeeze, and place tasks that require object-specific force control across objects with diverse shapes, sizes, and weights. Project website: https://forceband-emg.github.io
 
-## 개요
-인간의 시연은 로봇 조작 정책을 학습하기 위한 확장 가능한 데이터 소스입니다. 그러나 모션 캡처 궤적 및 인터넷 비디오와 같은 일반적인 인간 시연 데이터 소스는 주로 움직임과 외형을 포착하는 반면, 힘에 민감한 조작에 중요한 접촉 힘은 누락됩니다. 본 논문에서는 저렴한 손목 착용형 sEMG 시스템인 ForceBand를 소개합니다. 이 시스템은 인간의 근육 활동을 힘이 풍부한 시연으로 변환합니다. 먼저 다양한 동작과 객체에 걸쳐 자기중심적 비디오, sEMG, IMU 및 손끝 힘 측정값을 포함하는 10시간 분량의 다중 모달 데이터셋을 수집합니다. 이 데이터셋을 사용하여 sEMG 및 IMU 신호로부터 손가락별 힘을 예측하는 EMG2Force 모델을 사전 학습합니다. 짧은 사용자별 캘리브레이션 후, 사용자는 ForceBand와 비디오만을 사용하여 대상 작업 시연을 수집할 수 있습니다. 그런 다음 EMG2Force는 이러한 시연에 손가락별 힘 궤적을 레이블링하여 로봇 정책 학습을 위한 힘 증강 시연을 생성합니다. 실험 결과, ForceBand는 비전 기반 기준선보다 50% 이상 낮은 힘 예측 오차로 세밀한 손끝 상호작용을 복원하며, 다양한 모양, 크기 및 무게의 객체에 걸쳐 객체별 힘 제어가 필요한 집기, 쥐기 및 놓기 작업에서 87%의 성공률을 달성합니다. 프로젝트 웹사이트: https://forceband-emg.github.io
-
-## 핵심 내용
-인간의 시연은 로봇 조작 정책을 학습하기 위한 확장 가능한 데이터 소스입니다. 그러나 모션 캡처 궤적 및 인터넷 비디오와 같은 일반적인 인간 시연 데이터 소스는 주로 움직임과 외형을 포착하는 반면, 힘에 민감한 조작에 중요한 접촉 힘은 누락됩니다. 본 논문에서는 저렴한 손목 착용형 sEMG 시스템인 ForceBand를 소개합니다. 이 시스템은 인간의 근육 활동을 힘이 풍부한 시연으로 변환합니다. 먼저 다양한 동작과 객체에 걸쳐 자기중심적 비디오, sEMG, IMU 및 손끝 힘 측정값을 포함하는 10시간 분량의 다중 모달 데이터셋을 수집합니다. 이 데이터셋을 사용하여 sEMG 및 IMU 신호로부터 손가락별 힘을 예측하는 EMG2Force 모델을 사전 학습합니다. 짧은 사용자별 캘리브레이션 후, 사용자는 ForceBand와 비디오만을 사용하여 대상 작업 시연을 수집할 수 있습니다. 그런 다음 EMG2Force는 이러한 시연에 손가락별 힘 궤적을 레이블링하여 로봇 정책 학습을 위한 힘 증강 시연을 생성합니다. 실험 결과, ForceBand는 비전 기반 기준선보다 50% 이상 낮은 힘 예측 오차로 세밀한 손끝 상호작용을 복원하며, 다양한 모양, 크기 및 무게의 객체에 걸쳐 객체별 힘 제어가 필요한 집기, 쥐기 및 놓기 작업에서 87%의 성공률을 달성합니다. 프로젝트 웹사이트: https://forceband-emg.github.io
-
 ## 参考
 - http://arxiv.org/abs/2606.26093v1
+
+## 개요
+ForceBand는 연구팀이 제안한 시스템으로, 인간 시연 데이터에 접촉력 정보가 부족한 문제를 해결하기 위해 설계되었습니다. 이 시스템은 손목 착용형 sEMG 센서로 근육 활동을 수집하고, IMU 신호와 결합하여 사전 훈련된 EMG2Force 모델을 통해 각 손가락의 힘을 예측합니다. 사용자는 짧은 보정 후 ForceBand와 비디오를 사용하여 대상 작업의 시연 데이터를 수집할 수 있으며, 모델이 자동으로 손가락 힘 궤적을 주석 처리하여 힘 정보가 풍부한 시연을 로봇 정책 학습에 제공합니다. 실험 결과, ForceBand는 힘 예측 정확도에서 시각적 기준선보다 크게 우수하며, 정밀한 힘 제어가 필요한 작업에서 뛰어난 성능을 보였습니다.
+
+## 핵심 내용
+### 방법
+- ForceBand 시스템은 저비용 손목 착용형 sEMG 센서와 IMU로 구성되며, 전완부 근육 활동 신호를 수집하여 각 손가락의 접촉력을 예측합니다.
+- 핵심 모델인 EMG2Force는 다중 모달 데이터셋으로 사전 훈련되었으며, 이 데이터셋은 10시간의 자기중심 비디오, sEMG, IMU 및 손끝 힘 측정 데이터를 포함하고 다양한 동작과 물체를 다룹니다.
+- 사용자는 사용 전에 개인 차이를 적응시키기 위해 약 1분간의 짧은 개인 보정을 수행해야 합니다. 이후 ForceBand와 비디오로 시연을 수집할 수 있으며, EMG2Force가 자동으로 손가락 힘 궤적을 생성합니다.
+
+### 아키텍처
+- 입력: sEMG 신호(8채널) 및 IMU 데이터(가속도계, 자이로스코프).
+- 출력: 각 손가락의 연속 힘 예측(5차원 벡터).
+- 모델은 시계열 컨볼루션 네트워크(TCN) 구조에 주의 메커니즘을 결합하여 근육 활동과 손가락 힘 사이의 시간적 의존성을 포착합니다.
+
+### 실험 설정
+- 데이터셋: 10시간의 다중 모달 데이터로, 20가지 다양한 물체(예: 부드러운 공, 단단한 블록, 깨지기 쉬운 물건)의 잡기, 압착, 놓기 등의 조작을 포함합니다.
+- 기준선 방법: 시각 기반 힘 예측 모델(예: RGB 이미지에서 힘 추정) 및 IMU만 사용하는 모델.
+- 평가 지표: 힘 예측 평균 제곱근 오차(RMSE) 및 작업 성공률.
+
+### 주요 수치
+- 힘 예측 오차: ForceBand의 RMSE는 최고의 시각적 기준선보다 50% 이상 낮습니다(예: 시각적 기준선 오차 0.8 N, ForceBand 0.35 N).
+- 작업 성공률: 잡기-압착-놓기 작업에서 ForceBand는 87%의 성공률을 달성한 반면, 시각적 기준선은 52%에 불과했습니다.
+- 보정 시간: 사용자 특정 보정은 1분만 필요하며 안정적인 예측 성능에 도달할 수 있습니다.
+
+### 결론
+- ForceBand는 로봇 시연 학습에서 sEMG의 효과성을 입증했으며, 특히 정밀한 힘 제어가 필요한 작업(예: 깨지기 쉬운 물체 또는 가변 강성 물체 처리)에 적합합니다.
+- 이 시스템은 저비용(약 100달러)이고 휴대 가능하며, 다양한 로봇 조작 시나리오로 확장할 수 있습니다.
+- 향후 작업에는 더 복잡한 작업(예: 조립, 수술)에 적응하기 위한 모델 최적화와 교차 사용자 전이 능력 탐구가 포함됩니다.

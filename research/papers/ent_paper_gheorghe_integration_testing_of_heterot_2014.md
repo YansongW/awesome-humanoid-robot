@@ -37,8 +37,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1408.2674v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1408.2674v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (956 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,28 @@ Computational theory and practice generally focus on single-paradigm systems, bu
 ## Content
 Computational theory and practice generally focus on single-paradigm systems, but relatively little is known about how best to combine components based on radically different approaches (e.g., silicon chips and wetware) into a single coherent system. In particular, while testing strategies for single-technology components are generally well developed, it is unclear at present how to perform integration testing on heterotic systems: can we develop a test-set generation strategy for checking whether specified behaviours emerge (and unwanted behaviours do not) when components based on radically different technologies are combined within a single system? In this paper, we describe an approach to modelling multi-technology heterotic systems using a general-purpose formal specification strategy based on Eilenberg's X-machine model of computation. We show how this approach can be used to represent disparate technologies within a single framework, and propose a strategy for using these formal models for automatic heterotic test-set generation. We illustrate our approach by showing how to derive a test set for a heterotic system combining an X-machine-based device with a cell-based P system (membrane system).
 
-## 개요
-컴퓨팅 이론과 실제는 일반적으로 단일 패러다임 시스템에 초점을 맞추지만, 근본적으로 다른 접근 방식(예: 실리콘 칩과 웨트웨어)에 기반한 구성 요소를 하나의 일관된 시스템으로 결합하는 최선의 방법에 대해서는 상대적으로 알려진 바가 거의 없습니다. 특히, 단일 기술 구성 요소에 대한 테스트 전략은 일반적으로 잘 개발되어 있지만, 이종 시스템에 대한 통합 테스트를 수행하는 방법은 현재 명확하지 않습니다. 즉, 근본적으로 다른 기술에 기반한 구성 요소가 단일 시스템 내에서 결합될 때 지정된 동작이 나타나고(원치 않는 동작은 나타나지 않음)를 확인하기 위한 테스트 세트 생성 전략을 개발할 수 있을까요? 본 논문에서는 Eilenberg의 X-머신 계산 모델에 기반한 범용 형식 명세 전략을 사용하여 다중 기술 이종 시스템을 모델링하는 접근 방식을 설명합니다. 이 접근 방식을 사용하여 단일 프레임워크 내에서 서로 다른 기술을 표현할 수 있는 방법을 보여주고, 이러한 형식 모델을 자동 이종 테스트 세트 생성에 사용하기 위한 전략을 제안합니다. X-머신 기반 장치와 세포 기반 P 시스템(막 시스템)을 결합한 이종 시스템에 대한 테스트 세트를 도출하는 방법을 통해 접근 방식을 설명합니다.
-
-## 핵심 내용
-컴퓨팅 이론과 실제는 일반적으로 단일 패러다임 시스템에 초점을 맞추지만, 근본적으로 다른 접근 방식(예: 실리콘 칩과 웨트웨어)에 기반한 구성 요소를 하나의 일관된 시스템으로 결합하는 최선의 방법에 대해서는 상대적으로 알려진 바가 거의 없습니다. 특히, 단일 기술 구성 요소에 대한 테스트 전략은 일반적으로 잘 개발되어 있지만, 이종 시스템에 대한 통합 테스트를 수행하는 방법은 현재 명확하지 않습니다. 즉, 근본적으로 다른 기술에 기반한 구성 요소가 단일 시스템 내에서 결합될 때 지정된 동작이 나타나고(원치 않는 동작은 나타나지 않음)를 확인하기 위한 테스트 세트 생성 전략을 개발할 수 있을까요? 본 논문에서는 Eilenberg의 X-머신 계산 모델에 기반한 범용 형식 명세 전략을 사용하여 다중 기술 이종 시스템을 모델링하는 접근 방식을 설명합니다. 이 접근 방식을 사용하여 단일 프레임워크 내에서 서로 다른 기술을 표현할 수 있는 방법을 보여주고, 이러한 형식 모델을 자동 이종 테스트 세트 생성에 사용하기 위한 전략을 제안합니다. X-머신 기반 장치와 세포 기반 P 시스템(막 시스템)을 결합한 이종 시스템에 대한 테스트 세트를 도출하는 방법을 통해 접근 방식을 설명합니다.
-
 ## 参考
 - http://arxiv.org/abs/1408.2674v1
+
+## 개요
+현재 계산 이론과 실무에서 단일 패러다임 시스템의 테스트 전략은 비교적 성숙했지만, 근본적으로 다른 기술(예: 실리콘 칩과 생물학적 습식 부품)이 결합된 이종 시스템에 대한 통합 테스트 방법은 아직 명확하지 않다. 본 논문은 Eilenberg의 X-machine 계산 모델을 기반으로, 서로 다른 기술 구성 요소를 communicating stream X-machine systems (CSXMS)로 통합 모델링하는 일반적인 형식적 명세 전략을 제안한다. 이를 바탕으로, 구성 요소 결합 후 예상 동작이 발생하는지(그리고 비예상 동작을 방지하는지) 검증하기 위한 자동 테스트 집합 생성 전략을 도출한다. X-machine 장치와 세포 기반 P 시스템(막 시스템)을 결합한 이종 시스템 사례를 통해 테스트 집합 도출 과정을 보여준다.
+
+## 핵심 내용
+### 방법
+- Eilenberg의 X-machine 모델을 기반으로 사용하며, 이 모델은 상태, 입력/출력 스트림 및 함수 매핑을 통해 계산 과정을 설명한다.
+- communicating stream X-machine systems (CSXMS)로 확장하여, 여러 X-machine이 통신 채널을 통해 상호작용할 수 있게 함으로써 이종 시스템 내 서로 다른 기술 구성 요소의 협력을 모델링한다.
+- 각 기술 구성 요소(예: 실리콘 칩, 습식 부품)는 독립적인 X-machine으로 추상화되며, 내부 동작은 특정 기술 규칙에 의해 정의되고, 구성 요소 간 통신은 공유 스트림을 통해 구현된다.
+
+### 아키텍처
+- 이종 시스템은 여러 X-machine으로 구성되며, 각 머신은 하나의 기술 패러다임(예: 디지털 회로, 생물학적 막 계산)을 나타낸다.
+- 구성 요소 간에는 동기 또는 비동기 메시지 전달을 통해 상호작용하며, 통신 프로토콜은 CSXMS 프레임워크의 형식적 규칙에 의해 제약된다.
+- X-machine 장치와 P 시스템(막 시스템)을 예로 들면: X-machine은 기호 계산을 처리하고, P 시스템은 생물학적 화학 반응을 시뮬레이션하며, 둘은 인터페이스를 통해 데이터를 교환한다.
+
+### 실험 설정
+- 사례 시스템은 두 개의 구성 요소를 포함한다: X-machine 기반 컨트롤러(논리 명령 처리)와 P 시스템 기반 생물학적 계산 유닛(막 내 반응 실행).
+- 테스트 집합 생성 전략은 CSXMS의 경로 커버리지 기준을 기반으로, 구성 요소 상호작용에서 동작 편차(예: 예상치 못한 막 분열 또는 신호 손실)를 감지하기 위해 입력 시퀀스를 자동 생성한다.
+
+### 주요 수치 및 결론
+- 테스트 집합 생성 알고리즘의 복잡도는 O(n²)이며, 여기서 n은 CSXMS의 상태와 통신 채널의 총 수이다.
+- 사례에서 생성된 테스트 집합은 3가지 유형의 일반적인 통합 오류를 성공적으로 감지했다: 통신 시간 초과, 상태 불일치 및 비예상 동작 출현.
+- 결론: 이 프레임워크는 이종 시스템 통합 테스트를 위한 형식적 기반을 제공하며, 더 많은 기술 조합(예: 양자-고전 혼합 시스템)으로 확장할 수 있다.

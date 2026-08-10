@@ -40,8 +40,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/thormang3.md（访问日期 2026-07-01）。官方无公开标价，经销商为询价制（交货期 12 周）；本质是商业整机 + 开源控制软件，ROS 软件包长期停更（多数仓库
-    2016-2018 年后无实质更新）。
+  notes: '内容整理自调研档案 data/roadmap/research/thormang3.md（访问日期 2026-07-01）。官方无公开标价，经销商为询价制（交货期 12 周）；本质是商业整机 + 开源控制软件，ROS 软件包长期停更（多数仓库
+    2016-2018 年后无实质更新）。 | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1743 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -54,7 +54,6 @@ sources:
   url: https://github.com/robotis-git/robotis-thormang-common
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 THORMANG3（Tactical Hazardous Operations Robot，第三代）是韩国 ROBOTIS 的全尺寸人形机器人，THOR 系列源于 DARPA Robotics Challenge 2015 决赛平台（Team ROBOTIS）。整机高 137.5 cm、重 42 kg，29 个自由度（来源：调研档案 thormang3.md，下同）。
@@ -140,3 +139,43 @@ THORMANG3（Tactical Hazardous Operations Robot, 3세대）는 한국 ROBOTIS의
 
 - 적합: 전신 크기 플랫폼이 필요한 대학/연구소 실험실——29 자유도 전신 크기 플랫폼, F/T 센서 + 레이저 레이더 완비, ROBOTIS의 체계적인 문서, DRC 계보.
 - 진입 장벽: 42 kg, 137 cm의 전신 크기 모델은 공간/안전/인력 요구사항이 매우 높음; 가격은 문의 필요하며 개인 예산을 훨씬 초과할 것임; ROS1 소프트웨어 스택은 구식으로 유지보수 비용이 큼; 개인 초보자에게는 전혀 적합하지 않음——전신 크기를 체험하려면 OpenLoong의 시뮬레이션 프레임워크를 바로 확인하세요.
+
+## Overview
+
+THORMANG3 (Tactical Hazardous Operations Robot, 3rd Generation) is a full-sized humanoid robot by ROBOTIS, South Korea. The THOR series originates from the DARPA Robotics Challenge 2015 finals platform (Team ROBOTIS). The entire unit stands 137.5 cm tall, weighs 42 kg, and has 29 degrees of freedom (source: research archive thormang3.md, same below).
+
+Open-source attributes: ROS software packages are open-sourced on GitHub (ROBOTIS-GIT/ROBOTIS-THORMANG-* series, with the COMMON package license marked as "Other/Not specified"); the full STP 3D model is officially available for public download; essentially, it is a commercial unit with open-source control software. Hardware cost is unknown—no official public pricing, with dealer pages noting "price on request, 12-week lead time" (Cyber Robotics HK, 2025 page); historically positioned as a "relatively affordable full-sized platform."
+
+## Content
+
+### Key Specifications
+
+| Item | Value | Source |
+|---|---|---|
+| Height / Weight | 137.5 cm / 42 kg | e-Manual |
+| Degrees of Freedom | 29 | e-Manual |
+| Price | Unknown (price on request, 12-week lead time) | Dealer page |
+| Computing | 2x Intel NUC (Core i5, 8GB DDR4, 128GB M.2 SSD), split for motion control (MPC) and perception (PPC); onboard D-Link DIR-806A wireless router | e-Manual |
+| Sensors | Logitech C920 camera; Intel RealSense (optional); Hokuyo UTM-30LX-EW LiDAR (optional); dual ankle ATI Mini58 6-axis force/torque sensors ×2; MicroStrain 3DM-GX4-25 IMU | e-Manual |
+| Battery | 22V 22000 mAh + 18.5V 11000 mAh dual battery; external power also supported (actuators require 0-30V/100A supply) | e-Manual |
+| Beginner-friendliness | 1 / 5 (research archive assessment) | Research archive |
+
+### Actuator Configuration
+
+- 29 DYNAMIXEL-P (formerly DYNAMIXEL PRO) series integrated servos (switched from PRO to P series since June 2019):
+  - PH54-200-S500-R (200W) × 10 (large leg joints)
+  - PH54-100-S500-R (100W) × 11
+  - PH42-020-S300-R (20W) × 8 (small joints)
+- Harmonic drive + high power-density servos is a typical approach for full-sized platforms from the DRC era, offering ample torque, but individual servos are expensive, and this constitutes the bulk of the total cost.
+- Includes wireless emergency stop, lifting sling (carabiner + rope), and hoist frame—standard safety equipment for full-sized models.
+
+### Software Stack and Documentation
+
+- Ubuntu LTS 64-bit + ROS1, C++ development; official ROS packages provided for walking, manipulation, perception (PPC), and Gazebo simulation (COMMON package); no official ROS2 support (none found at time of search).
+- Full e-Manual tutorials (quick start, calibration, tutorials, development), with completeness on par with OP3; STP models available for secondary mechanical design.
+- GitHub `ROBOTIS-GIT/ROBOTIS-THORMANG-COMMON` has only 5 stars / 10 forks, last push 2018-04-01; sibling repos like MPC/PPC/Tools were created in 2016 and have been dormant for a long time, with the software stack stuck in the ROS1 era.
+
+### Target Audience
+
+- Suitable for: university/research institute labs with rigid requirements for a full-sized platform—29-DOF full-size, complete F/T sensors + LiDAR configuration, standardized ROBOTIS documentation, DRC pedigree.
+- Barriers: the 42 kg, 137 cm full-sized model demands extremely high standards for space, safety, and personnel; pricing requires inquiry and will inevitably exceed personal budgets; the ROS1 software stack is outdated and requires significant maintenance; completely unsuitable for individual beginners—for full-size experimentation, look directly at OpenLoong's simulation framework.

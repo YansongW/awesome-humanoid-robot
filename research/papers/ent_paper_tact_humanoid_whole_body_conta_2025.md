@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.15146v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.15146v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (690 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,25 @@ TACT 通过融合触觉信息，有效解决了人形机器人全身接触操控
 ## Overview
 Manipulation with whole-body contact by humanoid robots offers distinct advantages, including enhanced stability and reduced load. On the other hand, we need to address challenges such as the increased computational cost of motion generation and the difficulty of measuring broad-area contact. We therefore have developed a humanoid control system that allows a humanoid robot equipped with tactile sensors on its upper body to learn a policy for whole-body manipulation through imitation learning based on human teleoperation data. This policy, named tactile-modality extended ACT (TACT), has a feature to take multiple sensor modalities as input, including joint position, vision, and tactile measurements. Furthermore, by integrating this policy with retargeting and locomotion control based on a biped model, we demonstrate that the life-size humanoid robot RHP7 Kaleido is capable of achieving whole-body contact manipulation while maintaining balance and walking. Through detailed experimental verification, we show that inputting both vision and tactile modalities into the policy contributes to improving the robustness of manipulation involving broad and delicate contact.
 
-## 개요
-휴머노이드 로봇의 전신 접촉을 통한 조작은 향상된 안정성과 부하 감소 등 뚜렷한 장점을 제공합니다. 반면, 동작 생성의 계산 비용 증가와 광범위한 접촉 측정의 어려움과 같은 과제를 해결해야 합니다. 이에 따라 우리는 상체에 촉각 센서를 장착한 휴머노이드 로봇이 인간 원격 조작 데이터 기반 모방 학습을 통해 전신 조작 정책을 학습할 수 있는 휴머노이드 제어 시스템을 개발했습니다. 이 정책은 촉각 모달리티 확장 ACT(TACT)라고 명명되었으며, 관절 위치, 시각, 촉각 측정값을 포함한 여러 센서 모달리티를 입력으로 받는 특징을 가집니다. 또한, 이 정책을 이족 보행 모델 기반 리타겟팅 및 보행 제어와 통합함으로써, 실물 크기 휴머노이드 로봇 RHP7 Kaleido가 균형 유지 및 보행 중 전신 접촉 조작을 수행할 수 있음을 입증했습니다. 상세한 실험 검증을 통해, 시각 및 촉각 모달리티를 정책에 입력하는 것이 광범위하고 미세한 접촉을 포함하는 조작의 견고성 향상에 기여함을 보여줍니다.
-
-## 핵심 내용
-휴머노이드 로봇의 전신 접촉을 통한 조작은 향상된 안정성과 부하 감소 등 뚜렷한 장점을 제공합니다. 반면, 동작 생성의 계산 비용 증가와 광범위한 접촉 측정의 어려움과 같은 과제를 해결해야 합니다. 이에 따라 우리는 상체에 촉각 센서를 장착한 휴머노이드 로봇이 인간 원격 조작 데이터 기반 모방 학습을 통해 전신 조작 정책을 학습할 수 있는 휴머노이드 제어 시스템을 개발했습니다. 이 정책은 촉각 모달리티 확장 ACT(TACT)라고 명명되었으며, 관절 위치, 시각, 촉각 측정값을 포함한 여러 센서 모달리티를 입력으로 받는 특징을 가집니다. 또한, 이 정책을 이족 보행 모델 기반 리타겟팅 및 보행 제어와 통합함으로써, 실물 크기 휴머노이드 로봇 RHP7 Kaleido가 균형 유지 및 보행 중 전신 접촉 조작을 수행할 수 있음을 입증했습니다. 상세한 실험 검증을 통해, 시각 및 촉각 모달리티를 정책에 입력하는 것이 광범위하고 미세한 접촉을 포함하는 조작의 견고성 향상에 기여함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.15146v1
+
+## 개요
+휴머노이드 로봇이 전신 접촉을 활용한 조작은 안정성 향상과 부하 감소의 장점이 있지만, 운동 생성의 계산 비용이 높고 넓은 면적의 접촉 측정이 어렵다는 과제도 존재합니다. 이를 해결하기 위해 연구팀은 상체에 촉각 센서를 장착한 휴머노이드 로봇이 인간 원격 조작 데이터 기반의 모방 학습을 통해 전신 조작 정책을 습득할 수 있는 제어 시스템을 개발했습니다. 이 정책은 TACT라고 불리며, 관절 위치, 시각, 촉각 측정 등 여러 센서 모달리티를 동시에 입력받을 수 있습니다. 이 정책을 이족 보행 모델 기반의 리타게팅 및 운동 제어와 통합함으로써, 연구팀은 실제 크기 휴머노이드 로봇 RHP7 Kaleido에서 균형 유지와 보행을 동시에 수행하면서 전신 접촉 조작을 완수하는 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법
+- TACT 정책은 모방 학습 프레임워크를 기반으로, 인간 원격 조작 데이터에서 전신 조작 정책을 학습합니다.
+- 정책 입력은 세 가지 모달리티로 구성됩니다: 관절 위치, 시각 이미지, 촉각 측정이며, 촉각 센서는 로봇 상체에 설치됩니다.
+- 학습된 정책을 리타게팅 및 이족 보행 모델 기반의 운동 제어와 통합하여 전신 조정을 실현합니다.
+
+### 실험 설정
+- 실제 크기 휴머노이드 로봇 RHP7 Kaleido를 사용하여 검증을 수행했습니다.
+- 실험 과제는 전신 접촉 조작을 포함하며, 로봇이 균형 유지와 보행을 동시에 수행하면서 조작을 완료해야 합니다.
+
+### 주요 결과
+- 실험을 통해 시각 및 촉각 모달리티를 동시에 입력하는 것이 넓은 면적 및 정밀 접촉을 포함한 조작의 견고성 향상에 기여함을 입증했습니다.
+- 시스템은 전신 접촉 조작을 성공적으로 완수하여, 복잡한 접촉 과제에서 촉각 모달리티의 유효성을 검증했습니다.
+
+### 결론
+TACT는 촉각 정보를 융합함으로써 휴머노이드 로봇의 전신 접촉 조작에서 발생하는 계산 복잡도와 접촉 측정 문제를 효과적으로 해결하며, 향후 휴머노이드 로봇이 실제 환경에서 안정적으로 조작을 수행할 수 있는 실현 가능한 방안을 제시합니다.

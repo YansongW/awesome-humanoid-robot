@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.05695v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.05695v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (740 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,14 +76,53 @@ Humanoid-Gym 采用基于 Nvidia Isaac Gym 的强化学习框架，专注于训�
 ### 结论
 Humanoid-Gym 提供了一个高效且易于使用的强化学习框架，成功实现了人形机器人运动技能的零样本仿真到真实迁移。该框架的开源代码和项目网站为研究人员提供了便利的复现和扩展基础。
 
-## Overview
-Humanoid-Gym is an easy-to-use reinforcement learning (RL) framework based on Nvidia Isaac Gym, designed to train locomotion skills for humanoid robots, emphasizing zero-shot transfer from simulation to the real-world environment. Humanoid-Gym also integrates a sim-to-sim framework from Isaac Gym to Mujoco that allows users to verify the trained policies in different physical simulations to ensure the robustness and generalization of the policies. This framework is verified by RobotEra's XBot-S (1.2-meter tall humanoid robot) and XBot-L (1.65-meter tall humanoid robot) in a real-world environment with zero-shot sim-to-real transfer. The project website and source code can be found at: https://sites.google.com/view/humanoid-gym/.
-
-## 개요
-Humanoid-Gym은 Nvidia Isaac Gym 기반의 사용하기 쉬운 강화 학습(RL) 프레임워크로, 휴머노이드 로봇의 보행 기술 훈련을 위해 설계되었으며, 시뮬레이션에서 실제 환경으로의 제로샷 전이를 강조합니다. Humanoid-Gym은 또한 Isaac Gym에서 Mujoco로의 sim-to-sim 프레임워크를 통합하여 사용자가 다양한 물리 시뮬레이션에서 훈련된 정책을 검증함으로써 정책의 견고성과 일반화를 보장할 수 있도록 합니다. 이 프레임워크는 RobotEra의 XBot-S(1.2미터 높이의 휴머노이드 로봇)와 XBot-L(1.65미터 높이의 휴머노이드 로봇)을 통해 실제 환경에서 제로샷 sim-to-real 전이로 검증되었습니다. 프로젝트 웹사이트와 소스 코드는 다음에서 확인할 수 있습니다: https://sites.google.com/view/humanoid-gym/.
-
-## 핵심 내용
-Humanoid-Gym은 Nvidia Isaac Gym 기반의 사용하기 쉬운 강화 학습(RL) 프레임워크로, 휴머노이드 로봇의 보행 기술 훈련을 위해 설계되었으며, 시뮬레이션에서 실제 환경으로의 제로샷 전이를 강조합니다. Humanoid-Gym은 또한 Isaac Gym에서 Mujoco로의 sim-to-sim 프레임워크를 통합하여 사용자가 다양한 물리 시뮬레이션에서 훈련된 정책을 검증함으로써 정책의 견고성과 일반화를 보장할 수 있도록 합니다. 이 프레임워크는 RobotEra의 XBot-S(1.2미터 높이의 휴머노이드 로봇)와 XBot-L(1.65미터 높이의 휴머노이드 로봇)을 통해 실제 환경에서 제로샷 sim-to-real 전이로 검증되었습니다. 프로젝트 웹사이트와 소스 코드는 다음에서 확인할 수 있습니다: https://sites.google.com/view/humanoid-gym/.
-
 ## 参考
 - http://arxiv.org/abs/2404.05695v2
+
+## Overview
+Humanoid-Gym provides an easy-to-use reinforcement learning framework specifically designed for training locomotion skills for humanoid robots. The framework is built on Nvidia Isaac Gym and integrates a sim-to-sim module from Isaac Gym to Mujoco, allowing users to verify the robustness and generalization capabilities of trained policies across different physical simulation environments. The framework has been validated in real-world settings on RobotEra's XBot-S (1.2m tall) and XBot-L (1.65m tall) humanoid robots, successfully achieving zero-shot sim-to-real transfer.
+
+## Content
+### Method
+Humanoid-Gym employs a reinforcement learning framework based on Nvidia Isaac Gym, focusing on training locomotion skills for humanoid robots. The framework integrates a sim-to-sim module from Isaac Gym to Mujoco, ensuring the robustness and generalization of policies across different physical simulation environments.
+
+### Architecture
+- Built on Nvidia Isaac Gym, providing an efficient parallel simulation environment.
+- Integrates a sim-to-sim framework, supporting transfer validation from Isaac Gym to Mujoco.
+- Supports zero-shot sim-to-real transfer without additional fine-tuning.
+
+### Experimental Setup
+- Validated on RobotEra's XBot-S (1.2m tall) and XBot-L (1.65m tall) humanoid robots.
+- In real-world tests, policies were transferred directly from simulation without any adjustments.
+
+### Key Figures
+- XBot-S height: 1.2m
+- XBot-L height: 1.65m
+- Zero-shot transfer success rate: not explicitly specified, but the framework has been validated as effective.
+
+### Conclusion
+Humanoid-Gym provides an efficient and easy-to-use reinforcement learning framework that successfully achieves zero-shot sim-to-real transfer for humanoid robot locomotion skills. The open-source code and project website offer researchers a convenient foundation for reproduction and extension.
+
+## 개요
+Humanoid-Gym은 휴머노이드 로봇의 운동 기술 훈련을 위해 특별히 설계된 사용하기 쉬운 강화 학습 프레임워크를 제공합니다. 이 프레임워크는 Nvidia Isaac Gym을 기반으로 구축되었으며, Isaac Gym에서 Mujoco로의 시뮬레이션 간 전환 모듈을 통합하여 사용자가 다양한 물리 시뮬레이션 환경에서 훈련된 정책의 견고성과 일반화 능력을 검증할 수 있게 합니다. 이 프레임워크는 RobotEra의 XBot-S(1.2m 높이) 및 XBot-L(1.65m 높이) 휴머노이드 로봇에서 실제 환경 검증을 거쳐 제로샷 시뮬레이션-실제 전환을 성공적으로 구현했습니다.
+
+## 핵심 내용
+### 방법
+Humanoid-Gym은 Nvidia Isaac Gym 기반의 강화 학습 프레임워크를 채택하여 휴머노이드 로봇의 운동 기술 훈련에 중점을 둡니다. 프레임워크는 Isaac Gym에서 Mujoco로의 시뮬레이션 간 전환 모듈을 통합하여 다양한 물리 시뮬레이션 환경에서 정책의 견고성과 일반화 능력을 보장합니다.
+
+### 아키텍처
+- Nvidia Isaac Gym을 기반으로 구축되어 고효율 병렬 시뮬레이션 환경을 제공합니다.
+- sim-to-sim 프레임워크를 통합하여 Isaac Gym에서 Mujoco로의 전환 검증을 지원합니다.
+- 추가 미세 조정 없이 제로샷 시뮬레이션-실제 전환을 지원합니다.
+
+### 실험 설정
+- RobotEra의 XBot-S(1.2m 높이) 및 XBot-L(1.65m 높이) 휴머노이드 로봇에서 검증되었습니다.
+- 실제 환경 테스트에서 정책은 시뮬레이션에서 직접 전환되었으며 어떠한 조정도 이루어지지 않았습니다.
+
+### 주요 수치
+- XBot-S 높이: 1.2m
+- XBot-L 높이: 1.65m
+- 제로샷 전환 성공률: 명시적으로 제공되지는 않았지만 프레임워크의 유효성은 검증되었습니다.
+
+### 결론
+Humanoid-Gym은 효율적이고 사용하기 쉬운 강화 학습 프레임워크를 제공하여 휴머노이드 로봇 운동 기술의 제로샷 시뮬레이션-실제 전환을 성공적으로 구현했습니다. 이 프레임워크의 오픈 소스 코드와 프로젝트 웹사이트는 연구자들에게 편리한 재현 및 확장 기반을 제공합니다.

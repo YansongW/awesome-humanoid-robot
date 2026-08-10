@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.14696v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.14696v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (887 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -62,11 +63,22 @@ CRISP 通过平面基元拟合与接触引导重建，解决了单目视频中�
 ## Overview
 We introduce CRISP, a method that recovers simulatable human motion and scene geometry from monocular video. Prior work on joint human-scene reconstruction relies on data-driven priors and joint optimization with no physics in the loop, or recovers noisy geometry with artifacts that cause motion tracking policies with scene interactions to fail. In contrast, our key insight is to recover convex, clean, and simulation-ready geometry by fitting planar primitives to a point cloud reconstruction of the scene, via a simple clustering pipeline over depth, normals, and flow. To reconstruct scene geometry that might be occluded during interactions, we make use of human-scene contact modeling (e.g., we use human posture to reconstruct the occluded seat of a chair). Finally, we ensure that human and scene reconstructions are physically-plausible by using them to drive a humanoid controller via reinforcement learning. Our approach reduces motion tracking failure rates from 55.2\% to 6.9\% on human-centric video benchmarks (EMDB, PROX), while delivering a 43\% faster RL simulation throughput. We further validate it on in-the-wild videos including casually-captured videos, Internet videos, and even Sora-generated videos. This demonstrates CRISP's ability to generate physically-valid human motion and interaction environments at scale, greatly advancing real-to-sim applications for robotics and AR/VR.
 
-## 개요
-우리는 단안 비디오에서 시뮬레이션 가능한 인간 동작과 장면 기하학을 복원하는 방법인 CRISP를 소개합니다. 인간-장면 공동 복원에 관한 기존 연구는 물리적 상호작용 없이 데이터 기반 사전 지식과 공동 최적화에 의존하거나, 잡음이 있는 기하학을 복원하여 장면 상호작용을 포함한 동작 추적 정책이 실패하게 만듭니다. 반면, 우리의 핵심 통찰은 깊이, 법선, 흐름에 대한 간단한 클러스터링 파이프라인을 통해 장면의 포인트 클라우드 복원에 평면 프리미티브를 피팅하여 볼록하고 깨끗하며 시뮬레이션 준비가 된 기하학을 복원하는 것입니다. 상호작용 중에 가려질 수 있는 장면 기하학을 복원하기 위해 인간-장면 접촉 모델링을 활용합니다(예: 인간 자세를 사용하여 가려진 의자 좌석을 복원). 마지막으로, 강화 학습을 통해 휴머노이드 컨트롤러를 구동하는 데 이를 사용하여 인간과 장면 복원이 물리적으로 타당하도록 보장합니다. 우리의 접근 방식은 인간 중심 비디오 벤치마크(EMDB, PROX)에서 동작 추적 실패율을 55.2%에서 6.9%로 줄이고, RL 시뮬레이션 처리량을 43% 향상시킵니다. 또한 캐주얼하게 촬영된 비디오, 인터넷 비디오, 심지어 Sora 생성 비디오를 포함한 실제 비디오에서 이를 검증합니다. 이는 CRISP가 대규모로 물리적으로 유효한 인간 동작과 상호작용 환경을 생성할 수 있는 능력을 보여주며, 로봇공학 및 AR/VR을 위한 실물-시뮬레이션 응용을 크게 발전시킵니다.
-
-## 핵심 내용
-우리는 단안 비디오에서 시뮬레이션 가능한 인간 동작과 장면 기하학을 복원하는 방법인 CRISP를 소개합니다. 인간-장면 공동 복원에 관한 기존 연구는 물리적 상호작용 없이 데이터 기반 사전 지식과 공동 최적화에 의존하거나, 잡음이 있는 기하학을 복원하여 장면 상호작용을 포함한 동작 추적 정책이 실패하게 만듭니다. 반면, 우리의 핵심 통찰은 깊이, 법선, 흐름에 대한 간단한 클러스터링 파이프라인을 통해 장면의 포인트 클라우드 복원에 평면 프리미티브를 피팅하여 볼록하고 깨끗하며 시뮬레이션 준비가 된 기하학을 복원하는 것입니다. 상호작용 중에 가려질 수 있는 장면 기하학을 복원하기 위해 인간-장면 접촉 모델링을 활용합니다(예: 인간 자세를 사용하여 가려진 의자 좌석을 복원). 마지막으로, 강화 학습을 통해 휴머노이드 컨트롤러를 구동하는 데 이를 사용하여 인간과 장면 복원이 물리적으로 타당하도록 보장합니다. 우리의 접근 방식은 인간 중심 비디오 벤치마크(EMDB, PROX)에서 동작 추적 실패율을 55.2%에서 6.9%로 줄이고, RL 시뮬레이션 처리량을 43% 향상시킵니다. 또한 캐주얼하게 촬영된 비디오, 인터넷 비디오, 심지어 Sora 생성 비디오를 포함한 실제 비디오에서 이를 검증합니다. 이는 CRISP가 대규모로 물리적으로 유효한 인간 동작과 상호작용 환경을 생성할 수 있는 능력을 보여주며, 로봇공학 및 AR/VR을 위한 실물-시뮬레이션 응용을 크게 발전시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.14696v3
+
+## 개요
+CRISP는 기존의 결합된 인간-장면 재구성 방법에서 물리적 제약이 부족하고 기하학적 노이즈로 인해 상호작용 전략이 실패하는 문제를 해결하기 위해, 깊이, 법선 및 광류 정보를 활용하여 포인트 클라우드를 클러스터링하고 장면 기하학을 평면 프리미티브로 피팅하는 방법을 제안합니다. 이 방법은 인간-장면 접촉 모델링(예: 자세를 이용해 가려진 의자 좌석 재구성)을 통해 상호작용 중 가려진 기하학을 보완하며, 최종적으로 재구성 결과를 강화 학습에 사용하여 휴머노이드 컨트롤러를 훈련시켜 물리적 타당성을 보장합니다. EMDB 및 PROX 벤치마크에서 모션 추적 실패율이 55.2%에서 6.9%로 감소했고, RL 시뮬레이션 처리량이 43% 향상되었으며, 무작위 촬영 비디오, 인터넷 비디오 및 Sora 생성 비디오에서도 일반화 능력을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **장면 기하학 재구성**: 단안 비디오에서 포인트 클라우드를 추출하고, 깊이, 법선 및 광류 기반의 간단한 클러스터링 파이프라인을 통해 장면을 볼록한 평면 프리미티브(예: 평면, 큐브)로 피팅하여 노이즈와 아티팩트를 제거하고, 물리 시뮬레이션에 직접 사용할 수 있는 깨끗한 기하학을 생성합니다.
+- **접촉 기반 가려짐 보완**: 인간-장면 접촉 모델링을 활용하여, 예를 들어 인간의 앉은 자세를 기반으로 가려진 의자 좌석의 형태를 추론함으로써 상호작용 중 보이지 않는 장면 부분을 복원합니다.
+- **물리 시뮬레이션 기반**: 재구성된 인간 모션과 장면 기하학을 강화 학습 프레임워크에 입력하여 휴머노이드 컨트롤러를 훈련시키고 모션 추적 전략을 실행하며, 동작이 물리적으로 가능하도록(예: 관통 방지, 균형 유지) 보장합니다.
+
+### 실험 설정 및 주요 수치
+- **벤치마크 테스트**: 인간 중심의 두 비디오 벤치마크인 EMDB 및 PROX에서 평가했으며, 모션 추적 실패율이 기준 방법의 55.2%에서 6.9%로 크게 감소했습니다.
+- **시뮬레이션 효율성**: RL 시뮬레이션 처리량이 기존 방법 대비 43% 향상되어, 평면 프리미티브 기하학이 물리 엔진의 계산 오버헤드를 크게 줄였음을 보여줍니다.
+- **일반화 검증**: 무작위 촬영 비디오, 인터넷 비디오 및 Sora 생성 비디오에서도 물리적으로 유효한 인간 모션과 상호작용 환경을 생성할 수 있어, 데이터 소스에 대한 방법의 강건성을 입증합니다.
+
+### 결론
+CRISP는 평면 프리미티브 피팅과 접촉 기반 재구성을 통해 단안 비디오에서 인간-장면 결합 재구성의 물리적 불일치 문제를 해결하며, 로보틱스 및 AR/VR 분야의 real-to-sim 응용을 위한 확장 가능한 솔루션을 제공합니다. 핵심 장점은 깨끗하고 시뮬레이션 가능한 기하학을 생성하고, 강화 학습을 활용하여 모션과 장면 상호작용의 물리적 타당성을 보장한다는 점입니다.

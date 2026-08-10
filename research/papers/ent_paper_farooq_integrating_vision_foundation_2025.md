@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.05838v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.05838v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (936 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,25 @@ theoretical_depth:
 ## Overview
 This paper presents a novel approach that integrates vision foundation models with reinforcement learning to enhance object interaction capabilities in simulated environments. By combining the Segment Anything Model (SAM) and YOLOv5 with a Proximal Policy Optimization (PPO) agent operating in the AI2-THOR simulation environment, we enable the agent to perceive and interact with objects more effectively. Our comprehensive experiments, conducted across four diverse indoor kitchen settings, demonstrate significant improvements in object interaction success rates and navigation efficiency compared to a baseline agent without advanced perception. The results show a 68% increase in average cumulative reward, a 52.5% improvement in object interaction success rate, and a 33% increase in navigation efficiency. These findings highlight the potential of integrating foundation models with reinforcement learning for complex robotic tasks, paving the way for more sophisticated and capable autonomous agents.
 
-## 개요
-본 논문은 시뮬레이션 환경에서 객체 상호작용 능력을 향상시키기 위해 비전 기반 모델과 강화 학습을 통합하는 새로운 접근 방식을 제시합니다. AI2-THOR 시뮬레이션 환경에서 작동하는 Proximal Policy Optimization (PPO) 에이전트에 Segment Anything Model (SAM) 및 YOLOv5를 결합함으로써, 에이전트가 객체를 더 효과적으로 인식하고 상호작용할 수 있도록 합니다. 네 가지 다양한 실내 주방 환경에서 수행된 포괄적인 실험 결과, 고급 인식 기능이 없는 기준 에이전트와 비교하여 객체 상호작용 성공률과 탐색 효율성이 크게 향상되었음을 보여줍니다. 결과는 평균 누적 보상이 68% 증가하고, 객체 상호작용 성공률이 52.5% 향상되었으며, 탐색 효율성이 33% 증가했음을 나타냅니다. 이러한 발견은 복잡한 로봇 작업을 위해 기반 모델과 강화 학습을 통합할 가능성을 강조하며, 더 정교하고 유능한 자율 에이전트를 위한 길을 열어줍니다.
-
-## 핵심 내용
-본 논문은 시뮬레이션 환경에서 객체 상호작용 능력을 향상시키기 위해 비전 기반 모델과 강화 학습을 통합하는 새로운 접근 방식을 제시합니다. AI2-THOR 시뮬레이션 환경에서 작동하는 Proximal Policy Optimization (PPO) 에이전트에 Segment Anything Model (SAM) 및 YOLOv5를 결합함으로써, 에이전트가 객체를 더 효과적으로 인식하고 상호작용할 수 있도록 합니다. 네 가지 다양한 실내 주방 환경에서 수행된 포괄적인 실험 결과, 고급 인식 기능이 없는 기준 에이전트와 비교하여 객체 상호작용 성공률과 탐색 효율성이 크게 향상되었음을 보여줍니다. 결과는 평균 누적 보상이 68% 증가하고, 객체 상호작용 성공률이 52.5% 향상되었으며, 탐색 효율성이 33% 증가했음을 나타냅니다. 이러한 발견은 복잡한 로봇 작업을 위해 기반 모델과 강화 학습을 통합할 가능성을 강조하며, 더 정교하고 유능한 자율 에이전트를 위한 길을 열어줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.05838v1
+
+## 개요
+이 연구는 SAM과 YOLOv5를 인식 모듈로 PPO 에이전트의 관측 파이프라인에 통합하여, 복잡한 장면에서 전통적인 강화 학습의 객체 인식 및 상호작용 능력 부족 문제를 해결했습니다. AI2-THOR의 네 가지 서로 다른 주방 레이아웃에서 수행된 실험은, 비전 기반 모델을 통합한 후 에이전트의 객체 상호작용 성공률이 52.5% 향상되고, 평균 누적 보상이 68.2% 증가하며, 내비게이션 효율도 33% 개선되었음을 보여줍니다. 이 방법은 사전 훈련된 비전 모델과 강화 학습을 결합하면 시뮬레이션 환경에서 에이전트의 자율 조작 능력을 크게 향상시킬 수 있음을 입증합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **인식 모듈**: SAM(Segment Anything Model)과 YOLOv5를 비전 프론트엔드로 사용하여, 원본 RGB 이미지에 대해 실시간 분할 및 객체 탐지를 수행하고 구조화된 객체 수준 관측 특징을 생성합니다.
+- **강화 학습 프레임워크**: PPO(Proximal Policy Optimization) 알고리즘을 채택하여, 위의 인식 특징을 상태 입력으로 사용하고, AI2-THOR 환경에서 객체 상호작용 작업을 수행하도록 에이전트를 훈련합니다.
+- **환경 설정**: AI2-THOR 시뮬레이터의 네 가지 서로 다른 주방 레이아웃(floor plans)을 사용하며, 각 레이아웃에는 여러 상호작용 가능한 객체(예: 서랍, 수도꼭지, 전자레인지 등)가 포함됩니다.
+
+### 실험 설정
+- **기준 비교**: 원본 RGB 이미지만 사용하는 PPO 에이전트를 기준(raw-RGB baseline)으로 설정합니다.
+- **평가 지표**: 객체 상호작용 성공률(object-interaction success rate), 평균 누적 보상(average cumulative reward), 내비게이션 효율(navigation efficiency).
+- **훈련 및 테스트**: 모든 에이전트는 동일한 환경 구성에서 훈련되며, 네 가지 주방 레이아웃에서 각각 테스트됩니다.
+
+### 주요 결과
+- **객체 상호작용 성공률**: 통합 모델이 기준 대비 52.5% 향상.
+- **평균 누적 보상**: 68.2% 증가(원문에는 68%와 68.2% 두 가지 표현이 있으며, 여기서는 정확한 값 68.2%를 사용).
+- **내비게이션 효율**: 33% 향상.
+- **결론**: 비전 기반 모델 통합은 복잡한 실내 장면에서 PPO 에이전트의 객체 인식 및 조작 능력을 크게 강화하며, 사전 훈련된 비전 모델과 강화 학습의 결합 효과를 검증하여 더 자율적인 로봇 에이전트 개발에 실현 가능한 경로를 제공합니다.

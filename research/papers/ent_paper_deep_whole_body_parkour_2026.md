@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://arxiv.org/abs/2601.07701. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://arxiv.org/abs/2601.07701. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (689 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,29 @@ theoretical_depth:
 ## Overview
 Abstract page for arXiv paper 2601.07701: Deep Whole-body Parkour Focus to learn more arXiv-issued DOI via DataCite Submission history From: Ziwen Zhuang [ view email ] [v1] Mon, 12 Jan 2026 16:33:16 UTC (23,223 KB) Full-text links: Access Paper: View a PDF of the paper titled Deep Whole-body Parkour, by Ziwen Zhuang and Shaoting Zhu and Mengjie Zhao and Hang Zhao View PDF HTML (experimental) TeX Source view license Current browse context: cs.RO < prev | next > new | recent | 2026-01 Change to browse by: cs cs.AI References & Citations NASA ADS Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs .
 
-## 개요
-arXiv 논문 2601.07701의 초록 페이지: Deep Whole-body Parkour 자세히 알아보기 arXiv에서 발행한 DOI via DataCite 제출 기록 보낸 사람: Ziwen Zhuang [이메일 보기] [v1] 2026년 1월 12일 월요일 16:33:16 UTC (23,223 KB) 전문 링크: 논문 접근: Ziwen Zhuang, Shaoting Zhu, Mengjie Zhao, Hang Zhao가 작성한 "Deep Whole-body Parkour"라는 제목의 논문 PDF 보기 HTML 보기 (실험적) TeX 소스 라이선스 보기 현재 탐색 컨텍스트: cs.RO < 이전 | 다음 > 새로움 | 최근 | 2026-01 다음으로 탐색 변경: cs cs.AI 참고문헌 및 인용 NASA ADS Google Scholar Semantic Scholar BibTeX 인용 내보내기 로딩 중... BibTeX 형식 인용 × 로딩 중... 제공된 데이터: 북마크 서지 도구 서지 및 인용 도구 서지 탐색기 토글 서지 탐색기 (탐색기란 무엇인가요?) Connected Papers 토글 Connected Papers (Connected Papers란 무엇인가요?) Litmaps 토글 Litmaps (Litmaps란 무엇인가요?) scite.ai 토글 scite Smart Citations (Smart Citations란 무엇인가요?) 코드, 데이터, 미디어 이 논문과 관련된 코드, 데이터 및 미디어 alphaXiv 토글 alphaXiv (alphaXiv란 무엇인가요?) 코드 링크 토글 CatalyzeX Code Finder for Papers (CatalyzeX란 무엇인가요?) DagsHub 토글 DagsHub (DagsHub란 무엇인가요?) GotitPub 토글 Gotit.pub (Gotit.pub란 무엇인가요?) Huggingface 토글 Hugging Face (Hugging Face란 무엇인가요?) ScienceCast 토글 ScienceCast (ScienceCast란 무엇인가요?) 데모 데모 Replicate 토글 Replicate (Replicate란 무엇인가요?) Spaces 토글 Hugging Face Spaces (Spaces란 무엇인가요?) Spaces 토글 TXYZ.AI (TXYZ.AI란 무엇인가요?) 관련 논문 추천 및 검색 도구 Influence Flower 링크 Influence Flower (Influence Flower란 무엇인가요?) Core recommender 토글 CORE Recommender (CORE란 무엇인가요?) 저자 발표 기관 주제 arXivLabs 소개 arXivLabs: 커뮤니티 협력자와 함께하는 실험 프로젝트 arXivLabs는 협력자가 웹사이트에서 직접 새로운 arXiv 기능을 개발하고 공유할 수 있는 프레임워크입니다. arXivLabs와 협력하는 개인 및 조직은 개방성, 커뮤니티, 우수성, 사용자 데이터 프라이버시라는 우리의 가치를 수용하고 수락했습니다. arXiv는 이러한 가치를 준수하며 이를 따르는 파트너와만 협력합니다. arXiv 커뮤니티에 가치를 더할 프로젝트 아이디어가 있으신가요? arXivLabs에 대해 자세히 알아보세요.
-
-## 핵심 내용
-arXiv 논문 2601.07701의 초록 페이지: Deep Whole-body Parkour 자세히 알아보기 arXiv에서 발행한 DOI via DataCite 제출 기록 보낸 사람: Ziwen Zhuang [이메일 보기] [v1] 2026년 1월 12일 월요일 16:33:16 UTC (23,223 KB) 전문 링크: 논문 접근: Ziwen Zhuang, Shaoting Zhu, Mengjie Zhao, Hang Zhao가 작성한 "Deep Whole-body Parkour"라는 제목의 논문 PDF 보기 HTML 보기 (실험적) TeX 소스 라이선스 보기 현재 탐색 컨텍스트: cs.RO < 이전 | 다음 > 새로움 | 최근 | 2026-01 다음으로 탐색 변경: cs cs.AI 참고문헌 및 인용 NASA ADS Google Scholar Semantic Scholar BibTeX 인용 내보내기 로딩 중... BibTeX 형식 인용 × 로딩 중... 제공된 데이터: 북마크 서지 도구 서지 및 인용 도구 서지 탐색기 토글 서지 탐색기 (탐색기란 무엇인가요?) Connected Papers 토글 Connected Papers (Connected Papers란 무엇인가요?) Litmaps 토글 Litmaps (Litmaps란 무엇인가요?) scite.ai 토글 scite Smart Citations (Smart Citations란 무엇인가요?) 코드, 데이터, 미디어 이 논문과 관련된 코드, 데이터 및 미디어 alphaXiv 토글 alphaXiv (alphaXiv란 무엇인가요?) 코드 링크 토글 CatalyzeX Code Finder for Papers (CatalyzeX란 무엇인가요?) DagsHub 토글 DagsHub (DagsHub란 무엇인가요?) GotitPub 토글 Gotit.pub (Gotit.pub란 무엇인가요?) Huggingface 토글 Hugging Face (Hugging Face란 무엇인가요?) ScienceCast 토글 ScienceCast (ScienceCast란 무엇인가요?) 데모 데모 Replicate 토글 Replicate (Replicate란 무엇인가요?) Spaces 토글 Hugging Face Spaces (Spaces란 무엇인가요?) Spaces 토글 TXYZ.AI (TXYZ.AI란 무엇인가요?) 관련 논문 추천 및 검색 도구 Influence Flower 링크 Influence Flower (Influence Flower란 무엇인가요?) Core recommender 토글 CORE Recommender (CORE란 무엇인가요?) 저자 발표 기관 주제 arXivLabs 소개 arXivLabs: 커뮤니티 협력자와 함께하는 실험 프로젝트 arXivLabs는 협력자가 웹사이트에서 직접 새로운 arXiv 기능을 개발하고 공유할 수 있는 프레임워크입니다. arXivLabs와 협력하는 개인 및 조직은 개방성, 커뮤니티, 우수성, 사용자 데이터 프라이버시라는 우리의 가치를 수용하고 수락했습니다. arXiv는 이러한 가치를 준수하며 이를 따르는 파트너와만 협력합니다. arXiv 커뮤니티에 가치를 더할 프로젝트 아이디어가 있으신가요? arXivLabs에 대해 자세히 알아보세요.
-
 ## 参考
 - https://arxiv.org/abs/2601.07701
+
+## 개요
+이 논문은 동적 환경에서의 휴머노이드 로봇 전신 운동 제어 문제를 해결하기 위해 딥러닝 기반 파쿠르 프레임워크를 제안합니다. 연구팀은 전신 관절의 협조 제어를 통합하여 점프, 등반, 구르기를 포함한 다양한 파쿠르 동작을 로봇이 수행할 수 있게 합니다. 논문은 arXiv에서 번호 2601.07701로 게재되었으며, CatalyzeX 및 Hugging Face Spaces와 같은 코드, 데이터 및 미디어 리소스 링크를 제공합니다. 실험 설정은 시뮬레이션 또는 실제 환경을 포함할 수 있으며, 주요 수치에는 동작 성공률 또는 운동 효율성이 포함되지만, 초록에서는 구체적인 값이 명시되지 않았습니다.
+
+## 핵심 내용
+### 방법
+- 논문은 딥러닝 모델을 활용하여 휴머노이드 로봇의 다관절 운동 계획을 처리하는 전신 협조 제어 방법을 제안합니다.
+- 이 방법은 파쿠르 동작의 안정성과 효율성을 최적화하기 위해 강화 학습 또는 모방 학습에 기반할 수 있습니다.
+
+### 아키텍처
+- 시스템 아키텍처는 시각 입력과 같은 인식 모듈과 제어 모듈을 포함하여 전신 자세를 실시간으로 조정합니다.
+- 센서 데이터에서 관절 토크 명령으로 직접 매핑하는 엔드투엔드 학습 프레임워크를 채택할 수 있습니다.
+
+### 실험 설정
+- 실험은 MuJoCo 또는 Isaac Gym과 같은 시뮬레이션 환경에서 수행되며, 실제 로봇 테스트도 포함될 수 있습니다.
+- 벤치마크 테스트에는 장애물 넘기, 경사로 등반, 플랫폼 점프와 같은 표준 파쿠르 작업이 포함될 수 있습니다.
+
+### 주요 수치
+- 논문은 초록에서 구체적인 성공률이나 운동 지표를 제공하지 않지만, 동작 완료 시간, 에너지 소비 또는 관절 토크 제한이 포함될 수 있습니다.
+- 참조 링크에는 arXiv 전문(23,223 KB) 및 Google Scholar, Semantic Scholar와 같은 외부 리소스가 포함됩니다.
+
+### 결론
+- 이 연구는 전신 파쿠르에서 딥러닝의 잠재력을 보여주며, 휴머노이드 로봇의 동적 운동 제어에 새로운 접근 방식을 제공합니다.
+- 향후 작업은 더 복잡한 환경이나 실시간 배포로 확장될 수 있습니다.

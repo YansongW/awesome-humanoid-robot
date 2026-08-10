@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.12790v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.12790v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1028 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,27 @@ FocusNav 通过空间选择性注意力机制有效解决了人形机器人在�
 ## Overview
 Robust local navigation in unstructured and dynamic environments remains a significant challenge for humanoid robots, requiring a delicate balance between long-range navigation targets and immediate motion stability. In this paper, we propose FocusNav, a spatial selective attention framework that adaptively modulates the robot's perceptual field based on navigational intent and real-time stability. FocusNav features a Waypoint-Guided Spatial Cross-Attention (WGSCA) mechanism that anchors environmental feature aggregation to a sequence of predicted collision-free waypoints, ensuring task-relevant perception along the planned trajectory. To enhance robustness in complex terrains, the Stability-Aware Selective Gating (SASG) module autonomously truncates distal information when detecting instability, compelling the policy to prioritize immediate foothold safety. Extensive experiments on the Unitree G1 humanoid robot demonstrate that FocusNav significantly improves navigation success rates in challenging scenarios, outperforming baselines in both collision avoidance and motion stability, achieving robust navigation in dynamic and complex environments.
 
-## 개요
-비정형적이고 동적인 환경에서의 강건한 로컬 내비게이션은 인간형 로봇에게 여전히 중요한 도전 과제로, 장거리 내비게이션 목표와 즉각적인 운동 안정성 사이의 섬세한 균형이 요구됩니다. 본 논문에서는 내비게이션 의도와 실시간 안정성에 기반하여 로봇의 지각 영역을 적응적으로 조절하는 공간 선택적 주의 메커니즘인 FocusNav를 제안합니다. FocusNav는 Waypoint-Guided Spatial Cross-Attention (WGSCA) 메커니즘을 특징으로 하며, 예측된 충돌 없는 웨이포인트 시퀀스에 환경 특징 집계를 고정시켜 계획된 궤적을 따라 작업 관련 지각을 보장합니다. 복잡한 지형에서의 강건성을 향상시키기 위해 Stability-Aware Selective Gating (SASG) 모듈은 불안정성이 감지될 때 원거리 정보를 자율적으로 차단하여 정책이 즉각적인 발판 안전을 우선시하도록 강제합니다. Unitree G1 인간형 로봇을 대상으로 한 광범위한 실험을 통해 FocusNav가 도전적인 시나리오에서 내비게이션 성공률을 크게 향상시키며, 충돌 회피와 운동 안정성 모두에서 기준선을 능가하여 동적이고 복잡한 환경에서 강건한 내비게이션을 달성함을 입증했습니다.
-
-## 핵심 내용
-비정형적이고 동적인 환경에서의 강건한 로컬 내비게이션은 인간형 로봇에게 여전히 중요한 도전 과제로, 장거리 내비게이션 목표와 즉각적인 운동 안정성 사이의 섬세한 균형이 요구됩니다. 본 논문에서는 내비게이션 의도와 실시간 안정성에 기반하여 로봇의 지각 영역을 적응적으로 조절하는 공간 선택적 주의 메커니즘인 FocusNav를 제안합니다. FocusNav는 Waypoint-Guided Spatial Cross-Attention (WGSCA) 메커니즘을 특징으로 하며, 예측된 충돌 없는 웨이포인트 시퀀스에 환경 특징 집계를 고정시켜 계획된 궤적을 따라 작업 관련 지각을 보장합니다. 복잡한 지형에서의 강건성을 향상시키기 위해 Stability-Aware Selective Gating (SASG) 모듈은 불안정성이 감지될 때 원거리 정보를 자율적으로 차단하여 정책이 즉각적인 발판 안전을 우선시하도록 강제합니다. Unitree G1 인간형 로봇을 대상으로 한 광범위한 실험을 통해 FocusNav가 도전적인 시나리오에서 내비게이션 성공률을 크게 향상시키며, 충돌 회피와 운동 안정성 모두에서 기준선을 능가하여 동적이고 복잡한 환경에서 강건한 내비게이션을 달성함을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.12790v1
+
+## 개요
+FocusNav의 핵심 혁신은 공간 선택적 주의 메커니즘으로, 이 메커니즘은 내비게이션 의도와 실시간 안정성에 따라 로봇의 인식 범위를 적응적으로 조정합니다. 구체적으로, Waypoint-Guided Spatial Cross-Attention (WGSCA)은 환경 특징 집계를 일련의 예측된 충돌 없는 웨이포인트에 고정시켜 계획된 궤적을 따라 작업 관련 인식을 보장합니다. 동시에, Stability-Aware Selective Gating (SASG) 모듈은 불안정이 감지되면 원거리 정보를 자동으로 차단하여 정책이 즉각적인 발판 안전을 우선시하도록 강제합니다. Unitree G1 휴머노이드 로봇에서의 광범위한 실험은 도전적인 시나리오에서 FocusNav의 효과를 검증했으며, 내비게이션 성공률, 장애물 회피 능력 및 운동 안정성에서 기존 기준 방법보다 우수함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+FocusNav 프레임워크는 두 가지 핵심 모듈을 포함합니다:
+- **Waypoint-Guided Spatial Cross-Attention (WGSCA)**: 이 메커니즘은 환경 특징 집계 과정을 일련의 예측된 충돌 없는 웨이포인트와 정렬합니다. 교차 주의 연산을 통해 모델은 계획된 궤적을 따라 핵심 환경 정보에 집중할 수 있어 인식과 내비게이션 의도의 일관성을 보장합니다.
+- **Stability-Aware Selective Gating (SASG)**: 이 모듈은 로봇의 운동 안정성을 실시간으로 모니터링합니다. 불안정 상태(예: 기울어짐 또는 진동)가 감지되면 SASG는 원거리 환경 정보 처리를 자동으로 차단하여 정책이 즉각적인 발판 안전에 우선적으로 집중하도록 하여 복잡한 지형에서의 견고성을 강화합니다.
+
+### 실험 설정
+- **플랫폼**: Unitree G1 휴머노이드 로봇.
+- **시나리오**: 장애물, 지형 변화 및 이동 간섭을 포함한 비구조적 및 동적 환경.
+- **기준**: 기존 로컬 내비게이션 방법과 비교했으며, 평가 지표는 내비게이션 성공률, 충돌률 및 운동 안정성을 포함합니다.
+
+### 주요 결과
+- FocusNav는 도전적인 시나리오에서 내비게이션 성공률을 크게 향상시켰으며, 특히 동적 장애물이 밀집되고 지형이 험준한 환경에서 두드러진 성과를 보였습니다.
+- 기준과 비교하여 FocusNav는 충돌 회피에서 더 낮은 충돌률을 달성하면서도 더 높은 운동 안정성(예: 더 작은 몸 기울기 진폭 및 더 적은 보행 조정)을 유지했습니다.
+- 절제 실험은 WGSCA와 SASG 모듈이 각각 성능 향상에 기여하며, 두 모듈을 결합했을 때 최상의 효과를 나타냄을 확인했습니다.
+
+### 결론
+FocusNav는 공간 선택적 주의 메커니즘을 통해 비구조적 및 동적 환경에서 휴머노이드 로봇의 로컬 내비게이션 문제를 효과적으로 해결합니다. 웨이포인트 안내 및 안정성 인식 설계는 장거리 목표와 즉각적인 안전 사이의 균형을 위한 실현 가능한 솔루션을 제공하며, Unitree G1에서의 실험은 실제 배포 가능성을 검증했습니다.

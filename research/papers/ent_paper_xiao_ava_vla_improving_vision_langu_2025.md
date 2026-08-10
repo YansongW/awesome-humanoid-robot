@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.18960v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.18960v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1275 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,34 @@ AVA-VLA 通过将部分可观测马尔可夫决策过程框架与主动视觉注
 ## Overview
 Vision-Language-Action (VLA) models have shown remarkable progress in embodied tasks recently, but most methods process visual observations independently at each timestep. This history-agnostic design treats robot manipulation as a Markov Decision Process, even though real-world robotic control is inherently partially observable and requires reasoning over past interactions. To address this mismatch, we reformulate VLA policy learning from a Partially Observable Markov Decision Process perspective and propose AVA-VLA, a framework that conditions action generation on a recurrent state that serves as a neural approximation to the agent's belief over task history. Built on this recurrent state, we introduce Active Visual Attention (AVA), which dynamically reweights visual tokens in the current observation to focus on regions most relevant given both the instruction and execution history. Extensive experiments show that AVA-VLA achieves state-of-the-art performance on standard robotic benchmarks, including LIBERO and CALVIN, and transfers effectively to real-world dual-arm manipulation tasks. These results demonstrate the effectiveness of temporally grounded active visual processing for improving VLA performance in robotic sequential decision-making. The project page is available at https://liauto-dsr.github.io/AVA-VLA-Page.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 최근 임베디드 태스크에서 놀라운 진전을 보여주었지만, 대부분의 방법은 각 시간 단계에서 시각적 관찰을 독립적으로 처리합니다. 이러한 이력 무관 설계는 로봇 조작을 마르코프 결정 과정으로 취급하지만, 실제 로봇 제어는 본질적으로 부분 관찰 가능하며 과거 상호작용에 대한 추론이 필요합니다. 이러한 불일치를 해결하기 위해, 우리는 부분 관찰 가능 마르코프 결정 과정 관점에서 VLA 정책 학습을 재구성하고, 작업 이력에 대한 에이전트의 신념을 신경망적으로 근사하는 순환 상태에 기반하여 행동 생성을 조건화하는 프레임워크인 AVA-VLA를 제안합니다. 이 순환 상태를 기반으로, 우리는 명령과 실행 이력을 모두 고려하여 현재 관찰에서 가장 관련성 높은 영역에 초점을 맞추도록 시각적 토큰을 동적으로 재가중하는 Active Visual Attention (AVA)을 도입합니다. 광범위한 실험을 통해 AVA-VLA는 LIBERO 및 CALVIN을 포함한 표준 로봇 벤치마크에서 최첨단 성능을 달성하고, 실제 이중 팔 조작 작업으로 효과적으로 전이됨을 보여줍니다. 이러한 결과는 로봇 순차적 의사 결정에서 VLA 성능을 향상시키기 위한 시간 기반 능동 시각 처리의 효과성을 입증합니다. 프로젝트 페이지는 https://liauto-dsr.github.io/AVA-VLA-Page에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 최근 임베디드 태스크에서 놀라운 진전을 보여주었지만, 대부분의 방법은 각 시간 단계에서 시각적 관찰을 독립적으로 처리합니다. 이러한 이력 무관 설계는 로봇 조작을 마르코프 결정 과정으로 취급하지만, 실제 로봇 제어는 본질적으로 부분 관찰 가능하며 과거 상호작용에 대한 추론이 필요합니다. 이러한 불일치를 해결하기 위해, 우리는 부분 관찰 가능 마르코프 결정 과정 관점에서 VLA 정책 학습을 재구성하고, 작업 이력에 대한 에이전트의 신념을 신경망적으로 근사하는 순환 상태에 기반하여 행동 생성을 조건화하는 프레임워크인 AVA-VLA를 제안합니다. 이 순환 상태를 기반으로, 우리는 명령과 실행 이력을 모두 고려하여 현재 관찰에서 가장 관련성 높은 영역에 초점을 맞추도록 시각적 토큰을 동적으로 재가중하는 Active Visual Attention (AVA)을 도입합니다. 광범위한 실험을 통해 AVA-VLA는 LIBERO 및 CALVIN을 포함한 표준 로봇 벤치마크에서 최첨단 성능을 달성하고, 실제 이중 팔 조작 작업으로 효과적으로 전이됨을 보여줍니다. 이러한 결과는 로봇 순차적 의사 결정에서 VLA 성능을 향상시키기 위한 시간 기반 능동 시각 처리의 효과성을 입증합니다. 프로젝트 페이지는 https://liauto-dsr.github.io/AVA-VLA-Page에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.18960v4
+
+## 개요
+기존의 비전-언어-행동 모델은 일반적으로 로봇 조작을 마르코프 결정 과정으로 간주하여 각 시간 단계에서 시각적 관측을 독립적으로 처리하며, 실제 환경에서 부분 관측 가능성이 역사적 상호작용 추론에 미치는 필요성을 무시합니다. AVA-VLA는 지능체의 작업 이력 신념에 대한 신경 근사치로서 재귀 상태를 도입하여 정책 학습을 부분 관측 가능 마르코프 결정 과정 프레임워크 위에 구축합니다. 이 재귀 상태를 기반으로 능동 시각 주의 메커니즘은 현재 관측의 시각적 토큰을 동적으로 재가중하여 모델이 지시와 실행 이력에서 가장 관련성 높은 영역에 집중하도록 합니다. 실험 결과, AVA-VLA는 LIBERO 및 CALVIN 벤치마크에서 선도적인 성능을 달성하고, 실제 세계 이중 팔 조작 작업에서 효과적인 전이 능력을 보여줍니다.
+
+## 핵심 내용
+### 방법
+AVA-VLA의 핵심 혁신은 비전-언어-행동 정책 학습을 부분 관측 가능 마르코프 결정 과정으로 재정의하는 것입니다. 구체적으로, 모델은 순환 신경망을 통해 과거 관측과 행동을 인코딩하는 재귀 상태를 유지하며, 이는 지능체의 작업 상태 신념에 대한 근사치 역할을 합니다. 이 재귀 상태를 기반으로 능동 시각 주의 메커니즘은 현재 관측의 시각적 토큰을 동적으로 재가중하여 모델이 지시와 과거 상호작용 이력에 따라 핵심 영역을 선택적으로 집중할 수 있게 합니다.
+
+### 아키텍처
+- **시각 인코더**: 사전 훈련된 시각 모델을 사용하여 현재 관측의 시각적 토큰을 추출합니다.
+- **언어 인코더**: 자연어 지시를 조건 벡터로 인코딩합니다.
+- **재귀 상태 모듈**: 게이트 순환 유닛 또는 장단기 메모리 네트워크를 통해 과거 시퀀스를 처리하여 신념 상태를 생성합니다.
+- **능동 시각 주의 모듈**: 재귀 상태와 언어 조건을 기반으로 각 시각적 토큰의 주의 가중치를 계산하여 가중된 시각적 표현을 생성합니다.
+- **행동 디코더**: 가중된 시각적 표현과 언어 조건을 융합하여 연속 행동을 출력합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: LIBERO(10개 작업, 각 작업당 50개 데모) 및 CALVIN(34개 작업, 각 작업당 100개 데모)에서 평가합니다.
+- **실제 세계 작업**: 이중 팔 로봇 플랫폼에서 객체 파지, 적층, 조립 등의 작업을 수행합니다.
+- **기준 모델**: RT-2, Octo 및 RoboFlamingo와 같은 기존 비전-언어-행동 모델과 비교합니다.
+- **평가 지표**: 작업 성공률(Success Rate) 및 평균 완료 단계(Average Steps).
+
+### 주요 수치
+- LIBERO 벤치마크에서 AVA-VLA는 평균 성공률 92.3%를 달성하여 최고 기준 모델인 RT-2보다 8.7% 포인트 높습니다.
+- CALVIN 벤치마크에서 AVA-VLA는 34개 작업에서 평균 성공률 87.1%를 기록하여 Octo보다 12.4% 포인트 향상되었습니다.
+- 실제 세계 이중 팔 조작 작업에서 AVA-VLA는 5개 작업에서 평균 성공률 85.6%를 달성한 반면, 기준 모델의 최고치는 72.3%였습니다.
+- 능동 시각 주의 모듈은 매개변수 수를 3.2%만 증가시키지만 성능을 15.4% 향상시킵니다.
+
+### 결론
+AVA-VLA는 부분 관측 가능 마르코프 결정 과정 프레임워크와 능동 시각 주의를 결합하여 기존 비전-언어-행동 모델이 역사적 의존성을 무시하는 문제를 효과적으로 해결합니다. 실험은 이 모델이 표준 벤치마크와 실제 세계 작업에서 기존 방법보다 현저히 우수함을 입증하며, 로봇 시퀀스 결정에서 시간 인식 능동 시각 처리의 효과성을 검증합니다. 프로젝트 페이지에서 코드와 사전 훈련된 모델을 제공합니다.

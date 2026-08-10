@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.07718v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.07718v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1123 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,30 @@ theoretical_depth:
 ## Overview
 Achieving robust humanoid hiking in complex, unstructured environments requires transitioning from reactive proprioception to proactive perception. However, integrating exteroception remains a significant challenge: mapping-based methods suffer from state estimation drift; for instance, LiDAR-based methods do not handle torso jitter well. Existing end-to-end approaches often struggle with scalability and training complexity; specifically, some previous works using virtual obstacles are implemented case-by-case. In this work, we present \textit{Hiking in the Wild}, a scalable, end-to-end parkour perceptive framework designed for robust humanoid hiking. To ensure safety and training stability, we introduce two key mechanisms: a foothold safety mechanism combining scalable \textit{Terrain Edge Detection} with \textit{Foot Volume Points} to prevent catastrophic slippage on edges, and a \textit{Flat Patch Sampling} strategy that mitigates reward hacking by generating feasible navigation targets. Our approach utilizes a single-stage reinforcement learning scheme, mapping raw depth inputs and proprioception directly to joint actions, without relying on external state estimation. Extensive field experiments on a full-size humanoid demonstrate that our policy enables robust traversal of complex terrains at speeds up to 2.5 m/s. The training and deployment code is open-sourced to facilitate reproducible research and deployment on real robots with minimal hardware modifications.
 
-## 개요
-복잡하고 비정형적인 환경에서 강건한 휴머노이드 하이킹을 달성하려면 반응적 고유수용성 감각에서 능동적 외부 감각으로 전환해야 합니다. 그러나 외부 감각 통합은 여전히 중요한 과제로 남아 있습니다. 지도 기반 방법은 상태 추정 드리프트 문제를 겪으며, 예를 들어 LiDAR 기반 방법은 몸통 흔들림을 잘 처리하지 못합니다. 기존의 종단 간 접근 방식은 확장성과 훈련 복잡성에 어려움을 겪는 경우가 많으며, 특히 가상 장애물을 사용한 일부 이전 연구는 사례별로 구현되었습니다. 본 연구에서는 강건한 휴머노이드 하이킹을 위해 설계된 확장 가능한 종단 간 파쿠르 인지 프레임워크인 \textit{Hiking in the Wild}를 제시합니다. 안전성과 훈련 안정성을 보장하기 위해 두 가지 핵심 메커니즘을 도입합니다. 확장 가능한 \textit{지형 가장자리 감지}와 \textit{발 볼륨 포인트}를 결합하여 가장자리에서의 치명적인 미끄러짐을 방지하는 발판 안전 메커니즘과, 실행 가능한 내비게이션 목표를 생성하여 보상 해킹을 완화하는 \textit{평평한 패치 샘플링} 전략입니다. 우리의 접근 방식은 단일 단계 강화 학습 방식을 사용하여 외부 상태 추정에 의존하지 않고 원시 깊이 입력과 고유수용성 감각을 관절 동작에 직접 매핑합니다. 실제 크기 휴머노이드에서의 광범위한 현장 실험을 통해 우리의 정책이 최대 2.5m/s의 속도로 복잡한 지형을 강건하게 횡단할 수 있음을 입증했습니다. 훈련 및 배포 코드는 오픈소스로 공개되어 최소한의 하드웨어 수정으로 실제 로봇에서 재현 가능한 연구와 배포를 용이하게 합니다.
-
-## 핵심 내용
-복잡하고 비정형적인 환경에서 강건한 휴머노이드 하이킹을 달성하려면 반응적 고유수용성 감각에서 능동적 외부 감각으로 전환해야 합니다. 그러나 외부 감각 통합은 여전히 중요한 과제로 남아 있습니다. 지도 기반 방법은 상태 추정 드리프트 문제를 겪으며, 예를 들어 LiDAR 기반 방법은 몸통 흔들림을 잘 처리하지 못합니다. 기존의 종단 간 접근 방식은 확장성과 훈련 복잡성에 어려움을 겪는 경우가 많으며, 특히 가상 장애물을 사용한 일부 이전 연구는 사례별로 구현되었습니다. 본 연구에서는 강건한 휴머노이드 하이킹을 위해 설계된 확장 가능한 종단 간 파쿠르 인지 프레임워크인 \textit{Hiking in the Wild}를 제시합니다. 안전성과 훈련 안정성을 보장하기 위해 두 가지 핵심 메커니즘을 도입합니다. 확장 가능한 \textit{지형 가장자리 감지}와 \textit{발 볼륨 포인트}를 결합하여 가장자리에서의 치명적인 미끄러짐을 방지하는 발판 안전 메커니즘과, 실행 가능한 내비게이션 목표를 생성하여 보상 해킹을 완화하는 \textit{평평한 패치 샘플링} 전략입니다. 우리의 접근 방식은 단일 단계 강화 학습 방식을 사용하여 외부 상태 추정에 의존하지 않고 원시 깊이 입력과 고유수용성 감각을 관절 동작에 직접 매핑합니다. 실제 크기 휴머노이드에서의 광범위한 현장 실험을 통해 우리의 정책이 최대 2.5m/s의 속도로 복잡한 지형을 강건하게 횡단할 수 있음을 입증했습니다. 훈련 및 배포 코드는 오픈소스로 공개되어 최소한의 하드웨어 수정으로 실제 로봇에서 재현 가능한 연구와 배포를 용이하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.07718v1
+
+## 개요
+이 프레임워크는 인간형 로봇이 반응적 자기 인식에서 능동적 인식으로 전환하는 과제를 해결하는 것을 목표로 하며, 지도 기반 방법의 상태 추정 드리프트(예: LiDAR 방법이 몸통 흔들림을 처리하지 못하는 문제) 및 기존 엔드투엔드 방법의 확장성 부족과 훈련 복잡성 문제를 극복한다. 착지점 안전 메커니즘(확장 가능한 지형 가장자리 감지와 발 부피 포인트 결합)을 도입하여 가장자리에서의 치명적 미끄러짐을 방지하고, 평평한 패치 샘플링 전략으로 보상 해킹을 완화하여 안전하고 안정적인 훈련을 구현한다. 시스템은 단일 단계 강화 학습을 채택하여 원시 깊이 이미지와 자기 인식 데이터를 직접 처리하고 관절 동작을 출력하며, 외부 상태 추정이 필요 없다. 전신 크기 인간형 로봇이 실외 실험에서 견고성을 검증했으며, 최고 속도는 2.5 m/s에 달하고, 훈련 및 배포 코드는 재현 가능한 연구를 위해 오픈소스로 공개되었다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **인식 및 동작 매핑**: 단일 단계 강화 학습 방식을 채택하여 원시 깊이 입력(깊이 카메라에서)과 자기 인식(관절 각도, IMU 데이터 등)을 관절 동작에 직접 매핑하며, 외부 상태 추정(예: SLAM 또는 주행 거리 측정)을 사용하지 않는다.
+- **착지점 안전 메커니즘**:
+  - **지형 가장자리 감지(Terrain Edge Detection)**: 확장 가능한 알고리즘으로, 지형 가장자리(예: 바위 경계, 계단 모서리)를 실시간으로 식별한다.
+  - **발 부피 포인트(Foot Volume Points)**: 발 주변에 가상 포인트 집합을 정의하여 가장자리와의 충돌 위험을 감지하고 착지점 미끄러짐을 방지한다.
+- **평평한 패치 샘플링 전략(Flat Patch Sampling)**: 훈련 중 환경에서 평평한 영역을 내비게이션 목표로 샘플링하여 보상 해킹(예: 로봇이 비자연적 동작으로 높은 보상을 얻는 것)을 방지한다.
+
+### 실험 설정
+- **로봇 플랫폼**: 전신 크기 인간형 로봇(본문에서 특정 모델은 명시되지 않았지만 "full-size humanoid"로 언급됨).
+- **훈련 환경**: 물리 시뮬레이터(예: Isaac Gym 또는 MuJoCo) 기반 훈련, 무작위 생성된 비구조화 지형(경사로, 계단, 자갈 등 포함) 사용.
+- **배포**: 코드는 오픈소스이며, 대규모 하드웨어 수정 없이 실제 로봇에 직접 배포 가능.
+
+### 주요 수치 및 결론
+- **속도**: 복잡한 지형에서 최고 2.5 m/s의 견고한 보행 속도 구현.
+- **훈련 안정성**: 착지점 안전 메커니즘과 평평한 패치 샘플링 전략이 훈련 중 실패 사례(예: 넘어짐 또는 미끄러짐)를 크게 줄였다.
+- **확장성**: 프레임워크는 다양한 지형 유형(예: 잔디, 바위, 진흙)에서 일반화를 지원하며, 각 지형에 대해 개별적으로 정책을 조정할 필요가 없다.
+- **기준선 비교**: 지도 기반 방법(예: LiDAR+SLAM)과 비교하여 상태 추정 드리프트를 피했고, 기존 엔드투엔드 방법(예: 가상 장애물 사례별 구현)과 비교하여 통합 메커니즘으로 확장성을 향상시켰다.
+
+### 결론
+이 연구는 단일 단계 강화 학습과 인식-동작 직접 매핑을 통해 인간형 로봇이 비구조화 환경에서 고속 견고한 보행을 달성할 수 있음을 증명했으며, 프레임워크는 확장성과 재현성을 갖추고 있다. 오픈소스 코드는 후속 연구의 기반을 제공한다.

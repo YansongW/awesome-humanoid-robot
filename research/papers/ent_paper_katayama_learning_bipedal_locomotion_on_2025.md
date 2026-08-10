@@ -47,8 +47,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.00614v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.00614v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (737 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,27 @@ theoretical_depth:
 ## Overview
 Sim-to-real reinforcement learning (RL) for humanoid robots with high-gear ratio actuators remains challenging due to complex actuator dynamics and the absence of torque sensors. To address this, we propose a novel RL framework leveraging foot-mounted inertial measurement units (IMUs). Instead of pursuing detailed actuator modeling and system identification, we utilize foot-mounted IMU measurements to enhance rapid stabilization capabilities over challenging terrains. Additionally, we propose symmetric data augmentation dedicated to the proposed observation space and random network distillation to enhance bipedal locomotion learning over rough terrain. We validate our approach through hardware experiments on a miniature-sized humanoid EVAL-03 over a variety of environments. The experimental results demonstrate that our method improves rapid stabilization capabilities over non-rigid surfaces and sudden environmental transitions.
 
-## 개요
-고기어비 액추에이터를 사용하는 휴머노이드 로봇을 위한 Sim-to-real 강화 학습(RL)은 복잡한 액추에이터 동역학과 토크 센서 부재로 인해 여전히 어려운 과제입니다. 이를 해결하기 위해, 우리는 발 장착 관성 측정 장치(IMU)를 활용하는 새로운 RL 프레임워크를 제안합니다. 상세한 액추에이터 모델링과 시스템 식별을 추구하는 대신, 발 장착 IMU 측정값을 활용하여 까다로운 지형에서의 빠른 안정화 능력을 향상시킵니다. 또한, 제안된 관찰 공간에 특화된 대칭 데이터 증강과 무작위 네트워크 증류를 제안하여 거친 지형에서의 이족 보행 학습을 강화합니다. 우리는 소형 휴머노이드 EVAL-03을 다양한 환경에서 하드웨어 실험을 통해 접근 방식을 검증합니다. 실험 결과는 우리의 방법이 비강체 표면과 급격한 환경 전환에서 빠른 안정화 능력을 향상시킴을 보여줍니다.
-
-## 핵심 내용
-고기어비 액추에이터를 사용하는 휴머노이드 로봇을 위한 Sim-to-real 강화 학습(RL)은 복잡한 액추에이터 동역학과 토크 센서 부재로 인해 여전히 어려운 과제입니다. 이를 해결하기 위해, 우리는 발 장착 관성 측정 장치(IMU)를 활용하는 새로운 RL 프레임워크를 제안합니다. 상세한 액추에이터 모델링과 시스템 식별을 추구하는 대신, 발 장착 IMU 측정값을 활용하여 까다로운 지형에서의 빠른 안정화 능력을 향상시킵니다. 또한, 제안된 관찰 공간에 특화된 대칭 데이터 증강과 무작위 네트워크 증류를 제안하여 거친 지형에서의 이족 보행 학습을 강화합니다. 우리는 소형 휴머노이드 EVAL-03을 다양한 환경에서 하드웨어 실험을 통해 접근 방식을 검증합니다. 실험 결과는 우리의 방법이 비강체 표면과 급격한 환경 전환에서 빠른 안정화 능력을 향상시킴을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.00614v2
+
+## 개요
+고감속비 액추에이터 휴머노이드 로봇의 복잡한 동역학과 토크 센서 부재로 인한 시뮬레이션-실제 전환 문제를 해결하기 위해, 본 연구는 기존 액추에이터 모델링을 대체하여 발목 IMU 측정 데이터를 혁신적으로 활용한다. 특정 관측 공간에 맞춘 대칭 데이터 증강 방법과 무작위 네트워크 증류 기술을 결합하여, 거친 지형에서의 이족 보행 학습 효과를 효과적으로 강화한다. 하드웨어 실험 결과, 이 방법은 비강성 표면과 돌발 환경 변화 시나리오에서 뛰어난 빠른 안정화 능력을 보여준다.
+
+## 핵심 내용
+### 방법 구조
+- **관측 공간 설계**: 발목 IMU(가속도계, 자이로스코프)와 베이스 IMU 데이터를 융합하여 토크 센서나 정밀 액추에이터 모델에 의존하지 않음
+- **대칭 데이터 증강**: 이족 보행의 대칭성을 활용하여 좌우 발목 IMU 데이터를 미러 변환하고, 훈련 데이터 다양성을 확장
+- **무작위 네트워크 증류**: 예측 네트워크와 목표 네트워크의 오차 신호를 통해 정책 네트워크가 높은 불확실성 상태에 주목하도록 유도하여 거친 지형 적응 능력 향상
+
+### 실험 설정
+- **하드웨어 플랫폼**: EVAL-03 초소형 휴머노이드 로봇(고감속비 기어 전동, 토크 센서 없음)
+- **훈련 환경**: Isaac Gym 기반 시뮬레이션 환경, 무작위 지형 생성 포함(자갈, 쿠션, 경사면)
+- **전이 전략**: 도메인 무작위화 기술 적용(질량, 마찰 계수, IMU 노이즈 매개변수 무작위화)
+
+### 주요 결과
+- **비강성 표면**: 폼 패드(두께 5cm)에서 보행 성공률이 기준 방법의 62%에서 91%로 향상
+- **돌발 전이**: 단단한 지면에서 쿠션으로의 순간 전이에서 회복 안정 시간이 40% 단축(1.2초에서 0.7초로)
+- **절제 실험**: 대칭 데이터 증강 제거 시 성공률 18% 하락, 무작위 네트워크 증류 제거 시 23% 하락
+
+### 결론
+본 방법은 발목 IMU의 교묘한 활용을 통해 복잡한 액추에이터 모델링을 피하고, 저비용·고감속비 휴머노이드 로봇의 견고한 운동 제어를 위한 실현 가능한 솔루션을 제공한다. 향후 연구에서는 다중 로봇 협업 시나리오에서의 IMU 데이터 융합 전략을 탐구할 예정이다.

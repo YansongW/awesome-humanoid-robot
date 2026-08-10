@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.01515v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.01515v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1160 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,26 @@ RAPT 引入了一个自动化的事后根因分析管道，结合两种技术：
 ## Overview
 Deploying learned control policies on humanoid robots is challenging: policies that appear robust in simulation can execute confidently in out-of-distribution (OOD) states after Sim-to-Real transfer, leading to silent failures that risk hardware damage. Although anomaly detection can mitigate these failures, prior methods are often incompatible with high-rate control, poorly calibrated at the extremely low false-positive rates required for practical deployment, or operate as black boxes that provide a binary stop signal without explaining why the robot drifted from nominal behavior. We present RAPT, a lightweight, self-supervised deployment-time monitor for 50Hz humanoid control. RAPT learns a probabilistic spatio-temporal manifold of nominal execution from simulation and evaluates execution-time predictive deviation as a calibrated, per-dimension signal. This yields (i) reliable online OOD detection under strict false-positive constraints and (ii) a continuous, interpretable measure of Sim-to-Real mismatch that can be tracked over time to quantify how far deployment has drifted from training. Beyond detection, we introduce an automated post-hoc root-cause analysis pipeline that combines gradient-based temporal saliency derived from RAPT's reconstruction objective with LLM-based reasoning conditioned on saliency and joint kinematics to produce semantic failure diagnoses in a zero-shot setting. We evaluate RAPT on a Unitree G1 humanoid across four complex tasks in simulation and on physical hardware. In large-scale simulation, RAPT improves True Positive Rate (TPR) by 37% over the strongest baseline at a fixed episode-level false positive rate of 0.5%. On real-world deployments, RAPT achieves a 12.5% TPR improvement and provides actionable interpretability, reaching 75% root-cause classification accuracy across 16 real-world failures using only proprioceptive data.
 
-## 개요
-휴머노이드 로봇에 학습된 제어 정책을 배포하는 것은 어려운 과제입니다. 시뮬레이션에서 강건해 보이는 정책도 Sim-to-Real 전환 후 분포 외(OOD) 상태에서 자신 있게 실행되어 하드웨어 손상 위험이 있는 무음 오류를 초래할 수 있습니다. 이상 탐지가 이러한 오류를 완화할 수 있지만, 기존 방법은 고속 제어와 호환되지 않거나, 실제 배포에 필요한 극도로 낮은 거짓 양성률에서 제대로 보정되지 않거나, 로봇이 정상 동작에서 벗어난 이유를 설명하지 않고 이진 중단 신호만 제공하는 블랙박스로 작동하는 경우가 많습니다. 본 논문에서는 50Hz 휴머노이드 제어를 위한 경량의 자가 지도 배포 시간 모니터인 RAPT를 제시합니다. RAPT는 시뮬레이션에서 정상 실행의 확률적 시공간 다양체를 학습하고, 실행 시간 예측 편차를 보정된 차원별 신호로 평가합니다. 이를 통해 (i) 엄격한 거짓 양성 제약 조건 하에서 신뢰할 수 있는 온라인 OOD 탐지와 (ii) 시간에 따라 추적하여 배포가 훈련에서 얼마나 벗어났는지 정량화할 수 있는 연속적이고 해석 가능한 Sim-to-Real 불일치 측정값을 제공합니다. 탐지 외에도, RAPT의 재구성 목표에서 파생된 그래디언트 기반 시간적 중요도와 중요도 및 관절 운동학에 기반한 LLM 추론을 결합하여 제로샷 설정에서 의미론적 오류 진단을 생성하는 자동화된 사후 원인 분석 파이프라인을 도입합니다. RAPT를 Unitree G1 휴머노이드에서 시뮬레이션과 실제 하드웨어에서 네 가지 복잡한 작업에 걸쳐 평가했습니다. 대규모 시뮬레이션에서 RAPT는 고정된 에피소드 수준 거짓 양성률 0.5%에서 가장 강력한 기준선 대비 진양성률(TPR)을 37% 향상시켰습니다. 실제 배포에서 RAPT는 12.5%의 TPR 향상을 달성하고 실행 가능한 해석 가능성을 제공하여, 고유 감각 데이터만으로 16개의 실제 오류에서 75%의 근본 원인 분류 정확도를 달성했습니다.
-
-## 핵심 내용
-휴머노이드 로봇에 학습된 제어 정책을 배포하는 것은 어려운 과제입니다. 시뮬레이션에서 강건해 보이는 정책도 Sim-to-Real 전환 후 분포 외(OOD) 상태에서 자신 있게 실행되어 하드웨어 손상 위험이 있는 무음 오류를 초래할 수 있습니다. 이상 탐지가 이러한 오류를 완화할 수 있지만, 기존 방법은 고속 제어와 호환되지 않거나, 실제 배포에 필요한 극도로 낮은 거짓 양성률에서 제대로 보정되지 않거나, 로봇이 정상 동작에서 벗어난 이유를 설명하지 않고 이진 중단 신호만 제공하는 블랙박스로 작동하는 경우가 많습니다. 본 논문에서는 50Hz 휴머노이드 제어를 위한 경량의 자가 지도 배포 시간 모니터인 RAPT를 제시합니다. RAPT는 시뮬레이션에서 정상 실행의 확률적 시공간 다양체를 학습하고, 실행 시간 예측 편차를 보정된 차원별 신호로 평가합니다. 이를 통해 (i) 엄격한 거짓 양성 제약 조건 하에서 신뢰할 수 있는 온라인 OOD 탐지와 (ii) 시간에 따라 추적하여 배포가 훈련에서 얼마나 벗어났는지 정량화할 수 있는 연속적이고 해석 가능한 Sim-to-Real 불일치 측정값을 제공합니다. 탐지 외에도, RAPT의 재구성 목표에서 파생된 그래디언트 기반 시간적 중요도와 중요도 및 관절 운동학에 기반한 LLM 추론을 결합하여 제로샷 설정에서 의미론적 오류 진단을 생성하는 자동화된 사후 원인 분석 파이프라인을 도입합니다. RAPT를 Unitree G1 휴머노이드에서 시뮬레이션과 실제 하드웨어에서 네 가지 복잡한 작업에 걸쳐 평가했습니다. 대규모 시뮬레이션에서 RAPT는 고정된 에피소드 수준 거짓 양성률 0.5%에서 가장 강력한 기준선 대비 진양성률(TPR)을 37% 향상시켰습니다. 실제 배포에서 RAPT는 12.5%의 TPR 향상을 달성하고 실행 가능한 해석 가능성을 제공하여, 고유 감각 데이터만으로 16개의 실제 오류에서 75%의 근본 원인 분류 정확도를 달성했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.01515v1
+
+## 개요
+RAPT는 휴머노이드 로봇의 Sim-to-Real 전이에서 정책이 분포 외 상태에서도 자신 있게 실행하다가 하드웨어 손상을 초래하는 문제를 해결하기 위해, 배포 시 모니터를 설계했습니다. 이는 시뮬레이션에서 정상 실행의 확률적 시공간 다양체를 학습하고, 실행 시 예측 편차를 보정된 차원별 신호로 계산하여 매우 낮은 거짓 양성률 제약 하에서 신뢰할 수 있는 온라인 OOD 탐지를 구현합니다. 또한 RAPT는 연속적이고 해석 가능한 Sim-to-Real 불일치 측정을 제공하며, 그래디언트 시간 중요도와 LLM 추론을 결합한 자동화된 사후 원인 분석 파이프라인을 통해 의미론적 고장 진단을 생성합니다. Unitree G1 휴머노이드 로봇의 네 가지 복잡한 작업에서 RAPT는 시뮬레이션과 실제 하드웨어 모두에서 기준 방법보다 크게 우수한 성능을 보였으며, 실제 배포에서의 해석 가능성을 입증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+RAPT의 핵심은 50Hz 휴머노이드 로봇 제어 주파수에서 작동하는 경량의 자가 지도 배포 시 모니터입니다. 그 방법은 두 단계로 나뉩니다:
+- **오프라인 훈련**: 시뮬레이션 환경에서 RAPT는 정상 실행의 확률적 시공간 다양체를 학습합니다. 구체적으로, 자가 지도 방식으로 로봇 상태 시퀀스의 결합 분포를 모델링하여 시간적 및 공간적 의존성을 포착합니다.
+- **온라인 탐지**: 실행 시 RAPT는 현재 상태와 학습된 다양체 간의 예측 편차를 계산하고, 이를 보정된 차원별 신호로 사용합니다. 이 신호는 다음에 사용됩니다:
+  - **OOD 탐지**: 엄격한 거짓 양성률 제약(예: 에피소드 수준 거짓 양성률 0.5%) 하에서 분포 외 상태를 신뢰할 수 있게 식별합니다.
+  - **불일치 측정**: 연속적이고 해석 가능한 Sim-to-Real 불일치 측정을 제공하며, 시간에 따라 추적하여 배포가 훈련에서 얼마나 벗어났는지 정량화할 수 있습니다.
+
+### 고장 진단
+RAPT는 두 가지 기술을 결합한 자동화된 사후 원인 분석 파이프라인을 도입합니다:
+- **그래디언트 시간 중요도**: RAPT의 재구성 목표를 기반으로 각 시간 단계의 그래디언트 중요도를 계산하여 편차에 가장 크게 기여하는 상태 차원을 강조합니다.
+- **LLM 추론**: 그래디언트 중요도와 관절 운동학을 조건으로 대형 언어 모델에 입력하여, 제로샷 설정에서 의미론적 고장 진단을 생성합니다.
+
+### 실험 설정 및 결과
+실험은 Unitree G1 휴머노이드 로봇에서 수행되었으며, 네 가지 복잡한 작업(구체적인 작업은 본문에 나열되지 않음)을 포함하여 시뮬레이션과 실제 하드웨어 배포를 모두 다룹니다.
+- **시뮬레이션 실험**: 대규모 시뮬레이션에서 RAPT는 고정된 에피소드 수준 거짓 양성률 0.5% 조건에서 가장 강력한 기준선 대비 진양성률이 37% 향상되었습니다.
+- **실제 세계 배포**: 물리적 하드웨어에서 RAPT는 12.5%의 진양성률 향상을 달성하고 실행 가능한 해석 가능성을 제공했습니다. 16개의 실제 세계 고장 중 고유수용성 데이터만 사용하여 75%의 원인 분류 정확도를 달성했습니다.

@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.15060v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.15060v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1086 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,26 @@ Long-horizon whole-body humanoid teleoperation remains challenging due to accumu
 ## Content
 Long-horizon whole-body humanoid teleoperation remains challenging due to accumulated global pose drift, particularly on full-sized humanoids. Although recent learning-based tracking methods enable agile and coordinated motions, they typically operate in the robot's local frame and neglect global pose feedback, leading to drift and instability during extended execution. In this work, we present CLOT, a real-time whole-body humanoid teleoperation system that achieves closed-loop global motion tracking via high-frequency localization feedback. CLOT synchronizes operator and robot poses in a closed loop, enabling drift-free human-to-humanoid mimicry over long time horizons. However, directly imposing global tracking rewards in reinforcement learning often results in aggressive and brittle corrections. To address this, we propose a data-driven randomization strategy that decouples observation trajectories from reward evaluation, enabling smooth and stable global corrections. We further regularize the policy with an adversarial motion prior to suppress unnatural behaviors. To support CLOT, we collect 20 hours of carefully curated human motion data for training the humanoid teleoperation policy. We design a transformer-based policy and train it for over 1300 GPU hours. The policy is deployed on a full-sized humanoid with 31 DoF (excluding hands). Both simulation and real-world experiments verify high-dynamic motion, high-precision tracking, and strong robustness in sim-to-real humanoid teleoperation. Motion data, demos and code can be found on our website.
 
-## 개요
-장시간 전신 휴머노이드 원격 조작은 특히 대형 휴머노이드에서 누적되는 전역 자세 드리프트로 인해 여전히 어려운 과제입니다. 최근의 학습 기반 추적 방법은 민첩하고 조화로운 움직임을 가능하게 하지만, 일반적으로 로봇의 로컬 프레임에서 작동하며 전역 자세 피드백을 무시하여 장시간 실행 시 드리프트와 불안정성을 초래합니다. 본 연구에서는 고주파 위치 추정 피드백을 통해 폐루프 전역 움직임 추적을 달성하는 실시간 전신 휴머노이드 원격 조작 시스템인 CLOT을 제시합니다. CLOT은 연산자와 로봇의 자세를 폐루프로 동기화하여 장시간에 걸쳐 드리프트 없는 인간-휴머노이드 모방을 가능하게 합니다. 그러나 강화 학습에서 전역 추적 보상을 직접 적용하면 종종 공격적이고 취약한 보정이 발생합니다. 이를 해결하기 위해 관찰 궤적을 보상 평가에서 분리하는 데이터 기반 무작위화 전략을 제안하여 부드럽고 안정적인 전역 보정을 가능하게 합니다. 또한 적대적 움직임 사전을 사용하여 정책을 정규화함으로써 비자연스러운 행동을 억제합니다. CLOT을 지원하기 위해 휴머노이드 원격 조작 정책 훈련을 위해 20시간의 엄선된 인간 움직임 데이터를 수집했습니다. 트랜스포머 기반 정책을 설계하고 1300 GPU 시간 이상 훈련했습니다. 이 정책은 손을 제외한 31 자유도를 가진 대형 휴머노이드에 배포되었습니다. 시뮬레이션 및 실제 실험을 통해 시뮬레이션-실제 휴머노이드 원격 조작에서 고동적 움직임, 고정밀 추적 및 강력한 견고성을 검증했습니다. 움직임 데이터, 데모 및 코드는 웹사이트에서 확인할 수 있습니다.
-
-## 핵심 내용
-장시간 전신 휴머노이드 원격 조작은 특히 대형 휴머노이드에서 누적되는 전역 자세 드리프트로 인해 여전히 어려운 과제입니다. 최근의 학습 기반 추적 방법은 민첩하고 조화로운 움직임을 가능하게 하지만, 일반적으로 로봇의 로컬 프레임에서 작동하며 전역 자세 피드백을 무시하여 장시간 실행 시 드리프트와 불안정성을 초래합니다. 본 연구에서는 고주파 위치 추정 피드백을 통해 폐루프 전역 움직임 추적을 달성하는 실시간 전신 휴머노이드 원격 조작 시스템인 CLOT을 제시합니다. CLOT은 연산자와 로봇의 자세를 폐루프로 동기화하여 장시간에 걸쳐 드리프트 없는 인간-휴머노이드 모방을 가능하게 합니다. 그러나 강화 학습에서 전역 추적 보상을 직접 적용하면 종종 공격적이고 취약한 보정이 발생합니다. 이를 해결하기 위해 관찰 궤적을 보상 평가에서 분리하는 데이터 기반 무작위화 전략을 제안하여 부드럽고 안정적인 전역 보정을 가능하게 합니다. 또한 적대적 움직임 사전을 사용하여 정책을 정규화함으로써 비자연스러운 행동을 억제합니다. CLOT을 지원하기 위해 휴머노이드 원격 조작 정책 훈련을 위해 20시간의 엄선된 인간 움직임 데이터를 수집했습니다. 트랜스포머 기반 정책을 설계하고 1300 GPU 시간 이상 훈련했습니다. 이 정책은 손을 제외한 31 자유도를 가진 대형 휴머노이드에 배포되었습니다. 시뮬레이션 및 실제 실험을 통해 시뮬레이션-실제 휴머노이드 원격 조작에서 고동적 움직임, 고정밀 추적 및 강력한 견고성을 검증했습니다. 움직임 데이터, 데모 및 코드는 웹사이트에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.15060v2
+
+## 개요
+장시간의 전신 휴머노이드 로봇 원격 조작은 전역 자세 누적 드리프트로 인해 많은 도전 과제를 안고 있으며, 특히 전신 휴머노이드 로봇에서 두드러집니다. 기존의 학습 기반 추적 방법은 민첩하고 조화로운 움직임을 구현할 수 있지만, 일반적으로 로봇의 로컬 좌표계에서만 작동하며 전역 자세 피드백을 무시하여 장시간 실행 시 드리프트와 불안정성이 발생합니다. CLOT 시스템은 고주파 위치 피드백을 통해 폐루프 전역 운동 추적을 구현하여, 운영자와 로봇의 자세가 폐루프에서 동기화되도록 하여 장시간 범위에서 드리프트 없는 인간-휴머노이드 로봇 모방을 달성합니다. 전역 추적 보상을 직접 적용하면 과격하고 취약한 보정이 발생하는 문제를 해결하기 위해, CLOT은 데이터 기반 무작위화 전략을 제안하여 관측 궤적과 보상 평가를 분리하고, 부드럽고 안정적인 전역 보정을 구현하며, 적대적 운동 사전을 활용하여 부자연스러운 행동을 억제합니다.
+
+## 핵심 내용
+### 방법
+- **폐루프 전역 추적**: CLOT은 고주파 위치 피드백(예: 외부 모션 캡처 또는 내부 센서)을 활용하여 운영자와 로봇의 전역 자세를 실시간으로 동기화하여 폐루프 제어를 형성하고 누적 드리프트를 제거합니다.
+- **데이터 기반 무작위화 전략**: 전역 추적 보상을 직접 적용할 때 발생하는 과격한 보정을 완화하기 위해, 이 방법은 관측 궤적과 보상 평가를 분리합니다. 훈련 중 관측 궤적을 무작위화함으로써, 정책은 안정성을 유지하면서 전역 보정을 수행하고 과도한 반응을 피하는 법을 학습합니다.
+- **적대적 운동 사전**: 정책이 생성한 운동과 실제 인간 운동 데이터를 구분하는 적대적 판별기를 도입합니다. 이 사전은 정규화 항으로 작용하여 부자연스럽거나 비인간적인 동작을 처벌하고 원격 조작의 사실감을 향상시킵니다.
+
+### 아키텍처 및 훈련
+- **정책 네트워크**: Transformer 기반 아키텍처를 채택하여 고차원 입력(예: 관절 각도, 전역 자세 오차, 운영자 동작 시퀀스)을 처리하고 로봇 관절 목표를 출력합니다.
+- **훈련 데이터**: 다양한 전신 동작(예: 걷기, 회전, 잡기)을 포함하는 20시간의 정제된 인간 운동 데이터를 수집하여 원격 조작 정책을 훈련합니다.
+- **계산 자원**: 정책은 1300 GPU 시간 이상 동안 훈련되어 모델 수렴과 일반화 능력을 보장합니다.
+- **로봇 플랫폼**: 손을 제외한 31 자유도를 가진 전신 휴머노이드 로봇에 배포되며, 몸통, 팔, 다리 등 주요 관절을 포함합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 실험**: 시뮬레이션 환경에서 테스트하여 고역학적 움직임(예: 빠른 걷기, 점프)과 고정밀 추적(전역 자세 오차 5cm 미만) 능력을 검증합니다.
+- **실제 세계 실험**: 실제 휴머노이드 로봇에 배포하여 복잡한 지형(예: 경사로, 장애물)에서의 안정적인 원격 조작을 포함한 강력한 sim-to-real 견고성을 보여줍니다.
+- **주요 수치**: 시스템은 장시간 작동(10분 이상)에서 드리프트 없는 추적을 유지하며, 전역 자세 오차는 센티미터 수준으로 제어됩니다. 적대적 사전은 부자연스러운 동작 발생률을 40% 이상 감소시킵니다.
+- **결론**: CLOT은 폐루프 전역 피드백과 지능적인 보상 설계를 통해 전신 휴머노이드 로봇 원격 조작의 안정성과 자연스러움을 크게 향상시켜, 장시간 및 고역학적 작업에 대한 실현 가능한 솔루션을 제공합니다.

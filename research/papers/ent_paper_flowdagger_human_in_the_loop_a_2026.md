@@ -53,8 +53,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.08877v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.08877v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (800 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,26 @@ FlowDAgger 提供了一种实用的路径，通过人类干预在潜空间中适
 ## Overview
 Pretrained generative robot policies based on flow matching and diffusion have achieved impressive results across a wide range of manipulation tasks. Yet real-world deployments routinely expose failure modes outside the pretraining distribution. Closing these gaps typically requires large-scale data collection or online reinforcement learning on physical hardware, which is impractical for rapid and safe adaptation. We present FlowDAgger, a sample- and compute-efficient method for adapting frozen generative robot policies from human interventions in latent space. Our key idea is action inversion: each human expert action is mapped to the noise that would have produced it under the frozen base policy, using reverse-time integration followed by local refinement. The resulting inverted noise provides supervision for a lightweight latent policy that steers the base model at deployment time, enabling rapid skill acquisition while preserving its behavioral priors. We evaluate FlowDAgger in simulation and on real-world bimanual and single-arm manipulation, adapting both action-head VLAs and world-action models from a handful of interventions. FlowDAgger outperforms supervised fine-tuning and latent-space RL baselines and preserves pretrained skills on held-out tasks, offering a practical path for adapting robot foundation models in the real world. Website: https://microsoft.github.io/FlowDAgger
 
-## 개요
-Flow 매칭 및 확산 기반의 사전 학습된 생성 로봇 정책은 다양한 조작 작업에서 인상적인 결과를 달성했습니다. 그러나 실제 환경 배포에서는 사전 학습 분포를 벗어난 실패 모드가 자주 발생합니다. 이러한 격차를 해소하려면 일반적으로 대규모 데이터 수집이나 물리적 하드웨어에서의 온라인 강화 학습이 필요하며, 이는 빠르고 안전한 적응에 비실용적입니다. 우리는 잠재 공간에서 인간의 개입을 통해 고정된 생성 로봇 정책을 적응시키는 샘플 및 계산 효율적인 방법인 FlowDAgger를 제시합니다. 핵심 아이디어는 행동 역전입니다. 각 인간 전문가 행동은 역방향 시간 적분과 국소 정제를 통해 고정된 기본 정책 하에서 이를 생성했을 노이즈에 매핑됩니다. 결과적으로 역전된 노이즈는 경량 잠재 정책에 대한 감독을 제공하여 배포 시 기본 모델을 조정하며, 행동 사전을 유지하면서 빠른 기술 습득을 가능하게 합니다. 우리는 시뮬레이션과 실제 양팔 및 단일 팔 조작에서 FlowDAgger를 평가하며, 소수의 개입으로 행동 헤드 VLA와 세계-행동 모델을 모두 적응시킵니다. FlowDAgger는 지도 미세 조정 및 잠재 공간 강화 학습 기준을 능가하며, 보류된 작업에서 사전 학습된 기술을 유지하여 실제 세계에서 로봇 기반 모델을 적응시키는 실용적인 경로를 제공합니다. 웹사이트: https://microsoft.github.io/FlowDAgger
-
-## 핵심 내용
-Flow 매칭 및 확산 기반의 사전 학습된 생성 로봇 정책은 다양한 조작 작업에서 인상적인 결과를 달성했습니다. 그러나 실제 환경 배포에서는 사전 학습 분포를 벗어난 실패 모드가 자주 발생합니다. 이러한 격차를 해소하려면 일반적으로 대규모 데이터 수집이나 물리적 하드웨어에서의 온라인 강화 학습이 필요하며, 이는 빠르고 안전한 적응에 비실용적입니다. 우리는 잠재 공간에서 인간의 개입을 통해 고정된 생성 로봇 정책을 적응시키는 샘플 및 계산 효율적인 방법인 FlowDAgger를 제시합니다. 핵심 아이디어는 행동 역전입니다. 각 인간 전문가 행동은 역방향 시간 적분과 국소 정제를 통해 고정된 기본 정책 하에서 이를 생성했을 노이즈에 매핑됩니다. 결과적으로 역전된 노이즈는 경량 잠재 정책에 대한 감독을 제공하여 배포 시 기본 모델을 조정하며, 행동 사전을 유지하면서 빠른 기술 습득을 가능하게 합니다. 우리는 시뮬레이션과 실제 양팔 및 단일 팔 조작에서 FlowDAgger를 평가하며, 소수의 개입으로 행동 헤드 VLA와 세계-행동 모델을 모두 적응시킵니다. FlowDAgger는 지도 미세 조정 및 잠재 공간 강화 학습 기준을 능가하며, 보류된 작업에서 사전 학습된 기술을 유지하여 실제 세계에서 로봇 기반 모델을 적응시키는 실용적인 경로를 제공합니다. 웹사이트: https://microsoft.github.io/FlowDAgger
-
 ## 参考
 - http://arxiv.org/abs/2607.08877v1
+
+## 개요
+FlowDAgger는 사전 훈련된 생성형 로봇 정책이 실제 배포에서 노출하는 분포 외 실패 모드를 대상으로, 대규모 데이터 수집이나 온라인 강화 학습 없이도 실용적으로 적응할 수 있는 방안을 제시합니다. 이 방법은 동작 반전을 통해 인간의 개입 동작을 잠재 공간의 노이즈 감독 신호로 변환하고, 경량 잠재 정책을 훈련하여 배포 시 기반 모델의 행동을 조정합니다. 실험은 시뮬레이션과 실제 세계의 양팔 및 단일 팔 조작 작업을 포괄하며, 액션 헤드 비전-언어 모델과 월드 액션 모델을 적응시켰고, 소량의 인간 개입만으로도 효율적인 적응을 달성했습니다. 감독 미세 조정 및 잠재 공간 강화 학습 기준선과 비교하여, FlowDAgger는 목표 작업에서 더 우수한 성능을 보이면서도 기반 모델의 유지 작업에 대한 사전 훈련 기술을 손상시키지 않습니다.
+
+## 핵심 내용
+### 방법 핵심
+- **동작 반전**: 각 인간 전문가 동작을 역시간 적분과 국소 세분화를 통해 고정된 기반 정책 하에서 해당 동작을 생성하는 노이즈로 매핑합니다. 이 과정은 인간의 개입을 잠재 공간의 감독 신호로 변환할 수 있게 합니다.
+- **경량 잠재 정책**: 반전을 통해 얻은 노이즈를 기반으로 경량 잠재 정책을 훈련하여, 배포 시 기반 모델의 행동을 유도하며 빠른 기술 습득을 가능하게 하면서도 기반 모델의 사전 훈련 행동 사전을 보존합니다.
+
+### 실험 설정
+- **작업 유형**: 시뮬레이션 및 실제 세계의 양팔 및 단일 팔 조작 작업.
+- **적응 모델**: 액션 헤드 비전-언어 모델(action-head VLAs) 및 월드 액션 모델(world-action models).
+- **개입 수**: 소량의 인간 개입만으로 적응 완료 가능.
+
+### 주요 결과
+- **성능 비교**: FlowDAgger는 목표 작업에서 감독 미세 조정 및 잠재 공간 강화 학습 기준선보다 우수합니다.
+- **기술 보존**: 유지 작업에서 FlowDAgger는 사전 훈련 기술을 유지하며, 치명적 망각이 발생하지 않습니다.
+- **효율성 이점**: 대규모 데이터 수집이나 온라인 강화 학습이 필요한 방법과 비교하여, FlowDAgger는 샘플 및 계산 효율성에서 현저히 향상됩니다.
+
+### 결론
+FlowDAgger는 인간의 개입을 통해 잠재 공간에서 로봇 기반 모델을 적응시키는 실용적인 경로를 제공하며, 빠른 적응과 기술 보존을 동시에 고려하여 실제 세계의 로봇 배포 시나리오에 적합합니다.

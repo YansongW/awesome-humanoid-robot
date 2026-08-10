@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.21243v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.21243v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (758 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,12 +75,6 @@ sources:
 ## Overview
 Vision-Language-Action (VLA) models have demonstrated robust performance across diverse robotic tasks. However, their high memory and computational demands often limit real-time deployment. While existing model compression techniques reduce the parameter footprint, they often drop in 3D spatial reasoning and scene layout understanding. This work introduces RetoVLA, an architecture designed to maintain spatial awareness in lightweight models by repurposing Register Tokens-learnable parameters originally introduced to mitigate attention artifacts in Vision Transformers. While these tokens are generally discarded once used, we repurpose them for their dense representation of global spatial context. RetoVLA integrates these recycled tokens directly into the action-planning module through a dedicated spatial context injection path. Our proposed design enables the recovery of global context without increasing the total parameter count. Real-world experiments using a 7-DOF manipulator show a 17.1%p improvement in average success rates over the baseline. Our results demonstrate that leveraging internal register tokens provides a highly effective mechanism for developing efficient, spatially-aware robotic agents. A video demonstration is available at: https://youtu.be/2CseBR-snZg
 
-## 개요
-Vision-Language-Action (VLA) 모델은 다양한 로봇 작업에서 강력한 성능을 입증했습니다. 그러나 높은 메모리 및 계산 요구로 인해 실시간 배포가 제한되는 경우가 많습니다. 기존 모델 압축 기술은 파라미터 크기를 줄이지만, 3D 공간 추론 및 장면 레이아웃 이해에서 성능 저하가 자주 발생합니다. 본 연구는 Register Tokens(비전 트랜스포머에서 주의 아티팩트를 완화하기 위해 도입된 학습 가능한 파라미터)을 재활용하여 경량 모델에서 공간 인식을 유지하도록 설계된 아키텍처인 RetoVLA를 소개합니다. 이러한 토큰은 일반적으로 사용 후 폐기되지만, 우리는 이를 전역 공간 컨텍스트의 밀집 표현을 위해 재활용합니다. RetoVLA는 전용 공간 컨텍스트 주입 경로를 통해 이러한 재활용 토큰을 행동 계획 모듈에 직접 통합합니다. 제안된 설계는 총 파라미터 수를 증가시키지 않으면서 전역 컨텍스트를 복구할 수 있게 합니다. 7-DOF 매니퓰레이터를 사용한 실제 실험에서 기준선 대비 평균 성공률이 17.1%p 향상되었습니다. 본 결과는 내부 레지스터 토큰을 활용하는 것이 효율적이고 공간 인식이 가능한 로봇 에이전트를 개발하는 데 매우 효과적인 메커니즘을 제공함을 보여줍니다. 비디오 데모는 다음에서 확인할 수 있습니다: https://youtu.be/2CseBR-snZg
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 다양한 로봇 작업에서 강력한 성능을 입증했습니다. 그러나 높은 메모리 및 계산 요구로 인해 실시간 배포가 제한되는 경우가 많습니다. 기존 모델 압축 기술은 파라미터 크기를 줄이지만, 3D 공간 추론 및 장면 레이아웃 이해에서 성능 저하가 자주 발생합니다. 본 연구는 Register Tokens(비전 트랜스포머에서 주의 아티팩트를 완화하기 위해 도입된 학습 가능한 파라미터)을 재활용하여 경량 모델에서 공간 인식을 유지하도록 설계된 아키텍처인 RetoVLA를 소개합니다. 이러한 토큰은 일반적으로 사용 후 폐기되지만, 우리는 이를 전역 공간 컨텍스트의 밀집 표현을 위해 재활용합니다. RetoVLA는 전용 공간 컨텍스트 주입 경로를 통해 이러한 재활용 토큰을 행동 계획 모듈에 직접 통합합니다. 제안된 설계는 총 파라미터 수를 증가시키지 않으면서 전역 컨텍스트를 복구할 수 있게 합니다. 7-DOF 매니퓰레이터를 사용한 실제 실험에서 기준선 대비 평균 성공률이 17.1%p 향상되었습니다. 본 결과는 내부 레지스터 토큰을 활용하는 것이 효율적이고 공간 인식이 가능한 로봇 에이전트를 개발하는 데 매우 효과적인 메커니즘을 제공함을 보여줍니다. 비디오 데모는 다음에서 확인할 수 있습니다: https://youtu.be/2CseBR-snZg
-
 ## Overview
 Vision-Language-Action (VLA) models have demonstrated robust performance across diverse robotic tasks. However, their high memory and computational demands often limit real-time deployment. While existing model compression techniques reduce the parameter footprint, they often drop in 3D spatial reasoning and scene layout understanding. This work introduces RetoVLA, an architecture designed to maintain spatial awareness in lightweight models by repurposing Register Tokens—learnable parameters originally introduced to mitigate attention artifacts in Vision Transformers. While these tokens are generally discarded once used, we repurpose them for their dense representation of global spatial context. RetoVLA integrates these recycled tokens directly into the action-planning module through a dedicated spatial context injection path. Our proposed design enables the recovery of global context without increasing the total parameter count. Real-world experiments using a 7-DOF manipulator show a 17.1%p improvement in average success rates over the baseline. Our results demonstrate that leveraging internal register tokens provides a highly effective mechanism for developing efficient, spatially-aware robotic agents. A video demonstration is available at: https://youtu.be/2CseBR-snZg
 
@@ -88,3 +83,24 @@ Vision-Language-Action (VLA) models have demonstrated robust performance across 
 
 ## 参考
 - http://arxiv.org/abs/2509.21243v2
+
+## 개요
+기존 비전-언어-행동 모델은 로봇 작업에서 뛰어난 성능을 보이지만, 높은 메모리 및 계산 요구로 인해 실시간 배포에 제약이 있습니다. 전통적인 모델 압축 방법은 파라미터 수를 줄일 수 있지만, 종종 3D 공간 추론 및 장면 레이아웃 이해 능력이 저하됩니다. RetoVLA는 원래 폐기되던 Register Tokens를 재활용하여, 그 밀집된 전역 공간 컨텍스트 표현을 직접 행동 계획 모듈에 주입하고, 전용 공간 컨텍스트 주입 경로를 설계했습니다. 이 방법은 총 파라미터 수를 늘리지 않으면서 전역 컨텍스트를 복원하며, 7자유도 로봇 팔의 실제 실험에서 평균 성공률이 기준선 대비 17.1% 포인트 향상되었습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 아이디어**: Vision Transformer의 Register Tokens(원래 주의 아티팩트를 줄이기 위해 사용된 학습 가능한 파라미터)를 재사용하여, "일회용"에서 "공간 컨텍스트 전달자"로 전환합니다.
+- **공간 컨텍스트 주입 경로**: 회수된 Register Tokens를 전용 경로를 통해 직접 행동 계획 모듈에 주입하여, 경량 모델도 장면 레이아웃에 대한 전역 이해를 유지할 수 있게 합니다.
+- **파라미터 효율성**: 전체 설계는 모델의 총 파라미터 수를 늘리지 않으며, 기존 토큰을 재활용하여 공간 인식 능력을 복원합니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 7자유도 로봇 팔, 실제 세계 조작 작업용.
+- **기준선 비교**: Register Tokens를 사용하지 않은 경량 VLA 모델과 비교.
+- **평가 지표**: 작업 평균 성공률.
+
+### 주요 결과
+- **성능 향상**: RetoVLA는 실제 실험에서 평균 성공률이 기준선보다 17.1% 포인트(절대 향상) 높았습니다.
+- **결론**: 내부 Register Tokens의 재사용은 효율적이면서 공간 인식 능력을 갖춘 로봇 에이전트를 개발하는 효과적인 메커니즘입니다.
+
+### 추가 자료
+- 비디오 데모: https://youtu.be/2CseBR-snZg

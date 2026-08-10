@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23931v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23931v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (943 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,28 @@ AutoPrune 通过复杂度自适应剪枝策略，有效解决了固定剪枝策�
 ## Overview
 The established redundancy in visual tokens within large vision-language models allows pruning to effectively reduce their substantial computational demands. Previous methods typically employ heuristic layer-specific pruning strategies where, although the number of tokens removed may differ across decoder layers, the overall pruning schedule is fixed and applied uniformly to all input samples and tasks, failing to align token elimination with the model's holistic reasoning trajectory. Cognitive science indicates that human visual processing often begins with broad exploration to accumulate evidence before narrowing focus as the target becomes distinct. Our experiments reveal an analogous pattern in these models. This observation suggests that neither a fixed pruning schedule nor a heuristic layer-wise strategy can optimally accommodate the diverse complexities inherent in different inputs. To overcome this limitation, we introduce Complexity-Adaptive Pruning (AutoPrune), a training-free, plug-and-play framework that tailors pruning policies to varying sample and task complexities. Specifically, AutoPrune quantifies the mutual information between visual and textual tokens, then projects this signal to a budget-constrained logistic retention curve. Each such logistic curve, defined by its unique shape, corresponds to the specific complexity of different tasks and can guarantee adherence to predefined computational constraints. We evaluate AutoPrune on standard vision-language tasks and on Vision-Language-Action models for autonomous driving. Notably, when applied to LLaVA-1.5-7B, our method prunes 89% of visual tokens and reduces inference FLOPs by 76.8% while retaining 96.7% of the original accuracy averaged over all tasks. This corresponds to a 9.1% improvement over the recent work PDrop, demonstrating the effectiveness. Code is available at https://github.com/AutoLab-SAI-SJTU/AutoPrune.
 
-## 개요
-대규모 비전-언어 모델에서 시각적 토큰의 확립된 중복성은 프루닝을 통해 상당한 계산 요구를 효과적으로 줄일 수 있게 합니다. 기존 방법들은 일반적으로 휴리스틱한 계층별 프루닝 전략을 사용하는데, 디코더 계층 간에 제거되는 토큰 수는 다를 수 있지만 전체 프루닝 일정은 고정되어 모든 입력 샘플과 작업에 균일하게 적용되어, 토큰 제거를 모델의 전체 추론 궤적과 정렬하지 못합니다. 인지 과학은 인간의 시각 처리 과정이 종종 광범위한 탐색으로 시작하여 증거를 축적한 후 목표가 뚜렷해짐에 따라 초점을 좁힌다고 나타냅니다. 우리의 실험은 이러한 모델에서 유사한 패턴을 보여줍니다. 이 관찰은 고정된 프루닝 일정이나 휴리스틱한 계층별 전략 모두 다양한 입력에 내재된 다양한 복잡성을 최적으로 수용할 수 없음을 시사합니다. 이러한 한계를 극복하기 위해, 우리는 Complexity-Adaptive Pruning (AutoPrune)을 소개합니다. 이는 훈련이 필요 없고 플러그 앤 플레이 방식의 프레임워크로, 다양한 샘플 및 작업 복잡성에 맞춰 프루닝 정책을 조정합니다. 구체적으로, AutoPrune은 시각적 토큰과 텍스트 토큰 간의 상호 정보를 정량화한 후, 이 신호를 예산이 제한된 로지스틱 유지 곡선에 투영합니다. 고유한 형태로 정의된 각 로지스틱 곡선은 다양한 작업의 특정 복잡성에 대응하며, 미리 정의된 계산 제약 조건을 준수함을 보장할 수 있습니다. 우리는 AutoPrune을 표준 비전-언어 작업과 자율 주행을 위한 비전-언어-행동 모델에서 평가합니다. 특히, LLaVA-1.5-7B에 적용했을 때, 우리의 방법은 시각적 토큰의 89%를 프루닝하고 추론 FLOPs를 76.8% 줄이면서 모든 작업 평균 원래 정확도의 96.7%를 유지합니다. 이는 최근 연구인 PDrop보다 9.1% 향상된 것으로, 효과성을 입증합니다. 코드는 https://github.com/AutoLab-SAI-SJTU/AutoPrune에서 확인할 수 있습니다.
-
-## 핵심 내용
-대규모 비전-언어 모델에서 시각적 토큰의 확립된 중복성은 프루닝을 통해 상당한 계산 요구를 효과적으로 줄일 수 있게 합니다. 기존 방법들은 일반적으로 휴리스틱한 계층별 프루닝 전략을 사용하는데, 디코더 계층 간에 제거되는 토큰 수는 다를 수 있지만 전체 프루닝 일정은 고정되어 모든 입력 샘플과 작업에 균일하게 적용되어, 토큰 제거를 모델의 전체 추론 궤적과 정렬하지 못합니다. 인지 과학은 인간의 시각 처리 과정이 종종 광범위한 탐색으로 시작하여 증거를 축적한 후 목표가 뚜렷해짐에 따라 초점을 좁힌다고 나타냅니다. 우리의 실험은 이러한 모델에서 유사한 패턴을 보여줍니다. 이 관찰은 고정된 프루닝 일정이나 휴리스틱한 계층별 전략 모두 다양한 입력에 내재된 다양한 복잡성을 최적으로 수용할 수 없음을 시사합니다. 이러한 한계를 극복하기 위해, 우리는 Complexity-Adaptive Pruning (AutoPrune)을 소개합니다. 이는 훈련이 필요 없고 플러그 앤 플레이 방식의 프레임워크로, 다양한 샘플 및 작업 복잡성에 맞춰 프루닝 정책을 조정합니다. 구체적으로, AutoPrune은 시각적 토큰과 텍스트 토큰 간의 상호 정보를 정량화한 후, 이 신호를 예산이 제한된 로지스틱 유지 곡선에 투영합니다. 고유한 형태로 정의된 각 로지스틱 곡선은 다양한 작업의 특정 복잡성에 대응하며, 미리 정의된 계산 제약 조건을 준수함을 보장할 수 있습니다. 우리는 AutoPrune을 표준 비전-언어 작업과 자율 주행을 위한 비전-언어-행동 모델에서 평가합니다. 특히, LLaVA-1.5-7B에 적용했을 때, 우리의 방법은 시각적 토큰의 89%를 프루닝하고 추론 FLOPs를 76.8% 줄이면서 모든 작업 평균 원래 정확도의 96.7%를 유지합니다. 이는 최근 연구인 PDrop보다 9.1% 향상된 것으로, 효과성을 입증합니다. 코드는 https://github.com/AutoLab-SAI-SJTU/AutoPrune에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.23931v2
+
+## 개요
+AutoPrune은 기존 비전-언어 모델에서 고정된 프루닝 전략이 입력 다양성에 적응하지 못하는 문제를 해결하기 위해, 인간의 시각 인지에서 먼저 광범위하게 탐색한 후 집중하는 방식에서 영감을 받아 복잡도 적응형 프루닝 방법을 제안합니다. 이 방법은 시각 토큰과 텍스트 토큰 간의 상호 정보를 계산하여 이를 예산 제약이 있는 로지스틱 유지 곡선에 매핑하며, 각 곡선은 특정 작업 복잡도에 대응하고 계산 제약을 충족하도록 보장합니다. 표준 비전-언어 작업과 자율주행 비전-언어-행동 모델에 대한 실험에서 AutoPrune은 LLaVA-1.5-7B에서 PDrop 방법 대비 정확도 유지율이 9.1% 향상되었으며, 추가 학습 없이 플러그 앤 플레이가 가능합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **복잡도 정량화**: 시각 토큰과 텍스트 토큰 간의 상호 정보(Mutual Information)를 계산하여 각 샘플의 복잡도를 평가합니다. 상호 정보 값이 높을수록 시각 정보와 언어 작업의 연관성이 더 밀접함을 나타냅니다.
+- **적응형 프루닝 전략**: 상호 정보 신호를 예산 제약이 있는 로지스틱 유지 곡선(Logistic Retention Curve)에 투영합니다. 각 곡선은 고유한 형태 파라미터로 정의되며, 서로 다른 작업 및 샘플의 복잡도에 대응합니다. 이 곡선은 프루닝 과정이 항상 사전 설정된 계산 예산 제약을 충족하도록 보장합니다.
+- **학습 불필요 설계**: 전체 프레임워크는 추가 학습이나 미세 조정이 필요 없으며, 사전 학습된 모델에 직접 적용하여 플러그 앤 플레이(Plug-and-Play)가 가능합니다.
+
+### 실험 설정
+- **기반 모델**: LLaVA-1.5-7B를 주요 평가 모델로 사용
+- **작업 유형**: 표준 비전-언어 작업(예: VQA, 이미지 캡셔닝) 및 자율주행 비전-언어-행동 모델(Vision-Language-Action Models)
+- **비교 방법**: PDrop 등 최근 프루닝 방법과 비교
+
+### 주요 결과
+- **프루닝 효율성**: LLaVA-1.5-7B에서 89%의 시각 토큰을 제거하고 추론 FLOPs를 76.8% 감소
+- **정확도 유지**: 모든 작업에서 평균 96.7%의 원본 정확도 유지
+- **성능 향상**: PDrop 방법 대비 정확도 유지율 9.1% 향상
+- **코드 공개**: https://github.com/AutoLab-SAI-SJTU/AutoPrune
+
+### 결론
+AutoPrune은 복잡도 적응형 프루닝 전략을 통해 고정된 프루닝 전략이 입력 다양성에 적응하지 못하는 문제를 효과적으로 해결하며, 높은 정확도를 유지하면서 계산 비용을 크게 줄여 비전-언어 모델의 효율적인 배포를 위한 새로운 패러다임을 제시합니다.

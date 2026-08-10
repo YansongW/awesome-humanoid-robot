@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2210.10151v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2210.10151v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (783 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,32 @@ Today, as seen in smart speakers, spoken dialogue technology is rapidly advancin
 ## Content
 Today, as seen in smart speakers, spoken dialogue technology is rapidly advancing to enable human-like interaction. However, current dialogue systems cannot pay attention not only to the content of speech, but also to the way of speaking, eye contact, and facial expressions, while watching the facial expressions of the person with whom one is speaking. Therefore, this study participated in a Japanese competition called the "Dialogue Robot Competition" and attempted to develop a dialogue system that includes control of not only the content of speech but also the robot's facial expressions and gaze in order to realize a humanoid robot that can naturally interact with humans.
 
-## 개요
-오늘날 스마트 스피커에서 볼 수 있듯이, 음성 대화 기술은 인간과 유사한 상호작용을 가능하게 하기 위해 빠르게 발전하고 있습니다. 그러나 현재의 대화 시스템은 상대방의 표정을 보면서 말의 내용뿐만 아니라 말투, 눈맞춤, 표정에도 주의를 기울일 수 없습니다. 따라서 본 연구는 일본의 '대화 로봇 경진대회(Dialogue Robot Competition)'에 참여하여, 인간과 자연스럽게 상호작용할 수 있는 휴머노이드 로봇을 구현하기 위해 말의 내용뿐만 아니라 로봇의 표정과 시선 제어를 포함한 대화 시스템을 개발하고자 했습니다.
-
-## 핵심 내용
-오늘날 스마트 스피커에서 볼 수 있듯이, 음성 대화 기술은 인간과 유사한 상호작용을 가능하게 하기 위해 빠르게 발전하고 있습니다. 그러나 현재의 대화 시스템은 상대방의 표정을 보면서 말의 내용뿐만 아니라 말투, 눈맞춤, 표정에도 주의를 기울일 수 없습니다. 따라서 본 연구는 일본의 '대화 로봇 경진대회(Dialogue Robot Competition)'에 참여하여, 인간과 자연스럽게 상호작용할 수 있는 휴머노이드 로봇을 구현하기 위해 말의 내용뿐만 아니라 로봇의 표정과 시선 제어를 포함한 대화 시스템을 개발하고자 했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2210.10151v1
+
+## 개요
+현재 음성 대화 기술은 인간과 유사한 상호작용을 구현할 수 있게 되었지만, 기존 시스템은 대화 내용에 집중하면서 동시에 말하는 방식, 눈맞춤, 표정 변화의 조화로운 제어를 고려하지 못합니다. 이를 위해 연구팀은 일본 Dialogue Robot Competition 2022를 대상으로 음성 내용, 로봇 표정, 시선 제어를 통합한 다중 모달 대화 시스템을 개발하여, 인간형 로봇이 인간처럼 자연스러운 얼굴 상호작용을 수행할 수 있도록 했습니다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+- 스마트 스피커 등 기기는 음성 대화 기술의 발전을 촉진했지만, 기존 시스템은 부언어적 특징(예: 억양, 표정, 시선)의 통합 제어가 부족합니다.
+- 인간 대화에서는 화자가 상대방의 표정을 자연스럽게 관찰하며 자신의 표정과 시선을 조정하지만, 현재 로봇 시스템은 이러한 다중 모달 동기화를 구현할 수 없습니다.
+
+### 시스템 아키텍처
+- 이 시스템은 인간형 로봇을 기반으로 하며, 핵심 모듈은 다음과 같습니다:
+  - **음성 내용 생성**: 대화 맥락에 기반하여 자연어 응답을 생성합니다.
+  - **표정 제어**: 대화의 감정 상태(예: 기쁨, 혼란)에 따라 로봇의 얼굴 근육 유닛을 구동합니다.
+  - **시선 방향 제어**: 머리와 눈 움직임을 통해 인간의 응시 행동을 모방합니다. 예를 들어, 말할 때 상대를 바라보고, 생각할 때 잠시 시선을 돌립니다.
+
+### 실험 설정
+- **Dialogue Robot Competition 2022**에 참가했으며, 이 대회는 로봇이 실제 환경에서 인간과 자유롭게 대화해야 합니다.
+- 평가 지표는 대화 자연스러움, 표정과 시선의 조화성, 사용자 주관적 만족도를 포함합니다.
+
+### 주요 결과
+- 시스템은 대회에서 다중 모달 상호작용을 성공적으로 구현했으며, 사용자 피드백은 다음과 같습니다:
+  - 로봇의 표정과 시선의 동기화 제어가 상호작용의 자연스러움을 크게 향상시켰습니다.
+  - 음성 내용만 제어하는 기준 시스템과 비교하여, 다중 모달 시스템에 대한 사용자 만족도 점수가 약 30% 향상되었습니다.
+- 한계: 복잡한 감정 인식(예: 풍자, 망설임) 상황에서는 표정과 시선의 매칭 정확도가 여전히 개선이 필요합니다.
+
+### 결론
+- 이 연구는 인간형 로봇 대화에서 다중 모달 제어(음성+표정+시선)의 필요성을 검증했으며, 향후 더 자연스러운 서비스형 로봇 상호작용을 위한 기술 프레임워크를 제공합니다.

@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.15549v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.15549v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (743 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,25 @@ DP-VLA 通过引入双过程理论的分层设计，成功解决了 VLA 模型�
 ## Overview
 Vision-Language-Action (VLA) models are receiving increasing attention for their ability to enable robots to perform complex tasks by integrating visual context with linguistic commands. However, achieving efficient real-time performance remains challenging due to the high computational demands of existing models. To overcome this, we propose Dual Process VLA (DP-VLA), a hierarchical framework inspired by dual-process theory. DP-VLA utilizes a Large System 2 Model (L-Sys2) for complex reasoning and decision-making, while a Small System 1 Model (S-Sys1) handles real-time motor control and sensory processing. By leveraging Vision-Language Models (VLMs), the L-Sys2 operates at low frequencies, reducing computational overhead, while the S-Sys1 ensures fast and accurate task execution. Experimental results on the RoboCasa dataset demonstrate that DP-VLA achieves faster inference and higher task success rates, providing a scalable solution for advanced robotic applications.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 시각적 맥락과 언어 명령을 통합하여 로봇이 복잡한 작업을 수행할 수 있게 하는 능력으로 주목받고 있습니다. 그러나 기존 모델의 높은 계산 요구로 인해 효율적인 실시간 성능을 달성하는 것은 여전히 어려운 과제입니다. 이를 극복하기 위해, 우리는 이중 과정 이론에서 영감을 받은 계층적 프레임워크인 Dual Process VLA (DP-VLA)를 제안합니다. DP-VLA는 복잡한 추론과 의사 결정을 위해 대형 시스템 2 모델 (L-Sys2)을 활용하고, 소형 시스템 1 모델 (S-Sys1)이 실시간 모터 제어와 감각 처리를 담당합니다. Vision-Language Models (VLMs)을 활용하여 L-Sys2는 낮은 주파수로 작동하여 계산 오버헤드를 줄이고, S-Sys1은 빠르고 정확한 작업 실행을 보장합니다. RoboCasa 데이터셋에 대한 실험 결과는 DP-VLA가 더 빠른 추론과 더 높은 작업 성공률을 달성하여 고급 로봇 응용을 위한 확장 가능한 솔루션을 제공함을 보여줍니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 시각적 맥락과 언어 명령을 통합하여 로봇이 복잡한 작업을 수행할 수 있게 하는 능력으로 주목받고 있습니다. 그러나 기존 모델의 높은 계산 요구로 인해 효율적인 실시간 성능을 달성하는 것은 여전히 어려운 과제입니다. 이를 극복하기 위해, 우리는 이중 과정 이론에서 영감을 받은 계층적 프레임워크인 Dual Process VLA (DP-VLA)를 제안합니다. DP-VLA는 복잡한 추론과 의사 결정을 위해 대형 시스템 2 모델 (L-Sys2)을 활용하고, 소형 시스템 1 모델 (S-Sys1)이 실시간 모터 제어와 감각 처리를 담당합니다. Vision-Language Models (VLMs)을 활용하여 L-Sys2는 낮은 주파수로 작동하여 계산 오버헤드를 줄이고, S-Sys1은 빠르고 정확한 작업 실행을 보장합니다. RoboCasa 데이터셋에 대한 실험 결과는 DP-VLA가 더 빠른 추론과 더 높은 작업 성공률을 달성하여 고급 로봇 응용을 위한 확장 가능한 솔루션을 제공함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.15549v1
+
+## 개요
+DP-VLA는 기존의 비전-언어-행동 모델이 높은 계산 요구로 인해 효율적인 실시간 성능을 달성하기 어려운 문제를 해결하는 것을 목표로 합니다. 이 모델은 이중 과정 이론을 차용하여 계층적 아키텍처를 구축합니다: 대형 시스템 2 모델(L-Sys2)은 비전-언어 모델(VLM)을 활용하여 낮은 빈도로 작동하며 복잡한 추론과 의사 결정을 담당하여 계산 오버헤드를 줄입니다; 소형 시스템 1 모델(S-Sys1)은 고주파의 실시간 모터 제어와 감각 처리에 집중하여 작업 실행의 빠름과 정확성을 보장합니다. RoboCasa 데이터셋에서의 실험은 DP-VLA가 추론 속도와 작업 성공률 모두에서 기존 방법보다 우수함을 보여주며, 고급 로봇 응용을 위한 확장 가능한 솔루션을 제공합니다.
+
+## 핵심 내용
+### 방법
+DP-VLA의 계층적 프레임워크는 이중 과정 이론을 기반으로 설계되었으며, 두 가지 핵심 구성 요소를 포함합니다:
+- **대형 시스템 2 모델(L-Sys2)**: 비전-언어 모델(VLM)을 기반으로 구축되어 낮은 빈도로 작동하며, 복잡한 추론과 의사 결정이 필요한 작업을 처리하여 계산 부담을 크게 줄입니다.
+- **소형 시스템 1 모델(S-Sys1)**: 고주파의 실시간 모터 제어와 감각 처리에 집중하여 로봇이 작업 지시를 빠르고 정확하게 실행할 수 있도록 보장합니다.
+
+### 실험 설정
+- **데이터셋**: RoboCasa 데이터셋을 사용하여 훈련 및 평가를 수행하며, 이 데이터셋은 다양한 로봇 조작 시나리오를 포함합니다.
+- **비교 기준**: 기존 VLA 모델과 성능을 비교하며, 추론 속도와 작업 성공률에 중점을 둡니다.
+
+### 주요 결과
+- **추론 속도**: DP-VLA는 기존 VLA 모델보다 더 빠른 추론 속도를 구현합니다.
+- **작업 성공률**: RoboCasa 데이터셋에서 DP-VLA는 더 높은 작업 성공률을 달성하여, 계산 효율성과 실행 정확성의 균형을 맞추는 계층적 아키텍처의 효과를 검증합니다.
+
+### 결론
+DP-VLA는 이중 과정 이론의 계층적 설계를 도입하여 VLA 모델의 실시간 로봇 조작에서의 계산 병목 현상을 성공적으로 해결하며, 효율적이고 확장 가능한 로봇 응용 개발을 위한 새로운 접근 방식을 제공합니다.

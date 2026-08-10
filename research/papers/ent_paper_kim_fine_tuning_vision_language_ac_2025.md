@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.19645v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.19645v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1062 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,33 @@ OpenVLA-OFT 通过优化微调策略，在模拟和真实环境中均实现了�
 ## Overview
 Recent vision-language-action models (VLAs) build upon pretrained vision-language models and leverage diverse robot datasets to demonstrate strong task execution, language following ability, and semantic generalization. Despite these successes, VLAs struggle with novel robot setups and require fine-tuning to achieve good performance, yet how to most effectively fine-tune them is unclear given many possible strategies. In this work, we study key VLA adaptation design choices such as different action decoding schemes, action representations, and learning objectives for fine-tuning, using OpenVLA as our representative base model. Our empirical analysis informs an Optimized Fine-Tuning (OFT) recipe that integrates parallel decoding, action chunking, a continuous action representation, and a simple L1 regression-based learning objective to altogether improve inference efficiency, policy performance, and flexibility in the model's input-output specifications. We propose OpenVLA-OFT, an instantiation of this recipe, which sets a new state of the art on the LIBERO simulation benchmark, significantly boosting OpenVLA's average success rate across four task suites from 76.5% to 97.1% while increasing action generation throughput by 26$\times$. In real-world evaluations, our fine-tuning recipe enables OpenVLA to successfully execute dexterous, high-frequency control tasks on a bimanual ALOHA robot and outperform other VLAs ($π_0$ and RDT-1B) fine-tuned using their default recipes, as well as strong imitation learning policies trained from scratch (Diffusion Policy and ACT) by up to 15% (absolute) in average success rate. We release code for OFT and pretrained model checkpoints at https://openvla-oft.github.io/.
 
-## 개요
-최근 비전-언어-행동 모델(VLA)은 사전 훈련된 비전-언어 모델을 기반으로 다양한 로봇 데이터셋을 활용하여 강력한 작업 실행, 언어 명령 수행 능력 및 의미적 일반화를 입증했습니다. 이러한 성공에도 불구하고 VLA는 새로운 로봇 설정에 어려움을 겪으며 좋은 성능을 달성하기 위해 미세 조정이 필요하지만, 다양한 가능한 전략이 존재하는 가운데 가장 효과적인 미세 조정 방법은 불분명합니다. 본 연구에서는 OpenVLA를 대표적인 기본 모델로 사용하여 다양한 행동 디코딩 방식, 행동 표현 및 미세 조정을 위한 학습 목표와 같은 주요 VLA 적응 설계 선택지를 연구합니다. 실증 분석을 통해 병렬 디코딩, 행동 청킹, 연속 행동 표현 및 간단한 L1 회귀 기반 학습 목표를 통합하여 추론 효율성, 정책 성능 및 모델의 입출력 사양 유연성을 모두 개선하는 최적화된 미세 조정(OFT) 레시피를 도출했습니다. 이 레시피의 구현체인 OpenVLA-OFT를 제안하며, 이는 LIBERO 시뮬레이션 벤치마크에서 새로운 최첨단 성능을 달성하여 네 가지 작업 제품군에서 OpenVLA의 평균 성공률을 76.5%에서 97.1%로 크게 향상시키고 행동 생성 처리량을 26배 증가시킵니다. 실제 환경 평가에서, 당사의 미세 조정 레시피는 OpenVLA가 양팔 ALOHA 로봇에서 정밀하고 고주파 제어 작업을 성공적으로 실행할 수 있게 하며, 기본 레시피로 미세 조정된 다른 VLA($π_0$ 및 RDT-1B)와 처음부터 훈련된 강력한 모방 학습 정책(Diffusion Policy 및 ACT)을 평균 성공률에서 최대 15%(절대값)까지 능가합니다. OFT 코드와 사전 훈련된 모델 체크포인트를 https://openvla-oft.github.io/에서 공개합니다.
-
-## 핵심 내용
-최근 비전-언어-행동 모델(VLA)은 사전 훈련된 비전-언어 모델을 기반으로 다양한 로봇 데이터셋을 활용하여 강력한 작업 실행, 언어 명령 수행 능력 및 의미적 일반화를 입증했습니다. 이러한 성공에도 불구하고 VLA는 새로운 로봇 설정에 어려움을 겪으며 좋은 성능을 달성하기 위해 미세 조정이 필요하지만, 다양한 가능한 전략이 존재하는 가운데 가장 효과적인 미세 조정 방법은 불분명합니다. 본 연구에서는 OpenVLA를 대표적인 기본 모델로 사용하여 다양한 행동 디코딩 방식, 행동 표현 및 미세 조정을 위한 학습 목표와 같은 주요 VLA 적응 설계 선택지를 연구합니다. 실증 분석을 통해 병렬 디코딩, 행동 청킹, 연속 행동 표현 및 간단한 L1 회귀 기반 학습 목표를 통합하여 추론 효율성, 정책 성능 및 모델의 입출력 사양 유연성을 모두 개선하는 최적화된 미세 조정(OFT) 레시피를 도출했습니다. 이 레시피의 구현체인 OpenVLA-OFT를 제안하며, 이는 LIBERO 시뮬레이션 벤치마크에서 새로운 최첨단 성능을 달성하여 네 가지 작업 제품군에서 OpenVLA의 평균 성공률을 76.5%에서 97.1%로 크게 향상시키고 행동 생성 처리량을 26배 증가시킵니다. 실제 환경 평가에서, 당사의 미세 조정 레시피는 OpenVLA가 양팔 ALOHA 로봇에서 정밀하고 고주파 제어 작업을 성공적으로 실행할 수 있게 하며, 기본 레시피로 미세 조정된 다른 VLA($π_0$ 및 RDT-1B)와 처음부터 훈련된 강력한 모방 학습 정책(Diffusion Policy 및 ACT)을 평균 성공률에서 최대 15%(절대값)까지 능가합니다. OFT 코드와 사전 훈련된 모델 체크포인트를 https://openvla-oft.github.io/에서 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.19645v2
+
+## 개요
+기존 비전-언어-행동 모델(VLA)은 의미적 일반화에서 우수한 성능을 보이지만, 새로운 로봇 설정에 직면했을 때 여전히 미세 조정이 필요하며, 미세 조정 전략의 선택은 아직 명확하지 않습니다. 본 연구는 OpenVLA를 기반 모델로 삼아 행동 디코딩 방식, 행동 표현 및 학습 목표와 같은 핵심 설계 선택을 체계적으로 분석합니다. 실증 분석을 바탕으로 저자들은 최적화 미세 조정(OFT) 방안을 제안하며, 병렬 디코딩, 행동 청킹, 연속 행동 표현 및 L1 회귀 손실을 통합하여 추론 효율성, 정책 성능 및 입력-출력 유연성을 크게 향상시킵니다. 이 방안은 LIBERO 시뮬레이션 벤치마크에서 새로운 기록을 세웠으며, 실제 세계 평가에서 이중 로봇 팔 ALOHA 로봇이 정교한 고주파 제어 작업을 성공적으로 수행하게 하여 평균 성공률이 π₀ 및 RDT-1B와 같은 VLA 모델보다 15% 높았습니다.
+
+## 핵심 내용
+### 방법 개요
+- **기반 모델**: 사전 훈련된 비전-언어 모델을 기반으로 다양한 로봇 데이터셋을 활용하여 훈련된 대표적인 VLA 모델인 OpenVLA를 채택합니다.
+- **핵심 설계 선택**:
+  - **행동 디코딩 방식**: 자동 회귀 디코딩에서 병렬 디코딩으로 전환하여 추론 속도를 크게 향상시킵니다.
+  - **행동 표현**: 이산화 대신 연속 행동 표현을 채택하여 행동 정밀도를 유지합니다.
+  - **학습 목표**: 복잡한 손실 함수 대신 간단한 L1 회귀 손실을 사용하여 훈련 과정을 단순화합니다.
+  - **행동 청킹**: 행동 청킹(action chunking)을 도입하여 모델이 한 번에 여러 시간 단계의 행동을 예측할 수 있게 하여 제어 안정성을 향상시킵니다.
+
+### 실험 설정
+- **시뮬레이션 벤치마크**: LIBERO 벤치마크의 네 가지 작업 세트(LIBERO-Spatial, LIBERO-Object, LIBERO-Goal, LIBERO-Long)에서 평가합니다.
+- **실제 세계 평가**: 이중 로봇 팔 ALOHA 로봇에서 정교한 고주파 제어 작업을 수행하며, 비교 모델에는 π₀, RDT-1B, Diffusion Policy 및 ACT가 포함됩니다.
+
+### 핵심 결과
+- **LIBERO 벤치마크**:
+  - OpenVLA-OFT의 평균 성공률이 76.5%에서 97.1%로 향상되었습니다.
+  - 행동 생성 처리량이 26배 향상되었습니다(1.5 Hz에서 39 Hz로).
+- **실제 세계 평가**:
+  - 이중 로봇 팔 ALOHA 로봇에서 OpenVLA-OFT가 정교한 고주파 제어 작업을 성공적으로 수행했습니다.
+  - 평균 성공률이 π₀ 및 RDT-1B(기본 미세 조정 방안 사용)보다 15% 높았습니다.
+  - 처음부터 훈련된 Diffusion Policy 및 ACT보다 15%(절대 성공률) 높았습니다.
+
+### 결론
+OpenVLA-OFT는 최적화된 미세 조정 전략을 통해 시뮬레이션 및 실제 환경 모두에서 상당한 성능 향상과 효율성 개선을 달성했습니다. 코드와 사전 훈련된 모델은 오픈 소스로 공개되었습니다.

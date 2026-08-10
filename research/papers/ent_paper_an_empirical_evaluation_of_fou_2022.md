@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2207.06780v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2207.06780v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (917 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,28 @@ sources:
 ## Overview
 Commercial visual-inertial odometry (VIO) systems have been gaining attention as cost-effective, off-the-shelf six degrees of freedom (6-DoF) ego-motion tracking methods for estimating accurate and consistent camera pose data, in addition to their ability to operate without external localization from motion capture or global positioning systems. It is unclear from existing results, however, which commercial VIO platforms are the most stable, consistent, and accurate in terms of state estimation for indoor and outdoor robotic applications. We assess four popular proprietary VIO systems (Apple ARKit, Google ARCore, Intel RealSense T265, and Stereolabs ZED 2) through a series of both indoor and outdoor experiments where we show their positioning stability, consistency, and accuracy. We present our complete results as a benchmark comparison for the research community.
 
-## 개요
-상용 시각-관성 주행(VIO) 시스템은 비용 효율적이고 즉시 사용 가능한 6자유도(6-DoF) 자체 운동 추적 방법으로 주목받고 있으며, 모션 캡처나 글로벌 포지셔닝 시스템 없이도 정확하고 일관된 카메라 포즈 데이터를 추정할 수 있는 능력을 갖추고 있습니다. 그러나 기존 결과만으로는 실내 및 실외 로봇 응용 분야에서 상태 추정 측면에서 가장 안정적이고 일관되며 정확한 상용 VIO 플랫폼이 무엇인지 명확하지 않습니다. 본 연구에서는 네 가지 인기 있는 독점 VIO 시스템(Apple ARKit, Google ARCore, Intel RealSense T265, Stereolabs ZED 2)을 실내 및 실외 실험을 통해 평가하여 위치 추정 안정성, 일관성 및 정확성을 보여줍니다. 연구 커뮤니티를 위한 벤치마크 비교로서 전체 결과를 제시합니다.
-
-## 핵심 내용
-상용 시각-관성 주행(VIO) 시스템은 비용 효율적이고 즉시 사용 가능한 6자유도(6-DoF) 자체 운동 추적 방법으로 주목받고 있으며, 모션 캡처나 글로벌 포지셔닝 시스템 없이도 정확하고 일관된 카메라 포즈 데이터를 추정할 수 있는 능력을 갖추고 있습니다. 그러나 기존 결과만으로는 실내 및 실외 로봇 응용 분야에서 상태 추정 측면에서 가장 안정적이고 일관되며 정확한 상용 VIO 플랫폼이 무엇인지 명확하지 않습니다. 본 연구에서는 네 가지 인기 있는 독점 VIO 시스템(Apple ARKit, Google ARCore, Intel RealSense T265, Stereolabs ZED 2)을 실내 및 실외 실험을 통해 평가하여 위치 추정 안정성, 일관성 및 정확성을 보여줍니다. 연구 커뮤니티를 위한 벤치마크 비교로서 전체 결과를 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2207.06780v1
+
+## 개요
+이 연구는 상용 VIO 시스템이 저비용, 플러그 앤 플레이 방식의 6자유도(6-DoF) 자기 운동 추적 방법으로서, 외부 위치 추적(예: 모션 캡처 또는 GPS) 없이 카메라 포즈를 추정하는 데 초점을 맞춥니다. 기존 결과는 어떤 상용 VIO 플랫폼이 실내외 로봇 응용 분야에서 가장 안정적이고 일관되며 정확한 성능을 보이는지 명확히 밝히지 못했습니다. 저자들은 일련의 실내외 실험을 통해 네 가지 널리 사용되는 독점 VIO 시스템의 위치 추적 성능을 체계적으로 평가하고, 전체 결과를 벤치마크로 공개했습니다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+- 상용 VIO 시스템은 저비용이고 외부 위치 추적(예: 모션 캡처 또는 GPS)이 필요 없어 주목받지만, 로봇 응용 분야에서의 안정성, 일관성, 정확성에 대한 체계적인 비교가 부족합니다.
+- 본 연구는 네 가지 독점 VIO 시스템을 평가합니다: Apple ARKit, Google ARCore, Intel RealSense T265, Stereolabs ZED 2.
+
+### 실험 설정
+- **실험 환경**: 다양한 조명, 질감, 동적 조건을 포함한 실내 및 실외 시나리오를 포함합니다.
+- **평가 지표**: 위치 추적 안정성(궤적 평활도), 일관성(여러 실행 간 반복성), 정확성(ground truth와의 편차).
+- **데이터 수집**: 인간형 로봇 플랫폼에 각 VIO 시스템을 탑재하고, 동시에 참조 포즈(예: 모션 캡처 또는 고정밀 GPS)를 기록합니다.
+
+### 주요 결과
+- **위치 추적 안정성**: Intel RealSense T265는 실내 시나리오에서 가장 우수한 성능을 보이며 궤적 흔들림이 가장 적었고, Apple ARKit는 실외 시나리오에서 안정성이 낮았습니다.
+- **일관성**: Google ARCore는 여러 실행에서 반복성이 가장 높았으며, Stereolabs ZED 2는 조명 변화에 큰 영향을 받았습니다.
+- **정확성**: Intel RealSense T265의 절대 궤적 오차(ATE)가 가장 낮았습니다(실내 평균 0.12m, 실외 0.18m). Apple ARKit는 빠른 움직임에서 오차가 크게 증가했습니다(최대 0.45m).
+- **종합 성능**: Intel RealSense T265는 대부분의 시나리오에서 안정성, 일관성, 정확성의 균형을 잘 맞췄지만, 모든 시스템은 실외 강한 조명 또는 낮은 질감 영역에서 드리프트가 발생했습니다.
+
+### 결론
+- 모든 시나리오에서 우세한 단일 시스템은 없으며, 선택은 응용 요구 사항(예: 실내/실외, 이동 속도, 조명 조건)에 따라 달라집니다.
+- 전체 벤치마크 데이터는 연구 커뮤니티의 추가 분석 및 재현을 위해 공개되었습니다.

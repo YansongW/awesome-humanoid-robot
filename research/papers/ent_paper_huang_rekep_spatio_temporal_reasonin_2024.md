@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.01652v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.01652v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (837 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,25 @@ ReKep 通过关键点约束的视觉化表示与自动化生成，为通用机�
 ## Overview
 Representing robotic manipulation tasks as constraints that associate the robot and the environment is a promising way to encode desired robot behaviors. However, it remains unclear how to formulate the constraints such that they are 1) versatile to diverse tasks, 2) free of manual labeling, and 3) optimizable by off-the-shelf solvers to produce robot actions in real-time. In this work, we introduce Relational Keypoint Constraints (ReKep), a visually-grounded representation for constraints in robotic manipulation. Specifically, ReKep is expressed as Python functions mapping a set of 3D keypoints in the environment to a numerical cost. We demonstrate that by representing a manipulation task as a sequence of Relational Keypoint Constraints, we can employ a hierarchical optimization procedure to solve for robot actions (represented by a sequence of end-effector poses in SE(3)) with a perception-action loop at a real-time frequency. Furthermore, in order to circumvent the need for manual specification of ReKep for each new task, we devise an automated procedure that leverages large vision models and vision-language models to produce ReKep from free-form language instructions and RGB-D observations. We present system implementations on a wheeled single-arm platform and a stationary dual-arm platform that can perform a large variety of manipulation tasks, featuring multi-stage, in-the-wild, bimanual, and reactive behaviors, all without task-specific data or environment models. Website at https://rekep-robot.github.io/.
 
-## 개요
-로봇 조작 작업을 로봇과 환경을 연결하는 제약 조건으로 표현하는 것은 원하는 로봇 동작을 인코딩하는 유망한 방법입니다. 그러나 이러한 제약 조건을 1) 다양한 작업에 적용 가능하고, 2) 수동 레이블링이 필요 없으며, 3) 기성 솔버를 통해 실시간으로 로봇 동작을 생성할 수 있도록 최적화 가능하게 공식화하는 방법은 여전히 명확하지 않습니다. 본 연구에서는 로봇 조작에서 제약 조건을 위한 시각 기반 표현인 관계형 키포인트 제약 조건(ReKep)을 소개합니다. 구체적으로, ReKep은 환경 내 3D 키포인트 집합을 수치적 비용으로 매핑하는 Python 함수로 표현됩니다. 조작 작업을 일련의 관계형 키포인트 제약 조건으로 표현함으로써, 계층적 최적화 절차를 사용하여 SE(3)에서의 엔드 이펙터 자세 시퀀스로 표현되는 로봇 동작을 실시간 주파수의 인식-행동 루프로 해결할 수 있음을 보여줍니다. 또한, 각각의 새로운 작업에 대해 ReKep을 수동으로 지정해야 하는 필요성을 피하기 위해, 대규모 비전 모델과 비전-언어 모델을 활용하여 자유 형식의 언어 명령과 RGB-D 관측으로부터 ReKep을 생성하는 자동화된 절차를 고안했습니다. 우리는 작업별 데이터나 환경 모델 없이도 다단계, 실제 환경, 양팔, 반응형 동작을 특징으로 하는 다양한 조작 작업을 수행할 수 있는 바퀴 달린 단일 팔 플랫폼과 고정형 이중 팔 플랫폼에서의 시스템 구현을 제시합니다. 웹사이트: https://rekep-robot.github.io/.
-
-## 핵심 내용
-로봇 조작 작업을 로봇과 환경을 연결하는 제약 조건으로 표현하는 것은 원하는 로봇 동작을 인코딩하는 유망한 방법입니다. 그러나 이러한 제약 조건을 1) 다양한 작업에 적용 가능하고, 2) 수동 레이블링이 필요 없으며, 3) 기성 솔버를 통해 실시간으로 로봇 동작을 생성할 수 있도록 최적화 가능하게 공식화하는 방법은 여전히 명확하지 않습니다. 본 연구에서는 로봇 조작에서 제약 조건을 위한 시각 기반 표현인 관계형 키포인트 제약 조건(ReKep)을 소개합니다. 구체적으로, ReKep은 환경 내 3D 키포인트 집합을 수치적 비용으로 매핑하는 Python 함수로 표현됩니다. 조작 작업을 일련의 관계형 키포인트 제약 조건으로 표현함으로써, 계층적 최적화 절차를 사용하여 SE(3)에서의 엔드 이펙터 자세 시퀀스로 표현되는 로봇 동작을 실시간 주파수의 인식-행동 루프로 해결할 수 있음을 보여줍니다. 또한, 각각의 새로운 작업에 대해 ReKep을 수동으로 지정해야 하는 필요성을 피하기 위해, 대규모 비전 모델과 비전-언어 모델을 활용하여 자유 형식의 언어 명령과 RGB-D 관측으로부터 ReKep을 생성하는 자동화된 절차를 고안했습니다. 우리는 작업별 데이터나 환경 모델 없이도 다단계, 실제 환경, 양팔, 반응형 동작을 특징으로 하는 다양한 조작 작업을 수행할 수 있는 바퀴 달린 단일 팔 플랫폼과 고정형 이중 팔 플랫폼에서의 시스템 구현을 제시합니다. 웹사이트: https://rekep-robot.github.io/.
-
 ## 参考
 - http://arxiv.org/abs/2409.01652v2
+
+## 개요
+ReKep은 로봇 조작 작업을 환경의 3D 키포인트 간 수치 제약 함수로 인코딩하여, 기존 제약 표현이 지닌 범용성, 자동 주석, 실시간 최적화 측면의 한계를 해결합니다. 이 방법은 Python 함수를 사용해 키포인트를 비용 값으로 매핑하고, 계층적 최적화 프로세스를 통해 인식-행동 루프에서 엔드 이펙터 포즈 시퀀스를 실시간으로 해석합니다. 수동 주석의 필요성을 없애기 위해 ReKep은 대형 비전 모델과 비전-언어 모델을 결합하여 자연어 명령과 RGB-D 관측에서 제약을 자동 생성합니다. 시스템은 바퀴형 단일 암 플랫폼과 고정 이중 암 플랫폼에서 다단계, 야외, 이중 암 및 반응형 동작의 유효성을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **Relational Keypoint Constraints (ReKep)**: 조작 작업을 일련의 3D 키포인트 간 제약으로 표현하며, 각 제약은 Python 함수로 정의되어 환경 키포인트 좌표를 입력으로 받고 수치 비용을 출력합니다.
+- **계층적 최적화**: 작업을 다단계 제약 시퀀스로 분해하고, 두 수준의 최적화로 해결합니다. 상위 최적화는 키포인트 궤적을 계획하고, 하위 최적화는 엔드 이펙터 포즈(SE(3) 공간)를 해석하여 실시간 인식-행동 루프를 구현합니다.
+
+### 자동 생성
+- **제약 생성**: 대형 비전 모델(예: SAM)을 사용해 3D 키포인트를 추출하고, 비전-언어 모델(예: GPT-4V)을 결합하여 자유 형식 언어 명령과 RGB-D 관측에서 제약 함수를 자동으로 도출합니다.
+- **수동 주석 불필요**: 모든 제약은 모델에 의해 자동 생성되며, 작업별 데이터나 환경 모델이 필요하지 않습니다.
+
+### 실험 설정 및 결과
+- **플랫폼**: 바퀴형 단일 암 플랫폼(6-DOF 로봇 암 장착) 및 고정 이중 암 플랫폼(두 개의 7-DOF 로봇 암 장착).
+- **작업 유형**: 다단계 조작(예: 조립), 야외 조작(예: 미지 물체 파지), 이중 암 협력(예: 협동 운반), 반응형 동작(예: 동적 장애물 회피).
+- **주요 성능**: 모든 작업에서 사전 훈련이나 환경 모델 없이 실시간 제어(주파수 ≥ 10 Hz)를 구현하며, 다양한 시나리오에서 견고성을 유지합니다.
+
+### 결론
+ReKep은 키포인트 제약의 시각적 표현과 자동 생성을 통해 범용 로봇 조작을 위한 확장 가능한 프레임워크를 제공하며, 작업별 데이터 없이도 다양한 시나리오에서 실시간 조작을 구현합니다.

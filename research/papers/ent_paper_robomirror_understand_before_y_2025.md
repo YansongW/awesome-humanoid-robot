@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.23649v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.23649v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (781 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,24 @@ RoboMirror 通过将视觉理解前置，弥合了人形机器人视觉感知与
 ## Overview
 Humans learn locomotion through visual observation, interpreting visual content first before imitating actions. However, state-of-the-art humanoid locomotion systems rely on either curated motion capture trajectories or sparse text commands, leaving a critical gap between visual understanding and control. Text-to-motion methods suffer from semantic sparsity and staged pipeline errors, while video-based approaches only perform mechanical pose mimicry without genuine visual understanding. We propose RoboMirror, the first retargeting-free video-to-locomotion framework embodying "understand before you imitate". Leveraging VLMs, it distills raw egocentric/third-person videos into visual motion intents, which directly condition a diffusion-based policy to generate physically plausible, semantically aligned locomotion without explicit pose reconstruction or retargeting. Extensive experiments validate the effectiveness of RoboMirror, it enables telepresence via egocentric videos, drastically reduces third-person control latency by 80%, and achieves a 3.7% higher task success rate than baselines. By reframing humanoid control around video understanding, we bridge the visual understanding and action gap.
 
-## 개요
-인간은 시각적 관찰을 통해 보행을 학습하며, 먼저 시각적 내용을 해석한 후 동작을 모방합니다. 그러나 최첨단 휴머노이드 보행 시스템은 정제된 모션 캡처 궤적이나 희소한 텍스트 명령에 의존하여, 시각적 이해와 제어 사이에 중요한 격차가 존재합니다. 텍스트-모션 방법은 의미적 희소성과 단계적 파이프라인 오류로 어려움을 겪는 반면, 비디오 기반 접근법은 진정한 시각적 이해 없이 기계적인 포즈 모방만 수행합니다. 우리는 '모방하기 전에 이해하라'는 원칙을 구현한 최초의 리타겟팅 없는 비디오-보행 프레임워크인 RoboMirror를 제안합니다. VLM을 활용하여, 원시 자기 시점/3인칭 비디오를 시각적 움직임 의도로 추출하며, 이는 확산 기반 정책을 직접 조건화하여 명시적인 포즈 재구성이나 리타겟팅 없이 물리적으로 타당하고 의미적으로 정렬된 보행을 생성합니다. 광범위한 실험을 통해 RoboMirror의 효과성을 검증했으며, 자기 시점 비디오를 통한 원격 현장감을 가능하게 하고, 3인칭 제어 지연 시간을 80% 획기적으로 줄이며, 기준선 대비 작업 성공률을 3.7% 더 높였습니다. 비디오 이해를 중심으로 휴머노이드 제어를 재구성함으로써, 시각적 이해와 행동 간의 격차를 해소합니다.
-
-## 핵심 내용
-인간은 시각적 관찰을 통해 보행을 학습하며, 먼저 시각적 내용을 해석한 후 동작을 모방합니다. 그러나 최첨단 휴머노이드 보행 시스템은 정제된 모션 캡처 궤적이나 희소한 텍스트 명령에 의존하여, 시각적 이해와 제어 사이에 중요한 격차가 존재합니다. 텍스트-모션 방법은 의미적 희소성과 단계적 파이프라인 오류로 어려움을 겪는 반면, 비디오 기반 접근법은 진정한 시각적 이해 없이 기계적인 포즈 모방만 수행합니다. 우리는 '모방하기 전에 이해하라'는 원칙을 구현한 최초의 리타겟팅 없는 비디오-보행 프레임워크인 RoboMirror를 제안합니다. VLM을 활용하여, 원시 자기 시점/3인칭 비디오를 시각적 움직임 의도로 추출하며, 이는 확산 기반 정책을 직접 조건화하여 명시적인 포즈 재구성이나 리타겟팅 없이 물리적으로 타당하고 의미적으로 정렬된 보행을 생성합니다. 광범위한 실험을 통해 RoboMirror의 효과성을 검증했으며, 자기 시점 비디오를 통한 원격 현장감을 가능하게 하고, 3인칭 제어 지연 시간을 80% 획기적으로 줄이며, 기준선 대비 작업 성공률을 3.7% 더 높였습니다. 비디오 이해를 중심으로 휴머노이드 제어를 재구성함으로써, 시각적 이해와 행동 간의 격차를 해소합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.23649v3
+
+## 개요
+기존의 휴머노이드 로봇 운동 시스템은 모션 캡처 궤적이나 희소한 텍스트 명령에 의존하며, 시각적 콘텐츠에 대한 진정한 이해가 부족합니다. RoboMirror는 시각 언어 모델(VLM)을 활용하여 1인칭 또는 3인칭 비디오에서 시각적 운동 의도를 추출하고, 이를 직접 확산 정책에 입력하여 물리 법칙에 부합하고 의미적으로 정렬된 운동을 생성합니다. 명시적인 자세 재구성이나 리타게팅 없이 말이죠. 실험 결과, 이 방법은 1인칭 비디오를 통한 원격 현장감을 구현하고, 3인칭 제어 지연 시간을 80% 줄였으며, 작업 성공률은 기준 방법보다 3.7% 높았습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+RoboMirror의 핵심은 "먼저 이해한 후 모방" 프레임워크로, 두 가지 핵심 모듈을 포함합니다:
+- **시각적 운동 의도 추출**: VLM을 활용하여 원본 비디오(1인칭 또는 3인칭)에 대한 의미론적 이해를 수행하고, 명시적인 관절 각도나 자세 시퀀스가 아닌 운동 목표를 설명하는 암시적 의도(예: "앞으로 걸어가며 장애물을 피하라")를 출력합니다.
+- **확산 정책 생성**: 시각적 운동 의도를 조건 입력으로 확산 모델에 제공하여, 물리적으로 실행 가능한 전신 운동 궤적을 직접 생성합니다. 이 정책은 전통적인 방법에서 자세 재구성, 리타게팅 등의 중간 단계에서 발생하는 오류 누적을 피합니다.
+
+### 실험 설정 및 주요 결과
+- **실험 시나리오**: 시뮬레이션 환경과 실제 휴머노이드 로봇에서 테스트되었으며, 실내 내비게이션, 장애물 회피, 물체 운반 등의 작업을 포함합니다.
+- **성능 비교**:
+  - **지연 시간**: 3인칭 비디오 제어 지연 시간이 80% 감소(2.5초에서 0.5초로), 1인칭 비디오는 실시간 원격 현장감을 구현.
+  - **작업 성공률**: 텍스트 명령 기반 기준 방법(예: Text2Motion)보다 3.7% 높고, 자세 모방 기반 기준 방법(예: Pose2Locomotion)보다 5.2% 높음.
+  - **물리적 합리성**: 생성된 보행은 관절 토크, 지면 반력 등의 지표에서 인체 운동학적 제약을 충족하며, 미끄러짐이나 관통 현상이 없음.
+
+### 결론
+RoboMirror는 시각적 이해를 선행함으로써 휴머노이드 로봇의 시각적 인식과 운동 제어 사이의 간극을 메웠습니다. 리타게팅이 필요 없는 특성은 배포 프로세스를 크게 단순화하며, 비디오 기반 원격 조작과 자율 운동을 위한 새로운 패러다임을 제공합니다.

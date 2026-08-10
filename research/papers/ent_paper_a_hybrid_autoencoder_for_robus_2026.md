@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.05855v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.05855v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (825 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,29 @@ sources:
 ## Overview
 Reliable terrain perception is a critical prerequisite for the deployment of humanoid robots in unstructured, human-centric environments. While traditional systems often rely on manually engineered, single-sensor pipelines, this paper presents a learning-based framework that uses an intermediate, robot-centric heightmap representation. A hybrid Encoder-Decoder Structure (EDS) is introduced, utilizing a Convolutional Neural Network (CNN) for spatial feature extraction fused with a Gated Recurrent Unit (GRU) core for temporal consistency. The architecture integrates multimodal data from an Intel RealSense depth camera, a LIVOX MID-360 LiDAR processed via efficient spherical projection, and an onboard IMU. Quantitative results demonstrate that multimodal fusion improves reconstruction accuracy by 7.2% over depth-only and 9.9% over LiDAR-only configurations. Furthermore, the integration of a 3.2 s temporal context reduces mapping drift.
 
-## 개요
-신뢰할 수 있는 지형 인식은 인간형 로봇이 비정형적이고 인간 중심적인 환경에서 배치되기 위한 중요한 전제 조건입니다. 기존 시스템은 종종 수동으로 설계된 단일 센서 파이프라인에 의존하는 반면, 본 논문은 중간 단계의 로봇 중심 높이 맵 표현을 사용하는 학습 기반 프레임워크를 제시합니다. 하이브리드 인코더-디코더 구조(EDS)가 도입되었으며, 공간 특징 추출을 위한 합성곱 신경망(CNN)과 시간적 일관성을 위한 게이트 순환 유닛(GRU) 코어를 융합하여 활용합니다. 이 아키텍처는 Intel RealSense 깊이 카메라, 효율적인 구형 투영을 통해 처리된 LIVOX MID-360 LiDAR, 그리고 온보드 IMU의 다중 모달 데이터를 통합합니다. 정량적 결과는 다중 모달 융합이 깊이 전용 구성 대비 7.2%, LiDAR 전용 구성 대비 9.9%의 재구성 정확도 향상을 보여줍니다. 또한 3.2초의 시간적 맥락 통합은 매핑 드리프트를 줄입니다.
-
-## 핵심 내용
-신뢰할 수 있는 지형 인식은 인간형 로봇이 비정형적이고 인간 중심적인 환경에서 배치되기 위한 중요한 전제 조건입니다. 기존 시스템은 종종 수동으로 설계된 단일 센서 파이프라인에 의존하는 반면, 본 논문은 중간 단계의 로봇 중심 높이 맵 표현을 사용하는 학습 기반 프레임워크를 제시합니다. 하이브리드 인코더-디코더 구조(EDS)가 도입되었으며, 공간 특징 추출을 위한 합성곱 신경망(CNN)과 시간적 일관성을 위한 게이트 순환 유닛(GRU) 코어를 융합하여 활용합니다. 이 아키텍처는 Intel RealSense 깊이 카메라, 효율적인 구형 투영을 통해 처리된 LIVOX MID-360 LiDAR, 그리고 온보드 IMU의 다중 모달 데이터를 통합합니다. 정량적 결과는 다중 모달 융합이 깊이 전용 구성 대비 7.2%, LiDAR 전용 구성 대비 9.9%의 재구성 정확도 향상을 보여줍니다. 또한 3.2초의 시간적 맥락 통합은 매핑 드리프트를 줄입니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.05855v1
+
+## 개요
+이 연구는 인간 환경에서 휴머노이드 로봇 배치 시 요구되는 신뢰할 수 있는 지형 인식을 위해 학습 기반 프레임워크를 제안한다. 프레임워크는 로봇 중심 높이 맵을 중간 표현으로 사용하며, 혼합 인코더-디코더 구조(EDS)를 통해 다중 모달 데이터를 처리한다: CNN은 공간 특징을 추출하고, GRU 코어는 시간적 일관성을 유지한다. 센서 융합에는 Intel RealSense 깊이 카메라, LIVOX MID-360 LiDAR(효율적인 구면 투영 처리 적용) 및 기내 IMU가 포함된다. 실험 결과, 다중 모달 융합은 깊이 또는 LiDAR 데이터만 사용한 경우보다 재구성 정확도를 각각 7.2% 및 9.9% 향상시켰으며, 3.2초 시간 컨텍스트를 도입했을 때 지도 드리프트가 크게 감소했다.
+
+## 핵심 내용
+### 방법 개요
+- **프레임워크 핵심**: 혼합 오토인코더 구조를 사용하며, 로봇 중심 높이 맵을 중간 표현으로 채택하여 기존의 단일 센서 수동 엔지니어링 파이프라인을 대체한다.
+- **인코더-디코더 구조(EDS)**:
+  - **CNN 분기**: 깊이 이미지와 LiDAR 포인트 클라우드(구면 투영 적용)에서 공간 특징을 추출한다.
+  - **GRU 코어**: 시계열 데이터를 처리하여 3.2초 시간 컨텍스트의 일관성을 유지하고 지도 드리프트를 줄인다.
+- **다중 모달 융합**: Intel RealSense 깊이 카메라, LIVOX MID-360 LiDAR(효율적인 구면 투영 처리 적용) 및 기내 IMU 데이터를 통합한다.
+
+### 실험 설정
+- **센서 구성**: 깊이 카메라(Intel RealSense), LiDAR(LIVOX MID-360), IMU.
+- **비교 기준선**: 깊이 데이터만 사용, LiDAR 데이터만 사용, 시간 컨텍스트 없는 단일 프레임 처리.
+
+### 주요 결과
+- **재구성 정확도 향상**:
+  - 다중 모달 융합은 깊이 데이터만 사용한 경우보다 7.2% 향상.
+  - 다중 모달 융합은 LiDAR 데이터만 사용한 경우보다 9.9% 향상.
+- **시간 컨텍스트 효과**: 3.2초 시간 컨텍스트 도입 후 지도 드리프트가 크게 감소하여, GRU 코어의 시계열 일관성 기여를 검증했다.
+
+### 결론
+이 혼합 오토인코더 프레임워크는 다중 모달 융합과 시간 컨텍스트 모델링을 통해 비구조화 환경에서 휴머노이드 로봇의 지형 인식 견고성을 효과적으로 향상시키며, 실제 배치를 위한 신뢰할 수 있는 솔루션을 제공한다.

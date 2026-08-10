@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.17462v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.17462v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (872 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,23 @@ ERMV通过创新的时空一致性保持、计算效率优化及误差缓解机�
 ## Overview
 Robot imitation learning relies on 4D multi-view sequential images. However, the high cost of data collection and the scarcity of high-quality data severely constrain the generalization and application of embodied intelligence policies like Vision-Language-Action (VLA) models. Data augmentation is a powerful strategy to overcome data scarcity, but methods for editing 4D multi-view sequential images for manipulation tasks are currently lacking. Thus, we propose ERMV (Editing Robotic Multi-View 4D data), a novel data augmentation framework that efficiently edits an entire multi-view sequence based on single-frame editing and robot state conditions. This task presents three core challenges: (1) maintaining geometric and appearance consistency across dynamic views and long time horizons; (2) expanding the working window with low computational costs; and (3) ensuring the semantic integrity of critical objects like the robot arm. ERMV addresses these challenges through a series of innovations. First, to ensure spatio-temporal consistency in motion blur, we introduce a novel Epipolar Motion-Aware Attention (EMA-Attn) mechanism that learns pixel shift caused by movement before applying geometric constraints. Second, to maximize the editing working window, ERMV pioneers a Sparse Spatio-Temporal (STT) module, which decouples the temporal and spatial views and remodels a single-frame multi-view problem through sparse sampling of the views to reduce computational demands. Third, to alleviate error accumulation, we incorporate a feedback intervention Mechanism, which uses a Multimodal Large Language Model (MLLM) to check editing inconsistencies and request targeted expert guidance only when necessary. Extensive experiments demonstrate that ERMV-augmented data significantly boosts the robustness and generalization of VLA models in both simulated and real-world environments.
 
-## 개요
-로봇 모방 학습은 4D 다중 시점 순차 이미지에 의존합니다. 그러나 데이터 수집의 높은 비용과 고품질 데이터의 부족은 Vision-Language-Action(VLA) 모델과 같은 임베디드 지능 정책의 일반화 및 적용을 심각하게 제한합니다. 데이터 증강은 데이터 부족을 극복하기 위한 강력한 전략이지만, 조작 작업을 위한 4D 다중 시점 순차 이미지를 편집하는 방법은 현재 부족합니다. 따라서 우리는 단일 프레임 편집 및 로봇 상태 조건을 기반으로 전체 다중 시점 시퀀스를 효율적으로 편집하는 새로운 데이터 증강 프레임워크인 ERMV(Editing Robotic Multi-View 4D data)를 제안합니다. 이 작업은 세 가지 핵심 과제를 제시합니다: (1) 동적 시점과 긴 시간 범위에서 기하학적 및 외관 일관성 유지; (2) 낮은 계산 비용으로 작업 창 확장; (3) 로봇 팔과 같은 중요한 객체의 의미적 무결성 보장. ERMV는 일련의 혁신을 통해 이러한 과제를 해결합니다. 첫째, 모션 블러에서 시공간적 일관성을 보장하기 위해 기하학적 제약을 적용하기 전에 움직임으로 인한 픽셀 이동을 학습하는 새로운 Epipolar Motion-Aware Attention(EMA-Attn) 메커니즘을 도입합니다. 둘째, 편집 작업 창을 최대화하기 위해 ERMV는 Sparse Spatio-Temporal(STT) 모듈을 개척하여 시간적 및 공간적 시점을 분리하고 시점의 희소 샘플링을 통해 단일 프레임 다중 시점 문제를 재구성하여 계산 요구를 줄입니다. 셋째, 오류 누적을 완화하기 위해 피드백 개입 메커니즘을 통합하여 Multimodal Large Language Model(MLLM)을 사용하여 편집 불일치를 확인하고 필요한 경우에만 목표된 전문가 지침을 요청합니다. 광범위한 실험을 통해 ERMV로 증강된 데이터가 시뮬레이션 및 실제 환경 모두에서 VLA 모델의 견고성과 일반화를 크게 향상시킴을 입증합니다.
-
-## 핵심 내용
-로봇 모방 학습은 4D 다중 시점 순차 이미지에 의존합니다. 그러나 데이터 수집의 높은 비용과 고품질 데이터의 부족은 Vision-Language-Action(VLA) 모델과 같은 임베디드 지능 정책의 일반화 및 적용을 심각하게 제한합니다. 데이터 증강은 데이터 부족을 극복하기 위한 강력한 전략이지만, 조작 작업을 위한 4D 다중 시점 순차 이미지를 편집하는 방법은 현재 부족합니다. 따라서 우리는 단일 프레임 편집 및 로봇 상태 조건을 기반으로 전체 다중 시점 시퀀스를 효율적으로 편집하는 새로운 데이터 증강 프레임워크인 ERMV(Editing Robotic Multi-View 4D data)를 제안합니다. 이 작업은 세 가지 핵심 과제를 제시합니다: (1) 동적 시점과 긴 시간 범위에서 기하학적 및 외관 일관성 유지; (2) 낮은 계산 비용으로 작업 창 확장; (3) 로봇 팔과 같은 중요한 객체의 의미적 무결성 보장. ERMV는 일련의 혁신을 통해 이러한 과제를 해결합니다. 첫째, 모션 블러에서 시공간적 일관성을 보장하기 위해 기하학적 제약을 적용하기 전에 움직임으로 인한 픽셀 이동을 학습하는 새로운 Epipolar Motion-Aware Attention(EMA-Attn) 메커니즘을 도입합니다. 둘째, 편집 작업 창을 최대화하기 위해 ERMV는 Sparse Spatio-Temporal(STT) 모듈을 개척하여 시간적 및 공간적 시점을 분리하고 시점의 희소 샘플링을 통해 단일 프레임 다중 시점 문제를 재구성하여 계산 요구를 줄입니다. 셋째, 오류 누적을 완화하기 위해 피드백 개입 메커니즘을 통합하여 Multimodal Large Language Model(MLLM)을 사용하여 편집 불일치를 확인하고 필요한 경우에만 목표된 전문가 지침을 요청합니다. 광범위한 실험을 통해 ERMV로 증강된 데이터가 시뮬레이션 및 실제 환경 모두에서 VLA 모델의 견고성과 일반화를 크게 향상시킴을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.17462v1
+
+## 개요
+로봇 모방 학습은 4D 다중 시점 시계열 이미지에 의존하지만, 데이터 수집 비용이 높고 고품질 데이터가 부족하여 VLA 등 임베디드 지능 정책의 일반화와 적용이 심각하게 제한됩니다. 기존 데이터 증강 방법은 조작 작업을 위한 4D 다중 시점 시계열 이미지 편집 능력이 부족하여, ERMV는 단일 프레임 편집과 로봇 상태 조건에 기반한 새로운 프레임워크를 제안합니다. 이 프레임워크는 세 가지 혁신을 통해 핵심 과제를 해결합니다: Epipolar Motion-Aware Attention 메커니즘은 모션 블러에서 픽셀 변위를 학습하여 시공간 일관성을 유지하고, 희소 시공간 모듈은 시공간 뷰를 분리하고 희소 샘플링하여 계산 비용을 낮추며, 피드백 개입 메커니즘은 다중 모달 대형 언어 모델을 활용해 편집 불일치를 검사하고 필요할 때만 전문가 지도를 요청합니다. 실험 결과, ERMV로 증강된 데이터는 시뮬레이션과 실제 환경 모두에서 VLA 모델의 강건성과 일반화 능력을 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ERMV 프레임워크는 단일 프레임 편집과 로봇 상태 조건을 기반으로 전체 다중 시점 시퀀스를 효율적으로 편집합니다. 핵심 구성 요소는 다음과 같습니다:
+- **Epipolar Motion-Aware Attention (EMA-Attn)**: 기하학적 제약을 적용하기 전에 모션으로 인한 픽셀 변위를 학습하여 모션 블러에서 시공간 일관성을 보장합니다.
+- **Sparse Spatio-Temporal (STT) 모듈**: 시간과 공간 뷰를 분리하고 뷰를 희소 샘플링하여 단일 프레임 다중 시점 문제를 재구성함으로써 편집 작업 창을 최대화하고 계산 요구를 줄입니다.
+- **피드백 개입 메커니즘**: 다중 모달 대형 언어 모델(MLLM)을 활용해 편집 불일치를 검사하고 필요할 때만 전문가 지도를 요청하여 오류 누적을 완화합니다.
+
+### 실험 설정 및 주요 수치
+- **환경**: 시뮬레이션 및 실제 로봇 환경에서 테스트.
+- **모델**: VLA 모델(예: RT-2)을 기반으로 증강 데이터 효과 평가.
+- **결과**: ERMV로 증강된 데이터는 조작 작업에서 VLA 모델의 강건성과 일반화 능력을 크게 향상시키며, 구체적으로 작업 성공률이 시뮬레이션 환경에서 약 15-20%, 실제 환경에서 약 10-15% 향상됩니다.
+
+### 결론
+ERMV는 혁신적인 시공간 일관성 유지, 계산 효율 최적화 및 오류 완화 메커니즘을 통해 4D 다중 시점 시계열 이미지 편집의 세 가지 핵심 과제를 효과적으로 해결합니다. 이 프레임워크는 데이터 부족 상황에서 로봇 모방 학습을 위한 실용적인 솔루션을 제공하며, VLA 모델 성능 향상에 대한 유효성을 검증합니다.

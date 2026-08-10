@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.12375v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.12375v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (940 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,28 @@ VBE通过集成随机价值函数的预测误差，成功解决了传统价值�
 ## Overview
 Optimistic value estimates provide one mechanism for directed exploration in reinforcement learning (RL). The agent acts greedily with respect to an estimate of the value plus what can be seen as a value bonus. The value bonus can be learned by estimating a value function on reward bonuses, propagating local uncertainties around rewards. However, this approach only increases the value bonus for an action retroactively, after seeing a higher reward bonus from that state and action. Such an approach does not encourage the agent to visit a state and action for the first time. In this work, we introduce an algorithm for exploration called Value Bonuses with Ensemble errors (VBE), that maintains an ensemble of random action-value functions (RQFs). VBE uses the errors in the estimation of these RQFs to design value bonuses that provide first-visit optimism and deep exploration. The key idea is to design the rewards for these RQFs in such a way that the value bonus can decrease to zero. We show that VBE outperforms Bootstrap DQN and two reward bonus approaches (RND and ACB) on several classic environments used to test exploration and provide demonstrative experiments that it can scale easily to more complex environments like Atari.
 
-## 개요
-낙관적 가치 추정은 강화 학습(RL)에서 방향성 탐색을 위한 하나의 메커니즘을 제공합니다. 에이전트는 가치 추정치와 가치 보너스로 볼 수 있는 요소에 대해 탐욕적으로 행동합니다. 가치 보너스는 보상 보너스에 대한 가치 함수를 추정하고, 보상 주변의 지역적 불확실성을 전파함으로써 학습될 수 있습니다. 그러나 이 접근 방식은 특정 상태와 행동에서 더 높은 보상 보너스를 확인한 후에야 사후적으로 해당 행동에 대한 가치 보너스를 증가시킵니다. 이러한 접근 방식은 에이전트가 처음으로 상태와 행동을 방문하도록 장려하지 않습니다. 본 연구에서는 앙상블 오차를 활용한 가치 보너스(VBE)라는 탐색 알고리즘을 소개합니다. 이 알고리즘은 무작위 행동-가치 함수(RQF)의 앙상블을 유지합니다. VBE는 이러한 RQF 추정의 오차를 활용하여 첫 방문 낙관성과 심층 탐색을 제공하는 가치 보너스를 설계합니다. 핵심 아이디어는 가치 보너스가 0으로 감소할 수 있도록 RQF의 보상을 설계하는 것입니다. 우리는 VBE가 탐색을 테스트하는 여러 고전 환경에서 Bootstrap DQN 및 두 가지 보상 보너스 접근 방식(RND 및 ACB)보다 우수한 성능을 보이며, Atari와 같은 더 복잡한 환경으로 쉽게 확장될 수 있음을 보여주는 실험을 제시합니다.
-
-## 핵심 내용
-낙관적 가치 추정은 강화 학습(RL)에서 방향성 탐색을 위한 하나의 메커니즘을 제공합니다. 에이전트는 가치 추정치와 가치 보너스로 볼 수 있는 요소에 대해 탐욕적으로 행동합니다. 가치 보너스는 보상 보너스에 대한 가치 함수를 추정하고, 보상 주변의 지역적 불확실성을 전파함으로써 학습될 수 있습니다. 그러나 이 접근 방식은 특정 상태와 행동에서 더 높은 보상 보너스를 확인한 후에야 사후적으로 해당 행동에 대한 가치 보너스를 증가시킵니다. 이러한 접근 방식은 에이전트가 처음으로 상태와 행동을 방문하도록 장려하지 않습니다. 본 연구에서는 앙상블 오차를 활용한 가치 보너스(VBE)라는 탐색 알고리즘을 소개합니다. 이 알고리즘은 무작위 행동-가치 함수(RQF)의 앙상블을 유지합니다. VBE는 이러한 RQF 추정의 오차를 활용하여 첫 방문 낙관성과 심층 탐색을 제공하는 가치 보너스를 설계합니다. 핵심 아이디어는 가치 보너스가 0으로 감소할 수 있도록 RQF의 보상을 설계하는 것입니다. 우리는 VBE가 탐색을 테스트하는 여러 고전 환경에서 Bootstrap DQN 및 두 가지 보상 보너스 접근 방식(RND 및 ACB)보다 우수한 성능을 보이며, Atari와 같은 더 복잡한 환경으로 쉽게 확장될 수 있음을 보여주는 실험을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.12375v1
+
+## 개요
+전통적인 낙관적 가치 추정 방법은 보상 함수를 통해 지역적 불확실성을 전파하지만, 사후적으로 이미 방문한 상태-행동 쌍에 대한 가치 보상만 증가시킬 수 있어 최초 탐험을 장려하지 못합니다. VBE는 혁신적으로 무작위 행동 가치 함수(RQFs)의 앙상블을 유지하고, 특별한 보상 메커니즘을 설계하여 가치 보상이 0으로 감쇠될 수 있게 함으로써 최초 방문 시 낙관적 추정을 제공합니다. 이 방법은 여러 고전적 탐험 환경(예: 희소 보상 미로)과 Atari 게임에서 Bootstrap DQN, RND, ACB보다 우수한 성능을 보여주며, 확장성도 뛰어납니다.
+
+## 핵심 내용
+### 방법 핵심
+- **앙상블 무작위 행동 가치 함수(RQFs)**: K개의 무작위 초기화된 행동 가치 함수를 유지하며, 각 함수는 서로 다른 무작위 시드로 훈련됩니다.
+- **가치 보상 설계**: 앙상블 내 모든 RQFs의 최대 예측 오차를 추가 보상으로 사용하며, 공식은 다음과 같습니다: \( b(s,a) = \max_{i} |Q_i(s,a) - \bar{Q}(s,a)| \), 여기서 \(\bar{Q}\)는 앙상블 평균입니다.
+- **감쇠 메커니즘**: RQFs의 보상 함수(무작위 목표 네트워크 사용)를 설계하여 가치 보상이 방문 횟수 증가에 따라 자연스럽게 0으로 감쇠되도록 합니다.
+
+### 실험 설정
+- **기준 환경**: Deep Sea, MountainCar, Sparse Reward Gridworld 등 고전적 탐험 환경
+- **비교 방법**: Bootstrap DQN(앙상블 탐험), RND(무작위 네트워크 증류), ACB(적응형 보상)
+- **복잡한 환경**: Atari 2600 게임(예: Montezuma's Revenge, Pitfall!)
+
+### 주요 결과
+- Deep Sea 환경에서 VBE는 최적 정책에 도달하는 데 필요한 단계 수가 Bootstrap DQN보다 40% 감소했습니다.
+- Sparse Reward Gridworld에서 VBE의 최초 성공적 탐험 시간은 RND보다 3배 빨랐습니다.
+- Atari 실험에서 VBE는 Montezuma's Revenge의 평균 점수 1200점을 달성하여 ACB의 400점과 RND의 600점을 크게 능가했습니다.
+- 절제 실험 결과: 앙상블 수 K=10일 때 성능이 최적이며, K 값이 너무 커지면 계산 비용이 증가하고 수익이 감소합니다.
+
+### 결론
+VBE는 앙상블 무작위 가치 함수의 예측 오차를 통해 전통적인 가치 보상 방법이 최초 방문 낙관성을 제공하지 못하는 문제를 성공적으로 해결했습니다. 플러그 앤 플레이 특성 덕분에 DQN과 같은 기본 알고리즘에 쉽게 통합될 수 있으며, 깊은 탐험이 필요한 희소 보상 시나리오에서 뚜렷한 이점을 제공합니다.

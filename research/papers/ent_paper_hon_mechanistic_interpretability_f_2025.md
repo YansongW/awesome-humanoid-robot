@@ -38,7 +38,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.00328v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_hon_mechanistic_interpretability_f_2025 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_hon_mechanistic_interpretability_f_2025 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (860 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -91,11 +92,34 @@ VLA模型虽能快速适应新任务与环境，但其内部机制缺乏传统�
 ## Overview
 Vision-Language-Action (VLA) models are a promising path to realizing generalist embodied agents that can quickly adapt to new tasks, modalities, and environments. However, methods for interpreting and steering VLAs fall far short of classical robotics pipelines, which are grounded in explicit models of kinematics, dynamics, and control. This lack of mechanistic insight is a central challenge for deploying learned policies in real-world robotics, where robustness and explainability are critical. Motivated by advances in mechanistic interpretability for large language models, we introduce the first framework for interpreting and steering VLAs via their internal representations, enabling direct intervention in model behavior at inference time. We project feedforward activations within transformer layers onto the token embedding basis, identifying sparse semantic directions - such as speed and direction - that are causally linked to action selection. Leveraging these findings, we introduce a general-purpose activation steering method that modulates behavior in real time, without fine-tuning, reward signals, or environment interaction. We evaluate this method on two recent open-source VLAs, Pi0 and OpenVLA, and demonstrate zero-shot behavioral control in simulation (LIBERO) and on a physical robot (UR5). This work demonstrates that interpretable components of embodied VLAs can be systematically harnessed for control - establishing a new paradigm for transparent and steerable foundation models in robotics.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 새로운 작업, 양식 및 환경에 빠르게 적응할 수 있는 범용 임베디드 에이전트를 구현하는 유망한 경로입니다. 그러나 VLA를 해석하고 조종하는 방법은 운동학, 동역학 및 제어의 명시적 모델에 기반한 고전적 로봇공학 파이프라인에 크게 미치지 못합니다. 이러한 메커니즘적 통찰력의 부족은 강건성과 설명 가능성이 중요한 실제 로봇공학에서 학습된 정책을 배포하는 데 핵심적인 도전 과제입니다. 대규모 언어 모델에 대한 메커니즘적 해석 가능성의 발전에 영감을 받아, 우리는 VLA의 내부 표현을 통해 이를 해석하고 조종하는 최초의 프레임워크를 소개하며, 추론 시간에 모델 행동에 직접 개입할 수 있게 합니다. 트랜스포머 계층 내의 피드포워드 활성화를 토큰 임베딩 기저에 투영하여, 행동 선택과 인과적으로 연결된 속도 및 방향과 같은 희소 의미 방향을 식별합니다. 이러한 발견을 활용하여, 미세 조정, 보상 신호 또는 환경 상호작용 없이 실시간으로 행동을 조절하는 범용 활성화 조종 방법을 소개합니다. 이 방법을 두 개의 최신 오픈소스 VLA인 Pi0와 OpenVLA에 평가하고, 시뮬레이션(LIBERO) 및 실제 로봇(UR5)에서 제로샷 행동 제어를 입증합니다. 이 연구는 임베디드 VLA의 해석 가능한 구성 요소가 체계적으로 제어에 활용될 수 있음을 보여주며, 로봇공학에서 투명하고 조종 가능한 기반 모델을 위한 새로운 패러다임을 확립합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 새로운 작업, 양식 및 환경에 빠르게 적응할 수 있는 범용 임베디드 에이전트를 구현하는 유망한 경로입니다. 그러나 VLA를 해석하고 조종하는 방법은 운동학, 동역학 및 제어의 명시적 모델에 기반한 고전적 로봇공학 파이프라인에 크게 미치지 못합니다. 이러한 메커니즘적 통찰력의 부족은 강건성과 설명 가능성이 중요한 실제 로봇공학에서 학습된 정책을 배포하는 데 핵심적인 도전 과제입니다. 대규모 언어 모델에 대한 메커니즘적 해석 가능성의 발전에 영감을 받아, 우리는 VLA의 내부 표현을 통해 이를 해석하고 조종하는 최초의 프레임워크를 소개하며, 추론 시간에 모델 행동에 직접 개입할 수 있게 합니다. 트랜스포머 계층 내의 피드포워드 활성화를 토큰 임베딩 기저에 투영하여, 행동 선택과 인과적으로 연결된 속도 및 방향과 같은 희소 의미 방향을 식별합니다. 이러한 발견을 활용하여, 미세 조정, 보상 신호 또는 환경 상호작용 없이 실시간으로 행동을 조절하는 범용 활성화 조종 방법을 소개합니다. 이 방법을 두 개의 최신 오픈소스 VLA인 Pi0와 OpenVLA에 평가하고, 시뮬레이션(LIBERO) 및 실제 로봇(UR5)에서 제로샷 행동 제어를 입증합니다. 이 연구는 임베디드 VLA의 해석 가능한 구성 요소가 체계적으로 제어에 활용될 수 있음을 보여주며, 로봇공학에서 투명하고 조종 가능한 기반 모델을 위한 새로운 패러다임을 확립합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.00328v1
+
+## 개요
+VLA 모델은 새로운 작업과 환경에 빠르게 적응할 수 있지만, 내부 메커니즘은 전통적인 로봇 파이프라인(명시적 운동학, 동역학 및 제어 모델 기반)의 해석 가능성이 부족합니다. 대규모 언어 모델의 기계적 해석 가능성 발전에서 영감을 받아, 연구자들은 처음으로 Transformer 계층의 피드포워드 활성화를 토큰 임베딩 기저에 투영하여, 행동 선택과 인과적 연관이 있는 희소 의미 방향(예: 속도 및 방향)을 발견했습니다. 이를 바탕으로 미세 조정, 보상 신호 또는 환경 상호작용 없이 실시간으로 모델 행동을 조절할 수 있는 일반적인 활성화 유도 방법을 제안했습니다. Pi0 및 OpenVLA 두 개의 오픈소스 VLA 모델에 대한 실험은 이 방법이 LIBERO 시뮬레이션 환경과 UR5 실물 로봇에서 제로샷 행동 제어를 달성할 수 있음을 보여주며, 투명하고 조작 가능한 로봇 기반 모델의 새로운 패러다임을 확립했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **활성화 투영 분석**: VLA 모델 Transformer 계층의 피드포워드 네트워크 활성화 값을 토큰 임베딩 기저에 투영하고, 희소 코딩을 통해 행동 선택과 관련된 의미 방향(예: 속도, 방향)을 식별합니다.
+- **인과 검증**: 이러한 의미 방향을 개입하여 출력 행동에 대한 인과적 영향을 검증하며, 단순 상관관계가 아닌 인과성을 확인합니다.
+
+### 핵심 혁신
+- **일반적인 활성화 유도 방법**: 추론 시 식별된 의미 방향 활성화 값을 직접 조정하며, 다음이 필요 없습니다:
+  - 모델 미세 조정(fine-tuning)
+  - 보상 신호(reward signals)
+  - 환경 상호작용(environment interaction)
+- **제로샷 행동 제어**: 보지 못한 작업과 환경에서 모델 행동을 직접 조절합니다.
+
+### 실험 설정
+- **모델**: Pi0 및 OpenVLA 두 개의 오픈소스 VLA 모델
+- **시뮬레이션 환경**: LIBERO 벤치마크
+- **실물 로봇**: UR5 로봇 팔
+- **제어 차원**: 속도 및 방향과 같은 의미 방향
+
+### 주요 결과
+- LIBERO 시뮬레이션에서 제로샷 행동 변조를 성공적으로 달성
+- UR5 실물 로봇에서 실시간 행동 제어 능력 검증
+- VLA 모델 내부에 해석 가능한 의미 방향이 존재하며, 이를 체계적으로 제어에 활용할 수 있음을 입증
+
+### 결론
+이 작업은 처음으로 기계적 해석 가능성을 VLA 모델에 도입하여, 투명하고 조작 가능한 로봇 기반 모델의 새로운 패러다임을 확립했으며, 견고하고 해석 가능한 로봇 학습 정책을 배포하기 위한 방법론적 기반을 제공합니다.

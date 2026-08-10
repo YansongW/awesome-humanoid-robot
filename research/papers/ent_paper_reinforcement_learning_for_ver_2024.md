@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.16889v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.16889v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (934 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,30 @@ sources:
 ## Overview
 This paper presents a comprehensive study on using deep reinforcement learning (RL) to create dynamic locomotion controllers for bipedal robots. Going beyond focusing on a single locomotion skill, we develop a general control solution that can be used for a range of dynamic bipedal skills, from periodic walking and running to aperiodic jumping and standing. Our RL-based controller incorporates a novel dual-history architecture, utilizing both a long-term and short-term input/output (I/O) history of the robot. This control architecture, when trained through the proposed end-to-end RL approach, consistently outperforms other methods across a diverse range of skills in both simulation and the real world. The study also delves into the adaptivity and robustness introduced by the proposed RL system in developing locomotion controllers. We demonstrate that the proposed architecture can adapt to both time-invariant dynamics shifts and time-variant changes, such as contact events, by effectively using the robot's I/O history. Additionally, we identify task randomization as another key source of robustness, fostering better task generalization and compliance to disturbances. The resulting control policies can be successfully deployed on Cassie, a torque-controlled human-sized bipedal robot. This work pushes the limits of agility for bipedal robots through extensive real-world experiments. We demonstrate a diverse range of locomotion skills, including: robust standing, versatile walking, fast running with a demonstration of a 400-meter dash, and a diverse set of jumping skills, such as standing long jumps and high jumps.
 
-## 개요
-본 논문은 이족 보행 로봇의 동적 보행 제어기를 생성하기 위해 심층 강화 학습(RL)을 사용하는 포괄적인 연구를 제시합니다. 단일 보행 기술에 초점을 맞추는 것을 넘어, 주기적인 걷기와 달리기부터 비주기적인 점프와 서기까지 다양한 동적 이족 보행 기술에 사용할 수 있는 일반 제어 솔루션을 개발합니다. RL 기반 제어기는 로봇의 장기 및 단기 입출력(I/O) 이력을 모두 활용하는 새로운 이중 이력 아키텍처를 통합합니다. 제안된 종단 간 RL 접근법을 통해 훈련된 이 제어 아키텍처는 시뮬레이션과 실제 환경 모두에서 다양한 기술에 걸쳐 다른 방법보다 일관되게 우수한 성능을 보입니다. 또한 본 연구는 보행 제어기 개발에서 제안된 RL 시스템이 도입하는 적응성과 견고성을 탐구합니다. 제안된 아키텍처는 로봇의 I/O 이력을 효과적으로 사용하여 시간 불변 동적 변화와 접촉 이벤트와 같은 시간 가변 변화 모두에 적응할 수 있음을 입증합니다. 추가적으로, 작업 무작위화를 견고성의 또 다른 핵심 원천으로 식별하여 더 나은 작업 일반화와 외란에 대한 순응을 촉진합니다. 결과 제어 정책은 토크 제어 인간 크기 이족 보행 로봇인 Cassie에 성공적으로 배포될 수 있습니다. 이 연구는 광범위한 실제 실험을 통해 이족 보행 로봇의 민첩성 한계를 확장합니다. 견고한 서기, 다용도 걷기, 400미터 달리기 시연을 포함한 빠른 달리기, 그리고 제자리 멀리뛰기와 높이뛰기와 같은 다양한 점프 기술을 포함한 다양한 보행 기술을 시연합니다.
-
-## 핵심 내용
-본 논문은 이족 보행 로봇의 동적 보행 제어기를 생성하기 위해 심층 강화 학습(RL)을 사용하는 포괄적인 연구를 제시합니다. 단일 보행 기술에 초점을 맞추는 것을 넘어, 주기적인 걷기와 달리기부터 비주기적인 점프와 서기까지 다양한 동적 이족 보행 기술에 사용할 수 있는 일반 제어 솔루션을 개발합니다. RL 기반 제어기는 로봇의 장기 및 단기 입출력(I/O) 이력을 모두 활용하는 새로운 이중 이력 아키텍처를 통합합니다. 제안된 종단 간 RL 접근법을 통해 훈련된 이 제어 아키텍처는 시뮬레이션과 실제 환경 모두에서 다양한 기술에 걸쳐 다른 방법보다 일관되게 우수한 성능을 보입니다. 또한 본 연구는 보행 제어기 개발에서 제안된 RL 시스템이 도입하는 적응성과 견고성을 탐구합니다. 제안된 아키텍처는 로봇의 I/O 이력을 효과적으로 사용하여 시간 불변 동적 변화와 접촉 이벤트와 같은 시간 가변 변화 모두에 적응할 수 있음을 입증합니다. 추가적으로, 작업 무작위화를 견고성의 또 다른 핵심 원천으로 식별하여 더 나은 작업 일반화와 외란에 대한 순응을 촉진합니다. 결과 제어 정책은 토크 제어 인간 크기 이족 보행 로봇인 Cassie에 성공적으로 배포될 수 있습니다. 이 연구는 광범위한 실제 실험을 통해 이족 보행 로봇의 민첩성 한계를 확장합니다. 견고한 서기, 다용도 걷기, 400미터 달리기 시연을 포함한 빠른 달리기, 그리고 제자리 멀리뛰기와 높이뛰기와 같은 다양한 점프 기술을 포함한 다양한 보행 기술을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2401.16889v2
+
+## 개요
+이 연구는 전통적인 단일 스킬 운동 제어의 한계를 돌파하여, 다양한 동적 스킬에 적응할 수 있는 통합 컨트롤러를 엔드투엔드 강화 학습으로 훈련시켰습니다. 핵심 혁신은 이중 히스토리 아키텍처로, 로봇의 장기 및 단기 입력-출력 히스토리를 융합하여 컨트롤러가 시간 불변 동역학 오프셋(예: 부하 변화)과 시간 가변 이벤트(예: 접촉 충돌)를 동시에 처리할 수 있게 합니다. 실험 결과, 작업 무작위화 전략이 시스템의 견고성과 일반화 능력을 크게 향상시켜 Cassie 로봇이 실제 환경에서 안정적으로 서 있고, 유연하게 걷고, 고속으로 달리며(400미터 스프린트), 제자리 멀리뛰기와 높이뛰기 같은 복잡한 점프 동작을 완수할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 히스토리 아키텍처**: 컨트롤러는 장기 히스토리(지난 N단계의 전체 상태-행동 시퀀스 기록)와 단기 히스토리(최근 M단계의 고주파 센서 데이터)를 동시에 수신하며, 이중 채널 LSTM 네트워크로 처리합니다. 장기 히스토리는 느린 동역학 특성(예: 배터리 전압 저하)을 포착하고, 단기 히스토리는 빠른 접촉 이벤트(예: 발바닥이 지면에 닿는 순간)에 대응합니다.
+- **엔드투엔드 훈련**: MuJoCo 시뮬레이션 환경에서 PPO 알고리즘을 사용하여 훈련하며, 보상 함수에는 속도 추적 오차, 에너지 소비 페널티, 관절 한계 제약 조건 등이 포함됩니다. 훈련 중 지면 마찰 계수, 부하 질량, 모터 지연 등의 매개변수를 무작위화합니다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: Cassie 로봇(20자유도, 토크 제어, 약 31kg)
+- **스킬 테스트 세트**:
+  - 서 있기: 밀기 저항 테스트(5kg 측면 충격 견딤)
+  - 걷기: 0.5-1.5m/s 가변 속도 보행, 오르내리막(10° 경사) 포함
+  - 달리기: 최고 속도 3.2m/s, 400미터 연속 주행(125초 소요)
+  - 점프: 제자리 멀리뛰기(최대 0.8m), 제자리 높이뛰기(최대 0.3m)
+- **비교 기준선**: 단일 히스토리 아키텍처(장기 또는 단기만), 모델 예측 제어(MPC), 전통적인 PD 컨트롤러
+
+### 주요 결과
+- **성능 비교**: 이중 히스토리 아키텍처는 걷기 속도 추적 오차에서 단일 히스토리 아키텍처보다 42% 감소, 점프 성공률은 92%로 향상(단일 히스토리는 67%)
+- **견고성 테스트**: 알 수 없는 지형(자갈, 잔디)에서 걷기 성공률 91%, 모터 고장(한쪽 다리 관절 잠금)에도 서 있는 자세 유지 가능
+- **실제 세계 전이**: 시뮬레이션에서 실제로(Sim-to-Real) 제로샷 전이 성공, 추가 미세 조정 불필요
+
+### 결론
+이 연구는 이중 히스토리 아키텍처와 작업 무작위화의 결합이 이족 로봇의 다중 스킬 제어의 일반화 및 견고성 문제를 효과적으로 해결할 수 있음을 입증했습니다. 향후 방향은 더 복잡한 지형(계단, 장애물)과 동적 상호작용 작업(물체 밀기/당기기)으로 확장하는 것입니다.

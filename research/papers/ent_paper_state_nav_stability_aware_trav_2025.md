@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01046v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01046v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1217 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,30 @@ Bipedal robots have advantages in maneuvering human-centered environments, but f
 ## Content
 Bipedal robots have advantages in maneuvering human-centered environments, but face greater failure risk compared to other stable mobile platforms such as wheeled or quadrupedal robots. While learning-based traversability has been widely studied for these platforms, bipedal traversability has instead relied on manually designed rules with limited consideration of locomotion stability on rough terrain. In this work, we present the first learning-based traversability estimation and risk-sensitive navigation framework for bipedal robots operating in diverse, uneven environments. TravFormer, a transformer-based neural network, is trained to predict bipedal instability with uncertainty, enabling risk-aware and adaptive planning. Based on the network, we define traversability as stability-aware command velocity—the fastest command velocity that keeps instability below a user-defined limit. This velocity-based traversability is integrated into a hierarchical planner that combines traversability-informed Rapid Random Tree Star (TravRRT*) for time-efficient planning and Model Predictive Control (MPC) for safe execution. We validate our method in MuJoCo simulation and the real world, demonstrating improved navigation performance, with enhanced robustness and time efficiency across varying terrains compared to existing methods.
 
-## 개요
-이족 보행 로봇은 인간 중심 환경에서 기동하는 데 장점이 있지만, 바퀴 달린 로봇이나 사족 보행 로봇과 같은 안정적인 이동 플랫폼에 비해 더 큰 고장 위험에 직면합니다. 학습 기반 주행 가능성은 이러한 플랫폼에서 널리 연구되어 왔지만, 이족 보행 로봇의 주행 가능성은 거친 지형에서의 이동 안정성에 대한 고려가 제한된 수동 설계 규칙에 의존해 왔습니다. 본 연구에서는 다양한 불균일 환경에서 작동하는 이족 보행 로봇을 위한 최초의 학습 기반 주행 가능성 추정 및 위험 민감 내비게이션 프레임워크를 제시합니다. TravFormer는 트랜스포머 기반 신경망으로, 불확실성을 고려하여 이족 보행 불안정성을 예측하도록 훈련되어 위험 인식 및 적응형 계획을 가능하게 합니다. 이 네트워크를 기반으로, 주행 가능성을 안정성 인식 명령 속도, 즉 불안정성을 사용자 정의 한계 이하로 유지하는 가장 빠른 명령 속도로 정의합니다. 이 속도 기반 주행 가능성은 시간 효율적인 계획을 위한 주행 가능성 인식 Rapid Random Tree Star(TravRRT*)와 안전한 실행을 위한 모델 예측 제어(MPC)를 결합한 계층적 플래너에 통합됩니다. 우리는 MuJoCo 시뮬레이션과 실제 환경에서 이 방법을 검증하여, 기존 방법과 비교해 다양한 지형에서 향상된 견고성과 시간 효율성을 갖춘 개선된 내비게이션 성능을 입증했습니다.
-
-## 핵심 내용
-이족 보행 로봇은 인간 중심 환경에서 기동하는 데 장점이 있지만, 바퀴 달린 로봇이나 사족 보행 로봇과 같은 안정적인 이동 플랫폼에 비해 더 큰 고장 위험에 직면합니다. 학습 기반 주행 가능성은 이러한 플랫폼에서 널리 연구되어 왔지만, 이족 보행 로봇의 주행 가능성은 거친 지형에서의 이동 안정성에 대한 고려가 제한된 수동 설계 규칙에 의존해 왔습니다. 본 연구에서는 다양한 불균일 환경에서 작동하는 이족 보행 로봇을 위한 최초의 학습 기반 주행 가능성 추정 및 위험 민감 내비게이션 프레임워크를 제시합니다. TravFormer는 트랜스포머 기반 신경망으로, 불확실성을 고려하여 이족 보행 불안정성을 예측하도록 훈련되어 위험 인식 및 적응형 계획을 가능하게 합니다. 이 네트워크를 기반으로, 주행 가능성을 안정성 인식 명령 속도, 즉 불안정성을 사용자 정의 한계 이하로 유지하는 가장 빠른 명령 속도로 정의합니다. 이 속도 기반 주행 가능성은 시간 효율적인 계획을 위한 주행 가능성 인식 Rapid Random Tree Star(TravRRT*)와 안전한 실행을 위한 모델 예측 제어(MPC)를 결합한 계층적 플래너에 통합됩니다. 우리는 MuJoCo 시뮬레이션과 실제 환경에서 이 방법을 검증하여, 기존 방법과 비교해 다양한 지형에서 향상된 견고성과 시간 효율성을 갖춘 개선된 내비게이션 성능을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.01046v4
+
+## 개요
+이족 보행 로봇은 인간 환경에서 기동성 이점을 가지지만, 바퀴형 또는 사족 보행 로봇에 비해 더 높은 불안정 위험에 직면합니다. 기존의 통행 가능성 추정은 주로 안정적인 플랫폼을 위해 설계되었으며, 이족 보행 분야는 여전히 수동 규칙에 의존하고 거친 지형의 안정성에 대한 고려가 부족합니다. STATE-NAV는 학습 패러다임을 이족 보행 통행 가능성 추정에 처음으로 도입하여, TravFormer 네트워크를 통해 불안정 확률과 그 불확실성을 예측하고, 통행 가능성을 사용자 지정 불안정 임계값 하의 최대 명령 속도로 정의합니다. 이 속도 지표는 TravRRT* 전역 계획과 MPC 로컬 제어를 포함하는 계층적 프레임워크에 통합되며, MuJoCo 시뮬레이션과 실제 실험에서 모두 더 우수한 내비게이션 성능을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **TravFormer 네트워크**: Transformer 아키텍처 기반으로, 지형 포인트 클라우드와 로봇 상태를 입력으로 받아 각 위치의 이족 보행 불안정 확률과 그 불확실성(Monte Carlo Dropout을 통해 구현)을 출력합니다. 훈련 데이터는 MuJoCo 시뮬레이션의 무작위 지형에서 이족 보행 궤적을 통해 수집됩니다.
+- **안정성 인식 통행 가능성**: 불안정 확률이 사용자 설정 임계값(예: 0.3)보다 낮을 때 로봇이 안전하게 실행할 수 있는 최대 명령 속도로 정의됩니다. 이 속도는 TravFormer의 예측 결과를 이분 탐색으로 계산하여 얻습니다.
+
+### 계층적 플래너
+- **전역 계획 계층**: TravRRT*(통행 가능성 인식 RRT*)는 탐색 과정에서 속도 통행 가능성 맵을 활용하여 샘플링을 유도하고, 높은 통행 가능 속도 영역을 우선 선택하여 비효율적인 노드 확장을 줄입니다.
+- **로컬 제어 계층**: MPC 컨트롤러는 TravRRT*가 출력한 경로를 참조로 하여 보행 파라미터와 발 착지점을 실시간으로 조정하여 동적 지형에서 안정성을 유지합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: MuJoCo에서 자갈, 경사로, 계단 등 8가지 무작위 지형을 구축하고, 순수 기하 통행 가능성 방법(예: 높이 맵 임계값) 및 수동 규칙 방법(예: ZMP 제약)과 같은 기준선과 비교합니다.
+- **실제 실험**: Unitree H1 이족 보행 로봇에 배포하여 실내 카펫, 실외 잔디, 자갈길을 포함한 테스트 시나리오를 수행합니다.
+
+### 주요 결과
+- **불안정 예측 정확도**: TravFormer는 테스트 세트에서 92.3%의 불안정 이벤트 재현율을 달성하여 ZMP 기반 규칙 방법 대비 37% 향상되었습니다.
+- **내비게이션 성공률**: 시뮬레이션에서 STATE-NAV는 8/6 지형에서 85% 이상의 성공률을 보였으며, 기준선 방법은 자갈 지형에서 40% 미만의 성공률을 기록했습니다.
+- **시간 효율성**: TravRRT*는 표준 RRT* 대비 계획 시간이 42% 감소(평균 1.8초 대 3.1초)했으며, 경로 길이는 5%만 증가했습니다.
+- **실제 실험**: 실외 자갈길에서 STATE-NAV는 평균 속도 0.6m/s를 구현하며 넘어짐 없이 주행했지만, 수동 규칙 방법은 동일 지형에서 속도가 0.2m/s로 감소하고 2회의 불안정이 발생했습니다.
+
+### 결론
+STATE-NAV는 학습 기반 통행 가능성 추정과 위험 민감 계획을 처음으로 결합하여 이족 보행 로봇의 거친 지형 내비게이션 문제를 해결합니다. 핵심 혁신은 안정성 제약을 정량화 가능한 속도 지표로 변환하고 계층적 아키텍처를 통해 실시간 의사 결정을 구현한 것입니다. 향후 작업은 동적 장애물 환경과 다중 지형 전이 학습으로 확장될 예정입니다.

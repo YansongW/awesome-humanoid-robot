@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.02291v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.02291v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (532 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,24 @@ theoretical_depth:
 ## Overview
 Soft robotic snakes made of compliant materials can continuously deform their bodies and, therefore, mimic the biological snakes' flexible and agile locomotion gaits better than their rigid-bodied counterparts. Without wheel support, to date, soft robotic snakes are limited to emulating planar locomotion gaits, which are derived via kinematic modeling and tested on robotic prototypes. Given that the snake locomotion results from the reaction forces due to the distributed contact between their skin and the ground, it is essential to investigate the locomotion gaits through efficient dynamic models capable of accommodating distributed contact forces. We present a complete spatial dynamic model that utilizes a floating-base kinematic model with distributed contact dynamics for a pneumatically powered soft robotic snake. We numerically evaluate the feasibility of the planar and spatial rolling gaits utilizing the proposed model and experimentally validate the corresponding locomotion gait trajectories on a soft robotic snake prototype. We qualitatively and quantitatively compare the numerical and experimental results which confirm the validity of the proposed dynamic model.
 
-## 개요
-연성 재료로 만들어진 소프트 로봇 뱀은 몸체를 연속적으로 변형할 수 있어, 강체 기반의 로봇보다 생물학적 뱀의 유연하고 민첩한 이동 보행을 더 잘 모방할 수 있습니다. 바퀴 지지대 없이, 현재까지 소프트 로봇 뱀은 운동학적 모델링을 통해 도출되고 로봇 프로토타입에서 테스트된 평면 이동 보행을 모방하는 데 제한되어 있습니다. 뱀의 이동이 피부와 지면 사이의 분산 접촉으로 인한 반력에서 비롯된다는 점을 고려할 때, 분산 접촉력을 수용할 수 있는 효율적인 동적 모델을 통해 이동 보행을 연구하는 것이 필수적입니다. 우리는 공압으로 구동되는 소프트 로봇 뱀을 위해 분산 접촉 동역학을 갖춘 부동 기저 운동학 모델을 활용하는 완전한 공간 동적 모델을 제시합니다. 제안된 모델을 사용하여 평면 및 공간 롤링 보행의 실현 가능성을 수치적으로 평가하고, 소프트 로봇 뱀 프로토타입에서 해당 이동 보행 궤적을 실험적으로 검증합니다. 수치적 결과와 실험적 결과를 정성적 및 정량적으로 비교하여 제안된 동적 모델의 타당성을 확인합니다.
-
-## 핵심 내용
-연성 재료로 만들어진 소프트 로봇 뱀은 몸체를 연속적으로 변형할 수 있어, 강체 기반의 로봇보다 생물학적 뱀의 유연하고 민첩한 이동 보행을 더 잘 모방할 수 있습니다. 바퀴 지지대 없이, 현재까지 소프트 로봇 뱀은 운동학적 모델링을 통해 도출되고 로봇 프로토타입에서 테스트된 평면 이동 보행을 모방하는 데 제한되어 있습니다. 뱀의 이동이 피부와 지면 사이의 분산 접촉으로 인한 반력에서 비롯된다는 점을 고려할 때, 분산 접촉력을 수용할 수 있는 효율적인 동적 모델을 통해 이동 보행을 연구하는 것이 필수적입니다. 우리는 공압으로 구동되는 소프트 로봇 뱀을 위해 분산 접촉 동역학을 갖춘 부동 기저 운동학 모델을 활용하는 완전한 공간 동적 모델을 제시합니다. 제안된 모델을 사용하여 평면 및 공간 롤링 보행의 실현 가능성을 수치적으로 평가하고, 소프트 로봇 뱀 프로토타입에서 해당 이동 보행 궤적을 실험적으로 검증합니다. 수치적 결과와 실험적 결과를 정성적 및 정량적으로 비교하여 제안된 동적 모델의 타당성을 확인합니다.
-
 ## 参考
 - http://arxiv.org/abs/2303.02291v1
+
+## 개요
+소프트 뱀 로봇은 유연한 재료로 제작되어 몸체를 연속적으로 변형할 수 있으며, 강체 로봇보다 생물학적 뱀의 유연한 보행을 더 사실적으로 모방합니다. 그러나 현재 소프트 뱀 로봇은 바퀴 지지대가 없어 평면 보행에 국한되어 있습니다. 뱀의 운동은 피부와 지면 사이의 분산 접촉에서 발생하는 반작용력에서 비롯되므로, 보행을 연구하기 위한 효율적인 동역학 모델이 필요합니다. 본 논문에서 제안하는 모델은 부동 베이스 운동학과 분산 접촉 동역학을 결합하여 공압 소프트 뱀 로봇에 적용하며, 수치 평가와 실험을 통해 평면 및 공간 구름 보행의 실현 가능성을 검증합니다.
+
+## 핵심 내용
+### 방법
+- 부동 베이스 운동학 모델을 채택하여 소프트 뱀 로봇의 몸체를 연속적으로 변형 가능한 피부로 표현하고, 분산 접촉 동역학을 통합합니다.
+- 모델은 공압 구동 소프트 뱀 로봇을 위해 설계되었으며, 몸체와 지면 사이의 접촉력 분포를 포착할 수 있습니다.
+
+### 실험 설정
+- 수치 평가: 제안된 모델을 사용하여 평면 및 공간 구름 보행을 시뮬레이션하고 그 실현 가능성을 분석합니다.
+- 실험 검증: 소프트 뱀 로봇 프로토타입에서 해당 보행 궤적을 실행하고 수치 결과와 비교합니다.
+
+### 주요 결과
+- 수치 및 실험 결과의 정성적·정량적 비교를 통해 동역학 모델의 유효성을 확인했습니다.
+- 모델은 평면 보행과 공간 구름 보행의 운동 궤적을 성공적으로 예측하여, 소프트 뱀 로봇의 보행 설계를 위한 신뢰할 수 있는 도구를 제공합니다.
+
+### 결론
+- 이 동역학 모델은 소프트 뱀 로봇의 공간 보행 연구의 공백을 메우며, 분산 접촉력 모델링을 통해 보행 시뮬레이션의 정확성을 향상시킵니다.

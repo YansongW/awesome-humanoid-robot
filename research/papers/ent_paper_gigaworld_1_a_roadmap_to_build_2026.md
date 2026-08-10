@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02642v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02642v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (875 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -96,11 +97,28 @@ sources:
 ## Overview
 Evaluating embodied robot foundation models remains a critical bottleneck; unlike large language models efficiently assessed via digital benchmarks, robotic policies require slow, costly real-world rollouts limited by hardware and human supervision, which has driven interest in world models as surrogate policy evaluators, yet the key properties that make a world model reliable for policy assessment remain poorly understood. This work presents a systematic study of world models for robotic policy evaluation and introduces WMBench, a benchmark constructed from real-robot teleoperation data and matched policy rollouts covering diverse manipulation tasks to enable controlled comparisons across model families, action encodings, rollout horizons, and evaluation metrics. Using WMBench, we analyze 7 video world models, 4 action representation schemes, and over 324,000 simulated policy rollouts paired with real robot executions, further enriching our analysis with large-scale community submissions from the CVPR 2026 GigaBrain Challenge, curated synthetic trajectories, and a training videos spanning more than 12,000 hours. Our experiments deliver three core insights: evaluator quality is dominated by long-horizon, action-faithful rollout consistency rather than short-term visual realism; pretraining gains stem not only from data scale but from balancing general world knowledge with robot-specific controllability; and architectural choices including action encoding, memory design, and evaluator-focused post-training strongly determine alignment with real-world robot behavior. Drawing on these results, we derive a practical design roadmap and realize it in \textit{GigaWorld-1}, a world model specially optimized for policy evaluation, and we fully release our code, models, datasets, and toolkits to advance scalable evaluation research for embodied foundation models.
 
-## 개요
-로봇 기반 모델의 평가는 여전히 중요한 병목 현상으로 남아 있습니다. 대규모 언어 모델이 디지털 벤치마크를 통해 효율적으로 평가되는 것과 달리, 로봇 정책은 하드웨어와 인간의 감독에 의해 제한되는 느리고 비용이 많이 드는 실제 환경 롤아웃을 필요로 합니다. 이로 인해 세계 모델을 대리 정책 평가자로 사용하는 데 관심이 집중되었지만, 정책 평가에 신뢰할 수 있는 세계 모델을 만드는 핵심 속성은 아직 잘 이해되지 않고 있습니다. 본 연구는 로봇 정책 평가를 위한 세계 모델에 대한 체계적인 연구를 제시하며, 실제 로봇 원격 조작 데이터와 일치하는 정책 롤아웃으로 구성된 벤치마크인 WMBench를 소개합니다. 이 벤치마크는 다양한 조작 작업을 포괄하여 모델군, 행동 인코딩, 롤아웃 기간 및 평가 지표 간의 통제된 비교를 가능하게 합니다. WMBench를 사용하여 7개의 비디오 세계 모델, 4개의 행동 표현 방식, 324,000개 이상의 시뮬레이션 정책 롤아웃과 실제 로봇 실행을 분석하고, CVPR 2026 GigaBrain Challenge의 대규모 커뮤니티 제출물, 선별된 합성 궤적, 12,000시간 이상의 훈련 비디오로 분석을 더욱 풍부하게 합니다. 실험을 통해 세 가지 핵심 통찰을 얻었습니다: 평가자 품질은 단기 시각적 현실성보다 장기적이고 행동에 충실한 롤아웃 일관성에 의해 지배됩니다. 사전 훈련의 이점은 데이터 규모뿐만 아니라 일반 세계 지식과 로봇 특화 제어 가능성의 균형에서 비롯됩니다. 그리고 행동 인코딩, 메모리 설계, 평가자 중심 사후 훈련을 포함한 아키텍처 선택이 실제 로봇 행동과의 정렬을 강력하게 결정합니다. 이러한 결과를 바탕으로 실용적인 설계 로드맵을 도출하고, 이를 정책 평가에 특화된 세계 모델인 \textit{GigaWorld-1}에서 구현했습니다. 또한 코드, 모델, 데이터셋 및 도구 키트를 완전히 공개하여 임베디드 기반 모델의 확장 가능한 평가 연구를 발전시키고자 합니다.
-
-## 핵심 내용
-로봇 기반 모델의 평가는 여전히 중요한 병목 현상으로 남아 있습니다. 대규모 언어 모델이 디지털 벤치마크를 통해 효율적으로 평가되는 것과 달리, 로봇 정책은 하드웨어와 인간의 감독에 의해 제한되는 느리고 비용이 많이 드는 실제 환경 롤아웃을 필요로 합니다. 이로 인해 세계 모델을 대리 정책 평가자로 사용하는 데 관심이 집중되었지만, 정책 평가에 신뢰할 수 있는 세계 모델을 만드는 핵심 속성은 아직 잘 이해되지 않고 있습니다. 본 연구는 로봇 정책 평가를 위한 세계 모델에 대한 체계적인 연구를 제시하며, 실제 로봇 원격 조작 데이터와 일치하는 정책 롤아웃으로 구성된 벤치마크인 WMBench를 소개합니다. 이 벤치마크는 다양한 조작 작업을 포괄하여 모델군, 행동 인코딩, 롤아웃 기간 및 평가 지표 간의 통제된 비교를 가능하게 합니다. WMBench를 사용하여 7개의 비디오 세계 모델, 4개의 행동 표현 방식, 324,000개 이상의 시뮬레이션 정책 롤아웃과 실제 로봇 실행을 분석하고, CVPR 2026 GigaBrain Challenge의 대규모 커뮤니티 제출물, 선별된 합성 궤적, 12,000시간 이상의 훈련 비디오로 분석을 더욱 풍부하게 합니다. 실험을 통해 세 가지 핵심 통찰을 얻었습니다: 평가자 품질은 단기 시각적 현실성보다 장기적이고 행동에 충실한 롤아웃 일관성에 의해 지배됩니다. 사전 훈련의 이점은 데이터 규모뿐만 아니라 일반 세계 지식과 로봇 특화 제어 가능성의 균형에서 비롯됩니다. 그리고 행동 인코딩, 메모리 설계, 평가자 중심 사후 훈련을 포함한 아키텍처 선택이 실제 로봇 행동과의 정렬을 강력하게 결정합니다. 이러한 결과를 바탕으로 실용적인 설계 로드맵을 도출하고, 이를 정책 평가에 특화된 세계 모델인 \textit{GigaWorld-1}에서 구현했습니다. 또한 코드, 모델, 데이터셋 및 도구 키트를 완전히 공개하여 임베디드 기반 모델의 확장 가능한 평가 연구를 발전시키고자 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.02642v1
+
+## 개요
+구현 로봇 기반 모델 평가의 병목 현상을 해결하기 위해, 본 논문은 세계 모델이 정책 대체 평가자로서 갖추어야 할 핵심 속성을 체계적으로 연구한다. 저자는 WMBench 벤치마크를 구축하여 다양한 조작 작업, 7개의 비디오 세계 모델, 4가지 행동 표현 방식, 그리고 324,000회 이상의 시뮬레이션 정책 평가와 실제 로봇 실행의 짝지어진 데이터를 포함한다. 실험 결과, 평가자 품질은 주로 단기 시각적 사실성보다는 장기적이고 행동 충실도가 높은 궤적 일관성에 의해 결정된다. 사전 학습의 이점은 데이터 규모에서만 오는 것이 아니라, 일반적인 세계 지식과 로봇 특정 제어 가능성의 균형에 더 기인한다. 아키텍처 선택(행동 인코딩, 메모리 설계, 평가자 중심의 후속 학습)은 실제 로봇 행동과의 정렬에 강한 영향을 미친다. 이러한 발견을 바탕으로 저자는 실용적인 설계 로드맵을 제시하고 GigaWorld-1 모델을 구현한다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+- 구현 로봇 기반 모델의 평가는 중요한 병목에 직면해 있다: 디지털 벤치마크로 효율적으로 평가할 수 있는 대규모 언어 모델과 달리, 로봇 정책은 하드웨어와 인간 감독의 제약을 받는 느리고 비용이 많이 드는 실제 세계 배포가 필요하다.
+- 세계 모델은 대체 정책 평가자로서 주목받고 있지만, 정책 평가에 신뢰할 수 있게 만드는 핵심 속성은 아직 명확하지 않다.
+
+### WMBench 벤치마크 구축
+- 실제 로봇 원격 조작 데이터와 일치하는 정책 궤적을 기반으로 구축되었으며, 다양한 조작 작업을 포함한다.
+- 모델 계열, 행동 인코딩, 배포 기간, 평가 지표에 걸친 통제 비교를 지원한다.
+- 7개의 비디오 세계 모델, 4가지 행동 표현 방식, 그리고 324,000회 이상의 시뮬레이션 정책 평가와 실제 로봇 실행의 짝지어진 데이터를 분석한다.
+- 추가로 CVPR 2026 GigaBrain Challenge의 대규모 커뮤니티 제출물, 선별된 합성 궤적, 12,000시간 이상의 훈련 비디오를 포함한다.
+
+### 핵심 실험 발견
+- **평가자 품질의 주요 결정 요인**: 장기적이고 행동 충실도가 높은 궤적 일관성이 단기 시각적 사실성보다 더 중요하다.
+- **사전 학습 이점의 원천**: 데이터 규모에서만 오는 것이 아니라, 일반적인 세계 지식과 로봇 특정 제어 가능성의 균형에서 비롯된다.
+- **아키텍처 선택의 영향**: 행동 인코딩, 메모리 설계, 평가자 중심의 후속 학습은 실제 로봇 행동과의 정렬 정도를 강하게 결정한다.
+
+### GigaWorld-1 모델
+- 위 발견을 바탕으로 실용적인 설계 로드맵을 도출하고, 정책 평가에 특화된 세계 모델 GigaWorld-1을 구현한다.
+- 코드, 모델, 데이터셋, 도구 키트를 완전히 오픈소스로 공개하여 구현 기반 모델의 확장 가능한 평가 연구를 촉진한다.

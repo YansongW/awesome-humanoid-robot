@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.03288v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.03288v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (713 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,27 @@ sources:
 ## Overview
 Many physical AI tasks require sequential implicit computation: at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem. This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO) to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium model.
 
-## 개요
-많은 물리적 AI 작업은 순차적인 암시적 계산을 필요로 합니다. 각 단계에서 경계 제어가 적용되고, 결과 구성은 평형 문제를 해결하여 얻어집니다. 이러한 설정은 변형 가능한 물체 조작에서 자연스럽게 발생하며, 변형 가능한 선형 물체(DLO)를 목표 형상으로 구부리는 것조차 비선형적이고 다중 안정적일 수 있습니다. 동일한 경계 조건이라도 작동 이력에 따라 다른 구성을 생성할 수 있습니다. 명시적 전이 모델과 달리, 제어-구성 관계는 암시적이고 이력에 의존적이어서 장기 학습 및 제어를 취약하게 만듭니다. 또한 반복적 해법을 통한 역전파는 메모리와 계산 집약적입니다. 우리는 단일 고정점 대신 분기 의존적 평형 해법 시퀀스를 통해 그래디언트를 전파하는 경계 제어 프레임워크인 Neural Control을 제안합니다. Neural Control은 인접 공식화를 통해 평형 조건을 미분하여 궤적 의존적 대리 그래디언트를 계산하며, 솔버 언롤링을 피하면서 수렴된 평형 상태에서의 순방향 롤아웃을 유지합니다. 후퇴 수평 연속법과 결합하여 Neural Control은 최적화를 실현된 평형 상태에 재고정하고 분지 전환을 완화합니다. 우리는 시뮬레이션 및 실제 DLO 조작에서 Neural Control을 검증하고, SPSA 및 iCEM과 비교하며, 학습된 DEQ 스타일 암시적 평형 모델에 대한 적용 가능성을 입증합니다.
-
-## 핵심 내용
-많은 물리적 AI 작업은 순차적인 암시적 계산을 필요로 합니다. 각 단계에서 경계 제어가 적용되고, 결과 구성은 평형 문제를 해결하여 얻어집니다. 이러한 설정은 변형 가능한 물체 조작에서 자연스럽게 발생하며, 변형 가능한 선형 물체(DLO)를 목표 형상으로 구부리는 것조차 비선형적이고 다중 안정적일 수 있습니다. 동일한 경계 조건이라도 작동 이력에 따라 다른 구성을 생성할 수 있습니다. 명시적 전이 모델과 달리, 제어-구성 관계는 암시적이고 이력에 의존적이어서 장기 학습 및 제어를 취약하게 만듭니다. 또한 반복적 해법을 통한 역전파는 메모리와 계산 집약적입니다. 우리는 단일 고정점 대신 분기 의존적 평형 해법 시퀀스를 통해 그래디언트를 전파하는 경계 제어 프레임워크인 Neural Control을 제안합니다. Neural Control은 인접 공식화를 통해 평형 조건을 미분하여 궤적 의존적 대리 그래디언트를 계산하며, 솔버 언롤링을 피하면서 수렴된 평형 상태에서의 순방향 롤아웃을 유지합니다. 후퇴 수평 연속법과 결합하여 Neural Control은 최적화를 실현된 평형 상태에 재고정하고 분지 전환을 완화합니다. 우리는 시뮬레이션 및 실제 DLO 조작에서 Neural Control을 검증하고, SPSA 및 iCEM과 비교하며, 학습된 DEQ 스타일 암시적 평형 모델에 대한 적용 가능성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2605.03288v2
+
+## 개요
+변형 가능한 물체 조작과 같은 물리 AI 작업에서 제어에서 형상으로의 매핑은 암시적이고 이력에 의존적이어서, 장시간 영역 학습 및 제어가 취약해지고, 반복적 역전파를 통한 해석은 많은 메모리와 계산 자원을 소모합니다. Neural Control 프레임워크는 수반 공식을 통해 평형 조건을 미분하여 궤적 의존적 대리 기울기를 계산함으로써, 솔버를 전개하지 않고 수렴된 평형점에서 전방 롤아웃을 수행합니다. 후퇴 시간 영역 연속 전략을 결합하여 최적화를 구현된 평형점에 재정박함으로써, 분지 전환 문제를 효과적으로 완화합니다.
+
+## 핵심 내용
+### 방법
+- **문제 설정**: 물리 AI에서 각 단계마다 경계 제어를 적용한 후 평형 문제를 풀어 형상을 얻는 시나리오를 대상으로 하며, 특히 변형 가능한 선형 물체(DLO) 조작에서 존재하는 비선형성 및 다중 안정성 특성을 다룹니다.
+- **핵심 과제**: 제어에서 형상으로의 매핑이 암시적이고 이력에 의존적이어서 장시간 영역 학습이 취약하며, 반복적 역전파를 통한 해석은 많은 메모리와 계산을 필요로 합니다.
+- **Neural Control 프레임워크**:
+  - 수반 공식을 통해 평형 조건을 미분하여 궤적 의존적 대리 기울기를 계산하고, 솔버 전개를 피합니다.
+  - 전방 롤아웃은 반복 과정을 전개하지 않고 수렴된 평형점에서 수행됩니다.
+  - 후퇴 시간 영역 연속 전략을 결합하여 최적화를 구현된 평형점에 재정박함으로써 분지 전환 문제를 완화합니다.
+
+### 실험 설정
+- **검증 시나리오**: 시뮬레이션 및 실제 DLO 조작 작업에서 검증합니다.
+- **비교 방법**: SPSA 및 iCEM과 비교합니다.
+- **확장 응용**: 학습된 DEQ 스타일 암시적 평형 모델에서의 적용 가능성을 보여줍니다.
+
+### 주요 결과
+- Neural Control은 시뮬레이션 및 실제 DLO 조작 작업에서 모두 효과적임을 보여주며, 비교 방법보다 우수합니다.
+- 솔버 전개를 피함으로써 메모리 및 계산 오버헤드를 크게 줄입니다.
+- 후퇴 시간 영역 연속 전략은 최적화에서 분지 전환 문제를 효과적으로 완화하여 장시간 영역 제어의 안정성을 향상시킵니다.

@@ -59,8 +59,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.32009v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.32009v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (849 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -98,11 +99,25 @@ Vision-language-action (VLA) models across robot embodiments require high-qualit
 ## Content
 Vision-language-action (VLA) models across robot embodiments require high-quality observation–action supervision to learn deployable action distributions, yet scaling such robot data remains difficult, especially for high-DoF humanoids. Teleoperation provides controller-aligned supervision, while human egocentric videos capture diverse bimanual manipulation but do not directly provide executable robot actions. We introduce Human-as-Humanoid, a human-to-humanoid supervision framework that enables near-real-time human-centric action generation, making human demonstrations usable for high-DoF humanoid VLA training by jointly aligning the robot embodiment, the sensing setup, and the action-label interface. Built on PrimeU, a human-aligned 60-DoF upper-body humanoid, Human-as-Humanoid uses synchronized ego-exo videos to pair deployment-aligned egocentric observations with exocentric motion recovery, retargets the recovered human motion through staged Inverse Kinematics (IK) into controller-aligned 60-DoF action chunks, and trains the VLA model with Forward Kinematics (FK)-aware supervision to preserve wrist and fingertip task-space geometry. This converts large-scale human demonstrations from visual observations into executable observation–action supervision for the target humanoid. Experiments validate the conversion chain at the motion-recovery, robot-action-space, and real-robot deployment levels. Human-as-Humanoid yields a 4.8–7.2x raw demonstration-throughput gain over humanoid teleoperation in our data-collection analysis, and on several downstream tasks, policies post-trained only with the converted human labels generalize to real-robot deployment without target-task robot demonstrations. The official project website is available at https://zgc-embodyai.github.io/Human-as-Humanoid.
 
-## 개요
-로봇 체현(embodiment) 전반에 걸친 Vision-language-action (VLA) 모델은 배포 가능한 행동 분포를 학습하기 위해 고품질의 관찰-행동 감독(observation-action supervision)을 필요로 하지만, 특히 고자유도(high-DoF) 휴머노이드의 경우 이러한 로봇 데이터를 확장하는 것은 여전히 어렵습니다. 원격 조작(teleoperation)은 제어기 정렬 감독(controller-aligned supervision)을 제공하는 반면, 인간의 자기중심적(egocentric) 비디오는 다양한 양손 조작을 포착하지만 실행 가능한 로봇 행동을 직접 제공하지는 않습니다. 우리는 Human-as-Humanoid를 소개합니다. 이는 인간-휴머노이드 감독 프레임워크로, 거의 실시간에 가까운 인간 중심 행동 생성을 가능하게 하며, 로봇 체현, 센싱 설정, 행동 레이블 인터페이스를 공동으로 정렬하여 고자유도 휴머노이드 VLA 훈련에 인간 시연을 사용할 수 있게 합니다. 인간 정렬 60-DoF 상체 휴머노이드인 PrimeU를 기반으로 구축된 Human-as-Humanoid는 동기화된 자아-외부(ego-exo) 비디오를 사용하여 배포 정렬된 자기중심적 관찰과 외부 중심(exocentric) 모션 복구를 짝짓고, 복구된 인간 모션을 단계적 역기구학(Inverse Kinematics, IK)을 통해 제어기 정렬된 60-DoF 행동 청크로 재타겟팅하며, 순기구학(Forward Kinematics, FK) 인식 감독으로 VLA 모델을 훈련하여 손목과 손끝의 작업 공간 기하학을 보존합니다. 이는 대규모 인간 시연을 시각적 관찰에서 대상 휴머노이드의 실행 가능한 관찰-행동 감독으로 변환합니다. 실험은 모션 복구, 로봇 행동 공간, 실제 로봇 배포 수준에서 변환 체인을 검증합니다. Human-as-Humanoid는 데이터 수집 분석에서 휴머노이드 원격 조작 대비 4.8~7.2배의 원시 시연 처리량(raw demonstration-throughput) 향상을 보여주며, 여러 하위 작업에서 변환된 인간 레이블만으로 사후 훈련된 정책은 대상 작업 로봇 시연 없이도 실제 로봇 배포에 일반화됩니다. 공식 프로젝트 웹사이트는 https://zgc-embodyai.github.io/Human-as-Humanoid에서 확인할 수 있습니다.
-
-## 핵심 내용
-로봇 체현 전반에 걸친 Vision-language-action (VLA) 모델은 배포 가능한 행동 분포를 학습하기 위해 고품질의 관찰-행동 감독을 필요로 하지만, 특히 고자유도 휴머노이드의 경우 이러한 로봇 데이터를 확장하는 것은 여전히 어렵습니다. 원격 조작은 제어기 정렬 감독을 제공하는 반면, 인간의 자기중심적 비디오는 다양한 양손 조작을 포착하지만 실행 가능한 로봇 행동을 직접 제공하지는 않습니다. 우리는 Human-as-Humanoid를 소개합니다. 이는 인간-휴머노이드 감독 프레임워크로, 거의 실시간에 가까운 인간 중심 행동 생성을 가능하게 하며, 로봇 체현, 센싱 설정, 행동 레이블 인터페이스를 공동으로 정렬하여 고자유도 휴머노이드 VLA 훈련에 인간 시연을 사용할 수 있게 합니다. 인간 정렬 60-DoF 상체 휴머노이드인 PrimeU를 기반으로 구축된 Human-as-Humanoid는 동기화된 자아-외부 비디오를 사용하여 배포 정렬된 자기중심적 관찰과 외부 중심 모션 복구를 짝짓고, 복구된 인간 모션을 단계적 역기구학을 통해 제어기 정렬된 60-DoF 행동 청크로 재타겟팅하며, 순기구학 인식 감독으로 VLA 모델을 훈련하여 손목과 손끝의 작업 공간 기하학을 보존합니다. 이는 대규모 인간 시연을 시각적 관찰에서 대상 휴머노이드의 실행 가능한 관찰-행동 감독으로 변환합니다. 실험은 모션 복구, 로봇 행동 공간, 실제 로봇 배포 수준에서 변환 체인을 검증합니다. Human-as-Humanoid는 데이터 수집 분석에서 휴머노이드 원격 조작 대비 4.8~7.2배의 원시 시연 처리량 향상을 보여주며, 여러 하위 작업에서 변환된 인간 레이블만으로 사후 훈련된 정책은 대상 작업 로봇 시연 없이도 실제 로봇 배포에 일반화됩니다. 공식 프로젝트 웹사이트는 https://zgc-embodyai.github.io/Human-as-Humanoid에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.32009v1
+
+## 개요
+Human-as-Humanoid는 고자유도 휴머노이드 로봇의 비전-언어-행동(VLA) 모델 훈련에서 데이터 부족 문제를 해결합니다. 이 프레임워크는 동기화된 자기중심 및 외부중심 비디오를 활용하여 인간 시연에서 동작을 복원하고, 분할 역기구학을 통해 인간 동작을 60-DoF 동작 블록으로 재지정한 후, 전방 기구학 인식 감독으로 VLA 모델을 훈련하여 손목과 손끝의 작업 공간 기하학을 보존합니다. 실험은 동작 복원, 로봇 동작 공간, 실제 배포의 세 가지 수준에서 변환 체인의 유효성을 검증했으며, 후훈련 전략은 여러 하위 작업에서 대상 작업 로봇 시연 없이도 실제 배포로 일반화됩니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **프레임워크 핵심**: Human-as-Humanoid는 로봇 본체, 인식 설정, 동작 레이블 인터페이스를 공동 정렬하여 거의 실시간으로 인간 중심 동작 생성을 구현하는 종단 간 인간-휴머노이드 감독 프레임워크입니다.
+- **기본 플랫폼**: 인간과 정렬되도록 설계된 60-DoF 상체 휴머노이드 로봇인 PrimeU 기반.
+- **데이터 변환 흐름**:
+  - 동기화된 ego-exo 비디오를 사용하여 배포 정렬된 자기중심 관측과 외부중심 동작 복원을 페어링합니다.
+  - 분할 역기구학(IK)을 통해 복원된 인간 동작을 컨트롤러 정렬된 60-DoF 동작 블록으로 재지정합니다.
+  - 전방 기구학(FK) 인식 감독으로 VLA 모델을 훈련하여 손목과 손끝의 작업 공간 기하학 구조를 보존합니다.
+
+### 실험 설정 및 주요 수치
+- **데이터 수집 효율성**: Human-as-Humanoid는 데이터 수집 분석에서 원시 시연 처리량이 휴머노이드 원격 조작보다 4.8–7.2배 향상되었습니다.
+- **배포 검증**: 동작 복원, 로봇 동작 공간, 실제 로봇 배포의 세 가지 수준에서 변환 체인의 유효성을 검증했습니다.
+- **일반화 능력**: 여러 하위 작업에서 변환된 인간 레이블만으로 후훈련된 전략은 대상 작업 로봇 시연 없이도 실제 배포로 일반화됩니다.
+
+### 결론
+Human-as-Humanoid는 대규모 인간 시연을 시각 관측에서 대상 휴머노이드 로봇용 실행 가능한 관측-행동 감독으로 성공적으로 변환합니다. 이 프레임워크는 고자유도 휴머노이드 VLA 훈련의 데이터 장벽을 크게 낮추며, 제로샷 휴머노이드 학습을 위한 실현 가능한 솔루션을 제공합니다.

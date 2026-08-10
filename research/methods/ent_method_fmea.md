@@ -30,7 +30,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: 'Body restructured into standard sections by scripts/restructure_entry_bodies.py. | WP4 trilingual backfill 2026-08-10:
+    en body retranslated from zh deep-read (4395 chars, DeepSeek). | WP4 trilingual backfill 2026-08-10: closed unclosed code
+    fence(s) and removed duplicate stale translation block(s) (pre-existing ingestion defect).'
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,7 +40,6 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-
 ## 概述
 8.6.6 可靠性工程与失效模式分析相关内容如下。
 ## 核心内容
@@ -193,11 +194,10 @@ $$
 import numpy as np
 import matplotlib.pyplot as plt
 
+```
 ## 参考
 - 详见 chapter-08.md。
 
-## Overview
-8.6.6 Reliability Engineering and Failure Mode Analysis related content is as follows.
 ## Content
 #### 8.6.6 Reliability Engineering and Failure Mode Analysis
 Humanoid robots face multiple failure risks during long-term operation, including mechanical wear, electronic aging, software defects, and environmental stress. **Reliability engineering** uses quantitative methods to predict, allocate, and improve system reliability, and is key to reducing life-cycle costs and ensuring safe operation[90][91][95].
@@ -350,6 +350,7 @@ The following code calculates the reliability of a series joint system composed 
 import numpy as np
 import matplotlib.pyplot as plt
 
+```
 ## 개요
 8.6.6 신뢰성 공학과 고장 모드 분석 관련 내용은 다음과 같습니다.
 ## 핵심 내용
@@ -504,156 +505,6 @@ $$
 import numpy as np
 import matplotlib.pyplot as plt
 
+```
 ## Overview
-8.6.6 Reliability Engineering and Failure Mode Analysis related content is as follows.
-## Content
-#### 8.6.6 Reliability Engineering and Failure Mode Analysis
-Humanoid robots face multiple failure risks during long-term operation, including mechanical wear, electronic aging, software defects, and environmental stress. **Reliability engineering** uses quantitative methods to predict, allocate, and improve system reliability, and is key to reducing life-cycle costs and ensuring safe operation[90][91][95].
-
-!!! note "Terminology: Reliability Engineering, Failure, Life-Cycle Cost, Environmental Stress"
-    - **Reliability engineering**: The discipline that studies and improves a product's ability to perform its required function under stated conditions for a specified period of time.
-    - **Failure**: The event when a product loses its ability to perform a required function.
-    - **Life-cycle cost (LCC)**: The total cost of a product over its entire life cycle.
-    - **Environmental stress**: External factors such as temperature, humidity, vibration, and dust.
-
-The **reliability function** \(R(t)\) is defined as the probability that a product survives without failure for a time \(t\):
-
-$$
-R(t) = P(T > t)
-$$
-
-where \(T\) is the time to failure. The corresponding **cumulative distribution function of failure** is \(F(t) = 1 - R(t)\). The **hazard rate** or **failure rate** \(\lambda(t)\) is:
-
-$$
-\lambda(t) = \frac{f(t)}{R(t)} = -\frac{d}{dt} \ln R(t)
-$$
-
-where \(f(t) = dF/dt\) is the failure probability density.
-
-!!! note "Terminology: Reliability Function, Cumulative Distribution Function of Failure, Failure Rate, Failure Probability Density"
-    - **Reliability function**: The probability that a product operates normally for a time \(t\).
-    - **Cumulative distribution function (CDF)**: The probability of failure before time \(t\).
-    - **Failure rate**: The probability of failure per unit time.
-    - **Probability density function (PDF)**: The probability density of failure times.
-
-The failure rate of typical electronic and mechanical products over time follows a **bathtub curve**:
-
-1. **Infant mortality**: High failure rate, usually caused by manufacturing defects or assembly errors, can be reduced through burn-in.
-2. **Useful life**: Failure rate is approximately constant; this is the main operating period of the product.
-3. **Wear-out**: Failure rate increases over time, caused by fatigue, wear, and aging.
-
-!!! note "Terminology: Bathtub Curve, Infant Mortality, Random Failure, Wear-out Failure, Burn-in"
-    - **Bathtub curve**: A U-shaped curve showing the failure rate over time.
-    - **Infant mortality**: The high failure rate of a product early in its life.
-    - **Random failure**: Occasional, unpredictable failures.
-    - **Wear-out failure**: Failures caused by performance degradation after prolonged use.
-    - **Burn-in**: A process of operating a product early in its life to eliminate potential defects.
-
-When the failure rate is constant \(\lambda\), the reliability function follows an exponential distribution:
-
-$$
-R(t) = e^{-\lambda t}
-$$
-
-The **Mean Time Between Failures (MTBF)** is:
-
-$$
-\text{MTBF} = \frac{1}{\lambda}
-$$
-
-For non-repairable products, **MTTF (Mean Time To Failure)** is used.
-
-!!! note "Terminology: Exponential Distribution, Mean Time Between Failures, Mean Time To Failure"
-    - **Exponential distribution**: The life distribution under a constant failure rate.
-    - **Mean Time Between Failures (MTBF)**: The average time between failures for repairable products.
-    - **Mean Time To Failure (MTTF)**: The average time to failure for non-repairable products.
-
-**Failure Mode and Effects Analysis (FMEA)** is a method to systematically identify potential failures, assess risks, and prioritize improvements. Each failure mode is scored on three dimensions:
-
-| Dimension | Symbol | Meaning | Typical Score |
-|---|---|---|---|
-| Severity | S | The severity of the failure consequence | 1–10 |
-| Occurrence | O | The likelihood of the failure cause occurring | 1–10 |
-| Detection | D | The ability of current controls to detect the failure | 1–10 |
-
-The **Risk Priority Number (RPN)** is:
-
-$$
-\text{RPN} = S \times O \times D
-$$
-
-The higher the RPN, the more urgent the need for improvement actions.
-
-!!! note "Terminology: Failure Mode, Severity, Occurrence, Detection, Risk Priority Number"
-    - **Failure mode**: The specific way in which a product fails.
-    - **Severity**: The seriousness of the failure consequence.
-    - **Occurrence**: The frequency of the failure cause.
-    - **Detection**: The ability to detect the failure cause or mode.
-    - **Risk Priority Number (RPN)**: The product of S, O, and D, used for risk ranking.
-
-Example FMEA for a humanoid robot:
-
-| Subsystem | Failure Mode | Potential Effect | S | O | D | RPN | Improvement Action |
-|---|---|---|---|---|---|---|---|
-| Knee joint harmonic reducer | Flexspline fatigue crack | Joint lock-up, fall | 9 | 4 | 5 | 180 | Fatigue testing, periodic replacement |
-| Battery pack | Cell thermal runaway | Fire, total robot destruction | 10 | 2 | 4 | 80 | BMS, thermal fuse, flame-retardant materials |
-| Ankle 6-axis force sensor | Zero drift | Balance control instability | 8 | 5 | 4 | 160 | Online calibration, redundant sensing |
-| Emergency stop circuit | Contact welding | Inability to stop safely | 10 | 2 | 3 | 60 | Dual-channel, self-test |
-| Main controller | Software crash | Motion loss of control | 9 | 3 | 3 | 81 | Watchdog, safety monitor |
-
-!!! note "Terminology: Flexspline Fatigue, Thermal Runaway, Zero Drift, Contact Welding, Watchdog"
-    - **Flexspline fatigue**: Cyclic fatigue of the flexspline in a harmonic drive.
-    - **Thermal runaway**: A chain reaction of uncontrolled temperature increase in a battery.
-    - **Zero drift**: The shift of a sensor's zero point over time.
-    - **Contact welding**: The welding together of relay contacts.
-    - **Watchdog**: A circuit that monitors program execution and resets the system upon anomaly.
-
-A **Reliability Block Diagram (RBD)** graphically represents the reliability logic relationships among system units:
-
-- **Series system**: The system fails if any unit fails. Total reliability is the product of the reliabilities of each unit:
-  $$
-  R_s(t) = \prod_{i=1}^{n} R_i(t)
-  $$
-- **Parallel system**: The system fails only if all units fail. Total unreliability is the product of the unreliabilities of each unit:
-  $$
-  R_s(t) = 1 - \prod_{i=1}^{n} [1 - R_i(t)]
-  $$
-
-!!! note "Terminology: Reliability Block Diagram, Series System, Parallel System, Redundancy"
-    - **Reliability Block Diagram (RBD)**: A diagram showing the reliability logic relationships of a system.
-    - **Series system**: A system where all units must function for the system to function.
-    - **Parallel system**: A system where at least one unit must function for the system to function.
-    - **Redundancy**: The use of duplicate components to improve reliability.
-
-**Redundancy design** is an important means of improving the safety of humanoid robots:
-
-- **Active redundancy**: Multiple units operate simultaneously, e.g., dual encoders, dual-channel emergency stop.
-- **Standby redundancy**: A backup unit is switched in when the primary unit fails.
-- **Diverse redundancy**: Using different types of components to perform the same function, reducing the risk of common cause failures.
-
-!!! note "Terminology: Active Redundancy, Standby Redundancy, Diverse Redundancy, Common Cause Failure"
-    - **Active redundancy**: Redundancy where all units operate in parallel.
-    - **Standby redundancy**: Redundancy where the backup unit is normally inactive.
-    - **Diverse redundancy**: Redundancy using components based on different principles or from different sources.
-    - **Common cause failure**: A failure where a single cause leads to the failure of multiple units simultaneously.
-
-For components dominated by fatigue and wear, life is often described by the **Weibull distribution**:
-
-$$
-R(t) = \exp\left[-\left(\frac{t}{\eta}\right)^\beta\right]
-$$
-
-where \(\eta\) is the characteristic life, and \(\beta\) is the shape parameter. When \(\beta < 1\), it corresponds to the infant mortality period; \(\beta = 1\) reduces to the exponential distribution; \(\beta > 1\) corresponds to the wear-out period.
-
-!!! note "Terminology: Weibull Distribution, Characteristic Life, Shape Parameter"
-    - **Weibull distribution**: A flexible distribution for describing life data.
-    - **Characteristic life**: The scale parameter in the Weibull distribution.
-    - **Shape parameter**: The parameter that determines the shape of the Weibull distribution.
-
-**Python Example: System Reliability and Redundancy Benefit**
-
-The following code calculates the reliability of a series joint system consisting of a motor, reducer, driver, and controller, and compares the reliability of a single-channel vs. a dual-channel redundant emergency stop circuit.
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
+The content related to reliability engineering and failure mode analysis in Section 8.6.6 is as follows.

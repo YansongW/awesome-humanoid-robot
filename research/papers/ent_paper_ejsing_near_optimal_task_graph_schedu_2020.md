@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2002.10783v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2002.10783v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (699 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,24 @@ Task graph scheduling is a relevant problem in computer science with application
 ## Content
 Task graph scheduling is a relevant problem in computer science with application to diverse real world domains. Task graph scheduling suffers from a combinatorial explosion and thus finding optimal schedulers is a difficult task. In this paper we present a methodology for computing near-optimal preemptive and non-preemptive schedulers for task graphs. The task graph scheduling problem is reduced to location reachability via the fastest path in Priced Timed Automata (PTA) and Priced Timed Markov Decision Processes (PTMDP). Additionally, we explore the effect of using chains to reduce the computation time for finding schedules. We have implemented our models in UPPAAL CORA and UPPAAL STRATEGO. We conduct an exhaustive experimental evaluation where we compare our resulting schedules with the best-known schedules of a state of the art tool. A significant number of our resulting schedules are shown to be shorter than or equal to the best-known schedules.
 
-## 개요
-태스크 그래프 스케줄링은 컴퓨터 과학에서 중요한 문제로, 다양한 실제 도메인에 응용됩니다. 태스크 그래프 스케줄링은 조합적 폭발(combinatorial explosion) 문제를 겪기 때문에 최적의 스케줄러를 찾는 것은 어려운 작업입니다. 본 논문에서는 태스크 그래프에 대한 준최적의 선점형 및 비선점형 스케줄러를 계산하는 방법론을 제시합니다. 태스크 그래프 스케줄링 문제는 가격 시간 오토마타(PTA)와 가격 시간 마르코프 결정 과정(PTMDP)에서 최단 경로를 통한 위치 도달성 문제로 축소됩니다. 또한, 체인을 사용하여 스케줄 탐색 시간을 줄이는 효과를 탐구합니다. 우리는 UPPAAL CORA와 UPPAAL STRATEGO에서 모델을 구현했습니다. 최첨단 도구의 알려진 최고 스케줄과 결과 스케줄을 비교하는 철저한 실험적 평가를 수행했습니다. 상당수의 결과 스케줄이 알려진 최고 스케줄보다 짧거나 같음을 보여줍니다.
-
-## 핵심 내용
-태스크 그래프 스케줄링은 컴퓨터 과학에서 중요한 문제로, 다양한 실제 도메인에 응용됩니다. 태스크 그래프 스케줄링은 조합적 폭발(combinatorial explosion) 문제를 겪기 때문에 최적의 스케줄러를 찾는 것은 어려운 작업입니다. 본 논문에서는 태스크 그래프에 대한 준최적의 선점형 및 비선점형 스케줄러를 계산하는 방법론을 제시합니다. 태스크 그래프 스케줄링 문제는 가격 시간 오토마타(PTA)와 가격 시간 마르코프 결정 과정(PTMDP)에서 최단 경로를 통한 위치 도달성 문제로 축소됩니다. 또한, 체인을 사용하여 스케줄 탐색 시간을 줄이는 효과를 탐구합니다. 우리는 UPPAAL CORA와 UPPAAL STRATEGO에서 모델을 구현했습니다. 최첨단 도구의 알려진 최고 스케줄과 결과 스케줄을 비교하는 철저한 실험적 평가를 수행했습니다. 상당수의 결과 스케줄이 알려진 최고 스케줄보다 짧거나 같음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2002.10783v1
+
+## 개요
+작업 그래프 스케줄링의 조합 폭발 문제를 해결하기 위해, 본 연구는 스케줄링 문제를 Priced Timed Automata 및 Priced Timed Markov Decision Processes에서의 최단 경로 탐색으로 형식화하여 준최적 해를 도출합니다. 또한, 체인 구조를 활용해 계산 시간을 단축하는 전략을 탐구합니다. Uppaal Cora와 Uppaal Stratego 기반 구현을 표준 테스트 세트에서 실험한 결과, 본 방법이 생성한 스케줄은 대부분의 경우 현재 최적 도구의 결과보다 우수하거나 동등함을 보여줍니다.
+
+## 핵심 내용
+### 핵심 방법
+- 작업 그래프 스케줄링 문제를 Priced Timed Automata 및 Priced Timed Markov Decision Processes에서의 위치 도달 가능성 탐색으로 변환하고, 최단 경로 탐색을 통해 준최적 스케줄을 획득합니다.
+- 선점형 및 비선점형 두 가지 스케줄링 모드를 지원하여 실제 응용의 다양한 요구를 충족합니다.
+- 체인 구조를 도입해 계산 효율성을 최적화하고, 상태 공간 규모를 줄여 스케줄 생성을 가속화합니다.
+
+### 구현 및 실험
+- 모델은 Uppaal Cora와 Uppaal Stratego에서 구현되며, 효율적인 모델 검사 및 전략 탐색 기능을 활용합니다.
+- Kasahara-Narita 표준 작업 그래프 세트에서 포괄적인 실험 평가를 수행하며, 이 데이터 세트는 다양한 규모와 구조의 작업 그래프를 포함합니다.
+- 비교 대상은 현재 최적 도구가 생성한 최고 알려진 스케줄이며, 결과는 본 방법이 생성한 스케줄이 대부분의 사례에서 시간이 더 짧거나 동등함을 보여줍니다.
+
+### 핵심 결론
+- 실험은 본 방법이 안정적으로 준최적 스케줄을 생성하며 계산 비용이 통제 가능함을 입증합니다.
+- 체인 최적화 전략은 해 품질을 유지하면서도 해결 시간을 크게 단축하며, 특히 대규모 작업 그래프에 적합합니다.
+- 본 연구는 작업 그래프 스케줄링 문제에 대해 형식적이고 확장 가능한 해결 프레임워크를 제공하며, 이론적 엄밀성과 공학적 실용성을 겸비합니다.

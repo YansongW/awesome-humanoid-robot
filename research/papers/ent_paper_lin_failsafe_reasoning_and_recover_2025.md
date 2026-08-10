@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01642v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01642v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (887 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,24 @@ FailSafe 系统通过自动生成故障-恢复数据，有效解决了 VLA 模�
 ## Overview
 Recent advances in robotic manipulation have integrated low-level robotic control into Vision-Language Models (VLMs), extending them into Vision-Language-Action (VLA) models. Although state-of-the-art VLAs achieve strong performance in downstream robotic applications, supported by large-scale crowd-sourced robot training data, they still inevitably encounter failures during execution. Enabling robots to reason and recover from unpredictable and abrupt failures remains a critical challenge. Existing robotic manipulation datasets, collected in either simulation or the real world, primarily provide only ground-truth trajectories, leaving robots unable to recover once failures occur. Moreover, the few datasets that address failure detection typically offer only textual explanations, which are difficult to utilize directly in VLA models. To address this gap, we introduce FailSafe, a novel failure generation and recovery system that automatically produces diverse failure cases paired with executable recovery actions. FailSafe can be easily adapted to a wide range of manipulation tasks in simulators with motion planning support, enabling scalable creation of failure-action data. To demonstrate its effectiveness, we fine-tune LLaVA-OneVision-7B (LLaVA-OV-7B) to build FailSafe-VLM. Experimental results show that FailSafe-VLM successfully helps robotic arms detect and recover from potential failures, improving the performance of three state-of-the-art VLA models (Pi-0-FAST, OpenVLA, OpenVLA-OFT) by up to 22.6% on average across several tasks in ManiSkill. Furthermore, FailSafe-VLM could generalize across different spatial configurations, camera viewpoints, object and robotic embodiments.
 
-## 개요
-로봇 조작 분야의 최근 발전은 저수준 로봇 제어를 시각-언어 모델(VLM)에 통합하여 시각-언어-행동(VLA) 모델로 확장시켰습니다. 최첨단 VLA 모델은 대규모 크라우드소싱 로봇 훈련 데이터의 지원을 받아 다운스트림 로봇 응용 분야에서 강력한 성능을 달성하지만, 실행 중 불가피하게 오류가 발생합니다. 예측 불가능하고 갑작스러운 오류로부터 로봇이 추론하고 복구할 수 있도록 하는 것은 여전히 중요한 과제입니다. 시뮬레이션이나 실제 환경에서 수집된 기존 로봇 조작 데이터셋은 주로 실제 궤적만 제공하여, 오류 발생 시 로봇이 복구할 수 없습니다. 또한, 오류 감지를 다루는 소수의 데이터셋은 일반적으로 텍스트 설명만 제공하여 VLA 모델에서 직접 활용하기 어렵습니다. 이러한 격차를 해소하기 위해, 우리는 다양한 오류 사례를 실행 가능한 복구 동작과 쌍으로 자동 생성하는 새로운 오류 생성 및 복구 시스템인 FailSafe를 소개합니다. FailSafe는 모션 플래닝을 지원하는 시뮬레이터에서 다양한 조작 작업에 쉽게 적용할 수 있어, 확장 가능한 오류-행동 데이터 생성을 가능하게 합니다. 그 효과를 입증하기 위해, 우리는 LLaVA-OneVision-7B(LLaVA-OV-7B)를 미세 조정하여 FailSafe-VLM을 구축했습니다. 실험 결과, FailSafe-VLM은 로봇 팔이 잠재적 오류를 감지하고 복구하도록 성공적으로 도와, ManiSkill의 여러 작업에서 세 가지 최첨단 VLA 모델(Pi-0-FAST, OpenVLA, OpenVLA-OFT)의 성능을 평균 최대 22.6% 향상시켰습니다. 또한, FailSafe-VLM은 다양한 공간 구성, 카메라 시점, 객체 및 로봇 구현체에 걸쳐 일반화될 수 있습니다.
-
-## 핵심 내용
-로봇 조작 분야의 최근 발전은 저수준 로봇 제어를 시각-언어 모델(VLM)에 통합하여 시각-언어-행동(VLA) 모델로 확장시켰습니다. 최첨단 VLA 모델은 대규모 크라우드소싱 로봇 훈련 데이터의 지원을 받아 다운스트림 로봇 응용 분야에서 강력한 성능을 달성하지만, 실행 중 불가피하게 오류가 발생합니다. 예측 불가능하고 갑작스러운 오류로부터 로봇이 추론하고 복구할 수 있도록 하는 것은 여전히 중요한 과제입니다. 시뮬레이션이나 실제 환경에서 수집된 기존 로봇 조작 데이터셋은 주로 실제 궤적만 제공하여, 오류 발생 시 로봇이 복구할 수 없습니다. 또한, 오류 감지를 다루는 소수의 데이터셋은 일반적으로 텍스트 설명만 제공하여 VLA 모델에서 직접 활용하기 어렵습니다. 이러한 격차를 해소하기 위해, 우리는 다양한 오류 사례를 실행 가능한 복구 동작과 쌍으로 자동 생성하는 새로운 오류 생성 및 복구 시스템인 FailSafe를 소개합니다. FailSafe는 모션 플래닝을 지원하는 시뮬레이터에서 다양한 조작 작업에 쉽게 적용할 수 있어, 확장 가능한 오류-행동 데이터 생성을 가능하게 합니다. 그 효과를 입증하기 위해, 우리는 LLaVA-OneVision-7B(LLaVA-OV-7B)를 미세 조정하여 FailSafe-VLM을 구축했습니다. 실험 결과, FailSafe-VLM은 로봇 팔이 잠재적 오류를 감지하고 복구하도록 성공적으로 도와, ManiSkill의 여러 작업에서 세 가지 최첨단 VLA 모델(Pi-0-FAST, OpenVLA, OpenVLA-OFT)의 성능을 평균 최대 22.6% 향상시켰습니다. 또한, FailSafe-VLM은 다양한 공간 구성, 카메라 시점, 객체 및 로봇 구현체에 걸쳐 일반화될 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.01642v4
+
+## 개요
+기존 VLA 모델은 로봇 조작 작업에서 뛰어난 성능을 보이지만, 실행 과정에서 여전히 불가피하게 장애가 발생합니다. 기존 데이터셋은 실제 궤적만 제공할 뿐 장애 복구 능력이 부족하며, 장애 감지를 다루는 소수의 데이터셋은 텍스트 설명만 제공하여 VLA 모델에 직접 활용하기 어렵습니다. FailSafe 시스템은 장애-복구 동작 쌍을 자동 생성하여 이러한 데이터 격차를 해결합니다. 이 시스템은 다양한 운동 계획을 지원하는 시뮬레이션 조작 작업에 적용 가능하며, 장애 동작 데이터의 대규모 생성을 실현합니다. FailSafe 데이터로 미세 조정된 FailSafe-VLM 모델은 ManiSkill 벤치마크의 여러 작업에서 Pi-0-FAST, OpenVLA, OpenVLA-OFT 세 가지 고급 VLA 모델의 평균 성능을 최대 22.6% 향상시키며, 공간 구성, 카메라 시점, 객체 및 로봇 본체에 대한 일반화 능력을 보여줍니다.
+
+## 핵심 내용
+### 방법
+- **장애 생성 및 복구 시스템**: FailSafe는 다양한 장애 사례를 자동 생성하고 실행 가능한 복구 동작을 제공합니다. 이 시스템은 운동 계획을 지원하는 시뮬레이터에 쉽게 적용 가능하여 장애-동작 데이터의 대규모 생성을 실현합니다.
+- **모델 구축**: LLaVA-OneVision-7B (LLaVA-OV-7B) 기반으로 미세 조정된 FailSafe-VLM을 구축하여 장애 감지 및 복구 추론 능력을 갖추게 합니다.
+
+### 실험 설정
+- **벤치마크 및 모델**: ManiSkill 벤치마크에서 평가하며, 세 가지 고급 VLA 모델인 Pi-0-FAST, OpenVLA, OpenVLA-OFT를 테스트합니다.
+- **평가 지표**: 장애 감지 및 복구 성공률을 통해 성능 향상을 측정합니다.
+
+### 주요 결과
+- **성능 향상**: FailSafe-VLM은 세 가지 VLA 모델의 여러 작업에서 평균 성능을 최대 22.6% 향상시킵니다.
+- **일반화 능력**: FailSafe-VLM은 다양한 공간 구성, 카메라 시점, 객체 유형 및 로봇 본체에 일반화할 수 있어 견고성과 범용성을 검증합니다.
+
+### 결론
+FailSafe 시스템은 장애-복구 데이터를 자동 생성하여 로봇 조작에서 VLA 모델의 장애 복구 능력 부족 문제를 효과적으로 해결합니다. 실험을 통해 FailSafe-VLM이 기존 VLA 모델의 성능을 크게 향상시킬 뿐만 아니라 교차 시나리오 일반화 능력을 갖추어 로봇의 자율 장애 복구를 위한 실현 가능한 솔루션을 제공함을 입증합니다.

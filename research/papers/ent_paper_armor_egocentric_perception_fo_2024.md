@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.00396v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.00396v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (854 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,26 @@ ARMOR 通过软硬件协同的自我中心感知方案，显著提升了人形�
 ## Overview
 Humanoid robots have significant gaps in their sensing and perception, making it hard to perform motion planning in dense environments. To address this, we introduce ARMOR, a novel egocentric perception system that integrates both hardware and software, specifically incorporating wearable-like depth sensors for humanoid robots. Our distributed perception approach enhances the robot's spatial awareness, and facilitates more agile motion planning. We also train a transformer-based imitation learning (IL) policy in simulation to perform dynamic collision avoidance, by leveraging around 86 hours worth of human realistic motions from the AMASS dataset. We show that our ARMOR perception is superior against a setup with multiple dense head-mounted, and externally mounted depth cameras, with a 63.7% reduction in collisions, and 78.7% improvement on success rate. We also compare our IL policy against a sampling-based motion planning expert cuRobo, showing 31.6% less collisions, 16.9% higher success rate, and 26x reduction in computational latency. Lastly, we deploy our ARMOR perception on our real-world GR1 humanoid from Fourier Intelligence. We are going to update the link to the source code, HW description, and 3D CAD files in the arXiv version of this text.
 
-## 개요
-휴머노이드 로봇은 감지 및 인식에 상당한 격차가 있어 밀집된 환경에서 동작 계획을 수행하기 어렵습니다. 이를 해결하기 위해, 우리는 하드웨어와 소프트웨어를 통합한 새로운 자기중심적 인식 시스템인 ARMOR를 소개하며, 특히 휴머노이드 로봇을 위한 웨어러블 형태의 깊이 센서를 포함합니다. 분산 인식 접근 방식은 로봇의 공간 인식을 향상시키고 더 민첩한 동작 계획을 용이하게 합니다. 또한, AMASS 데이터셋의 약 86시간 분량의 인간 사실적 동작을 활용하여 시뮬레이션에서 트랜스포머 기반 모방 학습(IL) 정책을 훈련하여 동적 충돌 회피를 수행합니다. 우리는 ARMOR 인식이 다수의 밀집된 머리 장착형 및 외부 장착형 깊이 카메라 설정보다 우수함을 보여주며, 충돌 63.7% 감소, 성공률 78.7% 향상을 달성했습니다. 또한, IL 정책을 샘플링 기반 동작 계획 전문가인 cuRobo와 비교하여 충돌 31.6% 감소, 성공률 16.9% 향상, 계산 지연 시간 26배 감소를 보여줍니다. 마지막으로, 우리는 Fourier Intelligence의 실제 GR1 휴머노이드에 ARMOR 인식을 배포합니다. 소스 코드, 하드웨어 설명 및 3D CAD 파일에 대한 링크는 이 텍스트의 arXiv 버전에서 업데이트할 예정입니다.
-
-## 핵심 내용
-휴머노이드 로봇은 감지 및 인식에 상당한 격차가 있어 밀집된 환경에서 동작 계획을 수행하기 어렵습니다. 이를 해결하기 위해, 우리는 하드웨어와 소프트웨어를 통합한 새로운 자기중심적 인식 시스템인 ARMOR를 소개하며, 특히 휴머노이드 로봇을 위한 웨어러블 형태의 깊이 센서를 포함합니다. 분산 인식 접근 방식은 로봇의 공간 인식을 향상시키고 더 민첩한 동작 계획을 용이하게 합니다. 또한, AMASS 데이터셋의 약 86시간 분량의 인간 사실적 동작을 활용하여 시뮬레이션에서 트랜스포머 기반 모방 학습(IL) 정책을 훈련하여 동적 충돌 회피를 수행합니다. 우리는 ARMOR 인식이 다수의 밀집된 머리 장착형 및 외부 장착형 깊이 카메라 설정보다 우수함을 보여주며, 충돌 63.7% 감소, 성공률 78.7% 향상을 달성했습니다. 또한, IL 정책을 샘플링 기반 동작 계획 전문가인 cuRobo와 비교하여 충돌 31.6% 감소, 성공률 16.9% 향상, 계산 지연 시간 26배 감소를 보여줍니다. 마지막으로, 우리는 Fourier Intelligence의 실제 GR1 휴머노이드에 ARMOR 인식을 배포합니다. 소스 코드, 하드웨어 설명 및 3D CAD 파일에 대한 링크는 이 텍스트의 arXiv 버전에서 업데이트할 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.00396v1
+
+## 개요
+휴머노이드 로봇의 밀집 환경에서의 운동 계획은 종종 인식 능력의 부족으로 제한됩니다. ARMOR 시스템은 웨어러블 기기와 유사한 깊이 센서를 통합하여 분산 방식으로 로봇의 공간 인식 능력을 향상시켜 더 민첩한 운동 계획을 지원합니다. 연구팀은 AMASS 데이터셋의 약 86시간 인간 실제 운동 데이터를 활용하여 시뮬레이션에서 Transformer 기반 모방 학습 정책을 훈련시켜 동적 충돌 회피를 구현했습니다. 실험 결과, ARMOR는 여러 헤드마운트 및 외장 깊이 카메라 조합 방식에 비해 충돌 횟수가 63.7% 감소하고 성공률이 78.7% 향상되었습니다. 또한, 모방 학습 정책은 샘플링 기반 운동 계획 전문가 cuRobo에 비해 충돌이 31.6% 감소하고 성공률이 16.9% 향상되었으며 계산 지연 시간이 26배 감소했습니다. 이 시스템은 Fourier Intelligence의 GR1 휴머노이드 로봇에서 실제 배포가 완료되었습니다.
+
+## 핵심 내용
+### 방법
+- **인식 시스템 설계**: ARMOR는 분산 인식 아키텍처를 채택하여 로봇 신체의 주요 위치에 웨어러블 기기와 유사한 깊이 센서를 통합함으로써 기존 헤드마운트 또는 외장 카메라가 밀집 환경에서 가지는 인식 사각지대를 보완합니다.
+- **운동 계획 및 충돌 회피**: Transformer 기반 모방 학습 정책이 시뮬레이션 환경에서 훈련되며, 훈련 데이터는 AMASS 데이터셋의 약 86시간 인간 실제 운동 데이터에서 비롯되어 로봇이 동적 충돌 회피 행동을 학습할 수 있게 합니다.
+
+### 실험 설정 및 주요 결과
+- **비교 기준**: 여러 밀집 헤드마운트 및 외장 깊이 카메라 조합과 비교하여 ARMOR는 다음을 달성했습니다:
+  - 충돌 횟수 63.7% 감소
+  - 성공률 78.7% 향상
+- **정책 비교**: 샘플링 기반 운동 계획 전문가 cuRobo와 비교하여 ARMOR의 모방 학습 정책은 다음을 달성했습니다:
+  - 충돌 31.6% 감소
+  - 성공률 16.9% 향상
+  - 계산 지연 시간 26배 감소
+- **실제 배포**: 시스템은 Fourier Intelligence의 GR1 휴머노이드 로봇에서 배포 검증이 완료되었습니다.
+
+### 결론
+ARMOR는 소프트웨어와 하드웨어가 협력하는 자기 중심 인식 방식을 통해 밀집 환경에서 휴머노이드 로봇의 충돌 회피 및 운동 계획 능력을 크게 향상시켰으며, 시뮬레이션과 실제 시나리오 모두에서 기존 방법보다 우수한 성능을 입증했습니다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01708v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.01708v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (762 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,28 @@ sources:
 ## Overview
 Humanoid whole-body control (WBC) policies trained in simulation often suffer from the sim-to-real gap, which fundamentally arises from simulator inductive bias, the inherent assumptions and limitations of any single simulator. These biases lead to nontrivial discrepancies both across simulators and between simulation and the real world. To mitigate the effect of simulator inductive bias, the key idea is to train policies jointly across multiple simulators, encouraging the learned controller to capture dynamics that generalize beyond any single simulator's assumptions. We thus introduce PolySim, a WBC training platform that integrates multiple heterogeneous simulators. PolySim can launch parallel environments from different engines simultaneously within a single training run, thereby realizing dynamics-level domain randomization. Theoretically, we show that PolySim yields a tighter upper bound on simulator inductive bias than single-simulator training. In experiments, PolySim substantially reduces motion-tracking error in sim-to-sim evaluations; for example, on MuJoCo, it improves execution success by 52.8 over an IsaacSim baseline. PolySim further enables zero-shot deployment on a real Unitree G1 without additional fine-tuning, showing effective transfer from simulation to the real world. We will release the PolySim code upon acceptance of this work.
 
-## 개요
-시뮬레이션에서 훈련된 휴머노이드 전신 제어(WBC) 정책은 종종 시뮬레이션-실제 간극(sim-to-real gap)으로 어려움을 겪으며, 이는 근본적으로 시뮬레이터 귀납적 편향(simulator inductive bias), 즉 단일 시뮬레이터의 내재적 가정과 한계에서 비롯됩니다. 이러한 편향은 시뮬레이터 간 및 시뮬레이션과 실제 세계 간에 상당한 차이를 초래합니다. 시뮬레이터 귀납적 편향의 영향을 완화하기 위한 핵심 아이디어는 여러 시뮬레이터에서 공동으로 정책을 훈련하여 학습된 제어기가 단일 시뮬레이터의 가정을 넘어 일반화되는 동역학을 포착하도록 하는 것입니다. 이에 우리는 여러 이기종 시뮬레이터를 통합하는 WBC 훈련 플랫폼인 PolySim을 소개합니다. PolySim은 단일 훈련 실행 내에서 서로 다른 엔진의 병렬 환경을 동시에 실행하여 동역학 수준의 도메인 무작위화를 실현합니다. 이론적으로, 우리는 PolySim이 단일 시뮬레이터 훈련보다 시뮬레이터 귀납적 편향에 대한 더 엄격한 상한을 제공함을 보여줍니다. 실험에서 PolySim은 시뮬레이션 간 평가에서 동작 추적 오류를 크게 줄입니다. 예를 들어, MuJoCo에서는 IsaacSim 기준선 대비 실행 성공률을 52.8% 향상시킵니다. PolySim은 추가 미세 조정 없이 실제 Unitree G1에서 제로샷 배포를 가능하게 하여 시뮬레이션에서 실제 세계로의 효과적인 전이를 보여줍니다. 본 연구가 채택되면 PolySim 코드를 공개할 예정입니다.
-
-## 핵심 내용
-시뮬레이션에서 훈련된 휴머노이드 전신 제어(WBC) 정책은 종종 시뮬레이션-실제 간극(sim-to-real gap)으로 어려움을 겪으며, 이는 근본적으로 시뮬레이터 귀납적 편향(simulator inductive bias), 즉 단일 시뮬레이터의 내재적 가정과 한계에서 비롯됩니다. 이러한 편향은 시뮬레이터 간 및 시뮬레이션과 실제 세계 간에 상당한 차이를 초래합니다. 시뮬레이터 귀납적 편향의 영향을 완화하기 위한 핵심 아이디어는 여러 시뮬레이터에서 공동으로 정책을 훈련하여 학습된 제어기가 단일 시뮬레이터의 가정을 넘어 일반화되는 동역학을 포착하도록 하는 것입니다. 이에 우리는 여러 이기종 시뮬레이터를 통합하는 WBC 훈련 플랫폼인 PolySim을 소개합니다. PolySim은 단일 훈련 실행 내에서 서로 다른 엔진의 병렬 환경을 동시에 실행하여 동역학 수준의 도메인 무작위화를 실현합니다. 이론적으로, 우리는 PolySim이 단일 시뮬레이터 훈련보다 시뮬레이터 귀납적 편향에 대한 더 엄격한 상한을 제공함을 보여줍니다. 실험에서 PolySim은 시뮬레이션 간 평가에서 동작 추적 오류를 크게 줄입니다. 예를 들어, MuJoCo에서는 IsaacSim 기준선 대비 실행 성공률을 52.8% 향상시킵니다. PolySim은 추가 미세 조정 없이 실제 Unitree G1에서 제로샷 배포를 가능하게 하여 시뮬레이션에서 실제 세계로의 효과적인 전이를 보여줍니다. 본 연구가 채택되면 PolySim 코드를 공개할 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.01708v3
+
+## 개요
+휴머노이드 로봇 전신 제어 정책을 단일 시뮬레이터에서 훈련할 때, 시뮬레이터의 귀납적 편향(즉, 각 시뮬레이터에 내재된 가정과 한계)으로 인해 시뮬레이션과 현실 간의 상당한 차이가 발생하는 경우가 많습니다. PolySim은 여러 이기종 시뮬레이터를 통합하여 단일 훈련 중에 서로 다른 엔진의 환경을 병렬로 실행함으로써 동역학 수준의 도메인 무작위화를 구현합니다. 이론적 분석에 따르면, 이 방법은 단일 시뮬레이터 훈련보다 귀납적 편향의 상한을 더 엄격하게 제한할 수 있습니다. 실험 결과, PolySim은 sim-to-sim 평가에서 운동 추적 오류를 크게 줄였으며, 실제 Unitree G1 로봇에서 추가 미세 조정 없이 제로샷 배포를 달성했습니다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: 여러 시뮬레이터를 걸쳐 정책을 공동 훈련함으로써, 컨트롤러가 단일 시뮬레이터의 가정을 초월하는 일반적인 동역학 특성을 학습하도록 강제하여 시뮬레이터의 귀납적 편향을 완화합니다.
+- **구현 방식**: PolySim 플랫폼은 여러 이기종 시뮬레이터(예: MuJoCo, IsaacSim 등)를 통합하며, 단일 훈련 중에 서로 다른 엔진의 환경을 병렬로 실행하여 동역학 수준의 도메인 무작위화를 구현합니다.
+
+### 이론적 분석
+- 다중 시뮬레이터 훈련이 단일 시뮬레이터 훈련보다 더 엄격한 귀납적 편향 상한을 생성할 수 있음을 증명합니다. 즉, 시뮬레이터 가정으로 인한 오류를 더 효과적으로 제한합니다.
+
+### 실험 설정
+- **평가 지표**: 운동 추적 오류(motion-tracking error) 및 실행 성공률(execution success).
+- **기준 비교**: IsaacSim을 기준으로 MuJoCo에서 sim-to-sim 평가를 수행합니다.
+
+### 주요 수치
+- MuJoCo에서 PolySim의 실행 성공률은 IsaacSim 기준 대비 52.8% 향상되었습니다.
+- 추가 미세 조정 없이 실제 Unitree G1 로봇에 제로샷 배포가 가능합니다.
+
+### 결론
+- PolySim은 sim-to-real 격차를 효과적으로 줄였으며, sim-to-sim 및 sim-to-real 시나리오 모두에서 우수한 성능을 보여줍니다.
+- 코드는 논문 게재 후 오픈소스로 공개될 예정입니다.

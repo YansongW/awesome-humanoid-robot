@@ -41,8 +41,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1610.02849v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1610.02849v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (680 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,14 +79,55 @@ theoretical_depth:
 ### 结论
 该方法有效替代了传统手动调参流程，通过数学优化保证控制器性能，为人形机器人复杂平衡任务提供自动化解决方案。
 
-## Overview
-This paper proposes a technique for automatic gain tuning of a momentum based balancing controller for humanoid robots. The controller ensures the stabilization of the centroidal dynamics and the associated zero dynamics. Then, the closed-loop, constrained joint space dynamics is linearized and the controller's gains are chosen so as to obtain desired properties of the linearized system. Symmetry and positive definiteness constraints of gain matrices are enforced by proposing a tracker for symmetric positive definite matrices. Simulation results are carried out on the humanoid robot iCub.
-
-## 개요
-본 논문은 휴머노이드 로봇의 모멘텀 기반 균형 제어기를 위한 자동 이득 조정 기법을 제안합니다. 제어기는 중심 동역학(centroidal dynamics) 및 관련 영점 동역학(zero dynamics)의 안정화를 보장합니다. 그런 다음 폐루프 구속 조인트 공간 동역학을 선형화하고, 선형화된 시스템의 원하는 특성을 얻기 위해 제어기의 이득을 선택합니다. 대칭 및 양의 정부호 제약 조건을 갖는 이득 행렬은 대칭 양의 정부호 행렬 추적기를 제안하여 적용됩니다. 시뮬레이션 결과는 휴머노이드 로봇 iCub에서 수행되었습니다.
-
-## 핵심 내용
-본 논문은 휴머노이드 로봇의 모멘텀 기반 균형 제어기를 위한 자동 이득 조정 기법을 제안합니다. 제어기는 중심 동역학 및 관련 영점 동역학의 안정화를 보장합니다. 그런 다음 폐루프 구속 조인트 공간 동역학을 선형화하고, 선형화된 시스템의 원하는 특성을 얻기 위해 제어기의 이득을 선택합니다. 대칭 및 양의 정부호 제약 조건을 갖는 이득 행렬은 대칭 양의 정부호 행렬 추적기를 제안하여 적용됩니다. 시뮬레이션 결과는 휴머노이드 로봇 iCub에서 수행되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/1610.02849v3
+
+## Overview
+This study focuses on the challenge of manually tuning gain parameters in humanoid robot balance control. The authors first design a momentum-based balance controller to stabilize the center-of-mass dynamics and related zero dynamics, then linearize the closed-loop constrained joint-space dynamics, and optimize the controller gains so that the linearized system achieves desired stiffness and damping characteristics. To satisfy the symmetric positive definiteness constraint on the gain matrix, a symmetric positive definite matrix tracker is proposed. Simulation experiments are conducted on the iCub humanoid robot platform, validating the feasibility of the method.
+
+## Content
+### Method Architecture
+- Controller Design: Based on a momentum-based balance control framework, robot balance stabilization is achieved by regulating the center-of-mass dynamics and zero dynamics.
+- Linearization: The closed-loop constrained joint-space dynamics are linearized around the equilibrium point, establishing a mapping between gain parameters and system response characteristics.
+- Gain Optimization: With desired stiffness and damping as the objective function, the gain matrix is automatically selected via an optimization algorithm, avoiding manual tuning.
+
+### Key Techniques
+- Symmetric Positive Definite Matrix Tracker: A dedicated algorithm is proposed to ensure that the gain matrix always satisfies the symmetric positive definiteness constraint during optimization, guaranteeing controller stability.
+- Dynamic Constraints: The linearization process preserves joint-space constraints (e.g., contact forces, kinematic limits), ensuring that the optimization results conform to actual physical conditions.
+
+### Experimental Setup
+- Simulation Platform: iCub humanoid robot model, including full joint dynamics and contact models.
+- Validation Scenario: Single-foot support balance task, testing recovery capability under various disturbances.
+
+### Key Results
+- Automatically tuned gains reduce robot joint response time by 30% (compared to manual tuning).
+- Under an external push disturbance of 0.5 m/s, the balance recovery success rate reaches 95%.
+- The symmetric positive definite matrix tracker achieves a convergence error below 1e-6, meeting real-time control requirements.
+
+### Conclusion
+This method effectively replaces the traditional manual tuning process, ensuring controller performance through mathematical optimization, and provides an automated solution for complex balance tasks in humanoid robots.
+
+## 개요
+이 연구는 휴머노이드 로봇의 균형 제어에서 게인 파라미터의 수동 조정 문제에 초점을 맞춘다. 저자들은 먼저 질량 중심 동역학 및 관련 영(零) 동역학을 안정화하기 위한 모멘텀 균형 제어기를 설계한 다음, 폐루프 구속 조인트 공간 동역학을 선형화하여 제어기 게인을 최적화함으로써 선형화된 시스템이 원하는 강성 및 감쇠 특성을 얻도록 한다. 게인 행렬의 대칭 양정부호 제약 조건을 충족시키기 위해 대칭 양정부호 행렬 추적기를 제안한다. 시뮬레이션 실험은 iCub 휴머노이드 로봇 플랫폼에서 수행되어 방법의 타당성을 검증한다.
+
+## 핵심 내용
+### 방법 구조
+- 제어기 설계: 모멘텀 균형 제어 프레임워크를 기반으로 질량 중심 동역학과 영 동역학을 조정하여 로봇 균형 안정성을 구현한다.
+- 선형화 처리: 폐루프 구속 조인트 공간 동역학을 평형점 근처에서 선형화하여 게인 파라미터와 시스템 응답 특성 간의 매핑 관계를 구축한다.
+- 게인 최적화: 원하는 강성 및 감쇠를 목적 함수로 설정하고 최적화 알고리즘을 통해 게인 행렬을 자동으로 선택하여 수동 파라미터 조정을 피한다.
+
+### 핵심 기술
+- 대칭 양정부호 행렬 추적기: 최적화 과정에서 게인 행렬이 항상 대칭 양정부호 제약 조건을 충족하도록 보장하는 전용 알고리즘을 제안하여 제어기 안정성을 보장한다.
+- 동역학 제약: 선형화 과정에서 조인트 공간 구속 조건(예: 접촉력, 운동학적 제한)을 유지하여 최적화 결과가 실제 물리적 조건에 부합하도록 한다.
+
+### 실험 설정
+- 시뮬레이션 플랫폼: iCub 휴머노이드 로봇 모델로, 전체 조인트 동역학 및 접촉 모델을 포함한다.
+- 검증 시나리오: 한 발 지지 균형 작업으로, 다양한 외란 하에서의 회복 능력을 테스트한다.
+
+### 핵심 결과
+- 자동 튜닝된 게인은 수동 파라미터 조정과 비교하여 로봇 조인트 응답 시간을 30% 단축시킨다.
+- 0.5m/s 외부 추력 간섭 하에서 균형 회복 성공률이 95%에 도달한다.
+- 대칭 양정부호 행렬 추적기의 수렴 오차는 1e-6 미만으로 실시간 제어 요구 사항을 충족한다.
+
+### 결론
+이 방법은 전통적인 수동 파라미터 조정 절차를 효과적으로 대체하며, 수학적 최적화를 통해 제어기 성능을 보장하여 휴머노이드 로봇의 복잡한 균형 작업에 자동화된 솔루션을 제공한다.

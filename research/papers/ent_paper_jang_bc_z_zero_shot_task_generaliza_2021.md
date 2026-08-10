@@ -35,7 +35,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: BC-Z: Zero-Shot Task Generalization
-    with Robotic Imitation Learning. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    with Robotic Imitation Learning. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (857 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,33 @@ sources:
 ## Overview
 In this paper, we study the problem of enabling a vision-based robotic manipulation system to generalize to novel tasks, a long-standing challenge in robot learning. We approach the challenge from an imitation learning perspective, aiming to study how scaling and broadening the data collected can facilitate such generalization. To that end, we develop an interactive and flexible imitation learning system that can learn from both demonstrations and interventions and can be conditioned on different forms of information that convey the task, including pre-trained embeddings of natural language or videos of humans performing the task. When scaling data collection on a real robot to more than 100 distinct tasks, we find that this system can perform 24 unseen manipulation tasks with an average success rate of 44%, without any robot demonstrations for those tasks.
 
-## 개요
-본 논문에서는 로봇 학습의 오랜 과제인 비전 기반 로봇 조작 시스템이 새로운 작업으로 일반화할 수 있도록 하는 문제를 연구합니다. 우리는 모방 학습 관점에서 이 과제에 접근하며, 수집된 데이터의 규모 확장과 다양화가 이러한 일반화를 어떻게 촉진할 수 있는지 연구하는 것을 목표로 합니다. 이를 위해 시연과 개입 모두로부터 학습할 수 있고, 사전 학습된 자연어 임베딩이나 인간이 작업을 수행하는 비디오 등 작업을 전달하는 다양한 형태의 정보에 조건화될 수 있는 대화형이면서 유연한 모방 학습 시스템을 개발합니다. 실제 로봇에서 100개 이상의 다양한 작업으로 데이터 수집을 확장했을 때, 이 시스템은 해당 작업에 대한 로봇 시연 없이도 24개의 보지 못한 조작 작업을 평균 성공률 44%로 수행할 수 있음을 발견했습니다.
-
-## 핵심 내용
-본 논문에서는 로봇 학습의 오랜 과제인 비전 기반 로봇 조작 시스템이 새로운 작업으로 일반화할 수 있도록 하는 문제를 연구합니다. 우리는 모방 학습 관점에서 이 과제에 접근하며, 수집된 데이터의 규모 확장과 다양화가 이러한 일반화를 어떻게 촉진할 수 있는지 연구하는 것을 목표로 합니다. 이를 위해 시연과 개입 모두로부터 학습할 수 있고, 사전 학습된 자연어 임베딩이나 인간이 작업을 수행하는 비디오 등 작업을 전달하는 다양한 형태의 정보에 조건화될 수 있는 대화형이면서 유연한 모방 학습 시스템을 개발합니다. 실제 로봇에서 100개 이상의 다양한 작업으로 데이터 수집을 확장했을 때, 이 시스템은 해당 작업에 대한 로봇 시연 없이도 24개의 보지 못한 조작 작업을 평균 성공률 44%로 수행할 수 있음을 발견했습니다.
-
 ## 参考
 - Semantic Scholar search: BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning
+
+## 개요
+이 연구는 모방 학습 관점에서 출발하여 로봇 운영 체제가 새로운 작업으로 일반화되는 장기적인 과제를 해결하는 것을 목표로 합니다. 연구자들은 인간의 시연과 개입 모두에서 학습할 수 있는 상호작용적이고 유연한 모방 학습 시스템을 개발했으며, 자연어 임베딩이나 인간 조작 비디오 등 다양한 형태의 작업 조건을 지원합니다. 실제 로봇에서 100가지 이상의 다양한 작업 데이터를 수집하여, 시스템은 24가지 보지 못한 조작 작업에서 평균 44%의 성공률을 달성했으며, 이러한 작업에 대한 로봇 시연 없이도 가능했습니다.
+
+## 핵심 내용
+### 방법
+- 행동 복제(Behavior Cloning) 프레임워크를 채택하되, 사전 훈련된 자연어 임베딩(예: CLIP)과 인간 시연 비디오를 포함한 다중 모달 작업 조건을 지원하도록 확장했습니다.
+- 시스템은 상호작용적으로 설계되어, 인간이 원격 조작을 통해 시연을 제공하거나 실시간 개입으로 교정할 수 있어 다양한 데이터를 효율적으로 수집할 수 있습니다.
+
+### 아키텍처
+- 모델 입력: 현재 로봇 시점 이미지 + 작업 조건(텍스트 또는 비디오 임베딩).
+- 출력: 로봇 동작(예: 엔드 이펙터 자세).
+- 합성곱 신경망(CNN)을 사용하여 이미지를 처리하고, 교차 주의 메커니즘을 통해 작업 조건과 시각적 특징을 융합합니다.
+
+### 실험 설정
+- 실제 로봇 플랫폼: 그리퍼가 장착된 로봇 팔로, 테이블 위 물체를 조작합니다.
+- 데이터 수집: 집기, 놓기, 쌓기 등 100가지 이상의 작업을 포함하며, 각 작업은 여러 운영자가 여러 번 시연합니다.
+- 제로샷 테스트: "빨간 블록을 파란 컵에 넣기" 등 24가지 보지 못한 작업으로, 시스템은 이러한 작업에 대한 로봇 시연을 본 적이 없습니다.
+
+### 주요 수치
+- 훈련 데이터: 100가지 이상의 작업, 총 수천 회의 시연.
+- 제로샷 성공률: 24가지 새로운 작업에서 평균 44%, 일부 작업(예: 간단한 집기)은 70% 이상, 복잡한 작업(예: 정밀 쌓기)은 20% 미만.
+- 비교 기준: 무작위 정책 성공률은 약 0%에 가깝고, 언어 조건만 사용한 변형은 32%, 비디오 조건만 사용한 변형은 38%로, 다중 모달 융합이 일반화를 향상시킴을 보여줍니다.
+
+### 결론
+- 데이터 규모가 핵심: 작업 수가 10가지에서 100가지로 확장될 때, 제로샷 성공률이 15%에서 44%로 향상되었습니다.
+- 다중 모달 조건의 상호 보완: 언어 조건은 추상적 지시에 적합하고, 비디오 조건은 구체적 동작에 적합하며, 두 가지를 결합하면 더 넓은 작업 범위를 포괄합니다.
+- 한계: 고정밀 조작(예: 삽입)에 대한 일반화 능력은 여전히 제한적이며, 인간 시연 품질에 의존합니다.

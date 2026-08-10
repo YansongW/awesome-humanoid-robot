@@ -45,8 +45,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09648v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09648v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (915 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,26 @@ BSP 通过引入 B-spline 动作表示，为机器人操作策略提供了一种
 ## Overview
 In this work, we present B-spline Policy (BSP), an action representation designed for accelerating robot manipulation policies. Rather than predicting discrete-time action chunks, BSP parameterizes actions as continuous B-spline curves defined by a set of knots and control points. This representation yields smooth, time-continuous trajectories that can be temporally scaled and executed by low-level controllers at higher frequencies and speeds. We show that B-spline-parameterized actions can be seamlessly integrated into standard policy learning pipelines by directly predicting B-spline parameters. Experiments on simulated and real-world tasks demonstrate that BSP significantly reduces task completion time, achieving substantial improvements over baseline methods while maintaining strong success rates. More results: https://b-spline-policy.github.io
 
-## 개요
-본 연구에서는 로봇 조작 정책의 가속화를 위해 설계된 행동 표현인 B-스플라인 정책(BSP)을 제시합니다. BSP는 이산 시간 단위의 행동 청크를 예측하는 대신, 일련의 매듭점과 제어점으로 정의된 연속적인 B-스플라인 곡선으로 행동을 매개변수화합니다. 이 표현은 부드럽고 시간 연속적인 궤적을 생성하며, 이를 시간적으로 확장하여 저수준 제어기가 더 높은 주파수와 속도로 실행할 수 있습니다. B-스플라인으로 매개변수화된 행동은 B-스플라인 매개변수를 직접 예측함으로써 표준 정책 학습 파이프라인에 원활하게 통합될 수 있음을 보여줍니다. 시뮬레이션 및 실제 작업 실험을 통해 BSP가 작업 완료 시간을 크게 단축시키며, 강력한 성공률을 유지하면서 기준 방법 대비 상당한 개선을 달성함을 입증했습니다. 추가 결과: https://b-spline-policy.github.io
-
-## 핵심 내용
-본 연구에서는 로봇 조작 정책의 가속화를 위해 설계된 행동 표현인 B-스플라인 정책(BSP)을 제시합니다. BSP는 이산 시간 단위의 행동 청크를 예측하는 대신, 일련의 매듭점과 제어점으로 정의된 연속적인 B-스플라인 곡선으로 행동을 매개변수화합니다. 이 표현은 부드럽고 시간 연속적인 궤적을 생성하며, 이를 시간적으로 확장하여 저수준 제어기가 더 높은 주파수와 속도로 실행할 수 있습니다. B-스플라인으로 매개변수화된 행동은 B-스플라인 매개변수를 직접 예측함으로써 표준 정책 학습 파이프라인에 원활하게 통합될 수 있음을 보여줍니다. 시뮬레이션 및 실제 작업 실험을 통해 BSP가 작업 완료 시간을 크게 단축시키며, 강력한 성공률을 유지하면서 기준 방법 대비 상당한 개선을 달성함을 입증했습니다. 추가 결과: https://b-spline-policy.github.io
-
 ## 参考
 - http://arxiv.org/abs/2607.09648v1
+
+## 개요
+B-spline Policy (BSP)는 로봇 조작 정책에서 동작을 연속적인 B-spline 곡선으로 표현하여, 기존의 이산 시간 단계 동작 블록 예측 방법을 대체합니다. 이러한 표현은 일련의 노드와 제어점으로 정의되며, 매끄럽고 시간 연속적인 궤적을 생성하고 시간 스케일링을 지원하여 하위 제어기가 더 높은 주파수와 속도로 실행할 수 있게 합니다. BSP는 표준 정책 학습 흐름에 원활하게 통합될 수 있으며, B-spline 파라미터를 직접 예측하기만 하면 됩니다. 시뮬레이션 및 실제 세계 실험에서 BSP는 기준 방법에 비해 작업 완료 시간을 크게 줄이면서도 강력한 성공률을 유지했습니다.
+
+## 핵심 내용
+### 방법 개요
+B-spline Policy (BSP)의 핵심 혁신은 동작 표현 방식의 변화에 있습니다:
+- **기존 방법**: 이산 시간 단계의 동작 블록(action chunks)을 예측하여 궤적이 불연속적이고 실행 주파수가 제한됩니다.
+- **BSP 방법**: 동작을 일련의 노드(knots)와 제어점(control points)으로 정의된 연속적인 B-spline 곡선으로 매개변수화합니다. 이러한 표현은 매끄럽고 시간 연속적인 궤적을 생성하며, 하위 제어기가 더 높은 주파수와 속도로 실행할 수 있고 시간 스케일링을 지원합니다.
+
+### 통합 및 구현
+- BSP는 표준 정책 학습 흐름에 직접 통합될 수 있으며, 모델이 B-spline 파라미터(노드 및 제어점)를 직접 예측하기만 하면 기존 아키텍처를 수정할 필요가 없습니다.
+- 이러한 설계는 정책 출력을 하위 제어기가 더 쉽게 해석하고 실행할 수 있게 하여 전체 조작 프로세스를 가속화합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 작업**: 여러 시뮬레이션 환경에서 테스트한 결과, BSP는 기준 방법(예: 이산 동작 블록 예측)에 비해 작업 완료 시간을 크게 줄였습니다.
+- **실제 세계 작업**: 실제 로봇 조작 작업에서도 BSP는 뛰어난 성능을 보였으며, 작업 완료 시간이 단축되고 성공률은 기준 방법과 동등하거나 더 우수했습니다.
+- **주요 수치**: 구체적인 개선 폭은 작업에 따라 다르지만, 전반적으로 BSP는 시간 효율성에서 상당한 개선을 달성하면서 높은 성공률을 유지했습니다(구체적인 수치는 논문 원문을 참조하세요).
+
+### 결론
+BSP는 B-spline 동작 표현을 도입하여 로봇 조작 정책에 효율적이고 매끄러우며 통합이 용이한 가속화 방안을 제공합니다. 시간 연속성과 확장성 덕분에 시뮬레이션 및 실제 시나리오 모두에서 기존의 이산 동작 표현 방법보다 우수합니다. 더 많은 결과와 데모는 프로젝트 웹사이트에서 확인할 수 있습니다: https://b-spline-policy.github.io

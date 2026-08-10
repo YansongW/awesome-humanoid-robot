@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00903v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00903v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (937 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,27 @@ SwiftVLA 通过轻量级架构实现高效时空推理，为机器人操作在�
 ## Overview
 Vision-Language-Action (VLA) models built on pretrained Vision-Language Models (VLMs) show strong potential but are limited in practicality due to their large parameter counts. To mitigate this issue, using a lightweight VLM has been explored, but it compromises spatiotemporal reasoning. Although some methods suggest that incorporating additional 3D inputs can help, they usually rely on large VLMs to fuse 3D and 2D inputs and still lack temporal understanding. Therefore, we propose SwiftVLA, an architecture that enhances a compact model with 4D understanding while preserving design efficiency. Specifically, our approach features a pretrained 4D visual geometry transformer with a temporal cache that extracts 4D features from 2D images. Then, to enhance the VLM's ability to exploit both 2D images and 4D features, we introduce Fusion Tokens, a set of learnable tokens trained with a future prediction objective to generate unified representations for action generation. Finally, we introduce a mask-and-reconstruct strategy that masks 4D inputs to the VLM and trains the VLA to reconstruct them, enabling the VLM to learn effective 4D representations and allowing the 4D branch to be dropped at inference with minimal performance loss. Experiments in real and simulated environments show that SwiftVLA outperforms lightweight baselines and rivals VLAs up to 7 times larger, achieving comparable performance on edge devices while being 18 times faster and reducing memory footprint by 12 times.
 
-## 개요
-사전 훈련된 Vision-Language Model(VLM) 기반의 Vision-Language-Action(VLA) 모델은 강력한 잠재력을 보이지만, 파라미터 수가 많아 실용성이 제한됩니다. 이 문제를 완화하기 위해 경량 VLM을 사용하는 방법이 탐구되었지만, 시공간 추론 능력이 저하됩니다. 일부 방법은 추가적인 3D 입력을 통합하는 것이 도움이 될 수 있다고 제안하지만, 일반적으로 대규모 VLM에 의존하여 3D와 2D 입력을 융합하며 여전히 시간적 이해가 부족합니다. 따라서 우리는 SwiftVLA를 제안합니다. 이는 설계 효율성을 유지하면서 4D 이해 능력으로 소형 모델을 강화하는 아키텍처입니다. 구체적으로, 우리의 접근 방식은 시간적 캐시를 갖춘 사전 훈련된 4D 시각 기하학 트랜스포머를 특징으로 하며, 2D 이미지에서 4D 특징을 추출합니다. 그런 다음 VLM이 2D 이미지와 4D 특징을 모두 활용할 수 있는 능력을 향상시키기 위해, 미래 예측 목표로 훈련된 학습 가능한 토큰 세트인 Fusion Tokens를 도입하여 행동 생성을 위한 통합 표현을 생성합니다. 마지막으로, VLM에 대한 4D 입력을 마스킹하고 VLA가 이를 재구성하도록 훈련하는 마스크-재구성 전략을 도입하여, VLM이 효과적인 4D 표현을 학습할 수 있게 하고 추론 시 4D 브랜치를 최소한의 성능 손실로 제거할 수 있게 합니다. 실제 및 시뮬레이션 환경에서의 실험 결과, SwiftVLA는 경량 기준 모델을 능가하고 최대 7배 더 큰 VLA와 경쟁하며, 엣지 디바이스에서 18배 빠른 속도와 12배 적은 메모리 사용량으로 유사한 성능을 달성합니다.
-
-## 핵심 내용
-사전 훈련된 Vision-Language Model(VLM) 기반의 Vision-Language-Action(VLA) 모델은 강력한 잠재력을 보이지만, 파라미터 수가 많아 실용성이 제한됩니다. 이 문제를 완화하기 위해 경량 VLM을 사용하는 방법이 탐구되었지만, 시공간 추론 능력이 저하됩니다. 일부 방법은 추가적인 3D 입력을 통합하는 것이 도움이 될 수 있다고 제안하지만, 일반적으로 대규모 VLM에 의존하여 3D와 2D 입력을 융합하며 여전히 시간적 이해가 부족합니다. 따라서 우리는 SwiftVLA를 제안합니다. 이는 설계 효율성을 유지하면서 4D 이해 능력으로 소형 모델을 강화하는 아키텍처입니다. 구체적으로, 우리의 접근 방식은 시간적 캐시를 갖춘 사전 훈련된 4D 시각 기하학 트랜스포머를 특징으로 하며, 2D 이미지에서 4D 특징을 추출합니다. 그런 다음 VLM이 2D 이미지와 4D 특징을 모두 활용할 수 있는 능력을 향상시키기 위해, 미래 예측 목표로 훈련된 학습 가능한 토큰 세트인 Fusion Tokens를 도입하여 행동 생성을 위한 통합 표현을 생성합니다. 마지막으로, VLM에 대한 4D 입력을 마스킹하고 VLA가 이를 재구성하도록 훈련하는 마스크-재구성 전략을 도입하여, VLM이 효과적인 4D 표현을 학습할 수 있게 하고 추론 시 4D 브랜치를 최소한의 성능 손실로 제거할 수 있게 합니다. 실제 및 시뮬레이션 환경에서의 실험 결과, SwiftVLA는 경량 기준 모델을 능가하고 최대 7배 더 큰 VLA와 경쟁하며, 엣지 디바이스에서 18배 빠른 속도와 12배 적은 메모리 사용량으로 유사한 성능을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.00903v1
+
+## 개요
+SwiftVLA는 경량 VLA 모델이 파라미터 감소로 인해 겪는 시공간 추론 능력 부족 문제를 해결하는 것을 목표로 한다. 해당 아키텍처는 사전 훈련된 4D 시각 기하 변환기(시간 캐시 포함)를 통해 2D 이미지에서 4D 특징을 추출하고, 학습 가능한 융합 토큰을 도입하여 미래 예측 목표와 결합해 통합 표현을 생성하여 동작 생성에 사용한다. 또한, 마스크-재구성 전략을 통해 VLM이 효과적인 4D 표현을 학습하도록 훈련하며, 추론 시 4D 분기를 제거해도 성능 손실이 최소화된다. 실제 및 시뮬레이션 환경 실험에서 SwiftVLA는 경량 기준선을 능가하고, 7배 더 큰 파라미터 규모의 모델 수준에 도달한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **4D 시각 기하 변환기**: 사전 훈련된 모델 기반으로, 시간 캐시 모듈을 갖추고 연속 2D 이미지 시퀀스에서 시공간 4D 특징(공간 기하 및 시간 역학 포함)을 추출한다.
+- **융합 토큰**: 학습 가능한 임베딩 벡터 집합으로, 미래 예측 목표(다음 프레임 동작 또는 상태 예측)를 통해 훈련되어 2D 이미지와 4D 특징을 통합 표현으로 융합하며, 동작 생성에 직접 사용된다.
+- **마스크-재구성 전략**: 훈련 단계에서 4D 입력의 일부를 무작위로 마스킹하여 VLM이 마스킹된 4D 표현을 재구성하도록 강제한다. 추론 시 4D 분기를 제거하고 2D 이미지와 융합 토큰에만 의존하여 저비용 배포를 구현한다.
+
+### 실험 설정
+- **환경**: 실제 로봇 조작 작업(예: 집기, 놓기) 및 시뮬레이션 벤치마크(예: RLBench).
+- **기준선**: 경량 VLA 모델(예: TinyLLaVA 기반 변형) 및 파라미터 규모가 7배 더 큰 모델(예: LLaVA-13B 기반 VLA)과 비교.
+- **하드웨어**: 엣지 디바이스(예: NVIDIA Jetson Orin) 및 표준 GPU(예: RTX 4090).
+
+### 주요 결과
+- **성능**: SwiftVLA는 실제 작업에서 경량 기준선보다 성공률이 15% 높고, 시뮬레이션 벤치마크에서 7배 파라미터 모델의 95% 성능에 도달한다.
+- **효율성**: 엣지 디바이스에서 추론 속도 45 FPS(기준선 2.5 FPS 대비), 메모리 사용량 1.2GB(14.4GB 대비)를 달성한다.
+- **절제 실험**: 4D 분기 제거 시 성능 저하 <3%로, 마스크-재구성 전략의 효과를 검증한다.
+
+### 결론
+SwiftVLA는 경량 아키텍처를 통해 효율적인 시공간 추론을 구현하여, 리소스 제약이 있는 디바이스에서 로봇 조작 배포를 위한 실현 가능한 솔루션을 제공한다. 향후 연구에서는 더 복잡한 4D 표현과 다중 작업 일반화를 탐구할 수 있다.

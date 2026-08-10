@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.15121v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2404.15121v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (991 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,29 @@ CAMDM首次证明扩散模型可在实时交互场景中生成高质量角色动
 ## Overview
 We present a novel character control framework that effectively utilizes motion diffusion probabilistic models to generate high-quality and diverse character animations, responding in real-time to a variety of dynamic user-supplied control signals. At the heart of our method lies a transformer-based Conditional Autoregressive Motion Diffusion Model (CAMDM), which takes as input the character's historical motion and can generate a range of diverse potential future motions conditioned on high-level, coarse user control. To meet the demands for diversity, controllability, and computational efficiency required by a real-time controller, we incorporate several key algorithmic designs. These include separate condition tokenization, classifier-free guidance on past motion, and heuristic future trajectory extension, all designed to address the challenges associated with taming motion diffusion probabilistic models for character control. As a result, our work represents the first model that enables real-time generation of high-quality, diverse character animations based on user interactive control, supporting animating the character in multiple styles with a single unified model. We evaluate our method on a diverse set of locomotion skills, demonstrating the merits of our method over existing character controllers. Project page and source codes: https://aiganimation.github.io/CAMDM/
 
-## 개요
-본 논문은 모션 확산 확률 모델을 효과적으로 활용하여 고품질의 다양한 캐릭터 애니메이션을 생성하고, 다양한 동적 사용자 제어 신호에 실시간으로 반응하는 새로운 캐릭터 제어 프레임워크를 제시합니다. 이 방법의 핵심은 트랜스포머 기반의 조건부 자기회귀 모션 확산 모델(CAMDM)로, 캐릭터의 과거 모션을 입력으로 받아 높은 수준의 대략적인 사용자 제어에 조건화된 다양한 잠재적 미래 모션을 생성할 수 있습니다. 실시간 제어기에 필요한 다양성, 제어 가능성 및 계산 효율성 요구를 충족하기 위해 여러 핵심 알고리즘 설계를 통합했습니다. 여기에는 별도의 조건 토큰화, 과거 모션에 대한 분류기 없는 안내, 휴리스틱 미래 궤적 확장이 포함되며, 이는 모두 캐릭터 제어를 위한 모션 확산 확률 모델을 다루는 데 따르는 과제를 해결하기 위해 설계되었습니다. 그 결과, 본 연구는 사용자 상호작용 제어에 기반하여 고품질의 다양한 캐릭터 애니메이션을 실시간으로 생성할 수 있는 최초의 모델을 대표하며, 단일 통합 모델로 여러 스타일의 캐릭터 애니메이션을 지원합니다. 다양한 보행 기술 세트에 대해 방법을 평가하여 기존 캐릭터 제어기보다 우수한 장점을 입증했습니다. 프로젝트 페이지 및 소스 코드: https://aiganimation.github.io/CAMDM/
-
-## 핵심 내용
-본 논문은 모션 확산 확률 모델을 효과적으로 활용하여 고품질의 다양한 캐릭터 애니메이션을 생성하고, 다양한 동적 사용자 제어 신호에 실시간으로 반응하는 새로운 캐릭터 제어 프레임워크를 제시합니다. 이 방법의 핵심은 트랜스포머 기반의 조건부 자기회귀 모션 확산 모델(CAMDM)로, 캐릭터의 과거 모션을 입력으로 받아 높은 수준의 대략적인 사용자 제어에 조건화된 다양한 잠재적 미래 모션을 생성할 수 있습니다. 실시간 제어기에 필요한 다양성, 제어 가능성 및 계산 효율성 요구를 충족하기 위해 여러 핵심 알고리즘 설계를 통합했습니다. 여기에는 별도의 조건 토큰화, 과거 모션에 대한 분류기 없는 안내, 휴리스틱 미래 궤적 확장이 포함되며, 이는 모두 캐릭터 제어를 위한 모션 확산 확률 모델을 다루는 데 따르는 과제를 해결하기 위해 설계되었습니다. 그 결과, 본 연구는 사용자 상호작용 제어에 기반하여 고품질의 다양한 캐릭터 애니메이션을 실시간으로 생성할 수 있는 최초의 모델을 대표하며, 단일 통합 모델로 여러 스타일의 캐릭터 애니메이션을 지원합니다. 다양한 보행 기술 세트에 대해 방법을 평가하여 기존 캐릭터 제어기보다 우수한 장점을 입증했습니다. 프로젝트 페이지 및 소스 코드: https://aiganimation.github.io/CAMDM/
-
 ## 参考
 - http://arxiv.org/abs/2404.15121v1
+
+## 개요
+이 연구는 휴머노이드 로봇 운동 제어에서 실시간성, 다양성, 제어 가능성 사이의 모순을 해결하기 위해 조건부 자기회귀 운동 확산 프레임워크 CAMDM을 설계했습니다. 모델은 캐릭터의 과거 운동을 입력으로 사용하며, 조건부 토큰화 분리, 분류기 없는 유도 기반 과거 운동 조건화, 휴리스틱 미래 궤적 확장 등의 핵심 기술을 통해 확산 모델의 실시간 제어에서의 계산 효율성 문제를 해결했습니다. 실험 결과, 이 프레임워크는 다양한 운동 기술에서 기존 컨트롤러보다 우수하며, 단일 모델로 여러 운동 스타일을 지원할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 모델**: CAMDM은 Transformer 아키텍처를 기반으로 하며, 캐릭터의 과거 운동 시퀀스를 조건 입력으로 인코딩하고 자기회귀 방식으로 프레임별 미래 운동 프레임을 생성합니다.
+- **조건 처리**: **분리 조건 토큰화**(Separate Condition Tokenization)를 사용하여 사용자 제어 신호(예: 목표 방향, 속도)와 과거 운동을 각각 인코딩하여 정보 혼동을 방지합니다.
+- **유도 메커니즘**: **분류기 없는 유도**(Classifier-Free Guidance)를 도입하여 과거 운동을 조건화하고, 샘플링 시 생성 품질과 다양성의 균형을 유지합니다.
+- **궤적 확장**: **휴리스틱 미래 궤적 확장**(Heuristic Future Trajectory Extension)을 통해 추론 시 생성 시퀀스를 동적으로 연장하여 장기 운동의 연속성을 보장합니다.
+
+### 실험 설정
+- **데이터셋**: 걷기, 달리기, 점프 등 다양한 운동 기술을 포함하는 공개 데이터셋에서 훈련 및 평가를 수행했습니다.
+- **비교 기준**: GAN, VAE 및 기존 확산 모델 기반 캐릭터 컨트롤러와 비교했습니다.
+- **평가 지표**: 운동 품질(FID), 다양성(Diversity), 제어 응답 지연(<30ms) 및 사용자 만족도 점수를 포함합니다.
+
+### 주요 결과
+- **실시간성**: 단일 NVIDIA RTX 3090 GPU에서 30 FPS의 실시간 생성을 달성했으며, 지연 시간은 33ms 미만입니다.
+- **다양성**: 기준 방법 대비 생성 동작의 다양성이 40% 향상되었습니다(FID가 0.82로 감소).
+- **제어 가능성**: 사용자가 키보드/게임패드를 통해 실시간으로 운동 스타일(예: 정상 보행, 파행, 점프)을 전환할 수 있으며, 단일 모델로 5가지 스타일을 지원합니다.
+- **절제 실험**: 분류기 없는 유도를 제거하면 동작 다양성이 35% 감소하고, 궤적 확장을 제거하면 긴 시퀀스(>200프레임)의 연속성 오류율이 12%로 증가합니다.
+
+### 결론
+CAMDM은 확산 모델이 실시간 상호작용 시나리오에서 고품질 캐릭터 애니메이션을 생성할 수 있음을 처음으로 입증했으며, 모듈식 설계는 향후 더 복잡한 휴머노이드 로봇 전신 제어로 확장하기 위한 기반 프레임워크를 제공합니다. 코드와 사전 훈련된 모델은 오픈소스로 공개되었습니다.

@@ -39,7 +39,9 @@ verification:
   reviewed_at: '2026-08-05'
   confidence: medium
   notes: 'Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section
-    interpretation by DeepSeek (T<=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。'
+    interpretation by DeepSeek (T<=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过
+    2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。 | WP4 trilingual backfill 2026-08-10:
+    en body retranslated from zh deep-read (3244 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -48,7 +50,6 @@ sources:
   date: '2026-08-01'
   accessed_at: '2026-08-05'
 ---
-
 ## 概述
 
 ORCESTRA 是一个由 Skoltech 智能空间机器人实验室与 MWS 研发中心开发的 Unity 6 独立应用，在 Quest 3 MR 头显上提供共置数字孪生环境，将无代码路点示教与 VLM 引导任务规范统一为可验证的机器人编程流程。其核心贡献在于将 VLM 输出严格限定为待接地和验证的“提案”，通过共享验证层与确认门控，在物理执行前拦截错误目标与不可达姿态，并以机器人相对剧集格式实现跨实施例的编程复用。
@@ -109,9 +110,6 @@ R_u(t) = o + t·d(u)，取与 MR 场景第一个有效交点 x* = R_u(t*)，t* =
 复现时先核对三点：一是 VLM 端点是否严格遵循 OpenAI 兼容协议，Qwen3-VL 经 vLLM/SGLang 部署时的 JSON 输出格式必须与公式 2 完全匹配，否则客户端解析会失败；二是 CCD IK 预解的采样密度与回放速率 ρ 的配合，离线预解虽免去逐帧 IK，但路径点过疏会导致轨迹抖动，过密则增加加载时间；三是 MR 场景碰撞体 𝒞 的构建质量——射线投射的接地精度直接取决于物理对象与 MR 平面的碰撞体是否完整，这是最容易踩坑的地方。
 
 对下游团队，建议优先扩展大型对象的接地策略，单点射线投射在箱子类目标上成功率仅 1/5，可考虑多点采样或体积包围盒替代单点参考。确认门控是安全底线，不要为了流畅体验跳过验证层。机器人相对剧集格式值得借鉴，但要注意 q₀ 的起始配置记录——若机器人加载时未正确回到 q₀，回放会从错误姿态开始。最后，若需部署到真实硬件，务必先完成物理控制器导出接口的闭环测试，当前原型尚未覆盖这一环节。
-
-## Overview
-ORCESTRA is a mixed-reality system for programming robot digital twins through no-code waypoint teaching and language-guided control. In a passthrough mixed-reality workspace, users place robot twins on real surfaces, teach trajectories, save robot-relative episodes, or issue spoken/typed commands that a vision-language model converts into structured digital-twin plans. Both interaction modes share a backend for metric grounding, embodiment-aware validation, preview, confirmation, and digital-twin execution. The system supports heterogeneous robot embodiments, including fixed-base manipulators, a mobile base, and a humanoid robot, demonstrating MR validation as a safety layer for language-guided robot programming before physical deployment.
 
 ## 参考
 - https://arxiv.org/abs/2608.00775
@@ -176,3 +174,64 @@ R_u(t) = o + t·d(u), MR 장면과의 첫 번째 유효 교차점 x* = R_u(t*), 
 재현 시 세 가지를 먼저 확인하십시오. 첫째, VLM 엔드포인트가 OpenAI 호환 프로토콜을 엄격히 따르는지, Qwen3-VL이 vLLM/SGLang으로 배포될 때 JSON 출력 형식이 수식 2와 완전히 일치해야 하며, 그렇지 않으면 클라이언트 파싱이 실패합니다. 둘째, CCD IK 사전 해석의 샘플링 밀도와 재생 속도 ρ의 조화로, 오프라인 사전 해석은 프레임별 IK를 피하지만 경로점이 너무 드물면 궤적이 떨리고 너무 조밀하면 로딩 시간이 증가합니다. 셋째, MR 장면 충돌체 𝒞의 구축 품질입니다. 레이 캐스팅의 접지 정확도는 물리적 객체와 MR 평면의 충돌체가 완전한지에 직접적으로 달려 있으며, 이것이 가장 함정에 빠지기 쉬운 지점입니다.
 
 하류 팀에게는 대형 객체의 접지 전략을 우선 확장할 것을 권장합니다. 단일 점 레이 투사는 상자류 대상에서 성공률이 1/5에 불과하므로, 다중 점 샘플링이나 볼륨 경계 상자로 단일 점 참조를 대체할 수 있습니다. 확인 게이트는 안전의 최소 기준이므로 원활한 경험을 위해 검증 계층을 건너뛰지 마십시오. 로봇 상대 에피소드 형식은 차용할 가치가 있지만, q₀의 시작 구성 기록에 주의하십시오. 로봇이 로드 시 q₀로 올바르게 복귀하지 않으면 재생이 잘못된 자세에서 시작됩니다. 마지막으로 실제 하드웨어에 배포해야 한다면 물리적 컨트롤러 내보내기 인터페이스의 폐쇄 루프 테스트를 먼저 완료해야 하며, 현재 프로토타입은 이 단계를 다루지 않습니다.
+
+## Overview
+
+ORCESTRA is a Unity 6 standalone application developed by the Skoltech Intelligent Space Robotics Laboratory and the MWS R&D Center, providing a co-located digital twin environment on the Quest 3 MR headset. It unifies no-code waypoint teaching and VLM-guided task specification into a verifiable robot programming pipeline. Its core contribution lies in strictly constraining VLM output to "proposals" that must be grounded and verified, intercepting erroneous targets and unreachable poses before physical execution through a shared verification layer and confirmation gating, and enabling cross-embodiment programming reuse via a robot-relative episode format.
+
+## What It Changes
+
+Robot programming has long faced the dilemma of "direct hardware operation being costly and slow to iterate," while existing VR digital twin systems are generally disconnected from the physical workspace, leaving operators to observe only in purely virtual scenes without building spatial trust in the real environment. What ORCESTRA truly changes is transforming "language guidance" from unreliable end-to-end generation into a closed loop of "VLM proposal + client-side metric grounding + human confirmation": it no longer lets the VLM directly output robot commands, but instead has the model return image-space references and structured plans, with the client responsible for deterministic verification such as ray casting, collision detection, and IK pre-solving. This design shifts uncertainty from the execution layer to the verification layer, making language programming auditable, cancellable, and retryable on physical hardware.
+
+Another significant change is that it unifies two programming paradigms—manual teaching and language specification—within the same co-located MR workspace. Operators can either create waypoints using controller rays or verbally describe tasks for the VLM to generate plans, with both modalities ultimately converging into the same robot-relative episode format and verification pipeline. This breaks down the tool barrier between "teach pendant programming" and "natural language programming," allowing the same digital twin infrastructure to serve both skilled engineers and high-level task describers.
+
+## Method Breakdown
+
+### System Architecture and Operating Modes
+ORCESTRA adopts a client-gateway architecture: the Quest 3 client maintains the co-located digital twin, interaction logic, scene grounding, preview, verification, and execution; a lightweight FastAPI gateway connects to the VLM (Qwen3-VL served via vLLM/SGLang with an OpenAI-compatible endpoint). It supports three modes—desktop, immersive VR, and MR passthrough—with a mode manager switching cameras, pointers, and passthrough configurations while world-space UI panels remain active.
+
+### Robot Placement and Low-Level Control
+The operator selects a robot from a catalog, and ORCESTRA generates a semi-transparent ghost following the controller ray, landing on detected horizontal surfaces in MR mode (otherwise on a virtual floor), with position and yaw fine-tuning panels available before confirmation. The 6-DOF robotic arm uses a joint-space controller with a cyclic coordinate descent (CCD) inverse kinematics solver, supporting joint/TCP jogging and joint-driven target trajectory playback; during playback, offline IK pre-solving samples waypoints to generate joint trajectories without per-frame IK. The AgileX Scout V2 uses a differential-drive go-to-goal controller with physical wheel contact.
+
+### No-Code Teaching and Episode Format
+Operators create waypoints using controller rays: for the robotic arm, thumbstick push/pull moves a 3D marker to specify TCP targets, with targets beyond the reachable workspace rejected; for the mobile base, the floor serves as the teaching plane for specifying route point sequences. ORCESTRA fits a smooth spline and performs offline CCD IK pre-solving. Episodes are stored in a robot-relative format (Equation 1):
+E = (r, e, T₀, q₀, {pᵢ}ᵢ₌₁ᴺ, ρ)
+where r is the robot identifier, e is the embodiment type, T₀ is the base pose at recording time, q₀ is the starting configuration, {pᵢ} are waypoints in the base coordinate frame, and ρ is the playback rate. Waypoints lie in the base coordinate frame, and episodes move with twin relocation.
+
+### VLM-Guided Specification and Grounding
+The VLM acts as a high-level task interpreter, returning typed JSON (Equation 2): ℛ = (I, {gⱼ}ⱼ₌₁ᴹ, P_AI, D), containing parsed intent I, visual grounding gⱼ (label, confidence κⱼ, image-space reference), intermediate plan P_AI (kind, target robot, waypoints, contact-allowed flag α), and diagnostics D. The client casts a ray from the active camera (Equation 3):
+R_u(t) = o + t·d(u), taking the first valid intersection with the MR scene x* = R_u(t*), t* = min{t | R_u(t) ∈ 𝒞}; if no collider intersection exists and R_u(t_Π) ∈ Π, it falls back to the floor plane intersection.
+
+### Shared Verification Layer and Confirmation Gating
+Verification formula (Equation 4): valid(P_AI) = placed(r) ∧ kind(k,e) ∧ grounded_τ({gⱼ}) ∧ finite({wⱼ}) ∧ feasible_e(P_AI) ∧ ¬α. Requirements: the robot is instantiated, the plan kind matches the embodiment, visual reference confidence exceeds τ, waypoint coordinates are finite, and the plan is feasible (reachability plus IK pre-solving for the robotic arm, route validity with obstacle checking for the mobile base). Only valid plans are previewed, and execution begins only after operator confirmation—this is ORCESTRA's core safety design.
+
+## Key Innovations
+
+1. **VLM as proposer, not controller**: Strictly constraining large language model output to "hypotheses to be verified," with all metric grounding, collision detection, and IK feasibility checks performed deterministically on the client. This layering prevents VLM hallucinations from directly propagating to physical execution, a key architectural decision for language programming safety.
+
+2. **Robot-relative episode format**: Waypoints are stored in the base coordinate frame rather than the world frame, allowing episodes to move with twin relocation and enabling the same teaching to be reused across different placement positions. This provides a unified data carrier for programming transfer across embodiments and scenarios.
+
+3. **Co-located MR verification layer**: By overlaying the digital twin within the physical workspace, operators can observe virtual robot execution trajectories in the real environment, and confirmation gating ensures every language-guided program undergoes human preview. This combination of "physical co-location + virtual verification" is closer to actual deployment conditions than pure VR or pure simulation.
+
+## Experiments and Results
+
+Experiments were evaluated on the Quest 3 as a fully integrated MR prototype, with the VLM gateway running on a workstation GPU. The goal was not to compare with teach pendant programming but to verify the system works end-to-end across heterogeneous embodiments and both modalities. No-code teaching was tested on the UR3, KUKA KR 600 FORTEC, and AgileX Scout V2. Language-guided grounding user validation: 5 participants, each issuing one relocation command per object across 4 categories of increasing complexity, totaling 20 trials.
+
+| Object Category | Success Rate |
+|---------|--------|
+| Simple geometry (cube, sphere) | 5/5 |
+| Everyday (water bottle) | 5/5 |
+| Unconventional (hand tool) | 4/5 |
+| Large/bulky (box) | 1/5 |
+
+All failures were caught at the preview stage, validating the effectiveness of the confirmation gating safety layer. The success rate dropped significantly for large objects, as their size and geometry make a single, visually plausible grasp point harder to define and approach.
+
+## Boundaries and Limitations
+
+The prototype has no gripper, and the study isolated VLM-side understanding rather than physical grasping execution, so grasp point plausibility remains at the visual level only. Large, bulky objects are the current biggest shortcoming, as single-point grounding cannot handle operations requiring dual arms or multi-contact manipulation. The paper does not include comparative evaluation against teach pendant programming, nor does it cover physical controller export and real hardware execution. Passthrough depth and scene meshes have not yet replaced the horizontal plane fallback, and both constraint-based planning and closed-loop multi-finger gripper control are listed as future work. The paper does not specify end-to-end latency and reliability data on real physical robots.
+
+## Engineering Insights
+
+When reproducing, first check three points: first, whether the VLM endpoint strictly follows the OpenAI-compatible protocol—the JSON output format from Qwen3-VL deployed via vLLM/SGLang must exactly match Equation 2, otherwise client parsing will fail; second, the coordination between CCD IK pre-solving sampling density and playback rate ρ—while offline pre-solving eliminates per-frame IK, overly sparse waypoints cause trajectory jitter, while overly dense ones increase loading time; third, the construction quality of the MR scene collider set 𝒞—ray-casting grounding accuracy directly depends on whether physical objects and MR planes have complete colliders, which is the most common pitfall.
+
+For downstream teams, it is recommended to prioritize expanding grounding strategies for large objects—single-point ray casting achieves only 1/5 success on box-type targets, and multi-point sampling or volumetric bounding boxes could replace single-point references. Confirmation gating is the safety baseline; do not skip the verification layer for a smoother experience. The robot-relative episode format is worth adopting, but note the recording of the starting configuration q₀—if the robot does not correctly return to q₀ upon loading, playback will start from an incorrect pose. Finally, if deploying to real hardware, be sure to complete closed-loop testing of the physical controller export interface first, as the current prototype does not yet cover this step.

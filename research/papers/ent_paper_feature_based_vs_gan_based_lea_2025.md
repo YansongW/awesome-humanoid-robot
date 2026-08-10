@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.05906v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.05906v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (945 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -61,11 +62,21 @@ sources:
 ## Overview
 This survey provides a comparative analysis of feature-based and GAN-based approaches to learning from demonstrations, with a focus on the structure of reward functions and their implications for policy learning. Feature-based methods offer dense, interpretable rewards that excel at high-fidelity motion imitation, yet often require sophisticated representations of references and struggle with generalization in unstructured settings. GAN-based methods, in contrast, use implicit, distributional supervision that enables scalability and adaptation flexibility, but are prone to training instability and coarse reward signals. Recent advancements in both paradigms converge on the importance of structured motion representations, which enable smoother transitions, controllable synthesis, and improved task integration. We argue that the dichotomy between feature-based and GAN-based methods is increasingly nuanced: rather than one paradigm dominating the other, the choice should be guided by task-specific priorities such as fidelity, diversity, interpretability, and adaptability. This work outlines the algorithmic trade-offs and design considerations that underlie method selection, offering a framework for principled decision-making in learning from demonstrations.
 
-## 개요
-본 설문은 시연 학습에서 특징 기반 방법과 GAN 기반 방법을 비교 분석하며, 보상 함수의 구조와 정책 학습에 미치는 영향에 초점을 맞춥니다. 특징 기반 방법은 고충실도 동작 모방에 뛰어난 조밀하고 해석 가능한 보상을 제공하지만, 종종 정교한 참조 표현이 필요하고 비구조적 환경에서 일반화에 어려움을 겪습니다. 반면 GAN 기반 방법은 암시적이고 분포적인 감독을 사용하여 확장성과 적응 유연성을 가능하게 하지만, 훈련 불안정성과 거친 보상 신호에 취약합니다. 두 패러다임의 최근 발전은 구조화된 동작 표현의 중요성에 수렴하며, 이는 더 부드러운 전환, 제어 가능한 합성, 향상된 작업 통합을 가능하게 합니다. 우리는 특징 기반 방법과 GAN 기반 방법 간의 이분법이 점점 더 미묘해지고 있다고 주장합니다. 한 패러다임이 다른 패러다임을 지배하기보다는, 충실도, 다양성, 해석 가능성, 적응성과 같은 작업별 우선순위에 따라 선택이 이루어져야 합니다. 본 연구는 방법 선택의 기저에 있는 알고리즘적 트레이드오프와 설계 고려 사항을 설명하며, 시연 학습에서 원칙적인 의사 결정을 위한 프레임워크를 제공합니다.
-
-## 핵심 내용
-본 설문은 시연 학습에서 특징 기반 방법과 GAN 기반 방법을 비교 분석하며, 보상 함수의 구조와 정책 학습에 미치는 영향에 초점을 맞춥니다. 특징 기반 방법은 고충실도 동작 모방에 뛰어난 조밀하고 해석 가능한 보상을 제공하지만, 종종 정교한 참조 표현이 필요하고 비구조적 환경에서 일반화에 어려움을 겪습니다. 반면 GAN 기반 방법은 암시적이고 분포적인 감독을 사용하여 확장성과 적응 유연성을 가능하게 하지만, 훈련 불안정성과 거친 보상 신호에 취약합니다. 두 패러다임의 최근 발전은 구조화된 동작 표현의 중요성에 수렴하며, 이는 더 부드러운 전환, 제어 가능한 합성, 향상된 작업 통합을 가능하게 합니다. 우리는 특징 기반 방법과 GAN 기반 방법 간의 이분법이 점점 더 미묘해지고 있다고 주장합니다. 한 패러다임이 다른 패러다임을 지배하기보다는, 충실도, 다양성, 해석 가능성, 적응성과 같은 작업별 우선순위에 따라 선택이 이루어져야 합니다. 본 연구는 방법 선택의 기저에 있는 알고리즘적 트레이드오프와 설계 고려 사항을 설명하며, 시연 학습에서 원칙적인 의사 결정을 위한 프레임워크를 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2507.05906v2
+
+## 개요
+이 서베이는 특징 기반 및 GAN 기반 시연 학습 방법이 보상 함수 구조에서 가지는 차이점과それが 정책 학습에 미치는 영향을 심층 분석합니다. 특징 기반 방법은 조밀하고 해석 가능한 보상을 제공하며 고충실도 동작 모방에 뛰어나지만, 복잡한 참조 표현이 필요하고 비구조화된 환경에서 일반화 능력이 제한적입니다. GAN 기반 방법은 암시적 분포 감독을 활용하여 확장성과 적응 유연성이 우수하지만, 훈련 불안정성과 보상 신호의 거칠음 문제가 있습니다. 두 패러다임의 최근 진전은 구조화된 동작 표현의 중요성을 강조하며, 이는 더 부드러운 전환, 제어 가능한 합성, 더 나은 작업 통합을 가능하게 합니다. 논문은 두 방법의 이분법이 점점 모호해지고 있으며, 선택은 충실도, 다양성, 해석 가능성, 적응성에 대한 작업의 구체적 우선순위에 기반해야 한다고 지적합니다.
+
+## 핵심 내용
+### 방법 비교
+- **특징 기반 방법**: 조밀하고 해석 가능한 보상 함수에 의존하며, 참조 동작 특징(관절 각도, 말단 궤적 등)을 정밀하게 일치시켜 고충실도 모방을 달성합니다. 보상 신호가 명확하여 디버깅과 최적화가 용이하다는 장점이 있지만, 정교한 특징 표현이 필요하고 복잡하고 비구조화된 환경에서 일반화 능력이 부족합니다.
+- **GAN 기반 방법**: 생성적 적대 신경망 프레임워크를 채택하여 판별기를 통해 암시적 분포 감독을 제공하며, 명시적 보상 함수 정의가 필요 없습니다. 이 방법은 데이터 다양성, 동작 스타일 전이, 교차 작업 일반화에서 더 우수한 성능을 보이지만, 훈련 불안정성(모드 붕괴 등), 보상 신호의 거칠음(세분화된 지침 부족) 등의 문제에 직면합니다.
+
+### 핵심 발견
+- **구조화된 동작 표현**: 두 패러다임의 최근 진전은 구조화된 동작 표현(위상 변수, 동작 그래프, 잠재 공간 제약 등)의 도입이 성능을 크게 향상시킬 수 있음을 보여줍니다. 이러한 표현은 더 부드러운 동작 전환, 제어 가능한 합성(보행 스타일 조정 등), 더 나은 작업 통합(동작 생성과 내비게이션, 조작 작업 결합 등)을 가능하게 합니다.
+- **알고리즘 트레이드오프**: 논문은 두 방법이 충실도(특징 방법 우세), 다양성(GAN 방법 우세), 해석 가능성(특징 방법 우세), 적응성(GAN 방법 우세)의 네 가지 차원에서 가지는 트레이드오프 관계를 체계적으로 정리합니다.
+
+### 실험 설정 및 결론
+- 논문은 구체적인 실험 데이터를 제공하지 않으며, 기존 문헌(Humanoid, Walker, Atlas 등 로봇 플랫폼 포함)에 대한 메타 분석을 기반으로 결론을 도출합니다.
+- 핵심 결론: 두 방법의 이분법이 점점 모호해지고 있으며, 혼합 방법(GAN을 사용한 특징 보상 생성, 특징을 활용한 GAN 훈련 보조 등)이 추세가 되고 있습니다. 선택은 작업 우선순위에 기반해야 합니다: 고충실도 동작 모방은 특징 방법을 우선 선택하고, 다양한 동작 생성 및 교차 작업 일반화는 GAN 방법을 우선 선택하며, 해석 가능성이 필요할 때는 특징 방법을, 새로운 환경에 빠른 적응이 필요할 때는 GAN 방법을 선택합니다.

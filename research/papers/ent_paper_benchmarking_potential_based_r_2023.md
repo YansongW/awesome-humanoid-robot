@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.10142v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.10142v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (744 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,28 @@ The main challenge in developing effective reinforcement learning (RL) pipelines
 ## Content
 The main challenge in developing effective reinforcement learning (RL) pipelines is often the design and tuning of reward functions. Well-designed shaping rewards can lead to significantly faster learning. Naively formulated rewards, however, can conflict with the desired behavior and result in overfitting or even erratic performance if not properly tuned. In theory, the broad class of potential-based reward shaping (PBRS) can help guide the learning process without affecting the optimal policy. Although several studies have explored the use of potential-based reward shaping to accelerate learning convergence, most have been limited to grid-worlds and low-dimensional systems, and RL in robotics has predominantly relied on standard forms of reward shaping. In this paper, we benchmark standard forms of shaping with PBRS for a humanoid robot. We find that in this high-dimensional system, PBRS has only marginal benefits in convergence speed. However, the PBRS reward terms are significantly more robust to scaling than typical reward shaping approaches, and thus easier to tune.
 
-## 개요
-효과적인 강화 학습(RL) 파이프라인을 개발하는 데 있어 주요 과제는 종종 보상 함수의 설계와 조정입니다. 잘 설계된 형상 보상은 학습 속도를 크게 향상시킬 수 있습니다. 그러나 순진하게 구성된 보상은 원하는 행동과 충돌하여 과적합을 초래하거나, 적절히 조정되지 않으면 불규칙한 성능을 보일 수 있습니다. 이론적으로, 잠재 기반 보상 형성(PBRS)의 광범위한 클래스는 최적 정책에 영향을 주지 않고 학습 과정을 안내하는 데 도움을 줄 수 있습니다. 여러 연구에서 학습 수렴을 가속화하기 위해 잠재 기반 보상 형성을 사용하는 방법을 탐구했지만, 대부분은 그리드 월드와 저차원 시스템에 국한되었으며, 로봇 공학에서의 RL은 주로 표준 형태의 보상 형성에 의존해 왔습니다. 본 논문에서는 인간형 로봇을 대상으로 PBRS와 함께 표준 형태의 형성 방법을 벤치마킹합니다. 이 고차원 시스템에서 PBRS는 수렴 속도에 미미한 이점만을 제공한다는 것을 발견했습니다. 그러나 PBRS 보상 항은 일반적인 보상 형성 접근법보다 스케일링에 훨씬 더 강건하여 조정이 더 쉽습니다.
-
-## 핵심 내용
-효과적인 강화 학습(RL) 파이프라인을 개발하는 데 있어 주요 과제는 종종 보상 함수의 설계와 조정입니다. 잘 설계된 형상 보상은 학습 속도를 크게 향상시킬 수 있습니다. 그러나 순진하게 구성된 보상은 원하는 행동과 충돌하여 과적합을 초래하거나, 적절히 조정되지 않으면 불규칙한 성능을 보일 수 있습니다. 이론적으로, 잠재 기반 보상 형성(PBRS)의 광범위한 클래스는 최적 정책에 영향을 주지 않고 학습 과정을 안내하는 데 도움을 줄 수 있습니다. 여러 연구에서 학습 수렴을 가속화하기 위해 잠재 기반 보상 형성을 사용하는 방법을 탐구했지만, 대부분은 그리드 월드와 저차원 시스템에 국한되었으며, 로봇 공학에서의 RL은 주로 표준 형태의 보상 형성에 의존해 왔습니다. 본 논문에서는 인간형 로봇을 대상으로 PBRS와 함께 표준 형태의 형성 방법을 벤치마킹합니다. 이 고차원 시스템에서 PBRS는 수렴 속도에 미미한 이점만을 제공한다는 것을 발견했습니다. 그러나 PBRS 보상 항은 일반적인 보상 형성 접근법보다 스케일링에 훨씬 더 강건하여 조정이 더 쉽습니다.
-
 ## 参考
 - http://arxiv.org/abs/2307.10142v1
+
+## 개요
+강화 학습 파이프라인의 주요 도전 과제는 종종 보상 함수의 설계와 하이퍼파라미터 튜닝에 있습니다. 포텐셜 기반 보상 형성(PBRS)은 이론적으로 최적 정책에 영향을 주지 않으면서 학습을 가속화할 수 있지만, 기존 연구는 주로 그리드 월드와 저차원 시스템에 국한되었습니다. 본 논문은 PBRS를 고차원 휴머노이드 로봇 운동 제어 작업에 처음으로 체계적으로 적용했으며, 벤치마크 테스트를 통해 PBRS가 수렴 속도 향상에 미치는 영향은 제한적이지만, 그 보상 항목이 스케일링 계수에 대한 강건성이 표준 보상 형성보다 훨씬 뛰어나므로 튜닝이 더 용이함을 발견했습니다.
+
+## 핵심 내용
+### 연구 배경 및 문제
+- 강화 학습 파이프라인에서 보상 함수의 설계와 튜닝은 주요 병목 현상입니다.
+- 잘 설계된 형성 보상은 학습을 크게 가속화할 수 있지만, 잘못 설계된 보상은 기대 동작과 충돌하여 과적합 또는 불안정한 성능을 초래할 수 있습니다.
+- 이론적으로 포텐셜 기반 보상 형성(PBRS)은 최적 정책을 변경하지 않으면서 학습 과정을 안내할 수 있지만, 기존 연구는 주로 저차원 시스템(예: 그리드 월드)에 국한되었으며, 로봇 분야에서는 여전히 주로 표준 보상 형성에 의존합니다.
+
+### 방법 및 실험 설정
+- 본 논문은 **고차원 휴머노이드 로봇** 운동 제어 작업에서 표준 보상 형성과 PBRS를 체계적으로 비교합니다.
+- 실험은 강화 학습 프레임워크를 사용하여 휴머노이드 로봇이 걷기 작업을 수행하도록 훈련합니다.
+- 평가 지표에는 수렴 속도, 최종 정책 성능, 그리고 보상 항목의 스케일링 계수에 대한 강건성이 포함됩니다.
+
+### 주요 발견 및 수치
+- **수렴 속도**: PBRS는 표준 보상 형성에 비해 **미미한 향상**만을 보였으며, 학습 수렴을 크게 가속화하지 않았습니다.
+- **강건성**: PBRS 보상 항목은 스케일링 계수에 대한 강건성이 표준 보상 형성보다 **현저히 우수**합니다. 즉, 다양한 스케일링 계수에서도 PBRS는 안정적인 학습을 유지하는 반면, 표준 방법은 성능 변동이 발생하기 쉽습니다.
+- **튜닝 용이성**: PBRS는 스케일링에 민감하지 않기 때문에 튜닝 과정이 더 간단하며, 수동 시행착오 비용을 줄입니다.
+
+### 결론
+- 고차원 휴머노이드 로봇 작업에서 PBRS의 주요 장점은 수렴 가속화가 아니라 보상 함수의 강건성과 튜닝 효율성을 향상시키는 데 있습니다.
+- 실제 로봇 강화 학습 응용에서는 보상 엔지니어링의 난이도를 낮추기 위해 PBRS를 우선적으로 고려할 것을 권장합니다.

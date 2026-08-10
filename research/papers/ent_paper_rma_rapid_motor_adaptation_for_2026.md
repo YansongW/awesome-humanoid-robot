@@ -37,7 +37,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: RMA: Rapid Motor Adaptation
-    for Legged Robots. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    for Legged Robots. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4
+    trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (600 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -68,11 +69,24 @@ RMA包含两个核心组件：
 ## Overview
 Successful real-world deployment of legged robots would require them to adapt in real-time to unseen scenarios like changing terrains, changing payloads, wear and tear. This paper presents Rapid Motor Adaptation (RMA) algorithm to solve this problem of real-time online adaptation in quadruped robots. RMA consists of two components: a base policy and an adaptation module. The combination of these components enables the robot to adapt to novel situations in fractions of a second. RMA is trained completely in simulation without using any domain knowledge like reference trajectories or predefined foot trajectory generators and is deployed on the A1 robot without any fine-tuning. We train RMA on a varied terrain generator using bioenergetics-inspired rewards and deploy it on a variety of difficult terrains including rocky, slippery, deformable surfaces in environments with grass, long vegetation, concrete, pebbles, stairs, sand, etc. RMA shows state-of-the-art performance across diverse real-world as well as simulation experiments. Video results at https://ashish-kmr.github.io/rma-legged-robots/
 
-## 개요
-다리 로봇의 성공적인 실제 배치를 위해서는 변화하는 지형, 변화하는 탑재 하중, 마모 등과 같은 예상치 못한 시나리오에 실시간으로 적응할 수 있어야 합니다. 본 논문은 사족 보행 로봇의 실시간 온라인 적응 문제를 해결하기 위해 Rapid Motor Adaptation(RMA) 알고리즘을 제시합니다. RMA는 기본 정책(base policy)과 적응 모듈(adaptation module)의 두 가지 구성 요소로 이루어져 있습니다. 이 구성 요소들의 조합을 통해 로봇은 순식간에 새로운 상황에 적응할 수 있습니다. RMA는 참조 궤적이나 사전 정의된 발 궤적 생성기와 같은 도메인 지식을 전혀 사용하지 않고 시뮬레이션에서 완전히 훈련되며, 추가 미세 조정 없이 A1 로봇에 배치됩니다. 우리는 생체 에너지학에서 영감을 받은 보상(bioenergetics-inspired rewards)을 사용하여 다양한 지형 생성기에서 RMA를 훈련하고, 잔디, 긴 초목, 콘크리트, 자갈, 계단, 모래 등이 있는 환경의 바위, 미끄러움, 변형 가능한 표면을 포함한 다양한 어려운 지형에 배치합니다. RMA는 다양한 실제 실험과 시뮬레이션 실험에서 최첨단 성능을 보여줍니다. 비디오 결과는 https://ashish-kmr.github.io/rma-legged-robots/ 에서 확인할 수 있습니다.
-
-## 핵심 내용
-다리 로봇의 성공적인 실제 배치를 위해서는 변화하는 지형, 변화하는 탑재 하중, 마모 등과 같은 예상치 못한 시나리오에 실시간으로 적응할 수 있어야 합니다. 본 논문은 사족 보행 로봇의 실시간 온라인 적응 문제를 해결하기 위해 Rapid Motor Adaptation(RMA) 알고리즘을 제시합니다. RMA는 기본 정책(base policy)과 적응 모듈(adaptation module)의 두 가지 구성 요소로 이루어져 있습니다. 이 구성 요소들의 조합을 통해 로봇은 순식간에 새로운 상황에 적응할 수 있습니다. RMA는 참조 궤적이나 사전 정의된 발 궤적 생성기와 같은 도메인 지식을 전혀 사용하지 않고 시뮬레이션에서 완전히 훈련되며, 추가 미세 조정 없이 A1 로봇에 배치됩니다. 우리는 생체 에너지학에서 영감을 받은 보상(bioenergetics-inspired rewards)을 사용하여 다양한 지형 생성기에서 RMA를 훈련하고, 잔디, 긴 초목, 콘크리트, 자갈, 계단, 모래 등이 있는 환경의 바위, 미끄러움, 변형 가능한 표면을 포함한 다양한 어려운 지형에 배치합니다. RMA는 다양한 실제 실험과 시뮬레이션 실험에서 최첨단 성능을 보여줍니다. 비디오 결과는 https://ashish-kmr.github.io/rma-legged-robots/ 에서 확인할 수 있습니다.
-
 ## 参考
 - Semantic Scholar search: RMA: Rapid Motor Adaptation for Legged Robots
+
+## 개요
+RMA 알고리즘은 기본 정책과 적응 모듈 두 부분으로 구성되며, 이 둘이 협력하여 로봇이 새로운 상황에 빠르게 적응할 수 있게 한다. 이 알고리즘은 전적으로 시뮬레이션 환경에서 훈련되며, 생물 에너지학에서 영감을 받은 보상 함수를 사용하고, 다양한 어려운 지형(예: 바위, 미끄러운 표면, 변형 가능한 표면, 잔디, 콘크리트, 자갈, 계단, 모래 등)에서 실제 세계 배치를 수행했다. 실험 결과, RMA는 다양한 실제 세계 및 시뮬레이션 실험에서 최첨단 성능을 달성했다.
+
+## 핵심 내용
+### 방법 아키텍처
+RMA는 두 가지 핵심 구성 요소를 포함한다:
+- **기본 정책(Base Policy)**: 로봇의 기본 운동 명령을 생성하는 역할을 한다.
+- **적응 모듈(Adaptation Module)**: 기본 정책의 출력을 실시간으로 조정하여 로봇이 환경 변화에 빠르게 적응할 수 있게 한다.
+
+### 훈련 및 배치
+- **훈련 환경**: 전적으로 시뮬레이션에서 진행되며, 다양한 지형 생성기를 사용하고 생물 에너지학에서 영감을 받은 보상 함수를 채택한다.
+- **제로 미세 조정 배치**: 훈련된 정책은 실제 세계 미세 조정 없이 Unitree A1 로봇에 직접 배치된다.
+- **테스트 지형**: 바위, 미끄러운 표면, 변형 가능한 표면, 잔디, 긴 초목, 콘크리트, 자갈, 계단, 모래 등 다양한 어려운 시나리오를 포함한다.
+
+### 실험 결과
+- **성능 표현**: 다양한 실제 세계 및 시뮬레이션 실험에서 최첨단 수준을 달성했다.
+- **적응 속도**: 로봇은 지형 변화, 하중 변화 또는 기계적 마모와 같은 새로운 시나리오에 수 초 내에 적응할 수 있다.
+- **비디오 시연**: 자세한 내용은 https://ashish-kmr.github.io/rma-legged-robots/ 참조.

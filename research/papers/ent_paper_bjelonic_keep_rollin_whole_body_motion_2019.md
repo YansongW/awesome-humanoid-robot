@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.03557v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.03557v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (698 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,25 @@ theoretical_depth:
 ## Overview
 We show dynamic locomotion strategies for wheeled quadrupedal robots, which combine the advantages of both walking and driving. The developed optimization framework tightly integrates the additional degrees of freedom introduced by the wheels. Our approach relies on a zero-moment point based motion optimization which continuously updates reference trajectories. The reference motions are tracked by a hierarchical whole-body controller which computes optimal generalized accelerations and contact forces by solving a sequence of prioritized tasks including the nonholonomic rolling constraints. Our approach has been tested on ANYmal, a quadrupedal robot that is fully torque-controlled including the non-steerable wheels attached to its legs. We conducted experiments on flat and inclined terrains as well as over steps, whereby we show that integrating the wheels into the motion control and planning framework results in intuitive motion trajectories, which enable more robust and dynamic locomotion compared to other wheeled-legged robots. Moreover, with a speed of 4 m/s and a reduction of the cost of transport by 83 % we prove the superiority of wheeled-legged robots compared to their legged counterparts.
 
-## 개요
-바퀴 달린 사족 로봇을 위한 동적 보행 전략을 제시하며, 이는 보행과 주행의 장점을 결합합니다. 개발된 최적화 프레임워크는 바퀴로 인해 추가된 자유도를 긴밀하게 통합합니다. 우리의 접근 방식은 영점 모멘트 기반 동작 최적화에 의존하며, 이는 참조 궤적을 지속적으로 업데이트합니다. 참조 동작은 계층적 전신 제어기에 의해 추적되며, 이는 비홀로노믹 구름 제약 조건을 포함한 우선순위가 지정된 일련의 작업을 해결하여 최적의 일반화 가속도와 접촉력을 계산합니다. 우리의 접근 방식은 다리에 부착된 조향 불가능한 바퀴를 포함하여 완전히 토크 제어되는 사족 로봇 ANYmal에서 테스트되었습니다. 평지와 경사 지형, 그리고 단차를 넘는 실험을 수행했으며, 바퀴를 동작 제어 및 계획 프레임워크에 통합하면 직관적인 동작 궤적이 생성되어 다른 바퀴 달린 보행 로봇에 비해 더 견고하고 동적인 보행이 가능함을 보여줍니다. 또한, 4m/s의 속도와 83%의 운송 비용 절감을 통해 바퀴 달린 보행 로봇이 순수 보행 로봇보다 우수함을 입증합니다.
-
-## 핵심 내용
-바퀴 달린 사족 로봇을 위한 동적 보행 전략을 제시하며, 이는 보행과 주행의 장점을 결합합니다. 개발된 최적화 프레임워크는 바퀴로 인해 추가된 자유도를 긴밀하게 통합합니다. 우리의 접근 방식은 영점 모멘트 기반 동작 최적화에 의존하며, 이는 참조 궤적을 지속적으로 업데이트합니다. 참조 동작은 계층적 전신 제어기에 의해 추적되며, 이는 비홀로노믹 구름 제약 조건을 포함한 우선순위가 지정된 일련의 작업을 해결하여 최적의 일반화 가속도와 접촉력을 계산합니다. 우리의 접근 방식은 다리에 부착된 조향 불가능한 바퀴를 포함하여 완전히 토크 제어되는 사족 로봇 ANYmal에서 테스트되었습니다. 평지와 경사 지형, 그리고 단차를 넘는 실험을 수행했으며, 바퀴를 동작 제어 및 계획 프레임워크에 통합하면 직관적인 동작 궤적이 생성되어 다른 바퀴 달린 보행 로봇에 비해 더 견고하고 동적인 보행이 가능함을 보여줍니다. 또한, 4m/s의 속도와 83%의 운송 비용 절감을 통해 바퀴 달린 보행 로봇이 순수 보행 로봇보다 우수함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/1809.03557v2
+
+## 개요
+본 연구는 보행과 구동의 장점을 결합한 바퀴형 사족 로봇의 동적 운동 전략을 개발했다. 해당 최적화 프레임워크는 바퀴가 도입한 추가 자유도를 긴밀하게 통합하며, 영점 모멘트 기반 운동 최적화기가 기준 궤적을 지속적으로 갱신하고, 계층적 전신 제어기가 비홀로노믹 구름 제약을 포함한 우선순위 작업 시퀀스를 풀어 최적의 일반화 가속도와 접촉력을 계산한다. 완전 토크 제어가 적용된 ANYmal 로봇(다리 끝에 비조향 바퀴 장착)에서 수행된 실험은, 해당 방법이 평지, 경사 지형 및 계단에서 직관적인 운동 궤적을 생성하며, 다른 바퀴-다리 로봇보다 더 견고하고 동적인 운동을 구현하고, 4 m/s 속도와 83%의 운송 비용 절감을 통해 바퀴-다리 로봇의 우수성을 입증했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **운동 최적화기**: 영점 모멘트(ZMP) 기반 온라인 최적화 프레임워크로, 전신 기준 궤적을 지속적으로 갱신하며 바퀴의 비홀로노믹 구름 제약을 핵심 최적화 조건으로 포함한다.
+- **계층적 전신 제어기**: 우선순위 작업 시퀀스(비홀로노믹 구름 제약, 신체 자세, 발끝 힘 분배 등 포함)를 풀어 최적의 일반화 가속도와 접촉력을 계산하고, 정밀한 궤적 추적을 구현한다.
+
+### 실험 설정
+- **플랫폼**: ANYmal 사족 로봇, 모든 관절이 토크 제어 방식이며, 다리 끝에는 조향 기능이 없는 구동 바퀴가 장착되어 있다.
+- **테스트 시나리오**: 평지, 경사 지형(경사도 미명시), 계단 넘기.
+
+### 주요 결과
+- **속도**: 최대 4 m/s로, 순수 다리형 보행보다 현저히 높다.
+- **에너지 효율**: 운송 비용(Cost of Transport)이 순수 다리형 보행 대비 83% 감소했다.
+- **견고성**: 복잡한 지형에서 더 직관적인 운동 궤적을 생성하며, 다른 바퀴-다리 로봇(예: 익명의 비교 시스템)보다 동적 안정성이 우수하다.
+
+### 결론
+바퀴의 구름 제약을 운동 제어 및 계획 프레임워크에 긴밀하게 통합함으로써 바퀴-다리 로봇의 혼합 운동 장점을 최대한 발휘할 수 있으며, 속도와 에너지 효율 모두에서 전통적인 다리형 로봇을 능가한다.

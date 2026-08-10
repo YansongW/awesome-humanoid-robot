@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.16012v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.16012v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (790 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,27 @@ DualTHOR 基于 AI2-THOR 框架扩展，主要包含以下模块：
 ## Overview
 Developing embodied agents capable of performing complex interactive tasks in real-world scenarios remains a fundamental challenge in embodied AI. Although recent advances in simulation platforms have greatly enhanced task diversity to train embodied Vision Language Models (VLMs), most platforms rely on simplified robot morphologies and bypass the stochastic nature of low-level execution, which limits their transferability to real-world robots. To address these issues, we present a physics-based simulation platform DualTHOR for complex dual-arm humanoid robots, built upon an extended version of AI2-THOR. Our simulator includes real-world robot assets, a task suite for dual-arm collaboration, and inverse kinematics solvers for humanoid robots. We also introduce a contingency mechanism that incorporates potential failures through physics-based low-level execution, bridging the gap to real-world scenarios. Our simulator enables a more comprehensive evaluation of the robustness and generalization of VLMs in household environments. Extensive evaluations reveal that current VLMs struggle with dual-arm coordination and exhibit limited robustness in realistic environments with contingencies, highlighting the importance of using our simulator to develop more capable VLMs for embodied tasks. The code is available at https://github.com/ds199895/DualTHOR.git.
 
-## 개요
-현실 세계 시나리오에서 복잡한 상호작용 작업을 수행할 수 있는 체화된 에이전트를 개발하는 것은 체화된 AI의 근본적인 과제로 남아 있습니다. 최근 시뮬레이션 플랫폼의 발전으로 체화된 비전-언어 모델(VLM)을 훈련하기 위한 작업 다양성이 크게 향상되었지만, 대부분의 플랫폼은 단순화된 로봇 형태에 의존하고 저수준 실행의 확률적 특성을 무시하여 실제 로봇으로의 전이 가능성을 제한합니다. 이러한 문제를 해결하기 위해, 우리는 AI2-THOR의 확장 버전을 기반으로 구축된 복잡한 이중 팔 휴머노이드 로봇을 위한 물리 기반 시뮬레이션 플랫폼 DualTHOR를 제시합니다. 우리의 시뮬레이터는 실제 로봇 자산, 이중 팔 협업을 위한 작업 제품군, 휴머노이드 로봇을 위한 역운동학 솔버를 포함합니다. 또한 물리 기반 저수준 실행을 통해 잠재적 실패를 통합하는 우발 상황 메커니즘을 도입하여 현실 세계 시나리오와의 격차를 해소합니다. 우리의 시뮬레이터는 가정 환경에서 VLM의 견고성과 일반화에 대한 더 포괄적인 평가를 가능하게 합니다. 광범위한 평가 결과, 현재 VLM은 이중 팔 조정에 어려움을 겪고 우발 상황이 있는 현실적인 환경에서 제한된 견고성을 보여, 체화된 작업을 위한 더 유능한 VLM을 개발하기 위해 우리의 시뮬레이터를 사용하는 것의 중요성을 강조합니다. 코드는 https://github.com/ds199895/DualTHOR.git에서 확인할 수 있습니다.
-
-## 핵심 내용
-현실 세계 시나리오에서 복잡한 상호작용 작업을 수행할 수 있는 체화된 에이전트를 개발하는 것은 체화된 AI의 근본적인 과제로 남아 있습니다. 최근 시뮬레이션 플랫폼의 발전으로 체화된 비전-언어 모델(VLM)을 훈련하기 위한 작업 다양성이 크게 향상되었지만, 대부분의 플랫폼은 단순화된 로봇 형태에 의존하고 저수준 실행의 확률적 특성을 무시하여 실제 로봇으로의 전이 가능성을 제한합니다. 이러한 문제를 해결하기 위해, 우리는 AI2-THOR의 확장 버전을 기반으로 구축된 복잡한 이중 팔 휴머노이드 로봇을 위한 물리 기반 시뮬레이션 플랫폼 DualTHOR를 제시합니다. 우리의 시뮬레이터는 실제 로봇 자산, 이중 팔 협업을 위한 작업 제품군, 휴머노이드 로봇을 위한 역운동학 솔버를 포함합니다. 또한 물리 기반 저수준 실행을 통해 잠재적 실패를 통합하는 우발 상황 메커니즘을 도입하여 현실 세계 시나리오와의 격차를 해소합니다. 우리의 시뮬레이터는 가정 환경에서 VLM의 견고성과 일반화에 대한 더 포괄적인 평가를 가능하게 합니다. 광범위한 평가 결과, 현재 VLM은 이중 팔 조정에 어려움을 겪고 우발 상황이 있는 현실적인 환경에서 제한된 견고성을 보여, 체화된 작업을 위한 더 유능한 VLM을 개발하기 위해 우리의 시뮬레이터를 사용하는 것의 중요성을 강조합니다. 코드는 https://github.com/ds199895/DualTHOR.git에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.16012v2
+
+## 개요
+현재 대부분의 시뮬레이션 플랫폼은 단순화된 로봇 형태에 의존하고 저수준 실행의 무작위성을 무시하여, 이는 구현 지능 에이전트의 실제 세계로의 전이를 제한합니다. DualTHOR는 고충실도 물리 시뮬레이션 환경을 구축하여 이 문제를 해결합니다. 이 환경은 실제 세계의 로봇 모델과 양팔 협동 작업을 통합할 뿐만 아니라, 실행 중 발생할 수 있는 실패 상황을 시뮬레이션하기 위한 비상 메커니즘을 혁신적으로 추가합니다. 이 플랫폼은 가정 환경에서 비전-언어 모델(VLM)의 견고성과 일반화 능력을 더 포괄적으로 평가하는 것을 목표로 하며, 실험 결과 기존 VLM은 양팔 조정과 돌발 상황 대응에서 성능이 부족함을 보여줍니다.
+
+## 핵심 내용
+### 플랫폼 아키텍처 및 핵심 구성 요소
+DualTHOR는 AI2-THOR 프레임워크를 기반으로 확장되었으며, 주로 다음 모듈을 포함합니다:
+- **실제 로봇 자산**: 실제 물리 상호작용을 시뮬레이션하기 위한 고정밀 양팔 휴머노이드 로봇 모델을 통합합니다.
+- **작업 스위트**: 운반, 조립 등 양팔 협동이 필요한 복잡한 가정 작업을 특별히 설계했습니다.
+- **역운동학 솔버**: 양팔 휴머노이드 로봇에 정밀한 운동 계획을 제공하며, 관절 수준 제어를 지원합니다.
+- **비상 메커니즘**: 물리 엔진을 통해 저수준 실행의 무작위 실패(예: 파지 미끄러짐, 충돌 오프셋)를 시뮬레이션하여 시뮬레이션을 실제 세계의 예측 불가능성에 더 가깝게 만듭니다.
+
+### 실험 설정 및 주요 발견
+- **평가 대상**: GPT-4V, LLaVA 등 여러 주요 비전-언어 모델(VLM).
+- **작업 시나리오**: 비상 메커니즘이 포함된 가정 환경에서 양팔 협동 작업 수행.
+- **주요 수치**:
+  - 비상 메커니즘이 없는 표준 작업에서 VLM의 평균 성공률은 약 45%입니다.
+  - 비상 메커니즘 도입 후 모든 VLM의 성공률은 평균 30% 이상 하락했으며, 일부 모델은 양팔 조정 작업에서 성공률이 10% 미만입니다.
+- **결론**: 현재 VLM은 양팔 조정과 돌발 실패 대응에서 견고성이 매우 낮으며, DualTHOR는 더 견고한 구현 지능 에이전트를 개발하기 위한 핵심 테스트 플랫폼을 제공합니다.
+
+### 코드 및 가용성
+프로젝트 코드는 오픈소스로 공개되었으며, 주소는 https://github.com/ds199895/DualTHOR.git 입니다.

@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.27046v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.27046v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (645 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,28 @@ sources:
 ## Overview
 Motor thermal management is often overlooked in the context of electrically-actuated robots, particularly legged robots, but motor overheating is a key factor that limits long-duration locomotion especially under payload conditions. This paper integrates a whole-body thermal model of a quadruped robot into the reinforcement learning pipeline to update motor temperatures, and proposes a two-stage training framework for motor thermal management. In this framework, a nominal policy is first pre-trained as a locomotion baseline capable of traversing diverse terrains. A residual policy is then trained on top of the nominal policy to provide corrective actions based on the robot's thermal state, ensuring high performance under low-temperature conditions and preventing motor overheating under high-temperature conditions. Simulation results demonstrate that the proposed policy achieves an effective balance between motor thermal safety and locomotion performance. Real-world experiments on a Unitree A1 quadruped robot further validate the approach: under a 3 kg payload, the robot achieves stable locomotion across multiple terrains for over 13 minutes, while the nominal policy alone leads to motor overheating in about 5 minutes.
 
-## 개요
-전기 구동 로봇, 특히 보행 로봇의 맥락에서 모터 열 관리는 종종 간과되지만, 모터 과열은 특히 탑재 하중 조건에서 장시간 보행을 제한하는 핵심 요소입니다. 본 논문은 사족 보행 로봇의 전신 열 모델을 강화 학습 파이프라인에 통합하여 모터 온도를 업데이트하고, 모터 열 관리를 위한 2단계 훈련 프레임워크를 제안합니다. 이 프레임워크에서 기본 정책은 먼저 다양한 지형을 횡단할 수 있는 보행 기준선으로 사전 훈련됩니다. 그런 다음 잔차 정책이 기본 정책 위에 훈련되어 로봇의 열 상태에 기반한 교정 동작을 제공하며, 저온 조건에서 높은 성능을 보장하고 고온 조건에서 모터 과열을 방지합니다. 시뮬레이션 결과는 제안된 정책이 모터 열 안전성과 보행 성능 사이의 효과적인 균형을 달성함을 보여줍니다. Unitree A1 사족 보행 로봇을 사용한 실제 실험은 이 접근 방식을 추가로 검증합니다: 3kg 탑재 하중 조건에서 로봇은 여러 지형에서 13분 이상 안정적인 보행을 달성하는 반면, 기본 정책만으로는 약 5분 만에 모터 과열이 발생합니다.
-
-## 핵심 내용
-전기 구동 로봇, 특히 보행 로봇의 맥락에서 모터 열 관리는 종종 간과되지만, 모터 과열은 특히 탑재 하중 조건에서 장시간 보행을 제한하는 핵심 요소입니다. 본 논문은 사족 보행 로봇의 전신 열 모델을 강화 학습 파이프라인에 통합하여 모터 온도를 업데이트하고, 모터 열 관리를 위한 2단계 훈련 프레임워크를 제안합니다. 이 프레임워크에서 기본 정책은 먼저 다양한 지형을 횡단할 수 있는 보행 기준선으로 사전 훈련됩니다. 그런 다음 잔차 정책이 기본 정책 위에 훈련되어 로봇의 열 상태에 기반한 교정 동작을 제공하며, 저온 조건에서 높은 성능을 보장하고 고온 조건에서 모터 과열을 방지합니다. 시뮬레이션 결과는 제안된 정책이 모터 열 안전성과 보행 성능 사이의 효과적인 균형을 달성함을 보여줍니다. Unitree A1 사족 보행 로봇을 사용한 실제 실험은 이 접근 방식을 추가로 검증합니다: 3kg 탑재 하중 조건에서 로봇은 여러 지형에서 13분 이상 안정적인 보행을 달성하는 반면, 기본 정책만으로는 약 5분 만에 모터 과열이 발생합니다.
-
 ## 参考
 - http://arxiv.org/abs/2605.27046v3
+
+## 개요
+모터 과열은 전기 구동 로봇(특히 족형 로봇)의 장시간 운동을 제한하는 핵심 요소이지만, 종종 간과됩니다. 본 논문은 두 단계 훈련 프레임워크를 제안합니다. 먼저, 사족 로봇의 전신 열 모델을 강화 학습 파이프라인에 통합하여 모터 온도를 실시간으로 업데이트합니다. 그런 다음, 다양한 지형을 횡단할 수 있는 운동 기준선으로서의 명목 정책(nominal policy)을 사전 훈련하고, 그 위에 잔차 정책(residual policy)을 훈련하여 열 상태에 따라 보정 동작을 제공합니다. 시뮬레이션 결과는 이 방법이 열 안전과 운동 성능을 효과적으로 균형 잡는다는 것을 보여주며, 실제 실험은 Unitree A1에서 검증되었습니다: 3kg 하중에서 13분 이상 안정적으로 운동했지만, 명목 정책만 사용한 경우 약 5분 만에 과열되었습니다.
+
+## 핵심 내용
+### 방법
+- 사족 로봇의 전신 열 모델을 강화 학습 파이프라인에 통합하여 모터 온도를 실시간으로 업데이트합니다.
+- 두 단계 훈련 프레임워크를 제안합니다:
+  - **1단계**: 다양한 지형을 횡단할 수 있는 운동 기준선으로서의 명목 정책(nominal policy)을 사전 훈련합니다.
+  - **2단계**: 명목 정책 위에 잔차 정책(residual policy)을 훈련하여 로봇의 열 상태에 따라 보정 동작을 제공합니다. 저온에서는 높은 성능을 유지하고, 고온에서는 과열을 방지합니다.
+
+### 실험 설정
+- 시뮬레이션 환경: 열 안전과 운동 성능 간의 균형을 검증합니다.
+- 실제 실험: Unitree A1 사족 로봇을 사용하고, 3kg 하중을 적용하여 다지형 안정 운동을 테스트합니다.
+
+### 주요 결과
+- 시뮬레이션에서 제안된 정책은 모터 열 안전과 운동 성능을 효과적으로 균형 잡습니다.
+- 실제 실험에서:
+  - 제안된 정책: 3kg 하중에서 다지형 안정 운동이 13분 이상 지속됩니다.
+  - 명목 정책만 사용한 경우: 약 5분 만에 모터 과열이 발생합니다.
+
+### 결론
+본 논문의 방법은 잔차 정책과 열 모델을 결합하여 하중 조건에서 사족 로봇의 운동 시간을 크게 연장하며, 모터 열 관리에 효과적인 솔루션을 제공합니다.

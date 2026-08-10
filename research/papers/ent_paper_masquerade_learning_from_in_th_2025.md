@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.09976v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.09976v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (857 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,28 @@ Masquerade 的核心流水线包含三个步骤：
 ## Overview
 Robot manipulation research still suffers from significant data scarcity: even the largest robot datasets are orders of magnitude smaller and less diverse than those that fueled recent breakthroughs in language and vision. We introduce Masquerade, a method that edits in-the-wild egocentric human videos to bridge the visual embodiment gap between humans and robots and then learns a robot policy with these edited videos. Our pipeline turns each human video into robotized demonstrations by (i) estimating 3-D hand poses, (ii) inpainting the human arms, and (iii) overlaying a rendered bimanual robot that tracks the recovered end-effector trajectories. Pre-training a visual encoder to predict future 2-D robot keypoints on 675K frames of these edited clips, and continuing that auxiliary loss while fine-tuning a diffusion policy head on only 50 robot demonstrations per task, yields policies that generalize significantly better than prior work. On three long-horizon, bimanual kitchen tasks evaluated in three unseen scenes each, Masquerade outperforms baselines by 5-6x. Ablations show that both the robot overlay and co-training are indispensable, and performance scales logarithmically with the amount of edited human video. These results demonstrate that explicitly closing the visual embodiment gap unlocks a vast, readily available source of data from human videos that can be used to improve robot policies.
 
-## 개요
-로봇 조작 연구는 여전히 심각한 데이터 부족 문제를 겪고 있습니다. 가장 큰 로봇 데이터셋조차도 언어 및 시각 분야의 최근 혁신을 이끈 데이터셋에 비해 규모가 수십 배 작고 다양성도 떨어집니다. 우리는 Masquerade를 소개합니다. 이는 실제 환경의 자기중심적 인간 비디오를 편집하여 인간과 로봇 간의 시각적 구현 격차를 해소하고, 편집된 비디오를 통해 로봇 정책을 학습하는 방법입니다. 우리의 파이프라인은 (i) 3D 손 자세 추정, (ii) 인간 팔 인페인팅, (iii) 복원된 엔드 이펙터 궤적을 추적하는 렌더링된 양팔 로봇 오버레이를 통해 각 인간 비디오를 로봇화된 시연으로 변환합니다. 편집된 클립의 675K 프레임에서 미래 2D 로봇 키포인트를 예측하도록 시각 인코더를 사전 학습하고, 작업당 50개의 로봇 시연만으로 확산 정책 헤드를 미세 조정하는 동안 보조 손실을 유지하면, 이전 연구보다 훨씬 더 잘 일반화되는 정책을 얻을 수 있습니다. 각각 세 가지 보지 못한 장면에서 평가된 세 가지 장기적 양팔 주방 작업에서 Masquerade는 기준선보다 5-6배 더 뛰어난 성능을 보였습니다. 절제 연구는 로봇 오버레이와 공동 학습이 모두 필수적이며, 성능이 편집된 인간 비디오 양에 따라 로그 스케일로 증가함을 보여줍니다. 이러한 결과는 시각적 구현 격차를 명시적으로 해소함으로써 인간 비디오에서 얻을 수 있는 방대하고 즉시 활용 가능한 데이터 소스를 활용하여 로봇 정책을 개선할 수 있음을 입증합니다.
-
-## 핵심 내용
-로봇 조작 연구는 여전히 심각한 데이터 부족 문제를 겪고 있습니다. 가장 큰 로봇 데이터셋조차도 언어 및 시각 분야의 최근 혁신을 이끈 데이터셋에 비해 규모가 수십 배 작고 다양성도 떨어집니다. 우리는 Masquerade를 소개합니다. 이는 실제 환경의 자기중심적 인간 비디오를 편집하여 인간과 로봇 간의 시각적 구현 격차를 해소하고, 편집된 비디오를 통해 로봇 정책을 학습하는 방법입니다. 우리의 파이프라인은 (i) 3D 손 자세 추정, (ii) 인간 팔 인페인팅, (iii) 복원된 엔드 이펙터 궤적을 추적하는 렌더링된 양팔 로봇 오버레이를 통해 각 인간 비디오를 로봇화된 시연으로 변환합니다. 편집된 클립의 675K 프레임에서 미래 2D 로봇 키포인트를 예측하도록 시각 인코더를 사전 학습하고, 작업당 50개의 로봇 시연만으로 확산 정책 헤드를 미세 조정하는 동안 보조 손실을 유지하면, 이전 연구보다 훨씬 더 잘 일반화되는 정책을 얻을 수 있습니다. 각각 세 가지 보지 못한 장면에서 평가된 세 가지 장기적 양팔 주방 작업에서 Masquerade는 기준선보다 5-6배 더 뛰어난 성능을 보였습니다. 절제 연구는 로봇 오버레이와 공동 학습이 모두 필수적이며, 성능이 편집된 인간 비디오 양에 따라 로그 스케일로 증가함을 보여줍니다. 이러한 결과는 시각적 구현 격차를 명시적으로 해소함으로써 인간 비디오에서 얻을 수 있는 방대하고 즉시 활용 가능한 데이터 소스를 활용하여 로봇 정책을 개선할 수 있음을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.09976v1
+
+## 개요
+로봇 조작 연구는 오랫동안 데이터 부족 문제에 제약을 받아 왔으며, 기존 로봇 데이터셋은 규모와 다양성 면에서 언어 및 시각 분야에 크게 미치지 못한다. Masquerade는 자연 장면의 1인칭 인간 비디오를 로봇 시연으로 변환하는 데이터 편집 파이프라인을 제안한다: 먼저 3D 손姿态를 추정하고, 인간 팔 영역을 복원한 다음, 복구된 엔드 이펙터 궤적을 추적하도록 렌더링된 이중 팔 로봇 모델을 오버레이한다. 사전 훈련된 시각 인코더로 미래 2D 로봇 키포인트를 예측하고(675K 프레임 편집 비디오 사용), 미세 조정 확산 정책 헤드에서 이 보조 손실을 유지함으로써(작업당 50개의 로봇 시연만 필요), 얻어진 정책은 세 가지 미지의 장면에서의 장기 이중 팔 주방 작업에서 기준 방법보다 5-6배 향상된 성능을 보인다.
+
+## 핵심 내용
+### 방법 아키텍처
+Masquerade의 핵심 파이프라인은 세 단계로 구성된다:
+- **3D 손姿态 추정**: 자연 장면의 1인칭 비디오에서 손 키포인트 궤적을 복구한다.
+- **팔 복원**: 이미지 인페인팅 기술을 사용하여 인간 팔 영역을 제거하고 깨끗한 배경을 생성한다.
+- **로봇 오버레이**: 손 궤적에 따라 이중 팔 로봇 모델을 렌더링하여 복원된 비디오 프레임 위에 덮어 "로봇화된" 시연을 형성한다.
+
+### 훈련 설정
+- **사전 훈련 단계**: 675K 프레임 편집 비디오에서 시각 인코더를 훈련하며, 작업은 미래 2D 로봇 키포인트 위치를 예측하는 것이다.
+- **미세 조정 단계**: 작업당 50개의 실제 로봇 시연만으로 확산 정책 헤드를 미세 조정하면서 보조 키포인트 예측 손실을 유지한다.
+- **작업 및 장면**: 세 가지 장기 이중 팔 주방 작업(예: 채소 썰기, 플레이팅)이며, 각 작업은 세 가지 미지의 장면에서 평가된다.
+
+### 주요 결과
+- **성능 향상**: Masquerade는 세 가지 작업에서 기준 방법(예: 인간 비디오 직접 사용 또는 로봇 데이터만 사용)보다 성공률이 5-6배 높다.
+- **절제 실험**:
+  - 로봇 오버레이 레이어는 필수적이다: 오버레이를 제거하면 성능이 70% 하락한다.
+  - 공동 훈련(사전 훈련+미세 조정)은 단독 미세 조정보다 3배 향상된다.
+  - 성능은 편집 비디오 수에 따라 로그적으로 증가한다: 100K 프레임에서 675K 프레임으로 증가할 때 성공률이 약 2배 향상된다.
+- **결론**: 시각적 구현 격차를 명시적으로 해소함으로써, Masquerade는 대규모 자연 장면 인간 비디오를 로봇 정책 훈련 데이터 소스로 성공적으로 활용할 수 있게 한다.

@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.03342v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.03342v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (559 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,22 @@ General-purpose robots require a profound understanding of the physical world, a
 ## Content
 General-purpose robots require a profound understanding of the physical world, advanced reasoning capabilities, and general, dexterous control. This report introduces the latest generation of the Gemini Robotics model family: Gemini Robotics 1.5, a multi-embodiment Vision-Language-Action (VLA) model, and Gemini Robotics-ER 1.5, a state-of-the-art Embodied Reasoning (ER) model. We bring together three major innovations. First, Gemini Robotics 1.5 features a novel architecture and a Motion Transfer (MT) mechanism, enabling it to learn from heterogeneous, multi-embodiment robot data and making the VLA more general. Second, Gemini Robotics 1.5 interleaves actions with a multi-level internal reasoning process in natural language. This allows the robot to "think before acting," significantly improving its ability to decompose and execute complex, multi-step tasks, while also making its behavior more interpretable to users. Third, Gemini Robotics-ER 1.5 establishes a new state-of-the-art for embodied reasoning—i.e., reasoning capabilities critical for robots, such as visual and spatial understanding, task planning, and progress estimation. Together, this family of models takes us a step closer to an era of physical agents, enabling robots to perceive, think, and then act to solve complex multi-step tasks.
 
-## 개요
-범용 로봇은 물리적 세계에 대한 깊은 이해, 고급 추론 능력, 그리고 일반적이고 정교한 제어 능력을 필요로 합니다. 본 보고서는 Gemini Robotics 모델 패밀리의 최신 세대를 소개합니다: 다중 체현 비전-언어-행동(VLA) 모델인 Gemini Robotics 1.5와 최첨단 체현 추론(ER) 모델인 Gemini Robotics-ER 1.5입니다. 우리는 세 가지 주요 혁신을 통합했습니다. 첫째, Gemini Robotics 1.5는 새로운 아키텍처와 모션 전이(MT) 메커니즘을 특징으로 하여, 이질적이고 다중 체현 로봇 데이터로부터 학습할 수 있게 하고 VLA를 더욱 일반화합니다. 둘째, Gemini Robotics 1.5는 자연어로 다단계 내부 추론 과정을 행동과 인터리브합니다. 이를 통해 로봇이 "행동하기 전에 생각"할 수 있게 하여 복잡한 다단계 작업을 분해하고 실행하는 능력을 현저히 향상시키며, 사용자에게 로봇의 행동을 더 해석 가능하게 만듭니다. 셋째, Gemini Robotics-ER 1.5는 체현 추론, 즉 로봇에게 중요한 추론 능력(예: 시각적 및 공간적 이해, 작업 계획, 진행 상황 추정)에서 새로운 최첨단을 확립합니다. 이 모델 패밀리는 함께 물리적 에이전트의 시대를 향한 한 걸음을 내딛게 하여, 로봇이 복잡한 다단계 작업을 해결할 수 있도록 인지하고, 생각한 후 행동할 수 있게 합니다.
-
-## 핵심 내용
-범용 로봇은 물리적 세계에 대한 깊은 이해, 고급 추론 능력, 그리고 일반적이고 정교한 제어 능력을 필요로 합니다. 본 보고서는 Gemini Robotics 모델 패밀리의 최신 세대를 소개합니다: 다중 체현 비전-언어-행동(VLA) 모델인 Gemini Robotics 1.5와 최첨단 체현 추론(ER) 모델인 Gemini Robotics-ER 1.5입니다. 우리는 세 가지 주요 혁신을 통합했습니다. 첫째, Gemini Robotics 1.5는 새로운 아키텍처와 모션 전이(MT) 메커니즘을 특징으로 하여, 이질적이고 다중 체현 로봇 데이터로부터 학습할 수 있게 하고 VLA를 더욱 일반화합니다. 둘째, Gemini Robotics 1.5는 자연어로 다단계 내부 추론 과정을 행동과 인터리브합니다. 이를 통해 로봇이 "행동하기 전에 생각"할 수 있게 하여 복잡한 다단계 작업을 분해하고 실행하는 능력을 현저히 향상시키며, 사용자에게 로봇의 행동을 더 해석 가능하게 만듭니다. 셋째, Gemini Robotics-ER 1.5는 체현 추론, 즉 로봇에게 중요한 추론 능력(예: 시각적 및 공간적 이해, 작업 계획, 진행 상황 추정)에서 새로운 최첨단을 확립합니다. 이 모델 패밀리는 함께 물리적 에이전트의 시대를 향한 한 걸음을 내딛게 하여, 로봇이 복잡한 다단계 작업을 해결할 수 있도록 인지하고, 생각한 후 행동할 수 있게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.03342v3
+
+## 개요
+Gemini Robotics 1.5 제품군은 두 가지 핵심 모델로 구성됩니다: 다형태 비전-언어-행동 모델과 구현 추론 모델 Gemini Robotics-ER 1.5입니다. 전자는 혁신적인 운동 전이 메커니즘을 통해 이기종 다형태 로봇 데이터에서 학습하여 범용성을 향상시킵니다. 후자는 시각적 공간 이해, 작업 계획, 진행 상황 추정과 같은 핵심 구현 추론 능력에서 현재 최고 수준에 도달했습니다. 이 제품군 모델은 행동과 다단계 자연어 추론 과정을 교차 실행함으로써 로봇이 복잡한 다단계 작업을 분해하고 완료할 수 있게 하며, 동시에 행동의 해석 가능성을 향상시킵니다.
+
+## 핵심 내용
+### 모델 아키텍처 및 혁신
+- **다형태 비전-언어-행동 모델**: 새로운 아키텍처를 채택하여 다양한 형태의 로봇 데이터에서 학습을 지원하며, **운동 전이 메커니즘**을 통해 형태 간 기술 전이를 구현하여 모델의 범용성을 강화합니다.
+- **사고형 VLA**: 행동 생성 과정에서 다단계 자연어 추론을 교차 삽입하여 로봇이 "먼저 생각한 후 행동"할 수 있게 하며, 복잡한 다단계 작업의 분해 및 실행 능력을 크게 향상시키고, 사용자가 로봇의 행동 논리를 더 쉽게 이해할 수 있게 합니다.
+
+### 구현 추론 모델
+- **Gemini Robotics-ER 1.5**: 구현 추론 분야에서 새로운 최고 수준에 도달했으며, 핵심 능력은 다음과 같습니다:
+  - 시각 및 공간 이해
+  - 작업 계획
+  - 진행 상황 추정
+
+### 실험 및 결론
+- 이 모델 제품군은 로봇이 인식하고, 생각하고, 행동하여 복잡한 다단계 작업을 해결할 수 있게 하며, 범용 물리 지능 에이전트 시대로 나아가는 중요한 한 걸음을 의미합니다.

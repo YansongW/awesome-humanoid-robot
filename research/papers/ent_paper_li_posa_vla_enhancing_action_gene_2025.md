@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.03724v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.03724v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (592 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,22 @@ The Vision-Language-Action (VLA) models have demonstrated remarkable performance
 ## Content
 The Vision-Language-Action (VLA) models have demonstrated remarkable performance on embodied tasks and shown promising potential for real-world applications. However, current VLAs still struggle to produce consistent and precise target-oriented actions, as they often generate redundant or unstable motions along trajectories, limiting their applicability in time-sensitive scenarios. In this work, we attribute these redundant actions to the spatially uniform perception field of existing VLAs, which causes them to be distracted by target-irrelevant objects, especially in complex environments. To address this issue, we propose an efficient PosA-VLA framework that anchors visual attention via pose-conditioned supervision, consistently guiding the model's perception toward task-relevant regions. The pose-conditioned anchor attention mechanism enables the model to better align instruction semantics with actionable visual cues, thereby improving action generation precision and efficiency. Moreover, our framework adopts a lightweight architecture and requires no auxiliary perception modules (e.g., segmentation or grounding networks), ensuring efficient inference. Extensive experiments verify that our method executes embodied tasks with precise and time-efficient behavior across diverse robotic manipulation benchmarks and shows robust generalization in a variety of challenging environments.
 
-## 개요
-Vision-Language-Action(VLA) 모델은 임베디드 태스크에서 뛰어난 성능을 보여주며 실제 애플리케이션에서 유망한 잠재력을 입증했습니다. 그러나 현재 VLA는 여전히 일관되고 정밀한 목표 지향적 행동을 생성하는 데 어려움을 겪고 있으며, 궤적을 따라 중복되거나 불안정한 움직임을 자주 생성하여 시간에 민감한 시나리오에서 적용 가능성을 제한합니다. 본 연구에서는 이러한 중복 행동이 기존 VLA의 공간적으로 균일한 인식 필드에 기인하며, 이로 인해 특히 복잡한 환경에서 목표와 무관한 객체에 주의가 분산된다고 설명합니다. 이 문제를 해결하기 위해, 우리는 포즈 조건화된 감독을 통해 시각적 주의를 고정시키고 모델의 인식을 태스크 관련 영역으로 일관되게 유도하는 효율적인 PosA-VLA 프레임워크를 제안합니다. 포즈 조건화된 앵커 주의 메커니즘은 모델이 명령 의미론을 실행 가능한 시각적 단서와 더 잘 정렬할 수 있게 하여 행동 생성의 정밀도와 효율성을 향상시킵니다. 또한, 우리의 프레임워크는 경량 아키텍처를 채택하고 추가적인 인식 모듈(예: 분할 또는 접지 네트워크)이 필요하지 않아 효율적인 추론을 보장합니다. 광범위한 실험을 통해 우리의 방법이 다양한 로봇 조작 벤치마크에서 정밀하고 시간 효율적인 행동으로 임베디드 태스크를 실행하며, 다양한 도전적인 환경에서 강력한 일반화를 보여줌을 입증했습니다.
-
-## 핵심 내용
-Vision-Language-Action(VLA) 모델은 임베디드 태스크에서 뛰어난 성능을 보여주며 실제 애플리케이션에서 유망한 잠재력을 입증했습니다. 그러나 현재 VLA는 여전히 일관되고 정밀한 목표 지향적 행동을 생성하는 데 어려움을 겪고 있으며, 궤적을 따라 중복되거나 불안정한 움직임을 자주 생성하여 시간에 민감한 시나리오에서 적용 가능성을 제한합니다. 본 연구에서는 이러한 중복 행동이 기존 VLA의 공간적으로 균일한 인식 필드에 기인하며, 이로 인해 특히 복잡한 환경에서 목표와 무관한 객체에 주의가 분산된다고 설명합니다. 이 문제를 해결하기 위해, 우리는 포즈 조건화된 감독을 통해 시각적 주의를 고정시키고 모델의 인식을 태스크 관련 영역으로 일관되게 유도하는 효율적인 PosA-VLA 프레임워크를 제안합니다. 포즈 조건화된 앵커 주의 메커니즘은 모델이 명령 의미론을 실행 가능한 시각적 단서와 더 잘 정렬할 수 있게 하여 행동 생성의 정밀도와 효율성을 향상시킵니다. 또한, 우리의 프레임워크는 경량 아키텍처를 채택하고 추가적인 인식 모듈(예: 분할 또는 접지 네트워크)이 필요하지 않아 효율적인 추론을 보장합니다. 광범위한 실험을 통해 우리의 방법이 다양한 로봇 조작 벤치마크에서 정밀하고 시간 효율적인 행동으로 임베디드 태스크를 실행하며, 다양한 도전적인 환경에서 강력한 일반화를 보여줌을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.03724v2
+
+## 개요
+현재 비전-언어-행동 모델은 구현 작업에서 우수한 성능을 보이지만, 복잡한 환경에서는 목표와 무관한 객체의 간섭으로 인해 중복되거나 불안정한 행동 궤적이 발생하는 경우가 많습니다. PosA-VLA 프레임워크는 자세 조건 감독을 통해 시각적 주의를 고정시켜 모델이 작업 관련 영역에 지속적으로 집중하도록 하여, 명령 의미론과 실행 가능한 시각적 단서를 더 잘 정렬합니다. 이 프레임워크는 경량 아키텍처를 채택하여 추가적인 인식 모듈(예: 분할 또는 접지 네트워크) 없이도 효율적인 추론 능력을 보장합니다. 실험 결과, 이 방법은 다양한 로봇 조작 벤치마크에서 정밀하고 시간 효율적인 행동을 구현했으며, 여러 도전적인 환경에서 강건한 일반화 능력을 보여주었습니다.
+
+## 핵심 내용
+### 문제 배경
+- 기존 VLA 모델은 구현 작업에서 우수한 성능을 보이지만, 궤적을 따라 중복되거나 불안정한 행동을 생성하는 경우가 많아 시간에 민감한 시나리오에서의 적용이 제한됩니다.
+- 저자는 중복 행동을 기존 VLA의 공간적으로 균일한 인식 필드에 기인한다고 보았습니다. 즉, 모델이 복잡한 환경에서 목표와 무관한 객체에 쉽게 주의가 분산된다는 것입니다.
+
+### 방법 아키텍처
+- **PosA-VLA 프레임워크**: 자세 조건 감독을 통해 시각적 주의를 고정시켜 모델이 작업 관련 영역을 지속적으로 인식하도록 유도합니다.
+- **자세 조건 앵커 주의 메커니즘**: 모델이 명령 의미론과 실행 가능한 시각적 단서를 더 잘 정렬하여 행동 생성의 정밀성과 효율성을 향상시킵니다.
+- **경량 아키텍처**: 보조 인식 모듈(예: 분할 네트워크 또는 접지 네트워크) 없이도 효율적인 추론을 보장합니다.
+
+### 실험 설정 및 결과
+- 다양한 로봇 조작 벤치마크에서 실험을 수행하여 구현 작업에서의 정밀하고 시간 효율적인 행동을 검증했습니다.
+- 여러 도전적인 환경에서 강건한 일반화 능력을 보여주었으며, 구체적인 수치는 제공되지 않았지만 성능 향상을 강조했습니다.

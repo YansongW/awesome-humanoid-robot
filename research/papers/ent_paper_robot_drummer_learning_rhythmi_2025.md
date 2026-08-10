@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.11498v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.11498v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (688 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -64,11 +65,26 @@ sources:
 ## Overview
 Humanoid robots have seen remarkable advances in dexterity, balance, and locomotion, yet their role in expressive domains such as music performance remains largely unexplored. Musical tasks, like drumming, present unique challenges, including split-second timing, rapid contacts, and multi-limb coordination over performances lasting minutes. In this paper, we introduce Robot Drummer, a humanoid capable of expressive, high-precision drumming across a diverse repertoire of songs. We formulate humanoid drumming as sequential fulfillment of timed contacts and transform drum scores into a Rhythmic Contact Chain. To handle the long-horizon nature of musical performance, we decompose each piece into fixed-length segments and train a single policy across all segments in parallel using reinforcement learning. Through extensive experiments on over thirty popular rock, metal, and jazz tracks, our results demonstrate that Robot Drummer consistently achieves high F1 scores. The learned behaviors exhibit emergent human-like drumming strategies, such as cross-arm strikes, and adaptive stick assignments, demonstrating the potential of reinforcement learning to bring humanoid robots into the domain of creative musical performance. Project page: robotdrummer.github.io
 
-## 개요
-휴머노이드 로봇은 손재주, 균형, 보행에서 놀라운 발전을 이루었지만, 음악 연주와 같은 표현적 영역에서의 역할은 아직 거의 탐구되지 않았습니다. 드럼 연주와 같은 음악적 작업은 순간적인 타이밍, 빠른 접촉, 수 분간 지속되는 연주에서의 다중 사지 협응 등 독특한 도전 과제를 제시합니다. 본 논문에서는 다양한 노래 레퍼토리에 걸쳐 표현력이 뛰어나고 정밀도 높은 드럼 연주가 가능한 휴머노이드 로봇, Robot Drummer를 소개합니다. 우리는 휴머노이드 드럼 연주를 시간 제약이 있는 접촉의 순차적 수행으로 정식화하고, 드럼 악보를 리듬 접촉 체인(Rhythmic Contact Chain)으로 변환합니다. 음악 연주의 장기적 특성을 처리하기 위해 각 곡을 고정 길이 세그먼트로 분해하고, 강화 학습을 사용하여 모든 세그먼트에 걸쳐 단일 정책을 병렬로 훈련합니다. 30개 이상의 인기 있는 록, 메탈, 재즈 트랙에 대한 광범위한 실험을 통해 Robot Drummer가 일관되게 높은 F1 점수를 달성함을 입증했습니다. 학습된 행동은 교차 팔 스트라이크, 적응형 스틱 할당과 같은 인간과 유사한 드럼 연주 전략을 나타내며, 강화 학습이 휴머노이드 로봇을 창의적인 음악 연주 영역으로 이끌 가능성을 보여줍니다. 프로젝트 페이지: robotdrummer.github.io
-
-## 핵심 내용
-휴머노이드 로봇은 손재주, 균형, 보행에서 놀라운 발전을 이루었지만, 음악 연주와 같은 표현적 영역에서의 역할은 아직 거의 탐구되지 않았습니다. 드럼 연주와 같은 음악적 작업은 순간적인 타이밍, 빠른 접촉, 수 분간 지속되는 연주에서의 다중 사지 협응 등 독특한 도전 과제를 제시합니다. 본 논문에서는 다양한 노래 레퍼토리에 걸쳐 표현력이 뛰어나고 정밀도 높은 드럼 연주가 가능한 휴머노이드 로봇, Robot Drummer를 소개합니다. 우리는 휴머노이드 드럼 연주를 시간 제약이 있는 접촉의 순차적 수행으로 정식화하고, 드럼 악보를 리듬 접촉 체인(Rhythmic Contact Chain)으로 변환합니다. 음악 연주의 장기적 특성을 처리하기 위해 각 곡을 고정 길이 세그먼트로 분해하고, 강화 학습을 사용하여 모든 세그먼트에 걸쳐 단일 정책을 병렬로 훈련합니다. 30개 이상의 인기 있는 록, 메탈, 재즈 트랙에 대한 광범위한 실험을 통해 Robot Drummer가 일관되게 높은 F1 점수를 달성함을 입증했습니다. 학습된 행동은 교차 팔 스트라이크, 적응형 스틱 할당과 같은 인간과 유사한 드럼 연주 전략을 나타내며, 강화 학습이 휴머노이드 로봇을 창의적인 음악 연주 영역으로 이끌 가능성을 보여줍니다. 프로젝트 페이지: robotdrummer.github.io
-
 ## 参考
 - http://arxiv.org/abs/2507.11498v2
+
+## 개요
+휴머노이드 로봇은 손재주, 균형 및 운동 능력에서 눈에 띄는 진전을 이루었지만, 음악 연주와 같은 표현적 영역에서의 적용은 여전히 공백 상태입니다. 드럼 연주는 로봇에게 밀리초 단위의 시간 정밀도, 빠른 접촉, 다중 팔다리 협응을 포함한 독특한 도전 과제를 제기합니다. 이를 위해 연구자들은 드럼 악보를 리듬 접촉 체인으로 변환하고, 각 곡을 고정 길이의 세그먼트로 분해하여 강화 학습을 통해 단일 정책을 병렬로 훈련했습니다. 30곡 이상의 록, 메탈, 재즈 곡에 대한 실험에서 Robot Drummer는 안정적으로 높은 F1 점수를 획득했으며, 교차 팔 타격, 적응형 드럼스틱 할당과 같은 인간형 전략을 보여주었습니다.
+
+## 핵심 내용
+### 방법
+- **문제 모델링**: 휴머노이드 로봇의 드럼 연주를 순차적으로 타이밍 접촉을 완료하는 작업으로 형식화합니다.
+- **리듬 접촉 체인**: 드럼 악보를 타임스탬프가 있는 일련의 접촉 이벤트로 변환하여 정책 학습의 입력으로 사용합니다.
+- **세그먼트 훈련**: 음악 연주의 긴 시간적 특성에 대응하기 위해 각 곡을 고정 길이의 세그먼트로 분해하고, 모든 세그먼트에 대해 통합된 정책을 병렬로 훈련합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: 휴머노이드 로봇 플랫폼을 사용하며, 구체적인 모델은 본문에서 명시되지 않았습니다.
+- **훈련 방법**: 강화 학습을 사용하여 정책을 훈련합니다.
+- **테스트 곡**: 30곡 이상의 인기 록, 메탈, 재즈 곡을 포함합니다.
+
+### 주요 결과
+- **성능 지표**: 모든 테스트 곡에서 높은 F1 점수를 획득하여 타격 정밀도와 리듬 정확성이 우수함을 나타냅니다.
+- **창발적 행동**: 로봇은 교차 팔 타격과 적응형 드럼스틱 할당과 같은 인간형 전략을 학습했으며, 이러한 행동은 명시적으로 프로그래밍된 것이 아니라 강화 학습을 통해 자연스럽게 나타났습니다.
+
+### 결론
+이 작업은 강화 학습이 휴머노이드 로봇을 창의적 음악 연주 분야로 이끄는 잠재력을 보여주며, 로봇이 복잡하고 긴 시간적 특성을 가진 다중 팔다리 협응 작업을 학습하는 데 효과적인 프레임워크를 제공합니다. 프로젝트 페이지: robotdrummer.github.io

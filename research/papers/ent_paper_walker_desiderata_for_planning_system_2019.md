@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1907.02300v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1907.02300v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (526 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,20 @@ theoretical_depth:
 ## Overview
 General-purpose service robots are expected to undertake a broad range of tasks at the request of users. Knowledge representation and planning systems are essential to flexible autonomous robots, but the field lacks a unified perspective on which features are essential for general-purpose service robots. Progress towards planning and reasoning for general-purpose service robots is hindered by differing assumptions about users, the environment, and the overall robot system. In this position paper, we propose desiderata for planning and reasoning systems to promote general-purpose service robots. Each proposed item draws on our experience with research on service robots in the office and home and on the demands of these environments. Our desiderata emphasize support for natural human-interfaces as well as for robust fallback methods when interactions with humans and the environment fail. We highlight relevant work towards these goals.
 
-## 개요
-범용 서비스 로봇은 사용자의 요청에 따라 광범위한 작업을 수행할 것으로 예상됩니다. 지식 표현 및 계획 시스템은 유연한 자율 로봇에 필수적이지만, 해당 분야에서는 범용 서비스 로봇에 필수적인 기능에 대한 통일된 관점이 부족합니다. 범용 서비스 로봇을 위한 계획 및 추론의 발전은 사용자, 환경 및 전체 로봇 시스템에 대한 서로 다른 가정으로 인해 저해되고 있습니다. 본 포지션 페이퍼에서는 범용 서비스 로봇을 촉진하기 위한 계획 및 추론 시스템의 요구 사항을 제안합니다. 각 제안 항목은 사무실과 가정에서의 서비스 로봇 연구 경험과 이러한 환경의 요구 사항을 바탕으로 도출되었습니다. 우리의 요구 사항은 자연스러운 인간-인터페이스 지원과 인간 및 환경과의 상호작용 실패 시 강력한 대체 방법을 강조합니다. 이러한 목표를 향한 관련 연구를 조명합니다.
-
-## 핵심 내용
-범용 서비스 로봇은 사용자의 요청에 따라 광범위한 작업을 수행할 것으로 예상됩니다. 지식 표현 및 계획 시스템은 유연한 자율 로봇에 필수적이지만, 해당 분야에서는 범용 서비스 로봇에 필수적인 기능에 대한 통일된 관점이 부족합니다. 범용 서비스 로봇을 위한 계획 및 추론의 발전은 사용자, 환경 및 전체 로봇 시스템에 대한 서로 다른 가정으로 인해 저해되고 있습니다. 본 포지션 페이퍼에서는 범용 서비스 로봇을 촉진하기 위한 계획 및 추론 시스템의 요구 사항을 제안합니다. 각 제안 항목은 사무실과 가정에서의 서비스 로봇 연구 경험과 이러한 환경의 요구 사항을 바탕으로 도출되었습니다. 우리의 요구 사항은 자연스러운 인간-인터페이스 지원과 인간 및 환경과의 상호작용 실패 시 강력한 대체 방법을 강조합니다. 이러한 목표를 향한 관련 연구를 조명합니다.
-
 ## 参考
 - http://arxiv.org/abs/1907.02300v1
+
+## 개요
+범용 서비스 로봇은 사용자가 요청하는 광범위한 작업을 수행해야 하지만, 현재 지식 표현 및 계획 시스템은 통일된 기능 요구사항 표준이 부족합니다. 본 논문은 입장 논문으로서, 사무실 및 가정 환경에서의 연구 경험을 바탕으로 계획 및 추론 시스템을 위한 설계 지침을 제안하며, 자연스러운 인간-로봇 상호작용 지원과 인간 또는 환경과의 상호작용 실패 시 강건한 복구 메커니즘을 중점적으로 다루고, 관련 기존 연구를 정리합니다.
+
+## 핵심 내용
+### 배경 및 동기
+범용 서비스 로봇은 가정과 사무실에서의 다양한 작업에 유연하게 대응해야 하지만, 기존 계획 및 추론 시스템은 사용자, 환경 및 로봇 시스템에 대한 가정이 달라 발전이 저해되고 있습니다. 본 논문은 설계 지침을 제안함으로써 해당 분야의 통일된 발전을 촉진하는 것을 목표로 합니다.
+
+### 핵심 설계 지침
+- **자연스러운 상호작용 지원**: 시스템이 자연어 명령을 이해하고 응답할 수 있어야 하며, 사용자 사용 장벽을 낮추는 것을 강조합니다.
+- **강건한 복구 방법**: 인간 또는 환경과의 상호작용이 실패할 때(예: 명령의 모호성, 센서 노이즈), 시스템은 자동으로 성능을 저하시키거나 대체 방안을 제공하여 작업이 중단되지 않도록 해야 합니다.
+- **환경 적응성**: 사무실 및 가정 환경의 실제 요구사항(예: 동적 장애물, 비구조화된 배치)을 기반으로, 시스템은 실시간 재계획 및 지식 업데이트를 지원해야 합니다.
+
+### 관련 연구 및 결론
+본 논문은 기존 연구에서 위 지침에 대한 탐구를 정리하고, 현재 시스템이 상호작용 강건성과 환경 일반화 측면에서 부족함을 지적합니다. 저자는 통일된 설계 지침이 범용 서비스 로봇의 실용화를 가속화할 것이라고 주장하며, 자연스러운 상호작용과 오류 복구의 협력적 설계에 대한 커뮤니티의 관심을 촉구합니다.

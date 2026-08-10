@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.01996v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.01996v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (690 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,27 @@ theoretical_depth:
 ## Overview
 Massively parallel simulation has reduced reinforcement learning (RL) training time for robots from days to minutes. However, achieving fast and reliable sim-to-real RL for humanoid control remains difficult due to the challenges introduced by factors such as high dimensionality and domain randomization. In this work, we introduce a simple and practical recipe based on off-policy RL algorithms, i.e., FastSAC and FastTD3, that enables rapid training of humanoid locomotion policies in just 15 minutes with a single RTX 4090 GPU. Our simple recipe stabilizes off-policy RL algorithms at massive scale with thousands of parallel environments through carefully tuned design choices and minimalist reward functions. We demonstrate rapid end-to-end learning of humanoid locomotion controllers on Unitree G1 and Booster T1 robots under strong domain randomization, e.g., randomized dynamics, rough terrain, and push perturbations, as well as fast training of whole-body human-motion tracking policies. We provide videos and open-source implementation at: https://younggyo.me/fastsac-humanoid.
 
-## 개요
-대규모 병렬 시뮬레이션은 로봇의 강화 학습(RL) 훈련 시간을 며칠에서 몇 분으로 단축시켰습니다. 그러나 휴머노이드 제어를 위한 빠르고 신뢰할 수 있는 sim-to-real RL을 달성하는 것은 고차원성 및 도메인 무작위화와 같은 요인으로 인해 여전히 어렵습니다. 본 연구에서는 오프폴리시 RL 알고리즘인 FastSAC과 FastTD3를 기반으로 한 간단하고 실용적인 방법을 소개합니다. 이 방법은 단일 RTX 4090 GPU로 단 15분 만에 휴머노이드 보행 정책을 빠르게 훈련할 수 있게 해줍니다. 우리의 간단한 방법은 세심하게 조정된 설계 선택과 최소한의 보상 함수를 통해 수천 개의 병렬 환경에서 대규모로 오프폴리시 RL 알고리즘을 안정화합니다. 우리는 Unitree G1 및 Booster T1 로봇에서 강력한 도메인 무작위화(예: 무작위 동역학, 거친 지형, 밀기 교란) 하에 휴머노이드 보행 제어기의 빠른 종단간 학습과 전신 인간 동작 추적 정책의 빠른 훈련을 시연합니다. 비디오와 오픈소스 구현은 https://younggyo.me/fastsac-humanoid 에서 제공합니다.
-
-## 핵심 내용
-대규모 병렬 시뮬레이션은 로봇의 강화 학습(RL) 훈련 시간을 며칠에서 몇 분으로 단축시켰습니다. 그러나 휴머노이드 제어를 위한 빠르고 신뢰할 수 있는 sim-to-real RL을 달성하는 것은 고차원성 및 도메인 무작위화와 같은 요인으로 인해 여전히 어렵습니다. 본 연구에서는 오프폴리시 RL 알고리즘인 FastSAC과 FastTD3를 기반으로 한 간단하고 실용적인 방법을 소개합니다. 이 방법은 단일 RTX 4090 GPU로 단 15분 만에 휴머노이드 보행 정책을 빠르게 훈련할 수 있게 해줍니다. 우리의 간단한 방법은 세심하게 조정된 설계 선택과 최소한의 보상 함수를 통해 수천 개의 병렬 환경에서 대규모로 오프폴리시 RL 알고리즘을 안정화합니다. 우리는 Unitree G1 및 Booster T1 로봇에서 강력한 도메인 무작위화(예: 무작위 동역학, 거친 지형, 밀기 교란) 하에 휴머노이드 보행 제어기의 빠른 종단간 학습과 전신 인간 동작 추적 정책의 빠른 훈련을 시연합니다. 비디오와 오픈소스 구현은 https://younggyo.me/fastsac-humanoid 에서 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.01996v1
+
+## 개요
+이 연구는 휴머노이드 로봇 강화학습 훈련에서 고차원성과 도메인 무작위화가 가져오는 도전 과제를 해결하기 위해, 세심하게 조정된 설계 선택과 극도로 단순화된 보상 함수를 통해 수천 개의 병렬 환경에서 off-policy RL 알고리즘의 대규모 훈련을 안정화했습니다. 실험 결과, 이 방법은 강한 도메인 무작위화 조건(예: 무작위 동역학, 험준한 지형, 밀기 교란)에서 엔드투엔드 휴머노이드 운동 컨트롤러를 빠르게 학습할 수 있으며, 전신 인간 동작 추적 정책의 빠른 훈련도 지원합니다.
+
+## 핵심 내용
+### 방법 핵심
+- **알고리즘 기반**: off-policy RL 알고리즘인 FastSAC와 FastTD3를 사용하며, 대규모 병렬 시뮬레이션(수천 개 환경)을 통해 효율적인 훈련을 구현합니다.
+- **핵심 설계**: 세심하게 튜닝된 하이퍼파라미터와 극도로 단순화된 보상 함수를 통해 대규모 병렬 시나리오에서 off-policy 알고리즘의 안정성 문제를 해결합니다.
+- **훈련 효율성**: 단일 RTX 4090 GPU에서 15분 만에 훈련을 완료하며, 기존 방법(수일 소요)에 비해 크게 단축됩니다.
+
+### 실험 설정
+- **로봇 플랫폼**: Unitree G1 및 Booster T1 두 종류의 휴머노이드 로봇.
+- **도메인 무작위화**: 무작위 동역학 파라미터, 험준한 지형, 밀기 교란 등 강한 교란 조건 포함.
+- **작업 유형**: 엔드투엔드 휴머노이드 운동 제어(보행, 달리기) 및 전신 인간 동작 추적.
+
+### 핵심 결과
+- **훈련 속도**: 15분 만에 정책 훈련을 완료하여 배포 가능한 견고성을 달성.
+- **시뮬레이션-실제 전이**: 두 가지 서로 다른 하드웨어에서 성공적으로 배포되어 방법의 일반화 능력을 검증.
+- **오픈소스 자료**: 비디오 데모 및 오픈소스 코드 제공 (https://younggyo.me/fastsac-humanoid).
+
+### 결론
+이 연구는 합리적인 알고리즘 선택과 엔지니어링 최적화를 통해 off-policy RL 방법이 극도로 짧은 시간 내에 실제 휴머노이드 로봇에 적용 가능한 운동 정책을 훈련할 수 있음을 증명하며, 빠른 반복과 저비용 배포를 위한 실용적인 솔루션을 제공합니다.

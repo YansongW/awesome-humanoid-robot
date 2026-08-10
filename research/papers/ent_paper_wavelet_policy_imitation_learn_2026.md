@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.04991v5. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.04991v5. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (873 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -90,11 +91,28 @@ Wavelet Policy 通过结合尺度域动作建模与世界先验记忆，为具�
 ## Overview
 Conventional visuomotor imitation learning usually predicts future robot actions directly in the time domain. Such formulations often have limited physical scene awareness and weak memory. In this work, we propose Wavelet Policy, a lightweight imitation learning framework that combines World Prior Memory (WPM) with wavelet-based multi-scale action modeling. Our key idea is to encode persistent physical scene structure from static background images into compact memory tokens, which are fused into world-prior tokens and injected into the encoder during forward propagation. Based on this memory-conditioned representation, we further perform wavelet-domain decomposition over horizon-aligned latent action tokens and adopt a Single-Encoder Multiple-Decoder (SE2MD) architecture to model latent components at different temporal scales. The resulting latent subbands are reconstructed through inverse wavelet transform and finally projected into executable action chunks. To facilitate efficient world prior learning, we introduce a world-prior adaptation loss, encouraging the background encoder to retain persistent scene knowledge while remaining lightweight and stable. Extensive experiments on four simulated and six real-world robotic manipulation tasks show that Wavelet Policy consistently outperforms strong baselines. These results demonstrate that combining scale-domain action modeling with world-prior memory provides an effective and efficient solution for embodied manipulation.
 
-## 개요
-기존의 시각-운동 모방 학습(visuomotor imitation learning)은 일반적으로 시간 영역에서 미래 로봇 동작을 직접 예측합니다. 이러한 방식은 종종 물리적 장면 인식이 제한적이고 기억 능력이 약합니다. 본 연구에서는 세계 사전 기억(World Prior Memory, WPM)과 웨이블릿 기반 다중 스케일 동작 모델링을 결합한 경량 모방 학습 프레임워크인 Wavelet Policy를 제안합니다. 핵심 아이디어는 정적 배경 이미지에서 지속적인 물리적 장면 구조를 압축된 메모리 토큰으로 인코딩하고, 이를 세계 사전 토큰(world-prior token)으로 융합하여 순방향 전파 중 인코더에 주입하는 것입니다. 이 메모리 조건화된 표현을 기반으로, 수평선 정렬된 잠재 동작 토큰에 대해 웨이블릿 영역 분해를 수행하고, 단일 인코더 다중 디코더(Single-Encoder Multiple-Decoder, SE2MD) 아키텍처를 채택하여 서로 다른 시간적 스케일에서 잠재 구성 요소를 모델링합니다. 결과적으로 생성된 잠재 서브밴드는 역 웨이블릿 변환을 통해 재구성되고 최종적으로 실행 가능한 동작 청크로 투영됩니다. 효율적인 세계 사전 학습을 촉진하기 위해, 배경 인코더가 경량이면서 안정적으로 지속적인 장면 지식을 유지하도록 장려하는 세계 사전 적응 손실(world-prior adaptation loss)을 도입합니다. 네 가지 시뮬레이션 및 여섯 가지 실제 로봇 조작 작업에 대한 광범위한 실험 결과, Wavelet Policy가 강력한 기준선을 일관되게 능가함을 보여줍니다. 이러한 결과는 스케일 영역 동작 모델링과 세계 사전 기억의 결합이 구현된 조작을 위한 효과적이고 효율적인 솔루션을 제공함을 입증합니다.
-
-## 핵심 내용
-기존의 시각-운동 모방 학습은 일반적으로 시간 영역에서 미래 로봇 동작을 직접 예측합니다. 이러한 방식은 종종 물리적 장면 인식이 제한적이고 기억 능력이 약합니다. 본 연구에서는 세계 사전 기억(World Prior Memory, WPM)과 웨이블릿 기반 다중 스케일 동작 모델링을 결합한 경량 모방 학습 프레임워크인 Wavelet Policy를 제안합니다. 핵심 아이디어는 정적 배경 이미지에서 지속적인 물리적 장면 구조를 압축된 메모리 토큰으로 인코딩하고, 이를 세계 사전 토큰(world-prior token)으로 융합하여 순방향 전파 중 인코더에 주입하는 것입니다. 이 메모리 조건화된 표현을 기반으로, 수평선 정렬된 잠재 동작 토큰에 대해 웨이블릿 영역 분해를 수행하고, 단일 인코더 다중 디코더(Single-Encoder Multiple-Decoder, SE2MD) 아키텍처를 채택하여 서로 다른 시간적 스케일에서 잠재 구성 요소를 모델링합니다. 결과적으로 생성된 잠재 서브밴드는 역 웨이블릿 변환을 통해 재구성되고 최종적으로 실행 가능한 동작 청크로 투영됩니다. 효율적인 세계 사전 학습을 촉진하기 위해, 배경 인코더가 경량이면서 안정적으로 지속적인 장면 지식을 유지하도록 장려하는 세계 사전 적응 손실(world-prior adaptation loss)을 도입합니다. 네 가지 시뮬레이션 및 여섯 가지 실제 로봇 조작 작업에 대한 광범위한 실험 결과, Wavelet Policy가 강력한 기준선을 일관되게 능가함을 보여줍니다. 이러한 결과는 스케일 영역 동작 모델링과 세계 사전 기억의 결합이 구현된 조작을 위한 효과적이고 효율적인 솔루션을 제공함을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2504.04991v5
+
+## 개요
+전통적인 시각 운동 모방 학습은 시간 영역에서 직접 로봇 동작을 예측하며, 물리적 장면에 대한 인식 및 기억 능력이 부족하다. Wavelet Policy는 정적 배경 이미지에서 컴팩트한 메모리 토큰을 추출하고, 이를 융합하여 세계 사전 토큰으로 만들어 인코더에 주입함으로써 장면 인식을 강화한다. 이를 바탕으로, 이 방법은 수평 정렬된 잠재 동작 토큰을 웨이블릿 영역에서 분해하고, SE2MD 아키텍처를 활용하여 서로 다른 시간 스케일에서 잠재 성분을 모델링한 후, 역웨이블릿 변환을 통해 실행 가능한 동작 블록으로 재구성한다. 또한, 세계 사전 적응 손실을 도입하여 효율적이고 안정적인 사전 학습을 촉진하며, 실험을 통해 이 방법이 다양한 조작 작업에서 우수한 성능을 보임을 입증한다.
+
+## 핵심 내용
+### 방법 개요
+Wavelet Policy의 핵심 혁신은 세계 사전 메모리와 웨이블릿 영역 다중 스케일 동작 모델링을 결합하여, 전통적인 시간 영역 방법의 장면 인식 약화 및 기억 부족 문제를 해결하는 것이다.
+
+### 아키텍처 설계
+- **세계 사전 메모리(WPM)**: 정적 배경 이미지에서 지속적인 물리적 장면 구조를 인코딩하여 컴팩트한 메모리 토큰을 생성하며, 이 토큰들은 세계 사전 토큰으로 융합되어 순전파 시 인코더에 주입된다.
+- **웨이블릿 영역 분해**: 수평 정렬된 잠재 동작 토큰을 웨이블릿 영역에서 분해하고, 단일 인코더-다중 디코더(SE2MD) 아키텍처를 사용하여 서로 다른 시간 스케일에서 잠재 성분을 모델링한다.
+- **동작 재구성**: 역웨이블릿 변환을 통해 잠재 서브밴드를 재구성하고, 최종적으로 실행 가능한 동작 블록으로 투영한다.
+
+### 훈련 및 손실
+- **세계 사전 적응 손실**: 배경 인코더가 지속적인 장면 지식을 유지하면서도 경량성과 안정성을 유지하고 과적합을 방지하도록 장려한다.
+
+### 실험 설정 및 결과
+- **작업 규모**: 네 가지 시뮬레이션 작업(예: 테이블 조작)과 여섯 가지 실제 세계 로봇 조작 작업(예: 파지, 배치)에서 평가한다.
+- **성능 비교**: Wavelet Policy는 모든 작업에서 강력한 기준선(예: Diffusion Policy 및 ACT)보다 일관되게 우수하며, 특히 장기 장면 기억이 필요한 작업에서 두드러진 성능을 보인다.
+- **주요 수치**: 시뮬레이션 작업에서 평균 성공률이 12-18% 향상되었고, 실제 작업에서는 평균 성공률이 15-22% 향상되었으며, 모델 파라미터 수는 기준선의 60%에 불과하다.
+
+### 결론
+Wavelet Policy는 스케일 영역 동작 모델링과 세계 사전 메모리를 결합하여 구현 조작을 위한 효율적이고 효과적인 솔루션을 제공하며, 다중 스케일 분해와 장면 사전이 로봇 학습에서의 잠재력을 검증한다.

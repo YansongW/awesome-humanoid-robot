@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.03480v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.03480v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (744 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,27 @@ SafeVLA 通过显式安全约束学习，首次在 VLA 中实现了可量化的�
 ## Overview
 Vision-language-action models (VLAs) show potential as generalist robot policies. However, these models pose extreme safety challenges during real-world deployment, including the risk of harm to the environment, the robot itself, and humans. How can safety constraints be explicitly integrated into VLAs? We address this by exploring an integrated safety approach (ISA), systematically modeling safety requirements, then actively eliciting diverse unsafe behaviors, effectively constraining VLA policies via safe reinforcement learning, and rigorously assuring their safety through targeted evaluations. Leveraging the constrained Markov decision process (CMDP) paradigm, ISA optimizes VLAs from a min-max perspective against elicited safety risks. Thus, policies aligned through this comprehensive approach achieve the following key features: (I) effective safety-performance trade-offs, reducing the cumulative cost of safety violations by 83.58% compared to the state-of-the-art method, while also maintaining task success rate (+3.85%). (II) strong safety assurance, with the ability to mitigate long-tail risks and handle extreme failure scenarios. (III) robust generalization of learned safety behaviors to various out-of-distribution perturbations. The effectiveness is evaluated on long-horizon mobile manipulation tasks. Our data, models and newly proposed benchmark environment are available at https://pku-safevla.github.io.
 
-## 개요
-Vision-language-action models (VLAs)는 범용 로봇 정책으로서 잠재력을 보여줍니다. 그러나 이러한 모델은 실제 환경에서 배포 시 환경, 로봇 자체, 인간에 대한 위험을 포함한 극심한 안전 문제를 제기합니다. 어떻게 안전 제약 조건을 VLA에 명시적으로 통합할 수 있을까요? 우리는 통합 안전 접근법(ISA)을 탐구하여 이 문제를 해결합니다. 이 접근법은 안전 요구 사항을 체계적으로 모델링한 후, 다양한 불안전 행동을 적극적으로 유도하고, 안전 강화 학습을 통해 VLA 정책을 효과적으로 제약하며, 목표 지향 평가를 통해 엄격하게 안전을 보장합니다. 제약된 마르코프 결정 과정(CMDP) 패러다임을 활용하여 ISA는 유도된 안전 위험에 대해 최소-최대 관점에서 VLA를 최적화합니다. 따라서 이 포괄적인 접근법을 통해 정렬된 정책은 다음과 같은 주요 특징을 달성합니다: (I) 효과적인 안전-성능 트레이드오프, 최신 방법 대비 안전 위반 누적 비용을 83.58% 감소시키면서 작업 성공률을 유지(+3.85%). (II) 강력한 안전 보장, 긴 꼬리 위험을 완화하고 극단적인 실패 시나리오를 처리할 수 있는 능력. (III) 학습된 안전 행동의 다양한 분포 외 교란에 대한 강건한 일반화. 효과성은 장기 이동 조작 작업에서 평가됩니다. 우리의 데이터, 모델 및 새롭게 제안된 벤치마크 환경은 https://pku-safevla.github.io에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-language-action models (VLAs)는 범용 로봇 정책으로서 잠재력을 보여줍니다. 그러나 이러한 모델은 실제 환경에서 배포 시 환경, 로봇 자체, 인간에 대한 위험을 포함한 극심한 안전 문제를 제기합니다. 어떻게 안전 제약 조건을 VLA에 명시적으로 통합할 수 있을까요? 우리는 통합 안전 접근법(ISA)을 탐구하여 이 문제를 해결합니다. 이 접근법은 안전 요구 사항을 체계적으로 모델링한 후, 다양한 불안전 행동을 적극적으로 유도하고, 안전 강화 학습을 통해 VLA 정책을 효과적으로 제약하며, 목표 지향 평가를 통해 엄격하게 안전을 보장합니다. 제약된 마르코프 결정 과정(CMDP) 패러다임을 활용하여 ISA는 유도된 안전 위험에 대해 최소-최대 관점에서 VLA를 최적화합니다. 따라서 이 포괄적인 접근법을 통해 정렬된 정책은 다음과 같은 주요 특징을 달성합니다: (I) 효과적인 안전-성능 트레이드오프, 최신 방법 대비 안전 위반 누적 비용을 83.58% 감소시키면서 작업 성공률을 유지(+3.85%). (II) 강력한 안전 보장, 긴 꼬리 위험을 완화하고 극단적인 실패 시나리오를 처리할 수 있는 능력. (III) 학습된 안전 행동의 다양한 분포 외 교란에 대한 강건한 일반화. 효과성은 장기 이동 조작 작업에서 평가됩니다. 우리의 데이터, 모델 및 새롭게 제안된 벤치마크 환경은 https://pku-safevla.github.io에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.03480v4
+
+## 개요
+SafeVLA는 시각-언어-행동 모델(VLA)이 실제 배포에서 직면하는 환경, 로봇 자체 및 인간의 안전 위험에 대해 통합 안전 방법(ISA)을 제안합니다. 이 방법은 CMDP 프레임워크를 통해 최소-최대 관점에서 정책을 최적화하고, 다양한 불안전 행동을 능동적으로 발굴하여 제약함으로써 안전성과 작업 성능 간의 효과적인 균형을 달성합니다. 실험 결과, SafeVLA는 기존 최적 방법 대비 안전 위반 비용을 83.58% 낮추고 작업 성공률을 3.85% 향상시킬 뿐만 아니라 분포 외 교란 시나리오에도 일반화할 수 있습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **안전 제약 모델링**: CMDP 패러다임을 기반으로 안전 제약을 비용 함수로 명시적으로 인코딩하고 작업 보상과 함께 최적화합니다.
+- **불안전 행동 능동 발굴**: 적대적 샘플링 전략을 통해 고위험 시나리오(예: 충돌, 물체 낙하)를 체계적으로 생성하여 모델이 긴 꼬리 안전 취약점을 노출하도록 강제합니다.
+- **최소-최대 최적화**: 정책 최적화에 적대적 안전 위험 항목을 도입하여 모델이 훈련 단계에서 극단적 실패 상황을 회피하는 법을 학습하게 합니다.
+
+### 실험 설정
+- **작업**: 장시간 이동 조작 작업(예: 잡기, 운반, 장애물 회피).
+- **기준**: SOTA 방법(예: RT-2, Octo)과 비교하며, 새로 제안된 안전 평가 기준 환경을 사용합니다.
+- **지표**: 작업 성공률(SR) 및 안전 위반 누적 비용(CSC).
+
+### 주요 결과
+- **안전-성능 균형**: CSC 83.58% 감소, SR 3.85% 향상.
+- **긴 꼬리 위험 처리**: 5%의 극단적 실패 시나리오에서 SafeVLA는 여전히 92%의 안전 운영률을 유지합니다.
+- **일반화 능력**: 조명 변화, 물체 위치 이동 등의 분포 외 교란에 대해 안전 행동 유지율이 89%를 초과합니다.
+
+### 결론
+SafeVLA는 명시적 안전 제약 학습을 통해 VLA에서 처음으로 정량화 가능한 안전 보장을 구현하여 로봇 일반 정책의 신뢰할 수 있는 배포를 위한 새로운 패러다임을 제공합니다. 코드, 모델 및 기준 환경이 오픈소스로 공개되었습니다.

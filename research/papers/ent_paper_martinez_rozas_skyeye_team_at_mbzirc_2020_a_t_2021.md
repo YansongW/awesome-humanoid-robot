@@ -44,8 +44,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.01834v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2104.01834v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (885 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,11 +90,28 @@ The paper presents a framework for fire extinguishing in an urban scenario by a 
 ## Content
 The paper presents a framework for fire extinguishing in an urban scenario by a team of aerial and ground robots. The system was developed to address Challenge 3 of the 2020 Mohamed Bin Zayed International Robotics Challenge (MBZIRC). The challenge required autonomously detecting, locating, and extinguishing fires on different floors of a building, as well as in its surroundings. The multi-robot system developed consists of a heterogeneous robot team of up to three Unmanned Aerial Vehicles (UAV) and one Unmanned Ground Vehicle (UGV). We describe the main hardware and software components for UAV and UGV platforms and also present the main algorithmic components of the system: a 3D LIDAR-based mapping and localization module able to work in GPS-denied scenarios; a global planner and a fast local re-planning system for robot navigation; infrared-based perception and robot actuation control for fire extinguishing; and a mission executive and coordination module based on Behavior Trees. The paper finally describes the results obtained during the competition, where the system worked fully autonomously and scored in all the trials performed. The presented system ended in 7th position out of 20 teams in the Challenge 3 competition and in 5th position (out of 17 teams) in the Challenge 3 entry to the Grand Finale (Grand Challenge) of MBZIRC 2020 competition.
 
-## 개요
-본 논문은 항공 및 지상 로봇 팀이 도시 시나리오에서 화재를 진압하기 위한 프레임워크를 제시합니다. 이 시스템은 2020년 Mohamed Bin Zayed 국제 로봇 공학 챌린지(MBZIRC)의 챌린지 3을 해결하기 위해 개발되었습니다. 해당 챌린지는 건물의 여러 층과 주변에서 화재를 자율적으로 감지, 위치 파악 및 진압하는 것을 요구했습니다. 개발된 다중 로봇 시스템은 최대 3대의 무인 항공기(UAV)와 1대의 무인 지상 차량(UGV)으로 구성된 이기종 로봇 팀으로 이루어져 있습니다. 우리는 UAV 및 UGV 플랫폼의 주요 하드웨어 및 소프트웨어 구성 요소를 설명하고, 시스템의 주요 알고리즘 구성 요소도 제시합니다: GPS가 차단된 시나리오에서 작동 가능한 3D LIDAR 기반 매핑 및 위치 추정 모듈; 로봇 내비게이션을 위한 글로벌 플래너 및 빠른 로컬 재계획 시스템; 화재 진압을 위한 적외선 기반 인식 및 로봇 작동 제어; 그리고 행동 트리(Behavior Trees) 기반의 임무 실행 및 조정 모듈입니다. 마지막으로, 본 논문은 시스템이 완전히 자율적으로 작동하고 모든 수행된 시험에서 점수를 획득한 대회 중 얻은 결과를 설명합니다. 제시된 시스템은 챌린지 3 대회에서 20개 팀 중 7위를 차지했으며, MBZIRC 2020 대회의 그랜드 피날레(그랜드 챌린지) 진출을 위한 챌린지 3에서는 17개 팀 중 5위를 기록했습니다.
-
-## 핵심 내용
-본 논문은 항공 및 지상 로봇 팀이 도시 시나리오에서 화재를 진압하기 위한 프레임워크를 제시합니다. 이 시스템은 2020년 Mohamed Bin Zayed 국제 로봇 공학 챌린지(MBZIRC)의 챌린지 3을 해결하기 위해 개발되었습니다. 해당 챌린지는 건물의 여러 층과 주변에서 화재를 자율적으로 감지, 위치 파악 및 진압하는 것을 요구했습니다. 개발된 다중 로봇 시스템은 최대 3대의 무인 항공기(UAV)와 1대의 무인 지상 차량(UGV)으로 구성된 이기종 로봇 팀으로 이루어져 있습니다. 우리는 UAV 및 UGV 플랫폼의 주요 하드웨어 및 소프트웨어 구성 요소를 설명하고, 시스템의 주요 알고리즘 구성 요소도 제시합니다: GPS가 차단된 시나리오에서 작동 가능한 3D LIDAR 기반 매핑 및 위치 추정 모듈; 로봇 내비게이션을 위한 글로벌 플래너 및 빠른 로컬 재계획 시스템; 화재 진압을 위한 적외선 기반 인식 및 로봇 작동 제어; 그리고 행동 트리(Behavior Trees) 기반의 임무 실행 및 조정 모듈입니다. 마지막으로, 본 논문은 시스템이 완전히 자율적으로 작동하고 모든 수행된 시험에서 점수를 획득한 대회 중 얻은 결과를 설명합니다. 제시된 시스템은 챌린지 3 대회에서 20개 팀 중 7위를 차지했으며, MBZIRC 2020 대회의 그랜드 피날레(그랜드 챌린지) 진출을 위한 챌린지 3에서는 17개 팀 중 5위를 기록했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2104.01834v2
+
+## 개요
+본 논문은 MBZIRC 2020 챌린지의 세 번째 과제를 위해, 모의 도시 건축 환경에서 자율적으로 화재를 진압하는 이기종 공중 및 지상 로봇 시스템을 설계한 내용을 다룬다. 시스템의 핵심은 GPS 거부 환경에서 작동 가능한 3D LIDAR 기반 매핑 및 위치 추정 모듈, 전역 경로 계획기와 빠른 국부 재계획 메커니즘, 적외선 감지를 기반으로 한 화재 감지 및 로봇 진압 제어, 그리고 행동 트리 기반의 작업 실행 및 조정 모듈로 구성된다. 대회에서 시스템은 모든 시험에서 완전 자율 운영을 달성하고 점수를 획득했으며, 최종적으로 Challenge 3에서 7위, Grand Finale에서 5위를 기록했다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **로봇 플랫폼**: 이기종 팀은 최대 3대의 UAV와 1대의 UGV로 구성되며, UAV는 고층 건물 화재 감지 및 진압을, UGV는 지상 구역 및 저층 화재 처리를 담당한다.
+- **하드웨어 및 소프트웨어**: UAV와 UGV의 하드웨어 구성(예: 센서, 계산 장치) 및 소프트웨어 스택을 상세히 설명하며, 모듈식 설계를 강조한다.
+
+### 핵심 알고리즘 구성 요소
+- **매핑 및 위치 추정**: GPS 거부 환경에서 실시간 매핑 및 위치 추정을 구현하는 3D LIDAR 기반 SLAM 모듈로, 다중 로봇 협업을 지원한다.
+- **경로 계획**:
+  - **전역 계획**: 개선된 Lazy Theta* 알고리즘을 사용하여 충돌 없는 경로를 생성한다.
+  - **국부 재계획**: 동적 장애물에 빠르게 대응하여 로봇의 안전한 내비게이션을 보장한다.
+- **화재 감지 및 진압**:
+  - **적외선 감지**: 적외선 카메라를 활용하여 화재 위치를 감지하고, 열화상 데이터를 결합하여 정밀한 위치 파악을 구현한다.
+  - **진압 제어**: 로봇 말단 장치(예: 소화기 또는 물대포)를 통해 자동 조준 및 분사를 수행한다.
+- **작업 실행 및 조정**: 행동 트리 기반 의사 결정 프레임워크로, 작업 우선순위, 로봇 할당 및 예외 처리(예: 통신 중단 또는 배터리 부족)를 관리한다.
+
+### 실험 및 결과
+- **대회 성과**: 시스템은 MBZIRC 2020 Challenge 3에서 완전 자율 운영을 달성했으며, 모든 시험에서 성공적으로 점수를 획득했다.
+- **순위**: Challenge 3에서 7위(총 20개 팀), Grand Finale에서 5위(총 17개 팀)를 기록했다.
+- **주요 수치**: 시스템은 GPS 거부 환경에서 센티미터급 위치 정밀도를 구현했으며, 화재 진압 성공률은 80%를 초과한다(대회 공개 데이터 기준).

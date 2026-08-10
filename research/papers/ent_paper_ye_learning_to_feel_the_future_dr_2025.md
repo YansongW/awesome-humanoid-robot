@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.23864v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.23864v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (694 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,22 @@ sources:
 ## Overview
 Vision-Language-Action (VLA) models have shown remarkable generalization by mapping web-scale knowledge to robotic control, yet they remain blind to physical contact. Consequently, they struggle with contact-rich manipulation tasks that require reasoning about force, texture, and slip. While some approaches incorporate low-dimensional tactile signals, they fail to capture the high-resolution dynamics essential for such interactions. To address this limitation, we introduce DreamTacVLA, a framework that grounds VLA models in contact physics by learning to feel the future. Our model adopts a hierarchical perception scheme in which high-resolution tactile images serve as micro-vision inputs coupled with wrist-camera local vision and third-person macro vision. To reconcile these multi-scale sensory streams, we first train a unified policy with a Hierarchical Spatial Alignment (HSA) loss that aligns tactile tokens with their spatial counterparts in the wrist and third-person views. To further deepen the model's understanding of fine-grained contact dynamics, we finetune the system with a tactile world model that predicts future tactile signals. To mitigate tactile data scarcity and the wear-prone nature of tactile sensors, we construct a hybrid large-scale dataset sourced from both high-fidelity digital twin and real-world experiments. By anticipating upcoming tactile states, DreamTacVLA acquires a rich model of contact physics and conditions its actions on both real observations and imagined consequences. Across contact-rich manipulation tasks, it outperforms state-of-the-art VLA baselines, achieving up to 95% success, highlighting the importance of understanding physical contact for robust, touch-aware robotic agents.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 웹 규모의 지식을 로봇 제어에 매핑하여 놀라운 일반화 능력을 보여주었지만, 물리적 접촉에는 여전히 무지합니다. 결과적으로, 힘, 질감, 미끄러짐에 대한 추론이 필요한 접촉이 많은 조작 작업에 어려움을 겪습니다. 일부 접근 방식은 저차원 촉각 신호를 통합하지만, 이러한 상호작용에 필수적인 고해상도 동역학을 포착하지 못합니다. 이러한 한계를 해결하기 위해, 우리는 미래를 느끼는 학습을 통해 VLA 모델을 접촉 물리학에 기반하는 프레임워크인 DreamTacVLA를 소개합니다. 우리 모델은 고해상도 촉각 이미지를 손목 카메라의 로컬 비전 및 3인칭 매크로 비전과 결합된 마이크로 비전 입력으로 사용하는 계층적 인식 방식을 채택합니다. 이러한 다중 스케일 감각 스트림을 조화시키기 위해, 먼저 촉각 토큰을 손목 및 3인칭 뷰의 공간적 대응물과 정렬하는 계층적 공간 정렬(HSA) 손실로 통합 정책을 훈련합니다. 미세한 접촉 동역학에 대한 모델의 이해를 더욱 심화하기 위해, 미래 촉각 신호를 예측하는 촉각 세계 모델로 시스템을 미세 조정합니다. 촉각 데이터 부족과 촉각 센서의 마모 특성을 완화하기 위해, 고충실도 디지털 트윈과 실제 실험에서 얻은 하이브리드 대규모 데이터셋을 구축합니다. 다가오는 촉각 상태를 예측함으로써, DreamTacVLA는 풍부한 접촉 물리학 모델을 획득하고 실제 관찰과 상상된 결과 모두에 따라 행동을 조건화합니다. 접촉이 많은 조작 작업에서 최첨단 VLA 기준선을 능가하며 최대 95%의 성공률을 달성하여, 강건하고 촉각 인식이 가능한 로봇 에이전트를 위한 물리적 접촉 이해의 중요성을 강조합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 웹 규모의 지식을 로봇 제어에 매핑하여 놀라운 일반화 능력을 보여주었지만, 물리적 접촉에는 여전히 무지합니다. 결과적으로, 힘, 질감, 미끄러짐에 대한 추론이 필요한 접촉이 많은 조작 작업에 어려움을 겪습니다. 일부 접근 방식은 저차원 촉각 신호를 통합하지만, 이러한 상호작용에 필수적인 고해상도 동역학을 포착하지 못합니다. 이러한 한계를 해결하기 위해, 우리는 미래를 느끼는 학습을 통해 VLA 모델을 접촉 물리학에 기반하는 프레임워크인 DreamTacVLA를 소개합니다. 우리 모델은 고해상도 촉각 이미지를 손목 카메라의 로컬 비전 및 3인칭 매크로 비전과 결합된 마이크로 비전 입력으로 사용하는 계층적 인식 방식을 채택합니다. 이러한 다중 스케일 감각 스트림을 조화시키기 위해, 먼저 촉각 토큰을 손목 및 3인칭 뷰의 공간적 대응물과 정렬하는 계층적 공간 정렬(HSA) 손실로 통합 정책을 훈련합니다. 미세한 접촉 동역학에 대한 모델의 이해를 더욱 심화하기 위해, 미래 촉각 신호를 예측하는 촉각 세계 모델로 시스템을 미세 조정합니다. 촉각 데이터 부족과 촉각 센서의 마모 특성을 완화하기 위해, 고충실도 디지털 트윈과 실제 실험에서 얻은 하이브리드 대규모 데이터셋을 구축합니다. 다가오는 촉각 상태를 예측함으로써, DreamTacVLA는 풍부한 접촉 물리학 모델을 획득하고 실제 관찰과 상상된 결과 모두에 따라 행동을 조건화합니다. 접촉이 많은 조작 작업에서 최첨단 VLA 기준선을 능가하며 최대 95%의 성공률을 달성하여, 강건하고 촉각 인식이 가능한 로봇 에이전트를 위한 물리적 접촉 이해의 중요성을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.23864v4
+
+## 개요
+기존 VLA 모델은 네트워크 지식을 활용해 일반화할 수 있지만, 물리적 접촉에 대한 인식 능력이 부족하여 힘, 질감, 미끄러짐을 추론해야 하는 접촉 밀집 조작 작업을 처리하기 어렵습니다. DreamTacVLA는 계층적 인식 방식을 통해 고해상도 촉각 이미지를 미세 시각 입력으로 사용하며, 손목 로컬 비전 및 3인칭 매크로 비전과 협력합니다. 모델은 계층적 공간 정렬 손실을 사용해 다중 스케일 인식 흐름을 통합하고, 촉각 월드 모델을 활용해 미래 촉각 신호를 예측함으로써 접촉 역학에 대한 깊은 이해를 얻습니다. 촉각 데이터 부족 문제를 완화하기 위해 연구팀은 디지털 트윈과 실제 실험을 결합한 하이브리드 대규모 데이터셋을 구축했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **계층적 인식 방식**: 고해상도 촉각 이미지를 미세 시각 입력으로 사용하며, 손목 로컬 비전(local vision) 및 3인칭 매크로 비전(macro vision)과 함께 3단계 인식 체계를 구성합니다.
+- **계층적 공간 정렬 손실(HSA loss)**: 통합 정책 훈련 시 촉각 토큰을 손목 및 3인칭 시점의 공간 대응 토큰과 정렬하여 다중 스케일 인식 흐름을 융합합니다.
+- **촉각 월드 모델**: 미세 조정 시스템을 통해 미래 촉각 신호를 예측함으로써, 모델이 실제 관측과 상상된 결과를 함께 기반으로 행동을 결정할 수 있어 풍부한 접촉 물리 모델을 얻습니다.
+
+### 실험 설정
+- **데이터셋 구축**: 고충실도 디지털 트윈(digital twin) 데이터와 실제 실험 데이터를 포함한 하이브리드 대규모 데이터셋을 사용하여 촉각 센서 데이터 부족 및 마모 문제를 완화합니다.
+- **작업 유형**: 힘, 질감, 미끄러짐 추론이 필요한 시나리오와 같은 접촉 밀집 조작 작업에 초점을 맞춥니다.
+
+### 주요 결과
+- **성능 비교**: 접촉 밀집 조작 작업에서 DreamTacVLA는 기존 최첨단 VLA 기준 모델을 능가하며 최대 95%의 성공률을 달성합니다.
+- **핵심 결론**: 물리적 접촉을 이해하는 것은 견고하고 촉각 인식 능력을 갖춘 로봇 에이전트를 구축하는 데 필수적입니다.

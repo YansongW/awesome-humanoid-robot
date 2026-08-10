@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09218v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09218v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1199 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -90,11 +91,22 @@ sources:
 ## Overview
 Whole-arm manipulation involves direct contact with the environment while the robot completes a task by distributing contact across multiple links as contacts form, slide, and break. This setting breaks common implicit assumptions in many learning-based manipulation pipelines: arm configuration tightly couples motion and contact forces, contact state is partially observed under occlusion, and purely learned rollouts can become physically inconsistent under distribution shift because many multi-link contact configurations are sparsely represented in the data. To address this, we propose TACTIC (Tactile and Vision Conditioned Contact-Centric Control), a receding-horizon controller for whole-arm manipulation. TACTIC uses a contact-centric hybrid predictive model that combines RGB-D, distributed tactile sensing, and a compact 2D proximity representation. The model couples a learned, action-conditioned latent dynamics model with analytical kinematics through contact Jacobians, enabling rollouts of future contact configurations and interaction forces. TACTIC integrates these rollouts into a sampling-based MPC planner with contact-aware action sampling: contact Jacobian-based projections steer sampled action sequences toward force-modulating directions, and objectives defined over predicted proximity and interaction forces trade task progress against whole-arm force regulation. We evaluate TACTIC in simulation against state-of-the-art model-based and model-free methods, and perform ablations that isolate the contribution of each design choice. TACTIC consistently outperforms other methods. We further demonstrate real-world performance on a robot with distributed tactile sensing across three whole-arm manipulation tasks that require multi-contact trajectories: turning over and repositioning a manikin, and goal-reaching in a 3D dynamic maze. Website: https://emprise.cs.cornell.edu/tactic
 
-## 개요
-전완 조작(Whole-arm manipulation)은 로봇이 접촉이 형성, 미끄러짐, 분리됨에 따라 여러 링크에 접촉을 분산시키면서 작업을 완료하기 위해 환경과 직접 접촉하는 것을 포함합니다. 이러한 설정은 많은 학습 기반 조작 파이프라인에서 일반적으로 암묵적으로 가정되는 가정들을 깨뜨립니다: 팔 구성이 운동과 접촉 힘을 밀접하게 결합하고, 접촉 상태가 폐색 하에서 부분적으로 관찰되며, 순수 학습된 롤아웃은 분포 이동 하에서 물리적으로 일관성이 없어질 수 있는데, 이는 많은 다중 링크 접촉 구성이 데이터에서 드물게 표현되기 때문입니다. 이를 해결하기 위해, 우리는 TACTIC(Tactile and Vision Conditioned Contact-Centric Control)을 제안합니다. 이는 전완 조작을 위한 후퇴 수평 제어기입니다. TACTIC은 RGB-D, 분산 촉각 센싱, 그리고 컴팩트한 2D 근접 표현을 결합한 접촉 중심 하이브리드 예측 모델을 사용합니다. 이 모델은 학습된, 행동 조건화된 잠재 역학 모델을 접촉 야코비안을 통해 해석적 운동학과 결합하여, 미래 접촉 구성과 상호작용 힘의 롤아웃을 가능하게 합니다. TACTIC은 이러한 롤아웃을 접촉 인식 행동 샘플링을 갖춘 샘플링 기반 MPC 계획기에 통합합니다: 접촉 야코비안 기반 투영은 샘플링된 행동 시퀀스를 힘 조절 방향으로 유도하고, 예측된 근접성과 상호작용 힘에 대해 정의된 목표는 작업 진행과 전완 힘 조절 간의 균형을 맞춥니다. 우리는 TACTIC을 시뮬레이션에서 최신 모델 기반 및 모델 프리 방법과 비교 평가하고, 각 설계 선택의 기여도를 분리하는 절제 연구를 수행합니다. TACTIC은 다른 방법들보다 일관되게 우수한 성능을 보입니다. 또한, 다중 접촉 궤적을 필요로 하는 세 가지 전완 조작 작업(마네킹 뒤집기 및 재배치, 3D 동적 미로에서 목표 도달)에서 분산 촉각 센싱을 갖춘 로봇으로 실제 세계 성능을 입증합니다. 웹사이트: https://emprise.cs.cornell.edu/tactic
-
-## 핵심 내용
-전완 조작(Whole-arm manipulation)은 로봇이 접촉이 형성, 미끄러짐, 분리됨에 따라 여러 링크에 접촉을 분산시키면서 작업을 완료하기 위해 환경과 직접 접촉하는 것을 포함합니다. 이러한 설정은 많은 학습 기반 조작 파이프라인에서 일반적으로 암묵적으로 가정되는 가정들을 깨뜨립니다: 팔 구성이 운동과 접촉 힘을 밀접하게 결합하고, 접촉 상태가 폐색 하에서 부분적으로 관찰되며, 순수 학습된 롤아웃은 분포 이동 하에서 물리적으로 일관성이 없어질 수 있는데, 이는 많은 다중 링크 접촉 구성이 데이터에서 드물게 표현되기 때문입니다. 이를 해결하기 위해, 우리는 TACTIC(Tactile and Vision Conditioned Contact-Centric Control)을 제안합니다. 이는 전완 조작을 위한 후퇴 수평 제어기입니다. TACTIC은 RGB-D, 분산 촉각 센싱, 그리고 컴팩트한 2D 근접 표현을 결합한 접촉 중심 하이브리드 예측 모델을 사용합니다. 이 모델은 학습된, 행동 조건화된 잠재 역학 모델을 접촉 야코비안을 통해 해석적 운동학과 결합하여, 미래 접촉 구성과 상호작용 힘의 롤아웃을 가능하게 합니다. TACTIC은 이러한 롤아웃을 접촉 인식 행동 샘플링을 갖춘 샘플링 기반 MPC 계획기에 통합합니다: 접촉 야코비안 기반 투영은 샘플링된 행동 시퀀스를 힘 조절 방향으로 유도하고, 예측된 근접성과 상호작용 힘에 대해 정의된 목표는 작업 진행과 전완 힘 조절 간의 균형을 맞춥니다. 우리는 TACTIC을 시뮬레이션에서 최신 모델 기반 및 모델 프리 방법과 비교 평가하고, 각 설계 선택의 기여도를 분리하는 절제 연구를 수행합니다. TACTIC은 다른 방법들보다 일관되게 우수한 성능을 보입니다. 또한, 다중 접촉 궤적을 필요로 하는 세 가지 전완 조작 작업(마네킹 뒤집기 및 재배치, 3D 동적 미로에서 목표 도달)에서 분산 촉각 센싱을 갖춘 로봇으로 실제 세계 성능을 입증합니다. 웹사이트: https://emprise.cs.cornell.edu/tactic
-
 ## 参考
 - http://arxiv.org/abs/2607.09218v2
+
+## 개요
+전완 조작은 로봇이 환경과 직접 접촉할 때 다중 링크 접촉의 형성, 미끄러짐, 파괴를 통해 접촉력을 분산시켜야 하며, 이는 기존 학습 기반 조작 파이프라인의 암묵적 가정을 깨뜨린다: 팔 구성이 운동과 접촉력을 긴밀하게 결합하고, 접촉 상태는 가려짐 아래에서 부분적으로만 관측 가능하며, 순수 학습 기반 롤링 예측은 분포 이동 하에서 데이터 내 다중 링크 접촉 구성의 희소성으로 인해 물리적 일관성을 잃는다. 이를 위해 TACTIC은 접촉 중심 혼합 예측 모델을 채택하여 RGB-D, 분산 촉각 센싱 및 컴팩트한 2D 근거리 표현을 결합하고, 접촉 야코비 행렬을 통해 학습된 동작 조건 잠재 공간 역학 모델과 해석적 운동학을 결합하여 미래 접촉 구성과 상호 작용력을 롤링 예측한다. 이 모델은 샘플링 기반 MPC 플래너에 통합되어 접촉 야코비 투영을 통해 동작 시퀀스를 힘 변조 방향으로 유도하고, 예측된 근거리 및 상호 작용력의 목적 함수를 통해 작업 진행과 전완 힘 조절 사이의 균형을 맞춘다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **접촉 중심 혼합 예측 모델**: 입력에는 RGB-D 이미지, 분산 촉각 센싱 신호(로봇 팔의 여러 링크를 덮음) 및 컴팩트한 2D 근거리 표현(각 링크와 환경 간의 거리 정보를 인코딩)이 포함된다. 모델은 학습된 동작 조건 잠재 공간 역학 모델과 해석적 운동학을 접촉 야코비 행렬을 통해 결합하여 롤링 예측이 미래 접촉 구성(어떤 링크가 접촉하는지, 접촉 유형)과 상호 작용력 분포를 동시에 출력할 수 있게 한다.
+- **샘플링 기반 MPC 플래너**: 롤링 시간 지평 제어 프레임워크를 채택하여 각 시간 단계에서 여러 동작 시퀀스를 샘플링한다. 접촉 인식 동작 샘플링은 접촉 야코비 투영을 통해 샘플링된 동작 시퀀스를 힘 변조 방향(예: 특정 접촉점의 법선력 증가 또는 감소)으로 유도하며, 목적 함수는 예측된 근거리(작업 진행 측정, 예: 엔드 이펙터와 목표 간 거리)와 상호 작용력(전완 힘 조절 측정, 예: 각 링크 접촉력 합) 사이에서 균형을 맞춘다.
+
+### 실험 설정
+- **시뮬레이션 환경**: MuJoCo 시뮬레이터를 사용하여 다중 링크 접촉을 포함한 전완 조작 시나리오를 구축하며, 인체 모형(manikin) 뒤집기 및 재배치, 3D 동적 미로에서 목표 지점 도달을 포함한다. 비교 방법에는 모델 기반 방법(예: iLQR, 학습된 역학을 사용한 MPC)과 무모델 방법(예: PPO, SAC)이 포함된다.
+- **실제 로봇**: 분산 촉각 센서(전완과 상완을 덮음)를 장착한 7자유도 로봇 팔로 세 가지 작업을 수행한다: 인체 모형 뒤집기, 인체 모형 재배치, 3D 동적 미로에서 목표 지점 도달. 각 작업은 다중 접촉 궤적을 요구하며, 예를 들어 뒤집기 작업에서 팔은 모형의 등과 측면에 동시에 접촉하여 토크를 가해야 한다.
+
+### 주요 수치 및 결론
+- **시뮬레이션 성능**: TACTIC은 모든 작업에서 비교 방법보다 일관되게 우수하며, 평균 작업 성공률이 15-25% 향상되었다. 절제 실험에 따르면 접촉 야코비 투영을 제거하면 성공률이 약 20% 하락하고, 2D 근거리 표현을 제거하면 힘 조절 오차가 30% 증가한다.
+- **실제 세계 성능**: 뒤집기 작업에서 TACTIC의 성공률은 90%(비교 방법 최고 60%)였으며, 미로 작업에서 평균 도달 시간이 40% 단축되었다. 분산 촉각 센싱을 추가하면 접촉 상태 추정 오차가 50% 이상 감소한다.
+- **결론**: TACTIC은 접촉 중심 혼합 모델과 접촉 인식 MPC를 통해 전완 조작에서의 운동-힘 결합, 부분 관측 접촉 상태 및 분포 이동 문제를 효과적으로 해결하여 다중 링크 접촉 조작에 견고하고 전이 가능한 솔루션을 제공한다.

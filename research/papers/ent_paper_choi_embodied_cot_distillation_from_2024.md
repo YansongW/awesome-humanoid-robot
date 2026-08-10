@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.11499v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.11499v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (850 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,29 @@ DeDer 证明了通过分层蒸馏与知识图谱增强，sLM可以替代LLM在�
 ## Overview
 We address the challenge of utilizing large language models (LLMs) for complex embodied tasks, in the environment where decision-making systems operate timely on capacity-limited, off-the-shelf devices. We present DeDer, a framework for decomposing and distilling the embodied reasoning capabilities from LLMs to efficient, small language model (sLM)-based policies. In DeDer, the decision-making process of LLM-based strategies is restructured into a hierarchy with a reasoning-policy and planning-policy. The reasoning-policy is distilled from the data that is generated through the embodied in-context learning and self-verification of an LLM, so it can produce effective rationales. The planning-policy, guided by the rationales, can render optimized plans efficiently. In turn, DeDer allows for adopting sLMs for both policies, deployed on off-the-shelf devices. Furthermore, to enhance the quality of intermediate rationales, specific to embodied tasks, we devise the embodied knowledge graph, and to generate multiple rationales timely through a single inference, we also use the contrastively prompted attention model. Our experiments with the ALFRED benchmark demonstrate that DeDer surpasses leading language planning and distillation approaches, indicating the applicability and efficiency of sLM-based embodied policies derived through DeDer.
 
-## 개요
-본 연구는 대규모 언어 모델(LLM)을 활용하여 복잡한 구현형 과제를 해결하는 문제를 다룹니다. 특히 의사 결정 시스템이 용량이 제한된 기성 기기에서 실시간으로 작동해야 하는 환경을 대상으로 합니다. 우리는 LLM의 구현형 추론 능력을 분해하고 증류하여 효율적인 소형 언어 모델(sLM) 기반 정책으로 전환하는 프레임워크인 DeDer를 제안합니다. DeDer에서 LLM 기반 전략의 의사 결정 과정은 추론 정책과 계획 정책으로 구성된 계층 구조로 재구성됩니다. 추론 정책은 LLM의 구현형 맥락 학습과 자체 검증을 통해 생성된 데이터로부터 증류되어 효과적인 근거를 생성할 수 있습니다. 계획 정책은 이러한 근거에 따라 최적화된 계획을 효율적으로 수립합니다. 결과적으로 DeDer는 두 정책 모두에 sLM을 채택하여 기성 기기에 배포할 수 있게 합니다. 또한 구현형 과제에 특화된 중간 근거의 품질을 향상시키기 위해 구현형 지식 그래프를 설계하고, 단일 추론을 통해 여러 근거를 신속하게 생성하기 위해 대조적 프롬프트 주의 모델을 사용합니다. ALFRED 벤치마크 실험 결과, DeDer는 최신 언어 계획 및 증류 접근법을 능가하며, DeDer를 통해 도출된 sLM 기반 구현형 정책의 적용 가능성과 효율성을 입증합니다.
-
-## 핵심 내용
-본 연구는 대규모 언어 모델(LLM)을 활용하여 복잡한 구현형 과제를 해결하는 문제를 다룹니다. 특히 의사 결정 시스템이 용량이 제한된 기성 기기에서 실시간으로 작동해야 하는 환경을 대상으로 합니다. 우리는 LLM의 구현형 추론 능력을 분해하고 증류하여 효율적인 소형 언어 모델(sLM) 기반 정책으로 전환하는 프레임워크인 DeDer를 제안합니다. DeDer에서 LLM 기반 전략의 의사 결정 과정은 추론 정책과 계획 정책으로 구성된 계층 구조로 재구성됩니다. 추론 정책은 LLM의 구현형 맥락 학습과 자체 검증을 통해 생성된 데이터로부터 증류되어 효과적인 근거를 생성할 수 있습니다. 계획 정책은 이러한 근거에 따라 최적화된 계획을 효율적으로 수립합니다. 결과적으로 DeDer는 두 정책 모두에 sLM을 채택하여 기성 기기에 배포할 수 있게 합니다. 또한 구현형 과제에 특화된 중간 근거의 품질을 향상시키기 위해 구현형 지식 그래프를 설계하고, 단일 추론을 통해 여러 근거를 신속하게 생성하기 위해 대조적 프롬프트 주의 모델을 사용합니다. ALFRED 벤치마크 실험 결과, DeDer는 최신 언어 계획 및 증류 접근법을 능가하며, DeDer를 통해 도출된 sLM 기반 구현형 정책의 적용 가능성과 효율성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.11499v1
+
+## 개요
+DeDer 프레임워크는 LLM의 의사 결정 과정을 추론 전략과 계획 전략으로 분해하여, 용량이 제한된 장치에서 복잡한 구현 작업을 수행하는 과제를 해결합니다. 추론 전략은 LLM의 구현 맥락 학습과 자기 검증으로 생성된 데이터에서 증류되어 유효한 추론을 생성할 수 있으며, 계획 전략은 이러한 추론을 기반으로 최적화된 계획을 효율적으로 생성합니다. 추론 품질을 향상시키기 위해 DeDer는 구현 지식 그래프를 도입하고, 대조 프롬프트 주의 모델을 통해 단일 추론으로 여러 추론을 생성합니다. 실험 결과, sLM 기반 DeDer는 ALFRED 벤치마크에서 기존 방법보다 우수한 성능을 보였습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **계층적 전략**: DeDer는 LLM의 의사 결정 과정을 두 계층으로 재구성합니다:
+  - **추론 전략(Reasoning-policy)**: LLM이 구현 맥락 학습과 자기 검증으로 생성한 데이터에서 증류되어 중간 추론(rationales)을 출력합니다.
+  - **계획 전략(Planning-policy)**: 추론을 지침으로 삼아 실행 가능한 계획을 효율적으로 생성합니다.
+- **핵심 구성 요소**:
+  - **구현 지식 그래프(Embodied Knowledge Graph)**: 중간 추론의 품질을 향상시켜 구현 작업에 더 적합하게 만듭니다.
+  - **대조 프롬프트 주의 모델(Contrastively Prompted Attention Model)**: 단일 추론으로 여러 추론을 생성하여 효율성을 높입니다.
+
+### 실험 설정
+- **벤치마크**: ALFRED(구현 작업 내비게이션 및 조작 벤치마크).
+- **비교 방법**: 선도적인 언어 계획 방법(예: LLM 기반 플래너) 및 증류 방법(예: LLM을 sLM으로 직접 증류).
+- **배포 장치**: 용량이 제한된 기성 장치(off-the-shelf devices).
+
+### 주요 결과
+- DeDer는 ALFRED에서 성공률과 효율성 모두 모든 비교 방법을 능가하여 sLM 전략의 적용 가능성을 검증했습니다.
+- 증류된 sLM은 추론 생성 속도에서 LLM보다 크게 우수하면서도 작업 완료 품질을 유지했습니다.
+
+### 결론
+DeDer는 계층적 증류와 지식 그래프 강화를 통해 sLM이 LLM을 대체하여 구현 작업에서 효율적인 의사 결정을 달성할 수 있음을 입증했으며, 자원 제한 시나리오에서의 로봇 조작에 실현 가능한 솔루션을 제공합니다.

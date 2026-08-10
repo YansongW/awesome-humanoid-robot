@@ -41,8 +41,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/poppy-humanoid.md（访问日期 2026-07-01）。主 GitHub 仓库最后 push 为 2021-12-06，官方文档最后更新 2022-12-20，维护基本停滞；成本为
-    2014 年官方口径与后续社区估算。
+  notes: '内容整理自调研档案 data/roadmap/research/poppy-humanoid.md（访问日期 2026-07-01）。主 GitHub 仓库最后 push 为 2021-12-06，官方文档最后更新 2022-12-20，维护基本停滞；成本为
+    2014 年官方口径与后续社区估算。 | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1747 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -55,7 +55,6 @@ sources:
   url: https://docs.poppy-project.org/en/
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 Poppy Humanoid 是法国 Inria Bordeaux Sud-Ouest 的 Flowers 团队（联合 Ensta ParisTech）于 2012 年发起的开源 3D 打印人形机器人，源于 Matthieu Lapeyre 的博士论文（导师 Pierre-Yves Oudeyer），ERC Explorer 资助，现由非营利组织 Poppy Station 维护社区。整机约 84 cm / 3.5 kg，25 个自由度（含 5 自由度全驱动仿生脊柱，屈膝式腿构型）（来源：调研档案 poppy-humanoid.md，下同）。
@@ -135,3 +134,40 @@ Poppy Humanoid는 프랑스 Inria Bordeaux Sud-Ouest의 Flowers 팀(Ensta ParisT
 
 - 적합: 운동 성능보다 교육 시스템과 인간-로봇 상호작용을 중시하는 교육자; 구현 인지/HRI 연구를 원하는 팀——Python/Scratch 이중 트랙, 컴플라이언트 역구동 시연, 시뮬레이션 우선, 완전한 조립 비디오, 교육 및 연구 사례 풍부(발달 로보틱스, HRI, 보행 연구 수십 편 논문).
 - 진입 장벽: 약 €9,000의 키트 가격은 현대 대체품보다 훨씬 높음; 메인 저장소 업데이트 중단은 새 시스템/새 Python 버전 호환성을 직접 해결해야 함을 의미; 25대 Dynamixel의 구매 및 유지보수 비용 높음; 보행/강화학습을 원하는 초보자는 ToddlerBot 등 차세대 플랫폼을 고려하는 것이 좋음.
+
+## Overview
+
+Poppy Humanoid is an open-source 3D-printed humanoid robot initiated in 2012 by the Flowers team at Inria Bordeaux Sud-Ouest (in partnership with Ensta ParisTech), stemming from Matthieu Lapeyre's doctoral thesis (supervised by Pierre-Yves Oudeyer) and funded by the ERC Explorer grant. The community is now maintained by the non-profit organization Poppy Station. The full robot measures approximately 84 cm / 3.5 kg with 25 degrees of freedom (including a 5-DOF fully actuated biomimetic spine and a bent-knee leg configuration) (source: research archive poppy-humanoid.md, same below).
+
+License: Hardware CC BY-SA 4.0, software GPLv3, documentation CC-BY-SA 4.0. Cost: approximately €7,500–8,000 (official figure from 2014, of which motors account for about €5,000); Génération Robots kit approximately €9,000; community estimate for a full setup approximately €9,588—the high cost mainly stems from 25 high-end servos. The GitHub repository `poppy-project/poppy-humanoid` has approximately 1,007 stars / 281 forks, but the main repository's last push was on 2021-12-06, and the official documentation was last updated on 2022-12-20, with maintenance largely stalled.
+
+## Content
+
+### Key Parameters
+
+| Item | Value | Source |
+|---|---|---|
+| Height / Weight | Approximately 84 cm / approximately 3.5 kg | 2014 media reports |
+| Degrees of Freedom | 25 (including 5-DOF fully actuated biomimetic spine) | Official documentation |
+| Hardware Cost | Approximately €7,500–8,000 (2014 official figure); kit approximately €9,000; community estimate approximately €9,588 | Media / distributor / community estimates |
+| Main Controller | Raspberry Pi 3/4 (or Odroid), connected to the Dynamixel bus via USB2AX / U2D2 | Official documentation |
+| Sensors (2014 full version) | 16 FSR force sensors, 2 PS Eye cameras, 1 IMU, 4.3-inch LCD screen, dual microphones | Media reports |
+| Power Supply | Early versions required external power (no battery), limiting mobility | Research archive |
+| Beginner-Friendliness | 3.5 / 5 (research archive assessment) | Research archive |
+
+### Actuators and Mechanics
+
+- 25 ROBOTIS Dynamixel smart servos, daisy-chained via TTL serial bus; a mix of AX series (small joints in limbs) and MX series (high-torque joints such as torso/thighs) is used based on joint torque requirements; the assembly manual notes that the MX-28 has been iterated to the MX-28AT.
+- High-reduction-ratio servos + series elastic/compliant mode: manual backdriving is possible (compliant mode), suitable for "hands-on" teaching by demonstration—this is a core selling point of Poppy's educational design.
+- All structural parts are 3D-printed (feasible with a home printer), with a lightweight skeleton and biomimetic proportions.
+
+### Software Stack
+
+- pypot (the project's own Python Dynamixel library) + robot-specific Python packages; supports Jupyter Notebook, Scratch/Snap! graphical programming, REST API/Web control.
+- Simulation: official CoppeliaSim (formerly V-REP) models + a lightweight 3D web viewer, enabling development and debugging without hardware; ROS bridge available (community-maintained); preconfigured system images (flash to an SD card and go).
+- Documentation: structured docs at docs.poppy-project.org (four sections: getting started / assembly / installation / programming), a 25-step assembly manual + 25 assembly videos.
+
+### Target Audience
+
+- Suitable for: educators who value the teaching framework and human-robot interaction (rather than locomotion performance); research teams working on embodied cognition/HRI—dual Python/Scratch tracks, compliant backdrivable teaching, simulation-first approach, complete assembly videos, and a wealth of educational and research case studies (dozens of papers in developmental robotics, HRI, and walking research).
+- Barriers: the approximately €9,000 kit price far exceeds contemporary alternatives; the stalled main repository means compatibility with new systems/new Python versions requires troubleshooting on your own; the procurement and maintenance costs of 25 Dynamixels are high; beginners interested in walking/RL are advised to look at next-generation platforms such as ToddlerBot.

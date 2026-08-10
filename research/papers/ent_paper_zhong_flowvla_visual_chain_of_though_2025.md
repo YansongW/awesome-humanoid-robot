@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.18269v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.18269v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1051 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,26 @@ Many Vision-Language-Action (VLA) models are built upon an internal world model 
 ## Content
 Many Vision-Language-Action (VLA) models are built upon an internal world model trained via next-frame prediction ``$v_t \rightarrow v_{t+1}$''. However, this paradigm attempts to predict the future frame's appearance directly, without explicitly reasoning about the underlying dynamics. **This lack of an explicit motion reasoning step** often leads to physically implausible visual forecasts and inefficient policy learning. To address this limitation, we introduce the **Visual Chain of Thought (Visual CoT)**, a paradigm that compels the model to first reason about **motion dynamics** before generating the future frame. We instantiate this paradigm by proposing **FlowVLA**, an autoregressive Transformer that explicitly materializes this reasoning process as ``$v_t \rightarrow f_t \rightarrow v_{t+1}$'', where $f_t$ is an intermediate optical flow prediction that inherently encodes motion. By forcing the model to first follow the motion plan encoded by $f_t$, this process inherently **aligns the pre-training objective of dynamics prediction with the downstream task of action generation.** We conduct experiments on challenging robotics manipulation benchmarks, as well as real-robot evaluations. Our FlowVLA not only generates **more coherent and physically plausible visual predictions**, but also achieves state-of-the-art policy performance with **substantially improved sample efficiency**, pointing toward a more principled foundation for world modeling in VLAs. Project page: https://irpn-lab.github.io/FlowVLA/
 
-## 개요
-많은 Vision-Language-Action(VLA) 모델은 다음 프레임 예측 ``$v_t \rightarrow v_{t+1}$''을 통해 훈련된 내부 세계 모델을 기반으로 구축됩니다. 그러나 이 패러다임은 기본 동역학에 대한 명시적 추론 없이 미래 프레임의 외형을 직접 예측하려고 시도합니다. \textbf{명시적 동작 추론 단계의 부재}는 종종 물리적으로 타당하지 않은 시각적 예측과 비효율적인 정책 학습으로 이어집니다. 이러한 한계를 해결하기 위해, 우리는 모델이 미래 프레임을 생성하기 전에 먼저 \textbf{동작 동역학}에 대해 추론하도록 강제하는 패러다임인 \textbf{Visual Chain of Thought(Visual CoT)}를 도입합니다. 우리는 이 추론 과정을 ``$v_t \rightarrow f_t \rightarrow v_{t+1}$''로 명시적으로 구현하는 자기회귀 트랜스포머인 \textbf{FlowVLA}를 제안함으로써 이 패러다임을 구체화합니다. 여기서 $f_t$는 본질적으로 동작을 인코딩하는 중간 광학 흐름 예측입니다. 모델이 $f_t$에 의해 인코딩된 동작 계획을 먼저 따르도록 강제함으로써, 이 과정은 본질적으로 \textbf{동역학 예측의 사전 훈련 목표를 동작 생성의 하위 작업과 정렬시킵니다.} 우리는 까다로운 로봇 조작 벤치마크와 실제 로봇 평가에서 실험을 수행합니다. FlowVLA는 \textbf{더 일관되고 물리적으로 타당한 시각적 예측}을 생성할 뿐만 아니라, \textbf{상당히 향상된 샘플 효율성}으로 최첨단 정책 성능을 달성하여 VLA에서 세계 모델링을 위한 더 원칙적인 기반을 제시합니다. 프로젝트 페이지: https://irpn-lab.github.io/FlowVLA/
-
-## 핵심 내용
-많은 Vision-Language-Action(VLA) 모델은 다음 프레임 예측 ``$v_t \rightarrow v_{t+1}$''을 통해 훈련된 내부 세계 모델을 기반으로 구축됩니다. 그러나 이 패러다임은 기본 동역학에 대한 명시적 추론 없이 미래 프레임의 외형을 직접 예측하려고 시도합니다. \textbf{명시적 동작 추론 단계의 부재}는 종종 물리적으로 타당하지 않은 시각적 예측과 비효율적인 정책 학습으로 이어집니다. 이러한 한계를 해결하기 위해, 우리는 모델이 미래 프레임을 생성하기 전에 먼저 \textbf{동작 동역학}에 대해 추론하도록 강제하는 패러다임인 \textbf{Visual Chain of Thought(Visual CoT)}를 도입합니다. 우리는 이 추론 과정을 ``$v_t \rightarrow f_t \rightarrow v_{t+1}$''로 명시적으로 구현하는 자기회귀 트랜스포머인 \textbf{FlowVLA}를 제안함으로써 이 패러다임을 구체화합니다. 여기서 $f_t$는 본질적으로 동작을 인코딩하는 중간 광학 흐름 예측입니다. 모델이 $f_t$에 의해 인코딩된 동작 계획을 먼저 따르도록 강제함으로써, 이 과정은 본질적으로 \textbf{동역학 예측의 사전 훈련 목표를 동작 생성의 하위 작업과 정렬시킵니다.} 우리는 까다로운 로봇 조작 벤치마크와 실제 로봇 평가에서 실험을 수행합니다. FlowVLA는 \textbf{더 일관되고 물리적으로 타당한 시각적 예측}을 생성할 뿐만 아니라, \textbf{상당히 향상된 샘플 효율성}으로 최첨단 정책 성능을 달성하여 VLA에서 세계 모델링을 위한 더 원칙적인 기반을 제시합니다. 프로젝트 페이지: https://irpn-lab.github.io/FlowVLA/
-
 ## 参考
 - http://arxiv.org/abs/2508.18269v3
+
+## 개요
+기존의 비전-언어-행동 모델은 일반적으로 다음 프레임 예측 패러다임($v_t \rightarrow v_{t+1}$)을 기반으로 내부 세계 모델을 학습하지만, 이 패러다임은 미래 프레임의 외형을 직접 예측할 뿐, 하위 운동 역학에 대한 명시적 추론이 부족하여 시각적 예측이 물리 법칙을 위반하는 경우가 많고 정책 학습 효율성이 낮습니다. FlowVLA는 시각적 사고 사슬(Visual CoT)을 제안하여 추론 과정을 $v_t \rightarrow f_t \rightarrow v_{t+1}$로 재구성합니다. 여기서 $f_t$는 중간 광학 흐름 예측으로, 운동 정보를 자연스럽게 인코딩합니다. 모델이 먼저 광학 흐름으로 인코딩된 운동 계획을 따르도록 강제함으로써, 이 방법은 역학 예측의 사전 학습 목표와 하위 동작 생성 작업을 자연스럽게 정렬합니다. 실험 결과, FlowVLA는 로봇 조작 벤치마크와 실제 로봇 평가에서 더 일관되고 물리적으로 타당한 시각적 예측을 생성하며, 현저히 향상된 샘플 효율성으로 최첨단 정책 성능에 도달합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 패러다임**: Visual Chain of Thought (Visual CoT)를 제안하여 기존의 다음 프레임 예측 $v_t \rightarrow v_{t+1}$을 $v_t \rightarrow f_t \rightarrow v_{t+1}$로 확장합니다. 여기서 $f_t$는 중간 광학 흐름 예측입니다.
+- **모델 설계**: FlowVLA는 자기회귀 Transformer 아키텍처를 채택하여 이 추론 과정을 명시적으로 구현합니다. 광학 흐름 $f_t$는 운동 인코딩의 중간 표현으로 작용하며, 모델이 미래 프레임을 생성하기 전에 먼저 운동 역학을 추론하도록 강제합니다.
+- **정렬 메커니즘**: 먼저 광학 흐름으로 인코딩된 운동 계획을 따르게 함으로써, 역학 예측의 사전 학습 목표와 하위 동작 생성 작업을 자연스럽게 정렬하여 기존 패러다임의 명시적 운동 추론 부재 문제를 해결합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: 시뮬레이션 환경과 실제 로봇 플랫폼을 포함한 여러 도전적인 로봇 조작 벤치마크에서 평가를 수행합니다.
+- **비교 방법**: 기존 VLA 모델(예: 다음 프레임 예측 기반 기준선)과 비교하여 시각적 예측 품질과 정책 성능을 평가합니다.
+
+### 주요 결과
+- **시각적 예측 품질**: FlowVLA는 더 일관되고 물리적으로 타당한 시각적 예측을 생성하여 기존 패러다임의 물리적으로 비합리적인 예측을 방지합니다.
+- **정책 성능**: 로봇 조작 작업에서 최첨단 정책 성능에 도달하며 샘플 효율성이 현저히 향상됩니다.
+- **효율성 이점**: 명시적 운동 추론을 통해 비효율적인 탐색을 줄이고 정책 학습 과정을 가속화합니다.
+
+### 결론
+FlowVLA는 Visual CoT 패러다임을 통해 VLA 모델의 세계 모델링에 더 원칙적인 기반을 제공하며, 명시적 운동 추론이 시각적 예측과 정책 학습 향상에 효과적임을 입증합니다. 프로젝트 페이지: https://irpn-lab.github.io/FlowVLA/

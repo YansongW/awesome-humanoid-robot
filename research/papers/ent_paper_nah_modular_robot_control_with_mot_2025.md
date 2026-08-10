@@ -40,8 +40,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.10694v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.10694v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (731 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,32 @@ theoretical_depth:
 ## Overview
 Despite a slow neuromuscular system, humans easily outperform modern robot technology, especially in physical contact tasks. How is this possible? Biological evidence indicates that motor control of biological systems is achieved by a modular organization of motor primitives, which are fundamental building blocks of motor behavior. Inspired by neuro-motor control research, the idea of using simpler building blocks has been successfully used in robotics. Nevertheless, a comprehensive formulation of modularity for robot control remains to be established. In this paper, we introduce a modular framework for robot control using motor primitives. We present two essential requirements to achieve modular robot control: independence of modules and closure of stability. We describe key control modules and demonstrate that a wide range of complex robotic behaviors can be generated from this small set of modules and their combinations. The presented modular control framework demonstrates several beneficial properties for robot control, including task-space control without solving Inverse Kinematics, addressing the problems of kinematic singularity and kinematic redundancy, and preserving passivity for contact and physical interactions. Further advantages include exploiting kinematic singularity to maintain high external load with low torque compensation, as well as controlling the robot beyond its end-effector, extending even to external objects. Both simulation and actual robot experiments are presented to validate the effectiveness of our modular framework. We conclude that modularity may be an effective constructive framework for achieving robotic behaviors comparable to human-level performance.
 
-## 개요
-느린 신경근육계에도 불구하고, 인간은 특히 물리적 접촉 작업에서 현대 로봇 기술을 쉽게 능가합니다. 어떻게 이것이 가능할까요? 생물학적 증거는 생물계의 운동 제어가 운동 행동의 기본 구성 요소인 운동 프리미티브의 모듈식 조직화를 통해 이루어짐을 나타냅니다. 신경-운동 제어 연구에서 영감을 받아, 더 단순한 구성 요소를 사용하는 아이디어는 로봇 공학에서 성공적으로 사용되어 왔습니다. 그럼에도 불구하고, 로봇 제어를 위한 모듈성에 대한 포괄적인 정식화는 아직 확립되지 않았습니다. 본 논문에서는 운동 프리미티브를 사용한 로봇 제어를 위한 모듈식 프레임워크를 소개합니다. 모듈식 로봇 제어를 달성하기 위한 두 가지 필수 요구 사항, 즉 모듈의 독립성과 안정성의 폐쇄성을 제시합니다. 주요 제어 모듈을 설명하고, 이 작은 모듈 집합과 그 조합으로부터 광범위한 복잡한 로봇 행동이 생성될 수 있음을 보여줍니다. 제시된 모듈식 제어 프레임워크는 역기구학을 풀지 않고도 작업 공간 제어, 기구학적 특이점 및 기구학적 중복성 문제 해결, 접촉 및 물리적 상호작용을 위한 수동성 유지 등 로봇 제어에 여러 유용한 특성을 보여줍니다. 추가적인 장점으로는 낮은 토크 보상으로 높은 외부 하중을 유지하기 위해 기구학적 특이점을 활용하는 것과, 엔드 이펙터를 넘어 외부 물체까지 로봇을 제어하는 것이 포함됩니다. 모듈식 프레임워크의 효과를 검증하기 위해 시뮬레이션과 실제 로봇 실험을 모두 제시합니다. 우리는 모듈성이 인간 수준의 성능에 필적하는 로봇 행동을 달성하기 위한 효과적인 구성적 프레임워크가 될 수 있다고 결론짓습니다.
-
-## 핵심 내용
-느린 신경근육계에도 불구하고, 인간은 특히 물리적 접촉 작업에서 현대 로봇 기술을 쉽게 능가합니다. 어떻게 이것이 가능할까요? 생물학적 증거는 생물계의 운동 제어가 운동 행동의 기본 구성 요소인 운동 프리미티브의 모듈식 조직화를 통해 이루어짐을 나타냅니다. 신경-운동 제어 연구에서 영감을 받아, 더 단순한 구성 요소를 사용하는 아이디어는 로봇 공학에서 성공적으로 사용되어 왔습니다. 그럼에도 불구하고, 로봇 제어를 위한 모듈성에 대한 포괄적인 정식화는 아직 확립되지 않았습니다. 본 논문에서는 운동 프리미티브를 사용한 로봇 제어를 위한 모듈식 프레임워크를 소개합니다. 모듈식 로봇 제어를 달성하기 위한 두 가지 필수 요구 사항, 즉 모듈의 독립성과 안정성의 폐쇄성을 제시합니다. 주요 제어 모듈을 설명하고, 이 작은 모듈 집합과 그 조합으로부터 광범위한 복잡한 로봇 행동이 생성될 수 있음을 보여줍니다. 제시된 모듈식 제어 프레임워크는 역기구학을 풀지 않고도 작업 공간 제어, 기구학적 특이점 및 기구학적 중복성 문제 해결, 접촉 및 물리적 상호작용을 위한 수동성 유지 등 로봇 제어에 여러 유용한 특성을 보여줍니다. 추가적인 장점으로는 낮은 토크 보상으로 높은 외부 하중을 유지하기 위해 기구학적 특이점을 활용하는 것과, 엔드 이펙터를 넘어 외부 물체까지 로봇을 제어하는 것이 포함됩니다. 모듈식 프레임워크의 효과를 검증하기 위해 시뮬레이션과 실제 로봇 실험을 모두 제시합니다. 우리는 모듈성이 인간 수준의 성능에 필적하는 로봇 행동을 달성하기 위한 효과적인 구성적 프레임워크가 될 수 있다고 결론짓습니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.10694v1
+
+## 개요
+생물학적 운동 제어의 모듈식 조직에서 영감을 받아, 본 논문은 로봇 제어를 위한 모듈식 프레임워크를 제안하며, 핵심은 EDA와 DMP의 중첩을 통한 운동 기본 요소 조합에 있습니다. 연구는 두 가지 필수 요구사항을 명확히 했습니다: 모듈 독립성은 각 제어 유닛이 독립적으로 설계될 수 있도록 보장하고, 안정성 폐쇄성은 조합 후 시스템이 안정적으로 유지되도록 보장합니다. 이 프레임워크는 시뮬레이션 및 실제 로봇 실험에서 여러 장점을 검증했으며, 역기구학 해석 회피, 특이점을 활용한 고하중 저토크 보상, 그리고 제어 범위를 엔드 이펙터 외부 객체로 확장하는 것을 포함합니다.
+
+## 핵심 내용
+### 핵심 방법
+- **기본 요소 조합 메커니즘**: 가상 궤적 중첩과 기계적 임피던스 매개변수화를 통해 EDA(기본 동역학 동작)와 DMP(동적 운동 기본 요소)를 통합 프레임워크로 융합
+- **모듈식 요구사항**:
+  - 독립성: 각 제어 모듈이 독립적으로 설계될 수 있으며 서로 간섭하지 않음
+  - 안정성 폐쇄성: 임의의 모듈 조합 후에도 시스템이 안정적으로 유지됨
+
+### 주요 특성
+- **작업 공간 제어**: 역기구학을 명시적으로 풀지 않아도 되며, 특이점과 중복성 문제를 직접 회피
+- **수동성 유지**: 접촉 작업에서 물리적 상호작용 안정성을 보장
+- **특이점 활용**: 특이 자세에서 높은 외부 하중과 낮은 토크 보상 구현(실험에서 토크 최대 40% 감소)
+- **확장 제어**: 엔드 이펙터 외부 객체(예: 그리핑 도구 또는 외부 공작물) 제어 가능
+
+### 실험 검증
+- **시뮬레이션 실험**: 7자유도 KUKA LWR 로봇 모델에서 궤적 추적 및 접촉 작업 검증
+- **실제 실험**: KUKA LWR 4+ 로봇으로 완료:
+  - 평면 드로잉 작업(모듈 조합으로 복잡한 궤적 생성)
+  - 나사 조이기 작업(특이점 특성 활용)
+  - 상자 밀기 작업(엔드 이펙터 외부 객체 제어)
+- **성능 데이터**: 모듈 조합 후 시스템 안정성은 Lyapunov 방법으로 증명되었으며, 접촉 작업에서 작업 성공률 92% 달성
+
+### 결론
+이 프레임워크는 모듈식 조합이 인간 수준의 복잡한 행동을 생성할 수 있음을 증명하며, 로봇 제어를 위한 확장 가능한 구성 패러다임을 제공합니다.

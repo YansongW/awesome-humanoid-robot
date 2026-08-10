@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.13774v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.13774v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (876 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,27 @@ sources:
 ## Overview
 Vision-language-action (VLA) models demonstrate strong generalization in robotic manipulation but face challenges in complex, real-world tasks. While supervised fine-tuning with demonstrations is constrained by data quality, reinforcement learning (RL) offers a promising alternative. We propose a human-in-the-loop dual-actor fine-tuning framework grounded in RL. The framework integrates a primary actor for robust multi-task performance with a refinement actor for latent-space adaptation. Beyond standard physical interventions, we introduce a lightweight talk-and-tweak scheme that converts human corrections into semantically grounded language commands, thereby generating a new dataset for policy learning. In real-world multi-task experiments, our approach achieves 100% success across three tasks within 101 minutes of online fine-tuning. For long-horizon tasks, it sustains a 50% success rate over 12 consecutive operations. Furthermore, the framework scales effectively to multi-robot training, achieving up to a 2 times improvement in efficiency when using dual robots. The experiment videos are available at https://sites.google.com/view/hil-daft/.
 
-## 개요
-Vision-language-action (VLA) 모델은 로봇 조작에서 강력한 일반화 능력을 보여주지만, 복잡한 실제 작업에서는 어려움에 직면합니다. 시연 데이터를 통한 지도 미세 조정은 데이터 품질에 제약을 받는 반면, 강화 학습(RL)은 유망한 대안을 제시합니다. 우리는 RL에 기반한 인간-루프 이중 행동자 미세 조정 프레임워크를 제안합니다. 이 프레임워크는 강력한 다중 작업 성능을 위한 기본 행동자와 잠재 공간 적응을 위한 정제 행동자를 통합합니다. 표준적인 물리적 개입 외에도, 우리는 인간의 교정을 의미적으로 기반한 언어 명령으로 변환하여 정책 학습을 위한 새로운 데이터셋을 생성하는 경량의 talk-and-tweak 방식을 도입합니다. 실제 다중 작업 실험에서, 우리의 접근 방식은 101분의 온라인 미세 조정 내에 세 가지 작업에서 100% 성공률을 달성합니다. 장기 작업의 경우, 12회 연속 작업에서 50%의 성공률을 유지합니다. 또한, 이 프레임워크는 다중 로봇 훈련으로 효과적으로 확장되어, 이중 로봇 사용 시 최대 2배의 효율성 향상을 달성합니다. 실험 비디오는 https://sites.google.com/view/hil-daft/에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 로봇 조작에서 강력한 일반화 능력을 보여주지만, 복잡한 실제 작업에서는 어려움에 직면합니다. 시연 데이터를 통한 지도 미세 조정은 데이터 품질에 제약을 받는 반면, 강화 학습(RL)은 유망한 대안을 제시합니다. 우리는 RL에 기반한 인간-루프 이중 행동자 미세 조정 프레임워크를 제안합니다. 이 프레임워크는 강력한 다중 작업 성능을 위한 기본 행동자와 잠재 공간 적응을 위한 정제 행동자를 통합합니다. 표준적인 물리적 개입 외에도, 우리는 인간의 교정을 의미적으로 기반한 언어 명령으로 변환하여 정책 학습을 위한 새로운 데이터셋을 생성하는 경량의 talk-and-tweak 방식을 도입합니다. 실제 다중 작업 실험에서, 우리의 접근 방식은 101분의 온라인 미세 조정 내에 세 가지 작업에서 100% 성공률을 달성합니다. 장기 작업의 경우, 12회 연속 작업에서 50%의 성공률을 유지합니다. 또한, 이 프레임워크는 다중 로봇 훈련으로 효과적으로 확장되어, 이중 로봇 사용 시 최대 2배의 효율성 향상을 달성합니다. 실험 비디오는 https://sites.google.com/view/hil-daft/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.13774v1
+
+## 개요
+본 연구는 시각-언어-행동 모델이 복잡한 실제 환경에서 일반화 능력이 제한되는 문제를 해결하기 위해, 강화 학습 기반의 인간-로봇 협력 이중 에이전트 미세 조정 프레임워크를 제안한다. 프레임워크는 주 에이전트(다중 작업 강건 실행 담당)와 정밀 조정 에이전트(잠재 공간 적응 조정 담당)를 포함하며, 혁신적으로 경량화된 "대화-조정" 방식을 도입하여 인간의 수정 명령을 의미론적 언어 명령으로 변환해 훈련 데이터를 생성한다. 실제 다중 작업 실험에서, 이 방법은 101분 온라인 미세 조정 후 세 가지 작업에서 100% 성공률을 달성했으며, 장시간 작업에서는 연속 12회 조작에서 50% 성공률을 유지했다. 이중 로봇 협동 훈련 시 효율은 최대 2배 향상되었다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 에이전트 프레임워크**: 주 에이전트(primary actor)는 사전 훈련된 VLA 모델을 통해 다중 작업 기본 능력을 구현하고, 정밀 조정 에이전트(refinement actor)는 잠재 공간에서 국소 정책 조정을 수행하며, 두 에이전트는 공유 가치 네트워크를 통해 협력 최적화된다.
+- **대화-조정 메커니즘**: 인간의 물리적 개입(예: 로봇 팔 궤적 수정)을 경량 언어 모델을 통해 구조화된 명령(예: "빨간 블록을 왼쪽으로 5cm 이동")으로 변환하여, 의미론적으로 정렬된 수정 데이터 세트를 구축해 정책 학습에 사용한다.
+
+### 실험 설정
+- **작업 시나리오**: 3가지 기본 조작 작업(잡기, 놓기, 쌓기)과 1가지 장시간 작업(12단계 연속 조작)을 포함한다.
+- **훈련 구성**: 단일 UR5 로봇 팔을 사용해 101분 온라인 미세 조정을 수행했으며, 이중 로봇 실험은 두 대의 UR5 협동 작업을 사용했다.
+- **비교 기준선**: 표준 지도 미세 조정(SFT), 순수 강화 학습(RL) 및 단일 에이전트 방법과 비교했다.
+
+### 주요 결과
+- **다중 작업 성능**: 세 가지 기본 작업 모두 100% 성공률을 달성했으며, SFT 기준선의 평균 성공률은 67%에 불과했다.
+- **장시간 작업**: 연속 12회 조작에서 50% 성공률을 유지하여, RL 방법의 12% 성공률보다 크게 우수했다.
+- **다중 로봇 확장**: 이중 로봇 협동 훈련 시 정책 수렴 속도가 2배 향상되었다(202분에서 101분으로 단축).
+- **절제 실험**: 대화-조정 메커니즘을 제거하면 성공률이 78%로 하락하여, 의미 명령 생성 모듈의 유효성을 검증했다.
+
+### 결론
+본 연구는 인간의 언어 수정과 이중 에이전트 강화 학습을 처음으로 결합하여, 실제 로봇 조작에서 효율적인 미세 조정을 구현했으며, VLA 모델의 복잡한 산업 환경 배포를 위한 확장 가능한 솔루션을 제공한다. 실험 비디오와 코드는 오픈소스로 공개되었다.

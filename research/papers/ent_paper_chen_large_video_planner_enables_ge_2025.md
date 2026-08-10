@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.15840v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.15840v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1029 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,38 @@ LVP 证明视频预训练可作为机器人基础模型的有效主模态，其�
 ## Overview
 General-purpose robots require decision-making models that generalize across diverse tasks and environments. Recent works build robot foundation models by extending multimodal large language models (MLLMs) with action outputs, creating vision-language-action (VLA) systems. These efforts are motivated by the intuition that MLLMs' large-scale language and image pretraining can be effectively transferred to the action output modality. In this work, we explore an alternative paradigm of using large-scale video pretraining as a primary modality for building robot foundation models. Unlike static images and language, videos capture spatio-temporal sequences of states and actions in the physical world that are naturally aligned with robotic behavior. We curate an internet-scale video dataset of human activities and task demonstrations, and train, for the first time at a foundation-model scale, an open video model for generative robotics planning. The model produces zero-shot video plans for novel scenes and tasks, which we post-process to extract executable robot actions. We evaluate task-level generalization through third-party selected tasks in the wild and real-robot experiments, demonstrating successful physical execution. Together, these results show robust instruction following, strong generalization, and real-world feasibility. We release both the model and dataset to support open, reproducible video-based robot learning. Our website is available at https://www.boyuan.space/large-video-planner/.
 
-## 개요
-범용 로봇은 다양한 작업과 환경에서 일반화되는 의사 결정 모델을 필요로 합니다. 최근 연구들은 멀티모달 대규모 언어 모델(MLLM)에 행동 출력을 확장하여 비전-언어-행동(VLA) 시스템을 구축함으로써 로봇 기반 모델을 개발하고 있습니다. 이러한 노력은 MLLM의 대규모 언어 및 이미지 사전 학습이 행동 출력 모달리티로 효과적으로 전이될 수 있다는 직관에 기반합니다. 본 연구에서는 대규모 비디오 사전 학습을 로봇 기반 모델 구축의 주요 모달리티로 활용하는 대안적 패러다임을 탐구합니다. 정적 이미지 및 언어와 달리, 비디오는 물리적 세계에서 상태와 행동의 시공간적 시퀀스를 포착하며, 이는 로봇 행동과 자연스럽게 정렬됩니다. 우리는 인간 활동 및 작업 시연의 인터넷 규모 비디오 데이터셋을 선별하고, 처음으로 기반 모델 규모에서 생성적 로봇 계획을 위한 오픈 비디오 모델을 학습시킵니다. 이 모델은 새로운 장면과 작업에 대해 제로샷 비디오 계획을 생성하며, 이를 후처리하여 실행 가능한 로봇 행동을 추출합니다. 우리는 실제 환경에서 제3자가 선정한 작업과 실제 로봇 실험을 통해 작업 수준 일반화를 평가하며, 성공적인 물리적 실행을 입증합니다. 이러한 결과는 강력한 명령 수행, 뛰어난 일반화, 그리고 실제 환경에서의 실현 가능성을 보여줍니다. 우리는 모델과 데이터셋을 모두 공개하여 개방적이고 재현 가능한 비디오 기반 로봇 학습을 지원합니다. 웹사이트는 https://www.boyuan.space/large-video-planner/ 에서 확인할 수 있습니다.
-
-## 핵심 내용
-범용 로봇은 다양한 작업과 환경에서 일반화되는 의사 결정 모델을 필요로 합니다. 최근 연구들은 멀티모달 대규모 언어 모델(MLLM)에 행동 출력을 확장하여 비전-언어-행동(VLA) 시스템을 구축함으로써 로봇 기반 모델을 개발하고 있습니다. 이러한 노력은 MLLM의 대규모 언어 및 이미지 사전 학습이 행동 출력 모달리티로 효과적으로 전이될 수 있다는 직관에 기반합니다. 본 연구에서는 대규모 비디오 사전 학습을 로봇 기반 모델 구축의 주요 모달리티로 활용하는 대안적 패러다임을 탐구합니다. 정적 이미지 및 언어와 달리, 비디오는 물리적 세계에서 상태와 행동의 시공간적 시퀀스를 포착하며, 이는 로봇 행동과 자연스럽게 정렬됩니다. 우리는 인간 활동 및 작업 시연의 인터넷 규모 비디오 데이터셋을 선별하고, 처음으로 기반 모델 규모에서 생성적 로봇 계획을 위한 오픈 비디오 모델을 학습시킵니다. 이 모델은 새로운 장면과 작업에 대해 제로샷 비디오 계획을 생성하며, 이를 후처리하여 실행 가능한 로봇 행동을 추출합니다. 우리는 실제 환경에서 제3자가 선정한 작업과 실제 로봇 실험을 통해 작업 수준 일반화를 평가하며, 성공적인 물리적 실행을 입증합니다. 이러한 결과는 강력한 명령 수행, 뛰어난 일반화, 그리고 실제 환경에서의 실현 가능성을 보여줍니다. 우리는 모델과 데이터셋을 모두 공개하여 개방적이고 재현 가능한 비디오 기반 로봇 학습을 지원합니다. 웹사이트는 https://www.boyuan.space/large-video-planner/ 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.15840v2
+
+## 개요
+LVP는 정적 이미지와 언어에 의존하는 대신, 대규모 비디오 사전 학습을 로봇 기반 모델 구축의 주요 모달리티로 활용하는 대안적 패러다임을 탐구한다. 연구팀은 인터넷 규모의 인간 활동 및 작업 시연 비디오 데이터셋을 구성하고, 로봇 계획을 위한 최초의 기반 모델 수준의 개방형 비디오 생성 모델을 훈련시켰다. 이 모델은 새로운 장면과 새로운 작업에 대해 제로샷 비디오 계획을 생성할 수 있으며, 후처리를 통해 실행 가능한 행동을 추출한다. 실험은 제3자가 선정한 야외 작업과 실제 로봇 테스트를 통해 물리적 실행의 성공률을 검증하여, 강력한 명령 준수, 뛰어난 일반화 능력, 그리고 현실적 실현 가능성을 입증했다.
+
+## 핵심 내용
+### 방법
+LVP는 기존 VLA 모델이 직접 행동을 출력하는 것과 달리, 비디오 생성을 로봇 계획의 핵심 모달리티로 채택한다. 그 프로세스는 두 단계로 나뉜다:
+1. **비디오 계획**: 모델은 현재 장면 이미지와 언어 명령을 기반으로 미래 상태 시퀀스의 비디오 계획을 생성한다.
+2. **행동 추출**: 후처리(예: 광학 흐름 또는 역동역학 모델)를 통해 생성된 비디오에서 실행 가능한 저수준 행동 명령을 추출한다.
+
+### 아키텍처
+- **기반 모델**: 대규모 비디오 사전 학습 기반의 생성 모델로, 파라미터 수가 기반 모델 수준에 도달한다(구체적 수치는 공개되지 않았지만 "foundation-model scale"임을 강조).
+- **입력**: 단일 또는 다중 프레임의 현재 장면 이미지 + 자연어 작업 설명.
+- **출력**: 작업 실행 과정을 나타내는 다중 프레임 연속 비디오 프레임.
+
+### 데이터셋
+- **출처**: 인터넷 규모의 인간 활동 비디오 및 로봇 작업 시연으로, 다양한 장면과 작업을 포함한다.
+- **규모**: 구체적인 수량은 공개되지 않았지만 "internet-scale"임을 강조하며, 기존 로봇 데이터셋을 훨씬 초과한다.
+
+### 실험 설정
+- **제로샷 일반화**: 모델은 보지 못한 장면과 작업에서 미세 조정 없이 직접 비디오 계획을 생성한다.
+- **평가 방식**:
+  - 제3자가 선정한 야외 작업(예: 집기, 놓기, 물체 조작).
+  - 실제 로봇 실험으로, 물리적 로봇 팔을 사용하여 실행.
+- **비교 기준선**: 명시적으로 나열되지는 않았지만, 기존 VLA 모델(예: RT-2)과의 패러다임 차이를 강조한다.
+
+### 주요 수치
+- **성공률**: 야외 작업 및 실제 로봇 실험 모두에서 "성공적인 물리적 실행"을 달성했지만, 구체적인 백분율은 제공되지 않았다.
+- **일반화 능력**: 보지 못한 도구나 레이아웃과 같은 새로운 장면과 새로운 물체에 대한 제로샷 적응을 보여준다.
+- **모델 및 데이터 공개**: 코드, 모델 가중치, 데이터셋이 모두 공개되어 재현 가능한 연구를 지원한다.
+
+### 결론
+LVP는 비디오 사전 학습이 로봇 기반 모델의 효과적인 주요 모달리티가 될 수 있음을 입증하며, 그 제로샷 계획 능력은 정적 이미지와 언어에 의존하는 VLA 방법보다 우수하다. 향후 연구는 더 효율적인 행동 추출 방법과 비디오 생성을 저수준 제어 정책과 종단 간 결합하는 방식을 탐구할 수 있다.

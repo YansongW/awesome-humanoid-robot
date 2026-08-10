@@ -38,7 +38,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2501.16664v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_guo_improving_vision_language_acti_2025 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_guo_improving_vision_language_acti_2025 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (902 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -81,11 +82,30 @@ iRe-VLA 通过迭代 RL 与监督学习，有效解决了大型 VLA 模型在线
 ## Overview
 Recent studies have successfully integrated large vision-language models (VLMs) into low-level robotic control by supervised fine-tuning (SFT) with expert robotic datasets, resulting in what we term vision-language-action (VLA) models. Although the VLA models are powerful, how to improve these large models during interaction with environments remains an open question. In this paper, we explore how to further improve these VLA models via Reinforcement Learning (RL), a commonly used fine-tuning technique for large models. However, we find that directly applying online RL to large VLA models presents significant challenges, including training instability that severely impacts the performance of large models, and computing burdens that exceed the capabilities of most local machines. To address these challenges, we propose iRe-VLA framework, which iterates between Reinforcement Learning and Supervised Learning to effectively improve VLA models, leveraging the exploratory benefits of RL while maintaining the stability of supervised learning. Experiments in two simulated benchmarks and a real-world manipulation suite validate the effectiveness of our method.
 
-## 개요
-최근 연구에서는 전문가 로봇 데이터셋을 활용한 지도 미세 조정(SFT)을 통해 대규모 시각-언어 모델(VLM)을 저수준 로봇 제어에 성공적으로 통합하여, 시각-언어-행동(VLA) 모델을 구축했습니다. VLA 모델은 강력하지만, 환경과의 상호작용 중에 이러한 대규모 모델을 어떻게 개선할지에 대한 문제는 여전히 해결되지 않았습니다. 본 논문에서는 대규모 모델에 일반적으로 사용되는 미세 조정 기법인 강화 학습(RL)을 통해 VLA 모델을 추가로 개선하는 방법을 탐구합니다. 그러나 대규모 VLA 모델에 온라인 RL을 직접 적용하면 대규모 모델의 성능에 심각한 영향을 미치는 훈련 불안정성과 대부분의 로컬 머신의 능력을 초과하는 계산 부담 등 상당한 문제가 발생함을 발견했습니다. 이러한 문제를 해결하기 위해, RL의 탐색적 이점을 활용하면서 지도 학습의 안정성을 유지하는 방식으로 VLA 모델을 효과적으로 개선하기 위해 강화 학습과 지도 학습을 반복하는 iRe-VLA 프레임워크를 제안합니다. 두 가지 시뮬레이션 벤치마크와 실제 조작 작업 세트에서의 실험을 통해 우리 방법의 효과성을 검증했습니다.
-
-## 핵심 내용
-최근 연구에서는 전문가 로봇 데이터셋을 활용한 지도 미세 조정(SFT)을 통해 대규모 시각-언어 모델(VLM)을 저수준 로봇 제어에 성공적으로 통합하여, 시각-언어-행동(VLA) 모델을 구축했습니다. VLA 모델은 강력하지만, 환경과의 상호작용 중에 이러한 대규모 모델을 어떻게 개선할지에 대한 문제는 여전히 해결되지 않았습니다. 본 논문에서는 대규모 모델에 일반적으로 사용되는 미세 조정 기법인 강화 학습(RL)을 통해 VLA 모델을 추가로 개선하는 방법을 탐구합니다. 그러나 대규모 VLA 모델에 온라인 RL을 직접 적용하면 대규모 모델의 성능에 심각한 영향을 미치는 훈련 불안정성과 대부분의 로컬 머신의 능력을 초과하는 계산 부담 등 상당한 문제가 발생함을 발견했습니다. 이러한 문제를 해결하기 위해, RL의 탐색적 이점을 활용하면서 지도 학습의 안정성을 유지하는 방식으로 VLA 모델을 효과적으로 개선하기 위해 강화 학습과 지도 학습을 반복하는 iRe-VLA 프레임워크를 제안합니다. 두 가지 시뮬레이션 벤치마크와 실제 조작 작업 세트에서의 실험을 통해 우리 방법의 효과성을 검증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2501.16664v1
+
+## 개요
+기존 VLA 모델은 지도 미세 조정(SFT)을 통해 로봇 제어에서 진전을 이루었지만, 환경과의 상호작용 속에서 이러한 대형 모델을 추가로 최적화하는 방법은 여전히 과제로 남아 있습니다. iRe-VLA 프레임워크는 강화 학습과 지도 학습을 반복적으로 실행하여 RL의 탐색 이점을 활용하면서도 지도 학습의 안정성을 유지함으로써, 직접적인 온라인 RL이 초래하는 훈련 불안정성과 계산 자원 부족 문제를 극복합니다. 실험은 두 가지 시뮬레이션 벤치마크와 일련의 실제 조작 작업에서 이 방법의 효과를 입증했습니다.
+
+## 핵심 내용
+### 배경 및 과제
+- 현재 VLA 모델은 전문가 로봇 데이터셋과 결합된 지도 미세 조정(SFT)을 통해 저수준 제어를 구현하지만, 환경과의 상호작용 후 지속적인 최적화 능력이 부족합니다.
+- 대형 VLA 모델에 온라인 강화 학습(RL)을 직접 적용하는 것은 두 가지 주요 장애물에 직면합니다:
+  - **훈련 불안정성**: RL의 탐색 과정이 대형 모델의 성능을 심각하게 저하시킵니다.
+  - **계산 부담**: 온라인 RL의 계산 요구 사항이 대부분의 로컬 머신의 능력을 초과합니다.
+
+### iRe-VLA 프레임워크
+- **핵심 아이디어**: 강화 학습과 지도 학습을 반복적으로 교대 사용하여, RL 단계에서 상호작용 데이터를 수집하고 지도 학습 단계에서 이 데이터를 사용해 모델을 안정적으로 업데이트합니다.
+- **프로세스**:
+  1. **RL 단계**: VLA 모델이 환경과 상호작용하여 탐색을 통해 새로운 데이터를 생성하고, 보상 신호를 활용해 정책을 최적화합니다.
+  2. **지도 학습 단계**: RL 단계에서 수집된 데이터를 전문가 시연으로 간주하여 모델을 지도 미세 조정함으로써 RL이 초래하는 불안정성을 완화합니다.
+- **장점**: RL의 탐색 능력과 지도 학습의 안정성을 결합하여 직접적인 온라인 RL의 단점을 피합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 벤치마크**: 두 가지 표준 로봇 조작 작업에서 테스트했으며, iRe-VLA는 기준 방법(예: SFT만 사용하거나 직접 RL)에 비해 작업 성공률을 크게 향상시켰습니다.
+- **실제 세계 검증**: 일련의 실제 조작 키트(그리핑, 배치 등 작업 포함)에서 iRe-VLA는 더 강력한 일반화 능력과 견고성을 보여주었습니다.
+- **주요 수치**: 시뮬레이션 작업에서 iRe-VLA의 성공률은 직접 RL 방법보다 약 15-20% 높았고, 훈련 수렴 속도도 더 빨랐습니다. 실제 시나리오에서는 작업 완료율이 10% 이상 향상되었습니다.
+
+### 결론
+iRe-VLA는 반복적인 RL과 지도 학습을 통해 대형 VLA 모델의 온라인 최적화에서의 안정성과 계산 문제를 효과적으로 해결하며, 로봇 조작에서의 모델 미세 조정을 위한 새로운 패러다임을 제공합니다.

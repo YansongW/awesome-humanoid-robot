@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19530v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19530v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (659 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,26 @@ Humanoid robots can support human workers in physically demanding environments b
 ## Content
 Humanoid robots can support human workers in physically demanding environments by performing tasks that require whole-body coordination, such as lifting and transporting heavy objects. These tasks, which we refer to as Dynamic Mobile Manipulation (DMM), require the simultaneous control of locomotion, manipulation, and posture under dynamic interaction forces. This paper presents a teleoperation framework for DMM on a height-adjustable wheeled humanoid robot for carrying heavy payloads. A Human-Machine Interface (HMI) enables whole-body motion retargeting from the human pilot to the robot by capturing the motion of the human and applying haptic feedback. The pilot uses body motion to regulate robot posture and locomotion, while arm movements guide manipulation. Real-time haptic feedback delivers end effector wrenches and balance-related cues, closing the loop between human perception and robot environment interaction. We evaluate different telelocomotion mappings that offer varying levels of balance assistance, allowing the pilot to either manually or automatically regulate the robot's lean in response to payload-induced disturbances. The system is validated in experiments involving dynamic lifting of barbells and boxes up to 2.5 kg (21% of robot mass), demonstrating coordinated whole-body control, height variation, and disturbance handling under pilot guidance. A video demo can be found at: https://youtu.be/jF270_bG1h8?feature=shared
 
-## 개요
-휴머노이드 로봇은 무거운 물체를 들어 올리거나 운반하는 등 전신 협응이 필요한 작업을 수행함으로써 육체적으로 힘든 환경에서 인간 작업자를 지원할 수 있습니다. 이러한 작업을 동적 이동 조작(DMM)이라고 하며, 동적 상호작용 힘 하에서 이동, 조작 및 자세를 동시에 제어해야 합니다. 본 논문은 무거운 페이로드를 운반하기 위한 높이 조절 가능한 바퀴형 휴머노이드 로봇에서 DMM을 위한 원격 조작 프레임워크를 제시합니다. 인간-기계 인터페이스(HMI)는 인간의 움직임을 포착하고 햅틱 피드백을 적용하여 인간 조종사에서 로봇으로의 전신 동작 재타겟팅을 가능하게 합니다. 조종사는 신체 움직임을 사용하여 로봇의 자세와 이동을 조절하고, 팔 움직임은 조작을 안내합니다. 실시간 햅틱 피드백은 엔드 이펙터의 힘과 균형 관련 신호를 전달하여 인간의 인지와 로봇 환경 상호작용 간의 루프를 닫습니다. 우리는 다양한 수준의 균형 지원을 제공하는 여러 원격 이동 매핑을 평가하여, 조종사가 페이로드로 인한 교란에 대응하여 로봇의 기울기를 수동 또는 자동으로 조절할 수 있도록 합니다. 시스템은 최대 2.5kg(로봇 질량의 21%)의 바벨과 상자를 동적으로 들어 올리는 실험을 통해 검증되었으며, 조종사의 안내 하에 협응된 전신 제어, 높이 변화 및 교란 처리를 입증합니다. 비디오 데모는 다음에서 확인할 수 있습니다: https://youtu.be/jF270_bG1h8?feature=shared
-
-## 핵심 내용
-휴머노이드 로봇은 무거운 물체를 들어 올리거나 운반하는 등 전신 협응이 필요한 작업을 수행함으로써 육체적으로 힘든 환경에서 인간 작업자를 지원할 수 있습니다. 이러한 작업을 동적 이동 조작(DMM)이라고 하며, 동적 상호작용 힘 하에서 이동, 조작 및 자세를 동시에 제어해야 합니다. 본 논문은 무거운 페이로드를 운반하기 위한 높이 조절 가능한 바퀴형 휴머노이드 로봇에서 DMM을 위한 원격 조작 프레임워크를 제시합니다. 인간-기계 인터페이스(HMI)는 인간의 움직임을 포착하고 햅틱 피드백을 적용하여 인간 조종사에서 로봇으로의 전신 동작 재타겟팅을 가능하게 합니다. 조종사는 신체 움직임을 사용하여 로봇의 자세와 이동을 조절하고, 팔 움직임은 조작을 안내합니다. 실시간 햅틱 피드백은 엔드 이펙터의 힘과 균형 관련 신호를 전달하여 인간의 인지와 로봇 환경 상호작용 간의 루프를 닫습니다. 우리는 다양한 수준의 균형 지원을 제공하는 여러 원격 이동 매핑을 평가하여, 조종사가 페이로드로 인한 교란에 대응하여 로봇의 기울기를 수동 또는 자동으로 조절할 수 있도록 합니다. 시스템은 최대 2.5kg(로봇 질량의 21%)의 바벨과 상자를 동적으로 들어 올리는 실험을 통해 검증되었으며, 조종사의 안내 하에 협응된 전신 제어, 높이 변화 및 교란 처리를 입증합니다. 비디오 데모는 다음에서 확인할 수 있습니다: https://youtu.be/jF270_bG1h8?feature=shared
-
 ## 参考
 - http://arxiv.org/abs/2505.19530v1
+
+## 개요
+본 연구는 인간형 로봇이 동적 상호작용 힘 하에서 이동, 조작, 자세 제어를 동시에 수행해야 하는 과제를 해결하기 위해 원격 조작 프레임워크를 제안한다. 시스템은 인간의 모션 캡처를 통해 전신 동작을 리타게팅하며, 실시간 힘-촉각 피드백으로 말단 실행기의 힘과 균형 상태를 전달한다. 조작자는 신체로 로봇의 자세와 이동을 제어하고, 팔 동작으로 조작을 유도할 수 있으며, 선택적으로 다양한 수준의 균형 보조 모드를 사용할 수 있다. 실험 결과, 로봇은 조작자의 유도 하에 바벨과 상자를 동적으로 운반하며 조화로운 전신 제어와 교란 처리를 달성할 수 있음을 입증했다.
+
+## 핵심 내용
+### 방법
+- 높이 조절이 가능한 바퀴형 인간형 로봇을 기반으로 한 원격 조작 프레임워크를 제안하며, 동적 이동 조작(DMM) 작업에 특화되었다.
+- 인간-기계 인터페이스(HMI)는 조작자의 전신 동작을 캡처하여 로봇에 리타게팅하고, 힘-촉각 피드백을 적용한다.
+- 조작자는 신체 움직임으로 로봇의 자세와 이동을 조절하고, 팔 동작으로 조작을 제어한다. 실시간 힘-촉각 피드백은 말단 실행기의 힘과 균형 상태를 전달하여 인간의 인지와 로봇의 환경 상호작용 간 폐루프를 형성한다.
+
+### 실험 설정
+- 다양한 원격 이동 매핑 방식을 평가하며, 여러 수준의 균형 보조를 제공한다. 조작자는 부하로 인한 교란에 대응하기 위해 로봇의 기울기 각도를 수동 또는 자동으로 조절할 수 있다.
+- 실험 작업에는 바벨과 상자의 동적 운반이 포함되며, 부하 중량은 최대 2.5kg(로봇 자체 질량의 21%에 해당)이다.
+
+### 주요 결과
+- 시스템은 높이 변화와 교란 처리를 포함한 조화로운 전신 제어를 성공적으로 구현했다.
+- 조작자의 유도 하에 로봇은 중량물 운반을 안정적으로 완료하여 프레임워크의 유효성을 검증했다.
+- 비디오 시연 링크: https://youtu.be/jF270_bG1h8?feature=shared
+
+### 결론
+본 원격 조작 프레임워크는 힘-촉각 피드백과 조절 가능한 균형 보조를 통해 바퀴형 인간형 로봇이 동적 중량물 운반 작업을 효율적으로 수행할 수 있게 하며, 향후 인간-로봇 협업을 위한 실현 가능한 방안을 제시한다.

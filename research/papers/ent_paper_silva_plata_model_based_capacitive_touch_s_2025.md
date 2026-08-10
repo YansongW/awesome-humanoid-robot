@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.02280v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.02280v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (724 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,26 @@ theoretical_depth:
 ## Overview
 In this paper, we present a touch technology to achieve tactile interactivity for human-robot interaction (HRI) in soft robotics. By combining a capacitive touch sensor with an online solid mechanics simulation provided by the SOFA framework, contact detection is achieved for arbitrary shapes. Furthermore, the implementation of the capacitive touch technology presented here is selectively sensitive to human touch (conductive objects), while it is largely unaffected by the deformations created by the pneumatic actuation of our soft robot. Multi-touch interactions are also possible. We evaluated our approach with an organic soft robotics sculpture that was created by a visual artist. In particular, we evaluate that the touch localization capabilities are robust under the deformation of the device. We discuss the potential this approach has for the arts and entertainment as well as other domains.
 
-## 개요
-본 논문에서는 소프트 로보틱스에서 인간-로봇 상호작용(HRI)을 위한 촉각 인터랙티비티를 구현하는 터치 기술을 제시합니다. 정전식 터치 센서와 SOFA 프레임워크가 제공하는 온라인 고체 역학 시뮬레이션을 결합하여 임의의 형상에 대한 접촉 감지를 달성합니다. 또한, 여기서 제시된 정전식 터치 기술의 구현은 인간의 터치(전도성 물체)에 선택적으로 민감하게 반응하는 동시에, 소프트 로봇의 공압 작동으로 인한 변형에는 거의 영향을 받지 않습니다. 멀티 터치 상호작용도 가능합니다. 우리는 시각 예술가가 제작한 유기적 소프트 로보틱스 조형물을 통해 접근 방식을 평가했습니다. 특히, 장치의 변형 하에서 터치 위치 파악 기능이 견고함을 평가합니다. 이 접근 방식이 예술 및 엔터테인먼트뿐만 아니라 다른 분야에서 가질 잠재력에 대해 논의합니다.
-
-## 핵심 내용
-본 논문에서는 소프트 로보틱스에서 인간-로봇 상호작용(HRI)을 위한 촉각 인터랙티비티를 구현하는 터치 기술을 제시합니다. 정전식 터치 센서와 SOFA 프레임워크가 제공하는 온라인 고체 역학 시뮬레이션을 결합하여 임의의 형상에 대한 접촉 감지를 달성합니다. 또한, 여기서 제시된 정전식 터치 기술의 구현은 인간의 터치(전도성 물체)에 선택적으로 민감하게 반응하는 동시에, 소프트 로봇의 공압 작동으로 인한 변형에는 거의 영향을 받지 않습니다. 멀티 터치 상호작용도 가능합니다. 우리는 시각 예술가가 제작한 유기적 소프트 로보틱스 조형물을 통해 접근 방식을 평가했습니다. 특히, 장치의 변형 하에서 터치 위치 파악 기능이 견고함을 평가합니다. 이 접근 방식이 예술 및 엔터테인먼트뿐만 아니라 다른 분야에서 가질 잠재력에 대해 논의합니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.02280v1
+
+## 개요
+이 연구는 상호 정전용량 센싱과 SOFA 프레임워크의 온라인 고체 역학 시뮬레이션을 결합하여, 소프트 로봇을 위한 변형에 강건한 촉각 피부를 구축했습니다. 센서는 사람의 손과 같은 전도성 물체에만 민감하며, 소프트 로봇의 공압 변형은 간섭 신호를 발생시키지 않아 임의의 형태를 가진 표면에서 접촉 감지가 가능합니다. 다중 접촉 상호작용 기능도 지원됩니다. 연구팀은 시각 예술가가 제작한 유기적 소프트 조각에서 평가를 진행했으며, 장치 변형 시 터치 위치 결정의 안정성을 중점적으로 검증하고, 이 방법의 예술, 엔터테인먼트 및 기타 분야에서의 응용 가능성을 탐구했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **센싱 원리**: 상호 정전용량(mutual-capacitance) 센싱 기술을 채택하여 전극 배열을 통해 인체 터치로 인한 정전용량 변화를 감지하며, 비전도성 물체(예: 공압 변형)에는 민감하지 않습니다.
+- **시뮬레이션 결합**: SOFA 프레임워크의 유한 요소 시뮬레이션(finite-element simulation)을 온라인으로 통합하여 소프트 로봇의 변형 상태를 실시간으로 모델링하고, 정전용량 신호를 3D 곡면 위의 터치 위치로 매핑합니다.
+- **다중 접촉 지원**: 시스템은 여러 터치 포인트를 동시에 처리할 수 있어 복잡한 상호작용 요구를 충족합니다.
+
+### 실험 설정
+- **테스트 플랫폼**: 시각 예술가가 설계한 유기적 소프트 조각으로, 불규칙한 3D 곡면과 동적 공압 변형 능력을 갖추고 있습니다.
+- **평가 지표**: 장치가 정지 상태와 변형 상태일 때 각각 터치 위치 결정의 정확도와 강건성을 측정했습니다.
+
+### 주요 결과
+- **변형 강건성**: 소프트 조각이 공압 구동으로 인해 상당한 변형을 겪어도 터치 위치 결정은 안정적으로 유지되었으며, 오차가 크게 증가하지 않았습니다.
+- **선택적 감지**: 센서는 사람의 손과 같은 전도성 물체에만 반응하며, 공압 변형은 오접촉 신호를 발생시키지 않습니다.
+- **다중 접촉 성능**: 여러 손가락이 동시에 터치할 때 시스템이 각 접촉 지점의 위치를 정확히 구분할 수 있습니다.
+
+### 결론
+이 기술은 소프트 로봇에 저비용이고 통합이 쉬운 촉각 상호작용 솔루션을 제공하며, 특히 변형 표면 터치 상호작용이 필요한 예술 설치물, 엔터테인먼트 로봇 등의 시나리오에 적합합니다. 향후 의료 재활, 인간-로봇 협업 등의 분야로 확장할 수 있습니다.

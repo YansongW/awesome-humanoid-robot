@@ -41,7 +41,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 内容整理自调研档案 data/roadmap/research/toddlerbot.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页与论文 arXiv:2502.00893。
+  notes: '内容整理自调研档案 data/roadmap/research/toddlerbot.md（访问日期 2026-07-01），事实均来自其列出的 GitHub 仓库、项目主页与论文 arXiv:2502.00893。 | WP4
+    trilingual backfill 2026-08-10: en body retranslated from zh deep-read (1828 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -59,7 +60,6 @@ sources:
   url: https://arxiv.org/html/2502.00893v2
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 
 ToddlerBot 是斯坦福大学（TML 与 REALab，作者 Haochen Shi、Weizhuo Wang、Shuran Song、C. Karen Liu）发起的开源幼儿尺寸人形机器人，论文发表于 CoRL 2025（arXiv:2502.00893）。整机高 0.56 m、重 3.4 kg，全身 30 个主动自由度（每条臂 7、每条腿 6、颈 2、腰 2，不含末端执行器），总 BOM 约 6,000 美元，其中约 90% 花在电机与电脑上（来源：调研档案 toddlerbot.md，下同）。
@@ -147,3 +147,44 @@ ToddlerBot은 스탠포드 대학교(TML 및 REALab, 저자 Haochen Shi, Weizhuo
 
 - 적합: 전신 loco-manipulation, 모방/강화 학습 데이터 수집을 원하는 대학원생 및 고급 애호가; 기초가 없지만 손재주가 있는 사람도 매뉴얼 따라 완성 가능; Python 스택은 ML 배경 초보자에게 매우 친숙; 3.4kg 소형 체형으로 집에서 안전하게 조작 가능.
 - 진입 장벽: BOM $6,000으로 저렴하지 않음; 설계 파일은 비상업적 라이선스; Dynamixel 서보 모터 성능 한계(속도/토크/통신)가 고속 동작을 제한(논문 자체 언급).
+
+## Overview
+
+ToddlerBot is an open-source toddler-sized humanoid robot developed by Stanford University (TML and REALab, authors Haochen Shi, Weizhuo Wang, Shuran Song, C. Karen Liu), with the paper published at CoRL 2025 (arXiv:2502.00893). The robot stands 0.56 m tall, weighs 3.4 kg, and has 30 active degrees of freedom across the body (7 per arm, 6 per leg, 2 in the neck, 2 in the waist, excluding end effectors). The total BOM cost is approximately $6,000, with about 90% spent on motors and computers (source: research archive toddlerbot.md, same below).
+
+In terms of licensing, the code and documentation are released under the MIT License; design files (Onshape, STL) use a non-commercial CC license, restricting commercial use. The project's design goal is "reproducible at home": 3D-printed structural parts, off-the-shelf servo motors, a pure Python software stack installable via pip, and paper-level reproducibility validation—a CS student with no hardware experience independently completed the full assembly (including printing) within 3 days. The GitHub repository `hshi74/toddlerbot` has approximately 718 stars / 88 forks (snapshot as of 2026-07-01, highly active), with Discord and WeChat communities.
+
+## Content
+
+### Key Specifications
+
+| Item | Value | Source |
+|---|---|---|
+| Height / Weight | 0.56 m / 3.4 kg (3,484 g) | Paper arXiv:2502.00893 |
+| Active DOF | 30 (arms 7×2, legs 6×2, neck 2, waist 2) | Project homepage / Paper |
+| Hardware Cost (BOM) | ~$6,000 (90% motors and computer) | Paper |
+| Main Controller | NVIDIA Jetson Orin NX 16GB | Paper |
+| Sensors | Dual fisheye cameras, chest IMU, speaker, dual microphones | Project homepage |
+| Battery Life | ~19 minutes of walking RL policy (until thermal throttling) | Project homepage |
+| Beginner Friendliness | 4.5 / 5 (research archive assessment) | Research archive |
+
+### Actuators and Mechanical Design
+
+- Uses ROBOTIS Dynamixel bus servos, with 5 models selected based on joint space/torque/cost (specific model list in paper supplementary material VIII-E, not individually listed in the archive).
+- Communication uses 5V TTL serial protocol at 2 Mbps baud rate, with full-state feedback from 30 motors at 50 Hz, using off-the-shelf communication boards.
+- Transmission design: spur gears (arm axis alignment), coupled bevel gears (waist yaw/roll two-motor coupling), parallel linkages (knee, neck pitch, reducing inertia).
+- Two end effectors with 2-minute quick-swap: parallel gripper and compliant palm; leader arms have embedded FSR force-sensing resistors in the grips.
+- Low repair cost after damage: can withstand approximately 7 falls, with repair requiring only 21 minutes of printing + 14 minutes of assembly.
+
+### Computing Platform and Software Stack
+
+- Main controller Jetson Orin NX 16GB performs onboard real-time inference: 300M-parameter diffusion policy at ~100 ms latency; version 2.0 uses Foundation Stereo for onboard 10 Hz stereo depth estimation.
+- Pure Python, pip one-click installation (>= 3.10), including all code for low-level control, RL training (MuJoCo / MJX, PPO), diffusion policy training, and real-robot deployment; no ROS dependency.
+- Digital twin: 3D-printed zero-point calibration jig (completed within 1 minute) + transferable motor system identification (sysID performed only once per motor model), enabling zero-shot sim-to-real; policies transfer zero-shot between two robot instances, with 90% success rate reproduced for bimanual manipulation.
+- Teleoperation: isomorphic leader arms + handheld console (Steam Deck / ROG Ally X); version 2.0 supports Meta Quest 2 VR teleoperation.
+- Version timeline: ToddlerBot 2.0 released 2025-08-25; multi-skill whole-body motion system released 2026-01 (depth-map skill classifier + multi-policy switching).
+
+### Target Audience
+
+- Suitable for: graduate students and advanced hobbyists interested in whole-body loco-manipulation, imitation/reinforcement learning data collection; beginners with strong hands-on skills can also complete assembly following the manual; the Python stack is extremely friendly to newcomers with ML backgrounds; the 3.4 kg compact size is safe for home operation.
+- Barriers: BOM of $6,000 is not cheap; design files use a non-commercial license; Dynamixel servo performance limits (speed/torque/communication) constrain highly dynamic motions (as stated in the paper).

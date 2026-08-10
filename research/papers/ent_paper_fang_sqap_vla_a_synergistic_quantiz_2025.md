@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.09090v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.09090v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (656 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,25 @@ SQAP-VLA 针对视觉-语言-动作模型在实际部署中面临的高计算与
 ## Overview
 Vision-Language-Action (VLA) models exhibit unprecedented capabilities for embodied intelligence. However, their extensive computational and memory costs hinder their practical deployment. Existing VLA compression and acceleration approaches conduct quantization or token pruning in an ad-hoc manner but fail to enable both for a holistic efficiency improvement due to an observed incompatibility. This work introduces SQAP-VLA, the first structured, training-free VLA inference acceleration framework that simultaneously enables state-of-the-art quantization and token pruning. We overcome the incompatibility by co-designing the quantization and token pruning pipeline, where we propose new quantization-aware token pruning criteria that work on an aggressively quantized model while improving the quantizer design to enhance pruning effectiveness. When applied to standard VLA models, SQAP-VLA yields significant gains in computational efficiency and inference speed while successfully preserving core model performance, achieving a $\times$1.93 speedup and up to a 4.5\% average success rate enhancement compared to the original model.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 구현된 지능에서 전례 없는 능력을 보여줍니다. 그러나 이들의 방대한 계산 및 메모리 비용은 실제 배포를 어렵게 만듭니다. 기존 VLA 압축 및 가속 접근 방식은 임시 방식으로 양자화 또는 토큰 가지치기를 수행하지만, 관찰된 비호환성으로 인해 전체적인 효율성 향상을 위해 두 가지를 동시에 활성화하지 못합니다. 본 연구는 SQAP-VLA를 소개합니다. 이는 최첨단 양자화와 토큰 가지치기를 동시에 가능하게 하는 최초의 구조화된, 훈련 없는 VLA 추론 가속 프레임워크입니다. 우리는 양자화와 토큰 가지치기 파이프라인을 공동 설계하여 비호환성을 극복합니다. 여기서는 공격적으로 양자화된 모델에서 작동하는 새로운 양자화 인식 토큰 가지치기 기준을 제안하고, 가지치기 효과를 향상시키기 위해 양자화기 설계를 개선합니다. 표준 VLA 모델에 적용했을 때, SQAP-VLA는 핵심 모델 성능을 성공적으로 유지하면서 계산 효율성과 추론 속도에서 상당한 이점을 제공하며, 원본 모델 대비 $\times$1.93 속도 향상과 최대 4.5%의 평균 성공률 향상을 달성합니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 구현된 지능에서 전례 없는 능력을 보여줍니다. 그러나 이들의 방대한 계산 및 메모리 비용은 실제 배포를 어렵게 만듭니다. 기존 VLA 압축 및 가속 접근 방식은 임시 방식으로 양자화 또는 토큰 가지치기를 수행하지만, 관찰된 비호환성으로 인해 전체적인 효율성 향상을 위해 두 가지를 동시에 활성화하지 못합니다. 본 연구는 SQAP-VLA를 소개합니다. 이는 최첨단 양자화와 토큰 가지치기를 동시에 가능하게 하는 최초의 구조화된, 훈련 없는 VLA 추론 가속 프레임워크입니다. 우리는 양자화와 토큰 가지치기 파이프라인을 공동 설계하여 비호환성을 극복합니다. 여기서는 공격적으로 양자화된 모델에서 작동하는 새로운 양자화 인식 토큰 가지치기 기준을 제안하고, 가지치기 효과를 향상시키기 위해 양자화기 설계를 개선합니다. 표준 VLA 모델에 적용했을 때, SQAP-VLA는 핵심 모델 성능을 성공적으로 유지하면서 계산 효율성과 추론 속도에서 상당한 이점을 제공하며, 원본 모델 대비 $\times$1.93 속도 향상과 최대 4.5%의 평균 성공률 향상을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.09090v1
+
+## 개요
+SQAP-VLA는 시각-언어-행동 모델이 실제 배포에서 직면하는 높은 계산 및 메모리 오버헤드 문제를 해결하기 위해 혁신적인 협력 최적화 방안을 제안한다. 이 프레임워크는 처음으로 양자화와 토큰 프루닝 기술을 공동 설계하며, 양자화 인지 프루닝 기준과 최적화된 양자화기 설계를 제안하여 두 기술 간의 기존 상호 배타성을 효과적으로 극복한다. 실험 결과, SQAP-VLA는 표준 VLA 모델에서 상당한 효율성 향상을 달성했으며, 추론 속도가 빨라졌을 뿐만 아니라 예상치 못하게 평균 성공률의 소폭 증가도 가져왔다.
+
+## 핵심 내용
+### 배경 및 과제
+- VLA 모델은 구현 지능 분야에서 뛰어난 능력을 보여주지만, 방대한 계산 및 메모리 오버헤드가 실제 배포를 심각하게 저해한다.
+- 기존 압축 가속 방법은 일반적으로 양자화 또는 토큰 프루닝을 독립적으로 수행하며, 두 기술 간의 비호환성으로 인해 전체 효율성 최적화를 동시에 달성할 수 없다.
+
+### 핵심 방법
+- **협력 파이프라인 설계**: SQAP-VLA는 처음으로 구조화되고 훈련이 필요 없는 VLA 추론 가속 프레임워크를 제안하여 최첨단 양자화와 토큰 프루닝을 동시에 구현한다.
+- **양자화 인지 프루닝 기준**: 과감한 양자화를 거친 모델을 대상으로 새로운 프루닝 기준을 설계하여 저정밀 환경에서도 프루닝 작업이 효과적으로 유지되도록 보장한다.
+- **양자화기 최적화**: 양자화기 설계를 개선하여 프루닝 과정과 더 잘 협력하고 프루닝 효과를 강화한다.
+
+### 실험 설정 및 결과
+- 표준 VLA 모델에 적용하여 테스트를 수행했다.
+- 주요 성능 지표:
+  - 계산 효율성: **1.93배** 추론 속도 향상 달성.
+  - 작업 성공률: 원본 모델 대비 평균 성공률 최대 **4.5%** 향상.
+- 결론: SQAP-VLA는 계산 효율성과 추론 속도를 크게 향상시키면서도 모델의 핵심 성능을 성공적으로 유지하며, 오히려 소폭의 성능 이득까지 가져온다.

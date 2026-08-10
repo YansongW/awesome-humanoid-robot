@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.21970v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.21970v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (823 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,30 @@ StereoVLA通过显式引入立体几何信息，解决了VLA模型空间感知�
 ## Overview
 While Vision-Language-Action (VLA) models excel in generalist manipulation, they often lack fine-grained spatial awareness and show limited viewpoint robustness. This limitation largely stems from the reliance on pretrained RGB encoders, which lack explicit geometric cues and prioritize semantic alignment over geometric representation. We argue that effective visual representations for VLA models must jointly encode both semantic and geometric information. In this paper, we introduce StereoVLA, the first VLA model to incorporate rich geometric cues from large-scale synthetic stereo data. StereoVLA employs a Geometric-and-Semantic (GeoSem) vision encoder that extracts geometric cues from subtle stereo-view disparities for precise spatial perception, while simultaneously capturing semantic features from pixel observations to support language-conditioned manipulation. Additionally, we introduce two synergistic co-training objectives: Interaction-Region Depth Estimation for precise spatial reasoning, and Camera Parameter Estimation to implicitly align perception and action coordinate systems. Compared with baselines that employ various input modalities, StereoVLA achieves a 33.4% absolute gain in success rate in real-world experiments and demonstrates robustness to near-hemispheric camera perspectives. Project page: https://shengliangd.github.io/StereoVLA-Webpage.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 범용 조작 작업에서 뛰어난 성능을 보이지만, 종종 세밀한 공간 인식 능력이 부족하고 시점 변화에 대한 강건성이 제한적입니다. 이러한 한계는 주로 사전 학습된 RGB 인코더에 의존하기 때문이며, 이 인코더는 명시적인 기하학적 단서가 부족하고 의미적 정렬을 기하학적 표현보다 우선시합니다. 우리는 VLA 모델을 위한 효과적인 시각적 표현이 의미 정보와 기하학적 정보를 모두 공동으로 인코딩해야 한다고 주장합니다. 본 논문에서는 대규모 합성 스테레오 데이터에서 풍부한 기하학적 단서를 통합한 최초의 VLA 모델인 StereoVLA를 소개합니다. StereoVLA는 미세한 스테레오 시점 차이에서 기하학적 단서를 추출하여 정밀한 공간 인식을 가능하게 하는 동시에, 픽셀 관측에서 의미적 특징을 포착하여 언어 조건 조작을 지원하는 Geometric-and-Semantic (GeoSem) 비전 인코더를 사용합니다. 또한, 정밀한 공간 추론을 위한 상호작용 영역 깊이 추정(Interaction-Region Depth Estimation)과 인식 및 행동 좌표계를 암시적으로 정렬하는 카메라 파라미터 추정(Camera Parameter Estimation)이라는 두 가지 시너지 효과를 내는 공동 학습 목표를 도입합니다. 다양한 입력 모달리티를 사용하는 기준 모델과 비교하여, StereoVLA는 실제 실험에서 성공률이 33.4% 절대적으로 향상되었으며, 거의 반구에 가까운 카메라 시점에서도 강건성을 보여줍니다. 프로젝트 페이지: https://shengliangd.github.io/StereoVLA-Webpage.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 범용 조작 작업에서 뛰어난 성능을 보이지만, 종종 세밀한 공간 인식 능력이 부족하고 시점 변화에 대한 강건성이 제한적입니다. 이러한 한계는 주로 사전 학습된 RGB 인코더에 의존하기 때문이며, 이 인코더는 명시적인 기하학적 단서가 부족하고 의미적 정렬을 기하학적 표현보다 우선시합니다. 우리는 VLA 모델을 위한 효과적인 시각적 표현이 의미 정보와 기하학적 정보를 모두 공동으로 인코딩해야 한다고 주장합니다. 본 논문에서는 대규모 합성 스테레오 데이터에서 풍부한 기하학적 단서를 통합한 최초의 VLA 모델인 StereoVLA를 소개합니다. StereoVLA는 미세한 스테레오 시점 차이에서 기하학적 단서를 추출하여 정밀한 공간 인식을 가능하게 하는 동시에, 픽셀 관측에서 의미적 특징을 포착하여 언어 조건 조작을 지원하는 Geometric-and-Semantic (GeoSem) 비전 인코더를 사용합니다. 또한, 정밀한 공간 추론을 위한 상호작용 영역 깊이 추정(Interaction-Region Depth Estimation)과 인식 및 행동 좌표계를 암시적으로 정렬하는 카메라 파라미터 추정(Camera Parameter Estimation)이라는 두 가지 시너지 효과를 내는 공동 학습 목표를 도입합니다. 다양한 입력 모달리티를 사용하는 기준 모델과 비교하여, StereoVLA는 실제 실험에서 성공률이 33.4% 절대적으로 향상되었으며, 거의 반구에 가까운 카메라 시점에서도 강건성을 보여줍니다. 프로젝트 페이지: https://shengliangd.github.io/StereoVLA-Webpage.
-
 ## 参考
 - http://arxiv.org/abs/2512.21970v2
+
+## 개요
+기존 VLA 모델은 사전 학습된 RGB 인코더에 의존하여 세밀한 공간 인식과 시점 강건성이 부족하며, 이는 의미론적 정렬을 우선시하고 기하학적 표현을 무시하기 때문입니다. StereoVLA는 GeoSem 인코더를 통해 스테레오 시차의 기하학적 단서와 픽셀 관측의 의미론적 특징을 동시에 포착하고, 상호작용 영역 깊이 추정과 카메라 파라미터 추정이라는 두 가지 협력 학습 목표를 설계하여 각각 정밀한 공간 추론과 암시적 인식-행동 좌표계 정렬에 사용합니다. 실제 로봇 조작 실험에서 StereoVLA는 다양한 입력 모달리티의 기준 방법보다 현저한 우위를 보였으며, 극단적인 시점 변화에서도 안정적인 성능을 유지했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **GeoSem 시각 인코더**: 대규모 합성 스테레오 데이터에서 두 가지 상호 보완적 특징을 추출합니다:
+  - 기하학적 분기: 스테레오 시차를 통해 깊이 맵을 계산하고 3차원 공간 구조를 인코딩
+  - 의미론적 분기: RGB 이미지에서 객체 범주, 질감 등 언어 관련 특징을 추출
+- **협력 학습 목표**:
+  - **상호작용 영역 깊이 추정**: 로봇 팔 조작 영역의 정밀한 깊이 값을 예측하여 공간 추론 능력 강화
+  - **카메라 파라미터 추정**: 카메라 내부 및 외부 파라미터를 암시적으로 학습하여 시각 인식과 행동 실행 좌표계 정렬
+
+### 실험 설정
+- **기준 비교**: 단안 RGB, RGB-D, 순수 깊이 맵 등 입력 모달리티를 사용하는 VLA 기준 모델과 비교
+- **실제 시나리오**: 집기, 놓기, 쌓기 등의 동작을 포함한 테이블탑 조작 작업에서 테스트
+- **시점 테스트**: 정면에서 근반구 범위(약 160° 시점)의 카메라 위치를 포함
+
+### 주요 결과
+- **성공률**: StereoVLA는 실제 실험에서 **33.4%의 절대 성공률 향상**(최고 기준 모델 대비)을 달성
+- **시점 강건성**: 근반구 극단적 시점에서 성공률 하락 폭이 기준 모델의 1/3에 불과
+- **절제 실험**: 기하학적 분기 또는任一 협력 목표를 제거하면 성공률이 각각 18.7% 및 12.3% 하락
+
+### 결론
+StereoVLA는 스테레오 기하학 정보를 명시적으로 도입하여 VLA 모델의 공간 인식 부족이라는 핵심 병목을 해결했습니다. GeoSem 인코더와 협력 학습 프레임워크는 로봇 조작에 의미론적 이해와 기하학적 정밀도를 겸비한 시각 표현을 제공하며, 복잡한 환경에서의 범용 조작 모델 배포를 위한 기반을 마련합니다.

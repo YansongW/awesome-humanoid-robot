@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.08408v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.08408v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (960 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,36 @@ CE-MRS 通过提供结构化、多层面的对比解释，有效弥合了复杂�
 ## Overview
 As the complexity of multi-robot systems grows to incorporate a greater number of robots, more complex tasks, and longer time horizons, the solutions to such problems often become too complex to be fully intelligible to human users. In this work, we introduce an approach for generating natural language explanations that justify the validity of the system's solution to the user, or else aid the user in correcting any errors that led to a suboptimal system solution. Toward this goal, we first contribute a generalizable formalism of contrastive explanations for multi-robot systems, and then introduce a holistic approach to generating contrastive explanations for multi-robot scenarios that selectively incorporates data from multi-robot task allocation, scheduling, and motion-planning to explain system behavior. Through user studies with human operators we demonstrate that our integrated contrastive explanation approach leads to significant improvements in user ability to identify and solve system errors, leading to significant improvements in overall multi-robot team performance.
 
-## 개요
-다중 로봇 시스템의 복잡성이 증가하여 더 많은 로봇, 더 복잡한 작업, 더 긴 시간 범위를 포함하게 됨에 따라, 이러한 문제에 대한 해결책은 종종 인간 사용자가 완전히 이해하기에는 너무 복잡해집니다. 본 연구에서는 시스템 솔루션의 타당성을 사용자에게 설명하거나, 최적이 아닌 시스템 솔루션으로 이어진 오류를 사용자가 수정하는 데 도움을 주는 자연어 설명을 생성하는 접근 방식을 소개합니다. 이를 위해 먼저 다중 로봇 시스템을 위한 대조 설명의 일반화 가능한 형식론을 제시하고, 다중 로봇 작업 할당, 스케줄링 및 모션 플래닝의 데이터를 선택적으로 통합하여 시스템 동작을 설명하는 다중 로봇 시나리오를 위한 대조 설명 생성의 전체론적 접근 방식을 도입합니다. 인간 운영자를 대상으로 한 사용자 연구를 통해, 통합된 대조 설명 접근 방식이 사용자가 시스템 오류를 식별하고 해결하는 능력을 크게 향상시켜, 전반적인 다중 로봇 팀 성능의 유의미한 개선을 가져온다는 것을 입증합니다.
-
-## 핵심 내용
-다중 로봇 시스템의 복잡성이 증가하여 더 많은 로봇, 더 복잡한 작업, 더 긴 시간 범위를 포함하게 됨에 따라, 이러한 문제에 대한 해결책은 종종 인간 사용자가 완전히 이해하기에는 너무 복잡해집니다. 본 연구에서는 시스템 솔루션의 타당성을 사용자에게 설명하거나, 최적이 아닌 시스템 솔루션으로 이어진 오류를 사용자가 수정하는 데 도움을 주는 자연어 설명을 생성하는 접근 방식을 소개합니다. 이를 위해 먼저 다중 로봇 시스템을 위한 대조 설명의 일반화 가능한 형식론을 제시하고, 다중 로봇 작업 할당, 스케줄링 및 모션 플래닝의 데이터를 선택적으로 통합하여 시스템 동작을 설명하는 다중 로봇 시나리오를 위한 대조 설명 생성의 전체론적 접근 방식을 도입합니다. 인간 운영자를 대상으로 한 사용자 연구를 통해, 통합된 대조 설명 접근 방식이 사용자가 시스템 오류를 식별하고 해결하는 능력을 크게 향상시켜, 전반적인 다중 로봇 팀 성능의 유의미한 개선을 가져온다는 것을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.08408v1
+
+## 개요
+다중 로봇 시스템이 로봇 수, 작업 복잡성, 시간 범위 측면에서 성장함에 따라, 그 해결책은 종종 너무 복잡해져 인간 사용자가 완전히 이해하기 어렵다. CE-MRS는 일반화된 대비 설명 형식화 프레임워크를 제안하고, 이를 기반으로 다중 로봇 작업 할당, 스케줄링, 운동 계획의 데이터를 선택적으로 통합하여 자연어 설명을 생성하는 전체론적 방법을 개발했다. 이러한 설명은 사용자에게 시스템 해결책의 타당성을 입증하거나, 사용자가 차선책을 초래한 오류를 발견하고 수정하도록 돕는 것을 목표로 한다. 사용자 연구 결과에 따르면, CE-MRS를 적용한 후 운영자가 시스템 오류를 식별하고 해결하는 능력이 크게 향상되어, 다중 로봇 팀의 전반적인 성과가 대폭 개선되었다.
+
+## 핵심 내용
+### 핵심 기여
+- **대비 설명 형식화**: 다중 로봇 시스템을 위해 처음으로 일반화된 대비 설명 형식화 프레임워크를 제안하여, 시스템의 실제 해결책과 사용자가 제안한 대안(foil)을 구조적으로 비교한다.
+- **다층 데이터 통합**: 이 방법은 세 가지 핵심 계획 수준의 데이터를 선택적으로 융합한다:
+  - 다중 로봇 작업 할당(task allocation)
+  - 스케줄링(scheduling)
+  - 운동 계획(motion planning)
+  이를 통해 시스템 행동의 전체적인 모습을 포괄하는 설명을 생성한다.
+
+### 방법 아키텍처
+- **대비 설명 생성 흐름**:
+  1. 시스템의 현재 해결책과 사용자가 제안한 대안(foil)을 수신한다.
+  2. 작업 할당, 스케줄링, 운동 계획의 세 수준에서 각각 차이를 계산한다.
+  3. 차이를 자연어 설명으로 변환하여, 시스템 해결책이 왜 더 우수한지 강조하거나 사용자 해결책의 오류를 지적한다.
+- **설명 목표**: 시스템 해결책의 타당성을 입증하는 데 사용될 수 있을 뿐만 아니라, 사용자가 차선책을 초래한 문제를 찾고 수정하도록 돕는 데도 사용될 수 있다.
+
+### 실험 설정
+- **검증 시나리오**: 수색 및 구조 작업(search-and-rescue) 사용자 연구.
+- **평가 지표**: 사용자가 시스템 오류를 식별하는 능력, 오류를 해결하는 능력, 그리고 다중 로봇 팀의 전반적인 성능.
+
+### 핵심 결과
+- CE-MRS 대비 설명을 사용한 사용자는, 이 방법을 사용하지 않은 대조군보다 시스템 오류 식별에서 현저히 우수한 성과를 보였다.
+- 사용자의 오류 수정 속도와 정확성이 모두 향상되어, 다중 로봇 팀의 전반적인 성능이 직접적으로 크게 개선되었다.
+- 실험을 통해 작업 할당, 스케줄링, 운동 계획 데이터를 통합한 다층 설명이 단일 수준에만 의존하는 설명보다 더 효과적임을 확인했다.
+
+### 결론
+CE-MRS는 구조화되고 다층적인 대비 설명을 제공함으로써, 복잡한 다중 로봇 시스템과 인간 사용자 사이의 이해 격차를 효과적으로 좁히며, 인간-로봇 협업 효율성을 높이는 데 실용적인 가치를 지닌다.

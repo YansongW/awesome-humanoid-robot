@@ -32,7 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from chapter-04.md#4.7.6 选型算例：髋关节电机+减速器 by scripts/backfill_nonpaper_entries.py.
+  notes: 'Body backfilled from chapter-04.md#4.7.6 选型算例：髋关节电机+减速器 by scripts/backfill_nonpaper_entries.py. | WP4 trilingual
+    backfill 2026-08-10: closed unclosed code fence(s) and removed duplicate stale translation block(s) (pre-existing ingestion
+    defect).'
 sources:
 - id: src_001
   type: website
@@ -41,7 +43,6 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
-
 ## 概述
 关节电机是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -231,6 +232,7 @@ flowchart TD
     I --> C
     H -->|Yes| J["Mass/Efficiency Iterative Optimization"]
 
+```
 ## 개요
 관절 모터는 휴머노이드 로봇 분야의 중요한 부품입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
 
@@ -322,93 +324,4 @@ flowchart TD
     I --> C
     H -->|예| J["무게/효율 반복 최적화"]
 
-## 개요
-관절 모터는 휴머노이드 로봇 분야의 중요한 부품입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고용으로 제공됩니다.
-
-## 핵심 내용
-60kg급 휴머노이드 로봇의 **고관절 굴곡 신전** 액추에이터를 고려하며, 설계 사양은 다음과 같습니다:
-
-- 출력 피크 토크: \(\tau_{peak} = 120\ \text{N·m}\)
-- 출력 연속 RMS 토크: \(\tau_{rms} = 35\ \text{N·m}\)
-- 출력 최대 각속도: \(\omega_{out,max} = 8\ \text{rad/s}\)
-- 감속기 효율: \(\eta = 0.85\)
-
-후보 모터 파라미터: 피크 토크 \(\tau_{m,peak} = 3.0\ \text{N·m}\), 연속 RMS 토크 \(\tau_{m,cont} = 1.0\ \text{N·m}\), 최대 회전 속도 \(\omega_{m,max} = 300\ \text{rad/s}\).
-
-**단계 1: 피크 토크 기준 감속비 초기 선정**
-
-$$
-G \ge \frac{\tau_{peak}}{\tau_{m,peak} \, \eta} = \frac{120}{3.0 \times 0.85} \approx 47.1
-$$
-
-**단계 2: 속도 요구 조건에 따른 상한 검증**
-
-$$
-G \le \frac{\omega_{m,max}}{\omega_{out,max}} = \frac{300}{8} = 37.5
-$$
-
-단계 1과 단계 2가 충돌: 모터 피크 토크 부족 또는 최대 회전 속도 부족. 모터를 재선택해야 하며, 예를 들어 \(\tau_{m,peak}=4.5\ \text{N·m}\), \(\omega_{m,max}=400\ \text{rad/s}\)인 모터로 교체:
-
-$$
-G \ge \frac{120}{4.5 \times 0.85} \approx 31.4, \qquad
-G \le \frac{400}{8} = 50
-$$
-
-\(G = 40\)을 선택하여 토크 여유와 속도 여유를 모두 확보.
-
-**단계 3: 연속 RMS 토크 검증**
-
-모터 측 연속 토크 요구량은
-
-$$
-\tau_{m,rms} = \frac{\tau_{rms}}{G \eta} = \frac{35}{40 \times 0.85} \approx 1.03\ \text{N·m}
-$$
-
-모터 연속 토크 1.0 N·m보다 약간 크므로, \(G\)를 42로 약간 높이거나 연속 토크 1.2 N·m인 모터를 선택하여 해결 가능.
-
-**단계 4: 열 검증**
-
-모터 상 저항 \(R = 0.30\ \Omega\), 열 저항 \(R_{th} = 1.8\ \text{K/W}\), 허용 온도 상승 \(\Delta T = 115\ \text{K}\)로 가정.
-
-$$
-P_{loss,allow} = \frac{\Delta T}{R_{th}} = \frac{115}{1.8} \approx 63.9\ \text{W}
-$$
-
-해당 허용 RMS 전류
-
-$$
-I_{rms,max} = \sqrt{\frac{P_{loss,allow}}{R}} = \sqrt{\frac{63.9}{0.30}} \approx 14.6\ \text{A}
-$$
-
-모터 토크 상수 \(k_t = 0.12\ \text{N·m/A}\)이므로, 허용 연속 토크
-
-$$
-\tau_{cont,allow} = k_t I_{rms,max} = 0.12 \times 14.6 \approx 1.75\ \text{N·m}
-$$
-
-요구량 1.03 N·m보다 크므로 열 설계 통과.
-
-**단계 5: 반복 최적화**
-
-전체 기계가 무게에 민감한 경우, \(G\)와 모터 질량, 감속기 질량, 효율의 Pareto 프론티어를 도출하여 모든 제약 조건을 만족하면서 질량이 가장 작은 조합을 선택. 일반적으로 높은 감속비는 더 작은 모터를 허용하지만 더 무거운 감속기를 필요로 함; 낮은 감속비는 그 반대. 휴머노이드 로봇 고관절은 종종 \(G=30\sim80\) 사이에서 균형을 맞춤.
-
-!!! note "용어 설명: 피크 토크, 연속 RMS 토크, 감속비, 효율, 열 검증, Pareto 프론티어"
-    - **피크 토크 (peak torque)**: 단시간 최대 출력 토크로, 모터+감속기의 강도 하한을 결정.
-    - **연속 RMS 토크 (continuous RMS torque)**: 주기적 부하의 등가 열 토크.
-    - **감속비 (gear ratio)**: 모터 회전 속도와 출력 회전 속도의 비율.
-    - **열 검증 (thermal check)**: RMS 전류 하에서 모터의 온도 상승이 절연 한계 이하인지 확인.
-    - **Pareto 프론티어 (Pareto front)**: 다중 목표 최적화에서 모든 목표를 동시에 개선할 수 없는 해의 집합.
-
-```mermaid
-flowchart TD
-    A["작업 요구<br/>토크 속도 열"] --> B["모터 초기 선정"]
-    B --> C["피크 기준 G 선정<br/>G >= tau_peak/(kt_m eta)"]
-    C --> D["속도 기준 G 검증<br/>G <= omega_m/omega_out"]
-    D --> E{"제약 충돌?"}
-    E -->|예| F["모터/감속기 교체"]
-    F --> B
-    E -->|아니오| G["열 검증<br/>I_rms R_th"]
-    G --> H{"통과?"}
-    H -->|아니오| I["G 증가 또는 방열 강화"]
-    I --> C
-    H -->|예| J["질량/효율 반복 최적화"]
+```

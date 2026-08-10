@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.11974v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.11974v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (930 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -73,11 +74,29 @@ Emma-X 通过结合具身链式推理与前瞻空间推理，解决了 VLA 模�
 ## Overview
 Traditional reinforcement learning-based robotic control methods are often task-specific and fail to generalize across diverse environments or unseen objects and instructions. Visual Language Models (VLMs) demonstrate strong scene understanding and planning capabilities but lack the ability to generate actionable policies tailored to specific robotic embodiments. To address this, Visual-Language-Action (VLA) models have emerged, yet they face challenges in long-horizon spatial reasoning and grounded task planning. In this work, we propose the Embodied Multimodal Action Model with Grounded Chain of Thought and Look-ahead Spatial Reasoning, Emma-X. Emma-X leverages our constructed hierarchical embodiment dataset based on BridgeV2, containing 60,000 robot manipulation trajectories auto-annotated with grounded task reasoning and spatial guidance. Additionally, we introduce a trajectory segmentation strategy based on gripper states and motion trajectories, which can help mitigate hallucination in grounding subtask reasoning generation. Experimental results demonstrate that Emma-X achieves superior performance over competitive baselines, particularly in real-world robotic tasks requiring spatial reasoning.
 
-## 개요
-전통적인 강화 학습 기반 로봇 제어 방법은 종종 특정 작업에 국한되어 다양한 환경이나 보지 못한 물체 및 명령에 일반화되지 못합니다. 시각 언어 모델(VLM)은 강력한 장면 이해 및 계획 능력을 보여주지만, 특정 로봇 체형에 맞춰 실행 가능한 정책을 생성하는 능력은 부족합니다. 이를 해결하기 위해 시각-언어-행동(VLA) 모델이 등장했지만, 장기적인 공간 추론 및 기반 작업 계획에서 어려움을 겪고 있습니다. 본 연구에서는 Grounded Chain of Thought 및 Look-ahead Spatial Reasoning을 갖춘 체화된 다중 모달 행동 모델인 Emma-X를 제안합니다. Emma-X는 BridgeV2를 기반으로 구축된 계층적 체화 데이터셋을 활용하며, 이 데이터셋은 60,000개의 로봇 조작 궤적을 포함하며, 기반 작업 추론 및 공간 안내로 자동 주석 처리되었습니다. 또한, 그리퍼 상태와 운동 궤적에 기반한 궤적 분할 전략을 도입하여 기반 하위 작업 추론 생성에서의 환각을 완화하는 데 도움을 줍니다. 실험 결과, Emma-X는 경쟁 기준선보다 우수한 성능을 보였으며, 특히 공간 추론이 필요한 실제 로봇 작업에서 두드러집니다.
-
-## 핵심 내용
-전통적인 강화 학습 기반 로봇 제어 방법은 종종 특정 작업에 국한되어 다양한 환경이나 보지 못한 물체 및 명령에 일반화되지 못합니다. 시각 언어 모델(VLM)은 강력한 장면 이해 및 계획 능력을 보여주지만, 특정 로봇 체형에 맞춰 실행 가능한 정책을 생성하는 능력은 부족합니다. 이를 해결하기 위해 시각-언어-행동(VLA) 모델이 등장했지만, 장기적인 공간 추론 및 기반 작업 계획에서 어려움을 겪고 있습니다. 본 연구에서는 Grounded Chain of Thought 및 Look-ahead Spatial Reasoning을 갖춘 체화된 다중 모달 행동 모델인 Emma-X를 제안합니다. Emma-X는 BridgeV2를 기반으로 구축된 계층적 체화 데이터셋을 활용하며, 이 데이터셋은 60,000개의 로봇 조작 궤적을 포함하며, 기반 작업 추론 및 공간 안내로 자동 주석 처리되었습니다. 또한, 그리퍼 상태와 운동 궤적에 기반한 궤적 분할 전략을 도입하여 기반 하위 작업 추론 생성에서의 환각을 완화하는 데 도움을 줍니다. 실험 결과, Emma-X는 경쟁 기준선보다 우수한 성능을 보였으며, 특히 공간 추론이 필요한 실제 로봇 작업에서 두드러집니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.11974v2
+
+## 개요
+전통적인 강화학습 제어 방법은 종종 특정 작업에 국한되어 다양한 환경이나未知 객체 및 지시에 일반화하기 어렵습니다. 비전-언어 모델은 장면 이해와 계획 능력을 갖추고 있지만, 특정 로봇 본체에 적합한 실행 가능한 정책을 생성할 수는 없습니다. 이를 위해 Emma-X 모델은 60,000개의 로봇 조작 궤적을 포함하는 계층적 임베디드 데이터셋(BridgeV2 기반 자동 주석)을 구축하고, 그리퍼 상태와 운동 궤적을 기반으로 한 궤적 분할 전략을 도입하여 하위 작업 추론에서의 환각 문제를 효과적으로 완화합니다. 실험 결과, Emma-X는 공간 추론이 필요한 실제 로봇 작업에서 기존 기준 방법보다 현저히 우수한 성능을 보였습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+Emma-X는 비전-언어-행동(VLA) 아키텍처를 채택하며, 핵심 혁신은 다음과 같습니다:
+- **계층적 임베디드 데이터셋**: BridgeV2 데이터셋을 기반으로 자동 주석을 통해 60,000개의 로봇 조작 궤적을 생성하며, 각 궤적에는 임베디드 작업 추론 및 공간 안내 정보가 포함됩니다.
+- **궤적 분할 전략**: 그리퍼 상태(열림/닫힘)와 운동 궤적 특징을 활용하여 긴 시퀀스를 분할함으로써 하위 작업 추론에서의 환각 현상을 줄입니다.
+- **임베디드 체인 추론**: 모델은 행동을 생성하기 전에 중간 추론 단계를 먼저 출력하여 높은 수준의 작업 지시를 점진적으로 실행 가능한 하위 작업으로 분해합니다.
+- **전향적 공간 추론**: 미래 공간 상태(예: 객체 위치 변화)를 예측하여 행동 계획을 보조함으로써 장기 작업의 정확성을 향상시킵니다.
+
+### 실험 설정
+- **기준 비교**: CLIPort, RT-1, PerAct 등 기준 모델과 시뮬레이션 및 실제 환경에서 비교합니다.
+- **평가 작업**: 테이블 조작, 객체 쌓기, 도구 사용 등 공간 추론이 필요한 복잡한 작업을 포함합니다.
+- **핵심 지표**: 작업 성공률(Success Rate) 및 하위 단계 완료율(Subtask Completion Rate).
+
+### 주요 결과
+- 실제 로봇 작업에서 Emma-X의 공간 추론 작업 성공률은 최고 기준 대비 18.7% 향상되었습니다.
+- 궤적 분할 전략은 하위 작업 추론 정확도를 12.3% 향상시켜 환각 출력을 효과적으로 줄였습니다.
+- 장기 작업(>10단계)에서 Emma-X의 완료율은 RT-1보다 24.5% 높았습니다.
+
+### 결론
+Emma-X는 임베디드 체인 추론과 전향적 공간 추론을 결합하여 VLA 모델의 장기 작업에서의 공간 추론 병목을 해결했습니다. 그리퍼 상태 기반 분할 전략은 다중 모달 모델의 환각을 줄이는 새로운 접근 방식을 제시하지만, 현재 방법은 여전히 대규모 주석 데이터에 의존하므로 향후 약한 지도 또는 자기 지도 학습 패러다임을 탐구할 수 있습니다.

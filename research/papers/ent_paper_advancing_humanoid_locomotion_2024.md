@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2408.14472v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2408.14472v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (678 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -65,11 +66,26 @@ DWL通过去噪世界模型学习，首次实现人形机器人在真实复杂�
 ## Overview
 Humanoid robots, with their human-like skeletal structure, are especially suited for tasks in human-centric environments. However, this structure is accompanied by additional challenges in locomotion controller design, especially in complex real-world environments. As a result, existing humanoid robots are limited to relatively simple terrains, either with model-based control or model-free reinforcement learning. In this work, we introduce Denoising World Model Learning (DWL), an end-to-end reinforcement learning framework for humanoid locomotion control, which demonstrates the world's first humanoid robot to master real-world challenging terrains such as snowy and inclined land in the wild, up and down stairs, and extremely uneven terrains. All scenarios run the same learned neural network with zero-shot sim-to-real transfer, indicating the superior robustness and generalization capability of the proposed method.
 
-## 개요
-휴머노이드 로봇은 인간과 유사한 골격 구조를 가지고 있어 인간 중심 환경에서의 작업에 특히 적합합니다. 그러나 이러한 구조는 특히 복잡한 실제 환경에서 보행 제어기 설계에 추가적인 도전 과제를 수반합니다. 그 결과, 기존의 휴머노이드 로봇은 모델 기반 제어 또는 모델 프리 강화 학습을 사용하더라도 비교적 단순한 지형으로 제한됩니다. 본 연구에서는 휴머노이드 보행 제어를 위한 종단간 강화 학습 프레임워크인 Denoising World Model Learning (DWL)을 소개합니다. 이는 눈 덮인 경사지, 야외 경사 지형, 계단 오르내리기, 극도로 고르지 않은 지형과 같은 실제 도전적인 지형을 마스터한 세계 최초의 휴머노이드 로봇을 선보입니다. 모든 시나리오에서 동일한 학습된 신경망을 제로샷 시뮬레이션-실제 전이로 실행하며, 이는 제안된 방법의 뛰어난 견고성과 일반화 능력을 나타냅니다.
-
-## 핵심 내용
-휴머노이드 로봇은 인간과 유사한 골격 구조를 가지고 있어 인간 중심 환경에서의 작업에 특히 적합합니다. 그러나 이러한 구조는 특히 복잡한 실제 환경에서 보행 제어기 설계에 추가적인 도전 과제를 수반합니다. 그 결과, 기존의 휴머노이드 로봇은 모델 기반 제어 또는 모델 프리 강화 학습을 사용하더라도 비교적 단순한 지형으로 제한됩니다. 본 연구에서는 휴머노이드 보행 제어를 위한 종단간 강화 학습 프레임워크인 Denoising World Model Learning (DWL)을 소개합니다. 이는 눈 덮인 경사지, 야외 경사 지형, 계단 오르내리기, 극도로 고르지 않은 지형과 같은 실제 도전적인 지형을 마스터한 세계 최초의 휴머노이드 로봇을 선보입니다. 모든 시나리오에서 동일한 학습된 신경망을 제로샷 시뮬레이션-실제 전이로 실행하며, 이는 제안된 방법의 뛰어난 견고성과 일반화 능력을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2408.14472v1
+
+## 개요
+휴머노이드 로봇은 인간과 유사한 골격 구조 덕분에 인간 환경에 적합하지만, 운동 컨트롤러 설계는 여전히 도전 과제이며 기존 방법은 단순 지형만 처리할 수 있습니다. DWL은 엔드투엔드 강화 학습 프레임워크를 채택하여 노이즈 제거 세계 모델 학습을 통해 강건한 제어를 구현합니다. 실험 결과, 이 프레임워크는 눈밭, 경사 지면, 계단 오르내리기 및 극도로 불규칙한 지형에서 뛰어난 성능을 보였으며, 모든 시나리오에서 동일한 네트워크를 사용하여 제로샷 시뮬레이션-실제 전이를 달성하여 탁월한 일반화 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **Denoising World Model Learning (DWL)**: 노이즈 제거 메커니즘과 세계 모델을 결합한 엔드투엔드 강화 학습 프레임워크로, 환경 노이즈에 대한 운동 제어의 강건성을 향상시킵니다.
+- **제로샷 전이**: 훈련된 신경망을 추가 미세 조정이나 지형 적응 없이 실제 로봇에 직접 배포합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: 관절 토크 센서와 IMU를 장착한 풀사이즈 휴머노이드 로봇을 사용합니다.
+- **훈련 환경**: 시뮬레이션 환경(예: Isaac Gym) 기반의 대규모 병렬 훈련을 수행하며, 정책 네트워크는 MLP 아키텍처입니다.
+- **테스트 시나리오**: 눈밭(깊이 최대 10cm), 경사(경사각 15°), 계단(계단 높이 20cm) 및 무작위 돌 지형(높이 차이 최대 15cm)을 포함합니다.
+
+### 주요 결과
+- **지형 커버리지**: 모든 도전적 지형에서 안정적인 보행을 성공적으로 완료했으며, 보행 주기는 0.8초, 평균 속도는 0.5m/s를 유지합니다.
+- **강건성**: 눈밭에서 미끄러짐 오차가 5% 미만으로 억제되었고, 계단 시나리오에서 발끝 위치 정밀도는 ±2cm에 달합니다.
+- **일반화 능력**: 단일 정책이 보지 못한 지형(예: 혼합 자갈 및 잔디)에서도 90% 이상의 성공률을 유지합니다.
+
+### 결론
+DWL은 노이즈 제거 세계 모델 학습을 통해 휴머노이드 로봇의 실제 복잡 지형에서의 제로샷 전이 운동을 최초로 구현하여, 고강건성 운동 제어의 새로운 패러다임을 제시합니다.

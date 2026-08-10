@@ -56,8 +56,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31912v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31912v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (989 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,28 @@ sources:
 ## Overview
 Learning-based control has revolutionized dynamic locomotion, yet navigating unstructured terrain remains limited by a robot's incomplete awareness of imminent ground contact. While global perception systems such as LiDARs and depth cameras provide environmental context, they are frequently plagued by latencies, occlusions, and the high computational cost of dense geometric reconstruction. On the other hand, proprioceptive feedback is purely reactive, initiating corrections only after impact has occurred. This work explores embedding a minimal suite of low-cost, high-frequency infrared proximity sensors directly into the feet of a quadrupedal robot. These sensors provide "pre-contact" feedback that is robust to self-occlusions and significantly less computationally demanding than conventional vision-based pipelines. By integrating these localized signals into a reinforcement learning framework, we enable the robot to anticipate terrain discontinuities such as gaps and stepping stones that are problematic for traditional perception stacks due to occlusions or state estimation drift. We demonstrate that such sparse, near-field sensing can be reliably modeled in simulation and transferred to the real world with high fidelity. Experimental results show that local proximity sensing substantially improves traversal robustness over discrete terrain and offers a low-power, low-latency alternative or complement to complex global perception suites in unpredictable environments. For more information about results and methods, please see the project website: https://sites.google.com/view/foot-tof/home.
 
-## 개요
-학습 기반 제어는 동적 보행에 혁신을 가져왔지만, 구조화되지 않은 지형을 탐색하는 것은 로봇이 임박한 지면 접촉에 대한 불완전한 인식으로 인해 여전히 제한적입니다. LiDAR 및 깊이 카메라와 같은 전역 인식 시스템은 환경적 맥락을 제공하지만, 지연, 폐색, 그리고 조밀한 기하학적 재구성의 높은 계산 비용으로 인해 자주 문제를 겪습니다. 반면, 고유 감각 피드백은 순전히 반응적이며, 충격이 발생한 후에야 수정을 시작합니다. 본 연구는 저렴하고 고주파수인 적외선 근접 센서의 최소 구성을 사족 보행 로봇의 발에 직접 내장하는 것을 탐구합니다. 이러한 센서는 자체 폐색에 강하고 기존의 비전 기반 파이프라인보다 계산 요구가 현저히 낮은 "접촉 전" 피드백을 제공합니다. 이러한 국소 신호를 강화 학습 프레임워크에 통합함으로써, 로봇이 폐색이나 상태 추정 드리프트로 인해 전통적인 인식 스택에 문제가 되는 틈새나 디딤돌과 같은 지형 불연속성을 예측할 수 있게 합니다. 우리는 이러한 희소하고 근거리 감지가 시뮬레이션에서 신뢰성 있게 모델링되고 높은 충실도로 실제 세계로 전이될 수 있음을 보여줍니다. 실험 결과는 국소 근접 감지가 불연속 지형에서 이동 견고성을 크게 향상시키며, 예측 불가능한 환경에서 복잡한 전역 인식 제품군에 대한 저전력, 저지연 대안 또는 보완책을 제공함을 보여줍니다. 결과 및 방법에 대한 자세한 내용은 프로젝트 웹사이트를 참조하십시오: https://sites.google.com/view/foot-tof/home.
-
-## 핵심 내용
-학습 기반 제어는 동적 보행에 혁신을 가져왔지만, 구조화되지 않은 지형을 탐색하는 것은 로봇이 임박한 지면 접촉에 대한 불완전한 인식으로 인해 여전히 제한적입니다. LiDAR 및 깊이 카메라와 같은 전역 인식 시스템은 환경적 맥락을 제공하지만, 지연, 폐색, 그리고 조밀한 기하학적 재구성의 높은 계산 비용으로 인해 자주 문제를 겪습니다. 반면, 고유 감각 피드백은 순전히 반응적이며, 충격이 발생한 후에야 수정을 시작합니다. 본 연구는 저렴하고 고주파수인 적외선 근접 센서의 최소 구성을 사족 보행 로봇의 발에 직접 내장하는 것을 탐구합니다. 이러한 센서는 자체 폐색에 강하고 기존의 비전 기반 파이프라인보다 계산 요구가 현저히 낮은 "접촉 전" 피드백을 제공합니다. 이러한 국소 신호를 강화 학습 프레임워크에 통합함으로써, 로봇이 폐색이나 상태 추정 드리프트로 인해 전통적인 인식 스택에 문제가 되는 틈새나 디딤돌과 같은 지형 불연속성을 예측할 수 있게 합니다. 우리는 이러한 희소하고 근거리 감지가 시뮬레이션에서 신뢰성 있게 모델링되고 높은 충실도로 실제 세계로 전이될 수 있음을 보여줍니다. 실험 결과는 국소 근접 감지가 불연속 지형에서 이동 견고성을 크게 향상시키며, 예측 불가능한 환경에서 복잡한 전역 인식 제품군에 대한 저전력, 저지연 대안 또는 보완책을 제공함을 보여줍니다. 결과 및 방법에 대한 자세한 내용은 프로젝트 웹사이트를 참조하십시오: https://sites.google.com/view/foot-tof/home.
-
 ## 参考
 - http://arxiv.org/abs/2606.31912v2
+
+## 개요
+학습 기반 제어 방법은 동적 운동을 크게 발전시켰지만, 로봇은 비정형 지형에서 다가오는 지면 접촉에 대한 불완전한 인식으로 인해 여전히 제약을 받는다. LiDAR 및 깊이 카메라와 같은 전역 인식 시스템은 환경 맥락을 제공할 수 있지만, 지연, 폐색, 그리고 조밀한 기하학적 재구성의 높은 계산 비용으로 인해 자주 어려움을 겪는다. 반면 고유 감각 피드백은 완전히 수동적이며 충격 발생 후에만 수정을 시작한다. 본 연구는 네 발 달린 로봇의 발에 최소화된 저비용, 고주파 적외선 근접 센서 세트를 내장하는 방안을 탐구한다. 이 센서들은 자기 폐색에 강건하고 기존 비전 파이프라인보다 훨씬 낮은 계산 요구 사항을 가진 "접촉 전" 피드백을 제공한다. 이러한 로컬 신호를 강화 학습 프레임워크에 통합함으로써, 로봇은 폐색이나 상태 추정 드리프트로 인해 기존 인식 스택이 처리하기 어려운 간격 및 디딤돌과 같은 지형 불연속성을 사전에 감지할 수 있다. 실험은 이러한 희소 근거리 센싱이 시뮬레이션에서 안정적으로 모델링되고 실제 세계로 높은 충실도로 전이될 수 있음을 보여주며, 이산 지형 횡단 강건성을 크게 향상시켜 예측 불가능한 환경에서 복잡한 전역 인식 시스템에 대한 저전력, 저지연 대안 또는 보완책을 제공한다.
+
+## 핵심 내용
+### 방법
+- **센서 내장**: 네 발 달린 로봇의 발에 저비용, 고주파 적외선 근접 센서(예: ToF 센서)를 설치하여 "접촉 전" 피드백을 제공하며, 자기 폐색에 강건하고 계산 요구 사항이 낮다.
+- **강화 학습 프레임워크**: 로컬 근접 신호를 강화 학습 정책에 통합하여 로봇이 지형 불연속성(예: 간격, 디딤돌)을 사전에 감지할 수 있게 하며, 폐색이나 상태 추정 드리프트로 인한 기존 시각 인식의 한계를 보완한다.
+
+### 실험 설정
+- **시뮬레이션 훈련**: 시뮬레이션 환경에서 희소 근거리 센싱을 모델링하고, 로봇이 이산 지형(예: 간격, 디딤돌)을 횡단하도록 훈련한다.
+- **실제 세계 전이**: 시뮬레이션에서 훈련된 정책을 실제 로봇에 직접 배포하여 높은 충실도 전이 능력을 검증한다.
+
+### 주요 결과
+- **횡단 강건성 향상**: 로컬 근접 센싱은 로봇의 이산 지형 횡단 성공률을 크게 향상시키며, 특히 기존 인식 스택이 실패하기 쉬운 시나리오(예: 폐색 또는 상태 추정 드리프트)에서 효과적이다.
+- **성능 비교**: 전역 인식 시스템(LiDAR, 깊이 카메라)과 비교하여 근접 센싱은 저전력, 저지연 대안을 제공한다. 순수 고유 감각 피드백과 비교하여 지형 변화를 사전에 예측하여 충격 후 수정을 피할 수 있다.
+- **전이 충실도**: 시뮬레이션에서 훈련된 희소 근거리 센싱 정책은 추가 미세 조정 없이 실제 세계로 높은 충실도로 전이될 수 있다.
+
+### 결론
+- 로컬 근접 센싱은 복잡한 전역 인식 시스템에 대한 저전력, 저지연 대안 또는 보완책을 제공하며, 특히 예측 불가능한 환경에 적합하다.
+- 이 방법은 강화 학습 프레임워크를 통해 접촉 전 피드백을 구현하여 네 발 달린 로봇의 이산 지형 운동 강건성을 크게 향상시킨다.
+
+더 많은 결과와 방법은 프로젝트 웹사이트에서 확인할 수 있다: https://sites.google.com/view/foot-tof/home.

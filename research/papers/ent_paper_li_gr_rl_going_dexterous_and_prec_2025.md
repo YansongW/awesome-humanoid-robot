@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.01801v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.01801v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (796 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ GR-RL 证明了通过多阶段强化学习优化人类演示，通用机器人�
 ## Overview
 We present GR-RL, a robotic learning framework that turns a generalist vision-language-action (VLA) policy into a highly capable specialist for long-horizon dexterous manipulation. Assuming the optimality of human demonstrations is core to existing VLA policies. However, we claim that in highly dexterous and precise manipulation tasks, human demonstrations are noisy and suboptimal. GR-RL proposes a multi-stage training pipeline that filters, augments, and reinforces the demonstrations by reinforcement learning. First, GR-RL learns a vision-language-conditioned task progress, filters the demonstration trajectories, and only keeps the transitions that contribute positively to the progress. Specifically, we show that by directly applying offline RL with sparse reward, the resulting $Q$-values can be treated as a robust progress function. Next, we introduce morphological symmetry augmentation that greatly improves the generalization and performance of GR-RL. Lastly, to better align the VLA policy with its deployment behaviors for high-precision control, we perform online RL by learning a latent space noise predictor. With this pipeline, GR-RL is, to our knowledge, the first learning-based policy that can autonomously lace up a shoe by threading shoelaces through multiple eyelets with an 83.3% success rate, a task requiring long-horizon reasoning, millimeter-level precision, and compliant soft-body interaction. We hope GR-RL provides a step toward enabling generalist robot foundation models to specialize into reliable real-world experts.
 
-## 개요
-우리는 GR-RL을 제시합니다. 이는 일반적인 시각-언어-행동(VLA) 정책을 장기적인 정밀 조작을 위한 고성능 전문가 정책으로 전환하는 로봇 학습 프레임워크입니다. 기존 VLA 정책의 핵심은 인간 시연의 최적성을 가정하는 데 있습니다. 그러나 우리는 매우 정밀하고 세밀한 조작 작업에서 인간 시연이 노이즈가 많고 최적이 아니라고 주장합니다. GR-RL은 강화 학습을 통해 시연을 필터링, 증강 및 강화하는 다단계 훈련 파이프라인을 제안합니다. 첫째, GR-RL은 시각-언어 조건부 작업 진행도를 학습하고, 시연 궤적을 필터링하여 진행에 긍정적으로 기여하는 전환만 유지합니다. 구체적으로, 희소 보상을 사용한 오프라인 RL을 직접 적용함으로써 결과 $Q$-값이 강건한 진행 함수로 처리될 수 있음을 보여줍니다. 다음으로, 형태적 대칭 증강을 도입하여 GR-RL의 일반화와 성능을 크게 향상시킵니다. 마지막으로, 고정밀 제어를 위해 VLA 정책을 배포 행동과 더 잘 정렬하기 위해 잠재 공간 노이즈 예측기를 학습하여 온라인 RL을 수행합니다. 이 파이프라인을 통해 GR-RL은, 우리가 아는 한, 여러 구멍을 통해 신발끈을 꿰어 신발을 자율적으로 묶을 수 있는 최초의 학습 기반 정책으로, 83.3%의 성공률을 달성합니다. 이 작업은 장기적인 추론, 밀리미터 수준의 정밀도, 그리고 유연한 연체 상호작용을 요구합니다. 우리는 GR-RL이 일반적인 로봇 기초 모델이 신뢰할 수 있는 실제 전문가로 특화되는 데 한 걸음 더 나아가길 바랍니다.
-
-## 핵심 내용
-우리는 GR-RL을 제시합니다. 이는 일반적인 시각-언어-행동(VLA) 정책을 장기적인 정밀 조작을 위한 고성능 전문가 정책으로 전환하는 로봇 학습 프레임워크입니다. 기존 VLA 정책의 핵심은 인간 시연의 최적성을 가정하는 데 있습니다. 그러나 우리는 매우 정밀하고 세밀한 조작 작업에서 인간 시연이 노이즈가 많고 최적이 아니라고 주장합니다. GR-RL은 강화 학습을 통해 시연을 필터링, 증강 및 강화하는 다단계 훈련 파이프라인을 제안합니다. 첫째, GR-RL은 시각-언어 조건부 작업 진행도를 학습하고, 시연 궤적을 필터링하여 진행에 긍정적으로 기여하는 전환만 유지합니다. 구체적으로, 희소 보상을 사용한 오프라인 RL을 직접 적용함으로써 결과 $Q$-값이 강건한 진행 함수로 처리될 수 있음을 보여줍니다. 다음으로, 형태적 대칭 증강을 도입하여 GR-RL의 일반화와 성능을 크게 향상시킵니다. 마지막으로, 고정밀 제어를 위해 VLA 정책을 배포 행동과 더 잘 정렬하기 위해 잠재 공간 노이즈 예측기를 학습하여 온라인 RL을 수행합니다. 이 파이프라인을 통해 GR-RL은, 우리가 아는 한, 여러 구멍을 통해 신발끈을 꿰어 신발을 자율적으로 묶을 수 있는 최초의 학습 기반 정책으로, 83.3%의 성공률을 달성합니다. 이 작업은 장기적인 추론, 밀리미터 수준의 정밀도, 그리고 유연한 연체 상호작용을 요구합니다. 우리는 GR-RL이 일반적인 로봇 기초 모델이 신뢰할 수 있는 실제 전문가로 특화되는 데 한 걸음 더 나아가길 바랍니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.01801v3
+
+## 개요
+기존 VLA 정책은 일반적으로 인간 시연이 최적성을 가진다고 가정하지만, GR-RL은 고도로 정밀하고 섬세한 조작 작업에서 인간 시연에 노이즈와 차선성이 존재한다고 지적한다. 이를 위해 GR-RL은 3단계 파이프라인을 제안한다: 먼저 오프라인 강화 학습의 Q-값을 강건한 진행 함수로 활용하여 시연 궤적에서 긍정적 기여를 하는 전환을 필터링하고, 다음으로 형태 대칭 증강 기법을 도입하여 일반화 능력을 향상시키며, 마지막으로 온라인 강화 학습을 통해 잠재 공간 노이즈 예측기를 훈련하여 정책과 배포 행동을 정렬한다. 이 프레임워크는 신발 끈 묶기 작업에서 83.3%의 성공률을 달성하며, 장기 추론, 밀리미터급 정밀도 및 유연한 물체 상호작용의 협력 능력을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+GR-RL의 핵심 혁신은 다단계 훈련 파이프라인으로, 일반 VLA 정책을 정밀 조작 전문가로 변환한다:
+- **1단계: 진행 기반 궤적 필터링**  
+  오프라인 강화 학습(희소 보상)을 통해 시각-언어 조건 작업 진행 함수를 학습하고, Q-값을 활용하여 각 전환이 진행에 기여하는 바를 평가하며, 긍정적 기여를 하는 시연 세그먼트만 유지한다.
+- **2단계: 형태 대칭 증강**  
+  데이터 증강 기법을 도입하여 로봇 조작의 대칭성(예: 좌우 손 교환)을 활용해 추가 훈련 샘플을 생성하고, 정책의 일반화 능력과 성능을 크게 향상시킨다.
+- **3단계: 온라인 강화 학습 정렬**  
+  잠재 공간 노이즈 예측기를 훈련하여 배포 단계에서 정책 동작을 실시간으로 수정하고, 고정밀 제어를 구현한다. 이 모듈은 온라인 RL을 통해 정책과 실제 환경 간의 상호작용 행동을 최적화한다.
+
+### 실험 설정 및 주요 결과
+- **작업**: 자율 신발 끈 묶기(신발 끈을 여러 신발 구멍에 통과시키기)로, 장기 추론(약 20단계), 밀리미터급 정밀도 및 유연한 물체 상호작용이 요구된다.
+- **성공률**: 83.3%(학습 정책이 해당 작업을 자율적으로 완료한 최초 사례).
+- **비교 기준선**: GR-RL 파이프라인을 사용하지 않은 원래 VLA 정책은 해당 작업을 완료할 수 없어, 필터링, 증강 및 온라인 RL 각 단계의 필요성을 검증한다.
+
+### 결론
+GR-RL은 다단계 강화 학습을 통해 인간 시연을 최적화함으로써, 일반 로봇 기반 모델이 신뢰할 수 있는 실제 세계 전문가로 변환될 수 있음을 입증한다. 이 프레임워크는 장기 정밀 조작 작업(예: 바늘 꿰기, 정밀 조립)에 확장 가능한 솔루션을 제공한다.

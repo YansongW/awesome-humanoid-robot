@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.20328v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.20328v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (827 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,27 @@ MemER 通过经验检索实现了机器人策略的长期记忆扩展，其分�
 ## Overview
 Humans routinely rely on memory to perform tasks, yet most robot policies lack this capability; our goal is to endow robot policies with the same ability. Naively conditioning on long observation histories is computationally expensive and brittle under covariate shift, while indiscriminate subsampling of history leads to irrelevant or redundant information. We propose a hierarchical policy framework, where the high-level policy is trained to select and track previous relevant keyframes from its experience. The high-level policy uses selected keyframes and the most recent frames when generating text instructions for a low-level policy to execute. This design is compatible with existing vision-language-action (VLA) models and enables the system to efficiently reason over long-horizon dependencies. In our experiments, we finetune Qwen2.5-VL-7B-Instruct and $π_{0.5}$ as the high-level and low-level policies respectively, using demonstrations supplemented with minimal language annotations. Our approach, MemER, outperforms prior methods on three real-world long-horizon robotic manipulation tasks that require minutes of memory. Videos and code can be found at https://jen-pan.github.io/memer/.
 
-## 개요
-인간은 작업을 수행할 때 일상적으로 기억에 의존하지만, 대부분의 로봇 정책에는 이러한 능력이 부족합니다. 본 연구의 목표는 로봇 정책에 동일한 능력을 부여하는 것입니다. 긴 관찰 이력을 단순히 조건화하는 것은 계산 비용이 많이 들고 공변량 이동(covariate shift)에 취약하며, 이력을 무분별하게 서브샘플링하면 관련 없거나 중복된 정보가 발생합니다. 우리는 계층적 정책 프레임워크를 제안합니다. 여기서 상위 수준 정책은 경험에서 이전의 관련 키프레임을 선택하고 추적하도록 훈련됩니다. 상위 수준 정책은 하위 수준 정책이 실행할 텍스트 명령을 생성할 때 선택된 키프레임과 가장 최근 프레임을 사용합니다. 이 설계는 기존의 시각-언어-행동(VLA) 모델과 호환되며, 시스템이 장기 의존성을 효율적으로 추론할 수 있게 합니다. 실험에서 우리는 Qwen2.5-VL-7B-Instruct와 $π_{0.5}$를 각각 상위 수준 및 하위 수준 정책으로 미세 조정했으며, 최소한의 언어 주석이 추가된 시연 데이터를 사용했습니다. 우리의 접근 방식인 MemER는 수 분의 기억을 필요로 하는 세 가지 실제 장기 로봇 조작 작업에서 이전 방법보다 뛰어난 성능을 보였습니다. 비디오와 코드는 https://jen-pan.github.io/memer/에서 확인할 수 있습니다.
-
-## 핵심 내용
-인간은 작업을 수행할 때 일상적으로 기억에 의존하지만, 대부분의 로봇 정책에는 이러한 능력이 부족합니다. 본 연구의 목표는 로봇 정책에 동일한 능력을 부여하는 것입니다. 긴 관찰 이력을 단순히 조건화하는 것은 계산 비용이 많이 들고 공변량 이동(covariate shift)에 취약하며, 이력을 무분별하게 서브샘플링하면 관련 없거나 중복된 정보가 발생합니다. 우리는 계층적 정책 프레임워크를 제안합니다. 여기서 상위 수준 정책은 경험에서 이전의 관련 키프레임을 선택하고 추적하도록 훈련됩니다. 상위 수준 정책은 하위 수준 정책이 실행할 텍스트 명령을 생성할 때 선택된 키프레임과 가장 최근 프레임을 사용합니다. 이 설계는 기존의 시각-언어-행동(VLA) 모델과 호환되며, 시스템이 장기 의존성을 효율적으로 추론할 수 있게 합니다. 실험에서 우리는 Qwen2.5-VL-7B-Instruct와 $π_{0.5}$를 각각 상위 수준 및 하위 수준 정책으로 미세 조정했으며, 최소한의 언어 주석이 추가된 시연 데이터를 사용했습니다. 우리의 접근 방식인 MemER는 수 분의 기억을 필요로 하는 세 가지 실제 장기 로봇 조작 작업에서 이전 방법보다 뛰어난 성능을 보였습니다. 비디오와 코드는 https://jen-pan.github.io/memer/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.20328v1
+
+## 개요
+인간은 일반적으로 작업을 수행할 때 기억에 의존하지만, 대부분의 로봇 정책에는 이러한 능력이 부족합니다. 긴 관찰 이력을 직접 조건화하는 것은 계산 비용이 높고 공변량 이동에 취약하며, 이력을 임의로 서브샘플링하면 정보의 중복이나 무관성이 발생할 수 있습니다. 이를 위해 MemER는 계층적 정책 프레임워크를 제안합니다: 상위 정책은 경험에서 관련 키프레임을 선택하고 추적하며, 최신 프레임과 결합하여 텍스트 명령을 생성합니다; 하위 정책은 이러한 명령을 실행합니다. 이 설계는 기존의 시각-언어-행동 모델과 호환되며, 장기 의존성에 대해 효율적으로 추론할 수 있습니다. 실험에서 연구자들은 Qwen2.5-VL-7B-Instruct와 π₀.₅를 각각 상위 및 하위 정책으로 미세 조정하고, 최소한의 언어 주석이 포함된 시연 데이터를 보조로 사용했습니다.
+
+## 핵심 내용
+### 방법
+- **계층적 정책 프레임워크**: 상위 정책(Qwen2.5-VL-7B-Instruct 기반)은 경험에서 관련 키프레임을 검색하고 추적하며, 최신 프레임과 결합하여 텍스트 명령을 생성합니다; 하위 정책(π₀.₅ 기반)은 이러한 명령을 실행합니다.
+- **키프레임 선택**: 상위 정책은 훈련을 통해 현재 작업과 관련된 이력 프레임을 선택하는 방법을 학습하여 계산 중복이나 무관한 정보를 방지합니다.
+- **호환성**: 이 설계는 하위 아키텍처를 수정하지 않고도 기존의 시각-언어-행동 모델에 직접 적용할 수 있습니다.
+
+### 실험 설정
+- **모델 미세 조정**: Qwen2.5-VL-7B-Instruct를 상위 정책으로, π₀.₅를 하위 정책으로 사용하며, 둘 다 시연 데이터(최소한의 언어 주석 포함)를 통해 미세 조정되었습니다.
+- **작업**: 수 분의 기억 범위가 필요한 세 가지 실제 세계 장기 로봇 조작 작업.
+- **비교 기준선**: 긴 이력을 직접 조건화하는 방법과 이력을 무작위로 서브샘플링하는 방법을 포함합니다.
+
+### 주요 결과
+- MemER는 세 가지 작업 모두에서 이전 방법보다 우수했으며, 특히 장기 기억이 필요한 시나리오에서 두드러진 성능을 보였습니다.
+- 상위 정책의 키프레임 선택 메커니즘은 계산 오버헤드를 효과적으로 줄이면서 작업 성공률을 향상시켰습니다.
+- 전체 이력을 직접 사용하는 것과 비교하여, MemER는 공변량 이동 하에서 더 강건합니다.
+
+### 결론
+MemER는 경험 검색을 통해 로봇 정책의 장기 기억 확장을 구현하며, 계층적 설계는 계산 효율성을 유지하면서 장기 작업 성능을 향상시킵니다. 코드와 비디오는 오픈소스로 공개되었습니다.

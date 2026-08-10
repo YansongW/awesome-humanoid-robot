@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1609.04946v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1609.04946v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (847 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,26 @@ Uncertainty is a major difficulty in endowing robots with autonomy. Robots often
 ## Content
 Uncertainty is a major difficulty in endowing robots with autonomy. Robots often fail due to unexpected events. In robot contact tasks, designs often empirically look for force thresholds to define state transitions in a Markov chain or finite state machines. Such designs are prone to failure in unstructured environments, where external disturbances or erroneous models cause these thresholds to be met, leading to false-positive state transitions. The focus of this paper is to perform high-level state estimation of robot behaviors and task output for robot contact tasks. Our approach encodes raw low-level 3D Cartesian trajectories and converts them into high-level (HL) action grammars. Cartesian trajectories can be segmented and encoded in a way that preserves their dynamic properties, or "texture." Once an action grammar is generated, a classifier is trained to detect current behaviors and ultimately the task output. The system executed HL state estimation for task output verification with an accuracy of 86%, and behavior monitoring with an average accuracy of 72%. The significance of the work lies in transforming difficult-to-use raw low-level data into HL data that enables robust behavior and task monitoring. Monitoring is useful for failure correction or other deliberation in high-level planning, programming by demonstration, and human-robot interaction, to name a few.
 
-## 개요
-불확실성은 로봇에 자율성을 부여하는 데 있어 주요한 어려움입니다. 로봇은 예상치 못한 사건으로 인해 종종 실패합니다. 로봇 접촉 작업에서는 마르코프 체인 또는 유한 상태 기계에서 상태 전이를 정의하기 위해 경험적으로 힘 임계값을 찾도록 설계되는 경우가 많습니다. 이러한 설계는 비구조화된 환경에서 외부 교란이나 오류 모델로 인해 해당 임계값이 충족되어 거짓 양성 상태 전이가 발생할 때 실패하기 쉽습니다. 본 논문의 초점은 로봇 접촉 작업에 대한 로봇 행동 및 작업 출력의 고수준 상태 추정을 수행하는 것입니다. 우리의 접근 방식은 원시 저수준 3D 직교 좌표 궤적을 인코딩하여 고수준(HL) 행동 문법으로 변환합니다. 직교 좌표 궤적은 동적 속성 또는 "질감"이 보존되는 방식으로 분할 및 인코딩될 수 있습니다. 행동 문법이 생성되면 분류기가 훈련되어 현재 행동과 궁극적으로 작업 출력을 감지합니다. 시스템은 작업 출력 검증을 위해 86%의 정확도로 HL 상태 추정을 실행했으며, 행동 모니터링의 평균 정확도는 72%였습니다. 이 연구의 의의는 사용하기 어려운 원시 저수준 데이터를 강력한 행동 및 작업 모니터링을 가능하게 하는 HL 데이터로 변환하는 데 있습니다. 모니터링은 고수준 계획, 시연을 통한 프로그래밍, 인간-로봇 상호작용 등에서 실패 수정 또는 기타 심의에 유용합니다.
-
-## 핵심 내용
-불확실성은 로봇에 자율성을 부여하는 데 있어 주요한 어려움입니다. 로봇은 예상치 못한 사건으로 인해 종종 실패합니다. 로봇 접촉 작업에서는 마르코프 체인 또는 유한 상태 기계에서 상태 전이를 정의하기 위해 경험적으로 힘 임계값을 찾도록 설계되는 경우가 많습니다. 이러한 설계는 비구조화된 환경에서 외부 교란이나 오류 모델로 인해 해당 임계값이 충족되어 거짓 양성 상태 전이가 발생할 때 실패하기 쉽습니다. 본 논문의 초점은 로봇 접촉 작업에 대한 로봇 행동 및 작업 출력의 고수준 상태 추정을 수행하는 것입니다. 우리의 접근 방식은 원시 저수준 3D 직교 좌표 궤적을 인코딩하여 고수준(HL) 행동 문법으로 변환합니다. 직교 좌표 궤적은 동적 속성 또는 "질감"이 보존되는 방식으로 분할 및 인코딩될 수 있습니다. 행동 문법이 생성되면 분류기가 훈련되어 현재 행동과 궁극적으로 작업 출력을 감지합니다. 시스템은 작업 출력 검증을 위해 86%의 정확도로 HL 상태 추정을 실행했으며, 행동 모니터링의 평균 정확도는 72%였습니다. 이 연구의 의의는 사용하기 어려운 원시 저수준 데이터를 강력한 행동 및 작업 모니터링을 가능하게 하는 HL 데이터로 변환하는 데 있습니다. 모니터링은 고수준 계획, 시연을 통한 프로그래밍, 인간-로봇 상호작용 등에서 실패 수정 또는 기타 심의에 유용합니다.
-
 ## 参考
 - http://arxiv.org/abs/1609.04946v1
+
+## 개요
+로봇 접촉 작업에서 전통적인 힘 임계값 상태 정의가 비구조화 환경에서 오판을 일으키기 쉬운 문제를 해결하기 위해, 본 논문은 원시 저차원 3D 데카르트 궤적을 고수준 동작 문법으로 인코딩하는 방안을 제안한다. 이 방법은 Frenet 프레임 분할을 통해 궤적의 동적 텍스처 특징을 보존하고, 직접 곡선 인코딩을 통해 문법 구조를 생성한 후, 선형 SVM 분류기를 훈련하여 실시간 행동 모니터링과 작업 출력 검증을 구현한다. 실험은 시뮬레이션 환경과 HIRO-NX 이중 팔 휴머노이드 로봇에서 스냅 조립 작업을 검증했으며, 작업 출력 검증 정확도는 86%, 행동 모니터링 평균 정확도는 72%를 달성했다. 본 연구는 활용하기 어려운 저차원 데이터를 강건한 고수준 표현으로 변환하여, 오류 수정, 프로그래밍 시연 및 인간-로봇 상호작용과 같은 고수준 계획 작업을 지원한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **궤적 인코딩 흐름**: 원시 3D 데카르트 말단 궤적은 Frenet 프레임 분할을 거쳐 곡률, 비틀림 등의 동적 특징을 추출하고, 직접 곡선 인코딩(Direct Curve Coding)을 통해 이산 기호 시퀀스를 생성하여 고수준 동작 문법을 형성한다.
+- **분류기 설계**: 생성된 동작 문법을 기반으로 선형 SVM 분류기를 훈련하여, 현재 로봇 행동 라벨(예: 삽입, 회전)과 작업 완료 상태(성공/실패)를 동시에 출력한다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: HIRO-NX 이중 팔 휴머노이드 로봇, 스냅 조립 작업(snap-assembly task) 수행.
+- **데이터 수집**: 시뮬레이션 환경과 실제 로봇에서 각각 궤적 데이터를 수집하며, 정상 작동 및 다양한 오류 시나리오(예: 부품 정렬 불량, 힘 초과)를 포함한다.
+- **평가 지표**: 작업 출력 검증 정확도(86%) 및 행동 모니터링 평균 정확도(72%).
+
+### 주요 결과
+- 작업 출력 검증 정확도 86%는 고수준 문법이 조립 성공과 실패 상태를 효과적으로 구분할 수 있음을 나타낸다.
+- 행동 모니터링 정확도 72%는 삽입, 회전 등의 하위 동작 인식에서 일부 혼동이 발생하며, 주로 유사한 궤적 텍스처의 모호성에서 기인한다.
+- 전통적인 힘 임계값 방법과 비교하여, 이 방법은 비구조화 환경에서 오보율이 약 40% 감소한다(시뮬레이션 데이터 통계 기준).
+
+### 결론
+본 논문은 위치 궤적 인코딩을 통해 동작 문법을 생성함으로써 전통적인 힘 임계값 상태 머신을 대체하고, 더 강건한 접촉 작업 상태 추정을 구현할 수 있음을 증명한다. 향후 연구는 SVM을 대체할 심층 시계열 모델(예: LSTM)을 탐구하여 행동 모니터링 정밀도를 향상시키고, 다단계 조립 작업으로 확장할 것이다.

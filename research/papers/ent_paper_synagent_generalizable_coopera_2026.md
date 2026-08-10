@@ -39,7 +39,8 @@ verification:
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: SynAgent: Generalizable
     Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy. [2026-07-29] zh content backfilled from English
-    abstract via scripts/sinicize_english_cards.py'
+    abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read
+    (1130 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -83,11 +84,35 @@ SynAgent 通过创新的“从单智能体到协作智能体协同”框架，�
 ## Overview
 Controllable cooperative humanoid manipulation is a fundamental yet challenging problem for embodied intelligence, due to severe data scarcity, complexities in multi-agent coordination, and limited generalization across objects. In this paper, we present SynAgent, a unified framework that enables scalable and physically plausible cooperative manipulation by leveraging Solo-to-Cooperative Agent Synergy to transfer skills from single-agent human-object interaction to multi-agent human-object-human scenarios. To maintain semantic integrity during motion transfer, we introduce an interaction-preserving retargeting method based on an Interact Mesh constructed via Delaunay tetrahedralization, which faithfully maintains spatial relationships among humans and objects. Building upon this refined data, we propose a single-agent pretraining and adaptation paradigm that bootstraps synergistic collaborative behaviors from abundant single-human data through decentralized training and multi-agent PPO. Finally, we develop a trajectory-conditioned generative policy using a conditional VAE, trained via multi-teacher distillation from motion imitation priors to achieve stable and controllable object-level trajectory execution. Extensive experiments demonstrate that SynAgent significantly outperforms existing baselines in both cooperative imitation and trajectory-conditioned control, while generalizing across diverse object geometries. Codes and data will be available after publication. Project Page: http://yw0208.github.io/synagent
 
-## 개요
-제어 가능한 협력적 휴머노이드 조작은 심각한 데이터 부족, 다중 에이전트 협력의 복잡성, 그리고 객체 간 일반화의 한계로 인해 구현 지능(embodied intelligence)의 근본적이면서도 어려운 문제입니다. 본 논문에서는 단일 에이전트-객체 상호작용에서 다중 에이전트 인간-객체-인간 시나리오로 기술을 전이하기 위해 Solo-to-Cooperative Agent Synergy를 활용하여 확장 가능하고 물리적으로 타당한 협력 조작을 가능하게 하는 통합 프레임워크인 SynAgent를 제시합니다. 동작 전이 중 의미적 무결성을 유지하기 위해, Delaunay 사면체화를 통해 구축된 Interact Mesh를 기반으로 하는 상호작용 보존 리타겟팅 방법을 도입하여 인간과 객체 간의 공간적 관계를 충실히 유지합니다. 이 정제된 데이터를 기반으로, 분산 훈련과 다중 에이전트 PPO를 통해 풍부한 단일 인간 데이터로부터 시너지 협력 행동을 부트스트래핑하는 단일 에이전트 사전 훈련 및 적응 패러다임을 제안합니다. 마지막으로, 조건부 VAE를 사용한 궤적 조건 생성 정책을 개발하고, 동작 모방 사전 정보로부터 다중 교사 증류를 통해 훈련하여 안정적이고 제어 가능한 객체 수준 궤적 실행을 달성합니다. 광범위한 실험을 통해 SynAgent가 협력 모방과 궤적 조건 제어 모두에서 기존 기준선을 크게 능가하며, 다양한 객체 형상에 걸쳐 일반화됨을 입증합니다. 코드와 데이터는 출판 후 공개될 예정입니다. 프로젝트 페이지: http://yw0208.github.io/synagent
-
-## 핵심 내용
-제어 가능한 협력적 휴머노이드 조작은 심각한 데이터 부족, 다중 에이전트 협력의 복잡성, 그리고 객체 간 일반화의 한계로 인해 구현 지능(embodied intelligence)의 근본적이면서도 어려운 문제입니다. 본 논문에서는 단일 에이전트-객체 상호작용에서 다중 에이전트 인간-객체-인간 시나리오로 기술을 전이하기 위해 Solo-to-Cooperative Agent Synergy를 활용하여 확장 가능하고 물리적으로 타당한 협력 조작을 가능하게 하는 통합 프레임워크인 SynAgent를 제시합니다. 동작 전이 중 의미적 무결성을 유지하기 위해, Delaunay 사면체화를 통해 구축된 Interact Mesh를 기반으로 하는 상호작용 보존 리타겟팅 방법을 도입하여 인간과 객체 간의 공간적 관계를 충실히 유지합니다. 이 정제된 데이터를 기반으로, 분산 훈련과 다중 에이전트 PPO를 통해 풍부한 단일 인간 데이터로부터 시너지 협력 행동을 부트스트래핑하는 단일 에이전트 사전 훈련 및 적응 패러다임을 제안합니다. 마지막으로, 조건부 VAE를 사용한 궤적 조건 생성 정책을 개발하고, 동작 모방 사전 정보로부터 다중 교사 증류를 통해 훈련하여 안정적이고 제어 가능한 객체 수준 궤적 실행을 달성합니다. 광범위한 실험을 통해 SynAgent가 협력 모방과 궤적 조건 제어 모두에서 기존 기준선을 크게 능가하며, 다양한 객체 형상에 걸쳐 일반화됨을 입증합니다. 코드와 데이터는 출판 후 공개될 예정입니다. 프로젝트 페이지: http://yw0208.github.io/synagent
-
 ## 参考
 - Semantic Scholar search: SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy
+
+## 개요
+SynAgent 프레임워크는 혁신적인 "단일 에이전트에서 협력 에이전트 협동" 접근 방식을 통해 협력적 휴머노이드 조작에서의 데이터 부족, 다중 에이전트 조정 복잡성, 일반화 능력 제한 등의 과제를 효과적으로 해결합니다. 이 프레임워크는 먼저 Delaunay 4면체화를 기반으로 구축된 상호작용 메시를 활용하여, 상호작용 유지 리타게팅 방법을 제안함으로써 모션 전이 과정에서 사람과 객체 간의 공간 관계를 충실히 유지합니다. 이를 바탕으로 SynAgent는 단일 에이전트 사전 학습 및 적응 패러다임을 채택하여, 분산 학습과 다중 에이전트 PPO 알고리즘을 통해 풍부한 단일 에이전트 데이터에서 협력 행동을 유도합니다. 마지막으로, 프레임워크는 조건부 VAE를 통해 궤적 조건 생성 정책을 개발하고, 다중 교사 증류 기술을 활용하여 모션 모방 사전 지식에서 학습함으로써 안정적이고 제어 가능한 객체 수준 궤적 실행을 구현합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+SynAgent 프레임워크의 핵심 프로세스는 세 가지 주요 단계로 구성됩니다:
+
+1.  **상호작용 유지 리타게팅**:
+    *   단일 에이전트에서 다중 에이전트 시나리오로의 모션 전이 시 의미적 완전성을 해결하기 위해 **Interact Mesh** 기반 리타게팅 방법을 제안합니다.
+    *   **Interact Mesh**는 **Delaunay 4면체화**를 통해 구축되며, 사람과 객체 간의 공간 관계를 정밀하게 포착하고 유지합니다.
+    *   이 방법은 전이된 다중 에이전트 상호작용이 물리적으로 타당하고 의미적으로 일관되도록 보장합니다.
+
+2.  **단일 에이전트 사전 학습 및 적응 패러다임**:
+    *   풍부한 단일 에이전트 사람-객체 상호작용 데이터를 출발점으로 활용합니다.
+    *   **분산 학습** 전략을 채택하여 각 에이전트가 독립적으로 학습하고, **다중 에이전트 PPO** 알고리즘을 통해 협력 최적화를 수행합니다.
+    *   이 패러다임은 단일 에이전트 데이터에서 다중 에이전트 협력 행동을 효과적으로 유도하여 데이터 부족 문제를 해결합니다.
+
+3.  **궤적 조건 생성 정책**:
+    *   **조건부 VAE**를 기반으로 개발되어 안정적이고 제어 가능한 객체 수준 궤적을 생성합니다.
+    *   **다중 교사 증류** 기술을 통해 여러 모션 모방 사전 지식에서 학습하여 정책의 견고성과 제어 정밀도를 향상시킵니다.
+    *   이 정책은 에이전트가 주어진 궤적 조건에 따라 정밀한 협력 조작 동작을 실행할 수 있게 합니다.
+
+### 실험 설정 및 결과
+*   **기준 비교**: **협력 모방** 및 **궤적 조건 제어** 두 가지 작업에서 SynAgent는 기존 기준 방법보다 현저히 우수한 성능을 보였습니다.
+*   **일반화 능력**: 실험을 통해 SynAgent가 **다양한 기하학적 형태의 객체**에 효과적으로 일반화할 수 있음을 입증하여, 강력한 교차 객체 일반화 능력을 보여주었습니다.
+*   **핵심 데이터**: 논문은 초록에서 구체적인 수치를 제공하지 않지만, 실험 결과의 우수성을 강조합니다. 코드와 데이터는 논문 게재 후 공개될 예정입니다.
+
+### 결론
+SynAgent는 혁신적인 "단일 에이전트에서 협력 에이전트 협동" 프레임워크를 통해 협력적 휴머노이드 조작의 핵심 난제를 성공적으로 해결하여, 복잡한 다중 에이전트 시나리오에서의 구현 지능 적용을 위한 확장 가능하고 물리적으로 타당한 솔루션을 제공합니다.

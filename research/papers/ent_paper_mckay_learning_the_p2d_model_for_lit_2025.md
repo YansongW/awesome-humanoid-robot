@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.14147v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.14147v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (517 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,27 @@ theoretical_depth:
 ## Overview
 Lithium ion batteries are widely used in many applications. Battery management systems control their optimal use and charging and predict when the battery will cease to deliver the required output on a planned duty or driving cycle. Such systems use a simulation of a mathematical model of battery performance. These models can be electrochemical or data-driven. Electrochemical models for batteries running at high currents are mathematically and computationally complex. In this work, we show that a well-regarded electrochemical model, the Pseudo Two Dimensional (P2D) model, can be replaced by a computationally efficient Convolutional Neural Network (CNN) surrogate model fit to accurately simulated data from a class of random driving cycles. We demonstrate that a CNN is an ideal choice for accurately capturing Lithium ion concentration profiles. Additionally, we show how the neural network model can be adjusted to correspond to battery changes in State of Health (SOH).
 
-## 개요
-리튬 이온 배터리는 다양한 응용 분야에서 널리 사용됩니다. 배터리 관리 시스템은 배터리의 최적 사용과 충전을 제어하고, 계획된 부하 또는 주행 사이클에서 배터리가 필요한 출력을 더 이상 제공하지 못하는 시점을 예측합니다. 이러한 시스템은 배터리 성능의 수학적 모델 시뮬레이션을 활용합니다. 이러한 모델은 전기화학적 모델 또는 데이터 기반 모델일 수 있습니다. 높은 전류에서 작동하는 배터리의 전기화학적 모델은 수학적 및 계산적으로 복잡합니다. 본 연구에서는 잘 알려진 전기화학적 모델인 Pseudo Two Dimensional (P2D) 모델을, 무작위 주행 사이클 클래스의 정확하게 시뮬레이션된 데이터에 적합한 계산 효율적인 Convolutional Neural Network (CNN) 대리 모델로 대체할 수 있음을 보여줍니다. 우리는 CNN이 리튬 이온 농도 프로파일을 정확하게 포착하는 데 이상적인 선택임을 입증합니다. 또한, 신경망 모델을 배터리의 건강 상태(SOH) 변화에 대응하도록 조정할 수 있는 방법을 제시합니다.
-
-## 핵심 내용
-리튬 이온 배터리는 다양한 응용 분야에서 널리 사용됩니다. 배터리 관리 시스템은 배터리의 최적 사용과 충전을 제어하고, 계획된 부하 또는 주행 사이클에서 배터리가 필요한 출력을 더 이상 제공하지 못하는 시점을 예측합니다. 이러한 시스템은 배터리 성능의 수학적 모델 시뮬레이션을 활용합니다. 이러한 모델은 전기화학적 모델 또는 데이터 기반 모델일 수 있습니다. 높은 전류에서 작동하는 배터리의 전기화학적 모델은 수학적 및 계산적으로 복잡합니다. 본 연구에서는 잘 알려진 전기화학적 모델인 Pseudo Two Dimensional (P2D) 모델을, 무작위 주행 사이클 클래스의 정확하게 시뮬레이션된 데이터에 적합한 계산 효율적인 Convolutional Neural Network (CNN) 대리 모델로 대체할 수 있음을 보여줍니다. 우리는 CNN이 리튬 이온 농도 프로파일을 정확하게 포착하는 데 이상적인 선택임을 입증합니다. 또한, 신경망 모델을 배터리의 건강 상태(SOH) 변화에 대응하도록 조정할 수 있는 방법을 제시합니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.14147v1
+
+## 개요
+본 연구는 배터리 관리 시스템에서 전기화학 모델의 계산 복잡성 문제를 해결하기 위해, 합성 P2D 배터리 시뮬레이션 데이터를 활용하여 CNN 대리 모델을 훈련시켰습니다. 실험을 통해 CNN이 리튬 이온 농도 분포 특성을 정밀하게 포착할 수 있으며, 무작위 주행 사이클 데이터에서 효율적인 예측을 구현함을 입증했습니다. 또한 전압 차이 그리드 탐색 기반의 단일 파라미터 SOH 조정 방법을 제안하여, 신경망 모델이 배터리 노화 상태 변화에 적응할 수 있도록 했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- P2D 전기화학 모델을 사용하여 무작위 주행 사이클 시나리오를 포괄하는 합성 훈련 데이터 생성
+- 원래 P2D 모델을 대체하는 CNN 대리 모델 구축, 100초 전 상태 예측 구현
+- 전압 차이 그리드 탐색을 통해 노화 파라미터를 추정하는 단일 파라미터 SOH 조정 메커니즘 제안
+
+### 실험 설정
+- 훈련 데이터: P2D 모델 시뮬레이션 기반 무작위 주행 사이클 데이터셋
+- 모델 아키텍처: CNN이 리튬 이온 농도 분포를 포착하는 최적의 선택임이 입증됨
+- 평가 지표: CNN 대리 모델과 원래 P2D 모델의 예측 정확도 비교
+
+### 주요 발견
+- CNN 대리 모델은 예측 정확도를 유지하면서 계산 비용을 크게 절감
+- 단일 파라미터 SOH 조정 방법이 배터리 노화 상태 변화를 효과적으로 반영
+- 이 방법은 배터리 관리 시스템의 실시간 예측 요구에 적합
+
+### 결론
+본 연구는 데이터 기반 CNN 모델이 복잡한 전기화학 모델을 대체할 수 있음을 입증하여, 배터리 관리 시스템에 효율적이고 정확한 예측 도구를 제공하며, SOH 조정 메커니즘은 모델의 배터리 노화 적응성을 강화합니다.

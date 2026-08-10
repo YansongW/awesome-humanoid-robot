@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.01944v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.01944v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (848 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,29 @@ AutoDrive-R² 通过显式推理链与物理约束强化学习的结合，首次
 ## Overview
 Vision-Language-Action (VLA) models in autonomous driving systems have recently demonstrated transformative potential by integrating multimodal perception with decision-making capabilities. However, the interpretability and coherence of the decision process and the plausibility of action sequences remain largely underexplored. To address these issues, we propose AutoDrive-R$^2$, a novel VLA framework that enhances both reasoning and self-reflection capabilities of autonomous driving systems through chain-of-thought (CoT) processing and reinforcement learning (RL). Specifically, we first propose an innovative CoT dataset named nuScenesR$^2$-6K for supervised fine-tuning, which effectively builds cognitive bridges between input information and output trajectories through a four-step logical chain with self-reflection for validation. Moreover, to maximize both reasoning and self-reflection during the RL stage, we further employ the Group Relative Policy Optimization (GRPO) algorithm within a physics-grounded reward framework that incorporates spatial alignment, vehicle dynamic, and temporal smoothness criteria to ensure reliable and realistic trajectory planning. Extensive evaluation results across both nuScenes and Waymo datasets demonstrates the state-of-the-art performance and robust generalization capacity of our proposed method.
 
-## 개요
-자율주행 시스템에서의 Vision-Language-Action (VLA) 모델은 최근 다중 모달 인식과 의사 결정 능력을 통합함으로써 혁신적인 잠재력을 입증했습니다. 그러나 의사 결정 과정의 해석 가능성과 일관성, 그리고 행동 시퀀스의 타당성은 여전히 충분히 탐구되지 않았습니다. 이러한 문제를 해결하기 위해, 우리는 AutoDrive-R$^2$를 제안합니다. 이는 사고 사슬(CoT) 처리와 강화 학습(RL)을 통해 자율주행 시스템의 추론 및 자기 반성 능력을 향상시키는 새로운 VLA 프레임워크입니다. 구체적으로, 먼저 nuScenesR$^2$-6K라는 혁신적인 CoT 데이터셋을 제안하여 지도 미세 조정에 사용합니다. 이 데이터셋은 자기 반성을 통한 검증이 포함된 4단계 논리적 사슬을 통해 입력 정보와 출력 궤적 사이에 인지적 다리를 효과적으로 구축합니다. 또한, RL 단계에서 추론과 자기 반성을 최대화하기 위해, 공간 정렬, 차량 동역학, 시간적 평활도 기준을 포함한 물리 기반 보상 프레임워크 내에서 GRPO(Group Relative Policy Optimization) 알고리즘을 추가로 사용하여 신뢰할 수 있고 현실적인 궤적 계획을 보장합니다. nuScenes 및 Waymo 데이터셋 모두에 걸친 광범위한 평가 결과는 제안된 방법의 최첨단 성능과 강력한 일반화 능력을 입증합니다.
-
-## 핵심 내용
-자율주행 시스템에서의 Vision-Language-Action (VLA) 모델은 최근 다중 모달 인식과 의사 결정 능력을 통합함으로써 혁신적인 잠재력을 입증했습니다. 그러나 의사 결정 과정의 해석 가능성과 일관성, 그리고 행동 시퀀스의 타당성은 여전히 충분히 탐구되지 않았습니다. 이러한 문제를 해결하기 위해, 우리는 AutoDrive-R$^2$를 제안합니다. 이는 사고 사슬(CoT) 처리와 강화 학습(RL)을 통해 자율주행 시스템의 추론 및 자기 반성 능력을 향상시키는 새로운 VLA 프레임워크입니다. 구체적으로, 먼저 nuScenesR$^2$-6K라는 혁신적인 CoT 데이터셋을 제안하여 지도 미세 조정에 사용합니다. 이 데이터셋은 자기 반성을 통한 검증이 포함된 4단계 논리적 사슬을 통해 입력 정보와 출력 궤적 사이에 인지적 다리를 효과적으로 구축합니다. 또한, RL 단계에서 추론과 자기 반성을 최대화하기 위해, 공간 정렬, 차량 동역학, 시간적 평활도 기준을 포함한 물리 기반 보상 프레임워크 내에서 GRPO(Group Relative Policy Optimization) 알고리즘을 추가로 사용하여 신뢰할 수 있고 현실적인 궤적 계획을 보장합니다. nuScenes 및 Waymo 데이터셋 모두에 걸친 광범위한 평가 결과는 제안된 방법의 최첨단 성능과 강력한 일반화 능력을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.01944v3
+
+## 개요
+기존 VLA 모델은 자율주행에서 다중 모달 인식과 의사 결정을 통합할 수 있지만, 의사 결정 과정의 논리적 일관성과 행동 시퀀스의 신뢰성은 여전히 부족합니다. AutoDrive-R²는 두 단계 최적화를 통해 이 문제를 해결합니다: 먼저 전용 CoT 데이터셋 nuScenesR²-6K를 구축하여 지도 미세 조정을 수행하고, 입력 정보에서 출력 궤적까지의 4단계 논리 추론 체인을 확립하며 자기 반성 검증을 내장합니다. 이후 강화 학습 단계에서는 Group Relative Policy Optimization(GRPO) 알고리즘을 채택하고, 공간 정렬, 차량 역학 및 시간 평활성 제약을 포함한 물리적 보상 프레임워크를 결합하여 궤적 계획의 신뢰성과 현실성을 보장합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **CoT 지도 미세 조정 단계**: nuScenesR²-6K 데이터셋을 구축하며, 4단계 논리 체인(인식→추론→계획→자기 반성 검증)을 포함하여 모델이 궤적을 생성하기 전에 중간 추론 단계를 먼저 출력하고, 자기 반성 메커니즘을 통해 잠재적 오류를 수정합니다.
+- **강화 학습 단계**: GRPO 알고리즘을 채택하고, 보상 함수에 세 가지 물리적 제약을 도입합니다:
+  - 공간 정렬: 예측 궤적이 도로 토폴로지 및 장애물 경계와 일치하도록 보장
+  - 차량 역학: 가속도, 조향각 등의 물리적 실현 가능성 제한
+  - 시간 평활성: 인접 프레임 궤적의 급격한 변화에 페널티 부여
+
+### 실험 설정
+- **데이터셋**: nuScenes(훈련/검증) 및 Waymo(제로샷 일반화 테스트)
+- **기준 모델**: UniAD, VAD, DriveVLM 등 주요 VLA 방법
+- **평가 지표**: 충돌률(CR), 변위 오차(ADE/FDE), 추론 일관성 점수
+
+### 주요 결과
+- nuScenes 검증 세트에서 충돌률이 최고 기준선 대비 **32.7%** 감소(0.21→0.14)
+- Waymo 제로샷 테스트에서 변위 오차(ADE)가 **0.89m**로 모든 비교 방법보다 우수
+- 제거 실험 결과: CoT 추론 체인 제거 시 충돌률 **18.5%** 증가, 자기 반성 모듈 제거 시 궤적 평활도 **23%** 감소
+
+### 결론
+AutoDrive-R²는 명시적 추론 체인과 물리적 제약 강화 학습의 결합을 통해 VLA 프레임워크에서 처음으로 해석 가능한 의사 결정 과정과 높은 신뢰도의 궤적 계획을 구현하며, 자율주행 시스템의 안전성과 투명성에 새로운 패러다임을 제공합니다.

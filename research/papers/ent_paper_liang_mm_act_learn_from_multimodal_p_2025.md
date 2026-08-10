@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00975v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00975v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (916 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,26 @@ MM-ACT 通过统一的 token 空间和并行解码策略，在保持高效推理
 ## Overview
 A generalist robotic policy needs both semantic understanding for task planning and the ability to interact with the environment through predictive capabilities. To tackle this, we present MM-ACT, a unified Vision-Language-Action (VLA) model that integrates text, image, and action in shared token space and performs generation across all three modalities. MM-ACT adopts a re-mask parallel decoding strategy for text and image generation, and employs a one-step parallel decoding strategy for action generation to improve efficiency. We introduce Context-Shared Multimodal Learning, a unified training paradigm that supervises generation in all three modalities from a shared context, enhancing action generation through cross-modal learning. Experiments were conducted on the LIBERO simulation and Franka real-robot setups as well as RoboTwin2.0 to assess in-domain and out-of-domain performances respectively. Our approach achieves a success rate of 96.3% on LIBERO, 72.0% across three tasks of real Franka, and 52.38% across eight bimanual tasks of RoboTwin2.0 with an additional gain of 9.25% from cross-modal learning. We release our codes, models and data at https://github.com/HHYHRHY/MM-ACT.
 
-## 개요
-범용 로봇 정책은 작업 계획을 위한 의미적 이해와 예측 능력을 통한 환경 상호작용 능력을 모두 필요로 합니다. 이를 해결하기 위해, 우리는 텍스트, 이미지, 행동을 공유 토큰 공간에 통합하고 세 가지 모달리티 모두에서 생성을 수행하는 통합 비전-언어-행동(VLA) 모델인 MM-ACT를 제시합니다. MM-ACT는 텍스트 및 이미지 생성을 위해 재마스크 병렬 디코딩 전략을 채택하고, 행동 생성을 위해 단일 단계 병렬 디코딩 전략을 사용하여 효율성을 향상시킵니다. 또한, 공유 컨텍스트에서 세 가지 모달리티 모두의 생성을 감독하는 통합 훈련 패러다임인 컨텍스트 공유 멀티모달 학습(Context-Shared Multimodal Learning)을 도입하여 교차 모달 학습을 통해 행동 생성을 강화합니다. 실험은 LIBERO 시뮬레이션 및 Franka 실제 로봇 환경, 그리고 RoboTwin2.0에서 각각 도메인 내 및 도메인 외 성능을 평가하기 위해 수행되었습니다. 우리의 접근 방식은 LIBERO에서 96.3%, 실제 Franka의 세 가지 작업에서 72.0%, RoboTwin2.0의 여덟 가지 양손 작업에서 52.38%의 성공률을 달성했으며, 교차 모달 학습을 통해 추가로 9.25%의 성능 향상을 얻었습니다. 코드, 모델 및 데이터는 https://github.com/HHYHRHY/MM-ACT에서 공개합니다.
-
-## 핵심 내용
-범용 로봇 정책은 작업 계획을 위한 의미적 이해와 예측 능력을 통한 환경 상호작용 능력을 모두 필요로 합니다. 이를 해결하기 위해, 우리는 텍스트, 이미지, 행동을 공유 토큰 공간에 통합하고 세 가지 모달리티 모두에서 생성을 수행하는 통합 비전-언어-행동(VLA) 모델인 MM-ACT를 제시합니다. MM-ACT는 텍스트 및 이미지 생성을 위해 재마스크 병렬 디코딩 전략을 채택하고, 행동 생성을 위해 단일 단계 병렬 디코딩 전략을 사용하여 효율성을 향상시킵니다. 또한, 공유 컨텍스트에서 세 가지 모달리티 모두의 생성을 감독하는 통합 훈련 패러다임인 컨텍스트 공유 멀티모달 학습(Context-Shared Multimodal Learning)을 도입하여 교차 모달 학습을 통해 행동 생성을 강화합니다. 실험은 LIBERO 시뮬레이션 및 Franka 실제 로봇 환경, 그리고 RoboTwin2.0에서 각각 도메인 내 및 도메인 외 성능을 평가하기 위해 수행되었습니다. 우리의 접근 방식은 LIBERO에서 96.3%, 실제 Franka의 세 가지 작업에서 72.0%, RoboTwin2.0의 여덟 가지 양손 작업에서 52.38%의 성공률을 달성했으며, 교차 모달 학습을 통해 추가로 9.25%의 성능 향상을 얻었습니다. 코드, 모델 및 데이터는 https://github.com/HHYHRHY/MM-ACT에서 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.00975v2
+
+## 개요
+MM-ACT는 일반 로봇 정책에서 의미 이해와 환경 상호작용 능력 간의 균형 문제를 해결하기 위해 설계된 통합 비전-언어-행동(VLA) 모델입니다. 이 모델은 텍스트, 이미지, 행동의 세 가지 양식을 공유 토큰 공간에 통합하고, 텍스트 및 이미지 생성을 위한 재마스킹 병렬 디코딩 전략과 행동 생성을 위한 단일 단계 병렬 디코딩 전략을 각각 채택하여 효율성을 높입니다. 컨텍스트 공유 다중 모달 학습이라는 통합 훈련 패러다임을 도입함으로써, MM-ACT는 공유 컨텍스트에서 세 가지 양식의 생성을 감독하여 교차 모달 학습을 통해 행동 생성 능력을 강화합니다. 실험은 LIBERO 시뮬레이션 환경, Franka 실제 로봇, 그리고 RoboTwin2.0 이중 로봇 팔 작업에서 수행되었으며, 도메인 내 및 도메인 외 성능을 각각 평가한 결과 교차 모달 학습이 9.25%의 추가 성능 향상을 가져왔습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+MM-ACT의 핵심 설계는 텍스트, 이미지, 행동의 세 가지 양식을 공유 토큰 공간에 통합하여 종단 간 생성 모델을 형성하는 것입니다. 모델은 두 가지 서로 다른 병렬 디코딩 전략을 사용합니다:
+- **재마스킹 병렬 디코딩**: 텍스트 및 이미지 생성에 사용되며, 점진적 재마스킹 방식으로 여러 토큰을 병렬 예측하여 생성 과정을 가속화합니다.
+- **단일 단계 병렬 디코딩**: 행동 생성에 사용되며, 완전한 행동 시퀀스를 한 단계로 직접 출력하여 추론 효율성을 크게 향상시킵니다.
+
+### 훈련 패러다임
+MM-ACT는 **컨텍스트 공유 다중 모달 학습(Context-Shared Multimodal Learning)** 을 제안하며, 공유 컨텍스트 표현에서 세 가지 양식의 생성을 동시에 감독합니다. 이러한 통합 훈련 방식은 모델이 텍스트 및 이미지 정보를 활용하여 행동 예측을 보조하고, 교차 모달 학습 강화를 실현할 수 있게 합니다.
+
+### 실험 설정 및 결과
+실험은 세 가지 서로 다른 시나리오에서 수행되었으며, 도메인 내 및 도메인 외 성능을 각각 테스트했습니다:
+- **LIBERO 시뮬레이션 환경**: 도메인 내 작업, MM-ACT는 **96.3%** 의 성공률을 달성했습니다.
+- **Franka 실제 로봇**: 세 가지 실제 조작 작업, 평균 성공률은 **72.0%** 입니다.
+- **RoboTwin2.0**: 여덟 가지 이중 로봇 팔 작업, 도메인 외 일반화 테스트, 성공률은 **52.38%** 이며, 교차 모달 학습이 **9.25%** 의 추가 이득을 기여했습니다.
+
+### 결론
+MM-ACT는 통합 토큰 공간과 병렬 디코딩 전략을 통해 효율적인 추론을 유지하면서도 교차 모달 학습을 통해 행동 생성의 정확성과 일반화 능력을 크게 향상시켰습니다. 코드, 모델 및 데이터는 오픈소스로 공개되었습니다.

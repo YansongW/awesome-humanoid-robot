@@ -51,8 +51,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04652v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04652v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1115 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -86,11 +87,27 @@ KAM-WM 的核心思想是从一个冻结的潜在视频世界模型中提取粗�
 ## Overview
 Learning manipulation from few demonstrations requires visual priors that capture not only where to interact, but also how the interaction should begin; static priors such as segmentation masks encode only the former. We present KAM-WM, a framework that extracts a coarse directional interaction cue from a frozen latent video world model without rollout or world-model fine-tuning. KAM-WM queries a Flow Matching image-to-video backbone once and interprets its single-step latent velocity as a Kinematic Affordance Map (KAM), which provides task-conditioned interaction regions and coarse motion structure. A lightweight Perceiver compresses KAM into tokens that condition a diffusion policy together with RGB observations and proprioception. Across LIBERO and RoboTwin2.0, KAM-WM reaches 90.6% average success on LIBERO and achieves 65.7% and 22.4% success rates in the Easy and Hard settings on RoboTwin2.0, respectively. Controlled comparisons against a zero-order mask prior suggest that part of the gains comes from directional information beyond spatial localization alone. These results indicate that, in the evaluated settings, a frozen video model can provide a useful first-order visual prior for control without the test-time cost of future rollout.
 
-## 개요
-소수의 시연으로부터 조작을 학습하려면 상호작용 위치뿐만 아니라 상호작용이 어떻게 시작되어야 하는지도 포착하는 시각적 사전 지식이 필요합니다. 분할 마스크와 같은 정적 사전 지식은 전자만 인코딩합니다. 본 논문에서는 롤아웃이나 월드 모델 미세 조정 없이 고정된 잠재 비디오 월드 모델로부터 대략적인 방향성 상호작용 단서를 추출하는 프레임워크인 KAM-WM을 제시합니다. KAM-WM은 Flow Matching 이미지-비디오 백본을 한 번 쿼리하고, 단일 단계 잠재 속도를 운동학적 어포던스 맵(KAM)으로 해석하여 작업 조건화된 상호작용 영역과 대략적인 움직임 구조를 제공합니다. 경량화된 Perceiver는 KAM을 토큰으로 압축하여 RGB 관측값 및 고유 감각과 함께 확산 정책을 조건화합니다. LIBERO 및 RoboTwin2.0에서 KAM-WM은 LIBERO에서 평균 90.6%의 성공률을 달성하고, RoboTwin2.0의 Easy 및 Hard 설정에서 각각 65.7% 및 22.4%의 성공률을 기록했습니다. 0차 마스크 사전 지식과의 통제된 비교는 이러한 성능 향상의 일부가 공간적 위치 파악을 넘어선 방향 정보에서 비롯됨을 시사합니다. 이러한 결과는 평가된 설정에서 고정된 비디오 모델이 미래 롤아웃의 테스트 시간 비용 없이 제어에 유용한 1차 시각적 사전 지식을 제공할 수 있음을 나타냅니다.
-
-## 핵심 내용
-소수의 시연으로부터 조작을 학습하려면 상호작용 위치뿐만 아니라 상호작용이 어떻게 시작되어야 하는지도 포착하는 시각적 사전 지식이 필요합니다. 분할 마스크와 같은 정적 사전 지식은 전자만 인코딩합니다. 본 논문에서는 롤아웃이나 월드 모델 미세 조정 없이 고정된 잠재 비디오 월드 모델로부터 대략적인 방향성 상호작용 단서를 추출하는 프레임워크인 KAM-WM을 제시합니다. KAM-WM은 Flow Matching 이미지-비디오 백본을 한 번 쿼리하고, 단일 단계 잠재 속도를 운동학적 어포던스 맵(KAM)으로 해석하여 작업 조건화된 상호작용 영역과 대략적인 움직임 구조를 제공합니다. 경량화된 Perceiver는 KAM을 토큰으로 압축하여 RGB 관측값 및 고유 감각과 함께 확산 정책을 조건화합니다. LIBERO 및 RoboTwin2.0에서 KAM-WM은 LIBERO에서 평균 90.6%의 성공률을 달성하고, RoboTwin2.0의 Easy 및 Hard 설정에서 각각 65.7% 및 22.4%의 성공률을 기록했습니다. 0차 마스크 사전 지식과의 통제된 비교는 이러한 성능 향상의 일부가 공간적 위치 파악을 넘어선 방향 정보에서 비롯됨을 시사합니다. 이러한 결과는 평가된 설정에서 고정된 비디오 모델이 미래 롤아웃의 테스트 시간 비용 없이 제어에 유용한 1차 시각적 사전 지식을 제공할 수 있음을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.04652v1
+
+## 개요
+KAM-WM 프레임워크는 소표본 로봇 조작 학습에서의 시각적 사전 정보 문제를 해결하는 것을 목표로 하며, 상호작용 위치뿐만 아니라 상호작용의 시작 방식에도 주목합니다. 이는 고정된 잠재 비디오 세계 모델을 활용하여 Flow Matching 이미지-비디오 백본 네트워크의 단일 쿼리를 통해 단일 단계 잠재 속도를 운동학적 조작 가능성 맵(KAM)으로 해석함으로써, 작업 조건화된 상호작용 영역과 대략적인 운동 구조를 제공합니다. 경량 Perceiver는 KAM을 토큰으로 압축하고, RGB 관측 및 고유 감각과 함께 확산 정책을 조건화합니다. LIBERO 및 RoboTwin2.0 벤치마크에서의 실험은 KAM-WM이显著한 성능을 달성했음을 보여주며, LIBERO에서 평균 성공률 90.6%, RoboTwin2.0의 Easy 및 Hard 설정에서 각각 65.7% 및 22.4%의 성공률을 기록했습니다. 0차 마스크 사전 정보와의 대조 실험은 성능 향상의 일부가 공간적 위치 파악뿐만 아니라 방향 정보에서 비롯됨을 시사합니다.
+
+## 핵심 내용
+### 방법 개요
+KAM-WM의 핵심 아이디어는 고정된 잠재 비디오 세계 모델에서 rollout이나 세계 모델 미세 조정 없이 조립도(coarse-grained)의 방향성 상호작용 단서를 추출하는 것입니다. 구체적으로, Flow Matching 이미지-비디오 백본 네트워크를 한 번 쿼리하여 단일 단계 잠재 속도를 운동학적 조작 가능성 맵(KAM)으로 해석합니다. KAM은 작업 조건화된 상호작용 영역과 대략적인 운동 구조를 제공하여, 분할 마스크와 같은 정적 사전 정보가 상호작용 위치만 인코딩하고 상호작용 시작 방식을 무시하는 한계를 보완합니다.
+
+### 아키텍처 세부 사항
+- **잠재 비디오 세계 모델**: rollout이나 미세 조정 없이 고정된 모델을 사용하며, 단일 단계 잠재 속도를 통해 방향성 단서만 제공합니다.
+- **Flow Matching 백본 네트워크**: 이미지-비디오 백본 네트워크로, 한 번의 쿼리로 KAM을 생성합니다.
+- **Perceiver 압축기**: 경량 모듈로, KAM을 토큰으로 압축하여 RGB 관측 및 고유 감각과 함께 확산 정책에 입력합니다.
+- **확산 정책**: KAM 토큰, RGB 관측 및 고유 감각을 조건으로 조작 동작을 생성합니다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: LIBERO 및 RoboTwin2.0에서 평가를 수행했습니다.
+- **LIBERO 결과**: 평균 성공률 90.6%를 달성했습니다.
+- **RoboTwin2.0 결과**: Easy 설정에서 성공률 65.7%, Hard 설정에서 성공률 22.4%를 기록했습니다.
+- **대조 실험**: 공간적 위치 파악만 제공하는 0차 마스크 사전 정보와 비교한 결과, KAM-WM의 성능 향상은 공간적 위치 파악뿐만 아니라 방향 정보에서 부분적으로 비롯됨을 보여줍니다.
+
+### 결론
+평가된 설정에서 고정된 비디오 모델은 테스트 시 미래 rollout 비용 없이 제어에 유용한 1차 시각적 사전 정보를 제공할 수 있습니다. KAM-WM은 방향성 상호작용 단서를 추출함으로써 소표본 조작 학습의 성능을显著히 향상시킵니다.

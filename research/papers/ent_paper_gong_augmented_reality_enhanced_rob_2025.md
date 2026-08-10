@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.11783v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.11783v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (661 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,26 @@ theoretical_depth:
 ## Overview
 Traditional industrial robot programming is often complex and time-consuming, typically requiring weeks or even months of effort from expert programmers. Although Programming by Demonstration (PbD) offers a more accessible alternative, intuitive interfaces for robot control and demonstration collection remain challenging. To address this, we propose an Augmented Reality (AR)-enhanced robot teleoperation system that integrates AR-based control with spatial point cloud rendering, enabling intuitive, contact-free demonstrations. This approach allows operators to control robots remotely without entering the workspace or using conventional tools like the teach pendant. The proposed system is generally applicable and has been demonstrated on ABB robot platforms, specifically validated with the IRB 1200 industrial robot and the GoFa 5 collaborative robot. A user study evaluates the impact of real-time environmental perception, specifically with and without point cloud rendering, on task completion accuracy, efficiency, and user confidence. Results indicate that enhanced perception significantly improves task performance by 28% and enhances user experience, as reflected by a 12% increase in the System Usability Scale (SUS) score. This work contributes to the advancement of intuitive robot teleoperation, AR interface design, environmental perception, and teleoperation safety mechanisms in industrial settings for demonstration collection. The collected demonstrations may serve as valuable training data for machine learning applications.
 
-## 개요
-전통적인 산업용 로봇 프로그래밍은 종종 복잡하고 시간이 많이 소요되며, 일반적으로 전문 프로그래머가 수주 또는 수개월의 노력을 필요로 합니다. 시연을 통한 프로그래밍(PbD)이 더 접근하기 쉬운 대안을 제공하지만, 로봇 제어 및 시연 수집을 위한 직관적인 인터페이스는 여전히 어려운 과제로 남아 있습니다. 이를 해결하기 위해, 우리는 증강 현실(AR) 기반 제어와 공간 포인트 클라우드 렌더링을 통합하여 직관적이고 비접촉식 시연을 가능하게 하는 AR 강화 로봇 원격 조작 시스템을 제안합니다. 이 접근 방식은 작업자가 작업 공간에 들어가거나 티치 펜던트와 같은 기존 도구를 사용하지 않고도 원격으로 로봇을 제어할 수 있게 합니다. 제안된 시스템은 일반적으로 적용 가능하며, ABB 로봇 플랫폼에서 시연되었으며, 특히 IRB 1200 산업용 로봇과 GoFa 5 협동 로봇에서 검증되었습니다. 사용자 연구는 실시간 환경 인식, 특히 포인트 클라우드 렌더링 유무에 따른 작업 완료 정확도, 효율성 및 사용자 신뢰도에 미치는 영향을 평가합니다. 결과는 향상된 인식이 작업 성능을 28% 크게 개선하고, 시스템 사용성 척도(SUS) 점수가 12% 증가한 것으로 나타난 사용자 경험을 향상시킴을 보여줍니다. 이 연구는 산업 환경에서 시연 수집을 위한 직관적인 로봇 원격 조작, AR 인터페이스 설계, 환경 인식 및 원격 조작 안전 메커니즘의 발전에 기여합니다. 수집된 시연은 머신 러닝 애플리케이션을 위한 귀중한 훈련 데이터로 사용될 수 있습니다.
-
-## 핵심 내용
-전통적인 산업용 로봇 프로그래밍은 종종 복잡하고 시간이 많이 소요되며, 일반적으로 전문 프로그래머가 수주 또는 수개월의 노력을 필요로 합니다. 시연을 통한 프로그래밍(PbD)이 더 접근하기 쉬운 대안을 제공하지만, 로봇 제어 및 시연 수집을 위한 직관적인 인터페이스는 여전히 어려운 과제로 남아 있습니다. 이를 해결하기 위해, 우리는 증강 현실(AR) 기반 제어와 공간 포인트 클라우드 렌더링을 통합하여 직관적이고 비접촉식 시연을 가능하게 하는 AR 강화 로봇 원격 조작 시스템을 제안합니다. 이 접근 방식은 작업자가 작업 공간에 들어가거나 티치 펜던트와 같은 기존 도구를 사용하지 않고도 원격으로 로봇을 제어할 수 있게 합니다. 제안된 시스템은 일반적으로 적용 가능하며, ABB 로봇 플랫폼에서 시연되었으며, 특히 IRB 1200 산업용 로봇과 GoFa 5 협동 로봇에서 검증되었습니다. 사용자 연구는 실시간 환경 인식, 특히 포인트 클라우드 렌더링 유무에 따른 작업 완료 정확도, 효율성 및 사용자 신뢰도에 미치는 영향을 평가합니다. 결과는 향상된 인식이 작업 성능을 28% 크게 개선하고, 시스템 사용성 척도(SUS) 점수가 12% 증가한 것으로 나타난 사용자 경험을 향상시킴을 보여줍니다. 이 연구는 산업 환경에서 시연 수집을 위한 직관적인 로봇 원격 조작, AR 인터페이스 설계, 환경 인식 및 원격 조작 안전 메커니즘의 발전에 기여합니다. 수집된 시연은 머신 러닝 애플리케이션을 위한 귀중한 훈련 데이터로 사용될 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.11783v1
+
+## 개요
+전통적인 산업용 로봇 프로그래밍은 일반적으로 전문 프로그래머가 수 주에서 수 개월이 소요되지만, 프로그래밍 시범(PbD)은 더 사용하기 쉬운 대안을 제공하지만 직관적인 제어와 시범 수집 인터페이스는 여전히 도전 과제입니다. 이를 위해 연구자들은 AR 제어와 공간 포인트 클라우드 렌더링을 결합한 AR 증강 원격 조작 시스템을 개발하여 비접촉식 원격 시범을 구현했습니다. 이 시스템은 ABB IRB 1200 산업용 로봇과 GoFa 5 협동 로봇에서 검증되었으며, 사용자 연구를 통해 포인트 클라우드 렌더링 유무가 작업 정확도, 효율성 및 사용자 자신감에 미치는 영향을 비교했습니다. 결과는 증강 인식이 작업 성능을 28% 향상시키고, 시스템 사용성 척도(SUS) 점수를 12% 높여 산업 현장에서의 직관적인 원격 조작, AR 인터페이스 설계 및 안전 메커니즘에 새로운 솔루션을 제공함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 시스템은 AR 헤드 마운트 디스플레이(HMD)와 손 제어기를 통합하여, 작업자가 실시간 포인트 클라우드 렌더링을 통해 로봇 작업 공간을 인식하며 물리적 접촉이나 전통적인 티칭 펜던트 없이 작업할 수 있습니다.
+- 프로그래밍 시범(PbD) 패러다임을 채택하여 수집된 시범 데이터는 머신러닝 모델 훈련에 직접 사용될 수 있습니다.
+
+### 실험 설정
+- ABB IRB 1200 산업용 로봇과 GoFa 5 협동 로봇 플랫폼에서 시스템의 범용성을 검증했습니다.
+- 사용자 연구는 두 가지 조건을 비교했습니다: 실시간 포인트 클라우드 렌더링 활성화(증강 인식)와 포인트 클라우드 렌더링 비활성화(기본 인식).
+
+### 주요 결과
+- 증강 인식은 작업 완료 정확도를 28% 향상시키고 사용자 자신감을 크게 강화했습니다.
+- 시스템 사용성 척도(SUS) 점수가 12% 상승하여 사용자 경험 최적화를 반영했습니다.
+- 작업 효율성이 향상되었고, 시범 데이터 수집 과정이 더 안전해졌습니다(작업 공간에 들어갈 필요 없음).
+
+### 결론
+- 이 시스템은 산업 현장에서의 직관적인 원격 조작, AR 인터페이스 설계, 환경 인식 및 안전 메커니즘에 효과적인 솔루션을 제공합니다.
+- 수집된 시범 데이터는 고품질 훈련 샘플로 활용되어 로봇 학습 응용을 지원할 수 있습니다.

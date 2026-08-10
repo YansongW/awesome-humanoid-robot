@@ -36,7 +36,8 @@ verification:
   reviewed_at: '2026-07-14'
   confidence: low
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: OMG: Omni-Modal Motion
-    Generation for Generalist Humanoid Control. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    Generation for Generalist Humanoid Control. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (677 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -67,11 +68,22 @@ OMG 标志着向人形机器人基础模型迈出了具体的一步，通过模�
 ## Overview
 Humanoid whole-body control has made significant progress in recent years, yet existing approaches remain limited to few-skill policies with heavy reward engineering, or motion trackers that are difficult to extend to new input modalities. We argue that the key to general-purpose humanoid control is to build a scalable brain, a module capable of reasoning with diverse conditioning modalities, atop a reactive motion tracking cerebellum, mirroring the hierarchical structure of biological motor systems. Two challenges arise in realizing this vision: acquiring a vast amount of high-quality data to achieve general purpose control, and equipping the generator with the capability to condition on compositional, extensible multi-modal inputs. We present OMG, which addresses these challenges with a meticulous data curation, filtering and labeling pipeline, as well as a diffusion-based motion generation backbone that conditions on language, audio, and human reference motions. Extensive experiments validate OMG as an omni-modal whole-body controller exhibiting state-of-the-art performance, model scaling behavior and efficient adaptation to new distributions and modalities, marking a concrete step toward foundation models for humanoid robots.
 
-## 개요
-휴머노이드 전신 제어는 최근 몇 년간 큰 진전을 이루었지만, 기존 접근 방식은 과도한 보상 엔지니어링이 필요한 소수의 스킬 정책이나 새로운 입력 양식으로 확장하기 어려운 모션 트래커에 국한되어 있습니다. 우리는 범용 휴머노이드 제어의 핵심이 생물학적 운동 시스템의 계층적 구조를 반영하여, 반응형 모션 추적 소뇌 위에 다양한 조건화 양식으로 추론할 수 있는 확장 가능한 두뇌, 즉 모듈을 구축하는 것이라고 주장합니다. 이 비전을 실현하는 데는 두 가지 과제가 있습니다: 범용 제어를 달성하기 위한 방대한 양의 고품질 데이터 확보, 그리고 생성기에 구성 가능하고 확장 가능한 다중 모달 입력을 조건화할 수 있는 능력을 부여하는 것입니다. 우리는 이러한 과제를 정밀한 데이터 큐레이션, 필터링 및 레이블링 파이프라인과 언어, 오디오 및 인간 참조 동작을 조건화하는 확산 기반 모션 생성 백본을 통해 해결하는 OMG를 제시합니다. 광범위한 실험을 통해 OMG는 최첨단 성능, 모델 확장 동작 및 새로운 분포와 양식에 대한 효율적인 적응을 보여주는 전모달 전신 제어기로 검증되었으며, 이는 휴머노이드 로봇을 위한 기초 모델을 향한 구체적인 발걸음을 의미합니다.
-
-## 핵심 내용
-휴머노이드 전신 제어는 최근 몇 년간 큰 진전을 이루었지만, 기존 접근 방식은 과도한 보상 엔지니어링이 필요한 소수의 스킬 정책이나 새로운 입력 양식으로 확장하기 어려운 모션 트래커에 국한되어 있습니다. 우리는 범용 휴머노이드 제어의 핵심이 생물학적 운동 시스템의 계층적 구조를 반영하여, 반응형 모션 추적 소뇌 위에 다양한 조건화 양식으로 추론할 수 있는 확장 가능한 두뇌, 즉 모듈을 구축하는 것이라고 주장합니다. 이 비전을 실현하는 데는 두 가지 과제가 있습니다: 범용 제어를 달성하기 위한 방대한 양의 고품질 데이터 확보, 그리고 생성기에 구성 가능하고 확장 가능한 다중 모달 입력을 조건화할 수 있는 능력을 부여하는 것입니다. 우리는 이러한 과제를 정밀한 데이터 큐레이션, 필터링 및 레이블링 파이프라인과 언어, 오디오 및 인간 참조 동작을 조건화하는 확산 기반 모션 생성 백본을 통해 해결하는 OMG를 제시합니다. 광범위한 실험을 통해 OMG는 최첨단 성능, 모델 확장 동작 및 새로운 분포와 양식에 대한 효율적인 적응을 보여주는 전모달 전신 제어기로 검증되었으며, 이는 휴머노이드 로봇을 위한 기초 모델을 향한 구체적인 발걸음을 의미합니다.
-
 ## 参考
 - Semantic Scholar search: OMG: Omni-Modal Motion Generation for Generalist Humanoid Control
+
+## 개요
+기존의 휴머노이드 로봇 전신 제어 방법은 제한된 스킬 정책에 국한되거나 복잡한 보상 엔지니어링에 의존하거나, 새로운 입력 모달리티로 확장하기 어려운 모션 트래커에 머물러 있습니다. OMG는 생물학적 운동 시스템의 계층 구조를 차용하여, 다양한 조건 모달리티를 처리하는 확장 가능한 '뇌' 모듈을 반응형 모션 추적 '소뇌' 위에 배치합니다. 일반 제어에 필요한 대규모 고품질 데이터 확보와 생성기의 조합적이고 확장 가능한 다중 모달 입력 적응 능력이라는 두 가지 과제를 해결하기 위해, OMG는 세심한 데이터 정리, 필터링 및 주석 처리 프로세스를 채택하고 확산 모델 기반의 모션 생성 백본 네트워크를 구축했습니다. 실험 결과, OMG는 전 모달리티 전신 제어기로서 성능, 모델 스케일링 동작, 새로운 분포 및 모달리티에 대한 효율적 적응 측면에서 최신 수준(state-of-the-art)을 달성했습니다.
+
+## 핵심 내용
+### 방법 개요
+OMG의 핵심 아키텍처는 두 가지 주요 구성 요소를 포함합니다:
+- **데이터 처리 프로세스**: 정교하게 설계된 데이터 정리, 필터링 및 주석 처리 파이프라인을 통해 일반 제어에 필요한 대규모 고품질 데이터 확보 문제를 해결합니다.
+- **모션 생성 백본 네트워크**: 확산 모델 기반의 생성 아키텍처를 채택하여 언어, 오디오 및 인간 참조 동작을 조건 입력으로 사용하여 전신 모션을 생성할 수 있습니다.
+
+### 실험 설정 및 주요 결과
+- **성능表現**: 여러 실험에서 OMG는 전 모달리티 전신 제어기로서 최신 수준(state-of-the-art)의 성능을 보여줍니다.
+- **모델 스케일링 동작**: 모델 크기가 증가함에 따라 성능이 지속적으로 향상되는 우수한 스케일링 특성을 검증했습니다.
+- **적응 능력**: 새로운 데이터 분포와 입력 모달리티에 효율적으로 적응하며 강력한 일반화 능력을 입증했습니다.
+
+### 결론
+OMG는 휴머노이드 로봇 기반 모델을 향한 구체적인 한 걸음을 나타내며, 생물학적 운동 시스템의 계층 구조를 모방하여 확장 가능한 '뇌-소뇌' 제어 프레임워크를 성공적으로 구축함으로써 일반 휴머노이드 로봇 제어를 위한 새로운 솔루션을 제공합니다.

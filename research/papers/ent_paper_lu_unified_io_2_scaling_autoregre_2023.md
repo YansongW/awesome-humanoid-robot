@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.17172v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2312.17172v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (808 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -78,11 +79,33 @@ Unified-IO 2 将图像、文本、音频、动作、边界框等多种模态的�
 ## Overview
 We present Unified-IO 2, the first autoregressive multimodal model that is capable of understanding and generating image, text, audio, and action. To unify different modalities, we tokenize inputs and outputs -- images, text, audio, action, bounding boxes, etc., into a shared semantic space and then process them with a single encoder-decoder transformer model. Since training with such diverse modalities is challenging, we propose various architectural improvements to stabilize model training. We train our model from scratch on a large multimodal pre-training corpus from diverse sources with a multimodal mixture of denoisers objective. To learn an expansive set of skills, such as following multimodal instructions, we construct and finetune on an ensemble of 120 datasets with prompts and augmentations. With a single unified model, Unified-IO 2 achieves state-of-the-art performance on the GRIT benchmark and strong results in more than 35 benchmarks, including image generation and understanding, natural language understanding, video and audio understanding, and robotic manipulation. We release all our models to the research community.
 
-## 개요
-본 논문에서는 이미지, 텍스트, 오디오 및 행동을 이해하고 생성할 수 있는 최초의 자기회귀 멀티모달 모델인 Unified-IO 2를 제시합니다. 다양한 모달리티를 통합하기 위해 이미지, 텍스트, 오디오, 행동, 바운딩 박스 등의 입력과 출력을 공유 의미 공간으로 토큰화한 후 단일 인코더-디코더 트랜스포머 모델로 처리합니다. 이러한 다양한 모달리티로 학습하는 것은 까다롭기 때문에, 모델 학습을 안정화하기 위한 다양한 아키텍처 개선 사항을 제안합니다. 다양한 소스의 대규모 멀티모달 사전 학습 코퍼스에서 멀티모달 잡음 제거기 목적 함수를 혼합하여 모델을 처음부터 학습시킵니다. 멀티모달 지시사항 따르기와 같은 광범위한 기술 세트를 학습하기 위해 프롬프트와 증강을 포함한 120개 데이터셋 앙상블을 구축하고 미세 조정합니다. 단일 통합 모델로 Unified-IO 2는 GRIT 벤치마크에서 최첨단 성능을 달성하고, 이미지 생성 및 이해, 자연어 이해, 비디오 및 오디오 이해, 로봇 조작을 포함한 35개 이상의 벤치마크에서 강력한 결과를 보여줍니다. 모든 모델을 연구 커뮤니티에 공개합니다.
-
-## 핵심 내용
-본 논문에서는 이미지, 텍스트, 오디오 및 행동을 이해하고 생성할 수 있는 최초의 자기회귀 멀티모달 모델인 Unified-IO 2를 제시합니다. 다양한 모달리티를 통합하기 위해 이미지, 텍스트, 오디오, 행동, 바운딩 박스 등의 입력과 출력을 공유 의미 공간으로 토큰화한 후 단일 인코더-디코더 트랜스포머 모델로 처리합니다. 이러한 다양한 모달리티로 학습하는 것은 까다롭기 때문에, 모델 학습을 안정화하기 위한 다양한 아키텍처 개선 사항을 제안합니다. 다양한 소스의 대규모 멀티모달 사전 학습 코퍼스에서 멀티모달 잡음 제거기 목적 함수를 혼합하여 모델을 처음부터 학습시킵니다. 멀티모달 지시사항 따르기와 같은 광범위한 기술 세트를 학습하기 위해 프롬프트와 증강을 포함한 120개 데이터셋 앙상블을 구축하고 미세 조정합니다. 단일 통합 모델로 Unified-IO 2는 GRIT 벤치마크에서 최첨단 성능을 달성하고, 이미지 생성 및 이해, 자연어 이해, 비디오 및 오디오 이해, 로봇 조작을 포함한 35개 이상의 벤치마크에서 강력한 결과를 보여줍니다. 모든 모델을 연구 커뮤니티에 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2312.17172v1
+
+## 개요
+Unified-IO 2는 이미지, 텍스트, 오디오, 동작, 경계 상자 등 다양한 양식의 입력과 출력을 공유 의미 공간으로 토큰화하여 단일 인코더-디코더 Transformer 모델로 처리합니다. 다중 양식 훈련의 과제를 해결하기 위해 연구팀은 훈련 과정을 안정화하기 위한 여러 아키텍처 개선을 제안하고, 다중 양식 노이즈 제거 목표를 사용하여 대규모 사전 훈련 말뭉치에서 처음부터 훈련했습니다. 이후 모델은 120개 데이터 세트의 앙상블에서 프롬프트와 증강을 통해 미세 조정되어 다중 양식 지시 따르기 등 광범위한 기술을 학습합니다. 최종적으로 Unified-IO 2는 GRIT 벤치마크에서 최첨단 수준에 도달했으며, 이미지 생성 및 이해, 자연어 이해, 비디오 및 오디오 이해, 로봇 조작 등 35개 이상의 벤치마크에서 강력한 결과를 달성했습니다.
+
+## 핵심 내용
+### 방법
+- Unified-IO 2는 자기회귀 아키텍처를 채택하여 이미지, 텍스트, 오디오, 동작, 경계 상자 등 모든 양식의 입력과 출력을 공유 의미 공간으로 토큰화합니다.
+- 모델은 단일 인코더-디코더 Transformer 아키텍처를 기반으로 통합된 토큰 시퀀스를 처리합니다.
+
+### 아키텍처 개선
+- 다중 양식 훈련의 안정성 문제를 해결하기 위해 연구팀은 여러 아키텍처 개선을 제안했으며, 구체적인 세부 사항은 초록에서 다루지 않지만 훈련 과정을 안정화하는 데 목적이 있습니다.
+
+### 훈련 설정
+- 모델은 다양한 출처의 대규모 다중 양식 사전 훈련 말뭉치를 사용하여 처음부터 훈련됩니다.
+- 훈련 목표는 다중 양식 노이즈 제거 혼합(multimodal mixture of denoisers objective)을 사용합니다.
+- 다중 양식 지시 따르기 등 광범위한 기술을 학습하기 위해 모델은 120개 데이터 세트의 앙상블에서 미세 조정되며 프롬프트와 증강이 적용됩니다.
+
+### 주요 수치 및 결과
+- Unified-IO 2는 GRIT 벤치마크에서 최첨단 성능을 달성했습니다.
+- 35개 이상의 벤치마크에서 강력한 결과를 얻었으며, 다음을 포함합니다:
+  - 이미지 생성 및 이해
+  - 자연어 이해
+  - 비디오 및 오디오 이해
+  - 로봇 조작
+
+### 결론
+- 단일 통합 모델만으로 여러 양식과 작업에서 선도적인 성능을 달성할 수 있어 다중 양식 자기회귀 모델링의 잠재력을 보여줍니다.
+- 모든 모델은 연구 커뮤니티에 오픈소스로 공개되었습니다.

@@ -58,8 +58,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09191v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09191v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (939 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,11 +90,23 @@ GenVid2Robot 的核心思想是将生成视频视为不确定的视觉运动假�
 ## Overview
 Generated videos provide useful visual motion priors for robot manipulation, but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry, grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts generated video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and a task instruction, GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors through generated video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D anchors under a sparse relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion hypotheses rather than direct robot demonstrations. Only geometrically consistent motion is transferred to the robot. The accepted relative motion is then applied to the real grasp-time TCP pose selected by mask-constrained grasping, producing a grasp-conditioned execution trajectory that is consistent with both the visual motion prior and the physical grasp configuration. To reduce execution mismatch caused by RGB-D noise, calibration residuals, and small contact-induced displacement, a bounded depth-compensation module corrects local depth-direction errors without assuming full online replanning. Real-robot experiments demonstrate that GenVid2Robot improves the reliability of generated-video-guided manipulation by grounding visual motion priors with sparse metric geometry, grasp constraints, robot feasibility checking, and bounded execution feedback.
 
-## 개요
-생성된 비디오는 로봇 조작을 위한 유용한 시각적 움직임 사전 정보를 제공하지만, 시각적 그럴듯함이 물리적 실행 가능성을 의미하지는 않습니다. 생성된 비디오는 일반적으로 미터법 기하학, 그립 기반, 로봇 운동학적 실행 가능성 및 실행 시간 피드백이 부족하여 실제 조작에서 직접적인 궤적 재생이 신뢰할 수 없습니다. 본 논문은 생성된 비디오 움직임을 실행 가능한 실제 로봇 조작 궤적으로 변환하는 강체-기하학적 일관성 프레임워크인 GenVid2Robot을 제시합니다. 초기 RGB-D 관찰과 작업 명령이 주어지면, GenVid2Robot은 실제 첫 번째 프레임에서 작업 관련 의미론적 앵커를 샘플링하고, 생성된 비디오 후보를 통해 이러한 앵커를 추적하며, 결과 2D 움직임이 희소 상대 $SE(3)$ 모델 하에서 첫 번째 프레임 RGB-D 앵커로 설명될 수 있는지 검증합니다. 이러한 방식으로 생성된 비디오는 직접적인 로봇 시연이 아닌 불확실한 시각적 움직임 가설로 취급됩니다. 기하학적으로 일관된 움직임만 로봇으로 전송됩니다. 허용된 상대 움직임은 마스크 제약 그립에 의해 선택된 실제 그립 시간 TCP 포즈에 적용되어 시각적 움직임 사전 정보와 물리적 그립 구성 모두와 일관된 그립 조건 실행 궤적을 생성합니다. RGB-D 노이즈, 캘리브레이션 잔차 및 작은 접촉 유발 변위로 인한 실행 불일치를 줄이기 위해, 제한된 깊이 보상 모듈이 전체 온라인 재계획을 가정하지 않고 로컬 깊이 방향 오류를 수정합니다. 실제 로봇 실험은 GenVid2Robot이 희소 미터법 기하학, 그립 제약, 로봇 실행 가능성 검사 및 제한된 실행 피드백으로 시각적 움직임 사전 정보를 기반으로 하여 생성된 비디오 유도 조작의 신뢰성을 향상시킴을 보여줍니다.
-
-## 핵심 내용
-생성된 비디오는 로봇 조작을 위한 유용한 시각적 움직임 사전 정보를 제공하지만, 시각적 그럴듯함이 물리적 실행 가능성을 의미하지는 않습니다. 생성된 비디오는 일반적으로 미터법 기하학, 그립 기반, 로봇 운동학적 실행 가능성 및 실행 시간 피드백이 부족하여 실제 조작에서 직접적인 궤적 재생이 신뢰할 수 없습니다. 본 논문은 생성된 비디오 움직임을 실행 가능한 실제 로봇 조작 궤적으로 변환하는 강체-기하학적 일관성 프레임워크인 GenVid2Robot을 제시합니다. 초기 RGB-D 관찰과 작업 명령이 주어지면, GenVid2Robot은 실제 첫 번째 프레임에서 작업 관련 의미론적 앵커를 샘플링하고, 생성된 비디오 후보를 통해 이러한 앵커를 추적하며, 결과 2D 움직임이 희소 상대 $SE(3)$ 모델 하에서 첫 번째 프레임 RGB-D 앵커로 설명될 수 있는지 검증합니다. 이러한 방식으로 생성된 비디오는 직접적인 로봇 시연이 아닌 불확실한 시각적 움직임 가설로 취급됩니다. 기하학적으로 일관된 움직임만 로봇으로 전송됩니다. 허용된 상대 움직임은 마스크 제약 그립에 의해 선택된 실제 그립 시간 TCP 포즈에 적용되어 시각적 움직임 사전 정보와 물리적 그립 구성 모두와 일관된 그립 조건 실행 궤적을 생성합니다. RGB-D 노이즈, 캘리브레이션 잔차 및 작은 접촉 유발 변위로 인한 실행 불일치를 줄이기 위해, 제한된 깊이 보상 모듈이 전체 온라인 재계획을 가정하지 않고 로컬 깊이 방향 오류를 수정합니다. 실제 로봇 실험은 GenVid2Robot이 희소 미터법 기하학, 그립 제약, 로봇 실행 가능성 검사 및 제한된 실행 피드백으로 시각적 움직임 사전 정보를 기반으로 하여 생성된 비디오 유도 조작의 신뢰성을 향상시킴을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09191v1
+
+## 개요
+비디오 생성은 로봇 조작을 위한 시각적 운동 사전을 제공할 수 있지만, 시각적 합리성이 물리적 실행 가능성을 보장하지는 않습니다. 비디오에는 측정 기하학, 파지 접지, 로봇 운동학적 실현 가능성 및 실행 중 피드백이 부족하기 때문입니다. GenVid2Robot은 실제 첫 프레임 RGB-D 관측에서 작업 관련 의미론적 앵커를 샘플링하고, 생성된 비디오 후보 프레임에서 이러한 앵커를 추적하며, 희소 상대 SE(3) 모델을 사용하여 2D 운동이 첫 프레임 RGB-D 앵커로 설명될 수 있는지 검증함으로써 기하학적으로 일관된 운동을 선별합니다. 수용된 상대 운동은 이후 마스크 제약 파지로 선택된 실제 파지 시점의 TCP 포즈에 적용되어, 시각적 운동 사전 및 물리적 파지 구성과 일치하는 파지 조건 실행 궤적을 생성합니다. RGB-D 노이즈, 캘리브레이션 잔차 및 접촉 변위로 인한 실행 편차를 줄이기 위해, 프레임워크는 완전한 온라인 재계획에 의존하지 않고 국소 깊이 방향 오류를 수정하는 유계 깊이 보상 모듈을 도입합니다.
+
+## 핵심 내용
+### 방법 개요
+GenVid2Robot의 핵심 아이디어는 생성된 비디오를 직접적인 시연이 아닌 불확실한 시각적 운동 가설로 간주하는 것입니다. 그 흐름은 다음과 같습니다:
+- **의미론적 앵커 샘플링**: 실제 첫 프레임 RGB-D 관측에서 작업 지시에 따라 작업 관련 의미론적 앵커(예: 객체 키포인트)를 샘플링합니다.
+- **앵커 추적 및 기하학적 검증**: 생성된 비디오 후보 프레임에서 이러한 앵커를 추적하고, 희소 상대 SE(3) 모델을 통해 2D 운동이 첫 프레임 RGB-D 앵커와 기하학적으로 일관되는지 검증합니다. 검증을 통과한 운동만 로봇으로 전송됩니다.
+- **파지 조건 궤적 생성**: 수용된 상대 운동은 마스크 제약 파지로 선택된 실제 파지 시점의 TCP 포즈에 적용되어, 궤적이 시각적 운동 사전과 물리적 파지 구성 모두에 부합하도록 보장합니다.
+
+### 핵심 모듈
+- **마스크 제약 파지**: 객체 마스크를 사용하여 파지 지점 선택을 제약하고, 파지 포즈가 객체 기하학과 정렬되도록 보장합니다.
+- **유계 깊이 보상 모듈**: RGB-D 노이즈, 캘리브레이션 잔차 및 접촉 변위로 인한 깊이 방향 오류를 대상으로, 이 모듈은 완전한 온라인 재계획 없이 국소 범위에서 깊이 오류를 수정합니다.
+
+### 실험 설정 및 결과
+- **실험 플랫폼**: 다양한 객체와 작업 지시를 포함하는 실제 로봇 조작 시나리오.
+- **핵심 지표**: GenVid2Robot은 시각적 운동 사전을 희소 측정 기하학, 파지 제약, 로봇 실현 가능성 검사 및 유계 실행 피드백과 결합하여, 생성 비디오 기반 조작의 성공률과 신뢰성을 크게 향상시켰습니다. 실험에 따르면 직접 궤적 재생은 기하학적 일관성 부족으로 실패율이 높은 반면, GenVid2Robot의 기하학적 검증 및 보상 메커니즘은 실행 편차를 효과적으로 줄였습니다.

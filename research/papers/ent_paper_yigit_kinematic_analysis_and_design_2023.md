@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.12499v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.12499v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (594 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,14 +75,47 @@ theoretical_depth:
 - 通过 CAD 模型展示了 (6+3) 自由度机器人的初步设计，包括基座、支腿与可配置平台的装配关系。
 - 该设计为后续样机制造与实验验证提供了基础。
 
-## Overview
-A novel kinematically redundant (6+3)-DoF parallel robot is presented in this paper. Three identical 3-DoF RU/2-RUS legs are attached to a configurable platform through spherical joints. With the selected leg mechanism, the motors are mounted at the base, reducing the reflected inertia. The robot is intended to be actuated with direct-drive motors in order to perform intuitive physical human-robot interaction. The design of the leg mechanism maximizes the workspace in which the end-effector of the leg can have a 2g acceleration in all directions. All singularities of the leg mechanism are identified under a simplifying assumption. A CAD model of the (6+3)-DoF robot is presented in order to illustrate the preliminary design of the robot.
-
-## 개요
-본 논문에서는 새로운 운동학적 중복성을 가진 (6+3)-자유도 병렬 로봇을 제시한다. 세 개의 동일한 3-자유도 RU/2-RUS 다리가 구형 조인트를 통해 구성 가능한 플랫폼에 부착된다. 선택된 다리 메커니즘을 통해 모터는 베이스에 장착되어 반사 관성을 줄인다. 이 로봇은 직관적인 물리적 인간-로봇 상호작용을 수행하기 위해 직접 구동 모터로 작동될 예정이다. 다리 메커니즘의 설계는 다리 엔드 이펙터가 모든 방향에서 2g 가속도를 가질 수 있는 작업 공간을 최대화한다. 단순화된 가정 하에 다리 메커니즘의 모든 특이점이 식별된다. 로봇의 예비 설계를 설명하기 위해 (6+3)-자유도 로봇의 CAD 모델이 제시된다.
-
-## 핵심 내용
-본 논문에서는 새로운 운동학적 중복성을 가진 (6+3)-자유도 병렬 로봇을 제시한다. 세 개의 동일한 3-자유도 RU/2-RUS 다리가 구형 조인트를 통해 구성 가능한 플랫폼에 부착된다. 선택된 다리 메커니즘을 통해 모터는 베이스에 장착되어 반사 관성을 줄인다. 이 로봇은 직관적인 물리적 인간-로봇 상호작용을 수행하기 위해 직접 구동 모터로 작동될 예정이다. 다리 메커니즘의 설계는 다리 엔드 이펙터가 모든 방향에서 2g 가속도를 가질 수 있는 작업 공간을 최대화한다. 단순화된 가정 하에 다리 메커니즘의 모든 특이점이 식별된다. 로봇의 예비 설계를 설명하기 위해 (6+3)-자유도 로봇의 CAD 모델이 제시된다.
-
 ## 参考
 - http://arxiv.org/abs/2304.12499v1
+
+## Overview
+This robot employs three identical 3-DoF RU/2-RUS legs, connected via spherical joints to a configurable platform. The leg mechanism mounts motors on the base to reduce reflected inertia, and direct-drive motors are planned to enable intuitive physical human-robot interaction. The design focuses on maximizing the workspace where the leg end-effector achieves 2g acceleration in all directions. Under simplified assumptions, all singularities of the leg mechanism are identified, and a preliminary design of the robot is presented through a CAD model.
+
+## Content
+### Robot Configuration and Kinematics
+- Proposes a kinematically redundant (6+3) degree-of-freedom parallel robot, composed of three identical 3-DoF RU/2-RUS legs.
+- The legs connect to a configurable platform via spherical joints, with all motors mounted on the base to reduce reflected inertia.
+- Uses screw theory to derive inverse kinematics and Jacobian matrices, laying the foundation for subsequent singularity analysis.
+
+### Singularity Analysis
+- Under simplified assumptions, all types of singularities in the leg mechanism are identified, including kinematic and constraint singularities.
+- The classification of singularities helps avoid loss of control or stiffness within the robot's workspace.
+
+### Workspace Optimization
+- The design goal is to maximize the workspace where the leg end-effector achieves 2g acceleration in all directions.
+- By optimizing the leg geometry (such as link lengths and joint layout), the robot is ensured to be suitable for backdrivable physical human-robot interaction scenarios.
+
+### Preliminary Design Validation
+- A preliminary design of the (6+3) degree-of-freedom robot is presented through a CAD model, including the assembly relationships of the base, legs, and configurable platform.
+- This design provides a foundation for subsequent prototype manufacturing and experimental validation.
+
+## 개요
+이 로봇은 세 개의 동일한 3-DoF RU/2-RUS 다리로 구성되며, 볼 조인트를 통해 구성 가능한 플랫폼에 연결됩니다. 다리 메커니즘은 모터를 베이스에 장착하여 반사 관성을 낮추며, 직관적인 물리적 인간-로봇 상호작용을 위해 직접 구동 모터를 사용할 계획입니다. 설계의 핵심은 다리 엔드 이펙터가 모든 방향에서 2g 가속도를 달성할 수 있는 작업 공간을 최대화하는 데 있습니다. 단순화된 가정 하에 다리 메커니즘의 모든 특이점을 식별했으며, CAD 모델을 통해 로봇의 초기 설계를 제시했습니다.
+
+## 핵심 내용
+### 로봇 구성 및 운동학
+- 운동학적 중복성(6+3) 자유도를 가진 병렬 로봇을 제안하며, 세 개의 동일한 3-DoF RU/2-RUS 다리로 구성됩니다.
+- 다리는 볼 조인트를 통해 구성 가능한 플랫폼에 연결되며, 모든 모터는 베이스에 장착되어 반사 관성을 낮춥니다.
+- 스크류 이론을 사용하여 역운동학과 자코비안 행렬을 유도하며, 이는 이후 특이점 분석의 기초를 제공합니다.
+
+### 특이점 분석
+- 단순화된 가정 하에 다리 메커니즘의 모든 특이점 유형을 식별했으며, 운동학적 특이점과 구속 특이점을 포함합니다.
+- 특이점 분류는 로봇이 작업 공간 내에서 제어 불능이나 강성 손실을 겪지 않도록 하는 데 도움이 됩니다.
+
+### 작업 공간 최적화
+- 설계 목표는 다리 엔드 이펙터가 모든 방향에서 2g 가속도를 달성할 수 있는 작업 공간을 최대화하는 것입니다.
+- 다리 기하학(예: 링크 길이와 관절 배치)을 최적화하여 로봇이 역구동 가능한 물리적 인간-로봇 상호작용 시나리오에 적합하도록 보장합니다.
+
+### 초기 설계 검증
+- CAD 모델을 통해 (6+3) 자유도 로봇의 초기 설계를 제시하며, 베이스, 다리 및 구성 가능한 플랫폼의 조립 관계를 포함합니다.
+- 이 설계는 이후 프로토타입 제작 및 실험 검증의 기초를 제공합니다.

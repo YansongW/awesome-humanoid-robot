@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.23189v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.23189v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (930 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,29 @@ TrackVLA通过端到端学习目标识别与轨迹规划的协同关系，解决
 ## Overview
 Embodied visual tracking is a fundamental skill in Embodied AI, enabling an agent to follow a specific target in dynamic environments using only egocentric vision. This task is inherently challenging as it requires both accurate target recognition and effective trajectory planning under conditions of severe occlusion and high scene dynamics. Existing approaches typically address this challenge through a modular separation of recognition and planning. In this work, we propose TrackVLA, a Vision-Language-Action (VLA) model that learns the synergy between object recognition and trajectory planning. Leveraging a shared LLM backbone, we employ a language modeling head for recognition and an anchor-based diffusion model for trajectory planning. To train TrackVLA, we construct an Embodied Visual Tracking Benchmark (EVT-Bench) and collect diverse difficulty levels of recognition samples, resulting in a dataset of 1.7 million samples. Through extensive experiments in both synthetic and real-world environments, TrackVLA demonstrates SOTA performance and strong generalizability. It significantly outperforms existing methods on public benchmarks in a zero-shot manner while remaining robust to high dynamics and occlusion in real-world scenarios at 10 FPS inference speed. Our project page is: https://pku-epic.github.io/TrackVLA-web.
 
-## 개요
-Embodied visual tracking은 Embodied AI의 기본 기술로, 에이전트가 동적 환경에서 단일 시점 비전만을 사용하여 특정 대상을 추적할 수 있게 합니다. 이 작업은 심각한 폐색과 높은 장면 동적성 조건에서 정확한 대상 인식과 효과적인 궤적 계획을 동시에 요구하기 때문에 본질적으로 어렵습니다. 기존 접근 방식은 일반적으로 인식과 계획을 모듈식으로 분리하여 이 문제를 해결합니다. 본 연구에서는 객체 인식과 궤적 계획 간의 시너지를 학습하는 Vision-Language-Action (VLA) 모델인 TrackVLA를 제안합니다. 공유된 LLM 백본을 활용하여 인식을 위한 언어 모델링 헤드와 궤적 계획을 위한 앵커 기반 확산 모델을 사용합니다. TrackVLA를 훈련하기 위해 Embodied Visual Tracking Benchmark (EVT-Bench)를 구축하고 다양한 난이도의 인식 샘플을 수집하여 170만 개의 샘플로 구성된 데이터셋을 만들었습니다. 합성 환경과 실제 환경 모두에서의 광범위한 실험을 통해 TrackVLA는 최고 성능과 강력한 일반화 능력을 입증했습니다. 이는 공개 벤치마크에서 제로샷 방식으로 기존 방법을 크게 능가하며, 실제 시나리오에서 10FPS 추론 속도로 높은 동적성과 폐색에 강건함을 유지합니다. 프로젝트 페이지는 다음과 같습니다: https://pku-epic.github.io/TrackVLA-web.
-
-## 핵심 내용
-Embodied visual tracking은 Embodied AI의 기본 기술로, 에이전트가 동적 환경에서 단일 시점 비전만을 사용하여 특정 대상을 추적할 수 있게 합니다. 이 작업은 심각한 폐색과 높은 장면 동적성 조건에서 정확한 대상 인식과 효과적인 궤적 계획을 동시에 요구하기 때문에 본질적으로 어렵습니다. 기존 접근 방식은 일반적으로 인식과 계획을 모듈식으로 분리하여 이 문제를 해결합니다. 본 연구에서는 객체 인식과 궤적 계획 간의 시너지를 학습하는 Vision-Language-Action (VLA) 모델인 TrackVLA를 제안합니다. 공유된 LLM 백본을 활용하여 인식을 위한 언어 모델링 헤드와 궤적 계획을 위한 앵커 기반 확산 모델을 사용합니다. TrackVLA를 훈련하기 위해 Embodied Visual Tracking Benchmark (EVT-Bench)를 구축하고 다양한 난이도의 인식 샘플을 수집하여 170만 개의 샘플로 구성된 데이터셋을 만들었습니다. 합성 환경과 실제 환경 모두에서의 광범위한 실험을 통해 TrackVLA는 최고 성능과 강력한 일반화 능력을 입증했습니다. 이는 공개 벤치마크에서 제로샷 방식으로 기존 방법을 크게 능가하며, 실제 시나리오에서 10FPS 추론 속도로 높은 동적성과 폐색에 강건함을 유지합니다. 프로젝트 페이지는 다음과 같습니다: https://pku-epic.github.io/TrackVLA-web.
-
 ## 参考
 - http://arxiv.org/abs/2505.23189v1
+
+## 개요
+구체적 시각 추적은 에이전트가 오직 일인칭 시각만을 사용하여 동적 환경에서 특정 대상을 지속적으로 추적해야 하며, 심각한 폐색과 고동적 장면이라는 이중 도전에 직면합니다. 기존 방법은 일반적으로 인식과 계획 모듈을 분리하여 처리하지만, TrackVLA는 공유 대형 언어 모델 백본 네트워크를 통해 언어 모델링 헤드(인식용)와 앵커 기반 확산 모델(궤적 계획용)을 혁신적으로 융합합니다. 연구팀은 구체적 시각 추적 벤치마크 EVT-Bench를 구축하고, 다양한 난이도의 인식 샘플을 수집하여 170만 개 샘플 데이터셋을 형성했습니다. 합성 환경과 실제 세계 실험에서 TrackVLA는 강력한 일반화 능력을 보여주며, 제로샷 조건에서 기존 공개 벤치마크 방법을 크게 능가하고, 고동적 및 폐색 실제 시나리오에서 10 FPS의 견고한 추론 속도를 유지합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 설계**: 공유 LLM 백본 네트워크를 채택하여 대상 인식과 궤적 계획이라는 두 하위 작업을 동시에 처리
+- **인식 모듈**: 언어 모델링 헤드를 사용하여 대상 인식을 수행하고, 시각적 특징을 언어 설명으로 변환
+- **계획 모듈**: 앵커 기반 확산 모델이 궤적을 생성하며, 조건부 확산 과정을 통해 로봇 동작 시퀀스를 예측
+- **협력 메커니즘**: LLM 백본 네트워크가 인식과 계획 작업 간에 매개변수를 공유하여 특징 수준의 정보 상호작용 구현
+
+### 데이터셋 구축
+- **EVT-Bench 벤치마크**: 구체적 시각 추적을 위해 특별히 설계된 평가 벤치마크로, 다양한 난이도의 인식 샘플 포함
+- **데이터 규모**: 총 170만 개 샘플로, 다양한 폐색 정도, 이동 속도 및 장면 복잡성을 포괄
+- **다양성 설계**: 합성 데이터와 실제 장면 데이터를 포함하여 모델의 일반화 능력 보장
+
+### 실험 설정 및 결과
+- **제로샷 전이**: 공개 벤치마크에서 미세 조정 없이 SOTA 성능에 도달하며, 모듈식 방법을 크게 능가
+- **실제 장면 테스트**: 고동적 환경(예: 빠르게 움직이는 대상)과 심각한 폐색 조건에서 견고한 추적 유지
+- **추론 효율성**: 10 FPS 실시간 추론 속도 달성, 로봇 운영의 실제 요구 충족
+- **비교 기준선**: VLA 계열 모델(예: RT-2, Octo) 및 전통적 모듈식 방법(감지+계획)과 비교하여, TrackVLA는 추적 성공률과 궤적 평활도에서 모두 우위
+
+### 결론
+TrackVLA는 대상 인식과 궤적 계획의 협력 관계를 엔드투엔드로 학습하여, 구체적 시각 추적에서 모듈 분리로 인한 성능 병목을 해결합니다. 공유 LLM 아키텍처와 대규모 다난이도 데이터셋 설계는 로봇의 동적 환경에서 실시간 추적을 위한 효과적인 솔루션을 제공합니다. 프로젝트 페이지에서 전체 코드와 사전 훈련 모델을 제공합니다.

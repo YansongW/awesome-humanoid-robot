@@ -203,8 +203,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/amazon-astro-robot-sound.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/amazon-astro-robot-sound.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (1557 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -255,11 +256,36 @@ Character is the difference between a machine people tolerate and a product peop
 ## Content
 Character is the difference between a machine people tolerate and a product people trust. Astro used cameras and other sensors to map and navigate your home and workplace, and could proactively patrol, check up on loved ones, and transport small items using its built-in cargo bin. While there was a well-defined feature set and form factor, initially there was no character direction. In fact, even before Astro had a name, there were two main questions—was it simply Alexa on wheels, or was it a robot with its own character? The Astro team was divided. One option was to focus on Alexa, and treat the mobile robot simply as an added utility. Along with the majority of the UX team, I argued for Astro to not focus on Alexa. Our belief was that a thing that moves through your home and turns toward you with intent can never be just an appliance. People would ascribe character to it whether we wanted them to or not, and so the only question was whether we shaped that character or let it happen by accident.
 
-## 개요
-캐릭터는 사람들이 참는 기계와 신뢰하는 제품의 차이입니다. Astro는 카메라와 기타 센서를 사용하여 집과 직장을 매핑하고 탐색하며, 능동적으로 순찰하고 가족을 확인하며, 내장 화물칸을 이용해 작은 물건을 운반할 수 있었습니다.
-
-## 핵심 내용
-캐릭터는 사람들이 참는 기계와 신뢰하는 제품의 차이입니다. Astro는 카메라와 기타 센서를 사용하여 집과 직장을 매핑하고 탐색하며, 능동적으로 순찰하고 가족을 확인하며, 내장 화물칸을 이용해 작은 물건을 운반할 수 있었습니다. 명확히 정의된 기능 세트와 폼 팩터가 있었지만, 처음에는 캐릭터 방향성이 없었습니다. 사실, Astro라는 이름이 생기기 전에도 두 가지 주요 질문이 있었습니다. 즉, 단순히 바퀴 달린 Alexa인지, 아니면 고유한 캐릭터를 가진 로봇인지였습니다. Astro 팀은 의견이 나뉘었습니다. 한 가지 옵션은 Alexa에 집중하고 모바일 로봇을 단순한 추가 유틸리티로 취급하는 것이었습니다. UX 팀의 대다수와 함께 저는 Astro가 Alexa에 집중하지 않아야 한다고 주장했습니다. 우리의 믿음은 집 안을 움직이며 의도를 가지고 당신을 향해 돌아서는 물체는 결코 단순한 가전제품이 될 수 없다는 것이었습니다. 사람들은 우리가 원하든 원하지 않든 그것에 캐릭터를 부여할 것이며, 따라서 유일한 질문은 우리가 그 캐릭터를 형성할 것인지, 아니면 우연히 발생하도록 내버려 둘 것인지였습니다.
-
 ## 参考
 - https://spectrum.ieee.org/amazon-astro-robot-sound
+
+## 개요
+이 글은 Astro 팀이 처음에 "바퀴 달린 Alexa인가, 독립된 캐릭터인가"라는 논쟁에 직면했음을 지적한다. 저자는 로봇이 자율 이동과 상호작용으로 인해 사용자로부터 필연적으로 인격을 부여받게 되므로, 그 역할을 능동적으로 설계해야 한다고 주장한다. 결국 Astro는 비언어적 소리, 동작, 표정을 주축으로 한 독립 캐릭터로塑造되었고, Alexa는 보조 음성 역할에 그쳤다. 저자는 캐릭터 설계가 감정 범위, 불확실성 표현 등의 핵심 문제를 아우르는 통일된 설계 시스템으로 다뤄져야 하며, 스토리와 사운드가 후반에 덧붙이는 장식이 아니라 캐릭터 구축의 선행 파이프라인이 되어야 한다고 상세히 설명한다.
+
+## 핵심 내용
+### 핵심 모순: Alexa인가, 독립 캐릭터인가?
+- Astro 팀은 처음에 두 파로 갈렸다: 한쪽은 이를 Alexa의 이동형 매개체로 보았고, 다른 쪽(저자 포함)은 독립적인 개성을 가진 로봇이어야 한다고 주장했다.
+- 저자는 가정에서 자율적으로 움직이고 의도를 가지고 사용자를 향하는 기기가 결코 일반 가전으로 여겨질 수 없다고 본다. 사용자는 자연스럽게 여기에 인격을 부여하므로, 캐릭터를 능동적으로 설계하는 것이 유일한 선택이다.
+- 사용자 테스트는 결국 독립 캐릭터 방안을 지지했다: 사용자는 Astro를 Alexa가 아닌 독립 캐릭터로 인식했으며, Alexa를 주축으로 하면 이상하고 불안한 느낌을 준다는 결과가 나왔다.
+
+### 캐릭터는 설계 시스템이다
+- Astro의 캐릭터를 개발하려면 전례 없는 일련의 설계 질문에 답해야 한다: 기준 상태의 감정 범위는 무엇인가? 불확실성을 표현하면서도 신뢰를 훼손하지 않는 방법은 무엇인가? 표현성과 짜증스러움의 경계는 어디인가?
+- Astro의 감정 범위는 의도적으로 작게 설계되었다: 과도한 슬픔이나 분노를 보이지 않으며, "슬픔"을 표현할 때도 빠르게 긍정적인 음으로 마무리해 전반적으로 밝은 톤을 유지한다.
+- 캐릭터는 모든 설계 틈새에서 "새어 나온다". 어떤 불일치(예: 애니메이션 타이밍 오류, 기술적으로는 맞지만 맥락상 어색한 응답)도 사용자가 명확히 설명하지 못하더라도 인지하게 된다.
+
+### 스토리와 사운드 우선
+- Astro는 대사가 없지만, 소리, 음조, 리듬으로 구성된 "어휘 체계"를 갖추고 이를 음성 출력으로 사용한다. 이 어휘가 캐릭터 개성의 주도적 출력이 되며, 동작과 표정은 이를 중심으로 구축된다.
+- "깨우기 시퀀스"를 예로 들면: 이 시퀀스는 먼저 스토리로 작성되었다—Astro가 새 집에서 처음 깨어나 가족의 일원이 되고 싶어 하므로, 먼저 자신의 상태를 점검한 후 자기소개를 한다. 사운드는 스토리에 은유적인 "목소리"를 부여하고(흥분된 음조, 바퀴 점검의 리듬, 새 가족을 바라볼 때의 밝은 멜로디), 애니메이션 팀은 사운드가 만든 감정적 아크를 바탕으로 동작과 표정을 설계한다.
+- 이러한 "사운드→동작" 프로세스(애니메이터가 녹음 트랙을 따르는 방식과 유사)는 깨우기 시퀀스를 초기 사용자 테스트에서 가장 많이 논의된 순간으로 만들었고, "생명감이 있다"고 묘사되었다.
+
+### 맥락화된 캐릭터: AI가 가져온 변화
+- 가장 매력적인 캐릭터는 고정된 성격으로 정의되지 않고, 환경과 사람에 어떻게 반응하는지로 드러난다. 저자는 이를 "맥락화된 캐릭터"라고 부른다.
+- Astro의 사운드 시스템은 환경 맥락(예: 다른 방, 다른 시간)에 따라 적응할 수 있지만, 각 상태는 여전히 수동으로 사전 설정되고 설계된 응답이 필요하다. 가정 환경의 무작위성은 예측 범위를 훨씬 넘어서므로, 시스템에는 항상 준비되지 않은 "긴 꼬리" 순간이 존재한다.
+- 사용자가 제품을 "똑똑하다"와 "의식이 있다"로 구분하는 차이는: 똑똑함은 능력이고, 의식은 맥락이며, 현장감은 캐릭터다. AI 기반 적응은 수동 예측에 의존할 필요가 없다. 사용자의 리듬, 선호도, 감정적 맥락을 학습하여 캐릭터가 맥락에 반응할 뿐만 아니라 맥락 속에서 성장하게 한다.
+
+### 업계의 공백과 제품 리더를 위한 제언
+- 현재 구현된 AI 제품의 "캐릭터와 영혼"은 거의 항상 사후에 고려되며, 그 결과 캐릭터는 기본값으로 정의된다—즉, 수많은 사람들이 각자 만든 작은 결정들의 집합이다. 움직이는 로봇은 필연적으로 인격이 투영되므로, 아무도 설계하지 않으면 기술적으로 뛰어나지만 생명력 없는 제품이 된다.
+- 저자는 제품 리더에게 세 가지 제안을 한다:
+  1.  **상호작용을 정의하기 전에 캐릭터를 먼저 정의하라**: 모든 설계 난제에 일관되게 답할 수 있는, 충분한 감정적 논리를 가진 방어 가능한 캐릭터가 필요하다.
+  2.  **스토리와 사운드를 생산 파이프라인이 아닌 캐릭터 파이프라인에 포함하라**: 스토리와 사운드가 캐릭터 정의와 동시에 개발되어야 동작, 표정, 상호작용 로직의 근거를 제공할 수 있다. 이를 위해서는 다른 협업 방식과 인재가 필요하다.
+  3.  **일관성만을 위한 설계가 아닌 적응을 위한 설계를 하라**: 일관된 캐릭터는 기본이지만, 진정으로 중요한 제품은 사용을 통해 계속 깊어지는 제품이다. 이러한 적응을 지원하는 인프라는 점점 더 접근하기 쉬워졌지만, 이를 활용하는 설계 사고는 여전히 드물다.

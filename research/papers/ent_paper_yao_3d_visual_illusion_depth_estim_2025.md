@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.13061v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.13061v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (949 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,29 @@ theoretical_depth:
 ## Overview
 3D visual illusion is a perceptual phenomenon where a two-dimensional plane is manipulated to simulate three-dimensional spatial relationships, making a flat artwork or object look three-dimensional in the human visual system. In this paper, we reveal that the machine visual system is also seriously fooled by 3D visual illusions, including monocular and binocular depth estimation. In order to explore and analyze the impact of 3D visual illusion on depth estimation, we collect a large dataset containing almost 3k scenes and 200k images to train and evaluate SOTA monocular and binocular depth estimation methods. We also propose a 3D visual illusion depth estimation framework that uses common sense from the vision language model to adaptively fuse depth from binocular disparity and monocular depth. Experiments show that SOTA monocular, binocular, and multi-view depth estimation approaches are all fooled by various 3D visual illusions, while our method achieves SOTA performance.
 
-## 개요
-3D 시각적 착시는 2차원 평면을 조작하여 3차원 공간 관계를 시뮬레이션함으로써 평면적인 예술 작품이나 물체가 인간의 시각 시스템에서 입체적으로 보이게 하는 지각 현상입니다. 본 논문에서는 단안 및 양안 깊이 추정을 포함한 기계 시각 시스템도 3D 시각적 착시에 심각하게 속는다는 사실을 밝힙니다. 3D 시각적 착시가 깊이 추정에 미치는 영향을 탐구하고 분석하기 위해, 우리는 약 3,000개의 장면과 200,000개의 이미지를 포함한 대규모 데이터셋을 수집하여 최첨단 단안 및 양안 깊이 추정 방법을 훈련하고 평가합니다. 또한, 시각 언어 모델의 상식을 활용하여 양안 시차와 단안 깊이로부터 깊이를 적응적으로 융합하는 3D 시각적 착시 깊이 추정 프레임워크를 제안합니다. 실험 결과, 최첨단 단안, 양안 및 다중 시점 깊이 추정 접근법이 다양한 3D 시각적 착시에 모두 속는 반면, 우리의 방법은 최첨단 성능을 달성함을 보여줍니다.
-
-## 핵심 내용
-3D 시각적 착시는 2차원 평면을 조작하여 3차원 공간 관계를 시뮬레이션함으로써 평면적인 예술 작품이나 물체가 인간의 시각 시스템에서 입체적으로 보이게 하는 지각 현상입니다. 본 논문에서는 단안 및 양안 깊이 추정을 포함한 기계 시각 시스템도 3D 시각적 착시에 심각하게 속는다는 사실을 밝힙니다. 3D 시각적 착시가 깊이 추정에 미치는 영향을 탐구하고 분석하기 위해, 우리는 약 3,000개의 장면과 200,000개의 이미지를 포함한 대규모 데이터셋을 수집하여 최첨단 단안 및 양안 깊이 추정 방법을 훈련하고 평가합니다. 또한, 시각 언어 모델의 상식을 활용하여 양안 시차와 단안 깊이로부터 깊이를 적응적으로 융합하는 3D 시각적 착시 깊이 추정 프레임워크를 제안합니다. 실험 결과, 최첨단 단안, 양안 및 다중 시점 깊이 추정 접근법이 다양한 3D 시각적 착시에 모두 속는 반면, 우리의 방법은 최첨단 성능을 달성함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.13061v4
+
+## 개요
+3D 시각 착시는 2차원 평면을 조작하여 3차원 공간 관계를 모방하는 지각 현상으로, 평면 예술 작품이나 사물이 인간의 시각 시스템에서 입체감을 나타내게 할 수 있습니다. 본 논문은 기계 시각 시스템도 이러한 착시에 심각하게 속을 수 있음을 최초로 발견했으며, 단안 및 양안 깊이 추정을 모두 포함합니다. 이 현상을 체계적으로 연구하기 위해 저자는 약 3000개의 장면과 20만 장의 이미지를 포함하는 대규모 데이터셋을 수집하여 기존 최적 방법을 훈련하고 평가하는 데 사용했습니다. 이를 바탕으로 시각-언어 모델의 상식 추론을 활용한 깊이 추정 프레임워크를 제안하며, 양안 시차와 단안 깊이 단서를 적응적으로 융합할 수 있습니다. 실험 결과, 다양한 주류 깊이 추정 방법이 여러 3D 시각 착시의 영향을 받으며, 제안된 방법은 모든 테스트에서 최적 성능을 달성했습니다.
+
+## 핵심 내용
+### 핵심 발견
+- 3D 시각 착시(평면 조작을 통한 3차원 공간 모방)는 인간의 시각 시스템을 속일 뿐만 아니라 단안, 양안 및 다중 뷰 깊이 추정 모델을 포함한 기계 시각 시스템도 심각하게 오도합니다.
+- 기존 SOTA 방법은 다양한 3D 시각 착시 시나리오에서 현저한 깊이 추정 오류를 보이며, 현재 모델이 착시 장면에 대한 견고성이 부족함을 나타냅니다.
+
+### 데이터셋 구축
+- **3D-Visual-Illusion 데이터셋**: 약 3000개의 장면, 20만 장의 이미지를 포함하며, 3D 시각 착시 하에서 깊이 추정 모델의 성능을 훈련하고 평가하는 데 특화되어 있습니다.
+- 데이터셋은 다양한 착시 유형을 포괄하여 평가의 포괄성을 보장합니다.
+
+### 방법 프레임워크
+- **VLM 기반 단안-스테레오 융합 프레임워크**: 시각-언어 모델(VLM)의 상식 추론 능력을 활용하여 양안 시차와 단안 깊이에서 오는 단서를 적응적으로 융합합니다.
+- 핵심 아이디어: VLM을 통해 장면의 착시 특징을 이해하고, 서로 다른 깊이 단서의 가중치를 동적으로 조정하여 단일 단서에 의한 오도를 방지합니다.
+
+### 실험 설정 및 결과
+- **평가 기준**: 자체 구축한 3D-Visual-Illusion 데이터셋과 공개된 Booster 투명 표면 벤치마크에서 테스트를 수행했습니다.
+- **비교 방법**: SOTA 단안(예: MiDaS, DPT), 양안(예: PSMNet, RAFT-Stereo) 및 다중 뷰(예: MVSNet) 깊이 추정 모델을 포함합니다.
+- **주요 수치**:
+  - 모든 비교 방법은 3D 시각 착시 시나리오에서 깊이 오류(예: RMSE, AbsRel)가 일반 시나리오보다 현저히 높았습니다.
+  - 제안된 방법은 3D-Visual-Illusion 데이터셋에서 SOTA 결과를 달성했으며, Booster 투명 표면 벤치마크에서도 선두를 유지했습니다.
+- **결론**: VLM 기반 적응형 융합 전략은 3D 시각 착시가 깊이 추정에 미치는 간섭을 효과적으로 완화하며, 복잡한 시각 작업에서 상식 추론의 가치를 검증했습니다.

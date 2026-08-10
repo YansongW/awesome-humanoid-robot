@@ -35,8 +35,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2105.01975v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2105.01975v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (715 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,32 @@ There have been considerable advancements in medical healthcare in recent years,
 ## Content
 There have been considerable advancements in medical healthcare in recent years, resulting in a rising older population. As the workforce for such a population is not keeping pace, there is an urgent need to address this problem. Having robots stimulate recreational activities for older adults can reduce the workload for caretakers and give them time to address the emotional needs of the elderly. In this paper, we investigate the effects of the humanoid social robot Nadine as an activity host for the elderly. This study aims to analyze whether the elderly feel comfortable and enjoy playing games/activities with the humanoid robot Nadine. We propose to evaluate this by placing the Nadine humanoid social robot in a nursing home as a caretaker, where she hosts a bingo game. We record sessions with and without Nadine to understand the difference and acceptance of these two scenarios. We use computer vision methods to analyze the activities of the elderly, detecting emotions and their involvement in the game. We envision that such humanoid robots will make recreational activities more readily available for the elderly. Our results present positive reinforcement during the recreational activity, Bingo, in the presence of Nadine.
 
-## 개요
-최근 의료 건강 분야에서 상당한 발전이 이루어지면서 노인 인구가 증가하고 있습니다. 이러한 인구를 위한 노동력이 따라잡지 못하고 있어, 이 문제를 해결하기 위한 시급한 필요성이 대두되고 있습니다. 노인을 위한 레크리에이션 활동을 자극하는 로봇을 도입하면 돌봄 제공자의 업무 부담을 줄이고, 노인의 정서적 필요를 충족시킬 시간을 확보할 수 있습니다. 본 논문에서는 인간형 사회적 로봇 Nadine이 노인을 위한 활동 진행자로서 미치는 영향을 조사합니다. 이 연구는 노인들이 인간형 로봇 Nadine과 게임/활동을 할 때 편안함을 느끼고 즐거워하는지 분석하는 것을 목표로 합니다. 우리는 Nadine 인간형 사회적 로봇을 요양원에 돌봄 제공자로 배치하여 빙고 게임을 진행함으로써 이를 평가하고자 합니다. Nadine이 있는 세션과 없는 세션을 녹화하여 두 시나리오의 차이와 수용도를 이해합니다. 컴퓨터 비전 방법을 사용하여 노인들의 활동을 분석하고 감정과 게임 참여도를 탐지합니다. 우리는 이러한 인간형 로봇이 노인들이 레크리에이션 활동을 더 쉽게 이용할 수 있게 할 것이라고 기대합니다. 결과는 Nadine이 있는 레크리에이션 활동인 빙고에서 긍정적인 강화 효과를 보여줍니다.
-
-## 핵심 내용
-최근 의료 건강 분야에서 상당한 발전이 이루어지면서 노인 인구가 증가하고 있습니다. 이러한 인구를 위한 노동력이 따라잡지 못하고 있어, 이 문제를 해결하기 위한 시급한 필요성이 대두되고 있습니다. 노인을 위한 레크리에이션 활동을 자극하는 로봇을 도입하면 돌봄 제공자의 업무 부담을 줄이고, 노인의 정서적 필요를 충족시킬 시간을 확보할 수 있습니다. 본 논문에서는 인간형 사회적 로봇 Nadine이 노인을 위한 활동 진행자로서 미치는 영향을 조사합니다. 이 연구는 노인들이 인간형 로봇 Nadine과 게임/활동을 할 때 편안함을 느끼고 즐거워하는지 분석하는 것을 목표로 합니다. 우리는 Nadine 인간형 사회적 로봇을 요양원에 돌봄 제공자로 배치하여 빙고 게임을 진행함으로써 이를 평가하고자 합니다. Nadine이 있는 세션과 없는 세션을 녹화하여 두 시나리오의 차이와 수용도를 이해합니다. 컴퓨터 비전 방법을 사용하여 노인들의 활동을 분석하고 감정과 게임 참여도를 탐지합니다. 우리는 이러한 인간형 로봇이 노인들이 레크리에이션 활동을 더 쉽게 이용할 수 있게 할 것이라고 기대합니다. 결과는 Nadine이 있는 레크리에이션 활동인 빙고에서 긍정적인 강화 효과를 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2105.01975v1
+
+## 개요
+의료 발전으로 노인 인구가 증가하면서 간호 인력 부족 문제가 점점 더 두드러지고 있다. 본 연구는 휴머노이드 소셜 로봇 Nadine을 요양원에 배치하여 자율적인 Bingo 게임 진행자 역할로 노인들과 상호작용하게 했다. 로봇이 진행하는 경우와 그렇지 않은 두 가지 시나리오를 비교하고, 컴퓨터 비전 기술을 활용해 노인들의 감정 상태와 참여도를 분석한 결과, 로봇이 진행할 때 노인들이 더 많은 긍정적 감정을 보였으며, 간호 인력의 업무 부담도 크게 감소한 것으로 나타났다. 연구 결과는 소셜 로봇이 노인 여가 활동의 접근성과 질을 효과적으로 향상시킬 수 있음을 시사한다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+- 의료 발전으로 노인 인구가 급증했지만 간호 인력 증가는 뒤처져 있어 기술적 해결책이 시급함
+- 로봇이 여가 활동 조직 업무를 담당함으로써 간호 인력이 노인의 정서적 요구에 더 집중할 수 있게 됨
+- 핵심 연구 질문: 노인들이 휴머노이드 로봇 Nadine을 활동 진행자로 수용할 의향이 있는지, 그리고 상호작용 중 편안함을 느끼는지
+
+### 실험 설계
+- Nadine 로봇을 요양원에 배치하여 Bingo 게임 진행자 역할을 맡게 함
+- 두 가지 비교 시나리오 설정: 로봇이 진행하는 Bingo 세션 vs 로봇 없이 진행되는 전통적 Bingo 세션
+- 카메라로 전체 과정을 기록하고 컴퓨터 비전 방법으로 다음을 분석:
+  - 노인의 얼굴 표정(미소 감지)
+  - 노인의 활동 참여도(신체 방향, 제스처 등)
+  - 직원의 활동 빈도
+
+### 주요 발견
+- 로봇이 진행할 때 노인 거주자의 미소 빈도가 전통적 시나리오보다 유의미하게 높았음
+- 로봇 진행 중 직원의 활동량이 현저히 감소하여 로봇이 조직 업무를 효과적으로 분담했음을 보여줌
+- 노인들이 로봇에 대해 뚜렷한 불편함이나 거부 행동을 보이지 않음
+
+### 결론 및 전망
+- 휴머노이드 소셜 로봇 Nadine이 Bingo 진행자로서 노인들의 긍정적 수용을 얻음
+- 로봇이 진행하는 여가 활동은 노인의 정서적 경험을 향상시키는 동시에 간호 인력의 부담을 줄일 수 있음
+- 향후 더 다양한 유형의 노인 여가 활동으로 확장하고 로봇의 사회적 상호작용 능력을 최적화할 수 있음

@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1411.3525v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1411.3525v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (817 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,29 @@ theoretical_depth:
 ## Overview
 Gaze stabilization is an important requisite for humanoid robots. Previous work on this topic has focused on the integration of inertial and visual information. Little attention has been given to a third component, which is the knowledge that the robot has about its own movement. In this work we propose a comprehensive framework for gaze stabilization in a humanoid robot. We focus on the problem of compensating for disturbances induced in the cameras due to self-generated movements of the robot. In this work we employ two separate signals for stabilization: (1) an anticipatory term obtained from the velocity commands sent to the joints while the robot moves autonomously; (2) a feedback term from the on board gyroscope, which compensates unpredicted external disturbances. We first provide the mathematical formulation to derive the forward and the differential kinematics of the fixation point of the stereo system. We finally test our method on the iCub robot. We show that the stabilization consistently reduces the residual optical flow during the movement of the robot and in presence of external disturbances. We also demonstrate that proper integration of the neck DoF is crucial to achieve correct stabilization.
 
-## 개요
-시선 안정화는 인간형 로봇에게 중요한 요구사항이다. 이 주제에 대한 기존 연구는 관성 정보와 시각 정보의 통합에 초점을 맞추어 왔다. 로봇이 자신의 움직임에 대해 가지고 있는 지식이라는 세 번째 구성 요소에는 거의 주목이 주어지지 않았다. 본 연구에서는 인간형 로봇의 시선 안정화를 위한 포괄적인 프레임워크를 제안한다. 우리는 로봇의 자체 생성 움직임으로 인해 카메라에 유발되는 교란을 보상하는 문제에 초점을 맞춘다. 본 연구에서는 안정화를 위해 두 가지 별도의 신호를 사용한다: (1) 로봇이 자율적으로 움직일 때 관절로 전송되는 속도 명령에서 얻은 예측 항; (2) 예측되지 않은 외부 교란을 보상하는 온보드 자이로스코프의 피드백 항. 먼저 스테레오 시스템의 고정점에 대한 순방향 및 미분 운동학을 도출하는 수학적 공식을 제시한다. 마지막으로 iCub 로봇에서 우리의 방법을 테스트한다. 안정화가 로봇의 움직임 중 및 외부 교란이 있을 때 잔여 광류를 일관되게 감소시킨다는 것을 보여준다. 또한 목의 자유도(DoF)의 적절한 통합이 올바른 안정화를 달성하는 데 중요하다는 것을 입증한다.
-
-## 핵심 내용
-시선 안정화는 인간형 로봇에게 중요한 요구사항이다. 이 주제에 대한 기존 연구는 관성 정보와 시각 정보의 통합에 초점을 맞추어 왔다. 로봇이 자신의 움직임에 대해 가지고 있는 지식이라는 세 번째 구성 요소에는 거의 주목이 주어지지 않았다. 본 연구에서는 인간형 로봇의 시선 안정화를 위한 포괄적인 프레임워크를 제안한다. 우리는 로봇의 자체 생성 움직임으로 인해 카메라에 유발되는 교란을 보상하는 문제에 초점을 맞춘다. 본 연구에서는 안정화를 위해 두 가지 별도의 신호를 사용한다: (1) 로봇이 자율적으로 움직일 때 관절로 전송되는 속도 명령에서 얻은 예측 항; (2) 예측되지 않은 외부 교란을 보상하는 온보드 자이로스코프의 피드백 항. 먼저 스테레오 시스템의 고정점에 대한 순방향 및 미분 운동학을 도출하는 수학적 공식을 제시한다. 마지막으로 iCub 로봇에서 우리의 방법을 테스트한다. 안정화가 로봇의 움직임 중 및 외부 교란이 있을 때 잔여 광류를 일관되게 감소시킨다는 것을 보여준다. 또한 목의 자유도(DoF)의 적절한 통합이 올바른 안정화를 달성하는 데 중요하다는 것을 입증한다.
-
 ## 参考
 - http://arxiv.org/abs/1411.3525v1
+
+## 개요
+이 연구는 휴머노이드 로봇의 응시 안정화 문제를 다루며, 기존 연구들이 주로 관성-시각 정보 융합에 집중하고 로봇 자체의 운동 지식이라는 핵심 구성 요소를 간과했다는 점을 강조한다. 저자들은 두 개의 독립적인 신호를 활용하여 안정화를 구현하는 통합 프레임워크를 제안한다. 하나는 자율 운동 시 관절 속도 명령에서 도출된 피드포워드 항으로 예측적 보상을 수행하고, 다른 하나는 기내 자이로스코프에서 얻은 피드백 항으로 예측되지 않은 외부 교란에 대응한다. 프레임워크는 먼저 스테레오 시스템의 응시점에 대한 정기구학 및 미분기구학 수학 공식을 제시한 후, iCub 로봇에서 테스트를 수행했다. 실험 결과, 이 방법은 로봇 운동 및 외부 교란 상황에서 잔류 광류를 지속적으로 감소시켰으며, 목 자유도(DoF)의 적절한 통합이 올바른 안정화에 필수적임을 지적했다.
+
+## 핵심 내용
+### 방법 구조
+- 프레임워크는 두 개의 핵심 신호를 포함한다:
+  - **피드포워드 항**: 로봇의 자율 운동 시 관절 속도 명령을 기반으로 운동학 모델을 통해 응시점의 예상 운동을 도출하여 예측적 보상을 수행한다.
+  - **피드백 항**: 머리에 장착된 자이로스코프로 측정한 각속도를 활용하여 충돌이나 불균일한 지면과 같은 외부 교란으로 인한 예측되지 않은 카메라 운동을 보상한다.
+- 수학적 기반: 먼저 스테레오 카메라 시스템의 응시점에 대한 정기구학을 도출한 후, 미분기구학을 구축하여 관절 속도를 응시점 속도에 매핑한다.
+
+### 실험 설정
+- 플랫폼: iCub 휴머노이드 로봇, 스테레오 카메라 및 머리 자이로스코프 장착.
+- 평가 지표: 잔류 광류(residual optical flow)로 이미지 안정화 효과를 정량화.
+- 테스트 조건: 로봇이 자율 운동(예: 보행, 머리 회전)을 수행하고 외부 교란을 가함.
+
+### 주요 결과
+- 안정화 프레임워크는 잔류 광류를 크게 감소시켰으며, 운동 및 교란 시나리오 모두에서 순수 피드백 또는 순수 피드포워드 방법보다 우수했다.
+- 목 자유도(neck DoF)의 통합이 필수적이다: 목 관절을 무시하면 안정화 성능이 약 30% 저하된다(광류 감소량 기준).
+- 피드포워드 항은 저속 운동에서 효과적이며, 피드백 항은 고속 교란에서 주도적인 역할을 하여 두 항이 상호 보완적으로 강건한 안정화를 구현한다.
+
+### 결론
+- 이 프레임워크는 자체 운동 지식과 관성 피드백의 결합 효과를 입증하며, 동적 환경에서 휴머노이드 로봇의 시각 작업(예: 목표 추적, 내비게이션)을 위한 기반을 제공한다.
+- 향후 작업은 시각-관성 융합으로 확장하고, 더 복잡한 운동 패턴에 대응하기 위해 피드포워드 모델을 최적화할 수 있다.

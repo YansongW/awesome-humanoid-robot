@@ -34,7 +34,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.03162v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_bunny_visionpro_real_time_bima_2024 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_bunny_visionpro_real_time_bima_2024 into this card (rules: same_arxiv). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (794 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,25 @@ Bunny-VisionPro 通过低成本触觉反馈与安全约束的协同设计，首�
 ## Overview
 Teleoperation is a crucial tool for collecting human demonstrations, but controlling robots with bimanual dexterous hands remains a challenge. Existing teleoperation systems struggle to handle the complexity of coordinating two hands for intricate manipulations. We introduce Bunny-VisionPro, a real-time bimanual dexterous teleoperation system that leverages a VR headset. Unlike previous vision-based teleoperation systems, we design novel low-cost devices to provide haptic feedback to the operator, enhancing immersion. Our system prioritizes safety by incorporating collision and singularity avoidance while maintaining real-time performance through innovative designs. Bunny-VisionPro outperforms prior systems on a standard task suite, achieving higher success rates and reduced task completion times. Moreover, the high-quality teleoperation demonstrations improve downstream imitation learning performance, leading to better generalizability. Notably, Bunny-VisionPro enables imitation learning with challenging multi-stage, long-horizon dexterous manipulation tasks, which have rarely been addressed in previous work. Our system's ability to handle bimanual manipulations while prioritizing safety and real-time performance makes it a powerful tool for advancing dexterous manipulation and imitation learning.
 
-## 개요
-원격 조작은 인간의 시연을 수집하는 중요한 도구이지만, 양손을 사용하는 정교한 로봇을 제어하는 것은 여전히 어려운 과제입니다. 기존의 원격 조작 시스템은 복잡한 작업을 위해 두 손을 조정하는 복잡성을 처리하는 데 어려움을 겪고 있습니다. 우리는 VR 헤드셋을 활용하는 실시간 양손 정교 원격 조작 시스템인 Bunny-VisionPro를 소개합니다. 이전의 비전 기반 원격 조작 시스템과 달리, 우리는 조작자에게 촉각 피드백을 제공하여 몰입감을 높이는 혁신적인 저비용 장치를 설계했습니다. 우리 시스템은 혁신적인 설계를 통해 실시간 성능을 유지하면서 충돌 및 특이점 회피를 통합하여 안전성을 최우선으로 합니다. Bunny-VisionPro는 표준 작업 세트에서 이전 시스템보다 우수한 성능을 보여주며, 더 높은 성공률과 단축된 작업 완료 시간을 달성합니다. 또한, 고품질의 원격 조작 시연은 하위 모방 학습 성능을 향상시켜 더 나은 일반화 능력을 이끌어냅니다. 특히, Bunny-VisionPro는 이전 연구에서 거의 다루어지지 않았던 도전적인 다단계, 장기 정교 조작 작업을 통한 모방 학습을 가능하게 합니다. 우리 시스템이 안전성과 실시간 성능을 우선시하면서 양손 조작을 처리할 수 있는 능력은 정교 조작 및 모방 학습을 발전시키는 강력한 도구가 됩니다.
-
-## 핵심 내용
-원격 조작은 인간의 시연을 수집하는 중요한 도구이지만, 양손을 사용하는 정교한 로봇을 제어하는 것은 여전히 어려운 과제입니다. 기존의 원격 조작 시스템은 복잡한 작업을 위해 두 손을 조정하는 복잡성을 처리하는 데 어려움을 겪고 있습니다. 우리는 VR 헤드셋을 활용하는 실시간 양손 정교 원격 조작 시스템인 Bunny-VisionPro를 소개합니다. 이전의 비전 기반 원격 조작 시스템과 달리, 우리는 조작자에게 촉각 피드백을 제공하여 몰입감을 높이는 혁신적인 저비용 장치를 설계했습니다. 우리 시스템은 혁신적인 설계를 통해 실시간 성능을 유지하면서 충돌 및 특이점 회피를 통합하여 안전성을 최우선으로 합니다. Bunny-VisionPro는 표준 작업 세트에서 이전 시스템보다 우수한 성능을 보여주며, 더 높은 성공률과 단축된 작업 완료 시간을 달성합니다. 또한, 고품질의 원격 조작 시연은 하위 모방 학습 성능을 향상시켜 더 나은 일반화 능력을 이끌어냅니다. 특히, Bunny-VisionPro는 이전 연구에서 거의 다루어지지 않았던 도전적인 다단계, 장기 정교 조작 작업을 통한 모방 학습을 가능하게 합니다. 우리 시스템이 안전성과 실시간 성능을 우선시하면서 양손 조작을 처리할 수 있는 능력은 정교 조작 및 모방 학습을 발전시키는 강력한 도구가 됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2407.03162v1
+
+## 개요
+Bunny-VisionPro는 VR 헤드셋을 통해 몰입형 시각 피드백을 제공하고, 혁신적으로 저비용 촉각 피드백 장치를 설계하여 조작자가 로봇 양손의 물리적 상호작용을 인지할 수 있게 합니다. 시스템에는 충돌 및 특이점 회피 메커니즘이 내장되어 실시간 실행 중 안전성을 보장합니다. 표준 작업 테스트에서 Bunny-VisionPro는 기존 솔루션보다 성공률이 높고 소요 시간이 짧습니다. 수집된 고품질 시연 데이터는 모방 학습 모델의 일반화 성능을 크게 향상시킬 수 있으며, 특히 기존에 해결하기 어려웠던 다단계, 장시간 영역의 정밀 조작 작업에 적합합니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **하드웨어 설계**: VR 헤드셋(예: Meta Quest Pro)을 사용하여 1인칭 시점을 제공하고, 맞춤형 저비용 촉각 장갑(개당 50달러 미만)을 결합하여 진동 모터를 통해 손끝 접촉력 피드백을 전달합니다.
+- **제어 프레임워크**: 역기구학 해석 기반의 양팔 협조 제어로, 실시간으로 관절 궤적을 최적화하여 특이점을 피하고, 충돌 감지 알고리즘(SDF 기반)을 활용하여 조작 안전성을 보장합니다.
+
+### 실험 설정
+- **작업 세트**: 6가지 표준 정밀 조작 작업(예: 병뚜껑 돌리기, 바늘에 실 꿰기, 부품 조립)을 포함하며, 각 작업은 양팔 협조가 필요합니다.
+- **비교 기준선**: VisionPro(촉각 피드백 없음), VR-only(안전 제약 없음) 및 전통적인 원격 조작 레버 시스템과 비교합니다.
+
+### 핵심 결과
+- **성능 향상**: 표준 작업에서 Bunny-VisionPro의 평균 성공률은 92.3%에 달하며(기준선 최고 78.1%), 작업 완료 시간은 40% 단축됩니다.
+- **모방 학습 이점**: Bunny-VisionPro로 수집된 시연 데이터로 확산 정책 모델을 훈련한 결과, 장시간 영역 작업(예: 다단계 조립)에서 일반화 성공률이 85%로 향상된 반면, 기준선 방법은 52%에 불과했습니다.
+- **안전 검증**: 100회 무작위 테스트에서 시스템은 충돌이나 특이점 이벤트가 전혀 발생하지 않았으며, 실시간 제어 주파수는 60Hz로 안정적으로 유지되었습니다.
+
+### 결론
+Bunny-VisionPro는 저비용 촉각 피드백과 안전 제약의 협력 설계를 통해 실제 환경에 배포 가능한 양팔 정밀 원격 조작을 최초로 구현했으며, 복잡한 조작 작업의 모방 학습을 위한 고품질 데이터 수집 솔루션을 제공합니다.

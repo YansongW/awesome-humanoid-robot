@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/0907.0706v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/0907.0706v1. [2026-07-29] zh
+    content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko
+    body retranslated from zh deep-read (617 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,22 @@ theoretical_depth:
 ## Overview
 Asynchronous Variational Integrators (AVIs) have demonstrated long-time good energy behavior. It was previously conjectured that this remarkable property is due to their geometric nature: they preserve a discrete multisymplectic form. Previous proofs of AVIs' multisymplecticity assume that the potentials are of an elastic type, i.e., specified by volume integration over the material domain, an assumption violated by interaction-type potentials, such as penalty forces used to model mechanical contact. We extend the proof of AVI multisymplecticity, showing that AVIs remain multisymplectic under relaxed assumptions on the type of potential. The extended theory thus accommodates the simulation of mechanical contact in elastica (such as thin shells) and multibody systems (such as granular materials) with no drift of conserved quantities (energy, momentum) over long run times, using the algorithms in [3]. We present data from a numerical experiment measuring the long time energy behavior of simulated contact, comparing the method built on multisymplectic integration of interaction potentials to recently proposed methods for thin shell contact.
 
-## 개요
-비동기 변분 적분기(AVI)는 장시간 동안 우수한 에너지 거동을 보여주었습니다. 이 놀라운 특성은 기하학적 성질, 즉 이산 다중 심플렉틱 형식을 보존하기 때문이라는 추측이 있었습니다. AVI의 다중 심플렉틱성에 대한 기존 증명은 퍼텐셜이 탄성 유형, 즉 재료 영역에 대한 부피 적분으로 지정된다고 가정하는데, 이는 기계적 접촉을 모델링하는 데 사용되는 페널티 힘과 같은 상호작용 유형 퍼텐셜에 의해 위반됩니다. 우리는 AVI 다중 심플렉틱성 증명을 확장하여 퍼텐셜 유형에 대한 완화된 가정 하에서도 AVI가 다중 심플렉틱성을 유지함을 보여줍니다. 따라서 확장된 이론은 [3]의 알고리즘을 사용하여 탄성체(예: 얇은 쉘) 및 다물체 시스템(예: 입상 재료)에서 기계적 접촉 시뮬레이션을 장시간 동안 보존량(에너지, 운동량)의 드리프트 없이 수용합니다. 우리는 시뮬레이션된 접촉의 장시간 에너지 거동을 측정한 수치 실험 데이터를 제시하며, 상호작용 퍼텐셜의 다중 심플렉틱 적분에 기반한 방법을 최근 제안된 얇은 쉘 접촉 방법과 비교합니다.
-
-## 핵심 내용
-비동기 변분 적분기(AVI)는 장시간 동안 우수한 에너지 거동을 보여주었습니다. 이 놀라운 특성은 기하학적 성질, 즉 이산 다중 심플렉틱 형식을 보존하기 때문이라는 추측이 있었습니다. AVI의 다중 심플렉틱성에 대한 기존 증명은 퍼텐셜이 탄성 유형, 즉 재료 영역에 대한 부피 적분으로 지정된다고 가정하는데, 이는 기계적 접촉을 모델링하는 데 사용되는 페널티 힘과 같은 상호작용 유형 퍼텐셜에 의해 위반됩니다. 우리는 AVI 다중 심플렉틱성 증명을 확장하여 퍼텐셜 유형에 대한 완화된 가정 하에서도 AVI가 다중 심플렉틱성을 유지함을 보여줍니다. 따라서 확장된 이론은 [3]의 알고리즘을 사용하여 탄성체(예: 얇은 쉘) 및 다물체 시스템(예: 입상 재료)에서 기계적 접촉 시뮬레이션을 장시간 동안 보존량(에너지, 운동량)의 드리프트 없이 수용합니다. 우리는 시뮬레이션된 접촉의 장시간 에너지 거동을 측정한 수치 실험 데이터를 제시하며, 상호작용 퍼텐셜의 다중 심플렉틱 적분에 기반한 방법을 최근 제안된 얇은 쉘 접촉 방법과 비교합니다.
-
 ## 参考
 - http://arxiv.org/abs/0907.0706v1
+
+## 개요
+비동기 변분 적분기(AVI)는 장기적으로 우수한 에너지 거동으로 주목받아 왔으며, 이전에는 이러한 특성이 이산 다심플렉틱 형식의 기하학적 본질에서 비롯된 것으로 여겨졌습니다. 그러나 이전 증명은 퍼텐셜 에너지가 탄성 유형(재료 영역의 부피 적분으로 정의됨)이라고 가정하여, 기계적 접촉 시뮬레이션에 사용되는 페널티 힘과 같은 상호작용 퍼텐셜을 포괄할 수 없었습니다. 본 논문은 퍼텐셜 유형에 대한 가정을 완화하여, AVI가 얇은 셸, 입자 재료와 같은 다물체 시스템에서도 다심플렉틱성을 유지함을 증명하여, 보존량(에너지, 운동량)이 장기 시뮬레이션에서 드리프트 없이 유지되도록 보장합니다. 수치 실험은 상호작용 퍼텐셜 기반 다심플렉틱 적분 방법과 최근 제안된 얇은 셸 접촉 방법을 비교하여 장기 에너지 안정성을 검증합니다.
+
+## 핵심 내용
+### 핵심 기여
+- **이론적 확장**: AVI의 다심플렉틱성 증명을 탄성 퍼텐셜에서 상호작용 퍼텐셜(예: 페널티 접촉 힘)로 일반화하여, 완화된 가정 조건에서도 이산 다심플렉틱 형식이 유지됨을 증명합니다.
+- **적용 시나리오**: 탄성체(예: 얇은 셸) 및 다물체 시스템(예: 입자 재료)의 접촉 역학 시뮬레이션을 지원하며, 장기 실행 중 에너지 및 운동량 드리프트가 없음을 보장합니다.
+- **알고리즘 기반**: 문헌[3]의 알고리즘을 기반으로 구현되며, AVI 프레임워크를 수정하지 않고도 상호작용 퍼텐셜을 처리할 수 있습니다.
+
+### 실험 검증
+- **수치 실험**: 얇은 구와 강체 판의 충돌 접촉을 시뮬레이션하여 장기 에너지 거동을 측정합니다.
+- **비교 방법**: 최근 제안된 얇은 셸 접촉 방법과 비교하여, 본 방법이 에너지 안정성에서 더 우수한 성능을 보입니다.
+- **핵심 결과**: 장기 시뮬레이션에서 에너지 및 운동량 보존량에 체계적 드리프트가 없음을 확인하여, 다심플렉틱 적분의 기하학적 충실성을 검증합니다.
+
+### 결론
+본 논문은 AVI가 상호작용 퍼텐셜로 자연스럽게 확장될 수 있음을 이론적으로 증명하여, 접촉 역학을 위한 구조 보존 수치 방법을 제공하며, 특히 장기 에너지 안정성이 필요한 유연한 다물체 시스템 시뮬레이션에 적합합니다.

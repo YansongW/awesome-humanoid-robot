@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2105.06411v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2105.06411v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (587 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,30 @@ theoretical_depth:
 ## Overview
 We introduce a simple new method for visual imitation learning, which allows a novel robot manipulation task to be learned from a single human demonstration, without requiring any prior knowledge of the object being interacted with. Our method models imitation learning as a state estimation problem, with the state defined as the end-effector's pose at the point where object interaction begins, as observed from the demonstration. By then modelling a manipulation task as a coarse, approach trajectory followed by a fine, interaction trajectory, this state estimator can be trained in a self-supervised manner, by automatically moving the end-effector's camera around the object. At test time, the end-effector moves to the estimated state through a linear path, at which point the original demonstration's end-effector velocities are simply replayed. This enables convenient acquisition of a complex interaction trajectory, without actually needing to explicitly learn a policy. Real-world experiments on 8 everyday tasks show that our method can learn a diverse range of skills from a single human demonstration, whilst also yielding a stable and interpretable controller.
 
-## 개요
-우리는 단일 인간 시연으로부터 새로운 로봇 조작 작업을 학습할 수 있는 간단한 시각적 모방 학습 방법을 소개합니다. 이 방법은 상호작용 대상 객체에 대한 사전 지식 없이도 작동합니다. 우리의 방법은 모방 학습을 상태 추정 문제로 모델링하며, 상태는 시연에서 관찰된 객체 상호작용이 시작되는 지점의 엔드 이펙터(end-effector) 자세로 정의됩니다. 조작 작업을 대략적인 접근 궤적과 세밀한 상호작용 궤적으로 모델링함으로써, 이 상태 추정기는 엔드 이펙터의 카메라를 객체 주위로 자동 이동시켜 자기 지도 방식으로 훈련될 수 있습니다. 테스트 시에는 엔드 이펙터가 선형 경로를 통해 추정된 상태로 이동하며, 그 시점에서 원래 시연의 엔드 이펙터 속도가 단순히 재생됩니다. 이를 통해 명시적으로 정책을 학습할 필요 없이 복잡한 상호작용 궤적을 편리하게 획득할 수 있습니다. 8가지 일상 작업에 대한 실제 실험 결과, 우리의 방법은 단일 인간 시연으로부터 다양한 기술을 학습할 수 있을 뿐만 아니라 안정적이고 해석 가능한 제어기를 제공함을 보여줍니다.
-
-## 핵심 내용
-우리는 단일 인간 시연으로부터 새로운 로봇 조작 작업을 학습할 수 있는 간단한 시각적 모방 학습 방법을 소개합니다. 이 방법은 상호작용 대상 객체에 대한 사전 지식 없이도 작동합니다. 우리의 방법은 모방 학습을 상태 추정 문제로 모델링하며, 상태는 시연에서 관찰된 객체 상호작용이 시작되는 지점의 엔드 이펙터 자세로 정의됩니다. 조작 작업을 대략적인 접근 궤적과 세밀한 상호작용 궤적으로 모델링함으로써, 이 상태 추정기는 엔드 이펙터의 카메라를 객체 주위로 자동 이동시켜 자기 지도 방식으로 훈련될 수 있습니다. 테스트 시에는 엔드 이펙터가 선형 경로를 통해 추정된 상태로 이동하며, 그 시점에서 원래 시연의 엔드 이펙터 속도가 단순히 재생됩니다. 이를 통해 명시적으로 정책을 학습할 필요 없이 복잡한 상호작용 궤적을 편리하게 획득할 수 있습니다. 8가지 일상 작업에 대한 실제 실험 결과, 우리의 방법은 단일 인간 시연으로부터 다양한 기술을 학습할 수 있을 뿐만 아니라 안정적이고 해석 가능한 제어기를 제공함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2105.06411v2
+
+## 개요
+이 방법은 조작 작업을 대략적인 접근 궤적과 정밀한 상호작용 궤적의 두 단계로 분해합니다. 자기 지도 방식으로 상태 추정기를 훈련하여 엔드 이펙터 카메라를 물체 주위로 자동으로 이동시키며 데이터를 수집합니다. 테스트 시에는 엔드 이펙터가 선형 경로를 따라 추정된 상태로 이동한 후, 원본 시연의 엔드 이펙터 속도를 직접 재생하여 명시적인 정책 학습 없이도 복잡한 상호작용 궤적을 얻습니다. 8가지 일상 작업에 대한 실제 실험에서 이 방법이 단일 시연으로 다양한 기술을 학습하면서도 안정적이고 해석 가능한 제어기를 생성함을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 모방 학습을 상태 추정 문제로 모델링하며, 상태는 시연에서 물체 상호작용이 시작될 때의 엔드 이펙터 자세(병목 자세)로 정의됩니다.
+- 조작 작업은 두 단계로 분해됩니다:
+  - 대략적인 접근 궤적: 엔드 이펙터가 초기 위치에서 병목 자세로 이동
+  - 정밀한 상호작용 궤적: 병목 자세에서 시연된 엔드 이펙터 속도 재생
+
+### 훈련 메커니즘
+- 상태 추정기는 자기 지도 방식으로 훈련됩니다: 엔드 이펙터 카메라를 물체 주위로 자동 이동시켜 다양한 시점의 데이터를 수집
+- 상호작용 대상에 대한 사전 지식이 전혀 필요 없음
+
+### 테스트 절차
+- 엔드 이펙터가 선형 경로를 따라 추정된 병목 자세로 이동
+- 해당 자세에서 원본 시연에 기록된 엔드 이펙터 속도를 직접 재생
+- 명시적인 정책 네트워크 학습이 필요 없어 복잡한 상호작용 궤적 획득이 단순화됨
+
+### 실험 설정 및 결과
+- 8가지 일상 조작 작업에 대한 실제 실험 수행
+- 다양한 기술(예: 잡기, 밀기/당기기, 회전 등)을 성공적으로 학습
+- 제어기는 안정성과 해석 가능성을 갖춤
+- 핵심 장점: 단일 시연으로 학습 가능하며 대규모 데이터 수집이 필요 없음

@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.03734v4. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.03734v4. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (867 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,29 @@ Vision-Language-Action (VLA) models aim to predict robotic actions based on visu
 ## Content
 Vision-Language-Action (VLA) models aim to predict robotic actions based on visual observations and language instructions. Existing approaches require fine-tuning pre-trained vision-language models (VLMs) as visual and language features are independently fed into downstream policies, degrading the pre-trained semantic alignments. We propose OTTER, a novel VLA architecture that leverages these existing alignments through explicit, text-aware visual feature extraction. Instead of processing all visual features, OTTER selectively extracts and passes only task-relevant visual features that are semantically aligned with the language instruction to the policy transformer. This allows OTTER to keep the pre-trained vision-language encoders frozen. Thereby, OTTER preserves and utilizes the rich semantic understanding learned from large-scale pre-training, enabling strong zero-shot generalization capabilities. In simulation and real-world experiments, OTTER significantly outperforms existing VLA models, demonstrating strong zero-shot generalization to novel objects and environments. Video, code, checkpoints, and dataset: https://ottervla.github.io/.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 시각적 관찰과 언어 명령을 기반으로 로봇 동작을 예측하는 것을 목표로 합니다. 기존 접근 방식은 시각 및 언어 특징이 독립적으로 하위 정책에 입력되어 사전 학습된 의미적 정렬이 저하되므로, 사전 학습된 시각-언어 모델(VLM)의 미세 조정이 필요합니다. 우리는 명시적이고 텍스트 인식 시각 특징 추출을 통해 이러한 기존 정렬을 활용하는 새로운 VLA 아키텍처인 OTTER를 제안합니다. OTTER는 모든 시각 특징을 처리하는 대신, 언어 명령과 의미적으로 정렬된 작업 관련 시각 특징만 선택적으로 추출하여 정책 트랜스포머에 전달합니다. 이를 통해 OTTER는 사전 학습된 시각-언어 인코더를 고정 상태로 유지할 수 있습니다. 따라서 OTTER는 대규모 사전 학습에서 얻은 풍부한 의미 이해를 보존하고 활용하여 강력한 제로샷 일반화 능력을 가능하게 합니다. 시뮬레이션 및 실제 실험에서 OTTER는 기존 VLA 모델을 크게 능가하며, 새로운 객체와 환경에 대한 강력한 제로샷 일반화를 입증합니다. 비디오, 코드, 체크포인트 및 데이터셋: https://ottervla.github.io/.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 시각적 관찰과 언어 명령을 기반으로 로봇 동작을 예측하는 것을 목표로 합니다. 기존 접근 방식은 시각 및 언어 특징이 독립적으로 하위 정책에 입력되어 사전 학습된 의미적 정렬이 저하되므로, 사전 학습된 시각-언어 모델(VLM)의 미세 조정이 필요합니다. 우리는 명시적이고 텍스트 인식 시각 특징 추출을 통해 이러한 기존 정렬을 활용하는 새로운 VLA 아키텍처인 OTTER를 제안합니다. OTTER는 모든 시각 특징을 처리하는 대신, 언어 명령과 의미적으로 정렬된 작업 관련 시각 특징만 선택적으로 추출하여 정책 트랜스포머에 전달합니다. 이를 통해 OTTER는 사전 학습된 시각-언어 인코더를 고정 상태로 유지할 수 있습니다. 따라서 OTTER는 대규모 사전 학습에서 얻은 풍부한 의미 이해를 보존하고 활용하여 강력한 제로샷 일반화 능력을 가능하게 합니다. 시뮬레이션 및 실제 실험에서 OTTER는 기존 VLA 모델을 크게 능가하며, 새로운 객체와 환경에 대한 강력한 제로샷 일반화를 입증합니다. 비디오, 코드, 체크포인트 및 데이터셋: https://ottervla.github.io/.
-
 ## 参考
 - http://arxiv.org/abs/2503.03734v4
+
+## 개요
+기존 VLA 모델은 시각 및 언어 특징을 독립적으로 처리하고 사전 훈련된 모델을 미세 조정하여 의미 정렬이 저하됩니다. OTTER는 명시적인 텍스트 인식 시각 특징 추출을 통해 언어 지시와 의미적으로 정렬된 시각 특징만 선택하여 정책 Transformer에 입력함으로써 시각-언어 인코더를 동결 상태로 유지합니다. 이 방법은 대규모 사전 훈련에서 얻은 풍부한 의미 이해를 보존하면서 미세 조정으로 인한 정렬 손실을 방지합니다. 실험 결과, OTTER는 새로운 객체와 환경에 대한 제로샷 일반화에서 뛰어난 성능을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+OTTER의 핵심 아키텍처는 세 가지 주요 구성 요소로 이루어져 있습니다:
+- **동결된 시각 인코더**: 사전 훈련된 시각 인코더(예: CLIP)를 사용하여 전역 시각 특징을 추출합니다.
+- **텍스트 인식 특징 추출 모듈**: 언어 지시의 의미 정보를 기반으로 전역 시각 특징에서 작업 관련 로컬 특징(예: 대상 객체의 위치, 모양)을 동적으로 선별합니다.
+- **정책 Transformer**: 선별된 시각 특징과 언어 지시만 수신하여 로봇 동작 시퀀스를 직접 예측합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: MetaWorld 및 Franka Kitchen 벤치마크에서 테스트하며, 12가지 조작 작업(예: 밀기, 잡기, 놓기)을 포함합니다.
+- **실제 시나리오**: Franka Emika Panda 로봇 팔을 사용하며, 8가지 보지 못한 객체(예: 다양한 모양의 컵, 도구)를 다룹니다.
+- **비교 기준선**: RT-2, Octo, RoboFlamingo 등 주요 VLA 모델을 포함합니다.
+
+### 주요 결과
+- **제로샷 일반화**: 시뮬레이션 환경에서 OTTER는 보지 못한 객체에 대한 작업 성공률이 평균 78.3%로, 최고 기준선(Octo)보다 22.1% 향상되었습니다.
+- **실제 시나리오**: 8가지 새로운 객체에 대한 평균 조작 성공률은 65.4%인 반면, RT-2는 41.2%에 불과했습니다.
+- **절제 실험**: 텍스트 인식 특징 추출을 제거하면 성공률이 34.7% 하락하여 해당 모듈의 핵심 역할을 확인했습니다.
+- **효율성**: 인코더가 동결되어 있어 OTTER의 추론 속도는 미세 조정이 필요한 모델보다 2.3배 빠릅니다.
+
+### 결론
+OTTER는 사전 훈련된 의미 정렬을 유지함으로써 제로샷 일반화에서 돌파구를 마련했으며, 로봇 조작을 위한 효율적이고 확장 가능한 패러다임을 제공합니다. 코드, 모델 및 데이터셋은 오픈소스로 공개되었습니다.

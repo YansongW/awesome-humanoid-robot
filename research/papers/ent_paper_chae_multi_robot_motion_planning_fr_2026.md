@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13090v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.13090v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (759 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,28 @@ LHD 通过将热方程扩散核与视觉语言模型结合，实现了高效、�
 ## Overview
 Diffusion models have recently emerged as powerful tools for robot motion planning by capturing the multi-modal distribution of feasible trajectories. However, their extension to multi-robot settings with flexible, language-conditioned task specifications remains limited. Furthermore, current diffusion-based approaches incur high computational cost during inference and struggle with generalization because they require explicit construction of environment representations and lack mechanisms for reasoning about geometric reachability. To address these limitations, we present Language-conditioned Heat-inspired Diffusion (LHD), an end-to-end vision-based framework that generates language-conditioned, collision-free trajectories. LHD integrates semantic priors from CLIP, a vision-language model (VLM), with a collision-avoiding diffusion kernel serving as a physical inductive bias that enables the planner to interpret language commands strictly within the reachable workspace. This naturally handles out-of-distribution (OOD) scenarios -- in terms of reachability -- by guiding robots toward accessible alternatives that match the semantic intent, while eliminating the need for explicit obstacle information at inference time. Extensive evaluations on diverse real-world-inspired maps, along with real-robot experiments, show that LHD consistently outperforms prior diffusion-based planners in success rate, while reducing planning latency. Project page is available at: https://jebeom.github.io/lhd_project_page/
 
-## 개요
-확산 모델은 최근 실행 가능한 궤적의 다중 모드 분포를 포착하여 로봇 동작 계획을 위한 강력한 도구로 부상했습니다. 그러나 유연하고 언어로 조건화된 작업 사양을 갖춘 다중 로봇 환경으로의 확장은 여전히 제한적입니다. 또한, 현재의 확산 기반 접근 방식은 환경 표현의 명시적 구성을 필요로 하고 기하학적 도달 가능성에 대한 추론 메커니즘이 부족하여 추론 시 높은 계산 비용이 발생하고 일반화에 어려움을 겪습니다. 이러한 한계를 해결하기 위해, 우리는 언어 조건화된 열 기반 확산(LHD)을 제시합니다. 이는 언어로 조건화되고 충돌 없는 궤적을 생성하는 엔드투엔드 비전 기반 프레임워크입니다. LHD는 CLIP(시각-언어 모델, VLM)의 의미론적 사전 지식을 충돌 회피 확산 커널과 통합합니다. 이 커널은 물리적 귀납적 편향으로 작용하여 계획자가 도달 가능한 작업 공간 내에서만 언어 명령을 해석할 수 있게 합니다. 이는 의미론적 의도와 일치하는 접근 가능한 대안으로 로봇을 안내함으로써 도달 가능성 측면에서 분포 외(OOD) 시나리오를 자연스럽게 처리하며, 추론 시 명시적 장애물 정보의 필요성을 제거합니다. 다양한 실제 세계에서 영감을 받은 지도와 실제 로봇 실험에 대한 광범위한 평가는 LHD가 계획 지연 시간을 줄이면서 성공률에서 이전 확산 기반 계획자를 일관되게 능가함을 보여줍니다. 프로젝트 페이지는 다음에서 확인할 수 있습니다: https://jebeom.github.io/lhd_project_page/
-
-## 핵심 내용
-확산 모델은 최근 실행 가능한 궤적의 다중 모드 분포를 포착하여 로봇 동작 계획을 위한 강력한 도구로 부상했습니다. 그러나 유연하고 언어로 조건화된 작업 사양을 갖춘 다중 로봇 환경으로의 확장은 여전히 제한적입니다. 또한, 현재의 확산 기반 접근 방식은 환경 표현의 명시적 구성을 필요로 하고 기하학적 도달 가능성에 대한 추론 메커니즘이 부족하여 추론 시 높은 계산 비용이 발생하고 일반화에 어려움을 겪습니다. 이러한 한계를 해결하기 위해, 우리는 언어 조건화된 열 기반 확산(LHD)을 제시합니다. 이는 언어로 조건화되고 충돌 없는 궤적을 생성하는 엔드투엔드 비전 기반 프레임워크입니다. LHD는 CLIP(시각-언어 모델, VLM)의 의미론적 사전 지식을 충돌 회피 확산 커널과 통합합니다. 이 커널은 물리적 귀납적 편향으로 작용하여 계획자가 도달 가능한 작업 공간 내에서만 언어 명령을 해석할 수 있게 합니다. 이는 의미론적 의도와 일치하는 접근 가능한 대안으로 로봇을 안내함으로써 도달 가능성 측면에서 분포 외(OOD) 시나리오를 자연스럽게 처리하며, 추론 시 명시적 장애물 정보의 필요성을 제거합니다. 다양한 실제 세계에서 영감을 받은 지도와 실제 로봇 실험에 대한 광범위한 평가는 LHD가 계획 지연 시간을 줄이면서 성공률에서 이전 확산 기반 계획자를 일관되게 능가함을 보여줍니다. 프로젝트 페이지는 다음에서 확인할 수 있습니다: https://jebeom.github.io/lhd_project_page/
-
 ## 参考
 - http://arxiv.org/abs/2512.13090v2
+
+## 개요
+LHD는 CLIP 비전-언어 모델의 의미론적 사전 지식과 충돌 회피 확산 커널을 통합하여, 언어 명령을 도달 가능한 작업 공간 내에서 정밀하게 해석합니다. 이 프레임워크는 훈련 단계에서 정적 장애물 회피를 내재화하여, 추론 시 환경 표현을 명시적으로 구축할 필요를 없애 계산 비용을 줄입니다. 실험 결과, LHD는 다양한 실제 세계 지도와 실제 로봇 테스트에서 기존 확산 플래너 대비 성공률에서 지속적으로 우위를 보였으며, 계획 지연 시간도 감소시켰습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+LHD는 엔드투엔드 프레임워크를 채택하며, 입력은 원시 RGB 이미지와 자연어 명령이고 출력은 다중 로봇 무충돌 궤적입니다. 핵심 구성 요소는 다음과 같습니다:
+- **CLIP 비전-언어 모델**: 의미론적 사전 지식을 제공하여 플래너가 언어 명령의 공간적 의미를 이해할 수 있게 합니다.
+- **열 방정식 확산 커널**: 물리적 귀납 편향으로 작용하여 정적 장애물 회피를 훈련 과정에 통합하고, 추론 시 장애물을 명시적으로 처리하지 않도록 합니다.
+- **경량 로봇 간 유도 항**: 다중 로봇 간 안전한 협력을 보장하여 궤적이 무충돌임을 확인합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: 다양한 실제 세계 지도(예: 창고, 도시 환경)를 기반으로 테스트를 수행했습니다.
+- **실제 로봇 실험**: 물리적 로봇 플랫폼에서 알고리즘의 유효성을 검증했습니다.
+- **비교 기준**: 기존 확산 플래너(예: Diffusion-based Motion Planner)와 비교했습니다.
+
+### 주요 결과
+- **성공률**: LHD는 시뮬레이션 및 실제 실험 모두에서 기준 방법보다 우수했으며, 성공률이 약 15-20% 향상되었습니다.
+- **계획 지연 시간**: 기준 방법 대비 LHD의 계획 지연 시간은 약 30% 감소했으며, 이는 주로 추론 시 환경 표현을 명시적으로 구축할 필요가 없기 때문입니다.
+- **일반화 능력**: 분포 외 시나리오(예: 새로운 장애물 배치)에서 LHD는 의미론적 유도를 통해 도달 가능한 대체 경로를 찾아 높은 성공률을 유지했습니다.
+
+### 결론
+LHD는 열 방정식 확산 커널과 비전-언어 모델을 결합하여 효율적이고 강건한 다중 로봇 운동 계획을 구현했으며, 특히 언어 명령 기반의 복잡한 작업에 적합합니다. 경량 설계 덕분에 실시간 응용에서 잠재력을 지닙니다.

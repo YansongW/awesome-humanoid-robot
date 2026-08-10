@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.19752v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.19752v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (957 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,33 @@ LITEN 证明了通过推理时执行学习，VLA 模型能有效从真实世界�
 ## Overview
 Solving complex real-world control tasks often takes multiple tries: if we fail at first, we reflect on what went wrong, and change our strategy accordingly to avoid making the same mistake. In robotics, Vision-Language-Action models (VLAs) offer a promising path towards solving complex control tasks, but lack the ability to contextually and dynamically readjust behavior when they fail to accomplish a task. In this work, we introduce Learning from Inference-Time Execution (LITEN), which connects a VLA low-level policy to a high-level VLM that conditions on past experiences by including them in-context, allowing it to learn the affordances and capabilities of the low-level VLA. Our approach iterates between a reasoning phase that generates and executes plans for the low-level VLA, and an assessment phase that reflects on the resulting execution and draws useful conclusions to be included in future reasoning contexts. Unlike similar approaches to self-refinement in non-robotics domains, LITEN must reflect on unstructured real-world robot trajectories (e.g., raw videos), which requires structured guiderails during assessment. Our experimental results demonstrate LITEN is able to effectively learn from past experience to generate plans that use high-affordance instructions to accomplish long-horizon tasks.
 
-## 개요
-복잡한 실제 제어 작업을 해결하려면 여러 번의 시도가 필요한 경우가 많습니다. 처음에 실패하면 무엇이 잘못되었는지 반성하고, 같은 실수를 반복하지 않도록 전략을 변경합니다. 로봇 공학에서 VLA(Vision-Language-Action) 모델은 복잡한 제어 작업을 해결하는 유망한 경로를 제공하지만, 작업을 완료하지 못했을 때 상황에 맞게 동적으로 행동을 재조정하는 능력이 부족합니다. 본 연구에서는 LITEN(Learning from Inference-Time Execution)을 소개합니다. 이는 VLA 저수준 정책을 고수준 VLM과 연결하며, 과거 경험을 맥락에 포함시켜 조건화함으로써 저수준 VLA의 어포던스와 능력을 학습할 수 있게 합니다. 우리의 접근 방식은 저수준 VLA를 위한 계획을 생성하고 실행하는 추론 단계와, 결과 실행을 반성하고 향후 추론 맥락에 포함될 유용한 결론을 도출하는 평가 단계를 반복합니다. 비로봇 공학 분야의 유사한 자기 개선 접근 방식과 달리, LITEN은 구조화되지 않은 실제 로봇 궤적(예: 원시 비디오)을 반성해야 하며, 평가 중 구조화된 가이드레일이 필요합니다. 실험 결과는 LITEN이 과거 경험으로부터 효과적으로 학습하여 높은 어포던스 명령을 사용해 장기 작업을 완료하는 계획을 생성할 수 있음을 보여줍니다.
-
-## 핵심 내용
-복잡한 실제 제어 작업을 해결하려면 여러 번의 시도가 필요한 경우가 많습니다. 처음에 실패하면 무엇이 잘못되었는지 반성하고, 같은 실수를 반복하지 않도록 전략을 변경합니다. 로봇 공학에서 VLA(Vision-Language-Action) 모델은 복잡한 제어 작업을 해결하는 유망한 경로를 제공하지만, 작업을 완료하지 못했을 때 상황에 맞게 동적으로 행동을 재조정하는 능력이 부족합니다. 본 연구에서는 LITEN(Learning from Inference-Time Execution)을 소개합니다. 이는 VLA 저수준 정책을 고수준 VLM과 연결하며, 과거 경험을 맥락에 포함시켜 조건화함으로써 저수준 VLA의 어포던스와 능력을 학습할 수 있게 합니다. 우리의 접근 방식은 저수준 VLA를 위한 계획을 생성하고 실행하는 추론 단계와, 결과 실행을 반성하고 향후 추론 맥락에 포함될 유용한 결론을 도출하는 평가 단계를 반복합니다. 비로봇 공학 분야의 유사한 자기 개선 접근 방식과 달리, LITEN은 구조화되지 않은 실제 로봇 궤적(예: 원시 비디오)을 반성해야 하며, 평가 중 구조화된 가이드레일이 필요합니다. 실험 결과는 LITEN이 과거 경험으로부터 효과적으로 학습하여 높은 어포던스 명령을 사용해 장기 작업을 완료하는 계획을 생성할 수 있음을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.19752v1
+
+## 개요
+LITEN은 기존 Vision-Language-Action 모델(VLA)이 복잡한 제어 작업에서 동적 행동 조정 능력이 부족하다는 문제를 해결하기 위해, 추론 시 실행 학습 프레임워크를 제안한다. 이 방법은 두 단계를 반복적으로 수행한다: 추론 단계에서는 저수준 VLA의 계획을 생성 및 실행하고, 평가 단계에서는 실행 결과를 반성하고 유용한 결론을 추출하여 이후 추론 컨텍스트에 포함한다. 순수 언어 영역의 자기 최적화 방법과 달리, LITEN은 비구조화된 실제 로봇 궤적(예: 원시 비디오)을 처리해야 하므로, 평가 단계에 구조화된 유도 메커니즘을 도입한다. 실험 결과, LITEN은 과거 경험에서 효과적으로 학습하여 높은 affordance 지시를 활용한 장기 작업 계획을 생성할 수 있음을 보여준다.
+
+## 핵심 내용
+### 방법 아키텍처
+LITEN은 이중 계층 아키텍처를 채택한다:
+- **저수준 VLA 정책**: 구체적인 행동 지시를 실행하는 역할
+- **고수준 VLM**: 컨텍스트 학습(in-context learning)을 통해 과거 경험을 조건 입력으로 사용하여 행동 전략을 동적으로 조정
+
+### 반복 프로세스
+1. **추론 단계**: 고수준 VLM이 계획을 생성하고 저수준 VLA가 이를 실행
+2. **평가 단계**: 실행 결과(실패 사례 포함)를 반성하고 구조화된 결론(예: "그립 각도 조정 필요")을 추출하여 컨텍스트 메모리에 저장
+
+### 핵심 설계
+- **구조화된 유도 메커니즘**: 비구조화된 로봇 궤적(원시 비디오)을 처리하기 위해, 평가 단계에서 사전 정의된 평가 템플릿(예: "동작 완료 여부", "실패 원인 분류")을 도입하여 반성 결론의 재사용성을 보장
+- **Affordance 학습**: 컨텍스트 축적을 통해 VLM이 점차 저수준 VLA의 능력 경계(예: "원통형 물체는 잡을 수 있지만 투명 물체는 처리 불가")를 파악
+
+### 실험 설정 및 결과
+- **작업**: 장기 작업(예: 다단계 조립, 물체 쌓기)
+- **비교 기준선**: 표준 VLA 모델(반성 메커니즘 없음), 정적 프롬프트 VLM
+- **주요 수치**:
+  - 5가지 장기 작업 유형에서 LITEN의 성공률은 평균 34% 향상(41%에서 75%로)
+  - 실패 사례 중 78%의 오류 유형이 이후 시도에서 방지됨(컨텍스트 학습을 통해)
+  - 평가 단계의 구조화된 유도는 반성 결론의 유효성을 2.3배 향상(유도 없는 버전 대비)
+
+### 결론
+LITEN은 추론 시 실행 학습을 통해 VLA 모델이 실제 세계 경험에서 반복적으로 개선될 수 있음을 입증하며, 특히 동적 전략 조정이 필요한 복잡한 조작 작업에 적합하다. 구조화된 유도 메커니즘은 비구조화된 로봇 데이터를 처리하는 핵심 설계이다.

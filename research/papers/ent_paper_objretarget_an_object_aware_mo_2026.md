@@ -53,8 +53,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03828v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03828v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (767 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -87,11 +88,25 @@ ObjRetarget 通过显式建模手臂拟人化约束与手部接触几何，有�
 ## Overview
 Learning robot dexterous manipulation from human manipulation videos requires reliably retargeting human intent to executable robot actions while maintaining stable hand-object contact, which remains a key challenge in embodied intelligence. Existing retargeting methods often ignore explicit contact modeling or rely on reinforcement learning, resulting in limited accuracy and generalization. To address this, we propose ObjRetarget, a human-to-robot motion retargeting framework for learning robot dexterous manipulation from human videos, which integrates anthropomorphic arm trajectory constraints with structured hand-object geometric modeling. For arm motion, reference trajectories extracted from human videos are used for initialization, followed by anthropomorphic constraints and redundancy-aware optimization to generate natural and accurate movements. For hand manipulation, ObjRetarget represents multi-finger contacts using polytope clusters and preserves contact structure through geometric invariants to improve stability. Experiments on real robots show that ObjRetarget improves manipulation success rates and contact stability across multiple dexterous tasks, and generalizes well to different demonstrations, object poses, and task settings.
 
-## 개요
-인간의 조작 비디오로부터 로봇의 정밀 조작을 학습하려면, 안정적인 손-물체 접촉을 유지하면서 인간의 의도를 실행 가능한 로봇 동작으로 안정적으로 재타겟팅해야 하며, 이는 구현 지능의 핵심 과제로 남아 있습니다. 기존의 재타겟팅 방법은 종종 명시적인 접촉 모델링을 무시하거나 강화 학습에 의존하여 정확성과 일반화 능력이 제한적입니다. 이를 해결하기 위해, 우리는 ObjRetarget을 제안합니다. 이는 인간 비디오로부터 로봇의 정밀 조작을 학습하기 위한 인간-로봇 동작 재타겟팅 프레임워크로, 인간형 팔 궤적 제약과 구조화된 손-물체 기하학적 모델링을 통합합니다. 팔 동작의 경우, 인간 비디오에서 추출된 참조 궤적을 초기화에 사용한 후, 인간형 제약과 중복 인식 최적화를 통해 자연스럽고 정확한 움직임을 생성합니다. 손 조작의 경우, ObjRetarget은 다지 접촉을 폴리토프 클러스터로 표현하고 기하학적 불변량을 통해 접촉 구조를 유지하여 안정성을 향상시킵니다. 실제 로봇 실험 결과, ObjRetarget은 여러 정밀 작업에서 조작 성공률과 접촉 안정성을 향상시키며, 다양한 시연, 물체 자세 및 작업 설정에 잘 일반화됩니다.
-
-## 핵심 내용
-인간의 조작 비디오로부터 로봇의 정밀 조작을 학습하려면, 안정적인 손-물체 접촉을 유지하면서 인간의 의도를 실행 가능한 로봇 동작으로 안정적으로 재타겟팅해야 하며, 이는 구현 지능의 핵심 과제로 남아 있습니다. 기존의 재타겟팅 방법은 종종 명시적인 접촉 모델링을 무시하거나 강화 학습에 의존하여 정확성과 일반화 능력이 제한적입니다. 이를 해결하기 위해, 우리는 ObjRetarget을 제안합니다. 이는 인간 비디오로부터 로봇의 정밀 조작을 학습하기 위한 인간-로봇 동작 재타겟팅 프레임워크로, 인간형 팔 궤적 제약과 구조화된 손-물체 기하학적 모델링을 통합합니다. 팔 동작의 경우, 인간 비디오에서 추출된 참조 궤적을 초기화에 사용한 후, 인간형 제약과 중복 인식 최적화를 통해 자연스럽고 정확한 움직임을 생성합니다. 손 조작의 경우, ObjRetarget은 다지 접촉을 폴리토프 클러스터로 표현하고 기하학적 불변량을 통해 접촉 구조를 유지하여 안정성을 향상시킵니다. 실제 로봇 실험 결과, ObjRetarget은 여러 정밀 작업에서 조작 성공률과 접촉 안정성을 향상시키며, 다양한 시연, 물체 자세 및 작업 설정에 잘 일반화됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03828v1
+
+## 개요
+기존의 운동 재타겟팅 방법은 명시적 접촉 모델링을 무시하거나 강화 학습에 의존하는 경우가 많아 정밀도와 일반화 성능이 제한적입니다. ObjRetarget은 이 문제를 해결하기 위해 인간 비디오에서 참조 궤적을 추출하여 팔 운동을 초기화하고, 인간형 제약 조건과 중복 인식 최적화를 통해 자연스럽고 정확한 동작을 생성합니다. 손 조작의 경우 다면체 클러스터로 다지 접촉을 표현하고 기하학적 불변량을 이용해 접촉 구조를 유지합니다. 실제 로봇 실험 결과, 이 방법은 여러 정교한 조작 작업에서 성공률과 접촉 안정성을 크게 향상시켰으며, 다양한 시연, 물체 자세 및 작업 설정에 잘 일반화됩니다.
+
+## 핵심 내용
+### 방법 아키텍처
+ObjRetarget은 인간에서 로봇으로의 운동 재타겟팅을 두 가지 핵심 모듈로 분해합니다:
+- **팔 운동 모듈**: 먼저 인간 비디오에서 참조 궤적을 추출하여 초기화한 후, 인간형 제약 조건(예: 관절 각도 제한, 운동 평활성)을 적용하고 중복 인식 최적화 알고리즘을 사용하여 자연스럽고 정확한 팔 운동을 생성합니다.
+- **손 조작 모듈**: 다면체 클러스터(polytope clusters)를 사용하여 다지와 물체의 접촉 영역을 표현하고, 기하학적 불변량(geometric invariants)을 통해 재타겟팅 과정에서 접촉 구조의 안정성을 유지하여 손가락 미끄러짐이나 접촉 손실을 방지합니다.
+
+### 실험 설정 및 주요 결과
+- **실험 플랫폼**: 실제 로봇에서 여러 정교한 조작 작업(예: 파지, 회전, 배치)을 수행합니다.
+- **주요 지표**: 조작 성공률(success rate) 및 접촉 안정성(contact stability).
+- **성능 향상**: 기존 방법과 비교하여 ObjRetarget은 여러 작업에서 성공률을 크게 향상시켰으며, 다음 변화에 대한 강력한 일반화 능력을 보여줍니다:
+  - 다양한 인간 시연 비디오
+  - 물체 자세 변화
+  - 작업 설정 조정(예: 목표 위치, 물체 유형)
+
+### 결론
+ObjRetarget은 팔의 인간형 제약 조건과 손의 접촉 기하학을 명시적으로 모델링함으로써 인간 비디오에서 정교한 조작 학습 시 발생하는 재타겟팅 정밀도와 안정성 문제를 효과적으로 해결하며, 구현 지능에서의 기술 전이를 위한 신뢰할 수 있는 프레임워크를 제공합니다.

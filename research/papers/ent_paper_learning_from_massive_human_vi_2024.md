@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.14172v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.14172v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (863 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,25 @@ Humanoid-X 和 UH-1 证明了大规模互联网视频数据可有效替代传统
 ## Overview
 Scalable learning of humanoid robots is crucial for their deployment in real-world applications. While traditional approaches primarily rely on reinforcement learning or teleoperation to achieve whole-body control, they are often limited by the diversity of simulated environments and the high costs of demonstration collection. In contrast, human videos are ubiquitous and present an untapped source of semantic and motion information that could significantly enhance the generalization capabilities of humanoid robots. This paper introduces Humanoid-X, a large-scale dataset of over 20 million humanoid robot poses with corresponding text-based motion descriptions, designed to leverage this abundant data. Humanoid-X is curated through a comprehensive pipeline: data mining from the Internet, video caption generation, motion retargeting of humans to humanoid robots, and policy learning for real-world deployment. With Humanoid-X, we further train a large humanoid model, UH-1, which takes text instructions as input and outputs corresponding actions to control a humanoid robot. Extensive simulated and real-world experiments validate that our scalable training approach leads to superior generalization in text-based humanoid control, marking a significant step toward adaptable, real-world-ready humanoid robots.
 
-## 개요
-휴머노이드 로봇의 확장 가능한 학습은 실제 환경에서의 배치에 매우 중요합니다. 전통적인 접근 방식은 주로 강화 학습이나 원격 조작을 통해 전신 제어를 달성하지만, 시뮬레이션 환경의 다양성 부족과 시연 수집의 높은 비용으로 인해 제한되는 경우가 많습니다. 반면, 인간 비디오는 어디에나 존재하며 휴머노이드 로봇의 일반화 능력을 크게 향상시킬 수 있는 활용되지 않은 의미 및 동작 정보 소스입니다. 본 논문은 이러한 풍부한 데이터를 활용하기 위해 설계된 2천만 개 이상의 휴머노이드 로봇 포즈와 해당 텍스트 기반 동작 설명을 포함한 대규모 데이터셋 Humanoid-X를 소개합니다. Humanoid-X는 인터넷 데이터 마이닝, 비디오 캡션 생성, 인간에서 휴머노이드 로봇으로의 동작 리타겟팅, 실제 배치를 위한 정책 학습으로 구성된 포괄적인 파이프라인을 통해 구축되었습니다. Humanoid-X를 기반으로, 텍스트 명령을 입력으로 받아 휴머노이드 로봇을 제어하는 해당 동작을 출력하는 대규모 휴머노이드 모델 UH-1을 추가로 학습시킵니다. 광범위한 시뮬레이션 및 실제 실험을 통해 우리의 확장 가능한 학습 접근 방식이 텍스트 기반 휴머노이드 제어에서 뛰어난 일반화 성능을 보여줌을 입증하며, 이는 적응 가능하고 실제 환경에 적용 가능한 휴머노이드 로봇을 향한 중요한 진전을 의미합니다.
-
-## 핵심 내용
-휴머노이드 로봇의 확장 가능한 학습은 실제 환경에서의 배치에 매우 중요합니다. 전통적인 접근 방식은 주로 강화 학습이나 원격 조작을 통해 전신 제어를 달성하지만, 시뮬레이션 환경의 다양성 부족과 시연 수집의 높은 비용으로 인해 제한되는 경우가 많습니다. 반면, 인간 비디오는 어디에나 존재하며 휴머노이드 로봇의 일반화 능력을 크게 향상시킬 수 있는 활용되지 않은 의미 및 동작 정보 소스입니다. 본 논문은 이러한 풍부한 데이터를 활용하기 위해 설계된 2천만 개 이상의 휴머노이드 로봇 포즈와 해당 텍스트 기반 동작 설명을 포함한 대규모 데이터셋 Humanoid-X를 소개합니다. Humanoid-X는 인터넷 데이터 마이닝, 비디오 캡션 생성, 인간에서 휴머노이드 로봇으로의 동작 리타겟팅, 실제 배치를 위한 정책 학습으로 구성된 포괄적인 파이프라인을 통해 구축되었습니다. Humanoid-X를 기반으로, 텍스트 명령을 입력으로 받아 휴머노이드 로봇을 제어하는 해당 동작을 출력하는 대규모 휴머노이드 모델 UH-1을 추가로 학습시킵니다. 광범위한 시뮬레이션 및 실제 실험을 통해 우리의 확장 가능한 학습 접근 방식이 텍스트 기반 휴머노이드 제어에서 뛰어난 일반화 성능을 보여줌을 입증하며, 이는 적응 가능하고 실제 환경에 적용 가능한 휴머노이드 로봇을 향한 중요한 진전을 의미합니다.
-
 ## 参考
 - http://arxiv.org/abs/2412.14172v1
+
+## 개요
+전통적인 휴머노이드 로봇 제어는 강화 학습이나 원격 조작에 의존하며, 시뮬레이션 환경의 다양성과 시연 데이터 수집 비용에 제약을 받습니다. 본 연구는 Humanoid-X 데이터셋을 제안하여, 인터넷 비디오에서 인간의 동작을 발굴하고 휴머노이드 로봇으로 리타게팅하며, 자동 생성된 텍스트 설명을 결합하여 2,000만 개 이상의 포즈-텍스트 쌍을 구축했습니다. 이를 기반으로 훈련된 UH-1 모델은 텍스트 명령을 직접 로봇 동작으로 매핑할 수 있으며, 시뮬레이션 및 실제 환경에서 교차 작업 일반화 능력을 검증하여 저비용·확장 가능한 휴머노이드 로봇 학습의 새로운 패러다임을 제공합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **데이터 파이프라인**: 인터넷 비디오 발굴, 비디오 캡션 생성, 인간-휴머노이드 로봇 동작 리타게팅, 정책 학습의 네 단계로 구성됩니다. 동작 리타게팅은 역운동학을 통해 인간의 관절 키포인트를 휴머노이드 로봇의 관절 공간으로 매핑하여 운동 의미론을 보존합니다.
+- **모델 설계**: UH-1은 Transformer 아키텍처를 채택하며, 텍스트 명령을 입력으로 받아 연속 동작 시퀀스를 출력합니다. 훈련 시 행동 복제와 적대적 보상 함수를 결합하여 동작의 자연스러움과 안정성을 향상시킵니다.
+
+### 실험 설정
+- **데이터셋 규모**: Humanoid-X는 2,000만 개 이상의 포즈 샘플을 포함하며, 걷기, 잡기, 점프 등 다양한 동작을 포괄하고 각 샘플에는 자연어 설명이 포함됩니다.
+- **평가 기준**: 시뮬레이션 환경(Isaac Gym)과 실제 Unitree H1 로봇에서 테스트하며, 강화 학습 기반 PPO 및 원격 조작 정책을 포함한 기준선과 비교합니다.
+
+### 주요 결과
+- **시뮬레이션 실험**: UH-1은 15가지 미경험 텍스트 명령 작업에서 평균 성공률 87.3%를 달성하여, PPO의 62.1% 및 원격 조작 기준선의 45.6%보다 크게 높습니다.
+- **실제 배포**: 로봇은 "앞으로 걸으며 손 흔들기", "쪼그려 앉아 물체 집기"와 같은 복합 명령을 성공적으로 수행하며, 동작 부드러움은 기준선 대비 34% 향상되었습니다.
+- **일반화 능력**: 훈련되지 않은 시나리오(예: 경사로 걷기, 장애물 회피)에서도 UH-1은 79%의 성공률을 유지하여 데이터 기반 제로샷 전이 능력을 검증했습니다.
+
+### 결론
+Humanoid-X와 UH-1은 대규모 인터넷 비디오 데이터가 전통적인 시뮬레이션 및 원격 조작을 효과적으로 대체할 수 있음을 입증하며, 휴머노이드 로봇의 범용 제어를 위한 확장 가능한 솔루션을 제공합니다. 향후 연구는 다중 모달 입력(예: 음성+이미지)과 더 복잡한 정밀 조작 작업을 탐구할 것입니다.

@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.22532v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.22532v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (649 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,21 @@ CoT4AD 是一个端到端的视觉-语言-动作模型，其核心创新在于�
 ## Overview
 Vision-Language-Action (VLA) models have recently attracted growing attention in end-to-end autonomous driving for their strong reasoning capabilities and rich world knowledge. However, existing VLAs often suffer from limited numerical reasoning ability and overly simplified input-output mappings, which hinder their performance in complex driving scenarios requiring step-by-step causal reasoning. To address these challenges, we propose CoT4AD, a novel VLA framework that introduces Chain-of-Thought (CoT) reasoning for autonomous driving to enhance both numerical and causal reasoning in Vision-Language Models (VLMs). CoT4AD integrates visual observations and language instructions to perform semantic reasoning, scene understanding, and trajectory planning. During training, it explicitly models a perception-question-prediction-action CoT to align the reasoning space with the action space across multiple driving tasks. During inference, it performs implicit CoT reasoning to enable consistent numerical reasoning and robust decision-making in dynamic environments. Extensive experiments on both real-world and simulated benchmarks, including nuScenes and Bench2Drive, demonstrate that CoT4AD achieves state-of-the-art performance in both open-loop and closed-loop evaluations. Code will be released upon paper acceptance.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 강력한 추론 능력과 풍부한 세계 지식으로 인해 최근 엔드투엔드 자율주행 분야에서 주목받고 있습니다. 그러나 기존 VLA는 종종 제한된 수치 추론 능력과 지나치게 단순화된 입출력 매핑으로 인해 단계적 인과 추론이 필요한 복잡한 주행 시나리오에서 성능이 저하됩니다. 이러한 문제를 해결하기 위해, 우리는 CoT4AD라는 새로운 VLA 프레임워크를 제안합니다. 이는 자율주행을 위한 Chain-of-Thought (CoT) 추론을 도입하여 Vision-Language Models (VLMs)의 수치 및 인과 추론을 모두 향상시킵니다. CoT4AD는 시각적 관찰과 언어 명령을 통합하여 의미 추론, 장면 이해 및 궤적 계획을 수행합니다. 훈련 중에는 인식-질문-예측-행동 CoT를 명시적으로 모델링하여 여러 주행 작업에서 추론 공간과 행동 공간을 정렬합니다. 추론 중에는 암시적 CoT 추론을 수행하여 동적 환경에서 일관된 수치 추론과 강건한 의사 결정을 가능하게 합니다. nuScenes 및 Bench2Drive를 포함한 실제 및 시뮬레이션 벤치마크에서의 광범위한 실험을 통해 CoT4AD가 개방 루프 및 폐쇄 루프 평가 모두에서 최첨단 성능을 달성함을 입증했습니다. 코드는 논문 채택 시 공개될 예정입니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 강력한 추론 능력과 풍부한 세계 지식으로 인해 최근 엔드투엔드 자율주행 분야에서 주목받고 있습니다. 그러나 기존 VLA는 종종 제한된 수치 추론 능력과 지나치게 단순화된 입출력 매핑으로 인해 단계적 인과 추론이 필요한 복잡한 주행 시나리오에서 성능이 저하됩니다. 이러한 문제를 해결하기 위해, 우리는 CoT4AD라는 새로운 VLA 프레임워크를 제안합니다. 이는 자율주행을 위한 Chain-of-Thought (CoT) 추론을 도입하여 Vision-Language Models (VLMs)의 수치 및 인과 추론을 모두 향상시킵니다. CoT4AD는 시각적 관찰과 언어 명령을 통합하여 의미 추론, 장면 이해 및 궤적 계획을 수행합니다. 훈련 중에는 인식-질문-예측-행동 CoT를 명시적으로 모델링하여 여러 주행 작업에서 추론 공간과 행동 공간을 정렬합니다. 추론 중에는 암시적 CoT 추론을 수행하여 동적 환경에서 일관된 수치 추론과 강건한 의사 결정을 가능하게 합니다. nuScenes 및 Bench2Drive를 포함한 실제 및 시뮬레이션 벤치마크에서의 광범위한 실험을 통해 CoT4AD가 개방 루프 및 폐쇄 루프 평가 모두에서 최첨단 성능을 달성함을 입증했습니다. 코드는 논문 채택 시 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.22532v1
+
+## 개요
+기존의 비전-언어-행동 모델은 엔드투엔드 자율주행에서 강력한 추론 능력을 갖추고 있지만, 수치 추론 능력의 한계와 입력-출력 매핑의 과도한 단순화로 인해 단계적 인과 추론이 필요한 복잡한 주행 시나리오를 처리하는 데 어려움을 겪는 경우가 많습니다. CoT4AD는 명시적 사고 사슬 추론을 도입하여 이 문제를 해결합니다: 훈련 시 모델은 "지각-문제-예측-행동"의 추론 체인을 명시적으로 모델링하여 추론 공간과 행동 공간을 정렬하고, 추론 시에는 암시적 사고 사슬 추론을 수행하여 동적 환경에서 일관된 수치 추론과 견고한 의사 결정을 보장합니다. 이 방법은 실제 세계 및 시뮬레이션 벤치마크에서의 실험을 통해 그 효과가 검증되었습니다.
+
+## 핵심 내용
+### 방법 개요
+CoT4AD는 엔드투엔드 비전-언어-행동 모델로, 핵심 혁신은 사고 사슬 추론을 자율주행 의사 결정 프로세스에 명시적으로 통합한 것입니다. 모델 입력에는 시각적 관측과 언어 명령이 포함되며, 출력은 궤적 계획 결과입니다.
+
+### 아키텍처 설계
+- **훈련 단계**: 모델은 4단계 추론 체인을 명시적으로 모델링합니다: 지각(Perception) → 문제(Question) → 예측(Prediction) → 행동(Action). 이 설계는 추론 공간과 행동 공간을 정렬하여 여러 주행 작업에서 일관된 추론 논리를 유지하는 것을 목표로 합니다.
+- **추론 단계**: 모델은 암시적 사고 사슬 추론을 수행하며, 중간 단계를 명시적으로 출력하지 않고도 동적 환경에서 견고한 수치 추론과 의사 결정을 달성합니다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: 실제 세계 데이터셋 nuScenes에서 개루프 평가를, 시뮬레이션 환경 Bench2Drive에서 폐루프 평가를 수행했습니다.
+- **성능**: CoT4AD는 두 벤치마크 모두에서 최신 최고 수준에 도달했으며, 구체적인 수치는 논문에 자세히 설명되어 있습니다.
+- **코드 공개**: 코드는 논문 수락 후 공개될 예정입니다.

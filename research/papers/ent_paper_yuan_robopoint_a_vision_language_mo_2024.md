@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.10721v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.10721v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (917 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,30 @@ RoboPoint 通过合成数据驱动的 VLM 微调，有效解决了机器人动�
 ## Overview
 From rearranging objects on a table to putting groceries into shelves, robots must plan precise action points to perform tasks accurately and reliably. In spite of the recent adoption of vision language models (VLMs) to control robot behavior, VLMs struggle to precisely articulate robot actions using language. We introduce an automatic synthetic data generation pipeline that instruction-tunes VLMs to robotic domains and needs. Using the pipeline, we train RoboPoint, a VLM that predicts image keypoint affordances given language instructions. Compared to alternative approaches, our method requires no real-world data collection or human demonstration, making it much more scalable to diverse environments and viewpoints. In addition, RoboPoint is a general model that enables several downstream applications such as robot navigation, manipulation, and augmented reality (AR) assistance. Our experiments demonstrate that RoboPoint outperforms state-of-the-art VLMs (GPT-4o) and visual prompting techniques (PIVOT) by 21.8% in the accuracy of predicting spatial affordance and by 30.5% in the success rate of downstream tasks. Project website: https://robo-point.github.io.
 
-## 개요
-테이블 위의 물체를 재배열하는 것부터 식료품을 선반에 올리는 것까지, 로봇은 작업을 정확하고 신뢰성 있게 수행하기 위해 정밀한 동작 지점을 계획해야 합니다. 최근 로봇 행동 제어를 위해 시각-언어 모델(VLM)이 도입되었지만, VLM은 언어를 사용하여 로봇 동작을 정밀하게 표현하는 데 어려움을 겪습니다. 우리는 VLM을 로봇 도메인과 요구 사항에 맞게 명령어 튜닝하는 자동 합성 데이터 생성 파이프라인을 소개합니다. 이 파이프라인을 사용하여 언어 명령어가 주어졌을 때 이미지의 키포인트 어포던스를 예측하는 VLM인 RoboPoint를 훈련합니다. 대안 접근법과 비교하여, 우리의 방법은 실제 세계 데이터 수집이나 인간 시연이 필요하지 않아 다양한 환경과 시점으로 확장성이 훨씬 뛰어납니다. 또한 RoboPoint는 로봇 내비게이션, 조작, 증강 현실(AR) 지원과 같은 여러 하위 응용 프로그램을 가능하게 하는 일반 모델입니다. 실험 결과, RoboPoint는 공간 어포던스 예측 정확도에서 최신 VLM(GPT-4o) 및 시각적 프롬프트 기술(PIVOT)보다 21.8%, 하위 작업 성공률에서 30.5% 더 우수한 성능을 보였습니다. 프로젝트 웹사이트: https://robo-point.github.io.
-
-## 핵심 내용
-테이블 위의 물체를 재배열하는 것부터 식료품을 선반에 올리는 것까지, 로봇은 작업을 정확하고 신뢰성 있게 수행하기 위해 정밀한 동작 지점을 계획해야 합니다. 최근 로봇 행동 제어를 위해 시각-언어 모델(VLM)이 도입되었지만, VLM은 언어를 사용하여 로봇 동작을 정밀하게 표현하는 데 어려움을 겪습니다. 우리는 VLM을 로봇 도메인과 요구 사항에 맞게 명령어 튜닝하는 자동 합성 데이터 생성 파이프라인을 소개합니다. 이 파이프라인을 사용하여 언어 명령어가 주어졌을 때 이미지의 키포인트 어포던스를 예측하는 VLM인 RoboPoint를 훈련합니다. 대안 접근법과 비교하여, 우리의 방법은 실제 세계 데이터 수집이나 인간 시연이 필요하지 않아 다양한 환경과 시점으로 확장성이 훨씬 뛰어납니다. 또한 RoboPoint는 로봇 내비게이션, 조작, 증강 현실(AR) 지원과 같은 여러 하위 응용 프로그램을 가능하게 하는 일반 모델입니다. 실험 결과, RoboPoint는 공간 어포던스 예측 정확도에서 최신 VLM(GPT-4o) 및 시각적 프롬프트 기술(PIVOT)보다 21.8%, 하위 작업 성공률에서 30.5% 더 우수한 성능을 보였습니다. 프로젝트 웹사이트: https://robo-point.github.io.
-
 ## 参考
 - http://arxiv.org/abs/2406.10721v1
+
+## 개요
+RoboPoint는 기존 비전-언어 모델이 로봇 동작 언어를 정밀하게 표현하기 어려운 문제를 해결하기 위해, 자동 합성 데이터 생성 파이프라인을 설계하여 VLM을 로봇 도메인에 미세 조정한 모델입니다. 이 모델은 언어 명령만으로 이미지 내 키포인트 공간 가용성을 예측할 수 있으며, 실제 세계 데이터 수집이나 인간 시연 없이도 작동하므로 다양한 환경과 시점으로 효율적으로 확장할 수 있습니다. 범용 모델로서 RoboPoint는 로봇 내비게이션, 조작, 증강 현실 보조 등 다양한 하위 작업을 지원하며, 실험 결과 공간 가용성 예측과 하위 작업 성공률 모두에서 GPT-4o 및 PIVOT과 같은 기존 방법보다 크게 우수함을 보여줍니다.
+
+## 핵심 내용
+### 방법
+- **문제 배경**: 로봇이 테이블 위 물체 재배치나 선반 배치와 같은 작업을 수행할 때 정밀한 동작 지점 계획이 필요합니다. 기존 VLM은 로봇 동작을 제어할 수 있지만, 언어로 동작을 정밀하게 설명하는 데 어려움이 있습니다.
+- **핵심 솔루션**: RoboPoint는 자동 합성 데이터 생성 파이프라인을 채택하여 VLM을 명령 미세 조정하고, 언어 명령에 따라 이미지 내 키포인트 공간 가용성(즉, 동작 가능 위치)을 예측하도록 학습시킵니다.
+- **주요 장점**: 실제 데이터나 인간 시연이 필요 없고 합성 데이터에만 의존하므로, 다양한 환경과 시점에 대한 확장성이 크게 향상됩니다.
+
+### 아키텍처
+- **모델 유형**: 범용 비전-언어-동작 모델로, 입력은 이미지와 언어 명령, 출력은 이미지 내 키포인트 좌표입니다.
+- **학습 데이터**: 자동 파이프라인을 통해 합성 데이터를 생성하며, 다양한 로봇 조작 시나리오를 포함하여 모델의 일반화 능력을 보장합니다.
+
+### 실험 설정
+- **비교 방법**: GPT-4o(현재 최강 VLM) 및 PIVOT(시각 프롬프트 기술)과 비교합니다.
+- **평가 지표**: 공간 가용성 예측 정확도, 하위 작업(내비게이션, 조작, AR 보조) 성공률.
+
+### 주요 결과
+- **공간 가용성 예측**: RoboPoint의 정확도는 GPT-4o 및 PIVOT보다 21.8% 높습니다.
+- **하위 작업 성공률**: RoboPoint의 성공률은 비교 방법보다 30.5% 높습니다.
+- **확장성**: 실제 데이터가 필요 없으며, 합성 데이터 파이프라인 덕분에 새로운 환경과 시점에 쉽게 적응할 수 있습니다.
+
+### 결론
+RoboPoint는 합성 데이터 기반 VLM 미세 조정을 통해 로봇 동작 언어의 정밀한 표현 문제를 효과적으로 해결하며, 여러 작업에서 기존 방법을 크게 능가하여 로봇 범용 조작을 위한 확장 가능한 솔루션을 제공합니다. 프로젝트 웹사이트: https://robo-point.github.io.

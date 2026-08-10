@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.04948v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.04948v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (660 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -62,11 +63,22 @@ sources:
 ## Overview
 Although recent years have seen significant progress of humanoid robots in walking and running, the frequent foot strikes with ground during these locomotion gaits inevitably generate high instantaneous impact forces, which leads to exacerbated joint wear and poor energy utilization. Roller skating, as a sport with substantial biomechanical value, can achieve fast and continuous sliding through rational utilization of body inertia, featuring minimal kinetic energy loss. Therefore, this study proposes a novel humanoid robot with each foot equipped with a row of four passive wheels for roller skating. A deep reinforcement learning control framework is also developed for the swizzle gait with the reward function design based on the intrinsic characteristics of roller skating. The learned policy is first analyzed in simulation and then deployed on the physical robot to demonstrate the smoothness and efficiency of the swizzle gait over traditional bipedal walking gait in terms of Impact Intensity and Cost of Transport during locomotion. A reduction of $75.86\%$ and $63.34\%$ of these two metrics indicate roller skating as a superior locomotion mode for enhanced energy efficiency and joint longevity.
 
-## 개요
-최근 몇 년간 인간형 로봇의 보행 및 달리기 기술이 상당한 진전을 이루었지만, 이러한 보행 동작 중 지면과의 빈번한 발 충돌은 필연적으로 높은 순간 충격력을 발생시켜 관절 마모를 악화시키고 에너지 효율을 저하시킵니다. 생체역학적 가치가 높은 스포츠인 롤러 스케이팅은 신체 관성을 합리적으로 활용하여 빠르고 연속적인 미끄러짐을 구현하며, 운동 에너지 손실이 최소화되는 특징이 있습니다. 따라서 본 연구는 각 발에 4개의 수동 바퀴를 일렬로 장착한 새로운 인간형 로봇을 제안합니다. 또한 롤러 스케이팅의 고유 특성에 기반한 보상 함수 설계를 통해 스위즐 보행을 위한 심층 강화 학습 제어 프레임워크를 개발했습니다. 학습된 정책은 먼저 시뮬레이션에서 분석된 후 실제 로봇에 적용되어, 보행 중 충격 강도(Impact Intensity)와 이동 비용(Cost of Transport) 측면에서 스위즐 보행이 전통적인 이족 보행보다 우수한 부드러움과 효율성을 입증했습니다. 이 두 지표가 각각 $75.86\%$ 및 $63.34\%$ 감소한 결과는 롤러 스케이팅이 에너지 효율성과 관절 수명 향상을 위한 우수한 이동 방식임을 시사합니다.
-
-## 핵심 내용
-최근 몇 년간 인간형 로봇의 보행 및 달리기 기술이 상당한 진전을 이루었지만, 이러한 보행 동작 중 지면과의 빈번한 발 충돌은 필연적으로 높은 순간 충격력을 발생시켜 관절 마모를 악화시키고 에너지 효율을 저하시킵니다. 생체역학적 가치가 높은 스포츠인 롤러 스케이팅은 신체 관성을 합리적으로 활용하여 빠르고 연속적인 미끄러짐을 구현하며, 운동 에너지 손실이 최소화되는 특징이 있습니다. 따라서 본 연구는 각 발에 4개의 수동 바퀴를 일렬로 장착한 새로운 인간형 로봇을 제안합니다. 또한 롤러 스케이팅의 고유 특성에 기반한 보상 함수 설계를 통해 스위즐 보행을 위한 심층 강화 학습 제어 프레임워크를 개발했습니다. 학습된 정책은 먼저 시뮬레이션에서 분석된 후 실제 로봇에 적용되어, 보행 중 충격 강도(Impact Intensity)와 이동 비용(Cost of Transport) 측면에서 스위즐 보행이 전통적인 이족 보행보다 우수한 부드러움과 효율성을 입증했습니다. 이 두 지표가 각각 $75.86\%$ 및 $63.34\%$ 감소한 결과는 롤러 스케이팅이 에너지 효율성과 관절 수명 향상을 위한 우수한 이동 방식임을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.04948v1
+
+## 개요
+인간형 로봇의 보행 및 주행 중 빈번한 발-지면 충돌로 인한 높은 충격력, 관절 마모 및 낮은 에너지 효율 문제를 해결하기 위해, SKATER는 롤러스케이트 운동의 생체역학적 장점을 활용하여 각 발에 4개의 수동 바퀴를 한 줄로 장착한 새로운 인간형 로봇을 설계했습니다. 연구팀은 롤러스케이트의 고유 특성을 기반으로 보상 함수를 설계하고, 심층 강화 학습을 통해 swizzle 보행 전략을 훈련했습니다. 이 전략은 먼저 시뮬레이션에서 분석 및 검증된 후 실제 로봇에 배포되었습니다. 실험 결과, swizzle 보행은 충격 강도와 운송 비용 두 지표에서 각각 기존 이족 보행 대비 75.86% 및 63.34% 감소하여, 롤러스케이트가 더 우수한 운동 모드로서의 잠재력을 입증했습니다.
+
+## 핵심 내용
+### 방법
+- **하드웨어 설계**: 기존 인간형 로봇의 각 발 바닥에 4개의 수동 바퀴를 한 줄로 장착하여, 로봇이 롤러스케이트처럼 미끄러질 수 있게 합니다.
+- **제어 프레임워크**: 심층 강화 학습을 사용하여 swizzle 보행을 훈련하며, 보상 함수는 롤러스케이트 운동의 고유 특성(예: 연속 미끄러짐, 관성 활용)에 특별히 맞춰 설계되었습니다.
+
+### 실험 설정
+- **시뮬레이션 단계**: 먼저 시뮬레이션 환경에서 전략의 안정성과 효율성을 훈련하고 분석합니다.
+- **실제 배포**: 학습된 전략을 물리적 로봇에 전이하여 실제 운동 테스트를 수행합니다.
+
+### 주요 결과
+- **충격 강도 (Impact Intensity)**: swizzle 보행은 기존 이족 보행 대비 **75.86%** 감소하여 관절 마모를 크게 줄입니다.
+- **운송 비용 (Cost of Transport)**: **63.34%** 감소하여 에너지 효율이 크게 향상되었음을 나타냅니다.
+- **결론**: 롤러스케이트 운동 모드는 발-지면 충돌을 줄이고 관성 활용을 최적화함으로써 인간형 로봇에 더 부드럽고 에너지 효율적인 운동 방식을 제공하며, 관절 수명 연장에 유리합니다.

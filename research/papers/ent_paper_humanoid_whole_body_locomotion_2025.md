@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.17219v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2502.17219v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (670 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,27 @@ Humans possess delicate dynamic balance mechanisms that enable them to maintain 
 ## Content
 Humans possess delicate dynamic balance mechanisms that enable them to maintain stability across diverse terrains and under extreme conditions. However, despite significant advances recently, existing locomotion algorithms for humanoid robots still struggle to traverse extreme environments, especially in cases that lack external perception (e.g., vision or LiDAR). This is because current methods often rely on gait-based or perception-condition rewards, lacking effective mechanisms to handle unobservable obstacles and sudden balance loss. To address this challenge, we propose a novel whole-body locomotion algorithm based on dynamic balance and Reinforcement Learning (RL) that enables humanoid robots to traverse extreme terrains, particularly narrow pathways and unexpected obstacles, using only proprioception. Specifically, we introduce a dynamic balance mechanism by leveraging an extended measure of Zero-Moment Point (ZMP)-driven rewards and task-driven rewards in a whole-body actor-critic framework, aiming to achieve coordinated actions of the upper and lower limbs for robust locomotion. Experiments conducted on a full-sized Unitree H1-2 robot verify the ability of our method to maintain balance on extremely narrow terrains and under external disturbances, demonstrating its effectiveness in enhancing the robot's adaptability to complex environments. The videos are given at https://whole-body-loco.github.io.
 
-## 개요
-인간은 다양한 지형과 극한 조건에서도 안정성을 유지할 수 있는 정교한 동적 균형 메커니즘을 갖추고 있습니다. 그러나 최근 상당한 진전이 있었음에도 불구하고, 기존의 인간형 로봇 보행 알고리즘은 특히 외부 인식(예: 시각 또는 LiDAR)이 부족한 경우 극한 환경을 탐색하는 데 여전히 어려움을 겪고 있습니다. 이는 현재 방법들이 종종 보행 기반 또는 인식 조건 보상에 의존하여, 관찰 불가능한 장애물과 갑작스러운 균형 상실을 처리하는 효과적인 메커니즘이 부족하기 때문입니다. 이러한 문제를 해결하기 위해, 우리는 동적 균형과 강화 학습(RL)에 기반한 새로운 전신 보행 알고리즘을 제안합니다. 이 알고리즘은 고유 감각만을 사용하여 인간형 로봇이 특히 좁은 통로와 예상치 못한 장애물과 같은 극한 지형을 탐색할 수 있게 합니다. 구체적으로, 우리는 전신 행위자-비평가 프레임워크에서 확장된 영모멘트점(ZMP) 기반 보상과 작업 기반 보상을 활용하여 동적 균형 메커니즘을 도입하며, 상체와 하체의 협력 동작을 통해 강건한 보행을 목표로 합니다. 실제 크기의 Unitree H1-2 로봇에서 수행된 실험은 극도로 좁은 지형과 외부 교란 하에서도 균형을 유지하는 우리 방법의 능력을 검증하며, 복잡한 환경에 대한 로봇의 적응성을 향상시키는 효과를 입증합니다. 비디오는 https://whole-body-loco.github.io에서 확인할 수 있습니다.
-
-## 핵심 내용
-인간은 다양한 지형과 극한 조건에서도 안정성을 유지할 수 있는 정교한 동적 균형 메커니즘을 갖추고 있습니다. 그러나 최근 상당한 진전이 있었음에도 불구하고, 기존의 인간형 로봇 보행 알고리즘은 특히 외부 인식(예: 시각 또는 LiDAR)이 부족한 경우 극한 환경을 탐색하는 데 여전히 어려움을 겪고 있습니다. 이는 현재 방법들이 종종 보행 기반 또는 인식 조건 보상에 의존하여, 관찰 불가능한 장애물과 갑작스러운 균형 상실을 처리하는 효과적인 메커니즘이 부족하기 때문입니다. 이러한 문제를 해결하기 위해, 우리는 동적 균형과 강화 학습(RL)에 기반한 새로운 전신 보행 알고리즘을 제안합니다. 이 알고리즘은 고유 감각만을 사용하여 인간형 로봇이 특히 좁은 통로와 예상치 못한 장애물과 같은 극한 지형을 탐색할 수 있게 합니다. 구체적으로, 우리는 전신 행위자-비평가 프레임워크에서 확장된 영모멘트점(ZMP) 기반 보상과 작업 기반 보상을 활용하여 동적 균형 메커니즘을 도입하며, 상체와 하체의 협력 동작을 통해 강건한 보행을 목표로 합니다. 실제 크기의 Unitree H1-2 로봇에서 수행된 실험은 극도로 좁은 지형과 외부 교란 하에서도 균형을 유지하는 우리 방법의 능력을 검증하며, 복잡한 환경에 대한 로봇의 적응성을 향상시키는 효과를 입증합니다. 비디오는 https://whole-body-loco.github.io에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2502.17219v2
+
+## 개요
+기존 운동 알고리즘이 보행 또는 지각 보상에 의존하여 관측 불가능한 장애물과 갑작스러운 균형 상실을 처리하기 어려운 문제를 해결하기 위해, 본 논문은 동적 균형과 강화 학습에 기반한 전신 운동 알고리즘을 제안한다. 이 방법은 확장된 Zero-Moment Point (ZMP) 기반 보상과 작업 기반 보상을 도입하여 전신 actor-critic 프레임워크에서 상하체 협조 동작을 구현하며, 인간형 로봇이 고유 감각만으로 좁은 통로와 예상치 못한 장애물을 통과할 수 있게 한다. Unitree H1-2 전신 로봇에서의 실험은 이 방법이 극도로 좁은 지형과 외부 교란 하에서도 균형을 유지하며 복잡한 환경에 대한 적응 능력을 크게 향상시킴을 보여준다.
+
+## 핵심 내용
+### 방법 구조
+- 전신 actor-critic 강화 학습 프레임워크를 채택하여 동적 균형 메커니즘을 보상 설계에 통합
+- 확장된 Zero-Moment Point (ZMP) 기반 보상을 도입하여 동적 균형 유지의 핵심 지표로 활용
+- 작업 기반 보상(예: 속도 추적, 관절 제한 등)과 결합하여 상하체 협조 운동 전략 구현
+
+### 실험 설정
+- 실험 플랫폼: 전신 크기 Unitree H1-2 인간형 로봇
+- 테스트 시나리오: 극도로 좁은 지형(예: 좁은 통로, 불규칙한 장애물) 및 외부 교란(예: 추력 간섭)
+- 감각 입력: 고유 감각(관절 각도, IMU 등)만 사용하며, 시각 또는 LiDAR에 의존하지 않음
+
+### 주요 결과
+- 좁은 지형에서 동적 균형을 성공적으로 유지하며 넘어짐이나 불안정이 발생하지 않음
+- 외부 추력 교란에 대한 강건성을 보이며 빠르게 안정적인 자세를 회복
+- 기준 방법(예: 순수 보행 전략)과 비교하여 관측 불가능한 장애물 시나리오에서 성공률이 크게 향상
+
+### 결론
+본 논문에서 제안한 동적 균형 메커니즘과 강화 학습의 결합 방법은 인간형 로봇이 외부 감각 없이 극한 지형을 통과하는 문제를 효과적으로 해결한다. 향후 연구에서는 이 방법을 더 복잡한 지형과 다중 작업 시나리오로 확장하는 것을 탐구할 수 있다.

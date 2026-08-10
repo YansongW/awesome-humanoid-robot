@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.07092v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.07092v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (908 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,25 @@ sources:
 ## Overview
 World models are a powerful paradigm in AI and robotics, enabling agents to reason about the future by predicting visual observations or compact latent states. The 1X World Model Challenge introduces an open-source benchmark of real-world humanoid interaction, with two complementary tracks: sampling, focused on forecasting future image frames, and compression, focused on predicting future discrete latent codes. For the sampling track, we adapt the video generation foundation model Wan-2.2 TI2V-5B to video-state-conditioned future frame prediction. We condition the video generation on robot states using AdaLN-Zero, and further post-train the model using LoRA. For the compression track, we train a Spatio-Temporal Transformer model from scratch. Our models achieve 23.0 dB PSNR in the sampling task and a Top-500 CE of 6.6386 in the compression task, securing 1st place in both challenges.
 
-## 개요
-World models는 AI와 로보틱스에서 강력한 패러다임으로, 에이전트가 시각적 관측이나 압축된 잠재 상태를 예측하여 미래에 대해 추론할 수 있게 합니다. 1X World Model Challenge는 실제 인간형 상호작용에 대한 오픈소스 벤치마크를 도입하며, 두 가지 상호 보완적인 트랙을 제공합니다: 미래 이미지 프레임 예측에 초점을 맞춘 샘플링 트랙과 미래 이산 잠재 코드 예측에 초점을 맞춘 압축 트랙입니다. 샘플링 트랙의 경우, 비디오 생성 기반 모델 Wan-2.2 TI2V-5B를 비디오-상태 조건부 미래 프레임 예측에 적용했습니다. AdaLN-Zero를 사용하여 로봇 상태에 비디오 생성을 조건화하고, LoRA를 사용하여 모델을 추가로 사후 학습했습니다. 압축 트랙의 경우, Spatio-Temporal Transformer 모델을 처음부터 학습했습니다. 우리 모델은 샘플링 작업에서 23.0 dB PSNR을, 압축 작업에서 Top-500 CE 6.6386을 달성하여 두 챌린지 모두에서 1위를 차지했습니다.
-
-## 핵심 내용
-World models는 AI와 로보틱스에서 강력한 패러다임으로, 에이전트가 시각적 관측이나 압축된 잠재 상태를 예측하여 미래에 대해 추론할 수 있게 합니다. 1X World Model Challenge는 실제 인간형 상호작용에 대한 오픈소스 벤치마크를 도입하며, 두 가지 상호 보완적인 트랙을 제공합니다: 미래 이미지 프레임 예측에 초점을 맞춘 샘플링 트랙과 미래 이산 잠재 코드 예측에 초점을 맞춘 압축 트랙입니다. 샘플링 트랙의 경우, 비디오 생성 기반 모델 Wan-2.2 TI2V-5B를 비디오-상태 조건부 미래 프레임 예측에 적용했습니다. AdaLN-Zero를 사용하여 로봇 상태에 비디오 생성을 조건화하고, LoRA를 사용하여 모델을 추가로 사후 학습했습니다. 압축 트랙의 경우, Spatio-Temporal Transformer 모델을 처음부터 학습했습니다. 우리 모델은 샘플링 작업에서 23.0 dB PSNR을, 압축 작업에서 Top-500 CE 6.6386을 달성하여 두 챌린지 모두에서 1위를 차지했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.07092v1
+
+## 개요
+세계 모델은 AI와 로봇 분야의 중요한 패러다임으로, 에이전트가 시각적 관측 또는 컴팩트한 잠재 상태를 예측하여 미래를 추론할 수 있게 한다. 1X World Model Challenge는 이를 위해 실제 인간-로봇 상호작용 데이터를 기반으로 한 오픈소스 벤치마크를 제공하며, 샘플링과 압축이라는 두 가지 상호 보완적인 트랙을 포함한다. 샘플링 트랙에서 팀은 비디오 생성 기반 모델 Wan-2.2 TI2V-5B를 비디오-상태 조건화된 미래 프레임 예측기로 개조하고, AdaLN-Zero를 통해 로봇 상태 정보를 주입하며, LoRA를 사용하여 사후 훈련을 수행했다. 압축 트랙에서는 처음부터 시공간 Transformer 모델을 훈련했다. 최종 결과는 샘플링 작업에서 23.0 dB PSNR, 압축 작업에서 Top-500 CE 6.6386을 달성하여 두 트랙 모두에서 우승했다.
+
+## 핵심 내용
+### 방법 개요
+- **샘플링 작업**: Wan-2.2 TI2V-5B 비디오 생성 모델을 기반으로, 이를 조건화된 미래 프레임 예측기로 확장했다. AdaLN-Zero 메커니즘을 통해 로봇 상태(예: 관절 각도, 속도)를 조건으로 모델에 주입하고, LoRA를 사용하여 효율적인 미세 조정을 수행함으로써 모델이 현재 관측과 상태를 기반으로 후속 이미지 프레임을 생성할 수 있게 했다.
+- **압축 작업**: 처음부터 Spatio-Temporal Transformer 모델을 훈련하여 미래 프레임의 이산 잠재 코드(discrete latent codes)를 직접 예측함으로써 더 컴팩트한 상태 표현을 구현했다.
+
+### 실험 설정
+- 벤치마크 데이터는 1X World Model Challenge에서 제공하는 실제 인간형 로봇 상호작용 데이터 세트에서 비롯되었으며, 다중 모달 센서 기록을 포함한다.
+- 샘플링 작업의 평가 지표는 PSNR(피크 신호 대 잡음비)이고, 압축 작업의 평가 지표는 Top-500 CE(교차 엔트로피)이다.
+
+### 주요 결과
+- **샘플링 작업**: PSNR이 23.0 dB에 도달하여 기준 방법보다 현저히 우수했다.
+- **압축 작업**: Top-500 CE가 6.6386으로, 압축 효율과 예측 정확도 사이의 균형을 달성했다.
+- 팀은 두 트랙 모두에서 1위를 차지하여 제안된 방법이 실제 인간형 로봇 세계 모델링에서의 효과성을 검증했다.
+
+### 결론
+이 작업은 대규모 비디오 생성 모델과 로봇 상태 조건화의 결합 효과를 보여주었으며, 처음부터 훈련된 시공간 Transformer가 이산 잠재 코드 예측에서 경쟁력을 가짐을 입증했다. 오픈소스 벤치마크와 우승 솔루션은 미래 인간형 로봇의 세계 모델 연구에 중요한 참고 자료를 제공한다.

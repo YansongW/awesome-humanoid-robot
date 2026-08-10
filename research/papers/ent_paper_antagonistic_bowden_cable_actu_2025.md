@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.24657v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.24657v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (799 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,28 @@ sources:
 ## Overview
 Humanoid robots toward human-level dexterity require robotic hands capable of simultaneously providing high grasping force, rapid actuation speeds, multiple degrees of freedom, and lightweight structures within human-like size constraints. Meeting these conflicting requirements remains challenging, as satisfying this combination typically necessitates heavier actuators and bulkier transmission systems, significantly restricting the payload capacity of robot arms. In this letter, we present a lightweight anthropomorphic hand actuated by Bowden cables, which uniquely combines rolling-contact joint optimization with antagonistic cable actuation, enabling single-motor-per-joint control with negligible cable-length deviation. By relocating the actuator module to the torso, the design substantially reduces distal mass while maintaining anthropomorphic scale and dexterity. Additionally, this antagonistic cable actuation eliminates the need for synchronization between motors. Using the proposed methods, the hand assembly with a distal mass of 236g (excluding remote actuators and Bowden sheaths) demonstrated reliable execution of dexterous tasks, exceeding 18N fingertip force and lifting payloads over one hundred times its own mass. Furthermore, robustness was validated through Cutkosky taxonomy grasps and trajectory consistency under perturbed actuator-hand transformations.
 
-## 개요
-인간 수준의 손재주를 목표로 하는 휴머노이드 로봇은 인간과 유사한 크기 제약 내에서 높은 파지력, 빠른 구동 속도, 다중 자유도, 경량 구조를 동시에 제공할 수 있는 로봇 손을 필요로 합니다. 이러한 상충되는 요구 사항을 충족하는 것은 여전히 어려운 과제이며, 이러한 조합을 만족시키기 위해서는 일반적으로 더 무거운 액추에이터와 부피가 큰 전달 시스템이 필요하여 로봇 팔의 페이로드 용량이 크게 제한됩니다. 본 논문에서는 Bowden 케이블로 구동되는 경량 인체공학적 손을 제시하며, 이는 롤링 접촉 관절 최적화와 대항 케이블 구동을 독특하게 결합하여 무시할 수 있는 케이블 길이 편차로 관절당 단일 모터 제어를 가능하게 합니다. 액추에이터 모듈을 몸통으로 재배치함으로써, 이 설계는 인체공학적 규모와 손재주를 유지하면서 원위 질량을 크게 줄입니다. 또한, 이 대항 케이블 구동은 모터 간 동기화의 필요성을 제거합니다. 제안된 방법을 사용하여, 원위 질량이 236g(원격 액추에이터 및 Bowden 시스 제외)인 손 어셈블리는 18N 이상의 손끝 힘과 자체 질량의 100배가 넘는 페이로드를 들어 올리며 손재주가 필요한 작업을 안정적으로 수행함을 입증했습니다. 또한, Cutkosky 분류법 파지 및 교란된 액추에이터-손 변환 하에서의 궤적 일관성을 통해 견고성이 검증되었습니다.
-
-## 핵심 내용
-인간 수준의 손재주를 목표로 하는 휴머노이드 로봇은 인간과 유사한 크기 제약 내에서 높은 파지력, 빠른 구동 속도, 다중 자유도, 경량 구조를 동시에 제공할 수 있는 로봇 손을 필요로 합니다. 이러한 상충되는 요구 사항을 충족하는 것은 여전히 어려운 과제이며, 이러한 조합을 만족시키기 위해서는 일반적으로 더 무거운 액추에이터와 부피가 큰 전달 시스템이 필요하여 로봇 팔의 페이로드 용량이 크게 제한됩니다. 본 논문에서는 Bowden 케이블로 구동되는 경량 인체공학적 손을 제시하며, 이는 롤링 접촉 관절 최적화와 대항 케이블 구동을 독특하게 결합하여 무시할 수 있는 케이블 길이 편차로 관절당 단일 모터 제어를 가능하게 합니다. 액추에이터 모듈을 몸통으로 재배치함으로써, 이 설계는 인체공학적 규모와 손재주를 유지하면서 원위 질량을 크게 줄입니다. 또한, 이 대항 케이블 구동은 모터 간 동기화의 필요성을 제거합니다. 제안된 방법을 사용하여, 원위 질량이 236g(원격 액추에이터 및 Bowden 시스 제외)인 손 어셈블리는 18N 이상의 손끝 힘과 자체 질량의 100배가 넘는 페이로드를 들어 올리며 손재주가 필요한 작업을 안정적으로 수행함을 입증했습니다. 또한, Cutkosky 분류법 파지 및 교란된 액추에이터-손 변환 하에서의 궤적 일관성을 통해 견고성이 검증되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.24657v1
+
+## 개요
+인간형 로봇의 손에 대한 높은 파지력, 빠른 구동, 다자유도, 경량 구조라는 상충되는 요구를 해결하기 위해, 본 논문은 Bowden 케이블 구동 방식의 경량 인간형 손을 제안한다. 구름 접촉 관절 최적화와 길항식 케이블 전동을 결합하여, 단일 모터가 단일 관절을 제어하면서 케이블 길이 편차를 무시할 수 있도록 구현했다. 구동 모듈을 몸통으로 이동시킨 설계는 말단 질량을 크게 줄이면서도 인간형 크기와 기민성을 유지하며, 길항식 전동은 모터 동기화를 필요로 하지 않는다. 실험 결과, 말단 질량 236g의 손으로 기민한 작업을 수행할 수 있고, 손끝 힘은 18N을 초과하며, 부하 능력은 자체 중량의 100배를 초과한다. 또한 Cutkosky 분류 파지와 궤적 일관성을 통해 강건성을 검증했다.
+
+## 핵심 내용
+### 방법
+- **길항식 Bowden 케이블 구동**: 이중 케이블 길항 구성을 채택하여, 각 관절은 단일 모터가 Bowden 케이블을 통해 구동하며, 케이블 길이 편차가 매우 작아 모터 동기화가 필요 없다.
+- **구름 접촉 관절 최적화**: 관절 설계에 구름 접촉 구조를 결합하여 마찰과 마모를 줄이고, 전동 효율과 정밀도를 향상시킨다.
+- **구동 모듈 후방 배치**: 모터와 전동 시스템을 몸통으로 이동시키고, 케이블과 말단 실행기만 남겨 손 말단 질량을 236g(원격 구동기 및 Bowden 외장 제외)으로 줄인다.
+
+### 실험 설정
+- **하드웨어 플랫폼**: 인간형 손 크기는 인간 비율에 부합하며, 총 자유도는 명시되지 않았지만 다지 기민한 조작을 지원한다.
+- **성능 테스트**: 손끝 힘, 부하 능력, 파지 안정성 및 궤적 일관성을 측정한다.
+- **강건성 검증**: Cutkosky 분류법을 사용하여 파지 유형 범위를 평가하고, 구동-손 변환에 교란이 있을 때 궤적 반복성을 테스트한다.
+
+### 주요 수치
+- **말단 질량**: 236g(원격 구성 요소 제외).
+- **손끝 힘**: 18N 초과.
+- **부하 능력**: 자체 질량의 100배를 초과하는 물체를 파지할 수 있음.
+- **구동 방식**: 단일 모터가 단일 관절을 제어하며, 길항식 케이블 전동을 사용.
+
+### 결론
+본 설계는 길항식 Bowden 케이블 구동과 구름 접촉 관절 최적화를 통해 경량화와 인간형 크기를 유지하면서도 높은 파지력과 기민한 조작 능력을 구현하여, 부하 제한이 있는 인간형 로봇에 적합하다. 실험은 고부하 및 교란 조건에서의 강건성을 검증했으며, 차세대 기민한 손 하드웨어에 실현 가능한 솔루션을 제공한다.

@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.07788v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.07788v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (827 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,27 @@ DexCap 通过便携式硬件与专用模仿学习算法的结合，解决了现�
 ## Overview
 Imitation learning from human hand motion data presents a promising avenue for imbuing robots with human-like dexterity in real-world manipulation tasks. Despite this potential, substantial challenges persist, particularly with the portability of existing hand motion capture (mocap) systems and the complexity of translating mocap data into effective robotic policies. To tackle these issues, we introduce DexCap, a portable hand motion capture system, alongside DexIL, a novel imitation algorithm for training dexterous robot skills directly from human hand mocap data. DexCap offers precise, occlusion-resistant tracking of wrist and finger motions based on SLAM and electromagnetic field together with 3D observations of the environment. Utilizing this rich dataset, DexIL employs inverse kinematics and point cloud-based imitation learning to seamlessly replicate human actions with robot hands. Beyond direct learning from human motion, DexCap also offers an optional human-in-the-loop correction mechanism during policy rollouts to refine and further improve task performance. Through extensive evaluation across six challenging dexterous manipulation tasks, our approach not only demonstrates superior performance but also showcases the system's capability to effectively learn from in-the-wild mocap data, paving the way for future data collection methods in the pursuit of human-level robot dexterity. More details can be found at https://dex-cap.github.io
 
-## 개요
-인간 손 동작 데이터로부터의 모방 학습은 실제 조작 작업에서 로봇에 인간과 같은 손재주를 부여할 수 있는 유망한 접근법을 제시합니다. 이러한 잠재력에도 불구하고, 특히 기존 손 동작 캡처(mocap) 시스템의 휴대성과 mocap 데이터를 효과적인 로봇 정책으로 변환하는 복잡성 측면에서 상당한 과제가 남아 있습니다. 이러한 문제를 해결하기 위해 우리는 휴대용 손 동작 캡처 시스템인 DexCap과 인간 손 mocap 데이터로부터 직접 손재주 로봇 기술을 훈련하는 새로운 모방 알고리즘인 DexIL을 소개합니다. DexCap은 SLAM과 전자기장을 기반으로 한 정밀하고 폐색에 강한 손목 및 손가락 동작 추적과 함께 환경의 3D 관측을 제공합니다. 이 풍부한 데이터셋을 활용하여 DexIL은 역운동학과 포인트 클라우드 기반 모방 학습을 사용하여 로봇 손으로 인간 동작을 원활하게 재현합니다. 인간 동작으로부터의 직접 학습 외에도 DexCap은 정책 롤아웃 중 선택적 인간-인-더-루프 교정 메커니즘을 제공하여 작업 성능을 개선하고 추가로 향상시킵니다. 여섯 가지 도전적인 손재주 조작 작업에 대한 광범위한 평가를 통해 우리의 접근 방식은 뛰어난 성능을 입증할 뿐만 아니라 실제 환경의 mocap 데이터로부터 효과적으로 학습할 수 있는 시스템의 능력을 보여주며, 인간 수준의 로봇 손재주를 추구하는 미래 데이터 수집 방법의 길을 열어줍니다. 더 자세한 내용은 https://dex-cap.github.io 에서 확인할 수 있습니다.
-
-## 핵심 내용
-인간 손 동작 데이터로부터의 모방 학습은 실제 조작 작업에서 로봇에 인간과 같은 손재주를 부여할 수 있는 유망한 접근법을 제시합니다. 이러한 잠재력에도 불구하고, 특히 기존 손 동작 캡처(mocap) 시스템의 휴대성과 mocap 데이터를 효과적인 로봇 정책으로 변환하는 복잡성 측면에서 상당한 과제가 남아 있습니다. 이러한 문제를 해결하기 위해 우리는 휴대용 손 동작 캡처 시스템인 DexCap과 인간 손 mocap 데이터로부터 직접 손재주 로봇 기술을 훈련하는 새로운 모방 알고리즘인 DexIL을 소개합니다. DexCap은 SLAM과 전자기장을 기반으로 한 정밀하고 폐색에 강한 손목 및 손가락 동작 추적과 함께 환경의 3D 관측을 제공합니다. 이 풍부한 데이터셋을 활용하여 DexIL은 역운동학과 포인트 클라우드 기반 모방 학습을 사용하여 로봇 손으로 인간 동작을 원활하게 재현합니다. 인간 동작으로부터의 직접 학습 외에도 DexCap은 정책 롤아웃 중 선택적 인간-인-더-루프 교정 메커니즘을 제공하여 작업 성능을 개선하고 추가로 향상시킵니다. 여섯 가지 도전적인 손재주 조작 작업에 대한 광범위한 평가를 통해 우리의 접근 방식은 뛰어난 성능을 입증할 뿐만 아니라 실제 환경의 mocap 데이터로부터 효과적으로 학습할 수 있는 시스템의 능력을 보여주며, 인간 수준의 로봇 손재주를 추구하는 미래 데이터 수집 방법의 길을 열어줍니다. 더 자세한 내용은 https://dex-cap.github.io 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2403.07788v2
+
+## 개요
+DexCap 시스템은 SLAM과 전자기장 융합 기술을 통해 손목과 손가락 움직임의 고정밀, 차폐 방지 추적을 구현하며, 동시에 환경 3D 관측 데이터를 수집합니다. 이에 수반되는 DexIL 알고리즘은 역기구학과 포인트 클라우드 모방 학습을 활용하여 인간 동작 데이터를 로봇 손에 원활하게 매핑합니다. 시스템은 또한 인간 개입 기반의 오류 수정 메커니즘을 지원하여 정책 배포 단계에서 작업 성능을 최적화할 수 있습니다. 여섯 가지 손재주 조작 작업에서 DexCap은 기존 방법을 능가하는 성능을 보여주었으며, 야외에서 수집된 데이터로부터 효과적으로 학습할 수 있는 능력을 검증했습니다.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **DexCap 하드웨어**: 휴대용 손 움직임 캡처 시스템으로, SLAM과 전자기장 센서를 통합하여 손목과 손가락 움직임의 차폐 방지 추적을 구현하고, 동시에 환경 3D 포인트 클라우드 관측을 수집합니다.
+- **DexIL 알고리즘**: 역기구학을 기반으로 인간 손 관절 각도를 로봇 손에 매핑한 후, 포인트 클라우드 모방 학습을 통해 손재주 조작 정책을 직접 훈련합니다.
+
+### 실험 설정
+- **작업**: 객체 잡기, 회전, 삽입 등을 포함한 여섯 가지 도전적인 손재주 조작 작업.
+- **데이터 소스**: DexCap으로 수집한 인간 손 움직임 데이터로, 일부 데이터는 야외(in-the-wild) 환경에서 수집되었습니다.
+- **비교 기준선**: 기존 모방 학습 방법(예: 행동 클로닝, 시각 기반 정책)과 비교.
+
+### 주요 결과
+- **성능 향상**: DexCap + DexIL은 여섯 가지 모든 작업에서 가장 높은 성공률을 달성했으며, 평균 성공률은 기준선 방법보다 15-30% 높았습니다.
+- **차폐 방지 능력**: 전자기장과 SLAM 융합으로 시스템은 손목 차폐 시나리오에서도 95% 이상의 추적 정밀도를 유지합니다.
+- **야외 데이터 유효성**: 비실험실 환경에서 수집된 데이터로 훈련해도 정책은 80% 이상의 작업 성공률을 달성합니다.
+- **인간 개입 오류 수정**: 인공 개입 도입 후 작업 성공률이 추가로 10-15% 향상되었으며, 특히 복잡한 긴 시퀀스 작업에서 효과가 두드러졌습니다.
+
+### 결론
+DexCap은 휴대용 하드웨어와 전용 모방 학습 알고리즘의 결합을 통해 기존 손 움직임 캡처 시스템의 휴대성 부족과 데이터에서 정책으로의 변환 어려움 문제를 해결하며, 대규모 손재주 조작 데이터 수집 및 인간 수준의 로봇 손재주 연구를 위한 실현 가능한 솔루션을 제공합니다.

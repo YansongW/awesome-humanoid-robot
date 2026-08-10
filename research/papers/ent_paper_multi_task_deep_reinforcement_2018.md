@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.04474v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.04474v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1132 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,31 @@ PopArt 通过自动调整任务贡献，有效解决了多任务学习中的奖�
 ## Overview
 The reinforcement learning community has made great strides in designing algorithms capable of exceeding human performance on specific tasks. These algorithms are mostly trained one task at the time, each new task requiring to train a brand new agent instance. This means the learning algorithm is general, but each solution is not; each agent can only solve the one task it was trained on. In this work, we study the problem of learning to master not one but multiple sequential-decision tasks at once. A general issue in multi-task learning is that a balance must be found between the needs of multiple tasks competing for the limited resources of a single learning system. Many learning algorithms can get distracted by certain tasks in the set of tasks to solve. Such tasks appear more salient to the learning process, for instance because of the density or magnitude of the in-task rewards. This causes the algorithm to focus on those salient tasks at the expense of generality. We propose to automatically adapt the contribution of each task to the agent's updates, so that all tasks have a similar impact on the learning dynamics. This resulted in state of the art performance on learning to play all games in a set of 57 diverse Atari games. Excitingly, our method learned a single trained policy - with a single set of weights - that exceeds median human performance. To our knowledge, this was the first time a single agent surpassed human-level performance on this multi-task domain. The same approach also demonstrated state of the art performance on a set of 30 tasks in the 3D reinforcement learning platform DeepMind Lab.
 
-## 개요
-강화 학습 커뮤니티는 특정 작업에서 인간의 성능을 초과할 수 있는 알고리즘을 설계하는 데 큰 진전을 이루었습니다. 이러한 알고리즘은 대부분 한 번에 하나의 작업만 학습하며, 각각의 새로운 작업은 완전히 새로운 에이전트 인스턴스를 학습해야 합니다. 이는 학습 알고리즘은 일반적이지만 각 솔루션은 그렇지 않다는 것을 의미합니다. 즉, 각 에이전트는 학습된 하나의 작업만 해결할 수 있습니다. 본 연구에서는 하나가 아닌 여러 순차적 의사 결정 작업을 동시에 마스터하는 문제를 연구합니다. 다중 작업 학습의 일반적인 문제는 단일 학습 시스템의 제한된 자원을 두고 경쟁하는 여러 작업의 요구 사이에서 균형을 찾아야 한다는 점입니다. 많은 학습 알고리즘은 해결해야 할 작업 집합 중 특정 작업에 의해 주의가 분산될 수 있습니다. 이러한 작업은 예를 들어 작업 내 보상의 밀도나 크기 때문에 학습 과정에서 더 두드러지게 나타납니다. 이로 인해 알고리즘은 일반성을 희생하면서 이러한 두드러진 작업에 집중하게 됩니다. 우리는 각 작업이 에이전트 업데이트에 기여하는 정도를 자동으로 조정하여 모든 작업이 학습 역학에 유사한 영향을 미치도록 제안합니다. 이는 57개의 다양한 Atari 게임 집합에서 모든 게임을 학습하는 데 최첨단 성능을 달성했습니다. 흥미롭게도, 우리의 방법은 단일 가중치 집합을 가진 단일 학습 정책을 학습하여 중간 인간 성능을 초과했습니다. 우리가 아는 한, 이는 단일 에이전트가 이 다중 작업 도메인에서 인간 수준의 성능을 처음으로 넘어선 사례입니다. 동일한 접근 방식은 3D 강화 학습 플랫폼 DeepMind Lab의 30개 작업 집합에서도 최첨단 성능을 입증했습니다.
-
-## 핵심 내용
-강화 학습 커뮤니티는 특정 작업에서 인간의 성능을 초과할 수 있는 알고리즘을 설계하는 데 큰 진전을 이루었습니다. 이러한 알고리즘은 대부분 한 번에 하나의 작업만 학습하며, 각각의 새로운 작업은 완전히 새로운 에이전트 인스턴스를 학습해야 합니다. 이는 학습 알고리즘은 일반적이지만 각 솔루션은 그렇지 않다는 것을 의미합니다. 즉, 각 에이전트는 학습된 하나의 작업만 해결할 수 있습니다. 본 연구에서는 하나가 아닌 여러 순차적 의사 결정 작업을 동시에 마스터하는 문제를 연구합니다. 다중 작업 학습의 일반적인 문제는 단일 학습 시스템의 제한된 자원을 두고 경쟁하는 여러 작업의 요구 사이에서 균형을 찾아야 한다는 점입니다. 많은 학습 알고리즘은 해결해야 할 작업 집합 중 특정 작업에 의해 주의가 분산될 수 있습니다. 이러한 작업은 예를 들어 작업 내 보상의 밀도나 크기 때문에 학습 과정에서 더 두드러지게 나타납니다. 이로 인해 알고리즘은 일반성을 희생하면서 이러한 두드러진 작업에 집중하게 됩니다. 우리는 각 작업이 에이전트 업데이트에 기여하는 정도를 자동으로 조정하여 모든 작업이 학습 역학에 유사한 영향을 미치도록 제안합니다. 이는 57개의 다양한 Atari 게임 집합에서 모든 게임을 학습하는 데 최첨단 성능을 달성했습니다. 흥미롭게도, 우리의 방법은 단일 가중치 집합을 가진 단일 학습 정책을 학습하여 중간 인간 성능을 초과했습니다. 우리가 아는 한, 이는 단일 에이전트가 이 다중 작업 도메인에서 인간 수준의 성능을 처음으로 넘어선 사례입니다. 동일한 접근 방식은 3D 강화 학습 플랫폼 DeepMind Lab의 30개 작업 집합에서도 최첨단 성능을 입증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/1809.04474v1
+
+## 개요
+전통적인 강화학습 알고리즘은 일반적으로 한 번에 하나의 작업만 훈련하며, 각각의 새 작업은 처음부터 독립적인 에이전트를 훈련해야 하므로 솔루션의 일반성이 부족합니다. 이 연구는 다중 작업 학습의 핵심 과제에 초점을 맞춥니다: 보상 밀도나 크기의 차이로 인해 서로 다른 작업이 단일 학습 시스템의 제한된 자원을 두고 경쟁하여, 알고리즘이 특정 "눈에 띄는" 작업에 편향되고 전체 성능을 희생할 수 있습니다. 이를 위해 저자들은 PopArt 방법을 제안하여 각 작업이 에이전트 업데이트에 미치는 영향 가중치를 자동으로 조정함으로써 모든 작업이 훈련 역학에서 유사한 영향력을 갖도록 보장합니다. 실험 결과, 이 방법은 57개의 Atari 게임에서 훈련된 단일 정책(하나의 가중치 세트 사용)이 인간 중앙값 성능을 초과했으며, DeepMind Lab의 30개 3D 작업에서도 당시 최고 성능을 달성했습니다.
+
+## 핵심 내용
+### 방법 핵심
+- **문제 정의**: 다중 작업 강화학습에서 작업 간 보상 규모 차이(예: 희소 보상 vs 밀집 보상)로 인해 에이전트가 특정 작업에 과도하게 집중하고 다른 작업의 학습을 무시할 수 있습니다.
+- **PopArt 메커니즘**: 각 작업의 보상 통계(평균 및 표준편차)를 유지하여 정책 업데이트에서 작업의 기울기 기여도를 동적으로 조정하는 적응형 정규화 기술입니다. 구체적으로, PopArt는 각 작업의 반환을 정규화하고 정책 네트워크가 훈련 중 출력 레이어의 스케일링 매개변수를 적응적으로 조정할 수 있게 하여 각 작업의 학습 신호를 균형 있게 만듭니다.
+
+### 실험 설정
+- **벤치마크 테스트**:
+  - **Atari 57**: 액션, 전략, 슈팅 등 다양한 유형을 포함한 57개의 고전 Atari 게임.
+  - **DeepMind Lab**: 복잡한 환경에서 목표를 완료해야 하는 30개의 3D 내비게이션 및 탐색 작업.
+- **비교 방법**: 단일 작업 DQN, 다중 작업 기준선(예: 공유 네트워크, 작업별 헤드) 및 당시 다중 작업 강화학습 알고리즘(예: A3C)과 비교.
+- **평가 지표**: 인간 정규화 점수(HNS)로, 인간 플레이어 성능을 기준으로 함(100%는 인간 중앙값 수준).
+
+### 주요 결과
+- **Atari 57**:
+  - 훈련된 단일 정책(하나의 가중치 세트)이 57개 게임에서 **중앙값 HNS 100% 초과**를 달성하여, 단일 에이전트가 인간 중앙값 수준을 처음으로 초과했습니다.
+  - 39개 게임에서 단일 작업 DQN보다 우수했으며, 18개 게임에서 인간 전문가 수준에 도달하거나 초과했습니다.
+- **DeepMind Lab**:
+  - 30개 작업에서 **당시 최고 평균 성능**을 기록했으며, PopArt를 사용하지 않은 다중 작업 기준선보다 크게 우수했습니다.
+- **절제 실험**: PopArt를 제거하면 다중 작업 훈련 성능이 30-50% 하락하여 적응형 균형 메커니즘의 핵심 역할을 검증했습니다.
+
+### 결론
+PopArt는 작업 기여도를 자동으로 조정하여 다중 작업 학습의 보상 규모 불균형 문제를 효과적으로 해결하며, 단일 에이전트가 다양한 작업에서 인간 수준에 도달하거나 초과할 수 있게 합니다. 이 방법은 이후 다중 작업 및 일반 강화학습(예: IMPALA, Agent57)의 중요한 기반을 제공합니다.

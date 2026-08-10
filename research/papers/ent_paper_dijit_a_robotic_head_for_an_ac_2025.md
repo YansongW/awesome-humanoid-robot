@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.07998v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.07998v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (796 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,31 @@ DIJIT 在仿人运动范围、速度及扫视精度上均达到较高水平，�
 ## Overview
 We present DIJIT, a novel binocular robotic head expressly designed for mobile agents that behave as active observers. DIJIT's unique breadth of functionality enables active vision research and the study of human-like eye and head-neck motions, their interrelationships, and how each contributes to visual ability. DIJIT is also being used to explore the differences between how human vision employs eye/head movements to solve visual tasks and current computer vision methods. DIJIT's design features nine mechanical degrees of freedom, while the cameras and lenses provide an additional four optical degrees of freedom. The ranges and speeds of the mechanical design are comparable to human performance. DIJIT attains 85\% of the peak human saccade speed. Our design includes the ranges of motion required for convergent stereo, namely, vergence, version, and cyclotorsion. Here, we present DIJIT and some aspects of its performance. We also present a novel method for saccadic camera movements, using a direct relationship between camera orientation and motor values. The resulting saccadic camera movements are close to human movements in terms of their accuracy, with 1.17$^\circ$ and 1.14$^\circ$ mean error for the left and right cameras, respectively.
 
-## 개요
-우리는 능동적 관찰자로 행동하는 모바일 에이전트를 위해 특별히 설계된 새로운 양안 로봇 헤드 DIJIT를 소개합니다. DIJIT의 독특한 기능 폭은 능동 시각 연구와 인간과 유사한 눈 및 머리-목 움직임, 이들의 상호 관계, 그리고 각각이 시각 능력에 기여하는 방식을 연구할 수 있게 합니다. DIJIT는 또한 인간 시각이 시각적 작업을 해결하기 위해 눈/머리 움직임을 사용하는 방식과 현재 컴퓨터 비전 방법 간의 차이를 탐구하는 데 사용되고 있습니다. DIJIT의 설계는 9개의 기계적 자유도를 특징으로 하며, 카메라와 렌즈는 추가로 4개의 광학적 자유도를 제공합니다. 기계적 설계의 범위와 속도는 인간의 성능과 유사합니다. DIJIT는 인간 최대 단속 운동 속도의 85%에 도달합니다. 우리의 설계는 수렴 스테레오에 필요한 움직임 범위, 즉 버전스, 버전, 사이클로토션을 포함합니다. 여기서 우리는 DIJIT와 그 성능의 일부 측면을 제시합니다. 또한 카메라 방향과 모터 값 간의 직접적인 관계를 사용하는 단속적 카메라 움직임을 위한 새로운 방법을 제시합니다. 결과적인 단속적 카메라 움직임은 정확도 측면에서 인간의 움직임에 가까우며, 왼쪽 및 오른쪽 카메라에 대해 각각 1.17$^\circ$ 및 1.14$^\circ$의 평균 오차를 보입니다.
-
-## 핵심 내용
-우리는 능동적 관찰자로 행동하는 모바일 에이전트를 위해 특별히 설계된 새로운 양안 로봇 헤드 DIJIT를 소개합니다. DIJIT의 독특한 기능 폭은 능동 시각 연구와 인간과 유사한 눈 및 머리-목 움직임, 이들의 상호 관계, 그리고 각각이 시각 능력에 기여하는 방식을 연구할 수 있게 합니다. DIJIT는 또한 인간 시각이 시각적 작업을 해결하기 위해 눈/머리 움직임을 사용하는 방식과 현재 컴퓨터 비전 방법 간의 차이를 탐구하는 데 사용되고 있습니다. DIJIT의 설계는 9개의 기계적 자유도를 특징으로 하며, 카메라와 렌즈는 추가로 4개의 광학적 자유도를 제공합니다. 기계적 설계의 범위와 속도는 인간의 성능과 유사합니다. DIJIT는 인간 최대 단속 운동 속도의 85%에 도달합니다. 우리의 설계는 수렴 스테레오에 필요한 움직임 범위, 즉 버전스, 버전, 사이클로토션을 포함합니다. 여기서 우리는 DIJIT와 그 성능의 일부 측면을 제시합니다. 또한 카메라 방향과 모터 값 간의 직접적인 관계를 사용하는 단속적 카메라 움직임을 위한 새로운 방법을 제시합니다. 결과적인 단속적 카메라 움직임은 정확도 측면에서 인간의 움직임에 가까우며, 왼쪽 및 오른쪽 카메라에 대해 각각 1.17$^\circ$ 및 1.14$^\circ$의 평균 오차를 보입니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.07998v2
+
+## 개요
+DIJIT은 능동 시각 연구를 위한 인간형 양안 로봇 헤드 하드웨어로, 인간의 눈-머리 협응 운동과 시력에 대한 기여를 모방하는 것을 목표로 합니다. 이 설계는 9개의 기계적 자유도와 4개의 광학적 자유도를 포함하며, 운동 범위와 속도는 인간 수준에 근접하고, 특히 단속 운동 속도는 인간 최대치의 85%에 도달합니다. DIJIT은 양안 입체 시각에 필요한 수렴, 버전 및 회선 운동을 지원하며, 카메라 방향과 모터 값의 직접 매핑을 통해 단속 운동을 구현하는 새로운 방법을 도입하여 정밀도가 인간에 근접하며, 좌우 카메라 평균 오차는 각각 1.17° 및 1.14°입니다.
+
+## 핵심 내용
+### 설계 목표 및 기능
+DIJIT은 이동 에이전트를 위해 설계되어 능동적 관찰자로서 시각 연구를 수행할 수 있게 합니다. 핵심 목표는 다음과 같습니다:
+- 능동 시각 연구를 지원하여 인간의 눈-머리 운동 패턴과 상호 관계를 탐구합니다.
+- 인간이 눈/머리 운동을 통해 시각 작업을 해결하는 방식과 현재 컴퓨터 비전 방법의 차이를 비교합니다.
+
+### 기계 및 광학 아키텍처
+- **기계적 자유도**: 총 9개로, 목, 안구 등의 관절을 포함하며, 운동 범위와 속도는 인간 성능에 맞춰져 있습니다.
+- **광학적 자유도**: 추가 4개로, 카메라와 렌즈 시스템에 의해 제공되어 시각 조절 능력을 강화합니다.
+- **운동 능력**: 단속 운동 속도는 인간 최대치의 85%에 도달하며, 양안 입체 시각에 필요한 수렴, 버전 및 회선 운동을 지원합니다.
+
+### 단속 운동 방법 혁신
+카메라 방향과 모터 값의 직접 매핑에 기반한 단속 운동 제어 방법을 제안하며, 복잡한 중간 계산이 필요 없습니다:
+- **정밀도 성능**: 왼쪽 카메라 평균 오차 1.17°, 오른쪽 카메라 평균 오차 1.14°로 인간의 단속 운동 정밀도에 근접합니다.
+- **구현 메커니즘**: 카메라 자세와 모터 위치의 직접 관계를 설정하여 제어 흐름을 단순화하고 응답 속도를 향상시킵니다.
+
+### 실험 설정 및 성능 검증
+- 실험 환경은 명시되지 않았지만, 인간의 단속 운동 데이터와 비교하여 정밀도를 평가합니다.
+- 주요 수치: 기계적 자유도 9, 광학적 자유도 4, 단속 운동 속도는 인간 최대치의 85%, 좌우 카메라 오차는 각각 1.17° 및 1.14°입니다.
+
+### 결론
+DIJIT은 인간형 운동 범위, 속도 및 단속 운동 정밀도에서 높은 수준을 달성하여 능동 시각 연구를 위한 하드웨어 기반을 제공하며, 특히 눈-머리 협응 메커니즘과 컴퓨터 비전 방법의 비교 분석에 적합합니다.

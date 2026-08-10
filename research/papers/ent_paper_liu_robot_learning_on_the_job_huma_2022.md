@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2211.08416v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2211.08416v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (852 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,30 @@ Sirius 通过人机协作与数据重加权学习，在接触丰富的操作任�
 ## Overview
 With the rapid growth of computing powers and recent advances in deep learning, we have witnessed impressive demonstrations of novel robot capabilities in research settings. Nonetheless, these learning systems exhibit brittle generalization and require excessive training data for practical tasks. To harness the capabilities of state-of-the-art robot learning models while embracing their imperfections, we present Sirius, a principled framework for humans and robots to collaborate through a division of work. In this framework, partially autonomous robots are tasked with handling a major portion of decision-making where they work reliably; meanwhile, human operators monitor the process and intervene in challenging situations. Such a human-robot team ensures safe deployments in complex tasks. Further, we introduce a new learning algorithm to improve the policy's performance on the data collected from the task executions. The core idea is re-weighing training samples with approximated human trust and optimizing the policies with weighted behavioral cloning. We evaluate Sirius in simulation and on real hardware, showing that Sirius consistently outperforms baselines over a collection of contact-rich manipulation tasks, achieving an 8% boost in simulation and 27% on real hardware than the state-of-the-art methods in policy success rate, with twice faster convergence and 85% memory size reduction. Videos and more details are available at https://ut-austin-rpl.github.io/sirius/
 
-## 개요
-컴퓨팅 성능의 급속한 성장과 딥러닝의 최근 발전에 힘입어, 연구 환경에서 인상적인 새로운 로봇 능력 시연을 목격했습니다. 그럼에도 불구하고 이러한 학습 시스템은 취약한 일반화 능력을 보이며, 실용적인 작업을 위해 과도한 학습 데이터를 필요로 합니다. 최첨단 로봇 학습 모델의 능력을 활용하면서도 그 불완전성을 수용하기 위해, 우리는 작업 분할을 통해 인간과 로봇이 협력할 수 있는 원칙적인 프레임워크인 Sirius를 제시합니다. 이 프레임워크에서 부분 자율 로봇은 신뢰할 수 있는 의사 결정의 주요 부분을 처리하는 임무를 맡고, 인간 운영자는 프로세스를 모니터링하며 어려운 상황에 개입합니다. 이러한 인간-로봇 팀은 복잡한 작업에서 안전한 배치를 보장합니다. 또한, 작업 실행에서 수집된 데이터를 기반으로 정책의 성능을 향상시키는 새로운 학습 알고리즘을 소개합니다. 핵심 아이디어는 근사화된 인간 신뢰도로 학습 샘플에 가중치를 재부여하고, 가중 행동 복제를 통해 정책을 최적화하는 것입니다. 우리는 시뮬레이션과 실제 하드웨어에서 Sirius를 평가했으며, Sirius가 접촉이 많은 조작 작업 집합에서 기준선을 일관되게 능가하여, 최첨단 방법 대비 정책 성공률에서 시뮬레이션 8%, 실제 하드웨어 27% 향상, 두 배 빠른 수렴 속도, 85% 메모리 크기 감소를 달성함을 보여줍니다. 비디오 및 자세한 내용은 https://ut-austin-rpl.github.io/sirius/ 에서 확인할 수 있습니다.
-
-## 핵심 내용
-컴퓨팅 성능의 급속한 성장과 딥러닝의 최근 발전에 힘입어, 연구 환경에서 인상적인 새로운 로봇 능력 시연을 목격했습니다. 그럼에도 불구하고 이러한 학습 시스템은 취약한 일반화 능력을 보이며, 실용적인 작업을 위해 과도한 학습 데이터를 필요로 합니다. 최첨단 로봇 학습 모델의 능력을 활용하면서도 그 불완전성을 수용하기 위해, 우리는 작업 분할을 통해 인간과 로봇이 협력할 수 있는 원칙적인 프레임워크인 Sirius를 제시합니다. 이 프레임워크에서 부분 자율 로봇은 신뢰할 수 있는 의사 결정의 주요 부분을 처리하는 임무를 맡고, 인간 운영자는 프로세스를 모니터링하며 어려운 상황에 개입합니다. 이러한 인간-로봇 팀은 복잡한 작업에서 안전한 배치를 보장합니다. 또한, 작업 실행에서 수집된 데이터를 기반으로 정책의 성능을 향상시키는 새로운 학습 알고리즘을 소개합니다. 핵심 아이디어는 근사화된 인간 신뢰도로 학습 샘플에 가중치를 재부여하고, 가중 행동 복제를 통해 정책을 최적화하는 것입니다. 우리는 시뮬레이션과 실제 하드웨어에서 Sirius를 평가했으며, Sirius가 접촉이 많은 조작 작업 집합에서 기준선을 일관되게 능가하여, 최첨단 방법 대비 정책 성공률에서 시뮬레이션 8%, 실제 하드웨어 27% 향상, 두 배 빠른 수렴 속도, 85% 메모리 크기 감소를 달성함을 보여줍니다. 비디오 및 자세한 내용은 https://ut-austin-rpl.github.io/sirius/ 에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2211.08416v3
+
+## 개요
+Sirius 프레임워크는 로봇 학습 모델이 실제 작업에서 일반화 능력이 약하고 훈련 데이터 요구량이 큰 문제를 해결하는 데 목적을 둡니다. 이는 분업 협력을 통해 로봇이 대부분의 신뢰할 수 있는 결정을 자율적으로 처리하고, 인간 운영자는 복잡한 상황을 모니터링하고 개입하여 안전한 배포를 보장합니다. 이 프레임워크는 또한 근사 인간 신뢰도를 활용하여 훈련 샘플을 재가중하고, 가중 행동 클로닝을 통해 정책을 최적화하는 새로운 학습 알고리즘을 도입합니다. 시뮬레이션 및 실제 하드웨어에서의 접촉이 많은 조작 작업 평가에서 Sirius는 정책 성공률, 수렴 속도 및 메모리 사용량 측면에서 기존 방법보다 현저히 우수합니다.
+
+## 핵심 내용
+### 방법
+Sirius 프레임워크의 핵심은 **인간-로봇 분업 협력**입니다: 로봇은 신뢰할 수 있는 결정 부분을 처리하고, 인간 운영자는 전체 과정을 모니터링하며 로봇이 어려움에 직면했을 때 원격 조작을 통해 개입합니다. 이러한 협력은 복잡한 작업에서 안전한 배포를 보장합니다.
+
+### 학습 알고리즘
+프레임워크는 새로운 학습 알고리즘을 도입하며, 핵심 아이디어는 다음과 같습니다:
+- **데이터 재가중**: 근사 인간 신뢰도를 활용하여 작업 실행 중 수집된 훈련 샘플을 재가중합니다.
+- **정책 최적화**: **가중 행동 클로닝**(Weighted Behavioral Cloning)을 통해 정책을 최적화하여 로봇이 인간 개입에서 더 효과적으로 학습하도록 합니다.
+
+### 실험 설정
+- **작업**: 일련의 접촉이 많은 조작 작업(contact-rich manipulation tasks).
+- **평가 환경**: 시뮬레이션 환경 및 실제 하드웨어 플랫폼.
+- **기준 방법**: 현재 최첨단 방법과 비교.
+
+### 주요 결과
+- **정책 성공률**: Sirius는 시뮬레이션 환경에서 최첨단 방법보다 **8%** 향상, 실제 하드웨어에서 **27%** 향상.
+- **수렴 속도**: 수렴 속도는 기존 방법의 **두 배**(twice faster convergence).
+- **메모리 사용량**: 메모리 사용량 **85%** 감소(85% memory size reduction).
+
+### 결론
+Sirius는 인간-로봇 협력과 데이터 재가중 학습을 통해 접촉이 많은 조작 작업에서 정책 성능, 수렴 효율성을 현저히 향상시키고 메모리 요구량을 줄여 실제 배포에서의 효과를 검증했습니다. 더 많은 세부 사항과 비디오는 프로젝트 웹사이트에서 확인할 수 있습니다.

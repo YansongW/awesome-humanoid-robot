@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.11660v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.11660v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (723 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,23 @@ ManiAgent 通过智能体协作机制显著提升了机器人操作在复杂推�
 ## Overview
 While Vision-Language-Action (VLA) models have demonstrated impressive capabilities in robotic manipulation, their performance in complex reasoning and long-horizon task planning is limited by data scarcity and model capacity. To address this, we introduce ManiAgent, an agentic architecture for general manipulation tasks that achieves end-to-end output from task descriptions and environmental inputs to robotic manipulation actions. In this framework, multiple agents involve inter-agent communication to perform environmental perception, sub-task decomposition and action generation, enabling efficient handling of complex manipulation scenarios. Evaluations show ManiAgent achieves an 86.8% success rate on the SimplerEnv benchmark and 95.8% on real-world pick-and-place tasks, enabling efficient data collection that yields VLA models with performance comparable to those trained on human-annotated datasets. The project webpage is available at https://yi-yang929.github.io/ManiAgent/.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 로봇 조작 분야에서 뛰어난 성능을 보여주었지만, 복잡한 추론 및 장기 작업 계획에서의 성능은 데이터 부족과 모델 용량의 한계로 인해 제한적입니다. 이를 해결하기 위해, 우리는 작업 설명과 환경 입력으로부터 로봇 조작 동작까지 종단간 출력을 달성하는 일반 조작 작업을 위한 에이전트 아키텍처인 ManiAgent를 소개합니다. 이 프레임워크에서 여러 에이전트는 에이전트 간 통신을 통해 환경 인식, 하위 작업 분해 및 동작 생성을 수행하여 복잡한 조작 시나리오를 효율적으로 처리할 수 있습니다. 평가 결과, ManiAgent는 SimplerEnv 벤치마크에서 86.8%의 성공률을, 실제 세계 집어서 옮기기 작업에서 95.8%의 성공률을 달성하여, 인간 주석 데이터셋으로 학습된 모델과 유사한 성능을 가진 VLA 모델을 생성하는 효율적인 데이터 수집을 가능하게 합니다. 프로젝트 웹페이지는 https://yi-yang929.github.io/ManiAgent/에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 로봇 조작 분야에서 뛰어난 성능을 보여주었지만, 복잡한 추론 및 장기 작업 계획에서의 성능은 데이터 부족과 모델 용량의 한계로 인해 제한적입니다. 이를 해결하기 위해, 우리는 작업 설명과 환경 입력으로부터 로봇 조작 동작까지 종단간 출력을 달성하는 일반 조작 작업을 위한 에이전트 아키텍처인 ManiAgent를 소개합니다. 이 프레임워크에서 여러 에이전트는 에이전트 간 통신을 통해 환경 인식, 하위 작업 분해 및 동작 생성을 수행하여 복잡한 조작 시나리오를 효율적으로 처리할 수 있습니다. 평가 결과, ManiAgent는 SimplerEnv 벤치마크에서 86.8%의 성공률을, 실제 세계 집어서 옮기기 작업에서 95.8%의 성공률을 달성하여, 인간 주석 데이터셋으로 학습된 모델과 유사한 성능을 가진 VLA 모델을 생성하는 효율적인 데이터 수집을 가능하게 합니다. 프로젝트 웹페이지는 https://yi-yang929.github.io/ManiAgent/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.11660v2
+
+## 개요
+ManiAgent는 복잡한 추론과 장기 작업 계획에서 기존 VLA 모델의 한계를 해결하기 위해 설계된 범용 로봇 조작을 위한 지능형 에이전트 아키텍처입니다. 이 프레임워크는 여러 에이전트 간의 통신 협력을 통해 작업 설명과 환경 입력을 종단 간 로봇 조작 동작으로 변환하며, 환경 인식, 하위 작업 분해 및 동작 생성과 같은 핵심 단계를 포함합니다. 실험 결과, ManiAgent는 SimplerEnv 벤치마크에서 86.8%의 성공률을 달성했고, 실제 세계 집기-배치 작업에서 95.8%를 달성했으며, 효율적인 데이터 수집 능력 덕분에 훈련된 VLA 모델의 성능은 수동 주석 데이터 세트로 훈련된 모델과 견줄 만합니다.
+
+## 핵심 내용
+### 방법 개요
+ManiAgent는 에이전트 아키텍처를 채택하여 다중 에이전트 간의 통신 메커니즘을 통해 종단 간 조작 프로세스를 구현합니다. 프레임워크는 세 가지 핵심 모듈을 포함합니다:
+- **환경 인식 에이전트**: 시각 및 언어 입력에서 환경 상태 정보를 추출하는 역할을 담당합니다.
+- **하위 작업 분해 에이전트**: 복잡한 작업 설명을 실행 가능한 하위 작업 시퀀스로 분해합니다.
+- **동작 생성 에이전트**: 하위 작업 계획을 기반으로 구체적인 로봇 조작 동작을 생성합니다.
+
+### 실험 설정 및 주요 결과
+- **벤치마크 테스트**: SimplerEnv 벤치마크에서 ManiAgent는 86.8%의 성공률을 달성했습니다.
+- **실제 세계 작업**: 집기-배치 작업에서 성공률은 95.8%에 달합니다.
+- **데이터 효율성**: 이 프레임워크는 효율적인 데이터 수집을 지원하며, 이를 통해 훈련된 VLA 모델의 성능은 수동 주석 데이터 세트로 훈련된 모델과 동등하여 데이터 부족 문제를 효과적으로 완화합니다.
+
+### 결론
+ManiAgent는 에이전트 협력 메커니즘을 통해 복잡한 추론 및 장기 작업에서 로봇 조작 성능을 크게 향상시키며, VLA 모델 훈련을 위한 효율적인 데이터 수집 경로를 제공합니다. 프로젝트 페이지는 공개되었으며, URL은 https://yi-yang929.github.io/ManiAgent/입니다.

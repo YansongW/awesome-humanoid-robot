@@ -48,8 +48,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03454v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03454v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (879 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -94,11 +95,32 @@ In this paper, we propose Adversarial Dynamics Priors (ADP) for perturbation-res
 ## Content
 In this paper, we propose Adversarial Dynamics Priors (ADP) for perturbation-resilient humanoid locomotion control. Existing motion prior-based methods induce natural motion styles by imitating kinematic motion features, but they do not directly regularize dynamics features, such as CoM motion, centroidal momentum, contact forces, and contact states. To address this limitation, we replace kinematic motion-style features with selected dynamics features extracted from locomotion trajectories as the target of adversarial regularization. To this end, we use trajectory optimization to construct a reference dataset and train a discriminator to evaluate whether policy-induced temporal windows are consistent with the resulting reference distribution. Without explicit motion tracking, ADP encourages policy rollouts to remain close to the reference support, even after perturbations. Experimental results show that, compared with AMP, the strongest baseline in our evaluation, ADP improves the $80\%$-success impulse threshold ($J_{80}$) by $16.7\%$, while reducing direction-averaged recovery time and velocity tracking error by $47.9\%$ and $35.4\%$, respectively.
 
-## 개요
-본 논문에서는 외란에 강건한 휴머노이드 보행 제어를 위한 적대적 동역학 사전(ADP)을 제안합니다. 기존의 동작 사전 기반 방법은 운동학적 동작 특징을 모방하여 자연스러운 동작 스타일을 유도하지만, CoM 운동, 중심 운동량, 접촉력 및 접촉 상태와 같은 동역학 특징을 직접적으로 정규화하지는 않습니다. 이러한 한계를 해결하기 위해, 우리는 운동학적 동작 스타일 특징을 보행 궤적에서 추출한 선택된 동역학 특징으로 대체하여 적대적 정규화의 대상으로 삼습니다. 이를 위해 궤적 최적화를 사용하여 참조 데이터셋을 구축하고, 정책이 유도하는 시간 창이 결과 참조 분포와 일관성이 있는지 평가하는 판별기를 훈련합니다. 명시적인 동작 추적 없이도 ADP는 정책 롤아웃이 외란 이후에도 참조 지지 영역에 가깝게 유지되도록 장려합니다. 실험 결과, 평가에서 가장 강력한 기준선인 AMP와 비교하여 ADP는 $80\%$ 성공 임펄스 임계값($J_{80}$)을 $16.7\%$ 향상시키고, 방향 평균 회복 시간과 속도 추적 오차를 각각 $47.9\%$ 및 $35.4\%$ 감소시킵니다.
-
-## 핵심 내용
-본 논문에서는 외란에 강건한 휴머노이드 보행 제어를 위한 적대적 동역학 사전(ADP)을 제안합니다. 기존의 동작 사전 기반 방법은 운동학적 동작 특징을 모방하여 자연스러운 동작 스타일을 유도하지만, CoM 운동, 중심 운동량, 접촉력 및 접촉 상태와 같은 동역학 특징을 직접적으로 정규화하지는 않습니다. 이러한 한계를 해결하기 위해, 우리는 운동학적 동작 스타일 특징을 보행 궤적에서 추출한 선택된 동역학 특징으로 대체하여 적대적 정규화의 대상으로 삼습니다. 이를 위해 궤적 최적화를 사용하여 참조 데이터셋을 구축하고, 정책이 유도하는 시간 창이 결과 참조 분포와 일관성이 있는지 평가하는 판별기를 훈련합니다. 명시적인 동작 추적 없이도 ADP는 정책 롤아웃이 외란 이후에도 참조 지지 영역에 가깝게 유지되도록 장려합니다. 실험 결과, 평가에서 가장 강력한 기준선인 AMP와 비교하여 ADP는 $80\%$ 성공 임펄스 임계값($J_{80}$)을 $16.7\%$ 향상시키고, 방향 평균 회복 시간과 속도 추적 오차를 각각 $47.9\%$ 및 $35.4\%$ 감소시킵니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03454v1
+
+## 개요
+기존의 운동 사전 기반 방법은 운동학적 특징을 모방하여 자연스러운 보행을 생성하지만, 동역학적 특징(예: 질량 중심 운동, 접촉력 등)을 직접적으로 제약하지는 못합니다. ADP는 보행 궤적에서 선택된 동역학적 특징을 적대적 정규화의 목표로 추출하고, 궤적 최적화를 활용해 참조 데이터셋을 생성하며, 판별기를 훈련시켜 정책이 생성한 시계열 창이 참조 분포와 일치하는지 평가합니다. 이 방법은 명시적인 운동 추적 없이도 외란을 받더라도 정책 출력이 참조 지지 영역에 가깝게 유지되도록 합니다. 휴머노이드 로봇 실험에서 ADP는 80% 성공 충격 저항 임계값(J80)을 16.7% 향상시키고, 방향 평균 회복 시간을 47.9% 줄였으며, 속도 추적 오차를 35.4% 감소시켰습니다.
+
+## 핵심 내용
+### 방법 핵심
+- **문제 정의**: 기존 운동 사전 방법(예: AMP)은 운동학적 특징(관절 각도, 속도 등)만 모방하고 동역학적 특징(질량 중심 운동, 질량 중심 운동량, 접촉력, 접촉 상태)을 직접 제약하지 않아 외란 저항 능력이 부족합니다.
+- **ADP 프레임워크**:
+  - **참조 데이터셋 구축**: 궤적 최적화를 사용해 동역학적 특징을 포함한 보행 궤적을 생성하여 참조 분포로 사용합니다.
+  - **판별기 설계**: 판별기를 훈련시켜 정책이 생성한 시계열 창이 참조 분포와 일치하는지 평가하며, 기존의 운동학적 특징 적대적 정규화를 대체합니다.
+  - **정책 최적화**: 명시적인 운동 추적 없이 적대적 훈련을 통해 정책 출력이 참조 지지 영역에 가깝게 유지되도록 장려하며, 외부 외란에도 강건성을 유지합니다.
+
+### 실험 설정
+- **플랫폼**: 휴머노이드 로봇(구체적인 모델은 초록에 명시되지 않음).
+- **기준선**: AMP(Adversarial Motion Priors)와 비교하며, AMP는 가장 강력한 기준선으로 평가됩니다.
+- **평가 지표**:
+  - 80% 성공 충격 저항 임계값(J80): 외란 저항 능력 측정.
+  - 방향 평균 회복 시간: 외란 후 안정적인 보행 복귀에 필요한 시간.
+  - 속도 추적 오차: 실제 속도와 목표 속도의 편차.
+
+### 주요 결과
+- **충격 저항 능력**: ADP의 J80은 AMP보다 16.7% 향상.
+- **회복 시간**: 방향 평균 회복 시간이 47.9% 감소.
+- **속도 추적**: 속도 추적 오차가 35.4% 감소.
+
+### 결론
+ADP는 동역학적 특징을 직접 정규화함으로써 휴머노이드 로봇 보행 제어의 외란 저항 강건성을 크게 향상시키며, 핵심 지표에서 기존 운동 사전 방법을 전반적으로 능가합니다.

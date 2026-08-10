@@ -49,8 +49,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00483v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00483v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (755 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,28 @@ VLM-AR3L 通过结合绝对与相对奖励，显著提升了强化学习在复�
 ## Overview
 Designing effective reward functions remains a major challenge in reinforcement learning (RL), particularly in open-ended environments where task goals are abstract and difficult to quantify. In this work, we present VLM-AR3L, a framework that leverages Vision-Language Models (VLMs) to provide both absolute and relative rewards for RL. VLM-AR3L interprets an agent's visual observations in the context of a natural language task goal, and learns both absolute and relative rewards from VLM-generated preference labels. The absolute reward model predicts scalar evaluations for individual states, while the relative reward model compares consecutive observations to infer progress or regression toward the task goal. Their integration combines the stability of state-based evaluation with the robustness of comparative supervision. We evaluate VLM-AR3L across benchmarks spanning classic control, manipulation, and open-world embodied tasks, with a particular focus on Minecraft given its visual complexity and long-horizon decision-making requirements. Experimental results show that VLM-AR3L consistently outperforms prior VLM-based reward learning methods.
 
-## 개요
-강화 학습(RL)에서 효과적인 보상 함수를 설계하는 것은 여전히 주요 과제이며, 특히 작업 목표가 추상적이고 정량화하기 어려운 개방형 환경에서 더욱 그렇습니다. 본 연구에서는 비전-언어 모델(VLM)을 활용하여 RL에 절대적 및 상대적 보상을 모두 제공하는 프레임워크인 VLM-AR3L을 제시합니다. VLM-AR3L은 자연어 작업 목표의 맥락에서 에이전트의 시각적 관찰을 해석하고, VLM이 생성한 선호 레이블로부터 절대적 및 상대적 보상을 학습합니다. 절대적 보상 모델은 개별 상태에 대한 스칼라 평가를 예측하는 반면, 상대적 보상 모델은 연속적인 관찰을 비교하여 작업 목표에 대한 진행 또는 후퇴를 추론합니다. 이들의 통합은 상태 기반 평가의 안정성과 비교 감독의 견고성을 결합합니다. 우리는 고전적 제어, 조작, 개방형 세계 구현 작업을 아우르는 벤치마크에서 VLM-AR3L을 평가하며, 특히 시각적 복잡성과 장기적 의사 결정 요구 사항을 고려하여 Minecraft에 중점을 둡니다. 실험 결과는 VLM-AR3L이 기존 VLM 기반 보상 학습 방법을 일관되게 능가함을 보여줍니다.
-
-## 핵심 내용
-강화 학습(RL)에서 효과적인 보상 함수를 설계하는 것은 여전히 주요 과제이며, 특히 작업 목표가 추상적이고 정량화하기 어려운 개방형 환경에서 더욱 그렇습니다. 본 연구에서는 비전-언어 모델(VLM)을 활용하여 RL에 절대적 및 상대적 보상을 모두 제공하는 프레임워크인 VLM-AR3L을 제시합니다. VLM-AR3L은 자연어 작업 목표의 맥락에서 에이전트의 시각적 관찰을 해석하고, VLM이 생성한 선호 레이블로부터 절대적 및 상대적 보상을 학습합니다. 절대적 보상 모델은 개별 상태에 대한 스칼라 평가를 예측하는 반면, 상대적 보상 모델은 연속적인 관찰을 비교하여 작업 목표에 대한 진행 또는 후퇴를 추론합니다. 이들의 통합은 상태 기반 평가의 안정성과 비교 감독의 견고성을 결합합니다. 우리는 고전적 제어, 조작, 개방형 세계 구현 작업을 아우르는 벤치마크에서 VLM-AR3L을 평가하며, 특히 시각적 복잡성과 장기적 의사 결정 요구 사항을 고려하여 Minecraft에 중점을 둡니다. 실험 결과는 VLM-AR3L이 기존 VLM 기반 보상 학습 방법을 일관되게 능가함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.00483v2
+
+## 개요
+강화 학습에서 효과적인 보상 함수를 설계하는 것은 큰 도전 과제이며, 특히 작업 목표가 추상적이고 정량화하기 어려운 개방형 환경에서 더욱 그렇습니다. VLM-AR3L 프레임워크는 시각 언어 모델(VLM)을 통해 에이전트의 시각적 관측을 해석하고, 자연어 작업 목표와 결합하여 VLM이 생성한 선호 레이블에서 절대 및 상대 보상을 학습합니다. 절대 보상 모델은 각 상태에 대해 스칼라 평가를 제공하고, 상대 보상 모델은 연속적인 관측을 비교하여 작업 진행 또는 후퇴를 추론합니다. 이 둘의 결합은 상태 평가의 안정성과 비교 감독의 견고성을 융합합니다. 이 프레임워크는 고전적 제어, 조작 및 개방형 세계 구현 작업을 포함한 여러 벤치마크에서 평가되었으며, 특히 시각적으로 복잡하고 장기적인 의사 결정이 필요한 Minecraft 환경에 중점을 둡니다.
+
+## 핵심 내용
+### 방법
+- VLM-AR3L은 시각 언어 모델(VLM)을 활용하여 에이전트의 시각적 관측을 처리하고, 자연어 작업 목표와 결합하여 선호 레이블을 생성합니다.
+- 프레임워크는 두 가지 핵심 구성 요소를 포함합니다:
+  - **절대 보상 모델**: 각 독립 상태에 대해 스칼라 보상 값을 예측하여 안정적인 상태 수준 평가를 제공합니다.
+  - **상대 보상 모델**: 연속적인 관측 쌍을 비교하여 에이전트의 작업 목표 대비 진행 또는 후퇴를 추론하고 비교 감독을 제공합니다.
+- 두 보상 모델은 앙상블 학습을 통해 결합되어 절대 보상의 안정성과 상대 보상의 견고성을 융합합니다.
+
+### 실험 설정
+- 평가는 여러 벤치마크를 포함합니다: 고전적 제어 작업, 조작 작업 및 개방형 세계 구현 작업.
+- 특히 시각적 복잡성이 높고 장기적인 의사 결정이 필요한 Minecraft 환경에 초점을 맞춥니다.
+- 비교 방법은 기존의 VLM 보상 학습 방법입니다.
+
+### 주요 결과
+- VLM-AR3L은 모든 벤치마크에서 이전의 VLM 보상 학습 방법보다 지속적으로 우수한 성능을 보였습니다.
+- Minecraft 작업에서 VLM-AR3L은 더 강력한 보상 신호 품질을 입증하여 장기적인 의사 결정을 효과적으로 지원했습니다.
+
+### 결론
+VLM-AR3L은 절대 및 상대 보상을 결합하여 복잡한 개방형 환경에서 강화 학습의 보상 설계 효과를 크게 향상시켰으며, RL에서 VLM의 적용에 새로운 패러다임을 제공합니다.

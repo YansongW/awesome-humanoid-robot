@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.18780v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.18780v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (763 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,24 @@ DreamPolicy 通过统一基于世界模型的规划与策略学习，打破了�
 ## Overview
 Achieving versatile humanoid locomotion with a single policy presents a critical scalability challenge. Prevailing methods often rely on distilling multiple terrain-specific teacher policies into a unified student policy. However, while such distillation captures basic locomotion primitives, it struggles to organically compose these skills to adapt to complex environments, resulting in poor generalization to novel composite terrains unseen during training. To overcome this, we present DreamPolicy, a unified framework that integrates offline data with a diffusion-based world model, enabling a single policy to master both known and unseen terrains. Central to our approach is a terrain-aware world model, driven by an autoregressive diffusion world model trained on aggregated rollouts from specialized policies. This model synthesizes physically plausible future trajectories, which serve as dynamic objectives for a conditioned policy, thereby bypassing manual reward engineering. Unlike distillation, our world model captures generalizable locomotion skills, allowing for robust zero-shot transfer to unseen composite terrains. DreamPolicy naturally scales with data availability. As the offline dataset expands, the diffusion world model continuously acquires richer skills. Experiments demonstrate that DreamPolicy outperforms the strongest baseline by up to 27\% on unseen terrains and 38\% on combined terrains. By unifying world model-based planning and policy learning, DreamPolicy breaks the "one task, one policy" bottleneck and establishes a scalable, data-driven paradigm for generalist humanoid control.
 
-## 개요
-단일 정책으로 다재다능한 인간형 보행을 달성하는 것은 확장성 측면에서 중요한 도전 과제입니다. 기존 방법들은 종종 여러 지형 특화 교사 정책을 하나의 통합 학생 정책으로 증류(distillation)하는 데 의존합니다. 그러나 이러한 증류는 기본적인 보행 원시 동작을 포착하지만, 이러한 기술들을 유기적으로 조합하여 복잡한 환경에 적응하는 데 어려움을 겪어, 훈련 중 보지 못한 새로운 복합 지형에 대한 일반화 성능이 낮습니다. 이를 극복하기 위해 우리는 DreamPolicy를 제안합니다. 이는 오프라인 데이터와 확산 기반 세계 모델을 통합한 프레임워크로, 단일 정책이 알려진 지형과 보지 못한 지형 모두를 마스터할 수 있게 합니다. 우리 접근법의 핵심은 특화 정책의 집계된 롤아웃(rollout)으로 훈련된 자기회귀 확산 세계 모델에 기반한 지형 인식 세계 모델입니다. 이 모델은 물리적으로 타당한 미래 궤적을 합성하며, 이는 조건부 정책의 동적 목표 역할을 하여 수동 보상 엔지니어링을 우회합니다. 증류와 달리, 우리의 세계 모델은 일반화 가능한 보행 기술을 포착하여 보지 못한 복합 지형에 대한 강력한 제로샷 전이를 가능하게 합니다. DreamPolicy는 데이터 가용성에 따라 자연스럽게 확장됩니다. 오프라인 데이터셋이 확장됨에 따라 확산 세계 모델은 지속적으로 더 풍부한 기술을 습득합니다. 실험 결과, DreamPolicy는 보지 못한 지형에서 최대 27%, 복합 지형에서 38%까지 가장 강력한 기준선을 능가합니다. 세계 모델 기반 계획과 정책 학습을 통합함으로써, DreamPolicy는 "하나의 작업, 하나의 정책" 병목 현상을 깨고 범용 인간형 제어를 위한 확장 가능한 데이터 기반 패러다임을 구축합니다.
-
-## 핵심 내용
-단일 정책으로 다재다능한 인간형 보행을 달성하는 것은 확장성 측면에서 중요한 도전 과제입니다. 기존 방법들은 종종 여러 지형 특화 교사 정책을 하나의 통합 학생 정책으로 증류하는 데 의존합니다. 그러나 이러한 증류는 기본적인 보행 원시 동작을 포착하지만, 이러한 기술들을 유기적으로 조합하여 복잡한 환경에 적응하는 데 어려움을 겪어, 훈련 중 보지 못한 새로운 복합 지형에 대한 일반화 성능이 낮습니다. 이를 극복하기 위해 우리는 DreamPolicy를 제안합니다. 이는 오프라인 데이터와 확산 기반 세계 모델을 통합한 프레임워크로, 단일 정책이 알려진 지형과 보지 못한 지형 모두를 마스터할 수 있게 합니다. 우리 접근법의 핵심은 특화 정책의 집계된 롤아웃으로 훈련된 자기회귀 확산 세계 모델에 기반한 지형 인식 세계 모델입니다. 이 모델은 물리적으로 타당한 미래 궤적을 합성하며, 이는 조건부 정책의 동적 목표 역할을 하여 수동 보상 엔지니어링을 우회합니다. 증류와 달리, 우리의 세계 모델은 일반화 가능한 보행 기술을 포착하여 보지 못한 복합 지형에 대한 강력한 제로샷 전이를 가능하게 합니다. DreamPolicy는 데이터 가용성에 따라 자연스럽게 확장됩니다. 오프라인 데이터셋이 확장됨에 따라 확산 세계 모델은 지속적으로 더 풍부한 기술을 습득합니다. 실험 결과, DreamPolicy는 보지 못한 지형에서 최대 27%, 복합 지형에서 38%까지 가장 강력한 기준선을 능가합니다. 세계 모델 기반 계획과 정책 학습을 통합함으로써, DreamPolicy는 "하나의 작업, 하나의 정책" 병목 현상을 깨고 범용 인간형 제어를 위한 확장 가능한 데이터 기반 패러다임을 구축합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.18780v3
+
+## 개요
+기존 방법들은 일반적으로 여러 지형 전용 교사 정책을 증류하여 통합 학생 정책을 훈련하지만, 이러한 방식은 복잡한 환경에 대처하기 위해 기본 운동 기술을 유기적으로 결합하기 어렵고, 훈련 중 보지 못한 새로운 조합 지형에 대한 일반화 성능이 낮다. DreamPolicy는 자기회귀 확산 기반 세계 모델을 도입하여 전용 정책의 집계 궤적으로부터 물리적으로 실현 가능한 미래 궤적을 학습하고, 이를 조건부 정책의 동적 목표로 사용한다. 이 방법은 수동 보상 엔지니어링이 필요 없으며, 오프라인 데이터 규모가 확장됨에 따라 기술 다양성을 지속적으로 향상시켜 보지 못한 조합 지형에 대한 제로샷 전이를 구현한다.
+
+## 핵심 내용
+### 방법 구조
+- **핵심 과제**: 기존 증류 방법은 여러 지형 전용 교사 정책을 통합 학생 정책으로 압축하지만, 기본 운동 원시 요소를 유기적으로 결합하지 못하여 훈련 중 보지 못한 복합 지형에 대한 일반화 성능이 낮다.
+- **DreamPolicy 프레임워크**: 두 가지 핵심 구성 요소로 이루어짐:
+  - **지형 인식 세계 모델**: 자기회귀 확산 모델 기반으로, 전용 정책의 집계 궤적에서 훈련되어 물리적으로 타당한 미래 궤적을 합성할 수 있다.
+  - **조건부 정책**: 세계 모델이 생성한 동적 목표를 입력으로 받아 직접 행동을 출력하며, 수동 보상 함수 설계를 완전히 우회한다.
+- **데이터 확장성**: 오프라인 데이터 세트 규모가 확장됨에 따라 확산 세계 모델은 더 풍부한 기술을 지속적으로 획득하여 정책이 자연스럽게 확장 가능성을 갖게 된다.
+
+### 실험 설정 및 결과
+- **기준 비교**: 보지 못한 지형에서 DreamPolicy는 가장 강력한 기준선 방법보다 27% 우수하며, 조합 지형에서는 성능이 38% 향상된다.
+- **제로샷 전이**: 새로운 지형에 대해 재훈련 없이 훈련 중 나타나지 않은 복합 지형에 직접 일반화된다.
+- **핵심 장점**: 증류 방법과 비교하여 세계 모델은 일반화 가능한 운동 기술을 포착하며, 특정 지형 패턴만 기억하는 것이 아니다.
+
+### 결론
+DreamPolicy는 세계 모델 기반 계획과 정책 학습을 통합하여 '하나의 작업에 하나의 정책'이라는 병목을 깨고, 확장 가능한 데이터 기반 범용 휴머노이드 제어 패러다임을 확립한다. 핵심 혁신은 수동 보상 엔지니어링을 확산 세계 모델로 대체하고, 데이터 규모와 기술 다양성의 정적 상관 성장을 구현한 것이다.

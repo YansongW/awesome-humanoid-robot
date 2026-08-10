@@ -36,7 +36,8 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2308.06493v3. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP1 dedup merge 2026-08-06: merged
-    ent_paper_egoposer_robust_real_time_egoc_2024_1 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.'
+    ent_paper_egoposer_robust_real_time_egoc_2024_1 into this card (rules: suffix_reingest). Backup+manifest: .staging/cleanup_wp12/.
+    | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1274 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -71,11 +72,27 @@ EgoPoser 通过全局运动分解、间歇观测建模和高效时序设计，�
 ## Overview
 Full-body egocentric pose estimation from head and hand poses alone has become an active area of research to power articulate avatar representations on headset-based platforms. However, existing methods over-rely on the indoor motion-capture spaces in which datasets were recorded, while simultaneously assuming continuous joint motion capture and uniform body dimensions. We propose EgoPoser to overcome these limitations with four main contributions. 1) EgoPoser robustly models body pose from intermittent hand position and orientation tracking only when inside a headset's field of view. 2) We rethink input representations for headset-based ego-pose estimation and introduce a novel global motion decomposition method that predicts full-body pose independent of global positions. 3) We enhance pose estimation by capturing longer motion time series through an efficient SlowFast module design that maintains computational efficiency. 4) EgoPoser generalizes across various body shapes for different users. We experimentally evaluate our method and show that it outperforms state-of-the-art methods both qualitatively and quantitatively while maintaining a high inference speed of over 600fps. EgoPoser establishes a robust baseline for future work where full-body pose estimation no longer needs to rely on outside-in capture and can scale to large-scale and unseen environments.
 
-## 개요
-헤드셋 기반 플랫폼에서 정교한 아바타 표현을 구현하기 위해 머리와 손의 포즈만으로 전신 자아 중심 포즈 추정을 수행하는 연구가 활발히 진행되고 있습니다. 그러나 기존 방법들은 데이터셋이 기록된 실내 모션 캡처 공간에 과도하게 의존하는 동시에, 지속적인 관절 움직임 캡처와 균일한 신체 치수를 가정합니다. 본 논문에서는 이러한 한계를 극복하기 위해 EgoPoser를 제안하며, 네 가지 주요 기여를 합니다. 1) EgoPoser는 헤드셋 시야 내에 있을 때만 간헐적인 손 위치 및 방향 추적을 통해 신체 포즈를 강건하게 모델링합니다. 2) 헤드셋 기반 자아 포즈 추정을 위한 입력 표현을 재고하고, 전역 위치와 무관하게 전신 포즈를 예측하는 새로운 전역 움직임 분해 방법을 도입합니다. 3) 효율적인 SlowFast 모듈 설계를 통해 더 긴 움직임 시계열을 포착하여 포즈 추정을 향상시키면서 계산 효율성을 유지합니다. 4) EgoPoser는 다양한 사용자의 여러 신체 형태에 일반화됩니다. 실험적 평가를 통해 본 방법이 정성적 및 정량적으로 최신 방법을 능가하면서도 600fps 이상의 높은 추론 속도를 유지함을 입증합니다. EgoPoser는 향후 전신 포즈 추정이 더 이상 외부에서 내부로의 캡처에 의존하지 않고 대규모 및 미지의 환경으로 확장될 수 있는 강력한 기준선을 제공합니다.
-
-## 핵심 내용
-머리와 손의 포즈만으로 전신 자아 중심 포즈 추정을 수행하는 것은 헤드셋 기반 플랫폼에서 정교한 아바타 표현을 구현하기 위해 활발히 연구되는 분야입니다. 그러나 기존 방법들은 데이터셋이 기록된 실내 모션 캡처 공간에 과도하게 의존하며, 지속적인 관절 움직임 캡처와 균일한 신체 치수를 가정합니다. 본 논문에서는 이러한 한계를 극복하기 위해 EgoPoser를 제안하며, 네 가지 주요 기여를 합니다. 1) EgoPoser는 헤드셋 시야 내에 있을 때만 간헐적인 손 위치 및 방향 추적을 통해 신체 포즈를 강건하게 모델링합니다. 2) 헤드셋 기반 자아 포즈 추정을 위한 입력 표현을 재고하고, 전역 위치와 무관하게 전신 포즈를 예측하는 새로운 전역 움직임 분해 방법을 도입합니다. 3) 효율적인 SlowFast 모듈 설계를 통해 더 긴 움직임 시계열을 포착하여 포즈 추정을 향상시키면서 계산 효율성을 유지합니다. 4) EgoPoser는 다양한 사용자의 여러 신체 형태에 일반화됩니다. 실험적 평가를 통해 본 방법이 정성적 및 정량적으로 최신 방법을 능가하면서도 600fps 이상의 높은 추론 속도를 유지함을 입증합니다. EgoPoser는 향후 전신 포즈 추정이 더 이상 외부에서 내부로의 캡처에 의존하지 않고 대규모 및 미지의 환경으로 확장될 수 있는 강력한 기준선을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/2308.06493v3
+
+## 개요
+EgoPoser는 기존 자기 중심姿态 추정 방법이 실내 모션 캡처 환경에 과도하게 의존하고, 연속적인 관절 추적 및 통일된 체형을 가정하는 등의 한계를 지적하며 네 가지 핵심 개선을 제안한다. 이 방법은 헤드마운트 디바이스 시야 내에서 간헐적으로 나타나는 손 위치와 방향 정보만을 활용하여 강건하게 전신 자세를 재구성한다. 입력 표현을 재설계하고, 전역 운동 분해 기술을 통해 전신 자세 예측을 전역 위치와 분리함으로써 외부 캡처 시스템에 대한 의존성을 제거한다. 또한 EgoPoser는 효율적인 SlowFast 모듈을 도입하여 더 긴 시계열 운동 정보를 처리하며, 계산 효율성을 유지하면서 자세 추정 정확도를 향상시키고 다양한 사용자 체형 차이에 적응할 수 있다. 실험 결과, EgoPoser는 성능에서 기존 최첨단 방법을 전반적으로 능가하며, 추론 속도가 600fps를 초과하여 대규모·미지 환경에서의 전신 자세 추정을 위한 견고한 기준선을 확립한다.
+
+## 핵심 내용
+### 방법 개요
+EgoPoser의 핵심 아키텍처는 네 가지 주요 설계를 중심으로 구성된다:
+- **간헐적 관측 강건 모델링**: 기존 방법이 손이 항상 추적된다고 가정하는 것과 달리, EgoPoser는 헤드마운트 디바이스 시야(field of view) 내에서 간헐적으로 나타나는 손 위치와 방향(position and orientation) 데이터만을 활용하며, 시계열 모델을 통해 누락된 정보를 보완하여 강건한 자세 추정을 구현한다.
+- **전역 운동 분해**: 전역 위치와 무관한 국소 운동으로 전신 자세 예측을 분해하는 새로운 입력 표현 방법을 제안한다. 구체적으로, 모델은 절대 세계 좌표가 아닌 머리 좌표계 기준의 자세를 예측하므로 전역 위치 정보에 대한 의존성을 피하고, 임의의 이동 환경에 적용 가능하다.
+- **SlowFast 시계열 모듈**: 더 긴 시간대의 운동 역학을 포착하기 위해 EgoPoser는 효율적인 SlowFast 모듈 설계를 도입한다. 이 모듈은 서로 다른 시간 해상도로 입력 시퀀스를 병렬 처리하며(느린 경로는 저주파 운동 패턴, 빠른 경로는 고주파 세부 정보 포착), 계산 효율성을 유지하면서 자세 추정의 시간적 일관성을 크게 향상시킨다.
+- **체형 일반화**: 모델은 훈련 시 체형 매개변수(body shape parameters)를 도입하여 키, 팔 길이 등 다양한 사용자 체형 차이에 적응할 수 있으며, 개인별 재보정이 필요 없다.
+
+### 실험 설정 및 결과
+- **데이터셋**: AMASS 데이터셋(다양한 모션 캡처 장면 포함)에서 훈련 및 평가를 수행하고, 추가로 실제 헤드마운트 디바이스로 수집한 간헐적 관측 데이터로 테스트한다.
+- **비교 방법**: AvatarPoser, PoseVocab 등 기존 최첨단 방법과 정량적·정성적 비교를 수행한다.
+- **핵심 지표**:
+  - **자세 오차**: EgoPoser는 전신 관절 위치 오차(MPJPE) 및 회전 오차에서 비교 방법보다 유의미하게 낮으며, 특히 간헐적 관측 처리 시 우위가 두드러진다.
+  - **추론 속도**: 600fps를 초과하는 실시간 추론 속도를 달성하여 실시간 애플리케이션 요구(보통 30-60fps)를 크게 상회한다.
+  - **체형 일반화**: 다양한 체형 테스트 세트에서 EgoPoser의 오차 변동은 5% 미만인 반면, 비교 방법은 오차가 15% 이상 증가한다.
+
+### 결론
+EgoPoser는 전역 운동 분해, 간헐적 관측 모델링, 효율적인 시계열 설계를 통해 외부 모션 캡처 시스템 없이 헤드마운트 디바이스의 희소 입력만으로 전신 자세를 실시간 추정하는 것을 최초로 구현했다. 600fps를 초과하는 추론 속도와 체형 간 일반화 능력은 대규모·미지 환경에서의 가상 아바타 구동 및 휴머노이드 로봇 운동 분석을 위한 신뢰할 수 있는 기준선을 제공한다.

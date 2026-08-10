@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.18964v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.18964v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (936 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -82,11 +83,35 @@ sources:
 ## Overview
 Many robot manipulation tasks require active or interactive exploration behavior in order to be performed successfully. Such tasks are ubiquitous in embodied domains, where agents must actively search for the information necessary for each stage of a task, e.g., moving the head of the robot to find information relevant to manipulation, or in multi-robot domains, where one scout robot may search for the information that another robot needs to make informed decisions. We identify these tasks with a new type of problem, factorized Contextual Markov Decision Processes, and propose DISaM, a dual-policy solution composed of an information-seeking policy that explores the environment to find the relevant contextual information and an information-receiving policy that exploits the context to achieve the manipulation goal. This factorization allows us to train both policies separately, using the information-receiving one to provide reward to train the information-seeking policy. At test time, the dual agent balances exploration and exploitation based on the uncertainty the manipulation policy has on what the next best action is. We demonstrate the capabilities of our dual policy solution in five manipulation tasks that require information-seeking behaviors, both in simulation and in the real-world, where DISaM significantly outperforms existing methods. More information at https://robin-lab.cs.utexas.edu/learning2look/.
 
-## 개요
-많은 로봇 조작 작업은 성공적으로 수행되기 위해 능동적 또는 상호작용적 탐색 행동을 필요로 합니다. 이러한 작업은 에이전트가 작업의 각 단계에 필요한 정보를 능동적으로 검색해야 하는 구현된 도메인(예: 조작과 관련된 정보를 찾기 위해 로봇의 머리를 움직이는 경우)이나, 정찰 로봇이 다른 로봇이 정보에 기반한 결정을 내리는 데 필요한 정보를 검색할 수 있는 다중 로봇 도메인에서 흔히 나타납니다. 우리는 이러한 작업을 새로운 유형의 문제인 분해된 맥락적 마르코프 결정 과정(factorized Contextual Markov Decision Processes)으로 식별하고, DISaM을 제안합니다. DISaM은 환경을 탐색하여 관련 맥락 정보를 찾는 정보 탐색 정책과 맥락을 활용하여 조작 목표를 달성하는 정보 수신 정책으로 구성된 이중 정책 솔루션입니다. 이러한 분해를 통해 두 정책을 별도로 훈련할 수 있으며, 정보 수신 정책을 사용하여 정보 탐색 정책을 훈련하기 위한 보상을 제공합니다. 테스트 시에는 이중 에이전트가 조작 정책이 다음 최적 행동에 대해 가지는 불확실성에 기반하여 탐색과 활용의 균형을 맞춥니다. 우리는 시뮬레이션과 실제 환경 모두에서 정보 탐색 행동을 필요로 하는 다섯 가지 조작 작업에서 이중 정책 솔루션의 성능을 입증했으며, DISaM이 기존 방법을 크게 능가함을 보여줍니다. 자세한 정보는 https://robin-lab.cs.utexas.edu/learning2look/에서 확인할 수 있습니다.
-
-## 핵심 내용
-많은 로봇 조작 작업은 성공적으로 수행되기 위해 능동적 또는 상호작용적 탐색 행동을 필요로 합니다. 이러한 작업은 에이전트가 작업의 각 단계에 필요한 정보를 능동적으로 검색해야 하는 구현된 도메인(예: 조작과 관련된 정보를 찾기 위해 로봇의 머리를 움직이는 경우)이나, 정찰 로봇이 다른 로봇이 정보에 기반한 결정을 내리는 데 필요한 정보를 검색할 수 있는 다중 로봇 도메인에서 흔히 나타납니다. 우리는 이러한 작업을 새로운 유형의 문제인 분해된 맥락적 마르코프 결정 과정(factorized Contextual Markov Decision Processes)으로 식별하고, DISaM을 제안합니다. DISaM은 환경을 탐색하여 관련 맥락 정보를 찾는 정보 탐색 정책과 맥락을 활용하여 조작 목표를 달성하는 정보 수신 정책으로 구성된 이중 정책 솔루션입니다. 이러한 분해를 통해 두 정책을 별도로 훈련할 수 있으며, 정보 수신 정책을 사용하여 정보 탐색 정책을 훈련하기 위한 보상을 제공합니다. 테스트 시에는 이중 에이전트가 조작 정책이 다음 최적 행동에 대해 가지는 불확실성에 기반하여 탐색과 활용의 균형을 맞춥니다. 우리는 시뮬레이션과 실제 환경 모두에서 정보 탐색 행동을 필요로 하는 다섯 가지 조작 작업에서 이중 정책 솔루션의 성능을 입증했으며, DISaM이 기존 방법을 크게 능가함을 보여줍니다. 자세한 정보는 https://robin-lab.cs.utexas.edu/learning2look/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2410.18964v1
+
+## 개요
+본 연구는 로봇 조작에서 능동적 또는 상호작용적 탐색 행동이 필요한 작업을 위해, 분해된 맥락 마르코프 결정 과정(factorized Contextual Markov Decision Processes) 문제 모델을 제안한다. 저자들은 DISaM 이중 정책 프레임워크를 설계했으며, 이는 관련 맥락 정보를 획득하기 위해 환경을 탐색하는 정보 탐색 정책과, 해당 맥락을 활용하여 조작 목표를 완수하는 정보 수신 정책을 포함한다. 두 정책을 분리하여 훈련함으로써, 정보 수신 정책은 정보 탐색 정책에 보상 신호를 제공할 수 있다. 테스트 단계에서는 이중 에이전트가 조작 정책의 다음 최적 행동에 대한 불확실성에 기반하여 탐색과 활용의 균형을 조정한다. 실험은 정보 탐색 행동이 필요한 다섯 가지 조작 작업(시뮬레이션 및 실제 환경 포함)에서 DISaM의 우수한 성능을 검증했다.
+
+## 핵심 내용
+### 문제 정의
+- 분해된 맥락 마르코프 결정 과정(factorized Contextual MDPs)을 제안하여 작업을 정보 탐색 단계와 정보 활용 단계로 분해
+- 능동적 탐색이 필요한 로봇 조작 시나리오에 적용 가능. 예: 로봇 머리 움직임을 통한 조작 관련 정보 탐색, 또는 다중 로봇 시스템에서 정찰 로봇이 정보를 탐색하여 의사결정 로봇에 제공
+
+### 방법 아키텍처: DISaM
+- **이중 정책 프레임워크**:
+  - 정보 탐색 정책(information-seeking policy): 환경을 탐색하여 관련 맥락 정보를 찾는 역할
+  - 정보 수신 정책(information-receiving policy): 획득한 맥락 정보를 활용하여 조작 목표를 완수하는 역할
+- **훈련 메커니즘**:
+  - 두 정책은 분리하여 훈련 가능하며, 정보 수신 정책이 정보 탐색 정책에 보상 신호를 제공
+  - 테스트 시 조작 정책의 다음 최적 행동에 대한 불확실성에 기반하여 탐색과 활용을 동적으로 균형 조정
+
+### 실험 설정
+- 정보 탐색 행동이 필요한 다섯 가지 조작 작업으로, 시뮬레이션 환경과 실제 세계 시나리오를 포함
+- 기존 방법과 비교하여 DISaM은 모든 작업에서 현저히 우수한 성능을 보임
+
+### 주요 결과
+- 시뮬레이션 및 실제 환경 모두에서 DISaM은 더 강력한 정보 탐색 및 조작 의사결정 능력을 입증
+- 이중 정책 분해 설계는 탐색과 활용의 균형 문제를 효과적으로 해결
+
+### 결론
+- 분해된 맥락 MDP는 능동적 탐색이 필요한 조작 작업을 위한 통합 모델링 프레임워크를 제공
+- DISaM의 이중 정책 분리 훈련 방법은 확장 가능하며, 다양한 로봇 조작 시나리오에 적용 가능
+
+더 많은 정보는 프로젝트 홈페이지에서 확인: https://robin-lab.cs.utexas.edu/learning2look/

@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.05693v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.05693v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1073 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -88,11 +89,31 @@ Generalist vision–language–action (VLA) policies are typically trained on he
 ## Content
 Generalist vision–language–action (VLA) policies are typically trained on heterogeneous mixtures of robot demonstrations spanning diverse embodiments, action spaces, and observation configurations. Modeling such heterogeneity with a shared dense action module can induce negative transfer, particularly when action spaces or visual observations differ across data sources. We address this issue with HiMoE-VLA, a VLA framework built around a Hierarchical Mixture-of-Experts (HiMoE) action module. HiMoE uses Action-Space MoE layers at the input/output boundaries to specialize computation for distinct action spaces, Heterogeneity-Balancing MoE layers in neighboring layers to provide balanced capacity for residual variation in observations, scenes, and embodiments, and dense Transformer blocks in the middle to integrate shared representations. Two auxiliary objectives further guide this hierarchy: a contrastive Action-Space Regularization objective for boundary specialization and a load-balancing objective for stable expert utilization. HiMoE-VLA reaches 3.98 on CALVIN, 98.0% on LIBERO, and 75.0% and 63.7% average success on real xArm7 and ALOHA tasks; under controlled heterogeneous co-training, it turns the negative transfer observed in strong baselines into positive transfer. The code and models are publicly available at https://github.com/ZhiyingDu/HiMoE-VLA.
 
-## 개요
-Generalist vision-language-action (VLA) 정책은 일반적으로 다양한 형태, 행동 공간 및 관찰 구성을 아우르는 로봇 시연의 이질적 혼합 데이터로 훈련됩니다. 이러한 이질성을 공유된 밀집 행동 모듈로 모델링하면, 특히 데이터 소스 간에 행동 공간이나 시각적 관찰이 다를 때 부정적 전이가 발생할 수 있습니다. 우리는 이 문제를 계층적 전문가 혼합(HiMoE) 행동 모듈을 기반으로 구축된 VLA 프레임워크인 HiMoE-VLA로 해결합니다. HiMoE는 입력/출력 경계에서 Action-Space MoE 계층을 사용하여 서로 다른 행동 공간에 특화된 계산을 수행하고, 인접 계층에서 Heterogeneity-Balancing MoE 계층을 사용하여 관찰, 장면 및 형태의 잔여 변동에 대한 균형 잡힌 용량을 제공하며, 중간에 밀집 Transformer 블록을 사용하여 공유 표현을 통합합니다. 두 가지 보조 목표가 이 계층 구조를 더욱 안내합니다: 경계 특화를 위한 대조적 Action-Space 정규화 목표와 안정적인 전문가 활용을 위한 부하 균형 목표입니다. HiMoE-VLA는 CALVIN에서 3.98, LIBERO에서 98.0%, 실제 xArm7 및 ALOHA 작업에서 각각 75.0% 및 63.7%의 평균 성공률을 달성합니다. 통제된 이질적 공동 훈련 하에서는 강력한 기준선에서 관찰된 부정적 전이를 긍정적 전이로 전환합니다. 코드와 모델은 https://github.com/ZhiyingDu/HiMoE-VLA에서 공개적으로 제공됩니다.
-
-## 핵심 내용
-Generalist vision-language-action (VLA) 정책은 일반적으로 다양한 형태, 행동 공간 및 관찰 구성을 아우르는 로봇 시연의 이질적 혼합 데이터로 훈련됩니다. 이러한 이질성을 공유된 밀집 행동 모듈로 모델링하면, 특히 데이터 소스 간에 행동 공간이나 시각적 관찰이 다를 때 부정적 전이가 발생할 수 있습니다. 우리는 이 문제를 계층적 전문가 혼합(HiMoE) 행동 모듈을 기반으로 구축된 VLA 프레임워크인 HiMoE-VLA로 해결합니다. HiMoE는 입력/출력 경계에서 Action-Space MoE 계층을 사용하여 서로 다른 행동 공간에 특화된 계산을 수행하고, 인접 계층에서 Heterogeneity-Balancing MoE 계층을 사용하여 관찰, 장면 및 형태의 잔여 변동에 대한 균형 잡힌 용량을 제공하며, 중간에 밀집 Transformer 블록을 사용하여 공유 표현을 통합합니다. 두 가지 보조 목표가 이 계층 구조를 더욱 안내합니다: 경계 특화를 위한 대조적 Action-Space 정규화 목표와 안정적인 전문가 활용을 위한 부하 균형 목표입니다. HiMoE-VLA는 CALVIN에서 3.98, LIBERO에서 98.0%, 실제 xArm7 및 ALOHA 작업에서 각각 75.0% 및 63.7%의 평균 성공률을 달성합니다. 통제된 이질적 공동 훈련 하에서는 강력한 기준선에서 관찰된 부정적 전이를 긍정적 전이로 전환합니다. 코드와 모델은 https://github.com/ZhiyingDu/HiMoE-VLA에서 공개적으로 제공됩니다.
-
 ## 参考
 - http://arxiv.org/abs/2512.05693v2
+
+## 개요
+범용 비전-언어-행동(VLA) 정책은 일반적으로 다양한 로봇 형태, 행동 공간 및 관측 구성을 포함하는 이종 데모 데이터 혼합 세트로 훈련됩니다. 공유된 밀집 행동 모듈을 사용하여 이러한 이질성을 모델링할 경우, 서로 다른 데이터 소스의 행동 공간이나 시각적 관측에 차이가 있을 때 부정적 전이가 발생하기 쉽습니다. HiMoE-VLA는 계층적 혼합 전문가(HiMoE) 행동 모듈을 통해 이 문제를 해결합니다: 입력/출력 경계에서는 행동 공간 MoE 레이어를 사용하여 서로 다른 행동 공간을 전담 처리하고, 인접 레이어에서는 이종 균형 MoE 레이어를 사용하여 관측, 장면 및 형태의 잔여 변화에 균형 잡힌 용량을 제공하며, 중간 레이어에서는 밀집 Transformer 블록을 사용하여 공유 표현을 통합합니다. 두 가지 보조 목표가 이 계층 구조를 더욱 안내합니다: 경계 전문화를 위한 대조 행동 공간 정규화 목표와 전문가 활용률을 안정화하기 위한 부하 균형 목표입니다.
+
+## 핵심 내용
+### 방법 아키텍처
+HiMoE-VLA의 핵심은 계층적 혼합 전문가(HiMoE) 행동 모듈로, 그 구조는 세 가지 레이어로 나뉩니다:
+- **행동 공간 MoE 레이어**: 입력/출력 경계에 위치하며, 각 전문가는 특정 행동 공간(예: 관절 각도, 엔드 이펙터 자세)을 전담 처리하고, 게이팅 네트워크를 통해 전문가 조합을 동적으로 선택합니다.
+- **이종 균형 MoE 레이어**: 인접 레이어에 위치하며, 관측 구성, 장면 및 로봇 형태의 잔여 변화에 균형 잡힌 용량을 제공하여 단일 전문가의 과부하를 방지합니다.
+- **밀집 Transformer 블록**: 중간 레이어에 위치하며, 데이터 소스 전반의 공유 표현을 통합하여 전역적 일관성을 유지합니다.
+
+두 가지 보조 목표:
+- **대조 행동 공간 정규화**: 대조 학습을 통해 동일한 행동 공간 샘플의 전문가 선택 분포를 가깝게 하고, 서로 다른 행동 공간 샘플의 분포를 멀리하여 경계 전문화를 강화합니다.
+- **부하 균형 목표**: 보조 손실 함수를 통해 각 전문가의 활용률을 균형 있게 조정하여 일부 전문가가 과도하게 사용되거나 유휴 상태가 되는 것을 방지합니다.
+
+### 실험 설정 및 주요 수치
+- **벤치마크 테스트**:
+  - **CALVIN**: 3.98점(만점 5점)을 달성하여 이전 최고 방법을 능가했습니다.
+  - **LIBERO**: 정확도 98.0%로 10개 작업에서 안정적인 성능을 보였습니다.
+  - **실제 로봇 작업**:
+    - **xArm7**: 평균 성공률 75.0%로 그리핑, 배치 등의 조작을 포함합니다.
+    - **ALOHA**: 평균 성공률 63.7%로 양팔 협조 작업을 포함합니다.
+- **이종 협동 훈련**: 통제된 이종 데이터 혼합 훈련에서 HiMoE-VLA는 강력한 기준 모델(예: Octo, RT-2)에서 발생하는 부정적 전이(성능 저하 5-10%)를 긍정적 전이(성능 향상 3-8%)로 전환하여 계층 아키텍처의 이질성에 대한 견고성을 검증했습니다.
+
+### 결론
+HiMoE-VLA는 계층적 혼합 전문가 아키텍처를 통해 다중 소스 이종 데이터 훈련에서 범용 VLA 정책의 부정적 전이 문제를 효과적으로 해결하고, 여러 시뮬레이션 및 실제 로봇 벤치마크에서 최적의 성능을 달성했습니다. 오픈 소스 코드와 모델은 후속 연구에 재현 가능한 기반을 제공합니다.

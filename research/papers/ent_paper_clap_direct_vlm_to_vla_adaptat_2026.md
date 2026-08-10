@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.08974v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.08974v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (725 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,25 @@ CLAP通过最小化架构改动实现了VLM到VLA的高效转换，验证了语�
 ## Overview
 Vision-language-action models (VLAs) inherit semantic capabilities from pretrained VLMs, yet large-scale post-training on robot data and architectural modifications can reshape the backbone so extensively that it becomes difficult to isolate what the VLM contributes to control. Directly converting pretrained VLMs into VLAs with minimal architectural change offers a more transparent path to understanding how VLM capabilities transfer across model scales. The core obstacle is output-distribution mismatch: predicting actions as bare numeric token sequences moves generation away from the VLM's pretrained language distribution, degrading the capabilities we seek to preserve. To address this, we propose CLAP (Causal Language-Action Prediction), which prepends each numeric action sequence with a natural-language action description, causally conditioning precise action-token prediction on a language-action plan without modifying the backbone architecture. With single-epoch fine-tuning alone, 2B CLAP achieves 90.8% on LIBERO (+14.9 pt over VLA-0) and improves robustness on LIBERO-PRO under language, object, and spatial perturbations. We will release CLAP at 0.8B, 2B, and 4B as an open-weight, multi-scale compact VLA family from a single VLM lineage, enabling controlled analysis of VLM-to-VLA capability transfer.
 
-## 개요
-Vision-language-action models (VLAs)는 사전 훈련된 VLM으로부터 의미론적 능력을 상속받지만, 로봇 데이터에 대한 대규모 사후 훈련과 아키텍처 수정은 백본을 너무 광범위하게 변형시켜 VLM이 제어에 기여하는 바를 분리하기 어렵게 만듭니다. 최소한의 아키텍처 변경으로 사전 훈련된 VLM을 직접 VLA로 변환하는 것은 모델 규모에 걸쳐 VLM 능력이 어떻게 전이되는지 이해하는 더 투명한 경로를 제공합니다. 핵심 장애물은 출력 분포 불일치입니다: 행동을 단순한 숫자 토큰 시퀀스로 예측하면 생성이 VLM의 사전 훈련된 언어 분포에서 멀어져 보존하려는 능력이 저하됩니다. 이를 해결하기 위해, 우리는 CLAP (Causal Language-Action Prediction)을 제안합니다. 이는 각 숫자 행동 시퀀스 앞에 자연어 행동 설명을 추가하여, 백본 아키텍처를 수정하지 않고 언어-행동 계획에 따라 정밀한 행동 토큰 예측을 인과적으로 조건화합니다. 단일 에폭 미세 조정만으로 2B CLAP은 LIBERO에서 90.8%를 달성하고 (VLA-0 대비 +14.9 pt), LIBERO-PRO에서 언어, 객체 및 공간 변동 하에서 강건성을 향상시킵니다. 우리는 CLAP을 0.8B, 2B, 4B 규모로 단일 VLM 계열에서 파생된 오픈 가중치, 다중 규모 컴팩트 VLA 제품군으로 공개하여 VLM에서 VLA로의 능력 전이에 대한 통제된 분석을 가능하게 할 것입니다.
-
-## 핵심 내용
-Vision-language-action models (VLAs)는 사전 훈련된 VLM으로부터 의미론적 능력을 상속받지만, 로봇 데이터에 대한 대규모 사후 훈련과 아키텍처 수정은 백본을 너무 광범위하게 변형시켜 VLM이 제어에 기여하는 바를 분리하기 어렵게 만듭니다. 최소한의 아키텍처 변경으로 사전 훈련된 VLM을 직접 VLA로 변환하는 것은 모델 규모에 걸쳐 VLM 능력이 어떻게 전이되는지 이해하는 더 투명한 경로를 제공합니다. 핵심 장애물은 출력 분포 불일치입니다: 행동을 단순한 숫자 토큰 시퀀스로 예측하면 생성이 VLM의 사전 훈련된 언어 분포에서 멀어져 보존하려는 능력이 저하됩니다. 이를 해결하기 위해, 우리는 CLAP (Causal Language-Action Prediction)을 제안합니다. 이는 각 숫자 행동 시퀀스 앞에 자연어 행동 설명을 추가하여, 백본 아키텍처를 수정하지 않고 언어-행동 계획에 따라 정밀한 행동 토큰 예측을 인과적으로 조건화합니다. 단일 에폭 미세 조정만으로 2B CLAP은 LIBERO에서 90.8%를 달성하고 (VLA-0 대비 +14.9 pt), LIBERO-PRO에서 언어, 객체 및 공간 변동 하에서 강건성을 향상시킵니다. 우리는 CLAP을 0.8B, 2B, 4B 규모로 단일 VLM 계열에서 파생된 오픈 가중치, 다중 규모 컴팩트 VLA 제품군으로 공개하여 VLM에서 VLA로의 능력 전이에 대한 통제된 분석을 가능하게 할 것입니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.08974v1
+
+## 개요
+CLAP은 인과적 언어-행동 예측 메커니즘을 통해 자연어 행동 설명과 수치 행동 시퀀스를 결합하여, VLM의 사전 학습 언어 분포를 보존합니다. 이 방법은 단일 에포크 미세 조정만으로 효율적인 전이를 달성하며, 2B 파라미터 규모에서 LIBERO 벤치마크에서 90.8%의 뛰어난 성과를 기록하고, 언어, 객체 및 공간 교란 테스트에서도 더 나은 성능을 보입니다. 연구팀은 0.8B, 2B, 4B 세 가지 파라미터 규모의 오픈소스 모델 시리즈를 공개할 계획이며, VLM에서 VLA로의 능력 전이를 분석하기 위한 통제 가능한 실험 플랫폼을 제공합니다.
+
+## 핵심 내용
+### 방법
+- **핵심 문제**: 수치 행동 시퀀스를 직접 예측하면 출력 분포가 VLM 사전 학습 언어 분포에서 벗어나 의미적 능력이 약화됩니다.
+- **CLAP 솔루션**: 각 수치 행동 시퀀스 앞에 자연어 행동 설명(예: "빨간 블록 집기")을 추가하고, 인과적 조건화를 통해 정밀 행동 토큰 예측이 언어-행동 계획에 의존하도록 하여 백본 아키텍처 수정 없이 구현합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: LIBERO 및 LIBERO-PRO에서 평가하며, 후자는 언어, 객체 및 공간 교란을 포함합니다.
+- **훈련 구성**: 대규모 사후 훈련 없이 단일 에포크 미세 조정만 사용합니다.
+
+### 주요 결과
+- **LIBERO 성능**: 2B CLAP이 90.8% 정확도를 달성하여 VLA-0 대비 14.9% 포인트 향상.
+- **강건성**: LIBERO-PRO의 언어, 객체 및 공간 교란 하에서 CLAP이 기준 모델보다 우수한 성능을 보입니다.
+- **모델 시리즈**: 동일한 VLM 계열에서 파생된 0.8B, 2B, 4B 세 가지 파라미터 규모의 오픈소스 가중치 모델을 공개하여, 규모 간 능력 전이의 통제된 분석을 지원합니다.
+
+### 결론
+CLAP은 최소한의 아키텍처 변경으로 VLM에서 VLA로의 효율적 전환을 실현하며, 사전 학습 능력 보존에서 언어-행동 정렬의 핵심 역할을 검증하고, 투명하고 확장 가능한 VLA 모델 구축을 위한 새로운 패러다임을 제시합니다.

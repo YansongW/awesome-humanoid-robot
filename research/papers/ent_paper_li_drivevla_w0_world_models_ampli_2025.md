@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.12796v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.12796v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (787 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,24 @@ Scaling Vision-Language-Action (VLA) models on large-scale data offers a promisi
 ## Content
 Scaling Vision-Language-Action (VLA) models on large-scale data offers a promising path to achieving a more generalized driving intelligence. However, VLA models are limited by a "supervision deficit": the vast model capacity is supervised by sparse, low-dimensional actions, leaving much of their representational power underutilized. To remedy this, we propose **DriveVLA-W0**, a training paradigm that employs world modeling to predict future images. This task generates a dense, self-supervised signal that compels the model to learn the underlying dynamics of the driving environment. We showcase the paradigm's versatility by instantiating it for two dominant VLA archetypes: an autoregressive world model for VLAs that use discrete visual tokens, and a diffusion world model for those operating on continuous visual features. Building on the rich representations learned from world modeling, we introduce a lightweight action expert to address the inference latency for real-time deployment. Extensive experiments on the NAVSIM v1/v2 benchmark and a 680x larger in-house dataset demonstrate that DriveVLA-W0 significantly outperforms BEV and VLA baselines. Crucially, it amplifies the data scaling law, showing that performance gains accelerate as the training dataset size increases.
 
-## 개요
-대규모 데이터에서 Vision-Language-Action(VLA) 모델을 확장하는 것은 보다 일반화된 주행 지능을 달성하기 위한 유망한 경로를 제공합니다. 그러나 VLA 모델은 "감독 결핍(supervision deficit)"이라는 한계를 가집니다: 방대한 모델 용량이 희소하고 저차원적인 행동(action)으로 감독되어, 표현력의 상당 부분이 제대로 활용되지 못합니다. 이를 해결하기 위해, 우리는 **DriveVLA-W0**를 제안합니다. 이는 세계 모델링(world modeling)을 활용하여 미래 이미지를 예측하는 훈련 패러다임입니다. 이 작업은 밀집된 자기 지도 신호(self-supervised signal)를 생성하여 모델이 주행 환경의 근본적인 역학(dynamics)을 학습하도록 강제합니다. 우리는 이 패러다임의 다재다능함을 두 가지 주요 VLA 유형에 적용하여 보여줍니다: 이산 시각 토큰(discrete visual tokens)을 사용하는 VLA를 위한 자기회귀 세계 모델(autoregressive world model)과 연속 시각 특징(continuous visual features)에서 작동하는 VLA를 위한 확산 세계 모델(diffusion world model)입니다. 세계 모델링에서 학습된 풍부한 표현을 기반으로, 실시간 배포를 위한 추론 지연 시간(inference latency)을 해결하기 위해 경량 행동 전문가(lightweight action expert)를 도입합니다. NAVSIM v1/v2 벤치마크와 680배 더 큰 사내 데이터셋(in-house dataset)에서의 광범위한 실험은 DriveVLA-W0가 BEV 및 VLA 기준선(baselines)을 크게 능가함을 보여줍니다. 결정적으로, 이는 데이터 스케일링 법칙(data scaling law)을 강화하여 훈련 데이터셋 크기가 증가함에 따라 성능 향상이 가속화됨을 나타냅니다.
-
-## 핵심 내용
-대규모 데이터에서 Vision-Language-Action(VLA) 모델을 확장하는 것은 보다 일반화된 주행 지능을 달성하기 위한 유망한 경로를 제공합니다. 그러나 VLA 모델은 "감독 결핍(supervision deficit)"이라는 한계를 가집니다: 방대한 모델 용량이 희소하고 저차원적인 행동(action)으로 감독되어, 표현력의 상당 부분이 제대로 활용되지 못합니다. 이를 해결하기 위해, 우리는 **DriveVLA-W0**를 제안합니다. 이는 세계 모델링(world modeling)을 활용하여 미래 이미지를 예측하는 훈련 패러다임입니다. 이 작업은 밀집된 자기 지도 신호(self-supervised signal)를 생성하여 모델이 주행 환경의 근본적인 역학(dynamics)을 학습하도록 강제합니다. 우리는 이 패러다임의 다재다능함을 두 가지 주요 VLA 유형에 적용하여 보여줍니다: 이산 시각 토큰(discrete visual tokens)을 사용하는 VLA를 위한 자기회귀 세계 모델(autoregressive world model)과 연속 시각 특징(continuous visual features)에서 작동하는 VLA를 위한 확산 세계 모델(diffusion world model)입니다. 세계 모델링에서 학습된 풍부한 표현을 기반으로, 실시간 배포를 위한 추론 지연 시간(inference latency)을 해결하기 위해 경량 행동 전문가(lightweight action expert)를 도입합니다. NAVSIM v1/v2 벤치마크와 680배 더 큰 사내 데이터셋(in-house dataset)에서의 광범위한 실험은 DriveVLA-W0가 BEV 및 VLA 기준선(baselines)을 크게 능가함을 보여줍니다. 결정적으로, 이는 데이터 스케일링 법칙(data scaling law)을 강화하여 훈련 데이터셋 크기가 증가함에 따라 성능 향상이 가속화됨을 나타냅니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.12796v2
+
+## 개요
+DriveVLA-W0는 자율주행에서 VLA 모델이 희소하고 저차원적인 동작 감독으로 인해 표현 능력을 충분히 활용하지 못하는 문제를 해결하기 위해, 세계 모델을 활용한 미래 이미지 예측을 보조 작업으로 제안한다. 이 패러다임은 밀집된 자기 지도 신호를 생성하여 모델이 주행 환경의 기저 동적 규칙을 학습하도록 강제한다. 연구팀은 두 가지 주요 VLA 아키텍처에 각각 대응하는 세계 모델을 설계했다: 이산 시각 토큰 기반의 자기회귀 세계 모델과 연속 시각 특징 기반의 확산 세계 모델이다. NAVSIM v1/v2 벤치마크와 680배 확장된 내부 데이터셋에서 DriveVLA-W0는 BEV 및 VLA 기준 방법보다 현저히 우수한 성능을 보였으며, 데이터 규모가 확장될수록 성능 이득이 가속화되는 특성을 입증했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 문제**: VLA 모델은 대규모 데이터 훈련 시 '감독 적자(supervision deficit)'를 겪는다. 즉, 모델 용량이 희소한 동작 라벨이 제공할 수 있는 감독 신호보다 훨씬 커서 표현 능력이 충분히 활용되지 못한다.
+- **해결 방안**: 세계 모델을 도입하여 미래 이미지 예측을 보조 작업으로 사용하고, 밀집된 자기 지도 신호를 생성하여 모델이 주행 환경의 동적 진화 규칙을 학습하도록 강제한다.
+- **이중 아키텍처 적응**:
+  - 이산 시각 토큰을 사용하는 VLA 모델의 경우, 자기회귀 세계 모델을 통해 미래 프레임을 예측한다.
+  - 연속 시각 특징 기반의 VLA 모델의 경우, 확산 세계 모델을 통해 미래 프레임을 생성한다.
+
+### 경량 동작 전문가
+- 세계 모델을 통해 풍부한 표현을 학습한 후, 경량 동작 전문가 모듈을 도입하여 동작 예측 작업을 전담 처리함으로써 추론 지연을 줄이고 실시간 배포 요구 사항을 충족한다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**: NAVSIM v1/v2 벤치마크에서 평가를 수행하고, 680배 확장된 내부 데이터셋으로 검증을 진행했다.
+- **성능 비교**: DriveVLA-W0는 BEV 기준 방법과 기존 VLA 기준 방법보다 현저히 우수한 성능을 보였다.
+- **데이터 스케일링 법칙**: 핵심 발견은 DriveVLA-W0가 데이터 스케일링 법칙을 증폭시킨다는 점이다. 즉, 훈련 데이터셋 규모가 커질수록 성능 이득이 선형적 증가가 아닌 가속화되는 추세를 보인다.

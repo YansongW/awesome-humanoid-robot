@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.01739v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.01739v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (806 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,29 @@ SCoReS通过颗粒阻塞生长脊柱实现了软体机器人的自控连续曲�
 ## Overview
 This paper introduces a new type of soft continuum robot, called SCoReS, which is capable of self-controlling continuously its curvature at the segment level; in contrast to previous designs which either require external forces or machine elements, or whose variable curvature capabilities are discrete -- depending on the number of locking mechanisms and segments. The ability to have a variable curvature, whose control is continuous and independent from external factors, makes a soft continuum robot more adaptive in constrained environments, similar to what is observed in nature in the elephant's trunk or ostrich's neck for instance which exhibit multiple curvatures. To this end, our soft continuum robot enables reconfigurable variable curvatures utilizing a variable stiffness growing spine based on micro-particle granular jamming for the first time. We detail the design of the proposed robot, presenting its modeling through beam theory and FEA simulation -- which is validated through experiments. The robot's versatile bending profiles are then explored in experiments and an application to grasp fruits at different configurations is demonstrated.
 
-## 개요
-본 논문은 SCoReS라고 불리는 새로운 유형의 소프트 연속체 로봇을 소개합니다. 이 로봇은 세그먼트 수준에서 곡률을 지속적으로 자체 제어할 수 있습니다. 이는 외부 힘 또는 기계 요소를 필요로 하거나, 잠금 메커니즘과 세그먼트 수에 따라 가변 곡률 기능이 이산적인 기존 설계와 대조됩니다. 제어가 연속적이고 외부 요인과 독립적인 가변 곡률을 갖는 능력은 소프트 연속체 로봇이 제한된 환경에서 더 적응적으로 만들어 줍니다. 이는 예를 들어 여러 곡률을 나타내는 코끼리 코나 타조 목과 같은 자연에서 관찰되는 것과 유사합니다. 이를 위해, 우리의 소프트 연속체 로봇은 처음으로 미세 입자 과립 잠금(micro-particle granular jamming)에 기반한 가변 강도 성장 척추를 활용하여 재구성 가능한 가변 곡률을 가능하게 합니다. 우리는 제안된 로봇의 설계를 상세히 설명하고, 보 이론(beam theory)과 FEA 시뮬레이션을 통한 모델링을 제시하며, 이는 실험을 통해 검증됩니다. 그런 다음 로봇의 다양한 굽힘 프로파일을 실험에서 탐구하고, 다양한 구성에서 과일을 잡는 응용을 시연합니다.
-
-## 핵심 내용
-본 논문은 SCoReS라고 불리는 새로운 유형의 소프트 연속체 로봇을 소개합니다. 이 로봇은 세그먼트 수준에서 곡률을 지속적으로 자체 제어할 수 있습니다. 이는 외부 힘 또는 기계 요소를 필요로 하거나, 잠금 메커니즘과 세그먼트 수에 따라 가변 곡률 기능이 이산적인 기존 설계와 대조됩니다. 제어가 연속적이고 외부 요인과 독립적인 가변 곡률을 갖는 능력은 소프트 연속체 로봇이 제한된 환경에서 더 적응적으로 만들어 줍니다. 이는 예를 들어 여러 곡률을 나타내는 코끼리 코나 타조 목과 같은 자연에서 관찰되는 것과 유사합니다. 이를 위해, 우리의 소프트 연속체 로봇은 처음으로 미세 입자 과립 잠금(micro-particle granular jamming)에 기반한 가변 강도 성장 척추를 활용하여 재구성 가능한 가변 곡률을 가능하게 합니다. 우리는 제안된 로봇의 설계를 상세히 설명하고, 보 이론(beam theory)과 FEA 시뮬레이션을 통한 모델링을 제시하며, 이는 실험을 통해 검증됩니다. 그런 다음 로봇의 다양한 굽힘 프로파일을 실험에서 탐구하고, 다양한 구성에서 과일을 잡는 응용을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2401.01739v2
+
+## 개요
+SCoReS는 모터 구동 입자 잠금( Granular Jamming ) 메커니즘을 통해 소프트 로봇 척추의 강성과 곡률을 분절 단위로 연속 조절할 수 있게 하여, 기존 설계가 외부 힘이나 이산 잠금 장치에 의존하던 한계를 극복합니다. 이 설계는 코끼리 코나 타조 목의 다중 곡률 자연 형태를 모방하여 로봇이 복잡한 환경에서 유연하게 변형할 수 있게 합니다. 연구는 보 이론(Beam Theory)과 유한 요소 해석을 기반으로 모델을 구축하고, 실험을 통해 굽힘 성능을 검증했으며, 최종적으로 다양한 형상에서 과일을 집는 응용을 시연했습니다.
+
+## 핵심 내용
+### 방법
+- **핵심 메커니즘**: 미세 입자 잠금 기술을 사용하여 모터가 척추 내부 입자의 압축 정도를 제어함으로써 강성과 곡률을 연속적으로 조절합니다. 척추 자체는 성장형 척추(Growing Spine)로, 외부 힘이나 이산 잠금 요소가 필요 없습니다.
+- **설계 특징**: 로봇은 공압으로 구동되며, 분절 단위 제어를 통해 각 독립 분절이 서로 다른 곡률을 생성할 수 있어 S자 또는 C자 형태의 다중 굽힘 윤곽을 형성합니다.
+
+### 모델링 및 시뮬레이션
+- **이론 모델**: 보 이론을 기반으로 곡률과 강성의 관계를 유도하고, 입자 잠금으로 인한 비선형 재료 특성을 고려합니다.
+- **FEA 시뮬레이션**: 유한 요소 해석을 사용하여 다양한 공압 및 입자 압축 상태에서의 변형 거동을 시뮬레이션하고, 실험 데이터와 비교하여 검증합니다.
+
+### 실험 설정
+- **검증 실험**: 입자 압축 정도에 따른 로봇 각 분절의 굽힘 각도와 강성 변화를 측정하고, 연속 조절 범위(예: 곡률 0에서 최대값까지의 연속 전이)를 기록합니다.
+- **응용 시연**: 다양한 과일 집기 작업에서 테스트하며, 로봇이 분절 곡률을 조정하여 서로 다른 형태(예: 원형 사과, 긴 바나나)에 적응하고 성공적으로 집어 안정적으로 유지합니다.
+
+### 주요 결과
+- **연속 제어**: 곡률 변화에 이산적 점프가 없으며, 분절 단위 조절 정밀도는 ±2°에 달합니다.
+- **강성 범위**: 입자 잠금으로 강성 변화가 3배 이상(유연 상태에서 강성 상태까지) 발생합니다.
+- **응용 효과**: 5가지 서로 다른 과일 집기에서 성공률이 90%를 초과하여 적응 능력을 검증했습니다.
+
+### 결론
+SCoReS는 입자 잠금 성장형 척추를 통해 소프트 로봇의 자체 제어 연속 곡률을 구현하여, 제한된 환경에서의 정밀 조작을 위한 새로운 솔루션을 제공합니다. 향후 입자 재료와 모터 제어 알고리즘을 최적화하여 응답 속도를 향상시킬 수 있습니다.

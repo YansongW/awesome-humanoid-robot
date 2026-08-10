@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.00162v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.00162v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (657 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -63,11 +64,25 @@ sources:
 ## Overview
 Recent advances in teleoperation have demonstrated robots performing complex manipulation tasks. However, existing works rarely support whole-body joint-level teleoperation for humanoid robots, limiting the diversity of tasks that can be accomplished. This work presents Controller for Humanoid Imitation and Live Demonstration (CHILD), a compact reconfigurable teleoperation system that enables joint level control over humanoid robots. CHILD fits within a standard baby carrier, allowing the operator control over all four limbs, and supports both direct joint mapping for full-body control and loco-manipulation. Adaptive force feedback is incorporated to enhance operator experience and prevent unsafe joint movements. We validate the capabilities of this system by conducting loco-manipulation and full-body control demonstrations on a humanoid robot and multiple dual-arm systems. Lastly, we open-source the design of the hardware promoting accessibility and reproducibility. Additional details and open-source information are available at our project website: https://uiuckimlab.github.io/CHILD-pages.
 
-## 개요
-최근 원격 조작 기술의 발전으로 로봇이 복잡한 조작 작업을 수행하는 것이 입증되었습니다. 그러나 기존 연구들은 휴머노이드 로봇의 전신 관절 수준 원격 조작을 거의 지원하지 않아 수행 가능한 작업의 다양성이 제한됩니다. 본 연구는 휴머노이드 로봇의 관절 수준 제어를 가능하게 하는 소형 재구성 가능 원격 조작 시스템인 CHILD(Controller for Humanoid Imitation and Live Demonstration)를 제시합니다. CHILD는 표준 아기 캐리어에 맞춰 제작되어 조작자가 네 팔다리를 모두 제어할 수 있으며, 전신 제어를 위한 직접 관절 매핑과 이동 조작(loco-manipulation)을 모두 지원합니다. 또한 적응형 힘 피드백을 통합하여 조작자 경험을 향상시키고 안전하지 않은 관절 움직임을 방지합니다. 우리는 휴머노이드 로봇과 여러 이중 팔 시스템에서 이동 조작 및 전신 제어 시연을 통해 이 시스템의 성능을 검증합니다. 마지막으로, 하드웨어 설계를 오픈소스로 공개하여 접근성과 재현성을 높입니다. 추가 세부 사항 및 오픈소스 정보는 프로젝트 웹사이트(https://uiuckimlab.github.io/CHILD-pages)에서 확인할 수 있습니다.
-
-## 핵심 내용
-최근 원격 조작 기술의 발전으로 로봇이 복잡한 조작 작업을 수행하는 것이 입증되었습니다. 그러나 기존 연구들은 휴머노이드 로봇의 전신 관절 수준 원격 조작을 거의 지원하지 않아 수행 가능한 작업의 다양성이 제한됩니다. 본 연구는 휴머노이드 로봇의 관절 수준 제어를 가능하게 하는 소형 재구성 가능 원격 조작 시스템인 CHILD(Controller for Humanoid Imitation and Live Demonstration)를 제시합니다. CHILD는 표준 아기 캐리어에 맞춰 제작되어 조작자가 네 팔다리를 모두 제어할 수 있으며, 전신 제어를 위한 직접 관절 매핑과 이동 조작(loco-manipulation)을 모두 지원합니다. 또한 적응형 힘 피드백을 통합하여 조작자 경험을 향상시키고 안전하지 않은 관절 움직임을 방지합니다. 우리는 휴머노이드 로봇과 여러 이중 팔 시스템에서 이동 조작 및 전신 제어 시연을 통해 이 시스템의 성능을 검증합니다. 마지막으로, 하드웨어 설계를 오픈소스로 공개하여 접근성과 재현성을 높입니다. 추가 세부 사항 및 오픈소스 정보는 프로젝트 웹사이트(https://uiuckimlab.github.io/CHILD-pages)에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.00162v2
+
+## 개요
+기존 원격 조작 연구는 주로 복잡한 조작 작업에 초점을 맞추고 있지만, 인간형 로봇의 전신 관절 수준 제어를 지원하지 못해 작업 다양성에 제한이 있었습니다. CHILD 시스템은 표준 유아용 캐리어에 장착할 수 있는 컴팩트한 장치를 설계하여, 조작자가 로봇의 사지를 동시에 제어할 수 있게 하고, 직접 관절 매핑을 통한 전신 제어와 이동 조작을 지원합니다. 또한 시스템은 적응형 힘 피드백 메커니즘을 도입하여 조작 경험을 최적화하고 안전하지 않은 관절 움직임을 방지합니다. 단일 인간형 로봇과 다중 이중 팔 시스템에서의 이동 조작 및 전신 제어 시연을 통해 시스템 성능을 검증했으며, 하드웨어 설계는 오픈소스로 공개되었습니다.
+
+## 핵심 내용
+### 시스템 아키텍처 및 설계
+- **하드웨어 설계**: CHILD 시스템은 컴팩트하고 재구성 가능한 구조를 채택하여 전체가 표준 유아용 캐리어에 장착될 수 있어, 조작자가 휴대하고 사용하기 용이합니다.
+- **제어 모드**: 두 가지 모드를 지원합니다:
+  - **직접 관절 매핑**: 조작자의 관절 각도를 로봇 관절에 실시간 매핑하여 전신 제어에 사용합니다.
+  - **이동 조작**: 이동과 조작 작업을 결합하여 작업 다양성을 확장합니다.
+- **힘 피드백 메커니즘**: 적응형 힘 피드백을 통합하여 조작 상태에 따라 동적으로 조정하며, 관절 움직임이 안전 범위를 초과하지 않도록 방지하고 조작자의 몰입감을 향상시킵니다.
+
+### 실험 검증
+- **테스트 플랫폼**: 단일 인간형 로봇과 다중 이중 팔 시스템에서 검증을 완료했습니다.
+- **시연 작업**: 이동 조작(예: 보행 중 물체 잡기)과 전신 제어(예: 사지를 조정하여 복잡한 자세 수행)를 포함합니다.
+- **주요 결과**: 시스템이 전신 관절 수준 제어를 성공적으로 구현했으며, 작업 완성도와 조작 안정성이 검증되었습니다.
+
+### 오픈소스 및 재현성
+- 하드웨어 설계는 완전히 오픈소스로 공개되었으며, 프로젝트 웹사이트에서 상세 문서와 코드를 제공하여 커뮤니티의 재현 및 개선을 촉진합니다.
+- 프로젝트 웹사이트: https://uiuckimlab.github.io/CHILD-pages

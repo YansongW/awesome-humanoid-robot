@@ -42,8 +42,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.10109v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.10109v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (709 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,22 @@ This paper systematizes knowledge about secure software supply chain patterns. I
 ## Content
 This paper systematizes knowledge about secure software supply chain patterns. It identifies four stages of a software supply chain attack and proposes three security properties crucial for a secured supply chain: transparency, validity, and separation. The paper describes current security approaches and maps them to the proposed security properties, including research ideas and case studies of supply chains in practice. It discusses the strengths and weaknesses of current approaches relative to known attacks and details the various security frameworks put out to ensure the security of the software supply chain. Finally, the paper highlights potential gaps in actor and operation-centered supply chain security techniques.
 
-## 개요
-본 논문은 안전한 소프트웨어 공급망 패턴에 대한 지식을 체계화합니다. 소프트웨어 공급망 공격의 네 가지 단계를 식별하고, 안전한 공급망에 중요한 세 가지 보안 속성(투명성, 유효성, 분리)을 제안합니다. 현재의 보안 접근 방식을 설명하고 이를 제안된 보안 속성에 매핑하며, 연구 아이디어와 실제 공급망 사례 연구를 포함합니다. 알려진 공격과 관련된 현재 접근 방식의 강점과 약점을 논의하고, 소프트웨어 공급망의 보안을 보장하기 위해 제시된 다양한 보안 프레임워크를 상세히 설명합니다. 마지막으로, 행위자 및 운영 중심의 공급망 보안 기술에서 잠재적인 격차를 강조합니다.
-
-## 핵심 내용
-본 논문은 안전한 소프트웨어 공급망 패턴에 대한 지식을 체계화합니다. 소프트웨어 공급망 공격의 네 가지 단계를 식별하고, 안전한 공급망에 중요한 세 가지 보안 속성(투명성, 유효성, 분리)을 제안합니다. 현재의 보안 접근 방식을 설명하고 이를 제안된 보안 속성에 매핑하며, 연구 아이디어와 실제 공급망 사례 연구를 포함합니다. 알려진 공격과 관련된 현재 접근 방식의 강점과 약점을 논의하고, 소프트웨어 공급망의 보안을 보장하기 위해 제시된 다양한 보안 프레임워크를 상세히 설명합니다. 마지막으로, 행위자 및 운영 중심의 공급망 보안 기술에서 잠재적인 격차를 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2406.10109v1
+
+## 개요
+이 논문은 소프트웨어 공급망 보안 패턴을 체계적으로 정리하여, 공격 과정을 침입, 변조, 전파, 이용의 네 단계로 구분합니다. 저자는 투명성, 유효성, 격리성을 공급망 보안의 핵심 속성으로 제안하고, 사례 연구를 통해 기존 보안 방법, 도구, 프레임워크를 이러한 속성에 매핑합니다. 논문은 알려진 공격에 대한 현재 기술의 장단점을 평가하고 다양한 보안 프레임워크를 상세히 소개하며, 마지막으로 행위자와 운영 중심의 공급망 보안 기술에서 존재하는 잠재적 공백을 지적합니다.
+
+## 핵심 내용
+### 공격 패턴과 보안 속성
+- 논문은 소프트웨어 공급망 공격을 침입(compromise), 변조(alteration), 전파(propagation), 이용(exploitation)의 네 단계로 요약합니다.
+- 세 가지 직교 보안 속성을 제안합니다: 투명성(transparency)은 공급망의 각 단계가 감사 가능하도록 보장하고, 유효성(validity)은 구성 요소의 출처와 무결성을 검증 가능하게 하며, 격리성(separation)은 공격의 영향 범위를 제한합니다.
+
+### 기존 기술 매핑
+- 사례 연구를 통해 기존 보안 방법(예: 서명 검증, SBOM, 신뢰할 수 있는 빌드)을 세 가지 속성에 매핑한 결과, 대부분의 도구가 단일 속성만을 다루는 것을 발견합니다.
+- 현재 프레임워크(예: SLSA, in-toto)의 장단점을 분석합니다: SLSA는 빌드 무결성을 강조하지만 런타임 격리가 부족하고, in-toto는 메타데이터 검증을 제공하지만 투명성 메커니즘이 불완전합니다.
+
+### 주요 발견과 공백
+- 기존 기술은 '전파'와 '이용' 단계의 방어가 약하며, 특히 의존성 혼동(dependency confusion)과 악성 업데이트 공격에 취약합니다.
+- 행위자 중심(actor-centered) 기술(예: 접근 제어)과 운영 중심(operation-centered) 기술(예: CI/CD 감사) 간의 협력이 부족하여 공격 표면이 완전히 커버되지 않습니다.
+- 논문은 투명성과 격리성을 결합하여 공급망 내 수평 이동을 탐지하는 등, 단계 간 통합 방어가 필요하다고 지적합니다.

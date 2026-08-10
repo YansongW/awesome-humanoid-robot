@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.14048v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.14048v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (901 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,25 @@ WAM4D 通过轻量级空间注册令牌和因果混合注意力机制，成功�
 ## Overview
 World action models (WAMs) have recently shown promise in jointly modeling future observations and executable robot actions. However, most existing WAMs still operate in 2D video or latent spaces, where visually plausible rollouts miss the 3D spatial constraints and occluded contact geometry required for precise manipulation. While geometric foundation models offer strong priors for recovering dense 3D structure and motion from visual observations, forcing WAMs to predict the dense 4D representation introduces costly geometric decoding and slows down causal action generation. To address the trade-off, we present WAM4D, a fast 4D world action model that uses lightweight spatial register tokens as training-time future-depth readouts to transfer pretrained geometric priors into a causal video-action transformer, then removes the register branch for lightweight action inference. To prevent non-causal shortcuts, we further design causal mixture attention for the Mixture-of-Transformers (MoT) WAM backbone, defining modality-specific visibility among video, action, and geometry tokens. Comprehensive experiments on RoboTwin 2.0 and challenging real-world manipulation tasks show that WAM4D improves spatial consistency and achieves competitive action prediction while maintaining efficient inference.
 
-## 개요
-World action models (WAMs)는 최근 미래 관측과 실행 가능한 로봇 동작을 공동으로 모델링하는 데 유망한 성과를 보여주고 있습니다. 그러나 대부분의 기존 WAM은 여전히 2D 비디오 또는 잠재 공간에서 작동하며, 시각적으로 그럴듯한 롤아웃은 정밀한 조작에 필요한 3D 공간 제약과 가려진 접촉 기하학을 놓치고 있습니다. 기하학 기반 모델은 시각적 관측에서 밀집된 3D 구조와 움직임을 복원하기 위한 강력한 사전 지식을 제공하지만, WAM이 밀집된 4D 표현을 예측하도록 강제하면 비용이 많이 드는 기하학적 디코딩이 도입되고 인과적 동작 생성이 느려집니다. 이러한 트레이드오프를 해결하기 위해, 우리는 WAM4D를 제안합니다. 이는 경량 공간 레지스터 토큰을 훈련 시간 미래 깊이 판독값으로 사용하여 사전 훈련된 기하학적 사전 지식을 인과적 비디오-동작 트랜스포머로 전이한 후, 레지스터 브랜치를 제거하여 경량 동작 추론을 수행하는 빠른 4D 월드 액션 모델입니다. 비인과적 지름길을 방지하기 위해, 우리는 Mixture-of-Transformers (MoT) WAM 백본을 위한 인과적 혼합 어텐션을 추가로 설계하여 비디오, 동작 및 기하학 토큰 간의 모달리티별 가시성을 정의합니다. RoboTwin 2.0 및 도전적인 실제 세계 조작 작업에 대한 포괄적인 실험은 WAM4D가 공간 일관성을 개선하고 효율적인 추론을 유지하면서 경쟁력 있는 동작 예측을 달성함을 보여줍니다.
-
-## 핵심 내용
-World action models (WAMs)는 최근 미래 관측과 실행 가능한 로봇 동작을 공동으로 모델링하는 데 유망한 성과를 보여주고 있습니다. 그러나 대부분의 기존 WAM은 여전히 2D 비디오 또는 잠재 공간에서 작동하며, 시각적으로 그럴듯한 롤아웃은 정밀한 조작에 필요한 3D 공간 제약과 가려진 접촉 기하학을 놓치고 있습니다. 기하학 기반 모델은 시각적 관측에서 밀집된 3D 구조와 움직임을 복원하기 위한 강력한 사전 지식을 제공하지만, WAM이 밀집된 4D 표현을 예측하도록 강제하면 비용이 많이 드는 기하학적 디코딩이 도입되고 인과적 동작 생성이 느려집니다. 이러한 트레이드오프를 해결하기 위해, 우리는 WAM4D를 제안합니다. 이는 경량 공간 레지스터 토큰을 훈련 시간 미래 깊이 판독값으로 사용하여 사전 훈련된 기하학적 사전 지식을 인과적 비디오-동작 트랜스포머로 전이한 후, 레지스터 브랜치를 제거하여 경량 동작 추론을 수행하는 빠른 4D 월드 액션 모델입니다. 비인과적 지름길을 방지하기 위해, 우리는 Mixture-of-Transformers (MoT) WAM 백본을 위한 인과적 혼합 어텐션을 추가로 설계하여 비디오, 동작 및 기하학 토큰 간의 모달리티별 가시성을 정의합니다. RoboTwin 2.0 및 도전적인 실제 세계 조작 작업에 대한 포괄적인 실험은 WAM4D가 공간 일관성을 개선하고 효율적인 추론을 유지하면서 경쟁력 있는 동작 예측을 달성함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.14048v3
+
+## 개요
+기존 세계 행동 모델은 주로 2D 비디오 또는 잠재 공간에서 작동하며, 생성된 시각적 전개는 정밀한 조작에 필요한 3D 공간 제약과 폐색 접촉 기하학이 부족합니다. 기하학 기반 모델이 밀집된 3D 구조를 복원할 수 있지만, 밀집된 4D 표현을 강제로 예측하면 높은 기하학 디코딩 비용이 발생하고 인과적 행동 생성을 지연시킵니다. WAM4D는 경량 공간 등록 토큰을 훈련 시 미래 깊이 판독으로 도입하여 사전 훈련된 기하학 사전 지식을 인과적 비디오-행동 Transformer로 전이하고, 추론 시 등록 분기를 제거하여 경량 행동 추론을 실현합니다. 또한, Mixture-of-Transformers 백본 네트워크를 위해 인과적 혼합 어텐션 메커니즘을 설계하여 비디오, 행동, 기하학 토큰 간의 모달별 가시성을 명확히 정의합니다.
+
+## 핵심 내용
+### 방법
+- **공간 등록 토큰**: 훈련 단계에서 WAM4D는 경량 공간 등록 토큰을 미래 깊이 판독으로 사용하여 사전 훈련된 기하학 기반 모델의 사전 지식을 인과적 비디오-행동 Transformer에 주입합니다. 이러한 토큰은 훈련 시에만 존재하며 추론 시 제거되어 추가 기하학 디코딩 오버헤드를 방지합니다.
+- **인과적 혼합 어텐션**: 비인과적 정보 누출을 방지하기 위해 WAM4D는 Mixture-of-Transformers 백본 네트워크에서 인과적 혼합 어텐션 메커니즘을 설계합니다. 이 메커니즘은 비디오, 행동, 기하학 토큰에 대한 모달별 가시성 규칙을 정의하여 인과적 순서가 깨지지 않도록 보장합니다.
+
+### 실험 설정
+- **벤치마크**: RoboTwin 2.0 데이터셋과 도전적인 실제 세계 조작 작업에서 평가를 수행합니다.
+- **비교 대상**: 기존 2D 세계 행동 모델 및 4D 표현을 직접 예측하는 기준 방법과 비교합니다.
+
+### 주요 결과
+- **공간 일관성**: WAM4D는 생성된 궤적의 공간 일관성을 크게 향상시켰으며, RoboTwin 2.0에서 기준 방법 대비 3D 공간 오류를 줄였습니다.
+- **행동 예측 성능**: 최신 방법과 경쟁력 있는 수준의 행동 예측 정확도를 달성하면서도 효율적인 추론 속도를 유지합니다.
+- **추론 효율성**: 추론 시 등록 분기를 제거함으로써 WAM4D의 추론 속도는 밀집된 4D 표현을 강제로 예측하는 방법보다 몇 배 빠릅니다.
+
+### 결론
+WAM4D는 경량 공간 등록 토큰과 인과적 혼합 어텐션 메커니즘을 통해 효율적인 추론을 유지하면서 4D 세계 행동 모델의 공간 일관성을 향상시켜, 로봇 조작 작업에 실용적인 솔루션을 제공합니다.

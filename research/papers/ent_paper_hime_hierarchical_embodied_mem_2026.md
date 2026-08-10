@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03449v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03449v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (696 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -91,11 +92,27 @@ Current Vision-Language-Action (VLA) models excel at robotic manipulation but of
 ## Content
 Current Vision-Language-Action (VLA) models excel at robotic manipulation but often struggle with non-Markovian tasks requiring long-term memory and reasoning due to their reliance on immediate observations. Existing solutions face a "frequency-competence paradox," where stronger reasoning models are too slow for real-time control, while faster models lack sufficient reasoning capabilities. To resolve this architectural misalignment, we propose HiMe, a Hierarchical Embodied Memory framework that decouples embodied intelligence into a high-frequency Executor for execution, a Sentry for working memory, and a Planner for long-term strategy. We also introduce a dynamic knowledge system based on cross-modal semantic schemas and active management mechanisms, allowing robots to maintain memory plasticity through "Add, Update, and Delete" operations. This hierarchical design effectively balances the conflict between real-time execution and slow thinking planning, significantly improving success rates in long-horizon tasks. Experiments demonstrate that this approach not only outperforms flat memory baselines but also exhibits the novel ability to self-correct its internal knowledge based on human preferences.
 
-## 개요
-현재의 Vision-Language-Action (VLA) 모델은 로봇 조작에 뛰어나지만, 즉각적인 관찰에 의존하기 때문에 장기 기억과 추론이 필요한 비마르코프 작업에서는 종종 어려움을 겪습니다. 기존 솔루션은 '빈도-능력 역설'에 직면해 있으며, 더 강력한 추론 모델은 실시간 제어에 너무 느리고, 더 빠른 모델은 충분한 추론 능력을 갖추지 못합니다. 이러한 구조적 부정합을 해결하기 위해, 우리는 HiMe(계층적 체화 기억 프레임워크)를 제안합니다. 이 프레임워크는 체화 지능을 실행을 위한 고빈도 실행기(Executor), 작업 기억을 위한 센트리(Sentry), 장기 전략을 위한 플래너(Planner)로 분리합니다. 또한, 교차 모달 의미 스키마와 능동 관리 메커니즘에 기반한 동적 지식 시스템을 도입하여, 로봇이 '추가, 업데이트, 삭제' 작업을 통해 기억 가소성을 유지할 수 있도록 합니다. 이 계층적 설계는 실시간 실행과 느린 사고 계획 간의 충돌을 효과적으로 균형 잡아, 장기 작업에서 성공률을 크게 향상시킵니다. 실험 결과, 이 접근 방식은 평면 기억 기준선을 능가할 뿐만 아니라, 인간의 선호도에 따라 내부 지식을 스스로 교정하는 새로운 능력을 보여줍니다.
-
-## 핵심 내용
-현재의 Vision-Language-Action (VLA) 모델은 로봇 조작에 뛰어나지만, 즉각적인 관찰에 의존하기 때문에 장기 기억과 추론이 필요한 비마르코프 작업에서는 종종 어려움을 겪습니다. 기존 솔루션은 '빈도-능력 역설'에 직면해 있으며, 더 강력한 추론 모델은 실시간 제어에 너무 느리고, 더 빠른 모델은 충분한 추론 능력을 갖추지 못합니다. 이러한 구조적 부정합을 해결하기 위해, 우리는 HiMe(계층적 체화 기억 프레임워크)를 제안합니다. 이 프레임워크는 체화 지능을 실행을 위한 고빈도 실행기(Executor), 작업 기억을 위한 센트리(Sentry), 장기 전략을 위한 플래너(Planner)로 분리합니다. 또한, 교차 모달 의미 스키마와 능동 관리 메커니즘에 기반한 동적 지식 시스템을 도입하여, 로봇이 '추가, 업데이트, 삭제' 작업을 통해 기억 가소성을 유지할 수 있도록 합니다. 이 계층적 설계는 실시간 실행과 느린 사고 계획 간의 충돌을 효과적으로 균형 잡아, 장기 작업에서 성공률을 크게 향상시킵니다. 실험 결과, 이 접근 방식은 평면 기억 기준선을 능가할 뿐만 아니라, 인간의 선호도에 따라 내부 지식을 스스로 교정하는 새로운 능력을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.03449v1
+
+## 개요
+현재 VLA 모델은 로봇 조작에서 뛰어난 성능을 보이지만, 장기 기억과 추론이 필요한 비마르코프 과제에서는 즉각적인 관측에 의존하여 성능이 저조합니다. 기존 접근법은 '빈도-능력 역설'에 직면합니다: 강력한 추론 모델은 속도가 너무 느려 실시간 제어에 사용할 수 없고, 빠른 모델은 충분한 추론 능력을 갖추지 못합니다. HiMe 프레임워크는 임베디드 지능을 고주파 실행기, 작업 기억 센트리, 장기 전략 플래너로 분리하고, 교차 모달 의미 패턴 기반의 동적 지식 시스템을 도입하여 '추가, 업데이트, 삭제' 작업을 통해 기억 가소성을 유지함으로써 실시간 실행과 느린 추론 간의 충돌을 효과적으로 균형 있게 해결합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+HiMe 프레임워크는 임베디드 지능을 세 가지 계층으로 분리합니다:
+- **고주파 실행기 (Executor)**: 실시간 제어와 동작 실행을 담당하여 고주파 응답을 보장합니다.
+- **작업 기억 센트리 (Sentry)**: 단기 작업 기억을 유지하고 현재 작업과 관련된 컨텍스트 정보를 처리합니다.
+- **장기 전략 플래너 (Planner)**: 장기 전략 수립과 추론을 담당하며 느린 사고가 필요한 복잡한 계획을 처리합니다.
+
+### 동적 지식 시스템
+- **교차 모달 의미 패턴** 기반으로 지식 표현을 구축하여 시각, 언어, 동작 정보의 융합을 지원합니다.
+- 능동적 관리 메커니즘을 도입하여 '추가, 업데이트, 삭제' 작업을 통해 기억 가소성을 실현하며, 로봇이 인간의 선호도에 따라 내부 지식을 자기 수정할 수 있게 합니다.
+
+### 실험 설정 및 주요 수치
+- 실험은 장기 시간 도메인 작업에서 수행되었으며, **플랫 기억 베이스라인** 방법과 비교했습니다.
+- HiMe는 성공률에서 베이스라인보다 현저히 우수하며, 인간 선호도에 기반한 내부 지식 자기 수정이라는 새로운 능력을 보여줍니다.
+- 구체적인 수치는 초록에 제시되지 않았지만, 프레임워크는 실시간 실행과 느린 추론 간의 충돌을 효과적으로 해결합니다.
+
+### 결론
+HiMe는 계층적 기억 설계를 통해 VLA 모델의 장기 시간 도메인 작업에서의 기억 및 추론 병목을 성공적으로 극복하여, 로봇의 장기 자율 운영을 위한 새로운 패러다임을 제공합니다.

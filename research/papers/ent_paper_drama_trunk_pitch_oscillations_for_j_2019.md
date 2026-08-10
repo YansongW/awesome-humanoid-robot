@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1909.03687v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1909.03687v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (678 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,27 @@ Creating natural-looking running gaits for humanoid robots is a complex task due
 ## Content
 Creating natural-looking running gaits for humanoid robots is a complex task due to the underactuated degree of freedom in the trunk, which makes motion planning and control difficult. Research on trunk movements in human locomotion is insufficient, and no formalism is known to transfer human motion patterns onto robots. Related work mostly focuses on the lower extremities and simplifies the problem by stabilizing the trunk at a fixed angle. In contrast, humans display significant trunk motions that follow the natural dynamics of the gait. In this work, we use a spring-loaded inverted pendulum model with a trunk (TSLIP) together with a virtual point (VP) target to create trunk oscillations and investigate the impact of these movements. We analyze how the VP location and forward speed determine the direction and magnitude of the trunk oscillations. We show that positioning the VP below the center of mass (CoM) can explain the forward trunk pitching observed in human running. The VP below the CoM leads to synergistic work between the hip and leg, reducing leg loading. However, it comes at the cost of increased peak hip torque. Our results provide insights for leveraging trunk motion to redistribute joint loads and potentially improve energy efficiency in humanoid robots.
 
-## 개요
-휴머노이드 로봇의 자연스러운 달리기 보행을 생성하는 것은 몸통의 부족 구동 자유도로 인해 복잡한 작업이며, 이는 운동 계획 및 제어를 어렵게 만듭니다. 인간 보행에서의 몸통 움직임에 대한 연구는 충분하지 않으며, 인간의 운동 패턴을 로봇으로 전환하는 공식화된 방법은 알려져 있지 않습니다. 관련 연구는 주로 하지에 초점을 맞추며, 몸통을 고정된 각도로 안정화하여 문제를 단순화합니다. 이와 대조적으로, 인간은 보행의 자연스러운 동역학을 따르는 상당한 몸통 움직임을 보입니다. 본 연구에서는 몸통이 있는 스프링-장착 역진자 모델(TSLIP)과 가상 점(VP) 목표를 사용하여 몸통 진동을 생성하고 이러한 움직임의 영향을 조사합니다. VP 위치와 전진 속도가 몸통 진동의 방향과 크기를 어떻게 결정하는지 분석합니다. VP를 질량 중심(CoM) 아래에 배치하면 인간 달리기에서 관찰되는 전방 몸통 피칭을 설명할 수 있음을 보여줍니다. CoM 아래의 VP는 엉덩이와 다리 사이의 상승적 작업을 유도하여 다리 부하를 줄입니다. 그러나 이는 최대 엉덩이 토크 증가라는 비용을 수반합니다. 우리의 결과는 몸통 움직임을 활용하여 관절 부하를 재분배하고 잠재적으로 휴머노이드 로봇의 에너지 효율성을 개선하는 통찰력을 제공합니다.
-
-## 핵심 내용
-휴머노이드 로봇의 자연스러운 달리기 보행을 생성하는 것은 몸통의 부족 구동 자유도로 인해 복잡한 작업이며, 이는 운동 계획 및 제어를 어렵게 만듭니다. 인간 보행에서의 몸통 움직임에 대한 연구는 충분하지 않으며, 인간의 운동 패턴을 로봇으로 전환하는 공식화된 방법은 알려져 있지 않습니다. 관련 연구는 주로 하지에 초점을 맞추며, 몸통을 고정된 각도로 안정화하여 문제를 단순화합니다. 이와 대조적으로, 인간은 보행의 자연스러운 동역학을 따르는 상당한 몸통 움직임을 보입니다. 본 연구에서는 몸통이 있는 스프링-장착 역진자 모델(TSLIP)과 가상 점(VP) 목표를 사용하여 몸통 진동을 생성하고 이러한 움직임의 영향을 조사합니다. VP 위치와 전진 속도가 몸통 진동의 방향과 크기를 어떻게 결정하는지 분석합니다. VP를 질량 중심(CoM) 아래에 배치하면 인간 달리기에서 관찰되는 전방 몸통 피칭을 설명할 수 있음을 보여줍니다. CoM 아래의 VP는 엉덩이와 다리 사이의 상승적 작업을 유도하여 다리 부하를 줄입니다. 그러나 이는 최대 엉덩이 토크 증가라는 비용을 수반합니다. 우리의 결과는 몸통 움직임을 활용하여 관절 부하를 재분배하고 잠재적으로 휴머노이드 로봇의 에너지 효율성을 개선하는 통찰력을 제공합니다.
-
 ## 参考
 - http://arxiv.org/abs/1909.03687v1
+
+## 개요
+이 연구는 인간형 로봇의 몸통 부구동 자유도로 인한 자연스러운 보행 생성의 어려움을 해결하기 위해, TSLIP 모델과 가상 점 목표를 결합하여 몸통 진동을 모사하는 방법을 제안한다. 가상 점의 위치와 전진 속도가 진동 방향 및 크기에 미치는 영향을 분석함으로써, 저자들은 질량 중심 아래에 위치한 가상 점이 인간 달리기에서 나타나는 몸통 전방 경사 현상을 설명할 수 있음을 입증한다. 이러한 구성은 엉덩이 관절과 다리가 협력적으로 일하게 하여 다리 부하를 줄이지만, 엉덩이 관절의 최대 토크 증가라는 대가를 수반한다. 이 연구는 몸통 운동을 활용하여 관절 부하를 재분배하고 인간형 로봇의 에너지 효율을 향상시키는 새로운 접근 방식을 제시한다.
+
+## 핵심 내용
+### 배경 및 문제
+- 인간형 로봇이 자연스러운 달리기 보행을 생성하는 데는 몸통의 부구동 자유도로 인한 운동 계획 및 제어의 어려움이 주요 장애물이다.
+- 기존 연구는 주로 하지에 초점을 맞추며, 종종 몸통 각도를 고정하여 문제를 단순화하는 반면, 인간 보행에서는 몸통이 자연 역학에 따라 유의미하게 움직인다.
+- 인간의 운동 패턴을 로봇으로 전이하는 형식적 방법이 부족하다.
+
+### 방법 및 모델
+- 몸통을 포함한 스프링-부하 역진자(TSLIP) 모델을 채택하고, 가상 점(VP) 목표를 도입하여 몸통 피치 진동을 생성한다.
+- VP 위치(질량 중심 CoM 기준)와 전진 속도를 조정하여 몸통 진동 방향과 크기에 미치는 영향을 분석한다.
+
+### 주요 발견
+- **VP가 CoM 아래에 위치할 때**: 인간 달리기에서 나타나는 몸통 전방 경사의 전형적 패턴을 재현할 수 있다.
+- **관절 부하 재분배**: VP가 CoM 아래에 있을 때 엉덩이 관절과 다리가 협력적으로 일하여 다리 부하가 감소하지만, 엉덩이 관절의 최대 토크는 증가한다.
+- **에너지 효율 트레이드오프**: 몸통 운동은 관절 부하를 재분배할 수 있지만, 엉덩이 관절 토크 증가로 인한 잠재적 비용에 주의해야 한다.
+
+### 결론 및 의의
+- 이 연구는 몸통 운동을 활용하여 인간형 로봇의 보행을 최적화하는 이론적 근거를 제공하며, 특히 관절 부하 분포와 에너지 효율의 균형에 유용하다.
+- 향후 이 프레임워크를 기반으로 더 자연스러운 로봇 달리기 제어 전략을 설계할 수 있다.

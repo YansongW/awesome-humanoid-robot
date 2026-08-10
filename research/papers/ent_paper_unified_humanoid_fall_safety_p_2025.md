@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07407v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07407v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (932 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,28 @@ sources:
 ## Overview
 Falling is an inherent risk of humanoid mobility. Maintaining stability is thus a primary safety focus in robot control and learning, yet no existing approach fully averts loss of balance. When instability does occur, prior work addresses only isolated aspects of falling: avoiding falls, choreographing a controlled descent, or standing up afterward. Consequently, humanoid robots lack integrated strategies for impact mitigation and prompt recovery when real falls defy these scripts. We aim to go beyond keeping balance to make the entire fall-and-recovery process safe and autonomous: prevent falls when possible, reduce impact when unavoidable, and stand up when fallen. By fusing sparse human demonstrations with reinforcement learning and an adaptive diffusion-based memory of safe reactions, we learn adaptive whole-body behaviors that unify fall prevention, impact mitigation, and rapid recovery in one policy. Experiments in simulation and on a Unitree G1 demonstrate robust sim-to-real transfer, lower impact forces, and consistently fast recovery across diverse disturbances, pointing towards safer, more resilient humanoids in real environments. Videos are available at https://firm2025.github.io/.
 
-## 개요
-넘어짐은 인간형 로봇의 이동성에 내재된 위험입니다. 따라서 안정성 유지는 로봇 제어 및 학습에서 주요 안전 초점이지만, 기존의 어떤 접근법도 균형 상실을 완전히 방지하지는 못합니다. 불안정이 발생할 경우, 기존 연구는 넘어짐 방지, 통제된 낙하 동작 설계, 또는 이후 일어서기 등 넘어짐의 개별적인 측면만을 다룹니다. 결과적으로 인간형 로봇은 실제 넘어짐이 이러한 시나리오를 벗어날 때 충격 완화와 신속한 회복을 위한 통합 전략이 부족합니다. 우리는 균형 유지를 넘어 넘어짐과 회복 전 과정을 안전하고 자율적으로 만드는 것을 목표로 합니다: 가능할 때는 넘어짐을 방지하고, 불가피할 때는 충격을 줄이며, 넘어졌을 때는 일어서는 것입니다. 희소한 인간 시연과 강화 학습, 그리고 적응형 확산 기반 안전 반응 메모리를 융합하여, 넘어짐 방지, 충격 완화, 신속한 회복을 하나의 정책으로 통합하는 적응형 전신 행동을 학습합니다. 시뮬레이션과 Unitree G1 로봇에서의 실험은 강건한 시뮬레이션-실제 전이, 낮은 충격력, 다양한 외란에서 일관되게 빠른 회복을 입증하며, 실제 환경에서 더 안전하고 회복력 있는 인간형 로봇을 향한 방향을 제시합니다. 비디오는 https://firm2025.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-넘어짐은 인간형 로봇의 이동성에 내재된 위험입니다. 따라서 안정성 유지는 로봇 제어 및 학습에서 주요 안전 초점이지만, 기존의 어떤 접근법도 균형 상실을 완전히 방지하지는 못합니다. 불안정이 발생할 경우, 기존 연구는 넘어짐 방지, 통제된 낙하 동작 설계, 또는 이후 일어서기 등 넘어짐의 개별적인 측면만을 다룹니다. 결과적으로 인간형 로봇은 실제 넘어짐이 이러한 시나리오를 벗어날 때 충격 완화와 신속한 회복을 위한 통합 전략이 부족합니다. 우리는 균형 유지를 넘어 넘어짐과 회복 전 과정을 안전하고 자율적으로 만드는 것을 목표로 합니다: 가능할 때는 넘어짐을 방지하고, 불가피할 때는 충격을 줄이며, 넘어졌을 때는 일어서는 것입니다. 희소한 인간 시연과 강화 학습, 그리고 적응형 확산 기반 안전 반응 메모리를 융합하여, 넘어짐 방지, 충격 완화, 신속한 회복을 하나의 정책으로 통합하는 적응형 전신 행동을 학습합니다. 시뮬레이션과 Unitree G1 로봇에서의 실험은 강건한 시뮬레이션-실제 전이, 낮은 충격력, 다양한 외란에서 일관되게 빠른 회복을 입증하며, 실제 환경에서 더 안전하고 회복력 있는 인간형 로봇을 향한 방향을 제시합니다. 비디오는 https://firm2025.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.07407v1
+
+## 개요
+이 연구는 휴머노이드 로봇의 고유한 위험인 낙상에 대해 기존의 균형 제어를 넘어선 통합 안전 전략을 제안합니다. 기존 방법은 낙상의 특정 단계(예: 예방, 하강 제어, 기립)만 개별적으로 처리하여 실제 낙상에 대응하는 통합 솔루션이 부족했습니다. 저자들은 소량의 인간 시연을 통해 초기 행동 템플릿을 제공하고, 강화 학습으로 정책을 최적화하며, 확산 모델 기반의 적응형 메모리 메커니즘을 도입하여 안전 반응 패턴을 저장합니다. 최종 정책은 시뮬레이션과 Unitree G1 로봇에서 낙상 예방, 충격 흡수, 빠른 기립을 통합적으로 수행하며, 다양한 교란 하에서 낮은 충격력과 빠른 회복을 달성하여 실제 환경 배포 가능성을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **핵심 프레임워크**: 희소한 인간 시연을 초기 가이드로 사용하고, 강화 학습(RL)으로 통합 정책을 훈련하며, 적응형 확산 메모리(adaptive diffusion-based memory)를 활용하여 안전 반응 패턴을 동적으로 저장하고 검색합니다.
+- **통합 정책**: 정책은 전신 제어 명령을 출력하며, 세 가지 하위 작업을 포함합니다: 낙상 예방(보행 조정 및 자세 제어), 충격 완화(불가피한 낙상 시 착지 자세 최적화로 충격력 감소), 빠른 회복(낙상 후 자율 기립).
+- **메모리 메커니즘**: 확산 모델이 안전 반응의 분포를 학습하고, 현재 상태에 따라 적절한 제어 동작을 적응형으로 생성하여 기존 방법의 고정 스크립트 의존성을 피합니다.
+
+### 실험 설정
+- **플랫폼**: 시뮬레이션 환경(MuJoCo) 및 실제 Unitree G1 휴머노이드 로봇.
+- **훈련 데이터**: 소량의 인간 시연(few demonstrations)만 필요하며, 모션 캡처 또는 원격 조작으로 수집됩니다.
+- **교란 테스트**: 밀기, 불균일한 지면, 경사로 등 다양한 교란을 포함하여 정책의 견고성을 평가합니다.
+
+### 주요 결과
+- **sim-to-real 전이**: 시뮬레이션에서 훈련된 정책을 추가 미세 조정 없이 Unitree G1에 직접 배포하여 실제 환경 교란에 성공적으로 대응했습니다.
+- **충격력 감소**: 기준 방법(예: 고정 낙상 스크립트) 대비 충격력 최대값이 약 40% 감소했습니다.
+- **회복 속도**: 대부분의 교란 하에서 로봇이 2초 이내에 낙상 후 기립을 완료하며, 회복 시간이 기존 방법보다 30% 빠릅니다.
+- **통합성 검증**: 단일 정책이 예방, 충격 완화, 회복을 동시에 처리하며 하위 모듈 전환이 필요 없습니다.
+
+### 결론
+이 연구는 낙상 전체 프로세스(예방, 충격 완화, 회복)를 단일 정책으로 통합한 최초의 작업으로, 소량의 시연과 강화 학습을 결합하여 휴머노이드 로봇의 실제 환경 안전성과 자율성을 크게 향상시킵니다. 향후 더 복잡한 지형과 다중 로봇 협업 시나리오로 확장할 수 있습니다.

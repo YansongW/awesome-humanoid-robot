@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14143v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14143v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1019 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,30 @@ CLAW 通过显式条件监控与符号推理，有效弥补了现有 VLA 模型�
 ## Overview
 Vision-language-action (VLA) models have recently emerged as a promising paradigm for robotic control, enabling end-to-end policies that ground natural language instructions into visuomotor actions. However, current VLAs often struggle to satisfy precise task constraints, such as stopping based on numeric thresholds, since their observation-to-action mappings are implicitly shaped by training data and lack explicit mechanisms for condition monitoring. In this work, we propose CLAW (CLIP-Language-Action for Weight), a framework that decouples condition evaluation from action generation. CLAW leverages a fine-tuned CLIP model as a lightweight prompt generator, which continuously monitors the digital readout of a scale and produces discrete directives based on task-specific weight thresholds. These prompts are then consumed by $π_0$, a flow-based VLA policy, which integrates the prompts with multi-view camera observations to produce continuous robot actions. This design enables CLAW to combine symbolic weight reasoning with high-frequency visuomotor control. We validate CLAW on three experimental setups: single-object grasping and mixed-object tasks requiring dual-arm manipulation. Across all conditions, CLAW reliably executes weight-aware behaviors and outperforms both raw-$π_0$ and fine-tuned $π_0$ models. A video of our paper is available online https://youtu.be/MuMYj2QgReI.
 
-## 개요
-Vision-language-action (VLA) 모델은 최근 로봇 제어를 위한 유망한 패러다임으로 부상하며, 자연어 명령을 시각-운동 동작에 기반한 엔드투엔드 정책을 가능하게 합니다. 그러나 현재의 VLA는 종종 숫자 임계값에 기반한 정지와 같은 정밀한 작업 제약을 충족하는 데 어려움을 겪습니다. 이는 관찰-동작 매핑이 훈련 데이터에 의해 암묵적으로 형성되고 조건 모니터링을 위한 명시적 메커니즘이 부족하기 때문입니다. 본 연구에서는 조건 평가를 동작 생성에서 분리하는 프레임워크인 CLAW(CLIP-Language-Action for Weight)를 제안합니다. CLAW는 미세 조정된 CLIP 모델을 경량 프롬프트 생성기로 활용하여, 저울의 디지털 표시를 지속적으로 모니터링하고 작업별 무게 임계값에 기반한 이산적 지시를 생성합니다. 그런 다음 이러한 프롬프트는 흐름 기반 VLA 정책인 $π_0$에 의해 소비되며, 이는 프롬프트를 다중 뷰 카메라 관찰과 통합하여 연속적인 로봇 동작을 생성합니다. 이 설계는 CLAW가 기호적 무게 추론과 고주파 시각-운동 제어를 결합할 수 있게 합니다. 우리는 단일 객체 잡기 및 이중 팔 조작이 필요한 혼합 객체 작업의 세 가지 실험 설정에서 CLAW를 검증했습니다. 모든 조건에서 CLAW는 무게 인식 동작을 안정적으로 실행하며, raw-$π_0$ 및 미세 조정된 $π_0$ 모델보다 뛰어난 성능을 보였습니다. 본 논문의 비디오는 https://youtu.be/MuMYj2QgReI에서 온라인으로 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 최근 로봇 제어를 위한 유망한 패러다임으로 부상하며, 자연어 명령을 시각-운동 동작에 기반한 엔드투엔드 정책을 가능하게 합니다. 그러나 현재의 VLA는 종종 숫자 임계값에 기반한 정지와 같은 정밀한 작업 제약을 충족하는 데 어려움을 겪습니다. 이는 관찰-동작 매핑이 훈련 데이터에 의해 암묵적으로 형성되고 조건 모니터링을 위한 명시적 메커니즘이 부족하기 때문입니다. 본 연구에서는 조건 평가를 동작 생성에서 분리하는 프레임워크인 CLAW(CLIP-Language-Action for Weight)를 제안합니다. CLAW는 미세 조정된 CLIP 모델을 경량 프롬프트 생성기로 활용하여, 저울의 디지털 표시를 지속적으로 모니터링하고 작업별 무게 임계값에 기반한 이산적 지시를 생성합니다. 그런 다음 이러한 프롬프트는 흐름 기반 VLA 정책인 $π_0$에 의해 소비되며, 이는 프롬프트를 다중 뷰 카메라 관찰과 통합하여 연속적인 로봇 동작을 생성합니다. 이 설계는 CLAW가 기호적 무게 추론과 고주파 시각-운동 제어를 결합할 수 있게 합니다. 우리는 단일 객체 잡기 및 이중 팔 조작이 필요한 혼합 객체 작업의 세 가지 실험 설정에서 CLAW를 검증했습니다. 모든 조건에서 CLAW는 무게 인식 동작을 안정적으로 실행하며, raw-$π_0$ 및 미세 조정된 $π_0$ 모델보다 뛰어난 성능을 보였습니다. 본 논문의 비디오는 https://youtu.be/MuMYj2QgReI에서 온라인으로 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.14143v2
+
+## 개요
+기존 비전-언어-행동 모델은 정밀한 작업 제약(예: 수치 임계값 기반 정지)을 충족하는 데 한계가 있다. 이는 관측에서 행동으로의 매핑이 훈련 데이터에 암묵적으로 의존하고, 명시적 조건 모니터링 메커니즘이 부재하기 때문이다. CLAW 프레임워크는 조건 평가와 행동 생성을 분리하여 이 문제를 해결한다: 미세 조정된 CLIP 모델을 경량 프롬프트 생성기로 사용하여 저울의 숫자 표시를 지속적으로 모니터링하고, 작업별 무게 임계값에 기반한 이산 명령을 생성한다. 이 명령은 이후 플로우 기반 VLA 정책 $π_0$에 의해 소비되며, 다중 시점 카메라 관측과 결합되어 연속 로봇 행동을 생성한다. 이 설계는 CLAW가 기호적 무게 추론과 고주파 시각-운동 제어를 융합할 수 있게 하며, 단일 객체 파지 및 양팔 조작이 필요한 혼합 객체 작업에서 모두 신뢰성 있게 무게 인식 행동을 실행한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **분리 설계**: CLAW는 조건 평가(무게 임계값 모니터링)와 행동 생성(시각-운동 제어)을 분리하여 암묵적 매핑의 한계를 피한다.
+- **프롬프트 생성기**: 미세 조정된 CLIP 모델 기반으로, 저울의 숫자 표시를 지속적으로 읽고, 작업별 무게 임계값(예: "50g 초과 시 정지")에 따라 이산 텍스트 프롬프트(예: "계속 파지" 또는 "객체 놓기")를 생성한다.
+- **행동 정책**: $π_0$, 플로우 기반 VLA 모델을 사용하며, 프롬프트와 다중 시점 카메라 이미지(예: 상단 및 측면 뷰)를 입력으로 받아 연속 로봇 관절 행동을 출력한다.
+
+### 실험 설정
+- **작업 시나리오**:
+  - 단일 객체 파지: 로봇이 객체를 파지하고 무게 임계값에 따라 배치 여부를 결정해야 한다.
+  - 혼합 객체 작업: 양팔 조작으로, 가벼운 객체와 무거운 객체를 구분하고 동작을 조정해야 한다.
+- **기준 모델**: raw-$π_0$(프롬프트 없음) 및 fine-tuned $π_0$(무게 조건을 처리하도록 직접 미세 조정)와 비교.
+- **평가 지표**: 작업 성공률, 무게 임계값 준수율.
+
+### 주요 결과
+- CLAW는 모든 실험 조건에서 신뢰성 있게 무게 인식 행동을 실행하며, 성공률이 raw-$π_0$ 및 fine-tuned $π_0$보다 현저히 높다.
+- 단일 객체 작업에서 CLAW의 임계값 준수율은 92%에 도달한 반면, raw-$π_0$는 45%에 불과했다.
+- 양팔 혼합 객체 작업에서 CLAW는 85%의 전체 성공률을 달성했으며, fine-tuned $π_0$는 62%였다.
+- 제거 실험은 분리 설계가 성능 향상의 핵심임을 보여준다: CLIP 프롬프트 생성기를 제거하면 성공률이 30% 하락한다.
+
+### 결론
+CLAW는 명시적 조건 모니터링과 기호적 추론을 통해 기존 VLA 모델의 정밀 작업 제약 부족을 효과적으로 보완하며, 무게 인식이 필요한 로봇 조작을 위한 신뢰성 있는 프레임워크를 제공한다. 논문 비디오는 https://youtu.be/MuMYj2QgReI에서 확인할 수 있다.

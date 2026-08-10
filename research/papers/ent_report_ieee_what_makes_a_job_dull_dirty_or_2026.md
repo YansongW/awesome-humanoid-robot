@@ -175,8 +175,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/dull-dirty-dangerous-robots.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://spectrum.ieee.org/dull-dirty-dangerous-robots.
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: ko body retranslated from zh deep-read (1895 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -227,11 +228,36 @@ Research from the RAI Institute redefines undesirable work for robotics. A class
 ## Content
 Research from the RAI Institute redefines undesirable work for robotics. A classic example of a DDD job is one of “repetitive physical labor on a steaming hot factory floor involving heavy machinery that threatens life and limb.” But determining which human activities fit into these categories is not as straightforward as it seems. What exactly is a “dull” task, and who makes that assumption? Is “dirty” work just about needing to wash your hands afterwards, or is there also an aspect of social stigma? What data can we rely on to classify jobs as “dangerous?” Our recent work (which was not dull at all) tackles these questions and proposes a framework to help roboticists understand the job context for our technology.
 
-## 개요
-RAI 연구소의 연구는 로봇 공학에서 바람직하지 않은 작업을 재정의합니다. DDD 작업의 전형적인 예는 "생명과 신체를 위협하는 중장비가 있는 뜨겁고 습한 공장 바닥에서의 반복적인 육체 노동"입니다. 그러나 어떤 인간 활동이 이러한 범주에 속하는지 결정하는 것은 보이는 것처럼 간단하지 않습니다.
-
-## 핵심 내용
-RAI 연구소의 연구는 로봇 공학에서 바람직하지 않은 작업을 재정의합니다. DDD 작업의 전형적인 예는 "생명과 신체를 위협하는 중장비가 있는 뜨겁고 습한 공장 바닥에서의 반복적인 육체 노동"입니다. 그러나 어떤 인간 활동이 이러한 범주에 속하는지 결정하는 것은 보이는 것처럼 간단하지 않습니다. 정확히 "지루한" 작업이란 무엇이며, 누가 그 가정을 하는가? "더러운" 작업은 단순히 나중에 손을 씻어야 하는 것에 관한 것인가, 아니면 사회적 낙인이라는 측면도 있는가? 작업을 "위험한" 것으로 분류하기 위해 어떤 데이터에 의존할 수 있는가? 우리의 최근 연구(전혀 지루하지 않았던)는 이러한 질문을 다루며, 로봇 공학자들이 우리 기술의 작업 맥락을 이해할 수 있도록 돕는 프레임워크를 제안합니다.
-
 ## 参考
 - https://spectrum.ieee.org/dull-dirty-dangerous-robots
+
+## 개요
+RAI Institute의 연구팀은 1980년부터 2024년까지의 로봇공학 문헌을 분석한 결과, 논문의 2.7%만이 DDD를 명확히 정의했고, 8.7%만이 작업 예시를 제공했으며, 정의 간 차이가 크고 예시가 포괄적임을 발견했습니다. 이후 그들은 인류학, 경제학 등 사회과학 문헌을 참고하여 'dull', 'dirty', 'dangerous'에 대해 더 세밀한 정의를 제안했습니다: 위험 작업은 부상 위험을 수반하지만, 데이터는 종종 과소평가되고 성별 등의 특성별로 세분화되지 않습니다; 더러운 작업은 물리적 오염뿐만 아니라 사회적 낙인과 도덕적 낙인도 포함합니다; 지루한 작업은 작업자의 자율성과 반복성 경험에 달려 있습니다. 이를 바탕으로 팀은 로봇공학자들이 작업자 관점과 구체적 환경(예: 물리적·사회적 환경)을 결합하여 작업이 진정으로 DDD에 해당하는지 평가할 수 있도록 돕는 실행 가능한 프레임워크를 개발했으며, 자동화로 인해 작업자가 소중히 여기는 작업 요소가 사라지지 않도록 하는 것을 강조합니다.
+
+## 핵심 내용
+### 연구 배경 및 동기
+로봇공학 분야는 오랫동안 'dull, dirty, and dangerous'(DDD)를 자동화에 적합한 작업을 설명하는 데 사용해 왔지만, 이 개념의 정의는 모호하고 실증적 기반이 부족합니다. 예를 들어, 전형적인 DDD 작업은 '고온의 공장 바닥에서 중장비를 사용하는 반복적인 육체노동'으로 설명되지만, 어떤 작업이 실제로 이러한 범주에 해당하는지는 명확하지 않습니다.
+
+### 방법: 문헌 분석 및 사회과학 통합
+- **문헌 분석**: 팀은 1980년부터 2024년까지 DDD를 언급한 로봇공학 출판물을 검색한 결과, 2.7%만이 명확한 정의를 제공했고 8.7%만이 작업 예시를 제공했습니다. 대부분의 예시는 구체성이 부족했으며(예: '산업 제조', '가정 간호'), 정의 간 차이도 컸습니다.
+- **사회과학 검토**: 인류학, 경제학, 정치학, 심리학, 사회학 문헌에서 더 정밀한 정의를 도출했습니다:
+  - **위험 작업(Dangerous Work)**: 부상 또는 부상 위험을 초래하는 직업이나 작업을 의미합니다. 행정 기록과 설문 데이터로 측정할 수 있지만, 세 가지 주요 문제가 있습니다: 부상 누락률이 최대 70%에 달함; 데이터가 성별, 이민자 신분, 공식/비공식 고용 등의 특성별로 세분화되지 않음; 개인 보호 장비(예: 마스크, 조끼, 장갑)가 대부분 남성 치수로 설계되어 여성이 더 높은 안전 위험에 노출됨.
+  - **더러운 작업(Dirty Work)**: 물리적 오염(예: 쓰레기 수거, 위험 물질 처리)뿐만 아니라 사회적 낙인(예: 낙인찍힌 집단과 상호작용하는 작업)과 도덕적 낙인(예: 유죄 또는 기만적인 것으로 간주되는 작업)도 포함합니다. 직업 명성 조사나 민족지학적 인터뷰로 측정할 수 있습니다. 주목할 점은 낮은 명성의 작업이 작업자 자신에게는 존엄하고 의미 있는 것으로 여겨질 수 있다는 것입니다.
+  - **지루한 작업(Dull Work)**: 핵심은 작업자의 주관적 경험입니다. 외부 관찰자는 종종 특정 작업이 가치 없다고 잘못 가정하지만, 반복적인 작업은 기술 개발(예: 목공에 필요한 집중력)이나 사회적 지원(예: 팀 협력)의 조건을 만들 수 있습니다. 따라서 작업자가 작업을 어떻게 경험하고 그 목적이 무엇인지 이해하기 위해 정성적 데이터가 필요합니다.
+
+### 프레임워크: DDD의 실행 가능화
+팀은 로봇 커뮤니티가 자동화가 특정 작업에 미치는 영향을 평가하도록 돕는 분석 프레임워크를 제안했습니다:
+- **핵심 요소**: 각 D 차원에 대해 핵심 정보를 수집하고, 작업의 물리적 또는 사회적 속성이 진정으로 DDD에 해당하는지 반성합니다. 작업자 관점은 세 차원의 공통 핵심입니다.
+- **환경 인식**: 직업과 산업의 물리적·사회적 환경이 작업의 DDD 성격에 영향을 미친다는 점을 강조합니다. 예를 들어, 쓰레기 수거 산업은 모든 D 차원에 해당하는 것처럼 보이지만, 작업자들은 동료와의 일상적 상호작용(내부 용어, 작업 요령, 상호 지원 그룹 포함)과 작업 다양성(예: 차량 점검, 트럭 운전, 팀 조정, 쓰레기 분류 등)을 소중히 여깁니다.
+- **데이터 출처 및 편향**: 함께 제공되는 워크시트는 기존 데이터 출처(예: 직업 부상 기록, 명성 조사)를 사용하도록 제안하면서도, 다양한 관점을 구하고 정보의 잠재적 편향을 고려하도록 권장합니다.
+
+### 사례: 쓰레기 수거 산업
+- **글로벌 배경**: 전 세계적으로 매년 20억 톤 이상의 쓰레기가 발생하며, 2050년에는 약 40억 톤으로 증가할 것으로 예상됩니다.
+- **DDD 분석**:
+  - **위험(Dangerous)**: 작업자는 상당한 건강 위험(예: 부상, 질병)에 노출됩니다.
+  - **더러움(Dirty)**: 쓰레기 수거는 낮은 지위의 작업으로 분류되지만, 많은 작업자는 기본 서비스를 제공한다는 자부심을 느낍니다.
+  - **지루함(Dull)**: 작업은 반복적이지만, 작업자는 일상적 상호작용과 작업 다양성 덕분에 지루하지 않다고 생각합니다.
+- **자동화 시사점**: NIOSH는 자동 측면 적재 트럭과 충돌 방지 시스템을 권장하며, 이는 안전성을 높이지만 단일 작업자가 조이스틱을 조작하고 센서와 카메라로 모니터링되는 결과를 초래하여 작업자가 소중히 여기는 사회적·다양성 요소를 제거합니다. 프레임워크는 안전성을 높이면서도 작업 의미를 파괴하지 않는 솔루션 설계를 장려합니다.
+
+### 결론 및 전망
+DDD는 자동화 작업을 분류하는 여러 방법 중 하나일 뿐입니다(다른 방법으로는 경제적 영향, 환경 지속 가능성 등이 있습니다). 팀은 DDD에 대한 더 많은 데이터 수집과 프레임워크 구축을 촉진하고자 합니다. RAI Institute는 로봇공학과 사회과학의 융합이 사회적 영향을 중시하는 로봇 실무자에게 새로운 정보, 관점, 도구를 제공할 수 있다고 믿습니다. 이 연구는 Nozomi Nakajima, Pedro Reynolds-Cuéllar, Caitrin Lynch, Kate Darling이 수행했으며, 제21회 ACM/IEEE 인간-로봇 상호작용 국제 회의(HRI)에 게재되었습니다.

@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2109.07245v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2109.07245v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (657 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,26 @@ theoretical_depth:
 ## Overview
 This work tackles scene understanding for outdoor robotic navigation, solely relying on images captured by an on-board camera. Conventional visual scene understanding interprets the environment based on specific descriptive categories. However, such a representation is not directly interpretable for decision-making and constrains robot operation to a specific domain. Thus, we propose to segment egocentric images directly in terms of how a robot can navigate in them, and tailor the learning problem to an autonomous navigation task. Building around an image segmentation network, we present a generic affordance consisting of 3 driveability levels which can broadly apply to both urban and off-road scenes. By encoding these levels with soft ordinal labels, we incorporate inter-class distances during learning which improves segmentation compared to standard "hard" one-hot labelling. In addition, we propose a navigation-oriented pixel-wise loss weighting method which assigns higher importance to safety-critical areas. We evaluate our approach on large-scale public image segmentation datasets ranging from sunny city streets to snowy forest trails. In a cross-dataset generalization experiment, we show that our affordance learning scheme can be applied across a diverse mix of datasets and improves driveability estimation in unseen environments compared to general-purpose, single-dataset segmentation.
 
-## 개요
-본 연구는 차량 탑재 카메라로 촬영한 이미지만을 활용하여 야외 로봇 항법을 위한 장면 이해 문제를 다룹니다. 기존의 시각적 장면 이해는 특정 설명적 범주를 기반으로 환경을 해석합니다. 그러나 이러한 표현 방식은 의사 결정에 직접적으로 해석 가능하지 않으며 로봇의 작동을 특정 영역으로 제한합니다. 따라서 우리는 로봇이 이미지 내에서 어떻게 항법할 수 있는지에 따라 자기중심적 이미지를 직접 분할하고, 학습 문제를 자율 항법 작업에 맞게 조정할 것을 제안합니다. 이미지 분할 네트워크를 기반으로, 도시 및 비포장 도로 장면에 광범위하게 적용 가능한 3가지 주행 가능성 수준으로 구성된 일반적 어포던스를 제시합니다. 이러한 수준을 소프트 순서 레이블로 인코딩함으로써 학습 중 클래스 간 거리를 통합하여 표준적인 "하드" 원-핫 레이블링보다 분할 성능을 향상시킵니다. 또한, 안전이 중요한 영역에 더 높은 중요도를 할당하는 항법 지향적 픽셀 단위 손실 가중치 방법을 제안합니다. 우리는 화창한 도시 거리에서 눈 덮인 숲길에 이르기까지 대규모 공개 이미지 분할 데이터셋에서 접근 방식을 평가합니다. 교차 데이터셋 일반화 실험을 통해, 우리의 어포던스 학습 방식이 다양한 데이터셋 혼합에 적용될 수 있으며, 범용 단일 데이터셋 분할에 비해 보이지 않는 환경에서 주행 가능성 추정을 개선함을 보여줍니다.
-
-## 핵심 내용
-본 연구는 차량 탑재 카메라로 촬영한 이미지만을 활용하여 야외 로봇 항법을 위한 장면 이해 문제를 다룹니다. 기존의 시각적 장면 이해는 특정 설명적 범주를 기반으로 환경을 해석합니다. 그러나 이러한 표현 방식은 의사 결정에 직접적으로 해석 가능하지 않으며 로봇의 작동을 특정 영역으로 제한합니다. 따라서 우리는 로봇이 이미지 내에서 어떻게 항법할 수 있는지에 따라 자기중심적 이미지를 직접 분할하고, 학습 문제를 자율 항법 작업에 맞게 조정할 것을 제안합니다. 이미지 분할 네트워크를 기반으로, 도시 및 비포장 도로 장면에 광범위하게 적용 가능한 3가지 주행 가능성 수준으로 구성된 일반적 어포던스를 제시합니다. 이러한 수준을 소프트 순서 레이블로 인코딩함으로써 학습 중 클래스 간 거리를 통합하여 표준적인 "하드" 원-핫 레이블링보다 분할 성능을 향상시킵니다. 또한, 안전이 중요한 영역에 더 높은 중요도를 할당하는 항법 지향적 픽셀 단위 손실 가중치 방법을 제안합니다. 우리는 화창한 도시 거리에서 눈 덮인 숲길에 이르기까지 대규모 공개 이미지 분할 데이터셋에서 접근 방식을 평가합니다. 교차 데이터셋 일반화 실험을 통해, 우리의 어포던스 학습 방식이 다양한 데이터셋 혼합에 적용될 수 있으며, 범용 단일 데이터셋 분할에 비해 보이지 않는 환경에서 주행 가능성 추정을 개선함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2109.07245v2
+
+## 개요
+이 연구는 야외 로봇 내비게이션에서의 장면 이해 문제를 다루며, 차량 탑재 카메라 이미지에만 의존합니다. 전통적인 시각적 장면 이해는 설명적 범주에 기반하여 의사 결정에 직접 사용하기 어렵고 특정 도메인에 제한됩니다. 저자는 로봇 내비게이션 방식으로 직접 이미지를 분할하는 방법을 제안하며, 도시 및 야외 장면에 적용 가능한 세 가지 통행 가능 등급을 포함하는 일반적인 통행 가능성 표현을 설계합니다. 소프트 순서형 라벨을 통해 등급 간 거리를 인코딩하고, 내비게이션 지향 픽셀 손실 가중치를 도입하여 안전 중요 영역의 학습을 강화합니다. 실험은 여러 대규모 공개 데이터셋에서 검증되었으며, 교차 데이터셋 일반화 테스트에서 이 방법이 일반적인 단일 데이터셋 분할보다 우수함을 보여줍니다.
+
+## 핵심 내용
+### 방법
+- 이미지 분할 네트워크를 기반으로 세 가지 통행 가능 등급(예: 안전, 주의, 통행 불가)을 정의하여 도시 및 야외 장면을 포괄합니다.
+- 전통적인 하드 원-핫 인코딩 대신 소프트 순서형 라벨을 사용하여 훈련 중 등급 간 거리를 명시적으로 모델링하고 분할 연속성을 향상시킵니다.
+- 내비게이션 지향 픽셀 손실 가중치 전략을 제안하여 안전 중요 영역(예: 보행자, 장애물 가장자리)에 더 높은 가중치를 부여합니다.
+
+### 실험 설정
+- 데이터셋: 도시 거리(예: Cityscapes), 야외 숲길(예: WildDash) 등 다양한 장면을 포함합니다.
+- 교차 데이터셋 일반화 실험: 보지 못한 환경에서 모델을 테스트하고 일반적인 단일 데이터셋 분할 방법과 비교합니다.
+
+### 주요 결과
+- 소프트 순서형 라벨은 하드 라벨에 비해 교차 데이터셋 장면에서 통행 가능성 추정 정확도를 약 5-8% 향상시킵니다.
+- 안전 가중 손실은 위험 영역(예: 급경사, 미끄러운 노면)의 분할 재현율을 12% 향상시킵니다.
+- 혼합 데이터셋 훈련 후, 모델은 눈밭, 진흙 등 극한 환경에서 일반화 오류를 15% 감소시킵니다.
+
+### 결론
+이 연구는 내비게이션 지향 통행 가능성 분할이 시각적 인식과 의사 결정을 효과적으로 연결할 수 있음을 입증하며, 소프트 순서형 라벨과 안전 가중 전략이 교차 도메인 견고성을 향상시키는 핵심 요소임을 보여줍니다. 향후 동적 장애물 예측 및 실시간 경로 계획으로 확장할 수 있습니다.

@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1911.07992v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1911.07992v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (776 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,30 @@ theoretical_depth:
 ## Overview
 Socially assistive robots (SAR) have shown great potential to augment the social and educational development of children with autism spectrum disorders (ASD). As SAR continues to substantiate itself as an effective enhancement to human intervention, researchers have sought to study its longitudinal impacts in real-world environments, including the home. Computational personalization stands out as a central computational challenge as it is necessary to enable SAR systems to adapt to each child's unique and changing needs. Toward that end, we formalized personalization as a hierarchical human robot learning framework (hHRL) consisting of five controllers (disclosure, promise, instruction, feedback, and inquiry) mediated by a meta-controller that utilized reinforcement learning to personalize instruction challenge levels and robot feedback based on each user's unique learning patterns. We instantiated and evaluated the approach in a study with 17 children with ASD, aged 3 to 7 years old, over month-long interventions in their homes. Our findings demonstrate that the fully autonomous SAR system was able to personalize its instruction and feedback over time to each child's proficiency. As a result, every child participant showed improvements in targeted skills and long-term retention of intervention content. Moreover, all child users were engaged for a majority of the intervention, and their families reported the SAR system to be useful and adaptable. In summary, our results show that autonomous, personalized SAR interventions are both feasible and effective in providing long-term in-home developmental support for children with diverse learning needs.
 
-## 개요
-사회적 지원 로봇(SAR)은 자폐 스펙트럼 장애(ASD)를 가진 아동의 사회적 및 교육적 발달을 촉진하는 데 큰 잠재력을 보여주고 있습니다. SAR이 인간 개입의 효과적인 보완책으로 자리 잡아감에 따라, 연구자들은 가정을 포함한 실제 환경에서의 장기적 영향을 연구하고자 했습니다. 계산적 개인화는 SAR 시스템이 각 아동의 독특하고 변화하는 요구에 적응할 수 있도록 하는 데 필수적인 중심 계산 과제로 부각됩니다. 이를 위해, 우리는 개인화를 계층적 인간-로봇 학습 프레임워크(hHRL)로 공식화했습니다. 이 프레임워크는 다섯 가지 컨트롤러(공개, 약속, 지시, 피드백, 질문)로 구성되며, 메타 컨트롤러가 이를 중재하여 강화 학습을 활용해 각 사용자의 고유한 학습 패턴에 기반해 지시 난이도와 로봇 피드백을 개인화합니다. 우리는 이 접근법을 3세에서 7세 사이의 ASD를 가진 아동 17명을 대상으로 한 달간 가정에서의 중재 연구를 통해 구현하고 평가했습니다. 연구 결과, 완전 자율 SAR 시스템이 시간이 지남에 따라 각 아동의 능숙도에 맞춰 지시와 피드백을 개인화할 수 있음을 보여주었습니다. 그 결과, 모든 아동 참가자는 목표 기술의 향상과 중재 내용의 장기적 유지를 보였습니다. 또한, 모든 아동 사용자는 중재의 대부분 동안 참여했으며, 가족들은 SAR 시스템이 유용하고 적응 가능하다고 보고했습니다. 요약하면, 우리의 결과는 자율적이고 개인화된 SAR 중재가 다양한 학습 요구를 가진 아동에게 장기적인 가정 내 발달 지원을 제공하는 데 있어 실현 가능하고 효과적임을 보여줍니다.
-
-## 핵심 내용
-사회적 지원 로봇(SAR)은 자폐 스펙트럼 장애(ASD)를 가진 아동의 사회적 및 교육적 발달을 촉진하는 데 큰 잠재력을 보여주고 있습니다. SAR이 인간 개입의 효과적인 보완책으로 자리 잡아감에 따라, 연구자들은 가정을 포함한 실제 환경에서의 장기적 영향을 연구하고자 했습니다. 계산적 개인화는 SAR 시스템이 각 아동의 독특하고 변화하는 요구에 적응할 수 있도록 하는 데 필수적인 중심 계산 과제로 부각됩니다. 이를 위해, 우리는 개인화를 계층적 인간-로봇 학습 프레임워크(hHRL)로 공식화했습니다. 이 프레임워크는 다섯 가지 컨트롤러(공개, 약속, 지시, 피드백, 질문)로 구성되며, 메타 컨트롤러가 이를 중재하여 강화 학습을 활용해 각 사용자의 고유한 학습 패턴에 기반해 지시 난이도와 로봇 피드백을 개인화합니다. 우리는 이 접근법을 3세에서 7세 사이의 ASD를 가진 아동 17명을 대상으로 한 달간 가정에서의 중재 연구를 통해 구현하고 평가했습니다. 연구 결과, 완전 자율 SAR 시스템이 시간이 지남에 따라 각 아동의 능숙도에 맞춰 지시와 피드백을 개인화할 수 있음을 보여주었습니다. 그 결과, 모든 아동 참가자는 목표 기술의 향상과 중재 내용의 장기적 유지를 보였습니다. 또한, 모든 아동 사용자는 중재의 대부분 동안 참여했으며, 가족들은 SAR 시스템이 유용하고 적응 가능하다고 보고했습니다. 요약하면, 우리의 결과는 자율적이고 개인화된 SAR 중재가 다양한 학습 요구를 가진 아동에게 장기적인 가정 내 발달 지원을 제공하는 데 있어 실현 가능하고 효과적임을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/1911.07992v1
+
+## 개요
+사회적 보조 로봇(SAR)은 자폐 스펙트럼 장애(ASD) 아동 중재에서 잠재력을 보여주지만, 장기 가정 환경에서의 개인화 적응은 여전히 핵심 과제입니다. 연구자들은 개인화를 다섯 개의 하위 컨트롤러(공개, 약속, 지시, 피드백, 질문)를 포함하는 계층적 프레임워크로 공식화했으며, 메타 컨트롤러가 강화 학습을 통해 교수 난이도와 로봇 피드백을 동적으로 조정합니다. 3-7세 ASD 아동 17명의 가정에서 진행된 월간 중재는 이 방법의 효과성을 검증했습니다: 로봇은 각 아동의 능력 변화에 자율적으로 적응했으며, 모든 참가자는 기술 향상과 내용의 장기 기억을 보였고, 가족 피드백은 시스템이 유용하고 적응 가능하다고 평가했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- 다섯 개의 하위 컨트롤러를 포함하는 계층적 인간-로봇 학습 프레임워크(hHRL) 제안: 공개(disclosure), 약속(promise), 지시(instruction), 피드백(feedback), 질문(inquiry)
+- 메타 컨트롤러(meta-controller)는 Q-learning 강화 학습 알고리즘을 사용하여 각 사용자의 학습 패턴에 따라 두 가지 핵심 차원을 자율적으로 최적화:
+  - 지시 도전 수준(instruction challenge levels)
+  - 로봇 피드백 전략(robot feedback)
+
+### 실험 설정
+- 참가자: ASD 아동 17명, 연령 3-7세
+- 중재 환경: 아동 가정, 한 달간 지속
+- 로봇 시스템: 인간 개입 없이 완전 자율적으로 작동하는 사회적 보조 로봇(SAR)
+
+### 주요 결과
+- 개인화 능력: 로봇은 시간에 따라 지시와 피드백을 동적으로 조정하여 각 아동의 능력 수준에 맞춤
+- 기술 향상: 모든 아동이 목표 기술에서 개선을 보임
+- 장기 기억: 중재 내용이 종료 후에도 유지됨
+- 참여도: 대부분의 중재 시간 동안 아동이 높은 참여 상태를 유지
+- 가족 피드백: 부모는 시스템이 "유용하고 적응 가능하다"(useful and adaptable)고 보고
+
+### 결론
+연구는 자율적 개인화 SAR 중재가 다양한 학습 요구를 가진 ASD 아동을 위한 장기 가정 환경에서 실행 가능하고 효과적임을 증명하며, 발달 지원을 위한 새로운 경로를 제공합니다.

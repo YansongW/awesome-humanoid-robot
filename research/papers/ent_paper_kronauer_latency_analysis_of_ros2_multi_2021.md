@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2101.02074v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2101.02074v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (734 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,28 @@ The Robot Operating System 2 (ROS2) targets distributed real-time systems and is
 ## Content
 The Robot Operating System 2 (ROS2) targets distributed real-time systems and is widely used in the robotics community. Especially in these systems, latency in data processing and communication can lead to instabilities. Though being highly configurable with respect to latency, ROS2 is often used with its default settings. In this paper, we investigate the end-to-end latency of ROS2 for distributed systems with default settings and different Data Distribution Service (DDS) middlewares. In addition, we profile the ROS2 stack and point out latency bottlenecks. Our findings indicate that end-to-end latency strongly depends on the used DDS middleware. Moreover, we show that ROS2 can lead to 50% latency overhead compared to using low-level DDS communications. Our results imply guidelines for designing distributed ROS2 architectures and indicate possibilities for reducing the ROS2 overhead.
 
-## 개요
-Robot Operating System 2 (ROS2)는 분산 실시간 시스템을 대상으로 하며 로봇 공학 커뮤니티에서 널리 사용됩니다. 특히 이러한 시스템에서는 데이터 처리 및 통신의 지연 시간이 불안정성을 초래할 수 있습니다. 지연 시간 측면에서 매우 구성 가능함에도 불구하고, ROS2는 종종 기본 설정으로 사용됩니다. 본 논문에서는 기본 설정과 다양한 DDS(Data Distribution Service) 미들웨어를 사용하는 분산 시스템에서 ROS2의 종단 간 지연 시간을 조사합니다. 또한 ROS2 스택을 프로파일링하고 지연 시간 병목 현상을 지적합니다. 연구 결과에 따르면 종단 간 지연 시간은 사용된 DDS 미들웨어에 크게 의존합니다. 더 나아가, ROS2는 저수준 DDS 통신을 사용하는 것에 비해 50%의 지연 시간 오버헤드를 초래할 수 있음을 보여줍니다. 이러한 결과는 분산 ROS2 아키텍처 설계를 위한 지침을 제시하며 ROS2 오버헤드 감소 가능성을 시사합니다.
-
-## 핵심 내용
-Robot Operating System 2 (ROS2)는 분산 실시간 시스템을 대상으로 하며 로봇 공학 커뮤니티에서 널리 사용됩니다. 특히 이러한 시스템에서는 데이터 처리 및 통신의 지연 시간이 불안정성을 초래할 수 있습니다. 지연 시간 측면에서 매우 구성 가능함에도 불구하고, ROS2는 종종 기본 설정으로 사용됩니다. 본 논문에서는 기본 설정과 다양한 DDS(Data Distribution Service) 미들웨어를 사용하는 분산 시스템에서 ROS2의 종단 간 지연 시간을 조사합니다. 또한 ROS2 스택을 프로파일링하고 지연 시간 병목 현상을 지적합니다. 연구 결과에 따르면 종단 간 지연 시간은 사용된 DDS 미들웨어에 크게 의존합니다. 더 나아가, ROS2는 저수준 DDS 통신을 사용하는 것에 비해 50%의 지연 시간 오버헤드를 초래할 수 있음을 보여줍니다. 이러한 결과는 분산 ROS2 아키텍처 설계를 위한 지침을 제시하며 ROS2 오버헤드 감소 가능성을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2101.02074v3
+
+## 개요
+본 연구는 ROS2가 분산 실시간 시스템에서 기본 설정으로 사용될 때의 지연 특성에 초점을 맞춘다. 저자는 데스크톱 컴퓨터와 Raspberry Pi 4 하드웨어에서 FastRTPS, CycloneDDS, Connext 세 가지 DDS 미들웨어를 대상으로 다중 노드 링크의 종단 간 지연을 측정하고, ROS2 프로토콜 스택의 각 계층에서 발생하는 지연 병목 현상을 심층 분석하였다. 실험 결과, DDS 미들웨어에 따라 지연에 미치는 영향이 크게 달랐으며, ROS2 자체의 캡슐화 계층이 추가적인 지연 오버헤드를 유발하여 최대 기본 DDS 통신의 50%에 달하는 지연이 발생할 수 있음을 확인하였다. 이러한 발견은 저지연 분산 ROS2 아키텍처 설계를 위한 지침을 제공하며, ROS2 오버헤드를 줄일 수 있는 잠재적 최적화 방향을 제시한다.
+
+## 핵심 내용
+### 연구 배경 및 목표
+- ROS2는 분산 실시간 시스템을 대상으로 하며 로봇 분야에서 널리 활용되는데, 데이터 처리 및 통신 지연이 시스템 불안정을 초래할 수 있다.
+- ROS2는 지연 측면에서 높은 구성 유연성을 제공하지만, 실제 사용에서는 기본 설정이 자주 사용된다.
+- 본 논문은 기본 설정 하에서 ROS2 다중 노드 시스템의 종단 간 지연을 평가하고, 서로 다른 DDS 미들웨어 간 성능 차이를 비교하는 것을 목표로 한다.
+
+### 실험 방법
+- **하드웨어 플랫폼**: 데스크톱 컴퓨터 및 Raspberry Pi 4.
+- **미들웨어**: FastRTPS, CycloneDDS, Connext.
+- **측정 내용**: 다중 노드 링크의 종단 간 지연 및 ROS2 프로토콜 스택 각 계층(intra-layer)의 지연 분포.
+
+### 주요 발견
+- 종단 간 지연은 선택된 DDS 미들웨어에 매우 민감하며, 미들웨어 간 지연 차이가 크게 나타난다.
+- ROS2 캡슐화 계층은 추가적인 지연 오버헤드를 유발하며, 기본 DDS 통신을 직접 사용할 때보다 지연이 최대 50% 증가할 수 있다.
+- ROS2 스택 분석을 통해 지연 병목이 발생하는 계층을 식별하였다.
+
+### 결론 및 지침 의미
+- 연구 결과는 분산 ROS2 아키텍처 설계를 위한 지연 최적화 지침을 제공한다.
+- ROS2 캡슐화 계층의 오버헤드를 줄이면 시스템 지연을 효과적으로 낮출 수 있음을 지적하며, 예를 들어 노드 간 통신 경로 최적화나 미들웨어 구성 조정을 통해 이를 달성할 수 있다.

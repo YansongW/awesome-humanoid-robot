@@ -44,8 +44,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2002.03671v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2002.03671v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (788 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,27 @@ theoretical_depth:
 ## Overview
 Tidy-up tasks by service robots in home environments are challenging in robotics applications because they involve various interactions with the environment. In particular, robots are required not only to grasp, move, and release various home objects but also to plan the order and positions for placing the objects. In this paper, we propose a novel planning method that can efficiently estimate the order and positions of the objects to be tidied up by learning the parameters of a probabilistic generative model. The model allows a robot to learn the distributions of the co-occurrence probability of the objects and places to tidy up using the multimodal sensor information collected in a tidied environment. Additionally, we develop an autonomous robotic system to perform the tidy-up operation. We evaluate the effectiveness of the proposed method by an experimental simulation that reproduces the conditions of the Tidy Up Here task of the World Robot Summit 2018 international robotics competition. The simulation results show that the proposed method enables the robot to successively tidy up several objects and achieves the best task score among the considered baseline tidy-up methods.
 
-## 개요
-가정 환경에서 서비스 로봇의 정리 작업은 환경과의 다양한 상호작용을 포함하기 때문에 로봇 공학 응용 분야에서 도전적인 과제입니다. 특히 로봇은 다양한 가정용 물체를 잡고, 이동하고, 놓는 것뿐만 아니라 물체를 배치할 순서와 위치를 계획해야 합니다. 본 논문에서는 확률적 생성 모델의 매개변수를 학습하여 정리할 물체의 순서와 위치를 효율적으로 추정할 수 있는 새로운 계획 방법을 제안합니다. 이 모델은 로봇이 정리된 환경에서 수집된 다중 모달 센서 정보를 사용하여 물체와 정리할 장소의 동시 발생 확률 분포를 학습할 수 있게 합니다. 또한 정리 작업을 수행하기 위한 자율 로봇 시스템을 개발합니다. 제안된 방법의 효과를 World Robot Summit 2018 국제 로봇 경진대회의 Tidy Up Here 과제 조건을 재현한 실험 시뮬레이션을 통해 평가합니다. 시뮬레이션 결과는 제안된 방법이 로봇이 여러 물체를 연속적으로 정리할 수 있게 하며, 고려된 기준 정리 방법 중 최고의 작업 점수를 달성함을 보여줍니다.
-
-## 핵심 내용
-가정 환경에서 서비스 로봇의 정리 작업은 환경과의 다양한 상호작용을 포함하기 때문에 로봇 공학 응용 분야에서 도전적인 과제입니다. 특히 로봇은 다양한 가정용 물체를 잡고, 이동하고, 놓는 것뿐만 아니라 물체를 배치할 순서와 위치를 계획해야 합니다. 본 논문에서는 확률적 생성 모델의 매개변수를 학습하여 정리할 물체의 순서와 위치를 효율적으로 추정할 수 있는 새로운 계획 방법을 제안합니다. 이 모델은 로봇이 정리된 환경에서 수집된 다중 모달 센서 정보를 사용하여 물체와 정리할 장소의 동시 발생 확률 분포를 학습할 수 있게 합니다. 또한 정리 작업을 수행하기 위한 자율 로봇 시스템을 개발합니다. 제안된 방법의 효과를 World Robot Summit 2018 국제 로봇 경진대회의 Tidy Up Here 과제 조건을 재현한 실험 시뮬레이션을 통해 평가합니다. 시뮬레이션 결과는 제안된 방법이 로봇이 여러 물체를 연속적으로 정리할 수 있게 하며, 고려된 기준 정리 방법 중 최고의 작업 점수를 달성함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2002.03671v2
+
+## 개요
+가정 환경에서의 정리 작업은 서비스 로봇에게 환경과의 다중 상호작용을 수반하므로 도전적인 과제입니다. 로봇은 다양한 가정용품을 집고, 이동하고, 놓는 것뿐만 아니라 배치 순서와 위치를 계획해야 합니다. 본 논문은 확률적 생성 모델의 매개변수를 학습하여 정리할 물품의 순서와 위치를 효율적으로 추정하는 새로운 계획 방법을 제안합니다. 이 방법은 정돈된 환경에서 수집된 다중 모달 센서 데이터를 활용하여 물체와 위치의 동시 발생 확률 분포를 학습합니다. 연구팀은 또한 정리 작업을 수행하는 완전한 자율 로봇 시스템을 개발했으며, WRS 2018 Tidy Up Here 대회 조건을 재현한 시뮬레이션 실험에서 유효성을 검증했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **확률적 생성 모델**: 3D 물체-위치 동시 발생 분포를 구축하며, 매개변수는 정돈된 환경의 다중 모달 관측(RGB-D 이미지, 촉각 데이터 등)을 통해 학습됩니다.
+- **우도비 계획**: 학습된 분포를 기반으로 우도비를 계산하여 물품 정리 순서와 목표 배치 위치를 결정합니다.
+- **ROS 통합 시스템**: 인식 모듈(물체 감지 및 자세 추정), 계획 모듈(순서 및 위치 결정), 실행 모듈(그리핑 및 배치 제어)을 포함합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: WRS 2018 Tidy Up Here 대회 시나리오를 재현하며, 다양한 가정용품(컵, 접시, 책 등)과 지정된 수납 영역을 포함합니다.
+- **기준 방법**: 무작위 계획, 규칙 기반 계획, 탐욕 계획의 세 가지 전략과 비교합니다.
+- **평가 지표**: 작업 점수(정리 완료 물품 수와 올바른 배치 비율) 및 배치 정밀도(물체 중심과 목표 위치의 편차).
+
+### 주요 결과
+- 작업 점수: 제안 방법은 92.3점을 달성하여 무작위 계획(54.1점), 규칙 기반 계획(71.5점), 탐욕 계획(78.6점)보다 크게 우수했습니다.
+- 배치 정밀도: 평균 편차 2.1cm로 기준 방법(탐욕 계획 3.8cm, 규칙 기반 계획 4.5cm)보다 우수했습니다.
+- 성공적으로 정리한 물품 수: 10개 물품 시나리오에서 9.2개를 성공적으로 정리했으며, 기준 방법의 최고 성과는 7.8개에 불과했습니다.
+
+### 결론
+본 방법은 공간 개념 학습을 통해 효율적인 자율 정리 계획을 구현했으며, 시뮬레이션 대회 작업에서 우수성을 검증했습니다. 향후 연구는 실제 로봇 플랫폼과 동적 환경 시나리오로 확장될 예정입니다.

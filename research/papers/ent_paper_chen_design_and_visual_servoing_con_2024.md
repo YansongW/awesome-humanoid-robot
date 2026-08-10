@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.09679v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.09679v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (595 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,24 @@ Traditional rigid endoscopes face challenges in flexibly treating tumors located
 ## Content
 Traditional rigid endoscopes face challenges in flexibly treating tumors located deep in the brain, and their low operability and fixed viewing angles limit their development. This study introduces a novel dual-segment flexible robotic endoscope, MicroNeuro, designed to perform biopsies with dexterous surgical manipulation deep in the brain. Considering the uncertainty of the control model, an image-based visual servoing with online robot Jacobian estimation has been implemented to enhance motion accuracy. Furthermore, the application of model predictive control with constraints significantly bolsters the flexible robot's ability to adaptively track moving objects and resist external interference. Experimental results underscore that the proposed control system enhances motion stability and precision. Phantom testing substantiates its considerable potential for deployment in neurosurgery.
 
-## 개요
-전통적인 강성 내시경은 뇌 깊숙이 위치한 종양을 유연하게 치료하는 데 어려움이 있으며, 낮은 조작성과 고정된 시야각이 발전을 제한합니다. 본 연구는 뇌 심부에서 정밀한 수술 조작을 통해 생검을 수행하도록 설계된 새로운 이중 분절 유연 로봇 내시경 MicroNeuro를 소개합니다. 제어 모델의 불확실성을 고려하여 온라인 로봇 야코비안 추정을 통한 이미지 기반 시각 서보잉을 구현하여 움직임 정확도를 향상시켰습니다. 또한, 제약 조건이 있는 모델 예측 제어를 적용함으로써 유연 로봇의 이동 물체 적응 추적 및 외부 간섭 저항 능력을 크게 강화했습니다. 실험 결과는 제안된 제어 시스템이 움직임 안정성과 정밀도를 향상시킴을 입증합니다. 팬텀 테스트는 신경외과에서의 적용 가능성이 상당함을 확인시켜 줍니다.
-
-## 핵심 내용
-전통적인 강성 내시경은 뇌 깊숙이 위치한 종양을 유연하게 치료하는 데 어려움이 있으며, 낮은 조작성과 고정된 시야각이 발전을 제한합니다. 본 연구는 뇌 심부에서 정밀한 수술 조작을 통해 생검을 수행하도록 설계된 새로운 이중 분절 유연 로봇 내시경 MicroNeuro를 소개합니다. 제어 모델의 불확실성을 고려하여 온라인 로봇 야코비안 추정을 통한 이미지 기반 시각 서보잉을 구현하여 움직임 정확도를 향상시켰습니다. 또한, 제약 조건이 있는 모델 예측 제어를 적용함으로써 유연 로봇의 이동 물체 적응 추적 및 외부 간섭 저항 능력을 크게 강화했습니다. 실험 결과는 제안된 제어 시스템이 움직임 안정성과 정밀도를 향상시킴을 입증합니다. 팬텀 테스트는 신경외과에서의 적용 가능성이 상당함을 확인시켜 줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2402.09679v2
+
+## 개요
+전통적인 강성 내시경은 뇌심부 종양을 다룰 때 유연성 부족, 조작 제한, 고정된 시야 등의 문제가 있습니다. 이를 해결하기 위해 본 연구는 이중 분절 유연 로봇 내시경 MicroNeuro를 설계하여 뇌심부에서 정교한 생검 수술을 구현하고자 했습니다. 제어 모델의 불확실성을 해결하기 위해 팀은 온라인 로봇 야코비안 추정을 결합한 이미지 기반 시각 서보 시스템을 구현하여 운동 정밀도를 향상시켰습니다. 동시에 제약 조건이 있는 모델 예측 제어를 도입하여 유연 로봇의 이동 표적에 대한 적응형 추적 능력과 외부 간섭 저항 능력을 크게 강화했습니다.
+
+## 핵심 내용
+### 시스템 설계
+- **MicroNeuro**는 케이블 구동 방식의 혼합 이중 분절 유연 구조를 채택하며, 뇌실 내 종양 생검 전용으로 설계되어 뇌심부에서 정교한 조작이 가능합니다.
+- 이중 분절 설계는 독립적인 제어를 허용하여 말단 실행기의 유연성과 도달성을 향상시킵니다.
+
+### 제어 방법
+- **이미지 기반 시각 서보(IBVS)**: 온라인으로 로봇 야코비안 행렬을 추정하여 제어 모델의 불확실성을 보상하고 운동 정밀도를 향상시킵니다.
+- **제약 모델 예측 제어(MPC)**: 제어 과정에서 제약 조건을 적용하여 유연 로봇의 동적 표적 추적 능력을 강화하고 외부 간섭에 효과적으로 저항합니다.
+
+### 실험 및 결과
+- 실험 결과, 제안된 제어 시스템은 운동 안정성과 정밀도를 크게 향상시켰습니다.
+- 팬텀(phantom) 테스트에서 시스템은 신경외과 수술에서의 실제 적용 가능성을 보여주며 타당성을 검증했습니다.
+
+### 결론
+MicroNeuro는 온라인 야코비안 추정과 제약 MPC를 결합한 시각 서보 프레임워크를 통해 뇌실 내 생검을 위한 고정밀, 강건성 솔루션을 제공하며, 유연 로봇의 신경외과 임상 전환을 촉진할 잠재력을 지닙니다.

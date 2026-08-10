@@ -29,8 +29,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11494v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11494v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (794 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,27 @@ Robot learning has produced remarkably effective "black-box" controllers for com
 ## Content
 Robot learning has produced remarkably effective "black-box" controllers for complex tasks such as dynamic locomotion on humanoids. Yet ensuring dynamic safety, i.e., constraint satisfaction, remains challenging for such policies. Reinforcement learning (RL) embeds constraints heuristically through reward engineering, and adding or modifying constraints requires retraining. Model-based approaches, like control barrier functions (CBFs), enable runtime constraint specification with formal guarantees but require accurate dynamics models. This paper presents SHIELD, a layered safety framework that bridges this gap by: (1) training a generative, stochastic dynamics residual model using real-world data from hardware rollouts of the nominal controller, capturing system behavior and uncertainties; and (2) adding a safety layer on top of the nominal (learned locomotion) controller that leverages this model via a stochastic discrete-time CBF formulation enforcing safety constraints in probability. The result is a minimally-invasive safety layer that can be added to the existing autonomy stack to give probabilistic guarantees of safety that balance risk and performance. In hardware experiments on an Unitree G1 humanoid, SHIELD enables safe navigation (obstacle avoidance) through varied indoor and outdoor environments using a nominal (unknown) RL controller and onboard perception.
 
-## 개요
-로봇 학습은 휴머노이드의 동적 보행과 같은 복잡한 작업에 대해 매우 효과적인 '블랙박스' 제어기를 생성해 왔습니다. 그러나 동적 안전, 즉 제약 조건 충족을 보장하는 것은 이러한 정책에 있어 여전히 어려운 과제입니다. 강화 학습(RL)은 보상 엔지니어링을 통해 경험적으로 제약 조건을 포함시키며, 제약 조건을 추가하거나 수정하려면 재학습이 필요합니다. 제어 장벽 함수(CBF)와 같은 모델 기반 접근 방식은 런타임 제약 조건 명세를 공식적인 보장과 함께 가능하게 하지만 정확한 동역학 모델을 필요로 합니다. 본 논문은 SHIELD를 제시합니다. 이는 계층적 안전 프레임워크로, 다음을 통해 이러한 격차를 해소합니다: (1) 공칭 제어기의 하드웨어 롤아웃에서 얻은 실제 데이터를 사용하여 생성적이고 확률적인 동역학 잔차 모델을 훈련하여 시스템 동작과 불확실성을 포착하고; (2) 공칭(학습된 보행) 제어기 위에 안전 계층을 추가하여 확률적 이산 시간 CBF 공식을 통해 이 모델을 활용, 확률적으로 안전 제약 조건을 강제합니다. 그 결과는 기존 자율 주행 스택에 추가되어 위험과 성능의 균형을 맞추는 확률적 안전 보장을 제공하는 최소 침습적 안전 계층입니다. Unitree G1 휴머노이드의 하드웨어 실험에서 SHIELD는 공칭(알려지지 않은) RL 제어기와 온보드 인식을 사용하여 다양한 실내 및 실외 환경에서 안전한 탐색(장애물 회피)을 가능하게 합니다.
-
-## 핵심 내용
-로봇 학습은 휴머노이드의 동적 보행과 같은 복잡한 작업에 대해 매우 효과적인 '블랙박스' 제어기를 생성해 왔습니다. 그러나 동적 안전, 즉 제약 조건 충족을 보장하는 것은 이러한 정책에 있어 여전히 어려운 과제입니다. 강화 학습(RL)은 보상 엔지니어링을 통해 경험적으로 제약 조건을 포함시키며, 제약 조건을 추가하거나 수정하려면 재학습이 필요합니다. 제어 장벽 함수(CBF)와 같은 모델 기반 접근 방식은 런타임 제약 조건 명세를 공식적인 보장과 함께 가능하게 하지만 정확한 동역학 모델을 필요로 합니다. 본 논문은 SHIELD를 제시합니다. 이는 계층적 안전 프레임워크로, 다음을 통해 이러한 격차를 해소합니다: (1) 공칭 제어기의 하드웨어 롤아웃에서 얻은 실제 데이터를 사용하여 생성적이고 확률적인 동역학 잔차 모델을 훈련하여 시스템 동작과 불확실성을 포착하고; (2) 공칭(학습된 보행) 제어기 위에 안전 계층을 추가하여 확률적 이산 시간 CBF 공식을 통해 이 모델을 활용, 확률적으로 안전 제약 조건을 강제합니다. 그 결과는 기존 자율 주행 스택에 추가되어 위험과 성능의 균형을 맞추는 확률적 안전 보장을 제공하는 최소 침습적 안전 계층입니다. Unitree G1 휴머노이드의 하드웨어 실험에서 SHIELD는 공칭(알려지지 않은) RL 제어기와 온보드 인식을 사용하여 다양한 실내 및 실외 환경에서 안전한 탐색(장애물 회피)을 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.11494v3
+
+## 개요
+강화 학습 컨트롤러가 실행 중에 동적 안전성을 보장하기 어렵고 제약 조건을 수정하려면 재학습이 필요한 문제를 해결하기 위해, SHIELD는 계층적 안전 프레임워크를 제안합니다. 이 프레임워크는 먼저 명목 컨트롤러가 하드웨어에서 실행될 때 수집된 실제 데이터를 활용하여 생성적 확률적 동역학 잔차 모델을 훈련하고, 시스템 동작과 불확실성을 포착합니다. 이후 명목 컨트롤러 위에 안전 계층을 추가하여 확률적 이산 시간 CBF 공식을 통해 안전 제약 조건을 확률적 의미에서 강제합니다. 마지막으로 SHIELD는 최소 침습적 방식으로 기존 자율 시스템에 통합되어 위험과 성능 사이의 균형을 유지하며 안전에 대한 확률적 보장을 제공합니다.
+
+## 핵심 내용
+### 방법
+SHIELD는 계층적 아키텍처를 채택하여 기존 명목(학습 기반) 운동 컨트롤러 위에 안전 계층을 추가합니다. 이 안전 계층은 하위 컨트롤러를 수정하지 않고, 그 출력에 개입하여 안전 제약 조건을 유지합니다.
+
+### 핵심 구성 요소
+1.  **동역학 잔차 모델**: 명목 컨트롤러가 하드웨어 배포에서 수집한 실제 데이터를 활용하여 생성적 확률적 동역학 잔차 모델을 훈련합니다. 이 모델은 시스템의 실제 동작과 명목 모델 간의 편차 및 그 불확실성을 포착하는 것을 목표로 합니다.
+2.  **확률적 이산 시간 CBF**: 위의 확률적 모델을 기반으로 확률적 이산 시간 제어 장벽 함수(CBF) 공식을 채택합니다. 이 공식은 안전 제약 조건을 확률적 조건으로 표현하며, 즉 시스템 상태가 지정된 확률 이상으로 안전 집합 내에 유지되도록 합니다.
+
+### 실험 설정
+-   **하드웨어 플랫폼**: Unitree G1 휴머노이드 로봇.
+-   **명목 컨트롤러**: 알려지지 않은 강화 학습(RL) 운동 컨트롤러.
+-   **인식**: 로봇은 온보드 인식 시스템을 탑재합니다.
+-   **작업**: 다양한 실내외 환경에서 안전한 내비게이션(장애물 회피) 수행.
+
+### 주요 결과
+-   SHIELD는 하드웨어 실험에서 안전한 내비게이션을 성공적으로 구현하여 Unitree G1이 장애물을 효과적으로 회피할 수 있게 했습니다.
+-   이 프레임워크는 최소 침습적 방식으로 작동하며, 하위 RL 컨트롤러를 재학습하거나 수정할 필요가 없습니다.
+-   확률적 CBF 공식을 통해 SHIELD는 안전(확률적 형태)을 보장하면서도 명목 컨트롤러의 성능에 미치는 영향을 최소화하여 위험과 작업 성능 사이의 균형을 유지합니다.

@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.13347v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.13347v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (765 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,25 @@ OpenHA 系统性地比较了 Minecraft 中多种抽象动作空间与分词器�
 ## Overview
 The choice of action spaces is a critical yet unresolved challenge in developing capable, end-to-end trainable agents. This paper first presents a large-scale, systematic comparison of prominent abstracted action spaces and tokenizers for Vision-Language-Action (VLA) or hierarchical agent models in the open-ended Minecraft. Our analysis reveals that no single action space is universally optimal; instead, the most effective abstraction is highly task-dependent, creating a dilemma for building generalist agents. To resolve this, we introduce Chain of Action (CoA), a novel framework that unifies high-level planning and low-level control within a single, monolithic VLA model. CoA treats an abstracted action not as a command for a separate policy, but as an intermediate reasoning step--akin to a chain of thought--that guides the generation of the final, executable action. Furthermore, we demonstrate that an All-in-One agent trained on a diverse mixture of action spaces using the CoA paradigm learns a more robust and generalizable policy. This unified agent achieves a new state-of-the-art, improving the overall task success rate over strong, specialized baselines. To foster reproducible research, we release the OpenHA (Open Hierarchical Agents) suite, which includes our comprehensive benchmark of over 800 distinct tasks, curated datasets, source code, and all pretrained model checkpoints at https://github.com/CraftJarvis/OpenHA
 
-## 개요
-행동 공간의 선택은 강력하고 종단 간 학습 가능한 에이전트를 개발하는 데 있어 중요하지만 아직 해결되지 않은 과제입니다. 본 논문은 먼저 오픈엔드 마인크래프트 환경에서 시각-언어-행동(VLA) 또는 계층적 에이전트 모델을 위한 주요 추상화된 행동 공간과 토크나이저에 대한 대규모의 체계적인 비교를 제시합니다. 우리의 분석은 단일 행동 공간이 보편적으로 최적이 아니라는 것을 보여줍니다. 대신, 가장 효과적인 추상화는 작업에 크게 의존적이어서 범용 에이전트를 구축하는 데 딜레마를 만듭니다. 이를 해결하기 위해, 우리는 단일 모놀리식 VLA 모델 내에서 고수준 계획과 저수준 제어를 통합하는 새로운 프레임워크인 Chain of Action(CoA)을 소개합니다. CoA는 추상화된 행동을 별도의 정책을 위한 명령이 아닌, 최종 실행 가능한 행동의 생성을 안내하는 중간 추론 단계(사고의 사슬과 유사)로 취급합니다. 또한, CoA 패러다임을 사용하여 다양한 행동 공간의 혼합 데이터로 학습된 All-in-One 에이전트가 더 강건하고 일반화 가능한 정책을 학습한다는 것을 입증합니다. 이 통합 에이전트는 새로운 최첨단 성능을 달성하여 강력한 특화 기준선 대비 전체 작업 성공률을 향상시킵니다. 재현 가능한 연구를 촉진하기 위해, 우리는 800개 이상의 다양한 작업으로 구성된 포괄적인 벤치마크, 큐레이션된 데이터셋, 소스 코드 및 모든 사전 학습된 모델 체크포인트를 포함하는 OpenHA(Open Hierarchical Agents) 제품군을 https://github.com/CraftJarvis/OpenHA에서 공개합니다.
-
-## 핵심 내용
-행동 공간의 선택은 강력하고 종단 간 학습 가능한 에이전트를 개발하는 데 있어 중요하지만 아직 해결되지 않은 과제입니다. 본 논문은 먼저 오픈엔드 마인크래프트 환경에서 시각-언어-행동(VLA) 또는 계층적 에이전트 모델을 위한 주요 추상화된 행동 공간과 토크나이저에 대한 대규모의 체계적인 비교를 제시합니다. 우리의 분석은 단일 행동 공간이 보편적으로 최적이 아니라는 것을 보여줍니다. 대신, 가장 효과적인 추상화는 작업에 크게 의존적이어서 범용 에이전트를 구축하는 데 딜레마를 만듭니다. 이를 해결하기 위해, 우리는 단일 모놀리식 VLA 모델 내에서 고수준 계획과 저수준 제어를 통합하는 새로운 프레임워크인 Chain of Action(CoA)을 소개합니다. CoA는 추상화된 행동을 별도의 정책을 위한 명령이 아닌, 최종 실행 가능한 행동의 생성을 안내하는 중간 추론 단계(사고의 사슬과 유사)로 취급합니다. 또한, CoA 패러다임을 사용하여 다양한 행동 공간의 혼합 데이터로 학습된 All-in-One 에이전트가 더 강건하고 일반화 가능한 정책을 학습한다는 것을 입증합니다. 이 통합 에이전트는 새로운 최첨단 성능을 달성하여 강력한 특화 기준선 대비 전체 작업 성공률을 향상시킵니다. 재현 가능한 연구를 촉진하기 위해, 우리는 800개 이상의 다양한 작업으로 구성된 포괄적인 벤치마크, 큐레이션된 데이터셋, 소스 코드 및 모든 사전 학습된 모델 체크포인트를 포함하는 OpenHA(Open Hierarchical Agents) 제품군을 https://github.com/CraftJarvis/OpenHA에서 공개합니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.13347v1
+
+## 개요
+OpenHA는 Minecraft에서 다양한 추상 행동 공간과 토크나이저를 체계적으로 비교하여, 단일 행동 공간이 보편적으로 최적이 아니며 최상의 추상화가 특정 작업에 크게 의존한다는 것을 발견했습니다. 이러한 범용 에이전트 구축의 난제를 해결하기 위해 저자들은 Chain of Action (CoA) 프레임워크를 제안합니다. 이는 추상 행동을 독립적인 정책 명령이 아닌 중간 추론 단계로 간주하며, 사고의 사슬(chain of thought)과 유사하게 최종 실행 가능한 행동 생성을 유도합니다. 실험 결과, CoA 패러다임을 기반으로 다양한 행동 공간에서 훈련된 All-in-One 에이전트는 더 강건하고 일반화 가능한 정책을 보여주며, 전체 작업 성공률에서 강력한 전용 베이스라인을 능가하여 새로운 최적 수준에 도달했습니다.
+
+## 핵심 내용
+### 핵심 문제 및 동기
+- 행동 공간 선택은 엔드투엔드 훈련 가능한 에이전트 개발의 핵심 미해결 과제이며, 특히 개방형 세계 Minecraft에서 두드러집니다.
+- 기존 VLA 또는 계층적 에이전트 모델은 특정 추상 행동 공간에 의존하지만, 체계적인 비교가 부족합니다.
+
+### 방법: Chain of Action (CoA)
+- CoA는 고수준 계획과 저수준 제어를 단일 VLA 모델에 통합하며, 추상 행동은 독립적인 정책 명령이 아닌 중간 추론 단계(사고의 사슬과 유사)로 작용하여 최종 실행 가능한 행동 생성을 안내합니다.
+- 이 프레임워크는 에이전트가 추론 시 행동 추상화 수준을 동적으로 조정할 수 있게 하며, 사전 정의된 계층 구조가 필요 없습니다.
+
+### 실험 설정 및 주요 수치
+- 800개 이상의 다양한 작업을 포함하는 종합 벤치마크를 구축했으며, 여러 행동 공간(예: 이산, 연속, 혼합)을 포괄합니다.
+- All-in-One 에이전트 훈련 시 여러 행동 공간 데이터를 혼합하고 CoA 패러다임을 기반으로 공동 훈련을 수행합니다.
+- 결과: 이 통합 에이전트는 전체 작업 성공률에서 강력한 전용 베이스라인을 능가하여 새로운 최적 수준에 도달했습니다(구체적인 수치는 원문 참조 필요, 초록에는 정확한 값이 제공되지 않음).
+
+### 오픈소스 리소스
+- OpenHA 스위트를 공개하며, 벤치마크, 데이터셋, 소스 코드 및 모든 사전 훈련된 모델 체크포인트를 포함합니다. 주소: https://github.com/CraftJarvis/OpenHA.

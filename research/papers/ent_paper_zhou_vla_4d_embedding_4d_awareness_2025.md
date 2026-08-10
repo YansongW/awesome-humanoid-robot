@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.17199v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.17199v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (611 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,25 @@ VLA-4D通过将时间维度显式融入视觉与动作表征，有效解决了�
 ## Overview
 Vision-language-action (VLA) models show potential for general robotic tasks, but remain challenging in spatiotemporally coherent manipulation, which requires fine-grained representations. Typically, existing methods embed 3D positions into visual representations to enhance the spatial precision of actions. However, these methods struggle to achieve temporally coherent control over action execution. In this work, we propose VLA-4D, a general VLA model with 4D awareness for spatiotemporally coherent robotic manipulation. Our model is guided by two key designs: 1) 4D-aware visual representation. We extract visual features, embed 1D time into 3D positions for 4D embeddings, and fuse them into a unified visual representation via a cross-attention mechanism. 2) Spatiotemporal action representation. We extend conventional spatial action representations with temporal information to enable the spatiotemporal planning, and align the multimodal representations into the LLM for spatiotemporal action prediction. Within this unified framework, the designed visual and action representations jointly make robotic manipulation spatially-smooth and temporally-coherent. In addition, we extend the VLA dataset with temporal action annotations for fine-tuning our model. Extensive experiments have been conducted to verify the superiority of our method across different tasks of robotic manipulation.
 
-## 개요
-Vision-language-action (VLA) 모델은 일반 로봇 작업에 잠재력을 보여주지만, 세밀한 표현이 필요한 시공간적으로 일관된 조작에서는 여전히 어려움을 겪고 있습니다. 일반적으로 기존 방법은 3D 위치를 시각적 표현에 임베딩하여 동작의 공간적 정밀도를 향상시킵니다. 그러나 이러한 방법은 동작 실행에 대한 시간적으로 일관된 제어를 달성하는 데 어려움을 겪습니다. 본 연구에서는 시공간적으로 일관된 로봇 조작을 위한 4D 인식 기반의 일반 VLA 모델인 VLA-4D를 제안합니다. 우리 모델은 두 가지 핵심 설계에 의해 안내됩니다: 1) 4D 인식 시각적 표현. 시각적 특징을 추출하고, 1D 시간을 3D 위치에 임베딩하여 4D 임베딩을 생성한 후, 교차 주의 메커니즘을 통해 이를 통합된 시각적 표현으로 융합합니다. 2) 시공간 동작 표현. 기존의 공간적 동작 표현에 시간 정보를 확장하여 시공간 계획을 가능하게 하고, 다중 모달 표현을 LLM에 정렬하여 시공간 동작 예측을 수행합니다. 이 통합 프레임워크 내에서 설계된 시각적 및 동작 표현은 로봇 조작을 공간적으로 부드럽고 시간적으로 일관되게 만듭니다. 또한, VLA 데이터셋에 시간적 동작 주석을 추가하여 모델을 미세 조정합니다. 다양한 로봇 조작 작업에서 우리 방법의 우수성을 검증하기 위해 광범위한 실험이 수행되었습니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 일반 로봇 작업에 잠재력을 보여주지만, 세밀한 표현이 필요한 시공간적으로 일관된 조작에서는 여전히 어려움을 겪고 있습니다. 일반적으로 기존 방법은 3D 위치를 시각적 표현에 임베딩하여 동작의 공간적 정밀도를 향상시킵니다. 그러나 이러한 방법은 동작 실행에 대한 시간적으로 일관된 제어를 달성하는 데 어려움을 겪습니다. 본 연구에서는 시공간적으로 일관된 로봇 조작을 위한 4D 인식 기반의 일반 VLA 모델인 VLA-4D를 제안합니다. 우리 모델은 두 가지 핵심 설계에 의해 안내됩니다: 1) 4D 인식 시각적 표현. 시각적 특징을 추출하고, 1D 시간을 3D 위치에 임베딩하여 4D 임베딩을 생성한 후, 교차 주의 메커니즘을 통해 이를 통합된 시각적 표현으로 융합합니다. 2) 시공간 동작 표현. 기존의 공간적 동작 표현에 시간 정보를 확장하여 시공간 계획을 가능하게 하고, 다중 모달 표현을 LLM에 정렬하여 시공간 동작 예측을 수행합니다. 이 통합 프레임워크 내에서 설계된 시각적 및 동작 표현은 로봇 조작을 공간적으로 부드럽고 시간적으로 일관되게 만듭니다. 또한, VLA 데이터셋에 시간적 동작 주석을 추가하여 모델을 미세 조정합니다. 다양한 로봇 조작 작업에서 우리 방법의 우수성을 검증하기 위해 광범위한 실험이 수행되었습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.17199v1
+
+## 개요
+기존 VLA 모델은 3D 위치 정보를 임베딩하여 공간 정밀도를 향상시키지만, 동작 실행의 시간적 연속성을 구현하기는 어렵습니다. VLA-4D는 두 가지 핵심 설계를 제안합니다: 첫째, 4D 지각 시각 표현으로, 교차 주의 메커니즘을 통해 1D 시간 임베딩과 3D 위치를 융합합니다; 둘째, 시공간 동작 표현으로, 기존 공간 동작에 시간 정보를 도입하여 시공간 계획을 지원합니다. 이 통합 프레임워크는 다중 모달 표현을 LLM과 정렬하여 시공간 동작 예측을 구현하고, 시간 동작 주석이 포함된 데이터셋을 확장하여 미세 조정합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **4D 지각 시각 표현**: 시각 특징을 추출한 후, 1D 시간 정보를 3D 위치 좌표에 임베딩하여 4D 임베딩을 형성하고, 교차 주의 메커니즘을 통해 통합된 시각 표현으로 융합합니다.
+- **시공간 동작 표현**: 기존 공간 동작 표현(예: 엔드 이펙터 위치)에 시간 차원을 추가하여 동작 시퀀스가 시간적 연속성을 갖도록 합니다; 다중 모달 표현을 LLM과 정렬한 후 시공간 동작 예측을 출력합니다.
+
+### 실험 설정
+- 그리핑, 배치, 조립 등 다양한 로봇 조작 작업에서 검증합니다.
+- 데이터셋: 기존 VLA 데이터셋을 기반으로 시간 동작 주석을 확장하여 모델 미세 조정에 사용합니다.
+
+### 주요 결과
+- 3D 위치만 사용하는 방법과 비교하여, VLA-4D는 공간 평활도와 시간 연속성 지표에서 모두 유의미한 향상을 보입니다.
+- 정밀한 시간 제어가 필요한 작업(예: 연속 그리핑-배치)에서 성공률이 약 15-20% 향상됩니다.
+- 교차 작업 일반화 능력이 기준 모델보다 우수하며, 특히 동적 환경에서의 조작 성능이 더 안정적입니다.
+
+### 결론
+VLA-4D는 시간 차원을 시각 및 동작 표현에 명시적으로 통합함으로써 기존 VLA 모델의 시공간 연속 조작 한계를 효과적으로 해결하며, 범용 로봇 조작을 위한 새로운 패러다임을 제공합니다.

@@ -48,8 +48,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.16809v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.16809v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1116 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,29 @@ CABTO首次将大模型（LMs）与BT规划器结合，通过上下文感知的�
 ## Overview
 Behavior Trees (BTs) offer a powerful paradigm for designing modular and reactive robot controllers. BT planning, an emerging field, provides theoretical guarantees for the automated generation of reliable BTs. However, BT planning typically assumes that a well-designed BT system is already grounded -- comprising high-level action models and low-level control policies -- which often requires extensive expert knowledge and manual effort. In this paper, we formalize the BT Grounding problem: the automated construction of a complete and consistent BT system. We analyze its complexity and introduce CABTO (Context-Aware Behavior Tree grOunding), the first framework to efficiently solve this challenge. CABTO leverages pre-trained Large Models (LMs) to heuristically search the space of action models and control policies, guided by contextual feedback from BT planners and environmental observations. Experiments spanning seven task sets across three distinct robotic manipulation scenarios demonstrate CABTO's effectiveness and efficiency in generating complete and consistent behavior tree systems.
 
-## 개요
-Behavior Trees(BTs)는 모듈식이고 반응적인 로봇 제어기를 설계하기 위한 강력한 패러다임을 제공합니다. BT 계획은 신뢰할 수 있는 BT의 자동 생성을 위한 이론적 보장을 제공하는 새로운 분야입니다. 그러나 BT 계획은 일반적으로 잘 설계된 BT 시스템이 이미 기반을 갖추고 있다고 가정합니다. 즉, 고수준 행동 모델과 저수준 제어 정책으로 구성되어 있으며, 이는 종종 광범위한 전문가 지식과 수동 노력을 필요로 합니다. 본 논문에서는 BT 기반 문제를 공식화합니다: 완전하고 일관된 BT 시스템의 자동 구축. 우리는 그 복잡성을 분석하고 CABTO(Context-Aware Behavior Tree grOunding)를 소개합니다. 이는 이 문제를 효율적으로 해결하는 최초의 프레임워크입니다. CABTO는 사전 훈련된 대규모 모델(LMs)을 활용하여 BT 계획자와 환경 관찰로부터의 맥락적 피드백에 따라 행동 모델과 제어 정책의 공간을 휴리스틱하게 탐색합니다. 세 가지 다른 로봇 조작 시나리오에 걸친 일곱 가지 작업 세트에 대한 실험은 CABTO가 완전하고 일관된 행동 트리 시스템을 생성하는 데 있어 효과성과 효율성을 입증합니다.
-
-## 핵심 내용
-Behavior Trees(BTs)는 모듈식이고 반응적인 로봇 제어기를 설계하기 위한 강력한 패러다임을 제공합니다. BT 계획은 신뢰할 수 있는 BT의 자동 생성을 위한 이론적 보장을 제공하는 새로운 분야입니다. 그러나 BT 계획은 일반적으로 잘 설계된 BT 시스템이 이미 기반을 갖추고 있다고 가정합니다. 즉, 고수준 행동 모델과 저수준 제어 정책으로 구성되어 있으며, 이는 종종 광범위한 전문가 지식과 수동 노력을 필요로 합니다. 본 논문에서는 BT 기반 문제를 공식화합니다: 완전하고 일관된 BT 시스템의 자동 구축. 우리는 그 복잡성을 분석하고 CABTO(Context-Aware Behavior Tree grOunding)를 소개합니다. 이는 이 문제를 효율적으로 해결하는 최초의 프레임워크입니다. CABTO는 사전 훈련된 대규모 모델(LMs)을 활용하여 BT 계획자와 환경 관찰로부터의 맥락적 피드백에 따라 행동 모델과 제어 정책의 공간을 휴리스틱하게 탐색합니다. 세 가지 다른 로봇 조작 시나리오에 걸친 일곱 가지 작업 세트에 대한 실험은 CABTO가 완전하고 일관된 행동 트리 시스템을 생성하는 데 있어 효과성과 효율성을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.16809v2
+
+## 개요
+행동 트리(BT)는 모듈식 로봇 컨트롤러 설계를 위한 강력한 패러다임을 제공하지만, 기존 BT 계획은 일반적으로 시스템이 사전에 하위 수준 접지(즉, 고수준 동작 모델과 저수준 제어 정책 포함)를 완료했다고 가정하며, 이는 많은 전문가 지식과 수작업을 요구합니다. 본 논문은 BT Grounding 문제——완전하고 일관된 BT 시스템을 자동으로 구축하는 문제——를 최초로 형식적으로 정의하고, 그 계산 복잡성을 분석합니다. 제안된 CABTO 프레임워크는 사전 훈련된 대규모 언어 모델(LMs)을 휴리스틱 검색에 혁신적으로 활용하며, BT 계획기의 맥락 피드백과 환경 관측을 통해 동작 모델 및 제어 정책 공간의 탐색을 동적으로 유도합니다. 실험은 세 가지 서로 다른 로봇 조작 시나리오의 일곱 가지 작업 세트를 포괄하며, CABTO가 완전하고 일관된 BT 시스템을 효율적으로 생성할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 문제 정의 및 도전 과제
+- **BT Grounding 문제**: 고수준 동작 모델(예: 작업 분해)과 저수준 제어 정책(예: 그리핑 자세)을 포함하는 완전하고 일관된 BT 시스템을 자동으로 구축하는 것을 의미합니다. 기존 방법은 수동 설계에 의존하여 복잡한 시나리오로 확장하기 어렵습니다.
+- **복잡성 분석**: 이 문제는 NP-hard임이 증명되었으며, 동작 모델과 제어 정책의 조합 공간이 지수적으로 증가하기 때문입니다.
+
+### CABTO 프레임워크 핵심 설계
+- **휴리스틱 검색**: 사전 훈련된 대규모 언어 모델(LMs)을 휴리스틱 함수로 활용하여 동작 모델과 제어 정책의 결합 공간에서 효율적으로 검색합니다. LMs는 자연어 이해를 통해 작업 설명과 환경 맥락을 파악하고 후보 동작 시퀀스를 생성합니다.
+- **맥락 피드백 메커니즘**: BT 계획기는 검색 과정에서 실시간 피드백(예: 동작 전제 조건 불충족, 정책 실행 실패)을 제공하며, 환경 관측(예: 객체 위치, 로봇 상태)과 결합하여 검색 방향을 동적으로 조정합니다.
+- **일관성 보장**: 반복 검증을 통해 생성된 BT 시스템이 논리적으로 충돌이 없고(예: 동작 전제 조건과 효과 일치), 모든 제어 정책이 실행 가능함을 보장합니다.
+
+### 실험 설정 및 결과
+- **시나리오 및 작업**: 세 가지 로봇 조작 시나리오(테이블 위 그리핑, 조립, 객체 운반)에서 일곱 가지 작업 세트를 설정했으며, 각 작업 세트는 2-5개의 하위 작업(예: "빨간 블록 잡기")을 포함합니다.
+- **비교 기준선**: 무작위 검색, 규칙 기반 BT 생성 방법 및 순수 LM 생성 방법과 비교했습니다.
+- **핵심 지표**:
+  - **성공률**: CABTO는 모든 작업에서 평균 성공률 92.3%를 기록하며, 기준선(무작위 검색 12.1%, 규칙 방법 68.5%, 순수 LM 45.7%)보다 크게 높습니다.
+  - **생성 시간**: 평균 생성 시간 2.4초(규칙 방법 1.1초, 순수 LM 8.7초)로 효율성과 품질 사이의 균형을 달성합니다.
+  - **일관성**: CABTO가 생성한 BT 시스템은 100회의 독립 실행에서 논리적 충돌이 발생하지 않았으며, 규칙 방법은 15%의 충돌률을 보였습니다.
+
+### 결론
+CABTO는 대규모 언어 모델(LMs)과 BT 계획기를 최초로 결합하여 맥락 인식 휴리스틱 검색을 통해 BT Grounding 문제를 해결했습니다. 실험은 복잡한 조작 시나리오에서 신뢰할 수 있는 BT 시스템을 효율적으로 생성하고 수동 개입을 줄일 수 있음을 증명합니다. 향후 작업은 다중 모달 입력(예: 비전-언어 모델)과 동적 환경 적응을 탐구할 것입니다.

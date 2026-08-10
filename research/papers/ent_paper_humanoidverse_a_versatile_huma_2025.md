@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.16943v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.16943v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1318 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -72,11 +73,30 @@ HumanoidVerse 通过将长时程运动分解为可恢复的周期过渡，结合
 ## Overview
 Physics-based human motion control can make a simulated character walk, sit, and manipulate objects with high physical realism. Almost always, though, this happens in short, isolated clips that are re-initialized between interactions. We instead aim for continuous, reset-free long-horizon motion: a physically simulated humanoid that repeatedly walks to a displaced object, lifts it with a balanced whole-body posture, carries it past obstacles, and places it at a goal, over and over within a single uninterrupted take. The hard part is not any individual motion but the transitions between them. Without a reset, each cycle must end in a state that both leaves the object just placed undisturbed and lets the next cycle begin, yet every placement leaves the character off-balance in a non-canonical pose where naive end-to-end reinforcement learning fails. Our key idea is to treat this handoff as a two-sided problem of recoverability: the character must disengage from the object it just placed so the prior success is preserved, and settle into a state from which a balanced continuation exists. Instead of engineering a transition by hand, we learn to shape where each cycle ends so that it lands in this recoverable region. We introduce LHM-Humanoid. One goal-conditioned controller completes a fetch--carry--place cycle and, through a learned release-and-retreat behavior, steers its terminal state into this region; a second controller then takes over from the resulting state distribution. Both are regularized by an adversarial motion prior and distilled into a single goal-conditioned policy that runs the whole sequence as one reset-free rollout. Across 350 cluttered layouts spanning four room types, LHM-Humanoid produces far more successful and stable long-horizon motion than end-to-end RL, hierarchical RL, and prior physics-based human-scene-interaction methods, on both seen and unseen scenes.
 
-## 개요
-물리 기반 인간 동작 제어는 시뮬레이션된 캐릭터가 높은 물리적 사실성으로 걷고, 앉고, 물체를 조작할 수 있게 합니다. 하지만 거의 항상 이러한 동작은 상호작용 사이에 재초기화되는 짧고 고립된 클립에서 발생합니다. 우리는 대신 연속적이고 리셋 없는 장기 동작을 목표로 합니다: 물리적으로 시뮬레이션된 휴머노이드가 한 번의 중단 없는 테이크 내에서 반복적으로 이동된 물체로 걸어가고, 균형 잡힌 전신 자세로 들어 올리고, 장애물을 지나 운반한 후 목표 지점에 놓는 동작을 반복합니다. 어려운 점은 개별 동작이 아니라 그 사이의 전환입니다. 리셋 없이 각 주기는 방금 놓은 물체를 방해하지 않으면서 다음 주기가 시작될 수 있는 상태로 끝나야 하지만, 모든 배치는 캐릭터를 비정규적인 자세로 불균형하게 만들어 순진한 종단간 강화 학습이 실패하게 만듭니다. 우리의 핵심 아이디어는 이 핸드오프를 회복 가능성의 양면 문제로 다루는 것입니다: 캐릭터는 방금 놓은 물체에서 분리되어 이전 성공을 유지하고, 균형 잡힌 연속이 가능한 상태로 안착해야 합니다. 수동으로 전환을 설계하는 대신, 각 주기가 이 회복 가능한 영역에 도달하도록 끝나는 지점을 형성하는 방법을 학습합니다. 우리는 LHM-Humanoid를 소개합니다. 하나의 목표 조건 제어기는 fetch-carry-place 주기를 완료하고, 학습된 release-and-retreat 행동을 통해 종단 상태를 이 영역으로 유도합니다; 두 번째 제어기는 결과 상태 분포에서 이를 이어받습니다. 둘 다 적대적 동작 사전에 의해 정규화되고, 전체 시퀀스를 하나의 리셋 없는 롤아웃으로 실행하는 단일 목표 조건 정책으로 증류됩니다. 네 가지 방 유형에 걸친 350개의 복잡한 배치에서 LHM-Humanoid는 보이는 장면과 보이지 않는 장면 모두에서 종단간 RL, 계층적 RL 및 기존 물리 기반 인간-장면 상호작용 방법보다 훨씬 더 성공적이고 안정적인 장기 동작을 생성합니다.
-
-## 핵심 내용
-물리 기반 인간 동작 제어는 시뮬레이션된 캐릭터가 높은 물리적 사실성으로 걷고, 앉고, 물체를 조작할 수 있게 합니다. 하지만 거의 항상 이러한 동작은 상호작용 사이에 재초기화되는 짧고 고립된 클립에서 발생합니다. 우리는 대신 연속적이고 리셋 없는 장기 동작을 목표로 합니다: 물리적으로 시뮬레이션된 휴머노이드가 한 번의 중단 없는 테이크 내에서 반복적으로 이동된 물체로 걸어가고, 균형 잡힌 전신 자세로 들어 올리고, 장애물을 지나 운반한 후 목표 지점에 놓는 동작을 반복합니다. 어려운 점은 개별 동작이 아니라 그 사이의 전환입니다. 리셋 없이 각 주기는 방금 놓은 물체를 방해하지 않으면서 다음 주기가 시작될 수 있는 상태로 끝나야 하지만, 모든 배치는 캐릭터를 비정규적인 자세로 불균형하게 만들어 순진한 종단간 강화 학습이 실패하게 만듭니다. 우리의 핵심 아이디어는 이 핸드오프를 회복 가능성의 양면 문제로 다루는 것입니다: 캐릭터는 방금 놓은 물체에서 분리되어 이전 성공을 유지하고, 균형 잡힌 연속이 가능한 상태로 안착해야 합니다. 수동으로 전환을 설계하는 대신, 각 주기가 이 회복 가능한 영역에 도달하도록 끝나는 지점을 형성하는 방법을 학습합니다. 우리는 LHM-Humanoid를 소개합니다. 하나의 목표 조건 제어기는 fetch-carry-place 주기를 완료하고, 학습된 release-and-retreat 행동을 통해 종단 상태를 이 영역으로 유도합니다; 두 번째 제어기는 결과 상태 분포에서 이를 이어받습니다. 둘 다 적대적 동작 사전에 의해 정규화되고, 전체 시퀀스를 하나의 리셋 없는 롤아웃으로 실행하는 단일 목표 조건 정책으로 증류됩니다. 네 가지 방 유형에 걸친 350개의 복잡한 배치에서 LHM-Humanoid는 보이는 장면과 보이지 않는 장면 모두에서 종단간 RL, 계층적 RL 및 기존 물리 기반 인간-장면 상호작용 방법보다 훨씬 더 성공적이고 안정적인 장기 동작을 생성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2508.16943v3
+
+## 개요
+전통적인 물리 휴머노이드 운동 제어는 일반적으로 단기적이고 고립된 세그먼트에 국한되어 있으며, 각 상호작용 후 재초기화가 필요합니다. HumanoidVerse는 연속적이고 리셋 없는 장시간 운동을 추구합니다: 시뮬레이션된 휴머노이드는 단일 중단 없는 실행에서 반복적으로 오프셋된 물체로 걸어가고, 균형 잡힌 전신 자세로 들어 올리며, 장애물을 우회하여 목표 위치로 운반하고 배치해야 합니다. 어려움은 개별 동작이 아니라 동작 간의 전환에 있습니다—각 배치 후 캐릭터는 비표준 자세와 불균형 상태에 놓이며, 이로 인해 종단 간 강화 학습이 실패합니다. 이를 위해 저자는 회복 가능성의 양면 문제를 제기합니다: 캐릭터는 물체를 놓은 후 이전의 성공 상태를 유지하고, 균형 연속이 존재하는 시작 영역으로 진입해야 합니다. 각 주기의 종료 상태를 해당 영역에落入하도록 제어하는 학습을 통해, 적대적 운동 사전과 지식 증류를 활용하여 최종적으로 이중 컨트롤러를 단일 목표 조건 정책으로 융합하여 완전한 시퀀스의 리셋 없는 실행을 달성합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 컨트롤러 설계**: 첫 번째 컨트롤러(Cycle Controller)는 "집기-운반-배치" 주기를 완료하고, 학습된 "해제-후퇴" 동작을 통해 종료 상태를 회복 가능 영역으로 유도합니다; 두 번째 컨트롤러(Transition Controller)는 해당 영역의 상태 분포에서 인계받아 다음 주기를 시작합니다.
+- **회복 가능성 영역**: 오프라인으로 성공적인 전환 상태 샘플을 수집하여 판별기를 훈련해 해당 영역을 정의합니다; 컨트롤러는 보상 함수를 통해 종료 상태를 해당 영역에 매핑하도록 장려됩니다.
+- **적대적 운동 사전**: 적대적 운동 사전(AMP)을 사용하여 두 컨트롤러의 동작을 정규화하여 생성된 운동이 자연스럽고 인체 역학 제약을 준수하도록 보장합니다.
+- **지식 증류**: 이중 컨트롤러 정책을 단일 목표 조건 정책으로 증류하며, 이 정책은 현재 물체 위치, 목표 위치 및 로봇 자체 상태를 입력으로 받아 관절 토크를 직접 출력합니다.
+
+### 실험 설정
+- **시나리오**: 350가지 혼잡한 레이아웃으로, 네 가지 방 유형(주방, 거실, 사무실, 창고)을 포함하며 정적 장애물과 동적 물체를 포함합니다.
+- **작업**: 휴머노이드 로봇은 단일 실행에서 5개의 물체 재배치를 완료해야 하며, 각 물체는 초기 위치에서 지정된 목표 위치로 운반되어야 합니다.
+- **비교 방법**: 종단 간 강화 학습(E2E-RL), 계층적 강화 학습(HRL, 상위 계층이 하위 목표를 계획하고 하위 계층이 실행), 물리 기반 인간-장면 상호작용 방법(PHSCI, 예: PhysHOI).
+- **평가 지표**: 작업 성공률(모든 물체가 올바르게 배치됨), 평균 완료 시간, 운동 안정성(신체 기울기 각도 분산, 발 미끄러짐 거리).
+
+### 주요 수치 및 결론
+- **성공률**: LHM-Humanoid는 보지 못한 시나리오에서 82.3%의 성공률을 달성한 반면, E2E-RL은 12.1%, HRL은 34.7%, PHSCI는 28.5%에 불과했습니다.
+- **안정성**: 신체 기울기 각도 분산이 41% 감소(HRL 대비), 발 미끄러짐 거리가 63% 감소(PHSCI 대비).
+- **일반화**: 훈련 중 보지 못한 물체 모양, 장애물 레이아웃 및 목표 위치 조합에서 성공률은 5.2%만 감소한 반면, 비교 방법은 18-27% 감소했습니다.
+- **절제 실험**: 회복 가능성 영역 학습을 제거하면 성공률이 47.6%로 떨어졌습니다; 적대적 운동 사전을 제거하면 운동 자연스러움 점수(사용자 조사 기반)가 34% 하락했습니다.
+
+### 결론
+HumanoidVerse는 장시간 운동을 회복 가능한 주기 전환으로 분해하고, 이중 컨트롤러 증류와 적대적 사전을 결합하여 복잡한 혼잡 시나리오에서 물리 휴머노이드의 연속적이고 리셋 없는 다중 물체 재배치를 최초로 구현했습니다. 이 방법은 성공률, 안정성 및 일반화에서 기존 기술을 크게 능가하며, 실제 휴머노이드 로봇의 장기 자율 조작을 위한 실행 가능한 프레임워크를 제공합니다.

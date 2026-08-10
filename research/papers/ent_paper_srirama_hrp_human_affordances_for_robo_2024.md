@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.18911v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.18911v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (884 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,30 @@ HRP 通过从人类视频中提取可供性并蒸馏到视觉编码器中，提�
 ## Overview
 In order to *generalize* to various tasks in the wild, robotic agents will need a suitable representation (i.e., vision network) that enables the robot to predict optimal actions given high dimensional vision inputs. However, learning such a representation requires an extreme amount of diverse training data, which is prohibitively expensive to collect on a real robot. How can we overcome this problem? Instead of collecting more robot data, this paper proposes using internet-scale, human videos to extract "affordances," both at the environment and agent level, and distill them into a pre-trained representation. We present a simple framework for pre-training representations on hand, object, and contact "affordance labels" that highlight relevant objects in images and how to interact with them. These affordances are automatically extracted from human video data (with the help of off-the-shelf computer vision modules) and used to fine-tune existing representations. Our approach can efficiently fine-tune *any* existing representation, and results in models with stronger downstream robotic performance across the board. We experimentally demonstrate (using 3000+ robot trials) that this affordance pre-training scheme boosts performance by a minimum of 15% on 5 real-world tasks, which consider three diverse robot morphologies (including a dexterous hand). Unlike prior works in the space, these representations improve performance across 3 different camera views. Quantitatively, we find that our approach leads to higher levels of generalization in out-of-distribution settings. For code, weights, and data check: https://hrp-robot.github.io
 
-## 개요
-야생의 다양한 작업에 *일반화*하기 위해 로봇 에이전트는 고차원 시각 입력이 주어졌을 때 최적의 행동을 예측할 수 있는 적절한 표현(즉, 비전 네트워크)이 필요합니다. 그러나 이러한 표현을 학습하려면 매우 다양한 훈련 데이터가 극도로 많이 필요하며, 실제 로봇에서 이를 수집하는 것은 엄청난 비용이 듭니다. 이 문제를 어떻게 극복할 수 있을까요? 이 논문은 더 많은 로봇 데이터를 수집하는 대신, 인터넷 규모의 인간 비디오를 사용하여 환경 및 에이전트 수준에서 "어포던스"를 추출하고, 이를 사전 훈련된 표현에 증류하는 방법을 제안합니다. 우리는 이미지에서 관련 객체를 강조하고 상호작용 방법을 나타내는 손, 객체, 접촉 "어포던스 레이블"에 대해 표현을 사전 훈련하는 간단한 프레임워크를 제시합니다. 이러한 어포던스는 인간 비디오 데이터에서 (기성 컴퓨터 비전 모듈의 도움으로) 자동으로 추출되며, 기존 표현을 미세 조정하는 데 사용됩니다. 우리의 접근 방식은 *모든* 기존 표현을 효율적으로 미세 조정할 수 있으며, 결과적으로 전반적으로 더 강력한 하위 로봇 성능을 가진 모델을 생성합니다. 우리는 (3000회 이상의 로봇 실험을 통해) 이 어포던스 사전 훈련 방식이 5가지 실제 작업에서 최소 15%의 성능 향상을 가져온다는 것을 실험적으로 입증했으며, 이 작업들은 세 가지 다양한 로봇 형태(손재주가 좋은 손 포함)를 고려합니다. 이 분야의 이전 연구와 달리, 이러한 표현은 3가지 다른 카메라 뷰에서 성능을 향상시킵니다. 정량적으로, 우리의 접근 방식이 분포 외 설정에서 더 높은 수준의 일반화를 이끌어낸다는 것을 발견했습니다. 코드, 가중치 및 데이터는 다음에서 확인하세요: https://hrp-robot.github.io
-
-## 핵심 내용
-야생의 다양한 작업에 *일반화*하기 위해 로봇 에이전트는 고차원 시각 입력이 주어졌을 때 최적의 행동을 예측할 수 있는 적절한 표현(즉, 비전 네트워크)이 필요합니다. 그러나 이러한 표현을 학습하려면 매우 다양한 훈련 데이터가 극도로 많이 필요하며, 실제 로봇에서 이를 수집하는 것은 엄청난 비용이 듭니다. 이 문제를 어떻게 극복할 수 있을까요? 이 논문은 더 많은 로봇 데이터를 수집하는 대신, 인터넷 규모의 인간 비디오를 사용하여 환경 및 에이전트 수준에서 "어포던스"를 추출하고, 이를 사전 훈련된 표현에 증류하는 방법을 제안합니다. 우리는 이미지에서 관련 객체를 강조하고 상호작용 방법을 나타내는 손, 객체, 접촉 "어포던스 레이블"에 대해 표현을 사전 훈련하는 간단한 프레임워크를 제시합니다. 이러한 어포던스는 인간 비디오 데이터에서 (기성 컴퓨터 비전 모듈의 도움으로) 자동으로 추출되며, 기존 표현을 미세 조정하는 데 사용됩니다. 우리의 접근 방식은 *모든* 기존 표현을 효율적으로 미세 조정할 수 있으며, 결과적으로 전반적으로 더 강력한 하위 로봇 성능을 가진 모델을 생성합니다. 우리는 (3000회 이상의 로봇 실험을 통해) 이 어포던스 사전 훈련 방식이 5가지 실제 작업에서 최소 15%의 성능 향상을 가져온다는 것을 실험적으로 입증했으며, 이 작업들은 세 가지 다양한 로봇 형태(손재주가 좋은 손 포함)를 고려합니다. 이 분야의 이전 연구와 달리, 이러한 표현은 3가지 다른 카메라 뷰에서 성능을 향상시킵니다. 정량적으로, 우리의 접근 방식이 분포 외 설정에서 더 높은 수준의 일반화를 이끌어낸다는 것을 발견했습니다. 코드, 가중치 및 데이터는 다음에서 확인하세요: https://hrp-robot.github.io
-
 ## 参考
 - http://arxiv.org/abs/2407.18911v1
+
+## 개요
+HRP는 로봇 시각 표현 학습에 필요한 대규모의 다양한 훈련 데이터를 실제 로봇으로 수집하기 어려운 문제를 해결하는 것을 목표로 한다. 이 연구는 인터넷상의 인간 비디오를 활용하여, 기성 컴퓨터 비전 모듈을 통해 환경 및 에이전트 수준의 어포던스(affordance) 라벨을 자동으로 추출한다. 여기에는 접촉점, 미래 손姿态, 능동 객체 경계 상자가 포함된다. 이러한 라벨은 LayerNorm 레이어만 미세 조정하는 L2 회귀 손실을 통해 기존의 사전 훈련된 비전 인코더에 증류된다. 실험 결과, 3000회 이상의 실제 로봇 실험에서 이 어포던스 사전 훈련 방식은 5개의 실제 세계 작업에서 최소 15%의 성능 향상을 보였으며, 손재주가 뛰어난 손을 포함한 세 가지 다른 로봇 형태와 세 가지 다른 카메라 시점에 적용 가능하다.
+
+## 핵심 내용
+### 방법
+- **어포던스 추출**: 인터넷 규모의 인간 비디오에서 기성 컴퓨터 비전 모듈을 활용하여 세 가지 유형의 어포던스 라벨을 자동으로 추출한다:
+  - **접촉점**: 손과 객체가 상호작용할 때의 접촉 위치.
+  - **미래 손姿态**: 상호작용 과정에서 손의 미래 자세.
+  - **능동 객체 경계 상자**: 손과 상호작용하는 객체의 경계 상자.
+- **증류 과정**: 추출된 어포던스 라벨을 L2 회귀 손실을 통해 사전 훈련된 비전 인코더에 증류하며, LayerNorm 레이어만 미세 조정하고 다른 매개변수는 유지한다. 이 방법은 기존의 모든 시각 표현에 적용할 수 있다.
+
+### 실험 설정
+- **로봇 실험**: 5개의 실제 세계 작업에서 3000회 이상의 로봇 실험을 수행했다.
+- **로봇 형태**: 손재주가 뛰어난 손을 포함한 세 가지 다른 로봇 형태가 포함된다.
+- **카메라 시점**: 세 가지 다른 카메라 시점을 테스트했다.
+- **기준선 비교**: 기존 방법과 비교하여 분포 외(out-of-distribution) 시나리오에서의 일반화 능력을 평가했다.
+
+### 주요 결과
+- **성능 향상**: 어포던스 사전 훈련 방식은 모든 작업에서 최소 15%의 성능 향상을 보였다.
+- **일반화 능력**: 분포 외 설정에서 HRP는 더 높은 일반화 수준을 나타냈다.
+- **교차 시점 및 형태**: 이전 연구와 달리 HRP는 세 가지 다른 카메라 시점과 세 가지 로봇 형태 모두에서 성능을 향상시켰다.
+
+### 결론
+HRP는 인간 비디오에서 어포던스를 추출하고 비전 인코더에 증류함으로써 효율적이고 범용적인 로봇 사전 훈련 방법을 제공한다. 이 방법은 추가 로봇 데이터 없이도 다양한 시나리오에서 로봇 조작 작업의 일반화 능력을 크게 향상시킨다. 코드, 가중치 및 데이터는 오픈소스로 공개되어 있다.

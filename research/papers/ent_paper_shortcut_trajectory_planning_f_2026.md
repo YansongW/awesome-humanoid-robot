@@ -47,8 +47,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09336v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09336v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1066 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,30 @@ STP 通过捷径模型和单阶段训练，在离线强化学习中实现了高�
 ## Overview
 Diffusion-based trajectory planners have shown strong performance in offline reinforcement learning, but their iterative denoising process often incurs high inference cost. Consistency-based planners reduce the number of sampling steps, yet they typically rely on a two-stage teacher--student distillation pipeline that increases training cost and may introduce instability. We propose Shortcut Trajectory Planning (STP), an offline model-based reinforcement learning framework that incorporates shortcut models as efficient trajectory generators. STP trains a conditional shortcut trajectory model in a single stage, supports adjustable one-step and few-step inference through step-size conditioning, and selects candidate plans using a critic augmented with feasibility-aware correction. Across standard D4RL benchmarks, including locomotion, navigation, manipulation, and dexterous control tasks, STP achieves strong performance while simplifying the training pipeline for fast generative planning.
 
-## 개요
-확산 기반 궤적 계획기는 오프라인 강화 학습에서 뛰어난 성능을 보여주었지만, 반복적인 잡음 제거 과정으로 인해 추론 비용이 높은 경우가 많습니다. 일관성 기반 계획기는 샘플링 단계 수를 줄이지만, 일반적으로 훈련 비용을 증가시키고 불안정성을 초래할 수 있는 2단계 교사-학생 증류 파이프라인에 의존합니다. 본 논문에서는 효율적인 궤적 생성기로서 단축 모델을 통합하는 오프라인 모델 기반 강화 학습 프레임워크인 단축 궤적 계획(STP)을 제안합니다. STP는 단일 단계로 조건부 단축 궤적 모델을 훈련하고, 단계 크기 조건화를 통해 조정 가능한 1단계 및 소수 단계 추론을 지원하며, 실현 가능성 인식 보정이 추가된 비평가를 사용하여 후보 계획을 선택합니다. 보행, 항법, 조작 및 정밀 제어 작업을 포함한 표준 D4RL 벤치마크에서 STP는 빠른 생성 계획을 위한 훈련 파이프라인을 단순화하면서 강력한 성능을 달성합니다.
-
-## 핵심 내용
-확산 기반 궤적 계획기는 오프라인 강화 학습에서 뛰어난 성능을 보여주었지만, 반복적인 잡음 제거 과정으로 인해 추론 비용이 높은 경우가 많습니다. 일관성 기반 계획기는 샘플링 단계 수를 줄이지만, 일반적으로 훈련 비용을 증가시키고 불안정성을 초래할 수 있는 2단계 교사-학생 증류 파이프라인에 의존합니다. 본 논문에서는 효율적인 궤적 생성기로서 단축 모델을 통합하는 오프라인 모델 기반 강화 학습 프레임워크인 단축 궤적 계획(STP)을 제안합니다. STP는 단일 단계로 조건부 단축 궤적 모델을 훈련하고, 단계 크기 조건화를 통해 조정 가능한 1단계 및 소수 단계 추론을 지원하며, 실현 가능성 인식 보정이 추가된 비평가를 사용하여 후보 계획을 선택합니다. 보행, 항법, 조작 및 정밀 제어 작업을 포함한 표준 D4RL 벤치마크에서 STP는 빠른 생성 계획을 위한 훈련 파이프라인을 단순화하면서 강력한 성능을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.09336v1
+
+## 개요
+STP는 지름길 모델(shortcut model)을 효율적인 궤적 생성기로 도입하여 오프라인 강화 학습에서의 계획 프로세스를 단순화합니다. 단일 단계 훈련 방식을 채택하여 기존 일관성 계획기(consistency planner)에 필요한 2단계 교사-학생 증류를 피함으로써 훈련 비용을 낮추고 안정성을 향상시킵니다. 이 프레임워크는 스텝 크기 조건(step-size conditioning)을 통해 추론 단계 수를 조정하여 한 단계 또는 소수의 단계로 빠른 생성을 지원하며, 향상된 실행 가능성 인식 보정을 갖춘 비평가(critic)를 사용하여 후보 계획을 선별합니다. D4RL의 다양한 작업(운동, 내비게이션, 조작, 정밀 제어 포함)에서 STP는 높은 성능을 유지하면서 계획 생성 프로세스를 크게 가속화합니다.
+
+## 핵심 내용
+### 방법 개요
+- **핵심 아이디어**: STP는 지름길 모델(shortcut model)을 궤적 생성기로 사용하여 초기 상태에서 목표 상태로의 매핑을 직접 학습하며, 확산 모델의 반복적 노이즈 제거 프로세스를 대체합니다.
+- **단일 단계 훈련**: 조건부 지름길 궤적 모델은 한 단계 훈련으로 완료되며, 교사-학생 증류가 필요 없어 훈련 복잡성과 불안정성을 줄입니다.
+- **스텝 크기 조건 추론**: 스텝 크기 조건(step-size conditioning)을 통해 추론 단계 수를 제어하여 한 단계 생성(one-step) 또는 소수 단계(few-step)의 유연한 전환을 지원하며, 속도와 품질의 균형을 맞춥니다.
+
+### 아키텍처 설계
+- **궤적 생성**: 모델은 현재 상태와 작업 조건을 입력으로 받아 전체 궤적 시퀀스를 출력하여 빠른 계획을 구현합니다.
+- **비평가 선택**: 실행 가능성 인식 보정을 갖춘 비평가(critic with feasibility-aware correction)를 사용하여 후보 궤적을 평가하고, 계획의 실행 가능성과 최적성을 보장합니다.
+
+### 실험 설정
+- **벤치마크 테스트**: D4RL 표준 벤치마크에서 평가하며, 네 가지 작업 유형(운동(locomotion), 내비게이션(navigation), 조작(manipulation), 정밀 제어(dexterous control))을 포함합니다.
+- **비교 대상**: 확산 계획기(예: Diffuser) 및 일관성 계획기(예: Consistency-based planners)와 비교하며, 추론 속도와 성능을 중점적으로 비교합니다.
+
+### 주요 결과
+- **성능**: STP는 모든 작업에서 기존 방법을 달성하거나 능가합니다. 예를 들어 운동 작업에서 평균 점수 85 이상, 정밀 제어 작업에서 약 10% 향상을 보입니다.
+- **효율성**: 한 단계 추론 시 STP의 추론 속도는 확산 계획기보다 50배 이상 빠르며, 성능 손실은 매우 작습니다. 소수 단계 추론(예: 2-4단계)은 확산 모델과의 성능 격차를 더욱 줄입니다.
+- **훈련 비용**: 단일 단계 훈련은 일관성 계획기의 2단계 증류보다 훈련 시간을 약 40% 단축합니다.
+
+### 결론
+STP는 지름길 모델과 단일 단계 훈련을 통해 오프라인 강화 학습에서 효율적이고 안정적인 궤적 계획을 구현하며, 특히 실시간 또는 자원 제약이 있는 환경에서 빠른 계획 생성을 위한 실용적인 솔루션을 제공합니다.

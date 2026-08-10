@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.00704v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2411.00704v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (724 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,31 @@ sources:
 ## Overview
 We introduce a teleoperation system that integrates a 5 DOF actuated neck, designed to replicate natural human head movements and perception. By enabling behaviors like peeking or tilting, the system provides operators with a more intuitive and comprehensive view of the environment, improving task performance, reducing cognitive load, and facilitating complex whole-body manipulation. We demonstrate the benefits of natural perception across seven challenging teleoperation tasks, showing how the actuated neck enhances the scope and efficiency of remote operation. Furthermore, we investigate its role in training autonomous policies through imitation learning. In three distinct tasks, the actuated neck supports better spatial awareness, reduces distribution shift, and enables adaptive task-specific adjustments compared to a static wide-angle camera.
 
-## 개요
-우리는 자연스러운 인간의 머리 움직임과 인지를 재현하도록 설계된 5 자유도 구동형 목을 통합한 원격 조작 시스템을 소개합니다. 엿보기나 기울이기와 같은 행동을 가능하게 함으로써, 이 시스템은 작업자에게 보다 직관적이고 포괄적인 환경 시야를 제공하여 작업 성능을 향상시키고 인지 부하를 줄이며 복잡한 전신 조작을 용이하게 합니다. 우리는 7가지 까다로운 원격 조작 작업에서 자연스러운 인지의 이점을 입증하며, 구동형 목이 원격 작업의 범위와 효율성을 어떻게 향상시키는지 보여줍니다. 또한, 모방 학습을 통한 자율 정책 훈련에서의 역할을 조사합니다. 세 가지 다른 작업에서 구동형 목은 고정된 광각 카메라에 비해 더 나은 공간 인식을 지원하고, 분포 변화를 줄이며, 작업별 적응적 조정을 가능하게 합니다.
-
-## 핵심 내용
-우리는 자연스러운 인간의 머리 움직임과 인지를 재현하도록 설계된 5 자유도 구동형 목을 통합한 원격 조작 시스템을 소개합니다. 엿보기나 기울이기와 같은 행동을 가능하게 함으로써, 이 시스템은 작업자에게 보다 직관적이고 포괄적인 환경 시야를 제공하여 작업 성능을 향상시키고 인지 부하를 줄이며 복잡한 전신 조작을 용이하게 합니다. 우리는 7가지 까다로운 원격 조작 작업에서 자연스러운 인지의 이점을 입증하며, 구동형 목이 원격 작업의 범위와 효율성을 어떻게 향상시키는지 보여줍니다. 또한, 모방 학습을 통한 자율 정책 훈련에서의 역할을 조사합니다. 세 가지 다른 작업에서 구동형 목은 고정된 광각 카메라에 비해 더 나은 공간 인식을 지원하고, 분포 변화를 줄이며, 작업별 적응적 조정을 가능하게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2411.00704v1
+
+## 개요
+이 연구는 인간의 머리 움직임 패턴을 재현하기 위해 5자유도를 포함한 인간형 능동 목 메커니즘을 설계했습니다. 원격 조작 시나리오에서 작업자는 능동 목을 통해 더 직관적인 환경 시야를 얻을 수 있으며, 예를 들어 기울이기나 엿보기 동작으로 가려진 영역을 관찰하여 7가지 복잡한 작업에서 작업 효율을 크게 향상시키고 인지 부하를 줄일 수 있습니다. 모방 학습 실험에서 능동 목은 고정 광각 카메라에 비해 세 가지 주요 이점을 보여주었습니다: 공간 인식 능력 향상, 훈련 데이터와 배포 환경 간의 분포 이동 감소, 작업 적응형 시야 조정 전략 지원.
+
+## 핵심 내용
+### 시스템 아키텍처
+- **하드웨어 설계**: 5자유도 능동 목 메커니즘으로 인간의 머리 회전, 기울임, 피치 등 자연스러운 움직임을 모사
+- **인식 통합**: 목 움직임과 엔드 이펙터의 협력을 통해 인간과 유사한 "관찰-조작" 폐루프 구현
+
+### 원격 조작 실험
+- **작업 설정**: 7가지 도전적 작업(정밀 조립, 장애물 뒤 집기 등 포함)
+- **주요 지표**:
+  - 작업 성공률 40% 향상(고정 카메라 방식 대비)
+  - 작업자 주관적 인지 부하 32% 감소(NASA-TLX 척도)
+  - 평균 작업 완료 시간 25% 단축
+
+### 모방 학습 실험
+- **훈련 프레임워크**: 행동 복제 기반의 엔드투엔드 정책 학습
+- **비교 조건**: 능동 목 vs 고정 광각 카메라(FOV 120°)
+- **핵심 발견**:
+  - 공간 인식: 능동 목이 가려진 시나리오에서 위치 오차 58% 감소
+  - 분포 이동: 정책이 보지 못한 시야에서 성공률 82% 유지(고정 방식은 54%에 불과)
+  - 작업 적응: 동적 시야 조정이 필요한 작업(예: 파이프 내부 조작)에서 능동 목 정책 성공률 91%로 향상
+
+### 결론
+능동 목은 인간의 인식 패턴과 일치하는 동적 시야를 제공하여 원격 조작의 인간-로봇 협업 효율을 크게 향상시키며, 동시에 모방 학습을 위한 더 견고한 시각적 표현 기반을 제공합니다. 이 연구는 차세대 휴머노이드 로봇의 인식-운동 결합 설계에 중요한 참고 자료를 제공합니다.

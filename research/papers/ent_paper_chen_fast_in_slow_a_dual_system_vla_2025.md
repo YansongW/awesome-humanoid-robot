@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01953v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01953v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1025 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,26 @@ FiS-VLA 通过统一双系统架构，有效解决了机器人操作中泛化策
 ## Overview
 Generalized policy and execution efficiency constitute the two critical challenges in robotic manipulation. While recent foundation policies benefit from the common-sense reasoning capabilities of internet-scale pretrained vision-language models (VLMs), they often suffer from low execution frequency. To mitigate this dilemma, dual-system approaches, inspired by Kahneman's theory, have been proposed to leverage a VLM-based System 2 model handling high-level reasoning and a separate System 1 action model ensuring real-time control. However, existing designs maintain both systems as separate models, limiting System 1 from fully leveraging the rich pretrained knowledge from the VLM-based System 2. In this work, we propose Fast-in-Slow (FiS), a unified dual-system vision-language-action (VLA) model that embeds the System 1 execution module within the VLM-based System 2 by partially sharing parameters. This innovative paradigm not only enables high-frequency execution in System 1 but also facilitates coordination between the reasoning and execution components within a single foundation model of System 2. Given their fundamentally distinct roles within FiS-VLA, we design the two systems to incorporate heterogeneous modality inputs alongside asynchronous operating frequencies, enabling both fast and precise manipulation. To enable coordination between the two systems, a dual-aware co-training strategy is proposed that equips System 1 with action generation capabilities while preserving System 2's contextual reasoning representation. For evaluation, FiS-VLA outperforms previous state-of-the-art methods by 8% in simulation and 11% in real-world tasks in terms of average success rate, while achieving a 117.7 Hz control frequency with action chunk set to eight. Project web page: fast-in-slow.github.io.
 
-## 개요
-일반화된 정책과 실행 효율성은 로봇 조작에서 중요한 두 가지 과제입니다. 최근의 기초 정책(foundation policy)은 인터넷 규모로 사전 학습된 비전-언어 모델(VLM)의 상식적 추론 능력을 활용하지만, 종종 낮은 실행 빈도로 인해 어려움을 겪습니다. 이러한 딜레마를 완화하기 위해, Kahneman의 이론에서 영감을 받은 이중 시스템 접근법이 제안되었습니다. 이는 VLM 기반 System 2 모델이 고수준 추론을 처리하고, 별도의 System 1 행동 모델이 실시간 제어를 보장하는 방식입니다. 그러나 기존 설계는 두 시스템을 별도의 모델로 유지하여, System 1이 VLM 기반 System 2의 풍부한 사전 학습 지식을 완전히 활용하지 못하도록 제한합니다. 본 연구에서는 System 1 실행 모듈을 VLM 기반 System 2 내에 부분적으로 파라미터를 공유하여 내장하는 통합 이중 시스템 비전-언어-행동(VLA) 모델인 Fast-in-Slow(FiS)를 제안합니다. 이 혁신적인 패러다임은 System 1에서 고빈도 실행을 가능하게 할 뿐만 아니라, System 2의 단일 기초 모델 내에서 추론과 실행 구성 요소 간의 조정을 촉진합니다. FiS-VLA 내에서 두 시스템의 근본적으로 다른 역할을 고려하여, 이종 모달리티 입력과 비동기 작동 주파수를 통합하도록 설계하여 빠르고 정밀한 조작을 모두 가능하게 합니다. 두 시스템 간의 조정을 위해, System 1에 행동 생성 능력을 부여하면서 System 2의 맥락적 추론 표현을 유지하는 이중 인식 공동 훈련 전략(dual-aware co-training strategy)을 제안합니다. 평가 결과, FiS-VLA는 평균 성공률에서 시뮬레이션 작업에서 이전 최첨단 방법보다 8%, 실제 작업에서 11% 더 우수한 성능을 보였으며, 행동 청크를 8로 설정했을 때 117.7Hz의 제어 주파수를 달성했습니다. 프로젝트 웹 페이지: fast-in-slow.github.io.
-
-## 핵심 내용
-일반화된 정책과 실행 효율성은 로봇 조작에서 중요한 두 가지 과제입니다. 최근의 기초 정책(foundation policy)은 인터넷 규모로 사전 학습된 비전-언어 모델(VLM)의 상식적 추론 능력을 활용하지만, 종종 낮은 실행 빈도로 인해 어려움을 겪습니다. 이러한 딜레마를 완화하기 위해, Kahneman의 이론에서 영감을 받은 이중 시스템 접근법이 제안되었습니다. 이는 VLM 기반 System 2 모델이 고수준 추론을 처리하고, 별도의 System 1 행동 모델이 실시간 제어를 보장하는 방식입니다. 그러나 기존 설계는 두 시스템을 별도의 모델로 유지하여, System 1이 VLM 기반 System 2의 풍부한 사전 학습 지식을 완전히 활용하지 못하도록 제한합니다. 본 연구에서는 System 1 실행 모듈을 VLM 기반 System 2 내에 부분적으로 파라미터를 공유하여 내장하는 통합 이중 시스템 비전-언어-행동(VLA) 모델인 Fast-in-Slow(FiS)를 제안합니다. 이 혁신적인 패러다임은 System 1에서 고빈도 실행을 가능하게 할 뿐만 아니라, System 2의 단일 기초 모델 내에서 추론과 실행 구성 요소 간의 조정을 촉진합니다. FiS-VLA 내에서 두 시스템의 근본적으로 다른 역할을 고려하여, 이종 모달리티 입력과 비동기 작동 주파수를 통합하도록 설계하여 빠르고 정밀한 조작을 모두 가능하게 합니다. 두 시스템 간의 조정을 위해, System 1에 행동 생성 능력을 부여하면서 System 2의 맥락적 추론 표현을 유지하는 이중 인식 공동 훈련 전략(dual-aware co-training strategy)을 제안합니다. 평가 결과, FiS-VLA는 평균 성공률에서 시뮬레이션 작업에서 이전 최첨단 방법보다 8%, 실제 작업에서 11% 더 우수한 성능을 보였으며, 행동 청크를 8로 설정했을 때 117.7Hz의 제어 주파수를 달성했습니다. 프로젝트 웹 페이지: fast-in-slow.github.io.
-
 ## 参考
 - http://arxiv.org/abs/2506.01953v1
+
+## 개요
+Fast-in-Slow (FiS)는 카너먼의 이중 시스템 이론을 차용하여 통합된 이중 시스템 비전-언어-행동 모델을 제안한다. 기존 방법은 고수준 추론을 담당하는 VLM 기반 System 2와 실시간 제어를 담당하는 독립적인 System 1을 분리하여, System 1이 VLM의 사전 학습 지식을 충분히 활용하지 못하는 문제가 있었다. FiS는 System 1 실행 모듈을 System 2 내부에 내장하고 일부 파라미터를 공유함으로써, 고주파 실행을 달성하면서도 추론과 실행 구성 요소 간의 협력을 촉진한다. 이 모델은 두 시스템을 위해 이질적 모달리티 입력과 비동기 실행 주파수를 설계하고, 이중 인식 협력 훈련 전략을 채택하여 System 1이 행동 생성 능력을 획득하는 동시에 System 2의 맥락 추론 표현을 보존한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **이중 시스템 설계**: FiS-VLA는 빠른 실행 모듈(System 1)을 VLM 기반의 느린 추론 시스템(System 2) 내부에 내장하고, 부분 파라미터 공유를 통해 통합 아키텍처를 구현한다. System 2는 고수준 의미 추론과 작업 계획을 담당하고, System 1은 실시간 행동 생성을 담당한다.
+- **이질적 모달리티 입력**: 두 시스템은 서로 다른 입력 모달리티를 사용한다—System 2는 전역 시각 및 언어 명령을 처리하고, System 1은 국소 인식 정보와 고주파 센서 데이터를 수신하여 각자의 기능적 요구에 적응한다.
+- **비동기 실행 주파수**: System 2는 낮은 주파수(예: 5-10 Hz)로 추론하고, System 1은 높은 주파수(117.7 Hz)로 행동을 실행하며, 행동 블록 크기는 8로 설정된다.
+
+### 훈련 전략
+- **이중 인식 협력 훈련**: System 1이 행동 생성 능력을 획득하면서도 System 2의 맥락 추론 표현을 손상시키지 않는 공동 훈련 방법을 제안한다. 이 전략은 공유 파라미터의 그래디언트 전파를 통해 두 시스템이 훈련 과정에서 서로 방해하지 않고 상호 촉진하도록 보장한다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 환경**: 여러 표준 로봇 조작 벤치마크에서 테스트한 결과, FiS-VLA의 평균 성공률이 이전 최고 방법보다 8% 향상되었다.
+- **실세계 작업**: 실제 로봇 플랫폼에서 다양한 조작 작업(예: 파지, 배치, 조립)을 수행하여 평균 성공률이 11% 향상되었다.
+- **제어 주파수**: 행동 블록 크기가 8인 조건에서 117.7 Hz의 제어 주파수를 달성하여 실시간 조작 요구를 충족한다.
+- **절제 실험**: 파라미터 공유 전략, 이질적 모달리티 입력, 비동기 주파수 설계가 성능에 기여하는 바를 검증했으며, 각 구성 요소가 유의미한 향상을 가져왔다.
+
+### 결론
+FiS-VLA는 통합된 이중 시스템 아키텍처를 통해 로봇 조작에서 일반화 정책과 실행 효율성 간의 모순을 효과적으로 해결하며, 시뮬레이션과 실제 시나리오 모두에서 선도적인 성능을 달성하면서 고주파 실시간 제어 능력을 유지한다. 프로젝트 페이지: fast-in-slow.github.io.

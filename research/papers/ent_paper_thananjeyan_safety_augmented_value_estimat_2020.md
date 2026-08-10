@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1905.13402v8. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1905.13402v8. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (833 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,29 @@ SAVED 通过结合稀疏监督、次优演示和安全约束，在机器人控�
 ## Overview
 Reinforcement learning (RL) for robotics is challenging due to the difficulty in hand-engineering a dense cost function, which can lead to unintended behavior, and dynamical uncertainty, which makes exploration and constraint satisfaction challenging. We address these issues with a new model-based reinforcement learning algorithm, Safety Augmented Value Estimation from Demonstrations (SAVED), which uses supervision that only identifies task completion and a modest set of suboptimal demonstrations to constrain exploration and learn efficiently while handling complex constraints. We then compare SAVED with 3 state-of-the-art model-based and model-free RL algorithms on 6 standard simulation benchmarks involving navigation and manipulation and a physical knot-tying task on the da Vinci surgical robot. Results suggest that SAVED outperforms prior methods in terms of success rate, constraint satisfaction, and sample efficiency, making it feasible to safely learn a control policy directly on a real robot in less than an hour. For tasks on the robot, baselines succeed less than 5% of the time while SAVED has a success rate of over 75% in the first 50 training iterations. Code and supplementary material is available at https://tinyurl.com/saved-rl.
 
-## 개요
-로봇 공학을 위한 강화 학습(Reinforcement Learning, RL)은 조밀한 비용 함수를 수동으로 설계하기 어렵다는 점(의도치 않은 행동을 초래할 수 있음)과 동적 불확실성(탐색과 제약 조건 충족을 어렵게 만듦)으로 인해 도전적인 과제입니다. 우리는 이러한 문제를 해결하기 위해 새로운 모델 기반 강화 학습 알고리즘인 SAVED(Safety Augmented Value Estimation from Demonstrations)를 제안합니다. 이 알고리즘은 작업 완료만 식별하는 감독 정보와 소량의 최적이 아닌 시연 데이터를 활용하여 탐색을 제한하고 복잡한 제약 조건을 처리하면서 효율적으로 학습합니다. 이후 SAVED를 3개의 최신 모델 기반 및 모델 프리 강화 학습 알고리즘과 비교하여, 탐색 및 조작을 포함한 6개의 표준 시뮬레이션 벤치마크와 da Vinci 수술 로봇의 실제 매듭 묶기 작업에서 성능을 평가했습니다. 결과는 SAVED가 성공률, 제약 조건 충족, 샘플 효율성 측면에서 기존 방법보다 우수함을 보여주며, 실제 로봇에서 1시간 이내에 안전하게 제어 정책을 학습할 수 있게 합니다. 로봇 작업의 경우, 기준 알고리즘은 5% 미만의 성공률을 보인 반면, SAVED는 처음 50회의 학습 반복에서 75% 이상의 성공률을 기록했습니다. 코드와 추가 자료는 https://tinyurl.com/saved-rl에서 확인할 수 있습니다.
-
-## 핵심 내용
-로봇 공학을 위한 강화 학습(RL)은 조밀한 비용 함수를 수동으로 설계하기 어렵다는 점(의도치 않은 행동을 초래할 수 있음)과 동적 불확실성(탐색과 제약 조건 충족을 어렵게 만듦)으로 인해 도전적인 과제입니다. 우리는 이러한 문제를 해결하기 위해 새로운 모델 기반 강화 학습 알고리즘인 SAVED(Safety Augmented Value Estimation from Demonstrations)를 제안합니다. 이 알고리즘은 작업 완료만 식별하는 감독 정보와 소량의 최적이 아닌 시연 데이터를 활용하여 탐색을 제한하고 복잡한 제약 조건을 처리하면서 효율적으로 학습합니다. 이후 SAVED를 3개의 최신 모델 기반 및 모델 프리 강화 학습 알고리즘과 비교하여, 탐색 및 조작을 포함한 6개의 표준 시뮬레이션 벤치마크와 da Vinci 수술 로봇의 실제 매듭 묶기 작업에서 성능을 평가했습니다. 결과는 SAVED가 성공률, 제약 조건 충족, 샘플 효율성 측면에서 기존 방법보다 우수함을 보여주며, 실제 로봇에서 1시간 이내에 안전하게 제어 정책을 학습할 수 있게 합니다. 로봇 작업의 경우, 기준 알고리즘은 5% 미만의 성공률을 보인 반면, SAVED는 처음 50회의 학습 반복에서 75% 이상의 성공률을 기록했습니다. 코드와 추가 자료는 https://tinyurl.com/saved-rl에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/1905.13402v8
+
+## 개요
+SAVED는 작업 완료만을 식별하는 희소 감독과 소량의 차선 시연을 활용하여 탐색을 제한하고 효율적으로 학습하면서 복잡한 제약 조건을 처리합니다. 이 알고리즘은 내비게이션 및 조작 작업을 포함한 6개의 표준 시뮬레이션 벤치마크와 da Vinci 수술 로봇에서의 물리적 매듭 묶기 작업에서 3가지 최첨단 모델 기반 및 모델 프리 RL 알고리즘과 비교되었습니다. 결과는 SAVED가 성공률, 제약 조건 충족 및 샘플 효율성에서 이전 방법보다 우수하여 실제 로봇에서 1시간 미만의 훈련 시간으로 안전하게 제어 정책을 학습할 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법
+SAVED는 심층 모델 기반 강화 학습 알고리즘으로, 핵심 구성 요소는 다음과 같습니다:
+- **희소 작업 완료 감독**: 작업 완료 여부에 대한 이진 신호만 보상으로 사용하여 수동으로 설계된 밀집 비용 함수를 피합니다.
+- **차선 시연**: 소량의 비최적 시연을 활용하여 탐색을 유도하고 학습 효율성을 높입니다.
+- **커널 밀도 안전 집합**: 커널 밀도 추정을 통해 안전 상태 집합을 구축하여 탐색 범위를 제한하고 위험한 행동을 방지합니다.
+- **확률적 기회 제약**: 앙상블 동역학 모델의 확률적 예측을 기반으로 정책이 안전 제약 조건을 충족하도록 보장합니다.
+
+### 실험 설정
+- **시뮬레이션 벤치마크**: 내비게이션 및 조작 시나리오를 포함한 6개의 표준 시뮬레이션 작업에서 테스트되었습니다.
+- **실제 로봇 작업**: da Vinci 수술 로봇에서 물리적 매듭 묶기 작업을 수행합니다.
+- **비교 알고리즘**: 3가지 최첨단 모델 기반 및 모델 프리 RL 알고리즘과 비교되었습니다.
+
+### 주요 결과
+- **성공률**: 로봇 작업에서 기준 방법의 성공률은 5% 미만이었지만, SAVED는 처음 50회 훈련 반복에서 성공률이 75%를 초과했습니다.
+- **제약 조건 충족**: SAVED는 모든 작업에서 안전 제약 조건을 효과적으로 충족하며 위험한 행동을 피했습니다.
+- **샘플 효율성**: SAVED는 1시간 미만의 훈련 시간으로 실제 로봇에서 효과적인 정책을 학습하여 기준 방법보다 크게 우수했습니다.
+
+### 결론
+SAVED는 희소 감독, 차선 시연 및 안전 제약 조건을 결합하여 로봇 제어 작업에서 효율적이고 안전한 학습을 달성하며, 특히 희소 보상 및 동적 불확실성 시나리오에 적합합니다. 코드 및 추가 자료는 https://tinyurl.com/saved-rl 에서 확인할 수 있습니다.

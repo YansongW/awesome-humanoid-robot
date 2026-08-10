@@ -50,8 +50,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.06988v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.06988v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1114 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,11 +90,31 @@ WAM-TTT 通过测试时训练和自适应记忆，成功将人类视频转化为
 ## Overview
 Steering robot foundation models (RFMs) toward new task variants or user-preferred behaviors remains challenging, often requiring additional robot demonstrations, task-specific fine-tuning, or long-context conditioning. We present WAM-TTT, a test-time training framework for steering world action models from raw human videos. Rather than treating human videos as trajectories to imitate, WAM-TTT absorbs them into a lightweight adaptive memory inside a frozen WAM through self-supervised video prediction. To make this memory useful for control, we introduce a meta-training stage that aligns human demonstrations with robot behaviors using paired human-robot data and a key--value memory reconstruction objective. At test time, only unlabeled human videos are required to adapt the memory, while the pretrained WAM remains frozen. This enables efficient and reusable steering without robot actions, human-side annotations, or task-specific fine-tuning, while preserving the generalization ability of the foundation model. Extensive experiments show that WAM-TTT consistently outperforms in-context human-video conditioning baselines across diverse manipulation tasks and generalization settings.
 
-## 개요
-로봇 기반 모델(RFM)을 새로운 작업 변형이나 사용자 선호 행동으로 유도하는 것은 여전히 어려운 과제이며, 추가 로봇 시연, 작업별 미세 조정 또는 장기 컨텍스트 조건화가 필요한 경우가 많습니다. 본 논문에서는 원시 인간 비디오로부터 세계 행동 모델을 유도하기 위한 테스트 타임 트레이닝 프레임워크인 WAM-TTT를 제안합니다. WAM-TTT는 인간 비디오를 모방할 궤적으로 취급하는 대신, 자기 지도 비디오 예측을 통해 이를 고정된 WAM 내부의 경량 적응형 메모리에 흡수합니다. 이 메모리를 제어에 유용하게 만들기 위해, 쌍을 이룬 인간-로봇 데이터와 키-값 메모리 재구성 목표를 사용하여 인간 시연과 로봇 행동을 정렬하는 메타 트레이닝 단계를 도입합니다. 테스트 시점에는 레이블이 없는 인간 비디오만으로 메모리를 적응시키면 되며, 사전 훈련된 WAM은 고정된 상태로 유지됩니다. 이를 통해 로봇 행동, 인간 측 주석 또는 작업별 미세 조정 없이 효율적이고 재사용 가능한 유도가 가능하며, 기반 모델의 일반화 능력을 보존합니다. 광범위한 실험을 통해 WAM-TTT가 다양한 조작 작업 및 일반화 설정에서 인컨텍스트 인간 비디오 조건화 기준선을 일관되게 능가함을 보여줍니다.
-
-## 핵심 내용
-로봇 기반 모델(RFM)을 새로운 작업 변형이나 사용자 선호 행동으로 유도하는 것은 여전히 어려운 과제이며, 추가 로봇 시연, 작업별 미세 조정 또는 장기 컨텍스트 조건화가 필요한 경우가 많습니다. 본 논문에서는 원시 인간 비디오로부터 세계 행동 모델을 유도하기 위한 테스트 타임 트레이닝 프레임워크인 WAM-TTT를 제안합니다. WAM-TTT는 인간 비디오를 모방할 궤적으로 취급하는 대신, 자기 지도 비디오 예측을 통해 이를 고정된 WAM 내부의 경량 적응형 메모리에 흡수합니다. 이 메모리를 제어에 유용하게 만들기 위해, 쌍을 이룬 인간-로봇 데이터와 키-값 메모리 재구성 목표를 사용하여 인간 시연과 로봇 행동을 정렬하는 메타 트레이닝 단계를 도입합니다. 테스트 시점에는 레이블이 없는 인간 비디오만으로 메모리를 적응시키면 되며, 사전 훈련된 WAM은 고정된 상태로 유지됩니다. 이를 통해 로봇 행동, 인간 측 주석 또는 작업별 미세 조정 없이 효율적이고 재사용 가능한 유도가 가능하며, 기반 모델의 일반화 능력을 보존합니다. 광범위한 실험을 통해 WAM-TTT가 다양한 조작 작업 및 일반화 설정에서 인컨텍스트 인간 비디오 조건화 기준선을 일관되게 능가함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2607.06988v2
+
+## 개요
+WAM-TTT는 연구팀이 제안한 프레임워크로, 로봇 기반 모델(RFM)이 새로운 작업 변형이나 사용자 선호도에 적응할 때 겪는 어려움을 해결하기 위해 설계되었습니다. 이 프레임워크는 테스트 시점 훈련을 통해 인간 비디오를 적응형 메모리로 동결된 WAM에 통합하며, 직접 모방하는 대신 사용합니다. 메타 훈련 단계에서는 짝지어진 인간-로봇 데이터와 키-값 메모리 재구성 목표를 활용하여 인간 시연과 로봇 행동을 정렬합니다. 테스트 시점에는 주석이 없는 인간 비디오만으로 메모리를 업데이트할 수 있으며, 추가 로봇 시연이나 작업 미세 조정 없이도 기반 모델의 일반화 능력을 유지합니다.
+
+## 핵심 내용
+### 방법
+- **핵심 아이디어**: WAM-TTT는 인간 비디오를 흡수 가능한 '메모리'로 간주하며, 자기 지도 비디오 예측 작업을 통해 이를 WAM 내부의 경량 적응형 메모리(키-값 메모리)로 인코딩합니다. 궤적을 직접 모방하지 않습니다.
+- **메타 훈련 단계**: 짝지어진 인간-로봇 데이터(human-robot pairs)를 사용하여 메모리 모듈을 훈련하며, 키-값 메모리 재구성 목표(key-value memory reconstruction objective)를 통해 인간 시연과 로봇 행동을 정렬하여 메모리가 제어 작업에 유용하도록 만듭니다.
+- **테스트 시점 적응**: 주석이 없는 인간 비디오(unlabeled human videos)만으로 메모리를 업데이트할 수 있으며, 사전 훈련된 WAM은 동결(frozen) 상태를 유지합니다. 로봇 동작, 수동 주석, 또는 작업별 미세 조정이 필요 없습니다.
+
+### 아키텍처
+- **기반 모델**: 사전 훈련된 World Action Model(WAM)을 기반으로 하며, 테스트 시점에 매개변수가 완전히 동결됩니다.
+- **적응형 메모리**: 경량 키-값 메모리 모듈로, 자기 지도 비디오 예측을 통해 인간 비디오 정보를 흡수하고 메타 훈련 단계에서 로봇 행동과 정렬됩니다.
+- **훈련 흐름**: 메타 훈련 단계에서는 짝지어진 데이터로 메모리 재구성을 최적화하고, 테스트 시점에는 인간 비디오만으로 메모리를 업데이트하며 추가 감독이 필요 없습니다.
+
+### 실험 설정
+- **작업**: 다양한 조작 작업(diverse manipulation tasks)을 포함하며, 새로운 작업 변형 및 일반화 시나리오를 다룹니다.
+- **기준선**: 문맥 내 인간 비디오 조건(in-context human-video conditioning) 기반 방법과 비교합니다.
+- **평가 지표**: 작업 성공률 및 일반화 능력.
+
+### 주요 결과
+- WAM-TTT는 모든 조작 작업 및 일반화 설정에서 문맥 내 인간 비디오 조건 기준선(in-context human-video conditioning baselines)을 일관되게 능가합니다(consistently outperforms).
+- 로봇 동작이나 수동 주석 없이도 효율적이고 재사용 가능한 안내를 제공하며, 기반 모델의 일반화 능력을 유지합니다.
+
+### 결론
+WAM-TTT는 테스트 시점 훈련과 적응형 메모리를 통해 인간 비디오를 로봇 안내 신호로 성공적으로 변환하며, 추가 로봇 시연이나 미세 조정에 대한 기존 방법의 의존성을 피합니다. 이를 통해 로봇 기반 모델의 유연한 적응을 위한 새로운 패러다임을 제시합니다.

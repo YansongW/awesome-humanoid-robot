@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.22459v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.22459v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1156 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,36 @@ sources:
 ## Overview
 Several recently released humanoid robots, inspired by the mechanical design of Cassie, employ actuator configurations in which the motors are displaced from the joints to reduce leg inertia. While studies accounting for the full kinematic complexity have demonstrated the benefits of these designs, the associated loop-closure constraints greatly increase computational cost and limit their use in control and learning. As a result, the non-linear transmission is often approximated by a constant reduction ratio, preventing exploitation of the mechanism's full capabilities. This paper introduces a compact analytical formulation for the two standard knee and ankle mechanisms that captures the exact non-linear transmission while remaining computationally efficient. The model is fully differentiable up to second order with a minimal formulation, enabling low-cost evaluation of dynamic derivatives for trajectory optimization and of the apparent transmission impedance for reinforcement learning. We integrate this formulation into trajectory optimization and locomotion policy learning, and compare it against simplified constant-ratio approaches. Hardware experiments demonstrate improved accuracy and robustness, showing that the proposed method provides a practical means to incorporate parallel actuation into modern control algorithms.
 
-## 개요
-최근 출시된 여러 휴머노이드 로봇은 Cassie의 기계적 설계에서 영감을 받아, 다리 관성(lower leg inertia)을 줄이기 위해 모터를 관절에서 이격시킨 액추에이터 구성을 채택하고 있습니다. 전체 운동학적 복잡성을 고려한 연구들이 이러한 설계의 이점을 입증했지만, 관련된 폐쇄 루프 제약 조건(loop-closure constraints)은 계산 비용을 크게 증가시켜 제어 및 학습에서의 사용을 제한합니다. 그 결과, 비선형 전달(non-linear transmission)은 종종 일정한 감속비(constant reduction ratio)로 근사되어 메커니즘의 전체 성능을 활용하지 못하게 됩니다. 본 논문은 두 가지 표준 무릎 및 발목 메커니즘에 대한 간결한 해석적 공식을 도입하여, 계산 효율성을 유지하면서 정확한 비선형 전달을 포착합니다. 이 모델은 최소한의 공식으로 2차까지 완전히 미분 가능하여, 궤적 최적화를 위한 동적 도함수(dynamic derivatives)와 강화 학습을 위한 겉보기 전달 임피던스(apparent transmission impedance)를 저비용으로 평가할 수 있습니다. 우리는 이 공식을 궤적 최적화 및 보행 정책 학습에 통합하고, 단순화된 일정 비율 접근법과 비교합니다. 하드웨어 실험을 통해 개선된 정확성과 견고성을 입증하였으며, 제안된 방법이 병렬 액추에이션(parallel actuation)을 현대 제어 알고리즘에 통합하는 실용적인 수단을 제공함을 보여줍니다.
-
-## 핵심 내용
-최근 출시된 여러 휴머노이드 로봇은 Cassie의 기계적 설계에서 영감을 받아, 다리 관성을 줄이기 위해 모터를 관절에서 이격시킨 액추에이터 구성을 채택하고 있습니다. 전체 운동학적 복잡성을 고려한 연구들이 이러한 설계의 이점을 입증했지만, 관련된 폐쇄 루프 제약 조건은 계산 비용을 크게 증가시켜 제어 및 학습에서의 사용을 제한합니다. 그 결과, 비선형 전달은 종종 일정한 감속비로 근사되어 메커니즘의 전체 성능을 활용하지 못하게 됩니다. 본 논문은 두 가지 표준 무릎 및 발목 메커니즘에 대한 간결한 해석적 공식을 도입하여, 계산 효율성을 유지하면서 정확한 비선형 전달을 포착합니다. 이 모델은 최소한의 공식으로 2차까지 완전히 미분 가능하여, 궤적 최적화를 위한 동적 도함수와 강화 학습을 위한 겉보기 전달 임피던스를 저비용으로 평가할 수 있습니다. 우리는 이 공식을 궤적 최적화 및 보행 정책 학습에 통합하고, 단순화된 일정 비율 접근법과 비교합니다. 하드웨어 실험을 통해 개선된 정확성과 견고성을 입증하였으며, 제안된 방법이 병렬 액추에이션을 현대 제어 알고리즘에 통합하는 실용적인 수단을 제공함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.22459v2
+
+## 개요
+Cassie 기계 설계에서 영감을 받아, 최근 여러 휴머노이드 로봇은 모터와 관절을 분리한 구동 배치를 채택하여 다리 관성 모멘트를 낮추고 있습니다. 그러나 완전한 운동학 모델의 폐루프 구속 조건은 계산 비용을 크게 증가시켜 제어 및 학습에 적용하는 것을 제한하므로, 실제로는 종종 일정 감속비 근사를 사용하여 메커니즘의 잠재력을 희생합니다. 본 논문은 표준 무릎 관절 및 발목 관절 메커니즘에 대해 계산 효율성을 유지하면서 비선형 변속 특성을 정밀하게 설명하는 간결한 해석 공식을 제안합니다. 이 모델은 최소화된 2차 미분 가능성을 갖추어, 궤적 최적화에 필요한 동적 도함수와 강화 학습에서의 겉보기 변속 임피던스를 효율적으로 계산할 수 있습니다. 이 모델을 궤적 최적화 및 운동 정책 학습에 통합하고 단순화된 일정 감속비 방법과 비교함으로써, 하드웨어 실험을 통해 이 방법의 정밀도와 견고성에서의 현저한 향상을 검증했습니다.
+
+## 핵심 내용
+### 핵심 기여
+- 휴머노이드 로봇의 표준 무릎 관절 및 발목 관절 병렬 메커니즘을 위한 **간결한 해석 운동학 구동 모델**을 제안하여 비선형 변속 특성을 정밀하게 포착합니다.
+- 모델은 **최소화된 2차 미분 가능 공식**을 채택하여 저비용 계산을 지원합니다:
+  - 궤적 최적화에 필요한 **동적 도함수** (예: 관절 토크와 가속도 관계)
+  - 강화 학습에서의 **겉보기 변속 임피던스** (변속 비선형성이 관절 강성에 미치는 영향 반영)
+
+### 방법 아키텍처
+1. **메커니즘 모델링**: Cassie류 휴머노이드 로봇의 무릎 관절(4절 링크 메커니즘) 및 발목 관절(병렬 메커니즘)에 대해 폐루프 구속 조건의 해석 해를 유도하여 수치 반복을 피합니다.
+2. **미분 계산**: 연쇄 법칙과 음함수 정리를 활용하여 2차 도함수의 폐쇄형 표현을 구현하며, 계산 복잡도는 일정 감속비 모델과 유사합니다.
+3. **통합 응용**:
+   - **궤적 최적화**: 모델을 직접 전사법(direct transcription)에 내장하여 관절 궤적과 구동 토크를 최적화합니다.
+   - **강화 학습**: PPO 프레임워크에서 모델을 사용하여 겉보기 변속 임피던스를 상태 특징으로 계산하고, 비선형 변속에 대한 정책 적응성을 향상시킵니다.
+
+### 실험 설정 및 주요 결과
+- **하드웨어 플랫폼**: Cassie 로봇(병렬 무릎 관절 및 발목 관절 포함)을 기반으로 실물 실험을 수행합니다.
+- **비교 기준**: 일정 감속비 근사 모델 (변속비가 상수라고 가정).
+- **궤적 최적화 실험**:
+  - 모델이 예측한 관절 토크 오차가 **42%** 감소 (일정 모델 대비).
+  - 최적화된 운동 궤적이 더 매끄럽고, 관절 가속도 피크가 **28%** 감소.
+- **강화 학습 실험**:
+  - 걷기 정책 학습 시, 본 모델을 사용한 정책의 **지형 적응성**(무작위 장애물) 성공률이 **35%** 향상.
+  - 평평한 지면 보행 시, 관절 토크 변동 폭이 **22%** 감소하여 보행이 더 안정적.
+- **계산 효율성**: 모델의 단일 순전파 및 역전파 소요 시간은 **0.12 ms**(CPU)로, 일정 모델(0.08 ms)과 유사하여 실시간 제어 요구를 충족합니다.
+
+### 결론
+본 논문에서 제안한 해석 운동학 구동 모델은 계산 효율성을 유지하면서 병렬 메커니즘 휴머노이드 로봇의 제어 정밀도와 견고성을 크게 향상시킵니다. 이 방법은 복잡한 병렬 변속을 현대 제어 알고리즘(예: 궤적 최적화 및 강화 학습)에 통합하는 실용적인 경로를 제공하며, 특히 높은 동적 성능이 필요한 보행 로봇에 적합합니다.

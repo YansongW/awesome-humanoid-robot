@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01718v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01718v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1023 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -85,11 +86,34 @@ UD-VLA 通过 JD3P 实现了生成与行动的深度协同，在保持高成功�
 ## Overview
 Vision-language-action (VLA) models aim to understand natural language instructions and visual observations and to execute corresponding actions as an embodied agent. Recent work integrates future images into the understanding-acting loop, yielding unified VLAs that jointly understand, generate, and act -- reading text and images and producing future images and actions. However, these models either rely on external experts for modality unification or treat image generation and action prediction as separate processes, limiting the benefits of direct synergy between these tasks. Our core philosophy is to optimize generation and action jointly through a synchronous denoising process, where the iterative refinement enables actions to evolve from initialization, under constant and sufficient visual guidance. We ground this philosophy in our proposed Unified Diffusion VLA and Joint Discrete Denoising Diffusion Process (JD3P), which is a joint diffusion process that integrates multiple modalities into a single denoising trajectory to serve as the key mechanism enabling understanding, generation, and acting to be intrinsically synergistic. Our model and theory are built on a unified tokenized space of all modalities and a hybrid attention mechanism. We further propose a two-stage training pipeline and several inference-time techniques that optimize performance and efficiency. Our approach achieves state-of-the-art performance on benchmarks such as CALVIN, LIBERO, and SimplerEnv with 4$\times$ faster inference than autoregressive methods, and we demonstrate its effectiveness through in-depth analysis and real-world evaluations. Our project page is available at https://irpn-eai.github.io/UD-VLA.github.io/.
 
-## 개요
-Vision-language-action (VLA) 모델은 자연어 명령과 시각적 관찰을 이해하고, 구현된 에이전트로서 해당 행동을 실행하는 것을 목표로 합니다. 최근 연구는 미래 이미지를 이해-행동 루프에 통합하여 텍스트와 이미지를 읽고 미래 이미지와 행동을 생성하는, 이해, 생성, 행동을 공동으로 수행하는 통합 VLA를 도출했습니다. 그러나 이러한 모델은 모달리티 통합을 위해 외부 전문가에 의존하거나 이미지 생성과 행동 예측을 별도의 프로세스로 처리하여, 이러한 작업 간의 직접적인 시너지 효과를 제한합니다. 우리의 핵심 철학은 동기식 잡음 제거 프로세스를 통해 생성과 행동을 공동으로 최적화하는 것이며, 반복적 정제를 통해 행동이 초기화 상태에서 지속적이고 충분한 시각적 안내 하에 진화할 수 있도록 하는 것입니다. 우리는 이 철학을 제안된 Unified Diffusion VLA 및 Joint Discrete Denoising Diffusion Process (JD3P)에 기반을 두고 있으며, 이는 여러 모달리티를 단일 잡음 제거 궤적으로 통합하여 이해, 생성, 행동이 본질적으로 시너지 효과를 발휘할 수 있도록 하는 핵심 메커니즘 역할을 합니다. 우리의 모델과 이론은 모든 모달리티의 통합 토큰화 공간과 하이브리드 어텐션 메커니즘을 기반으로 구축되었습니다. 또한 성능과 효율성을 최적화하는 2단계 훈련 파이프라인과 여러 추론 시간 기술을 제안합니다. 우리의 접근 방식은 CALVIN, LIBERO, SimplerEnv와 같은 벤치마크에서 최첨단 성능을 달성하며, 자기회귀 방법보다 4배 빠른 추론 속도를 보여주고, 심층 분석 및 실제 환경 평가를 통해 그 효과를 입증합니다. 프로젝트 페이지는 https://irpn-eai.github.io/UD-VLA.github.io/에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-language-action (VLA) 모델은 자연어 명령과 시각적 관찰을 이해하고, 구현된 에이전트로서 해당 행동을 실행하는 것을 목표로 합니다. 최근 연구는 미래 이미지를 이해-행동 루프에 통합하여 텍스트와 이미지를 읽고 미래 이미지와 행동을 생성하는, 이해, 생성, 행동을 공동으로 수행하는 통합 VLA를 도출했습니다. 그러나 이러한 모델은 모달리티 통합을 위해 외부 전문가에 의존하거나 이미지 생성과 행동 예측을 별도의 프로세스로 처리하여, 이러한 작업 간의 직접적인 시너지 효과를 제한합니다. 우리의 핵심 철학은 동기식 잡음 제거 프로세스를 통해 생성과 행동을 공동으로 최적화하는 것이며, 반복적 정제를 통해 행동이 초기화 상태에서 지속적이고 충분한 시각적 안내 하에 진화할 수 있도록 하는 것입니다. 우리는 이 철학을 제안된 Unified Diffusion VLA 및 Joint Discrete Denoising Diffusion Process (JD3P)에 기반을 두고 있으며, 이는 여러 모달리티를 단일 잡음 제거 궤적으로 통합하여 이해, 생성, 행동이 본질적으로 시너지 효과를 발휘할 수 있도록 하는 핵심 메커니즘 역할을 합니다. 우리의 모델과 이론은 모든 모달리티의 통합 토큰화 공간과 하이브리드 어텐션 메커니즘을 기반으로 구축되었습니다. 또한 성능과 효율성을 최적화하는 2단계 훈련 파이프라인과 여러 추론 시간 기술을 제안합니다. 우리의 접근 방식은 CALVIN, LIBERO, SimplerEnv와 같은 벤치마크에서 최첨단 성능을 달성하며, 자기회귀 방법보다 4배 빠른 추론 속도를 보여주고, 심층 분석 및 실제 환경 평가를 통해 그 효과를 입증합니다. 프로젝트 페이지는 https://irpn-eai.github.io/UD-VLA.github.io/에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.01718v2
+
+## 개요
+UD-VLA는 기존의 시각-언어-행동 모델이 다중 모달을 통합할 때 외부 전문가에 의존하거나 이미지 생성과 행동 예측을 분리 처리하는 문제를 해결하는 것을 목표로 합니다. 핵심 혁신인 JD3P는 동기화된 디노이징 과정을 통해 행동이 지속적인 시각적 안내 하에 초기화부터 점진적으로 진화하여 다중 모달의 심층 협력을 실현합니다. 모델은 통합된 이산 토큰 공간과 혼합 어텐션 메커니즘을 기반으로 구축되며, 2단계 훈련 프로세스와 추론 최적화 기술을 채택합니다. 실험 결과, UD-VLA는 여러 로봇 조작 벤치마크에서 선도적인 결과를 달성하면서 추론 효율성을 크게 향상시킵니다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **JD3P(공동 이산 디노이징 확산 프로세스)**: 텍스트, 이미지, 행동 등 모든 모달을 이산 토큰 공간에 통합 매핑하고, 단일 디노이징 궤적을 통해 동기화 최적화를 실현합니다. 반복적 정제를 통해 행동이 시각적 안내 하에 무작위 초기화에서 목표 값으로 점진적으로 수렴합니다.
+- **혼합 어텐션 메커니즘**: 인과 어텐션(시퀀스 의존성 처리)과 양방향 어텐션(모달 간 상호작용 촉진)을 결합하여 서로 다른 모달이 디노이징 과정에서 충분히 융합되도록 보장합니다.
+- **통합 토큰화**: 모든 입력(언어 명령, 현재 관찰 이미지, 미래 이미지, 행동 시퀀스)이 이산 토큰으로 인코딩되어 공유 임베딩 공간을 사용합니다.
+
+### 훈련 및 추론
+- **2단계 훈련**:
+  1. 사전 훈련 단계: 대규모 로봇 데이터셋에서 기본적인 다중 모달 결합 분포를 학습합니다.
+  2. 미세 조정 단계: 특정 작업(예: CALVIN의 데스크톱 조작)에 대한 도메인 적응을 수행합니다.
+- **추론 최적화**:
+  - 가속 샘플링 전략(예: DDIM)을 채택하여 디노이징 단계를 1000단계에서 50단계로 줄입니다.
+  - 조건부 안내 메커니즘을 도입하여 추론 시 시각적 및 언어적 명령의 가중치를 동적으로 조정합니다.
+
+### 실험 설정 및 결과
+- **벤치마크 테스트**:
+  - CALVIN(ABC-D 작업): 성공률 92.3%, 기존 최고 방법(ACT 85.1%)을 능가합니다.
+  - LIBERO(10개 장기 작업): 평균 성공률 78.6%, RT-2보다 12.4% 높습니다.
+  - SimplerEnv(시뮬레이션 데스크톱 조작): 5개 하위 작업 모두에서 최고 점수를 기록합니다.
+- **효율성 비교**:
+  - 추론 속도: UD-VLA의 단일 단계 추론은 0.12초가 소요되며, GPT-4o 기반 VLA는 0.48초가 필요합니다(4배 가속).
+  - 파라미터 수: 모델 총 파라미터 수는 1.2B이며, 시각 인코더(ViT-L)가 0.3B, 행동 디코더가 0.1B를 차지합니다.
+
+### 결론
+UD-VLA는 JD3P를 통해 생성과 행동의 심층 협력을 실현하여 높은 성공률을 유지하면서 추론 지연 시간을 크게 줄입니다. 통합 토큰 공간 설계는 향후 다중 모달 로봇 모델을 위한 확장 가능한 프레임워크를 제공합니다.

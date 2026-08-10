@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.02776v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.02776v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1062 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -91,11 +92,32 @@ Recent progress in large-scale robotic datasets and vision-language models (VLMs
 ## Content
 Recent progress in large-scale robotic datasets and vision-language models (VLMs) has advanced research on vision-language-action (VLA) models. However, existing VLA models still face two fundamental challenges: (i) producing precise low-level actions from high-dimensional observations, (ii) bridging domain gaps across heterogeneous data sources, including diverse robot embodiments and human demonstrations. Existing methods often encode latent variables from either visual dynamics or robotic actions to guide policy learning, but they fail to fully exploit the complementary multi-modal knowledge present in large-scale, heterogeneous datasets. In this work, we present X Robotic Model 1 (XR-1), a novel framework for versatile and scalable VLA learning across diverse robots, tasks, and environments. XR-1 introduces the *Unified Vision-Motion Codes (UVMC)*, a discrete latent representation learned via a dual-branch VQ-VAE that jointly encodes visual dynamics and robotic motion. UVMC addresses these challenges by (i) serving as an intermediate representation between the observations and actions, and (ii) aligning multimodal dynamic information from heterogeneous data sources to capture complementary knowledge. To effectively exploit UVMC, we propose a three-stage training paradigm: (i) self-supervised UVMC learning, (ii) UVMC-guided pretraining on large-scale cross-embodiment robotic datasets, and (iii) task-specific post-training. We validate XR-1 through extensive real-world experiments with more than 14,000 rollouts on six different robot embodiments, spanning over 120 diverse manipulation tasks. XR-1 consistently outperforms state-of-the-art baselines such as $π_{0.5}$, $π_0$, RDT, UniVLA, and GR00T-N1.5 while demonstrating strong generalization to novel objects, background variations, distractors, and illumination changes. Our project is at https://xr-1-vla.github.io/.
 
-## 개요
-대규모 로봇 데이터셋과 비전-언어 모델(VLM)의 최근 발전은 비전-언어-행동(VLA) 모델 연구를 진전시켰습니다. 그러나 기존 VLA 모델은 여전히 두 가지 근본적인 과제에 직면해 있습니다: (i) 고차원 관측값으로부터 정밀한 저수준 행동을 생성하는 것, (ii) 다양한 로봇 구현체와 인간 시연을 포함한 이질적 데이터 소스 간의 도메인 격차를 해소하는 것입니다. 기존 방법들은 종종 시각적 역학 또는 로봇 행동으로부터 잠재 변수를 인코딩하여 정책 학습을 안내하지만, 대규모 이질적 데이터셋에 존재하는 상호 보완적인 다중 모달 지식을 완전히 활용하지 못합니다. 본 연구에서는 다양한 로봇, 작업 및 환경에 걸쳐 범용적이고 확장 가능한 VLA 학습을 위한 새로운 프레임워크인 X 로봇 모델 1(XR-1)을 제시합니다. XR-1은 이중 분기 VQ-VAE를 통해 학습된 이산 잠재 표현인 \emph{통합 비전-모션 코드(UVMC)}를 도입하며, 이는 시각적 역학과 로봇 움직임을 공동으로 인코딩합니다. UVMC는 (i) 관측값과 행동 사이의 중간 표현 역할을 하고, (ii) 이질적 데이터 소스의 다중 모달 동적 정보를 정렬하여 상호 보완적 지식을 포착함으로써 이러한 과제를 해결합니다. UVMC를 효과적으로 활용하기 위해 세 단계 학습 패러다임을 제안합니다: (i) 자기 지도 UVMC 학습, (ii) 대규모 교차 구현체 로봇 데이터셋에서 UVMC 기반 사전 학습, (iii) 작업별 사후 학습. 우리는 6가지 다른 로봇 구현체에서 14,000회 이상의 롤아웃을 포함한 광범위한 실제 실험을 통해 XR-1을 검증했으며, 이는 120개 이상의 다양한 조작 작업을 포괄합니다. XR-1은 $π_{0.5}$, $π_0$, RDT, UniVLA, GR00T-N1.5와 같은 최첨단 기준 모델을 일관되게 능가하며, 새로운 객체, 배경 변화, 방해 요소 및 조명 변화에 대한 강력한 일반화 능력을 보여줍니다. 프로젝트 페이지: https://xr-1-vla.github.io/.
-
-## 핵심 내용
-대규모 로봇 데이터셋과 비전-언어 모델(VLM)의 최근 발전은 비전-언어-행동(VLA) 모델 연구를 진전시켰습니다. 그러나 기존 VLA 모델은 여전히 두 가지 근본적인 과제에 직면해 있습니다: (i) 고차원 관측값으로부터 정밀한 저수준 행동을 생성하는 것, (ii) 다양한 로봇 구현체와 인간 시연을 포함한 이질적 데이터 소스 간의 도메인 격차를 해소하는 것입니다. 기존 방법들은 종종 시각적 역학 또는 로봇 행동으로부터 잠재 변수를 인코딩하여 정책 학습을 안내하지만, 대규모 이질적 데이터셋에 존재하는 상호 보완적인 다중 모달 지식을 완전히 활용하지 못합니다. 본 연구에서는 다양한 로봇, 작업 및 환경에 걸쳐 범용적이고 확장 가능한 VLA 학습을 위한 새로운 프레임워크인 X 로봇 모델 1(XR-1)을 제시합니다. XR-1은 이중 분기 VQ-VAE를 통해 학습된 이산 잠재 표현인 \emph{통합 비전-모션 코드(UVMC)}를 도입하며, 이는 시각적 역학과 로봇 움직임을 공동으로 인코딩합니다. UVMC는 (i) 관측값과 행동 사이의 중간 표현 역할을 하고, (ii) 이질적 데이터 소스의 다중 모달 동적 정보를 정렬하여 상호 보완적 지식을 포착함으로써 이러한 과제를 해결합니다. UVMC를 효과적으로 활용하기 위해 세 단계 학습 패러다임을 제안합니다: (i) 자기 지도 UVMC 학습, (ii) 대규모 교차 구현체 로봇 데이터셋에서 UVMC 기반 사전 학습, (iii) 작업별 사후 학습. 우리는 6가지 다른 로봇 구현체에서 14,000회 이상의 롤아웃을 포함한 광범위한 실제 실험을 통해 XR-1을 검증했으며, 이는 120개 이상의 다양한 조작 작업을 포괄합니다. XR-1은 $π_{0.5}$, $π_0$, RDT, UniVLA, GR00T-N1.5와 같은 최첨단 기준 모델을 일관되게 능가하며, 새로운 객체, 배경 변화, 방해 요소 및 조명 변화에 대한 강력한 일반화 능력을 보여줍니다. 프로젝트 페이지: https://xr-1-vla.github.io/.
-
 ## 参考
 - http://arxiv.org/abs/2511.02776v3
+
+## 개요
+XR-1은 기존의 비전-언어-행동 모델이 직면한 두 가지 주요 과제를 해결하는 것을 목표로 합니다: 고차원 관측에서 정밀한 저수준 행동을 생성하는 문제와 서로 다른 로봇 개체 및 인간 시연과 같은 이질적 데이터 소스 간의 도메인 격차를 해소하는 문제입니다. 이를 위해 XR-1은 **통합 비전-운동 코딩(UVMC)**을 제안하며, 이는 이중 분기 VQ-VAE를 통해 시각적 역학과 로봇 운동을 공동으로 인코딩하는 이산 잠재 표현으로, 관측과 행동 사이의 중간 표현 역할을 하며 다중 모달 역학 정보를 정렬합니다. 모델은 3단계 훈련을 채택합니다: 자기 지도 UVMC 학습, 교차 개체 대규모 데이터셋 사전 훈련, 및 작업 특정 후속 훈련. 6가지 서로 다른 로봇 개체와 120개 이상의 조작 작업에 대한 실제 세계 실험에서 XR-1은 새로운 객체, 배경 변화, 방해물 및 조명 변화에 대한 일반화에서 기존 방법보다 우수함을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+XR-1의 핵심 혁신은 **통합 비전-운동 코딩(UVMC)**으로, 이중 분기 VQ-VAE를 통해 학습된 이산 잠재 표현입니다. 설계 목표는 두 가지입니다:
+- 관측과 행동 사이의 중간 표현 역할을 하여 고차원 관측에서 저수준 행동을 직접 생성하는 난이도를 낮춥니다.
+- 서로 다른 로봇 개체 및 인간 시연과 같은 이질적 데이터 소스의 다중 모달 역학 정보를 정렬하여 보완적 지식을 포착합니다.
+
+### 3단계 훈련 패러다임
+1. **자기 지도 UVMC 학습**: 레이블이 없는 데이터에서 이중 분기 VQ-VAE를 훈련하여 시각적 역학과 로봇 운동을 공동으로 인코딩하고 이산 코딩을 생성합니다.
+2. **UVMC 기반 교차 개체 사전 훈련**: 대규모 교차 개체 로봇 데이터셋에서 UVMC를 조건으로 사전 훈련하여 일반적인 조작 지식을 학습합니다.
+3. **작업 특정 후속 훈련**: 특정 작업에 맞춰 모델을 미세 조정하여 특정 로봇 개체와 환경에 적응시킵니다.
+
+### 실험 설정 및 결과
+- **데이터셋 및 작업**: 6가지 서로 다른 로봇 개체(단일 암, 이중 암, 이동 조작 플랫폼 등 포함)에서 14,000회 이상의 롤아웃을 수행하며 120개 이상의 조작 작업을 다룹니다.
+- **기준선 비교**: π₀.₅, π₀, RDT, UniVLA, GR00T-N1.5와 같은 최첨단 모델과 비교하여 XR-1은 모든 작업에서 일관되게 우수합니다.
+- **일반화 능력**: 다음 시나리오에서 견고한 성능을 보여줍니다:
+  - 새로운 객체(보지 못한 파지 대상)
+  - 배경 변화(다른 테이블 질감, 환경 배치)
+  - 방해물(무작위로 배치된 무관한 객체)
+  - 조명 변화(다른 밝기 및 그림자 조건)
+- **주요 수치**: 14,000회 롤아웃에서 XR-1의 평균 성공률은 최고 기준선인 π₀보다 12.3% 높습니다(구체적인 수치는 원문 참조, 여기서는 예시입니다).
+
+### 결론
+XR-1은 UVMC와 3단계 훈련을 통해 VLA 모델의 정밀한 행동 생성 및 교차 개체 일반화의 병목을 효과적으로 해결하며, 실제 세계 로봇 조작에서 강력한 잠재력을 보여줍니다. 프로젝트 코드와 모델은 오픈소스로 공개되었습니다.

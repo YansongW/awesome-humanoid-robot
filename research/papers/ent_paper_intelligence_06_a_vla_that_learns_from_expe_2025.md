@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.14759v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.14759v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (935 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,32 @@ RECAP 方法通过优势条件策略的强化学习，有效利用异构数据�
 ## Overview
 We study how vision-language-action (VLA) models can improve through real-world deployments via reinforcement learning (RL). We present a general-purpose method, RL with Experience and Corrections via Advantage-conditioned Policies (RECAP), that provides for RL training of VLAs via advantage conditioning. Our method incorporates heterogeneous data into the self-improvement process, including demonstrations, data from on-policy collection, and expert teleoperated interventions provided during autonomous execution. RECAP starts by pre-training a generalist VLA with offline RL, which we call $π^{*}_{0.6}$, that can then be specialized to attain high performance on downstream tasks through on-robot data collection. We show that the $π^{*}_{0.6}$ model trained with the full RECAP method can fold laundry in real homes, reliably assemble boxes, and make espresso drinks using a professional espresso machine. On some of the hardest tasks, RECAP more than doubles task throughput and roughly halves the task failure rate.
 
-## 개요
-우리는 강화 학습(RL)을 통해 실제 배포 환경에서 비전-언어-행동(VLA) 모델이 어떻게 개선될 수 있는지 연구합니다. 우리는 이점 조건화 정책을 통한 경험 및 수정 기반 RL(RECAP)이라는 범용 방법을 제시하며, 이는 이점 조건화를 통해 VLA의 RL 훈련을 가능하게 합니다. 우리의 방법은 시연, 온-폴리시 수집 데이터, 자율 실행 중 제공되는 전문가 원격 조작 개입 등 이질적인 데이터를 자기 개선 과정에 통합합니다. RECAP은 오프라인 RL로 일반주의 VLA를 사전 훈련하는 것으로 시작하며, 이를 $π^{*}_{0.6}$라고 부릅니다. 이 모델은 로봇 데이터 수집을 통해 하위 작업에서 높은 성능을 달성하도록 특화될 수 있습니다. 우리는 전체 RECAP 방법으로 훈련된 $π^{*}_{0.6}$ 모델이 실제 가정에서 세탁물을 접고, 상자를 안정적으로 조립하며, 전문 에스프레소 머신을 사용해 에스프레소 음료를 만들 수 있음을 보여줍니다. 가장 어려운 작업 중 일부에서는 RECAP이 작업 처리량을 두 배 이상 늘리고 작업 실패율을 대략 절반으로 줄입니다.
-
-## 핵심 내용
-우리는 강화 학습(RL)을 통해 실제 배포 환경에서 비전-언어-행동(VLA) 모델이 어떻게 개선될 수 있는지 연구합니다. 우리는 이점 조건화 정책을 통한 경험 및 수정 기반 RL(RECAP)이라는 범용 방법을 제시하며, 이는 이점 조건화를 통해 VLA의 RL 훈련을 가능하게 합니다. 우리의 방법은 시연, 온-폴리시 수집 데이터, 자율 실행 중 제공되는 전문가 원격 조작 개입 등 이질적인 데이터를 자기 개선 과정에 통합합니다. RECAP은 오프라인 RL로 일반주의 VLA를 사전 훈련하는 것으로 시작하며, 이를 $π^{*}_{0.6}$라고 부릅니다. 이 모델은 로봇 데이터 수집을 통해 하위 작업에서 높은 성능을 달성하도록 특화될 수 있습니다. 우리는 전체 RECAP 방법으로 훈련된 $π^{*}_{0.6}$ 모델이 실제 가정에서 세탁물을 접고, 상자를 안정적으로 조립하며, 전문 에스프레소 머신을 사용해 에스프레소 음료를 만들 수 있음을 보여줍니다. 가장 어려운 작업 중 일부에서는 RECAP이 작업 처리량을 두 배 이상 늘리고 작업 실패율을 대략 절반으로 줄입니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.14759v2
+
+## 개요
+본 논문은 강화 학습을 통해 비전-언어-행동 모델이 실제 세계 배포에서 지속적으로 개선되는 방법을 연구한다. 저자들은 RECAP 방법을 제안하는데, 이는 이점 조건화 정책을 활용한 강화 학습을 위한 범용 훈련 프레임워크로, 시연 데이터, 온라인 정책 수집 데이터, 자율 실행 중 전문가 원격 조작 개입 데이터를 통합한다. 이 방법은 먼저 오프라인 강화 학습으로 범용 VLA 모델 π0.6*을 사전 훈련한 다음, 로봇 데이터 수집을 통해 특정 하위 작업에서 높은 성능을 달성하게 한다. 실험 결과, RECAP으로 훈련된 π0.6*은 실제 가정에서 옷을 개고, 상자를 안정적으로 조립하며, 전문 커피 머신으로 에스프레소를 추출할 수 있다. 가장 어려운 작업에서 RECAP은 작업 처리량을 두 배 이상 향상시키고 실패율을 약 절반으로 줄였다.
+
+## 핵심 내용
+### 방법 개요
+- **RECAP 프레임워크**: "이점 조건화 정책을 통한 경험 및 교정 기반 강화 학습"(RL with Experience and Corrections via Advantage-conditioned Policies)의 약자로, 범용 강화 학습 방법이다.
+- **데이터 통합**: 세 가지 이질적 데이터를 자기 개선 과정에 통합한다:
+  - 시연 데이터(demonstrations)
+  - 온라인 정책 수집 데이터(on-policy collection)
+  - 자율 실행 중 전문가 원격 조작 개입 데이터(expert teleoperated interventions)
+
+### 훈련 절차
+1. **사전 훈련 단계**: 오프라인 강화 학습을 사용하여 범용 VLA 모델을 사전 훈련하며, 이를 π0.6*이라고 한다.
+2. **전문화 단계**: 로봇 데이터 수집을 통해 모델이 특정 하위 작업에서 높은 성능을 달성하게 한다.
+
+### 실험 설정 및 결과
+- **작업 시나리오**:
+  - 실제 가정에서 옷 개기
+  - 상자 안정적으로 조립하기
+  - 전문 커피 머신으로 에스프레소 추출하기
+- **주요 성능 지표**:
+  - 가장 어려운 작업에서 RECAP은 작업 처리량을 두 배 이상 향상시킨다(more than doubles task throughput)
+  - 실패율을 약 절반으로 줄인다(roughly halves the task failure rate)
+
+### 결론
+RECAP 방법은 이점 조건화 정책의 강화 학습을 통해 이질적 데이터를 효과적으로 활용하여 VLA 모델이 실제 세계 배포에서 상당한 성능 향상을 달성하게 하며, 특히 복잡한 조작 작업에서 강력한 자기 개선 능력을 보여준다.

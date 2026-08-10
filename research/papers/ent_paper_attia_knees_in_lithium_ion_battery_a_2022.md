@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2201.02891v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2201.02891v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (774 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,32 @@ theoretical_depth:
 ## Overview
 Lithium-ion batteries can last many years but sometimes exhibit rapid, nonlinear degradation that severely limits battery lifetime. In this work, we review prior work on "knees" in lithium-ion battery aging trajectories. We first review definitions for knees and three classes of "internal state trajectories" (termed snowball, hidden, and threshold trajectories) that can cause a knee. We then discuss six knee "pathways", including lithium plating, electrode saturation, resistance growth, electrolyte and additive depletion, percolation-limited connectivity, and mechanical deformation -- some of which have internal state trajectories with signals that are electrochemically undetectable. We also identify key design and usage sensitivities for knees. Finally, we discuss challenges and opportunities for knee modeling and prediction. Our findings illustrate the complexity and subtlety of lithium-ion battery degradation and can aid both academic and industrial efforts to improve battery lifetime.
 
-## 개요
-리튬이온 배터리는 수년간 지속될 수 있지만, 때로는 배터리 수명을 심각하게 제한하는 급격하고 비선형적인 열화를 보입니다. 본 연구에서는 리튬이온 배터리 노화 궤적에서의 "니(knee)"에 대한 선행 연구를 검토합니다. 먼저 니의 정의와 니를 유발할 수 있는 세 가지 유형의 "내부 상태 궤적"(스노우볼, 히든, 임계값 궤적이라고 함)을 검토합니다. 그런 다음 리튬 도금, 전극 포화, 저항 증가, 전해질 및 첨가제 고갈, 퍼콜레이션 제한 연결성, 기계적 변형을 포함한 여섯 가지 니 "경로"를 논의합니다. 이 중 일부는 전기화학적으로 감지할 수 없는 신호를 가진 내부 상태 궤적을 포함합니다. 또한 니에 대한 주요 설계 및 사용 민감도를 식별합니다. 마지막으로 니 모델링 및 예측의 과제와 기회를 논의합니다. 본 연구 결과는 리튬이온 배터리 열화의 복잡성과 미묘함을 보여주며, 배터리 수명 개선을 위한 학계 및 산업계의 노력에 도움이 될 수 있습니다.
-
-## 핵심 내용
-리튬이온 배터리는 수년간 지속될 수 있지만, 때로는 배터리 수명을 심각하게 제한하는 급격하고 비선형적인 열화를 보입니다. 본 연구에서는 리튬이온 배터리 노화 궤적에서의 "니(knee)"에 대한 선행 연구를 검토합니다. 먼저 니의 정의와 니를 유발할 수 있는 세 가지 유형의 "내부 상태 궤적"(스노우볼, 히든, 임계값 궤적이라고 함)을 검토합니다. 그런 다음 리튬 도금, 전극 포화, 저항 증가, 전해질 및 첨가제 고갈, 퍼콜레이션 제한 연결성, 기계적 변형을 포함한 여섯 가지 니 "경로"를 논의합니다. 이 중 일부는 전기화학적으로 감지할 수 없는 신호를 가진 내부 상태 궤적을 포함합니다. 또한 니에 대한 주요 설계 및 사용 민감도를 식별합니다. 마지막으로 니 모델링 및 예측의 과제와 기회를 논의합니다. 본 연구 결과는 리튬이온 배터리 열화의 복잡성과 미묘함을 보여주며, 배터리 수명 개선을 위한 학계 및 산업계의 노력에 도움이 될 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2201.02891v1
+
+## 개요
+본 리뷰는 먼저 급변점(knee point)의 정의를 명확히 하고, 급변점을 유발할 수 있는 세 가지 내부 상태 궤적(눈덩이형, 은닉형, 임계값형)을 정리하였다. 이후 리튬 석출, 전극 포화, 저항 증가, 전해질 및 첨가제 소모, 침투 한계에 따른 연결성, 기계적 변형 등 여섯 가지 급변점 경로를 상세히 분석하였으며, 그중 일부 경로의 내부 상태 신호는 전기화학적으로 감지할 수 없다. 연구는 또한 급변점에 영향을 미치는 주요 설계 및 사용 민감도를 식별하고, 모델링 및 예측의 난점과 기회를 논의하였다.
+
+## 핵심 내용
+### 핵심 정의 및 분류
+- **급변점 정의**: 리튬이온 배터리 노화 궤적에서 나타나는 빠르고 비선형적인 열화 단계로, 배터리 수명을 심각하게 단축시킨다.
+- **내부 상태 궤적**: 세 가지 유형으로 분류됨:
+  - **눈덩이 궤적**: 열화가 스스로 가속되며, 예를 들어 리튬 석출이 연쇄 반응을 유발한다.
+  - **은닉 궤적**: 내부 상태는 변화하지만 외부 전압/용량 신호에는 경고가 나타나지 않는다.
+  - **임계값 궤적**: 임계점에 도달한 후 갑작스러운 열화가 발생한다(예: 전극 포화도).
+
+### 여섯 가지 열화 경로
+1. **리튬 석출**: 음극 표면에 금속 리튬이 석출되어 용량의 비가역적 손실을 초래한다.
+2. **전극 포화**: 양극 활물질이 리튬 삽입 한계에 도달하여 구조적 응력을 유발한다.
+3. **저항 증가**: SEI 피막 두께 증가 또는 전해질 분해로 인해 내부 저항이 상승한다.
+4. **전해질 및 첨가제 소모**: 핵심 성분이 고갈된 후 부반응이 통제 불능 상태가 된다.
+5. **침투 한계에 따른 연결성**: 전도 네트워크가 단절되어 활물질이 연결을 잃는다.
+6. **기계적 변형**: 전극 입자의 균열 또는 박리로 인해 열화가 가속된다.
+
+### 주요 발견
+- **감지 불가능성**: 일부 경로(예: 은닉 궤적)의 초기 신호는 일반적인 전기화학적 수단(예: 전압 곡선)으로 식별할 수 없다.
+- **민감도 요인**: 급변점 발생 시점은 온도, 충방전 배율(C-rate), 차단 전압 및 전극 설계(예: N/P 비율)에 의해 크게 영향을 받는다.
+- **예측 과제**: 기존 모델은 비선형 급변점을 포착하기 어려우며, 다물리장 시뮬레이션과 데이터 기반 방법을 결합해야 한다.
+
+### 결론
+본 리뷰는 리튬이온 배터리 열화의 복잡성과 은밀성을 밝혀내며, 학계와 산업계가 배터리 수명을 연장하는 데 체계적인 경로 분류와 예측 방향을 제공한다.

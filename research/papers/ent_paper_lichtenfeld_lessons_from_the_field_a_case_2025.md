@@ -42,8 +42,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.23246v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.23246v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (591 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,24 @@ theoretical_depth:
 ## Overview
 Incidents in chemical plants can pose a high level of risk and harsh environments for first responders. Contamination and explosion hazards can deny human access to the affected infrastructure, underscoring the need for capable robot systems. This field report documents the successful deployment of a robotic task force to neutralize an explosive gas hazard at a chemical plant after a fire incident. An Unmanned Ground Vehicle (UGV) with a custom manipulation tool opened a critical valve under hazardous conditions, averting the threat of a large-scale explosion. We provide insights into robot deployment and use the mission results to highlight both the importance of rescue robotics and limitations of using research platforms in real emergency deployments, such as communication constraints and the need for enhanced operator-assistance functions.
 
-## 개요
-화학 공장에서 발생하는 사고는 초동 대응자에게 높은 수준의 위험과 가혹한 환경을 초래할 수 있습니다. 오염 및 폭발 위험으로 인해 인간이 영향을 받은 인프라에 접근하지 못할 수 있으며, 이는 유능한 로봇 시스템의 필요성을 강조합니다. 본 현장 보고서는 화재 사고 이후 화학 공장에서 폭발성 가스 위험을 제거하기 위해 로봇 태스크 포스를 성공적으로 배치한 사례를 기록합니다. 맞춤형 조작 도구를 장착한 무인 지상 차량(UGV)이 위험한 조건에서 중요한 밸브를 열어 대규모 폭발 위협을 방지했습니다. 우리는 로봇 배치에 대한 통찰력을 제공하고, 임무 결과를 활용하여 구조 로봇 공학의 중요성과 통신 제약 및 향상된 운영자 지원 기능의 필요성과 같은 실제 긴급 배치에서 연구 플랫폼 사용의 한계를 강조합니다.
-
-## 핵심 내용
-화학 공장에서 발생하는 사고는 초동 대응자에게 높은 수준의 위험과 가혹한 환경을 초래할 수 있습니다. 오염 및 폭발 위험으로 인해 인간이 영향을 받은 인프라에 접근하지 못할 수 있으며, 이는 유능한 로봇 시스템의 필요성을 강조합니다. 본 현장 보고서는 화재 사고 이후 화학 공장에서 폭발성 가스 위험을 제거하기 위해 로봇 태스크 포스를 성공적으로 배치한 사례를 기록합니다. 맞춤형 조작 도구를 장착한 무인 지상 차량(UGV)이 위험한 조건에서 중요한 밸브를 열어 대규모 폭발 위협을 방지했습니다. 우리는 로봇 배치에 대한 통찰력을 제공하고, 임무 결과를 활용하여 구조 로봇 공학의 중요성과 통신 제약 및 향상된 운영자 지원 기능의 필요성과 같은 실제 긴급 배치에서 연구 플랫폼 사용의 한계를 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.23246v1
+
+## 개요
+본 사례 연구는 화학 공장 화재 이후, 폭발성 가스 위험을 해소하기 위해 로봇 작업대가 최초로 성공적으로 배치된 사례를 보도합니다. Telerob Telemax Hybrid UGV에 맞춤형 반강성 로봇 팔 확장 장치를 장착하여 위험한 조건에서 핵심 반응기 밸브를 열고 불활성 가스를 주입함으로써 대규모 폭발을 방지했습니다. 본 문서는 임무 결과를 바탕으로 구조 로봇의 중요성을 강조하는 동시에, 통신 제약 및 향상된 작동 보조 기능의 필요성과 같은 연구 플랫폼의 실제 긴급 배치에서의 한계를 지적합니다.
+
+## 핵심 내용
+### 배경 및 도전 과제
+- 화학 공장 사고는 응급 요원에게 높은 위험과 열악한 환경을 초래하며, 오염 및 폭발 위험으로 인해 인간이 영향을 받은 인프라에 접근하지 못할 수 있어 고성능 로봇 시스템의 필요성이 대두됩니다.
+
+### 로봇 배치 및 임무
+- Telerob Telemax Hybrid UGV에 맞춤형 반강성 로봇 팔 확장 장치를 장착하여 화재 후 위험한 조건에서 작동했습니다.
+- 로봇은 핵심 반응기 밸브를 성공적으로 열고 불활성 가스를 주입하여 폭발성 가스 위험을 해소하고 대규모 폭발을 방지했습니다.
+
+### 주요 발견 및 한계
+- 임무 결과는 실제 긴급 상황에서 구조 로봇의 중요성을 강조했지만, 연구 플랫폼의 실제 배치에서의 부족함을 드러냈습니다:
+  - **통신 제약**: 복잡한 산업 환경에서는 무선 통신이 제한될 수 있어 원격 작동에 영향을 미칩니다.
+  - **작동 보조 필요성**: 자동 경로 계획 및 환경 인식과 같은 향상된 운영자 보조 기능이 필요하여 임무 효율성과 안전성을 높여야 합니다.
+
+### 결론
+- 본 사례는 향후 구조 로봇 배치에 귀중한 경험을 제공하며, 실제 산업 긴급 상황에 대응하기 위해 통신 신뢰성 및 작동 보조 기술을 개선해야 함을 지적합니다.

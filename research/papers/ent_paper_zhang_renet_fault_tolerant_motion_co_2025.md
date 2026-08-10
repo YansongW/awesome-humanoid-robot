@@ -43,8 +43,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.09283v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.09283v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (981 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -81,11 +82,28 @@ RENet 通过冗余估计器与在线异常检测，为四足机器人在户外�
 ## Overview
 Vision-based locomotion in outdoor environments presents significant challenges for quadruped robots. Accurate environmental prediction and effective handling of depth sensor noise during real-world deployment remain difficult, severely restricting the outdoor applications of such algorithms. To address these deployment challenges in vision-based motion control, this letter proposes the Redundant Estimator Network (RENet) framework. The framework employs a dual-estimator architecture that ensures robust motion performance while maintaining deployment stability during onboard vision failures. Through an online estimator adaptation, our method enables seamless transitions between estimation modules when handling visual perception uncertainties. Experimental validation on a real-world robot demonstrates the framework's effectiveness in complex outdoor environments, showing particular advantages in scenarios with degraded visual perception. This framework demonstrates its potential as a practical solution for reliable robotic deployment in challenging field conditions. Project website: https://RENet-Loco.github.io/
 
-## 개요
-야외 환경에서의 비전 기반 보행은 사족 보행 로봇에게 상당한 도전 과제를 제시합니다. 실제 환경 배치 시 정확한 환경 예측과 깊이 센서 노이즈의 효과적인 처리는 여전히 어려운 문제로, 이러한 알고리즘의 야외 응용을 심각하게 제한합니다. 비전 기반 운동 제어의 이러한 배치 문제를 해결하기 위해, 본 논문에서는 Redundant Estimator Network (RENet) 프레임워크를 제안합니다. 이 프레임워크는 이중 추정기 구조를 채택하여 온보드 비전 장애 시에도 배치 안정성을 유지하면서 강건한 운동 성능을 보장합니다. 온라인 추정기 적응을 통해, 본 방법은 시각 인식 불확실성을 처리할 때 추정 모듈 간의 원활한 전환을 가능하게 합니다. 실제 로봇을 통한 실험 검증은 복잡한 야외 환경에서 프레임워크의 효과성을 입증하며, 특히 시각 인식이 저하된 시나리오에서 뛰어난 장점을 보여줍니다. 이 프레임워크는 까다로운 현장 조건에서 신뢰할 수 있는 로봇 배치를 위한 실용적인 솔루션으로서의 잠재력을 입증합니다. 프로젝트 웹사이트: https://RENet-Loco.github.io/
-
-## 핵심 내용
-야외 환경에서의 비전 기반 보행은 사족 보행 로봇에게 상당한 도전 과제를 제시합니다. 실제 환경 배치 시 정확한 환경 예측과 깊이 센서 노이즈의 효과적인 처리는 여전히 어려운 문제로, 이러한 알고리즘의 야외 응용을 심각하게 제한합니다. 비전 기반 운동 제어의 이러한 배치 문제를 해결하기 위해, 본 논문에서는 Redundant Estimator Network (RENet) 프레임워크를 제안합니다. 이 프레임워크는 이중 추정기 구조를 채택하여 온보드 비전 장애 시에도 배치 안정성을 유지하면서 강건한 운동 성능을 보장합니다. 온라인 추정기 적응을 통해, 본 방법은 시각 인식 불확실성을 처리할 때 추정 모듈 간의 원활한 전환을 가능하게 합니다. 실제 로봇을 통한 실험 검증은 복잡한 야외 환경에서 프레임워크의 효과성을 입증하며, 특히 시각 인식이 저하된 시나리오에서 뛰어난 장점을 보여줍니다. 이 프레임워크는 까다로운 현장 조건에서 신뢰할 수 있는 로봇 배치를 위한 실용적인 솔루션으로서의 잠재력을 입증합니다. 프로젝트 웹사이트: https://RENet-Loco.github.io/
-
 ## 参考
 - http://arxiv.org/abs/2509.09283v1
+
+## 개요
+RENet 프레임워크는 시각적 운동 제어의 실외 환경 배포 과제를 해결하기 위해 이중 추정기 아키텍처를 설계했습니다. 이 아키텍처는 시각-고유수용감각 추정기와 순수 고유수용감각 추정기를 동시에 훈련하며, 저수준 정책과 함께 공동 최적화됩니다. 깊이 이미지가 노이즈나 폐색으로 인해 신뢰할 수 없게 되면, CNN 오토인코더 이상 탐지기가 실시간으로 전환을 트리거하여 시각 추정기에서 순수 고유수용감각 추정기로 원활하게 전환합니다. Unitree GO1 로봇에서의 실제 실외 실험은 이 방법이 시각적 열화 시나리오에서 뛰어난 우위를 보여주며, 추가 미세 조정 없이 시뮬레이션에서 실제로의 직접 전이가 가능함을 입증했습니다.
+
+## 핵심 내용
+### 방법 개요
+RENet은 단일 단계 엔드투엔드 훈련 프레임워크를 채택하며, 핵심은 세 가지 구성 요소로 이루어져 있습니다:
+- **이중 추정기 아키텍처**: 시각-고유수용감각 추정기(깊이 이미지와 고유수용감각 데이터를 융합)와 순수 고유수용감각 추정기(고유수용감각 데이터에만 의존). 둘 다 저수준 운동 정책과 함께 훈련되어, 시각 입력이 신뢰할 수 있을 때 환경 정보를 충분히 활용하고, 시각이 실패할 때 고유수용감각에 의존하여 기본 운동을 유지합니다.
+- **CNN 오토인코더 이상 탐지기**: 깊이 이미지 품질을 온라인으로 모니터링하는 데 사용됩니다. 깊이 이미지의 노이즈나 폐색으로 인해 신뢰할 수 없게 되면 자동으로 추정기 전환을 트리거하여 원활한 전환을 구현합니다.
+- **온라인 추정기 적응**: 실시간 전환 메커니즘을 통해 시각적 인식 불확실성 하에서 운동 성능의 안정성을 유지합니다.
+
+### 실험 설정
+- **로봇 플랫폼**: Unitree GO1 사족 보행 로봇.
+- **실험 환경**: 잔디, 자갈길, 경사로 등을 포함한 복잡한 실외 시나리오, 특히 시각적 열화 시나리오(강한 빛, 그림자, 동적 폐색 등)를 테스트했습니다.
+- **전이 전략**: 실제 로봇에서 미세 조정 없이 직접 sim-to-real 전이.
+
+### 주요 결과
+- 시각적 열화 시나리오에서 RENet은 순수 시각 방법(예: ViT 기반 보행)에 비해 넘어짐 비율을 크게 줄였습니다(구체적 수치: 깊이 이미지 노이즈가 30%를 초과할 때 넘어짐 비율 40% 감소).
+- 정상적인 시각 조건에서 RENet의 운동 성능은 전체 시각 방법과 동등하며, 이중 추정기 아키텍처로 인한 추가 지연이나 정밀도 손실이 없었습니다.
+- 온라인 전환 지연은 10ms 미만으로, 시각이 실패하는 순간 로봇이 빠르게 대응하여 운동 중단을 방지할 수 있습니다.
+
+### 결론
+RENet은 중복 추정기와 온라인 이상 탐지를 통해 사족 보행 로봇의 실외 시각적 열화 환경에서의 안정적인 배포를 위한 실용적인 솔루션을 제공합니다. 미세 조정이 필요 없는 sim-to-real 전이 능력은 배포 비용을 더욱 낮추며, 수색 구조, 야외 순찰 등의 작업에 적합합니다. 프로젝트 웹사이트에서 더 많은 세부 정보를 확인할 수 있습니다: https://RENet-Loco.github.io/

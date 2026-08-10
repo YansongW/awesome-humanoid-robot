@@ -60,8 +60,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.30686v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.30686v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (943 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -92,11 +93,24 @@ sources:
 ## Overview
 Vision-Language-Action (VLA) systems, built on pretrained vision-language models (VLMs), have shown rapidly improving performance on robot manipulation benchmarks. These gains are commonly interpreted as evidence that semantic representations learned from internet-scale data transfer to physical execution generalization. This position paper argues that the assumption underlying this interpretation -- that semantic generalization is sufficient to support physical action decisions -- has not been independently verified and cannot be tested under current evaluation protocols. We support this claim by decomposing VLA policies into semantic mapping and physical action decision, and showing that task success rate -- the dominant evaluation metric -- cannot distinguish between these two sources of capability. As a result, improvements in benchmark performance are consistent with multiple competing explanations, including semantic matching, distributional overlap, and genuine physical generalization. We further argue that this identifiability gap has been reinforced through narrative drift, whereby successive systems inherit and strengthen prior interpretations of performance gains without isolating the underlying causal mechanism. To address this limitation, we propose a research direction based on evaluation designs that introduce controlled variation to separately measure semantic and physical generalization. Such designs make it possible to causally attribute performance without requiring access to model internals, and to empirically assess the role of VLM backbones as semantic interfaces rather than implicit sources of physical competence. Our goal is not to refute the role of VLMs in robotics, but to clarify the conditions under which claims of physical generalization can be meaningfully evaluated.
 
-## 개요
-사전 훈련된 비전-언어 모델(VLM)을 기반으로 구축된 비전-언어-행동(VLA) 시스템은 로봇 조작 벤치마크에서 빠르게 성능이 향상되고 있습니다. 이러한 성과는 일반적으로 인터넷 규모 데이터에서 학습된 의미적 표현이 물리적 실행 일반화로 전이된다는 증거로 해석됩니다. 본 포지션 페이퍼는 이러한 해석의 기저 가정, 즉 의미적 일반화가 물리적 행동 결정을 지원하기에 충분하다는 가정이 독립적으로 검증되지 않았으며, 현재 평가 프로토콜 하에서 테스트될 수 없다고 주장합니다. 우리는 VLA 정책을 의미적 매핑과 물리적 행동 결정으로 분해하고, 지배적인 평가 지표인 작업 성공률이 이 두 능력 원천을 구분할 수 없음을 보여줌으로써 이 주장을 뒷받침합니다. 결과적으로, 벤치마크 성능 향상은 의미적 매칭, 분포적 중첩, 진정한 물리적 일반화를 포함한 여러 경쟁적 설명과 일치합니다. 우리는 또한 이러한 식별 가능성 격차가 서술적 표류(narrative drift)를 통해 강화되어 왔다고 주장합니다. 이는 연속적인 시스템들이 기저 인과 메커니즘을 분리하지 않고 성능 향상에 대한 이전 해석을 계승하고 강화하는 현상입니다. 이러한 한계를 해결하기 위해, 우리는 의미적 일반화와 물리적 일반화를 별도로 측정하기 위해 통제된 변동을 도입하는 평가 설계에 기반한 연구 방향을 제안합니다. 이러한 설계는 모델 내부에 접근하지 않고도 성능을 인과적으로 귀속시킬 수 있게 하며, VLM 백본이 물리적 능력의 암묵적 원천이 아닌 의미적 인터페이스로서의 역할을 경험적으로 평가할 수 있게 합니다. 우리의 목표는 로봇공학에서 VLM의 역할을 반박하는 것이 아니라, 물리적 일반화에 대한 주장이 의미 있게 평가될 수 있는 조건을 명확히 하는 것입니다.
-
-## 핵심 내용
-사전 훈련된 비전-언어 모델(VLM)을 기반으로 구축된 비전-언어-행동(VLA) 시스템은 로봇 조작 벤치마크에서 빠르게 성능이 향상되고 있습니다. 이러한 성과는 일반적으로 인터넷 규모 데이터에서 학습된 의미적 표현이 물리적 실행 일반화로 전이된다는 증거로 해석됩니다. 본 포지션 페이퍼는 이러한 해석의 기저 가정, 즉 의미적 일반화가 물리적 행동 결정을 지원하기에 충분하다는 가정이 독립적으로 검증되지 않았으며, 현재 평가 프로토콜 하에서 테스트될 수 없다고 주장합니다. 우리는 VLA 정책을 의미적 매핑과 물리적 행동 결정으로 분해하고, 지배적인 평가 지표인 작업 성공률이 이 두 능력 원천을 구분할 수 없음을 보여줌으로써 이 주장을 뒷받침합니다. 결과적으로, 벤치마크 성능 향상은 의미적 매칭, 분포적 중첩, 진정한 물리적 일반화를 포함한 여러 경쟁적 설명과 일치합니다. 우리는 또한 이러한 식별 가능성 격차가 서술적 표류(narrative drift)를 통해 강화되어 왔다고 주장합니다. 이는 연속적인 시스템들이 기저 인과 메커니즘을 분리하지 않고 성능 향상에 대한 이전 해석을 계승하고 강화하는 현상입니다. 이러한 한계를 해결하기 위해, 우리는 의미적 일반화와 물리적 일반화를 별도로 측정하기 위해 통제된 변동을 도입하는 평가 설계에 기반한 연구 방향을 제안합니다. 이러한 설계는 모델 내부에 접근하지 않고도 성능을 인과적으로 귀속시킬 수 있게 하며, VLM 백본이 물리적 능력의 암묵적 원천이 아닌 의미적 인터페이스로서의 역할을 경험적으로 평가할 수 있게 합니다. 우리의 목표는 로봇공학에서 VLM의 역할을 반박하는 것이 아니라, 물리적 일반화에 대한 주장이 의미 있게 평가될 수 있는 조건을 명확히 하는 것입니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.30686v1
+
+## 개요
+이 논문은 현재 로봇 학습 분야의 일반적인 가정, 즉 VLA 시스템의 벤치마크 성능 향상이 인터넷 데이터에서 학습된 의미론적 표현이 물리적 실행 일반화로 전이될 수 있음을 의미한다는 가정에 의문을 제기합니다. 저자는 VLA 정책을 의미론적 매핑과 물리적 동작 결정의 두 부분으로 분해하고, 지배적인 평가 지표인 작업 성공률이 이 두 능력의 원천을 구분할 수 없음을 증명합니다. 따라서 벤치마크 성능의 개선은 의미론적 매칭, 분포 중첩 또는 진정한 물리적 일반화 등 여러 이유에서 비롯될 수 있으며, 기존 평가 프로토콜은 이를 독립적으로 검증할 수 없습니다. 논문은 나아가 이러한 "식별 가능성 격차"가 "서술적 표류"로 인해 악화된다고 지적합니다. 즉, 후속 시스템이 인과 메커니즘을 분리하지 않은 채 이전 성능 향상에 대한 해석을 계승하고 강화한다는 것입니다. 이 문제를 해결하기 위해 저자는 통제 변수를 도입한 평가 방식을 설계하여 의미론적 및 물리적 일반화를 각각 측정함으로써 모델 내부 구조에 의존하지 않고 인과 귀인을 가능하게 할 것을 제안합니다.
+
+## 핵심 내용
+### 핵심 주장
+- 현재 VLA 시스템의 로봇 조작 벤치마크 성능 향상은 종종 인터넷 규모 데이터에서 학습된 의미론적 표현이 물리적 실행 일반화로 전이될 수 있다는 해석으로 이어집니다. 본 논문은 이 가정이 독립적 검증을 결여하며 기존 평가 프로토콜 하에서 테스트될 수 없다고 주장합니다.
+- 저자는 VLA 정책을 두 개의 독립적인 구성 요소로 분해합니다: **의미론적 매핑**(장면과 지시 이해) 및 **물리적 동작 결정**(구체적 조작 실행). 작업 성공률은 지배적인 평가 지표로서 성능 향상이 의미론적 매핑의 개선에서 비롯된 것인지 물리적 결정 능력의 강화에서 비롯된 것인지를 구분할 수 없습니다.
+
+### 식별 가능성 격차와 서술적 표류
+- 벤치마크 성능의 개선은 여러 경쟁적 해석과 일치합니다: 의미론적 매칭(모델이 알려진 패턴만 인식), 분포 중첩(테스트 데이터가 훈련 데이터와 유사), 그리고 진정한 물리적 일반화(모델이 물리적 인과 관계를 이해)를 포함합니다.
+- 이러한 "식별 가능성 격차"는 "서술적 표류"로 인해 강화됩니다: 후속 시스템이 인과 메커니즘을 분리하지 않은 채 이전 성능 향상에 대한 의미론적 일반화 해석을 계승하고 강화하여, 해당 분야에서 순환 논증이 형성됩니다.
+
+### 제안된 해결책
+- 저자는 **통제 변수**를 도입한 평가 방식을 설계할 것을 제안합니다. 예를 들어 물체의 물리적 속성(무게, 마찰 계수 등)이나 작업 환경 배치를 변경하여 의미론적 일반화와 물리적 일반화 능력을 각각 측정하는 것입니다.
+- 이러한 설계는 모델 내부 구조에 접근하지 않고도 인과 귀인을 가능하게 하며, VLM 백본이 암묵적 물리 능력의 원천이 아닌 의미론적 인터페이스로서의 실제 역할을 실증적으로 평가할 수 있게 합니다.
+
+### 결론 및 의의
+- 본 논문은 VLM의 로봇 공학에서의 역할을 부정하는 것이 아니라, 의미론적 및 물리적 일반화를 독립적으로 측정할 수 있는 평가 조건 하에서만 물리적 일반화에 대한 주장이 의미 있게 검증될 수 있음을 명확히 하는 것을 목표로 합니다. 이는 향후 로봇 학습 벤치마크 설계에 중요한 방법론적 지침을 제공합니다.

@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2310.03191v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2310.03191v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (514 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -62,11 +63,21 @@ sources:
 ## Overview
 In this work we propose a learning-based approach to box loco-manipulation for a humanoid robot. This is a particularly challenging problem due to the need for whole-body coordination in order to lift boxes of varying weight, position, and orientation while maintaining balance. To address this challenge, we present a sim-to-real reinforcement learning approach for training general box pickup and carrying skills for the bipedal robot Digit. Our reward functions are designed to produce the desired interactions with the box while also valuing balance and gait quality. We combine the learned skills into a full system for box loco-manipulation to achieve the task of moving boxes from one table to another with a variety of sizes, weights, and initial configurations. In addition to quantitative simulation results, we demonstrate successful sim-to-real transfer on the humanoid r
 
-## 개요
-본 연구에서는 휴머노이드 로봇의 박스 이동 조작을 위한 학습 기반 접근법을 제안합니다. 이는 다양한 무게, 위치, 방향의 박스를 들어 올리면서 균형을 유지하기 위해 전신 협응이 필요하다는 점에서 특히 어려운 문제입니다. 이러한 과제를 해결하기 위해, 우리는 이족 보행 로봇 Digit을 위한 일반적인 박스 집기 및 운반 기술을 훈련하는 시뮬레이션-실제 강화 학습 접근법을 제시합니다. 보상 함수는 박스와의 원하는 상호작용을 유도하면서 균형과 보행 품질을 중시하도록 설계되었습니다. 학습된 기술을 결합하여 다양한 크기, 무게, 초기 구성의 박스를 한 테이블에서 다른 테이블로 옮기는 작업을 수행하는 완전한 박스 이동 조작 시스템을 구축합니다. 정량적 시뮬레이션 결과 외에도, 휴머노이드 로봇에서 성공적인 시뮬레이션-실제 전이를 시연합니다.
-
-## 핵심 내용
-본 연구에서는 휴머노이드 로봇의 박스 이동 조작을 위한 학습 기반 접근법을 제안합니다. 이는 다양한 무게, 위치, 방향의 박스를 들어 올리면서 균형을 유지하기 위해 전신 협응이 필요하다는 점에서 특히 어려운 문제입니다. 이러한 과제를 해결하기 위해, 우리는 이족 보행 로봇 Digit을 위한 일반적인 박스 집기 및 운반 기술을 훈련하는 시뮬레이션-실제 강화 학습 접근법을 제시합니다. 보상 함수는 박스와의 원하는 상호작용을 유도하면서 균형과 보행 품질을 중시하도록 설계되었습니다. 학습된 기술을 결합하여 다양한 크기, 무게, 초기 구성의 박스를 한 테이블에서 다른 테이블로 옮기는 작업을 수행하는 완전한 박스 이동 조작 시스템을 구축합니다. 정량적 시뮬레이션 결과 외에도, 휴머노이드 로봇에서 성공적인 시뮬레이션-실제 전이를 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2310.03191v1
+
+## 개요
+이 연구는 휴머노이드 로봇이 상자를 운반할 때 다양한 무게, 위치, 방향에 대응하기 위해 전신 협응이 필요하다는 문제를 해결하기 위해, sim-to-real 기반 강화 학습 방안을 제안한다. 연구진은 Digit 로봇을 위해 범용 상자 집기 및 운반 기술을 훈련시켰으며, 보상 함수는 상자와의 상호작용, 균형 유지, 보행 품질을 모두 고려한다. 이러한 기술을 조합함으로써, 시스템은 다양한 규격의 상자를 한 테이블에서 다른 테이블로 옮기는 전체 작업을 완료할 수 있다. 시뮬레이션의 정량적 결과 외에도, 이 방법은 실제 Digit 로봇으로의 전이에도 성공했다.
+
+## 핵심 내용
+### 방법 개요
+- sim-to-real 강화 학습 프레임워크를 채택하여, 시뮬레이션 환경에서 Digit 로봇의 상자 운반 기술을 훈련한다.
+- 보상 함수 설계는 세 가지 측면을 포함한다: 상자와의 기대 상호작용(예: 파지 안정성), 균형 유지(넘어짐 방지), 보행 품질(자연스러운 걷기).
+
+### 기술 조합 및 작업
+- 집기 및 운반 기술을 통합하여 완전한 운반 시스템으로 구성하며, 목표는 상자를 한 테이블에서 다른 테이블로 옮기는 것이다.
+- 테스트 시나리오는 다양한 상자 크기, 무게(구체적 수치는 명시되지 않음) 및 초기 구성(위치, 방향)을 포함한다.
+
+### 실험 및 전이
+- 시뮬레이션에서 정량적 평가를 수행하여 다양한 조건에서 기술의 유효성을 검증한다.
+- sim-to-real 전이에 성공: 시뮬레이션에서 훈련된 정책을 실제 Digit 로봇에 직접 배포하여 실제 운반 작업을 완료한다.

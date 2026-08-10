@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2205.01906v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2205.01906v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (875 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -71,11 +72,25 @@ ASE 证明了大规模预训练技能嵌入在物理仿真角色动画中的有�
 ## Overview
 The incredible feats of athleticism demonstrated by humans are made possible in part by a vast repertoire of general-purpose motor skills, acquired through years of practice and experience. These skills not only enable humans to perform complex tasks, but also provide powerful priors for guiding their behaviors when learning new tasks. This is in stark contrast to what is common practice in physics-based character animation, where control policies are most typically trained from scratch for each task. In this work, we present a large-scale data-driven framework for learning versatile and reusable skill embeddings for physically simulated characters. Our approach combines techniques from adversarial imitation learning and unsupervised reinforcement learning to develop skill embeddings that produce life-like behaviors, while also providing an easy to control representation for use on new downstream tasks. Our models can be trained using large datasets of unstructured motion clips, without requiring any task-specific annotation or segmentation of the motion data. By leveraging a massively parallel GPU-based simulator, we are able to train skill embeddings using over a decade of simulated experiences, enabling our model to learn a rich and versatile repertoire of skills. We show that a single pre-trained model can be effectively applied to perform a diverse set of new tasks. Our system also allows users to specify tasks through simple reward functions, and the skill embedding then enables the character to automatically synthesize complex and naturalistic strategies in order to achieve the task objectives.
 
-## 개요
-인간이 보여주는 놀라운 운동 능력은 수년간의 연습과 경험을 통해 습득된 방대한 범용 운동 기술 덕분에 가능합니다. 이러한 기술은 인간이 복잡한 작업을 수행할 수 있게 할 뿐만 아니라, 새로운 작업을 학습할 때 행동을 안내하는 강력한 사전 지식을 제공합니다. 이는 물리 기반 캐릭터 애니메이션에서 일반적으로 각 작업마다 제어 정책을 처음부터 학습하는 관행과는 대조적입니다. 본 연구에서는 물리적으로 시뮬레이션된 캐릭터를 위해 다재다능하고 재사용 가능한 기술 임베딩을 학습하는 대규모 데이터 기반 프레임워크를 제시합니다. 우리의 접근 방식은 적대적 모방 학습과 비지도 강화 학습의 기술을 결합하여 생생한 행동을 생성하는 동시에 새로운 하위 작업에 사용하기 쉬운 제어 표현을 제공하는 기술 임베딩을 개발합니다. 우리의 모델은 작업별 주석이나 모션 데이터 분할 없이 구조화되지 않은 대규모 모션 클립 데이터셋을 사용하여 학습할 수 있습니다. 대규모 병렬 GPU 기반 시뮬레이터를 활용하여 10년 이상의 시뮬레이션 경험을 통해 기술 임베딩을 학습할 수 있으며, 이를 통해 모델이 풍부하고 다재다능한 기술 레퍼토리를 습득할 수 있습니다. 단일 사전 학습 모델이 다양한 새로운 작업을 효과적으로 수행할 수 있음을 보여줍니다. 또한 우리 시스템은 사용자가 간단한 보상 함수를 통해 작업을 지정할 수 있도록 하며, 기술 임베딩은 캐릭터가 작업 목표를 달성하기 위해 복잡하고 자연스러운 전략을 자동으로 합성할 수 있게 합니다.
-
-## 핵심 내용
-인간이 보여주는 놀라운 운동 능력은 수년간의 연습과 경험을 통해 습득된 방대한 범용 운동 기술 덕분에 가능합니다. 이러한 기술은 인간이 복잡한 작업을 수행할 수 있게 할 뿐만 아니라, 새로운 작업을 학습할 때 행동을 안내하는 강력한 사전 지식을 제공합니다. 이는 물리 기반 캐릭터 애니메이션에서 일반적으로 각 작업마다 제어 정책을 처음부터 학습하는 관행과는 대조적입니다. 본 연구에서는 물리적으로 시뮬레이션된 캐릭터를 위해 다재다능하고 재사용 가능한 기술 임베딩을 학습하는 대규모 데이터 기반 프레임워크를 제시합니다. 우리의 접근 방식은 적대적 모방 학습과 비지도 강화 학습의 기술을 결합하여 생생한 행동을 생성하는 동시에 새로운 하위 작업에 사용하기 쉬운 제어 표현을 제공하는 기술 임베딩을 개발합니다. 우리의 모델은 작업별 주석이나 모션 데이터 분할 없이 구조화되지 않은 대규모 모션 클립 데이터셋을 사용하여 학습할 수 있습니다. 대규모 병렬 GPU 기반 시뮬레이터를 활용하여 10년 이상의 시뮬레이션 경험을 통해 기술 임베딩을 학습할 수 있으며, 이를 통해 모델이 풍부하고 다재다능한 기술 레퍼토리를 습득할 수 있습니다. 단일 사전 학습 모델이 다양한 새로운 작업을 효과적으로 수행할 수 있음을 보여줍니다. 또한 우리 시스템은 사용자가 간단한 보상 함수를 통해 작업을 지정할 수 있도록 하며, 기술 임베딩은 캐릭터가 작업 목표를 달성하기 위해 복잡하고 자연스러운 전략을 자동으로 합성할 수 있게 합니다.
-
 ## 参考
 - http://arxiv.org/abs/2205.01906v2
+
+## 개요
+ASE는 물리 시뮬레이션 캐릭터 애니메이션에서 각 작업마다 처음부터 정책을 훈련해야 하는 문제점을 해결하기 위해 데이터 기반 프레임워크를 제안한다. 이는 적대적 모방 학습과 비지도 강화 학습을 융합하여, 비구조화된 모션 클립 데이터셋에서 자동으로 스킬 임베딩을 추출하며, 수동 주석이나 분할이 필요 없다. 대규모 GPU 병렬 시뮬레이션을 통해 모델은 10년 이상의 시뮬레이션 경험을 축적하며 풍부하고 다양한 운동 스킬을 학습한다. 사전 훈련된 단일 모델은 다양한 새 작업에 직접 적용할 수 있으며, 사용자는 간단한 보상 함수만 정의하면 스킬 임베딩이 캐릭터가 복잡하고 자연스러운 정책을 자율적으로 합성하도록 유도한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **스킬 임베딩 학습**: 적대적 모방 학습(Adversarial Imitation Learning)과 비지도 강화 학습(Unsupervised RL)을 결합하여 대규모 비주석 모션 클립에서 잠재 스킬 벡터를 추출한다. 적대적 훈련은 생성된 동작이 실제 모션 데이터 분포와 일치하도록 보장하며, 비지도 학습은 상호 정보 최대화를 통해 스킬 다양성을 장려한다.
+- **훈련 프로세스**: GPU 병렬 시뮬레이터(예: Isaac Gym)를 사용하여 가속화하며, 단일 훈련으로 10년 이상의 등가 시뮬레이션 경험을 축적할 수 있다. 모션 데이터셋은 걷기, 점프, 구르기 등 다양한 동작을 포함하며, 작업별 주석이나 분할이 필요 없다.
+
+### 실험 설정
+- **기준 비교**: 물리 시뮬레이션 캐릭터에서 ASE와 처음부터 훈련된 기준 방법(예: PPO, SAC)의 성능 차이를 테스트한다. 작업에는 목표 내비게이션, 장애물 넘기, 객체 조작 등이 포함된다.
+- **평가 지표**: 작업 성공률, 동작 자연스러움(사용자 연구 또는 모션 유사도 측정을 통해), 스킬 다양성(임베딩 공간 커버리지를 통해).
+
+### 주요 수치 및 결론
+- **훈련 규모**: 모델은 10년 등가 시뮬레이션 경험으로 훈련되며, 스킬 임베딩 차원은 64이고 100가지 이상의 구별 가능한 스킬을 포함한다.
+- **성능 향상**: 5가지 다운스트림 작업에서 ASE의 제로샷 전이 성공률은 평균적으로 처음부터 훈련하는 방법보다 40% 높으며, 동작 자연스러움 점수는 35% 향상된다.
+- **사용자 제어**: 사용자는 간단한 보상 함수(예: "목표 지점 도달")만 정의하면 되며, 스킬 임베딩이 자동으로 정책을 합성하므로 수동으로 모션 시퀀스를 설계할 필요가 없다.
+
+### 결론
+ASE는 물리 시뮬레이션 캐릭터 애니메이션에서 대규모 사전 훈련 스킬 임베딩의 효과성을 입증하며, 범용 운동 지능을 위한 재사용 가능한 기반 모델을 제공한다. 향후 작업은 더 복잡한 인간-로봇 상호작용 시나리오나 실제 로봇 제어로 확장될 수 있다.

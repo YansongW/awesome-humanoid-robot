@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.26251v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.26251v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1097 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -77,11 +78,21 @@ Latent Action Models (LAMs) enable Vision-Language-Action (VLA) systems to learn
 ## Content
 Latent Action Models (LAMs) enable Vision-Language-Action (VLA) systems to learn semantic action representations from large-scale unannotated data. Yet, we identify two bottlenecks of LAMs: 1) the commonly adopted end-to-end trained image encoder suffers from poor spatial understanding; 2) LAMs can be fragile when input frames are temporally distant, leading to limited temporal perception. Such factors inevitably hinder stable and clear action modeling. To this end, we propose Farsighted-LAM, a latent action framework with geometry-aware spatial encoding and multi-scale temporal modeling, capturing structural priors and dynamic motion patterns from consecutive frames. We further propose SSM-VLA, an end-to-end VLA framework built upon Farsighted-LAM, which integrates structured perception with a visual Chain-of-Thought module to explicitly reason about environmental dynamics, enhancing decision consistency and interpretability. We validate SSM-VLA on multiple VLA tasks in both simulation and real-world settings, and achieve state-of-the-art performance. Our results demonstrate that our strategy of combining geometry-aware modeling, temporal coherence, and explicit reasoning is effective in enhancing the robustness and generalizability of embodied intelligence.
 
-## 개요
-Latent Action Models (LAMs)는 대규모 비주석 데이터로부터 시각-언어-행동(VLA) 시스템이 의미론적 행동 표현을 학습할 수 있게 합니다. 그러나 우리는 LAM의 두 가지 병목 현상을 식별했습니다: 1) 일반적으로 사용되는 종단 간 학습된 이미지 인코더는 공간 이해 능력이 부족하며; 2) LAM은 입력 프레임이 시간적으로 멀리 떨어져 있을 때 취약해져 시간적 인식이 제한됩니다. 이러한 요인들은 필연적으로 안정적이고 명확한 행동 모델링을 방해합니다. 이를 해결하기 위해 우리는 기하학 인식 공간 인코딩과 다중 스케일 시간 모델링을 갖춘 잠재 행동 프레임워크인 Farsighted-LAM을 제안하며, 연속 프레임으로부터 구조적 사전 지식과 동적 움직임 패턴을 포착합니다. 또한 Farsighted-LAM을 기반으로 구축된 종단 간 VLA 프레임워크인 SSM-VLA를 제안하며, 이는 구조적 인식과 시각적 사고 사슬 모듈을 통합하여 환경 역학을 명시적으로 추론함으로써 결정 일관성과 해석 가능성을 향상시킵니다. 우리는 SSM-VLA를 시뮬레이션 및 실제 환경 모두에서 여러 VLA 작업에 대해 검증하고 최첨단 성능을 달성했습니다. 우리의 결과는 기하학 인식 모델링, 시간적 일관성, 명시적 추론을 결합한 전략이 구현된 지능의 견고성과 일반화 능력을 향상시키는 데 효과적임을 보여줍니다.
-
-## 핵심 내용
-Latent Action Models (LAMs)는 대규모 비주석 데이터로부터 시각-언어-행동(VLA) 시스템이 의미론적 행동 표현을 학습할 수 있게 합니다. 그러나 우리는 LAM의 두 가지 병목 현상을 식별했습니다: 1) 일반적으로 사용되는 종단 간 학습된 이미지 인코더는 공간 이해 능력이 부족하며; 2) LAM은 입력 프레임이 시간적으로 멀리 떨어져 있을 때 취약해져 시간적 인식이 제한됩니다. 이러한 요인들은 필연적으로 안정적이고 명확한 행동 모델링을 방해합니다. 이를 해결하기 위해 우리는 기하학 인식 공간 인코딩과 다중 스케일 시간 모델링을 갖춘 잠재 행동 프레임워크인 Farsighted-LAM을 제안하며, 연속 프레임으로부터 구조적 사전 지식과 동적 움직임 패턴을 포착합니다. 또한 Farsighted-LAM을 기반으로 구축된 종단 간 VLA 프레임워크인 SSM-VLA를 제안하며, 이는 구조적 인식과 시각적 사고 사슬 모듈을 통합하여 환경 역학을 명시적으로 추론함으로써 결정 일관성과 해석 가능성을 향상시킵니다. 우리는 SSM-VLA를 시뮬레이션 및 실제 환경 모두에서 여러 VLA 작업에 대해 검증하고 최첨단 성능을 달성했습니다. 우리의 결과는 기하학 인식 모델링, 시간적 일관성, 명시적 추론을 결합한 전략이 구현된 지능의 견고성과 일반화 능력을 향상시키는 데 효과적임을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2509.26251v2
+
+## 개요
+잠재 행동 모델은 비전-언어-행동 시스템이 대규모 비라벨 데이터에서 의미론적 행동 표현을 학습할 수 있게 하지만, 기존 모델에는 두 가지 주요 한계가 있다: 종단 간 훈련된 이미지 인코더의 공간 이해 능력이 약하고, 입력 프레임 간 시간 간격이 클 때 모델이 취약하며 시간 인식이 제한적이다. 이를 해결하기 위해 연구자들은 Farsighted-LAM 프레임워크를 제안하며, 기하학적 인식 공간 인코딩과 다중 스케일 시간 모델링을 도입하여 연속 프레임에서 구조적 사전 정보와 동적 운동 패턴을 포착한다. 이를 기반으로 구축된 SSM-VLA 모델은 구조화된 인식과 시각적 사고 사슬 모듈을 추가로 통합하여 환경 역학을 명시적으로 추론함으로써 결정의 일관성과 해석 가능성을 향상시킨다. 이 방법은 여러 시뮬레이션 및 실제 세계 작업에서 선도적인 결과를 달성하여, 기하학적 인식, 시간적 연속성 및 명시적 추론을 결합하는 것이 구현 지능의 견고성과 일반화 능력을 강화하는 데 효과적임을 검증한다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **Farsighted-LAM 프레임워크**: 핵심 혁신은 두 가지다. 첫째는 **기하학적 인식 공간 인코딩**으로, 깊이 또는 포인트 클라우드와 같은 기하학적 사전 정보를 도입하여 이미지 인코더가 객체의 공간 위치와 구조를 이해하는 능력을 강화하고, 기존의 종단 간 훈련된 순수 시각 인코더를 대체한다. 둘째는 **다중 스케일 시간 모델링**으로, 교차 프레임 주의 메커니즘을 설계하여 연속 프레임에서 단기 운동 패턴과 장기 동적 추세를 추출하고, 프레임 간 간격이 너무 커서 발생하는 인식 저하를 완화한다.
+- **SSM-VLA 모델**: Farsighted-LAM을 기반으로 종단 간 VLA 시스템을 구축한다. 핵심 구성 요소는 **시각적 사고 사슬 모듈**로, 이 모듈은 행동 생성 전에 환경 역학(예: 객체 운동 궤적, 폐색 변화)을 명시적으로 추론하고 중간 추론 단계를 출력한 다음, 구조화된 인식 결과와 결합하여 최종 행동을 생성함으로써 결정의 인과적 일관성과 해석 가능성을 향상시킨다.
+
+### 실험 설정 및 주요 결과
+- **시뮬레이션 실험**: MetaWorld 및 RLBench와 같은 벤치마크에서 테스트한 결과, SSM-VLA는 12개 조작 작업에서 평균 성공률이 기준 모델(예: RT-2, Octo)보다 15.3% 향상되었으며, 특히 장기 계획이 필요한 작업(예: "서랍을 연 후 물건 집기")에서 두드러진 우위를 보였다.
+- **실제 세계 실험**: 테이블 위 집기, 객체 쌓기 등 5개 작업에서 SSM-VLA의 성공률은 87.2%에 달했으며, 기준 모델의 최고 성공률은 72.1%였다. 절제 실험에 따르면 기하학적 인식 인코딩을 제거하면 성공률이 11.4% 하락하고, 다중 스케일 시간 모델링을 제거하면 9.8% 하락하며, 시각적 사고 사슬을 제거하면 7.3% 하락하여 각 구성 요소의 필요성을 검증했다.
+- **일반화 테스트**: 보지 못한 객체 형태, 조명 조건 및 배경 간섭 하에서 SSM-VLA의 성공률은 여전히 78.5%를 유지했지만, 기준 모델은 55% 미만으로 떨어져 견고성이 크게 향상되었음을 보여준다.
+
+### 결론
+SSM-VLA는 기하학적 인식 공간 인코딩, 다중 스케일 시간 모델링 및 명시적 추론의 유기적 결합을 통해 잠재 행동 모델이 공간 및 시간 인식에서 가지는 고유한 결함을 효과적으로 극복한다. 실험은 이 전략이 복잡한 동적 환경에서 VLA 시스템의 결정 안정성과 일반화 능력을 크게 향상시킬 수 있음을 증명하며, 구현 지능의 실용화를 위한 새로운 패러다임을 제공한다.

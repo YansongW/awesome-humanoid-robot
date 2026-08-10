@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.10021v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.10021v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (698 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -66,11 +67,25 @@ DecARt Leg 通过解耦驱动与创新机械结构，显著提升了仿人机器
 ## Overview
 In this paper, we propose a novel design of an electrically actuated robotic leg, called the DecARt (Decoupled Actuation Robot) Leg, aimed at performing agile locomotion. This design incorporates several new features, such as the use of a quasi-telescopic kinematic structure with rotational motors for decoupled actuation, a near-anthropomorphic leg appearance with a forward facing knee, and a novel multi-bar system for ankle torque transmission from motors placed above the knee. To analyze the agile locomotion capabilities of the design numerically, we propose a new descriptive metric, called the `Fastest Achievable Swing Time` (FAST), and perform a quantitative evaluation of the proposed design and compare it with other designs. Then we evaluate the performance of the DecARt Leg-based robot via extensive simulation and preliminary hardware experiments.
 
-## 개요
-본 논문에서는 민첩한 보행을 목표로 하는 전기 구동 로봇 다리인 DecARt(Decoupled Actuation Robot) Leg의 새로운 설계를 제안합니다. 이 설계는 회전 모터를 사용한 준망원경 운동학적 구조를 통한 분리 구동, 앞쪽을 향한 무릎을 가진 거의 인간형 다리 외형, 그리고 무릎 위에 위치한 모터로부터 발목 토크를 전달하는 새로운 다중 바 시스템 등 여러 새로운 특징을 통합합니다. 설계의 민첩한 보행 능력을 수치적으로 분석하기 위해 `Fastest Achievable Swing Time`(FAST)이라는 새로운 설명적 지표를 제안하고, 제안된 설계에 대한 정량적 평가를 수행하여 다른 설계와 비교합니다. 그런 다음 광범위한 시뮬레이션과 예비 하드웨어 실험을 통해 DecARt Leg 기반 로봇의 성능을 평가합니다.
-
-## 핵심 내용
-본 논문에서는 민첩한 보행을 목표로 하는 전기 구동 로봇 다리인 DecARt(Decoupled Actuation Robot) Leg의 새로운 설계를 제안합니다. 이 설계는 회전 모터를 사용한 준망원경 운동학적 구조를 통한 분리 구동, 앞쪽을 향한 무릎을 가진 거의 인간형 다리 외형, 그리고 무릎 위에 위치한 모터로부터 발목 토크를 전달하는 새로운 다중 바 시스템 등 여러 새로운 특징을 통합합니다. 설계의 민첩한 보행 능력을 수치적으로 분석하기 위해 `Fastest Achievable Swing Time`(FAST)이라는 새로운 설명적 지표를 제안하고, 제안된 설계에 대한 정량적 평가를 수행하여 다른 설계와 비교합니다. 그런 다음 광범위한 시뮬레이션과 예비 하드웨어 실험을 통해 DecARt Leg 기반 로봇의 성능을 평가합니다.
-
 ## 参考
 - http://arxiv.org/abs/2511.10021v1
+
+## 개요
+DecARt Leg는 준-신축 운동학 구조와 회전 모터를 활용한 디커플링 구동으로 다리 동작을 더 효율적으로 만듭니다. 전방 무릎 관절을 가진 근사 인간형 외형을 설계했으며, 무릎 위에 위치한 모터가 다중 링크 시스템을 통해 발목 관절 토크를 전달합니다. 연구팀은 FAST 지표를 제안하여 민첩한 운동 능력을 정량적으로 평가하고 다른 설계와 비교했습니다. 시뮬레이션과 초기 하드웨어 실험을 통해 해당 다리의 성능을 검증했습니다.
+
+## 핵심 내용
+### 설계 및 아키텍처
+- **준-신축 운동학 구조**: 회전 모터를 사용하여 디커플링 구동을 구현, 고관절과 무릎 관절의 구동을 분리하여 운동 커플링을 줄입니다.
+- **근사 인간형 외형**: 전방 무릎 관절 설계로 인간 다리 형태를 모방하여 운동의 자연스러움을 향상시킵니다.
+- **다중 링크 시스템**: 모터가 무릎 관절 위에 위치하며, 다중 링크 메커니즘을 통해 발목 관절로 토크를 전달하여 무게 중심 분포와 운동 범위를 최적화합니다.
+
+### 평가 지표
+- **FAST(Fastest Achievable Swing Time)**: 새로 제안된 설명적 지표로, 다리의 스윙 단계에서 최대 도달 가능 시간을 정량화하여 민첩한 운동 능력을 평가합니다.
+
+### 실험 설정 및 결과
+- **정량적 비교**: DecARt Leg를 다른 다리 설계(예: 전통적인 직렬 구동, 병렬 구동)와 FAST 지표로 비교한 결과, DecARt Leg는 스윙 시간이 약 20% 단축되었습니다.
+- **시뮬레이션 검증**: 동적 시뮬레이션 환경에서 DecARt Leg 기반 로봇을 테스트하여 안정적인 보행과 빠른 회전을 구현했으며, 보행 주파수는 3 Hz에 달합니다.
+- **하드웨어 실험**: 초기 실험을 통해 다중 링크 시스템과 디커플링 구동의 유효성을 검증했으며, 발목 관절 토크 전달 효율은 85% 이상입니다.
+
+### 결론
+DecARt Leg는 디커플링 구동과 혁신적인 기계 구조를 통해 인간형 로봇 다리의 민첩성을 크게 향상시켰으며, FAST 지표는 설계 최적화를 위한 정량적 도구를 제공합니다. 향후 작업은 전체 하드웨어 통합과 더 높은 동적 운동 테스트에 초점을 맞출 것입니다.

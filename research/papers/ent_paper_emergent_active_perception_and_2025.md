@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.12278v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.12278v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (534 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,24 @@ PDC框架展示了视觉驱动控制如何通过感知-动作闭环实现类人�
 ## Overview
 Human behavior is fundamentally shaped by visual perception -- our ability to interact with the world depends on actively gathering relevant information and adapting our movements accordingly. Behaviors like searching for objects, reaching, and hand-eye coordination naturally emerge from the structure of our sensory system. Inspired by these principles, we introduce Perceptive Dexterous Control (PDC), a framework for vision-driven dexterous whole-body control with simulated humanoids. PDC operates solely on egocentric vision for task specification, enabling object search, target placement, and skill selection through visual cues, without relying on privileged state information (e.g., 3D object positions and geometries). This perception-as-interface paradigm enables learning a single policy to perform multiple household tasks, including reaching, grasping, placing, and articulated object manipulation. We also show that training from scratch with reinforcement learning can produce emergent behaviors such as active search. These results demonstrate how vision-driven control and complex tasks induce human-like behaviors and can serve as the key ingredients in closing the perception-action loop for animation, robotics, and embodied AI.
 
-## 개요
-인간의 행동은 근본적으로 시각적 인식에 의해 형성됩니다. 즉, 세상과 상호작용하는 능력은 관련 정보를 적극적으로 수집하고 그에 따라 움직임을 조정하는 데 달려 있습니다. 물체 찾기, 손을 뻗기, 손-눈 협응과 같은 행동은 우리 감각 시스템의 구조에서 자연스럽게 발생합니다. 이러한 원리에서 영감을 받아, 우리는 시뮬레이션된 휴머노이드를 위한 시각 기반의 능숙한 전신 제어 프레임워크인 Perceptive Dexterous Control (PDC)을 소개합니다. PDC는 작업 지정을 위해 전적으로 자기중심적 시각에 의존하며, 특권 상태 정보(예: 3D 물체 위치 및 기하학적 구조)에 의존하지 않고 시각적 단서를 통해 물체 검색, 목표 배치 및 기술 선택을 가능하게 합니다. 이 인식-인터페이스 패러다임은 단일 정책이 손 뻗기, 잡기, 놓기, 관절 물체 조작을 포함한 여러 가정용 작업을 수행하도록 학습할 수 있게 합니다. 또한 강화 학습을 통해 처음부터 훈련하면 능동적 검색과 같은 창발적 행동이 생성될 수 있음을 보여줍니다. 이러한 결과는 시각 기반 제어와 복잡한 작업이 어떻게 인간과 유사한 행동을 유도하는지, 그리고 애니메이션, 로봇공학, 구현 AI에서 지각-행동 루프를 닫는 핵심 요소가 될 수 있는지를 입증합니다.
-
-## 핵심 내용
-인간의 행동은 근본적으로 시각적 인식에 의해 형성됩니다. 즉, 세상과 상호작용하는 능력은 관련 정보를 적극적으로 수집하고 그에 따라 움직임을 조정하는 데 달려 있습니다. 물체 찾기, 손을 뻗기, 손-눈 협응과 같은 행동은 우리 감각 시스템의 구조에서 자연스럽게 발생합니다. 이러한 원리에서 영감을 받아, 우리는 시뮬레이션된 휴머노이드를 위한 시각 기반의 능숙한 전신 제어 프레임워크인 Perceptive Dexterous Control (PDC)을 소개합니다. PDC는 작업 지정을 위해 전적으로 자기중심적 시각에 의존하며, 특권 상태 정보(예: 3D 물체 위치 및 기하학적 구조)에 의존하지 않고 시각적 단서를 통해 물체 검색, 목표 배치 및 기술 선택을 가능하게 합니다. 이 인식-인터페이스 패러다임은 단일 정책이 손 뻗기, 잡기, 놓기, 관절 물체 조작을 포함한 여러 가정용 작업을 수행하도록 학습할 수 있게 합니다. 또한 강화 학습을 통해 처음부터 훈련하면 능동적 검색과 같은 창발적 행동이 생성될 수 있음을 보여줍니다. 이러한 결과는 시각 기반 제어와 복잡한 작업이 어떻게 인간과 유사한 행동을 유도하는지, 그리고 애니메이션, 로봇공학, 구현 AI에서 지각-행동 루프를 닫는 핵심 요소가 될 수 있는지를 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.12278v1
+
+## 개요
+인간의 시각적 지각이 행동을 유도하는 방식에서 영감을 받은 PDC 프레임워크는 1인칭 시각을 작업 인터페이스로 사용하여 시뮬레이션 휴머노이드 로봇이 다양한 가사 작업을 수행할 수 있게 합니다. 이 프레임워크는 기존의 3D 객체 위치 및 기하학적 정보를 배제하고, 오직 시각적 단서만으로 객체 탐색, 목표 위치 파악, 기술 선택을 완료합니다. 실험 결과, 처음부터 강화 학습 훈련만으로도 능동적 탐색과 같은 인간형 행동이 자연스럽게 나타나며, 시각 기반 제어와 복잡한 작업 간의 폐쇄 루프 관계를 입증했습니다.
+
+## 핵심 내용
+### 핵심 방법
+- **지각이 곧 인터페이스**: PDC는 1인칭 시각을 유일한 작업 사양 입력으로 사용하며, 기존 방법에서 의존하던 3D 객체 위치 및 기하학과 같은 특권 상태 정보를 대체합니다.
+- **민첩한 전신 제어**: 프레임워크는 객체 탐색, 목표 배치, 기술 선택을 지원하며, 시각적 단서를 통해 전체 제어 흐름을 구동합니다.
+
+### 실험 설정
+- **훈련 방식**: 사전 훈련이나 특권 정보 없이 처음부터 강화 학습 훈련을 수행합니다.
+- **작업 범위**: 손 뻗기, 잡기, 배치, 관절 객체 조작을 포함한 다양한 가사 작업을 다룹니다.
+
+### 주요 발견
+- **창발적 행동**: 훈련 과정에서 능동적 탐색과 같은 인간형 행동이 자연스럽게 생성되어 시각 기반 제어의 효과성을 검증했습니다.
+- **단일 정책**: 단일 정책만으로도 다양한 작업을 완료할 수 있으며, 작업별로 별도의 모델을 훈련할 필요가 없습니다.
+
+### 결론
+PDC 프레임워크는 시각 기반 제어가 지각-행동 폐쇄 루프를 통해 인간형 행동을 어떻게 구현하는지 보여주며, 애니메이션, 로봇공학, 구현 AI 분야에 핵심 설계 통찰을 제공합니다.

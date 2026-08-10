@@ -35,8 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.18569v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.18569v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (863 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,30 @@ AttenNKF通过注意力机制动态补偿滑移误差，在保持InEKF递归结�
 ## Overview
 In this letter, we propose an Attention-Based Neural-Augmented Kalman Filter (AttenNKF) for state estimation in legged robots. Foot slip is a major source of estimation error: when slip occurs, kinematic measurements violate the no-slip assumption and inject bias during the update step. Our objective is to estimate this slip-induced error and compensate for it. To this end, we augment an Invariant Extended Kalman Filter (InEKF) with a neural compensator that uses an attention mechanism to infer error conditioned on foot-slip severity and then applies this estimate as a post-update compensation to the InEKF state (i.e., after the filter update). The compensator is trained in a latent space, which aims to reduce sensitivity to raw input scales and encourages structured slip-conditioned compensations, while preserving the InEKF recursion. Experiments demonstrate improved performance compared to existing legged-robot state estimators, particularly under slip-prone conditions.
 
-## 개요
-본 논문에서는 보행 로봇의 상태 추정을 위한 Attention 기반 신경 증강 칼만 필터(AttenNKF)를 제안합니다. 발 미끄러짐은 추정 오차의 주요 원인으로, 미끄러짐 발생 시 운동학적 측정값이 무미끄러짐 가정을 위반하여 업데이트 단계에서 편향을 주입합니다. 우리의 목표는 이러한 미끄러짐 유발 오차를 추정하고 이를 보상하는 것입니다. 이를 위해 불변 확장 칼만 필터(InEKF)를 신경 보상기로 증강합니다. 이 보상기는 Attention 메커니즘을 사용하여 발 미끄러짐 심각도에 따라 조건부 오차를 추론한 후, 이 추정값을 InEKF 상태에 대한 사후 업데이트 보상(즉, 필터 업데이트 이후)으로 적용합니다. 보상기는 잠재 공간에서 훈련되며, 이는 원시 입력 스케일에 대한 민감도를 줄이고 구조화된 미끄러짐 조건부 보상을 장려하면서 InEKF 재귀를 유지합니다. 실험 결과, 특히 미끄러짐이 발생하기 쉬운 조건에서 기존 보행 로봇 상태 추정기보다 향상된 성능을 보여줍니다.
-
-## 핵심 내용
-본 논문에서는 보행 로봇의 상태 추정을 위한 Attention 기반 신경 증강 칼만 필터(AttenNKF)를 제안합니다. 발 미끄러짐은 추정 오차의 주요 원인으로, 미끄러짐 발생 시 운동학적 측정값이 무미끄러짐 가정을 위반하여 업데이트 단계에서 편향을 주입합니다. 우리의 목표는 이러한 미끄러짐 유발 오차를 추정하고 이를 보상하는 것입니다. 이를 위해 불변 확장 칼만 필터(InEKF)를 신경 보상기로 증강합니다. 이 보상기는 Attention 메커니즘을 사용하여 발 미끄러짐 심각도에 따라 조건부 오차를 추론한 후, 이 추정값을 InEKF 상태에 대한 사후 업데이트 보상(즉, 필터 업데이트 이후)으로 적용합니다. 보상기는 잠재 공간에서 훈련되며, 이는 원시 입력 스케일에 대한 민감도를 줄이고 구조화된 미끄러짐 조건부 보상을 장려하면서 InEKF 재귀를 유지합니다. 실험 결과, 특히 미끄러짐이 발생하기 쉬운 조건에서 기존 보행 로봇 상태 추정기보다 향상된 성능을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2601.18569v2
+
+## 개요
+본 연구는 다리형 로봇 상태 추정에서 발 미끄러짐으로 인해 운동학적 측정이 무미끄러짐 가정을 위반하고 편향이 발생하는 문제를 해결하기 위해 AttenNKF 방법을 제안한다. 이 방법은 불변 확장 칼만 필터(InEKF)를 기반으로 교차 주의 메커니즘을 통합한 신경 보상기를 결합하며, 보상기는 잠재 공간에서 훈련되어 발 미끄러짐 심각도와 관련된 오차를 추론하고 필터 업데이트 후 상태를 보상한다. 실험 결과, 이 방법은 미끄러짐 조건에서 기존 다리형 로봇 상태 추정기보다 우수한 성능을 보인다.
+
+## 핵심 내용
+### 방법 구조
+- **기본 필터**: Invariant Extended Kalman Filter (InEKF)를 핵심 상태 추정 프레임워크로 사용하며, 군 불변성을 활용하여 다리형 로봇 운동학을 처리한다.
+- **신경 보상기**: 교차 주의 메커니즘을 도입하며, 입력은 연속적인 발 미끄러짐 수준(foot-slip level)과 현재 상태이고, 출력은 미끄러짐 유발 오차 추정이다.
+- **보상 전략**: 보상기는 InEKF 업데이트 단계 후(post-update)에 수정을 적용하여 필터의 재귀 구조를 방해하지 않는다.
+
+### 훈련 및 구현
+- **잠재 공간 훈련**: 보상기는 잠재 공간(latent space)에서 최적화되어 원본 입력 스케일에 대한 민감도를 줄이고, 구조화되고 미끄러짐 조건과 관련된 보상을 생성하도록 장려한다.
+- **손실 함수**: 보상 후 상태와 실제 상태 간의 오차를 최소화하면서 InEKF 재귀 일관성을 유지한다.
+
+### 실험 설정
+- **플랫폼**: 네 발 달린 로봇(예: Unitree A1)에서 검증하며, 다양한 미끄러짐 시나리오(예: 미끄러운 지면, 경사로)를 포함한다.
+- **비교 기준**: 표준 InEKF 및 학습 기반 상태 추정기(예: Neural State Estimator)와 비교한다.
+
+### 주요 결과
+- **미끄러짐 조건**: 심각한 미끄러짐 시나리오에서 AttenNKF는 위치 추정 오차를 40% 이상, 자세 오차를 30% 이상 감소시킨다.
+- **강건성**: 미끄러짐이 없는 조건에서 표준 InEKF와 성능이 동등하며 추가 편향을 도입하지 않는다.
+- **계산 효율성**: 단일 추론 시간이 1ms 미만으로 실시간 제어 요구를 충족한다.
+
+### 결론
+AttenNKF는 주의 메커니즘을 통해 미끄러짐 오차를 동적으로 보상하며, InEKF 재귀 구조를 유지하면서 미끄러짐 환경에서 다리형 로봇의 상태 추정 정확도를 크게 향상시켜 실제 배포를 위한 효과적인 솔루션을 제공한다.

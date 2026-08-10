@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.10631v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.10631v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (990 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -83,11 +84,32 @@ HybridVLA 基于单个大语言模型（LLM）构建，同时集成两种动作�
 ## Overview
 A fundamental objective of manipulation policy design is to endow robots to comprehend human instructions, reason about scene cues, and execute generalized actions in dynamic environments. Recent autoregressive vision-language-action (VLA) methods inherit common-sense reasoning capabilities from vision-language models (VLMs) for next action-token prediction. However, these methods quantize actions into discrete bins, which disrupts the continuity required for precise control. In contrast, existing diffusion-based VLA methods incorporate an additional diffusion head to predict continuous actions solely conditioned on feature representations extracted by the VLM, without fully leveraging the VLM's pretrained reasoning capabilities through token-level generation. To address these limitations, we introduce HybridVLA, a unified framework that absorbs the continuous nature of diffusion-based actions and the contextual reasoning of autoregression within a single large language model. To mitigate interference between the two generation paradigms, we propose a collaborative training recipe that seamlessly incorporates diffusion denoising into the next-token prediction process. With this recipe, we find these two action prediction methods not only reinforce each other but also exhibit varying strength across different tasks. Therefore, we design a collaborative action ensemble mechanism that adaptively fuses both predictions, leading to more robust control. HybridVLA outperforms previous state-of-the-art VLA methods by 14\% and 19\% in mean success rate on simulation and real-world tasks, respectively, while demonstrating stable manipulation in unseen configurations.
 
-## 개요
-조작 정책 설계의 근본적인 목표는 로봇이 인간의 명령을 이해하고, 장면 단서를 추론하며, 동적 환경에서 일반화된 동작을 실행할 수 있도록 하는 것입니다. 최근의 자기회귀형 시각-언어-행동(VLA) 방법은 시각-언어 모델(VLM)로부터 상식 추론 능력을 계승하여 다음 행동 토큰을 예측합니다. 그러나 이러한 방법은 행동을 이산적인 구간으로 양자화하여 정밀한 제어에 필요한 연속성을 방해합니다. 반면, 기존의 확산 기반 VLA 방법은 VLM이 추출한 특징 표현에만 조건화된 연속적인 행동을 예측하기 위해 추가적인 확산 헤드를 통합하며, 토큰 수준 생성을 통해 VLM의 사전 학습된 추론 능력을 완전히 활용하지 못합니다. 이러한 한계를 해결하기 위해, 우리는 단일 대규모 언어 모델 내에서 확산 기반 행동의 연속성과 자기회귀의 맥락적 추론을 통합하는 통합 프레임워크인 HybridVLA를 소개합니다. 두 생성 패러다임 간의 간섭을 완화하기 위해, 우리는 다음 토큰 예측 과정에 확산 잡음 제거를 원활하게 통합하는 협력적 훈련 방식을 제안합니다. 이 방식을 통해, 우리는 이 두 행동 예측 방법이 서로를 강화할 뿐만 아니라 다양한 작업에 따라 서로 다른 강점을 보인다는 것을 발견했습니다. 따라서, 우리는 두 예측을 적응적으로 융합하여 더 강력한 제어를 이끌어내는 협력적 행동 앙상블 메커니즘을 설계합니다. HybridVLA는 시뮬레이션 및 실제 세계 작업에서 평균 성공률이 각각 14%와 19% 향상되어 이전 최첨단 VLA 방법을 능가하며, 보이지 않는 구성에서도 안정적인 조작을 보여줍니다.
-
-## 핵심 내용
-조작 정책 설계의 근본적인 목표는 로봇이 인간의 명령을 이해하고, 장면 단서를 추론하며, 동적 환경에서 일반화된 동작을 실행할 수 있도록 하는 것입니다. 최근의 자기회귀형 시각-언어-행동(VLA) 방법은 시각-언어 모델(VLM)로부터 상식 추론 능력을 계승하여 다음 행동 토큰을 예측합니다. 그러나 이러한 방법은 행동을 이산적인 구간으로 양자화하여 정밀한 제어에 필요한 연속성을 방해합니다. 반면, 기존의 확산 기반 VLA 방법은 VLM이 추출한 특징 표현에만 조건화된 연속적인 행동을 예측하기 위해 추가적인 확산 헤드를 통합하며, 토큰 수준 생성을 통해 VLM의 사전 학습된 추론 능력을 완전히 활용하지 못합니다. 이러한 한계를 해결하기 위해, 우리는 단일 대규모 언어 모델 내에서 확산 기반 행동의 연속성과 자기회귀의 맥락적 추론을 통합하는 통합 프레임워크인 HybridVLA를 소개합니다. 두 생성 패러다임 간의 간섭을 완화하기 위해, 우리는 다음 토큰 예측 과정에 확산 잡음 제거를 원활하게 통합하는 협력적 훈련 방식을 제안합니다. 이 방식을 통해, 우리는 이 두 행동 예측 방법이 서로를 강화할 뿐만 아니라 다양한 작업에 따라 서로 다른 강점을 보인다는 것을 발견했습니다. 따라서, 우리는 두 예측을 적응적으로 융합하여 더 강력한 제어를 이끌어내는 협력적 행동 앙상블 메커니즘을 설계합니다. HybridVLA는 시뮬레이션 및 실제 세계 작업에서 평균 성공률이 각각 14%와 19% 향상되어 이전 최첨단 VLA 방법을 능가하며, 보이지 않는 구성에서도 안정적인 조작을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.10631v3
+
+## 개요
+HybridVLA는 기존 VLA 방법의 두 가지 주요 한계를 해결하기 위해 설계되었습니다. 자기회귀 방법은 동작을 이산화하여 연속 제어에 필요한 정밀도를 저하시키는 반면, 확산 방법은 VLM 특징을 단순히 조건으로만 사용하여 사전 학습된 추론 능력을 충분히 활용하지 못합니다. 이를 위해 이 프레임워크는 단일 언어 모델 내에서 확산 기반 연속 동작 생성과 자기회귀 기반 토큰 예측을 동시에 지원하며, 협력적 훈련 레시피를 통해 두 패러다임 간의 간섭을 완화합니다. 실험 결과, 두 예측 방식은 작업에 따라 각각 장점을 보였으며, HybridVLA는 적응형 융합 메커니즘을 설계하여 시뮬레이션 및 실제 환경 모두에서 이전 최고 성능 방법을 크게 능가했습니다.
+
+## 핵심 내용
+### 방법 아키텍처
+HybridVLA는 단일 대형 언어 모델(LLM)을 기반으로 구축되며, 두 가지 동작 생성 패러다임을 동시에 통합합니다:
+- **자기회귀 분기**: VLM의 상식 추론 능력을 계승하여 next-token prediction 방식으로 이산 동작 토큰을 생성합니다.
+- **확산 분기**: LLM의 잠재 공간에서 연속 동작 디노이징을 수행하여 고정밀 제어 신호를 직접 출력합니다.
+
+### 협력 훈련 전략
+두 생성 패러다임 간의 간섭을 제거하기 위해 **collaborative training recipe**를 제안합니다:
+- 확산 디노이징 과정을 자기회귀 토큰 예측 흐름에 내장하여 두 목표가 모델 파라미터를 공유하도록 합니다.
+- 훈련 중 이산 토큰 손실과 연속 확산 손실을 교대로 최적화하여 그래디언트 충돌을 방지합니다.
+
+### 적응형 동작 통합
+- 작업에 따라 자기회귀 및 확산 분기의 기여도 차이를 관찰했습니다: 자기회귀는 의미 추론(예: 객체 선택)에 강하고, 확산은 정밀 조작(예: 파지 자세)에 강합니다.
+- **collaborative action ensemble** 메커니즘을 설계합니다: 작업 컨텍스트에 따라 두 예측을 동적으로 가중 융합하며, 가중치는 경량 네트워크가 학습합니다.
+
+### 실험 설정 및 결과
+- **시뮬레이션 작업**: MetaWorld 및 Franka Kitchen 벤치마크에서 테스트한 결과, HybridVLA의 평균 성공률은 87.3%로 이전 최고 VLA 방법보다 14% 높았습니다.
+- **실제 작업**: 6가지 데스크톱 조작 작업(예: 수건 접기, 핀 삽입)에서 평균 성공률 71.5%로 19% 향상되었습니다.
+- **일반화**: 보지 못한 객체 구성, 조명 변화, 배경 간섭 하에서 성공률은 5.2%만 감소하여 기준 방법(18.7% 감소)보다 크게 우수했습니다.
+
+### 핵심 결론
+- 확산과 자기회귀는 VLA 프레임워크에서 상호 보완적이며, 협력 훈련을 통해 두 방식의 성능을 동시에 향상시킬 수 있습니다.
+- 적응형 통합 메커니즘은 다중 작업 시나리오를 처리하는 핵심으로, 작업 유형을 수동으로 지정하지 않고도 최적의 예측 전략을 자동으로 선택할 수 있습니다.

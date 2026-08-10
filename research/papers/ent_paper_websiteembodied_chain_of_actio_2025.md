@@ -34,7 +34,8 @@ verification:
   reviewed_at: '2026-07-01'
   confidence: medium
   notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Loco-Manipulation and Whole-Body-Control.
-    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py'
+    [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill
+    2026-08-10: en body retranslated from zh deep-read (705 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -61,9 +62,6 @@ sources:
 ### 结论
 该工作验证了链式动作推理结合多模态基础模型在人形机器人移动操作中的有效性，为复杂任务分解与实时控制提供了新范式。未来工作将探索在真实机器人平台上的部署与泛化能力。
 
-## Overview
-[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
-
 ## 参考
 - https://humanoid-coa.github.io/
 
@@ -83,3 +81,20 @@ sources:
 
 ### 결론
 본 연구는 체인형 동작 추론과 다중 모달 기초 모델의 결합이 휴머노이드 로봇의 이동 조작에서 효과적임을 입증했으며, 복잡한 작업 분해와 실시간 제어를 위한 새로운 패러다임을 제시했습니다. 향후 연구는 실제 로봇 플랫폼에서의 배포와 일반화 능력을 탐구할 것입니다.
+
+## Overview
+This study addresses the challenges of humanoid robots performing mobile manipulation tasks in dynamic environments by designing a multimodal foundation model-driven chained action reasoning framework. By integrating visual, linguistic, and proprioceptive information, the system progressively decomposes high-level task instructions into executable sub-action sequences and coordinates whole-body control strategies. Experiments demonstrate that this method significantly improves task completion rates and operational stability across various complex scenarios.
+
+## Content
+### Method Architecture
+- **Chained Action Reasoning**: Employs a hierarchical reasoning mechanism that decomposes high-level tasks (e.g., "carry the box to a designated location") into subtasks (e.g., "navigate to the box," "grasp," "move to the target point"), with each subtask corresponding to an action primitive.
+- **Multimodal Foundation Models**: Integrates vision-language models (VLMs) with proprioceptive models; the VLM handles scene understanding and task planning, while the proprioceptive model processes low-level control signals such as joint angles and torques.
+- **Whole-Body Control Strategy**: Utilizes a hybrid framework based on model predictive control (MPC) and reinforcement learning (RL) to coordinate locomotion and manipulation, such as maintaining stable upper-body grasping during walking.
+
+### Experimental Setup
+- **Simulation Environment**: Built on MuJoCo and Isaac Gym, featuring cluttered indoor scenes, narrow passages, and dynamic obstacles.
+- **Baseline Comparisons**: Compared against Task-and-Motion Planning (TAMP) and end-to-end RL methods, evaluating task success rate, execution time, and energy consumption.
+- **Key Metrics**: Across 10 typical tasks, the method achieves an average success rate of 87.3%, surpassing TAMP by 12.6%, with execution time reduced by 23.4%; whole-body control energy consumption decreases by 15.2%.
+
+### Conclusion
+This work validates the effectiveness of chained action reasoning combined with multimodal foundation models for humanoid robot mobile manipulation, offering a new paradigm for complex task decomposition and real-time control. Future work will explore deployment and generalization capabilities on real robotic platforms.

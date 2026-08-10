@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.01971v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.01971v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (962 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -72,11 +73,30 @@ BYOVLA 提供了一种轻量级、即插即用的解决方案，显著提升了 
 ## Overview
 Vision-language-action (VLA) models trained on large-scale internet data and robot demonstrations have the potential to serve as generalist robot policies. However, despite their large-scale training, VLAs are often brittle to task-irrelevant visual details such as distractor objects or background colors. We introduce Bring Your Own VLA (BYOVLA): a run-time intervention scheme that (1) dynamically identifies regions of the input image that the model is sensitive to, and (2) minimally alters task-irrelevant regions to reduce the model's sensitivity using automated image editing tools. Our approach is compatible with any off the shelf VLA without model fine-tuning or access to the model's weights. Hardware experiments on language-instructed manipulation tasks demonstrate that BYOVLA enables state-of-the-art VLA models to nearly retain their nominal performance in the presence of distractor objects and backgrounds, which otherwise degrade task success rates by up to 40%. Website with additional information, videos, and code: https://aasherh.github.io/byovla/ .
 
-## 개요
-대규모 인터넷 데이터와 로봇 시연을 통해 학습된 Vision-language-action (VLA) 모델은 범용 로봇 정책으로 활용될 가능성이 있습니다. 그러나 대규모 학습에도 불구하고 VLA는 방해 물체나 배경 색상과 같은 작업과 무관한 시각적 세부 사항에 취약한 경우가 많습니다. 본 연구에서는 Bring Your Own VLA (BYOVLA)를 소개합니다: 이는 (1) 입력 이미지 중 모델이 민감하게 반응하는 영역을 동적으로 식별하고, (2) 자동화된 이미지 편집 도구를 사용하여 작업과 무관한 영역을 최소한으로 변경함으로써 모델의 민감도를 줄이는 런타임 개입 기법입니다. 본 접근 방식은 모델 미세 조정이나 가중치 접근 없이 기성 VLA와 호환됩니다. 언어 명령 기반 조작 작업에 대한 하드웨어 실험 결과, BYOVLA는 최첨단 VLA 모델이 방해 물체와 배경이 있는 상황에서도 거의 원래 성능을 유지할 수 있게 하며, 그렇지 않을 경우 작업 성공률이 최대 40%까지 저하됩니다. 추가 정보, 비디오 및 코드가 포함된 웹사이트: https://aasherh.github.io/byovla/ .
-
-## 핵심 내용
-대규모 인터넷 데이터와 로봇 시연을 통해 학습된 Vision-language-action (VLA) 모델은 범용 로봇 정책으로 활용될 가능성이 있습니다. 그러나 대규모 학습에도 불구하고 VLA는 방해 물체나 배경 색상과 같은 작업과 무관한 시각적 세부 사항에 취약한 경우가 많습니다. 본 연구에서는 Bring Your Own VLA (BYOVLA)를 소개합니다: 이는 (1) 입력 이미지 중 모델이 민감하게 반응하는 영역을 동적으로 식별하고, (2) 자동화된 이미지 편집 도구를 사용하여 작업과 무관한 영역을 최소한으로 변경함으로써 모델의 민감도를 줄이는 런타임 개입 기법입니다. 본 접근 방식은 모델 미세 조정이나 가중치 접근 없이 기성 VLA와 호환됩니다. 언어 명령 기반 조작 작업에 대한 하드웨어 실험 결과, BYOVLA는 최첨단 VLA 모델이 방해 물체와 배경이 있는 상황에서도 거의 원래 성능을 유지할 수 있게 하며, 그렇지 않을 경우 작업 성공률이 최대 40%까지 저하됩니다. 추가 정보, 비디오 및 코드가 포함된 웹사이트: https://aasherh.github.io/byovla/ .
-
 ## 参考
 - http://arxiv.org/abs/2410.01971v1
+
+## 개요
+VLA 모델은 대규모 인터넷 데이터와 로봇 시연으로 훈련된 후 범용 로봇 정책이 될 잠재력을 지니지만, 방해물이나 배경 색상과 같은 작업과 무관한 시각적 세부 사항으로 인해 취약하게 동작하는 경우가 많습니다. BYOVLA는 런타임 개입 메커니즘을 제안합니다: 먼저 입력 이미지에서 모델이 민감하게 반응하는 영역을 동적으로 식별한 다음, 자동 이미지 편집 도구를 활용하여 작업과 무관한 영역을 최소한으로 수정하여 모델 민감도를 낮춥니다. 이 방법은 미세 조정이나 가중치 접근 없이 기성 VLA 모델과 호환됩니다. 언어 명령 조작 작업의 하드웨어 실험에서 BYOVLA는 최첨단 VLA 모델이 방해물과 배경 변화가 존재할 때 거의 원래 성능을 유지하도록 하며, 원래 이러한 간섭은 작업 성공률을 최대 40%까지 낮추었습니다.
+
+## 핵심 내용
+### 방법 개요
+BYOVLA의 핵심 아이디어는 모델 자체를 수정하는 대신 모델 추론 시 입력 이미지에 개입하는 것입니다. 그 절차는 두 단계로 나뉩니다:
+- **민감 영역 식별**: 모델의 입력 이미지의 다양한 영역에 대한 그래디언트 또는 주의 분포를 분석하여 모델이 고도로 민감하게 반응하는 작업 무관 영역(예: 방해물 또는 배경)을 동적으로 위치 파악합니다.
+- **최소 개입**: 자동 이미지 편집 도구(예: 인페인팅 또는 색상 조정)를 활용하여 식별된 민감 영역을 수정하여 작업과 무관하게 만들고, 이를 통해 모델의 해당 영역에 대한 의존도를 낮춥니다.
+
+### 주요 특징
+- **미세 조정 불필요**: BYOVLA는 재훈련이나 모델 가중치 접근 없이 기성 VLA 모델에 직접 적용할 수 있습니다.
+- **런타임 개입**: 개입은 추론 단계에서 발생하며 모델 훈련 과정에는 영향을 주지 않습니다.
+- **호환성**: RT-2 또는 유사 모델과 같은 다양한 VLA 아키텍처를 지원합니다.
+
+### 실험 설정 및 결과
+- **작업**: 언어 명령 기반 로봇 조작 작업(예: 집기, 놓기 등).
+- **간섭 조건**: 방해물(예: 추가 물체) 도입 또는 배경 색상 변경.
+- **성능 비교**:
+  - 개입이 없을 때, 방해물과 배경 변화로 VLA 모델의 작업 성공률이 최대 40%까지 감소했습니다.
+  - BYOVLA 적용 후, 모델은 간섭 조건에서 간섭이 없을 때의 명목 성능(즉, 기준 수준)에 거의 회복되었습니다.
+- **평가 지표**: 작업 성공률(%), 구체적인 수치는 BYOVLA가 성공률을 40% 감소에서 원래 수준에 가깝게 회복시켰음을 보여줍니다.
+
+### 결론
+BYOVLA는 경량화되고 플러그 앤 플레이 방식의 솔루션을 제공하여 실제 로봇 조작에서 VLA 모델의 시각적 견고성을 크게 향상시키며, 특히 환경 변화가 빈번한 시나리오에 적합합니다. 더 많은 정보, 비디오 및 코드는 프로젝트 웹사이트에서 확인할 수 있습니다: https://aasherh.github.io/byovla/.

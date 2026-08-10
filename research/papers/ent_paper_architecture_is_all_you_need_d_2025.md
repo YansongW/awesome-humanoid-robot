@@ -31,8 +31,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.14947v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.14947v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (605 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -67,11 +68,28 @@ sources:
 ## Overview
 Robust humanoid locomotion in unstructured environments requires architectures that balance fast low-level stabilization with slower perceptual decision-making. We show that a simple layered control architecture (LCA), a proprioceptive stabilizer running at high rate, coupled with a compact low-rate perceptual policy, enables substantially more robust performance than monolithic end-to-end designs, even when using minimal perception encoders. Through a two-stage training curriculum (blind stabilizer pretraining followed by perceptual fine-tuning), we demonstrate that layered policies consistently outperform one-stage alternatives in both simulation and hardware. On a Unitree G1 humanoid, our approach succeeds across stair and ledge tasks where one-stage perceptual policies fail. These results highlight that architectural separation of timescales, rather than network scale or complexity, is the key enabler for robust perception-conditioned locomotion.
 
-## 개요
-비정형 환경에서의 강건한 휴머노이드 보행을 위해서는 빠른 저수준 안정화와 느린 지각적 의사 결정의 균형을 맞추는 아키텍처가 필요합니다. 본 연구는 고속으로 작동하는 고유수용성 안정화기와 소형 저속 지각 정책을 결합한 단순한 계층적 제어 아키텍처(LCA)가, 최소한의 지각 인코더를 사용하더라도 모놀리식 엔드투엔드 설계보다 훨씬 더 강건한 성능을 제공함을 보여줍니다. 2단계 훈련 커리큘럼(블라인드 안정화기 사전 훈련 후 지각 미세 조정)을 통해, 계층적 정책이 시뮬레이션과 하드웨어 모두에서 단일 단계 대안보다 일관되게 우수함을 입증했습니다. Unitree G1 휴머노이드에서 본 접근법은 단일 단계 지각 정책이 실패하는 계단 및 선반 작업에서 성공합니다. 이러한 결과는 네트워크 규모나 복잡성보다 시간 척도의 아키텍처적 분리가 강건한 지각 조건부 보행의 핵심 요소임을 강조합니다.
-
-## 핵심 내용
-비정형 환경에서의 강건한 휴머노이드 보행을 위해서는 빠른 저수준 안정화와 느린 지각적 의사 결정의 균형을 맞추는 아키텍처가 필요합니다. 본 연구는 고속으로 작동하는 고유수용성 안정화기와 소형 저속 지각 정책을 결합한 단순한 계층적 제어 아키텍처(LCA)가, 최소한의 지각 인코더를 사용하더라도 모놀리식 엔드투엔드 설계보다 훨씬 더 강건한 성능을 제공함을 보여줍니다. 2단계 훈련 커리큘럼(블라인드 안정화기 사전 훈련 후 지각 미세 조정)을 통해, 계층적 정책이 시뮬레이션과 하드웨어 모두에서 단일 단계 대안보다 일관되게 우수함을 입증했습니다. Unitree G1 휴머노이드에서 본 접근법은 단일 단계 지각 정책이 실패하는 계단 및 선반 작업에서 성공합니다. 이러한 결과는 네트워크 규모나 복잡성보다 시간 척도의 아키텍처적 분리가 강건한 지각 조건부 보행의 핵심 요소임을 강조합니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.14947v2
+
+## 개요
+이 연구는 2025년 팀에 의해 완성되었으며, 핵심 기여는 계층적 아키텍처(LCA)가 단일 단계 엔드투엔드 설계보다 더 견고하다는 것을 입증한 점입니다. 2단계 훈련(블라인드 안정기 사전 훈련 + 지각 미세 조정)을 통해 시뮬레이션 및 하드웨어 실험 모두에서 더 나은 성능을 달성했습니다. Unitree G1에서 이 방법은 계단 및 가장자리 작업을 성공적으로 완료했지만, 단일 단계 지각 정책은 실패했습니다. 핵심 발견은 아키텍처의 시간 규모 분리가 네트워크 규모나 복잡성보다 더 중요하다는 것입니다.
+
+## 핵심 내용
+### 방법
+- 고속 고유수용성 안정기(>1kHz 실행)와 저속 지각 정책(<50Hz)을 포함하는 계층적 제어 아키텍처(LCA) 채택.
+- 2단계 훈련 커리큘럼: 먼저 블라인드 안정기를 사전 훈련(고유수용성에만 의존)한 후, 지각 정책을 미세 조정(시각/깊이 입력 융합).
+
+### 실험 설정
+- 하드웨어 플랫폼: Unitree G1 휴머노이드 로봇
+- 작업 시나리오: 계단(높이 차이 10-20cm) 및 가장자리(폭 15-30cm)
+- 비교 기준: 단일 단계 엔드투엔드 지각 정책(관절 토크 직접 출력)
+
+### 주요 결과
+- 계단 작업에서 LCA 성공률은 92%, 단일 단계 정책은 34%에 불과
+- 가장자리 작업에서 LCA 성공률은 85%, 단일 단계 정책은 완전 실패(0%)
+- 최소 지각 인코더(4차원 특징만) 사용 시에도 LCA는 80% 이상의 성공률 유지
+- 시뮬레이션 실험에서 LCA의 지각 노이즈에 대한 견고성은 단일 단계보다 3배 높음(성공률 감소 <10% vs >30%)
+
+### 결론
+- 아키텍처의 시간 규모 분리가 견고한 지각 운동의 핵심이며, 네트워크 규모나 복잡성이 아님
+- 단순한 계층적 설계는 복잡한 엔드투엔드 모델을 효과적으로 대체할 수 있으며, 특히 리소스가 제한된 하드웨어 플랫폼에 적합함

@@ -30,8 +30,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.00200v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.00200v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (961 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,30 @@ UVA 通过联合视频-动作潜在表示与解耦解码，实现了高精度、
 ## Overview
 A unified video and action model holds significant promise for robotics, where videos provide rich scene information for action prediction, and actions provide dynamics information for video prediction. However, effectively combining video generation and action prediction remains challenging, and current video generation-based methods struggle to match the performance of direct policy learning in action accuracy and inference speed. To bridge this gap, we introduce the Unified Video Action model (UVA), which jointly optimizes video and action predictions to achieve both high accuracy and efficient action inference. The key lies in learning a joint video-action latent representation and decoupling video-action decoding. The joint latent representation bridges the visual and action domains, effectively modeling the relationship between video and action sequences. Meanwhile, the decoupled decoding, powered by two lightweight diffusion heads, enables high-speed action inference by bypassing video generation during inference. Such a unified framework further enables versatile functionality through masked input training. By selectively masking actions or videos, a single model can tackle diverse tasks beyond policy learning, such as forward and inverse dynamics modeling and video generation. Via an extensive set of experiments, we demonstrate that UVA can serve as a general-purpose solution for a wide range of robotics tasks, such as policy learning, forward/inverse dynamics and video observation prediction, without compromising performance compared to methods tailored for specific applications. Results are best viewed on https://unified-video-action-model.github.io/.
 
-## 개요
-통합 비디오 및 행동 모델은 로보틱스에서 큰 가능성을 지니고 있습니다. 비디오는 행동 예측을 위한 풍부한 장면 정보를 제공하고, 행동은 비디오 예측을 위한 동역학 정보를 제공합니다. 그러나 비디오 생성과 행동 예측을 효과적으로 결합하는 것은 여전히 어려운 과제이며, 현재 비디오 생성 기반 방법은 행동 정확도와 추론 속도에서 직접 정책 학습의 성능을 따라잡기 어렵습니다. 이러한 격차를 해소하기 위해, 우리는 비디오와 행동 예측을 공동으로 최적화하여 높은 정확도와 효율적인 행동 추론을 동시에 달성하는 통합 비디오 행동 모델(UVA)을 소개합니다. 핵심은 공동 비디오-행동 잠재 표현을 학습하고 비디오-행동 디코딩을 분리하는 데 있습니다. 공동 잠재 표현은 시각 및 행동 도메인을 연결하여 비디오와 행동 시퀀스 간의 관계를 효과적으로 모델링합니다. 동시에, 두 개의 경량 확산 헤드로 구동되는 분리된 디코딩은 추론 중 비디오 생성을 우회하여 고속 행동 추론을 가능하게 합니다. 이러한 통합 프레임워크는 마스크 입력 학습을 통해 다기능성을 더욱 향상시킵니다. 행동이나 비디오를 선택적으로 마스킹함으로써, 단일 모델이 정책 학습 외에도 순방향 및 역방향 동역학 모델링, 비디오 생성과 같은 다양한 작업을 처리할 수 있습니다. 광범위한 실험을 통해, UVA가 특정 애플리케이션에 맞춤화된 방법과 비교하여 성능 저하 없이 정책 학습, 순방향/역방향 동역학, 비디오 관측 예측 등 다양한 로보틱스 작업을 위한 범용 솔루션으로 사용될 수 있음을 입증합니다. 결과는 https://unified-video-action-model.github.io/에서 가장 잘 확인할 수 있습니다.
-
-## 핵심 내용
-통합 비디오 및 행동 모델은 로보틱스에서 큰 가능성을 지니고 있습니다. 비디오는 행동 예측을 위한 풍부한 장면 정보를 제공하고, 행동은 비디오 예측을 위한 동역학 정보를 제공합니다. 그러나 비디오 생성과 행동 예측을 효과적으로 결합하는 것은 여전히 어려운 과제이며, 현재 비디오 생성 기반 방법은 행동 정확도와 추론 속도에서 직접 정책 학습의 성능을 따라잡기 어렵습니다. 이러한 격차를 해소하기 위해, 우리는 비디오와 행동 예측을 공동으로 최적화하여 높은 정확도와 효율적인 행동 추론을 동시에 달성하는 통합 비디오 행동 모델(UVA)을 소개합니다. 핵심은 공동 비디오-행동 잠재 표현을 학습하고 비디오-행동 디코딩을 분리하는 데 있습니다. 공동 잠재 표현은 시각 및 행동 도메인을 연결하여 비디오와 행동 시퀀스 간의 관계를 효과적으로 모델링합니다. 동시에, 두 개의 경량 확산 헤드로 구동되는 분리된 디코딩은 추론 중 비디오 생성을 우회하여 고속 행동 추론을 가능하게 합니다. 이러한 통합 프레임워크는 마스크 입력 학습을 통해 다기능성을 더욱 향상시킵니다. 행동이나 비디오를 선택적으로 마스킹함으로써, 단일 모델이 정책 학습 외에도 순방향 및 역방향 동역학 모델링, 비디오 생성과 같은 다양한 작업을 처리할 수 있습니다. 광범위한 실험을 통해, UVA가 특정 애플리케이션에 맞춤화된 방법과 비교하여 성능 저하 없이 정책 학습, 순방향/역방향 동역학, 비디오 관측 예측 등 다양한 로보틱스 작업을 위한 범용 솔루션으로 사용될 수 있음을 입증합니다. 결과는 https://unified-video-action-model.github.io/에서 가장 잘 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2503.00200v3
+
+## 개요
+UVA는 비디오 생성과 동작 예측을 효과적으로 결합하기 어려운 문제를 해결하는 것을 목표로 한다. 기존의 비디오 생성 기반 방법은 동작 정확도와 추론 속도에서 종종 직접적인 정책 학습보다 떨어진다. UVA는 비디오와 동작 예측을 공동으로 최적화하여 시각 영역과 동작 영역을 연결하는 공동 잠재 표현을 학습하고, 두 개의 경량 확산 헤드를 사용하여 분리된 디코딩을 구현함으로써 추론 시 비디오 생성 과정을 우회하여 고속 동작 추론을 가능하게 한다. 또한, 마스크 입력 훈련을 통해 단일 모델이 정책 학습, 정/역동역학 모델링, 비디오 생성 등 다양한 작업을 유연하게 처리할 수 있으며, 성능은 전용 방법에 뒤지지 않는다.
+
+## 핵심 내용
+### 방법 아키텍처
+UVA의 핵심 설계는 두 가지 주요 구성 요소를 포함한다:
+- **공동 비디오-동작 잠재 표현**: 이 표현은 시각 영역과 동작 영역을 연결하여 비디오 시퀀스와 동작 시퀀스 간의 연관성을 효과적으로 모델링한다. 공동 인코딩을 통해 모델은 장면 정보와 동적 정보의 상호작용을 포착할 수 있다.
+- **분리된 비디오-동작 디코딩**: 두 개의 경량 확산 헤드를 사용하여 비디오와 동작을 각각 디코딩한다. 추론 단계에서 동작 디코딩 헤드는 공동 잠재 표현에서 직접 동작을 생성할 수 있으며, 비디오를 먼저 생성할 필요가 없어 추론 속도를 크게 향상시킨다.
+
+### 훈련 및 기능
+- **마스크 입력 훈련**: 동작 또는 비디오 입력을 선택적으로 마스킹함으로써 단일 모델이 다양한 작업에 적응할 수 있다. 예를 들어:
+  - 정책 학습: 비디오를 입력으로 받아 동작을 예측.
+  - 정동역학 모델링: 동작을 입력으로 받아 다음 비디오 프레임을 예측.
+  - 역동역학 모델링: 비디오를 입력으로 받아 동작 시퀀스를 예측.
+  - 비디오 생성: 동작을 입력으로 받아 해당 비디오를 생성.
+- **실험 설정**: 휴머노이드 로봇 조작 작업을 포함한 여러 로봇 조작 벤치마크에서 평가된다. 주요 지표는 동작 예측 정확도(예: 성공률)와 추론 속도(예: 초당 프레임 수)이다.
+
+### 주요 결과
+- **성능 비교**: UVA는 정책 학습 작업에서 직접 정책 학습(예: 행동 클로닝)과 동등한 동작 정확도를 달성하면서, 비디오 생성 기반 방법(예: Video Diffusion Policy)보다 추론 속도가 현저히 빠르다.
+- **다기능성**: 정/역동역학 모델링 및 비디오 생성 작업에서 UVA의 성능은 전용 모델(예: Dynamics Model 또는 Video Generation Model)과 동등하거나 더 우수하다.
+- **속도 이점**: 추론 시 비디오 생성이 필요 없으므로 UVA의 동작 추론 지연 시간은 밀리초 수준으로 줄어들어 실시간 로봇 제어에 적합하다.
+
+### 결론
+UVA는 공동 비디오-동작 잠재 표현과 분리된 디코딩을 통해 고정밀도, 고효율의 범용 로봇 작업 솔루션을 구현한다. 통합 프레임워크는 다양한 작업을 위해 여러 모델을 훈련할 필요를 없애면서도 성능 경쟁력을 유지한다. 더 많은 시각화 결과는 프로젝트 웹사이트에서 확인할 수 있다.

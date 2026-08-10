@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.03272v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.03272v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (933 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,24 @@ The rise of multi-modal large language models (MLLMs) has spurred their applicat
 ## Content
 The rise of multi-modal large language models (MLLMs) has spurred their applications in autonomous driving. Recent MLLM-based methods perform action by learning a direct mapping from perception to action, neglecting the dynamics of the world and the relations between action and world dynamics. In contrast, human beings possess world model that enables them to simulate the future states based on 3D internal visual representation and plan actions accordingly. To this end, we propose OccLLaMA, an occupancy-language-action generative world model, which uses semantic occupancy as a general visual representation and unifies vision-language-action (VLA) modalities through an autoregressive model. Specifically, we introduce a novel VQVAE-like scene tokenizer to efficiently discretize and reconstruct semantic occupancy scenes, considering its sparsity and classes imbalance. Then, we build a unified multi-modal vocabulary for vision, language and action. Furthermore, we enhance LLM, specifically LLaMA, to perform the next token/scene prediction on the unified vocabulary to complete multiple tasks in autonomous driving. Extensive experiments demonstrate that OccLLaMA achieves competitive performance across multiple tasks, including 4D occupancy forecasting, motion planning, and visual question answering, showcasing its potential as a foundation model in autonomous driving.
 
-## 개요
-멀티모달 대규모 언어 모델(MLLM)의 부상은 자율주행 분야에서의 응용을 촉진했습니다. 최근 MLLM 기반 방법은 인식에서 행동으로의 직접적인 매핑을 학습하여 행동을 수행하지만, 세계의 역학과 행동과 세계 역학 간의 관계를 무시합니다. 반면, 인간은 3D 내부 시각적 표현을 기반으로 미래 상태를 시뮬레이션하고 그에 따라 행동을 계획할 수 있는 세계 모델을 보유하고 있습니다. 이를 위해 우리는 OccLLaMA를 제안합니다. 이는 점유-언어-행동 생성 세계 모델로, 의미적 점유를 일반적인 시각적 표현으로 사용하고 자기회귀 모델을 통해 시각-언어-행동(VLA) 모달리티를 통합합니다. 구체적으로, 우리는 희소성과 클래스 불균형을 고려하여 의미적 점유 장면을 효율적으로 이산화하고 재구성하는 새로운 VQVAE 유사 장면 토크나이저를 도입합니다. 그런 다음, 시각, 언어 및 행동을 위한 통합 멀티모달 어휘를 구축합니다. 또한, LLM, 특히 LLaMA를 개선하여 통합 어휘에 대한 다음 토큰/장면 예측을 수행함으로써 자율주행에서 여러 작업을 완료합니다. 광범위한 실험을 통해 OccLLaMA가 4D 점유 예측, 모션 계획 및 시각 질문 응답을 포함한 여러 작업에서 경쟁력 있는 성능을 달성하여 자율주행의 기초 모델로서의 잠재력을 입증합니다.
-
-## 핵심 내용
-멀티모달 대규모 언어 모델(MLLM)의 부상은 자율주행 분야에서의 응용을 촉진했습니다. 최근 MLLM 기반 방법은 인식에서 행동으로의 직접적인 매핑을 학습하여 행동을 수행하지만, 세계의 역학과 행동과 세계 역학 간의 관계를 무시합니다. 반면, 인간은 3D 내부 시각적 표현을 기반으로 미래 상태를 시뮬레이션하고 그에 따라 행동을 계획할 수 있는 세계 모델을 보유하고 있습니다. 이를 위해 우리는 OccLLaMA를 제안합니다. 이는 점유-언어-행동 생성 세계 모델로, 의미적 점유를 일반적인 시각적 표현으로 사용하고 자기회귀 모델을 통해 시각-언어-행동(VLA) 모달리티를 통합합니다. 구체적으로, 우리는 희소성과 클래스 불균형을 고려하여 의미적 점유 장면을 효율적으로 이산화하고 재구성하는 새로운 VQVAE 유사 장면 토크나이저를 도입합니다. 그런 다음, 시각, 언어 및 행동을 위한 통합 멀티모달 어휘를 구축합니다. 또한, LLM, 특히 LLaMA를 개선하여 통합 어휘에 대한 다음 토큰/장면 예측을 수행함으로써 자율주행에서 여러 작업을 완료합니다. 광범위한 실험을 통해 OccLLaMA가 4D 점유 예측, 모션 계획 및 시각 질문 응답을 포함한 여러 작업에서 경쟁력 있는 성능을 달성하여 자율주행의 기초 모델로서의 잠재력을 입증합니다.
-
 ## 参考
 - http://arxiv.org/abs/2409.03272v1
+
+## 개요
+기존의 다중 모달 대형 언어 모델 기반 자율주행 방법은 일반적으로 지각에서 직접 행동으로 매핑하며, 세계 역학 및 행동과 세계 상태 간의 연관성을 무시합니다. 인간의 세계 모델에서 영감을 받아 OccLLaMA는 의미적 점유를 범용 시각 표현으로 사용하여 시각-언어-행동이 통합된 생성적 세계 모델을 구축했습니다. 이 모델은 VQVAE 유사 장면 토크나이저를 도입하여 의미적 점유 장면을 효율적으로 이산화하고 재구성하며, 시각, 언어 및 행동을 포함한 통합 다중 모달 어휘를 구축합니다. 이를 바탕으로 OccLLaMA는 LLaMA 모델을 강화하여 통합 어휘에서 다음 토큰/장면 예측을 수행할 수 있게 하여 여러 자율주행 작업을 완료합니다.
+
+## 핵심 내용
+### 방법 아키텍처
+OccLLaMA의 핵심 혁신은 의미적 점유를 시각, 언어 및 행동을 연결하는 범용 표현으로 사용하고, 자기회귀 생성 패러다임을 채택하여 다중 모달 정보를 통합 처리하는 것입니다. 구체적으로 다음 핵심 구성 요소를 포함합니다:
+
+- **장면 토크나이저(Scene Tokenizer)**: 의미적 점유 장면의 희소성과 클래스 불균형 문제를专门으로 처리하는 VQVAE 유사 구조를 설계하여 효율적인 이산화 인코딩 및 재구성을 구현합니다.
+- **통합 다중 모달 어휘**: 시각 점유 토큰, 언어 토큰 및 행동 토큰을 동일한 어휘에 통합하여 모델이 통합된 시퀀스 형태로 다중 모달 입력 및 출력을 처리할 수 있게 합니다.
+- **강화된 LLaMA 백본**: LLaMA를 기반으로 개선하여 통합 어휘에서 다음 토큰 예측(언어 및 행동용) 및 다음 장면 예측(4D 점유용)을 수행할 수 있게 하여 여러 작업을 동시에 지원합니다.
+
+### 실험 설정 및 주요 결과
+- **작업 범위**: 4D 점유 예측, 운동 계획 및 시각 질의응답의 세 가지 대표적인 자율주행 작업에서 평가합니다.
+- **성능**: OccLLaMA는 모든 작업에서 경쟁력 있는 결과를 달성하여 자율주행 기초 모델로서의 잠재력을 검증합니다. 구체적인 수치는 원문의 실험 표를 참조하세요.
+- **비교 기준**: 기존 MLLM 기반 방법과 비교하여 OccLLaMA는 세계 역학(점유 예측)을 명시적으로 모델링하여 행동 계획 및 장면 이해의 일관성을 향상시킵니다.
+
+### 결론
+OccLLaMA는 의미적 점유를 생성적 세계 모델 프레임워크에 처음으로 도입하여 시각-언어-행동 모달리티를 통합한 자기회귀 모델링을 통해 자율주행을 위한 새로운 기초 모델 패러다임을 제공합니다. 그 성공은 세계 역학을 명시적으로 모델링하는 것이 다중 작업 공동 학습의 효과를 향상시키는 데 도움이 된다는 것을 보여주며, 향후 더 복잡한 주행 시나리오 및 상호작용 작업으로 확장할 수 있습니다.

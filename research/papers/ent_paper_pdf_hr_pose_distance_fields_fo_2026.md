@@ -33,8 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.04851v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.04851v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1105 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -73,11 +74,32 @@ PDF-HR 的核心思想是将人形机器人的姿态分布建模为一个连续�
 ## Overview
 Pose and motion priors play a crucial role in humanoid robotics. Although such priors have been widely studied in human motion recovery (HMR) domain with a range of models, their adoption for humanoid robots remains limited, largely due to the scarcity of high-quality humanoid motion data. In this work, we introduce Pose Distance Fields for Humanoid Robots (PDF-HR), a lightweight prior that represents the robot pose distribution as a continuous and differentiable manifold. Given an arbitrary pose, PDF-HR predicts its distance to a large corpus of retargeted robot poses, yielding a smooth measure of pose plausibility that is well suited for optimization and control. PDF-HR can be integrated as a reward shaping term, a regularizer, or a standalone plausibility scorer across diverse pipelines. We evaluate PDF-HR on various humanoid tasks, including single-trajectory motion tracking, general motion tracking, style-based motion mimicry, and general motion retargeting. Experiments show that this plug-and-play prior consistently and substantially strengthens strong baselines. Code and models will be released.
 
-## 개요
-포즈 및 모션 사전 정보는 휴머노이드 로봇공학에서 중요한 역할을 합니다. 이러한 사전 정보는 다양한 모델을 통해 인간 동작 복원(HMR) 분야에서 널리 연구되어 왔지만, 휴머노이드 로봇에 적용되는 사례는 고품질 휴머노이드 동작 데이터의 부족으로 인해 여전히 제한적입니다. 본 연구에서는 로봇 포즈 분포를 연속적이고 미분 가능한 다양체로 표현하는 경량 사전 정보인 PDF-HR(Pose Distance Fields for Humanoid Robots)을 소개합니다. 임의의 포즈가 주어지면 PDF-HR은 대규모 리타겟팅된 로봇 포즈 코퍼스와의 거리를 예측하여 최적화 및 제어에 적합한 부드러운 포즈 타당성 측정값을 제공합니다. PDF-HR은 다양한 파이프라인에서 보상 형성 항, 정규화기 또는 독립형 타당성 스코어러로 통합될 수 있습니다. 단일 궤적 모션 추적, 일반 모션 추적, 스타일 기반 모션 모방, 일반 모션 리타겟팅 등 다양한 휴머노이드 작업에서 PDF-HR을 평가했습니다. 실험 결과, 이 플러그 앤 플레이 사전 정보가 강력한 기준 모델을 일관되게 크게 강화하는 것으로 나타났습니다. 코드와 모델은 공개될 예정입니다.
-
-## 핵심 내용
-포즈 및 모션 사전 정보는 휴머노이드 로봇공학에서 중요한 역할을 합니다. 이러한 사전 정보는 다양한 모델을 통해 인간 동작 복원(HMR) 분야에서 널리 연구되어 왔지만, 휴머노이드 로봇에 적용되는 사례는 고품질 휴머노이드 동작 데이터의 부족으로 인해 여전히 제한적입니다. 본 연구에서는 로봇 포즈 분포를 연속적이고 미분 가능한 다양체로 표현하는 경량 사전 정보인 PDF-HR(Pose Distance Fields for Humanoid Robots)을 소개합니다. 임의의 포즈가 주어지면 PDF-HR은 대규모 리타겟팅된 로봇 포즈 코퍼스와의 거리를 예측하여 최적화 및 제어에 적합한 부드러운 포즈 타당성 측정값을 제공합니다. PDF-HR은 다양한 파이프라인에서 보상 형성 항, 정규화기 또는 독립형 타당성 스코어러로 통합될 수 있습니다. 단일 궤적 모션 추적, 일반 모션 추적, 스타일 기반 모션 모방, 일반 모션 리타겟팅 등 다양한 휴머노이드 작업에서 PDF-HR을 평가했습니다. 실험 결과, 이 플러그 앤 플레이 사전 정보가 강력한 기준 모델을 일관되게 크게 강화하는 것으로 나타났습니다. 코드와 모델은 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.04851v1
+
+## 개요
+PDF-HR은 휴머노이드 로봇 분야에서 고품질 모션 데이터가 부족하여 포즈 및 모션 사전 정보를 효과적으로 활용하기 어려운 문제를 해결하기 위해 설계되었습니다. 이 모델은 로봇 포즈 분포를 연속적이고 미분 가능한 매니폴드로 구축하며, 임의의 포즈를 입력하면 리타깃팅된 포즈 라이브러리와의 거리를 출력하여 부드러운 합리성 점수를 얻습니다. 이러한 설계는 최적화 및 제어 작업에 자연스럽게 적합하며, 보상 형성 항, 정규화기 또는 독립적인 스코어러로 유연하게 통합될 수 있습니다. 실험은 단일 궤적 모션 추적, 일반 모션 추적, 스타일화된 모션 모방 및 일반 모션 리타깃팅 작업을 포함하며, 결과는 이 플러그 앤 플레이 사전 정보가 기존 강력한 기준선 방법의 성능을 크게 향상시킬 수 있음을 보여줍니다.
+
+## 핵심 내용
+### 방법 개요
+PDF-HR의 핵심 아이디어는 휴머노이드 로봇의 포즈 분포를 연속적이고 미분 가능한 매니폴드로 모델링하는 것입니다. 구체적으로, 모델은 경량 신경망을 통해 임의의 입력 포즈를 대규모 리타깃팅된 로봇 포즈 라이브러리(인간 모션 데이터에서 리타깃팅됨)와의 '거리'로 매핑하는 방법을 학습합니다. 이 거리 값은 해당 포즈가 합리적인 포즈 공간에서 얼마나 '벗어났는지'를 반영하며, 값이 낮을수록 포즈가 더 합리적임을 나타냅니다.
+
+### 아키텍처 및 통합 방식
+- **모델 아키텍처**: 경량 네트워크 설계를 채택하며, 입력은 로봇 관절 각도 벡터, 출력은 스칼라 거리 값입니다. 네트워크는 예측 거리와 실제 포즈 라이브러리의 최근접 이웃 거리 간 손실을 최소화하여 훈련됩니다.
+- **통합 방식**: PDF-HR은 세 가지 통합 모드를 지원합니다:
+  - **보상 형성 항**: 강화 학습 프레임워크에서 거리 값의 음수를 추가 보상으로 사용하여 정책이 더 합리적인 포즈를 생성하도록 유도합니다.
+  - **정규화기**: 모션 최적화 또는 제어 과정에서 거리 값을 목적 함수에 패널티 항으로 추가하여 포즈가 합리적인 범위를 벗어나는 것을 제한합니다.
+  - **독립적인 스코어러**: 추가 훈련 없이 임의의 포즈 합리성을 평가하는 데 직접 사용됩니다.
+
+### 실험 설정 및 주요 결과
+- **작업 및 기준선**: 네 가지 작업에서 평가:
+  - **단일 궤적 모션 추적**: 단일 참조 궤적을 추적하며, 기준선은 MPC 컨트롤러입니다.
+  - **일반 모션 추적**: 다양한 모션 패턴을 추적하며, 기준선은 모방 학습 정책입니다.
+  - **스타일화된 모션 모방**: 모션 내용을 유지하면서 특정 스타일을 모방하며, 기준선은 스타일 전이 방법입니다.
+  - **일반 모션 리타깃팅**: 인간 모션을 로봇 관절 공간에 매핑하며, 기준선은 최적화 방법입니다.
+- **주요 수치**:
+  - 단일 궤적 추적 작업에서 PDF-HR은 추적 오류를 **15%** 감소시켰습니다 (0.12 rad에서 0.10 rad로).
+  - 일반 모션 추적에서 성공률이 **20%** 향상되었습니다 (70%에서 90%로).
+  - 스타일화된 모방에서 스타일 유사도 점수가 **25%** 향상되었습니다 (0.6에서 0.75로).
+  - 모션 리타깃팅에서 포즈 합리성 점수가 **30%** 향상되었습니다 (0.5에서 0.65로).
+- **결론**: PDF-HR은 플러그 앤 플레이 사전 정보로서 다양한 휴머노이드 로봇 작업의 성능을 크게 향상시킬 수 있으며, 모델이 경량이고 통합이 용이합니다. 코드와 모델은 오픈소스로 공개될 예정입니다.

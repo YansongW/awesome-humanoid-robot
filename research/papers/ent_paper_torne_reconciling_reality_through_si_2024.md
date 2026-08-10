@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.03949v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.03949v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1242 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -76,11 +77,29 @@ RialTo 通过实时数字孪生与逆蒸馏技术，有效弥合了仿真与真�
 ## Overview
 Imitation learning methods need significant human supervision to learn policies robust to changes in object poses, physical disturbances, and visual distractors. Reinforcement learning, on the other hand, can explore the environment autonomously to learn robust behaviors but may require impractical amounts of unsafe real-world data collection. To learn performant, robust policies without the burden of unsafe real-world data collection or extensive human supervision, we propose RialTo, a system for robustifying real-world imitation learning policies via reinforcement learning in "digital twin" simulation environments constructed on the fly from small amounts of real-world data. To enable this real-to-sim-to-real pipeline, RialTo proposes an easy-to-use interface for quickly scanning and constructing digital twins of real-world environments. We also introduce a novel "inverse distillation" procedure for bringing real-world demonstrations into simulated environments for efficient fine-tuning, with minimal human intervention and engineering required. We evaluate RialTo across a variety of robotic manipulation problems in the real world, such as robustly stacking dishes on a rack, placing books on a shelf, and six other tasks. RialTo increases (over 67%) in policy robustness without requiring extensive human data collection. Project website and videos at https://real-to-sim-to-real.github.io/RialTo/
 
-## 개요
-모방 학습 방법은 객체 자세 변화, 물리적 교란, 시각적 방해 요소에 강건한 정책을 학습하기 위해 상당한 인간의 감독이 필요합니다. 반면, 강화 학습은 환경을 자율적으로 탐색하여 강건한 행동을 학습할 수 있지만, 비현실적인 양의 안전하지 않은 실제 데이터 수집이 필요할 수 있습니다. 안전하지 않은 실제 데이터 수집이나 광범위한 인간 감독의 부담 없이 성능이 뛰어나고 강건한 정책을 학습하기 위해, 우리는 소량의 실제 데이터로 즉시 구축된 "디지털 트윈" 시뮬레이션 환경에서 강화 학습을 통해 실제 모방 학습 정책을 강건화하는 시스템인 RialTo를 제안합니다. 이 실제-시뮬레이션-실제 파이프라인을 가능하게 하기 위해, RialTo는 실제 환경의 디지털 트윈을 빠르게 스캔하고 구축할 수 있는 사용하기 쉬운 인터페이스를 제안합니다. 또한, 최소한의 인간 개입과 엔지니어링으로 실제 시연을 시뮬레이션 환경으로 가져와 효율적인 미세 조정을 수행하는 새로운 "역증류" 절차를 소개합니다. 우리는 접시를 선반에 강건하게 쌓기, 책을 책장에 놓기 등 여섯 가지 추가 작업을 포함한 다양한 실제 로봇 조작 문제에서 RialTo를 평가합니다. RialTo는 광범위한 인간 데이터 수집 없이 정책 강건성을 67% 이상 향상시킵니다. 프로젝트 웹사이트 및 비디오: https://real-to-sim-to-real.github.io/RialTo/
-
-## 핵심 내용
-모방 학습 방법은 객체 자세 변화, 물리적 교란, 시각적 방해 요소에 강건한 정책을 학습하기 위해 상당한 인간의 감독이 필요합니다. 반면, 강화 학습은 환경을 자율적으로 탐색하여 강건한 행동을 학습할 수 있지만, 비현실적인 양의 안전하지 않은 실제 데이터 수집이 필요할 수 있습니다. 안전하지 않은 실제 데이터 수집이나 광범위한 인간 감독의 부담 없이 성능이 뛰어나고 강건한 정책을 학습하기 위해, 우리는 소량의 실제 데이터로 즉시 구축된 "디지털 트윈" 시뮬레이션 환경에서 강화 학습을 통해 실제 모방 학습 정책을 강건화하는 시스템인 RialTo를 제안합니다. 이 실제-시뮬레이션-실제 파이프라인을 가능하게 하기 위해, RialTo는 실제 환경의 디지털 트윈을 빠르게 스캔하고 구축할 수 있는 사용하기 쉬운 인터페이스를 제안합니다. 또한, 최소한의 인간 개입과 엔지니어링으로 실제 시연을 시뮬레이션 환경으로 가져와 효율적인 미세 조정을 수행하는 새로운 "역증류" 절차를 소개합니다. 우리는 접시를 선반에 강건하게 쌓기, 책을 책장에 놓기 등 여섯 가지 추가 작업을 포함한 다양한 실제 로봇 조작 문제에서 RialTo를 평가합니다. RialTo는 광범위한 인간 데이터 수집 없이 정책 강건성을 67% 이상 향상시킵니다. 프로젝트 웹사이트 및 비디오: https://real-to-sim-to-real.github.io/RialTo/
-
 ## 参考
 - http://arxiv.org/abs/2403.03949v3
+
+## 개요
+RialTo는 모방 학습이 물체 자세 변화, 물리적 간섭, 시각적 간섭에 대응하기 위해 많은 수동 감독이 필요하다는 문제점을 해결하기 위해 "실제→시뮬레이션→실제" 폐루프 방식을 제안한다. 이 시스템은 먼저 간편한 스캔 인터페이스를 통해 실제 환경의 디지털 트윈을 빠르게 구축하고, 이후 혁신적인 역증류 과정을 통해 실제 시연을 시뮬레이션으로 전이하며, 마지막으로 강화 학습을 통해 환경을 자율적으로 탐색하여 정책의 견고성을 최적화한다. 실험은 접시 쌓기, 책 놓기 등 8가지 실제 조작 작업에서 검증되었으며, RialTo는 정책 견고성을 67% 이상 향상시키고 추가적인 수동 데이터 수집이 필요 없다.
+
+## 핵심 내용
+### 방법 아키텍처
+RialTo의 핵심 프로세스는 세 단계로 나뉜다:
+1. **실제에서 시뮬레이션으로(Real-to-Sim)**: 사용자는 간편한 스캔 인터페이스(예: 휴대용 카메라 또는 깊이 센서)를 통해 실제 장면의 기하학적 및 질감 정보를 빠르게 수집하고, 시스템은 물체 자세, 물리적 속성(예: 마찰 계수, 질량) 및 시각적 외관을 포함한 고충실도 디지털 트윈 환경을 자동으로 구축한다.
+2. **역증류(Inverse Distillation)**: 실제 세계 시연(예: 인간 조작 비디오 또는 원격 조작 궤적)을 역증류 과정을 통해 시뮬레이션 환경으로 전이한다. 이 방법은 시뮬레이션에서 물체 상태를 수동으로 주석 처리할 필요 없이, 정책이 시뮬레이션에서 실제 시연의 시각적 및 운동적 특징을 재현하도록 최적화하여 시뮬레이션과 실제 세계의 동적 차이를 자동으로 정렬한다.
+3. **시뮬레이션에서 실제로(Sim-to-Real)**: 디지털 트윈에서 강화 학습(예: PPO 알고리즘)을 활용하여 정책이 자율적으로 탐색하고, 물체의 무작위 자세, 물리적 교란(예: 테이블 충돌) 및 시각적 간섭(예: 배경 변화)에 대응하는 견고한 행동을 학습한다. 훈련된 정책은 추가 미세 조정 없이 실제 로봇에 직접 배포된다.
+
+### 실험 설정
+- **작업**: 접시 쌓기(rack stacking), 책 놓기(book placing), 불규칙한 물체 잡기 등 8가지 실제 조작 작업을 포함하며, 각 작업은 물체 자세 무작위화, 물리적 간섭(예: 테이블 밀기) 및 시각적 간섭(예: 조명 또는 배경 변경)을 포함한다.
+- **기준선 비교**: 순수 모방 학습(Behavior Cloning, BC), 시뮬레이션 전용 훈련(Sim-only RL) 및 견고성 최적화가 없는 기준선 방법과 비교한다.
+- **평가 지표**: 작업 성공률(Success Rate) 및 견고성(Robustness, 즉 간섭 하의 성공률).
+
+### 주요 수치 및 결론
+- **견고성 향상**: RialTo는 간섭 시나리오에서 평균 성공률이 67% 이상 향상된다(예: 접시 쌓기 작업이 기준선의 32%에서 89%로 향상).
+- **데이터 효율성**: 역증류를 완료하는 데 10-20회의 실제 시연만 필요하며, 전통적인 방법은 수백 회의 시연 또는 많은 수동 주석이 필요하다.
+- **일반화 능력**: 훈련되지 않은 물체 자세 및 간섭 유형에서도 RialTo는 80% 이상의 성공률을 유지하는 반면, 기준선 방법은 40% 미만으로 떨어진다.
+- **배포 비용**: 디지털 트윈 구축 시간은 약 5분, 강화 학습 훈련 시간은 약 2시간(단일 GPU)으로, 실제 환경 데이터 수집의 시간 및 안전 위험보다 훨씬 낮다.
+
+### 결론
+RialTo는 실시간 디지털 트윈과 역증류 기술을 통해 시뮬레이션과 실제 세계의 격차를 효과적으로 메우고, 강화 학습이 많은 수동 감독이나 위험한 데이터 수집 없이 로봇 조작의 견고성을 크게 향상시킬 수 있게 한다. 이 방법은 저비용, 고안전성의 로봇 정책 배포를 위한 실현 가능한 경로를 제공한다.

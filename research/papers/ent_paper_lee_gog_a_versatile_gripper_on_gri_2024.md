@@ -38,8 +38,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.10702v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2401.10702v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (716 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -75,11 +76,27 @@ G.O.G. 通过创新的硬件设计，成功将双臂系统的灵巧性需求转�
 ## Overview
 The manipulation of garments poses research challenges due to their deformable nature and the extensive variability in shapes and sizes. Despite numerous attempts by researchers to address these via approaches involving robot perception and control, there has been a relatively limited interest in resolving it through the co-development of robot hardware. Consequently, the majority of studies employ off-the-shelf grippers in conjunction with dual robot arms to enable bimanual manipulation and high dexterity. However, this dual-arm system increases the overall cost of the robotic system as well as its control complexity in order to tackle robot collisions and other robot coordination issues. As an alternative approach, we propose to enable bimanual cloth manipulation using a single robot arm via novel end effector design -- sharing dexterity skills between manipulator and gripper rather than relying entirely on robot arm coordination. To this end, we introduce a new gripper, called G.O.G., based on a gripper-on-gripper structure where the first gripper independently regulates the span, up to 500mm, between its fingers which are in turn also grippers. These finger grippers consist of a variable friction module that enables two grasping modes: firm and sliding grasps. Household item and cloth object benchmarks are employed to evaluate the performance of the proposed design, encompassing both experiments on the gripper design itself and on cloth manipulation. Experimental results demonstrate the potential of the introduced ideas to undertake a range of bimanual cloth manipulation tasks with a single robot arm. Supplementary material is available at https://sites.google.com/view/gripperongripper.
 
-## 개요
-의류 조작은 변형 가능한 특성과 다양한 형태 및 크기로 인해 연구 과제를 제기합니다. 연구자들이 로봇 인식 및 제어 접근법을 통해 이를 해결하려는 많은 시도가 있었지만, 로봇 하드웨어의 공동 개발을 통해 해결하려는 관심은 상대적으로 제한적이었습니다. 결과적으로 대부분의 연구는 기성 그리퍼를 이중 로봇 팔과 함께 사용하여 양손 조작과 높은 손재주를 가능하게 합니다. 그러나 이 이중 팔 시스템은 로봇 충돌 및 기타 로봇 조정 문제를 해결하기 위해 로봇 시스템의 전체 비용과 제어 복잡성을 증가시킵니다. 대안적인 접근법으로, 우리는 새로운 엔드 이펙터 설계를 통해 단일 로봇 팔을 사용한 양손 천 조작을 제안합니다. 이는 로봇 팔 조정에 전적으로 의존하지 않고 조작기와 그리퍼 간에 손재주 기술을 공유하는 방식입니다. 이를 위해 우리는 G.O.G.라는 새로운 그리퍼를 소개합니다. 이는 그리퍼-온-그리퍼 구조를 기반으로 하며, 첫 번째 그리퍼가 자체적으로 손가락(이 역시 그리퍼임) 사이의 간격을 최대 500mm까지 독립적으로 조절합니다. 이러한 손가락 그리퍼는 가변 마찰 모듈로 구성되어 두 가지 파지 모드(단단한 파지와 미끄러짐 파지)를 가능하게 합니다. 가정용 물체 및 천 객체 벤치마크를 사용하여 제안된 설계의 성능을 평가하며, 그리퍼 설계 자체와 천 조작에 대한 실험을 모두 포함합니다. 실험 결과는 단일 로봇 팔로 다양한 양손 천 조작 작업을 수행할 수 있는 도입된 아이디어의 잠재력을 보여줍니다. 추가 자료는 https://sites.google.com/view/gripperongripper에서 확인할 수 있습니다.
-
-## 핵심 내용
-의류 조작은 변형 가능한 특성과 다양한 형태 및 크기로 인해 연구 과제를 제기합니다. 연구자들이 로봇 인식 및 제어 접근법을 통해 이를 해결하려는 많은 시도가 있었지만, 로봇 하드웨어의 공동 개발을 통해 해결하려는 관심은 상대적으로 제한적이었습니다. 결과적으로 대부분의 연구는 기성 그리퍼를 이중 로봇 팔과 함께 사용하여 양손 조작과 높은 손재주를 가능하게 합니다. 그러나 이 이중 팔 시스템은 로봇 충돌 및 기타 로봇 조정 문제를 해결하기 위해 로봇 시스템의 전체 비용과 제어 복잡성을 증가시킵니다. 대안적인 접근법으로, 우리는 새로운 엔드 이펙터 설계를 통해 단일 로봇 팔을 사용한 양손 천 조작을 제안합니다. 이는 로봇 팔 조정에 전적으로 의존하지 않고 조작기와 그리퍼 간에 손재주 기술을 공유하는 방식입니다. 이를 위해 우리는 G.O.G.라는 새로운 그리퍼를 소개합니다. 이는 그리퍼-온-그리퍼 구조를 기반으로 하며, 첫 번째 그리퍼가 자체적으로 손가락(이 역시 그리퍼임) 사이의 간격을 최대 500mm까지 독립적으로 조절합니다. 이러한 손가락 그리퍼는 가변 마찰 모듈로 구성되어 두 가지 파지 모드(단단한 파지와 미끄러짐 파지)를 가능하게 합니다. 가정용 물체 및 천 객체 벤치마크를 사용하여 제안된 설계의 성능을 평가하며, 그리퍼 설계 자체와 천 조작에 대한 실험을 모두 포함합니다. 실험 결과는 단일 로봇 팔로 다양한 양손 천 조작 작업을 수행할 수 있는 도입된 아이디어의 잠재력을 보여줍니다. 추가 자료는 https://sites.google.com/view/gripperongripper에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2401.10702v1
+
+## 개요
+직물 조작은 재료가 쉽게 변형되고 크기와 형태가 다양하여 매우 도전적입니다. 기존 연구는 주로 이중 팔 로봇 시스템에 의존하지만, 이는 높은 비용과 복잡한 충돌 조정 문제를 초래합니다. G.O.G.는 새로운 엔드 이펙터 설계를 통해 기민성을 로봇 팔 조정에서 그리퍼 자체로 전환하는 대안을 제안합니다. 핵심은 최대 500mm까지 독립적으로 간격을 조절할 수 있는 외부 그리퍼이며, 외부 그리퍼의 두 손가락 자체도 그리퍼로, 가변 마찰 모듈이 통합되어 견고한 파지와 슬라이딩 파지의 두 가지 모드를 지원합니다. 실험은 가정용 물품과 직물 벤치마크를 사용하여 단일 팔 조건에서 다양한 양손 직물 조작 작업을 수행할 수 있는 이 설계의 잠재력을 검증했습니다.
+
+## 핵심 내용
+### 방법
+- **G.O.G. 구조**: "그리퍼 위 그리퍼" 아키텍처를 채택하며, 외부 그리퍼는 두 손가락 사이의 간격(최대 500mm)을 독립적으로 제어할 수 있고, 이 두 손가락 자체가 가변 마찰 손가락 그리퍼입니다.
+- **가변 마찰 모듈**: 각 손가락 그리퍼에는 가변 마찰 모듈이 통합되어 두 가지 파지 모드를 지원합니다:
+  - **견고한 파지**: 안정적인 고정이 필요한 조작에 사용.
+  - **슬라이딩 파지**: 직물이 손가락 사이에서 미끄러지도록 허용하여 자세 조정을 용이하게 함.
+
+### 실험 설정
+- **벤치마크 테스트**: 가정용 물품과 직물 조작의 두 가지 벤치마크를 사용하여 평가.
+- **평가 내용**: 그리퍼 설계 자체에 대한 실험과 직물 조작 작업에 대한 실험을 포함.
+
+### 주요 결과
+- 실험은 G.O.G.가 단일 팔 조건에서 다양한 양손 직물 조작 작업을 수행할 수 있는 잠재력을 입증했습니다.
+- 구체적인 작업에는 직물 펼치기, 접기 등 양손 협응이 필요한 동작이 포함되며 이에 국한되지 않습니다.
+- 추가 자료와 데모 비디오는 프로젝트 웹사이트에서 확인할 수 있습니다: https://sites.google.com/view/gripperongripper
+
+### 결론
+G.O.G.는 혁신적인 하드웨어 설계를 통해 이중 팔 시스템의 기민성 요구를 단일 팔 엔드 이펙터로 성공적으로 전환하여 저비용, 저복잡성 직물 조작을 위한 실현 가능한 솔루션을 제공합니다.

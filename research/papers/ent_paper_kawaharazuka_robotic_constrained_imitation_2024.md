@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.03440v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.03440v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (745 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,33 @@ theoretical_depth:
 ## Overview
 In this study, we present an implementation strategy for a robot that performs peg transfer tasks in Fundamentals of Laparoscopic Surgery (FLS) via imitation learning, aimed at the development of an autonomous robot for laparoscopic surgery. Robotic laparoscopic surgery presents two main challenges: (1) the need to manipulate forceps using ports established on the body surface as fulcrums, and (2) difficulty in perceiving depth information when working with a monocular camera that displays its images on a monitor. Especially, regarding issue (2), most prior research has assumed the availability of depth images or models of a target to be operated on. Therefore, in this study, we achieve more accurate imitation learning with only monocular images by extracting motion constraints from one exemplary motion of skilled operators, collecting data based on these constraints, and conducting imitation learning based on the collected data. We implemented an overall system using two Franka Emika Panda Robot Arms and validated its effectiveness.
 
-## 개요
-본 연구에서는 복강경 수술을 위한 자율 로봇 개발을 목표로, 모방 학습을 통해 복강경 수술 기초(Fundamentals of Laparoscopic Surgery, FLS)의 페그 이동(peg transfer) 작업을 수행하는 로봇의 구현 전략을 제시합니다. 로봇 복강경 수술은 두 가지 주요 과제를 안고 있습니다: (1) 체표면에 설정된 포트를 지점으로 사용하여 겸자를 조작해야 하며, (2) 모니터에 영상을 표시하는 단안 카메라로 작업할 때 깊이 정보를 인식하기 어렵다는 점입니다. 특히 (2)번 문제와 관련하여, 대부분의 선행 연구는 깊이 이미지나 수술 대상의 모델을 사용할 수 있다고 가정했습니다. 따라서 본 연구에서는 숙련된 수술자의 하나의 시범 동작에서 동작 제약 조건을 추출하고, 이 제약 조건을 기반으로 데이터를 수집한 후, 수집된 데이터를 바탕으로 모방 학습을 수행함으로써 단안 이미지만으로 더 정확한 모방 학습을 달성합니다. 두 대의 Franka Emika Panda 로봇 팔을 사용하여 전체 시스템을 구현하고 그 효과를 검증했습니다.
-
-## 핵심 내용
-본 연구에서는 복강경 수술을 위한 자율 로봇 개발을 목표로, 모방 학습을 통해 복강경 수술 기초(FLS)의 페그 이동 작업을 수행하는 로봇의 구현 전략을 제시합니다. 로봇 복강경 수술은 두 가지 주요 과제를 안고 있습니다: (1) 체표면에 설정된 포트를 지점으로 사용하여 겸자를 조작해야 하며, (2) 모니터에 영상을 표시하는 단안 카메라로 작업할 때 깊이 정보를 인식하기 어렵다는 점입니다. 특히 (2)번 문제와 관련하여, 대부분의 선행 연구는 깊이 이미지나 수술 대상의 모델을 사용할 수 있다고 가정했습니다. 따라서 본 연구에서는 숙련된 수술자의 하나의 시범 동작에서 동작 제약 조건을 추출하고, 이 제약 조건을 기반으로 데이터를 수집한 후, 수집된 데이터를 바탕으로 모방 학습을 수행함으로써 단안 이미지만으로 더 정확한 모방 학습을 달성합니다. 두 대의 Franka Emika Panda 로봇 팔을 사용하여 전체 시스템을 구현하고 그 효과를 검증했습니다.
-
 ## 参考
 - http://arxiv.org/abs/2405.03440v1
+
+## 개요
+로봇 복강경 수술에서 단안 카메라의 깊이 정보 부족 및 기구가 천자점에 의해 구속되는 두 가지 과제를 해결하기 위해, 본 연구는 제약 모방 학습 프레임워크를 제안한다. 이 방법은 단일 전문가 시연에서 운동 제약을 추출하고, 이러한 제약을 기반으로 훈련 데이터를 생성한 후, 모방 학습을 통해 예측 모델을 훈련한다. 전체 시스템은 이중 Franka Emika Panda 로봇 팔 플랫폼에서 구현되며, 단안 RGB 이미지만으로 FLS peg transfer 작업을 완료할 수 있고, 깊이 이미지나 대상 모델 사전 지식이 필요 없다.
+
+## 핵심 내용
+### 연구 배경 및 과제
+- 로봇 복강경 수술은 두 가지 핵심 문제에 직면한다:
+  1. 기구는 체표 천자점을 지점으로 운동해야 한다 (지렛대 제약)
+  2. 단안 카메라가 모니터에 표시되어 깊이 인식 능력이 부족하다
+- 기존 방법은 주로 깊이 이미지나 대상 모델에 의존하지만, 본 연구는 단안 RGB 이미지만 사용한다
+
+### 방법 아키텍처
+- **운동 제약 추출**: 단일 전문가 시연에서 핵심 운동 제약(예: 기구 말단 궤적, 천자점 위치 등)을 자동으로 추출
+- **데이터 생성**: 추출된 제약 조건을 기반으로 샘플링을 통해 다양한 훈련 데이터 생성
+- **모방 학습**: 생성된 데이터를 사용하여 예측 모델을 훈련하고, 단안 이미지에서 동작까지의 종단 간 매핑 구현
+
+### 실험 설정
+- **하드웨어 플랫폼**: 단안 RGB 카메라가 장착된 두 대의 Franka Emika Panda 로봇 팔
+- **작업**: FLS 표준 peg transfer 작업(플라스틱 블록을 한쪽에서 다른 쪽으로 이동)
+- **비교 기준**: 깊이 이미지를 사용하는 방법과 비교
+
+### 핵심 결과
+- 단안 RGB 이미지만으로도 이 방법은 peg transfer 작업에서 깊이 방법과 동등한 정밀도를 달성
+- 운동 제약 도입으로 모델이 조명 변화와 배경 간섭에 강건해짐
+- 단일 시연으로 훈련이 완료되어 데이터 수집 비용이 크게 절감
+
+### 결론
+본 연구는 운동 제약을 추출함으로써 단안 RGB 이미지만으로도 복잡한 수술 작업의 모방 학습을 지원할 수 있음을 입증하며, 저비용 수술 로봇 자율화를 위한 실현 가능한 방안을 제공한다.

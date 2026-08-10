@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02787v3. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.02787v3. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1330 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,30 @@ ViFailback 通过显式视觉符号和高质量真实世界数据集，有效提
 ## Overview
 Vision-Language-Action (VLA) models have recently achieved remarkable progress in robotic manipulation, yet they remain limited in failure diagnosis and learning from failures. Additionally, existing failure datasets are mostly generated programmatically in simulation, which limits their generalization to the real world. In light of these, we introduce ViFailback, a framework designed to diagnose robotic manipulation failures and provide both textual and visual correction guidance. Our framework utilizes explicit visual symbols to enhance annotation efficiency. We further release the ViFailback dataset, a large-scale collection of 58,126 Visual Question Answering (VQA) pairs along with their corresponding 5,202 real-world manipulation trajectories. Based on the dataset, we establish ViFailback-Bench, a benchmark of 11 fine-grained VQA tasks designed to assess the failure diagnosis and correction abilities of Vision-Language Models (VLMs), featuring ViFailback-Bench Lite for closed-ended and ViFailback-Bench Hard for open-ended evaluation. To demonstrate the effectiveness of our framework, we built the ViFailback-8B VLM, which not only achieves significant overall performance improvement on ViFailback-Bench but also generates visual symbols for corrective action guidance. Finally, by integrating ViFailback-8B with a VLA model, we conduct real-world robotic experiments demonstrating its ability to assist the VLA model in recovering from failures. Project Website: https://x1nyuzhou.github.io/vifailback.github.io/
 
-## 개요
-Vision-Language-Action (VLA) 모델은 최근 로봇 조작 분야에서 놀라운 진전을 이루었지만, 여전히 실패 진단 및 실패로부터의 학습에는 한계가 있습니다. 또한, 기존의 실패 데이터셋은 대부분 시뮬레이션에서 프로그래밍 방식으로 생성되어 실제 세계로의 일반화에 제한이 있습니다. 이러한 문제를 해결하기 위해, 우리는 로봇 조작 실패를 진단하고 텍스트 및 시각적 교정 지침을 제공하도록 설계된 프레임워크인 ViFailback을 소개합니다. 우리의 프레임워크는 명시적인 시각적 기호를 활용하여 주석 효율성을 향상시킵니다. 또한, 58,126개의 Visual Question Answering (VQA) 쌍과 이에 해당하는 5,202개의 실제 세계 조작 궤적으로 구성된 대규모 컬렉션인 ViFailback 데이터셋을 공개합니다. 이 데이터셋을 기반으로, Vision-Language Models (VLMs)의 실패 진단 및 교정 능력을 평가하기 위해 설계된 11개의 세분화된 VQA 작업으로 구성된 벤치마크인 ViFailback-Bench를 구축했으며, 폐쇄형 평가를 위한 ViFailback-Bench Lite와 개방형 평가를 위한 ViFailback-Bench Hard를 제공합니다. 프레임워크의 효과를 입증하기 위해, ViFailback-Bench에서 전반적인 성능 향상을 달성할 뿐만 아니라 교정 행동 지침을 위한 시각적 기호를 생성하는 ViFailback-8B VLM을 구축했습니다. 마지막으로, ViFailback-8B를 VLA 모델과 통합하여 실제 로봇 실험을 수행함으로써 VLA 모델이 실패로부터 복구하는 데 도움을 줄 수 있는 능력을 입증했습니다. 프로젝트 웹사이트: https://x1nyuzhou.github.io/vifailback.github.io/
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 최근 로봇 조작 분야에서 놀라운 진전을 이루었지만, 여전히 실패 진단 및 실패로부터의 학습에는 한계가 있습니다. 또한, 기존의 실패 데이터셋은 대부분 시뮬레이션에서 프로그래밍 방식으로 생성되어 실제 세계로의 일반화에 제한이 있습니다. 이러한 문제를 해결하기 위해, 우리는 로봇 조작 실패를 진단하고 텍스트 및 시각적 교정 지침을 제공하도록 설계된 프레임워크인 ViFailback을 소개합니다. 우리의 프레임워크는 명시적인 시각적 기호를 활용하여 주석 효율성을 향상시킵니다. 또한, 58,126개의 Visual Question Answering (VQA) 쌍과 이에 해당하는 5,202개의 실제 세계 조작 궤적으로 구성된 대규모 컬렉션인 ViFailback 데이터셋을 공개합니다. 이 데이터셋을 기반으로, Vision-Language Models (VLMs)의 실패 진단 및 교정 능력을 평가하기 위해 설계된 11개의 세분화된 VQA 작업으로 구성된 벤치마크인 ViFailback-Bench를 구축했으며, 폐쇄형 평가를 위한 ViFailback-Bench Lite와 개방형 평가를 위한 ViFailback-Bench Hard를 제공합니다. 프레임워크의 효과를 입증하기 위해, ViFailback-Bench에서 전반적인 성능 향상을 달성할 뿐만 아니라 교정 행동 지침을 위한 시각적 기호를 생성하는 ViFailback-8B VLM을 구축했습니다. 마지막으로, ViFailback-8B를 VLA 모델과 통합하여 실제 로봇 실험을 수행함으로써 VLA 모델이 실패로부터 복구하는 데 도움을 줄 수 있는 능력을 입증했습니다. 프로젝트 웹사이트: https://x1nyuzhou.github.io/vifailback.github.io/
-
 ## 参考
 - http://arxiv.org/abs/2512.02787v3
+
+## 개요
+ViFailback 프레임워크는 기존 VLA 모델의 고장 진단 및 실패로부터 학습하는 데 있어 한계를 해결하고, 동시에 시뮬레이션으로 생성된 고장 데이터셋이 실제 세계에서 일반화가 부족한 문제를 극복하는 것을 목표로 합니다. 이 프레임워크는 명시적 시각 기호를 통해 주석 효율을 향상시키고, 58,126개의 VQA 쌍과 5,202개의 조작 궤적을 포함하는 대규모 실제 세계 데이터셋 ViFailback을 구축했습니다. 이 데이터셋을 기반으로 팀은 11개의 세분화된 VQA 작업으로 구성된 ViFailback-Bench 벤치마크를 설립했으며, 폐쇄형 평가를 위한 ViFailback-Bench Lite와 개방형 평가를 위한 ViFailback-Bench Hard로 나뉩니다. 프레임워크의 유효성을 검증하기 위해 팀은 ViFailback-8B VLM을 개발하여 벤치마크에서 상당한 성능 향상을 달성했고, 교정 동작을 위한 시각 기호를 생성할 수 있습니다. 마지막으로, ViFailback-8B를 VLA 모델과 통합함으로써 실제 로봇 실험을 통해 VLA 모델이 실패로부터 복구하도록 돕는 능력을 입증했습니다.
+
+## 핵심 내용
+### 방법
+ViFailback 프레임워크의 핵심 혁신은 화살표, 강조 상자 등과 같은 명시적 시각 기호를 사용하여 조작 실패의 핵심 위치와 교정 방향을 주석 처리함으로써 데이터 주석 효율을 크게 향상시키는 것입니다. 이 프레임워크는 세 가지 주요 구성 요소를 포함합니다:
+- **ViFailback 데이터셋**: 5,202개의 실제 세계 조작 궤적에 해당하는 58,126개의 VQA 쌍을 포함합니다. 각 VQA 쌍은 조작 실패에 대한 질문(예: "왜 그립이 실패했는가?")과 해당 텍스트 및 시각적 교정 지침을 포함합니다.
+- **ViFailback-Bench 벤치마크**: 11개의 세분화된 VQA 작업을 포함하며, 두 가지 범주로 나뉩니다:
+  - **ViFailback-Bench Lite**: 폐쇄형 평가로, 사전 정의된 답변 옵션을 제공합니다.
+  - **ViFailback-Bench Hard**: 개방형 평가로, 모델이 자유 형식 텍스트 응답을 생성하도록 요구합니다.
+- **ViFailback-8B VLM**: 8B 매개변수 규모의 VLM을 기반으로 ViFailback 데이터셋에서 미세 조정되어, 고장 진단 텍스트와 교정 동작을 위한 시각 기호를 동시에 출력할 수 있습니다.
+
+### 실험 설정
+- **데이터셋 규모**: 58,126개의 VQA 쌍, 5,202개의 실제 조작 궤적.
+- **벤치마크 작업**: 고장 유형 식별, 교정 동작 예측 등을 포함한 11개의 세분화된 VQA 작업.
+- **모델 비교**: ViFailback-8B는 여러 기준 VLM(예: LLaVA, BLIP-2 등)과 ViFailback-Bench에서 비교됩니다.
+
+### 주요 결과
+- **ViFailback-Bench 성능**: ViFailback-8B는 ViFailback-Bench Lite와 ViFailback-Bench Hard 모두에서 상당한 전체 성능 향상을 달성했으며, 구체적인 수치는 원본 논문을 참조해야 합니다.
+- **시각 기호 생성**: ViFailback-8B는 로봇의 교정 동작을 안내하기 위한 정확한 시각 기호(예: 올바른 그립 위치를 가리키는 화살표)를 생성할 수 있습니다.
+- **실제 로봇 실험**: ViFailback-8B를 VLA 모델과 통합한 후, 로봇은 그립 오프셋, 물체 미끄러짐 등 다양한 조작 실패로부터 성공적으로 복구했으며, 성공률이 크게 향상되었습니다.
+
+### 결론
+ViFailback은 명시적 시각 기호와 고품질 실제 세계 데이터셋을 통해 VLA 모델의 고장 진단 및 교정 능력을 효과적으로 향상시킵니다. ViFailback-8B는 벤치마크 테스트와 실제 로봇 실험 모두에서 뛰어난 성능을 보여주며, 로봇이 실패로부터 학습할 수 있는 실용적인 프레임워크를 제공합니다. 프로젝트 웹사이트에서 더 많은 세부 정보와 데모를 확인할 수 있습니다.

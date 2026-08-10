@@ -40,8 +40,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2201.07990v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2201.07990v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (586 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -79,11 +80,31 @@ sources:
 ## Overview
 Human-robot collaboration has significant potential in recycling due to the wide variation in the composition of recyclable products. Six participants performed a recyclable item sorting task collaborating with a robot arm equipped with a vision system. The effect of three different levels of human involvement or assistance to the robot (Level 1- occlusion removal; Level 2- optimal spacing; Level 3- optimal grip) on performance metrics such as robot accuracy, task time and subjective fluency were assessed. Results showed that human involvement had a remarkable impact on the robot's accuracy, which increased with human involvement level. Mean accuracy values were 33.3% for Level 1, 69% for Level 2 and 100% for Level 3. The results imply that for sorting processes involving diverse materials that vary in size, shape, and composition, human assistance could improve the robot's accuracy to a significant extent while also being cost-effective.
 
-## 개요
-인간-로봇 협업은 재활용 가능한 제품의 구성이 매우 다양하기 때문에 재활용 분야에서 큰 잠재력을 가지고 있습니다. 6명의 참가자가 비전 시스템을 갖춘 로봇 팔과 협력하여 재활용 품목 분류 작업을 수행했습니다. 인간의 개입 또는 로봇 지원의 세 가지 수준(레벨 1 - 폐색 제거; 레벨 2 - 최적 간격; 레벨 3 - 최적 그립)이 로봇 정확도, 작업 시간 및 주관적 유창성과 같은 성능 지표에 미치는 영향을 평가했습니다. 결과는 인간의 개입이 로봇의 정확도에 현저한 영향을 미치며, 개입 수준이 증가함에 따라 정확도가 향상됨을 보여주었습니다. 평균 정확도 값은 레벨 1에서 33.3%, 레벨 2에서 69%, 레벨 3에서 100%였습니다. 이러한 결과는 크기, 모양 및 구성이 다양한 여러 재료를 포함하는 분류 과정에서 인간의 지원이 로봇의 정확도를 크게 향상시키면서도 비용 효율적일 수 있음을 시사합니다.
-
-## 핵심 내용
-인간-로봇 협업은 재활용 가능한 제품의 구성이 매우 다양하기 때문에 재활용 분야에서 큰 잠재력을 가지고 있습니다. 6명의 참가자가 비전 시스템을 갖춘 로봇 팔과 협력하여 재활용 품목 분류 작업을 수행했습니다. 인간의 개입 또는 로봇 지원의 세 가지 수준(레벨 1 - 폐색 제거; 레벨 2 - 최적 간격; 레벨 3 - 최적 그립)이 로봇 정확도, 작업 시간 및 주관적 유창성과 같은 성능 지표에 미치는 영향을 평가했습니다. 결과는 인간의 개입이 로봇의 정확도에 현저한 영향을 미치며, 개입 수준이 증가함에 따라 정확도가 향상됨을 보여주었습니다. 평균 정확도 값은 레벨 1에서 33.3%, 레벨 2에서 69%, 레벨 3에서 100%였습니다. 이러한 결과는 크기, 모양 및 구성이 다양한 여러 재료를 포함하는 분류 과정에서 인간의 지원이 로봇의 정확도를 크게 향상시키면서도 비용 효율적일 수 있음을 시사합니다.
-
 ## 参考
 - http://arxiv.org/abs/2201.07990v1
+
+## 개요
+재활용 분야에서는 재활용 가능 물품의 성분 차이가 크기 때문에, 인간-로봇 협업이 중요한 잠재력을 지닌다. 6명의 참가자가 비전 시스템을 갖춘 로봇 팔과 협력하여 재활용품 분류 작업을 수행했으며, 연구에서는 세 가지 인간 보조 수준을 설정했다: Level 1(가림 제거), Level 2(최적 간격), Level 3(최적 파지). 실험에서는 로봇 정확도, 작업 시간, 주관적 유창성 등의 지표를 측정했으며, 인간의 참여가 로봇 정확도에 유의미한 영향을 미치고, 정확도는 보조 수준이 높아질수록 증가함을 발견했다.
+
+## 핵심 내용
+### 실험 설계
+- **장비**: UR3e 협동 로봇, 비전 시스템 탑재
+- **피험자**: 6명의 참가자
+- **작업**: 재활용 컵 분류 작업
+- **실험 설계**: 피험자 내 설계(within-subjects)
+
+### 인간 보조 수준
+- **Level 1**: 인간은 가림 물체 제거만 담당
+- **Level 2**: 인간이 최적 간격 배치 제공
+- **Level 3**: 인간이 최적 파지 방식 선택
+
+### 주요 결과
+- **로봇 정확도**:
+  - Level 1: 33.3%
+  - Level 2: 69%
+  - Level 3: 100%
+- **주관적 유창성**: 보조 수준이 높아질수록 개선됨
+- **작업 시간**: 유의미한 차이 보고되지 않음
+
+### 결론
+크기, 모양, 성분이 다양한 재료를 포함하는 재활용 분류 공정에서 인간 보조는 비용 효율성을 유지하면서 로봇 정확도를 크게 향상시킬 수 있다. 연구는 실제 재활용 현장에서 재료 복잡성에 따라 인간 참여 수준을 동적으로 조정할 것을 제안한다.

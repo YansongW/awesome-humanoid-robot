@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.08619v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.08619v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1004 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -70,11 +71,28 @@ sources:
 ## Overview
 Humanoid robots remain vulnerable to falls and unrecoverable failure states, limiting their practical utility in unstructured environments. While reinforcement learning has demonstrated stand-up behaviors, existing approaches treat recovery as a pure task-reward problem without an explicit representation of the balance state. We present a unified RL policy that addresses this limitation by embedding classical balance metrics: capture point, center-of-mass state, and centroidal momentum, as privileged critic inputs and shaping rewards directly around these quantities during training, while the actor relies solely on proprioception for zero-shot hardware transfer. Without reference trajectories or scripted contacts, a single policy spans the full recovery spectrum: ankle and hip strategies for small disturbances, corrective stepping under large pushes, and compliant falling with multi-contact stand-up using the hands, elbows, and knees. Trained on the Unitree H1-2 in Isaac Lab, the policy achieves a 93.4% recovery rate across randomized initial poses and unscripted fall configurations. An ablation study shows that removing the balance-informed structure causes stand-up learning to fail entirely, confirming that these metrics provide a meaningful learning signal rather than incidental structure. Sim-to-sim transfer to MuJoCo and preliminary hardware experiments further demonstrate cross-environment generalization. These results show that embedding interpretable balance structure into the learning framework substantially reduces time spent in failure states and broadens the envelope of autonomous recovery.
 
-## 개요
-휴머노이드 로봇은 여전히 넘어짐과 복구 불가능한 실패 상태에 취약하여, 비정형 환경에서의 실용적 유용성을 제한합니다. 강화 학습이 일어서기 행동을 입증했지만, 기존 접근법은 균형 상태에 대한 명시적 표현 없이 복구를 순수 작업-보상 문제로만 다룹니다. 우리는 이러한 한계를 해결하기 위해 고전적 균형 지표(포착점, 질량 중심 상태, 중심 운동량)를 특권 비평가 입력으로 내장하고, 훈련 중 이러한 양을 중심으로 직접 보상을 형성하는 통합 RL 정책을 제시합니다. 행위자는 제로샷 하드웨어 전이를 위해 고유 감각에만 의존합니다. 참조 궤적이나 스크립트된 접촉 없이, 단일 정책이 전체 복구 스펙트럼(작은 교란에 대한 발목 및 엉덩이 전략, 큰 밀림에 대한 교정 스텝, 손, 팔꿈치, 무릎을 사용한 다중 접촉 일어서기를 포함한 순응적 넘어짐)을 포괄합니다. Isaac Lab에서 Unitree H1-2로 훈련된 이 정책은 무작위 초기 자세와 스크립트되지 않은 넘어짐 구성에서 93.4%의 복구율을 달성합니다. 절제 연구는 균형 정보 구조를 제거하면 일어서기 학습이 완전히 실패함을 보여주며, 이 지표가 우연한 구조가 아닌 의미 있는 학습 신호를 제공함을 확인합니다. MuJoCo로의 시뮬-시뮬 전이와 예비 하드웨어 실험은 추가로 환경 간 일반화를 입증합니다. 이러한 결과는 해석 가능한 균형 구조를 학습 프레임워크에 내장하면 실패 상태에서 소요되는 시간을 크게 줄이고 자율 복구의 범위를 확장함을 보여줍니다.
-
-## 핵심 내용
-휴머노이드 로봇은 여전히 넘어짐과 복구 불가능한 실패 상태에 취약하여, 비정형 환경에서의 실용적 유용성을 제한합니다. 강화 학습이 일어서기 행동을 입증했지만, 기존 접근법은 균형 상태에 대한 명시적 표현 없이 복구를 순수 작업-보상 문제로만 다룹니다. 우리는 이러한 한계를 해결하기 위해 고전적 균형 지표(포착점, 질량 중심 상태, 중심 운동량)를 특권 비평가 입력으로 내장하고, 훈련 중 이러한 양을 중심으로 직접 보상을 형성하는 통합 RL 정책을 제시합니다. 행위자는 제로샷 하드웨어 전이를 위해 고유 감각에만 의존합니다. 참조 궤적이나 스크립트된 접촉 없이, 단일 정책이 전체 복구 스펙트럼(작은 교란에 대한 발목 및 엉덩이 전략, 큰 밀림에 대한 교정 스텝, 손, 팔꿈치, 무릎을 사용한 다중 접촉 일어서기를 포함한 순응적 넘어짐)을 포괄합니다. Isaac Lab에서 Unitree H1-2로 훈련된 이 정책은 무작위 초기 자세와 스크립트되지 않은 넘어짐 구성에서 93.4%의 복구율을 달성합니다. 절제 연구는 균형 정보 구조를 제거하면 일어서기 학습이 완전히 실패함을 보여주며, 이 지표가 우연한 구조가 아닌 의미 있는 학습 신호를 제공함을 확인합니다. MuJoCo로의 시뮬-시뮬 전이와 예비 하드웨어 실험은 추가로 환경 간 일반화를 입증합니다. 이러한 결과는 해석 가능한 균형 구조를 학습 프레임워크에 내장하면 실패 상태에서 소요되는 시간을 크게 줄이고 자율 복구의 범위를 확장함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2603.08619v1
+
+## 개요
+기존 강화학습 방법은 휴머노이드 로봇 복구를 순수 작업 보상 문제로 간주하여 균형 상태에 대한 명시적 표현이 부족하다. 본 논문은 고전적 균형 지표(캡처 포인트, 질량 중심 상태, 질량 중심 운동량)를 특권 비평가 입력으로 임베딩하고, 이러한 양을 중심으로 직접 형상 보상을 설계하여 행위자 네트워크가 고유 감각만으로 제로샷 하드웨어 전이를 달성할 수 있게 한다. 이 전략은 참조 궤적이나 스크립트화된 접촉 없이도 작은 교란에서의 발목/고관절 전략, 큰 추력에서의 보상 보행, 팔꿈치와 무릎을 활용한 다중 접촉 쓰러짐 후 기립을 처리할 수 있다. Isaac Lab에서 훈련된 Unitree H1-2 전략은 무작위 초기 자세와 비스크립트화된 쓰러짐 구성에서 93.4%의 복구율을 달성했다. 절제 실험에서 균형 정보 구조를 제거하면 기립 학습이 완전히 실패함을 보여주며, 이러한 지표가 우연한 구조가 아닌 의미 있는 훈련 신호를 제공함을 확인했다.
+
+## 핵심 내용
+### 방법 아키텍처
+- **균형 지표 임베딩**: 캡처 포인트(Capture Point), 질량 중심 상태(CoM state), 질량 중심 운동량(Centroidal Momentum)을 특권 정보로 비평가 네트워크에 입력하고, 이러한 양을 기반으로 형상 보상 함수를 설계
+- **행위자-비평가 프레임워크**: 행위자 네트워크는 고유 감각(관절 위치/속도, IMU 데이터)만 사용하여 제로샷 하드웨어 전이를 수행하고, 비평가 네트워크는 훈련 중 특권 균형 지표를 획득
+- **참조 궤적 없는 설계**: 사전 정의된 운동 궤적이나 스크립트화된 접촉 시퀀스에 의존하지 않으며, 완전히 강화학습을 통해 복구 전략을 자율적으로 발견
+
+### 실험 설정
+- **훈련 환경**: Isaac Lab 시뮬레이션 플랫폼, Unitree H1-2 휴머노이드 로봇 모델 사용
+- **테스트 구성**: 무작위 초기 자세(다양한 쓰러짐 각도/방향) 및 비스크립트화된 쓰러짐 시나리오(실제 낙하 역학 시뮬레이션) 포함
+- **전이 검증**: MuJoCo 환경으로의 Sim-to-sim 전이 및 초기 하드웨어 실험
+
+### 주요 결과
+- **복구 성능**: 무작위 초기 자세 및 비스크립트화된 쓰러짐 구성에서 93.4%의 복구율 달성
+- **전략 다양성**: 단일 전략에서 발목 관절 전략(작은 교란), 고관절 전략(중간 교란), 보상 보행(큰 추력), 다중 접촉 기립(팔꿈치와 무릎 활용)이 자율적으로 출현
+- **절제 실험**: 균형 정보 구조를 제거하면 기립 학습이 완전히 실패(0% 복구율)하여, 이러한 지표가 핵심 학습 신호를 제공함을 입증
+- **일반화 능력**: MuJoCo 시뮬레이션 환경으로 성공적으로 전이되었으며, 초기 하드웨어 실험에서 교차 환경 일반화를 검증
+
+### 결론
+해석 가능한 균형 구조를 임베딩함으로써 휴머노이드 로봇이 실패 상태에 머무는 시간을 크게 줄이고, 자율 복구 능력의 경계를 단일 기립 작업에서 쓰러짐, 보상 보행, 다중 접촉 기립을 포함한 완전한 복구 스펙트럼으로 확장했다. 본 방법은 고전 제어 이론을 현대 강화학습 프레임워크에 통합하는 효과적인 패러다임을 제공한다.

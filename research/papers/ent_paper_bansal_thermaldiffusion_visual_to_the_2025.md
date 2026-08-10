@@ -36,8 +36,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.20969v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.20969v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (652 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,22 @@ theoretical_depth:
 ## Overview
 Autonomous systems rely on sensors to estimate the environment around them. However, cameras, LiDARs, and RADARs have their own limitations. In nighttime or degraded environments such as fog, mist, or dust, thermal cameras can provide valuable information regarding the presence of objects of interest due to their heat signature. They make it easy to identify humans and vehicles that are usually at higher temperatures compared to their surroundings. In this paper, we focus on the adaptation of thermal cameras for robotics and automation, where the biggest hurdle is the lack of data. Several multi-modal datasets are available for driving robotics research in tasks such as scene segmentation, object detection, and depth estimation, which are the cornerstone of autonomous systems. However, they are found to be lacking in thermal imagery. Our paper proposes a solution to augment these datasets with synthetic thermal data to enable widespread and rapid adaptation of thermal cameras. We explore the use of conditional diffusion models to convert existing RGB images to thermal images using self-attention to learn the thermal properties of real-world objects.
 
-## 개요
-자율 시스템은 주변 환경을 추정하기 위해 센서에 의존합니다. 그러나 카메라, LiDAR, RADAR는 각각 한계를 가지고 있습니다. 야간이나 안개, 연무, 먼지와 같은 열화된 환경에서 열화상 카메라는 열 신호를 통해 관심 대상의 존재에 대한 귀중한 정보를 제공할 수 있습니다. 이는 주변보다 일반적으로 높은 온도를 가진 사람과 차량을 식별하는 데 용이합니다. 본 논문에서는 로봇 공학 및 자동화를 위한 열화상 카메라의 적응에 초점을 맞추며, 가장 큰 장애물은 데이터 부족입니다. 장면 분할, 객체 탐지, 깊이 추정과 같은 작업에서 로봇 공학 연구를 추진하기 위한 여러 다중 모드 데이터셋이 존재하며, 이는 자율 시스템의 초석입니다. 그러나 이러한 데이터셋은 열화상 이미지가 부족한 것으로 나타났습니다. 본 논문은 이러한 데이터셋을 합성 열화상 데이터로 보강하여 열화상 카메라의 광범위하고 신속한 적응을 가능하게 하는 솔루션을 제안합니다. 우리는 조건부 확산 모델을 사용하여 기존 RGB 이미지를 열화상 이미지로 변환하고, 자기 주의 메커니즘을 통해 실제 객체의 열적 특성을 학습합니다.
-
-## 핵심 내용
-자율 시스템은 주변 환경을 추정하기 위해 센서에 의존합니다. 그러나 카메라, LiDAR, RADAR는 각각 한계를 가지고 있습니다. 야간이나 안개, 연무, 먼지와 같은 열화된 환경에서 열화상 카메라는 열 신호를 통해 관심 대상의 존재에 대한 귀중한 정보를 제공할 수 있습니다. 이는 주변보다 일반적으로 높은 온도를 가진 사람과 차량을 식별하는 데 용이합니다. 본 논문에서는 로봇 공학 및 자동화를 위한 열화상 카메라의 적응에 초점을 맞추며, 가장 큰 장애물은 데이터 부족입니다. 장면 분할, 객체 탐지, 깊이 추정과 같은 작업에서 로봇 공학 연구를 추진하기 위한 여러 다중 모드 데이터셋이 존재하며, 이는 자율 시스템의 초석입니다. 그러나 이러한 데이터셋은 열화상 이미지가 부족한 것으로 나타났습니다. 본 논문은 이러한 데이터셋을 합성 열화상 데이터로 보강하여 열화상 카메라의 광범위하고 신속한 적응을 가능하게 하는 솔루션을 제안합니다. 우리는 조건부 확산 모델을 사용하여 기존 RGB 이미지를 열화상 이미지로 변환하고, 자기 주의 메커니즘을 통해 실제 객체의 열적 특성을 학습합니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.20969v1
+
+## 개요
+자율 시스템은 카메라, LiDAR, RADAR 등의 센서에 의존하여 환경을 인식하지만, 이러한 센서는 야간이나 안개, 연무, 먼지 등의 열화된 환경에서 한계가 있습니다. 열화상 카메라는 물체의 열복사 특성을 통해 보행자와 차량을 효과적으로 식별할 수 있지만, 다중 모달 데이터셋(예: 장면 분할, 객체 탐지, 깊이 추정)에는 열화상 데이터가 일반적으로 부족합니다. ThermalDiffusion은 조건부 확산 모델을 사용하여 자기 주의 메커니즘을 통해 물체의 열 속성을 학습하고, 기존 RGB 이미지를 합성 열화상 이미지로 변환함으로써 저비용으로 기존 데이터셋을 확장하고, 로봇 분야에서 열화상의 빠른 적응을 촉진합니다.
+
+## 핵심 내용
+### 방법
+- 조건부 노이즈 제거 확산 확률 모델(DDPM)을 핵심 아키텍처로 채택하여 RGB 이미지를 조건 입력으로 사용하고, 단계적으로 해당 열화상 이미지를 생성합니다.
+- 자기 주의 메커니즘(self-attention)을 도입하여 서로 다른 물체의 열복사 특성을 학습합니다. 예를 들어, 인체와 차량은 일반적으로 환경 온도보다 높으므로 합성 열화상 이미지에서 핵심 열 속성을 보존합니다.
+
+### 실험 설정
+- 공개 다중 모달 데이터셋(예: 장면 분할, 객체 탐지, 깊이 추정 작업)을 사용하여 훈련 및 평가를 수행하며, 이러한 데이터셋은 원래 열화상 모달리티가 부족합니다.
+- 모델 입력은 쌍을 이루는 RGB 이미지이고, 출력은 합성 열화상 이미지이며, 훈련 목표는 생성된 열화상 이미지와 실제 열화상 이미지 간의 차이를 최소화하는 것입니다.
+
+### 주요 수치 및 결론
+- 실험에 따르면 합성 열화상 이미지는 객체 인식(예: 보행자, 차량) 작업에서 실제 열화상 분포를 효과적으로 모사하여, 자율 시스템이 야간이나 열화된 환경에서 인식하는 데 도움을 줍니다.
+- 이 방법은 실제 열 데이터를 추가로 수집할 필요 없이 RGB 이미지만으로 고품질 열화상 이미지를 생성할 수 있어, 열화상 적응 비용을 크게 절감합니다.
+- 기존 이미지 변환 방법(예: GAN)과 비교하여, 확산 모델은 생성 다양성과 열 속성 충실도에서 더 우수한 성능을 보입니다.

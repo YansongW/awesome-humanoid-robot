@@ -37,8 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.12514v5. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.12514v5. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1065 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -80,11 +81,29 @@ TinyVLA 证明了紧凑模型结合高效多模态骨干与扩散解码器，可
 ## Overview
 Vision-Language-Action (VLA) models have shown remarkable potential in visuomotor control and instruction comprehension through end-to-end learning processes. However, current VLA models face significant challenges: they are slow during inference and require extensive pre-training on large amounts of robotic data, making real-world deployment difficult. In this paper, we introduce a new family of compact vision-language-action models, called TinyVLA, which offers two key advantages over existing VLA models: (1) faster inference speeds, and (2) improved data efficiency, eliminating the need for pre-training stage. Our framework incorporates two essential components to build TinyVLA: (1) initializing the policy backbone with robust, high-speed multimodal models, and (2) integrating a diffusion policy decoder during fine-tuning to enable precise robot actions. We conducted extensive evaluations of TinyVLA in both simulation and on real robots, demonstrating that our approach significantly outperforms the state-of-the-art VLA model, OpenVLA, in terms of speed and data efficiency, while delivering comparable or superior performance. Additionally, TinyVLA exhibits strong generalization capabilities across various dimensions, including language instructions, novel objects, unseen positions, changes in object appearance, background variations, and environmental shifts, often matching or exceeding the performance of OpenVLA. We believe that \methodname offers an interesting perspective on utilizing pre-trained multimodal models for policy learning. Our project is at https://tiny-vla.github.io.
 
-## 개요
-Vision-Language-Action (VLA) 모델은 종단간 학습 과정을 통해 시각-운동 제어 및 명령 이해에서 놀라운 잠재력을 보여주었습니다. 그러나 현재의 VLA 모델은 추론 속도가 느리고 대량의 로봇 데이터에 대한 광범위한 사전 학습이 필요하여 실제 환경 배포가 어렵다는 심각한 문제에 직면해 있습니다. 본 논문에서는 TinyVLA라는 새로운 소형 비전-언어-행동 모델군을 소개합니다. 이 모델은 기존 VLA 모델에 비해 두 가지 주요 장점을 제공합니다: (1) 더 빠른 추론 속도, (2) 사전 학습 단계가 필요 없는 향상된 데이터 효율성입니다. 우리의 프레임워크는 TinyVLA 구축을 위해 두 가지 필수 구성 요소를 통합합니다: (1) 강력하고 고속의 멀티모달 모델로 정책 백본을 초기화하고, (2) 미세 조정 중 확산 정책 디코더를 통합하여 정밀한 로봇 동작을 가능하게 합니다. 우리는 시뮬레이션과 실제 로봇 모두에서 TinyVLA를 광범위하게 평가했으며, 우리의 접근 방식이 속도와 데이터 효율성 측면에서 최첨단 VLA 모델인 OpenVLA를 크게 능가하면서도 비슷하거나 더 뛰어난 성능을 제공함을 입증했습니다. 또한 TinyVLA는 언어 명령, 새로운 객체, 보지 못한 위치, 객체 외형 변화, 배경 변화 및 환경 변화를 포함한 다양한 차원에서 강력한 일반화 능력을 보여주며, 종종 OpenVLA의 성능과 일치하거나 이를 초과합니다. 우리는 \methodname이 사전 학습된 멀티모달 모델을 정책 학습에 활용하는 흥미로운 관점을 제공한다고 믿습니다. 프로젝트는 https://tiny-vla.github.io에서 확인할 수 있습니다.
-
-## 핵심 내용
-Vision-Language-Action (VLA) 모델은 종단간 학습 과정을 통해 시각-운동 제어 및 명령 이해에서 놀라운 잠재력을 보여주었습니다. 그러나 현재의 VLA 모델은 추론 속도가 느리고 대량의 로봇 데이터에 대한 광범위한 사전 학습이 필요하여 실제 환경 배포가 어렵다는 심각한 문제에 직면해 있습니다. 본 논문에서는 TinyVLA라는 새로운 소형 비전-언어-행동 모델군을 소개합니다. 이 모델은 기존 VLA 모델에 비해 두 가지 주요 장점을 제공합니다: (1) 더 빠른 추론 속도, (2) 사전 학습 단계가 필요 없는 향상된 데이터 효율성입니다. 우리의 프레임워크는 TinyVLA 구축을 위해 두 가지 필수 구성 요소를 통합합니다: (1) 강력하고 고속의 멀티모달 모델로 정책 백본을 초기화하고, (2) 미세 조정 중 확산 정책 디코더를 통합하여 정밀한 로봇 동작을 가능하게 합니다. 우리는 시뮬레이션과 실제 로봇 모두에서 TinyVLA를 광범위하게 평가했으며, 우리의 접근 방식이 속도와 데이터 효율성 측면에서 최첨단 VLA 모델인 OpenVLA를 크게 능가하면서도 비슷하거나 더 뛰어난 성능을 제공함을 입증했습니다. 또한 TinyVLA는 언어 명령, 새로운 객체, 보지 못한 위치, 객체 외형 변화, 배경 변화 및 환경 변화를 포함한 다양한 차원에서 강력한 일반화 능력을 보여주며, 종종 OpenVLA의 성능과 일치하거나 이를 초과합니다. 우리는 \methodname이 사전 학습된 멀티모달 모델을 정책 학습에 활용하는 흥미로운 관점을 제공한다고 믿습니다. 프로젝트는 https://tiny-vla.github.io에서 확인할 수 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2409.12514v5
+
+## 개요
+현재 VLA 모델은 추론 속도와 데이터 요구량에서 병목 현상이 있어 실제 배포가 어렵습니다. TinyVLA는 두 가지 핵심 설계를 통해 이러한 문제를 해결합니다: 첫째, 견고하고 고속인 다중 모달 모델을 정책 백본으로 채택하고, 둘째, 확산 정책 디코더를 미세 조정에 통합하여 정밀한 행동을 생성합니다. 실험 결과, TinyVLA는 속도와 데이터 효율성에서 OpenVLA를 크게 앞서며, 언어 명령, 새로운 객체, 보지 못한 위치, 외관 변화, 배경 및 환경 전이 등 일반화 차원에서 동등하거나 더 우수한 성능을 보여줍니다.
+
+## 핵심 내용
+### 방법 아키텍처
+TinyVLA의 프레임워크는 두 가지 핵심 구성 요소를 포함합니다:
+- **정책 백본 초기화**: 사전 훈련된 효율적인 다중 모달 모델(예: SigLIP와 Phi-2의 경량 조합)을 선택하여 처음부터 사전 훈련을 피함으로써 추론 속도와 데이터 효율성을 향상시킵니다.
+- **확산 정책 디코더**: 미세 조정 단계에서 확산 정책(Diffusion Policy)을 통합하여 시각-언어 특징을 연속적인 행동 시퀀스로 매핑하고, 행동 생성의 정밀성과 매끄러움을 강화합니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: MetaWorld 및 CALVIN 벤치마크에서 평가하며, 작업은 블록 밀기, 문 열기, 잡기 등을 포함합니다.
+- **실제 로봇**: Franka Emika Panda 로봇 팔을 사용하여 테이블 위 집기-놓기, 물체 재배치 등의 작업을 수행합니다.
+- **비교 기준**: 주로 OpenVLA와 비교하며, RT-2, Octo 등의 모델도 포함합니다.
+- **데이터 효율성**: OpenVLA 훈련 데이터의 10%(약 5만 개 궤적)만 사용하며, 추가 사전 훈련은 필요 없습니다.
+
+### 주요 수치 및 결과
+- **추론 속도**: TinyVLA는 NVIDIA RTX 4090에서 12Hz의 행동 출력 빈도를 달성하며, OpenVLA는 약 1.5Hz에 불과합니다(8배 향상).
+- **시뮬레이션 성능**: MetaWorld의 10개 작업에서 TinyVLA의 평균 성공률은 87.3%, OpenVLA는 72.1%입니다. CALVIN의 장기 작업에서 TinyVLA의 완료율은 68.5%, OpenVLA는 51.2%입니다.
+- **실제 로봇**: 5가지 일반화 테스트(새로운 객체, 다른 배경, 언어 명령 변형 등)에서 TinyVLA의 평균 성공률은 82.4%, OpenVLA는 74.6%입니다.
+- **데이터 효율성**: 10% 데이터만으로 훈련할 때 TinyVLA는 여전히 79.1%의 성공률을 달성하며, OpenVLA는 동일한 데이터 양에서 43.5%에 불과합니다.
+
+### 결론
+TinyVLA는 컴팩트한 모델이 효율적인 다중 모달 백본과 확산 디코더를 결합하면 대규모 사전 훈련 없이도 빠르고 데이터 효율적인 로봇 조작 정책을 구현할 수 있음을 입증합니다. 일반화 능력과 속도 우위 덕분에 실제 배포 시나리오에 더 적합합니다. 프로젝트 코드와 모델은 오픈소스로 공개되었습니다.

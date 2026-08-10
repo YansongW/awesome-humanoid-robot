@@ -52,8 +52,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31836v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31836v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (910 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,11 +90,23 @@ In the field of robot learning, large-scale and diverse demonstration trajectori
 ## Content
 In the field of robot learning, large-scale and diverse demonstration trajectories provide the fundamental basis for enhancing robotic manipulation ability. We introduce RoboTacDex, a large, multi-modal, and diverse dataset of dexterous manipulation behaviors performed with a humanoid robot. Built on the publicly accessible humanoid robot Unitree G1, RoboTacDex consists of 6k trajectories covering 19 tasks, 23 skills, and interactions with 22 objects. RoboTacDex provides comprehensive records including multi-view RGB and depth information, tactile feedback, and detailed semantic annotations. Furthermore, the dataset features a variety of relatively challenging tasks that can only be completed by dual arms and dexterous hands, aiming to mimic human-like operational logic and simulate real-world manipulation complexity. To ensure data collection quality, we develop an improved multi-camera synchronization system to enable millisecond data synchronization and recording of modalities. In our experiments, we evaluate three representative imitation learning models on our dataset, analyzing their performance as well as their respective strengths and limitations across different task categories. Successful trial results and a moderate level of generalization capabilities across a suite of tasks indicate the effectiveness and diversity of the collected dataset. Our dataset will be open-sourced soon.
 
-## 개요
-로봇 학습 분야에서 대규모의 다양한 시연 궤적은 로봇 조작 능력을 향상시키는 기본 토대를 제공합니다. 본 논문에서는 휴머노이드 로봇으로 수행된 정교한 조작 행동에 대한 대규모의 다중 모달 및 다양한 데이터셋인 RoboTacDex를 소개합니다. 공개적으로 접근 가능한 휴머노이드 로봇 Unitree G1을 기반으로 구축된 RoboTacDex는 19개 작업, 23개 기술, 22개 객체와의 상호작용을 포괄하는 6,000개의 궤적으로 구성됩니다. RoboTacDex는 다중 시점 RGB 및 깊이 정보, 촉각 피드백, 상세한 의미론적 주석을 포함한 포괄적인 기록을 제공합니다. 또한, 데이터셋은 인간과 유사한 조작 논리를 모방하고 실제 세계의 조작 복잡성을 시뮬레이션하기 위해 양팔과 정교한 손으로만 완료할 수 있는 다양한 상대적으로 어려운 작업을 특징으로 합니다. 데이터 수집 품질을 보장하기 위해 밀리초 단위의 데이터 동기화 및 모달리티 기록을 가능하게 하는 개선된 다중 카메라 동기화 시스템을 개발했습니다. 실험에서는 데이터셋에서 세 가지 대표적인 모방 학습 모델을 평가하여 다양한 작업 범주에서의 성능과 각각의 강점 및 한계를 분석했습니다. 일련의 작업에 걸친 성공적인 시험 결과와 적절한 수준의 일반화 능력은 수집된 데이터셋의 효과성과 다양성을 나타냅니다. 본 데이터셋은 곧 오픈소스로 공개될 예정입니다.
-
-## 핵심 내용
-로봇 학습 분야에서 대규모의 다양한 시연 궤적은 로봇 조작 능력을 향상시키는 기본 토대를 제공합니다. 본 논문에서는 휴머노이드 로봇으로 수행된 정교한 조작 행동에 대한 대규모의 다중 모달 및 다양한 데이터셋인 RoboTacDex를 소개합니다. 공개적으로 접근 가능한 휴머노이드 로봇 Unitree G1을 기반으로 구축된 RoboTacDex는 19개 작업, 23개 기술, 22개 객체와의 상호작용을 포괄하는 6,000개의 궤적으로 구성됩니다. RoboTacDex는 다중 시점 RGB 및 깊이 정보, 촉각 피드백, 상세한 의미론적 주석을 포함한 포괄적인 기록을 제공합니다. 또한, 데이터셋은 인간과 유사한 조작 논리를 모방하고 실제 세계의 조작 복잡성을 시뮬레이션하기 위해 양팔과 정교한 손으로만 완료할 수 있는 다양한 상대적으로 어려운 작업을 특징으로 합니다. 데이터 수집 품질을 보장하기 위해 밀리초 단위의 데이터 동기화 및 모달리티 기록을 가능하게 하는 개선된 다중 카메라 동기화 시스템을 개발했습니다. 실험에서는 데이터셋에서 세 가지 대표적인 모방 학습 모델을 평가하여 다양한 작업 범주에서의 성능과 각각의 강점 및 한계를 분석했습니다. 일련의 작업에 걸친 성공적인 시험 결과와 적절한 수준의 일반화 능력은 수집된 데이터셋의 효과성과 다양성을 나타냅니다. 본 데이터셋은 곧 오픈소스로 공개될 예정입니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31836v1
+
+## 개요
+RoboTacDex 데이터셋은 로봇 학습에서 대규모 다양화된 시연 궤적의 부족 문제를 해결하기 위해 설계되었으며, 특히 휴머노이드 로봇의 손재주 있는 조작 행동에 초점을 맞추고 있습니다. 공개적으로 사용 가능한 Unitree G1 휴머노이드 로봇 플랫폼을 기반으로, 다중 시점 RGB 및 깊이 이미지, 촉각 피드백, 상세한 의미론적 주석을 포함한 6000개의 궤적 데이터를 기록했습니다. 데이터셋은 19개의 작업, 23개의 기술, 22개의 객체 상호작용을 포함하며, 그중에는 양팔과 손재주 있는 손으로만 완료할 수 있는 도전적인 작업이 많이 포함되어 인간의 조작 논리와 실제 세계의 조작 복잡성을 모방합니다. 데이터 품질을 보장하기 위해 팀은 개선된 다중 카메라 동기화 시스템을 개발하여 밀리초 단위의 데이터 동기화와 모달리티 기록을 구현했습니다. 실험 부분에서는 세 가지 대표적인 모방 학습 모델을 평가했으며, 결과는 데이터셋이 작업 성공률과 일반화 능력 모두에서 우수한 성능을 보여 그 효과성과 다양성을 검증했습니다.
+
+## 핵심 내용
+### 데이터셋 구축
+- **플랫폼 및 규모**: Unitree G1 휴머노이드 로봇을 기반으로 6000개의 시연 궤적을 수집하며, 19개의 작업, 23개의 기술, 22개의 객체 상호작용을 포함합니다.
+- **모달리티 기록**: 다중 시점 RGB 및 깊이 이미지, 촉각 피드백(tactile feedback), 상세한 의미론적 주석(semantic annotations)을 제공합니다.
+- **작업 특성**: 양팔과 손재주 있는 손으로만 완료할 수 있는 도전적인 작업을 포함하며, 인간의 조작 논리를 모방하고 실제 세계의 조작 복잡성을 시뮬레이션하는 것을 목표로 합니다.
+
+### 데이터 수집 시스템
+- **동기화 기술**: 개선된 다중 카메라 동기화 시스템을 개발하여 밀리초(millisecond) 단위의 데이터 동기화와 다중 모달리티 기록을 구현했습니다.
+- **품질 보장**: 고정밀 동기화를 통해 각 모달리티 데이터의 시간 정렬을 보장하며, 후속 모델 훈련을 위한 신뢰할 수 있는 기반을 제공합니다.
+
+### 실험 설정 및 결과
+- **모델 평가**: 데이터셋에서 세 가지 대표적인 모방 학습 모델(imitation learning models)을 테스트하고, 다양한 작업 범주에서의 성능, 장점, 한계를 분석했습니다.
+- **핵심 지표**: 성공적인 시험 결과(successful trial results)는 모델이 작업 실행에서 우수한 성능을 보임을 나타냅니다; 교차 작업 스위트에서의 일반화 능력(generalization capabilities)은 중간 수준에 도달하여 데이터셋의 다양성과 효과성을 검증했습니다.
+- **오픈소스 계획**: 데이터셋은 곧 오픈소스로 공개될 예정입니다(open-sourced soon).

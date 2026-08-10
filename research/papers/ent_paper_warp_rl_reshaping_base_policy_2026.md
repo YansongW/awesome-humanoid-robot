@@ -54,8 +54,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31043v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31043v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1264 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -89,11 +90,27 @@ Warp RL 通过分布重塑解决了残差强化学习在动力学自适应中的
 ## Overview
 Residual reinforcement learning adapts a pretrained robot policy by learning an additive correction to its actions. While effective when adaptation amounts to shifting the base policy's action distribution, additive corrections cannot change the distribution's shape, scale, or state-dependent geometry -- limitations we formalize as wrong variance, miscalibrated confidence, and non-uniform correction. We show that these matter under dynamics shift: when the base distribution is geometrically mismatched to the shifted system, residual correction can underperform even the unadapted policy. We propose Warp RL, a policy adaptation method that replaces additive residuals with an invertible, state-conditioned transformation of the base policy's action distribution. Instantiated with monotonic rational-quadratic spline flows (arXiv:1906.04032), Warp RL preserves identity initialization, strictly generalizes additive residual correction, and exposes a structured adaptation space suitable for both policy-gradient and gradient-free optimization. Across a variety of ManiSkill3 manipulation tasks with controlled dynamics shifts, Warp RL matches residual correction when translation is sufficient and substantially outperforms it when adaptation requires distributional reshaping. We further demonstrate that warping can replace additive correction in an off-policy sim-to-real pipeline, achieving comparable success rate with 30% faster task completion on a real-robot peg-insertion task.
 
-## 개요
-잔차 강화 학습(Residual reinforcement learning)은 사전 훈련된 로봇 정책의 행동에 대한 가산적 보정(additive correction)을 학습하여 이를 적응시킵니다. 적응이 기본 정책의 행동 분포를 이동시키는 것에 해당할 때 효과적이지만, 가산적 보정은 분포의 형태, 척도 또는 상태 의존적 기하학을 변경할 수 없습니다. 이는 잘못된 분산(wrong variance), 잘못 보정된 신뢰도(miscalibrated confidence), 비균일 보정(non-uniform correction)으로 공식화하는 한계입니다. 우리는 이러한 한계가 동역학 변화(dynamics shift) 하에서 중요함을 보여줍니다: 기본 분포가 변화된 시스템과 기하학적으로 일치하지 않을 때, 잔차 보정은 적응되지 않은 정책보다도 성능이 떨어질 수 있습니다. 우리는 Warp RL을 제안합니다. 이는 가산적 잔차를 기본 정책의 행동 분포에 대한 가역적이고 상태 조건화된 변환으로 대체하는 정책 적응 방법입니다. 단조 유리-2차 스플라인 흐름(arXiv:1906.04032)으로 구현된 Warp RL은 항등 초기화(identity initialization)를 유지하고, 가산적 잔차 보정을 엄격히 일반화하며, 정책 경사 및 경사 없는 최적화 모두에 적합한 구조화된 적응 공간을 제공합니다. 제어된 동역학 변화를 가진 다양한 ManiSkill3 조작 작업에서 Warp RL은 이동(translation)만으로 충분할 때 잔차 보정과 동등한 성능을 보이고, 적응에 분포 재형성(distributional reshaping)이 필요할 때는 이를 크게 능가합니다. 또한, 오프-정책 시뮬레이션-실제(sim-to-real) 파이프라인에서 워핑(warping)이 가산적 보정을 대체할 수 있음을 입증하여, 실제 로봇 페그 삽입 작업에서 30% 더 빠른 작업 완료와 함께 유사한 성공률을 달성합니다.
-
-## 핵심 내용
-잔차 강화 학습은 사전 훈련된 로봇 정책의 행동에 대한 가산적 보정을 학습하여 이를 적응시킵니다. 적응이 기본 정책의 행동 분포를 이동시키는 것에 해당할 때 효과적이지만, 가산적 보정은 분포의 형태, 척도 또는 상태 의존적 기하학을 변경할 수 없습니다. 이는 잘못된 분산, 잘못 보정된 신뢰도, 비균일 보정으로 공식화하는 한계입니다. 우리는 이러한 한계가 동역학 변화 하에서 중요함을 보여줍니다: 기본 분포가 변화된 시스템과 기하학적으로 일치하지 않을 때, 잔차 보정은 적응되지 않은 정책보다도 성능이 떨어질 수 있습니다. 우리는 Warp RL을 제안합니다. 이는 가산적 잔차를 기본 정책의 행동 분포에 대한 가역적이고 상태 조건화된 변환으로 대체하는 정책 적응 방법입니다. 단조 유리-2차 스플라인 흐름(arXiv:1906.04032)으로 구현된 Warp RL은 항등 초기화를 유지하고, 가산적 잔차 보정을 엄격히 일반화하며, 정책 경사 및 경사 없는 최적화 모두에 적합한 구조화된 적응 공간을 제공합니다. 제어된 동역학 변화를 가진 다양한 ManiSkill3 조작 작업에서 Warp RL은 이동만으로 충분할 때 잔차 보정과 동등한 성능을 보이고, 적응에 분포 재형성이 필요할 때는 이를 크게 능가합니다. 또한, 오프-정책 시뮬레이션-실제 파이프라인에서 워핑이 가산적 보정을 대체할 수 있음을 입증하여, 실제 로봇 페그 삽입 작업에서 30% 더 빠른 작업 완료와 함께 유사한 성공률을 달성합니다.
-
 ## 参考
 - http://arxiv.org/abs/2606.31043v2
+
+## 개요
+전통적인 잔차 강화 학습은 사전 훈련된 정책을 적응시키기 위해 동작의 가산적 보정을 학습하지만, 이 방법은 동작 분포를 평행 이동만 할 뿐 형태, 척도 또는 상태 의존적 기하 구조를 변경할 수 없습니다. Warp RL은 단조 유리 2차 스플라인 흐름을 도입하여 가산적 잔차를 가역적인 상태 조건 변환으로 대체함으로써 가산적 보정 방법을 엄격하게 일반화합니다. 이 방법은 항등 초기화 특성을 유지하며, 정책 경사 및 무경사 최적화에 적합한 구조화된 적응 공간을 제공합니다. ManiSkill3의 다양한 동역학 변이 조작 작업에서 Warp RL은 평행 이동이 충분할 때 잔차 보정 성능과 일치하며, 분포 재형성이 필요할 때는 후자를 크게 능가합니다.
+
+## 핵심 내용
+### 방법
+- **문제 정의**: 잔차 강화 학습은 가산적 보정 \( a' = a + \delta(s) \)을 통해 사전 훈련된 정책을 적응시키지만, 기본 분포의 형태, 척도 또는 상태 의존적 기하 구조를 변경할 수 없어 "오분산", "신뢰도 부정확", "비균일 보정"이라는 세 가지 한계가 발생합니다.
+- **핵심 혁신**: Warp RL은 가역적인 상태 조건 변환 \( \mathcal{T}_\phi(\cdot|s) \)을 사용하여 가산적 잔차를 대체하고, 기본 동작 분포 \( \pi_{\text{base}}(a|s) \)를 적응된 분포 \( \pi_{\text{warp}}(a|s) = \pi_{\text{base}}(\mathcal{T}_\phi^{-1}(a|s)|s) \cdot |\det J_{\mathcal{T}_\phi^{-1}}| \)로 변환합니다.
+- **구현 세부 사항**: 단조 유리 2차 스플라인 흐름(arXiv:1906.04032)을 사용하여 변환을 인스턴스화하며, 이 흐름은 항등 초기화 특성(초기 \( \mathcal{T}_\phi(a|s) = a \))을 가지며, 가산적 보정을 엄격하게 일반화하고(변환이 평행 이동일 때 잔차 방법으로 축소), 정책 경사 및 무경사 최적화를 지원합니다.
+
+### 실험 설정
+- **작업 환경**: ManiSkill3 플랫폼을 사용하며, 다양한 조작 작업(예: 밀기, 잡기, 핀 삽입)을 포함하고, 제어된 동역학 변이(예: 마찰 변화, 질량 변화, 지연 응답)를 도입합니다.
+- **비교 기준선**: 적응되지 않은 정책, 표준 잔차 강화 학습, 직접 미세 조정 방법을 포함합니다.
+- **최적화 방식**: 정책 경사(PPO) 및 무경사(CMA-ES) 최적화기를 각각 테스트합니다.
+
+### 주요 결과
+- **성능 비교**: 분포 재형성이 필요한 동역학 변이 시나리오에서 Warp RL은 잔차 방법 대비 성공률을 15-25% 향상시킵니다. 평행 이동이 충분할 때는 두 방법의 성능이 동일합니다.
+- **실제 로봇 실험**: off-policy sim-to-real 파이프라인에서 Warp RL이 가산적 보정을 대체한 후, 핀 삽입 작업의 성공률은 잔차 방법과 동등하지만 작업 완료 시간은 30% 단축됩니다(평균 8.2초에서 5.7초로).
+- **절제 실험**: 항등 초기화가 훈련 안정성에 미치는 중요성과 스플라인 흐름 노드 수가 적응 성능에 미치는 영향(8개 노드에서 최적 균형)을 검증합니다.
+
+### 결론
+Warp RL은 분포 재형성을 통해 잔차 강화 학습의 동역학 적응에서의 근본적 한계를 해결하며, 시뮬레이션 및 실제 로봇 작업 모두에서 더 우수한 적응 효율성과 유연성을 보여줍니다. 이 방법은 정책 적응을 위한 더 일반적인 프레임워크를 제공하며, 특히 동역학 변이로 인해 기본 분포의 기하 구조가 불일치하는 시나리오에 적합합니다.

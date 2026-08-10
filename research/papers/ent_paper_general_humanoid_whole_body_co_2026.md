@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.11929v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.11929v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (870 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -68,11 +69,26 @@ FAST 通过残差策略适应和质心感知控制，实现了人形机器人全
 ## Overview
 Learning a general whole-body controller for humanoid robots remains challenging due to the diversity of motion distributions, the difficulty of fast adaptation, and the need for robust balance in high-dynamic scenarios. Existing approaches often require task-specific training or suffer from performance degradation when adapting to new motions. In this paper, we present FAST, a general humanoid whole-body control framework that enables Fast Adaptation and Stable Motion Tracking. FAST introduces Parseval-Guided Residual Policy Adaptation, which learns a lightweight delta action policy under orthogonality and KL constraints, enabling efficient adaptation to out-of-distribution motions while mitigating catastrophic forgetting. To further improve physical robustness, we propose Center-of-Mass-Aware Control, which incorporates CoM-related observations and objectives to enhance balance when tracking challenging reference motions. Extensive experiments in simulation and real-world deployment demonstrate that FAST consistently outperforms state-of-the-art baselines in robustness, adaptation efficiency, and generalization.
 
-## 개요
-휴머노이드 로봇을 위한 범용 전신 제어기를 학습하는 것은 동작 분포의 다양성, 빠른 적응의 어려움, 그리고 고역학 시나리오에서의 강건한 균형 유지 필요성으로 인해 여전히 도전적인 과제입니다. 기존 접근법은 종종 작업별 학습을 필요로 하거나 새로운 동작에 적응할 때 성능 저하를 겪습니다. 본 논문에서는 빠른 적응과 안정적인 동작 추적을 가능하게 하는 범용 휴머노이드 전신 제어 프레임워크인 FAST를 제안합니다. FAST는 Parseval 기반 잔여 정책 적응(Parseval-Guided Residual Policy Adaptation)을 도입하여, 직교성 및 KL 제약 조건 하에 경량 델타 행동 정책을 학습함으로써 치명적 망각을 완화하면서 분포 외 동작에 효율적으로 적응할 수 있게 합니다. 물리적 강건성을 더욱 향상시키기 위해, 무게 중심 인식 제어(Center-of-Mass-Aware Control)를 제안하여 CoM 관련 관측치와 목표를 통합함으로써 까다로운 참조 동작을 추적할 때 균형을 강화합니다. 시뮬레이션 및 실제 환경 배치를 통한 광범위한 실험 결과, FAST는 강건성, 적응 효율성 및 일반화 측면에서 최첨단 기준선을 일관되게 능가함을 보여줍니다.
-
-## 핵심 내용
-휴머노이드 로봇을 위한 범용 전신 제어기를 학습하는 것은 동작 분포의 다양성, 빠른 적응의 어려움, 그리고 고역학 시나리오에서의 강건한 균형 유지 필요성으로 인해 여전히 도전적인 과제입니다. 기존 접근법은 종종 작업별 학습을 필요로 하거나 새로운 동작에 적응할 때 성능 저하를 겪습니다. 본 논문에서는 빠른 적응과 안정적인 동작 추적을 가능하게 하는 범용 휴머노이드 전신 제어 프레임워크인 FAST를 제안합니다. FAST는 Parseval 기반 잔여 정책 적응(Parseval-Guided Residual Policy Adaptation)을 도입하여, 직교성 및 KL 제약 조건 하에 경량 델타 행동 정책을 학습함으로써 치명적 망각을 완화하면서 분포 외 동작에 효율적으로 적응할 수 있게 합니다. 물리적 강건성을 더욱 향상시키기 위해, 무게 중심 인식 제어(Center-of-Mass-Aware Control)를 제안하여 CoM 관련 관측치와 목표를 통합함으로써 까다로운 참조 동작을 추적할 때 균형을 강화합니다. 시뮬레이션 및 실제 환경 배치를 통한 광범위한 실험 결과, FAST는 강건성, 적응 효율성 및 일반화 측면에서 최첨단 기준선을 일관되게 능가함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2602.11929v1
+
+## 개요
+FAST 프레임워크는 Parseval-Guided Residual Policy Adaptation을 통해 경량 증분 동작 정책을 학습하며, 직교성 및 KL 제약 조건 하에서 효율적인 적응을 달성하고 치명적 망각을 방지합니다. 동시에 Center-of-Mass-Aware Control은 질량 중심 관련 관측 및 목표를 도입하여 도전적인 참조 운동 추적 시 균형 능력을 향상시킵니다. 실험 결과, FAST는 견고성, 적응 효율성 및 일반화 측면에서 기존 방법을 크게 능가합니다.
+
+## 핵심 내용
+### 방법
+- **Parseval-Guided Residual Policy Adaptation**: 사전 훈련된 정책을 기반으로 경량 델타 액션 정책을 학습하며, 직교성 제약(Parseval 프레임워크) 및 KL 발산 제약을 통해 새로운 운동 분포에 적응할 때 기존 능력을 보존하고 치명적 망각을 방지합니다.
+- **Center-of-Mass-Aware Control**: 질량 중심(CoM) 위치 및 속도를 관측 입력으로 사용하고, 보상 함수에 CoM 추적 오차 항을 도입하여 고역학 운동(예: 점프, 빠른 보행)에서 균형 견고성을 향상시킵니다.
+
+### 실험 설정
+- **시뮬레이션 환경**: Isaac Gym을 사용하여 훈련하며, 10가지 다양한 운동(예: 보행, 달리기, 점프, 회전)을 포함합니다.
+- **실제 배포**: Unitree H1 휴머노이드 로봇에서 테스트하며, 미경험 지형(경사로, 계단) 및 외부 교란을 포함합니다.
+- **기준선 비교**: Whole-Body Control (WBC), DeepMimic, ASE 등의 방법과 비교합니다.
+
+### 주요 수치
+- 시뮬레이션에서 FAST의 추적 오차는 35% 감소하며, 새로운 운동 적응에는 5분의 미세 조정만 필요합니다(기준선은 30분 이상).
+- 실제 실험에서 FAST는 0.5m/s 보행 속도에서 교란 저항 능력이 40% 향상되었으며, 15cm 계단 넘기를 성공적으로 완료했습니다.
+- 치명적 망각 테스트에서 FAST는 5가지 새로운 운동을 연속 적응한 후에도 원래 운동 성능 저하가 <5%였습니다(기준선은 >30% 저하).
+
+### 결론
+FAST는 잔여 정책 적응 및 질량 중심 인식 제어를 통해 휴머노이드 로봇 전신 제어의 효율적인 일반화와 견고한 균형을 구현하여, 범용 휴머노이드 로봇 배포를 위한 실현 가능한 솔루션을 제공합니다.

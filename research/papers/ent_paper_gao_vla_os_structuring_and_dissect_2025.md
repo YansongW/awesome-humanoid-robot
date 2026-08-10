@@ -39,8 +39,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.17561v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.17561v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (1196 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -84,11 +85,31 @@ VLA-OS 通过系统化的受控实验，揭示了视觉基础规划表征与 Hie
 ## Overview
 Recent studies on Vision-Language-Action (VLA) models have shifted from the end-to-end action-generation paradigm toward a pipeline involving task planning followed by action generation, demonstrating improved performance on various complex, long-horizon manipulation tasks. However, existing approaches vary significantly in terms of network architectures, planning paradigms, representations, and training data sources, making it challenging for researchers to identify the precise sources of performance gains and components to be further improved. To systematically investigate the impacts of different planning paradigms and representations isolating from network architectures and training data, in this paper, we introduce VLA-OS, a unified VLA architecture series capable of various task planning paradigms, and design a comprehensive suite of controlled experiments across diverse object categories (rigid and deformable), visual modalities (2D and 3D), environments (simulation and real-world), and end-effectors (grippers and dexterous hands). Our results demonstrate that: 1) visually grounded planning representations are generally better than language planning representations; 2) the Hierarchical-VLA paradigm generally achieves superior or comparable performance than other paradigms on task performance, pretraining, generalization ability, scalability, and continual learning ability, albeit at the cost of slower training and inference speeds.
 
-## 개요
-최근 Vision-Language-Action(VLA) 모델에 대한 연구는 종단 간 행동 생성 패러다임에서 작업 계획 후 행동 생성을 포함하는 파이프라인으로 전환되었으며, 다양한 복잡하고 장기적인 조작 작업에서 향상된 성능을 보여주고 있습니다. 그러나 기존 접근 방식은 네트워크 아키텍처, 계획 패러다임, 표현 방식 및 훈련 데이터 소스 측면에서 상당한 차이를 보여, 연구자들이 성능 향상의 정확한 원인과 추가 개선이 필요한 구성 요소를 식별하기 어렵게 만듭니다. 네트워크 아키텍처와 훈련 데이터로부터 분리된 다양한 계획 패러다임과 표현의 영향을 체계적으로 조사하기 위해, 본 논문에서는 다양한 작업 계획 패러다임을 지원하는 통합 VLA 아키텍처 시리즈인 VLA-OS를 소개하고, 다양한 객체 범주(강체 및 변형체), 시각적 양식(2D 및 3D), 환경(시뮬레이션 및 실제 세계), 엔드 이펙터(그리퍼 및 다관절 손)에 걸친 포괄적인 통제 실험 세트를 설계합니다. 우리의 결과는 다음을 보여줍니다: 1) 시각적으로 기반한 계획 표현이 일반적으로 언어 계획 표현보다 우수합니다; 2) 계층적 VLA 패러다임은 일반적으로 작업 성능, 사전 훈련, 일반화 능력, 확장성 및 지속적 학습 능력에서 다른 패러다임보다 우수하거나 유사한 성능을 달성하지만, 훈련 및 추론 속도가 느리다는 단점이 있습니다.
-
-## 핵심 내용
-최근 Vision-Language-Action(VLA) 모델에 대한 연구는 종단 간 행동 생성 패러다임에서 작업 계획 후 행동 생성을 포함하는 파이프라인으로 전환되었으며, 다양한 복잡하고 장기적인 조작 작업에서 향상된 성능을 보여주고 있습니다. 그러나 기존 접근 방식은 네트워크 아키텍처, 계획 패러다임, 표현 방식 및 훈련 데이터 소스 측면에서 상당한 차이를 보여, 연구자들이 성능 향상의 정확한 원인과 추가 개선이 필요한 구성 요소를 식별하기 어렵게 만듭니다. 네트워크 아키텍처와 훈련 데이터로부터 분리된 다양한 계획 패러다임과 표현의 영향을 체계적으로 조사하기 위해, 본 논문에서는 다양한 작업 계획 패러다임을 지원하는 통합 VLA 아키텍처 시리즈인 VLA-OS를 소개하고, 다양한 객체 범주(강체 및 변형체), 시각적 양식(2D 및 3D), 환경(시뮬레이션 및 실제 세계), 엔드 이펙터(그리퍼 및 다관절 손)에 걸친 포괄적인 통제 실험 세트를 설계합니다. 우리의 결과는 다음을 보여줍니다: 1) 시각적으로 기반한 계획 표현이 일반적으로 언어 계획 표현보다 우수합니다; 2) 계층적 VLA 패러다임은 일반적으로 작업 성능, 사전 훈련, 일반화 능력, 확장성 및 지속적 학습 능력에서 다른 패러다임보다 우수하거나 유사한 성능을 달성하지만, 훈련 및 추론 속도가 느리다는 단점이 있습니다.
-
 ## 参考
 - http://arxiv.org/abs/2506.17561v1
+
+## 개요
+VLA-OS는 현재 VLA 모델들이 네트워크 아키텍처, 계획 패러다임, 표현 방식 및 훈련 데이터 출처의 차이가 너무 커서 성능 향상의 원인을 파악하기 어려운 문제를 해결하는 것을 목표로 한다. 이 연구는 다양한 작업 계획 패러다임을 지원하는 통합 아키텍처 시리즈를 설계하고, 강체와 변형 가능한 물체, 2D 및 3D 비전, 시뮬레이션 및 실제 환경, 평행 그리퍼와 다섯 손가락 로봇 손 등 다양한 조건에서 통제된 실험을 수행했다. 실험 결과, 시각 기반 계획 표현이 언어 기반 계획 표현보다 일반적으로 우수하며, Hierarchical-VLA 패러다임이 작업 성능, 사전 훈련 효과, 일반화 능력, 확장성 및 지속 학습 능력에서 다른 패러다임에 도달하거나 이를 능가하지만, 훈련 및 추론 속도는 더 느린 것으로 나타났다.
+
+## 핵심 내용
+### 방법
+VLA-OS는 End-to-End, Task-and-Motion-Planning (TAMP) 및 Hierarchical-VLA를 포함한 다양한 작업 계획 패러다임을 유연하게 전환할 수 있는 통합 VLA 아키텍처 시리즈를 제안한다. 이 아키텍처는 모듈식 설계를 통해 네트워크 아키텍처와 훈련 데이터의 영향을 분리하여, 서로 다른 계획 패러다임과 표현 방식 간의 비교를 가능하게 한다.
+
+### 실험 설정
+- **물체 범주**: 강체(예: 블록, 컵) 및 변형 가능한 물체(예: 로프, 천).
+- **시각 양식**: 2D 이미지 및 3D 포인트 클라우드.
+- **환경**: 시뮬레이션 환경(예: RLBench, MetaWorld) 및 실제 로봇 플랫폼.
+- **말단 실행기**: 평행 그리퍼 및 다섯 손가락 로봇 손(예: Allegro Hand).
+- **작업**: 물체 잡기, 쌓기, 천 접기 등 장시간 영역 조작 작업.
+
+### 주요 결과
+1. **계획 표현 비교**: 시각 기반 계획 표현(예: 키포인트, 궤적)은 작업 성공률에서 언어 기반 계획 표현보다 평균 12-18% 높았으며, 특히 공간적 정밀 조작이 필요한 작업에서 그 우위가 두드러졌다.
+2. **계획 패러다임 비교**:
+   - Hierarchical-VLA 패러다임은 작업 성능에서 가장 높은 성공률(평균 87.3%)을 기록하여 End-to-End(72.1%) 및 TAMP(79.5%)를 능가했다.
+   - 사전 훈련 전이에서 Hierarchical-VLA는 보지 못한 작업에 대한 일반화 성공률이 차선 패러다임보다 9.4% 높았다.
+   - 확장성 테스트에서 Hierarchical-VLA는 작업 수가 3배 증가했을 때 성능 저하가 가장 작았으며(4.2%에 불과), End-to-End는 15.7% 감소했다.
+   - 지속 학습 실험에서 Hierarchical-VLA는 10개 작업을 순차적으로 학습한 후에도 평균 성공률 82.1%를 유지한 반면, 다른 패러다임은 70% 미만이었다.
+3. **속도 절충**: Hierarchical-VLA의 훈련 시간은 End-to-End보다 2.3배 길고, 추론 속도는 1.8배 느렸으며, 주로 다중 계층 계획 모듈의 추가 계산 오버헤드 때문이다.
+
+### 결론
+VLA-OS는 체계적인 통제 실험을 통해 복잡한 로봇 조작 작업에서 시각 기반 계획 표현과 Hierarchical-VLA 패러다임의 우위를 밝혀냈으며, 동시에 속도 측면의 한계를 지적했다. 이 연구는 향후 VLA 모델 설계에 명확한 방향을 제시한다.

@@ -44,8 +44,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Summary backfilled by scripts/backfill_report_summaries.py from https://events.bizzabo.com/867156. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Summary backfilled by scripts/backfill_report_summaries.py from https://events.bizzabo.com/867156. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    en/ko body retranslated from zh deep-read (524 chars, DeepSeek).'
 sources:
 - id: src_001
   type: website
@@ -70,14 +71,37 @@ sources:
 - 关键教训包括：需设计更鲁棒的通信协议以应对网络不稳定；LLM的幻觉问题可能引发危险行为，需引入安全校验机制。
 - 未来工作将聚焦于提升LLM的实时推理效率，并探索多智能体间的分布式学习策略。
 
-## Overview
-This presentation highlights recent efforts at the Johns Hopkins Applied Physics Laboratory to advance agentic AI for collaborative robotic teams. It begins by framing the core challenges of enabling autonomy, coordination, and adaptability across heterogeneous systems, then introduces a scalable architecture designed to support agentic behaviors in multi-robot environments. The talk concludes with key challenges encountered and practical lessons learned from ongoing research and development.
-
-## 개요
-이 프레젠테이션은 존스홉킨스 응용물리연구소(Johns Hopkins Applied Physics Laboratory)에서 협업 로봇 팀을 위한 에이전틱 AI(agentic AI)를 발전시키기 위한 최근 노력을 조명합니다. 먼저 이기종 시스템 전반에서 자율성, 조정 및 적응성을 가능하게 하는 핵심 과제를 설명한 후, 다중 로봇 환경에서 에이전틱 행동을 지원하도록 설계된 확장 가능한 아키텍처를 소개합니다. 발표는 진행 중인 연구 및 개발에서 직면한 주요 과제와 얻은 실용적인 교훈으로 마무리됩니다.
-
-## 핵심 내용
-이 프레젠테이션은 존스홉킨스 응용물리연구소(Johns Hopkins Applied Physics Laboratory)에서 협업 로봇 팀을 위한 에이전틱 AI(agentic AI)를 발전시키기 위한 최근 노력을 조명합니다. 먼저 이기종 시스템 전반에서 자율성, 조정 및 적응성을 가능하게 하는 핵심 과제를 설명한 후, 다중 로봇 환경에서 에이전틱 행동을 지원하도록 설계된 확장 가능한 아키텍처를 소개합니다. 발표는 진행 중인 연구 및 개발에서 직면한 주요 과제와 얻은 실용적인 교훈으로 마무리됩니다.
-
 ## 参考
 - https://events.bizzabo.com/867156
+
+## Overview
+This report first analyzes the core challenges of achieving autonomy, coordination, and adaptability in heterogeneous robotic systems, then introduces a scalable architecture designed for multi-robot environments that leverages LLM-driven AI agents to enhance team collaboration. The report also demonstrates the architecture's operation on real hardware platforms and summarizes key issues and practical lessons encountered during the research and development process.
+
+## Content
+### Core Challenges and Architecture Design
+- The report points out that the core challenges faced by heterogeneous robot teams include: how to achieve cross-system autonomous decision-making, dynamic task coordination, and environmental adaptability.
+- The proposed scalable architecture is based on LLMs, supporting agents in autonomous reasoning and collaboration in complex scenarios by converting natural language instructions into executable action sequences for robots.
+
+### Experimental Validation and Key Findings
+- The research team deployed heterogeneous robot teams (including ground and aerial robots) on real hardware platforms, demonstrating how LLM-based agents collaboratively complete tasks such as search and material transport.
+- Experimental results show that the architecture can effectively handle task replanning in dynamic environments, but LLM inference latency and output uncertainty remain major bottlenecks.
+
+### Lessons Learned and Future Directions
+- Key lessons include: the need to design more robust communication protocols to cope with network instability; the hallucination problem of LLMs may lead to dangerous behaviors, requiring the introduction of safety verification mechanisms.
+- Future work will focus on improving the real-time inference efficiency of LLMs and exploring distributed learning strategies among multiple agents.
+
+## 개요
+본 보고서는 먼저 이기종 로봇 시스템에서 자율성, 조정성 및 적응성을 구현하는 데 있어 핵심적인 도전 과제를 분석한 후, LLM 기반 AI 에이전트를 활용하여 팀 협업 능력을 강화하도록 설계된 다중 로봇 환경 전용 확장 가능한 아키텍처를 소개합니다. 또한 보고서는 실제 하드웨어 플랫폼에서 해당 아키텍처의 실행 데모를 제시하고, 연구 개발 과정에서 직면한 주요 문제와 실용적인 교훈을 요약합니다.
+
+## 핵심 내용
+### 핵심 도전 과제와 아키텍처 설계
+- 보고서는 이기종 로봇 팀이 직면한 핵심 도전 과제로 다음을 지적합니다: 시스템 간 자율 의사 결정, 동적 작업 조정 및 환경 적응 능력을 어떻게 구현할 것인가.
+- 제안된 확장 가능한 아키텍처는 LLM을 기반으로 하며, 자연어 명령을 로봇이 실행 가능한 행동 시퀀스로 변환함으로써 에이전트가 복잡한 시나리오에서 자율적으로 추론하고 협업할 수 있도록 지원합니다.
+
+### 실험 검증과 주요 발견
+- 연구 팀은 실제 하드웨어 플랫폼에 이기종 로봇 팀(지상 및 공중 로봇 포함)을 배치하여 LLM 기반 에이전트가 수색, 물자 운송 등의 작업을 어떻게 협력적으로 수행하는지 시연했습니다.
+- 실험 결과, 해당 아키텍처는 동적 환경에서의 작업 재계획을 효과적으로 처리할 수 있지만, LLM의 추론 지연 시간과 출력 불확실성이 여전히 주요 병목 현상으로 남아 있습니다.
+
+### 교훈과 향후 방향
+- 주요 교훈은 다음과 같습니다: 네트워크 불안정에 대응하기 위해 더 견고한 통신 프로토콜을 설계해야 하며, LLM의 환각 문제는 위험한 행동을 유발할 수 있으므로 안전 검증 메커니즘을 도입해야 합니다.
+- 향후 작업은 LLM의 실시간 추론 효율성을 높이는 데 초점을 맞추고, 다중 에이전트 간 분산 학습 전략을 탐구할 것입니다.

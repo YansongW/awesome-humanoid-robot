@@ -34,8 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2201.12900v2. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2201.12900v2. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (616 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -74,11 +75,23 @@ In this paper, we synthesize a data-driven method to predict the optimal topolog
 ## Content
 In this paper, we synthesize a data-driven method to predict the optimal topology of an ad-hoc robot network. This problem is technically a multi-task classification problem. However, we divide it into a class of multi-class classification problems that can be more efficiently solved. For this purpose, we first compose an algorithm to create ground-truth optimal topologies associated with various configurations of a robot network. This algorithm incorporates a complex collection of optimality criteria that our learning model successfully manages to learn. This model is a stacked ensemble whose output is the topology prediction for a particular robot. Each stacked ensemble instance constitutes three low-level estimators whose outputs will be aggregated by a high-level boosting blender. Applying our model to a network of 10 robots displays over 80% accuracy in the prediction of optimal topologies corresponding to various configurations of the cited network.
 
-## 개요
-본 논문에서는 애드혹 로봇 네트워크의 최적 토폴로지를 예측하기 위한 데이터 기반 방법을 종합합니다. 이 문제는 기술적으로 다중 작업 분류 문제입니다. 그러나 우리는 이를 보다 효율적으로 해결할 수 있는 다중 클래스 분류 문제의 한 부류로 나눕니다. 이를 위해 먼저 로봇 네트워크의 다양한 구성과 관련된 실제 최적 토폴로지를 생성하는 알고리즘을 구성합니다. 이 알고리즘은 우리의 학습 모델이 성공적으로 학습하는 복잡한 최적성 기준 집합을 포함합니다. 이 모델은 스택 앙상블로, 특정 로봇에 대한 토폴로지 예측을 출력합니다. 각 스택 앙상블 인스턴스는 세 개의 하위 수준 추정기로 구성되며, 이들의 출력은 상위 수준 부스팅 블렌더에 의해 집계됩니다. 우리의 모델을 10대의 로봇 네트워크에 적용하면, 해당 네트워크의 다양한 구성에 대응하는 최적 토폴로지 예측에서 80% 이상의 정확도를 보여줍니다.
-
-## 핵심 내용
-본 논문에서는 애드혹 로봇 네트워크의 최적 토폴로지를 예측하기 위한 데이터 기반 방법을 종합합니다. 이 문제는 기술적으로 다중 작업 분류 문제입니다. 그러나 우리는 이를 보다 효율적으로 해결할 수 있는 다중 클래스 분류 문제의 한 부류로 나눕니다. 이를 위해 먼저 로봇 네트워크의 다양한 구성과 관련된 실제 최적 토폴로지를 생성하는 알고리즘을 구성합니다. 이 알고리즘은 우리의 학습 모델이 성공적으로 학습하는 복잡한 최적성 기준 집합을 포함합니다. 이 모델은 스택 앙상블로, 특정 로봇에 대한 토폴로지 예측을 출력합니다. 각 스택 앙상블 인스턴스는 세 개의 하위 수준 추정기로 구성되며, 이들의 출력은 상위 수준 부스팅 블렌더에 의해 집계됩니다. 우리의 모델을 10대의 로봇 네트워크에 적용하면, 해당 네트워크의 다양한 구성에 대응하는 최적 토폴로지 예측에서 80% 이상의 정확도를 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2201.12900v2
+
+## 개요
+본 논문은 자율 조직 로봇 네트워크의 최적 토폴로지 구조를 예측하기 위한 데이터 기반 스태킹 앙상블 학습 방법인 OpTopNET을 제안합니다. 연구자들은 원래의 다중 작업 분류 문제를 더 쉽게 해결할 수 있는 다중 클래스 분류 하위 문제로 변환하고, 다양한 네트워크 구성에 해당하는 실제 최적 토폴로지를 훈련 라벨로 생성하는 알고리즘을 설계했습니다. 이 모델은 세 개의 하위 수준 추정기와 하나의 상위 수준 부스팅 혼합기로 구성되며, 각 스태킹 앙상블 인스턴스는 단일 로봇의 토폴로지 예측을 출력합니다. 10개의 로봇으로 구성된 네트워크 실험에서 OpTopNET은 다양한 구성 하의 최적 토폴로지 예측 정확도가 80%를 초과했습니다.
+
+## 핵심 내용
+### 방법 개요
+- 최적 토폴로지 예측 문제를 다중 작업 분류로 공식화하지만, 각 로봇의 다중 클래스 분류 작업으로 분해하여 해결 효율성을 높입니다.
+- 다양한 로봇 네트워크 구성에 해당하는 실제 최적 토폴로지(ground-truth)를 생성하는 전용 알고리즘을 설계하며, 이 알고리즘은 복잡한 최적화 기준 집합을 통합합니다.
+
+### 모델 아키텍처
+- 각 인스턴스가 하나의 로봇 토폴로지 예측에 해당하는 스태킹 앙상블 구조를 채택합니다.
+- 하위 수준에는 세 개의 저수준 추정기(low-level estimators)가 포함되며, 그 출력은 상위 수준 부스팅 혼합기(high-level boosting blender)에 의해 집계됩니다.
+- 앙상블 학습 프레임워크는 모델이 알고리즘 생성 최적성 기준을 효과적으로 학습할 수 있게 합니다.
+
+### 실험 설정 및 결과
+- 실험 네트워크 규모는 10개의 로봇입니다.
+- 다양한 네트워크 구성 하에서 최적 토폴로지 예측 성능을 테스트합니다.
+- 모델은 예측 정확도가 80%를 초과하여 자율 조직 네트워크 토폴로지 최적화에서 데이터 기반 방법의 효과성을 검증합니다.

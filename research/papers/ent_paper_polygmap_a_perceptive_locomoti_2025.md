@@ -32,8 +32,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.12346v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.12346v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (644 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -69,11 +70,23 @@ Recently, biped robot walking technology has been significantly developed, mainl
 ## Content
 Recently, biped robot walking technology has been significantly developed, mainly in the context of a bland walking scheme. To emulate human walking, robots need to step on the positions they see in unknown spaces accurately. In this paper, we present PolyMap, a perception-based locomotion planning framework for humanoid robots to climb stairs. Our core idea is to build a real-time polygonal staircase plane semantic map, followed by a footstep planar using these polygonal plane segments. These plane segmentation and visual odometry are done by multi-sensor fusion (LiDAR, RGB-D camera and IMUs). The proposed framework is deployed on an NVIDIA Orin, which performs 20-30 Hz whole-body motion planning output. Both indoor and outdoor real-scene experiments indicate that our method is efficient and robust for humanoid robot stair climbing.
 
-## 개요
-최근 이족 보행 로봇의 보행 기술은 주로 평탄한 보행 방식의 맥락에서 크게 발전해 왔습니다. 인간의 보행을 모방하기 위해 로봇은 미지의 공간에서 자신이 본 위치를 정확히 밟아야 합니다. 본 논문에서는 인간형 로봇이 계단을 오르기 위한 인식 기반 이동 계획 프레임워크인 PolyMap을 제시합니다. 핵심 아이디어는 실시간 다각형 계단 평면 의미 맵을 구축한 후, 이러한 다각형 평면 세그먼트를 사용하여 발판 평면을 생성하는 것입니다. 이러한 평면 분할과 시각적 주행 거리 측정은 다중 센서 융합(LiDAR, RGB-D 카메라 및 IMU)을 통해 수행됩니다. 제안된 프레임워크는 NVIDIA Orin에 배포되어 20-30Hz의 전신 동작 계획 출력을 수행합니다. 실내 및 실외 실제 환경 실험 모두에서 본 방법이 인간형 로봇의 계단 오르기에 효율적이고 강건함을 보여줍니다.
-
-## 핵심 내용
-최근 이족 보행 로봇의 보행 기술은 주로 평탄한 보행 방식의 맥락에서 크게 발전해 왔습니다. 인간의 보행을 모방하기 위해 로봇은 미지의 공간에서 자신이 본 위치를 정확히 밟아야 합니다. 본 논문에서는 인간형 로봇이 계단을 오르기 위한 인식 기반 이동 계획 프레임워크인 PolyMap을 제시합니다. 핵심 아이디어는 실시간 다각형 계단 평면 의미 맵을 구축한 후, 이러한 다각형 평면 세그먼트를 사용하여 발판 평면을 생성하는 것입니다. 이러한 평면 분할과 시각적 주행 거리 측정은 다중 센서 융합(LiDAR, RGB-D 카메라 및 IMU)을 통해 수행됩니다. 제안된 프레임워크는 NVIDIA Orin에 배포되어 20-30Hz의 전신 동작 계획 출력을 수행합니다. 실내 및 실외 실제 환경 실험 모두에서 본 방법이 인간형 로봇의 계단 오르기에 효율적이고 강건함을 보여줍니다.
-
 ## 参考
 - http://arxiv.org/abs/2510.12346v1
+
+## 개요
+이 프레임워크는 인간형 로봇이 미지의 공간에서 인간의 보행을 정밀하게 모방하는 문제, 특히 계단 오르기 시나리오를 해결하기 위해 설계되었습니다. PolygMap의 핵심 아이디어는 먼저 다중 센서 융합(LiDAR, RGB-D 카메라 및 IMU)을 활용하여 평면 분할과 시각적 주행 거리 측정을 수행하고, 실시간으로 다각형 계단 평면 의미론적 지도를 구축하는 것입니다. 이후, 이러한 다각형 평면 세그먼트를 기반으로 발 착지점을 계획하여 전신 운동 계획을 생성합니다. 전체 프레임워크는 NVIDIA Orin에 배포되어 20-30 Hz의 주파수로 계획 결과를 출력할 수 있습니다. 실내외 실제 환경 실험 모두 이 방법이 계단 오르기 작업에서 효율성과 견고성을 검증했습니다.
+
+## 핵심 내용
+### 방법 개요
+PolygMap은 인식 기반 운동 계획 프레임워크를 제안하며, 핵심 프로세스는 다음과 같습니다:
+- **실시간 다각형 계단 평면 의미론적 지도 구축**: 다중 센서 융합(LiDAR, RGB-D 카메라 및 IMU)을 통해 평면 분할과 시각적 주행 거리 측정을 구현하여 계단의 의미론적 지도를 생성합니다.
+- **발 착지점 계획**: 위의 다각형 평면 세그먼트를 활용하여 로봇의 정밀한 발 착지 위치를 계획함으로써 미지의 공간에서 인간의 보행을 모방합니다.
+
+### 실험 설정
+- **하드웨어 배포**: 프레임워크는 NVIDIA Orin 컴퓨팅 플랫폼에서 실행됩니다.
+- **계획 주파수**: 전신 운동 계획 출력 주파수는 20-30 Hz입니다.
+- **실험 시나리오**: 실내 및 실외 실제 환경을 모두 포함하여 방법의 일반성을 검증합니다.
+
+### 주요 결과 및 결론
+- **효율성 및 견고성**: 실내외 실험 모두 PolygMap이 인간형 로봇의 계단 오르기 작업에서 효율성과 견고성을 보여줍니다.
+- **핵심 기여**: 실시간 의미론적 지도와 다중 센서 융합을 통해 미지의 공간에서 정밀한 보행 계획의 핵심 과제를 해결합니다.

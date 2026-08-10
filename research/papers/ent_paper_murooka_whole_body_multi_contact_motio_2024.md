@@ -41,8 +41,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19580v1. [2026-07-29] zh
-    content backfilled from English abstract via scripts/sinicize_english_cards.py
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19580v1. [2026-07-29]
+    zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
+    ko body retranslated from zh deep-read (752 chars, DeepSeek).'
 sources:
 - id: src_001
   type: paper
@@ -78,11 +79,27 @@ theoretical_depth:
 ## Overview
 To enable humanoid robots to work robustly in confined environments, multi-contact motion that makes contacts not only at extremities, such as hands and feet, but also at intermediate areas of the limbs, such as knees and elbows, is essential. We develop a method to realize such whole-body multi-contact motion involving contacts at intermediate areas by a humanoid robot. Deformable sheet-shaped distributed tactile sensors are mounted on the surface of the robot's limbs to measure the contact force without significantly changing the robot body shape. The multi-contact motion controller developed earlier, which is dedicated to contact at extremities, is extended to handle contact at intermediate areas, and the robot motion is stabilized by feedback control using not only force/torque sensors but also distributed tactile sensors. Through verification on dynamics simulations, we show that the developed tactile feedback improves the stability of whole-body multi-contact motion against disturbances and environmental errors. Furthermore, the life-sized humanoid RHP Kaleido demonstrates whole-body multi-contact motions, such as stepping forward while supporting the body with forearm contact and balancing in a sitting posture with thigh contacts.
 
-## 개요
-인간형 로봇이 협소한 환경에서도 강건하게 작업할 수 있도록 하기 위해서는 손과 발 같은 말단뿐만 아니라 무릎과 팔꿈치 같은 사지의 중간 부위에서도 접촉을 만드는 다중 접촉 동작이 필수적입니다. 본 연구에서는 인간형 로봇이 중간 부위에서의 접촉을 포함한 전신 다중 접촉 동작을 구현하는 방법을 개발합니다. 로봇 사지 표면에는 변형 가능한 시트 형태의 분포형 촉각 센서를 장착하여 로봇 형상을 크게 변경하지 않고 접촉력을 측정합니다. 기존에 개발된 말단 접촉 전용 다중 접촉 동작 제어기를 중간 부위 접촉을 처리할 수 있도록 확장하고, 힘/토크 센서뿐만 아니라 분포형 촉각 센서를 활용한 피드백 제어를 통해 로봇 동작을 안정화합니다. 동역학 시뮬레이션 검증을 통해 개발된 촉각 피드백이 외란 및 환경 오차에 대한 전신 다중 접촉 동작의 안정성을 향상시킴을 보여줍니다. 또한 실물 크기 인간형 로봇 RHP Kaleido는 팔뚝 접촉으로 몸을 지지하며 앞으로 나아가는 동작과 대퇴부 접촉으로 앉은 자세에서 균형을 유지하는 동작 등 전신 다중 접촉 동작을 시연합니다.
-
-## 핵심 내용
-인간형 로봇이 협소한 환경에서도 강건하게 작업할 수 있도록 하기 위해서는 손과 발 같은 말단뿐만 아니라 무릎과 팔꿈치 같은 사지의 중간 부위에서도 접촉을 만드는 다중 접촉 동작이 필수적입니다. 본 연구에서는 인간형 로봇이 중간 부위에서의 접촉을 포함한 전신 다중 접촉 동작을 구현하는 방법을 개발합니다. 로봇 사지 표면에는 변형 가능한 시트 형태의 분포형 촉각 센서를 장착하여 로봇 형상을 크게 변경하지 않고 접촉력을 측정합니다. 기존에 개발된 말단 접촉 전용 다중 접촉 동작 제어기를 중간 부위 접촉을 처리할 수 있도록 확장하고, 힘/토크 센서뿐만 아니라 분포형 촉각 센서를 활용한 피드백 제어를 통해 로봇 동작을 안정화합니다. 동역학 시뮬레이션 검증을 통해 개발된 촉각 피드백이 외란 및 환경 오차에 대한 전신 다중 접촉 동작의 안정성을 향상시킴을 보여줍니다. 또한 실물 크기 인간형 로봇 RHP Kaleido는 팔뚝 접촉으로 몸을 지지하며 앞으로 나아가는 동작과 대퇴부 접촉으로 앉은 자세에서 균형을 유지하는 동작 등 전신 다중 접촉 동작을 시연합니다.
-
 ## 参考
 - http://arxiv.org/abs/2505.19580v1
+
+## 개요
+인간형 로봇이 좁은 환경에서 안정적으로 작업할 수 있도록, 본 논문은 무릎, 팔꿈치와 같은 중간 사지 영역을 포함한 전신 다접촉 운동 제어 방법을 개발했습니다. 로봇 표면에 변형 가능한 시트형 분산 촉각 센서를 설치하여 외형을 크게 바꾸지 않으면서 접촉력을 측정합니다. 연구는 기존에 말단부(손, 발)만을 대상으로 하던 다접촉 제어기를 중간 영역으로 확장하고, 힘/토크 센서와 촉각 센서를 융합하여 피드백 제어를 수행합니다. 동역학 시뮬레이션은 촉각 피드백이 외란 및 환경 오차에 대한 운동 안정성을 효과적으로 향상시킴을 보여주었으며, 실제 실험에서는 RHP Kaleido 인간형 로봇이 전완 지지 전진 및 착석 균형과 같은 전신 다접촉 동작을 성공적으로 시연했습니다.
+
+## 핵심 내용
+### 방법 개요
+- 핵심 과제: 인간형 로봇은 좁은 환경에서 무릎, 팔꿈치, 전완, 대퇴부 등 중간 사지 영역을 활용한 다접촉 운동이 필요하지만, 기존 방법은 손, 발과 같은 말단 접촉에만 초점을 맞추고 있습니다.
+- 센서 솔루션: 변형 가능한 시트형 분산 촉각 센서를 채택하여 로봇 사지 표면에 적용, 접촉력을 측정하면서도 로봇 외형을 크게 변경하지 않습니다.
+- 제어기 확장: 기존 말단 다접촉 제어기를 기반으로 중간 영역 접촉 처리 로직을 추가하고, 분산 촉각 센서의 피드백 신호를 도입합니다.
+
+### 실험 설정
+- 시뮬레이션 검증: 동역학 시뮬레이션 환경에서 촉각 피드백이 운동 안정성에 미치는 영향을 테스트하며, 외란 저항성 및 환경 오차 보상 효과를 중점적으로 평가합니다.
+- 실제 검증: 전신 인간형 로봇 RHP Kaleido를 사용하여 다음을 시연합니다:
+  - 전완 지지 전진: 몸을 앞으로 기울일 때 전완으로 지면을 지지하며 보폭 동작을 수행합니다.
+  - 착석 균형: 대퇴부로 지지면에 접촉하여 착석 자세를 안정적으로 유지합니다.
+
+### 주요 결과
+- 시뮬레이션에서 촉각 피드백은 무작위 외란 및 지형 오차에 대한 다접촉 운동의 강건성을 크게 향상시켰습니다.
+- 실제 실험에서 RHP Kaleido는 두 가지 대표적인 전신 다접촉 동작을 성공적으로 수행하여 방법의 실제 적용 가능성을 검증했습니다.
+
+### 결론
+본 논문에서 제안한 분산 촉각 센서 피드백 제어 방법은 인간형 로봇의 접촉 능력을 중간 사지 영역으로 효과적으로 확장하며, 좁은 환경에서의 안정적인 운동을 위한 실현 가능한 솔루션을 제공합니다.
