@@ -43,6 +43,7 @@
 - `website/builder/` — 静态站构建器（zh 根路径，en/ko 子路径）；模板在 `website/templates/`
 - `web/` — FastAPI 本地 GUI（检索 / 子图 / LLM 问答 / 路线图视图）
 - `scripts/` — 摄取、挖掘、审计、翻译脚本（见下）
+- `docs/RUNBOOK-remote-batch.md` — 远程批处理运行手册（干净机器 clone 后跑教材化/深读管线；禁止 git 提交）
 - `.staging/` — 中间产物与进度检查点（gitignored）
 
 ## 常用命令
@@ -60,6 +61,9 @@ make roadmap-check   # 重新生成路线图↔卡片绑定
 | 脚本 | 用途 | 注意 |
 |------|------|------|
 | `scripts/audit_entry_quality.py --json-only` | 质量+连通性审计 | **不要用 MD 模式**（极慢）；报告在 `.staging/quality_reports/` |
+| `scripts/deep_read_cards.py <stage>` | 论文卡六段深读管线（select/fetch/generate/apply/check/run） | 含全部固化补丁（blob≤20K、数字白名单、`](` 纪律、逐段拼接兜底）；状态在 `.staging/deep_read_run/`；幂等可续跑；密钥走 `DEEPSEEK_API_KEY` |
+| `scripts/textbook_grade_cards.py <stage>` | 非论文卡教材化管线（select/fetch/corpus/audit/apply/translate/check） | 正文由 agent 撰写（放 `<workdir>/bodies/<id>.zh.md`），脚本管取材/审计/写入/翻译；状态在 `.staging/textbook_grade_run/` |
+| `scripts/audit_card_numbers.py whitelist\|deepread` | 数字白名单审计（v6 口径：边界 verbatim + 邻近推导 + 显式标注豁免） | whitelist 模式配 `--corpus-map`；deepread 模式配 `--fulltexts-dir`；违规时 exit 1 |
 | `scripts/build_latent_relationships.py [--write]` | 确定性挖潜关系（引用/共享来源/提及/wiki 共现） | 先干跑看数量与样本 |
 | `scripts/link_zero_degree_entities.py [--llm] [--write]` | 缩写/机构匹配 + LLM 零度挂接 | LLM 模式有检查点，可安全重入；`--include-types` 限定类型 |
 | `scripts/llm_classify_relations.py [--write]` | LLM 给提及对分型 | 进度写在 `.staging/llm_relation_progress.jsonl` |
