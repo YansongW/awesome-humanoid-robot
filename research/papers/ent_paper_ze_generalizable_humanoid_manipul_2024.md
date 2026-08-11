@@ -50,13 +50,34 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.10803v3. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
-    ko body retranslated from zh deep-read (948 chars, DeepSeek).'
+    ko body retranslated from zh deep-read (948 chars, DeepSeek). | WP3 2026-08-06: merged ent_paper_ze_generalizable_humanoid_manipul_2024,
+    ent_paper_ze_generalizable_humanoid_manipul_2024 into this card. Reason: G7 same arXiv 2410.10803; title variants (''with
+    3D Diffusion Policies'' vs ''with Improved 3D Diffusion Policies'') are arXiv version renames of the same paper (DP3->iDP3).
+    Keeper longest (3545).. Manifest: .staging/cleanup_wp12/manifest_wp3_merges.json'
 sources:
 - id: src_001
   type: paper
   title: Generalizable Humanoid Manipulation with 3D Diffusion Policies
   url: https://arxiv.org/abs/2410.10803
   date: '2024'
+  accessed_at: '2026-06-26'
+- id: src_002
+  type: paper
+  title: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies (arXiv)
+  url: https://arxiv.org/abs/2410.10803
+  date: '2024'
+  accessed_at: '2026-07-01'
+- id: src_003
+  type: website
+  title: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies project page
+  url: https://humanoid-manipulation.github.io/
+  date: '2024'
+  accessed_at: '2026-07-01'
+- id: src_004
+  type: website
+  title: 使用3D扩散策略的通用人形操作 project page
+  url: https://humanoid-manipulation.github.io
+  date: '2025'
   accessed_at: '2026-06-26'
 theoretical_depth:
 - method

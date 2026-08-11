@@ -34,13 +34,21 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.08500v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
-    ko body retranslated from zh deep-read (1015 chars, DeepSeek).'
+    ko body retranslated from zh deep-read (1015 chars, DeepSeek). | WP3 2026-08-06: merged ent_paper_learning_to_control_physically_2025
+    into this card. Reason: G12 same paper: arXiv 2512.08500 title exact match (Mimic2DM is acronym); keeper has arXiv + correct
+    year.. Manifest: .staging/cleanup_wp12/manifest_wp3_merges.json'
 sources:
 - id: src_001
   type: paper
   title: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions (arXiv)
   url: https://arxiv.org/abs/2512.08500
   date: '2025'
+  accessed_at: '2026-07-01'
+- id: src_002
+  type: website
+  title: 'Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions'
+  url: ''
+  date: '2026'
   accessed_at: '2026-07-01'
 ---
 ## 概述

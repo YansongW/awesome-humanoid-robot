@@ -35,13 +35,21 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15704v1. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
-    ko body retranslated from zh deep-read (837 chars, DeepSeek).'
+    ko body retranslated from zh deep-read (837 chars, DeepSeek). | WP3 2026-08-06: merged ent_paper_in_n_on_scaling_egocentric_man_2025
+    into this card. Reason: G10 same paper: arXiv 2511.15704 exact title match; keeper has arXiv source + correct year.. Manifest:
+    .staging/cleanup_wp12/manifest_wp3_merges.json'
 sources:
 - id: src_001
   type: paper
   title: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data (arXiv)'
   url: https://arxiv.org/abs/2511.15704
   date: '2025'
+  accessed_at: '2026-07-01'
+- id: src_002
+  type: website
+  title: 'IN-N-ON: SCALING EGOCENTRIC MANIPULATION WITH IN-THE-WILD AND ON-TASK DATA project page'
+  url: https://openreview.net/attachment?id=JoK1hJg0Td&name=pdf
+  date: '2026'
   accessed_at: '2026-07-01'
 ---
 ## 概述

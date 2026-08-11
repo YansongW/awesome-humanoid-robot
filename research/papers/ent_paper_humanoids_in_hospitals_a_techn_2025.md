@@ -35,13 +35,21 @@ verification:
   confidence: medium
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.12725v2. [2026-07-29]
     zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10:
-    ko body retranslated from zh deep-read (884 chars, DeepSeek).'
+    ko body retranslated from zh deep-read (884 chars, DeepSeek). | WP3 2026-08-06: merged ent_paper_humanoids_in_hospitals_a_techn_2025
+    into this card. Reason: G9 same paper: arXiv 2503.12725 current title matches 2026 card (version retitle); keeper has
+    arXiv source + correct year + slightly longer.. Manifest: .staging/cleanup_wp12/manifest_wp3_merges.json'
 sources:
 - id: src_001
   type: paper
   title: 'Humanoids in Hospitals: A Technical Study of Humanoid Surrogates for Dexterous Medical Interventions (arXiv)'
   url: https://arxiv.org/abs/2503.12725
   date: '2025'
+  accessed_at: '2026-07-01'
+- id: src_002
+  type: website
+  title: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions'
+  url: ''
+  date: '2026'
   accessed_at: '2026-07-01'
 ---
 ## 概述
