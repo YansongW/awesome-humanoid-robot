@@ -139,7 +139,7 @@ IMU 的根本局限在于**积分漂移**。角速度积分得到角度，但陀
 
 ### 相关知识
 
-- `ent_paper_model_predictive_control_2024` — MPC 依赖 IMU 提供的高频状态估计作为滚动优化的初始条件，两者在平衡控制中协同工作。
+- `ent_method_model_predictive_control` — MPC 依赖 IMU 提供的高频状态估计作为滚动优化的初始条件，两者在平衡控制中协同工作。
 - `ent_paper_chen_design_of_an_adaptive_lightwei_2023` — 该论文展示了 IMU 反馈在 MEMS 微镜 LiDAR 运动补偿中的关键作用。
 - `ent_paper_x_ionet_cross_platform_inertial_odometry_2025` — 仅依赖单个 IMU 实现跨平台惯性里程计，验证了 IMU 在 GPS 拒止环境中的定位能力。
 - `ent_paper_razmi_event_driven_on_sensor_locomot_2026` — 该论文展示了 IMU 嵌入式机器学习核心在步态分类中的应用，体现了 IMU 从传感器向边缘计算节点演进的趋势。
@@ -246,7 +246,7 @@ The third limitation is **temperature sensitivity**. MEMS device bias drifts wit
 
 ### Related Knowledge
 
-- `ent_paper_model_predictive_control_2024` — MPC relies on high-frequency state estimates provided by the IMU as initial conditions for rolling optimization; the two work synergistically in balance control.
+- `ent_method_model_predictive_control` — MPC relies on high-frequency state estimates provided by the IMU as initial conditions for rolling optimization; the two work synergistically in balance control.
 - `ent_paper_chen_design_of_an_adaptive_lightwei_2023` — This paper demonstrates the critical role of IMU feedback in MEMS micromirror LiDAR motion compensation.
 - `ent_paper_x_ionet_cross_platform_inertial_odometry_2025` — Achieves cross-platform inertial odometry using only a single IMU, validating IMU positioning capability in GPS-denied environments.
 - `ent_paper_razmi_event_driven_on_sensor_locomot_2026` — This paper showcases the application of an IMU's embedded machine learning core in gait classification, reflecting the trend of IMUs evolving from sensors to edge computing nodes.
@@ -347,7 +347,7 @@ IMU의 근본적인 한계는 **적분 드리프트**입니다. 각속도 적분
 
 ### 관련 지식
 
-- `ent_paper_model_predictive_control_2024` — MPC는 IMU가 제공하는 고주파 상태 추정을 롤링 최적화의 초기 조건으로 사용하며, 둘은 균형 제어에서 협력합니다.
+- `ent_method_model_predictive_control` — MPC는 IMU가 제공하는 고주파 상태 추정을 롤링 최적화의 초기 조건으로 사용하며, 둘은 균형 제어에서 협력합니다.
 - `ent_paper_chen_design_of_an_adaptive_lightwei_2023` — 이 논문은 MEMS 마이크로미러 LiDAR 운동 보상에서 IMU 피드백의 핵심 역할을 보여줍니다.
 - `ent_paper_x_ionet_cross_platform_inertial_odometry_2025` — 단일 IMU만으로 플랫폼 간 관성 오도메트리를 구현하여 GPS 거부 환경에서 IMU의 위치 추정 능력을 검증합니다.
 - `ent_paper_razmi_event_driven_on_sensor_locomot_2026` — 이 논문은 보행 분류에서 IMU 내장 머신 러닝 코어의 응용을 보여주며, IMU가 센서에서 엣지 컴퓨팅 노드로 진화하는 추세를 반영합니다.

@@ -84,9 +84,9 @@ P8 阶段的验证与问题闭环（P8.1.1.4）要求制定测试/评审计划�
 | 载荷工况表内容 | 载荷大小、方向、作用点、发生概率 | 语料 P8.1.1 |
 | FEA 工具 | HyperMesh / ANSA / Abaqus / ANSYS | 语料 P8.1.2 |
 | 网格要求 | 网格收敛分析、网格质量 | 语料 P8.1.2 |
-| 模型简化对象 | 非承力特征（小圆角、螺纹、倒角、细小孔洞） | 邻居卡 ent_paper_finite_element_analysis_2024 |
-| 材料属性 | 弹性模量 E、泊松比 ν、密度 ρ | 邻居卡 ent_paper_finite_element_analysis_2024 |
-| 单元类型 | 四面体单元（适应复杂几何） | 邻居卡 ent_paper_finite_element_analysis_2024 |
+| 模型简化对象 | 非承力特征（小圆角、螺纹、倒角、细小孔洞） | 邻居卡 ent_method_fea_finite_element_analysis |
+| 材料属性 | 弹性模量 E、泊松比 ν、密度 ρ | 邻居卡 ent_method_fea_finite_element_analysis |
+| 单元类型 | 四面体单元（适应复杂几何） | 邻居卡 ent_method_fea_finite_element_analysis |
 
 ### 横向对比
 
@@ -131,7 +131,7 @@ P8 阶段存在明确的边界与局限。首先，FEA 的精度受限于模型�
 - `ent_process_p5` — 上游阶段，完成中心骨架与四肢连杆设计、关节接口与壳体设计，为 P8 提供待验证的几何与材料。
 - `ent_process_p5_1_1` — 中心骨架与四肢连杆设计，其输出 3D 结构模型与关键截面设计是 P8 载荷工况定义的直接输入。
 - `ent_process_p5_1_2` — 关节安装接口与壳体设计，接口公差与密封方案影响 P8 中接触/绑定设置的合理性。
-- `ent_paper_finite_element_analysis_2024` — 有限元分析在连杆设计中的应用，提供 FEA 标准工作流程与单元类型选择的详细说明。
+- `ent_method_fea_finite_element_analysis` — 有限元分析在连杆设计中的应用，提供 FEA 标准工作流程与单元类型选择的详细说明。
 - `ent_method_fea_finite_element_analysis` — 有限元分析方法本身，是 P8 阶段的核心技术基础。
 - `ent_process_p8_1_2` — FEA 模型准备子任务，与 P8.1.1 载荷工况定义共同构成 P8 阶段的技术核心。
 - `ent_process_p8_2_3` — P8 阶段后续子任务，涉及仿真结果的结构优化与迭代。
@@ -189,9 +189,9 @@ The validation and issue closure (P8.1.1.4) in the P8 stage requires formulating
 | Load case table content | Load magnitude, direction, point of application, occurrence probability | Corpus P8.1.1 |
 | FEA tools | HyperMesh / ANSA / Abaqus / ANSYS | Corpus P8.1.2 |
 | Mesh requirements | Mesh convergence analysis, mesh quality | Corpus P8.1.2 |
-| Model simplification targets | Non-load-bearing features (small fillets, threads, chamfers, tiny holes) | Neighbor card ent_paper_finite_element_analysis_2024 |
-| Material properties | Elastic modulus E, Poisson's ratio ν, density ρ | Neighbor card ent_paper_finite_element_analysis_2024 |
-| Element types | Tetrahedral elements (suitable for complex geometry) | Neighbor card ent_paper_finite_element_analysis_2024 |
+| Model simplification targets | Non-load-bearing features (small fillets, threads, chamfers, tiny holes) | Neighbor card ent_method_fea_finite_element_analysis |
+| Material properties | Elastic modulus E, Poisson's ratio ν, density ρ | Neighbor card ent_method_fea_finite_element_analysis |
+| Element types | Tetrahedral elements (suitable for complex geometry) | Neighbor card ent_method_fea_finite_element_analysis |
 
 ### Horizontal Comparison
 
@@ -236,7 +236,7 @@ Additionally, P8 outputs must match manufacturing capabilities—mesh and load a
 - `ent_process_p5` — Upstream stage, completing central skeleton and limb linkage design, joint interface and housing design, providing geometry and materials for P8 validation.
 - `ent_process_p5_1_1` — Central skeleton and limb linkage design, whose outputs (3D structural model and critical cross-section design) are direct inputs to P8 load case definition.
 - `ent_process_p5_1_2` — Joint mounting interface and housing design; interface tolerances and sealing solutions affect the reasonableness of contact/bonding settings in P8.
-- `ent_paper_finite_element_analysis_2024` — Application of FEA in linkage design, providing detailed descriptions of standard FEA workflows and element type selection.
+- `ent_method_fea_finite_element_analysis` — Application of FEA in linkage design, providing detailed descriptions of standard FEA workflows and element type selection.
 - `ent_method_fea_finite_element_analysis` — The FEA method itself, serving as the core technical foundation of the P8 stage.
 - `ent_process_p8_1_2` — FEA model preparation subtask, which together with P8.1.1 load case definition forms the technical core of the P8 stage.
 - `ent_process_p8_2_3` — Subsequent subtask in the P8 stage, involving structural optimization and iteration based on simulation results.
@@ -289,9 +289,9 @@ P8 단계의 검증 및 문제 폐루프(P8.1.1.4)는 테스트/검토 계획과
 | 하중 조건표 내용 | 하중 크기, 방향, 작용점, 발생 확률 | 말뭉치 P8.1.1 |
 | FEA 도구 | HyperMesh / ANSA / Abaqus / ANSYS | 말뭉치 P8.1.2 |
 | 메시 요구사항 | 메시 수렴 분석, 메시 품질 | 말뭉치 P8.1.2 |
-| 모델 단순화 대상 | 비하중 지지 형상(작은 필렛, 나사산, 모따기, 미세 구멍) | 이웃 카드 ent_paper_finite_element_analysis_2024 |
-| 재료 속성 | 탄성 계수 E, 포아송 비 ν, 밀도 ρ | 이웃 카드 ent_paper_finite_element_analysis_2024 |
-| 요소 유형 | 사면체 요소(복잡한 기하에 적합) | 이웃 카드 ent_paper_finite_element_analysis_2024 |
+| 모델 단순화 대상 | 비하중 지지 형상(작은 필렛, 나사산, 모따기, 미세 구멍) | 이웃 카드 ent_method_fea_finite_element_analysis |
+| 재료 속성 | 탄성 계수 E, 포아송 비 ν, 밀도 ρ | 이웃 카드 ent_method_fea_finite_element_analysis |
+| 요소 유형 | 사면체 요소(복잡한 기하에 적합) | 이웃 카드 ent_method_fea_finite_element_analysis |
 
 ### 수평 비교
 
@@ -336,7 +336,7 @@ P8 단계는 명확한 경계와 한계가 있습니다. 첫째, FEA의 정밀�
 - `ent_process_p5` — 상류 단계, 중심 골격과 사지 링크 설계, 관절 인터페이스와 셸 설계를 완료하여 P8에 검증 대상 기하와 재료를 제공.
 - `ent_process_p5_1_1` — 중심 골격과 사지 링크 설계, 그 출력 3D 구조 모델과 핵심 단면 설계는 P8 하중 조건 정의의 직접 입력.
 - `ent_process_p5_1_2` — 관절 설치 인터페이스와 셸 설계, 인터페이스 공차와 밀봉 방안은 P8의 접촉/구속 설정 합리성에 영향.
-- `ent_paper_finite_element_analysis_2024` — 링크 설계에서 유한요소해석 응용, FEA 표준 작업 흐름과 요소 유형 선택의 상세 설명 제공.
+- `ent_method_fea_finite_element_analysis` — 링크 설계에서 유한요소해석 응용, FEA 표준 작업 흐름과 요소 유형 선택의 상세 설명 제공.
 - `ent_method_fea_finite_element_analysis` — 유한요소해석 방법 자체, P8 단계의 핵심 기술 기반.
 - `ent_process_p8_1_2` — FEA 모델 준비 하위 작업, P8.1.1 하중 조건 정의와 함께 P8 단계의 기술 핵심 구성.
 - `ent_process_p8_2_3` — P8 단계 후속 하위 작업, 시뮬레이션 결과의 구조 최적화와 반복 관련.

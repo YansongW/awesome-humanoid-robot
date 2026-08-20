@@ -154,7 +154,7 @@ CNC精密机加工存在明确的适用边界，工程师需在工艺选型时�
 
 - `ent_method_design_for_manufacturing` — DFM要求工程师在设计阶段评估零件与CNC工艺的兼容性，包括壁厚、深腔比、孔径系列等参数是否落在加工能力范围内。
 - `ent_method_design_for_assembly` — DFA关注零件如何被组合成完整产品，CNC加工的精度直接影响装配效率与可靠性。
-- `ent_paper_design_for_manufacturing_2024` — 该论文系统阐述了DFM方法在人形机器人零件设计中的应用，涵盖CNC加工约束的量化评估。
+- `ent_method_design_for_manufacturing` — 该论文系统阐述了DFM方法在人形机器人零件设计中的应用，涵盖CNC加工约束的量化评估。
 
 ## 参考
 
@@ -273,7 +273,7 @@ CNC precision machining has clear application boundaries that engineers must rec
 
 - `ent_method_design_for_manufacturing` — DFM requires engineers to evaluate part compatibility with CNC processes during the design phase, including whether parameters such as wall thickness, depth-to-width ratios, and hole diameter series fall within machining capability ranges.
 - `ent_method_design_for_assembly` — DFA focuses on how parts are assembled into a complete product; CNC machining precision directly affects assembly efficiency and reliability.
-- `ent_paper_design_for_manufacturing_2024` — This paper systematically elaborates on the application of DFM methods in humanoid robot part design, covering quantitative assessment of CNC machining constraints.
+- `ent_method_design_for_manufacturing` — This paper systematically elaborates on the application of DFM methods in humanoid robot part design, covering quantitative assessment of CNC machining constraints.
 
 ## 개요
 
@@ -386,4 +386,4 @@ CNC 정밀 가공에는 명확한 적용 경계가 있으며, 엔지니어는 �
 
 - `ent_method_design_for_manufacturing` — DFM은 엔지니어가 설계 단계에서 부품과 CNC 공정의 호환성을 평가하도록 요구하며, 벽 두께, 깊은 캐비티 비율, 구멍 직경 시리즈 등 파라미터가 가공 능력 범위 내에 있는지 확인합니다.
 - `ent_method_design_for_assembly` — DFA는 부품이 완제품으로 어떻게 조합되는지에 초점을 맞추며, CNC 가공의 정밀도는 조립 효율과 신뢰성에 직접적인 영향을 미칩니다.
-- `ent_paper_design_for_manufacturing_2024` — 이 논문은 휴머노이드 로봇 부품 설계에서 DFM 방법의 적용을 체계적으로 설명하며, CNC 가공 제약 조건의 정량적 평가를 포함합니다.
+- `ent_method_design_for_manufacturing` — 이 논문은 휴머노이드 로봇 부품 설계에서 DFM 방법의 적용을 체계적으로 설명하며, CNC 가공 제약 조건의 정량적 평가를 포함합니다.

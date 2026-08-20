@@ -180,6 +180,9 @@ def audit_entry(entry: dict[str, Any]) -> dict[str, Any]:
         "方法", "原理", "结构", "实现步骤", "摘要", "内容",
         "Abstract", "Methods", "Method", "Activities", "Tasks", "Key Findings", "Findings",
         "Overview", "Content", "Report",
+        # 深读六段结构（新标杆，2026-08）：它改变了什么 + 方法拆解 等
+        "它改变了什么", "方法拆解", "What It Changed", "Method Decomposition",
+        "무엇을 바꾸었는가", "방법 분해",
     ):
         issues.append("missing_core_section")
     if not has_section(body, "参考", "References", "참고"):

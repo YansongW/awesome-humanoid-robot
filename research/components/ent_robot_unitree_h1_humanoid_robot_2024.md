@@ -144,7 +144,7 @@ H1 的主要用户群体包括：
 ### 相关知识
 
 - `ent_company_indro_robotics_launches_axiom_2026` — InDro Robotics 推出的 Axiom 模块化人形平台，与 H1 同属降低人形机器人研究门槛的路径，但定位更偏预算友好型。
-- `ent_paper_diffusion_policy_2023` — 扩散策略可部署于 H1 等机器人平台，用于视觉运动策略学习，是 H1 作为具身智能载体的典型算法。
+- `ent_method_diffusion_policy` — 扩散策略可部署于 H1 等机器人平台，用于视觉运动策略学习，是 H1 作为具身智能载体的典型算法。
 - `ent_paper_berkeley_humanoid_a_research_p_2024` — Berkeley Humanoid 是低成本自建研究平台，与 H1 形成"自建 vs 商用"的对比，两者都强调学习算法的 sim-to-real 迁移。
 - `ent_paper_evolutionary_continuous_adapti_2025` — EA-CoRL 框架通过设计进化与策略连续自适应并行优化硬件配置与控制策略，H1 的关节参数可作为该类协同设计方法的参考对象。
 - `ent_technology_ota_software_update_2024` — H1 支持持续 OTA 软件升级，这是其作为研究平台保持算法迭代能力的关键技术。
@@ -256,7 +256,7 @@ A typical research pipeline is: training control policies in simulation environm
 ### Related Knowledge
 
 - `ent_company_indro_robotics_launches_axiom_2026` — InDro Robotics' Axiom modular humanoid platform, sharing the H1's approach of lowering the barrier to humanoid robot research, but positioned more as a budget-friendly option.
-- `ent_paper_diffusion_policy_2023` — Diffusion policies can be deployed on robot platforms like the H1 for visual-motion policy learning, representing a typical algorithm for the H1 as an embodied intelligence carrier.
+- `ent_method_diffusion_policy` — Diffusion policies can be deployed on robot platforms like the H1 for visual-motion policy learning, representing a typical algorithm for the H1 as an embodied intelligence carrier.
 - `ent_paper_berkeley_humanoid_a_research_p_2024` — The Berkeley Humanoid is a low-cost self-built research platform, contrasting with the H1 as "self-built vs. commercial," with both emphasizing sim-to-real transfer of learning algorithms.
 - `ent_paper_evolutionary_continuous_adapti_2025` — The EA-CoRL framework optimizes hardware configuration and control policies in parallel through design evolution and continuous policy adaptation; the H1's joint parameters can serve as a reference for such co-design methods.
 - `ent_technology_ota_software_update_2024` — The H1 supports continuous OTA software upgrades, a key technology for maintaining algorithmic iteration capability as a research platform.
@@ -361,7 +361,7 @@ H1의 주요 사용자 그룹은 다음과 같습니다:
 ### 관련 지식
 
 - `ent_company_indro_robotics_launches_axiom_2026` — InDro Robotics가 출시한 Axiom 모듈식 휴머노이드 플랫폼으로, H1과 마찬가지로 휴머노이드 로봇 연구 진입 장벽을 낮추는 경로에 속하지만 예산 친화적 유형에 더 가깝습니다.
-- `ent_paper_diffusion_policy_2023` — 확산 정책은 H1과 같은 로봇 플랫폼에 배포하여 시각 운동 정책 학습에 사용할 수 있으며, H1이 임베디드 인텔리전스 운반체로서의 전형적인 알고리즘입니다.
+- `ent_method_diffusion_policy` — 확산 정책은 H1과 같은 로봇 플랫폼에 배포하여 시각 운동 정책 학습에 사용할 수 있으며, H1이 임베디드 인텔리전스 운반체로서의 전형적인 알고리즘입니다.
 - `ent_paper_berkeley_humanoid_a_research_p_2024` — Berkeley Humanoid는 저비용 자체 구축 연구 플랫폼으로, H1과 '자체 구축 vs 상용'의 대비를 이루며, 둘 다 학습 알고리즘의 sim-to-real 전이를 강조합니다.
 - `ent_paper_evolutionary_continuous_adapti_2025` — EA-CoRL 프레임워크는 설계 진화와 정책 연속 적응을 병렬로 최적화하여 하드웨어 구성과 제어 정책을 동시에 최적화하며, H1의 관절 매개변수는 이러한 공동 설계 방법의 참조 대상이 될 수 있습니다.
 - `ent_technology_ota_software_update_2024` — H1은 지속적인 OTA 소프트웨어 업그레이드를 지원하며, 이는 연구 플랫폼으로서 알고리즘 반복 능력을 유지하는 핵심 기술입니다.

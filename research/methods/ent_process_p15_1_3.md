@@ -152,7 +152,7 @@ $$
 
 - `ent_process_p15` — 本工序所属的整机集成与验证测试阶段，定义了 P15 的整体范围与子任务结构。
 - `ent_process_p16_1_3` — 下游量产准备阶段的装配线规划与 SOP 工序，接收闭环集成输出的文档与规范。
-- `ent_paper_hardware_in_the_loop_2024` — HIL 方法是本工序的前置安全网，将整机级风险前移到台架阶段。
+- `ent_method_hardware_in_the_loop` — HIL 方法是本工序的前置安全网，将整机级风险前移到台架阶段。
 - `ent_process_p15_1_1` — 腿部系统集成与调试，与本工序同属 P15 分系统集成阶段，其输出是闭环集成的输入之一。
 - `ent_process_p15_3_2` — 软件稳定性与回归测试，在本工序之后验证软件在长期运行中的稳定性。
 - `ent_process_p16` — 小批量试产与量产准备阶段，接收闭环集成验证通过后的整机设计。
@@ -275,7 +275,7 @@ The limitations and boundary conditions of the closed-loop integration process i
 
 - `ent_process_p15` — The full-machine integration and verification testing phase to which this process belongs, defining the overall scope and subtask structure of P15.
 - `ent_process_p16_1_3` — The assembly line planning and SOP process in the downstream mass-production preparation phase, receiving the documentation and specifications output by closed-loop integration.
-- `ent_paper_hardware_in_the_loop_2024` — The HIL method is the pre-safety net for this process, shifting full-machine-level risks to the bench stage.
+- `ent_method_hardware_in_the_loop` — The HIL method is the pre-safety net for this process, shifting full-machine-level risks to the bench stage.
 - `ent_process_p15_1_1` — Leg system integration and debugging, belonging to the same P15 subsystem integration phase as this process; its output is one of the inputs to closed-loop integration.
 - `ent_process_p15_3_2` — Software stability and regression testing, verifying software stability during long-term operation after this process.
 - `ent_process_p16` — Small-batch trial production and mass-production preparation phase, receiving the full-machine design after closed-loop integration verification passes.
@@ -393,7 +393,7 @@ HIL(하드웨어 인 더 루프)과 비교하면, 폐루프 통합은 HIL의 "�
 
 - `ent_process_p15` — 본 공정이 속한 완성체 통합 및 검증 테스트 단계로, P15의 전체 범위와 하위 태스크 구조를 정의합니다.
 - `ent_process_p16_1_3` — 하류 양산 준비 단계의 조립 라인 계획 및 SOP 공정으로, 폐루프 통합이 출력한 문서와 규범을 수신합니다.
-- `ent_paper_hardware_in_the_loop_2024` — HIL 방법은 본 공정의 사전 안전망으로, 완성체급 리스크를 테스트 벤치 단계로 앞당깁니다.
+- `ent_method_hardware_in_the_loop` — HIL 방법은 본 공정의 사전 안전망으로, 완성체급 리스크를 테스트 벤치 단계로 앞당깁니다.
 - `ent_process_p15_1_1` — 다리 시스템 통합 및 디버깅으로, 본 공정과 같은 P15 서브시스템 통합 단계에 속하며 그 출력은 폐루프 통합의 입력 중 하나입니다.
 - `ent_process_p15_3_2` — 소프트웨어 안정성 및 회귀 테스트로, 본 공정 이후에 장기 실행에서의 소프트웨어 안정성을 검증합니다.
 - `ent_process_p16` — 소량 시제품 생산 및 양산 준비 단계로, 폐루프 통합 검증을 통과한 완성체 설계를 수신합니다.

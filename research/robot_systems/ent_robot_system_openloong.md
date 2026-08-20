@@ -151,7 +151,7 @@ OpenLoong 的独特之处在于**全栈开源 + 全尺寸**的组合。学术界
 - `ent_method_whole_body_control` — OpenLoong-Dyn-Control 的核心控制框架之一，将全身关节与接触点放进同一个优化问题求解。
 - `ent_method_model_predictive_control` — OpenLoong-Dyn-Control 的上层规划器，在较慢时间尺度上预测最优质心轨迹与落脚点。
 - `ent_technology_ethercat_2024` — OpenLoong 的关节通信总线，其"飞读飞写"机制保证了多轴控制的确定性延迟。
-- `ent_paper_zero_moment_point_2024` — 人形机器人动态平衡的核心判据，是 MPC 规划中稳定性约束的数学基础。
+- `ent_method_zero_moment_point` — 人形机器人动态平衡的核心判据，是 MPC 规划中稳定性约束的数学基础。
 - `ent_robot_system_odri_bolt` — 学术界的开源双足平台（小型），与 OpenLoong 形成"学术小型"与"产业全尺寸"的互补。
 
 ## 参考
@@ -257,7 +257,7 @@ OpenLoong's uniqueness lies in the combination of **full-stack open source + ful
 - `ent_method_whole_body_control` — One of the core control frameworks of OpenLoong-Dyn-Control, solving whole-body joints and contact points in a single optimization problem.
 - `ent_method_model_predictive_control` — The upper-level planner of OpenLoong-Dyn-Control, predicting optimal center-of-mass trajectories and footholds on a slower timescale.
 - `ent_technology_ethercat_2024` — OpenLoong's joint communication bus, whose "processing on the fly" mechanism ensures deterministic latency for multi-axis control.
-- `ent_paper_zero_moment_point_2024` — The core criterion for dynamic balance in humanoid robots, forming the mathematical basis for stability constraints in MPC planning.
+- `ent_method_zero_moment_point` — The core criterion for dynamic balance in humanoid robots, forming the mathematical basis for stability constraints in MPC planning.
 - `ent_robot_system_odri_bolt` — An open-source bipedal platform from academia (small size), complementing OpenLoong as "academic small-scale" versus "industry full-size."
 
 ## 개요
@@ -354,5 +354,5 @@ OpenLoong의 독특한 점은 **풀스택 오픈소스 + 풀사이즈**의 조�
 - `ent_method_whole_body_control` — OpenLoong-Dyn-Control의 핵심 제어 프레임워크 중 하나로, 전신 관절과 접촉점을 동일한 최적화 문제에 넣어 해결합니다.
 - `ent_method_model_predictive_control` — OpenLoong-Dyn-Control의 상위 수준 플래너로, 느린 시간 척도에서 최적 질량 중심 궤적과 착지점을 예측합니다.
 - `ent_technology_ethercat_2024` — OpenLoong의 관절 통신 버스로, "플라이 리드/라이트" 메커니즘이 다축 제어의 결정론적 지연을 보장합니다.
-- `ent_paper_zero_moment_point_2024` — 휴머노이드 로봇 동적 균형의 핵심 판단 기준으로, MPC 계획에서 안정성 제약의 수학적 기반입니다.
+- `ent_method_zero_moment_point` — 휴머노이드 로봇 동적 균형의 핵심 판단 기준으로, MPC 계획에서 안정성 제약의 수학적 기반입니다.
 - `ent_robot_system_odri_bolt` — 학계의 오픈소스 이족 플랫폼(소형)으로, OpenLoong과 "학술 소형" 및 "산업 풀사이즈"의 상호 보완 관계를 형성합니다.

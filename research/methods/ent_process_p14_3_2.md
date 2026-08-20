@@ -134,7 +134,7 @@ HIL 的测试有效性完全取决于仿真模型的保真度。模型保真度�
 ### 相关知识
 
 - `ent_method_hardware_in_the_loop` — 本卡片的直接上位方法实体，定义了 HIL 的核心结构与闭环原理。
-- `ent_paper_hardware_in_the_loop_2024` — 提供硬件在环仿真的数学基础、算法步骤与典型应用场景的学术论述。
+- `ent_method_hardware_in_the_loop` — 提供硬件在环仿真的数学基础、算法步骤与典型应用场景的学术论述。
 - `ent_process_p14` — 本卡片所属的软件中间件与系统集成阶段，定义了五步工程动作模板与阶段使命。
 - `ent_paper_paul_performance_evaluation_of_ros2_2024` — 提供 ROS2/DDS 中间件在不同通信模式下的延迟数据，为 HIL 测试的实时性预算与中间件选型提供量化依据。
 
@@ -240,7 +240,7 @@ In the ROS2 ecosystem, HIL testing is often combined with performance evaluation
 ### Related Knowledge
 
 - `ent_method_hardware_in_the_loop` — The direct parent method entity of this card, defining the core structure and closed-loop principles of HIL.
-- `ent_paper_hardware_in_the_loop_2024` — Provides academic discourse on the mathematical foundations, algorithmic steps, and typical application scenarios of hardware-in-the-loop simulation.
+- `ent_method_hardware_in_the_loop` — Provides academic discourse on the mathematical foundations, algorithmic steps, and typical application scenarios of hardware-in-the-loop simulation.
 - `ent_process_p14` — The software middleware and system integration phase to which this card belongs, defining the five-step engineering action template and phase mission.
 - `ent_paper_paul_performance_evaluation_of_ros2_2024` — Provides latency data for ROS2/DDS middleware under different communication modes, offering quantitative evidence for the real-time budget and middleware selection of HIL testing.
 
@@ -341,6 +341,6 @@ ROS2 생태계에서 HIL 테스트는 종종 DDS 미들웨어의 성능 평가�
 ### 관련 지식
 
 - `ent_method_hardware_in_the_loop` — 본 카드의 직접 상위 방법 엔티티로, HIL의 핵심 구조와 폐루프 원리를 정의합니다.
-- `ent_paper_hardware_in_the_loop_2024` — 하드웨어 인더루프 시뮬레이션의 수학적 기초, 알고리즘 단계 및 전형적인 응용 시나리오에 대한 학술적 논의를 제공합니다.
+- `ent_method_hardware_in_the_loop` — 하드웨어 인더루프 시뮬레이션의 수학적 기초, 알고리즘 단계 및 전형적인 응용 시나리오에 대한 학술적 논의를 제공합니다.
 - `ent_process_p14` — 본 카드가 속한 소프트웨어 미들웨어 및 시스템 통합 단계로, 5단계 엔지니어링 작업 템플릿과 단계 사명을 정의합니다.
 - `ent_paper_paul_performance_evaluation_of_ros2_2024` — ROS2/DDS 미들웨어의 다양한 통신 모드에서의 지연 데이터를 제공하여, HIL 테스트의 실시간 예산 및 미들웨어 선택에 정량적 근거를 제공합니다.

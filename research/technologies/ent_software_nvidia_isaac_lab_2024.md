@@ -135,7 +135,7 @@ Isaac Lab 的差异化优势在于**生态整合**：它与 Isaac Sim、GR00T �
 - `ent_method_sim_to_real` — Isaac Lab 通过域随机化支持 sim-to-real 迁移，是"覆盖偏差"策略的典型工程实现。
 - `ent_software_humanoidverse_2024` — 同为面向人形机器人的多仿真器训练框架，与 Isaac Lab 在定位上存在竞争与互补。
 - `ent_dataset_open_x_embodiment` — 真实机器人数据回流的重要来源，与 Isaac Lab 的仿真合成数据共同构成"三源混合"数据管线。
-- `ent_paper_nvidia_gr00t_n1_2025` — Isaac Lab 是 GR00T 平台的基础学习框架，支撑 GR00T N1 等基础模型的训练。
+- `ent_paper_gr00t_n1_an_open_foundation_mo_2025` — Isaac Lab 是 GR00T 平台的基础学习框架，支撑 GR00T N1 等基础模型的训练。
 - `ent_algorithm_ppo` — PPO 是 Isaac Lab 中最常用的强化学习算法之一，用于步态与操作策略训练。
 - `ent_component_manufacturer_nvidia` — NVIDIA 是 Isaac Lab 的开发者与维护者，其 GPU 硬件是框架性能的基础。
 - `ent_robot_system_berkeley_humanoid_lite` — 可视为 Isaac Lab 训练策略的典型部署本体之一（需自行确认具体集成案例）。
@@ -238,7 +238,7 @@ Isaac Lab's differentiated advantage lies in **ecosystem integration**: it forms
 - `ent_method_sim_to_real` — Isaac Lab supports sim-to-real transfer through domain randomization, serving as a typical engineering implementation of the "coverage bias" strategy.
 - `ent_software_humanoidverse_2024` — Another multi-simulator training framework for humanoid robots, competing with and complementing Isaac Lab in positioning.
 - `ent_dataset_open_x_embodiment` — An important source of real robot data feedback, jointly forming the "three-source hybrid" data pipeline with Isaac Lab's simulation-synthesized data.
-- `ent_paper_nvidia_gr00t_n1_2025` — Isaac Lab is the foundational learning framework of the GR00T platform, supporting the training of foundation models such as GR00T N1.
+- `ent_paper_gr00t_n1_an_open_foundation_mo_2025` — Isaac Lab is the foundational learning framework of the GR00T platform, supporting the training of foundation models such as GR00T N1.
 - `ent_algorithm_ppo` — PPO is one of the most commonly used reinforcement learning algorithms in Isaac Lab, used for gait and manipulation policy training.
 - `ent_component_manufacturer_nvidia` — NVIDIA is the developer and maintainer of Isaac Lab, and its GPU hardware is the foundation of the framework's performance.
 - `ent_robot_system_berkeley_humanoid_lite` — Can be considered a typical deployment embodiment for policies trained with Isaac Lab (specific integration cases to be verified independently).
@@ -334,7 +334,7 @@ Isaac Lab의 차별화된 강점은 **생태계 통합**입니다: Isaac Sim, GR
 - `ent_method_sim_to_real` — Isaac Lab은 도메인 무작위화를 통해 sim-to-real 전이를 지원하며, "편향 커버" 전략의 대표적인 엔지니어링 구현입니다.
 - `ent_software_humanoidverse_2024` — 휴머노이드 로봇을 위한 다중 시뮬레이터 훈련 프레임워크로, Isaac Lab과 위치에서 경쟁 및 보완 관계에 있습니다.
 - `ent_dataset_open_x_embodiment` — 실제 로봇 데이터 환류의 중요한 소스로, Isaac Lab의 시뮬레이션 합성 데이터와 함께 "삼원 혼합" 데이터 파이프라인을 구성합니다.
-- `ent_paper_nvidia_gr00t_n1_2025` — Isaac Lab은 GR00T 플랫폼의 기반 학습 프레임워크로, GR00T N1 등 기반 모델의 훈련을 지원합니다.
+- `ent_paper_gr00t_n1_an_open_foundation_mo_2025` — Isaac Lab은 GR00T 플랫폼의 기반 학습 프레임워크로, GR00T N1 등 기반 모델의 훈련을 지원합니다.
 - `ent_algorithm_ppo` — PPO는 Isaac Lab에서 가장 일반적으로 사용되는 강화 학습 알고리즘 중 하나로, 보행 및 조작 정책 훈련에 사용됩니다.
 - `ent_component_manufacturer_nvidia` — NVIDIA는 Isaac Lab의 개발자이자 유지 관리자이며, GPU 하드웨어는 프레임워크 성능의 기반입니다.
 - `ent_robot_system_berkeley_humanoid_lite` — Isaac Lab 훈련 정책의 대표적인 배포 본체 중 하나로 간주될 수 있습니다(구체적인 통합 사례는 직접 확인 필요).

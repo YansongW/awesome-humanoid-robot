@@ -124,7 +124,7 @@ Dex3-1 的主要用户是高校机器人实验室与 AI 具身智能研究团队
 
 **② 具身智能算法验证**
 
-Dex3-1 的力控能力使其成为验证"视觉-语言-操作"（VLA）模型与模仿学习算法的理想平台。配合 ROS2 生态与 Jetson Orin 算力，研究者可以在真实物理环境中部署 Diffusion Policy 等操作策略（来源：项目知识图谱实体 ent_paper_diffusion_policy_2023 的部署案例）。
+Dex3-1 的力控能力使其成为验证"视觉-语言-操作"（VLA）模型与模仿学习算法的理想平台。配合 ROS2 生态与 Jetson Orin 算力，研究者可以在真实物理环境中部署 Diffusion Policy 等操作策略（来源：项目知识图谱实体 ent_method_diffusion_policy 的部署案例）。
 
 **③ 成本颠覆模式的组成部分**
 
@@ -239,7 +239,7 @@ The primary users of the Dex3-1 are university robotics laboratories and embodie
 
 **② Embodied Intelligence Algorithm Validation**
 
-The Dex3-1's force-control capability makes it an ideal platform for validating vision-language-action (VLA) models and imitation learning algorithms. Combined with the ROS2 ecosystem and Jetson Orin compute power, researchers can deploy manipulation policies such as Diffusion Policy in real physical environments (source: deployment case from project knowledge graph entity ent_paper_diffusion_policy_2023).
+The Dex3-1's force-control capability makes it an ideal platform for validating vision-language-action (VLA) models and imitation learning algorithms. Combined with the ROS2 ecosystem and Jetson Orin compute power, researchers can deploy manipulation policies such as Diffusion Policy in real physical environments (source: deployment case from project knowledge graph entity ent_method_diffusion_policy).
 
 **③ Part of the Cost-Disruption Model**
 

@@ -140,7 +140,7 @@ Mobile ALOHA 已广泛应用于人形机器人的原型验证、学术研究与�
 - `ent_method_force_position_hybrid_control` — 力位混合控制解决接触丰富操作中的力/位置分配问题，与 Mobile ALOHA 采集的接触丰富任务数据直接相关。
 - `ent_tech_mimicgen` — 演示增强框架，可在仿真中扩展 Mobile ALOHA 采集的少量种子演示，降低数据边际成本。
 - `ent_method_admittance_control` — 导纳控制使现有位置控制硬件参与柔顺交互，是 Mobile ALOHA 类低成本平台实现力感反馈的潜在补充方案。
-- `ent_paper_diffusion_policy_2023` — 扩散策略是 Mobile ALOHA 数据可训练的代表性策略之一，与 ACT 行为克隆并列。
+- `ent_method_diffusion_policy` — 扩散策略是 Mobile ALOHA 数据可训练的代表性策略之一，与 ACT 行为克隆并列。
 - `ent_concept_world_model` — 世界模型作为数据源可能替代物理引擎生成"想象轨迹"，与 Mobile ALOHA 的真实数据形成互补。
 
 ## 参考
@@ -246,7 +246,7 @@ At the data ecosystem level, data collected by Mobile ALOHA can be reused throug
 - `ent_method_force_position_hybrid_control` — Force-position hybrid control addresses force/position allocation in contact-rich manipulation, directly relevant to the contact-rich task data collected by Mobile ALOHA.
 - `ent_tech_mimicgen` — A demonstration augmentation framework that can expand the small number of seed demonstrations collected by Mobile ALOHA in simulation, reducing marginal data costs.
 - `ent_method_admittance_control` — Admittance control enables existing position-controlled hardware to participate in compliant interaction, serving as a potential supplementary solution for force feedback in Mobile ALOHA-class low-cost platforms.
-- `ent_paper_diffusion_policy_2023` — Diffusion policy is one of the representative policies trainable on Mobile ALOHA data, alongside ACT behavior cloning.
+- `ent_method_diffusion_policy` — Diffusion policy is one of the representative policies trainable on Mobile ALOHA data, alongside ACT behavior cloning.
 - `ent_concept_world_model` — World models as a data source may replace physics engines to generate "imagined trajectories," complementing Mobile ALOHA's real-world data.
 
 ## 개요
@@ -346,5 +346,5 @@ Mobile ALOHA는 휴머노이드 로봇의 프로토타입 검증, 학술 연구 
 - `ent_method_force_position_hybrid_control` — 힘-위치 혼합 제어는 접촉이 풍부한 조작에서 힘/위치 할당 문제를 해결하며, Mobile ALOHA가 수집한 접촉이 풍부한 작업 데이터와 직접 관련됩니다.
 - `ent_tech_mimicgen` — 시범 증강 프레임워크로, 시뮬레이션에서 Mobile ALOHA가 수집한 소량의 시드 시범을 확장하여 데이터 한계 비용을 줄일 수 있습니다.
 - `ent_method_admittance_control` — 어드미턴스 제어는 기존 위치 제어 하드웨어가 순응 상호작용에 참여할 수 있게 하여, Mobile ALOHA와 같은 저비용 플랫폼에서 힘 감각 피드백을 구현하는 잠재적 보완 솔루션입니다.
-- `ent_paper_diffusion_policy_2023` — 확산 정책은 Mobile ALOHA 데이터로 훈련할 수 있는 대표적인 정책 중 하나로, ACT 행동 복제와 나란히 사용됩니다.
+- `ent_method_diffusion_policy` — 확산 정책은 Mobile ALOHA 데이터로 훈련할 수 있는 대표적인 정책 중 하나로, ACT 행동 복제와 나란히 사용됩니다.
 - `ent_concept_world_model` — 세계 모델은 데이터 소스로서 물리 엔진을 대체하여 '상상 궤적'을 생성할 수 있으며, Mobile ALOHA의 실제 데이터와 상호 보완 관계를 형성합니다.

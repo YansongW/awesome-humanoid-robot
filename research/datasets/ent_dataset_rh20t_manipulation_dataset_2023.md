@@ -133,7 +133,7 @@ RH20T 的主要使用者包括：
 
 ### 相关知识
 
-- `ent_paper_diffusion_policy_2023` — 扩散策略将动作块的条件分布建模为去噪扩散过程，是使用 RH20T 训练一次性模仿策略的代表性方法。
+- `ent_method_diffusion_policy` — 扩散策略将动作块的条件分布建模为去噪扩散过程，是使用 RH20T 训练一次性模仿策略的代表性方法。
 - `ent_dataset_droid` — DROID 是分布式、多样化的真实世界操作数据集，与 RH20T 在"真实世界多样性"维度上互补。
 - `ent_dataset_omniaction` — OmniAction 是融合视觉、语音与环境声音的多模态操作数据集，与 RH20T 的多模态设计思路相近但侧重主动式操作。
 - `ent_dataset_bridgedata_v2_2023` — BridgeData V2 是带语言指令的桌面操作数据集，代表 RH20T 之前以视觉与语言为主的简单任务范式。
@@ -234,7 +234,7 @@ The primary users of RH20T include:
 
 ### Related Knowledge
 
-- `ent_paper_diffusion_policy_2023` — Diffusion Policy models the conditional distribution of action chunks as a denoising diffusion process and is a representative method for training one-shot imitation policies using RH20T.
+- `ent_method_diffusion_policy` — Diffusion Policy models the conditional distribution of action chunks as a denoising diffusion process and is a representative method for training one-shot imitation policies using RH20T.
 - `ent_dataset_droid` — DROID is a distributed, diverse real-world manipulation dataset that complements RH20T in the dimension of "real-world diversity."
 - `ent_dataset_omniaction` — OmniAction is a multimodal manipulation dataset integrating vision, speech, and environmental sound, similar to RH20T's multimodal design philosophy but focused on proactive manipulation.
 - `ent_dataset_bridgedata_v2_2023` — BridgeData V2 is a tabletop manipulation dataset with language instructions, representing the simple-task paradigm dominated by vision and language that preceded RH20T.
@@ -330,7 +330,7 @@ RH20T의 주요 사용자는 다음과 같습니다:
 
 ### 관련 지식
 
-- `ent_paper_diffusion_policy_2023` — 확산 정책은 동작 블록의 조건부 분포를 노이즈 제거 확산 과정으로 모델링하며, RH20T를 사용하여 일회성 모방 정책을 훈련하는 대표적인 방법입니다.
+- `ent_method_diffusion_policy` — 확산 정책은 동작 블록의 조건부 분포를 노이즈 제거 확산 과정으로 모델링하며, RH20T를 사용하여 일회성 모방 정책을 훈련하는 대표적인 방법입니다.
 - `ent_dataset_droid` — DROID는 분산형, 다양화된 실제 세계 조작 데이터셋으로, "실제 세계 다양성" 차원에서 RH20T와 상호 보완적입니다.
 - `ent_dataset_omniaction` — OmniAction은 시각, 음성 및 환경 소리를 융합한 다중 감각 조작 데이터셋으로, RH20T의 다중 감각 설계와 유사하지만 능동적 조작에 중점을 둡니다.
 - `ent_dataset_bridgedata_v2_2023` — BridgeData V2는 언어 명령이 포함된 데스크톱 조작 데이터셋으로, RH20T 이전의 시각 및 언어 중심의 단순 작업 패러다임을 대표합니다.

@@ -1,0 +1,38 @@
+---
+$id: rel_ent_paper_team_octo_an_open_source_generalist_2024_mentions_ent_method_openvla
+$schema: ../schema/v1/relationship_schema.json
+$version: 1
+type: mentions
+source:
+  id: ent_paper_team_octo_an_open_source_generalist_2024
+  name:
+    en: 'Octo: An Open-Source Generalist Robot Policy'
+    zh: Octo
+target:
+  id: ent_method_openvla
+  name:
+    en: OpenVLA
+    zh: OpenVLA
+domains:
+  source_domain: 07_ai_models_algorithms
+  target_domain: 07_ai_models_algorithms
+description:
+  en: Octo Generalist Robot Policy mentions OpenVLA.
+  zh: Octo 通才机器人策略提及OpenVLA。
+verification:
+  status: unverified
+  reviewed_by: ai
+  reviewed_at: '2026-07-16'
+  confidence: low
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: Octo策略与OpenVLA作为开源通用策略被并列提及。 | WP3 2026-08-06:
+    endpoint rewritten (ent_paper_team_octo_an_open_source_generalist_2024→ent_paper_team_octo_an_open_source_generalist_2024, ent_method_openvla→ent_method_openvla)
+    after merge. Original file rel_ent_paper_octo_generalist_robot_policy_2024_mentions_ent_paper_openvla_2024_1. | WP4 2026-08-11:
+    endpoint id rewritten (ent_paper_team_octo_an_open_source_generalist_2024→ent_paper_team_octo_an_open_source_generalist_2024,
+    ent_method_openvla→ent_method_openvla); original file rel_ent_paper_octo_generalist_robot_policy_2024_mentions_ent_method_openvla.'
+sources:
+- id: src_001
+  type: other
+  title: KG body of ent_paper_team_octo_an_open_source_generalist_2024
+  url: https://kg.rounds-tech.com/entry/ent_paper_team_octo_an_open_source_generalist_2024/
+  accessed_at: '2026-07-16'
+---

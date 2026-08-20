@@ -126,7 +126,7 @@ Open X-Embodiment 的局限在于其**异构性带来的权衡**：数据来源�
 
 - `ent_paper_collaboration_open_x_embodiment_robotic_lear_2023` — 本数据集的原始论文，定义了数据集结构与 RT-X 模型。
 - `ent_method_openvla` — 使用 OXE 作为预训练语料的开源 VLA 模型，验证了数据集的实用价值。
-- `ent_paper_rt_2_vision_language_action_mo_2023` — RT-2 是 RT-X 系列的前序工作，展示了 VLA 模型将网络知识迁移到机器人控制的路径。
+- `ent_paper_brohan_rt_2_vision_language_action_mo_2023` — RT-2 是 RT-X 系列的前序工作，展示了 VLA 模型将网络知识迁移到机器人控制的路径。
 - `ent_paper_nelson_open_h_embodiment_a_large_scal_2026` — 将 OXE 的聚合思路扩展到医疗机器人领域，构建了开放医疗机器人数据集。
 - `ent_paper_jiang_kaiwu_a_multimodal_manipulatio_2025` — 面向复杂装配场景的多模态数据集，补充了 OXE 未覆盖的细粒度操作数据。
 - `ent_software_nvidia_isaac_lab_2024` — 仿真数据生成平台，与 OXE 的真实数据形成互补，可用于数据增强与策略预训练。
@@ -207,7 +207,7 @@ The limitation of Open X-Embodiment lies in the **trade-off introduced by hetero
 
 - `ent_paper_collaboration_open_x_embodiment_robotic_lear_2023` — The original paper for this dataset, defining the dataset structure and RT-X models.
 - `ent_method_openvla` — An open-source VLA model using OXE as its pretraining corpus, validating the dataset's practical value.
-- `ent_paper_rt_2_vision_language_action_mo_2023` — RT-2 is the predecessor work of the RT-X series, demonstrating the path for VLA models to transfer web knowledge to robot control.
+- `ent_paper_brohan_rt_2_vision_language_action_mo_2023` — RT-2 is the predecessor work of the RT-X series, demonstrating the path for VLA models to transfer web knowledge to robot control.
 - `ent_paper_nelson_open_h_embodiment_a_large_scal_2026` — Extends OXE's aggregation approach to the medical robotics domain, constructing an open medical robot dataset.
 - `ent_paper_jiang_kaiwu_a_multimodal_manipulatio_2025` — A multimodal dataset for complex assembly scenarios, supplementing fine-grained manipulation data not covered by OXE.
 - `ent_software_nvidia_isaac_lab_2024` — A simulation data generation platform that complements OXE's real data, usable for data augmentation and policy pretraining.
@@ -280,7 +280,7 @@ Open X-Embodiment의 한계는 **이기종성에서 오는 균형 문제**입니
 
 - `ent_paper_collaboration_open_x_embodiment_robotic_lear_2023` — 본 데이터셋의 원본 논문으로, 데이터셋 구조와 RT-X 모델을 정의합니다.
 - `ent_method_openvla` — OXE를 사전학습 말뭉치로 사용하는 오픈소스 VLA 모델로, 데이터셋의 실용적 가치를 검증합니다.
-- `ent_paper_rt_2_vision_language_action_mo_2023` — RT-2는 RT-X 시리즈의 선행 작업으로, VLA 모델이 네트워크 지식을 로봇 제어로 전이하는 경로를 보여줍니다.
+- `ent_paper_brohan_rt_2_vision_language_action_mo_2023` — RT-2는 RT-X 시리즈의 선행 작업으로, VLA 모델이 네트워크 지식을 로봇 제어로 전이하는 경로를 보여줍니다.
 - `ent_paper_nelson_open_h_embodiment_a_large_scal_2026` — OXE의 집계 방식을 의료 로봇 분야로 확장하여 개방형 의료 로봇 데이터셋을 구축합니다.
 - `ent_paper_jiang_kaiwu_a_multimodal_manipulatio_2025` — 복잡한 조립 시나리오를 위한 다중 모달 데이터셋으로, OXE가 다루지 못한 세밀한 조작 데이터를 보완합니다.
 - `ent_software_nvidia_isaac_lab_2024` — 시뮬레이션 데이터 생성 플랫폼으로, OXE의 실제 데이터와 상호 보완적이며 데이터 증강 및 정책 사전학습에 사용될 수 있습니다.

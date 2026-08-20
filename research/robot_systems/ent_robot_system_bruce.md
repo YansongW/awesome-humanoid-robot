@@ -144,7 +144,7 @@ BRUCE 的主要用户是高校腿足机器人实验室与少量企业研究部�
 
 - `ent_technology_quasi_direct_drive_actuator_2024` — BRUCE 的 Koala BEAR 执行器正是准直驱路线的工程化产物，该实体详细解释了 QDD 的原理与历史。
 - `ent_robot_system_toddlerbot` — 同为儿童尺寸开源平台，但走"极简复刻"路线，与 BRUCE 的"商品化高动态"形成鲜明对比。
-- `ent_paper_zero_moment_point_2024` — ZMP 是双足平衡的经典判据，BRUCE 的 MPC 运控在高速运动时需超越 ZMP 的静态假设。
+- `ent_method_zero_moment_point` — ZMP 是双足平衡的经典判据，BRUCE 的 MPC 运控在高速运动时需超越 ZMP 的静态假设。
 - `ent_robot_system_odri_bolt` — 学术开源双足平台，代表另一种获取高动态硬件的路径（开源硬件 + 自研驱动）。
 - `ent_component_imu_2024` — BRUCE 搭载 6 轴 IMU（通信/采样速率 2 kHz），是状态估计与 MPC 反馈的核心传感器。
 - `ent_method_model_predictive_control` — BRUCE 的可变周期 MPC 运控算法是该方法的工程实例，该实体涵盖 MPC 的数学基础与变体。
@@ -240,7 +240,7 @@ BRUCE's primary users are university legged-robot laboratories and a small numbe
 
 - `ent_technology_quasi_direct_drive_actuator_2024` — BRUCE's Koala BEAR actuator is precisely the engineered product of the quasi-direct-drive approach; this entity explains the principles and history of QDD in detail.
 - `ent_robot_system_toddlerbot` — Also a child-sized open-source platform, but following a "minimalist replication" approach, forming a stark contrast with BRUCE's "commercialized high dynamics."
-- `ent_paper_zero_moment_point_2024` — ZMP is the classic criterion for bipedal balance; BRUCE's MPC motion control must transcend ZMP's static assumptions during high-speed motion.
+- `ent_method_zero_moment_point` — ZMP is the classic criterion for bipedal balance; BRUCE's MPC motion control must transcend ZMP's static assumptions during high-speed motion.
 - `ent_robot_system_odri_bolt` — An academic open-source bipedal platform representing another path to acquiring high-dynamic hardware (open-source hardware + custom drivers).
 - `ent_component_imu_2024` — BRUCE is equipped with a 6-axis IMU (communication/sampling rate 2 kHz), a core sensor for state estimation and MPC feedback.
 - `ent_method_model_predictive_control` — BRUCE's variable-frequency MPC motion control algorithm is an engineering instance of this method; this entity covers the mathematical foundations and variants of MPC.
@@ -326,7 +326,7 @@ BRUCE의 주요 사용자는 대학 보행 로봇 연구실과 일부 기업 연
 
 - `ent_technology_quasi_direct_drive_actuator_2024` — BRUCE의 Koala BEAR 액추에이터는 준직구동 방식의 공학적 산물이며, 해당 엔티티는 QDD의 원리와 역사를 자세히 설명합니다.
 - `ent_robot_system_toddlerbot` — 동일한 아동 사이즈 오픈소스 플랫폼이지만 "극소 복제" 방식을 취하며, BRUCE의 "상품화 고동역학"과 뚜렷한 대조를 이룹니다.
-- `ent_paper_zero_moment_point_2024` — ZMP는 이족 균형의 고전적 판정 기준이며, BRUCE의 MPC 운동 제어는 고속 운동 시 ZMP의 정적 가정을 넘어서야 합니다.
+- `ent_method_zero_moment_point` — ZMP는 이족 균형의 고전적 판정 기준이며, BRUCE의 MPC 운동 제어는 고속 운동 시 ZMP의 정적 가정을 넘어서야 합니다.
 - `ent_robot_system_odri_bolt` — 학술 오픈소스 이족 플랫폼으로, 고동역학 하드웨어를 얻는 또 다른 경로(오픈소스 하드웨어 + 자체 개발 드라이버)를 대표합니다.
 - `ent_component_imu_2024` — BRUCE는 6축 IMU(통신/샘플링 속도 2 kHz)를 탑재하며, 상태 추정과 MPC 피드백의 핵심 센서입니다.
 - `ent_method_model_predictive_control` — BRUCE의 가변 주기 MPC 운동 제어 알고리즘은 이 방법의 공학적 사례이며, 해당 엔티티는 MPC의 수학적 기초와 변형을 다룹니다.

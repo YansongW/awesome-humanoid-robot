@@ -1,5 +1,5 @@
 ---
-$id: rel_ent_paper_ghansah_hierarchical_reduced_order_mod_2025_uses_ent_oem_unitree_robotics
+$id: rel_ent_paper_ghansah_hierarchical_reduced_order_mod_2025_uses_product_of_ent_oem_unitree_robotics
 $schema: ../schema/v1/relationship_schema.json
 $version: 1
 type: uses_product_of
@@ -27,7 +27,8 @@ verification:
   reviewed_at: '2026-06-26'
   confidence: medium
   notes: 'Proposed by AI extraction. Source citation: Abstract: ''...hardware experiments on the Unitree G1 humanoid robot.''
-    Metadata lists Unitree under companies_or_institutions.'
+    Metadata lists Unitree under companies_or_institutions. | WP4 2026-08-11: fixed $id to match filename/type (was ''..._uses_ent_oem_unitree_robotics'',
+    missing ''_product_of'').'
 sources:
 - id: src_001
   type: paper

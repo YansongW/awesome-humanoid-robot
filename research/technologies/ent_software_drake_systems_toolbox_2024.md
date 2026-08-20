@@ -140,7 +140,7 @@ Drake 重新思考接触仿真，将接触问题视为一个优化问题而非�
 
 ### 相关知识
 
-- `ent_paper_model_predictive_control_2024` — Drake 的数学程序接口与动力学模型为 MPC 的滚动时域优化提供了高效的求解基础。
+- `ent_method_model_predictive_control` — Drake 的数学程序接口与动力学模型为 MPC 的滚动时域优化提供了高效的求解基础。
 - `ent_foundation_convex_optimization` — Drake 将接触仿真与全身控制建模为凸优化问题，凸优化理论是其求解器设计的数学基础。
 - `ent_foundation_linear_algebra` — Drake 的多体动力学建模与 Jacobian 计算深度依赖线性代数中的矩阵分解与特征值分析。
 - `ent_foundation_classical_mechanics` — Drake 的浮动基动力学方程与接触模型建立在经典力学（牛顿-欧拉或拉格朗日方程）之上。
@@ -249,7 +249,7 @@ Drake rethinks contact simulation by treating the contact problem as an optimiza
 
 ### Related Knowledge
 
-- `ent_paper_model_predictive_control_2024` — Drake's MathematicalProgram interface and dynamics models provide an efficient solving foundation for the receding-horizon optimization of MPC.
+- `ent_method_model_predictive_control` — Drake's MathematicalProgram interface and dynamics models provide an efficient solving foundation for the receding-horizon optimization of MPC.
 - `ent_foundation_convex_optimization` — Drake models contact simulation and whole-body control as convex optimization problems; convex optimization theory is the mathematical foundation of its solver design.
 - `ent_foundation_linear_algebra` — Drake's multibody dynamics modeling and Jacobian computation deeply rely on matrix decompositions and eigenvalue analysis in linear algebra.
 - `ent_foundation_classical_mechanics` — Drake's floating-base dynamics equations and contact models are built upon classical mechanics (Newton-Euler or Lagrange equations).
@@ -351,7 +351,7 @@ Drake는 접촉 시뮬레이션을 재고하여 접촉 문제를 고정점 반�
 
 ### 관련 지식
 
-- `ent_paper_model_predictive_control_2024` — Drake의 수학적 프로그램 인터페이스와 동역학 모델은 MPC의 롤링 호라이즌 최적화에 효율적인 해법 기반을 제공합니다.
+- `ent_method_model_predictive_control` — Drake의 수학적 프로그램 인터페이스와 동역학 모델은 MPC의 롤링 호라이즌 최적화에 효율적인 해법 기반을 제공합니다.
 - `ent_foundation_convex_optimization` — Drake는 접촉 시뮬레이션과 전신 제어를 볼록 최적화 문제로 모델링하며, 볼록 최적화 이론은 솔버 설계의 수학적 기반입니다.
 - `ent_foundation_linear_algebra` — Drake의 다물체 동역학 모델링과 Jacobian 계산은 선형 대수의 행렬 분해와 고유값 분석에 깊이 의존합니다.
 - `ent_foundation_classical_mechanics` — Drake의 부동 기저 동역학 방정식과 접촉 모델은 고전 역학(뉴턴-오일러 또는 라그랑주 방정식)에 기반합니다.

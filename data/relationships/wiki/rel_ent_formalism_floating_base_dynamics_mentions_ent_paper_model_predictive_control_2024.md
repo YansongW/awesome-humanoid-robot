@@ -10,7 +10,7 @@ source:
     en: Floating-Base Dynamics
     ko: ''
 target:
-  id: ent_paper_model_predictive_control_2024
+  id: ent_method_model_predictive_control
   name:
     zh: 模型预测控制
     en: Model Predictive Control

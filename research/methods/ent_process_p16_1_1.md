@@ -153,7 +153,7 @@ DFM/DFA 评审与 PPAP 的关系是"前端预防"与"末端验证"的关系：�
 - `ent_process_p16_1_3` — 装配线规划与 SOP 是评审输出的下游应用场景，装配工时估算在此复核。
 - `ent_method_design_for_assembly` — DFA 是评审的另一核心方法，聚焦装配效率与操作可行性。
 - `ent_process_p16` — 小批量试产与量产准备阶段，DFM/DFA 评审是该阶段的关键起点。
-- `ent_paper_design_for_manufacturing_2024` — 相关学术文献，提供 DFM 方法的最新研究进展。
+- `ent_method_design_for_manufacturing` — 相关学术文献，提供 DFM 方法的最新研究进展。
 
 ## 参考
 
@@ -274,7 +274,7 @@ These cases illustrate the typical value of the review: not simply "relaxing req
 - `ent_process_p16_1_3` — Assembly line planning and SOP are downstream application scenarios of the review outputs; assembly time estimates are re-verified here.
 - `ent_method_design_for_assembly` — DFA is the other core method of the review, focusing on assembly efficiency and operational feasibility.
 - `ent_process_p16` — Small-batch pilot production and mass-production preparation phase; DFM/DFA Review is the key starting point of this phase.
-- `ent_paper_design_for_manufacturing_2024` — Related academic literature providing the latest research advances in DFM methods.
+- `ent_method_design_for_manufacturing` — Related academic literature providing the latest research advances in DFM methods.
 
 ## 개요
 
@@ -390,4 +390,4 @@ DFM/DFA 검토와 PPAP의 관계는 '전방 예방'과 '말단 검증'의 관계
 - `ent_process_p16_1_3` — 조립 라인 계획 및 SOP는 검토 산출물의 하위 적용 시나리오로, 조립 공수 추정이 여기서 재검토됩니다.
 - `ent_method_design_for_assembly` — DFA는 검토의 또 다른 핵심 방법으로, 조립 효율과 작업 가능성에 초점을 맞춥니다.
 - `ent_process_p16` — 소량 시제품 생산 및 양산 준비 단계에서 DFM/DFA 검토는 이 단계의 핵심 출발점입니다.
-- `ent_paper_design_for_manufacturing_2024` — 관련 학술 문헌으로, DFM 방법의 최신 연구 동향을 제공합니다.
+- `ent_method_design_for_manufacturing` — 관련 학술 문헌으로, DFM 방법의 최신 연구 동향을 제공합니다.

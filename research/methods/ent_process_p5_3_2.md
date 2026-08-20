@@ -164,7 +164,7 @@ $$
 
 - `ent_process_p5` — 本方法是 P5 本体结构工程与原型阶段的三级子任务，承接结构设计与材料选型，输出装配工艺方案。
 - `ent_method_design_for_assembly` — DFA 是本方法的上游方法论，通过减少零件数量、简化连接方式降低装配复杂度，直接影响工装设计与顺序规划。
-- `ent_paper_design_for_assembly_2024` — 该文献提供面向装配设计的数学与原理基础，可作为本方法中 DFA 分析环节的理论参考。
+- `ent_method_design_for_assembly` — 该文献提供面向装配设计的数学与原理基础，可作为本方法中 DFA 分析环节的理论参考。
 
 ## 参考
 
@@ -296,7 +296,7 @@ Assembly Sequence and Fixture Planning has the following limitations:
 
 - `ent_process_p5` — This method is a third-level subtask of the P5 ontology structure engineering and prototype stage, building on structural design and material selection, and outputting assembly process schemes.
 - `ent_method_design_for_assembly` — DFA is the upstream methodology of this method, reducing assembly complexity by decreasing part count and simplifying connection methods, directly influencing fixture design and sequence planning.
-- `ent_paper_design_for_assembly_2024` — This literature provides the mathematical and foundational principles for Design for Assembly and can serve as a theoretical reference for the DFA analysis component of this method.
+- `ent_method_design_for_assembly` — This literature provides the mathematical and foundational principles for Design for Assembly and can serve as a theoretical reference for the DFA analysis component of this method.
 
 ## 개요
 
@@ -423,4 +423,4 @@ P16 소량 시제품 생산 및 양산 준비 단계에서 조립 순서 및 지
 
 - `ent_process_p5` — 본 방법은 P5 본체 구조 엔지니어링 및 프로토타입 단계의 3차 하위 작업으로, 구조 설계와 재료 선정을 이어받아 조립 공정 방안을 산출한다.
 - `ent_method_design_for_assembly` — DFA는 본 방법의 상류 방법론으로, 부품 수 감소와 연결 방식 단순화를 통해 조립 복잡도를 낮추며 치공구 설계와 순서 계획에 직접적인 영향을 미친다.
-- `ent_paper_design_for_assembly_2024` — 이 문헌은 조립 지향 설계의 수학적·원리적 기초를 제공하며, 본 방법의 DFA 분석 단계에서 이론적 참고 자료로 사용할 수 있다.
+- `ent_method_design_for_assembly` — 이 문헌은 조립 지향 설계의 수학적·원리적 기초를 제공하며, 본 방법의 DFA 분석 단계에서 이론적 참고 자료로 사용할 수 있다.

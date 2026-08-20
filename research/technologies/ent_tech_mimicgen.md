@@ -149,7 +149,7 @@ MimicGen 的典型应用场景集中在需要长时域、高精度操作的任�
 
 ### 相关知识
 
-- `ent_paper_diffusion_policy_2023` — 扩散策略是 MimicGen 派生数据可训练的策略类型之一，其多峰动作建模能力与大规模合成数据天然契合。
+- `ent_method_diffusion_policy` — 扩散策略是 MimicGen 派生数据可训练的策略类型之一，其多峰动作建模能力与大规模合成数据天然契合。
 - `ent_concept_world_model` — 世界模型作为数据源可能替代物理引擎生成"想象轨迹"，与 MimicGen 的仿真扩增形成互补路线。
 - `ent_technology_mobile_aloha_2024` — Mobile ALOHA 是真实遥操作数据采集的代表，与 MimicGen 的仿真合成构成数据来源金字塔的两端。
 - `ent_method_diffusion_policy` — 扩散策略与 MimicGen 同属模仿学习技术体系，前者提供动作生成模型，后者提供训练数据。
@@ -253,7 +253,7 @@ In the complete loop of a data engine, MimicGen is positioned at the "simulation
 
 ### Related Knowledge
 
-- `ent_paper_diffusion_policy_2023` — Diffusion policy is one of the policy types trainable on MimicGen-derived data; its multimodal action modeling capability naturally aligns with large-scale synthetic data.
+- `ent_method_diffusion_policy` — Diffusion policy is one of the policy types trainable on MimicGen-derived data; its multimodal action modeling capability naturally aligns with large-scale synthetic data.
 - `ent_concept_world_model` — World models, as a data source, may replace physics engines to generate "imagined trajectories," forming a complementary route to MimicGen's simulation augmentation.
 - `ent_technology_mobile_aloha_2024` — Mobile ALOHA represents real teleoperation data collection, forming the two ends of the data source pyramid with MimicGen's simulation synthesis.
 - `ent_method_diffusion_policy` — Diffusion policy and MimicGen both belong to the imitation learning technical system; the former provides action generation models, while the latter provides training data.
@@ -350,7 +350,7 @@ MimicGen의 전형적인 응용 시나리오는 장시간, 고정밀 조작이 �
 
 ### 관련 지식
 
-- `ent_paper_diffusion_policy_2023` — 확산 정책은 MimicGen 파생 데이터로 훈련할 수 있는 정책 유형 중 하나이며, 다중 모드 행동 모델링 능력이 대규모 합성 데이터와 자연스럽게 부합합니다.
+- `ent_method_diffusion_policy` — 확산 정책은 MimicGen 파생 데이터로 훈련할 수 있는 정책 유형 중 하나이며, 다중 모드 행동 모델링 능력이 대규모 합성 데이터와 자연스럽게 부합합니다.
 - `ent_concept_world_model` — 세계 모델은 데이터 소스로서 물리 엔진을 대체하여 "상상 궤적"을 생성할 수 있으며, MimicGen의 시뮬레이션 확장과 상호 보완적 경로를 형성합니다.
 - `ent_technology_mobile_aloha_2024` — Mobile ALOHA는 실제 원격 조작 데이터 수집의 대표이며, MimicGen의 시뮬레이션 합성과 함께 데이터 소스 피라미드의 양끝을 구성합니다.
 - `ent_method_diffusion_policy` — 확산 정책과 MimicGen은 모두 모방 학습 기술 체계에 속하며, 전자는 행동 생성 모델을 제공하고 후자는 훈련 데이터를 제공합니다.

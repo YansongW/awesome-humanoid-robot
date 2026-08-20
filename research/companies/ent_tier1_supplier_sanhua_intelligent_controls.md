@@ -171,7 +171,7 @@ Tesla Optimus 作为人形机器人领域的标杆产品，其执行器供应链
 
 - `ent_robot_system_tesla_optimus` — Tesla Optimus 是人形机器人标杆产品，其执行器供应链与热管理方案是三花智控潜在的应用场景。
 - `ent_component_harmonic_drive_reducer` — 谐波减速器是关节执行器的核心传动部件，与三花智控的机电执行器形成互补关系。
-- `ent_paper_supplier_qualification_2024` — 供应商认证是 Tier 1 供应商进入整机厂供应链的必经关卡，涵盖质量、产能、可追溯性和合规性四个维度。
+- `ent_method_supplier_qualification` — 供应商认证是 Tier 1 供应商进入整机厂供应链的必经关卡，涵盖质量、产能、可追溯性和合规性四个维度。
 - `ent_oem_tesla` — Tesla 是垂直整合的整机厂，其自研执行器路线与三花智控的 Tier 1 供应商角色形成对比。
 - `ent_component_rotary_actuator_2024` — 旋转执行器是人形机器人关节的核心部件，三花智控正积极布局该产品线。
 
@@ -287,7 +287,7 @@ Sanhua faces three major challenges in entering the humanoid robot field:
 
 - `ent_robot_system_tesla_optimus` — Tesla Optimus is a benchmark humanoid robot product; its actuator supply chain and thermal management solutions represent potential application scenarios for Sanhua.
 - `ent_component_harmonic_drive_reducer` — Harmonic reducers are core transmission components for joint actuators, complementing Sanhua's electromechanical actuators.
-- `ent_paper_supplier_qualification_2024` — Supplier qualification is a mandatory gateway for Tier 1 suppliers entering OEM supply chains, covering four dimensions: quality, capacity, traceability, and compliance.
+- `ent_method_supplier_qualification` — Supplier qualification is a mandatory gateway for Tier 1 suppliers entering OEM supply chains, covering four dimensions: quality, capacity, traceability, and compliance.
 - `ent_oem_tesla` — Tesla is a vertically integrated OEM whose in-house actuator development route contrasts with Sanhua's Tier 1 supplier role.
 - `ent_component_rotary_actuator_2024` — Rotary actuators are core components of humanoid robot joints, and Sanhua is actively developing this product line.
 
@@ -396,6 +396,6 @@ Tesla Optimus는 휴머노이드 로봇 분야의 벤치마크 제품으로, 액
 
 - `ent_robot_system_tesla_optimus` — Tesla Optimus는 휴머노이드 로봇의 벤치마크 제품으로, 액추에이터 공급망과 열관리 솔루션은 삼화지콩의 잠재적 적용 시나리오입니다.
 - `ent_component_harmonic_drive_reducer` — 하모닉 감속기는 관절 액추에이터의 핵심 동력 전달 부품으로, 삼화지콩의 전기기계식 액추에이터와 상호 보완 관계를 형성합니다.
-- `ent_paper_supplier_qualification_2024` — 공급업체 인증은 Tier 1 공급업체가 완성차 업체 공급망에 진입하기 위한 필수 관문으로, 품질, 생산 능력, 추적성 및 규정 준수의 네 가지 차원을 포함합니다.
+- `ent_method_supplier_qualification` — 공급업체 인증은 Tier 1 공급업체가 완성차 업체 공급망에 진입하기 위한 필수 관문으로, 품질, 생산 능력, 추적성 및 규정 준수의 네 가지 차원을 포함합니다.
 - `ent_oem_tesla` — Tesla는 수직 통합 완성차 업체로, 자체 개발 액추에이터 경로는 삼화지콩의 Tier 1 공급업체 역할과 대비됩니다.
 - `ent_component_rotary_actuator_2024` — 회전 액추에이터는 휴머노이드 로봇 관절의 핵심 부품이며, 삼화지콩은 이 제품 라인을 적극적으로 개발하고 있습니다.
