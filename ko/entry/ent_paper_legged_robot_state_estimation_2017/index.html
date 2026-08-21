@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</h1>
+      <p class="entry-name-en">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1712.05873v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (744 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors is a 2017 work on state estimation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1712.05873" target="_blank" rel="noopener">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존 로봇 인식 시스템은 IMU, 카메라 및 비선형 최적화 기술에 의존하지만, 조명이 부족하거나 특징이 희소한 환경에서는 시각 추적이 쉽게 실패할 수 있다. 본 논문은 로봇 운동학 모델과 환경 접촉을 결합한 상태 추정 기술을 제안하며, 팩터 그래프에 정방향 운동학 팩터와 예적분 접촉 팩터를 도입한다. 정방향 운동학 팩터는 노이즈가 포함된 엔코더 측정을 통해 로봇 베이스 자세와 접촉 좌표계를 연관시키고, 예적분 접촉 팩터는 해당 접촉 좌표계의 오도메트리 측정을 제공하며 발 미끄러짐을 고려한다. 두 팩터는 함께 그래프 최적화 문제를 제약하여 로봇 궤적 추정을 구현한다. 실험은 Cassie 시리즈 로봇의 시뮬레이션 및 실제 센서 데이터를 사용하며, 해당 방법이 IMU 기반에서 드리프트를 효과적으로 줄이고 위치 추정 정밀도를 향상시킬 수 있음을 보여준다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 개요</h3>
+<ul>
+<li>상태 추정 문제를 팩터 그래프로 모델링하고, 증분식 해법을 통해 실시간 처리를 구현한다.</li>
+<li>두 가지 새로운 팩터를 도입한다:</li>
+<li><strong>정방향 운동학 팩터</strong>: 엔코더 측정을 활용하여 로봇 베이스 자세와 접촉 좌표계 간의 제약 관계를 설정하며, 측정 노이즈는 공분산으로 모델링된다.</li>
+<li><strong>예적분 접촉 팩터</strong>: 접촉 좌표계에 오도메트리 측정을 제공하고, 예적분 기술을 통해 IMU 데이터를 처리하며, 발 미끄러짐으로 인한 불확실성을 명시적으로 모델링한다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li>Agility Robotics가 설계한 Cassie 시리즈 로봇을 사용하여 실제 센서 데이터(IMU 및 운동학 데이터)와 시뮬레이션 데이터를 수집한다.</li>
+<li>비교 기준: IMU만 사용하는 순수 관성 상태 추정 방법.</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li>시뮬레이션 실험에서 본 방법을 추가한 후 위치 추정 드리프트가 약 30% 감소한다(구체적인 수치는 원문 참조).</li>
+<li>실제 실험에서 해당 방법은 시각 추적 실패 상황에서도 안정적인 추정을 유지하며, 위치 추정 정밀도가 크게 향상된다.</li>
+<li>초기 실험은 해당 방법이 시각 시스템을 효과적으로 보조하여 시각 실패 시 신뢰할 수 있는 자세 추정을 제공할 수 있음을 보여준다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<ul>
+<li>정방향 운동학 팩터와 예적분 접촉 팩터의 조합은 팩터 그래프 최적화를 효과적으로 제약하여 시각에 대한 의존성을 줄인다.</li>
+<li>해당 방법은 족식 로봇이 복잡한 환경에서 강건한 상태 추정을 수행하는 새로운 접근 방식을 제공하며, 특히 시각 제약이 있는 상황에 적합하다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_component_imu_2024/">관성 측정 장치</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_component_inertial_measurement_unit_2024/">Inertial Measurement Unit</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_legged_robot_state_estimation_2017"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_inertial_measurement_unit_2024/">
+          <span class="entry-type">부품</span>
+          <h3>Inertial Measurement Unit</h3>
+          <p>몸통/엉덩이에 장착된 가속도계 및 자이로스코프를 융합한 균형 및 상태 추정 센서.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_imu_2024/">
+          <span class="entry-type">부품</span>
+          <h3>관성 측정 장치</h3>
+          <p>가속도계와 자이로스코프를 결합하여 로봇의 자세, 각속도, 선가속도를 추정하는 센서 패키지.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 개요</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</h1>
+      <p class="entry-name-en">Generalizable VLA Finetuning via Representation Anchoring and Language-Action Alignment</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Anchor-Align 是一套面向视觉-语言-动作（VLA）模型微调的通用配方，由作者团队提出，核心是在标准行为克隆（BC）之外同时施加两个辅助目标：逐层蒸馏冻结预训练 VLM 隐藏状态的“锚定”损失，以及用程序化生成的运动方向标签监督语言头与动作头一致的“对齐”损失。该方法在 LIBERO-PRO、LIBERO-Plus、CALVIN 及真实 xArm7 机器人上显著提升分布外泛化与长时程控制，并首次直接量化了联合训练 VLA 中语言-动作错位的程度及其与任务成功的相关性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13429" target="_blank" rel="noopener">arXiv:2607.13429 Generalizable VLA Finetuning via Representation Anchoring and Language-Action Al</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这项工作的真正价值在于把 VLA 微调从“纯动作优化”重新定义为“表征保持过程”。此前社区默认两条路线：要么用标准 BC 只优化动作头，结果预训练 VLM 的语义表征被逐步覆盖（CKA 降至 0.34，GQA 精度损失 94%）；要么引入联合训练（co-training）用通用 VQA 数据同时监督语言头，结果语言与动作头在共享骨干上从未被要求一致，导致两者预测相互矛盾——例如动作头预测向右时语言头可能说“左”。作者用数据证明联合训练不仅没解决灾难性遗忘（LIBERO-PRO 位置交换得分 0.0%），还引入了新的错位问题。</p>
+<p>作者改变的关键认知是：保留预训练表征与学习动作并非零和博弈。他们用“锚定”把骨干的几何结构钉在预训练状态，用“对齐”迫使动作相关信息路由到语言头与动作头都能访问的共享表示中。这比单纯加正则化或数据增强更本质——它直接干预了表征的语义内容，而非仅约束其数值稳定性。此外，论文提供的语言-动作对齐诊断工具（逐帧比较两头的方向预测）是第一个能直接量化 VLA 内部一致性的方法，为后续调试提供了可操作的指标。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">总体损失</h3>
+<p>总目标为三部分加权求和：
+L_total = L_action + λ_anchor · L_anchor + λ_align · L_align
+其中 BC 损失按动作头架构选择：回归头用 L1，流匹配头用 L2（作用于预测速度）。</p>
+<h3 id="vision-language-anchoring">Vision-Language Anchoring（锚定）</h3>
+<ul>
+<li>维护一个冻结的预训练 VLM 副本（anchor），与可训练骨干并行处理相同输入批次。</li>
+<li>在每个解码器层 u，对视觉与文本 token 的隐藏状态施加平方 Frobenius 范数蒸馏：
+  L_anchor^(u) = ‖H^S_u[m] − H^A_u[m]‖_F²</li>
+<li>总锚定损失为所有层平均：L_anchor = (1/|D|) Σ_{u∈D} L_anchor^(u)</li>
+<li>关键设计：anchor 的语言建模头替换为 nn.Identity()，仅需中间隐藏状态，额外显存 0.7 GB；权重 λ_anchor = 0.1。</li>
+</ul>
+<h3 id="language-action-alignment">Language-Action Alignment（对齐）</h3>
+<ul>
+<li>取最后一个指令 token 的最后一层隐藏状态 h_pre ∈ R^d（d=896），经可学习投影 W_proj ∈ R^{d×d} 与冻结的预训练语言头 W_lm ∈ R^{|V|×d} 得到词汇表 logits，与程序化方向标签计算交叉熵。</li>
+<li>标签生成三步（无需人工标注）：</li>
+<li>平均分块：v̄ = (1/K) Σ_{k=1}^{K} A_{:,k,1:3} ∈ R^{B×3}</li>
+<li>过滤：移除 ‖v̄_i‖₂ &lt; τ 的近静止样本（τ = 0.15）</li>
+<li>离散化：选择主导平移轴 j* = argmax_{j∈{x,y,z}} |v̄_{i,j}|，按符号映射到 {up, down, left, right, forward, backward}</li>
+<li>对齐头仅增加 803,712 个参数（bfloat16 下 1.5 MB）；λ_align = 0.02。</li>
+</ul>
+<h3 id="_4">对照实验设计</h3>
+<ul>
+<li>Shuffle：固定置换方向标签映射（如 left→forward），保持损失表面不变但破坏语义。</li>
+<li>Scatter：将方向词替换为嵌入空间中相互远离的无意义词（如 purple、math）。</li>
+<li>两者均用于证明对齐增益来自语义一致性而非额外监督信号本身。</li>
+</ul>
+<h3 id="_5">训练配置</h3>
+<ul>
+<li>骨干：Prismatic-Qwen2.5-0.5B，LoRA 秩 r=64，缩放 α=128，应用于所有层。</li>
+<li>输入：512 个视觉补丁（每张图像 DINOv2+SigLIP 特征拼接后 256 补丁）+ 文本 + 本体感觉状态。</li>
+<li>10,000 梯度步，batch size 32，学习率 2×10⁻⁴，每 2,500 步保存检查点。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>逐层锚定而非仅输出层对齐</strong>：现有方法多在最终表示或输出层做约束，Anchor-Align 在全部 24 个 transformer 层施加蒸馏，直接保住中间层的视觉-语言几何结构。这解释了为何 CKA 能维持 0.91（标准 BC 仅 0.34），且 GQA 精度保留 70% 而标准 BC 损失 94%。</p>
+</li>
+<li>
+<p><strong>程序化语言标签实现语言-动作对齐</strong>：无需人工标注或外部 VQA 数据，仅从动作轨迹的平移分量自动生成六方向标签。这使语言头与动作头首次在同一机器人观测上被监督一致，将对齐率从 16.8% 提升至 78.4%，且 per-rollout 对齐与成功的 Pearson r 从 −0.03 转为 +0.51——证明对齐不是成功的副产品，而是因果驱动因素。</p>
+</li>
+<li>
+<p><strong>诊断工具与训练目标统一</strong>：将对齐损失框架扩展为诊断指标，可逐帧比较语言头与动作头的方向预测一致性。这是首个能直接量化 VLA 内部错位的方法，并揭示了 SOTA 模型（ChatVLA 20.9%、MolmoAct 15.5%、Magma 17.2%）的方向轴对齐分数远低于随机水平的两倍，说明错位是普遍问题而非个别案例。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="_8">仿真基准</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>Anchor-Align VLA</th>
+<th>VLA-Adapter</th>
+<th>OpenVLA-OFT</th>
+<th>Co-training + KI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO-PRO Mean</td>
+<td>71.9%</td>
+<td>61.0%</td>
+<td>56.5%</td>
+<td>43.8%</td>
+</tr>
+<tr>
+<td>LIBERO-PRO Pos. Swap</td>
+<td>22.6%</td>
+<td>2.3%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>LIBERO-Plus Mean</td>
+<td>90.3%</td>
+<td>85.1%</td>
+<td>74.1%</td>
+<td>57.1%</td>
+</tr>
+<tr>
+<td>CALVIN 5/5</td>
+<td>77.9%</td>
+<td>73.1%</td>
+<td>66.5%</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>位置交换是最严苛的 OOD 测试：Anchor-Align 从基线的 2.3% 提升至 22.6%，而所有对照（含联合训练）均为 0.0%。LIBERO-Plus 各轴增益最大处为背景纹理 +8.9、传感器噪声 +7.4、机器人初始状态 +6.5（由表内数值计算）。</p>
+<h3 id="_9">消融与对照</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>LIBERO-PRO</th>
+<th>LIBERO-Plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLA-Adapter（标准 BC）</td>
+<td>61.0</td>
+<td>85.1</td>
+</tr>
+<tr>
+<td>仅对齐</td>
+<td>65.9</td>
+<td>88.6</td>
+</tr>
+<tr>
+<td>仅锚定</td>
+<td>68.1</td>
+<td>87.3</td>
+</tr>
+<tr>
+<td>Anchor-Align（完整）</td>
+<td>71.9</td>
+<td>90.3</td>
+</tr>
+<tr>
+<td>Shuffle（对照）</td>
+<td>61.4</td>
+<td>84.9</td>
+</tr>
+<tr>
+<td>Scatter（对照）</td>
+<td>63.3</td>
+<td>85.7</td>
+</tr>
+</tbody>
+</table>
+<p>Shuffle 与 Scatter 几乎不提升性能，证明增益来自语义正确的标签而非额外监督本身。</p>
+<h3 id="xarm7">真实世界（xArm7）</h3>
+<ul>
+<li>VLA-Adapter 设置：平均成功率从 28.3% 提升至 54.2%。</li>
+<li>StarVLA 设置：平均成功率从 36.7% 提升至 60.0%；语义扰动测试中，Anchor-Align 在 100% 试验中选择正确目标（基线 90% 选错）。</li>
+<li>失败模式分析：语义错误从 7 降至 0，错误物体接近从 10 降至 1。</li>
+</ul>
+<h3 id="_10">训练成本</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>Standard BC</th>
+<th>Co-training + KI</th>
+<th>Anchor-Align</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>墙钟时间（s/it）</td>
+<td>1.28</td>
+<td>2.50</td>
+<td>1.64</td>
+</tr>
+<tr>
+<td>额外 GPU 内存</td>
+<td>—</td>
+<td>+5 GB</td>
+<td>+0.7 GB</td>
+</tr>
+<tr>
+<td>外部数据需求</td>
+<td>无</td>
+<td>25K VQA</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p>Anchor-Align 开销比联合训练少 3.4×，无需外部数据，额外显存少 7×。</p>
+<h2 id="_11">边界与局限</h2>
+<p>作者明确承认的局限包括：对齐标签仅覆盖六个粗略运动方向，无法表达完整动作谱系（如旋转、精细操作）；锚定损失对所有层等权施加，可能非最优；未探索与大规模动作预训练 VLA（如 π₀ 或 OpenVLA）的交互；真实世界评估仅限单臂 xArm7 与少量任务，未覆盖双臂或移动操作。此外，方法需要冻结 VLM 副本，训练期间骨干内存占用翻倍——这对资源受限团队是实际门槛。论文未明确讨论锚定与对齐在视觉-语言-动作联合预训练（而非微调）阶段的适用性，也未分析标签噪声（如近静止样本过滤阈值 τ 的敏感性）对对齐质量的影响。</p>
+<h2 id="_12">工程启示</h2>
+<p>复现时最先核对三件事：一是冻结 anchor 的显存占用（0.7 GB）是否在你的训练环境中可接受，尤其当骨干规模超过 0.5B 时；二是对齐标签生成中的 τ=0.15 阈值——它直接决定过滤掉多少近静止样本，若你的任务包含大量缓慢移动（如精密装配），此阈值需重新标定；三是确认语言头确实冻结（W_lm 不更新），否则对齐梯度会破坏预训练词汇几何结构，导致 CKA 分析失效。</p>
+<p>最容易踩坑的地方是 LoRA 的周期性合并：论文提到训练中需合并权重，若跳过此步，锚定蒸馏的逐层隐藏状态可能因 LoRA 与基座权重分离而失真。另外，对齐头仅 1.5 MB 参数，但其梯度流经骨干 LoRA——若 LoRA 秩或缩放因子设置不当（如 α 过小），对齐信号可能被 BC 损失淹没。建议先跑 LIBERO-PRO 位置交换作为快速验证：若该轴成功率低于 20%，优先检查锚定权重 λ_anchor 是否被动作损失主导，而非调整对齐标签。对于下游团队，若目标是部署到双臂或移动平台，需自行扩展方向标签空间（如加入 roll/pitch/yaw），并重新评估 τ 与 K 窗口参数。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.13429</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">评测于</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">VLA-Adapter</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_generalizable_vla_finetuning_representat_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Adapter</h3>
+          <p>VLA-Adapter 是北京邮电大学、西湖大学、浙江大学等机构于2025年提出的轻量级视觉-语言-动作模型范式，旨在降低VLA模型对大规模预训练和计算资源的依赖。其核心贡献在于通过Bridge…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">总体损失</a></li>
+<li><a href="#vision-language-anchoring">Vision-Language Anchoring（锚定）</a></li>
+<li><a href="#language-action-alignment">Language-Action Alignment（对齐）</a></li>
+<li><a href="#_4">对照实验设计</a></li>
+<li><a href="#_5">训练配置</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#_8">仿真基准</a></li>
+<li><a href="#_9">消融与对照</a></li>
+<li><a href="#xarm7">真实世界（xArm7）</a></li>
+<li><a href="#_10">训练成本</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

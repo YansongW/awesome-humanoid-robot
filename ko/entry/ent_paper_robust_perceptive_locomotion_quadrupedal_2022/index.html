@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning robust perceptive locomotion for quadrupedal robots in the wild · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning robust perceptive locomotion for quadrupedal robots in the wild</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning robust perceptive locomotion for quadrupedal robots in the wild</h1>
+      <p class="entry-name-en">Learning robust perceptive locomotion for quadrupedal robots in the wild</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P012. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Legged robots that can operate autonomously in remote and hazardous environments will greatly increase opportunities for exploration into under-explored areas. Exteroceptive perception is crucial for fast and energy-efficient locomotion: perceiving the terrain before making contact with it enables planning and adaptation of the gait ahead of time to maintain speed and stability. However,.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2201.08117" target="_blank" rel="noopener">arXiv:2201.08117 Learning robust perceptive locomotion for quadrupedal robots in the wild</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 3단계 훈련 프레임워크(교사-학생-제로샷 배포)를 제안하여, 사족 보행 로봇 ANYmal-C가 야외 환경에서 외부 인식과 고유 감각을 종단 간 융합하도록 한다. 핵심 혁신은 주의 게이팅이 적용된 순환 신념 인코더이다. 이 컨트롤러는 알프스 산맥 2.2km 하이킹, DARPA 지하 챌린지 등 실제 시나리오에서 제로 실패를 달성했으며, 계단, 장애물 코스 등의 실험에서 순수 고유 감각 기준선을 크게 능가했다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이 작업의 진정한 변화는 "지도 품질이 완벽해야 한다"는 암묵적 가정을 깨고, 외부 인식을 "의사 결정 근거"에서 "의심될 수 있는 관측 신호"로 격하시킨 것이다. 기존 방법은 외부 인식에 완전히 의존하거나(눈, 반사, 가림 상태에서 실패), 순수 고유 감각으로 후퇴하거나(속도 제한, 발로 지형을 "더듬어야" 함) 했다. 본 논문은 게이팅 메커니즘을 통해 정책이 언제 시각을 신뢰하고 언제 촉각을 신뢰할지 자율적으로 결정하게 하여, 로봇이 인식이 신뢰할 수 있을 때 예측 이점을 얻고, 인식이 실패할 때 촉각 구동으로 매끄럽게 퇴화하도록 한다. 이 결정 과정은 수동으로 설계된 휴리스틱 규칙이 아닌 종단 간 학습으로 얻어진다.</p>
+<p>또 다른 심층적 변화는 "인식-제어" 결합 문제를 부분 관측 마르코프 결정 과정(POMDP) 하의 신념 추정 문제로 재정의한 것이다. 순환 인코더를 통해 단일 프레임 지도에 의존하지 않고 지형과 자신의 상태에 대한 "신념"을 유지함으로써, 컨트롤러가 시간적 일관성을 활용하여 잘못된 인식을 수정할 수 있다—예를 들어 접촉 후 지형 추정을 업데이트하고, 발이 땅에서 떨어진 후에도 수정 결과를 유지한다. 이는 단순히 센서를 쌓거나 매핑 알고리즘을 개선하는 것보다 생물학적 운동 제어의 본질에 더 가깝다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="3">3단계 훈련 절차</h3>
+<ol>
+<li><strong>교사 정책</strong>: PPO를 사용하여 RaiSim에서 훈련하며, 특권 정보(무잡음 지형, 마찰 계수, 접촉력 등)에 접근하고, 무작위 지형에서 목표 속도를 추종한다. 관측에는 고유 감각 <code>o_t^p</code>, 외부 인식 <code>o_t^e</code>(각 발 주변 5개 반경의 높이 샘플링) 및 특권 상태 <code>s_t^p</code>가 포함된다.</li>
+<li><strong>학생 정책</strong>: 행동 복제 손실 <code>L_bc</code>와 재구성 손실 <code>L_re</code>를 통해 교사를 증류하며, 현장에서 얻을 수 있는 관측 <code>(o_t^p, n(o_t^e))</code>만 사용한다. 여기서 <code>n(·)</code>는 잡음 모델이다. 학생은 순환 신념 인코더 + MLP로 구성되며, 교사 가중치 초기화를 재사용할 수 있다.</li>
+<li><strong>제로샷 배포</strong>: 미세 조정 없이 물리 로봇에 직접 배포한다.</li>
+</ol>
+<h3 id="_4">신념 인코더(핵심 구성 요소)</h3>
+<ul>
+<li>입력: 고유 감각 <code>o_t^p</code>, 잡음이 있는 외부 인식 특징 <code>l_t^e = g_e(o_t^e~)</code>, 은닉 상태 <code>s_t</code>.</li>
+<li>중간 신념: <code>b_t' = RNN(o_t^p, l_t^e, s_t)</code>, 2층 GRU(각 층 50유닛) 사용.</li>
+<li>주의 게이팅: <code>α = σ(g_a(b_t'))</code>, 외부 인식 정보의 유입량을 제어.</li>
+<li>최종 신념: <code>b_t = g_b(b_t') + l_t^e ⊙ α</code>, 차원 120(96 외부 + 24 특권).</li>
+<li>디코더는 동일한 게이팅을 사용하여 특권 정보와 높이 샘플링을 재구성하고 재구성 손실을 계산한다.</li>
+</ul>
+<h3 id="_5">핵심 설계 결정</h3>
+<ul>
+<li><strong>높이 맵을 중간 추상화로 사용</strong>: 정책은 원시 포인트 클라우드가 아닌 높이 샘플링 포인트를 수신하므로, 모델이 특정 센서(LiDAR 또는 스테레오 카메라 모두 가능, 재훈련 불필요)와 독립적이다.</li>
+<li><strong>계단을 박스로 모델링</strong>: 높이 맵으로 모델링된 계단 가장자리는 수직이 아니며, 정책이 이 아티팩트를 활용하여 sim-to-real 전이가 나빠진다.</li>
+<li><strong>잡음 모델</strong>: 세 가지 조건(명목 60%, 큰 오프셋 30%, 큰 잡음 10%)이 훈련 에피소드 시작 시 무작위로 선택되며, 잡음 크기는 커리큘럼 인자 <code>c_sk</code>에 따라 선형적으로 증가한다.</li>
+<li><strong>CPG 영감 동작 공간</strong>: 각 다리에는 위상 변수 <code>φ_l</code>이 있으며, 정책은 위상 수정량 <code>Δφ_l</code>과 잔차 관절 목표 <code>Δq_i</code>를 출력하고, 명목 궤적은 역기구학을 통해 12개 관절 목표로 매핑된다.</li>
+</ul>
+<h3 id="_6">보상 설계</h3>
+<p>총 보상 <code>r = 0.75(r_lv + r_av + r_lvo) + r_b + 0.003 r_fc + 0.1 r_co + 0.001 r_j + 0.08 r_jc + 0.003 r_s + 1.0·10⁻⁶ r_τ + 0.003 r_slip</code>, 여기서 <code>r_lv</code>와 <code>r_av</code>는 구간 지수 속도 추종 보상, <code>r_co</code>는 종아리/무릎 충돌을 패널티, <code>r_slip</code>은 발 미끄러짐을 패널티한다. 커리큘럼 인자 <code>c_k</code>는 단조 증가하여 1로 수렴한다.</p>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>주의 게이팅 신념 인코더</strong>: 학습 가능한 게이팅 메커니즘을 사족 보행 로봇의 인식-제어 융합에 도입한 최초의 사례이다. 게이팅 인자 <code>α</code>는 중간 신념 상태에서 계산되며, 정책이 문맥에 따라 외부 인식에 대한 신뢰도를 동적으로 조정할 수 있게 한다. 절제 실험(표 S4)은 게이팅이 대부분의 지형에서 동작 차이를 줄이고(예: rough 지형 작은 잡음에서 0.690 vs 0.746), 큰 잡음에서도 강건성을 희생하지 않음을 보여준다.</p>
+</li>
+<li>
+<p><strong>커리큘럼의 일부로서의 잡음 모델</strong>: 인식 잡음 매개변수 <code>z</code>를 커리큘럼 학습에 포함시켜 훈련 중 선형적으로 크기를 증가시킨다. 이는 정책이 "완벽한 인식 의존"에서 "잡음 하 강건성 유지"로 점진적으로 전이하도록 강제하며, 고정 잡음 훈련보다 효율적이다. 세 가지 잡음 조건(60%/30%/10%)은 정상, 자세 드리프트, 가림/매핑 실패 등 실제 시나리오를 모사한다.</p>
+</li>
+<li>
+<p><strong>제로샷 sim-to-real 전이</strong>: 실제 데이터 미세 조정 없이 직접 배포한다. 이는 높이 맵 추상화(센서 차이 차폐), 도메인 무작위화(질량, 마찰, 외력), 잡음 훈련(인식 저하에 둔감하게) 덕분이다. 야외 2.2km 하이킹과 DARPA 지하 챌린지의 제로 실패 기록이 일반화 능력을 검증한다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="_9">야외 배포</h3>
+<table>
+<thead>
+<tr>
+<th>시나리오</th>
+<th>핵심 지표</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Etzel 산 하이킹</td>
+<td>경로 2.2km, 고도 상승 120m, 최대 경사 38%</td>
+<td>31분 정상 도달(인간 35분), 78분 전체(계획 권장 76분), 제로 실패</td>
+</tr>
+<tr>
+<td>DARPA 지하 챌린지</td>
+<td>터널/도시/동굴 세 가지 코스</td>
+<td>4대의 ANYmal이 1700m 이상 탐사, 넘어짐 없음</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">통제 실험(그림 4)</h3>
+<table>
+<thead>
+<tr>
+<th>실험</th>
+<th>본 컨트롤러</th>
+<th>순수 고유 감각 기준선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>계단 높이</td>
+<td>30.5cm 안정적으로 넘음</td>
+<td>20cm에서 성공률 하락</td>
+</tr>
+<tr>
+<td>장애물 코스</td>
+<td>모든 장애물 매끄럽게 통과</td>
+<td>세 가지 장애물 모두 걸림</td>
+</tr>
+<tr>
+<td>평지 최대 속도</td>
+<td>1.2m/s</td>
+<td>0.6m/s</td>
+</tr>
+<tr>
+<td>회전 속도</td>
+<td>3rad/s</td>
+<td>0.6rad/s(5배 차이)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="s4s5">절제 연구(표 S4/S5)</h3>
+<ul>
+<li>게이팅 vs 무게이팅: 10가지 지형에서 GRU gate가 동작 차이와 재구성 오차 모두에서 GRU no gate보다 우수(예: grid steps 작은 잡음에서 동작 차이 1.444 vs 1.674).</li>
+<li>큰 잡음에서 게이팅 이점 감소(예: rough 큰 잡음 0.879 vs 0.997), 게이팅이 큰 잡음에서 강건성을 희생하지 않음을 시사.</li>
+<li>MLP 인코더는 특권 정보를 재구성할 수 없어, 시간적 일관성 모델링에 순환 구조의 필요성을 검증.</li>
+</ul>
+<h3 id="5">신념 상태 시각화(그림 5)</h3>
+<ul>
+<li>폼 장애물: 초기에는 시각을 신뢰, 접촉 후 지형 추정을 빠르게 하향 수정, 발이 땅에서 떨어진 후에도 수정 유지.</li>
+<li>투명 장애물: 접촉까지 평지처럼 보행, 접촉 후 상향 수정 및 보행 패턴 변경.</li>
+<li>센서 가림: 계단 수직판 접촉 후 추정 수정 및 계단 오르기 성공.</li>
+<li>미끄러운 플랫폼: 낮은 마찰 감지 후 보폭 가속, 자세 드리프트로 지도 불안정 시 고유 감각으로 매끄럽게 복귀.</li>
+</ul>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li><strong>좁은 절벽/디딤돌</strong>: 높이 맵이 가림으로 인해 정보가 부족하여, 정책이 연속 표면을 가정하므로 발을 헛디뎌 추락할 수 있다(저자가 명시적으로 인정).</li>
+<li><strong>높이 맵 표현 손실</strong>: 중간 상태로 인해 원시 포인트 클라우드의 재질 및 텍스처 정보가 누락되며, 이는 특정 지형 판단에 유용할 수 있다.</li>
+<li><strong>자세 추정 미공동 훈련</strong>: 높이 맵 구축은 고전적 자세 추정 모듈에 의존하며, 정책과 종단 간 훈련되지 않아 병목이 될 수 있다.</li>
+<li><strong>비정상 기동 불가</strong>: 좁은 구멍에서 걸린 다리를 빼거나 높은 단상에 오르는 등 정상 보행과 현저히 다른 동작이 필요한 경우 수행 불가.</li>
+<li><strong>큰 잡음에서 게이팅 이점 감소</strong>: 절제 결과 큰 잡음 조건에서 게이팅과 무게이팅 성능이 유사하여, 게이팅이 주로 중저 잡음에서 효과적임을 시사.</li>
+<li><strong>논문 미명시</strong>: 실제 로봇에서의 정량적 실패율, 계산 지연, 훈련 데이터 양 등 구체적 수치.</li>
+</ul>
+<h2 id="_11">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 우선 확인 사항</strong>: 먼저 RaiSim 시뮬레이터 버전과 ANYmal-C 액추에이터 모델 매개변수를 확인하라. 이는 sim-to-real 전이의 기초이다. 다음으로 잡음 모델 매개변수 <code>z</code>의 세 가지 조건(60%/30%/10%)과 커리큘럼 인자 업데이트 공식 <code>c_{k+1} = c_k^d</code>(d=0.98)를 확인하라.</li>
+<li><strong>가장 흔한 함정</strong>: 계단 지형은 높이 맵이 아닌 박스로 모델링해야 한다. 그렇지 않으면 정책이 비수직 가장자리를 활용하여 전이 실패를 초래한다. 또한 학생 훈련 처음 10개 epoch는 평지에서만 수행하고, 20개 epoch 이후에 적응형 지형 커리큘럼을 활성화해야 한다. 그렇지 않으면 훈련이 불안정하다.</li>
+<li><strong>게이팅 구현 세부 사항</strong>: 주의 벡터 <code>α</code>는 <code>g_a(b_t')</code>로 계산되며, <code>g_a</code>와 <code>g_b</code>는 모두 {64, 64} MLP이다. 필터링된 외부 인식 <code>l_t^e ⊙ α</code>는 120차원으로 제로 패딩한 후 <code>g_b(b_t')</code>와 더해야 한다. 차원 불일치는 흔한 오류이다.</li>
+<li><strong>하위 팀 권장 사항</strong>: 센서를 교체할 경우(예: LiDAR에서 스테레오 카메라로), 재훈련 없이 높이 맵 구축 파이프라인(20Hz 업데이트 주파수)만 조정하면 된다. 단, 높이 맵 쿼리 위치에 정보가 없을 때 무작위 샘플링 값으로 채우는 것이 정책 동작에 영향을 미친다는 점에 유의하라.</li>
+<li><strong>성능 기대 관리</strong>: 계단 높이가 32cm를 초과하면 컨트롤러가 전진을 주저하는데, 이는 학습된 물리적 한계 판단이지 고장이 아니다. 더 높은 장애물 극복 능력이 필요하면 보상 함수의 <code>r_co</code>(충돌 패널티) 가중치를 조정하거나 더 높은 계단의 훈련 분포를 추가하라.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robust_perceptive_locomotion_quadrupedal_2022"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#3">3단계 훈련 절차</a></li>
+<li><a href="#_4">신념 인코더(핵심 구성 요소)</a></li>
+<li><a href="#_5">핵심 설계 결정</a></li>
+<li><a href="#_6">보상 설계</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#_9">야외 배포</a></li>
+<li><a href="#4">통제 실험(그림 4)</a></li>
+<li><a href="#s4s5">절제 연구(표 S4/S5)</a></li>
+<li><a href="#5">신념 상태 시각화(그림 5)</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

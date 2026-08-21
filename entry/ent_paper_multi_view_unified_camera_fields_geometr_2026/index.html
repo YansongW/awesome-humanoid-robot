@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</h1>
+      <p class="entry-name-en">Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>MVUCF 是一个仅训练时的框架，在动作模块消费的 token 格子上联合注入度量深度与跨视角对应两种几何属性，使纯 RGB 输入的 VLA 策略获得可用的 3D 结构感知。该方法由 NVIDIA 团队基于 GR00T-N1.6 实现，通过两阶段训练（几何注入 + 动作训练）在不增加任何部署时传感器或推理 FLOPs 的前提下，显著提升多相机操作任务的成功率与鲁棒性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01826" target="_blank" rel="noopener">arXiv:2608.01826 Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 模型在处理接触丰富的多相机操作时，面临一个根本性的表征缺陷：骨干网络从 2D 语义预训练的 VLM 初始化，其隐藏状态无法可靠恢复度量深度（原生 MAE 4.3 cm）和跨视角对应（Hit@1 仅 0.4%，接近随机 0.3%）。此前工作如 Spatial Forcing 和 Selfi 分别解决跨视角一致性与度量 3D 接地，但两者机制差异过大无法模块化组合。MVUCF 真正改变的是：它证明了无需改变部署接口（仍为纯 RGB），仅通过训练时的几何监督注入，就能让 VLM 骨干的隐藏状态同时具备线性可读的度量深度与跨视角物理点对应能力。这打破了“几何感知必须依赖额外传感器或推理时模块”的隐含假设，将几何能力从辅助分支转移到了动作模块直接消费的主干表征中。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">两阶段训练流程</h3>
+<ol>
+<li><strong>几何注入阶段</strong>：仅更新 VLM 层 8–15 和两个辅助头（深度头、跨视角头），视觉编码器与层 0–7 冻结。更新范围跨数据集固定，不基于下游基准选择。</li>
+<li><strong>动作训练阶段</strong>：移除辅助头、深度观测和相机校准，冻结几何塑形后的骨干，使用 RGB-only 输入训练原生动作模块。</li>
+</ol>
+<h3 id="coordinate-query-depth-objective">坐标查询深度目标（Coordinate-Query Depth Objective）</h3>
+<ul>
+<li>在 9×9 token 网格上定义 144×144 连续查询晶格（密集查询因子 P=16）。</li>
+<li>每视图抽取 3072 个查询：50% 均匀采样，50% 偏向近表面与深度边缘的重要性采样。</li>
+<li>查询表示拼接 1024 维特征、局部 x/y 差异和子单元相位 φ(q)=q-⌊q⌋，形成 3074 维输入，无绝对位置编码。</li>
+<li>深度头：LN(2048)→Linear(1024)→GELU→Conv 3×3(1024)→GELU 的 GridTrunk 后，双线性特征查找，MLP 3074→1024→1024→1 + Softplus 预测度量深度。</li>
+<li>损失：L_depth = 0.5·L_silog + 1.25·L_inv + 1.0·L_grad + 0.1·L_seam + 0.05·L_unc，有效深度范围 [0.05, 5.0] m。</li>
+</ul>
+<h3 id="preprocessing-aware-correspondence-objective">预处理感知对应目标（Preprocessing-Aware Correspondence Objective）</h3>
+<ul>
+<li>正样本由原始帧几何重投影定义，非视觉相似性。组合变换 T_img→grid = T_unshuffle(2) ∘ T_patch(14) ∘ T_smart ∘ T_resize2 ∘ T_crop ∘ T_resize1 ∘ T_letterbox 避免坐标标签误差。</li>
+<li>有效性检查：目标在图像边界内、深度在 [0.05, 5.0] m、z-buffer 一致性 |Z_j - z_j*(u_j^raw)| &lt; 0.10 m。</li>
+<li>共享投影器极简：h_ω(f) = normalize₂(W·LN₂₀₄₈(f))，W ∈ R^{128×2048}，无隐藏层。</li>
+<li>全局匹配 logits ℓ_mn = 10(e_m^s)ᵀ e_n^t；软标签 y_mn ∝ exp(-‖c_n - q_j*‖²/(2σ²))，σ=0.75。</li>
+<li>损失：L_cv = L_softCE + 0.1·L_hnce + 0.1·L_margin，γ=0.2，外层权重 40k 步从 1.0 退火至 0.1。</li>
+</ul>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li>深度建立视图内度量位置，对应建立跨视图物理点身份，两者互补且直接更新动作模块消费的上层隐藏状态。</li>
+<li>监督抽取点选在第 15 层（而非第 12 层），因其保留更强同点判别力且是动作模块直接消费的最终隐藏空间网格。</li>
+<li>空间软化正样本吸收子 token 投影误差；空间环负样本防止邻近 patch 坍缩为等效匹配。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>统一框架同时恢复跨视角一致性与度量 3D 结构</strong>：此前方法分别解决两者但无法组合，MVUCF 通过在同一 token 格子上联合注入两个互补属性，形成跨相机的共享动作面向潜在场，而非两个断开的辅助表示。</li>
+<li><strong>预处理感知的坐标映射</strong>：显式建模完整图像预处理链（unshuffle、patch、resize、crop、letterbox）的组合变换，避免直接缩放原始像素到 token 坐标的标签误差，这是工程上极易被忽视但影响几何监督精度的关键细节。</li>
+<li><strong>查询模式深度监督</strong>：不监督每训练步的密集全图预测，而是通过 3072 个查询点（含重要性采样偏向近表面与边缘）在连续网格位置监督度量深度，配合梯度项阻止恒定深度坍缩，在训练效率与几何精度间取得平衡。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="libero-1">LIBERO 标准基准（表 1）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>Base (GR00T-N1.6)</th>
+<th>Ours</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spatial</td>
+<td>99.3 ± 1.2</td>
+<td>100.0 ± 0.0</td>
+<td>+0.7</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>99.2 ± 0.8</td>
+<td>99.2 ± 0.3</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Goal</td>
+<td>98.4 ± 1.2</td>
+<td>99.5 ± 0.5</td>
+<td>+1.1</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>92.9 ± 1.0</td>
+<td>97.0 ± 1.5</td>
+<td>+4.1</td>
+</tr>
+<tr>
+<td>Average</td>
+<td>97.4 ± 0.3</td>
+<td>98.9 ± 0.4</td>
+<td>+1.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="libero-plus-2">LIBERO-Plus 鲁棒性（表 2）</h3>
+<table>
+<thead>
+<tr>
+<th>扰动类型</th>
+<th>Base</th>
+<th>Ours</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Camera</td>
+<td>20.9</td>
+<td>24.1</td>
+<td>+3.2</td>
+</tr>
+<tr>
+<td>Robot</td>
+<td>40.2</td>
+<td>54.1</td>
+<td>+13.9</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>35.0</td>
+<td>72.9</td>
+<td>+37.9</td>
+</tr>
+<tr>
+<td>Light</td>
+<td>65.4</td>
+<td>95.1</td>
+<td>+29.7</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>76.3</td>
+<td>91.8</td>
+<td>+15.5</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>27.8</td>
+<td>61.3</td>
+<td>+33.5</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>51.3</td>
+<td>74.9</td>
+<td>+23.6</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>42.8</td>
+<td>65.2</td>
+<td>+22.4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="robotwin-3">RoboTwin 六任务（表 3）</h3>
+<table>
+<thead>
+<tr>
+<th>任务族</th>
+<th>Base</th>
+<th>Ours</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Touch</td>
+<td>92.0→99.5 (Alarm), 85.5→100.0 (Bell)</td>
+<td>—</td>
+<td>+11.0</td>
+</tr>
+<tr>
+<td>Move/Place</td>
+<td>6.5→40.5 (Pill), 0.0→27.0 (Phone)</td>
+<td>—</td>
+<td>+30.5</td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>43.0→93.5 (Stapler), 4.5→11.0 (Switch)</td>
+<td>—</td>
+<td>+28.5</td>
+</tr>
+<tr>
+<td>Overall</td>
+<td>38.6% (35.9–41.4%)</td>
+<td>61.9% (59.1–64.6%)</td>
+<td>+23.3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4libero-10">消融（表 4，LIBERO-10）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Native Base</td>
+<td>92.88 ± 1.01</td>
+</tr>
+<tr>
+<td>Depth only</td>
+<td>94.00 ± 1.00（Δ +1.12）</td>
+</tr>
+<tr>
+<td>Cross-view only</td>
+<td>94.21 ± 2.40（Δ +1.33）</td>
+</tr>
+<tr>
+<td>Full</td>
+<td>97.00 ± 1.50（Δ +4.12）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">表示诊断</h3>
+<ul>
+<li>深度 MAE：原生 4.3 cm → 几何注入后 0.78 cm（单帧每视图）；全评估均值从 4.9 降至 0.44 cm，2 cm 内预测从 44% 升至 97%。</li>
+<li>跨视角检索 Hit@1：原生 0.4%（随机 0.3%）→ 几何注入后 64%。</li>
+</ul>
+<h3 id="agibot-expedition-a2">真实机器人（Agibot Expedition A2）</h3>
+<ul>
+<li>Ours：49/60 成功（81.7%；70.1–89.4%）；Base：40/60（66.7%；54.1–77.3%）。两任务均改善：17/30→21/30 和 23/30→28/30。</li>
+</ul>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>MVUCF 假设训练时校准准确；对损坏或噪声校准标签的鲁棒性未测试。</li>
+<li>几何注入隐式地将训练时相机参数纳入学习到的几何表示，限制了在相机视点和视场扰动下的改进。</li>
+<li>真实机器人实验中置信区间重叠（81.7% vs 66.7%），仅提供试点规模物理可行性证据。</li>
+<li>未进行基于验证或下游成功率的检查点选择，使用预声明 horizon 的最终检查点。</li>
+<li>透明、反射和无纹理区域可产生缺失或有偏深度，由有效性掩码排除但未单独评估。</li>
+<li>两轮 RoboTwin 评估不足以支持轮间方差的稳定估计，报告聚合二项不确定性而非重训练变异性。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：几何注入与动作训练必须使用同一批官方开源演示轨迹（LIBERO 每套件 100 episodes，RoboTwin 每任务 50 条 clean50 划分），否则对比无效。训练超参（LR 10⁻⁴、WD 10⁻⁵、预热 0.05、batch 128）需严格匹配官方 GR00T-N1.6 微调默认值。</li>
+<li><strong>最容易踩坑处</strong>：预处理感知坐标映射 T_img→grid 必须完整实现 unshuffle、patch、resize、crop、letterbox 的组合变换，直接缩放原始像素到 token 坐标会引入标签误差。深度补全管线必须使用最近邻采样（非双线性），避免对象边界度量深度被人工平滑。</li>
+<li><strong>可见性阈值 0.10 m 是经验操作点</strong>：更紧会因深度量化丢弃有效对，更松会在遮挡边界引入模糊投影。该值应在目标构建阶段固定，不基于下游成功率选择。</li>
+<li><strong>层选择不可随意</strong>：监督抽取点选第 15 层（动作模块直接消费的最终隐藏空间网格），放在第 12 层会降低 token 级分离。更新范围（层 8–15）跨数据集固定，不按基准调参。</li>
+<li><strong>部署验证</strong>：确认推理图保持纯 RGB-only，无额外传感器、模块或推理 FLOPs；相机校准仅用于离线目标构建，部署策略不消费相机矩阵。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01826</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">评测于</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_li_spatial_forcing_implicit_spati_2025/">Spatial Forcing</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_multi_view_unified_camera_fields_geometr_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_spatial_forcing_implicit_spati_2025/">
+          <span class="entry-type">论文</span>
+          <h3>Spatial Forcing</h3>
+          <p>Spatial Forcing (SF)…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">两阶段训练流程</a></li>
+<li><a href="#coordinate-query-depth-objective">坐标查询深度目标（Coordinate-Query Depth Objective）</a></li>
+<li><a href="#preprocessing-aware-correspondence-objective">预处理感知对应目标（Preprocessing-Aware Correspondence Objective）</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#libero-1">LIBERO 标准基准（表 1）</a></li>
+<li><a href="#libero-plus-2">LIBERO-Plus 鲁棒性（表 2）</a></li>
+<li><a href="#robotwin-3">RoboTwin 六任务（表 3）</a></li>
+<li><a href="#4libero-10">消融（表 4，LIBERO-10）</a></li>
+<li><a href="#_7">表示诊断</a></li>
+<li><a href="#agibot-expedition-a2">真实机器人（Agibot Expedition A2）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

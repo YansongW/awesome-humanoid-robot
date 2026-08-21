@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</h1>
+      <p class="entry-name-en">Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>小米机器人团队提出 Xiaomi-Robotics-1，一个基于超过 10 万小时 UMI 真实世界轨迹预训练、再经跨具身数据后训练的 VLA 基础模型。核心贡献在于构建了可扩展的自动标注流水线与两阶段训练方案，并通过数据与模型缩放实验系统验证了数据规模对泛化性能的主导作用。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.15330" target="_blank" rel="noopener">arXiv:2607.15330 Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>机器人 VLA 领域长期受困于数据瓶颈：遥操作采集缓慢、成本高，且数据高度冗余、集中于狭窄任务与环境范围。此前工作要么依赖人工逐段标注轨迹，要么在有限数据上训练，缺乏对“数据规模如何影响基础模型泛化”的系统性认知。Xiaomi-Robotics-1 真正改变的是将机器人基础模型的训练范式推向“网络规模数据 + 自动标注”的路径——用便携式 UMI 设备绕开物理机器人具身限制，以 10 万小时量级数据逼近语言模型式的缩放规律。</p>
+<p>这项工作的深层价值在于证明了机器人领域的“数据缩放定律”确实存在：当数据从 12.5% 增至 100% 时，未见环境任务成功率从 26% 跃升至 75%（由表内数值 26%→75% 计算），且模型规模从 2B 增至 10B 仅带来 61%→79% 的提升（由表内数值 61%→79% 计算），数据量的边际收益显著大于模型容量。这为整个行业指明了资源投入方向——数据采集与标注自动化比堆算力更关键。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">两阶段训练架构</h3>
+<ul>
+<li><strong>预训练阶段</strong>：使用 UMI 手持夹爪采集超过 100,000 小时真实轨迹，覆盖家庭、商业、工业、办公、户外等场景。开发生产者-消费者自动标注流水线：CPU 线程将轨迹切分为等长片段并写入内存文件系统，客户端线程维持数百个在途标注请求，调用 Qwen3.5-27B 描述片段中夹爪与交互物体的状态转换，整个语料库约两周完成标注。</li>
+<li><strong>后训练阶段</strong>：使用约 10,000 小时跨具身数据（7,200 小时自研移动机械臂与双臂数据、1,000 小时人工标注 UMI 数据、开源数据集 Bridge V2/RT-1/DROID），将状态转换提示转换为祈使指令，并过滤空闲片段。</li>
+</ul>
+<h3 id="_4">模型架构关键设计</h3>
+<ul>
+<li><strong>Mixture-of-Transformers</strong>：预训练 VLM（Qwen3-VL）编码观测与语言指令，扩散 Transformer（DiT）以本体状态和 VLM 的 KV 缓存为条件，通过流匹配生成动作块。DiT 层数与 VLM 相同但隐藏尺寸更小（如 5B 变体中 VLM 隐藏尺寸 2560、DiT 隐藏尺寸 1024），以加快推理。</li>
+<li><strong>流匹配损失</strong>：L_Flow = ||v_θ(o_t, l, s_t, ã^τ, τ) − u(ã^τ, a, τ)||²₂，训练时 τ 从 Beta(1.5, 1) 采样，推理时 5 步欧拉积分（步长 Δτ = 0.2）。</li>
+<li><strong>Choice Policies 辅助监督</strong>：VLM 输出 K 个候选动作块与分数，采用赢家通吃范式，仅最小 L1 损失的候选计入动作损失。</li>
+<li><strong>注意力排除</strong>：阻止 DiT token 关注动作相关 token，防止 DiT 直接复制 VLM 输出而非基于视觉上下文生成。</li>
+<li><strong>训练目标</strong>：L = L_Flow + L_Regression + 0.1·L_NTP。</li>
+</ul>
+<h3 id="_5">数据采样与效率优化</h3>
+<ul>
+<li>预训练中视觉语言数据与 UMI 轨迹按 1:9 采样；后训练中视觉语言、开源机器人、指令标注 UMI、自研机器人数据按 0.5:0.5:0.5:8.5 采样。</li>
+<li>批内所有视觉语言 token 打包为单序列进行 VLM 前向，每个样本采样 4 个流匹配时间步以摊销计算成本。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>可扩展自动标注流水线</strong>：将轨迹分割为等长片段并用 LLM 描述状态转换，替代人工语义分割与标注。这是首次在 10 万小时规模上实现全自动轨迹标注，两周完成整个语料库，使数据规模化成为可能。</li>
+<li><strong>两阶段“预训练+后训练”范式</strong>：预训练阶段学习通用状态转换能力，后训练阶段通过跨具身数据将能力迁移到具体机器人并转换为祈使指令。这种解耦设计让数据采集（UMI 手持设备）与模型部署（移动机械臂）分离，大幅降低数据门槛。</li>
+<li><strong>系统缩放实验</strong>：首次在 VLA 领域同时变化数据规模（12.5%→100%）与模型规模（2B→10B），揭示数据量是泛化性能的主要瓶颈，模型容量在数十亿参数后边际收益递减。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="_8">开箱评估（未见环境与物体实例）</h3>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无动作预训练基线</td>
+<td>26%</td>
+</tr>
+<tr>
+<td>12.5% 预训练数据</td>
+<td>53%</td>
+</tr>
+<tr>
+<td>100% 预训练数据</td>
+<td>75%</td>
+</tr>
+<tr>
+<td>2B 模型</td>
+<td>61%</td>
+</tr>
+<tr>
+<td>5B 模型</td>
+<td>75%</td>
+</tr>
+<tr>
+<td>10B 模型</td>
+<td>79%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10">下游微调（每任务平均 &lt;10 小时数据）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>平均成功率</th>
+<th>平均进度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Xiaomi-Robotics-1</td>
+<td>75%</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>40%</td>
+<td>66%</td>
+</tr>
+</tbody>
+</table>
+<p>打印机加纸任务从最佳基线 20% 提升至 70%（由表内数值 20%→70% 计算）。</p>
+<h3 id="_9">模拟基准对比</h3>
+<table>
+<thead>
+<tr>
+<th>基准</th>
+<th>Xiaomi-Robotics-1</th>
+<th>最佳基线</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RoboCasa（24 任务）</td>
+<td>74.5%</td>
+<td>72.6%（World2Act）</td>
+</tr>
+<tr>
+<td>RoboCasa365（365 任务）</td>
+<td>57.4%</td>
+<td>46.6%（ABot-M0.6）</td>
+</tr>
+<tr>
+<td>VLABench（100 类别）</td>
+<td>59.1% SR</td>
+<td>53.2%（ERVLA）</td>
+</tr>
+<tr>
+<td>RoboDojo（42+ 任务）</td>
+<td>20.07 分</td>
+<td>13.07 分（Hy-Embodied-0.5-VLA）</td>
+</tr>
+</tbody>
+</table>
+<p>RoboDojo 中 Memory 维度得分 7.81 低于 Hy-Embodied-0.5-VLA 的 13.37，因未纳入历史观测。</p>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li>预训练缩放实验仅使用约 2 万小时 UMI 数据（非全部 10 万小时），受计算预算限制，完整数据下的缩放行为论文未明确。</li>
+<li>后训练评估任务在后训练数据集中出现过，仅环境与物体实例未见，无法验证完全新颖任务组合的泛化。</li>
+<li>RoboDojo 基准未纳入历史观测，Memory 维度显著落后于显式建模记忆的基线。</li>
+<li>真实机器人高效适应任务仅报告进度里程碑定义，未提供定量成功率数据。</li>
+<li>模型缩放实验中 2B 与 10B 差距（61%→79%）小于数据翻倍差距（50%→100% 数据带来 6 个百分点提升），表明当前数据规模下模型容量已接近饱和。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>复现优先级</strong>：先核对自动标注流水线的生产者-消费者实现——CPU 线程与内存文件系统的交互是两周完成 10 万小时标注的关键，若此处吞吐不足，整个预训练数据管线将成为瓶颈。</li>
+<li><strong>数据采样比例</strong>：后训练中自研机器人数据占比 8.5/10 是刻意设计，直接复现时若自研数据不足，需按比例缩减而非简单替换，否则跨具身迁移效果会显著下降。</li>
+<li><strong>动作空间统一</strong>：手臂采用相对增量末端执行器位姿并统一坐标系方向，基座与腰部用速度/位置增量表示，缺失维度在损失中掩码。下游团队接入新机器人时，必须先完成这一动作空间对齐，否则模型输出无法直接执行。</li>
+<li><strong>最易踩坑处</strong>：DiT 对动作 token 的注意力排除机制——若移除该设计，模型会退化为复制 VLM 输出而非基于视觉上下文生成，导致动作精度骤降。复现时务必保留此约束。</li>
+<li><strong>微调协议</strong>：使用异步训练方案（文献[8]），低数据设置下每任务平均 &lt;10 小时即可达到 75% 成功率，但需注意评估为每任务 10 次试验，方差较大，建议增加试验次数以稳定结论。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.15330</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">RT-1</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_dataset_droid/">DROID 机器人操作数据集</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_xiaomi_robotics_1_scaling_vision_languag_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_dataset_droid/">
+          <span class="entry-type">数据集</span>
+          <h3>DROID 机器人操作数据集</h3>
+          <p>一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">
+          <span class="entry-type">论文</span>
+          <h3>RT-1</h3>
+          <p>RT-1（Robotics Transformer）是Google…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">两阶段训练架构</a></li>
+<li><a href="#_4">模型架构关键设计</a></li>
+<li><a href="#_5">数据采样与效率优化</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#_8">开箱评估（未见环境与物体实例）</a></li>
+<li><a href="#10">下游微调（每任务平均 &lt;10 小时数据）</a></li>
+<li><a href="#_9">模拟基准对比</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

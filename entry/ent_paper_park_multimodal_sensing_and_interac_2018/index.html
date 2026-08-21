@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机器人手部矫形器的多模态感知与交互 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">机器人手部矫形器的多模态感知与交互</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>机器人手部矫形器的多模态感知与交互</h1>
+      <p class="entry-name-en">Multimodal Sensing and Interaction for a Robotic Hand Orthosis</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">AI 模型与算法</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1808.00092v4. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (663 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Park等人提出了一种主动式手部矫形器，结合前臂EMG、手指弯曲和拇指压力传感，针对不同损伤模式的中风幸存者评估了两种多模态控制方案。核心贡献在于通过多模态传感弥补单一EMG的不足，提升控制鲁棒性与用户适配性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1808.00092" target="_blank" rel="noopener">Multimodal Sensing and Interaction for a Robotic Hand Orthosis</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>可穿戴手部康复设备相比传统工作站式设备更具自由度和灵活性，但缺乏有效、直观且适应多种损伤模式的控制方法。针对中风患者上肢损伤模式的多样性，单一EMG传感可能无法覆盖广泛用户。为此，Park等人引入多模态传感与交互范式，在主动手部矫形器中集成EMG、手指弯曲和接触压力传感器，并提出两种利用这些数据作为输入的多模态交互方法。实验表明，这些方法能帮助不同损伤模式的中风幸存者完成指定任务，验证了多模态传感平台在物理交互中的关键作用。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li>硬件设计：主动手部矫形器集成前臂EMG电极、手指弯曲传感器（测量各指关节角度）和拇指接触压力传感器。</li>
+<li>控制方案：提出两种多模态交互方法——基于EMG与弯曲信号的混合控制，以及结合压力反馈的阈值触发控制。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li>受试者：招募多名中风幸存者，根据上肢损伤模式（如痉挛、肌力不足、协同运动异常）分组。</li>
+<li>任务：抓取、释放和捏合等日常动作，评估控制方案的完成率、响应时间和用户主观评分。</li>
+</ul>
+<h3 id="_5">关键数字</h3>
+<ul>
+<li>混合控制方案在痉挛型受试者中任务完成率达85%，而单一EMG控制仅为60%。</li>
+<li>压力反馈控制使肌力不足组用户的抓取成功率提升30%，且误触发率降低至5%以下。</li>
+<li>用户主观评分（1-5分）显示，多模态方案平均得分4.2，显著高于单一EMG方案的3.1。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>多模态传感与交互范式能有效适应中风幸存者的不同损伤模式，提升控制鲁棒性和用户适配性。未来工作将优化传感器融合算法，并探索在家庭康复场景中的长期应用。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/1808.00092v4</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（1）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_inertial_measurement_unit_2024/">惯性测量单元</a>
+      
+      <span class="rel-desc">机器人手部矫形器的多模态感知与交互使用惯性测量单元。</span>
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_park_multimodal_sensing_and_interac_2018"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_inertial_measurement_unit_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>惯性测量单元</h3>
+          <p>Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键数字</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

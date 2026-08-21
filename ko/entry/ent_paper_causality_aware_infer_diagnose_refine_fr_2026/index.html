@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</h1>
+      <p class="entry-name-en">A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptation in VLA Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-language-action (VLA) models predict sequential actions to execute tasks specified by language instructions, conditioned on visual observations and proprioceptive states. However, how to fuse modalities in VLA models remains an open problem, since robot manipulation involves dynamic phases, such as long-distance movements and close-range interactions, in which the importance of visual.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.25516" target="_blank" rel="noopener">arXiv:2607.25516 A Causality-aware Infer-diagnose-refine Framework for Test-time Modality Adaptat</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 IDR(Infer-Diagnose-Refine) 프레임워크를 제안한다. 이는 모델에 구애받지 않는(test-time) 모달리티 적응 방법으로, 인과적 개입을 통해 VLA 모델에서 시각적 관측의 동적 중요성을 추정하고, 이를 기반으로 게이팅하여 행동 예측을 정제한다. 이 방법은 LIBERO, SIMPLER, CALVIN 및 실제 이중 팔 플랫폼에서 다양한 VLA 백본에 대해 일관된 성능 향상을 보여주며, 핵심 기여는 테스트 시점의 인과 진단을 훈련 없는 행동 정제에 도입한 것이다.</p>
+<h2 id="_2">무엇을 바꾸는가</h2>
+<p>기존 VLA 모델은 다중 모달 융합을 정적 학습 문제로 간주하여 훈련 후 고정한다. 그러나 로봇 조작에서 시각적 중요성은 단계(장거리 이동 vs 근거리 상호작용), 아키텍처(시각 주도 vs 고유수용감각 주도) 및 환경에 따라 크게 변하며, 고정된 융합 가중치는 이러한 동적 변화에 적응할 수 없다. IDR은 "테스트 시에는 순방향 추론만 가능하고 개입할 수 없다"는 패러다임을 바꾸어, 추론 시 능동적으로 반사실적 시나리오를 구성하여 모달리티 기여도를 진단하고 이를 기반으로 출력을 수정한다. 이 과정에서 기울기 업데이트나 모델 미세 조정이 전혀 필요 없다.</p>
+<p>이 변화의 핵심은 "모달리티 중요성"을 암시적이고 관측 불가능한 융합 가중치에서 명시적이고 측정 가능한 인과 효과 신호로 전환하는 것이다. 모델 파라미터를 변경하지 않고 모델 출력의 생성 경로를 변경하여, 동결된 모델도 동적 모달리티 인식 능력을 얻을 수 있게 한다. 이는 대규모 모델을 재훈련할 수 없지만 새로운 환경에 적응해야 하는 배포 시나리오에 새로운 해결책을 제공한다.</p>
+<h2 id="_3">방법 분해</h2>
+<p>IDR 프레임워크는 세 단계로 구성되며, 각 제어 단계에서 세 번의 순방향 추론(실측 1회, 반사실 2회)을 수행한다:</p>
+<h3 id="infer">Infer: 제로 패딩 개입</h3>
+<ul>
+<li>실측 기본 행동: a_base,t = π_θ*(v_t, s_t, l)</li>
+<li>시각 반사실: a_no_img,t = π_θ*(0_v, s_t, l), 시각 입력을 전부 0 텐서로 대체</li>
+<li>고유수용감각 반사실: a_no_prop,t = π_θ*(v_t, 0_s, l), 고유수용감각 입력을 전부 0 텐서로 대체</li>
+<li>가우시안 노이즈나 평균 채움 대신 제로 패딩을 선택하는 이유는 결정론적이고 더 완전한 모달리티 정보 제거를 제공하여 더 깨끗한 반사실 신호를 생성하기 때문이다.</li>
+</ul>
+<h3 id="diagnose">Diagnose: 노름 기반 인과 효과 정량화</h3>
+<ul>
+<li>행동 편차: Δ_img,t = a_base,t − a_no_img,t; Δ_prop,t = a_base,t − a_no_prop,t</li>
+<li>인과 효과 크기: E_img,t = ‖Δ_img,t‖₂; E_prop,t = ‖Δ_prop,t‖₂</li>
+<li>큰 E_img,t는 모델이 시각에 크게 의존함(예: 근거리 상호작용)을 나타내고, 작은 값은 시각 중요성이 억제됨(예: 장거리 이동)을 나타낸다.</li>
+</ul>
+<h3 id="refine">Refine: 게이팅 잔차 융합</h3>
+<ul>
+<li>게이팅 신호: g_t = 𝕀[E_img,t &lt; τ], τ는 기준 모델에서 시각 관측의 평균 인과 효과로 설정</li>
+<li>시각 중요성이 억제될 때(g_t=1), 보정 Δ_img,t를 주입하여 보상하고, 그렇지 않으면 기본 행동을 유지</li>
+<li>유계 고유수용감각 정규화기: w_prop,t = β·min(1, E_prop,t/(E_img,t+ϵ)); u_prop,t = clip(Δ_prop,t, −λ, λ)</li>
+<li>최종 행동: a_final,t = a_base,t + g_t·(αΔ_img,t + w_prop,t·u_prop,t)</li>
+<li>하이퍼파라미터: β=0.05, λ=0.1, α=0.08</li>
+</ul>
+<p>핵심 설계 결정: 게이팅은 균일 개입이 아닌 선택적 개입을 구현하여 과도한 보정을 방지하고, 고유수용감각 정규화기는 저주파 제어 교란을 제한하여 고주파 떨림을 방지하며, VLA 사전 지식을 유지하면서 시각 중요성을 적응적으로 조절하여 맹목적 실행을 피한다.</p>
+<h2 id="_4">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>테스트 시점 인과 진단 패러다임</strong>: 반사실적 개입을 VLA 테스트 시점 적응에 체계적으로 처음 도입하여, 모달리티 중요성을 암시적 가중치에서 측정 가능한 인과 효과 신호로 전환하고, 훈련 없이 동적 모달리티 인식 능력을 얻는다.</p>
+</li>
+<li>
+<p><strong>게이팅 선택적 개입 메커니즘</strong>: 균일하게 보정을 적용하는 대신, 게이팅은 인과 효과 크기에 따라 보정 주입 여부를 결정하여 시각 주도 단계(E_img,t ≥ τ)에 대한 과도한 개입을 방지하고, 시각이 억제된 단계를 정밀하게 보상한다. 절제 실험에서 게이팅 제거(Mode D)는 성능이 97.50%에서 96.20%로 하락한다.</p>
+</li>
+<li>
+<p><strong>유계 고유수용감각 정규화기</strong>: 고유수용감각이 저수준 제어와 밀접하게 결합되어 있어 직접 수정하면 실행 안정성을 해칠 수 있음을 인식하고, 적응형 가중치 w_prop,t와 클리핑 경계 λ를 통해 영향을 제한한다. 절제 실험에서 이 모듈 제거(Mode A)는 성능이 96.30%로 하락하며, 고유수용감각 주도 변형은 LIBERO Object 스위트에서 99.20%에서 50.60%로 급락하여 시각 주도의 필요성을 검증한다.</p>
+</li>
+</ol>
+<h2 id="_5">실험 및 결과</h2>
+<p>실험은 시뮬레이션(LIBERO, SIMPLER, CALVIN)과 실제 이중 팔 플랫폼을 포함하며, 네 가지 VLA 백본(π_0.5, X-VLA, VLA-Adapter, OpenVLA-OFT)을 평가한다.</p>
+<p><strong>LIBERO 벤치마크(성공률 %)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>기준 Avg</th>
+<th>+IDR Avg</th>
+<th>향상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLA-Adapter</td>
+<td>95.10</td>
+<td>96.50</td>
+<td>+1.40</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>96.25</td>
+<td>97.50</td>
+<td>+1.25</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>95.65</td>
+<td>96.55</td>
+<td>+0.90</td>
+</tr>
+<tr>
+<td>X-VLA</td>
+<td>96.05</td>
+<td>96.50</td>
+<td>+0.45</td>
+</tr>
+</tbody>
+</table>
+<p><strong>SIMPLER 벤치마크(X-VLA, Avg %)</strong>: Google VM은 81.15에서 82.13(+0.98)으로, Google VA는 72.57에서 78.90(+6.33)으로, WidowX는 93.75에서 95.83(+2.08)으로 향상.</p>
+<p><strong>CALVIN(ABC→D, Avg Len)</strong>: X-VLA는 4.22에서 4.44(+0.22)로, VLA-Adapter는 4.39에서 4.43(+0.04)으로 향상.</p>
+<p><strong>실제 세계</strong>: 평균 성공률이 56.5%에서 75.3%(+18.8%)로 향상, 완료 시간이 53.6초에서 41.5초로 단축. Organize Table 장기 과제의 완전 완료율이 0.0%에서 33.3%로 향상, 평균 완료 단계가 2.17에서 4.00으로 증가.</p>
+<p><strong>절제 실험</strong>: 제로 패딩 개입이 가우시안 노이즈(96.50%)와 평균 채움(96.45%)보다 우수; α=0.08이 최적; τ=7(근사 평균값)이 최적이며, 균일 개입(τ=999)은 기준선보다 낮음; 개입 방향 반전(Mode F)은 95.05%로 하락하여 모델이 인과 개입의 크기와 방향 모두에 민감함을 확인.</p>
+<h2 id="_6">경계 및 한계</h2>
+<p>저자가 명시적으로 인정한 주요 한계는 각 제어 단계에서 세 번의 순방향 추론이 필요하여 추론 지연이 증가한다는 점이다. 시뮬레이션에서는 이 오버헤드가 작업 완료에 영향을 미치지 않지만(환경이 이산 단계 경계에서 진행됨), 실제 세계 배포에서는 전체 완료 시간이 추론 지연과 실행 효율에 따라 달라진다. 논문은 훈련 데이터 양, 구체적 하드웨어 플랫폼 및 추론 빈도 수치를 명시적으로 언급하지 않는다. 또한 IDR의 개선 폭은 기준 모델의 시각 중요성 패턴에 의존한다 — X-VLA는 이미 고유수용감각 주도 기준선이므로 향상 폭이 작고(+0.45), 이는 시각 활용이 불충분한 모델에 더 큰 이점을 제공함을 시사한다. 논문이 수행하지 않은 것: 온라인 인과 진단을 훈련에 증류하지 않았으며, 향후 작업은 훈련 중 증류를 탐구하여 암시적 모달리티 인식 적응을 구현하고 테스트 시점 계산 오버헤드를 피하는 것이다.</p>
+<h2 id="_7">공학적 시사점</h2>
+<p>재현 시 세 가지 핵심 사항을 먼저 확인해야 한다: 첫째, 개입 임계값 τ의 설정 — 논문은 기준 모델에서 시각 관측의 평균 인과 효과로 설정할 것을 권장하며(실험에서 최적값 τ=7), 모델마다 다시 통계를 내야 하며 직접 사용할 수 없다; 둘째, 하이퍼파라미터 α=0.08, β=0.05, λ=0.1은 LIBERO에서 튜닝되었으며, 새 환경이나 모델로 전이할 때 재검증이 필요하고, 특히 α가 너무 크면(≥0.5) 성능이 크게 저하된다; 셋째, 제로 패딩 개입은 결정론적 연산이지만 반사실적 입력이 원본 입력과 동일한 차원인지, 모델이 전부 0 텐서에 대해 안정적으로 응답하는지 확인해야 한다.</p>
+<p>가장 쉽게 빠지는 함정은 고유수용감각 주도의 유혹이다 — 표 VIII은 고유수용감각 보정을 직접 적용하면 Object 스위트가 99.20%에서 50.60%로 급락함을 보여주며, 반드시 시각 주도를 유지하고 고유수용감각은 유계 정규화로만 사용해야 한다. 배포 시 세 번의 순방향 추론 지연 예산을 평가해야 하며, 추론 빈도가 제한된 경우 게이팅 활성화 시에만 반사실을 계산하는 것을 고려할 수 있지만(실제로는 E_img,t를 먼저 추정해야 게이팅 상태를 판단할 수 있으므로 건너뛸 수 없음). 하류 팀에게는 먼저 대상 모델에 대한 시각 중요성 패턴 분석(표 I 방법)을 수행하여 IDR 적용 가치가 있는지 판단할 것을 권장한다 — 모델이 이미 고도로 시각 주도적이면(예: SIMPLER Google 변형, R_img 92.9%), 향상 여지가 제한적이다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_causality_aware_infer_diagnose_refine_fr_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">
+          <span class="entry-type">논문</span>
+          <h3>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model</h3>
+          <p>X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (X-VLA),…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model</h3>
+          <p>VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model (VLA-Adapter), is a…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#infer">Infer: 제로 패딩 개입</a></li>
+<li><a href="#diagnose">Diagnose: 노름 기반 인과 효과 정량화</a></li>
+<li><a href="#refine">Refine: 게이팅 잔차 융합</a></li>
+</ul>
+</li>
+<li><a href="#_4">핵심 혁신</a></li>
+<li><a href="#_5">실험 및 결과</a></li>
+<li><a href="#_6">경계 및 한계</a></li>
+<li><a href="#_7">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

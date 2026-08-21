@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline</h1>
+      <p class="entry-name-en">Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipeline</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文是 AMD 团队在 Physical AI 挑战赛中的技术报告，展示了一套完全基于 AMD 开放硬件（MI/Radeon/Ryzen）与 ROCm 软件栈的 Real2Sim2Real 全流程，覆盖 VLA 操控策略的仿真生成、训练、部署与 RL 训练。核心贡献在于证明 VLA 操控研究无需绑定 CUDA 生态，并提出了 3DGS 重建真实背景 + Genesis 物理仿真的混合数据管线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.22997" target="_blank" rel="noopener">arXiv:2607.22997 Real2Sim2Real for Vision-Language-Action Manipulation: An AMD ROCm-Based Pipelin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它改变的是 VLA 操控研究对单一厂商封闭生态的路径依赖。过去，从仿真生成（通常依赖 CUDA 加速的物理引擎）到 VLA 训练（PyTorch/CUDA）再到边缘部署（TensorRT），每个环节都隐含 NVIDIA 硬件假设，这抬高了具身智能研究的迭代门槛。作者用四个 Demo 证明，AMD 的 ROCm + HIP 栈（已上游到 PyTorch 和 JAX）可以端到端覆盖这一流程，且无需 CUDA 转换层。</p>
+<p>更关键的是，它改变了 sim-to-real 数据生成的思路。传统做法要么纯仿真（视觉差距大），要么纯真实数据（成本高、规模小）。作者提出的 Real2Sim 混合表示——用 3DGS 重建真实静态场景、用程序化方式注入动态交互物体——在保留真实视觉保真度的同时，获得了仿真独有的无限 rollout 能力。这为视觉多样化的操控任务提供了一条可扩展的数据路径。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">总体架构：三层开放栈</h3>
+<p>开放硅片（MI/Radeon/Ryzen）→ ROCm + HIP 软件栈（上游到 PyTorch/JAX）→ 开源社区（LeRobot、Hugging Face、ModelScope）。所有管线原生运行于 ROCm，无 CUDA 转换层。</p>
+<h3 id="demo-1sim-to-real">Demo 1：Sim-to-Real 操控闭环</h3>
+<ol>
+<li>Genesis 物理仿真器生成示范 → 2. 转换为 LeRobot 数据集格式 → 3. AMD 平台上训练 SmolVLA-450M → 4. 仿真验证 → 5. 部署到真实 Franka 机械臂。合成数据生成在目标抓取任务分布上达到 100% 成功率。</li>
+</ol>
+<h3 id="demo-3real2sim">Demo 3：Real2Sim 合成数据管线（核心方法）</h3>
+<p>四阶段流程：
+1. <strong>3DGS 重建</strong>：Radeon GPU + ROCm 对真实环境高保真重建，生成可实时渲染的高斯场景表示
+2. <strong>场景注入</strong>：高斯点云作为静态背景加载到 Genesis，引入 Franka 机械臂 + 带物理属性（质量、摩擦、碰撞几何）的交互物体
+3. <strong>自动标注</strong>：Genesis 生成末端执行器轨迹、多视角 RGB、深度图、分割掩码、关节状态、离散/连续动作，导出为 LeRobot 格式，可关联语言标注
+4. <strong>随机化控制</strong>：物体布局、材质/纹理、光照、相机视角、机器人初始姿态、任务目标</p>
+<p>关键设计决策：混合表示兼顾真实场景视觉保真度（避免"仿真外观"扩大 sim-to-real 差距）与仿真无限 rollout 能力。该管线同时作为 AMD 统一计算能力的压力测试——3DGS 重建、物理仿真、transformer 训练在同一块 Radeon PRO GPU 上完成。</p>
+<h3 id="demo-4unilab-rl">Demo 4：Unilab RL 训练</h3>
+<p>对 Unitree Go2（四足）和 G1（人形）进行并行批量仿真训练，任务包括全身跟踪（WBT）、行走、摇杆指令、动态翻转，使用 FastSAC、FlashSAC、PPO 混合算法匹配任务特性。</p>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>Real2Sim 混合表示</strong>：3DGS 重建真实静态背景 + 程序化动态物体，这是首次将神经渲染与物理仿真结合用于 VLA 数据生成。它解决了纯仿真视觉差距大、纯真实数据成本高的两难，且开源为 vk-gsplat-plugin（Vulkan 实时 3DGS 渲染器）。</p>
+</li>
+<li>
+<p><strong>全流程 ROCm 覆盖</strong>：从 3DGS 重建、物理仿真到 VLA 训练、RL 训练，全部在 AMD 硬件 + ROCm 上完成，无需切换到 CUDA 专用栈。这打破了具身智能研究对单一厂商的锁定，为硬件多样化提供了实证。</p>
+</li>
+<li>
+<p><strong>任务分离诊断</strong>：Demo 2 将运动能力与语义接地分离，可诊断失败模式——抓取良好但选错物体表明语言-视觉融合缺陷，反之亦然。这种诊断思路对 VLA 策略调试有方法论价值。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>Demo 1 关键指标：SmolVLA-450M 微调在 4,000 训练步下约 7–11 分钟收敛，峰值 VRAM 低于 2.4GB；从合成数据生成到真实部署完整循环 1 小时内完成；纯仿真训练策略直接迁移到真实 Franka，无需真实微调。</p>
+<p>Demo 4 RL 训练吞吐量（steps/second，越高越好）：</p>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>FastSAC (G1 WBT)</th>
+<th>FastSAC (G1 Walk)</th>
+<th>FlashSAC (Go2 Joy.)</th>
+<th>PPO (G1 Flip)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RTX 4090 (baseline)</td>
+<td>58.8</td>
+<td>18.3</td>
+<td>6.0</td>
+<td>109.0</td>
+</tr>
+<tr>
+<td>RTX 4090 + AMD 9950X3D</td>
+<td>18.5</td>
+<td>3.0</td>
+<td>1.1</td>
+<td>16.4</td>
+</tr>
+<tr>
+<td>AMD 8060S + AI MAX 395</td>
+<td>33.6</td>
+<td>9.4</td>
+<td>4.2</td>
+<td>19.6</td>
+</tr>
+<tr>
+<td>Apple M5 Max</td>
+<td>75.0</td>
+<td>18.8</td>
+<td>4.5</td>
+<td>16.8</td>
+</tr>
+</tbody>
+</table>
+<p>关键观察：RTX 4090 在 PPO/G1 Flip 领先（109.0 steps/s），但在 FlashSAC/Go2 Joy 上最慢（6.0 steps/s）；"RTX 4090 + AMD 9950X3D"配置全面低于纯 RTX 4090，表明 RL 训练部分受 CPU/主机限制；集成 AMD Ryzen AI MAX 395（8060S iGPU + 统一内存）在部分任务优于独立 GPU + AMD CPU 配置。作者明确强调跨硬件基准必须按算法逐个解读，吞吐量高度依赖任务而非纯硬件。</p>
+<h2 id="_6">边界与局限</h2>
+<p>作者未在真实机器人上部署 Demo 3 的 Real2Sim 管线结果，仅描述管线本身。Demo 2 和 Demo 3 未提供定量成功率或误差指标。Demo 1 中用于播种的程序化随机化"相对简单"，仅足以弥合基本拾放任务的 sim-to-real 差距。Demo 4 的跨硬件基准受 CPU/主机限制影响，不能简单归因于 GPU 算力。论文未明确 Real2Sim 管线在视觉更复杂场景下的泛化能力，也未对比与纯仿真或纯真实数据管线的定量差异。</p>
+<h2 id="_7">工程启示</h2>
+<p>复现时先核对硬件匹配：Demo 1 在 RDNA4（Radeon AI PRO R9700）和 RDNA3.5（Radeon PRO W7900）上原生运行 ROCm + PyTorch，无 CUDA 转换层；Radeon Cloud Platform 可免费复现全部四个管线，Real2Sim 笔记本在 R9700 或 W7900 节点上约 30 分钟完成端到端流程。最容易踩坑的是 Demo 4 的 RL 吞吐量基准——它受 CPU/主机限制显著，RTX 4090 + AMD CPU 组合反而低于纯 RTX 4090，因此对比硬件时应固定主机配置，且按算法逐个解读而非聚合。Demo 3 的 3DGS 重建依赖 Vulkan 插件（vk-gsplat-plugin），需确认 ROCm 版本与 PyTorch 上游兼容性。SmolVLA-450M 训练占用低于 2.4GB VRAM，意味着消费级显卡即可复现，但合成数据生成质量取决于 3DGS 重建保真度，建议先验证重建场景的视觉质量再投入大规模数据生成。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.22997</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_software_lerobot_2024/">LeRobot</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（1）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_real2sim2real_vision_language_action_man_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SmolVLA</h3>
+          <p>SmolVLA 是 Hugging Face、Sorbonne University、valeo.ai 与 École Normale Supérieure Paris-Saclay 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_lerobot_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>LeRobot</h3>
+          <p>覆盖数据集格式、遥操作、训练和部署的端到端PyTorch库。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">总体架构：三层开放栈</a></li>
+<li><a href="#demo-1sim-to-real">Demo 1：Sim-to-Real 操控闭环</a></li>
+<li><a href="#demo-3real2sim">Demo 3：Real2Sim 合成数据管线（核心方法）</a></li>
+<li><a href="#demo-4unilab-rl">Demo 4：Unilab RL 训练</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

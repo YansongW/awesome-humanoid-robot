@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</h1>
+      <p class="entry-name-en">Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomotion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): xiaoze_P042. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] guardrail fix: unverifiable numbers corrected to full-text-verbatim or marked as computed/未提取 (catchup sweep audit). 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种基于强化学习的统一全身控制策略，在 Unitree Go1 四足机器人搭载 6-DoF WidowX 机械臂的平台上，实现腿臂协同的移动操作。核心贡献在于提出 Regularized Online Adaptation 解决 Sim2Real 可实现性差距，以及 Advantage Mixing 解决统一策略训练中操作与运动目标的冲突，在真实世界拾取任务中显著优于 MPC+IK 基线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2210.10044" target="_blank" rel="noopener">arXiv:2210.10044 Deep Whole-Body Control: Learning a Unified Policy for Manipulation and Locomoti</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>传统腿臂移动操作采用分层解耦架构（腿部 MPC 运动控制 + 手臂 IK 操作控制），这种设计存在两个根本缺陷：一是模块间错误传播导致运动不自然、不协调；二是缺乏 Bernstein 所强调的肢体运动协同的生物学合理性。现有学习型方法（如 [8]）虽引入学习，但仍保持半耦合分层模型，未真正解决协调问题。</p>
+<p>本文真正改变的是将操作与运动从"两个独立优化问题"重构为"一个联合优化问题"。作者指出，直接端到端训练统一策略会陷入局部最优——策略只跟随末端执行器指令而忽略腿部动作空间探索。这一观察揭示了统一策略训练的核心矛盾：操作奖励信号远强于运动奖励，导致腿部退化。本文通过 Advantage Mixing 的课程化优势加权，以及 Regularized Online Adaptation 的单阶段训练范式，使统一策略成为可行方案，而非仅仅是理论上的优雅构想。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="regularized-online-adaptation">Regularized Online Adaptation（单阶段训练）</h3>
+<ul>
+<li>随机初始化特权编码器 μ、适应模块 φ、统一策略 π，初始化空回放缓冲区 D</li>
+<li>每轮迭代中，当 <code>itr mod H == 0</code>（H=20）时用 φ 计算 <code>z_t^φ = φ(s_{t-10:t-1}, a_{t-11:t-2})</code>，否则用 μ 计算 <code>z_t^μ = μ(e_t)</code></li>
+<li>动作 <code>a_t = π((s_t, a_{t-1}, z_t))</code>，存储 <code>((s_t,e_t), a_t, r_t, (s_{t+1},e_{t+1}), z_t^φ, z_t^μ)</code> 到 D</li>
+<li>当 <code>itr mod H == 0</code> 时优化 <code>||sg[z_t^μ] - z_t^φ||_2</code> 更新 θ_φ；否则优化 <code>-J(θ_π,θ_μ) + λ||z_t^μ - sg[z_t^φ]||_2</code> 更新 θ_π, θ_μ</li>
+<li>λ 按线性课程从 0 到 1：<code>λ = min(max((itr-5000)/5000, 0), 1)</code></li>
+<li>关键设计：μ 与策略 π 端到端联合训练，同时正则化 z^μ 避免与 z^φ 偏差过大；φ 通过在线模仿 z^μ 训练。RMA 是本文方法的特例（λ 恒为 0 且 φ 在策略收敛后才训练）</li>
+</ul>
+<h3 id="advantage-mixing">Advantage Mixing（课程化优势加权）</h3>
+<ul>
+<li>训练目标从 <code>log(π(a_t^arm|s_t)π(a_t^leg|s_t))(A^manip + A^loco)</code> 改写为：
+  <code>log π(a_t^arm|s_t)(A^manip + βA^loco) + log π(a_t^leg|s_t)(βA^manip + A^loco)</code></li>
+<li>β 从 0 线性增加到 1：<code>β = min(t/T_mix, 1)</code></li>
+<li>设计理由：先分别将操作回报差异归因于手臂动作、运动回报差异归因于腿部动作，避免统一策略只优化末端执行器指令而忽略腿部探索；随后逐步退火加权优势总和，鼓励学习帮助运动和操作的腿/臂动作</li>
+</ul>
+<h3 id="_3">策略网络结构</h3>
+<ul>
+<li>多层感知机，输入当前状态 <code>s_t ∈ ℝ^75</code> 与环境外在变量 <code>z_t ∈ ℝ^20</code> 拼接</li>
+<li>第一隐藏层 128 维，之后分裂为 2 个头，每个头 2 个隐藏层各 128 维</li>
+<li>两头的输出拼接，分别输出腿动作 <code>a_t^leg ∈ ℝ^12</code> 与臂动作 <code>a_t^arm ∈ ℝ^6</code></li>
+<li>采用关节空间位置控制（而非操作空间控制），理由：能学习避免自碰撞并减小 Sim-to-Real 差距</li>
+</ul>
+<h3 id="_4">地形生成与命令采样</h3>
+<ul>
+<li>分形噪声生成地形：octaves=2，lacunarity=2.0，gain=0.25，frequency=10 Hz，amplitude=0.15 m</li>
+<li>粗糙地形强制足部离地高度，替代平坦地形所需的复杂奖励</li>
+<li>EE 指令球坐标 (l, p, y) 经 <code>T(S2C[(l,p,y)]) + (p_x^base, p_y^base, p_z^base)</code> 得到世界坐标；<code>p_z^base</code> 设为常数 0.53，T 中 row 和 pitch 设为 0</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>Regularized Online Adaptation 的单阶段范式</strong>：不同于 RMA 的两阶段教师-学生方案（先训练教师策略再蒸馏学生），本文让特权编码器 μ 与策略 π 端到端联合训练，并通过 λ 课程正则化强制 z^μ 与 z^φ 对齐。这消除了可实现性差距（realizability gap），使部署时的适应模块与训练时的特权信息编码器行为一致，而非事后逼近。</p>
+</li>
+<li>
+<p><strong>Advantage Mixing 的课程化优势分解</strong>：将统一策略的联合优势分解为手臂和腿部各自的加权优势，β 从 0 到 1 的课程设计使策略先分别学习操作和运动任务，再逐步合并。这直接解决了统一策略训练中操作奖励主导导致腿部退化的局部最优问题，是端到端全身控制可行的关键机制。</p>
+</li>
+<li>
+<p><strong>低成本硬件平台的全栈部署</strong>：在 6K USD 的 Unitree Go1 + WidowX 平台上实现完全无束缚的机载推理（策略与适应模块在 Raspberry Pi 4 上 50 Hz 运行），展示了学习型全身控制在学术实验室可复现的硬件成本范围内达到实用性能。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="4-vs-vs">仿真对比（表4，统一 vs 分离 vs 非协调）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>统一策略</th>
+<th>分离策略</th>
+<th>非协调策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存活率</td>
+<td>97.1±0.61</td>
+<td>92.0±0.90</td>
+<td>94.9±0.61</td>
+</tr>
+<tr>
+<td>基座加速度</td>
+<td>1.00±0.03</td>
+<td>1.40±0.04</td>
+<td>1.03±0.01</td>
+</tr>
+<tr>
+<td>速度误差</td>
+<td>0.31±0.03</td>
+<td>0.43±0.07</td>
+<td>0.33±0.01</td>
+</tr>
+<tr>
+<td>EE误差</td>
+<td>0.63±0.02</td>
+<td>0.92±0.10</td>
+<td>0.73±0.02</td>
+</tr>
+<tr>
+<td>总能量</td>
+<td>50±0.90</td>
+<td>51±0.30</td>
+<td>50±0.28</td>
+</tr>
+</tbody>
+</table>
+<p>统一策略在相同能量消耗下达到最佳性能，EE误差较分离策略降低约 31.5%（0.92→0.63，由表4数值计算）。</p>
+<h3 id="5">手臂工作空间与扰动鲁棒性（表5）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>统一策略</th>
+<th>分离策略</th>
+<th>非协调策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工作空间 (m³)</td>
+<td>0.82±0.02</td>
+<td>0.58±0.10</td>
+<td>0.65±0.02</td>
+</tr>
+<tr>
+<td>扰动下存活率</td>
+<td>0.87±0.04</td>
+<td>0.64±0.06</td>
+<td>0.77±0.06</td>
+</tr>
+</tbody>
+</table>
+<p>统一策略工作空间扩大约 41%（0.58→0.82 m³）、扰动存活率提升约 36%（0.64→0.87，均由表5数值计算）。</p>
+<h3 id="ood-sim2real-6">OOD 环境 Sim2Real 比较（表6）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>域随机化</th>
+<th>RMA</th>
+<th>Regularized OA</th>
+<th>专家(带正则)</th>
+<th>专家(无正则)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可实现性差距</td>
+<td>-</td>
+<td>0.31±0.01</td>
+<td>2e-4±0.00</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>存活率</td>
+<td>95.8±0.2</td>
+<td>95.2±0.2</td>
+<td>97.4±0.1</td>
+<td>97.8±0.2</td>
+<td>98.3±0.2</td>
+</tr>
+<tr>
+<td>EE误差</td>
+<td>0.40±0.00</td>
+<td>0.26±0.04</td>
+<td>0.21±0.00</td>
+<td>0.21±0.00</td>
+<td>0.21±0.00</td>
+</tr>
+<tr>
+<td>总能量</td>
+<td>21.9±0.53</td>
+<td>27.3±0.95</td>
+<td>25.9±0.56</td>
+<td>25.8±0.49</td>
+<td>25.6±0.30</td>
+</tr>
+</tbody>
+</table>
+<p>Regularized Online Adaptation 相比 RMA 在 EE 误差上减少 20%，可实现性差距从 0.31 降至 2e-4。</p>
+<h3 id="71010">真实世界拾取任务（表7/10，10次试验平均）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>方法</th>
+<th>成功率</th>
+<th>TTC (s)</th>
+<th>IK失败率</th>
+<th>自碰撞率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>简单(3点)</td>
+<td>Ours</td>
+<td>0.8</td>
+<td>5.0</td>
+<td>-</td>
+<td>0</td>
+</tr>
+<tr>
+<td>简单(3点)</td>
+<td>MPC+IK</td>
+<td>0.3</td>
+<td>17</td>
+<td>0.4</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>困难(5点)</td>
+<td>Ours</td>
+<td>0.8</td>
+<td>5.6</td>
+<td>-</td>
+<td>0</td>
+</tr>
+<tr>
+<td>困难(5点)</td>
+<td>MPC+IK</td>
+<td>0.1</td>
+<td>22.0</td>
+<td>0.2</td>
+<td>0.5</td>
+</tr>
+</tbody>
+</table>
+<p>本方法成功率较 MPC+IK 提升约 2.7–8 倍、任务完成时间缩短约 71–75%（均由表7数值计算得出），自碰撞率为零。</p>
+<h3 id="_7">训练规模</h3>
+<ul>
+<li>10000 次迭代/训练批次，即 20 亿样本（2 billions）和 20 万次梯度更新</li>
+<li>PPO：clip range 0.2，学习率 2e-4，折扣因子 0.99，GAE λ 0.95，环境数 5000</li>
+<li>每 episode 最多 1000 步，策略控制频率 50 Hz，仿真频率 200 Hz</li>
+</ul>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>夹爪开合不包含在策略内（"EE gripper closing and opening are not a part of the policy"），遥操作中由摇杆直接控制，视觉追踪中由脚本策略控制，限制了策略的完全自主性</li>
+<li>视觉估计不是本工作重点，失败试验主要源于 AprilTag 位置与实际物体位置不匹配，未处理遮挡和软物体等通用物体交互</li>
+<li>论文仅提供若干未来方向的第一步（"provides a first step towards several of such future directions"），具体局限未在片段中详述</li>
+<li>未实现从躯干和手臂安装的以自我为中心的相机学习基于视觉的策略，也未利用前腿攀爬障碍物拾取高处物体</li>
+<li>训练规模庞大（20 亿样本），对计算资源要求高，可能限制学术实验室复现</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现优先级</strong>：先核对 Advantage Mixing 的 β 课程实现——这是统一策略训练不陷入局部最优的关键，β 从 0 到 1 的线性增长需与训练迭代数对齐（T_mix 具体值论文未明确，需自行调参）</li>
+<li><strong>最易踩坑点</strong>：Regularized Online Adaptation 中 λ 的课程调度（<code>λ = min(max((itr-5000)/5000, 0), 1)</code>）和 H=20 的交替优化周期必须严格遵循，否则 μ 与 φ 的对齐会失败；停止梯度算子 sg 的位置不能出错</li>
+<li><strong>硬件部署注意</strong>：策略与适应模块推理在 Raspberry Pi 4 上 50 Hz 运行，WidowX 软件栈在 Nvidia TX2 上，Pi 与 TX2 之间使用 UDP 通信——需确认通信延迟是否影响 50 Hz 控制频率的稳定性</li>
+<li><strong>地形生成参数</strong>：分形噪声参数（octaves=2，lacunarity=2.0，gain=0.25，frequency=10 Hz，amplitude=0.15 m）是强制足部离地的关键，替代复杂奖励设计，复现时不可随意更改</li>
+<li><strong>训练规模预期</strong>：20 亿样本和 20 万次梯度更新是达到表 4-6 性能的必要条件，缩减训练规模可能导致统一策略退化到非协调策略水平</li>
+<li><strong>基线对比</strong>：MPC+IK 基线在真实世界任务中 IK 失败率高达 0.2-0.4，自碰撞率 0.3-0.5——若你的基线表现更好，需重新评估本方法的相对优势</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2210.10044</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_deep_whole_body_control_unified_policy_2022"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#regularized-online-adaptation">Regularized Online Adaptation（单阶段训练）</a></li>
+<li><a href="#advantage-mixing">Advantage Mixing（课程化优势加权）</a></li>
+<li><a href="#_3">策略网络结构</a></li>
+<li><a href="#_4">地形生成与命令采样</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#4-vs-vs">仿真对比（表4，统一 vs 分离 vs 非协调）</a></li>
+<li><a href="#5">手臂工作空间与扰动鲁棒性（表5）</a></li>
+<li><a href="#ood-sim2real-6">OOD 环境 Sim2Real 比较（表6）</a></li>
+<li><a href="#71010">真实世界拾取任务（表7/10，10次试验平均）</a></li>
+<li><a href="#_7">训练规模</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

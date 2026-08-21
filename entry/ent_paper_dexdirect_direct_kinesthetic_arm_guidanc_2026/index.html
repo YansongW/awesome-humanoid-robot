@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection</h1>
+      <p class="entry-name-en">DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration Collection</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>DexDirect 提出一种混合式灵巧操作演示采集界面：操作员左手通过刚性手柄直接运动引导 6-DoF 机械臂，右手通过单目摄像头控制灵巧手手指。该系统在 10 名无经验参与者的用户研究中，相比 TeleDex 和 AnyTeleop 基线，分别实现 3.2× 和 17.2× 的成功演示吞吐量提升，并将策略学习成功率推至 90%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.27784" target="_blank" rel="noopener">arXiv:2607.27784 DexDirect: Direct Kinesthetic Arm Guidance for Efficient Dexterous Demonstration</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>灵巧操作演示采集长期困在“高保真但昂贵”与“低成本但低质”的两难中。外骨骼或主从遥操作提供精确控制，但硬件成本与校准负担使其难以规模化；视觉/姿态追踪方案虽廉价，却将追踪延迟、姿态估计误差、工作空间不匹配和坐标映射认知负担引入采集链路，最终污染演示质量。DexDirect 真正改变的是：它把“手臂全局位姿”与“手指局部关节运动”这两条控制通道彻底解耦，前者用物理直接引导消除所有感知不确定性，后者仅保留视觉重定向且不参与全局位姿估计。这一设计决策的深层意义在于，它承认了灵巧操作中手臂轨迹的精度比手指关节的绝对精度更关键，且手指重定向误差可以通过策略学习在后续阶段被部分吸收——这是对现有“全感知”或“全物理”路线的一次务实折中。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">手臂通道：直接运动引导</h3>
+<ul>
+<li>操作员左手通过 3D 打印 PLA 手柄（重 0.05 kg，握持点沿手掌法线距法兰 65 mm）直接驱动重力补偿的 6-DoF 机械臂。</li>
+<li>控制模式为零位置刚度、低关节阻尼；关节级控制器运行于 200 Hz。</li>
+<li>操作前执行分阶段系统辨识：重力方向、末端负载质量与质心、关节力矩缩放、库仑摩擦。重力力矩由 MuJoCo 模型计算并作为前馈力矩命令施加。</li>
+<li>轨迹记录直接从关节编码器获取，末端位姿由正运动学计算——无姿态估计、无重定向、无逆运动学求解器、无笛卡尔运动生成器。</li>
+</ul>
+<h3 id="_4">手指通道：视觉重定向</h3>
+<ul>
+<li>掌面向摄像头（Logitech C270，距右手 45 cm）以 30 Hz 采集操作员右手，MediaPipe Hands 检测 21 个 3D 手部地标。</li>
+<li>使用 AnyTeleop 发布的基于优化的 dex-retargeting 框架，将腕部相对地标映射到 MIDAS 手，匹配手指向量并受关节限制约束。</li>
+<li>关键设计决策：不使用 webcam 估计的全局腕部位置/方向进行机器人控制——手臂独立决定手的全局位姿，视觉管线仅处理局部手指关节运动。</li>
+</ul>
+<h3 id="_5">多模态记录与策略训练</h3>
+<ul>
+<li>共同单调时钟时间戳同步：手臂与手状态 200 Hz、触觉 60 Hz、腕部图像 30 Hz；训练时对齐至 30 Hz，最近邻时间戳匹配，无时间插值。</li>
+<li>策略输入：腕部 RGB 帧下采样至 240×240，训练时随机 224×224 裁剪与颜色抖动；DINOv2 ViT-S/14 编码器生成嵌入；附加 13 维绝对手位置向量与 4 维 PaXini 触觉读数（拇指均值、拇指最大值、食指均值、食指最大值）。</li>
+<li>策略输出 19 维动作：6-DoF 末端执行器目标相对位置 + 13 个手指目标。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>物理与视觉的通道分离</strong>：手臂轨迹完全由物理引导决定，彻底消除手臂侧追踪噪声、遮挡和延迟。这不是简单的“混合”方案，而是对控制通道的职责划分——全局位姿交给物理，局部关节交给视觉，避免了单一感知模态的级联误差。</li>
+<li><strong>零校准的共位操作</strong>：无需主臂、无需操作员到机器人的手臂遥操作校准、无需手臂侧重定向。操作员直接站在工作区旁，左手引导手臂、右手控制手指，认知负担显著降低（NASA-TLX 总体 Raw TLX 得分 2.01 vs TeleDex 3.08 vs AnyTeleop 3.81）。</li>
+<li><strong>低成本高吞吐的工程实现</strong>：仅用单目 webcam 与 3D 打印手柄，在 10 名无经验参与者上实现 481 个成功演示（TeleDex 151、AnyTeleop 28），且策略学习成功率 90%（18/20）。这表明演示采集效率的提升可以直接转化为下游策略性能的改善。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>用户研究采用 10 名无经验参与者、5 个任务（Jenga 抽取、USB 拔出、Lazy Susan 旋转抓放、白板擦除、键盘打字），每任务 120 s 时间预算（Jenga 180 s），界面顺序用循环序平衡。关键结果汇总如下：</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>指标</th>
+<th>DexDirect</th>
+<th>TeleDex</th>
+<th>AnyTeleop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jenga</td>
+<td>成功率</td>
+<td>0.94±0.02</td>
+<td>0.69±0.08</td>
+<td>0.44±0.12</td>
+</tr>
+<tr>
+<td>Jenga</td>
+<td>时间 (s)</td>
+<td>10.46±0.82</td>
+<td>49.76±5.98</td>
+<td>35.50±5.42</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>成功率</td>
+<td>0.95±0.02</td>
+<td>0.81±0.04</td>
+<td>0.39±0.09</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>时间 (s)</td>
+<td>5.88±0.65</td>
+<td>10.36±1.90</td>
+<td>17.75±5.74</td>
+</tr>
+<tr>
+<td>Lazy Susan</td>
+<td>成功率</td>
+<td>0.96±0.02</td>
+<td>0.85±0.06</td>
+<td>0.50±0.13</td>
+</tr>
+<tr>
+<td>Lazy Susan</td>
+<td>时间 (s)</td>
+<td>8.36±0.49</td>
+<td>21.96±2.73</td>
+<td>47.14±11.15</td>
+</tr>
+<tr>
+<td>白板擦除</td>
+<td>成功率</td>
+<td>0.91±0.04</td>
+<td>0.56±0.12</td>
+<td>0.00±0.00</td>
+</tr>
+<tr>
+<td>白板擦除</td>
+<td>时间 (s)</td>
+<td>13.85±1.39</td>
+<td>39.10±7.82</td>
+<td>—</td>
+</tr>
+<tr>
+<td>键盘打字</td>
+<td>成功率</td>
+<td>0.71±0.04</td>
+<td>0.32±0.06</td>
+<td>0.00±0.00</td>
+</tr>
+<tr>
+<td>键盘打字</td>
+<td>时间 (s)</td>
+<td>6.60±0.32</td>
+<td>17.50±3.97</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>完成时间仅对成功任务计算；破折号表示无成功执行。相对 TeleDex 的加速：Jenga 4.8×、USB 1.8×、Lazy Susan 2.6×、白板擦除 2.8×、键盘打字 2.7×。相对 AnyTeleop（有成功试验的任务）：Jenga 3.4×、USB 3.0×、Lazy Susan 5.6×。NASA-TLX 配对 Wilcoxon 符号秩检验：相对 AnyTeleop p=0.00195，相对 TeleDex p=0.01953。子维度上，心理需求从 3.19 降至 1.77，挫败感从 2.79 降至 1.47，努力从 3.40 降至 2.17；但身体需求从 TeleDex 的 2.72 和 AnyTeleop 的 2.62 增至 3.23。策略学习：单操作员用 DexDirect 收集 200 个演示，训练扩散策略，20 个评估回合中成功率 90%（18/20）。</p>
+<h2 id="_8">边界与局限</h2>
+<p>系统固有共位设计，需要能安全、低阻抗、重力补偿引导的机器人，不支持远程遥操作；对更大或更高惯量机械臂可能不符合人体工程学。当前界面使用操作员双手控制一个手臂-手系统，阻止直接单操作员双臂控制。手指控制依赖单目地标检测和形态依赖重定向，仍易受追踪和重定向错误影响，且不提供分布式指尖力反馈。评估限于 10 名参与者、5 个短任务、1 个机器人平台和 1 个策略学习任务；评估了直接耦合的组合效应，未隔离坐标重映射、延迟和被动接触线索各自贡献。论文未明确在更复杂任务（如精密装配）或不同手部形态下的表现。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现时先核对三个关键点：一是重力补偿的系统辨识流程是否完整（重力方向、负载质量与质心、关节力矩缩放、库仑摩擦），这直接决定直接引导的顺滑度；二是手指重定向的关节限制约束是否与目标手（MIDAS）的物理极限匹配，否则会出现视觉上合理但机械上不可执行的指令；三是多模态时间戳对齐策略——最近邻匹配而非插值，意味着各传感器频率差异（200 Hz 手臂/手、60 Hz 触觉、30 Hz 图像）在训练时会被统一到 30 Hz，需确认下游策略对时间分辨率不敏感。最容易踩坑的地方是操作员身体需求增加（TLX 从 2.72 增至 3.23）——长时间采集中疲劳可能影响演示质量，建议为操作员提供前臂支撑并控制单次采集时长。若下游团队计划迁移到其他机械臂，需重新做系统辨识并验证手柄握持点偏移（65 mm）对重力补偿的影响。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.27784</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zhang_a_unified_perception_language_2025/">PLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dexdirect_direct_kinesthetic_arm_guidanc_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_a_unified_perception_language_2025/">
+          <span class="entry-type">论文</span>
+          <h3>PLA</h3>
+          <p>PLA是一个由慕尼黑工业大学提出的统一感知-语言-动作框架，用于自适应自动驾驶。其核心贡献在于将多传感器融合与GPT-4.1驱动的视觉-语言-动作架构结合，实现上下文感知、可解释且安全可控的驾驶决策。…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">手臂通道：直接运动引导</a></li>
+<li><a href="#_4">手指通道：视觉重定向</a></li>
+<li><a href="#_5">多模态记录与策略训练</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

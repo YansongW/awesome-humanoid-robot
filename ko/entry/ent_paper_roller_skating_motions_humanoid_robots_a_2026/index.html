@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors</h1>
+      <p class="entry-name-en">Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion Priors</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Humanoid roller-skating is difficult because the robot must coordinate whole-body balance, rolling contacts, and velocity-dependent posture regulation. This paper presents an adversarial motion prior based reinforcement learning framework for two humanoid roller-skating gaits: Pump Glide skating and Push Glide skating. The two gait datasets are collected independently through motion capture and.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.10815" target="_blank" rel="noopener">arXiv:2607.10815 Learning Roller-Skating Motions of Humanoid Robots Based on Adversarial Motion P</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 적대적 운동 사전(AMP) 기반 강화 학습 프레임워크를 제안하여, Booster T1 휴머노이드 로봇에서 두 가지 수동 바퀴 활강 보행(Pump Glide 및 Push Glide)의 시뮬레이션 및 실제 환경 지속 활강을 구현한다. 핵심 기여는 AMP를 수동 바퀴 구름 접촉 시나리오로 확장하고, 슬라이스 실린더 바퀴 충돌 모델과 보행 특정 커리큘럼 학습을 통해 저추진 동역학에서의 스타일 모방과 작업 추적의 결합 문제를 해결한 것이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>수동 바퀴 활강은 휴머노이드 로봇에게 본질적으로 다른 제어 문제이다: 평평한 발 지지가 구름 접촉으로 대체되고, 추진력은 전적으로 다리 운동과 바퀴-지면 마찰의 결합에서 발생하며, 시스템의 저추진 정도가 크게 증가한다. 기존 AMP 연구는 주로 보행 운동을 대상으로 하여, 스타일 사전과 구름 접촉의 호환성이 검증되지 않았다; 반면 전통적인 수동 보상 설계는 활강 중 무게 중심 이동, 속도 관련 자세 조절과 같은 미묘한 동역학을 포착하기 어렵다. 본 논문이 실제로 바꾼 것은 "스타일 모방"을 보행 운동 패러다임에서 "구름 접촉 + 저추진 추진" 패러다임으로 확장하고, AMP의 판별기가 수동 바퀴 제약과 호환되는 운동 스타일을 학습할 수 있음을 증명한 것이다—단순히 보상 항목을 추가하는 것이 아니다. 이러한 전환은 두 가지 서로 다른 추진 메커니즘의 보행(펌프 활강과 푸시 활강)이 동일한 프레임워크에서 체계적으로 훈련될 수 있게 하여, 기존의 단일 운동 형태 또는 수동 설계의 한계를 돌파했다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">시스템 아키텍처</h3>
+<ul>
+<li><strong>플랫폼</strong>: Booster T1, 23개의 구동 신체 자유도, 각 발에 4개의 수동 바퀴(총 8개의 수동 바퀴 자유도), 정책은 50Hz로 21개의 비바퀴 관절 목표 위치를 출력하며, 50Hz PD 컨트롤러가 실행</li>
+<li><strong>바퀴 모델링</strong>: 슬라이스 실린더 충돌 모델, 바퀴 폭을 따라 9개의 좁은 실린더로 대체(최대 반경 0.032m), 시각 모델은 STL 유지; 바퀴 동역학은 접선 접촉력이 지배: Iω̇ = (r_c × F_t) · a</li>
+</ul>
+<h3 id="_5">훈련 프레임워크</h3>
+<ul>
+<li><strong>AMP-PPO</strong>: 두 보행이 프레임워크를 공유하지만 판별기/정책/작업 보상은 독립적(추진 메커니즘과 접촉 타이밍이 다르기 때문)</li>
+<li><strong>AMP 상태</strong>: 5프레임 연결, z_t^m ∈ ℝ³⁰⁰, 신체 관절 상태, 손/발 키포인트 위치, 루트 속도 포함</li>
+<li><strong>판별기</strong>: Wasserstein 형태, η=0.4, λ_gp=10; AMP 보상 r_amp = 2.0·(1 + tanh(0.4·D_ψ(z)))</li>
+<li><strong>총 보상</strong>: Pump Glide는 0.40·r_amp + 0.60·r_task; Push Glide는 0.45·r_amp + 0.55·r_task</li>
+</ul>
+<h3 id="_6">핵심 설계 결정</h3>
+<ul>
+<li><strong>데이터 수집</strong>: 모션 캡처 + GMR 리타게팅, 수동 바퀴 관절은 모방 대상이 아니며, 처리 후 짧은 상태 전이 샘플로 구성</li>
+<li><strong>커리큘럼 학습</strong>: Push Glide의 바퀴 공중 시간 페널티를 1.25에서 0.9로 감소(0–22000스텝)하여 초기 점프 억제; 지지 다리 전환 보상은 5000스텝 전까지 0.2 유지, 이후 선형적으로 1.0까지 증가(32000스텝까지)</li>
+<li><strong>명령 생성</strong>: Pump Glide는 12초 속도 커리큘럼(0.2–0.7 m/s); Push Glide는 12초마다 재샘플링(전방 0–2 m/s, 요 레이트 ±0.2 rad/s)</li>
+<li><strong>속도 필터링</strong>: v_t^f = 0.9·v_{t−1}^f + 0.1·v_t^yaw, 지수 추적 항 φ_exp(e; σ) = exp(−e²/σ²)</li>
+<li><strong>무작위화</strong>: 80% 환경이 참조 운동의 무작위 프레임에서 초기화; 관측 노이즈, 바퀴-지면 마찰, 질량, 무게 중심, PD 게인, 바퀴 관절 댐핑 모두 무작위화</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li><strong>슬라이스 실린더 바퀴 충돌 모델</strong>: 전역 볼륨 충돌을 9개의 좁은 실린더로 대체하여 바퀴 폭 오차를 2.77배에서 허용 가능한 범위로 감소(부피 초과 48.2%→실제에 근접), 구름 안정성과 훈련 비용 사이의 절충 달성(처리량 7.13×10³ steps/s). 이는 sim-to-real 실현 가능성의 핵심으로, 전역 볼륨 모델은 접촉 기하학의 심각한 왜곡을 초래한다.</li>
+<li><strong>AMP와 수동 바퀴 동역학의 체계적 통합</strong>: AMP 판별기가 구름 접촉, 무게 중심 이동과 호환되는 스타일을 학습할 수 있음을 처음으로 증명했으며, 두 보행은 독립적인 판별기가 필요함—이는 추진 메커니즘 차이가 스타일 사전에 근본적 영향을 미친다는 것을 검증한 것으로, 단순한 파라미터 조정으로 해결할 수 없다.</li>
+<li><strong>보행 특정 커리큘럼 학습</strong>: Push Glide의 바퀴 공중 시간 페널티 감쇠와 지지 다리 전환 보상 점진적 강화를 통해 초기 "점프" 의사 정책을 효과적으로 억제하며, 이는 수동 바퀴 시나리오 특유의 훈련 안정성 문제이다.</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="pump-glide-64">Pump Glide 속도 스캔(명령당 64회 평가)</h3>
+<table>
+<thead>
+<tr>
+<th>명령 (m/s)</th>
+<th>완료율</th>
+<th>평균 지속 시간 (s)</th>
+<th>몸통 기울기 RMS (rad)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.10–0.45</td>
+<td>0.766–0.813</td>
+<td>15.88–16.25</td>
+<td>0.104–0.196</td>
+</tr>
+<tr>
+<td>0.50</td>
+<td>0.531</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>최대 주행 거리 14.55m, 요 레이트 오차 &lt;0.184 rad/s; 100초 장시간 프로파일 총 거리 39.50m, 몸통 기울기 RMS 0.132 rad.</p>
+<h3 id="push-glide-mujoco-8">Push Glide 전방 속도 응답(MuJoCo, 안정 창 8초부터)</h3>
+<table>
+<thead>
+<tr>
+<th>명령 (m/s)</th>
+<th>실제 v_x^f (m/s)</th>
+<th>오차 e_v (m/s)</th>
+<th>시간 (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.10</td>
+<td>0.366±0.015</td>
+<td>0.266</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>0.20</td>
+<td>0.558±0.028</td>
+<td>0.358</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>0.30</td>
+<td>0.746±0.030</td>
+<td>0.446</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>0.40</td>
+<td>1.069±0.043</td>
+<td>0.669</td>
+<td>20.00</td>
+</tr>
+<tr>
+<td>0.50</td>
+<td>1.594±0.109</td>
+<td>1.094</td>
+<td>20.00</td>
+</tr>
+</tbody>
+</table>
+<p>모든 명령이 20초 동안 유지되며, 실제 속도는 단조 증가하지만 항상 명령 값보다 높고, 오차는 명령이 증가함에 따라 커진다.</p>
+<h3 id="_9">바퀴 모델 비교</h3>
+<p>전역 볼륨 충돌 폭 64mm는 실제 바퀴 폭 23.13mm의 2.77배, 부피 초과 48.2%, 최저점이 실제 바퀴 폭 임계값 ϕ_edge≈21.2°를 벗어남; 9슬라이스 방식은 구름 안정성, 기하학적 충실도, 훈련 비용 사이에서 최적이다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li><strong>평가 한계</strong>: 현재는 작업 수준 평가로, 표준화된 활강 품질 벤치마크가 부족; 횡방향 속도 및 요 레이트 명령은 실험에서 검증되지 않음(전방 속도 명령만)</li>
+<li><strong>모델 근사</strong>: 슬라이스 실린더는 여전히 실제 바퀴-지면 접촉의 근사이며, 지지 높이 불연속성은 작지만 근사 모델, 배포 모델, 실제 접촉 간의 불일치가 속도 추적 오차를 초래할 수 있음</li>
+<li><strong>수행하지 않은 것</strong>: 더 정밀한 바퀴 접촉 모델링, 시스템 식별, 폐루프 속도 제어는 모두 향후 작업으로 남김; 구체적인 GPU 모델, 데모 데이터 양, 훈련 스텝 수(커리큘럼 학습의 22000/32000스텝 제외)는 언급되지 않음</li>
+<li><strong>속도 추적</strong>: Push Glide의 실제 속도는 체계적으로 명령보다 높음(오차 0.266–1.094 m/s), 저자는 보상 메커니즘을 제시하지 않음</li>
+</ul>
+<h2 id="_11">공학적 시사점</h2>
+<ul>
+<li><strong>먼저 바퀴 충돌 모델 확인</strong>: 전역 볼륨 충돌은 수동 바퀴 시나리오에서 사용 불가, 슬라이스 수 선택은 절충 필요—9슬라이스 처리량 7.13×10³ steps/s, 훈련 자원이 부족하면 슬라이스 수를 줄일 수 있지만 구름 안정성 검증 필요</li>
+<li><strong>AMP 가중치 민감성</strong>: Pump Glide의 AMP 가중치 0.40과 Push Glide의 0.45 차이가 유의미하므로, 재현 시 보행별로 별도 파라미터 조정 필요, 직접 전이 불가</li>
+<li><strong>커리큘럼 학습이 핵심</strong>: Push Glide의 바퀴 공중 시간 페널티 감쇠(1.25→0.9)와 지지 다리 전환 보상 점진적 강화(0.2→1.0)는 점프 의사 정책 억제의 핵심이며, 이 단계를 건너뛰면 훈련 실패 가능</li>
+<li><strong>속도 오차 예상</strong>: Push Glide의 실제 속도가 명령보다 높은 것은 체계적(무작위 노이즈 아님), 하위 작업에서 정밀한 속도 제어가 필요하면 추가 보상 또는 폐루프 설계 필요</li>
+<li><strong>데이터 파이프라인</strong>: GMR 리타게팅 후 지면 관통/자체 충돌/관절 급변 구간을 엄격히 필터링해야 하며, 수동 바퀴 관절은 모방 대상이 아님—이는 AMP를 저추진 시스템에 적용하는 핵심 세부 사항</li>
+<li><strong>가장 쉽게 빠지는 함정</strong>: 80% 환경이 참조 운동의 무작위 프레임에서 초기화되는데, 비율이 부적절하면 정책이 초기 상태에 과도하게 의존할 수 있음; 관측 노이즈와 바퀴-지면 마찰 무작위화 범위는 실제 플랫폼과 일치해야 하며, 그렇지 않으면 sim-to-real 격차가 속도 추적 오차를 증폭시킬 수 있음</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_roller_skating_motions_humanoid_robots_a_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">시스템 아키텍처</a></li>
+<li><a href="#_5">훈련 프레임워크</a></li>
+<li><a href="#_6">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#pump-glide-64">Pump Glide 속도 스캔(명령당 64회 평가)</a></li>
+<li><a href="#push-glide-mujoco-8">Push Glide 전방 속도 응답(MuJoCo, 안정 창 8초부터)</a></li>
+<li><a href="#_9">바퀴 모델 비교</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

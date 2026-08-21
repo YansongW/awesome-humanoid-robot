@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rapid Locomotion via Reinforcement Learning · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Rapid Locomotion via Reinforcement Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Rapid Locomotion via Reinforcement Learning</h1>
+      <p class="entry-name-en">Rapid Locomotion via Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P011. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。 | WP4 trilingual backfill 2026-08-10: en body retranslated from zh deep-read (3008 chars, DeepSeek).">AI Full-text Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Agile maneuvers such as sprinting and high-speed turning in the wild are challenging for legged robots. We present an end-to-end learned controller that achieves record agility for the MIT Mini Cheetah, sustaining speeds up to 3.9 m/s. This system runs and turns fast on natural terrains like grass, ice, and gravel and responds robustly to disturbances. Our controller is a neural network trained.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2205.02824" target="_blank" rel="noopener">arXiv:2205.02824 Rapid Locomotion via Reinforcement Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This paper, proposed by the MIT team, achieves sustained running speeds of up to 3.9 m/s and rotational speeds of 5.7 rad/s on the MIT Mini Cheetah using end-to-end reinforcement learning. The core contributions are a Grid Adaptive curriculum that jointly models linear and angular velocity commands, and an online system identification module within a teacher-student framework, enabling zero-shot deployment of the policy to the real robot using only joint encoders and an IMU.</p>
+<h2 id="what-it-changes">What It Changes</h2>
+<p>It changes the premise that "high-speed agile locomotion must rely on manually designed reduced-order models." Previous MPC-based methods reached 3.7 m/s on the Mini Cheetah, but every new terrain or speed range required engineers to re-tune model parameters. Pure RL methods failed when the command range expanded to high speeds because random exploration rarely produces high-speed samples, resulting in sparse reward signals. The authors point out that the problem is not with RL itself, but with the command sampling method—independently sampling linear and angular velocities frequently generates combinations that are infeasible under centrifugal force constraints, causing the policy to learn in-place jittering rather than running. This effectively redefines "task difficulty" from a dynamics problem to a "command distribution design" problem, clearing the way for RL's applicability in agile control.</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<h3 id="overall-architecture">Overall Architecture</h3>
+<ul>
+<li>The policy πθ takes as input historical observations o_{t-H:t} (H=15) and the velocity command v_t^cmd, and outputs 12-dimensional joint position commands, converted to torques by a PD controller (Kp=20, Kd=0.5). Observations include only joint angles/velocities, IMU gravity direction, and the previous action—no vision, no external localization.</li>
+</ul>
+<h3 id="teacher-student-training">Teacher-Student Training</h3>
+<ul>
+<li>Teacher πT(x_t, d_t) = π_{θb}(x_t, g_{θd}(d_t)): An encoder g_{θd} compresses 12-dimensional domain parameters d_t (mass, center of mass, friction, motor strength, etc.) into an 8-dimensional latent variable z_t. The main policy π_{θb} outputs actions based on this, optimized jointly with PPO.</li>
+<li>Student πS(x_t, x_{[t-h:t-1]}) = π_{θb}(x_t, h_{θa}(...)): An adaptation module h_{θa} estimates ẑ_t from 42×15 historical observations, supervised by the loss L = (ẑ_t - z_t)². The key design choice is that h=15 is short enough for the adaptation module to run synchronously with the main policy in real time at 50 Hz.</li>
+</ul>
+<h3 id="grid-adaptive-curriculum">Grid Adaptive Curriculum</h3>
+<ul>
+<li>The v_x^cmd-ω_z^cmd plane is discretized into a [0.5 m/s, 0.5 rad/s] grid, maintaining a joint distribution. If a grid cell's reward falls below a threshold γ, its probability is preserved; otherwise, the probabilities of its 4-connected neighbors are set to 1. The initial distribution is uniform over [-1.0, 1.0]×[-1.0, 1.0].</li>
+<li>The essential difference from Box Adaptive (which maintains independent marginal distributions): Grid explicitly models the coupling between v_x and ω_z—at high speeds, centrifugal force makes the feasible region satisfy ω_z ∼ 1/v_x. Independent sampling generates infeasible combinations with equal probability, whereas the joint distribution automatically focuses on feasible regions.</li>
+</ul>
+<h3 id="domain-randomization">Domain Randomization</h3>
+<ul>
+<li>Range: ground friction [0.05, 4.00], coefficient of restitution [0.00, 1.00], payload mass [-1.0, 3.0] kg, center of mass offset [-0.10, 0.10] m, motor strength [90, 110]%.</li>
+</ul>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li><strong>Grid Adaptive Curriculum</strong>: The first to treat the command space as a joint distribution rather than independent marginals. This is not an engineering detail but an explicit modeling of "task difficulty being jointly determined by dynamics and the optimization algorithm"—it allows the policy to automatically avoid infeasible velocity-angular velocity combinations during training, thereby discovering high-speed running behavior. Both no-curriculum and Box curriculum fail; Grid is the only successful one.</li>
+<li><strong>Online System Identification Module</strong>: Unlike references [23, 24], the adaptation module h_{θa} is trained with online data simultaneously with the teacher, and the history length h=15 is small enough for real-time operation. This allows the student policy to implicitly estimate domain parameters such as terrain friction and payload from onboard sensors alone at deployment, with no fine-tuning, achieving zero-shot sim-to-real transfer.</li>
+<li><strong>Low-Gain PD Controller</strong>: Kp=20, Kd=0.5 is far lower than common settings. The authors deliberately choose low gains to promote smooth motion and do not tune them. This makes the action space closer to "desired positions" rather than "rigid tracking," reducing dynamics mismatch between simulation and reality.</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<h3 id="key-results">Key Results</h3>
+<ul>
+<li>Highest sustained speed on indoor flat ground: <strong>3.9 m/s</strong> (best of 3 seeds), average <strong>3.8 m/s</strong>, surpassing the 3.7 m/s MPC record on the same robot.</li>
+<li>Outdoor 10-meter grass sprint: average <strong>3.4 m/s</strong> (2.94 seconds).</li>
+<li>Maximum yaw rate: <strong>5.7 rad/s</strong>, 90% of the model-based record of 6.28 rad/s, and a single policy simultaneously achieves linear and angular velocity (model-based requires two controllers).</li>
+<li>Ablation: The student policy π_θ_ST achieves a real-world speed of 3.81 ± 0.09 m/s, significantly higher than π_θ_DR without system identification (2.49 ± 0.07 m/s), demonstrating that the adaptation module is key to sim-to-real transfer.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Simulation Speed (m/s)</th>
+<th>Real-World Speed (m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>With system ID π_θ_ST</td>
+<td>5.46</td>
+<td>3.81 ± 0.09</td>
+</tr>
+<tr>
+<td>Without system ID π_θ_DR</td>
+<td>5.07</td>
+<td>2.49 ± 0.07</td>
+</tr>
+</tbody>
+</table>
+<h3 id="curriculum-comparison">Curriculum Comparison</h3>
+<ul>
+<li>No curriculum: fails to learn, robot jitters in place.</li>
+<li>Box Adaptive: controllable but excludes extreme regions of the command space.</li>
+<li>Grid Adaptive: covers a larger command area under all error thresholds (Figure 3), and the command area shrinks as terrain roughness increases (Figure 5, comparison at ε=0.3).</li>
+</ul>
+<h3 id="robustness">Robustness</h3>
+<ul>
+<li>Qualitative reports: climbing gravel slopes, maintaining balance with a single motor blocked, and recovering after high-speed trips. The MPC baseline fails to recover in both the gravel slope descent and trip-over-obstacle scenarios.</li>
+</ul>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<ul>
+<li>The policy is not fine-tuned on the real robot (zero-shot deployment), but the sources of the sim-to-real gap (inaccurate simulation parameters vs. uncapturable real-world dynamics) are not quantified.</li>
+<li>Outdoor performance is only qualitatively reported, as state cannot be recorded with motion capture, and high-speed falls are unsafe for the hardware.</li>
+<li>Only body velocity in the ground plane is trained; jumping, crouching, and mobile manipulation are not included. No vision is used, so tasks requiring look-ahead planning (e.g., climbing stairs, avoiding pits) cannot be performed.</li>
+<li>High-speed gaits are not necessarily "better"; energy efficiency and wear are not optimized. Body velocity alone is an under-constrained objective, and multiple equally preferred motions may exist.</li>
+<li>The teacher policy cannot be deployed directly because the domain parameters d_t cannot be measured with onboard sensors.</li>
+</ul>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<ul>
+<li><strong>Priority for reproduction</strong>: Training data volume is 400 million time steps, with 4000 parallel environments, and wall-clock time on a single RTX 3090 is &lt;3 hours (approximately 92 real-time days). If resources are limited, first verify whether the Grid curriculum produces high-speed behavior within 100 million steps before deciding to scale up.</li>
+<li><strong>Most common pitfall</strong>: The curriculum threshold γ and grid resolution [0.5, 0.5] are sensitive hyperparameters. If γ is too high, the command range expands prematurely, causing training instability; if too low, the policy remains in low-speed regions. It is recommended to start tuning from γ=0.3 and monitor the growth curve of command area versus training steps.</li>
+<li><strong>Deployment of the system identification module</strong>: The history length h=15 is critical for real-time performance. If the downstream platform has weaker computational resources than the Jetson TX2 NX, first verify that the adaptation module's inference latency meets the 50 Hz control cycle.</li>
+<li><strong>Insights for downstream teams</strong>: Sensors only require joint encoders and an IMU, making it suitable for low-cost quadruped robots. However, the domain randomization ranges (friction [0.05, 4.00], etc.) are calibrated for the Mini Cheetah; migrating to other platforms requires re-scanning, especially the motor strength range [90, 110]%, which may not apply to low-torque actuators.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">mentions</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_algorithm_ppo/">Proximal Policy Optimization (PPO)</a>
+      
+      <span class="rel-desc">Rapid Locomotion via Reinforcement Learning mentions Proximal Policy Optimization (PPO).</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">mentions</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_method_model_predictive_control/">Model Predictive Control (MPC)</a>
+      
+      <span class="rel-desc">Rapid Locomotion via Reinforcement Learning mentions Model Predictive Control (MPC).</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rapid_locomotion_reinforcement_2022"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_algorithm_ppo/">
+          <span class="entry-type">Algorithm</span>
+          <h3>Proximal Policy Optimization (PPO)</h3>
+          <p>A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">Method</span>
+          <h3>Model Predictive Control (MPC)</h3>
+          <p>An optimization-based control method that repeatedly solves a finite-horizon optimal control problem…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changes">What It Changes</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#overall-architecture">Overall Architecture</a></li>
+<li><a href="#teacher-student-training">Teacher-Student Training</a></li>
+<li><a href="#grid-adaptive-curriculum">Grid Adaptive Curriculum</a></li>
+<li><a href="#domain-randomization">Domain Randomization</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a><ul>
+<li><a href="#key-results">Key Results</a></li>
+<li><a href="#curriculum-comparison">Curriculum Comparison</a></li>
+<li><a href="#robustness">Robustness</a></li>
+</ul>
+</li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

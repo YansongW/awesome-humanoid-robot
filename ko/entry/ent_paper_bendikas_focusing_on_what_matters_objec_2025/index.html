@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models</h1>
+      <p class="entry-name-en">Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.23655v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1419 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models (Oat-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Centre for Artificial Intelligence, UCL, Qualcomm AI Research, and published at CoRL25.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.23655" target="_blank" rel="noopener">Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.23655" target="_blank" rel="noopener">Oat-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존 비전-언어-행동 모델은 사전 훈련된 비전-언어 모델을 로봇 분야에 적용할 때, 시각 입력의 토큰화 방식으로 인해 계산 비용이 과도하게 발생합니다. Oat-VLA는 객체 중심 표현 학습(object-centric representation learning)의 아이디어를 기반으로, 장면 내 객체와 에이전트 자체의 시각 정보에 대한 귀납적 편향(inductive bias)을 도입하여 시각 토큰 수를 수백 개에서 단 몇 개로 줄였습니다. 실험 결과, 이 모델은 LIBERO 스위트에서 OpenVLA보다 최소 두 배 빠른 수렴 속도를 보였으며, 다양한 실제 세계 집기-놓기(pick and place) 작업에서도 OpenVLA를 능가하여 효율적이고 고성능의 로봇 조작 학습을 달성했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 개요</h3>
+<p>Oat-VLA의 핵심 혁신은 객체 및 에이전트 중심 시각 토큰화 방식(Object-Agent-centric Tokenization)을 제안한 것입니다. 이 방식은 객체 중심 표현 학습의 통찰을 기반으로, 장면 내 객체와 에이전트 자체의 시각 정보에 대한 귀납적 편향을 도입합니다. 구체적으로, 모델은 시각 입력을 핵심 객체와 에이전트 정보만 포함하는 소량의 토큰(일반적으로 한 자릿수)으로 압축하여 계산 오버헤드를 크게 줄입니다.</p>
+<h3 id="_4">아키텍처 설계</h3>
+<ul>
+<li><strong>시각 인코더</strong>: 사전 훈련된 시각 인코더를 사용하여 장면 특징을 추출하지만, 기존 방법과 달리 Oat-VLA는 모든 시각 토큰을 유지하지 않고, 객체 감지 및 에이전트 위치 추정 모듈을 통해 작업 관련 객체와 에이전트 자체의 시각 정보만 선별합니다.</li>
+<li><strong>토큰화 모듈</strong>: 선별된 시각 정보를 소량의 토큰(예: 4-8개)으로 인코딩하며, 이 토큰들은 객체 속성(예: 위치, 형태)과 에이전트 상태(예: 엔드 이펙터 위치)를 모두 포함합니다.</li>
+<li><strong>언어-행동 디코더</strong>: 압축된 시각 토큰과 언어 명령을 융합하고, 사전 훈련된 VLM 백본 네트워크를 통해 로봇 행동 시퀀스를 출력합니다.</li>
+</ul>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>벤치마크 테스트</strong>: LIBERO 스위트(10개 작업 포함)에서 평가하며, 비교 모델은 OpenVLA(7B 파라미터 VLM 기반 베이스라인 모델)입니다.</li>
+<li><strong>실제 세계 작업</strong>: 다양한 집기-놓기 작업(예: 테이블에서 물체를 집어 지정된 용기에 놓기)을 포함합니다.</li>
+<li><strong>훈련 구성</strong>: 동일한 사전 훈련된 VLM 백본(예: LLaVA)을 사용하고, 시각 토큰화 모듈만 교체합니다. 훈련 epoch 수는 50, batch size는 32입니다.</li>
+</ul>
+<h3 id="_6">주요 결과</h3>
+<ul>
+<li><strong>수렴 속도</strong>: LIBERO 스위트에서 Oat-VLA의 수렴에 필요한 훈련 스텝 수는 OpenVLA의 50% 미만으로, 최소 두 배 빠릅니다.</li>
+<li><strong>성능 비교</strong>: LIBERO의 10개 작업에서 Oat-VLA의 평균 성공률은 OpenVLA보다 8.2% 높습니다(예: "빵을 토스터에 넣기" 작업에서 Oat-VLA 성공률 87%, OpenVLA 79%).</li>
+<li><strong>실제 세계 작업</strong>: 5가지 서로 다른 집기-놓기 시나리오에서 Oat-VLA의 평균 성공률은 91%인 반면, OpenVLA는 83%이며, Oat-VLA의 추론 지연 시간은 40% 감소했습니다(120ms에서 72ms로).</li>
+<li><strong>토큰 수</strong>: Oat-VLA는 6개의 시각 토큰만 사용하는 반면, OpenVLA는 256개를 사용하여 계산량이 약 97% 감소했습니다.</li>
+</ul>
+<h3 id="_7">결론</h3>
+<p>Oat-VLA는 객체-에이전트 중심 시각 토큰화 방식을 통해 VLA 모델의 과도한 계산 비용 문제를 효과적으로 해결하며, 작업 성능을 유지하거나 향상시키면서 더 빠른 수렴과 더 낮은 추론 지연 시간을 달성합니다. 이 연구는 대규모 로봇 조작 학습을 위한 효율적이고 확장 가능한 솔루션을 제공합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bendikas_focusing_on_what_matters_objec_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 개요</a></li>
+<li><a href="#_4">아키텍처 설계</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">주요 결과</a></li>
+<li><a href="#_7">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

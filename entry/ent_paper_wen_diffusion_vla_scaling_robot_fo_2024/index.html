@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diffusion-VLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Diffusion-VLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Diffusion-VLA</h1>
+      <p class="entry-name-en">Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.03293v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (693 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Diffusion-VLA 是由华东师范大学、美的集团和上海大学联合提出的视觉-语言-动作大模型，发表于 ICML25。其核心创新在于将自回归模型与扩散模型统一，通过下一词元预测实现推理，再以扩散模型生成鲁棒动作，并引入推理注入模块增强策略学习。实验表明，该模型在零样本分拣任务中达到 63.7% 准确率，最小版本在 A6000 GPU 上运行速度达 82Hz。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2412.03293" target="_blank" rel="noopener">Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2412.03293" target="_blank" rel="noopener">Diffusion-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>Diffusion-VLA 提出了一种结合自回归与扩散模型的统一框架，用于学习视觉运动策略。模型首先通过下一词元预测目标对用户查询和当前观测进行推理，随后利用扩散模型生成稳健的动作输出。为提升策略学习的自我推理能力，作者设计了推理注入模块，将推理短语直接融入策略学习过程。该框架简单灵活，易于部署和升级，并在多个真实机器人任务中验证了有效性，包括挑战性的工厂分拣任务和零样本分拣任务。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>核心框架</strong>：Diffusion-VLA 将自回归模型与扩散模型无缝结合，采用下一词元预测目标进行推理，再通过扩散模型生成动作输出。</li>
+<li><strong>推理注入模块</strong>：创新性地将推理短语直接集成到策略学习过程中，增强模型的可解释性，使观察者能理解模型的思考过程并识别策略失败原因。</li>
+</ul>
+<h3 id="_4">实验设置与结果</h3>
+<ul>
+<li><strong>工厂分拣任务</strong>：成功对物体进行分类，包括训练中未见过的物体，验证了模型的泛化能力。</li>
+<li><strong>零样本分拣任务</strong>：在 102 个未见物体上达到 63.7% 的准确率，展示了强大的零样本学习能力。</li>
+<li><strong>鲁棒性测试</strong>：对视觉变化（如干扰物和新背景）表现出鲁棒性，并能轻松适应新本体。</li>
+<li><strong>指令跟随与对话</strong>：能够遵循新颖指令并保持对话能力。</li>
+</ul>
+<h3 id="_5">关键参数与扩展</h3>
+<ul>
+<li><strong>数据效率与推理速度</strong>：最小版本 Diffusion-VLA-2B 在单张 A6000 GPU 上运行速度达 82Hz，复杂任务仅需不到 50 个演示即可从头训练。</li>
+<li><strong>模型扩展</strong>：参数规模从 2B 扩展到 72B，随着模型增大，泛化能力显著提升。</li>
+</ul>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2412.03293v3</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+      
+      <span class="rel-desc">Diffusion-VLA使用扩散策略。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">基于</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">引用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+      
+      <span class="rel-desc">Diffusion-VLA引用扩散策略。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wen_diffusion_vla_scaling_robot_fo_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置与结果</a></li>
+<li><a href="#_5">关键参数与扩展</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

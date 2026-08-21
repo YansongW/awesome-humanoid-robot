@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation</h1>
+      <p class="entry-name-en">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] experiments section regenerated under programmatic number whitelist (guardrail fix: previous numbers unverifiable against full text); en/ko regenerated. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI Full-text Verified</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Mobile manipulation requires a robot to coordinate base and arm motion under continuously changing viewpoints and contact conditions, within an action space far larger than that of fixed-base manipulation. Existing Vision-Language-Action (VLA) policies are limited in two respects. (i)They map observations directly to whole-body action chunks, searching this large action space without an explicit.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01381" target="_blank" rel="noopener">arXiv:2608.01381 DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>DreamTrajectory is an end-to-end trajectory-guided action generation framework for mobile manipulation tasks, proposed by the author team. Its core contribution lies in jointly predicting intent-level end-effector trajectories and whole-body action chunks within a single action expert, and introducing a lightweight recurrent world model to perform search-predict-score refinement on candidate actions at test time, thereby simultaneously mitigating two major issues: imprecise search in large action spaces and error accumulation during open-loop execution.</p>
+<h2 id="what-it-changes">What It Changes</h2>
+<p>The fundamental difference between mobile manipulation and fixed-base manipulation is that the coordinated motion of the base and robotic arm occurs under continuously changing viewpoints and contact conditions, resulting in a significantly higher-dimensional action space. Existing VLA policies directly map observations to whole-body action chunks, which implicitly assumes that the network can precisely search for base-arm coordinated solutions from a high-dimensional action space without explicit task-space motion planning. The fragility of this assumption in practice manifests at two levels: first, the predicted action chunks may be spatially incoherent, leading to uncoordinated base and arm movements; second, during open-loop execution, control errors and unmodeled contacts (such as reaction forces when pushing or pulling drawers) accumulate into systematic deviations between planned and actual motion.</p>
+<p>What DreamTrajectory truly changes is the choice and utilization of the "intermediate representation." It does not abandon end-to-end learning but instead inserts a physically meaningful intermediate variable—the end-effector trajectory—into the action generation pathway. The deeper motivation for this choice is that the end-effector trajectory is a compact description in task space, with far lower dimensionality than whole-body actions, and it directly corresponds to task objectives (e.g., grasping, pushing, pulling). More importantly, it changes the causal structure of action generation: actions are no longer a direct function of observations but are generated conditioned on trajectories, which forces the base and arm motions to coordinate around a unified intent-level plan. Meanwhile, the introduction of the world model transforms "post-execution verification" from open-loop to closed-loop, representing a substantive correction to the "generate-and-execute" paradigm of VLA policies.</p>
+<h2 id="method-breakdown">Method Breakdown</h2>
+<h3 id="trajectory-guided-action-generation">Trajectory-Guided Action Generation</h3>
+<ul>
+<li><strong>Joint Prediction</strong>: A single action expert simultaneously outputs future end-effector trajectories τ_{t:t+H-1} and whole-body action chunks a_{t:t+H-1}, sharing the same horizon H.</li>
+<li><strong>Trajectory Representation</strong>: Each waypoint is a 7D pose τ_{t+h} = [p_{t+h}^{B_t}, q_{t+h}^{B_t}] ∈ ℝ⁷, where the position p ∈ ℝ³ and quaternion q ∈ ℝ⁴ are both expressed in the chunk-local coordinate frame B_t, anchored at the current base pose and fixed throughout the prediction horizon. This design avoids trajectory coordinate drift caused by base movement in a global coordinate frame.</li>
+<li><strong>Conditional Flow Matching</strong>: Trajectories and actions are independently sampled with Gaussian noise ε_τ, ε_a ~ 𝒩(0, I), sharing flow time σ ~ 𝒰(0, 1), with interpolated variables τ^σ = σε_τ + (1-σ)τ and a^σ = σε_a + (1-σ)a. The training objective is the joint flow matching loss ℒ_VLA = 𝔼[λ_τ‖v_τ - u_τ‖₂² + λ_a‖v_a - u_a‖₂²], where u_τ = ε_τ - τ and u_a = ε_a - a.</li>
+<li><strong>Group Causal Attention Mask</strong>: Trajectory tokens attend to multimodal prefixes and previous trajectory tokens; action tokens additionally attend to the full trajectory stream and previous action tokens. This mask ensures trajectory information flows unidirectionally into action generation, preventing action information from leaking back into trajectory generation, thereby maintaining the causal direction of "trajectory-guided actions."</li>
+</ul>
+<h3 id="test-time-search-predict-score-refinement">Test-Time Search-Predict-Score Refinement</h3>
+<ul>
+<li><strong>Candidate Perturbation</strong>: The original action chunk â is retained, and N-1 perturbed chunks ε_i are independently sampled, with each action dimension following an independent AR(1) Gaussian process, marginal standard deviation σ=0.05, lag-one correlation ρ=0.9, N=30.</li>
+<li><strong>World Model Prediction</strong>: A lightweight recurrent world model W_φ(o_t, s_t, a_{t:t+H-1}) predicts the trajectory τ̃(a) ∈ ℝ^{H×7} that a candidate action chunk would induce. This model is learned from interaction data rather than derived analytically, because deviations between commanded and realized motion arise from contacts, self-collisions, and low-level tracking errors.</li>
+<li><strong>Scoring and Selection</strong>: All candidates are evaluated in parallel, and the candidate maximizing [λS_traj(a) + (1-λ)ηS_smooth(a)] is selected, where λ=0.5 and η=10⁻³. S_traj measures the consistency between the predicted trajectory and the VLA-generated trajectory, while S_smooth penalizes action jitter.</li>
+</ul>
+<h3 id="two-stage-training">Two-Stage Training</h3>
+<ul>
+<li><strong>Stage One</strong>: The VLA backbone is initialized with π₀.₅ pretrained weights and fine-tuned on expert demonstrations.</li>
+<li><strong>Stage Two</strong>: A trajectory world model is trained on an additional robot-environment interaction dataset containing both successful and failed trials. Dense training samples are constructed using a sliding window, with action and trajectory dimensions independently standardized using training set statistics. During training data construction, the recorded planar base velocity channels are integrated, and recorded end-effector poses are transformed from the instantaneous robot base frame to a chunk-local frame anchored at the time-t base pose, using a one-step temporal offset so that target waypoints correspond to poses observed after executing action a_{t+h}.</li>
+</ul>
+<h2 id="key-innovations">Key Innovations</h2>
+<ol>
+<li>
+<p><strong>Causal Guidance via Trajectory as Explicit Intermediate Representation</strong>: Unlike prior work treating trajectories as implicit latent variables or auxiliary prediction heads, DreamTrajectory enforces unidirectional trajectory-guided action generation at the architectural level through a group causal attention mask. This design decouples and recouples "intent-level planning" and "whole-body execution" within a single network, preserving the differentiability of end-to-end learning while providing task-space constraints for action generation. Its novelty lies in encoding causal direction as an inductive bias into the attention mechanism, rather than relying on loss weights or post-processing.</p>
+</li>
+<li>
+<p><strong>Action-Conditioned Trajectory World Model</strong>: Existing VLA work either executes entirely open-loop or relies on analytical kinematic models for closed-loop correction. DreamTrajectory learns a mapping from action chunks to actual induced trajectories, and this mapping is learned from interaction data including failed trials. This enables implicit modeling of contacts, self-collisions, and low-level tracking errors that are difficult to capture with analytical models. The world model serves as a plug-and-play module that can be attached to any trajectory-guided policy without retraining the VLA, offering significant engineering value in practical deployment.</p>
+</li>
+<li>
+<p><strong>Test-Time Search-Predict-Score Paradigm</strong>: This transforms the generation problem into a closed-loop "generate-verify-select" process. Structured perturbation via AR(1) Gaussian processes in action space (rather than undifferentiated noise) preserves temporal correlations in actions; parallel scoring of 30 candidates via the world model keeps computational overhead to just 11.75 ms additional latency on a single RTX 4090. This paradigm shifts open-loop execution error correction from "predicting more accurately" to "selecting better," representing a fundamental change in policy optimization philosophy.</p>
+</li>
+</ol>
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<p><strong>Comparison Setup.</strong> We evaluate DreamTrajectory (DT) at both simulation and real-world levels. Simulation uses the set_table suite from the ManiSkill-HAB (MS-HAB) benchmark with a Fetch mobile manipulation robot, covering 6 subtasks (pick apple, pick bowl, open fridge, close fridge, open counter, close counter), with 100 episodes evaluated per method per task, totaling 600 episodes/method. Baselines include ACT, Diffusion Policy, RDT-1B, GR00T N1, and π₀.₅. Ablation variants include: DT w/o trajectory guidance (direct whole-body action prediction, equivalent to the π₀.₅ baseline), DT w/o refiner (retains trajectory guidance but directly executes the initial action chunk), and full DT (trajectory world model refinement over 30 candidates at each replanning step). Real-world evaluation uses the ARX LIFT mobile manipulation robot across 3 tasks (fruit pick-and-place, drawer opening, drawer closing), with 20 episodes per method per task. World model architecture ablations compare Analytical FK (open-loop), Diffusion, One-shot Transformer, Cross Attention, and GRU (adopted by DT) on 4,096 trajectories, with metrics including xyz ADE (m), xyz FDE (m), Angular ADE (°), and Geodesic ADE. Computational efficiency is measured on a single RTX 4090 with BF16 precision.</p>
+<p><strong>Key Results (MS-HAB Simulation Average Success Rate, %).</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Avg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACT</td>
+<td>28.0</td>
+</tr>
+<tr>
+<td>Diffusion Policy</td>
+<td>27.7</td>
+</tr>
+<tr>
+<td>RDT-1B</td>
+<td>8.7</td>
+</tr>
+<tr>
+<td>GR00T N1</td>
+<td>21.2</td>
+</tr>
+<tr>
+<td>π₀.₅</td>
+<td>32.3</td>
+</tr>
+<tr>
+<td>DT w/o trajectory guidance</td>
+<td>32.3</td>
+</tr>
+<tr>
+<td>DT w/o refiner</td>
+<td>47.5</td>
+</tr>
+<tr>
+<td>DT (full)</td>
+<td>54.8</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Implications of Results.</strong></p>
+<ul>
+<li>
+<p><strong>Trajectory guidance is the primary source of gains, concentrated on contact-rich tasks.</strong> Trajectory guidance improves average success from 32.3 to 47.5, with open fridge rising from 5.0 to 44.0 and close counter from 38.0 to 72.0, indicating that trajectory guidance primarily benefits tasks requiring precise whole-body contact coordination; however, slight decreases on pick apple and open counter suggest it is not universally beneficial. Of the 22.5-point total gain over the action-only baseline, 15.2 points come from trajectory guidance and 7.3 from refinement, demonstrating the complementarity of the two components.</p>
+</li>
+<li>
+<p><strong>World model refinement corrects residual errors even on strong baselines.</strong> Refinement further improves average success from 47.5 to 54.8, with improvements across all 6 subtasks; even on close counter, where the initial policy is already strong, it improves from 72.0 to 80.0, indicating that refinement effectively corrects residual plan-execution deviations before execution.</p>
+</li>
+<li>
+<p><strong>World model architecture choice is well-justified.</strong> All learned models substantially outperform Analytical FK (0.241 xyz ADE, 0.345 xyz FDE, 27.0 Angular ADE, 0.057 Geodesic ADE), which cannot capture execution deviations beyond nominal kinematics such as contacts and controller errors. GRU achieves the best overall trajectory prediction accuracy (0.028 xyz ADE, 0.035 xyz FDE, 6.2 Angular ADE, 0.014 Geodesic ADE) and is therefore adopted by DT; Diffusion matches GRU on Geodesic ADE (both 0.014) but exhibits larger position and angular errors.</p>
+</li>
+<li>
+<p><strong>Computational overhead is manageable, with significant real-world gains.</strong> The full DT framework introduces 49.04M additional parameters (1.40%) and 11.75 ms per replanning step, with the trajectory head's parameter overhead negligible (0.017M, 3.65 ms), and the world model accounting for 1.40% of the 3.5B-parameter VLA. In the real world, trajectory guidance improves average success from 63.3 to 81.7, with refinement further increasing it to 90.0; fruit pick-and-place rises from 45.0 to 80.0 and drawer opening from 60.0 to 90.0, while trajectory guidance already achieves 100.0 on drawer closing.</p>
+</li>
+</ul>
+<h2 id="boundaries-and-limitations">Boundaries and Limitations</h2>
+<p>The paper does not explicitly mention training data volume, training configuration details (learning rate, batch size, epochs), or inference frequency. The authors acknowledge that future-predicting VLAs are excluded from quantitative comparison due to their fixed-base morphology being incompatible with MS-HAB, with only qualitative comparison performed, meaning the comparison against state-of-the-art multimodal VLAs may not be fully comprehensive. Trajectory guidance shows slight decreases on pick apple and open counter, indicating that the mechanism is not cost-free for all task types—for tasks with low base-motion requirements or low contact-coordination demands, trajectory guidance may introduce unnecessary constraints. The world model's generalization across simulation and real-world platforms has not been validated cross-platform, and its training data depends on robot-specific interaction data, potentially requiring re-collection when transferring to new morphologies. Additionally, whether the test-time search candidate perturbation parameters (σ=0.05, ρ=0.9, N=30) are sensitive to task type has not been systematically analyzed.</p>
+<h2 id="engineering-insights">Engineering Insights</h2>
+<p>When reproducing, first verify the anchoring of the trajectory coordinate frame: the chunk-local coordinate frame B_t is anchored at the current base pose and fixed throughout the prediction horizon—this is critical for trajectory representation correctness, and misusing a global coordinate frame will cause trajectory coordinate drift during base movement. Second, the implementation of the group causal attention mask must strictly ensure that action tokens cannot influence trajectory tokens; otherwise, the causal direction of trajectory guidance will be broken, and ablation experiments show this leads to a 15.2-percentage-point performance loss. In world model training data construction, the one-step temporal offset (target waypoints corresponding to poses observed after executing action a_{t+h}) is an error-prone step, and temporal alignment between actions and observed trajectories must be ensured. The AR(1) perturbation parameters for test-time search (σ=0.05, ρ=0.9) are sensitive to results, so a small-scale grid search on the target task is recommended. The world model, as a plug-and-play module, can first be attached to an existing trajectory-guided policy to validate benefits before committing to training costs. Regarding computational overhead, the full DT adds only 11.75 ms latency, meeting real-time requirements on an RTX 4090, but the deployment cost of the world model's 49M parameters on memory-constrained devices should be noted.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">mentions</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_paper_liu_rdt_1b_a_diffusion_foundation_2024/">RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation</a>
+      
+      <span class="rel-desc">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation mentions RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">evaluates on</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_benchmark_maniskill/">ManiSkill</a>
+      
+      <span class="rel-desc">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation is evaluated on ManiSkill.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">mentions</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_method_action_chunking_transformer/">Action Chunking with Transformers (ACT)</a>
+      
+      <span class="rel-desc">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation mentions Action Chunking with Transformers (ACT).</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">uses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_concept_world_model/">World Model</a>
+      
+      <span class="rel-desc">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation uses World Model.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_method_gr00t_n1/">GR00T N1</a>
+      
+      <span class="rel-desc">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation compares with GR00T N1.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_method_diffusion_policy/">Diffusion Policy</a>
+      
+      <span class="rel-desc">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation compares with Diffusion Policy.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">mentions</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+      
+      <span class="rel-desc">DreamTrajectory: Trajectory-Guided Action Generation with World Model Alignment for Mobile Manipulation mentions Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware.</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dreamtrajectory_trajectory_guided_action_2026"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_liu_rdt_1b_a_diffusion_foundation_2024/">
+          <span class="entry-type">Paper</span>
+          <h3>RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation</h3>
+          <p>RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (RDT-1B), is a 2024 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">Method</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA&#39;s general-purpose humanoid robot foundation model designed to enable…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_concept_world_model/">
+          <span class="entry-type">Concept</span>
+          <h3>World Model</h3>
+          <p>A learned or hand-crafted internal model that predicts future states of the environment, enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">Benchmark</span>
+          <h3>ManiSkill</h3>
+          <p>A unified benchmark for generalizable manipulation skills, providing standardized tasks, simulated…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">Method</span>
+          <h3>Diffusion Policy</h3>
+          <p>A visuomotor policy that represents action distributions as denoising diffusion models, enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">Method</span>
+          <h3>Action Chunking with Transformers (ACT)</h3>
+          <p>An imitation-learning method that predicts a sequence of future actions as a chunk using a…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#what-it-changes">What It Changes</a></li>
+<li><a href="#method-breakdown">Method Breakdown</a><ul>
+<li><a href="#trajectory-guided-action-generation">Trajectory-Guided Action Generation</a></li>
+<li><a href="#test-time-search-predict-score-refinement">Test-Time Search-Predict-Score Refinement</a></li>
+<li><a href="#two-stage-training">Two-Stage Training</a></li>
+</ul>
+</li>
+<li><a href="#key-innovations">Key Innovations</a></li>
+<li><a href="#experiments-and-results">Experiments and Results</a></li>
+<li><a href="#boundaries-and-limitations">Boundaries and Limitations</a></li>
+<li><a href="#engineering-insights">Engineering Insights</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

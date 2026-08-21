@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M15 · 상지와 말단 실행기: 걷는 기계에 손을 달아주기 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M15 · 상지와 말단 실행기: 걷는 기계에 손을 달아주기</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m15">M15 · 상지와 말단 실행기: 걷는 기계에 손을 달아주기</h1>
+<p><strong>전체 위치</strong>: Stage 2 보행 플랫폼 6관문 검수 통과(M14) 이후, Stage 3의 첫 번째 임무. 입력은 걷는 이족보행 로봇 + Stage 1의 실행기 선정 방법이며, 출력은 <strong>양팔 + 말단 실행기 장착 및 조정 완료, IK 해법 사용 가능</strong>한 상반신입니다. 하위 M16 인식 스택은 머리/손목에 카메라를 장착하고, M17 원격 조작은 팔과 말단을 구동해야 합니다. 본 임무는 이들의 공통적인 운반체입니다.</p>
+<p><strong>선행 조건</strong>: <a href="/ko/roadmap/missions/m14-sim-to-real/">M14 · sim-to-real 배포 및 보행 검수</a> 통과; M01의 관절 지표 알고리즘 사용 가능; M10의 URDF 절차 숙지(팔은 전체 기계 모델에 통합); 실행기 선정 4문항은 <a href="/ko/roadmap/playbooks/actuator-selection/">실행기 선정 핸드북</a> 참조.</p>
+<p>이론 배경: <a href="/entry/ent_component_7dof_arm_2024/">7자유도 기계팔</a>, <a href="/entry/ent_method_forward_kinematics/">정기구학</a>, <a href="/entry/ent_method_inverse_kinematics/">역기구학</a>, <a href="/entry/ent_component_dexterous_hand_2024/">솜씨 좋은 손</a> 카드, <a href="/ko/wiki/chapters/chapter-16/">제16장 조작과 파지</a>, <a href="/ko/wiki/chapters/chapter-08/">제8장 휴머노이드 로봇 설계 원리</a>, <a href="/ko/wiki/chapters/chapter-09/">제9장 핵심 서브시스템 설계</a> 및 <a href="/ko/wiki/chapters/chapter-04/">제4장 실행기</a>.</p>
+<h2 id="1">단계 1: 팔 구성과 자유도 할당</h2>
+<p>【무엇을 할까】먼저 각 팔의 자유도를 정하고, 관절 지표를 계산합니다. 세 가지 옵션에서 선택:</p>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>능력</th>
+<th>비용</th>
+<th>선례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7 DoF (어깨 3, 팔꿈치 1, 손목 3)</td>
+<td>여유 자유도: 말단 고정 시 팔꿈치 회전 가능, 장애물 회피, 특이점 회피</td>
+<td>비용, 배선, 제어 복잡도 최고</td>
+<td>ToddlerBot 각 팔 7 DoF, Dynamixel 버스 서보 모터 사용 (toddlerbot.md)</td>
+</tr>
+<tr>
+<td>6 DoF</td>
+<td>임의의 자세 도달 가능, 여유 없음</td>
+<td>축 하나 부족, 특이점 회피는 경로 계획에 의존</td>
+<td>산업용 팔 표준 구성</td>
+</tr>
+<tr>
+<td>5 DoF</td>
+<td>손목 자세 축 하나 희생</td>
+<td>가장 저렴, 데스크탑 고정점 파지에 충분</td>
+<td>Berkeley Humanoid Lite 각 팔 5 DoF (berkeley-humanoid-lite.md)</td>
+</tr>
+</tbody>
+</table>
+<p>첫 번째 로봇은 가벼운 5–6 DoF부터 시작하는 것을 권장합니다. 관절 지표는 M01 지렛대 알고리즘을 재사용합니다. 계산 예시 (어깨 굴곡/신전 관절): 팔 + 손 총 1.2 kg, 말단 파지 0.5 kg, 질량 중심 등가 팔 길이 0.25 m, 동적 안전 계수 2:</p>
+<pre class="highlight"><code>τ ≥ (1.2 + 0.5) × 9.81 × 0.25 × 2 ≈ 8.3 N·m</code></pre>
+<p>실행기 두 가지 경로: Stage 1 자체 개발 모듈 재사용, 또는 서보 모터 버스 (손목 등 작은 토크 관절에 특히 적합, 예: <a href="/entry/ent_component_dynamixel_xm430_w210_t/">Dynamixel XM430</a> 계열; 토크/가격은 모델별로 공급업체에 확인).</p>
+<p>【왜 필요한가】자유도는 "능력—비용—복잡도"의 삼자택일입니다: 관절 하나가 추가될 때마다 BOM, 배선, 고장 지점 하나가 늘어납니다. 첫 번째 로봇의 KPI는 "엔드투엔드로 컵 하나 집기"이지, 인간 팔 해부학을 복제하는 것이 아닙니다. 두 기준 로봇은 5–7 DoF로 모두 조작 시연을 완료했으며, 구성은 집착이 아닌 임무에 따라 선택합니다. 여유도의 가치는 <a href="/entry/ent_component_7dof_arm_2024/">7자유도 기계팔</a> 카드 참조.</p>
+<p>【당신의 상황 분석】데스크탑 고정점 파지만 수행: 5–6 DoF부터 시작; 양손 협력, 장애물 회피 조작이 명확히 필요: 7 DoF. 최대 토크 &lt; 4 N·m인 관절은 서보 모터를 사용하는 것이 간편; 힘 제어/역구동 (향후 순응 조작)이 필요하면 QDD를 선택하고, 비용과 튜닝 작업량을 감수 (비교는 <a href="/ko/roadmap/playbooks/actuator-selection/">실행기 선정 핸드북</a> 참조).</p>
+<h2 id="2">단계 2: 구조 통합 및 전체 기계 균형</h2>
+<p>【무엇을 할까】</p>
+<ol>
+<li><strong>관성 피드백</strong>: 팔의 질량/질량 중심/관성은 반드시 URDF에 포함 (M10 절차로 돌아감), 전체 기계 모델 병합 후 총 질량 중심 재계산 — 팔을 모델링하지 않으면 보행 전략이 잘못된 동역학을 보게 됩니다.</li>
+<li><strong>어깨 거치대 강성 및 배선</strong>: 어깨 뿌리는 전체 팔의 외팔보 지지점이며, 브래킷 변형은 말단 정밀도를 직접적으로 저하시킵니다; 배선은 관절 회전에 따른 여유분을预留 (트위스트 링 또는 슬립 링), 손목 다회전 상황에서는 특히 계산 필요.</li>
+<li><strong>보행 시 팔 자세</strong>: 보행 시 양팔을 접고 (팔꿈치 굴곡, 팔을 몸에 밀착) 관성을 낮추며, 접힌 자세를 보행 전략의 기본 관절각에 기록합니다.</li>
+<li><strong>질량 중심 보상 개념</strong>: 조작 전에 "손을 뻗은 후 전체 기계 질량 중심 투영이 여전히 지지 영역 내에 있는가"를 먼저 묻고, 벗어나면 자세를 조정하거나 단계적으로 손을 뻗습니다.</li>
+</ol>
+<p>【왜 필요한가】팔을 장착한 전체 기계는 더 이상 M14 검수 당시의 기계가 아닙니다: 질량 중심 상승, 관성 증가, 보행 동적 여유 감소. 모델링을 먼저 수행하면 "팔 추가 후 보행 불가" 문제를 시뮬레이션 단계에서 발견할 수 있으며, 실제 기계에서 넘어지는 것을 방지합니다. 시스템 논의는 <a href="/ko/wiki/chapters/chapter-09/">제9장 핵심 서브시스템 설계</a> 및 <a href="/ko/wiki/chapters/chapter-08/">제8장 휴머노이드 로봇 설계 원리</a> 참조.</p>
+<p>【당신의 상황 분석】복제 플랫폼(ToddlerBot/Berkeley)의 공식 모델에는 이미 팔이 포함되어 있으므로, 본 단계에서는 실물 중량 확인만 하면 됩니다; 자체 개발 플랫폼은 M10 관성 3단계(CAD 읽기 / 중량 기하학적 근사 / 진자법)를 따릅니다. 팔 추가 후 먼저 시뮬레이션에서 기립 및 보행을 재실행하고, 필요시 M13 절차에 따라 전략을 미세 조정한 후, 거치대에서 검증합니다 — 순서를 바꾸면 안 됩니다.</p>
+<h2 id="3">단계 3: 말단 실행기 — 먼저 그리퍼, 인터페이스预留, 그다음 업그레이드</h2>
+<p>【무엇을 할까】</p>
+<ol>
+<li><strong>첫 번째 버전: 전동 평행 그리퍼</strong> (서보 모터/모터 직접 구동). 컵 잡기와 같은 임무에서 그리퍼의 성공률은 튜닝되지 않은 솜씨 좋은 손보다 훨씬 높습니다 (<a href="/ko/roadmap/stage-3-humanoid/">Stage 3 개요</a> 3.2절 경험).</li>
+<li><strong>퀵 체인지 인터페이스</strong>: 손목을 기계적 위치 결정 플랜지 + 통합 전원/통신 커넥터로 제작하여, 팔을 움직이지 않고 말단만 교체 — ToddlerBot의 평행 그리퍼와 순응형 손바닥은 2분 이내에 퀵 체인지 가능 (toddlerbot.md).</li>
+<li><strong>업그레이드 경로</strong> (임무에 따라 선택, 배경은 <a href="/entry/ent_component_dexterous_hand_2024/">솜씨 좋은 손</a> 카드 참조):</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>방안</th>
+<th>자유도/구동</th>
+<th>특징</th>
+<th>적합 대상</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평행 그리퍼</td>
+<td>1 DoF</td>
+<td>저렴하고 신뢰성 높음, 파지 유형 제한적</td>
+<td>첫 번째 버전 엔드투엔드 구동</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_leap_hand/">LEAP 솜씨 좋은 손</a></td>
+<td>16 DoF, Dynamixel 직접 구동 + 3D 프린팅</td>
+<td>오픈소스 저비용 의수형 손, BOM은 프로젝트 측에 확인 필요</td>
+<td>조작 학습 연구 시작</td>
+</tr>
+<tr>
+<td><a href="/entry/ent_component_allegro_hand/">Allegro 솜씨 좋은 손</a></td>
+<td>16 DoF 4손가락, 토크 제어 관절, ROS 호환</td>
+<td>상용 신뢰성 높음, 가격은 공급업체에 확인 필요</td>
+<td>신뢰성이 필요한 시나리오</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>파지 유형학</strong>: 먼저 임무가 파워 그립(쥐기, 접촉 면적 활용)인지 정밀 파지(집기, 손가락 끝 맞댐 활용)인지 구분 — 컵/도구는 파워 그립, 동전/얇은 판은 정밀 파지이며, 유형이 말단 형태와 자유도 요구 사항을 결정합니다.</li>
+</ol>
+<p>【왜 필요한가】솜씨 좋은 손의 16개 자유도는 동시에 16배의 제어 및 데이터 요구 사항을 의미하며, 첫 번째 버전에 적용하는 것은 두 개의 전선을 동시에 여는 것과 같습니다. 퀵 체인지 인터페이스의 가치는 두 번째 버전에서 드러납니다 — 이를预留하는 것은 첫 번째 버전에서 가장 저렴한 선견지명입니다.</p>
+<p>【당신의 상황 분석】첫 번째 로봇: 그리퍼 + 퀵 체인지 플랜지, 망설이지 마세요. 모방 학습 연구를 수행해야 한다면: LEAP부터 시작 (오픈소스로 수정 가능); 예산이 충분하고 안정성이 필요하다면: Allegro. 텐던 구동 vs 링크: 텐던 구동 손가락은 관성이 작지만 유지보수가 번거롭고, 링크는 강성이 높아 모델링에 좋으며, 첫 번째 손은 직접 구동 또는 링크를 권장합니다.</p>
+<h2 id="4-fk-ik">단계 4: 기구학 해법 — FK 체인 구축, IK 해법, 성공률 검증</h2>
+<p>【무엇을 할까】</p>
+<ol>
+<li><strong>FK</strong>: URDF에 따라 베이스→말단의 동차 변환 체인 구축 (<a href="/entry/ent_method_forward_kinematics/">정기구학</a>), 각 관절을 실물과 비교 — 수동으로 각도 설정, FK 출력 말단 자세 vs 캘리퍼스/캘리브레이션 보드 실측.</li>
+<li><strong>IK</strong>: 수치 해법부터 시작, Jacobian 의사 역행렬 반복 해법; 특이점 근처에서는 감쇠 최소 제곱법(DLS) 사용. 기하학적 구조가 간단한 팔은 해석 해법 도출 가능 (<a href="/entry/ent_method_inverse_kinematics/">역기구학</a>).</li>
+<li><strong>7 DoF 여유도 활용</strong>: 영공간에 보조 목표 추가 (팔꿈치 들어 장애물 회피, 관절 한계 회피):</li>
+</ol>
+<pre class="highlight"><code>q̇ = J⁺·ẋ + (I − J⁺J)·∇H(q)        # H: 팔꿈치 들기/관절 한계 회피의 포텐셜 함수</code></pre>
+<ol>
+<li><strong>도구</strong>: ROS 생태계의 성숙한 IK 해법기 우선 사용; 교육 목적으로는 Python + numpy로 Jacobian 수동 작성 가능.</li>
+<li><strong>검증</strong>: 작업 공간 내에서 무작위로 100개의 목표 자세를 추출하여 해법 성공률 통계 — Stage 3 검수 기준 ≥95% (<a href="/ko/roadmap/stage-3-humanoid/">Stage 3 개요</a>).</li>
+</ol>
+<p>【왜 필요한가】조작의 본질은 좌표 변환과 역변환입니다: 시각(M16)이 컵 위치를 제공하면, IK를 통해 이를 5–7개의 관절각으로 변환합니다. 특이 자세는 수치 해법의 치명적인 약점입니다 — 팔을 폈을 때 Jacobian의 계수(rank)가 부족하여 의사 역행렬 출력 관절 속도가 폭발하며, DLS는 약간의 정밀도를 희생하여 수치적 안정성을 얻습니다. 영공간은 7 DoF의 "공짜 점심"입니다: 말단은 고정되어 있지만, 팔의 자세는 최적화할 수 있습니다.</p>
+<p>【당신의 상황 분석】검증 순서: 시뮬레이션 샘플링 검사 → 무부하 궤적 → 부하 궤적, 순서를 바꾸지 마세요. 성공률 &lt; 95%이면 먼저 목표점이 작업 공간 외부에 있는지 확인; 실제 기계 말단 도달 오차 목표 ≤2 cm (Stage 3 판정 기준, 권장 임계값), 초과 시 먼저 어깨 거치대 강성과 영점 캘리브레이션을 확인한 후, 알고리즘을 의심하세요.</p>
+<h2 id="5-tf">5단계: 전신 TF 및 조작 프리미티브 – 팔을 전체 로봇의 좌표계에 통합</h2>
+<p>【무엇을 할 것인가】</p>
+<ol>
+<li><strong>팔을 전체 로봇 URDF/TF 트리에 통합</strong>: base_link를 통일된 루트 노드로 하여 다리, 몸통, 팔, 엔드 이펙터, 카메라가 하나의 변환 체인으로 추적 가능하도록 함 (M16의 카메라 외부 파라미터도 이 트리에 연결).</li>
+<li><strong>카메라 배치 및 선정</strong>: 아이-인-핸드(머리/가슴 카메라, 시야는 넓지만 가림이 많고 캘리브레이션 체인이 김) vs 아이-온-핸드(손목 카메라, 근거리 정밀하지만 시야가 좁음) – 초기 버전은 머리 카메라로 충분하며, 손목에는 설치 공간과 배선을预留.</li>
+<li><strong>그리핑 프리미티브 상태 머신</strong>: 사전 그립 자세 → 접근(저속 직선) → 폐쇄 → 부하 확인(전류/위치 피드백) → 후퇴, 각 단계에 타임아웃 및 실패 시 롤백 포함.</li>
+<li><strong>보행-조작 상호 배제</strong>: 먼저 정지 후 조작(<a href="/ko/roadmap/stage-3-humanoid/">Stage 3 개요</a> 경험) – 팔을 뻗을 때 하체는 서 있는 제어로 잠그고, 조작 완료 후 팔을 회수한 후 보행, 상호 배제는 소프트웨어 인터록에 명시.</li>
+</ol>
+<p>【왜 하는가】휴머노이드는 고정 베이스가 없으며, 엔드 이펙터 정밀도 = 팔 정밀도 + 몸통 자세 오차 + 발끝 미끄러짐의 누적(<a href="/ko/roadmap/stage-3-humanoid/">Stage 3 개요</a> 3.1절) – 걷으면서 잡는 것은 연구 과제이고, 정지 후 잡는 것은 엔지니어링 지혜입니다. 상태 머신은 "잡기"를 관찰 가능하고 롤백 가능한 작은 단계로 분할하여, 실패 시 "잡을 수 없는" 블랙박스가 아닌 어느 단계에서 문제가 발생했는지 파악할 수 있습니다.</p>
+<p>【상황 분석 방법】TF 트리를 먼저 종이에 그리세요: 각 프레임의 부모 노드와 변환 출처(URDF 정적 / 캘리브레이션 외부 파라미터)를 명확히 기록. 프리미티브 상태 머신은 Python 상태 루프로 직접 작성하면 되며, 행동 트리 프레임워크를 사용할 필요 없음; 보행-조작 상호 배제는 소프트웨어로 강제하며, 작업자의 자발적 준수에 의존하지 않음.</p>
+<h2 id="_1">승인 기준</h2>
+<ul>
+<li>[ ] 팔 구성 및 자유도 할당이 문서화되었으며, 각 관절의 피크 토크에 대한 계산식, 수치, 안전 계수(≥2) 선정 근거가 있음.</li>
+<li>[ ] 팔 질량/질량 중심/관성 모멘트가 URDF에 반영되었으며, 전체 모델의 질량 중심 재계산 통과, 시뮬레이션 서기/보행 재측정 안정성 확인.</li>
+<li>[ ] 엔드 이펙터 퀵 체인지 인터페이스(기계적 위치 결정 + 전기 커넥터) 조립 및 조정 완료, 그리퍼 개폐 제어 가능.</li>
+<li>[ ] FK와 실제 로봇의 관절별 비교 검증 통과; IK 무작위 100개 목표 해결 성공률 ≥95%.</li>
+<li>[ ] 실제 로봇 엔드 이펙터 위치 오차 ≤2 cm(무부하, 권장 임계값), 무부하/부하 궤적 재현 녹화 파일 보관.</li>
+<li>[ ] 정지 후 팔 뻗기 전체 과정에서 로봇이 넘어지지 않음(또는 질량 중심 보정이 적용되고 실제로 효과적임).</li>
+<li>[ ] 그리핑 프리미티브 상태 머신 5단계 완비(타임아웃 및 실패 롤백 포함), 실제 로봇 그리핑 시연 성공.</li>
+</ul>
+<h2 id="_2">일반적인 문제 및 점검</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>점검 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>특이점 부근 관절 급변/속도 폭발</td>
+<td>목표가 특이점 자세에 근접, 유사 역행렬 발산</td>
+<td>댐핑 최소 제곱법으로 변경; 목표점에 도달 가능성 필터 적용; 7 DoF는 널 공간을 사용하여 특이점 회피</td>
+</tr>
+<tr>
+<td>팔 추가 후 보행 성능 저하</td>
+<td>팔 관성 모멘트가 모델에 반영되지 않음</td>
+<td>2단계로 돌아가 URDF에 반영, 시뮬레이션 재측정 후 보행 전략 미세 조정</td>
+</tr>
+<tr>
+<td>손목 배선 반복적 단선</td>
+<td>비틀림 여유 부족, 피로 파괴</td>
+<td>배선에 비틀림 루프预留; 다회전 상황에서는 슬립 링 평가</td>
+</tr>
+<tr>
+<td>그리퍼 폐쇄 시 손목과 간섭</td>
+<td>엔드 이펙터와 손목 관절 충돌체가 모델링되지 않음</td>
+<td>URDF에 collision 형상 추가; IK에 자체 충돌 검사 추가</td>
+</tr>
+<tr>
+<td>IK 해결 실패 보고</td>
+<td>목표가 작업 공간 외부에 있음</td>
+<td>목표점 시각화 확인; 먼저 작업 공간 분석 후 목표 설정</td>
+</tr>
+<tr>
+<td>팔 뻗을 때 로봇 흔들림 및 넘어짐</td>
+<td>질량 중심 보정 미적용 / 속도 과다</td>
+<td>속도 낮추고 재측정; 정지 후 조작; 팔 뻗기 전 질량 중심 투영 확인</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m14-sim-to-real/">M14 · sim-to-real 배포 및 보행 승인</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m16-perception-stack/">M16 · 인식 스택 구축</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-16/">제16장 조작 및 그리핑</a>, <a href="/ko/wiki/chapters/chapter-04/">제4장 액추에이터</a>, <a href="/ko/wiki/chapters/chapter-08/">제8장 휴머노이드 로봇 설계 원리</a>, <a href="/ko/wiki/chapters/chapter-09/">제9장 핵심 서브시스템 설계</a></li>
+<li><a href="/ko/roadmap/playbooks/actuator-selection/">액추에이터 선정 매뉴얼</a> · <a href="/ko/roadmap/stage-3-humanoid/">Stage 3 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/stage-3-humanoid/">← 이전<span>3단계: 완전한 휴머노이드 로봇 – 이족 보행 플랫폼에서 &#34;듣고, 걸어가고, 집는다&#34;까지</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m16-perception-stack/">다음 →<span>M16 · 인식 스택 구축: 로봇이 컵이 어디 있는지 볼 수 있게 하기</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m15">M15 · 상지와 말단 실행기: 걷는 기계에 손을 달아주기</a><ul>
+<li><a href="#1">단계 1: 팔 구성과 자유도 할당</a></li>
+<li><a href="#2">단계 2: 구조 통합 및 전체 기계 균형</a></li>
+<li><a href="#3">단계 3: 말단 실행기 — 먼저 그리퍼, 인터페이스预留, 그다음 업그레이드</a></li>
+<li><a href="#4-fk-ik">단계 4: 기구학 해법 — FK 체인 구축, IK 해법, 성공률 검증</a></li>
+<li><a href="#5-tf">5단계: 전신 TF 및 조작 프리미티브 – 팔을 전체 로봇의 좌표계에 통합</a></li>
+<li><a href="#_1">승인 기준</a></li>
+<li><a href="#_2">일반적인 문제 및 점검</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

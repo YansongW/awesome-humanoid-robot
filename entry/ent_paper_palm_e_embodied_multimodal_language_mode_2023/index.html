@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaLM-E: An Embodied Multimodal Language Model · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">PaLM-E: An Embodied Multimodal Language Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>PaLM-E: An Embodied Multimodal Language Model</h1>
+      <p class="entry-name-en">PaLM-E: An Embodied Multimodal Language Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P053. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>PaLM-E 是 Google 等机构提出的具身多模态语言模型，将连续传感器观测（图像、状态向量）直接注入预训练语言模型的嵌入空间，实现单一模型同时处理机器人规划、视觉问答和通用语言任务。核心贡献在于证明通过混合少量具身数据（&lt;10%）与大规模互联网数据训练，可让语言模型获得接地（grounding）能力，并在 562B 参数规模下达到通用 VQA 最先进水平。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2303.03378" target="_blank" rel="noopener">arXiv:2303.03378 PaLM-E: An Embodied Multimodal Language Model</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>此前工作（如 SayCan）将 LLM 作为文本接口，输出仅通过 affordance 函数与低层策略耦合，LLM 本身无法感知场景几何或对象状态；而现成 VLM（如 PaLI）虽能处理图像，但零样本下在具身推理任务上完全失效（成功率 0.0）。PaLM-E 真正改变的是：将感知模态从“外部工具”变为“语言模型的内在输入”，使 LLM 的推理能力直接作用于连续观测，而非经过离散化或语义摘要。</p>
+<p>这一转变的意义在于，它重新定义了具身智能体的训练范式——不再为每个机器人任务单独训练感知-控制闭环，而是将机器人数据作为多模态训练混合的一部分，让模型同时学习语言先验与物理世界关联。作者用实验证明，这种混合训练不仅不损害通用能力（562B 模型在 NLU 上甚至超过纯文本 PaLM），反而在数据效率上大幅超越从零训练的专用模型。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">架构核心</h3>
+<ul>
+<li>连续观测编码为与语言 token 嵌入同维的向量序列，动态插入文本 token 之间（非固定位置），形成“多模态句子”前缀。</li>
+<li>公式 (3)：<code>x_i = γ(w_i)</code>（文本）或 <code>φ_j(O_j)_i</code>（观测），观测可编码为多个嵌入向量。</li>
+</ul>
+<h3 id="_4">输入编码器变体</h3>
+<ul>
+<li><strong>状态向量</strong>：MLP <code>φ_state</code> 将 <code>s ∈ ℝ^S</code> 映射到嵌入空间。</li>
+<li><strong>ViT</strong>：ViT-4B（4B 参数）或 ViT-22B（22B 参数），预训练于图像分类；通过仿射变换 <code>ψ</code> 投影。可选对象中心表示（利用掩码 <code>M_j</code> 分解 ViT 特征）。</li>
+<li><strong>OSRT</strong>：基于 SRT 的 3D 神经场景表示，对象槽 <code>o_j = φ̄_OSRT(I_{1:v})_j</code>，经 MLP 投影；冻结槽表示，仅训练投影器 <code>ψ</code>。</li>
+</ul>
+<h3 id="_5">训练与推理</h3>
+<ul>
+<li>损失：前缀后 token 的交叉熵（公式 2）。</li>
+<li>数据混合：Webli 52.4%、VQ2A 13.1%、CC3M 13.1%、机器人数据合计 8.9%（TAMP 1.6%、Language-Table 4.2%、移动操作 3.1%）。</li>
+<li>推理循环：PaLM-E 以 1 Hz 输出语言子目标，低层策略（RT-1 或 Interactive Language）以 5 Hz 执行动作；每 40 步（10 Hz 持续 4 秒）请求新指令。</li>
+<li>实体引用：对难以语言标识的对象，在提示中标注“Object 1 is <obj_1>”，使模型可通过特殊 token 引用。</li>
+</ul>
+<h3 id="_6">模型变体</h3>
+<ul>
+<li>PaLM-E-12B（8B LLM + 4B ViT）、PaLM-E-84B（62B + 22B）、PaLM-E-562B（540B + 22B）。</li>
+<li>冻结 LLM 仅训练编码器，或端到端微调；增大模型规模可显著减少灾难性遗忘。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li><strong>观测动态注入而非固定位置</strong>：与 Chen et al. (2022) 等 VLM 不同，观测嵌入可放在文本中任意位置（如“Q: What happened between <img_1> and <img_2>?”），使模型能灵活处理多图像、多时间步的推理，这是后续多模态 LLM 的通用设计。</li>
+<li><strong>OSRT 神经场景表示注入</strong>：将 3D 对象槽直接作为 token 输入，无需大规模数据即可在 TAMP 任务上达到 82.5% 规划成功率（1% 数据），证明几何结构化表示与语言模型的结合是数据高效的关键。</li>
+<li><strong>规模缓解灾难性遗忘</strong>：562B 模型在 NLG 上仅退化 3.9%（由表内数值 87.3%→3.9% 计算），而 12B 模型退化 87.3%，首次系统证明超大模型可在多模态混合训练中保持语言能力。</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="tamp-1-p1p2">TAMP 环境（1% 数据，p1/p2 规划成功率）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>p1</th>
+<th>p2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SayCan (oracle afford.)</td>
+<td>38.7</td>
+<td>33.3</td>
+</tr>
+<tr>
+<td>PaLI (zero-shot)</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>PaLM-E w/ State (预训练)</td>
+<td>55.9</td>
+<td>49.7</td>
+</tr>
+<tr>
+<td>PaLM-E w/ ViT-4B full mixture</td>
+<td>74.1</td>
+<td>74.6</td>
+</tr>
+<tr>
+<td>PaLM-E w/ OSRT</td>
+<td>82.5</td>
+<td>76.2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="f1">移动操作（F1 分数）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>PaLI</th>
+<th>CLIP-FT-hindsight</th>
+<th>PaLM-E-12B (full, unfrozen)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>失败检测</td>
+<td>0.73</td>
+<td>0.89</td>
+<td>0.77</td>
+</tr>
+<tr>
+<td>Affordance 预测</td>
+<td>0.62</td>
+<td>-</td>
+<td>0.91</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vqavqav2-test-dev-ok-vqa-val">通用 VQA（VQAv2 test-dev / OK-VQA val）</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>VQAv2</th>
+<th>OK-VQA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PaLM-E-12B</td>
+<td>76.2</td>
+<td>55.5</td>
+</tr>
+<tr>
+<td>PaLM-E-562B</td>
+<td>80.0</td>
+<td>66.1</td>
+</tr>
+<tr>
+<td>Flamingo</td>
+<td>82.0</td>
+<td>57.8</td>
+</tr>
+<tr>
+<td>PaLI</td>
+<td>84.3</td>
+<td>64.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="140-demos">数据效率（任务 1，40 demos）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Single robot, 从零训练</td>
+<td>50.0</td>
+</tr>
+<tr>
+<td>Full mixture, LLM 冻结</td>
+<td>20.0</td>
+</tr>
+<tr>
+<td>Full mixture, LLM 不冻结</td>
+<td>80.0</td>
+</tr>
+</tbody>
+</table>
+<p>关键结论：全混合训练 + 不冻结 LLM 在 40 demos 下将成功率从 50.0 提升至 80.0；OSRT 在 1% 数据下超越 ViT-4B 全混合（82.5 vs 74.1）；562B 模型在 OK-VQA 上超过专门微调的 PaLI（66.1 vs 64.5）。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>冻结 LLM 的方法在 Language-Table 任务上表现不稳定（论文未明确具体数字）。</li>
+<li>非对象中心 ViT-4B 变体无法处理涉及对象身份的任务（q1），因依赖颜色引用。</li>
+<li>低层策略（RT-1 等）无法处理长时程任务或复杂指令，PaLM-E 必须自行确定可用技能，无外部约束过滤输出。</li>
+<li>通用视觉-语言任务并非工作重点，作者未做专门优化；OK-VQA 等结果仅作为附带报告。</li>
+<li>论文未明确硬件配置、训练时间等工程细节。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>先核对数据混合比例</strong>：机器人数据仅占 8.9%，但效果显著；若下游任务数据稀缺，优先考虑混合互联网规模数据而非从零训练。</li>
+<li><strong>最容易踩坑：LLM 冻结策略</strong>：冻结 LLM 在部分任务（如 Language-Table）上失败，但在移动操作上 F1 达 0.91；复现时应根据任务类型选择是否微调，并优先尝试 84B 以上规模以缓解遗忘。</li>
+<li><strong>OSRT 是数据高效的关键</strong>：若场景有明确对象几何结构，优先采用 OSRT 而非全局 ViT；其冻结槽表示 + 仅训练投影器的策略可大幅降低计算成本。</li>
+<li><strong>推理频率匹配</strong>：PaLM-E 1 Hz 输出与低层 5 Hz 控制需严格同步；实际部署时注意延迟预算，避免子目标过期。</li>
+<li><strong>实体引用机制</strong>：对难以语言描述的对象，务必在提示中显式标注“Object 1 is <obj_1>”，否则模型无法引用，TAMP 中无实体引用时 p1 从 97.7 降至 94.6（6 物体场景）。</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2303.03378</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_lynch_interactive_language_talking_t_2022/">Interactive Language</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">RT-1</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_palm_e_embodied_multimodal_language_mode_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_lynch_interactive_language_talking_t_2022/">
+          <span class="entry-type">论文</span>
+          <h3>Interactive Language</h3>
+          <p>Interactive Language 是 Google Robotics 于 2022 年提出的通用视觉-语言-动作模型，用于机器人实时操控。其核心贡献在于通过行为克隆训练，使机器人能理解并执行…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">
+          <span class="entry-type">论文</span>
+          <h3>RT-1</h3>
+          <p>RT-1（Robotics Transformer）是Google…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">架构核心</a></li>
+<li><a href="#_4">输入编码器变体</a></li>
+<li><a href="#_5">训练与推理</a></li>
+<li><a href="#_6">模型变体</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#tamp-1-p1p2">TAMP 环境（1% 数据，p1/p2 规划成功率）</a></li>
+<li><a href="#f1">移动操作（F1 分数）</a></li>
+<li><a href="#vqavqav2-test-dev-ok-vqa-val">通用 VQA（VQAv2 test-dev / OK-VQA val）</a></li>
+<li><a href="#140-demos">数据效率（任务 1，40 demos）</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

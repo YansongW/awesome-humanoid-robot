@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>모바일 로봇을 위한 소프트웨어 아키텍처 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">모바일 로봇을 위한 소프트웨어 아키텍처</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>모바일 로봇을 위한 소프트웨어 아키텍처</h1>
+      <p class="entry-name-en">Software Architectures for Mobile Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">소프트웨어 미들웨어</span><span class="tag">설계 공학</span><span class="tag">대량 생산</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">중위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.03233v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en/ko body retranslated from zh deep-read (1425 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB, Microsoft Robotics Developer Studio 등 모바일 로봇용 소프트웨어 아키텍처와 미들웨어 프레임워크를 검토하고, 컴포넌트 기반 설계, 발행-구독, 피어 투 피어, 서비스 지향 등의 일반적인 아키텍처 패턴을 정리한 서베이 장이다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2206.03233" target="_blank" rel="noopener">Software Architectures for Mobile Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이 장에서는 먼저 소프트웨어 아키텍처가 대규모 컴퓨팅 시스템의 청사진으로서 지니는 중요성을 설명하고, 모바일 로봇 분야에서 이로 인해 수많은 참조 설계와 구현이 파생되었음을 지적합니다. 저자는 모바일 로봇이라는 특정 문제 영역이 소프트웨어 프레임워크에 요구하는 사항을 개괄한 뒤, 현재 주류 설계 솔루션을 논의하고, 일반적인 프레임워크에 대한 역사적 관점을 제공하며, 향후 발전 방향을 전망합니다. 본문에서는 ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB 및 Microsoft Robotics Developer Studio와 같은 대표적인 프레임워크를 중점적으로 열거하고, 컴포넌트 기반 설계, 발행-구독, 점대점 및 서비스 지향과 같은 아키텍처 패턴을 체계적으로 분류합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">핵심 내용</h3>
+<ul>
+<li><strong>소프트웨어 아키텍처 정의</strong>: 소프트웨어 아키텍처는 대규모 컴퓨팅 시스템에 청사진을 제공하며, 설계 및 개발 작업의 핵심 단계입니다. 모바일 로봇 분야에서 이 작업은 광범위하게 탐구되어 수많은 참조 설계와 구현을 낳았습니다.</li>
+<li><strong>도메인 요구 사항</strong>: 모바일 로봇 시스템은 소프트웨어 프레임워크에 실시간성, 신뢰성, 모듈화, 확장성 및 이기종 하드웨어 지원 등을 포함한 특별한 요구 사항을 제기합니다.</li>
+<li><strong>역사적 관점</strong>: 이 장은 초기 Player, CARMEN과 같은 프레임워크에서 현대 ROS/ROS2 생태계에 이르기까지 일반적인 프레임워크의 역사적 진화 흐름을 제공하며, 긴밀한 결합에서 느슨한 결합으로, 중앙 집중식에서 분산식으로의 발전 추세를 반영합니다.</li>
+</ul>
+<h3 id="_4">주요 프레임워크</h3>
+<ul>
+<li><strong>ROS (Robot Operating System)</strong>: 발행-구독 패턴 기반의 분산 프레임워크로, 노드 간 비동기 통신을 지원하며 연구 및 프로토타입 개발에 널리 사용됩니다.</li>
+<li><strong>ROS2</strong>: ROS를 기반으로 DDS (Data Distribution Service) 표준을 도입하여 실시간성, 보안성 및 크로스 플랫폼 지원을 강화합니다.</li>
+<li><strong>YARP (Yet Another Robot Platform)</strong>: 휴머노이드 로봇 설계를 위한 점대점 통신 프레임워크로, 모듈성과 다국어 지원을 강조합니다.</li>
+<li><strong>Orocos (Open Robot Control Software)</strong>: 실시간 제어 컴포넌트 라이브러리를 제공하며, 컴포넌트 기반 설계와 하드 실시간 운영을 지원합니다.</li>
+<li><strong>Player</strong>: 초기 오픈소스 프레임워크로, 클라이언트-서버 모델을 채택하며 다중 센서 모바일 로봇에 적합합니다.</li>
+<li><strong>CARMEN (Carnegie Mellon Robot Navigation Toolkit)</strong>: 내비게이션, 위치 추정 및 인식 모듈을 통합한 프레임워크로, 모듈 간 느슨한 결합을 강조합니다.</li>
+<li><strong>MATLAB</strong>: Simulink와 Robotics System Toolbox를 통해 시뮬레이션 및 알고리즘 빠른 프로토타이핑 기능을 제공합니다.</li>
+<li><strong>Microsoft Robotics Developer Studio</strong>: .NET 기반 프레임워크로, 시각적 프로그래밍과 분산 서비스 아키텍처를 지원합니다.</li>
+</ul>
+<h3 id="_5">아키텍처 패턴</h3>
+<ul>
+<li><strong>컴포넌트 기반 설계 (Component-Based Design)</strong>: 시스템을 독립적인 기능 모듈로 분할하고, 명확하게 정의된 인터페이스를 통해 상호작용하여 재사용성과 유지보수성을 향상시킵니다.</li>
+<li><strong>발행-구독 (Publish-Subscribe)</strong>: 데이터 생산자와 소비자를 분리하여 비동기, 다대다 통신을 지원하며, 대표적으로 ROS의 Topic 메커니즘이 있습니다.</li>
+<li><strong>점대점 (Peer-to-Peer)</strong>: 노드 간 직접 통신으로 중간 단계의 지연을 줄이며, YARP의 Port 연결과 같은 실시간 제어 시나리오에 적합합니다.</li>
+<li><strong>서비스 지향 (Service-Oriented)</strong>: 기능을 원격 호출 가능한 서비스로 캡슐화하여 동기식 요청-응답 패턴을 지원하며, ROS의 Service와 Action이 대표적입니다.</li>
+</ul>
+<h3 id="_6">향후 방향</h3>
+<ul>
+<li>산업용 로봇 요구 사항을 충족하기 위해 실시간성과 결정론을 강화합니다.</li>
+<li>크로스 플랫폼 호환성과 클라우드-엣지-디바이스 협업 능력을 향상시킵니다.</li>
+<li>복잡한 동적 환경에 대응하기 위해 형식 검증과 보안 메커니즘을 도입합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_software_gazebo/">Gazebo</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_software_ros_2_middleware_2024/">ROS 2 미들웨어</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_andreasson_software_architectures_for_mob_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_software_gazebo/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>Gazebo</h3>
+          <p>물리 엔진·센서 모델·장면 작성을 제공하는 오픈소스 3D 로보틱스 시뮬레이터로, 알고리즘 개발·테스트에 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">소프트웨어 플랫폼</span>
+          <h3>ROS 2 미들웨어</h3>
+          <p>DDS 기반 pub/sub 및 실시간 지원을 갖춘 사실상의 로봇 미들웨어.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">핵심 내용</a></li>
+<li><a href="#_4">주요 프레임워크</a></li>
+<li><a href="#_5">아키텍처 패턴</a></li>
+<li><a href="#_6">향후 방향</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,3026 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 2: Knowledge Graph Construction Methodology · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 2: Knowledge Graph Construction Methodology</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-2-knowledge-graph-construction-methodology">Chapter 2: Knowledge Graph Construction Methodology</h1>
+<h2 id="abstract">Abstract</h2>
+<p>Humanoid robots are complex systems spanning materials, mechanics, electronics, control, artificial intelligence, software, manufacturing, supply chains, applications, and policies. Faced with such heterogeneous and rapidly evolving knowledge domains, traditional literature reviews, product lists, or technical reports struggle to support systematic cognition, reasoning, and decision-making. Knowledge graphs, through a formal model of entities, relations, and sources, structure, connect, and trace fragmented knowledge. This chapter systematically describes the knowledge graph construction methodology adopted in this book, including the information model, Schema design, hierarchical system, cross-layer relationships, data ingestion pipeline, deduplication and disambiguation mechanisms, manual review process, and quality verification system. This methodology not only serves as the organizational foundation of this book but can also provide a reference for knowledge management in other complex engineering fields.</p>
+<p><strong>Keywords</strong>: Knowledge Graph; Information Model; Schema; Entity-Relation; Cross-Layer Links; Data Ingestion; Quality Control; Manual Review</p>
+<hr />
+<h2 id="21-from-data-to-knowledge-why-traditional-approaches-are-insufficient">2.1 From Data to Knowledge: Why Traditional Approaches Are Insufficient</h2>
+<h3 id="211-the-complexity-of-humanoid-robot-knowledge">2.1.1 The Complexity of Humanoid Robot Knowledge</h3>
+<p>Knowledge in the field of humanoid robots has four notable characteristics:</p>
+<table>
+<thead>
+<tr>
+<th>Characteristic</th>
+<th>Specific Manifestation</th>
+<th>Cognitive Challenge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Interdisciplinary</strong></td>
+<td>Involves mechanics, electronics, materials, AI, control, manufacturing, regulations, etc.</td>
+<td>Different disciplines use different terminologies and models, making unified understanding difficult</td>
+</tr>
+<tr>
+<td><strong>Rapid Evolution</strong></td>
+<td>New papers, products, companies, and standards continuously emerge</td>
+<td>Traditional reviews become outdated upon publication</td>
+</tr>
+<tr>
+<td><strong>Strong Correlation</strong></td>
+<td>Materials affect components, components affect the whole machine, the whole machine affects applications</td>
+<td>Flat lists cannot express the industrial chain</td>
+</tr>
+<tr>
+<td><strong>Diverse Sources</strong></td>
+<td>Papers, patents, news, financial reports, standards, blogs coexist</td>
+<td>Varying quality requires source traceability</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Interdisciplinary</p>
+<p>Interdisciplinary refers to research or engineering problems that require integrating concepts, methods, and tools from multiple disciplines. From an information theory perspective, each discipline can be viewed as a "symbol system," where its terminology, assumptions, and reasoning rules constitute a local encoding method; the core difficulty of interdisciplinarity lies in the "translation loss" and "semantic gap" between different symbol systems. Knowledge graphs provide a shared reference layer for these symbol systems through a unified entity-relationship language.</p>
+</div>
+<h3 id="212-limitations-of-traditional-knowledge-organization-methods">2.1.2 Limitations of Traditional Knowledge Organization Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Typical Form</th>
+<th>Advantages</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Literature Review</td>
+<td>Academic papers, review articles</td>
+<td>Systematic, rigorous</td>
+<td>Slow to update, difficult to correlate with industrial data</td>
+</tr>
+<tr>
+<td>Product Database</td>
+<td>Parameter tables, product pages</td>
+<td>Convenient for querying</td>
+<td>Lacks principles, relationships, and sources</td>
+</tr>
+<tr>
+<td>Industry Report</td>
+<td>Market analysis, forecasts</td>
+<td>Provides business insights</td>
+<td>One-off, difficult to update continuously</td>
+</tr>
+<tr>
+<td>Wikipedia</td>
+<td>Open encyclopedia</td>
+<td>Wide coverage</td>
+<td>Lacks depth, loose structure</td>
+</tr>
+<tr>
+<td>Technical Blog</td>
+<td>Company/personal blogs</td>
+<td>Timely, specific</td>
+<td>Fragmented, varying credibility</td>
+</tr>
+</tbody>
+</table>
+<p>Each of these methods has its value, but none can simultaneously meet the four requirements of <strong>structured, correlated, traceable, and updatable</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Traceability</p>
+<p>Traceability means that any conclusion or data can be traced back to its source, generation process, and context. In software engineering, traceability is often used in the requirements-design-test chain; in knowledge engineering, it requires that every piece of knowledge has a clear source, author, time, and verification status. The mathematical basis of traceability is "source recording": if knowledge is considered a proposition, then the source is the metadata of that proposition, ensuring the proposition can be audited.</p>
+</div>
+<h3 id="213-the-solution-approach-of-knowledge-graphs">2.1.3 The Solution Approach of Knowledge Graphs</h3>
+<p>A Knowledge Graph is a method of representing knowledge using a graph structure. Its core ideas are:</p>
+<ul>
+<li><strong>Entity</strong>: Represents objects in the domain, such as a robot, a company, a material, or a paper.</li>
+<li><strong>Relationship</strong>: Represents associations between entities, such as "uses," "manufactures," "composes," or "applies to."</li>
+<li><strong>Property</strong>: Describes characteristics of entities, such as name, year, cost, or performance parameters.</li>
+<li><strong>Source</strong>: Records the provenance of knowledge, ensuring verifiability.</li>
+</ul>
+<p>In this way, a knowledge graph can systematically organize fragmented information in the humanoid robot field and support cross-layer reasoning and complex queries.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Graph Structure</p>
+<p>A graph structure consists of nodes and edges. Nodes represent objects, and edges represent binary relationships between objects. In discrete mathematics, a graph is denoted as <span class="arithmatex">\(G=(V,E)\)</span>, where <span class="arithmatex">\(V\)</span> is the set of vertices and <span class="arithmatex">\(E \subseteq V \times V\)</span> is the set of edges. Graph theory provides a formal foundation for knowledge graphs: concepts such as connectivity, paths, degree, and centrality can all be used to analyze the structural characteristics of knowledge.</p>
+</div>
+<h3 id="214-philosophical-and-information-theoretic-foundations-from-data-to-knowledge">2.1.4 Philosophical and Information-Theoretic Foundations from Data to Knowledge</h3>
+<p>Understanding knowledge graphs cannot be limited to the engineering level; it is also necessary to return to foundational frameworks such as the Data-Information-Knowledge-Wisdom (DIKW) pyramid, propositional logic, first-order logic, description logic, and semantic networks.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: DIKW Pyramid (Data-Information-Knowledge-Wisdom Pyramid)</p>
+<p>The DIKW pyramid describes the hierarchical progression from raw signals to wisdom:
+- <strong>Data</strong>: Discrete raw symbols or observations, such as a sensor reading "42".
+- <strong>Information</strong>: Data with context, answering "who, when, where" questions, e.g., "The motor temperature is 42°C".
+- <strong>Knowledge</strong>: Information organized into reusable patterns, explaining "why" and "how", e.g., "Motor temperature exceeding 40°C accelerates magnet demagnetization".
+- <strong>Wisdom</strong>: The ability to apply knowledge to make judgments in complex situations, e.g., "To extend lifespan, use higher-grade insulation materials in high-temperature scenarios".
+From an information theory perspective, moving from data to information is a reduction in entropy: <span class="arithmatex">\(H(X|Y) &lt; H(X)\)</span>, meaning that after obtaining context <span class="arithmatex">\(Y\)</span>, the uncertainty about <span class="arithmatex">\(X\)</span> decreases.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Propositional Logic</p>
+<p>Propositional logic studies formulas composed of propositions (declarative statements that can be judged true or false) connected by logical connectives (and <span class="arithmatex">\(\land\)</span>, or <span class="arithmatex">\(\lor\)</span>, not <span class="arithmatex">\(\neg\)</span>, implies <span class="arithmatex">\(\rightarrow\)</span>). It is the foundation of Boolean circuits, database queries, and automated reasoning in computer science. For example, "The robot uses a harmonic reducer" can be represented as an atomic proposition <span class="arithmatex">\(P\)</span>, while "If the robot uses a harmonic reducer, then the robot requires lubrication maintenance" can be represented as <span class="arithmatex">\(P \rightarrow Q\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: First-Order Logic (FOL)</p>
+<p>First-order logic introduces quantifiers (universal <span class="arithmatex">\(\forall\)</span>, existential <span class="arithmatex">\(\exists\)</span>), variables, predicates, and functions on top of propositional logic. For example, <span class="arithmatex">\(\forall r \, \text{Robot}(r) \rightarrow \exists a \, \text{Actuator}(a) \land \text{hasPart}(r,a)\)</span> means "Every robot has some actuator." First-order logic is a common foundation for knowledge representation and database theory, but general first-order logic reasoning is undecidable.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Description Logic (DL)</p>
+<p>Description logic is a family of decidable subsets of first-order logic, specifically designed for representing concept hierarchies and role relationships. It is widely used in the Semantic Web and ontology engineering and is the logical foundation of OWL (Web Ontology Language). Description logic balances expressiveness and reasoning complexity: for example, <span class="arithmatex">\(\mathcal{ALC}\)</span> supports concept conjunction, disjunction, negation, and existential/universal quantifiers, and its concept satisfiability decision is ExpTime-complete.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Semantic Network</p>
+<p>A semantic network is a method of representing knowledge using a directed graph, where nodes represent concepts or instances and edges represent semantic relationships. It was proposed by Quillian in 1968 and is a precursor to knowledge graphs. Semantic networks emphasize association and inheritance but lack strict logical semantics; formalization was only achieved with the advent of RDF and description logic.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Frame</p>
+<p>Frames were proposed by Minsky in 1975 as a structured knowledge representation method. Each frame has slots and fillers; for example, a "Robot" frame might have slots such as "Name," "Manufacturer," and "Degrees of Freedom." Frames are similar to classes in object-oriented programming but focus more on knowledge representation than computation.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Ontology</p>
+<p>An ontology is an explicit, formal, and shared specification of concepts, relationships, properties, and constraints within a domain. In philosophy, ontology studies the nature of "being"; in computer science, an ontology is an engineering artifact used to unify terminology and promote interoperability. An ontology typically includes classes, properties, individuals, and axioms.</p>
+</div>
+<p>The transformation process from data to knowledge can be formally understood as:</p>
+<ol>
+<li><strong>Pattern Recognition</strong>: Extracting meaningful structures from raw data.</li>
+<li><strong>Conceptualization</strong>: Mapping structures to predefined categories and relationships.</li>
+<li><strong>Correlation</strong>: Establishing relationships between different concepts to form a network.</li>
+<li><strong>Formalization</strong>: Describing concepts and relationships using logical languages to support reasoning.</li>
+<li><strong>Verification</strong>: Ensuring the reliability of knowledge through sources and review.</li>
+</ol>
+<p>The following Mermaid diagram illustrates the correspondence between the DIKW pyramid and the stages of knowledge graph construction:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    subgraph DIKW["DIKW Pyramid"]
+        D["Data&lt;br/&gt;Raw symbols / Sensor readings"]
+        I["Information&lt;br/&gt;Contextualized propositions"]
+        K["Knowledge&lt;br/&gt;Patterns, relationships, rules"]
+        W["Wisdom&lt;br/&gt;Decisions and judgments"]
+    end
+    D --&gt; I
+    I --&gt; K
+    K --&gt; W
+
+    subgraph KG["Knowledge Graph Construction"]
+        A["Extraction"]
+        B["Schema"]
+        C["Linking"]
+        R["Reasoning"]
+    end
+
+    D --&gt; A
+    A --&gt; I
+    I --&gt; B
+    B --&gt; K
+    K --&gt; C
+    C --&gt; R
+    R --&gt; W</code></pre>
+<p>From an information theory perspective, each level of the DIKW pyramid corresponds to a reduction in entropy. Raw data has the highest entropy due to a lack of context; information reduces uncertainty through metadata; knowledge further compresses representation through patterns; and wisdom represents optimal decision-making under constraints. The value of knowledge graphs lies in solidifying "information" into "knowledge" and supporting automated reasoning from knowledge to wisdom through graph structures and logical rules.</p>
+<p>The historical evolution of knowledge representation methods can be summarized in the following diagram:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Semantic Network&lt;br/&gt;1968"] --&gt; B["Frame&lt;br/&gt;1975"]
+    B --&gt; C["Expert System&lt;br/&gt;1980s"]
+    C --&gt; D["Description Logic&lt;br/&gt;1990s"]
+    D --&gt; E["Semantic Web&lt;br/&gt;2001"]
+    E --&gt; F["RDF / OWL&lt;br/&gt;2004-2012"]
+    F --&gt; G["Large-scale Knowledge Graph&lt;br/&gt;Freebase / Wikidata&lt;br/&gt;2012+"]
+    G --&gt; H["Neuro-Symbolic Integration&lt;br/&gt;KG + LLM / RAG&lt;br/&gt;2020+"]</code></pre>
+<h3 id="215-summary">2.1.5 Summary</h3>
+<p>Traditional knowledge organization methods have significant shortcomings in terms of structure, association, traceability, and updatability. Knowledge graphs, through graph structures, unified schemas, and source verification, provide an engineered approach to knowledge management for complex domains. Their theoretical foundations include information theory, propositional logic, first-order logic, description logic, semantic networks, frames, and ontology.</p>
+<h2 id="22-information-model">2.2 Information Model</h2>
+<p>The information model adopted in this book can be summarized as the "<strong>Entity-Relationship-Source-Verification</strong>" quadruple. The following sections explain each component.</p>
+<h3 id="221-entity-model">2.2.1 Entity Model</h3>
+<p>Each entity is represented by a Markdown file. The file's frontmatter uses YAML format and contains the following core fields:</p>
+<pre class="highlight"><code class="language-yaml">---
+id: ent_robot_unitree_h1_humanoid_robot_2024
+type: robot_system
+title: Unitree H1 Humanoid Robot
+domain: 11_applications_markets
+theoretical_depth: system
+aliases:
+  - Unitree H1
+  - 宇树 H1
+status: active
+created_at: 2024-01-15T00:00:00Z
+updated_at: 2026-06-30T00:00:00Z
+sources:
+  - id: unitree_official_h1
+    type: website
+    title: Unitree H1 Official Page
+    url: https://www.unitree.com/products/h1
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-06-30T00:00:00Z
+---</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Frontmatter</p>
+<p>Frontmatter is a metadata block at the top of a Markdown file, typically enclosed by <code>---</code> and written in YAML format. It allows authors to attach structured attributes to a document without altering the main content. From a technical perspective, Frontmatter serves as a lightweight metadata layer, bridging plain text and database records.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: YAML</p>
+<p>YAML (YAML Ain't Markup Language) is a human-readable data serialization format commonly used for configuration files and metadata. It supports structures such as scalars, lists, and dictionaries, with syntax using indentation to indicate hierarchy. YAML is equivalent to JSON in expressive power but is more convenient for human reading and editing.</p>
+</div>
+<p><strong>Entity Field Description:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Unique entity identifier, all lowercase, containing only letters, numbers, and underscores</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Enum</td>
+<td>Yes</td>
+<td>Entity type, e.g., <code>paper</code>, <code>method</code>, <code>component</code>, <code>company</code></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Entity title</td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td>Enum</td>
+<td>Yes</td>
+<td>Domain code, e.g., <code>02_components</code>, <code>07_ai_models_algorithms</code></td>
+</tr>
+<tr>
+<td><code>theoretical_depth</code></td>
+<td>Enum</td>
+<td>Yes</td>
+<td>Theoretical depth: <code>foundation</code>, <code>principle</code>, <code>formalism</code>, <code>method</code>, <code>system</code></td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td>List</td>
+<td>No</td>
+<td>Aliases for search and disambiguation</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Enum</td>
+<td>Yes</td>
+<td>Status: <code>active</code>, <code>staged</code>, <code>rejected</code>, <code>deprecated</code></td>
+</tr>
+<tr>
+<td><code>sources</code></td>
+<td>List</td>
+<td>Yes</td>
+<td>Source information</td>
+</tr>
+<tr>
+<td><code>verification</code></td>
+<td>Object</td>
+<td>Yes</td>
+<td>Review information</td>
+</tr>
+</tbody>
+</table>
+<h3 id="222-entity-types">2.2.2 Entity Types</h3>
+<p>The entity types in this book cover the entire humanoid robot industry chain. The main types include:</p>
+<table>
+<thead>
+<tr>
+<th>Entity Type</th>
+<th>English</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Paper</td>
+<td><code>paper</code></td>
+<td>Diffusion Policy, GR00T N1</td>
+<td>Academic paper or preprint</td>
+</tr>
+<tr>
+<td>Method</td>
+<td><code>method</code></td>
+<td>Action Chunking, MPC</td>
+<td>Research method or technical approach</td>
+</tr>
+<tr>
+<td>Algorithm</td>
+<td><code>algorithm</code></td>
+<td>PPO, SAC, QP</td>
+<td>Specific algorithm</td>
+</tr>
+<tr>
+<td>Dataset</td>
+<td><code>dataset</code></td>
+<td>Open X-Embodiment, DROID</td>
+<td>Training or evaluation dataset</td>
+</tr>
+<tr>
+<td>Software Platform</td>
+<td><code>software_platform</code></td>
+<td>ROS 2, Isaac Sim, MuJoCo</td>
+<td>Software or platform</td>
+</tr>
+<tr>
+<td>Technology</td>
+<td><code>technology</code></td>
+<td>URDF, EtherCAT, VLA</td>
+<td>Technical concept or framework</td>
+</tr>
+<tr>
+<td>Component</td>
+<td><code>component</code></td>
+<td>Harmonic reducer, Frameless torque motor</td>
+<td>Hardware component</td>
+</tr>
+<tr>
+<td>Robot System</td>
+<td><code>robot_system</code></td>
+<td>Tesla Optimus, Unitree H1</td>
+<td>Complete robot product</td>
+</tr>
+<tr>
+<td>Company</td>
+<td><code>company</code></td>
+<td>Tesla, Figure AI, Unitree</td>
+<td>Enterprise or institution</td>
+</tr>
+<tr>
+<td>Component Manufacturer</td>
+<td><code>component_manufacturer</code></td>
+<td>Harmonic Drive Systems</td>
+<td>Manufacturer specializing in components</td>
+</tr>
+<tr>
+<td>Tier 1 Supplier</td>
+<td><code>tier1_supplier</code></td>
+<td>Sanhua Intelligent Controls</td>
+<td>Supplier directly to OEMs</td>
+</tr>
+<tr>
+<td>OEM</td>
+<td><code>oem</code></td>
+<td>Tesla, UBTECH</td>
+<td>Original equipment manufacturer</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td><code>standard</code></td>
+<td>ISO 13482, IEC 61508</td>
+<td>Standard or regulation</td>
+</tr>
+<tr>
+<td>Material</td>
+<td><code>material</code></td>
+<td>NdFeB magnet, Aluminum-magnesium alloy</td>
+<td>Raw material or material</td>
+</tr>
+<tr>
+<td>Application</td>
+<td><code>application</code></td>
+<td>Automotive manufacturing, Logistics warehousing</td>
+<td>Application scenario</td>
+</tr>
+<tr>
+<td>Market</td>
+<td><code>market</code></td>
+<td>Industrial humanoid robot market</td>
+<td>Market or segment</td>
+</tr>
+<tr>
+<td>Concept</td>
+<td><code>concept</code></td>
+<td>Systems engineering, Uncanny valley</td>
+<td>Abstract concept</td>
+</tr>
+<tr>
+<td>Principle</td>
+<td><code>principle</code></td>
+<td>Dynamics, Control theory</td>
+<td>Fundamental principle</td>
+</tr>
+<tr>
+<td>Formalism</td>
+<td><code>formalism</code></td>
+<td>Euler-Lagrange equation, QP</td>
+<td>Mathematical or computational form</td>
+</tr>
+<tr>
+<td>Benchmark</td>
+<td><code>benchmark</code></td>
+<td>Human-Level Actuation Score</td>
+<td>Evaluation benchmark</td>
+</tr>
+<tr>
+<td>Equipment</td>
+<td><code>equipment</code></td>
+<td>System integration test bench</td>
+<td>Equipment or tool</td>
+</tr>
+</tbody>
+</table>
+<h4 id="2221-ontological-commitment-and-taxonomy-of-entity-types">2.2.2.1 Ontological Commitment and Taxonomy of Entity Types</h4>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Taxonomy</p>
+<p>Taxonomy is the discipline of systematically classifying domain concepts. In ontology engineering, taxonomy is typically represented as a directed acyclic graph (DAG) composed of <code>rdfs:subClassOf</code> relationships. Formally, if class <span class="arithmatex">\(C_1\)</span> is a subclass of class <span class="arithmatex">\(C_2\)</span>, then <span class="arithmatex">\(C_1 \preceq C_2\)</span>. This partial order satisfies reflexivity, antisymmetry, and transitivity, allowing each entity to be placed along an inheritance chain from abstract to concrete.</p>
+</div>
+<p>The entity types in Table 2.2 are not listed arbitrarily but correspond to a continuous spectrum of humanoid robot knowledge from "abstract concepts" to "physical products." We can abstract them into three major ontological commitments:</p>
+<ol>
+<li><strong>Physical Entity</strong>: Objects that occupy space-time, have mass, and energy, e.g., <code>component</code>, <code>robot_system</code>, <code>material</code>, <code>company</code>.</li>
+<li><strong>Information Entity</strong>: Objects existing as symbols or data, e.g., <code>paper</code>, <code>method</code>, <code>algorithm</code>, <code>dataset</code>, <code>standard</code>.</li>
+<li><strong>Process &amp; State</strong>: Entities describing events, capabilities, or market states, e.g., <code>application</code>, <code>market</code>, <code>technology</code>, <code>benchmark</code>.</li>
+</ol>
+<p>In formal language, we can define a partially ordered set of entity types <span class="arithmatex">\((\mathcal{T}, \preceq)\)</span>, where <span class="arithmatex">\(\mathcal{T}\)</span> is the set of types and <span class="arithmatex">\(\preceq\)</span> is the subclass relationship. For any entity <span class="arithmatex">\(e\)</span>, its most specific type is <span class="arithmatex">\(type(e) \in \mathcal{T}\)</span>, and its instantiated class hierarchy can be expressed as:</p>
+<div class="arithmatex">\[\mathcal{A}(e) = \{ t \in \mathcal{T} \mid type(e) \preceq t \}\]</div>
+<p>For example, a <code>frameless_motor</code> entity satisfies:</p>
+<div class="arithmatex">\[\mathcal{A}(e) = \{ \text{frameless\_motor}, \text{component}, \text{physical\_entity}, \text{entity} \}\]</div>
+<p>This classification structure has two direct engineering values: first, it supports <strong>inheritance reasoning</strong>—if the ontology specifies that <code>component</code> must have a <code>mass</code> attribute, then all <code>frameless_motor</code> entities automatically inherit this constraint; second, it supports <strong>cross-level queries</strong>—querying all <code>physical_entity</code> returns components, robots, materials, etc., in one go.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Directed Acyclic Graph (DAG)</p>
+<p>A directed acyclic graph is a graph where edges have direction and contain no directed cycles. Formally, a graph <span class="arithmatex">\(G=(V,E)\)</span> is a directed acyclic graph if and only if there is no vertex sequence <span class="arithmatex">\(v_1, v_2, \dots, v_k\)</span> such that <span class="arithmatex">\((v_i, v_{i+1}) \in E\)</span> and <span class="arithmatex">\(v_k=v_1\)</span>. The class hierarchy of an ontology must be a DAG; otherwise, a logical contradiction like "<span class="arithmatex">\(A\)</span> is a subclass of <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(B\)</span> is a subclass of <span class="arithmatex">\(A\)</span>" would arise.</p>
+</div>
+<h4 id="2222-entity-types-and-chapter-mapping">2.2.2.2 Entity Types and Chapter Mapping</h4>
+<p>The design of entity types directly serves the chapter divisions of this book. Table 2.3 provides the index relationship between main entity types and corresponding chapters, facilitating readers' navigation between the knowledge graph and the main text.</p>
+<table>
+<thead>
+<tr>
+<th>Entity Type</th>
+<th>Main Corresponding Chapter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>material</code></td>
+<td>Chapter 3</td>
+<td>Rare earth permanent magnets, structural materials, battery materials, semiconductor materials</td>
+</tr>
+<tr>
+<td><code>component</code></td>
+<td>Chapters 4, 5, 6</td>
+<td>Actuators, sensors, computing/power/thermal management hardware</td>
+</tr>
+<tr>
+<td><code>robot_system</code></td>
+<td>Chapters 8, 9</td>
+<td>Whole-machine design principles and key subsystems</td>
+</tr>
+<tr>
+<td><code>method</code> / <code>algorithm</code> / <code>software_platform</code></td>
+<td>Chapter 7 and subsequent AI chapters</td>
+<td>Control, perception, decision algorithms and middleware</td>
+</tr>
+<tr>
+<td><code>company</code> / <code>tier1_supplier</code> / <code>oem</code></td>
+<td>Chapter 7</td>
+<td>Supplier map and supply chain governance</td>
+</tr>
+<tr>
+<td><code>standard</code> / <code>policy</code></td>
+<td>Chapter 12</td>
+<td>Policies, regulations, and ethics</td>
+</tr>
+</tbody>
+</table>
+<p>The following Python example demonstrates how to use <code>networkx</code> to build a subclass DAG of entity types and compute the ancestor set for each type:</p>
+<pre class="highlight"><code class="language-python">import networkx as nx
+
+G = nx.DiGraph()
+# Type hierarchy (illustrative)
+edges = [
+    ("entity", "physical_entity"),
+    ("entity", "information_entity"),
+    ("physical_entity", "component"),
+    ("physical_entity", "robot_system"),
+    ("physical_entity", "material"),
+    ("information_entity", "paper"),
+    ("information_entity", "method"),
+    ("information_entity", "algorithm"),
+]
+G.add_edges_from(edges)
+
+# Compute the ancestor set for each type (including itself)
+for t in G.nodes():
+    ancestors = nx.ancestors(G, t) | {t}
+    print(f"{t}: {sorted(ancestors)}")</code></pre>
+<p>Explanation of the output: The ancestor set of <code>component</code> is <code>['component', 'entity', 'physical_entity']</code>, meaning that attribute constraints on this type aggregate upward and inherit downward along the DAG.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Inheritance Reasoning</p>
+<p>Inheritance reasoning refers to the reasoning process by which subclasses automatically acquire the attributes and constraints of their parent classes. In description logic, if <span class="arithmatex">\(\text{Component} \sqsubseteq \text{PhysicalEntity}\)</span> and <span class="arithmatex">\(\text{PhysicalEntity} \sqsubseteq \exists \text{hasMass}\)</span>, then it can be inferred that <span class="arithmatex">\(\text{Component} \sqsubseteq \exists \text{hasMass}\)</span>. This is a core mechanism in ontology engineering to avoid redundant modeling and ensure consistency.</p>
+</div>
+<h3 id="223-relationship-model">2.2.3 Relationship Model</h3>
+<p>Relationships are also represented using Markdown files, with the frontmatter containing the source entity, target entity, relationship type, source, and verification information.</p>
+<pre class="highlight"><code class="language-yaml">---
+id: rel_ent_component_harmonic_reducer_2024_is_part_of_ent_component_rotary_actuator_2024
+source_id: ent_component_harmonic_reducer_2024
+target_id: ent_component_rotary_actuator_2024
+type: is_part_of
+strength: strong
+direction: directed
+status: active
+sources:
+  - id: curated_workflow_relationship
+    type: website
+    title: Humanoid Robot Workflow Relationship Curation
+verification:
+  reviewed_by: ai_autonomous
+  reviewed_at: 2026-07-01T00:00:00Z
+---</code></pre>
+<p><strong>Relationship Field Description:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Unique identifier for the relationship</td>
+</tr>
+<tr>
+<td><code>source_id</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Source entity ID</td>
+</tr>
+<tr>
+<td><code>target_id</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Target entity ID</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>Enum</td>
+<td>Yes</td>
+<td>Relationship type</td>
+</tr>
+<tr>
+<td><code>strength</code></td>
+<td>Enum</td>
+<td>No</td>
+<td>Relationship strength: <code>strong</code>, <code>moderate</code>, <code>weak</code></td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td>Enum</td>
+<td>Yes</td>
+<td>Direction: <code>directed</code>, <code>bidirectional</code></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Enum</td>
+<td>Yes</td>
+<td>Status</td>
+</tr>
+<tr>
+<td><code>sources</code></td>
+<td>List</td>
+<td>Yes</td>
+<td>Source information</td>
+</tr>
+<tr>
+<td><code>verification</code></td>
+<td>Object</td>
+<td>Yes</td>
+<td>Review information</td>
+</tr>
+</tbody>
+</table>
+<h3 id="224-relationship-types">2.2.4 Relationship Types</h3>
+<p>The relationship types defined in this book cover technical dependencies, composition relationships, manufacturing relationships, application scenarios, and regulatory relationships, among others.</p>
+<table>
+<thead>
+<tr>
+<th>Relationship Type</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is_part_of</code></td>
+<td>Source is a component of target</td>
+<td>Harmonic reducer → Rotary actuator</td>
+</tr>
+<tr>
+<td><code>uses</code></td>
+<td>Source uses target</td>
+<td>VLA model → Dataset</td>
+</tr>
+<tr>
+<td><code>requires</code></td>
+<td>Source depends on target</td>
+<td>MPC → IMU</td>
+</tr>
+<tr>
+<td><code>implemented_on</code></td>
+<td>Method/algorithm deployed on target</td>
+<td>Diffusion Policy → Unitree H1</td>
+</tr>
+<tr>
+<td><code>manufactures</code></td>
+<td>Source manufactures target</td>
+<td>Harmonic Drive Systems → Harmonic reducer</td>
+</tr>
+<tr>
+<td><code>supplies</code></td>
+<td>Source supplies target</td>
+<td>Tuopu Group → Tesla</td>
+</tr>
+<tr>
+<td><code>sources_from</code></td>
+<td>Source procures from target</td>
+<td>Tesla → Tuopu Group</td>
+</tr>
+<tr>
+<td><code>applies_to</code></td>
+<td>Source applies to target</td>
+<td>ISO 13482 → Service robot</td>
+</tr>
+<tr>
+<td><code>regulates</code></td>
+<td>Source regulates/constrains target</td>
+<td>IEC 61508 → Control system</td>
+</tr>
+<tr>
+<td><code>tested_with</code></td>
+<td>Source tested with target</td>
+<td>Robot → HIL test bench</td>
+</tr>
+<tr>
+<td><code>validates_on</code></td>
+<td>Source validates on target</td>
+<td>Test bench → Robot</td>
+</tr>
+<tr>
+<td><code>analyzes</code></td>
+<td>Source analyzes target</td>
+<td>FEA → Mechanical structure</td>
+</tr>
+<tr>
+<td><code>models</code></td>
+<td>Source models target</td>
+<td>URDF → Robot</td>
+</tr>
+<tr>
+<td><code>manages</code></td>
+<td>Source manages target</td>
+<td>Fleet platform → Robot</td>
+</tr>
+<tr>
+<td><code>deployed_at</code></td>
+<td>Source deployed in target scenario</td>
+<td>Figure 02 → BMW Spartanburg</td>
+</tr>
+<tr>
+<td><code>competes_with</code></td>
+<td>Source competes with target</td>
+<td>Tesla → Figure AI</td>
+</tr>
+<tr>
+<td><code>partners_with</code></td>
+<td>Source partners with target</td>
+<td>BMW → Figure AI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="225-source-and-verification-model">2.2.5 Source and Verification Model</h3>
+<p>Every entity and relationship must have source and verification information.</p>
+<p><strong>Source Types:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>primary</code></td>
+<td>First-hand source, e.g., original paper, company website</td>
+<td>arXiv paper, Unitree official website</td>
+</tr>
+<tr>
+<td><code>secondary</code></td>
+<td>Secondary analysis, e.g., review, report</td>
+<td>Goldman Sachs report</td>
+</tr>
+<tr>
+<td><code>press_release</code></td>
+<td>Press release</td>
+<td>Company funding announcement</td>
+</tr>
+<tr>
+<td><code>patent</code></td>
+<td>Patent document</td>
+<td>Actuator structure patent</td>
+</tr>
+<tr>
+<td><code>report</code></td>
+<td>Research report</td>
+<td>Counterpoint Research</td>
+</tr>
+<tr>
+<td><code>paper</code></td>
+<td>Academic paper</td>
+<td>Conference on Robot Learning</td>
+</tr>
+<tr>
+<td><code>annual_report</code></td>
+<td>Annual report</td>
+<td>Tesla 10-K</td>
+</tr>
+<tr>
+<td><code>website</code></td>
+<td>Website</td>
+<td>Technical blog, encyclopedia</td>
+</tr>
+<tr>
+<td><code>interview</code></td>
+<td>Interview</td>
+<td>CEO interview</td>
+</tr>
+<tr>
+<td><code>other</code></td>
+<td>Other</td>
+<td>Internally compiled materials</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Verification Fields:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reviewed_by</code></td>
+<td>Enum</td>
+<td><code>human</code>, <code>ai</code>, <code>ai_autonomous</code>, <code>human_and_ai</code></td>
+</tr>
+<tr>
+<td><code>reviewed_at</code></td>
+<td>Timestamp</td>
+<td>Review time</td>
+</tr>
+<tr>
+<td><code>review_notes</code></td>
+<td>String</td>
+<td>Review notes</td>
+</tr>
+</tbody>
+</table>
+<p>The relationship of the information model quadruple can be represented by the following diagram:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    subgraph Entity["Entity"]
+        A["id / type / title&lt;br/&gt;domain / theoretical_depth&lt;br/&gt;aliases / status"]
+    end
+    subgraph Relation["Relationship"]
+        B["source_id / target_id&lt;br/&gt;type / strength / direction"]
+    end
+    subgraph Source["Source"]
+        C["id / type / title&lt;br/&gt;url / date"]
+    end
+    subgraph Verification["Verification"]
+        D["reviewed_by&lt;br/&gt;reviewed_at&lt;br/&gt;review_notes"]
+    end
+
+    A --&gt;|hasSource| C
+    B --&gt;|hasSource| C
+    A --&gt;|hasVerification| D
+    B --&gt;|hasVerification| D
+    A --&gt;|hasRelation| B</code></pre>
+<h3 id="226-graph-theory-foundations-of-knowledge-graphs">2.2.6 Graph Theory Foundations of Knowledge Graphs</h3>
+<p>The underlying data structure of a knowledge graph is a graph. Understanding graph theory foundations is crucial for designing schemas, evaluating quality, and selecting storage and query methods.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Directed Graph</p>
+<p>A directed graph is a graph where edges have direction, denoted as <span class="arithmatex">\(G=(V,E)\)</span>, where <span class="arithmatex">\(E\)</span> is a set of ordered vertex pairs, <span class="arithmatex">\(E \subseteq V \times V\)</span>. In a knowledge graph, a triple <span class="arithmatex">\((s,p,o)\)</span> is an edge in a directed graph, with direction from subject <span class="arithmatex">\(s\)</span> to object <span class="arithmatex">\(o\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Triple</p>
+<p>A triple is the basic data unit of a knowledge graph, in the form <span class="arithmatex">\((subject, predicate, object)\)</span>, abbreviated as <span class="arithmatex">\((s,p,o)\)</span>. For example:
+$<span class="arithmatex">\((\text{Unitree H1}, \text{uses}, \text{harmonic reducer})\)</span>$
+Triples correspond to atomic formulas <span class="arithmatex">\(P(s,o)\)</span> in first-order logic and are the common foundation of RDF, SPARQL, and description logic.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Labeled Property Graph (LPG)</p>
+<p>A labeled property graph is a graph data model where both nodes and edges can have labels and properties. Graph databases like Neo4j adopt the LPG model. The main difference between LPG and RDF is that LPG allows edges to have properties, whereas in RDF, edges are predicates, and properties must be expressed through auxiliary nodes or reification.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Resource Description Framework (RDF)</p>
+<p>RDF is a semantic web data model recommended by W3C, representing knowledge as a set of triples. In RDF, each resource has a Uniform Resource Identifier (URI), and predicates are also URIs. RDF emphasizes interoperability and formal semantics, serving as the data foundation for the SPARQL query language and OWL ontologies.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Degree</p>
+<p>In an undirected graph, the degree <span class="arithmatex">\(d(v)\)</span> of a node is the number of edges connected to it. In a directed graph, it is divided into in-degree <span class="arithmatex">\(d_{in}(v)\)</span> (number of edges pointing to the node) and out-degree <span class="arithmatex">\(d_{out}(v)\)</span> (number of edges pointing from the node). The distribution of degrees is a fundamental indicator for structural analysis of knowledge graphs.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Path and Connected Component</p>
+<p>A path is a sequence of nodes and edges from one node to another in a graph. A connected component is a maximal subgraph where any two nodes are connected by a path. In directed graphs, it is further divided into weakly connected components and strongly connected components. Paths and connectivity are the basis for graph traversal, querying, and reasoning.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Centrality</p>
+<p>Centrality measures the importance of a node in a graph. Common types include:
+- <strong>Degree Centrality</strong>: <span class="arithmatex">\(C_D(v) = \frac{d(v)}{|V|-1}\)</span>
+- <strong>Betweenness Centrality</strong>: <span class="arithmatex">\(C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}\)</span>, where <span class="arithmatex">\(\sigma_{st}\)</span> is the number of shortest paths from <span class="arithmatex">\(s\)</span> to <span class="arithmatex">\(t\)</span>, and <span class="arithmatex">\(\sigma_{st}(v)\)</span> is the number of those paths passing through <span class="arithmatex">\(v\)</span>.
+- <strong>Closeness Centrality</strong>: <span class="arithmatex">\(C_C(v) = \frac{|V|-1}{\sum_{u \neq v} d(v,u)}\)</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: PageRank</p>
+<p>PageRank is a node importance measure based on random walks, originally used for web page ranking. Its iterative formula is:
+$<span class="arithmatex">\(PR(v) = \frac{1-\alpha}{|V|} + \alpha \sum_{u \in N_{in}(v)} \frac{PR(u)}{d_{out}(u)}\)</span>$
+where <span class="arithmatex">\(\alpha\)</span> is the damping factor, typically set to 0.85. PageRank assumes that importance can propagate through edges and is useful for discovering core entities in a knowledge graph.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Clustering Coefficient</p>
+<p>The clustering coefficient measures the degree to which neighbors of a node are interconnected. The local clustering coefficient is defined as:
+$<span class="arithmatex">\(C(v) = \frac{2 \cdot |\{(u,w) \in E : u,w \in N(v)\}|}{d(v)(d(v)-1)}\)</span>$
+A high clustering coefficient indicates a tightly connected local community structure, which may correspond to technology clusters or supply chain clusters in a domain.</p>
+</div>
+<p>The following Mermaid diagram compares the LPG and RDF data models:</p>
+<pre class="highlight"><code class="language-mermaid">graph LR
+    subgraph LPG["Labeled Property Graph LPG"]
+        A["Node: Robot&lt;br/&gt;name=Optimus&lt;br/&gt;year=2022"]
+        B["Node: Actuator&lt;br/&gt;type= rotary"]
+        A --&gt;|uses&lt;br/&gt;since=2022| B
+    end
+
+    subgraph RDF["RDF Triples"]
+        C["ex:Optimus"]
+        D["ex:Actuator1"]
+        E["ex:name Optimus"]
+        F["ex:year 2022"]
+        C --&gt;|ex:uses| D
+        C --&gt;|ex:name| E
+        C --&gt;|ex:year| F
+    end</code></pre>
+<p>The following Python example demonstrates how to build a simple humanoid robot knowledge graph using <code>networkx</code> and compute degree, PageRank, and clustering coefficient.</p>
+<pre class="highlight"><code class="language-python">import networkx as nx
+
+# Create a directed graph
+G = nx.DiGraph()
+
+# Add entity nodes
+entities = [
+    ("Optimus", {"type": "robot_system"}),
+    ("Unitree H1", {"type": "robot_system"}),
+    ("Harmonic Reducer", {"type": "component"}),
+    ("Frameless Motor", {"type": "component"}),
+    ("Rotary Actuator", {"type": "component"}),
+    ("Tesla", {"type": "company"}),
+    ("Harmonic Drive Systems", {"type": "company"}),
+]
+G.add_nodes_from(entities)</code></pre>
+<h1 id="adding-relationship-edges">Adding Relationship Edges</h1>
+<p>triples = [
+    ("Optimus", "uses", "Harmonic Reducer"),
+    ("Optimus", "uses", "Frameless Motor"),
+    ("Unitree H1", "uses", "Harmonic Reducer"),
+    ("Rotary Actuator", "is_part_of", "Optimus"),
+    ("Rotary Actuator", "is_part_of", "Unitree H1"),
+    ("Harmonic Reducer", "is_part_of", "Rotary Actuator"),
+    ("Frameless Motor", "is_part_of", "Rotary Actuator"),
+    ("Tesla", "manufactures", "Optimus"),
+    ("Harmonic Drive Systems", "manufactures", "Harmonic Reducer"),
+]
+G.add_edges_from([(s, o, {"predicate": p}) for s, p, o in triples])</p>
+<h1 id="degree-analysis">Degree Analysis</h1>
+<p>print("In-degree:", dict(G.in_degree()))
+print("Out-degree:", dict(G.out_degree()))</p>
+<h1 id="pagerank">PageRank</h1>
+<p>pr = nx.pagerank(G, alpha=0.85)
+print("PageRank:", sorted(pr.items(), key=lambda x: -x[1]))</p>
+<h1 id="clustering-coefficient-requires-an-undirected-graph">Clustering coefficient requires an undirected graph</h1>
+<p>G_undirected = G.to_undirected()
+cc = nx.clustering(G_undirected)
+print("Clustering coefficient:", cc)
+<pre class="highlight"><code>
+---
+
+## 2.3 Hierarchical System and Theoretical Depth
+
+### 2.3.1 Domain Hierarchy
+
+To organize heterogeneous knowledge, this book divides the humanoid robotics field into 13 domains:
+
+```mermaid
+graph TD
+    A[Humanoid Robot Knowledge Graph] --&gt; B[00 Foundational Disciplines]
+    A --&gt; C[01 Raw Materials]
+    A --&gt; D[02 Components]
+    A --&gt; E[03 Manufacturing Processes]
+    A --&gt; F[04 Assembly Integration Testing]
+    A --&gt; G[05 Mass Production]
+    A --&gt; H[06 Design Engineering]
+    A --&gt; I[07 AI Models and Algorithms]
+    A --&gt; J[08 Software Middleware]
+    A --&gt; K[09 Data and Datasets]
+    A --&gt; L[10 Evaluation Benchmarks]
+    A --&gt; M[11 Application Markets]
+    A --&gt; N[12 Policy Regulation Ethics]</code></pre></p>
+<p><strong>Domain Description:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Name</th>
+<th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>00_foundations</code></td>
+<td>Foundational Disciplines</td>
+<td>Mathematics, Physics, Chemistry, Computer Science Fundamentals</td>
+</tr>
+<tr>
+<td><code>01_raw_materials</code></td>
+<td>Raw Materials</td>
+<td>Rare Earths, Magnetic Materials, Alloys, Battery Materials, Semiconductors</td>
+</tr>
+<tr>
+<td><code>02_components</code></td>
+<td>Components</td>
+<td>Actuators, Reducers, Motors, Sensors, Computing Units</td>
+</tr>
+<tr>
+<td><code>03_manufacturing_processes</code></td>
+<td>Manufacturing Processes</td>
+<td>Machining, Winding, Casting, Heat Treatment, DFM</td>
+</tr>
+<tr>
+<td><code>04_assembly_integration_testing</code></td>
+<td>Assembly Integration Testing</td>
+<td>Assembly Lines, Test Benches, HIL, Calibration</td>
+</tr>
+<tr>
+<td><code>05_mass_production</code></td>
+<td>Mass Production</td>
+<td>Capacity Ramp-up, BOM, Yield, Supply Chain</td>
+</tr>
+<tr>
+<td><code>06_design_engineering</code></td>
+<td>Design Engineering</td>
+<td>Mechanical Design, Dynamics, URDF, FEA</td>
+</tr>
+<tr>
+<td><code>07_ai_models_algorithms</code></td>
+<td>AI Models and Algorithms</td>
+<td>VLA, Imitation Learning, Reinforcement Learning, Control Algorithms</td>
+</tr>
+<tr>
+<td><code>08_software_middleware</code></td>
+<td>Software Middleware</td>
+<td>ROS 2, Real-time Systems, Simulation Platforms, Fleet Management</td>
+</tr>
+<tr>
+<td><code>09_data_datasets</code></td>
+<td>Data and Datasets</td>
+<td>Teleoperation Data, Public Datasets, Data Engineering</td>
+</tr>
+<tr>
+<td><code>10_evaluation_benchmarks</code></td>
+<td>Evaluation Benchmarks</td>
+<td>Simulation Benchmarks, Real-world Task Benchmarks, Safety Benchmarks</td>
+</tr>
+<tr>
+<td><code>11_applications_markets</code></td>
+<td>Application Markets</td>
+<td>Industrial Manufacturing, Logistics, Healthcare, Home, Markets</td>
+</tr>
+<tr>
+<td><code>12_policy_regulation_ethics</code></td>
+<td>Policy Regulation Ethics</td>
+<td>Standards, Certification, Responsibility, Ethics, Social Impact</td>
+</tr>
+</tbody>
+</table>
+<h3 id="232-theoretical-depth">2.3.2 Theoretical Depth</h3>
+<p>Each entity is also assigned a theoretical depth, reflecting its position in the knowledge hierarchy:</p>
+<table>
+<thead>
+<tr>
+<th>Depth</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>foundation</code></td>
+<td>Foundational Disciplines</td>
+<td>Linear Algebra, Newtonian Mechanics, Materials Science</td>
+</tr>
+<tr>
+<td><code>principle</code></td>
+<td>Basic Principles</td>
+<td>Control Theory, Machine Learning Principles</td>
+</tr>
+<tr>
+<td><code>formalism</code></td>
+<td>Formal Methods</td>
+<td>Euler-Lagrange Equations, QP, Markov Decision Processes</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>Methods or Techniques</td>
+<td>Diffusion Policy, MPC, URDF</td>
+</tr>
+<tr>
+<td><code>system</code></td>
+<td>Systems or Products</td>
+<td>Tesla Optimus, ROS 2, Open X-Embodiment</td>
+</tr>
+</tbody>
+</table>
+<p>The role of theoretical depth is to identify the "roots" of knowledge. For example, when analyzing a robot system, one can trace upward to the methods, formalisms, principles, and foundational disciplines it depends on, forming a complete cognitive chain.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart BT
+    A["Tesla Optimus&lt;br/&gt;system"] --&gt; B["MPC / Diffusion Policy&lt;br/&gt;method"]
+    B --&gt; C["QP / MDP&lt;br/&gt;formalism"]
+    C --&gt; D["Control Theory / Machine Learning&lt;br/&gt;principle"]
+    D --&gt; E["Linear Algebra / Probability Theory&lt;br/&gt;foundation"]</code></pre>
+<p>Domain hierarchy and theoretical depth together form a two-dimensional organizational framework: entities within the same domain progress from foundation to system according to theoretical depth, while different domains are connected through cross-layer relationships, forming a complete knowledge network.</p>
+<h3 id="233-ontology-engineering-methods">2.3.3 Ontology Engineering Methods</h3>
+<p>Ontology engineering is the systematic process of designing and maintaining ontologies. In a complex field like humanoid robotics, ontology engineering helps unify terminology, clarify relationships, support reasoning, and share knowledge.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Upper Ontology / Top-level Ontology</p>
+<p>An upper ontology is a cross-domain general conceptual framework, not specific to any particular discipline. Well-known upper ontologies include:
+- <strong>BFO (Basic Formal Ontology)</strong>: Emphasizes the distinction between continuants and occurrents, widely used in biomedicine.
+- <strong>DOLCE (Descriptive Ontology for Linguistic and Cognitive Engineering)</strong>: Describes entities from cognitive and linguistic perspectives, distinguishing physical objects, abstract objects, events, etc.
+- <strong>SUMO (Suggested Upper Merged Ontology)</strong>: Large in scale, covering philosophy, mathematics, time, space, etc., with mappings to WordNet.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Domain Ontology</p>
+<p>A domain ontology is an ontology specific to a particular discipline or application scenario, e.g., "Humanoid Robot Ontology" or "Automotive Manufacturing Ontology." It inherits general concepts from the upper ontology and adds specialized terms, relationships, and constraints.</p>
+</div>
+<p>The design of a domain ontology typically follows this workflow:</p>
+<ol>
+<li><strong>Requirements Analysis</strong>: Clarify the usage scenarios and user questions for the ontology.</li>
+<li><strong>Term Collection</strong>: Extract key terms from literature, experts, and standards.</li>
+<li><strong>Concept Hierarchization</strong>: Establish a hierarchy of classes and subclasses.</li>
+<li><strong>Attribute and Relationship Definition</strong>: Define data properties (e.g., name, year) and object properties (e.g., uses, manufactures).</li>
+<li><strong>Constraints and Axioms</strong>: Add cardinality constraints, disjointness constraints, transitive closures, etc.</li>
+<li><strong>Evaluation and Iteration</strong>: Validate the ontology through use cases, queries, and expert review.</li>
+</ol>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Requirements Analysis"] --&gt; B["Term Collection"]
+    B --&gt; C["Concept Hierarchization"]
+    C --&gt; D["Attribute and Relationship Definition"]
+    D --&gt; E["Constraints and Axioms"]
+    E --&gt; F["Evaluation and Iteration"]
+    F --&gt; A</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: OOPS (OntOlogy Pitfall Scanner)</p>
+<p>OOPS is an automated ontology defect detection tool that can identify common ontology design errors, such as "creating polymorphic instances," "confusing classes with instances," "undeclared equivalent relationships," "missing annotations," etc. OOPS detection results help ontology engineers improve the clarity and consistency of ontologies.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Ontology Matching and Schema Alignment</p>
+<p>Ontology matching is the process of discovering semantic correspondences between two or more ontologies. Correspondences include equivalence, subsumption, relatedness, etc. Schema alignment is a similar problem in databases and knowledge graphs, aiming to map schemas from different sources to a unified view. Common techniques include methods based on string similarity, structural similarity, instance overlap, and embedding learning.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Interoperability</p>
+<p>Interoperability refers to the ability of different systems, organizations, or datasets to effectively exchange and use information. Ontologies improve interoperability by providing shared vocabularies and formal semantics, reducing ambiguity during data integration.</p>
+</div>
+<p>Example application of ontology engineering in the humanoid robotics field:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Upper Ontology BFO/DOLCE"] --&gt; B["Humanoid Robot Domain Ontology"]
+    B --&gt; C["Component Sub-ontology"]
+    B --&gt; D["Algorithm Sub-ontology"]
+    B --&gt; E["Supply Chain Sub-ontology"]
+    B --&gt; F["Standards and Regulations Sub-ontology"]
+    C --&gt; G["Harmonic Reducer"]
+    D --&gt; H["Diffusion Policy"]
+    E --&gt; I["Tier1 Supplier"]
+    F --&gt; J["ISO 13482"]</code></pre>
+<h3 id="234-formal-semantics-and-owl">2.3.4 Formal Semantics and OWL</h3>
+<p>Formal semantics give knowledge graphs machine-interpretable meaning, enabling computers to automatically detect contradictions, derive implicit relationships, and answer complex queries.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: RDF Triple</p>
+<p>An RDF triple takes the form <span class="arithmatex">\((subject, predicate, object)\)</span>, where the subject and predicate are URIs, and the object can be a URI or a literal. For example:
+<pre class="highlight"><code class="language-turtle">ex:UnitreeH1 rdf:type ex:RobotSystem .
+ex:UnitreeH1 ex:uses ex:HarmonicReducer .</code></pre>
+RDF is the data layer standard of the Semantic Web, supporting interoperability between different data sources.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: RDFS (RDF Schema)</p>
+<p>RDFS is a vocabulary description language for RDF, supporting the definition of classes (rdfs:Class), properties (rdf:Property), subclass relationships (rdfs:subClassOf), subproperty relationships (rdfs:subPropertyOf), and domain/range (rdfs:domain / rdfs:range). RDFS provides lightweight reasoning capabilities.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: OWL (Web Ontology Language)</p>
+<p>OWL is a W3C-recommended ontology language based on description logic, offering stronger expressiveness than RDFS. OWL supports class expressions, property constraints, individual assertions, and complex reasoning tasks. OWL 2 is its latest version, adding more constructors and profiles to balance expressiveness and computational complexity.</p>
+</div>
+<p>The core constructs of OWL include:</p>
+<table>
+<thead>
+<tr>
+<th>Construct</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>owl:Class</code></td>
+<td>Class</td>
+<td><code>RobotSystem</code> is a class</td>
+</tr>
+<tr>
+<td><code>owl:ObjectProperty</code></td>
+<td>Object property, connecting two individuals</td>
+<td><code>uses</code> connects a robot and a component</td>
+</tr>
+<tr>
+<td><code>owl:DatatypeProperty</code></td>
+<td>Datatype property, connecting an individual and a literal</td>
+<td><code>hasYear</code> connects a robot and a year</td>
+</tr>
+<tr>
+<td><code>rdfs:subClassOf</code></td>
+<td>Subclass relationship</td>
+<td><code>HumanoidRobot</code> is a subclass of <code>RobotSystem</code></td>
+</tr>
+<tr>
+<td><code>owl:inverseOf</code></td>
+<td>Inverse property</td>
+<td><code>manufactures</code> is the inverse of <code>manufacturedBy</code></td>
+</tr>
+<tr>
+<td><code>owl:TransitiveProperty</code></td>
+<td>Transitive property</td>
+<td><code>isPartOf</code> is transitive</td>
+</tr>
+<tr>
+<td><code>owl:FunctionalProperty</code></td>
+<td>Functional property</td>
+<td>Each robot has a unique serial number</td>
+</tr>
+<tr>
+<td><code>owl:Restriction</code></td>
+<td>Restriction</td>
+<td>Each robot has at least one actuator</td>
+</tr>
+</tbody>
+</table>
+<p>The following Turtle example shows a fragment of a humanoid robot materials ontology:</p>
+<pre class="highlight"><code class="language-turtle">@prefix ex: &lt;http://example.org/humanoid-robot#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+ex:RobotSystem a owl:Class .
+ex:Component a owl:Class .
+ex:Material a owl:Class .
+
+ex:HumanoidRobot rdfs:subClassOf ex:RobotSystem .
+ex:Actuator rdfs:subClassOf ex:Component .
+ex:MagnetMaterial rdfs:subClassOf ex:Material .
+
+ex:uses a owl:ObjectProperty ;
+    rdfs:domain ex:RobotSystem ;
+    rdfs:range ex:Component .
+
+ex:isPartOf a owl:ObjectProperty ;
+    a owl:TransitiveProperty ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Component .
+
+ex:isMadeOf a owl:ObjectProperty ;
+    rdfs:domain ex:Component ;
+    rdfs:range ex:Material .
+
+ex:NeodymiumMagnet a ex:MagnetMaterial .
+ex:FramelessMotor a ex:Actuator .
+ex:Optimus a ex:HumanoidRobot .
+
+ex:FramelessMotor ex:isMadeOf ex:NeodymiumMagnet .
+ex:Optimus ex:uses ex:FramelessMotor .</code></pre>
+<p>Based on the above ontology, an OWL reasoner can deduce:</p>
+<ul>
+<li>Because <code>HumanoidRobot rdfs:subClassOf RobotSystem</code>, <code>Optimus</code> is also a <code>RobotSystem</code>.</li>
+<li>Because <code>isPartOf</code> is transitive, if "a reducer is part of an actuator" and "an actuator is part of a robot", then it can be deduced that "the reducer is part of the robot".</li>
+<li>Because the domain of <code>uses</code> is <code>RobotSystem</code>, it can be inferred that the subject using <code>FramelessMotor</code> is a robot system.</li>
+</ul>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Turtle Ontology"] --&gt; B["RDF Parser"]
+    B --&gt; C["OWL Reasoner"]
+    C --&gt; D["Inferred Triples"]
+    D --&gt; E["SPARQL Query"]
+    E --&gt; F["Application Answer"]</code></pre>
+<p>Through class hierarchies, property definitions, and constraint expressions, OWL enables knowledge graphs not only to record facts but also to support automated reasoning and consistency checking.</p>
+<hr />
+<h2 id="24-cross-layer-relationship-design">2.4 Cross-Layer Relationship Design</h2>
+<h3 id="241-why-cross-layer-relationships-are-needed">2.4.1 Why Cross-Layer Relationships Are Needed</h3>
+<p>The core challenge of humanoid robots lies in the strong coupling between different layers. For example:</p>
+<ul>
+<li>The performance of an AI algorithm (Layer 7) depends on the dataset (Layer 9) and computing hardware (Layer 2).</li>
+<li>A robot system (Layer 11) is composed of components (Layer 2), which are made from materials (Layer 1).</li>
+<li>A manufacturing method (Layer 3) affects design choices (Layer 6), which in turn impacts the overall cost (Layer 5).</li>
+</ul>
+<p>Cross-layer relationships connect these scattered entities, forming analyzable industry chain links.</p>
+<h3 id="242-typical-cross-layer-chains">2.4.2 Typical Cross-Layer Chains</h3>
+<p>The following are several typical cross-layer chains in the humanoid robot domain:</p>
+<p><strong>Chain 1: From Data to Robot</strong>
+<pre class="highlight"><code>Teleoperation System → Dataset → VLA Model → Edge Computing Platform → Robot System</code></pre></p>
+<p><strong>Chain 2: From Material to Market</strong>
+<pre class="highlight"><code>Rare Earth Material → Permanent Magnet → Frameless Torque Motor → Actuator → Robot → Industrial Application → Market Size</code></pre></p>
+<p><strong>Chain 3: From Design to Certification</strong>
+<pre class="highlight"><code>Safety Principle → Functional Safety Standard → Safety Design → Emergency Stop System → Robot → CR/CE Certification</code></pre></p>
+<p><strong>Chain 4: From Software to Deployment</strong>
+<pre class="highlight"><code>ROS 2 Middleware → Motion Planning Library → Control Algorithm → Simulation Platform → sim-to-real → Factory Deployment</code></pre></p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    subgraph Data["Data Layer 09"]
+        A[Teleoperation System]
+        B[Dataset]
+    end
+    subgraph AI["AI Layer 07"]
+        C[VLA Model]
+    end
+    subgraph Component["Component Layer 02"]
+        D[Edge Computing Platform]
+    end
+    subgraph System["System/Application Layer 11"]
+        E[Robot System]
+        F[Factory Deployment]
+    end
+
+    A --&gt; B
+    B --&gt; C
+    C --&gt; D
+    D --&gt; E
+    E --&gt; F</code></pre>
+<h4 id="2421-weighted-paths-and-dependency-strength-in-cross-layer-chains">2.4.2.1 Weighted Paths and Dependency Strength in Cross-Layer Chains</h4>
+<p>Section 2.4.2 summarizes four typical chains in text, but these chains often have different <strong>dependency strengths</strong> and <strong>confidence levels</strong> in an actual knowledge graph. To support supply chain risk assessment and technology dependency analysis, we model cross-layer chains as weighted directed graphs. For each relationship <span class="arithmatex">\((u,v)\)</span>, two numerical attributes are assigned:</p>
+<ul>
+<li><strong>Relationship Strength</strong> <span class="arithmatex">\(w(u,v) \in [0,1]\)</span>: Reflects the degree of dependency of the source entity on the target entity or the certainty of the fact. <span class="arithmatex">\(1\)</span> indicates a strong dependency (e.g., "a reducer is an essential component of an actuator"), and <span class="arithmatex">\(0\)</span> indicates a weak association.</li>
+<li><strong>Source Confidence</strong> <span class="arithmatex">\(c(u,v) \in [0,1]\)</span>: Reflects the reliability of the source supporting the relationship. Academic papers and official documents are generally more reliable than news reports.</li>
+</ul>
+<p>The <strong>comprehensive dependency score</strong> of a cross-layer path <span class="arithmatex">\(P = (e_0, e_1, \dots, e_k)\)</span> can be defined as the product of strengths along the edges:</p>
+<div class="arithmatex">\[S(P) = \prod_{i=1}^{k} w(e_{i-1}, e_i)\]</div>
+<p>The physical meaning of this formula is that dependency relationships have <strong>transmission attenuation</strong> characteristics. If any link in a chain has a weak dependency, the effective dependency of the entire chain decreases rapidly. For example, if the strength of each edge from Material → Magnet → Motor → Actuator → Robot → Market is <span class="arithmatex">\(0.9\)</span>, then the dependency score for a six-node, five-edge path is:</p>
+<div class="arithmatex">\[S(P) = 0.9^5 \approx 0.5905\]</div>
+<p>This means that even if each local relationship is quite certain, the entire macro chain "from rare earth to market" still has about <span class="arithmatex">\(41\%\)</span> semantic attenuation. This phenomenon is similar to the "bullwhip effect" in supply chains: local uncertainties are amplified along the chain.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Bullwhip Effect</p>
+<p>The bullwhip effect is a term in supply chain management, referring to the phenomenon where small fluctuations in demand are amplified as they move upstream along the supply chain. Its mathematical essence is a delay system with positive feedback: if each level adjusts inventory based on downstream orders and superimposes forecast errors, the variance of upstream orders will be significantly greater than the actual demand variance. In knowledge graphs, the multiplicative attenuation of relationship confidence can be seen as a semantic mapping of this effect.</p>
+</div>
+<h4 id="2422-probabilistic-propagation-of-path-reliability">2.4.2.2 Probabilistic Propagation of Path Reliability</h4>
+<p>If <span class="arithmatex">\(c(u,v)\)</span> is interpreted as the probability that the relationship is true, and assuming each relationship is independent, then the probability that all relationships on a path are simultaneously true is:</p>
+<div class="arithmatex">\[R(P) = \prod_{i=1}^{k} c(e_{i-1}, e_i)\]</div>
+<p>This is the <strong>series system reliability</strong> formula: failure of any link on the path will break the entire path. If a node has multiple parallel paths, the reachable reliability of that node to an upstream node can be calculated using the parallel system formula:</p>
+<div class="arithmatex">\[R_{\text{parallel}} = 1 - \prod_{j=1}^{m} (1 - R(P_j))\]</div>
+<p>where <span class="arithmatex">\(P_j\)</span> is the <span class="arithmatex">\(j\)</span>-th parallel path. This formula shows that even if a single path has low reliability, multiple independent paths can significantly improve overall reachable reliability.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Rare Earth Material&lt;br/&gt;c=1.0"] --&gt;|w=0.95&lt;br/&gt;c=0.98| B["NdFeB Magnet&lt;br/&gt;c=0.98"]
+    B --&gt;|w=0.99&lt;br/&gt;c=0.99| C["Frameless Torque Motor&lt;br/&gt;c=0.97"]
+    C --&gt;|w=0.95&lt;br/&gt;c=0.96| D["Rotary Actuator&lt;br/&gt;c=0.96"]
+    D --&gt;|w=0.90&lt;br/&gt;c=0.95| E["Robot System&lt;br/&gt;c=0.95"]
+    E --&gt;|w=0.85&lt;br/&gt;c=0.90| F["Industrial Application Market&lt;br/&gt;c=0.90"]
+    C --&gt;|Alternative Path&lt;br/&gt;w=0.60&lt;br/&gt;c=0.80| G["Framed Servo Motor&lt;br/&gt;c=0.80"]
+    G --&gt;|w=0.88&lt;br/&gt;c=0.85| D</code></pre>
+<p>Taking the diagram as an example, the reliability of the main path <span class="arithmatex">\(A \to B \to C \to D \to E \to F\)</span> is:</p>
+<div class="arithmatex">\[R_{\text{main}} = 0.98 \times 0.99 \times 0.96 \times 0.95 \times 0.90 \approx 0.797\]</div>
+<p>And the parallel path via the alternative motor <span class="arithmatex">\(G\)</span> is:</p>
+<div class="arithmatex">\[R_{A \to C \to D} = 0.98 \times 0.96 \approx 0.941$$
+$$R_{A \to G \to D} = 0.80 \times 0.85 \approx 0.680$$
+$$R_{\text{parallel}}(A \to D) = 1 - (1-0.941)(1-0.680) \approx 0.981\]</div>
+<p>It can be seen that introducing an alternative path with moderate confidence can increase the reliability of the path from magnet to actuator from <span class="arithmatex">\(94.1\%\)</span> to <span class="arithmatex">\(98.1\%\)</span>. This calculation has direct reference significance for supply chain diversification decisions (see Chapter 7 for details).</p>
+<p>The following Python example implements the calculation of weighted path scores and parallel path reliability:</p>
+<pre class="highlight"><code class="language-python">import itertools
+
+edges = {
+    ("A","B"): (0.95, 0.98),
+    ("B","C"): (0.99, 0.99),
+    ("C","D"): (0.95, 0.96),
+    ("D","E"): (0.90, 0.95),
+    ("E","F"): (0.85, 0.90),
+    ("C","G"): (0.60, 0.80),
+    ("G","D"): (0.88, 0.85),
+}
+
+def path_score(path, use="strength"):
+    idx = 0 if use == "strength" else 1
+    s = 1.0
+    for u, v in zip(path, path[1:]):
+        s *= edges[(u, v)][idx]
+    return s
+
+main = ["A","B","C","D","E","F"]
+print(f"Main path dependency score: {path_score(main):.4f}")
+print(f"Main path reliability: {path_score(main, 'confidence'):.4f}")
+
+# Parallel paths from A to D
+paths_A_D = [["A","B","C","D"], ["A","B","C","G","D"]]
+rels = [path_score(p, "confidence") for p in paths_A_D]
+parallel = 1.0
+for r in rels:
+    parallel *= (1 - r)
+parallel = 1 - parallel
+print(f"A-&gt;D parallel reliability: {parallel:.4f}")</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Series System Reliability</p>
+<p>In reliability engineering, if a system consists of <span class="arithmatex">\(n\)</span> units connected in series, and the failures of each unit are independent, the system reliability is the product of the reliability of each unit: <span class="arithmatex">\(R_s = \prod_{i=1}^{n} R_i\)</span>. This model requires that the failure of any unit leads to system failure, and is applicable to critical path analysis without redundancy.</p>
+</div>
+<h3 id="243-verification-standards-for-cross-layer-relationships">2.4.3 Verification Standards for Cross-Layer Relationships</h3>
+<p>Cross-layer relationships are more difficult to verify than ordinary relationships because they involve knowledge from different domains. This book adopts the following standards:</p>
+<table>
+<thead>
+<tr>
+<th>Standard</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clear Source</strong></td>
+<td>Relationships must be supported by public sources, such as papers, official documents, or authoritative reports</td>
+</tr>
+<tr>
+<td><strong>Logical Reasonableness</strong></td>
+<td>Relationships should conform to technical or business logic and not be far-fetched</td>
+</tr>
+<tr>
+<td><strong>Falsifiability</strong></td>
+<td>Relationships should be specific enough to verify or refute, avoiding vague expressions</td>
+</tr>
+<tr>
+<td><strong>Appropriate Granularity</strong></td>
+<td>Neither too general (e.g., "AI used in robots") nor too detailed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="244-path-query-and-graph-traversal">2.4.4 Path Query and Graph Traversal</h3>
+<p>Cross-layer relationships essentially involve finding paths in a graph. Path query and graph traversal are core capabilities of knowledge graph querying.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Path Query</p>
+<p>A path query is the process of finding paths in a graph that satisfy a specific pattern. For example, a path from "rare earth materials" to "market size," or a dependency chain from "algorithm" to "hardware." Path queries can be formalized using Regular Path Queries (RPQ), where the pattern is defined by a regular expression, such as <code>uses · is_part_of*</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Graph Traversal</p>
+<p>Graph traversal is the process of visiting nodes in a graph according to a certain strategy. Common strategies include Depth-First Search (DFS), Breadth-First Search (BFS), and Bidirectional Search. Graph traversal is the foundation of many graph algorithms (shortest path, connected components, centrality).</p>
+</div>
+<p>Path queries can be described using a formal language. Let the set of relations be <span class="arithmatex">\(\Sigma\)</span>, and the path pattern be a regular expression over <span class="arithmatex">\(r\)</span>. Then a path query takes the form:
+$<span class="arithmatex">\(Q(x,y) :- x \xrightarrow{r} y\)</span>$
+where <span class="arithmatex">\(r\)</span> can be an atomic relation <span class="arithmatex">\(p\)</span>, a concatenation <span class="arithmatex">\(r_1 \cdot r_2\)</span>, a choice <span class="arithmatex">\(r_1 | r_2\)</span>, or a Kleene star <span class="arithmatex">\(r^*\)</span>.</p>
+<p>For example, the query "all robots using harmonic reducers" can be expressed as:
+$<span class="arithmatex">\(Q(robot) :- robot \xrightarrow{uses \cdot is\_part\_of^*} reducer\)</span>$
+where <span class="arithmatex">\(reducer\)</span> is bound to "harmonic reducer."</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Start: Rare Earth Materials"] --&gt;|isMadeOf| B["Permanent Magnets"]
+    B --&gt;|isPartOf| C["Frameless Torque Motor"]
+    C --&gt;|isPartOf| D["Rotary Actuator"]
+    D --&gt;|uses| E["Robot"]
+    E --&gt;|deployedAt| F["Industrial Application"]
+    F --&gt;|hasMarketSize| G["Market Size"]</code></pre>
+<p>The choice of graph traversal algorithm depends on the query objective:</p>
+<table>
+<thead>
+<tr>
+<th>Objective</th>
+<th>Algorithm</th>
+<th>Time Complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reachability between two nodes</td>
+<td>DFS / BFS</td>
+<td>$O(</td>
+</tr>
+<tr>
+<td>Shortest path</td>
+<td>Dijkstra / BFS (unweighted graph)</td>
+<td>$O(</td>
+</tr>
+<tr>
+<td>All shortest paths</td>
+<td>Floyd-Warshall</td>
+<td>$O(</td>
+</tr>
+<tr>
+<td>Connected components</td>
+<td>Union-Find / BFS</td>
+<td>$O(</td>
+</tr>
+<tr>
+<td>Centrality</td>
+<td>Brandes algorithm (betweenness)</td>
+<td>$O(</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="25-data-ingestion-pipeline">2.5 Data Ingestion Pipeline</h2>
+<h3 id="251-overall-architecture">2.5.1 Overall Architecture</h3>
+<p>The data ingestion pipeline for the knowledge graph in this book adopts an architecture of "Source → Adapter → Deduplication → Write → Validation":</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[Data Source] --&gt; B[Adapter]
+    B --&gt; C[ParsedItem Parsing]
+    C --&gt; D[DedupService Deduplication]
+    D --&gt; E[EntryWriter Writing]
+    E --&gt; F[Schema Validation]
+    F --&gt; G[Manual Review Queue]</code></pre>
+<h3 id="252-data-sources">2.5.2 Data Sources</h3>
+<p>The current data sources for the knowledge graph include:</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Type</th>
+<th>Content</th>
+<th>Update Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>arxiv_ro_rss</code></td>
+<td>RSS</td>
+<td>Robotics arXiv Papers</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td><code>humanoid_paper_notebooks_progress</code></td>
+<td>Dataset</td>
+<td>Humanoid Robot Paper Tracking</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td><code>robotics_tomorrow_rss</code></td>
+<td>RSS</td>
+<td>Robotics News</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td><code>ieee_spectrum_robotics_rss</code></td>
+<td>RSS</td>
+<td>IEEE Spectrum Robotics News</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td><code>unitree_news</code></td>
+<td>RSS</td>
+<td>Unitree Technology News</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td><code>nvidia_robotics_blog</code></td>
+<td>RSS</td>
+<td>NVIDIA Robotics Blog</td>
+<td>Daily</td>
+</tr>
+<tr>
+<td><code>humanoid_actuators_suppliers</code></td>
+<td>Manually Curated JSON</td>
+<td>Actuator/Supplier Entities</td>
+<td>On Demand</td>
+</tr>
+<tr>
+<td><code>humanoid_workflow_entities</code></td>
+<td>Manually Curated JSON</td>
+<td>Workflow-Related Entities</td>
+<td>On Demand</td>
+</tr>
+<tr>
+<td><code>humanoid_manufacturing_systems</code></td>
+<td>Manually Curated JSON</td>
+<td>Manufacturing/System Entities</td>
+<td>On Demand</td>
+</tr>
+</tbody>
+</table>
+<h3 id="253-adapter">2.5.3 Adapter</h3>
+<p>Each source corresponds to an adapter responsible for converting raw data into a unified <code>ParsedItem</code> format. The adapter shields the differences in data formats from various sources, allowing subsequent processing to be unified.</p>
+<p>Main responsibilities of the adapter:
+- Fetch or read raw data
+- Extract metadata such as title, abstract, author, date, URL
+- Generate entity IDs and initial attributes
+- Return a standardized list of <code>ParsedItem</code></p>
+<h3 id="254-deduplication-dedup">2.5.4 Deduplication (Dedup)</h3>
+<p>The deduplication service checks whether an entity already exists before writing, avoiding duplicate creation. Deduplication strategies include:</p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID Matching</td>
+<td>Direct matching via normalized ID</td>
+</tr>
+<tr>
+<td>Title Similarity</td>
+<td>Compare after cleaning and normalizing titles</td>
+</tr>
+<tr>
+<td>URL Matching</td>
+<td>Deduplicate URLs from the same source</td>
+</tr>
+<tr>
+<td>Abstract Similarity</td>
+<td>Use text similarity algorithms to identify approximate entries</td>
+</tr>
+</tbody>
+</table>
+<h3 id="255-writing-and-validation">2.5.5 Writing and Validation</h3>
+<p><code>EntryWriter</code> is responsible for writing new entities and relationships to the file system. To improve performance, the writer preloads existing IDs to avoid scanning a large number of files on each write.</p>
+<p>After writing, <code>validate_entries.py</code> performs Schema validation on all entity and relationship files, checking required fields, enumerated values, formats, etc., for compliance. Only after passing validation can entries enter the manual review queue or be directly deployed to the production environment.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Read YAML frontmatter"] --&gt; B{"Required fields exist?"}
+    B --&gt;|No| C["Error: Missing field"]
+    B --&gt;|Yes| D{"Enum values valid?"}
+    D --&gt;|No| E["Error: Invalid enum"]
+    D --&gt;|Yes| F{"ID format correct?"}
+    F --&gt;|No| G["Error: ID format"]
+    F --&gt;|Yes| H{"Source non-empty?"}
+    H --&gt;|No| I["Error: Missing source"]
+    H --&gt;|Yes| J["Schema validation passed"]</code></pre>
+<h4 id="2551-pipeline-throughput-and-latency-a-queuing-theory-perspective">2.5.5.1 Pipeline Throughput and Latency: A Queuing Theory Perspective</h4>
+<p>Section 2.5.1 presents the logical stages of the ingestion pipeline. However, to assess its engineering feasibility, it is necessary to quantify <strong>throughput</strong> and <strong>latency</strong>. By abstracting each processing stage as a service node and each pending <code>ParsedItem</code> as a customer, the entire pipeline can be modeled using queuing theory.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Queuing Theory</p>
+<p>Queuing theory is a branch of mathematics that studies the interaction between random arrival processes and service processes. It is widely applied in communication networks, computer systems, and manufacturing. The basic M/M/1 queue assumes: customer arrivals follow a Poisson process (arrival rate <span class="arithmatex">\(\lambda\)</span>), service times follow an exponential distribution (service rate <span class="arithmatex">\(\mu\)</span>), and a single server. When the system reaches a steady state and <span class="arithmatex">\(\rho = \lambda / \mu &lt; 1\)</span>, the average queue length and average waiting time are:
+$<span class="arithmatex">\(L = \frac{\rho}{1-\rho}, \quad W = \frac{1}{\mu - \lambda}\)</span>$
+where <span class="arithmatex">\(\rho\)</span> is called <strong>utilization</strong>. If <span class="arithmatex">\(\rho \to 1\)</span>, the queue length and waiting time diverge, and the system enters an unstable state.</p>
+</div>
+<p>Assume a source generates <span class="arithmatex">\(\lambda = 100\ \text{items/hour}\)</span> of new entries per day, and the combined processing capacity of the adapter-deduplication-write-validation stages is <span class="arithmatex">\(\mu = 150\ \text{items/hour}\)</span>. Then:</p>
+<div class="arithmatex">\[\rho = \frac{100}{150} = 0.667\]</div>
+<p>The average queue length at steady state:</p>
+<div class="arithmatex">\[L = \frac{0.667}{1-0.667} \approx 2.0\ \text{items}\]</div>
+<p>The average waiting time (including service time):</p>
+<div class="arithmatex">\[W = \frac{1}{150-100} = 0.02\ \text{hours} = 72\ \text{seconds}\]</div>
+<p>This means that, on average, it takes about 72 seconds for an entry to go from entering the staging area to completing writing and validation; typically only about 2 items are waiting in the staging area. If the source suddenly increases to <span class="arithmatex">\(\lambda = 140\ \text{items/hour}\)</span>, then <span class="arithmatex">\(\rho = 0.933\)</span>, and <span class="arithmatex">\(W\)</span> rises to <span class="arithmatex">\(900\)</span> seconds (15 minutes), indicating that the system is very sensitive to the arrival rate. In engineering, a <strong>backpressure</strong> mechanism or horizontal scaling of write nodes should be implemented to keep <span class="arithmatex">\(\rho\)</span> below approximately <span class="arithmatex">\(0.7\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Backpressure</p>
+<p>Backpressure is a flow control mechanism in stream processing systems: when the downstream processing speed is slower than the upstream generation speed, a backpressure signal is propagated downstream, causing the upstream to reduce its sending rate. Its essence is negative feedback from control theory, used to prevent unbounded buffer growth. Backpressure can be implemented using token buckets, sliding windows, or backpressure queues.</p>
+</div>
+<h4 id="2552-formal-model-of-schema-validation">2.5.5.2 Formal Model of Schema Validation</h4>
+<p>The validation process in Section 2.5.5 can be further formalized as a <strong>Constraint Satisfaction Problem (CSP)</strong>. For each entity or relationship file, define a set of variables <span class="arithmatex">\(X = \{x_1, x_2, \dots, x_n\}\)</span>, where <span class="arithmatex">\(x_i\)</span> corresponds to a field in the frontmatter. The Schema for each field defines a constraint <span class="arithmatex">\(C_i\)</span>, for example:</p>
+<ul>
+<li><span class="arithmatex">\(C_{\text{id}}\)</span>: <code>id</code> must match the regular expression <code>^[a-z0-9_]+$</code>.</li>
+<li><span class="arithmatex">\(C_{\text{type}}\)</span>: <code>type</code> must belong to the enumerated set <span class="arithmatex">\(\mathcal{T}\)</span>.</li>
+<li><span class="arithmatex">\(C_{\text{sources}}\)</span>: <code>sources</code> is non-empty, i.e., <span class="arithmatex">\(|sources| \ge 1\)</span>.</li>
+</ul>
+<p>An entity file is <strong>valid</strong> if and only if all its variables simultaneously satisfy the corresponding constraints:</p>
+<div class="arithmatex">\[\text{Valid}(X) = \bigwedge_{i=1}^{n} C_i(x_i)\]</div>
+<p>If any constraint is not satisfied, validation fails. This model is homologous to integrity constraints in databases and type systems in programming languages, but its expressive power is weaker than OWL, making it more suitable as a lightweight entry-level check.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[ParsedItem] --&gt; B[Field Parsing]
+    B --&gt; C[id Format Constraint]
+    B --&gt; D[type Enum Constraint]
+    B --&gt; E[domain Enum Constraint]
+    B --&gt; F[sources Non-Empty Constraint]
+    B --&gt; G[verification Required Constraint]
+    C --&gt; H{All Satisfied?}
+    D --&gt; H
+    E --&gt; H
+    F --&gt; H
+    G --&gt; H
+    H --&gt;|Yes| I[Write to File System]
+    H --&gt;|No| J[Error Report]</code></pre>
+<p>The following Python example simulates the validation process using a simple CSP approach and counts the frequency of various errors:</p>
+<pre class="highlight"><code class="language-python">import re
+from collections import Counter</code></pre>
+<pre class="highlight"><code class="language-python">entities = [
+    {"id": "ent_robot_optimus", "type": "robot_system", "domain": "11", "sources": ["s1"]},
+    {"id": "Ent_Invalid ID!", "type": "robot_system", "domain": "11", "sources": ["s1"]},
+    {"id": "ent_component_motor", "type": "unknown_type", "domain": "02", "sources": []},
+    {"id": "ent_paper_diffusion", "type": "paper", "domain": "07", "sources": ["s2"]},
+]
+
+valid_types = {"robot_system", "component", "paper", "method", "company"}
+id_pattern = re.compile(r"^[a-z0-9_]+$")
+valid_domains = {"00","01","02","03","04","05","06","07","08","09","10","11","12"}
+
+errors = Counter()
+
+def validate(e):
+    ok = True
+    if not id_pattern.match(e["id"]):
+        errors["id_format"] += 1; ok = False
+    if e["type"] not in valid_types:
+        errors["type_enum"] += 1; ok = False
+    if e["domain"] not in valid_domains:
+        errors["domain_enum"] += 1; ok = False
+    if len(e.get("sources", [])) == 0:
+        errors["missing_source"] += 1; ok = False
+    return ok
+
+valid_count = sum(validate(e) for e in entities)
+print(f"Valid: {valid_count}/{len(entities)}")
+print("Error distribution:", dict(errors))</code></pre>
+<p>The output shows: the second entity violates <code>id_format</code>, and the third entity violates both <code>type_enum</code> and <code>missing_source</code>. This fine-grained error classification helps quickly locate issues in CI/CD reports.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Constraint Satisfaction Problem (CSP)</p>
+<p>A CSP consists of a set of variables, a set of domains, and a set of constraints. The goal is to find an assignment of values to variables that satisfies all constraints. Formally, a CSP can be represented as a triple <span class="arithmatex">\((X, D, C)\)</span>, where <span class="arithmatex">\(X\)</span> is the set of variables, <span class="arithmatex">\(D\)</span> is the set of domains, and <span class="arithmatex">\(C\)</span> is the set of constraints. CSP is an NP-complete problem, but on finite, structured domains like frontmatter fields, validation can be completed in polynomial time.</p>
+</div>
+<h3 id="256-knowledge-extraction-techniques">2.5.6 Knowledge Extraction Techniques</h3>
+<p>Knowledge extraction is the process of converting unstructured or semi-structured data into structured triples. It typically includes steps such as named entity recognition, relation extraction, entity linking, and coreference resolution.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Named Entity Recognition (NER)</p>
+<p>NER is the task of identifying named entities (such as person names, locations, organizations, technical terms) from text and labeling their categories. From the perspective of probabilistic graphical models, NER is a sequence labeling problem: given a token sequence <span class="arithmatex">\(x_1, \dots, x_n\)</span>, predict a label sequence <span class="arithmatex">\(y_1, \dots, y_n\)</span>. Common methods include Conditional Random Fields (CRF), BiLSTM-CRF, and Transformer-based models (e.g., BERT).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Conditional Random Field (CRF)</p>
+<p>CRF is a discriminative probabilistic graphical model commonly used for sequence labeling. It directly models the conditional probability <span class="arithmatex">\(P(y|x)\)</span> and can capture transition constraints between labels. For NER, a CRF layer can ensure the validity of the output label sequence, for example, "I-PER" cannot follow "B-ORG".</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: BERT (Bidirectional Encoder Representations from Transformers)</p>
+<p>BERT is a pre-trained language model based on the Transformer encoder. It is pre-trained on large-scale text using Masked Language Model (MLM) and Next Sentence Prediction (NSP), and then fine-tuned on downstream tasks. BERT's bidirectional context representation makes it perform excellently in tasks such as NER and relation extraction.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: spaCy</p>
+<p>spaCy is an open-source natural language processing library that provides functionalities such as tokenization, part-of-speech tagging, named entity recognition, and dependency parsing. It supports training custom NER models and also offers pre-trained multilingual models.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Relation Extraction (RE)</p>
+<p>Relation extraction is the task of identifying semantic relationships between entities in text. For example, from "Tesla manufactures Optimus", extract <code>(Tesla, manufactures, Optimus)</code>. Methods for relation extraction include:
+- <strong>Pattern-based</strong>: Manually writing rules or templates.
+- <strong>Supervised learning</strong>: Using labeled data to train a classifier.
+- <strong>Distant Supervision</strong>: Automatically labeling training data using an existing knowledge graph.
+- <strong>Prompt-based learning</strong>: Using large language models to generate relations based on prompts.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Distant Supervision</p>
+<p>Distant supervision assumes that if a relation <span class="arithmatex">\((e_1, r, e_2)\)</span> exists in a knowledge graph, then all sentences containing both <span class="arithmatex">\(e_1\)</span> and <span class="arithmatex">\(e_2\)</span> might express the relation <span class="arithmatex">\(r\)</span>. This assumption introduces noise, so multi-instance learning or attention mechanisms are needed to mitigate it.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Entity Linking and Entity Disambiguation</p>
+<p>Entity linking is the process of mapping an entity mention in text to a unique entity in a knowledge base. Entity disambiguation is the process of selecting the correct target when a mention could correspond to multiple entities. Common methods include:
+- Knowledge base lookup: Matching based on names, aliases, and context.
+- Embedding similarity: Calculating the vector similarity between the mention context and candidate entity descriptions.
+- Graph neural networks: Using the structural information of the knowledge graph to aid disambiguation.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Coreference Resolution</p>
+<p>Coreference resolution is the process of identifying multiple mentions in text that refer to the same real-world object. For example, in "Tesla announced Optimus. It will be deployed in factories.", "It" refers to "Optimus". Coreference resolution is crucial for cross-sentence relation extraction and document-level knowledge extraction.</p>
+</div>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Original Document"] --&gt; B["Tokenization / Parsing"]
+    B --&gt; C["NER Named Entity Recognition"]
+    C --&gt; D["Coreference Resolution"]
+    D --&gt; E["Entity Linking / Disambiguation"]
+    E --&gt; F["Relation Extraction"]
+    F --&gt; G["Triples (s,p,o)"]
+    G --&gt; H["Schema Validation"]
+    H --&gt; I["Write to Knowledge Graph"]</code></pre>
+<p>The following Python example demonstrates a simple NER using spaCy and a relation extraction process using regex patterns:</p>
+<pre class="highlight"><code class="language-python">import spacy
+import re
+
+# Load spaCy English model
+nlp = spacy.load("en_core_web_sm")
+
+text = """
+Tesla manufactures the Optimus humanoid robot.
+Unitree launched the H1 humanoid robot in 2024.
+Harmonic Drive Systems produces precision harmonic reducers.
+"""
+
+doc = nlp(text)
+
+# NER
+entities = [(ent.text, ent.label_) for ent in doc.ents]
+print("Named entities:", entities)</code></pre>
+<h1 id="relation-extraction-based-on-simple-patterns">Relation Extraction: Based on Simple Patterns</h1>
+<p>relations = []
+patterns = [
+    (r"(\w+) manufactures the ([\w\s]+) robot", "manufactures"),
+    (r"(\w+) launched the ([\w\s]+) robot", "launched"),
+    (r"(\w+) produces ([\w\s]+)", "produces"),
+]</p>
+<p>for pattern, rel in patterns:
+    for match in re.finditer(pattern, text, re.IGNORECASE):
+        relations.append((match.group(1), rel, match.group(2).strip()))</p>
+<p>print("Extracted relations:", relations)
+<pre class="highlight"><code>
+## 2.6 Naming Conventions, Deduplication, and Disambiguation
+
+### 2.6.1 Entity ID Naming Conventions
+
+Entity IDs are the core identifiers of a knowledge graph and must be unique, stable, and readable.
+
+**Naming Rules:**
+- Format: `ent_&lt;type&gt;_&lt;normalized_title&gt;_&lt;year&gt;`
+- All lowercase
+- Only contain letters, numbers, and underscores
+- The title part truncates the first few meaningful words
+- The year is optional, used to distinguish entities with the same name but different generations
+
+**Examples:**
+
+| Entity | ID |
+|------|-----|
+| Tesla Optimus | `ent_robot_system_tesla_optimus` |
+| Unitree H1 (2024) | `ent_robot_unitree_h1_humanoid_robot_2024` |
+| Diffusion Policy (2023) | `ent_paper_diffusion_policy_2023` |
+| Harmonic Reducer (2024) | `ent_component_harmonic_reducer_2024` |
+
+### 2.6.2 Relationship ID Naming Conventions
+
+A relationship ID is composed of the source entity ID, relationship type, and target entity ID:
+
+- Format: `rel_&lt;source_id&gt;_&lt;type&gt;_&lt;target_id&gt;`
+- All lowercase
+- Only contain letters, numbers, and underscores
+
+**Examples:**
+
+| Relationship | ID |
+|------|-----|
+| Harmonic Reducer is part of Rotary Actuator | `rel_ent_component_harmonic_reducer_2024_is_part_of_ent_component_rotary_actuator_2024` |
+| Diffusion Policy is implemented on Unitree H1 | `rel_ent_paper_diffusion_policy_2023_implemented_on_ent_robot_unitree_h1_humanoid_robot_2024` |
+
+### 2.6.3 Disambiguation Strategies
+
+The same term may refer to different entities in different contexts. For example:
+- "Atlas" could refer to Boston Dynamics' robot, a figure from ancient Greek mythology, or a map service.
+- "ROS" could refer to the Robot Operating System or other abbreviations.
+
+Disambiguation strategies include:
+- **Contextual Disambiguation**: Determine the entity type based on source and description.
+- **Alias Management**: Maintain a list of aliases for each entity to avoid duplicate creation.
+- **Manual Annotation**: Manually confirm entries with significant ambiguity.
+- **Type Constraints**: The relationship type itself can constrain the possible types of entities.
+
+### 2.6.4 Entity Alignment and Record Linkage
+
+Entity Alignment is the process of identifying entities that refer to the same real-world object across different knowledge graphs or different data sources. Record Linkage is the corresponding problem in the database field, aiming to identify duplicate occurrences of the same object across different records.
+
+!!! note "Term Explanation: Jaccard Similarity"
+    Jaccard similarity measures the ratio of the intersection to the union of two sets:
+    $$J(A,B) = \frac{|A \cap B|}{|A \cup B|}$$
+    It is commonly used for comparing n-gram sets of strings or sets of tags. The Jaccard value ranges from $[0,1]$, with larger values indicating greater similarity.
+
+!!! note "Term Explanation: Levenshtein Edit Distance"
+    Levenshtein distance is the minimum number of single-character edit operations (insertions, deletions, substitutions) required to transform one string into another. Normalized similarity is $1 - \frac{d(s,t)}{\max(|s|,|t|)}$. It is suitable for capturing spelling variations and abbreviation differences.
+
+!!! note "Term Explanation: TF-IDF and Cosine Similarity"
+    TF-IDF (Term Frequency-Inverse Document Frequency) is a bag-of-words weighting method that assigns a weight to each word in a document:
+    $$\text{TF-IDF}(t,d) = \text{tf}(t,d) \cdot \text{idf}(t)$$
+    where $\text{idf}(t) = \log \frac{N}{|\{d : t \in d\}|}$. After representing documents as TF-IDF vectors, cosine similarity measures the angle:
+    $$\cos(\vec{a},\vec{b}) = \frac{\vec{a} \cdot \vec{b}}{\|\vec{a}\| \|\vec{b}\|}$$
+
+!!! note "Term Explanation: Blocking"
+    Blocking is a preprocessing step in record linkage that divides records into candidate pairs using inexpensive strategies, avoiding $O(n^2)$ full comparisons. Common blocking keys include first letters, postal codes, category labels, n-gram signatures, etc.
+
+!!! note "Term Explanation: Pairwise Matching and Clustering"
+    Pairwise matching is the process of calculating similarity for each pair of candidate records and determining whether they match. Due to transitivity (if A=B and B=C, then A=C), matching results usually need to be clustered to form equivalence classes. Common algorithms include transitive closure, connected components, or hierarchical clustering.
+
+!!! note "Term Explanation: Confidence Scoring and Truth Discovery"
+    Confidence scoring assigns a probability or score to each matching judgment, facilitating threshold setting and manual review. Truth discovery is the process of inferring the most likely correct value from multiple conflicting sources. Common methods include voting, EM algorithms, and graph-based models.
+
+The typical process of entity alignment is shown in the following diagram:
+
+```mermaid
+flowchart LR
+    A["Multi-source Records"] --&gt; B["Preprocessing"]
+    B --&gt; C["Blocking"]
+    C --&gt; D["Feature Extraction"]
+    D --&gt; E["Similarity Calculation"]
+    E --&gt; F["Classifier / Threshold"]
+    F --&gt; G["Matched Pairs"]
+    G --&gt; H["Clustering"]
+    H --&gt; I["Entity ID Unification"]</code></pre></p>
+<p>The deduplication decision tree can be represented by the following diagram:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["New Entity"] --&gt; B{"ID Exact Match?"}
+    B --&gt;|Yes| C["Duplicate"]
+    B --&gt;|No| D{"Same URL?"}
+    D --&gt;|Yes| C
+    D --&gt;|No| E{"Title Similarity &gt; 0.95?"}
+    E --&gt;|Yes| F["Manual Review"]
+    E --&gt;|No| G{"Abstract Similarity &gt; 0.85?"}
+    G --&gt;|Yes| F
+    G --&gt;|No| H["New Entity"]
+    F --&gt; I{"Manual Confirmation of Duplicate?"}
+    I --&gt;|Yes| C
+    I --&gt;|No| H</code></pre>
+<p>The following Python example demonstrates entity deduplication using string similarity, TF-IDF cosine similarity, and simple embedding cosine similarity:</p>
+<pre class="highlight"><code class="language-python">import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+# Candidate entity names
+candidates = [
+    "Unitree H1 Humanoid Robot",
+    "Unitree H1 robot",
+    "宇树 H1 人形机器人",
+    "Tesla Optimus Gen 2",
+    "Tesla Optimus",
+]
+
+# 1. TF-IDF Cosine Similarity
+vectorizer = TfidfVectorizer().fit(candidates)
+vectors = vectorizer.transform(candidates)
+sim_matrix = cosine_similarity(vectors)
+print("TF-IDF cosine similarity matrix:")
+print(np.round(sim_matrix, 2))
+
+# 2. Simple Embedding Cosine Similarity (using random vectors for illustration; in practice, use sentence-transformers)
+np.random.seed(42)
+embeddings = np.random.rand(len(candidates), 128)
+# Normalize
+embeddings = embeddings / np.linalg.norm(embeddings, axis=1, keepdims=True)
+emb_sim = embeddings @ embeddings.T
+print("Embedding cosine similarity matrix:")
+print(np.round(emb_sim, 2))</code></pre>
+<h1 id="3-simple-deduplication-threshold-08">3. Simple Deduplication: Threshold 0.8</h1>
+<p>threshold = 0.8
+duplicates = []
+for i in range(len(candidates)):
+    for j in range(i+1, len(candidates)):
+        if sim_matrix[i, j] &gt; threshold:
+            duplicates.append((candidates[i], candidates[j], sim_matrix[i, j]))
+print("Duplicate candidates:", duplicates)
+<pre class="highlight"><code>
+## 2.7 Manual Review and Quality Control
+
+### 2.7.1 Three-Level Review Mechanism
+
+To ensure knowledge quality, this book adopts a three-level review mechanism:
+
+```mermaid
+flowchart LR
+    A[Auto Ingestion] --&gt; B[AI Preliminary Review]
+    B --&gt; C[Manual Review]
+    C --&gt; D[Expert Final Review]
+    D --&gt; E[Publish to Production]</code></pre></p>
+<p><strong>AI Preliminary Review:</strong>
+- Automatically completes Schema validation
+- Automatically checks required fields and formats
+- Automatically identifies obviously low-quality or duplicate entries</p>
+<p><strong>Manual Review:</strong>
+- Checks whether entity types and domains are correct
+- Verifies whether relationships are reasonable
+- Confirms whether sources are reliable</p>
+<p><strong>Expert Final Review:</strong>
+- Provides professional judgment on cross-layer relationships and key assertions
+- Handles disputed entries
+- Decides whether entries enter the production environment</p>
+<h3 id="272-review-status">2.7.2 Review Status</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>staged</code></td>
+<td>Ingested but not reviewed</td>
+</tr>
+<tr>
+<td><code>active</code></td>
+<td>Passed review, entered production environment</td>
+</tr>
+<tr>
+<td><code>rejected</code></td>
+<td>Failed review, rejected</td>
+</tr>
+<tr>
+<td><code>deprecated</code></td>
+<td>Outdated or superseded</td>
+</tr>
+</tbody>
+</table>
+<p>The review status transition can be represented by the following diagram:</p>
+<pre class="highlight"><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; staged: Ingestion
+    staged --&gt; active: AI Preliminary Review Passed
+    staged --&gt; rejected: Preliminary Review Failed
+    active --&gt; deprecated: Outdated/Superseded
+    active --&gt; rejected: Issues Found During Re-review
+    rejected --&gt; staged: Resubmitted After Fix
+    deprecated --&gt; [*]
+    rejected --&gt; [*]</code></pre>
+<h3 id="273-quality-metrics">2.7.3 Quality Metrics</h3>
+<p>This book uses the following metrics to monitor knowledge graph quality:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total Entities</strong></td>
+<td>Number of entities in the knowledge graph</td>
+</tr>
+<tr>
+<td><strong>Total Relations</strong></td>
+<td>Number of relations in the knowledge graph</td>
+</tr>
+<tr>
+<td><strong>Cross-Layer Relations</strong></td>
+<td>Number of relations connecting different domains</td>
+</tr>
+<tr>
+<td><strong>Entities Missing theoretical_depth</strong></td>
+<td>Number of entities without a set theoretical depth</td>
+</tr>
+<tr>
+<td><strong>Dangling Relations</strong></td>
+<td>Number of relations whose source or target entity does not exist</td>
+</tr>
+<tr>
+<td><strong>Pending Review Items</strong></td>
+<td>Number of items waiting for review in staging</td>
+</tr>
+<tr>
+<td><strong>Rejected Items</strong></td>
+<td>Number of items that failed review</td>
+</tr>
+</tbody>
+</table>
+<h3 id="274-knowledge-graph-quality-dimensions">2.7.4 Knowledge Graph Quality Dimensions</h3>
+<p>The quality of a knowledge graph is a multi-dimensional concept. Academia and industry typically evaluate it from the following dimensions:</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Completeness</p>
+<p>Completeness measures the extent to which a knowledge graph covers the knowledge of a target domain. It can be divided into:
+- <strong>Schema Completeness</strong>: Whether all necessary classes and attributes are defined.
+- <strong>Entity Completeness</strong>: Whether the target entity set is covered.
+- <strong>Attribute Completeness</strong>: Whether the key attributes of entities are populated.
+- <strong>Relation Completeness</strong>: Whether important relations between entities are captured.
+Completeness can be quantified using coverage: <span class="arithmatex">\(\text{Coverage} = \frac{|\text{Actual Knowledge Included}|}{|\text{Expected Knowledge Included}|}\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Accuracy</p>
+<p>Accuracy measures the correctness of facts in the knowledge graph. For example, if the knowledge graph asserts "Tesla manufactures Optimus", whether this assertion is consistent with objective reality. Accuracy is often evaluated using Precision: <span class="arithmatex">\(P = \frac{|\{\text{Correct Triples}\}|}{|\{\text{Extracted Triples}\}|}\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Consistency</p>
+<p>Consistency measures whether the knowledge graph satisfies predefined constraints and axioms. For example, if the ontology stipulates "Each RobotSystem has at least one Component", a robot system lacking a Component violates consistency. Consistency can be checked via OWL reasoners or custom rules.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Timeliness and Credibility</p>
+<p>Timeliness measures whether the knowledge reflects the current state. The humanoid robot field develops rapidly, and outdated information can mislead decisions. Credibility measures the reliability of knowledge sources, typically related to source type (academic papers &gt; official documents &gt; news &gt; blogs) and review status.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Explainability</p>
+<p>Explainability refers to the ability to trace conclusions in the knowledge graph back to sources and reasoning chains. For knowledge-driven decision systems, explainability is crucial because it allows users to audit conclusions, discover biases, and correct errors.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Precision, Recall, and F1 Score</p>
+<p>Precision, Recall, and F1 are fundamental metrics in information retrieval and machine learning:
+$<span class="arithmatex">\(P = \frac{TP}{TP+FP}, \quad R = \frac{TP}{TP+FN}, \quad F1 = \frac{2PR}{P+R}\)</span>$
+Where <span class="arithmatex">\(TP\)</span> is True Positives, <span class="arithmatex">\(FP\)</span> is False Positives, and <span class="arithmatex">\(FN\)</span> is False Negatives. In knowledge graph quality assessment, <span class="arithmatex">\(TP\)</span> can be defined as "the number of correctly extracted/asserted triples", <span class="arithmatex">\(FP\)</span> as "the number of incorrect triples", and <span class="arithmatex">\(FN\)</span> as "the number of missed correct triples".</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Statistical Quality Control</p>
+<p>Statistical Quality Control originates from manufacturing, with the core idea of ensuring product quality through sampling inspection and process monitoring. In knowledge graph review, a certain proportion of items can be randomly sampled for manual review to estimate the overall error rate. If the batch error rate exceeds a threshold, a full re-review of that batch is performed. Additionally, inter-annotator agreement can be used to evaluate annotation quality, commonly using the Kappa coefficient:
+$<span class="arithmatex">\(\kappa = \frac{P_o - P_e}{1 - P_e}\)</span>$
+Where <span class="arithmatex">\(P_o\)</span> is the observed agreement rate, and <span class="arithmatex">\(P_e\)</span> is the expected agreement rate by chance.</p>
+</div>
+<p>The quality monitoring dashboard should periodically output the following metrics:</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Metric</th>
+<th>Calculation Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completeness</td>
+<td>Entity Coverage</td>
+<td>Number of Covered Target Entities / Total Number of Target Entities</td>
+</tr>
+<tr>
+<td>Completeness</td>
+<td>Attribute Fill Rate</td>
+<td>Number of Populated Attributes / Total Number of Expected Attributes</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>Manual Sampling Precision</td>
+<td>Proportion of Correct Triples in the Sample</td>
+</tr>
+<tr>
+<td>Consistency</td>
+<td>Schema Violations</td>
+<td>Number of Entities/Relations Violating Constraints</td>
+</tr>
+<tr>
+<td>Timeliness</td>
+<td>Average Update Interval</td>
+<td>Median of (Current Time - Last Update Time)</td>
+</tr>
+<tr>
+<td>Credibility</td>
+<td>Source Type Distribution</td>
+<td>Proportion of Primary/Secondary/News Sources</td>
+</tr>
+<tr>
+<td>Explainability</td>
+<td>Missing Source Ratio</td>
+<td>Proportion of Triples Without a Source</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Knowledge Graph"] --&gt; B["Completeness Check"]
+    A --&gt; C["Accuracy Sampling"]
+    A --&gt; D["Consistency Reasoning"]
+    A --&gt; E["Timeliness Scan"]
+    A --&gt; F["Source Credibility Assessment"]
+    B --&gt; G["Quality Report"]
+    C --&gt; G
+    D --&gt; G
+    E --&gt; G
+    F --&gt; G
+    G --&gt; H["Manual Review Queue"]</code></pre>
+<p>The following Python example calculates core quality metrics for a knowledge graph, including coverage, dangling edges, and Schema consistency:</p>
+<pre class="highlight"><code class="language-python">import pandas as pd
+import networkx as nx
+
+# Simulate entity and relation data
+entities = pd.DataFrame({
+    "id": ["e1", "e2", "e3", "e4"],
+    "type": ["robot_system", "component", "company", "paper"],
+    "domain": ["11", "02", "11", "07"],
+    "theoretical_depth": ["system", "method", "system", None],
+})
+
+relations = pd.DataFrame({
+    "source_id": ["e1", "e1", "e2", "e5"],
+    "target_id": ["e2", "e3", "e4", "e1"],
+    "type": ["uses", "manufactured_by", "is_part_of", "uses"],
+})
+
+# Coverage: proportion of entities with theoretical_depth
+coverage = entities["theoretical_depth"].notna().mean()
+print(f"Theoretical depth coverage: {coverage:.2%}")
+
+# Dangling edges: relations whose source or target is not in the entity set
+entity_ids = set(entities["id"])
+dangling = relations[
+    ~relations["source_id"].isin(entity_ids) |
+    ~relations["target_id"].isin(entity_ids)
+]
+print(f"Dangling edges: {len(dangling)}")
+print(dangling)</code></pre>
+<h1 id="schema-consistency-check-whether-sourcetarget-types-for-a-relation-type-are-valid">Schema Consistency: Check Whether Source/Target Types for a Relation Type Are Valid</h1>
+<p>allowed = {
+    "uses": {"source": {"robot_system", "method"}, "target": {"component", "dataset"}},
+    "manufactured_by": {"source": {"robot_system", "component"}, "target": {"company"}},
+    "is_part_of": {"source": {"component"}, "target": {"component", "robot_system"}},
+}</p>
+<p>def check_schema(row):
+    rel_type = row["type"]
+    if rel_type not in allowed:
+        return False
+    src_type = entities.set_index("id").loc.get(row["source_id"], {}).get("type")
+    tgt_type = entities.set_index("id").loc.get(row["target_id"], {}).get("type")
+    return src_type in allowed[rel_type]["source"] and tgt_type in allowed[rel_type]["target"]</p>
+<p>relations["schema_valid"] = relations.apply(check_schema, axis=1)
+print(f"Schema consistency: {relations['schema_valid'].mean():.2%}")
+print(relations)
+<pre class="highlight"><code>
+#### 2.7.4.1 Statistical Sampling for Quality Control
+
+Section 2.7.3 lists several quality metrics, but to translate them into an actionable review process, a statistical question must be answered: **How many entries need to be sampled to estimate the overall error rate with a given confidence level?** This is essentially a binomial proportion confidence interval problem.
+
+!!! note "Term Explanation: Binomial Proportion Confidence Interval"
+    If $n$ samples are randomly drawn from the population, and $k$ of them are "error" samples, the sample error rate is $\hat{p} = k/n$. Due to sampling randomness, $\hat{p}$ is only an estimate of the true error rate $p$. The Wilson score interval gives a $100(1-\alpha)\%$ confidence interval for $p$:
+    $$\hat{p} \pm \frac{z}{1+z^2/n} \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}$$
+    where $z = z_{1-\alpha/2}$ is the quantile of the standard normal distribution. When $n$ is large, the Wilson interval approximates the normal approximation interval $\hat{p} \pm z\sqrt{\hat{p}(1-\hat{p})/n}$.
+
+To estimate the true error rate within an absolute error $E$ at a 95% confidence level, with an expected error rate of approximately $\hat{p}$, the minimum sample size can be estimated by:
+
+$$n \approx \frac{z^2 \hat{p}(1-\hat{p})}{E^2}$$
+
+Taking $z_{0.975} \approx 1.96$, expected error rate $\hat{p}=0.05$, and allowable error $E=0.02$, we get:
+
+$$n \approx \frac{1.96^2 \times 0.05 \times 0.95}{0.02^2} \approx 456.2$$
+
+That is, at least 457 entries should be randomly sampled per batch. If the total number of entries in a batch is less than 457, a full review should be conducted.
+
+Review results can also be monitored using a **p-chart** for process control. For $m$ consecutive batches, calculate the error rates $\hat{p}_1, \dots, \hat{p}_m$ respectively. The center line and control limits are:
+
+$$\bar{p} = \frac{1}{m}\sum_{i=1}^{m} \hat{p}_i$$
+$$\text{UCL} = \bar{p} + 3\sqrt{\frac{\bar{p}(1-\bar{p})}{n_i}}, \quad \text{LCL} = \max\left(0, \bar{p} - 3\sqrt{\frac{\bar{p}(1-\bar{p})}{n_i}}\right)$$
+
+If the error rate of a batch exceeds the upper control limit, that batch has a systemic quality issue and requires a full re-review.
+
+!!! note "Term Explanation: p-chart"
+    A p-chart is a tool used in Statistical Process Control (SPC) to monitor the proportion of nonconforming units. It plots the batch nonconformance rate on the vertical axis against time on the horizontal axis, drawing a center line (CL) and upper/lower control limits (UCL/LCL). When observed points fall outside the control limits or exhibit non-random patterns, it signals that the process is out of control. Its theoretical basis is the normal approximation of the binomial distribution, and control limits are typically set at $\pm 3\sigma$.
+
+The following Python example calculates the Wilson confidence interval, minimum sample size, and plots a p-chart:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+def wilson_interval(k, n, alpha=0.05):
+    p = k / n
+    z = stats.norm.ppf(1 - alpha / 2)
+    denom = 1 + z**2 / n
+    centre = (p + z**2 / (2*n)) / denom
+    margin = z * np.sqrt((p*(1-p) + z**2/(4*n)) / n) / denom
+    return centre - margin, centre + margin
+
+# Example: Sample 457 entries, find 23 errors
+n, k = 457, 23
+lo, hi = wilson_interval(k, n)
+print(f"Error rate estimate: {k/n:.3f}, 95% Wilson CI: [{lo:.3f}, {hi:.3f}]")
+
+# Minimum sample size
+p_hat, E = 0.05, 0.02
+z = stats.norm.ppf(0.975)
+n_min = int(np.ceil(z**2 * p_hat * (1-p_hat) / E**2))
+print(f"Minimum sample size: {n_min}")
+
+# p-chart
+np.random.seed(0)
+batch_sizes = np.full(20, 457)
+errors = np.random.binomial(batch_sizes, 0.05)
+p_hat_i = errors / batch_sizes
+p_bar = p_hat_i.mean()
+ucl = p_bar + 3*np.sqrt(p_bar*(1-p_bar)/batch_sizes)
+lcl = np.maximum(0, p_bar - 3*np.sqrt(p_bar*(1-p_bar)/batch_sizes))
+
+plt.figure(figsize=(8,4))
+plt.plot(p_hat_i, marker='o', label='Batch error rate')
+plt.axhline(p_bar, color='green', label='CL')
+plt.plot(ucl, color='red', linestyle='--', label='UCL')
+plt.plot(lcl, color='red', linestyle='--', label='LCL')
+plt.xlabel('Batch index'); plt.ylabel('Error rate')
+plt.title('p-Chart for KG Review Quality')
+plt.legend(); plt.grid(True)
+plt.tight_layout()
+plt.savefig('p_chart_kg_quality.png', dpi=150)
+print("Saved p_chart_kg_quality.png")</code></pre></p>
+<p>The 95% Wilson confidence interval output by this code is approximately <span class="arithmatex">\([0.032, 0.076]\)</span>, indicating that even if a <span class="arithmatex">\(5\%\)</span> error rate is observed in the sample, the true error rate could still be between <span class="arithmatex">\(3.2\%\)</span> and <span class="arithmatex">\(7.6\%\)</span>. The p-chart can be integrated into the quality dashboard of <code>coverage_dashboard.py</code> (see Section 2.7.3).</p>
+<h2 id="28-applications-of-knowledge-graphs">2.8 Applications of Knowledge Graphs</h2>
+<h3 id="281-query-and-exploration">2.8.1 Query and Exploration</h3>
+<p>Knowledge graphs support various query methods:</p>
+<p><strong>Query by Entity:</strong>
+- Query all components of a specific robot
+- Query all suppliers of a specific component
+- Query the dataset used by a specific method</p>
+<p><strong>Query by Relationship:</strong>
+- Query all robots using harmonic reducers
+- Query all humanoid robots deployed in automobile factories
+- Query all systems constrained by ISO 13482</p>
+<p><strong>Query by Path:</strong>
+- The complete chain from material to complete machine to market
+- The technology dependency chain from algorithm to hardware to application
+- The influence path from standard to design choice</p>
+<h4 id="2811-query-examples-sparql-cypher-and-python-implementation">2.8.1.1 Query Examples: SPARQL, Cypher, and Python Implementation</h4>
+<p>Section 2.8.1 summarizes query types. This section provides three directly runnable examples, corresponding to RDF triple stores, property graph databases, and Python in-memory graphs.</p>
+<p><strong>Example 1: SPARQL Query for All Robots Using Harmonic Reducers</strong></p>
+<pre class="highlight"><code class="language-sparql">PREFIX ex: &lt;http://example.org/humanoid-robot#&gt;
+
+SELECT ?robot ?manufacturer
+WHERE {
+  ?robot rdf:type ex:HumanoidRobot .
+  ?robot ex:uses ?actuator .
+  ?actuator rdf:type ex:RotaryActuator .
+  ?actuator ex:isPartOf ?reducer .
+  ?reducer rdf:type ex:HarmonicReducer .
+  OPTIONAL { ?robot ex:manufacturedBy ?manufacturer . }
+}</code></pre>
+<p>This query assumes that the inverse relationship of <code>ex:isPartOf</code> can be used to locate the reducer from the actuator; if the ontology has declared the inverse property <code>ex:hasPart</code> of <code>ex:isPartOf</code>, it can be automatically inferred via <code>owl:inverseOf</code>. More details on the physical mechanism of harmonic reducers can be found in Chapter 4.</p>
+<p><strong>Example 2: Cypher Query for Multi-Level Suppliers of Components</strong></p>
+<pre class="highlight"><code class="language-cypher">MATCH (c:Component {name: 'Harmonic Reducer'})&lt;-[:manufactures]-(m:ComponentManufacturer)
+OPTIONAL MATCH (m)-[:supplies]-&gt;(oem:OEM)-[:manufactures]-&gt;(r:RobotSystem)
+RETURN c.name AS component, m.name AS manufacturer, oem.name AS oem, r.name AS robot</code></pre>
+<p>This query starts from the component, finds the manufacturer along <code>manufactures</code>, then finds the OEM along <code>supplies</code>, and finally locates the robot system, demonstrating the value of cross-layer relationships in supply chain analysis (see Chapter 7 for details).</p>
+<p><strong>Example 3: Python In-Memory Graph Path Search – From NdFeB to Market</strong></p>
+<pre class="highlight"><code class="language-python">import networkx as nx
+
+G = nx.DiGraph()
+G.add_edges_from([
+    ("NdFeB Magnet", "Frameless Motor", {"rel": "isMadeOf"}),
+    ("Frameless Motor", "Rotary Actuator", {"rel": "isPartOf"}),
+    ("Rotary Actuator", "Optimus", {"rel": "isPartOf"}),
+    ("Optimus", "Car Factory", {"rel": "deployedAt"}),
+    ("Car Factory", "Industrial Market", {"rel": "hasMarketSize"}),
+    ("Optimus", "BMW Spartanburg", {"rel": "deployedAt"}),
+])
+
+# All simple paths from NdFeB Magnet to Industrial Market
+paths = list(nx.all_simple_paths(G, "NdFeB Magnet", "Industrial Market"))
+print("Paths:", paths)
+
+# Shortest path (by number of edges)
+sp = nx.shortest_path(G, "NdFeB Magnet", "Industrial Market")
+print("Shortest path:", sp)</code></pre>
+<p>The output will show two market paths: <code>... → Optimus → Car Factory → Market</code> and <code>... → Optimus → BMW Spartanburg → Market</code>. Such path queries are crucial for evaluating technology-market mapping and supply chain vulnerabilities.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: OPTIONAL Pattern</p>
+<p>OPTIONAL is a modifier in SPARQL, indicating that if the pattern exists, the binding result is returned; otherwise, it does not cause the entire row to be filtered. It corresponds to the left outer join in relational algebra and is used to handle missing data, avoiding the loss of subject records due to unfilled attributes.</p>
+</div>
+<h3 id="282-reasoning-and-analysis">2.8.2 Reasoning and Analysis</h3>
+<p>Higher-level reasoning can be performed based on knowledge graphs:</p>
+<ul>
+<li><strong>Bottleneck Identification</strong>: Identify key components with only a few suppliers to assess supply chain risk.</li>
+<li><strong>Alternative Analysis</strong>: Find alternative components and suppliers when a specific component is out of stock or its price increases.</li>
+<li><strong>Technology Maturity Assessment</strong>: Judge the maturity of a technology by associating related papers, products, and deployment cases.</li>
+<li><strong>Investment Target Research</strong>: Analyze a company's position, technology layout, and supply chain relationships within the knowledge graph.</li>
+</ul>
+<h3 id="283-visualization">2.8.3 Visualization</h3>
+<p>Knowledge graphs can be visualized through network graphs, tree maps, Sankey diagrams, etc.:</p>
+<ul>
+<li><strong>Network Graph</strong>: Displays the global structure of entities and relationships.</li>
+<li><strong>Tree Map</strong>: Shows the component hierarchy of a system.</li>
+<li><strong>Sankey Diagram</strong>: Illustrates the value flow from material to complete machine to market.</li>
+<li><strong>Timeline</strong>: Shows the development history of technologies, products, and enterprises.</li>
+</ul>
+<h3 id="284-storage-and-query-systems">2.8.4 Storage and Query Systems</h3>
+<p>The storage and query system of a knowledge graph determines its scalability, query capability, and application scenarios. Based on the data model, they are mainly divided into RDF triple stores and property graph databases.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: RDF Triple Store</p>
+<p>An RDF triple store is a database specifically designed to store RDF triples, supporting SPARQL queries and OWL/RDFS reasoning. Typical systems include Apache Jena, GraphDB, Virtuoso, and Amazon Neptune (RDF mode). The advantage of triple stores lies in formal semantics and standard interoperability, making them suitable for scenarios requiring strong semantic constraints.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Property Graph Database</p>
+<p>A property graph database organizes data using nodes, edges, labels, and properties, supporting flexible graph traversal and pattern matching. Typical systems include Neo4j, Amazon Neptune (Gremlin mode), JanusGraph, and TigerGraph. The advantage of property graph databases lies in high-performance graph traversal and rich property expression, making them suitable for recommendation systems, fraud detection, and supply chain analysis.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: SPARQL</p>
+<p>SPARQL is the W3C-recommended query language for RDF, with syntax similar to SQL but designed for graph pattern matching. For example:
+<pre class="highlight"><code class="language-sparql">SELECT ?robot WHERE {
+  ?robot ex:uses ex:HarmonicReducer .
+}</code></pre>
+SPARQL supports optional patterns, filters, aggregations, subqueries, and federated queries.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Cypher</p>
+<p>Cypher is a property graph query language developed by Neo4j, using ASCII art style to represent nodes and relationships. For example:
+<pre class="highlight"><code class="language-cypher">MATCH (r:RobotSystem)-[:uses]-&gt;(c:Component)
+WHERE c.name = 'Harmonic Reducer'
+RETURN r.name</code></pre></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Gremlin</p>
+<p>Gremlin is the graph traversal language of Apache TinkerPop, adopting a functional style. It is the "universal language" for graph databases and can run on multiple backends. For example:
+<pre class="highlight"><code class="language-gremlin">g.V().hasLabel('RobotSystem').out('uses').has('name','Harmonic Reducer').in('uses').values('name')</code></pre></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Vector Search and RAG (Retrieval-Augmented Generation)</p>
+<p>Vector search embeds text or entities as dense vectors and quickly finds semantically similar items through approximate nearest neighbor (ANN) search. RAG provides the retrieval results as context to large language models to reduce hallucinations and improve factuality. When combining knowledge graphs with RAG, the structured relationships in the graph can supplement the semantic relevance of vector search, achieving "GraphRAG".</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>RDF Triple Store</th>
+<th>Property Graph Database</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data Model</td>
+<td>Triple <span class="arithmatex">\((s,p,o)\)</span></td>
+<td>Node + Edge + Property</td>
+</tr>
+<tr>
+<td>Query Language</td>
+<td>SPARQL</td>
+<td>Cypher, Gremlin</td>
+</tr>
+<tr>
+<td>Reasoning Capability</td>
+<td>Strong (OWL/RDFS)</td>
+<td>Weak or requires extension</td>
+</tr>
+<tr>
+<td>Schema Flexibility</td>
+<td>High</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Graph Traversal Performance</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Typical Applications</td>
+<td>Semantic Web, Life Sciences</td>
+<td>Social Networks, Recommendations, Supply Chain</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    subgraph RDF["RDF Technology Stack"]
+        A["RDF Data"] --&gt; B["SPARQL Query"]
+        B --&gt; C["OWL Reasoning"]
+    end
+    subgraph PG["Property Graph Technology Stack"]
+        D["Node/Edge/Property"] --&gt; E["Cypher/Gremlin"]
+        E --&gt; F["Graph Algorithm Library"]
+    end
+    RDF --&gt; G["Application Layer"]
+    PG --&gt; G
+    G --&gt; H["Visualization / Recommendation / QA"]</code></pre>
+<p>The following Python example demonstrates how to simulate an RDF triple store using pandas and execute simple SPARQL-style queries:</p>
+<pre class="highlight"><code class="language-python">import pandas as pd
+
+# Simulate RDF triples
+triples = [
+    ("ex:Optimus", "rdf:type", "ex:HumanoidRobot"),
+    ("ex:Optimus", "ex:uses", "ex:HarmonicReducer"),
+    ("ex:UnitreeH1", "rdf:type", "ex:HumanoidRobot"),
+    ("ex:UnitreeH1", "ex:uses", "ex:HarmonicReducer"),
+    ("ex:HarmonicReducer", "rdf:type", "ex:Component"),
+    ("ex:HarmonicReducer", "ex:manufacturedBy", "ex:HarmonicDriveSystems"),
+]
+df = pd.DataFrame(triples, columns=["subject", "predicate", "object"])
+
+# SPARQL-style query: Find all robots that use HarmonicReducer
+robots = df[
+    (df["predicate"] == "ex:uses") &amp;
+    (df["object"] == "ex:HarmonicReducer")
+]["subject"].tolist()
+print("Robots using HarmonicReducer:", robots)
+
+# Query: Find the manufacturer of HarmonicReducer
+manufacturer = df[
+    (df["subject"] == "ex:HarmonicReducer") &amp;
+    (df["predicate"] == "ex:manufacturedBy")
+]["object"].tolist()
+print("Manufacturer:", manufacturer)</code></pre>
+<h3 id="285-benchmarks-and-competitions">2.8.5 Benchmarks and Competitions</h3>
+<p>Benchmarks in the knowledge graph field have driven the development of algorithms. Major tasks and benchmarks include:</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Knowledge Graph Completion (KGC)</p>
+<p>Knowledge Graph Completion is the task of predicting missing triples based on existing triples, including link prediction and entity prediction. Common methods include embedding-based models (TransE, DistMult, ComplEx, RotatE) and graph neural network-based models.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Link Prediction</p>
+<p>Link prediction is the task of predicting missing entities given <span class="arithmatex">\((s,p,?)\)</span> or <span class="arithmatex">\((?,p,o)\)</span>, or predicting the relation given <span class="arithmatex">\((s,?,o)\)</span>. Evaluation metrics typically include Mean Rank (MR), Mean Reciprocal Rank (MRR), and Hits@N.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Entity Alignment Benchmark</p>
+<p>Entity alignment benchmarks provide alignment seeds between two or more multilingual knowledge graphs to evaluate alignment algorithms. Typical datasets include DBP15K, DWY100K, and the OpenEA series. Evaluation metrics are usually Hits@1 and Hits@10.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Representative Benchmark</th>
+<th>Evaluation Metrics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Knowledge Graph Completion</td>
+<td>FB15k-237, WN18RR, YAGO3-10</td>
+<td>MRR, Hits@1, Hits@10</td>
+</tr>
+<tr>
+<td>Link Prediction</td>
+<td>OGBL-BioKG, OGBL-Wikikg2</td>
+<td>MRR, Hits@10</td>
+</tr>
+<tr>
+<td>Entity Alignment</td>
+<td>DBP15K, DWY100K</td>
+<td>Hits@1, Hits@10</td>
+</tr>
+<tr>
+<td>Question Answering</td>
+<td>WebQuestions, ComplexWebQuestions</td>
+<td>F1, Hits@1</td>
+</tr>
+<tr>
+<td>Entity Linking</td>
+<td>AIDA-CoNLL, MSNBC</td>
+<td>Precision, Recall, F1</td>
+</tr>
+</tbody>
+</table>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A["Evaluation Tasks"] --&gt; B["Knowledge Graph Completion"]
+    A --&gt; C["Link Prediction"]
+    A --&gt; D["Entity Alignment"]
+    A --&gt; E["Knowledge Graph QA"]
+    A --&gt; F["Entity Linking"]
+    B --&gt; G["FB15k-237 / WN18RR"]
+    C --&gt; H["OGBL-Wikikg2"]
+    D --&gt; I["DBP15K / DWY100K"]
+    E --&gt; J["WebQuestions"]
+    F --&gt; K["AIDA-CoNLL"]</code></pre>
+<h2 id="29-limitations-and-evolution-directions">2.9 Limitations and Evolution Directions</h2>
+<h3 id="291-current-limitations">2.9.1 Current Limitations</h3>
+<p>Although the knowledge graph approach has significant advantages, the knowledge graph constructed in this book still has some limitations:</p>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Uneven Coverage</strong></td>
+<td>AI algorithms and papers are relatively well covered, but manufacturing, supply chain, and policy coverage is relatively weak</td>
+</tr>
+<tr>
+<td><strong>Sparse Relations</strong></td>
+<td>Some system-level entities lack cross-layer relationships, requiring continuous completion</td>
+</tr>
+<tr>
+<td><strong>Varying Source Quality</strong></td>
+<td>Some entries rely on news reports or blogs, which are less reliable than academic papers</td>
+</tr>
+<tr>
+<td><strong>Dynamic Update Pressure</strong></td>
+<td>The field develops rapidly, requiring continuous investment to maintain timeliness</td>
+</tr>
+<tr>
+<td><strong>Insufficient Quantitative Attributes</strong></td>
+<td>Numerical attributes such as cost and performance have not been fully structured</td>
+</tr>
+</tbody>
+</table>
+<h3 id="292-evolution-directions">2.9.2 Evolution Directions</h3>
+<p>The knowledge graph can be continuously improved in the following directions in the future:</p>
+<ul>
+<li><strong>Enhance Quantitative Attributes</strong>: Add more numerical attributes to entities such as components, robots, and markets to support cost analysis and performance comparison.</li>
+<li><strong>Introduce Temporal Information</strong>: Record the time range of entities and relationships to support historical evolution analysis.</li>
+<li><strong>Strengthen Multilingual Support</strong>: Add multilingual titles and descriptions in English, Chinese, Korean, etc.</li>
+<li><strong>Link with Simulation Data</strong>: Connect the knowledge graph with simulation platforms and datasets to support a closed loop from knowledge to experimentation.</li>
+<li><strong>Develop Interactive Frontend</strong>: Build a web interface to support natural language queries, graph browsing, and path analysis.</li>
+<li><strong>Introduce Auto-completion</strong>: Use large language models to automatically generate suggestions for missing relationships and attributes, followed by manual review.</li>
+</ul>
+<h3 id="293-devops-for-knowledge-graphs">2.9.3 DevOps for Knowledge Graphs</h3>
+<p>Integrating the knowledge graph into a continuous integration/continuous deployment (CI/CD) pipeline is key to ensuring its long-term availability and reliability.</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: ETL and ELT</p>
+<p>ETL (Extract-Transform-Load) is a process of first extracting, then transforming, and finally loading into the target system. ELT (Extract-Load-Transform) first loads raw data and then transforms it within the target system. Knowledge graph ingestion typically uses ETL because entity extraction, disambiguation, and schema alignment need to be completed before writing.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Versioning</p>
+<p>Versioning records changes to the knowledge graph over time, allowing for tracing historical states, comparing differences, and recovering from erroneous operations. For file-based knowledge graphs, Git itself can serve as a version control system; for database-based knowledge graphs, incremental logs and timestamp mechanisms need to be designed.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: CI/CD (Continuous Integration / Continuous Deployment)</p>
+<p>CI/CD is a software engineering practice for automated building, testing, and deployment. In knowledge graph engineering, CI/CD can automatically run schema validation, quality checks, link prediction tests, and visualization generation, ensuring that each update does not break the existing structure.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Incremental Update and Rollback</p>
+<p>Incremental update processes only the data added or modified since the last update, reducing computational overhead. Rollback is the operation of restoring the system to a previous stable state when an error is discovered. Both require comprehensive provenance records and change logs for support.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Provenance</p>
+<p>In knowledge engineering, provenance refers to the source, generation process, and processing history of data. W3C PROV is a standardized provenance model that can describe the relationships between entities, activities, and agents. Provenance information is crucial for auditing, trustworthiness, and accountability.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: LLM and RAG Integration</p>
+<p>Large Language Models (LLMs) can be used to assist with knowledge extraction, relationship suggestions, and text summarization. RAG (Retrieval-Augmented Generation) uses the knowledge graph as a retrieval source to provide structured context for the LLM. When combining the two, attention must be paid to the hallucination problem of LLMs and the coverage limitations of the knowledge graph.</p>
+</div>
+<p>The knowledge graph DevOps pipeline is shown in the following diagram:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Data Sources"] --&gt; B["ETL Extraction"]
+    B --&gt; C["Staging Area"]
+    C --&gt; D["Schema Validation"]
+    D --&gt; E{"Quality Check"}
+    E --&gt;|Pass| F["Merge to Main Branch"]
+    E --&gt;|Fail| G["Manual Fix"]
+    F --&gt; H["Build and Deploy"]
+    H --&gt; I["Production Environment"]
+    I --&gt; J["Monitoring and Rollback"]</code></pre>
+<p>The integration architecture of the knowledge graph with LLM/RAG can be represented by the following diagram:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["User Query"] --&gt; B["Query Understanding"]
+    B --&gt; C{"Requires Structured Knowledge?"}
+    C --&gt;|Yes| D["Knowledge Graph Retrieval"]
+    C --&gt;|No| E["Vector Retrieval"]
+    D --&gt; F["Subgraph / Triples"]
+    E --&gt; G["Relevant Text Segments"]
+    F --&gt; H["Context Assembly"]
+    G --&gt; H
+    H --&gt; I["LLM Generation"]
+    I --&gt; J["Answer with Source Citations"]</code></pre>
+<p>The lifecycle of a triple can be summarized in the following diagram:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A["Data Source"] --&gt; B["Extraction"]
+    B --&gt; C["Disambiguation / Alignment"]
+    C --&gt; D["Schema Validation"]
+    D --&gt; E["Manual Review"]
+    E --&gt; F["Production Environment"]
+    F --&gt; G["Query / Inference"]
+    G --&gt; H["Monitoring and Update"]
+    H --&gt; I["Version Archiving"]</code></pre>
+<hr />
+<h2 id="210-chapter-summary">2.10 Chapter Summary</h2>
+<p>This chapter systematically describes the knowledge graph construction methodology adopted in this book. The core points are as follows:</p>
+<ol>
+<li>
+<p><strong>The information model adopts a quadruple of "Entity-Relationship-Source-Verification"</strong>, where each entity and relationship has a clear schema, source, and review record.</p>
+</li>
+<li>
+<p><strong>Entity types cover the entire humanoid robot industry chain</strong>, including papers, methods, algorithms, datasets, software, components, robots, companies, standards, materials, applications, markets, etc.</p>
+</li>
+<li>
+<p><strong>Relationship types cover various associations such as composition, usage, dependency, deployment, manufacturing, supply, application, and regulation</strong>, supporting the construction of cross-layer links.</p>
+</li>
+<li>
+<p><strong>Domain layering divides the field into 13 levels</strong>, from basic disciplines to policies, regulations, and ethics; theoretical depth classifies entities into five levels: foundation, principle, formalism, method, and system.</p>
+</li>
+<li>
+<p><strong>The data ingestion pipeline includes six stages: source, adapter, deduplication, writing, validation, and manual review</strong>, ensuring the quality and timeliness of knowledge.</p>
+</li>
+<li>
+<p><strong>Naming conventions, deduplication and disambiguation, and a three-level review mechanism</strong> are key to maintaining the consistency and accuracy of large-scale knowledge graphs.</p>
+</li>
+<li>
+<p><strong>The knowledge graph supports query, inference, visualization, and cross-layer analysis</strong>, serving as the infrastructure for systematic cognition in the humanoid robot field.</p>
+</li>
+<li>
+<p><strong>The current knowledge graph still has limitations such as uneven coverage, sparse relations, and dynamic update pressure</strong>. Future evolution is needed in directions such as quantitative attributes, temporal information, multilingual support, simulation integration, interactive frontends, and DevOps.</p>
+</li>
+</ol>
+<h3 id="chapter-symbol-table">Chapter Symbol Table</h3>
+<p>For ease of reference, the main symbols used in this chapter are organized as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Unit/Value Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(G=(V,E)\)</span></td>
+<td>Graph, vertex set <span class="arithmatex">\(V\)</span>, edge set <span class="arithmatex">\(E\)</span></td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\((s,p,o)\)</span></td>
+<td>RDF/Triple: subject, predicate, object</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(d(v)\)</span></td>
+<td>Degree of node <span class="arithmatex">\(v\)</span></td>
+<td>Integer</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(PR(v)\)</span></td>
+<td>PageRank value of node <span class="arithmatex">\(v\)</span></td>
+<td><span class="arithmatex">\([0,1]\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(C(v)\)</span></td>
+<td>Local clustering coefficient of node <span class="arithmatex">\(v\)</span></td>
+<td><span class="arithmatex">\([0,1]\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mathcal{T}\)</span></td>
+<td>Set of entity types</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(type(e)\)</span></td>
+<td>Type of entity <span class="arithmatex">\(e\)</span></td>
+<td>Element of <span class="arithmatex">\(\mathcal{T}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(w(u,v)\)</span></td>
+<td>Dependency strength of relation <span class="arithmatex">\((u,v)\)</span></td>
+<td><span class="arithmatex">\([0,1]\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(c(u,v)\)</span></td>
+<td>Source confidence of relation <span class="arithmatex">\((u,v)\)</span></td>
+<td><span class="arithmatex">\([0,1]\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(S(P)\)</span></td>
+<td>Comprehensive dependency score of path <span class="arithmatex">\(P\)</span></td>
+<td><span class="arithmatex">\([0,1]\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(R(P)\)</span></td>
+<td>Reliability of path <span class="arithmatex">\(P\)</span></td>
+<td><span class="arithmatex">\([0,1]\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lambda\)</span></td>
+<td>Data arrival rate</td>
+<td>Items/hour</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mu\)</span></td>
+<td>Data processing rate</td>
+<td>Items/hour</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\rho = \lambda/\mu\)</span></td>
+<td>System utilization</td>
+<td><span class="arithmatex">\([0,1)\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(L\)</span></td>
+<td>Steady-state average queue length</td>
+<td>Items</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(W\)</span></td>
+<td>Steady-state average waiting time</td>
+<td>Hours</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(X,D,C\)</span></td>
+<td>CSP variables, domains, constraints</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\hat{p}\)</span></td>
+<td>Sample error rate</td>
+<td><span class="arithmatex">\([0,1]\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(z_{1-\alpha/2}\)</span></td>
+<td>Standard normal distribution quantile</td>
+<td>—</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\text{UCL}/\text{LCL}\)</span></td>
+<td>Upper/Lower control limits of p-chart</td>
+<td><span class="arithmatex">\([0,1]\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="references-and-data-sources">References and Data Sources</h2>
+<p>[1] Hogan, A., Blomqvist, E., Cochez, M., d'Amato, C., Melo, G. D., Gutierrez, C., ... &amp; Zimmermann, A. (2021). Knowledge graphs. ACM Computing Surveys (CSUR), 54(4), 1-37.</p>
+<p>[2] Ji, S., Pan, S., Cambria, E., Marttinen, P., &amp; Yu, P. S. (2021). A survey on knowledge graphs: Representation, acquisition, and applications. IEEE Transactions on Neural Networks and Learning Systems, 33(2), 494-514.</p>
+<p>[3] Wang, Q., Mao, Z., Wang, B., &amp; Guo, L. (2017). Knowledge graph embedding: A survey of approaches and applications. IEEE Transactions on Knowledge and Data Engineering, 29(12), 2724-2743.</p>
+<p>[4] Bollacker, K., Evans, C., Paritosh, P., Sturge, T., &amp; Taylor, J. (2008). Freebase: A collaboratively created graph database for structuring human knowledge. In Proceedings of the 2008 ACM SIGMOD International Conference on Management of Data, 1247-1250.</p>
+<p>[5] Vrandečić, D., &amp; Krötzsch, M. (2014). Wikidata: A free collaborative knowledgebase. Communications of the ACM, 57(10), 78-85.</p>
+<p>[6] Auer, S., Bizer, C., Kobilarov, G., Lehmann, J., Cyganiak, R., &amp; Ives, Z. (2007). DBpedia: A nucleus for a web of open data. In The Semantic Web, 722-735.</p>
+<p>[7] Noy, N. F., Shah, N. H., Whetzel, P. L., Dai, B., Dorf, M., Griffith, N., ... &amp; Musen, M. A. (2009). BioPortal: Ontologies and integrated data resources at the click of a mouse. Nucleic Acids Research, 37(suppl_2), W170-W173.</p>
+<p>[8] Tyson, A., et al. (2020). AIChemist: A knowledge graph for AI-driven materials discovery. npj Computational Materials, 6, 1-12.</p>
+<p>[9] Knowledge graph project of this book: Awesome Humanoid Robot. Internal project materials, including <code>scripts/ingestion/</code>, <code>scripts/validate_entries.py</code>, <code>scripts/coverage_dashboard.py</code>, etc.</p>
+<p>[10] Page, L., Brin, S., Motwani, R., &amp; Winograd, T. (1999). The PageRank citation ranking: Bringing order to the web. Technical Report, Stanford InfoLab.</p>
+<p>[11] W3C. (2014). RDF 1.1 Concepts and Abstract Syntax. W3C Recommendation. https://www.w3.org/TR/rdf11-concepts/</p>
+<p>[12] W3C. (2014). RDF Schema 1.1. W3C Recommendation. https://www.w3.org/TR/rdf-schema/</p>
+<p>[13] W3C. (2012). OWL 2 Web Ontology Language Document Overview (Second Edition). W3C Recommendation. https://www.w3.org/TR/owl2-overview/</p>
+<p>[14] W3C. (2013). SPARQL 1.1 Overview. W3C Recommendation. https://www.w3.org/TR/sparql11-overview/</p>
+<p>[15] W3C. (2013). PROV-O: The PROV Ontology. W3C Recommendation. https://www.w3.org/TR/prov-o/</p>
+<p>[16] Arp, R., Smith, B., &amp; Spear, A. D. (2015). Building ontologies with basic formal ontology. MIT Press.</p>
+<p>[17] Gangemi, A., Guarino, N., Masolo, C., Oltramari, A., &amp; Schneider, L. (2002). Sweetening ontologies with DOLCE. In Knowledge Engineering and Knowledge Management: Ontologies and the Semantic Web, 166-181.</p>
+<p>[18] Niles, I., &amp; Pease, A. (2001). Towards a standard upper ontology. In Proceedings of the International Conference on Formal Ontology in Information Systems, 2-9.</p>
+<p>[19] Poveda-Villalón, M., Suárez-Figueroa, M. C., &amp; Gómez-Pérez, A. (2014). Validating ontologies with OOPS!. In Knowledge Engineering and Knowledge Management, 267-281.</p>
+<p>[20] Euzenat, J., &amp; Shvaiko, P. (2013). Ontology matching (2nd ed.). Springer.</p>
+<p>[21] Lafferty, J., McCallum, A., &amp; Pereira, F. C. (2001). Conditional random fields: Probabilistic models for segmenting and labeling sequence data. In Proceedings of ICML, 282-289.</p>
+<p>[22] Devlin, J., Chang, M. W., Lee, K., &amp; Toutanova, K. (2019). BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of NAACL-HLT, 4171-4186.</p>
+<p>[23] Honnibal, M., &amp; Montani, I. (2017). spaCy 2: Natural language understanding with Bloom embeddings, convolutional neural networks and incremental parsing. To appear, 7(1), 411-420.</p>
+<p>[24] Mintz, M., Bills, S., Snow, R., &amp; Jurafsky, D. (2009). Distant supervision for relation extraction without labeled data. In Proceedings of ACL-IJCNLP, 1003-1011.</p>
+<p>[25] Bordes, A., Usunier, N., Garcia-Duran, A., Weston, J., &amp; Yakhnenko, O. (2013). Translating embeddings for modeling multi-relational data. In NeurIPS, 2787-2795.</p>
+<p>[26] Sun, Z., Deng, Z. H., Nie, J. Y., &amp; Tang, J. (2019). RotatE: Knowledge graph embedding by relational rotation in complex space. In ICLR.</p>
+<p>[27] Schlichtkrull, M., Kipf, T. N., Bloem, P., van den Berg, R., Titov, I., &amp; Welling, M. (2018). Modeling relational data with graph convolutional networks. In ESWC, 593-607.</p>
+<p>[28] Levenshtein, V. I. (1966). Binary codes capable of correcting deletions, insertions, and reversals. Soviet Physics Doklady, 10(8), 707-710.</p>
+<p>[29] Jaccard, P. (1912). The distribution of the flora in the alpine zone. New Phytologist, 11(2), 37-50.</p>
+<p>[30] Salton, G., &amp; McGill, M. J. (1983). Introduction to modern information retrieval. McGraw-Hill.</p>
+<p>[31] Christen, P. (2012). Data matching: Concepts and techniques for record linkage, entity resolution, and duplicate detection. Springer.</p>
+<p>[32] Li, Y., Li, J., Suhara, Y., Doan, A., &amp; Tan, W. C. (2020). Deep entity matching with pre-trained language models. Proceedings of the VLDB Endowment, 14(1), 50-60.</p>
+<p>[33] Cohen, J. (1960). A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1), 37-46.</p>
+<p>[34] Newman, M. E. (2010). Networks: An introduction. Oxford University Press.</p>
+<p>[35] Hagberg, A., Swart, P., &amp; Chult, D. S. (2008). Exploring network structure, dynamics, and function using NetworkX. In Proceedings of SciPy, 11-15.</p>
+<p>[36] TinkerPop, A. (2019). Apache TinkerPop 3 documentation. https://tinkerpop.apache.org/docs/current/</p>
+<p>[37] Francis, N., Green, A., Guagliardo, P., Libkin, L., Lindaaker, T., Marsault, V., ... &amp; Taylor, A. (2018). Cypher: An evolving query language for property graphs. In Proceedings of SIGMOD, 1433-1445.</p>
+<p>[38] Bizer, C., Heath, T., &amp; Berners-Lee, T. (2011). Linked data: The story so far. In Semantic Services, Interoperability and Web Applications: Emerging Concepts, 205-227.</p>
+<p>[39] Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., ... &amp; Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. In NeurIPS, 9459-9474.</p>
+<p>[40] Toutanova, K., Chen, D., Pantel, P., Poon, H., Choudhury, P., &amp; Gamon, M. (2015). Representing text for joint embedding of text and knowledge bases. In Proceedings of EMNLP, 1499-1509.</p>
+<p>[41] Thellmann, K., &amp; Scheglmann, S. (2024). GraphRAG: A modular approach to knowledge-enabled retrieval-augmented generation. arXiv preprint arXiv:2405.18414.</p>
+<hr />
+<h2 id="knowledge-graph-anchors-in-this-chapter">Knowledge Graph Anchors in This Chapter</h2>
+<p><strong>Core Entities</strong></p>
+<table>
+<thead>
+<tr>
+<th>Entity Type</th>
+<th>Representative Entity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>concept</code></td>
+<td>knowledge graph, schema, entity, relationship, verification</td>
+</tr>
+<tr>
+<td><code>technology</code></td>
+<td>YAML, Markdown, RSS, Mermaid, ROS 2</td>
+</tr>
+<tr>
+<td><code>software_platform</code></td>
+<td><code>validate_entries.py</code>, <code>coverage_dashboard.py</code>, <code>EntryWriter</code>, <code>DedupService</code></td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>schema validation, deduplication, cross-layer relationship, curation</td>
+</tr>
+<tr>
+<td><code>standard</code></td>
+<td>ISO 13482, IEC 61508</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Core Relationships</strong></p>
+<table>
+<thead>
+<tr>
+<th>Relationship Type</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is_part_of</code></td>
+<td>Concept/component belongs to a larger system</td>
+<td>Schema → Knowledge Graph</td>
+</tr>
+<tr>
+<td><code>uses</code></td>
+<td>Method/tool uses a certain technology</td>
+<td>Knowledge Graph → YAML</td>
+</tr>
+<tr>
+<td><code>requires</code></td>
+<td>Process depends on a certain component</td>
+<td>Data Ingestion → DedupService</td>
+</tr>
+<tr>
+<td><code>applies_to</code></td>
+<td>Standard/method applies to a certain object</td>
+<td>Schema Validation → Entity File</td>
+</tr>
+<tr>
+<td><code>validates_on</code></td>
+<td>Tool validates a certain object</td>
+<td><code>validate_entries.py</code> → Relationship File</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cross-Layer Link Example</strong></p>
+<pre class="highlight"><code>Raw Data Source → Adapter → ParsedItem → Deduplication → Entity File → Schema Validation → Manual Review → Production Environment → Query/Inference/Visualization</code></pre>
+<p><strong>Key Reflection Questions</strong></p>
+<ol>
+<li>Why does the humanoid robot domain need a knowledge graph rather than traditional literature reviews?</li>
+<li>What are the respective roles of the entity-relationship-source-verification quadruple?</li>
+<li>How do Domain layering and theoretical depth help organize heterogeneous knowledge?</li>
+<li>What are the design principles and verification standards for cross-layer relationships?</li>
+<li>How to ensure dynamic updates and quality control of the knowledge graph?</li>
+</ol>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-01/">← Previous<span>Chapter 1 Introduction: Why Humanoid Robots?</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-03/">Next →<span>Chapter 3: Key Materials</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-2-knowledge-graph-construction-methodology">Chapter 2: Knowledge Graph Construction Methodology</a><ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#21-from-data-to-knowledge-why-traditional-approaches-are-insufficient">2.1 From Data to Knowledge: Why Traditional Approaches Are Insufficient</a><ul>
+<li><a href="#211-the-complexity-of-humanoid-robot-knowledge">2.1.1 The Complexity of Humanoid Robot Knowledge</a></li>
+<li><a href="#212-limitations-of-traditional-knowledge-organization-methods">2.1.2 Limitations of Traditional Knowledge Organization Methods</a></li>
+<li><a href="#213-the-solution-approach-of-knowledge-graphs">2.1.3 The Solution Approach of Knowledge Graphs</a></li>
+<li><a href="#214-philosophical-and-information-theoretic-foundations-from-data-to-knowledge">2.1.4 Philosophical and Information-Theoretic Foundations from Data to Knowledge</a></li>
+<li><a href="#215-summary">2.1.5 Summary</a></li>
+</ul>
+</li>
+<li><a href="#22-information-model">2.2 Information Model</a><ul>
+<li><a href="#221-entity-model">2.2.1 Entity Model</a></li>
+<li><a href="#222-entity-types">2.2.2 Entity Types</a><ul>
+<li><a href="#2221-ontological-commitment-and-taxonomy-of-entity-types">2.2.2.1 Ontological Commitment and Taxonomy of Entity Types</a></li>
+<li><a href="#2222-entity-types-and-chapter-mapping">2.2.2.2 Entity Types and Chapter Mapping</a></li>
+</ul>
+</li>
+<li><a href="#223-relationship-model">2.2.3 Relationship Model</a></li>
+<li><a href="#224-relationship-types">2.2.4 Relationship Types</a></li>
+<li><a href="#225-source-and-verification-model">2.2.5 Source and Verification Model</a></li>
+<li><a href="#226-graph-theory-foundations-of-knowledge-graphs">2.2.6 Graph Theory Foundations of Knowledge Graphs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#adding-relationship-edges">Adding Relationship Edges</a></li>
+<li><a href="#degree-analysis">Degree Analysis</a></li>
+<li><a href="#pagerank">PageRank</a></li>
+<li><a href="#clustering-coefficient-requires-an-undirected-graph">Clustering coefficient requires an undirected graph</a><ul>
+<li><a href="#232-theoretical-depth">2.3.2 Theoretical Depth</a></li>
+<li><a href="#233-ontology-engineering-methods">2.3.3 Ontology Engineering Methods</a></li>
+<li><a href="#234-formal-semantics-and-owl">2.3.4 Formal Semantics and OWL</a></li>
+<li><a href="#24-cross-layer-relationship-design">2.4 Cross-Layer Relationship Design</a><ul>
+<li><a href="#241-why-cross-layer-relationships-are-needed">2.4.1 Why Cross-Layer Relationships Are Needed</a></li>
+<li><a href="#242-typical-cross-layer-chains">2.4.2 Typical Cross-Layer Chains</a><ul>
+<li><a href="#2421-weighted-paths-and-dependency-strength-in-cross-layer-chains">2.4.2.1 Weighted Paths and Dependency Strength in Cross-Layer Chains</a></li>
+<li><a href="#2422-probabilistic-propagation-of-path-reliability">2.4.2.2 Probabilistic Propagation of Path Reliability</a></li>
+</ul>
+</li>
+<li><a href="#243-verification-standards-for-cross-layer-relationships">2.4.3 Verification Standards for Cross-Layer Relationships</a></li>
+<li><a href="#244-path-query-and-graph-traversal">2.4.4 Path Query and Graph Traversal</a></li>
+</ul>
+</li>
+<li><a href="#25-data-ingestion-pipeline">2.5 Data Ingestion Pipeline</a><ul>
+<li><a href="#251-overall-architecture">2.5.1 Overall Architecture</a></li>
+<li><a href="#252-data-sources">2.5.2 Data Sources</a></li>
+<li><a href="#253-adapter">2.5.3 Adapter</a></li>
+<li><a href="#254-deduplication-dedup">2.5.4 Deduplication (Dedup)</a></li>
+<li><a href="#255-writing-and-validation">2.5.5 Writing and Validation</a><ul>
+<li><a href="#2551-pipeline-throughput-and-latency-a-queuing-theory-perspective">2.5.5.1 Pipeline Throughput and Latency: A Queuing Theory Perspective</a></li>
+<li><a href="#2552-formal-model-of-schema-validation">2.5.5.2 Formal Model of Schema Validation</a></li>
+</ul>
+</li>
+<li><a href="#256-knowledge-extraction-techniques">2.5.6 Knowledge Extraction Techniques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#relation-extraction-based-on-simple-patterns">Relation Extraction: Based on Simple Patterns</a></li>
+<li><a href="#3-simple-deduplication-threshold-08">3. Simple Deduplication: Threshold 0.8</a><ul>
+<li><a href="#272-review-status">2.7.2 Review Status</a></li>
+<li><a href="#273-quality-metrics">2.7.3 Quality Metrics</a></li>
+<li><a href="#274-knowledge-graph-quality-dimensions">2.7.4 Knowledge Graph Quality Dimensions</a></li>
+</ul>
+</li>
+<li><a href="#schema-consistency-check-whether-sourcetarget-types-for-a-relation-type-are-valid">Schema Consistency: Check Whether Source/Target Types for a Relation Type Are Valid</a><ul>
+<li><a href="#28-applications-of-knowledge-graphs">2.8 Applications of Knowledge Graphs</a><ul>
+<li><a href="#281-query-and-exploration">2.8.1 Query and Exploration</a><ul>
+<li><a href="#2811-query-examples-sparql-cypher-and-python-implementation">2.8.1.1 Query Examples: SPARQL, Cypher, and Python Implementation</a></li>
+</ul>
+</li>
+<li><a href="#282-reasoning-and-analysis">2.8.2 Reasoning and Analysis</a></li>
+<li><a href="#283-visualization">2.8.3 Visualization</a></li>
+<li><a href="#284-storage-and-query-systems">2.8.4 Storage and Query Systems</a></li>
+<li><a href="#285-benchmarks-and-competitions">2.8.5 Benchmarks and Competitions</a></li>
+</ul>
+</li>
+<li><a href="#29-limitations-and-evolution-directions">2.9 Limitations and Evolution Directions</a><ul>
+<li><a href="#291-current-limitations">2.9.1 Current Limitations</a></li>
+<li><a href="#292-evolution-directions">2.9.2 Evolution Directions</a></li>
+<li><a href="#293-devops-for-knowledge-graphs">2.9.3 DevOps for Knowledge Graphs</a></li>
+</ul>
+</li>
+<li><a href="#210-chapter-summary">2.10 Chapter Summary</a><ul>
+<li><a href="#chapter-symbol-table">Chapter Symbol Table</a></li>
+</ul>
+</li>
+<li><a href="#references-and-data-sources">References and Data Sources</a></li>
+<li><a href="#knowledge-graph-anchors-in-this-chapter">Knowledge Graph Anchors in This Chapter</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models</h1>
+      <p class="entry-name-en">When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16203v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1154 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models (VLA-Fool), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Pennsylvania State University, Sony Research, Xidian University.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.16203" target="_blank" rel="noopener">When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2511.16203" target="_blank" rel="noopener">VLA-Fool source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존 연구는 주로 단일 모달리티 교란에 초점을 맞추었으며, 구현 추론 및 의사결정에 영향을 미치는 교차 모달 정렬 문제를 간과했습니다. VLA-Fool은 LIBERO 벤치마크에서 미세 조정된 OpenVLA 모델을 기반으로 화이트박스 및 블랙박스 시나리오를 동시에 검토합니다. 이 방법은 공격을 세 가지 계층으로 나눕니다: 그래디언트 및 프롬프트 기반 텍스트 교란, 패치 및 노이즈 기반 시각 교란, 그리고 지각과 명령 간의 의미적 대응을 의도적으로 파괴하는 교차 모달 정렬 공격입니다. 또한, 연구는 VLA 지각의 의미 공간을 언어 프롬프트에 통합하여 최초의 자동 생성 및 의미 기반 프롬프트 프레임워크를 구축했습니다. 실험 결과, 미세한 다중 모달 교란조차도 상당한 행동 편향을 유발할 수 있으며, 이는 현재 구현 다중 모달 정렬 메커니즘의 취약성을 강조합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<p>VLA-Fool은 세 가지 계층을 포괄하는 통합 다중 모달 적대적 공격 프레임워크를 제안합니다:
+- <strong>텍스트 교란</strong>: 그래디언트 기반 최적화(예: 명령 임베딩에 적대적 노이즈 추가) 및 프롬프트 기반 조작(예: 명령의 핵심 동사 또는 명사 수정)을 통해 구현됩니다.
+- <strong>시각 교란</strong>: 패치 공격(이미지에 특정 패턴 오버레이) 및 노이즈 공격(감지할 수 없는 픽셀 수준 교란 추가)을 채택합니다.
+- <strong>교차 모달 정렬 공격</strong>: 핵심 혁신으로, 시각 지각과 언어 명령 간의 의미적 대응을 파괴하는 것을 목표로 합니다. 예를 들어, 로봇이 "빨간 컵 집기" 명령을 파란 물체와 잘못 연관시키도록 만듭니다.</p>
+<h3 id="_4">핵심 설계</h3>
+<ul>
+<li><strong>VLA 지각 의미 공간</strong>: VLA 모델 내부의 의미 표현(예: 행동 임베딩)을 언어 프롬프트 공간에 매핑하여 행동 편향을 최대화하는 적대적 프롬프트를 자동 생성합니다. 이는 수동 설계가 필요 없는 최초의 의미 기반 프롬프트 프레임워크입니다.</li>
+<li><strong>공격 설정</strong>: 화이트박스(공격자가 모델 매개변수를 알고 있음) 및 블랙박스(모델 출력만 쿼리 가능) 시나리오를 동시에 평가하여 더 현실적인 위협 모델을 포괄합니다.</li>
+</ul>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>벤치마크 및 모델</strong>: LIBERO 벤치마크(10개의 구현 조작 작업 포함)와 미세 조정된 OpenVLA 모델(매개변수 7B)을 사용합니다.</li>
+<li><strong>평가 지표</strong>: 주로 작업 성공률(SR)의 감소 폭과 행동 편향(예: 잘못된 물체 집기 또는 잘못된 동작 실행)의 빈도를 측정합니다.</li>
+</ul>
+<h3 id="_6">핵심 수치 및 결론</h3>
+<ul>
+<li><strong>성능 저하</strong>: 교차 모달 정렬 공격 하에서 작업 성공률이 기준 85.3%에서 12.7%로 급락하여 72.6% 포인트 감소했습니다.</li>
+<li><strong>단일 모달 비교</strong>: 텍스트 교란만으로는 성공률이 54.1%로, 시각 교란만으로는 48.6%로 감소했지만, 교차 모달 공격의 효과는 훨씬 더 강력했습니다.</li>
+<li><strong>블랙박스 시나리오</strong>: 블랙박스 조건에서도 교차 모달 정렬 공격은 성공률을 31.2%로 억제하여 실질적인 위협성을 입증했습니다.</li>
+<li><strong>의미 기반 프롬프트 효과</strong>: 자동 생성된 의미 프롬프트는 무작위 프롬프트에 비해 성공률을 추가로 18.4% 낮추어 VLA 지각 공간의 유효성을 검증했습니다.</li>
+</ul>
+<h3 id="_7">결론</h3>
+<p>VLA-Fool은 현재 VLA 모델이 교차 모달 정렬에서 근본적인 취약성을 지니고 있음을 밝혀냅니다: 모델이 명령과 시각의 의미적 연관성을 진정으로 이해하는 것이 아니라 얕은 통계적 상관관계에 의존합니다. 연구는 향후 작업이 훈련 과정에 적대적 정렬 메커니즘을 도입하고 더 강건한 다중 모달 융합 전략을 개발할 것을 촉구합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_yan_when_alignment_fails_multimoda_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">핵심 설계</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">핵심 수치 및 결론</a></li>
+<li><a href="#_7">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

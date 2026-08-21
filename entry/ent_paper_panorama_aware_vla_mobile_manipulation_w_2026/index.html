@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation</h1>
+      <p class="entry-name-en">Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出PanoVLA，一种面向移动操作的全景感知视觉-语言-动作模型，配合基于VR的全身遥操作系统实现野外数据采集。核心贡献在于通过引入全景专家模块和MTPano编码器，将全局空间上下文注入VLA策略，在4个真实移动操作任务上平均成功率从30.0%提升至73.4%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.02257" target="_blank" rel="noopener">arXiv:2608.02257 Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperatio</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>移动操作VLA面临的核心矛盾在于：局部相机视野与全局空间推理需求之间的鸿沟。现有π_0.5等模型仅依赖前视和腕部相机，在底盘旋转或机械臂自遮挡时，目标物体和地标频繁脱离视野，导致策略在长时程任务中"迷失"。简单拼接更多图像流（如Stacked Pano）无法建立连贯的以机器人为中心的空间表征，反而引入冗余计算和域偏移。</p>
+<p>本文真正改变的是VLA架构中"全局上下文注入"的方式——不再将全景图像作为额外输入token简单拼接，而是设计独立的全景专家模块，通过KV缓存机制与VLM专家交互，在保持局部精细操作能力的同时，显式建模任务相关的全局空间关系。这解决了两个此前被忽视的问题：一是等距柱状投影与预训练视觉编码器（SigLIP）之间的域差距，二是全局信息与局部动作预测之间的融合接口设计。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">遥操作数据采集</h3>
+<ul>
+<li>基于VR的全身遥操作：6-DoF头部追踪、双手控制器、三个身体追踪器（腰+双踝）</li>
+<li>GMR（General Motion Retargeting）框架将稀疏人体运动重定向到轮式双臂机器人</li>
+<li>机器人配置参数化：q = (x_b, y_b, θ_b, q_L, q_R)，其中底盘位姿在局部遥操作坐标系中表达</li>
+<li>重定向优化目标：q* = arg min_q [λ_pos·L_pos + λ_rot·L_rot + λ_base·L_base + λ_reg·L_reg]</li>
+<li>L_pos：手与夹爪位置对齐</li>
+<li>L_rot：手与末端执行器方向对齐</li>
+<li>L_base：底盘平面运动与操作员骨盆位移/朝向耦合</li>
+<li>L_reg：关节极限与配置变化正则化</li>
+<li>成本驱动模式切换：每控制周期评估自旋、阿克曼转向、对角平移三种模式与期望运动的匹配成本，选最优执行</li>
+</ul>
+<h3 id="panovla">PanoVLA架构</h3>
+<ul>
+<li>基于Mixture-of-Transformers（MoT），从π_0.5双专家骨干扩展为三专家：</li>
+<li>VLM专家：编码局部视图、指令、机器人状态</li>
+<li>全景专家：将宽视野观测转换为任务条件空间上下文</li>
+<li>动作专家：预测连续动作块</li>
+<li>融合接口：Transformer KV缓存</li>
+<li>VLM专家计算缓存C_t^vlm</li>
+<li>全景编码器将全景图像转为token Z_t^pano</li>
+<li>全景专家与C_t^vlm联合自注意力，产生C_t^pano</li>
+<li>动作专家基于组合缓存C_t = [C_t^vlm; C_t^pano]预测动作</li>
+<li>全景编码器三阶段：</li>
+<li>球面投影：双鱼眼视图重投影到公共球面，栅格化为ERP图像</li>
+<li>特征提取：MTPano基础模型，拼接分割和深度分支中间特征</li>
+<li>Token适配：自适应平均池化压缩空间分辨率，轻量MLP映射到专家隐藏维度</li>
+<li>训练目标：条件流匹配，L = E[||v_θ^act(x_τ, τ|C_t) - u(x_τ|a)||²₂]</li>
+</ul>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li>选择MTPano而非SigLIP：SigLIP在透视图像预训练，对ERP的水平连续性和全局布局捕获差</li>
+<li>全景专家规模100M：50M容量不足，200M/300M在有限微调数据下无一致改进</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>全景专家模块的独立设计</strong>：不同于将全景图像作为额外输入通道的朴素做法，PanoVLA将全局空间推理从VLM中解耦，通过KV缓存实现信息交互。这使得全景信息可以"条件化"VLM的局部推理，而非简单叠加，避免了特征稀释和域偏移问题。</p>
+</li>
+<li>
+<p><strong>MTPano作为全景编码器</strong>：利用全景基础模型的中间特征（分割+深度分支），而非通用视觉编码器。这一选择直接回应了ERP图像与透视预训练编码器之间的域差距，实验显示SigLIP编码器在Move Pen任务上SR仅40.0%，而MTPano达到86.7%。</p>
+</li>
+<li>
+<p><strong>全身遥操作与VLA训练的数据闭环</strong>：VR遥操作系统的成本驱动模式切换和GMR重定向，使得在无真实机器人条件下采集高质量全身演示成为可能，为VLA提供了与部署平台一致的训练数据分布。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<p><strong>主要结果（15次闭环试验/任务）</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Move Pen SR</th>
+<th>Move Block SR</th>
+<th>Open Curtain SR</th>
+<th>Wipe Table SR</th>
+<th>平均SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0.5</td>
+<td>46.7%</td>
+<td>20.0%</td>
+<td>26.7%</td>
+<td>26.7%</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>π_0.5 w/ Pano</td>
+<td>86.7%</td>
+<td>73.3%</td>
+<td>46.7%</td>
+<td>20.0%</td>
+<td>56.7%</td>
+</tr>
+<tr>
+<td>π_0.5 w/ Stacked Pano</td>
+<td>60.0%</td>
+<td>40.0%</td>
+<td>13.3%</td>
+<td>40.0%</td>
+<td>38.3%</td>
+</tr>
+<tr>
+<td><strong>PanoVLA</strong></td>
+<td><strong>86.7%</strong></td>
+<td><strong>93.3%</strong></td>
+<td><strong>66.7%</strong></td>
+<td><strong>46.7%</strong></td>
+<td><strong>73.4%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键观察</strong>：
+- PanoVLA在Move Block任务上提升最显著（20.0%→93.3%），该任务需要跨区域空间推理
+- π_0.5 w/ Pano在Wipe Table上SR仅20.0%，尽管SCR达74.4%，说明简单拼接全景图像在长时程任务中导致末端执行精度下降
+- PanoVLA在Wipe Table最后阶段完成率73.3%，显著优于π_0.5 w/ Pano的26.7%</p>
+<p><strong>消融实验（Move Pen，15次试验）</strong>：
+- 专家规模：50M SR 60.0%，100M SR 86.7%，200M SR 86.7%，300M SR 73.3%
+- 全景编码器：SigLIP SR 40.0%，MTPano SR 86.7%</p>
+<h2 id="_7">边界与局限</h2>
+<p>论文未明确提及局限性讨论章节。从实验设置可推断：每个策略仅使用对应任务的200条演示独立微调，未验证跨任务泛化能力；未与MoManipVLA、SG-VLA等最新移动操作VLA方法直接对比；未探索超过300M的全景专家规模；未在仿真环境中评估。Wipe Table任务上PanoVLA的SR仅46.7%，说明在需要精细末端操作与全局导航结合的场景中仍有明显不足。</p>
+<h2 id="_8">工程启示</h2>
+<p>复现时需优先核对以下环节：
+1. <strong>全景编码器选择</strong>：务必使用MTPano而非SigLIP，这是性能差距最大的单一因素（SR 86.7% vs 40.0%）
+2. <strong>专家规模</strong>：100M是性价比最优选择，300M反而性能下降，可能与有限微调数据下的过拟合有关
+3. <strong>KV缓存融合机制</strong>：需确保VLM缓存和全景缓存的维度匹配，且块级因果掩码M_pano正确实现，否则全局信息可能泄漏到局部推理
+4. <strong>数据采集一致性</strong>：遥操作系统的成本驱动模式切换逻辑需与部署时底盘控制策略一致，否则训练-部署分布偏移会显著影响成功率
+5. <strong>训练配置</strong>：冻结语言模型和MTPano编码器，仅优化其余模块；30K步、学习率5e-5、批大小64（4×A100）是已验证的配置，RTX 4090可闭环推理</p>
+<p>最易踩坑之处在于全景token的球面投影和栅格化参数——若ERP图像分辨率或投影中心设置不当，会直接影响MTPano特征质量，进而导致全局上下文注入失效。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.02257</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">extends</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_bilateral_teleoperation/">双边遥操作</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_panorama_aware_vla_mobile_manipulation_w_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_bilateral_teleoperation/">
+          <span class="entry-type">方法</span>
+          <h3>双边遥操作</h3>
+          <p>命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">遥操作数据采集</a></li>
+<li><a href="#panovla">PanoVLA架构</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

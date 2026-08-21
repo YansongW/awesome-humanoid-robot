@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Towards Accessible Physical AI · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Towards Accessible Physical AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Towards Accessible Physical AI</h1>
+      <p class="entry-name-en">Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World Robot Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.11921v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (719 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>QSS AI and Robotics Lab 在2025年提出了一种基于LoRA与量化技术的VLA模型微调方法，使31亿参数的大模型能在8GB显存的消费级GPU上运行。该方法通过冻结视觉编码器与低秩适配策略，在仅200条演示数据下实现了SO101机械臂的按钮按压操作，为低成本机器人部署提供了可行方案。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.11921" target="_blank" rel="noopener">Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World Robot Control (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2512.11921" target="_blank" rel="noopener">Towards Accessible Physical AI source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>视觉-语言-动作模型在机器人操作中展现出强大能力，但将其部署到低成本机器人平台面临计算资源与数据效率的双重挑战。本文提出结合LoRA与量化技术的资源高效微调策略，使31亿参数的VLA模型可在8GB显存GPU上运行。研究重点分析了冻结与微调视觉编码器的权衡，并在SO101机械臂上通过200条演示数据完成按钮按压任务验证。实验表明该方法在保持计算效率的同时实现了有效操作性能，并详细讨论了部署中的失败模式与数据量-性能关系。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li>采用Low-Rank Adaptation (LoRA) 对VLA模型进行参数高效微调，仅更新低秩矩阵</li>
+<li>结合量化技术将模型压缩至8GB显存可运行范围，原始模型参数量为3.1B</li>
+<li>关键设计选择：对比冻结视觉编码器与微调视觉编码器两种策略的性能差异</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li>硬件平台：SO101机械臂，执行按钮按压操作任务</li>
+<li>训练数据：200条演示轨迹（demonstration episodes）</li>
+<li>计算资源：消费级GPU（8GB VRAM）</li>
+<li>评估指标：操作成功率与计算效率</li>
+</ul>
+<h3 id="_5">关键发现</h3>
+<ul>
+<li>冻结视觉编码器策略在低数据量下表现更优，避免过拟合</li>
+<li>200条演示数据即可达到有效操作性能，但数据量增加可进一步提升成功率</li>
+<li>主要失败模式包括：视觉特征漂移、动作序列偏差、末端执行器定位误差</li>
+<li>训练数据量与真实世界性能呈正相关，但存在边际递减效应</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>该工作证明了通过LoRA与量化技术，VLA模型可成功部署于低成本机器人平台，使先进操作能力不再局限于昂贵研究机器人。研究为资源受限场景下的机器人学习提供了实用微调框架与部署指南。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2512.11921v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_process_p12_2_1/">VLA 模型选型与微调</a>
+      
+      <span class="rel-desc">Towards Accessible Physical AIdiscussesVLA 模型选型与微调。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">基于</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_omaisan_towards_accessible_physical_ai_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p12_2_1/">
+          <span class="entry-type">方法</span>
+          <h3>VLA 模型选型与微调</h3>
+          <p>- P12.2.1.1 输入梳理与目标量化 - 整理「VLA 模型选型与微调」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键发现</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

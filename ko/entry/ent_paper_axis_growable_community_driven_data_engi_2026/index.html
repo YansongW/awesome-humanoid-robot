@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</h1>
+      <p class="entry-name-en">AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Learning effective robot manipulation policies requires diverse, high-quality demonstrations, yet existing data pipelines are often difficult to scale because they rely on specialized hardware, centralized operators, or fixed task suites. We present AXIS, a growable community-driven data engine and benchmark for scalable robot learning, which enables browser-based teleoperation for large-scale.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.21588" target="_blank" rel="noopener">arXiv:2607.21588 AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>AXIS는 Axis Robotics 팀이 구축한 커뮤니티 기반의 성장 가능한 로봇 조작 데이터 엔진으로, 핵심 기여는 데이터 수집을 폐쇄적 중앙집중식 패러다임에서 개방적이고 지속적으로 성장하는 구조화된 프로세스로 전환한 것입니다. 브라우저 기반 MuJoCo-WASM 원격 조작과 IsaacSim 백엔드 강화를 통해 70,000명 이상의 커뮤니티 구성원이 기여한 207개 작업, 50K+ 데모를汇集하며, VLA 모델의 견고성 향상에 대한 지속적 사전 학습의 효과를 검증했습니다.</p>
+<h2 id="_2">무엇을 변화시켰는가</h2>
+<p>로봇 조작 데이터셋의 근본적 병목은 알고리즘이 아니라 데이터 생산 패러다임 자체에 있습니다. 기존 파이프라인은 폐쇄적입니다: 전문가 팀이 전용 하드웨어에서 수집하고, 오프라인으로 처리하며, 고정된 벤치마크를 출시하고, 데이터셋은 출시 즉시 동결됩니다. 이러한 방식은 모델 규모의 성장을 따라갈 수 없습니다 — 로봇 데이터셋의 증가 속도는 이를 학습하는 모델보다 훨씬 느리며, 작업을 확장할 때마다 수집 프로세스를 재구성해야 합니다. AXIS가 진정으로 바꾼 것은 데이터 생산의 조직 방식입니다: 데이터 수집을 '프로젝트 중심'에서 '플랫폼 중심'으로 전환하여 커뮤니티 구성원이 브라우저를 통해 데모를 기여할 수 있게 하고, 자동화된 검증 및 강화 파이프라인으로 품질을 보장합니다. 이는 데이터셋이 더 이상 정적 산출물이 아니라 지속적으로 진화하는 생태계가 되며, 그 성장 속도와 다양성은 단일 팀의 수집 능력이 아닌 커뮤니티 참여 규모에 의해 결정됨을 의미합니다.</p>
+<p>또 다른 핵심 전환은 '구조화된 성장' 개념입니다. AXIS는 단순히 더 많은 데이터를 쌓는 것이 아니라, 새로운 작업을 재현 가능한 스냅샷(AXIS-25%, 50%, 100%)으로 구성하며, 각 스냅샷은 동일한 형식, 검증 파이프라인 및 성공 검사기를 유지합니다. 이를 통해 통제된 스케일링 연구가 가능해집니다 — 작업 분포 변화에 혼동되지 않고 데이터 양이 모델 성능에 미치는 영향을 정확히 분리할 수 있습니다. 이러한 설계는 데이터셋을 '자원'에서 '실험 인프라'로 승격시켜, 반복 가능한 스케일링 연구의 기반을 제공합니다.</p>
+<h2 id="_3">방법 분석</h2>
+<p>AXIS는 데이터 생산 체인의 각 핵심 단계를 해결하는 3계층 아키텍처를 채택합니다:</p>
+<h3 id="_4">인프라 계층: 수집 장벽 낮추기</h3>
+<ul>
+<li>브라우저 기반 MuJoCo-WASM 원격 조작으로, 사용자는 로컬 시뮬레이터나 전용 하드웨어를 설치할 필요 없이 일반 입력 장치로 데모를 수집할 수 있습니다</li>
+<li>작업은 세 가지 요소로 자동 생성됩니다: 자연어 지시, 매개변수화된 장면 구성, 구조화된 성공 검사기</li>
+<li>새로운 작업은 고급 지시, 객체 자산, 장면 레이아웃 및 작업별 성공 조건의 조합으로 생성되며, 공유 웹 인터페이스를 통해 배포됩니다</li>
+</ul>
+<h3 id="_5">데이터셋 계층: 자동화된 품질 관리</h3>
+<ul>
+<li><strong>통합 궤적 형식</strong>: 각 궤적에는 작업 메타데이터, 로봇 본체, 환경 식별자, 시뮬레이터 버전, 타임스탬프, 관측값, 로봇 상태, 행동 및 성공 정보가 포함됩니다; 선택 필드로는 객체 상태, 카메라 스트림, 분할 마커 및 실패 레이블이 있습니다</li>
+<li><strong>일관성 검사</strong>: 누락된 키, 비정상 값, 잘못된 상태 전환, 물리적으로 불가능한 프레임 간 변화 및 실패한 작업 완료를 필터링합니다</li>
+<li><strong>백엔드 검증</strong>: 프런트엔드 성공 플래그에만 의존하지 않고 작업별 성공 검사기를 재사용하여 백엔드 검증을 수행합니다 — 이는 사용자의 성공 오보를 방지하는 핵심 설계 결정입니다</li>
+<li><strong>궤적 정제</strong>: 정적 또는 손상된 세그먼트 제거, Savitzky-Golay 평활화로 고주파 원격 조작 아티팩트 제거, 고정 제어 주파수로 리샘플링(5.0 Hz → 20 Hz)</li>
+<li><strong>IsaacSim 강화</strong>: 물리적 무작위화(객체 자세, 혼잡 구성, 질량, 마찰) 및 렌더링 무작위화(카메라 시점, 조명, 텍스처)를 통해 작업 의미론을 유지하면서 추가 인간 데모 없이 학습 분포를 확장합니다</li>
+</ul>
+<h3 id="_6">모델 계층: 통합 학습 및 평가</h3>
+<ul>
+<li>기존 비전-운동 모방 학습 정책과 현대 VLA 모델을 지원합니다</li>
+<li>성장 가능한 벤치마크 설계: 학습 데이터는 점진적으로 증가하는 작업 스냅샷으로 구성되며, 각 스냅샷은 동일한 데이터 형식, 검증 파이프라인, 작업 정의, 롤백 예산 및 성공 검사기를 유지합니다</li>
+<li>지속적 사전 학습 실험은 3단계 파이프라인을 채택합니다: 출시된 π₀.₅ 체크포인트에서 시작 → 선택적 시뮬레이션 코퍼스 사전 학습 → LIBERO 궤적 미세 조정</li>
+</ul>
+<p>핵심 설계 결정은 데이터 강화와 검증의 분리에 있습니다: 강화는 IsaacSim에서 수행되지만, 강화된 궤적은 여전히 검증된 성공 검사기와 바인딩되어 의미론적 일관성을 보장합니다. 동시에 AXIS에서 LIBERO로의 전환은 데이터셋 정규화 분리를 유지하여, LIBERO 정책이 서비스 시 AXIS 상태/행동 정규화를 사용하지 않도록 합니다 — 간과하기 쉽지만 매우 중요한 엔지니어링 세부 사항입니다.</p>
+<h2 id="_7">핵심 혁신</h2>
+<p><strong>1. 커뮤니티 기반 데이터 생산 패러다임</strong>: AXIS는 로봇 조작 데이터 수집을 폐쇄적 팀에서 개방적 커뮤니티로 처음 확장했으며, 70,000명 이상의 구성원이 데모를 기여하고 활성 창의 누적 시도 횟수는 약 100K에 달합니다. 이는 단순한 크라우드소싱이 아니라, 브라우저 원격 조작, 자동화된 검증 및 구조화된 작업 생성을 통해 커뮤니티 참여를 고품질 학습 데이터로 전환하는 완전한 파이프라인입니다. 그 의의는 데이터 수집의 한계 비용이 '전문가 고용 + 하드웨어 구매'에서 '개방형 웹 페이지 + 일반 장치'로 낮아져, 데이터 규모가 커뮤니티 성장에 따라 지속적으로 확장될 수 있다는 점입니다.</p>
+<p><strong>2. 성장 가능한 벤치마크의 구조화된 설계</strong>: AXIS-25%, 50%, 100% 스냅샷 설계는 데이터 양을 유일한 변수로 만들고, 다른 모든 요소(형식, 검증 파이프라인, 작업 정의, 롤백 예산, 성공 검사기)는 일정하게 유지합니다. 이는 로봇 학습에서 오랜 기간 존재해 온 문제점, 즉 변수를 통제한 상태에서 데이터 규모 효과를 연구할 수 없었던 문제를 해결합니다. 이 설계는 통제된 스케일링 연구를 위한 인프라를 제공하여 '데이터 양이 모델 견고성에 어떻게 영향을 미치는가'라는 질문에 처음으로 엄격하게 답할 수 있게 합니다.</p>
+<p><strong>3. 시뮬레이션 강화와 실제 원격 조작의 혼합 데이터 생산</strong>: AXIS는 인간 원격 조작 데모와 IsaacSim 물리/렌더링 무작위화를 결합하여 작업 의미론을 유지하면서 학습 분포를 확장합니다. 이 설계의 핵심은 강화가 기본 상태/행동 감독을 변경하지 않고 시각적 및 물리적 외관만 변경하므로 의미론적 드리프트를 도입하지 않는다는 점입니다. 순수 시뮬레이션 데이터나 순수 인간 데모에 비해, 이 혼합 전략은 데이터 다양성과 의미론적 충실도 사이에서 더 나은 균형을 달성합니다.</p>
+<h2 id="_8">실험 및 결과</h2>
+<p>실험 설계는 핵심 질문을 중심으로 이루어집니다: AXIS 데이터의 지속적 사전 학습이 분포 외 교란 하에서 VLA 모델의 견고성을 향상시킬 수 있는가? 평가는 LIBERO-Plus 견고성 스위트에서 수행되며, 7개 교란 축(Camera, Light, Sensor Noise, Background, Layout, Language, Robot)을 따라 진행되고, 각 (작업, 교란 축) 쌍에 대한 고정 롤백 예산은 상수 K입니다.</p>
+<p><strong>주요 결과 비교 (성공률 %)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>Overall</th>
+<th>Camera</th>
+<th>Light</th>
+<th>Noise</th>
+<th>B.G.</th>
+<th>Layout</th>
+<th>Lang</th>
+<th>Robot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅ vanilla</td>
+<td>83.9</td>
+<td>72.5</td>
+<td>98.2</td>
+<td>82.5</td>
+<td>94.4</td>
+<td>82.9</td>
+<td>89.6</td>
+<td>74.4</td>
+</tr>
+<tr>
+<td>+ AXIS-25%</td>
+<td>84.7</td>
+<td>77.5</td>
+<td>91.2</td>
+<td>86.2</td>
+<td>100.0</td>
+<td>85.5</td>
+<td>81.8</td>
+<td>76.9</td>
+</tr>
+<tr>
+<td>+ AXIS-50%</td>
+<td>85.7</td>
+<td>68.8</td>
+<td>98.2</td>
+<td>91.2</td>
+<td>96.3</td>
+<td>88.2</td>
+<td>84.4</td>
+<td>79.5</td>
+</tr>
+<tr>
+<td>+ AXIS-100%</td>
+<td>88.8</td>
+<td>83.8</td>
+<td>96.5</td>
+<td>96.2</td>
+<td>98.1</td>
+<td>85.5</td>
+<td>88.3</td>
+<td>78.2</td>
+</tr>
+<tr>
+<td>+ RoboCasa-matched</td>
+<td>57.5</td>
+<td>35.2</td>
+<td>79.5</td>
+<td>63.2</td>
+<td>81.7</td>
+<td>68.0</td>
+<td>49.2</td>
+<td>39.4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>데이터 정제 효과</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>조건</th>
+<th>샘플링 주파수</th>
+<th>평균 가속도</th>
+<th>평균 jerk</th>
+<th>재생 성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw Teleoperation</td>
+<td>5.0 Hz</td>
+<td>1.3539</td>
+<td>11.5899</td>
+<td>100.0%</td>
+</tr>
+<tr>
+<td>Smoothed</td>
+<td>5.0 Hz</td>
+<td>0.6382</td>
+<td>2.9160</td>
+<td>91.4%</td>
+</tr>
+<tr>
+<td>Smoothed + Resampled</td>
+<td>20 Hz</td>
+<td>0.4885</td>
+<td>2.2243</td>
+<td>86.2%</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 결론: AXIS-100% 지속적 사전 학습은 전체 성공률을 5.8% 향상시키며(83.9→88.8), 볼륨이 일치하는 RoboCasa365 기준선보다 37.3% 높습니다(88.8 vs 57.5). 스케일링 추세는 명확합니다: 84.7%/85.7%/88.8%(AXIS-25%/50%/100%), 데이터 양이 두 배가 될 때마다 약 1-3% 포인트 향상됩니다. 가장 큰 이득은 카메라(+15.6%), 센서 노이즈(+16.6%) 및 로봇 자세(+5.1%) 교란에서 나타나며, AXIS 데이터가 주로 시각적 및 상태 인식 교란에 대한 모델 견고성을 강화함을 시사합니다. 주목할 점은 RoboCasa-matched 기준선이 거의 모든 교란 축에서 vanilla보다 현저히 낮다는 것입니다(Overall 57.5 vs 83.9). 이는 데이터 양보다 데이터 품질이 더 중요함을 나타냅니다 — 작업 분포를 일치시키지 않고 단순히 시뮬레이션 데이터 양을 늘리면 오히려 성능이 저하될 수 있습니다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<p>AXIS는 현재 시뮬레이션 Franka 데스크톱 조작에 초점을 맞추고 있으며, sim-to-real 전환은 여전히 열린 과제입니다. 실제 세계 평가는 정성적 증거로만 제공되며 정량적 지표는 제공되지 않습니다. 보정, 타이밍 및 저수준 제어기 실행은 실제 로봇 시스템에 맡겨집니다. 언어 및 조명 교란 축에서 AXIS는 vanilla에 비해 약간 감소합니다(Language Δ_van −1.3, Light Δ_van −1.7). 저자는 이유를 설명하지 않았습니다 — 이는 AXIS 데이터가 언어 지시 다양성과 조명 조건 커버리지에서 사각지대를 가질 수 있음을 시사합니다. 또한 AXIS 데이터는 모두 단일 로봇 본체(Franka Research 3)와 데스크톱 조작 시나리오에서 비롯되며, 다중 로봇 및 다중 시나리오에 대한 일반화 능력은 논문에서 명확히 다루지 않습니다. 향후 작업은 더 많은 로봇 본체, 더 풍부한 센싱 모달리티 및 더 긴 시간 범위의 작업으로 확장을 언급하지만, 현재 버전은 이러한 방향을 포함하지 않습니다.</p>
+<h2 id="_10">엔지니어링 시사점</h2>
+<p>재현 및 다운스트림 사용을 위한 구체적 지침:</p>
+<p><strong>먼저 확인할 사항</strong>:
+- 데이터 정규화 분리: AXIS 사전 학습에서 LIBERO 미세 조정으로의 전환은 정규화 통계를 독립적으로 유지해야 합니다. 그렇지 않으면 정책이 서비스 시 잘못된 정규화 매개변수를 사용하게 됩니다. 체크포인트에는 추론 매개변수와 데이터셋별 정규화 아티팩트가 포함되어야 하며, 모델 가중치만 로드하는 것으로는 정책을 구축할 수 없습니다.
+- 행동 패딩 처리: 상태는 8D에서 32D로 패딩되고, 행동 블록은 7D에서 32D로 패딩되며, 추론 시 처음 7개 행동 차원으로 슬라이싱됩니다. 사용되지 않는 차원은 고정된 0 목표가 되지만, 저자는 패딩 차원을 처리하기 위한 명시적 행동 손실 가중치를 도입하지 않았습니다 — 재현 시 이 잠재적 편향에 주의해야 합니다.</p>
+<p><strong>가장 함정에 빠지기 쉬운 부분</strong>:
+- RoboCasa-matched 대조군의 구성 방식: RoboCasa365에서 궤적 수가 AXIS-100%와 같아질 때까지 비복원 샘플링하지만, 결과는 vanilla보다 훨씬 낮습니다(57.5 vs 83.9). 이는 단순한 데이터 양 일치만으로는 공정한 비교를 보장하기에 충분하지 않음을 보여줍니다 — 작업 분포, 데이터 품질 및 수집 방식의 차이가 결과를 지배합니다. 비교 실험을 재현할 때는 작업 분포와 평가 프로토콜을 엄격히 통제해야 합니다.
+- 지속적 사전 학습의 하이퍼파라미터 민감성: 모든 비-vanilla 조건은 동일한 옵티마이저 설정, 학습률(5×10⁻⁵), 배치 크기 및 그래디언트 스텝 예산(100,000 스텝)을 사용하지만 사전 학습 데이터 양은 다릅니다. 다운스트림 팀이 사전 학습 스텝 수나 학습률을 조정하면 스케일링 추세가 성립하지 않을 수 있습니다.
+- 데이터 정제의 트레이드오프: 평활화 및 리샘플링은 재생 성공률을 100.0%에서 86.2%로 낮추지만, 가속도와 jerk를 현저히 감소시킵니다(각각 63.9% 및 80.8% 감소). 이는 정제 과정이 궤적 평활성과 실행 가능성 사이에 트레이드오프가 있음을 의미합니다 — 과도한 평활화는 정책 학습을 저해할 수 있으므로, 재현 시 다운스트림 모델 유형에 따라 평활화 강도를 조정해야 합니다.</p>
+<p><strong>다운스트림 팀을 위한 조언</strong>: 목표가 VLA 모델의 분포 외 견고성을 향상시키는 것이라면, AXIS 데이터는 효과적인 사전 학습 코퍼스이지만, 그 이점이 시각적 및 상태 인식 교란(Camera, Noise, Robot)에 집중되어 있고 언어 및 조명 교란에 대한 향상은 제한적이거나 오히려 부정적일 수 있음에 유의해야 합니다. 다운스트림 작업이 언어 지시 다양성에 민감하다면 추가 데이터 소스를 보충해야 할 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">평가 대상</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_axis_growable_community_driven_data_engi_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시켰는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">인프라 계층: 수집 장벽 낮추기</a></li>
+<li><a href="#_5">데이터셋 계층: 자동화된 품질 관리</a></li>
+<li><a href="#_6">모델 계층: 통합 학습 및 평가</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

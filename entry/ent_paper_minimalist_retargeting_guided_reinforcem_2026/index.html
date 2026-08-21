@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation</h1>
+      <p class="entry-name-en">A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。 | WP3 marker fix 2026-08-10: paren mismatch repaired (marker-only).">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 Regrind，一个从单个人类演示学习灵巧操作的极简配方：交互感知运动重定向（interaction-aware retargeting）生成物理可行的参考轨迹，配合残差 RL、数据增强和课程域随机化，实现仿真到真实的零样本迁移。作者在剪刀和螺丝刀两个任务、LEAP 和 WUJI 两种机械手上验证了该方法，在仿真中达到接近完美的成功率，并在真实世界三个任务中可靠转移。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11874" target="_blank" rel="noopener">arXiv:2607.11874 A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Mani</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>灵巧操作领域长期被遥操作主导——在真实机器人上人工收集演示，成本高、泛化差。人形全身控制中「人类运动重定向→仿真 RL→部署」的配方已被证明有效，但直接迁移到灵巧手时遭遇瓶颈：简单运动学重定向（如 Mink IK）紧密匹配手部姿态却忽略手-物体交互，产生物理上不可行的轨迹，对下游 RL 是劣质参考。现有尝试如 SPIDER 虽考虑物理约束，但性能极差（仿真成功率 0%）。</p>
+<p>Regrind 真正改变的是对「重定向」这一环节的定位：它不再只是把人类运动映射到机器人运动学，而是通过交互网格（interaction mesh）保留手-物体之间的空间和接触语义，使重定向输出本身成为 RL 可用的高质量参考。同时，它证明了灵巧操作中 sim-to-real 的敏感性远高于运动任务——摩擦、柔顺性、几何的小误差会因持续接触迅速累积，因此需要比运动任务更精细的域随机化和系统辨识。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体流程</h3>
+<p>Real-to-Sim-to-Real 管线，从单个 3D 人类演示（MANO 手部关键点 + 物体 6D 位姿）学习 RL 策略。</p>
+<h3 id="1">步骤 1：交互感知运动重定向</h3>
+<ul>
+<li>源点集 𝒫̃ₜ = 𝒫ₜᵒ ∪ 𝒫ₜʰ（物体关键点 ∪ 人手关键点），目标点集 𝒫ₜ(qₜ) = 𝒫ₜᵒ ∪ 𝒫ₜʳ(qₜ)（物体关键点 ∪ 机器人关键点）。</li>
+<li>优化目标：min Σ D(ℳ(𝒫̃ₜ), ℳ(𝒫ₜ(qₜ))) + λ Σ ‖qₜ − qₜ₋₁‖²₂，约束 q₀:ₜ₋₁ ∈ 𝒬。</li>
+<li>交互网格由 Delaunay 四面体化定义，变形能 D = Σᵢ ‖Lᵢ(𝒫̃ₜ) − Lᵢ(𝒫ₜ(qₜ))‖₂，其中 Lᵢ(𝒫) = pᵢ − (1/|𝒩ᵢ|) Σⱼ∈𝒩ᵢ pⱼ。</li>
+<li>可行集 𝒬 包含：关节限位、速度界（v_min Δt ≤ q_t − q_{t-1} ≤ v_max Δt）、非穿透约束（φ_j(q_t) ≥ 0，激活机器人-物体和机器人-环境碰撞对）。</li>
+<li>求解器：SQP 风格，逐时间步顺序求解，每帧少量迭代，凸子问题用 MOSEK 通过 Drake 的 MathematicalProgram 求解。</li>
+</ul>
+<h3 id="2-rl">步骤 2：参考运动引导的残差 RL</h3>
+<ul>
+<li>动作空间：qₜᵗᵃʳᵍᵉᵗ = q̄ₜ + α ⊙ π_θ(q̄ₜ, oₜ)，α 控制每自由度动作幅度。</li>
+<li>观测空间（非对称 actor-critic）：Actor 观测物体位姿（位置 + Rot6D）、铰接关节位置、机器人关节位置（当前和上一时间步）、上一动作、相位变量 φ ∈ [0,1]；刻意避免速度等噪声传感器。Critic 额外获得指尖位置和关节速度。</li>
+<li>奖励函数（式 8）：r_t = Σ_k w_k φ_k(e_{k,t})，密集奖励，比较模拟状态与重定向参考。跟踪项用指数核 φ_lin(e; σ) = exp(−e/σ)，平方误差项 φ_sq(c; σ) = exp(−c/σ²)。</li>
+<li>关键奖励项：物体关键点位置（σ=0.02，权重 1.5）、物体线速度（σ=1.0，权重 1.0）、物体角速度（σ=3.14，权重 1.0）、腕部位置（σ=0.02，权重 0.05）、腕部姿态（σ=0.2，权重 0.05）、动作幅度/速率/越界惩罚、提前终止惩罚（−10.0）。</li>
+</ul>
+<h3 id="3">步骤 3：数据增强</h3>
+<ul>
+<li>参考状态初始化（RSI）：重置时采样随机演示相位，加小扰动。</li>
+<li>轨迹增强：对每个 episode 施加扰动 (Δp, Δψ)，Δp_xy ∈ [−5, 5]² cm，Δp_z = 0，Δψ ∈ [−30°, 30°]；混合权重 w(t) 按式(11)线性插值，在 t_pickup 和 t_use 之间混合消除。</li>
+<li>变换：位置加 w(t)Δp，旋转乘 R_z(w(t)Δψ)，手部腕部和指尖位置绕未扰动物体根刚性映射，手指关节参考不变。不重新运行重定向优化，直接变换物体和手部根部位姿。</li>
+</ul>
+<h3 id="4">步骤 4：域随机化与课程学习</h3>
+<ul>
+<li>DR 通过 Isaac Lab event terms 实现，每环境独立采样：物体 CoM 偏移、几何缩放、摩擦、质量缩放、关节 k_p/k_d 缩放、手指默认关节偏移。</li>
+<li>重力课程：从 0 到 9.81 m/s² 按 130k 环境步线性增加。</li>
+<li>随机推力课程：130k 步后激活，170k 步达最大（线速度 ±0.5 m/s，角速度 ±1.0 rad/s，间隔 1–5 s）。</li>
+<li>观测噪声：位置 ±2 mm，旋转 ±0.02 rad，关节 ±0.02 rad；观测时间延迟均匀采样 [0, 2] 控制步。</li>
+<li>终止条件：物体出工作空间、手离物体太远、物体偏离目标配置超阈值（关键点位置误差 &gt; 0.15 m）；WUJI 手额外终止：指尖与桌面接触力 &gt; 10N（电机不可反向驱动）。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>交互感知重定向作为 RL 参考</strong>：不同于 OmniRetarget 仅做运动学匹配，Regrind 在重定向优化中显式保留手-物体交互网格的变形能，使参考轨迹物理可行且保留接触语义。这是灵巧操作中首次将交互感知重定向与 RL 训练系统结合，且被证明是性能的关键（对比 DexMachina 在剪刀任务上 SR 从 99.8% 降至 22.3%）。</p>
+</li>
+<li>
+<p><strong>时变刚性变换数据增强</strong>：不重新运行重定向优化，而是对重定向轨迹施加时变 SE(3) 扰动（位置 ±5 cm、旋转 ±30°），在训练时动态生成无限增强轨迹，同时保留原始交互关系。这比重新优化更高效，且显著提升真实世界泛化（随机初始配置下 LEAP-Scissors SR 8/10）。</p>
+</li>
+<li>
+<p><strong>极简奖励设计</strong>：仅用关键点位置、速度、腕部姿态和动作正则项，不需要显式接触先验或力反馈，却能达到接近完美的仿真成功率。这降低了方法对任务特定知识的依赖，使其可泛化到不同物体和机器人。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p><strong>仿真性能</strong>（表 1，SPIDER 平均 5 种子，其他 3 种子 × 1024 rollout）：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>LEAP-Scissors SR</th>
+<th>LEAP-Screwdriver SR</th>
+<th>WUJI-Scissors SR</th>
+<th>WUJI-Screwdriver SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regrind (Ours)</td>
+<td>99.8%</td>
+<td>99.7%</td>
+<td>98.7%</td>
+<td>98.8%</td>
+</tr>
+<tr>
+<td>SPIDER</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>DexMachina</td>
+<td>22.3%</td>
+<td>99.7%</td>
+<td>0.0%</td>
+<td>99.3%</td>
+</tr>
+<tr>
+<td>Mink IK + RL</td>
+<td>2.0%</td>
+<td>0.0%</td>
+<td>0.0%</td>
+<td>3.1%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>真实世界性能</strong>（表 2，零样本转移）：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>LEAP-Scissors SR</th>
+<th>LEAP-Screwdriver SR</th>
+<th>WUJI-Scissors SR</th>
+<th>WUJI-Screwdriver SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regrind (Ours)</td>
+<td>9/10</td>
+<td>10/10</td>
+<td>0/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>DexMachina</td>
+<td>0/10</td>
+<td>2/10</td>
+<td>—</td>
+<td>5/10</td>
+</tr>
+<tr>
+<td>Mink IK + RL</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>0/10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>真实世界泛化</strong>（表 3，随机初始配置 ±5 cm、±30°）：LEAP-Scissors 8/10，LEAP-Screwdriver 10/10，WUJI-Screwdriver 9/10。</p>
+<p><strong>关键解读</strong>：SPIDER 完全失败（仿真 SR 0%），说明基于物理的重定向虽考虑动力学但生成轨迹质量差。DexMachina 在螺丝刀任务上仿真接近完美但真实转移差（2/10），说明缺乏交互保留的重定向使策略易利用仿真伪影。Regrind 在三个任务上可靠转移，唯一失败的 WUJI-Scissors 归因于非反向驱动电机的 sim-to-real 差距和真实剪刀网格不准确。</p>
+<h2 id="_6">边界与局限</h2>
+<p>论文未明确讨论局限，但从方法可推断：部署依赖运动捕捉获取物体状态，未解决视觉感知问题；需要仔细的系统辨识（真实机器人响应延迟 1–2 步被建模为观测时间延迟）；未涉及多任务学习、长期操作、双手操作、非刚性物体；WUJI-Scissors 任务在所有方法下均失败，说明非反向驱动电机的 sim-to-real 差距仍是开放问题。论文未提及推理频率、训练时间等工程细节。</p>
+<h2 id="_7">工程启示</h2>
+<p>复现时先核对三个关键点：<strong>重定向求解器的可行集定义</strong>（特别是碰撞对过滤和速度界）直接影响参考轨迹质量；<strong>数据增强的扰动范围</strong>（±5 cm、±30°）和混合权重 w(t) 的插值区间（t_pickup 到 t_use）决定策略的泛化边界；<strong>系统辨识</strong>——真实机器人响应延迟 1–2 步（30–60 ms）必须在仿真观测管线中建模，否则 sim-to-real 会失败。</p>
+<p>最容易踩坑的地方：WUJI 手的非反向驱动电机需要额外终止条件（指尖接触力 &gt; 10N），否则训练会利用不可行的接触模式；LEAP 手需使用 3D 打印加大物体（s=2 缩放），直接使用真实尺寸物体可能导致几何不匹配；奖励权重中动作幅度惩罚（仅 WUJI）和提前终止惩罚（−10.0）对训练稳定性影响大，需按表 4 精确设置。基线对比时注意 SPIDER 需用官方实现（MuJoCo Warp 工作流），DexMachina 需自定义实现并加碰撞感知后处理，否则对比不公平。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.11874</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_dexterous_manipulation/">灵巧操作</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_minimalist_retargeting_guided_reinforcem_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧操作</h3>
+          <p>利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体流程</a></li>
+<li><a href="#1">步骤 1：交互感知运动重定向</a></li>
+<li><a href="#2-rl">步骤 2：参考运动引导的残差 RL</a></li>
+<li><a href="#3">步骤 3：数据增强</a></li>
+<li><a href="#4">步骤 4：域随机化与课程学习</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

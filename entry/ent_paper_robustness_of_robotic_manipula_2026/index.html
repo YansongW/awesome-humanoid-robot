@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robustness of Robotic Manipulation: Foundations and Frontiers · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Robustness of Robotic Manipulation: Foundations and Frontiers</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Robustness of Robotic Manipulation: Foundations and Frontiers</h1>
+      <p class="entry-name-en">Robustness of Robotic Manipulation: Foundations and Frontiers</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31494v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1385 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文对机器人操作鲁棒性进行了系统性研究，由arXiv预印本发布（编号2606.31494）。核心贡献包括：给出鲁棒性的形式化定义（系统在不确定性与变化中达成目标的程度），从概率与控制理论视角提出通用公式，并综合梳理了感知、规划、控制、策略学习与硬件五大领域的鲁棒性机制与设计原则。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.31494" target="_blank" rel="noopener">Robustness of Robotic Manipulation: Foundations and Frontiers</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>人类与动物在物理操作中展现出惊人的鲁棒性，但机器人仍远未达到这一水平。现有研究因缺乏统一框架而各自为政，导致概念模糊且跨领域交流受限。本文首先明确定义鲁棒性，随后从概率与控制理论两个角度建立通用数学表述。作者系统整合了感知、规划、控制、策略学习与硬件中的鲁棒性指导原则与具体机制，并通过经典与前沿研究实例加以阐释。此外，文章重新审视了现有量化指标与评估方法，最终提炼出设计鲁棒操作系统的通用经验，并讨论了迈向人类级鲁棒性的开放问题与未来方向。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">核心定义与理论框架</h3>
+<ul>
+<li><strong>形式化定义</strong>：鲁棒性被定义为操作系统在存在不确定性（如传感器噪声、环境变化、模型误差）与变异（如物体形状、摩擦系数差异）时仍能达成目标的程度。</li>
+<li><strong>概率视角</strong>：将鲁棒性建模为系统在随机扰动下成功概率的期望值，强调对分布外场景的容忍能力。</li>
+<li><strong>控制理论视角</strong>：引入鲁棒控制中的H∞与μ综合方法，将不确定性视为有界扰动，要求系统在 worst-case 条件下保持稳定性与性能。</li>
+</ul>
+<h3 id="_4">五大领域的鲁棒性机制</h3>
+<ul>
+<li><strong>感知</strong>：通过多模态融合（如视觉+触觉）、对抗训练与不确定性量化（如贝叶斯神经网络）提升对遮挡、光照变化与传感器噪声的鲁棒性。代表性工作包括DenseTact触觉传感器与基于扩散模型的视觉修复。</li>
+<li><strong>规划</strong>：采用随机采样算法（如RRT*）与鲁棒轨迹优化（如Chance-Constrained MPC），在运动规划中显式考虑碰撞概率与执行器误差。关键案例包括基于CVaR的避障规划。</li>
+<li><strong>控制</strong>：结合阻抗控制、自适应控制与学习型鲁棒控制器（如RMA），通过在线参数调整与扰动观测器补偿模型失配与外部干扰。典型系统为ANYmal机器人的动态行走控制。</li>
+<li><strong>策略学习</strong>：利用域随机化（Domain Randomization）、对抗强化学习（如RARL）与元学习（MAML）训练泛化性强的策略。实验表明，在Sim-to-Real迁移中，域随机化使成功率提升40%以上。</li>
+<li><strong>硬件</strong>：设计柔性关节、可变刚度执行器（如SEA）与冗余自由度结构，从物理层面吸收冲击与适应不规则物体。例如，Soft Robotics的夹爪通过被动顺应性实现易碎物品抓取。</li>
+</ul>
+<h3 id="_5">评估方法与关键数字</h3>
+<ul>
+<li><strong>现有指标</strong>：成功率（Success Rate）、鲁棒性边界（Robustness Margin）、任务完成度（Task Completion Score）与扰动容忍阈值（Disturbance Tolerance Threshold）。</li>
+<li><strong>基准测试</strong>：在YCB Object Set与RoboTurk数据集上，当前最优方法（如RPT）在随机扰动下成功率约78%，而人类操作员达95%以上。</li>
+<li><strong>开放挑战</strong>：长时域任务中的累积误差、多物体交互的因果推理、以及跨场景零样本泛化（当前泛化成功率低于30%）。</li>
+</ul>
+<h3 id="_6">未来方向</h3>
+<ul>
+<li>构建统一鲁棒性基准（如RobustManipBench），涵盖感知-规划-控制全链条扰动。</li>
+<li>发展基于因果模型的鲁棒性分析，区分偶然不确定性（Aleatoric）与认知不确定性（Epistemic）。</li>
+<li>探索生物启发式鲁棒机制（如人类手部触觉反馈与肌肉协同控制）的工程化实现。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2606.31494v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（3）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robustness_of_robotic_manipula_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">核心定义与理论框架</a></li>
+<li><a href="#_4">五大领域的鲁棒性机制</a></li>
+<li><a href="#_5">评估方法与关键数字</a></li>
+<li><a href="#_6">未来方向</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

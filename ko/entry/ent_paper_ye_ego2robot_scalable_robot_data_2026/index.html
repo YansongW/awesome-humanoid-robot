@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data</h1>
+      <p class="entry-name-en">Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">데이터 및 데이터셋</span><span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="New card from deep-read task (.staging/deep_read). Full text from arXiv HTML (2608.02580v1); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails; key numbers verified against the full text (1,940h-&gt;18,561h, 15 morphologies, 62.2-&gt;68.1, 50.9-&gt;53.5, Franka&lt;7%, +14/+13 real-robot gains). 深读+数字白名单复核通过 2026-08-10（Ego2Robot）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Ego2Robot is a 2026 pipeline that converts egocentric human videos into robot training data, producing 18,561 hours across 15 robot morphologies.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.02580" target="_blank" rel="noopener">arXiv:2608.02580 Ego2Robot</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://www-ye.github.io/ego2robot_blog/" target="_blank" rel="noopener">Ego2Robot project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Ego2Robot은 대규모 1인칭 인간 조작 비디오에서 다형태 로봇 합성 데이터로의 자동화 파이프라인을 제안하며, 동작 정렬, 시각 정렬, 품질 선별의 세 단계를 통해 약 1,940시간의 ego 데이터를 18,561시간, 15가지 로봇 형태를 포괄하는 훈련 데이터로 변환합니다. 저자들은 이 합성 데이터가 VLA 모델 사전 훈련 소스로서의 유효성을 검증했으며, RoboTwin 2.0 및 EBench 벤치마크에서 분포 외 일반화를 크게 향상시키고, 실제 로봇에서 장기 작업 이점을 입증했습니다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>이 작업이 진정으로 바꾼 것은 로봇 정책 사전 훈련의 데이터 공급 논리입니다. 이전에는 VLA 모델의 사전 훈련이 거의 전적으로 실제 로봇 원격 조작 데이터(예: DROID, AgibotWorld)에 의존했으며, 그 규모는 하드웨어, 인력, 장면 다양성의三重 제약을 받아 돌파하기 어려웠습니다. Ego2Robot은 이전에 검증되지 않았던 가설을 증명했습니다: 인간 1인칭 조작 비디오——인터넷상에서 거의 무한하고 자연스럽게 풍부한 작업 의미론과 상호작용 다양성을 포함하는 데이터 소스——가 체계적인 리타겟팅과 렌더링을 통해 VLA 사전 훈련의 효과적인 보완이 될 수 있으며, 작업 의미론 일반화(+7.9%) 및 교차 형태 전이(+4.4%)에서 순수 로봇 데이터가 제공할 수 없는 이점을 제공합니다.</p>
+<p>더 중요하게는, "합성 데이터는 장식일 뿐, 구원자는 될 수 없다"는 기본 기대를 뒤집었습니다. 1:1 혼합 비율에서 Ego2R 데이터는 로봇 데이터의 품질을 희석시키지 않았을 뿐만 아니라, Clean 설정에서 5.9% 포인트, 시각 외관 교란에서 5.9% 포인트를 향상시켰습니다. 이는 합성 데이터가 더 이상 "숫자 채우기" 대체재가 아니라 정책 일반화 경계를 능동적으로 확장할 수 있는 긍정 자산임을 의미합니다. 동시에 저자들은 RoboTwin 2.0의 집계 OOD 지표를 11개의 독립 교란 차원으로 분해하여 "합성 데이터가 정확히 무엇을 향상시켰는지"가 처음으로 특정 능력 차원에 귀속될 수 있게 했습니다——이것은 이 분야의 일반화 이득 평가 방식을 바꿉니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 흐름</h3>
+<p>Ego2Robot 파이프라인은 세 단계로 구성됩니다: 동작 정렬(action alignment), 시각 정렬(visual alignment), 품질 선별(quality curation). 두 가지 입력 경로: Path A는 손 자세 주석이 있는 ego 데이터셋을 직접 수용; Path B는 주석 없는 비디오를 처리하며, 먼저 WiLoR로 프레임별 MANO 파라미터를 재구성한 다음 DynHaMR로 시간 최적화를 수행합니다.</p>
+<h3 id="_5">손에서 그리퍼로의 리타겟팅</h3>
+<ul>
+<li>가상 손끝은 검지와 중지 손끝의 가중 혼합으로 정의: p_vf = 0.7·p_index + 0.3·p_middle</li>
+<li>TCP 위치는 엄지와 가상 손끝의 중점, 그리퍼 개방도는 두 점 사이의 거리</li>
+<li>파지 자세는 오른손 좌표계 직교 프레임: z축은 그리퍼 라인, y축은 그리퍼 법선, x축은 접근 방향; s=+1 오른손, s=-1 왼손</li>
+<li>시간 평활화: 위치와 폭은 Savitzky-Golay 필터(창 min(21, n)), 자세는 가우시안 가중 SLERP(σ=10 프레임)</li>
+<li>동작 속도 정렬: 데이터 소스별 다운샘플링——ANT/EgoDex는 60%, EgoVerse는 45%, ViTRA는 25%로 감소</li>
+</ul>
+<h3 id="_6">시각 정렬</h3>
+<ul>
+<li>SAM 3로 팔 영역 분할(텍스트 프롬프트 "person", 400프레임 블록 처리, 50프레임 중첩)</li>
+<li>ProPainter 시간 일관 비디오 인페인팅으로 팔 제거(fp16, neighbor_length=10, ref_stride=10)</li>
+<li>베이스 포즈 검색: SE(3) 그리드 검색, 후보는 각 형태의 최대 도달 거리 r_max로 제약; 점수 S = FR(T_base) − 5.0·|ρ̄ − 0.65|, 여기서 FR은 IK 성공률, ρ̄는 정규화된 평균 말단 거리(목표 0.65는 운동 여유 유지)</li>
+<li>깊이 인식 합성: 로봇 깊이가 장면 깊이보다 작고 마스크가 1이면 로봇 픽셀 사용, 그렇지 않으면 인페인팅된 장면 픽셀 사용</li>
+</ul>
+<h3 id="_7">품질 선별</h3>
+<ul>
+<li>L1(파이프라인 내부): IK 실패, 자체 충돌, 동작 이상치, 작업 공간 커버리지 부족 표시</li>
+<li>L2(통계): Q1/Q99 필터 + 급변 필터, 총 무효 프레임 비율 &gt;60%인 세그먼트 폐기</li>
+<li>L3(VLM 일관성): Qwen3.5가 4fps로 비디오 샘플링, 의미론적 일관성 감사</li>
+</ul>
+<h3 id="_8">동작 표현</h3>
+<p>카메라 좌표계 상대 말단 실행기 동작(7차원: 3D 위치 증분, 3D 회전 증분, 1D 그리퍼), T_ce = T_wc⁻¹·T_we 변환을 통해 서로 다른 카메라 설정과 로봇 형태 간 동작 공간 비호환성 방지.</p>
+<h3 id="_9">모델 아키텍처</h3>
+<p>Qwen3.5-4B 비전 언어 백본 + Diffusion Transformer(DiT) 동작 헤드, 32단계 동작 블록 예측, 8단계 확산 훈련 / 4단계 Euler 추론. 카메라 내부 및 외부 파라미터는 mRoPE 위치 인코딩으로 주입.</p>
+<h2 id="_10">핵심 혁신</h2>
+<p><strong>1. 대규모 ego-to-robot 데이터 파이프라인의 완전한 폐루프</strong>: 이전의 retarget-and-render 방법은 제한된 규모 또는 단일 작업에서만 검증되었지만, Ego2Robot은 이 접근 방식을 처음으로 1,940시간 원본 데이터, 15가지 로봇 형태, 18,561시간 합성 데이터 규모로 확장하고, 손 자세 추정, 장시간 비디오 분할, 베이스 검색, 깊이 인식 합성, 3단계 품질 선별 등의 엔지니어링 문제를 체계적으로 해결했습니다. 이것은 단일 혁신이 아니라 전체 프로세스를 재현 가능하고 확장 가능한 산업급 파이프라인으로 만든 것입니다.</p>
+<p><strong>2. 카메라 좌표계 상대 말단 실행기 동작 표현</strong>: 이 설계 선택은 단순해 보이지만, 다형태, 다중 카메라 설정에서 데이터 혼합의 근본 장벽을 해결합니다. 동작을 베이스 좌표계에서 카메라 좌표계로 변환함으로써, 서로 다른 로봇 형태의 데이터가 동일한 동작 공간에서 훈련될 수 있으며, 명시적 외부 파라미터 보정이 필요 없습니다. 이것은 Ego2R 데이터가 DROID, AgibotWorld 등 이종 로봇 데이터와 혼합 훈련될 수 있는 전제 조건입니다.</p>
+<p><strong>3. 교란별 평가 프레임워크</strong>: RoboTwin 2.0의 집계 OOD 지표를 11개의 독립 교란 차원(배경, 조명, 색상, 높이, 어수선함, 카메라 오프셋, 교차 형태, 미지 물체, 재작성 명령)으로 분해하고, EBench 데스크톱 작업 세트를 추가했습니다. 이로써 "합성 데이터가 무엇을 향상시켰는지"가 처음으로 정확히 귀속될 수 있습니다——예를 들어 1:1 혼합에서 작업 의미론 일반화가 7.9% 향상된 반면, 교차 형태 전이에서 Franka는 -1.7%만 향상되어 합성 데이터가 특정 일반화 차원에 불균등하게 기여함을 보여줍니다.</p>
+<h2 id="_11">실험 및 결과</h2>
+<h3 id="robotwin-50-ebench-7">주요 결과(RoboTwin 50개 작업 + EBench 7개 작업, 성공률 %)</h3>
+<table>
+<thead>
+<tr>
+<th>작업/설정</th>
+<th>Robot-only</th>
+<th>Ego2R+Robot (1:3)</th>
+<th>Ego2R+Robot (3:1)</th>
+<th>Ego2R+Robot (1:1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clean</td>
+<td>62.2</td>
+<td>61.4 (-0.8)</td>
+<td>64.1 (+1.9)</td>
+<td><strong>68.1 (+5.9)</strong></td>
+</tr>
+<tr>
+<td>Rand</td>
+<td>50.9</td>
+<td>51.0 (+0.1)</td>
+<td>49.2 (-1.7)</td>
+<td><strong>53.5 (+2.6)</strong></td>
+</tr>
+<tr>
+<td>Visual</td>
+<td>61.4</td>
+<td>61.2 (-0.2)</td>
+<td>62.7 (+1.3)</td>
+<td><strong>67.3 (+5.9)</strong></td>
+</tr>
+<tr>
+<td>Scene</td>
+<td>52.9</td>
+<td>52.5 (-0.4)</td>
+<td>54.3 (+1.4)</td>
+<td><strong>56.9 (+4.0)</strong></td>
+</tr>
+<tr>
+<td>Embody</td>
+<td>23.8</td>
+<td>21.9 (-1.9)</td>
+<td><strong>28.2 (+4.4)</strong></td>
+<td>27.2 (+3.4)</td>
+</tr>
+<tr>
+<td>Task</td>
+<td>46.2</td>
+<td>49.5 (+3.3)</td>
+<td>51.6 (+5.4)</td>
+<td><strong>54.1 (+7.9)</strong></td>
+</tr>
+<tr>
+<td>EBench</td>
+<td>39.6</td>
+<td>47.4 (+7.8)</td>
+<td><strong>51.7 (+12.1)</strong></td>
+<td>49.8 (+10.2)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_12">교란별 분해(핵심 차원, 성공률 %)</h3>
+<table>
+<thead>
+<tr>
+<th>교란</th>
+<th>Robot-only</th>
+<th>Ego2R (1:3)</th>
+<th>Ego2R (3:1)</th>
+<th>Ego2R (1:1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UR5 교차 형태</td>
+<td>20.2</td>
+<td>17.6 (-2.6)</td>
+<td><strong>31.4 (+11.2)</strong></td>
+<td>25.0 (+4.8)</td>
+</tr>
+<tr>
+<td>미지 물체</td>
+<td>29.3</td>
+<td>36.8 (+7.5)</td>
+<td><strong>40.0 (+10.7)</strong></td>
+<td>39.6 (+10.3)</td>
+</tr>
+<tr>
+<td>조명</td>
+<td>58.2</td>
+<td>58.3 (+0.1)</td>
+<td>60.9 (+2.7)</td>
+<td><strong>65.8 (+7.6)</strong></td>
+</tr>
+<tr>
+<td>카메라 오프셋</td>
+<td>50.4</td>
+<td>49.6 (-0.8)</td>
+<td>51.6 (+1.2)</td>
+<td><strong>56.3 (+5.9)</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="robotwin-randomized">소거 실험(RoboTwin Randomized 성공률 %)</h3>
+<ul>
+<li>원본 ego 공동 훈련: 28.1%</li>
+<li>파이프라인 처리(단일 형태): 31.7%(+3.6)</li>
+<li>1→15 형태 점진적 향상: 31.7 → 33.5</li>
+<li>15 형태 Ego2R + 원본 ego: 37.3%</li>
+</ul>
+<h3 id="arx-acone-5-100">실제 로봇(ARX ACone, 5개 작업, 100점 만점)</h3>
+<p>Mix + Ego2R Play가 모든 5개 작업에서 최고, 최대 이득은 Put Blocks(+14) 및 Insert Screw(+13).</p>
+<h3 id="pi05">Pi0.5와 비교</h3>
+<p>Pi0.5: Clean 54.9, Rand 27.7; Robot-only: Clean 62.2, Rand 50.9; Ego2R (1:1): Clean 68.1, Rand 53.5.</p>
+<h2 id="_13">경계와 한계</h2>
+<p>저자들이 인정한 한계는 다음과 같습니다: 리타겟팅이 손 자세를 평행 그리퍼에 매핑하여 세밀한 손가락 관절 운동을 버리므로, 정밀 조작 기술 전이를 제한합니다; 시각 정렬은 인페인팅과 깊이 인식 합성에 의존하므로, 심한 폐색이나 복잡한 조명에서 아티팩트를 유발할 수 있습니다. 또한 평가는 RoboTwin 2.0 작업 범위로 제한되어, 비파지 조작(예: 도구 사용 시 정밀 힘 제어), 동적 장면(이동 물체, 인간 존재), 다중 에이전트 협력을 다루지 않습니다. 교차 구현 전이는 시뮬레이션에서만 검증되었고 실제 로봇에서는 테스트되지 않았습니다. 논문은 추론 지연 시간과 Sim2Real 도메인 격차의 정량적 지표를 명시적으로 보고하지 않았습니다.</p>
+<h2 id="_14">엔지니어링 시사점</h2>
+<p>재현 시 가장 우선적으로 확인해야 할 것은 <strong>동작 속도 정렬의 다운샘플링 비율</strong>입니다——서로 다른 데이터 소스(ANT/EgoDex 60%, EgoVerse 45%, ViTRA 25%)의 프레임 속도 차이가 합성 데이터의 동작 리듬을 직접 결정하며, 이를 무시하면 혼합 훈련 시 모델이 일관되지 않은 속도 분포를 학습하게 됩니다. 다음은 <strong>베이스 포즈 검색의 점수 함수</strong>입니다: S = FR(T_base) − 5.0·|ρ̄ − 0.65|에서 ρ̄ 목표 값 0.65는 핵심 하이퍼파라미터로, IK 성공률과 운동 여유를 균형 있게 조정하며 합성 궤적 품질을 직접 결정합니다; 새 로봇 형태로 전이할 때 이 값을 재보정할 것을 권장합니다. <strong>카메라 좌표계 상대 EEF 동작 표현</strong>은 데이터 혼합의 전제 조건이며, 하류 팀이 베이스 좌표계 동작을 사용한다면 Ego2R 데이터는 DROID 등 데이터와 직접 혼합할 수 없습니다. 품질 선별의 L3 VLM 감사 단계는 Qwen3.5의 의미론적 판단에 의존하므로, 원본 ego 비디오를 대조군으로 유지하여 과도한 필터링으로 인한 데이터 다양성 손실을 방지할 것을 권장합니다. 마지막으로, 1:1 혼합 비율이 대부분의 차원에서 최적이지만, 3:1은 교차 형태(UR5 +11.2) 및 EBench(+12.1)에서 더 강하므로, 실제 선택 시 목표 일반화 차원에 따라 비율을 조정해야 합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_dataset_droid/">DROID</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ye_ego2robot_scalable_robot_data_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_dataset_droid/">
+          <span class="entry-type">데이터셋</span>
+          <h3>DROID</h3>
+          <p>여러 실험실과 환경에서 수집된 분산적이고 다양한 실제 로봇 조작 데이터셋으로, 시각 및 환경 견고성 향상을 목표로 함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 흐름</a></li>
+<li><a href="#_5">손에서 그리퍼로의 리타겟팅</a></li>
+<li><a href="#_6">시각 정렬</a></li>
+<li><a href="#_7">품질 선별</a></li>
+<li><a href="#_8">동작 표현</a></li>
+<li><a href="#_9">모델 아키텍처</a></li>
+</ul>
+</li>
+<li><a href="#_10">핵심 혁신</a></li>
+<li><a href="#_11">실험 및 결과</a><ul>
+<li><a href="#robotwin-50-ebench-7">주요 결과(RoboTwin 50개 작업 + EBench 7개 작업, 성공률 %)</a></li>
+<li><a href="#_12">교란별 분해(핵심 차원, 성공률 %)</a></li>
+<li><a href="#robotwin-randomized">소거 실험(RoboTwin Randomized 성공률 %)</a></li>
+<li><a href="#arx-acone-5-100">실제 로봇(ARX ACone, 5개 작업, 100점 만점)</a></li>
+<li><a href="#pi05">Pi0.5와 비교</a></li>
+</ul>
+</li>
+<li><a href="#_13">경계와 한계</a></li>
+<li><a href="#_14">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

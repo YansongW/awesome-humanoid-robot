@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Towards General Language-Conditioned Latent Safety Filters · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Towards General Language-Conditioned Latent Safety Filters</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Towards General Language-Conditioned Latent Safety Filters</h1>
+      <p class="entry-name-en">Towards General Language-Conditioned Latent Safety Filters</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Robot policies are becoming increasingly general, with vision-language-action (VLA) models enabling a single policy to execute diverse tasks specified in natural language. Safe deployment, however, requires adapting not only to new tasks but also to varying safety requirements across users, environments, and applications. Existing safety filters remain largely constraint-specific and thus must be.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.00315" target="_blank" rel="noopener">arXiv:2608.00315 Towards General Language-Conditioned Latent Safety Filters</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 언어 조건화 안전 필터링(language-conditioned safety filtering) 프레임워크를 제안한다. Hamilton–Jacobi 도달 가능성 안전 critic과 actor를 자연어로 지정된 제약 조건에 조건화하여, 단일 학습된 안전 필터가 실행 시 다양한 배포 시나리오의 안전 요구사항에 적응할 수 있게 한다. 저자는 RoboSuite 시뮬레이션 환경에서 세 가지 조작 작업에 대한 방법의 효과를 검증하고, 현재 비전-언어 모델(VLM)이 실패 함수 및 약한 라벨러로서 가지는 신뢰성 경계를 체계적으로 평가한다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 안전 필터는 대부분 특정 제약 조건에 묶여 있어 안전 요구사항이 변경되면 재설계 또는 재학습이 필요하며, 이는 로봇 정책(특히 VLA 모델)의 보편화 추세와 심각한 모순을 이룬다. 저자는 VLA 정책이 행동 복제로 훈련되어 위험 시나리오가 없는 시연에서는 암묵적 안전을 학습할 수 없고, 명시적 언어 지정 제약이 생성된 행동에 미치는 영향이 매우 작다는 점을 예리하게 지적한다. 즉, 정책 자체만으로는 안전을 보장할 수 없다. 본 논문은 안전 필터의 설계 패러다임을 실질적으로 변화시킨다. 더 이상 제약 조건별로 필터를 개별 훈련하지 않고, 언어를 조건 변수로 안전 critic의 입력 표현에 내장하여 단일 필터가 여러 제약 조건을 표현하고 보지 못한 제약 조건으로 일반화할 수 있게 한다. 이러한 전환은 안전 필터링을 "제약 특정" 엔지니어링 관행에서 "범용 안전 기반 모델" 연구 방향으로 끌어올리며, VLA 정책의 일반화 과정과 정렬된다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="hj-critic">언어 조건화 HJ 안전 critic</h3>
+<ul>
+<li>제약 조건에 조건화된 HJ critic Qθ(zt, at)를 학습하며, 여기서 zt = ϕ(ot, c) ∈ Z는 관측과 언어 제약을 동시에 인코딩한다.</li>
+<li>유도 가치 함수 Vθ(zt) = max_{a∈A} Qθ(zt, a)를 사용하며, 훈련 손실은 수식 (1)과 동일하다: L(θ) := E[(Qθ(st, at) − yt)²], 여기서 yt := (1−γ)h(st) + γ min{h(st), max_{a∈A} Qθ(st+1, a)}.</li>
+<li>행동 공간이 연속적이므로 SAC를 사용하여 HJ critic과 근사 행동 최대화를 위한 확률적 actor를 훈련한다.</li>
+</ul>
+<h3 id="_4">실행 시 안전 필터링</h3>
+<ul>
+<li>각 단계에서 명목 행동을 평가한다: Qθ(zt, a_nom_t) ≥ ε인 경우에만 실행하고, 그렇지 않으면 HJ actor 정책으로 전환한다.</li>
+<li>actor 정책에서 여러 후보 행동을 샘플링하고, 추가로 명목 행동의 가우시안 섭동을 샘플링하여 명목 행동에 가장 가깝고 Qθ(zt, at) ≥ ε을 만족하는 행동을 선택한다.</li>
+<li>샘플링 수: Stack Blocks는 actor 행동 100개와 섭동 명목 행동 100개를 샘플링하고, Safe Grab/Safe Wipe는 섭동 명목 행동 100개를 샘플링한다.</li>
+</ul>
+<h3 id="_5">두 가지 입력 표현</h3>
+<ul>
+<li><strong>특권 오라클</strong>: zt = st는 전체 시스템 상태로, 로봇 상태, 물체 자세 및 안전 제약의 명시적 인코딩을 포함한다.</li>
+<li><strong>시각-언어(VL)</strong>: π0.5의 VLM 인코더를 사용하여 시각 관측, 언어 입력 및 고유 감각을 공동 처리하고, 공유 트랜스포머를 통해 토큰 시퀀스 Ht ∈ R^{T×D}(D = 2048)를 생성한 후 평균 풀링으로 집계한다: zt = (1/T) Σ H_t^(i).</li>
+<li>단순 연결 대신 공동 정렬 표현을 선택한 이유는 명시적 모달리티 정렬이 하위 로봇 학습을 개선할 수 있기 때문이다.</li>
+</ul>
+<h3 id="_6">실패 함수 정의</h3>
+<ul>
+<li>Safe Grab/Safe Wipe: h(st, c) = d_min(st, c) − d_thresh, 여기서 d_min은 지정된 장애물과 로봇 팔 사이의 최소 거리이다.</li>
+<li>Stack Blocks: h(st, c) = r − d_cube(st, c), 여기서 d_cube는 엔드 이펙터에서 올바른 목표 큐브까지의 거리이다.</li>
+<li>VL 설정에서는 현재 VLM이 실패 함수로 신뢰할 수 없으므로 h(zt) = h(st, c)로 정의한다.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li><strong>언어 조건화 HJ 안전 필터링</strong>: Hamilton–Jacobi 도달 가능성 안전 프레임워크를 제약 이미지나 형식 사양이 아닌 자연어 제약에 직접 조건화한 최초의 시도이다. 이를 통해 단일 오프라인 학습 필터가 실행 시 현재 지시에 적응할 수 있으며, 새 제약 조건마다 재계획이나 재훈련이 필요 없다.</li>
+<li><strong>VLM의 범용 실패 함수로서의 체계적 평가</strong>: 안전 위반이 포함된 88.6%의 안전 중요 조작 궤적 데이터셋 5,000개를 구축하고, 11개 VLM에 대해 단일 상태 분류, 쌍별 선호, 짧은 창 탐지 및 조작 추론 프로브의 네 가지 평가를 수행하여 현재 VLM이 안전 실패 탐지기로서 가지는 능력 경계를 처음으로 정량화했다. 가장 강력한 모델인 Gemini Robotics-ER 1.6의 전체 정확도는 0.758이지만 실패 탐지 정확도는 0.564에 불과하다.</li>
+<li><strong>샘플링 기반 근사 이차 계획</strong>: actor 및 섭동 명목 행동에서 후보를 샘플링하고 최소 편차 행동을 선택하여 하드 전환으로 인한 떨림을 완화하며, 8개 평가 설정 중 6개에서 동일하거나 더 높은 성공률을 달성했다.</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="1-50">표 1: 주요 결과(50개 시나리오 평가)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Safe Grab SR/CR/IR</th>
+<th>Safe Wipe SR/CR/IR</th>
+<th>Stack Blocks-3 SR/OC/IR</th>
+<th>Stack Blocks-4 SR/OC/IR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nominal</td>
+<td>100.00/76.00/–</td>
+<td>62.00/84.00/–</td>
+<td>0.00/0.00/–</td>
+<td>0.00/0.00/–</td>
+</tr>
+<tr>
+<td>GT Single</td>
+<td>62.00/48.00/17.71</td>
+<td>14.94/18.00/20.40</td>
+<td>28.00/80.00/16.16</td>
+<td>18.00/92.00/28.30</td>
+</tr>
+<tr>
+<td>GT General</td>
+<td>60.00/46.00/8.80</td>
+<td>8.56/48.00/19.42</td>
+<td>48.00/82.00/18.59</td>
+<td>14.00/94.00/32.71</td>
+</tr>
+<tr>
+<td>VL Single</td>
+<td>54.00/56.00/18.56</td>
+<td>6.36/58.00/17.90</td>
+<td>34.00/74.00/39.55</td>
+<td>2.00/50.00/72.35</td>
+</tr>
+<tr>
+<td>VL General</td>
+<td>40.00/46.00/18.38</td>
+<td>6.42/72.00/12.54</td>
+<td>52.00/80.00/31.57</td>
+<td>0.00/64.00/68.81</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-ood-general">표 2: OOD 일반화(General 필터)</h3>
+<table>
+<thead>
+<tr>
+<th>변형</th>
+<th>SR</th>
+<th>CR</th>
+<th>OC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Safe Grab OOD</td>
+<td>60.00</td>
+<td>52.00</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Safe Wipe OOD</td>
+<td>70.00</td>
+<td>56.00</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Stack Blocks-3 Color-Only</td>
+<td>42.00</td>
+<td>–</td>
+<td>82.00</td>
+</tr>
+<tr>
+<td>Stack Blocks-4 Color-Only</td>
+<td>0.00</td>
+<td>–</td>
+<td>44.00</td>
+</tr>
+<tr>
+<td>Geom-Color</td>
+<td>28.00</td>
+<td>–</td>
+<td>72.00</td>
+</tr>
+<tr>
+<td>Geom-Wrong-Prompt</td>
+<td>22.00</td>
+<td>–</td>
+<td>64.00</td>
+</tr>
+<tr>
+<td>Geom-Single-Color</td>
+<td>32.00</td>
+<td>–</td>
+<td>62.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-vlm-250-250">표 3: VLM 단일 상태 실패 분류(실패 250 + 비실패 250)</h3>
+<table>
+<thead>
+<tr>
+<th>모델</th>
+<th>Acc</th>
+<th>Acc_fail</th>
+<th>Acc_nonfail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini Robotics-ER 1.6</td>
+<td>0.758</td>
+<td>0.564</td>
+<td>0.952</td>
+</tr>
+<tr>
+<td>GPT-5.5</td>
+<td>0.720</td>
+<td>0.528</td>
+<td>0.912</td>
+</tr>
+<tr>
+<td>GPT-5.4-mini</td>
+<td>0.664</td>
+<td>0.552</td>
+<td>0.776</td>
+</tr>
+<tr>
+<td>Qwen3-VL-32B</td>
+<td>0.640</td>
+<td>0.332</td>
+<td>0.948</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">표 4: 풀링 절제</h3>
+<table>
+<thead>
+<tr>
+<th>풀링</th>
+<th>Safe Grab SR/CR</th>
+<th>Safe Wipe SR/CR</th>
+<th>Stack Blocks-3 SR/OC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mean</td>
+<td>74.00/26.00</td>
+<td>56.00/38.00</td>
+<td>52.00/80.00</td>
+</tr>
+<tr>
+<td>Attention</td>
+<td>84.00/26.00</td>
+<td>68.00/64.00</td>
+<td>46.00/88.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-ms">표 5: 추론 지연 시간(ms)</h3>
+<table>
+<thead>
+<tr>
+<th>구성 요소</th>
+<th>Safe Grab</th>
+<th>Safe Wipe</th>
+<th>Stack Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Encoding</td>
+<td>42.43</td>
+<td>42.30</td>
+<td>42.75</td>
+</tr>
+<tr>
+<td>Direct switching</td>
+<td>43.29</td>
+<td>43.13</td>
+<td>43.62</td>
+</tr>
+<tr>
+<td>Minimum-deviation</td>
+<td>219.36</td>
+<td>225.55</td>
+<td>221.72</td>
+</tr>
+</tbody>
+</table>
+<p>주요 발견: Ground Truth General 필터는 Safe Grab에서 Single과 경쟁력 있는 성능을 달성하여(SR 60.00 vs 62.00, CR 46.00 vs 48.00) 언어 조건화가 제약 특정 훈련을 대체할 수 있음을 증명한다. 그러나 VL 변형의 충돌률은 여전히 높다(Safe Grab CR 46.00, Safe Wipe CR 72.00). OOD 일반화는 Safe Grab CR이 26%에서 52%로 상승하고(표 내 수치 26.00→52.00으로 계산), Stack Blocks-4 OC가 64%에서 44%로 하락함을 보여준다(표 내 수치 64.00→44.00으로 계산). 최소 편차 선택 지연 시간은 약 220ms로, 20Hz 제어율의 50ms 예산을 4배 이상 초과한다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<ul>
+<li>General 안전 필터는 언어 지정 제약 조건을 충족함을 보장하지 않으며, OOD 제약 조건에서는 성능이 더욱 저하된다.</li>
+<li>필터는 여전히 특정 유형의 안전 제약(장애물 회피 또는 물체 접근)으로 제한되며, 제약 유형 간 일반화는 검증되지 않았다.</li>
+<li>현재 VLM의 원시 예측은 온라인 안전 필터의 실패 집합을 정의하기에 충분하지 않으며, VL 설정에서 h(zt)는 여전히 특권 상태로 정의된다.</li>
+<li>최소 편차 선택 지연 시간은 약 220ms로 물리적 하드웨어에서 실시간 실행이 불가능하다. 시뮬레이터는 필터를 기다리므로 작업 성능에는 영향을 미치지 않는다.</li>
+<li>어텐션 풀링의 메모리 비용이 크다: 10⁵ 전환의 리플레이 버퍼가 약 0.8GB에서 약 740GB로 증가한다.</li>
+<li>자연어 사양을 형식 사양으로 변환하는 것과 본 방법을 결합하지 않았으며, 제약 유형 간 일반화 필터를 훈련하지 않았고, 물리적 하드웨어에 배포하지 않았다.</li>
+<li>논문에서 명시하지 않은 사항: VLM 평가에서 11개 모델의 구체적 버전 날짜와 훈련 데이터 분포.</li>
+</ul>
+<h2 id="_10">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 우선 확인 사항</strong>: 훈련 하이퍼파라미터 차이가 크다. GT 경로는 배치 크기 512, 리플레이 버퍼 10⁶, epoch 수 10000을 사용하고, VL 경로는 배치 크기 64, 리플레이 버퍼 10⁵, epoch 수 1000을 사용한다. VL 결과를 재현하려면 이 두 경로의 구성을 반드시 구분해야 한다.</li>
+<li><strong>가장 쉽게 빠지는 함정</strong>: 평균 풀링은 VLM 토큰 시퀀스를 압축하여 공간 특징을 잃어버리며, 어텐션 풀링은 일부 지표를 개선하지만 메모리가 폭발한다(약 740GB). 어텐션 풀링의 이점이 메모리 비용을 정당화하는지 소규모로 먼저 검증할 것을 권장한다.</li>
+<li><strong>VLM은 실패 함수로 신뢰할 수 없다</strong>: 가장 강력한 모델인 Gemini도 실패의 56.4%만 탐지하며, 대부분의 모델은 심각한 클래스 편향을 보인다(예: RoboBrain2.5의 비실패 정확도는 1.000이지만 실패 정확도는 0.016에 불과). 하위 팀이 VLM을 안전 감독에 사용하려면 전체 정확도가 아닌 실패 탐지 정확도를 먼저 평가해야 한다.</li>
+<li><strong>샘플링 전략이 actor 행동 직접 실행보다 우수하다</strong>: 샘플링은 8개 평가 설정 중 6개에서 동일하거나 더 높은 SR을 달성했으며, 가장 큰 차이는 VL 관측 하의 Stack Blocks-3에서 나타났다(52% vs 33%). 엔지니어링 구현 시 샘플링 메커니즘을 유지할 것을 권장한다.</li>
+<li><strong>OOD 일반화는 주의가 필요하다</strong>: Safe Grab OOD 충돌률이 두 배로 증가하고(표 내 수치 26.00→52.00으로 계산), Stack Blocks-4 OOD 순서 정확도가 크게 하락한다(표 내 수치 64.00→44.00으로 계산). 새 시나리오에 배포하기 전에 필터 성능을 반드시 재평가해야 한다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_sac/">소프트 액터-크리틱(SAC)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_general_language_conditioned_latent_safe_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_sac/">
+          <span class="entry-type">알고리즘</span>
+          <h3>소프트 액터-크리틱(SAC)</h3>
+          <p>기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#hj-critic">언어 조건화 HJ 안전 critic</a></li>
+<li><a href="#_4">실행 시 안전 필터링</a></li>
+<li><a href="#_5">두 가지 입력 표현</a></li>
+<li><a href="#_6">실패 함수 정의</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#1-50">표 1: 주요 결과(50개 시나리오 평가)</a></li>
+<li><a href="#2-ood-general">표 2: OOD 일반화(General 필터)</a></li>
+<li><a href="#3-vlm-250-250">표 3: VLM 단일 상태 실패 분류(실패 250 + 비실패 250)</a></li>
+<li><a href="#4">표 4: 풀링 절제</a></li>
+<li><a href="#5-ms">표 5: 추론 지연 시간(ms)</a></li>
+</ul>
+</li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

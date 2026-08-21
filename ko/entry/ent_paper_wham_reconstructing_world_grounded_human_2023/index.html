@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion</h1>
+      <p class="entry-name-en">WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P121. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>The estimation of 3D human motion from video has progressed rapidly but current methods still have several key limitations. First, most methods estimate the human in camera coordinates. Second, prior work on estimating humans in global coordinates often assumes a flat ground plane and produces foot sliding. Third, the most accurate methods rely on computationally expensive optimization pipelines,.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2312.07531" target="_blank" rel="noopener">arXiv:2312.07531 WHAM: Reconstructing World-grounded Humans with Accurate 3D Motion</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>WHAM은 Max Planck 지능 시스템 연구소 등 팀이 제안한 단안 비디오 기반 전역 3D 인간 모션 재구성 방법으로, 200fps의 추론 속도로 3DPW, RICH, EMDB에서 프레임별 정확도 SOTA를 달성하면서 시간적 평활성을 유지합니다. 핵심 기여는 카메라 각속도(SLAM 또는 자이로스코프에서 획득)와 발-지면 접촉 확률을 순환 네트워크에 도입하여 카메라 모션과 인간 모션을 분리하고, 접촉 인식 궤적 세분화를 통해 발 미끄러짐을 억제하는 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 전역 인간 모션 추정에는 근본적인 모순이 있었습니다: 오프라인 최적화(예: SLAHMR)에 의존하면 높은 정확도를 얻을 수 있지만 속도가 매우 느리고(1000프레임 처리에 260분 소요), 피드포워드 네트워크를 사용하면 정확도가 단일 프레임 방법보다 오히려 떨어졌습니다. WHAM은 이러한 구도를 바꾸었습니다—순수 피드포워드, 온라인 추론이 가능한 아키텍처로도 전역 좌표계에서 모든 최적화 방법을 능가하는 정확도를 달성할 수 있고, 속도는 4자릿수 향상되었음을 증명했습니다. 이는 "전역 정확도는 계산 비용을 치러야 한다"는 업계의 통념을 깨뜨렸습니다.</p>
+<p>더 중요하게는, 카메라 모션이 인간 모션 추정에서 차지하는 역할을 바꾸었습니다. 이전 방법들은 평평한 지면을 가정하거나(발 미끄러짐 유발), 카메라 모션을 공동 최적화해야 하는 미지수로 취급했습니다. WHAM은 카메라 각속도를 명시적 입력(암시적 추정이 아닌)으로 사용하는 설계 결정을 내렸고, 이를 통해 카메라 모션과 인간 모션이 특징 수준에서 분리되어 동적 핸드헬드 카메라 시나리오에서 이전에는 오프라인 최적화만이 달성할 수 있었던 전역 궤적 정확도(RTE 8.8m, SLAHMR의 13.8m 대비 36% 감소)를 구현했습니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">전체 아키텍처</h3>
+<p>원본 비디오 시퀀스를 입력으로 받아 SMPL 파라미터, 전역 루트 방향, 전역 병진을 출력합니다. 프로세스는 세 개의 병렬 분기로 구성됩니다:</p>
+<ol>
+<li><strong>2D 키포인트 분기</strong>: ViTPose가 2D 키포인트를 감지하고, 단방향 RNN 모션 인코더에 입력하여 모션 컨텍스트를 추출합니다.</li>
+<li><strong>이미지 특징 분기</strong>: 사전 학습되고 가중치가 고정된 이미지 인코더(예: ViT-H/16)가 밀집 시각적 특징을 추출합니다.</li>
+<li><strong>카메라 각속도 분기</strong>: SLAM(DPVO/DROID-SLAM) 또는 카메라 자이로스코프에서 획득하며, 모션 특징과 결합된 후 전역 궤적 디코더에 입력됩니다.</li>
+</ol>
+<h3 id="_5">핵심 설계 결정</h3>
+<ul>
+<li><strong>중간 작업</strong>: 모션 디코더는 SMPL 파라미터 외에도 3D 키포인트를 중간 모션 표현으로 예측하여, 모션 특징이 암시적 모션 컨텍스트와 신체 3D 공간 구조를 동시에 포함하도록 유도합니다.</li>
+<li><strong>특징 통합</strong>: 이미지 특징은 잔차 연결을 통해 모션 특징과 융합됩니다: <code>ϕ̂_m(t) = ϕ_m(t) + F_I(concat(ϕ_m(t), ϕ_i(t)))</code>, 희소한 2D 키포인트가 놓치는 밀집 시각적 컨텍스트(예: 옷 주름, 폐색 경계)를 보완합니다.</li>
+<li><strong>전역 궤적 디코딩</strong>: 카메라 각속도와 모션 특징을 결합하여 전역 루트 방향과 자체 중심 속도를 재귀적으로 예측합니다. 전역 병진은 롤아웃 적분으로 계산되어 절대 위치 직접 회귀로 인한 드리프트를 피합니다.</li>
+<li><strong>접촉 인식 궤적 세분화</strong>: 먼저 발-지면 접촉 확률 <code>p̂(t)=1/(1+e^(α(v(t)-v_t)/v_t))</code>(임계 속도 v_t=1cm/frame, 계수 α=5)을 기반으로 자체 중심 속도를 조정하여 발 미끄러짐을 줄이고, 궤적 세분화 네트워크를 통해 루트 방향과 속도를 업데이트한 후 롤아웃으로 전역 병진을 얻습니다.</li>
+</ul>
+<h3 id="_6">훈련 전략</h3>
+<p>두 단계 훈련: 먼저 AMASS 합성 데이터(670만 프레임, 시퀀스 길이 L=81)에서 모션 인코더와 디코더를 사전 훈련하고, 실제 비디오 데이터셋(3DPW, Human3.6M, MPI-INF-3DHP, InstaVariety)에서 미세 조정 및 특징 통합기를 훈련합니다. 합성 데이터는 동적 가상 카메라(회전 및 병진 포함)로 3D 키포인트를 투영하고, 노이즈와 무작위 마스킹(평균 확률 p=0.15)을 추가하여 증강합니다.</p>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>카메라 각속도를 암시적 추정이 아닌 명시적 입력으로 사용</strong>: 이는 전역 궤적 정확도의 핵심입니다. 이전 방법들은 카메라 파라미터를 공동 최적화하거나(SLAHMR), 정적 카메라를 가정했습니다. WHAM은 각속도를 외부 신호(SLAM 또는 자이로스코프)로 직접 입력하여 네트워크가 RGB에서 카메라 모션을 암시적으로 추론할 필요가 없게 하여 학습 난이도를 크게 낮췄습니다. 절제 실험에서 각속도 입력을 제거하면 RTE가 8.8m에서 18.3m로 악화되고(표 내 수치 8.8→18.3 계산), ROE가 40.4°에서 77.1°로 악화됩니다.</p>
+</li>
+<li>
+<p><strong>접촉 인식 궤적 세분화</strong>: 접촉 확률을 후처리 평활화에만 사용하는 것과 달리, WHAM은 접촉 확률을 궤적 세분화 네트워크의 조건 입력으로 사용하여 루트 방향과 속도를 재귀적으로 업데이트합니다. 이를 통해 네트워크가 수동적으로 수정하는 대신 능동적으로 발 미끄러짐을 억제할 수 있습니다. 절제 실험에서 이 모듈을 제거하면 EFVE가 19.8mm/frame에서 20.9mm/frame으로 악화됩니다.</p>
+</li>
+<li>
+<p><strong>두 단계 훈련 + 합성 데이터 증강</strong>: AMASS에서 모션 사전을 사전 훈련한 후 실제 데이터에서 미세 조정합니다. 합성 데이터는 동적 가상 카메라(초기 롤 각도 γ_r(0)∼𝒩(0°,5°), 피치 각도 γ_p(0)∼𝒩(5°,22.5°), 변화량 Δγ_y∼𝒩(0°,45°))로 핸드헬드 카메라 모션을 시뮬레이션하여, 네트워크가 훈련 단계에서 카메라 모션과 인간 모션의 결합 패턴을 경험하게 하며, 이는 실제 동적 장면으로의 일반화에 핵심입니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="3dpw">프레임별 정확도(3DPW 테스트 세트)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>PA-MPJPE (mm)</th>
+<th>MPJPE (mm)</th>
+<th>PVE (mm)</th>
+<th>Accel (m/s²)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SLAHMR</td>
+<td>55.9</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>GLAMR</td>
+<td>51.1</td>
+<td>–</td>
+<td>–</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>HMR2.0</td>
+<td>44.4</td>
+<td>69.8</td>
+<td>82.2</td>
+<td>18.1</td>
+</tr>
+<tr>
+<td>WHAM (ViT)</td>
+<td>37.8</td>
+<td>60.8</td>
+<td>72.5</td>
+<td>6.8</td>
+</tr>
+<tr>
+<td>WHAM-B (ViT)</td>
+<td>37.2</td>
+<td>59.4</td>
+<td>71.0</td>
+<td>6.9</td>
+</tr>
+</tbody>
+</table>
+<p>WHAM (ViT)은 PA-MPJPE에서 SLAHMR 대비 32% 감소(표 내 수치 55.9→37.8 계산), HMR2.0 대비 15% 감소(표 내 수치 44.4→37.8 계산)하면서 시간적 방법과 동등한 Accel(6.8 vs 6.0-6.5)을 유지합니다.</p>
+<h3 id="emdb-2">전역 궤적 정확도(EMDB 2)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>RTE (m)</th>
+<th>ROE (deg)</th>
+<th>ERVE (mm/frame)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SLAHMR</td>
+<td>13.8</td>
+<td>67.9</td>
+<td>19.7</td>
+</tr>
+<tr>
+<td>GLAMR</td>
+<td>16.7</td>
+<td>74.9</td>
+<td>18.0</td>
+</tr>
+<tr>
+<td>WHAM (w/ DPVO)</td>
+<td>8.8</td>
+<td>40.4</td>
+<td>14.8</td>
+</tr>
+<tr>
+<td>WHAM (w/ GT gyro)</td>
+<td>7.1</td>
+<td>26.3</td>
+<td>14.8</td>
+</tr>
+</tbody>
+</table>
+<p>WHAM은 RTE에서 SLAHMR 대비 36% 감소(표 내 수치 13.8→8.8 계산), ROE 40% 감소(표 내 수치 67.9→40.4 계산)를 달성합니다. GT 자이로스코프 사용 시 RTE가 7.1m로 추가 감소하여, 각속도 입력 품질이 전역 궤적 정확도의 주요 병목임을 시사합니다.</p>
+<h3 id="emdb-2_1">절제 실험(EMDB 2)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>PA-MPJPE</th>
+<th>RTE</th>
+<th>ROE</th>
+<th>ERVE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w/o lifting</td>
+<td>108.9</td>
+<td>18.5</td>
+<td>98.3</td>
+<td>29.4</td>
+</tr>
+<tr>
+<td>w/o ω</td>
+<td>40.7</td>
+<td>18.3</td>
+<td>77.1</td>
+<td>14.4</td>
+</tr>
+<tr>
+<td>WHAM (Ours)</td>
+<td>41.9</td>
+<td>8.8</td>
+<td>40.4</td>
+<td>14.8</td>
+</tr>
+</tbody>
+</table>
+<p>중간 3D 키포인트 리프팅 작업 제거(w/o lifting)는 PA-MPJPE가 41.9에서 108.9로 악화되어, 이 중간 작업이 모션 특징 품질에 매우 중요함을 보여줍니다. 각속도 입력 제거(w/o ω)는 프레임별 정확도에 큰 영향을 미치지 않지만(PA-MPJPE 40.7 vs 41.9), RTE가 두 배로 증가(18.3 vs 8.8)하여 각속도가 전역 궤적에만 영향을 미친다는 것을 증명합니다.</p>
+<h3 id="_9">실행 속도</h3>
+<p>핵심 네트워크 200fps; 전체 방법(전처리 포함) 온라인 추론 약 9fps(batch size=1), 배치 처리 약 50fps(batch size=64). SLAHMR은 1000프레임 처리에 260분이 필요하지만, WHAM은 5초면 충분합니다(표 내 수치 260분과 5초 비교).</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li><strong>비평평 지면에서 실패</strong>: AMASS에서 학습된 인간 모션 사전에 의존하며, AMASS의 계단 오르기 등 비평평 지면 데이터가 제한적이어서 저자는 이러한 장면에서 실패할 수 있음을 명시적으로 인정합니다.</li>
+<li><strong>접촉 추정이 발에만 국한</strong>: 접촉 레이블이 발 속도에만 기반하여 생성되며, 손, 무릎 등 장면과 접촉하는 다른 신체 부위로 확장되지 않아 복잡한 상호작용 장면 적용이 제한됩니다.</li>
+<li><strong>각속도 오류 누적</strong>: SLAM 또는 자이로스코프에서 제공하는 각속도에 의존하며, 오류가 시간에 따라 누적되어 전역 궤적 드리프트를 유발할 수 있습니다. 절제 실험에서 GT 자이로스코프 사용 시 RTE가 8.8m에서 7.1m로 감소하여 현재 SLAM 입력에 개선 여지가 있음을 보여줍니다.</li>
+<li><strong>분포 외 모션 일반화</strong>: 자전거 타기, 스케이트보드 등 AMASS가 포함하지 않는 모션 패턴에 대한 일반화 능력이 제한적입니다.</li>
+<li><strong>합성 데이터 가정</strong>: 데이터 합성은 주로 전신이 시야 내에 있음을 가정하며, 무작위 마스킹은 폐색 문제를 부분적으로만 완화하므로 극단적 폐색 장면은 충분히 검증되지 않았습니다.</li>
+</ul>
+<h2 id="_11">엔지니어링 시사점</h2>
+<ul>
+<li><strong>각속도 소스 먼저 확인</strong>: WHAM의 전역 궤적 정확도는 각속도 입력 품질에 크게 의존합니다. 재현 시 GT 자이로스코프로 네트워크 상한을 먼저 검증한 후 SLAM(DPVO vs DROID-SLAM) 도입 손실을 평가하세요. 다운스트림 작업이 전역 궤적에 민감한 경우(예: AR 폐색), 자이로스코프 인터페이스를预留하는 것이 좋습니다.</li>
+<li><strong>이미지 인코더 선택이 정확도 레버</strong>: ResNet-50(WHAM-Res)에서 ViT-H/16(WHAM-ViT)으로, PA-MPJPE가 41.7에서 37.8로 감소합니다(표 내 수치 41.7→37.8 계산). 연산 능력이 허용되면 ViT 인코더를 직접 사용하고, 실시간이 필요하면 ResNet-50도 모든 이전 방법보다 우수합니다.</li>
+<li><strong>가장 쉽게 빠지는 함정: 중간 작업 생략 불가</strong>: 절제 실험에서 3D 키포인트 리프팅 작업 제거 시 PA-MPJPE가 160% 악화됩니다(표 내 수치 41.9→108.9 계산). 재현 시 이 중간 감독을 반드시 유지하고, 아키텍처 단순화를 위해 삭제하지 마세요.</li>
+<li><strong>훈련 데이터 순서 민감</strong>: AMASS 사전 훈련 후 실제 데이터 미세 조정 순서는 바꿀 수 없습니다. 직접 미세 조정하면 모션 사전 부족으로 발 미끄러짐과 궤적 드리프트가 발생합니다.</li>
+<li><strong>배치 처리와 온라인 추론 속도 차이 큼</strong>: batch size=1에서 전체 프로세스는 9fps에 불과하지만, batch size=64에서는 50fps에 도달합니다. 실시간 온라인 애플리케이션이 필요하면 약 9fps의 프레임률을 수용하거나 전처리(경계 상자 감지가 핵심 병목, batch size=1에서 14.3ms 차지)를 최적화해야 합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_dataset_droid/">DROID</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <span class="rel-missing">ent_paper_amass</span>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wham_reconstructing_world_grounded_human_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_dataset_droid/">
+          <span class="entry-type">데이터셋</span>
+          <h3>DROID</h3>
+          <p>여러 실험실과 환경에서 수집된 분산적이고 다양한 실제 로봇 조작 데이터셋으로, 시각 및 환경 견고성 향상을 목표로 함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">전체 아키텍처</a></li>
+<li><a href="#_5">핵심 설계 결정</a></li>
+<li><a href="#_6">훈련 전략</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#3dpw">프레임별 정확도(3DPW 테스트 세트)</a></li>
+<li><a href="#emdb-2">전역 궤적 정확도(EMDB 2)</a></li>
+<li><a href="#emdb-2_1">절제 실험(EMDB 2)</a></li>
+<li><a href="#_9">실행 속도</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

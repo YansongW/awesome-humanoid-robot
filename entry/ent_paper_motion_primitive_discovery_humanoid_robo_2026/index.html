@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phase Recognition · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phase Recognition</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phase Recognition</h1>
+      <p class="entry-name-en">Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phase Recognition</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种受镜像神经元系统启发的双层架构，在 NICO 人形机器人上通过自组织映射（SOM）发现运动基元，并用回声状态网络（ESN）实现在线相位识别。核心贡献在于验证了本体感觉信号的拓扑表示足以支撑高精度相位识别，且额外上下文信息（动作、距离、接触）的增益随储备池容量增大而递减。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18737" target="_blank" rel="noopener">arXiv:2607.18737 Motion Primitive Discovery in a Humanoid Robot via Self-Organising Maps for Phas</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>动作识别研究长期被端到端训练的循环或 Transformer 架构主导，这类方法将“基元发现”与“序列建模”捆绑在隐空间中，难以解释动作理解的两个层次：基本运动基元的库及其组成的目标导向序列。本文的动机不是提出又一个更高精度的分类器，而是追问一个更根本的问题：机器人当前运动相位结构在多大程度上仅由学习到的运动基元的时序动态决定，需要多少额外上下文才能实现准确的在线相位识别。</p>
+<p>这项工作真正改变的是评估视角——它把“表示是否充分”从“模型是否更优”中剥离出来。作者明确不声称超越直接运动学 ESN 或现代序列模型，而是测试 SOM 这一神经科学启发的拓扑表示是否具备足够的判别力。这种“充分性检验”而非“性能竞赛”的定位，在当下追求 SOTA 的研究环境中是一种有意的反潮流，它试图为具身智能中的表示学习提供可解释的中间层。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">数据采集与特征选择</h3>
+<ul>
+<li>基于物理的 Unity 仿真环境，NICO 执行 7 种动作（Pick, Eat, Place, Push, Tap, Point, Wave），每种动作在 14 个物理多样的物体上执行，共 4,200 个试次，过滤后 1,284,794 帧，60Hz 记录。</li>
+<li>三阶段特征选择：按功能排除 51 列保留 57 个候选；计算帧间 Pearson 相关系数得到相似矩阵 R ∈ [0,1]^{57×57}；转换为距离矩阵 d_ij = 1 − r_ij 后用 Ward 链接层次聚类，在 τ = 0.7 处切割，得到 22 个非冗余特征。</li>
+</ul>
+<h3 id="som">双 SOM 拓扑映射</h3>
+<ul>
+<li>A-SOM（13 维）：TCP 速度（3）、手臂关节速度（6）、手掌方向四元数（4），35×35 网格。</li>
+<li>H-SOM（9 维）：孔径及速度（2）、拇指和中指位置（3）、手指关节速度（4），18×18 网格。</li>
+<li>加窗：W=30 帧（0.5s），步幅 S=15 帧（50% 重叠），每窗口用均值表示，相位标签取自中心帧，每动作 8,789 个窗口共 61,523 个。</li>
+<li>Kohonen 更新：w_i(t+1) = w_i(t) + α(t) h_{i*i}(t)[x̂(t) − w_i(t)]，高斯邻域随时间收缩。</li>
+</ul>
+<h3 id="esn">ESN 相位识别</h3>
+<ul>
+<li>输入为 A-SOM 和 H-SOM 的 BMU 权重向量拼接：u(t) = [b^A(t), b^H(t)] ∈ R^{22}。</li>
+<li>储备池：N=300 随机连接神经元，状态更新 x̃(t) = tanh(W_res x(t−1) + W_in u(t))，x(t) = (1−α)x(t−1) + α x̃(t)，泄漏率 α=0.50，谱半径 ρ=0.99。</li>
+<li>读出层：单次教师强制遍历收集状态，前 W=5 步热身排除，岭回归 W_out = (X^T X + λI)^{-1} X^T Y，λ=10^{-4}。</li>
+<li>四种上下文配置累积扩展：ctx-no（22D）→ ctx-act（+动作 one-hot，29D）→ ctx-dst（+归一化手掌–物体距离，30D）→ ctx-all（+接触标志，31D）。</li>
+<li>目标为 27 个相位的 one-hot 编码，推理时 φ̂(t) = arg max_k [W_out^T x(t)]_k。</li>
+</ul>
+<h3 id="_4">关键设计决策</h3>
+<ul>
+<li>双图设计反映手臂运动与手部塑形在动作执行中的互补信息。</li>
+<li>H-SOM 中死神经元（51.5% 活跃率）被视为隔离动作岛之间的硬边界，而非容量浪费。</li>
+<li>相关性在原始帧上计算，避免窗口大小影响协方差结构。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>本体感觉的拓扑表示作为基元库</strong>：不同于直接使用原始运动学特征或端到端学习隐表示，本文用双 SOM 将 22 维本体感觉特征映射到地形化网格，使运动基元以空间邻域关系呈现。A-SOM 中 preshape 平滑过渡到 move-to-grasp、H-SOM 中 Point/Tap/Wave/Push 形成 100% 纯净孤立簇，这种可解释的拓扑组织是端到端模型难以提供的。</p>
+</li>
+<li>
+<p><strong>基元发现与相位识别的显式解耦</strong>：SOM 负责无监督基元发现，ESN 负责时序积分与相位识别，两者通过 BMU 权重向量衔接。这种模块化设计允许独立分析“表示充分性”与“时序建模能力”，是首个在类人机器人上验证该双层架构的工作。</p>
+</li>
+<li>
+<p><strong>上下文增益的容量依赖性发现</strong>：通过 9 种超参数配置 × 4 种上下文输入的 36 次运行，揭示上下文信息（动作、距离、接触）的增益随储备池容量增大而单调递减——N=30 时全上下文贡献 +4.1 pp，N=1,000 时仅 +0.60 pp。这表明大容量储备池能从纯基元序列中提取更多相位信息，为资源分配提供定量依据。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="_7">主要结果</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>ctx-no</th>
+<th>ctx-act</th>
+<th>ctx-dst</th>
+<th>ctx-all</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R5（N=300, ρ=0.99, α=0.50）</td>
+<td>93.9%</td>
+<td>94.6%</td>
+<td>94.6%</td>
+<td>94.9%</td>
+</tr>
+<tr>
+<td>R8（N=500, ρ=0.89, α=0.20）</td>
+<td>95.8%</td>
+<td>96.3%</td>
+<td>96.3%</td>
+<td>96.7%</td>
+</tr>
+<tr>
+<td>R9（N=1,000, ρ=0.90, α=0.10）</td>
+<td>96.7%</td>
+<td>96.9%</td>
+<td>96.9%</td>
+<td>97.3%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">关键发现</h3>
+<ul>
+<li>储备池容量是主导因素：准确率随 N 单调增加，N=30 时 ctx-no 仅 73.6%，N=1,000 时达 96.7%。</li>
+<li>固定 N=300 时改变其他超参数，准确率变化最多 0.5 pp，说明容量比泄漏率、谱半径更关键。</li>
+<li>上下文增益随容量递减：N=30 时全上下文贡献 +4.1 pp，N=1,000 时仅 +0.60 pp（由表内数值 77.7−73.6 与 97.3−96.7 计算）。</li>
+<li>单试次分析：Eat 动作 ctx-no 达 98.4%（63/64 步），唯一错误在 t=18（首个 move-to-grasp 步）；ctx-all 达 100%，动作 one-hot 与距离信号提供提前一步检测相位转换的能力。</li>
+<li>神经元级歧义：A-SOM BMU (7,18) 含 35% move-to-grasp、23% preshape、18% closing，无主导相位，ESN 通过时间积分与双流整合解决。</li>
+</ul>
+<h3 id="_9">结果含义</h3>
+<p>93.86% 的纯基元序列相位识别准确率表明，SOM 拓扑表示确实充分捕捉了运动相位结构。上下文增益虽小但一致，且随容量递减，说明大储备池能从基元序列中提取更多时序信息，而小储备池更依赖外部上下文补偿。</p>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li>模型仅在 NICO 自身动作上训练和评估，未涉及跨具身观察——扩展到其他机器人或人类演示需要处理视角、尺度和具身差异的镜像机制，论文未明确给出解决方案。</li>
+<li>识别而非预测：当前 ESN 输出当前相位，不生成未来输入；作者将基元预测和闭环想象运动生成列为未来工作。</li>
+<li>手部控制采用低维协同控制器（4 个标量参数驱动 13 个手指关节），H-SOM 的 18×18 网格和 51.5% 活跃率可能依赖这一简化；真实高维手部自由度下拓扑结构可能不同。</li>
+<li>仿真环境基于 Unity 物理引擎，未在实体 NICO 上验证；仿真与实体的域差异可能影响 SOM 拓扑和 ESN 泛化。</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li>复现时先核对特征选择细节：22 个特征中 A-SOM 的 13 维包含 TCP 速度、手臂关节速度、手掌方向四元数，H-SOM 的 9 维包含孔径、手指位置与速度；相关性计算必须在原始帧上进行，否则窗口大小会污染协方差结构。</li>
+<li>最容易踩坑的是 H-SOM 网格大小：18×18 是基于协同控制器产生约六种手部姿态的低维假设，若更换手部控制策略需重新网格搜索；死神经元不应视为浪费，它们是动作岛之间的硬边界。</li>
+<li>ESN 训练时务必重置每试次储备池状态并排除前 W=5 步热身期；岭回归 λ=10^{-4} 是默认值，但 R8 中 λ=10^{-7} 配合 N=500 也有效，建议按容量调整。</li>
+<li>上下文增益随容量递减的规律意味着：若下游任务对延迟敏感需用小储备池，应优先加入动作 one-hot 和距离信号；若可用大储备池（N≥1,000），纯基元序列已足够，额外上下文收益有限。</li>
+<li>单试次分析显示相位转换边界（如 t=18 的 move-to-grasp 起始）是最易出错点，可考虑在训练时对相位边界附近样本加权。</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18737</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_task_planning/">任务规划</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_motion_primitive_discovery_humanoid_robo_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_task_planning/">
+          <span class="entry-type">方法</span>
+          <h3>任务规划</h3>
+          <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">数据采集与特征选择</a></li>
+<li><a href="#som">双 SOM 拓扑映射</a></li>
+<li><a href="#esn">ESN 相位识别</a></li>
+<li><a href="#_4">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#_7">主要结果</a></li>
+<li><a href="#_8">关键发现</a></li>
+<li><a href="#_9">结果含义</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

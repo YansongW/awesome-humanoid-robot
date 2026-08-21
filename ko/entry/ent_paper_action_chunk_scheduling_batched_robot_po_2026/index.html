@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action Chunk Scheduling for Batched Robot Policy Serving · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Action Chunk Scheduling for Batched Robot Policy Serving</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Action Chunk Scheduling for Batched Robot Policy Serving</h1>
+      <p class="entry-name-en">Action Chunk Scheduling for Batched Robot Policy Serving</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Deploying robot foundation models at scale is the next step towards realizing the potential of general-purpose robots. However, Vision-Language-Action (VLA) and other foundation models are computationally demanding, and on-device compute is constrained by power and space. In this paper, we introduce the problem of serving a robot policy to multiple robots from a remote GPU and formulate it as a.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.00337" target="_blank" rel="noopener">arXiv:2608.00337 Action Chunk Scheduling for Batched Robot Policy Serving</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Armory는 Georgia Tech 팀이 제안한 다중 로봇 공유 클라우드 GPU 추론을 위한 배치 스케줄링 시스템입니다. 이 시스템은 배치 정책 서비스를 폐루프 마르코프 결정 과정(MDP)으로 공식화하고, 선견(Lookahead) 기반 스케줄러를 구현하여 이기종 로봇 군집에서 작업 긴급성에 따라 GPU 배치를 동적으로 할당하며, 단순히 최대 배치 처리량만 추구하지 않습니다. 핵심 기여는 처음으로 '기아율'과 '다운스트림 실행 비용'을 스케줄링 목표에 포함시킨 것이며, 시뮬레이션과 실제 10-암 실험을 통해 동적 작업 시나리오에서의 처리량 우위를 검증했습니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 로봇 정책 서비스 시스템(예: Kairos, ROSA)은 단일 로봇을 가정하거나, 배치 처리 시 지연이 폐루프 동작에 미치는 피드백 효과를 무시합니다. 이들은 GPU 활용률을 최우선 최적화 목표로 삼고 '배치가 클수록 좋다'고 기본 가정하지만, 추론 지연이 배치 크기에 따라 비선형적으로 증가한다는 점(L40S에서 batch 5는 211ms, batch 1은 73ms)을 인식하지 못합니다. 배치에서 제외된 로봇은 동작이 만료되어 '기아' 상태가 되고, 이로 인해 떨림이나 정체가 발생합니다. 이는 본질적으로 정적 배치 스케줄링 문제를 처리량 최적화 문제로 오인한 것이지, 폐루프 제어 문제로 보지 않은 것입니다.</p>
+<p>Armory가 실제로 바꾼 것은 스케줄링 목표 함수입니다. 더 이상 GPU 처리량을 최대화하지 않고 '단위 시간당 실행되는 유효 로봇 동작 수'를 최대화하며, 동작 청크 큐, 실행 주기, 네트워크 지연이 기아에 미치는 영향을 명시적으로 모델링합니다. 이를 통해 스케줄러는 '여러 로봇을 배치하여 비용을 분산'하는 것과 '긴급한 작업을 먼저 실행'하는 것 사이에서 휴리스틱에 의존하지 않고 원칙적인 절충을 할 수 있습니다. 이기종 로봇 군집(예: 동적 턴테이블 분류와 정적 분류 혼합)에게 이는 '일괄 적용'에서 '수요 기반 할당'으로의 패러다임 전환입니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">문제 모델링</h3>
+<p>배치 정책 서비스를 MDP로 모델링하며, 상태 <span class="arithmatex">\( s_k = (t_k, i_j, \hat{i}_j, \mathcal{Q}_j) \)</span>:
+- <span class="arithmatex">\( t_k \)</span>: 스케줄링 주기 시작 시간
+- <span class="arithmatex">\( i_j \)</span>: 로봇 j가 가장 최근에 실행한 동작 인덱스
+- <span class="arithmatex">\( \hat{i}_j \)</span>: 서버가 수신한 가장 최근 동작 인덱스
+- <span class="arithmatex">\( \mathcal{Q}_j \)</span>: 동작 청크 큐 (각 청크 <span class="arithmatex">\( c = (i_{\text{start}}, h_j, t_{\text{arr}}) \)</span>)</p>
+<h3 id="_5">전이와 보상</h3>
+<ul>
+<li>추론 완료 시간: <span class="arithmatex">\( t_{k+1} = t_k + \tilde{d}_{\text{infer}}(|B_k|) \)</span>, 여기서 <span class="arithmatex">\( \tilde{d}_{\text{infer}} \)</span>는 배치 크기의 지연 함수(시작 시 프로파일링으로 획득)</li>
+<li>새 동작 청크: <span class="arithmatex">\( c_{\text{new}}^j = (\hat{i}_j, h_j, t_{k+1} + \tilde{d}_{\text{action},j}) \)</span></li>
+<li>주기별 보상: <span class="arithmatex">\( R(s_k, B_k) = \frac{1}{f_c} \sum_{j=1}^{N} w_j \Delta i_j(s_k, B_k) \)</span>, <span class="arithmatex">\( w_j \)</span>는 작업 가중치, <span class="arithmatex">\( \Delta i_j \)</span>는 해당 주기 내 로봇 j가 실제로 실행한 동작 수</li>
+</ul>
+<h3 id="lookahead">Lookahead 스케줄러</h3>
+<p>정확한 계획은 불가능하므로 유한 깊이 선견을 채택:
+1. 향후 L개 주기의 모든 잠재적 배치 조합(크기 1부터 <span class="arithmatex">\( B_{\text{max}} \)</span>까지)을 열거
+2. 각 후보 스케줄 S에 대해 시뮬레이션 전진 실행 후 점수 계산 <span class="arithmatex">\( \text{Score}(S) = \sum_{\ell=0}^{L-1} \frac{R(s_\ell, B_\ell)}{d_{\text{infer}}(|B_\ell|)} \)</span>
+3. 가장 높은 점수를 얻은 스케줄의 첫 번째 배치를 실행</p>
+<h3 id="_6">핵심 설계 결정</h3>
+<ul>
+<li><strong>L=1로 충분</strong>: 저자는 단일 단계 선견만으로 이기종 인식이 가능하며, 더 깊은 탐색(L=2,3)은 오히려 기아율을 약간 증가시킨다고 발견(실험 참조)</li>
+<li><strong>보수적 스케줄링</strong>: GPU가 유휴 상태이고 요청이 있을 때 즉시 스케줄링하며, 배치를 채우기 위해 대기하지 않음</li>
+<li><strong>푸시 통신</strong>: 로봇이 관측을 전송한 후에만 동작을 실행하여 풀 아키텍처의 만료된 관측을 방지</li>
+<li><strong>프로세스 격리</strong>: 네트워크 처리, 스케줄링, GPU 추론을 별도의 프로세스로 분리하고 공유 메모리로 통신하여 CPU 작업이 GPU를 차단하지 않음</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>폐루프 스케줄링 공식화</strong>: 처음으로 '기아율'을 명시적 최적화 목표로 배치 스케줄링에 포함시켰으며, GPU 활용률만 고려하지 않습니다. 이를 통해 스케줄러가 동작 청크 큐의 소비 속도를 인식하고, 동적 작업(짧은 실행 주기)과 정적 작업(긴 실행 주기)을 차별화할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>선견 탐색으로 탐욕 휴리스틱 대체</strong>: EDF는 '누가 가장 긴급한가'만, RR은 '공정성'만 고려하며, 둘 다 현재 배치 선택이 미래 상태에 미치는 영향을 모델링하지 않습니다. Lookahead는 시뮬레이션 전진 실행을 통해 '이번에 로봇 하나를 더 배치하는 것'이 후속 주기 기아율에 미치는 비용을 명시적으로 평가하여, 분산과 지연 사이의 균형점을 찾습니다.</p>
+</li>
+<li>
+<p><strong>가중치 메커니즘으로 이기종 인식 구현</strong>: 작업 가중치 <span class="arithmatex">\( w_j \)</span>(예: 빠른 로봇 <span class="arithmatex">\( w_j=5 \)</span>)를 통해 스케줄러는 느린 작업의 처리량을 희생하지 않으면서 빠른 계층의 처리량을 4배(RR 대비) 및 2배(EDF 대비) 향상시킬 수 있습니다. 이는 '균일 처리' 가정에 대한 직접적인 도전이며, 실제 로봇 군집에서 우선순위 스케줄링의 가치를 증명합니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험과 결과</h2>
+<h3 id="libero">시뮬레이션 실험 (LIBERO 벤치마크)</h3>
+<ul>
+<li>구성: <span class="arithmatex">\( \pi_{0.5} \)</span> 모델, <span class="arithmatex">\( H=10 \)</span>, <span class="arithmatex">\( f_c=20 \)</span>, 빠른 로봇 <span class="arithmatex">\( H_{\text{max}}=6 \)</span>, 느린 로봇 <span class="arithmatex">\( H_{\text{max}}=10 \)</span>, 로봇 군집 규모 2–10, 3개 시드</li>
+<li>주요 결과 (one-fast 구성, N=10):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>스케줄러</th>
+<th>빠른 계층 처리량</th>
+<th>느린 계층 처리량</th>
+<th>시스템 기아율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RR</td>
+<td>낮음</td>
+<td>9.04</td>
+<td>12.90%</td>
+</tr>
+<tr>
+<td>EDF</td>
+<td>중간</td>
+<td>8.81</td>
+<td>13.37%</td>
+</tr>
+<tr>
+<td>LA@5</td>
+<td>높음 (약 2×EDF)</td>
+<td>10.04</td>
+<td>15.18%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-agilex-piper">실제 세계 (10개 AgileX PiPER 암)</h3>
+<ul>
+<li>구성: <span class="arithmatex">\( H=20 \)</span>, <span class="arithmatex">\( f_c=30 \)</span>, 빠른 <span class="arithmatex">\( H_{\text{max}}=10 \)</span>, 느린 <span class="arithmatex">\( H_{\text{max}}=20 \)</span>, 동적 턴테이블 분류 vs 정적 분류</li>
+<li>one-fast 설정: LA@5는 빠른 계층 처리량을 8.33개/분으로 향상(EDF는 3.67, RR은 2.00), 시스템 총 처리량 98.67 vs EDF 83.00(약 18% 향상)</li>
+</ul>
+<h3 id="_9">배치 크기 절제 실험</h3>
+<ul>
+<li>all-fast 시나리오, cap=10일 때: EDF/RR 평균 배치 4.7 로봇/호출, Lookahead 평균 3.3, 중앙값 3</li>
+<li>naive 스케줄러는 cap이 증가함에 따라 과도한 배치로 기아율이 상승하지만, Lookahead는 cap에 둔감</li>
+</ul>
+<h3 id="_10">네트워크 견고성</h3>
+<ul>
+<li>중앙 지연 50ms에서 지터 σ를 스캔할 때, 세 스케줄러 성능은 거의 평탄</li>
+<li>중앙 지연을 25ms에서 500ms로 스캔할 때, 50–100ms 내에서 성능이 높게 유지되며, 그 이후 모든 스케줄러가 동일한 방식으로 저하</li>
+</ul>
+<h2 id="_11">경계와 한계</h2>
+<ul>
+<li><strong>추론 모델 가정 단순</strong>: 단일 GPU에서의 배치만 고려하며, 연속 배치, PagedAttention, 청크 프리필 등의 최적화나 분산 추론을 구현하지 않았습니다. 이러한 기술은 지연-배치 크기 곡선을 변경하여 스케줄링 전략의 최적성에 영향을 줄 수 있습니다.</li>
+<li><strong>L=1의 한계</strong>: 저자는 단일 단계 선견이 충분하다고 발견했지만, 더 깊은 탐색(L=2,3)은 일부 구성에서 기아율을 약간 증가시키며, 이는 직관에 반하며 특정 탐색 구현과 보상 함수에 국한될 수 있습니다.</li>
+<li><strong>비동기 정책 혼동</strong>: naive async를 동작 청킹 전략으로 사용하며, 이 자체가 떨림 동작을 생성할 수 있습니다. Lookahead는 청크 시작부터 실행하는 것을 선호하여 이러한 떨림을 의도치 않게 줄이지만, RTC나 VLASH 같은 더 복잡한 전략을 사용하면 결과가 달라질 수 있습니다.</li>
+<li><strong>네트워크 지연 보상 상한</strong>: 스케줄링 전략은 원시 전송 지연을 보상할 수 없으며, 50ms를 초과하면 모든 스케줄러가 동일한 방식으로 저하되어 더 강한 기아 신호로만 작용합니다.</li>
+<li><strong>표본 크기 제한</strong>: 실제 세계는 1분 rollout, 3개 시드뿐이며, 지표에 노이즈가 있을 수 있습니다.</li>
+</ul>
+<h2 id="_12">공학적 시사점</h2>
+<ul>
+<li><strong>지연-배치 곡선 먼저 확인</strong>: Armory의 효과성은 <span class="arithmatex">\( \tilde{d}_{\text{infer}}(|B|) \)</span>의 정확성에 크게 의존합니다. 배포 전에 반드시 대상 GPU에서 각 배치 크기의 지연을 프로파일링하세요(예: L40S에서 batch 1은 73ms, batch 5는 211ms). 곡선이 평탄하면(예: H100) 스케줄링 이점이 줄어듭니다.</li>
+<li><strong>가중치 설정이 핵심 하이퍼파라미터</strong>: <span class="arithmatex">\( w_j \)</span>는 우선순위 기울기 정도를 직접 제어합니다. 시뮬레이션에서 half-fast 구성에서 LA@5는 느린 계층 처리량을 붕괴시켰으며(20.83 vs RR 35.88), 이는 공격적인 가중치가 역효과를 낼 수 있음을 시사합니다. <span class="arithmatex">\( w_j=1 \)</span>에서 시작하여 점진적으로 증가시키고 느린 계층 기아율을 모니터링하는 것을 권장합니다.</li>
+<li><strong>배치 상한 b 선택</strong>: 시뮬레이션에서 b=3은 naive 스케줄러의 가장 강력한 구성이지만, Lookahead는 b에 둔감합니다. 실제 배포 시 b를 크게(예: 5) 설정하고 수동 제한 대신 스케줄러가 실제 배치 크기를 결정하도록 하는 것이 좋습니다.</li>
+<li><strong>네트워크 지연은 하드 제약</strong>: 단방향 지연이 50ms를 초과하면 스케줄링 전략으로 보상할 수 없으며, 스케줄링 최적화보다 엣지 컴퓨팅이나 모델 압축을 우선 고려해야 합니다.</li>
+<li><strong>가장 흔한 함정</strong>: naive async를 동작 실행 전략으로 직접 재사용하면 떨림이 발생하고 스케줄러 동작과 결합됩니다. 스케줄러를 평가할 때 동작 청킹 전략(예: 청크 시작부터 실행 vs 중간부터 실행)의 영향도 함께 평가하는 것을 권장합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>약한 연관 더 보기 (1)</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_action_chunk_scheduling_batched_robot_po_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</h3>
+          <p>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">문제 모델링</a></li>
+<li><a href="#_5">전이와 보상</a></li>
+<li><a href="#lookahead">Lookahead 스케줄러</a></li>
+<li><a href="#_6">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험과 결과</a><ul>
+<li><a href="#libero">시뮬레이션 실험 (LIBERO 벤치마크)</a></li>
+<li><a href="#10-agilex-piper">실제 세계 (10개 AgileX PiPER 암)</a></li>
+<li><a href="#_9">배치 크기 절제 실험</a></li>
+<li><a href="#_10">네트워크 견고성</a></li>
+</ul>
+</li>
+<li><a href="#_11">경계와 한계</a></li>
+<li><a href="#_12">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

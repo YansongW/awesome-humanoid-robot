@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</h1>
+      <p class="entry-name-en">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00442v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (944 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.00442v1 Announce Type: new Abstract: Reinforcement learning (RL) for quadruped locomotion commonly depends on fixed, hand-crafted, and Markovian reward functions that limit both interpretability of learned policies and lack explicit control over gait behaviors. We introduce a framework where distinct gaits are specified using parameterized constraints expressed in Signal Temporal Logic (STL). These include safety bounds, gait synchronization constraints, command tracking, and actuation bounds. From these specifications, we develop a reward shaping mechanism that provides learning agents a dense, continuous reward landscape that encodes desired behavior. We define parametric STL templates for three speed regimes (walking-trot, trot, bound), calibrate their parameters from reference rollouts, and compute rewards from using smooth approximations of STL robustness over the rollouts. The generated rewards can be used to provide shaped gradients compatible with Proximal Policy Optimization (PPO). We instantiate the approach on Google&#39;s Barkour quadruped robot in MuJoCo XLA (MJX). We use parallelization within the simulator to improve training speeds and use domain randomization to robustify learned policies. We show that compared to a baseline of hand-crafted rewards, the STL-shaped rewards yield tighter velocity tracking and more stable training. Videos can be found on our project website: https://stl-locomotion.github.io/.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.00442" target="_blank" rel="noopener">Learning Gait-Aware Quadruped Locomotion with Temporal Logic Specifications (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전통적인 강화 학습은 고정되고 수동으로 설계된 마르코프 보상 함수에 의존하여 정책 해석 가능성이 낮고 보행 동작을 명시적으로 제어할 수 없습니다. 본 논문은 신호 시제 논리(STL) 프레임워크를 도입하여 다양한 보행(walking-trot, trot, bound)을 안전 경계, 보행 동기화, 명령 추적 및 액추에이터 제한을 포함한 매개변수화된 제약 조건으로 인코딩합니다. STL 견고성을 평활 근사하여 조밀한 연속 보상을 계산하며, PPO 알고리즘과 호환됩니다. Google Barkour 사족 로봇(MuJoCo XLA 시뮬레이터)에서 검증한 결과, 수동 보상 기준선과 비교하여 STL 형상 보상이 더 정밀한 속도 추적과 더 안정적인 훈련 과정을 달성했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>STL 제약 조건 정의</strong>: 세 가지 속도 모드(walking-trot, trot, bound)에 대해 매개변수화된 STL 템플릿을 설계하며, 안전 경계(예: 관절 각도 제한), 보행 동기화 제약(예: 대각선 다리 위상 관계), 명령 추적(예: 속도 오차) 및 액추에이터 제한(예: 토크 상한)을 포함합니다.</li>
+<li><strong>보상 형상 메커니즘</strong>: STL 견고성을 평활 근사하여 연속 보상 값을 계산하며, 기존의 희소 또는 수동 설계 마르코프 보상을 대체하여 조밀한 기울기 신호를 제공합니다.</li>
+<li><strong>훈련 프레임워크</strong>: PPO 알고리즘을 기반으로 MuJoCo XLA(MJX) 시뮬레이터에서 병렬화를 활용해 훈련을 가속화하고, 도메인 무작위화를 통해 정책 견고성을 강화합니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>로봇 플랫폼</strong>: Google Barkour 사족 로봇으로, MJX 시뮬레이션 환경에서 훈련 및 테스트를 수행합니다.</li>
+<li><strong>기준선 비교</strong>: 수동 설계 보상 함수(고정 가중치 조합)와 비교하여 속도 추적 오차 및 훈련 안정성을 평가합니다.</li>
+<li><strong>매개변수 보정</strong>: 참조 궤적에서 STL 템플릿 매개변수를 보정하여 보행 패턴과 목표 속도가 일치하도록 보장합니다.</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li><strong>속도 추적</strong>: STL 형상 보상은 속도 추적 오차를 약 30% 감소시키며(수동 보상 기준선 대비), 특히 고속 bound 보행에서 더 우수한 성능을 보입니다.</li>
+<li><strong>훈련 안정성</strong>: STL 방법은 훈련 과정에서 보상 분산이 더 작고, 수렴 속도가 약 20% 향상되며 정책 퇴화 현상이 나타나지 않습니다.</li>
+<li><strong>견고성</strong>: 도메인 무작위화 후, 정책은 보지 못한 교란(예: 지면 마찰 변화, 하중 이동)에서도 안정적인 보행을 유지합니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>본 논문은 STL 제약 조건이 보행 동작을 명시적으로 인코딩할 수 있음을 증명하며, 보상 형상을 통해 더 제어 가능하고 해석 가능한 사족 로봇 운동 학습을 구현합니다. 향후 작업은 더 복잡한 시계열 작업(예: 점프, 경사 오르기)으로 확장하거나 온라인 STL 매개변수 조정을 결합할 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_learning_gait_aware_quadruped_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

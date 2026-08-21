@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation</h1>
+      <p class="entry-name-en">Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Mobile manipulation is a key capability for embodied intelligence, enabling robots to accomplish complex multi-stage tasks in open-world environments. However, mobile manipulation poses two key challenges for vision-language-action (VLA) policies: At the data level, the efficient collection of high-quality whole-body demonstrations demands the coordinated control of both the mobile base and the.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.02257" target="_blank" rel="noopener">arXiv:2608.02257 Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperatio</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 모바일 조작을 위한 전방위 인식 비전-언어-행동 모델인 PanoVLA를 제안하며, VR 기반 전신 원격 조작 시스템을 결합하여 야외 데이터 수집을 구현한다. 핵심 기여는 전방위 전문가 모듈과 MTPano 인코더를 도입하여 전역 공간 컨텍스트를 VLA 정책에 주입함으로써, 4가지 실제 모바일 조작 작업에서 평균 성공률을 30.0%에서 73.4%로 향상시킨 것이다.</p>
+<h2 id="_2">무엇을 변화시켰는가</h2>
+<p>모바일 조작 VLA가 직면한 핵심 모순은 로컬 카메라 시야와 전역 공간 추론 요구 사이의 격차이다. 기존 π_0.5와 같은 모델은 전방 카메라와 손목 카메라에만 의존하여, 섀시 회전이나 로봇 팔의 자기 폐색 시 대상 물체와 랜드마크가 시야에서 자주 벗어나 정책이 장기 작업에서 "길을 잃는" 문제가 발생한다. 단순히 더 많은 이미지 스트림을 연결하는 방식(예: Stacked Pano)은 로봇 중심의 일관된 공간 표현을 구축하지 못하며, 오히려 중복 계산과 도메인 편향을 초래한다.</p>
+<p>본 논문이 실제로 변화시킨 것은 VLA 아키텍처에서 "전역 컨텍스트 주입" 방식이다. 즉, 전방위 이미지를 추가 입력 토큰으로 단순 연결하는 대신, 독립적인 전방위 전문가 모듈을 설계하고 KV 캐시 메커니즘을 통해 VLM 전문가와 상호작용하게 하여, 로컬 정밀 조작 능력을 유지하면서 작업 관련 전역 공간 관계를 명시적으로 모델링한다. 이는 이전에 간과된 두 가지 문제를 해결한다. 첫째는 등장방형 투영과 사전 훈련된 시각 인코더(SigLIP) 간의 도메인 격차, 둘째는 전역 정보와 로컬 행동 예측 간의 융합 인터페이스 설계이다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">원격 조작 데이터 수집</h3>
+<ul>
+<li>VR 기반 전신 원격 조작: 6-DoF 헤드 트래킹, 양손 컨트롤러, 세 개의 신체 트래커(허리 + 양쪽 발목)</li>
+<li>GMR(General Motion Retargeting) 프레임워크가 희소 인체 모션을 바퀴형 이팔 로봇으로 재타겟팅</li>
+<li>로봇 구성 파라미터화: q = (x_b, y_b, θ_b, q_L, q_R), 여기서 섀시 포즈는 로컬 원격 조작 좌표계에서 표현</li>
+<li>재타겟팅 최적화 목표: q* = arg min_q [λ_pos·L_pos + λ_rot·L_rot + λ_base·L_base + λ_reg·L_reg]</li>
+<li>L_pos: 손과 그리퍼 위치 정렬</li>
+<li>L_rot: 손과 엔드 이펙터 방향 정렬</li>
+<li>L_base: 섀시 평면 운동과 조작자 골반 변위/방향 커플링</li>
+<li>L_reg: 관절 한계 및 구성 변화 정규화</li>
+<li>비용 기반 모드 전환: 각 제어 주기마다 회전, 애커만 조향, 대각 이동 세 가지 모드와 원하는 운동의 매칭 비용을 평가하여 최적 모드 선택</li>
+</ul>
+<h3 id="panovla">PanoVLA 아키텍처</h3>
+<ul>
+<li>Mixture-of-Transformers(MoT) 기반, π_0.5의 이중 전문가 백본을 삼중 전문가로 확장:</li>
+<li>VLM 전문가: 로컬 뷰, 명령, 로봇 상태 인코딩</li>
+<li>전방위 전문가: 광시야 관측을 작업 조건 공간 컨텍스트로 변환</li>
+<li>행동 전문가: 연속 행동 블록 예측</li>
+<li>융합 인터페이스: Transformer KV 캐시</li>
+<li>VLM 전문가가 캐시 C_t^vlm 계산</li>
+<li>전방위 인코더가 전방위 이미지를 토큰 Z_t^pano로 변환</li>
+<li>전방위 전문가가 C_t^vlm과 결합된 자기 주의를 수행하여 C_t^pano 생성</li>
+<li>행동 전문가가 결합 캐시 C_t = [C_t^vlm; C_t^pano] 기반으로 행동 예측</li>
+<li>전방위 인코더 3단계:</li>
+<li>구면 투영: 이중 어안 뷰를 공통 구면에 재투영하고, 격자화하여 ERP 이미지 생성</li>
+<li>특징 추출: MTPano 기반 모델, 분할 및 깊이 분기 중간 특징 연결</li>
+<li>토큰 적응: 적응형 평균 풀링으로 공간 해상도 압축, 경량 MLP로 전문가 숨김 차원 매핑</li>
+<li>훈련 목표: 조건부 흐름 매칭, L = E[||v_θ^act(x_τ, τ|C_t) - u(x_τ|a)||²₂]</li>
+</ul>
+<h3 id="_5">핵심 설계 결정</h3>
+<ul>
+<li>SigLIP 대신 MTPano 선택: SigLIP은 투시 이미지로 사전 훈련되어 ERP의 수평 연속성과 전역 레이아웃 포착이 부족</li>
+<li>전방위 전문가 규모 100M: 50M 용량 부족, 200M/300M은 제한된 미세 조정 데이터에서 일관된 개선 없음</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>전방위 전문가 모듈의 독립 설계</strong>: 전방위 이미지를 추가 입력 채널로 사용하는 단순한 방식과 달리, PanoVLA는 전역 공간 추론을 VLM에서 분리하고 KV 캐시를 통해 정보 상호작용을 구현한다. 이를 통해 전방위 정보가 VLM의 로컬 추론을 "조건화"할 수 있으며, 단순 중첩이 아닌 방식으로 특징 희석과 도메인 편향 문제를 피한다.</p>
+</li>
+<li>
+<p><strong>MTPano를 전방위 인코더로 사용</strong>: 일반 시각 인코더 대신 전방위 기반 모델의 중간 특징(분할 + 깊이 분기)을 활용한다. 이 선택은 ERP 이미지와 투시 사전 훈련 인코더 간의 도메인 격차에 직접 대응하며, 실험에서 SigLIP 인코더는 Move Pen 작업에서 SR 40.0%에 불과하지만 MTPano는 86.7%를 달성한다.</p>
+</li>
+<li>
+<p><strong>전신 원격 조작과 VLA 훈련의 데이터 폐루프</strong>: VR 원격 조작 시스템의 비용 기반 모드 전환과 GMR 재타겟팅은 실제 로봇 없이도 고품질 전신 데모 수집을 가능하게 하여, VLA에 배포 플랫폼과 일치하는 훈련 데이터 분포를 제공한다.</p>
+</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<p><strong>주요 결과(작업당 15회 폐루프 시험)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Move Pen SR</th>
+<th>Move Block SR</th>
+<th>Open Curtain SR</th>
+<th>Wipe Table SR</th>
+<th>평균 SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0.5</td>
+<td>46.7%</td>
+<td>20.0%</td>
+<td>26.7%</td>
+<td>26.7%</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>π_0.5 w/ Pano</td>
+<td>86.7%</td>
+<td>73.3%</td>
+<td>46.7%</td>
+<td>20.0%</td>
+<td>56.7%</td>
+</tr>
+<tr>
+<td>π_0.5 w/ Stacked Pano</td>
+<td>60.0%</td>
+<td>40.0%</td>
+<td>13.3%</td>
+<td>40.0%</td>
+<td>38.3%</td>
+</tr>
+<tr>
+<td><strong>PanoVLA</strong></td>
+<td><strong>86.7%</strong></td>
+<td><strong>93.3%</strong></td>
+<td><strong>66.7%</strong></td>
+<td><strong>46.7%</strong></td>
+<td><strong>73.4%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>핵심 관찰</strong>:
+- PanoVLA는 Move Block 작업에서 가장 큰 향상을 보임(20.0%→93.3%), 이 작업은 지역 간 공간 추론이 필요
+- π_0.5 w/ Pano는 Wipe Table에서 SR 20.0%에 불과하지만 SCR은 74.4%로, 단순 전방위 이미지 연결이 장기 작업에서 엔드 이펙터 정밀도를 저하시킴을 시사
+- PanoVLA는 Wipe Table 마지막 단계에서 완료율 73.3%로 π_0.5 w/ Pano의 26.7%보다 크게 우수</p>
+<p><strong>소거 실험(Move Pen, 15회 시험)</strong>:
+- 전문가 규모: 50M SR 60.0%, 100M SR 86.7%, 200M SR 86.7%, 300M SR 73.3%
+- 전방위 인코더: SigLIP SR 40.0%, MTPano SR 86.7%</p>
+<h2 id="_8">경계 및 한계</h2>
+<p>논문은 한계 논의 섹션을 명시적으로 언급하지 않았다. 실험 설정에서 추론할 수 있는 점: 각 정책은 해당 작업의 200개 데모로만 독립적으로 미세 조정되어 교차 작업 일반화 능력이 검증되지 않음; MoManipVLA, SG-VLA와 같은 최신 모바일 조작 VLA 방법과 직접 비교하지 않음; 300M 이상의 전방위 전문가 규모를 탐색하지 않음; 시뮬레이션 환경에서 평가하지 않음. Wipe Table 작업에서 PanoVLA의 SR은 46.7%에 불과하여, 정밀 엔드 이펙터 조작과 전역 내비게이션 결합이 필요한 시나리오에서 여전히 뚜렷한 부족함이 있음을 보여준다.</p>
+<h2 id="_9">공학적 시사점</h2>
+<p>재현 시 다음 단계를 우선적으로 검증해야 한다:
+1. <strong>전방위 인코더 선택</strong>: 반드시 SigLIP 대신 MTPano를 사용해야 하며, 이는 성능 차이가 가장 큰 단일 요소(SR 86.7% vs 40.0%)
+2. <strong>전문가 규모</strong>: 100M이 비용 대비 최적이며, 300M은 오히려 성능이 저하되는데, 이는 제한된 미세 조정 데이터에서의 과적합과 관련될 수 있음
+3. <strong>KV 캐시 융합 메커니즘</strong>: VLM 캐시와 전방위 캐시의 차원 일치를 보장하고, 블록 수준 인과 마스크 M_pano가 올바르게 구현되어야 함. 그렇지 않으면 전역 정보가 로컬 추론에 누출될 수 있음
+4. <strong>데이터 수집 일관성</strong>: 원격 조작 시스템의 비용 기반 모드 전환 로직이 배포 시 섀시 제어 정책과 일치해야 하며, 그렇지 않으면 훈련-배포 분포 편향이 성공률에 크게 영향을 미침
+5. <strong>훈련 구성</strong>: 언어 모델과 MTPano 인코더를 동결하고 나머지 모듈만 최적화; 30K 스텝, 학습률 5e-5, 배치 크기 64(4×A100)는 검증된 구성이며, RTX 4090에서 폐루프 추론 가능</p>
+<p>가장 함정에 빠지기 쉬운 부분은 전방위 토큰의 구면 투영 및 격자화 파라미터이다. ERP 이미지 해상도나 투영 중심 설정이 잘못되면 MTPano 특징 품질에 직접 영향을 미쳐 전역 컨텍스트 주입이 실패할 수 있다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">extends</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_bilateral_teleoperation/">양방향 원격 조작</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_panorama_aware_vla_mobile_manipulation_w_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_bilateral_teleoperation/">
+          <span class="entry-type">방법</span>
+          <h3>양방향 원격 조작</h3>
+          <p>명령 신호는 마스터→슬레이브, 힘·촉각 피드백은 슬레이브→마스터로 흐르는 원격 조작 구조로 투명성과 안전성을 향상.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시켰는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">원격 조작 데이터 수집</a></li>
+<li><a href="#panovla">PanoVLA 아키텍처</a></li>
+<li><a href="#_5">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a></li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Bayesian framework for the uncanny valley in humanoid robot design · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Bayesian framework for the uncanny valley in humanoid robot design</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>A Bayesian framework for the uncanny valley in humanoid robot design</h1>
+      <p class="entry-name-en">A Bayesian framework for the uncanny valley in humanoid robot design</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>The uncanny valley is a long-standing empirical rule in humanoid robot design: making robots more human-like can reduce, rather than increase, affinity. Yet existing guidelines, such as adopting robot-like appearances, avoiding excessive realism, and reducing cross-modal mismatches, remain difficult to use for algorithmic design because they are not expressed as manipulable variables. Here, we.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13060" target="_blank" rel="noopener">arXiv:2607.13060 A Bayesian framework for the uncanny valley in humanoid robot design</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 인간형 로봇의 친화도를 사후 가중 음의 범주 조건부 서프라이즈로 정의하는 계층적 베이즈 생성 모델을 제안하여, 언캐니 밸리 경험칙을 계산 가능한 설계 변수로 전환한다. 저자는 도쿄 대학 소속이며, 시뮬레이션과 33명의 피험자 행동 실험을 통해 예측 불확실성과 관측 불확실성에 대한 모델의 예측을 검증했으며, 세 가지 가설은 지지되고 하나는 지지되지 않았다.</p>
+<h2 id="_2">그것이 바꾸는 것</h2>
+<p>언캐니 밸리 연구는 오랫동안 경험적 기술 수준에 머물러 있었다. Mori의 곡선, Moore의 베이즈 범주 지각 모델, Ueyama의 치료적 적용 모두 설계 지침을 설계자가 직접 조작할 수 있는 변수로 만들지 못했다. 본 논문이 실제로 바꾸는 것은 "과도한 사실성 회피", "교차 양상 불일치 감소"와 같은 구호를 네 가지 계산 가능한 양, 즉 로봇 범주 예측 평균과의 거리, 교차 양상 불일치도, 예측 불확실성, 관측 불확실성으로 번역한 것이다. 이는 언캐니 밸리를 "사후 현상 설명"에서 "사전 곡선 예측"의 공학적 도구로 전환함을 의미한다.</p>
+<p>그러나 본 논문의 야망은 형식화에 그치지 않는다. 더 날카로운 질문에 답하려 한다. 언캐니 밸리가 불가피하다면, 설계자가 불확실성을 조작하여 이를 "우회"할 수 있는가? 시뮬레이션은 관측 불확실성(예: 자극 흐림)을 높이면 중간 인간 유사도 영역에서 친화도가 유의미하게 향상될 수 있음을 보여주는 반면, 예측 불확실성을 높이는 것은 로봇 같은 외관에서만 해로웠다. 이는 "선명할수록 좋다"는 직관에 직접 도전하며, 반직관적이지만 검증 가능한 설계 전략을 제공한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">생성 모델</h3>
+<ul>
+<li>범주 c∈{R,H}(로봇/인간)가 잠재 인간 유사도 x를 생성하고, x가 다시 관측 y를 생성한다: p(c,x,y)=p(c)p(x|c)p(y|x)</li>
+<li>기준 가정: p(x|c)=𝒩(x; μ_c, σ_c²), p(y|x)=𝒩(y; x, σ_l²), 주변화하면 p(y|c)=𝒩(y; μ_c, σ_c²+σ_l²)</li>
+</ul>
+<h3 id="_5">친화도 정의</h3>
+<ul>
+<li>범주 조건부 서프라이즈: S_c(y)=−ln p(y|c); 범주 조건부 친화도: A_c(y)=ln p(y|c)</li>
+<li>최종 친화도: A(y)=Σ_{c∈{R,H}} p(c|y)·A_c(y), 여기서 사후 p(c|y)=π_c·exp{A_c(y)} / Σ_{c'}π_{c'}·exp{A_{c'}(y)}</li>
+</ul>
+<h3 id="_6">네 가지 설계 변수</h3>
+<ol>
+<li>|y−μ_R|: 로봇 범주 예측 평균과의 거리, "첫 번째 피크" 지침을 조작화</li>
+<li>(y_a−y_m)²: 교차 양상 지각 불일치, 다중 양상 확장 p(c,x,y_a,y_m)=p(c)p(x|c)p(y_a|x)p(y_m|x)에서 유래</li>
+<li>σ_R²: 로봇 범주 예측 불확실성, 실험에서 선험적 자극 흐림도로 매핑</li>
+<li>σ_l²: 관측 불확실성, 실험에서 평가 자극 흐림도로 매핑</li>
+</ol>
+<h3 id="_7">핵심 설계 결정</h3>
+<ul>
+<li>단순 평균 대신 사후 가중을 사용하여 범주 경계에서 친화도가 매끄럽게 전이되도록 함</li>
+<li>ϵ-floor 우도 p_ϵ(y|x)=[𝒩(y; x, σ_l²)+ϵ]/(1+ϵ)를 도입하여 가우시안 우도가 극단적 예측 오차를 과도하게 처벌하는 것을 방지; ϵ=0이면 기준 모델로 퇴화</li>
+<li>다중 양상 친화도에서 (y_a−y_m)² 항이 교차 양상 불일치를 명시적으로 부호화하며, D_c=σ_a²σ_m²+σ_a²σ_c²+σ_m²σ_c²</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li><strong>언캐니 밸리를 곡선에서 함수로 전환</strong>: 처음으로 친화도를 미분 가능한 폐쇄형 표현식으로 제시하고, 설계 변수가 모델 파라미터에 직접 대응하여 "친화도 최적화"를 휴리스틱 파라미터 튜닝이 아닌 계산 가능한 최적화 문제로 만든다.</li>
+<li><strong>불확실성을 설계 레버로 활용</strong>: 시뮬레이션과 실험이 공통적으로 관측 불확실성 σ_l²이 중간 인간 유사도 영역(h=2~h=6 모두 유의)에서 친화도를 유의미하게 향상시킬 수 있음을 보여주며, 이는 직관에만 의존하지 않는 "흐림 처리"의 이론적 근거를 제공한다.</li>
+<li><strong>교차 양상 불일치의 명시적 부호화</strong>: 공유 잠재 인간 유사도 x를 통해 외관과 운동의 불일치를 (y_a−y_m)² 항으로 정량화하여, 교차 양상 설계 지침에 처음으로 해석적 표현을 부여한다.</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<p>피험자 내 설계, 33명의 성인, 8단계 인간 유사도×2 예측 불확실성×2 관측 불확실성 총 32조건. 주요 결과:</p>
+<table>
+<thead>
+<tr>
+<th>효과</th>
+<th>F값</th>
+<th>P값</th>
+<th>결론</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>외관 인간 유사도 주효과</td>
+<td>43.700</td>
+<td>&lt;0.001</td>
+<td>인간 유사도가 친숙도에 유의미한 영향</td>
+</tr>
+<tr>
+<td>예측 불확실성(선험적 흐림)</td>
+<td>4.486</td>
+<td>0.034</td>
+<td>약한 흐림&gt;강한 흐림, EH1-1 지지</td>
+</tr>
+<tr>
+<td>예측 불확실성×인간 유사도</td>
+<td>1.036</td>
+<td>0.404</td>
+<td>상호작용 없음, EH1-2 미지지</td>
+</tr>
+<tr>
+<td>관측 불확실성(평가 흐림)</td>
+<td>53.187</td>
+<td>&lt;0.001</td>
+<td>강한 흐림&gt;약한 흐림, EH2 지지</td>
+</tr>
+<tr>
+<td>관측 불확실성×인간 유사도</td>
+<td>2.108</td>
+<td>0.040</td>
+<td>유의미한 상호작용, EH3 지지</td>
+</tr>
+</tbody>
+</table>
+<p>단순 주효과 검정은 높은 흐림 평가 자극이 h=2(F=6.031, P=0.015), h=3(F=20.394, P&lt;0.001), h=4(F=20.933, P&lt;0.001), h=5(F=9.493, P=0.003), h=6(F=8.989, P=0.003)에서 친숙도를 유의미하게 향상시킨 반면, h=1, h=7, h=8에서는 유의하지 않음을 보여주었다. 네 가지 가설 중 세 가지가 지지되었고 EH1-2는 지지되지 않았으며, 저자는 ϵ-floor 모델(ε=0.01)로 기준 모델이 예측 불확실성 효과를 과대 추정했을 수 있다고 설명한다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li>EH1-2는 실험적 지지를 받지 못했고, ϵ-floor 모델은 예측 불확실성 효과 반전 예측을 "제거"가 아닌 "약화"만 하므로 기준 모델의 σ_R² 효과 크기 추정이 과대할 수 있음</li>
+<li>실험은 σ_R²와 σ_l² 두 관찰자 측 변수만 조작했으며, |y−μ_R|와 (y_a−y_m)²는 실험에서 개별적으로 조작되지 않음</li>
+<li>단일 양상 외관 자극만 사용하여 다중 양상 불일치 예측은 검증되지 않음</li>
+<li>표본 크기는 실행 가능성과 이전 연구에 기반하여 결정되었으며, 검정력 분석은 수행되지 않음(논문에 명시되지 않음)</li>
+<li>모델은 실제 로봇 상호작용의 운동, 소리, 체화, 상황 요인을 포함하지 않으며, 개인화 파라미터 피팅도 수행되지 않음</li>
+</ul>
+<h2 id="_11">공학적 시사점</h2>
+<p>재현 시 가장 오류가 발생하기 쉬운 두 지점을 먼저 확인해야 한다. 첫째는 흐림 연산의 커널 크기와 표준 편차(낮은 흐림 3×3, 높은 흐림 81×81, 표준 편차는 모두 −1)이고, 둘째는 선험적 자극과 평가 자극이 반드시 동일한 흐림 설정을 사용해야 한다는 점이다. 그렇지 않으면 예측 불확실성 조작이 관측 불확실성과 혼동된다. 통계적으로는 일부 조건이 정규성을 위반하므로 표준 ANOVA 대신 정렬 순위 변환(ART)을 사용해야 한다.</p>
+<p>하위 설계 팀에게 가장 실행 가능한 결론은 중간 인간 유사도 영역(h=2~h=6)에서 관측 불확실성을 높이면(예: 무광택 표면, 부드러운 질감, 세부 선명도 감소) 친화도를 유의미하게 향상시킬 수 있으며, 이 효과는 h=3과 h=4에서 가장 강하다(F값 20 초과)는 것이다. 그러나 선험적 자극을 흐리게 하여 중간 인간 유사도 영역의 친화도를 높이는 것은 기대하지 말아야 한다. EH1-2의 실패는 이 경로가 무효일 수 있음을 시사한다. 다중 양상 불일치 예측은 실험적으로 검증되지 않았지만, 모델이 제시한 (y_a−y_m)² 항은 실제 로봇에서 대조 테스트를 수행할 가치가 있다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_process_p12_3_2/">인간-로봇 상호작용 및 설명 가능성</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bayesian_framework_uncanny_valley_humano_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p12_3_2/">
+          <span class="entry-type">방법</span>
+          <h3>인간-로봇 상호작용 및 설명 가능성</h3>
+          <p>HMI 设计、交互原型、可用性测试报告</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾸는 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">생성 모델</a></li>
+<li><a href="#_5">친화도 정의</a></li>
+<li><a href="#_6">네 가지 설계 변수</a></li>
+<li><a href="#_7">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a></li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

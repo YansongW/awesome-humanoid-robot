@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics</h1>
+      <p class="entry-name-en">Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span><span class="tag">평가 및 벤치마크</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01756v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (645 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2506.01756" target="_blank" rel="noopener">Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>pyCub 프레임워크는 iCub 휴머노이드 로봇의 모든 관절을 완전히 시뮬레이션하며, 눈 부분의 이중 카메라와 몸체 표면의 4000개 촉각 센서를 통합합니다. C++과 YARP가 필요한 기존 iCub 시뮬레이터와 달리, pyCub은 완전히 Python 기반으로 구현되어 프로그래밍 경험이 적은 학생들도 사용할 수 있습니다. 이 프레임워크는 속도 제어, 관절 공간 제어, 데카르트 공간 제어와 같은 기초 연습과 주시, 파지, 반응 제어와 같은 고급 작업을 제공하며, 난이도를 유연하게 조정할 수 있습니다. 연구팀은 두 차례의 휴머노이드 로봇 강좌에서 이 프레임워크를 테스트했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">프레임워크 설계</h3>
+<ul>
+<li><strong>시뮬레이션 환경</strong>: 물리 엔진 기반의 오픈소스 시뮬레이션으로, iCub 휴머노이드 로봇의 모든 관절 자유도를 완전히 시뮬레이션합니다.</li>
+<li><strong>센서 시스템</strong>: 눈 부분에 두 개의 카메라를 장착하고, 몸체 표면에 iCub 고유의 민감한 피부(4000개의 촉각 수용체 포함)를 통합합니다.</li>
+<li><strong>기술 아키텍처</strong>: 완전히 Python으로 작성되고 제어되며, YARP 미들웨어가 필요 없습니다. 이는 C++과 YARP가 필요한 iCub SIM 및 iCub Gazebo와 대조적입니다.</li>
+</ul>
+<h3 id="_4">연습 내용</h3>
+<ul>
+<li><strong>기초 제어</strong>: 속도 제어, 관절 공간 제어, 데카르트 공간 제어를 포함합니다.</li>
+<li><strong>고급 작업</strong>: 주시 제어, 파지 조작, 반응 제어를 포함합니다.</li>
+<li><strong>난이도 구분</strong>: 모든 연습은 다양한 난이도 수준으로 확장 가능하여, 다양한 수준의 학습자에게 적응합니다.</li>
+</ul>
+<h3 id="_5">실험 및 사용성</h3>
+<ul>
+<li><strong>교육 검증</strong>: 두 차례의 휴머노이드 로봇 강좌에서 테스트를 완료했습니다.</li>
+<li><strong>자원 공개</strong>: 시뮬레이션 코드, 연습, 문서, Docker 이미지 및 예시 비디오가 https://rustlluk.github.io/pyCub 에 공개되어 있습니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">benchmarks</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>약한 연관 더 보기 (1)</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_learning_with_pycub_a_simulati_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">벤치마크</span>
+          <h3>HumanoidBench</h3>
+          <p>Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해 40개 이상의 작업을 제공함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">프레임워크 설계</a></li>
+<li><a href="#_4">연습 내용</a></li>
+<li><a href="#_5">실험 및 사용성</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

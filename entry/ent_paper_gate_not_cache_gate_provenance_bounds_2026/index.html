@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</h1>
+      <p class="entry-name-en">The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of Training-Free VLA Token Skipping</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文由机器人学习与系统领域研究者提出，针对训练无关的视觉token跳过（training-free token skipping）在视觉-语言-动作（VLA）模型闭环控制中的可靠性问题，通过受控因子实验隔离出决定性变量：门控信号的来源（gate provenance），而非跳过机制本身（reuse或deletion）。核心贡献是提出“执行间隙刷新”（actuation-slack refresh）策略，利用机器人执行动作块的约400 ms空闲窗口运行稠密前向，提供干净的下一步门控与新鲜KV基座，在不占用关键路径的前提下将闭环成功率恢复至与稠密推理统计不可区分的水平。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.00391" target="_blank" rel="noopener">arXiv:2608.00391 The Gate, Not the Cache: Gate Provenance Bounds the Closed-Loop Reliability of T</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有加速方法（如VLA-Cache的KV复用、VLA-Pruner的token删除）在发布的工作点（如0.9 skip ratio）报告近乎无损的成功率，但作者指出这些结论建立在未隔离反馈回路的基础上：当下一步门控从前一步的加速前向中获取时，被跳过的token对门控信号的可见性最低，损伤在控制步间累积直至任务失败。这改变了领域对“跳过机制决定可靠性”的默认假设——真正决定闭环可靠性的不是token被复用还是删除，而是门控信号是否来自稠密前向。</p>
+<p>这一判断的工程意义在于：现有方法（包括带触发刷新的SAFE-Pruner）都试图通过反应式检测器在损伤累积到可观测程度时触发恢复，但作者证明这类检测器在早期窗口的AUROC仅0.45–0.65（条件化后降至0.26–0.44），无法可靠捕捉静默失败。因此，可靠性不能依赖“检测-响应”范式，而应通过架构性保证（无条件刷新）来消除反馈回路。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">门控来源与跳过机制的因子分解</h3>
+<ul>
+<li><strong>自收获门控（self-harvested gate）</strong>：从服务当前动作块的稀疏前向中获取门控信号，即 <span class="arithmatex">\( G_{t+1} = g_r(A_t^{sparse}, S_{t+1}^{live}) \)</span>。</li>
+<li><strong>干净门控（clean gate）</strong>：从同一帧的稠密前向（丢弃动作输出）中获取，即 <span class="arithmatex">\( G_{t+1} = g_r(A_t^{dense}, S_{t+1}^{live}) \)</span>。</li>
+<li><strong>跳过机制</strong>：复用（reuse，KV从跨步缓存中取，如VLA-Cache）与删除（deletion，token直接移除，如VLA-Pruner）。</li>
+</ul>
+<h3 id="actuation-slack-refresh">执行间隙刷新（Actuation-Slack Refresh）</h3>
+<ul>
+<li>在机器人执行当前动作块期间（约400 ms窗口），运行一次稠密前向，提供下一步的干净门控 <span class="arithmatex">\( G_{t+1} \)</span> 和新鲜KV基座 <span class="arithmatex">\( B_{t+1} = \{K_{t,V}^{(l),dense}, V_{t,V}^{(l),dense}\}_{l=1}^{L} \)</span>。</li>
+<li>刷新是无条件的（unconditional），因为测量的反应式检测器无法可靠触发（早期窗口AUROC 0.45–0.65，条件化后0.26–0.44）。</li>
+<li>关键设计决策：固定选择规则 <span class="arithmatex">\( g_r \)</span>（包括比例 <span class="arithmatex">\( r \)</span>），只改变其时间注意力来源；第一个块始终稠密运行，因为没有门控或KV基座可用。</li>
+</ul>
+<h3 id="safe-pruner">与SAFE-Pruner的对比</h3>
+<ul>
+<li>SAFE-Pruner使用自收获的一致性分数触发刷新，但该触发器无法看到被剪枝token中的关键变化（其触发率在Object任务上仅0.09%，3,222次编码中触发3次，而该任务成功率仅0.19）。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>隔离门控来源作为独立变量</strong>：首次通过受控因子实验（门控来源 × KV来源）证明，在0.9 skip ratio下，干净门控+新鲜KV达到0.98成功率，而自收获门控+新鲜KV仅0.68；干净门控+累积KV仍达0.96，说明门控来源是主导因素，KV新鲜度是次要因素。这推翻了“跳过机制决定可靠性”的直觉。</p>
+</li>
+<li>
+<p><strong>利用执行间隙的离路径稠密前向</strong>：将稠密计算嵌入机器人固有的执行空闲窗口（约400 ms），而非压缩关键路径。H100上离路径稠密前向p50为63.6 ms，远小于执行窗口，且561次刷新p99为79.9 ms，无截止时间错过。这使得刷新在延迟上几乎“免费”，同时将计算量增至约1.6×稠密FLOPs。</p>
+</li>
+<li>
+<p><strong>无条件刷新优于触发式刷新</strong>：作者证明oracle驱动的触发调度（即使排除干净信号成本）在测试阈值上仅达0.66–0.92，低于无条件使用干净产品的0.98。这挑战了“按需刷新”的直觉，指出在门控信号不可靠时，架构性保证优于反应式检测。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<h3 id="libero-objectskip-ratio-09">受控因子实验（LIBERO-Object，skip ratio 0.9）</h3>
+<table>
+<thead>
+<tr>
+<th>门控来源</th>
+<th>KV来源</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自收获</td>
+<td>新鲜</td>
+<td>0.68</td>
+</tr>
+<tr>
+<td>自收获</td>
+<td>累积</td>
+<td>0.43</td>
+</tr>
+<tr>
+<td>干净</td>
+<td>新鲜</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>干净</td>
+<td>累积</td>
+<td>0.96</td>
+</tr>
+</tbody>
+</table>
+<p>干净门控下reuse和deletion均达0.98，与稠密1.00统计不可区分；自收获门控下reuse降至0.68，deletion降至0.31。</p>
+<h3 id="2skip-ratio-09">闭环成功率（表2，skip ratio 0.9）</h3>
+<table>
+<thead>
+<tr>
+<th>基准</th>
+<th>任务</th>
+<th>dense</th>
+<th>VC / +R</th>
+<th>VP / +R</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO</td>
+<td>Object</td>
+<td>1.00</td>
+<td>0.66 / 0.96</td>
+<td>0.98 / 0.98</td>
+</tr>
+<tr>
+<td>LIBERO</td>
+<td>平均</td>
+<td>0.95</td>
+<td>0.80 / 0.90</td>
+<td>0.95 / 0.97</td>
+</tr>
+<tr>
+<td>SIMPLER</td>
+<td>put-in-drawer</td>
+<td>0.32</td>
+<td>0.02 / 0.02</td>
+<td>0.16 / 0.19</td>
+</tr>
+<tr>
+<td>SIMPLER</td>
+<td>平均</td>
+<td>0.68</td>
+<td>0.28 / 0.34</td>
+<td>0.59 / 0.58</td>
+</tr>
+</tbody>
+</table>
+<p>刷新（+R）在LIBERO上显著恢复VC（0.66→0.96），但在SIMPLER put-in-drawer上无效（0.02→0.02），说明任务难度与基座差异影响刷新收益。</p>
+<h3 id="3vla-cache09-skip-ratio">刷新配置（表3，VLA-Cache，0.9 skip ratio）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>Object</th>
+<th>drawer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dense</td>
+<td>1.00</td>
+<td>0.80</td>
+</tr>
+<tr>
+<td>no refresh</td>
+<td>0.66</td>
+<td>0.52</td>
+</tr>
+<tr>
+<td>shallow recompute</td>
+<td>0.81</td>
+<td>0.58</td>
+</tr>
+<tr>
+<td>actuation-slack refresh</td>
+<td>0.96</td>
+<td>0.69</td>
+</tr>
+</tbody>
+</table>
+<h3 id="56">高比例边界（图5、6）</h3>
+<ul>
+<li>自收获门控在0.6 skip ratio前与稠密无显著差异，0.65首次分离，0.97时VC降至0.06，+R保持0.76，VP保持0.98。</li>
+<li>干净门控在0.97前每个测试点与稠密统计上不可区分。</li>
+</ul>
+<h3 id="709-skip-ratio">延迟（图7，0.9 skip ratio，毫秒）</h3>
+<table>
+<thead>
+<tr>
+<th>硬件</th>
+<th>dense</th>
+<th>VC</th>
+<th>VP</th>
+<th>ours</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H100</td>
+<td>63.4</td>
+<td>53.9</td>
+<td>56.1</td>
+<td>52.0</td>
+</tr>
+<tr>
+<td>RTX 4090</td>
+<td>123.3</td>
+<td>101.2</td>
+<td>108.0</td>
+<td>97.0</td>
+</tr>
+</tbody>
+</table>
+<p>真实机器人（RTX 5880 Ada）：dense 125.6 ms，VC 102.8 ms（↓18.2%），VP 109.7 ms（↓12.7%），ours 98.1 ms（↓21.9%）。</p>
+<h2 id="_6">边界与局限</h2>
+<ul>
+<li>刷新增加计算量至约1.6×稠密FLOPs，能量增加约18%每块，作者未提供能效与延迟的联合优化方案。</li>
+<li>可靠性评估限于2个策略（OpenVLA-OFT、CogACT-Base）、4个LIBERO套件、4个SIMPLER任务；物理平台仅验证延迟，未验证成功率。</li>
+<li>刷新解决自收获门控导致的失败，但不解决门控设计或模型基座的限制；操作边界可能因任务、基座和门控族而异。</li>
+<li>并发检测器（针对分布偏移或开环偏差）未在此测试；反应式信号（mid-chunk re-query分歧、proprioceptive跟踪偏差）早期窗口AUROC 0.45–0.65，全episode AUROC 0.80是长度伪影，条件化后0.26–0.44。</li>
+<li>结论限于OFT上测试的触发器；CogACT上oracle触发器在γ=0.90达到稠密成功率，说明触发失败结论为基座特定。</li>
+</ul>
+<h2 id="_7">工程启示</h2>
+<ul>
+<li><strong>复现时先核对门控来源</strong>：任何token skipping方法的闭环评估必须报告门控信号是来自稀疏前向还是稠密前向。若门控来自加速前向，0.9 skip ratio下的成功率可能从0.98跌至0.68（reuse）或0.31（deletion），这是最易踩坑的混淆点。</li>
+<li><strong>刷新窗口的时序验证</strong>：执行间隙刷新依赖约400 ms的执行窗口。在H100上离路径稠密前向p50为63.6 ms、p99为79.9 ms，均远小于窗口；但在RTX 4090上p50为122.2 ms，若执行窗口缩短或硬件更慢，需重新验证截止时间。建议先测量目标平台的稠密前向延迟与执行窗口的比值。</li>
+<li><strong>触发式刷新不可靠</strong>：SAFE-Pruner的触发率在Object任务上仅0.09%（3,222次编码触发3次），而该任务成功率仅0.19。若下游团队计划采用触发式刷新，应预期在门控信号不可靠时触发器会静默失效；无条件刷新是更稳妥的架构选择。</li>
+<li><strong>高skip ratio边界</strong>：干净门控在0.97 skip ratio前与稠密统计不可区分，而自收获门控在0.65即开始分离。若需在0.9以上skip ratio工作，必须保证门控来源为稠密前向，否则成功率可能降至0.06（VC在0.97时）。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.00391</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">VLA-Pruner</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">CogACT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_xu_vla_cache_efficient_vision_lan_2025/">VLA-Cache</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gate_not_cache_gate_provenance_bounds_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_liu_vla_pruner_temporal_aware_dual_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Pruner</h3>
+          <p>VLA-Pruner 是由上海交通大学人工智能学院、中国科学技术大学、哈尔滨工业大学（深圳）及北京智源人工智能研究院联合提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_xu_vla_cache_efficient_vision_lan_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Cache</h3>
+          <p>VLA-Cache 是由悉尼大学和上海交通大学于 2025 年提出的训练无关推理加速方法，旨在提升视觉-语言-动作模型在机器人操控中的实时性。其核心贡献是通过自适应缓存与复用帧间静态视觉…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">
+          <span class="entry-type">论文</span>
+          <h3>CogACT</h3>
+          <p>CogACT 是清华大学、微软亚洲研究院、中国科学技术大学及中科院微电子所联合提出的 2024 年大型视觉-语言-动作模型，专为机器人操作任务设计。其核心贡献在于提出一种组件化 VLA…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">门控来源与跳过机制的因子分解</a></li>
+<li><a href="#actuation-slack-refresh">执行间隙刷新（Actuation-Slack Refresh）</a></li>
+<li><a href="#safe-pruner">与SAFE-Pruner的对比</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a><ul>
+<li><a href="#libero-objectskip-ratio-09">受控因子实验（LIBERO-Object，skip ratio 0.9）</a></li>
+<li><a href="#2skip-ratio-09">闭环成功率（表2，skip ratio 0.9）</a></li>
+<li><a href="#3vla-cache09-skip-ratio">刷新配置（表3，VLA-Cache，0.9 skip ratio）</a></li>
+<li><a href="#56">高比例边界（图5、6）</a></li>
+<li><a href="#709-skip-ratio">延迟（图7，0.9 skip ratio，毫秒）</a></li>
+</ul>
+</li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

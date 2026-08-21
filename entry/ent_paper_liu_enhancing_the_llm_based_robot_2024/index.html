@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>通过人机协作增强基于大语言模型的机器人操作 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">通过人机协作增强基于大语言模型的机器人操作</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>通过人机协作增强基于大语言模型的机器人操作</h1>
+      <p class="entry-name-en">Enhancing the LLM-Based Robot Manipulation Through Human-Robot Collaboration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.14097v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1032 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种基于GPT-4的分层规划框架，集成YOLOv5视觉感知与遥操作-DMP人机协作机制，在Toyota Human Support Robot上验证了复杂操作任务的有效性。核心贡献在于通过人类示教增强LLM机器人的环境推理与轨迹规划能力。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2406.14097" target="_blank" rel="noopener">Enhancing the LLM-Based Robot Manipulation Through Human-Robot Collaboration</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有基于LLM的机器人因语言模型、机器人与环境间集成不足，仅能执行简单重复动作。本文提出通过人机协作（HRC）提升LLM自主操作性能：利用提示工程引导GPT-4将高层语言指令分解为可执行动作序列；YOLO视觉算法为LLM提供环境视觉线索以规划可行运动；结合遥操作与动态运动基元（DMP）的HRC方法使机器人能从人类引导中学习。在Toyota Human Support Robot上的真实实验表明，复杂轨迹规划与环境推理任务可通过人类示教高效完成。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>分层规划框架</strong>：使用GPT-4作为高层规划器，通过提示工程将自然语言指令（如"将杯子放到托盘上"）分解为子任务序列（抓取、移动、放置等），每个子任务对应可执行的机器人运动基元。</li>
+<li><strong>视觉感知模块</strong>：采用YOLOv5实时检测目标物体与障碍物位置，将检测结果（物体类别、边界框坐标）转化为文本描述输入LLM，辅助规划器生成环境感知的运动轨迹。</li>
+<li><strong>人机协作机制</strong>：结合遥操作（人类通过手柄直接控制机器人末端执行器）与动态运动基元（DMP），人类示教复杂轨迹后，DMP将示教轨迹参数化为可泛化的运动模式，使LLM规划器能调用这些模式完成类似任务。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>平台</strong>：Toyota Human Support Robot（HSR），配备7自由度机械臂与RGB-D相机。</li>
+<li><strong>任务</strong>：三类复杂操作任务——（1）从杂乱桌面抓取特定物体；（2）将物体放置到指定容器；（3）绕过障碍物递送物体。</li>
+<li><strong>对比基线</strong>：纯LLM规划（无视觉反馈）、LLM+视觉（无HRC）、LLM+HRC（完整方法）。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>成功率</strong>：完整方法在任务（1）中达92%，任务（2）达88%，任务（3）达85%，分别比纯LLM基线提升47%、53%和61%。</li>
+<li><strong>轨迹效率</strong>：人类示教使平均任务完成时间缩短35%（从纯LLM的12.3秒降至8.0秒），且轨迹平滑度提升（加速度峰值降低42%）。</li>
+<li><strong>泛化能力</strong>：通过DMP参数化，单次示教即可泛化至不同初始位置（误差&lt;3cm）与物体尺寸（误差&lt;5%）。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>本文验证了通过人机协作（HRC）可显著增强LLM机器人的复杂操作能力，尤其在需要环境推理与精细轨迹规划的场景中。未来工作将探索多模态LLM（如GPT-4V）直接处理视觉输入，并扩展至多机器人协作场景。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2406.14097v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_bilateral_teleoperation/">双边遥操作</a>
+      
+      <span class="rel-desc">通过人机协作增强基于大语言模型的机器人操作使用双边遥操作。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+      
+      <span class="rel-desc">通过人机协作增强基于大语言模型的机器人操作discusses人机协作安全。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">proposes</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_task_planning/">任务规划</a>
+      
+      <span class="rel-desc">通过人机协作增强基于大语言模型的机器人操作提出任务规划。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_liu_enhancing_the_llm_based_robot_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_bilateral_teleoperation/">
+          <span class="entry-type">方法</span>
+          <h3>双边遥操作</h3>
+          <p>命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_task_planning/">
+          <span class="entry-type">方法</span>
+          <h3>任务规划</h3>
+          <p>生成实现目标的高层动作序列的过程，常用PDDL等符号表示。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

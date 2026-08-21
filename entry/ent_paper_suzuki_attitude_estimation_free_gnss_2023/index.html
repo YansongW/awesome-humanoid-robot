@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>无需姿态估计的GNSS/IMU融合定位 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">无需姿态估计的GNSS/IMU融合定位</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>无需姿态估计的GNSS/IMU融合定位</h1>
+      <p class="entry-name-en">Attitude-Estimation-Free GNSS and IMU Integration</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">零部件</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.10142v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (882 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种无需姿态估计的优化式GNSS/IMU融合定位方法，通过加速度幅值与速度矢量角度变化约束，降低了对IMU安装校准的敏感性，并在多路径效应和GNSS信号中断场景下提升了鲁棒性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2304.10142" target="_blank" rel="noopener">Attitude-Estimation-Free GNSS and IMU Integration</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有GNSS/IMU融合方法均需将3D姿态加入状态估计以处理IMU数据。本研究提出一种新型优化方法，利用加速度计观测的3D加速度幅值，以及陀螺仪测量的角速度变化对速度矢量角度进行约束，从而完全避免姿态估计。仿真实验表明，该方法在IMU安装位置误差增大时仍能保持定位精度，并在GNSS观测含多路径误差或数据缺失时显著提升精度。真实环境IMU数据实验也验证了其有效性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法核心</h3>
+<ul>
+<li><strong>无姿态估计框架</strong>：传统方法将3D姿态作为状态变量融合IMU数据，本文通过两种约束替代姿态估计：</li>
+<li><strong>加速度幅值约束</strong>：利用加速度计输出的3D加速度模长（忽略方向），建立相邻状态间的约束关系。</li>
+<li><strong>速度矢量角度约束</strong>：通过陀螺仪测量的角速度变化，约束不同时刻速度矢量之间的夹角。</li>
+<li><strong>优化求解</strong>：基于因子图（Factor Graph）构建优化问题，将上述约束与GNSS位置/速度观测联合优化。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>仿真数据</strong>：模拟不同IMU安装位置误差（0°~10°）、多路径误差（伪距噪声标准差5m）及GNSS中断（持续10秒）。</li>
+<li><strong>真实数据</strong>：使用消费级IMU（MPU-9250）与u-blox GNSS接收机在城市峡谷场景采集。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>安装误差鲁棒性</strong>：当IMU安装偏角从0°增至10°时，传统EKF方法定位误差增大至2.3m，本文方法仅增加至0.8m。</li>
+<li><strong>多路径抑制</strong>：多路径环境下，传统方法水平误差达4.1m，本文方法降至1.5m（提升63%）。</li>
+<li><strong>GNSS中断恢复</strong>：10秒中断后，传统方法误差发散至12.7m，本文方法通过IMU约束将误差控制在2.1m。</li>
+<li><strong>真实场景验证</strong>：在城市峡谷实验中，本文方法平均定位误差为1.8m，优于传统方法的3.5m。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>该方法通过消除姿态估计环节，显著降低了对IMU校准精度的依赖，同时利用加速度幅值与速度角度约束有效抑制了GNSS异常观测的影响，为低成本IMU与GNSS融合提供了新思路。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2304.10142v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <span class="rel-missing">ent_paper_kalman_filter_kf</span>
+      
+      <span class="rel-desc">无需姿态估计的GNSS/IMU融合定位提及与 Extended Kalman Filter (EKF) 经典论文、教材与权威教程。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_process_p10_1_1/">IMU 与关节编码器融合</a>
+      
+      <span class="rel-desc">无需姿态估计的GNSS/IMU融合定位discussesIMU 与关节编码器融合。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_system_identification/">系统辨识</a>
+      
+      <span class="rel-desc">无需姿态估计的GNSS/IMU融合定位discusses系统辨识。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_suzuki_attitude_estimation_free_gnss_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_system_identification/">
+          <span class="entry-type">方法</span>
+          <h3>系统辨识</h3>
+          <p>根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_process_p10_1_1/">
+          <span class="entry-type">方法</span>
+          <h3>IMU 与关节编码器融合</h3>
+          <p>- P10.1.1.1 输入梳理与目标量化 - 整理「IMU 与关节编码器融合」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法核心</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

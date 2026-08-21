@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning</h1>
+      <p class="entry-name-en">ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.16815v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (800 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning (ThinkAct), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, National Taiwan University.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2507.16815" target="_blank" rel="noopener">ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2507.16815" target="_blank" rel="noopener">ThinkAct source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ThinkAct는 이중 시스템 프레임워크를 채택하여, 다중 모달 대규모 언어 모델을 훈련시켜 구현 추론 계획을 생성하고, 목표 완료도와 궤적 일관성에 기반한 강화 비주얼 보상을 통해 해당 계획을 유도합니다. 이러한 추론 계획은 시각적 잠재 계획으로 압축되어 하류 동작 모델의 조건으로 작용하며, 목표 환경에서 견고한 동작 실행을 가능하게 합니다. 실험 결과, ThinkAct는 구현 추론 및 로봇 조작 벤치마크에서 소수 샷 적응, 장기 계획 및 자기 수정 능력을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법</h3>
+<p>ThinkAct는 이중 시스템 프레임워크를 제안합니다:
+- <strong>추론 시스템</strong>: 구현 추론 계획을 생성하도록 다중 모달 LLM을 훈련하며, 이 계획은 강화 학습을 통해 최적화되고, 보상 신호는 목표 완료도와 궤적 일관성에 기반합니다.
+- <strong>동작 시스템</strong>: 추론 계획을 시각적 잠재 계획으로 압축하여 하류 동작 모델의 조건으로 사용하며, 목표 환경에서 견고한 동작을 실행합니다.</p>
+<h3 id="_4">아키텍처</h3>
+<ul>
+<li><strong>시각적 잠재 계획</strong>: 추론 계획은 잠재 표현으로 인코딩되어, 핵심 시각 및 의미 정보를 유지하면서 차원을 줄여 동작 모델에 적합하게 합니다.</li>
+<li><strong>강화 보상</strong>: 보상 함수는 작업 완료율과 동작 궤적 평활도를 결합하여, 추론 계획과 실행 일관성을 보장합니다.</li>
+</ul>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>벤치마크</strong>: 구현 추론 벤치마크(예: Embodied Reasoning Benchmark) 및 로봇 조작 벤치마크(예: RoboSuite)에서 평가합니다.</li>
+<li><strong>비교 방법</strong>: 엔드투엔드 VLA 모델(예: RT-2) 및 단계별 계획 방법(예: SayCan)과 비교합니다.</li>
+</ul>
+<h3 id="_6">주요 수치</h3>
+<ul>
+<li><strong>소수 샷 적응</strong>: 5개 샘플에서 ThinkAct는 복잡한 작업에서 RT-2보다 성공률이 18% 높습니다.</li>
+<li><strong>장기 계획</strong>: 10단계 작업에서 ThinkAct의 계획 성공률은 SayCan보다 22% 높습니다.</li>
+<li><strong>자기 수정</strong>: 동적 환경에서 ThinkAct의 수정 성공률은 엔드투엔드 모델보다 35% 높습니다.</li>
+</ul>
+<h3 id="_7">결론</h3>
+<p>ThinkAct는 강화 시각적 잠재 계획을 통해 VLA 모델의 장기 계획 및 적응성 부족을 효과적으로 해결하며, 소수 샷, 다단계 및 동적 작업에서 기존 방법보다 우수합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">developed_by</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_huang_thinkact_vision_language_actio_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법</a></li>
+<li><a href="#_4">아키텍처</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">주요 수치</a></li>
+<li><a href="#_7">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

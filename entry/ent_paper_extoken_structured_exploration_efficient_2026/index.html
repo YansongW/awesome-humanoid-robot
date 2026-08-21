@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</h1>
+      <p class="entry-name-en">ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforcement Fine-tuning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ExToken 是一种面向视觉-语言-动作（VLA）模型强化学习（RL）后训练的结构化探索框架，由研究团队提出，旨在解决 RL 微调中因动作模式坍缩导致的探索停滞与样本效率低下问题。其核心贡献在于通过离散探索 token 显式引导策略探索多样化行为模式，在不增加交互预算的前提下显著提升轨迹多样性，从而在 LIBERO 仿真基准和真实世界操作任务中取得优于现有基线的成功率。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12931" target="_blank" rel="noopener">arXiv:2607.12931 ExToken: Structured Exploration for Efficient Vision-Language-Action Reinforceme</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA-RL 工作多聚焦于奖励塑形、价值函数设计或离线-在线范式转换，却普遍回避了一个更底层的问题：策略在 RL 优化中如何主动、高效地探索状态-动作空间。作者通过实证揭示，标准随机采样在优化推进中会导致轨迹相似度持续上升，即动作模式坍缩，使任务性能过早停滞于次优水平。这一观察将问题从“如何更优地利用已有数据”转向“如何生成更有信息量的新数据”，改变了样本效率讨论的焦点。</p>
+<p>其真正改变的是对“探索”这一 RL 核心环节的建模方式：不再依赖隐式的随机性（如噪声或熵正则），而是将探索显式地结构化为离散的行为模式选择。这相当于在策略输入空间引入一个可学习的“探索意图”变量，使得 RL 优化既能保持多样性，又能逐步偏向状态相关的有效行为，从而在固定交互预算下获得更高的数据利用率和更快的收敛速度。</p>
+<h2 id="_2">方法拆解</h2>
+<p>ExToken 框架由四个关键组件构成，其核心思想是将探索问题分解为“选择何种行为模式”与“如何执行该模式”两个层次。</p>
+<h3 id="token">Token 构建：从演示数据中提取行为模式</h3>
+<ul>
+<li>使用预训练视频嵌入模型 E（如 RZEN-Embed）提取离线演示轨迹的潜在时空特征。</li>
+<li>在潜在空间执行 K-means 聚类，得到 K 个质心 {c₁, c₂, …, c_K}，每个质心 c_k 定义一个离散探索 token k。</li>
+<li>每条演示轨迹被分配到其最近质心对应的簇，同一簇内轨迹共享同一 token，代表一种不同的行为模式。</li>
+</ul>
+<h3 id="token-warm-up">Token 条件化 Warm-Up</h3>
+<ul>
+<li>将 token 嵌入直接追加到策略输入序列末尾（在 token 嵌入层内）。</li>
+<li>每条演示轨迹与其分配簇的中心 token 配对，进行监督微调（SFT）warm-up。</li>
+<li>目的：让策略学习 token 与对应行为模式之间的关联，为 RL 阶段的结构化探索建立先验。</li>
+</ul>
+<h3 id="rl">RL 期间的结构化探索</h3>
+<ul>
+<li>每条 rollout 均匀采样一个探索 token：token_k ~ U(1, K)，并将其前置到策略输入。</li>
+<li>相比传统随机探索，token 显式引导策略朝向不同行为模式，显著提升 rollout 多样性和状态-动作覆盖。</li>
+<li>该设计仅通过输入条件化引入，不改变策略网络结构，因此可无缝集成到不同 VLA 架构。</li>
+</ul>
+<h3 id="token-state-conditioned-token-selector">状态条件 Token 选择器（State-Conditioned Token Selector）</h3>
+<ul>
+<li>给定初始观测 s₀（图像观测 o₀ + 语言指令 l），选择器 φ 预测 token 空间上的类别分布：</li>
+<li>P_φ(token_k | s₀; τ) = exp(z_k/τ) / Σⱼ exp(z_j/τ)，其中 z = MLP(SigLIP(s₀)) ∈ R^K，τ 为采样温度。</li>
+<li>在聚类后的离线数据集上用分配的簇标签作为监督进行 warm-up。</li>
+<li>RL 期间从温度缩放分布中采样 token，保持探索多样性同时逐步偏向状态相关的行为模式。</li>
+<li>推理时确定性输出 arg max 的 token。</li>
+</ul>
+<h3 id="reinforce">REINFORCE 双层优化</h3>
+<ul>
+<li>Token 选择器 φ 与 VLA 策略 π_θ 联合优化。</li>
+<li>VLA 策略使用标准 RL 目标（如 GRPO）更新。</li>
+<li>Token 选择器在 episode 级别作为单步决策过程使用 REINFORCE 优化：</li>
+<li>∇_φ J(φ) = Σₖ P_φ(token_k | s₀) · (R(τ) − b) · ∇_φ log P_φ(token_k | s₀)</li>
+<li>R(τ) 为轨迹奖励，b 为方差缩减基线（按任务分别计算）。</li>
+<li>设计理由：选择器随策略学习演化，逐步学习为不同初始状态预测有效行为模式。</li>
+</ul>
+<h2 id="_3">关键创新</h2>
+<ol>
+<li>
+<p><strong>探索的结构化离散化</strong>：将连续的动作探索空间映射为 K 个离散行为模式 token，这是对传统连续探索（如噪声扰动）或隐式探索（如熵正则）的根本性替代。其新颖性在于将“探索什么”从策略优化中解耦出来，形成一个可学习的、状态条件的选择问题，使得探索更具目的性和可解释性。</p>
+</li>
+<li>
+<p><strong>双层优化架构</strong>：将 token 选择器 φ 与策略 π_θ 联合优化，但采用不同的更新机制——策略用 RL 目标，选择器用 REINFORCE。这种设计允许选择器在策略学习过程中动态调整其对不同行为模式的偏好，实现探索-利用的自动平衡，而无需手工设计探索调度策略。</p>
+</li>
+<li>
+<p><strong>框架无关性与低侵入性</strong>：token 仅通过输入条件化引入，不改变策略网络结构或 RL 算法本身，因此可无缝集成到不同 VLA 架构（如 OpenVLA、π₀.₅）和不同 RL 框架（如 GRPO、Evo-RL）。这种设计降低了采用门槛，使现有 VLA-RL 系统可以低成本升级为结构化探索版本。</p>
+</li>
+</ol>
+<h2 id="_4">实验与结果</h2>
+<p>实验覆盖 LIBERO 仿真基准和真实世界操作任务，核心对照为同预算下的 RLinf-GRPO 基线。</p>
+<h3 id="libero-table-1-512-rollouts100">LIBERO 仿真结果（Table 1，交互预算 512 rollouts/步，100 步）</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>Long</th>
+<th>Average</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RLinf-GRPO †</td>
+<td>98.6</td>
+<td>98.4</td>
+<td>95.1</td>
+<td>95.2</td>
+<td>96.8</td>
+</tr>
+<tr>
+<td>ExToken (Ours) †</td>
+<td>99.0</td>
+<td>99.4</td>
+<td>96.5</td>
+<td>97.8</td>
+<td>98.2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ExToken 总体平均成功率 98.2%，优于同设置基线 RLinf-GRPO（96.8%），提升 1.4 个百分点（由表内数值 96.8→98.2 计算）。</li>
+<li>LIBERO-Long 套件上从 95.2% 提升至 97.8%，提升 2.6 个百分点（由表内数值 95.2→97.8 计算），表明结构化探索对长视界任务尤其有效。</li>
+<li>ExToken 优于强 SFT 基线 π₀.₅（96.9%）和 OpenVLA-OFT（97.1%），说明 RL 后训练在结构化探索下能超越纯 SFT 上限。</li>
+</ul>
+<h3 id="table-2-20-rollout">真实世界结果（Table 2，每任务 20 条 rollout 评估）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Fold clothes 原始</th>
+<th>Wipe table 原始</th>
+<th>Pour water 原始</th>
+<th>Insert pen 原始</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅</td>
+<td>75</td>
+<td>70</td>
+<td>65</td>
+<td>65</td>
+</tr>
+<tr>
+<td>Evo-RL</td>
+<td>90</td>
+<td>90</td>
+<td>80</td>
+<td>85</td>
+</tr>
+<tr>
+<td>ExToken</td>
+<td>95</td>
+<td>95</td>
+<td>90</td>
+<td>90</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ExToken 在所有任务的“原始”设置中优于 Evo-RL 基线，平均提升 6.25%（由表内数值计算）。</li>
+<li>在泛化设置（-Object、-BG、-Lighting）中，ExToken 的性能下降通常限制在 5%–10%，而基线在相同扰动下经历更大退化（如 Fold clothes -Lighting 下 ExToken 下降 15%，Evo-RL 下降 25%）。</li>
+</ul>
+<h3 id="6">极端交互约束实验（图 6）</h3>
+<ul>
+<li>将每优化步 rollout 预算从 512 降至 128。</li>
+<li>RLinf-GRPO 在 256 条 rollout 时降至 90.3% 成功率，在 128 条 rollout 时训练动态不稳定。</li>
+<li>ExToken 仅用 256 条 rollout（93.4%）直接匹敌 RLinf 使用双倍数据预算（512 条 rollout）的表现（96.8%），差距 3.4 个百分点（由表内数值 93.4→96.8 计算）。</li>
+<li>ExToken 在 128 条 rollout 的极端限制下也变得不太稳定。</li>
+</ul>
+<h3 id="token-7">Token 粒度敏感性（图 7）</h3>
+<ul>
+<li>评估 K ∈ {3, 6, 10}。</li>
+<li>K = 3 与 K = 6 的结果高度可比，K = 10 时出现轻微性能下降。</li>
+</ul>
+<h2 id="_5">边界与局限</h2>
+<ul>
+<li>当前 token 利用方式相对基础，未联合优化 token 表征与策略，也未引入概率性 token dropout 以无条件捕获轨迹多样性。</li>
+<li>token 来源于预训练编码器对视频表征的聚类，采用更结构化的方法（如状态条件潜在模型）可能产生更好地捕获任务动态的探索 token。</li>
+<li>ExToken 仅使用从初始状态预测的单一 token 条件化策略，对短视界任务有效，但扩展到细粒度、时间条件化 token 可使智能体为复杂长视界操作任务动态切换探索策略。</li>
+<li>在 128 条 rollout 的极端限制下 ExToken 变得不稳定，归因于从极少数初始状态采样多样化 token 导致的梯度方差增大；在此类受限预算下自适应减少簇数量是未来方向。</li>
+<li>真实世界实验仅涉及 4 个任务，且每任务仅 20 条 rollout 评估，统计显著性有限。</li>
+</ul>
+<h2 id="_6">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：仿真实验的关键超参数为 K = 6、warm-up 数据量（LIBERO-Long 每簇 6 条，其余套件每簇 2 条）、REINFORCE 学习率 1e-6、采样温度 2.0、token 选择器每 5 步更新一次。这些参数对性能影响敏感，建议严格遵循。</li>
+<li><strong>最易踩坑点</strong>：token 选择器的 REINFORCE 优化对基线 b 的计算方式敏感（按任务分别计算），若全局共享基线可能导致梯度方差增大；此外，聚类应在每个任务内独立进行，跨任务聚类会引入任务间差异偏差。</li>
+<li><strong>工程选型建议</strong>：ExToken 的框架无关性使其可作为现有 VLA-RL 系统的即插即用模块。对于交互预算紧张（如每步少于 256 条 rollout）的场景，建议先验证 K 值敏感性（K = 3 或 6 更稳健），并考虑自适应减少簇数量以缓解梯度方差问题。</li>
+<li><strong>下游团队注意</strong>：真实世界实验中，视频编码时转换为灰度以减轻颜色和光照变化干扰，这一预处理对泛化性能有显著影响，建议在部署时保留。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.12931</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_extoken_structured_exploration_efficient_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#token">Token 构建：从演示数据中提取行为模式</a></li>
+<li><a href="#token-warm-up">Token 条件化 Warm-Up</a></li>
+<li><a href="#rl">RL 期间的结构化探索</a></li>
+<li><a href="#token-state-conditioned-token-selector">状态条件 Token 选择器（State-Conditioned Token Selector）</a></li>
+<li><a href="#reinforce">REINFORCE 双层优化</a></li>
+</ul>
+</li>
+<li><a href="#_3">关键创新</a></li>
+<li><a href="#_4">实验与结果</a><ul>
+<li><a href="#libero-table-1-512-rollouts100">LIBERO 仿真结果（Table 1，交互预算 512 rollouts/步，100 步）</a></li>
+<li><a href="#table-2-20-rollout">真实世界结果（Table 2，每任务 20 条 rollout 评估）</a></li>
+<li><a href="#6">极端交互约束实验（图 6）</a></li>
+<li><a href="#token-7">Token 粒度敏感性（图 7）</a></li>
+</ul>
+</li>
+<li><a href="#_5">边界与局限</a></li>
+<li><a href="#_6">工程启示</a></li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

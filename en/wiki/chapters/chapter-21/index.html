@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 21: Data Infrastructure · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 21: Data Infrastructure</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-21-data-infrastructure">Chapter 21: Data Infrastructure</h1>
+<h2 id="summary">Summary</h2>
+<p>The intelligence level of humanoid robots is shifting from "model-driven" to "data-driven": the performance ceiling of Vision-Language-Action (VLA) models, imitation learning, and reinforcement learning increasingly depends on the scale, diversity, and quality of training data, rather than purely on network architecture innovations. Unlike internet text/images, robot data cannot be directly crawled from the web—it must be "produced" through teleoperation, motion capture, simulation synthesis, and fleet data feedback, and then undergo cleaning, annotation, alignment, and version management before entering the training pipeline. This chapter elaborates on the complete lifecycle of humanoid robot data infrastructure from a systems engineering perspective: data requirement modeling and modality pyramid, real-world data collection (teleoperation systems, robot-free collection, motion capture and retargeting), simulation synthetic data and data engine, representative public datasets and benchmarks (Open X-Embodiment, AgiBot World, DROID, ARIO, etc.), data formats and toolchains (LeRobot, etc.), as well as engineering constraints such as storage, bandwidth, cost, and compliance. A Python example for estimating data fleet storage and bandwidth is provided to illustrate the engineering scale. This chapter aims to answer a core question: how should a "data factory" that can continuously feed general-purpose humanoid robot models be designed and operated. After reading this chapter, readers should be able to perform a three-dimensional positioning of "cost—fidelity—scale" for any data source and propose an engineering solution before entering the training pipeline.</p>
+<p><strong>Keywords</strong>: Data Infrastructure; Data Engine; Data Flywheel; Teleoperation; Motion Capture; Synthetic Data; Domain Randomization; Open X-Embodiment; AgiBot World; DROID; LeRobot; VLA</p>
+<hr />
+<h2 id="211-overview-of-data-infrastructure">21.1 Overview of Data Infrastructure</h2>
+<h3 id="2111-from-model-driven-to-data-driven-the-data-bottleneck-of-humanoid-robots">21.1.1 From Model-Driven to Data-Driven: The "Data Bottleneck" of Humanoid Robots</h3>
+<p>In classical robotics, behavior is primarily generated through precise modeling and optimal control—dynamic equations, constraints, and cost functions are manually constructed by engineers, and the system's generalization capability is limited by model accuracy. In the new learning-centric paradigm, behavior is "distilled" from large-scale demonstration or interaction data: Diffusion Policy, Action Chunking Transformer (ACT), and various VLA models (such as OpenVLA, π0, GR00T N1) all use massive multimodal trajectories as training material.</p>
+<p>This paradigm shift brings structural contradictions. It is important to emphasize that "data-driven" does not mean the demise of model knowledge: dynamic models, geometric constraints, and safety rules still play fundamental roles in the quality inspection, retargeting, and feasibility screening stages of the data pipeline; what changes is their role from "direct generators of behavior" to "gatekeepers of data."</p>
+<p>Specifically, the structural contradictions are reflected in the following three aspects:</p>
+<ul>
+<li><strong>Internet data is "free," robot data is "expensive."</strong> Text and images can be obtained from public networks at very low cost, while a robot manipulation trajectory with joint states, force sensing, and multi-view video must be "produced" second by second by real hardware or high-fidelity simulation.</li>
+<li><strong>Data scarcity is particularly severe for humanoid robots.</strong> Industrial robotic arms have decades of deployment accumulation, while the inventory of general-purpose humanoid robots has only reached the tens of thousands level in recent years; moreover, humanoid robots have high degrees of freedom (30–60 joints throughout the body) and a wide range of tasks (walking, carrying, bimanual manipulation, human-robot interaction), with the information dimension of a single trajectory being much higher than that of a fixed robotic arm.</li>
+<li><strong>Data distribution determines capability boundaries.</strong> The generalization error of Behavior Cloning increases as the demonstration data's coverage of the target distribution decreases; policies trained on data collected in a single lab, on a single platform, for a single task are difficult to transfer to open environments.</li>
+</ul>
+<p>The importance of data distribution can be quantitatively understood from the perspective of <strong>covariate shift</strong>. Let the error probability of the policy at each time step be <span class="arithmatex">\(\epsilon\)</span> and the task horizon be <span class="arithmatex">\(T\)</span>; then the cumulative error of behavior cloning grows superlinearly with <span class="arithmatex">\(T\)</span>—classical analysis gives an upper bound of <span class="arithmatex">\(O(\epsilon T^2)\)</span>: a one-step error brings the robot into a state outside the training distribution, thus further increasing the error probability at the next step, forming an "error compounding" effect. DAgger (Dataset Aggregation) methods iteratively have experts label the states actually visited by the policy, reducing the upper bound to <span class="arithmatex">\(O(\epsilon T)\)</span>; their essence is <strong>using targeted supplementary data collection to correct distribution shift</strong>—this is the theoretical basis for the data engine closed loop (see Section 21.3.3).</p>
+<p>Therefore, the industry generally regards data infrastructure as a "strategic asset" as important as actuators and batteries: whoever can produce high-quality multimodal data at a lower unit cost and higher throughput gains the initiative in model iteration. This closed-loop logic is vividly called the <strong>Data Flywheel</strong>: deployed robots generate data, data improves models, improved models enhance robot capabilities and task success rates, thereby supporting larger-scale deployment and more data.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Data-Driven, Data Flywheel, VLA</p>
+<ul>
+<li><strong>Data-driven</strong>: System behavior is primarily determined by models learned from data, rather than by manually established analytical models.</li>
+<li><strong>Data flywheel</strong>: A self-reinforcing cycle where deployed robots generate data, data improves AI models, models enhance robot performance and generate more data.</li>
+<li><strong>VLA (Vision-Language-Action model)</strong>: A large model that takes visual observations and language instructions as input and directly outputs robot actions; it is one of the mainstream technical routes for current general-purpose humanoid robot intelligence.</li>
+</ul>
+</div>
+<h3 id="2112-data-modalities-and-the-data-pyramid">21.1.2 Data Modalities and the Data Pyramid</h3>
+<p>Humanoid robot training data naturally forms a pyramid structure along the three dimensions of "acquisition cost—scale—fidelity":</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TB
+    A[Internet Video &amp; Text&lt;br/&gt;Very Large Scale · Very Low Cost&lt;br/&gt;No Action Labels] --&gt; B[Egocentric Human Video&lt;br/&gt;Ego4D / Epic-Kitchens&lt;br/&gt;First-Person View · Lacks Robot Proprioception]
+    B --&gt; C[Human Motion Capture Data&lt;br/&gt;AMASS / OptiTrack Collection&lt;br/&gt;Has Full-Body Pose · Requires Retargeting]
+    C --&gt; D[Simulation Synthetic Data&lt;br/&gt;Isaac Sim / MuJoCo / Genesis&lt;br/&gt;Controllable Scale · Has Sim-to-Real Gap]
+    D --&gt; E[Real Robot Teleoperation Data&lt;br/&gt;ALOHA / Mobile ALOHA / Fleet Feedback&lt;br/&gt;Highest Fidelity · Highest Cost]</code></pre>
+<p>The layers are not substitutes but complements: modern training pipelines typically adopt a "pyramid curriculum"—first pre-train vision-language representations using internet video and text, then learn task priors and full-body motion priors from human video and motion capture data, next train low-level control and policies using large-scale simulation data, and finally perform alignment and fine-tuning with a small amount of high-quality real robot data. The HumanPlus Shadowing System is a typical representative of this approach: it first uses human motion data like AMASS to train full-body low-level policies in simulation, then uses RGB camera-based human pose estimation to drive a real humanoid robot to collect manipulation data.</p>
+<p>From a modality perspective, a complete humanoid robot training sample (usually called a <strong>trajectory</strong> or <strong>episode</strong>) generally includes:</p>
+<table>
+<thead>
+<tr>
+<th>Modality</th>
+<th>Typical Content</th>
+<th>Typical Sampling Rate</th>
+<th>Main Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vision</td>
+<td>Head/wrist/third-person RGB, Depth</td>
+<td>15–60 Hz</td>
+<td>Scene understanding, policy input</td>
+</tr>
+<tr>
+<td>Proprioception</td>
+<td>Joint angles, joint velocities, IMU, base pose</td>
+<td>100–1000 Hz</td>
+<td>State estimation, policy input, action supervision</td>
+</tr>
+<tr>
+<td>Action Labels</td>
+<td>Joint target positions/torques, end-effector poses</td>
+<td>30–500 Hz</td>
+<td>Supervisory signal for behavior cloning</td>
+</tr>
+<tr>
+<td>Force/Tactile</td>
+<td>6-axis force sensors, tactile arrays</td>
+<td>100–1000 Hz</td>
+<td>Contact-rich tasks, safety monitoring</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>Task instructions, step-by-step descriptions, speech</td>
+<td>Event-level</td>
+<td>VLA conditional input, task annotation</td>
+</tr>
+<tr>
+<td>Environmental Context</td>
+<td>Audio, scene point clouds, object pose ground truth</td>
+<td>1–30 Hz</td>
+<td>Multimodal understanding, data filtering</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Episode, Multi-Sampling-Rate Mixing, Action Label</p>
+<ul>
+<li><strong>Episode</strong>: The recording unit for one complete task execution; it is the basic granularity of robot learning data. A single episode contains tens to thousands of time steps.</li>
+<li><strong>Multi-sampling-rate mixing</strong>: The sampling rate difference between modalities can be up to two orders of magnitude (e.g., 30 Hz video vs. 1 kHz torque). The storage format must support timestamp-aligned retrieval. During training, alignment sampling is usually based on the lowest frequency modality, or high-frequency modalities are downsampled and feature-pooled.</li>
+<li><strong>Action label</strong>: The action signal used as the "ground truth" in supervised learning. In teleoperation data, it comes directly from the operator's command channel; in simulation data, it comes from the generation policy; in data without robot collection, it must be obtained indirectly through retargeting post-processing, with quality depending on the accuracy of the post-processing pipeline.</li>
+</ul>
+</div>
+<h3 id="2113-full-lifecycle-of-data-infrastructure">21.1.3 Full Lifecycle of Data Infrastructure</h3>
+<p>Data infrastructure is not a single "dataset repository" but a complete pipeline covering production, flow, consumption, and feedback. Its lifecycle can be divided into six stages:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[Collection&lt;br/&gt;Teleoperation/Motion Capture/Simulation] --&gt; B[Transmission &amp; Ingestion&lt;br/&gt;Edge Cache/Network Backhaul]
+    B --&gt; C[Storage &amp; Version Management&lt;br/&gt;Object Storage/Data Lake]
+    C --&gt; D[Cleaning &amp; Annotation&lt;br/&gt;Alignment/Quality Check/Semantic Annotation]
+    D --&gt; E[Training &amp; Evaluation&lt;br/&gt;Data Mixing/Sampling]
+    E --&gt; F[Deployment &amp; Feedback&lt;br/&gt;OTA Update/Failure Case Return]
+    F --&gt;|Failure &amp; Long-Tail Samples| A</code></pre>
+<p>Each stage has its specific engineering constraints: the collection stage is limited by hardware quantity and operator efficiency; the transmission stage is limited by bandwidth and edge storage; the storage stage is limited by cost and retrieval efficiency; the annotation stage is limited by manpower and automation tools; the training stage focuses on data mixing and curriculum design; the deployment stage distributes new models via OTA software updates and returns failure cases and long-tail scenarios, forming a <strong>Fleet Data Flywheel</strong>. Sections 21.2–21.5 will elaborate on this pipeline step by step.</p>
+<p>From an organizational perspective, this pipeline typically spans four types of teams: collection operations (workstation and operator management), platform engineering (storage, transmission, and toolchains), algorithms (training, evaluation, and mixing decisions), and compliance and safety. The most common failure mode for data infrastructure projects is not a wrong technology choice, but a lack of a common metric among the four teams for "what kind of data is considered useful"—establishing a unified indicator system anchored on real-robot evaluation is the first priority of project governance.</p>
+<h3 id="2114-relationship-between-this-chapter-and-other-chapters-in-the-book">21.1.4 Relationship Between This Chapter and Other Chapters in the Book</h3>
+<p>Data infrastructure sits between the hardware layer and the algorithm layer: the sensing and computing hardware discussed in Chapter 5 determines the physical upper limit of data collection (camera specifications, bus bandwidth, edge computing power); the software middleware in Chapter 22 determines the data flow within the robot (ROS 2 topics, DDS QoS, time synchronization); and the perception, planning, control, and VLA models in subsequent chapters are the ultimate consumers of the data pipeline. A key thread for understanding this chapter is: <strong>the design metrics of data infrastructure (throughput, synchronization accuracy, effective data rate, unit cost) must ultimately be translated into the real-robot performance gains of downstream models</strong>—discussing data scale in isolation from model evaluation is meaningless.</p>
+<h2 id="212-real-world-data-collection">21.2 Real-World Data Collection</h2>
+<p>Real-world data is the category with the highest fidelity and the highest unit cost among humanoid robot training data. This section expands along four technical routes: "with robot/without robot/human side/fleet side." Teleoperation systems directly produce "observation-action" pairs; robot-free collection uses human demonstrations to bypass hardware bottlenecks; motion capture provides ground truth for full-body motion; and fleet feedback turns deployment itself into a continuous data source. The cost structures, data characteristics, and applicable stages of these four routes differ, and actual projects typically use a combination.</p>
+<h3 id="2121-teleoperation-collection-master-slave-teleoperation-systems">21.2.1 Teleoperation Collection: Master-Slave Teleoperation Systems</h3>
+<p>Among real robot data, the highest quality comes from <strong>teleoperation</strong>: a human operator directly controls a slave robot to complete tasks via a master device. The system synchronously records all observations and actions, naturally forming "observation-action" pairs that can be directly used for behavioral cloning.</p>
+<p>A representative system in this direction is the ALOHA Teleoperation System: a set of low-cost dual-arm master-slave teleoperation hardware. The operator faces away from the robot, directly pulling the slave arm with the master arm, obtaining intuitive force feedback and motion mapping through mechanical coupling, used to collect imitation learning data for bimanual fine manipulation. Its derivative platform, Mobile ALOHA, further mounts the dual arms on a mobile base, allowing the operator to perform tasks requiring "mobility + bimanual manipulation" capabilities, such as cooking, cleaning, and taking elevators, via full-body guidance, used to collect data for home and warehouse scenarios. The ALOHA series demonstrates two important engineering conclusions:</p>
+<ul>
+<li><strong>Low-cost hardware can produce high-value data.</strong> ALOHA achieves contact-rich manipulation data collection, previously requiring expensive force-controlled robotic arms, at a hardware cost on the order of tens of thousands of RMB.</li>
+<li><strong>Isomorphic master-slave design significantly reduces cognitive load.</strong> When the kinematics of the master and slave arms are consistent, operators can achieve high collection efficiency and success rates without extensive training.</li>
+</ul>
+<p>In the more general <strong>bilateral teleoperation</strong> architecture, command signals flow from the master to the slave, and force/tactile feedback flows from the slave back to the master, enhancing transparency and safety, particularly suitable for contact-sensitive scenarios like handling fragile objects or assembly. The cost is increased system complexity and cost, along with strict requirements for communication latency.</p>
+<p>Besides master-slave robotic arms, common teleoperation interfaces in data factories include: VR headsets with controllers/data gloves (providing immersive first-person view and 6-DOF hand tracking, suitable for full-body teleoperation of humanoid robots), and exoskeletons (directly measuring the operator's full-body joint angles, mapping them to the robot's full body). Regardless of the interface, <strong>end-to-end latency</strong> is a core experience metric: generally, when the total latency of visual feedback plus the control loop exceeds approximately 100 ms, the operator's control precision and task success rate decrease significantly. Therefore, collection systems commonly use local direct video connections and low-latency video transmission, rather than routing through the cloud.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Teleoperation, Isomorphic Master-Slave, Bilateral Teleoperation, Transparency</p>
+<ul>
+<li><strong>Teleoperation</strong>: A human operator remotely controls a robot via an interface device; the robot's state and operation commands are synchronously recorded as demonstration data.</li>
+<li><strong>Isomorphic leader-follower</strong>: The kinematic structure of the master device and the slave robot are consistent, with a direct mapping in joint space.</li>
+<li><strong>Bilateral teleoperation</strong>: Adds a force/tactile feedback channel from the slave to the master on top of master-slave control.</li>
+<li><strong>Transparency</strong>: The degree to which the force perceived by the operator matches the actual contact force of the slave; a core metric of teleoperation system fidelity.</li>
+</ul>
+</div>
+<p>The efficiency of teleoperation collection can be characterized by "effective trajectories per hour." Let the average execution time for a single task be <span class="arithmatex">\(T_{task}\)</span>, the reset time between tasks be <span class="arithmatex">\(T_{reset}\)</span>, and the success rate be <span class="arithmatex">\(p\)</span>. Then the effective throughput rate for a single collection station is:</p>
+<div class="arithmatex">\[
+\eta = \frac{3600 \cdot p}{T_{task} + T_{reset}} \quad [\text{trajectories/hour}]
+\]</div>
+<p>Generally, for desktop-level bimanual tasks, <span class="arithmatex">\(T_{task}\)</span> is between 30–120 seconds, <span class="arithmatex">\(T_{reset}\)</span> often requires 10–60 seconds (object reset, scene arrangement), and the success rate <span class="arithmatex">\(p\)</span> for untrained operators is about 60–80%. This means the daily output of a single station is typically only on the order of hundreds. To accumulate a dataset on the scale of hundreds of thousands, dozens to hundreds of collection stations must be deployed in parallel – this is the origin of the "data factory" model.</p>
+<h3 id="2122-collection-protocol-design-tasks-metadata-and-quality-control">21.2.2 Collection Protocol Design: Tasks, Metadata, and Quality Control</h3>
+<p>The fundamental difference between a data factory and ordinary laboratory collection lies in <strong>protocolization</strong>. A scalable collection protocol should include at least the following elements:</p>
+<ul>
+<li><strong>Task Decomposition Specification</strong>: Break down complex tasks into atomic episodes with clear start/end criteria, each corresponding to one trajectory. Task descriptions use structured templates (scene, objects, target state, success criteria) to facilitate subsequent retrieval and balancing.</li>
+<li><strong>Metadata Specification</strong>: Each trajectory is bound with operator ID, station ID, robot unit number and calibration version, collection software version, and environment labels (lighting, weather, scene category). Trajectories lacking metadata are nearly impossible to trace for problem sources during large-scale mixed training.</li>
+<li><strong>Time Synchronization Specification</strong>: All cameras, robot state, and force signals share a unified clock source (hardware sync or PTP/NTP software sync), with timestamp alignment verification performed before storage.</li>
+<li><strong>Quality Inspection Process</strong>: Real-time quality checks at the collection end (automatic alarms for frame drops, synchronization errors, calibration failures) plus offline spot checks (stratified sampling by station and operator to verify success rate annotations).</li>
+</ul>
+<p>The benefits of protocolization are multifaceted: a unified protocol allows collection capacity from multiple stations, cities, or even countries to be merged into a single data lake; structured metadata makes "sampling training by task distribution" possible, which is precisely one of the key variables affecting VLA training effectiveness.</p>
+<h3 id="2123-robot-free-data-collection-handheld-interfaces-and-first-person-data">21.2.3 Robot-Free Data Collection: Handheld Interfaces and First-Person Data</h3>
+<p>The bottleneck of teleoperation lies in the number of robot hardware units. One alternative approach is <strong>robot-free data collection</strong>: humans directly complete tasks using tools equipped with sensors, and then map human actions to the robot.</p>
+<ul>
+<li><strong>UMI Gripper Interface</strong>: A combination of a handheld gripper and a wrist-mounted camera. The operator performs grasping and manipulation tasks in natural environments using the handheld gripper. The system records first-person video and the gripper's open/close state, then recovers the 6-DOF pose trajectory through post-processing. Its advantage is completely eliminating dependence on the robot itself, allowing large-scale parallel collection of "in-the-wild" data in any real environment.</li>
+<li><strong>HuDOR</strong>: A human-to-robot demonstration framework for dexterous hands. It collects fine-grained human hand motion data to train imitation learning policies for dexterous robot hands, addressing the difficulty of teleoperating high-DOF hands.</li>
+<li><strong>Human-Centric Video Datasets</strong>: The Ego4D first-person video dataset (over 3000 hours of egocentric video for first-person skill and interaction understanding) and the Epic-Kitchens dataset (first-person kitchen interaction videos), although lacking robot action labels, are widely used for learning affordances, hand-object interaction patterns, and task temporal structures, providing "human priors" for policies.</li>
+</ul>
+<p>The core technical challenge of robot-free collection is the <strong>embodiment gap</strong>: there are systematic differences in geometry, degrees of freedom, and contact characteristics between the human hand and a robot gripper/dexterous hand. Direct mapping can produce infeasible actions. Engineering typically requires post-processing steps like motion retargeting, grasp mapping, and feasibility filtering, along with a small amount of real robot data for alignment.</p>
+<p>From a data economics perspective, robot-free collection transforms "data production" from capital-intensive (acquiring and maintaining robot fleets) to labor-intensive (recruiting and training collectors). Its marginal cost structure is closer to traditional data annotation industries. Therefore, it is particularly suitable for on-site collection in target deployment environments (homes, supermarkets, warehouses) – collectors enter real scenes with handheld devices, simultaneously achieving scene realism and action naturalness, which is irreplicable by any laboratory station.</p>
+<h3 id="2124-motion-capture-and-full-body-motion-retargeting">21.2.4 Motion Capture and Full-Body Motion Retargeting</h3>
+<p>For locomotion abilities like walking and full-body coordination, <strong>motion capture (mocap)</strong> is the mainstream method for obtaining high-quality full-body motion data. The OptiTrack motion capture system achieves sub-millimeter 3D human tracking using infrared optical markers and is a typical device for laboratory-grade humanoid robot motion data collection and robot retargeting.</p>
+<p>In terms of data assets, the AMASS motion dataset aggregates multiple public motion capture databases, unifying them under a common parameterization (SMPL human model) to form a large-scale, clean collection of full-body human pose and shape sequences. It is widely used for humanoid robot simulation pre-training: first training low-level full-body tracking policies on AMASS, then transferring to real robots. The HumanPlus Shadowing dataset goes a step further, collecting data by having a humanoid robot perform "shadowing" of human motion, binding human motion with the robot's own state, used for training full-body imitation and teleoperation policies.</p>
+<p>The cost structure of the motion capture route lies between teleoperation and simulation: optical mocap venues and equipment require significant investment and professional maintenance for calibration, but collecting a single full-body motion sequence takes only seconds, resulting in extremely high data density per unit time. Its main limitation is the lack of object interaction and force information required for manipulation tasks, so it is typically used complementarily with teleoperation data, rather than as a replacement.</p>
+<p><strong>Motion retargeting</strong> from human to robot is typically formulated as a constrained optimization problem: given the different joint structures and link lengths between the human and robot, solve for the robot joint trajectory <span class="arithmatex">\(q(t)\)</span> such that key task-space features (hand/foot positions, center of mass, orientation) track the human demonstration:</p>
+<div class="arithmatex">\[
+\min_{q(t)} \sum_{k} w_k \left\| f_k(q(t)) - x_k^{human}(t) \right\|^2 \quad \text{s.t.} \quad q_{min} \le q \le q_{max},\; |\dot{q}| \le \dot{q}_{max}
+\]</div>
+<p>where <span class="arithmatex">\(f_k(\cdot)\)</span> is the forward kinematics mapping for the <span class="arithmatex">\(k\)</span>-th task-space feature, and <span class="arithmatex">\(w_k\)</span> is the weight. Engineering must also handle self-collision, ground contact consistency, and dynamic feasibility (the center of mass projection must fall within the support polygon); otherwise, the retargeted motion may be infeasible on the real robot.</p>
+<p>For walking-type motions, an additional check on <strong>contact timing consistency</strong> is required: the transition moments between the stance phase and swing phase in human demonstrations must match the consistency of the robot's foot contact forces after retargeting. If a human performs an action in the single-stance phase that requires double support for stability, direct retargeting will inevitably lead to imbalance. In engineering practice, contact states are typically incorporated as hard constraints or strong regularization terms into the aforementioned optimization problem, and a full-body dynamics rollout in simulation is used for final feasibility screening. Only segments that pass this screening enter the real robot training set.</p>
+<h3 id="2125-fleet-feedback-and-data-flywheel">21.2.5 Fleet Feedback and Data Flywheel</h3>
+<p>When robots enter large-scale deployment, the main battlefield for data collection shifts from "data factories" to "in-service fleets." The Fleet Data Flywheel describes the following closed loop: robots deployed at customer sites continuously record task execution processes (especially failure, human intervention, and low-confidence segments), which are filtered and sent back to the cloud for the next round of model training; new models are distributed via OTA software updates to improve the overall fleet success rate, thereby unlocking more task scenarios and generating more data.</p>
+<p>The unique value of fleet feedback data lies in:</p>
+<ul>
+<li><strong>True long-tail distribution</strong>. No matter how diverse the workstation scenarios in a data factory are, they cannot cover the long tail of lighting, ground conditions, objects, and human-robot interactions in real deployments; it is precisely these long-tail samples that determine the robustness of the policy.</li>
+<li><strong>Failure samples as supervisory signals</strong>. Moments of human intervention naturally mark the failure boundaries of the policy, serving as an important supplement to offline data.</li>
+<li><strong>Decreasing marginal cost</strong>. The collection hardware is already deployed and paid for by customers; the marginal cost of data is mainly bandwidth, storage, and annotation, far lower than building a dedicated collection fleet.</li>
+</ul>
+<p>Its engineering constraints are equally evident: privacy compliance (the site may contain sensitive information such as faces and home environments), return bandwidth (multi-channel video data is massive, typically requiring edge-side pre-filtering), and traceability of data versions and model versions (which version of the model was trained on which data). Section 21.5 will provide quantitative engineering estimates.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[In-service fleet executes tasks] --&gt; B[Edge-side records&lt;br/&gt;failure/intervention/low-confidence segments]
+    B --&gt; C[Pre-filtering and desensitization&lt;br/&gt;selective return]
+    C --&gt; D[Cloud data lake&lt;br/&gt;version management]
+    D --&gt; E[Targeted retraining&lt;br/&gt;long-tail sample weighting]
+    E --&gt; F[OTA distributes new model]
+    F --&gt;|Success rate improves&lt;br/&gt;unlocks new tasks| A</code></pre>
+<p>It is worth noting that the speed of the data flywheel is limited by the slowest link in the entire chain: if desensitization and annotation rely on manual work, or OTA releases require lengthy regression validation, the theoretical gains of the flywheel will be eroded by operational friction. Therefore, leading companies generally invest significant engineering resources in "automatic filtering—automatic pre-annotation—grayscale release," with the goal of compressing the cycle from "on-site failure" to "fix model online" from months to weeks or even days.</p>
+<h2 id="213-simulation-synthetic-data-and-data-engines">21.3 Simulation Synthetic Data and Data Engines</h2>
+<p>Real-world data is constrained by physical time and hardware quantity, while simulation transforms data production into an infinitely parallelizable computational problem. This section discusses the composition of simulation data pipelines, two types of amplification techniques—demonstration augmentation and automatic task generation—and the fundamental constraint of the Sim-to-Real gap. This constraint dictates that simulation data must be used in conjunction with real data, and that the "data engine" must be closed-loop rather than open-loop.</p>
+<h3 id="2131-simulation-data-generation-pipeline">21.3.1 Simulation Data Generation Pipeline</h3>
+<p>Real-world data is expensive and constrained by physical time. <strong>Synthetic data</strong> provides a parallelizable and scalable second source. Current mainstream simulation and training platforms include:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Positioning</th>
+<th>Role in the Data Pipeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVIDIA Isaac Sim</td>
+<td>GPU-accelerated photorealistic robot simulator</td>
+<td>High-fidelity rendering and physics simulation, supporting the GR00T synthetic data pipeline</td>
+</tr>
+<tr>
+<td>NVIDIA Isaac Lab</td>
+<td>Modular learning framework based on Isaac Sim</td>
+<td>Large-scale parallel policy training and data generation</td>
+</tr>
+<tr>
+<td>MuJoCo Physics Engine</td>
+<td>High-fidelity contact dynamics engine</td>
+<td>Humanoid robot control research and policy pre-training</td>
+</tr>
+<tr>
+<td>Genesis Generative Physics Engine</td>
+<td>Emerging generative general-purpose physics engine</td>
+<td>Ultra-fast parallel simulation, reducing data generation time</td>
+</tr>
+<tr>
+<td>HumanoidVerse</td>
+<td>Multi-simulator training framework</td>
+<td>Cross-engine training for Sim-to-Real humanoid robot learning</td>
+</tr>
+<tr>
+<td>ManiSkill3</td>
+<td>High-throughput manipulation simulation benchmark</td>
+<td>Large-scale manipulation task data and policy evaluation</td>
+</tr>
+</tbody>
+</table>
+<p>The typical flow of a simulation data pipeline is: Scene and asset generation (objects, lighting, textures) → Task definition (success criteria, initial condition distribution) → Policy or planner rollout (demonstrations generated by scripted policies, optimization controllers, or trained policies) → Data export and quality inspection. Since simulation can provide perfect ground truth (object poses, segmentation masks, contact forces), synthetic data has a natural advantage for tasks requiring dense annotations.</p>
+<p>Compared to real-world collection, the economic model of simulation data production is fundamentally different: its throughput is approximately linearly correlated with compute power—the number of GPU parallel instances <span class="arithmatex">\(N_{env}\)</span> determines daily output, and the marginal cost per data point is primarily electricity and compute depreciation, typically one to two orders of magnitude lower than teleoperation. However, this advantage only holds when "the policy can indeed learn transferable skills in simulation," which is the Sim-to-Real constraint discussed in Section 21.3.3.</p>
+<p>Two aspects determine the practical value of synthetic data:</p>
+<ul>
+<li><strong>Asset Layer</strong>: Synthetic data is extremely sensitive to the diversity of scene assets. Engineering practice typically combines three sources to build an asset library: scan reconstruction (3D scanning of real objects), procedural generation (parameterized objects and layouts), and generative models (text-to-3D assets). The GR00T synthetic data pipeline is built upon Isaac Sim's high-fidelity rendering and asset system.</li>
+<li><strong>Quality Inspection Layer</strong>: Simulation rollouts are not inherently correct—scripted policies may produce physically infeasible trajectories, and numerical anomalies in the physics engine (penetration, explosions) can also contaminate data. Synthetic data also requires success rate filtering, dynamic feasibility checks, and visual plausibility sampling. The logic of this quality inspection is consistent with that for real data, but it can be highly automated using simulation ground truth.</li>
+</ul>
+<h3 id="2132-demonstration-augmentation-and-automatic-task-generation">21.3.2 Demonstration Augmentation and Automatic Task Generation</h3>
+<p>The key question for simulation data is not "can it be generated," but "what to generate"—the diversity of the task distribution determines the generalization value of the data. Two representative methods address this from complementary perspectives:</p>
+<ul>
+<li><strong>MimicGen</strong>: A demonstration augmentation framework that uses a small number of human seed demonstrations as templates. By perturbing object poses and initial conditions in simulation, it automatically expands dozens of seed demonstrations into thousands of varied demonstrations. Its insight is that the value of human demonstrations lies in the "decomposition of task strategy and keyframes," while specific geometric variations can be cheaply supplemented by simulation.</li>
+<li><strong>RoboGen</strong>: An automatic task generation framework driven by large language models. It allows an LLM to propose diverse tasks, generate corresponding simulation scene code and reward functions, and then automatically execute the simulation to collect data, thereby expanding the diversity of synthetic data at the task semantic level.</li>
+</ul>
+<p>These two methods correspond to two amplification dimensions of the data engine: <strong>intra-task instance diversity</strong> and <strong>cross-task semantic diversity</strong>. Combined with Domain Randomization—randomizing physical and observation parameters such as friction coefficients, mass, lighting, and camera intrinsics/extrinsics in simulation—the trained policy becomes more robust to distribution shifts in the real world. Domain Adaptation methods further use a small amount of real data to align the distribution of the simulation-trained policy.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[Small number of human seed demonstrations&lt;br/&gt;or LLM-generated task proposals] --&gt; B[Simulation task family construction&lt;br/&gt;MimicGen perturbation / RoboGen generation]
+    B --&gt; C[Domain randomized rollout&lt;br/&gt;Physical and observation parameter sampling]
+    C --&gt; D[Automated quality inspection&lt;br/&gt;Success rate and feasibility filtering]
+    D --&gt; E[Co-training with real data]
+    E --&gt; F[Real robot evaluation&lt;br/&gt;Failure mode analysis]
+    F --&gt;|Targeted task and scene supplementation| B</code></pre>
+<p>The fundamental difference between this closed loop and the traditional "one-time dataset building" approach is that the direction of simulation task generation is driven by <strong>real robot failure modes</strong>, not by what assets are currently available in the library—each iteration of the data engine specifically patches the policy's capability gaps.</p>
+<h3 id="2133-sim-to-real-gap-and-mixed-data-strategy">21.3.3 Sim-to-Real Gap and Mixed Data Strategy</h3>
+<p>The inherent flaw of simulation data is the <strong>Sim-to-Real gap</strong>: contact mechanics, deformable bodies, sensor noise, and actuator dynamics can only be approximately modeled in simulation. A policy that performs well in simulation does not guarantee it will work on a real robot. This gap is particularly pronounced for humanoid robots, as their tasks involve bipedal contact transitions, soft contacts, and whole-body dynamic balance—precisely the aspects that physics engines find most difficult to simulate accurately.</p>
+<p>The engineering response is a <strong>co-training strategy</strong>: using large-scale simulation data to provide task diversity and dense supervision, and a small amount of real data to calibrate distribution shifts. Industry practice shows that in training VLA-type models, the ratio of real to synthetic data, and the strength of domain randomization for synthetic data, often have a greater impact on the final real-robot success rate than the model architecture itself. Therefore, the design goal of a data engine is not to maximize data volume, but to maximize the <strong>real-robot performance gain per unit of training compute</strong>—this is also the ultimate criterion for evaluating any data source.</p>
+<p>The main sources of the Sim-to-Real gap and common mitigation methods are summarized as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Gap Source</th>
+<th>Typical Manifestation</th>
+<th>Common Mitigation Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contact mechanics error</td>
+<td>Unrealistic soft contact, friction, and collision response</td>
+<td>Contact parameter identification, domain randomization, fine-tuning with real contact data</td>
+</tr>
+<tr>
+<td>Actuator dynamics error</td>
+<td>Unmodeled torque response delay, backlash, and saturation</td>
+<td>Actuator model identification (system identification), torque-current calibration</td>
+</tr>
+<tr>
+<td>Observation error</td>
+<td>Rendered texture/lighting differs from real camera</td>
+<td>High-fidelity rendering, real background textures, camera noise modeling</td>
+</tr>
+<tr>
+<td>Dynamics parameter error</td>
+<td>Mass, center of mass, inertia mismatch with real robot</td>
+<td>Parameter randomization with online adaptation, real robot system identification</td>
+</tr>
+<tr>
+<td>Insufficient distribution coverage</td>
+<td>Simulation task distribution misaligned with real tasks</td>
+<td>MimicGen/RoboGen-style task expansion, supplementary collection of real long-tail data</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Data Engine, Sim-to-Real, Domain Randomization</p>
+<ul>
+<li><strong>Data engine</strong>: A continuous data production system built around the closed loop of "discovering model flaws → targeted data production → retraining → re-evaluation," as opposed to a one-time dataset construction project.</li>
+<li><strong>Sim-to-Real gap</strong>: The systematic bias between the simulation distribution and the real-world distribution, arising from physical modeling errors and observation modeling errors.</li>
+<li><strong>Domain randomization</strong>: Applying random perturbations to physical and observation parameters in simulation, enabling the policy to become insensitive to parameter variations and thus bridge the Sim-to-Real gap.</li>
+</ul>
+</div>
+<h2 id="214-representative-public-datasets-and-benchmarks">21.4 Representative Public Datasets and Benchmarks</h2>
+<p>Public datasets serve as a coordinate system for understanding industry data practices: they define de facto standards for data scale, modality combinations, and task taxonomies, while also providing starting training materials for small and medium-sized teams. This section categorizes the most representative resources into three types—"cross-embodiment aggregation, single-platform deep mining, and human-centric"—and concludes with engineering selection criteria.</p>
+<h3 id="2141-cross-embodiment-aggregation-datasets">21.4.1 Cross-Embodiment Aggregation Datasets</h3>
+<p>The data collection capacity of a single institution is limited, making cross-institution aggregation a crucial pathway for rapidly expanding data scale.</p>
+<p><strong>The Open X-Embodiment dataset</strong> is a milestone on this path: a large-scale aggregated robot learning dataset that integrates demonstration data from over twenty institutions and more than twenty types of real robot platforms, unified into a standardized data format and task description. It is widely used for cross-embodiment VLA pre-training. The accompanying RT-X series of models validates the "positive cross-embodiment transfer" hypothesis: joint training on data from other robots can improve the target robot's performance on unseen tasks. For humanoid robots, the significance of Open X-Embodiment lies in providing a vast repository of "general manipulation priors," allowing humanoid-specific data to be fine-tuned on top of it.</p>
+<p><strong>The ARIO All-Robots-in-One dataset</strong> proposes a unified data standard, aggregating approximately 3 million episodes from real-world, simulation, and format-converted sources, covering various robot morphologies. Its value lies in standardized embodiment descriptions and a unified data schema, enabling heterogeneous data sources to be mixed within the same training pipeline.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Positive Cross-Embodiment Transfer, Episode, Dataset vs. Benchmark</p>
+<ul>
+<li><strong>Positive cross-embodiment transfer</strong>: A phenomenon where joint training on data from other robot platforms improves the target robot's performance on its own tasks; the RT-X experiments in Open X-Embodiment first validated this effect at scale.</li>
+<li><strong>Episode</strong>: A recording unit of a complete task execution, typically from the start of the task until a success/failure criterion is triggered, containing synchronized sequences of all modalities during that period.</li>
+<li><strong>Dataset vs. Benchmark</strong>: A dataset provides training materials; a benchmark additionally specifies task splits, evaluation protocols, and metrics for fair comparison of different methods. The same resource often serves both roles.</li>
+</ul>
+</div>
+<h3 id="2142-single-platform-large-scale-datasets">21.4.2 Single-Platform Large-Scale Datasets</h3>
+<p>Complementing the aggregation approach is deep collection on a unified platform by a single institution. These datasets offer advantages in embodiment consistency and task systematicity:</p>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Scale and Composition</th>
+<th>Features and Uses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AgiBot World (智元机器人)</td>
+<td>Publicly reported as millions of trajectories, collected from hundreds of humanoid robots; the AgiBot World Colosseo paper describes its large-scale manipulation platform</td>
+<td>Consistent humanoid embodiment, multi-scenario and multi-task, supports full-body VLA training</td>
+</tr>
+<tr>
+<td>DROID Robot Manipulation Dataset</td>
+<td>Tens of thousands of real-world manipulation trajectories, distributedly collected across multiple labs and environments</td>
+<td>High visual and environmental diversity, primarily for robustness research</td>
+</tr>
+<tr>
+<td>BridgeData V2</td>
+<td>Tabletop manipulation data with language instructions</td>
+<td>Common benchmark for language-conditioned imitation learning</td>
+</tr>
+<tr>
+<td>RH20T Manipulation Dataset</td>
+<td>Approximately 110,000 contact-rich manipulation sequences</td>
+<td>Includes visual, force, audio, and human demonstration pairs simultaneously, suitable for multimodal research</td>
+</tr>
+<tr>
+<td>OmniAction Dataset</td>
+<td>Approximately 141,000 episodes, covering 112 skills and 748 objects</td>
+<td>Integrates visual, speech, and environmental audio context, targeting proactive robot manipulation</td>
+</tr>
+</tbody>
+</table>
+<p>Taking AgiBot World as an example, its paper, AgiBot World Colosseo, showcases a "data factory"-style collection organization: unified embodiment, unified collection protocol, coverage of multiple scenarios like home, industry, and retail, and encoding of language instructions, multi-view observations, embodiment states, and joint sequences into a unified multimodal representation, directly serving full-body VLA model training. This vertical integration model of "self-built embodiment + self-built data + self-trained model" is becoming the standard configuration for leading humanoid robot companies.</p>
+<p>DROID represents another organizational model: <strong>distributed consortium collection</strong>. Multiple labs collect data in parallel in their respective real-world environments, following a unified data schema and hardware reference design, and finally aggregate it into a library. This model sacrifices high consistency in embodiment and protocol in exchange for environmental diversity unattainable by a single institution—differences in lighting, backgrounds, objects, and manipulation styles across labs serve as natural data augmentation for improving visual and environmental robustness. The trade-off between the two models is essentially a balance between "consistency" and "diversity": the former is preferred during fine-tuning, while the latter is preferred during pre-training.</p>
+<p>RH20T and OmniAction demonstrate advancements in the modality dimension: the former proves the irreplaceability of force and audio for contact-rich tasks (insertion, assembly, wiping)—pure visual strategies often fail in these tasks due to occlusion; the latter incorporates speech commands and environmental sounds into the context, exploring the multimodal signal foundation required for "robots proactively initiating interactions." For humanoid robots, the significance of these modality explorations lies in the fact that the ultimate scenario for humanoid platforms is open environments shared with humans, and single-modality data cannot support the understanding required for such scenarios.</p>
+<h3 id="2143-human-centric-and-full-body-motion-data">21.4.3 Human-Centric and Full-Body Motion Data</h3>
+<p>Beyond robot-specific data, three types of "human-side" datasets play an irreplaceable role in the humanoid robot training pipeline. Their common value is: <strong>human data is measured in millions of hours, while robot data is measured in millions of episodes</strong>—using human data to learn the semantic and motion priors of "how a task should be done," and then using robot data to solve the embodied implementation of "how the robot specifically does it," is a practical path to bridge the data scale gap. Four representative types of resources are as follows:</p>
+<ul>
+<li><strong>AMASS Motion Dataset</strong>: A large-scale, clean human motion capture dataset, unified into a parametric human model, serving as the de facto standard source for simulation-based pre-training of full-body motion policies.</li>
+<li><strong>Ego4D First-Person Video Dataset</strong>: Over 3,000 hours of first-person video, used for learning first-person skills and hand-object interaction understanding.</li>
+<li><strong>Epic-Kitchens Dataset</strong>: First-person kitchen interaction videos, widely used for research on manipulation sequences and activity understanding.</li>
+<li><strong>HumanPlus Shadowing Dataset</strong>: Collected by having a humanoid robot shadow human motion, binding human demonstrations with the robot's full-body state, used for full-body imitation and teleoperation policy training.</li>
+</ul>
+<h3 id="2144-engineering-guidelines-for-dataset-selection">21.4.4 Engineering Guidelines for Dataset Selection</h3>
+<p>Faced with numerous datasets, engineering selection can follow these guidelines:</p>
+<ol>
+<li><strong>Embodiment Matching Priority</strong>: Data from the target robot (or its close approximation) has the lowest transfer cost; cross-embodiment data is suitable for pre-training, not fine-tuning.</li>
+<li><strong>Modality Completeness</strong>: Check if all required modalities for training are included (e.g., force for contact tasks, language for VLA).</li>
+<li><strong>Task and Scenario Coverage</strong>: Prioritize datasets with systematic coverage of the target application distribution, rather than simply pursuing the number of episodes.</li>
+<li><strong>Protocol and Licensing</strong>: Confirm whether the data license permits commercial use and whether the collection protocol is reproducible (calibration, coordinate systems, time synchronization methods).</li>
+<li><strong>Mixability</strong>: Assess whether the data format is easily convertible to a unified schema (e.g., LeRobot format or RLDS) and whether it can be mixed with proprietary data for training.</li>
+</ol>
+<p>It is important to note that the true value of public datasets often lies not in "directly training a deployable policy," but in: serving as a pre-training foundation to reduce the cold-start cost of proprietary data, acting as a public benchmark for fair method comparison, and providing a reference for data protocol design. Viewing public data as a supplement, rather than a replacement, for the upper limits of capability is a more realistic positioning of data assets.</p>
+<h2 id="215-data-engineering-format-storage-cost-and-compliance">21.5 Data Engineering: Format, Storage, Cost, and Compliance</h2>
+<p>Once data leaves the collection endpoint, it enters the realm of pure software engineering: format determines interoperability, quality inspection determines the effective data rate, storage and bandwidth determine operational costs, and compliance determines business boundaries. This section provides engineering practice points for these four aspects, along with a quantitative cost estimation example.</p>
+<h3 id="2151-data-formats-and-toolchains">21.5.1 Data Formats and Toolchains</h3>
+<p>Multi-modal, multi-sampling-rate robot data imposes special requirements on storage formats: they must efficiently compress video while ensuring <strong>temporal synchronization</strong> and <strong>random access</strong> performance across modalities. The current mainstream open-source toolchain is LeRobot: an end-to-end PyTorch library covering dataset formats, teleoperation, training, and deployment. Its data format organizes multi-view video, state, and action sequences using a standardized schema, supports streaming reads and incremental appending, and has become a de facto starting point for academia and small teams building data pipelines. The RLDS (Reinforcement Learning Datasets) format adopted by Open X-Embodiment is another widely followed standard, emphasizing episode-level metadata and cross-dataset interoperability.</p>
+<p>Regardless of the format chosen, the data schema design should explicitly include the following fields: embodiment identifier and calibration parameters, timestamps and coordinate system definitions for each modality, task descriptions and success labels, and collection protocol version. "Bare trajectories" lacking this metadata will incur high costs in subsequent mixed training and traceability.</p>
+<p>The engineering trade-offs for three common format types are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Representative</th>
+<th>Advantages</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standardized research format</td>
+<td>LeRobot dataset format, RLDS (used by Open X-Embodiment)</td>
+<td>Mature ecosystem, plug-and-play with open-source training pipelines</td>
+<td>Requires custom schema extensions for additional modalities like force/tactile sensing</td>
+</tr>
+<tr>
+<td>Enterprise custom format</td>
+<td>Internal schemas of various data factories</td>
+<td>Tailored to own embodiment and protocols, high retrieval efficiency</td>
+<td>High cost for cross-institution sharing and open-source reproduction</td>
+</tr>
+<tr>
+<td>General serialization container</td>
+<td>MCAP, HDF5, Parquet, etc.</td>
+<td>General-purpose toolchains, controllable performance</td>
+<td>Lacks robot semantic layer, requires custom conventions</td>
+</tr>
+</tbody>
+</table>
+<p>A common architecture in practice is "use enterprise custom formats on the collection side for efficiency, convert to standard formats like LeRobot/RLDS for training when entering the data lake," with a set of version-managed converters maintained between the two formats.</p>
+<h3 id="2152-data-quality-synchronization-filtering-and-deduplication">21.5.2 Data Quality: Synchronization, Filtering, and Deduplication</h3>
+<p>Core metrics for data quality engineering include:</p>
+<ul>
+<li><strong>Temporal synchronization error</strong>: The alignment accuracy of timestamps across multiple cameras, embodiment states, and force/tactile signals. Generally, this should be controlled within milliseconds; otherwise, "observation-action" pairs in high-speed manipulation tasks will exhibit systematic misalignment.</li>
+<li><strong>Episode-level quality inspection</strong>: Automatic or semi-automatic removal of episodes with task failure, abnormal interruptions, or operator errors.</li>
+<li><strong>Distribution deduplication and reweighting</strong>: Avoid high-frequency repetitive scenarios dominating the training distribution; oversampling long-tail scenarios is a common method to improve robustness.</li>
+<li><strong>Semantic annotation</strong>: Task instructions, segmented sub-tasks, object and scene labels, which can directly serve VLA training and retrieval-based data mixing.</li>
+</ul>
+<p>The composite metric of <strong>effective data rate</strong> deserves emphasis: Let the raw collection volume be <span class="arithmatex">\(D_{raw}\)</span>, and the usable volume after frame drop removal, synchronization verification, success rate filtering, and deduplication be <span class="arithmatex">\(D_{eff}\)</span>. Then the effective data rate <span class="arithmatex">\(r = D_{eff}/D_{raw}\)</span>. In collection projects lacking protocol-based management, <span class="arithmatex">\(r\)</span> can be as low as 50% — meaning nearly half of the storage, bandwidth, and annotation budget is consumed by invalid data. Moving quality inspection as early as possible to the collection side (real-time alerts, on-the-spot re-collection) is the most effective way to improve <span class="arithmatex">\(r\)</span>.</p>
+<h3 id="2153-storage-bandwidth-and-cost-quantitative-estimation">21.5.3 Storage, Bandwidth, and Cost: Quantitative Estimation</h3>
+<p>The cost of data infrastructure can be estimated using a simple order-of-magnitude model. Assume a single collection robot has <span class="arithmatex">\(N_c\)</span> cameras, each with a bitrate of <span class="arithmatex">\(r_c\)</span> (after compression), and the combined bitrate for low-bandwidth signals like state/force/tactile is <span class="arithmatex">\(r_s\)</span>. Then the raw data volume per hour per robot is</p>
+<div class="arithmatex">\[
+D_{hour} = (N_c \cdot r_c + r_s) \times 3600 \text{ s}
+\]</div>
+<p>For a data factory with <span class="arithmatex">\(M\)</span> collection stations and <span class="arithmatex">\(H\)</span> effective collection hours per day, the daily increment is <span class="arithmatex">\(M \cdot H \cdot D_{hour}\)</span>, from which the annual storage requirement and upstream bandwidth requirement are determined. The following Python example provides an estimate for a typical data factory:</p>
+<pre class="highlight"><code class="language-python"># Data factory storage and bandwidth estimation
+N_c = 4          # Number of cameras: head stereo + dual wrist + third-person (4 as representative)
+r_c = 8e6        # Bitrate per camera after compression (bit/s), typical for 1080p30 H.265
+r_s = 2e6        # Combined bitrate for state/force/audio (bit/s), including timestamps and metadata
+M = 100          # Number of collection stations
+H = 6            # Effective collection hours per station per day
+
+D_hour = (N_c * r_c + r_s) * 3600 / 8          # Bytes per hour per robot
+D_day  = D_hour * M * H                         # Daily increment (bytes)
+D_year = D_day * 300                            # Based on 300 effective collection days
+
+print(f"Data volume per robot per hour: {D_hour/1e9:.1f} GB")
+print(f"Data factory daily increment:   {D_day/1e12:.2f} TB")
+print(f"Annual storage requirement:     {D_year/1e15:.2f} PB")
+print(f"Required average upstream bandwidth: {D_day*8/(H*3600)/1e9:.1f} Gbit/s (concentrated during collection hours)")</code></pre>
+<p>Typical results show that a hundred-station-level data factory has a daily increment on the order of 10 TB and an annual storage requirement reaching the PB level. The corresponding cloud storage and CDN backhaul costs can reach millions of RMB annually — not including collection hardware depreciation, operator labor, and annotation costs. Therefore, <strong>edge-side pre-filtering</strong> (only returning successful episodes and key modalities), <strong>tiered storage</strong> (hot data on SSD, cold data on object storage), and <strong>video encoding optimization</strong> are the three major levers for cost control.</p>
+<h3 id="2154-data-mixture-and-curriculum-design-on-the-training-side">21.5.4 Data Mixture and Curriculum Design on the Training Side</h3>
+<p>The final engineering decision before data enters the training pipeline is the <strong>mixture</strong>: the weights with which various data sources, tasks, and modalities participate in training. Empirically, the trade-offs that need to be balanced include:</p>
+<ul>
+<li><strong>Real vs. Synthetic</strong>: Synthetic data provides diversity, while real data calibrates the distribution; when the synthetic proportion is too high, real-world performance actually degrades. Generally, the mixture ratio needs to be iteratively adjusted based on real-world evaluation results, rather than being set once.</li>
+<li><strong>Cross-embodiment vs. Embodiment-specific</strong>: Cross-embodiment data like Open X-Embodiment provides general priors, while embodiment-specific data determines final accuracy. A common practice is to pre-train on cross-embodiment data first, then fine-tune on embodiment-specific data, or to mix-train with a certain ratio and weight embodiment-specific data in the loss.</li>
+<li><strong>Task balancing vs. Long-tail weighting</strong>: Uniform sampling can cause high-frequency simple tasks to dominate the gradient; inverse frequency weighting based on task difficulty and failure rate is a common method to improve long-tail capabilities, but excessive weighting can introduce training instability.</li>
+</ul>
+<p>The mixture itself should be treated as a "data hyperparameter" as important as model hyperparameters and incorporated into experiment management: each training run should record the precise mixture, data version, and sampling seed to ensure results are reproducible and attributable.</p>
+<h3 id="2155-compliance-privacy-and-security">21.5.5 Compliance, Privacy, and Security</h3>
+<p>Humanoid robot data inherently contains sensitive information: first-person view videos may capture faces, home interiors, and commercial premises; fleet-returned data involves client sites. Engineering requirements include:</p>
+<ul>
+<li><strong>Collection-side anonymization</strong>: Automatic blurring of faces/license plates, filtering of voice keywords, ideally completed at the edge;</li>
+<li><strong>Informed consent and agreements</strong>: Notification of personnel in the collection scene, agreement on data usage and retention periods;</li>
+<li><strong>Access control and auditing</strong>: Tiered permissions, download logging, version traceability;</li>
+<li><strong>Cross-border compliance</strong>: Different jurisdictions have different requirements for data leaving the country, requiring partitioned storage for globally deployed fleets.</li>
+</ul>
+<p>These requirements will, in turn, influence data architecture design — for example, "anonymize at the edge before entering the data lake" becomes a mandatory step in the pipeline, not an option. A practical data compliance checklist typically includes control points across five stages: pre-collection (scene authorization, personnel notification, agreement signing), during collection (real-time anonymization, automatic stop recording for sensitive scenes), pre-ingestion (secondary anonymization review, removal of sensitive metadata), during use (minimum privilege access, training purpose auditing), and at retirement (deletion upon expiry, cascading cleanup after authorization revocation). Compliance costs should be included in the data budget like storage costs, rather than being applied as a post-hoc patch.</p>
+<h2 id="216-chapter-summary">21.6 Chapter Summary</h2>
+<p>This chapter systematically elaborates on the full lifecycle of humanoid robot data infrastructure. The core viewpoints can be summarized as follows:</p>
+<ol>
+<li><strong>Data is the strategic means of production in the era of humanoid robots.</strong> Under the VLA and imitation learning paradigms, the upper limit of model capability is jointly determined by the scale, diversity, and quality of data; the data flywheel is one of the deepest moats for leading companies.</li>
+<li><strong>Data sources form a pyramid.</strong> Internet videos, egocentric videos, motion capture, simulation-generated data, and real teleoperation data are stratified by cost and fidelity. Modern training pipelines use a curriculum-based approach to mix data from each layer.</li>
+<li><strong>Teleoperation and simulation generation are the two major production engines.</strong> ALOHA/Mobile ALOHA-style master-slave teleoperation, UMI/HuDOR-style robot-free data collection, and OptiTrack/AMASS-style motion capture provide real or quasi-real data; Isaac Sim/MuJoCo/Genesis plus MimicGen/RoboGen-style data engines provide scalable synthetic data, with domain randomization and mixed training used to bridge the Sim-to-Real gap.</li>
+<li><strong>Public datasets have accelerated the entire field.</strong> Open X-Embodiment validated cross-embodiment pre-training, AgiBot World demonstrated the feasibility of a humanoid robot data factory, and DROID, BridgeData V2, RH20T, OmniAction, ARIO, etc., each have their own focus. Selection should be based on criteria of embodiment matching, modality completeness, and task coverage.</li>
+<li><strong>Data engineering determines unit cost.</strong> Toolchains like LeRobot unify formats and protocols; time synchronization, quality inspection, and deduplication determine the effective data rate; storage, bandwidth, and compliance constitute non-negligible operational costs that must be quantitatively planned at the architectural design stage.</li>
+<li><strong>The ultimate metric for data infrastructure is real-robot performance.</strong> Throughput, synchronization accuracy, effective data rate, and unit cost are only intermediate metrics; any decision on data source and ratio must ultimately be adjudicated through controlled real-robot evaluation.</li>
+</ol>
+<p>Looking ahead to the coming years, three trends warrant continued attention: First, <strong>world models as a data source</strong>—using learned world models to replace physics engines for generating "imagined trajectories" could potentially reduce the cost of synthetic data by another order of magnitude, but their physical realism still needs to be anchored by real data; Second, <strong>the empirical establishment of data-model co-scaling laws</strong>, i.e., answering "under what ratio, how much of what kind of data yields how much real-robot performance improvement," which will transform data investment from experience-driven to quantitative decision-making; Third, <strong>the nascent stage of cross-enterprise data assetization and trading</strong>, for which the unification of data formats and compliance standards is a prerequisite. Regardless of the path, data infrastructure will long occupy one of the largest shares of humanoid robot engineering investment.</p>
+<p>Above the data infrastructure lies the software runtime environment that converts this data and models into real-time robot behavior—Chapter 22 will shift to software middleware, discussing how ROS 2, DDS, real-time buses, and planning-control components organize the various computing units of a humanoid robot into a deterministic whole. Reading the two chapters together provides a complete chain: data is produced and consumed within the pipeline, while the pipeline itself runs on top of the middleware.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-20/">← Previous<span>Chapter 20: World Models and Long-Horizon Reasoning</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-22/">Next →<span>Chapter 22: Software Middleware</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-21-data-infrastructure">Chapter 21: Data Infrastructure</a><ul>
+<li><a href="#summary">Summary</a></li>
+<li><a href="#211-overview-of-data-infrastructure">21.1 Overview of Data Infrastructure</a><ul>
+<li><a href="#2111-from-model-driven-to-data-driven-the-data-bottleneck-of-humanoid-robots">21.1.1 From Model-Driven to Data-Driven: The "Data Bottleneck" of Humanoid Robots</a></li>
+<li><a href="#2112-data-modalities-and-the-data-pyramid">21.1.2 Data Modalities and the Data Pyramid</a></li>
+<li><a href="#2113-full-lifecycle-of-data-infrastructure">21.1.3 Full Lifecycle of Data Infrastructure</a></li>
+<li><a href="#2114-relationship-between-this-chapter-and-other-chapters-in-the-book">21.1.4 Relationship Between This Chapter and Other Chapters in the Book</a></li>
+</ul>
+</li>
+<li><a href="#212-real-world-data-collection">21.2 Real-World Data Collection</a><ul>
+<li><a href="#2121-teleoperation-collection-master-slave-teleoperation-systems">21.2.1 Teleoperation Collection: Master-Slave Teleoperation Systems</a></li>
+<li><a href="#2122-collection-protocol-design-tasks-metadata-and-quality-control">21.2.2 Collection Protocol Design: Tasks, Metadata, and Quality Control</a></li>
+<li><a href="#2123-robot-free-data-collection-handheld-interfaces-and-first-person-data">21.2.3 Robot-Free Data Collection: Handheld Interfaces and First-Person Data</a></li>
+<li><a href="#2124-motion-capture-and-full-body-motion-retargeting">21.2.4 Motion Capture and Full-Body Motion Retargeting</a></li>
+<li><a href="#2125-fleet-feedback-and-data-flywheel">21.2.5 Fleet Feedback and Data Flywheel</a></li>
+</ul>
+</li>
+<li><a href="#213-simulation-synthetic-data-and-data-engines">21.3 Simulation Synthetic Data and Data Engines</a><ul>
+<li><a href="#2131-simulation-data-generation-pipeline">21.3.1 Simulation Data Generation Pipeline</a></li>
+<li><a href="#2132-demonstration-augmentation-and-automatic-task-generation">21.3.2 Demonstration Augmentation and Automatic Task Generation</a></li>
+<li><a href="#2133-sim-to-real-gap-and-mixed-data-strategy">21.3.3 Sim-to-Real Gap and Mixed Data Strategy</a></li>
+</ul>
+</li>
+<li><a href="#214-representative-public-datasets-and-benchmarks">21.4 Representative Public Datasets and Benchmarks</a><ul>
+<li><a href="#2141-cross-embodiment-aggregation-datasets">21.4.1 Cross-Embodiment Aggregation Datasets</a></li>
+<li><a href="#2142-single-platform-large-scale-datasets">21.4.2 Single-Platform Large-Scale Datasets</a></li>
+<li><a href="#2143-human-centric-and-full-body-motion-data">21.4.3 Human-Centric and Full-Body Motion Data</a></li>
+<li><a href="#2144-engineering-guidelines-for-dataset-selection">21.4.4 Engineering Guidelines for Dataset Selection</a></li>
+</ul>
+</li>
+<li><a href="#215-data-engineering-format-storage-cost-and-compliance">21.5 Data Engineering: Format, Storage, Cost, and Compliance</a><ul>
+<li><a href="#2151-data-formats-and-toolchains">21.5.1 Data Formats and Toolchains</a></li>
+<li><a href="#2152-data-quality-synchronization-filtering-and-deduplication">21.5.2 Data Quality: Synchronization, Filtering, and Deduplication</a></li>
+<li><a href="#2153-storage-bandwidth-and-cost-quantitative-estimation">21.5.3 Storage, Bandwidth, and Cost: Quantitative Estimation</a></li>
+<li><a href="#2154-data-mixture-and-curriculum-design-on-the-training-side">21.5.4 Data Mixture and Curriculum Design on the Training Side</a></li>
+<li><a href="#2155-compliance-privacy-and-security">21.5.5 Compliance, Privacy, and Security</a></li>
+</ul>
+</li>
+<li><a href="#216-chapter-summary">21.6 Chapter Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

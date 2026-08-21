@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training</h1>
+      <p class="entry-name-en">TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.02840v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1056 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.02840v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models have shown promising generalization in robotic manipulation, but they still struggle with contact-rich tasks, where minor contact perturbations can cause unrecoverable failures that are hard to detect from vision alone. Since these failures are localized rather than task-level semantic errors, tactile-aware corrective post-training offers an efficient way to improve recovery. However, scaling such supervision through human intervention is costly. Recent works have explored world models to synthesize imagined rollouts for policy improvement, but vision-only world models may produce visually plausible yet contact-inconsistent trajectories. We therefore introduce TACO, a tactile-aware world-model-driven framework for scalable VLA post-training in contact-rich manipulation. Given real robot rollouts, TACO follows a Recognize-Imagine-Label loop with a tactile-aware world model: a unified progress-action model recognizes failure-adjacent states using progress estimates, a visuo-tactile generation model imagines local correction segments, and the progress-action model labels them with executable corrective actions. To incorporate tactile corrective supervision into VLA post-training, TACO combines knowledge-insulated tactile adaptation with advantage-conditioned training, enabling the policy to learn from imagined corrections without degrading pretrained visual-language priors. These components enable TACO to convert real-world failures into imagined visuo-tactile corrections for iterative VLA post-training. Experiments on real-world contact-rich manipulation tasks show that TACO achieves 44% absolute success rate improvement over the base policy and 32% over the policy without knowledge-insulated tactile adaptation.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.02840" target="_blank" rel="noopener">TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>TACO는 VLA 모델이 접촉 집약적 작업에서 미세한 접촉 교란으로 인해 발생하는 복구 불가능한 실패 문제를 해결하기 위해, 촉각 인식 세계 모델 기반의 사후 훈련 방법을 제안한다. 이 프레임워크는 먼저 통합된 진행-행동 모델을 사용하여 실패에 가까운 상태를 식별하고, 그 다음 시각-촉각 생성 모델을 통해 국소적 수정 궤적 조각을 상상하며, 마지막으로 진행-행동 모델을 사용하여 이러한 조각들에 실행 가능한 수정 행동을 주석한다. 촉각 수정 감독을 VLA 사후 훈련에 통합하기 위해, TACO는 지식 격리 촉각 적응과 이점 조건 훈련을 결합한 전략을 채택하여, 정책이 사전 훈련된 시각-언어 사전 지식을 손상시키지 않으면서 상상된 수정으로부터 학습할 수 있도록 보장한다. 실제 세계의 접촉 집약적 조작 실험에서, TACO는 기본 정책 대비 <strong>44%의 절대 성공률 향상</strong>을 달성했으며, 지식 격리 촉각 적응을 사용하지 않은 정책 대비 <strong>32%의 성능 향상</strong>을 보였다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 개요</h3>
+<p>TACO의 핵심은 촉각 인식 세계 모델로, "인식-상상-주석" 루프를 통해 실제 로봇 롤아웃 데이터를 처리한다:
+- <strong>인식(Recognize)</strong>: 통합된 진행-행동 모델을 사용하여 진행 추정을 기반으로 실패에 가까운 상태를 식별한다.
+- <strong>상상(Imagine)</strong>: 시각-촉각 생성 모델을 활용하여 식별된 실패 상태에 대한 국소적 수정 궤적 조각을 상상한다.
+- <strong>주석(Label)</strong>: 진행-행동 모델을 다시 사용하여 상상된 수정 조각에 실행 가능한 수정 행동을 주석한다.</p>
+<h3 id="_4">사후 훈련 전략</h3>
+<p>촉각 수정 감독을 VLA 사후 훈련에 효과적으로 통합하기 위해, TACO는 두 가지 핵심 기술을 도입한다:
+- <strong>지식 격리 촉각 적응(Knowledge-Insulated Tactile Adaptation)</strong>: 훈련 과정에서 촉각 관련 매개변수를 격리하여 사전 훈련된 시각-언어 사전 지식의 퇴화를 방지한다.
+- <strong>이점 조건 훈련(Advantage-Conditioned Training)</strong>: 이점 함수를 기반으로 상상된 수정에 가중치를 부여하여 훈련함으로써, 정책이 높은 가치의 수정 행동을 우선적으로 학습하도록 한다.</p>
+<h3 id="_5">실험 설정 및 결과</h3>
+<ul>
+<li><strong>작업</strong>: 실제 세계에서의 접촉 집약적 조작 작업.</li>
+<li><strong>기준 비교</strong>: TACO는 기본 VLA 정책 및 지식 격리 촉각 적응을 사용하지 않은 변형과 비교된다.</li>
+<li><strong>핵심 수치</strong>:</li>
+<li>기본 정책 대비, TACO는 <strong>44%의 절대 성공률 향상</strong>을 달성했다.</li>
+<li>지식 격리 촉각 적응을 사용하지 않은 정책 대비, TACO는 <strong>32%의 절대 성공률 향상</strong>을 달성했다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>TACO는 촉각 인식 세계 모델을 통해 실제 세계의 실패를 확장 가능한 상상 수정 데이터로 변환하여, 접촉 집약적 작업에서 VLA 모델의 견고성을 효과적으로 향상시킨다. 지식 격리 촉각 적응 메커니즘은 사후 훈련 과정이 모델의 시각-언어 사전 능력을 손상시키지 않도록 보장한다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_yang_steering_vision_language_actio_2025/">Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling Approach</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_taco_tactile_world_model_as_a_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_yang_steering_vision_language_actio_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling Approach</h3>
+          <p>Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling Approach (TACO), is…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 개요</a></li>
+<li><a href="#_4">사후 훈련 전략</a></li>
+<li><a href="#_5">실험 설정 및 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

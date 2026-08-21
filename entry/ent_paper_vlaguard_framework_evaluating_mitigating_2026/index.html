@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</h1>
+      <p class="entry-name-en">VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking in Vision-Language-Action Robots within Wireless Sensor Networks</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>VLAGuard 是一个针对视觉-语言-动作（VLA）机器人物理注意力劫持漏洞的评估与防御框架，由研究团队提出。其核心贡献包括红队攻击 VASA（基于注意力引导的语义补丁）和蓝队防御 APFT（注意力保护微调），在 LIBERO 仿真与 PiPER 实体机器人上验证了将攻击失败率从 100.0% 降至 25.9%、成功率从 23.0% 提升至 67.4% 的效果。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01028" target="_blank" rel="noopener">arXiv:2608.01028 VLAGuard: A Framework for Evaluating and Mitigating Physical Attention Hijacking</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这项工作真正改变的是对 VLA 机器人物理对抗威胁的认知层级。此前攻击与防御的博弈焦点停留在动作偏差、全局表示破坏或测试时净化，默认前提是“破坏表征即破坏控制”。VLAGuard 指出一个更底层、更危险的机制：策略关键的动作到视觉交叉注意力（action-to-vision attention）可以被物理补丁精准劫持，使得模型“看得到”却“不关注”夹爪与目标物体。这解释了为何全局特征对齐类防御（如 EDPA-AF）在严重局部扰动下失效——它们保护了特征空间，却未保护决策所依赖的稀疏注意力路径。</p>
+<p>其次，它改变了防御的经济性假设。现有鲁棒化手段要么引入推理期净化延迟（对实时边缘控制不可接受），要么全局微调破坏原有操作精度。APFT 选择仅更新视觉编码器、冻结语言与动作头，以零推理开销换取对注意力路径的原生加固，这在部署约束严格的无线传感器网络边缘节点场景中具有实际意义。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="vasa">VASA 攻击：注意力引导的物理补丁优化</h3>
+<ul>
+<li>基于 EOT（Expectation-over-Transformation）优化，在随机面内旋转（-30° 至 30°）、平移（图像范围 10% 内）、缩放（0.85 至 1.15）下生成可打印补丁。</li>
+<li>目标函数：ℒ_VASA = λ_attn·ℒ_attn − λ_disp·ℒ_disp − λ_misalign·ℒ_misalign + λ_tv·ℒ_tv，权重 λ_attn=0.8、λ_disp=0.2、λ_misalign=0.5。</li>
+<li>注意力引导项 ℒ_attn 最小化补丁区域与动作查询（𝒬_act）间的注意力质量，使补丁成为主导吸引子；特征分散项采用 InfoNCE 风格目标最大化与干净图像的嵌入距离；图像-文本错位项最大化与指令嵌入的 L1 距离；总变差正则化保证可打印平滑性。</li>
+</ul>
+<h3 id="apft-">APFT 防御：教师-学生注意力蒸馏</h3>
+<ul>
+<li>仅更新视觉编码器，冻结语言骨干与动作头，零推理开销。</li>
+<li>总目标：ℒ_APFT = λ_feat·ℒ_feat + λ_pcad·ℒ_pcad + λ_geo·ℒ_geo + λ_tac·ℒ_tac，权重 λ_feat=0.5、λ_pcad=1.0、λ_geo=0.3、λ_tac=0.3。</li>
+<li>特征锚定损失（ℒ_feat）保持学生与教师补丁级语义方向一致性，防灾难性遗忘。</li>
+<li>策略关键注意力蒸馏（ℒ_pcad）用 Jensen-Shannon 散度对齐每时间步动作查询注意力分布。</li>
+<li>语言引导几何一致性（ℒ_geo）保留语义相关区域局部结构。</li>
+<li>时间注意力一致性（ℒ_tac）对齐动作到视觉注意力的逐步变化，抑制补丁诱导的注意力粘滞，轨迹窗口 K=4，温度 τ_mask=0.5、τ_temp=0.5。</li>
+<li>优化器 AdamW，学习率 2×10⁻⁵，权重衰减 0.01。</li>
+</ul>
+<h2 id="_3">关键创新</h2>
+<ol>
+<li>
+<p><strong>首次将“注意力劫持”作为 VLA 物理攻击的独立目标</strong>。VASA 不追求最大化动作偏差，而是直接操纵交叉注意力分布，使补丁成为策略决策的“视觉锚点”。这比单纯特征扰动更隐蔽、更难防御，因为注意力路径是策略直接消费的证据通道。</p>
+</li>
+<li>
+<p><strong>APFT 的时空注意力蒸馏设计</strong>。现有防御要么全局特征对齐（忽略空间局部性），要么单帧净化（忽略时间连续性）。APFT 同时引入策略关键注意力蒸馏（空间）与时间注意力一致性（时序），针对性抑制补丁诱导的注意力粘滞，这是首个显式建模注意力时间动态的 VLA 防御。</p>
+</li>
+<li>
+<p><strong>零推理开销的部署友好性</strong>。所有保护性优化严格在训练期完成，部署时保留原始前向架构，无检测器、掩码或去噪分支。这对计算受限的 WSN 边缘节点是决定性优势，使鲁棒性不再与实时性对立。</p>
+</li>
+</ol>
+<h2 id="_4">实验与结果</h2>
+<h3 id="libero-fr">仿真攻击有效性（LIBERO，失败率 FR%）</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>Clean</th>
+<th>Random Patch</th>
+<th>EDPA</th>
+<th>VASA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenVLA</td>
+<td>23.2</td>
+<td>49.5</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>3.2</td>
+<td>19.7</td>
+<td>64.8</td>
+<td>97.7</td>
+</tr>
+<tr>
+<td>π₀</td>
+<td>14.5</td>
+<td>19.2</td>
+<td>46.1</td>
+<td>62.6</td>
+</tr>
+</tbody>
+</table>
+<p>VASA 对 OpenVLA 实现完全失效（100.0%），对已微调的 OpenVLA-OFT 仍达 97.7%，对 π₀ 为 62.6%，证明攻击跨架构有效。</p>
+<h3 id="openvlafr">防御鲁棒性（OpenVLA，FR%）</h3>
+<table>
+<thead>
+<tr>
+<th>防御</th>
+<th>Clean</th>
+<th>Random</th>
+<th>UADA</th>
+<th>UPA</th>
+<th>EDPA</th>
+<th>VASA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original</td>
+<td>23.2</td>
+<td>49.5</td>
+<td>97.9</td>
+<td>98.8</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>EDPA-AF</td>
+<td>26.5</td>
+<td>27.2</td>
+<td>71.9</td>
+<td>56.3</td>
+<td>66.8</td>
+<td>96.6</td>
+</tr>
+<tr>
+<td>APFT</td>
+<td>23.3</td>
+<td>24.1</td>
+<td>25.0</td>
+<td>24.7</td>
+<td>25.7</td>
+<td>25.9</td>
+</tr>
+</tbody>
+</table>
+<p>APFT 在自适应 VASA 下平均 FR 降至 25.9%，较 EDPA-AF 的 96.6% 降低 74.1 个百分点（由表内数值 96.6%→25.9% 计算）。Long 套件下 APFT 为 51.4%，较未防御提升 48.6 个百分点。</p>
+<h3 id="fr">组件消融（FR%）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>Clean</th>
+<th>Random</th>
+<th>VASA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>only L_pcad</td>
+<td>33.5</td>
+<td>41.1</td>
+<td>54.4</td>
+</tr>
+<tr>
+<td>w/o L_tac</td>
+<td>23.5</td>
+<td>24.6</td>
+<td>28.6</td>
+</tr>
+<tr>
+<td>Full APFT</td>
+<td>23.3</td>
+<td>24.0</td>
+<td>25.9</td>
+</tr>
+</tbody>
+</table>
+<p>去除 L_tac 后 VASA 下 FR 升至 28.6%，去除 L_pcad 升至 87.5%，证明时空注意力项缺一不可。</p>
+<h3 id="piper-sr2000">物理实验（PiPER，成功率 SR%，2,000 次试验）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>Clean参考</th>
+<th>Original</th>
+<th>EDPA-AF</th>
+<th>APFT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pick &amp; Place</td>
+<td>79.0</td>
+<td>28.0</td>
+<td>50.0</td>
+<td>76.0</td>
+</tr>
+<tr>
+<td>Open Drawer</td>
+<td>75.0</td>
+<td>25.0</td>
+<td>45.0</td>
+<td>70.0</td>
+</tr>
+<tr>
+<td>Sort Cube</td>
+<td>70.0</td>
+<td>24.0</td>
+<td>43.0</td>
+<td>66.0</td>
+</tr>
+<tr>
+<td>Pour Liquid</td>
+<td>68.0</td>
+<td>24.0</td>
+<td>36.0</td>
+<td>64.0</td>
+</tr>
+<tr>
+<td>Stack Cube</td>
+<td>66.0</td>
+<td>14.0</td>
+<td>29.0</td>
+<td>61.0</td>
+</tr>
+<tr>
+<td><strong>平均</strong></td>
+<td><strong>71.6</strong></td>
+<td><strong>23.0</strong></td>
+<td><strong>40.6</strong></td>
+<td><strong>67.4</strong></td>
+</tr>
+</tbody>
+</table>
+<p>APFT 将平均成功率从 23.0% 提升至 67.4%，接近 Clean 参考的 71.6%，且各任务提升幅度（Δ +23.0 至 +32.0）一致。</p>
+<h2 id="_5">边界与局限</h2>
+<p>论文未明确列出所有局限，但可识别以下边界：APFT 无法克服单视角 RGB 感知在完全遮挡或严重传感器饱和下的物理极限，例如目标物体在执行中被机械臂完全遮挡的极端情况。作者承认解决此类硬件级限制需多视角传感、深度或触觉模态及时间记忆。此外，当前 VLAGuard 仅保护孤立 VLA 代理，未实现多节点协作防御；完整防御扫描集中在 OpenVLA 上以保持计算可行性，跨架构结果仅用于攻击迁移性评估。未来自适应攻击者若采用模仿语言相关对象的语义补丁或针对早期视觉特征，APFT 的锚定策略效果未知。</p>
+<h2 id="_6">工程启示</h2>
+<p>复现或部署时，先核对三个关键点：其一，APFT 的损失权重（λ_pcad=1.0 为锚点）基于试点运行经验设定，直接迁移到新任务时需重新调参，否则可能出现 Clean 性能退化（如消融中仅 L_pcad 时 Clean FR 升至 33.5）。其二，物理补丁尺寸敏感度极高——补丁面积达视野 2% 时策略快速崩溃（70%–80% 失败率），5% 时完全失效，因此实体部署前必须按相机距离与视野比例标定补丁实际覆盖占比，而非仅看绝对尺寸。其三，训练与推理硬件差异（A100 训练、RTX 4090 推理）可能引入数值漂移，建议在目标推理卡上复验注意力分布对齐效果。最易踩坑处在于 L_tac 的时间窗口 K=4 与温度 τ_temp=0.5 对轨迹采样频率敏感，若下游策略控制频率不同，需按实际步长重新校准窗口长度。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01028</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vlaguard_framework_evaluating_mitigating_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#vasa">VASA 攻击：注意力引导的物理补丁优化</a></li>
+<li><a href="#apft-">APFT 防御：教师-学生注意力蒸馏</a></li>
+</ul>
+</li>
+<li><a href="#_3">关键创新</a></li>
+<li><a href="#_4">实验与结果</a><ul>
+<li><a href="#libero-fr">仿真攻击有效性（LIBERO，失败率 FR%）</a></li>
+<li><a href="#openvlafr">防御鲁棒性（OpenVLA，FR%）</a></li>
+<li><a href="#fr">组件消融（FR%）</a></li>
+<li><a href="#piper-sr2000">物理实验（PiPER，成功率 SR%，2,000 次试验）</a></li>
+</ul>
+</li>
+<li><a href="#_5">边界与局限</a></li>
+<li><a href="#_6">工程启示</a></li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

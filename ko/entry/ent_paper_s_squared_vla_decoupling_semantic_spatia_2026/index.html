@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action Models for Autonomous Driving · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action Models for Autonomous Driving</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action Models for Autonomous Driving</h1>
+      <p class="entry-name-en">S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action Models for Autonomous Driving</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-Language Models (VLMs) have demonstrated remarkable potential for high-level reasoning in autonomous driving, yet they fundamentally struggle to generate precise, low-level control actions. This limitation is rooted in a semantic-physical gap caused by the inherent mismatch between discrete language tokens and continuous trajectory planning. While Vision-Language-Action (VLA) architectures.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13926" target="_blank" rel="noopener">arXiv:2607.13926 S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>S²-VLA는 자율주행을 위한 이중 스트림 비전-언어-행동(VLA) 아키텍처로, 연구팀이 제안했으며 의미론적 추론과 공간 기하학적 인식을 명시적으로 분리하여 기존 VLM이 저수준 연속 제어에서 겪는 의미-물리적 간극을 완화하는 것을 목표로 한다. 핵심 기여는 다중 스케일 의미 스트림과 작업 주도 공간 스트림의 병렬 설계와 이중 스트림 계획 어댑터를 결합하여, 단일 전방 카메라만 사용하면서 NAVSIM 벤치마크에서 PDMS 87.1을 달성하여 LiDAR를 융합한 대부분의 기준 방법을 능가한다는 점이다.</p>
+<h2 id="_2">그것이 바꾼 것</h2>
+<p>기존 VLA 방법은 인식과 제어를 단일 정책으로 통합하여 의미 정보와 공간 정보가 심층 네트워크에서 얽히고 점차 붕괴되도록 만든다. 이러한 붕괴는 단순한 정보 손실이 아니라, 안전에 중요한 내비게이션에 필요한 미세한 기하학적 사전 지식(예: 차선 경계, 주행 가능 영역, 장애물 거리)을 비가역적으로 파괴한다. 저자는 문제의 근원이 이산 언어 토큰과 연속 궤적 간의 고유한 불일치, 그리고 단일 스트림 아키텍처가 고수준 의미 표현을 저수준 제어에 직접 매핑할 때 교차 모달 정렬이 심하게 압축된 임베딩에서 발생하여 체계적 편향을 초래한다는 점을 날카롭게 지적한다.</p>
+<p>S²-VLA가 실제로 바꾼 것은 "의미와 공간이 동일한 표현 공간을 공유해야 한다"는 암묵적 가정이다. 두 정보 스트림을 물리적으로 분리하여 의미 스트림은 의도 이해와 고수준 추론에 집중하고, 공간 스트림은 기하학적 재구성과 밀집 예측에 집중하며, 마지막으로 계획 단계에서만 통제된 융합을 수행한다. 이러한 설계는 표현 붕괴를 완화할 뿐만 아니라 BEV 지도 재구성 및 에이전트 감지와 같은 보조 인식 작업이 암묵적 학습에 의존하지 않고 명시적 감독으로 공간 사전 지식을 주입할 수 있게 한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">이중 스트림 아키텍처 개요</h3>
+<p>S²-VLA는 입력(내비게이션 명령 C_nav, 자차 운동 이력 T_hist, 전방 이미지 I)을 각각 의미 스트림과 공간 스트림에 전달하고, 최종적으로 이중 스트림 계획 어댑터를 통해 융합하여 궤적을 생성한다.</p>
+<h3 id="multi-scale-semantic-stream">의미 스트림(Multi-Scale Semantic Stream)</h3>
+<ul>
+<li>백본: InternVL3-2B(InternViT 비전 인코더 + Qwen2.5 언어 모델).</li>
+<li>N_act=64개의 학습 가능한 행동 쿼리 Q_act를 주입하여 텍스트 및 비전 토큰과 공동 인코딩.</li>
+<li>희소 다중 스케일 샘플링: 레이어 L={3,8,13,18,23,24}에서만 은닉 상태를 추출하여 다중 스케일 특징 집합 {(V_sem^(l), V_act^(l))}을 형성.</li>
+<li>자차 이력은 MLP를 통해 E_ego∈ℝ^(1×d_vlm)로 인코딩되고, 각 레이어에서 행동 중심 특징과 연결되어 통합 상태 메모리 E_mem을 형성.</li>
+</ul>
+<h3 id="task-driven-spatial-stream">공간 스트림(Task-Driven Spatial Stream)</h3>
+<ul>
+<li>동적 해상도: 고해상도 이미지를 N_patch=9개의 패치(8개 로컬 + 1개 글로벌)로 분할하고, 각 패치에 N_vis=64개의 비전 쿼리를 도입.</li>
+<li>인코딩된 비전 쿼리는 V_vis∈ℝ^(B×(N_patch×N_vis)×C)로 재구성되고, 타일 수준 위치 임베딩이 추가된 후 Transformer 인코더를 통과.</li>
+<li><strong>Map Head</strong>: 1D 토큰 시퀀스를 2D 그리드 V_2D∈ℝ^(d×24×24)로 재구성하고, 업샘플링을 통해 BEV 의미 지도 M_hat_sem∈ℝ^(C×128×256)을 출력하며, X∈[0,32]m, Y∈[−32,32]m 범위를 커버하고 가중 교차 엔트로피 L_map으로 감독.</li>
+<li><strong>Agent Head</strong>: DETR 패러다임, N_agent=30개 쿼리, 헝가리안 매칭, 손실은 L_agent=λ_reg·L_L1 + λ_cls·L_BCE.</li>
+<li>중간 표현 V는 선형 투영을 통해 V_spatial을 형성하여 계획 어댑터의 공간 제약으로 사용.</li>
+</ul>
+<h3 id="_5">이중 스트림 계획 어댑터</h3>
+<ul>
+<li>M=8개의 계획 토큰 P^(0)∈ℝ^(M×d)을 초기화.</li>
+<li>단계 1(의미 정렬): 계획 토큰은 다중 스케일 의미 특징 V_sem 및 상태 메모리 E_mem과 병렬 교차 주의를 수행하고, 게이트 파라미터 g∈ℝ^d가 융합을 변조: P_fuse=P^(l−1)+Linear([tanh(g)⊙P_raw; P_ego; P_sa]).</li>
+<li>단계 2(공간 정제): V_spatial을 주입하고, P_vis=P_fuse+MHCA₃(P_fuse, V_spatial, V_spatial), 이후 FFN 통과.</li>
+<li>궤적 디코딩: MLP가 Ŷ∈ℝ^(M×3)을 예측하고, 손실은 L_plan=L_L1 + λ_smooth·Σ SmoothL1(a, j).</li>
+<li>총 손실: L_total=λ_plan·L_plan + λ_agent·L_agent + λ_map·L_map.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>명시적 이중 스트림 분리</strong>: 기존 VLA의 단일 스트림 얽힘 설계와 달리, S²-VLA는 아키텍처 수준에서 의미와 공간 처리 경로를 강제로 분리한다. 이 설계는 공간 표현 붕괴 문제를 직접 겨냥하여 기하학적 사전 지식이 깊은 추상화에서 수동적으로 손실되지 않고 독립 스트림에서 명시적으로 감독되고 보존될 수 있게 한다.</p>
+</li>
+<li>
+<p><strong>작업 주도 공간 스트림</strong>: 공간 스트림은 비전 특징을 추출할 뿐만 아니라 Map Head와 Agent Head를 통해 구조화된 BEV 의미 지도와 에이전트 예측을 출력한다. 이러한 "작업을 감독으로 하는" 공간 특징 추출 방식은 계획기에 주입되는 V_spatial이 일반적인 비전 임베딩이 아닌 작업 검증된 기하학적 정보임을 보장한다.</p>
+</li>
+<li>
+<p><strong>게이트 융합 메커니즘</strong>: 계획 어댑터의 학습 가능한 게이트 파라미터 g는 모델이 의미와 공간 특징의 기여도를 적응적으로 균형 조정할 수 있게 한다. 이 메커니즘은 단순 연결로 인한 특징 중복을 피하고, 고수준 의도와 저수준 기하학이 계획 단계에서 정적으로 중첩되는 것이 아니라 동적으로 조정될 수 있게 한다.</p>
+</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<p>실험은 NAVSIM 벤치마크에서 수행되었으며, PDMS 종합 지표(NC, DAC, TTC, Comf, EP 다섯 항목으로 계산)를 사용한다. 주요 결과는 다음과 같다:</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>NC</th>
+<th>DAC</th>
+<th>EP</th>
+<th>TTC</th>
+<th>Comf</th>
+<th>PDMS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UniAD</td>
+<td>97.8</td>
+<td>91.9</td>
+<td>78.8</td>
+<td>92.9</td>
+<td>100</td>
+<td>83.4</td>
+</tr>
+<tr>
+<td>PARA-Drive</td>
+<td>97.9</td>
+<td>92.4</td>
+<td>79.3</td>
+<td>93.0</td>
+<td>99.8</td>
+<td>84.0</td>
+</tr>
+<tr>
+<td>DiffusionDrive</td>
+<td>98.2</td>
+<td>96.2</td>
+<td>82.2</td>
+<td>94.7</td>
+<td>100</td>
+<td>88.1</td>
+</tr>
+<tr>
+<td>InternVL3-2B</td>
+<td>97.6</td>
+<td>93.1</td>
+<td>79.1</td>
+<td>92.7</td>
+<td>100</td>
+<td>84.1</td>
+</tr>
+<tr>
+<td>ReCogDrive*</td>
+<td>98.1</td>
+<td>94.7</td>
+<td>80.9</td>
+<td>94.2</td>
+<td>100</td>
+<td>86.5</td>
+</tr>
+<tr>
+<td><strong>S²-VLA</strong></td>
+<td><strong>98.4</strong></td>
+<td><strong>94.9</strong></td>
+<td><strong>81.6</strong></td>
+<td><strong>94.6</strong></td>
+<td><strong>100</strong></td>
+<td><strong>87.1</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>S²-VLA는 단일 카메라만으로 LiDAR를 융합한 ARTEMIS(87.0) 및 DRAMA(86.9)를 능가한다.</li>
+<li>동일 백본의 단순 VLM 기준(InternVL3-2B, PDMS 84.1)과 비교하여 S²-VLA는 3.0포인트 향상(표 내 수치 84.1→87.1로 계산).</li>
+<li>절제 실험: 의미 특징 추가 시 PDMS +1.5(84.1→85.6), 공간 스트림 추가 시 +0.6(85.6→86.2), 보조 인식 작업 추가 시 최종 +0.9(86.2→87.1).</li>
+<li>DiffusionDrive의 PDMS 88.1은 약간 높으며, 주요 우위는 DAC(96.2 vs 94.9)에 있지만 반복적 확산 디코더와 명시적 LiDAR 포인트 클라우드에 의존한다.</li>
+</ul>
+<h2 id="_8">경계 및 한계</h2>
+<p>저자는 공간 특징의 밀집 추출과 이중 스트림 융합이 사소하지 않은 계산 오버헤드를 초래하며, 향후 더 희소한 특징 표현 메커니즘을 개발해야 한다고 명시적으로 인정한다. 또한 이중 스트림 아키텍처는 훈련 패러다임과 직교하므로, 저자는 네트워크 설계의 공정한 비교를 위해 기준선의 폐루프 강화 학습 후훈련(예: GRPO)을 배제했지만, 이는 현재 결과가 후훈련으로 인한 이득을 반영하지 않음을 의미한다. 논문은 극한 기상, 센서 고장 또는 고동적 시나리오에서의 견고성 성능을 명시적으로 논의하지 않았으며, 추론 지연 시간의 구체적인 수치도 제공하지 않는다.</p>
+<h2 id="_9">엔지니어링 시사점</h2>
+<p>재현 시 다음 핵심 구성을 우선적으로 확인해야 한다: 희소 샘플링 레이어 L={3,8,13,18,23,24}의 선택은 다중 스케일 의미 특징의 풍부함에 직접 영향을 미친다; N_patch=9의 동적 해상도 전략은 공간 스트림의 BEV 재구성 품질에 중요하다; 게이트 파라미터 g의 초기화와 훈련 안정성은 세심한 튜닝이 필요하다. 가장 함정에 빠지기 쉬운 부분은 3단계 훈련 프로세스이다 — 첫 번째 단계 SFT는 ReCogDrive VQA 데이터(3 epochs)를 사용하고, 두 번째와 세 번째 단계는 NAVSIM에서 각각 4 epochs를 수행하며, 단계 간에 해당 모듈을 올바르게 동결하지 않으면(예: 두 번째 단계에서 VLM 백본 동결 및 LoRA 적용, 세 번째 단계에서 인식 및 의도 구성 요소 동결) 특징 분포 이동이 발생한다. 손실 가중치 λ_plan=1.0, λ_agent=0.1, λ_map=0.5, λ_smooth=0.5는 엄격히 유지해야 하며, 특히 λ_smooth는 궤적 평활성에 큰 영향을 미치므로 너무 크면 계획이 지나치게 보수적으로 변한다. 하류 팀의 경우 실차 배포가 필요하다면 BEV 지도 출력(128×256)과 실제 세계 좌표 간의 정렬 정확도를 먼저 검증하는 것이 좋다. 이 모듈은 공간 스트림의 핵심 감독 신호이며, 그 오류는 계획 궤적으로 직접 전파되기 때문이다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_s_squared_vla_decoupling_semantic_spatia_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 바꾼 것</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">이중 스트림 아키텍처 개요</a></li>
+<li><a href="#multi-scale-semantic-stream">의미 스트림(Multi-Scale Semantic Stream)</a></li>
+<li><a href="#task-driven-spatial-stream">공간 스트림(Task-Driven Spatial Stream)</a></li>
+<li><a href="#_5">이중 스트림 계획 어댑터</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a></li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

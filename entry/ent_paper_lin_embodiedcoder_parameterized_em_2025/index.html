@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EmbodiedCoder · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EmbodiedCoder</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>EmbodiedCoder</h1>
+      <p class="entry-name-en">EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.06207v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (945 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>EmbodiedCoder 是由中国科学院大学、中国科学院自动化研究所、北京航空航天大学及香港中文大学等机构于2025年提出的一种无需训练的开源框架，用于开放世界移动机器人操作。其核心贡献在于利用现代编码模型直接生成可执行的机器人轨迹，通过代码将高层指令与物体几何参数化及操作轨迹合成相结合，无需额外数据收集或微调。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.06207" target="_blank" rel="noopener">EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2510.06207" target="_blank" rel="noopener">EmbodiedCoder source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>EmbodiedCoder 是一种基于编码模型的训练无关框架，旨在解决移动机器人在开放世界中执行自然语言指令时的可扩展性与可解释性问题。与依赖大量标注数据或预定义原语的端到端视觉-语言-动作模型不同，EmbodiedCoder 通过将高层指令转化为代码，直接生成可执行的机器人轨迹，从而灵活地参数化物体几何并合成操作轨迹。该方法在真实移动机器人上的实验表明，其在多种长期任务中表现稳健，并能有效泛化到新物体和新环境，为连接高层推理与低层控制提供了一种透明且通用的途径。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<p>EmbodiedCoder 的核心思想是利用现代编码模型（如大型语言模型）将自然语言指令转化为可执行的机器人控制代码，从而绕过传统方法中需要大量标注数据和预定义原语的限制。该框架无需训练，直接通过代码生成轨迹，实现了对物体几何的灵活参数化。</p>
+<h3 id="_4">架构与流程</h3>
+<ul>
+<li><strong>输入</strong>：自然语言指令（如“将杯子放到桌子上”）。</li>
+<li><strong>处理</strong>：编码模型将指令解析为结构化代码，其中包含物体几何参数（如位置、尺寸）和操作轨迹（如抓取、移动、放置）。</li>
+<li><strong>输出</strong>：可执行的机器人轨迹代码，直接驱动移动机械臂完成操作。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li><strong>平台</strong>：真实移动机器人（配备机械臂和传感器）。</li>
+<li><strong>任务</strong>：多种长期操作任务，包括物体搬运、堆叠和重新排列。</li>
+<li><strong>评估指标</strong>：任务成功率、泛化能力（对新物体和新环境）。</li>
+</ul>
+<h3 id="_6">关键结果</h3>
+<ul>
+<li><strong>性能</strong>：在多种长期任务中，EmbodiedCoder 实现了稳健的性能，成功率显著高于基线方法（如基于预定义原语的模块化系统）。</li>
+<li><strong>泛化性</strong>：对未见过的物体和环境表现出良好的泛化能力，无需额外数据收集或微调。</li>
+<li><strong>可解释性</strong>：通过代码生成轨迹，提供了透明且可解释的决策过程，便于调试和验证。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<p>EmbodiedCoder 通过编码模型将高层推理与低层控制桥接，提供了一种无需训练、可解释且泛化性强的移动机器人操作框架。其代码生成范式为机器人智能从固定原语向通用能力演进提供了新思路。项目页面：https://embodiedcoder.github.io/EmbodiedCoder/</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2510.06207v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      <span class="rel-desc">EmbodiedCoder使用行为克隆。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">基于</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（1）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_world_model/">世界模型</a>
+      
+      <span class="rel-desc">EmbodiedCoderdiscusses世界模型。</span>
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_lin_embodiedcoder_parameterized_em_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">架构与流程</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

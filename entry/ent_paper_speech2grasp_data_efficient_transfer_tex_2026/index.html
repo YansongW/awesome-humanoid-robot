@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speech2Grasp: Data-Efficient Transfer of Text-Conditioned Grasp Detection to Speech in Humanoid Robots · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Speech2Grasp: Data-Efficient Transfer of Text-Conditioned Grasp Detection to Speech in Humanoid Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Speech2Grasp: Data-Efficient Transfer of Text-Conditioned Grasp Detection to Speech in Humanoid Robots</h1>
+      <p class="entry-name-en">Speech2Grasp: Data-Efficient Transfer of Text-Conditioned Grasp Detection to Speech in Humanoid Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Speech2Grasp 提出一种数据高效的语音到抓取迁移框架，将预训练文本条件 VLM（ALBEF）与抓取检测器（LGD）迁移至语音输入，通过轻量 MLP 投影器与知识蒸馏实现跨模态对齐，仅需 15K 对齐样本即可超越级联 ASR 管线。核心贡献在于以最小架构改动和训练数据量，将成熟的文本条件视觉-语言能力扩展到语音交互场景，并在模拟与真实人形机器人上验证了鲁棒性与低延迟。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.26567" target="_blank" rel="noopener">arXiv:2607.26567 Speech2Grasp: Data-Efficient Transfer of Text-Conditioned Grasp Detection to Spe</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>级联 ASR 方案的根本缺陷在于错误传播的不可控性：ASR 的误转录（如 "scissors" 变 "sisters"）会直接导致下游抓取检测完全失败，且 102.2 ms 的端到端延迟在人机交互中难以接受。直接训练语音模型则面临数据稀缺与架构重设计的双重成本，这使文本条件模型的语音迁移成为更务实的技术路径。本文真正改变的是将“语音理解”从独立任务降维为“表示对齐问题”，通过蒸馏将 Whisper 的语音嵌入映射到 ALBEF 的共享语义空间，从而复用既有 VLM 的视觉-语言对齐能力，避免了从零训练多模态语音模型的昂贵代价。这一思路对任何依赖文本输入的 VLM 下游任务（如视觉问答、指代表达）都具有范式意义。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体架构</h3>
+<ul>
+<li>教师分支：ALBEF（冻结）接收图像-文本对，产生 [CLS] 嵌入 e_T 作为语义目标。</li>
+<li>学生分支：Whisper 编码语音（log-mel 频谱）→ [SUMMARY] 令牌（全局均值池化）与 [UTTER] 令牌（自适应池化）→ MLP 投影器（含跳跃连接）→ 语音嵌入 e_S。</li>
+<li>下游任务：LGD 抓取头冻结，仅微调 U 形编码器-解码器前几层以适应 DWT 子带输入。</li>
+</ul>
+<h3 id="_4">对齐损失</h3>
+<ul>
+<li>余弦相似度蒸馏：ℒ_KD = 1 − (e_S^T e_T) / (‖e_S‖₂ ‖e_T‖₂)，强制语音嵌入与文本嵌入在共享空间中方向一致。</li>
+<li>总损失：ℒ = ℒ_grasp + λ_KD ℒ_KD，其中 ℒ_grasp 为逐像素 L2 抓取热图损失，λ_KD 采用离坡线性调度器（初期强调对齐，后期聚焦任务）。</li>
+</ul>
+<h3 id="_5">关键设计决策</h3>
+<ul>
+<li><strong>DWT 频率感知编码器</strong>：将图像分解为 LL、LH、HL、HH 子带，丢弃噪声主导的 HH，输入维度 ℝ^{H/2×W/2×9}。仅优化前几层编码器，避免全量微调带来的过拟合与计算开销。</li>
+<li><strong>语音增强</strong>：在线合成 y(t) = x(t) * h(t) + α n(t)（RIR 卷积 + 8 dB SNR 噪声），使模型对真实环境混响与干扰鲁棒。</li>
+<li><strong>投影器跳跃连接</strong>：缓解深层 MLP 在少量数据下的过拟合风险，保持语音嵌入的局部细节。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>数据高效的跨模态迁移范式</strong>：以 15K 对齐样本（约 14 小时音频）实现与 1M 样本训练的文本教师相当的抓取性能（S=0.36 vs 0.36），将语音条件抓取的数据需求降低两个数量级。其本质是利用 VLM 已学到的语义先验，而非重新学习语音-视觉关联。</li>
+<li><strong>无 ASR 的端到端语音理解</strong>：通过蒸馏直接建立语音到语义瓶颈的映射，规避了 ASR 的延迟（36.6 ms vs 102.2 ms）与错误传播，且对未见说话人（7 个合成声音）和声学扰动保持高对齐（最坏情况 CS=0.915）。</li>
+<li><strong>频率感知的鲁棒视觉编码</strong>：DWT 子带输入与部分微调策略在重度相机噪声下（λ=10, σ=0.02）将成功率从 0.25 提升至 0.31，证明小波分解能有效分离噪声主导的高频分量，增强视觉特征的抗噪性。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="_8">诊断分析（表示对齐质量）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>平均余弦相似度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无投影器</td>
+<td>0.346 ± 0.088</td>
+</tr>
+<tr>
+<td>有投影器（匹配对）</td>
+<td>0.968 ± 0.027</td>
+</tr>
+<tr>
+<td>有投影器（随机配对）</td>
+<td>0.835 ± 0.069</td>
+</tr>
+<tr>
+<td>匹配模型在 98.2% 测试实例中高于随机模型（投影前仅 50.7%），证明投影器有效区分语义匹配与不匹配。</td>
+<td></td>
+</tr>
+<tr>
+<td>### 模拟抓取（Grasp-Anything++，10 次重复）</td>
+<td></td>
+</tr>
+<tr>
+<td>方法</td>
+<td>S</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>LiteASR → LGD</td>
+<td>0.34</td>
+</tr>
+<tr>
+<td>Speech2Grasp</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>LGD（文本教师）</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>Speech2Grasp 在 S 与 H 上超越级联管线，且延迟降低 64.2%（由表内数值 102.2→36.6 计算）。</td>
+<td></td>
+</tr>
+<tr>
+<td>### 相机噪声鲁棒性</td>
+<td></td>
+</tr>
+<tr>
+<td>噪声级别</td>
+<td>LiteASR（无 DWT）</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>轻度（λ=30, σ=0.01）</td>
+<td>0.31</td>
+</tr>
+<tr>
+<td>重度（λ=10, σ=0.02）</td>
+<td>0.25</td>
+</tr>
+<tr>
+<td>DWT 在重度噪声下带来 0.06 的提升（由表内数值 0.25→0.31 计算），且优于无 DWT 的文本教师。</td>
+<td></td>
+</tr>
+<tr>
+<td>人员</td>
+<td>LiteASR 单/多</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>#1</td>
+<td>0.59 ± 0.03 / 0.54 ± 0.06</td>
+</tr>
+<tr>
+<td>#2</td>
+<td>0.61 ± 0.04 / 0.56 ± 0.07</td>
+</tr>
+<tr>
+<td>真实场景中 Speech2Grasp 在单物体任务上提升约 0.11（由表内数值 0.59→0.70 计算），多物体任务提升约 0.07（由表内数值 0.54→0.61 计算），且方差更小。</td>
+<td></td>
+</tr>
+<tr>
+<td>### 数据规模影响</td>
+<td></td>
+</tr>
+<tr>
+<td>样本数</td>
+<td>S</td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>7.5K</td>
+<td>0.31</td>
+</tr>
+<tr>
+<td>11K</td>
+<td>0.35</td>
+</tr>
+<tr>
+<td>15K</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>性能随数据量单调提升，15K 时 CS 达 0.94，验证数据效率优势。</td>
+<td></td>
+</tr>
+<tr>
+<td>（本节另有 1 句含无法从全文文本核实的数字，已按纪律移除；论文未明确或以图/表图片形式给出。）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>未验证迁移范式对非 ALBEF 融合策略（如交叉注意力、双塔结构）的泛化性，结论可能局限于 ALBEF 的共享潜在空间设计。</li>
+<li>教师-学生双网络前向传播导致显著 GPU 内存开销，训练成本未在论文中量化。</li>
+<li>真实实验仅涉及 2 位非英语母语者，且环境为办公室（非极端噪声），对高噪声、多说话人叠加场景的鲁棒性未明确。</li>
+<li>语音增强模型假设加性噪声与线性 RIR 卷积，对非线性失真或突发干扰（如拍手、关门声）可能失效。</li>
+<li>论文未明确 DWT 子带选择（丢弃 HH）在低光照或运动模糊条件下的适用性。</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：确认 ALBEF 的 [CLS] 嵌入是否与 Whisper 的 [SUMMARY] 令牌在维度上匹配；投影器跳跃连接的具体实现（残差位置）直接影响对齐质量，建议先复现诊断实验（目标 CS&gt;0.96）再接入抓取头。</li>
+<li><strong>数据合成陷阱</strong>：TTS 语音需覆盖多样说话人（论文用 7 个未见声音测试），且在线增强必须包含 RIR 与噪声采样，否则真实场景性能会显著下降（如 CS 从 0.968 降至 0.915 的最坏情况）。</li>
+<li><strong>最易踩坑点</strong>：λ_KD 调度器若过早衰减，表示对齐不充分会导致抓取头收敛到次优；建议初期保持 λ_KD=1 至少 30% 训练轮次（论文采用离坡调度）。DWT 部分微调时，仅优化前几层编码器，切勿解冻抓取头，否则会破坏预训练语义。</li>
+<li><strong>下游团队选型</strong>：若已有文本条件 VLM 且面临 ASR 错误传播，此框架可直接替换级联管线；但需评估 GPU 内存预算（双网络前向），可参考论文未来工作采用缓存蒸馏（预计算教师嵌入）降低开销。</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.26567</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_dexterous_manipulation/">灵巧操作</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_speech2grasp_data_efficient_transfer_tex_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧操作</h3>
+          <p>利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体架构</a></li>
+<li><a href="#_4">对齐损失</a></li>
+<li><a href="#_5">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#_8">诊断分析（表示对齐质量）</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

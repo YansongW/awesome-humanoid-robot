@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>附录 F 知识图谱查询示例 · Wiki · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" aria-current="page">Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">附录 F 知识图谱查询示例</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="f">附录 F 知识图谱查询示例</h1>
+<p>本附录介绍如何在本站（kg.rounds-tech.com）上检索与浏览知识图谱，并给出常见问题的查询路径。</p>
+<h2 id="f1">F.1 站点结构速览</h2>
+<table>
+<thead>
+<tr>
+<th>入口</th>
+<th>地址</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>首页</td>
+<td><code>/</code></td>
+<td>领域导航、类型导航、精选实体</td>
+</tr>
+<tr>
+<td>搜索</td>
+<td><code>/search/</code></td>
+<td>全文检索（名称、摘要、正文、arXiv 号）</td>
+</tr>
+<tr>
+<td>图谱</td>
+<td><code>/graph/</code></td>
+<td>全量关系网络与社区聚类可视化</td>
+</tr>
+<tr>
+<td>Wiki</td>
+<td><code>/wiki/</code></td>
+<td>30 章专著 + 附录</td>
+</tr>
+<tr>
+<td>实体卡片</td>
+<td><code>/entry/&lt;实体ID&gt;/</code></td>
+<td>单个实体的摘要、正文、关系、来源</td>
+</tr>
+<tr>
+<td>类型列表</td>
+<td><code>/types/&lt;类型&gt;/</code></td>
+<td>某一类型的全部实体</td>
+</tr>
+</tbody>
+</table>
+<h2 id="f2">F.2 搜索技巧</h2>
+<p><strong>关键词搜索</strong>：在 <code>/search/</code> 输入中英文均可，例如：</p>
+<ul>
+<li><code>宇树</code> 或 <code>Unitree</code> —— 查找公司、产品及相关论文</li>
+<li><code>2304.13705</code> —— 直接用 arXiv 编号定位论文（如 ACT）</li>
+<li><code>全身控制</code> —— 命中方法、概念、论文章节</li>
+</ul>
+<p><strong>按类型过滤</strong>：搜索结果页顶部点击类型标签，或使用 URL 参数：</p>
+<pre class="highlight"><code>/search/?type=paper            只看论文
+/search/?type=company          只看公司</code></pre>
+<p><strong>按领域过滤</strong>：使用 <code>domain</code> 参数（首页领域卡片即此链接）：</p>
+<pre class="highlight"><code>/search/?domain=07_ai_models_algorithms     AI 模型与算法
+/search/?domain=04_actuators                执行器
+/search/?domain=11_applications_markets     应用与市场</code></pre>
+<p>参数可组合：<code>/search/?domain=09_simulation_digital&amp;type=benchmark</code>（仿真领域的评测基准）。</p>
+<h2 id="f3">F.3 图谱页用法</h2>
+<ul>
+<li><strong>全图模式</strong>：按社区（cluster）着色展示实体网络，可缩放、拖拽。</li>
+<li><strong>单实体子图</strong>：在任意实体卡片页的"关系子图"中查看其一跳邻居；图谱页右上角搜索框可跳转指定实体。</li>
+<li><strong>关系类型</strong>：连边标签已本地化，如 <code>is_based_on</code>（基于）、<code>evaluates_on</code>（评测于）、<code>uses_dataset</code>（使用数据集）。</li>
+</ul>
+<h2 id="f4">F.4 常见问题查询路径</h2>
+<p><strong>"某个方法的原理和出处？"</strong>
+搜索方法名 → 进入实体卡片 → 查看"核心内容"与"参考"来源；卡片"发出的关系"中 <code>has_prerequisite</code> 列出前置理论。</p>
+<p><strong>"某个基准/数据集被哪些工作使用？"</strong>
+进入基准实体卡片 → "指向它的关系"中 <code>evaluates_on</code>（哪些方法在它上面评测）与 <code>uses_dataset</code>（哪些工作用了数据）。</p>
+<p><strong>"某家公司的产品和供应链？"</strong>
+进入公司卡片 → 查看 <code>manufacturer_of</code>（制造的产品）、<code>supplies</code>/<code>sources_from</code>（供应与采购）关系；供应链全貌另见 Wiki 第 7 章与附录 D。</p>
+<p><strong>"人形机器人某主题的系统综述？"</strong>
+先看 Wiki 对应章节（章节目录见 <code>/wiki/</code>），章节内引用的实体均有卡片页可继续深入。</p>
+<h2 id="f5-id">F.5 实体 ID 命名约定</h2>
+<p>实体 ID 统一为 <code>ent_&lt;类型&gt;_&lt;名称&gt;[_年份]</code>，例如：</p>
+<ul>
+<li><code>ent_paper_action_chunking_transformer_2023</code> —— 论文</li>
+<li><code>ent_method_whole_body_control</code> —— 方法</li>
+<li><code>ent_company_unitree_robotics_2024</code> —— 公司</li>
+<li><code>ent_standard_iso_13482_personal_care_robot_2014</code> —— 标准</li>
+</ul>
+<p>关系 ID 为 <code>rel_&lt;源实体ID&gt;_&lt;关系类型&gt;_&lt;目标实体ID&gt;</code>。</p>
+<h2 id="f6">F.6 程序化访问</h2>
+<p>本站为纯静态站点，图谱数据以 JSON 公开：</p>
+<pre class="highlight"><code>/data/search-index.json   搜索索引（含摘要、领域、类型标签）
+/data/relations.json      全量节点与连边
+/data/clusters.json       社区聚类结果
+/data/subgraphs/&lt;实体ID&gt;.json   单实体一跳子图</code></pre>
+<p>可直接 <code>fetch</code> 用于二次开发；源数据（YAML/Markdown）托管于 GitHub 仓库 <code>YansongW/awesome-humanoid-robot</code>。</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/wiki/appendices/appendix-e/">← 上一页<span>附录 E 标准、法规与认证清单</span></a>
+      
+      
+      <a class="next" href="/wiki/appendices/appendix-g/">下一页 →<span>附录 G 术语表</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#f">附录 F 知识图谱查询示例</a><ul>
+<li><a href="#f1">F.1 站点结构速览</a></li>
+<li><a href="#f2">F.2 搜索技巧</a></li>
+<li><a href="#f3">F.3 图谱页用法</a></li>
+<li><a href="#f4">F.4 常见问题查询路径</a></li>
+<li><a href="#f5-id">F.5 实体 ID 命名约定</a></li>
+<li><a href="#f6">F.6 程序化访问</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M04 · 드라이버, 센싱 및 와이어링: 관절이 듣고 대답할 수 있게 하기 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M04 · 드라이버, 센싱 및 와이어링: 관절이 듣고 대답할 수 있게 하기</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m04">M04 · 드라이버, 센싱 및 와이어링: 관절이 듣고 대답할 수 있게 하기</h1>
+<p><strong>전체 위치</strong>: M02 모터 선정, M03 감속기 설계 이후, M05 조립 및 M06 펌웨어 이전. 입력은 M02에서 계산된 모터 파라미터(상전류, 상저항, KV, 모선 전압 레벨)와 M03의 감속기 구조이며, 출력은 세 가지입니다: <strong>드라이버 보드 선정 결과, 엔코더 방식, 단일 관절 전기 도면(전원/신호/버스 세 장)</strong> — M05는 도면에 따라 배선하고, M06은 방식에 따라 펌웨어를 굽습니다.</p>
+<p><strong>전제 조건</strong>: M02의 모터 계산이 완료됨(연속 상전류와 모선 전압에 숫자가 있음); M03의 감속기 구조가 확정됨(엔코더를 어디에 장착할 수 있고, 선을 어디로 통과시킬지 알 수 있음).</p>
+<p>이론적 배경: <a href="/entry/ent_method_foc_motor_control/">FOC 자계 방향 제어</a>, <a href="/entry/ent_component_servo_drive_2024/">서보 드라이버</a>, <a href="/entry/ent_component_joint_encoder_2024/">관절 엔코더</a>, <a href="/entry/ent_technology_can_bus_2024/">CAN 버스</a> 카드; 시스템 설명은 <a href="/ko/wiki/chapters/chapter-04/">제 4장 액추에이터</a>, <a href="/ko/wiki/chapters/chapter-05/">제 5장 센싱 및 인지 하드웨어</a> 및 <a href="/ko/wiki/chapters/chapter-06/">제 6장 컴퓨팅, 전원 및 열 관리</a>를 참조하십시오.</p>
+<h2 id="1-foc">단계 1: 드라이버 선정 — FOC는 최소 기준</h2>
+<p>【무엇을 할 것인가】<a href="/entry/ent_method_foc_motor_control/">FOC</a>를 지원하는 드라이버 방식만 고려하여, 아래 표의 후보 중에서 1개로 수렴합니다:</p>
+<table>
+<thead>
+<tr>
+<th>후보</th>
+<th>포지셔닝</th>
+<th>출처/앵커</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ST B-G431B-ESC1</td>
+<td>가장 저렴한 FOC 입문용 보드, $19</td>
+<td>Berkeley 6512 액추에이터 기본 사양 (<a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite GitHub</a>)</td>
+</tr>
+<tr>
+<td>ODrive / Moteus / VESC</td>
+<td>서드파티 오픈소스 드라이버, 생태계 성숙</td>
+<td>Berkeley 구조가 이 세 가지와 호환됨 (동일 아카이브)</td>
+</tr>
+<tr>
+<td>ODRI MicroDriver</td>
+<td>연구용 자체 개발 드라이버 카드, 설계 파일 BSD 완전 오픈소스</td>
+<td><a href="https://github.com/open-dynamic-robot-initiative/open_robot_actuator_hardware">ODRI 액추에이터 하드웨어 저장소</a>, 초보자 친화도 2/5</td>
+</tr>
+</tbody>
+</table>
+<p>선정 후 두 가지 하드 체크를 수행하여 도면 서문에 기록합니다:</p>
+<pre class="highlight"><code>체크 1 (전압): 드라이버 보드 전압 범위 ⊇ M02에서 결정된 모선 전압 레벨 (예: 24 V 레벨은 6S 만충전 전압을 커버해야 함)
+체크 2 (전류): 연속 상전류 정격 ≥ I_M02 × 1.5   (1.5는 엔지니어링 권장 여유분이며, 방열 조건에 따라 체크 필요)</code></pre>
+<p>계산 예시: M02에서 관절 연속 상전류 8 A 계산 → 드라이버 보드 연속 정격 ≥ 12 A 필요; 모선 24 V 레벨 → 보드 정격 전압이 24 V를 반드시 커버해야 함. 데이터시트를 확인하여 두 값을 검수표에 기입; 확인 불가 시 "공급업체에 직접 확인 필요"라고 표시하고, "아마 충분할 것이다"라고 기본값으로 간주하지 마십시오.</p>
+<p>【이유】FOC는 3상 전류를 회전자와 함께 회전하는 d-q 좌표계로 변환하여 토크와 자속을 분리하므로, 낮은 토크 리플과 전류 루프 힘 제어의 전제 조건입니다(FOC 실체 카드). 6스텝 구동 방식의 저렴한 ESC는 이를 수행할 수 없으며, M07 힘 제어는 모두 불가능합니다. 드라이버 보드 과전류 소손은 시험대 기간 동안 가장 흔한 하드웨어 사고이며, 1.5배 여유분은 기동/구속 시의 전류 피크를 대비한 것입니다.</p>
+<p>【당신의 상황 분석 방법】예산이 빠듯하고 납땜 인두를 사용할 의향이 있음: B-G431B-ESC1, Berkeley는 "$129 모터 + $19 드라이버 보드"로 제로샷 sim-to-real 보행이 가능함을 입증했습니다. 개봉 즉시 사용 가능하고 전력 단계를 건드리기 싫음: Moteus/ODrive. 드라이버 보드까지 자체 개발하려 함: 먼저 ODRI <code>open_robot_actuator_hardware</code> 저장소를 모두 읽고 결정하십시오. 진입 장벽이 높습니다(odri 아카이브).</p>
+<h2 id="2">단계 2: 전류 샘플링 및 전류 루프 — 힘 제어의 상한선은 이 계층에 있습니다</h2>
+<p>【무엇을 할 것인가】선택한 드라이버 보드의 회로도/문서를 열어 세 가지 사항을 확인하고 도면에 기록합니다:</p>
+<ol>
+<li><strong>전류 샘플링 토폴로지</strong>: 저측 3저항, 저측 단일 저항, 또는 인라인(상선 상) 샘플링 — 개념적 차이: 저측 샘플링은 저렴하지만 PWM 특정 윈도우에서만 전류를 볼 수 있음; 인라인 샘플링은 연속적으로 볼 수 있고 비용이 높음;</li>
+<li><strong>전류 루프 대역폭</strong>: 목표 ≥ 1 kHz (엔지니어링 권장값, 보드 문서 및 실제 측정을 통해 확인 필요);</li>
+<li><strong>샘플링이 PWM과 동기화되는지 여부</strong>: 동기화되지 않으면 스위칭 노이즈가 샘플링되어 전류 판독값에 노이즈가 발생함.</li>
+</ol>
+<p>【이유】<a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">준직구동 QDD</a>의 힘 제어는 본질적으로 "전류 루프를 토크 센서로 사용"하는 것입니다 — 전류 루프가 빠르고 정확할수록 힘 제어도 빠르고 정확합니다. 한 문장으로 기억하십시오: <strong>힘 제어 성능 = 전류 루프 성능 + 통신 지연</strong>. 3루프 종속 연결에서 전류 루프는 가장 안쪽에 있으며, 외부 루프의 대역폭은 그 1/5–1/10만 취할 수 있습니다(<a href="/entry/ent_principle_current_velocity_position_loops/">전류-속도-위치 3루프</a> 카드). 내부 루프가 무너지면 전체가 실패합니다.</p>
+<p>【당신의 상황 분석 방법】스마트 서보 모터 경로는 이 단계를 건너뜁니다(루프가 서보 내부에 캡슐화됨). 자체 개발 QDD: 드라이버 보드 상위 제어기로 전류 계단 응답 테스트를 수행하고, 상승 시간을 기록하여 대역폭을 역산; 샘플링 저항이 뜨겁거나 판독값 노이즈가 크면 먼저 레이아웃과 샘플링 타이밍을 확인한 후, 알고리즘을 의심하십시오.</p>
+<h2 id="3">단계 3: 엔코더 방식 및 장착</h2>
+<p>【무엇을 할 것인가】자기 엔코더 방식 = 칩 + 반경 방향 착자 자석 (<a href="/entry/ent_mat_neodymium_magnet/">네오디뮴 자석</a>) + 3D 프린팅 브래킷, 세 가지를 각각 주문합니다:</p>
+<ul>
+<li>칩: AS5600부터 시작 (12 bit, $3, Berkeley에서 사용 중, berkeley-humanoid-lite 아카이브); 더 세밀한 속도 추정이 필요하면 더 높은 해상도의 모델로 업그레이드 (가격은 공급업체에 직접 확인 필요).</li>
+<li>수량: 모터 측 1개는 필수(FOC 정류에 사용); 힘 제어를 하려면 출력 측 1개를 추가하여 듀얼 엔코더 구성.</li>
+</ul>
+<p>장착 3요소를 조립 공정 카드에 기록: ① 자석과 칩 <strong>동축</strong>; ② 자석-칩 간격은 칩 데이터시트에 지정된 값에 따라 실행 (선택한 모델에 따라 확인 필요); ③ 엔코더와 그 와이어링은 <strong>대전류 상선에서 멀리</strong> 배치. 인터페이스는 대역폭과 선 수에 따라 선택:</p>
+<table>
+<thead>
+<tr>
+<th>인터페이스</th>
+<th>신호선 수</th>
+<th>대역폭/지연 특성</th>
+<th>적합</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I²C</td>
+<td>2</td>
+<td>느림, 저속 판독에 적합</td>
+<td>디버깅/보조량</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>4</td>
+<td>빠름, 지연 낮음</td>
+<td>모터 측 FOC 정류에 최우선</td>
+</tr>
+<tr>
+<td>ABI (인크리멘탈)</td>
+<td>3</td>
+<td>빠르지만, 전원 켜짐 시 절대 각도 모름</td>
+<td>귀환 수단이 있는 경우</td>
+</tr>
+<tr>
+<td>PWM</td>
+<td>1</td>
+<td>간단하고 노이즈 내성, 분해능 제한됨</td>
+<td>저비용 예비</td>
+</tr>
+</tbody>
+</table>
+<p>【이유】모터 측 엔코더는 FOC의 핵심입니다: 정류를 위해 회전자 전기각을 알아야 하며, 판독값이 1도만 튀어도 토크 리플이 따라 튑니다. 출력 측 엔코더의 가치는 감속기를 "꿰뚫어 보는" 것입니다 — 듀얼 엔코더는 백래시와 탄성 변형을 직접 측정할 수 있으며, ODRI의 BLMC 액추에이터는 바로 모터 측/출력 측 듀얼 엔코더를 통해 본체 감지 힘 제어를 실현합니다(odri 아카이브); 모터 측만 장착하면 정밀도를 체계적으로 과대평가하게 됩니다(<a href="/entry/ent_component_joint_encoder_2024/">관절 엔코더</a> 카드). 자기 엔코더는 장착 동축도와 전자기 간섭에 민감하며, 이 두 가지가 초보자 판독값 이상의 대부분을 차지합니다.</p>
+<p>【당신의 상황 분석 방법】스마트 서보 모터: 내장 피드백으로 충분하니 건드리지 마십시오. 자체 개발 QDD로 위치 제어만 수행: 먼저 모터 측을 장착하고, 하우징에 출력 측을 위한 브래킷 나사 구멍을预留해 두십시오. RL 보행/힘 제어 목표: 듀얼 엔코더를 한 번에 장착, AS5600 레벨로 시작 가능 — 더 많은 트레이드오프는 <a href="/ko/roadmap/playbooks/sensor-selection/">센서 선정 매뉴얼</a>을 참조하십시오.</p>
+<h2 id="4">단계 4: 선경, 전압 강하 및 커넥터</h2>
+<p>【무엇을 할 것인가】공식에 따라 선경을 선택하고, 판단 기준: <strong>만부하 전압 강하 ≤ 모선 전압의 5%</strong> (엔지니어링 권장값):</p>
+<pre class="highlight"><code>R = ρ·L / A      ρ_구리 = 1.7×10⁻⁸ Ω·m, L은 왕복 총 길이, A는 도체 단면적
+ΔV = I·R         조건 ΔV ≤ 0.05 × V_bus</code></pre>
+<p>완전한 계산 예시 (모선 24 V 레벨, 관절 피크 10 A, 단방향 선 길이 1 m, AWG 데이터는 일반 구리선 규격):</p>
+<pre class="highlight"><code>20 AWG: A ≈ 0.518 mm² → R = 1.7e-8 × 2 / 0.518e-6 ≈ 0.066 Ω
+ΔV = 10 × 0.066 = 0.66 V ≈ 24 V의 2.7%  ✓ 합격
+동일 조건 12 V 모선: 0.66 / 12 = 5.5%  ✗ → 18 AWG로 교체 (A ≈ 0.82 mm², ΔV ≈ 0.41 V ≈ 3.4% ✓)</code></pre>
+<p>커넥터 선정: 전원은 XT30 (소형 관절)/XT60 (간선) 사용, 역삽 방지 및 잠금 장치 포함; 신호는 JST 계열 사용. 모든 납땜/압착 지점은 응력 완화 처리 (열수축 튜브 + 와이어 클립), 굽힘 반경 ≥ 선경의 5배 (엔지니어링 권장값); 전원선과 신호선은 <strong>분리 배선</strong>, 부득이하게 교차해야 할 경우 수직으로 교차.</p>
+<p>【이유】선로 저항은 전압을 소모할 뿐만 아니라 발열도 발생시킵니다: 위 예시의 0.066 Ω은 10 A에서 0.66 W를 소산하며, 관절 케이스 내에 갇히면 온도 상승의 원인이 됩니다. 진동 환경에서 대부분의 "간헐적 전원 차단"은 커넥터 접촉 불량 또는 압착 불량이지, 보드 고장이 아닙니다.</p>
+<p>【당신의 상황 분석 방법】관절 내부 배선 &lt; 0.3 m인 경우 선경을 적절히 낮추어 무게를 줄일 수 있음; 몸통에서 다리로 가는 간선은 반드시 항목별로 계산해야 함. 먼저 샘플 선으로 10 A 실측 전압 강하 테스트를 수행한 후 대량 발주 — 실측이 표보다 신뢰할 수 있습니다.</p>
+<h2 id="5-can">5단계: CAN 버스 전기</h2>
+<p><strong>【할 일】</strong> 체인(데이지 체인) 토폴로지로 배선하고, <strong>스타형은 금지</strong>합니다. 버스 양 끝에 각각 120Ω 종단 저항 1개를 납땜합니다. 분기 단선은 ≤ 0.3m(엔지니어링 권장값)입니다. 작업 완료 후 전원을 차단하고, 멀티미터로 CANH-CANL 간 저항을 측정하면 ≈ 60Ω(120Ω 두 개 병렬)이어야 합니다. 전송 속도는 선로 길이와 연관됩니다: 1Mbps는 미터 단위 선로 길이에 해당하며, 선로가 더 길면 전송 속도를 낮춥니다(엔지니어링 권장값, 구체적으로는 트랜시버 데이터시트에 따라 검증).</p>
+<p>앵커 방식은 그대로 참고 가능: Berkeley Humanoid Lite 사지 각각에 CAN 2.0 버스 1개(1Mbps, USB-CAN 어댑터를 통해 메인 컨트롤러에 연결), 액추에이터와 IMU 통신 250Hz, 단일 버스 최대 64개 장치(berkeley-humanoid-lite 아카이브).</p>
+<p><strong>【이유】</strong> <a href="/entry/ent_technology_can_bus_2024/">CAN</a>은 차동 신호로 노이즈 내성을 가지지만, 고주파 신호는 케이블 끝에서 반사됩니다. 종단 저항은 이 반사를 흡수하는 역할을 하며, 없으면 파형에 링잉이 발생하고 프레임이 무작위로 손실됩니다. 체인 토폴로지는 각 구간의 임피던스 연속성을 보장합니다. 스타형 분기는 임피던스 불연속 지점이며, 노드가 많아지면 통신이 불안정해집니다. 대역폭이 부족하면 <a href="/entry/ent_technology_ethercat_2024/">EtherCAT</a>을 평가하세요. 단점은 슬레이브 칩이 비싸고 마스터에 실시간 Linux가 필요하다는 점입니다(ODRI Master Board의 접근 방식 참조, odri 아카이브).</p>
+<p><strong>【당신의 상황 분석 방법】</strong> 관절 수 ≤ 12개, 제어 주파수 ≤ 500Hz: CAN 2.0으로 충분하며, USB-CAN 어댑터는 수만 원에 구매 가능합니다. 여러 대의 드라이버 보드는 출고 시 기본 노드 ID가 동일하므로, <strong>한 대씩 전원을 켜서 ID를 변경하고, 라벨을 붙인 후 네트워크를 구성</strong>해야 합니다. 그렇지 않으면 버스가 켜지는 순간 모든 장치가 충돌합니다.</p>
+<h2 id="_1">합격 기준</h2>
+<ul>
+<li>[ ] 단일 관절 전기 도면 문서화: 전원, 신호, 버스 세 장으로, 선경, 커넥터 모델, 종단 저항 위치를 명시합니다.</li>
+<li>[ ] 드라이버 보드의 두 가지 하드웨어 검증(전압, 전류)에 계산식과 숫자가 있으며, 출처는 데이터시트이거나 "공급업체에 직접 확인 필요"라고 명시되어야 합니다.</li>
+<li>[ ] 엔코더 정지 상태 판독값 안정: 변동이 ±1 LSB 수준(AS5600은 12비트, 1 LSB ≈ 0.088°, <a href="/ko/roadmap/playbooks/sensor-selection/">센서 선정 매뉴얼</a> 참조).</li>
+<li>[ ] 선경 선택에 완전한 계산식과 계산 예시가 있으며, 만부하 실측 전압 강하가 모선 전압의 5% 이하여야 합니다.</li>
+<li>[ ] CAN 네트워크 구성 후 전원 차단 상태에서 실측 CANH-CANL ≈ 60Ω; 250Hz 연속 통신 1시간 동안 끊김 없음.</li>
+<li>[ ] 각 드라이버 보드의 노드 ID가 고유하고 라벨이 부착되어 있으며, 도면에 기록됩니다.</li>
+</ul>
+<h2 id="_2">일반적인 문제점 및 점검</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>점검 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>엔코더 판독값 요동, 속도 루프 떨림</td>
+<td>자기 엔코더와 상선(相線)이 평행하게 배선됨 / 자석 편심 또는 간격 오류</td>
+<td>엔코더 선을 꼬아서 상선과 멀리 배선; 동축도와 간격 재측정</td>
+</tr>
+<tr>
+<td>CAN 통신 무작위 중단</td>
+<td>종단 저항 누락/중복, 스타형 토폴로지</td>
+<td>전원 차단 후 60Ω 측정: 무한대 = 미연결, 60Ω보다 훨씬 낮음 = 과다 연결; 체인형으로 변경</td>
+</tr>
+<tr>
+<td>커넥터/와이어링 하니스 발열</td>
+<td>접촉 불량, 선경 부족, 압착 불량</td>
+<td>만부하 적외선 온도 측정으로 핫스팟 식별; 재압착 또는 선경 증가</td>
+</tr>
+<tr>
+<td>I²C 엔코더 데이터 무작위 오류</td>
+<td>풀업 저항 부적절, 배선 길이 과다</td>
+<td>배선 단축, 데이터시트에 따라 풀업 조정; 여전히 문제 시 SPI로 변경</td>
+</tr>
+<tr>
+<td>통신 간헐적 불량, 규칙성 없음</td>
+<td>접지 루프(다중 접지)</td>
+<td>신호 접지는 단일 지점 접지; 필요 시 CAN 절연 트랜시버 사용</td>
+</tr>
+<tr>
+<td>진동 후 간헐적 전원 차단</td>
+<td>단자 압착 불량, 응력 완화 없음</td>
+<td>선 하나씩 인장력 샘플 검사; 수축 튜브와 케이블 클램프 보강</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m03-reducer-design/">M03 · 감속기 설계 및 계산</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m05-print-assembly/">M05 · 3D 프린팅 및 기계 조립</a></li>
+<li>매뉴얼: <a href="/ko/roadmap/playbooks/actuator-selection/">액추에이터 선정 매뉴얼</a> · <a href="/ko/roadmap/playbooks/sensor-selection/">센서 선정 매뉴얼</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-04/">제4장 액추에이터</a>, <a href="/ko/wiki/chapters/chapter-05/">제5장 센싱 및 감지 하드웨어</a>, <a href="/ko/wiki/chapters/chapter-06/">제6장 컴퓨팅, 전원 및 열 관리</a></li>
+<li><a href="/ko/roadmap/stage-1-actuator/">1단계 개요</a> · <a href="/ko/roadmap/index/">로드맵 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m03-reducer-design/">← 이전<span>M03 · 감속기 설계 및 계산: 감속비는 머리로 정하는 것이 아니다</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m05-print-assembly/">다음 →<span>M05 · 3D 프린팅 및 기계 조립: 도면을 손에 쥐어지는 뜨거운 관절로</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m04">M04 · 드라이버, 센싱 및 와이어링: 관절이 듣고 대답할 수 있게 하기</a><ul>
+<li><a href="#1-foc">단계 1: 드라이버 선정 — FOC는 최소 기준</a></li>
+<li><a href="#2">단계 2: 전류 샘플링 및 전류 루프 — 힘 제어의 상한선은 이 계층에 있습니다</a></li>
+<li><a href="#3">단계 3: 엔코더 방식 및 장착</a></li>
+<li><a href="#4">단계 4: 선경, 전압 강하 및 커넥터</a></li>
+<li><a href="#5-can">5단계: CAN 버스 전기</a></li>
+<li><a href="#_1">합격 기준</a></li>
+<li><a href="#_2">일반적인 문제점 및 점검</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

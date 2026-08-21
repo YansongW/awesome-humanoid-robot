@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patch Policy: Efficient Embodied Control via Dense Visual Representations · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Patch Policy: Efficient Embodied Control via Dense Visual Representations</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Patch Policy: Efficient Embodied Control via Dense Visual Representations</h1>
+      <p class="entry-name-en">Patch Policy: Efficient Embodied Control via Dense Visual Representations</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underutilized in robot learning. Modern robot policies either compress each observation into a single global token, or rely on visual backbones trained from scratch, sacrificing both fine-grained spatial detail and the benefits of large-scale visual pre-training. While there exist policies that do operate.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18236" target="_blank" rel="noopener">arXiv:2607.18236 Patch Policy: Efficient Embodied Control via Dense Visual Representations</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Patch Policy는 사전 학습된 ViT의 밀집 패치 특징(전역 풀링 또는 CLS 토큰이 아닌)을 직접 소비하는 모듈식 Transformer 정책 아키텍처를 제안하며, NYU, Meta-FAIR 및 AMI Labs가 공동으로 완성했습니다. 핵심 기여는 수십억 파라미터 VLM 백본을 도입하지 않고도, 동결된 밀집 시각 표현과 블록 인과 어텐션만으로 시뮬레이션 및 실제 세계 조작 작업에서 전역 표현 기준선과 미세 조정된 VLA 모델을 능가하면서 파라미터 수와 추론 지연 시간을 수 자릿수 줄일 수 있음을 증명한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>로봇 학습 커뮤니티는 오랫동안 딜레마에 직면해 왔습니다: CLS 토큰이나 평균 풀링과 같은 전역 표현을 사용하여 미세한 공간 정보를 희생하거나, OpenVLA와 같은 수십억 파라미터 VLM을 도입하여 모든 추론 및 훈련 비용을 상속받는 것입니다. Patch Policy가 실제로 바꾼 것은 이 트레이드오프의 기본 가정입니다. 실험을 통해 시각-운동 정책의 핵심 요구 사항은 "밀집하지만 동결된" 특징이지, "전역적이지만 미세 조정 가능한" 표현도, "거대하지만 범용적인" 생성 백본도 아님을 증명했습니다. 이 판단은 시각 사전 학습과 정책 학습의 결합 방식을 "엔드투엔드 미세 조정" 또는 "전역 압축"이라는 두 극단에서 해방시켜, 파라미터 효율성과 공간 충실도를 모두 갖춘 중간 경로를 가리킵니다.</p>
+<p>이 작업은 또한 "패치 특징은 대형 모델과 함께 사용해야 한다"는 커뮤니티의 암묵적 인식을 바꾸었습니다. 정책 학습을 T×P 시공간 토큰 시퀀스의 시퀀스 모델링으로 모델링하고 블록 인과 어텐션 마스크를 도입함으로써, 3천만 개의 훈련 가능한 파라미터로 1만 개 이상의 패치 토큰 스트림을 처리할 수 있으며 전역 풀링이나 차원 축소 작업이 필요 없습니다. 이는 본질적으로 시각 표현 활용 문제를 "어떻게 압축할 것인가"에서 "어떻게 어텐션을 구성할 것인가"로 재정의합니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="observation-trunk">관측 백본 (Observation Trunk)</h3>
+<ul>
+<li>입력 이미지 o_t ∈ R^{C×H×W}는 동결된 ViT 인코더에 의해 패치로 분할되며, P×D 형태의 밀집 특징을 출력합니다 (P=패치 수, D=임베딩 차원).</li>
+<li>컨텍스트 창 T에 대해 특징 시퀀스 형태는 T×P×D입니다. 목표 조건 설정에서는 목표 이미지가 동일한 인코더로 인코딩된 후 관측과 연결되어 T×P×2D가 되거나, 목표 벡터 g ∈ R^G가 토큰별로 연결되어 T×P×(D+G)가 됩니다.</li>
+<li>핵심 설계: P=1일 때 전역 풀링 특징으로 축소되어 상태 기반 환경과 자연스럽게 호환되며 아키텍처의 범용성을 보장합니다.</li>
+</ul>
+<h3 id="policy-learning">정책 학습 (Policy Learning)</h3>
+<ul>
+<li>T×P 시공간 텐서를 길이 T×P의 시퀀스로 평탄화하고, 학습 가능한 1D 위치 임베딩(평탄화 인덱스 기준)을 추가합니다.</li>
+<li><strong>블록 인과 어텐션 마스크(block-causal attention mask)</strong> 적용: 프레임 내 패치는 완전 양방향 어텐션, 프레임 간은 엄격한 인과 관계. 이 설계는 각 프레임의 공간 컨텍스트를 통합하면서 미래 프레임 정보 누출을 방지합니다.</li>
+<li>액션 헤드는 각 프레임의 마지막 패치 토큰에서 액션 청크(action chunk)를 출력합니다. 공식은 액션 헤드 아키텍처와 무관하며, VQ-BeT(혼합 분류-회귀)와 Diffusion Policy(노이즈 제거) 두 가지 헤드를 평가했습니다.</li>
+</ul>
+<h3 id="_4">훈련 및 추론</h3>
+<ul>
+<li>훈련: 패치 토큰 시퀀스를 순방향 전달하고 프레임별로 손실을 계산합니다.</li>
+<li>추론: 현재 관측 패치 특징을 추출하여 길이 T의 롤링 창에 추가하고, 정책이 액션 청크를 예측하며 감소하는 시간 영역 제어로 실행합니다.</li>
+<li>동결된 백본은 시각 임베딩을 사전 계산할 수 있게 하여 훈련을 크게 가속화합니다.</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>블록 인과 어텐션 마스크 도입</strong>: 이는 "밀집 토큰 어텐션을 어떻게 구성할 것인가"에 대한 명확한 답변입니다. full attention(미래 프레임 누출 허용) 및 token-causal(프레임 내 컨텍스트 파괴)과 비교하여, 블록 인과는 프레임 내 양방향, 프레임 간 인과를 유지하며 Diffusion Policy의 Cube 작업에서 0.11(token-causal)에서 1.24(block-causal)로 회복되어 이 마스크가 시공간 모델링에 결정적임을 증명합니다.</p>
+</li>
+<li>
+<p><strong>동결 백본 + 밀집 특징의 분리</strong>: 시각 인코더를 미세 조정하지 않고 사전 학습된 패치 특징을 직접 소비합니다. 이 설계는 훈련 비용을 6.5 GPU-hours(1xL40S)로 낮추며, OpenVLA-OFT의 16 GPU-hours 및 ACT의 24 GPU-hours와 비교되면서 DINOv2/WebSSL과 같은 대규모 사전 학습의 표현 이점을 유지합니다.</p>
+</li>
+<li>
+<p><strong>파라미터 효율성의 극대화</strong>: 51.55M 총 파라미터(VQ-BeT + DINOv2)로 7.61B의 OpenVLA-OFT를 능가하며, 추론 지연 시간은 10.99 ms 대 61.71 ms입니다. 이는 밀집 특징의 가치가 모델 규모가 아니라 특징 자체의 충실도와 정책 아키텍처의 적합성에 있음을 증명합니다.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<h3 id="table-1-100">시뮬레이션 환경 (Table 1, 100 궤적/시드)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Push-T</th>
+<th>LIBERO Goal</th>
+<th>BlockPush</th>
+<th>Cube</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WebSSL Patch + VQ-BeT (Ours)</td>
+<td>0.68 ± 0.03</td>
+<td>0.94 ± 0.01</td>
+<td>1.68 ± 0.15</td>
+<td>1.68 ± 0.03</td>
+</tr>
+<tr>
+<td>WebSSL Patch + DP (Ours)</td>
+<td>0.80 ± 0.01</td>
+<td>0.98 ± 0.00</td>
+<td>1.65 ± 0.08</td>
+<td>1.73 ± 0.02</td>
+</tr>
+<tr>
+<td>WebSSL Avg Pool + DP</td>
+<td>0.79 ± 0.02</td>
+<td>0.98 ± 0.01</td>
+<td>1.34 ± 0.02</td>
+<td>0.21 ± 0.03</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>0.59 ± 0.02</td>
+<td>0.95</td>
+<td>1.43 ± 0.17</td>
+<td>1.50 ± 0.09</td>
+</tr>
+<tr>
+<td>ResNet-18 Patch + ACT</td>
+<td>0.64 ± 0.03</td>
+<td>0.93 ± 0.02</td>
+<td>0.15 ± 0.01</td>
+<td>0.69 ± 0.11</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-2-20-dinov2-patch-vq-bet">실제 세계 (Table 2, 20회 시도, DINOv2 Patch + VQ-BeT)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>단계</th>
+<th>Ours</th>
+<th>DINOv2 CLS</th>
+<th>ACT</th>
+<th>OpenVLA-OFT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cable Insertion</td>
+<td>완전 삽입</td>
+<td>0.70</td>
+<td>0.60</td>
+<td>0.35</td>
+<td>0.30</td>
+</tr>
+<tr>
+<td>Pen Collection</td>
+<td>세 번째 펜 배치</td>
+<td>0.85</td>
+<td>0.65</td>
+<td>0.65</td>
+<td>0.60</td>
+</tr>
+<tr>
+<td>Tool Hanging</td>
+<td>도구 배치</td>
+<td>0.90</td>
+<td>0.70</td>
+<td>0.85</td>
+<td>0.65</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3-h200">계산 자원 (Table 3, H200)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>총 파라미터</th>
+<th>훈련 가능 파라미터</th>
+<th>추론 지연 시간</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ours - VQ-BeT (DINOv2)</td>
+<td>51.55M</td>
+<td>29.49M</td>
+<td>10.99 ms</td>
+</tr>
+<tr>
+<td>Ours - DP (WebSSL)</td>
+<td>303.66M</td>
+<td>9.35M</td>
+<td>451.68 ms</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>7.61B</td>
+<td>177.90M</td>
+<td>61.71 ms</td>
+</tr>
+<tr>
+<td>ACT</td>
+<td>83.85M</td>
+<td>83.85M</td>
+<td>8.63 ms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">핵심 결론</h3>
+<ul>
+<li>최적 전역 풀링 기준선 대비 상대적 개선 40%(표 내 값 1.73→0.21로 계산); OpenVLA-OFT 대비 18% 능가(표 내 값 1.73→1.50으로 계산), 파라미터는 약 0.7%에 불과.</li>
+<li>표현 소거 실험(Table 7/8): WebSSL과 DINOv2가 최고 성능, SigLIP2는 전반적으로 최하위(Push-T 0.51 vs DINOv2 0.69).</li>
+<li>제로샷 일반화(Table 5/6): 실제 세계 픽업 87% vs CAP 79%; EgoGym 폐쇄 작업 92.44% vs 86.50%.</li>
+</ul>
+<h2 id="_8">경계 및 한계</h2>
+<ul>
+<li>동결된 시각 백본만 평가했으며, 투명 물체나 고반사 표면과 같은 전문 시각 영역에 대한 엔드투엔드 미세 조정의 이점을 탐구하지 않았습니다.</li>
+<li>밀집 토큰은 시퀀스 길이와 훈련 시간을 증가시키며, FlashAttention과 같은 최적화는 현재 구현에 포함되지 않았습니다.</li>
+<li>행동 클로닝 정책으로만 검증되었으며 강화 학습으로 확장되지 않았습니다. 정적 전문가 시연의 성능 상한은 돌파되지 않았습니다.</li>
+<li>시각 표현 선택이 결과에 큰 영향을 미치며(SigLIP2 전면 실패), 논문은 표현 선택에 대한 이론적 기준을 명시하지 않고 경험적 결론만 제공합니다.</li>
+<li>실제 세계 실험은 DINOv2 (ViT-S)만 사용했으며, WebSSL의 실제 시나리오 전이성을 검증하지 않았습니다.</li>
+</ul>
+<h2 id="_9">공학적 시사점</h2>
+<ul>
+<li><strong>시각 표현 먼저 확인</strong>: WebSSL과 DINOv2가 현재 최적 선택이며, SigLIP2는 조작 작업에서 체계적으로 실패하므로 재현 시 전자를 우선 사용하세요.</li>
+<li><strong>어텐션 마스크는 핵심 하이퍼파라미터</strong>: block-causal이 기본 선택입니다. token-causal은 Diffusion Policy에서 Cube 성능 붕괴(0.11)를 초래하므로 반드시 피해야 합니다.</li>
+<li><strong>모델 크기에는 임계 효과가 존재</strong>: Push-T에서 Diffusion Policy가 25.30M(커버리지 0.56)에서 40.43M(커버리지 0.83)으로 증가할 때 성능이 급등하며, 작은 모델은 밀집 특징을 활용하지 못할 수 있으므로 작업에 따라 N, heads, d_emb를 조정해야 합니다.</li>
+<li><strong>사전 계산 임베딩은 훈련 가속의 핵심</strong>: 동결된 백본은 패치 특징을 오프라인으로 추출할 수 있게 하여 훈련 비용을 6.5 GPU-hours로 낮출 수 있으며, 공학적으로 이 캐싱 메커니즘을 우선 구현해야 합니다.</li>
+<li><strong>추론 지연 시간은 액션 청크를 구분해야 함</strong>: 논문에서 보고된 10.99 ms는 단일 순방향 전달이며, receding horizon의 시간 가속은 포함하지 않습니다. 실제 배포 시 이 기술은 직교적으로 추가할 수 있습니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_patch_policy_efficient_embodied_control_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#observation-trunk">관측 백본 (Observation Trunk)</a></li>
+<li><a href="#policy-learning">정책 학습 (Policy Learning)</a></li>
+<li><a href="#_4">훈련 및 추론</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a><ul>
+<li><a href="#table-1-100">시뮬레이션 환경 (Table 1, 100 궤적/시드)</a></li>
+<li><a href="#table-2-20-dinov2-patch-vq-bet">실제 세계 (Table 2, 20회 시도, DINOv2 Patch + VQ-BeT)</a></li>
+<li><a href="#table-3-h200">계산 자원 (Table 3, H200)</a></li>
+<li><a href="#_7">핵심 결론</a></li>
+</ul>
+</li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

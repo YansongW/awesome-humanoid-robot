@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference</h1>
+      <p class="entry-name-en">Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 Jetson-PI，一个面向 Jetson Orin/Thor 等低功耗机载设备的实时 VLA 控制框架。核心贡献是 Foresight-Aligned Asynchronous Correction（前瞻对齐异步校正）与 Confidence-based Scheduling Optimization（基于置信度的调度优化），配合基于 llama.cpp 的系统级加速，将 π₀.₅ 在 Orin 上的控制频率从 0.7 Hz 提升至 6.06 Hz（8.66×），并在 LIBERO 基准上超越现有异步方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12659" target="_blank" rel="noopener">arXiv:2607.12659 Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchr</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>VLA 模型在高端 GPU 上表现优异，但部署到 Jetson Orin 这类机载设备时，推理延迟高达 1.4 秒（π₀.₅），控制频率仅 0.7 Hz，导致机器人对环境变化反应迟钝。异步推理虽能隐藏部分延迟，却引入感知-执行错位：动作专家基于过时的视觉上下文生成动作，而环境已发生变化。现有方法如 VLASH 仅预测未来机器人状态（qₜ₊Δ），无法反映环境变化；RTC 等也未解决根本错位问题。</p>
+<p>Jetson-PI 真正改变了异步 VLA 推理的范式：不再试图让 VLM 跟上动作节奏，而是训练一个轻量级模块预测未来 VLM 状态，使动作专家能基于未来环境生成动作。同时，它重新定义了 VLM 与动作专家的角色——VLM 从每步必调用的组件变为按需调用的观察者，通过置信度调度器动态决定何时刷新环境上下文。这解决了异步推理中反应时间与精度不可兼得的矛盾，使机载 VLA 部署从实验室演示走向实用。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="1-foresight-aligned-asynchronous-correction">1. Foresight-Aligned Asynchronous Correction（前瞻对齐异步校正）</h3>
+<ul>
+<li>训练 40M 参数（VLA 的 1%）的未来校正模块，输入为 t 时刻压缩的 VLM 最终层输出（经 Q-Former 压缩至 T′=4 token）与已提交动作序列（a_t 至 a_{t+Δ-1}）。</li>
+<li>动作序列经 MLP+Transformer 处理取最后 token，与压缩 VLM 输出拼接后经两个 Transformer 块，分叉为校正头（预测 t+Δ 时刻压缩 VLM 状态 ĥₜ₊Δ）与置信度头（输出标量 ĉ）。</li>
+<li>损失函数：L_predict = ‖ĥₜ₊Δ − hₜ₊Δ‖₂，L_total = L_predict + λ‖ĉ + L_predict‖₂。训练时随机采样 Δ，使模块适应不同推理延迟。</li>
+</ul>
+<h3 id="2-correction-aware">2. 两阶段 Correction-aware 训练</h3>
+<ul>
+<li>阶段 1：使用 t+Δ 时刻 ground-truth VLM 状态训练压缩器和动作专家（动作损失），使其学会从未来隐藏状态提取有用信息。</li>
+<li>阶段 2：固定阶段 1 参数，训练未来校正模块预测 t+Δ 时刻压缩 VLM 状态，同时输出置信度。批量大小 32，学习率 3e-4，AdamW，阶段 1/2 分别训练 30,000/25,000 步。</li>
+</ul>
+<h3 id="3-confidence-based-scheduling-optimization">3. Confidence-based Scheduling Optimization（基于置信度的调度优化）</h3>
+<ul>
+<li>当 ĉ &gt; θ（θ &lt; 0.0）时跳过 VLM，动作专家直接基于预测的未来状态生成动作；当 ĉ ≤ θ 时调用 VLM 刷新环境上下文，更新 KV buffer 和隐藏状态 buffer。</li>
+<li>动作块大小 H=20，L=H−Δ，动作专家推理时间估计 Δ_ae = ⌈Δ/3⌉。</li>
+</ul>
+<h3 id="4-llamacpp">4. 系统级加速（基于 llama.cpp）</h3>
+<ul>
+<li><strong>计算图复用</strong>：语言指令 padding 到固定长度保证 token 长度恒定，复用首次推理的 CUDA graph。</li>
+<li><strong>GPU 驻留中间缓冲</strong>：ViT→LLM→动作专家的中间结果保留在 GPU 内存，避免写回 CPU。</li>
+<li><strong>Flow matching 展开</strong>：将 10 步去噪迭代融合为统一计算图，减少图调用次数。</li>
+</ul>
+<h3 id="5-vlm">5. 为何不并行化 VLM 与动作专家</h3>
+<ul>
+<li>Roofline 分析：矩阵乘法执行时间 = max(M<em>K</em>N/compute throughput, 2<em>(M</em>K+K*N)/bandwidth)。</li>
+<li>在 RTX 4090 上 VLM 计算受限、动作专家带宽受限，并行可充分利用资源；在机载设备上两者均带宽受限（Orin 平衡计算强度 1953/2685，Thor 3736），并行导致带宽争用。</li>
+</ul>
+<h2 id="_3">关键创新</h2>
+<ol>
+<li>
+<p><strong>未来状态预测而非未来图像/KV 缓存校正</strong>：直接预测压缩的 VLM 最终层输出，避免重建高维图像或逐层校正 KV cache 的计算开销。40M 参数（VLA 的 1%）的模块即可捕捉环境变化，这是异步 VLA 推理中首次以如此轻量的方式解决感知-执行错位。</p>
+</li>
+<li>
+<p><strong>置信度驱动的自适应调度</strong>：将 VLM 从每步必调用变为按需调用，通过置信度阈值 θ 动态平衡反应时间与精度。这改变了 VLM 与动作专家的协作模式——VLM 成为环境观察者而非动作生成者，动作专家成为实时决策者。在 Orin 上反应时间降低 2.11×，控制频率提升至 1.48 Hz。</p>
+</li>
+<li>
+<p><strong>面向机载设备的系统级优化组合</strong>：计算图复用、GPU 驻留中间缓冲、flow matching 展开三项优化正交于量化/剪枝，不改变模型计算。在 Orin 上实现 8.66× 控制频率提升（0.7→6.06 Hz），相比 vla.cpp 提升 5.41×。这是首个在 Jetson 级设备上达到实用控制频率的 VLA 部署方案。</p>
+</li>
+</ol>
+<h2 id="_4">实验与结果</h2>
+<h3 id="libero-05-1-9">LIBERO 基准（π₀.₅，跨 Δ=1 至 9 平均成功率）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>SPATIAL</th>
+<th>OBJECT</th>
+<th>GOAL</th>
+<th>LIBERO-10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLASH</td>
+<td>74.4</td>
+<td>86.1</td>
+<td>84.2</td>
+<td>81.3</td>
+</tr>
+<tr>
+<td>RTC</td>
+<td>92.6</td>
+<td>96.6</td>
+<td>94.1</td>
+<td>86.4</td>
+</tr>
+<tr>
+<td>Ours</td>
+<td>97.0</td>
+<td>98.0</td>
+<td>96.5</td>
+<td>92.2</td>
+</tr>
+<tr>
+<td>+Sched</td>
+<td>97.4</td>
+<td>98.6</td>
+<td>96.8</td>
+<td>92.5</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Δ=9 时（跨四数据集平均）：相比 VLASH 提升 45.6%，相比 RTC 提升 7.0%。</li>
+<li>总体：相比 VLASH 平均提升 14.8%，相比 RTC 平均提升 3.9%。</li>
+</ul>
+<h3 id="jetson-orin05">延迟与控制频率（Jetson Orin，π₀.₅）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Total (ms)</th>
+<th>Reaction Time (ms)</th>
+<th>Control Frequency (Hz)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive PI05</td>
+<td>1420.8</td>
+<td>1420.8</td>
+<td>0.70</td>
+</tr>
+<tr>
+<td>+Schedule opt.</td>
+<td>1420.8</td>
+<td>674.9</td>
+<td>1.48</td>
+</tr>
+<tr>
+<td>+Graph reuse</td>
+<td>476.1</td>
+<td>227.0</td>
+<td>4.41</td>
+</tr>
+<tr>
+<td>+Intermediate Buffer &amp; Unroll</td>
+<td>412.9</td>
+<td>165.1</td>
+<td>6.06</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>调度优化：Orin 反应时间降低 2.11×，Thor 降低 1.87×。</li>
+<li>图复用：Orin 反应时间降低 2.96×。</li>
+<li>GPU 驻留中间缓冲与 flow matching 展开：动作专家加速 1.50×（Orin）和 1.59×（Thor）。</li>
+<li>总体控制频率提升：Orin 8.66×、Thor 3.48×（相比 naive PyTorch）；相比 vla.cpp 提升 5.41×。</li>
+</ul>
+<h3 id="xr-1-jetson-orin-15-hz">真实世界叠衣服任务（XR-1 模型，Jetson Orin，动作执行 15 Hz）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Picking</th>
+<th>Folding</th>
+<th>Placing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RTX 4090 (Baseline)</td>
+<td>10/10</td>
+<td>7/10</td>
+<td>10/10</td>
+</tr>
+<tr>
+<td>Jetson Orin (Naive Async)</td>
+<td>6/10</td>
+<td>0/10</td>
+<td>5/10</td>
+</tr>
+<tr>
+<td>Jetson-PI (Ours)</td>
+<td>10/10</td>
+<td>8/10</td>
+<td>9/10</td>
+</tr>
+</tbody>
+</table>
+<p>结果表明 Jetson-PI 在机载设备上接近 RTX 4090 水平，而 naive async 在折叠任务上完全失败（0/10）。</p>
+<h2 id="_5">边界与局限</h2>
+<ul>
+<li>机载平台在计算和带宽上相对 GPU 集群存在根本性限制；随着模型参数量和 batch size 扩大，Jetson-PI 的性能提升可能无法完全弥合与高端 GPU 部署的差距。</li>
+<li>方法聚焦于不改变模型计算的系统级优化，未与量化、剪枝等技术结合验证。</li>
+<li>未来校正模块依赖训练时随机采样 Δ 的分布，若实际推理延迟超出训练分布范围，预测精度可能退化（论文未明确具体范围）。</li>
+<li>真实世界实验仅在单一机器人平台（PrimeBot X2-W）和单一任务（叠衣服）上验证，泛化性未充分证明。</li>
+<li>置信度阈值 θ 的选取（示例为 -0.2）未给出系统调优方法，可能依赖经验。</li>
+</ul>
+<h2 id="_6">工程启示</h2>
+<ul>
+<li><strong>先核对硬件带宽</strong>：Jetson-PI 的核心假设是机载设备上 VLM 与动作专家均带宽受限。复现前先用 roofline 模型（平衡计算强度 = TOPS/Bandwidth × 1000）确认目标设备是否满足此条件，否则并行化可能更优。</li>
+<li><strong>训练数据与 Δ 分布匹配</strong>：未来校正模块训练时随机采样 Δ，但实际部署时 Δ 由硬件和功率模式决定。建议在训练集中覆盖目标设备的典型 Δ 范围，并验证 Δ_ae = ⌈Δ/3⌉ 的估计是否适用于你的动作专家架构。</li>
+<li><strong>系统级优化顺序敏感</strong>：调度优化（+Schedule opt.）不改变总延迟但降低反应时间；图复用和 GPU 驻留缓冲是延迟降低的主要来源。复现时先实现图复用（需固定 token 长度），再考虑 flow matching 展开，后者首次推理有额外开销。</li>
+<li><strong>置信度阈值 θ 需调参</strong>：θ 控制 VLM 调用频率，过小则反应时间长，过大则精度下降。建议在验证集上扫描 θ（如 -0.5 至 0.0），观察成功率与反应时间的权衡曲线。</li>
+<li><strong>最易踩坑</strong>：语言指令 padding 到固定长度是图复用的前提，若指令长度波动大，CUDA graph 复用会失效。另外，GPU 驻留中间缓冲需精确计算 ViT→LLM→动作专家的中间张量大小，预留不足会导致内存溢出。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.12659</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_flow_matching/">流匹配</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_fan_xr_1_towards_versatile_vision_2025/">XR-1</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_jetson_pi_onboard_real_time_robot_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_fan_xr_1_towards_versatile_vision_2025/">
+          <span class="entry-type">论文</span>
+          <h3>XR-1</h3>
+          <p>XR-1 是由北京人形机器人创新中心、北京航空航天大学、北京大学等机构提出的 2025 年大型视觉-语言-动作模型，用于机器人操作。其核心贡献是引入统一视觉-运动编码（UVMC），通过双分支…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLASH</h3>
+          <p>VLASH 是 MIT 于 2025 年提出的异步推理框架，用于加速视觉-语言-动作模型（VLA）在机器人操作中的实时部署。其核心创新是通过未来状态感知机制，在推理与执行并行时消除时间错位，实现高达…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_flow_matching/">
+          <span class="entry-type">方法</span>
+          <h3>流匹配</h3>
+          <p>一种生成建模方法，直接回归一个向量场，使其流将简单源分布映射到目标数据分布。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#1-foresight-aligned-asynchronous-correction">1. Foresight-Aligned Asynchronous Correction（前瞻对齐异步校正）</a></li>
+<li><a href="#2-correction-aware">2. 两阶段 Correction-aware 训练</a></li>
+<li><a href="#3-confidence-based-scheduling-optimization">3. Confidence-based Scheduling Optimization（基于置信度的调度优化）</a></li>
+<li><a href="#4-llamacpp">4. 系统级加速（基于 llama.cpp）</a></li>
+<li><a href="#5-vlm">5. 为何不并行化 VLM 与动作专家</a></li>
+</ul>
+</li>
+<li><a href="#_3">关键创新</a></li>
+<li><a href="#_4">实验与结果</a><ul>
+<li><a href="#libero-05-1-9">LIBERO 基准（π₀.₅，跨 Δ=1 至 9 平均成功率）</a></li>
+<li><a href="#jetson-orin05">延迟与控制频率（Jetson Orin，π₀.₅）</a></li>
+<li><a href="#xr-1-jetson-orin-15-hz">真实世界叠衣服任务（XR-1 模型，Jetson Orin，动作执行 15 Hz）</a></li>
+</ul>
+</li>
+<li><a href="#_5">边界与局限</a></li>
+<li><a href="#_6">工程启示</a></li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

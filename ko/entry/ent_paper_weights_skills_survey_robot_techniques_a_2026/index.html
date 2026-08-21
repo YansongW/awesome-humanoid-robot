@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weights or Skills? A Survey of Robot-Learning Techniques: from Action-Predicting Weights to Robots that Write their Own Skills · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Weights or Skills? A Survey of Robot-Learning Techniques: from Action-Predicting Weights to Robots that Write their Own Skills</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Weights or Skills? A Survey of Robot-Learning Techniques: from Action-Predicting Weights to Robots that Write their Own Skills</h1>
+      <p class="entry-name-en">Weights or Skills? A Survey of Robot-Learning Techniques: from Action-Predicting Weights to Robots that Write their Own Skills</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Robot learning is splitting into two bets: policies that bake competence into frozen weights (vision-language-action, or VLA, models), and agents that write and refine their own executable skills as code. This survey organises the field around that axis of weights versus skills. Its central analytical contribution is a deep-dive that arranges code-as-policy methods by their degree of.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01851" target="_blank" rel="noopener">arXiv:2608.01851 Weights or Skills? A Survey of Robot-Learning Techniques: from Action-Predicting</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이 리뷰는 Jena 등이 작성했으며, 로봇 학습에서의 '고정 가중치'(VLA 모델)와 '실행 가능한 스킬'(code-as-policy)이라는 두 가지 기술 경로를 체계적으로 정리하고, '자기 개선 정도'를 핵심으로 하는 조직적 분류 체계를 제안합니다. 핵심 기여는 제로샷 합성부터 완전한 자기 개선 루프까지의 5단계 사다리를 정의하고, ASPIRE, ENPIRE, RoboClaw 세 시스템만이 최상위 단계를 차지한다는 점을 식별한 것입니다. 또한 스킬 마켓(예: Unitree UniStore)을 분석 프레임워크에 포함시켜 그 약속과 실제 구현 사이의 단절을 지적합니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>이 리뷰가 진정으로 바꾼 것은 로봇 학습 지형을 바라보는 방식입니다. 이전의 리뷰들은 알고리즘 계열(모방 학습, RL, LLM 계획)이나 작업 유형(조작, 내비게이션, 운동)에 따라 분류했지만, '산출물이 무엇인가'와 '시스템이 배포 후 자기 개선이 가능한가'를 축으로 삼은 경우는 없었습니다. 저자들은 '스킬'이라는 단어의 다섯 가지 의미(잠재 정책, 옵션/프리미티브, 코드, 로봇 애플리케이션, 마켓 제품)를 펼쳐 보이며, '코드'만이 검사 가능성, 적응성, 조합성을 동시에 갖추고 있으며, '애플리케이션'과 '마켓 제품'만이 배포 가능성을 갖추고 있다는 점을 지적합니다. 이러한 불일치가 바로 '스킬 경제'가 해소해야 할 간극입니다.</p>
+<p>더 날카로운 통찰은 상업적 현실에 대한 검토에서 나옵니다. Unitree UniStore와 같은 스킬 마켓은 원클릭 크로스-모델 동작 다운로드를 제공하지만, 모든 스킬은 정적 재생에 불과하며 분류 체계에서 가장 약한 능력 지점에 위치합니다. 마켓이 약속하는 가치(예: '과일에 따라 그립 강도를 조정하여 손상 방지')는 디바이스 측 자기 개선에 의존하지만, 현재 출시된 어떤 스킬도 이를 구현하지 못합니다. 이는 순수한 학술적 분류 문제를 산업 현황에 대한 비판으로 전환시킵니다: 스킬이 자기 개선을 할 수 없다면, 이른바 '스킬 경제'는 진화 가능한 능력의 거래 플랫폼이 아니라 단지 동작 패키지의 도매 시장일 뿐입니다.</p>
+<h2 id="_3">방법론 분석</h2>
+<h3 id="prisma-2020">코퍼스 구축 (PRISMA 2020 스타일)</h3>
+<ul>
+<li>2라운드 구축, 2016년 1월부터 2026년 7월까지의 기간을 포괄</li>
+<li>1라운드: 시드 및 스노우볼 방식으로 77개 분류 체계 시스템 선별</li>
+<li>2라운드: 5회의 구조화된 웹 검색으로 225개 랜드스케이프 코퍼스 수집</li>
+<li>포함 기준: 임베디드 에이전트의 스킬/정책 작성, 학습, 전이, 평가 또는 배포에 초점; 검증 가능한 메타데이터 보유</li>
+<li>제외 기준: 순수 인식, 내비게이션 및 운동 작업(조작 스킬 작성 및 개선에 직접 관련되지 않는 한), 메타데이터 검증 불가, 중복 항목</li>
+</ul>
+<h3 id="_4">분류 체계 조직 축</h3>
+<ul>
+<li>'무엇을 산출하는가'를 기준으로 구분: 고정 가중치(§3.2) 또는 실행 가능한 스킬(§3.1)</li>
+<li>세 가지 메커니즘의 운영 정의(표 3):</li>
+<li><strong>피드백 (F)</strong>: 실행 접지 신호를 읽고 작업 내 코드 수정에 사용. 포함하지 않음: 새로운 인간 지시, 런타임에 쿼리되지 않는 고정 사전 훈련 가치 함수</li>
+<li><strong>메모리 (M)</strong>: 런타임에 기록된 내용이 작업 경계를 넘어 저장되고 후속 작업에서 검색. 포함하지 않음: 모델의 고정 사전 훈련 가중치, 작업 내 임시 레지스터</li>
+<li><strong>검색 (S)</strong>: 여러 후보 프로그램을 유지하고, 실행 점수에 따라 선택/변이. 포함하지 않음: 단일 체인 수리, 선택 없는 일회성 샘플링</li>
+</ul>
+<h3 id="5">자기 개선 사다리 5가지 질문</h3>
+<p>순서대로 판정: (i) 제어 코드를 작성하는가; (ii) 작업 내에서 실행 피드백으로 코드를 수리하는가; (iii) 검증된 코드를 작업 간에 기억하는가; (iv) 프로그램 집단을 검색하는가; (v) 전체를 하나의 개방 루프로 폐쇄하는가.</p>
+<ul>
+<li>§3.1.1 제로샷 합성: F✘M✘S✘</li>
+<li>§3.1.2 폐쇄 루프 자기 수리: F✔M✘S✘</li>
+<li>§3.1.3 스킬 라이브러리 축적: F✘M✔S✘ (DROC는 F✔M✔S✘)</li>
+<li>§3.1.4 진화적 프로그램 검색: F✔M✘S✔</li>
+<li>§3.1.5 완전한 자기 개선 루프: F✔M✔S✔</li>
+</ul>
+<h3 id="vla">VLA 아키텍처 비교</h3>
+<ul>
+<li>공유 백본-액션 헤드 분해: 비전-언어 백본이 장면과 지시를 인코딩하고, 플러그형 액션 헤드가 모터 명령으로 매핑</li>
+<li>이산 토큰 헤드(RT-1/RT-2)는 단순하지만 조잡함; 연속 헤드(π0 흐름 매칭 헤드, CogACT 확산-트랜스포머)는 소량의 추가 파라미터로 더 적은 추론 단계와 더 높은 정밀도를 얻음</li>
+<li>GR00T N1: 느린 System-2 추론기와 빠른 System-1 확산 트랜스포머의 페어링</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>자기 개선 사다리를 조직 축으로</strong>: code-as-policy 방법을 '배포 후 그래디언트 업데이트 없이 자기 개선이 가능한가'에 따라 제로샷 합성부터 완전한 폐쇄 루프까지 배열한 최초의 시도. 5가지 질문 판정법(F/M/S 세 메커니즘)은 모호한 '지능 수준' 설명이 아닌 실행 가능한 기준을 제공합니다. 이를 통해 서로 다른 시스템 간에 작업 성공률만 비교하는 것이 아니라 능력 경계를 엄격하게 비교할 수 있습니다.</p>
+</li>
+<li>
+<p><strong>완전한 자기 개선 루프 유닛 식별</strong>: 302개 시스템 코퍼스 중 ASPIRE, ENPIRE, RoboClaw 세 시스템만이 피드백, 메모리, 검색 세 메커니즘을 모두 갖추고 개방 루프로 폐쇄합니다. 이 발견은 '지속 학습'을 구호에서 검증 가능한 희소 속성으로 전환시킵니다 — 대부분의 시스템은 현재 작업만 수리하거나(피드백), 라이브러리만 축적하거나(메모리), 후보만 검색하거나(검색) 하며, 세 가지의 결합은 극히 드뭅니다.</p>
+</li>
+<li>
+<p><strong>스킬 경제 프레임워크</strong>: 상업적 스킬 마켓(UniStore)을 학술 분류 체계에 통합하여, 그것이 가장 약한 능력 계층(정적 재생)에 위치하며 약속된 가치(디바이스 측 적응)는 아직 구현되지 않은 3단계(Adapt)에 의존한다는 점을 지적합니다. 이는 리뷰를 문헌 목록에서 산업 로드맵에 대한 비판적 평가로 승격시키며, '스킬 배포 가능성 vs 개선 가능성'의 모순에 대한 분석 프레임워크를 제공합니다.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<p>코퍼스 규모 및 분포 (302개 시스템):</p>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>분류 체계 시스템</td>
+<td>77</td>
+</tr>
+<tr>
+<td>랜드스케이프 코퍼스</td>
+<td>225</td>
+</tr>
+<tr>
+<td>총 참고문헌 수</td>
+<td>310</td>
+</tr>
+<tr>
+<td>도메인 분기</td>
+<td>6</td>
+</tr>
+<tr>
+<td>자기 개선 단계</td>
+<td>5</td>
+</tr>
+<tr>
+<td>시간 범위</td>
+<td>2016–2026</td>
+</tr>
+</tbody>
+</table>
+<p>랜드스케이프 코퍼스의 도메인별 분포 (225개): 엔드투엔드/범용 28, 모방/확산 21, LLM 계획/TAMP 30, 보상/데이터 생성 17, 스킬 발견/계층적 RL 25, 월드/모델 기반 24, 표현/오프라인 RL 17, 조작/손재주 16, 운동/휴머노이드 16, 내비게이션/촉각 15, 데이터셋/벤치마크/시뮬레이터 16.</p>
+<p>양극의 시간적 분포 (최초 발표 연도 기준): 2022년 가중치 0/스킬 1; 2023년 가중치 2/스킬 9; 2024년 가중치 5/스킬 9; 2025년 가중치 4/스킬 2; 2026년 가중치 0/스킬 6 (7월 기준, 일부 데이터).</p>
+<p>표 4의 30개 code-as-policy 사다리 시스템 분포: 13개 제로샷 합성, 6개 폐쇄 루프 자기 수리, 5개 스킬 라이브러리 축적, 3개 진화적 프로그램 검색, 3개 완전한 자기 개선 루프.</p>
+<p>주요 벤치마크 수치: Eureka는 29개 작업 IsaacGym 스위트에서 83%의 작업이 전문가 인간 보상을 초과; Open X-Embodiment는 21개 기관의 60개 데이터셋, 100만 개 이상의 궤적, 22가지 임베디드를 포괄; CrossFormer는 20가지 임베디드, 900K 궤적으로 훈련; RoboCat은 최소 100개의 데모에서 새로운 작업에 적응.</p>
+<p>결과의 의미: 완전한 자기 개선 루프 유닛은 단 3개 시스템만이 차지하고 있어, 이 분야가 아직 초기 단계임을 시사; 2026년 스킬 극의 수(6)가 가중치 극(0)을 크게 초과하여, 코드-애즈-폴리시 방향으로의 추세 전환을 암시 (표 내 수치 0→6으로 계산).</p>
+<h2 id="_7">경계 및 한계</h2>
+<p>저자들은 이것이 의도적으로 초점을 맞춘 리뷰이지 완전한 조사가 아니며, 분야를 철저히 목록화하지 않았다는 점을 명시적으로 인정합니다. 조직 축인 '자기 개선 정도'는 의도적으로 코드 중심이며, 가중치 기반 정책과 RL 스킬 발견을 분류 대상이 아닌 배경으로 취급합니다 — 이는 VLA 경로 지지자들이 프레임워크가 편향되었다고 생각할 수 있음을 의미합니다.</p>
+<p>최첨단 시스템(§3.1.5)은 매우 새롭고 일부는 동시기 시스템으로, 벤치마크 수치를 직접 비교할 수 없으므로 저자들은 순위가 아닌 능력을 정성적으로 보고합니다. 분야 변화가 빠르며, 2025–2026년에 인용된 시스템은 작성 시점에 막 출시된 것으로, 포괄 범위는 안정 상태가 아닌 스냅샷으로 간주해야 합니다. '스킬 경제' 프레임워크는 신흥 상업 트렌드(작성 시점에 공급업체 하나의 마켓만 존재)에 기반하며, 성숙한 결과가 아닌 개방형 문제의 동기로 간주합니다.</p>
+<p>메타데이터를 검증할 수 없는 후보는 수집 시 폐기되었으며, 그 수는 추정이 아닌 미기록 상태입니다. 77/225 구분은 분석 역할에 대한 진술(날카로운 예시 vs 대표적 폭)이며, 작업 품질이나 중요성에 대한 진술이 아닙니다. 2026년 데이터는 부분적입니다(7월 기준).</p>
+<h2 id="_8">공학적 시사점</h2>
+<p>재현 및 다운스트림 팀을 위해 먼저 세 가지를 확인하십시오: 첫째, 관심 있는 시스템의 F/M/S 세 메커니즘 실제 상태를 확인하십시오 — 많은 논문이 '지속 학습'을 주장하지만 실제로는 피드백(F)만 있고 메모리(M)나 검색(S)이 없는 경우가 많습니다. 표 3의 운영 정의로 하나씩 대조하여 용어에 속지 않도록 하십시오. 둘째, '스킬'이라는 단어가 문헌에서 다섯 가지 의미로 혼용된다는 점을 인지하고, 코드, 잠재 정책, 마켓 제품 중 무엇을 논의하는지 명확히 하지 않으면 비교가 왜곡됩니다.</p>
+<p>가장 함정에 빠지기 쉬운 곳은 검색(S)의 판정입니다: 단일 체인 수리(피드백)와 다중 후보 선택(검색)의 경계가 모호해지기 쉽습니다. 시스템이 동일한 프로그램에 반복적으로 패치를 가하는 것이라면 그것은 검색이 아닌 피드백입니다; 여러 후보를 유지하고 실행 점수에 따라 선택/변이해야만 검색입니다. 또 다른 함정은 메모리(M)의 판정입니다: 사전 훈련 가중치와 고정 API 라이브러리는 포함되지 않으며, 런타임에 기록되고 작업 간에 검색되는 내용만 해당합니다.</p>
+<p>엔지니어링 선택 측면에서, 배포 후 적응이 목표라면 F✔M✔S✔ 세 메커니즘을 갖춘 시스템(현재 ASPIRE, ENPIRE, RoboClaw뿐)을 우선 고려하십시오. 그렇지 않으면 얻는 것은 정적 스킬 패키지에 불과합니다. 마켓형 제품(예: UniStore)의 경우 3단계(Adapt) 능력을 보유했는지 반드시 감사하십시오. 그렇지 않으면 '과일에 따라 그립 강도 조정'과 같은 약속은 이행될 수 없습니다. 표 9에서 제안된 네 가지 측정 가능한 지표(성공-상호작용 곡선, 스킬 라이브러리 재사용률, 크로스-임베디드 전이 하락, 출처 검사)는 모든 스킬 시스템 평가의 표준 템플릿으로 사용할 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">RT-1: Robotics Transformer for Real-World Control at Scale</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_gr00t_n1/">GR00T N1</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_bousmalis_robocat_a_self_improving_gener_2023/">RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_weights_skills_survey_robot_techniques_a_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_bousmalis_robocat_a_self_improving_gener_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation</h3>
+          <p>RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation (RoboCat), is a 2023 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">방법</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">
+          <span class="entry-type">논문</span>
+          <h3>RT-1: Robotics Transformer for Real-World Control at Scale</h3>
+          <p>RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">
+          <span class="entry-type">논문</span>
+          <h3>CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation</h3>
+          <p>CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법론 분석</a><ul>
+<li><a href="#prisma-2020">코퍼스 구축 (PRISMA 2020 스타일)</a></li>
+<li><a href="#_4">분류 체계 조직 축</a></li>
+<li><a href="#5">자기 개선 사다리 5가지 질문</a></li>
+<li><a href="#vla">VLA 아키텍처 비교</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a></li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

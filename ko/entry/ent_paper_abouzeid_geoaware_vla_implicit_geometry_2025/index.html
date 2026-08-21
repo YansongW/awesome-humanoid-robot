@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model</h1>
+      <p class="entry-name-en">GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.14117v4. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1254 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (GeoAware-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mohamed bin Zayed University of Artificial Intelligence.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.14117" target="_blank" rel="noopener">GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.14117" target="_blank" rel="noopener">GeoAware-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>GeoAware-VLA는 기존 VLA 모델이 2D 이미지에서 강건한 3D 기하 구조를 추론하기 어려워 보지 못한 카메라 시점에 대한 일반화 능력이 약하다는 문제를 해결하기 위해 간결하고 효과적인 솔루션을 제안한다. 이 방법은 새로운 비전 인코더를 훈련하지 않으며 명시적 3D 데이터에 의존하지 않고, 대신 동결된 사전 훈련된 기하 비전 모델을 특징 추출기로 직접 사용하고, 경량의 훈련 가능한 프로젝션 레이어를 통해 이러한 기하 정보가 풍부한 특징을 정책 디코더에 적응시킴으로써 디코더가 처음부터 3D 일관성을 학습할 필요가 없게 한다. LIBERO 및 CALVIN 벤치마크에서의 광범위한 실험은 GeoAware-VLA가 기존 분포 내 성능을 유지하거나 심지어 향상시키면서 보지 못한 카메라 포즈에 대한 제로샷 일반화에서 상당한 진전을 이루었음을 보여준다: LIBERO에서 보지 못한 시점 성공률이 평균 35퍼센트 포인트, CALVIN에서 11퍼센트 포인트 이상 향상되었다. 이러한 이득은 실제 로봇 플랫폼에서도 검증되었으며, 이 방법은 연속 및 이산 행동 공간 모두에서 효과적으로 작동하여 강건한 기하 기반이 더 일반적인 로봇 에이전트를 구축하는 핵심 요소임을 증명한다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>핵심 아이디어</strong>: 강력한 기하 사전 지식을 비전 백본 네트워크에 주입하여 카메라 시점 변화에 대한 모델의 강건성을 향상시킨다.</li>
+<li><strong>특징 추출</strong>: 동결된 사전 훈련된 기하 비전 모델(예: DINOv2 또는 유사한 기하 인식 모델)을 고정 특징 추출기로 사용하며, 어떠한 미세 조정도 수행하지 않는다.</li>
+<li><strong>특징 적응</strong>: 기하 특징 추출기와 정책 디코더 사이에 경량의 훈련 가능한 프로젝션 레이어를 삽입하여 기하 정보가 풍부한 특징을 정책 디코더가 사용할 수 있는 표현으로 매핑한다.</li>
+<li><strong>정책 디코더</strong>: 디코더는 더 이상 3D 일관성을 학습할 필요 없이 프로젝션된 기하 특징을 직접 활용하여 행동을 예측하므로 학습 부담이 줄어든다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>벤치마크 테스트</strong>: LIBERO 및 CALVIN 두 가지 주요 로봇 조작 벤치마크에서 평가한다.</li>
+<li><strong>평가 지표</strong>: 주로 분포 내 성능과 보지 못한 카메라 시점에 대한 제로샷 일반화 성공률에 초점을 맞춘다.</li>
+<li><strong>행동 공간</strong>: 연속 행동 공간과 이산 행동 공간 모두에서 유효성을 검증한다.</li>
+</ul>
+<h3 id="_5">주요 수치 및 결과</h3>
+<ul>
+<li><strong>LIBERO 벤치마크</strong>: 보지 못한 시점 성공률이 평균 <strong>35퍼센트 포인트</strong> 향상되었으며, 분포 내 성능은 유지되거나 약간 향상되었다.</li>
+<li><strong>CALVIN 벤치마크</strong>: 보지 못한 시점 성공률이 평균 <strong>11퍼센트 포인트 이상</strong> 향상되었다.</li>
+<li><strong>실제 로봇 플랫폼</strong>: 물리 세계 실험에서 모델이 베이스라인보다 현저히 우수한 성능을 보여 시뮬레이션에서의 이득이 실제 환경으로 성공적으로 전이될 수 있음을 증명한다.</li>
+<li><strong>비교 베이스라인</strong>: 기하 사전 지식을 사용하지 않은 VLA 모델(예: Octo, RT-2 등)과 비교하여 GeoAware-VLA는 시점 일반화에서 압도적인 우위를 가진다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>GeoAware-VLA는 간단한 기하 특징 주입 전략을 통해 VLA 모델의 카메라 시점 과적합 문제를 효과적으로 해결한다. 실험은 복잡한 3D 재구성이나 추가 훈련 없이 동결된 기하 비전 모델만 활용해도 제로샷 일반화 능력을 크게 향상시킬 수 있음을 증명하며, 이 방법은 시뮬레이션과 실제 환경, 연속 및 이산 행동 공간 모두에서 일관된 성능을 보인다. 이는 강건한 기하 기반이 일반화 가능한 로봇 에이전트를 구축하는 핵심 요소임을 밝혀낸다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_abouzeid_geoaware_vla_implicit_geometry_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 수치 및 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

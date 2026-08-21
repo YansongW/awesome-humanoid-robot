@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M20 · Reliability, Maintenance, and Safety Engineering: Making Machines Last Longer and People Feel Safe to Approach · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M20 · Reliability, Maintenance, and Safety Engineering: Making Machines Last Longer and People Feel Safe to Approach</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m20-reliability-maintenance-and-safety-engineering-making-machines-last-longer-and-people-feel-safe-to-approach">M20 · Reliability, Maintenance, and Safety Engineering: Making Machines Last Longer and People Feel Safe to Approach</h1>
+<p><strong>Global Position</strong>: The wrap-up and long-term task spanning M09–M19. The input is a complete machine that "can run end-to-end tasks," and the output is three living documents—<strong>Safety Archive, Maintenance Procedures, and Failure Contingency Plan</strong>. This task has no "completed" state: every accident and every change must be written back into these three documents until the machine is retired.</p>
+<p><strong>Prerequisites</strong>: <a href="/en/roadmap/missions/m19-e2e-task/">M19 · End-to-End Task Integration</a> acceptance passed (only if the system can run can we talk about running long); <a href="/en/roadmap/missions/m14-sim-to-real/">M14</a> communication watchdog grading and <a href="/en/roadmap/missions/m10-urdf-modeling/">M10</a> soft limit rules implemented; Stage 2 safety red lines (emergency stop hardwiring, gantry, lithium battery specifications) are always in effect.</p>
+<p>Theoretical background: <a href="/en/wiki/chapters/chapter-11/">Chapter 11 Assembly Integration and Testing</a> (testing and maintenance system), <a href="/en/wiki/chapters/chapter-12/">Chapter 12 Certification Compliance and Quality Standards</a> (standards and certification paths), <a href="/en/wiki/chapters/chapter-25/">Chapter 25 Robot Evaluation System</a> (regression evaluation); regulatory standards list see <a href="/en/wiki/appendices/appendix-e/">Appendix E Standards and Regulations</a>.</p>
+<h2 id="step-1-fmeawrite-down-how-it-might-break-before-it-breaks">Step 1: FMEA—Write Down "How It Might Break" Before It Breaks</h2>
+<p>[What to Do] Create a failure mode table, covering at least: falling, joint overheating, CAN/communication interruption, battery failure, structural fracture, perception failure (detection errors/localization drift). Score each item on three dimensions (1–10, engineering convention):</p>
+<ul>
+<li><strong>S Severity</strong>: How severe the consequences are (injuring a person = 10, breaking a printed part = 3);</li>
+<li><strong>O Occurrence Probability</strong>: How often it occurs;</li>
+<li><strong>D Detectability</strong>: How hard it is to detect in advance (with sensor monitoring = low score, no warning = high score);</li>
+</ul>
+<pre class="highlight"><code>RPN = S × O × D</code></pre>
+<p>Sort by RPN, and write <strong>mitigation measures for the Top 5 items one by one</strong> (design changes / monitoring alerts / operating procedures).</p>
+<p>[Why] The value of FMEA is prioritization: hobby projects have limited resources; RPN tells you "which failures are both severe and hard to detect," so you spend your protection budget there. "Joint overheating" usually has high O and low D (when no temperature monitoring is installed)—a cheap thermistor monitor can knock it off the top list. See <a href="/en/wiki/chapters/chapter-11/">Chapter 11</a> and <a href="/en/wiki/chapters/chapter-12/">Chapter 12</a> for methodology.</p>
+<p>[How to Analyze in Your Case] If you're unsure about scoring, use three levels (1/4/8) for rough scoring; the point of FMEA is relative ranking, not absolute precision. The table must include "things that actually happened": record every crash, board burn, and communication interruption during the M14–M19 debugging period—your historical record is the most accurate source of O values.</p>
+<h2 id="step-2-protection-mechanism-checklist-and-actual-testingprotection-doesnt-exist-in-code-it-exists-in-test-records">Step 2: Protection Mechanism Checklist and Actual Testing—Protection Doesn't Exist in Code, It Exists in Test Records</h2>
+<p>[What to Do] Establish and <strong>verify through actual testing</strong> each item (default is non-existent; only counts if tested):</p>
+<table>
+<thead>
+<tr>
+<th>Protection Mechanism</th>
+<th>Rule</th>
+<th>Actual Testing Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Soft Limits</td>
+<td>5–10° smaller than mechanical hard limits (<a href="/en/roadmap/missions/m10-urdf-modeling/">M10</a> rule), written into the driver, not just in the host computer</td>
+<td>Send out-of-range commands while powered on; they should be rejected; manually move to hard limits with power off to confirm margin</td>
+</tr>
+<tr>
+<td>Current Limiting + I²t Thermal Protection</td>
+<td>Peak current time-limited; continuous current derated by I²t integral</td>
+<td>Bench stall test, record trigger time</td>
+</tr>
+<tr>
+<td>Temperature Derating</td>
+<td>Linear derating when motor/drive temperature exceeds threshold; disable if higher</td>
+<td>Block airflow and run under load, observe derating curve activation</td>
+</tr>
+<tr>
+<td>Communication Watchdog</td>
+<td>Timeout grading: first damping/force reduction, then disable (<a href="/en/roadmap/missions/m14-sim-to-real/">M14</a> grading)</td>
+<td><strong>Cable pull test</strong>: pull CAN/network cable during operation and observe response</td>
+</tr>
+<tr>
+<td>Emergency Stop</td>
+<td><a href="/entry/ent_component_emergency_stop_system_2024/">Emergency Stop System</a> hardwired to cut power, independent of all software</td>
+<td>Press and time (Stage 3 criterion &lt;1 s); reset requires manual confirmation</td>
+</tr>
+<tr>
+<td>Independent Safety Layer</td>
+<td>Safety logic on <a href="/entry/ent_component_safety_mcu/">Safety MCU</a>: can still cut power when main controller crashes</td>
+<td>Force power-off/simulate crash of main controller, verify safety MCU takes over</td>
+</tr>
+</tbody>
+</table>
+<p>[Why] Software protection shares a common failure premise: the main controller is still alive. Stage 2 safety red lines require the emergency stop to be independent of the software chain, forced by the failure mode "main controller crash"; the <a href="/entry/ent_component_safety_mcu/">Safety MCU</a> card extends this principle to all safety monitoring (functional safety standard background see the card and <a href="/en/wiki/chapters/chapter-12/">Chapter 12</a>). Each protection is "actually tested" rather than "assumed" because protection circuit failures are silent—without testing, you always think it's working.</p>
+<p>[How to Analyze in Your Case] Desktop small platforms can simplify (independent hardware power switch replaces full emergency stop circuit, per Stage 3 Step 15); platforms that can injure people when falling must have all six items. Test records go into the safety archive: date, method, result, retest cycle.</p>
+<h2 id="step-3-electrical-and-battery-safety-proceduresno-luck-with-lipo">Step 3: Electrical and Battery Safety Procedures—No Luck with LiPo</h2>
+<p>[What to Do] Write the lithium battery procedure on one page and post it in the charging area (based on <a href="/entry/ent_tech_li_battery_humanoid/">Humanoid Robot Lithium-Ion Battery System</a> and <a href="/entry/ent_component_battery_management_system/">Battery Management System</a> cards):</p>
+<ol>
+<li><strong>Charging Attendance</strong>: Someone must be present throughout LiPo charging; use explosion-proof bags/fireproof containers, away from flammable materials;</li>
+<li><strong>Retirement Rule</strong>: Over-discharged, swollen, dropped, or water-damaged batteries <strong>must be retired immediately</strong>—no observation, no luck;</li>
+<li><strong>Storage Charge</strong>: Store at storage charge (approx. 3.8–3.85 V/cell, industry common practice; verify with your battery specification sheet) for long-term non-use; check monthly;</li>
+<li><strong>Transport Regulations</strong>: Follow lithium battery dangerous goods rules for cross-region transport (airlines have watt-hour limits; check the carrier's latest regulations before travel);</li>
+<li><strong>Insulation Check</strong>: Regularly measure insulation and polarity of the power distribution system—must be done after drops or disassembly; review BMS alarm records monthly.</li>
+</ol>
+<p>[Why] Lithium battery thermal runaway is the only risk in hobby robot projects that could "burn down a house"; its precursors (swelling, increased internal resistance, drop damage) are observable, and the essence of the procedure is "see it, then execute it." Stage 2 safety red lines list "battery charging and storage must comply with lithium battery safety specifications" as a power-on prerequisite; this step refines it into daily actions. Compliance background see <a href="/en/wiki/chapters/chapter-12/">Chapter 12</a> and <a href="/en/wiki/appendices/appendix-e/">Appendix E</a>.</p>
+<p>[How to Analyze in Your Case] Multiple batteries in rotation: create an archive for each (purchase date, cycle count, internal resistance trend); retire those with significantly rising internal resistance first. For 24–48 V bus platforms: write "disconnect battery first, then touch the distribution" into the operating manual—low-voltage DC can also arc; don't plug/unplug live with bare hands.</p>
+<h2 id="step-4-maintenance-procedureschecking-periodically-is-ten-times-cheaper-than-repairing-after-failure">Step 4: Maintenance Procedures—Checking Periodically Is Ten Times Cheaper Than Repairing After Failure</h2>
+<p>[What to Do] Print and post a three-level maintenance checklist:</p>
+<table>
+<thead>
+<tr>
+<th>Period</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Daily (before each power-on)</td>
+<td>Fastener spot check, wire harness wear and routing, printed part cracks (focus: joint connections), listen for abnormal noise during idle rotation</td>
+</tr>
+<tr>
+<td>Weekly</td>
+<td>Key joint backlash trend (compare to initial marks), no-load current vs M07 bench baseline (investigate if drift &gt;20%, engineering recommended value)</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>Battery internal resistance, bearing condition (play/noise), full structural part inspection, emergency stop and watchdog retest</td>
+</tr>
+</tbody>
+</table>
+<p>Spare parts strategy: keep ≥2 sets of common printed parts—inventory parts equal downtime. Anchor: ToddlerBot can withstand about 7 falls, with single repair taking only 21 minutes of printing + 14 minutes of assembly (source: <a href="https://toddlerbot.github.io/">ToddlerBot Project Homepage</a>)—<strong>with spare parts</strong>, repair is at this level; with zero inventory, "one fall means one week of downtime." Maintenance record table: date/item/finding/action/next attention.</p>
+<p>[Why] Almost all mechanical failures have precursors: gradually increasing backlash, gradually increasing current, gradually growing cracks—the three-level periodic inspection turns these gradual changes into readable numbers. The maintenance record table is the only data source for trend analysis: a single reading is meaningless; "backlash increasing for three consecutive weeks" points to a specific worn part. System testing and maintenance methods see <a href="/en/wiki/chapters/chapter-11/">Chapter 11</a>.</p>
+<p>[How to Analyze in Your Case] For platforms with many printed parts: take ToddlerBot's "quick repair" as a design goal—make vulnerable parts modular and quick-release; replace, don't repair, when broken. For metal part platforms: shift monthly focus to bolt preload and bearing lubrication. Hang the checklist next to the machine and check off items—a checklist that isn't executed is as good as none.</p>
+<h2 id="step-5-logging-and-traceability-making-every-anomaly-reviewable">Step 5: Logging and Traceability – Making Every Anomaly Reviewable</h2>
+<p>【What to Do】</p>
+<ol>
+<li><strong>Operation Logs</strong>: Temperature, current, fall events, protection triggers (limit switch/watchdog/emergency stop) are automatically written to disk, with unified timestamps across all nodes;</li>
+<li><strong>Version Archive</strong>: A single table records the version correspondence among model weights, firmware, parameter configurations, and URDF; any change to any of these writes a new row;</li>
+<li><strong>Change Management Discipline</strong>: Change only one variable at a time; after any change, run regression tests – re-execute the 20 fixed protocols from <a href="/en/roadmap/missions/m18-imitation-learning/">M18</a> and the 10 full-chain protocols from <a href="/en/roadmap/missions/m19-e2e-task/">M19</a>; the change is considered complete only when the numbers align with the baseline.</li>
+</ol>
+<p>【Why】Questions like "Why did the success rate drop from 75% to 60%" can only be answered with a version correspondence table plus regression protocols; anomalies without logged data are equivalent to never having occurred – protection trigger records are also the source for calibrating the O value in Step 1 FMEA. Changing only one variable at a time is the sole discipline that distinguishes "improvement" from "regression" (same as M18 Step 6).</p>
+<p>【How to Analyze Your Situation】Don't over-engineer the logging solution: <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> bag + a version table (Markdown or spreadsheet) is sufficient for personal projects. The key is to start recording from today – a traceability system can only record the future, not make up for the past.</p>
+<h2 id="step-6-documentation-and-handover-its-not-done-until-someone-else-can-take-over">Step 6: Documentation and Handover – It's Not Done Until Someone Else Can Take Over</h2>
+<p>【What to Do】Produce and continuously update three documents + one update mechanism:</p>
+<ol>
+<li><strong>Safety Archive</strong>: FMEA table, risk assessment, emergency stop/watchdog test records, incident records (time/phenomenon/cause/remediation);</li>
+<li><strong>Operation Manual</strong>: Startup checklist (battery level/fasteners/environment/gantry/emergency stop at hand), shutdown checklist (unload power/disconnect battery/battery disposal/storage posture), emergency response (what to do for fire/loss of control/pinch injury respectively);</li>
+<li><strong>Newcomer Onboarding Path</strong>: Which pages to read in order (<a href="/en/roadmap/index/">Roadmap Overview</a> → Stage 2 Safety Red Lines → this page), which tests to follow (emergency stop actual test, watchdog cable pull, no-load power-on) before being allowed to operate independently;</li>
+<li><strong>OTA Prototype</strong>: <a href="/entry/ent_technology_ota_software_update_2024/">OTA Software Update</a> with version management and rollback – A/B partition or equivalent mechanism, check battery level before update, retain a serial recovery channel (consistent with Stage 3 Step 15 and common pitfalls).</li>
+</ol>
+<p>【Why】The only acceptance criterion for safety documentation is "a third party can understand it, dare to operate it, and trace back after an accident"; procedures stored only in memory reset to zero at handover (or when you forget everything three months later). OTA solves the daily risk of "changing a strategy requires wiring, and wrong wiring bricks the device"; rollback is its bottom line – OTA without rollback is a remote bricking tool (Stage 3 common pitfall).</p>
+<p>【How to Analyze Your Situation】Even for personal projects, write it down: your future self is that "newcomer". Place the documents in the repository alongside the code for version control, update them synchronously with every change; print a separate copy of the safety archive and keep it in the lab, accessible even during power or network outages.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] FMEA table documented: ≥6 failure modes, RPN ranking, Top 5 each with mitigation measures implemented.</li>
+<li>[ ] Six protection mechanisms each have actual test records (including cable pull tests and emergency stop timing), with test dates and retest cycles on file.</li>
+<li>[ ] Lithium battery procedure documented on a single page and posted on the wall; battery archive (cycle count/internal resistance trend) established; retirement rules have execution records.</li>
+<li>[ ] Three-level maintenance checklist has ≥4 weeks of execution records; ≥2 sets of spare consumable printed parts in inventory.</li>
+<li>[ ] Operation logs automatically written to disk; version correspondence table (model/firmware/parameters/URDF) established and has recorded at least one real change.</li>
+<li>[ ] Three documents – safety archive, operation manual, and newcomer path – are written and available for third-party review; OTA rollback mechanism has been tested once.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Limit switch only implemented in upper computer software</td>
+<td>Fails when firmware crashes/communication is lost</td>
+<td>Move soft limits down to drive firmware; test by manually exceeding limits after power-off</td>
+</tr>
+<tr>
+<td>Watchdog never triggers</td>
+<td>Threshold too wide, effectively non-existent</td>
+<td>Test response time by pulling the cable; set threshold to 2–3 times the control cycle (engineering recommendation)</td>
+</tr>
+<tr>
+<td>One fall stops work for a week</td>
+<td>Zero spare parts inventory</td>
+<td>Keep ≥2 sets of common consumable printed parts based on ToddlerBot anchor points; archive print parameters with the parts</td>
+</tr>
+<tr>
+<td>Anomaly cannot be reviewed</td>
+<td>Logs not written to disk / timestamps not unified</td>
+<td>Synchronize clocks across all nodes; add special markers for protection triggers; review logs weekly</td>
+</tr>
+<tr>
+<td>Procedures stuck in memory</td>
+<td>Not written / written but no one reads</td>
+<td>Print documents and post on wall; force newcomers to follow the onboarding path with actual tests</td>
+</tr>
+<tr>
+<td>OTA fails to boot</td>
+<td>No rollback / power loss during update</td>
+<td>A/B partition; check battery level before update; practice serial recovery channel once</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous Task: <a href="/en/roadmap/missions/m19-e2e-task/">M19 · End-to-End Task Integration</a></li>
+<li>Theoretical Background: <a href="/en/wiki/chapters/chapter-11/">Chapter 11 Assembly Integration and Testing</a>, <a href="/en/wiki/chapters/chapter-12/">Chapter 12 Certification Compliance and Quality Standards</a>, <a href="/en/wiki/chapters/chapter-25/">Chapter 25 Robot Evaluation System</a>, <a href="/en/wiki/appendices/appendix-e/">Appendix E Standards and Regulations</a></li>
+<li><a href="/en/roadmap/stage-2-biped/">Stage 2 Safety Red Lines</a> · <a href="/en/roadmap/stage-3-humanoid/">Stage 3 Overview</a> · <a href="/en/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m19-e2e-task/">← Previous<span>M19 · End-to-End Task Integration: Hear the Command, Walk Over, Pick It Up</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/playbooks/actuator-selection/">Next →<span>Selection Guide: How to Choose an Actuator</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m20-reliability-maintenance-and-safety-engineering-making-machines-last-longer-and-people-feel-safe-to-approach">M20 · Reliability, Maintenance, and Safety Engineering: Making Machines Last Longer and People Feel Safe to Approach</a><ul>
+<li><a href="#step-1-fmeawrite-down-how-it-might-break-before-it-breaks">Step 1: FMEA—Write Down "How It Might Break" Before It Breaks</a></li>
+<li><a href="#step-2-protection-mechanism-checklist-and-actual-testingprotection-doesnt-exist-in-code-it-exists-in-test-records">Step 2: Protection Mechanism Checklist and Actual Testing—Protection Doesn't Exist in Code, It Exists in Test Records</a></li>
+<li><a href="#step-3-electrical-and-battery-safety-proceduresno-luck-with-lipo">Step 3: Electrical and Battery Safety Procedures—No Luck with LiPo</a></li>
+<li><a href="#step-4-maintenance-procedureschecking-periodically-is-ten-times-cheaper-than-repairing-after-failure">Step 4: Maintenance Procedures—Checking Periodically Is Ten Times Cheaper Than Repairing After Failure</a></li>
+<li><a href="#step-5-logging-and-traceability-making-every-anomaly-reviewable">Step 5: Logging and Traceability – Making Every Anomaly Reviewable</a></li>
+<li><a href="#step-6-documentation-and-handover-its-not-done-until-someone-else-can-take-over">Step 6: Documentation and Handover – It's Not Done Until Someone Else Can Take Over</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

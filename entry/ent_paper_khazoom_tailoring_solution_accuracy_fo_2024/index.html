@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>针对腿式机器人快速全身模型预测控制的求解精度定制 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">针对腿式机器人快速全身模型预测控制的求解精度定制</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>针对腿式机器人快速全身模型预测控制的求解精度定制</h1>
+      <p class="entry-name-en">Tailoring Solution Accuracy for Fast Whole-body Model Predictive Control of Legged Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2407.10789v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (846 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种用于腿式机器人的全身非线性模型预测控制框架，通过每控制步仅执行一次SQP迭代并采用基于ADMM的QP求解器，在MIT Humanoid上实现了实时控制。该框架利用初始时间步的控制障碍函数强制执行自碰撞约束，将自碰撞次数降低26倍，同时支持复杂腿部交叉和手臂运动以增强行走稳定性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2407.10789" target="_blank" rel="noopener">Tailoring Solution Accuracy for Fast Whole-body Model Predictive Control of Legged Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>针对高维系统实时不等式约束的挑战，该研究放弃追求高精度最优解，转而采用交替方向乘子法快速生成低精度二次规划子问题解。仿真与硬件实验表明，由于动力学离散化误差、惯性建模误差和延迟，真实机器人往往无法从高精度解中获益。控制器在90 Hz频率下稳定运行，处理包含32个时间步、2004个变量和3768个约束的问题，使MIT Humanoid能够规划复杂的交叉腿和手臂动作，在行走和抵抗大扰动时提升稳定性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li>采用<strong>单次SQP迭代</strong>（sequential quadratic programming）每控制步，结合<strong>ADMM</strong>（alternating direction method of multipliers）求解QP子问题，避免传统多迭代方案的计算瓶颈。</li>
+<li>在NMPC初始时间步嵌入<strong>控制障碍函数（CBF）</strong>处理自碰撞约束，无需额外计算开销即可实现约束满足。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li>硬件平台：MIT Humanoid，控制频率90 Hz。</li>
+<li>问题规模：32个预测时间步，2004个优化变量，3768个约束条件。</li>
+<li>对比基线：高精度NMPC求解器（多迭代收敛方案）。</li>
+</ul>
+<h3 id="_5">关键发现</h3>
+<ul>
+<li><strong>精度-实用性权衡</strong>：高精度解因动力学离散化误差（discretization errors）、惯性建模误差（inertial modeling errors）和系统延迟（delays）无法提升实际机器人性能，低精度解反而更鲁棒。</li>
+<li><strong>自碰撞约束效果</strong>：CBF方法使自碰撞次数减少<strong>26倍</strong>，且未增加计算负担。</li>
+<li><strong>运动能力提升</strong>：控制器支持复杂交叉腿（crossed-leg）和手臂（arm）动作规划，显著增强行走稳定性及大扰动恢复能力（如推搡后快速调整姿态）。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>该工作证明在全身NMPC中主动牺牲求解精度可换取实时性，同时通过CBF高效处理安全约束，为高维腿式机器人的实时控制提供了可行方案。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2407.10789v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+      
+      <span class="rel-desc">针对腿式机器人快速全身模型预测控制的求解精度定制discusses全身控制（WBC）。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">proposes</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+      
+      <span class="rel-desc">针对腿式机器人快速全身模型预测控制的求解精度定制提出模型预测控制（MPC）。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_khazoom_tailoring_solution_accuracy_fo_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键发现</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

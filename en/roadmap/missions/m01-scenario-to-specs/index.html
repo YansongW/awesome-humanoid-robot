@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M01 · Mathematizing the Demand Scenario: Translating &#34;I Want to Build a Robot&#34; into Numbers · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M01 · Mathematizing the Demand Scenario: Translating &#34;I Want to Build a Robot&#34; into Numbers</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m01-mathematizing-the-demand-scenario-translating-i-want-to-build-a-robot-into-numbers">M01 · Mathematizing the Demand Scenario: Translating "I Want to Build a Robot" into Numbers</h1>
+<p><strong>Global Position</strong>: This is the first task in the entire 0→1 pipeline. The input is the vague desire in your mind ("I want to build a robot that can walk/grab things"), and the output is a <strong>specification table filled with numbers</strong> — every subsequent task (motor selection, reduction ratio, structure, budget) will use this table as a basis, no gut feelings allowed.</p>
+<p><strong>Prerequisites</strong>: None (you can start directly). Mathematical tools themselves are not a prerequisite for this task. If you can't calculate something clearly, mark it first and go back to <a href="/en/roadmap/stage-0-foundations/">Stage 0 Foundations</a> for review.</p>
+<h2 id="step-1-write-the-scenario-as-a-one-sentence-mission-statement">Step 1: Write the Scenario as a One-Sentence Mission Statement</h2>
+<p>【What to Do】Write down the <strong>most demanding task</strong> your robot must complete in one sentence, using the format: "In [environment], at [frequency], perform [action] on [load]." Three reference tiers:</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Mission Statement Example</th>
+<th>Corresponding Platform Scale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desktop Learning Machine</td>
+<td>"On a desktop, once per minute, move a 200 g block from point A to point B"</td>
+<td>5–10 DOF arm or small humanoid, servo/QDD hybrid</td>
+</tr>
+<tr>
+<td>Bipedal Walking Platform</td>
+<td>"On indoor flat ground, walk continuously for 10 minutes without falling"</td>
+<td>10–16 DOF biped, total weight 5–30 kg</td>
+</tr>
+<tr>
+<td>Full Humanoid Operation</td>
+<td>"After hearing a command, walk to a table, pick up a 500 g cup, and place it at a designated location"</td>
+<td>20+ DOF full body, walking + manipulation + perception</td>
+</tr>
+</tbody>
+</table>
+<p>【Why】All downstream numbers are derived from this task: torque comes from load and leverage, speed from action tempo, endurance from duty cycle, cost from the number of DOFs. Skipping this step and buying motors directly is like buying bricks without a blueprint. For a perceptual anchor of whole-machine scale, see <a href="/en/wiki/chapters/chapter-26/">Chapter 26: Whole-System Case Studies</a> and the <a href="/entry/ent_robot_system_tesla_optimus/">Tesla Optimus</a>, <a href="/entry/ent_robot_unitree_h1_humanoid_robot_2024/">Unitree H1</a> cards.</p>
+<p>【How to Analyze Your Situation】After writing down the mission statement, make two cuts: ① Remove any "and also" functions — your first robot should do only one thing; ② Simplify the environment as much as possible (indoor, flat ground, fixed lighting). It is far more valuable to validate a complete pipeline on one machine than to stack five half-baked features.</p>
+<h2 id="step-2-from-task-to-load-spectrum-calculate-peak-torque">Step 2: From Task to Load Spectrum — Calculate Peak Torque</h2>
+<p>【What to Do】For each joint, estimate the lower bound of peak torque using the <strong>lever equation</strong>:</p>
+<pre class="highlight"><code>τ_joint ≥ m_load × g × L_arm × S</code></pre>
+<ul>
+<li><code>m_load</code>: Total mass to be lifted downstream of the joint (including arm self-weight + end-effector load), kg</li>
+<li><code>g = 9.81 m/s²</code>, <code>L_arm</code>: Horizontal distance from the center of mass to the joint axis, m</li>
+<li><code>S</code>: Safety factor, 1.5 for static, 2–3 for dynamic (walking/running/catching/throwing)</li>
+</ul>
+<p>Example (desktop arm shoulder flexion joint): Arm + hand total 1.2 kg, end-effector grabs 0.5 kg, equivalent arm length to center of mass 0.25 m, dynamic safety factor 2:</p>
+<pre class="highlight"><code>τ ≥ (1.2 + 0.5) × 9.81 × 0.25 × 2 ≈ 8.3 N·m</code></pre>
+<p>Fill the results for each joint into the specification table (template in Step 4). For bipedal hip/knee joints in the stance phase, they must bear <strong>total robot weight × single-leg support impact</strong>; estimate with <code>m_load</code> as total robot mass and <code>S</code> starting at 2.5.</p>
+<p>【Why】Peak torque is the primary constraint determining the motor and reducer. Underestimating it means the robot can't move; overestimating it wastes money and adds weight. The <a href="/entry/ent_component_frameless_torque_motor_2024/">Frameless Torque Motor</a> card shows the physical root is τ ∝ r²l (torque scales with the square of the radius) — doubling torque requires only a ×1.41 increase in motor diameter, which is why joint motors are made like "pancakes." For a systematic discussion of the actuator layer, see <a href="/en/wiki/chapters/chapter-04/">Chapter 4: Actuators</a>.</p>
+<p>【How to Analyze Your Situation】When CAD weight data is unavailable, use analogy: The Berkeley Humanoid Lite weighs about 16 kg with 12 DOFs (<a href="https://arxiv.org/html/2504.17249v1">paper</a>). Scale joint torques for your desktop machine by weight ratio. Joints with calculated torque &lt; 3 N·m can use smart servos (<a href="/entry/ent_component_dynamixel_xm430_w210_t/">XM430 stall torque 3.0 N·m</a>); 3–15 N·m consider QDD self-development (M02); larger than that enters the world of industrial frameless motors.</p>
+<h2 id="step-3-from-task-to-speed-and-duty-cycle-calculate-rpm-and-heat">Step 3: From Task to Speed and Duty Cycle — Calculate RPM and Heat</h2>
+<p>【What to Do】Add two more columns:</p>
+<ol>
+<li><strong>Rated Output Speed</strong>: Derived from action time. "Swing arm 90° in 0.5 s" → 90°/0.5 s = 180°/s ≈ 30 rpm at the output. Motor speed = output speed × reduction ratio; M03 will use this number.</li>
+<li><strong>Duty Cycle</strong>: The proportion of time the joint exerts force within the task cycle. For a walking platform, support leg is about 50–70%; for a desktop arm, pick-and-place is about 20–30%. Duty cycle × stall heat = average thermal load, which determines the continuous current rating, not the peak.</li>
+</ol>
+<p>【Why】A motor's peak torque can only be sustained for a few seconds (limited by heat). What it can output continuously depends on duty cycle and thermal design. Speed, in turn, constrains the reduction ratio — <a href="/entry/ent_component_harmonic_reducer_2024/">Harmonic Drives</a> are commonly 50–100:1; paired with a 3000 rpm motor, they yield 30–60 rpm output, which is sufficient. But to achieve 120 rpm with the same reduction ratio, you'd need a lower-ratio solution. For heat and continuous ratings, see <a href="/en/wiki/chapters/chapter-06/">Chapter 6: Computation, Power, and Thermal Management</a> and the <a href="/entry/ent_method_thermal_simulation/">Thermal Simulation</a> card.</p>
+<p>【How to Analyze Your Situation】Don't chase redundant speed: Humanoid joint output speeds rarely exceed 60 rpm. Exceeding the speed target often means the reduction ratio is too low (to be rechecked in M03). If you're unsure about the duty cycle, estimate 50%; the M07 bench temperature rise test will verify the actual value.</p>
+<h2 id="step-4-produce-the-joint-specification-table-core-deliverable-of-this-task">Step 4: Produce the Joint Specification Table (Core Deliverable of This Task)</h2>
+<p>【What to Do】Summarize all joints into one table. Fill in numbers or mark "needs confirmation" column by column, and print it out to post at your workstation:</p>
+<table>
+<thead>
+<tr>
+<th>Joint</th>
+<th>DOF</th>
+<th>Peak Torque (N·m)</th>
+<th>Rated Speed (rpm)</th>
+<th>Mass Budget (g)</th>
+<th>Backlash Limit</th>
+<th>Cost Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Example: Shoulder Flexion</td>
+<td>1 Rotary</td>
+<td>≥ 8.3 (Step 2 example)</td>
+<td>≥ 30</td>
+<td>≤ 400 (3–5% of total robot mass/joint, engineering recommendation)</td>
+<td>Precision grade, near zero (see <a href="/entry/ent_component_harmonic_drive_reducer/">Harmonic Drive Reducer</a> card)</td>
+<td>Total budget ÷ DOF</td>
+</tr>
+<tr>
+<td>… (one row per joint)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Write down two global constraints simultaneously: <strong>Total DOF</strong> (desktop arm 5–7, biped 10–16, full body 20+) and <strong>total robot mass/cost limit</strong>. Anchors: Berkeley 6512 QDD single joint BOM ~$157–188 (<a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2025/Archive/EECS-2025-207.pdf">EECS-2025-207 Technical Report</a>); finished humanoid ROBOTIS OP3 sells for $13,764.35 (<a href="https://www.robotis.us/robotis-op3-us/">ROBOTIS US Store Page</a> page snapshot).</p>
+<p>【Why】This table is the "contract" for the next six tasks (M02–M07): motor selection matches the torque column, reduction ratio matches the speed/backlash columns, structure matches the mass column, procurement matches the cost column. Without it, every part will require re-negotiation.</p>
+<p>【How to Analyze Your Situation】Don't fabricate numbers for cells you can't fill. Mark them as "needs confirmation" and specify what data is missing (downstream mass? supplier specs?). Update the table each time a subsequent task resolves an issue — this table is a living document.</p>
+<h2 id="step-5-cost-model-and-procurement-boundaries">Step 5: Cost Model and Procurement Boundaries</h2>
+<p>【What to Do】Break down the BOM budget into three layers and write down the limit for each:</p>
+<ol>
+<li><strong>Actuation Layer</strong> (motor + reducer + encoder + driver board, M02–M04): Typically 50–70% of the total robot cost;</li>
+<li><strong>Structure and Manufacturing Layer</strong> (3D-printed parts/machined parts/bearings/fasteners, M05): When FDM printing is primary, mainly machine time and material;</li>
+<li><strong>Computation and Power Layer</strong> (main controller/battery/BMS/emergency stop, M09): Refer to the <a href="/en/roadmap/playbooks/compute-selection/">Compute Platform Selection Playbook</a> and the <a href="/entry/ent_component_battery_management_system/">Battery Management System</a> card.</li>
+</ol>
+<p>【Why】Budget overruns almost always happen in the actuation layer — the cost of DOF count × single joint cost is easily underestimated. Calculate the total budget before starting: 20 DOF × $180 ≈ $3,600, which is the scale of the Berkeley Humanoid Lite total cost of $3,236–4,312 (survey archive).</p>
+<p>【How to Analyze Your Situation】Total budget &lt; ¥5,000: Reduce DOF (start with an arm or only the lower body), don't cut single joint quality; ¥20,000–50,000: 12–16 DOF biped can be fully covered; only above ¥100,000 can you freely combine industrial parts (<a href="/entry/ent_component_harmonic_reducer_2024/">Harmonic Drive</a> + <a href="/entry/ent_component_frameless_torque_motor_2024/">Frameless Motor</a>).</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] A one-sentence task description is written, containing the four elements of environment/frequency/load/motion, and functional reductions have been made.</li>
+<li>[ ] Each joint's peak torque has a formula, a numerical value, and a justification for the safety factor selection.</li>
+<li>[ ] Each joint's rated output speed and duty cycle have a numerical value or are marked as "to be confirmed by yourself."</li>
+<li>[ ] The joint specification table is documented: all five columns are complete, including total degrees of freedom, overall machine mass, and cost ceiling.</li>
+<li>[ ] The BOM three-layer budget breakdown is completed, with the total cost of the drive layer ≤ 70% of the total budget.</li>
+<li>[ ] The specification table has been shared/archived (subsequent M02–M07 modifications must be written back to this table).</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calculated torque is absurdly high</td>
+<td>Treating the overall machine mass as the load for each joint</td>
+<td>Only calculate the mass <strong>downstream</strong> of that joint; only use the overall machine weight during the bipedal support phase</td>
+</tr>
+<tr>
+<td>Stuck after filling in half of the specification table</td>
+<td>Pursuing perfect data, leading to analysis paralysis</td>
+<td>First fill in the order of magnitude (1/3/10 N·m), mark as "to be verified," M02/M07 will close the loop</td>
+</tr>
+<tr>
+<td>Degrees of freedom keep increasing</td>
+<td>Feature creep</td>
+<td>Return to step 1 and re-read the task description; each degree of freedom must serve that sentence</td>
+</tr>
+<tr>
+<td>Budget table misses wiring/fasteners/print failures</td>
+<td>Only accounting for major components</td>
+<td>Add a 15% loss margin to both the structure layer and the drive layer (engineering recommendation)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supporting-reading">Supporting Reading</h2>
+<ul>
+<li>Next task: <a href="/en/roadmap/missions/m02-motor-sizing/">M02 · Motor Calculation and Selection</a></li>
+<li>Theoretical background: <a href="/en/wiki/chapters/chapter-04/">Chapter 4 Actuators</a>, <a href="/en/wiki/chapters/chapter-08/">Chapter 8 Humanoid Robot Design Principles</a></li>
+<li><a href="/en/roadmap/stage-1-actuator/">Stage 1 Overview</a> · <a href="/en/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/stage-1-actuator/">← Previous<span>Phase 1: Build a Joint (Actuator)</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m02-motor-sizing/">Next →<span>M02 · Motor Calculation and Selection: From Specification Table to Specific Model</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m01-mathematizing-the-demand-scenario-translating-i-want-to-build-a-robot-into-numbers">M01 · Mathematizing the Demand Scenario: Translating "I Want to Build a Robot" into Numbers</a><ul>
+<li><a href="#step-1-write-the-scenario-as-a-one-sentence-mission-statement">Step 1: Write the Scenario as a One-Sentence Mission Statement</a></li>
+<li><a href="#step-2-from-task-to-load-spectrum-calculate-peak-torque">Step 2: From Task to Load Spectrum — Calculate Peak Torque</a></li>
+<li><a href="#step-3-from-task-to-speed-and-duty-cycle-calculate-rpm-and-heat">Step 3: From Task to Speed and Duty Cycle — Calculate RPM and Heat</a></li>
+<li><a href="#step-4-produce-the-joint-specification-table-core-deliverable-of-this-task">Step 4: Produce the Joint Specification Table (Core Deliverable of This Task)</a></li>
+<li><a href="#step-5-cost-model-and-procurement-boundaries">Step 5: Cost Model and Procurement Boundaries</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#supporting-reading">Supporting Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

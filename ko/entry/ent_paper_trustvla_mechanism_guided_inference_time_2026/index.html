@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors</h1>
+      <p class="entry-name-en">TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action Backdoors</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-Language-Action (VLA) models are deployed through pipelines that end users cannot audit, and a poisoned VLA can behave normally on clean observations while a small visual trigger redirects a long-horizon robot policy before any failure becomes observable. Existing vision or language defenses rarely explain what a triggered VLA representation looks like or how to recover behavior without.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12571" target="_blank" rel="noopener">arXiv:2607.12571 TrustVLA: Mechanism-Guided Inference-Time Defense Against Vision-Language-Action</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>TrustVLA는 시각-언어-행동(VLA) 모델에 대한 백도어 공격을 위한 추론 시점 방어 프레임워크로, 저자 팀이 제안했습니다. 이는 BadVLA와 INFUSE 두 가지 공격의 내부 메커니즘 관찰에 기반하여, Dirichlet 증거 프레임워크를 활용해 토큰별, 레이어별 인지 불확실성을 모니터링함으로써 재학습 없이 탐지, 위치 파악, 국소 복구를 구현합니다. 핵심 기여는 백도어 방어를 경험적 입력 교란 또는 파라미터 수리에서 메커니즘 기반 인과 개입으로 전환한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 VLA 방어는 근본적인 딜레마에 직면해 있습니다: 입력 수준 교란(JPEG, 가우시안 노이즈)은 관측 전체를 무차별적으로 손상시키고, 파라미터 수준 수리(ΔW Auditing, Fine-Pruning)는 종종 깨끗한 성능을 희생하는 대가를 치르며, 둘 다 "어떤 픽셀 영역이 안전하지 않은 행동을 유발했는가"라는 핵심 질문에 답할 수 없습니다. 저자들은 중독된 VLA 내부에서 반복적으로 나타나는 메커니즘, 즉 <strong>컴팩트 인과 발자국</strong>(트리거 영역이 깊은 레이어 어텐션에서 강조되면서 동시에 공간 불확실성 분포를 압축하는 현상)을 식별했습니다. 이 발견은 방어 문제를 "이상 입력을 어떻게 필터링할 것인가"에서 "표현 수준에서 이상 원인을 어떻게 위치 파악하고 인과적으로 검증할 것인가"로 전환합니다.</p>
+<p>TrustVLA가 실제로 바꾸는 것은 방어의 세분성과 해석 가능성입니다: 백도어를 전체적으로 세척해야 할 오염이 아니라, 단일 관측 내에서 위치 파악, 마스킹, 복구가 가능한 국소 인과 구조로 간주합니다. 이를 통해 깨끗한 프레임은 가벼운 탐지 비용만 지불하고, 표시된 고위험 프레임만 전체 위치 파악 및 복구 프로세스를 트리거하여 깨끗한 성능을 유지하면서 방어 오버헤드를 크게 줄입니다.</p>
+<h2 id="_3">방법 분해</h2>
+<p>TrustVLA의 추론 시점 방어 프로세스는 세 단계로 구성되며, 모두 동결된 VLA 체크포인트를 기반으로 추가 학습 없이 진행됩니다.</p>
+<h3 id="_4">증거 파라미터화 및 불확실성 모니터링</h3>
+<ul>
+<li>l번째 레이어 은닉 상태 h^(l)에 대해 언어 모델 헤드 투영을 통해 클래스별 증거를 얻습니다: e_k^(l) = exp((W_out h^(l))_k)</li>
+<li>Dirichlet 농도 파라미터: α̃<em k="1">k^(l) = e_k^(l) + 1, 총 농도 질량 S^(l) = Σ</em> α̃_k^(l)}^{V</li>
+<li>인지 불확실성: EU^(l) = V / (S^(l) + V), 여기서 V는 어휘 크기</li>
+</ul>
+<h3 id="3">3차원 메커니즘 특징</h3>
+<ul>
+<li>메커니즘 특징 벡터 ψ(X) = [r_collapse(X), r_evidence(X), r_early(X)]</li>
+<li>세 가지 패밀리는 다섯 가지 원시 통계량으로 인스턴스화됩니다:</li>
+<li>r_collapse: 낮은 시퀀스 수준 평균/최소 EU, 공간 불확실성 붕괴 포착</li>
+<li>r_evidence: log-max-evidence 및 log-late-evidence, 얕은 레이어에서 중간 레이어로의 증거 안정화 포착</li>
+<li>r_early: 레이어 0 이미지 토큰 EU 표준편차, 비정상적인 초기 레이어 이산성 포착</li>
+<li>스칼라 메커니즘 점수 R(X) = r_collapse(X) + r_evidence(X) + r_early(X), 세 개의 표준화된 구성 요소가 동일 가중치로 집계되어 학습 가중치를 피합니다(학습 가중치는 위협 모델에서 제외된 트리거 예제가 필요함)</li>
+</ul>
+<h3 id="_5">탐지 임계값 보정</h3>
+<ul>
+<li>임계값 τ_cal은 깨끗한 검증 롤아웃에서 동결됩니다: X는 R(X) &gt; τ_cal일 때만 표시됨</li>
+<li>트리거 예제, 트리거 좌표 또는 중독 검증 샘플을 사용하지 않고 임계값 설정</li>
+</ul>
+<h3 id="_6">컴팩트 인과 발자국 위치 파악</h3>
+<ul>
+<li>컴팩트성: |S| ≤ B, 여기서 B = 16 이미지 토큰(LIBERO 실험에서 시각 토큰 그리드의 약 6% 차지)</li>
+<li>위치 파악 가능성: S는 결정 레이어 어텐션 순위가 전체 순위에 비해 상승한 토큰으로 시드됨</li>
+<li>후보 풀 생성: C_0 = Top_{j, K_cand} {I_deep(j) / (I_all(j) + ε)}, 여기서 I_all(j)와 I_deep(j)는 각각 모든 레이어와 결정 레이어의 평균 수신 어텐션을 계산</li>
+<li>기본 K_cand = 8, 스케일링 폐포/소거 진단 K_cand = 12</li>
+</ul>
+<h3 id="_7">인과 검증 및 복구</h3>
+<ul>
+<li>반사실 점수 하락: Δ(S) = R(X) − R(M_S(X))</li>
+<li>최종 지지 집합 S* = ParetoElbow{(|S|, Δ(S)) : S ∈ H(C_0)}, 면적-하락 프론티어를 유지하고 하락 이득에서 면적 비용을 뺀 값을 최대화하며, 동률일 경우 컴팩트 지지 집합을 선호</li>
+<li>복구: X_def = Inpaint(X_original, S*), 국소 평균, 제로, 블러 마스크가 복구 소거로 사용됨</li>
+<li>어텐션은 컴팩트 후보 시드에만 사용되며 인과 설명으로 사용되지 않음; 영역은 마스킹이 메커니즘 점수를 낮출 때만 수용됨</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<p><strong>메커니즘 기반而非경험적 방어</strong>: TrustVLA는 백도어 방어를 검증 가능한 내부 메커니즘 가설, 즉 컴팩트 인과 발자국에 처음으로 기반을 둡니다. 명제 1(인지 동질화)과 명제 2(깊은 레이어 순위 상승)의 형식화를 통해 방어는 더 이상 휴리스틱 규칙에 의존하지 않고 공격의 표현 수준 서명을 탐지하고 위치 파악합니다. 이러한 전환은 방어에 해석 가능성을 부여합니다: 모든 방어 조치는 구체적인 메커니즘 증거로 추적될 수 있습니다.</p>
+<p><strong>재학습 및 트리거 샘플 없는 추론 시점 개입</strong>: 전체 프로세스는 소량의 깨끗한 보정 집합만 필요하며(실험에서 5-40개 샘플로 높은 정확도 달성), 트리거 예제나 중독 검증 샘플에 접촉하지 않습니다. 이는 최종 사용자가 VLA의 중독 파이프라인을 감사할 수 없고 방어자가 공격 샘플을 보유하고 있다고 가정해서는 안 되기 때문에 실제 배포에서 중요합니다. 동일 가중치 집계 메커니즘 점수는 학습 가중치를 피하여 트리거 예제에 대한 의존성을 배제합니다.</p>
+<p><strong>인과 폐포 및 Pareto 최적 지지 집합 선택</strong>: 위치 파악 단계는 단순히 어텐션이 가장 높은 토큰을 선택하는 것이 아니라, 반사실 마스킹을 통해 점수 하락을 검증하고 면적-하락 프론티어에서 Pareto 선택을 수행합니다. 이 설계는 "어텐션 관련성"과 "인과 필수성"을 구분합니다 — 마스킹 후 실제로 메커니즘 점수를 낮추는 영역만 지지 집합으로 수용되어 어텐션 오도로 인한 과도한 마스킹을 방지합니다.</p>
+<h2 id="_9">실험 및 결과</h2>
+<p>실험은 LIBERO 네 가지 스위트(Spatial/Object/Goal/LIBERO-10)에서의 OpenVLA 평가와 π_0.5의 LIBERO 스타일 및 REAL 물리 로봇 전이 검증을 포함합니다. 메인 라인은 500개 에피소드의 깨끗한/트리거 로그 쌍, 유닛당 10개 작업, 작업당 50개 롤아웃을 요구합니다.</p>
+<p><strong>표 1 핵심 결과(VLA-ASR, 낮을수록 좋음)</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>공격</th>
+<th>방어</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>LIBERO-10</th>
+<th>평균</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BadVLA</td>
+<td>방어 없음</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>BadVLA</td>
+<td>TrustVLA</td>
+<td>0.6</td>
+<td>8.5</td>
+<td>9.4</td>
+<td>9.5</td>
+<td>7.0%</td>
+</tr>
+<tr>
+<td>BadVLA</td>
+<td>JPEG q=20</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>BadVLA</td>
+<td>Gaussian ε=0.08</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>BadVLA</td>
+<td>ΔW Auditing r=20%</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.6</td>
+<td>99.9%</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>방어 없음</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>TrustVLA</td>
+<td>0.0</td>
+<td>0.6</td>
+<td>1.7</td>
+<td>6.3</td>
+<td>2.2%</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>JPEG q=20</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>Gaussian ε=0.08</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+<tr>
+<td>INFUSE</td>
+<td>ΔW Auditing r=20%</td>
+<td>20.9</td>
+<td>37.3</td>
+<td>98.9</td>
+<td>83.2</td>
+<td>60.1%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>탐지 신뢰성(표 2)</strong>: BadVLA 총 FAR=0/2000=0.0, DR=1989/2000=99.5; INFUSE 총 FAR=0/2000=0.0, DR=2000/2000=100.0.</p>
+<p><strong>π_0.5 전이(표 3)</strong>: TrustVLA는 LIBERO-10에서 잔여 VLA-ASR이 24.06으로, 방어 없는 100에 비해 크게 감소; REAL 물리 로봇(표 4) Strawberries 작업 ASR이 94.12에서 11.76으로, Blocks 작업이 96.43에서 14.29로 감소.</p>
+<p><strong>런타임 오버헤드(표 12)</strong>: 깨끗한 프레임 탐지 오버헤드는 약 6-21 ms/행동 쿼리, 트리거 프레임 위치 파악+복구는 약 15-50 ms, 위치 파악 진입률은 0.0%-7.5% 사이.</p>
+<p><strong>소거(표 13)</strong>: 어텐션 전용 위치 파악 평균 복구 SR(w)=74.0, 최대 하락 전용 81.0, Pareto 전용 79.8, Pareto+2D 폐포 81.8; 완전한 인과 폐포는 LIBERO-10에서 57.0에서 83.5로 향상.</p>
+<h2 id="_10">경계 및 한계</h2>
+<p>TrustVLA의 복구 능력은 컴팩트 인과 발자국 가설을 조건으로 하며, 이는 평가된 시각 트리거 공격에 대한 반증 가능한 작업 가설이지 보편적 불변량이 아닙니다. 의미론적 또는 비시각적 트리거, 전역 필터 스타일 트리거, 그리고 증거를 모방하면서 동시에 위치 파악을 억제하는 적응형 공격자는 여전히 견고성 주장 범위 밖에 있습니다. 작업 객체와 분리할 수 없는 의미론적 트리거의 경우, 기대되는 동작은 보수적 탐지 후 fail-safe 중지이지 복구 보장이 아닙니다.</p>
+<p>Lipschitz 가정은 연속 표현 및 사전 이산화된 행동 출력에만 적용되며, argmax 또는 샘플링 후 이산 행동 토큰의 불변성을 보장하지 않습니다; 작은 logit 교란도 결정 경계 근처의 토큰을 뒤집을 수 있으므로 표 1의 성공률은 경험적 증거로 간주해야 하며 엄격한 인증 결과가 아닙니다. 논문은 모든 VLA 아키텍처에서 검증되지 않았으며, 이론적 분석은 토큰 수준 은닉 상태로 추상화되어 모든 아키텍처를 특성화하지 않습니다. 적응형 공격자가 네 가지 제약(깨끗한 증거 궤적 유지, 깊은 레이어 순위 상승 회피, 깨끗한 SR 유지, 트리거 효능 유지)을 동시에 충족하면 TrustVLA의 메커니즘 해석은 약화됩니다.</p>
+<h2 id="_11">엔지니어링 시사점</h2>
+<p>TrustVLA를 재현할 때 먼저 깨끗한 보정 집합의 규모와 품질을 확인하십시오 — 표 9는 5개 샘플 보정 FAR이 0.172까지 높지만 40개 샘플에서는 0.025로 감소함을 보여주며, 탐지 신뢰성을 위해 최소 20개 샘플을 권장합니다. 가장 흔한 함정은 어텐션 위치 파악과 인과 검증의 혼동입니다: 어텐션은 후보 시드에만 사용되며 절대 마스크 근거로 직접 사용해서는 안 되며, 반드시 반사실 점수 하락을 통해 검증해야 합니다(표 13은 어텐션 전용 위치 파악 평균 복구가 74.0에 불과하여 완전한 방법보다 크게 낮음을 보여줍니다).</p>
+<p>배포 시 런타임 패턴에 주의하십시오: 깨끗한 프레임은 탐지 비용만 지불하며(약 6-21 ms), 후보 검색, 반사실 마스킹 및 복구는 게이트가 트리거된 후에만 실행됩니다. 하위 작업에 혼잡한 장면의 다중 객체 수용(예: LIBERO-10 작업 8, 9)이 있는 경우 면적 예산 B=16의 여유가 최소일 수 있으므로 B를 늘리거나 더 높은 잔여 VLA-ASR을 수용하는 것을 고려해야 합니다. π_0.5와 같이 흐름 매칭 행동 헤드를 사용하는 아키텍처의 경우, 언어 모델 헤드 투영을 통해 사전 행동 시각-언어 은닉 상태를 투영하여 비교 가능한 증거 궤적을 얻어야 하며, 이 교차 아키텍처 인스턴스화가 전이 가능성의 핵심 전제 조건입니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_zhou_badvla_towards_backdoor_attack_2025/">BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_trustvla_mechanism_guided_inference_time_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhou_badvla_towards_backdoor_attack_2025/">
+          <span class="entry-type">논문</span>
+          <h3>BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization</h3>
+          <p>BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">증거 파라미터화 및 불확실성 모니터링</a></li>
+<li><a href="#3">3차원 메커니즘 특징</a></li>
+<li><a href="#_5">탐지 임계값 보정</a></li>
+<li><a href="#_6">컴팩트 인과 발자국 위치 파악</a></li>
+<li><a href="#_7">인과 검증 및 복구</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a></li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

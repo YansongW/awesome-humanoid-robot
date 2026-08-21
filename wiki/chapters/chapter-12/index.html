@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第 12 章 认证、合规与质量标准 · Wiki · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" aria-current="page">Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">第 12 章 认证、合规与质量标准</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="12">第 12 章 认证、合规与质量标准</h1>
+<h2 id="_1">摘要</h2>
+<p>人形机器人从实验室样机走向工厂、物流与家庭场景，必须跨越的门槛不是单项性能指标，而是<strong>合规性（compliance）</strong>：产品必须在目标市场被法律允许销售，并在发生伤害事件时经得起责任追溯。本章系统梳理人形机器人面临的认证、合规与质量标准体系。首先从标准层级结构与风险评估方法论入手，介绍 ISO 12100 风险评估流程与"三步法"风险削减策略；随后深入功能安全工程，讲解 IEC 61508 的安全完整性等级（SIL）与 ISO 13849 的性能等级（PL）的量化方法，包括 PFH/PFD、MTTF<span class="arithmatex">\(_d\)</span>、DC<span class="arithmatex">\(_{avg}\)</span> 与共因失效（CCF）等关键概念；接着剖析与人形机器人最直接相关的两类产品安全标准——ISO 13482 个人护理机器人安全标准与 ISO/TS 15066 协作机器人技术规范，重点讨论人机接触的力与压力生物力学限值；然后按区域展开市场准入认证：欧盟 CE 标志、北美 UL 1740 与 FCC Part 15、中国 CR 认证与 CCC，以及横跨各区域的电磁兼容（EMC）与电池安全要求；最后讨论 AI 自主性给传统功能安全框架带来的挑战，以及预期功能安全（SOTIF）等新兴应对思路。本章与第 1 章的标准概览互为补充：第 1 章回答"有哪些标准"，本章回答"如何工程化地满足这些标准"。</p>
+<p><strong>关键词</strong>：功能安全；IEC 61508；ISO 13849；ISO 13482；ISO/TS 15066；风险评估；CE 标志；UL 1740；FCC Part 15；CR 认证；电磁兼容；SOTIF</p>
+<hr />
+<h2 id="121">12.1 认证与合规的总体框架</h2>
+<h3 id="1211">12.1.1 为什么合规是产品化的前提</h3>
+<p>人形机器人是一种与人共享物理空间、能够自主移动并施加物理力的机器。这一本质决定了它不可能像纯软件产品那样"先发布、后迭代"：一旦造成人身伤害，厂商面对的不仅是召回成本，还有产品责任诉讼与市场禁入风险。因此，合规能力本身就是人形机器人企业的核心竞争力之一，它至少在三个层面发挥作用：</p>
+<ol>
+<li><strong>市场准入</strong>：绝大多数经济体对投放市场的机电产品设有强制或事实强制的认证要求。例如欧盟要求加贴 CE 标志，美国工作场所的机器人需满足 OSHA 体系下由 UL 等 NRTL（国家认可实验室）出具的安全认证，中国市场则有 CR 认证（中国机器人认证）与 CCC 强制性产品认证。</li>
+<li><strong>责任界定</strong>：当事故发生时，"是否遵循了适用的现行标准"是法庭与监管机构判断制造商是否尽到注意义务（duty of care）的首要依据。符合标准不等于免除责任，但显著降低法律风险。</li>
+<li><strong>设计约束传导</strong>：合规要求会直接传导为工程设计参数——最大运动速度、末端接触力上限、急停按钮的位置与颜色、外壳的阻燃等级、电池的热失控防护等。越早把标准要求纳入设计冻结（design freeze），后期整改成本越低。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：合规（compliance）、认证（certification）、标准（standard）</p>
+<ul>
+<li><strong>标准</strong>：由公认机构（ISO、IEC、IEEE、UL 等）制定、经协商一致批准的规范性文件，统一产品、过程或服务的技术要求。标准本身通常不具法律强制力。</li>
+<li><strong>认证</strong>：由第三方机构（或制造商自我声明）证明产品符合特定标准或法规要求的过程。</li>
+<li><strong>合规</strong>：产品满足目标市场全部适用法律、法规与被引用标准的状态。法规是强制的，标准被法规引用后即获得强制效力。</li>
+</ul>
+</div>
+<h3 id="1212">12.1.2 标准体系的层级结构</h3>
+<p>第 1 章已给出人形机器人标准的金字塔概览（国际—区域—行业—企业四层）。从工程实施角度，更有用的是 ISO 对机械安全标准的<strong>A/B/C 三级分类</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>定义</th>
+<th>典型标准</th>
+<th>与人形机器人的关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 类（基础安全标准）</td>
+<td>给出适用于所有机械的基本概念与设计原则</td>
+<td>ISO 12100（风险评估与风险削减）</td>
+<td>一切安全设计的起点</td>
+</tr>
+<tr>
+<td>B 类（通用安全标准）</td>
+<td>针对一类安全装置或一种安全相关特性</td>
+<td>ISO 13849（控制系统安全相关部件）、IEC 61508（功能安全）、IEC 60204-1（机械电气设备）</td>
+<td>决定安全控制架构与元器件选型</td>
+</tr>
+<tr>
+<td>C 类（产品安全标准）</td>
+<td>针对特定机械类型的全部安全要求</td>
+<td>ISO 13482（个人护理机器人）、ISO 10218-1/-2（工业机器人）</td>
+<td>决定整机的限值与验证方法</td>
+</tr>
+</tbody>
+</table>
+<p>当 C 类标准与 B 类标准冲突时，以 C 类为准。人形机器人目前的尴尬处境在于：<strong>尚无专门的 C 类标准</strong>。双足人形机器人既不完全属于 ISO 10218 的"工业机器人"，也不完全属于 ISO 13482 的"个人护理机器人"，厂商通常需要组合引用多个标准并向认证机构论证其适用性，这也是人形机器人认证周期长的根本原因之一。</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[A类：ISO 12100&lt;br/&gt;风险评估与风险削减总原则] --&gt; B1[B类：IEC 61508&lt;br/&gt;功能安全 / SIL]
+    A --&gt; B2[B类：ISO 13849&lt;br/&gt;控制系统安全相关部件 / PL]
+    A --&gt; B3[B类：IEC 62368-1&lt;br/&gt;电气与能量危险]
+    B1 --&gt; C1[C类：ISO 13482&lt;br/&gt;个人护理机器人]
+    B2 --&gt; C1
+    B2 --&gt; C2[C类：ISO 10218 + ISO/TS 15066&lt;br/&gt;工业 / 协作机器人]
+    B3 --&gt; C1
+    C1 --&gt; D[人形机器人整机&lt;br/&gt;组合引用 + 适用性论证]
+    C2 --&gt; D</code></pre>
+<h3 id="1213">12.1.3 合规的成本与周期</h3>
+<p>合规不是一次性的测试费用，而是贯穿研发全周期的成本项。根据行业经验，一个完整的安全认证周期可能需要 <strong>6–18 个月</strong>，直接费用从数万美元到数十万美元不等（视目标市场数量、测试项目与整改轮次而定）。成本构成大致包括：</p>
+<ul>
+<li><strong>第三方测试费</strong>：EMC 暗室测试、电气安全测试、电池滥用测试等按项目计费；</li>
+<li><strong>认证机构审核费</strong>：技术文件（Technical File）审查、工厂检查（如适用）；</li>
+<li><strong>整改与复测</strong>：首次送样即通过全部项目的概率很低，EMC 整改（屏蔽、滤波、重新布线）往往需要数轮；</li>
+<li><strong>内部人力</strong>：安全工程师编写风险分析报告、HARA/FMEA 文档、安全手册的时间成本；</li>
+<li><strong>时间机会成本</strong>：认证期间设计冻结，任何重大设计变更都可能触发重新评估。</li>
+</ul>
+<p>经验法则是：<strong>安全与合规设计应当与整机架构设计同步启动</strong>，而不是在样机完成后"补认证"。本书第 9 章讨论的 DV/PV（设计验证/生产验证）流程中，合规测试应作为 DV 阶段的正式交付物。</p>
+<h3 id="1214">12.1.4 本章的组织方式</h3>
+<p>本章其余部分按"方法论 → 功能安全 → 产品安全标准 → 区域准入 → 前沿挑战"展开：12.2 节讲风险评估这一所有安全标准的共同语言；12.3 节讲如何量化"控制系统足够可靠"；12.4 节讲直接约束整机行为的 ISO 13482 与 ISO/TS 15066；12.5 节按市场区域梳理 CE、UL、FCC、CR、CCC 等准入路径；12.6 节讨论 AI 时代标准体系面临的新问题。</p>
+<hr />
+<h2 id="122">12.2 风险评估：一切安全工程的起点</h2>
+<h3 id="1221-iso-12100">12.2.1 ISO 12100 风险评估流程</h3>
+<p>ISO 12100《机械安全 设计通则 风险评估与风险削减》是 A 类基础标准，定义了所有 C 类标准背后的通用方法论。其核心是"风险 = 伤害严重程度 × 伤害发生概率"的半定量框架，并规定了迭代闭环流程：</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[确定机械的使用限制&lt;br/&gt;预期用途/可合理预见的误用] --&gt; B[危险识别&lt;br/&gt;机械/电气/热/噪声/人体工学等]
+    B --&gt; C[风险估计&lt;br/&gt;严重程度 S × 发生概率]
+    C --&gt; D[风险评价&lt;br/&gt;是否需要进一步削减?]
+    D --&gt;|是| E[风险削减三步法]
+    E --&gt; E1[1. 本质安全设计]
+    E --&gt; E2[2. 安全防护与补充保护措施]
+    E --&gt; E3[3. 使用信息与警示]
+    E1 --&gt; C
+    E2 --&gt; C
+    E3 --&gt; C
+    D --&gt;|否| F[形成风险评估报告&lt;br/&gt;纳入技术文件]</code></pre>
+<p>风险评估中容易被忽视但至关重要的一步是<strong>可合理预见的误用（reasonably foreseeable misuse）</strong>。对人形机器人而言，误用场景极为丰富：儿童攀爬机器人、用户让机器人搬运超过额定负载的物体、在湿滑地面运行、遮挡传感器等。认证机构在审核时通常要求制造商逐一列出误用清单并给出防护措施。</p>
+<h3 id="1222">12.2.2 风险估计的量化：风险图方法</h3>
+<p>ISO 13849 提供了机械行业最常用的风险估计工具——<strong>风险图（risk graph）</strong>。设计者从三个维度评估每一项已识别危险：</p>
+<ol>
+<li><strong>伤害严重程度（S）</strong>：S1（轻微伤害，通常可恢复，如擦伤、轻微挫伤）或 S2（严重伤害，通常不可逆，如骨折、截肢、死亡）；</li>
+<li><strong>暴露于危险的频率与持续时间（F）</strong>：F1（很少发生或暴露时间短）或 F2（频繁发生或暴露时间长）；</li>
+<li><strong>避免危险的可能性（P）</strong>：P1（在特定条件下可能避免，如有足够反应时间与空间）或 P2（几乎不可能避免）。</li>
+</ol>
+<p>S、F、P 的组合映射到要求的性能等级 PL<span class="arithmatex">\(_r\)</span>（required Performance Level），从 PL a 到 PL e。例如 S2 + F2 + P2 的组合通常要求 PL e，即安全相关控制系统必须达到最高的每小时危险失效概率要求。人形机器人在人员密集环境中执行搬运、协作任务时，其跌倒、碰撞等危险通常落入 S2/F2 区间，这意味着关键安全功能（如速度限制、力限制、急停）往往需要 PL d 甚至 PL e 等级——这一点对成本与架构的影响将在 12.3 节展开。</p>
+<h3 id="1223">12.2.3 风险削减三步法</h3>
+<p>ISO 12100 规定风险削减必须按优先级顺序执行：</p>
+<ol>
+<li><strong>本质安全设计（inherently safe design）</strong>：从源头消除危险。对人形机器人而言包括：限制关节峰值扭矩与运动速度（以牺牲部分性能换取安全）、圆角化外壳消除锐边、采用低惯量连杆降低碰撞动能、选择热失控风险更低的电池化学体系（参见第 3 章、第 4 章的材料讨论）。</li>
+<li><strong>安全防护与补充保护措施（safeguarding and complementary protective measures）</strong>：无法消除的残余风险通过工程防护控制。典型措施包括：安全-rated 激光雷达/深度相机构成的防护区域、关节力矩传感器实现的碰撞检测、安全 PLC 监控的急停回路、跌倒检测后的保护性关断（protective stop）。</li>
+<li><strong>使用信息（information for use）</strong>：前两步之后的残余风险通过警示标识、用户手册、培训告知用户。法律上这是最后一道防线，不能用它替代前两步。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">术语解释：残余风险（residual risk）</p>
+<p>实施全部风险削减措施后仍然存在的风险。标准不要求、也不可能要求"零风险"；要求的是残余风险被降低到可接受水平，并被如实告知用户。风险评估报告中对残余风险的记录与论证，是 CE 技术文件的核心内容之一。</p>
+</div>
+<h3 id="1224">12.2.4 人形机器人的典型危险源清单</h3>
+<p>结合 ISO 12100 的危险分类与人形机器人的形态特点，整机风险评估至少应覆盖下表中的危险源：</p>
+<table>
+<thead>
+<tr>
+<th>危险类别</th>
+<th>人形机器人具体表现</th>
+<th>主要削减手段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机械危险——挤压、剪切</td>
+<td>关节夹挤点（膝、肘、髋屈伸处）、手指夹伤</td>
+<td>夹挤点防护罩、间隙/距离设计、力限制</td>
+</tr>
+<tr>
+<td>机械危险——冲击碰撞</td>
+<td>行走中手臂摆动撞击人体、跌倒时整机砸压</td>
+<td>速度分离监控、功率与力限制、跌倒保护策略</td>
+</tr>
+<tr>
+<td>机械危险——失稳跌倒</td>
+<td>双足动态平衡失效导致整机倾倒</td>
+<td>稳定余量监控、低能量失效姿态设计、人员回避</td>
+</tr>
+<tr>
+<td>电气危险</td>
+<td>高压动力电池、母线电容电击</td>
+<td>双重绝缘、接地、互锁、IEC 62368-1 能量分级</td>
+</tr>
+<tr>
+<td>热危险</td>
+<td>电机/驱动器高温表面、电池热失控</td>
+<td>表面温度限制、BMS 多级保护、隔热与泄压设计</td>
+</tr>
+<tr>
+<td>电磁危险</td>
+<td>大功率驱动器 EMI 干扰医疗设备等</td>
+<td>EMC 设计（屏蔽、滤波、接地）、12.5.4 节测试</td>
+</tr>
+<tr>
+<td>功能失效危险</td>
+<td>控制器死机、传感器错误、通信中断导致失控</td>
+<td>12.3 节功能安全架构（SIL/PL 分级设计）</td>
+</tr>
+<tr>
+<td>网络安全危险</td>
+<td>远程劫持导致恶意运动</td>
+<td>安全通道加密、指令白名单、安全层独立于网络栈</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="123-iec-61508-iso-13849">12.3 功能安全：IEC 61508 与 ISO 13849</h2>
+<h3 id="1231">12.3.1 功能安全的基本概念</h3>
+<p>第 8 章已介绍过 SIL 与 PL 的基本概念，本节从认证工程角度深入其实现方法。<strong>功能安全（functional safety）</strong>回答的问题是：当控制系统自身发生故障（元器件损坏、软件跑飞、通信丢包）时，系统能否以足够高的概率仍执行安全功能，把机器人带入安全状态？</p>
+<p>这里有两个关键区分：</p>
+<ul>
+<li><strong>安全性（safety）≠ 可靠性（reliability）</strong>：一个高可靠系统很少故障，但故障时可能进入危险状态；功能安全关心的是故障的<strong>后果</strong>与<strong>可检测性</strong>，而非仅仅故障频率。</li>
+<li><strong>危险失效（dangerous failure）≠ 安全失效（safe failure）</strong>：导致安全功能丧失的失效才是危险失效。继电器触点熔接导致急停失效是危险失效；继电器线圈开路导致机器人无法启动是安全失效（虽然影响可用性）。</li>
+</ul>
+<p>IEC 61508 把整个安全工作组织为<strong>安全生命周期（safety lifecycle）</strong>：危险与风险分析 → 安全要求分配 → 安全完整性设计 → 验证与确认 → 运行维护 → 退役。每个阶段都有文档化交付物，认证审核的核心就是这些交付物构成的"安全论证（safety case）"。</p>
+<h3 id="1232-sil-pfh-pfd">12.3.2 SIL 的量化：PFH 与 PFD</h3>
+<p>IEC 61508 用危险失效概率把安全完整性量化为 SIL 1–4 四个等级。按运行模式分为两种度量：</p>
+<ul>
+<li><strong>低要求模式（low demand mode）</strong>用平均要求时失效概率 PFD<span class="arithmatex">\(_{avg}\)</span>（Probability of Failure on Demand）；</li>
+<li><strong>高要求/连续模式（high demand / continuous mode）</strong>用每小时危险失效频率 PFH（Probability of dangerous Failure per Hour）。</li>
+</ul>
+<p>机器人安全功能几乎都工作在高要求或连续模式，对应关系为：</p>
+<table>
+<thead>
+<tr>
+<th>SIL</th>
+<th>PFH（每小时）</th>
+<th>风险降低因子量级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIL 1</td>
+<td><span class="arithmatex">\(10^{-6} \sim &lt;10^{-5}\)</span></td>
+<td>10–100</td>
+</tr>
+<tr>
+<td>SIL 2</td>
+<td><span class="arithmatex">\(10^{-7} \sim &lt;10^{-6}\)</span></td>
+<td>100–1000</td>
+</tr>
+<tr>
+<td>SIL 3</td>
+<td><span class="arithmatex">\(10^{-8} \sim &lt;10^{-7}\)</span></td>
+<td>1000–10000</td>
+</tr>
+<tr>
+<td>SIL 4</td>
+<td><span class="arithmatex">\(10^{-9} \sim &lt;10^{-8}\)</span></td>
+<td>10000–100000</td>
+</tr>
+</tbody>
+</table>
+<p>直观理解：SIL 2 意味着安全功能平均每一千万小时才发生一次危险失效。对一支年运行数千小时的机器人车队，这一量级把"因控制系统故障导致伤害"的概率压到极低水平。</p>
+<p>安全功能的 PFH 由其组成的子系统串联累加。若安全链路由传感器（S）、逻辑单元（L）与执行器（A）串联构成，则</p>
+<div class="arithmatex">\[
+PFH_{sys} \approx PFH_S + PFH_L + PFH_A
+\]</div>
+<p>系统整体的 SIL 不能超过任一环节所能支持的最高 SIL。这就是为什么"用一个 SIL 3 的激光雷达配上普通 MCU"无法宣称 SIL 3——木桶效应决定了整条链路必须逐级达标。</p>
+<h3 id="1233-iso-13849-plcategorymttfd-dc">12.3.3 ISO 13849 的 PL：Category、MTTFd 与 DC</h3>
+<p>ISO 13849-1 面向机械安全相关控制系统（SRP/CS, Safety-Related Parts of Control Systems），用 PL a–e 与 PFH<span class="arithmatex">\(_d\)</span> 对应（对照表见第 8 章 8.7.5 节）。工程上确定一个通道能达到的 PL，需要同时评估四个要素：</p>
+<ol>
+<li><strong>结构类别（Category）</strong>：描述架构的容错能力。Category B 为单通道无诊断；Category 1 采用经考验的元器件与安全原则；Category 2 引入周期性测试；Category 3 为冗余双通道，单一故障不导致安全功能丧失；Category 4 在 Category 3 基础上要求故障被及时检测。</li>
+<li><strong>平均危险失效时间 MTTF<span class="arithmatex">\(_d\)</span></strong>（Mean Time To dangerous Failure）：每个通道的元器件级可靠性统计量，分低（3–10 年）、中（10–30 年）、高（30–100 年）三档。它由元器件失效率数据（如制造商提供的 B10<span class="arithmatex">\(_d\)</span> 值）计算：
+   $$
+   MTTF_d = \frac{B_{10d}}{0.1 \times n_{op}}
+   $$
+   其中 <span class="arithmatex">\(B_{10d}\)</span> 为 10% 元件发生危险失效时的循环次数，<span class="arithmatex">\(n_{op}\)</span> 为年均动作次数。</li>
+<li><strong>平均诊断覆盖率 DC<span class="arithmatex">\(_{avg}\)</span></strong>（Diagnostic Coverage）：危险失效中被自诊断发现的百分比，分无（&lt;60%）、低（60–90%）、中（90–99%）、高（≥99%）四档。交叉监控、奇偶校验、看门狗、输出回读都是提高 DC 的手段。</li>
+<li><strong>共因失效（CCF, Common Cause Failure）</strong>：冗余通道因共同原因（同一电源跌落、同一高温环境、同一软件 bug）同时失效。标准要求通过隔离、多样性、环境试验等措施获得足够的 CCF 评分。</li>
+</ol>
+<p>人形机器人关键安全功能的典型目标是 <strong>PL d / SIL 2 或 PL e / SIL 3</strong>：例如双通道急停回路常按 Category 3 + PL d 设计；与人持续近距离交互时的功率与力限制功能则可能需要 PL e 等级的论证。</p>
+<h3 id="1234">12.3.4 人形机器人的典型安全功能分解</h3>
+<p>将标准语言落到整机架构，人形机器人通常需要实现下列安全功能（Safety Function），每项都要分配 PL<span class="arithmatex">\(_r\)</span>/SIL 目标并独立验证：</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    subgraph 感知层
+        S1[安全激光雷达/深度相机&lt;br/&gt;人员检测]
+        S2[关节力矩/电流传感&lt;br/&gt;碰撞检测]
+        S3[急停按钮/使能装置]
+    end
+    subgraph 安全逻辑层
+        L[安全控制器&lt;br/&gt;安全PLC或安全MCU]
+    end
+    subgraph 执行层
+        A1[STO 安全转矩关断]
+        A2[SLS 安全限速]
+        A3[抱闸/机械制动]
+    end
+    S1 --&gt; L
+    S2 --&gt; L
+    S3 --&gt; L
+    L --&gt; A1
+    L --&gt; A2
+    L --&gt; A3</code></pre>
+<ul>
+<li><strong>STO（Safe Torque Off，安全转矩关断）</strong>：切断电机转矩输出而不切断控制电源，是最基本的驱动级安全功能，主流伺服驱动器均提供 STO 端子并宣称 SIL 3 / PL e 能力。</li>
+<li><strong>SLS（Safely-Limited Speed，安全限速）</strong>：监控并限制关节速度不超过安全限值，需要安全级的速度反馈通道（如双编码器交叉校验）。</li>
+<li><strong>SLP（Safely-Limited Position，安全限位）</strong>：限制关节位置不进入危险区域（如人员防护空间）。</li>
+<li><strong>碰撞检测与功率/力限制</strong>：通过电流环估计外力矩或专用力矩传感器，在接触力超限时触发保护性停止——这是 ISO/TS 15066 功率与力限制模式的技术基础（见 12.4.2 节）。</li>
+<li><strong>急停（Emergency Stop）</strong>：红色蘑菇头黄色背景的 Category 0/1 停止，独立于主控制器的硬接线回路。</li>
+</ul>
+<p>关键架构原则是：<strong>安全层必须独立于功能层</strong>。主控跑 Linux/ROS 的视觉-语言-动作（VLA）栈崩溃时，安全控制器仍能执行 STO/SLS。这通常意味着安全 MCU/PLC 与主计算平台物理分离，安全传感器直接接入安全控制器而非经由主控转发。</p>
+<h3 id="1235-sotif-ai">12.3.5 预期功能安全（SOTIF）与 AI 带来的新问题</h3>
+<p>IEC 61508 与 ISO 13849 处理的是"系统故障"——功能失效导致危险。但人形机器人还有另一类危险：<strong>系统没有任何故障，只是功能本身不足以应对环境</strong>。例如视觉模型在逆光下把人误判为背景、VLA 策略对训练分布外的指令产生危险动作。这类"性能不足"危险由<strong>预期功能安全（SOTIF, Safety Of The Intended Functionality，源自汽车领域的 ISO 21448）</strong>框架处理。</p>
+<p>SOTIF 把场景分为四象限：已知安全、已知不安全、未知不安全、未知安全，工程目标是通过场景库积累、触发条件分析与设计改进，不断扩大"已知安全"区域、压缩"未知不安全"区域。对搭载学习模型的机器人，这意味着：</p>
+<ul>
+<li>感知与策略模型需要独立的<strong>OOD（分布外）检测与降级机制</strong>，检测到不确定性升高时切换到保守行为；</li>
+<li>安全决策不能完全委托给学习型组件，最终的安全关断必须保留在确定性、可验证的安全层（12.3.4 节的架构）；</li>
+<li>验证方法从"故障注入"扩展为"场景遍历 + 统计论证"，与本书第 25 章讨论的评测体系直接衔接。</li>
+</ul>
+<hr />
+<h2 id="124-iso-13482-isots-15066">12.4 产品安全标准：ISO 13482 与 ISO/TS 15066</h2>
+<h3 id="1241-iso-134822014">12.4.1 ISO 13482:2014 个人护理机器人安全</h3>
+<p>ISO 13482 是目前与服务/家庭场景人形机器人最接近的 C 类标准。它将<strong>个人护理机器人（personal care robot）</strong>定义为以提高个人生活质量为目标的服务机器人，覆盖三类：</p>
+<ol>
+<li><strong>移动仆人机器人（mobile servant robot）</strong>：执行物品搬运、清洁等任务的可移动机器人——大多数轮式底盘人形机器人落入此类；</li>
+<li><strong>物理辅助机器人（physical assistant robot）</strong>：与人有物理接触、辅助其移动或作业的设备，如下肢外骨骼；</li>
+<li><strong>载人机器人（person carrier robot）</strong>：承载人员移动的机器人轮椅等。</li>
+</ol>
+<p>标准的核心要求围绕"与人共处"展开：</p>
+<ul>
+<li><strong>运动速度与力的限制</strong>：机器人在可能接触人员的模式下，其运动速度与接触力必须被限制在不造成伤害的水平，具体限值与被接触的人体部位相关；</li>
+<li><strong>接触安全</strong>：外壳表面不得有锐边锐角，表面温度不得超过可能造成烫伤的限值，夹挤点需要防护或力限制；</li>
+<li><strong>稳定性与倾倒防护</strong>：机器人应在预期地面条件与外力扰动下保持稳定，倾倒风险不可消除时需限制倾倒能量或给出警示；</li>
+<li><strong>自主功能的约束</strong>：自主移动机器人必须能检测路径上的人员并做出避免或无害化接触的反应，且不允许在无人监督时执行危险操作；</li>
+<li><strong>电池与充电安全</strong>：涵盖充电过程的电气与火灾风险。</li>
+</ul>
+<p>ISO 13482 的现实局限在于它制定于 2014 年，彼时双足人形机器人尚未产业化，标准中的许多验证方法（如静态稳定性试验）并不直接适用于动态平衡的双足平台。当前厂商通常的做法是以 ISO 13482 的总体要求为纲，对双足特有的危险（动态跌倒、全身接触）引用 ISO/TS 15066 的接触限值并自行补充试验方法，形成向认证机构提交的适用性论证文件。</p>
+<h3 id="1242-isots-150662016">12.4.2 ISO/TS 15066:2016 协作机器人技术规范</h3>
+<p>ISO/TS 15066 是 ISO 10218 工业机器人标准的补充技术规范，定义了四种<strong>协作操作（collaborative operation）</strong>模式，机器人系统只要实现其中一种或多种，即可在防护栏内/外的混合空间与人共事：</p>
+<table>
+<thead>
+<tr>
+<th>协作模式</th>
+<th>英文原名</th>
+<th>原理</th>
+<th>人形机器人适用性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>安全级监控停止</td>
+<td>Safety-rated monitored stop</td>
+<td>人员进入协作空间时机器人停止，离开后恢复</td>
+<td>适合展示、装配协作</td>
+</tr>
+<tr>
+<td>手动引导</td>
+<td>Hand guiding</td>
+<td>人员通过手动引导装置直接带动机器人运动</td>
+<td>示教编程、拖拽示教</td>
+</tr>
+<tr>
+<td>速度与分离监控</td>
+<td>Speed and separation monitoring, SSM</td>
+<td>根据人机距离动态调节速度，保持最小保护距离</td>
+<td>双足移动操作的主要模式</td>
+</tr>
+<tr>
+<td>功率与力限制</td>
+<td>Power and force limiting, PFL</td>
+<td>允许物理接触，但接触力/压力被限制在生物力学阈值内</td>
+<td>贴身服务、物理辅助</td>
+</tr>
+</tbody>
+</table>
+<p>SSM 模式的最小保护距离由人体接近速度、机器人停止时间与系统响应时间决定，其经典形式为</p>
+<div class="arithmatex">\[
+S_p(t_0) = \int_{t_0}^{t_0+T_R+T_B} v_H(t)\,dt + \int_{t_0}^{t_0+T_R} v_R(t)\,dt + T_R \cdot v_R + C + Z_d + Z_r
+\]</div>
+<p>其中 <span class="arithmatex">\(v_H\)</span> 为人员接近速度（通常取 1.6 m/s 的步行速度），<span class="arithmatex">\(T_R\)</span> 为系统响应时间，<span class="arithmatex">\(T_B\)</span> 为制动停止时间，<span class="arithmatex">\(C\)</span> 为考虑人体侵入的附加距离，<span class="arithmatex">\(Z_d\)</span>、<span class="arithmatex">\(Z_r\)</span> 分别为传感器位置不确定性与机器人位置不确定性。该公式的工程含义是：<strong>机器人制动越慢、传感器延迟越大，安全距离就得留得越大，协作效率越低</strong>——安全与节拍之间的张力由此而生。</p>
+<p>PFL 模式则给出按人体部位划分的<strong>生物力学限值</strong>，区分两类接触：</p>
+<ul>
+<li><strong>准静态接触（quasi-static contact）</strong>：人体被夹在机器人与固定物体之间的持续挤压，限值最严格；</li>
+<li><strong>瞬态接触（transient contact）</strong>：短暂的冲击碰撞，限值约为准静态的两倍。</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">术语解释：准静态接触与瞬态接触</p>
+<p>ISO/TS 15066 的生物力学限值表中，面部、颅骨等敏感部位甚至<strong>不允许</strong>发生准静态接触；躯干、大腿等肌肉丰厚部位允许的准静态压力典型值在百帕量级（约 100–200 N/cm² 量级），对应几十至一百余牛顿的力限值；瞬态接触限值放宽约一倍。这些数值源自人体疼痛阈值研究，代表的是"疼痛开始"而非"受伤"水平，留有安全余量。</p>
+</div>
+<p>对双足人形机器人而言，PFL 模式的适配存在特殊困难：ISO/TS 15066 的限值模型假设机器人是固定基座的机械臂，接触是单点、可控制的；而双足机器人在行走中可能与人体发生全身多部位接触，且跌倒时的接触能量远超机械臂——一个 50–80 kg 的整机从 1.5 m 高度倾倒所携带的能量（约 <span class="arithmatex">\(mgh \approx 700\)</span>–1200 J 量级）远远超过任何生物力学限值。因此现行共识是：<strong>双足人形机器人的首要安全目标是"不跌倒"和"接触前减速"，PFL 只作为残余接触的兜底</strong>，这也解释了为什么各厂商把大量安全预算投在平衡控制的鲁棒性上。</p>
+<h3 id="1243">12.4.3 生物力学限值与接触模型</h3>
+<p>PFL 模式的验证需要测量机器人末端或身体部位的接触力。冲击力峰值可用集中质量模型估算：质量为 <span class="arithmatex">\(m_R\)</span> 的机器人部件以速度 <span class="arithmatex">\(v\)</span> 撞击人体部位（等效弹簧常数 <span class="arithmatex">\(k_H\)</span>，机器人侧等效弹簧 <span class="arithmatex">\(k_R\)</span>）时，峰值力近似为</p>
+<div class="arithmatex">\[
+F_{max} = v \sqrt{m_{red}\, k_{eff}}, \quad m_{red} = \frac{m_R m_H}{m_R + m_H}, \quad k_{eff} = \frac{k_R k_H}{k_R + k_H}
+\]</div>
+<p>其中 <span class="arithmatex">\(m_H\)</span> 为人体部位的有效质量。该模型揭示了降低冲击力的三条设计途径，全部在第 9 章的子系统设计中有对应实现：</p>
+<ol>
+<li><strong>降低接触速度 <span class="arithmatex">\(v\)</span></strong>：SSM 减速、柔顺控制降低接近速度——力的峰值与速度近似成正比，是性价比最高的手段；</li>
+<li><strong>降低有效质量 <span class="arithmatex">\(m_{red}\)</span></strong>：轻量化连杆与低惯量设计（参见第 3 章结构材料、第 9 章摆动腿惯量优化）；</li>
+<li><strong>降低系统刚度 <span class="arithmatex">\(k_{eff}\)</span></strong>：软包覆材料、柔顺关节（如串联弹性执行器）、碰撞时控制器主动退让。</li>
+</ol>
+<h3 id="1244-iso-10218">12.4.4 工业机器人标准的继承：ISO 10218</h3>
+<p>对部署在工厂环境的人形机器人，最直接的标准依据仍是 ISO 10218-1/-2（机器人本体与机器人系统/集成的安全要求）。该标准历经修订，最新版本进一步纳入了对移动与协作功能的要求，并与人机协作场景下的 ISO/TS 15066 配套使用。实践中，工厂场景的人形机器人通常按"工业机器人系统"完成单元级风险评估：机器人本体符合 ISO 10218-1，集成应用（含工装、物料流、人员通道）由集成商按 ISO 10218-2 完成单元（cell）级认证。</p>
+<p>值得强调的是"<strong>谁认证</strong>"的问题：本体厂商只能对机器人本体负责，机器人放入具体产线后的整体安全由<strong>系统集成商或最终用户</strong>重新评估并负责。人形机器人企业若以"交钥匙单元"方式交付（机器人 + 工装 + 布局），实际上承担了集成商角色，认证责任随之扩大——这是商业模式选择对合规成本的直接影响。</p>
+<h3 id="1245">12.4.5 电气与电池安全</h3>
+<p>人形机器人搭载数十伏至近百伏的动力电池与大功率驱动器，电气安全独立于功能安全自成体系：</p>
+<ul>
+<li><strong>IEC 62368-1</strong>：音视频与信息技术设备安全标准，采用<strong>危险能量分级（HBSE, Hazard-Based Safety Engineering）</strong>思想，把电、热、机械能量按对人体的伤害能力分级（Class 1–3），要求对 Class 2 及以上能量源提供防护。人形机器人的充电座、主电源板通常按此标准评估；</li>
+<li><strong>电池安全</strong>：电芯与电池包层面通常引用 IEC 62133 系列（便携式密封电池安全）与运输领域的 UN 38.3（振动、冲击、短路、过充、强制放电等滥用试验，是锂电池航空运输的强制前提）；</li>
+<li><strong>BMS 的功能安全</strong>：过充、过放、过温、短路保护属于安全相关功能，高要求场合同样需要做 SIL/PL 论证，且电池主回路通常要求双重保护（主保护 IC + 独立二级保护）；</li>
+<li><strong>充电安全</strong>：自动回充的人形机器人涉及无人值守充电，对接触点防异物短路、充电通信握手、热失控早期检测（气体/温度传感器）都是评估要点。</li>
+</ul>
+<hr />
+<h2 id="125">12.5 区域市场准入认证</h2>
+<h3 id="1251-ce">12.5.1 欧盟：CE 标志体系</h3>
+<p>CE 标志（Conformité Européenne）是产品进入欧盟及欧洲经济区市场的合格声明。它不是单一认证，而是一套<strong>指令/法规 + 协调标准 + 合格评定程序</strong>的组合。人形机器人通常涉及：</p>
+<table>
+<thead>
+<tr>
+<th>指令/法规</th>
+<th>管辖内容</th>
+<th>对人形机器人的要点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机械指令 2006/42/EC（正过渡为机械法规 (EU) 2023/1230）</td>
+<td>机械基本健康与安全要求</td>
+<td>整机风险评估、安全功能、技术文件</td>
+</tr>
+<tr>
+<td>低电压指令 2014/35/EU</td>
+<td>50–1000 V AC / 75–1500 V DC 电气安全</td>
+<td>充电器、电源部件（机器人本体电池电压常低于此范围，但充电器适用）</td>
+</tr>
+<tr>
+<td>EMC 指令 2014/30/EU</td>
+<td>电磁兼容</td>
+<td>12.5.4 节详述</td>
+</tr>
+<tr>
+<td>无线电设备指令 2014/53/EU（RED）</td>
+<td>含 Wi-Fi/蓝牙/4G/5G 模块的设备</td>
+<td>射频参数、频谱合规</td>
+</tr>
+<tr>
+<td>RoHS 2011/65/EU</td>
+<td>限制有害物质</td>
+<td>铅、镉、阻燃剂等材料申报</td>
+</tr>
+<tr>
+<td>欧盟人工智能法 (EU) 2024/1689</td>
+<td>按风险分级监管 AI 系统</td>
+<td>涉及生物识别、情感识别等功能时可能触发额外义务</td>
+</tr>
+</tbody>
+</table>
+<p>CE 合格评定的典型流程为：</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[确定适用指令/法规] --&gt; B[识别协调标准&lt;br/&gt;EN ISO 13482 / EN ISO 13849 等]
+    B --&gt; C[风险评估与安全设计]
+    C --&gt; D[样机测试&lt;br/&gt;自检或委托实验室]
+    D --&gt; E{是否属于须第三方介入类别?}
+    E --&gt;|否| F[制造商自我声明&lt;br/&gt;签署 DoC]
+    E --&gt;|是| G[公告机构 Notified Body&lt;br/&gt;型式检验]
+    G --&gt; F
+    F --&gt; H[编制技术文件&lt;br/&gt;保存至少10年]
+    H --&gt; I[加贴 CE 标志&lt;br/&gt;投放市场]</code></pre>
+<p>大多数机器人可由制造商走<strong>自我声明</strong>路径（签署符合性声明 DoC），但前提是完整执行协调标准并备齐技术文件；技术文件需包含风险评估报告、计算与试验记录、图纸、元器件证书、使用手册等，供市场监管机构随时调阅。值得注意的趋势是：新机械法规与 AI 法都在把"自主/学习型机器"纳入更明确的监管视野，制造商应跟踪其过渡期与实施细则。</p>
+<h3 id="1252-ul-1740nrtl-fcc-part-15">12.5.2 北美：UL 1740、NRTL 制度与 FCC Part 15</h3>
+<p>美国市场没有 CE 式的统一标志，而是多层结构：</p>
+<ul>
+<li><strong>电气与火灾安全</strong>：由 OSHA 认可的 NRTL（国家认可实验室，如 UL、Intertek/ETL、TÜV 北美）认证。机器人领域的专用标准是 <strong>UL 1740</strong>《机器人与机器人设备安全标准》，覆盖机器人本体的电气、机械与防火要求。实际项目中常以 UL 1740 为纲，叠加 UL 61010 或 IEC 62368-1 的部件级评估；</li>
+<li><strong>电磁兼容与射频</strong>：<strong>FCC Part 15</strong> 规定了无意辐射体（数字设备）与有意辐射体（无线模块）的射频发射限值。带处理器的机器人属于 Class B（居住环境）或 Class A（工业环境）数字设备，需通过传导发射与辐射发射测试；含 Wi-Fi/蓝牙模块的还需模块级或整机级的 FCC 认证；</li>
+<li><strong>工作场所安全</strong>：OSHA 法规要求雇主提供安全的工作环境，工业机器人部署需符合 ANSI/RIA R15.06（与 ISO 10218 协调一致）的单元安全要求。人形机器人进入美国工厂，通常由集成商按 R15.06 完成应用级风险评估；</li>
+<li><strong>加拿大</strong>：CSA 标志与 SCC 认可体系，标准与 UL 高度协调（cUL 认证）。</li>
+</ul>
+<p>与 CE 自我声明不同，美国路径强依赖第三方实验室，且认证机构会对量产一致性做<strong>后续工厂检查（follow-up inspection）</strong>，更换关键元器件需要报备甚至重新评估——这对快速迭代的人形机器人硬件是不小的流程约束。</p>
+<h3 id="1253-cr-ccc-gb">12.5.3 中国：CR 认证、CCC 与 GB 标准</h3>
+<p>中国机器人市场的准入由以下层次构成：</p>
+<ul>
+<li><strong>CR 认证（中国机器人认证）</strong>：在国家认证认可监督管理委员会指导下建立的机器人自愿性认证制度，覆盖安全、EMC、性能与可靠性等维度，按认证范围分为整机、部件等类别。虽然名为自愿，CR 标志在政府采购、央企招标与行业客户中常被列为加分或门槛条件，事实上具有准强制效力；</li>
+<li><strong>CCC 认证（China Compulsory Certification）</strong>：强制性产品认证，人形机器人的电源适配器、充电器等部件若在 CCC 目录内则必须获证；</li>
+<li><strong>GB 国家标准</strong>：机器人安全相关 GB 标准大多等同或修改采用 ISO 标准（如 GB 11291 对应 ISO 10218），EMC 引用 GB/T 17626（对应 IEC 61000-4 系列）等；</li>
+<li><strong>地方与行业试点</strong>：北京、上海、深圳等地针对具身智能/人形机器人出台了测试评价与示范应用的管理办法，对进入公共空间的机器人提出路权、保险与数据合规要求，属于标准体系之外但同样影响部署的软约束。</li>
+</ul>
+<h3 id="1254-emc">12.5.4 电磁兼容（EMC）测试详解</h3>
+<p>EMC 指设备在其电磁环境中正常工作、且不对其他设备产生不可接受电磁干扰的能力。人形机器人内部的高频开关驱动器（数十 kHz 的 PWM、高 di/dt 电流）、长走线束与无线模块使 EMC 成为最容易"翻车"的认证环节。主要测试项目包括：</p>
+<table>
+<thead>
+<tr>
+<th>测试项目</th>
+<th>英文缩写</th>
+<th>检验内容</th>
+<th>人形机器人典型风险点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>辐射发射</td>
+<td>RE</td>
+<td>设备向空间辐射的电磁噪声是否超限</td>
+<td>驱动器 PWM、电机线束天线效应</td>
+</tr>
+<tr>
+<td>传导发射</td>
+<td>CE</td>
+<td>沿电源线传导的噪声</td>
+<td>充电座、开关电源</td>
+</tr>
+<tr>
+<td>静电放电抗扰度</td>
+<td>ESD</td>
+<td>人体静电接触/空气放电后设备是否正常工作</td>
+<td>外壳缝隙、屏幕、按键</td>
+</tr>
+<tr>
+<td>电快速瞬变脉冲群</td>
+<td>EFT</td>
+<td>感性负载开关引起的脉冲群</td>
+<td>长电缆、I/O 端口</td>
+</tr>
+<tr>
+<td>浪涌抗扰度</td>
+<td>Surge</td>
+<td>雷击感应浪涌</td>
+<td>充电桩、市电接口</td>
+</tr>
+<tr>
+<td>射频电磁场抗扰度</td>
+<td>RS</td>
+<td>强射频场中是否误动作</td>
+<td>无线基站附近运行</td>
+</tr>
+</tbody>
+</table>
+<p>EMC 问题必须在设计阶段预防而非测试阶段补救：驱动器输出端共模扼流圈、屏蔽电缆单端/双端接地策略、金属结构件的等电位搭接、传感器信号线与动力线的分束走线（参见第 9 章手臂电缆管理），都是成本远低于暗室整改的设计手段。一般而言，EMC 首次测试通过率与团队经验强相关，预留一至两轮整改复测是排期常识。</p>
+<h3 id="1255">12.5.5 多市场准入的策略选择</h3>
+<p>面向全球销售的人形机器人企业通常在三种认证策略间权衡：</p>
+<ol>
+<li><strong>标准前置设计</strong>：以最严格市场（通常是欧盟 + 北美）的要求为设计基线，一次设计、多处取证，边际成本最低；</li>
+<li><strong>CB 体系互认</strong>：利用 IECEE CB 体系，一份 CB 测试报告可转换为多国认证，减少重复测试；</li>
+<li><strong>分区域 SKU</strong>：对不同市场做硬件差异化（如无线模块、电源规格），灵活但抬高供应链与量产一致性管理成本（参见第 7 章供应链讨论）。</li>
+</ol>
+<p>无论选择哪种策略，<strong>变更管理（change management）</strong>都是量产期合规的核心：每一次涉及安全相关元器件、固件或结构的 ECO（工程变更单）都需要评估是否触发重新认证，这要求 PLM 系统与认证文档联动。</p>
+<hr />
+<h2 id="126">12.6 前沿挑战：当标准遇上学习型机器人</h2>
+<h3 id="1261">12.6.1 现有框架的四道裂缝</h3>
+<p>综合本章与第 1 章的讨论，人形机器人标准化面临的结构性困难可归纳为四点：</p>
+<ol>
+<li><strong>形态多样</strong>：双足、轮式底盘 + 双臂、复合形态并存，C 类标准的"机械类型"划分难以覆盖；</li>
+<li><strong>动态接触</strong>：跌倒、全身多部位接触的能量尺度超出 ISO/TS 15066 的单点接触模型；</li>
+<li><strong>AI 自主性</strong>：基于学习的行为无法用传统的确定性故障模型验证，SOTIF 类方法尚在向机器人领域迁移的过程中；</li>
+<li><strong>跨场景部署</strong>：同一台机器人今天在工厂、明天在商场，认证边界随场景移动，"一次认证、处处适用"不再成立。</li>
+</ol>
+<h3 id="1262">12.6.2 应对思路与行业动向</h3>
+<p>产业界与标准组织正在沿多条路径补缝：</p>
+<ul>
+<li><strong>专用标准立项</strong>：ISO、IEC 及各国标准化机构均已启动面向人形机器人/具身智能的标准预研与立项工作，涵盖术语、安全要求与测试方法；企业参与标准制定既可提前锁定技术话语权，也能降低未来认证的适用性论证成本；</li>
+<li><strong>测试方法与场景库先行</strong>：在正式标准缺位期，第三方测试机构与行业联盟以"测试规范 + 场景库"形式提供事实标准，例如针对双足稳定性的抗扰测试、针对服务场景的人机共处试验规程；</li>
+<li><strong>安全论证（safety case）驱动</strong>：借鉴核能、航空领域的做法，以结构化的论证文档（目标结构化记法 GSN 等）组织"为什么这台机器人足够安全"的证据链，把标准符合性、测试数据与运行监控整合为可审计的整体；</li>
+<li><strong>运行期合规</strong>：通过遥测与安全事件上报实现"部署后持续评估"，把认证从一次性关卡延伸为全生命周期管理，这也呼应了第 25 章将讨论的评测体系从离线走向在线的趋势。</li>
+</ul>
+<hr />
+<h2 id="127">12.7 本章小结</h2>
+<ul>
+<li>合规是人形机器人产品化的前提，覆盖市场准入、责任界定与设计约束三个层面；完整认证周期典型为 6–18 个月，应与整机架构设计同步启动。</li>
+<li>ISO 12100 的风险评估（危险识别 → 风险估计 → 三步法削减）是所有安全标准的共同语言；风险图方法把严重程度、暴露频率与可避免性映射到要求的 PL 等级。</li>
+<li>功能安全由 IEC 61508（SIL 1–4，PFH/PFD 量化）与 ISO 13849（PL a–e，Category、MTTF<span class="arithmatex">\(_d\)</span>、DC<span class="arithmatex">\(_{avg}\)</span>、CCF 四要素）共同支撑；人形机器人关键安全功能典型目标为 PL d / SIL 2 至 PL e / SIL 3，且安全层必须独立于运行 VLA 栈的功能层。</li>
+<li>ISO 13482 与 ISO/TS 15066 是最贴近的两类产品标准：前者规定个人护理机器人的速度、力与接触安全，后者定义四种协作模式与按人体部位划分的生物力学限值；双足平台的动态跌倒能量远超该限值体系，"不跌倒 + 接触前减速"是首要安全策略。</li>
+<li>区域准入方面：欧盟 CE 依赖协调标准与技术文件的合格声明路径；北美依赖 UL 1740（NRTL 认证）与 FCC Part 15；中国有 CR 认证（事实门槛）与 CCC；EMC 测试（RE/CE/ESD/EFT 等）是跨区域共性难点，须在布线、屏蔽与接地设计阶段前置解决。</li>
+<li>AI 自主性正在推动安全工程从"故障安全"扩展到"预期功能安全（SOTIF）"，安全论证、场景库与运行期监控将成为下一代人形机器人合规体系的三根支柱。</li>
+</ul>
+<hr />
+<h2 id="_2">参考文献</h2>
+<p>[1] ISO 12100:2010. <em>Safety of machinery — General principles for design — Risk assessment and risk reduction</em>. International Organization for Standardization.</p>
+<p>[2] ISO 13482:2014. <em>Robots and robotic devices — Safety requirements for personal care robots</em>. International Organization for Standardization. https://www.iso.org/standard/53820.html</p>
+<p>[3] ISO/TS 15066:2016. <em>Robots and robotic devices — Collaborative robots</em>. International Organization for Standardization. https://www.iso.org/standard/62996.html</p>
+<p>[4] ISO 13849-1. <em>Safety of machinery — Safety-related parts of control systems</em>. International Organization for Standardization.</p>
+<p>[5] IEC 61508:2010. <em>Functional safety of electrical/electronic/programmable electronic safety-related systems</em>. International Electrotechnical Commission.</p>
+<p>[6] IEC 62368-1:2018. <em>Audio/video, information and communication technology equipment — Part 1: Safety requirements</em>. International Electrotechnical Commission.</p>
+<p>[7] ISO 10218-1/-2. <em>Robotics — Safety requirements for industrial robot systems</em>. International Organization for Standardization.</p>
+<p>[8] ISO 21448:2022. <em>Road vehicles — Safety of the intended functionality</em>. International Organization for Standardization.</p>
+<p>[9] UL 1740. <em>Standard for Robots and Robotic Equipment</em>. Underwriters Laboratories.</p>
+<p>[10] FCC Part 15. <em>Radio Frequency Devices</em>. U.S. Federal Communications Commission.</p>
+<p>[11] Directive 2006/42/EC (Machinery Directive) 与 Regulation (EU) 2023/1230 (Machinery Regulation). European Union.</p>
+<p>[12] Regulation (EU) 2024/1689 (Artificial Intelligence Act). European Union.</p>
+<p>[13] UN Manual of Tests and Criteria, Part III, subsection 38.3 (UN 38.3 锂电池运输测试).</p>
+<p>[14] IEC 62133-2. <em>Secondary cells and batteries containing alkaline or other non-acid electrolytes — Safety requirements</em>. International Electrotechnical Commission.</p>
+<p>[15] 国家认证认可监督管理委员会等. 中国机器人认证（CR 认证）实施规则.</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/wiki/chapters/chapter-11/">← 上一页<span>第 11 章 装配、集成与测试</span></a>
+      
+      
+      <a class="next" href="/wiki/chapters/chapter-13/">下一页 →<span>第 13 章 量产与规模化</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#12">第 12 章 认证、合规与质量标准</a><ul>
+<li><a href="#_1">摘要</a></li>
+<li><a href="#121">12.1 认证与合规的总体框架</a><ul>
+<li><a href="#1211">12.1.1 为什么合规是产品化的前提</a></li>
+<li><a href="#1212">12.1.2 标准体系的层级结构</a></li>
+<li><a href="#1213">12.1.3 合规的成本与周期</a></li>
+<li><a href="#1214">12.1.4 本章的组织方式</a></li>
+</ul>
+</li>
+<li><a href="#122">12.2 风险评估：一切安全工程的起点</a><ul>
+<li><a href="#1221-iso-12100">12.2.1 ISO 12100 风险评估流程</a></li>
+<li><a href="#1222">12.2.2 风险估计的量化：风险图方法</a></li>
+<li><a href="#1223">12.2.3 风险削减三步法</a></li>
+<li><a href="#1224">12.2.4 人形机器人的典型危险源清单</a></li>
+</ul>
+</li>
+<li><a href="#123-iec-61508-iso-13849">12.3 功能安全：IEC 61508 与 ISO 13849</a><ul>
+<li><a href="#1231">12.3.1 功能安全的基本概念</a></li>
+<li><a href="#1232-sil-pfh-pfd">12.3.2 SIL 的量化：PFH 与 PFD</a></li>
+<li><a href="#1233-iso-13849-plcategorymttfd-dc">12.3.3 ISO 13849 的 PL：Category、MTTFd 与 DC</a></li>
+<li><a href="#1234">12.3.4 人形机器人的典型安全功能分解</a></li>
+<li><a href="#1235-sotif-ai">12.3.5 预期功能安全（SOTIF）与 AI 带来的新问题</a></li>
+</ul>
+</li>
+<li><a href="#124-iso-13482-isots-15066">12.4 产品安全标准：ISO 13482 与 ISO/TS 15066</a><ul>
+<li><a href="#1241-iso-134822014">12.4.1 ISO 13482:2014 个人护理机器人安全</a></li>
+<li><a href="#1242-isots-150662016">12.4.2 ISO/TS 15066:2016 协作机器人技术规范</a></li>
+<li><a href="#1243">12.4.3 生物力学限值与接触模型</a></li>
+<li><a href="#1244-iso-10218">12.4.4 工业机器人标准的继承：ISO 10218</a></li>
+<li><a href="#1245">12.4.5 电气与电池安全</a></li>
+</ul>
+</li>
+<li><a href="#125">12.5 区域市场准入认证</a><ul>
+<li><a href="#1251-ce">12.5.1 欧盟：CE 标志体系</a></li>
+<li><a href="#1252-ul-1740nrtl-fcc-part-15">12.5.2 北美：UL 1740、NRTL 制度与 FCC Part 15</a></li>
+<li><a href="#1253-cr-ccc-gb">12.5.3 中国：CR 认证、CCC 与 GB 标准</a></li>
+<li><a href="#1254-emc">12.5.4 电磁兼容（EMC）测试详解</a></li>
+<li><a href="#1255">12.5.5 多市场准入的策略选择</a></li>
+</ul>
+</li>
+<li><a href="#126">12.6 前沿挑战：当标准遇上学习型机器人</a><ul>
+<li><a href="#1261">12.6.1 现有框架的四道裂缝</a></li>
+<li><a href="#1262">12.6.2 应对思路与行业动向</a></li>
+</ul>
+</li>
+<li><a href="#127">12.7 本章小结</a></li>
+<li><a href="#_2">参考文献</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

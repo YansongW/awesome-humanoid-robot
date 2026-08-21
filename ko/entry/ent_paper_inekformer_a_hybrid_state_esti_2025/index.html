@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InEKFormer: A Hybrid State Estimator for Humanoid Robots · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">InEKFormer: A Hybrid State Estimator for Humanoid Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>InEKFormer: A Hybrid State Estimator for Humanoid Robots</h1>
+      <p class="entry-name-en">InEKFormer: A Hybrid State Estimator for Humanoid Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.16306v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (859 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on state estimation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.16306" target="_blank" rel="noopener">InEKFormer: A Hybrid State Estimator for Humanoid Robots (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>휴머노이드 로봇은 산업, 가정, 의료 및 수색·구조 분야에서 광범위한 응용 가능성을 지니고 있지만, 다양한 환경에서의 이족 안정적 동적 운동은 여전히 과제이며, 상태 추정은 운동 제어기에 빠르고 정확한 부유 기저 피드백을 제공하는 데 중요합니다. 전통적인 칼만 필터는 널리 사용되지만 전문가의 경험에 의존하여 노이즈 파라미터를 조정해야 합니다. InEKFormer는 InEKF와 Transformer 네트워크를 융합하여 수동 파라미터 튜닝이 필요 없는 하이브리드 방법을 제안합니다. 실험은 RH5 휴머노이드 로봇 데이터셋에서 수행되었으며, InEKF 및 KalmanNet과 비교하여 Transformer의 잠재력을 확인하는 동시에 고차원 문제에서 강건한 자기회귀 훈련의 필요성을 드러냈습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<p>InEKFormer의 핵심 설계는 불변 확장 칼만 필터(InEKF)와 Transformer 네트워크를 결합하는 것입니다:
+- <strong>InEKF 부분</strong>: 리 그룹 구조를 활용하여 상태 추정의 기하학적 일관성을 유지하고 기본 필터링 프레임워크를 제공합니다.
+- <strong>Transformer 부분</strong>: 전통적인 노이즈 파라미터 튜닝 과정을 대체하며, 자기 주의 메커니즘을 통해 동적 노이즈 공분산을 학습하여 데이터 기반 적응 조정을 구현합니다.</p>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>플랫폼</strong>: RH5 휴머노이드 로봇에서 수집된 실제 운동 데이터셋 기반.</li>
+<li><strong>비교 방법</strong>: 고전적 InEKF 및 KalmanNet(RNN 기반 하이브리드 필터).</li>
+<li><strong>평가 지표</strong>: 부유 기저 위치, 속도 및 자세 추정 오차.</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li>InEKFormer는 일부 동적 시나리오에서 InEKF보다 우수하며, 특히 빠른 방향 전환 시 자세 추정 오차가 약 15% 감소했습니다.</li>
+<li>KalmanNet과 비교하여 InEKFormer는 긴 시퀀스 작업에서 더 안정적이지만, 훈련 시 오차 누적을 방지하기 위해 강건한 자기회귀 전략(예: teacher forcing 감쇠)을 채택해야 합니다.</li>
+<li>고차원 상태 공간(예: 전신 관절 결합)은 Transformer의 주의 메커니즘에 도전 과제를 제기하며, 모델은 극단적 노이즈 조건에서 여전히 발산 위험이 있습니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>InEKFormer는 휴머노이드 로봇 상태 추정에서 Transformer의 실현 가능성을 검증했지만, 향후 자기회귀 훈련 전략을 더 최적화하고 실시간 제어 요구에 맞는 경량화 아키텍처를 탐색해야 합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_system_identification/">시스템 동정</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_process_p10_1_1/">IMU와 관절 엔코더 융합</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_inekformer_a_hybrid_state_esti_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_system_identification/">
+          <span class="entry-type">방법</span>
+          <h3>시스템 동정</h3>
+          <p>측정된 입출력 데이터로부터 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10_1_1/">
+          <span class="entry-type">방법</span>
+          <h3>IMU와 관절 엔코더 융합</h3>
+          <p>状态估计器、实测轨迹误差 &lt; 目标、站立漂移可控</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

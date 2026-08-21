@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</h1>
+      <p class="entry-name-en">WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Reinforcement learning (RL) post-training of Vision-Language-Action (VLA) models has shown strong promise for robotic manipulation. Among RL methods, critic-based approaches rely on a value estimator that predominantly operates on single-frame observations or single-frame VLM backbone latents, which is a fundamental mismatch with the partially observable nature of robot control. A naive approach.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29613" target="_blank" rel="noopener">arXiv:2607.29613 WCM: A World Critic Model for Vision-Language-Action Reinforcement Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>WCM(World Critic Model)은 비전-언어-행동(VLA) 강화학습을 위한 비평가 모델로, 저자가 제안한 것으로, 기존 비평가가 단일 프레임 관측에 기반하여 발생하는 부분 관측 가능성(POMDP) 불일치 문제를 해결하는 것을 목표로 합니다. 핵심 기여는 경량 LeJEPA 아키텍처를 도입하여 미래 잠재 상태 예측과 가치 추정을 결합하고, 비평가 표현이 시간적 역학을 명시적으로 포착하도록 하여 시뮬레이션 및 실제 세계에서의 작업 성공률과 분포 외(OOD) 일반화 능력을 크게 향상시킨 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 VLA-RL 방법의 가치 추정기는 대부분 단일 프레임 관측 또는 단일 프레임 VLM 백본 잠재 표현에 기반하며, 이는 로봇 제어에 내재된 부분 관측 가능성(POMDP) 본질과 상충됩니다. 단순히 관측 이력을 비평가 입력에 연결하면 고차원 시각 공간에서 지수적 복잡도가 발생하고, 순수 스칼라 보상 회귀가 제공하는 감독 신호는 너무 희소하여 비평가가 시간 단계에 걸친 동적 구조를 학습하도록 유도하기에 충분하지 않습니다. 근본적인 문제는 상태 근사에 있습니다: 명시적 세계 모델링 목표가 없을 때 비평가의 잠재 표현은 가치 추정에 필요한 시간적 정보를 인코딩할 수 없으며, 이로 인해 실제 세계의 동적 작업(예: 변형 물체 조작)에서 잘못된 가치 판단을 내리고 심지어 로봇 팔을 테이블에 부딪히게 만들 수 있습니다.</p>
+<p>WCM이 실제로 바꾸는 것은 비평가의 학습 목표와 표현 공간입니다. 더 이상 비평가를 단순한 스칼라 보상 회귀기로 보지 않고, 세계 모델과 가치 추정기를 결합한 형태로 훈련합니다. 미래 잠재 상태를 명시적으로 예측함으로써 비평가의 표현은 시간적 동적 구조를 강제로 인코딩하게 되며, 가치 추정 시 역사적 맥락을 활용하여 "성공에 접근 중"과 "충돌 임박"과 같은 물리적 상태를 구분할 수 있습니다. 이러한 전환은 단일 프레임 비평가가 실제 세계 작업에서 역사적 정보 부족으로 실패하는 패턴에 직접 대응하며, 비평가의 역할을 "보상 예측기"에서 "상태 역학 이해기"로 승격시킵니다.</p>
+<h2 id="_3">방법 분해</h2>
+<p>WCM은 경량 LeJEPA 아키텍처를 기반으로 하며, 네 가지 핵심 구성 요소로 이루어져 있습니다: 관측 인코더, 세계 예측기, 가치 디코더 헤드, 행동 조건 잠재 동적 분기. 처리 흐름은 다음과 같습니다:</p>
+<h3 id="_4">관측 인코딩 및 명령 주입</h3>
+<ul>
+<li>시간 단계 t-K+1부터 t까지의 관측 이력(K는 이력 길이)이 주어지면, 관측 인코더(ViT 또는 VLA 정책의 VLM 백본)가 각 프레임을 독립적으로 처리하여 잠재 임베딩을 얻습니다: z_{t-k} = enc_ε(o_{t-k}).</li>
+<li>언어 명령은 CLIP으로 인코딩되고, 학습된 어댑터 A_lang을 통해 WCM 잠재 공간에 매핑됩니다: u_ℓ = A_lang(CLIP(ℓ)).</li>
+</ul>
+<h3 id="_5">이력 백본 및 교차 주의</h3>
+<ul>
+<li>인코딩된 시각 이력은 먼저 명령 토큰과 교차 주의를 수행한 후, 인과 Transformer 이력 백본(세계 예측기)이 처리합니다: h_t = Tr_φ(XAttn(z_{t-K+1:t}, u_ℓ)).</li>
+<li>숨겨진 표현 h_t는 두 개의 독립적인 디코더 헤드에 입력됩니다.</li>
+</ul>
+<h3 id="_6">가치 및 동적 예측</h3>
+<ul>
+<li>가치 디코더 헤드 D_value는 보상 추정을 출력합니다: V̂_t = D_value(h_t).</li>
+<li>행동 조건 잠재 동적 분기는 잔차 업데이트를 사용하여 다음 잠재 상태를 예측합니다: ẑ_{t+1} = D_world(h_t, a_t, z_t), 여기서 D_world는 행동 인코더와 게이티드 FiLM 잔차 블록으로 구현됩니다.</li>
+</ul>
+<h3 id="_7">훈련 목표</h3>
+<p>총 목표는 L = L_value + λ·L_pred + η·L_SIGReg이며, 모든 구성 요소가 엔드투엔드로 훈련됩니다:
+- 예측 손실: L_pred = ||ẑ_{t+1} - z_{t+1}||_2^2(교사 강제).
+- SIGReg 손실: 잠재 공간 특징 붕괴를 방지하고 등방성 가우시안 분포 일치를 장려합니다(오프라인 정책 파이프라인에서만 사용).
+- 가치 손실: L_value = ||V̂_t - G_t||_2^2.</p>
+<h3 id="_8">보상 및 수익 정의</h3>
+<ul>
+<li>보상: 성공 r_t=0, 실패 r_t=-C_fail(C_fail=300), 그 외 r_t=-1.</li>
+<li>수익: G_t = Σ γ^{t'-t} r_{t'}, 최소-최대 정규화를 통해 [-1,1] 범위로 조정.</li>
+</ul>
+<h3 id="_9">정책 업데이트 파이프라인</h3>
+<ul>
+<li>온라인 정책(시뮬레이션): AR 모델(OpenVLA-OFT)은 PPO 사용, 플로우 매칭 모델(π_0, π_0.5)은 Flow-SDE 사용.</li>
+<li>오프라인 정책(실제 세계): AR 모델은 AWR 사용, 플로우 매칭 모델은 RECAP 사용. 두 오프라인 방법 모두 순수 오프라인 데이터가 아닌 온라인 롤아웃 데이터로 버퍼를 보충합니다.</li>
+</ul>
+<h2 id="_10">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>세계 예측과 가치 추정을 결합한 비평가 아키텍처</strong>: WCM은 처음으로 미래 잠재 상태 예측을 보조 작업으로 비평가 훈련에 도입하여 가치 표현이 시간적 역학을 명시적으로 인코딩하도록 합니다. 이 설계는 POMDP 하에서 단일 프레임 비평가의 상태 근사 결함을 직접 해결하며, 경량 LeJEPA 아키텍처를 통해 고차원 시각 이력 입력의 지수적 복잡도를 피합니다.</p>
+</li>
+<li>
+<p><strong>이력 관측의 인과 Transformer 처리</strong>: 교차 주의를 통해 언어 명령을 시각 이력에 주입한 후 인과 Transformer 백본이 처리함으로써, WCM은 선형 복잡도로 K 프레임 이력(실험에서 K=3이 최적)을 통합하여 속도와 가속도와 같은 1차 및 2차 동적 정보를 포착할 수 있으며, 완전한 상태 전이를 명시적으로 모델링할 필요가 없습니다.</p>
+</li>
+<li>
+<p><strong>알고리즘 및 정책 전반에 걸친 범용성</strong>: WCM은 플러그 앤 플레이 구성 요소로 설계되어 PPO, Flow-SDE, AWR, RECAP 등 다양한 RL 알고리즘의 원래 비평가를 대체할 수 있습니다. 시뮬레이션과 실제 세계의 총 149개 작업에서 검증되었으며, 일관되고 유의미한 성능 향상을 보여 비평가 기본 아키텍처로서의 범용 가치를 입증합니다.</p>
+</li>
+</ol>
+<h2 id="_11">실험 및 결과</h2>
+<p>실험은 4개의 시뮬레이션 벤치마크(ManiSkill, MetaWorld, CALVIN, LIBERO-Plus)와 실제 세계 WidowX-250S의 7개 작업을 포함합니다. 주요 결과는 다음과 같습니다:</p>
+<h3 id="maniskill-table-1">ManiSkill 주요 결과(Table 1)</h3>
+<table>
+<thead>
+<tr>
+<th>정책</th>
+<th>방법</th>
+<th>IND 성공률</th>
+<th>OOD 성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0</td>
+<td>SFT</td>
+<td>38.4</td>
+<td>18.1</td>
+</tr>
+<tr>
+<td>π_0</td>
+<td>+WCM</td>
+<td>84.4 ± 1.2 (+46.0)</td>
+<td>51.5 ± 1.5 (+33.4)</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>SFT</td>
+<td>47.0</td>
+<td>26.4</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>+WCM</td>
+<td>91.9 ± 0.4 (+44.9)</td>
+<td>64.4 ± 1.4 (+38.0)</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>SFT</td>
+<td>28.1</td>
+<td>18.3</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>+WCM</td>
+<td>99.0 ± 0.4 (+70.9)</td>
+<td>77.9 ± 0.8 (+59.6)</td>
+</tr>
+<tr>
+<td>Zero-Shot</td>
+<td>+WCM</td>
+<td>98.7 ± 0.3 (+97.9)</td>
+<td>73.5 ± 1.8 (+72.7)</td>
+</tr>
+</tbody>
+</table>
+<p>OpenVLA-OFT는 초기 성능 0.78%에서 12,551% 향상(표 내 값 0.78%→98.7 계산), 약한 SFT 기준선 대비 252% 향상.</p>
+<h3 id="table-3-50">실제 세계(Table 3, 성공률 /50)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>OpenVLA-OFT +WCM</th>
+<th>π_0.5 +WCM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carrot</td>
+<td>32/50</td>
+<td>44/50</td>
+</tr>
+<tr>
+<td>Banana</td>
+<td>26/50</td>
+<td>38/50</td>
+</tr>
+<tr>
+<td>Pepper</td>
+<td>26/50</td>
+<td>43/50</td>
+</tr>
+<tr>
+<td>Cloth Folding</td>
+<td>38/50</td>
+<td>38/50</td>
+</tr>
+<tr>
+<td>Towel Folding</td>
+<td>40/50</td>
+<td>35/50</td>
+</tr>
+<tr>
+<td>Stovetop Cleaning</td>
+<td>15/50</td>
+<td>33/50</td>
+</tr>
+<tr>
+<td>Conveyor Belt Sushi</td>
+<td>22/50</td>
+<td>24/50</td>
+</tr>
+</tbody>
+</table>
+<h3 id="figure-5">소거(Figure 5)</h3>
+<ul>
+<li>이력 길이 K=3이 가장 우수한 성능.</li>
+<li>λ 최적 범위 [0.3, 0.5]; λ 변화로 OOD 변동 10.6% 포인트, IND는 2.7% 포인트에 불과하여 OOD가 λ에 더 민감함을 시사.</li>
+</ul>
+<h3 id="-table-4">시뮬레이션-실제 전이(Table 4)</h3>
+<ul>
+<li>시뮬레이션 SFT는 실제 세계에서 0/25 성공률; 시뮬레이션 RL 후 7/25, 7/25, 6/25.</li>
+<li>Real SFT + sim RL 시뮬레이션 IND 73.5, 실제 11/25, 8/25, 9/25.</li>
+</ul>
+<h2 id="_12">경계 및 한계</h2>
+<ul>
+<li>더 긴 관측 이력이 항상 유익한 것은 아니며, 최적 길이(K=3)를 초과하면 이득이 제한적입니다. 1차 및 2차 동적 정보(속도, 가속도)가 필요한 동적 특징을 설명하기에 충분합니다.</li>
+<li>λ는 세계 예측과 가치 학습 간의 균형을 제어하며, 너무 크거나 작으면 최적이 아니며 OOD 성능이 λ에 더 민감합니다.</li>
+<li>시뮬레이션 데이터와 실제 로봇 데이터 간에는 본질적 차이가 있습니다: 시뮬레이션 환경은 완전히 이상적이며, 규칙 기반 교란을 도입하더라도 실제 환경과 유사한 노이즈나 간섭을 얻기 어렵습니다. 시뮬레이션 SFT 모델은 실제 세계에서 어떤 물체도 성공적으로 잡을 수 없습니다.</li>
+<li>저자는 WCM이 과적합에 완전히 면역이라고 주장하지 않으며, 500단계 내에서 과적합 현상이 관찰되지 않았을 뿐입니다.</li>
+<li>SIGReg는 온라인 정책 파이프라인에서 채택되지 않았으며, VLM 잠재 변수를 제약하면 불필요한 계산 오버헤드가 발생하고 온라인 시나리오에서의 효과는 논문에서 명확히 밝히지 않았습니다.</li>
+</ul>
+<h2 id="_13">공학적 시사점</h2>
+<ul>
+<li><strong>재현 검증 순서</strong>: 먼저 이력 길이 K=3과 λ∈[0.3, 0.5] 설정을 확인하세요. 이는 소거 실험에서 검증된 최적 구간입니다. 다음으로 보상 정의(C_fail=300)와 수익 정규화 [-1,1] 세부 사항을 확인하세요. 이 두 가지는 가치 손실의 차원과 훈련 안정성에 직접 영향을 미칩니다.</li>
+<li><strong>가장 실수하기 쉬운 지점</strong>: λ 값은 OOD 성능에 유의미한 영향을 미치며(10.6% 포인트 변동), 하이퍼파라미터 튜닝 시 IND가 아닌 OOD 지표를 기준으로 해야 합니다. 또한 SIGReg는 오프라인 정책 파이프라인에서만 사용되며, 온라인 정책에서 강제로 추가하면 불필요한 계산 오버헤드가 발생하고 효과가 검증되지 않았습니다.</li>
+<li><strong>실제 세계 배포</strong>: 시뮬레이션 SFT 모델을 실제 로봇에 직접 배포하면 완전히 실패하며(0/25), 반드시 실제 데이터 RL 미세 조정이 필요합니다. 작업당 100개의 실제 궤적을 수집하여 SFT를 수행한 후, 8라운드 RL 반복(라운드당 50개 롤아웃)으로 미세 조정하는 것을 권장하며, 훈련 시간은 1시간 이내로 제어할 수 있습니다.</li>
+<li><strong>하류 팀 선택</strong>: 이미 VLA 정책(π_0, π_0.5, OpenVLA-OFT)이 있고 동적 조작 작업(변형 물체, 컨베이어 벨트)에 직면한 경우, WCM을 비평가의 플러그 앤 플레이 대체로 사용할 수 있습니다. 107.2M 학습 가능한 파라미터는 8×H100에서 훈련 오버헤드가 관리 가능하며, 추론은 RTX5090 로컬 워크스테이션에서 실시간(10 Hz 제어 주파수)으로 실행할 수 있습니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">평가 대상</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_maniskill/">ManiSkill</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">평가 대상</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_wcm_world_critic_model_vision_language_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">벤치마크</span>
+          <h3>ManiSkill</h3>
+          <p>일반화 가능한 조작 기술을 위한 통합 벤치마크로, 표준화된 과제·시뮬레이션 환경·평가 프로토콜을 제공.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">관측 인코딩 및 명령 주입</a></li>
+<li><a href="#_5">이력 백본 및 교차 주의</a></li>
+<li><a href="#_6">가치 및 동적 예측</a></li>
+<li><a href="#_7">훈련 목표</a></li>
+<li><a href="#_8">보상 및 수익 정의</a></li>
+<li><a href="#_9">정책 업데이트 파이프라인</a></li>
+</ul>
+</li>
+<li><a href="#_10">핵심 혁신</a></li>
+<li><a href="#_11">실험 및 결과</a><ul>
+<li><a href="#maniskill-table-1">ManiSkill 주요 결과(Table 1)</a></li>
+<li><a href="#table-3-50">실제 세계(Table 3, 성공률 /50)</a></li>
+<li><a href="#figure-5">소거(Figure 5)</a></li>
+<li><a href="#-table-4">시뮬레이션-실제 전이(Table 4)</a></li>
+</ul>
+</li>
+<li><a href="#_12">경계 및 한계</a></li>
+<li><a href="#_13">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

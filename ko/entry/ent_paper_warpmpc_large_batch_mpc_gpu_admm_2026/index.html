@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization</h1>
+      <p class="entry-name-en">WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>This paper introduces numerical optimizations for maximizing throughput on GPU when solving large batches (10,000 to over 100,000) of sequential quadratic programming (SQP) iterations, where all problems have the same structure. The optimizations are implemented in a toolbox WarpMPC for model-predictive control (MPC) in JAX and Warp. Based on the insight that all MPC problem instances in a batch.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.11603" target="_blank" rel="noopener">arXiv:2607.11603 WarpMPC: Large-Batch MPC on GPU via ADMM with Unrolled $LDL^\top$ Factorization</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>WarpMPC는 JAX 및 Warp 백엔드를 기반으로 하는 GPU 대규모 배치 MPC 솔버 도구상자로, SQP, ADMM 및 문제 특화된 전개 희소 LDL^T 분해를 통해 제약 비선형 MPC의 고처리량 솔루션을 구현합니다. 핵심 기여는 인수분해와 backsolve의 의존성 계층을 병렬화하여 배치가 2000을 초과할 때 최대 12배(QP 솔루션) 및 18배(민감도) 가속을 달성하고, 비선형 벤치마크에서 초당 8000~250000 SQP 반복을 실현하는 데 있습니다.</p>
+<h2 id="_2">무엇을 변화시키는가</h2>
+<p>기존 GPU MPC 솔버는 명확한 처리량 한계가 있습니다: MPAX는 계산 그래프 역전파가 선형 MPC의 민감도 계산을 처리할 수 없고, 밀집 BoxOSQP는 소규모 배치만 지원하며 단일 CPU 코어보다 우수하지 않으며, PCG는 제약 충족도가 낮고 충족도를 높이면 처리량이 희생되며, TurboMPC는 대규모 배치에서 메모리 부족으로 실패합니다(cartpole 및 quadrotor 예시, humanoid는 B=512를 초과할 수 없음). 이러한 한계의 본질은 밀집 선형 대수에 의존하거나, 문제 특화된 희소 구조 활용이 부족하거나, 제약 처리를 페널티 항으로 외주하는 데 있습니다.</p>
+<p>WarpMPC가 실제로 변화시키는 것은 "대규모 배치 제약 MPC가 GPU에서 가능한가"라는 질문에 대한 답입니다. 단순히 CPU 솔버를 GPU로 이식하는 것이 아니라, 컴파일 타임 생성, 메모리 레이아웃, 의존성 계층 스케줄링까지 전 과정을 재설계하여 10000~100000 배치의 SQP 반복을 현실로 만듭니다. 그 의미는 MPC를 "단일 인스턴스 실시간 솔루션" 패러다임에서 "배치 병렬 훈련/시뮬레이션" 패러다임으로 전환하여, 신경망 정책 증류, 대규모 파라미터 스캔 등 하위 작업에 수십 배의 속도 향상을 제공하는 데 있습니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">전체 아키텍처</h3>
+<ul>
+<li>입력: CasADi 표현식, 문자열 치환을 통해 C 코드를 생성하고 JAX 함수로 변환(컴파일 시간 최대 30분, 캐시 가능).</li>
+<li>솔버: SQP 외부 루프(제어 루프당 1~10회 반복), ADMM 내부 루프(SQP 반복당 25~100회 반복).</li>
+<li>선형 대수: 문제 특화된 전개 희소 LDL^T 분해, 컴파일 타임에 unrolled 인수분해 및 backsolve 커널 생성.</li>
+</ul>
+<h3 id="_5">핵심 설계 결정</h3>
+<ul>
+<li><strong>메모리 레이아웃 최적화</strong>: GPU의 coalesced 접근 패턴에 맞춰 데이터를 재배열하여 padding 오버헤드 감소.</li>
+<li><strong>인수분해 최적 분할</strong>: LDL^T 분해를 의존성에 따라 병렬 실행 가능한 계층으로 분할하여 전역 직렬 병목 방지.</li>
+<li><strong>backsolve 의존성 계층 스케줄링</strong>: 삼각 솔루션의 의존성 계층을 병렬화하지만, 이 이점은 대규모 배치에서 감소합니다(Fig. 5와 일치).</li>
+<li><strong>정밀도</strong>: 기본 단정밀도, 배정밀도 사용 가능하지만 메모리 제한(배치 50000 상한).</li>
+</ul>
+<h3 id="_6">기준선 비교 설정</h3>
+<ul>
+<li>PCG 기준선: Jacobi 사전조건자, 최대 반복 20, 수렴 허용 오차 10^-5.</li>
+<li>MPAX 및 TurboMPC(cuDSS)를 백엔드로 WarpMPC의 SQP 및 라인 서치 프레임워크에 통합.</li>
+<li>선형 MPC 벤치마크는 추가로 단일 CPU 코어 OSQP C 구현과 비교.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>컴파일 타임 생성 unrolled LDL^T 분해</strong>: 희소 인수분해를 분기 없는 명령 시퀀스로 전개하여 런타임 인덱싱 오버헤드와 분기 발산 제거. 이는 "문제 특화된 희소 패턴"의 극한 활용으로, 일반 희소 솔버(예: cuDSS)의 런타임 스케줄링과 다릅니다.</p>
+</li>
+<li>
+<p><strong>의존성 계층 스케줄링 기반 backsolve 병렬화</strong>: 삼각 솔루션의 직렬 의존성 체인을 계층별로 그룹화하여 병렬화, GPU에서 희소 삼각 솔루션의 고전적 병목에 대한 직접적 대응. 효과는 대규모 배치에서 감소하지만, 중간 배치(수천~수만)에서는 핵심 가속 요소입니다.</p>
+</li>
+<li>
+<p><strong>처리량 우선 전체 스택 설계</strong>: CasADi에서 JAX로의 자동 변환, 메모리 레이아웃 최적화, 인수분해 분할이 단일 알고리즘 개선이 아닌 협력적으로 작동. 이를 통해 100000 배치의 SQP 반복이 가능해져 [3]의 1000 병렬 인스턴스를 크게 초과합니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="mpc">선형 MPC 벤치마크</h3>
+<ul>
+<li>배치가 2000을 초과할 때 모든 기준선보다 우수, 최대 처리량 279000 솔루션/초(민감도 없음) 및 9570 솔루션/초(민감도 포함).</li>
+<li>BoxOSQP 및 CPU OSQP 대비 QP 솔루션 최대 12배, 민감도 계산 최대 18배 가속.</li>
+</ul>
+<h3 id="mpc-sqp">비선형 MPC 벤치마크(SQP 반복/초)</h3>
+<table>
+<thead>
+<tr>
+<th>시스템</th>
+<th>WarpMPC</th>
+<th>TurboMPC</th>
+<th>Jeon et al.</th>
+<th>CPU OSQP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartpole</td>
+<td>250000</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+</tr>
+<tr>
+<td>Quadrotor</td>
+<td>100000</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+</tr>
+<tr>
+<td>Humanoid</td>
+<td>8000</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+<td>논문 미명시</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>WarpMPC는 세 가지 비선형 벤치마크에서 PCG, MPAX, TurboMPC(cuDSS) 기준선을 능가합니다(배치 10000 초과 시).</li>
+<li>최적 PCG 처리량 대비 최대 24배 향상; TurboMPC 대비 cartpole 6배, quadrotor 3배 향상.</li>
+<li>MPAX는 1000회 QP 반복 후에도 폐루프 성능이 ADMM보다 현저히 낮습니다.</li>
+<li>[3]이 보고한 humanoid 2000 SQP RTI/초 대비, 본 논문은 더 복잡한 공식(horizon 27 대 12)에서 약 8000 SQP RTI/초를 달성합니다.</li>
+</ul>
+<h3 id="_9">신경망 증류</h3>
+<ul>
+<li>합성 2천만 개 상태-행동 쌍, 3개 은닉층(각 32 뉴런, leaky ReLU), 단일 GPU 훈련 4분 미만.</li>
+<li>하드웨어 실험: 데이터셋 합성 2분, 정책 훈련 1.7분(wallclock), 컴파일 오버헤드 11분(캐시 가능), 증류 네트워크가 나노 쿼드로터에서 100 Hz로 실행.</li>
+</ul>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li>고정 희소 패턴 문제만 지원, 일반 최적화 문제에는 부적합.</li>
+<li>unrolled 커널이 컴파일 타임에 생성되어 초대형 문제(예: humanoid 100000개 이상 명령)는 컴파일 시간이 오래 걸림.</li>
+<li>GPU 실행만 지원, CPU 전용 배포는 불가.</li>
+<li>ADMM 하이퍼파라미터(σ, ω_rel, Γ)는 문제별 수동 조정 필요, 자동화되지 않음.</li>
+<li>민감도 계산은 QP 솔루션이 유일하고 미분 가능하다고 가정, 퇴화 문제에는 부적합.</li>
+<li>2차 보정 및 라인 서치 백트래킹 미구현, 고도 비선형 문제의 수렴에 영향을 줄 수 있음.</li>
+<li>벤치마크는 단정밀도에 국한, 배정밀도 성능은 충분히 탐구되지 않음.</li>
+<li>논문 미명시: 비선형 벤치마크 표에서 TurboMPC, Jeon et al., CPU OSQP의 구체적 수치.</li>
+</ul>
+<h2 id="_11">공학적 시사점</h2>
+<p>WarpMPC를 재현하거나 채택할 때, 먼저 문제가 고정 희소 패턴이라는 전제를 충족하는지 확인하세요——이는 컴파일 타임 unrolled 커널 생성의 기반이며, 충족하지 않으면 전체 방법이 무효화됩니다. 둘째, ADMM 하이퍼파라미터(σ, ω_rel, Γ) 조정이 주요 함정이며, 논문은 자동화된 조정 방안을 제공하지 않으므로 논문 벤치마크의 기본값에서 출발하여 자체 문제에 대해 그리드 서치를 권장합니다. 셋째, 배치 크기는 성능의 분기점입니다: 2000 미만에서는 이점이 없고, 10000 초과에서 병렬 계층 스케줄링의 이점을 충분히 발휘할 수 있습니다; 목표 배치가 수천 수준이라면 컴파일 오버헤드(최대 30분)와 처리량 이점을权衡해야 합니다. 마지막으로, 단정밀도가 기본 경로이며, 배정밀도는 메모리 제한(배치 상한 50000)이 있으므로 하위 작업이 배정밀도를 필요로 한다면 메모리 예산을 사전에 평가해야 합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_warpmpc_large_batch_mpc_gpu_admm_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시키는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">전체 아키텍처</a></li>
+<li><a href="#_5">핵심 설계 결정</a></li>
+<li><a href="#_6">기준선 비교 설정</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#mpc">선형 MPC 벤치마크</a></li>
+<li><a href="#mpc-sqp">비선형 MPC 벤치마크(SQP 반복/초)</a></li>
+<li><a href="#_9">신경망 증류</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

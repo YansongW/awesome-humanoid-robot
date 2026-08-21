@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M17 · 遥操作与数据采集：模仿学习的粮食是这样种出来的 · 路线图 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" aria-current="page">路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/roadmap/">路线图</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M17 · 遥操作与数据采集：模仿学习的粮食是这样种出来的</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m17">M17 · 遥操作与数据采集：模仿学习的粮食是这样种出来的</h1>
+<p><strong>全局位置</strong>：手臂（M15）与感知栈（M16）就绪之后、模仿学习训练（M18）之前。输入是一台可安全运动的机器人 + 一套标定好的感知栈，输出是 <strong>≥50 条过质检的 episode 数据集</strong>——M18 的训练脚本直接拿去用，不再返工。</p>
+<p><strong>前置条件</strong>：M16 验收通过（感知输出稳定、时间同步已核查）；机器人可安全上电运动，急停回路可用（见 <a href="/roadmap/stage-3-humanoid/">阶段 3 总览</a> 步骤 15）。</p>
+<p>理论背景：<a href="/wiki/chapters/chapter-17/">第 17 章 遥操作与人机协作</a> 讲遥操作系统设计，<a href="/wiki/chapters/chapter-21/">第 21 章 数据基础设施</a> 讲数据管线，<a href="/wiki/appendices/appendix-b/">附录 B 关键数据集清单</a> 是可对标的公开数据集。</p>
+<h2 id="1">步骤 1：遥操作方案选择</h2>
+<p>【做什么】四档对比，按预算与任务选一档：</p>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>成本量级</th>
+<th>数据质量</th>
+<th>适合谁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>leader-follower 主从臂（<a href="/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA</a> 路线）</td>
+<td>整套约 2 万美元级（卡片口径）</td>
+<td>高：同构映射、关节级对应</td>
+<td>双臂精细操作</td>
+</tr>
+<tr>
+<td>VR 手柄/头显</td>
+<td>消费级 VR 设备价</td>
+<td>中：末端位姿 + 姿态重定向</td>
+<td>移动人形、全身遥操作</td>
+</tr>
+<tr>
+<td>外骨骼</td>
+<td>需自行向供应商确认</td>
+<td>高但穿戴繁琐</td>
+<td>研究型团队</td>
+</tr>
+<tr>
+<td>键盘/摇杆</td>
+<td>几乎为零</td>
+<td>低：速度慢、动作粗糙</td>
+<td>兜底验证管线</td>
+</tr>
+</tbody>
+</table>
+<p>两个重要变体：</p>
+<ul>
+<li><strong>无整机也能采</strong>：<a href="/entry/ent_technology_umi_gripper_interface_2024/">UMI 夹爪接口</a>——手持夹爪 + 腕部相机，人拿着夹爪做演示即可采训练数据（卡片口径）。</li>
+<li><strong>移动人形务实分工</strong>：下肢摇杆定点 + 上肢主从，借鉴 <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a> 的全身遥操作思路（Stage 3 口径）——别指望一边遥操作走路一边做精细抓握。</li>
+</ul>
+<p>锚点：<a href="/entry/ent_robot_system_toddlerbot/">ToddlerBot</a> 用同构示教臂（握把内嵌 FSR 力敏电阻）+ 掌机摇杆按键，2.0 版加 Meta Quest 2 VR 遥操作；Berkeley Humanoid Lite 用 SteamVR 基站 + 手柄遥操作双臂完成魔方、写字、搭积木演示（见 <a href="https://arxiv.org/html/2502.00893v2">ToddlerBot 论文</a> 与 <a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite GitHub</a>）。</p>
+<p>【为什么】遥操作一石三鸟：验证硬件可达性、采集模仿学习数据、建立任务 baseline（Stage 3）。VR 路线有两个硬约束：<strong>延迟</strong>（端到端延迟到百毫秒量级操作员手感明显变差，工程经验值，按你的系统实测）与<strong>晕动症</strong>——先小流量测延迟，再排长时采集。</p>
+<p>【你的情况怎么分析】预算极紧：UMI 先采起来，格式对齐，后面换真机复用；有双足人形：上肢主从 + 下肢摇杆定点；只想验证管线：摇杆兜底跑通"录制 → 回放 → 训练"闭环，再升级设备。</p>
+<h2 id="2">步骤 2：采集管线搭建</h2>
+<p>【做什么】把"录什么、怎么录、存哪"冻结成规范：</p>
+<ol>
+<li><strong>记录字段</strong>（与 Stage 3 步骤 9 一致）：多视角图像（头部 + 双腕）、关节状态（位置/速度）、动作（主从映射后的目标关节位置）、语言指令、时间戳。</li>
+<li><strong>统一帧率</strong>：所有流统一采样到 <strong>10–30 Hz</strong>（工程建议值，按存储与算力实测定档），对齐复用 M16 的时间同步设施。</li>
+<li><strong>存储格式</strong>：<a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> bag 起步；要对接开源训练生态就用 <a href="/entry/ent_software_lerobot_2024/">LeRobot</a> 或 RLDS 风格——<a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a> 正是用统一 RLDS 格式聚合跨本体百万级演示帧，是 VLA 预训练标准语料（卡片口径）。</li>
+<li><strong>目录与命名</strong>：<code>任务名/日期/操作员/episode_序号</code>，元数据（标定版本、指令文本、成功标签）随包落盘。</li>
+</ol>
+<p>【为什么】格式决定复用性：字段缺一项（比如没存语言指令），后面想训指令条件策略就得整批重采。命名规范让"哪条数据是哪个标定版本采的"可追溯——标定过期的批次必须能整批筛出。</p>
+<p>【你的情况怎么分析】单机单任务：bag + 一个解析脚本就够；计划多任务/多机器人：直接对齐 LeRobot/OXE 格式，一开始就别发明私有格式。</p>
+<h2 id="3">步骤 3：任务与场景设计</h2>
+<p>【做什么】</p>
+<ol>
+<li><strong>单任务起步</strong>：第一个任务固定为"抓杯子放到盒子"，跑通全链路再扩品类。</li>
+<li><strong>场景随机化清单</strong>：物体位置/姿态（工作空间内均匀撒）、光照（亮度/方向变化）、背景（换桌布/杂物）、干扰物（逐步加入无关物体）。每条开录前掷骰子决定本条随机化档位。</li>
+<li><strong>指令模板化</strong>："把{物体}放到{容器}"式模板，词表冻结，episode 里存的指令字符串一律从模板生成。</li>
+<li><strong>成功判据先定义死</strong>：例如"夹爪闭合后物体悬停 3 s 不掉、最终落入容器"——每条 episode 当场打成功/失败标签。</li>
+</ol>
+<p>【为什么】策略学到的是数据分布：只采"杯子在正中央"，它就只会在正中央抓。随机化清单就是策略的泛化边界，要写在采集计划里而不是凭当天心情。成功判据模糊会造成标签噪声——M18 训练时表现为"同样的演示有的能学有的学不动"。</p>
+<p>【你的情况怎么分析】桌面固定机：随机化先做物体位置/姿态两项（性价比最高）；光照与背景等单任务成功率稳定后再加。每加一档随机化，episode 预算相应翻倍。</p>
+<h2 id="4">步骤 4：采集执行规范</h2>
+<p>【做什么】</p>
+<ol>
+<li><strong>质量 &gt; 数量</strong>：动作平稳、速度适中（操作员觉得"有点慢"的节奏正好）、无遮挡；画面里永远同时看得到末端与目标物。</li>
+<li><strong>失败 episode 处置</strong>：演示中途失败的整集<strong>保留并打失败标签</strong>，但 M18 训练默认只用成功集；操作员主动演示的"从失误中恢复"片段（掉了重抓）单独标记——恢复数据教策略纠错，价值高，但占比控制在两三成以内（工程建议值），免得策略学会"故意失误"。</li>
+<li><strong>产能预期</strong>：熟练操作员每小时 10–20 条量级（工程建议值，含场景重置与抽检）；50 条高质量数据按 3–5 个工作时规划。</li>
+<li><strong>即时回放抽检</strong>：每采 5–10 条回放 1 条，查画面、时间对齐、标签；多人采集时记录每条的操作员 ID——风格差异是数据分布的一部分。</li>
+</ol>
+<p>【为什么】模仿学习对演示质量极度敏感：又抖又快的演示，策略学出来就是又抖又快。即时抽检把"采了一天才发现时间戳全漂"这类事故压缩在 10 条以内。</p>
+<p>【你的情况怎么分析】单人项目：自己定节奏，宁可一天 20 条高质量；多人轮班：开工前统一看 3 条"标准示范"校准手感，收工互查对方 2 条。</p>
+<h2 id="5">步骤 5：数据质检与划分</h2>
+<p>【做什么】</p>
+<ol>
+<li><strong>自动质检脚本</strong>，每条 episode 过三关：</li>
+<li>时间对齐：图像与动作时间戳错位 &lt; 1 帧量级（工程建议值）；</li>
+<li>掉帧检测：各流实际帧率 vs 目标帧率，掉帧率超标即标黄；</li>
+<li>图像质量：模糊（拉普拉斯方差）、过曝/欠曝（直方图）按阈值筛。</li>
+<li><strong>训练/验证 9:1 划分</strong>：按 episode 随机分，验证集一经划定即冻结，M18 每次实验用同一份。</li>
+<li><strong>数据集卡（dataset card）</strong>：机器人型号/传感器配置/标定版本/采集日期/任务定义/指令模板/条数与统计，一页成文。<a href="/entry/ent_dataset_droid/">DROID</a> 是分布式多实验室采集的规范参照（卡片口径，局限：只覆盖固定臂）；<a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a> 是跨本体聚合的格式参照。</li>
+</ol>
+<p>【为什么】"数据能不能用"不靠回忆靠脚本：质检报告（对齐误差、掉帧率、模糊占比）存档后，M18 训练出问题时可以先排除数据嫌疑。数据集卡是你一个月后、或别人接手时唯一的真相来源。</p>
+<p>【你的情况怎么分析】50 条也要走全套：脚本一次写好，500 条时零成本复用；验证集 5 条也要留——没有冻结验证集，M18 的每次"提升"都无法归因。</p>
+<h2 id="_1">验收标准</h2>
+<ul>
+<li>[ ] ≥50 条过质检的 episode（Stage 3 判据），成功/失败标签齐全。</li>
+<li>[ ] 记录字段与帧率规范成文，且实测可被 M18 训练脚本直接读取。</li>
+<li>[ ] 场景随机化清单与指令模板冻结，episode 覆盖随机化各档。</li>
+<li>[ ] 质检报告存档：时间对齐误差、掉帧率、图像质量统计有数字。</li>
+<li>[ ] 训练/验证 9:1 划分完成，验证集冻结。</li>
+<li>[ ] 数据集卡成文：含机器人/传感器/标定版本/日期/任务定义/统计与操作员信息。</li>
+<li>[ ] 数据有备份：原始 bag 与解析后格式各一份，异盘或异地存放。</li>
+</ul>
+<h2 id="_2">常见坑与排查</h2>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>可能原因</th>
+<th>排查动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>策略动作总比画面慢半拍</td>
+<td>图像-动作时间戳漂移未察觉</td>
+<td>质检脚本查对齐误差；回 M16 查双机对时</td>
+</tr>
+<tr>
+<td>回放时某段图像卡帧</td>
+<td>采集掉帧（USB 带宽/磁盘写入瓶颈）</td>
+<td>查掉帧报告；降分辨率或换 SSD；回 M16 查 USB 拓扑</td>
+</tr>
+<tr>
+<td>策略学出抖动动作</td>
+<td>演示本身又快又抖</td>
+<td>抽检回放演示视频；降操作节奏重采</td>
+</tr>
+<tr>
+<td>物体换个位置就抓不到</td>
+<td>只采了中心区/单一姿态</td>
+<td>对照随机化清单补采边角与多样姿态</td>
+</tr>
+<tr>
+<td>成功率统计忽高忽低</td>
+<td>成功判据执行不一致</td>
+<td>成功判据写成逐条 checklist，判标签时照打钩</td>
+</tr>
+<tr>
+<td>磁盘爆了或数据丢失</td>
+<td>无备份、bag 只存一份</td>
+<td>采集当日双备份；存储余量纳入开工检查</td>
+</tr>
+<tr>
+<td>多人数据风格分裂</td>
+<td>操作员手感差异未记录</td>
+<td>数据集卡记操作员 ID；开工前统一示范校准</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">配套阅读</h2>
+<ul>
+<li>上一任务：<a href="/roadmap/missions/m16-perception-stack/">M16 · 感知栈搭建</a></li>
+<li>下一任务：<a href="/roadmap/missions/m18-imitation-learning/">M18 · 模仿学习训练</a>（<a href="/entry/ent_method_behavior_cloning/">行为克隆</a> → <a href="/entry/ent_method_action_chunking_transformer/">ACT</a> 实战）</li>
+<li>理论背景：<a href="/wiki/chapters/chapter-17/">第 17 章 遥操作与人机协作</a>、<a href="/wiki/chapters/chapter-21/">第 21 章 数据基础设施</a>、<a href="/wiki/chapters/chapter-16/">第 16 章 操作与抓取</a></li>
+<li>数据集参照：<a href="/wiki/appendices/appendix-b/">附录 B 关键数据集清单</a>、<a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a>、<a href="/entry/ent_dataset_droid/">DROID</a></li>
+<li><a href="/roadmap/stage-3-humanoid/">阶段 3 总览</a> · <a href="/roadmap/playbooks/sensor-selection/">传感器选型手册</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="本页目录">
+      
+      <a class="prev" href="/roadmap/missions/m16-perception-stack/">← 上一页<span>M16 · 感知栈搭建：让机器人看见杯子在哪</span></a>
+      
+      
+      <a class="next" href="/roadmap/missions/m18-imitation-learning/">下一页 →<span>M18 · 模仿学习训练与部署：50 条演示喂出一个会抓杯子的策略</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m17">M17 · 遥操作与数据采集：模仿学习的粮食是这样种出来的</a><ul>
+<li><a href="#1">步骤 1：遥操作方案选择</a></li>
+<li><a href="#2">步骤 2：采集管线搭建</a></li>
+<li><a href="#3">步骤 3：任务与场景设计</a></li>
+<li><a href="#4">步骤 4：采集执行规范</a></li>
+<li><a href="#5">步骤 5：数据质检与划分</a></li>
+<li><a href="#_1">验收标准</a></li>
+<li><a href="#_2">常见坑与排查</a></li>
+<li><a href="#_3">配套阅读</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

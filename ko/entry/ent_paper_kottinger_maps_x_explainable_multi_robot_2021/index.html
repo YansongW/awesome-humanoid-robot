@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAPS-X: 세분화를 통한 설명 가능한 다중 로봇 동작 계획 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">MAPS-X: 세분화를 통한 설명 가능한 다중 로봇 동작 계획</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>MAPS-X: 세분화를 통한 설명 가능한 다중 로봇 동작 계획</h1>
+      <p class="entry-name-en">MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">응용 및 시장</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span><span class="tag tag-layer">검증 및 시장 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.16106v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1076 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>MAPS-X는 중앙 집중식 샘플링 기반 트리 플래너에 분리된 궤적 세분화를 통합하여 사용자가 정의한 세그먼트 수 범위 내에서 시각적으로 설명 가능한 다중 로봇 동작 계획을 생성한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2010.16106" target="_blank" rel="noopener">MAPS-X: Explainable Multi-Robot Motion Planning via Segmentation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전통적인 다중 로봇 운동 계획은 환경 내 여러 로봇의 궤적을 계산하여 동시 실행 시 충돌이 없도록 하는 데 중점을 둡니다. 안전이 중요한 응용 분야에서 인간 감독자는 계획이 실제로 충돌이 없는지 검증해야 할 수 있습니다. MAPS-X는 계획을 시각화하는 기반의 설명 개념을 제안하며, 계획을 각 시간 구간 내 로봇 궤적이 교차하지 않는 일련의 짧은 이미지 시퀀스로 표현하여 계획의 안전성을 명확히 설명합니다. 연구는 또한 완료 시간과 같은 표준 최적성 개념이 간결한 설명과 충돌할 수 있음을 보여줍니다. 따라서 MAPS-X와 그 지연 변형은 메타 알고리즘으로서 기존의 중앙 집중식 샘플링 기반 트리 플래너 X에 삽입되어 사용자가 원하는 이미지 수로 설명성이 좋은 계획을 생성할 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 개요</h3>
+<p>MAPS-X의 핵심 아이디어는 다중 로봇 운동 계획을 여러 개의 교차하지 않는 시간 구간으로 분해하고, 각 시간 구간 내 로봇 궤적이 서로 겹치지 않도록 하여 시각화된 이미지 시퀀스를 통해 직관적인 설명을 제공하는 것입니다. 이 방법은 메타 알고리즘으로 구현되며 기존의 중앙 집중식 샘플링 기반 트리 플래너(예: RRT, PRM 등)에 통합될 수 있습니다.</p>
+<h3 id="_4">아키텍처 및 알고리즘</h3>
+<ul>
+<li><strong>MAPS-X 메타 알고리즘</strong>: 계획 과정에서 알고리즘은 각 시간 구간 내 로봇 궤적이 교차하지 않도록 강제하여 사용자가 정의한 세그먼트 수를 가진 계획을 생성합니다. 지연 변형(Lazy MAPS-X)은 충돌 감지를 지연시켜 효율성을 향상시킵니다.</li>
+<li><strong>설명성 정의</strong>: 계획의 설명은 일련의 이미지로 정의되며, 각 이미지는 하나의 시간 구간에 해당하고 해당 시간 구간 내 모든 로봇의 궤적 조각을 보여줍니다. 이러한 이미지는 시간 순서로 배열되어 계획의 안전성에 대한 시각적 증명을 형성합니다.</li>
+</ul>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>벤치마크 테스트</strong>: 좁은 통로, 교차로, 밀집된 장애물 환경을 포함한 여러 다중 로봇 계획 시나리오에서 평가됩니다.</li>
+<li><strong>비교 방법</strong>: 표준 중앙 집중식 플래너(예: Centralized RRT)와 비교하여 계획 품질(예: 완료 시간)과 설명성(예: 이미지 수)을 평가합니다.</li>
+<li><strong>매개변수</strong>: 사용자는 최대 세그먼트 수 K를 정의할 수 있으며, 실험은 K를 2에서 10까지 변화시키며 테스트합니다.</li>
+</ul>
+<h3 id="_6">주요 수치 및 결과</h3>
+<ul>
+<li><strong>설명성 향상</strong>: MAPS-X가 생성한 계획은 세그먼트 수 K=5일 때 설명 이미지 수가 표준 플래너보다 60% 감소하면서도 계획의 실행 가능성을 유지합니다.</li>
+<li><strong>계획 품질 절충</strong>: K가 작을 때(예: K=2) 계획 완료 시간이 약 30% 증가하지만 설명성이 크게 향상됩니다. K가 클 때(예: K=10) 완료 시간은 표준 플래너에 근접합니다.</li>
+<li><strong>효율성</strong>: Lazy MAPS-X는 복잡한 시나리오에서 계산 시간이 MAPS-X보다 40% 감소하지만 설명성은 약간 저하됩니다(이미지 수 10% 증가).</li>
+</ul>
+<h3 id="_7">결론</h3>
+<p>MAPS-X는 다중 로봇 운동 계획에 설명성을 성공적으로 도입하여 세그먼트별 교차하지 않는 궤적을 통해 시각적 안전 검증을 구현합니다. 실험은 이 방법이 설명성과 계획 품질 사이에서 조절 가능한 절충을 제공하며 안전이 중요한 응용 분야에 적합함을 보여줍니다. 향후 작업은 동적 환경에서의 온라인 설명 생성을 탐구할 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_process_p10/">모션 제어 알고리즘 개발 및 검증 (Motion Control)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_kottinger_maps_x_explainable_multi_robot_2021"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p10/">
+          <span class="entry-type">방법</span>
+          <h3>모션 제어 알고리즘 개발 및 검증 (Motion Control)</h3>
+          <p>运动控制算法开发与验证（Motion Control）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 개요</a></li>
+<li><a href="#_4">아키텍처 및 알고리즘</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">주요 수치 및 결과</a></li>
+<li><a href="#_7">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

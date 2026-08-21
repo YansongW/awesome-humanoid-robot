@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M13 · 강화학습 훈련: 시뮬레이션에서 만 번 넘어져도, 실물에서 한 번은 안정적으로 서기 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M13 · 강화학습 훈련: 시뮬레이션에서 만 번 넘어져도, 실물에서 한 번은 안정적으로 서기</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m13">M13 · 강화학습 훈련: 시뮬레이션에서 만 번 넘어져도, 실물에서 한 번은 안정적으로 서기</h1>
+<p><strong>전체 위치</strong>: 시뮬레이션 모델이 조정되고(M11), PD 서기가 가능해진(M12) 이후입니다. 입력은 시뮬레이션 환경 + 여러분의 로봇 모델이며, 출력은 <strong>도메인 무작위화 하에서 안정적으로 보행하는 RL 정책</strong>(체크포인트)으로, M14의 sim-to-real 배포에 사용됩니다.</p>
+<p><strong>전제 조건</strong>: M10 모델 검증 통과; M11 환경 준비 완료; Isaac Lab을 실행할 수 있는 GPU(VRAM 요구 사항은 <a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선택 매뉴얼</a> 참조, 선택한 환경에 따라 확인).</p>
+<p>이론적 배경: <a href="/entry/ent_algorithm_ppo/">PPO</a>, <a href="/entry/ent_method_domain_randomization/">도메인 무작위화</a>, <a href="/entry/ent_method_sim_to_real/">sim-to-real 전이</a> 카드, <a href="/ko/wiki/chapters/chapter-18/">제18장 모방 학습과 정책 학습</a> 및 <a href="/ko/wiki/chapters/chapter-23/">제23장 시뮬레이션과 물리 엔진</a>; 참고 구현은 <a href="/entry/ent_paper_202501_mujoco_playground_2025/">MuJoCo Playground</a>와 <a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a> 공식 휴머노이드 예제를 참조하세요.</p>
+<h2 id="1">단계 1: 먼저 공식 기준선을 실행한 후, 자신의 로봇을 다루기</h2>
+<p>【무엇을 할까】첫날부터 자신의 모델을 훈련하지 마세요. 먼저 <a href="/entry/ent_software_nvidia_isaac_lab_2024/">Isaac Lab</a>(또는 MuJoCo Playground)에서 공식 휴머노이드/사족 보행 환경을 실행하세요: 기본 설정으로 수백 번의 반복을 훈련하고, 보상 곡선이 상승하고 평가가 보행 가능한지 확인하세요. 그런 다음 자신의 URDF/MJCF를 교체하고, <strong>먼저 공식 보상 함수</strong>를 사용하여 한 버전을 훈련하세요.</p>
+<p>【이유】공식 환경은 변수를 격리하는 데 도움을 줍니다: 파이프라인(obs/action/reward/reset)이 먼저 올바르다는 것이 증명되면, 남은 문제는 모두 "내 모델/보상"의 문제입니다. Berkeley Humanoid Lite의 RL 보행은 먼저 참조 파이프라인을 재현한 후 자체 개발 모델로 전이하여, 결국 제로샷 sim-to-real을 달성했습니다(<a href="https://arxiv.org/abs/2504.17249">arXiv:2504.17249</a>).</p>
+<p>【여러분의 상황 분석】GPU VRAM이 4096 병렬 환경을 실행하기에 부족함: 512–1024로 줄이면 곡선은 느리지만 실행 가능; NVIDIA GPU 없음: MuJoCo + CPU로도 훈련 가능(한 자릿수 느림), 먼저 환경 로직을 올바르게 조정하세요.</p>
+<h2 id="2">단계 2: 관측, 행동 및 에피소드 구조 정의</h2>
+<p>【무엇을 할까】세 가지 목록을 작성하세요:</p>
+<ol>
+<li><strong>관측 obs</strong>: 관절 위치/속도, IMU 자세와 각속도(<a href="/entry/ent_component_imu_2024/">IMU</a>), 이전 프레임 행동; 고급 단계에서는 위상 시계(sin/cos 보행 위상) 추가. <strong>원시 포인트 클라우드/이미지를 쌓지 마세요</strong> – 먼저 상태 공간에서 걷는 법을 배우세요.</li>
+<li><strong>행동 action</strong>: 각 관절의 목표 위치(PD 추적), M10의 effort/velocity 제한에 따라 자르기; 스케일링 계수는 설정 파일에 작성하고 하드코딩하지 마세요.</li>
+<li><strong>에피소드</strong>: 지속 시간 10–20초; 넘어짐(몸통 피치 각도 초과, 높이 너무 낮음) 시 즉시 종료; 평지에서 무작위 시작점.</li>
+</ol>
+<p>【이유】관측은 정책이 "무엇을 볼 수 있는지" 결정합니다: 부족하면 학습 불가(예: 위상 부족 시 보행 혼란), 많으면 훈련 불가. 행동은 직접 토크 대신 위치 목표를 사용하는 이유는 하위 레벨 PD가 실제 액추에이터의 비이상성을 흡수하도록 하기 위함입니다 – 이는 sim-to-real의 핵심 설계이며, <a href="/entry/ent_method_impedance_control/">임피던스 제어</a>와 <a href="/entry/ent_technology_quasi_direct_drive_actuator_2024/">준직구동 액추에이터</a> 카드를 참조하세요.</p>
+<p>【여러분의 상황 분석】실물에서 얻을 수 없는 관측은 정책에 포함하지 마세요(예: 베이스 선속도 실제값) – 상태 추정 방식이 없다면 배포 시 관측 누락 = 정책 폐기. 먼저 시뮬레이션에서 obs 파이프라인을 "실제값/추정값 전환 가능" 두 단계로 작성하세요.</p>
+<h2 id="3">단계 3: 보상 함수 – 서기에서 걷기까지</h2>
+<p>【무엇을 할까】보상 항목을 하나씩 추가하고, 추가할 때마다 한 버전을 훈련하여 곡선을 확인하세요. <strong>한 번에 모두 추가하지 마세요</strong>. 권장 순서와 일반적인 가중치 아이디어(구체적인 값은 플랫폼에 따라 조정, 다음은 일반적인 시작점이며 직접 실험하여 검증 필요):</p>
+<table>
+<thead>
+<tr>
+<th>순서</th>
+<th>보상 항목</th>
+<th>역할</th>
+<th>시작 규모</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>생존/직립</td>
+<td>넘어지지 않기 위한 최소 보장</td>
+<td>+1/스텝</td>
+</tr>
+<tr>
+<td>2</td>
+<td>선속도 추적</td>
+<td>목표 속도 추적(먼저 앞뒤로 걷기, 그다음 회전)</td>
+<td>exp(-4·err²)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>자세/높이</td>
+<td>몸통 피치, 질량 중심 높이 패널티</td>
+<td>-1·err²</td>
+</tr>
+<tr>
+<td>4</td>
+<td>에너지 소비 및 평활도</td>
+<td>토크, 토크 변화율 패널티</td>
+<td>-1e-4·Στ²</td>
+</tr>
+<tr>
+<td>5</td>
+<td>보행 shaping</td>
+<td>이중 지지/스윙 위상 전환, 발 높이</td>
+<td>위상 관련 작은 가중치</td>
+</tr>
+</tbody>
+</table>
+<p>【이유】reward hacking은 RL의 가장 큰 함정입니다: 속도만 보상하면 제자리에서 다리 떨기를 배우고, 직립만 보상하면 가만히 서 있기를 배웁니다. "하나씩 추가하고, 하나씩 확인"해야 어떤 항목이 정책을 잘못 이끄는지 파악할 수 있습니다. 보상 설계에 대한 체계적인 논의는 <a href="/ko/wiki/chapters/chapter-18/">제18장 모방 학습과 정책 학습</a>을 참조하세요.</p>
+<p>【여러분의 상황 분석】곡선이 예상 반복 횟수의 2배를 초과하여 정체됨: 먼저 어떤 패널티 항목의 가중치가 속도 항목을 압도하는지 확인(가장 흔한 사망 원인), 지배적인 항목의 가중치를 절반으로 줄이고 다시 훈련하세요. 각 실험마다 설정과 곡선 스크린샷을 기록하세요 – 보상 조정은 실험 과학이지, 신비로운 것이 아닙니다.</p>
+<h2 id="4">단계 4: 도메인 무작위화 – 정책에 "현실 백신" 접종</h2>
+<p>【무엇을 할까】<a href="/entry/ent_method_domain_randomization/">도메인 무작위화</a>에서 최소 네 가지 유형을 포함하고, 범위는 여러분의 실제 불확실성 추정에 따라 결정하세요:</p>
+<table>
+<thead>
+<tr>
+<th>무작위화 항목</th>
+<th>권장 시작 범위</th>
+<th>해당 실제 오차</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>링크 질량/질량 중심</td>
+<td>±10–15%</td>
+<td>조립 및 중량 측정 오차(M10 단계 3)</td>
+</tr>
+<tr>
+<td>지면 마찰 계수</td>
+<td>0.5–1.2</td>
+<td>바닥/타일/카펫 차이</td>
+</tr>
+<tr>
+<td>액추에이터 지연 및 강도</td>
+<td>지연 0–20 ms; 토크 ×0.85–1.0</td>
+<td>구동 응답 및 배터리 전압 변동</td>
+</tr>
+<tr>
+<td>무작위 추력 외란</td>
+<td>5–8초마다 한 번, ≤ 50 N·0.2 s</td>
+<td>충돌 및 미끄러짐</td>
+</tr>
+</tbody>
+</table>
+<p>【이유】시뮬레이션과 현실 간의 차이(reality gap)는 단일 오차가 아니라 모든 작은 오차의 누적입니다; 도메인 무작위화는 정책이 "하나의 오차 범위"에 대해 강건하도록 만들고, "하나의 정확한 모델"에 과적합되지 않도록 합니다. 범위가 너무 넓으면 학습 불가, 너무 좁으면 실제 기계 통과 불가 – 좁은 범위에서 시작하여 점차 넓혀가세요. 이론은 <a href="/ko/wiki/chapters/chapter-23/">제23장 시뮬레이션과 물리 엔진</a>을 참조하세요.</p>
+<p>【여러분의 상황 분석】마찰 계수 범위를 모르겠다면? 신발 밑창을 목표 지면에서 끌어 측정하세요(스프링 저울로 블록을 당겨 추정). M14의 시스템 식별을 통해 액추에이터 지연과 질량 두 항목을 정밀하게 수정할 것입니다 – 먼저 범위를 넓게 유지하세요.</p>
+<h2 id="5">단계 5: 훈련, 평가 및 체크포인트 선택</h2>
+<p>【무엇을 할까】</p>
+<ol>
+<li><a href="/entry/ent_algorithm_ppo/">PPO</a> 기본 하이퍼파라미터로 시작(lr 3e-4, clip 0.2, entropy 0.01은 일반적인 시작점이며 환경에 따라 검증 필요), 병렬 환경 수는 VRAM에 맞게 최대한 설정;</li>
+<li>50–100 iter마다 체크포인트 저장, 훈련 곡선(reward/ep_len/각 패널티 성분)은 TensorBoard 또는 동등한 도구에 기록;</li>
+<li><strong>체크포인트 선택 시 최고 reward가 아닌 강건 평가 기준</strong>: 최대 무작위화 강도 + 추력 외란 하에서 연속 100 에피소드 테스트, "넘어짐률이 가장 낮고 속도가 목표에 도달한" 것을 선택하세요.</li>
+</ol>
+<p>【이유】훈련 후반의 reward 피크는 종종 현재 무작위화 시드에 과적합된 허상입니다; 강건 평가가 실제 기계 성능에 해당합니다. Berkeley의 방식은 강화된 무작위화 하에서 검증을 통과한 후에야 실제 기계를 논의합니다(berkeley-humanoid-lite 아카이브).</p>
+<p>【여러분의 상황 분석】평가 비디오를 하나씩 확인하세요: 보행이 뻣뻣하지만 추력을 견딜 수 있음 = 실제 기계에 투입 가능(M14에서 계속 개선); 보행이 예쁘지만 한 번 밀리면 넘어짐 = 단계 4로 돌아가 무작위화 범위 확대. 2–3개의 후보 체크포인트를 남겨 M14로 가져가면, 실제 기계 성능이 최종 심사입니다.</p>
+<h2 id="_1">합격 기준</h2>
+<ul>
+<li>[ ] 공식 기준선 환경 재현 성공(스크린샷/곡선存档).</li>
+<li>[ ] obs/action/episode 세 가지 목록 문서화 완료, 실제 기계에서 얻을 수 있는 관측과 정렬.</li>
+<li>[ ] 보상 항목별 추가 기록 완료, 최종 설정 및 곡선存档.</li>
+<li>[ ] 도메인 무작위화가 질량/마찰/지연/추력 네 가지 유형을 포함하고, 범위에 추정 근거 있음.</li>
+<li>[ ] 강건 평가(최대 무작위화 + 외란) 하에서 연속 100 에피소드 넘어짐률 ≤ 10%, 전진 속도 목표 도달.</li>
+<li>[ ] 2–3개의 후보 체크포인트存档 완료, M14 실제 기계 선별용.</li>
+</ul>
+<h2 id="_2">일반적인 함정과 문제 해결</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>문제 해결 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reward가 증가하지 않음</td>
+<td>보상 가중치 불균형 / 관측에 핵심 변수 누락 / 동작 스케일링 오류</td>
+<td>보상을 하나씩 줄여가며 원인 파악; 단계 2 체크리스트 확인; action 실제 범위 출력</td>
+</tr>
+<tr>
+<td>제자리에서 다리 떨며 전진하지 않음</td>
+<td>속도 항목 가중치过低 / 관절 토크 제한 과도</td>
+<td>속도 추적 가중치 증가; effort 제한 확인 (M10 단계 4)</td>
+</tr>
+<tr>
+<td>훈련 발산, 그래프 붕괴</td>
+<td>lr 과다 / 보상 값 폭발 (특정 성분 규모 통제 불가)</td>
+<td>lr 절반으로 감소; 각 성분별 정규화 출력</td>
+</tr>
+<tr>
+<td>시뮬레이션은 좋으나 무작위화 적용 시 바로 넘어짐</td>
+<td>무작위화 범위를 한 번에 너무 넓게 설정</td>
+<td>범위 절반으로 축소, 500 iter마다 한 단계씩 확대 (커리큘럼 방식)</td>
+</tr>
+<tr>
+<td>정책이 특정 다리 쪽에 편향됨</td>
+<td>모델 좌우 비대칭 (URDF 미러 오류)</td>
+<td>M10으로 돌아가 미러 관절 축 확인</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m12-sim-walking/">M12 · 시뮬레이션 기립 및 보행</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m14-sim-to-real/">M14 · sim-to-real 배포 및 보행 검증</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-18/">제18장 모방 학습과 정책 학습</a>, <a href="/ko/wiki/chapters/chapter-23/">제23장 시뮬레이션과 물리 엔진</a></li>
+<li><a href="/ko/roadmap/playbooks/sim-setup/">시뮬레이션 환경 구축 매뉴얼</a> · <a href="/ko/roadmap/stage-2-biped/">2단계 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m12-sim-walking/">← 이전<span>M12 · 시뮬레이션 서기와 걷기: 먼저 안정적으로 서고, 그다음 걷기</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m14-sim-to-real/">다음 →<span>M14 · sim-to-real 배포 및 보행 검증: 시뮬레이션 챔피언에서 실제 로봇으로의 첫걸음</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m13">M13 · 강화학습 훈련: 시뮬레이션에서 만 번 넘어져도, 실물에서 한 번은 안정적으로 서기</a><ul>
+<li><a href="#1">단계 1: 먼저 공식 기준선을 실행한 후, 자신의 로봇을 다루기</a></li>
+<li><a href="#2">단계 2: 관측, 행동 및 에피소드 구조 정의</a></li>
+<li><a href="#3">단계 3: 보상 함수 – 서기에서 걷기까지</a></li>
+<li><a href="#4">단계 4: 도메인 무작위화 – 정책에 "현실 백신" 접종</a></li>
+<li><a href="#5">단계 5: 훈련, 평가 및 체크포인트 선택</a></li>
+<li><a href="#_1">합격 기준</a></li>
+<li><a href="#_2">일반적인 함정과 문제 해결</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

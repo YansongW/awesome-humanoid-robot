@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Interactive Real-World Simulators · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Interactive Real-World Simulators</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Learning Interactive Real-World Simulators</h1>
+      <p class="entry-name-en">Learning Interactive Real-World Simulators</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P066. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 UniSim，一个 5.6B 参数的通用真实世界模拟器，将视频生成建模为动力学问题，通过统一动作-视频接口整合互联网图像、人类活动、机器人操作等多源数据。核心贡献在于证明大规模条件视频生成模型可作为交互式环境，用于训练长时程 VLM 策略和 RL 策略，并显著提升下游任务性能。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2310.06114" target="_blank" rel="noopener">arXiv:2310.06114 Learning Interactive Real-World Simulators</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>生成模型的下一个里程碑不是生成更逼真的静态媒体，而是模拟真实世界体验以响应交互智能体的动作。现有世界模型要么在低维状态空间或游戏域中学习单一系统动力学，要么缺乏对生成视频的控制能力，无法作为通用环境训练具身智能体。策略学习的主要瓶颈在于对真实世界环境的有限访问，而 UniSim 试图提供现实且无限的环境访问。</p>
+<p>真正改变的是将“视频生成”从内容创作工具重新定位为“动力学建模”工具。作者没有为每个任务训练专用模拟器，而是构建一个跨任务保持不变的通用模拟器，可与任何单独学习的奖励函数结合。这意味着下游策略学习可以完全在仿真中进行，并直接部署到真实世界，绕开真实环境采样的瓶颈。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">统一动作空间</h3>
+<ul>
+<li>文本令牌经 T5 语言模型嵌入转换为连续表示</li>
+<li>低层控制动作（如机器人关节运动）归一化后离散化为 4096 个 bin，与语言嵌入拼接</li>
+<li>数据集标识符可附加于动作，但仅在测试域在训练域分布内时使用</li>
+</ul>
+<h3 id="_4">数据集编排</h3>
+<ul>
+<li><strong>模拟执行</strong>：Habitat 对象导航（HM3D，710 示例）和 Language Table sim（160k 示例）</li>
+<li><strong>真实机器人</strong>：Bridge Data（2k）、RT-1/RT-2（70k）、Language Table real（440k）</li>
+<li><strong>人类活动</strong>：Ego4D（3.5M）、EPIC-KITCHENS（25k）、Something-Something V2（160k）</li>
+<li><strong>全景扫描</strong>：Matterport3D（3.5M），通过截断全景扫描构造“左转”等动作</li>
+<li><strong>互联网数据</strong>：LAION-400M 和 ALIGN 各 400M，单张图像视为单帧视频</li>
+</ul>
+<h3 id="_5">观测预测模型</h3>
+<p>学习模型 p(o_t|h_{t-1}, a_{t-1})，其中 h_{t-1} 为历史帧集合，a_{t-1} 为时间扩展动作。关键设计决策是仅用最近交互的有限帧（如 4 帧）作为条件，而非条件化所有过去信息，大幅简化建模问题。</p>
+<h3 id="_6">扩散模型参数化</h3>
+<ul>
+<li>去噪模型 ε_θ(o_t^(k), k|h_{t-1}, a_{t-1})，通过 K 步去噪生成下一观测</li>
+<li>训练损失为 MSE：L_MSE = ||ε - ε_θ(√(1-β^(k))o_t + √(β^(k))ε, k|h_{t-1}, a_{t-1})||²</li>
+<li>采样过程：o_t^(k-1) = α^(k)(o_t^(k) - γ^(k)ε_θ(o_t^(k), k|h_{t-1}, a_{t-1})) + ξ</li>
+<li>动作条件化采用无分类器引导：ε_θ = (1+η)ε_θ(·|h, a) - ηε_θ(·|h)</li>
+</ul>
+<h3 id="_7">架构</h3>
+<p>视频 U-Net，交错时间和空间注意力及卷积层。基础模型在 [16, 24, 40] 分辨率运行，两个超分辨率模型分别提升至 [48, 80] 和 [192, 320]。历史条件帧复制到所有未来帧索引，与噪声样本拼接。</p>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li>
+<p><strong>统一动作-视频接口</strong>：将文本、低层控制、图像字幕统一为动作空间，使同一模拟器可响应不同模态的交互。这是首个将互联网规模数据（LAION、ALIGN 各 400M）与机器人、人类活动数据联合训练的视频生成模拟器。</p>
+</li>
+<li>
+<p><strong>仅条件化最近帧的设计</strong>：发现仅用 4 帧历史即可有效建模，而非条件化所有过去信息。这一简化使长时程自回归滚动成为可能，且消融实验证明 4 帧优于 1 帧（FVD 从 315.69 降至 211.3），近期历史优于远期历史。</p>
+</li>
+<li>
+<p><strong>模拟器作为通用训练环境</strong>：同一模拟器可与任何奖励函数结合，支持长时程 VLM 策略和 RL 策略训练。实验证明模拟数据微调的视频字幕模型在 MSR-VTT、VATEX、SMIT 上迁移优于真实数据微调。</p>
+</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="ego4d">帧条件消融（Ego4D 验证集）</h3>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>FID</th>
+<th>FVD</th>
+<th>IS</th>
+<th>CLIP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 frame</td>
+<td>59.47</td>
+<td>315.69</td>
+<td>3.03</td>
+<td>22.55</td>
+</tr>
+<tr>
+<td>4 distant</td>
+<td>34.89</td>
+<td>237</td>
+<td>3.43</td>
+<td>22.62</td>
+</tr>
+<tr>
+<td>4 recent</td>
+<td>34.63</td>
+<td>211.3</td>
+<td>3.52</td>
+<td>22.63</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vlm-language-table">长时程 VLM 策略（Language Table）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>RDG (moved)</th>
+<th>RDG (all)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLM-BC</td>
+<td>0.11 ± 0.13</td>
+<td>0.07 ± 0.11</td>
+</tr>
+<tr>
+<td>Simulator-Hindsight</td>
+<td>0.34 ± 0.13</td>
+<td>0.34 ± 0.13</td>
+</tr>
+</tbody>
+</table>
+<p>模拟长时程生成数据比原始数据好 3-4 倍。</p>
+<h3 id="rl-language-table48">RL 策略（Language Table，48 任务）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Succ. rate (all)</th>
+<th>Succ. rate (pointing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLA-BC</td>
+<td>0.58</td>
+<td>0.12</td>
+</tr>
+<tr>
+<td>Simulator-RL</td>
+<td>0.81</td>
+<td>0.71</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pali-x-55b">视频字幕（PaLI-X 55B 微调）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Activity</th>
+<th>MSR-VTT</th>
+<th>VATEX</th>
+<th>SMIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No finetune</td>
+<td>15.2</td>
+<td>21.91</td>
+<td>13.31</td>
+<td>9.22</td>
+</tr>
+<tr>
+<td>Activity（真实）</td>
+<td>54.90</td>
+<td>24.88</td>
+<td>36.01</td>
+<td>16.91</td>
+</tr>
+<tr>
+<td>Simulator（模拟）</td>
+<td>46.23</td>
+<td>27.63</td>
+<td>40.03</td>
+<td>20.58</td>
+</tr>
+</tbody>
+</table>
+<p>纯模拟数据微调将 ActivityNet 从 15.2 提升至 46.23，达到真实数据微调的 84%（由表内数值 46.23/54.90 计算），且在三个迁移数据集上优于真实数据微调。</p>
+<h3 id="1024">数据集与模型规模消融（1024 测试样本）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>FVD</th>
+<th>CLIP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internet only</td>
+<td>219.62</td>
+<td>22.27</td>
+</tr>
+<tr>
+<td>Without internet</td>
+<td>307.80</td>
+<td>21.99</td>
+</tr>
+<tr>
+<td>Universal simulator</td>
+<td>211.30</td>
+<td>22.63</td>
+</tr>
+<tr>
+<td>500M</td>
+<td>277.85</td>
+<td>22.08</td>
+</tr>
+<tr>
+<td>1.6B</td>
+<td>224.61</td>
+<td>22.27</td>
+</tr>
+<tr>
+<td>5.6B</td>
+<td>211.30</td>
+<td>22.63</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_10">边界与局限</h2>
+<ul>
+<li><strong>幻觉</strong>：当动作对场景不现实时（如对桌面机器人给出“洗手”），会观察到桌子变成水槽等不现实结果；理想情况下应检测不可模拟动作</li>
+<li><strong>有限记忆</strong>：仅基于少量最近帧的条件无法捕捉长期记忆（如抽屉中的苹果在打开抽屉时可能消失）</li>
+<li><strong>有限的域外泛化</strong>：主要训练于 4 种机器人形态，对未见机器人泛化能力有限</li>
+<li><strong>仅视觉模拟</strong>：不适用于动作不引起视觉变化的环境（如抓取静态杯子时的不同力）；声音不在模拟范围内</li>
+<li><strong>扩展收益平台期</strong>：模型从 1.6B 增至 5.6B 时 FVD 改善幅度趋于平台期（由表内数值 224.61→211.30 计算），作者认为略显失望</li>
+</ul>
+<h2 id="_11">工程启示</h2>
+<ul>
+<li><strong>复现优先级</strong>：先核对数据混合权重（0.1 或 0.05）和 4 帧历史条件化，这是性能的关键；训练需 512 TPU-v3 和 20 天，小规模复现可先尝试 500M 模型验证流程</li>
+<li><strong>最易踩坑</strong>：域特定标识符会损害跨域泛化，仅在测试域在训练域分布内时使用；仅训练于窄域数据（如仅 SSV2 或仅互联网数据）会导致环境模拟失败</li>
+<li><strong>下游集成</strong>：模拟器通过远程过程调用封装在 DM Env API 的 step 函数中，可直接替换真实环境；RL 训练使用 REINFORCE 时，奖励定义为 r = -[d(o_{t+1}, g) - d(o_t, g)] · C，其中 C = 5e-2</li>
+<li><strong>数据选择</strong>：互联网数据至关重要，移除后 FVD 从 211.30 恶化至 307.80；低数据域（如 HM3D 仅 700 示例）可通过联合训练受益</li>
+</ul>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2310.06114</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">RT-1</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_interactive_real_world_simulators_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_1_robotics_transformer_for_2022/">
+          <span class="entry-type">论文</span>
+          <h3>RT-1</h3>
+          <p>RT-1（Robotics Transformer）是Google…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">统一动作空间</a></li>
+<li><a href="#_4">数据集编排</a></li>
+<li><a href="#_5">观测预测模型</a></li>
+<li><a href="#_6">扩散模型参数化</a></li>
+<li><a href="#_7">架构</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#ego4d">帧条件消融（Ego4D 验证集）</a></li>
+<li><a href="#vlm-language-table">长时程 VLM 策略（Language Table）</a></li>
+<li><a href="#rl-language-table48">RL 策略（Language Table，48 任务）</a></li>
+<li><a href="#pali-x-55b">视频字幕（PaLI-X 55B 微调）</a></li>
+<li><a href="#1024">数据集与模型规模消融（1024 测试样本）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

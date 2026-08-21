@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用于自动化拆解印刷电路板元件的机器人系统 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">用于自动化拆解印刷电路板元件的机器人系统</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>用于自动化拆解印刷电路板元件的机器人系统</h1>
+      <p class="entry-name-en">A Robotic System to Automate the Disassembly of PCB Components</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">制造工艺</span><span class="tag">组装集成测试</span><span class="tag">零部件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.05309v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (615 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Santos、Marques 与 Neto 提出了一种机器人系统，通过定制工具与笛卡尔力控制，在协作机器人臂上实现废弃 PCB 元件的自动拆焊与提取。该系统针对较大元件报告了约 100% 的拆焊成功率，旨在提升电子废弃物回收效率并减少人工成本。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2403.05309" target="_blank" rel="noopener">A Robotic System to Automate the Disassembly of PCB Components</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究聚焦于电子废弃物回收中的关键步骤——PCB 元件拆解，旨在通过自动化替代传统破坏性方法。团队开发了专用工具，结合协作机器人臂的笛卡尔力控制，实现元件接触与提取的精确力控。实验表明，该方法对较大 PCB 元件具有极高成功率（约 100%），为自动化拆解提供了可行方案。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">背景与挑战</h3>
+<p>电子废弃物（e-waste）的处置与回收是全球性难题。PCB 元件的拆解是高效回收的关键环节，但当前因元件多样性与复杂性，多数拆解仍依赖人工。自动化拆解可提升效率并降低劳动力成本。</p>
+<h3 id="_4">系统架构与方法</h3>
+<ul>
+<li><strong>机器人平台</strong>：采用协作机器人臂，集成笛卡尔力控制（Cartesian force control），实现工具与 PCB 元件的受控接触。</li>
+<li><strong>定制工具</strong>：开发专用工具，可施加可控力于 PCB 元件表面，将其从电路板上移除。</li>
+<li><strong>流程阶段</strong>：包括工具与元件的受控接触、力控施加、元件提取等步骤，旨在最大化自动化程度。</li>
+</ul>
+<h3 id="_5">实验设置与结果</h3>
+<ul>
+<li><strong>测试对象</strong>：针对 PCB 上的较大元件进行拆焊与提取实验。</li>
+<li><strong>关键指标</strong>：拆焊成功率（desoldering success rate）达约 100%，验证了系统对较大元件的有效性。</li>
+<li><strong>结论</strong>：研究证明，通过力控机器人系统实现 PCB 元件自动化拆解是可行的，为电子废弃物回收提供了高效、非破坏性的技术路径。</li>
+</ul>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2403.05309v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_design_for_manufacturing/">可制造性设计（DFM）</a>
+      
+      <span class="rel-desc">用于自动化拆解印刷电路板元件的机器人系统discusses可制造性设计（DFM）。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_design_for_assembly/">可装配性设计（DFA）</a>
+      
+      <span class="rel-desc">用于自动化拆解印刷电路板元件的机器人系统discusses可装配性设计（DFA）。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_santos_a_robotic_system_to_automate_t_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_design_for_manufacturing/">
+          <span class="entry-type">方法</span>
+          <h3>可制造性设计（DFM）</h3>
+          <p>使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_design_for_assembly/">
+          <span class="entry-type">方法</span>
+          <h3>可装配性设计（DFA）</h3>
+          <p>减少零件数量、简化连接方式、缩短装配时间，从而降低生产成本并提高可靠性的设计方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">背景与挑战</a></li>
+<li><a href="#_4">系统架构与方法</a></li>
+<li><a href="#_5">实验设置与结果</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

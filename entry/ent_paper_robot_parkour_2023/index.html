@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robot Parkour Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Robot Parkour Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Robot Parkour Learning</h1>
+      <p class="entry-name-en">Robot Parkour Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P130. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种两阶段强化学习框架，在低成本四足机器人（Unitree A1/Go1）上实现端到端、视觉驱动的单一跑酷策略，涵盖攀爬、跳跃、爬行、侧身和奔跑五种技能。核心贡献在于通过软动力学约束的预训练与硬动力学微调，结合DAgger蒸馏，使机器人仅凭机载深度相机即可在仿真和真实世界中完成高难度障碍穿越。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2309.05665" target="_blank" rel="noopener">arXiv:2309.05665 Robot Parkour Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>足式机器人敏捷运动长期受困于“多样性”与“视觉闭环”的割裂：基于参考运动的方法能生成丰富动作但缺乏环境感知，而视觉策略往往针对单一技能且依赖昂贵硬件或复杂奖励工程。本文改变了这一局面——它证明一个单一策略、仅用低成本硬件和简单奖励，就能同时掌握五种差异极大的跑酷技能，且无需任何动物运动数据或任务特定奖励塑形。这实质上是将“跑酷”从精心设计的专用控制器问题，重新定义为可扩展的通用强化学习问题，为足式机器人在非结构化环境中的自主导航提供了新的可行性基线。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">两阶段训练范式</h3>
+<ol>
+<li><strong>RL预训练（软动力学）</strong>：允许机器人身体穿透障碍物，奖励函数仅含三项：</li>
+<li><code>r_forward = -α1|v_x - v_x_target| - α2|v_y|² + α3·e^{-|ω_yaw|}</code></li>
+<li><code>r_energy = -α4·Σ|τ_j·q̇_j|²</code></li>
+<li><code>r_alive = 2</code>
+   另加穿透惩罚 <code>r_penetrate = -Σ_p(α5·𝟙[p] + α6·d(p))·v_x</code>，其中<code>d(p)</code>为穿透深度，乘以<code>v_x</code>防止机器人利用穿透快速冲关。</li>
+<li><strong>RL微调（硬动力学）</strong>：移除穿透奖励，在真实碰撞约束下优化预训练策略，仅用<code>r_skill</code>。</li>
+</ol>
+<h3 id="_4">自动课程与技能策略</h3>
+<ul>
+<li>障碍难度由分数<code>s∈[0,1]</code>（步长0.05）控制，属性线性插值：<code>l = (1-s)·l_easy + s·l_hard</code>，根据穿透奖励自动调整<code>s</code>。</li>
+<li>训练五个专用GRU策略（<code>π_climb</code>, <code>π_leap</code>, <code>π_crawl</code>, <code>π_tilt</code>, <code>π_run</code>），输入为本体感觉（ℝ²⁹）、上一动作（ℝ¹²）及特权信息（障碍距离/高度/宽度/4维one-hot类别、地形摩擦、质心、电机强度）。</li>
+</ul>
+<h3 id="_5">蒸馏与部署</h3>
+<ul>
+<li>用DAgger将五个专用策略蒸馏为单一视觉策略<code>π_parkour</code>，输入含深度图像潜在嵌入（小型CNN，通道[16,32,32]，核[5,4,3]），蒸馏损失为二元交叉熵。</li>
+<li>深度图分辨率48×64，刷新率10Hz，异步获取嵌入；策略运行50Hz，输出目标关节位置经PD控制器（Kp=50, Kd=1）转为扭矩，限幅25Nm。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>软动力学穿透训练</strong>：允许预训练阶段穿透障碍物，配合自动课程，解决了稀疏奖励下探索困难的问题。这是唯一能让攀爬和跳跃技能从零学起的方法（对比RND和硬动力学基线均失败）。</li>
+<li><strong>简单奖励+特权蒸馏</strong>：仅用三项通用奖励（速度、能量、存活）即可训练五种技能，再通过DAgger将特权信息蒸馏为纯视觉策略，避免了复杂的奖励整形和任务特定设计。</li>
+<li><strong>低成本硬件闭环</strong>：在A1/Go1上仅用机载Jetson NX和RealSense D435实现50Hz闭环控制，无需外部动捕或昂贵计算平台，显著降低了敏捷机器人的部署门槛。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="236m">仿真对比（表2，最大距离3.6m，成功率%）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Climb</th>
+<th>Leap</th>
+<th>Crawl</th>
+<th>Tilt</th>
+<th>Run</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blind</td>
+<td>0</td>
+<td>0</td>
+<td>13</td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MLP</td>
+<td>0</td>
+<td>1</td>
+<td>63</td>
+<td>43</td>
+<td>100</td>
+</tr>
+<tr>
+<td>No Distill</td>
+<td>0</td>
+<td>0</td>
+<td>73</td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr>
+<td>RMA</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>74</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Ours</strong></td>
+<td><strong>86</strong></td>
+<td><strong>80</strong></td>
+<td><strong>100</strong></td>
+<td><strong>73</strong></td>
+<td><strong>100</strong></td>
+</tr>
+<tr>
+<td>Oracles w/o Soft Dyn</td>
+<td>0</td>
+<td>0</td>
+<td>93</td>
+<td>86</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Oracles</td>
+<td>95</td>
+<td>82</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a110">真实世界（A1，10次试验）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>尺寸</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>攀爬</td>
+<td>0.40m（1.53倍身高）</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>跳跃</td>
+<td>0.60m（1.5倍身长）</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>爬行</td>
+<td>0.2m（0.76倍身高）</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>侧身</td>
+<td>0.28m（小于身宽）</td>
+<td>通过</td>
+</tr>
+</tbody>
+</table>
+<p>关键结论：软动力学预训练是攀爬/跳跃成功的必要条件（Oracles w/o Soft Dyn成功率为0）；蒸馏后的视觉策略性能接近特权专家（Oracles），且显著优于无视觉基线。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li><strong>环境构建依赖人工</strong>：模拟环境需手动搭建，新技能需新增障碍物类型和外观，自动化程度低，限制了技能扩展速度。</li>
+<li><strong>视觉模态单一</strong>：仅使用深度图像，未利用RGB语义信息，对透明/反光/低纹理障碍可能失效。</li>
+<li><strong>障碍物范围有限</strong>：测试尺寸均小于2倍机器人尺度，未验证更大尺度或动态障碍物场景。</li>
+<li><strong>论文未明确</strong>：策略对地形坡度、软地面、非刚性障碍的泛化能力；长时间运行下的漂移与磨损影响。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：奖励系数α1-α6（如Climb的α5=1e-2, α6=1e-2）和课程步长0.05对训练稳定性至关重要，建议先复现单技能再扩展多技能。</li>
+<li><strong>易踩坑点</strong>：深度图像延迟随机化（[0.2, 0.26]s）和相机位姿扰动（位置±0.01m，俯仰[0,5]°）是sim-to-real成功的关键，不可省略；PD增益Kp=50, Kd=1需严格匹配，否则扭矩限幅25Nm会导致动作失真。</li>
+<li><strong>下游团队建议</strong>：若需部署到新平台，优先调整动作缩放常数（髋0.4，膝0.6）和电机强度采样范围[0.9, 1.1]；蒸馏阶段需保证4台3090的NFS同步，否则策略更新滞后会导致蒸馏发散。</li>
+<li><strong>计算资源</strong>：单技能预训练12小时+微调6小时（1×3090），蒸馏需4×3090并行，预算有限时建议先验证软动力学收益再投入全流程。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2309.05665</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      <span class="rel-desc">Robot Parkour Learning使用近端策略优化（PPO）。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_domain_randomization/">域随机化</a>
+      
+      <span class="rel-desc">Robot Parkour Learning使用域随机化。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robot_parkour_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_domain_randomization/">
+          <span class="entry-type">方法</span>
+          <h3>域随机化</h3>
+          <p>训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">两阶段训练范式</a></li>
+<li><a href="#_4">自动课程与技能策略</a></li>
+<li><a href="#_5">蒸馏与部署</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#236m">仿真对比（表2，最大距离3.6m，成功率%）</a></li>
+<li><a href="#a110">真实世界（A1，10次试验）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

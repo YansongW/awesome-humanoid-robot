@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Running VLAs at Real-time Speed · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Running VLAs at Real-time Speed</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Running VLAs at Real-time Speed</h1>
+      <p class="entry-name-en">Running VLAs at Real-time Speed</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Software &amp; Middleware</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.26742v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en/ko body retranslated from zh deep-read (701 chars, DeepSeek).">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025 large vision-language-action model for robotic manipulation, introduced by Dexmal, StepFun.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.26742" target="_blank" rel="noopener">Running VLAs at Real-time Speed (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2510.26742" target="_blank" rel="noopener">Running VLAs at Real-time Speed source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This study is the first to demonstrate that a pi0-level multi-view VLA model can run at 30Hz frame rate and 480Hz trajectory frequency on a single consumer-grade GPU, breaking through the performance bottleneck of large models in dynamic real-time tasks. The team proposed a series of strategies to eliminate model inference overhead, including computational graph optimization, attention mechanism acceleration, and more. In real-world experiments, the pi0 policy employing these strategies achieved a 100% success rate in the task of catching a falling pen. Based on these results, the researchers further proposed a full-streaming inference framework for real-time robot control, with the relevant code open-sourced on GitHub.</p>
+<h2 id="content">Content</h2>
+<h3 id="core-methods">Core Methods</h3>
+<ul>
+<li><strong>Inference Overhead Elimination Strategies</strong>: Through techniques such as operator fusion, KV cache reuse, and dynamic batching, the latency of multi-view image encoding and action decoding in the pi0 model was compressed to within 33ms.</li>
+<li><strong>Streaming Inference Framework</strong>: An asynchronous pipeline architecture was designed to decouple the three stages of visual encoding, language reasoning, and action prediction, supporting independent adjustment of frame rate and trajectory frequency.</li>
+</ul>
+<h3 id="experimental-setup">Experimental Setup</h3>
+<ul>
+<li><strong>Hardware Platform</strong>: Single NVIDIA RTX 4090 GPU (24GB VRAM)</li>
+<li><strong>Baseline Model</strong>: pi0 (7B parameters, multi-view input)</li>
+<li><strong>Task Scenario</strong>: Dynamic grasping (free-falling pen, speed approximately 2m/s)</li>
+</ul>
+<h3 id="key-numbers">Key Numbers</h3>
+<ul>
+<li><strong>Frame Rate</strong>: 30Hz (visual input update frequency)</li>
+<li><strong>Trajectory Frequency</strong>: Up to 480Hz (action command output frequency)</li>
+<li><strong>Success Rate</strong>: 100% (50 repeated experiments, catching a falling pen)</li>
+<li><strong>Latency</strong>: End-to-end inference latency &lt;33ms (including image preprocessing)</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>This method is the first to prove that large-parameter VLA models can meet the requirements of real-time robot control, and its streaming inference framework provides a feasible solution for dynamic manipulation tasks (such as high-speed grasping and obstacle avoidance). Code open-source address: https://github.com/Dexmal/realtime-vla</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a>
+      
+      <span class="rel-desc">Running VLAs at Real-time Speed discusses On-Device VLA Inference.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">mentions</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_component_manufacturer_nvidia/">NVIDIA</a>
+      
+      <span class="rel-desc">Running VLAs at Real-time Speed mentions NVIDIA.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">cites</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_method_openvla/">OpenVLA</a>
+      
+      <span class="rel-desc">Running VLAs at Real-time Speed cites OpenVLA.</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ma_running_vlas_at_real_time_spee_2025"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_method_openvla/">
+          <span class="entry-type">Method</span>
+          <h3>OpenVLA</h3>
+          <p>An open-source vision-language-action model trained on the Open X-Embodiment dataset for…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_tech_on_device_vla_inference/">
+          <span class="entry-type">Technology</span>
+          <h3>On-Device VLA Inference</h3>
+          <p>The practice of running Vision-Language-Action models directly on robot-embedded edge compute rather…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">Component Manufacturer</span>
+          <h3>NVIDIA</h3>
+          <p>American semiconductor and software company supplying GPUs, edge AI compute modules, simulation…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#core-methods">Core Methods</a></li>
+<li><a href="#experimental-setup">Experimental Setup</a></li>
+<li><a href="#key-numbers">Key Numbers</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

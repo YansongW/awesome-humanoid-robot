@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CheckVLA: Execution-Time Verification with Action-Conditioned World Model for Long-Horizon Mobile Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">CheckVLA: Execution-Time Verification with Action-Conditioned World Model for Long-Horizon Mobile Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>CheckVLA: Execution-Time Verification with Action-Conditioned World Model for Long-Horizon Mobile Manipulation</h1>
+      <p class="entry-name-en">CheckVLA: Execution-Time Verification with Action-Conditioned World Model for Long-Horizon Mobile Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-language-action (VLA) policies commonly execute long-horizon mobile manipulation through open-loop action chunks, issuing multiple actions without receiving new high-level visual input. A committed chunk therefore implies how observations should evolve, but accidental deviations can violate this expectation while the remaining actions continue to propagate the error: commit-time policy.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.26789" target="_blank" rel="noopener">arXiv:2607.26789 CheckVLA: Execution-Time Verification with Action-Conditioned World Model for Lo</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>CheckVLA는 장시간 이동 조작을 위한 개루프 청크 실행 검증 프레임워크를 제안하며, 액션 청크 실행 중 액션 조건부 월드 모델의 롤링 예측과 보정된 위험 트리거를 통해 지연 일관된 '접미사 재작성' 수리를 구현합니다. 핵심 기여는 검증 트리거와 수리 메커니즘을 분리 설계하고, 공형 보정(conformal calibration)으로 오탐률을 제어하며, 위험 적응형 유도 가중치를 통해 교란 발생 후 적시에 동작을 수정하면서도 원래 성공한 궤적을 해치지 않는 것입니다. RoboCasa365 벤치마크에서 이 방법은 교란 성공률을 47.6%로 끌어올리면서 에피소드 수준 오탐률 4.8%를 유지합니다.</p>
+<h2 id="_2">무엇을 바꾸는가</h2>
+<p>개루프 액션 청킹(open-loop action chunking)은 현재 VLA 정책 배포의 주류 패러다임이지만, 근본적 결함은 청크 내 피드백 부재입니다. 정책이 청크 경계에서 H步 동작을 제출한 후, 청크 내에서 발생하는 물리적 교란(예: 물체 미끄러짐, 충돌 변위)에 완전히 눈이 멀어, 편차는 다음 청크 경계에 도달할 때까지 누적되며 그때는 이미 되돌릴 수 없는 경우가 많습니다. 기존 해결책은 제출 시 불확실성을 추정하거나(발송 후 관측을 활용할 수 없음), 순수 관측 이상 탐지(액션 조건부 참조가 없어 기대 효과와 이상 편차를 구분할 수 없음), 또는 고정 주기 재계획(호출 예산 낭비 및 지연 인식 부족)에 의존합니다. CheckVLA가 실제로 바꾸는 것은 '검증'을 정책 신뢰도에서 분리하여 독립적이고 액션 조건부이며 보정 가능한 모니터링 채널로 만들고, 지연 인식 수리 메커니즘을 결합하여 시스템이 교란 발생 후 3개 제어 스텝 내(중앙값 추론 지연 286ms 포함) 재계획을 트리거하고 새 액션 청크를 배포할 수 있게 하는 것입니다. 이는 개루프 실행에 폐루프 피드백을 다시 도입하면서도 정책 자체의 훈련 패러다임을 희생하지 않는 것과 같습니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 아키텍처</h3>
+<p>CheckVLA는 네 가지 결합 구성 요소로 이루어집니다: 액션 조건부 롤링 예측, 보정된 위험 트리거, 지연 인식 접미사 재작성, 에피소드 컨텍스트 메모리.</p>
+<h3 id="_5">액션 조건부 롤링 예측</h3>
+<ul>
+<li>동결된 V-JEPA 2-AC 인코더 φ를 사용하여 관측 특징 z_{t'} = φ(o_{t'})를 추출하고, 월드 모델 Ψ는 미래 k步만 예측합니다(k ≪ H, H=50):
+  ẑ_{t'+i+1} = Ψ(z_{t'}, ẑ_{t'+1:t'+i}, ā_{t':t'+i}, ŝ_{t':t'+i})</li>
+<li>새 관측이 도착할 때마다 예측을 다시 앵커링(re-anchor)하며, 청크 경계를 넘는 예측은 다음 청크 제출 후에만 생성됩니다</li>
+<li>훈련은 두 단계로 진행됩니다: 먼저 교사 강제(teacher forcing)로 Huber 손실을 최소화하고, 이후 자체 롤아웃으로 예측 컨텍스트를 대체하여 온라인 자기회귀 사용과 일치시킵니다. 전체 과정은 특징 공간에서 이루어지며 픽셀 디코딩이 없습니다</li>
+</ul>
+<h3 id="_6">보정된 위험 트리거</h3>
+<ul>
+<li>표준화된 차이 d̃<em t-w_1:t="t-w+1:t">t = (d_t - μ_d^(ℓ)) / max(σ_d^(ℓ), ε)를 계산하고, 시간 인과 위험 헤드 R은 창 x</em>에서 각 스텝 튜플 x_τ = (d̃_τ, ℓ(τ)/k, h_τ/H, Δ_sw,τ)를 집계합니다</li>
+<li>위험 헤드 출력 r_t = R(x_{t-w+1:t}, m(ρ_t)) ∈ [0,1]이며, 훈련 데이터는 명목 성공, 자연 실패, 물리적 교란 세 가지 궤적 유형을 포함하고, [τ_on, τ_on+Δ] 내 softmax 풀링 위험에 이진 교차 엔트로피를 적용합니다</li>
+<li>공형 보정: 명목 성공 섀도우 모드 궤적에서 스텝별 위험 통계 (μ_{r,t}, σ_{r,t})를 적합하고, 보정 점수 κ^(i) = sup_t (r_t^(i) - μ_{r,t})/σ̃<em r_t="r,t">{r,t}, 임계값 δ_t = μ</em> + q̂<em r_t="r,t">α σ̃</em>, q̂_α는 ⌈(n+1)(1-α)⌉ 번째 순서 통계량, α=0.05입니다</li>
+</ul>
+<h3 id="_7">지연 인식 접미사 재작성</h3>
+<ul>
+<li>트리거 시점 t* 이후, 정책 추론은 d_lat=3 제어 스텝(중앙값 지연 286ms, 제어 주기 100ms)이 필요하며, 이전 청크의 스텝 20-22가 계속 실행되어 '되돌릴 수 없는 접두사'를 형성합니다</li>
+<li>새 청크는 h=d_lat에서 배포되며, 하드 제약 조건으로 접두사 위치가 이미 실행된 동작과 일치해야 합니다(Eqs. 9-10)</li>
+<li>유도 가중치 W_{h,m} = w_0(e_{t*})exp(-λ_m(h - d_lat)), 여기서 w_0(e) = w_min + (1-w_min)exp(-βe), e는 표준화된 초과량이며, 초과량이 클수록 더 강한 수정이 허용됩니다</li>
+<li>유도 혼합: v = (1-W) ⊙ v_θ + W ⊙ v_ref, v_ref는 이전 청크의 참조 속도입니다</li>
+</ul>
+<h3 id="_8">분리된 액션 전문가와 에피소드 메모리</h3>
+<ul>
+<li>이동 및 조작 전문가는 각각 독립적인 QKV 투영, 피드포워드 네트워크, 디노이징 헤드를 가지며, 공유 VLM 접두사 토큰의 결합 자기 주의를 통해서만 상호작용합니다. stop-gradient로 VLM 백본을 격리합니다</li>
+<li>이벤트 기반 키프레임 라이브러리 B_t는 청크와 수리를 넘어 지속되며, 비학습 2단계 필터로 기록됩니다. 정책은 게이트 교차 주의로 전체 라이브러리를 융합하고, 위험 헤드는 압축 요약 m(ρ_t)만 읽습니다</li>
+</ul>
+<h2 id="_9">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>액션 조건부 검증(Action-Conditioned Verification)</strong>: 월드 모델이 제출된 액션을 기반으로 미래 관측 특징을 예측하고, 예측-관측 차이를 위험 신호로 사용합니다. 순수 관측 예측기(재현율 48.6%) 및 액션 셔플 대조(재현율 37.9%)와 비교하여, 액션 조건화는 적시 재현율을 77.9%로 끌어올립니다. 이는 '정책이 무엇을 하려는지 아는 것'이 기대 효과와 이상 편차를 구분하는 핵심임을 증명합니다. 실행 중 검증에 액션 조건부 월드 모델을 사용한 것은 이번이 처음입니다(계획이 아닌).</p>
+</li>
+<li>
+<p><strong>시변 임계값을 갖는 공형 보정(Conformal Calibration with Time-Varying Threshold)</strong>: 명목 성공 궤적에서 스텝별 위험 통계를 적합하고, 분할 공형 보정(split conformal)으로 유한 표본 분위수를 계산하여 궤적 주변 보장 Pr(∃t: r_t &gt; δ_t | 명목 성공) ≤ α를 제공합니다. 이는 검증기 임계값 튜닝의 '마지막 마일' 문제를 해결합니다. 고정 임계값은 FWER를 4.8%에서 7.1%로 올리지만, 보정된 임계값은 4.8%의 오탐률에서 77.9%의 재현율을 유지합니다.</p>
+</li>
+<li>
+<p><strong>위험 적응형 유도 가중치(Risk-Adaptive Guidance Weight)</strong>: 표준화된 초과량을 참조 보존 강도에 매핑하며, 초과량이 클수록 보존 가중치가 작아집니다(단조 감소). w_0(e) = w_min + (1-w_min)exp(-βe)로 인코딩됩니다. 고정 가중치(W=0.5) 및 셔플된 초과량 대조와 비교하여, 적응 메커니즘은 구조율을 12.8%에서 16.9%로 높이고 손상률을 3.7%에서 2.8%로 낮추며, 다양한 초과량 구간에서 구간별 최적 가중치 포락선에 근접합니다(차이 ≤1.5% 포인트).</p>
+</li>
+</ol>
+<h2 id="_10">실험 및 결과</h2>
+<h3 id="robocasa365-3">주요 결과(RoboCasa365, 3개 시드 평균)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>A-S</th>
+<th>C-S</th>
+<th>C-U</th>
+<th>평균</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0.5(발표)</td>
+<td>39.6</td>
+<td>7.1</td>
+<td>1.2</td>
+<td>16.9</td>
+</tr>
+<tr>
+<td>Qwen-RobotManip</td>
+<td>68.6</td>
+<td>20.1</td>
+<td>14.9</td>
+<td>35.9</td>
+</tr>
+<tr>
+<td>CheckVLA</td>
+<td>63.7</td>
+<td>30.9</td>
+<td>10.2</td>
+<td>36.1</td>
+</tr>
+</tbody>
+</table>
+<p>CheckVLA 평균 성공률 36.1%로, 재현된 π_0.5보다 19.2% 포인트 높으며, C-S에서 1위(30.9%), C-U에서 2위를 기록했습니다.</p>
+<h3 id="fwer-005">트리거 비교(목표 FWER α=0.05)</h3>
+<table>
+<thead>
+<tr>
+<th>감지기</th>
+<th>FWER(%)</th>
+<th>적시 재현율(%)</th>
+<th>교란 성공률(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정책 특징 프로브(가장 강한 정책 측 기준선)</td>
+<td>5.1</td>
+<td>68.6</td>
+<td>43.7</td>
+</tr>
+<tr>
+<td>관측 전용 월드 예측기</td>
+<td>5.3</td>
+<td>48.6</td>
+<td>35.2</td>
+</tr>
+<tr>
+<td>액션 셔플 월드 모델</td>
+<td>5.1</td>
+<td>37.9</td>
+<td>31.0</td>
+</tr>
+<tr>
+<td>전체 액션 조건부 검증기</td>
+<td>4.8</td>
+<td>77.9</td>
+<td>47.6</td>
+</tr>
+</tbody>
+</table>
+<p>전체 검증기는 프로브보다 적시 재현율 9.3% 포인트, 교란 성공률 3.9% 포인트 향상시켰습니다. 액션 조건화는 재현율을 77.9%에서 37.9%(액션 셔플) 및 48.6%(관측 전용)로 낮췄습니다.</p>
+<h3 id="d_lat3">수리 규칙 비교(d_lat=3)</h3>
+<table>
+<thead>
+<tr>
+<th>규칙</th>
+<th>구조율(%)</th>
+<th>손상률(%)</th>
+<th>성공률(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>경계 대기</td>
+<td>7.4</td>
+<td>4.8</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>제약 없는 접두사 폐기</td>
+<td>10.1</td>
+<td>8.9</td>
+<td>39.8</td>
+</tr>
+<tr>
+<td>RTC 접두사 유지</td>
+<td>13.7</td>
+<td>4.1</td>
+<td>45.6</td>
+</tr>
+<tr>
+<td>고정 유도 W</td>
+<td>12.8</td>
+<td>3.7</td>
+<td>46.0</td>
+</tr>
+<tr>
+<td>적응형 W(e)</td>
+<td>16.9</td>
+<td>2.8</td>
+<td>47.6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">소거 및 민감도</h3>
+<ul>
+<li>롤링 재앵커링 없음: 재현율 62.8%로 하락; 순간 점수(시간 집계 없음): 재현율 66.1%</li>
+<li>양성 부정 샘플 없음: FWER 6.2%로 상승, 양성 손상 1.2%에서 4.7%로 상승</li>
+<li>메모리 소거: 전체 설계가 하위 목표 회귀를 1.34에서 0.18로 낮추고, FWER를 5.6%에서 4.8%로 낮춤</li>
+<li>배포 비용: 추가 88.4M 파라미터, 16.9 GFLOPs/스텝, 벽시계 계수 1.18×, 모니터링 p95 16.4ms로 제어 주기 미만</li>
+<li>홀드아웃 자연 실행: 성공률 61.4%(개루프)에서 68.9%로 상승, 손상 2.7%</li>
+</ul>
+<h2 id="_12">경계 및 한계</h2>
+<ul>
+<li>결론은 RoboCasa365 시뮬레이터 및 설명된 작업, 시나리오, 교란 분포에만 국한되며 하드웨어 안전성을 확립하지 않습니다. 저자는 실제 로봇 실험을 수행하지 않았음을 명시했습니다</li>
+<li>공형 보정은 교환 가능한 명목 성공 에피소드에서 불필요한 첫 개입의 확률만 제어하며, 교란 하 재현율, 수리 후 안전성, 반복 개입 또는 분포 이동 커버리지를 보장하지 않습니다</li>
+<li>'되돌릴 수 없음'은 테스트 수리 세트에서 복구 창이 닫히는 것을 의미하며 물리적 불가능성을 의미하지 않습니다. 배포 가능한 접미사가 너무 적거나 실행 가능한 대체가 없으면 올바른 경고에도 복구할 수 없습니다</li>
+<li>액션 바인딩 감사는 액션 토큰과 명목 본체감각 롤아웃 두 경로의 정보 기여를 분리하지 않습니다</li>
+<li>관측 새로고침 전략 측 신호 변형은 오프라인 상한이며 배포할 수 없습니다(p95 지연이 제어 주기를 초과). 시뮬레이터 간 일반화, 다중 교란 동시 처리에 대한 언급은 없습니다</li>
+<li>표 2와 발표된 결과의 비교는 설명적이며 쌍별 비교가 아닙니다. 공개 시스템이 사전 훈련 데이터 외부에서 차이가 있기 때문입니다</li>
+</ul>
+<h2 id="_13">엔지니어링 시사점</h2>
+<ul>
+<li><strong>액션 조건화가 성립하는지 먼저 확인하세요</strong>: 검증기 성능은 월드 모델의 '제출된 액션' 예측 품질에 크게 의존합니다. 재현 시 먼저 액션 셔플 대조(표 S3)를 실행하고, 액션 조건화 이득이 명확하지 않으면 월드 모델이 액션 정보를 실제로 활용하지 않는 것이므로 예측 컨텍스트에 전체 액션 시퀀스와 본체감각이 포함되어 있는지 확인하세요</li>
+<li><strong>공형 보정의 함정</strong>: 모든 위험 통계는 분위수 계산 전에 고정되어야 하며, 보정 세트는 명목 성공 섀도우 모드 궤적과 교차하지 않아야 합니다. 각 체크포인트는 독립적으로 보정하고, 하이퍼파라미터는 검증 데이터에서 한 번 선택한 후 잠급니다. 보정 규모를 100에서 400개 세그먼트로 늘리면 FWER가 5.4%에서 4.8%로 감소하므로 최소 300개 세그먼트를 권장합니다</li>
+<li><strong>지연 스케줄링은 수리 성공의 핵심입니다</strong>: d_lat=3은 중앙값 추론 지연 286ms에 해당하지만 p95는 338ms이므로 d_lat=10까지 스캔하여 견고성을 검증해야 합니다. 하드 접두사 제약(Eqs. 9-10)은 엄격히 구현해야 하며, 그렇지 않으면 스위치 점프가 배포 불연속성을 도입합니다</li>
+<li><strong>양성 부정 샘플은 생략할 수 없습니다</strong>: 양성 부정 샘플이 없으면 FWER가 6.2%로 상승하고 양성 손상이 4.7%로 두 배가 됩니다. 위험 헤드 훈련 데이터에는 명목 성공 궤적과 양성 편차가 반드시 포함되어야 하며, 그렇지 않으면 검증기가 무해한 외관 변화에 과민 반응합니다</li>
+<li><strong>모니터와 정책 분리</strong>: 동결된 V-JEPA 2-AC 인코더 + 독립 위험 헤드로, 모니터링 p95 16.4ms가 제어 주기보다 낮아 실행과 중첩됩니다. 모니터링 지연이 제어 주기를 초과하면 비동기 스케줄링 또는 예측 빈도 k 감소를 고려하세요</li>
+<li><strong>메모리 라이브러리 쓰기 필터는 성능 병목입니다</strong>: 이벤트 기반 키프레임 라이브러리는 하위 목표 회귀를 1.34에서 0.18로 낮추지만, 2단계 필터(지연 확인된 관절 공간 변위 로컬 최소값 + 유사성/시간 근접 거부)의 파라미터 민감성에 주의해야 합니다. 정책은 전체 라이브러리를 읽고 위험 헤드는 압축 요약만 읽으므로 둘은 독립적으로 훈련해야 합니다</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">인용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_checkvla_execution_time_verification_act_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 아키텍처</a></li>
+<li><a href="#_5">액션 조건부 롤링 예측</a></li>
+<li><a href="#_6">보정된 위험 트리거</a></li>
+<li><a href="#_7">지연 인식 접미사 재작성</a></li>
+<li><a href="#_8">분리된 액션 전문가와 에피소드 메모리</a></li>
+</ul>
+</li>
+<li><a href="#_9">핵심 혁신</a></li>
+<li><a href="#_10">실험 및 결과</a><ul>
+<li><a href="#robocasa365-3">주요 결과(RoboCasa365, 3개 시드 평균)</a></li>
+<li><a href="#fwer-005">트리거 비교(목표 FWER α=0.05)</a></li>
+<li><a href="#d_lat3">수리 규칙 비교(d_lat=3)</a></li>
+<li><a href="#_11">소거 및 민감도</a></li>
+</ul>
+</li>
+<li><a href="#_12">경계 및 한계</a></li>
+<li><a href="#_13">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation</h1>
+      <p class="entry-name-en">MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span><span class="tag">평가 및 벤치마크</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.11337v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1157 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation is a 2026 work on simulation benchmark for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.11337" target="_blank" rel="noopener">MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>MolmoSpaces는 기존 로봇 벤치마크에서 장면 레이아웃, 객체 기하학 및 작업 사양의 다양성이 부족한 문제를 해결하고, 대규모 시뮬레이션 인프라를 통해 물리적 평가의 한계를 보완하는 것을 목표로 합니다. 이 생태계는 23만 개의 실내 환경을 포함하며, 수작업으로 제작된 가정용 장면과 절차적으로 생성된 다중 방 주거 공간을 아우르고, 13만 개의 풍부한 주석이 달린 객체 자산을 갖추고 있으며, 그중 4.8만 개의 조작 가능한 객체는 4200만 개의 안정적인 파지 자세를 보유합니다. 시스템은 MuJoCo, Isaac 및 ManiSkill과 같은 주요 시뮬레이터를 지원하며, 정적 조작, 이동 조작, 내비게이션 및 다중 방 장기 시간 작업을 포괄합니다. 함께 제공되는 MolmoSpaces-Bench 벤치마크 스위트는 8가지 작업을 포함하며, 실험 결과 실제 세계와의 상관관계가 매우 높고 제로샷 정책의 성능 차이를 효과적으로 평가할 수 있음을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법</h3>
+<p>MolmoSpaces는 모듈식 아키텍처를 채택하며, 핵심 구성 요소는 다음과 같습니다:
+- <strong>환경 생성기</strong>: 절차적 규칙과 수작업 템플릿을 기반으로 단일 방에서 다중 방 레이아웃까지 23만 개의 다양한 실내 장면을 생성합니다.
+- <strong>객체 자산 라이브러리</strong>: 의미론, 기하학 및 물리 주석이 포함된 13만 개의 객체를 포함하며, 그중 4.8만 개의 조작 가능한 객체는 MuJoCo 시뮬레이션 검증을 기반으로 4200만 개의 안정적인 파지 자세를 사전 계산했습니다.
+- <strong>시뮬레이터 추상화 계층</strong>: 통합 인터페이스를 통해 MuJoCo, Isaac Sim 및 ManiSkill을 지원하여 정책이 서로 다른 시뮬레이터 간에 이식 가능하도록 보장합니다.</p>
+<h3 id="_4">작업 및 벤치마크</h3>
+<p>MolmoSpaces-Bench는 8가지 구현 작업을 포함하며, 세 가지 범주로 나뉩니다:
+- <strong>정적 조작</strong>: 테이블 위 파지, 객체 재배치
+- <strong>이동 조작</strong>: 목표 지점까지 내비게이션 후 파지, 문 열고 통과
+- <strong>장기 시간 작업</strong>: 다중 방 청소, 물건 제자리 배치(인식, 계획 및 상호작용의 조정 필요)</p>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>정책 평가</strong>: CLIPort, RT-2 등을 포함한 5가지 제로샷 정책을 테스트하고, 8가지 작업에서 성공률과 실행 시간을 기록했습니다.</li>
+<li><strong>Sim-to-Real 검증</strong>: 실제 로봇 플랫폼에서 3가지 작업을 재현하고, 시뮬레이션과 실제 결과 간의 Pearson 상관계수 R=0.96 및 Spearman 순위 상관계수 ρ=0.98을 계산했습니다.</li>
+<li><strong>민감도 분석</strong>: 프롬프트 문구 변화로 성공률 변동이 최대 12% 발생하고, 초기 관절 각도 편차가 5°를 초과하면 성능이 18% 하락하며, 카메라 가림이 시야의 30%를 초과하면 작업 실패율이 45%로 상승함을 발견했습니다.</li>
+</ul>
+<h3 id="_6">핵심 결론</h3>
+<ol>
+<li>더 새롭고 강력한 제로샷 정책(예: RT-2 2025 버전)은 MolmoSpaces-Bench에서 이전 버전(2024 버전)보다 평균 23%의 성공률 향상을 보였습니다.</li>
+<li>시뮬레이션 결과는 실제 세계와 높은 일치도를 보여 벤치마크의 신뢰성을 검증했습니다.</li>
+<li>정책은 입력 세부 사항에 민감하며, 프롬프트 최적화와 초기 자세 보정은 성능을 크게 향상시킬 수 있습니다.</li>
+</ol>
+<h3 id="_7">오픈소스 리소스</h3>
+<p>MolmoSpaces는 환경 생성 스크립트, 객체 자산 라이브러리, 시뮬레이터 어댑터 및 벤치마크 평가 코드를 포함한 완전한 오픈소스 도구 체인을 제공하며, 확장 가능한 데이터 생성과 정책 훈련을 지원합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_maniskill/">ManiSkill</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_shridhar_cliport_what_and_where_pathway_2021/">CLIPort: What and Where Pathways for Robotic Manipulation</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_molmospaces_a_large_scale_open_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">벤치마크</span>
+          <h3>ManiSkill</h3>
+          <p>일반화 가능한 조작 기술을 위한 통합 벤치마크로, 표준화된 과제·시뮬레이션 환경·평가 프로토콜을 제공.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shridhar_cliport_what_and_where_pathway_2021/">
+          <span class="entry-type">논문</span>
+          <h3>CLIPort: What and Where Pathways for Robotic Manipulation</h3>
+          <p>CLIPort: What and Where Pathways for Robotic Manipulation (CLIPort), is a 2021 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법</a></li>
+<li><a href="#_4">작업 및 벤치마크</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">핵심 결론</a></li>
+<li><a href="#_7">오픈소스 리소스</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

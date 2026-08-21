@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodied AI · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodied AI</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodied AI</h1>
+      <p class="entry-name-en">GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodied AI</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Data-driven embodied AI is rapidly transitioning into a paradigm that scales training through massively parallel simulation, where GPU-accelerated simulators serve as the foundational data infrastructure. However, as computational throughput scales, the underlying trade-offs between parallel efficiency, physical fidelity, and execution determinism remain largely unexamined, hindering the.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13059" target="_blank" rel="noopener">arXiv:2607.13059 GPUSimBench: Towards Scalable and Reliable GPU-Accelerated Simulators in Embodie</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>GPUSimBench는 저자 팀이 제안한, 임베디드 인텔리전스 GPU 가속 시뮬레이터를 위한 표준화된 벤치마크로, 주요 시뮬레이터(Isaac Lab, Genesis, Madrona, ManiSkill, MJX, MuJoCo Warp, Playground)를 병렬 확장성, 물리 일관성, 계산 결정성의 세 가지 차원에서 체계적으로 평가합니다. 핵심 기여는 '병렬 변동성'과 '실행 간 변동성'을 시뮬레이터 평가의 독립 지표로 처음 도입하고, 서로 다른 프로그래밍 추상화(배열형, 커널형, 태스크 중심, ECS)가 시뮬레이션 신뢰성에 미치는 근본적 영향을 밝힌 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>과거 GPU 시뮬레이터 평가는 거의 전적으로 태스크 수준 성공률이나 최대 처리량에 집중했으며, 병렬 실행은 단지 '더 빠른 순차 시뮬레이션'일 뿐이라고 기본적으로 가정했습니다. GPUSimBench는 이러한 인식 체계를 바꿉니다. GPU 배치 실행이 투명한 가속 계층이 아니라 두 가지 독립적인 비결정성을 도입한다는 것을 증명합니다. 즉, 동일 배치 내 서로 다른 환경 간 결과 발산(병렬 변동성)과 동일 시드 하에서 여러 번 실행할 때의 분포 이동(실행 간 변동성)입니다. 이 두 변동성의 조합은 시뮬레이터가 엄격한 재현성을 요구하는 과학 실험이나 정책 평가에 사용될 수 있는지를 직접 결정합니다.</p>
+<p>더 중요하게, 이 벤치마크는 '물리 일관성'을 정성적 논의에서 정량적 지표로 전환합니다. 통제된 경사면 충돌 태스크를 통해 물리 단위(센티미터)의 EMD(earth mover's distance)로 시뮬레이션 분포와 실제 세계 분포의 편차를 측정합니다. 이는 시뮬레이터 개발자가 이전에 회피했던 문제, 즉 병렬화로 인한 수치적 섭동이 단순한 무작위 노이즈가 아니라 접촉 역학 거동을 체계적으로 변화시킨다는 사실을 직면하게 만듭니다. 예를 들어 Madrona는 XPBD 솔버의 마찰력 부족으로 EMD가 211.60±2.22cm에 달하는 반면, ManiSkill은 2.520±0.000cm에 불과하여 두 시뮬레이터 간에 두 자릿수 차이가 발생합니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">벤치마크 아키텍처</h3>
+<p>GPUSimBench는 평가를 세 개의 직교 차원으로 분해하며, 각 차원에는 독립적인 프로토콜이 있습니다:
+- <strong>확장성</strong>: 자유 낙하 큐브 배열(3×3×3)과 Franka 로봇 팔 무작위 동작(자체 충돌 포함) 두 시나리오에서 서로 다른 병렬 환경 수 N_env에 따른 처리량(FPS = (N_env × N_step) / T_step)과 최대 메모리 증가량(M_usage = M_peak − M_base)을 측정합니다.
+- <strong>물리 일관성</strong>: 경사면 충돌 태스크(경사각 20°, 큐브 모서리 길이 0.02m, 질량 0.005kg)를 설계하고, N_env=16 병렬 환경과 K=16회 실제 실험에서 t_s=5.0s 시점의 모든 큐브 xy 위치를 기록하고, 육각형 빈과 로그 밀도 매핑(D_b = log10(max(c_b, 1)))으로 분포를 시각화합니다.
+- <strong>결정성</strong>: R=10회 독립 실행을 통해 네 가지 무작위성 유형(Type 1–4)을 구분하며, 병렬 변동성(W̄1^parallel)과 실행 간 변동성(W̄1^run-to-run)의 유무 조합으로 정의됩니다.</p>
+<h3 id="_5">핵심 측정 공식</h3>
+<ul>
+<li><strong>병렬 변동성</strong>: 할당 기반 EMD, W1(e,e') = min_{π∈S_n} (1/n) Σ ||x_{e,i} − x_{e',π(i)}||_2, 평균 쌍별 EMD W̄1^parallel로 요약됩니다.</li>
+<li><strong>실제 세계 정렬</strong>: 시뮬레이션과 실제 분포 간 물리 단위 EMD, d_EMD,phys^sim = W1^phys(X^sim, X^real), 위치는 cm 단위입니다.</li>
+<li><strong>실행 간 변동성</strong>: R회 독립 실행의 집계 분포 간 평균 쌍별 EMD W̄1^run-to-run.</li>
+</ul>
+<h3 id="_6">실험 통제</h3>
+<p>통일된 시뮬레이션 시간 간격 Δt=0.01s, 100스텝 워밍업(JIT 컴파일 또는 시나리오 초기화), 1000스텝 내에서 FPS와 메모리를 측정합니다. 고정된 무작위 시드를 사용하고 태스크 수준 무작위화를 비활성화하여 수치 및 실행 수준 효과를 분리합니다. 물리 파라미터(마찰 계수, 반발 계수)는 전문 실험실 시설을 통해 식별됩니다. 예를 들어 지면 정지 마찰 0.65, 동적 마찰 0.45, 반발 계수 0.40; 경사면 정지 마찰 0.35, 동적 마찰 0.25, 반발 계수 0.40입니다.</p>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>결정성을 '전부 또는 전무'에서 네 가지 메커니즘으로 세분화</strong>: 이전에는 시뮬레이터가 단순히 '결정적' 또는 '비결정적'으로 표시되었지만, GPUSimBench는 병렬 변동성과 실행 간 변동성의 조합을 통해 Type 1(둘 다 없음, Isaac Lab, ManiSkill), Type 2(병렬 변동성만 있음, Genesis, MJX), Type 3(둘 다 있음, Madrona, MuJoCo Warp), Type 4(실행 간 변동성만 있음, Playground)를 구분합니다. 이 분류는 기본 실행 모델과 직접적으로 대응합니다. 예를 들어 MJX의 XLA 컴파일은 배치 내 일관성을 보장하지만 실행 간 JIT 재컴파일 차이가 있고, Madrona의 ECS 아키텍처는 배치 내에서도 스레드 스케줄링 비결정성이 존재합니다.</p>
+</li>
+<li>
+<p><strong>물리 일관성을 센티미터 단위 EMD로 정량화</strong>: 시뮬레이션과 실제 세계의 분포 정렬을 태스크 성공률이나 궤적 오류가 아닌 물리 단위(cm)의 EMD로 처음 측정합니다. 이를 통해 서로 다른 시뮬레이터 간 물리 충실도를 직접 비교할 수 있고 결과를 해석할 수 있습니다. 예를 들어 Madrona의 211.60±2.22cm는 큐브가 나무 판에서 안정적으로 감속하지 못해 큰 평면 드리프트가 발생함을 의미하며, 이는 XPBD 솔버의 마찰력 모델링 부족의 직접적인 결과입니다.</p>
+</li>
+<li>
+<p><strong>시뮬레이터 간 분류 평가 프레임워크</strong>: 시뮬레이터를 프로그래밍 추상화에 따라 네 가지 유형(배열+XLA, 고급 커널, 태스크 중심, ECS)으로 분류하고, 추상화 선택과 결정성/물리 충실도 간의 연관성을 밝힙니다. 예를 들어 배열형(MJX, Playground)은 낮은 병렬 변동성을 보이는 경향이 있지만 실행 간 차이가 있을 수 있고, 태스크 중심(Isaac Lab, ManiSkill)은 물리 일관성에서 최상의 성능을 보입니다(EMD 각각 5.400±0.000cm 및 2.520±0.000cm).</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<p>실험은 단일 하드웨어 플랫폼(13th Gen Intel i5-13400F CPU, 32 GB RAM, NVIDIA GeForce RTX 5070 GPU with 12 GB memory)에서 7개 시뮬레이터를 평가했습니다. 병렬 능력 벤치마크는 각 시뮬레이터에 대해 10회 독립 실행을 반복했고, 경사면 충돌 벤치마크는 10회 독립 실행의 평균±표준편차를 보고했습니다.</p>
+<p><strong>병렬 능력 핵심 결과</strong>(자유 낙하 시나리오, N_env^max는 최대 병렬 환경 수):</p>
+<table>
+<thead>
+<tr>
+<th>시뮬레이터</th>
+<th>N_env^max</th>
+<th>FPS (×10^4)</th>
+<th>메모리 (GB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Genesis</td>
+<td>2^11</td>
+<td>2.233712</td>
+<td>7.75</td>
+</tr>
+<tr>
+<td>Isaac Lab</td>
+<td>2^12</td>
+<td>47.189328</td>
+<td>3.34</td>
+</tr>
+<tr>
+<td>Madrona</td>
+<td>2^18</td>
+<td>48.107876</td>
+<td>9.53</td>
+</tr>
+<tr>
+<td>ManiSkill</td>
+<td>2^12</td>
+<td>7.374857</td>
+<td>8.34</td>
+</tr>
+<tr>
+<td>MJX</td>
+<td>2^9</td>
+<td>0.534038</td>
+<td>10.61</td>
+</tr>
+<tr>
+<td>MuJoCo Warp</td>
+<td>2^11</td>
+<td>16.600347</td>
+<td>5.87</td>
+</tr>
+<tr>
+<td>Playground</td>
+<td>2^8</td>
+<td>0.003472</td>
+<td>8.89</td>
+</tr>
+</tbody>
+</table>
+<p><strong>경사면 충돌 물리 일관성 결과</strong>(d_EMD,phys^sim는 시뮬레이션과 실제 분포 간 EMD, 단위 cm):</p>
+<table>
+<thead>
+<tr>
+<th>시뮬레이터</th>
+<th>d_EMD,phys^sim</th>
+<th>W̄1^parallel</th>
+<th>W̄1^run-to-run</th>
+<th>유형</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Isaac Lab</td>
+<td>5.400±0.000</td>
+<td>4.21±0.00</td>
+<td>0.00±0.00</td>
+<td>Type 1</td>
+</tr>
+<tr>
+<td>ManiSkill</td>
+<td>2.520±0.000</td>
+<td>4.76±0.00</td>
+<td>0.00±0.00</td>
+<td>Type 1</td>
+</tr>
+<tr>
+<td>Genesis</td>
+<td>4.780±0.000</td>
+<td>0.00±0.00</td>
+<td>0.00±0.00</td>
+<td>Type 2</td>
+</tr>
+<tr>
+<td>MJX</td>
+<td>3.970±0.000</td>
+<td>0.00±0.00</td>
+<td>0.00±0.00</td>
+<td>Type 2</td>
+</tr>
+<tr>
+<td>Madrona</td>
+<td>211.60±2.22</td>
+<td>32.53±1.86</td>
+<td>11.47±1.40</td>
+<td>Type 3</td>
+</tr>
+<tr>
+<td>MuJoCo Warp</td>
+<td>4.230±0.740</td>
+<td>4.55±1.39</td>
+<td>2.15±0.82</td>
+<td>Type 3</td>
+</tr>
+<tr>
+<td>Playground</td>
+<td>3.380±0.110</td>
+<td>0.00±0.00</td>
+<td>1.39±0.47</td>
+<td>Type 4</td>
+</tr>
+</tbody>
+</table>
+<p>결과 의미: ManiSkill과 MJX는 가장 낮은 EMD(2.520±0.000cm 및 3.970±0.000cm)를 달성하여 최선의 파라미터 매칭 하에서 실제 물리 분포와 가장 잘 정렬됨을 보여줍니다. Madrona의 EMD는 비정상적으로 높고(211.60±2.22cm), 병렬 변동성(32.53±1.86cm)과 실행 간 변동성(11.47±1.40cm) 모두 유의미하여 솔버의 접촉 모델링에 체계적 결함이 있음을 시사합니다. Isaac Lab은 물리 일관성이 중간 수준(5.400±0.000cm)이지만, 병렬 변동성(4.21±0.00cm)은 배치 내 환경 간 수치 발산이 있음을 나타내며, 실행 간에는 완전히 결정적입니다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<p>논문 결론 부분(VII Conclusion and Limitation)은 잘려 있어 완전한 한계 설명은 제공되지 않았습니다. 문맥에서 추론할 수 있는 경계는 다음과 같습니다: CPU 병렬만 지원하거나 GPU 가속을 부분적으로만 사용하는 시뮬레이터(예: Gazebo, PyBullet)는 고려하지 않았습니다. 모든 가능한 실제-시뮬레이션 분포 실험을 포함하지 않았습니다(예: 주사위 던지기 관절 자세 분포와 가우스 구 던지기 분포 실험은 공간 제약으로 생략되었으며 프로젝트 웹사이트에 게시될 예정). 물리 파라미터(마찰 계수, 반발 계수)는 전문 실험실 시설을 통해 식별된 근사값이며, EMD 값은 최선의 파라미터 매칭 하에서 측정 기준과의 분포 수준 일관성으로 해석되어야 합니다. 또한 벤치마크는 두 개의 확장성 시나리오와 하나의 접촉이 풍부한 실제 세계 매칭 실험만을 다루며, 모두 단일 하드웨어 및 소프트웨어 스택에서 수행되어 보고된 성능과 변동성은 GPU, 드라이버, 시뮬레이터 버전에 따라 달라질 수 있습니다. 현재 벤치마크는 변형체 역학, 유체 시뮬레이션, 인식 및 센서 렌더링의 영향을 포함하지 않습니다.</p>
+<h2 id="_10">엔지니어링 시사점</h2>
+<p>GPUSimBench를 재현할 때 먼저 시뮬레이터 버전과 하드웨어 구성을 확인하십시오. 논문은 ManiSkill v3.0.0b22, Genesis v0.3.11, MJX (MuJoCo v3.4.0), MujocoPlayground v0.1.0, IsaacLab v2.2.1을 사용했으며, 모두 각 저장소의 메인 브랜치에서 가져왔습니다. 버전 차이는 결과를 크게 바꿀 수 있습니다. 가장 흔한 함정은 워밍업 스텝 수입니다. 100스텝 워밍업(JIT 컴파일 또는 시나리오 초기화용)을 엄격히 수행해야 합니다. 그렇지 않으면 MJX 및 Playground와 같은 XLA 컴파일 의존 시뮬레이터가 측정 창에 컴파일 오버헤드를 포함하여 FPS가 심각하게 과소평가됩니다.</p>
+<p>다운스트림 팀의 선택을 위해 태스크 요구 사항에 따라权衡하는 것이 좋습니다: 엄격한 재현성을 요구하는 과학 실험(예: 정책 평가 비교)이 필요하면 Type 1 시뮬레이터(Isaac Lab, ManiSkill)를 우선 선택하십시오. 실행 간 변동성이 0.00±0.00cm입니다. 최대 병렬 처리량을 추구하고 배치 내 발산을 수용할 수 있다면 Madrona는 자유 낙하 시나리오에서 N_env^max=2^18 및 FPS=48.107876×10^4를 달성하지만 물리 일관성 결함(EMD 211.60±2.22cm)에 주의해야 합니다. 접촉이 풍부한 조작 태스크의 경우 ManiSkill의 물리 일관성(2.520±0.000cm)과 결정성 조합이 최적이지만 병렬 확장 상한(2^12)은 Madrona보다 낮습니다. 물리 충실도와 병렬 능력 간 균형이 필요하면 MuJoCo Warp는 중간 EMD(4.230±0.740cm)와 높은 병렬 상한(2^11)을 제공하지만 두 유형의 변동성이 모두 존재함을 수용해야 합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">평가 대상</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_maniskill/">ManiSkill</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_gpusimbench_scalable_reliable_gpu_accele_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_maniskill/">
+          <span class="entry-type">벤치마크</span>
+          <h3>ManiSkill</h3>
+          <p>일반화 가능한 조작 기술을 위한 통합 벤치마크로, 표준화된 과제·시뮬레이션 환경·평가 프로토콜을 제공.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">벤치마크 아키텍처</a></li>
+<li><a href="#_5">핵심 측정 공식</a></li>
+<li><a href="#_6">실험 통제</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

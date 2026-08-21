@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DiMaS: Distribution Matching for Steering Vision-Language-Action Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DiMaS: Distribution Matching for Steering Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>DiMaS: Distribution Matching for Steering Vision-Language-Action Models</h1>
+      <p class="entry-name-en">DiMaS: Distribution Matching for Steering Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>DiMaS 提出一种基于最优传输的激活工程方法，用于对 flow-matching 型视觉-语言-动作模型（VLA）进行细粒度行为控制。作者通过将动作专家内部表征从“缺乏目标特征”分布传输到“具有目标特征”分布，在不重新训练的情况下双向调制机器人运动速度与末端执行器垂直位移，并验证了跨任务、跨套件的泛化能力。核心贡献在于揭示了经典线性引导在 VLA 中失效的原因，并提供了分布级干预的可行方案。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14280" target="_blank" rel="noopener">arXiv:2607.14280 DiMaS: Distribution Matching for Steering Vision-Language-Action Models</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>VLA 模型的行为控制长期停留在提示工程或策略微调层面，而激活工程（activation engineering）在 LLM 中已被证明有效，但直接迁移到 VLA 时遭遇了根本性障碍。作者用实验证明，均值差引导和回归引导这两种经典表征干预在 flow-matching 型 VLA 中不仅失效，甚至会出现“增减干预朝同一方向移动特征”的反常现象。这并非简单的超参数问题，而是源于动作专家表征空间的分布结构——特征缺失与特征存在群体并非线性可分，导致基于均值或回归方向的线性扰动无法精确对准目标方向。</p>
+<p>DiMaS 真正改变的是干预的数学形式：从“沿单一方向推动表征”升级为“在两个分布之间建立最优传输映射”。这一转变使得干预不再依赖表征空间的全局线性结构，而是通过局部传输计划实现精确的特征调制。更重要的是，作者将干预位置从 VLM 主干转移到动作专家网络，并证明动作专家深层表征对目标特征几乎完全线性可分（准确率接近 100%），这为干预提供了比 VLM 更干净的操作空间。该工作首次系统性地回答了“VLA 内部表征如何被安全地定向修改”这一核心问题。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">问题形式化</h3>
+<p>将干预建模为源分布 D⁻（特征缺失）到目标分布 D⁺（特征存在）的最优传输问题。给定经验样本 X⁻={z⁻ᵢ}ₙᵢ₌₁ 与 X⁺={z⁺ⱼ}ₘⱼ₌₁，求解离散 Kantorovich 目标：
+min_γ Σᵢⱼ γᵢⱼ ‖z⁻ᵢ − z⁺ⱼ‖²，边际约束 γ1ₘ = 1/n·1ₙ，γᵀ1ₙ = 1/m·1ₘ。</p>
+<h3 id="sinkhorn">低秩 Sinkhorn 求解</h3>
+<ul>
+<li>传输计划分解为 T = Q·diag(g⁻¹)·Rᵀ，其中 Q ∈ R₊ⁿˣʳ，R ∈ R₊ᵐˣʳ，秩 r ≪ min(n,m)。</li>
+<li>加入熵正则项 −εH(T)，ε=10⁻⁴，通过 Python Optimal Transport (POT) 包实现。</li>
+<li>时间复杂度 O((n+m)·r·K)，K 为迭代次数；单套件 50 回合训练数据约 3,500 样本/分布，离线求解约 85 分钟。</li>
+</ul>
+<h3 id="_4">测试时干预</h3>
+<ol>
+<li>从动作专家第 ℓ 层（倒数第二层）提取残差流表征 h。</li>
+<li>通过最近邻投影 P(h) = arg min_{z∈D⁻} ‖z−h‖ 将 h 投影到源分布。</li>
+<li>应用传输映射 T∘P(h)。</li>
+<li>线性探针门控 g(h)∈{0,1} 仅在特征缺失时激活干预。</li>
+<li>插值合成：h ← (1−α)h + α(T∘P(h))，默认 α=0.5。</li>
+</ol>
+<h3 id="_5">关键设计决策</h3>
+<ul>
+<li><strong>尾部阈值分割</strong>：使用下分位数 q₀.₂₅ 与上分位数 q₀.₇₅ 划分源/目标分布，而非中位数，以获得更干净的特征缺失/存在群体。</li>
+<li><strong>干预动作专家而非 VLM</strong>：动作专家深层线性可分性 &gt;93%（flow-matching 步骤 0），而 VLM 最高仅 87%。</li>
+<li><strong>插值而非完全传输</strong>：α=1 时完全传输引入偏差导致任务失败，插值可在控制特征的同时最小化成功率下降。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>分布级干预替代线性引导</strong>：首次将最优传输引入 VLA 激活工程，解决了线性方法在 flow-matching 架构中失效的问题。均值差和回归引导依赖表征空间的全局线性结构，而 DiMaS 通过局部传输计划实现精确调制，这是方法论层面的根本转变。</p>
+</li>
+<li>
+<p><strong>动作专家作为干预靶点</strong>：作者证明动作专家深层表征对行为特征几乎完全线性可分（准确率接近 100%），而 VLM 表征可分性最高仅 87%。选择动作专家不仅提高了干预精度，还避免了 VLM 中语义与动作表征混杂的问题。</p>
+</li>
+<li>
+<p><strong>插值机制实现安全干预</strong>：完全传输（α=1）会导致成功率急剧下降（如 π0.5 在 LIBERO-Object 上从 98% 降至 0%），而 α=0.5 的插值在保持成功率的同时实现特征调制。这一设计将干预从“全有或全无”变为可调节的连续控制，为实际部署提供了安全操作空间。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="2">速度调制（图 2）</h3>
+<p>DiMaS 在 SmolVLA 和 π0.5 上均能双向调制速度，而线性引导和提示基线表现不一致。调制速度时成功率基本保持，但调制垂直位移时成功率下降明显。</p>
+<h3 id="4">泛化实验（图 4，减速方向）</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>套件</th>
+<th>基线 SR</th>
+<th>Setting 1</th>
+<th>Setting 2</th>
+<th>Setting 3</th>
+<th>Setting 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π0.5</td>
+<td>Object</td>
+<td>98.0%</td>
+<td>99.5%</td>
+<td>97.0%</td>
+<td>100.0%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>Spatial</td>
+<td>97.0%</td>
+<td>91.5%</td>
+<td>95.0%</td>
+<td>96.0%</td>
+<td>92.0%</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>Goal</td>
+<td>91.0%</td>
+<td>92.0%</td>
+<td>86.0%</td>
+<td>86.0%</td>
+<td>93.0%</td>
+</tr>
+<tr>
+<td>SmolVLA</td>
+<td>Object</td>
+<td>89%</td>
+<td>64%</td>
+<td>70%</td>
+<td>76%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>SmolVLA</td>
+<td>Spatial</td>
+<td>71%</td>
+<td>54%</td>
+<td>52%</td>
+<td>58%</td>
+<td>55%</td>
+</tr>
+<tr>
+<td>SmolVLA</td>
+<td>Goal</td>
+<td>81%</td>
+<td>52%</td>
+<td>46%</td>
+<td>26%</td>
+<td>55%</td>
+</tr>
+</tbody>
+</table>
+<p>π0.5 在多数设置下保持成功率，而 SmolVLA 成功率下降显著，反映动作块策略差异（SmolVLA 每步预测新块更动态，π0.5 一次预测 10 个动作更平滑鲁棒）。</p>
+<h3 id="5libero-1005">长时程任务（图 5，LIBERO-10，π0.5 减速）</h3>
+<table>
+<thead>
+<tr>
+<th>α</th>
+<th>Δmean</th>
+<th>SR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.5</td>
+<td>−0.024</td>
+<td>90.0%</td>
+</tr>
+<tr>
+<td>0.6</td>
+<td>—</td>
+<td>81.0%</td>
+</tr>
+<tr>
+<td>0.7</td>
+<td>—</td>
+<td>72.0%</td>
+</tr>
+<tr>
+<td>0.8</td>
+<td>—</td>
+<td>46.0%</td>
+</tr>
+<tr>
+<td>0.9</td>
+<td>—</td>
+<td>7.0%</td>
+</tr>
+</tbody>
+</table>
+<p>α 增大时速度降低但成功率急剧下降，验证插值必要性。</p>
+<h3 id="6">线性可分性分析（图 6）</h3>
+<p>动作专家中表征几乎完全线性可分（接近 100%），flow-matching 步骤 0 时较深层可分性 &gt;93%，高于 VLM 任何层（最大 87%）。</p>
+<h3 id="7">α 消融（图 7）</h3>
+<p>π0.5 在 α=0.5 后成功率才下降，SmolVLA 更早且更不规则退化；α=0.5 为默认操作点。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>调制垂直位移时成功率显著下降，该特征与任务完成紧密耦合（如 LIBERO-Object 中减小垂直位移使末端执行器过低无法放入物体）。</li>
+<li>当前干预对所有时间步一视同仁，未区分平移与纯旋转阶段；作者承认“何时干预”应成为学习目标。</li>
+<li>动作块策略中每个隐藏表征与输出动作的对应关系是近似的，一个输出动作受块中多个表征影响，按精确对应分组只是近似。</li>
+<li>LIBERO-Goal 是最难套件，任务行为多样导致引导效果较弱；跨套件迁移到 Goal 时 π0.5 的均值移动未达到 p&lt;0.01 显著性（p=0.032）。</li>
+<li>层选择 ℓ 是唯一依赖底层 VLA 的超参数，作者使用倒数第二层但未系统研究最优层如何随基础模型变化。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<p>复现 DiMaS 时首先核对三个关键点：一是分布划分的分位数设置（q₀.₂₅/q₀.₇₅），尾部阈值直接影响源/目标分布的分离质量；二是低秩 Sinkhorn 的秩 r 与正则化 ε，默认 r=min(n,m)、ε=10⁻⁴，秩过低会丢失传输细节；三是插值系数 α，默认 0.5 但需根据模型和任务调整——SmolVLA 对 α 更敏感，建议从 0.3 开始扫描。</p>
+<p>最容易踩坑的地方是干预层选择。作者使用倒数第二层，但不同 VLA 的动作专家层数差异大（π0.5 有 17 层，SmolVLA 层数不同），直接套用可能失效。建议先做线性可分性扫描（类似图 6），选择可分性最高的层。另一个陷阱是门控分类器的训练：线性探针需在源/目标分布上分别采样，样本量不足（少于 3,500）会导致门控误判，建议至少 50 回合训练数据。</p>
+<p>下游团队若要将 DiMaS 用于实际机器人控制，需注意干预的推理开销：最坏情况（10 个 flow-matching 步骤全部触发）每时间步增加 6.2 ms，约占 50 ms 动作预算的 12%。对于实时性要求高的场景，可考虑仅在部分 flow-matching 步骤施加干预以降低开销。此外，增加方向（更快、更高）比减少方向更难实现，因为成功轨迹自然减速并降低末端执行器，干预在放大策略已有倾向时最有效。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.14280</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_dimas_distribution_matching_steering_vis_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SmolVLA</h3>
+          <p>SmolVLA 是 Hugging Face、Sorbonne University、valeo.ai 与 École Normale Supérieure Paris-Saclay 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题形式化</a></li>
+<li><a href="#sinkhorn">低秩 Sinkhorn 求解</a></li>
+<li><a href="#_4">测试时干预</a></li>
+<li><a href="#_5">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#2">速度调制（图 2）</a></li>
+<li><a href="#4">泛化实验（图 4，减速方向）</a></li>
+<li><a href="#5libero-1005">长时程任务（图 5，LIBERO-10，π0.5 减速）</a></li>
+<li><a href="#6">线性可分性分析（图 6）</a></li>
+<li><a href="#7">α 消融（图 7）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

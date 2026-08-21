@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation</h1>
+      <p class="entry-name-en">X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Distillation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): xiaoze_P128. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] guardrail fix: unverifiable numbers corrected to full-text-verbatim or marked as computed/未提取 (catchup sweep audit). 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>While recent advances have demonstrated strong performance in individual humanoid skills such as upright locomotion, fall recovery and whole-body coordination, learning a single policy that masters all these skills remains challenging due to the diverse dynamics and conflicting control objectives involved. To address this, we introduce X-Loco, a framework for training a vision-based generalist.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2603.03733" target="_blank" rel="noopener">arXiv:2603.03733 X-Loco: Towards Generalist Humanoid Locomotion Control via Synergetic Policy Dis</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>X-Loco는 세 가지 특권 전문가 정책(직립 보행, 낙상 회복, 전신 협응)을 단일 시각 학생 정책으로 통합하는 협력 증류 프레임워크를 제안하며, Unitree G1 휴머노이드 로봇에서 참조 동작 없이 범용 운동 제어를 구현한다. 핵심 기여는 CASS 동적 전문가 선택, SAR 어닐링 혼합, SFI 무작위 낙상 주입을 통해 전문가 능력과 범용 정책 간의 격차를 해소하고, 시뮬레이션 및 실제 환경에서 교차 작업 일반화 능력을 검증한 것이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 휴머노이드 운동 제어 연구는 오랫동안 "파편화" 상태에 머물러 있었다. 어떤 방법은 지형 횡단에 특화되고, 어떤 방법은 낙상 회복에 특화되었지만, "낙상 후 자율적으로 기어 일어나 복잡한 지형을 계속 횡단하는" 복합 시나리오를 동시에 처리할 수 있는 단일 프레임워크는 없었다. X-Loco가 실제로 바꾼 것은 "전문가 능력 통합"을 수작업 보상 설계의 한계에서 해방시킨 것이다. 더 이상 하나의 정책이 모든 기술을 학습하도록 강요하지 않고, 증류 메커니즘을 통해 범용 정책이 여러 전문가의 행동 패턴을 상속받도록 한다.</p>
+<p>이 전환의 심층적 의미는 "범용성"과 "전문성" 사이의 긴장이 단일 정책의 용량 확장으로 해결될 수 없음을 인정하고, 대신 아키텍처 설계(MoE)와 훈련 스케줄링(SAR 어닐링)을 통해 조화를 모색한다는 점이다. BeyondMimic 등 참조 동작에 의존하는 방법과 달리, X-Loco는 참조 동작 없이 전신 협응 기술(예: 등반, 구르기)을 구현하여 범용 휴머노이드 제어가 "알려진 것을 모방"에서 "알려진 것을 조합"으로 패러다임 전환을 이루었음을 보여준다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">전문가 정책 훈련</h3>
+<ul>
+<li><strong>π_l(직립 보행)</strong>: 히스토리 인코더(10스텝 윈도우)와 고도 지도 인코더 사용, AMP 스타일 보상 가중치 3.0, 속도 추적 가중치 5.0, 생존 보상 2.0. 참조 동작은 LAFAN1 데이터셋 리타겟팅에서 가져옴.</li>
+<li><strong>π_r(낙상 회복)</strong>: 지형 정보를 무시하고 히스토리 인코더와 액터만 사용, 앙와위/복와위 자세로 초기화하고 큰 관절 노이즈 주입. AMP 보상 가중치 최대 80.0, 각속도 패널티 25.0, 고관절 편차 패널티 -10.0, 대퇴 방향 보상 10.0.</li>
+<li><strong>π_w(전신 협응)</strong>: 고도 지도 인코더(1.6m×1.0m 그리드, 0.1m 해상도) 사용, 박스 등반 및 구르기 등 전신 동작 추적, 보상 함수에 신체 위치/자세/속도 추적 및 앵커 제약 포함.</li>
+</ul>
+<h3 id="_5">협력 증류 메커니즘</h3>
+<ul>
+<li><strong>CASS 선택</strong>: 머리 높이 b_t와 지형 컨텍스트 I_t를 기반으로 전문가 선택. b_t &lt; 1.1m → π_r; b_t ≥ 1.1m 및 I_t=1(높은 플랫폼) → π_w; I_t=2(매달린 장애물) → π_w; 그 외 → π_l.</li>
+<li><strong>SAR 혼합</strong>: a_env = b_t·a*<em g_t="g,t">t + (1−b_t)·π_g(o</em>), 여기서 b_t ~ Bernoulli(ρ). ρ는 초기 1.0, 증류 손실 &lt; 0.005일 때 1e−4씩 감소, 손실 &gt; 0.010일 때 감소 일시 중지(히스테리시스 구간).</li>
+<li><strong>SFI 주입</strong>: 취약한 시나리오(고속 회전, 구르기)에서 무작위 외력을 가해 로봇이 회복 상태에 들어가도록 강제. 추가 종료 조건: 머리 높이 버퍼 분산이 임계값 δ 미만일 때 에피소드 종료, OOD 데이터 오염 방지.</li>
+</ul>
+<h3 id="_6">학생 정책 아키텍처</h3>
+<ul>
+<li>MoE 아키텍처: 게이팅 네트워크 + 3개 전문가(모두 3층 MLP [512, 256, 128])</li>
+<li>CNN 깊이 인코더: 64×64 깊이 맵 → 128차원 잠재 표현</li>
+<li>히스토리 인코더: 10스텝 고유수용감각 시퀀스 → 128차원</li>
+<li>증류 손실: ℒ_distill = MSE(π_g(o_{u,t}), a*_t)</li>
+</ul>
+<h3 id="sim-to-real">심층 sim-to-real 브리징</h3>
+<ul>
+<li>다단계 파이프라인: 가산 가우시안 노이즈(σ=0.02m), 가우시안 필터(3×3 커널, σ=1.0), 카메라 외부 파라미터 무작위화(위치 ±0.05m, 피치 ±10°), FOV 무작위화(±10°)</li>
+<li>실제 깊이 이미지에 홀 필링 및 가우시안 필터 적용</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>CASS 동적 전문가 선택</strong>: 정적 MoE 또는 고정 작업 전환과 달리, CASS는 로봇의 실시간 상태(머리 높이)와 지형 컨텍스트에 따라 안내 전문가를 동적으로 선택하여 증류 과정이 "보행→낙상→회복→계속 보행"의 연속적 상태 전환에 적응적으로 처리할 수 있게 한다. 낙상 회복을 범용 증류 프레임워크에 통합한 최초의 설계다.</p>
+</li>
+<li>
+<p><strong>SAR 어닐링 스케줄링</strong>: 히스테리시스 구간(τ_low=0.005, τ_high=0.010)을 통해 ρ 감소를 제어하여 증류 손실 변동으로 인한 훈련 불안정을 방지한다. 이 메커니즘은 본질적으로 "커리큘럼 학습"의 변형이다. 먼저 전문가를 완전히 따라가고, 점차 자율 탐색을 허용하지만, 전통적인 커리큘럼 학습보다 탐색-활용 균형을 더 정밀하게 제어한다.</p>
+</li>
+<li>
+<p><strong>SFI 무작위 낙상 주입</strong>: 훈련 중 수동적으로 실패를 기다리는 대신 적극적으로 "낙상-회복" 루프를 생성한다. 이는 범용 정책이 긴 호라이즌 작업에서 "한 번 낙상하면 영구 실패"라는 희소 보상 문제를 해결하여, 정책이 단순히 위험을 회피하는 대신 실패로부터 회복하는 법을 학습하게 한다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Slope R_succ</th>
+<th>Pit R_succ</th>
+<th>Stairs R_succ</th>
+<th>WBC R̄_succ</th>
+<th>Recovery R_succ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MoRE</td>
+<td>0.992</td>
+<td>0.844</td>
+<td>0.926</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>PPO</td>
+<td>0.823</td>
+<td>0.793</td>
+<td>0.781</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>AHC</td>
+<td>0.968</td>
+<td>0.403</td>
+<td>0.278</td>
+<td>-</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>X-Loco</td>
+<td>0.982</td>
+<td>0.878</td>
+<td>0.958</td>
+<td>0.871</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>절제 실험</strong>:
+- Ours w/o CASS: 평균 R̄_succ = 0.783(Locomotion 0.903, WBC 0.446)
+- Ours w/o MoE: 평균 R̄_succ = 0.749(Locomotion 0.692, WBC 0.561)
+- MoE-3: 평균 R̄_succ = 0.779(Locomotion 0.628, WBC 0.709)
+- MoE-2 (Ours): 평균 R̄_succ = 0.928(Locomotion 0.939, WBC 0.845)
+- Ours w/o SFI: Recovery R_succ = 0.912 vs Ours 0.958</p>
+<p><strong>핵심 해석</strong>:
+- X-Loco는 직립 보행 작업에서 평균 성공률 0.939로 PPO(0.799)와 AHC(0.550)를 능가하고 MoRE(0.921)와 경쟁하지만, MoRE는 WBC와 Recovery를 처리할 수 없다.
+- WBC 작업 성공률 0.871은 "참조 동작 없음" 조건에서의 첫 성공이지만, 전문가(1.000)와 비교해 여전히 0.129의 성능 격차(1.000−0.871로 계산, 약 12.9%)가 있으며, 저자는 이를 가장 어려운 전이 시나리오로 인정한다.
+- SFI는 회복 성공률을 0.912에서 0.958로 향상시켜 실패 시나리오의 적극적 주입 필요성을 검증했다.
+- MoE-2가 MoE-3보다 우수함은 전문가 수가 많을수록 좋은 것이 아니며, 작업 중복이 게이팅 네트워크를 혼란시킬 수 있음을 시사한다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<ul>
+<li><strong>인식 범위 제한</strong>: 좁은 FOV 카메라(RealSense D435i)로 인해 제한된 인식 시간적 범위를 가지며, 원거리 지형을 사전에 계획할 수 없다.</li>
+<li><strong>센서 노이즈 모델링 불완전</strong>: 깊이 증강 파이프라인(가우시안 노이즈+필터)은 실제 센서의 체계적 오류(예: 가장자리 아티팩트, 반사 간섭)를 완전히 모사할 수 없다.</li>
+<li><strong>전문가 성능 상한</strong>: 증류는 행동 복제에 의존하므로 정책은 전문가 시연을 능가할 수 없다. 전문가가 커버하지 않는 엣지 케이스(예: 극단적 지형 조합)에서 성능이 현저히 저하된다.</li>
+<li><strong>검증되지 않은 일반화</strong>: 연약한 지면, 동적 장애물, 다중 로봇 플랫폼 전이를 테스트하지 않았으며, 다른 범용 제어 프레임워크(예: 대규모 모델 방법)와 비교하지 않았다.</li>
+<li><strong>계산 자원 미정량화</strong>: 훈련 GPU 모델, 총 훈련 시간, 메모리 사용량 등 핵심 엔지니어링 지표를 보고하지 않았다.</li>
+</ul>
+<h2 id="_10">엔지니어링 시사점</h2>
+<ol>
+<li>
+<p><strong>재현 우선순위</strong>: 먼저 CASS의 임계값(b_t=1.1m)과 지형 컨텍스트 매핑(I_t=1/2)을 확인하라. 이는 증류 정확성의 핵심이다. 머리 높이 추정에 편향이 있으면 전문가 선택이 잘못되어 전체 증류 과정이 무효화된다.</p>
+</li>
+<li>
+<p><strong>가장 함정에 빠지기 쉬운 지점</strong>: SAR의 ρ 스케줄링 — 히스테리시스 구간(0.005/0.010)과 감소 스텝(1e−4)을 정확히 일치시켜야 한다. ρ가 너무 빨리 감소하면 학생 정책이 조기에 자율 탐색을 시작하여 붕괴하고, 너무 느리면 증류 효율이 낮아진다. 소규모 환경에서 먼저 ρ 곡선을 검증할 것을 권장한다.</p>
+</li>
+<li>
+<p><strong>SFI의 종료 조건</strong>: 머리 높이 버퍼 분산 임계값 δ는 구체적인 값이 제공되지 않았다. 이는 OOD 데이터 파괴를 방지하는 핵심이다. 로봇 키(G1 약 1.3m)와 보행 주기(약 0.5초)를 기준으로 경험적으로 설정하고 민감도 분석을 수행할 것을 권장한다.</p>
+</li>
+<li>
+<p><strong>깊이 증강 파이프라인</strong>: 카메라 외부 파라미터 무작위화 범위(위치 ±0.05m, 피치 ±10°)와 FOV 무작위화(±10°)는 sim-to-real 성공의 핵심이다. 실제 배포 시 반드시 먼저 카메라 캘리브레이션을 수행하여 무작위화 범위가 실제 설치 오차를 커버하는지 확인하라.</p>
+</li>
+<li>
+<p><strong>PD 파라미터 임의 수정 금지</strong>: Table V의 K_p/K_d 값은 문헌 [28]에서 직접 가져온 것이며, 동작 스케일링(Action Scale)과 결합되어 있다. 어느 하나의 파라미터를 수정하면 동작 공간의 유효 범위가 변경되므로 모든 전문가 정책을 다시 훈련해야 한다.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">demonstrates_on</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_robot_system_unitree_g1/">Unitree G1 휴머노이드 로봇</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_zhao_more_unlocking_scalability_in_2025/">MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_x_loco_generalist_humanoid_locomotion_co_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_more_unlocking_scalability_in_2025/">
+          <span class="entry-type">논문</span>
+          <h3>MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models</h3>
+          <p>MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">로봇 시스템</span>
+          <h3>Unitree G1 휴머노이드 로봇</h3>
+          <p>Unitree Robotics가 개발한 컴팩트한 양산형 휴머노이드 로봇으로, 23~43자유도, 35kg 몸체, 2m/s 보행 속도를 갖추며 연구, 교육 및 경량 산업 작업을 위해…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">전문가 정책 훈련</a></li>
+<li><a href="#_5">협력 증류 메커니즘</a></li>
+<li><a href="#_6">학생 정책 아키텍처</a></li>
+<li><a href="#sim-to-real">심층 sim-to-real 브리징</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a></li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

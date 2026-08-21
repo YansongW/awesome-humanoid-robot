@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning</h1>
+      <p class="entry-name-en">AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>AC-VLA 是一个即插即用的组合学习框架，旨在解决 VLA 模型在子任务以未见方式重组时的分布外（OOD）泛化失败问题。它通过 LLM 驱动的指令分解与本体感觉轨迹对齐构建密集子任务监督，并引入状态条件非对称掩码策略，在不修改架构的前提下显著提升 OOD 执行成功率。核心贡献在于将组合泛化问题显式化为可训练的信号，而非依赖数据规模或架构改动。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.15714" target="_blank" rel="noopener">arXiv:2607.15714 AC-VLA: Robust Out-of-Distribution Action Execution via Compositional Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>VLA 模型在端到端操作中表现优异，但其泛化能力被高估——尤其是在熟悉子任务以新配置组合时，性能急剧下降。作者识别出两个相互强化的失败模式：轨迹过拟合（模型记忆整体轨迹模式而非组合性语义）和感知捷径（动作 token 过度依赖腕部视角纹理，忽视全局空间定位）。这解释了为何单纯扩大数据规模收效甚微：模型根本没有学会分解和重组基元，只是在拟合训练分布的表象。</p>
+<p>这项工作真正改变的是对 OOD 失败的归因和解决路径。此前分层范式将规划与执行解耦，但模块化阻碍了高层推理适应实时反馈；分阶段 VLA 方法引入刚性子任务边界，导致误差累积。AC-VLA 没有选择架构革命，而是通过构造密集的子任务监督信号，迫使模型在训练阶段就学会“可重组的基元”，同时用掩码策略切断感知捷径。这是一种数据与训练策略层面的干预，而非模型结构层面的修补。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">组合学习模块</h3>
+<ul>
+<li><strong>指令分解</strong>：LLM（Qwen-3.5-Flash）将复杂指令分割为 N 个细粒度子任务描述序列，N 由语义复杂度动态决定。</li>
+<li><strong>轨迹对齐</strong>：利用自然物理线索（夹爪状态转换 open→close、close→open 和块级平均末端执行器位移）划分轨迹。子任务边界条件定义为：
+  <code>seg(t) = [g_t ≠ g_{t-1} ∨ D(A_t) &lt; ε]</code>
+  其中 <code>D(A_t)</code> 为块级平均末端执行器位移，<code>ε</code> 为通过训练轨迹聚类确定的位移阈值。</li>
+<li><strong>离线构建</strong>：对齐对 <code>(ℓ_k, ξ_k)</code> 形成密集子任务监督数据集 <code>D_sub</code>，完全离线构建，无需人工标注。</li>
+<li><strong>混合训练</strong>：构建 <code>D_mix = D_full ∪ D_sub</code>，每步从两个数据集按固定比例采样小批量。完整轨迹训练保持长期执行连贯性，子任务监督训练模型重组基元。</li>
+</ul>
+<h3 id="_4">状态条件非对称掩码策略</h3>
+<ul>
+<li>利用协作分解模块识别所有“放置”阶段片段，在训练期间掩码注意力计算中的腕部视角 token。</li>
+<li>夹爪打开时（接近和抓取阶段）腕部输入保持完整，保留精细操作所需反馈。</li>
+<li>掩码在线应用于训练期间，无需架构修改或推理过程变更。</li>
+</ul>
+<h3 id="_05">骨干实例化（π_0.5 流匹配）</h3>
+<ul>
+<li>VLM 产生视觉语言特征 <code>φ_t</code> 作为条件输入，DiT 动作头 <code>V_θ</code> 用于流匹配；预测 H 个未来动作的序列 <code>A'_t ∈ R^{d×H}</code>。</li>
+<li>流匹配目标：<code>L(θ) = E_τ[||V_θ(φ_t, A_t^(τ), q_t) - (A_t - ε)||²]</code>，其中 <code>A_t^(τ) = τA_t + (1-τ)ε</code>。</li>
+<li>推理时通过 K 步前向欧拉积分从随机噪声生成动作块：<code>A_t^(τ+1/K) = A_t^(τ) + (1/K)V_θ(φ_t, A_t^(τ), q_t)</code>。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>将组合泛化转化为可监督信号</strong>：通过本体感觉对齐器自动生成子任务级监督，无需人工标注。这是首次将“分解-重组”能力直接注入 VLA 训练流程，而非依赖隐式学习。</li>
+<li><strong>状态条件掩码作为正则化</strong>：不是简单地丢弃腕部视角，而是根据夹爪状态动态掩码——在放置阶段强制模型依赖第三视角空间推理，在抓取阶段保留精细反馈。这精准切断了感知捷径，同时不牺牲操作精度。</li>
+<li><strong>架构无关的即插即用设计</strong>：两个组件均无需修改骨干网络，可无缝集成到任何 VLA 训练流程。这降低了采用门槛，使得该方案具有广泛的工程适用性。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="libero-libero-ood">基准性能（LIBERO 与 LIBERO-OOD）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Spatial</th>
+<th>Goal</th>
+<th>Object</th>
+<th>Long</th>
+<th>Spatial OOD</th>
+<th>Goal OOD</th>
+<th>AVG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0.5</td>
+<td>98.8%</td>
+<td>98.5%</td>
+<td>99.3%</td>
+<td>92.9%</td>
+<td>35.5%</td>
+<td>46.6%</td>
+<td>78.6%</td>
+</tr>
+<tr>
+<td>Spatial Forcing-π_0.5</td>
+<td>99.4%</td>
+<td>99.6%</td>
+<td>98.8%</td>
+<td>96.0%</td>
+<td>48.3%</td>
+<td>57.8%</td>
+<td>83.3%</td>
+</tr>
+<tr>
+<td>AC-VLA (π_0.5)</td>
+<td>98.0%</td>
+<td>97.7%</td>
+<td>98.4%</td>
+<td>92.4%</td>
+<td>64.2% (+28.7)</td>
+<td>73.3% (+26.7)</td>
+<td>87.3% (+8.7)</td>
+</tr>
+<tr>
+<td>AC-VLA (GR00T-N1)</td>
+<td>95.4%</td>
+<td>96.7%</td>
+<td>99.1%</td>
+<td>92.3%</td>
+<td>36.4% (+18.5)</td>
+<td>44.0% (+19.9)</td>
+<td>77.3% (+6.2)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3in-d">消融研究（表 3，In-D 为四个套件平均）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>In-D</th>
+<th>Spatial OOD</th>
+<th>Goal OOD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅原始任务</td>
+<td>97.4%</td>
+<td>35.5%</td>
+<td>46.6%</td>
+</tr>
+<tr>
+<td>仅子任务</td>
+<td>61.4%</td>
+<td>54.8%</td>
+<td>68.6%</td>
+</tr>
+<tr>
+<td>原始+子任务</td>
+<td>96.6%</td>
+<td>51.6%</td>
+<td>67.5%</td>
+</tr>
+<tr>
+<td>原始+掩码</td>
+<td>96.5%</td>
+<td>47.3%</td>
+<td>67.0%</td>
+</tr>
+<tr>
+<td>原始+子任务+掩码</td>
+<td>96.7%</td>
+<td>64.2%</td>
+<td>73.3%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">真实世界实验</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>In-D</th>
+<th>OOD</th>
+<th>AVG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π_0.5</td>
+<td>93.7%</td>
+<td>35.0%</td>
+<td>64.4%</td>
+</tr>
+<tr>
+<td>AC-VLA</td>
+<td>88.7%</td>
+<td>82.5% (+47.5)</td>
+<td>85.6% (+21.2)</td>
+</tr>
+</tbody>
+</table>
+<p>关键结果：AC-VLA 在 OOD 套件上较 π_0.5 提升 28.7/26.7 个百分点，远超 Spatial Forcing 的 12.8/11.2。消融显示，子任务监督和掩码策略各自贡献显著，且两者结合效果最佳。真实世界 OOD 提升 47.5 个百分点，验证了方法的实际有效性。</p>
+<h2 id="_8">边界与局限</h2>
+<ul>
+<li>离线任务分解的准确性依赖 LLM 语义解析能力和本体感觉对齐器的保真度；对高度模糊或领域特定的指令，生成的子任务描述可能不准确，误差可能传播到轨迹对齐和混合训练中。</li>
+<li>当训练数据极大且多样、已覆盖大多数物体-目标组合时，显式组合学习的收益可能减弱，OOD 差距实际可忽略。</li>
+<li>论文未明确讨论掩码策略对长时程任务（如 LIBERO-Long）中放置阶段占比极低场景的影响，也未分析 ε 阈值对轨迹分割质量的敏感性。</li>
+<li>实验仅在 π_0.5 和 GR00T-N1 两个骨干上验证，对其他架构（如基于扩散策略的 VLA）的适用性未明确。</li>
+</ul>
+<h2 id="_9">工程启示</h2>
+<ul>
+<li><strong>复现优先级</strong>：先核对轨迹对齐器的 ε 阈值确定方式——这是子任务监督质量的关键。建议在目标数据集上重新聚类确定，而非直接沿用默认值。</li>
+<li><strong>数据配比</strong>：混合训练中 D_full 与 D_sub 的采样比例是敏感超参数。消融显示仅用子任务数据会导致 In-D 性能崩溃（97.4%→61.4%），需确保完整轨迹数据占主导。</li>
+<li><strong>掩码策略的适用性</strong>：状态条件掩码依赖夹爪状态信号的可靠性。若目标平台缺乏精确的夹爪状态反馈，需考虑替代信号（如力传感器阈值）。</li>
+<li><strong>最易踩坑</strong>：LLM 指令分解的质量直接影响下游对齐。建议在部署前对目标任务集进行分解结果的人工抽检，尤其是领域特定指令。</li>
+<li><strong>工程集成</strong>：分解完全离线运行，可无缝集成到现有训练流程。但需注意推理时无需任何额外计算，掩码仅作用于训练阶段——这降低了部署成本。</li>
+</ul>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.15714</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ac_vla_robust_out_distribution_action_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">组合学习模块</a></li>
+<li><a href="#_4">状态条件非对称掩码策略</a></li>
+<li><a href="#_05">骨干实例化（π_0.5 流匹配）</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#libero-libero-ood">基准性能（LIBERO 与 LIBERO-OOD）</a></li>
+<li><a href="#3in-d">消融研究（表 3，In-D 为四个套件平均）</a></li>
+<li><a href="#_7">真实世界实验</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Long-VLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Long-VLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Long-VLA</h1>
+      <p class="entry-name-en">Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.19958v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1044 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Long-VLA 是浙江大学于 2025 年 CoRL25 会议提出的首个专为长程机器人操作设计的端到端视觉-语言-动作模型。其核心贡献在于提出一种相位感知输入掩码策略，将每个子任务自适应分割为移动与交互阶段，从而提升子任务兼容性并保持 VLA 训练的可扩展性。此外，该工作还构建了 L-CALVIN 基准以系统评估长程操作能力，在仿真与真实任务中均显著超越此前最优方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.19958" target="_blank" rel="noopener">Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2508.19958" target="_blank" rel="noopener">Long-VLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有 VLA 模型主要应对短程任务，在需要技能链式执行与子任务依赖管理的长程多步操作中表现受限。Long-VLA 通过创新的相位感知输入掩码策略，将每个子任务动态划分为移动阶段与交互阶段，使模型能聚焦于阶段相关的感知线索，从而增强子任务间的兼容性。该策略作为架构无关的模块，可无缝集成到现有 VLA 模型中，同时保持训练的数据效率与可扩展性。为系统评估长程操作能力，作者还提出了 L-CALVIN 基准。在仿真与真实世界的广泛实验中，Long-VLA 大幅超越此前最优方法，为长程机器人控制建立了新基线。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li><strong>相位感知输入掩码策略</strong>：将每个子任务自适应分割为移动阶段（接近目标）与交互阶段（执行操作），通过掩码机制使模型仅关注当前阶段相关的视觉与语言线索，减少无关信息干扰。</li>
+<li><strong>架构无关性</strong>：该模块可无缝集成至现有 VLA 模型（如 RT-2、Octo），无需修改主干网络，保持原有训练流程与数据效率。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>基准</strong>：提出 L-CALVIN 基准，包含 10 种长程操作任务（如“打开抽屉→取出杯子→放置到托盘”），每个任务包含 3-5 个子步骤。</li>
+<li><strong>基线模型</strong>：对比 RT-2、Octo、RoboFlamingo 等主流 VLA 模型，以及基于行为克隆的基线方法。</li>
+<li><strong>评估指标</strong>：任务成功率（Success Rate）、子步骤完成率（Subtask Completion Rate）、平均步骤数（Average Steps）。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>仿真实验</strong>：在 L-CALVIN 上，Long-VLA 达到 78.3% 的任务成功率，较最佳基线 RT-2（52.1%）提升 26.2 个百分点；子步骤完成率达 91.5%，平均步骤数减少 18%。</li>
+<li><strong>真实世界实验</strong>：在 5 种真实长程操作任务（如“倒水→擦拭桌面”）中，Long-VLA 成功率为 72.0%，显著优于 RT-2（44.0%）与 Octo（38.0%）。</li>
+<li><strong>消融实验</strong>：移除相位感知掩码后，任务成功率下降至 61.2%，验证了该策略对长程任务的关键作用。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>Long-VLA 通过相位感知输入掩码策略，有效解决了长程操作中的技能链式与子任务依赖问题，在仿真与真实场景中均实现显著性能提升。其架构无关的设计使其易于推广至现有 VLA 系统，为长程机器人控制提供了新的基准与实用方案。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2508.19958v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+      
+      <span class="rel-desc">Long-VLA使用动作分块变压器（ACT）。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_li_vision_language_foundation_mod_2023/">RoboFlamingo</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">基于</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      <span class="rel-desc">Long-VLA基于OpenVLA。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+      
+      <span class="rel-desc">Long-VLA提及RT-2。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">评测于</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+      
+      <span class="rel-desc">Long-VLA评测于LIBERO-Plus。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_fan_long_vla_unleashing_long_horiz_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO-Plus</h3>
+          <p>一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_vision_language_foundation_mod_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RoboFlamingo</h3>
+          <p>RoboFlamingo 是字节跳动研究、清华大学、上海交通大学和新加坡国立大学于 2023 年提出的通用视觉-语言-动作模型，用于机器人操作任务，发表于 ICLR…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation</h1>
+      <p class="entry-name-en">RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.09141v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (872 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation is a 2025 work on manipulation for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.09141" target="_blank" rel="noopener">RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>현재 휴머노이드 로봇 조작 연구는 주로 데이터 기반 방법에 의존하지만, 이러한 방법은 미지의 장면에서 기하학적 추론 능력이 부족하고 로봇-목표 관계 모델링의 효율성이 낮아 훈련 자원이 낭비됩니다. 이를 해결하기 위해 RGMP 프레임워크는 기하학-의미론적 스킬 추론과 데이터 효율적인 시각 운동 제어를 통합합니다. 기하학적 사전 스킬 선택기를 통해 기하학적 귀납 편향을 비전 언어 모델에 주입하여 로봇이 미지의 장면에서 적응형 스킬 시퀀스를 생성할 수 있게 합니다. 동시에 적응형 재귀 가우시안 네트워크는 로봇-목표 상호작용을 컴팩트한 가우시안 프로세스 계층으로 매개변수화하고, 다중 스케일 공간 관계를 재귀적으로 인코딩하여 희소 시연에서 정교하고 데이터 효율적인 운동 합성을 구현합니다. 실제 휴머노이드 로봇과 데스크톱 이중 팔 로봇에서의 평가 결과, RGMP는 일반화 테스트에서 87%의 작업 성공률을 달성했으며, 데이터 효율성은 기존 최적 모델보다 5배 높습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 개요</h3>
+<p>RGMP는 두 가지 핵심 모듈을 포함하는 엔드투엔드 프레임워크입니다:
+- <strong>기하학적 사전 스킬 선택기 (Geometric-prior Skill Selector)</strong>: 기하학적 귀납 편향을 비전 언어 모델(VLM)에 주입하여 모델이 미지의 장면에서 최소한의 공간 상식 미세 조정만으로 적응형 스킬 시퀀스를 생성할 수 있게 합니다. 이는 전통적인 데이터 기반 방법의 기하학적 추론 부족 문제를 해결합니다.
+- <strong>적응형 재귀 가우시안 네트워크 (Adaptive Recursive Gaussian Network)</strong>: 로봇-목표 상호작용을 컴팩트한 가우시안 프로세스 계층으로 매개변수화하고, 다중 스케일 공간 관계를 재귀적으로 인코딩하여 희소 시연에서 정교하고 데이터 효율적인 운동을 합성합니다. 이 설계는 전통적인 방법의 대량 훈련 데이터 의존성을 피합니다.</p>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>플랫폼</strong>: 자체 개발 휴머노이드 로봇과 데스크톱 이중 팔 로봇에서 평가.</li>
+<li><strong>작업</strong>: 다양한 조작 작업을 포함하며, 교차 도메인 일반화 능력을 중점적으로 테스트.</li>
+<li><strong>비교 기준</strong>: 현재 최적 모델(state-of-the-art)과 데이터 효율성 및 작업 성공률을 비교.</li>
+</ul>
+<h3 id="_5">핵심 결과</h3>
+<ul>
+<li><strong>일반화 테스트 성공률</strong>: RGMP는 미지의 장면에서 87%의 작업 성공률을 달성.</li>
+<li><strong>데이터 효율성</strong>: 최적 모델 대비 RGMP의 데이터 효율성은 5배 향상, 즉 동일한 성능을 달성하기 위해 1/5의 훈련 데이터만 필요.</li>
+<li><strong>핵심 장점</strong>: 기하학-의미론적 추론과 재귀 가우시안 적응 메커니즘이 함께 우수한 교차 도메인 일반화 능력을 뒷받침합니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>약한 연관 더 보기 (3)</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">기반</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">평가 대상</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rgmp_recurrent_geometric_prior_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">벤치마크</span>
+          <h3>HumanoidBench</h3>
+          <p>Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해 40개 이상의 작업을 제공함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 개요</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">핵심 결과</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

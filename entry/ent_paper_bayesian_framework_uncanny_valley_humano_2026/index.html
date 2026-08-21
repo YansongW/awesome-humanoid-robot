@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Bayesian framework for the uncanny valley in humanoid robot design · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">A Bayesian framework for the uncanny valley in humanoid robot design</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>A Bayesian framework for the uncanny valley in humanoid robot design</h1>
+      <p class="entry-name-en">A Bayesian framework for the uncanny valley in humanoid robot design</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一个层次贝叶斯生成模型，将仿人机器人的亲和度定义为后验加权的负类别条件惊奇，从而把恐怖谷经验法则转化为可计算的设计变量。作者来自东京大学，通过模拟与33名被试的行为实验验证了模型对预测不确定性与观测不确定性的预测，其中三个假设获支持、一个未获支持。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13060" target="_blank" rel="noopener">arXiv:2607.13060 A Bayesian framework for the uncanny valley in humanoid robot design</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>恐怖谷研究长期停留在经验描述层面：Mori的曲线、Moore的贝叶斯类别感知模型、Ueyama的治疗应用，都没有把设计指南变成设计者能直接操作的变量。本文真正改变的是把“避免过度逼真”“减少跨模态不匹配”这类口号，翻译成四个可计算的量：与机器人类别预测均值的距离、跨模态不匹配度、预测不确定性、观测不确定性。这意味着恐怖谷从“事后解释现象”变成“事前预测曲线”的工程工具。</p>
+<p>但本文的野心不止于形式化。它试图回答一个更尖锐的问题：既然恐怖谷不可避免，设计者能否通过操纵不确定性来“绕过”它？模拟显示，提高观测不确定性（如模糊化刺激）可以在中间拟人度区域显著提升亲和度，而提高预测不确定性则只在机器人样外观下有害。这直接挑战了“越清晰越好”的直觉，为设计提供了反直觉但可验证的策略。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">生成模型</h3>
+<ul>
+<li>类别c∈{R,H}（机器人/人类）生成潜在人类相似度x，x再生成观测y：p(c,x,y)=p(c)p(x|c)p(y|x)</li>
+<li>基线假设：p(x|c)=𝒩(x; μ_c, σ_c²)，p(y|x)=𝒩(y; x, σ_l²)，边际化得p(y|c)=𝒩(y; μ_c, σ_c²+σ_l²)</li>
+</ul>
+<h3 id="_4">亲和度定义</h3>
+<ul>
+<li>类别条件惊奇：S_c(y)=−ln p(y|c)；类别条件亲和度：A_c(y)=ln p(y|c)</li>
+<li>最终亲和度：A(y)=Σ_{c∈{R,H}} p(c|y)·A_c(y)，其中后验p(c|y)=π_c·exp{A_c(y)} / Σ_{c'}π_{c'}·exp{A_{c'}(y)}</li>
+</ul>
+<h3 id="_5">四个设计变量</h3>
+<ol>
+<li>|y−μ_R|：与机器人类别预测均值的距离，操作化“第一峰值”指南</li>
+<li>(y_a−y_m)²：跨模态感知不匹配，来自多模态扩展p(c,x,y_a,y_m)=p(c)p(x|c)p(y_a|x)p(y_m|x)</li>
+<li>σ_R²：机器人类别预测不确定性，实验中映射为先验刺激模糊度</li>
+<li>σ_l²：观测不确定性，实验中映射为评估刺激模糊度</li>
+</ol>
+<h3 id="_6">关键设计决策</h3>
+<ul>
+<li>用后验加权而非简单平均，使亲和度在类别边界处平滑过渡</li>
+<li>引入ϵ-floor似然p_ϵ(y|x)=[𝒩(y; x, σ_l²)+ϵ]/(1+ϵ)，避免高斯似然对极端预测误差过度惩罚；ϵ=0时退化为基线</li>
+<li>多模态亲和度中，(y_a−y_m)²项显式编码跨模态不一致，D_c=σ_a²σ_m²+σ_a²σ_c²+σ_m²σ_c²</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li><strong>把恐怖谷从曲线变成函数</strong>：首次将亲和度表达为可微的闭式表达式，设计变量直接对应模型参数，使“优化亲和度”成为可计算的优化问题，而非启发式调参。</li>
+<li><strong>不确定性作为设计杠杆</strong>：模拟与实验共同表明，观测不确定性σ_l²可以在中间拟人度区域显著提升亲和度（h=2至h=6均显著），这为“模糊化处理”提供了理论依据，而非仅凭直觉。</li>
+<li><strong>多模态不匹配的显式编码</strong>：通过共享潜在人类相似度x，将外观与运动的不一致量化为(y_a−y_m)²项，使跨模态设计指南首次获得解析表达。</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<p>被试内设计，33名成年人，8级拟人度×2预测不确定性×2观测不确定性共32条件。关键结果：</p>
+<table>
+<thead>
+<tr>
+<th>效应</th>
+<th>F值</th>
+<th>P值</th>
+<th>结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外观拟人度主效应</td>
+<td>43.700</td>
+<td>&lt;0.001</td>
+<td>拟人度显著影响熟悉度</td>
+</tr>
+<tr>
+<td>预测不确定性（先验模糊）</td>
+<td>4.486</td>
+<td>0.034</td>
+<td>弱模糊&gt;强模糊，支持EH1-1</td>
+</tr>
+<tr>
+<td>预测不确定性×拟人度</td>
+<td>1.036</td>
+<td>0.404</td>
+<td>无交互，EH1-2未获支持</td>
+</tr>
+<tr>
+<td>观测不确定性（评估模糊）</td>
+<td>53.187</td>
+<td>&lt;0.001</td>
+<td>强模糊&gt;弱模糊，支持EH2</td>
+</tr>
+<tr>
+<td>观测不确定性×拟人度</td>
+<td>2.108</td>
+<td>0.040</td>
+<td>显著交互，支持EH3</td>
+</tr>
+</tbody>
+</table>
+<p>简单主效应检验显示，高模糊评估刺激在h=2（F=6.031, P=0.015）、h=3（F=20.394, P&lt;0.001）、h=4（F=20.933, P&lt;0.001）、h=5（F=9.493, P=0.003）、h=6（F=8.989, P=0.003）显著提升熟悉度，而h=1、h=7、h=8不显著。四个假设中三个获支持，EH1-2未获支持，作者用ϵ-floor模型（ε=0.01）解释为基线模型可能高估了预测不确定性效应。</p>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>EH1-2未获实验支持，且ϵ-floor模型仅“减弱”而非“消除”预测不确定性效应反转的预测，说明基线模型对σ_R²的效应量估计可能偏大</li>
+<li>实验仅操作了σ_R²和σ_l²两个观测者侧变量，|y−μ_R|和(y_a−y_m)²未在实验中单独操纵</li>
+<li>仅使用单模态外观刺激，多模态不匹配预测未经验证</li>
+<li>样本量基于可行性与先前研究确定，未进行功效分析（论文未明确）</li>
+<li>模型未涵盖真实机器人交互中的运动、声音、具身与情境因素，未做个性化参数拟合</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<p>复现时先核对两个最容易出错的点：一是模糊操作的核大小与标准差（低模糊3×3、高模糊81×81，标准差均为−1），二是先验刺激与评估刺激必须使用相同模糊设置，否则预测不确定性操作会与观测不确定性混淆。统计上注意使用对齐秩变换（ART）而非标准ANOVA，因为部分条件违反正态性。</p>
+<p>对下游设计团队，最可操作的结论是：在中间拟人度区域（h=2至h=6），提高观测不确定性（如哑光表面、柔和纹理、减少细节锐度）可以显著提升亲和度，且这一效应在h=3和h=4最强（F值超过20）。但不要指望通过模糊先验刺激来提升中间拟人度区域的亲和度——EH1-2的失败提示这条路径可能无效。多模态不匹配的预测虽未实验验证，但模型给出的(y_a−y_m)²项值得在真实机器人上做对照测试。</p>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.13060</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_process_p12_3_2/">人机交互与可解释性</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_bayesian_framework_uncanny_valley_humano_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_process_p12_3_2/">
+          <span class="entry-type">方法</span>
+          <h3>人机交互与可解释性</h3>
+          <p>- P12.3.2.1 输入梳理与目标量化 - 整理「人机交互与可解释性」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 -…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">生成模型</a></li>
+<li><a href="#_4">亲和度定义</a></li>
+<li><a href="#_5">四个设计变量</a></li>
+<li><a href="#_6">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a></li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

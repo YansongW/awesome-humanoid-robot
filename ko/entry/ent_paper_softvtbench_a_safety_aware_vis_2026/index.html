@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects</h1>
+      <p class="entry-name-en">SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.04234v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1054 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2607.04234v1 Announce Type: new Abstract: Deformable object manipulation poses challenges beyond task completion: successful execution must also maintain safe physical interaction, holding the object stably without slip or drop while avoiding excessive deformation. However, existing manipulation benchmarks are predominantly success-oriented and rarely evaluate whether a policy remains physically safe throughout execution. We present SoftVTBench, a safety-aware visuo-tactile benchmark for physically constrained deformable object manipulation. Built in Isaac Sim with finite-element-simulated deformable objects, SoftVTBench provides multi-view RGB observations, RGB tactile sensing with marker motion, proprioception, and language instructions, and defines four matched task suites over object type (deformable vs. rigid) and variation axis (object vs. spatial). It separately reports Goal Success and Safety Success; the latter additionally requires no drop and peak deformation below a calibrated object-specific threshold, measured from policy-hidden privileged Finite Element Method (FEM) states. We implement pi0.5-based baselines under this protocol. Experiments show that success-only evaluation substantially overstates policy performance, as a large fraction of goal-completing rollouts still violate physical safety. Furthermore, incorporating tactile sensing improves Safety Success (e.g., from 21.4% to 35.6% on object-centric deformable tasks) and reduces object deformation during execution, while maintaining comparable Goal Success. SoftVTBench provides a reproducible benchmark for studying visuo-tactile deformable manipulation under physical interaction constraints.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.04234" target="_blank" rel="noopener">SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>SoftVTBench는 기존 조작 벤치마크가 주로 작업 완료에 초점을 맞추고 물리적 안전을 간과하는 문제를 해결하기 위해 설계되었습니다. 이 벤치마크는 Isaac Sim에서 유한 요소 방법을 사용하여 변형 가능한 물체를 시뮬레이션하며, 다중 시점 RGB 이미지, RGB 촉각 센싱(마커 움직임 포함), 고유 수용 감각, 언어 명령을 제공하고, 네 가지 매칭 작업 세트(물체 유형 및 변화 축에 따라 구분)를 정의합니다. 목표 성공률과 안전 성공률을 각각 보고하며, 안전 성공률은 추가로 낙하 없음 및 보정된 물체별 임계값(정책에 숨겨진 특권 유한 요소 상태 측정 기반) 미만의 최대 변형을 요구합니다. pi0.5 기반의 기준 실험은 작업 성공률만 평가하면 정책 성능을 심각하게 과대평가할 수 있음을 보여줍니다. 목표를 달성한 많은 롤아웃이 여전히 물리적 안전을 위반하기 때문입니다. 또한, 촉각 센싱을 통합하면 목표 성공률을 유지하면서 안전 성공률을 향상시키고 실행 중 물체 변형을 줄일 수 있습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">핵심 문제</h3>
+<p>변형 가능한 물체 조작은 작업 완료뿐만 아니라 물리적 상호작용의 안전도 보장해야 합니다: 물체를 안정적으로 잡고(미끄러짐 또는 낙하 없음) 과도한 변형을 피해야 합니다. 기존 벤치마크는 대부분 작업 성공에 초점을 맞추며, 정책이 실행 중 물리적 안전을 유지하는지 평가하는 경우는 드뭅니다.</p>
+<h3 id="softvtbench">SoftVTBench 설계</h3>
+<ul>
+<li><strong>시뮬레이션 환경</strong>: Isaac Sim 기반으로 구축되었으며, 유한 요소 방법을 사용하여 변형 가능한 물체를 시뮬레이션합니다.</li>
+<li><strong>관측 모달리티</strong>: 다중 시점 RGB 관측, RGB 촉각 센싱(마커 움직임 포함), 고유 수용 감각, 언어 명령.</li>
+<li><strong>작업 세트</strong>: 물체 유형(변형 가능 vs. 강체) 및 변화 축(물체 vs. 공간)에 따라 네 가지 매칭 작업을 정의합니다.</li>
+<li><strong>평가 지표</strong>:</li>
+<li><strong>Goal Success</strong>: 작업 완료 성공률.</li>
+<li><strong>Safety Success</strong>: 작업 완료를 기반으로, 추가로 낙하 없음 및 보정된 물체별 임계값(정책에 숨겨진 특권 유한 요소 상태 측정 기반) 미만의 최대 변형을 요구합니다.</li>
+</ul>
+<h3 id="_4">실험 설정 및 기준</h3>
+<ul>
+<li><strong>기준 모델</strong>: pi0.5 기반으로 구현되었습니다.</li>
+<li><strong>실험 프로토콜</strong>: Goal Success와 Safety Success를 각각 보고합니다.</li>
+</ul>
+<h3 id="_5">핵심 결과</h3>
+<ul>
+<li><strong>작업 성공률만의 오해 소지</strong>: 목표를 달성한 많은 롤아웃이 여전히 물리적 안전을 위반하므로, Goal Success만 평가하면 정책 성능을 심각하게 과대평가할 수 있습니다.</li>
+<li><strong>촉각 센싱의 기여</strong>:</li>
+<li>물체 중심 변형 작업에서 Safety Success가 21.4%에서 35.6%로 향상되었습니다.</li>
+<li>실행 중 물체 변형이 크게 감소했습니다.</li>
+<li>Goal Success는 비교 가능한 수준을 유지했습니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>SoftVTBench는 물리적 상호작용 제약 하에서의 시각-촉각 변형 가능한 물체 조작을 연구하기 위한 재현 가능한 벤치마크를 제공하며, 안전 평가의 필요성과 촉각 센싱의 가치를 강조합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_dexterous_manipulation/">손재주 있는 조작</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">benchmarks</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_softvtbench_a_safety_aware_vis_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">방법</span>
+          <h3>손재주 있는 조작</h3>
+          <p>다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">벤치마크</span>
+          <h3>HumanoidBench</h3>
+          <p>Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해 40개 이상의 작업을 제공함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">핵심 문제</a></li>
+<li><a href="#softvtbench">SoftVTBench 설계</a></li>
+<li><a href="#_4">실험 설정 및 기준</a></li>
+<li><a href="#_5">핵심 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</h1>
+      <p class="entry-name-en">Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blind to Color</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文由机器人鲁棒性研究团队提出，针对 VLA 模型在真实世界部署中对光照扰动的脆弱性，构建了 FLARE 物理聚光灯攻击框架与 ChromaGuard 色调保持对抗训练防御。核心贡献在于揭示朴素数据增强会让模型丢弃颜色信息、退化为形状偏置处理器，并提出在保留色度完整性的前提下实现光照鲁棒性的可行方案。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14698" target="_blank" rel="noopener">arXiv:2607.14698 Lights, Camera, Malfunction: When Illumination Robustness Leaves VLA Models Blin</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 鲁棒性研究几乎都聚焦于高级攻击——物理传感器欺骗、对抗样本、训练时后门注入，这些都需要攻击者具备特定知识或控制能力。但本文指出一个更根本、也更隐蔽的问题：模型在从仿真到真实、从实验室到部署时，对微小环境扰动（如光照角度或色温的轻微偏移）的失败，本质上源于泛化能力不足，而非安全漏洞被利用。这一判断将问题从“如何防御恶意攻击”重新定义为“如何提升对自然扰动的鲁棒性”，改变了讨论的框架。</p>
+<p>更值得警惕的是作者发现的防御陷阱：朴素 HSV 数据增强（色调 ±180° 随机扰动）虽然能提升光照鲁棒性，却让模型把颜色当作可丢弃的噪声。灰度诊断实验显示，Naive-Aug 模型在灰度输入下成功率几乎不变（LIBERO-Object 上 90.5% vs. 89.8%），而 Baseline 则从 89.4% 跌至 10%。这意味着增强训练教会了模型“不要依赖颜色”，但对于颜色本身就是任务关键信息的场景（如按颜色抓取物体），这种鲁棒性是灾难性的——Naive-Aug 在颜色依赖任务上良性光照下成功率从 77.5% 跌至 47.5%，且 85.7% 的失败源于抓错颜色。这改变了“数据增强总是有益”的朴素认知。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="flare">FLARE 攻击框架</h3>
+<ul>
+<li><strong>威胁模型</strong>：严格黑盒，攻击者无法访问模型架构、权重、梯度或训练数据；可在工作空间部署物理照明设备，控制位置、强度、色度，但部署后参数固定。</li>
+<li><strong>参数化</strong>（公式 1）：θ = [h_light, s_light, v_light, I, z_light, α_cutoff]，涵盖色调、饱和度、明度、强度、空间高度与截止角。</li>
+<li><strong>目标函数</strong>（公式 2）：L_i(θ) = (1/S) Σ_{t=1}^{S} ‖P_t^(i) − P_t'^(i)‖₂ + λ₁‖P_T^(i) − P_T'^(i)‖₂ + λ₂·𝕀_f^(i)，同时惩罚轨迹偏差与任务失败。</li>
+<li><strong>优化器</strong>：选择 Optuna 的 TPE 采样器而非 GP-BO，理由是高维连续空间下 GP-BO 的计算开销随试验次数显著增长，在需要数百次高成本机器人 rollout 的场景成为瓶颈。</li>
+<li><strong>任务评估</strong>：将 10 个 LIBERO 任务划分为两个各含 5 个任务的子集交替评估，防止优化过拟合到特定场景。</li>
+</ul>
+<h3 id="chromaguard">ChromaGuard 防御</h3>
+<ul>
+<li><strong>朴素增强基线</strong>：参数 φ = [h, s, v, c, γ]ᵀ，从均匀分布采样，色调扰动范围 ±180°。</li>
+<li><strong>核心设计</strong>：将增强参数空间限制为 Φ_CG，允许饱和度 [0.0, 4.0]、明度 [0.2, 3.0]、对比度 [0.8, 1.2]、锐度 [0.5, 1.5] 的有界扰动，但显式固定色调扰动为零（h = 0）。</li>
+<li><strong>对抗训练目标</strong>：min_w 𝔼_{x,y}[max_{φ∈Φ_CG} L(f_w(T(x;φ)), y)]，在色调受限空间内优化最坏情况光照。</li>
+</ul>
+<h3 id="_3">实验设置</h3>
+<ul>
+<li>仿真：LeRobot + LIBERO + MuJoCo，SmolVLA 训练 200,000 步，每套件 500 个评估回合。</li>
+<li>真实世界：6-DoF SO-101 Arm Pro，双摄像头，外部可编程 RGB 聚光灯；SmolVLA 与 π_0.5 各微调 100,000 步；颜色不变任务 50 回合数据、20 次试验，颜色依赖任务 240 回合数据、40 次试验。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>将“泛化失败”与“安全攻击”明确区分</strong>：作者用 FLARE 证明，无需任何模型内部知识，仅通过物理光照调整就能将 Baseline 成功率降至 0.0%，最大轨迹误差达 115.5 cm。这比高级攻击更易实施、更难防御，因为它利用的是模型本身的泛化缺陷而非安全漏洞。</p>
+</li>
+<li>
+<p><strong>揭示“鲁棒性-色觉”权衡</strong>：灰度诊断实验首次量化了朴素增强的代价——模型在丢弃颜色噪声的同时也丢弃了颜色语义。这一发现对依赖颜色线索的机器人任务（分拣、装配）具有直接警示意义，此前文献未系统讨论过这一副作用。</p>
+</li>
+<li>
+<p><strong>ChromaGuard 的“定向鲁棒”思路</strong>：不是无差别增强，而是将扰动空间限制在保留色度完整性的子空间内。真实世界实验中，SmolVLA 在颜色依赖任务上良性条件达 97.5%、攻击下达 92.5%，而 Naive-Aug 分别仅为 47.5% 和 40.0%，且失败主因是抓错颜色（85.7% vs. ChromaGuard 的 0%）。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<h3 id="1">仿真攻击评估（表 1 关键数据）</h3>
+<table>
+<thead>
+<tr>
+<th>任务套件</th>
+<th>模型</th>
+<th>攻击</th>
+<th>SR (%)</th>
+<th>TE-Avg (cm)</th>
+<th>TE-Max (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO-Spatial</td>
+<td>Baseline</td>
+<td>Optimized</td>
+<td>0.0</td>
+<td>22.3</td>
+<td>67.6</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>Optimized</td>
+<td>78.8</td>
+<td>4.23</td>
+<td>40.3</td>
+</tr>
+<tr>
+<td>LIBERO-Object</td>
+<td>Baseline</td>
+<td>Optimized</td>
+<td>0</td>
+<td>29.1</td>
+<td>88.3</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>Optimized</td>
+<td>93.2</td>
+<td>4.99</td>
+<td>41.8</td>
+</tr>
+<tr>
+<td>LIBERO-10</td>
+<td>Baseline</td>
+<td>Optimized</td>
+<td>0.0</td>
+<td>36.3</td>
+<td>115.5</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>Optimized</td>
+<td>47.2</td>
+<td>9.0</td>
+<td>64.0</td>
+</tr>
+</tbody>
+</table>
+<p>优化攻击将 Baseline 成功率全部降至 0.0%，而 Naive-Aug 保持较高成功率，说明朴素增强确实提升了光照鲁棒性。</p>
+<h3 id="2">灰度诊断（表 2 关键数据）</h3>
+<table>
+<thead>
+<tr>
+<th>任务套件</th>
+<th>模型</th>
+<th>Benign (RGB) SR (%)</th>
+<th>Grayscale SR (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO-Spatial</td>
+<td>Baseline</td>
+<td>81.2</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>79.4</td>
+<td>80.1</td>
+</tr>
+<tr>
+<td>LIBERO-Object</td>
+<td>Baseline</td>
+<td>89.4</td>
+<td>10</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>89.8</td>
+<td>90.5</td>
+</tr>
+<tr>
+<td>LIBERO-10</td>
+<td>Baseline</td>
+<td>58.4</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>50.2</td>
+<td>47.8</td>
+</tr>
+</tbody>
+</table>
+<p>Naive-Aug 在灰度下性能几乎不变，Baseline 则崩溃，证实朴素增强导致颜色信息被丢弃。</p>
+<h3 id="3">真实世界实验（表 3 关键数据）</h3>
+<table>
+<thead>
+<tr>
+<th>基础模型</th>
+<th>模型</th>
+<th>颜色不变 Attack SR (%)</th>
+<th>颜色依赖 Benign SR (%)</th>
+<th>颜色依赖 Attack SR (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SmolVLA</td>
+<td>Baseline</td>
+<td>0.0</td>
+<td>77.5</td>
+<td>27.5</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>70.0</td>
+<td>47.5</td>
+<td>40.0</td>
+</tr>
+<tr>
+<td></td>
+<td>ChromaGuard</td>
+<td>70.0</td>
+<td>97.5</td>
+<td>92.5</td>
+</tr>
+<tr>
+<td>π_0.5</td>
+<td>Baseline</td>
+<td>30.0</td>
+<td>47.5</td>
+<td>12.5</td>
+</tr>
+<tr>
+<td></td>
+<td>Naive-Aug</td>
+<td>75.0</td>
+<td>40.0</td>
+<td>47.5</td>
+</tr>
+<tr>
+<td></td>
+<td>ChromaGuard</td>
+<td>75.0</td>
+<td>55.0</td>
+<td>70.0</td>
+</tr>
+</tbody>
+</table>
+<p>ChromaGuard 在 SmolVLA 上显著优于 Naive-Aug，颜色依赖任务良性条件提升 50 个百分点（由表内 47.5%→97.5% 计算）。π_0.5 提升有限，作者归因于其预训练模型本身在良性场景就有 66.7% 的失败源于抓错颜色，是 SmolVLA 对应比例（11.1%）的六倍。</p>
+<h2 id="_6">边界与局限</h2>
+<p>作者明确声明 FLARE 与 ChromaGuard 是分析工具而非最终攻防方案，未探索时间动态光照或闭环自适应攻击。真实世界实验仅覆盖两种模型、两个任务类型，π_0.5 的较差表现提示防御效果可能受基础模型预训练质量制约。仿真到真实的迁移依赖先仿真优化再选真实攻击的两阶段流程，未验证端到端迁移的可靠性。灰度诊断仅作为间接证据，未直接测量模型内部表征的颜色编码强度。论文未明确讨论 ChromaGuard 在颜色本身是唯一区分特征（如形状完全相同）时的极限，也未给出训练成本对比。</p>
+<h2 id="_7">工程启示</h2>
+<p>复现时最先核对的是增强参数范围：Naive-Aug 的色调扰动 ±180° 是导致颜色丢弃的直接原因，ChromaGuard 将其固定为零是全部改进的来源。最容易踩坑的地方是任务评估策略——如果不在每次优化迭代中交替评估任务子集，FLARE 会过拟合到少数场景，导致真实世界攻击效果虚高。对于下游团队，若任务依赖颜色线索，务必用灰度输入做一次诊断测试：若模型在灰度下性能不降，说明颜色信息已被丢弃，需要检查增强配置。π_0.5 的结果提醒我们，防御策略的效果上限受基础模型预训练质量约束，选择基础模型时需评估其颜色敏感度。真实世界攻击生成依赖仿真候选，建议先在小规模仿真中验证攻击参数的可迁移性，再投入真实硬件实验。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.14698</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_software_lerobot_2024/">LeRobot</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zheng_flare_robot_learning_with_impl_2025/">FLARE</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_lights_camera_malfunction_when_illuminat_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SmolVLA</h3>
+          <p>SmolVLA 是 Hugging Face、Sorbonne University、valeo.ai 与 École Normale Supérieure Paris-Saclay 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zheng_flare_robot_learning_with_impl_2025/">
+          <span class="entry-type">论文</span>
+          <h3>FLARE</h3>
+          <p>FLARE 是加州理工学院于 2025 年 CoRL25 会议提出的大型视觉-语言-动作模型，通过将隐式世界模型与扩散 Transformer…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_lerobot_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>LeRobot</h3>
+          <p>覆盖数据集格式、遥操作、训练和部署的端到端PyTorch库。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#flare">FLARE 攻击框架</a></li>
+<li><a href="#chromaguard">ChromaGuard 防御</a></li>
+<li><a href="#_3">实验设置</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a><ul>
+<li><a href="#1">仿真攻击评估（表 1 关键数据）</a></li>
+<li><a href="#2">灰度诊断（表 2 关键数据）</a></li>
+<li><a href="#3">真实世界实验（表 3 关键数据）</a></li>
+</ul>
+</li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

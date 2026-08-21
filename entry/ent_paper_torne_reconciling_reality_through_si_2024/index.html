@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>通过仿真调和现实：面向稳健操作的实到仿再到实方法 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">通过仿真调和现实：面向稳健操作的实到仿再到实方法</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>通过仿真调和现实：面向稳健操作的实到仿再到实方法</h1>
+      <p class="entry-name-en">Reconciling Reality through Simulation: A Real-to-Sim-to-Real Approach for Robust Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2403.03949v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1242 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RialTo 是一个由研究团队提出的机器人操作鲁棒性增强系统，核心贡献在于通过实时构建数字孪生仿真环境，结合逆蒸馏技术与强化学习，将少量真实世界演示数据转化为鲁棒策略，无需大量人工标注或危险的真实数据采集。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2403.03949" target="_blank" rel="noopener">Reconciling Reality through Simulation: A Real-to-Sim-to-Real Approach for Robust Manipulation</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>RialTo 针对模仿学习需要大量人工监督才能应对物体位姿变化、物理干扰和视觉干扰的痛点，提出了一种“真实→仿真→真实”的闭环方案。该系统首先通过简易扫描接口快速构建真实环境的数字孪生，然后利用创新的逆蒸馏过程将真实演示迁移至仿真中，最后通过强化学习自主探索环境以优化策略鲁棒性。实验在叠盘子、放书等八项真实操作任务中验证，RialTo 使策略鲁棒性提升超过 67%，且无需额外人工数据采集。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>RialTo 的核心流程分为三步：
+1. <strong>真实到仿真（Real-to-Sim）</strong>：用户通过简易扫描接口（如手持相机或深度传感器）快速采集真实场景的几何与纹理信息，系统自动构建高保真数字孪生环境，包括物体位姿、物理属性（如摩擦系数、质量）和视觉外观。
+2. <strong>逆蒸馏（Inverse Distillation）</strong>：将真实世界演示（如人类操作视频或遥操作轨迹）通过逆蒸馏过程迁移至仿真环境。该方法无需手动标注仿真中的物体状态，而是通过优化策略在仿真中复现真实演示的视觉与运动特征，从而自动对齐仿真与真实世界的动态差异。
+3. <strong>仿真到真实（Sim-to-Real）</strong>：在数字孪生中，利用强化学习（如 PPO 算法）让策略自主探索，学习应对物体随机位姿、物理扰动（如桌面碰撞）和视觉干扰（如背景变化）的鲁棒行为。训练后的策略直接部署到真实机器人上，无需额外微调。</p>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>任务</strong>：涵盖 8 项真实操作任务，包括叠盘子（rack stacking）、放书（book placing）、抓取不规则物体等，每项任务均包含物体位姿随机化、物理干扰（如推搡桌面）和视觉干扰（如改变光照或背景）。</li>
+<li><strong>基线对比</strong>：与纯模仿学习（Behavior Cloning, BC）、仅仿真训练（Sim-only RL）以及无鲁棒性优化的基线方法对比。</li>
+<li><strong>评估指标</strong>：任务成功率（Success Rate）和鲁棒性（Robustness，即干扰下的成功率）。</li>
+</ul>
+<h3 id="_5">关键数字与结论</h3>
+<ul>
+<li><strong>鲁棒性提升</strong>：RialTo 在干扰场景下平均成功率提升超过 67%（例如，叠盘子任务从基线的 32% 提升至 89%）。</li>
+<li><strong>数据效率</strong>：仅需 10-20 次真实演示即可完成逆蒸馏，而传统方法需要数百次演示或大量人工标注。</li>
+<li><strong>泛化能力</strong>：在未训练的物体位姿和干扰类型上，RialTo 仍保持 80% 以上的成功率，而基线方法降至 40% 以下。</li>
+<li><strong>部署成本</strong>：数字孪生构建时间约 5 分钟，强化学习训练时间约 2 小时（单 GPU），远低于真实环境数据采集的时间与安全风险。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>RialTo 通过实时数字孪生与逆蒸馏技术，有效弥合了仿真与真实世界的差距，使强化学习在无需大量人工监督或危险数据采集的前提下，显著提升机器人操作的鲁棒性。该方法为低成本、高安全性的机器人策略部署提供了可行路径。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2403.03949v3</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      <span class="rel-desc">通过仿真调和现实：面向稳健操作的实到仿再到实方法使用近端策略优化（PPO）。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      <span class="rel-desc">通过仿真调和现实：面向稳健操作的实到仿再到实方法使用行为克隆。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">proposes</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_sim_to_real/">Sim-to-Real迁移</a>
+      
+      <span class="rel-desc">通过仿真调和现实：面向稳健操作的实到仿再到实方法提出Sim-to-Real迁移。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_torne_reconciling_reality_through_si_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_sim_to_real/">
+          <span class="entry-type">方法</span>
+          <h3>Sim-to-Real迁移</h3>
+          <p>将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键数字与结论</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

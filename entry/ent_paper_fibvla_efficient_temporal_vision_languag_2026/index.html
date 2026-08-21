@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling</h1>
+      <p class="entry-name-en">FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampling</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>FibVLA 是一个面向长时程具身操作任务的时序视觉-语言-动作模型，由研究团队提出，核心贡献在于用斐波那契采样策略替代固定频率或密集历史帧输入，在不增加 token 开销的前提下提升模型对任务上下文与细粒度运动的联合建模能力。该模型在 LIBERO、MIKASA-Robo、SimplerEnv 及真实机械臂平台上均取得领先成功率，同时推理延迟显著低于同类时序 VLA 基线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.29596" target="_blank" rel="noopener">arXiv:2607.29596 FibVLA: An Efficient Temporal Vision-Language-Action Model with Fibonacci Sampli</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 模型在处理长时程任务时普遍存在“时间短视”问题——它们要么只依赖最近几帧观测，要么试图把全部历史帧塞进视觉编码器，前者丢失了子任务进展等低频上下文，后者则引发 token 爆炸，直接拖垮实时控制。此前的时间建模方案，如预测未来子目标或稀疏表示学习，要么引入额外训练复杂度，要么依赖离线预处理，难以在部署时灵活适配不同控制频率。</p>
+<p>FibVLA 真正改变的是“历史信息如何被采样、编码和复用”这一底层逻辑。它不再把历史帧当作静态输入拼接，而是通过斐波那契递推的采样间隔，让历史特征 token 在推理时可以被显式复用，从而把“看更多历史”的成本从线性增长降为对数增长。这等于在时间维度上做了一次类似“注意力稀疏化”的改造，但用的是更简单的整数序列约束，而非学习式掩码。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="logarithmic-hindsight-sampling">对数后见采样（Logarithmic Hindsight Sampling）</h3>
+<ul>
+<li>采样点定义为 k_i = ⌊q_min · r^i⌋，其中 q_min 为最小采样间隔，r &gt; 1 为增长率。</li>
+<li>施加递归稀疏约束 k_i ≥ k_{i-1} + k_{i-2}（∀i &gt; 2），消除离散化导致的索引碰撞，保证序列严格单调并消除冗余。</li>
+<li>增长率可根据控制频率灵活调整，平衡长期覆盖与关键状态转换捕捉精度。</li>
+</ul>
+<h3 id="channel-wise-temporal-encoding-cte">通道时序编码（Channel-wise Temporal Encoding, CTE）</h3>
+<ul>
+<li>通过帧差分 D(·,i) = |I(·,t−k_i) − I(·,t−k_{i+1})| 计算运动差异。</li>
+<li>用预定义阈值 ξ 生成二值运动掩码 Ψ(·,i)。</li>
+<li>递归生成时序编码帧 H(·,i)：运动处设为 τ（最大强度持续时间），非运动处衰减 H(·,i+1) − δ（δ为衰减参数），形成“视觉轨迹”。</li>
+<li>将视觉历史分为 Near、Mid、Far 三个时间范围，分别映射到 PaliGemma 视觉编码器（SigLip）的 R、G、B 通道，形成后见特征；当前 RGB 帧作为语义锚点与后见特征合并输入。</li>
+</ul>
+<h3 id="fibonacci-recurrent-inference">斐波那契递归推理（Fibonacci Recurrent Inference）</h3>
+<ul>
+<li>当 k_i = k_{i-1} + k_{i-2} 时，采样策略与斐波那契序列的加法递归性质完美对齐，允许历史特征 token 在下一动作块推理时被复用。</li>
+<li>设置动作块长度 L = k_{i-2}，使历史帧与下一时刻采样点精确对齐（等式 (t+k_{i-2})−k_i = t−k_{i-1}）。</li>
+<li>证明该策略是在稀疏采样约束下最大化历史信息复用的唯一解析解（证明见附录H）。</li>
+<li>采样深度增加时，相邻采样间隔之比收敛于黄金比例，自然维持对数采样分布。</li>
+</ul>
+<h3 id="_3">动作专家</h3>
+<ul>
+<li>采用流匹配生成动作分布而非判别式动作序列。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>斐波那契约束下的 token 复用</strong>：这是最核心的机制创新。通过将采样间隔设计为满足二阶递推的整数序列，并让动作块长度绑定到斐波那契项，历史帧的视觉特征 token 可以在下一动作块推理时被直接复用，无需重新编码。这相当于在时间维度上实现了“缓存”，且论文证明这是稀疏约束下的唯一最优解。</p>
+</li>
+<li>
+<p><strong>通道级时间编码（CTE）</strong>：把三个不同时间范围的历史帧差分结果编码进 RGB 三个通道，而非拼接多个帧。这不仅避免了 token 数量膨胀，还让视觉编码器天然地感知到“运动轨迹”的时空分布——高频帧对应细粒度运动，低频帧对应任务上下文，二者在特征空间中形成不同聚类，CTE 恰好利用了这一非均匀性。</p>
+</li>
+<li>
+<p><strong>无需重训练视觉编码器</strong>：FibVLA 声称无需对大规模视觉编码器进行重训练即可提升性能，这意味着它可以作为即插即用的时间建模模块，叠加在现有 PaliGemma 等骨干之上，降低了迁移成本。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<p>实验覆盖三个仿真基准（LIBERO、MIKASA-Robo、SimplerEnv）和真实机械臂平台，基线包括 OpenVLA、π₀、CogACT、TraceVLA、HiF-VLA 等 12 种方法。关键结果如下：</p>
+<table>
+<thead>
+<tr>
+<th>基准</th>
+<th>FibVLA</th>
+<th>第二好基线</th>
+<th>提升幅度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LIBERO Avg SR</td>
+<td>96.8%</td>
+<td>π₀ 94.2%</td>
+<td>2.6 个百分点</td>
+</tr>
+<tr>
+<td>LIBERO-Long</td>
+<td>95.2%</td>
+<td>CogACT 88.8%</td>
+<td>7.21%（由表内数值 95.2→88.8 计算）</td>
+</tr>
+<tr>
+<td>SimplerEnv-Fractal Overall</td>
+<td>72.1%</td>
+<td>CogACT 68.1%</td>
+<td>5.87%（由表内数值 72.1→68.1 计算）</td>
+</tr>
+<tr>
+<td>SimplerEnv-Bridge Avg</td>
+<td>67.3%</td>
+<td>CogACT 51.3%</td>
+<td>3.12%（由表内数值 67.3→51.3 计算）</td>
+</tr>
+<tr>
+<td>MIKASA-Robo Avg</td>
+<td>46.5%</td>
+<td>π₀ 33.0%</td>
+<td>40.9%（由表内数值 46.5→33.0 计算）</td>
+</tr>
+<tr>
+<td>真实世界平均得分</td>
+<td>85.7</td>
+<td>π₀ 74.3（由表内数值 85.7−11.4 计算）</td>
+<td>11.4 分</td>
+</tr>
+</tbody>
+</table>
+<p>消融实验显示，去掉采样策略（w/o Sampling）在 LIBERO-Long 上从 95.2% 降至 88.4%，去掉 CTE（w/o CTE）降至 91.2%，说明两者均贡献显著。效率方面，在统一 10 帧历史窗口下，FibVLA 推理时间 177 ms，低于 TraceVLA 的 196 ms（降低 9.69%，由表内数值 177→196 计算）和 HiF-VLA 的 243 ms（降低 27.16%，由表内数值 177→243 计算），同时成功率最高。</p>
+<h2 id="_6">边界与局限</h2>
+<p>论文未在正文中明确列出局限性章节。从事实要点推断，真实世界实验环境被刻意简化（白色背景板、黑色桌布、常见家用物品），未在更复杂、非受控的真实场景中验证；真实世界评估仅选取 7 个代表性任务，未覆盖全部 15 个任务。此外，斐波那契递归推理的最优性证明依赖严格不等式约束，若实际部署中采样间隔因离散化偏离严格递推，token 复用效率可能下降。论文未明确提供 GPU 型号、训练轮数等硬件配置细节。</p>
+<h2 id="_7">工程启示</h2>
+<p>复现或采用 FibVLA 时，首先核对采样序列是否严格满足 k_i ≥ k_{i-1} + k_{i-2} 约束——这是 token 复用机制成立的前提，任何离散化碰撞都会破坏递归对齐。其次，动作块长度 L 必须动态绑定到 k_{i-2}，而非固定值，否则历史帧与下一时刻采样点无法精确对齐。最容易踩坑的地方在于 CTE 的阈值 ξ 和衰减参数 δ：LIBERO 环境（10 Hz）与真实世界（30 Hz）的帧间位移差异很大，前者产生拉长轨迹，后者更紧凑，直接套用同一组参数会导致运动掩码失真。建议按控制频率分别标定这两个参数。效率对比时注意统一历史窗口大小（论文用 10 帧），否则推理时间差异不具可比性。最后，FibVLA 声称无需重训练视觉编码器，但骨干网络仍为 PaliGemma 3B，下游团队若更换视觉编码器，需重新验证 CTE 的通道映射是否仍然有效。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.29596</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">CogACT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_lin_hif_vla_hindsight_insight_and_2025/">HiF-VLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zheng_tracevla_visual_trace_promptin_2024/">TraceVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_fibvla_efficient_temporal_vision_languag_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">
+          <span class="entry-type">论文</span>
+          <h3>CogACT</h3>
+          <p>CogACT 是清华大学、微软亚洲研究院、中国科学技术大学及中科院微电子所联合提出的 2024 年大型视觉-语言-动作模型，专为机器人操作任务设计。其核心贡献在于提出一种组件化 VLA…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zheng_tracevla_visual_trace_promptin_2024/">
+          <span class="entry-type">论文</span>
+          <h3>TraceVLA</h3>
+          <p>TraceVLA 是 2024 年由马里兰大学帕克分校、微软研究院和 Capital One…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_lin_hif_vla_hindsight_insight_and_2025/">
+          <span class="entry-type">论文</span>
+          <h3>HiF-VLA</h3>
+          <p>HiF-VLA 是西湖大学、浙江大学、香港科技大学（广州）、南京大学及西湖机器人团队于 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#logarithmic-hindsight-sampling">对数后见采样（Logarithmic Hindsight Sampling）</a></li>
+<li><a href="#channel-wise-temporal-encoding-cte">通道时序编码（Channel-wise Temporal Encoding, CTE）</a></li>
+<li><a href="#fibonacci-recurrent-inference">斐波那契递归推理（Fibonacci Recurrent Inference）</a></li>
+<li><a href="#_3">动作专家</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a></li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

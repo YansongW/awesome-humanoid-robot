@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning</h1>
+      <p class="entry-name-en">Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control, Planning, and Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): xiaoze_P069. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文是一篇关于人形机器人全身运动与操作（locomotion-manipulation）的权威综述，由佐治亚理工学院、南加州大学、Google DeepMind、NVIDIA 等多机构联合撰写。文章系统梳理了模型基方法（MPC、WBC、接触规划）与学习基方法（RL、IL、基础模型）的现状，指出两者分离是当前核心瓶颈，并提出了融合感知、规划、控制与学习的未来方向。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2501.02116" target="_blank" rel="noopener">arXiv:2501.02116 Humanoid Locomotion and Manipulation: Current Progress and Challenges in Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这篇综述真正改变的是对“人形机器人全身操作”这一问题的定义方式。过去，locomotion 和 manipulation 被当作两个独立领域分别研究，模型基与学习基方法各自为战，缺乏统一的理论框架和评价基准。作者明确指出，这种分离导致模型基方法难以处理非结构化环境和动态交互，而纯学习方法又因高自由度、稀疏奖励和 sim-to-real 差距而效率低下。更关键的是，作者将“触觉感知”和“接触推理”提升到与运动规划同等重要的位置，指出动态接触理解（而非静态接触点估计）是连接感知、规划与控制的枢纽——这一视角转变将推动整个领域从“轨迹生成”转向“交互推理”。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">模型基方法：分层控制架构</h3>
+<ul>
+<li><strong>MPC-WBC 层级</strong>：全身 MPC（基于 SRBM、CD 或 WBD 模型）生成质心与末端执行器轨迹，底层 WBC 通过求解 QP 实现瞬时力矩分配。关键公式：WBC 动力学方程 M𝒒̈ − Jᵀ𝝀 − Sᵀ𝝉 = −C𝒒̇ − G，决策变量 X = [𝒒̈, 𝝀, 𝝉]ᵀ 使问题线性化，可实时求解。</li>
+<li><strong>接触规划三范式</strong>：搜索式（状态扩展探索接触模式，启发式加速）、优化式（CITO 将接触动力学纳入轨迹优化，用平滑最大值函数近似接触冲量）、学习式（RL 预测接触序列，[177] 实现 0.1 秒内生成，较优化方法快 300 倍）。</li>
+<li><strong>MPC 加速策略</strong>：结构利用（稀疏 NLP 将复杂度从 O(N³) 降至 O(N)）、逐次线性化（形成稀疏 QP）、热启动（用上一迭代解或运动记忆初始化）、采样（MPPI 利用 GPU 并行）。ReLU-QP 将人形平衡 MPC 频率从 65 Hz 提升至 1300 Hz 以上。</li>
+</ul>
+<h3 id="_4">学习基方法：数据与策略</h3>
+<ul>
+<li><strong>数据来源四类</strong>：策略执行、遥操作、动作捕捉、人类视频。机器人经验数据形态匹配但稀缺；人类数据丰富但存在具身差距（embodiment gap），需重定向（retargeting）解决。</li>
+<li><strong>混合范式</strong>：教师-学生（特权观测训练教师，部分观测克隆学生）、IL 预训练 + RL 微调、MPC 生成参考轨迹 + RL 运动模仿（轨迹增强）。</li>
+<li><strong>技能表示</strong>：MOE（专家不平衡问题）、VAE/GAN 潜在空间、Goal-Conditioned Policies、世界模型（TD-MPC2 以 MPC 方式规划想象轨迹）。</li>
+<li><strong>基础模型</strong>：VLA 模型（RT-2、OpenVLA、π₀）将动作标记化，π₀ 实现 50 Hz 高频控制；分层框架（LLM/VLM 高层决策 + 低层控制策略）是当前主流部署方式。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li><strong>统一框架的提出</strong>：首次将触觉感知、接触规划、全身控制、模仿学习与基础模型纳入同一分析框架，明确了“动态接触推理”作为连接各模块的核心纽带。这一视角超越了以往将感知、规划、控制割裂的综述范式。</li>
+<li><strong>对“数据扩展”的批判性反思</strong>：作者主张泛化应通过包含被操作物体运动、认知动作和多模态观测实现，而非单纯数据量扩展。这一观点挑战了“大数据 + 大模型”的流行叙事，为数据采集策略提供了新方向。</li>
+<li><strong>混合保真度模型与级联架构</strong>：提出近视野用全阶模型、远视野用简化模型的级联保真度策略，以及云端 FM 高层决策 + 机载实时控制的去中心化部署架构，为计算受限的实时系统提供了可行路径。</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<p>本文为综述性质，未报告原始实验数据，但汇总了关键量化指标：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>数值</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>学习式接触序列生成时间</td>
+<td>&lt;0.1 秒</td>
+<td>[177]</td>
+</tr>
+<tr>
+<td>学习式接触规划加速比</td>
+<td>300 倍（vs 优化方法）</td>
+<td>[177]</td>
+</tr>
+<tr>
+<td>ReLU-QP 提升 MPC 频率</td>
+<td>65 Hz → &gt;1300 Hz</td>
+<td>[210]</td>
+</tr>
+<tr>
+<td>稀疏 NLP 复杂度</td>
+<td>O(N³) → O(N)</td>
+<td>直接配点</td>
+</tr>
+<tr>
+<td>π₀ 控制频率</td>
+<td>50 Hz（双臂+轮式底座）</td>
+<td>[375]</td>
+</tr>
+<tr>
+<td>LLaMA 训练资源</td>
+<td>992×A100-80B GPU，34 天</td>
+<td>[405]</td>
+</tr>
+<tr>
+<td>SRBM MPC 典型频率</td>
+<td>20-300 Hz（QP 求解）</td>
+<td>表 II</td>
+</tr>
+<tr>
+<td>WBD MPC 典型频率</td>
+<td>100 Hz（DDP 求解）</td>
+<td>[190]</td>
+</tr>
+</tbody>
+</table>
+<p>这些数字表明：学习基方法在计算效率上已具优势，但模型基方法在实时性和鲁棒性上仍占主导；基础模型的高频控制能力（50 Hz）尚不足以支撑全身动态操作。</p>
+<h2 id="_7">边界与局限</h2>
+<p>作者明确承认的边界包括：动态环境中的腿臂操作“在很大程度上尚未被探索”；可变形物体建模需简化且集成到人形操作中“相对未被充分探索”；CITO 迁移为实时 CI-MPC 尚未实现；基础模型缺乏缩放定律，且推理延迟和互联网延迟可能妨碍去中心化部署。此外，多数运动模仿工作仅实现保守行为，DeepMimic 中的敏捷技能仍仅存在于仿真；遥操作全身体传感需额外设备（IMU 服、外骨骼），成本高且缺乏用户友好性。论文未明确提及具体硬件配置、数据量或训练配置等复现细节。</p>
+<h2 id="_8">工程启示</h2>
+<p>对工程团队的启示：<strong>首先核对接触建模假设</strong>——若任务涉及动态物体（如搬运重箱），必须采用统一机器人-物体模型而非外部力旋量近似；若为静态交互，外部力旋量策略可显著简化。<strong>MPC 选型优先级</strong>：SRBM 适合实时平衡（20-300 Hz），CD 适合多接触规划（5-10 Hz），WBD 仅适合离线或热启动场景（100 Hz）。<strong>最易踩坑处</strong>：加权 QP 的权重调参在高维任务中极易不稳定，建议优先采用层次 QP 或约束 RL 替代；域随机化范围需谨慎平衡——过大导致学习失败，过小导致迁移失败。<strong>数据策略</strong>：遥操作仍是收集人形数据最实用途径，但需注意重定向的动态任务（如行走）对演示者动态模型敏感；从人类视频学习时，应优先选择包含物体运动和多模态观测的数据，而非仅关节姿态。<strong>基础模型部署</strong>：当前不宜直接端到端控制，建议采用云端 FM 高层决策 + 机载 WBC 低层执行的层级架构，并关注 π₀ 式标记化动作表示对高自由度系统的效率问题。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2501.02116</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_humanoid_locomotion_manipulation_current_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">论文</span>
+          <h3>RT-2</h3>
+          <p>RT-2 是 Google DeepMind 于 2023 年提出的大型视觉-语言-动作模型，旨在将互联网规模预训练的视觉-语言知识直接迁移至机器人操控任务。其核心创新在于将机器人动作编码为文本…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">模型基方法：分层控制架构</a></li>
+<li><a href="#_4">学习基方法：数据与策略</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

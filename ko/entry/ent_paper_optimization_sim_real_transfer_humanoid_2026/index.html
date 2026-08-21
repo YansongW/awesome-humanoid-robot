@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Optimization of sim-to-real transfer in the humanoid robot NICO · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Optimization of sim-to-real transfer in the humanoid robot NICO</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Optimization of sim-to-real transfer in the humanoid robot NICO</h1>
+      <p class="entry-name-en">Optimization of sim-to-real transfer in the humanoid robot NICO</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Robotic grasping requires accurate coordination between visual perception, object localization, inverse kinematics, and hand control. However, when movements planned in simulation are executed on a physical robot, the sim-to-real gap can cause small positioning errors that prevent successful grasping. In our previous work, we introduced a low-cost haptic calibration method that improved 2D.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18210" target="_blank" rel="noopener">arXiv:2607.18210 Optimization of sim-to-real transfer in the humanoid robot NICO</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 NICO 휴머노이드 로봇의 sim-to-real 전이 문제에 대해, 터치스크린 기반 캘리브레이션 방법을 2D 도달에서 테이블 위 물체 파지로 확장하여 RGB-D 카메라나 외부 추적 없이 완전한 파지 파이프라인을 구축했다. 핵심 기여는 세 가지 캘리브레이션 보정 모델(M1 베이스라인, M2 부분 비선형, M3 완전 비선형)과 한 가지 시각 피드백 손 정렬 전략(M4)을 체계적으로 비교하고, 시각 피드백이 파지 성공률 향상에 현저한 이점을 제공함을 검증한 것이다.</p>
+<h2 id="_2">그것이 무엇을 바꾸었는가</h2>
+<p>이 작업이 실제로 바꾼 것은 무엇인가? 그것은 sim-to-real 문제를 "정적 캘리브레이션"에서 "동적 폐루프" 수준으로 끌어올린 것이다. 기존 연구(저자의 이전 작업 포함)는 캘리브레이션을 통해 시뮬레이션에서 실물로의 체계적 편차를 줄이는 데 초점을 맞췄지만, 파지 작업에서는 물체 위치 오차, 손 실행 오차, 시각 인식 오차가 결합되어 있어 단순히 개루프 캘리브레이션에 의존해서는 이러한 복합 오차를 대응할 수 없다. 본 논문의 전환점은 시뮬레이션 모델을 실물에 "완벽히" 맞추려 하지 않고, 시각 피드백을 온라인 보정 메커니즘으로 도입하여 로봇이 실제 관측에 따라 손 위치를 조정하게 함으로써, 캘리브레이션 모델이 훈련 영역 밖에서失效하는 근본적 결함을 우회한 것이다.</p>
+<p>문제 동기 측면에서, 저자는 M3 신경망 모델이 훈련 데이터 커버리지 영역 밖에서 외삽이 불안정하다는 점(평균 변위가 영역 내 2.14 cm에서 영역 외 5.45 cm로 증가)을 예리하게 포착했으며, 이는 전체 작업 공간에서 순수 캘리브레이션 경로의 실행 가능성을 직접적으로 부정한다. 따라서 그들은 시각 피드백을 보조 수단에서 핵심 전략으로 승격시켰으며, 이는 방법론적 개선일 뿐만 아니라 sim-to-real 문제 본질의 재정의다—더 정밀한 모델을 추구하기보다 시스템이 지각-행동 폐루프의 견고성을 갖추게 하는 것이다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 파이프라인</h3>
+<p>카메라 이미지 → YOLO 물체 이미지 좌표 검출 → 스테레오 비전 깊이 추정 → 머리 운동 사슬을 통해 로봇 좌표계로 변환 → 보정 모델(M1/M2/M3) 또는 시각 피드백(M4)으로 시뮬레이션 목표 위치 변환 → 요(yaw) 보정으로 손바닥 방향 제공 → IK로 관절각 계산 → NicoMotion을 통해 실물 로봇에서 실행.</p>
+<h3 id="m1-m3">캘리브레이션 모델(M1-M3)</h3>
+<ul>
+<li><strong>M1(베이스라인)</strong>: 구간별 선형 매핑, 시뮬레이션과 측정 높이 값을 수동 정렬 후 보간.</li>
+<li><strong>M2(부분 비선형)</strong>: 수평 목표 좌표는 MLP로 예측, 높이 성분은 여전히 보간 사용. 설계 근거: 수평 방향 오차는 주로 카메라 왜곡과 운동학 편차에서 발생하므로 비선형 매핑이 더 효과적; 높이 방향은 상대적으로 안정적이어서 보간으로 충분.</li>
+<li><strong>M3(완전 비선형)</strong>: 보정된 3D 목표 위치를 직접 예측. 설계 근거: 세 차원의 결합 오차를 완전히 분리하지만, 대가로 외삽 능력이 떨어짐.</li>
+</ul>
+<h3 id="m4">시각 피드백 손 정렬(M4)</h3>
+<ul>
+<li>반복 공식: p_IK^k = p_IK^(k-1) + a_k (p_obj − p_hand), 스텝 크기 a_k = 1/(2^(k-1)).</li>
+<li>핵심 설계: 스텝 크기 감소로 손이 물체에 가까워질 때 진동 방지; 정렬 임계값은 1 cm로 설정; 정렬 단계에서 손바닥이 카메라를 향해 회전하여 YOLO가 손바닥 중심을 안정적으로 검출하도록 보장.</li>
+<li>M4는 어떤 캘리브레이션 보정도 사용하지 않고 완전히 시각 피드백 폐루프에 의존.</li>
+</ul>
+<h3 id="_5">작업 특정 보정</h3>
+<ul>
+<li>수직 목표 보정 및 손바닥 요 각도 보정: 로봇 작업 공간의 불규칙한 기준점에서 수동 측정, 임의 목표 위치는 방사 기저 함수(RBF) 보간으로 추정.</li>
+<li>롤과 피치 각도는 고정하여 위에서 아래로 파지 자세 유지.</li>
+</ul>
+<h3 id="_6">시각 모듈 세부 사항</h3>
+<ul>
+<li>YOLO 검출: 맞춤 데이터셋 442개 이미지, 8개 클래스 주석, 80:20 훈련/검증 분할. YOLO11m 정확도 최고(All mAP50–95 0.823)지만, YOLO12s(0.806, 추론 10.86 ms)를 정확도와 실시간성의 절충으로 선택.</li>
+<li>스테레오 비전: 체커보드 캘리브레이션으로 내부 파라미터와 왜곡 계수 획득, 왜곡 보정 후 시차 맵 계산으로 깊이 추정. 고정 헤드 버전 평균 2D 위치 오차 0.76 cm지만, 카메라 과열로 인한 위치 드리프트(최대 약 6 cm)가 있어 추가 보정 필요.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>캘리브레이션의 대체로서의 시각 피드백(보완이 아닌)</strong>: M4는 캘리브레이션 보정을 완전히 버리고 시각 폐루프에만 의존하지만, 전체 작업 공간 성공률(72.7%)에서 최고를 기록했다. 이는 "캘리브레이션 정밀도가 파지 성공률을 결정한다"는 전통적 가정을 뒤엎고, 온라인 지각-행동 폐루프의 견고성이 어떤 오프라인 캘리브레이션 모델보다 훨씬 뛰어남을 증명했다.</p>
+</li>
+<li>
+<p><strong>손 경계 상자의 의도적 정의</strong>: YOLO가 검출하는 손 경계 상자를 손바닥 중심 영역으로 정의하여, 질량 중심이 손 정렬 위치에 더 잘 대응하도록 했다. 이 세부 사항은 단순해 보이지만, 시각 피드백에서 "손은 검출했지만 위치가 정렬되지 않는" 일반적인 문제를 직접 해결하는 공학 실무의 핵심 혁신이다.</p>
+</li>
+<li>
+<p><strong>스텝 크기 감소 반복 정렬 전략</strong>: a_k = 1/(2^(k-1))의 기하 감소 스텝 크기는 수렴 속도를 보장하면서 손이 물체에 가까워질 때의 진동을 방지한다. 이 단순하면서도 효과적인 제어 전략은 복잡한 적응 제어보다 실물 로봇에서 재현하고 튜닝하기 쉽다.</p>
+</li>
+</ol>
+<h2 id="_8">실험과 결과</h2>
+<h3 id="2">파지 실험 통계(표 2 요약)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>M1(베이스라인)</th>
+<th>M2</th>
+<th>M3</th>
+<th>M4(시각 피드백)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hand SV OK</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>77.3% (17/22)</td>
+</tr>
+<tr>
+<td>Grasp Rate (SV OK)</td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td>94.1% (48/51)</td>
+</tr>
+<tr>
+<td>Grasp Rate (NN Area)</td>
+<td>10.0% (3/30)</td>
+<td>93.3% (28/30)</td>
+<td>96.7% (29/30)</td>
+<td>83.3% (25/30)</td>
+</tr>
+<tr>
+<td>Grasp Rate (All)</td>
+<td>16.7% (11/66)</td>
+<td>48.5% (32/66)</td>
+<td>57.6% (38/66)</td>
+<td>72.7% (48/66)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">핵심 결과 해석</h3>
+<ul>
+<li><strong>M3는 NN 보정 영역 내에서 우수한 성능(96.7%)</strong>을 보이지만, 전체 작업 공간 성공률은 57.6%로 급락하여 외삽 실패 문제(영역 내 평균 변위 2.14 cm vs 영역 외 5.45 cm)를 검증했다.</li>
+<li><strong>M4의 전체 작업 공간 성공률(72.7%)은 모든 캘리브레이션 모델보다 현저히 우수</strong>하지만, 스테레오 비전 손 위치 파악에 제한을 받는다: 22개 위치 중 17개만 손을 정확히 위치 파악. 손 위치가 정확한 시도만 고려하면 성공률이 94.1%에 달하며, 주요 병목이 제어가 아닌 인식에 있음을 시사한다.</li>
+<li><strong>문헌 비교</strong>: 문헌 [4]는 NICO에서 최고 모델 성공률 80.3%, 문헌 [8]은 제로샷 70%(미세 조정 후 91%), 문헌 [13]은 미지의 적대적 물체 83%. 본 논문 M4의 72.7%는 외부 추적 없이, 대량의 실제 데이터 미세 조정 없이 경쟁력 있는 수치다.</li>
+</ul>
+<h2 id="_10">경계와 한계</h2>
+<ul>
+<li><strong>스테레오 비전 손 위치 파악이 최대 병목</strong>: 손 뒤 배경이 너무 멀면 손 위치가 강하게 과대평가되어 22개 위치 중 5개에서 손 위치 파악 실패. 저자는 손 분할이나 깊이 추정 개선을 시도하지 않았으며, 이는 M4의 상한을 직접 제한한다.</li>
+<li><strong>M3 외삽 불안정</strong>: 훈련 데이터 커버리지 영역 밖에서 일반적으로 과도 보정이 발생하며, 저자는 해결책을 제시하지 않고 시각 피드백 사용을 권장할 뿐이다.</li>
+<li><strong>엔드투엔드 파지 전략 미훈련</strong>: 여전히 명시적 위치 파악, IK, 캘리브레이션 보정에 의존하며, 시스템 복잡도가 높고 모듈 간 오차 누적 문제가 완전히 해결되지 않았다.</li>
+<li><strong>평가 시나리오 단일</strong>: 단일 물체(플러시 토마토)만 사용하여 다중 물체, 다양한 형태/재질/방향의 일반화를 검증하지 않았다.</li>
+<li><strong>다른 연구와 비교 어려움</strong>: 플랫폼, 물체, 센서, 평가 프로토콜의 차이가 커서 숫자 비교는 참고용일 뿐이다.</li>
+</ul>
+<h2 id="_11">공학적 시사점</h2>
+<ul>
+<li><strong>캘리브레이션 정밀도 추구보다 시각 피드백 폐루프 우선 채택</strong>: M4의 결과는 sim-to-real 시나리오에서 온라인 지각-행동 폐루프의 견고성이 오프라인 캘리브레이션보다 훨씬 뛰어남을 보여준다. 재현 시 시각 검출과 스테레오 위치 파악의 신뢰성을 먼저 확보한 다음 캘리브레이션 보정을 고려해야 한다.</li>
+<li><strong>스테레오 비전의 실패 모드 주의</strong>: 손 뒤 배경이 너무 멀면 깊이 추정이 심각하게 과대평가되며, 이는 M4의 주요 실패 원인이다. 재현 시 손 분할 개선(예: 깊이 인식 검출기 사용)이나 작업 공간 배경 복잡도 제한을 권장한다.</li>
+<li><strong>M3 유형 신경망 모델은 훈련 커버리지 영역에만 적용</strong>: 캘리브레이션 모델을 반드시 사용해야 한다면 목표 위치를 훈련 데이터 범위 내로 엄격히 제한하고, 입력-출력 변위(2.14 cm 초과 시 외삽 위험으로 간주)를 모니터링해야 한다.</li>
+<li><strong>YOLO 선택 권장</strong>: YOLO12s는 정확도(All 0.806)와 추론 시간(10.86 ms) 사이에서 최적의 균형을 이루며 실시간 파지에 적합하다. 정확도 요구가 더 높으면 YOLO11m(0.823)으로 교체할 수 있지만 추론 시간은 20.45 ms로 증가한다.</li>
+<li><strong>가장 함정에 빠지기 쉬운 부분</strong>: 카메라 과열로 인한 위치 드리프트(최대 약 6 cm)는 장시간 실행에서 무시할 수 없으며, 주기적 캘리브레이션이나 드리프트 보상 메커니즘 설계가 필요하다; 손 경계 상자 정의는 정렬 목표와 일치해야 하며, 그렇지 않으면 시각 피드백이 잘못된 위치로 수렴한다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_system_identification/">시스템 동정</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_optimization_sim_real_transfer_humanoid_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_system_identification/">
+          <span class="entry-type">방법</span>
+          <h3>시스템 동정</h3>
+          <p>측정된 입출력 데이터로부터 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">그것이 무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 파이프라인</a></li>
+<li><a href="#m1-m3">캘리브레이션 모델(M1-M3)</a></li>
+<li><a href="#m4">시각 피드백 손 정렬(M4)</a></li>
+<li><a href="#_5">작업 특정 보정</a></li>
+<li><a href="#_6">시각 모듈 세부 사항</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험과 결과</a><ul>
+<li><a href="#2">파지 실험 통계(표 2 요약)</a></li>
+<li><a href="#_9">핵심 결과 해석</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계와 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

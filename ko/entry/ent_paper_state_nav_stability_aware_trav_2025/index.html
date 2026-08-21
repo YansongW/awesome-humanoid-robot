@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</h1>
+      <p class="entry-name-en">STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01046v4. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1217 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain is a 2025 work on navigation for humanoid robots, with open-source code available.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2506.01046" target="_blank" rel="noopener">STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이족 보행 로봇은 인간 환경에서 기동성 이점을 가지지만, 바퀴형 또는 사족 보행 로봇에 비해 더 높은 불안정 위험에 직면합니다. 기존의 통행 가능성 추정은 주로 안정적인 플랫폼을 위해 설계되었으며, 이족 보행 분야는 여전히 수동 규칙에 의존하고 거친 지형의 안정성에 대한 고려가 부족합니다. STATE-NAV는 학습 패러다임을 이족 보행 통행 가능성 추정에 처음으로 도입하여, TravFormer 네트워크를 통해 불안정 확률과 그 불확실성을 예측하고, 통행 가능성을 사용자 지정 불안정 임계값 하의 최대 명령 속도로 정의합니다. 이 속도 지표는 TravRRT* 전역 계획과 MPC 로컬 제어를 포함하는 계층적 프레임워크에 통합되며, MuJoCo 시뮬레이션과 실제 실험에서 모두 더 우수한 내비게이션 성능을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>TravFormer 네트워크</strong>: Transformer 아키텍처 기반으로, 지형 포인트 클라우드와 로봇 상태를 입력으로 받아 각 위치의 이족 보행 불안정 확률과 그 불확실성(Monte Carlo Dropout을 통해 구현)을 출력합니다. 훈련 데이터는 MuJoCo 시뮬레이션의 무작위 지형에서 이족 보행 궤적을 통해 수집됩니다.</li>
+<li><strong>안정성 인식 통행 가능성</strong>: 불안정 확률이 사용자 설정 임계값(예: 0.3)보다 낮을 때 로봇이 안전하게 실행할 수 있는 최대 명령 속도로 정의됩니다. 이 속도는 TravFormer의 예측 결과를 이분 탐색으로 계산하여 얻습니다.</li>
+</ul>
+<h3 id="_4">계층적 플래너</h3>
+<ul>
+<li><strong>전역 계획 계층</strong>: TravRRT<em>(통행 가능성 인식 RRT</em>)는 탐색 과정에서 속도 통행 가능성 맵을 활용하여 샘플링을 유도하고, 높은 통행 가능 속도 영역을 우선 선택하여 비효율적인 노드 확장을 줄입니다.</li>
+<li><strong>로컬 제어 계층</strong>: MPC 컨트롤러는 TravRRT*가 출력한 경로를 참조로 하여 보행 파라미터와 발 착지점을 실시간으로 조정하여 동적 지형에서 안정성을 유지합니다.</li>
+</ul>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>시뮬레이션 환경</strong>: MuJoCo에서 자갈, 경사로, 계단 등 8가지 무작위 지형을 구축하고, 순수 기하 통행 가능성 방법(예: 높이 맵 임계값) 및 수동 규칙 방법(예: ZMP 제약)과 같은 기준선과 비교합니다.</li>
+<li><strong>실제 실험</strong>: Unitree H1 이족 보행 로봇에 배포하여 실내 카펫, 실외 잔디, 자갈길을 포함한 테스트 시나리오를 수행합니다.</li>
+</ul>
+<h3 id="_6">주요 결과</h3>
+<ul>
+<li><strong>불안정 예측 정확도</strong>: TravFormer는 테스트 세트에서 92.3%의 불안정 이벤트 재현율을 달성하여 ZMP 기반 규칙 방법 대비 37% 향상되었습니다.</li>
+<li><strong>내비게이션 성공률</strong>: 시뮬레이션에서 STATE-NAV는 8/6 지형에서 85% 이상의 성공률을 보였으며, 기준선 방법은 자갈 지형에서 40% 미만의 성공률을 기록했습니다.</li>
+<li><strong>시간 효율성</strong>: TravRRT<em>는 표준 RRT</em> 대비 계획 시간이 42% 감소(평균 1.8초 대 3.1초)했으며, 경로 길이는 5%만 증가했습니다.</li>
+<li><strong>실제 실험</strong>: 실외 자갈길에서 STATE-NAV는 평균 속도 0.6m/s를 구현하며 넘어짐 없이 주행했지만, 수동 규칙 방법은 동일 지형에서 속도가 0.2m/s로 감소하고 2회의 불안정이 발생했습니다.</li>
+</ul>
+<h3 id="_7">결론</h3>
+<p>STATE-NAV는 학습 기반 통행 가능성 추정과 위험 민감 계획을 처음으로 결합하여 이족 보행 로봇의 거친 지형 내비게이션 문제를 해결합니다. 핵심 혁신은 안정성 제약을 정량화 가능한 속도 지표로 변환하고 계층적 아키텍처를 통해 실시간 의사 결정을 구현한 것입니다. 향후 작업은 동적 장애물 환경과 다중 지형 전이 학습으로 확장될 예정입니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_state_nav_stability_aware_trav_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">계층적 플래너</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">주요 결과</a></li>
+<li><a href="#_7">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

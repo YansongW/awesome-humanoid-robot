@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Robot Parkour Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Robot Parkour Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Robot Parkour Learning</h1>
+      <p class="entry-name-en">Robot Parkour Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P130. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Parkour is a grand challenge for legged locomotion that requires robots to overcome various obstacles rapidly in complex environments. Existing methods can generate either diverse but blind locomotion skills or vision-based but specialized skills by using reference animal data or complex rewards. However, autonomous parkour requires robots to learn generalizable skills that are both vision-based.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2309.05665" target="_blank" rel="noopener">arXiv:2309.05665 Robot Parkour Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 저비용 사족 로봇(Unitree A1/Go1)에서 등반, 점프, 기어가기, 옆으로 이동, 달리기의 다섯 가지 기술을 포괄하는 엔드투엔드, 비전 기반 단일 파쿠르 정책을 구현하는 2단계 강화 학습 프레임워크를 제안한다. 핵심 기여는 소프트 동역학 제약을 통한 사전 학습과 하드 동역학 미세 조정, 그리고 DAgger 증류를 결합하여 로봇이 온보드 깊이 카메라만으로 시뮬레이션과 실제 세계에서 고난도 장애물 통과를 수행할 수 있게 한 점이다.</p>
+<h2 id="_2">무엇이 바뀌었는가</h2>
+<p>족식 로봇의 민첩한 운동은 오랫동안 "다양성"과 "시각적 폐루프"의 분리 문제에 직면해 왔다. 참조 운동 기반 방법은 풍부한 동작을 생성할 수 있지만 환경 인식이 부족하고, 시각 정책은 종종 단일 기술에 국한되며 고가의 하드웨어나 복잡한 보상 엔지니어링에 의존한다. 본 논문은 이러한 상황을 바꾼다. 단일 정책, 저비용 하드웨어, 단순한 보상만으로도 동물 운동 데이터나 작업별 보상 설계 없이도 다섯 가지 매우 다른 파쿠르 기술을 동시에 습득할 수 있음을 증명한다. 이는 본질적으로 "파쿠르"를 정교하게 설계된 전용 컨트롤러 문제에서 확장 가능한 범용 강화 학습 문제로 재정의하며, 비구조화된 환경에서 족식 로봇의 자율 탐색을 위한 새로운 실현 가능성 기준을 제시한다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="2">2단계 훈련 패러다임</h3>
+<ol>
+<li><strong>RL 사전 학습(소프트 동역학)</strong>: 로봇의 몸체가 장애물을 통과할 수 있도록 허용하며, 보상 함수는 세 가지 항만 포함한다:</li>
+<li><code>r_forward = -α1|v_x - v_x_target| - α2|v_y|² + α3·e^{-|ω_yaw|}</code></li>
+<li><code>r_energy = -α4·Σ|τ_j·q̇_j|²</code></li>
+<li><code>r_alive = 2</code>
+   추가로 관통 패널티 <code>r_penetrate = -Σ_p(α5·𝟙[p] + α6·d(p))·v_x</code>를 포함하며, 여기서 <code>d(p)</code>는 관통 깊이이고 <code>v_x</code>를 곱해 로봇이 관통을 이용해 빠르게 통과하는 것을 방지한다.</li>
+<li><strong>RL 미세 조정(하드 동역학)</strong>: 관통 보상을 제거하고 실제 충돌 제약 하에서 사전 학습된 정책을 <code>r_skill</code>만으로 최적화한다.</li>
+</ol>
+<h3 id="_4">자동 커리큘럼 및 기술 정책</h3>
+<ul>
+<li>장애물 난이도는 점수 <code>s∈[0,1]</code>(간격 0.05)로 제어되며, 속성은 선형 보간된다: <code>l = (1-s)·l_easy + s·l_hard</code>, 관통 보상에 따라 <code>s</code>가 자동 조정된다.</li>
+<li>다섯 개의 전용 GRU 정책(<code>π_climb</code>, <code>π_leap</code>, <code>π_crawl</code>, <code>π_tilt</code>, <code>π_run</code>)을 훈련하며, 입력은 고유 감각(ℝ²⁹), 이전 동작(ℝ¹²) 및 특권 정보(장애물 거리/높이/너비/4차원 원-핫 범주, 지면 마찰, 질량 중심, 모터 강도)이다.</li>
+</ul>
+<h3 id="_5">증류 및 배포</h3>
+<ul>
+<li>DAgger를 사용하여 다섯 개의 전용 정책을 단일 시각 정책 <code>π_parkour</code>로 증류하며, 입력에는 깊이 이미지 잠재 임베딩(소형 CNN, 채널 [16,32,32], 커널 [5,4,3])이 포함되고 증류 손실은 이진 교차 엔트로피이다.</li>
+<li>깊이 맵 해상도 48×64, 갱신 주파수 10Hz, 임베딩은 비동기적으로 획득된다. 정책은 50Hz로 실행되며, 출력 목표 관절 위치는 PD 컨트롤러(Kp=50, Kd=1)를 통해 토크로 변환되고 25Nm로 제한된다.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li><strong>소프트 동역학 관통 훈련</strong>: 사전 학습 단계에서 장애물 관통을 허용하고 자동 커리큘럼을 결합하여 희소 보상 하에서 탐색의 어려움을 해결한다. 이는 등반과 점프 기술을 처음부터 학습할 수 있는 유일한 방법이다(RND 및 하드 동역학 기준선은 모두 실패).</li>
+<li><strong>단순 보상 + 특권 증류</strong>: 세 가지 일반 보상(속도, 에너지, 생존)만으로 다섯 가지 기술을 훈련한 다음 DAgger를 통해 특권 정보를 순수 시각 정책으로 증류하여 복잡한 보상 설계와 작업별 설계를 피한다.</li>
+<li><strong>저비용 하드웨어 폐루프</strong>: A1/Go1에서 온보드 Jetson NX와 RealSense D435만으로 50Hz 폐루프 제어를 구현하며, 외부 모션 캡처나 고가의 컴퓨팅 플랫폼 없이도 민첩한 로봇의 배포 장벽을 크게 낮춘다.</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<h3 id="2-36m">시뮬레이션 비교(표 2, 최대 거리 3.6m, 성공률 %)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Climb</th>
+<th>Leap</th>
+<th>Crawl</th>
+<th>Tilt</th>
+<th>Run</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blind</td>
+<td>0</td>
+<td>0</td>
+<td>13</td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr>
+<td>MLP</td>
+<td>0</td>
+<td>1</td>
+<td>63</td>
+<td>43</td>
+<td>100</td>
+</tr>
+<tr>
+<td>No Distill</td>
+<td>0</td>
+<td>0</td>
+<td>73</td>
+<td>0</td>
+<td>100</td>
+</tr>
+<tr>
+<td>RMA</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>74</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Ours</strong></td>
+<td><strong>86</strong></td>
+<td><strong>80</strong></td>
+<td><strong>100</strong></td>
+<td><strong>73</strong></td>
+<td><strong>100</strong></td>
+</tr>
+<tr>
+<td>Oracles w/o Soft Dyn</td>
+<td>0</td>
+<td>0</td>
+<td>93</td>
+<td>86</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Oracles</td>
+<td>95</td>
+<td>82</td>
+<td>100</td>
+<td>100</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a1-10">실제 세계(A1, 10회 시도)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>크기</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>등반</td>
+<td>0.40m(신장의 1.53배)</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>점프</td>
+<td>0.60m(몸길이의 1.5배)</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>기어가기</td>
+<td>0.2m(신장의 0.76배)</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>옆으로 이동</td>
+<td>0.28m(몸폭보다 작음)</td>
+<td>통과</td>
+</tr>
+</tbody>
+</table>
+<p>핵심 결론: 소프트 동역학 사전 학습은 등반/점프 성공의 필수 조건이다(Oracles w/o Soft Dyn 성공률 0). 증류된 시각 정책의 성능은 특권 전문가(Oracles)에 근접하며, 시각 없는 기준선보다 크게 우수하다.</p>
+<h2 id="_8">경계 및 한계</h2>
+<ul>
+<li><strong>환경 구축의 수동 의존성</strong>: 시뮬레이션 환경은 수동으로 구축해야 하며, 새로운 기술에는 새로운 장애물 유형과 외관이 필요하므로 자동화 수준이 낮아 기술 확장 속도가 제한된다.</li>
+<li><strong>시각 양식 단일성</strong>: 깊이 이미지만 사용하고 RGB 의미 정보를 활용하지 않으므로 투명/반사/저질감 장애물에는 실패할 수 있다.</li>
+<li><strong>장애물 범위 제한</strong>: 테스트 크기는 모두 로봇 스케일의 2배 미만이며, 더 큰 스케일이나 동적 장애물 시나리오는 검증되지 않았다.</li>
+<li><strong>논문에서 명확하지 않음</strong>: 지면 경사, 연약한 지면, 비강성 장애물에 대한 정책의 일반화 능력, 장시간 운영 시 드리프트 및 마모 영향.</li>
+</ul>
+<h2 id="_9">엔지니어링 시사점</h2>
+<ul>
+<li><strong>재현 시 우선 확인 사항</strong>: 보상 계수 α1-α6(예: Climb의 α5=1e-2, α6=1e-2)와 커리큘럼 간격 0.05는 훈련 안정성에 중요하므로, 단일 기술 재현 후 다중 기술로 확장하는 것을 권장한다.</li>
+<li><strong>쉽게 빠지는 함정</strong>: 깊이 이미지 지연 무작위화([0.2, 0.26]s)와 카메라 자세 섭동(위치 ±0.01m, 피치 [0,5]°)은 sim-to-real 성공의 핵심이므로 생략할 수 없다. PD 게인 Kp=50, Kd=1은 엄격히 일치해야 하며, 그렇지 않으면 토크 제한 25Nm로 인해 동작이 왜곡된다.</li>
+<li><strong>하류 팀 권장 사항</strong>: 새 플랫폼에 배포할 경우 동작 스케일링 상수(엉덩이 0.4, 무릎 0.6)와 모터 강도 샘플링 범위 [0.9, 1.1]을 우선 조정하라. 증류 단계에서는 4대의 3090 NFS 동기화가 필요하며, 그렇지 않으면 정책 업데이트 지연으로 증류가 발산할 수 있다.</li>
+<li><strong>계산 자원</strong>: 단일 기술 사전 학습 12시간 + 미세 조정 6시간(1×3090), 증류는 4×3090 병렬이 필요하므로, 예산이 제한된 경우 먼저 소프트 동역학의 이점을 검증한 후 전체 프로세스에 투자하는 것을 권장한다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_domain_randomization/">도메인 랜덤화</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_robot_parkour_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_randomization/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 랜덤화</h3>
+          <p>훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇이 바뀌었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#2">2단계 훈련 패러다임</a></li>
+<li><a href="#_4">자동 커리큘럼 및 기술 정책</a></li>
+<li><a href="#_5">증류 및 배포</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a><ul>
+<li><a href="#2-36m">시뮬레이션 비교(표 2, 최대 거리 3.6m, 성공률 %)</a></li>
+<li><a href="#a1-10">실제 세계(A1, 10회 시도)</a></li>
+</ul>
+</li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control</h1>
+      <p class="entry-name-en">Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03964v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1057 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Worldscape-MoE 是一个基于 Diffusion Transformers 的混合专家世界模型，由研究团队提出，旨在解决异构动作控制的统一与扩展问题。其核心贡献在于通过模态感知控制注入、共享与专用专家机制，以及渐进式 MoE 调优策略，实现了对多种动作模态（如运动、机器人操作、手部控制）的协同学习，并在 WorldArena 基准上取得了领先性能。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.03964" target="_blank" rel="noopener">Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>当前视频生成世界模型通常围绕孤立控制接口（如相机轨迹、机器人动作或手部关节信号）组织，这种碎片化限制了模型的可扩展性。Worldscape-MoE 的核心洞察在于，不同控制方式虽表示形式各异，但都约束着相同的物理规律与场景动态。为此，该模型采用模态感知控制注入、共享与专用专家结合的设计，并引入渐进式 MoE 调优策略，支持持续扩展新动作模态。实验表明，异构监督不仅不会干扰，反而能提升各控制能力，在 WorldArena 上取得优异结果，并展现出良好的分布外泛化与扩展行为。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>基础模型</strong>：Worldscape-MoE 基于 Diffusion Transformers 构建，将混合专家机制融入世界模型框架。</li>
+<li><strong>核心设计</strong>：</li>
+<li><strong>模态感知控制注入</strong>：针对不同动作模态（如机器人关节、手部运动、相机轨迹）设计专用编码器，将异构动作信号映射到统一表示空间。</li>
+<li><strong>共享与专用专家</strong>：模型包含共享专家（捕获跨模态的通用物理规律与场景动态）和模态专用专家（处理特定控制接口的细节），通过门控机制动态组合。</li>
+<li><strong>渐进式 MoE 调优</strong>：支持逐步添加新动作模态，无需从头训练，仅需扩展专家网络并微调门控模块。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>任务范围</strong>：涵盖运动控制（locomotion）、机器人操作（robotic manipulation）和第一人称手部控制（egocentric hand control）三类异构动作。</li>
+<li><strong>基准测试</strong>：在 WorldArena 上进行评估，同时对比运动与手部控制专用指标。</li>
+<li><strong>训练策略</strong>：采用多模态联合训练，异构动作数据混合输入，验证协同学习效果。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>性能提升</strong>：Worldscape-MoE 在 WorldArena 上取得领先结果，运动控制与手部控制指标均优于单模态基线。</li>
+<li><strong>泛化能力</strong>：在分布外场景（out-of-distribution generalization）中表现稳健，能适应未见过的动作组合与环境变化。</li>
+<li><strong>扩展行为</strong>：随着更多控制数据与专家模块的集成，模型性能持续提升，验证了渐进式 MoE 策略的可扩展性。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>Worldscape-MoE 通过统一异构动作监督，证明了共享世界模型能有效吸收多模态控制信号，并提升各子任务性能。其模块化设计为未来扩展至更多动作模态（如语音、触觉）提供了可行框架。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2607.03964v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">proposes</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_world_model/">世界模型</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（1）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_worldscape_moe_a_unified_mixtu_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

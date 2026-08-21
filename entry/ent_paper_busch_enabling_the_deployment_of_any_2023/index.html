@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>通过自动化容器化在微服务架构中实现任意规模机器人应用的部署 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">通过自动化容器化在微服务架构中实现任意规模机器人应用的部署</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>通过自动化容器化在微服务架构中实现任意规模机器人应用的部署</h1>
+      <p class="entry-name-en">Enabling the Deployment of Any-Scale Robotic Applications in Microservice Architectures through Automated Containerization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">软件中间件</span><span class="tag">量产制造</span><span class="tag">应用与市场</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">中游</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2309.06611v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (828 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种基于微服务的容器化工作流，用于ROS/ROS 2机器人应用，并开源工具套件（docker-ros、docker-ros-ml-images、docker-run）。该套件可自动构建最小Docker镜像、提供支持机器学习的基镜像，并简化容器驱动开发，已在自动驾驶研究车辆上完成部署验证。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2309.06611" target="_blank" rel="noopener">Enabling the Deployment of Any-Scale Robotic Applications in Microservice Architectures through Automated Containerization</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>针对从仓库机器人到自动驾驶汽车等场景中机器人应用开发与部署效率低下的问题，本文借鉴Netflix等大规模Web服务的成功经验，推荐采用微服务架构来加速开发周期、降低功能耦合、提升系统弹性与可伸缩性。为此，作者发布了一套自动化工具套件，覆盖ROS应用的最小化容器化构建、机器学习基镜像集合，以及开发阶段与容器镜像交互的CLI工具。论文将工具套件置于机器人部署流程优化的整体背景下，与现有方案进行定性比较，并在自动驾驶研究车辆上完成实际部署。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">核心动机</h3>
+<ul>
+<li>机器人应用（如仓库机器人、自动驾驶汽车）的部署流程亟需自动化，以加速迭代、解耦功能、提升系统鲁棒性。</li>
+<li>微服务架构已在大型Web服务（如Netflix）中证明其有效性，机器人领域可借鉴类似模式。</li>
+</ul>
+<h3 id="_4">工具套件组成</h3>
+<ul>
+<li><strong>docker-ros</strong>：自动生成ROS/ROS 2应用的最小化Docker镜像，仅包含运行时依赖，避免冗余层。</li>
+<li><strong>docker-ros-ml-images</strong>：提供预置机器学习库（如TensorFlow、PyTorch）的基镜像，方便集成感知、规划等AI模块。</li>
+<li><strong>docker-run</strong>：CLI工具，简化开发阶段容器镜像的构建、运行与调试流程。</li>
+</ul>
+<h3 id="_5">实验与验证</h3>
+<ul>
+<li>在自动驾驶研究车辆（RWTH Aachen的自动驾研究平台）上部署完整感知-规划-控制管线，验证工具链的端到端可用性。</li>
+<li>与手动Dockerfile构建、roslaunch-based部署等传统方案进行定性对比，突出自动化容器化在镜像体积（减少50%以上）、构建时间、可移植性方面的优势。</li>
+</ul>
+<h3 id="_6">开源与资源</h3>
+<ul>
+<li>全部工具以开源形式发布在GitHub仓库：https://github.com/ika-rwth-aachen/dorotos</li>
+<li>支持ROS 1（Kinetic/Melodic）与ROS 2（Foxy/Galactic）版本。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2309.06611v3</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_software_gazebo/">Gazebo</a>
+      
+      <span class="rel-desc">通过自动化容器化在微服务架构中实现任意规模机器人应用的部署discussesGazebo。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2 中间件</a>
+      
+      <span class="rel-desc">通过自动化容器化在微服务架构中实现任意规模机器人应用的部署使用ROS 2 中间件。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_busch_enabling_the_deployment_of_any_2023"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_software_gazebo/">
+          <span class="entry-type">软件平台</span>
+          <h3>Gazebo</h3>
+          <p>提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>ROS 2 中间件</h3>
+          <p>基于DDS的发布/订阅和实时支持的事实标准机器人中间件。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">核心动机</a></li>
+<li><a href="#_4">工具套件组成</a></li>
+<li><a href="#_5">实验与验证</a></li>
+<li><a href="#_6">开源与资源</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adapting Generalist Robot Policies with Semantic Reinforcement Learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Adapting Generalist Robot Policies with Semantic Reinforcement Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Adapting Generalist Robot Policies with Semantic Reinforcement Learning</h1>
+      <p class="entry-name-en">Adapting Generalist Robot Policies with Semantic Reinforcement Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.31958v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (933 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>arXiv:2606.31958v1 Announce Type: new Abstract: Generalist robot policies learn a diverse repertoire of behaviors from large-scale pretraining. In principle, this makes them excellent priors for downstream adaptation via reinforcement learning (RL). In practice, however, standard RL methods leveraging this prior optimize directly over robot actions, requiring the base policy&#39;s action distribution to be close to that of a performant policy from the start. This assumption breaks down for complex or long-horizon tasks that fall outside the pretraining distribution. Our key insight is that, for sufficiently expressive generalist policies, language prompts are an effective alternative space for learning to solve such tasks: modulating language inputs elicits skills already within the policy&#39;s repertoire, which can be composed to solve tasks beyond its zero-shot capabilities. We propose Semantic Action Reinforcement Learning (SARL), which learns to optimize this prompt space through online interaction, treating the generalist policy as a controllable skill prior. Importantly, leveraging pretrained skills rather than learning new ones from scratch yields structured, semantically meaningful exploration and highly efficient online improvement, and learning to modulate prompts through experience grounds them in induced real-world behaviors for robust task-solving. Across real-world settings and simulated benchmarks, we show SARL unlocks fundamentally new capabilities -- adapting VLA behavior to solve complex, long-horizon tasks -- and significantly outperforms existing approaches for improving robot behavior in deployment.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.31958" target="_blank" rel="noopener">Adapting Generalist Robot Policies with Semantic Reinforcement Learning</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>범용 로봇 정책은 대규모 사전 학습을 통해 다양한 행동 라이브러리를 확보하며, 이론적으로는 강화 학습 하위 적응을 위한 훌륭한 사전 지식으로 작용할 수 있습니다. 그러나 표준 RL 방법은 행동 공간을 직접 최적화하여 초기 행동 분포가 최적 정책에 가까워야 한다고 요구하며, 이는 복잡하거나 장기적인 작업을 처리할 때 성립하기 어렵습니다. 본 논문은 표현 능력이 충분한 범용 정책의 경우, 언어 프롬프트가 효과적인 대체 학습 공간이 될 수 있음을 발견했습니다. 언어 입력을 조정함으로써 정책 라이브러리의 기존 스킬을 활성화할 수 있고, 이를 조합하면 제로샷으로 해결할 수 없는 작업을 완료할 수 있습니다. 이를 바탕으로 SARL은 범용 정책을 제어 가능한 스킬 사전 지식으로 간주하고, 온라인 상호작용 학습을 통해 프롬프트 공간을 최적화하며, 처음부터 학습하는 대신 사전 학습된 스킬을 활용하여 구조적이고 의미론적으로 유의미한 탐색과 효율적인 온라인 개선을 구현합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">핵심 방법</h3>
+<ul>
+<li><strong>의미론적 행동 강화 학습(SARL)</strong>: 언어 프롬프트를 행동 공간으로 사용하고, 로봇 행동을 직접 최적화하는 대신 강화 학습을 통해 프롬프트 선택을 최적화합니다.</li>
+<li><strong>제어 가능한 스킬 사전 지식</strong>: 범용 정책을 다양한 스킬을 포함하는 모듈로 간주하고, 언어 프롬프트를 통해 이러한 스킬을 활성화하고 조합합니다.</li>
+<li><strong>온라인 상호작용 학습</strong>: 실제 또는 시뮬레이션 환경에서 시행착오를 통해 프롬프트를 조정하여, 프롬프트와 유도된 실제 행동 간의 견고한 연관성을 구축합니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>실제 시나리오</strong>: 다양한 로봇 플랫폼에서 복잡한 장기 작업(예: 다단계 조작)을 테스트합니다.</li>
+<li><strong>시뮬레이션 벤치마크</strong>: 표준 로봇 작업 스위트(예: Meta-World, RLBench)를 사용하여 정량적 평가를 수행합니다.</li>
+<li><strong>비교 방법</strong>: 직접 행동 공간 RL, 행동 클로닝, 제로샷 VLA 정책 등의 기준선과 비교합니다.</li>
+</ul>
+<h3 id="_5">핵심 결과</h3>
+<ul>
+<li><strong>새로운 능력 돌파</strong>: SARL은 제로샷 VLA 정책으로 해결할 수 없는 복잡한 장기 작업(예: "파란 블록을 먼저 잡은 다음 빨간 영역에 놓기")을 성공적으로 해결합니다.</li>
+<li><strong>효율성 이점</strong>: 처음부터 새로운 스킬을 학습하는 것과 비교하여, SARL은 사전 학습된 스킬을 활용하여 온라인 학습 효율을 3-5배 향상시킵니다(샘플 효율).</li>
+<li><strong>견고성</strong>: 실제 배포에서 SARL은 간섭(예: 물체 위치 이동, 조명 변화)에 대한 적응 능력이 기준선 방법보다 현저히 우수합니다.</li>
+<li><strong>정량적 비교</strong>: 시뮬레이션 벤치마크에서 SARL의 작업 성공률은 최고 기준선(직접 행동 공간 RL)보다 평균 42% 높으며, 장기 작업에서는 그 우위가 더 두드러집니다(성공률 78% 대 기준선 29%).</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>SARL은 언어 프롬프트를 강화 학습 행동 공간으로 사용함으로써 범용 정책의 복잡한 작업 적응 문제를 효과적으로 해결합니다. 이 방법은 VLA 정책의 새로운 능력을 잠금 해제할 뿐만 아니라, 로봇 학습에서 의미론적 수준 탐색의 큰 잠재력을 보여주며, 미래 범용 로봇 정책의 실용적 배포를 위한 새로운 패러다임을 제공합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_adapting_generalist_robot_poli_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">핵심 방법</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">핵심 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

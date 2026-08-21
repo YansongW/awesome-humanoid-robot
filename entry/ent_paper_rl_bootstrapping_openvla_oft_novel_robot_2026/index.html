@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RL Bootstrapping of OpenVLA-OFT for a Novel Robot Embodiment · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RL Bootstrapping of OpenVLA-OFT for a Novel Robot Embodiment</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RL Bootstrapping of OpenVLA-OFT for a Novel Robot Embodiment</h1>
+      <p class="entry-name-en">RL Bootstrapping of OpenVLA-OFT for a Novel Robot Embodiment</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文研究在零演示条件下，利用强化学习（RL）将视觉-语言-动作模型（VLA）OpenVLA-OFT 引导至一种新型缆索驱动并联机器人（CDPR）的可行性。作者提出两阶段训练流程（PPO 后接 GRPO），仅更新适配器与动作头参数，在仿真中实现了非平凡的语言条件控制，但物体条件任务成功率仍较低。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01013" target="_blank" rel="noopener">arXiv:2608.01013 RL Bootstrapping of OpenVLA-OFT for a Novel Robot Embodiment</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>该工作真正改变的是对 VLA 适配流程中“数据前提”的挑战。标准流程（如 OpenVLA 或 OpenVLA-OFT）默认存在 embodiment-specific 演示数据，而本文针对形态与大型数据集机械臂差异极大的定制机器人，直接移除这一假设，探索纯 RL 引导的冷启动路径。这并非简单的算法替换，而是将问题从“如何利用已有数据微调”转变为“在完全没有本体数据时，如何让模型学会新动作空间的语言映射”。</p>
+<p>其核心动机在于：对于全新本体，收集演示数据成本高昂且可能不可行，而 RL 虽不能独立解决鲁棒操作，却能作为第一阶段适配器，产生可用的语言条件控制。这一思路将 VLA 的部署边界从“有数据的新任务”扩展至“无数据的新本体”，为后续数据收集或下游策略学习提供了有价值的初始化。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">策略骨干与训练对象</h3>
+<ul>
+<li>初始化自公开的 <code>openvla/openvla-7b</code> 检查点，采用 OpenVLA-OFT 架构。</li>
+<li>仅训练适配器（adapter）和动作头（action head）参数，冻结主干。</li>
+<li>输入为两个 RGB 观测（俯视相机与腕装相机），输出 8 步动作块（8-step action chunk）。</li>
+</ul>
+<h3 id="rl">两阶段 RL 训练流程</h3>
+<ul>
+<li><strong>阶段 1（PPO）</strong>：使用四个基本方向指令（<code>move left</code>、<code>move right</code>、<code>move forward</code>、<code>move backward</code>），学习指令语义到 CDPR 动作空间的映射。</li>
+<li><strong>阶段 2（GRPO）</strong>：从 PPO 检查点继续训练，扩展指令空间至 <code>move to &lt;object&gt;</code>，目标对象从八个类别（apple、baseball、bowl、cup、mug、peach、pear、plate）中采样。</li>
+</ul>
+<h3 id="_4">稠密奖励设计</h3>
+<p>奖励公式：<code>r_t = w_p(d_{t-1} - d_t) + b_s * I[succ_t] - w_a * P(a_t)</code>
+- <code>d_t</code>：末端执行器与目标（方向目标区域或物体目标）的当前距离。
+- <code>succ_t</code>：任务特定二值成功指示器。
+- <code>P(a_t)</code>：对接近饱和的非夹爪动作的惩罚项。
+- 设计理由：在无演示的缆索驱动设定中，一致成功的轨迹出现前需要塑形信号，稀疏或二值奖励不足以引导探索。</p>
+<h3 id="_5">机器人平台与仿真</h3>
+<ul>
+<li>CDPR 带最小夹爪，五维控制接口：笛卡尔运动（x、y、z）、偏航旋转、夹爪驱动。</li>
+<li>仿真中由 PID 控制器执行底层控制，使用 MuJoCo 引擎。</li>
+<li>场景资产基于 YCB 和 LIBERO 随机生成。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>零演示冷启动</strong>：这是首个在完全没有 embodiment-specific 演示数据条件下，用 RL 引导 VLA 对齐至全新机器人本体的工作。相比 iRe-VLA 交替使用 RL 与监督学习、RIPT-VLA 仍需至少一条演示，本文彻底移除数据依赖，将 RL 定位为“数据生成器”而非“策略优化器”。</p>
+</li>
+<li>
+<p><strong>两阶段指令空间扩展</strong>：先通过 PPO 学习基础方向语义，再用 GRPO 扩展至物体条件指令。这种渐进式课程设计降低了联合学习动作映射与物体接地（object grounding）的难度，使策略在第二阶段能利用第一阶段学到的运动先验。</p>
+</li>
+<li>
+<p><strong>稠密塑形奖励的回归</strong>：在近期 VLA-RL 工作普遍强调稀疏二值奖励的背景下，作者论证了在无演示新本体上塑形信号的必要性，并设计了包含距离变化、成功奖励与饱和惩罚的复合奖励，平衡了探索效率与控制稳定性。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="_8">四方向共享指令验证</h3>
+<p>在留出随机场景上，每个方向指令测试 100 次 rollout，成功率如下：</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>PPO (%)</th>
+<th>PPO → GRPO (%)</th>
+<th>Δ (pp)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Move left</td>
+<td>17.00</td>
+<td>52.00</td>
+<td>+35.00</td>
+</tr>
+<tr>
+<td>Move right</td>
+<td>43.00</td>
+<td>52.00</td>
+<td>+9.00</td>
+</tr>
+<tr>
+<td>Move forward</td>
+<td>62.00</td>
+<td>62.00</td>
+<td>+0.00</td>
+</tr>
+<tr>
+<td>Move backward</td>
+<td>15.00</td>
+<td>48.00</td>
+<td>+33.00</td>
+</tr>
+<tr>
+<td>Mean (4 directions)</td>
+<td>34.25</td>
+<td>53.50</td>
+<td>+19.25</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>四方向平均成功率从 34.25% 提升至 53.50%（由表内数值计算）。</li>
+<li>最大增益出现在 <code>move left</code>（+35 个百分点）和 <code>move backward</code>（+33 个百分点）；<code>move forward</code> 保持 62% 不变。</li>
+</ul>
+<h3 id="_9">物体条件指令验证</h3>
+<ul>
+<li>严格验证器报告 400 次 rollout 中 39 次成功，即 9.75%。</li>
+<li>定性证据显示，许多失败发生在后期不稳定阶段，而非从一开始就缺失物体接地，表明策略已学会接近目标，但控制稳定性不足。</li>
+</ul>
+<h3 id="_10">对比基准（来自引用文献）</h3>
+<ul>
+<li>OpenVLA 在新 Franka 设置上每任务使用 10–150 条演示，LoRA 仅更新 1.4% 参数。</li>
+<li>OpenVLA-OFT 将 LIBERO 平均成功率从 76.5% 提升至 97.1%，动作生成吞吐量提升 26 倍。</li>
+</ul>
+<h2 id="_11">边界与局限</h2>
+<ul>
+<li>实验仅在仿真中进行，未做真实机器人迁移，CDPR 的缆索动力学与仿真差异可能显著影响结论。</li>
+<li>物体条件任务在严格评估下远非鲁棒（9.75%），成功率与最佳 OpenVLA/OFT 数字不可直接比较，因任务与监督数据规模不同。</li>
+<li>作者明确承认 RL 单独使用尚不能解决新本体上的鲁棒操作，并观察到类似 SimpleVLA-RL 中报告的“pushcut”式捷径行为，表明目标附近的奖励设计需改进。</li>
+<li>未收集任何 embodiment-specific 演示，未进行真实机器人部署，未实现鲁棒操作。</li>
+</ul>
+<h2 id="_12">工程启示</h2>
+<ul>
+<li><strong>复现核对</strong>：先确认 MuJoCo 中 CDPR 的 PID 控制器参数与动作编解码器是否与 OpenVLA-OFT 接口完全对齐，这是 RL 训练稳定性的前提。</li>
+<li><strong>奖励调参优先级</strong>：<code>w_p</code>（距离权重）与 <code>w_a</code>（饱和惩罚权重）的平衡是成败关键。若出现“pushcut”式捷径，应增大 <code>w_a</code> 或重新设计 <code>P(a_t)</code> 的饱和阈值。</li>
+<li><strong>训练预算</strong>：阶段 1（PPO）约 175 小时，阶段 2（GRPO）约 170 小时，总预算约 345 小时（两张 NVIDIA A40 GPU）。若硬件不同，需按显存与算力缩放，但注意 GRPO 阶段对初始策略质量敏感，建议先确保 PPO 阶段四方向平均成功率超过 34.25% 再进入第二阶段。</li>
+<li><strong>最易踩坑</strong>：物体条件指令的 9.75% 成功率表明，从方向指令到物体接地并非简单扩展，需检查目标采样分布是否与训练场景一致，以及验证器对“成功”的定义是否过于严格（如末端执行器与物体的距离阈值）。</li>
+<li><strong>下游团队启示</strong>：若需部署至真实 CDPR，建议先用仿真 RL 策略收集成功轨迹作为演示数据，再切换至监督微调（如 OpenVLA-OFT 标准流程），而非直接依赖 RL 策略的最终输出。</li>
+</ul>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01013</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_li_simplevla_rl_scaling_vla_train_2025/">SimpleVLA-RL</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_guo_improving_vision_language_acti_2025/">iRe-VLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_manufacturer_nvidia/">英伟达</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_rl_bootstrapping_openvla_oft_novel_robot_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">零部件制造商</span>
+          <h3>英伟达</h3>
+          <p>概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_li_simplevla_rl_scaling_vla_train_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SimpleVLA-RL</h3>
+          <p>SimpleVLA-RL 是由北京大学和清华大学提出的一个高效强化学习框架，旨在提升视觉-语言-动作（VLA）模型的机器人操作能力。其核心贡献在于通过引入轨迹采样、并行化、多环境渲染和优化损失计算等…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_guo_improving_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>iRe-VLA</h3>
+          <p>iRe-VLA…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">策略骨干与训练对象</a></li>
+<li><a href="#rl">两阶段 RL 训练流程</a></li>
+<li><a href="#_4">稠密奖励设计</a></li>
+<li><a href="#_5">机器人平台与仿真</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#_8">四方向共享指令验证</a></li>
+<li><a href="#_9">物体条件指令验证</a></li>
+<li><a href="#_10">对比基准（来自引用文献）</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

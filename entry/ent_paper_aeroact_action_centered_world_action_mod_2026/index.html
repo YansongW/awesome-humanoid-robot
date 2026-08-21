@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight</h1>
+      <p class="entry-name-en">AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor Flight</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>AeroAct 是首个在真实世界飞行中实例化的动作中心世界-动作模型（WAM），用于语言条件四旋翼飞行。它基于 Wan2.1-1.3B 视频扩散 Transformer，在部署时不生成未来视频，而是仅解码局部五阶轨迹参数块，未来视觉预测仅作为训练时的密集辅助监督。核心贡献在于将视频中心 WAM 的推理成本与误差累积问题，通过动作中心设计与块状因果掩码在架构层面化解。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14997" target="_blank" rel="noopener">arXiv:2607.14997 AeroAct: Action-Centered World-Action Models for Language-Conditioned Quadrotor </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>空中视觉-语言导航与 VLA 方法长期受困于一个根本矛盾：动作空间要么是离散航点或瞬时速度指令，缺乏对“飞行动作如何改变未来观测”的监督；要么是视频中心 WAM，自回归生成未来视频的推理延迟与视觉误差累积，使其在实时飞行中不可用。AeroAct 真正改变的是这个权衡——它把“预测未来”从部署时的必需计算，降级为训练时的辅助监督信号，从而在保留世界模型语义理解能力的同时，将推理延迟压缩到可飞行的范围。</p>
+<p>这个改变不是简单的工程优化，而是对 WAM 设计哲学的修正：世界模型的价值不在于测试时生成视频，而在于训练时迫使模型学习动作与视觉后果的耦合。AeroAct 用块状因果掩码实现这一点——动作流在部署时自回归解码，未来视觉 token 仅在训练时参与梯度传播。这使得 4 步去噪下推理时间从 0.296 s 降至 0.184 s（节省 37.8%），首次让 WAM 在真实四旋翼上以闭环方式执行语言指令。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">问题公式化</h3>
+<ul>
+<li>观测历史 𝒪_t^h = (o_{t-(h-1)Δ}, …, o_t)，h 为参考帧数，Δ 为时间步长</li>
+<li>预测动作块 a_{t:t+p-1} 长度 p，实现中 Δ=3，p=24</li>
+<li>统一模型 g_Θ 同时做动作预测与视觉后果建模，每块含 K=8 个未来视觉帧和 24 个低层动作步</li>
+</ul>
+<h3 id="_4">架构设计</h3>
+<ul>
+<li>视频 VAE 编码片段为时空潜在 token，经 3D RoPE 位置编码后分为参考 token T_o 和未来 token T_f</li>
+<li>本体感觉与动作块经 MLP 编码为状态 token T_s 和动作 token T_a（隐藏尺寸 128 和 256）</li>
+<li>指令经预训练文本编码器编码为语言 token T_l，作为交叉注意力上下文</li>
+<li>非语言 token 拼接为 T_t=[T_s;T_o;T_a;T_f]</li>
+</ul>
+<h3 id="_5">块状因果掩码</h3>
+<ul>
+<li>状态和参考 token 不能关注预测 token</li>
+<li>动作 token 只关注状态、参考和动作 token</li>
+<li>未来视觉 token 关注所有 token</li>
+<li>推理时省略 T_f，只解码动作流，无需测试时视频生成</li>
+</ul>
+<h3 id="_6">动作空间</h3>
+<ul>
+<li>每个动作参数化局部轨迹段，每维为五阶多项式 p_μ^l(t)=α_0+α_1 t+α_2 t²+α_3 t³+α_4 t⁴+α_5 t⁵</li>
+<li>动作 a=[r,θ,ψ,v_end^{l⊤},a_end^{l⊤}]^⊤∈ℝ⁹，指定 T=2 s 局部轨迹段端点</li>
+<li>本体感觉输入 s=[v^{l⊤},a^{l⊤},u_z^{l⊤}]^⊤∈ℝ⁹（局部速度、加速度、body-z 单位向量）</li>
+</ul>
+<h3 id="self-guidance">自引导（Self-Guidance）</h3>
+<ul>
+<li>当推理 n+1 在推理 n 的块过期前开始，两块时间重叠</li>
+<li>去噪时用前一块对应后缀替换新样本前缀速度，只采样剩余后缀</li>
+<li>不改变模型架构，仅约束采样器使低层控制器获得时间一致的轨迹参考</li>
+</ul>
+<h3 id="_7">训练目标</h3>
+<p>L(Θ) = L_act + λ_vis L_vis，其中 L_act 和 L_vis 分别为动作和未来帧潜在 token 的扩散/流匹配噪声或速度场预测的均方误差。</p>
+<h3 id="_8">数据管线</h3>
+<ul>
+<li>DiffAero 提供共享动力学与控制接口，两个渲染分支：Isaac Lab（真实光照/材质但场景多样性受限）与 3DGS（高斯溅射渲染，易扩展场景但近距离几何保真度较低）</li>
+<li>三类仿真演示：Isaac tracking、Isaac reaching、3DGS reaching</li>
+<li>真实数据：手持设备（鱼眼相机 + Intel RealSense T265 + 轻量计算机），T265 估计里程计并转换为模拟四旋翼位姿</li>
+</ul>
+<h2 id="_9">关键创新</h2>
+<ol>
+<li>
+<p><strong>动作中心 WAM 设计</strong>：首次将视频扩散 Transformer 适配到空中导航，同时保持部署时无视频生成。这不是简单的“砍掉视频分支”，而是通过块状因果掩码在架构层面保证动作流可自回归解码，未来视觉 token 仅作为训练监督。这解决了视频中心 WAM 推理昂贵与误差累积的根本矛盾。</p>
+</li>
+<li>
+<p><strong>自引导采样器约束</strong>：当推理块时间重叠时，用前一块的对应后缀替换新样本的前缀速度，只采样剩余后缀。这是一个不改变模型架构的采样器级创新，直接解决低层控制器对轨迹时间一致性的需求，避免了块间不连续导致的抖动。</p>
+</li>
+<li>
+<p><strong>双分支仿真数据管线</strong>：Isaac Lab 分支提供高保真光照/材质/阴影，3DGS 分支提供场景与物体多样性。这种互补设计在 900 K 仿真片段规模下，同时保证了视觉真实性与语义多样性，是真实世界泛化的关键支撑。</p>
+</li>
+</ol>
+<h2 id="_10">实验与结果</h2>
+<h3 id="isaac-lab20-episodes">闭环仿真（Isaac Lab，20 episodes）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>Success</th>
+<th>Collision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AeroAct tracking 1帧</td>
+<td>20.0</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>AeroAct searching 1帧</td>
+<td>90.0</td>
+<td>10.0</td>
+</tr>
+<tr>
+<td>AeroAct tracking 9帧</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>AeroAct searching 9帧</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>AeroAct-FT tracking 9帧</td>
+<td>95.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>AeroAct-FT searching 9帧</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">未见目标物体搜索（表2）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>Avg final dist</th>
+<th>Success</th>
+<th>Collision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AeroAct 1帧</td>
+<td>3.819</td>
+<td>75.0</td>
+<td>25.0</td>
+</tr>
+<tr>
+<td>AeroAct 9帧</td>
+<td>1.983</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>AeroAct-FT 9帧</td>
+<td>1.988</td>
+<td>100.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">频率与参考帧消融（表3，跟踪）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>View succ</th>
+<th>In-view</th>
+<th>Centered</th>
+<th>Dist</th>
+<th>Coll</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1帧, 1 Hz</td>
+<td>20.0</td>
+<td>55.6</td>
+<td>21.8</td>
+<td>7.902</td>
+<td>90.0</td>
+</tr>
+<tr>
+<td>9帧, 1 Hz</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>64.2</td>
+<td>3.436</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>9帧, 2 Hz</td>
+<td>100.0</td>
+<td>99.3</td>
+<td>77.0</td>
+<td>2.245</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>9帧, 5 Hz</td>
+<td>100.0</td>
+<td>98.7</td>
+<td>78.7</td>
+<td>2.375</td>
+<td>5.0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_11">真实世界</h3>
+<ul>
+<li>手持设备收集 858 条轨迹、332,429 帧、约 3 小时数据</li>
+<li>真实飞行平台：OddityRC 35Pro + Intel RealSense D435i + Radxa ROCK 5C，运动捕捉系统做状态测量</li>
+<li>推理延迟约 0.8 s，ZeroMQ 通信，OM-MPC 轨迹跟踪</li>
+<li>指令“fly to the yellow foam mat”成功生成可行飞行指令并导航接近目标</li>
+</ul>
+<p>关键发现：9 参考帧（2.4 s 视觉上下文）是性能分水岭，1 帧配置在跟踪任务中几乎不可用（Success 20.0，Collision 90.0），而 9 帧配置达到 100.0% Success 与 0.0% Collision。频率从 1 Hz 到 5 Hz 对 9 帧配置影响有限，说明模型对重规划频率不敏感。</p>
+<h2 id="_12">边界与局限</h2>
+<ul>
+<li>真实实验限于短室内轨迹，时间上下文足以处理单阶段目标到达，但不足以处理需要多个语义子目标、恢复行为或长时程记忆的复杂指令</li>
+<li>真实部署依赖离板推理（工作站通过 ZeroMQ 通信），因视频扩散骨干的计算成本，机载推理未实现</li>
+<li>论文未明确在更激进飞行动力学（如高速机动、强风扰动）下的鲁棒性表现</li>
+<li>真实数据收集采用手持设备而非实际飞行，可能引入与真实飞行不同的视觉-运动耦合分布</li>
+<li>3DGS 渲染分支在近距离几何和光照保真度上低于 Isaac Lab，可能影响近距离操作性能</li>
+</ul>
+<h2 id="_13">工程启示</h2>
+<p>复现或下游使用时，先核对以下关键点：</p>
+<ol>
+<li>
+<p><strong>参考帧数是第一优先级超参数</strong>：1 帧与 9 帧的性能差距是数量级的（跟踪 Success 从 20.0 到 100.0），任何消融实验应首先确认视觉上下文长度是否足够。2.4 s 视觉上下文是当前配置的下限，更复杂任务需要更长上下文。</p>
+</li>
+<li>
+<p><strong>自引导是部署必需而非可选</strong>：当推理频率高于块过期时间时，必须启用自引导采样器约束，否则低层控制器会收到时间不一致的轨迹参考。实现时注意公式(6a)(6b)的前缀替换逻辑，这是最容易出错的地方。</p>
+</li>
+<li>
+<p><strong>数据管线是性能瓶颈</strong>：900 K 仿真片段（500 K tracking + 200 K Isaac reaching + 200 K 3DGS reaching）是预训练的基础，但真实数据仅 858 条轨迹。如果下游场景与训练分布差异大，建议优先扩展 3DGS 分支的场景多样性，而非增加 Isaac Lab 数据量。</p>
+</li>
+<li>
+<p><strong>推理延迟预算</strong>：单张 RTX 5090 上 4 步去噪 + 禁用视频预测为 0.184 s，VRAM 约 4,500 MB。如果目标平台算力更低，先检查视频 VAE 编码是否可裁剪，这是最大的计算热点。</p>
+</li>
+<li>
+<p><strong>最容易踩坑</strong>：块状因果掩码的实现细节——动作 token 不能关注未来视觉 token，但未来视觉 token 可以关注动作 token。这个不对称性在实现注意力掩码时极易写反，会导致训练时信息泄漏或部署时动作流无法解码。</p>
+</li>
+</ol>
+<h2 id="_14">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.14997</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_aeroact_action_centered_world_action_mod_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题公式化</a></li>
+<li><a href="#_4">架构设计</a></li>
+<li><a href="#_5">块状因果掩码</a></li>
+<li><a href="#_6">动作空间</a></li>
+<li><a href="#self-guidance">自引导（Self-Guidance）</a></li>
+<li><a href="#_7">训练目标</a></li>
+<li><a href="#_8">数据管线</a></li>
+</ul>
+</li>
+<li><a href="#_9">关键创新</a></li>
+<li><a href="#_10">实验与结果</a><ul>
+<li><a href="#isaac-lab20-episodes">闭环仿真（Isaac Lab，20 episodes）</a></li>
+<li><a href="#2">未见目标物体搜索（表2）</a></li>
+<li><a href="#3">频率与参考帧消融（表3，跟踪）</a></li>
+<li><a href="#_11">真实世界</a></li>
+</ul>
+</li>
+<li><a href="#_12">边界与局限</a></li>
+<li><a href="#_13">工程启示</a></li>
+<li><a href="#_14">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

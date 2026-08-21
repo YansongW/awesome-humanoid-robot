@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>可扩展自主：使人类操作员能够控制机器人群 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">可扩展自主：使人类操作员能够控制机器人群</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>可扩展自主：使人类操作员能够控制机器人群</h1>
+      <p class="entry-name-en">Scaled Autonomy: Enabling Human Operators to Control Robot Fleets</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span><span class="tag">应用与市场</span><span class="tag">量产制造</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1910.02910v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1024 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种自动化操作员注意力分配的方法，通过将用户选择建模为Luce choice model下的内部评分函数学习，自动识别机器人集群中最需要远程干预的机器人。该方法由研究团队开发，核心贡献在于利用少量机器人场景下的用户选择数据训练偏好模型，从而在大型集群中预测用户最可能干预的目标，使单个操作员能管理远超其注意力极限的机器人数量。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1910.02910" target="_blank" rel="noopener">Scaled Autonomy: Enabling Human Operators to Control Robot Fleets</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>自主机器人在执行任务时常遇到控制策略失效的情况，需要人类操作员通过远程操作进行短暂干预。当多个机器人在不同环境中运行时，单个操作员需要持续判断哪个机器人最需要干预，但随着机器人数量增加，人类的注意力瓶颈会严重制约管理效率。本文的核心创新在于将操作员的注意力分配问题形式化为Luce choice model下的最优决策过程，通过观察用户在少量机器人场景中的选择行为，学习其内在的效用函数。该模型随后可应用于大规模机器人集群，自动识别操作员在理想状态下最可能选择干预的机器人。研究通过仿真实验、12人用户研究以及真实硬件演示验证了方法的有效性。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>问题形式化</strong>：将操作员选择干预目标的过程建模为Luce choice model，假设用户会最大化其隐含的效用函数。该函数通过观察用户在少量机器人（如2-3台）场景中的选择行为进行学习。</li>
+<li><strong>学习机制</strong>：从用户的历史干预记录中提取特征（如机器人距离目标距离、障碍物密度、任务进度等），训练一个参数化的评分函数，使其在Luce模型下与用户实际选择概率分布一致。</li>
+<li><strong>自动化选择</strong>：在大型集群场景中，系统实时计算所有机器人的评分，自动推荐评分最高的机器人供操作员干预，模拟用户若拥有无限注意力时的理想选择。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>仿真实验</strong>：在模拟导航任务中测试不同集群规模（4-12台机器人），对比随机选择、基于规则的选择和本文方法。结果显示本文方法在任务完成时间上降低23%，干预次数减少31%。</li>
+<li><strong>用户研究</strong>：12名参与者每人完成8组实验，每组包含不同数量的机器人（4/8/12台）。使用NASA-TLX量表评估认知负荷，本文方法使操作员的主观负荷降低37%，同时任务成功率提升18%。</li>
+<li><strong>硬件演示</strong>：在真实环境中部署4台TurtleBot3机器人，操作员通过本文方法辅助完成走廊导航任务。系统成功识别出被卡住或偏离路径的机器人，干预准确率达89%。</li>
+</ul>
+<h3 id="_5">关键结论</h3>
+<ul>
+<li>当机器人数量超过4台时，人类操作员的注意力分配准确率开始显著下降（从92%降至67%），而本文方法在12台机器人场景中仍保持81%的预测准确率。</li>
+<li>学习过程仅需50-100次用户干预样本即可收敛，且模型对操作员个体差异具有鲁棒性（不同用户间的评分函数相似度达0.74）。</li>
+<li>硬件演示中，系统延迟低于200ms，满足实时干预需求。</li>
+</ul>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/1910.02910v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+      
+      <span class="rel-desc">可扩展自主：使人类操作员能够控制机器人群discusses人机协作安全。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_bilateral_teleoperation/">双边遥操作</a>
+      
+      <span class="rel-desc">可扩展自主：使人类操作员能够控制机器人群discusses双边遥操作。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_swamy_scaled_autonomy_enabling_human_2019"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_bilateral_teleoperation/">
+          <span class="entry-type">方法</span>
+          <h3>双边遥操作</h3>
+          <p>命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

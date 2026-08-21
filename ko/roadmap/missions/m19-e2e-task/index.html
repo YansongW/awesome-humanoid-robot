@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M19 · 엔드투엔드 태스크 통합: 명령 듣고, 걸어가서, 집어 올리기 · 로드맵 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" aria-current="page">로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/roadmap/">로드맵</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M19 · 엔드투엔드 태스크 통합: 명령 듣고, 걸어가서, 집어 올리기</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m19">M19 · 엔드투엔드 태스크 통합: 명령 듣고, 걸어가서, 집어 올리기</h1>
+<p><strong>전체 위치</strong>: M14 보행 배포와 M18 그리기 전략을 모두 통과한 이후. 입력은 각 모듈이 단위 테스트를 통과한 하위 시스템(명령, 내비게이션, 감지, 그리기, 배치)이며, 출력은 <strong>"명령 → 내비게이션 → 그리기" 전체 체인 연속 10회 시험 성공 ≥7회, 단일 ≤2분</strong>인 엔드투엔드 시스템(Stage 3 전체 검수 기준)입니다. M20에서 이 시스템에 신뢰성 및 안전 셸을 추가합니다.</p>
+<p><strong>전제 조건</strong>: <a href="/ko/roadmap/missions/m18-imitation-learning/">M18 · 모방 학습 훈련 및 배포</a> 달성(고정 프로토콜 그리기 성공률 ≥70%, 제한 및 다운그레이드 적용); <a href="/ko/roadmap/missions/m14-sim-to-real/">M14 · sim-to-real 배포</a> 달성(평지 안정 보행 + 통신 워치독 등급별 적용); M16 위치 추정 스택 사용 가능(SLAM 맵 구축 및 온라인 위치 추정); <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> 노드 토폴로지 및 인터페이스 고정 완료.</p>
+<p>이론적 배경: 엔드투엔드 태스크 체인은 인식, 계획, 학습 전략 및 미들웨어의 총조립이며, 시스템 설명은 <a href="/ko/wiki/chapters/chapter-24/">제24장 엔드투엔드 소프트웨어 스택</a> 및 <a href="/ko/wiki/chapters/chapter-22/">제22장 소프트웨어 미들웨어</a>를 참조; 명령 계층 및 VLA는 <a href="/ko/wiki/chapters/chapter-19/">제19장 VLA</a>, 조작 부분은 <a href="/ko/wiki/chapters/chapter-16/">제16장 조작 및 그리기</a>를 참조.</p>
+<h2 id="1">단계 1: 태스크 분해 및 상태 머신——먼저 모듈별 단위 테스트, 그다음 전체 체인</h2>
+<p>【무엇을 할 것인가】태스크를 다섯 단계 파이프라인으로 고정하고, 각 단계에 <strong>입력/출력/타임아웃/실패 종료</strong> 네 가지 요소를 명확히 작성:</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>입력</th>
+<th>출력</th>
+<th>타임아웃(공학 권장값)</th>
+<th>실패 종료</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 명령 해석</td>
+<td>텍스트/음성</td>
+<td>대상 물체 + 대상 위치</td>
+<td>5 s</td>
+<td>재질문/오류 보고 후 재전송 대기</td>
+</tr>
+<tr>
+<td>2 테이블 가장자리까지 내비게이션</td>
+<td>대상 대기 위치</td>
+<td>도착(이중 임계값 판정)</td>
+<td>60 s</td>
+<td>재계획 ≤2회 → 제자리 정지 후 오류 보고</td>
+</tr>
+<tr>
+<td>3 감지 위치 추정</td>
+<td>RGB-D 프레임</td>
+<td>물체 6D 자세</td>
+<td>10 s</td>
+<td>재감지 ≤2회 → 단계 2로 돌아가 소폭 이동</td>
+</tr>
+<tr>
+<td>4 그리기</td>
+<td>물체 자세</td>
+<td>그리퍼 폐쇄 + 확인 신호</td>
+<td>30 s</td>
+<td>손목 후퇴 재설정 → 단계 3으로 복귀</td>
+</tr>
+<tr>
+<td>5 배치 확인</td>
+<td>대상 배치 지점</td>
+<td>배치 + 재확인</td>
+<td>30 s</td>
+<td>배치 실패 → 그립 유지하며 오류 보고</td>
+</tr>
+</tbody>
+</table>
+<p>상태 머신 또는 행동 트리로 구현(선택 및 소프트웨어 스택 구성은 <a href="/ko/wiki/chapters/chapter-24/">제24장</a> 참조), 각 단계는 먼저 시뮬레이션 또는 정적 장면에서 단위 테스트 통과 후 전체 체인에 연결.</p>
+<p>【왜】엔드투엔드 태스크는 모든 하위 시스템의 교차 검증이며, 단계별 관찰이 가능해야 실패 단계를 식별할 수 있음(Stage 3 개요 원문). 명시적 상태 머신 없이 "한 번에 처리"하는 스크립트는 실패 시 어느 단계에서 멈췄는지 파악 불가; 타임아웃과 실패 종료는 시스템이 "안전하게 오류 보고"를 하도록 하는 전제——단계 5의 실패 주입 테스트가 이를专门 검증.</p>
+<p>【당신의 상황 분석】보행이 아직 불안정: Stage 3의 실용적 제안에 따라 먼저 "고정 자세 + 테이블 위 그리기"로 단계 3–5 폐쇄 루프를 실행하고, 단계 2는 마지막에 해제. 상태 머신 구현은 프레임워크 완벽함을 추구하지 말 것: 로그가 있는 Python 상태 머신 스크립트가 실행되지 않은 무거운 행동 트리보다 낫다.</p>
+<h2 id="2-vla">단계 2: 명령 계층——고정 구문으로 시작, VLA는 스케줄링만 담당</h2>
+<p>【무엇을 할 것인가】세 가지 수준으로 간단함에서 복잡함으로, 검수 요구에 따라 선택:</p>
+<ol>
+<li><strong>고정 구문 텍스트</strong>(시작, 검수 기본값): 터미널에 "테이블 가장자리로 가서 컵을 집어" 입력, 템플릿 해석 → "대상 물체=컵, 대상 위치=테이블 가장자리 대기 지점 A";</li>
+<li><strong>ASR 음성</strong>(선택적 강화): 음성을 텍스트로 변환 후 동일 템플릿 해석, 인식 신뢰도 낮을 시 재질문;</li>
+<li><strong>VLA 스케줄링</strong>(고급): <a href="/entry/ent_method_openvla/">OpenVLA</a>, <a href="/entry/ent_method_pi0/">π0</a> 또는 <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a> 도입하여 개방 어휘 명령 해석 및 스킬 스케줄링——하지만 <strong>하위 그리기는 여전히 M18 전략이 실행</strong>(Stage 3 실용적 경로: VLA는 "이해" 담당, 전용 전략은 "그리기 성공" 담당).</li>
+</ol>
+<p>【왜】개인 데이터와 연산 자원 조건에서 VLA가 직접 전신 동작을 출력하는 실제 기기 성공률과 지연 시간은 아직 검수 프로토콜을 감당할 수 없음; "명령 이해"와 "그리기 성공"을 분리하면 두 부분이 각각 반복 및 검수 가능. 세 카드의 위치: OpenVLA는 <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a> 오픈소스 데이터로 훈련, π0는 다중 본체 사전 훈련된 다재다능 전략, GR00T N1은 NVIDIA의 휴머노이드 대상 범용 기초 모델(자세한 내용은 각 카드 및 <a href="/ko/wiki/chapters/chapter-19/">제19장</a> 참조).</p>
+<p>【당신의 상황 분석】GPU 클러스터 없음: OpenVLA 공개 가중치 + 자체 수집 데이터 LoRA 미세 조정이 가장 낮은 진입 장벽(Stage 3 단계 11 제안). 검수 통과만 원한다면: 수준 1로 충분, 단계 2–4의 성공률에 집중. VLA 추론의 엣지 측 지연 예산은 <a href="/ko/roadmap/missions/m18-imitation-learning/">M18</a> 단계 5 및 <a href="/ko/roadmap/playbooks/compute-selection/">컴퓨팅 플랫폼 선택 매뉴얼</a> 참조.</p>
+<h2 id="3-m16-m14">단계 3: 내비게이션 단계——M16 위치 추정 스택 재사용, M14 보행 연동</h2>
+<p>【무엇을 할 것인가】</p>
+<ol>
+<li><strong>맵 구축 및 위치 추정</strong>: M16의 SLAM 스택으로 오프라인 맵 구축, 온라인 위치 추정(센서 구성은 Stage 3 인식 스택 섹션 참조, 위치 추정 센서 배경은 <a href="/ko/wiki/chapters/chapter-05/">제5장 센싱</a> 참조);</li>
+<li><strong>대기 지점 캘리브레이션</strong>: 테이블 가장자리 조작 대기 지점을 <strong>오프라인 수동 캘리브레이션</strong>하여 맵에 기록(테이블을 향하고, 엔드 이펙터가 컵에 도달 가능한 대기 지점), 온라인 실시간 계산 금지;</li>
+<li><strong>보행 연동</strong>: 경로 계획이 속도/목표 명령을 M14 보행 전략에 출력; 보행 단계는 "도착"만 담당, 정밀 정렬은 단계 3의 비전에 위임;</li>
+<li><strong>도착 판정</strong>: 위치 오차와 자세 오차 <strong>이중 임계값</strong>(예: ≤10 cm 및 ≤10°, 공학 권장값, 당신의 조작 정밀도에 따라 검증 필요), 둘 다 충족해야 단계 2 완료.</li>
+</ol>
+<p>【왜】대기 지점 오프라인 캘리브레이션은 "내비게이션 정밀도 부족"을 가장 저렴하게 차단하는 방법: 조작에 필요한 도착 정밀도(센티미터 수준)는 일반적으로 SLAM 위치 추정이 안정적으로 달성할 수 있는 수준보다 높음. 이중 임계값은 둘 다 필수: 위치는 도달했지만 방향이 20° 벗어나면 엔드 이펙터 작업 공간이 컵을 전혀 감싸지 못할 수 있음.</p>
+<p>【당신의 상황 분석】방이 고정되고 경로가 짧음: RGB-D 오도메트리로 충분(Stage 3 단계 5 기준); 방을 넘어갈 때 LiDAR 사용. 도착 임계값 설정 방법: 로봇을 "간신히 컵을 잡을 수 있는" 한계 위치에 놓고 측정——너무 크게 설정하면 단계 4가 책임을 떠맡고, 너무 작게 설정하면 단계 2가 수렴하지 않음.</p>
+<h2 id="4">단계 4: 조작 단계——감지, 그리기, 확인, 정지 후 동작</h2>
+<p>【무엇을 할 것인가】단계 3–5 폐쇄 루프 세부 사항:</p>
+<ol>
+<li><strong>감지 위치 추정</strong>: <a href="/entry/ent_component_rgbd_camera/">RGB-D 카메라</a>가 컵을 감지하고 6D 자세 출력(Stage 3 판정: 3D 위치 추정 오차 ≤1 cm);</li>
+<li><strong>그리기 실행</strong>: 자세를 M18 전략(학습 경로) 또는 IK + 계획 프리미티브(전통 경로, <a href="/entry/ent_method_inverse_kinematics/">역운동학</a>)에 전달, 접근—폐쇄—상승 실행;</li>
+<li><strong>그리기 확인</strong>: 세 신호 중 두 개——그리퍼 전류(부하 잡음), 등가 중량(상승 후 전류/힘 추정), 카메라 시각 재확인;</li>
+<li><strong>상호 배제 규칙</strong>: 보행과 조작은 엄격히 상호 배제——도착 후 정지(속도 0 + 자세 안정 1 s, 공학 권장값) 후에만 조작 단계 시작 허용, 조작 중 섀시 명령 잠금;</li>
+<li><strong>실패 재시도</strong>: 감지 간헐적 실패 시 제자리 재시도 ≤2회 허용, 여전히 실패 시 상태 머신 실패 종료 경로 따름.</li>
+</ol>
+<p>【왜】확인 신호는 "잡았는지 못 잡았는지"의 판정자: 없으면 시스템이 "빈 그리기"를 성공으로 간주하고 계속 진행하여 전체 체인 성공률이 부풀려짐. 보행-조작 상호 배제는 물리적 이유: 휴머노이드는 고정 베이스가 없어 팔을 뻗을 때 반력 토크가 균형을 교란(Stage 3 일반적인 함정 "팔 뻗을 때 전체 기기 흔들림 및 전도"), 정지 후 조작은 첫 번째 기기의 표준 절충. 재시도 ≤2회는 통계적 절충: 간헐적 실패는 한 번 재시도로 대부분 회복 가능, 구조적 실패는 몇 번 재시도해도 소용없음.</p>
+<p>【당신의 상황 분석】M18 전략과 IK 프리미티브가 공존할 때, 각각 20회 실행하여 성공률 비교, 높은 쪽 사용——학습 전략은 분포 내 장면에 더 강건, IK 프리미티브는 분포 외 위치에 더 정직. 확인 신호가 하나 부족(예: 손목 카메라 없음): 전류 + 중량 이중 판정으로도 충분하지만, 로그에 확인 신뢰도를 표시해야 함.</p>
+<h2 id="5">5단계: 전체 체인 통합 조정 및 장애 주입 – 시간 측정으로 병목 찾기, 오류 주입으로 성능 저하 확인하기</h2>
+<p>【수행할 작업】</p>
+<ol>
+<li><strong>구간별 시간 측정</strong>: 각 실험마다 구간별 소요 시간을 기록하여 병목 지점을 찾습니다(일반적으로 내비게이션이 가장 많은 시간을 소비합니다). 단일 총 소요 시간 목표는 ≤2분입니다(Stage 3 기준).</li>
+<li><strong>장애 주입 테스트</strong>: 인위적으로 이상 상황을 발생시킵니다 – 카메라 가리기, 도중에 컵 옮기기, 잘못된 명령 보내기, 내비게이션 경로에 장애물 배치 – 시스템이 <strong>무작정 움직이거나, 무한 대기하거나, 조용히 계속 진행하지 않고 안전하게 오류를 보고하고 정의된 상태에 멈추는지</strong> 관찰합니다.</li>
+<li><strong>로그 집계</strong>: 각 구간의 입력 요약, 출력, 소요 시간, 실패 원인을 데이터베이스에 저장합니다(<a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> bag 또는 구조화된 로그). 10회 실험 후 한 번의 클릭으로 보고서를 생성합니다(각 구간 성공률 × 전체 체인 성공률 매트릭스).</li>
+</ol>
+<p>【이유】구간별로는 모두 맞는데 전체 체인이 실패하는 것은 통합 작업의 전형적인 실패 유형이며, 그 원인은 거의 항상 인터페이스 가정(좌표계, 단위, 타임스탬프 기준, 프레임 속도)에 있습니다. 구간별 시간 측정과 로깅은 인터페이스 문제를 드러나게 합니다. 장애 주입 테스트는 안전 공학의 입문 동작입니다: 시스템이 "본 적 없는 이상 상황"에 대해 취해야 하는 기본 동작은 안전 상태여야 합니다 – 이는 M20 FMEA의 예행연습입니다.</p>
+<p>【상황 분석 방법】전체 체인이 기준에 미달할 때 어떤 구간이든 바로 수정하지 마십시오: 먼저 보고서 매트릭스를 확인하십시오 – 실패가 특정 구간에 집중되어 있으면 해당 구간을 수정하십시오; 실패가 여러 구간에 분산되어 있으면, 실패 종료가 명확하지 않은 구간을 우선 수정하십시오(시스템이 "제대로 실패하는 법"조차 모른다면 성공률을 논하는 것은 의미가 없습니다). 좌표계는 TF 트리를 통일하고, 구간 간 인터페이스는 "지도 좌표계 하의 자세"만 전달하며, 로컬 좌표는 전달하지 않습니다.</p>
+<h2 id="6-stage-3">6단계: 승인 리허설 – Stage 3 기준에 따라 공식 절차 진행</h2>
+<p>【수행할 작업】공식 프로토콜에 따라 완전한 승인을 한 번 수행하고 기록을 남깁니다: 연속 10회 실험(물체와 위치는 고정된 목록에 따라 배치, 명령은 고정된 문장 사용), 각 회차의 성공/실패, 총 소요 시간, 실패 구간 및 실패 원인을 기록합니다; 전체 과정을 화면 녹화합니다(헤드 카메라 시점 + 제3자 시점). 기준은 Stage 3 전체 승인 기준입니다: <strong>성공 ≥7회, 단일 ≤2분</strong>. 실패한 각 회차에 대해 원인 분석(어느 구간, 어떤 유형의 실패, 다음에 무엇을 수정할지)을 작성하고, 화면 녹화와 함께 보고서로 정리합니다.</p>
+<p>【이유】승인 리허설의 가치는 "통과" 자체가 아니라, 재측정 가능한 기준선을 남기는 데 있습니다: M20 이후의 모든 변경(모델 교체, 펌웨어 교체, 구조 부품 교체)은 동일한 프로토콜에 따라 재실행되어야 하며, 그래야 수치를 가로로 비교할 수 있습니다. 화면 녹화는 "사후에 재검증 가능한" 유일한 증거입니다 – 원인 분석에 "구간 3 검출 실패"라고 적혀 있으면, 화면 녹화를 통해 3개월 후에도 이 판단을 검증할 수 있습니다.</p>
+<p>【상황 분석 방법】간신히 통과(7/10): 3회 실패에 대한 원인 분석을 한 번 수행한 후 완료를 선언하십시오 – 간신히 통과한 시스템은 M20의 변경 회귀 테스트를 견딜 수 없습니다. 두 번의 승인 결과 변동이 2회 이상인 경우: 환경 변수(조명, 배터리 잔량, 바닥 상태)를 확인하고, 승인 조건도 프로토콜에 명시하여 고정하십시오.</p>
+<h2 id="_1">승인 기준</h2>
+<ul>
+<li>[ ] 5단계 상태 머신 문서화: 각 단계의 입력/출력/시간 초과/실패 종료 4가지 요소가 완비되고, 구간별 단위 테스트 기록이 보관됨.</li>
+<li>[ ] 명령 계층이 선택한 단계에서 정상 작동함(고정 문장이 기본 단계), 잘못된 명령에 대한 안전한 종료 경로가 있음.</li>
+<li>[ ] 도착 판단을 위한 이중 임계값이 실제 측정을 통해 보정되었고, 내비게이션 구간 소요 시간과 성공률이 보고서에 포함됨.</li>
+<li>[ ] 파지 확인 신호 ≥2개, 주행-조작 상호 배제 규칙이 실제 기기에서 검증됨.</li>
+<li>[ ] 장애 주입 테스트 통과: 카메라 가리기/물체 이동/잘못된 명령 상황에서 시스템이 안전하게 오류를 보고하고, 무작정 움직이거나 교착 상태에 빠지지 않음.</li>
+<li>[ ] 공식 승인: 연속 10회 중 성공 ≥7회, 단일 ≤2분, 화면 녹화 및 원인 분석 보고서 작성 완료.</li>
+</ul>
+<h2 id="_2">일반적인 문제점 및 진단</h2>
+<table>
+<thead>
+<tr>
+<th>증상</th>
+<th>가능한 원인</th>
+<th>진단 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>구간별로는 모두 맞는데 전체 체인이 실패</td>
+<td>인터페이스 가정 불일치(좌표계/단위/타임스탬프)</td>
+<td>구간 간에는 지도 좌표계 자세만 전송; 각 구간 입력/출력의 단위와 좌표계 출력</td>
+</tr>
+<tr>
+<td>특정 구간 실패 후 시스템이 무작정 움직임</td>
+<td>해당 구간에 실패 종료 경로가 없거나 구현되지 않음</td>
+<td>1단계 상태 머신 표로 돌아가 구간별로 확인; 장애 주입으로 재현</td>
+</tr>
+<tr>
+<td>내비게이션 소요 시간 초과</td>
+<td>경로 계획이 보수적 / 주행 속도가 제한됨 / 재계획 무한 루프</td>
+<td>구간별 시간 측정으로 위치 파악; 속도 풀고 재측정; 재계획 횟수 상한 설정</td>
+</tr>
+<tr>
+<td>검출 간헐적 실패로 성공률 저하</td>
+<td>조명 민감 / 시야 사각지대 / 캘리브레이션 드리프트</td>
+<td>승인 조명 고정; 시각 재확인 재시도 추가; 외부 파라미터 재캘리브레이션</td>
+</tr>
+<tr>
+<td>상태 머신 교착 상태(두 구간이 서로 대기)</td>
+<td>상태 전이 조건이 순환 대기로 작성됨</td>
+<td>모든 대기에 시간 초과 추가; 상태 전이 다이어그램 그려서 순환 확인</td>
+</tr>
+<tr>
+<td>주행 중 조작 잘못 시작으로 흔들림 발생</td>
+<td>상호 배제 규칙이 적용되지 않음</td>
+<td>상호 배제 플래그 확인; 도착 판단에 "1초 정지" 조건 추가</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">관련 자료</h2>
+<ul>
+<li>이전 작업: <a href="/ko/roadmap/missions/m18-imitation-learning/">M18 · 모방 학습 훈련 및 배포</a></li>
+<li>다음 작업: <a href="/ko/roadmap/missions/m20-reliability-safety/">M20 · 신뢰성, 유지보수 및 안전 공학</a></li>
+<li>이론 배경: <a href="/ko/wiki/chapters/chapter-19/">제19장 VLA</a>, <a href="/ko/wiki/chapters/chapter-24/">제24장 엔드투엔드 소프트웨어 스택</a>, <a href="/ko/wiki/chapters/chapter-25/">제25장 로봇 평가 체계</a></li>
+<li><a href="/ko/roadmap/stage-3-humanoid/">3단계 개요</a> · <a href="/ko/roadmap/index/">로드맵 개요</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="이 페이지 목차">
+      
+      <a class="prev" href="/ko/roadmap/missions/m18-imitation-learning/">← 이전<span>M18 · 모방 학습 훈련 및 배포: 50개의 데모로 컵을 잡는 전략 만들기</span></a>
+      
+      
+      <a class="next" href="/ko/roadmap/missions/m20-reliability-safety/">다음 →<span>M20 · 신뢰성, 유지보수 및 안전 엔지니어링: 기계를 오래 살리고, 사람이 가까이 다가갈 수 있게 하라</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m19">M19 · 엔드투엔드 태스크 통합: 명령 듣고, 걸어가서, 집어 올리기</a><ul>
+<li><a href="#1">단계 1: 태스크 분해 및 상태 머신——먼저 모듈별 단위 테스트, 그다음 전체 체인</a></li>
+<li><a href="#2-vla">단계 2: 명령 계층——고정 구문으로 시작, VLA는 스케줄링만 담당</a></li>
+<li><a href="#3-m16-m14">단계 3: 내비게이션 단계——M16 위치 추정 스택 재사용, M14 보행 연동</a></li>
+<li><a href="#4">단계 4: 조작 단계——감지, 그리기, 확인, 정지 후 동작</a></li>
+<li><a href="#5">5단계: 전체 체인 통합 조정 및 장애 주입 – 시간 측정으로 병목 찾기, 오류 주입으로 성능 저하 확인하기</a></li>
+<li><a href="#6-stage-3">6단계: 승인 리허설 – Stage 3 기준에 따라 공식 절차 진행</a></li>
+<li><a href="#_1">승인 기준</a></li>
+<li><a href="#_2">일반적인 문제점 및 진단</a></li>
+<li><a href="#_3">관련 자료</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

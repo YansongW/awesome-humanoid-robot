@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation</h1>
+      <p class="entry-name-en">DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>DenseReward 提出了一套完整的密集视觉-语言奖励模型训练方案，核心贡献在于通过自动数据生成流水线与目标扰动合成多样化失败轨迹，构建了包含 26579 个操作片段、7560942 个帧级样本的密集奖励数据集，并基于 Qwen3-VL-4B-Instruct 微调出能输出细粒度任务进度（保留三位小数）的奖励模型。该工作解决了强化学习在机器人操作中缺乏可靠密集奖励信号的核心瓶颈，在密集奖励预测精度、MPC 引导质量以及真实世界策略学习成功率上均显著超越现有基线。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13033" target="_blank" rel="noopener">arXiv:2607.13033 DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulatio</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>这个工作真正改变的是奖励模型训练数据的获取范式。此前领域内要么依赖人工标注（成本极高且难以规模化），要么通过截断成功轨迹或构建偏好对来伪造失败样本——但这些伪失败无法反映真实机器人执行中的物理失败模式，比如碰撞后的动力学响应、抓取偏移导致的物体滑落、运输中的意外掉落等。DenseReward 通过目标扰动主动合成六种明确界定的失败类型，并配合自动有效性检查过滤掉扰动未生效的样本，使得奖励模型第一次能在包含真实失败分布的数据上学习。</p>
+<p>另一个关键改变在于奖励信号的粒度。现有方法大多输出稀疏的轨迹级二元标签，策略无法获知中间动作的优劣。DenseReward 将操作分解为 Reach、Grasp、Lift、Move、Place 五个规范相位，为每个时间步赋予 [0,1] 区间的密集奖励值，且保留三位小数以捕捉细微进度差异——这让策略优化能从"最终成败"细化到"每一步推进了多少"，对长时程操作任务尤其重要。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">数据生成流水线</h3>
+<ul>
+<li>场景随机初始化，目标物体与容器随机放置于桌面</li>
+<li>GraspNet 从多视角 RGB-D 预测最多 N=50 个抓取候选</li>
+<li>CuRobo 进行碰撞感知运动规划，筛选可行候选并端到端规划六个固定运动段（对应五个操作相位）</li>
+<li>相位边界自动检测：Grasp 始于夹爪接触物体，Lift 始于物体离开桌面，Place 始于末端执行器进入目标邻近半径 d_place，全程无需人工标注</li>
+</ul>
+<h3 id="_4">失败合成与扰动设计</h3>
+<p>六种轨迹类型对应不同扰动策略：
+- Success：无扰动，奖励单调上升
+- Collision：禁用碰撞避免，迫使机器人撞击物体或桌面，奖励呈山形曲线
+- Miss：偏移抓取目标位姿，夹爪在空中闭合，奖励上升后衰减
+- Fall：Move 阶段施加随机旋转扰动，物体运输中掉落，奖励呈山形曲线
+- Smooth：每步注入小高斯关节噪声，产生抖动次优轨迹
+- Recover：先碰撞后重新规划并完成任务，奖励先降后升</p>
+<h3 id="_5">有效性检查</h3>
+<p>在阶段边界应用自动检查，拒绝物理不一致的轨迹（如扰动抓取仍意外抓住物体、掉落轨迹中物体未保持高度阈值等），确保失败标签的可靠性。</p>
+<h3 id="_6">奖励模型</h3>
+<ul>
+<li>基于 Qwen3-VL-4B-Instruct，LoRA rank 16，训练 10 epoch，8 张 H100，batch size 32</li>
+<li>输入任务指令、当前观测与历史帧，输出单个三位小数的浮点值（0.000 到 1.000）</li>
+<li>奖励规则：0.000 表示无进度或失败，1.000 表示完全完成，随阶段推进递增，不可逆失败时下降</li>
+</ul>
+<h3 id="_7">下游应用</h3>
+<ul>
+<li>MPC 评估：每步采样 28 个候选动作（27 个空间方向 + 1 个夹爪开关），d=0.05 m，滚动后用奖励模型评分选最优</li>
+<li>RL 微调：PPO 算法，动作块长度 C=5，组合奖励 r_t = α·r_t^sim + β·r_t^model，α=1.0，β=C/T_max</li>
+<li>真实世界：DSRL 适配冻结的 π_0 策略，奖励整合 r_t = -1 + r_t^model</li>
+</ul>
+<h2 id="_8">关键创新</h2>
+<p>第一，失败合成机制是全新的。不同于 RoboReward 截断成功片段或 Robometer 构建偏好对，DenseReward 通过物理扰动主动制造六种明确界定的失败模式，并配套自动有效性检查确保扰动确实产生了预期失败。这使得奖励模型能学习到真实执行中出现的物理失败特征，而非仅从成功轨迹中推断。</p>
+<p>第二，相位感知的密集奖励标注是自动完成的。通过 GraspNet 与 CuRobo 的规划信息自动检测相位边界，无需人工标注，将密集奖励的获取成本从"人工逐帧标注"降为"自动流水线生成"，这是规模化扩展的关键。</p>
+<p>第三，三位小数的奖励精度设计看似微小实则重要。它迫使模型学习任务进度的细粒度差异（如更接近目标物体或从失败状态恢复的程度），而非仅输出粗糙的进度等级，这直接提升了奖励信号对策略优化的指导价值。</p>
+<h2 id="_9">实验与结果</h2>
+<h3 id="mae">密集奖励预测精度（MAE，越低越好）</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>Overall</th>
+<th>DROID</th>
+<th>Isaac Sim</th>
+<th>RoboSuite</th>
+<th>LIBERO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DenseReward (Ours)</td>
+<td>0.081</td>
+<td>0.259</td>
+<td>0.081</td>
+<td>0.051</td>
+<td>0.044</td>
+</tr>
+<tr>
+<td>Qwen3-VL-4B-Instruct</td>
+<td>0.289</td>
+<td>0.532</td>
+<td>0.285</td>
+<td>0.195</td>
+<td>0.478</td>
+</tr>
+<tr>
+<td>Qwen3-VL-8B-Instruct</td>
+<td>0.293</td>
+<td>0.538</td>
+<td>0.305</td>
+<td>0.180</td>
+<td>0.502</td>
+</tr>
+<tr>
+<td>Molmo2-4B</td>
+<td>0.282</td>
+<td>0.506</td>
+<td>0.282</td>
+<td>0.187</td>
+<td>0.478</td>
+</tr>
+<tr>
+<td>Molmo2-8B</td>
+<td>0.335</td>
+<td>0.480</td>
+<td>0.307</td>
+<td>0.303</td>
+<td>0.455</td>
+</tr>
+<tr>
+<td>RoboReward-4B</td>
+<td>0.275</td>
+<td>0.534</td>
+<td>0.269</td>
+<td>0.179</td>
+<td>0.470</td>
+</tr>
+<tr>
+<td>RoboReward-8B</td>
+<td>0.230</td>
+<td>0.484</td>
+<td>0.185</td>
+<td>0.172</td>
+<td>0.431</td>
+</tr>
+<tr>
+<td>Robometer</td>
+<td>0.366</td>
+<td>0.521</td>
+<td>0.328</td>
+<td>0.345</td>
+<td>0.468</td>
+</tr>
+</tbody>
+</table>
+<p>DenseReward 在 Overall 上比最强基线 RoboReward-8B 降低约 65% 误差（由表内数值 0.230→0.081 计算），在 LIBERO 上优势最明显（0.044 vs 0.431）。</p>
+<h3 id="mpc">MPC 引导质量（物体与夹爪最小距离，越低越好）</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>Can</th>
+<th>Cup</th>
+<th>Lemon</th>
+<th>Avg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DenseReward (Ours)</td>
+<td>0.219</td>
+<td>0.181</td>
+<td>0.288</td>
+<td>0.229</td>
+</tr>
+<tr>
+<td>RoboReward-4B</td>
+<td>0.199</td>
+<td>0.307</td>
+<td>0.295</td>
+<td>0.267</td>
+</tr>
+<tr>
+<td>RoboReward-8B</td>
+<td>0.314</td>
+<td>0.270</td>
+<td>0.317</td>
+<td>0.300</td>
+</tr>
+<tr>
+<td>VLAC-2B</td>
+<td>0.316</td>
+<td>0.346</td>
+<td>0.380</td>
+<td>0.347</td>
+</tr>
+<tr>
+<td>VLAC-8B</td>
+<td>0.351</td>
+<td>0.360</td>
+<td>0.363</td>
+<td>0.358</td>
+</tr>
+</tbody>
+</table>
+<p>DenseReward 在 Avg. 上比最强基线 RoboReward-4B 降低约 14%（由表内数值 0.267→0.229 计算），定性结果显示其产生更一致的朝向目标引导。</p>
+<h3 id="_10">消融与真实世界</h3>
+<ul>
+<li>移除所有失败轨迹后 MAE 从 0.0809 升至 0.1312，验证失败数据有效性</li>
+<li>历史帧数消融：0 帧 0.096、1 帧 0.088、2 帧 0.081、3 帧 0.086，默认 2 帧最优</li>
+<li>真实世界：stack the cups 成功率从 40% 提升到 80%，put ball in basket 从 30% 提升到 70%（各评估 10 次试验）</li>
+</ul>
+<h2 id="_11">边界与局限</h2>
+<p>MPC 实验未包含旋转动作，因为会大幅增加候选动作数量与计算成本，这意味着奖励模型在需要姿态调整的任务上的引导能力未被验证。有效性过滤步骤依赖人工设计的检查规则，对于未覆盖的失败模式（如工具使用中的复杂失效）可能失效。论文未明确说明 DenseReward 在超出 60 个训练物体类别时的泛化边界，也未涉及人类偏好对齐。真实世界实验仅两个任务且各 10 次试验，统计显著性有限。</p>
+<h2 id="_12">工程启示</h2>
+<p>复现时最先核对的是数据生成流水线的有效性检查逻辑——这是整个方法可靠性的基石，扰动本身不总能保证预期失败（如扰动抓取仍可能意外抓住物体），过滤不严会导致误标记数据污染训练。其次确认相位边界检测的触发条件（Grasp 接触、Lift 离桌、Place 进入 d_place 半径），这些阈值直接影响奖励曲线的形状。</p>
+<p>最容易踩坑的地方是 MPC 评估中的候选动作空间设计：仅 28 个候选（27 方向 + 1 夹爪）且不含旋转，虽然控制了计算成本，但会限制奖励模型在高自由度任务上的表现评估。下游团队若需复现真实世界结果，注意 DSRL 的冻结 π_0 策略与动作幅度 1.5 的配置，以及奖励整合公式 r_t = -1 + r_t^model 中偏移量对探索行为的影响。训练预算方面，stack the cups 需 20k 步（约 20 个 rollout），put ball in basket 需 10k 步（约 10 个 rollout），硬件为 Franka Research 3 + Robotiq 2F-85 + ZED 相机组合。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.13033</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_model_predictive_control/">模型预测控制（MPC）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_dataset_droid/">DROID 机器人操作数据集</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_densereward_dense_reward_failure_synthes_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_dataset_droid/">
+          <span class="entry-type">数据集</span>
+          <h3>DROID 机器人操作数据集</h3>
+          <p>一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">方法</span>
+          <h3>模型预测控制（MPC）</h3>
+          <p>基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">数据生成流水线</a></li>
+<li><a href="#_4">失败合成与扰动设计</a></li>
+<li><a href="#_5">有效性检查</a></li>
+<li><a href="#_6">奖励模型</a></li>
+<li><a href="#_7">下游应用</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#mae">密集奖励预测精度（MAE，越低越好）</a></li>
+<li><a href="#mpc">MPC 引导质量（物体与夹爪最小距离，越低越好）</a></li>
+<li><a href="#_10">消融与真实世界</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

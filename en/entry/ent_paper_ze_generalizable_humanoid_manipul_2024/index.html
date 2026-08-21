@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generalizable Humanoid Manipulation with 3D Diffusion Policies · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Generalizable Humanoid Manipulation with 3D Diffusion Policies</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Generalizable Humanoid Manipulation with 3D Diffusion Policies</h1>
+      <p class="entry-name-en">Generalizable Humanoid Manipulation with 3D Diffusion Policies</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">AI Models &amp; Algorithms</span><span class="tag">Components</span><span class="tag">Data &amp; Datasets</span><span class="tag">Evaluation &amp; Benchmarks</span><span class="tag">Applications &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Upstream</span><span class="tag tag-layer">Validation &amp; Markets</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.10803v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (948 chars, DeepSeek). | WP3 2026-08-06: merged ent_paper_ze_generalizable_humanoid_manipul_2024, ent_paper_ze_generalizable_humanoid_manipul_2024 into this card. Reason: G7 same arXiv 2410.10803; title variants (&#39;with 3D Diffusion Policies&#39; vs &#39;with Improved 3D Diffusion Policies&#39;) are arXiv version renames of the same paper (DP3-&gt;iDP3). Keeper longest (3545).. Manifest: .staging/cleanup_wp12/manifest_wp3_merges.json [2026-08-20] body rewritten as full-text six-section deep read (scripts/deep_read_cards.py, DeepSeek deepseek-chat T&lt;=0.3, arXiv full text; number whitelist enforced at generation); en/ko sections regenerated by translate pipeline.">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+    <p class="untranslated-notice">This page has not been translated yet — the original Chinese content is shown below.</p>
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>This paper presents a real-world imitation-learning system that enables a full-sized humanoid robot to perform Pick&amp;Place, Pour, and Wipe skills in diverse unseen scenes using data collected in a single scene, combining whole-upper-body teleoperation, a 25-DoF GR1 platform with a height-adjustable cart and head-mounted LiDAR, and an improved egocentric 3D Diffusion Policy (iDP3) that runs entirely on onboard compute.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2410.10803" target="_blank" rel="noopener">Generalizable Humanoid Manipulation with 3D Diffusion Policies</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2410.10803" target="_blank" rel="noopener">Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://humanoid-manipulation.github.io/" target="_blank" rel="noopener">Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies project page</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://humanoid-manipulation.github.io" target="_blank" rel="noopener">使用3D扩散策略的通用人形操作 project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>VIGOR 提出一种统一的人形机器人跌倒安全框架，将跌倒缓解与站起恢复整合为单一策略，仅依赖 ego-centric 深度和本体感觉，实现零样本迁移到非平坦地形。该方法通过运动重定向、地形对齐、特权教师训练和视觉学生蒸馏，在 Unitree G1 上验证了无需真实世界微调的泛化能力。</p>
+<h2 id="_2">它改变了什么</h2>
+<p>现有跌倒安全研究将问题拆解为跌倒避免、冲击缓解、站起恢复等孤立子模块，或依赖无视觉的端到端策略，这些方法在平坦地形上训练后难以泛化到非平坦环境。作者认为，跌倒安全的核心矛盾在于将位姿、动力学和地形耦合为“整体数据复杂性”问题，导致需要穷举覆盖所有场景，限制了可扩展性。</p>
+<p>VIGOR 的真正改变在于将跌倒安全重新定义为“受约束的恢复行为学习”问题。通过利用人类跌倒和恢复位姿的高度结构化特性，将平坦地形上习得的策略迁移到复杂地形，而非从零学习所有地形变体。这一视角转变使得统一策略成为可能，同时通过集成感知-运动表征实现快速全身反应，避免了传统方法中模块间协调的复杂性。</p>
+<h2 id="_3">方法拆解</h2>
+<h3 id="_4">整体流程</h3>
+<ol>
+<li><strong>运动重定向</strong>：从单目视频经 VideoMimic 重建 SMPL 模型，运动学重定向到 Unitree G1，保留 9 条高质量恢复序列（来自 3 种体型）。</li>
+<li><strong>地形对齐</strong>：参考位姿在平坦地形直接使用；非平坦地形通过垂直投影对齐，公式为 Δz = max_{i=1,…,N_links}(h(p_i^ref) − z_i^ref)，所有参考位姿平移 Δz 确保高于地形。</li>
+<li><strong>特权教师训练</strong>：PPO 两阶段训练（先平坦后非平坦），观察为 (本体感觉, 稀疏参考, 特权地形扫描)，融合为 goal-in-context 潜变量 z_t^goal = g(o_t^ref, h_t)，动作 a_t^teach = π_θ(z_t^goal, o_t^prop)。</li>
+<li><strong>视觉学生蒸馏</strong>：学生仅用 ego-centric 深度和短期本体感觉历史，匹配教师的 goal-in-context 潜变量。</li>
+</ol>
+<h3 id="_5">关键设计决策</h3>
+<ul>
+<li><strong>稀疏关键帧</strong>：均匀采样作为高层结构先验，避免过度约束恢复行为。</li>
+<li><strong>奖励设计</strong>：r_t = r_t^imit + r_t^reg + r_t^post；模仿项采用根相对规范坐标系比较 (p_i^ref − p_0^ref) − (p_i − p_0)，避免惩罚投影残差；正则项覆盖关节极限、速度、加速度、动量变化、动作平滑、非期望接触、地形边缘接触；后恢复稳定项奖励直立保持。</li>
+<li><strong>欠指定策略</strong>：教师策略在稀疏参考和特权地形下“欠指定”，允许 RL 自主解决接触时序和地形依赖执行细节。</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li><strong>统一框架</strong>：首次将跌倒缓解和站起恢复整合为单一策略，而非分离子模块，简化了系统复杂度并提升端到端响应速度。</li>
+<li><strong>地形对齐机制</strong>：通过垂直投影将平坦地形参考位姿迁移到非平坦地形，避免了显式地形建模，使策略能零样本泛化到未见环境。</li>
+<li><strong>感知-运动蒸馏</strong>：教师策略利用特权地形信息学习鲁棒行为，学生仅依赖 ego-centric 深度和本体感觉，实现了无需真实世界微调的部署，这是实际机器人应用的关键突破。</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<p>实验在模拟和真实 Unitree G1 上验证，覆盖楼梯、碎片支撑面等非平坦环境。真实世界零样本迁移成功，无需微调，但片段未提供具体成功率数字。表 I 给出奖励项权重（逐字照抄）：</p>
+<table>
+<thead>
+<tr>
+<th>奖励项</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RB pos. track</td>
+<td>1.25</td>
+</tr>
+<tr>
+<td>RB rot. track</td>
+<td>0.50</td>
+</tr>
+<tr>
+<td>RB lin. vel. track</td>
+<td>0.125</td>
+</tr>
+<tr>
+<td>RB ang. vel. track</td>
+<td>0.125</td>
+</tr>
+<tr>
+<td>Joint pos. track</td>
+<td>0.50</td>
+</tr>
+</tbody>
+</table>
+<p>片段中未提供其他实验表格（如成功率、误差对比），论文未明确真实世界定量指标。</p>
+<h2 id="_8">边界与局限</h2>
+<p>论文未明确列出局限性章节，但隐含边界包括：未在真实世界微调（依赖零样本迁移）；仅 9 条演示序列和 3 种体型，未覆盖所有跌倒场景；未明确处理极端地形或动态障碍（仅随机非平坦地形）；未提供真实世界定量成功率或误差指标。这些限制意味着策略在极端环境或未见动态条件下的鲁棒性尚未验证。</p>
+<h2 id="_9">工程启示</h2>
+<p>复现 VIGOR 时，首先核对地形对齐公式中 Δz 的计算是否严格遵循 max 操作，这是非平坦地形泛化的核心。其次，奖励权重表 I 中的数值（1.25、0.50、0.125 等）需逐字匹配，任何调整都可能影响模仿精度与正则平衡。最易踩坑的是稀疏关键帧的采样密度——过密会过度约束恢复行为，过疏则丢失结构先验。部署时，学生策略的 ego-centric 深度输入需与训练时传感器配置一致（头戴相机），且短期本体感觉历史长度需固定。若下游团队需扩展地形类型，建议先验证地形对齐在目标地形上的投影误差，再决定是否增加演示序列。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2410.10803v3</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">mentions</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+      
+      <span class="rel-desc">Generalizable Humanoid Manipulation with 3D Diffusion Policies mentions Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">uses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_method_diffusion_policy/">Diffusion Policy</a>
+      
+      <span class="rel-desc">Generalizable Humanoid Manipulation with 3D Diffusion Policies uses Diffusion Policy.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">mentions</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_method_action_chunking_transformer/">Action Chunking with Transformers (ACT)</a>
+      
+      <span class="rel-desc">Generalizable Humanoid Manipulation with 3D Diffusion Policies mentions Action Chunking with Transformers (ACT).</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_method_behavior_cloning/">Behavior Cloning</a>
+      
+      <span class="rel-desc">Generalizable Humanoid Manipulation with 3D Diffusion Policies compares with Behavior Cloning.</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <a href="/en/entry/ent_paper_idp3_generalizable_humanoid_ma_2026/">iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies</a>
+      <span class="rel-arrow">→</span>
+      <span class="rel-pill">cites</span>
+      
+      <span class="rel-desc">iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies cites Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies.</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_ze_generalizable_humanoid_manipul_2024"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">Paper</span>
+          <h3>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_paper_idp3_generalizable_humanoid_ma_2026/">
+          <span class="entry-type">Paper</span>
+          <h3>iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies</h3>
+          <p>iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a paper on High…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">Method</span>
+          <h3>Behavior Cloning</h3>
+          <p>A supervised imitation-learning method that trains a policy to replicate expert demonstrations,…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">Method</span>
+          <h3>Diffusion Policy</h3>
+          <p>A visuomotor policy that represents action distributions as denoising diffusion models, enabling…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">Method</span>
+          <h3>Action Chunking with Transformers (ACT)</h3>
+          <p>An imitation-learning method that predicts a sequence of future actions as a chunk using a…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">它改变了什么</a></li>
+<li><a href="#_3">方法拆解</a><ul>
+<li><a href="#_4">整体流程</a></li>
+<li><a href="#_5">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a></li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

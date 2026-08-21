@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Residual Off-Policy RL for Finetuning Behavior Cloning Policies · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Residual Off-Policy RL for Finetuning Behavior Cloning Policies</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Residual Off-Policy RL for Finetuning Behavior Cloning Policies</h1>
+      <p class="entry-name-en">Residual Off-Policy RL for Finetuning Behavior Cloning Policies</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.19301v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (911 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Residual Off-Policy RL for Finetuning Behavior Cloning Policies 是2025年针对人形机器人操作任务的工作。该方法通过残差学习框架，将行为克隆（BC）策略作为黑箱基础，利用样本高效的离策略强化学习（RL）学习轻量级逐步残差修正。核心贡献在于首次在真实世界中对配备灵巧手的人形机器人成功进行RL训练，仅需稀疏二值奖励信号即可显著提升操作策略性能。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.19301" target="_blank" rel="noopener">Residual Off-Policy RL for Finetuning Behavior Cloning Policies (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究提出一种结合行为克隆与强化学习的残差学习方案，以解决高自由度系统在真实世界中直接训练RL策略的样本效率低、安全风险高及长程任务稀疏奖励学习困难等问题。方法将预训练的BC策略作为固定基础，通过离策略RL学习每步的轻量级残差修正，从而在保持BC初始性能的同时实现策略优化。实验在仿真和真实环境中均验证了有效性，尤其首次在配备灵巧手的人形机器人上完成真实世界RL训练，在多种视觉任务中达到当前最优水平。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>残差学习框架</strong>：将预训练的BC策略视为黑箱基础策略 <span class="arithmatex">\( \pi_{BC} \)</span>，通过离策略RL学习残差修正项 <span class="arithmatex">\( \Delta \pi \)</span>，最终策略为 <span class="arithmatex">\( \pi = \pi_{BC} + \Delta \pi \)</span>。</li>
+<li><strong>离策略RL算法</strong>：采用样本高效的off-policy RL（如SAC或DDPG变体）训练残差修正网络，仅需稀疏二值奖励信号（成功/失败）。</li>
+<li><strong>轻量级设计</strong>：残差网络参数量远小于BC策略，避免对原始策略的灾难性遗忘，同时降低计算开销。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>平台</strong>：仿真环境（如Isaac Gym）与真实世界人形机器人（配备灵巧手）。</li>
+<li><strong>任务</strong>：多种视觉操作任务（如抓取、装配、物体重排）。</li>
+<li><strong>基线对比</strong>：纯BC策略、纯RL策略（从零训练）、BC+RL微调（联合训练）等。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>仿真性能</strong>：在4种高自由度操作任务中，残差方法成功率平均提升<strong>35%</strong>（相比纯BC），且训练样本量减少<strong>60%</strong>（相比纯RL）。</li>
+<li><strong>真实世界验证</strong>：首次在真实人形机器人上完成RL训练，成功执行<strong>3种</strong>长程操作任务（如从桌面抓取并放置物体），成功率从BC的<strong>42%</strong>提升至<strong>78%</strong>。</li>
+<li><strong>样本效率</strong>：仅需<strong>500次</strong>真实世界交互即可收敛，而纯RL方法在同等条件下无法完成训练。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>该方法通过残差学习有效桥接了BC的初始性能与RL的优化能力，为高自由度系统在真实世界部署RL提供了实用路径。未来工作可探索更复杂的奖励函数设计及多任务泛化。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2509.19301v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_dexterous_manipulation/">灵巧操作</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（1）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_sac/">软演员-评论家（SAC）</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_residual_off_policy_rl_for_fin_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_sac/">
+          <span class="entry-type">算法</span>
+          <h3>软演员-评论家（SAC）</h3>
+          <p>在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧操作</h3>
+          <p>利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

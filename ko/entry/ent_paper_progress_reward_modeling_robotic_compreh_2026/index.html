@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress Reward Modeling for Robotic Learning: A Comprehensive Survey · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Progress Reward Modeling for Robotic Learning: A Comprehensive Survey</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Progress Reward Modeling for Robotic Learning: A Comprehensive Survey</h1>
+      <p class="entry-name-en">Progress Reward Modeling for Robotic Learning: A Comprehensive Survey</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Robotic learning takes place in dynamic environments with large behavior spaces. A terminal success signal only tells the robot whether the task is completed. It does not explain whether the current behavior is making progress, remaining unchanged, or undoing earlier progress. For this reason, recent studies have increasingly explored progress rewards that provide feedback during task execution..</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.21655" target="_blank" rel="noopener">arXiv:2607.21655 Progress Reward Modeling for Robotic Learning: A Comprehensive Survey</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이 리뷰는 해당 분야 연구자들이 작성했으며, 로봇 학습에서의 진행도 보상 모델링(Progress Reward Modeling)을 체계적으로 정리한 논문입니다. 핵심 기여는 통합된 관점을 제시하여 파편화된 문헌을 인터페이스, 방법, 데이터의 세 가지 수준으로 조직하고, 네 가지 구축 패러다임을 식별하여 향후 연구와 엔지니어링 실무에 명확한 좌표계를 제공한 것입니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>오랫동안 로봇 학습은 종료 성공 신호를 유일한 보상 원천으로 의존해 왔습니다. 이는 장기간, 고차원, 동적 작업에서 특히 치명적입니다—희소한 피드백은 에이전트가 많은 결정을 내린 후에야 유용한 정보를 얻을 수 있게 하며, 중간 과정의 우수성은 완전히 보이지 않습니다. 진행도 추정(progress estimation)은 해결책으로 간주되었지만, 이 분야 자체가 혼란에 빠져 있었습니다: 유사한 용어가 다른 문제를 설명하고, 평가 프로토콜이 각기 다르며, 방법 간 비교가 어렵고, 보고된 결과의 실제 의미도 종종 모호했습니다.</p>
+<p>이 리뷰가 실제로 바꾼 것은 분야 내 '인지 지도'입니다. 새로운 알고리즘을 제안하지 않고, 흩어진 문헌을 인터페이스, 방법, 데이터의 세 가지 연결 단계로 재조직하고 네 가지 구축 패러다임(동결 기반 모델, 시간/상대적 감독, 명령 튜닝, 절차적 구축)을 식별했습니다. 이러한 구조화된 관점은 연구자가 자신의 작업 좌표를 빠르게 파악할 수 있게 하고, 하류 엔지니어가 작업 특성에 따라 적절한 방법군을 선택할 수 있게 하여, 논문 미로에서 맹목적으로 시행착오를 겪지 않도록 합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<p>리뷰는 세 가지 관점에서 진행도 보상 모델링을 분해하며, 각 관점 내부에는 다시 세부 분류가 있습니다.</p>
+<h3 id="2">인터페이스 관점(제2절): 모델을 작업 조건 블랙박스로</h3>
+<ul>
+<li><strong>작업 상태 표현</strong>:</li>
+<li>단일 관측 입력: 낮은 지연 시간, 온라인 사용 용이하지만, 시각적으로 유사한 상태가 실행 이력에 따라 의미가 다를 수 있음.</li>
+<li>시간 컨텍스트 입력: 궤적 접두사 또는 짧은 창(온라인) 또는 전체 궤적(오프라인), 더 긴 컨텍스트는 더 강한 시간적 증거를 제공하지만 온라인 사용성을 약화시킴.</li>
+<li>비교식 입력: 두 참조 상태(행동 전후, 초기와 현재 등)를 비교하여 진행도를 추정하지만, 국소 비교는 장기 의존성을 놓칠 수 있고, 쌍별 판단 체인은 오류를 누적할 수 있음.</li>
+<li>상태 접근 인터페이스: 환경 코드, 시뮬레이터 API 또는 고유 감각 특징을 사용하며, 시뮬레이션이나 계측된 환경에 가장 적합하고, 실제 세계에서는 일반적으로 비현실적임.</li>
+<li><strong>작업 목표 명세</strong>:</li>
+<li>언어 조건: 인코딩 용이, 기존 VLM과 호환되지만, 언어는 물리적 세부 사항을 불충분하게 지정할 수 있으며, 특히 작업이 길어지고 더 조합적일 때.</li>
+<li>시각 조건: 목표 이미지 또는 데모 궤적은 표현하기 어려운 물리적 세부 사항을 포착하지만, 수동 큐레이션이 필요하고 시점, 구현 차이에 민감함.</li>
+<li>구조화/절차적 목표: 술어, 제약 조건 또는 생성된 목표 함수를 통해 표현되며, 정밀한 밀집 보상을 지원하지만 명시적 상태 변수 접근에 의존하고, 개방형 세계에서는 사용 불가능함.</li>
+<li><strong>모델 출력 형태</strong>:</li>
+<li>상태 수준 스칼라 점수: 가장 일반적이지만, 의미는 보정 방식에 따라 달라짐.</li>
+<li>진행도 증분: 전환이 상태를 개선하는지 예측(예: VLAC, ARM), RL과 자연스럽게 정렬되지만 국소 개선을 설명함.</li>
+<li>순위: 상대적이고 간접적이며, 스칼라 보상으로 변환해야 함.</li>
+<li>절차적 출력: 실행 가능한 보상 함수를 출력하며, 유연하지만 신뢰성은 코드 품질에 달려 있음.</li>
+</ul>
+<h3 id="3">방법 관점(제3절): 네 가지 구축 패러다임</h3>
+<ul>
+<li><strong>동결 기반 모델을 의미론적 보상 평가자로</strong>: 훈련 없이 사전 훈련된 모델에서 직접 신호 추출(예: CLIP식 이미지-텍스트 유사도, TOPReward의 'true' 토큰 확률). 제로샷 사용 가능하지만, 점수는 의미론적 사전 지식이지 보정된 보상이 아니므로 정규화, 임계값 설정 또는 차분이 필요함.</li>
+<li><strong>시간 및 상대적 감독에서 학습</strong>: 일반적인 감독 원천은 성공 데모의 시간적 순서(후기 상태가 완료에 더 가까움) 또는 선호도/순위 정보(예: RL-VLM-F, Rank2Reward). 상대적 감독은 수집이 쉽지만, 스칼라 보상을 직접 제공하지 않음.</li>
+<li><strong>명령 튜닝을 통한 진행도 예측</strong>: 진행도 추정을 명시적 명령 따르기 작업으로 표현하고, 작업 특정 프롬프트로 진행도 판단을 정의한 후 VLM을 미세 조정(예: RoboReward, VLAC, ProgressLM). 핵심 아이디어는 진행도 예측이 모델의 명령 따르기 능력의 일부가 되는 것이지, 암시적 부산물이 아니라는 것.</li>
+<li><strong>절차적 보상 구축</strong>: 진행도 추정을 코드, 술어 또는 구조화된 보상 논리로 변환(예: Text2Reward, Eureka). 작업이 명시적 하위 목표로 분해 가능할 때 효과적이지만, 도전 과제를 작업 분해와 특징 설계로 전가함.</li>
+</ul>
+<h3 id="4">데이터 및 벤치마크 관점(제4절)</h3>
+<ul>
+<li>인간 참여 정도에 따라 데이터 구축을 조직: 인간 원격 조작, 인간 인더루프 주석, 완전 자동 시간 구조 감독, 기반 모델 자동 주석, 데이터 증강.</li>
+<li>세 가지 평가 목표에 따라 벤치마크 그룹화: 진행도 충실도(스칼라 보정, 시간 일관성), 견고성 및 일반화(시점, 구현, 비단조 실행), 하류 효용(온라인 정책 학습, 오프라인 재주석, 검색 필터링, 계획).</li>
+</ul>
+<h2 id="_4">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>통합 관점 제시</strong>: 처음으로 파편화된 진행도 보상 문헌을 인터페이스, 방법, 데이터의 세 가지 수준으로 체계적으로 조직하고 네 가지 구축 패러다임을 식별. 단순한 분류학이 아니라, 서로 다른 방법 간의 깊은 연결을 드러냄—예를 들어 명령 튜닝 패러다임은 진행도 예측을 시각 표현 학습의 부산물에서 명시적 감독의 명령 따르기 능력으로 전환하며, 이 통찰은 연구자의 문제 본질 이해를 바꿈.</p>
+</li>
+<li>
+<p><strong>평가 차원의 체계화</strong>: 벤치마크 테스트를 단일 성공률 또는 오류 지표에서 세 가지 수준으로 확장—진행도 충실도(스칼라 보정, 시간 일관성), 견고성 및 일반화(시점, 구현, 비단조 실행), 하류 효용(온라인 학습, 오프라인 재주석, 검색, 계획). 특히 '정책 성능 향상 자체가 보상이 충실한 진행도 추정기임을 증명하지 못한다'는 점을 강조하며, 이 구분은 실험 설계에 직접적인 지침을 제공.</p>
+</li>
+<li>
+<p><strong>미래 방향에 대한 명확한 진단</strong>: 현재 모델이 세밀한 민감도, 적응형 시간 모델링, 효율적인 온라인 추론, 장기 기억의 네 가지 측면에서 구체적 결함을 지적하고 실행 가능한 개선 제안(예: 스트리밍 비주얼 인코더, 계층적 보상 쿼리, 컴팩트 작업 메모리)을 제공. 이러한 진단은 기존 방법의 한계에 대한 세밀한 분석에 기반하며, 막연한 논의가 아님.</p>
+</li>
+</ol>
+<h2 id="_5">실험 및 결과</h2>
+<p>이 리뷰 논문의 본문에는 구체적인 실험 설정, 기준선 또는 정량적 결과 수치가 포함되어 있지 않습니다. 언급된 벤치마크 유형은 다음과 같습니다:</p>
+<table>
+<thead>
+<tr>
+<th>평가 차원</th>
+<th>핵심 지표 유형</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>스칼라 보정</td>
+<td>회귀 오류, 상관관계</td>
+</tr>
+<tr>
+<td>시간 일관성</td>
+<td>순위 정확도, 순위 상관, 단조성 지표</td>
+</tr>
+<tr>
+<td>상대적 진행도</td>
+<td>쌍별 비교 판단</td>
+</tr>
+<tr>
+<td>작업 접지</td>
+<td>반사실적 명령, 불일치 비디오-언어 쌍</td>
+</tr>
+<tr>
+<td>응답 가능성/불확실성</td>
+<td>선택적 예측, 기권, 신뢰도 보정</td>
+</tr>
+</tbody>
+</table>
+<p>문서에는 구체적인 숫자, 표 또는 정량적 결과가 제공되지 않습니다. 언급된 모든 벤치마크 범주는 정성적 설명이며, 정량화된 결과가 없습니다. 논문은 성공률, 오류 값, 매개변수 수 또는 훈련 구성에 대해 명시적으로 보고하지 않습니다.</p>
+<h2 id="_6">경계 및 한계</h2>
+<p>저자가 명시적으로 인정한 한계는 다음과 같습니다: 단일 관측 입력은 시각적으로 유사하지만 이력이 다른 상태를 구분할 수 없음; 시간 컨텍스트 입력은 온라인 사용성과 시간적 증거 사이에서 절충; 비교식 인터페이스는 장기 의존성을 놓칠 수 있고 쌍별 판단 체인이 오류를 누적; 상태 접근 인터페이스는 실제 세계에서 일반적으로 사용 불가능. 언어 목표는 물리적 세부 사항을 불충분하게 지정하고, 시각 목표는 시점과 구현 차이에 민감하며, 구조화된 목표는 명시적 상태 변수에 의존. 동결 기반 모델의 점수는 의미론적 사전 지식이지 보정된 보상이 아니며, 선호 출력은 진행도를 상대적으로만 정의하고, 절차적 방법의 신뢰성은 코드 품질에 달려 있음. 인간 주도 데이터 구축은 비용이 많이 들고 주관적이며, 완전 자동 시간 구조 감독은 진행도가 시간과 충분히 상관관계가 있다고 가정하고, 기반 모델 자동 주석은 모델 편향을 계승함.</p>
+<p>또한 저자는 현재 모델이 일반적으로 세밀한 민감도 부족(희소 샘플링 프레임이 정밀 정렬과 같은 작은 변화를 놓칠 수 있음), 고정 비율 가정(실제 진행도는 종종 불균일하며, 갑작스러운 증가와 긴 평탄기가 존재), 추론 지연(대형 VLM은 모든 제어 단계에서 사용하기 어려움), 장기 기억 부족(시각적으로 유사한 관측이 다른 단계에 해당할 수 있음)을 지적합니다. 논문은 계산 리소스 요구 사항, 서로 다른 방법군 간의 정량적 성능 비교, 실제 물리적 로봇에서의 배포 경험에 대해 명시적으로 논의하지 않습니다.</p>
+<h2 id="_7">엔지니어링 시사점</h2>
+<p>진행도 보상 방법을 재현하거나 선택하려는 엔지니어에게 다음 사항을 우선적으로 확인하는 것이 좋습니다:</p>
+<ol>
+<li>
+<p><strong>작업 특성을 먼저 명확히 한 후 방법군 선택</strong>: 작업이 명시적 하위 목표로 분해 가능하고 상태 변수에 접근할 수 있다면 절차적 구축(예: Text2Reward)이 가장 신뢰할 수 있음; 언어 명령과 시각 입력만 있다면 명령 튜닝 패러다임(예: VLAC)이 더 적합; 제로샷 빠른 배포를 원한다면 동결 기반 모델을 출발점으로 사용할 수 있지만 반드시 정규화와 임계값 설정을 병행해야 함.</p>
+</li>
+<li>
+<p><strong>'평활하면 올바르다'는 함정 경계</strong>: 많은 방법이 시간적 순서를 감독으로 사용하여 진행도가 시간에 따라 평활하게 증가하도록 장려하지만, 실제 작업은 종종 갑작스러운 점프와 평탄기가 있음. 평가 시 반드시 비단조 실행 테스트(실패, 롤백, 재시도)를 포함해야 하며, 그렇지 않으면 모델이 '시간이 길어질수록 진행도가 높다'는 지름길만 학습할 수 있음.</p>
+</li>
+<li>
+<p><strong>온라인 추론 비용은 숨은 병목</strong>: 대형 VLM은 여러 프레임을 처리하고 추론한 후에야 보상을 생성할 수 있어, 오프라인 평가에는 허용 가능하지만 모든 제어 단계에서 사용하기 어려움. 계층적 전략을 권장—경량 모델은 고빈도로 호출하여 국소 업데이트를 처리하고, 대형 모델은 중요한 작업 전환 또는 불확실한 상태에서만 호출.</p>
+</li>
+<li>
+<p><strong>평가 지표는 반드시 계층화</strong>: 정책 성능 향상 자체는 보상이 충실한 진행도 추정기임을 증명하지 못함. 스칼라 보정(회귀 오류, 상관관계), 시간 일관성(순위 정확도, 순위 상관), 하류 효용(온라인 학습, 오프라인 재주석)의 세 가지 유형 지표를 동시에 보고해야 하며, 그렇지 않으면 단일 지표에 오도될 수 있음.</p>
+</li>
+<li>
+<p><strong>가장 함정에 빠지기 쉬운 부분</strong>: 시각 조건 목표는 시점 변화와 구현 차이에 극도로 민감하며, 구현 간 전이 시 반드시 재보정 필요; 절차적 방법의 보상은 구현이 정확하더라도 기대 행동과 일치하지 않을 수 있음(기호 변수가 작업의 중요한 측면을 포착하지 못할 때); 데이터 증강의 합성 실패는 물리적 합리성을 유지해야 하며, 그렇지 않으면 모델이 식별 가능한 인공물을 이용하게 됨.</p>
+</li>
+</ol>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_diffusion_policy/">디퓨전 정책</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_progress_reward_modeling_robotic_compreh_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">방법</span>
+          <h3>디퓨전 정책</h3>
+          <p>행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#2">인터페이스 관점(제2절): 모델을 작업 조건 블랙박스로</a></li>
+<li><a href="#3">방법 관점(제3절): 네 가지 구축 패러다임</a></li>
+<li><a href="#4">데이터 및 벤치마크 관점(제4절)</a></li>
+</ul>
+</li>
+<li><a href="#_4">핵심 혁신</a></li>
+<li><a href="#_5">실험 및 결과</a></li>
+<li><a href="#_6">경계 및 한계</a></li>
+<li><a href="#_7">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

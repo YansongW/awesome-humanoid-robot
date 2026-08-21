@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patch Policy: Efficient Embodied Control via Dense Visual Representations · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Patch Policy: Efficient Embodied Control via Dense Visual Representations</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Patch Policy: Efficient Embodied Control via Dense Visual Representations</h1>
+      <p class="entry-name-en">Patch Policy: Efficient Embodied Control via Dense Visual Representations</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Patch Policy 提出了一种直接消费预训练 ViT 密集 patch 特征（而非全局池化或 CLS token）的模块化 Transformer 策略架构，由 NYU、Meta-FAIR 与 AMI Labs 联合完成。其核心贡献在于证明：在不引入十亿参数 VLM 骨干的前提下，仅靠冻结的密集视觉表征配合块因果注意力，即可在模拟与真实世界操控任务上超越全局表征基线与微调 VLA 模型，同时将参数量与推理延迟降低数个数量级。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18236" target="_blank" rel="noopener">arXiv:2607.18236 Patch Policy: Efficient Embodied Control via Dense Visual Representations</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>机器人学习社区长期面临一个两难：要么使用 CLS token 或平均池化这类全局表征，牺牲细粒度空间信息；要么引入 OpenVLA 这类十亿参数 VLM，继承其全部推理与训练成本。Patch Policy 真正改变的是这个权衡的默认假设——它用实验证明，视觉运动策略的核心需求是"密集但冻结"的特征，而非"全局但可微调"的表征，更非"庞大但通用"的生成式骨干。这一判断将视觉预训练与策略学习的耦合方式从"端到端微调"或"全局压缩"两个极端中解放出来，指向一条参数效率与空间保真度兼得的中间路径。</p>
+<p>该工作还改变了社区对"patch 特征必须配合大模型使用"的隐性认知。通过将策略学习建模为对 T×P 时空 token 序列的序列建模，并引入块因果注意力掩码，它让 3 千万可训练参数即可驾驭 1 万+ 的 patch token 流，而无需任何全局池化或降维操作。这实质上把视觉表征的利用问题从"如何压缩"重新定义为"如何组织注意力"。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="observation-trunk">观测主干（Observation Trunk）</h3>
+<ul>
+<li>输入图像 o_t ∈ R^{C×H×W} 经冻结 ViT 编码器分割为 patches，输出形状 P×D 的密集特征（P=patch 数，D=嵌入维度）。</li>
+<li>对上下文窗口 T，特征序列形状为 T×P×D；目标条件设置下，目标图像经同编码器编码后与观测拼接为 T×P×2D，或目标向量 g ∈ R^G 逐 token 拼接为 T×P×(D+G)。</li>
+<li>关键设计：P=1 时退化为全局池化特征，天然兼容基于状态的环境，保证架构通用性。</li>
+</ul>
+<h3 id="policy-learning">策略学习（Policy Learning）</h3>
+<ul>
+<li>将 T×P 时空张量展平为长度 T×P 的序列，添加可学习 1D 位置嵌入（按展平索引）。</li>
+<li>应用<strong>块因果注意力掩码（block-causal attention mask）</strong>：帧内 patch 完全双向注意力，帧间严格因果。该设计允许模型整合每帧空间上下文，同时防止未来帧信息泄漏。</li>
+<li>动作头在每帧最后一个 patch token 处输出动作块（action chunk）；公式与动作头架构无关，评估了 VQ-BeT（混合分类-回归）与 Diffusion Policy（去噪）两种头。</li>
+</ul>
+<h3 id="_3">训练与推理</h3>
+<ul>
+<li>训练：前向传递 patch token 序列，逐帧计算损失。</li>
+<li>推理：提取当前观测 patch 特征，追加至长度 T 的滚动窗口，策略预测动作块并以递减时域控制执行。</li>
+<li>冻结骨干允许预计算视觉嵌入，显著加速训练。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>块因果注意力掩码的引入</strong>：这是对"如何组织密集 token 注意力"的明确回答。相比 full attention（允许未来帧泄漏）与 token-causal（破坏帧内上下文），块因果在帧内保持双向、帧间保持因果，在 Diffusion Policy 上 Cube 任务从 0.11（token-causal）恢复至 1.24（block-causal），证明该掩码对时空建模的关键性。</p>
+</li>
+<li>
+<p><strong>冻结骨干 + 密集特征的解耦</strong>：不微调视觉编码器，直接消费预训练 patch 特征。这一设计使训练成本降至 6.5 GPU-hours（1xL40S），对比 OpenVLA-OFT 的 16 GPU-hours 与 ACT 的 24 GPU-hours，同时保留 DINOv2/WebSSL 等大规模预训练的表征收益。</p>
+</li>
+<li>
+<p><strong>参数效率的极致化</strong>：以 51.55M 总参数（VQ-BeT + DINOv2）超越 7.61B 的 OpenVLA-OFT，推理延迟 10.99 ms 对比 61.71 ms。这证明密集特征的价值不在于模型规模，而在于特征本身的保真度与策略架构的适配性。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<h3 id="table-1100">模拟环境（Table 1，100 轨迹/种子）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Push-T</th>
+<th>LIBERO Goal</th>
+<th>BlockPush</th>
+<th>Cube</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WebSSL Patch + VQ-BeT (Ours)</td>
+<td>0.68 ± 0.03</td>
+<td>0.94 ± 0.01</td>
+<td>1.68 ± 0.15</td>
+<td>1.68 ± 0.03</td>
+</tr>
+<tr>
+<td>WebSSL Patch + DP (Ours)</td>
+<td>0.80 ± 0.01</td>
+<td>0.98 ± 0.00</td>
+<td>1.65 ± 0.08</td>
+<td>1.73 ± 0.02</td>
+</tr>
+<tr>
+<td>WebSSL Avg Pool + DP</td>
+<td>0.79 ± 0.02</td>
+<td>0.98 ± 0.01</td>
+<td>1.34 ± 0.02</td>
+<td>0.21 ± 0.03</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>0.59 ± 0.02</td>
+<td>0.95</td>
+<td>1.43 ± 0.17</td>
+<td>1.50 ± 0.09</td>
+</tr>
+<tr>
+<td>ResNet-18 Patch + ACT</td>
+<td>0.64 ± 0.03</td>
+<td>0.93 ± 0.02</td>
+<td>0.15 ± 0.01</td>
+<td>0.69 ± 0.11</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-220-dinov2-patch-vq-bet">真实世界（Table 2，20 次试验，DINOv2 Patch + VQ-BeT）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>阶段</th>
+<th>Ours</th>
+<th>DINOv2 CLS</th>
+<th>ACT</th>
+<th>OpenVLA-OFT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cable Insertion</td>
+<td>Fully inserted</td>
+<td>0.70</td>
+<td>0.60</td>
+<td>0.35</td>
+<td>0.30</td>
+</tr>
+<tr>
+<td>Pen Collection</td>
+<td>Third pen placed</td>
+<td>0.85</td>
+<td>0.65</td>
+<td>0.65</td>
+<td>0.60</td>
+</tr>
+<tr>
+<td>Tool Hanging</td>
+<td>Tool placed</td>
+<td>0.90</td>
+<td>0.70</td>
+<td>0.85</td>
+<td>0.65</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-3h200">计算资源（Table 3，H200）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>总参数</th>
+<th>可训练参数</th>
+<th>推理延迟</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ours - VQ-BeT (DINOv2)</td>
+<td>51.55M</td>
+<td>29.49M</td>
+<td>10.99 ms</td>
+</tr>
+<tr>
+<td>Ours - DP (WebSSL)</td>
+<td>303.66M</td>
+<td>9.35M</td>
+<td>451.68 ms</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>7.61B</td>
+<td>177.90M</td>
+<td>61.71 ms</td>
+</tr>
+<tr>
+<td>ACT</td>
+<td>83.85M</td>
+<td>83.85M</td>
+<td>8.63 ms</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">关键结论</h3>
+<ul>
+<li>相比最优全局池化基线，相对改进 40%（由表内数值 1.73→0.21 计算）；超越 OpenVLA-OFT 18%（由表内数值 1.73→1.50 计算），参数仅约 0.7%。</li>
+<li>表征消融（Table 7/8）：WebSSL 与 DINOv2 表现最佳，SigLIP2 全面垫底（Push-T 0.51 vs DINOv2 0.69）。</li>
+<li>零样本泛化（Table 5/6）：真实世界拾取 87% vs CAP 79%；EgoGym 关闭任务 92.44% vs 86.50%。</li>
+</ul>
+<h2 id="_7">边界与局限</h2>
+<ul>
+<li>仅评估冻结视觉骨干，未探索端到端微调对专门视觉领域（如透明物体、高反光表面）的增益。</li>
+<li>密集 token 增加序列长度与训练时间，FlashAttention 等优化未纳入当前实现。</li>
+<li>仅作为行为克隆策略验证，未扩展到强化学习；静态专家演示的性能上限未被突破。</li>
+<li>视觉表征选择对结果影响显著（SigLIP2 全面失败），论文未明确给出表征选择的理论判据，仅提供经验结论。</li>
+<li>真实世界实验仅用 DINOv2 (ViT-S)，未验证 WebSSL 在真实场景的迁移性。</li>
+</ul>
+<h2 id="_8">工程启示</h2>
+<ul>
+<li><strong>先核对视觉表征</strong>：WebSSL 与 DINOv2 是当前最优选择，SigLIP2 在操控任务上系统性失败，复现时优先采用前两者。</li>
+<li><strong>注意力掩码是核心超参数</strong>：block-causal 是默认选择；token-causal 在 Diffusion Policy 上会导致 Cube 性能崩溃（0.11），务必避免。</li>
+<li><strong>模型大小存在阈值效应</strong>：Push-T 上 Diffusion Policy 从 25.30M（覆盖 0.56）增至 40.43M（覆盖 0.83）时性能跃升，小模型可能无法利用密集特征，需按任务调整 N、heads、d_emb。</li>
+<li><strong>预计算嵌入是训练加速关键</strong>：冻结骨干允许离线提取 patch 特征，训练成本可降至 6.5 GPU-hours，工程上应优先实现该缓存机制。</li>
+<li><strong>推理延迟需区分动作分块</strong>：论文报告的 10.99 ms 为单次前向传递，未含 receding horizon 的时间加速；实际部署时该技术可正交叠加。</li>
+</ul>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18236</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">ACT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_patch_policy_efficient_embodied_control_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ACT</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware 是斯坦福大学、UC Berkeley 与 Meta 于 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#observation-trunk">观测主干（Observation Trunk）</a></li>
+<li><a href="#policy-learning">策略学习（Policy Learning）</a></li>
+<li><a href="#_3">训练与推理</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a><ul>
+<li><a href="#table-1100">模拟环境（Table 1，100 轨迹/种子）</a></li>
+<li><a href="#table-220-dinov2-patch-vq-bet">真实世界（Table 2，20 次试验，DINOv2 Patch + VQ-BeT）</a></li>
+<li><a href="#table-3h200">计算资源（Table 3，H200）</a></li>
+<li><a href="#_6">关键结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

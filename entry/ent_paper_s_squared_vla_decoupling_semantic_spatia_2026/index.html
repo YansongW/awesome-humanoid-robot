@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action Models for Autonomous Driving · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action Models for Autonomous Driving</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action Models for Autonomous Driving</h1>
+      <p class="entry-name-en">S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action Models for Autonomous Driving</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>S²-VLA 是一种面向自动驾驶的双流视觉-语言-动作（VLA）架构，由研究团队提出，旨在显式解耦语义推理与空间几何感知，以缓解现有 VLM 在低层连续控制中的语义-物理鸿沟。其核心贡献在于通过多尺度语义流与任务驱动空间流的并行设计，结合双流规划适配器，在仅使用单目前视相机的情况下，于 NAVSIM 基准上达到 PDMS 87.1，超越多数融合 LiDAR 的基线方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.13926" target="_blank" rel="noopener">arXiv:2607.13926 S-squared-VLA: Decoupling Semantic and Spatial Streams in Vision-Language-Action</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 VLA 方法将感知与控制统一为单一策略，导致语义与空间信息在深度网络中纠缠并逐步坍缩。这种坍缩并非简单的信息丢失，而是不可逆地破坏了安全关键导航所需的细粒度几何先验——例如车道边界、可行驶区域与障碍物距离。作者敏锐地指出，问题的根源在于离散语言 token 与连续轨迹之间的固有失配，以及单流架构将高层语义表征直接映射到低层控制时，跨模态对齐发生在重度压缩的 embedding 上，从而产生系统性偏置。</p>
+<p>S²-VLA 真正改变的是“语义与空间必须共享同一表征空间”这一隐含假设。它通过物理上分离两个信息流，让语义流专注于意图理解与高层推理，空间流专注于几何重建与密集预测，最后在规划阶段才进行受控融合。这种设计不仅缓解了表征坍缩，还使得辅助感知任务（如 BEV 地图重建与智能体检测）能够以显式监督的方式注入空间先验，而非依赖隐式学习。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">双流架构总览</h3>
+<p>S²-VLA 将输入（导航命令 C_nav、自车运动历史 T_hist、前视图像 I）分别送入语义流与空间流，最终通过双流规划适配器融合生成轨迹。</p>
+<h3 id="multi-scale-semantic-stream">语义流（Multi-Scale Semantic Stream）</h3>
+<ul>
+<li>骨干：InternVL3-2B（InternViT 视觉编码器 + Qwen2.5 语言模型）。</li>
+<li>注入 N_act=64 个可学习动作查询 Q_act，与文本和视觉 token 联合编码。</li>
+<li>稀疏多尺度采样：仅从层 L={3,8,13,18,23,24} 提取隐藏状态，形成多尺度特征集 {(V_sem^(l), V_act^(l))}。</li>
+<li>自车历史经 MLP 编码为 E_ego∈ℝ^(1×d_vlm)，在每层与动作中心特征拼接形成统一状态记忆 E_mem。</li>
+</ul>
+<h3 id="task-driven-spatial-stream">空间流（Task-Driven Spatial Stream）</h3>
+<ul>
+<li>动态分辨率：将高分辨率图像划分为 N_patch=9 个 patch（8 局部 + 1 全局），每个 patch 引入 N_vis=64 个视觉查询。</li>
+<li>编码后视觉查询重组为 V_vis∈ℝ^(B×(N_patch×N_vis)×C)，添加 tile 级位置嵌入后经 Transformer 编码器。</li>
+<li><strong>Map Head</strong>：1D token 序列重塑为 2D 网格 V_2D∈ℝ^(d×24×24)，经上采样输出 BEV 语义地图 M_hat_sem∈ℝ^(C×128×256)，覆盖 X∈[0,32]m、Y∈[−32,32]m，由加权交叉熵 L_map 监督。</li>
+<li><strong>Agent Head</strong>：DETR 范式，N_agent=30 个查询，匈牙利匹配，损失为 L_agent=λ_reg·L_L1 + λ_cls·L_BCE。</li>
+<li>中间表征 V 经线性投影形成 V_spatial，作为规划适配器的空间约束。</li>
+</ul>
+<h3 id="_4">双流规划适配器</h3>
+<ul>
+<li>初始化 M=8 个规划 token P^(0)∈ℝ^(M×d)。</li>
+<li>阶段 1（语义对齐）：规划 token 与多尺度语义特征 V_sem 和状态记忆 E_mem 执行并行交叉注意力，门控参数 g∈ℝ^d 调制融合：P_fuse=P^(l−1)+Linear([tanh(g)⊙P_raw; P_ego; P_sa])。</li>
+<li>阶段 2（空间细化）：注入 V_spatial，P_vis=P_fuse+MHCA₃(P_fuse, V_spatial, V_spatial)，再经 FFN。</li>
+<li>轨迹解码：MLP 预测 Ŷ∈ℝ^(M×3)，损失为 L_plan=L_L1 + λ_smooth·Σ SmoothL1(a, j)。</li>
+<li>总损失：L_total=λ_plan·L_plan + λ_agent·L_agent + λ_map·L_map。</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>显式双流解耦</strong>：不同于现有 VLA 的单流纠缠设计，S²-VLA 在架构层面强制分离语义与空间处理路径。这一设计直接针对空间表征坍缩问题，使得几何先验可以在独立流中被显式监督和保留，而非在深度抽象中被动丢失。</p>
+</li>
+<li>
+<p><strong>任务驱动的空间流</strong>：空间流不仅提取视觉特征，还通过 Map Head 和 Agent Head 输出结构化的 BEV 语义地图与智能体预测。这种“以任务为监督”的空间特征提取方式，确保了注入规划器的 V_spatial 是经过任务验证的几何信息，而非通用的视觉 embedding。</p>
+</li>
+<li>
+<p><strong>门控融合机制</strong>：规划适配器中的可学习门控参数 g 允许模型自适应地权衡语义与空间特征的贡献。这一机制避免了简单拼接带来的特征冗余，使得高层意图与低层几何能够在规划阶段动态协调，而非静态叠加。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<p>实验在 NAVSIM 基准上进行，采用 PDMS 综合指标（由 NC、DAC、TTC、Comf、EP 五项计算）。关键结果如下：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>NC</th>
+<th>DAC</th>
+<th>EP</th>
+<th>TTC</th>
+<th>Comf</th>
+<th>PDMS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UniAD</td>
+<td>97.8</td>
+<td>91.9</td>
+<td>78.8</td>
+<td>92.9</td>
+<td>100</td>
+<td>83.4</td>
+</tr>
+<tr>
+<td>PARA-Drive</td>
+<td>97.9</td>
+<td>92.4</td>
+<td>79.3</td>
+<td>93.0</td>
+<td>99.8</td>
+<td>84.0</td>
+</tr>
+<tr>
+<td>DiffusionDrive</td>
+<td>98.2</td>
+<td>96.2</td>
+<td>82.2</td>
+<td>94.7</td>
+<td>100</td>
+<td>88.1</td>
+</tr>
+<tr>
+<td>InternVL3-2B</td>
+<td>97.6</td>
+<td>93.1</td>
+<td>79.1</td>
+<td>92.7</td>
+<td>100</td>
+<td>84.1</td>
+</tr>
+<tr>
+<td>ReCogDrive*</td>
+<td>98.1</td>
+<td>94.7</td>
+<td>80.9</td>
+<td>94.2</td>
+<td>100</td>
+<td>86.5</td>
+</tr>
+<tr>
+<td><strong>S²-VLA</strong></td>
+<td><strong>98.4</strong></td>
+<td><strong>94.9</strong></td>
+<td><strong>81.6</strong></td>
+<td><strong>94.6</strong></td>
+<td><strong>100</strong></td>
+<td><strong>87.1</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>S²-VLA 仅用单目相机即超越融合 LiDAR 的 ARTEMIS（87.0）与 DRAMA（86.9）。</li>
+<li>相比相同骨干的朴素 VLM 基线（InternVL3-2B，PDMS 84.1），S²-VLA 提升 3.0 点（由表内数值 84.1→87.1 计算）。</li>
+<li>消融实验显示：加入语义特征提升 PDMS +1.5（84.1→85.6），添加空间流再 +0.6（85.6→86.2），加入辅助感知任务最终 +0.9（86.2→87.1）。</li>
+<li>DiffusionDrive 的 PDMS 88.1 略高，主要优势在 DAC（96.2 vs 94.9），但其依赖迭代式扩散解码器与显式 LiDAR 点云。</li>
+</ul>
+<h2 id="_7">边界与局限</h2>
+<p>作者明确承认空间特征的密集提取与双流融合带来非平凡的计算开销，未来需开发更稀疏的特征表征机制。此外，双流架构与训练范式正交，作者排除了基线中的闭环强化学习后训练（如 GRPO），以确保网络设计公平比较，但这也意味着当前结果未反映后训练可能带来的增益。论文未明确讨论在极端天气、传感器故障或高动态场景下的鲁棒性表现，也未提供推理延迟的具体数字。</p>
+<h2 id="_8">工程启示</h2>
+<p>复现时需优先核对以下关键配置：稀疏采样层 L={3,8,13,18,23,24} 的选择直接影响多尺度语义特征的丰富度；N_patch=9 的动态分辨率策略对空间流的 BEV 重建质量至关重要；门控参数 g 的初始化与训练稳定性需仔细调优。最容易踩坑的地方在于三阶段训练流程——第一阶段 SFT 使用 ReCogDrive VQA 数据（3 epochs），第二、三阶段在 NAVSIM 上各 4 epochs，若阶段间未正确冻结相应模块（如第二阶段冻结 VLM 骨干并应用 LoRA，第三阶段冻结感知与意图组件），会导致特征分布偏移。损失权重 λ_plan=1.0、λ_agent=0.1、λ_map=0.5、λ_smooth=0.5 需严格保持，其中 λ_smooth 对轨迹平滑性影响显著，过大会导致规划过于保守。对于下游团队，若需部署到实车，建议先验证 BEV 地图输出（128×256）与真实世界坐标的对齐精度，因为该模块是空间流的核心监督信号，其误差会直接传导至规划轨迹。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.13926</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_world_model/">世界模型</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_s_squared_vla_decoupling_semantic_spatia_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">双流架构总览</a></li>
+<li><a href="#multi-scale-semantic-stream">语义流（Multi-Scale Semantic Stream）</a></li>
+<li><a href="#task-driven-spatial-stream">空间流（Task-Driven Spatial Stream）</a></li>
+<li><a href="#_4">双流规划适配器</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a></li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

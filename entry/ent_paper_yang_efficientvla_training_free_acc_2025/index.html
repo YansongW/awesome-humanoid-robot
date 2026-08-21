@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EfficientVLA · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">EfficientVLA</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>EfficientVLA</h1>
+      <p class="entry-name-en">EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.10100v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (912 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>EfficientVLA 是由上海交通大学、哈尔滨工业大学、西安交通大学、电子科技大学及 Anyverse Intelligence 联合提出的训练无关推理加速框架，发表于 NIPS25。该框架通过协同利用语言模块剪枝、视觉令牌优化和扩散动作头特征缓存三种策略，在不需重新训练的情况下显著降低 VLA 模型的计算与内存开销。在 CogACT 模型上应用后，实现了 1.93 倍推理加速，FLOPs 降至 28.9%，而 SIMPLER 基准的成功率仅下降 0.6%。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2506.10100" target="_blank" rel="noopener">EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action Models (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2506.10100" target="_blank" rel="noopener">EfficientVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>EfficientVLA 针对视觉-语言-动作模型（尤其是扩散架构）在具身智能应用中面临的高计算与内存冗余问题，提出了一种无需训练的系统性加速方案。现有方法通常只解决单一瓶颈，而 EfficientVLA 通过三种协同策略全面消除冗余：首先，基于层间冗余分析剪除语言模块中功能无关的层；其次，采用任务感知策略选择紧凑且多样化的视觉令牌，平衡任务关键性与信息覆盖；最后，在迭代扩散动作头中缓存并复用关键中间特征以减少时间计算冗余。该方法在 CogACT 模型上验证，显著提升了推理效率，同时保持了极低的性能损失。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<p>EfficientVLA 的核心在于无需额外训练即可系统性消除 VLA 模型中的多重冗余，具体包含三个协同模块：</p>
+<ul>
+<li><strong>语言模块剪枝</strong>：通过分析 Transformer 层间的冗余度，识别并移除功能无关的层，从而减少计算和内存占用，而不影响模型的语言理解能力。</li>
+<li><strong>视觉路径优化</strong>：采用任务感知策略，从视觉编码器输出中选择一组紧凑且多样化的视觉令牌。该策略通过平衡任务关键性（如目标物体的位置）与信息覆盖度（如场景全局特征），减少视觉令牌数量，降低后续处理的复杂度。</li>
+<li><strong>扩散动作头加速</strong>：针对扩散模型迭代去噪过程中的时间计算冗余，设计中间特征缓存与复用机制。在连续时间步中，缓存关键层的中间表示，并在后续步骤中直接复用，避免重复计算。</li>
+</ul>
+<h3 id="_4">实验设置与关键结果</h3>
+<ul>
+<li><strong>基础模型</strong>：以 CogACT 为标准 VLA 模型进行测试。</li>
+<li><strong>基准测试</strong>：在 SIMPLER 基准上评估，涵盖多种机器人操作任务。</li>
+<li><strong>性能指标</strong>：</li>
+<li>推理速度提升 1.93 倍。</li>
+<li>FLOPs 降至原始模型的 28.9%。</li>
+<li>成功率仅下降 0.6%，表明加速方案对任务性能影响极小。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>EfficientVLA 通过训练无关的协同加速策略，有效解决了 VLA 模型在部署中的计算与内存瓶颈，为具身智能系统的实时应用提供了可行方案。其模块化设计可适配不同 VLA 架构，未来可进一步探索与模型量化、知识蒸馏等技术的结合。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2506.10100v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">CogACT</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_yang_efficientvla_training_free_acc_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_li_cogact_a_foundational_vision_l_2024/">
+          <span class="entry-type">论文</span>
+          <h3>CogACT</h3>
+          <p>CogACT 是清华大学、微软亚洲研究院、中国科学技术大学及中科院微电子所联合提出的 2024 年大型视觉-语言-动作模型，专为机器人操作任务设计。其核心贡献在于提出一种组件化 VLA…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置与关键结果</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

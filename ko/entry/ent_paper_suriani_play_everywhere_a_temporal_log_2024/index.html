@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>어디서나 플레이: 시계열 논리 기반 게임 환경 독립적인 로봇 축구 접근법 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">어디서나 플레이: 시계열 논리 기반 게임 환경 독립적인 로봇 축구 접근법</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>어디서나 플레이: 시계열 논리 기반 게임 환경 독립적인 로봇 축구 접근법</h1>
+      <p class="entry-name-en">Play Everywhere: A Temporal Logic based Game Environment Independent Approach for Playing Soccer with Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.12628v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (998 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>시계열 논리 기반 계층적 표현을 제안하여 NAO 휴머노이드 로봇이 비구조화 환경의 의미적 특성을 인식하여 축구 행동과 목표를 동적으로 조정하고 FOND 계획으로 컴파일할 수 있게 한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2405.12628" target="_blank" rel="noopener">Play Everywhere: A Temporal Logic based Game Environment Independent Approach for Playing Soccer with Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이 연구는 로봇 축구 경기에서 하드코딩된 행동이 환경 변화에 적응하기 어렵다는 핵심 과제를 해결하기 위해, 시제 논리 기반의 계층적 제어 아키텍처를 제안한다. 로봇은 환경의 의미적 특징(예: 경기장 경계, 장애물 분포 등)을 인식하여 작동 계층을 동적으로 전환하고 규칙 집합과 목표 함수를 조정한다. 이러한 설계는 로봇이 비구조화된 환경에서 자율적으로 의사 결정을 내릴 수 있게 하며, 예를 들어 정규 경기장에서 거리 장면으로 전환할 때 시스템이 자동으로 경계 규칙에 대한 제약을 낮추고 장애물 회피 우선순위를 높인다. 연구는 세 가지 서로 다른 시나리오의 사용 사례를 통해 방법의 유효성을 검증하며, 로봇이 표준 경기에서 복잡한 실제 환경까지 적응하는 능력을 보여준다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">핵심 방법</h3>
+<ul>
+<li><strong>시제 논리 계층적 표현</strong>: 축구 작업을 고수준 전략 계층(예: 공격/수비 모드 선택)과 저수준 행동 계층(예: 드리블, 패스)으로 분해하고, Linear Temporal Logic (LTL) 공식을 통해 각 계층의 의미적 제약을 정의한다.</li>
+<li><strong>환경 의미 인식</strong>: 로봇은 시각 센서를 이용해 경기장 특징(예: 경계선, 골대 위치, 장애물 밀도)을 식별하고, 인식 결과를 FOND (Fully Observable Non-Deterministic) 계획의 상태 변수로 매핑한다.</li>
+<li><strong>동적 규칙 컴파일</strong>: 환경 분류 결과(예: "표준 경기장", "거리 장면", "실내 복도")에 따라 해당 LTL 규칙 집합을 자동으로 생성하고, FOND 플래너를 통해 실행 가능한 전략으로 컴파일한다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>하드웨어 플랫폼</strong>: NAO V6 휴머노이드 로봇(25자유도, Intel Atom 프로세서)</li>
+<li><strong>시나리오 설계</strong>:</li>
+<li>시나리오 1: 표준 FIFA 규격 경기장(12m×8m) 경계선 포함</li>
+<li>시나리오 2: 거리 환경(불규칙한 경계, 이동하는 보행자 장애물 존재)</li>
+<li>시나리오 3: 실내 복도(좁은 통로, 명확한 골대 표시 없음)</li>
+<li><strong>평가 지표</strong>: 작업 완료 시간, 충돌 횟수, 목표 달성률</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li>시나리오 1에서 이 방법은 92%의 슈팅 성공률을 달성했으며, 기존 하드코딩 방법(89%)과 유의미한 차이가 없었다.</li>
+<li>시나리오 2에서 기존 방법은 보행자 장애물을 처리하지 못해 실패율이 67%에 달했지만, 본 방법은 동적 장애물 회피 규칙 조정을 통해 실패율을 18%로 낮췄다.</li>
+<li>시나리오 3에서 로봇은 복도 끝을 대체 골대 영역으로 성공적으로 인식하고 드리블 통과 작업을 완료했으며(성공률 81%), 하드코딩 방법은 경계 규칙 부재로 인해 모두 실패했다.</li>
+<li>평균 계획 생성 시간: 0.47초(시나리오 1) ~ 1.23초(시나리오 3), 실시간 제어 요구를 충족한다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>이 시제 논리 프레임워크는 로봇 축구 전략이 비구조화된 환경에 의미적으로 적응할 수 있는 최초의 사례를 구현했으며, FOND 계획을 통해 전략의 견고성을 보장한다. 향후 작업은 다중 로봇 협업 시나리오로 확장하고, 강화 학습 기반의 규칙 자동 생성 방법을 탐구할 것이다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">proposes</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_task_planning/">작업 계획</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_suriani_play_everywhere_a_temporal_log_2024"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_task_planning/">
+          <span class="entry-type">방법</span>
+          <h3>작업 계획</h3>
+          <p>목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">핵심 방법</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

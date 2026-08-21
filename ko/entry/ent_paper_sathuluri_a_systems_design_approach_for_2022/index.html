@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>휴머노이드 로봇 팔의 공동 설계를 위한 시스템 설계 접근법 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">휴머노이드 로봇 팔의 공동 설계를 위한 시스템 설계 접근법</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>휴머노이드 로봇 팔의 공동 설계를 위한 시스템 설계 접근법</h1>
+      <p class="entry-name-en">A systems design approach for the co-design of a humanoid robot arm</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">부품</span><span class="tag">대량 생산</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.14256v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (951 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>본 논문은 V 모델 기반의 상향식 공동 설계 방법론을 제시하여 휴머노이드 로봇 팔의 설계 변수에 대한 최대 허용 솔루션 공간을 구축하고, 상위 요구사항을 허용 오차가 있는 하위 시스템 수준 요구사항으로 분해한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2212.14256" target="_blank" rel="noopener">A systems design approach for the co-design of a humanoid robot arm</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>전통적인 휴머노이드 로봇 개발은 순차적 반복의 하향식 프로세스를 채택하며, 설계자의 직관과 경험에 크게 의존하여 로봇의 비선형 결합 설계 공간을 효과적으로 탐색하기 어렵습니다. 본 논문은 자동차 및 항공우주 분야의 V-모델을 참고하여 최상위 협력 설계 방법을 제안합니다. 이 방법은 속성 의존 그래프와 최적화 기술을 통해 설계 공간에서 비직관적 설계 방안을 식별하고, 설계 변수의 최대 허용 해 공간을 물리적 구현의 근거로 구축합니다. 실험 결과, 이 해 공간은 (1) 고수준 요구사항을 공차가 있는 하위 시스템 요구사항으로 분해하여 설계 중 '닭이 먼저냐 달걀이 먼저냐' 문제를 완화하고, (2) 로봇 형태와 제어기를 분리하여 설계 유연성을 향상시키며, (3) 독립적인 하위 시스템 요구사항을 얻어 병렬 개발을 통해 개발 주기를 단축할 수 있음을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 핵심</h3>
+<ul>
+<li><strong>V-모델 최상위 설계</strong>: 자동차 및 항공우주 분야의 V-모델을 채택하여 시스템 수준 요구사항에서 출발, 속성 의존 그래프(Attribute Dependency Graph)를 통해 설계 변수 간의 결합 관계를 구축합니다.</li>
+<li><strong>해 공간 구축</strong>: 최적화 알고리즘을 사용하여 설계 변수의 최대 허용 범위(즉, 해 공간)를 계산하여 물리적 구현 가능성을 보장합니다. 이 공간은 고수준 요구사항을 충족하는 조건에서 하위 시스템 매개변수에 대한 공차 할당을 허용합니다.</li>
+<li><strong>분리 전략</strong>: 해 공간을 통해 로봇 형태(예: 링크 길이, 관절 각도)와 제어기(예: PID 매개변수)를 분리하여 두 요소를 독립적으로 최적화할 수 있게 합니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>사례 대상</strong>: 휴머노이드 로봇 팔, 6자유도(어깨 관절 3개, 팔꿈치 관절 2개, 손목 관절 1개) 포함.</li>
+<li><strong>설계 변수</strong>: 링크 길이(0.2-0.5m), 관절 각도 범위(-180°~180°), 모터 토크(0.5-5Nm) 등 12개 매개변수 포함.</li>
+<li><strong>제약 조건</strong>: 말단 실행기 작업 공간(반경 0.3m 구체), 최대 하중(2kg), 관절 속도 제한(180°/s).</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li><strong>해 공간 규모</strong>: 최적화 후 얻은 설계 변수 해 공간은 전통적 경험 설계보다 40% 축소되었지만 모든 가능한 방안을 포함합니다.</li>
+<li><strong>공차 할당</strong>: 고수준 요구사항 '말단 위치 정밀도 ±1cm'가 관절 각도 공차 ±0.5°, 링크 길이 공차 ±0.2mm로 분해되어 각 하위 시스템이 독립적으로 조정할 수 있습니다.</li>
+<li><strong>병렬 개발</strong>: 분리 후 형태 설계와 제어기 개발이 병렬로 진행될 수 있어 총 개발 시간이 전통적 순차 프로세스의 12주에서 7주로 단축되었습니다(42% 절약).</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>이 방법은 체계적인 최상위 설계를 통해 휴머노이드 로봇 개발의 결합 문제를 효과적으로 해결하며, 복잡한 로봇 시스템의 협력 설계를 위한 재사용 가능한 프레임워크를 제공합니다. 향후 작업은 전신 운동 계획 및 다중 로봇 협업 시나리오로 확장될 것입니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_inverse_kinematics/">역욕동학</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_process_p1/">요구사항 정의 및 시스템 방안 (Concept / Pre-A)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_sathuluri_a_systems_design_approach_for_2022"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_process_p1/">
+          <span class="entry-type">방법</span>
+          <h3>요구사항 정의 및 시스템 방안 (Concept / Pre-A)</h3>
+          <p>需求定义与系统方案（Concept / Pre-A）</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">방법</span>
+          <h3>유한요소해석(FEA)</h3>
+          <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_inverse_kinematics/">
+          <span class="entry-type">방법</span>
+          <h3>역욕동학</h3>
+          <p>원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 핵심</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

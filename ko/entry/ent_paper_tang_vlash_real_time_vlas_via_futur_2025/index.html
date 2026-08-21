@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</h1>
+      <p class="entry-name-en">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.01031v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (911 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2512.01031" target="_blank" rel="noopener">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2512.01031" target="_blank" rel="noopener">VLASH source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존 VLA 모델은 실제 배포 시 추론 지연으로 인해 동작이 끊기는 문제가 발생하며, 데모 영상을 5-10배 속도로 가속해야만 자연스러워 보입니다. 비동기 추론은 동작과 추론을 병렬로 실행할 수 있지만, 추론 중 로봇 상태가 지속적으로 변화하여 예측과 실행 구간 사이의 시간적 불일치가 발생하고, 이로 인해 동작이 불안정해집니다. VLASH는 로봇의 현재 상태와 이전에 생성된 동작 블록을 전방 롤링하여 미래 실행 시점의 상태를 예측함으로써 예측과 실행 사이의 간극을 메웁니다. 이 방법은 추가 오버헤드나 모델 아키텍처 수정 없이도 부드럽고 정확하며 빠른 응답의 제어를 구현합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">핵심 문제</h3>
+<ul>
+<li>동기 추론에서는 로봇이 모델의 추론 완료를 기다려야 동작을 실행할 수 있어 동작 정체와 반응 지연이 발생합니다.</li>
+<li>비동기 추론은 병렬 실행을 허용하지만, 추론 중 환경 변화로 인해 예측된 동작과 실행 시점의 실제 상태가 일치하지 않아 동작 흔들림이 발생합니다.</li>
+</ul>
+<h3 id="_4">방법: 미래 상태 인식 비동기 추론</h3>
+<ul>
+<li><strong>상태 전방 롤링</strong>: 추론 시작 시 VLASH는 이전 라운드에서 생성된 동작 블록(action chunk)을 사용하여 로봇 상태를 전방 시뮬레이션하고, 추론 완료 시점의 미래 상태를 예측합니다.</li>
+<li><strong>동작 생성</strong>: 모델은 이 예측 상태를 기반으로 동작을 생성하여 출력 동작이 실행 시점의 실제 상태와 정렬되도록 하여 시간적 불일치를 제거합니다.</li>
+<li><strong>범용성</strong>: VLA 모델 아키텍처를 수정하거나 추가 계산 오버헤드를 발생시키지 않으며, 플러그인형 프레임워크로 직접 적용할 수 있습니다.</li>
+</ul>
+<h3 id="_5">실험 설정 및 결과</h3>
+<ul>
+<li><strong>벤치마크 테스트</strong>: 다양한 로봇 조작 작업에서 동기 추론 및 기존 비동기 방법과 비교합니다.</li>
+<li><strong>속도 향상</strong>: 동기 추론 대비 VLASH는 최대 <strong>2.03배</strong> 추론 속도 향상을 달성합니다.</li>
+<li><strong>반응 지연</strong>: 반응 지연이 최대 <strong>17.4배</strong> 감소하여 로봇이 환경 변화에 빠르게 대응할 수 있습니다.</li>
+<li><strong>정확도 유지</strong>: 원래 VLA 모델의 동작 정확도를 완전히 유지하며, 비동기 추론으로 인한 성능 저하가 없습니다.</li>
+<li><strong>고동적 작업</strong>: 빠른 반응과 높은 정확도가 필요한 탁구(ping-pong) 및 두더지 잡기(whack-a-mole) 작업을 성공적으로 수행하며, 동기 추론은 이러한 작업에서 완전히 실패합니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>VLASH는 경량 상태 예측 메커니즘을 통해 비동기 추론의 시간적 불일치 문제를 해결하며, 정확도나 오버헤드 손실 없이 VLA의 실시간 성능을 크게 향상시켜 로봇을 동적 환경에 배포할 수 있는 실현 가능한 솔루션을 제공합니다. 코드는 https://github.com/mit-han-lab/vlash에서 오픈소스로 공개되었습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_action_token_prediction/">액션 토큰 예측</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>약한 연관 더 보기 (2)</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_tech_on_device_vla_inference/">온디바이스 VLA 추론</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">인용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <a href="/ko/entry/ent_paper_latency_tolerant_cloud_edge_collaborativ_2026/">Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</a>
+      <span class="rel-arrow">→</span>
+      <span class="rel-pill">언급</span>
+      
+      
+    </li>
+    
+    <li>
+      
+      <a href="/ko/entry/ent_paper_futurertc_real_time_robot_execution_anti_2026/">FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</a>
+      <span class="rel-arrow">→</span>
+      <span class="rel-pill">언급</span>
+      
+      
+    </li>
+    
+    <li>
+      
+      <a href="/ko/entry/ent_paper_jetson_pi_onboard_real_time_robot_2026/">Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference</a>
+      <span class="rel-arrow">→</span>
+      <span class="rel-pill">언급</span>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>약한 연관 더 보기 (1)</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <a href="/ko/entry/ent_paper_action_chunk_scheduling_batched_robot_po_2026/">Action Chunk Scheduling for Batched Robot Policy Serving</a>
+      <span class="rel-arrow">→</span>
+      <span class="rel-pill">언급</span>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_tang_vlash_real_time_vlas_via_futur_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_latency_tolerant_cloud_edge_collaborativ_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Latency-Tolerant Cloud-Edge Collaborative Vision-Language-Action Models via Emergent Representational Specialization</h3>
+          <p>Deploying billion-parameter Vision-Language-Action (VLA) policies on mobile robots creates a systems…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_action_chunk_scheduling_batched_robot_po_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Action Chunk Scheduling for Batched Robot Policy Serving</h3>
+          <p>Deploying robot foundation models at scale is the next step towards realizing the potential of…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_tech_on_device_vla_inference/">
+          <span class="entry-type">기술</span>
+          <h3>온디바이스 VLA 추론</h3>
+          <p>지연 시간, 연결성 및 프라이버시 제약을 해결하기 위해 VLA 모델을 엣지 또는 클라우드 서버가 아닌 로봇 임베디드 엣지 컴퓨팅에서 직접 실행하는 기술 방식.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_futurertc_real_time_robot_execution_anti_2026/">
+          <span class="entry-type">논문</span>
+          <h3>FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</h3>
+          <p>Real-time deployment of Vision-Language-Action (VLA) policies necessitates asynchronous execution,…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_jetson_pi_onboard_real_time_robot_2026/">
+          <span class="entry-type">논문</span>
+          <h3>Jetson-PI: Towards Onboard Real-Time Robot Control via Foresight-Aligned Asynchronous Inference</h3>
+          <p>Vision-Language-Action (VLA) models have achieved impressive performance on diverse embodied tasks.…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">방법</span>
+          <h3>액션 토큰 예측</h3>
+          <p>언어 모델링과 유사하지만 이산적 또는 연속적인 액션 토큰을 출력하는 자기회귀적 다음 토큰 예측 문제로 로봇 동작 생성을 구성하는 방법이다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">핵심 문제</a></li>
+<li><a href="#_4">방법: 미래 상태 인식 비동기 추론</a></li>
+<li><a href="#_5">실험 설정 및 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M14 · Sim-to-Real Deployment and Walking Acceptance: From Simulation Champion to the First Step on a Real Robot · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M14 · Sim-to-Real Deployment and Walking Acceptance: From Simulation Champion to the First Step on a Real Robot</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m14-sim-to-real-deployment-and-walking-acceptance-from-simulation-champion-to-the-first-step-on-a-real-robot">M14 · Sim-to-Real Deployment and Walking Acceptance: From Simulation Champion to the First Step on a Real Robot</h1>
+<p><strong>Global Position</strong>: After M13 has trained and screened 2–3 candidate RL checkpoints. The input is a walking strategy that is robust in simulation + a model backfilled with measured parameters; the output is <strong>real-world flat-ground walking passing the Stage 2 six-level acceptance</strong>. Stage 3 (starting from M15) will add an upper body to this walking machine — if it can't walk steadily, everything that follows is a castle in the air.</p>
+<p><strong>Prerequisites</strong>: <a href="/en/roadmap/missions/m13-rl-training/">M13 · Reinforcement Learning Training</a> acceptance passed (maximum randomization + disturbance, 100 episode fall rate ≤10% under perturbation); complete machine assembly, zero-point calibration, and emergency stop chain completed (corresponding to <a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a> Step 4/6); gantry in place, two-person debugging team with clear division of labor.</p>
+<p>Theoretical background: <a href="/entry/ent_method_sim_to_real/">sim-to-real transfer</a>, <a href="/entry/ent_method_domain_randomization/">domain randomization</a>, <a href="/entry/ent_method_system_identification/">system identification</a> cards, <a href="/en/wiki/chapters/chapter-11/">Chapter 11 Assembly, Integration and Testing</a> and <a href="/en/wiki/chapters/chapter-25/">Chapter 25 Robot Evaluation System</a>.</p>
+<h2 id="step-1-deployment-pipeline-setup-transferring-the-policy-from-the-training-machine-to-the-robot">Step 1: Deployment Pipeline Setup — Transferring the Policy from the Training Machine to the Robot</h2>
+<p>【What to do】Four tasks executed in order:</p>
+<ol>
+<li><strong>Policy Export</strong>: Export as jit (PyTorch <code>torch.jit</code>) or ONNX according to the training framework, fix input/output dimensions and freeze weights; immediately after export, re-run robustness evaluation in simulation using the exported version to confirm no loss in score.</li>
+<li><strong>Onboard Inference</strong>: The policy runs on the robot's main controller. Two benchmark routes: Berkeley Humanoid Lite deploys on Intel N95 using C language low-level code (the <code>berkeley_humanoid_lite_lowlevel</code> subdirectory is independent of the training stack and can be stress-tested separately, <a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite GitHub</a>); ToddlerBot deploys on Jetson Orin NX 16GB using pure Python (<a href="https://github.com/hshi74/toddlerbot">ToddlerBot GitHub</a>).</li>
+<li><strong>Frequency Layering</strong>: The policy runs inference at 50 Hz to output joint target positions, while the low-level PD tracks at high frequency — benchmark files: ToddlerBot 30 motors full state feedback at 50 Hz (toddlerbot.md), Berkeley actuator and IMU CAN communication at 250 Hz (berkeley-humanoid-lite.md).</li>
+<li><strong>Process Separation and Watchdog</strong>: Inference, control, and communication run in separate processes; the communication/control processes send heartbeats to each other; if any process times out without response, joint torque is immediately released.</li>
+</ol>
+<p>【Why】The training stack and deployment stack are different: the training machine has a GPU and ground-truth observations, while the robot only has onboard computing power and noisy sensors. The essence of frequency layering is "slow decision, fast execution" — the policy can be slower, but the PD must operate at high frequency to suppress disturbances and actuator non-idealities (see <a href="/entry/ent_method_impedance_control/">impedance control</a> card for mechanism); the watchdog ensures that if the software freezes, the robot does not remain rigidly applying force.</p>
+<p>【How to analyze your situation】For replica platforms, directly use the official deployment code; this step only requires export and frequency verification. Hard metrics for custom stacks: measured inference latency &lt; 50% of the control cycle (for a 50 Hz policy, &lt;10 ms); if it exceeds, reduce network size or switch compilation runtime — don't force it.</p>
+<h2 id="step-2-observation-alignment-mapping-simulation-observations-to-real-sensors-one-by-one">Step 2: Observation Alignment — Mapping Simulation Observations to Real Sensors One by One</h2>
+<p>【What to do】Create an observation mapping table, align, measure, and sign off on each item:</p>
+<table>
+<thead>
+<tr>
+<th>Simulation Observation</th>
+<th>Real Source</th>
+<th>Alignment Key Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base orientation (roll/pitch/yaw)</td>
+<td><a href="/entry/ent_component_imu_2024/">IMU</a></td>
+<td>Installation direction vs. model base frame axis mapping, write into code comments</td>
+</tr>
+<tr>
+<td>Base angular velocity</td>
+<td>IMU gyroscope</td>
+<td>Unit rad/s, filter bandwidth consistent with simulation</td>
+</tr>
+<tr>
+<td>Joint angle</td>
+<td>Encoder</td>
+<td>Zero point consistent with M06 calibration record, positive direction same as URDF axis</td>
+</tr>
+<tr>
+<td>Joint velocity</td>
+<td>Encoder difference</td>
+<td>Add low-pass filter, cutoff frequency consistent with simulation processing</td>
+</tr>
+<tr>
+<td>Previous action</td>
+<td>Policy output cache</td>
+<td>Read directly from memory, do not read back from actuator</td>
+</tr>
+</tbody>
+</table>
+<p>Calibration triple: ① <strong>IMU zero bias</strong> — Place the whole machine stationary for 30 s, record attitude readings; if drift exceeds threshold (e.g., 1°, engineering recommended value, verify with your IMU), redo zero-bias calibration; ② <strong>Encoder zero point</strong> — Use the M06 fixture to re-swing once, compare readings with calibration record; ③ <strong>Coordinate system verification</strong> — Manually tilt the robot, compare IMU reading direction with simulation base frame direction.</p>
+<p>【Why】Observation misalignment is the number one cause of sim-to-real failure: if the IMU is installed 180° reversed, the policy sees an "inverted world" and falls immediately upon startup. Repeat the rule established in M13: <strong>Observations that cannot be obtained on the real robot should not be in the policy</strong> — quantities like base linear velocity ground truth either require a state estimation solution or should be removed from the observation and the policy retrained; there is no third way.</p>
+<p>【How to analyze your situation】For each row in the mapping table, perform a "manual perturbation → print reading → compare with the same simulation scenario". If only one IMU is installed, do not include foot orientation estimates in the observation — observations without sensor support are landmines.</p>
+<h2 id="step-3-actuator-system-identification-refinement-centering-the-randomization-on-the-real-robot">Step 3: Actuator System Identification Refinement — Centering the Randomization on the Real Robot</h2>
+<p>【What to do】</p>
+<ol>
+<li><strong>Measure Delay</strong>: Send a step position command, record the time difference between the command and the encoder response, obtaining the total delay (communication + drive + mechanical).</li>
+<li><strong>Measure First-Order Time Constant</strong>: Fit the response curve to a first-order model <code>τ_m·q̇ + q = q_cmd</code>, extract τ_m.</li>
+<li><strong>Kt and Friction</strong>: Reuse the current-torque calibration and friction measurement data from the M07 test bench.</li>
+<li><strong>Backfill</strong>: Write the measured delay, torque coefficient, and mass deviation back into the simulation, and move the <strong>center</strong> of the M13 <a href="/entry/ent_method_domain_randomization/">domain randomization</a> range to the measured values; if necessary, narrow the range and retrain a checkpoint.</li>
+</ol>
+<p>【Why】The philosophy of domain randomization is "randomize around the true value" — if the range center deviates from the real robot, the policy is robust for a robot that doesn't exist, which is the root cause of "acclimatization failure". ToddlerBot's digital twin is the benchmark approach: 3D-printed fixtures complete zero-point calibration in 1 minute, and <a href="/entry/ent_method_system_identification/">system identification</a> only needs to be done once for the same motor model to transfer to all units — this is the key to its zero-shot sim-to-real (toddlerbot.md).</p>
+<p>【How to analyze your situation】Servo platform (ToddlerBot lineage): sysID only requires "1 unit of the same model + full machine zero point"; custom QDD (Berkeley lineage) has large batch-to-batch variation, so delay and friction must be measured per unit. After backfilling, the retrained checkpoint will be brought into Step 4 along with the M13 candidates for final real-world comparison.</p>
+<h2 id="step-4-phased-unlocking-of-the-real-robot-six-step-ladder-rollback-on-anomaly">Step 4: Phased Unlocking of the Real Robot — Six-Step Ladder, Rollback on Anomaly</h2>
+<p>【What to do】Strictly follow the ladder; each step must meet the criteria before advancing:</p>
+<table>
+<thead>
+<tr>
+<th>Ladder</th>
+<th>Content</th>
+<th>Pass Criteria</th>
+<th>Rollback Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Full suspension on gantry, pedaling in the air</td>
+<td>5 min without abnormal current/temperature, gait cycle stable</td>
+<td>Any anomaly → stop and check observations</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Partial load (rope carries 30–50%)</td>
+<td>Foot contact switching normal, center of mass does not drift</td>
+<td>Attitude angle exceeds threshold</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Full load static standing</td>
+<td>≥5 min stationary standing (i.e., Stage 2 standing checkpoint)</td>
+<td>Tendency to fall → return to partial load</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Marching in place</td>
+<td>1 min marching without leaving position</td>
+<td>Deviation exceeds half step width</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Straight-line walking</td>
+<td>Continuous ≥3 min without significant drift</td>
+<td>Obvious yaw → return to marching</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Turning and speed variation</td>
+<td>5 successful left and right turns each</td>
+<td>Failure → return to straight-line walking</td>
+</tr>
+</tbody>
+</table>
+<p>Discipline: Two-person team (one monitors telemetry, one guards the <a href="/entry/ent_component_emergency_stop_system_2024/">emergency stop system</a>, the emergency stop hand never leaves); first batch of tests at each ladder must be recorded on video; change only one variable at a time.</p>
+<p>【Why】The reality gap reveals itself in layers: suspension exposes observation and delay issues, load exposes friction and contact modeling issues, and walking exposes gait and disturbance rejection issues. Unlocking everything at once mixes all problems together for debugging. Criteria are written down in advance to prevent the "let's try one more step" gamble — rollback is not failure, it's the process.</p>
+<p>【How to analyze your situation】Stuck at a certain ladder: first return to simulation and reproduce the same command — if it can be reproduced in simulation, it's a model problem (return to Step 3 or M13); if it cannot be reproduced in simulation, it's an observation/actuator problem (return to Step 2). A 16 kg class (Berkeley) fall can injure people, so the gantry and two-person team are not optional; a 3.4 kg class (ToddlerBot) must also follow the rules — the process is cultivated on small machines.</p>
+<h2 id="step-5-protection-strategy-and-fault-gradingturning-falls-into-data">Step 5: Protection Strategy and Fault Grading—Turning Falls into Data</h2>
+<p>【What to Do】</p>
+<ol>
+<li><strong>Soft Fault (Recoverable)</strong>: Attitude angle exceeds threshold (e.g., roll/pitch &gt; 30°, engineering recommended value, verify against your platform) → Trigger damped descent/squat, switch joints to damping mode to cushion ground contact.</li>
+<li><strong>Hard Fault (Unrecoverable)</strong>: Communication loss, overcurrent, emergency stop triggered → Immediately unload power and cut off; emergency stop hardwired, independent of all software chains.</li>
+<li><strong>Fall Logging</strong>: Record time, attitude sequence, battery voltage, motor temperature, and video number for each fall—falls are data, not shame.</li>
+<li><strong>Structural Protection</strong>: Vulnerable parts (lower legs, ankles, shell) made as quickly replaceable printed parts. Reference magnitude: ToddlerBot can withstand approximately 7 falls, single repair takes only 21 minutes printing + 14 minutes assembly (toddlerbot.md).</li>
+</ol>
+<p>【Why】Learning to walk inevitably involves falling; the difference is whether you get a diagnostic data set or a pile of fragments afterward. Soft/hard grading allows the robot to "fall properly"—damped descent spreads impact over the entire process, saving structural parts compared to rigid falls; the log loop makes every rollback in Step 4 traceable, rather than guessing from memory.</p>
+<p>【How to Analyze Your Situation】Set soft fault thresholds conservatively during the first week of testing; it's better to trigger damped descent a few more times. Keep spare printed parts as "three most breakable parts ×2" on hand; retire batteries immediately if over-discharged, swollen, or dropped; see specifications in <a href="/entry/ent_tech_li_battery_humanoid/">Lithium-ion Battery System for Humanoid Robots</a> card.</p>
+<h2 id="step-6-stage-2-acceptance-executionpass-six-checks-one-by-one-archive-data">Step 6: Stage 2 Acceptance Execution—Pass Six Checks One by One, Archive Data</h2>
+<p>【What to Do】Execute acceptance criteria item by item per <a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a> (see checklist below). Manage expectations for battery life per archive data: ToddlerBot RL walking measured 19 minutes until thermal throttling (toddlerbot.md), Berkeley 6S 4000 mAh LiPo approximately 30 minutes (berkeley-humanoid-lite.md), BRUCE approximately 20 minutes (bruce-westwood.md)—reaching the same magnitude is normal; don't hold yourself to the fantasy of "room temperature, fully charged new battery."</p>
+<p>【Why】The six checks are the ticket to Stage 3: The standing check ensures a stable base after adding arms in M15; the disturbance rejection check ensures the whole machine remains stable when reaching out later. Full documentation (video + telemetry curves) provides baseline data for diagnosing "walking performance degradation" in Stage 3.</p>
+<p>【How to Analyze Your Situation】Stuck on a check: Return to the common pitfalls table in <a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a> for troubleshooting; <strong>do not change strategies on the spot during acceptance</strong>—acceptance is measurement, not debugging. After changes, retrain and re-run from Ladder 3.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] Policy exported as jit/ONNX and re-tested in simulation without loss; onboard inference latency &lt; 50% of control cycle.</li>
+<li>[ ] Observation mapping documented and verified item by item; IMU static drift over 30 s and encoder zero point verified.</li>
+<li>[ ] Actuator latency/time constant/Kt measured and backfilled; domain randomization center aligned with measured values.</li>
+<li>[ ] Six-step ladder fully recorded on video; each step has a pass record; rollbacks have logs.</li>
+<li>[ ] <strong>Standing Check</strong>: Full load static standing off gantry ≥5 min, motor temperature below official limit (for unmarked models, confirm with supplier).</li>
+<li>[ ] <strong>Walking Check</strong>: Continuous walking on flat hard ground ≥10 min, no falls, cumulative yaw &lt; 90°.</li>
+<li>[ ] <strong>Disturbance Rejection Check</strong>: Recovers balance after a light single-hand push (approx. 5–10 N, within 0.5 s), no falling, no protective shutdown.</li>
+<li>[ ] <strong>Protection Check</strong>: Trigger fall scenario under gantry protection; emergency stop and damped descent activate; no structural fractures.</li>
+<li>[ ] <strong>Safety Check</strong>: Time from pressing emergency stop to power cutoff measured &lt;1 s; battery charging and storage fully comply with lithium battery safety standards.</li>
+<li>[ ] Fall logs and battery life data (voltage/temperature/duration) archived; battery life matches archive magnitude.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Falls immediately on startup</td>
+<td>Observation coordinate system error (IMU mounting direction vs base frame)</td>
+<td>Return to Step 2 for coordinate system triple-check; print and compare item by item</td>
+</tr>
+<tr>
+<td>Joint high-frequency jitter, buzzing sound</td>
+<td>Actuator delay not modeled / gain too high</td>
+<td>Return to Step 3 to measure and backfill delay; reduce PD gain and retest</td>
+</tr>
+<tr>
+<td>Simulation champion fails on real robot</td>
+<td>Domain randomization center deviates from measured parameters</td>
+<td>Backfill sysID data, narrow range, and retrain (Step 3)</td>
+</tr>
+<tr>
+<td>Slowly tilts to one side while standing</td>
+<td>IMU zero-bias drift / attitude filter divergence</td>
+<td>Let it sit for 30 s and check attitude readings; recalibrate zero bias</td>
+</tr>
+<tr>
+<td>Eager to leave gantry, falls under load</td>
+<td>Skipping ladder steps, criteria become a formality</td>
+<td>Return to corresponding ladder in Step 4, go through criteria one by one and keep records</td>
+</tr>
+<tr>
+<td>Torque weakens after a few minutes, gait deteriorates</td>
+<td>Battery voltage drop / actuator thermal throttling</td>
+<td>Check voltage and temperature telemetry; compare with ToddlerBot 19 min thermal throttling archive</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous Task: <a href="/en/roadmap/missions/m13-rl-training/">M13 · Reinforcement Learning Training</a></li>
+<li>Next Task: <a href="/en/roadmap/missions/m15-upper-body/">M15 · Upper Body and End Effector</a></li>
+<li>Theoretical Background: <a href="/en/wiki/chapters/chapter-11/">Chapter 11 Assembly, Integration, and Testing</a>, <a href="/en/wiki/chapters/chapter-25/">Chapter 25 Robot Evaluation System</a></li>
+<li><a href="/en/roadmap/stage-2-biped/">Stage 2 Overview</a> · <a href="/en/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m13-rl-training/">← Previous<span>M13 · Reinforcement Learning Training: Fall Ten Thousand Times in Simulation, Stand Firm Once on the Real Robot</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/stage-3-humanoid/">Next →<span>Phase 3: Complete Humanoid Robot – From Bipedal Platform to &#34;Understands, Walks Over, Picks Up&#34;</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m14-sim-to-real-deployment-and-walking-acceptance-from-simulation-champion-to-the-first-step-on-a-real-robot">M14 · Sim-to-Real Deployment and Walking Acceptance: From Simulation Champion to the First Step on a Real Robot</a><ul>
+<li><a href="#step-1-deployment-pipeline-setup-transferring-the-policy-from-the-training-machine-to-the-robot">Step 1: Deployment Pipeline Setup — Transferring the Policy from the Training Machine to the Robot</a></li>
+<li><a href="#step-2-observation-alignment-mapping-simulation-observations-to-real-sensors-one-by-one">Step 2: Observation Alignment — Mapping Simulation Observations to Real Sensors One by One</a></li>
+<li><a href="#step-3-actuator-system-identification-refinement-centering-the-randomization-on-the-real-robot">Step 3: Actuator System Identification Refinement — Centering the Randomization on the Real Robot</a></li>
+<li><a href="#step-4-phased-unlocking-of-the-real-robot-six-step-ladder-rollback-on-anomaly">Step 4: Phased Unlocking of the Real Robot — Six-Step Ladder, Rollback on Anomaly</a></li>
+<li><a href="#step-5-protection-strategy-and-fault-gradingturning-falls-into-data">Step 5: Protection Strategy and Fault Grading—Turning Falls into Data</a></li>
+<li><a href="#step-6-stage-2-acceptance-executionpass-six-checks-one-by-one-archive-data">Step 6: Stage 2 Acceptance Execution—Pass Six Checks One by One, Archive Data</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

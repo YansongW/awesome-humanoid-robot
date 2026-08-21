@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LookOut: Real-World Humanoid Egocentric Navigation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">LookOut: Real-World Humanoid Egocentric Navigation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>LookOut: Real-World Humanoid Egocentric Navigation</h1>
+      <p class="entry-name-en">LookOut: Real-World Humanoid Egocentric Navigation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14466v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1337 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>LookOut 是 2025 年针对人形机器人提出的第一人称导航工作，由斯坦福大学团队完成。核心贡献是提出从第一人称视频预测未来 6D 头部姿态（平移+旋转）的框架，并发布了使用 Project Aria 眼镜采集的 Aria Navigation Dataset (AND) 数据集，包含 4 小时真实场景导航记录。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2508.14466" target="_blank" rel="noopener">LookOut: Real-World Humanoid Egocentric Navigation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>LookOut 解决了一个新问题：从第一人称视频中预测未来头部 6D 姿态序列，包括平移和旋转，以学习人类通过转头获取信息的主动行为。为此，他们构建了一个基于时序聚合 3D 潜在特征的推理框架，同时建模环境中静态与动态部分的几何与语义约束。由于缺乏训练数据，团队使用 Project Aria 眼镜采集了 AND 数据集，包含 4 小时真实场景导航记录，涵盖多种情境与导航行为。实验表明，模型能学习到类似人类的导航行为，如等待/减速、重新规划路线、观察交通，并能泛化到未见环境。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li><strong>任务定义</strong>：从第一人称视频帧序列预测未来 6D 头部姿态（平移向量 + 旋转四元数），输出未来 N 帧的连续轨迹。</li>
+<li><strong>框架架构</strong>：</li>
+<li>使用时序聚合的 3D 潜在特征表示，将视频帧编码为体素网格，通过 3D 卷积提取时空特征。</li>
+<li>特征同时编码静态场景几何（如墙壁、障碍物）和动态物体（如行人、车辆）的语义信息。</li>
+<li>采用自回归解码器，逐帧预测未来头部姿态，并利用注意力机制建模长程依赖。</li>
+</ul>
+<h3 id="_4">数据集</h3>
+<ul>
+<li><strong>Aria Navigation Dataset (AND)</strong>：使用 Project Aria 眼镜在真实世界采集，共 4 小时记录。</li>
+<li><strong>数据多样性</strong>：包含室内（走廊、房间）和室外（街道、交叉口）场景，涵盖不同光照、人流密度和导航行为（直行、转弯、避让、等待）。</li>
+<li><strong>标注</strong>：提供 6D 头部姿态真值（由眼镜内置 IMU 和 SLAM 系统提供），以及场景语义标签（静态/动态物体分割）。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li><strong>基线方法</strong>：对比了基于 LSTM 的时序模型、纯视觉 Transformer（ViT）以及无 3D 特征聚合的消融版本。</li>
+<li><strong>评估指标</strong>：使用平均平移误差（ATE，单位 cm）、平均旋转误差（ARE，单位度）、以及轨迹平滑度（相邻帧姿态变化率）。</li>
+<li><strong>训练/测试划分</strong>：80% 数据用于训练，20% 用于测试，并额外在 3 个未见场景（不同建筑、不同城市）进行泛化测试。</li>
+</ul>
+<h3 id="_6">关键结果</h3>
+<ul>
+<li><strong>定量结果</strong>：LookOut 在 ATE 上达到 12.3 cm，ARE 达到 4.7°，分别比最佳基线（LSTM）降低 31% 和 22%。</li>
+<li><strong>泛化能力</strong>：在未见场景中，ATE 仅上升至 15.1 cm，ARE 至 5.9°，表明模型学到了可迁移的导航先验。</li>
+<li><strong>行为分析</strong>：</li>
+<li>在交叉口场景中，模型预测的头部旋转角度比基线更接近人类真实数据（平均偏差 &lt; 3°）。</li>
+<li>模型能主动预测“等待/减速”行为（在行人接近时，预测平移速度下降 40%），而基线模型无法捕捉此类动态调整。</li>
+<li><strong>消融实验</strong>：移除 3D 潜在特征聚合后，ATE 恶化至 18.7 cm，证明时序 3D 特征对建模动态环境至关重要。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<p>LookOut 首次将第一人称导航问题扩展到 6D 头部姿态预测，并通过数据驱动方法学习人类主动信息收集行为。AND 数据集为后续研究提供了真实场景基准。未来工作可结合强化学习，将预测模型嵌入闭环控制策略。</p>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2508.14466v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zhang_align_then_steer_adapting_the_2025/">ATE</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_gait_planning/">步态规划</a>
+      
+      
+    </li>
+    
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（1）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">评测于</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_humanoidbench/">HumanoidBench</a>
+      
+      
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_lookout_real_world_humanoid_eg_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_zhang_align_then_steer_adapting_the_2025/">
+          <span class="entry-type">论文</span>
+          <h3>ATE</h3>
+          <p>Align-Then-stEer (ATE)…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gait_planning/">
+          <span class="entry-type">方法</span>
+          <h3>步态规划</h3>
+          <p>为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_humanoidbench/">
+          <span class="entry-type">评测基准</span>
+          <h3>HumanoidBench</h3>
+          <p>一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">数据集</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

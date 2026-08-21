@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control</h1>
+      <p class="entry-name-en">Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一套语义音频驱动的全身控制流水线，使 Unitree G1 人形机器人能在运行时自主从连续音频流中决策并切换运动技能。系统由音频路由（音乐/语音/无关）、音乐指纹检索与语音意图接地、以及技能库执行三级组成，在 MuJoCo 模拟与物理机器人上验证了 84.8% 的块级准确率与实时策略跟随能力。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14182" target="_blank" rel="noopener">arXiv:2607.14182 Semantic Audio-driven Understanding for Dynamic Humanoid Whole Body Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有类人机器人运动策略虽已具备高度表达力，但执行逻辑仍停留在“预编程时间序列”或“外部显式触发”层面——机器人知道“怎么做”，却不知道“何时做”与“为什么做”。本文真正改变的，是将行为选择从离线编排或人工干预中解放出来，让机器人通过感知音频流（音乐结构、语音意图）在线推断行为切换时机，从而把“运动控制问题”升级为“感知-决策-控制闭环问题”。</p>
+<p>这一转变的实质意义在于：它不再把语言或音乐当作一次性指令，而是当作持续流动的上下文信号。机器人必须自行判断当前音频属于哪类场景、匹配哪段音乐、对应哪个技能、以及何时切换——这比单纯提高动作质量更接近“自主行为”的本质。作者没有推翻现有强化学习/模仿学习框架，而是在其上叠加了一层感知路由层，使得底层运动策略可以被复用，而决策逻辑变得可解释、可调试。</p>
+<h2 id="_2">方法拆解</h2>
+<p>系统将连续音频流切分为固定 5 秒块，每块经三级流水线处理：</p>
+<h3 id="1-music-speech-skip">1. 音频路由（Music / Speech / Skip）</h3>
+<ul>
+<li>使用 Audio Spectrogram Transformer (AST)（基于 527 类 AudioSet 本体）输出后验概率，聚合为场景级分数：</li>
+<li><code>p_music</code> = 音乐相关标签组概率之和</li>
+<li><code>p_speech</code> = 语音相关标签组概率之和</li>
+<li>同时用 Silero VAD 在 16 kHz 波形上计算逐帧语音概率，得到语音帧占比 <code>v_frac ∈ [0,1]</code></li>
+<li>决策规则：</li>
+<li>若 <code>v_frac ≥ v_frac^min</code> 且 <code>p_speech − p_music ≥ ε_sp</code> → <strong>Speech</strong></li>
+<li>若 <code>p_music</code> 主导且 <code>v_frac</code> 低于阈值 → <strong>Music</strong></li>
+<li>否则 → <strong>Skip</strong></li>
+</ul>
+<h3 id="2">2. 音乐检索与时间技能接地</h3>
+<ul>
+<li>使用 Wang 星座图算法（音频指纹）：将参考曲目的频谱峰值对及其相对时间偏移哈希索引；查询块通过检索候选对并寻找对齐时间偏移直方图中的主导峰值来匹配</li>
+<li>返回元组 <code>(s, c, v, τ)</code>：候选曲目 ID、匹配置信度 <code>c ∈ [0,1]</code>、对齐地标投票数 <code>v</code>、块在参考曲目中的估计偏移 <code>τ</code></li>
+<li>接受条件：置信度与投票数均超过最小阈值；否则回退到 CLAP 模型嵌入空间的余弦搜索</li>
+<li>定时技能规则 <code>r = (s*, [t_start, t_end), π)</code>：解析器返回第一个满足 <code>s = s*</code> 且 <code>τ ∈ [t_start, t_end)</code> 的技能标识符 <code>π</code>；若无定时规则适用，则回退到曲目级映射 <code>s ↦ π</code></li>
+</ul>
+<h3 id="3">3. 语音到动作接地</h3>
+<ul>
+<li>使用 OpenAI <code>gpt-4o-mini-transcribe</code> 端点进行流式转录</li>
+<li>转录文本与技能库语义匹配，检索 top-1 运动策略</li>
+<li>未匹配的转录转发给对话 LLM（<code>gpt-4o-mini</code>），其响应由神经 TTS 合成并通过机器人扬声器播放</li>
+<li>估计的语音持续时间同时传输给机器人，触发匹配时长的固定手势策略</li>
+</ul>
+<h3 id="4">4. 命令接口与技能执行</h3>
+<ul>
+<li>通过 RoboJudo 中的统一 TCP 套接字接口通信</li>
+<li>技能库包含：Walk 策略、Stand 策略（安全过渡）、以及 BeyondMimic 训练的模仿学习全身策略（导出为 ONNX 用于实时推理）</li>
+<li>请求新技能时，可选地通过 Stand 策略预热机器人再激活目标运动</li>
+<li>控制循环在 MuJoCo 模拟的 Unitree G1 中运行；部署到物理平台时仅替换环境接口，编排逻辑不变</li>
+</ul>
+<h2 id="_3">关键创新</h2>
+<ol>
+<li>
+<p><strong>感知驱动的行为选择机制</strong>：用音频流作为持续上下文信号，取代离散文本命令或预编程触发。机器人不再等待人工指令，而是从音乐结构（前奏/主歌/副歌/尾奏）和语音意图中自主推断“何时做什么”，这是从“执行器”到“决策者”的关键跃迁。</p>
+</li>
+<li>
+<p><strong>分层音频路由 + 时间技能接地</strong>：将粗粒度场景分类（音乐/语音）与细粒度音乐指纹匹配（曲目身份 + 时间偏移）结合，使得同一曲目的不同段落能驱动不同全身行为，无需重新训练底层控制器。这种“段落级技能映射”比整曲级映射更具表达力，且完全基于现有运动学习技术。</p>
+</li>
+<li>
+<p><strong>回退机制与冷却抑制</strong>：指纹匹配失败时回退到 CLAP 嵌入空间搜索，语音侧用 VAD 主导性判断防止误触发，冷却机制抑制短时间窗口内相同技能重复发射。这些工程细节保证了系统在真实环境中的鲁棒性，而非仅停留在理想化实验条件。</p>
+</li>
+</ol>
+<h2 id="_4">实验与结果</h2>
+<table>
+<thead>
+<tr>
+<th>实验项</th>
+<th>设置</th>
+<th>关键结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>块级检索准确率</td>
+<td>574 个块（含 0.5/1.0/1.5/2.0 秒偏移）</td>
+<td><strong>84.8%</strong></td>
+</tr>
+<tr>
+<td>模拟编舞 M30</td>
+<td>音乐每 30 秒切换，4 首曲目</td>
+<td>过渡稳定，编舞紧密跟随命令序列，仅最后阶段轻微延长</td>
+</tr>
+<tr>
+<td>模拟编舞 M20</td>
+<td>音乐每 20 秒切换，4 首曲目</td>
+<td>过渡不稳定，错位、偶尔回退到 locomotion，严重时质心推出支撑多边形触发安全机制</td>
+</tr>
+<tr>
+<td>真实世界验证</td>
+<td>物理 Unitree G1</td>
+<td>块级检索足够稳定驱动实时策略选择；端到端延迟高于模拟，但成功跟随命令序列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键结论</strong>：30 秒音乐段落是当前过渡机制的合适工作点；检索质量不是主要瓶颈，主要限制因素是站立预热阶段引入的过渡延迟。M20 场景的失败暴露了过渡机制的时序约束——当音乐切换快于过渡完成时间时，系统会累积错位甚至失稳。</p>
+<h2 id="_5">边界与局限</h2>
+<ul>
+<li>固定 5 秒分块引入固有延迟，影响运动与音乐的时间对齐精度；作者未实现自适应分割</li>
+<li>过渡延迟（站立预热）是主要限制，而非检索质量；M20 场景下系统无法跟上快速切换</li>
+<li>可扩展性仅通过 4 首曲目验证，未进行大规模多用户/多场景泛化测试</li>
+<li>未与其他方法（如 OmniH2O、FRoM-W1）在同一基准上进行定量对比</li>
+<li>论文未明确：具体计算硬件规格、训练超参数、数据量、训练时长、推理频率</li>
+</ul>
+<h2 id="_6">工程启示</h2>
+<ul>
+<li><strong>先核对过渡机制</strong>：如果你要复现，第一优先级是测量 Stand 预热阶段的耗时——这是系统在 M20 场景失败的根因。建议先跑通 M30 场景，再逐步缩短音乐段落以找到你硬件上的过渡极限。</li>
+<li><strong>音频路由阈值是关键调优点</strong>：<code>v_frac^min</code> 和 <code>ε_sp</code> 直接决定语音/音乐误分类率。在嘈杂环境或背景音乐较强的语音场景中，这两个阈值需要重新标定，否则语音命令可能被路由为 Music 或 Skip。</li>
+<li><strong>指纹匹配的接受阈值</strong>：<code>c</code> 和 <code>v</code> 的最小阈值决定了回退到 CLAP 搜索的频率。阈值过严会导致频繁回退（增加延迟），过松则可能误匹配。建议在目标曲目库上先做离线校准。</li>
+<li><strong>技能库设计</strong>：Walk 和 Stand 是安全网，但过渡延迟的瓶颈在 Stand 预热。如果下游场景需要快速切换，考虑训练更快的过渡策略或直接支持技能间插值，而非总是经过 Stand。</li>
+<li><strong>最易踩坑</strong>：模拟到物理的迁移看似“仅替换环境接口”，但实际端到端延迟会显著增加（外部 API 调用、硬件通信开销）。语音侧依赖 OpenAI 端点，网络延迟不可控，建议在物理部署前先做延迟预算评估。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.14182</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">demonstrates_on</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_robot_system_unitree_g1/">Unitree G1 人形机器人</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_semantic_audio_driven_understanding_dyna_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_robot_system_unitree_g1/">
+          <span class="entry-type">机器人系统</span>
+          <h3>Unitree G1 人形机器人</h3>
+          <p>Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#1-music-speech-skip">1. 音频路由（Music / Speech / Skip）</a></li>
+<li><a href="#2">2. 音乐检索与时间技能接地</a></li>
+<li><a href="#3">3. 语音到动作接地</a></li>
+<li><a href="#4">4. 命令接口与技能执行</a></li>
+</ul>
+</li>
+<li><a href="#_3">关键创新</a></li>
+<li><a href="#_4">实验与结果</a></li>
+<li><a href="#_5">边界与局限</a></li>
+<li><a href="#_6">工程启示</a></li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

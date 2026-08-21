@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control</h1>
+      <p class="entry-name-en">SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.19463v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1217 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.19463" target="_blank" rel="noopener">SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존 방법은 대량의 리타겟팅된 인간 데이터를 강화 학습에 사용하여 휴머노이드 로봇 정책을 훈련하지만, 인간과 휴머노이드 로봇의 운동 공간 이질성으로 인해 리타겟팅된 운동을 직접 사용하면 훈련 효율이 낮고 안정성이 떨어집니다. SMAP 프레임워크의 핵심 혁신은 벡터 양자화 주기 자기 인코더를 도입하여 인간 운동에서 일반적인 원자 행동을 추출하고, 이를 물리적으로 실행 가능한 휴머노이드 운동으로 적응시켜 훈련 수렴을 가속화하고 복잡한 동작에 대한 강건성을 강화하는 데 있습니다. 또한, 이 프레임워크는 특권 교사 모델을 채택하여 분리된 보상 메커니즘을 통해 정밀한 모방 기술을 학생 정책에 증류하며, 최종적으로 시뮬레이션 및 실제 실험에서 SOTA 방법 대비 우수한 안정성과 성능을 검증합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>벡터 양자화 주기 자기 인코더 (VQ-PAE)</strong>: 인간 운동에서 일반적인 원자 행동을 포착하며, 이산 코딩을 통해 인간 동작 공간을 휴머노이드 로봇이 실행 가능한 물리적으로 합리적인 운동으로 매핑하여 두 공간 간의 이질성을 해소합니다.</li>
+<li><strong>운동 적응 모듈</strong>: 자기 지도 방식으로 리타겟팅된 인간 운동을 물리적으로 실행 가능한 휴머노이드 운동으로 변환하며, 추가 라벨링 데이터 없이 훈련 수렴 속도와 새롭거나 도전적인 동작에 대한 안정성을 크게 향상시킵니다.</li>
+<li><strong>특권 교사-학생 증류 프레임워크</strong>:</li>
+<li>특권 교사 모델은 시뮬레이션에서 완전한 상태 정보(예: 물리 파라미터, 접촉력)를 활용하여 정밀한 모방 기술을 학습합니다.</li>
+<li>학생 정책은 관절 각도, IMU 데이터와 같은 본체 인식 입력만 사용하며, 분리된 보상 함수(위치, 속도, 자세 등 목표 분리)를 통해 교사로부터 지식을 증류받아 실제 로봇으로의 제로샷 전이를 구현합니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>시뮬레이션 환경</strong>: Isaac Gym 기반으로 구축되었으며, 표준 휴머노이드 로봇 모델(예: Unitree H1)을 사용하여 훈련합니다.</li>
+<li><strong>실제 실험</strong>: Unitree H1 로봇에 배포되었으며, 걷기, 점프, 회전 및 복잡한 전신 협응 작업(예: 물체 운반 시 균형 유지)을 포함한 동작을 테스트합니다.</li>
+<li><strong>비교 기준</strong>: SOTA 방법(예: ASE, Motion Imitation 프레임워크)과 비교하며, 평가 지표로는 추적 오차(관절 각도 오차, 말단 위치 오차), 안정성(넘어짐 비율, 회복 시간) 및 운동 자연스러움(인간 운동 유사성 점수 기반)을 포함합니다.</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li><strong>훈련 효율</strong>: SMAP의 수렴 속도는 리타겟팅된 운동을 직접 사용하는 방법보다 3배 빠르며, 초기 정책 파라미터에 둔감합니다.</li>
+<li><strong>안정성 향상</strong>: 시뮬레이션에서 SMAP은 테스트 동작의 90%에서 넘어짐 비율이 5% 미만인 반면, SOTA 방법은 복잡한 동작(예: 한 발 점프)에서 넘어짐 비율이 30%를 초과합니다.</li>
+<li><strong>실제 세계 성능</strong>: Unitree H1에서 SMAP은 15가지 다양한 인간 동작(빠른 회전 및 허리 굽혀 물건 집기 포함)을 성공적으로 실행했으며, 평균 관절 각도 오차는 4.2°로, 비교 방법의 오차 8° 이상보다 우수합니다.</li>
+<li><strong>일반화 능력</strong>: 훈련되지 않은 교란(예: 외부 힘 밀기, 불균일한 지면)에 직면했을 때, SMAP의 회복 시간은 SOTA 방법보다 40% 단축됩니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>SMAP은 자기 지도 운동 적응과 특권 증류 프레임워크를 통해 휴머노이드 로봇 전신 제어에서 인간-로봇 운동 이질성 문제를 효과적으로 해결하며, 시뮬레이션 및 실제 환경 모두에서 높은 정밀도와 높은 안정성의 운동 모방을 구현하여 실제 배포에 실용적인 지침을 제공합니다. 향후 연구에서는 더 복잡한 다중 작업 학습과 교차 플랫폼 전이를 탐구할 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_domain_adaptation/">도메인 적응</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_smap_self_supervised_motion_ad_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 적응</h3>
+          <p>소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

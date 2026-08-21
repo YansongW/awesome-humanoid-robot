@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</h1>
+      <p class="entry-name-en">FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Real-time deployment of Vision-Language-Action (VLA) policies necessitates asynchronous execution, wherein subsequent action chunks are computed concurrently with the execution of the current chunk, leading to prediction-execution misalignment and manifesting as inter-chunk discontinuities. Existing methods either superficially smooth chunk boundaries, require costly policy optimization, or.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.24008" target="_blank" rel="noopener">arXiv:2607.24008 FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunki</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>FutureRTC는 플러그 앤 플레이 방식의 비동기 VLA 정책 적응 프레임워크로, 실행 시점의 시각적 잠재 특징과 고유수용감각 상태를 예측하여 비동기 실행에서 발생하는 예측-실행 불일치를 완화합니다. 핵심 기여는 관측 예측을 픽셀 공간에서 사전 학습된 VLA의 잠재 공간으로 이동시키고, 동작 시퀀스를 명시적 운동 사전으로 사용하여 특징 전송과 잔차 합성을 구동하며, 정책 일관성 손실을 도입하여 예측된 컨텍스트가 고정된 정책에 의해 충실히 소비되도록 보장하는 것입니다.</p>
+<h2 id="_2">무엇을 변화시키는가</h2>
+<p>비동기 VLA 배포의 핵심 모순은 정책이 동작 블록을 생성하는 데 시간이 걸리는 반면, 환경은 대기 시간 동안 계속 진화한다는 점입니다. 기존 추론 시점 방법(TE, BID, RTC)은 표면적 평활화나 전방 상태 예측만 수행할 뿐, 시각적 장면이 로봇 구성과 함께 진화한다는 사실을 무시합니다. 학습 시점 방법(T-RTC, REMAC)은 더 철저하지만 정책 재학습이나 미세 조정이 필요하여 비용이 높습니다. VLASH는 상태 예측의 필요성을 처음으로 인식했지만 여전히 오래된 시각적 관측에 의존합니다—이것이 바로 불일치의 주요 원인입니다.</p>
+<p>FutureRTC가 진정으로 바꾸는 것은 문제 정의입니다. 더 이상 정책이 지연에 적응하도록 만들지 않고, "실행 시점"의 완전한 컨텍스트(시각+상태)를 직접 예측하여 정책이 제로 지연 조건에서 작동하는 것처럼 만듭니다. 이 접근 방식은 비동기 배포 문제를 컨텍스트 예측 문제로 전환하며, 예측이 픽셀 공간이 아닌 잠재 공간에서 이루어지므로 계산 오버헤드가 제어 가능하고(추가 3.04 ms), 예측 결과가 VLA 정책과 자연스럽게 호환됩니다. 이는 로봇이 환경 변화의 주요 원인인 조작 시나리오에서 동작 사전 기반 잠재 공간 예측만으로도 동기 실행 성능의 대부분을 회복할 수 있음을 증명합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 아키텍처</h3>
+<p>어댑터 φ(·)는 오래된 쌍 (z_1, a_{1:2})에서 실행 시점 컨텍스트 (ẑ_3, ŝ_3)를 예측하며, 여기서 z는 사전 학습된 VLA 시각 인코더가 출력하는 잠재 특징입니다. VLA 정책은 예측된 잠재 표현을 직접 소비하여 원본 시각 인코더를 우회합니다.</p>
+<h3 id="scm">상태 보정 모듈(SCM)</h3>
+<ul>
+<li>오래된 상태 전방 적분: s̃<em t_K-d="t+K-d">{t+K} = s</em> a_i} ⊕ Σ_{i=t+K-d}^{t+K-1</li>
+<li>MLP가 보상 잔차 예측: s̃<em t_K="t+K">Δ = φ_SCM(s̃</em>, d/d_max)</li>
+<li>최종 상태: ŝ_{t+K} = s̃_{t+K} ⊕ s̃_Δ, 회전 부분은 상대 회전 합성 사용</li>
+<li>손실: L_state = ||(s_{t+K} ⊖ s̃_{t+K}) − s̃_Δ||₂²</li>
+</ul>
+<h3 id="opm">관측 예측 모듈(OPM)</h3>
+<ul>
+<li>각 약속된 동작에 대해 물리적 특징 벡터 구성: u_i = [a_i, Σ_{j≤i} a_j, a_i − a_{i−1}, Σ_{j≤i} |a_j|, i/d]</li>
+<li>궤적 특징 행렬 U를 시간 자기 주의에 입력하여 동작 조건 운동 사전 c_motion 생성</li>
+<li>c_motion, 오래된 잠재 z_{t+K−d}, 카메라 임베딩 e_cam, 위치 임베딩 e_pos, 보정 상태 ŝ_{t+K}를 융합하여 조건 특징 F 형성</li>
+<li>캐스케이드 선형+컨볼루션 레이어가 F를 2D 흐름 변위 Δp와 전송 게이트 α ∈ [0,1]로 투영</li>
+<li>미분 가능한 이중선형 샘플링으로 공간 왜곡 수행, 게이트 결합: z_trans = (1−α)·z_{t+K−d} + α·W(z_{t+K−d}, p − Δp)</li>
+<li>게이트 잔차 분기가 합성 특징 r과 합성 게이트 β 예측: {r, β} = Linear(Conv(F, z_trans − z_{t+K−d}, z_0))</li>
+<li>최종 잠재: ẑ_{t+K} = z_trans + β·r</li>
+<li>손실: L_obs = ||z_{t+K} − ẑ_{t+K}||₂²</li>
+</ul>
+<h3 id="_5">정책 일관성 손실</h3>
+<p>L_policy = ||π_θ(z_{t+K}, s_{t+K}) − π_θ(ẑ_{t+K}, ŝ_{t+K})||₂², 다단계 흐름 매칭 오버헤드를 피하기 위해 단일 단계 흐름 근사 사용. 총 목적 함수: L_total = L_state + L_obs + λ·L_policy, λ = 10, π_θ는 고정.</p>
+<h3 id="_6">핵심 설계 결정</h3>
+<ul>
+<li>픽셀 재구성이 아닌 잠재 공간 예측: 계산 오버헤드를 제어하고 정책 표현과 호환되도록 보장</li>
+<li>처음부터 합성이 아닌 공간 전송 모델링: 약속된 동작이 명시적 운동 사전 역할을 하며, 정적 영역은 원래 표현 유지(α→0), 운동 영역은 왜곡된 특징에 의존(α→1)</li>
+<li>학습 시 지연 d ~ U[1, d_max] 균일 샘플링: 단일 모델이 전체 지연 범위를 커버하므로 지연별 별도 학습 불필요</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>잠재 공간 관측 예측</strong>: 비동기 VLA의 시각적 보상을 픽셀 공간에서 사전 학습된 인코더의 잠재 공간으로 처음 이동시켰습니다. 이는 추가 추론 지연을 3.04 ms로 제어할 뿐만 아니라(표 내 수치 35.4→38.44에서 계산), 예측 결과가 VLA 정책의 입력 분포와 자연스럽게 정렬되어 픽셀 재구성 오류가 정책에 의해 증폭되는 것을 방지합니다.</p>
+</li>
+<li>
+<p><strong>동작 기반 이중 분기 예측 아키텍처</strong>: 시각적 변화를 "공간 전송"(운동 사전 기반 미분 가능 왜곡)과 "잔차 합성"(게이트 잔차 분기)의 두 부분으로 분해하며, 각각 전송 게이트 α와 합성 게이트 β로 제어됩니다. 이 분해는 조작 시나리오의 물리적 직관과 일치합니다—대부분의 시각적 변화는 로봇 자체 운동에 의해 발생하며 동작 시퀀스로 정확히 예측할 수 있고, 나머지 동역학(예: 물체 미끄러짐)은 잔차 분기가 포착합니다.</p>
+</li>
+<li>
+<p><strong>정책 일관성 손실</strong>: 예측된 컨텍스트가 특징 공간에서 실제 값에 가까울 뿐만 아니라, 고정된 정책이 예측 쌍에서 생성한 블록이 실제 쌍에서 생성한 블록과 정렬되도록 요구합니다. 이 손실은 중간 표현이 아닌 최종 목표(정책 출력)를 직접 최적화하며, d=20에서 성공률을 67.5%에서 69.4%로 향상시키는 소거 실험의 핵심 요소입니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="libero-_05">LIBERO 벤치마크(π_0.5 백본)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>d=5</th>
+<th>d=10</th>
+<th>d=15</th>
+<th>d=20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive Async.</td>
+<td>89.5</td>
+<td>82.7</td>
+<td>76.3</td>
+<td>68.3</td>
+</tr>
+<tr>
+<td>RTC</td>
+<td>89.9</td>
+<td>83.2</td>
+<td>77.5</td>
+<td>73.7</td>
+</tr>
+<tr>
+<td>VLASH</td>
+<td>88.0</td>
+<td>83.4</td>
+<td>79.5</td>
+<td>74.5</td>
+</tr>
+<tr>
+<td>REMAC</td>
+<td>90.8</td>
+<td>85.4</td>
+<td>78.5</td>
+<td>73.9</td>
+</tr>
+<tr>
+<td><strong>FutureRTC</strong></td>
+<td><strong>94.2</strong></td>
+<td><strong>92.4</strong></td>
+<td><strong>91.0</strong></td>
+<td><strong>88.5</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="libero-smolvla-450m">LIBERO 벤치마크(SmolVLA-450M 백본)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>d=5</th>
+<th>d=10</th>
+<th>d=15</th>
+<th>d=20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive Async.</td>
+<td>70.3</td>
+<td>64.5</td>
+<td>61.3</td>
+<td>56.2</td>
+</tr>
+<tr>
+<td>VLASH</td>
+<td>69.3</td>
+<td>65.8</td>
+<td>64.7</td>
+<td>61.9</td>
+</tr>
+<tr>
+<td>REMAC</td>
+<td>70.9</td>
+<td>66.5</td>
+<td>62.2</td>
+<td>59.7</td>
+</tr>
+<tr>
+<td><strong>FutureRTC</strong></td>
+<td><strong>75.8</strong></td>
+<td><strong>73.3</strong></td>
+<td><strong>71.6</strong></td>
+<td><strong>69.4</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="smolvla-450m">소거 실험(SmolVLA-450M 평균 성공률)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>d=5</th>
+<th>d=10</th>
+<th>d=15</th>
+<th>d=20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline</td>
+<td>26.1</td>
+<td>8.4</td>
+<td>2.5</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>+SCM</td>
+<td>45.9</td>
+<td>18.1</td>
+<td>10.4</td>
+<td>5.8</td>
+</tr>
+<tr>
+<td>+OPM</td>
+<td>74.1</td>
+<td>70.4</td>
+<td>70.0</td>
+<td>67.5</td>
+</tr>
+<tr>
+<td>+L_policy</td>
+<td>75.8</td>
+<td>73.3</td>
+<td>71.6</td>
+<td>69.4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">핵심 결과 해석</h3>
+<ul>
+<li>d=5에서 d=20까지 FutureRTC는 π_0.5에서 성공률이 5.7%만 하락하고 SmolVLA에서는 6.4% 하락하는 반면, Naive Async.는 각각 21.2%와 14.1% 하락합니다(표 내 수치에서 계산)</li>
+<li>OPM이 성능의 주력입니다(+SCM에서 +OPM으로 d=20에서 61.7% 포인트 향상), SCM 단독 효과는 제한적이지만 OPM에 필요한 상태 조건을 제공합니다</li>
+<li>Kinetix에서 d=0에서 d=4까지 성공률이 3.0%만 하락하지만, 작은 지연에서는 벤치마크에 미세 조정된 학습 시점 방법보다 약간 뒤처집니다</li>
+<li>실제 세계 세 가지 이중 팔 작업에서 일관되게 최고 성공률, 최소 실행 단계 수 및 시간을 달성했습니다</li>
+</ul>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li>관측 예측 모듈은 고도로 동적인 시나리오(독립적인 외부 에이전트가 지배하는)에서 성능이 저하될 수 있습니다—논문은 이러한 시나리오에 대한 정량적 평가를 명시적으로 제공하지 않습니다</li>
+<li>흐름 매칭 VLA 정책(π_0.5 및 SmolVLA-450M)에만 인스턴스화되었으며, 자기회귀 정책이나 이산 확산 정책으로 확장되지 않았습니다. DiscreteRTC 비교는 흐름 기반 백본에서 인스턴스화할 수 없어 생략되었습니다</li>
+<li>d &gt; 20의 더 긴 지연 시나리오는 평가되지 않았습니다</li>
+<li>Kinetix의 작은 지연 d = {0, 1}에서는 정책을 고정한 상태에서 벤치마크 작업에 미세 조정되거나 재학습된 학습 시점 방법보다 약간 뒤처집니다</li>
+<li>실제 세계 실험은 정성적 시연(비디오 비교)이며 정량적 성공률 수치를 보고하지 않습니다</li>
+<li>학습 시점 비교 방법(VLASH 제외)은 저자가 공식 가중치 대신 직접 재현한 것으로 재현 편향이 있을 수 있습니다</li>
+</ul>
+<h2 id="_11">엔지니어링 시사점</h2>
+<ul>
+<li><strong>동작 블록 연결 규칙을 먼저 확인하세요</strong>: 조건 컨텍스트가 실행 시점에 해당할 때, 첫 번째 동작부터 A[0:K-1]을 실행해야 합니다. 비동기 보상의 A[d:d+K-1] 연결을 계속 사용하면 성공률이 94.2%에서 39.0%로 급락합니다(표 내 수치에서 계산). 이것이 가장 쉽게 함정에 빠지는 엔지니어링 세부 사항입니다.</li>
+<li><strong>SCM 단독 사용 가치는 제한적입니다</strong>: 소거 실험에서 +SCM은 SmolVLA에서 d=20일 때 0.7%에서 5.8%로만 향상되며, OPM과 함께 사용해야 효과를 발휘합니다. 상태 예측만 한다면 VLASH를 직접 사용하는 것이 낫습니다.</li>
+<li><strong>학습 비용이 제어 가능합니다</strong>: 배치 크기 128, 200k 반복, RTX 4090 단일 GPU로 수렴 가능합니다. 어댑터는 5.19M 파라미터와 3.04ms 추론 지연만 추가합니다. 학습 시 지연 d ~ U[1, d_max] 균일 샘플링은 단일 모델이 전체 지연 범위를 커버하므로 배포 환경별 재학습이 필요 없습니다.</li>
+<li><strong>정책 일관성 손실의 λ는 튜닝이 필요합니다</strong>: 논문은 λ = 10을 사용하지만, 이 하이퍼파라미터는 정책 아키텍처에 민감하므로 재현 시 [1, 50] 범위에서 스캔하는 것이 좋습니다.</li>
+<li><strong>실제 세계 배포 예산</strong>: 종단 간 지연은 약 170ms(d ≈ 5에 해당)이며, VLA 순방향 약 99ms, LAN 통신 약 40ms, 데이터 처리 약 30ms입니다. 지연을 줄여야 한다면 어댑터 자체보다 통신과 데이터 처리를 우선 최적화하세요.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_futurertc_real_time_robot_execution_anti_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">논문</span>
+          <h3>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics</h3>
+          <p>SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">논문</span>
+          <h3>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference</h3>
+          <p>VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시키는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 아키텍처</a></li>
+<li><a href="#scm">상태 보정 모듈(SCM)</a></li>
+<li><a href="#opm">관측 예측 모듈(OPM)</a></li>
+<li><a href="#_5">정책 일관성 손실</a></li>
+<li><a href="#_6">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#libero-_05">LIBERO 벤치마크(π_0.5 백본)</a></li>
+<li><a href="#libero-smolvla-450m">LIBERO 벤치마크(SmolVLA-450M 백본)</a></li>
+<li><a href="#smolvla-450m">소거 실험(SmolVLA-450M 평균 성공률)</a></li>
+<li><a href="#_9">핵심 결과 해석</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

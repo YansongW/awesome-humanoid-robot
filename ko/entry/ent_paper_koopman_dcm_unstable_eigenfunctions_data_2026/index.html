@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Koopman DCM: Unstable Eigenfunctions as Data-driven Representations for Legged Balancing · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Koopman DCM: Unstable Eigenfunctions as Data-driven Representations for Legged Balancing</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Koopman DCM: Unstable Eigenfunctions as Data-driven Representations for Legged Balancing</h1>
+      <p class="entry-name-en">Koopman DCM: Unstable Eigenfunctions as Data-driven Representations for Legged Balancing</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>In legged locomotion, divergent components of motion (DCMs) have emerged as characteristic states for balance control. They isolate the unstable mode of the dynamics but, in existing formulations, apply only to reduced models such as the linear inverted pendulum. In this study, we show how DCMs can be more generally formulated as Koopman eigenfunctions. Whereas Koopman analysis typically targets.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18760" target="_blank" rel="noopener">arXiv:2607.18760 Koopman DCM: Unstable Eigenfunctions as Data-driven Representations for Legged B</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 고전적 DCM(발산 운동 성분)을 완전한 로봇 동역학의 Koopman 고유함수로 재정의하고, 데이터 기반 방식으로 실제 로봇의 측정-행동 이력에서 직접 학습하여 단순화된 모델(예: LIP) 및 모델 파라미터(질량 중심 높이)에 대한 의존성을 제거한다. 저자는 바퀴형 이족 로봇 Cookie와 시뮬레이션 Unitree G1에서 이 방법을 검증했으며, 학습된 DCM은 ZMP 추적 및 외란 저항 균형 제어에서 기존 운동학적 DCM보다 우수했고 제약 MPC에 성공적으로 적용되었다.</p>
+<h2 id="_2">무엇이 바뀌었는가</h2>
+<p>전통적 DCM 제어의 핵심 가정은 질량 중심 높이가 일정하다는 것이며, 그 고유 주파수 ω = g / h 는 전적으로 모델 파라미터에 의해 결정된다. 이는 실제 로봇에서 종종 부정확하다. 특히 외전-내전 관절이 없어 횡방향 CoM을 다리 길이 변화로만 간접 제어해야 하는 Cookie와 같은 플랫폼에서는 모델 오차가 직접 제어 성능 손실로 이어진다. 본 논문이 실제로 바꾼 것은 DCM을 "모델에서 유도된 물리량"에서 "데이터 피팅된 Koopman 고유함수"로 전환하여 DCM의 동역학적 특성(고유값 ω 및 고유함수 ξ )이 이상화된 모델에 의해 강제되지 않고 실제 시스템 데이터에 의해 완전히 결정되도록 한 것이다.</p>
+<p>또 다른 핵심 전환은 Koopman 분석의 목표 선택에 있다. 기존 Koopman 방법은 주로 0에 가까운 고유값(보존량 또는 완만한 모드를 포착)에 주목했지만, 본 논문은 의도적으로 큰 양의 고유값을 가진 불안정한 고유쌍을 탐색한다. 이것이 바로 DCM의 본질이다. 시스템이 가장 빠르게 발산하는 방향을 설명하며, 이를 제어한다는 의미는 피드백을 통해 안정화하는 것이다. 이러한 "불안정 고유함수의 역이용" 아이디어는 Koopman 이론의 로봇 제어 적용에 새로운 방향을 제시한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">문제 정식화</h3>
+<p>DCM 학습을 ( ω , θ ) 에 대한 1차 비선형 최적화로 모델링한다. 여기서 ω 는 고유값(스칼라), θ 는 MLP 인코더 파라미터이다. 입력은 지연 임베딩된 측정-행동 이력이다:
+z_k = (y_{k-H}, u_{k-H}, …, y_{k-1}, u_{k-1}, y_k)</p>
+<h3 id="_5">두 가지 핵심 제약</h3>
+<ol>
+<li><strong>고유값 양성</strong>: ω &gt; 0 , 학습된 방향이 불안정(발산 성분)임을 보장한다.</li>
+<li><strong>DCM 선형 동역학 제약</strong>: ξ̇_θ = ω(ξ_θ - u) , 이 제약은 제어 입력 u 를 상태와 무관한 선형 결합으로 제한하여 귀납적 편향으로 학습을 단순화한다.</li>
+</ol>
+<h3 id="_6">손실 함수 설계</h3>
+<ul>
+<li><strong>DCM 동역학 손실</strong>(영차 홀드 입력 하에서 이산화):
+  ξ_{k+1} = e^{ωδt}ξ_k + (1 - e^{ωδt})u_k
+  1차 손실 ℓ_DCM^(0) 은 잔차의 ℓ2 노름 기대값이다.</li>
+<li><strong>CoM 예측 손실</strong>: LIP 구조 ċ = ω(ξ - c) 를 활용하여 이산 재귀식:
+  c_{k+1} = e^{-ωδt}c_k + (1 - e^{-ωδt})(ξ_k + ξ_{k+1})/2
+  이 손실을 추가하여 자명한 최소값 (ω, ξ_θ) ≡ (0, 0) 을 피한다.</li>
+</ul>
+<h3 id="td">자격 흔적(TD(λ) 변형)</h3>
+<p>γ := e^{-ωδt} ∈ (0, 1) 을 정의하고 DCM 재귀식을 Bellman 방정식 형태로 재작성하여 TD(λ) 손실 ℓ_DCM^(λ) 및 ℓ_CoM^(λ) 을 도입하고, 실제 데이터에서 너무 낮은 고유값으로 수렴하는 문제를 완화한다. 최종 목적 함수:
+ℓ^(λ) = ℓ_DCM^(λ) + w_CoM · ℓ_CoM^(λ)</p>
+<h3 id="mpc">MPC 적용</h3>
+<p>횡방향 보행 작업을 유한 시간 영역 N 단계 제약 선형 2차 최적 제어 문제로 공식화한다:
+- 상태: DCM ξ_k
+- 입력: ZMP u_k
+- 동역학: 이산 DCM 재귀식
+- 경성 제약: |ξ_k| ≤ ξ_max , |u_k| ≤ u_max (지지 다각형, ±1 정규화 단위)</p>
+<h3 id="_7">훈련 세부 사항</h3>
+<ul>
+<li>인코더: 2개 은닉층 MLP, 너비 128, tanh 활성화</li>
+<li>주파수 파라미터화: ω = exp(ω̃) 로 양성 보장</li>
+<li>최적화기: Adam, 학습률 3×10^{-4} , 배치 크기 1024 블록</li>
+<li>블록 샘플링: 각 반복에서 길이 (m+1) 의 블록 샘플링, m = 5H , 세그먼트 경계를 넘는 블록은 폐기</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>DCM의 Koopman 고유함수 재정의</strong>: DCM을 모델 기반 물리량에서 데이터 기반 Koopman 고유함수로 처음 전환하여 DCM의 동역학적 특성이 실제 시스템 데이터에 의해 완전히 결정되도록 한다. 이 혁신은 기존 DCM의 단순화된 모델(LIP) 및 정밀 모델 파라미터(질량 중심 높이)에 대한 의존성을 깨고, 복잡한 로봇 플랫폼(예: 외전-내전 관절이 없는 바퀴형 이족)에 더 정확한 균형 제어 표현을 제공한다.</p>
+</li>
+<li>
+<p><strong>불안정 고유쌍의 의도적 탐색</strong>: 기존 Koopman 분석이 0에 가까운 고유값에 주목한 것과 달리, 본 논문은 큰 양의 고유값을 가진 불안정 고유쌍을专门 탐색한다. 이 반직관적 선택은 DCM의 본질, 즉 시스템이 가장 빠르게 발산하는 방향을 포착하고 피드백 제어를 통해 안정화한다. 이러한 "역이용" 아이디어는 Koopman 이론의 제어 분야 적용에 새로운 패러다임을 제공한다.</p>
+</li>
+<li>
+<p><strong>CoM 예측 손실을 정규화로 사용</strong>: CoM 예측 손실을 도입하여 DCM 손실이 자명한 최소값 (ω, ξ_θ) ≡ (0, 0) 에 빠지는 것을 효과적으로 방지한다. 이 설계 결정은 LIP 모델에서 그 필요성이 검증되었다. w_CoM = 0.1 일 때 학습된 ω̂ = 0.352 rad/s 는 실제 값 5.0 rad/s 보다 훨씬 낮았지만, w_CoM = 1 일 때 4.975 rad/s 로 회복되었다(표 내 수치 계산, 상대 오차 0.5%).</p>
+</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="lip">LIP 모델 검증</h3>
+<p>LIP 모델에서 학습 파이프라인을 검증했으며, 실제 고유 주파수 ω* = 5.0 rad/s 이다. 훈련은 ω̂ = 4.9992 rad/s 로 수렴했고, 상대 오차는 1.6×10^{-4} 이다(표 내 수치 계산). 최종 검증 잔차: ℓ_DCM^(0) = 5.4×10^{-9} , ℓ_CoM^(0) = 3.9×10^{-9} .</p>
+<h3 id="com-_0-10-rads-3">CoM 가중치 스캔(ω_0 = 1.0 rad/s, 3개 시드)</h3>
+<table>
+<thead>
+<tr>
+<th>w_CoM</th>
+<th>ω̂ (rad/s)</th>
+<th>검증 손실</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>0.352 ± 0.007</td>
+<td>7.35×10^{-7}</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4.975 ± 0.003</td>
+<td>1.30×10^{-8}</td>
+</tr>
+<tr>
+<td>10</td>
+<td>4.878 ± 0.021</td>
+<td>7.46×10^{-8}</td>
+</tr>
+<tr>
+<td>100</td>
+<td>3.800 ± 0.051</td>
+<td>4.66×10^{-6}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cookie-zmp">실제 로봇(Cookie) ZMP 추적</h3>
+<table>
+<thead>
+<tr>
+<th>진폭 A</th>
+<th>kinematic</th>
+<th>H=5</th>
+<th>H=10</th>
+<th>H=20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>0.11 ± 0.06</td>
+<td>0.13 ± 0.05</td>
+<td><strong>0.08 ± 0.05</strong></td>
+<td>0.09 ± 0.05</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>0.12 ± 0.01</td>
+<td>0.08 ± 0.01</td>
+<td><strong>0.05 ± 0.01</strong></td>
+<td>0.06 ± 0.01</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>0.20 ± 0.06</td>
+<td>0.11 ± 0.02</td>
+<td>0.11 ± 0.02</td>
+<td><strong>0.10 ± 0.01</strong></td>
+</tr>
+</tbody>
+</table>
+<p>H=10이 대부분의 경우 최적이며, 이는 LIP 모델의 시야 둔감성 결론과 달라 실제 로봇 데이터에 더 많은 혼동 요인이 있음을 시사한다.</p>
+<h3 id="mpc-unitree-g1-pybullet">MPC 시뮬레이션(Unitree G1, PyBullet)</h3>
+<p>훈련 고유값 ω̂ = 1.91 rad/s, MPC 파라미터 N = 50 (0.5 s 전방 예측), Q = R = Q_T = 1 , ξ_max = 0.85 , u_max = 1 .</p>
+<table>
+<thead>
+<tr>
+<th>제어기</th>
+<th>낙상률</th>
+<th>ZMP 추적 오차</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비례 DCM</td>
+<td>33% (30/90)</td>
+<td>0.73 (0.48, 1.11)</td>
+</tr>
+<tr>
+<td>MPC</td>
+<td>0% (0/90)</td>
+<td>0.59 (0.47, 0.76)</td>
+</tr>
+</tbody>
+</table>
+<p>MPC는 90회 시험에서 낙상이 0회였고, ZMP 추적 오차가 19% 감소했다(표 내 수치 0.73→0.59 계산). 이는 학습된 DCM의 제약 최적화 제어에서의 효율성을 검증한다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li><strong>입력 결합 제한</strong>: 입력 결합이 선형이고 상태와 동일한 비율 ω 로 고정되었다. 더 일반적인 결합 ∇ξ·B(x) 및 더 일반적인 DCM 동역학(예: 가변 높이 역진자에서의 쌍선형 형태 ξ̇ = ωξ - λz )은 향후 작업으로 남겨둔다.</li>
+<li><strong>ZMP 구동 미모델링</strong>: DCM 피드백 관례를 따라 ZMP가 순간적으로 제어된다고 가정하고 ZMP의 구동 방식을 모델링하지 않았다. 향후 ZMP 측 요인을 피팅하여 입력 결합을 풍부하게 할 수 있다.</li>
+<li><strong>시뮬레이션-하드웨어 전이 미수행</strong>: 본 논문은 실제 로봇에서 직접 훈련하여 도메인 적응 문제를 회피했다. 시뮬레이션에서 훈련 후 하드웨어로 전이하는 가능성은 검증하지 않았다.</li>
+<li><strong>LIP 모델 결론의 일반화</strong>: LIP 모델에서는 지연 임베딩 시야가 둔감했지만 실제 로봇에서는 H=10 이 최적이었다. 이는 단순화된 모델의 결론이 실제 시스템에 직접 일반화될 수 없음을 보여준다.</li>
+</ul>
+<h2 id="_11">공학적 시사점</h2>
+<ul>
+<li><strong>데이터 품질 먼저 확인</strong>: 훈련 데이터는 비례 DCM 피드백 법칙 하에서 수집된 폐루프 데이터이며, 관측 DCM은 운동학적 LIP 추정 c + ċ/ω 이다. 이는 학습된 ξ_θ 가 암시적으로 피드백 제어기의 행동 패턴을 계승함을 의미한다. 재현 시 데이터 수집 전략이 논문과 일치하는지 확인해야 하며, 그렇지 않으면 학습된 고유함수가 실제 시스템 특성에서 벗어날 수 있다.</li>
+<li><strong>CoM 손실 가중치는 핵심 하이퍼파라미터</strong>: 실험에서 w_CoM = 1 이 최적 선택이며, 너무 작으면(0.1) 고유값이 심각하게 과소평가되고, 너무 크면(100) 과적합이 발생한다. 재현 시 w_CoM = 1 에서 시작하고 학습된 ω̂ 가 물리적 직관 값에 가까운지 모니터링하는 것이 좋다.</li>
+<li><strong>지연 임베딩 시야는 플랫폼별 튜닝 필요</strong>: LIP 모델에서는 시야가 둔감했지만 실제 로봇에서는 H=10 이 최적이었다. 다른 플랫폼에서는 H ∈ {5, 10, 20} 을 스캔하고 블록 길이 m = 5H 와 훈련 데이터 양의 일치를 확인하는 것이 좋다.</li>
+<li><strong>MPC 적용 시 제약 설정 주의</strong>: ξ_max = 0.85 및 u_max = 1 은 G1 플랫폼에 맞게 튜닝된 값이다. 플랫폼을 바꿀 때는 지지 다각형 및 운동학적 제한에 따라 재보정해야 한다. QP 솔버(ProxQP)는 N = 50 에서 100 Hz 제어 주파수를 충족하는 실시간 성능을 보였지만 계산 여유는 제한적이다.</li>
+<li><strong>가장 쉽게 빠지는 함정</strong>: 고유값 양성 제약은 ω = exp(ω̃) 파라미터화로 구현되지만, 훈련 초기 ω̃ 가 진동하여 ω 가 너무 크거나 작아질 수 있다. ω̃ 에 그래디언트 클리핑을 적용하고 훈련 중 ω 의 진화를 모니터링하여 발산을 방지하는 것이 좋다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_principle_zero_moment_point/">영모멘트 점(ZMP)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_model_predictive_control/">모델 예측 제어(MPC)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_koopman_dcm_unstable_eigenfunctions_data_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_zero_moment_point/">
+          <span class="entry-type">원리</span>
+          <h3>영모멘트 점(ZMP)</h3>
+          <p>지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_model_predictive_control/">
+          <span class="entry-type">방법</span>
+          <h3>모델 예측 제어(MPC)</h3>
+          <p>예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇이 바뀌었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">문제 정식화</a></li>
+<li><a href="#_5">두 가지 핵심 제약</a></li>
+<li><a href="#_6">손실 함수 설계</a></li>
+<li><a href="#td">자격 흔적(TD(λ) 변형)</a></li>
+<li><a href="#mpc">MPC 적용</a></li>
+<li><a href="#_7">훈련 세부 사항</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#lip">LIP 모델 검증</a></li>
+<li><a href="#com-_0-10-rads-3">CoM 가중치 스캔(ω_0 = 1.0 rad/s, 3개 시드)</a></li>
+<li><a href="#cookie-zmp">실제 로봇(Cookie) ZMP 추적</a></li>
+<li><a href="#mpc-unitree-g1-pybullet">MPC 시뮬레이션(Unitree G1, PyBullet)</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

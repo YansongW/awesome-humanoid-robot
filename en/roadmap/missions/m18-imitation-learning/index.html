@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M18 · Imitation Learning Training and Deployment: 50 Demonstrations Yield a Cup-Grasping Policy · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M18 · Imitation Learning Training and Deployment: 50 Demonstrations Yield a Cup-Grasping Policy</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m18-imitation-learning-training-and-deployment-50-demonstrations-yield-a-cup-grasping-policy">M18 · Imitation Learning Training and Deployment: 50 Demonstrations Yield a Cup-Grasping Policy</h1>
+<p><strong>Global Position</strong>: After the M17 teleoperation dataset is built and before M19 end-to-end task integration. Input is ≥50 demonstration episodes collected under a unified protocol (multi-view images + joint states + actions + timestamps, Stage 3 criteria), output is a <strong>grasping policy with ≥70% success rate under a fixed real-robot protocol</strong> (weights + model card + measured deployment latency), which M19 integrates as a "grasping skill" into the end-to-end task chain.</p>
+<p><strong>Prerequisites</strong>: <a href="/en/roadmap/missions/m17-teleop-data/">M17 · Teleoperation and Data Collection</a> completed (episode format frozen, training/validation split done, data quality spot checks passed); perception calibration meets standards (Stage 3 criteria: cup 3D positioning error ≤1 cm); a GPU capable of training vision policies (VRAM requirements verified against the chosen official repository documentation).</p>
+<p>Theoretical background: <a href="/entry/ent_method_behavior_cloning/">Behavior Cloning</a>, <a href="/entry/ent_method_action_chunking_transformer/">ACT</a>, <a href="/entry/ent_method_diffusion_policy/">Diffusion Policy</a> are the three core cards for this task; systematic discussion is in <a href="/en/wiki/chapters/chapter-18/">Chapter 18 Imitation Learning and Policy Learning</a>, data format and ecosystem in <a href="/en/wiki/chapters/chapter-21/">Chapter 21 Data Infrastructure</a> and <a href="/en/wiki/appendices/appendix-b/">Appendix B Datasets</a>.</p>
+<h2 id="step-1-baseline-firstrun-the-training-pipeline-with-behavior-cloning">Step 1: Baseline First—Run the Training Pipeline with Behavior Cloning</h2>
+<p>【What to do】First, use the simplest <a href="/entry/ent_method_behavior_cloning/">Behavior Cloning</a> (BC) to run through the complete pipeline: data loading → image + state encoding → per-frame action regression → training → validation loss → <strong>open-loop playback evaluation</strong> (plot the model's predicted action sequence against the ground truth on the same graph, comparing joint by joint). Keep the configuration simple: lightweight visual backbone + regression head. The goal is to get the pipeline running, not to achieve high metrics.</p>
+<p>【Why】BC has two irreplaceable values. First, <strong>pipeline validation</strong>: any bug in data loading, temporal alignment, normalization, or evaluation scripts is cheapest to expose with BC—if you go straight to ACT and something goes wrong, you won't know if the method or the pipeline is at fault. Second, <strong>baseline</strong>: BC's numbers are the foundation for all subsequent methods. How much better ACT/Diffusion Policy is than BC must be evaluated on the same data and with the same protocol. BC's theoretical weakness is compounding error: during per-frame regression, small errors at each frame push the robot out of the training distribution, and errors accumulate like a snowball—this is exactly what the next two steps aim to suppress, see <a href="/en/wiki/chapters/chapter-18/">Chapter 18</a>.</p>
+<p>【How to analyze your situation】If BC validation loss decreases but open-loop playback clearly deviates: first check temporal alignment (a 1–2 frame misalignment between image frames and action frames is the most common hidden issue in collected data), then check if action normalization is reversed. BC's real-robot success rate is usually low, so don't dwell on it—once the pipeline works and numbers are recorded, move to Step 2.</p>
+<h2 id="step-2-actaction-chunking-to-suppress-compounding-error">Step 2: ACT—Action Chunking to Suppress Compounding Error</h2>
+<p>【What to do】Switch to <a href="/entry/ent_method_action_chunking_transformer/">ACT (Action Chunking Transformer)</a>: the model predicts an action chunk of ~100 steps at once, and during execution, temporal ensemble applies weighted smoothing to overlapping chunks. Training configuration <strong>starts with the official repository defaults</strong> (learning rate, epochs, chunk length, backbone all left unchanged); if M17 data is organized according to the <a href="/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA</a> data format, its data pipeline can be reused directly. During training, monitor the validation curve: if training loss decreases while validation loss increases, it's overfitting—stop early.</p>
+<p>【Why】Action chunking is the first mainstream approach to counter compounding error: looking at a future segment instead of a single frame absorbs per-frame jitter through intra-chunk averaging, significantly reducing out-of-distribution drift. ACT card claim: reports 80%–90% success rate on fine-grained bimanual tasks (source: ACT card; task and data scale differ from your scenario, use only as an order-of-magnitude reference). Temporal ensemble uses "multiple prediction votes" for execution smoothing, at the cost of reduced inference frequency.</p>
+<p>【How to analyze your situation】With 50–100 demonstrations: start with the official default chunk length; don't increase it immediately—longer chunks require more data. When wrist/first-person views are missing, ACT's performance on fine alignment degrades noticeably; revisit M17's view coverage. Three strategies for overfitting: early stopping, image data augmentation (translation/color jitter), and targeted data collection in Step 6.</p>
+<h2 id="step-3-diffusion-policywhen-multiple-valid-solutions-exist-for-the-same-situation">Step 3: Diffusion Policy—When Multiple Valid Solutions Exist for the Same Situation</h2>
+<p>【What to do】Run <a href="/entry/ent_method_diffusion_policy/">Diffusion Policy</a>: model the <strong>distribution</strong> of action sequences using a denoising diffusion process instead of point regression, iteratively sampling a segment of actions from noise. Again, start with the official repository defaults and perform a comparative experiment with ACT using <strong>the same data and the same split</strong>, recording validation loss, open-loop playback error, and real-robot results in three columns.</p>
+<p>【Why】Regression methods inherently struggle with multimodal actions: if half the demonstrations go "around the left" and half "around the right," regression learns an average "straight through the middle" action; diffusion modeling directly represents multimodal distributions, and sampling any mode yields a valid solution (see the card). The cost is higher training and inference overhead: multi-step denoising means higher on-robot inference latency, which must be measured during deployment (Step 5). Empirical anchor: ToddlerBot runs a 300M parameter diffusion policy on Jetson Orin NX 16GB with ~100 ms on-robot inference (source: <a href="https://arxiv.org/html/2502.00893v2">ToddlerBot paper</a>).</p>
+<p>Quick comparison of the two methods (details in their respective cards):</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>ACT</th>
+<th>Diffusion Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Action modeling</td>
+<td>Chunked regression + temporal ensemble smoothing</td>
+<td>Denoising diffusion modeling of action distribution</td>
+</tr>
+<tr>
+<td>Multimodal actions</td>
+<td>Weak (regression tends to average)</td>
+<td>Strong (samples from distribution)</td>
+</tr>
+<tr>
+<td>On-robot inference</td>
+<td>Single forward pass, low latency</td>
+<td>Multi-step denoising, high latency (needs measurement)</td>
+</tr>
+<tr>
+<td>Preferred scenario</td>
+<td>Single solution, quick start</td>
+<td>Multiple valid solutions for the same situation</td>
+</tr>
+</tbody>
+</table>
+<p>【How to analyze your situation】If the task has a single solution (grasping a fixed cup at a fixed position): ACT is usually sufficient; the benefit of diffusion is small and the cost is high, so this step can be skipped, but it's recommended to run it at least once as a comparison. If the task has multiple grasping methods/paths: perform a thorough comparative experiment. When real-robot results are similar between the two methods, choose the faster inference one—on-robot frequency equals stability.</p>
+<h2 id="step-4-evaluation-protocoloffline-screening-closed-loop-decides">Step 4: Evaluation Protocol—Offline Screening, Closed-Loop Decides</h2>
+<p>【What to do】Establish a two-level evaluation and solidify it into scripts:</p>
+<ol>
+<li><strong>Offline</strong>: Validation loss is only a coarse filter; <strong>open-loop playback</strong> is mandatory—for each candidate model, pick 5–10 validation episodes, overlay predicted actions with ground truth on plots, render videos, and inspect each one manually;</li>
+<li><strong>Closed-loop</strong>: Fixed real-robot protocol—fixed object, fixed position grid (e.g., 3×3, 5 cm spacing, engineering suggestion, verify against your task), repeat at each grid point, total 20 trials recording success/failure; Stage 3 criteria: success rate ≥70%;</li>
+<li><strong>Failure taxonomy</strong>: Classify each failure into one of four categories and count—perception error (detection/segmentation error), localization error (pose deviation), grasp slip (contact but no grip), trajectory collision (knocking over object or hitting table).</li>
+</ol>
+<p>Each closed-loop trial is recorded as one row, with a script for automatic aggregation (fields can be added/deleted as needed):</p>
+<pre class="highlight"><code>trial_id,grid,success,failure_class,infer_ms,notes
+007,(2,1),fail,slip,96, Cup slipped at the moment of closure</code></pre>
+<p>【Why】Between "loss decreased" and "robot can grasp" lie three major obstacles: distribution shift, temporal alignment, and execution latency. Only a closed-loop real-robot protocol is the final judge; the value of a fixed protocol is reproducibility and horizontal comparability—without it, the effect of each change is a mystery. The failure taxonomy determines what to fix next: perception errors → add view/lighting data; localization errors → recheck calibration; slip → modify gripper or add approach segment data; collision → add obstacle scenarios. Evaluation methodology is detailed in <a href="/en/wiki/chapters/chapter-25/">Chapter 25 Robot Evaluation Systems</a>.</p>
+<p>【How to analyze your situation】20 trials is the minimum for a "publishable" result: a denser grid would take too long, and fewer trials would introduce too much statistical noise (one more success out of 20 is 5 percentage points). On evaluation day, record lighting, ambient temperature, and battery level—each of these three variables can individually account for a few percentage points of fluctuation.</p>
+<h2 id="step-5-edge-deployment-strategy-on-jetson-limiting-for-safety">Step 5: Edge Deployment – Strategy on Jetson, Limiting for Safety</h2>
+<p>[What to do] Deploy the policy to the onboard computing platform (typically <a href="/entry/ent_component_nvidia_jetson_agx_orin_2024/">Jetson AGX Orin</a>, see <a href="/en/roadmap/playbooks/compute-selection/">Compute Platform Selection Playbook</a> for tiered selection rationale), and reduce latency using methods from the <a href="/entry/ent_tech_on_device_vla_inference/">On-Device VLA Inference</a> card: quantization (FP16/INT8), inference engine optimization, and lowering input resolution. Then complete four tasks:</p>
+<ol>
+<li><strong>Frequency Matching</strong>: Measure end-to-end inference latency and determine the policy frequency (5–10 Hz is usually sufficient for manipulation tasks, source: Compute Platform Selection Playbook); policy output is handed off to the low-level high-frequency loop for tracking (proprietary QDD force control closed-loop at 250 Hz–1 kHz, same source);</li>
+<li><strong>Action Limiting</strong>: Policy output is sent only after passing through workspace soft limits (5–10° smaller than mechanical hard limits, M10 rule) and velocity limits;</li>
+<li><strong>Degradation Strategy</strong>: Inference timeout (e.g., &gt;2x control cycle, engineering recommended value) → maintain current pose; consecutive timeouts → release force and enter damping (M14 <a href="/en/roadmap/missions/m14-sim-to-real/">m14-sim-to-real.md</a> tiered);</li>
+<li><strong>Baseline Regression</strong>: Write the measured latency and closed-loop success rate from this deployment into the model card; any subsequent changes to limits, frequency, or quantization configuration must re-run the closed-loop protocol from Step 4 to take effect.</li>
+</ol>
+<p>[Why] Onboard inference cannot assume network availability: cloud inference with Wi-Fi jitter equals loss of control—latency, connectivity, and privacy are the three hard constraints for edge deployment (On-Device VLA Inference card). The policy is a "fallible black box"; limiting and degradation are the final line of defense to contain it, sharing the same safety logic as M20's protection mechanism checklist.</p>
+<p>[How to analyze your situation] ACT-level small models can usually run at sufficient frequency directly on Orin; for diffusion policies, quantize first then test. ToddlerBot's 300M diffusion policy runs at approximately 100 ms on Orin NX 16GB (toddlerbot.md archive), which can serve as an order-of-magnitude anchor. If latency is insufficient, cut in order: quantize → reduce resolution → reduce denoising steps/action chunk length; if still insufficient, evaluate a <a href="/entry/ent_component_nvidia_jetson_thor/">Jetson Thor</a> level platform. Configure CPU affinity and priority for the inference process separately to avoid competing for cores with the control process.</p>
+<h2 id="step-6-iterative-closed-loop-where-it-fails-add-data-there">Step 6: Iterative Closed-Loop – Where It Fails, Add Data There</h2>
+<p>[What to do] Establish a fixed iteration cadence: change only <strong>one variable</strong> per round (add one data type / tune one hyperparameter / swap one backbone), run the full "train → offline evaluation → 20 closed-loop trials" pipeline, and log it in the table:</p>
+<table>
+<thead>
+<tr>
+<th>Model Version</th>
+<th>Data Version</th>
+<th>Change</th>
+<th>Validation Loss</th>
+<th>Closed-Loop Success Rate</th>
+<th>Failure Category Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.0</td>
+<td>d1.0 (50 demos)</td>
+<td>BC baseline</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>v1.1</td>
+<td>d1.1 (+8 slip scenarios)</td>
+<td>Targeted data collection</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Use the DAgger approach for targeted data collection: reproduce the scenarios where the policy failed (e.g., slip in the top-right grid), teleoperate to collect 5–10 additional demonstrations for that scenario, and add them to the training set. Optional: use <a href="/entry/ent_benchmark_libero/">LIBERO</a> (short-horizon desktop benchmark with task suites + procedural scene variations) for simulation regression; test each change in simulation before deploying on the real robot.</p>
+<p>Synchronize the output of each iteration round to update the <strong>model card</strong>: data version, training configuration (code commit + key hyperparameters), offline/closed-loop metrics, measured deployment latency, and known failure scenarios—M19 integration and M20 change management both rely on the model card.</p>
+<p>[Why] The performance bottleneck in imitation learning is almost always data distribution, not model capacity: failure taxonomy tells you where the holes in the distribution are, and targeted data collection is the change with the highest return per unit time. Changing only one variable at a time + a version correspondence table is the only way to answer "why did the success rate drop from 75% to 60%" three months later. LIBERO's procedural scene variations can expose overfitting, and simulation regression keeps most "changes that make things worse" off the real robot (see <a href="/en/wiki/chapters/chapter-25/">Chapter 25</a>).</p>
+<p>[How to analyze your situation] Control targeted data collection to 10–20% of the total per round: too much dilutes the original distribution, too little has no effect. If the success rate stagnates for two rounds: review the failure category count—if perception errors account for more than half, the problem is in the data or calibration, not the policy; fixing the data is cheaper than continuing to tune parameters.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] BC baseline runs successfully; pipeline (loading/alignment/normalization/replay) verification is documented, with numbers kept as a control group.</li>
+<li>[ ] At least one version each of ACT and Diffusion Policy is trained; comparison table with same data and same split is archived.</li>
+<li>[ ] Real-robot fixed protocol (fixed objects + position grid + 20 trials) success rate ≥70%; raw records of success/failure and failure categories for each trial are complete.</li>
+<li>[ ] Failure taxonomy counts for all four categories are complete, with at least one round of "targeted data collection → retest" closed-loop record.</li>
+<li>[ ] Model card is documented: data version, training configuration, evaluation metrics, measured deployment latency.</li>
+<li>[ ] Training and evaluation scripts, along with configuration, are committed to the repository (reproducible with the same data version); closed-loop raw records are archived with the version.</li>
+<li>[ ] Edge deployment meets standards: measured inference latency satisfies policy frequency; action limiting and timeout degradation are verified via real-robot triggering.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training loss decreases, but real robot fails completely</td>
+<td>Distribution shift / misaligned image and action timestamps</td>
+<td>Open-loop replay, check timestamps frame by frame; verify clock synchronization during collection</td>
+</tr>
+<tr>
+<td>Jitter or jerkiness at action chunk boundaries</td>
+<td>Temporal ensemble not enabled or improper weighting / inference frequency too low</td>
+<td>Confirm temporal ensemble is active; measure end-to-end latency; increase chunk overlap</td>
+</tr>
+<tr>
+<td>Overfitting on small data (val loss rises early)</td>
+<td>Too little data / too many epochs</td>
+<td>Early stopping; image augmentation; go back to Step 6 for targeted data collection</td>
+</tr>
+<tr>
+<td>Real robot always off by a few centimeters</td>
+<td>Image compression/downsampling loses key details / extrinsic calibration drift</td>
+<td>Check data pipeline image transforms; recalibrate hand-eye</td>
+</tr>
+<tr>
+<td>Inference latency exceeds limit, control feels floaty</td>
+<td>Not quantized / input resolution too high / inference and control competing for CPU</td>
+<td>Quantize + inference engine optimization; reduce resolution; bind cores and set process priorities</td>
+</tr>
+<tr>
+<td>Success rate crashes after camera/lighting change</td>
+<td>Data distribution overfits to viewpoint/lighting</td>
+<td>Introduce viewpoint and lighting variations during collection; use LIBERO simulation regression first to expose issues</td>
+</tr>
+</tbody>
+</table>
+<h2 id="companion-reading">Companion Reading</h2>
+<ul>
+<li>Previous task: <a href="/en/roadmap/missions/m17-teleop-data/">M17 · Teleoperation and Data Collection</a></li>
+<li>Next task: <a href="/en/roadmap/missions/m19-e2e-task/">M19 · End-to-End Task Integration</a></li>
+<li>Theoretical background: <a href="/en/wiki/chapters/chapter-18/">Chapter 18 Imitation Learning and Policy Learning</a>, <a href="/en/wiki/chapters/chapter-21/">Chapter 21 Data Infrastructure</a>, <a href="/en/wiki/chapters/chapter-25/">Chapter 25 Robot Evaluation Systems</a></li>
+<li><a href="/en/roadmap/playbooks/compute-selection/">Compute Platform Selection Playbook</a> · <a href="/en/roadmap/stage-3-humanoid/">Stage 3 Overview</a> · <a href="/en/roadmap/index/">Roadmap Overview</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m17-teleop-data/">← Previous<span>M17 · Teleoperation and Data Collection: How Imitation Learning Data is Gathered</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m19-e2e-task/">Next →<span>M19 · End-to-End Task Integration: Hear the Command, Walk Over, Pick It Up</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m18-imitation-learning-training-and-deployment-50-demonstrations-yield-a-cup-grasping-policy">M18 · Imitation Learning Training and Deployment: 50 Demonstrations Yield a Cup-Grasping Policy</a><ul>
+<li><a href="#step-1-baseline-firstrun-the-training-pipeline-with-behavior-cloning">Step 1: Baseline First—Run the Training Pipeline with Behavior Cloning</a></li>
+<li><a href="#step-2-actaction-chunking-to-suppress-compounding-error">Step 2: ACT—Action Chunking to Suppress Compounding Error</a></li>
+<li><a href="#step-3-diffusion-policywhen-multiple-valid-solutions-exist-for-the-same-situation">Step 3: Diffusion Policy—When Multiple Valid Solutions Exist for the Same Situation</a></li>
+<li><a href="#step-4-evaluation-protocoloffline-screening-closed-loop-decides">Step 4: Evaluation Protocol—Offline Screening, Closed-Loop Decides</a></li>
+<li><a href="#step-5-edge-deployment-strategy-on-jetson-limiting-for-safety">Step 5: Edge Deployment – Strategy on Jetson, Limiting for Safety</a></li>
+<li><a href="#step-6-iterative-closed-loop-where-it-fails-add-data-there">Step 6: Iterative Closed-Loop – Where It Fails, Add Data There</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#companion-reading">Companion Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

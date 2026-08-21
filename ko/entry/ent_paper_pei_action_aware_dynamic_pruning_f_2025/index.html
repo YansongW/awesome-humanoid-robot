@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation</h1>
+      <p class="entry-name-en">Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.22093v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1051 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation (ADP), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science, The University of Sydney.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2509.22093" target="_blank" rel="noopener">Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2509.22093" target="_blank" rel="noopener">ADP source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>기존 VLA 모델은 시각적 중복을 줄여 추론 속도를 최적화하지만, 서로 다른 조작 단계에서의 중복 정도 차이는 무시합니다. ADP는 거친 조작 단계의 시각적 토큰 중복이 정밀 조작 단계보다 높으며, 이러한 중복이 동작 역학과 강한 상관관계가 있음을 관찰했습니다. 이를 위해 ADP는 게이팅 메커니즘을 도입하여 과거 동작 창을 활용해 토큰 유지 비율을 동적으로 조절함으로써 계산 효율과 인식 정밀도 사이의 균형을 달성합니다. LIBERO 스위트 및 실제 시나리오 실험에서 ADP는 OpenVLA-OFT에서 1.35배 가속을 구현하고, OpenVLA에서 25.8%의 성공률 향상을 달성하여 플러그 앤 플레이 방식의 고효율 로봇 정책으로 자리 잡았습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>핵심 관찰</strong>: 로봇 조작에서 거친 단계(예: 물체 접근)의 시각적 토큰 중복은 정밀 단계(예: 파지)보다 높으며, 중복 정도는 동작 역학(예: 속도, 가속도)과 강한 상관관계가 있습니다.</li>
+<li><strong>ADP 프레임워크</strong>: 두 가지 핵심 모듈로 구성됩니다:</li>
+<li><strong>텍스트 기반 토큰 선택</strong>: 언어 지시의 의미 정보를 활용하여 작업 관련 시각적 토큰을 선별하고, 무관한 계산을 줄입니다.</li>
+<li><strong>동작 인식 궤적 게이팅</strong>: 최근 동작 창(예: 과거 5프레임의 변위 및 각속도)을 기반으로 게이팅 신호를 생성하여 토큰 유지 비율을 동적으로 조정합니다. 예를 들어, 고속 운동 단계에서는 더 적은 토큰을 유지하고(높은 중복), 저속 정밀 조작 단계에서는 더 많은 토큰을 유지합니다(낮은 중복).</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>기준 모델</strong>: OpenVLA 및 그 변형 OpenVLA-OFT.</li>
+<li><strong>데이터셋</strong>: LIBERO 스위트(LIBERO-10, LIBERO-90 등 하위 집합 포함) 및 실제 세계 시나리오(예: 테이블 위 파지, 서랍 개폐).</li>
+<li><strong>평가 지표</strong>: FLOPs 감소율, 동작 추론 지연 시간(ms), 작업 성공률(%).</li>
+</ul>
+<h3 id="_5">핵심 수치 및 결론</h3>
+<ul>
+<li><strong>효율성 향상</strong>: OpenVLA-OFT에서 ADP는 <strong>1.35배</strong> 추론 가속을 구현하고, FLOPs를 <strong>28.7%</strong> 감소시킵니다.</li>
+<li><strong>성능 이득</strong>: LIBERO-10에서 ADP는 기준선(프루닝 없음) 대비 <strong>25.8%</strong> 의 성공률 향상을 달성합니다(62.3%에서 88.1%로).</li>
+<li><strong>일반화</strong>: 실제 시나리오에서 ADP는 5가지 조작 작업(예: 밀기, 당기기, 회전)에서 평균 성공률 <strong>91.2%</strong> 를 기록하며, 전체 모델보다 2.1%만 낮지만 지연 시간은 <strong>32%</strong> 감소합니다.</li>
+<li><strong>플러그 앤 플레이</strong>: ADP는 경량 플러그인으로 기존 VLA 모델에 직접 통합할 수 있으며, 재훈련이 필요 없습니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>ADP는 동작 인식 동적 프루닝을 통해 조작 단계 차이를 VLA 효율 최적화에 처음으로 반영하여, 계산 자원이 제한된 로봇 플랫폼에서 정밀도와 속도의 파레토 개선을 달성했습니다. 향후 연구는 더 세분화된 동작 역학 모델링(예: 힘 피드백) 및 다중 모달 게이팅 융합을 탐구할 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        <div class="relations-column">
+          <h3>들어오는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <a href="/ko/entry/ent_paper_adp_adversarial_dynamics_prior_2026/">ADP: Adversarial Dynamics Priors for Physically Grounded Humanoid Locomotion</a>
+      <span class="rel-arrow">→</span>
+      <span class="rel-pill">언급</span>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_pei_action_aware_dynamic_pruning_f_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_adp_adversarial_dynamics_prior_2026/">
+          <span class="entry-type">논문</span>
+          <h3>ADP: Adversarial Dynamics Priors for Physically Grounded Humanoid Locomotion</h3>
+          <p>arXiv:2607.03454v1 Announce Type: new Abstract: In this paper, we propose Adversarial Dynamics…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">핵심 수치 및 결론</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

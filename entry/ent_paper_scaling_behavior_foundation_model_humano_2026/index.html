@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scaling Behavior Foundation Model for Humanoid Robots · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Scaling Behavior Foundation Model for Humanoid Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Scaling Behavior Foundation Model for Humanoid Robots</h1>
+      <p class="entry-name-en">Scaling Behavior Foundation Model for Humanoid Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一套面向人形机器人的可扩展行为基础模型（BFM）训练体系，通过协调全局运动跟踪学习范式、在线策略数据与参考动作的协同缩放、以及 Humanoid Transformer 架构三大组件，系统研究了 BFM 的缩放行为。作者在 Unitree G1 平台上验证了该方法，相比现有控制器在全局跟踪误差上降低 82%（由表内数值 0.5674→0.0798 计算），并揭示了同质与异质数据缩放、模型容量与潜在空间结构化之间的关键规律。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.15163" target="_blank" rel="noopener">arXiv:2607.15163 Scaling Behavior Foundation Model for Humanoid Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>人形机器人全身控制长期困于任务特定奖励工程，每个新行为都要重新设计奖励函数，这从根本上限制了跨场景泛化。本文真正改变的是将“缩放”这一 LLM 领域的核心方法论引入人形控制，并给出了可操作的配方——不是零散的技巧堆砌，而是把学习范式、数据构成、模型架构三者作为统一系统来协调。此前 SONIC 等工作的扩展研究只是初步结论，本文则通过行为覆盖分析（K-Means 占用率）将数据缩放拆解为同质（XXS→S，占用率 0.9365→0.9365）与异质（S→L，占用率 0.9365→0.9995）两种机制，证明单纯增加动作量收益甚微，行为覆盖扩展才是性能跃升的关键。</p>
+<p>另一个重要改变在于对“全局坐标系运动跟踪”的坚持。现有方法多采用局部姿态跟踪或解耦根运动与姿态跟踪，导致前进与原地踏步不可区分、误差逐帧传播。本文以全局框架下整体全身轨迹复现为统一代理任务，配合八种控制模式掩码（从 Root 单连杆到 Whole-Body 14 连杆），使单一策略天然支持部署时的全局与局部控制切换，无需修改机器人原始感官输入。这为 BFM 预训练与下游任务适配之间提供了更干净的接口抽象。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">问题形式化与学习范式</h3>
+<ul>
+<li>将人形控制建模为 MDP，行为定义为本体感觉状态与动作的轨迹，排除目标状态（视为外部规范）。</li>
+<li>采用运动跟踪作为统一代理任务，要求复现全局坐标系下整体全身轨迹，而非仅局部姿态。</li>
+</ul>
+<h3 id="_4">状态与架构设计</h3>
+<ul>
+<li>非对称 actor-critic：Actor 状态为 (根角速度, 投影重力, 关节位置, 关节速度)；Critic 使用特权信息（根高度、连杆位姿、速度等），均在航向坐标系表达。</li>
+<li>控制接口：从掩码集 ℳ = {𝒎₀, …, 𝒎₇} 随机采样逐连杆掩码，指定八种控制模式（Root、Bimanual、Root-and-Hand、End-Effector、Root-and-End-Effector、Upper-Body、Root-and-Upper-Body、Whole-Body），激活连杆数从 1 到 14。</li>
+</ul>
+<h3 id="_5">奖励与训练稳定性</h3>
+<ul>
+<li>加权和包含全局根高度（权重 0.5，σ_height=0.3）、全局身体位置（权重 1.0，σ_pos=0.3）、全局身体旋转（权重 1.0，σ_rot=0.4）、线速度（权重 1.0，σ_lin=1.0）、角速度（权重 1.0，σ_ang=3.14）、动作率惩罚（-0.1）、关节限制惩罚（-10.0）、生存奖励（1.0）。</li>
+<li>早停：任何连杆偏离参考运动超过 0.5 米即终止，并从终止点附近参考状态重新初始化（RSI）。</li>
+<li>自适应采样：初始权重 w₀=1，每 T_eval=200 轮评估，失败轨迹权重除以 β^T_eval（β=0.999），成功乘以 β^T_eval，裁剪至 [0.03, 1.0]。</li>
+</ul>
+<h3 id="_6">数据与缩放</h3>
+<ul>
+<li>训练数据聚合 1.02 亿帧（50 FPS）来自 8 个开源数据集，重定向采用两阶段流程（形状系数对齐 + 逐帧 IK）。</li>
+<li>在线策略缩放：宽度（GPU 数）与深度（rollout 长度）均在 32、48、64 三水平变化，保持每 GPU 环境数 8192 不变。</li>
+<li>参考动作缩放：五个嵌套子集 XXS（16,159,416 帧）、XS（32,230,197 帧）、S（48,321,234 帧）、M（71,130,505 帧）、L（101,979,598 帧）。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<p><strong>1. 行为覆盖的量化与双机制缩放分析</strong>：用 K-Means 聚类（从 L 分区采样 200,000 特征，2,000 簇）定义占用率，将数据缩放拆解为同质（XXS→S，占用率 0.9365→0.9365）与异质（S→L，占用率 0.9365→0.9995）。这是首次将“数据多样性”从“数据量”中解耦并量化，证明异质缩放才是性能提升主因——Ours 测试集上 S→L 带来显著提升，而 XXS→S 仅边际改进。</p>
+<p><strong>2. 全局坐标系运动跟踪 + 八种控制模式掩码</strong>：不同于现有方法解耦根运动与姿态跟踪，本文以全局框架下整体全身轨迹复现为统一目标，并通过预定义掩码集（而非伯努利独立激活）指定控制粒度。这使单一策略同时支持全局与局部控制，局部模式通过首帧校准对齐控制信号方向，避免修改原始感官输入，可解释为参考强制机制。</p>
+<p><strong>3. 无辅助目标的超球面潜在空间结构化</strong>：通过 RMSNorm 将目标嵌入投影到单位超球面，仅靠运动跟踪目标即涌现局部性（时间邻近命令映射到邻近表示）、全局组织（不同行为意图占据可区分区域）、鲁棒性（噪声水平 20 时成功率仅从 0.9836 降至 0.9400）。这为 BFM 的潜在空间可解释性提供了无需额外正则化目标的简洁方案。</p>
+<h2 id="_8">实验与结果</h2>
+<h3 id="3m-bfm">基准对比（全身控制，3M 参数 BFM）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>BONES Succ</th>
+<th>BONES G-MPKPE</th>
+<th>Ours Succ</th>
+<th>Ours G-MPKPE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GMT</td>
+<td>0.4407</td>
+<td>0.5674</td>
+<td>0.0855</td>
+<td>1.8693</td>
+</tr>
+<tr>
+<td>TWIST</td>
+<td>0.4226</td>
+<td>0.6212</td>
+<td>0.0831</td>
+<td>2.2744</td>
+</tr>
+<tr>
+<td>SONIC†</td>
+<td>0.9239</td>
+<td>0.1740</td>
+<td>0.5937</td>
+<td>0.5035</td>
+</tr>
+<tr>
+<td>BFM-Bym</td>
+<td>0.9644</td>
+<td>0.1005</td>
+<td>0.9709</td>
+<td>0.1224</td>
+</tr>
+<tr>
+<td>BFM-Local</td>
+<td>0.7286</td>
+<td>0.2281</td>
+<td>0.2553</td>
+<td>0.4731</td>
+</tr>
+<tr>
+<td>BFM-Global</td>
+<td>0.9677</td>
+<td>0.0798</td>
+<td>0.9776</td>
+<td>0.0915</td>
+</tr>
+</tbody>
+</table>
+<p>全局模式下 G-MPKPE 较 GMT 降低 82%（由表内数值 0.5674→0.0798 计算）。† 标注随机采样的 BONES 测试集可能与 SONIC 训练集重叠。</p>
+<h3 id="020">潜在空间鲁棒性（噪声水平 0→20）</h3>
+<table>
+<thead>
+<tr>
+<th>测试集</th>
+<th>Succ (0→20)</th>
+<th>G-MPKPE (0→20)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BONES</td>
+<td>0.9717→0.9646</td>
+<td>0.0835→0.1067</td>
+</tr>
+<tr>
+<td>Ours</td>
+<td>0.9836→0.9400</td>
+<td>0.0856→0.1387</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">架构缩放</h3>
+<ul>
+<li>Humanoid Transformer S（0.41M）到 XL（9.91M）：中等规模 M（3.00M）已达与显著更大 MLP（11.86M）相当或更好性能，进一步增大仅递减收益。</li>
+<li>增加模型容量导致不同控制模式的潜在表示收敛（图 11），但并非所有模式一致提升，部分模式在适中规模即早期饱和。</li>
+</ul>
+<h3 id="_10">在线策略缩放</h3>
+<ul>
+<li>最大配置（64 GPU、rollout 64）在几乎所有实验取得最佳性能；单独扩展宽度或深度并不总产生一致改进，需两者平衡。</li>
+</ul>
+<h2 id="_11">边界与局限</h2>
+<p>论文未明确列出除以下外的其他局限。作者承认统一控制接口是否是最合适抽象尚不清楚，以及这些模式应如何与未来高层策略集成。行为覆盖的量化度量本质上依赖用于构建共享聚类空间的参考运动选择，没有有限数据集能穷尽所有可能行为，稀有和长尾行为模式不可避免缺失。扩展研究相对 LLM 仍有限：人形控制缺乏成熟大规模预训练基础设施，且实际部署约束（需维持 50 Hz 以上推理频率并预留高层集成预算）限制参数量无限增长。作者未回答如何实现细粒度行为覆盖，而是提出策展有限训练集以实现数据效率与行为覆盖平衡这一更有意义的问题。</p>
+<h2 id="_12">工程启示</h2>
+<p>复现时最先核对三件事：<strong>数据分区的行为覆盖</strong>——用论文的 K-Means 流程（200,000 特征、2,000 簇）验证自己的训练集占用率是否达到 0.9995 级别，若低于 0.98 则性能提升将主要受限于数据多样性而非模型容量；<strong>在线策略的宽度-深度平衡</strong>——单独增加 GPU 数或 rollout 长度都可能无效甚至有害，建议先在 32/48/64 三水平网格搜索找到平衡点，再投入大规模训练；<strong>早停阈值 0.5 米与 RSI 的配合</strong>——这是训练稳定性的关键，若去掉 RSI，失败轨迹的梯度噪声会显著拖慢收敛。</p>
+<p>最容易踩坑的地方：一是控制模式掩码的采样方式，不要用伯努利独立激活（概率 0.5），必须用论文的八种代表性模式，否则策略会偏向某些链路组合；二是 RMSNorm 投影必须移除乘法缩放因子以得到单位超球面，否则潜在空间结构化性质（局部性、全局组织）会退化；三是评估时全局与局部模式的误差计算方式不同——局部模式去除水平平移偏移和航向差异（L-MPKPE），全局模式保留（G-MPKPE），混淆两者会导致对控制器性能的误判。部署到真实机器人时，高层推理需 TensorRT 加速维持 50 Hz，底层 Unitree SDK2 运行 200 Hz，两者间通过 Wi-Fi TCP 传输并按时间戳缓冲，延迟抖动会直接影响全局跟踪精度。</p>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.15163</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_gr00t_n1_an_open_foundation_mo_2025/">GR00T N1｜通用人形机器人的开放基础模型</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_scaling_behavior_foundation_model_humano_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_gr00t_n1_an_open_foundation_mo_2025/">
+          <span class="entry-type">论文</span>
+          <h3>GR00T N1｜通用人形机器人的开放基础模型</h3>
+          <p>GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">问题形式化与学习范式</a></li>
+<li><a href="#_4">状态与架构设计</a></li>
+<li><a href="#_5">奖励与训练稳定性</a></li>
+<li><a href="#_6">数据与缩放</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#3m-bfm">基准对比（全身控制，3M 参数 BFM）</a></li>
+<li><a href="#020">潜在空间鲁棒性（噪声水平 0→20）</a></li>
+<li><a href="#_9">架构缩放</a></li>
+<li><a href="#_10">在线策略缩放</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

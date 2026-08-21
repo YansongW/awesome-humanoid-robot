@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation</h1>
+      <p class="entry-name-en">FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.21744v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1009 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2510.21744" target="_blank" rel="noopener">FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2510.21744" target="_blank" rel="noopener">FORGE-Tree source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>장시간 영역 로봇 조작 작업은 비전-언어-행동(VLA) 정책에 여전히 도전적이며, 주로 궤적 드리프트와 노출 편향에서 비롯됩니다——모델이 고정 하이퍼파라미터로 전체 궤적을 노이즈 제거하여 미세한 기하학적 오류가 단계 간에 누적되고, 좁은 간격에서 추가 테스트 시간 계산 자원을 할당하는 메커니즘이 부족합니다. FORGE-Tree는 플러그 가능한 제어 계층으로, 단계 정렬 Diffusion Forcing(DF) 헤드와 테스트 시간 몬테카를로 트리 확산(MCTD)을 결합합니다. 고정 VLA 인코더에서 DF는 시간 단계를 하위 작업 단계와 정렬합니다. 추론 시 목표 세그먼트만 부분적으로 노이즈 제거하고 다른 토큰은 동결하여 궤적 최적화를 일련의 로컬 편집으로 변환합니다. 이후 MCTD를 통해 다음 최적화할 세그먼트를 선택하고, 장면 그래프가 확장 사전 정보와 기하학적 관계 인식 점수를 제공하여 트리형 노이즈 제거 구조를 형성하며, 성능은 검색 예산이 증가함에 따라 향상되고 실행된 접두사를 유지합니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>단계 정렬 Diffusion Forcing(DF) 헤드</strong>: 고정 VLA 인코더를 기반으로 DF는 노이즈 제거 시간 단계를 하위 작업 단계와 정렬합니다. 추론 시 목표 세그먼트만 부분적으로 노이즈 제거하고 나머지 토큰은 동결 상태를 유지하여 궤적 최적화를 일련의 로컬 편집으로 분해합니다.</li>
+<li><strong>몬테카를로 트리 확산(MCTD)</strong>: 트리 검색을 통해 다음 최적화할 세그먼트를 선택합니다. 장면 그래프는 확장에 사전 지식을 제공하고 rollout 단계에서 기하학적 관계 인식 점수를 수행하여 트리형 노이즈 제거 구조를 형성합니다. 이 메커니즘은 성능이 검색 예산(예: 계산 시간)이 증가함에 따라 향상되도록 허용하면서 실행된 접두사 궤적을 유지합니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>벤치마크</strong>: LIBERO 벤치마크에서 평가하며, 다양한 장시간 영역 조작 작업을 포함합니다.</li>
+<li><strong>기준 모델</strong>: 원시 VLA 정책 OpenVLA 및 Octo-Base와 비교합니다.</li>
+<li><strong>계산 예산</strong>: 비교 가능한 계산 예산에서 성능 일관성을 검증하며, 특히 장시간 영역 변형 작업에 중점을 둡니다.</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li><strong>성공률 향상</strong>: FORGE-Tree는 LIBERO에서 원시 VLA 기준선 대비 성공률을 13.4~17.2퍼센트 포인트 향상시킵니다.</li>
+<li><strong>계산 효율성</strong>: 비교 가능한 계산 예산에서 성능 이득이 안정적으로 유지되며, 장시간 영역 변형 작업에서 우위가 더 두드러집니다.</li>
+<li><strong>비디오 데모</strong>: 프로젝트 페이지 https://taco-group.github.io/FORGE-Tree/ 참조.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>FORGE-Tree는 플러그 가능한 제어 계층을 통해 장시간 영역 조작에서 궤적 드리프트와 노출 편향 문제를 해결하며, 트리형 노이즈 제거 구조가 테스트 시간에 계산 자원을 동적으로 할당하여 복잡한 작업에서 VLA 정책의 성공률과 견고성을 크게 향상시킵니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_huang_forge_tree_diffusion_forcing_t_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

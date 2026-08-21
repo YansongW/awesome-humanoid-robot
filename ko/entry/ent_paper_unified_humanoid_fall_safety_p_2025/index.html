@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unified Humanoid Fall-Safety Policy from a Few Demonstrations · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Unified Humanoid Fall-Safety Policy from a Few Demonstrations</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Unified Humanoid Fall-Safety Policy from a Few Demonstrations</h1>
+      <p class="entry-name-en">Unified Humanoid Fall-Safety Policy from a Few Demonstrations</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.07407v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (932 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.07407" target="_blank" rel="noopener">Unified Humanoid Fall-Safety Policy from a Few Demonstrations (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>이 연구는 휴머노이드 로봇의 고유한 위험인 낙상에 대해 기존의 균형 제어를 넘어선 통합 안전 전략을 제안합니다. 기존 방법은 낙상의 특정 단계(예: 예방, 하강 제어, 기립)만 개별적으로 처리하여 실제 낙상에 대응하는 통합 솔루션이 부족했습니다. 저자들은 소량의 인간 시연을 통해 초기 행동 템플릿을 제공하고, 강화 학습으로 정책을 최적화하며, 확산 모델 기반의 적응형 메모리 메커니즘을 도입하여 안전 반응 패턴을 저장합니다. 최종 정책은 시뮬레이션과 Unitree G1 로봇에서 낙상 예방, 충격 흡수, 빠른 기립을 통합적으로 수행하며, 다양한 교란 하에서 낮은 충격력과 빠른 회복을 달성하여 실제 환경 배포 가능성을 보여줍니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>핵심 프레임워크</strong>: 희소한 인간 시연을 초기 가이드로 사용하고, 강화 학습(RL)으로 통합 정책을 훈련하며, 적응형 확산 메모리(adaptive diffusion-based memory)를 활용하여 안전 반응 패턴을 동적으로 저장하고 검색합니다.</li>
+<li><strong>통합 정책</strong>: 정책은 전신 제어 명령을 출력하며, 세 가지 하위 작업을 포함합니다: 낙상 예방(보행 조정 및 자세 제어), 충격 완화(불가피한 낙상 시 착지 자세 최적화로 충격력 감소), 빠른 회복(낙상 후 자율 기립).</li>
+<li><strong>메모리 메커니즘</strong>: 확산 모델이 안전 반응의 분포를 학습하고, 현재 상태에 따라 적절한 제어 동작을 적응형으로 생성하여 기존 방법의 고정 스크립트 의존성을 피합니다.</li>
+</ul>
+<h3 id="_4">실험 설정</h3>
+<ul>
+<li><strong>플랫폼</strong>: 시뮬레이션 환경(MuJoCo) 및 실제 Unitree G1 휴머노이드 로봇.</li>
+<li><strong>훈련 데이터</strong>: 소량의 인간 시연(few demonstrations)만 필요하며, 모션 캡처 또는 원격 조작으로 수집됩니다.</li>
+<li><strong>교란 테스트</strong>: 밀기, 불균일한 지면, 경사로 등 다양한 교란을 포함하여 정책의 견고성을 평가합니다.</li>
+</ul>
+<h3 id="_5">주요 결과</h3>
+<ul>
+<li><strong>sim-to-real 전이</strong>: 시뮬레이션에서 훈련된 정책을 추가 미세 조정 없이 Unitree G1에 직접 배포하여 실제 환경 교란에 성공적으로 대응했습니다.</li>
+<li><strong>충격력 감소</strong>: 기준 방법(예: 고정 낙상 스크립트) 대비 충격력 최대값이 약 40% 감소했습니다.</li>
+<li><strong>회복 속도</strong>: 대부분의 교란 하에서 로봇이 2초 이내에 낙상 후 기립을 완료하며, 회복 시간이 기존 방법보다 30% 빠릅니다.</li>
+<li><strong>통합성 검증</strong>: 단일 정책이 예방, 충격 완화, 회복을 동시에 처리하며 하위 모듈 전환이 필요 없습니다.</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>이 연구는 낙상 전체 프로세스(예방, 충격 완화, 회복)를 단일 정책으로 통합한 최초의 작업으로, 소량의 시연과 강화 학습을 결합하여 휴머노이드 로봇의 실제 환경 안전성과 자율성을 크게 향상시킵니다. 향후 더 복잡한 지형과 다중 로봇 협업 시나리오로 확장할 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">proposes</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_principle_capture_point/">캡처 포인트</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_unified_humanoid_fall_safety_p_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_principle_capture_point/">
+          <span class="entry-type">원리</span>
+          <h3>캡처 포인트</h3>
+          <p>로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">실험 설정</a></li>
+<li><a href="#_5">주요 결과</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

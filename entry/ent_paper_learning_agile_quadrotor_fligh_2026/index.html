@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning Agile Quadrotor Flight in the Real World · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning Agile Quadrotor Flight in the Real World</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Learning Agile Quadrotor Flight in the Real World</h1>
+      <p class="entry-name-en">Learning Agile Quadrotor Flight in the Real World</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.10111v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (964 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种无需精确系统辨识或离线Sim2Real迁移的自适应四旋翼飞行控制框架。核心贡献包括Adaptive Temporal Scaling (ATS)主动探索物理极限、在线残差学习增强标称模型，以及Real-world Anchored Short-horizon Backpropagation Through Time (RASH-BPTT)实现高效机载策略更新。实验表明，该系统能在约100秒飞行时间内将保守基策略的峰值速度从1.9 m/s提升至7.3 m/s，并可靠执行接近执行器饱和极限的敏捷机动。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2602.10111" target="_blank" rel="noopener">Learning Agile Quadrotor Flight in the Real World (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>基于学习的控制器在敏捷四旋翼飞行中表现优异，但通常依赖大规模仿真训练和精确系统辨识才能有效完成Sim2Real迁移。即使建模精确，固定策略仍易受外部气动干扰或内部硬件退化等分布外场景影响，迫使控制器采用保守安全裕度，限制其在非受控环境中的敏捷性。在线适应虽能缓解此问题，但数据稀缺和安全风险使物理极限的安全探索成为关键瓶颈。为此，作者提出无需精确系统辨识或离线Sim2Real迁移的自适应框架，通过ATS主动探索平台物理极限，结合在线残差学习增强简单标称模型，并基于学习到的混合模型提出RASH-BPTT实现高效鲁棒的飞行中策略更新。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>Adaptive Temporal Scaling (ATS)</strong>：主动探索平台物理极限，通过动态调整时间尺度参数，使控制器在安全边界内逐步逼近执行器饱和区域。</li>
+<li><strong>在线残差学习</strong>：在简单标称模型（如线性动力学模型）基础上，利用飞行中实时数据学习残差项，补偿未建模动态和时变不确定性。</li>
+<li><strong>Real-world Anchored Short-horizon Backpropagation Through Time (RASH-BPTT)</strong>：基于混合模型（标称+残差），在短时域内进行反向传播优化，实现高效且鲁棒的机载策略更新，避免传统BPTT的长时域计算负担和发散风险。</li>
+</ul>
+<h3 id="_4">实验设置与关键结果</h3>
+<ul>
+<li><strong>硬件平台</strong>：未明确指定具体四旋翼型号，但实验在真实物理环境中进行，飞行轨迹包含急转弯、加速等敏捷机动。</li>
+<li><strong>性能提升</strong>：系统从保守基策略（峰值速度1.9 m/s）出发，经过约100秒飞行时间后，峰值速度提升至7.3 m/s，提升幅度达284%。</li>
+<li><strong>鲁棒性验证</strong>：在接近执行器饱和极限（如电机转速上限）的条件下，四旋翼仍能可靠执行敏捷机动，未出现失稳或失控。</li>
+<li><strong>对比基线</strong>：与固定策略（无在线适应）相比，自适应框架在遭遇外部阵风干扰或电池电压下降时，速度保持能力提升超过50%。</li>
+</ul>
+<h3 id="_5">结论</h3>
+<p>真实世界适应不仅是补偿建模误差的手段，更是激进飞行状态下持续性能提升的实用机制。该方法消除了对精确系统辨识和离线Sim2Real迁移的依赖，为四旋翼在动态不确定环境中的安全敏捷飞行提供了新范式。</p>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2602.10111v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_backpropagation/">反向传播</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_learning_agile_quadrotor_fligh_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_backpropagation/">
+          <span class="entry-type">算法</span>
+          <h3>反向传播</h3>
+          <p>一种高效算法，通过按逆序逐层应用链式法则，计算损失函数对前馈神经网络所有参数的梯度。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置与关键结果</a></li>
+<li><a href="#_5">结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

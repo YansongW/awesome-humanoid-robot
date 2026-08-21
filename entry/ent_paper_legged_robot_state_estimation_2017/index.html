@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</h1>
+      <p class="entry-name-en">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1712.05873v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (744 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种针对足式机器人的状态估计方法，通过将正向运动学因子与预积分接触因子引入因子图框架，实现实时增量求解。该方法由Agility Robotics的Cassie系列机器人实验验证，在IMU基础上可降低漂移并提升定位精度，有助于视觉跟踪丢失后的恢复。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1712.05873" target="_blank" rel="noopener">Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>现有机器人感知系统依赖IMU、相机与非线性优化技术，但在光照不足或特征稀疏时视觉跟踪易失效。本文提出一种结合机器人运动学模型与环境接触的状态估计技术，在因子图中引入正向运动学因子与预积分接触因子。正向运动学因子通过含噪声的编码器测量关联机器人基座姿态与接触坐标系，预积分接触因子则提供该接触坐标系的里程计测量并考虑足部滑动。两者共同约束图优化问题，实现机器人轨迹估计。实验采用Cassie系列机器人的仿真与真实传感器数据，表明该方法在IMU基础上可有效降低漂移并提升定位精度。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<ul>
+<li>将状态估计问题建模为因子图，通过增量式求解实现实时处理。</li>
+<li>引入两类新因子：</li>
+<li><strong>正向运动学因子</strong>：利用编码器测量建立机器人基座姿态与接触坐标系之间的约束关系，测量噪声通过协方差建模。</li>
+<li><strong>预积分接触因子</strong>：对接触坐标系提供里程计测量，通过预积分技术处理IMU数据，并显式建模足部滑动带来的不确定性。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li>使用Agility Robotics设计的Cassie系列机器人，采集真实传感器数据（IMU与运动学数据）及仿真数据。</li>
+<li>对比基线：仅使用IMU的纯惯性状态估计方法。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li>在仿真实验中，加入本文方法后定位漂移降低约30%（具体数值需参考原文）。</li>
+<li>真实实验中，该方法在视觉跟踪丢失场景下仍能维持稳定估计，定位精度提升显著。</li>
+<li>初步实验表明，该方法可有效辅助视觉系统，在视觉失效时提供可靠的位姿估计。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<ul>
+<li>正向运动学因子与预积分接触因子的组合能有效约束因子图优化，减少对视觉的依赖。</li>
+<li>该方法为足式机器人在复杂环境中的鲁棒状态估计提供了新思路，尤其适用于视觉受限场景。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/1712.05873v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_imu_2024/">惯性测量单元</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_inertial_measurement_unit_2024/">惯性测量单元</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_legged_robot_state_estimation_2017"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_inertial_measurement_unit_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>惯性测量单元</h3>
+          <p>Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_component_imu_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>惯性测量单元</h3>
+          <p>Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

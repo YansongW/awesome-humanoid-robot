@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences</h1>
+      <p class="entry-name-en">Deployable Human Preference Alignment in Robotics: Learning Representative Rewards from Diverse Human Preferences</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Aligning robot policies with human preferences is essential for deployment to diverse end users. In per-user alignment approach, preference feedback is often sparse, so learning becomes unstable and vulnerable to human preference noise, and a growing number of individualized policies makes validation difficult before deployment. A single shared policy approach to user alignment avoids this cost.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.12466" target="_blank" rel="noopener">arXiv:2607.12466 Deployable Human Preference Alignment in Robotics: Learning Representative Rewar</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 로봇 배포 환경에서 다양한 최종 사용자의 선호 정렬 문제를 해결하기 위해 PREC(Preference-based Reward Clustering) 프레임워크를 제안한다. PREC는 자기 예측 표현(SPR) 사전 학습을 통해 공유 궤적 인코더를 학습하고, 누출 EM 알고리즘을 사용하여 사용자를 클러스터링하고 각 클러스터의 대표 보상 모델을 공동으로 학습한 후, 각 클러스터에 대한 정책을 학습한다. 핵심 기여는 적은 수의 검증 가능한 정책 세트를 통해 희소하고 잡음이 많은 선호 피드백 하에서 개인화 정렬의 사회 복지 수준에 근접하는 것이다.</p>
+<h2 id="_2">무엇을 변화시키는가</h2>
+<p>로봇 선호 정렬은 오랫동안 두 가지 접근 방식 사이에서 흔들려 왔다: 사용자별 개별 모델링은 이질적 선호를 포착할 수 있지만, 희소 피드백 하에서 학습이 불안정하고 잡음에 취약하며, 규제가 엄격한 분야(예: FDA가 의료용 외골격을 II등급 의료기기로 분류)에서는 수많은 개인화 정책을 하나씩 검증하는 것이 거의 불가능하다. 단일 공유 정책은 배포가 간단하지만 소수 집단의 선호를 반드시 희생한다. PREC가 진정으로 변화시키는 것은 "정렬"을 개인 단위에서 "하위 집단 단위"로 재구성하는 것이다 — K개의 대표 보상 모델로 연속적 선호 공간을 커버하여, 배포자는 N개의 사용자 정책이 아닌 K개의 정책만 검증하면 되며, 동시에 단일 정책보다 훨씬 높은 선호 충실도를 유지한다.</p>
+<p>이러한 전환의 근본적 동기는 로봇 분야의 사용자 피드백이 NLP나 추천 시스템보다 훨씬 희소하고(사용자당 수십 개의 레이블에 불과), 잡음 유형이 복잡하다는 점(무작위, 근시안적, 오류, 건너뛰기, 동일)에 있다. PREC의 가정은 사용자 선호가 다양하지만 유한한 안정적 패턴으로 클러스터링될 수 있다는 것이다. 사용자 간 공유 표현 학습과 클러스터링을 통해 단일 사용자 데이터 부족을 보완하고, 검증 부담을 O(N)에서 O(K)로 줄일 수 있다.</p>
+<h2 id="_3">방법 분석</h2>
+<p>PREC는 세 단계로 구성되며, 핵심은 표현 학습과 잡음 레이블의 분리, 그리고 클러스터링과 보상 학습의 공동 최적화에 있다.</p>
+<h3 id="1-spr">1단계: 집단 수준 표현 학습(SPR 사전 학습)</h3>
+<ul>
+<li>모든 선호 레이블을 보류하고, 사용자 간 궤적을 집계하여 인코더 <span class="arithmatex">\( f_{\psi^{enc}}(s,a) \)</span>가 한 단계 상태 차이 <span class="arithmatex">\( s_{t+1} - s_t \)</span>를 예측하도록 학습한다.</li>
+<li>근거: 단일 사용자보다 훨씬 광범위한 상태-행동 관측을 활용하여, 표현 학습 단계에서 희소하고 잡음이 많은 레이블에 직접 의존하는 것을 피한다.</li>
+<li>구현: MLP가 상태-행동 쌍을 <strong>128</strong>차원 잠재 표현으로 매핑하며, 두 개의 은닉층 너비 <strong>256</strong>, ReLU, dropout 사용. AdamW 최적화 <strong>20</strong> epoch, 배치 크기 <strong>1024</strong>, 학습률 <strong>3×10⁻⁴</strong>, 가중치 감쇠 <strong>10⁻⁴</strong>. 사전 학습 후 예측기는 폐기되고 인코더는 동결된다.</li>
+</ul>
+<h3 id="2-em">2단계: 하위 집단 수준 디코더 학습(누출 EM)</h3>
+<ul>
+<li>인코더를 동결하고, 사용자 클러스터 할당과 각 클러스터의 보상 디코더 <span class="arithmatex">\( h_{\psi_k^{dec}} \)</span>를 공동으로 추론한다.</li>
+<li>보상 모델 분해: <span class="arithmatex">\( \hat{r}_{\psi_k}(s,a) = h_{\psi_k^{dec}}(f_{\psi^{enc*}}(s,a)) \)</span>.</li>
+<li>레이블 우도: 클러스터 k에서 레이블 <span class="arithmatex">\( y_{i,m} \)</span>의 우도는 <span class="arithmatex">\( P(y_{i,m} \mid \tau_{i,m}, Z_i=k, \psi_k) = \sigma(\hat{R}_{\psi_k}(\tau_{i,m}))^{y_{i,m}}(1-\sigma(\hat{R}_{\psi_k}(\tau_{i,m})))^{1-y_{i,m}} \)</span>.</li>
+<li><strong>E-step</strong>: 사후 책임 <span class="arithmatex">\( \gamma_{ik} = \frac{\rho_k \mathcal{L}_{ik}}{\sum_{k'=1}^{K}\rho_{k'} \mathcal{L}_{ik'}} \)</span>을 계산하고, 하드 할당 <span class="arithmatex">\( \hat{z}_i = \arg\max_k \gamma_{ik} \)</span>으로 변환한다.</li>
+<li><strong>누출 M-step</strong>: 가중치 <span class="arithmatex">\( \omega_{ik} = \max(\mathbf{1}[\hat{z}_i = k], \nu) \)</span>, <span class="arithmatex">\( \nu=0.05 \)</span>. 디코더는 가중 BCE를 최소화한다: <span class="arithmatex">\( \psi_k^{dec} \leftarrow \arg\min_{\psi_k^{dec}} \sum_{i=1}^{N} \omega_{ik} \sum_{m=1}^{M_i} \mathrm{BCE}(\sigma(\hat{R}_{\psi_k}(\tau_{i,m})), y_{i,m}) \)</span>.</li>
+<li>설계 근거: 하드 업데이트는 클러스터 내 사용자가 적을 때 과적합되고, 완전 소프트 업데이트는 클러스터 경계를 흐리게 만든다. 누출 계수 <span class="arithmatex">\( \nu \)</span>는 특수화와 안정성 사이의 균형을 맞춘다. EM은 <strong>8</strong>회 반복, 헤드 초기화 학습 <strong>6</strong> epoch, 각 E-step 후 추가 <strong>3</strong> epoch 학습.</li>
+<li>이론적 보장: 정리 1은 고정 클러스터 사전 하에서 누출 EM이 제한된 변분 패밀리의 누출 ELBO를 단조 개선하고 유한 극한으로 수렴함을 증명한다. <span class="arithmatex">\( \nu=0 \)</span>일 때 하드 EM으로 축소된다.</li>
+</ul>
+<h3 id="3">3단계: 클러스터 수준 정책 최적화</h3>
+<ul>
+<li>학습된 보상 모델을 사용하여 암시적 Q 학습(IQL)으로 각 클러스터에 대한 정책을 학습한다. IQL 구성: 그래디언트 스텝 <strong>100,000</strong>, 배치 크기 <strong>256</strong>, 학습률 <strong>3×10⁻⁴</strong>, 할인율 <strong>0.99</strong>, expectile <strong>0.7</strong>, AWR 온도 <strong>3.0</strong>.</li>
+</ul>
+<h2 id="_4">핵심 혁신</h2>
+<ol>
+<li><strong>표현 학습과 선호 감독의 분리</strong>: SPR 사전 학습은 레이블을 완전히 무시하고 상태 전이 예측만 활용한다. 이는 반직관적이다 — 전통적 방법은 선호 레이블로 직접 표현을 학습하지만, PREC는 레이블이 희소하고 잡음이 높을 때 비지도 역학 예측이 더 견고한 공유 표현을 학습하여 이후 클러스터링에 깨끗한 특징 공간을 제공함을 증명한다.</li>
+<li><strong>누출 EM의 공동 클러스터링-보상 학습</strong>: 사용자를 먼저 독립적으로 클러스터링한 후 보상을 학습하는 방식(예: K-Means 기준선)과 달리, PREC는 클러스터링과 보상 학습을 동일한 목표 하에 교대로 최적화한다. 누출 계수 <span class="arithmatex">\( \nu \)</span>는 핵심 설계 요소이다 — 하드 EM의 소규모 클러스터 과적합을 방지하면서 소프트 EM의 클러스터 경계 모호함을 막고, 정리 1이 수렴성을 보장한다.</li>
+<li><strong>배포 친화적 정책 세트</strong>: 최종 산출물은 N개가 아닌 K개의 정책으로, 규제 검증 요구에 직접 대응한다. 실험 결과 K=3 또는 K=5일 때 PREC는 공리주의, 평등주의, 내시의 세 가지 사회 복지 지표에서 개별 모델(Indiv)에 근접하거나 능가하며, 검증 비용은 후자의 K/N에 불과하다.</li>
+</ol>
+<h2 id="_5">실험 및 결과</h2>
+<p>실험은 네 개의 D4RL MuJoCo 환경(HalfCheetah, Ant, Hopper, Walker2d)에서 수행되었으며, 궤적 풀은 random, medium, expert 데이터를 <strong>1:2:2</strong> 비율로 혼합하고 궤적 세그먼트 길이는 <strong>50</strong>이다. 총 <strong>30</strong>명의 사용자, 사용자당 <strong>50</strong> 또는 <strong>100</strong>개의 레이블, 잡음 주입 강도 <strong>16%</strong> 및 <strong>28%</strong>.</p>
+<h3 id="4">클러스터링 품질(표 4, 희소 피드백 하)</h3>
+<table>
+<thead>
+<tr>
+<th>환경</th>
+<th>K</th>
+<th>PREC SH</th>
+<th>PREC CH</th>
+<th>K-Means SH</th>
+<th>K-Means CH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HalfCheetah</td>
+<td>2</td>
+<td><strong>0.605</strong></td>
+<td><strong>296.2</strong></td>
+<td>명시되지 않음</td>
+<td>명시되지 않음</td>
+</tr>
+<tr>
+<td>Ant</td>
+<td>3</td>
+<td><strong>0.616</strong></td>
+<td><strong>478.5</strong></td>
+<td>명시되지 않음</td>
+<td>명시되지 않음</td>
+</tr>
+<tr>
+<td>Walker2d</td>
+<td>5</td>
+<td><strong>0.365</strong></td>
+<td><strong>300.6</strong></td>
+<td>명시되지 않음</td>
+<td>명시되지 않음</td>
+</tr>
+<tr>
+<td>Hopper</td>
+<td>3</td>
+<td><strong>0.666</strong></td>
+<td><strong>491.6</strong></td>
+<td>명시되지 않음</td>
+<td>명시되지 않음</td>
+</tr>
+</tbody>
+</table>
+<p>PREC는 모든 환경과 K 값에서 SH 및 CH 지표가 K-Means 및 W-K-Means 기준선보다 우수하며, K가 증가할수록 그 격차가 커진다(K=5에서 PREC SH=<strong>0.54</strong> vs K-Means <strong>0.23</strong>, 표 1 수치 기준).</p>
+<h3 id="2-prec">사회 복지(표 2, PREC 구성 요소 제거 실험)</h3>
+<table>
+<thead>
+<tr>
+<th>환경</th>
+<th>지표</th>
+<th>PREC</th>
+<th>PREC (SPR, 누출 EM 제거)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HalfCheetah</td>
+<td>Util</td>
+<td><strong>0.798</strong></td>
+<td>0.786</td>
+</tr>
+<tr>
+<td>Ant</td>
+<td>Egal</td>
+<td><strong>0.165</strong></td>
+<td>0.132</td>
+</tr>
+<tr>
+<td>Hopper</td>
+<td>Nash</td>
+<td><strong>0.753</strong></td>
+<td>0.672</td>
+</tr>
+<tr>
+<td>Walker2d</td>
+<td>Egal</td>
+<td><strong>0.481</strong></td>
+<td>0.188</td>
+</tr>
+</tbody>
+</table>
+<p>완전한 PREC는 모든 환경-지표 조합에서 최상의 성능을 보이며, SPR과 누출 EM을 제거하면 성능이 크게 하락한다. 특히 Walker2d의 평등 복지는 <strong>0.481</strong>에서 <strong>0.188</strong>로 급락한다(표 내 수치 계산 기준).</p>
+<h3 id="_6">피드백 예산 실험</h3>
+<ul>
+<li>사용자당 <strong>10</strong>~<strong>50</strong>개 레이블일 때, PREC는 Pooled 및 Indiv보다 크게 우수하다.</li>
+<li>사용자당 <strong>500</strong>개 레이블일 때, Indiv가 공리주의 및 내시 복지에서 PREC를 능가한다. Pooled는 레이블이 <strong>100</strong>개에서 <strong>500</strong>개로 증가할 때 성능이 급격히 하락한다.</li>
+</ul>
+<h2 id="_7">경계 및 한계</h2>
+<ul>
+<li>D4RL MuJoCo 시뮬레이션 연속 제어 벤치마크에서만 검증되었으며, 실제 로봇이나 실제 인간 사용자에서는 테스트되지 않았다. 스크립트 기반 주석기는 잡음을 주입하지만 실제 피드백과는 여전히 차이가 있다.</li>
+<li>정리 1은 디코더 매개변수만 다루며, 클러스터 사전 <span class="arithmatex">\( \rho_k \)</span>는 고정되어 있다. 사전을 수정하는 안정화 장치(예: Dirichlet 평활화)는 수렴성 논증 범위에 포함되지 않는다.</li>
+<li>사용자당 피드백이 충분할 때(예: <strong>500</strong>개 레이블), 개별 모델 Indiv가 공리주의 및 내시 복지에서 PREC를 능가하며, 이는 PREC의 장점이 주로 희소 피드백 시나리오에 있음을 시사한다.</li>
+<li>IQL 외의 하류 오프라인 RL 알고리즘은 탐색되지 않았다. 비마르코프 보상은 처리되지 않았다(저자는 Preference Transformer와 결합할 수 있다고 언급했지만 실험하지 않았다).</li>
+</ul>
+<h2 id="_8">엔지니어링 시사점</h2>
+<p>PREC를 재현할 때 가장 중요한 확인 지점은 SPR 사전 학습과 누출 EM의 연결이다: 인코더는 클러스터링 단계에 들어가기 전에 완전히 동결되어야 하며, 어떤 미세 조정도 표현과 레이블의 분리를 깨뜨린다. 누출 계수 <span class="arithmatex">\( \nu=0.05 \)</span>는 민감한 하이퍼파라미터이다 — 너무 작으면 하드 EM으로 퇴화하여 소규모 클러스터가 과적합되고, 너무 크면 클러스터 경계가 모호해진다. 목표 환경의 사용자 수(예: <strong>30</strong>)에서 <span class="arithmatex">\( \nu \in [0.01, 0.1] \)</span> 범위를 먼저 스캔할 것을 권장한다. 또 다른 함정은 잡음 주입 구현이다: 다섯 가지 잡음 유형(stochastic, myopic, mistake, skip, equal)은 균일 무작위 샘플링으로 혼합해야 하며, 임계값 <span class="arithmatex">\( \eta=0.5 \)</span>와 강도(<strong>16%</strong>, <strong>28%</strong>)를 엄격히 재현해야 한다. 그렇지 않으면 클러스터링 품질 비교가 왜곡된다. 하류 팀의 경우, 피드백 예산이 충분하다면(사용자당 &gt;500개 레이블) PREC 대신 Indiv를 직접 고려해야 한다. 예산이 희소하고 규제 검증이 필요하다면 PREC(3) 또는 PREC(5)가 검증 비용과 복지 충실도 사이의 최상의 절충안이다. 모든 실험은 CPU(Intel Xeon Gold 5320, <strong>4</strong>코어 <strong>24</strong>GB 메모리)에서 실행 가능하며 GPU가 필요하지 않지만, <strong>30</strong>명의 사용자 × <strong>50</strong>개 레이블 × <strong>8</strong>회 EM 반복의 전체 프로세스는 시간이 오래 걸릴 것으로 예상되므로, 먼저 K=2로 파이프라인을 실행한 후 확장할 것을 권장한다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_sac/">소프트 액터-크리틱(SAC)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_deployable_human_preference_alignment_ro_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_sac/">
+          <span class="entry-type">알고리즘</span>
+          <h3>소프트 액터-크리틱(SAC)</h3>
+          <p>기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 변화시키는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#1-spr">1단계: 집단 수준 표현 학습(SPR 사전 학습)</a></li>
+<li><a href="#2-em">2단계: 하위 집단 수준 디코더 학습(누출 EM)</a></li>
+<li><a href="#3">3단계: 클러스터 수준 정책 최적화</a></li>
+</ul>
+</li>
+<li><a href="#_4">핵심 혁신</a></li>
+<li><a href="#_5">실험 및 결과</a><ul>
+<li><a href="#4">클러스터링 품질(표 4, 희소 피드백 하)</a></li>
+<li><a href="#2-prec">사회 복지(표 2, PREC 구성 요소 제거 실험)</a></li>
+<li><a href="#_6">피드백 예산 실험</a></li>
+</ul>
+</li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

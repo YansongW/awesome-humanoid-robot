@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone</h1>
+      <p class="entry-name-en">HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Learning deployable manipulation policies is bottlenecked by the scarcity of data that is both high-fidelity and scalable. Real-robot teleoperation is accurate but costly to scale; robot-free UMI capture scales readily, and current practice uses the resulting data mainly for pre-training, adding a small real-robot &#34;anchor&#34; at post-training. We ask whether raising the fidelity of robot-free UMI.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.25895" target="_blank" rel="noopener">arXiv:2607.25895 HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>HiFi-UMI는 하드웨어와 소프트웨어의 협력 설계를 통한 고충실도 로봇-프리 데이터 수집 시스템을 제안하며, "제로 로봇 후훈련" 가설을 검증한다: 고충실도 UMI 데이터만으로 미세 조정하여 세 가지 백본 네트워크(StarVLA-QwenPI, OpenPI-π₀.₅, LingBot-VA)에서 실제 원격 조작 후훈련과 동등한 실제 로봇 배포 성공률을 달성할 수 있다. 핵심 기여는 충실도(궤적 정밀도, 그리퍼 상대 자세, 동기화, 시야각)를 설계 원칙으로 삼고, 실제 로봇 앵커 데이터에 의존하지 않는 것이다.</p>
+<h2 id="_2">무엇을 바꾸는가</h2>
+<p>과거 업계는 UMI와 같은 로봇-프리 데이터는 사전 훈련에만 사용할 수 있고, 후훈련에는 소량의 실제 원격 조작 "앵커"를 혼합해야 배포가 가능하다고 기본 전제로 삼았다. 저자가 의문을 제기하는 것은 데이터 양이 아니라 충실도다—로봇-프리 데이터가 궤적 정밀도, 시간 동기화, 그리퍼 재구성에서 원격 조작과 동등한 수준을 달성한다면, 앵커가 정말 필요 없는가? 이 질문의 가치는: 원격 조작 수집의 벽시계 비용은 UMI의 수 배이며, 단일 물리 환경에 제한된다. 고충실도 UMI가 독립적으로 후훈련을 지원할 수 있다면, 데이터 생산 패러다임은 "희소하지만 정밀"에서 "대규모이면서 정밀"로 전환된다.</p>
+<p>진정으로 바꾸는 것은 데이터 수집의 "정밀도-규모" 트레이드오프 곡선이다. 기존 핸드헬드 장치는 장시간 드리프트, 그리퍼 상대 자세 재구성 오차, 소프트 동기화 지터, 단안 사각지대의 네 가지 차원에서 타협하여, 하위 정책이 실제 로봇 데이터에 의존하여 오류를 보정해야 했다. HiFi-UMI는 각 타협 지점을 네이티브 측정 또는 하드웨어 수준 솔루션으로 대체하여, 로봇-프리 데이터가 처음으로 도메인 내 원격 조작과 동등한 "동작 정렬" 품질을 갖추게 한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="4">데이터 생산 시스템(4축 충실도 설계)</h3>
+<ul>
+<li><strong>궤적 정밀도</strong>: 헤드마운트 오프라인 스테레오 관성 SLAM(ORB-SLAM3) + AprilTag 마커 위치 추정. 헤드 카메라가 전역 궤적을 추정하고, 각 손은 강체 연결된 마커 큐브를 통해 헤드 좌표계에서 위치가 결정되어, 전역적으로 일관된 양손 궤적을 얻는다. 설계 근거: 헤드마운트 시점은 손목 시점보다 안정적이며, 손목은 조작 중 자주 자기 가림과 빠른 움직임으로 손상된다.</li>
+<li><strong>그리퍼 상대 자세</strong>: 두 마커 큐브가 동일한 헤드 카메라 프레임에서 관측되어, 상대 자세가 네이티브로 측정되며 단일 그리퍼 정밀도를 상속한다. 사후에 교차 카메라 공동 시야에서 재구성하지 않는다.</li>
+<li><strong>동기화</strong>: 모든 센서는 단일 GPIO 외부 트리거로 마이크로초(&lt; 40 μs) 시간 정렬을 달성하며, 소프트웨어 또는 무선 방식을 대체한다.</li>
+<li><strong>시야각</strong>: 각 손에 두 개의 비평행 어안 카메라로 약 200° 커버리지; 전체 장치는 6개 카메라.</li>
+</ul>
+<h3 id="slam">오프라인 SLAM 전략</h3>
+<p>의도적으로 전역 루프 폐쇄를 포기하고, 동적 슬라이딩 윈도우 로컬 일관성 제약으로 대체하여 장시간 드리프트를 센티미터 수준으로 제한하고 밀리미터 수준의 로컬 정밀도를 유지한다. SLAM이 무작위로 실패하면 이상 궤적을 자동으로 재계산한다.</p>
+<h3 id="6">데이터 처리 파이프라인(6단계)</h3>
+<p>수집 및 업로드 → 궤적 재구성 및 자동 정리 → 시뮬레이션 리타게팅(전신 운동 제어 재생, 동역학적으로 불가능한 궤적 폐기) → AI 보조 주석(다중 시점 공동 추론, 낮은 신뢰도는 수동 라우팅) → 수동 검증(샘플링 검사 + 구조화 QC 메타데이터) → 분석 및 내보내기(작업 속성 균형 훈련 세트 조립).</p>
+<h3 id="_4">동작 표현</h3>
+<ul>
+<li>로봇 중심 엔드 이펙터 좌표계, 상대 자세 증분 + 절대 그리퍼 개방도 예측.</li>
+<li>블록 내 각 미래 자세는 동일한 현재 관측 앵커를 기준으로: ΔT = (T_t0^j)^(-1) T_(t0+δ_h)^(m), 이전 동작 목표에 재귀적으로 의존하지 않는다.</li>
+<li>각 팔 3+6+1=10채널, 양손 20채널; 병진은 앵커 좌표계로 표현, 회전은 Rotation6D 사용.</li>
+</ul>
+<h3 id="_5">백본 네트워크 적응</h3>
+<ul>
+<li><strong>StarVLA-QwenPI</strong>: Qwen3-VL-4B + π 스타일 조건부 흐름 매칭 DiT 헤드, 36층 교차 어텐션 + 홀수 블록 후 자기 어텐션 잔차, 8단계 오일러 추론.</li>
+<li><strong>OpenPI-π₀.₅</strong>: PaliGemma 비전 스트림 + Gemma 연속 동작 전문가, 고유 감각 이산화 직렬화, 10단계 오일러.</li>
+<li><strong>LingBot-VA</strong>: 인과 WAM, 먼저 미래 비디오 잠재 변수를 예측한 후 역동역학 디코더로 동작을 해독, 블록 인과 마스크.</li>
+</ul>
+<h2 id="_6">핵심 혁신</h2>
+<ol>
+<li><strong>제로 로봇 후훈련 가설의 직접 검증</strong>: 세 가지 백본에서 HiFi-UMI 후훈련만으로 도메인 내 원격 조작 후훈련과의 성공률 차이가 ±3.1% 포인트 이내이며 방향이 일관되지 않아, 로봇-프리 데이터가 독립적으로 배포 수준 정책 미세 조정을 지원할 수 있음을 처음으로 체계적으로 증명했다.</li>
+<li><strong>충실도를 소거 변수가 아닌 설계 원칙으로</strong>: 저자는 의도적으로 통제된 열화 분리를 수행하지 않고, 궤적 정밀도, 네이티브 상대 자세, 하드웨어 동기화, 넓은 시야각의 네 축을 한 번에 완성했다. 이러한 "전체 검증" 전략은 공학적으로 더 실용적이다—먼저 가능성을 증명하고, 그 다음 기여를 분해한다.</li>
+<li><strong>데이터 생산 파이프라인의 대규모 검증</strong>: 20,000+ 시간 데이터, 96% 누적 통과율(두 직렬 게이트 각각 약 98%), 3mm 로컬 정밀도는 고충실도 수집이 실험실 시연이 아니라 확장 가능한 산업급 데이터 엔진임을 증명한다.</li>
+</ol>
+<h2 id="_7">실험 및 결과</h2>
+<h3 id="40">제로 로봇 후훈련 비교(작업당 40회 롤아웃)</h3>
+<table>
+<thead>
+<tr>
+<th>백본</th>
+<th>UMI 후훈련</th>
+<th>원격 조작 후훈련</th>
+<th>차이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StarVLA-QwenPI</td>
+<td>51.3%</td>
+<td>53.8%</td>
+<td>-2.5% 포인트</td>
+</tr>
+<tr>
+<td>OpenPI-π₀.₅</td>
+<td>77.5%</td>
+<td>74.4%</td>
+<td>+3.1% 포인트</td>
+</tr>
+<tr>
+<td>LingBot-VA</td>
+<td>56.9%</td>
+<td>57.5%</td>
+<td>-0.6% 포인트</td>
+</tr>
+<tr>
+<td>핵심: 원격 조작 데이터는 평가 시나리오에서 수집되고, UMI 데이터는 그렇지 않다—이 비대칭성은 기준선에 유리하지만 UMI는 여전히 동등한 성능을 보인다.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### 데이터 스케일링(Remote Insertion, OpenPI-π₀.₅)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>데모 수</td>
+<td>성공률</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>37.5%</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>800</td>
+<td>65.0%</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3,200</td>
+<td>85.0%</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6,400</td>
+<td>82.5%</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>약 3,200 에피소드 후 포화, 6,400에서 이득 없음.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### 사전 훈련 효과(StarVLA-QwenPI, 4,000시간)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 홀드아웃 동작 오차가 한 패스 내 61% 감소, 멱법칙 α=0.268, R²=0.993.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 10개의 미지 작업 OOD 오차 평균 41% 감소.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 4개 작업 기준 성공률 18.1% 포인트 향상; 800개 작업 에피소드로 무작위 초기화 기준선의 3,200 에피소드 성능을 초과.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### WAM 진단(LingBot-VA, ground-truth-video 조건)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>조건</td>
+<td>XYZ RMSE (mm)</td>
+<td>SO(3) 오차 (°)</td>
+<td></td>
+</tr>
+<tr>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+<td></td>
+</tr>
+<tr>
+<td>UMI → Real</td>
+<td>24.33</td>
+<td>0.65</td>
+<td></td>
+</tr>
+<tr>
+<td>UMI → UMI</td>
+<td>21.13</td>
+<td>0.88</td>
+<td></td>
+</tr>
+<tr>
+<td>원격 조작 → Real</td>
+<td>21.64</td>
+<td>0.46</td>
+<td></td>
+</tr>
+<tr>
+<td>무작위 → Real</td>
+<td>117.57</td>
+<td>126.47</td>
+<td></td>
+</tr>
+<tr>
+<td>UMI → Real은 무작위 기준 대비 병진 오차 79.3%, 회전 오차 99.5% 감소, 교차 도메인 차이는 병진 3.20mm에 불과.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>(이 섹션에는 전체 텍스트에서 확인할 수 없는 숫자가 포함된 문장이 1개 있어 규율에 따라 제거됨; 논문에 명시되지 않았거나 그림/표 이미지로 제공됨.)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">경계 및 한계</h2>
+<ul>
+<li><strong>충실도 미분해</strong>: 저자는 의도적으로 통제된 열화 소거를 수행하지 않아, 각 충실도 축의 한계 기여를 귀인할 수 없다.</li>
+<li><strong>시나리오 비대칭성 미해소</strong>: 원격 조작 데이터는 평가 시나리오에서 수집되고, UMI 데이터는 그렇지 않다. 저자는 이를 UMI에 대한 보수적 테스트로 인정하지만, 대칭 설계는 수행하지 않았다.</li>
+<li><strong>초기화 축은 하나의 백본만 테스트</strong>: UMI 사전 훈련 + UMI 후훈련은 StarVLA-QwenPI에서만 구현되었고, OpenPI-π₀.₅와 LingBot-VA는 참여하지 않았다.</li>
+<li><strong>작업 수준 통계 해상도 낮음</strong>: 작업당 40회 롤아웃, 한 번의 성공이 2.5% 포인트를 바꾸므로 작업 수준 차이는 기술적(descriptive)으로 간주.</li>
+<li><strong>데이터 효율성은 샘플 매칭 아님</strong>: UMI 후훈련은 3,200개 궤적 vs 원격 조작 300개, 약 10배 차이, 동일 샘플 비교는 수행되지 않음.</li>
+<li><strong>실패 사례 분석 부재</strong>: 논문은 체계적 실패 모드 분류를 보고하지 않았다.</li>
+</ul>
+<h2 id="_9">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 동기화와 상대 자세를 우선 확인</strong>: GPIO 하드웨어 트리거(&lt; 40 μs)와 네이티브 그리퍼 상대 자세 측정은 HiFi-UMI와 이전 시스템의 가장 본질적인 차이다. 재현 시 소프트웨어 동기화나 교차 카메라 재구성으로 퇴화하면 성공률 차이가 다시 나타날 수 있다.</li>
+<li><strong>데이터 필터링은 숨은 비용</strong>: 96% 누적 통과율은 두 직렬 게이트(궤적 재구성 약 98%, 전신 제어 재생 약 98%)에서 비롯된다. 하위 팀은 약 4%의 원시 데이터 손실을 예비하고, 필터링이 훈련/검증 분할 전에 완료되어 근접 중복 창이 분할을 넘어 누출되지 않도록 해야 한다.</li>
+<li><strong>동작 표현 앵커 설계를 엄격히 준수</strong>: 블록 내 모든 미래 자세는 동일한 현재 관측 앵커를 기준으로(ΔT = (T_t0^j)^(-1) T_(t0+δ_h)^(m)), 이전 동작 목표에 재귀적으로 의존하지 말 것—이는 백본 간 전이에서 가장 실수하기 쉬운 지점이다.</li>
+<li><strong>그리퍼 채널은 별도 처리 필요</strong>: UMI는 조작자의 손 제스처 각도를 유지하지만, 실제 원격 조작은 파지가 없을 때 기본적으로 완전 개방이며 물리적 의미가 보정되지 않았다. 주 분석은 그리퍼 채널을 제외하며, 하위에서 사용하려면 별도 보정이 필요하다.</li>
+<li><strong>사전 훈련 이득은 데이터량 4배 차이에서도 유의미</strong>: 800개 작업 에피소드로 무작위 초기화 기준선의 3,200 에피소드 성능을 초과하여, 대규모 UMI 사전 훈련이 데이터 효율성 레버임을 시사하지만, StarVLA-QwenPI에서만 검증되었으므로 다른 백본으로의 전이는 주의가 필요하다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_domain_adaptation/">도메인 적응</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_sim_to_real/">시뮬-실제 전이</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">proposes</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_hifi_umi_deployable_manipulation_policie_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_sim_to_real/">
+          <span class="entry-type">방법</span>
+          <h3>시뮬-실제 전이</h3>
+          <p>시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_domain_adaptation/">
+          <span class="entry-type">방법</span>
+          <h3>도메인 적응</h3>
+          <p>소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#4">데이터 생산 시스템(4축 충실도 설계)</a></li>
+<li><a href="#slam">오프라인 SLAM 전략</a></li>
+<li><a href="#6">데이터 처리 파이프라인(6단계)</a></li>
+<li><a href="#_4">동작 표현</a></li>
+<li><a href="#_5">백본 네트워크 적응</a></li>
+</ul>
+</li>
+<li><a href="#_6">핵심 혁신</a></li>
+<li><a href="#_7">실험 및 결과</a><ul>
+<li><a href="#40">제로 로봇 후훈련 비교(작업당 40회 롤아웃)</a></li>
+</ul>
+</li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

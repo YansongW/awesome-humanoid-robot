@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation</h1>
+      <p class="entry-name-en">ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Contact-rich robot manipulation requires physical interaction cues that are often invisible to cameras, making tactile sensing essential for robust control. However, scaling visuo-tactile robot learning remains difficult because real tactile interaction data are expensive to collect, hardware-dependent, and limited in task and scene diversity. We present ViTacWorld, an action-conditioned.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.22530" target="_blank" rel="noopener">arXiv:2607.22530 ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulati</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>ViTacWorld는 상하이과학기술대학 등 기관이 제안한 행동 조건부 시각-촉각 세계 모델로, 접촉이 풍부한 조작을 위한 합성 시각-촉각-행동 궤적을 생성하는 것을 목표로 합니다. 핵심 기여는 세계 모델링 능력을 순수 시각에서 시각-촉각 결합으로 확장하고, "꿈 데이터" 생성을 통해 하류 촉각 정책을 강화하며, 정책 평가기로도 사용할 수 있다는 점입니다.</p>
+<h2 id="_2">무엇을 바꾸었나</h2>
+<p>접촉이 풍부한 조작(예: 삽입, 박리)에서 촉각 피드백은 성공의 핵심이지만, 실제 촉각 데이터 수집은 비용이 높고 하드웨어 수명에 제한되며, 시뮬레이션 데이터는 sim-to-real 격차가 존재합니다. 기존 행동 조건부 세계 모델은 시각 스트림만 처리하여 촉각 관측을 합성할 수 없으므로 하류 촉각 정책의 데이터 생성기로 사용할 수 없습니다. ViTacWorld는 이러한 상황을 실질적으로 바꿉니다: 촉각을 시각과 동등한 지위의 일등 관측 스트림으로 승격시켜, 세계 모델이 시간적으로 정렬된 시각-촉각-행동 궤적을 생성할 수 있게 하여 촉각 정책에 확장 가능한 훈련 데이터 소스를 제공합니다. 이러한 전환은 촉각 정책 훈련이 더 이상 값비싼 실제 시연에 완전히 의존하지 않고, 세계 모델 합성 데이터로 확장할 수 있음을 의미합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 프레임워크</h3>
+<p>H 단계 행동 시퀀스가 주어지면 미래 시각 및 촉각 관측을 예측합니다: ô_{t+1:t+H} = f_θ(o_t, u_{t:t+H-1}, m), 여기서 m ∈ {0,1}^{|V|}는 뷰 존재 마스크이고, V = {main, wrist, tactile}입니다.</p>
+<h3 id="_5">아키텍처 설계</h3>
+<ul>
+<li>사전 훈련된 행동 조건부 비디오 세계 모델을 확장하고 백본과 행동 조건 경로를 유지</li>
+<li>각 뷰는 VAE로 잠재 토큰으로 인코딩되어 통합 시퀀스로 조립</li>
+<li>흐름 정체성 임베딩 e^v를 도입하고 AdaLN 변조 경로에 투영</li>
+<li>흐름 인식 자기 주의: Z̃<em b-1="b-1">b^v = SelfAttn_v(AdaLN(Z</em>^v; c_b + P(e^v))), P는 제로 초기화 투영</li>
+<li>교차 뷰 주의: Z_b^v = CrossViewAttn_v(Z̃<em v_v="v'≠v">b^v, {Z̃_b^{v'}}</em>), 토큰의 통제되지 않은 혼합 방지</li>
+</ul>
+<h3 id="_6">훈련 목표</h3>
+<p>L_wm = E_{z_0,σ}[‖D_θ(z_σ, σ, o_t, u_{t:t+H-1}, m) − z_0‖²₂], 손실은 미래 프레임과 유효 스트림에만 적용됩니다.</p>
+<h3 id="2">2단계 훈련</h3>
+<ol>
+<li><strong>사전 훈련</strong>: OmniViTac 공개 데이터(21K 이상 궤적)와 작업 정렬 시뮬레이션 데이터(5K 이상 궤적), 13프레임 창, 15Hz 샘플링, 32개 H20 GPU, 전역 배치 256, 30K 스텝, 학습률 3 × 10⁻⁵</li>
+<li><strong>미세 조정</strong>: 실제 시연과 정책 롤아웃, 전역 배치 128, 학습률 1 × 10⁻⁵, 7K 스텝</li>
+</ol>
+<h3 id="_7">시뮬레이션 데이터 생성</h3>
+<p>Isaac Sim에서 Xense 촉각 렌더링 파이프라인을 통해 촉각을 합성하고, 3D 가우시안 스캔으로 장면을 재구성하며, EasyHeC로 외부 파라미터를 보정합니다.</p>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li><strong>촉각을 일등 관측 스트림으로</strong>: 촉각은 더 이상 보조 신호가 아니라 시각 스트림과 동등하게 세계 모델 생성에 참여하며 시간 정렬을 유지합니다. 이는 촉각을 행동 조건부 세계 모델 생성 프레임워크에 통합한 최초의 작업입니다.</li>
+<li><strong>흐름 인식 자기 주의와 교차 뷰 주의 분리</strong>: 카메라와 촉각 토큰이 일반 자기 주의에서 통제되지 않게 혼합되는 것을 방지하면서, 촉각 스트림과 시각 스트림이 접촉 정보를 교환할 수 있게 합니다. 이 설계 결정은 다중 모달 세계 모델 아키텍처에 일반적으로 의미가 있습니다.</li>
+<li><strong>꿈 데이터 증강 폐쇄 루프</strong>: 세계 모델이 생성한 성공 롤아웃과 전문가 시연을 병합하여 하류 정책을 훈련하고, 강화된 정책으로 더 많은 롤아웃을 생성하여 2차 증강을 수행하는 데이터 플라이휠을 형성합니다. 이는 접촉이 풍부한 조작의 데이터 부족 문제에 확장 가능한 해결책을 제공합니다.</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="1-10">실제 로봇 성공률(표 1, 작업당 10회 시도)</h3>
+<table>
+<thead>
+<tr>
+<th>훈련 데이터</th>
+<th>정책</th>
+<th>Charger</th>
+<th>Cucumber</th>
+<th>U-Block</th>
+<th>Cuboid</th>
+<th>평균</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Expert only</td>
+<td>ACT + tactile</td>
+<td>0</td>
+<td>0</td>
+<td>30</td>
+<td>30</td>
+<td>15.0</td>
+</tr>
+<tr>
+<td>Expert only</td>
+<td>π_0.5</td>
+<td>10</td>
+<td>30</td>
+<td>60</td>
+<td>40</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td>Expert only</td>
+<td>π_0.5 + tactile</td>
+<td>20</td>
+<td>40</td>
+<td>70</td>
+<td>40</td>
+<td>42.5</td>
+</tr>
+<tr>
+<td>Expert + ViTacWorld</td>
+<td>ACT + tactile</td>
+<td>10</td>
+<td>20</td>
+<td>40</td>
+<td>40</td>
+<td>27.5</td>
+</tr>
+<tr>
+<td>Expert + ViTacWorld</td>
+<td>π_0.5</td>
+<td>30</td>
+<td>60</td>
+<td>60</td>
+<td>40</td>
+<td>47.5</td>
+</tr>
+<tr>
+<td>Expert + ViTacWorld</td>
+<td>π_0.5 + tactile</td>
+<td>40</td>
+<td>80</td>
+<td>80</td>
+<td>70</td>
+<td>67.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-held-out">세계 모델 예측 품질(표 2, held-out 검증)</h3>
+<table>
+<thead>
+<tr>
+<th>뷰</th>
+<th>지표</th>
+<th>w/o pretraining</th>
+<th>w/o task-aligned sim</th>
+<th>Full</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main</td>
+<td>PSNR</td>
+<td>22.718</td>
+<td>23.128</td>
+<td>24.258</td>
+</tr>
+<tr>
+<td>Main</td>
+<td>SSIM</td>
+<td>0.7859</td>
+<td>0.8011</td>
+<td>0.8286</td>
+</tr>
+<tr>
+<td>Main</td>
+<td>LPIPS</td>
+<td>0.0781</td>
+<td>0.0687</td>
+<td>0.0513</td>
+</tr>
+<tr>
+<td>Wrist</td>
+<td>PSNR</td>
+<td>21.080</td>
+<td>21.434</td>
+<td>21.925</td>
+</tr>
+<tr>
+<td>Wrist</td>
+<td>SSIM</td>
+<td>0.6649</td>
+<td>0.6869</td>
+<td>0.6962</td>
+</tr>
+<tr>
+<td>Wrist</td>
+<td>LPIPS</td>
+<td>0.1084</td>
+<td>0.0901</td>
+<td>0.0725</td>
+</tr>
+<tr>
+<td>Tactile</td>
+<td>PSNR</td>
+<td>34.967</td>
+<td>35.127</td>
+<td>35.225</td>
+</tr>
+<tr>
+<td>Tactile</td>
+<td>SSIM</td>
+<td>0.9204</td>
+<td>0.9296</td>
+<td>0.9318</td>
+</tr>
+<tr>
+<td>Tactile</td>
+<td>LPIPS</td>
+<td>0.0211</td>
+<td>0.0179</td>
+<td>0.0157</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">정책 평가기(표 3)</h3>
+<p>실제 성공률 평균 67.5%, ViTacWorld 예측 성공률 평균 57.5%, 차이 10.0% 포인트. 표 4는 U-Block 작업에서 90.0% 초기 조건 일관성, 거짓 양성 없음을 보여줍니다.</p>
+<h3 id="2-5">2차 증강(표 5)</h3>
+<p>π_0.5 + tactile 정책 평균 성공률이 67.5%에서 80.0%로, ACT + tactile이 27.5%에서 42.5%로 향상되었습니다.</p>
+<p>촉각 스트림의 PSNR 이득은 뚜렷하지 않은데, 비접촉 프레임의 픽셀 유사도가 이미 높기 때문입니다. LPIPS 개선은 사전 훈련이 접촉 패턴 인식 일관성을 향상시킴을 시사합니다.</p>
+<h2 id="_10">경계 및 한계</h2>
+<ul>
+<li>성공 꿈 데이터 선별은 여전히 부분적으로 수동 검사에 의존하며 완전 자동 필터링이 구현되지 않음</li>
+<li>시뮬레이션 데이터의 구체적 규모, 훈련 계산 비용, 추론 지연 시간이 논의되지 않음</li>
+<li>다른 세계 모델 방법과의 정량적 비교가 없음</li>
+<li>2차 증강은 이미 포화된 작업에서 이득이 제한적</li>
+<li>더 많은 라운드 증강 실험이 수행되지 않았고, 더 많은 작업이나 센서 유형에서 평가기 성능이 검증되지 않음</li>
+<li>예측 성공률이 실제 실행보다 약간 낮아 보수적으로 나타나며, 데이터 선택에 유리하지만 정책 능력을 과소평가할 수 있음</li>
+</ul>
+<h2 id="_11">엔지니어링 시사점</h2>
+<p>재현 시 먼저 사전 훈련 데이터 파이프라인을 확인하세요: OmniViTac와 시뮬레이션 데이터 샘플링 비율은 약 2:1이며, 13프레임 창, 15Hz 샘플링이 핵심 구성입니다. 가장 함정에 빠지기 쉬운 부분은 뷰 존재 마스크 m의 처리입니다 — 불완전한 궤적이 사전 훈련에 참여할 때 누락된 스트림을 올바르게 마스킹해야 하며, 그렇지 않으면 훈련이 손상됩니다. 미세 조정 단계에서 학습률은 3 × 10⁻⁵에서 1 × 10⁻⁵로, 전역 배치는 256에서 128로 감소하므로 그대로 적용하면 불안정할 수 있습니다. 하류 정책 훈련에서 π_0.5는 배치 128, 30K 스텝을 사용하고, ACT는 배치 16, 10K 스텝을 사용하므로 차이가 크므로 각각 파라미터를 조정해야 합니다. 꿈 데이터 선별 시 ViTacWorld 예측이 보수적이어서 거짓 양성이 적지만 유효 궤적을 놓칠 수 있으므로, 수동 검사 단계는 초기에 허용 가능하지만 규모 확장 시 자동 필터링 도입이 필요합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_action_chunking_transformer/">트랜스포머를 이용한 행동 청킹(ACT)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_vitacworld_scaling_visuo_tactile_world_m_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">논문</span>
+          <h3>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">방법</span>
+          <h3>트랜스포머를 이용한 행동 청킹(ACT)</h3>
+          <p>트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었나</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 프레임워크</a></li>
+<li><a href="#_5">아키텍처 설계</a></li>
+<li><a href="#_6">훈련 목표</a></li>
+<li><a href="#2">2단계 훈련</a></li>
+<li><a href="#_7">시뮬레이션 데이터 생성</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#1-10">실제 로봇 성공률(표 1, 작업당 10회 시도)</a></li>
+<li><a href="#2-held-out">세계 모델 예측 품질(표 2, held-out 검증)</a></li>
+<li><a href="#3">정책 평가기(표 3)</a></li>
+<li><a href="#2-5">2차 증강(표 5)</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

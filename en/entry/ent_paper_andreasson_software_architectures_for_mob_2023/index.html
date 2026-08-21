@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software Architectures for Mobile Robots · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Software Architectures for Mobile Robots</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Software Architectures for Mobile Robots</h1>
+      <p class="entry-name-en">Software Architectures for Mobile Robots</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Software &amp; Middleware</span><span class="tag">Design Engineering</span><span class="tag">Mass Production</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.03233v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en/ko body retranslated from zh deep-read (1425 chars, DeepSeek).">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A survey chapter that reviews software architectures and middleware frameworks for mobile robots, including ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB, and Microsoft Robotics Developer Studio, and catalogs common architectural patterns such as component-based design, publish-subscribe, peer-to-peer, and service-oriented approaches.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2206.03233" target="_blank" rel="noopener">Software Architectures for Mobile Robots</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This section first elaborates on the importance of software architecture as a blueprint for large-scale computing systems and notes that it has spawned numerous reference designs and implementations in the field of mobile robotics. The author outlines the requirements that the specific problem domain of mobile robots imposes on software frameworks, then discusses current mainstream design solutions, provides a historical perspective on common frameworks, and looks ahead to future development directions. The text highlights representative frameworks such as ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB, and Microsoft Robotics Developer Studio, and systematically categorizes architectural patterns including component-based design, publish-subscribe, peer-to-peer, and service-oriented approaches.</p>
+<h2 id="content">Content</h2>
+<h3 id="content_1">Content</h3>
+<ul>
+<li><strong>Definition of Software Architecture</strong>: Software architecture provides a blueprint for large-scale computing systems and is a critical part of the design and development process. In the field of mobile robotics, this task has been extensively explored, yielding numerous reference designs and implementations.</li>
+<li><strong>Domain Requirements</strong>: Mobile robot systems impose specific requirements on software frameworks, including real-time performance, reliability, modularity, scalability, and support for heterogeneous hardware.</li>
+<li><strong>Historical Perspective</strong>: The section provides a historical evolution of common frameworks, from early frameworks such as Player and CARMEN to the modern ROS/ROS2 ecosystem, reflecting a trend from tight coupling to loose coupling and from centralized to distributed systems.</li>
+</ul>
+<h3 id="major-frameworks">Major Frameworks</h3>
+<ul>
+<li><strong>ROS (Robot Operating System)</strong>: A distributed framework based on the publish-subscribe pattern, supporting asynchronous communication between nodes, widely used in research and prototyping.</li>
+<li><strong>ROS2</strong>: Builds on ROS by introducing the DDS (Data Distribution Service) standard, enhancing real-time performance, security, and cross-platform support.</li>
+<li><strong>YARP (Yet Another Robot Platform)</strong>: A peer-to-peer communication framework designed for humanoid robots, emphasizing modularity and cross-language support.</li>
+<li><strong>Orocos (Open Robot Control Software)</strong>: Provides a library of real-time control components, supporting component-based design and hard real-time operations.</li>
+<li><strong>Player</strong>: An early open-source framework employing a client-server model, suitable for mobile robots with multiple sensors.</li>
+<li><strong>CARMEN (Carnegie Mellon Robot Navigation Toolkit)</strong>: A framework integrating navigation, localization, and perception modules, emphasizing loose coupling between modules.</li>
+<li><strong>MATLAB</strong>: Offers simulation and rapid algorithm prototyping capabilities through Simulink and the Robotics System Toolbox.</li>
+<li><strong>Microsoft Robotics Developer Studio</strong>: A .NET-based framework supporting visual programming and distributed service architectures.</li>
+</ul>
+<h3 id="architectural-patterns">Architectural Patterns</h3>
+<ul>
+<li><strong>Component-Based Design</strong>: Decomposes the system into independent functional modules that interact through well-defined interfaces, enhancing reusability and maintainability.</li>
+<li><strong>Publish-Subscribe</strong>: Decouples data producers from consumers, supporting asynchronous, many-to-many communication, as exemplified by the Topic mechanism in ROS.</li>
+<li><strong>Peer-to-Peer</strong>: Direct communication between nodes reduces intermediate latency, suitable for real-time control scenarios, such as the Port connections in YARP.</li>
+<li><strong>Service-Oriented</strong>: Encapsulates functionality as remotely invocable services, supporting synchronous request-response patterns, such as Service and Action in ROS.</li>
+</ul>
+<h3 id="future-directions">Future Directions</h3>
+<ul>
+<li>Enhancing real-time performance and determinism to meet industrial-grade robot requirements.</li>
+<li>Improving cross-platform compatibility and cloud-edge-device collaboration capabilities.</li>
+<li>Introducing formal verification and security mechanisms to address complex dynamic environments.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_software_gazebo/">Gazebo</a>
+      
+      <span class="rel-desc">Software Architectures for Mobile Robots discusses Gazebo.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_software_ros_2_middleware_2024/">ROS 2 Middleware</a>
+      
+      <span class="rel-desc">Software Architectures for Mobile Robots discusses ROS 2 Middleware.</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_andreasson_software_architectures_for_mob_2023"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_software_gazebo/">
+          <span class="entry-type">Software Platform</span>
+          <h3>Gazebo</h3>
+          <p>An open-source 3D robotics simulator that provides physics engines, sensor models, and scene…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>ROS 2 Middleware</h3>
+          <p>De facto robot middleware with DDS-based pub/sub and real-time support.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#content_1">Content</a></li>
+<li><a href="#major-frameworks">Major Frameworks</a></li>
+<li><a href="#architectural-patterns">Architectural Patterns</a></li>
+<li><a href="#future-directions">Future Directions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

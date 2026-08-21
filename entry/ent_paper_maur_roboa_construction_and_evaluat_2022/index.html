@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RoBoa：面向搜索救援应用的可转向藤蔓机器人的构建与评估 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">RoBoa：面向搜索救援应用的可转向藤蔓机器人的构建与评估</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>RoBoa：面向搜索救援应用的可转向藤蔓机器人的构建与评估</h1>
+      <p class="entry-name-en">RoBoa: Construction and Evaluation of a Steerable Vine Robot for Search and Rescue Applications</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">零部件</span><span class="tag">制造工艺</span><span class="tag">量产制造</span><span class="tag">设计工程</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">中游</span><span class="tag tag-layer">上游</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.15145v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>RoBoa 是一款长达 17 米的可转向藤蔓机器人，专为搜救任务设计。它通过外翻软织物管实现运动，并利用尖端内部的 3D 打印气动执行器进行转向，其有效性已在倒塌建筑测试场地中得到验证。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2203.15145" target="_blank" rel="noopener">RoBoa: Construction and Evaluation of a Steerable Vine Robot for Search and Rescue Applications</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>RoBoa 是一种类似藤蔓的搜救机器人，能够探索狭窄且杂乱的废墟环境，协助救援队定位并与被困人员沟通。它采用藤蔓机器人的运动原理，通过外翻管尖向前推进，内部的气动执行器则负责实现横向移动。机器人头部搭载传感器并安装在管尖外部，后方的供应箱内装有卷起的软管，并提供压缩空气、电力、计算能力以及用户交互界面。该系统采用去中心化控制方案，减少了所需线缆数量，并负责气动执行器的底层控制。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">系统设计与架构</h3>
+<ul>
+<li><strong>运动机制</strong>：RoBoa 利用藤蔓机器人的外翻原理，通过从内部向外翻出软织物管的前端来向前移动，从而在废墟中穿行。</li>
+<li><strong>转向与传感</strong>：机器人尖端内部集成了 3D 打印的气动执行器，用于实现横向转向；头部外部则安装有传感器，用于环境感知。</li>
+<li><strong>后端支持</strong>：后方的供应箱包含卷起的软管，并提供压缩空气、电力、计算资源，以及供操作员远程控制的用户界面。</li>
+<li><strong>控制方案</strong>：采用去中心化控制架构，有效减少了所需线缆数量，并专门负责气动执行器的底层控制。</li>
+</ul>
+<h3 id="_4">实验评估与关键数据</h3>
+<ul>
+<li><strong>实验环境</strong>：在真实的倒塌建筑测试场地中对完整原型进行了评估。</li>
+<li><strong>性能表现</strong>：远程控制的 RoBoa 能够成功重复定位被困人员，在约 10 米的行进距离后完成目标。</li>
+<li><strong>系统验证</strong>：实验展示了系统的完整功能，并验证了其关键组件（包括软管、气动执行器和控制方案）的设计与特性。</li>
+</ul>
+<h2 id="_5">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2203.15145v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+            
+            <li class="weak-relations-item">
+              <details class="weak-relations">
+                <summary>更多弱关联（1）</summary>
+                <ul class="relation-list relation-list-weak">
+                  
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_component_intel_realsense_depth_camera_2024/">Intel RealSense 深度相机</a>
+      
+      <span class="rel-desc">RoBoa：面向搜索救援应用的可转向藤蔓机器人的构建与评估使用Intel RealSense 深度相机。</span>
+    </li>
+    
+                </ul>
+              </details>
+            </li>
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_maur_roboa_construction_and_evaluat_2022"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_component_intel_realsense_depth_camera_2024/">
+          <span class="entry-type">零部件</span>
+          <h3>Intel RealSense 深度相机</h3>
+          <p>Intel RealSense 深度相机是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">系统设计与架构</a></li>
+<li><a href="#_4">实验评估与关键数据</a></li>
+</ul>
+</li>
+<li><a href="#_5">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

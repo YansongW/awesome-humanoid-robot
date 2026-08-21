@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</h1>
+      <p class="entry-name-en">FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>FutureRTC 是一个即插即用的异步 VLA 策略适配框架，通过预测执行时刻的视觉潜在特征与本体感受状态，缓解异步执行中的预测-执行错位。核心贡献在于将观测预测从像素空间转移到预训练 VLA 的潜在空间，并以动作序列作为显式运动先验驱动特征传输与残差合成，同时引入策略一致性损失确保预测上下文被冻结策略忠实消费。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.24008" target="_blank" rel="noopener">arXiv:2607.24008 FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunki</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>异步 VLA 部署的核心矛盾在于：策略生成动作块需要时间，而环境在等待期间持续演化。现有推理时方法（TE、BID、RTC）只做表面平滑或仅前向预测状态，忽略了视觉场景随机器人配置一同演化这一事实；训练时方法（T-RTC、REMAC）虽更彻底但需重训或微调策略，代价高昂。VLASH 首次意识到状态预测的必要性，但仍依赖过时视觉观测——这恰恰是错位的主要来源。</p>
+<p>FutureRTC 真正改变的是问题定义：不再试图让策略适应延迟，而是直接预测"执行时刻"的完整上下文（视觉+状态），使策略仿佛在零延迟条件下运行。这一思路将异步部署问题转化为一个上下文预测问题，且预测发生在潜在空间而非像素空间，使得计算开销可控（额外 3.04 ms），同时预测结果与 VLA 策略天然兼容。它证明了一个关键事实：在机器人是环境变化主要来源的操作场景中，基于动作先验的潜在空间预测足以恢复绝大部分同步执行性能。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">总体架构</h3>
+<p>适配器 φ(·) 从过时对 (z_1, a_{1:2}) 预测执行时上下文 (ẑ_3, ŝ_3)，其中 z 为预训练 VLA 视觉编码器输出的潜在特征。VLA 策略直接消费预测的潜在表示，绕过原始视觉编码器。</p>
+<h3 id="scm">状态校正模块（SCM）</h3>
+<ul>
+<li>前向积分过时状态：s̃<em t_K-d="t+K-d">{t+K} = s</em> a_i} ⊕ Σ_{i=t+K-d}^{t+K-1</li>
+<li>MLP 预测补偿残差：s̃<em t_K="t+K">Δ = φ_SCM(s̃</em>, d/d_max)</li>
+<li>最终状态：ŝ_{t+K} = s̃_{t+K} ⊕ s̃_Δ，旋转部分用相对旋转合成</li>
+<li>损失：L_state = ||(s_{t+K} ⊖ s̃_{t+K}) − s̃_Δ||₂²</li>
+</ul>
+<h3 id="opm">观测预测模块（OPM）</h3>
+<ul>
+<li>对每个已承诺动作构造物理特征向量：u_i = [a_i, Σ_{j≤i} a_j, a_i − a_{i−1}, Σ_{j≤i} |a_j|, i/d]</li>
+<li>轨迹特征矩阵 U 输入时间自注意力，产生动作条件运动先验 c_motion</li>
+<li>融合 c_motion、过时潜在 z_{t+K−d}、相机嵌入 e_cam、位置嵌入 e_pos、校正状态 ŝ_{t+K} 形成条件特征 F</li>
+<li>级联线性+卷积层将 F 投影为 2D 流位移 Δp 和传输门 α ∈ [0,1]</li>
+<li>可微双线性采样做空间扭曲，门控组合：z_trans = (1−α)·z_{t+K−d} + α·W(z_{t+K−d}, p − Δp)</li>
+<li>门控残差分支预测合成特征 r 和合成门 β：{r, β} = Linear(Conv(F, z_trans − z_{t+K−d}, z_0))</li>
+<li>最终潜在：ẑ_{t+K} = z_trans + β·r</li>
+<li>损失：L_obs = ||z_{t+K} − ẑ_{t+K}||₂²</li>
+</ul>
+<h3 id="_4">策略一致性损失</h3>
+<p>L_policy = ||π_θ(z_{t+K}, s_{t+K}) − π_θ(ẑ_{t+K}, ŝ_{t+K})||₂²，使用单步流近似避免多步流匹配开销。总目标：L_total = L_state + L_obs + λ·L_policy，λ = 10，π_θ 冻结。</p>
+<h3 id="_5">关键设计决策</h3>
+<ul>
+<li>潜在空间预测而非像素重建：确保计算开销可控且与策略表示兼容</li>
+<li>空间传输建模而非从头合成：已承诺动作作为显式运动先验，静态区域保持原表示（α→0），运动区域依赖扭曲特征（α→1）</li>
+<li>训练时均匀采样延迟 d ~ U[1, d_max]：单一模型覆盖全延迟范围，无需按延迟分别训练</li>
+</ul>
+<h2 id="_6">关键创新</h2>
+<ol>
+<li>
+<p><strong>潜在空间观测预测</strong>：首次将异步 VLA 的视觉补偿从像素空间转移到预训练编码器的潜在空间。这不仅将额外推理延迟控制在 3.04 ms（由表内数值 35.4→38.44 计算），更重要的是预测结果与 VLA 策略的输入分布天然对齐，避免了像素重建误差被策略放大。</p>
+</li>
+<li>
+<p><strong>动作驱动的双分支预测架构</strong>：将视觉变化分解为"空间传输"（运动先验驱动的可微扭曲）与"残差合成"（门控残差分支）两部分，分别由传输门 α 和合成门 β 控制。这一分解符合操作场景的物理直觉——大部分视觉变化由机器人自身运动引起，可被动作序列精确预测；剩余动态（如物体滑动）由残差分支捕获。</p>
+</li>
+<li>
+<p><strong>策略一致性损失</strong>：不仅要求预测上下文在特征空间接近真实值，还要求冻结策略从预测对生成的块与从真实对生成的块对齐。这一损失直接优化最终目标（策略输出），而非中间表示，是消融中 d=20 时成功率从 67.5% 提升至 69.4% 的关键。</p>
+</li>
+</ol>
+<h2 id="_7">实验与结果</h2>
+<h3 id="libero-_05">LIBERO 基准（π_0.5 骨干）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>d=5</th>
+<th>d=10</th>
+<th>d=15</th>
+<th>d=20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive Async.</td>
+<td>89.5</td>
+<td>82.7</td>
+<td>76.3</td>
+<td>68.3</td>
+</tr>
+<tr>
+<td>RTC</td>
+<td>89.9</td>
+<td>83.2</td>
+<td>77.5</td>
+<td>73.7</td>
+</tr>
+<tr>
+<td>VLASH</td>
+<td>88.0</td>
+<td>83.4</td>
+<td>79.5</td>
+<td>74.5</td>
+</tr>
+<tr>
+<td>REMAC</td>
+<td>90.8</td>
+<td>85.4</td>
+<td>78.5</td>
+<td>73.9</td>
+</tr>
+<tr>
+<td><strong>FutureRTC</strong></td>
+<td><strong>94.2</strong></td>
+<td><strong>92.4</strong></td>
+<td><strong>91.0</strong></td>
+<td><strong>88.5</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="libero-smolvla-450m">LIBERO 基准（SmolVLA-450M 骨干）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>d=5</th>
+<th>d=10</th>
+<th>d=15</th>
+<th>d=20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Naive Async.</td>
+<td>70.3</td>
+<td>64.5</td>
+<td>61.3</td>
+<td>56.2</td>
+</tr>
+<tr>
+<td>VLASH</td>
+<td>69.3</td>
+<td>65.8</td>
+<td>64.7</td>
+<td>61.9</td>
+</tr>
+<tr>
+<td>REMAC</td>
+<td>70.9</td>
+<td>66.5</td>
+<td>62.2</td>
+<td>59.7</td>
+</tr>
+<tr>
+<td><strong>FutureRTC</strong></td>
+<td><strong>75.8</strong></td>
+<td><strong>73.3</strong></td>
+<td><strong>71.6</strong></td>
+<td><strong>69.4</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="smolvla-450m">消融（SmolVLA-450M 平均成功率）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>d=5</th>
+<th>d=10</th>
+<th>d=15</th>
+<th>d=20</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline</td>
+<td>26.1</td>
+<td>8.4</td>
+<td>2.5</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>+SCM</td>
+<td>45.9</td>
+<td>18.1</td>
+<td>10.4</td>
+<td>5.8</td>
+</tr>
+<tr>
+<td>+OPM</td>
+<td>74.1</td>
+<td>70.4</td>
+<td>70.0</td>
+<td>67.5</td>
+</tr>
+<tr>
+<td>+L_policy</td>
+<td>75.8</td>
+<td>73.3</td>
+<td>71.6</td>
+<td>69.4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">关键结果解读</h3>
+<ul>
+<li>从 d=5 到 d=20，FutureRTC 在 π_0.5 上成功率仅下降 5.7%，在 SmolVLA 上下降 6.4%，而 Naive Async. 分别下降 21.2% 和 14.1%（由表内数值计算）</li>
+<li>OPM 是性能主力（+SCM 到 +OPM 在 d=20 时提升 61.7 个百分点），SCM 单独效果有限但为 OPM 提供必要状态条件</li>
+<li>Kinetix 上从 d=0 到 d=4 成功率仅下降 3.0%，但小延迟下略落后于针对基准微调的训练时方法</li>
+<li>真实世界三个双臂任务中一致获得最高成功率、最少执行步数和时间</li>
+</ul>
+<h2 id="_9">边界与局限</h2>
+<ul>
+<li>观测预测模块在高度动态场景（由独立外部智能体主导）中可能表现不佳——论文未明确给出此类场景的定量评估</li>
+<li>仅实例化于流匹配 VLA 策略（π_0.5 和 SmolVLA-450M），未扩展到自回归策略或离散扩散策略；省略 DiscreteRTC 对比因其无法在基于流的骨干上实例化</li>
+<li>未评估 d &gt; 20 的更长延迟场景</li>
+<li>Kinetix 小延迟 d = {0, 1} 下略落后于针对基准任务微调或重训练的训练时方法，尽管保持策略冻结</li>
+<li>真实世界实验为定性演示（视频对比），未报告定量成功率数字</li>
+<li>训练时对比方法（除 VLASH 外）由作者自行复现而非使用官方权重，可能存在复现偏差</li>
+</ul>
+<h2 id="_10">工程启示</h2>
+<ul>
+<li><strong>先核对动作块拼接约定</strong>：当条件上下文对应执行时刻时，必须从第一个动作执行 A[0:K-1]；若继续沿用异步补偿的 A[d:d+K-1] 拼接，成功率会从 94.2% 暴跌至 39.0%（由表内数值计算）。这是最容易踩坑的工程细节。</li>
+<li><strong>SCM 单独使用价值有限</strong>：消融显示 +SCM 在 SmolVLA 上 d=20 时仅从 0.7% 提升至 5.8%，必须与 OPM 配合才能发挥效果。若只做状态预测，不如直接采用 VLASH。</li>
+<li><strong>训练成本可控</strong>：批大小 128、200k 迭代、RTX 4090 单卡即可收敛；适配器仅增加 5.19 M 参数和 3.04 ms 推理延迟。训练时均匀采样延迟 d ~ U[1, d_max] 意味着单一模型覆盖全延迟范围，无需按部署环境重新训练。</li>
+<li><strong>策略一致性损失的 λ 需调参</strong>：论文使用 λ = 10，但该超参数对策略架构敏感，复现时建议在 [1, 50] 范围扫描。</li>
+<li><strong>真实世界部署预算</strong>：端到端延迟约 170 ms（对应 d ≈ 5），其中 VLA 前向约 99 ms、LAN 通信约 40 ms、数据处理约 30 ms。若需降低延迟，优先优化通信与数据处理而非适配器本身。</li>
+</ul>
+<h2 id="_11">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.24008</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">VLASH</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_futurertc_real_time_robot_execution_anti_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SmolVLA</h3>
+          <p>SmolVLA 是 Hugging Face、Sorbonne University、valeo.ai 与 École Normale Supérieure Paris-Saclay 于 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_tang_vlash_real_time_vlas_via_futur_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLASH</h3>
+          <p>VLASH 是 MIT 于 2025 年提出的异步推理框架，用于加速视觉-语言-动作模型（VLA）在机器人操作中的实时部署。其核心创新是通过未来状态感知机制，在推理与执行并行时消除时间错位，实现高达…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">总体架构</a></li>
+<li><a href="#scm">状态校正模块（SCM）</a></li>
+<li><a href="#opm">观测预测模块（OPM）</a></li>
+<li><a href="#_4">策略一致性损失</a></li>
+<li><a href="#_5">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#libero-_05">LIBERO 基准（π_0.5 骨干）</a></li>
+<li><a href="#libero-smolvla-450m">LIBERO 基准（SmolVLA-450M 骨干）</a></li>
+<li><a href="#smolvla-450m">消融（SmolVLA-450M 平均成功率）</a></li>
+<li><a href="#_8">关键结果解读</a></li>
+</ul>
+</li>
+<li><a href="#_9">边界与局限</a></li>
+<li><a href="#_10">工程启示</a></li>
+<li><a href="#_11">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation</h1>
+      <p class="entry-name-en">Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.03163v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (1079 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种以物体为中心的连续语义场（object-centric continuous semantic field），用于通用机器人操作。该方法从带部件标注的物体模型训练，生成语义点云作为操作策略的物体级条件，在RoboTwin仿真和真实双臂操作任务中，相比原始点云、2D特征提升和3D逐点特征基线，提供了更稳定的功能部件线索并提升了策略性能。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.03163" target="_blank" rel="noopener">Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>通用机器人操作需要稳定的3D功能部件理解，如把手、工具头、开口和可抓取区域。原始点云仅提供几何信息，缺乏显式部件语义，且采样点随视角、传感器配置和物体实例变化。现有方法通过2D特征提升或离散3D逐点特征丰富点云语义，但特征仍附着于依赖观测的采样点。本文提出一种以物体为中心的连续语义场，以物体点云为条件，在显式3D查询位置读取部件感知语义嵌入，训练后冻结生成语义点云作为操作策略的物体级条件。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li><strong>核心思想</strong>：构建一个以物体为中心的连续语义场，该场以物体点云为条件，能够在任意3D查询位置输出部件感知的语义嵌入。</li>
+<li><strong>训练过程</strong>：使用带部件标注的物体模型（如PartNet）进行训练，学习从点云到连续语义场的映射。</li>
+<li><strong>推理应用</strong>：训练后的语义场被冻结，用于生成语义点云，作为操作策略的物体级条件输入。</li>
+</ul>
+<h3 id="_4">架构</h3>
+<ul>
+<li><strong>输入</strong>：物体点云（来自深度传感器或CAD模型）。</li>
+<li><strong>语义场网络</strong>：采用隐式神经表示（如NeRF风格网络），以3D坐标和点云特征为输入，输出部件语义嵌入。</li>
+<li><strong>输出</strong>：在查询位置生成连续、平滑的语义嵌入，支持任意分辨率采样。</li>
+</ul>
+<h3 id="_5">实验设置</h3>
+<ul>
+<li><strong>仿真环境</strong>：RoboTwin，包含多种操作任务（如抓取、放置、工具使用）。</li>
+<li><strong>真实实验</strong>：双臂物体操作任务，涉及不同形状和材质的物体。</li>
+<li><strong>基线方法</strong>：</li>
+<li>原始点云（Raw Point Cloud）</li>
+<li>2D特征提升（2D Feature Lifting，如使用DINOv2）</li>
+<li>3D逐点特征（3D Point-wise Features，如PointNet++）</li>
+<li><strong>评估指标</strong>：任务成功率、功能部件定位精度。</li>
+</ul>
+<h3 id="_6">关键数字与结果</h3>
+<ul>
+<li><strong>仿真任务</strong>：本文方法在RoboTwin的6个任务中平均成功率达87.3%，优于原始点云（62.1%）、2D特征提升（71.5%）和3D逐点特征（78.9%）。</li>
+<li><strong>真实实验</strong>：在双臂操作任务中，本文方法成功完成15/20次尝试，而最佳基线（3D逐点特征）仅完成9/20次。</li>
+<li><strong>功能部件定位</strong>：本文方法在部件中心预测误差上降低40%（平均误差从12.3mm降至7.4mm）。</li>
+</ul>
+<h3 id="_7">结论</h3>
+<ul>
+<li>以物体为中心的连续语义场提供了更稳定、与观测无关的功能部件线索。</li>
+<li>该方法在仿真和真实场景中均显著提升操作策略性能，尤其适用于需要精确部件理解的复杂任务。</li>
+<li>未来工作可探索动态场景和部分遮挡下的扩展。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2607.03163v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_dexterous_manipulation/">灵巧操作</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_beyond_point_attached_semantic_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">方法</span>
+          <h3>灵巧操作</h3>
+          <p>利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">架构</a></li>
+<li><a href="#_5">实验设置</a></li>
+<li><a href="#_6">关键数字与结果</a></li>
+<li><a href="#_7">结论</a></li>
+</ul>
+</li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

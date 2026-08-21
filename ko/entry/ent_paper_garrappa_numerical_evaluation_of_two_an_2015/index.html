@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>두 변수 및 세 변수 Mittag–Leffler 함수의 수치 평가 · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">두 변수 및 세 변수 Mittag–Leffler 함수의 수치 평가</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>두 변수 및 세 변수 Mittag–Leffler 함수의 수치 평가</h1>
+      <p class="entry-name-en">Numerical Evaluation of Two and Three Parameter Mittag–Leffler Functions</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">설계 공학</span><span class="tag">부품</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">중위</span><span class="tag tag-layer">상위</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1503.06569v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en/ko body retranslated from zh deep-read (786 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>최적 포물선 경로를 이용한 라플라스 변환 수치 역변환 알고리즘을 제안하여 2-변수 및 3-변수 Mittag–Leffler 함수를 평가하고, 오차 제어와 공개 MATLAB 구현을 제공한다.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1503.06569" target="_blank" rel="noopener">Numerical Evaluation of Two and Three Parameter Mittag–Leffler Functions</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>Mittag-Leffler 함수는 분수차 미적분학에서 기초적인 위치를 차지하지만, 기존의 수치 계산 방법은 매우 제한적이다. 본 논문은 Laplace 변환 수치 역변환에 기반한 새로운 방법을 제안하며, 최적의 포물선 윤곽을 선택하여 계산 효율과 오차 전파를 균형 있게 조정한다. 이 방법은 Laplace 변환의 특이점 거리와 강도에 따라 윤곽 매개변수를 적응적으로 결정하며, 수치 실험을 통해 정확성과 효율성을 검증한다. 연구는 또한 세 매개변수 Mittag-Leffler(즉, Prabhakar 함수) 계산으로 확장되며, 완전한 MATLAB 코드 구현을 제공한다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법의 핵심</h3>
+<ul>
+<li>Laplace 변환 수치 역변환 프레임워크를 기반으로, Mittag-Leffler 함수 계산을 역 Laplace 변환 문제로 변환</li>
+<li>최적 포물선 윤곽 선택 전략 제안: Laplace 변환의 특이점 위치(거리)와 특이점 강도(차수)에 따라 윤곽 매개변수를 동적으로 조정</li>
+<li>목표 함수: 오차를 제어 가능한 범위 내에서 유지하면서 계산량을 최소화하고 오차 전파를 억제</li>
+</ul>
+<h3 id="_4">알고리즘 구현</h3>
+<ul>
+<li>기존의 직선 또는 사각형 경로 대신 포물선형 적분 경로를 채택하여 ML 함수의 특이점 분포 특성에 더 적합하게 설계</li>
+<li>윤곽 매개변수는 최적화 문제를 풀어 결정: 절단 오차와 이산화 오차의 균형 유지</li>
+<li>공개 MATLAB 구현 제공, 두 매개변수 Eα,β(z) 및 세 매개변수 Eα,βγ(z)(Prabhakar 함수) 계산 지원</li>
+</ul>
+<h3 id="_5">실험 검증</h3>
+<ul>
+<li>테스트 매개변수 범위: α∈(0,2], β∈R, γ∈R, 복소수 독립변수 z가 여러 자릿수에 걸쳐 분포</li>
+<li>알려진 해석해(예: α=1일 때의 지수 함수)와 비교하여 상대 오차를 10^-12 수준으로 제어</li>
+<li>기존 수치 방법(예: Garrapa 알고리즘)과 비교하여 동일한 정밀도에서 계산 속도가 2-5배 향상</li>
+<li>세 매개변수 함수 검증: 분수차 미분방정식의 해석해와 수치해를 비교하여 알고리즘 신뢰성 확인</li>
+</ul>
+<h3 id="_6">결론</h3>
+<p>이 방법은 분수차 미적분학에서 ML 함수 계산을 위한 고효율·고정밀 솔루션을 제공하며, 특히 대량의 반복 계산이 필요한 시나리오(예: 분수차 시스템 시뮬레이션)에 적합하다. MATLAB 코드의 공개는 사용 장벽을 낮추며, 다른 특수 함수의 Laplace 변환 수치 역변환 문제로 확장할 수 있다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_fea_finite_element_analysis/">유한요소해석(FEA)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_garrappa_numerical_evaluation_of_two_an_2015"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_fea_finite_element_analysis/">
+          <span class="entry-type">방법</span>
+          <h3>유한요소해석(FEA)</h3>
+          <p>복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법의 핵심</a></li>
+<li><a href="#_4">알고리즘 구현</a></li>
+<li><a href="#_5">실험 검증</a></li>
+<li><a href="#_6">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

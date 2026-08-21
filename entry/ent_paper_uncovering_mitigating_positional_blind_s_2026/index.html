@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出并系统研究了视觉-语言-动作模型（VLA）中的位置性盲区（Positional Blind Spots, PBS）现象，即模型在连续工作空间中特定局部区域表现出的系统性失败。作者设计了一个两阶段黑盒框架，先通过离散化网格与似然比检验高效定位PBS，再利用定位结果引导LoRA微调进行针对性缓解，在五个VLA模型和两个基准上验证了方法的有效性与泛化性。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01573" target="_blank" rel="noopener">arXiv:2608.01573 Uncovering and Mitigating Positional Blind Spots in Vision-Language-Action Model</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有VLA评估范式存在一个根本性盲区：默认模型能力在工作空间内空间均匀，因此仅报告预定义对象配置上的平均成功率。本文揭示这一假设在具身任务中不成立——仅移动任务无关干扰物，就能在局部空间连贯区域内显著提高失败概率，且该现象在五个主流VLA模型中普遍存在（穷举评估显示所有策略失败率范围为0.15至0.58）。这一发现将评估粒度从“任务级平均”推进到“空间单元级”，改变了我们对VLA鲁棒性来源的理解：失败并非随机噪声，而是具有空间结构、可预测、可干预的系统性缺陷。</p>
+<p>更重要的是，本文改变了“发现问题”与“解决问题”之间的连接方式。以往鲁棒性研究多停留在诊断层面，或依赖随机数据增强进行隐式缓解。本文证明，通过主动搜索定位高风险区域，并用极小量（980次策略执行）的定向演示数据进行LoRA微调，即可将位置脆弱性指标（LLR）降低92.61%–99.93%，同时保持策略原生训练目标与超参数不变。这为VLA部署前的空间安全审计提供了可操作范式。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="pbs">阶段一：PBS发现（黑盒搜索）</h3>
+<ul>
+<li>将可行干扰物放置区域 Ω ⊂ ℝ² 离散化为 N×N 均匀网格，共 N² 个单元 {gᵢ}。</li>
+<li>每个单元 gᵢ 均匀采样 K 个有效位置，每个位置执行一次完整rollout，总预算 Q = N²K（默认 N=7, K=20, Q=980）。</li>
+<li>记录每单元失败数 cᵢ，计算经验失败概率 p̂ᵢ = cᵢ/K。</li>
+<li>对每单元计算 <strong>Log-Likelihood Ratio (LLR) 分数</strong>：零假设为单元失败概率等于其余工作空间；备择假设为单元内失败概率更高。当单元内经验失败概率不超过其余工作空间时，LLR 设为零。</li>
+<li>按 LLR 降序排列，保留得分最高的 M 个单元作为预测 PBS 集合 B̂；相邻选中单元合并为同一盲区。</li>
+</ul>
+<h3 id="pbs_1">阶段二：PBS引导的缓解</h3>
+<ul>
+<li>从 B̂ 中采样 N_demo 个有效干扰物位置 zⱼ，人类专家遥操作收集成功演示轨迹 τⱼ(zⱼ)。</li>
+<li>使用策略原生训练目标 L_native，通过 <strong>LoRA</strong> 优化可训练参数 φ：
+  φ* = argmin_φ (1/N_demo) Σⱼ L_native(π_{θ,φ}; τⱼ)</li>
+<li>保留原始观测空间、动作表示、优化目标和训练超参数，仅更新 LoRA 引入的参数。</li>
+</ul>
+<h3 id="_3">关键设计决策</h3>
+<ul>
+<li><strong>均匀分配rollout</strong>：使各单元失败风险估计可比，避免采样偏差。</li>
+<li><strong>LLR而非经验失败概率</strong>：经验失败概率无法区分局部位置脆弱性与策略整体失败率（单元可能因任务本身困难而失败率高）。</li>
+<li><strong>黑盒设置</strong>：策略仅通过完整rollout查询，仅观察二元成功/失败结果，无需访问策略内部，适用于任何不可微或闭源策略。</li>
+</ul>
+<h2 id="_4">关键创新</h2>
+<ol>
+<li>
+<p><strong>首次形式化定义并量化VLA的位置性盲区</strong>：通过LLR与Global Moran's I两个指标，将“空间非均匀失败”从定性观察转化为可量化、可比较的工程指标。表I显示所有模型在缓解前均表现出显著空间聚集性（Moran's I 0.49–0.86），证实PBS是跨架构的普遍现象而非个别模型缺陷。</p>
+</li>
+<li>
+<p><strong>黑盒、预算受限的PBS定位算法</strong>：在无梯度、无置信度、仅二元反馈的约束下，用LLR排序替代简单失败率排序，在980次执行（仅为穷举评估十分之一）内实现平均F1-score 0.678，较随机搜索提升0.268、较自适应采样提升0.178。LLR的关键创新在于通过对比单元内与其余工作空间的失败率，消除了任务固有难度对定位的干扰。</p>
+</li>
+<li>
+<p><strong>“定位-缓解”闭环</strong>：将PBS发现结果直接转化为LoRA微调数据，形成从诊断到修复的完整链路。缓解后LLR降低92.61%–99.93%，且跨基准泛化实验（表VI）显示微调后模型在未见基准上成功率从0.04提升至0.14，证明针对PBS的定向数据比随机数据更有效地提升空间鲁棒性。</p>
+</li>
+</ol>
+<h2 id="_5">实验与结果</h2>
+<h3 id="ipre-mitigation-vs-post-mitigation">表I：位置脆弱性量化（Pre-Mitigation vs Post-Mitigation）</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>基准</th>
+<th>LLR ↓ (前→后)</th>
+<th>Moran's I ↓ (前→后)</th>
+<th>FR ↓ (前→后)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀</td>
+<td>LIBERO</td>
+<td>644.03→0.43</td>
+<td>0.70→0.24</td>
+<td>0.27→0.04</td>
+</tr>
+<tr>
+<td>π₀.₅</td>
+<td>LIBERO</td>
+<td>950.42→8.17</td>
+<td>0.86→0.28</td>
+<td>0.31→0.16</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>LIBERO</td>
+<td>1954.03→80.59</td>
+<td>0.75→0.31</td>
+<td>0.33→0.11</td>
+</tr>
+<tr>
+<td>UniVLA</td>
+<td>LIBERO</td>
+<td>445.10→1.25</td>
+<td>0.49→0.29</td>
+<td>0.15→0.09</td>
+</tr>
+<tr>
+<td>VLA-Adapter</td>
+<td>LIBERO</td>
+<td>776.31→8.58</td>
+<td>0.55→0.22</td>
+<td>0.36→0.15</td>
+</tr>
+<tr>
+<td>π₀</td>
+<td>VLA-Arena</td>
+<td>491.05→7.32</td>
+<td>0.61→0.29</td>
+<td>0.49→0.16</td>
+</tr>
+<tr>
+<td>π₀.₅</td>
+<td>VLA-Arena</td>
+<td>55.51→4.10</td>
+<td>0.21→0.24</td>
+<td>0.36→0.10</td>
+</tr>
+<tr>
+<td>OpenVLA-OFT</td>
+<td>VLA-Arena</td>
+<td>631.02→5.95</td>
+<td>0.66→0.27</td>
+<td>0.58→0.26</td>
+</tr>
+<tr>
+<td>UniVLA</td>
+<td>VLA-Arena</td>
+<td>969.56→6.74</td>
+<td>0.45→0.21</td>
+<td>0.24→0.07</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iipbs">表II：PBS发现性能（平均）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Prec. ↑</th>
+<th>Rec. ↑</th>
+<th>F1 ↑</th>
+<th>IoU ↑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random</td>
+<td>0.366</td>
+<td>0.490</td>
+<td>0.410</td>
+<td>0.270</td>
+</tr>
+<tr>
+<td>Adaptive</td>
+<td>0.456</td>
+<td>0.598</td>
+<td>0.500</td>
+<td>0.352</td>
+</tr>
+<tr>
+<td>Ours</td>
+<td>0.636</td>
+<td>0.824</td>
+<td>0.678</td>
+<td>0.528</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iiin-45678-k20">表III：搜索粒度消融（N ∈ {4,5,6,7,8}, K=20）</h3>
+<table>
+<thead>
+<tr>
+<th>指标 / N</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1-score ↑</td>
+<td>0.52</td>
+<td>0.62</td>
+<td>0.69</td>
+<td>0.84</td>
+<td>0.58</td>
+</tr>
+<tr>
+<td>IoU ↑</td>
+<td>0.35</td>
+<td>0.45</td>
+<td>0.53</td>
+<td>0.72</td>
+<td>0.41</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iv05-libero">表IV：缓解轮次消融（π₀.₅, LIBERO）</h3>
+<table>
+<thead>
+<tr>
+<th>指标 / r</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LLR ↓</td>
+<td>950.42</td>
+<td>8.17</td>
+<td>3.47</td>
+<td>2.64</td>
+</tr>
+<tr>
+<td>FR ↓</td>
+<td>0.31</td>
+<td>0.16</td>
+<td>0.08</td>
+<td>0.10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键结论</strong>：缓解后LLR降低92.61%–99.93%，FR降低40.00%–85.19%（由表内数值计算）。搜索策略平均F1-score 0.678，优于随机搜索0.268、优于自适应采样0.178。搜索预算980次仅为穷举评估执行次数的十分之一。N=7为最优搜索粒度，第一轮缓解贡献主要改善，后续轮次改善有限且非单调。</p>
+<h2 id="_6">边界与局限</h2>
+<ul>
+<li><strong>残余空间相关性</strong>：π₀.₅在VLA-Arena上缓解后Moran's I从0.21略增至0.24，表明少量残余失败仍局部相关，LLR与FR的降低并未完全消除空间聚集性。</li>
+<li><strong>缓解轮次的非单调性</strong>：表IV显示第二轮后FR从0.08回升至0.10，说明过度微调可能引入新的脆弱性，作者默认采用一轮缓解作为鲁棒性与适配成本之间的实际权衡。</li>
+<li><strong>基准覆盖不全</strong>：VLA-Adapter未在VLA-Arena上评估（无公开适配检查点），跨基准泛化实验仅针对π₀.₅，其他模型的跨基准表现论文未明确。</li>
+<li><strong>搜索空间假设</strong>：方法假设PBS存在于干扰物放置的二维平面内，未考虑物体姿态、光照、背景纹理等其他空间因素；对三维空间或更高维配置空间的适用性论文未明确。</li>
+<li><strong>演示数据依赖</strong>：缓解阶段依赖人类专家遥操作收集成功演示，在复杂长程任务中演示成本可能显著上升，论文未明确演示数量N_demo的具体取值。</li>
+</ul>
+<h2 id="_7">工程启示</h2>
+<ul>
+<li><strong>复现时先核对搜索网格与预算</strong>：默认配置为N=7、K=20、Q=980，表III显示N=7为最优（F1=0.84），N=8时性能骤降（F1=0.58），说明网格过密导致每单元样本不足，复现时应严格保持N与K的比例关系。</li>
+<li><strong>LLR实现细节是关键</strong>：LLR分数在单元内经验失败概率不超过其余工作空间时设为零，这一截断操作直接影响PBS集合的排序与召回率，实现时务必确认零假设的对比基准是“其余所有单元”而非“全局平均”。</li>
+<li><strong>缓解阶段最容易踩坑的是LoRA超参数</strong>：作者强调保留原始观测空间、动作表示、优化目标和训练超参数，仅更新LoRA参数。若在微调时改动学习率或优化器，可能破坏策略原有行为，导致缓解后FR不降反升（如表IV第二轮所示）。</li>
+<li><strong>下游团队部署前应执行空间审计</strong>：即使模型在基准上平均成功率达标，仍可能存在局部盲区。建议用本文框架以980次rollout预算（约数小时机器人时间）完成空间风险测绘，优先对高风险区域补充演示数据。</li>
+<li><strong>跨基准泛化需单独验证</strong>：表VI显示微调后模型在VLABench上成功率仍为0.00，说明PBS缓解可能不迁移到分布差异较大的场景，跨基准部署前应重新执行PBS发现流程。</li>
+</ul>
+<h2 id="_8">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.01573</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">OpenVLA-OFT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_wang_unified_vision_language_action_2025/">UniVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">VLA-Adapter</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_uncovering_mitigating_positional_blind_s_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">论文</span>
+          <h3>OpenVLA-OFT</h3>
+          <p>OpenVLA-OFT 是斯坦福大学在 RSS 2025 上提出的一种针对视觉-语言-动作模型（VLA）的优化微调方法。其核心贡献在于通过整合并行解码、动作分块、连续动作表示和 L1 回归损失函数，将…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_unified_vision_language_action_2025/">
+          <span class="entry-type">论文</span>
+          <h3>UniVLA</h3>
+          <p>UniVLA 是由中国科学院自动化研究所、北京智源人工智能研究院、清华大学和香港科技大学（深圳）联合提出的 2025 年大型视觉-语言-动作模型。其核心贡献在于将视觉、语言和动作信号统一建模为离散…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_wang_vla_adapter_an_effective_parad_2025/">
+          <span class="entry-type">论文</span>
+          <h3>VLA-Adapter</h3>
+          <p>VLA-Adapter 是北京邮电大学、西湖大学、浙江大学等机构于2025年提出的轻量级视觉-语言-动作模型范式，旨在降低VLA模型对大规模预训练和计算资源的依赖。其核心贡献在于通过Bridge…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#pbs">阶段一：PBS发现（黑盒搜索）</a></li>
+<li><a href="#pbs_1">阶段二：PBS引导的缓解</a></li>
+<li><a href="#_3">关键设计决策</a></li>
+</ul>
+</li>
+<li><a href="#_4">关键创新</a></li>
+<li><a href="#_5">实验与结果</a><ul>
+<li><a href="#ipre-mitigation-vs-post-mitigation">表I：位置脆弱性量化（Pre-Mitigation vs Post-Mitigation）</a></li>
+<li><a href="#iipbs">表II：PBS发现性能（平均）</a></li>
+<li><a href="#iiin-45678-k20">表III：搜索粒度消融（N ∈ {4,5,6,7,8}, K=20）</a></li>
+<li><a href="#iv05-libero">表IV：缓解轮次消融（π₀.₅, LIBERO）</a></li>
+</ul>
+</li>
+<li><a href="#_6">边界与局限</a></li>
+<li><a href="#_7">工程启示</a></li>
+<li><a href="#_8">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

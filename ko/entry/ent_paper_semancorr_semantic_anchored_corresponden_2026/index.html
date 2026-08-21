@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SemAnCorr: Semantic Anchored Correspondence for Zero-Shot Manipulation Skill Transfer · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">SemAnCorr: Semantic Anchored Correspondence for Zero-Shot Manipulation Skill Transfer</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>SemAnCorr: Semantic Anchored Correspondence for Zero-Shot Manipulation Skill Transfer</h1>
+      <p class="entry-name-en">SemAnCorr: Semantic Anchored Correspondence for Zero-Shot Manipulation Skill Transfer</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Transferring manipulation skills across object instances that share functionality but differ in geometry remains a fundamental challenge in robot learning. While recent correspondence methods leverage dense visual descriptors and 3D feature fields, nearest-neighbor feature matching often produces spatially incoherent correspondences that fail to recover the local geometric frames required for.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.28382" target="_blank" rel="noopener">arXiv:2607.28382 SemAnCorr: Semantic Anchored Correspondence for Zero-Shot Manipulation Skill Tra</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>SemAnCorr은 훈련이 필요 없는 제로샷 조작 스킬 전이 프레임워크로, 의미적 앵커 선택과 함수 매핑 전파를 통해 객체 인스턴스 간에 의미적으로 일관되고 기하학적으로 연속적인 밀집 대응 관계를 구축합니다. 이 방법은 저자 팀에 의해 제안되었으며, 핵심 기여는 "어디에서 상호작용할지"의 의미적 결정과 "어떻게 실행할지"의 로컬 좌표계 복원을 하나의 최적화 프레임워크로 통합한 것입니다. PartNet-Mobility 데이터셋에서 평균 의미 정확도 90.8%를 달성했으며, 실제 로봇 작업에서 기존 베이스라인보다 현저히 우수한 성능을 보였습니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존의 객체 간 대응 방법(예: D3Fields, DenseMatcher)은 본질적으로 특징 공간에서 최근접 이웃 매칭을 수행하는데, 이는 두 가지 근본적인 결함을 초래합니다: 첫째, 대응 관계가 공간적으로 연속적이지 않아 파편화된 매칭 영역이 발생합니다; 둘째, 스킬 전이에 필요한 로컬 기하 좌표계를 복원할 수 없어 "어디를 접촉할지"는 알지만 "어떻게 접촉할지"는 알지 못합니다. 저자가 실제로 바꾼 것은 대응 문제를 "특징 유사성 검색"에서 "의미적 제약 하의 기하 최적화"로 재구성하여, 대응 관계가 기능적 의도(의미적 일관성)와 실행 가능성(기하적 연속성)을 동시에 충족하도록 한 것입니다.</p>
+<p>이 전환의 의미는 스킬 전이의 병목을 시각적 특징 엔지니어링에서 기하와 의미의 결합 추론으로 이동시킨 것입니다. 저자는 더 강력한 특징 추출기에 의존하지 않고, 앵커 선택과 스펙트럼 영역 전파를 통해 기존 의미적 특징 위에서 공간적 연속성을 복원했습니다. 이는 더 본질적인 판단을 시사합니다: 조작 작업에서 특징 판별력이 유일한 병목이 아니며, 대응 관계의 구조적 연속성도 동일하게 중요하고, 오히려 더 중요할 수 있습니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">의미적 부품 추출</h3>
+<ul>
+<li>N개의 가상 카메라로 메시를 다중 시점 렌더링하고, 사전 훈련된 SigLip2Vision 모델로 패치 수준 임베딩을 추출한 후 마지막 4개 은닉 레이어 상태를 평균합니다.</li>
+<li>리프팅 연산자를 통해 2D 패치 임베딩을 3D 표면에 연관시키고, 집계하여 의미적 포인트 클라우드를 얻습니다.</li>
+<li>PCA 차원 축소 후 정규화된 3D 위치와 결합하고, 결합 특징 공간에서 k-means 클러스터링(K=6)을 수행한 후, 공간적으로 연결되지 않은 영역을 분할하고 작은 조각을 병합하여 의미적으로 연결된 부품을 얻습니다.</li>
+</ul>
+<h3 id="_5">앵커 선택과 결합 정렬</h3>
+<ul>
+<li>상대 코사인 유사도: 객체 평균 임베딩을 빼서 부품 판별 신호를 분리하고, 상대 유사도 행렬을 계산합니다.</li>
+<li>양측 마진 앵커 선택: 행, 열 마진 최솟값을 신뢰도로 사용하고, 탐욕적으로 α=3개의 쌍을 선택하며 전단사 제약을 적용합니다.</li>
+<li>결합 포즈-대응 최적화: 단위 구로 정규화한 후, 강체 정렬 (R,t)과 소프트 클러스터 대응을 결합 최적화합니다; 점수 함수는 기하 호환성(챔퍼 거리 지수 유사도)과 의미 유사도의 가중 합이며, B개의 초기화로 경사 하강 최적화를 수행하고, 코사인 스케줄링으로 초기에는 의미에, 후기에는 기하에 치중합니다.</li>
+</ul>
+<h3 id="_6">함수 매핑 전파</h3>
+<ul>
+<li>처음 k=30개의 Laplace-Beltrami 고유 함수로 스펙트럼 기저를 구성하여 평활화 사전으로 사용합니다.</li>
+<li>앵커 영역 대응: 전역 정렬 사전 정합 후, 앵커별로 경계 상자 공간으로 정규화하여 최근접 이웃 검색을 수행합니다.</li>
+<li>각 앵커 클러스터에서 nkp개의 키포인트를 서브샘플링하여 초기 함수 매핑을 피팅하며, 스펙트럼 기저의 과도한 제약으로 인한 포인트 매핑 붕괴를 방지합니다.</li>
+<li>기하 제약을 적용한 ZoomOut 변형: 기저 차원 k를 점진적으로 증가시키고, 매핑과 대응을 교대로 업데이트합니다; 각 단계에서 정점을 knb개의 공간 이웃 내에서만 검색하도록 제한하고, 내부 앵커 대응을 고정하여 드리프트를 방지합니다.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>의미적 앵커링 기반 결합 최적화</strong>: 기존 방법이 특징 매칭과 기하 정렬을 분리 처리하는 것과 달리, SemAnCorr은 앵커 선택 단계에서부터 전단사 제약과 결합 포즈-대응 최적화를 도입하여, 앵커 쌍의 의미적·기하적 일관성을 원천적으로 보장합니다. 이 설계는 후속 전파에 신뢰할 수 있는 제약 시드를 제공하며, 전역 최근접 이웃의 취약한 매칭에 의존하지 않습니다.</p>
+</li>
+<li>
+<p><strong>스펙트럼 영역 전파로 점별 매칭 대체</strong>: Laplace-Beltrami 기저 함수를 통해 대응 문제를 함수 매핑 추정으로 변환하여, 자연스럽게 평활성과 전역 일관성을 갖습니다. ZoomOut 변형의 공간 이웃 제한과 앵커 고정 메커니즘은 고차원 스펙트럼 영역에서 흔한 매핑 드리프트와 국소 붕괴를 효과적으로 방지하며, 이는 순수 기하 방법(예: FM-WKS)이나 순수 의미 방법(예: D3Fields) 모두 동시에 해결하지 못한 문제입니다.</p>
+</li>
+<li>
+<p><strong>훈련 불필요한 플러그 앤 플레이</strong>: 전체 파이프라인은 네트워크 미세 조정이나 훈련을 포함하지 않으며, 사전 훈련된 비전 모델과 고전적 기하 도구에만 의존합니다. 이는 기성 모듈로 모든 다운스트림 정책에 삽입할 수 있고, 보지 못한 객체 범주에 대해 자연스러운 일반화 능력을 가지며, 클래스별 미세 조정이 필요한 DenseMatcher와 뚜렷한 대비를 이룹니다.</p>
+</li>
+</ol>
+<h2 id="_8">실험과 결과</h2>
+<p>실험은 PartNet-Mobility의 7개 클래스, 100개 이상의 객체에서 수행되었으며, 의미 정확도(sAcc), 연속성, 커버리지, 기하 연속성 점수(GCS, 연속성과 커버리지의 조화 평균)를 평가했습니다.</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>sAcc(클래스 내 평균)</th>
+<th>GCS</th>
+<th>교차 클래스 sAcc(가위→플라이어)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FM-WKS</td>
+<td>63.1%</td>
+<td>0.007</td>
+<td>55.3%</td>
+</tr>
+<tr>
+<td>DenseMatcher</td>
+<td>65.1%</td>
+<td>0.01</td>
+<td>63.5%</td>
+</tr>
+<tr>
+<td>Robo-ABC</td>
+<td>63.2%</td>
+<td>0.11</td>
+<td>70.3%</td>
+</tr>
+<tr>
+<td>D3Fields</td>
+<td>84.6%</td>
+<td>0.16</td>
+<td>87.2%</td>
+</tr>
+<tr>
+<td>SemAnCorr</td>
+<td>90.8%</td>
+<td>0.40</td>
+<td>89.7%</td>
+</tr>
+</tbody>
+</table>
+<p>SemAnCorr은 전체 7개 클래스에서 모든 베이스라인보다 우수했으며, 평균 sAcc 90.8%로 가장 강력한 베이스라인 D3Fields보다 6.2% 향상되었습니다(표 내 수치 90.8→84.6으로 계산). GCS는 차선 방법의 두 배 이상(0.40 vs 0.16)으로, 대응 관계가 높은 연속성과 표면 커버리지를 동시에 가짐을 나타냅니다. 절제 실험에서 앵커 선택을 제거하면 sAcc가 90.8%에서 39.1%로 떨어져 가장 큰 단일 성능 손실이었고, 의미 클러스터링을 제거하면 GCS가 0.40에서 0.05로 떨어졌습니다.</p>
+<p>실제 세계 5개 작업(10회 시행)에서 SemAnCorr은 복잡한 상호작용 작업(작업 3, 4, 5)에서 D3Fields보다 성공률이 현저히 높았으며(7/10 vs 3/10, 7/10 vs 1/10, 6/10 vs 3/10), 단순 작업에서는 둘이 비슷했습니다. 실패 분석에 따르면 D3Fields의 실패는 불연속적인 대응으로 인한 잘못된 로컬 좌표계에서 비롯되었고, SemAnCorr의 잔여 실패는 주로 메시 재구성 정렬 오차에서 발생했습니다.</p>
+<h2 id="_9">경계와 한계</h2>
+<p>저자는 각 메시가 단일 연결 성분이라고 명시적으로 가정하며, 이는 함수 매핑 스펙트럼 기저의 적용 가능성을 제한하여 다중 부품 또는 고도로 파편화된 객체(예: 관절 구조 분리 후의 부품)에는 실패할 수 있습니다. 또한 α개의 의미적으로 대응하는 영역 쌍이 존재한다고 가정하는데, 객체 간 기능 부품 차이가 너무 크면 앵커 선택이 실패할 수 있습니다. 이 방법은 객체 쌍당 약 6초의 최적화 비용으로 훈련 불필요한 일반화 능력을 얻지만, 실시간 요구 사항이 높은 시나리오에는 적합하지 않습니다. 논문은 노이즈 포인트 클라우드, 부분 가림 또는 비다양체 메시에 대한 강건성을 명시적으로 평가하지 않았으며, 양팔 또는 정밀 조작에서 다중 접촉점 기하 일관성으로의 확장도 다루지 않았습니다.</p>
+<h2 id="_10">공학적 시사점</h2>
+<p>재현 시 먼저 의미적 특징 추출의 세부 사항을 확인해야 합니다: SigLip2Vision의 패치 크기와 리프팅 연산자의 연관 정밀도는 클러스터링 품질에 직접적인 영향을 미치며, 이는 이후 모든 단계의 기초입니다. 앵커 선택은 성능의 핵심 병목이며, 절제 실험에서 제거 시 sAcc가 50% 포인트 이상 하락(표 내 수치 90.8→39.1로 계산)하므로, 양측 마진 신뢰도 임계값과 전단사 제약의 완화 정도를 우선적으로 디버깅할 것을 권장합니다. 함수 매핑의 ZoomOut 반복에서 공간 이웃 수 knb와 앵커 고정 전략은 드리프트 방지에 매우 중요하며, knb가 너무 크면 매핑이 조기에 붕괴되고, 너무 작으면 수렴이 느려집니다. 실제 배포 시 메시 재구성 품질이 주요 오차 원인이므로, SAM3D 출력 후 깊이 포인트 클라우드와의 정밀 정합 단계를 추가할 것을 권장합니다. 다운스트림 그리퍼 생성의 경우, GPG 후보와 SE(3) 사전의 순위 가중치는 작업에 따라 조정해야 하며, 단순 작업은 그리퍼 품질에 치중하고 복잡한 작업은 사전 포즈의 가중치를 높여야 합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_dexterous_manipulation/">손재주 있는 조작</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_semancorr_semantic_anchored_corresponden_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_dexterous_manipulation/">
+          <span class="entry-type">방법</span>
+          <h3>손재주 있는 조작</h3>
+          <p>다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">의미적 부품 추출</a></li>
+<li><a href="#_5">앵커 선택과 결합 정렬</a></li>
+<li><a href="#_6">함수 매핑 전파</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험과 결과</a></li>
+<li><a href="#_9">경계와 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

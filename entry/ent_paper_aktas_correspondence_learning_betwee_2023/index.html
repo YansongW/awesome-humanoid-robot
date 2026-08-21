@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基于任务演示的形态不同机器人之间的对应关系学习 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">基于任务演示的形态不同机器人之间的对应关系学习</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>基于任务演示的形态不同机器人之间的对应关系学习</h1>
+      <p class="entry-name-en">Correspondence learning between morphologically different robots via task demonstrations</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2310.13458v3. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (996 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种跨形态机器人对应学习框架，通过为每个机器人训练独立的Conditional Neural Movement Primitives，并利用学习到的凸组合融合其潜在编码，实现从单一任务演示到形态不同机器人的零样本轨迹生成。该工作由研究团队完成，核心贡献在于无需重新训练即可将技能迁移至不同形态机器人。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2310.13458" target="_blank" rel="noopener">Correspondence learning between morphologically different robots via task demonstrations</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>针对机器人形态多样导致技能重复训练效率低下的问题，本文提出一种基于任务演示的对应学习方法。该方法首先让不同形态机器人执行相同基准任务，然后为每个机器人独立训练条件神经运动基元，并通过学习凸组合将它们的潜在编码融合。训练完成后，仅需观察一个机器人执行新任务，即可自动生成其他机器人完成相同任务的轨迹。实验验证了该方法在三种场景下的有效性：机器人需遵循相同路径、不同路径以及不同复杂度轨迹完成任务。此外，还实现了真实机械臂与仿真移动机器人之间的对应学习概念验证。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法架构</h3>
+<ul>
+<li><strong>核心框架</strong>：为每个机器人训练独立的Conditional Neural Movement Primitives（cNMP），通过可学习的凸组合（convex combination）融合各机器人的潜在编码（latent codes），实现跨形态零样本轨迹生成。</li>
+<li><strong>训练流程</strong>：</li>
+<li>让所有机器人执行同一基准任务（如到达目标点），收集演示数据。</li>
+<li>联合学习一个共享潜在空间（common latent representation）和每个机器人的独立策略。</li>
+<li>训练完成后，输入一个机器人的新任务演示，通过潜在空间映射自动生成其他机器人的对应轨迹。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li><strong>机器人类型</strong>：固定基座关节控制机械臂（fixed-based manipulator）与差速驱动移动机器人（differential drive mobile robot），验证了不同形态（不同自由度、不同控制方式）的对应学习。</li>
+<li><strong>三种实验场景</strong>：</li>
+<li><strong>相同路径</strong>：所有机器人需沿相同几何路径完成任务。</li>
+<li><strong>不同路径</strong>：机器人需采用不同轨迹但达成相同任务目标。</li>
+<li><strong>不同复杂度</strong>：各机器人所需传感器-运动轨迹的复杂度不同。</li>
+<li><strong>真实-仿真验证</strong>：在真实机械臂与仿真移动机器人之间实现了对应学习的概念验证（proof-of-concept）。</li>
+</ul>
+<h3 id="_5">关键结论</h3>
+<ul>
+<li>该方法成功实现了从单一任务演示到不同形态机器人的零样本轨迹生成，无需重新训练。</li>
+<li>在三种实验场景下均有效，尤其适用于形态差异较大的机器人（如机械臂与移动机器人）。</li>
+<li>潜在空间融合策略（凸组合）能够有效捕捉不同机器人运动模式的共性，同时保留个体差异。</li>
+</ul>
+<h2 id="_6">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2310.13458v3</li>
+</ul>
+    </section>
+    
+
+    
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法架构</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结论</a></li>
+</ul>
+</li>
+<li><a href="#_6">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+
+</body>
+</html>

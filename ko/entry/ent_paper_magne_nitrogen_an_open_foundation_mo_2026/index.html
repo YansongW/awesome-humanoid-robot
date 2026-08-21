@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NitroGen: An Open Foundation Model for Generalist Gaming Agents · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">NitroGen: An Open Foundation Model for Generalist Gaming Agents</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>NitroGen: An Open Foundation Model for Generalist Gaming Agents</h1>
+      <p class="entry-name-en">NitroGen: An Open Foundation Model for Generalist Gaming Agents</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.02427v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (822 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>NitroGen: An Open Foundation Model for Generalist Gaming Agents (NitroGen), is a 2026 large vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford, Caltech, UChicago, UT Austin.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2601.02427" target="_blank" rel="noopener">NitroGen: An Open Foundation Model for Generalist Gaming Agents (arXiv)</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>NitroGen은 1,000개 이상의 게임에서 수집된 40,000시간의 게임 비디오로 훈련된 범용 게임 에이전트를 위한 비전-행동 기반 모델입니다. 이 모델은 세 가지 핵심 혁신을 통해 게임 간 일반화를 달성합니다: 공개 게임 비디오에서 플레이어 행동을 자동으로 추출하여 대규모 데이터셋 구축, 다중 게임 벤치마크 환경 설계를 통한 일반화 능력 평가, 그리고 통합 비전-행동 모델을 사용한 대규모 행동 복제. 실험 결과, NitroGen은 3D 액션 게임의 전투 장면, 2D 플랫폼 게임의 고정밀 제어, 절차적 생성 세계의 탐험 작업에서 뛰어난 성능을 보였으며, 보지 못한 게임으로의 효과적인 전이도 가능했습니다. 작업 성공률은 처음부터 훈련된 모델 대비 최대 52% 향상되었습니다. 연구팀은 데이터셋, 평가 도구, 모델 가중치를 오픈소스로 공개했습니다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법</h3>
+<p>NitroGen은 통합 비전-행동 모델 아키텍처를 사용하며, 대규모 행동 복제를 통해 훈련됩니다. 핵심 데이터 구축 방법은 공개 게임 비디오에서 플레이어 행동을 자동으로 추출하여 인터넷 규모의 비디오-행동 데이터셋을 형성하는 것입니다. 이 데이터셋은 1,000개 이상의 게임을 아우르는 40,000시간의 게임플레이 비디오를 포함합니다.</p>
+<h3 id="_4">아키텍처</h3>
+<p>모델은 비전-행동 기반 모델로, 게임 화면을 직접 입력으로 받아 해당하는 행동 명령을 출력합니다. 훈련 과정은 게임 엔진이나 내부 상태 정보에 의존하지 않으며, 시각적 관찰과 행동 시퀀스의 매핑 관계만을 학습합니다.</p>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>훈련 데이터</strong>: 1,000개 이상의 게임을 포함한 40,000시간의 게임플레이 비디오</li>
+<li><strong>벤치마크 환경</strong>: 게임 간 일반화 능력을 측정하기 위해 특별히 설계된 다중 게임 벤치마크 환경</li>
+<li><strong>비교 방법</strong>: 처음부터 훈련된 모델과 비교</li>
+</ul>
+<h3 id="_6">주요 결과</h3>
+<ul>
+<li>3D 액션 게임의 전투 장면에서 뛰어난 성능</li>
+<li>2D 플랫폼 게임에서 고정밀 제어 달성</li>
+<li>절차적 생성 세계에서 탐험 능력 보유</li>
+<li><strong>게임 간 전이</strong>: 보지 못한 게임에서 작업 성공률이 상대적으로 최대 52% 향상</li>
+</ul>
+<h3 id="_7">결론</h3>
+<p>NitroGen은 대규모 행동 복제를 통해 비전-행동 모델을 훈련함으로써 범용 게임 에이전트의 게임 간 일반화 능력을 달성할 수 있음을 입증했습니다. 연구팀은 데이터셋, 평가 도구, 모델 가중치를 오픈소스로 공개하여 범용 임베디드 에이전트 연구 발전을 촉진하고 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">developed_by</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_magne_nitrogen_an_open_foundation_mo_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법</a></li>
+<li><a href="#_4">아키텍처</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">주요 결과</a></li>
+<li><a href="#_7">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

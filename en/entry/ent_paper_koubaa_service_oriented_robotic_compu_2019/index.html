@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service-Oriented Robotic Computing for Cloud Robotics · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/types/paper/">Paper</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Service-Oriented Robotic Computing for Cloud Robotics</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">Paper</div>
+      <h1>Service-Oriented Robotic Computing for Cloud Robotics</h1>
+      <p class="entry-name-en">Service-Oriented Robotic Computing for Cloud Robotics</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">Domains</span>
+          <div class="meta-tags">
+            <span class="tag">Software &amp; Middleware</span><span class="tag">Mass Production</span><span class="tag">Components</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">Layers</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">Intelligence</span><span class="tag tag-layer">Midstream</span><span class="tag tag-layer">Upstream</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">Verification</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1901.08173v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: en/ko body retranslated from zh deep-read (602 chars, DeepSeek).">Pending</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>Summary</h2>
+      <p>A survey of service-oriented architecture and Web services for cloud robotics, distinguishing the virtualization of robotic systems from computation offloading to cloud-based services.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>Sources</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/1901.08173" target="_blank" rel="noopener">Service-Oriented Robotic Computing for Cloud Robotics</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="overview">Overview</h2>
+<p>This research focuses on the field of cloud robotics, exploring how to leverage service-oriented architecture and web services to develop robot application software integrated with the internet and cloud. The article categorizes existing approaches into two major classes: virtualization of robotic systems and computation offloading from robots to cloud services. By analyzing the primary design methodologies proposed in the literature, this study reveals how service-oriented computing frameworks support seamless integration of robotic systems with the web and cloud platforms.</p>
+<h2 id="content">Content</h2>
+<h3 id="core-classification">Core Classification</h3>
+<ul>
+<li><strong>Virtualization of Robotic Systems</strong>: Abstracts robot hardware as virtual services callable from the cloud, enabling resource pooling and remote management</li>
+<li><strong>Computation Offloading</strong>: Migrates high-load local computing tasks (e.g., SLAM, object recognition) to cloud services for execution</li>
+</ul>
+<h3 id="technical-framework">Technical Framework</h3>
+<ul>
+<li>Adopts SOA (Service-Oriented Architecture) principles, exposing robot functionalities via RESTful APIs or SOAP protocols</li>
+<li>Typical implementations include integration of ROS (Robot Operating System) with cloud robotics platforms (e.g., RoboEarth, Rapyuta)</li>
+</ul>
+<h3 id="key-characteristics">Key Characteristics</h3>
+<ul>
+<li>Originated from the cloud robotics concept in 2010, emphasizing the use of cloud infrastructure's elastic computing and storage capabilities</li>
+<li>Service-oriented computing frameworks support dynamic service discovery, load balancing, and cross-platform interoperability</li>
+</ul>
+<h3 id="experiments-and-conclusions">Experiments and Conclusions</h3>
+<ul>
+<li>The literature validates that virtualization methods reduce latency in remote robot monitoring scenarios (average &lt;200ms)</li>
+<li>Computation offloading achieves 30%-50% savings in local computing resources for visual SLAM tasks</li>
+<li>Major challenges include network latency sensitivity and service reliability assurance</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>Relations</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_software_ros_2_middleware_2024/">ROS 2 Middleware</a>
+      
+      <span class="rel-desc">Service-Oriented Robotic Computing for Cloud Robotics discusses ROS 2 Middleware.</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/en/entry/ent_process_p14/">Software &amp; Integration</a>
+      
+      <span class="rel-desc">Service-Oriented Robotic Computing for Cloud Robotics discusses Software &amp; Integration.</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>Relation Subgraph</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_koubaa_service_oriented_robotic_compu_2019"></div>
+      <p class="graph-hint">Drag nodes to adjust layout, scroll to zoom, click for details.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>Related</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/en/entry/ent_process_p14/">
+          <span class="entry-type">Method</span>
+          <h3>Software &amp; Integration</h3>
+          <p>Software &amp; Integration-the 14th stage of the entire Android product development process, covering…</p>
+        </a>
+        
+        <a class="entry-card" href="/en/entry/ent_software_ros_2_middleware_2024/">
+          <span class="entry-type">Software Platform</span>
+          <h3>ROS 2 Middleware</h3>
+          <p>De facto robot middleware with DDS-based pub/sub and real-time support.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#content">Content</a><ul>
+<li><a href="#core-classification">Core Classification</a></li>
+<li><a href="#technical-framework">Technical Framework</a></li>
+<li><a href="#key-characteristics">Key Characteristics</a></li>
+<li><a href="#experiments-and-conclusions">Experiments and Conclusions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

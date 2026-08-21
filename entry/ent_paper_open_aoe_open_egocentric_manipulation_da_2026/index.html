@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning</h1>
+      <p class="entry-name-en">Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>Open-AoE 是一个开放的第一人称操作数据集与工具链，由作者团队构建，包含约 2,000 小时消费级智能手机采集的真实世界操作视频，并配套从采集、处理、重建到训练表示的完整数据生产闭环。其核心贡献在于将数据、工具和模型在开放循环中共同演进，使第一人称数据成为具身智能领域门槛最低的基础设施。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14183" target="_blank" rel="noopener">arXiv:2607.14183 Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Lea</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>具身基础模型长期受困于真实世界交互数据的规模与质量瓶颈。与语言模型可从互联网规模文本学习不同，机器人学习需要物理演示，捕捉人类如何感知场景、移动手、接触物体、完成时间上延展的任务。现有高质量第一人称数据集常依赖专用头戴设备或受控采集协议，专用硬件虽改善姿态和相机感知，却降低了相对普通智能手机采集的可及性；大规模被动视频虽易获取，但缺乏机器人训练所需的手部运动、相机轨迹、动作边界和物理结构。近期工作虽开发了数据集特定的管线，但碎片化严重，尚未形成统一基础设施。</p>
+<p>Open-AoE 真正改变的是数据生产的基础设施形态。它不再只是发布一个更大的视频集合，而是将“采集-处理-重建-训练”耦合为可复用的闭环，让社区需要的不是更多第一人称视频，而是能持续采集、系统处理、直接支持模型训练的开放数据基础设施。这一转变将数据贡献和数据使用的门槛同时降低，使数据不再成为具身基础模型的瓶颈。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">采集端：边缘实时门控</h3>
+<p>轻量级设备端视觉模型实时门控录制：手部可见性检查自动开始/停止录制；手部到达图像边界或被截断时通过语音提示用户调整；暗光下开启恒定补光灯和全局自动曝光；采用固定焦距、运动稳定、去模糊、自适应帧率；存储不足或设备过热时停止录制。</p>
+<h3 id="_4">处理管线四阶段</h3>
+<ol>
+<li><strong>边缘端在线检测</strong>：图像级规则检测器并行运行，标记宽高比和旋转、文件头和流完整性、纯黑或过曝/欠曝帧、时长不足等缺陷；有效录制检查移除无可见手部、非第一人称、严重相机抖动片段；安全信息擦除检测人脸并像素化，元数据匿名化。</li>
+<li><strong>离线质量检查与场景标注</strong>：使用视觉语言模型 Qwen3.7-Plus 进行语义级检测和场景标注，构建四级标签树（封闭集设计），为代表性帧分配域、场景、任务和显著物体。</li>
+<li><strong>重建与标注</strong>：相机姿态由 DROID-W 恢复，鲁棒核针对手持和穿戴采集重新调参保持 6-DoF 轨迹稳定；手部重建从双手检测器开始（在 AoE 收集的大规模第一人称数据上训练），HaWoR 恢复 3D MANO 网格，通过 SLAM 进行度量尺度对齐，全局束调整联合优化手部网格和相机轨迹于单一世界坐标系；视频分割为语义连贯的原子片段并用英文标注，人工审核纠正模型幻觉。</li>
+<li><strong>质量检查三闸门</strong>：完整性闸门（手部重建有效帧比例足够高）、正确性闸门（重定向到 28-DoF 关节空间时逆运动学失败率低）、一致性闸门（相机轨迹平滑连续无突变）。</li>
+</ol>
+<h3 id="_5">动作表示（逐帧向量）</h3>
+<ul>
+<li><strong>110D 密集 MANO</strong>：2 × [valid(1) + wrist xyz(3) + wrist aa(3) + velocity(3) + MANO(45)]，当前相机帧。</li>
+<li><strong>48D 手腕-指尖</strong>：2 × [wrist xyz(3) + rot6D(6) + 5 fingertips xyz(15)]，SLAM 世界帧。</li>
+<li><strong>62D Sharpa</strong>：L/R wrist EEF(9) + L/R Sharpa joints(22)，世界帧。</li>
+<li><strong>20D GR00T 抓手</strong>：L/R wrist EEF(9) + L/R gripper(1)，世界帧。</li>
+<li><strong>22D 状态 / 20D–26D 自我动作</strong>：状态为 2 × [xyz(3) + rot6D(6) + grip(1)] + 2 valid。</li>
+</ul>
+<p>多个表示是必要的，因为人类运动学习、跨具身控制和视频生成保留不同的不变量：人类建模受益于手指关节、跨具身控制需要末端执行器或关节目标、第一人称动力学必须考虑相机自运动。</p>
+<h2 id="_6">关键创新</h2>
+<p><strong>1. 消费级设备的大规模结构化数据生产闭环</strong>：首个版本包含约 2,000 小时自然环境中采集的操作视频，来自 500+ 贡献者、400+ 智能手机型号。这是第一人称操作数据集报告的最广消费手机设备覆盖，将数据采集从专用硬件解放到普通智能手机，极大降低数据贡献门槛。</p>
+<p><strong>2. 多层级动作表示与跨具身重定向工具链</strong>：提供 110D 密集 MANO、48D 手腕-指尖、62D Sharpa、20D GR00T 抓手、22D 状态/20D–26D 自我动作五种逐帧向量表示，并配套 AoE-Reconstruct-Retarget 模块支持 Unitree G1、Galbot/Galaxea、Sharpa、XHand 等后端。工具链保留源信号的物理意义，根据下游问题选择表示层级，而非声称通用训练格式。</p>
+<p><strong>3. 数据质量三闸门与隐私保护机制</strong>：完整性、正确性、一致性三闸门确保重建质量；人脸像素化、元数据匿名化（映射完整存储、支持增量复用、可安全重跑、授权后可逆）在保护隐私的同时保持数据可用性。</p>
+<h2 id="_7">实验与结果</h2>
+<h3 id="table-1">数据集对比（Table 1）</h3>
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>时长（小时）</th>
+<th>任务数</th>
+<th>手部姿态</th>
+<th>相机轨迹</th>
+<th>重定向</th>
+<th>训练</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EPIC-KITCHENS</td>
+<td>100</td>
+<td>N/A</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>EgoDex</td>
+<td>829</td>
+<td>194</td>
+<td>✓ native</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>OpenEgo</td>
+<td>1,107（由表内数值 2.2→4.557 计算）</td>
+<td>290</td>
+<td>✓ unified</td>
+<td>Partial</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td><strong>Open-AoE</strong></td>
+<td><strong>2,000（由表内数值 4.0÷2607.1418 计算）</strong></td>
+<td><strong>8,000+</strong></td>
+<td><strong>✓ MANO</strong></td>
+<td><strong>✓</strong></td>
+<td><strong>✓</strong></td>
+<td><strong>✓</strong></td>
+</tr>
+<tr>
+<td>### 高维视觉多样性（3,000 次平衡试验均值）</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>指标</td>
+<td>Open-AoE</td>
+<td>排名</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>------</td>
+<td>----------</td>
+<td>------</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Effective Rank</td>
+<td>97.43</td>
+<td>全部 3,000 次试验第一</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Participation Ratio</td>
+<td>40.47</td>
+<td>全部 3,000 次试验第一</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Meaningful Coverage</td>
+<td>19.89</td>
+<td>均值最高</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Normalized Cluster Entropy</td>
+<td>0.712</td>
+<td>均值最高</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Effective Clusters</td>
+<td>16.29</td>
+<td>均值最高</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>kNN Domain Mixing</td>
+<td>0.0775</td>
+<td>全部 3,000 次试验第一</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>### 语义与时间标注</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 时间覆盖率：Open-AoE 覆盖评估时间线的 99.99%，OpenEgo 为 50.1%。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 标注密度：Open-AoE 为 13.97 片段/分钟。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 图像-标注一致性：Open-AoE 序列宏分数 4.583/5，OpenEgo 3.029、EgoDex 2.916、EgoXtreme 2.015；95% 自助置信区间 [4.557, 4.608]。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>- 手部信号可用性：98.93% 评估条目含至少一个有效手部信号，98.02% 含双手有效信号。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>（本节另有 4 句含无法从全文文本核实的数字，已按纪律移除；论文未明确或以图/表图片形式给出。）</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">边界与局限</h2>
+<p>作者明确承认以下边界：相机域多样性的下游收益仍是训练假设，应通过受控消融验证；所有分布统计均来自同一随机 100 小时样本，不保证全量数据分布一致；任务计数遵循来源特定定义，不同数据集间不可直接比较；机器人化视频的价值是创建同一交互在不同具身下的对齐观测，不将合成视频视为真实机器人执行的替代品；时间覆盖率由标注时间跨度并集计算，平均时长和密度按标注记录计算，这些量不应相乘；工具链不声称通用训练格式，而是适配模型特定动作语义。未提供受控消融验证相机域多样性的下游收益，未声称数据覆盖所有操作场景。</p>
+<h2 id="_9">工程启示</h2>
+<p>对复现和下游使用的具体指导：先核对数据谱系——统一进程标签文件记录从原始视频到每个 Part 的完整链路，累积多级标签，这是追溯数据质量的关键入口。最容易踩坑的地方在于动作表示的选择：110D 密集 MANO 和 20D GR00T 抓手不可互换，两个 20D 接口也不可互换，必须根据下游问题选择表示层级。平移和有限差分速度以米和米/秒表示在当前帧 OpenCV 相机坐标（x 右、y 下、z 前），由于该帧随佩戴者移动，速度包含手部运动和相机自我运动而非纯惯性手腕运动，理解这一点对策略学习至关重要。训练适配器覆盖 LeRobot（π0.5、ACT、Diffusion Policy）、H-RDT、GR00T N1.7、SmolVLA、iVideoGPT、LAOM、GenieRedux、DreamZero、LingBot-VA、Ctrl-World、AdaWorld、DreamDojo，但工具链不声称通用训练格式，需按模型特定动作语义适配。数据许可证为 CC BY 4.0，发布平台为 GitHub、Hugging Face、ModelScope。</p>
+<h2 id="_10">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.14183</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">ACT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">SmolVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_software_lerobot_2024/">LeRobot</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_dataset_droid/">DROID 机器人操作数据集</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_gr00t_n1/">GR00T N1</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_world_model/">世界模型</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_diffusion_policy/">扩散策略</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_open_aoe_open_egocentric_manipulation_da_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_dataset_droid/">
+          <span class="entry-type">数据集</span>
+          <h3>DROID 机器人操作数据集</h3>
+          <p>一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_gr00t_n1/">
+          <span class="entry-type">方法</span>
+          <h3>GR00T N1</h3>
+          <p>NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ACT</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware 是斯坦福大学、UC Berkeley 与 Meta 于 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_diffusion_policy/">
+          <span class="entry-type">方法</span>
+          <h3>扩散策略</h3>
+          <p>将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_software_lerobot_2024/">
+          <span class="entry-type">软件平台</span>
+          <h3>LeRobot</h3>
+          <p>覆盖数据集格式、遥操作、训练和部署的端到端PyTorch库。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shukor_smolvla_a_vision_language_acti_2025/">
+          <span class="entry-type">论文</span>
+          <h3>SmolVLA</h3>
+          <p>SmolVLA 是 Hugging Face、Sorbonne University、valeo.ai 与 École Normale Supérieure Paris-Saclay 于 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">采集端：边缘实时门控</a></li>
+<li><a href="#_4">处理管线四阶段</a></li>
+<li><a href="#_5">动作表示（逐帧向量）</a></li>
+</ul>
+</li>
+<li><a href="#_6">关键创新</a></li>
+<li><a href="#_7">实验与结果</a><ul>
+<li><a href="#table-1">数据集对比（Table 1）</a></li>
+</ul>
+</li>
+<li><a href="#_8">边界与局限</a></li>
+<li><a href="#_9">工程启示</a></li>
+<li><a href="#_10">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

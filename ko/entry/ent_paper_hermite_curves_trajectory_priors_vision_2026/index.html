@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hermite Curves as Trajectory Priors for Vision-Language-Action Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Hermite Curves as Trajectory Priors for Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Hermite Curves as Trajectory Priors for Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Hermite Curves as Trajectory Priors for Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. [2026-08-05] guardrail fix: unverifiable numbers corrected to full-text-verbatim or marked as computed/未提取 (catchup sweep audit). 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Despite recent progress in Vision-Language-Action (VLA) models for robotic manipulation, the action chunk remains a weakly structured interface. Existing work typically flatten each chunk into per-timestep controls, relying on implicit data learning that manifests as jagged motion and boundary discontinuities during physical execution. To address these limitations, we introduce Hermite trajectory.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01265" target="_blank" rel="noopener">arXiv:2608.01265 Hermite Curves as Trajectory Priors for Vision-Language-Action Models</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 3차 Hermite 스플라인을 시각-언어-행동 모델(VLA)의 궤적 사전으로 사용하여, 행동 블록을 끝점 위치와 속도로 명시적으로 파라미터화하고, 세 가지 통합 변형(이산 DH, 연속 CH, 정규화 Reg)을 통해 그 효과를 검증한다. 핵심 기여는 궤적 평활도가 추론 제약이 아닌 학습 단계의 귀납적 편향으로 작용할 때 작업 성공률과 궤적 품질을 크게 향상시킬 수 있음을 증명한 것이며, Hermite-VLA Reg는 추론 오버헤드 없이 최고 성능을 달성한다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>VLA 행동 생성은 오랫동안 간과된 구조적 결함을 안고 있었다: 행동 블록이 평평한 이산 시퀀스로 모델링되어, 블록 내 평활성과 블록 간 연속성은 전적으로 암묵적 학습에 의존하며, 블록 경계에서의 속도는 블록 간 유한 차분으로 계산되어 어떤 단일 파라미터 집합에도 속하지 않는다. 따라서 표준 블록별 행동 클로닝 목표 하에서 직접적인 감독을 받지 못한다. 이로 인해 장시간 폐루프 조작에서 궤적이 거칠어지고, 경계에서 과도 스파이크가 뚜렷해지며, 물리적 제어가 불안정해지고 정책 드리프트가 누적된다. 저자가 실제로 바꾼 것은 행동 블록을 "좌표 시퀀스"에서 "경계 상태(위치+속도)의 Hermite 보간"으로 재정의하여, 평활성을 사후 필터링이나 정규화의 부산물이 아닌 명시적으로 감독 가능하고 이론적으로 분석 가능한 구조적 속성으로 만든 것이다.</p>
+<p>더욱 중요한 것은, 이 연구가 "평활도 향상"의 귀인 논리를 바꾸었다는 점이다. 저자는 대조 실험(성공 및 실패 궤적의 jerk 비교)을 통해 생존자 편향을 배제했다—평활도 향상은 단순히 더 높은 성공률에 의한 것이 아니라, 사전 자체가 가져오는 독립적 효과이다. 이는 VLA에서 궤적 수준 귀납적 편향의 가치에 대해 상관관계가 아닌 인과적 증거를 제공한다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="3-hermite">핵심 연산자: 조각별 3차 Hermite 보간</h3>
+<ul>
+<li>행동 블록 a^c ∈ ℝ^{T×D_c}는 K개의 Hermite 스플라인 세그먼트로 파라미터화되며, 각 세그먼트는 끝점 위치 (p_s, p_e)와 속도 (v_s, v_e)로 정의되어 총 4K개의 경계 좌표 θ ∈ ℝ^{4K×D_c}를 가진다</li>
+<li>선형 연산자 H ∈ ℝ^{T×4K}는 경계 좌표를 궤적 공간으로 매핑한다: a^c = Hθ, H는 Hermite 기저 함수 h₀₀, h₁₀, h₀₁, h₁₁로 구성되며, 사전 계산되어 가속기에서 캐시된다</li>
+</ul>
+<h3 id="_4">세 가지 통합 변형</h3>
+<ul>
+<li><strong>Hermite-VLA DH(이산)</strong>: π₀-FAST 토크나이저를 대체하여 각 Hermite 좌표를 256개 빈으로 양자화하여 이산 토큰화를 구현</li>
+<li><strong>Hermite-VLA CH(명시적 채널)</strong>: 흐름 매칭 헤드의 깨끗한 예측을 "스플라인 골격 + 시간 단계별 잔차"로 재구성: â_clean = Hθ + r, 추론 시 θ를 먼저 추정한 후 잔차를 중첩하며, Hermite 사전은 각 노이즈 제거 단계에서 생성 궤적을 능동적으로 조건화</li>
+<li><strong>Hermite-VLA Reg(정규화)</strong>: 추가 보조 헤드 MLP_aux가 시간 평균 특징을 θ로 매핑하고, L_aux = ‖Hθ_aux − a_gt^c‖₂²로 감독하며, 총 손실 L_Reg = L_flow + λ·L_aux, 추론 시 보조 헤드를 완전히 제거하여 추가 오버헤드가 없다</li>
+</ul>
+<h3 id="_5">핵심 설계 결정</h3>
+<ul>
+<li><strong>θ 공간 감독이 아닌 궤적 공간 감독</strong>: 궤적 공간 손실은 H^T H 메트릭 하에서 각 경계 좌표에 가중치를 부여하며, 속도 열은 엄격히 유계(max|h₁₀| = max|h₁₁| = 4/27)이므로 θ 공간 단위 메트릭 손실이 속도 오차를 불균형적으로 처벌하는 것을 방지</li>
+<li><strong>하드 제약이 아닌 소프트 사전</strong>: 정책의 표현력을 유지하고, 절대적 연속성을 유연성과 교환</li>
+<li><strong>단측 유한 차분 인코더</strong>: v_s = s(F(1/s) − F(0)), O(s²) 수렴률(정확한 접선의 O(s⁴) 대신)을 도입하지만, 알 수 없는 참값 도함수에 대한 의존성을 피한다</li>
+</ul>
+<h3 id="_6">이론적 보장</h3>
+<ul>
+<li><strong>명제 3.1</strong>: 궤적 공간 손실과 θ 공간 손실은 동일한 최소 제곱 목표를 감독하지만 메트릭이 다르다</li>
+<li><strong>명제 3.2</strong>: 근사 오차는 K⁻²로 감쇠하고, 허용 jerk 상한은 K³으로 증가하여 K에 내부 최적값이 존재함을 시사(경험적 최적 K=2)</li>
+<li><strong>명제 3.3</strong>: 경계 위치 불연속성은 궤적 공간 잔차에 의해 직접 제어되며(σ_min(H) 불필요), 속도 불연속성은 좌표 공간을 거쳐야 하며 1/σ_min(H)에 의해 증폭된다</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>경계 위치와 속도의 분리 제어</strong>: 명제 3.3은 위치 경계가 궤적 공간 잔차에 의해 직접 경계가 정해지고(식 23, σ_min(H) 인자 없음), 속도 경계는 좌표 공간을 거쳐야 하며(식 24, 1/σ_min(H)에 의해 증폭) 이를 증명한다. 이 구분은 위치 연속성이 쉽게 얻어지고 속도 연속성이 어려운 이유를 설명하며, 후속 최적화에 정확한 표적을 제공한다.</p>
+</li>
+<li>
+<p><strong>식별 가능성 상한의 발견</strong>: T=10에서 K=3은 H 열 랭크 결핍(σ_min = 0)을 초래하여 경계 좌표가 디코딩된 궤적에서 식별 불가능해진다. 이는 K 소거 실험의 퇴화 현상에 대해 편향-충실도 트레이드오프를 보완하는 설명을 제공하며, 궤적 파라미터화 식별 가능성과 VLA 성능을 직접 연결하는 최초의 이론적 결과이다.</p>
+</li>
+<li>
+<p><strong>제로 오버헤드 정규화 패러다임</strong>: Hermite-VLA Reg는 사전을 엄격히 보조 훈련 목표로 사용하고 추론 시 완전히 제거하여, 최고 성능(LIBERO 98.7%)을 달성하면서도 기준선과 동일한 추론 지연 시간(48.6 ms vs 48.4 ms)을 유지한다. 이는 궤적 평활도가 추론 단계 제약이 아닌 학습 단계 귀납적 편향으로서의 가치를 증명한다.</p>
+</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="libero">시뮬레이션 벤치마크(LIBERO 성공률 %)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>LIBERO</th>
+<th>LIBERO-plus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅</td>
+<td>95.9</td>
+<td>85.7</td>
+</tr>
+<tr>
+<td>Hermite-VLA CH</td>
+<td>97.7</td>
+<td>85.0</td>
+</tr>
+<tr>
+<td>Hermite-VLA Reg</td>
+<td><strong>98.7</strong></td>
+<td><strong>90.9</strong></td>
+</tr>
+<tr>
+<td>Hermite-VLA DH</td>
+<td>95.4</td>
+<td>69.4</td>
+</tr>
+<tr>
+<td>Spline Policy(병행 연구)</td>
+<td>원문은 표 그림으로 수치 미추출</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="15">실제 로봇(평균 성공률 %, 작업당 15회 롤아웃)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>작업 1</th>
+<th>작업 2</th>
+<th>작업 3</th>
+<th>작업 4</th>
+<th>평균</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀.₅</td>
+<td>86.7</td>
+<td>26.7</td>
+<td>46.7</td>
+<td>93.3</td>
+<td>63.4</td>
+</tr>
+<tr>
+<td>Hermite-VLA CH</td>
+<td>86.7</td>
+<td>60.0</td>
+<td>80.0</td>
+<td>100.0</td>
+<td>81.7</td>
+</tr>
+<tr>
+<td>Hermite-VLA Reg</td>
+<td><strong>100.0</strong></td>
+<td><strong>66.7</strong></td>
+<td><strong>93.3</strong></td>
+<td><strong>100.0</strong></td>
+<td><strong>90.0</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">핵심 소거</h3>
+<ul>
+<li><strong>λ 주입 강도</strong>: λ=10 최적(98.7%), λ=0일 때 95.9%, λ=20에서 97.5%로 퇴화</li>
+<li><strong>K 세그먼트 수</strong>: K=2 최적(98.7%), K=1은 93.7%, K=3은 96.6%로 감소, K=4는 95.8%로 감소</li>
+<li><strong>감독 공간</strong>: θ 공간+최소 제곱 목표는 91.5%에 불과, 궤적 공간+잔차(전체 CH)는 97.7% 달성</li>
+<li><strong>경계 기저</strong>: Hermite(98.7%)가 B-spline(97.6%), Bernstein(96.9%), Polynomial(96.7%)보다 우수</li>
+</ul>
+<h3 id="_10">평활도 및 인과성</h3>
+<ul>
+<li>π₀.₅ 실패 궤적 jerk(0.00070)가 성공 궤적(0.00046)보다 유의하게 높은 반면, Hermite-VLA Reg 실패 궤적 jerk(0.00048)는 성공 궤적(0.00040)에 근접하여 평활도 향상이 생존자 편향이 아님을 증명</li>
+<li>실제 로봇 경계 불연속성: Hermite-VLA Reg는 π₀.₅ 대비 0.48배로 감소(작업 3), 가속도와 jerk RMS 모두 유의하게 낮음(p &lt; 10⁻⁴)</li>
+</ul>
+<h3 id="h100-1000">추론 비용(단일 H100, 1000회 평균)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>지연 시간 (ms)</th>
+<th>FPS</th>
+<th>최대 메모리 (GB)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>π₀-FAST</td>
+<td>238.2</td>
+<td>4.2</td>
+<td>7.57</td>
+</tr>
+<tr>
+<td>Hermite-VLA DH</td>
+<td>28.9</td>
+<td>34.6</td>
+<td>6.66</td>
+</tr>
+<tr>
+<td>π₀.₅</td>
+<td>48.4</td>
+<td>20.7</td>
+<td>6.63</td>
+</tr>
+<tr>
+<td>Hermite-VLA CH</td>
+<td>49.4</td>
+<td>20.2</td>
+<td>6.64</td>
+</tr>
+<tr>
+<td>Hermite-VLA Reg</td>
+<td>48.6</td>
+<td>20.6</td>
+<td>6.85</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_11">경계 및 한계</h2>
+<ul>
+<li><strong>소프트 사전의 고유 경계</strong>: 경계 스파이크가 축소되지만 완전히 제거되지는 않으며, 속도 연속성 보장은 시뮬레이션 시간 영역(T=10)에서 실제 로봇 시간 영역(T=50)보다 더 완화됨(1/σ_min 각각 53.0 vs 9.5)</li>
+<li><strong>단측 차분 인코더의 비용</strong>: 끝점 속도 추정이 O(s²) 수렴률을 도입하며, 정확한 도함수를 사용하면 O(s⁴)를 회복할 수 있지만 알 수 없는 참값 정보가 필요</li>
+<li><strong>이산 채널 미모델링</strong>: 그리퍼 등 비평활 채널은 Hermite 사전에서 제외되며, 연속 부분 공간만 제약됨</li>
+<li><strong>K 값이 T=50에서 스캔되지 않음</strong>: 실제 로봇 시간 영역의 최적 K는 검증되지 않았으며, 시뮬레이션 결론에만 의존</li>
+<li><strong>인과 방향성이 완전히 해결되지 않음</strong>: 평활도와 성공률 간의 인과 메커니즘은 여전히 부분적으로 외부 참조에 의존하며, 본 논문의 대조 실험은 증거를 제공하지만 완전히 닫지는 못함</li>
+<li><strong>일반화 범위 제한</strong>: 정밀 조립, 고동적 접촉 등 복잡한 조작 시나리오는 검증되지 않음</li>
+</ul>
+<h2 id="_12">공학적 시사점</h2>
+<ul>
+<li><strong>Hermite-VLA Reg 우선 재현</strong>: 제로 추론 오버헤드와 최고 성능, 가장 간단한 구현(훈련 시 보조 헤드만 추가)으로 공학적 비용 효율이 가장 높은 변형</li>
+<li><strong>H 행렬 조건수 확인</strong>: T=10에서 K는 반드시 ≤ 2여야 하며, 그렇지 않으면 σ_min = 0으로 속도 보장이 퇴화됨; T=50에서 K ≤ 12는 모두 안전하지만 K=2가 여전히 경험적 최적</li>
+<li><strong>감독 공간 선택 주의</strong>: 반드시 궤적 공간(‖Hθ − a‖₂²)에서 손실을 적용해야 하며, θ 공간에서 적용하면 속도 오차가 불균형적으로 처벌됨(최소 6.75배 강도)</li>
+<li><strong>경계 위치와 속도 별도 평가</strong>: 위치 경계는 궤적 잔차에 의해 직접 제어되고, 속도 경계는 1/σ_min에 의해 증폭되므로, 디버깅 시 속도 스파이크가 뚜렷하면 잔차보다 σ_min을 먼저 확인해야 함</li>
+<li><strong>λ와 K 재튜닝 필요</strong>: λ=10, K=2가 LIBERO에서 최적이지만, 벤치마크나 플랫폼이 바뀌면 재스캔이 필요하며, λ는 5–20 구간, K는 2–5 구간에서 성능이 상대적으로 평탄함</li>
+<li><strong>가장 흔한 함정</strong>: 반올림 그리드에서 T=10, K=2일 때 i₁=4, LIBERO 창 W=5는 정확히 노드 정렬(W−1=4)되지만, 실제 로봇 W=20은 비정렬—경계 지표 평가 시 이 두 경우를 구분해야 함</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">FAST: Efficient Action Tokenization for Vision-Language-Action Models</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_hermite_curves_trajectory_priors_vision_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pertsch_fast_efficient_action_tokeniza_2025/">
+          <span class="entry-type">논문</span>
+          <h3>FAST: Efficient Action Tokenization for Vision-Language-Action Models</h3>
+          <p>FAST: Efficient Action Tokenization for Vision-Language-Action Models (FAST), is a 2025 large…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#3-hermite">핵심 연산자: 조각별 3차 Hermite 보간</a></li>
+<li><a href="#_4">세 가지 통합 변형</a></li>
+<li><a href="#_5">핵심 설계 결정</a></li>
+<li><a href="#_6">이론적 보장</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#libero">시뮬레이션 벤치마크(LIBERO 성공률 %)</a></li>
+<li><a href="#15">실제 로봇(평균 성공률 %, 작업당 15회 롤아웃)</a></li>
+<li><a href="#_9">핵심 소거</a></li>
+<li><a href="#_10">평활도 및 인과성</a></li>
+<li><a href="#h100-1000">추론 비용(단일 H100, 1000회 평균)</a></li>
+</ul>
+</li>
+<li><a href="#_11">경계 및 한계</a></li>
+<li><a href="#_12">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

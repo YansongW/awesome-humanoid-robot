@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning to Look: Seeking Information for Decision Making via Policy Factorization · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Learning to Look: Seeking Information for Decision Making via Policy Factorization</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Learning to Look: Seeking Information for Decision Making via Policy Factorization</h1>
+      <p class="entry-name-en">Learning to Look: Seeking Information for Decision Making via Policy Factorization</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.18964v1. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (936 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>《Learning to Look: Seeking Information for Decision Making via Policy Factorization》是2024年关于人形机器人操作的研究。作者提出因子化上下文马尔可夫决策过程（factorized Contextual Markov Decision Processes）问题，并设计双策略框架DISaM，通过信息搜索策略与信息接收策略的分离训练，实现操作任务中的主动探索与决策。该方法在五项需要信息搜索行为的操作任务中显著优于现有方法。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2410.18964" target="_blank" rel="noopener">Learning to Look: Seeking Information for Decision Making via Policy Factorization (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://robin-lab.cs.utexas.edu/learning2look/" target="_blank" rel="noopener">Learning to Look: Seeking Information for Decision Making via Policy Factorization project page</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>该研究针对机器人操作中需要主动或交互式探索行为的任务，提出因子化上下文马尔可夫决策过程（factorized Contextual Markov Decision Processes）问题模型。作者设计DISaM双策略框架，包含一个负责探索环境以获取相关上下文信息的信息搜索策略，以及一个利用该上下文完成操作目标的信息接收策略。通过将两种策略分离训练，信息接收策略可为信息搜索策略提供奖励信号。在测试阶段，双智能体根据操作策略对下一步最佳行动的不确定性来平衡探索与利用。实验在五项需要信息搜索行为的操作任务中（包括仿真和真实环境）验证了DISaM的优越性能。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">问题定义</h3>
+<ul>
+<li>提出因子化上下文马尔可夫决策过程（factorized Contextual MDPs），将任务分解为信息搜索阶段与信息利用阶段</li>
+<li>适用于需要主动探索的机器人操作场景，如机器人头部移动寻找操作相关信息，或多机器人系统中侦察机器人搜索信息供决策机器人使用</li>
+</ul>
+<h3 id="disam">方法架构：DISaM</h3>
+<ul>
+<li><strong>双策略框架</strong>：</li>
+<li>信息搜索策略（information-seeking policy）：负责探索环境，寻找相关上下文信息</li>
+<li>信息接收策略（information-receiving policy）：利用获取的上下文信息完成操作目标</li>
+<li><strong>训练机制</strong>：</li>
+<li>两种策略可分离训练，信息接收策略为信息搜索策略提供奖励信号</li>
+<li>测试时根据操作策略对下一步最佳行动的不确定性动态平衡探索与利用</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li>五项需要信息搜索行为的操作任务，涵盖仿真环境与真实世界场景</li>
+<li>对比现有方法，DISaM在各项任务中均显著优于基线</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li>在仿真与真实环境中，DISaM均表现出更强的信息搜索与操作决策能力</li>
+<li>双策略因子化设计有效解决了探索与利用的平衡问题</li>
+</ul>
+<h3 id="_6">结论</h3>
+<ul>
+<li>因子化上下文MDP为需要主动探索的操作任务提供了统一建模框架</li>
+<li>DISaM的双策略分离训练方法具有可扩展性，适用于多种机器人操作场景</li>
+</ul>
+<p>更多信息见项目主页：https://robin-lab.cs.utexas.edu/learning2look/</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2410.18964v1</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_algorithm_ppo/">近端策略优化（PPO）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_world_model/">世界模型</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_learning_to_look_seeking_infor_2024"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_algorithm_ppo/">
+          <span class="entry-type">算法</span>
+          <h3>近端策略优化（PPO）</h3>
+          <p>通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">问题定义</a></li>
+<li><a href="#disam">方法架构：DISaM</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

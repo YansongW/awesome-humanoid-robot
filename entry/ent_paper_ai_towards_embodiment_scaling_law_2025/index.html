@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机器人运动中的具身规模定律研究 · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">机器人运动中的具身规模定律研究</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>机器人运动中的具身规模定律研究</h1>
+      <p class="entry-name-en">Towards Embodiment Scaling Laws in Robot Locomotion</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">数据与数据集</span><span class="tag">评测基准</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span><span class="tag tag-layer">验证与市场层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.05753v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (827 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文研究机器人运动中的具身缩放定律，通过训练单一URMA策略在约1000个程序化生成的机器人形态（GENBOT-1K）上，验证了增加训练形态数量可提升对未见形态的泛化能力。该策略实现了零样本迁移至未见过的模拟与真实机器人，包括Unitree Go2和H1。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.05753" target="_blank" rel="noopener">Towards Embodiment Scaling Laws in Robot Locomotion</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>跨具身泛化是实现通用具身智能体的关键，但其影响因素尚不明确。本文以机器人运动为测试平台，系统研究了具身缩放定律，即增加训练形态数量能否提升对未见形态的泛化能力。研究者程序化生成了约1000个具有拓扑、几何和关节级运动学差异的形态，并在随机子集上训练策略。实验观察到支持该假设的正向缩放趋势，并发现具身缩放比固定形态上的数据缩放能带来更广泛的泛化。基于完整数据集训练的最佳策略，在模拟和真实世界中均能零样本迁移至新形态，包括Unitree Go2和H1。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法</h3>
+<ul>
+<li>采用<strong>URMA</strong>（Unified Robot Morphology Architecture）作为策略架构，支持处理不同形态的机器人。</li>
+<li>程序化生成<strong>GENBOT-1K</strong>数据集，包含约1000个形态，涵盖拓扑、几何和关节运动学变化。</li>
+<li>训练策略时，从GENBOT-1K中随机抽取不同大小的子集，以评估具身数量对泛化的影响。</li>
+</ul>
+<h3 id="_4">实验设置</h3>
+<ul>
+<li>在模拟环境中训练策略，使用强化学习（RL）进行运动任务。</li>
+<li>测试泛化能力时，评估策略在未见过的模拟形态上的表现，并直接部署到真实机器人（Unitree Go2和H1）上，无需额外微调。</li>
+</ul>
+<h3 id="_5">关键结果</h3>
+<ul>
+<li><strong>正向缩放趋势</strong>：随着训练形态数量的增加，策略对未见形态的泛化性能持续提升，支持具身缩放定律假设。</li>
+<li><strong>具身缩放 vs. 数据缩放</strong>：在固定形态上增加数据量（数据缩放）带来的泛化提升有限，而增加形态数量（具身缩放）能实现更广泛的泛化。</li>
+<li><strong>零样本迁移</strong>：基于完整GENBOT-1K训练的策略，在模拟中成功迁移至多种新形态，并在真实机器人Unitree Go2和H1上实现零样本运动控制。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<ul>
+<li>具身缩放定律为构建通用具身智能体提供了重要指导，表明训练形态的多样性是关键因素。</li>
+<li>该方法对可配置机器人的自适应控制、形态协同设计等领域具有潜在应用价值。</li>
+</ul>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2505.05753v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法</a></li>
+<li><a href="#_4">实验设置</a></li>
+<li><a href="#_5">关键结果</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation</h1>
+      <p class="entry-name-en">From Sign Language Generation to Humanoid Execution: Vision-Language Guided Retargeting with Collision Mitigation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Recent sign language generation (SLG) systems increasingly output dense 3D body representations, which better preserve full-body kinematics and geometry for downstream embodiment on humanoid robots. However, these generated motions frequently exhibit self-intersections such as hand-hand and hand-torso penetration. While such artifacts may be tolerated in offline rendering, they become critical in.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.17769" target="_blank" rel="noopener">arXiv:2607.17769 From Sign Language Generation to Humanoid Execution: Vision-Language Guided Reta</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 수어 생성(SLG)에서 휴머노이드 로봇 실행까지의 오프라인 리타겟팅 파이프라인을 제안하며, 핵심은 2단계 설계입니다: 먼저 SMPL-X 도메인에서 VolumetricSMPL-X를 사용한 충돌 완화를 수행하고, 이후 IK 백본 리타겟팅과 GPT-5.2 기반 VLM 유도 세분화 루프를 결합합니다. 저자들은 CSL-Daily 데이터셋으로 충돌 완화의 효과를 검증했으며, VLM 세분화는 현재 정성적 증거만 있다고 지적합니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>수어 생성 분야는 오랫동안 한 가지 사실을 간과해 왔습니다: 생성된 SMPL-X 모션 시퀀스는 오프라인 렌더링에서 사용 가능해 보이지만, 휴머노이드 로봇에 전달되면 자기 충돌(손-손, 손-몸통 관통)이 IK 무해, 충돌, 궤적 불안정을 직접 초래합니다. 이는 단순한 "리타겟팅 문제"가 아닙니다—상류 SLG의 학습 목표는 물리적 타당성을 명시적으로 강제한 적이 없으며, 가장 강력한 리타겟팅 백본조차 이러한 인공물을 계승하고 증폭시킵니다. 저자들이 진정으로 바꾼 것은 "생성-실행"을 엔드투엔드 물리적 실현 가능성 문제로 간주한 것이지, 리타겟팅 단계에서 패치를 적용한 것이 아닙니다.</p>
+<p>더 중요하게, 저자들은 사전 계산된 무충돌 수어 사전 접근법을 부정합니다. 수어는 생산적이며, 문장 맥락은 공간 참조, 조음 협응, 문법적 공간 사용을 통해 기호 구현을 변경합니다. 사전이 특정 형태에 묶이면 모든 로봇 형태마다 재작성해야 합니다. 동시에, 기존 VLM 유도 모션 세분화 방법은 모션 설명 텍스트 감독에 의존하지만, 표준 SL 데이터셋은 구어 문장과 수어 비디오만 짝지어 제공할 뿐 명시적 동작 설명이 없습니다. 따라서 저자들은 텍스트 감독이 아닌 시각적 피드백에 의존하는 VLM 유도 공식을 제안하며, 이는 SLG에서 로봇 실행까지의 연구 공백을 직접 메우는 것입니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="_4">전체 흐름</h3>
+<p>입력은 SMPL-X 축각 자세 시퀀스 x(0) ∈ ℝ^(T×132)이고, 출력은 휴머노이드 로봇 관절 궤적 q_(1:T)로, 로봇 운동학/기하학적 제약과 수어 의사소통 의도 보존을 동시에 충족해야 합니다. 2단계 분리는 의도된 설계입니다: 충돌 완화는 SLG가 계승한 체계적 물리적 실패를 처리하고, VLM 세분화는 형태 차이와 IK 근사로 도입된 잔여 오류를 대상으로 합니다.</p>
+<h3 id="1-smpl-x">1단계: SMPL-X 도메인 충돌 완화</h3>
+<ul>
+<li>VolumetricSMPL-X를 사용한 미분 가능한 SDF 쿼리, 자기 충돌 손실:
+  ℒ_col(x) = (1/T) Σ_t Σ_{v∈V_t} max(0, −f(v; x_t))²
+  여기서 f(·; x_t)는 자세 프레임 t에서의 SDF, V_t는 표면 샘플 포인트, 음의 거리는 관통에 해당하며 손실은 관통 깊이에 따라 2차적으로 증가합니다.</li>
+<li>테스트 시 후처리: Adam 최적화, 학습률 1 × 10⁻², 500스텝, 기본적으로 손 자세 매개변수 최적화.</li>
+<li>마스크 업데이트: x_eff = x^(0) + M ⊙ (x − x^(0)), M ∈ {0,1}^(T×132)로 전역 드리프트 방지.</li>
+<li>총 목표: min_x λ_col ℒ_col(x_eff) + λ_close ‖x_eff − x^(0)‖₂² + λ_smooth ‖Δ²x_eff‖₂², 여기서 Δ²x_t = x_(t+1) − 2x_t + x_(t−1), 기본 λ_col = 50, λ_close = 1 × 10⁻⁴, λ_smooth = 1 × 10⁻⁴.</li>
+</ul>
+<h3 id="2-ik">2단계: 형태 정렬 및 IK 리타겟팅</h3>
+<ul>
+<li>형태 최적화: T-포즈 대응 관계로 SMPL-X 템플릿을 로봇 운동학 구조에 정렬하고, β를 최적화하여 ℒ_shape(β) = Σ_k w_k ‖J^smplx_k(β) − J^rob_k‖₂² + λ_β‖β‖₂² 최소화, w_k로 수어 관련 상지 관절 강조 가능.</li>
+<li>프레임별 IK: 정렬된 손목 위치와 방향 목표가 주어지면 관절 제한을 충족하는 로봇 관절 궤적을 풀고, 추가로 로봇 기하학적 충돌 검사를 수행.</li>
+</ul>
+<h3 id="3-vlm">3단계: VLM 유도 세분화 루프</h3>
+<ul>
+<li>각 라운드에서 원본 SMPL-X 참조 비디오와 IK 리타겟팅 로봇 비디오를 렌더링하여 GPT-5.2에 비교 및 수정 제안 요청.</li>
+<li>제어 프리미티브 설계: 관절 각도 직접 편집은 비효율적이므로, 엔드 이펙터 작업 공간 프리미티브로 대체—예: move_left_up(왼쪽 손목 +y 방향 +10 cm), left_yaw_in(왼쪽 손목 요 안쪽 +20°) 등—출력은 JSON 유사 구조화 동작 목록.</li>
+<li>반복 과정: 작업 공간 오프셋 적용 → IK 재해석 → 새 비디오 렌더링 → VLM 재평가, 정렬 확인 또는 최대 라운드 도달까지 반복(모든 실험에서 두 번의 세분화 반복 수행).</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>텍스트 감독 대신 시각적 피드백을 사용하는 VLM 유도</strong>: 기존 VLM 모션 세분화 방법은 모션 설명 텍스트 접근성을 가정하지만, 표준 SL 데이터셋은 구어 문장과 수어 비디오만 짝지어 제공합니다. 저자들은 VLM이 두 렌더링 비디오를 직접 비교하고 작업 공간 프리미티브를 제안하도록 하여 텍스트 감독의 희소성 병목을 우회했으며, 이는 SLG에서 로봇 실행 시나리오에 대한 적응형 혁신입니다.</p>
+</li>
+<li>
+<p><strong>VLM과 IK 사이의 인터페이스로서 작업 공간 제어 프리미티브</strong>: VLM이 관절 각도를 직접 편집하는 것은 지각적으로 불가능하므로, 저자들은 손목 작업 공간의 소형 프리미티브 집합(위치 10 cm, 요 20°)을 정의하여 VLM이 해석 가능한 조정을 제안하면서 IK 솔버의 실현 가능성을 유지합니다. 이 설계 결정은 VLM의 고수준 의미 판단과 저수준 운동학 제약을 분리하며, 공학적으로 실용적이고 확장 가능한 아키텍처 선택입니다.</p>
+</li>
+<li>
+<p><strong>충돌 완화와 VLM 세분화의 2단계 분리</strong>: 충돌 완화는 SLG가 계승한 체계적 물리적 실패 모드(손-손, 손-몸통 관통)를 해결하고, VLM 세분화는 형태 차이와 IK 근사로 도입된 잔여 의미/기하학적 차이를 대상으로 합니다. 분리를 통해 각 모듈의 최적화 목표가 명확해지고, 충돌 완화는 경량 후처리로 독립적으로 재사용 가능합니다.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<h3 id="_7">데이터셋 및 설정</h3>
+<ul>
+<li>CSL-Daily: 18K 훈련, 1K 검증, 2K 테스트, [33]에서 공개한 전처리된 SMPL-X 모션 특징(6D 회전 및 10개 형태 매개변수) 사용.</li>
+<li>충돌 완화: Adam 최적화, 학습률 1 × 10⁻², 500스텝, 기본적으로 손 자세 매개변수 최적화.</li>
+<li>VLM: GPT-5.2, 고정 비평 프롬프트, 모든 실험에서 두 번의 세분화 반복 수행.</li>
+</ul>
+<h3 id="i">표 I: 충돌 완화 결과(낮을수록 좋음)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>충돌 에너지(평균)</td>
+<td>3.52</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>충돌 에너지(중앙값)</td>
+<td>0.82</td>
+<td>0.71</td>
+</tr>
+<tr>
+<td>개선 시퀀스(%)</td>
+<td>—</td>
+<td>88.9%</td>
+</tr>
+<tr>
+<td>충돌 감소(중앙값)</td>
+<td>—</td>
+<td>21.66%</td>
+</tr>
+<tr>
+<td>충돌 감소(평균)</td>
+<td>—</td>
+<td>31.93%</td>
+</tr>
+<tr>
+<td>Pose MSE vs. 원본(중앙값)</td>
+<td>—</td>
+<td>6.80 × 10⁻⁴</td>
+</tr>
+<tr>
+<td>Δ Accel MSE(중앙값)</td>
+<td>—</td>
+<td>+5.71 × 10⁻³</td>
+</tr>
+<tr>
+<td>시퀀스당 실행 시간(평균)</td>
+<td>—</td>
+<td>521.7 s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ii">표 II: 정규화 항 소거 실험</h3>
+<table>
+<thead>
+<tr>
+<th>설정</th>
+<th>N</th>
+<th>Succ. (%)</th>
+<th>Red. (%)</th>
+<th>Pose MSE</th>
+<th>Δ Accel MSE</th>
+<th>Time (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Collision only</td>
+<td>8</td>
+<td>62.5</td>
+<td>18.98</td>
+<td>6.05 × 10⁻⁴</td>
+<td>+4.47 × 10⁻³</td>
+<td>324.7</td>
+</tr>
+<tr>
+<td>+ Closeness</td>
+<td>9</td>
+<td>88.9</td>
+<td>21.66</td>
+<td>6.80 × 10⁻⁴</td>
+<td>+5.71 × 10⁻³</td>
+<td>521.7</td>
+</tr>
+<tr>
+<td>+ Closeness + Smoothness</td>
+<td>10</td>
+<td>60.0</td>
+<td>24.40</td>
+<td>5.08 × 10⁻⁴</td>
+<td>+2.59 × 10⁻³</td>
+<td>362.2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">결과 의미</h3>
+<p>충돌 완화는 평균 충돌 에너지를 크게 감소시키지만(3.52→0.94, 표 내 수치로 계산), 중앙값 개선은 제한적(0.82→0.71)으로, 주요 이점이 고충돌 시퀀스에 집중되어 있음을 시사합니다. 소거 실험은 +Closeness가 성공률을 88.9%로 높이지만 실행 시간을 증가시키고, +Smoothness는 Pose MSE와 Δ Accel MSE를 낮추지만 성공률을 60.0%로 희생시켜, 평활화 정규화가 손 움직임을 과도하게 억제할 수 있음을 보여줍니다. VLM 세분화는 정성적 증거만 있으며, 논문은 IK 단독 기준선 대비 이점을 명시적으로 정량화하지 않았습니다.</p>
+<h2 id="_9">경계 및 한계</h2>
+<ul>
+<li>VLM 유도 세분화의 증거는 현재 정성적이며 대표 시퀀스에 국한되어 있고, 정량적 평가(엔드 이펙터 궤적 오류 또는 손목 방향 오류)는 수행되지 않았습니다.</li>
+<li>충돌 완화 실행 시간이 높아(표 I, 평균 521.7 s/시퀀스) 온라인 처리에 부적합하며, 전체 흐름은 오프라인 전처리로 설계되어 상호작용 시 로봇은 사전 계산된 궤적을 실행합니다.</li>
+<li>물리적 휴머노이드 플랫폼에서 검증되지 않았으며, 결론은 시뮬레이션 렌더링에 기반합니다.</li>
+<li>제어 프리미티브 어휘 세분성과 스텝 크기에 대한 체계적 민감도 연구가 수행되지 않았습니다; 스텝 크기는 수렴 속도와 오버슈트를 절충하며, 더 거친 스텝은 목표 주변에서 진동할 수 있고 더 미세한 스텝은 더 많은 VLM 쿼리가 필요합니다.</li>
+<li>제어 프리미티브 범위가 제한적입니다: 표현 편집 공간 밖의 실패 모드(예: 몸통 기울기 또는 타이밍 오류)는 전혀 수정할 수 없습니다.</li>
+<li>온라인 세분화(예: 학습된 비평가 근사)는 구현되지 않았으며, 논문에서 명시하지 않았습니다.</li>
+</ul>
+<h2 id="_10">공학적 시사점</h2>
+<p>재현 시 먼저 충돌 완화의 마스크 설계를 확인하세요: 기본적으로 손 자세 매개변수만 최적화하며, M ∈ {0,1}^(T×132)의 구성은 전역 드리프트 억제 효과에 직접 영향을 미치므로, 마스크가 수정해야 할 모든 관절 차원을 포함하는지 먼저 검증하는 것이 좋습니다. 실행 시간 521.7 s/시퀀스가 주요 병목이므로, 배치 처리가 필요하면 Adam 스텝 수를 줄이거나 L-BFGS 계열 2차 최적화기로 전환하는 것을 우선 고려하세요.</p>
+<p>VLM 세분화 단계에서 가장 쉽게 함정에 빠지는 부분은 제어 프리미티브 스텝 크기 선택입니다: 위치 10 cm, 요 20°는 시뮬레이션에서 적합할 수 있지만, 로봇 형태별 링크 길이 차이가 실제 효과를 증폭하거나 축소할 수 있습니다. 먼저 스텝 크기 민감도 테스트를 수행하여 VLM이 제안한 오프셋이 IK 재해석 후 관절 한계 충돌을 유발하지 않는지 확인하는 것이 좋습니다. 또한 GPT-5.2의 비평 프롬프트 품질은 세분화 효과에 직접 영향을 미치며, 고정 프롬프트 템플릿의 다양한 시퀀스에 대한 일반화는 수동 샘플링 검사가 필요합니다.</p>
+<p>하류 팀에게 가장 실용적인 조언은: 충돌 완화 모듈은 본 흐름의 IK 및 VLM 부분에 얽매이지 않고 모든 SLG 출력의 후처리로 독립적으로 재사용할 수 있다는 점입니다. 로봇 형태가 SMPL-X와 크게 다르면, 형태 최적화의 관절 가중치 w_k를 수어 관련 상지 관절에 맞게 재보정해야 하며, 그렇지 않으면 IK 목표가 왜곡될 수 있습니다. 마지막으로, VLM 세분화의 정성적 증거는 공식 배포 전에 자체 시퀀스 집합으로 수동 평가를 반드시 수행하여 세분화가 새로운 의미 편향을 도입하지 않는지 확인해야 함을 의미합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_whole_body_control/">전신 제어(WBC)</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_concept_human_robot_collaboration_safety/">인간-로봇 협업 안전</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_sign_language_generation_humanoid_execut_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_whole_body_control/">
+          <span class="entry-type">방법</span>
+          <h3>전신 제어(WBC)</h3>
+          <p>휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">개념</span>
+          <h3>인간-로봇 협업 안전</h3>
+          <p>인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_brohan_rt_2_vision_language_action_mo_2023/">
+          <span class="entry-type">논문</span>
+          <h3>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</h3>
+          <p>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#_4">전체 흐름</a></li>
+<li><a href="#1-smpl-x">1단계: SMPL-X 도메인 충돌 완화</a></li>
+<li><a href="#2-ik">2단계: 형태 정렬 및 IK 리타겟팅</a></li>
+<li><a href="#3-vlm">3단계: VLM 유도 세분화 루프</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a><ul>
+<li><a href="#_7">데이터셋 및 설정</a></li>
+<li><a href="#i">표 I: 충돌 완화 결과(낮을수록 좋음)</a></li>
+<li><a href="#ii">표 II: 정규화 항 소거 실험</a></li>
+<li><a href="#_8">결과 의미</a></li>
+</ul>
+</li>
+<li><a href="#_9">경계 및 한계</a></li>
+<li><a href="#_10">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Imitation of Arm Gestures by the Semi-Humanoid Robot NICO · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Imitation of Arm Gestures by the Semi-Humanoid Robot NICO</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Imitation of Arm Gestures by the Semi-Humanoid Robot NICO</h1>
+      <p class="entry-name-en">Imitation of Arm Gestures by the Semi-Humanoid Robot NICO</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一套基于单目 RGB 的解析式手臂手势模仿管线，面向无肘部 roll 关节的半人形机器人 NICO。作者利用 MediaPipe 姿态与手部关键点，通过几何公式重建肩、肘、腕共 6 自由度关节角，并线性映射至电机位置。核心贡献在于将分析几何方法适配至 NICO 的特定运动学结构，并引入手部关键点改善前臂旋转估计，全程无需训练数据或专用深度传感器。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18197" target="_blank" rel="noopener">arXiv:2607.18197 Imitation of Arm Gestures by the Semi-Humanoid Robot NICO</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>该工作的真正改变在于：将手势模仿从「依赖专用硬件或大规模学习」的二元对立中拉出，证明了一条中间路径——用单目 RGB 加解析几何，即可在受限条件下驱动一台无肘部 roll 关节的机器人完成多关节手势复现。此前分析几何方法多针对 NAO 等平台，且常回避前臂旋转与腕部屈曲这类难解自由度；本文直面这些难点，用 MediaPipe 手部关键点补充姿态关键点的不足，使管线在保持可解释性与实时性的同时，覆盖了更广的手势空间。</p>
+<p>对 HRI 社区而言，这改变了「低成本实时模仿」的可行性边界：不再需要深度相机或 GPU 集群，一台普通 RGB 摄像头加轻量推理即可达到约 590 帧/秒的处理速度。但代价是精度天花板明显——肩部 roll 误差达 34°，前臂旋转误差 50.1°，这提示该路线更适合对精度不敏感的社会性交互场景，而非精细操作任务。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体流程</h3>
+<p>RGB 帧 → MediaPipe Pose（33 关键点）与 Hands（21 关键点）→ 3D 坐标提取 → 关节角几何重建 → 线性映射至电机位置 → 执行。</p>
+<h3 id="_4">关键点融合策略</h3>
+<ul>
+<li>优先使用手部检测器的腕部与手掌点替换姿态关键点：左手 P15、P17、P19 与右手 P16、P18、P20。</li>
+<li>手部坐标以腕部为原点，需平移对齐至姿态模型腕部；无需缩放或旋转对齐，因两模型共享相机坐标系。</li>
+<li>仅使用关键点 11–24（手臂区域），可扩展至全身。</li>
+</ul>
+<h3 id="_5">关节角重建（左臂为例）</h3>
+<ul>
+<li><strong>躯干偏航补偿</strong>：通过左右肩估计肩线，绕垂直轴旋转坐标以补偿偏航；不补偿俯仰与横滚（假设直立站姿）。</li>
+<li><strong>腕部屈曲</strong>（DoF 1）：θ_wrist-bend = π/2 + ∠A，其中 ∠A 为掌平面法向量 V_LPN = (P17 − P15) × (P19 − P15) 与上臂方向 (−V_LF) 的无符号角。</li>
+<li><strong>前臂旋转</strong>（DoF 2）：</li>
+<li>旋转基向量 rot.base = V_LA 在垂直于 V_LF 平面上的投影（公式 3）；若手臂伸直则回退至 V_LA × V_LRS（公式 4）。</li>
+<li>手掌方向 V_PO 为掌法线在旋转平面上的投影，符号由腕部屈曲角决定（公式 6）；手掌垂直前臂时用腕点与 P17、P19 中点构造回退向量（公式 7–8）。</li>
+<li>前臂旋转角为 V_PO 绕前臂轴相对 rot.base 的带符号角。</li>
+<li><strong>肘部弯曲</strong>（DoF 3）：θ_elbow-bend = arccos((V_LF·V_LA)/(‖V_LF‖·‖V_LA‖))，范围 (0, π]。</li>
+<li><strong>肩部 pitch</strong>（DoF 5）：θ_shldr-pitch = atan2(√(v_x² + v_z²), v_y)，范围 [0, π]；不区分前后（由 roll 处理）。</li>
+<li><strong>肩部 roll</strong>（DoF 4）：θ_shldr-roll = atan2(v_x, √(v_z² + v_y²)) + π/2，范围 [0, 2π)；v_z &gt; 0 时镜像为 2π − θ（公式 12）。</li>
+<li><strong>肩部 yaw</strong>（DoF 6）：固定中立位。</li>
+</ul>
+<h3 id="_6">角度到电机映射</h3>
+<ul>
+<li>每关节解析区间 [θ_min, θ_max] 与对应电机位置通过实验标定。</li>
+<li>线性映射：m = m(θ_min) + (θ − θ_min)/(θ_max − θ_min) · (m(θ_max) − m(θ_min))，取整后发送。</li>
+</ul>
+<h2 id="_7">关键创新</h2>
+<ol>
+<li>
+<p><strong>无肘部 roll 关节的运动学适配</strong>：NICO 缺少 NAO 的肘部 roll 自由度，作者通过将前臂旋转与腕部屈曲解耦，用掌平面法向量与手部关键点重构该自由度，使解析方法能迁移至不同运动学结构。这是对「分析几何需逐平台定制」这一痛点的直接回应。</p>
+</li>
+<li>
+<p><strong>手部关键点融合提升前臂旋转估计</strong>：仅用姿态关键点时前臂旋转 MAE 为 67.1°，替换为手部关键点后降至 50.1°（改进约 25%）。这一设计决策表明：在单目 RGB 下，手部局部几何信息对解决手臂自遮挡与方向歧义具有不可替代的价值，且无需额外传感器。</p>
+</li>
+<li>
+<p><strong>实时性与可解释性的兼顾</strong>：平均处理时间 0.0017 s/帧（约 590 帧/秒），最坏情况 0.0093 s/帧（约 108 帧/秒），全程无训练阶段。这证明解析几何路线在计算效率上远超学习类方法，且每个关节角都有明确几何含义，便于调试与故障排查。</p>
+</li>
+</ol>
+<h2 id="_8">实验与结果</h2>
+<h3 id="_9">实验设置</h3>
+<ul>
+<li>6 名参与者（3 男 3 女，身高 158–188 cm），每人执行 11 个对称姿态 × 3 种视角（0°、30°、45°）。</li>
+<li>相机：Google Pixel 9a 前置 RGB，高 125 cm，距参与者 150 cm；环境与着装全程固定。</li>
+<li>评估：重建角与预定义参考角比较，循环量用最小圆角度差。</li>
+</ul>
+<h3 id="_10">关键结果</h3>
+<table>
+<thead>
+<tr>
+<th>关节</th>
+<th>MAE（度）</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>肩部 pitch</td>
+<td>约 10</td>
+<td>精度最高</td>
+</tr>
+<tr>
+<td>肘部弯曲</td>
+<td>约 20</td>
+<td>中等</td>
+</tr>
+<tr>
+<td>腕部弯曲</td>
+<td>约 23</td>
+<td>中立位更准，极端屈曲误差大</td>
+</tr>
+<tr>
+<td>肩部 roll</td>
+<td>34</td>
+<td>对体态方向敏感</td>
+</tr>
+<tr>
+<td>前臂旋转（仅姿态点）</td>
+<td>67.1</td>
+<td>基线</td>
+</tr>
+<tr>
+<td>前臂旋转（含手部点）</td>
+<td>50.1</td>
+<td>改进约 25%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>手部关键点在 64% 情况下可用（跨所有参与者和视角平均）。</li>
+<li>六名参与者 MAE 范围：含前臂旋转与腕部屈曲时 30.1°–32.1°；不含时 20.8°–23.7°。</li>
+<li>视角 0°–45° 影响相对较小；左臂 MAE 通常高于右臂（逆时针转身导致左臂可见性降低）。</li>
+<li>姿态本身对精度影响最大，涉及明显前臂旋转与手掌方向的姿态误差最大。</li>
+<li>身高 158–188 cm 范围内未观察到与精度的明确关系。</li>
+</ul>
+<h3 id="_11">结果含义</h3>
+<p>肩部 pitch 与肘部弯曲的精度（约 10°–20°）足以支撑社交性手势复现；但肩部 roll 与前臂旋转的误差（34°、50.1°）表明，涉及手臂前后摆动与手腕旋转的姿态仍不可靠。手部关键点的 25% 改进验证了融合策略的有效性，但 50.1° 的绝对误差仍说明该自由度在单目 RGB 下的本质困难。</p>
+<h2 id="_12">边界与局限</h2>
+<ul>
+<li>前臂旋转估计是主要瓶颈：即使融合手部关键点，误差仍显著高于其他关节，且其误差会传导至腕部弯曲估计（腕部偏离中立位越远，表观腕角越依赖前臂方向）。</li>
+<li>肩部 roll 精度低（34° MAE），对体态方向敏感，未做额外归一化或几何约束。</li>
+<li>未补偿躯干俯仰与横滚，假设直立站姿；肩部 yaw 固定中立位，头部运动未实现。</li>
+<li>自遮挡与手部方向歧义是主要误差来源，且未包含时间平滑、动态手势扩展。</li>
+<li>实验在受控条件（固定环境、纯黑 T 恤、6 名参与者）下进行，泛化性未验证；论文未明确在非受控光照、复杂背景或不同体型下的表现。</li>
+</ul>
+<h2 id="_13">工程启示</h2>
+<p>复现或选型时，先核对以下三点：
+1. <strong>手部关键点可用性</strong>：64% 的可用率意味着约 1/3 帧会退化为仅姿态点估计，前臂旋转误差将从 50.1° 升至 67.1°。若下游任务对前臂旋转敏感，需考虑多帧融合或增加手部检测的触发条件。
+2. <strong>肩部 roll 的镜像逻辑</strong>：公式 12 的镜像条件（v_z &gt; 0）依赖躯干朝向，实验协议假设直立站姿。若实际应用中出现躯干倾斜，该自由度误差会显著放大，建议先验证躯干补偿是否必要。
+3. <strong>角度映射标定</strong>：每个关节的解析区间与电机位置需实验标定，且电机位置取整后发送。若机器人负载或装配有差异，需重新标定，否则线性映射的端点误差会直接叠加到关节角误差上。</p>
+<p>最易踩坑处：前臂旋转的符号约定与腕部屈曲的耦合。公式 6 中 V_PO 的符号由 cos(θ_wrist-bend) 决定，若腕部屈曲估计偏差超过 90°，符号可能翻转，导致前臂旋转误差急剧增大。建议在调试时先单独验证腕部屈曲在极端位置的精度，再联调前臂旋转。</p>
+<h2 id="_14">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18197</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_human_robot_collaboration_safety/">人机协作安全</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_behavior_cloning/">行为克隆</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_imitation_arm_gestures_semi_humanoid_rob_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">方法</span>
+          <h3>行为克隆</h3>
+          <p>通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_human_robot_collaboration_safety/">
+          <span class="entry-type">概念</span>
+          <h3>人机协作安全</h3>
+          <p>确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体流程</a></li>
+<li><a href="#_4">关键点融合策略</a></li>
+<li><a href="#_5">关节角重建（左臂为例）</a></li>
+<li><a href="#_6">角度到电机映射</a></li>
+</ul>
+</li>
+<li><a href="#_7">关键创新</a></li>
+<li><a href="#_8">实验与结果</a><ul>
+<li><a href="#_9">实验设置</a></li>
+<li><a href="#_10">关键结果</a></li>
+<li><a href="#_11">结果含义</a></li>
+</ul>
+</li>
+<li><a href="#_12">边界与局限</a></li>
+<li><a href="#_13">工程启示</a></li>
+<li><a href="#_14">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

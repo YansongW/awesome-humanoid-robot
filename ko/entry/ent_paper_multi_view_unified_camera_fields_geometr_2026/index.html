@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</h1>
+      <p class="entry-name-en">Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-continuation (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Vision-Language-Action (VLA) models have shown strong generalization in robotic manipulation, yet complex contact-rich tasks often benefit from multi-camera observations that jointly capture the end effector, objects, and targets under occlusion. Existing multi-camera VLAs usually concatenate view tokens, leaving action representations weak in metric depth and inconsistent across cameras. We.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.01826" target="_blank" rel="noopener">arXiv:2608.01826 Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations </a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>MVUCF는 학습 시에만 적용되는 프레임워크로, 액션 모듈이 소비하는 토큰 그리드에 측정적 깊이(metric depth)와 교차 뷰 대응(cross-view correspondence)이라는 두 가지 기하 속성을 공동으로 주입하여, 순수 RGB 입력만 사용하는 VLA 정책에 실용적인 3D 구조 인지 능력을 부여합니다. 이 방법은 NVIDIA 팀이 GR00T-N1.6을 기반으로 구현했으며, 2단계 학습(기하 주입 + 액션 학습)을 통해 배포 시 추가 센서나 추론 FLOPs 증가 없이 다중 카메라 조작 작업의 성공률과 강건성을 크게 향상시킵니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 VLA 모델은 접촉이 많은 다중 카메라 조작 작업에서 근본적인 표현 결함에 직면합니다: 백본 네트워크가 2D 의미론적 사전 학습된 VLM에서 초기화되므로, 그 은닉 상태는 측정적 깊이(원래 MAE 4.3 cm)와 교차 뷰 대응(Hit@1 0.4%로, 무작위 0.3%에 근접)을 신뢰할 수 있게 복원하지 못합니다. 이전 연구인 Spatial Forcing과 Selfi는 각각 교차 뷰 일관성과 측정적 3D 접지를 해결했지만, 두 메커니즘의 차이가 너무 커서 모듈식으로 결합할 수 없었습니다. MVUCF가 실제로 바꾼 것은: 배포 인터페이스(여전히 순수 RGB)를 변경하지 않고도, 학습 시 기하 감독 주입만으로 VLM 백본의 은닉 상태가 선형적으로 읽을 수 있는 측정적 깊이와 교차 뷰 물리적 점 대응을 동시에 갖출 수 있음을 증명했다는 점입니다. 이는 "기하 인식은 반드시 추가 센서나 추론 시 모듈에 의존해야 한다"는 암묵적 가정을 깨고, 기하 능력을 보조 분기에서 액션 모듈이 직접 소비하는 백본 표현으로 이동시켰습니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="2">2단계 학습 프로세스</h3>
+<ol>
+<li><strong>기하 주입 단계</strong>: VLM 레이어 8–15와 두 개의 보조 헤드(깊이 헤드, 교차 뷰 헤드)만 업데이트하고, 비전 인코더와 레이어 0–7은 동결합니다. 업데이트 범위는 데이터셋 전반에 걸쳐 고정되며, 하위 벤치마크에 기반하여 선택되지 않습니다.</li>
+<li><strong>액션 학습 단계</strong>: 보조 헤드, 깊이 관측, 카메라 보정을 제거하고, 기하적으로 형성된 백본을 동결한 채 RGB-only 입력으로 원래 액션 모듈을 학습합니다.</li>
+</ol>
+<h3 id="coordinate-query-depth-objective">좌표 쿼리 깊이 목표(Coordinate-Query Depth Objective)</h3>
+<ul>
+<li>9×9 토큰 그리드 위에 144×144 연속 쿼리 격자(밀집 쿼리 팩터 P=16)를 정의합니다.</li>
+<li>각 뷰에서 3072개 쿼리를 추출: 50% 균일 샘플링, 50%는 표면 근처와 깊이 경계에 편향된 중요도 샘플링.</li>
+<li>쿼리 표현은 1024차원 특징, 로컬 x/y 차이, 서브유닛 위상 φ(q)=q-⌊q⌋를 연결하여 3074차원 입력을 형성하며, 절대 위치 인코딩은 없습니다.</li>
+<li>깊이 헤드: LN(2048)→Linear(1024)→GELU→Conv 3×3(1024)→GELU의 GridTrunk 후, 쌍선형 특징 조회, MLP 3074→1024→1024→1 + Softplus로 측정적 깊이를 예측합니다.</li>
+<li>손실: L_depth = 0.5·L_silog + 1.25·L_inv + 1.0·L_grad + 0.1·L_seam + 0.05·L_unc, 유효 깊이 범위는 [0.05, 5.0] m.</li>
+</ul>
+<h3 id="preprocessing-aware-correspondence-objective">전처리 인지 대응 목표(Preprocessing-Aware Correspondence Objective)</h3>
+<ul>
+<li>양성 샘플은 원본 프레임의 기하 재투영으로 정의되며, 시각적 유사성이 아닙니다. 결합 변환 T_img→grid = T_unshuffle(2) ∘ T_patch(14) ∘ T_smart ∘ T_resize2 ∘ T_crop ∘ T_resize1 ∘ T_letterbox를 통해 좌표 라벨 오류를 방지합니다.</li>
+<li>유효성 검사: 목표가 이미지 경계 내에 있고, 깊이가 [0.05, 5.0] m이며, z-buffer 일관성 |Z_j - z_j*(u_j^raw)| &lt; 0.10 m를 만족해야 합니다.</li>
+<li>공유 프로젝터는 극도로 단순합니다: h_ω(f) = normalize₂(W·LN₂₀₄₈(f)), W ∈ R^{128×2048}, 은닉 레이어 없음.</li>
+<li>전역 매칭 로짓 ℓ_mn = 10(e_m^s)ᵀ e_n^t; 소프트 라벨 y_mn ∝ exp(-‖c_n - q_j*‖²/(2σ²)), σ=0.75.</li>
+<li>손실: L_cv = L_softCE + 0.1·L_hnce + 0.1·L_margin, γ=0.2, 외부 가중치는 40k 스텝 동안 1.0에서 0.1로 감소.</li>
+</ul>
+<h3 id="_4">핵심 설계 결정</h3>
+<ul>
+<li>깊이는 뷰 내 측정적 위치를 설정하고, 대응은 교차 뷰 물리적 점 정체성을 설정하며, 둘은 상호 보완적이고 액션 모듈이 소비하는 상위 은닉 상태를 직접 업데이트합니다.</li>
+<li>감독 추출 지점은 (12번째 레이어가 아닌) 15번째 레이어에서 선택되는데, 이는 더 강한 동일 점 판별력을 유지하고 액션 모듈이 직접 소비하는 최종 은닉 공간 그리드이기 때문입니다.</li>
+<li>공간적 소프트 양성 샘플은 서브토큰 투영 오류를 흡수하고, 공간적 링 음성 샘플은 인접 패치가 동등한 매칭으로 붕괴되는 것을 방지합니다.</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li><strong>교차 뷰 일관성과 측정적 3D 구조를 동시에 복원하는 통합 프레임워크</strong>: 이전 방법은 각각을 개별적으로 해결했지만 결합할 수 없었던 반면, MVUCF는 동일한 토큰 그리드에 두 상보적 속성을 공동으로 주입하여, 두 개의 분리된 보조 표현이 아닌 교차 카메라 공유 액션 지향 잠재 필드를 형성합니다.</li>
+<li><strong>전처리 인지 좌표 매핑</strong>: 전체 이미지 전처리 체인(unshuffle, patch, resize, crop, letterbox)의 결합 변환을 명시적으로 모델링하여, 원본 픽셀을 토큰 좌표로 직접 스케일링할 때 발생하는 라벨 오류를 방지합니다. 이는 공학적으로 쉽게 간과되지만 기하 감독 정밀도에 영향을 미치는 핵심 세부 사항입니다.</li>
+<li><strong>쿼리 패턴 깊이 감독</strong>: 매 학습 스텝의 밀집 전체 이미지 예측을 감독하는 대신, 3072개 쿼리 지점(표면 근처와 경계에 편향된 중요도 샘플링 포함)을 통해 연속 그리드 위치에서 측정적 깊이를 감독하고, 기울기 항으로 일정 깊이 붕괴를 방지하여 학습 효율과 기하 정밀도 사이의 균형을 달성합니다.</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<h3 id="libero-1">LIBERO 표준 벤치마크 (표 1)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>Base (GR00T-N1.6)</th>
+<th>Ours</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spatial</td>
+<td>99.3 ± 1.2</td>
+<td>100.0 ± 0.0</td>
+<td>+0.7</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>99.2 ± 0.8</td>
+<td>99.2 ± 0.3</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>Goal</td>
+<td>98.4 ± 1.2</td>
+<td>99.5 ± 0.5</td>
+<td>+1.1</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>92.9 ± 1.0</td>
+<td>97.0 ± 1.5</td>
+<td>+4.1</td>
+</tr>
+<tr>
+<td>Average</td>
+<td>97.4 ± 0.3</td>
+<td>98.9 ± 0.4</td>
+<td>+1.5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="libero-plus-2">LIBERO-Plus 강건성 (표 2)</h3>
+<table>
+<thead>
+<tr>
+<th>교란 유형</th>
+<th>Base</th>
+<th>Ours</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Camera</td>
+<td>20.9</td>
+<td>24.1</td>
+<td>+3.2</td>
+</tr>
+<tr>
+<td>Robot</td>
+<td>40.2</td>
+<td>54.1</td>
+<td>+13.9</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>35.0</td>
+<td>72.9</td>
+<td>+37.9</td>
+</tr>
+<tr>
+<td>Light</td>
+<td>65.4</td>
+<td>95.1</td>
+<td>+29.7</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>76.3</td>
+<td>91.8</td>
+<td>+15.5</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>27.8</td>
+<td>61.3</td>
+<td>+33.5</td>
+</tr>
+<tr>
+<td>Layout</td>
+<td>51.3</td>
+<td>74.9</td>
+<td>+23.6</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>42.8</td>
+<td>65.2</td>
+<td>+22.4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="robotwin-6-3">RoboTwin 6개 작업 (표 3)</h3>
+<table>
+<thead>
+<tr>
+<th>작업군</th>
+<th>Base</th>
+<th>Ours</th>
+<th>Δ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Touch</td>
+<td>92.0→99.5 (Alarm), 85.5→100.0 (Bell)</td>
+<td>—</td>
+<td>+11.0</td>
+</tr>
+<tr>
+<td>Move/Place</td>
+<td>6.5→40.5 (Pill), 0.0→27.0 (Phone)</td>
+<td>—</td>
+<td>+30.5</td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>43.0→93.5 (Stapler), 4.5→11.0 (Switch)</td>
+<td>—</td>
+<td>+28.5</td>
+</tr>
+<tr>
+<td>Overall</td>
+<td>38.6% (35.9–41.4%)</td>
+<td>61.9% (59.1–64.6%)</td>
+<td>+23.3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-libero-10">절제 연구 (표 4, LIBERO-10)</h3>
+<table>
+<thead>
+<tr>
+<th>구성</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Native Base</td>
+<td>92.88 ± 1.01</td>
+</tr>
+<tr>
+<td>Depth only</td>
+<td>94.00 ± 1.00 (Δ +1.12)</td>
+</tr>
+<tr>
+<td>Cross-view only</td>
+<td>94.21 ± 2.40 (Δ +1.33)</td>
+</tr>
+<tr>
+<td>Full</td>
+<td>97.00 ± 1.50 (Δ +4.12)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">표현 진단</h3>
+<ul>
+<li>깊이 MAE: 원래 4.3 cm → 기하 주입 후 0.78 cm(단일 프레임, 뷰당); 전체 평가 평균은 4.9에서 0.44 cm로 감소, 2 cm 내 예측은 44%에서 97%로 증가.</li>
+<li>교차 뷰 검색 Hit@1: 원래 0.4%(무작위 0.3%) → 기하 주입 후 64%.</li>
+</ul>
+<h3 id="agibot-expedition-a2">실제 로봇 (Agibot Expedition A2)</h3>
+<ul>
+<li>Ours: 49/60 성공 (81.7%; 70.1–89.4%); Base: 40/60 (66.7%; 54.1–77.3%). 두 작업 모두 개선: 17/30→21/30 및 23/30→28/30.</li>
+</ul>
+<h2 id="_8">경계 및 한계</h2>
+<ul>
+<li>MVUCF는 학습 시 보정이 정확하다고 가정합니다; 손상되거나 노이즈가 있는 보정 라벨에 대한 강건성은 테스트되지 않았습니다.</li>
+<li>기하 주입은 학습 시 카메라 파라미터를 학습된 기하 표현에 암묵적으로 포함시켜, 카메라 시점 및 시야각 교란 하에서의 개선을 제한합니다.</li>
+<li>실제 로봇 실험에서 신뢰 구간이 겹치며(81.7% vs 66.7%), 파일럿 규모의 물리적 실현 가능성 증거만 제공합니다.</li>
+<li>검증 또는 하위 성공률 기반 체크포인트 선택은 수행되지 않았으며, 사전 선언된 horizon의 최종 체크포인트가 사용되었습니다.</li>
+<li>투명, 반사, 무질감 영역은 누락되거나 편향된 깊이를 생성할 수 있으며, 유효성 마스크로 제외되지만 별도로 평가되지는 않았습니다.</li>
+<li>두 차례의 RoboTwin 평가는 라운드 간 분산의 안정적 추정을 지원하기에 충분하지 않으며, 보고된 것은 재학습 변동성이 아닌 집계된 이항 불확실성입니다.</li>
+</ul>
+<h2 id="_9">공학적 시사점</h2>
+<ul>
+<li><strong>재현 시 우선 확인 사항</strong>: 기하 주입과 액션 학습은 동일한 공식 오픈소스 데모 궤적(LIBERO 각 스위트 100 에피소드, RoboTwin 각 작업 50개 clean50 분할)을 사용해야 하며, 그렇지 않으면 비교가 무효합니다. 학습 하이퍼파라미터(LR 10⁻⁴, WD 10⁻⁵, 워밍업 0.05, batch 128)는 공식 GR00T-N1.6 미세조정 기본값과 엄격히 일치해야 합니다.</li>
+<li><strong>가장 함정에 빠지기 쉬운 부분</strong>: 전처리 인지 좌표 매핑 T_img→grid는 unshuffle, patch, resize, crop, letterbox의 결합 변환을 완전히 구현해야 하며, 원본 픽셀을 토큰 좌표로 직접 스케일링하면 라벨 오류가 발생합니다. 깊이 완성 파이프라인은 최근접 이웃 샘플링(쌍선형 아님)을 사용해야 하며, 객체 경계의 측정적 깊이가 인위적으로 평활화되는 것을 방지해야 합니다.</li>
+<li><strong>가시성 임계값 0.10 m는 경험적 운영 지점입니다</strong>: 더 엄격하면 깊이 양자화로 유효 쌍이 버려지고, 더 느슨하면 폐색 경계에서 모호한 투영이 발생합니다. 이 값은 목표 구축 단계에서 고정되어야 하며, 하위 성공률에 기반하여 선택되지 않아야 합니다.</li>
+<li><strong>레이어 선택은 임의로 할 수 없습니다</strong>: 감독 추출 지점은 15번째 레이어(액션 모듈이 직접 소비하는 최종 은닉 공간 그리드)에서 선택되며, 12번째 레이어에 두면 토큰 수준 분리가 저하됩니다. 업데이트 범위(레이어 8–15)는 데이터셋 전반에 걸쳐 고정되며, 벤치마크별로 조정되지 않습니다.</li>
+<li><strong>배포 검증</strong>: 추론 그래프가 순수 RGB-only로 유지되고, 추가 센서, 모듈 또는 추론 FLOPs가 없음을 확인하십시오; 카메라 보정은 오프라인 목표 구축에만 사용되며, 배포 정책은 카메라 행렬을 소비하지 않습니다.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">평가 대상</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_li_spatial_forcing_implicit_spati_2025/">Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_component_manufacturer_nvidia/">엔비디아</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_multi_view_unified_camera_fields_geometr_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_component_manufacturer_nvidia/">
+          <span class="entry-type">부품 제조사</span>
+          <h3>엔비디아</h3>
+          <p>GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_spatial_forcing_implicit_spati_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model</h3>
+          <p>Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model (Spatial…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#2">2단계 학습 프로세스</a></li>
+<li><a href="#coordinate-query-depth-objective">좌표 쿼리 깊이 목표(Coordinate-Query Depth Objective)</a></li>
+<li><a href="#preprocessing-aware-correspondence-objective">전처리 인지 대응 목표(Preprocessing-Aware Correspondence Objective)</a></li>
+<li><a href="#_4">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a><ul>
+<li><a href="#libero-1">LIBERO 표준 벤치마크 (표 1)</a></li>
+<li><a href="#libero-plus-2">LIBERO-Plus 강건성 (표 2)</a></li>
+<li><a href="#robotwin-6-3">RoboTwin 6개 작업 (표 3)</a></li>
+<li><a href="#4-libero-10">절제 연구 (표 4, LIBERO-10)</a></li>
+<li><a href="#_7">표현 진단</a></li>
+<li><a href="#agibot-expedition-a2">실제 로봇 (Agibot Expedition A2)</a></li>
+</ul>
+</li>
+<li><a href="#_8">경계 및 한계</a></li>
+<li><a href="#_9">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

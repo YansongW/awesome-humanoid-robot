@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M17 · Teleoperation and Data Collection: How Imitation Learning Data is Gathered · Roadmap · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" aria-current="page">Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" >Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/roadmap/">Roadmap</a>
+    <span>/</span>
+    <span class="breadcrumb-current">M17 · Teleoperation and Data Collection: How Imitation Learning Data is Gathered</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="m17-teleoperation-and-data-collection-how-imitation-learning-data-is-gathered">M17 · Teleoperation and Data Collection: How Imitation Learning Data is Gathered</h1>
+<p><strong>Global Position</strong>: After the arm (M15) and perception stack (M16) are ready, before imitation learning training (M18). Input is a safely movable robot + a calibrated perception stack, output is <strong>≥50 quality-checked episode datasets</strong>—the M18 training script can use them directly without rework.</p>
+<p><strong>Prerequisites</strong>: M16 acceptance passed (perception output stable, time synchronization verified); robot can be safely powered on and moved, emergency stop circuit available (see <a href="/en/roadmap/stage-3-humanoid/">Stage 3 Overview</a> Step 15).</p>
+<p>Theoretical background: <a href="/en/wiki/chapters/chapter-17/">Chapter 17: Teleoperation and Human-Robot Collaboration</a> covers teleoperation system design, <a href="/en/wiki/chapters/chapter-21/">Chapter 21: Data Infrastructure</a> covers data pipelines, <a href="/en/wiki/appendices/appendix-b/">Appendix B: Key Dataset List</a> lists comparable public datasets.</p>
+<h2 id="step-1-teleoperation-scheme-selection">Step 1: Teleoperation Scheme Selection</h2>
+<p>[What to do] Compare four options, choose one based on budget and task:</p>
+<table>
+<thead>
+<tr>
+<th>Scheme</th>
+<th>Cost Level</th>
+<th>Data Quality</th>
+<th>Suitable For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Leader-follower master-slave arm (<a href="/entry/ent_technology_aloha_teleoperation_system_2023/">ALOHA</a> approach)</td>
+<td>~$20k for full set (card-level)</td>
+<td>High: isomorphic mapping, joint-level correspondence</td>
+<td>Dual-arm fine manipulation</td>
+</tr>
+<tr>
+<td>VR controller/headset</td>
+<td>Consumer VR device price</td>
+<td>Medium: end-effector pose + posture retargeting</td>
+<td>Mobile humanoid, whole-body teleoperation</td>
+</tr>
+<tr>
+<td>Exoskeleton</td>
+<td>Confirm with supplier</td>
+<td>High but cumbersome to wear</td>
+<td>Research teams</td>
+</tr>
+<tr>
+<td>Keyboard/joystick</td>
+<td>Nearly zero</td>
+<td>Low: slow, coarse actions</td>
+<td>Fallback for pipeline validation</td>
+</tr>
+</tbody>
+</table>
+<p>Two important variants:</p>
+<ul>
+<li><strong>Collect without full robot</strong>: <a href="/entry/ent_technology_umi_gripper_interface_2024/">UMI gripper interface</a>—handheld gripper + wrist camera, human holds gripper to demonstrate and collect training data (card-level).</li>
+<li><strong>Practical division for mobile humanoid</strong>: lower body joystick fixed-point + upper body master-slave, drawing on <a href="/entry/ent_technology_mobile_aloha_2024/">Mobile ALOHA</a> whole-body teleoperation approach (Stage 3 level)—don't expect to walk via teleoperation while performing fine grasping.</li>
+</ul>
+<p>Anchor points: <a href="/entry/ent_robot_system_toddlerbot/">ToddlerBot</a> uses isomorphic teaching arm (handle with embedded FSR force-sensitive resistor) + handheld joystick buttons, version 2.0 adds Meta Quest 2 VR teleoperation; Berkeley Humanoid Lite uses SteamVR base stations + controller teleoperation for dual-arm tasks like Rubik's cube, writing, block stacking (see <a href="https://arxiv.org/html/2502.00893v2">ToddlerBot paper</a> and <a href="https://github.com/HybridRobotics/Berkeley-Humanoid-Lite">Berkeley Humanoid Lite GitHub</a>).</p>
+<p>[Why] Teleoperation serves three purposes: verify hardware reachability, collect imitation learning data, establish task baseline (Stage 3). VR approach has two hard constraints: <strong>latency</strong> (end-to-end latency reaching hundreds of milliseconds noticeably degrades operator feel, engineering experience, measure on your system) and <strong>motion sickness</strong>—first test latency with small-scale data, then schedule long collection sessions.</p>
+<p>[How to analyze your situation] Very tight budget: start with UMI, align format, reuse with real robot later; have bipedal humanoid: upper body master-slave + lower body joystick fixed-point; just want to validate pipeline: use joystick as fallback to run through "record → replay → train" loop, then upgrade equipment.</p>
+<h2 id="step-2-collection-pipeline-setup">Step 2: Collection Pipeline Setup</h2>
+<p>[What to do] Freeze "what to record, how to record, where to store" into specifications:</p>
+<ol>
+<li><strong>Recorded fields</strong> (consistent with Stage 3 Step 9): multi-view images (head + dual wrist), joint states (position/velocity), actions (target joint positions after master-slave mapping), language instructions, timestamps.</li>
+<li><strong>Unified frame rate</strong>: all streams uniformly sampled at <strong>10–30 Hz</strong> (engineering recommendation, finalize based on storage and compute), align using M16 time synchronization infrastructure.</li>
+<li><strong>Storage format</strong>: start with <a href="/entry/ent_software_ros_2_middleware_2024/">ROS 2</a> bag; to interface with open-source training ecosystem, use <a href="/entry/ent_software_lerobot_2024/">LeRobot</a> or RLDS style—<a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a> uses unified RLDS format to aggregate millions of demonstration frames across embodiments, serving as standard VLA pre-training corpus (card-level).</li>
+<li><strong>Directory and naming</strong>: <code>task_name/date/operator/episode_number</code>, metadata (calibration version, instruction text, success label) saved with the package.</li>
+</ol>
+<p>[Why] Format determines reusability: missing a field (e.g., no language instruction) means re-collecting the entire batch for instruction-conditioned policy training. Naming convention makes "which data was collected with which calibration version" traceable—expired calibration batches must be filterable as a whole.</p>
+<p>[How to analyze your situation] Single machine, single task: bag + one parsing script is enough; planning multiple tasks/robots: directly align with LeRobot/OXE format, don't invent a private format from the start.</p>
+<h2 id="step-3-task-and-scene-design">Step 3: Task and Scene Design</h2>
+<p>[What to do]</p>
+<ol>
+<li><strong>Start with one task</strong>: first task fixed as "grab cup and place in box", run through full pipeline before expanding categories.</li>
+<li><strong>Scene randomization checklist</strong>: object position/orientation (uniformly distributed within workspace), lighting (brightness/direction variation), background (change tablecloth/clutter), distractors (gradually add irrelevant objects). Roll dice before each recording to determine randomization level.</li>
+<li><strong>Instruction templating</strong>: template like "put {object} into {container}", freeze vocabulary, instruction strings stored in episodes are always generated from templates.</li>
+<li><strong>Define success criteria upfront</strong>: e.g., "gripper closes, object hovers for 3 seconds without falling, finally lands in container"—label each episode as success/failure on the spot.</li>
+</ol>
+<p>[Why] The policy learns the data distribution: if you only collect "cup in the center", it will only grasp in the center. The randomization checklist defines the policy's generalization boundary and must be written into the collection plan, not based on daily mood. Vague success criteria cause label noise—during M18 training, this manifests as "some demonstrations can be learned, others cannot".</p>
+<p>[How to analyze your situation] Fixed desktop robot: start randomization with object position/orientation (highest cost-effectiveness); add lighting and background after single-task success rate stabilizes. For each added randomization level, double the episode budget accordingly.</p>
+<h2 id="step-4-collection-execution-standards">Step 4: Collection Execution Standards</h2>
+<p>[What to do]</p>
+<ol>
+<li><strong>Quality &gt; quantity</strong>: smooth motion, moderate speed (the pace the operator feels is "a bit slow" is just right), no occlusion; always keep both end-effector and target object visible in the frame.</li>
+<li><strong>Failed episode handling</strong>: <strong>keep and label as failed</strong> entire episodes that fail mid-demonstration, but M18 training defaults to using only successful set; operator-initiated "recovery from failure" segments (e.g., drop and re-grasp) are separately marked—recovery data teaches policy error correction, high value, but keep proportion within 20–30% (engineering recommendation) to avoid the policy learning "intentional failure".</li>
+<li><strong>Production expectation</strong>: skilled operator produces 10–20 episodes per hour (engineering recommendation, including scene reset and spot checks); plan 3–5 working hours for 50 high-quality data points.</li>
+<li><strong>Immediate replay spot check</strong>: replay 1 out of every 5–10 collected episodes, check visuals, time alignment, labels; record operator ID for each episode during multi-person collection—style differences are part of the data distribution.</li>
+</ol>
+<p>[Why] Imitation learning is extremely sensitive to demonstration quality: shaky and fast demonstrations produce shaky and fast policies. Immediate spot check compresses incidents like "collected all day only to find timestamps drifted" to within 10 episodes.</p>
+<p>[How to analyze your situation] Solo project: set your own pace, prefer 20 high-quality episodes per day; multi-person shifts: watch 3 "standard demonstrations" together before starting to calibrate feel, cross-check 2 of each other's episodes at end of shift.</p>
+<h2 id="step-5-data-quality-check-and-split">Step 5: Data Quality Check and Split</h2>
+<p>[What to do]</p>
+<ol>
+<li><strong>Automated quality check script</strong>, each episode passes three checks:</li>
+<li>Time alignment: image and action timestamp offset &lt; 1 frame (engineering recommendation);</li>
+<li>Frame drop detection: actual vs target frame rate for each stream, flag if drop rate exceeds threshold;</li>
+<li>Image quality: blur (Laplacian variance), overexposure/underexposure (histogram) filtered by threshold.</li>
+<li><strong>Training/validation 9:1 split</strong>: randomly split by episode, once validation set is defined, freeze it—M18 uses the same set for every experiment.</li>
+<li><strong>Dataset card</strong>: robot model/sensor configuration/calibration version/collection date/task definition/instruction template/number of episodes and statistics, all in one page. <a href="/entry/ent_dataset_droid/">DROID</a> is a reference for distributed multi-lab collection (card-level, limitation: only covers fixed arms); <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a> is a format reference for cross-embodiment aggregation.</li>
+</ol>
+<p>[Why] "Whether data is usable" relies on scripts, not memory: after archiving the quality report (alignment error, frame drop rate, blur ratio), when M18 training has issues, data can be ruled out first. The dataset card is your only source of truth one month later, or when someone else takes over.</p>
+<p>[How to analyze your situation] Even 50 episodes go through the full process: write the script once, zero cost to reuse at 500 episodes; even 5 validation episodes must be kept—without a frozen validation set, every "improvement" in M18 cannot be attributed.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li>[ ] ≥50 quality-checked episodes (Stage 3 criterion), with complete success/failure labels.</li>
+<li>[ ] Recording fields and frame rate specifications documented, and verified to be directly readable by the M18 training script.</li>
+<li>[ ] Scene randomization checklist and instruction templates frozen, with episodes covering all randomization levels.</li>
+<li>[ ] Quality inspection report archived: includes numerical statistics on time alignment error, frame drop rate, and image quality.</li>
+<li>[ ] Training/validation 9:1 split completed, with the validation set frozen.</li>
+<li>[ ] Dataset card documented: includes robot/sensor/calibration version/date/task definition/statistics and operator information.</li>
+<li>[ ] Data backed up: one copy each of raw bag files and parsed format, stored on different disks or in different locations.</li>
+</ul>
+<h2 id="common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Possible Cause</th>
+<th>Troubleshooting Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Policy actions always lag behind the image</td>
+<td>Undetected drift in image-action timestamps</td>
+<td>Check alignment error with quality inspection script; return to M16 to check dual-machine time synchronization</td>
+</tr>
+<tr>
+<td>Image stuttering during playback of a certain segment</td>
+<td>Frame drops during collection (USB bandwidth/disk write bottleneck)</td>
+<td>Check frame drop report; reduce resolution or switch to SSD; return to M16 to check USB topology</td>
+</tr>
+<tr>
+<td>Policy learns jittery actions</td>
+<td>Demonstration itself is fast and jittery</td>
+<td>Spot-check playback of demonstration video; reduce operation speed and re-collect</td>
+</tr>
+<tr>
+<td>Cannot grasp object when moved to a different position</td>
+<td>Only collected center area/single pose</td>
+<td>Compare with randomization checklist and supplement collection of edge cases and diverse poses</td>
+</tr>
+<tr>
+<td>Success rate statistics fluctuate erratically</td>
+<td>Inconsistent execution of success criteria</td>
+<td>Write success criteria as a step-by-step checklist and check off each item when labeling</td>
+</tr>
+<tr>
+<td>Disk full or data loss</td>
+<td>No backup, only one copy of bag files</td>
+<td>Double backup on the day of collection; include storage margin in pre-operation checks</td>
+</tr>
+<tr>
+<td>Fragmented data style from multiple operators</td>
+<td>Operator handling differences not recorded</td>
+<td>Record operator ID in dataset card; conduct unified demonstration and calibration before starting</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supporting-reading">Supporting Reading</h2>
+<ul>
+<li>Previous task: <a href="/en/roadmap/missions/m16-perception-stack/">M16 · Perception Stack Setup</a></li>
+<li>Next task: <a href="/en/roadmap/missions/m18-imitation-learning/">M18 · Imitation Learning Training</a> (<a href="/entry/ent_method_behavior_cloning/">Behavior Cloning</a> → <a href="/entry/ent_method_action_chunking_transformer/">ACT</a> in practice)</li>
+<li>Theoretical background: <a href="/en/wiki/chapters/chapter-17/">Chapter 17 Teleoperation and Human-Robot Collaboration</a>, <a href="/en/wiki/chapters/chapter-21/">Chapter 21 Data Infrastructure</a>, <a href="/en/wiki/chapters/chapter-16/">Chapter 16 Manipulation and Grasping</a></li>
+<li>Dataset references: <a href="/en/wiki/appendices/appendix-b/">Appendix B Key Dataset List</a>, <a href="/entry/ent_dataset_open_x_embodiment/">Open X-Embodiment</a>, <a href="/entry/ent_dataset_droid/">DROID</a></li>
+<li><a href="/en/roadmap/stage-3-humanoid/">Stage 3 Overview</a> · <a href="/en/roadmap/playbooks/sensor-selection/">Sensor Selection Guide</a></li>
+</ul>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/roadmap/missions/m16-perception-stack/">← Previous<span>M16 · Building the Perception Stack: Let the Robot See Where the Cup Is</span></a>
+      
+      
+      <a class="next" href="/en/roadmap/missions/m18-imitation-learning/">Next →<span>M18 · Imitation Learning Training and Deployment: 50 Demonstrations Yield a Cup-Grasping Policy</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#m17-teleoperation-and-data-collection-how-imitation-learning-data-is-gathered">M17 · Teleoperation and Data Collection: How Imitation Learning Data is Gathered</a><ul>
+<li><a href="#step-1-teleoperation-scheme-selection">Step 1: Teleoperation Scheme Selection</a></li>
+<li><a href="#step-2-collection-pipeline-setup">Step 2: Collection Pipeline Setup</a></li>
+<li><a href="#step-3-task-and-scene-design">Step 3: Task and Scene Design</a></li>
+<li><a href="#step-4-collection-execution-standards">Step 4: Collection Execution Standards</a></li>
+<li><a href="#step-5-data-quality-check-and-split">Step 5: Data Quality Check and Split</a></li>
+<li><a href="#acceptance-criteria">Acceptance Criteria</a></li>
+<li><a href="#common-pitfalls-and-troubleshooting">Common Pitfalls and Troubleshooting</a></li>
+<li><a href="#supporting-reading">Supporting Reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</h1>
+      <p class="entry-name-en">DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Generalizable robot manipulation requires policies that can anticipate how visual scenes evolve while executing language instructions. While recent Vision-Language-Action models benefit from large-scale pretraining, their predominantly static pretraining objectives provide limited supervision for physical dynamics and temporal causality, leaving control-relevant knowledge to be learned from.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.24159" target="_blank" rel="noopener">arXiv:2607.24159 DeVA: Decoupled Video-Action Model with physical guidance for robot policy learn</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>DeVA는 비디오-액션 정책 학습을 위한 분리형 아키텍처를 제안하며, 시각적 동역학 모델링과 액션 예측을 독립적인 전문가(Expert)에게 할당하고, 다중 레벨 특징 상호작용과 물리적 현저성 가이드(affordance 및 상대 깊이)를 통해 로봇 조작 정책의 샘플 효율성과 일반화 능력을 향상시킵니다. 이 방법은 RoboCasa, LIBERO, LIBERO-Plus 및 실제 이중 팔 플랫폼에서 기존 VLA/VAM 기준선을 크게 능가합니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 VLA 모델은 정적 이미지-텍스트 사전 학습에 의존하여 물리적 동역학과 시간적 인과성에 대한 감독이 부족하며, 제어 지식은 하위 작업 데모에서 다시 학습해야 하므로 작업별 데이터 요구량이 매우 높습니다. 반면 VAM은 비디오 사전 학습을 도입했지만, 통합 공식(shared backbone)은 시각적 생성과 제어 예측이 단일 특징 공간을 공유하도록 강제하여 모달리티별 특징 학습을 제한합니다. 초기 또는 이중 DiT 아키텍처는 선택된 백본 레이어와 고정된 디노이징 단계에서만 특징을 추출하여 비디오 백본에 분포된 다양한 레벨의 상호 보완적 추상화를 충분히 활용하지 못합니다. DeVA가 진정으로 바꾼 것은 "비디오 이해"와 "액션 생성"을 아키텍처 수준에서 분리하고, 처음으로 장면 기하학(상대 깊이)과 상호작용 영역(affordance)을 명시적 물리적 가이드로 액션 예측에 주입한다는 점입니다. 이는 암시적 비디오-액션 목표에만 의존하지 않습니다. 이를 통해 제어 관련 특징이 더 이상 하위 작업 데모에서 완전히 암시적으로 도출될 필요 없이, 사전 학습된 비디오 백본의 다중 레벨 표현과 물리적 사전 지식을 통해 직접 유도되어 작업별 데모 수에 대한 의존도를 크게 낮춥니다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">분리형 이중 전문가 아키텍처</h3>
+<ul>
+<li><strong>비디오 전문가</strong>: Cosmos-Predict2(잠재 비디오 확산 트랜스포머, 약 1.96B 파라미터)에서 초기화되며, 미래 시각적 동역학 모델링을 담당하고 표준 EDM 디노이징 목표를 사용합니다.</li>
+<li><strong>액션 전문가</strong>: GR00T-N1.5 액션 헤드 기반의 action-DiT 아키텍처(약 564M 파라미터)로, 중간 비디오 표현, T5 언어 임베딩 및 물리적 가이드를 조건으로 사용하며, 독립적인 시각 인코더 없이 flow-matching 목표로 학습됩니다.</li>
+</ul>
+<h3 id="_5">다중 레벨 특징 상호작용</h3>
+<ul>
+<li>비디오 백본의 초기부터 후기 단계까지 <strong>균일하게 8개 레이어를 샘플링</strong>하여 레이어 간 교차 어텐션을 통해 액션 전문가의 해당 레이어로 라우팅합니다.</li>
+<li>12개의 학습 가능한 브리징 토큰(차원 1024)이 자기 어텐션을 통해 비디오 컨텍스트를 집계하고 액션 스트림에 도입합니다.</li>
+</ul>
+<h3 id="_6">물리적 현저성 가이드</h3>
+<ul>
+<li>두 개의 경량 DPT 스타일 디코더(affordance 및 상대 깊이, 총 약 36.3M 파라미터, 학습 파라미터의 1.4%)가 비디오 백본에 부착되며, 서로 다른 중간 블록(affordance는 블록 {6,13,20,27}, 깊이는 {3,10,17,24})에서 특징을 샘플링합니다.</li>
+<li>Affordance는 이미지 평면에서 엔드 이펙터 위치의 조건부 확률로 정의되며, 언어 특징은 FiLM 레이어를 통해 통합됩니다. 시뮬레이션에서는 가우시안 커널(σ=1.0)을 사용하여 실제 접촉 위치에서 목표를 구성하고, 실제 데이터는 기성 모델로 의사 레이블을 생성합니다.</li>
+<li>깊이는 오프라인 비디오 깊이 예측 모델(Video Depth Anything)로 추정되며, 예측값을 반전시켜 [0,1]로 정규화합니다.</li>
+<li>디코더의 최종 시공간 블록에서 특징을 추출하여 비디오 특징 공간 해상도로 투영하고 평탄화한 후, 채널 차원을 따라 다중 레벨 비디오 표현과 연결하여 액션 교차 어텐션 레이어에 추가 키-값으로 제공합니다.</li>
+</ul>
+<h3 id="2">2단계 학습</h3>
+<ul>
+<li><strong>Stage 1</strong>: 비디오 전문가와 물리 디코더를 10K 스텝 동안 워밍업하며, 미래 시각적 동역학, affordance 및 깊이를 공동 학습합니다. 손실 L_v = L_video + λ_aff L_aff + λ_depth L_depth (λ_aff=λ_depth=1.0).</li>
+<li><strong>Stage 2</strong>: 액션 전문가를 도입하고 공동 최적화하며, 물리 디코더는 동결되지만 비디오 특징을 계속 감독하고 가이드를 제공합니다. 총 손실 L = L_v + L_act.</li>
+<li>최적화: FusedAdamW, 피크 학습률 1×10⁻⁴, 워밍업 1,000 스텝, 3×10⁻⁵(30k 스텝)까지 선형 감소 후 6×10⁻⁶으로 감소, 그래디언트 클리핑 1.0, 배치 크기 8/GPU(전역 64), FSDP 전체 샤딩(8 GPU), bfloat16.</li>
+</ul>
+<h2 id="_7">핵심 혁신</h2>
+<ol>
+<li><strong>아키텍처 수준 분리</strong>: 시각적 생성과 액션 예측을 독립적인 트랜스포머 전문가에게 할당하여 각각 독립적인 파라미터와 토큰 표현을 유지함으로써, 단일 특징 공간 공유로 인한 모달리티별 특징 손실을 방지합니다. 이는 통합 공식 VAM에 대한 근본적인 수정입니다.</li>
+<li><strong>물리적 현저성 가이드</strong>: 처음으로 affordance(상호작용 영역)와 상대 깊이(장면 기하학)를 명시적 중간 감독 및 추론 시 조건으로 액션 예측에 주입합니다. 이는 조밀한 물리적 사전 지식을 제공할 뿐만 아니라, FiLM 레이어와 채널 연결을 통해 작업 조건화 가이드를 구현하여 모델이 비디오에서 액션과 가장 관련된 정보에 집중하도록 합니다.</li>
+<li><strong>다중 레벨 특징 상호작용 및 디노이징 스텝 조건화</strong>: 비디오 백본에서 최종 레이어나 고정 디노이징 스텝 대신 8개 레이어의 중간 표현을 균일하게 샘플링하여 교차 어텐션을 수행합니다. 절제 실험은 다중 스텝 조건화(53.2%)가 최종 스텝(49.6%)보다 크게 우수하며, 비디오 백본 동결 시 성능이 급락(22.4%)하여 단순 특징 추출보다 비디오 표현의 공동 적응이 더 중요함을 입증합니다.</li>
+</ol>
+<h2 id="_8">실험 및 결과</h2>
+<h3 id="_9">시뮬레이션 벤치마크</h3>
+<ul>
+<li><strong>RoboCasa</strong>(24개 작업, 작업당 50개 데모, 3,600회 롤아웃): DeVA 성공률 72.0%, 동일 데이터 예산에서 최대 22.0포인트 향상(표 내 50.0→72.0 계산). UVA(50.0), Cosmos-Policy(67.1), GR00T-N1.5 + HAMLET(66.4)와 비교.</li>
+<li><strong>LIBERO</strong>(4개 스위트 40개 작업): DeVA 평균 99.0%, Cosmos-Policy(98.5), DiT4DiT(98.6), CogVLA(97.4) 능가.</li>
+<li><strong>LIBERO-Plus</strong>(10,030개 변형): DeVA 평균 80.8%, 최강 기준선 OpenVLA-OFT(69.6)보다 11.2포인트 높음(표 내 69.6→80.8 계산); 표준 LIBERO 99.0%에서 18.2포인트 하락(표 내 99.0→80.8 계산).</li>
+</ul>
+<h3 id="14-dof-3">실제 환경(14-DoF 이중 팔 플랫폼, 3개 작업)</h3>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Handover Marker</th>
+<th>Lift Pot</th>
+<th>Pick Up Bottles</th>
+<th>평균</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GR00T-N1.6</td>
+<td>0.88</td>
+<td>0.45</td>
+<td>0.10</td>
+<td>0.48</td>
+</tr>
+<tr>
+<td>π0.5</td>
+<td>0.70</td>
+<td>0.55</td>
+<td>0.75</td>
+<td>0.67</td>
+</tr>
+<tr>
+<td>Cosmos-Policy</td>
+<td>0.45</td>
+<td>0.23</td>
+<td>0.35</td>
+<td>0.34</td>
+</tr>
+<tr>
+<td><strong>DeVA</strong></td>
+<td><strong>0.90</strong></td>
+<td><strong>0.68</strong></td>
+<td><strong>0.65</strong></td>
+<td><strong>0.74</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="55k">절제 실험(약 55K 스텝 체크포인트)</h3>
+<table>
+<thead>
+<tr>
+<th>변형</th>
+<th>성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>액션 모델만</td>
+<td>19.8%</td>
+</tr>
+<tr>
+<td>목표 이미지 예측</td>
+<td>25.8%</td>
+</tr>
+<tr>
+<td>미래 비디오 예측</td>
+<td>36.8%</td>
+</tr>
+<tr>
+<td>분리 아키텍처 + 다중 레벨 특징 전이</td>
+<td>66.0%</td>
+</tr>
+<tr>
+<td>+ affordance + 상대 깊이</td>
+<td><strong>72.0%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>특징 상호작용 메커니즘 절제: 직접 자기 어텐션 66.79% &gt; 직접 교차 어텐션 66.50% &gt; 특정 레이어 교차 어텐션 63.75% &gt; 집계 어텐션 후 교차 어텐션 62.75%. 디노이징 스텝 조건화: 다중 스텝 53.2% &gt; 최종 스텝 49.6% &gt; 백본 동결 22.4%.</p>
+<h2 id="_10">경계 및 한계</h2>
+<p>논문은 잠재 공간 예측과 가속 샘플링을 통한 추론 효율성 향상을 명시적으로 탐구하지 않았습니다. 실제 환경에서 추가 합성 궤적을 사용하지 않았으며, LIBERO-Plus의 7가지 교란 차원에 대한 차원별 분해 결과를 보고하지 않았습니다("Robot Init" 및 "Camera View" 예시만 언급). 사전 학습된 비디오 백본의 계산 비용을 계승하여 학습이 액션 전용 정책 학습보다 더 비싸며, 비디오와 액션 스트림의 공동 디노이징은 추가 추론 오버헤드를 발생시킵니다. 추가 변환 레이어는 성능을 저하시킬 수 있으며, 이는 과도한 처리가 사전 학습된 비디오 백본에 이미 인코딩된 정보를 약화시킬 수 있음을 시사합니다. 깊이 목표는 측정 정밀도나 뷰 간 정확한 스케일 일관성을 요구하지 않으며, 약간의 뷰 간 불일치와 시간적 드리프트에 강건합니다. Affordance 감독은 의사 레이블의 중간 수준 노이즈와 위치 오류에 대해 관대하지만, 실제 데이터의 의사 레이블 품질은 기성 모델에 의존합니다.</p>
+<h2 id="_11">엔지니어링 시사점</h2>
+<p>재현 시 세 가지를 먼저 확인하세요: <strong>데이터 정규화</strong>(실제 YAM 데이터는 1st/99th 백분위수, 시뮬레이션은 min-max, 액션 마스크 (6,−1,6,−1)는 델타와 절대 차원의 혼합을 나타냄); <strong>비디오 백본 초기화</strong>(반드시 Cosmos-Predict2 사전 학습 480p/16-fps 체크포인트를 사용해야 하며, 백본 동결 시 성능이 49.6%에서 22.4%로 급락); <strong>2단계 학습 전환</strong>(Stage 1 워밍업 10K 스텝 후 반드시 물리 디코더를 동결하되 비디오 특징을 계속 감독). 가장 쉽게 실수하는 부분은 다중 뷰 타일 레이아웃입니다: RoboCasa 3뷰는 2×2 그리드(네 번째 타일은 비움), LIBERO 2뷰는 수평 타일, 실제 데이터 3뷰는 수평 타일이며, 레이아웃 차이가 성능에 미치는 영향은 무시할 수 있지만 일관성을 유지해야 합니다. 학습은 약 55K 스텝(시뮬레이션) 또는 40K 스텝(실제)이며, 8 GPU FSDP에서 배치 크기 8/GPU, GPU 메모리가 부족하면 배치 크기보다 해상도를 먼저 낮추세요. 절제 실험은 직접 자기 어텐션(66.79%)이 교차 어텐션 변형보다 우수함을 보여주며, 단순화가 필요하면 직접 자기 어텐션 방식을 우선 시도할 수 있습니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_pai_mimic_video_video_action_model_2025/">mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">평가 대상</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero_plus/">LIBERO-Plus</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_paper_li_cogvla_cognition_aligned_visio_2025/">CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing &amp; Sparsification</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_deva_decoupled_video_action_model_physic_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO</h3>
+          <p>프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_benchmark_libero_plus/">
+          <span class="entry-type">벤치마크</span>
+          <h3>LIBERO-Plus</h3>
+          <p>LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_kim_fine_tuning_vision_language_ac_2025/">
+          <span class="entry-type">논문</span>
+          <h3>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success</h3>
+          <p>Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_li_cogvla_cognition_aligned_visio_2025/">
+          <span class="entry-type">논문</span>
+          <h3>CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing &amp; Sparsification</h3>
+          <p>CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing &amp;…</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_paper_pai_mimic_video_video_action_model_2025/">
+          <span class="entry-type">논문</span>
+          <h3>mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs</h3>
+          <p>mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs (VAM), is a 2025 large…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">분리형 이중 전문가 아키텍처</a></li>
+<li><a href="#_5">다중 레벨 특징 상호작용</a></li>
+<li><a href="#_6">물리적 현저성 가이드</a></li>
+<li><a href="#2">2단계 학습</a></li>
+</ul>
+</li>
+<li><a href="#_7">핵심 혁신</a></li>
+<li><a href="#_8">실험 및 결과</a><ul>
+<li><a href="#_9">시뮬레이션 벤치마크</a></li>
+<li><a href="#14-dof-3">실제 환경(14-DoF 이중 팔 플랫폼, 3개 작업)</a></li>
+<li><a href="#55k">절제 실험(약 55K 스텝 체크포인트)</a></li>
+</ul>
+</li>
+<li><a href="#_10">경계 및 한계</a></li>
+<li><a href="#_11">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

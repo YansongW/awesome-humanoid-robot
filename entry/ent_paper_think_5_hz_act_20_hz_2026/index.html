@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving</h1>
+      <p class="entry-name-en">Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Inference for Closed-Loop Driving</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出一种异步快慢双系统闭环驾驶架构：冻结的 7B 视觉-语言骨干作为慢系统低频消化导航指令与视觉历史，轻量 337M 动作专家作为快系统在每个仿真 tick 通过单次前向传播回归航点。核心贡献在于利用骨干逐层键值缓存作为常驻场景表示，使快系统在消费级硬件上以 20 Hz 全控制率运行，同时通过陈旧性增强训练吸收缓存滞后，显著提升闭环驾驶完成率与路线偏离指标。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.15621" target="_blank" rel="noopener">arXiv:2607.15621 Think at 5 Hz, Act at 20 Hz: Asynchronous Fast-Slow Vision-Language-Action Infer</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有闭环 VLA 智能体（如 LMDrive）的延迟问题被普遍视为根本性瓶颈，通常通过隔 tick 调用模型、中间重放上一条命令来掩盖，导致一半控制输出忽略最新观测。本文改变了这一认知框架：将延迟问题重新定义为架构性而非根本性——指令理解与时序场景聚合变化缓慢，而当前帧到轨迹的映射必须快速但计算量轻。这一判断将问题从“如何加速大模型”转向“如何设计计算分工”，使 7B 模型在消费级 GPU 上以全控制率参与闭环成为可能。</p>
+<p>此前 fast-slow 设计（DriveVLM、π₀、DriveVLA-W0）要么仅交换轨迹、要么仅在同步开环基准上评估，未证明 fast-slow VLA 能在消费级硬件上以全控制率吸收缓存陈旧性并改善驾驶结果。本文首次在 CARLA 闭环中验证了这一架构假设，将控制率从 10 Hz 提升至 20 Hz，同时将路线完成率从 37.0 提升至 94.0，并证明缓存陈旧性可通过训练分布内采样被有效吸收。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">整体架构</h3>
+<ul>
+<li><strong>慢系统</strong>：冻结的 7B 视觉-语言骨干，低频（每 K=4 tick，0.2 s）消化导航指令与视觉历史，暴露逐层键值缓存作为场景常驻表示。</li>
+<li><strong>快系统</strong>：轻量动作专家，每个仿真 tick（50 ms）通过单次前向传播回归 5 个航点。</li>
+</ul>
+<h3 id="_4">动作专家设计</h3>
+<ul>
+<li>32 层 transformer，隐藏宽度 d_ae=512，与骨干层一一对应。</li>
+<li>每层通过矩形投影 W^ℓ_{q,k,v} ∈ R^{4096×512} 将自身 token 投影到骨干的 32 头、128 维注意力几何中，拼接骨干同层缓存键值后执行单次注意力操作，输出投影回 d_ae 并接 SwiGLU 前馈块。</li>
+<li><strong>关键属性</strong>：骨干从不关注专家 token，因此缓存无论专家是否运行都相同——这是允许缓存的关键设计决策。</li>
+<li>专家 token 携带可学习位置嵌入、无旋转编码；骨干键保留其缓存时的旋转相位，使仅追加缓存精确。</li>
+</ul>
+<h3 id="_5">每帧专家输入</h3>
+<ul>
+<li>10 个 token：1 个状态 token（嵌入先前预测航点、先前控制三元组、当前速度、目标点）、当前帧 4 个视觉 token（由与骨干相同的 Q-Former 管线产生）、5 个可学习航点查询，由两层头在 L1 监督下解码为 5 个 (x,y) 航点。</li>
+</ul>
+<h3 id="_6">陈旧性增强训练</h3>
+<ul>
+<li>部署时缓存落后当前帧最多 K 个 tick。训练时对每个样本采样 δ ~ U{0,…,δ_max}，掩蔽帧 j 的专家块可见的骨干前缀使其止于帧 j−δ（当 j&lt;δ 时仅见指令文本）。</li>
+<li>状态 token 在高斯噪声和随机 dropout 下用教师强制的先前航点训练。</li>
+<li>所有帧通过逐块注意力掩蔽并行监督。</li>
+</ul>
+<h3 id="_7">异步部署</h3>
+<ul>
+<li>骨干缓存作为可变状态维护。每 K=4 tick 通过增量前向传播追加当前帧 4 个 token，成本与历史长度无关。</li>
+<li>仅在指令变化、通知到达、episode 结束或缓存达训练窗口上限时从头重建。</li>
+<li>每个 tick 专家按原样读取缓存，测试时陈旧性上界为 K−1 个 tick，保持在训练分布内。</li>
+<li>黄金测试确认增量与整体预填充的航点差异低于 4 mm（fp16 噪声底）。</li>
+</ul>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li>
+<p><strong>缓存不变性设计</strong>：骨干从不关注专家 token，使缓存与专家运行状态解耦。这一设计允许快系统任意频率读取缓存而不触发骨干重算，是异步部署的架构基础，此前 fast-slow 设计未明确利用此属性。</p>
+</li>
+<li>
+<p><strong>陈旧性增强训练</strong>：将部署时的缓存滞后显式建模为训练分布的一部分，通过随机掩蔽骨干前缀模拟 δ 个 tick 的滞后。这使得快系统在测试时面对陈旧缓存仍能保持性能，是闭环中 20 Hz 控制率得以实现的关键训练策略。</p>
+</li>
+<li>
+<p><strong>增量缓存维护</strong>：利用旋转相位使仅追加缓存精确，每 K=4 tick 的增量前向传播成本与历史长度无关（闭环内中位数 10.7 ms）。这打破了传统 transformer 推理延迟随上下文线性增长的瓶颈，使长历史场景聚合成为可能。</p>
+</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="1-0">开环航点精度（表 1，同步 δ=0 协议）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>L1</th>
+<th>训练参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>骨干动作头（冻结）</td>
+<td>0.123</td>
+<td>—</td>
+</tr>
+<tr>
+<td>动作专家，仅 δ=0</td>
+<td>0.037</td>
+<td>337M</td>
+</tr>
+<tr>
+<td>动作专家，随机 δ（本文）</td>
+<td>0.031</td>
+<td>337M</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2langauto-short-town0532">闭环驾驶（表 2，LangAuto-Short town05，32 路线）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th>控制率</th>
+<th>DS</th>
+<th>RC</th>
+<th>IS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LMDrive（重放 tick）</td>
+<td>10 Hz</td>
+<td>28.8 ± 0.8</td>
+<td>37.0 ± 0.4</td>
+<td>0.80 ± 0.04</td>
+</tr>
+<tr>
+<td>FastSlow-LMDrive，帧跳过</td>
+<td>10 Hz</td>
+<td>34.0</td>
+<td>82.1</td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>FastSlow-LMDrive（本文）</td>
+<td>20 Hz</td>
+<td>32.9 ± 0.7</td>
+<td>94.0 ± 2.6</td>
+<td>0.37 ± 0.02</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">每公里违规（两次运行均值）</h3>
+<ul>
+<li>基线：25.0 次路线偏离、2.9 次超时；本文：4.3 次偏离、0.08 次超时。</li>
+<li>每公里车辆碰撞从 3.2 升至 11.2；布局碰撞从 10.3 降至 2.2；偏离车道从 7.9 降至 1.1。</li>
+</ul>
+<h3 id="340-rtx-3090-ti">延迟（表 3，40 帧历史，RTX 3090 Ti，中位数）</h3>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>Legacy</th>
+<th>本文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>感知 + Q-Former</td>
+<td>26.9 每步</td>
+<td>24.8 每 tick（29.2）</td>
+</tr>
+<tr>
+<td>骨干全量重算</td>
+<td>61.6 每步</td>
+<td>无</td>
+</tr>
+<tr>
+<td>增量追加</td>
+<td>—</td>
+<td>21.1 每 K=4 tick（10.7）</td>
+</tr>
+<tr>
+<td>动作专家</td>
+<td>—</td>
+<td>7.5 每 tick（9.3）</td>
+</tr>
+<tr>
+<td>总模型计算</td>
+<td>88.6</td>
+<td>32.4 每 tick；5.3 每 K=4 tick 摊销</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">零样本城镇迁移（表 4，单次运行）</h3>
+<ul>
+<li>town01：LMDrive DS=20.5、RC=40.5、IS=0.56；本文 DS=23.2、RC=84.3、IS=0.26。</li>
+<li>town02：LMDrive DS=11.6、RC=30.7、IS=0.38；本文 DS=28.3、RC=94.4、IS=0.29。</li>
+<li>town02 上驾驶分数为基线 2.4 倍、完成率为 3.1 倍。</li>
+</ul>
+<h3 id="0-epoch-l1">陈旧性增强消融（同步 δ=0 协议下逐 epoch 验证 L1）</h3>
+<ul>
+<li>随机 δ 专家 vs δ=0 孪生：0.060 vs 0.067，0.049 vs 0.056，0.037 vs 0.045，收敛时 0.031 vs 0.037。</li>
+</ul>
+<h2 id="_11">边界与局限</h2>
+<ul>
+<li>本研究为仿真研究，仅在单一城镇（town05）的短路线上训练，长路线上的危险协商不迁移；每公里车辆碰撞随完成率上升而增加（由表内数值 3.2→11.2 计算）。</li>
+<li>低层控制器继承了为较慢基线调优的增益，未重新调参，可能限制 20 Hz 控制率的潜在收益。</li>
+<li>主要对比为每配置两次运行，帧跳过消融和迁移行为单次运行，观测到运行间散布最高 1.6 DS。</li>
+<li>驾驶系统需要远超仿真基准的安全验证，本文结果不应被解读为道路就绪的证据。</li>
+<li>未做之事：未将骨干与世界模型预训练结合以丰富缓存编码内容；未使用 fast-slow 分歧作为免训练的安全监督触发；未在长路线训练片段上训练（作者指出这是自然下一步）。</li>
+</ul>
+<h2 id="_12">工程启示</h2>
+<ul>
+<li><strong>复现优先核对</strong>：训练时骨干、感知编码器、Q-Former、原始头全部冻结，从公开 LMDrive 检查点初始化；batch size 4 时峰值低于 28 GB GPU 内存，单张 48 GB GPU 可训练。推理时单张 RTX 3090 Ti 即可闭环，墙钟速率约 17 Hz。</li>
+<li><strong>最易踩坑点</strong>：陈旧性增强训练中 δ 的采样范围需与部署时 K 值匹配（本文 K=4，δ_max 对应 4 个 tick）；若部署时缓存滞后超出训练分布，专家性能可能显著退化。黄金等价测试（航点差异 &lt; 4 mm）应作为缓存维护正确性的常规验证。</li>
+<li><strong>下游团队指导</strong>：若需迁移到新场景，注意长路线上的惩罚因子塌缩（本文 town03 上惩罚因子 0.04 导致驾驶分数 2.96 低于基线 5.98），建议在长路线训练片段上微调；低层 PID 参数需针对 20 Hz 控制率重新调优，直接沿用慢基线参数可能掩盖架构收益。</li>
+</ul>
+<h2 id="_13">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.15621</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_li_drivevla_w0_world_models_ampli_2025/">DriveVLA-W0</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_think_5_hz_act_20_hz_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_paper_li_drivevla_w0_world_models_ampli_2025/">
+          <span class="entry-type">论文</span>
+          <h3>DriveVLA-W0</h3>
+          <p>DriveVLA-W0 是由银翼智能科技有限公司、中国科学院自动化研究所模式识别国家重点实验室（NLPR）于 2025…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">整体架构</a></li>
+<li><a href="#_4">动作专家设计</a></li>
+<li><a href="#_5">每帧专家输入</a></li>
+<li><a href="#_6">陈旧性增强训练</a></li>
+<li><a href="#_7">异步部署</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#1-0">开环航点精度（表 1，同步 δ=0 协议）</a></li>
+<li><a href="#2langauto-short-town0532">闭环驾驶（表 2，LangAuto-Short town05，32 路线）</a></li>
+<li><a href="#_10">每公里违规（两次运行均值）</a></li>
+<li><a href="#340-rtx-3090-ti">延迟（表 3，40 帧历史，RTX 3090 Ti，中位数）</a></li>
+<li><a href="#4">零样本城镇迁移（表 4，单次运行）</a></li>
+<li><a href="#0-epoch-l1">陈旧性增强消融（同步 δ=0 协议下逐 epoch 验证 L1）</a></li>
+</ul>
+</li>
+<li><a href="#_11">边界与局限</a></li>
+<li><a href="#_12">工程启示</a></li>
+<li><a href="#_13">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

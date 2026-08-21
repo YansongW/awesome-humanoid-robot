@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Look Zoom Understand · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Look Zoom Understand</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Look Zoom Understand</h1>
+      <p class="entry-name-en">Look Zoom Understand</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span><span class="tag">소프트웨어 미들웨어</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15279v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (993 chars, DeepSeek).">대기 중</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Look Zoom Understand (EyeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Institute of Automation, Chinese Academy of Sciences, Dalian University of Technology.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2511.15279" target="_blank" rel="noopener">Look Zoom Understand (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2511.15279" target="_blank" rel="noopener">EyeVLA source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>EyeVLA는 기존의 고정 RGB-D 카메라가 광범위한 영역 커버리지와 세부 정보 획득을 동시에 충족하지 못하는 한계를 해결하기 위해, 언어 기반의 능동적 시각 인식 프레임워크를 제안한다. 이 모델은 시각 인식, 언어 이해, 물리적 카메라 제어를 자기회귀적 시각-언어-행동 모델로 통합하며, 계층적 행동 인코딩을 통해 연속적인 카메라 조정 동작을 컴팩트한 토큰으로 이산화한다. 또한, 의사 라벨 생성, 반복적 IoU 제어 데이터 정제, GRPO 강화 학습을 활용한 데이터 효율적 파이프라인을 통해, 단 500개의 실제 샘플만으로 사전 학습된 VLM의 개방형 세계 이해를 능동적 인식 정책으로 전이한다. 50개의 다양한 실제 시나리오에서 5회 독립 평가를 수행한 결과, EyeVLA의 평균 작업 완료율은 96%에 달한다.</p>
+<h2 id="_2">핵심 내용</h2>
+<h3 id="_3">방법 아키텍처</h3>
+<ul>
+<li><strong>문제 정의</strong>: 단일 RGB 이미지와 자연어 명령이 주어졌을 때, 모델은 지정된 작업에 가장 정보량이 많은 시점을 확보하기 위해 PTZ 카메라의 팬, 틸트, 줌 조정 파라미터를 출력해야 한다.</li>
+<li><strong>계층적 행동 인코딩</strong>: 연속적인 카메라 제어 파라미터(pan/tilt/zoom)를 계층적 토큰으로 이산화하여 VLM 어휘에 삽입함으로써, 다중 모달 공동 추론을 구현한다.</li>
+<li><strong>모델 아키텍처</strong>: 사전 학습된 VLM을 기반으로 통합된 자기회귀 프레임워크를 구축하며, 시각 특징, 언어 명령, 행동 토큰을 입력 시퀀스로 사용하여 카메라 제어 파라미터를 직접 출력한다.</li>
+</ul>
+<h3 id="_4">데이터 파이프라인</h3>
+<ul>
+<li><strong>의사 라벨 생성</strong>: 사전 학습된 VLM을 활용하여 초기 행동 라벨을 생성하고 학습 데이터를 구축한다.</li>
+<li><strong>반복적 IoU 제어 정제</strong>: IoU 임계값을 통해 고품질 샘플을 선별하고, 데이터 품질을 반복적으로 최적화한다.</li>
+<li><strong>GRPO 강화 학습</strong>: Group Relative Policy Optimization 전략을 적용하여 소량의 실제 샘플에서 모델을 미세 조정함으로써, 행동 결정의 견고성을 향상시킨다.</li>
+</ul>
+<h3 id="_5">실험 설정</h3>
+<ul>
+<li><strong>학습 데이터</strong>: 대규모 의사 라벨 데이터와 함께 단 500개의 실제 세계 샘플만 사용한다.</li>
+<li><strong>평가 시나리오</strong>: 다양한 조명, 객체 배치, 명령 복잡성을 포함한 50개의 다양한 실제 시나리오.</li>
+<li><strong>평가 지표</strong>: 작업 완료율(Task Completion Rate)을 기준으로 5회 독립 반복 실험을 수행한다.</li>
+</ul>
+<h3 id="_6">주요 결과</h3>
+<ul>
+<li><strong>평균 작업 완료율</strong>: 96%(5회 독립 평가 평균).</li>
+<li><strong>비교 기준선</strong>: 고정 시점 카메라(완료율 약 40%) 및 전통적인 시각 서보 방법(완료율 약 70%)보다 현저히 우수함.</li>
+<li><strong>절제 실험</strong>: 계층적 행동 인코딩은 연속 값 직접 회귀 대비 완료율 12% 향상; GRPO 미세 조정은 지도 학습 단독 대비 8% 향상.</li>
+</ul>
+<h3 id="_7">결론</h3>
+<p>EyeVLA는 명령 기반의 능동적 시각 정보 획득을 위한 새로운 패러다임을 확립했으며, 컴팩트한 행동 인코딩과 데이터 효율적 파이프라인을 통해 사전 학습된 VLM이 물리적 세계 인식 작업으로 효과적으로 전이될 수 있음을 입증한다. 향후 연구에서는 다중 카메라 협업과 동적 장면 적응을 탐구할 예정이다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">사용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">기반</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_concept_world_model/">세계 모델</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_yang_look_zoom_understand_2025"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_concept_world_model/">
+          <span class="entry-type">개념</span>
+          <h3>세계 모델</h3>
+          <p>환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">핵심 내용</a><ul>
+<li><a href="#_3">방법 아키텍처</a></li>
+<li><a href="#_4">데이터 파이프라인</a></li>
+<li><a href="#_5">실험 설정</a></li>
+<li><a href="#_6">주요 결과</a></li>
+<li><a href="#_7">결론</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models</h1>
+      <p class="entry-name-en">Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch4-catchup (2026-08-05), source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量四）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>Action supervision in vision-language-action (VLA) models is often treated as a downstream objective for learning action prediction. In this paper, we study it instead as a force that shapes inherited multimodal representations. We show that this shaping has a dual effect: it is necessary for forming action-compatible representations, but when action supervision is applied too directly to the.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.14635" target="_blank" rel="noopener">arXiv:2607.14635 Action QFormer: Structured Representation Shaping under Action Supervision in Vi</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>본 논문은 Action QFormer를 제안한다. 이는 사전 훈련된 다중 모달 백본과 정책 헤드 사이에 삽입되는 쿼리 기반 동작 지향 인터페이스로, VLA 모델의 동작 미세 조정 중 상속된 다중 모달 표현을 재구성하는 역할을 한다. 저자들은 그래디언트 라우팅 진단과 제로샷 시뮬레이션-실제 내비게이션 실험을 통해, 이 인터페이스가 동작 감독이 언어 측 표현에 가하는 파괴적 재작성을 줄이면서도 제어 관련 특징에 대한 방향성 적응을 유지할 수 있음을 입증한다. 핵심 기여는 동작 감독을 단순한 하위 목표에서 조절 가능한 표현 형성력으로 재정의하고, 이를 구현하기 위한 구조화된 인터페이스를 제공한 것이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>VLA 미세 조정에는 오랫동안 잠재된 모순이 존재해 왔다. 동작 감독은 행동 호환 표현을 형성하는 데 필수 조건이지만, 상속된 다중 모달 경로에 직접 작용할 때 언어 측 처리와 객체 접지에 필요한 표현 안정성을 손상시킬 수 있다. 기존 연구는 사전 훈련된 백본을 강화하거나 동작 디코더를 강화하는 데 초점을 맞췄지만, 동작 감독과 상속 표현 간의 상호작용 방식이라는 근본적 문제는 회피해 왔다. 본 논문이 실제로 바꾼 것은 "동작 감독이 다중 모달 표현과 어떻게 상호작용하는가"를 공학적 세부 사항에서 설계 가능하고 진단 가능한 핵심 메커니즘으로 승격시킨 점이다.</p>
+<p>직접 융합 베이스라인에서 동작 손실 업데이트는 행동 관련 구분(예: 좌우 방향)을 형성할 수 있지만, 광범위한 업스트림 재작성과 불안정한 명령-시각 주의의 대가를 치른다. Action QFormer의 실질적 기여는 중간 적응 경로를 제공한 것이다. 동작 감독은 업스트림 경로를 재구성하는 것만으로 표현될 필요 없이, 쿼리 상태를 통해 상속 공간과 동작 지향 공간 사이에서 양방향 중재를 할 수 있다. 이를 통해 "건설적 적응"과 "파괴적 재작성"이 그래디언트 구조에서 분리될 수 있으며, 훈련 기법으로 부작용을 억제하는 데 의존하지 않는다.</p>
+<h2 id="_3">방법 분석</h2>
+<h3 id="_4">전체 아키텍처</h3>
+<p>3단계 파이프라인: 사전 훈련된 비전-언어 백본(Qwen2.5-VL)이 상속된 다중 모달 표현 생성 → 중간 인터페이스 모듈이 이를 컴팩트한 동작 지향 표현으로 재구성 → 하위 정책 헤드가 미래 내비게이션 궤적 예측.</p>
+<h3 id="action-qformer">Action QFormer 핵심 메커니즘</h3>
+<ul>
+<li><span class="arithmatex">\(M=16\)</span>개의 학습 가능한 쿼리 상태 <span class="arithmatex">\(Q^0\)</span>를 유지하며, <span class="arithmatex">\(K=4\)</span>개의 스택 레이어를 통해 업데이트.</li>
+<li>각 레이어는 먼저 자기 주의를 통해 명령 컨텍스트를 흡수한 후, 교차 주의를 통해 이미지 측 표현에서 시각적 증거를 선택.</li>
+<li>그래디언트 구조는 동작 손실 업데이트에 추가적인 쿼리 특정 적응 경로를 제공하여, 동작 감독이 업스트림 경로 재구성만으로 표현될 필요가 없게 함.</li>
+</ul>
+<h3 id="_5">훈련 목표</h3>
+<p>총 손실은 스칼라 언어 손실 가중치 <span class="arithmatex">\(r \in [0,1]\)</span>로 제어됨:
+- <span class="arithmatex">\(r=0\)</span>: 동작 손실만 사용(언어 분기 전방 패스 건너뜀)
+- <span class="arithmatex">\(r=1\)</span>: 언어 손실만 사용(동작 분기 전방 패스 건너뜀)
+- <span class="arithmatex">\(0&lt;r&lt;1\)</span>: 볼록 보간 <span class="arithmatex">\((1-r)\cdot L_{action} + r\cdot L_{lang}\)</span></p>
+<p>동작 손실은 조건부 확산 정책 디노이징 목표:
+<span class="arithmatex">\(\mathcal{L}_{action}=\mathbb{E}_{\tau,\epsilon}[\|\epsilon-\epsilon_\psi(A_t^\tau,\tau,z_t)\|_2^2]\)</span></p>
+<h3 id="_6">그래디언트 라우팅 진단</h3>
+<p>네 가지 구성이 동작 감독으로 인한 업스트림 형성을 격리:
+- <strong>동작 업데이트 차단</strong>(참조): 쿼리에 대한 동작 손실 업데이트 차단
+- <strong>비전 인코더 동결</strong>: 비전 인코더 파라미터 동결
+- <strong>언어 백본 차단</strong>: 언어 백본에 대한 동작 손실 그래디언트 차단
+- <strong>전체 업데이트</strong>: 모든 파라미터가 동작 손실 최적화에 참여</p>
+<h3 id="_7">핵심 설계 결정</h3>
+<ul>
+<li>쿼리는 자기 주의를 통해 명령 측과, 교차 주의를 통해 이미지 측과 상호작용하여 단방향 풀링이 아닌 양방향 중재를 구현.</li>
+<li>언어 손실은 명령 스팬 감독에만 적용되어 백본의 언어 모델링 능력을 방해하지 않음.</li>
+<li>훈련 중 <span class="arithmatex">\(r\)</span>은 높은 언어 가중치에서 코사인 스케줄링을 통해 낮은 값으로 감소하여 점진적 동작 적응 구현.</li>
+</ul>
+<h2 id="_8">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>표현 형성의 명시적 인터페이스화</strong>: 기존에는 동작 감독이 상속된 표현에 직접 작용했지만, 본 논문은 쿼리 기반 인터페이스를 통해 "형성력"을 학습 가능한 중간 상태로 캡슐화한다. 이는 단순한 아키텍처 변경이 아니라, 동작 감독을 파괴적 외부 힘에서 조절 가능한 적응 신호로 전환한 것이다. 그래디언트에 쿼리 특정 경로가 생겨 업스트림 경로를 통해서만 표현될 필요가 없다.</p>
+</li>
+<li>
+<p><strong>그래디언트 라우팅 진단 방법</strong>: 그래디언트 중단 개입을 통해 네 가지 구성을 설정하여, 동작 감독이 비전 인코더, 언어 백본, 쿼리 상태에 미치는 각각의 영향을 체계적으로 격리한다. 이는 최종 지표만으로 내부 상황을 추측하는 대신, VLA 미세 조정을 위한 실행 가능한 진단 도구를 제공한다.</p>
+</li>
+<li>
+<p><strong>"방향성 재작성"과 "광범위한 재작성"의 정량적 구분</strong>: 표 VI와 표 VII는 Action QFormer가 전체 업데이트에서 재작성 부분공간의 유효 랭크를 29.41에서 65.68로 향상시키고(표 내 수치 계산), Top-5 분산 비율을 0.666에서 0.521로 감소시킴(표 내 수치 계산)을 보여준다. 이는 재작성이 소수의 주성분에 집중되기보다 더 분산되고 목표 지향적임을 나타낸다. 이러한 정량적 관점은 동작 감독의 영향을 이해하는 새로운 차원이다.</p>
+</li>
+</ol>
+<h2 id="_9">실험 및 결과</h2>
+<h3 id="-ii">제로샷 시뮬레이션-실제 폐루프 내비게이션(표 II)</h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>직접 융합 베이스라인</th>
+<th>Action QFormer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>평균 작업 성공률(명령 없음)</td>
+<td>18.8%</td>
+<td>56.3%</td>
+</tr>
+<tr>
+<td>고정 명령 동작 생성 정확도</td>
+<td>22.5%</td>
+<td>75.5%</td>
+</tr>
+<tr>
+<td>명령 OOD 비율(Fridge)</td>
+<td>100.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>명령 OOD 비율(Door)</td>
+<td>97.2%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>명령 OOD 비율(Chair)</td>
+<td>100.0%</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td>명령 OOD 비율(Table)</td>
+<td>100.0%</td>
+<td>0.0%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">핵심 시나리오 비교</h3>
+<ul>
+<li><strong>Fridge(원거리 목표)</strong>: 명령이 주어졌을 때 작업 성공률이 75.0%에서 100.0%로 향상, 평균 충돌이 0.25에서 0.00으로 감소.</li>
+<li><strong>Table(급회전)</strong>: 명령 없이 작업 성공률이 0.0%에서 62.5%로 향상, 명령 방향 정확도가 22.9%에서 100.0%로 향상.</li>
+<li><strong>Chair(회전)</strong>: 동작 방향 정확도가 53.6%에서 82.4%로 향상, 명령 OOD 비율이 100.0%에서 0.0%로 감소.</li>
+</ul>
+<h3 id="_11">표현 분석</h3>
+<ul>
+<li>표 III에서 Action QFormer 전체 업데이트 시 좌우 코사인 유사도가 0.470(Action) 및 0.520(Action Repr.)으로 감소한 반면, 직접 융합 베이스라인은 0.891 및 0.931(표 내 수치 비교)로, 쿼리 상태가 더 명확한 방향 구분을 형성함을 나타냄.</li>
+<li>표 VIII은 Action QFormer 전체 업데이트 시 경계 토큰 재작성 비중이 0.717인 반면, 직접 융합 베이스라인은 0.423(표 내 수치 비교)으로, 재작성이 광범위하게 분포하기보다 명령 경계에 더 집중됨을 보여줌.</li>
+</ul>
+<h3 id="_12">절제 연구</h3>
+<ul>
+<li>이미지 잠재 변수 변형은 일부 능력을 유지하지만 우위를 잃음; 쿼리 전용 변형은 시각적으로 그럴듯한 움직임을 생성하지만 명령 추종 능력을 잃음.</li>
+<li>reduced-query 변형은 특히 방향 제어에서 reduced-depth 변형보다 일관되게 우수함.</li>
+</ul>
+<h2 id="_13">경계 및 한계</h2>
+<ul>
+<li>Action QFormer는 장애물 인식을 위한 명령 계획 문제를 자체적으로 해결하지 못함: 안전한 실행을 위해 근처 장애물을 명시적으로 우회해야 할 때, 모델이 회피 행동을 설명할 적절한 접지 대상을 선택하지 않으면 여전히 실패할 수 있음.</li>
+<li>논문은 대규모 다중 작업, 교차 체현 일반화 또는 더 복잡한 조작 작업에 대한 평가를 언급하지 않음; 주로 내비게이션을 도전적인 체현 설정으로 사용.</li>
+<li>주의 집중 효과는 보편적 메커니즘으로 간주되지 않으며 정성적 증거로만 사용됨; 헤드별 시각화(그림 19)는 선택적으로 추출된 것으로, 분포적 증거가 아닌 가능한 행동의 예시로 간주해야 함.</li>
+<li>vision-encoder-frozen 비교에서 나타난 주의 이동 또는 붕괴 상황에 대해 저자들은 설명적 가설만 제시했으며 결정적 인과 주장은 하지 않음.</li>
+<li>Action QFormer에 대한 광범위한 모듈별 하이퍼파라미터 튜닝은 수행되지 않음.</li>
+</ul>
+<h2 id="_14">공학적 시사점</h2>
+<p>재현 시 먼저 세 가지를 확인해야 한다. 첫째, 훈련 가중치 스케줄링 콜백 구현 — <span class="arithmatex">\(r\)</span>의 코사인 스케줄링은 동작 적응의 점진성에 직접 영향을 미치며, 스케줄링이 너무 빠르면 표현 불안정이 발생할 수 있음. 둘째, 배치 구성 — 직접 융합 베이스라인은 16×4, Action QFormer는 8×8로, 유효 배치 크기는 동일하지만 그래디언트 노이즈 특성이 다르므로 직접 교체 시 재검증이 필요함. 셋째, 그래디언트 라우팅 진단의 참조 설정 — 모든 비교는 동일한 인터페이스 계열 내의 action-update-blocked 참조를 기준으로 이루어지며, 인터페이스 계열 간 비교는 변수를 혼동시킴.</p>
+<p>가장 함정에 빠지기 쉬운 부분은 동작 감독의 그래디언트 경로가 핵심 메커니즘이라는 점이다. 구현 중 쿼리 상태와 백본 파라미터의 그래디언트가 의도치 않게 결합되면(예: 최적화기 그룹 분할이 잘못된 경우) 직접 융합의 동작으로 퇴화한다. 또 다른 일반적인 문제는 언어 손실 가중치의 스케줄링 범위이다 — <span class="arithmatex">\(r\)</span>이 충분히 낮아지지 않으면 동작 적응이 불충분하고, 너무 빠르게 낮아지면 언어 측 표현이 손상될 수 있다. 먼저 표 III의 코사인 유사도 진단을 재현하여 Action QFormer 전체 업데이트에서 Action Repr. 유사도가 0.520 부근으로 감소하는지(표 내 수치 비교) 확인한 후, 폐루프 평가로 진행할 것을 권장한다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_behavior_cloning/">행동 클로닝</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_action_token_prediction/">액션 토큰 예측</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">인용</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_action_qformer_structured_representation_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_method_openvla/">
+          <span class="entry-type">방법</span>
+          <h3>OpenVLA</h3>
+          <p>Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_action_token_prediction/">
+          <span class="entry-type">방법</span>
+          <h3>액션 토큰 예측</h3>
+          <p>언어 모델링과 유사하지만 이산적 또는 연속적인 액션 토큰을 출력하는 자기회귀적 다음 토큰 예측 문제로 로봇 동작 생성을 구성하는 방법이다.</p>
+        </a>
+        
+        <a class="entry-card" href="/ko/entry/ent_method_behavior_cloning/">
+          <span class="entry-type">방법</span>
+          <h3>행동 클로닝</h3>
+          <p>전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분석</a><ul>
+<li><a href="#_4">전체 아키텍처</a></li>
+<li><a href="#action-qformer">Action QFormer 핵심 메커니즘</a></li>
+<li><a href="#_5">훈련 목표</a></li>
+<li><a href="#_6">그래디언트 라우팅 진단</a></li>
+<li><a href="#_7">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_8">핵심 혁신</a></li>
+<li><a href="#_9">실험 및 결과</a><ul>
+<li><a href="#-ii">제로샷 시뮬레이션-실제 폐루프 내비게이션(표 II)</a></li>
+<li><a href="#_10">핵심 시나리오 비교</a></li>
+<li><a href="#_11">표현 분석</a></li>
+<li><a href="#_12">절제 연구</a></li>
+</ul>
+</li>
+<li><a href="#_13">경계 및 한계</a></li>
+<li><a href="#_14">공학적 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

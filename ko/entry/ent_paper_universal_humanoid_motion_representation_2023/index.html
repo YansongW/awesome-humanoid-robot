@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Universal Humanoid Motion Representations for Physics-Based Control · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Universal Humanoid Motion Representations for Physics-Based Control</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>Universal Humanoid Motion Representations for Physics-Based Control</h1>
+      <p class="entry-name-en">Universal Humanoid Motion Representations for Physics-Based Control</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P027. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>We present a universal motion representation that encompasses a comprehensive range of motor skills for physics-based humanoid control. Due to the high dimensionality of humanoids and the inherent difficulties in reinforcement learning, prior methods have focused on learning skill embeddings for a narrow range of movement styles (e.g. locomotion, game characters) from specialized motion datasets..</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2310.04582" target="_blank" rel="noopener">arXiv:2310.04582 Universal Humanoid Motion Representations for Physics-Based Control</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>PULSE는 물리 기반 휴머노이드 전신 운동의 범용 표현을 제안한다. 먼저 PHC+ 모방기로 40시간 분량의 AMASS 데이터를 커버한 뒤, 조건부 변분 정보 병목을 통해 32차원 잠재 동작 공간을 증류하여 하위 생성 및 추적 작업에 직접 재사용할 수 있게 한다. 핵심 기여는 적대적 학습을 온라인 증류로 대체하여 대규모 비정형 MoCap 데이터를 확장 가능한 운동 사전 지식으로 만든 것이다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 물리 휴머노이드 운동 표현(ASE, CALM)은 판별기나 적대적 목표에 의존하여 특수 데이터셋(보행, 복싱, 춤)에서만 좁은 잠재 공간을 형성하고 다양한 기술을 포괄하지 못한다. 반면 운동학적 잠재 공간(HuMoR)은 무작위 샘플링 시 부자연스러운 운동을 생성하기 쉽다. PULSE가 실제로 바꾼 것은 "모방기 + 증류"를 전용 파이프라인에서 범용 인프라로 승격시킨 점이다. 하위 작업(속도, 타격, 지형 횡단, VR 추적)은 표현을 재설계할 필요 없이 동결된 디코더를 동작 공간으로 바로 사용하여 훈련할 수 있다.</p>
+<p>더 중요하게, 저자들은 적대적 보상을 포기하고 사전 학습된 사전 지식 샘플링만으로 인간형 운동을 생성한다. 이는 물리적 제약 하에서 비자연적 운동보다 인간형 기술이 샘플링되기 더 쉽다는 가설을 검증하며, 이로써 작업 설계가 단순화된다(예: VR 추적에 PACER의 추가 적대 항이 필요 없음).</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="2">2단계 훈련</h3>
+<ol>
+<li>
+<p><strong>PHC+ 모방기</strong>: PHC(Luo et al., 2023) 기반, 점진적 훈련 사용 — 먼저 원시 정책 𝓟(0)을 훈련하여 전체 데이터셋을 커버하고, 실패 시퀀스는 하드 네거티브 샘플 세트를 구성하며, 이후 𝓟(1)을 훈련하여 이러한 샘플을 학습하고 더 이상 배울 운동이 없을 때까지 반복한다. 추가로 낙상을 처리하기 위한 복구 정책 𝓟(F)을 훈련하고, 컴바이너 𝓒가 동결 정책을 동적으로 전환한다. 핵심 수정 사항: 심각한 관통/불연속 시퀀스 제거, 새 정책을 인스턴스화하기 전에 이전 정책이 자체 하드 네거티브에 집중하도록 함, 활성화 함수를 ReLU에서 SiLU로 변경하고 네트워크 확장(6층 MLP, 유닛 [2048, 1536, 1024, 1024, 512, 512]), 세 개의 원시 정책만으로 100% 성공률 달성.</p>
+</li>
+<li>
+<p><strong>온라인 증류</strong>: 인코더 𝓔(𝒛_t | 𝒔_t^p, 𝒔_t^g-mimic)와 디코더 𝓓(𝒂_t | 𝒔_t^p, 𝒛_t)가 동작 분포를 모델링하며, 목표 함수는 ELBO:
+   log P(𝒂_t | ·) ≥ E_𝓔[log 𝓓(𝒂_t | 𝒔_t^p, 𝒛_t)] - D_KL(𝓔 || 𝓡)
+   여기서 사전 𝓡(𝒛_t | 𝒔_t^p)는 학습된 조건부 가우시안(비영평균)이다. 이유: 서 있는 상태와 공중 뒤집기의 동작 분포는 크게 다르다. 손실 ℒ = ℒ_action + αℒ_regu + βℒ_KL, ℒ_regu = ‖𝝁_t^e - 𝝁_{t-1}^e‖²₂는 연속 잠재 코드 편차를 페널티한다(NPMP의 AR(1) 사전과 유사), β는 0.01에서 0.001로 어닐링(2.5×10⁹ ~ 5×10⁹ 샘플).</p>
+</li>
+</ol>
+<h3 id="_4">하위 사용</h3>
+<p>𝓓와 𝓡을 동결하고, 상위 정책 π_task는 사전 평균 𝝁_t^p에 대한 잔차 동작을 출력한다: 𝒂_t^task = 𝓓(π_task(𝒛_t | 𝒔_t^p, 𝒔_t^g) + 𝝁_t^p). RL 탐색은 고정 분산 0.22를 사용하며(𝝈_t^p는 너무 작아서), π_task 분포를 사전으로 감독하지 않아 나쁜 잠재 코드로 인한 상태 악화 피드백 루프를 방지한다.</p>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li>
+<p><strong>온라인 증류로 적대적 학습 대체</strong>: π_PHC+를 직접 쿼리하여 (𝒔_t^p, 𝒔_t^g-mimic, 𝒂_t, 𝒂_t^PHC+) 쌍을 얻어 잠재 공간을 훈련하며 판별기가 필요 없다. 소거 실험에서 증류 없이는 1×10¹⁰ 샘플 훈련에도 수렴하지 않았고(Train Succ 72.0% vs 증류 포함 99.8%), 이는 증류가 대규모 데이터 확장성에 필수적임을 증명한다.</p>
+</li>
+<li>
+<p><strong>조건부 사전 + 잔차 동작</strong>: 영평균 가우시안 대신 학습된 사전 𝓡(𝒛_t | 𝒔_t^p)을 사용하여 다양한 자세의 동작 분포 차이에 적응한다. 잔차 동작(식 4)은 탐색에 필수적이다 — 소거 R5 vs R6에서 잔차 없이 Succ가 93.4%에서 18.1%로 급락.</p>
+</li>
+<li>
+<p><strong>ℒ_regu 평활 정규화</strong>: 연속 잠재 코드 편차를 페널티하여 더 컴팩트하고 연속적인 잠재 공간을 제공한다. 소거 R1 vs R2에서 추가 시 Succ가 36.9%에서 45.6%로 상승하고 E_g-mpjpe가 감소.</p>
+</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<p><strong>운동 모방(AMASS)</strong>: PHC+는 100% Train Succ에 도달, PULSE는 99.8%로 약간 감소하지만 Test Succ 97.1%로 PHC와 동등, E_g-mpjpe 54.1mm는 PHC+의 36.1mm보다 약간 높음(정보 병목의 손실 비용).</p>
+<p><strong>VR 컨트롤러 추적</strong>: PULSE는 실제 세계 14/14 시퀀스에서 성공, 처음부터 훈련(Scratch)과 동등하며 ASE-30Hz(7/14), CALM-30Hz(2/14)를 크게 능가. 그러나 E_g-mhpe 68.4mm는 Scratch의 43.3mm보다 높아 범용 사전이 여전히 작업 전용 정책보다 정확도가 낮음을 시사.</p>
+<table>
+<thead>
+<tr>
+<th>방법</th>
+<th>Train Succ</th>
+<th>Test Succ</th>
+<th>Real Succ</th>
+<th>E_g-mhpe (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ASE-30Hz</td>
+<td>79.8%</td>
+<td>37.6%</td>
+<td>7/14</td>
+<td>99.0</td>
+</tr>
+<tr>
+<td>CALM-30Hz</td>
+<td>16.6%</td>
+<td>10.1%</td>
+<td>2/14</td>
+<td>206.9</td>
+</tr>
+<tr>
+<td>Scratch</td>
+<td>98.8%</td>
+<td>93.4%</td>
+<td>14/14</td>
+<td>43.3</td>
+</tr>
+<tr>
+<td>Ours</td>
+<td>99.5%</td>
+<td>93.4%</td>
+<td>14/14</td>
+<td>68.4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>소거(VR 추적)</strong>: 전체 모델(R6) Succ 93.4%; ℒ_regu 제거(R3) 시 60.8%로 하락; 잔차 동작 제거(R5) 시 18.1%에 불과; RL 전용 감독 제거(R4) 시 71.0% — RL과 온라인 감독 증류의 혼합이 부정적 효과를 가짐을 증명(R4 vs R6).</p>
+<h2 id="_7">경계 및 한계</h2>
+<ul>
+<li>π_PULSE는 100% 모방 성공률에 도달하지 못함, 정보 병목은 손실 압축; 변분 병목 없는 온라인 증류는 100% 도달 가능.</li>
+<li>변분 공식은 추가 최적화 과제 도입(β 어닐링 스케줄에 민감).</li>
+<li>VR 추적 등 작업 성능은 여전히 처음부터 훈련보다 뒤처짐(E_g-mhpe 68.4 vs 43.3mm).</li>
+<li>휴머노이드가 낙상 또는 기립 상태에 갇힐 수 있으며, 시스템 노이즈 증가로 완화 가능하지만 완전히 해결되지는 않음.</li>
+<li>형상 변화, 사람-사람 상호작용, 물체 조작 및 관절 손가락은 고려하지 않음(논문에 명시되지 않음).</li>
+</ul>
+<h2 id="_8">엔지니어링 시사점</h2>
+<ul>
+<li><strong>재현 시 데이터 정제 먼저 확인</strong>: 관통/불연속 시퀀스 제거는 PHC+가 100%에 도달하기 위한 전제 조건; AMASS 필터링 후 11313 훈련 / 138 테스트 시퀀스.</li>
+<li><strong>증류가 성패를 좌우</strong>: 증류 없이는 1×10¹⁰ 샘플 훈련에도 수렴하지 않으므로 π_PHC+를 온라인으로 쿼리하는 파이프라인을 반드시 구현.</li>
+<li><strong>β 어닐링 세밀한 스케줄 필요</strong>: 0.01에서 0.001로 어닐링(2.5×10⁹ ~ 5×10⁹ 샘플), 너무 이른 어닐링은 재구성 정밀도를 희생하고 너무 늦으면 KL 항이 통제 불능.</li>
+<li><strong>잔차 동작 생략 불가</strong>: 하위 정책은 사전 평균에 대한 잔차를 출력해야 하며, 그렇지 않으면 탐색 효율이 붕괴(Succ 18.1% vs 93.4%).</li>
+<li><strong>RL 탐색 분산 고정 0.22</strong>: 𝝈_t^p를 사용하면 분산이 너무 작아 탐색 부족 발생.</li>
+<li><strong>가장 흔한 함정</strong>: RL과 온라인 감독 증류를 혼합하면 잠재 공간이 오염됨(R4 vs R6), 반드시 두 단계 훈련을 분리.</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <span class="rel-missing">ent_paper_amass</span>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <span class="rel-missing">ent_paper_phc</span>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_universal_humanoid_motion_representation_2023"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#2">2단계 훈련</a></li>
+<li><a href="#_4">하위 사용</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a></li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

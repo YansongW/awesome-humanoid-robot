@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ECoT-Lite · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ECoT-Lite</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ECoT-Lite</h1>
+      <p class="entry-name-en">Training Strategies for Efficient Embodied Reasoning</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span><span class="tag">软件中间件</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-pending" title="Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.08243v2. [2026-07-29] zh content backfilled from English abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read (890 chars, DeepSeek).">待审校</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ECoT-Lite 是斯坦福大学在 CoRL25 上提出的 2025 年大型视觉-语言-动作模型，专为机器人操作设计。其核心贡献在于通过分析机器人链式推理（CoT）提升策略性能的三种机制，并据此设计出两种轻量级替代方案，在 LIBERO-90 基准上达到最先进水平，同时推理速度比标准机器人推理快 3 倍。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2505.08243" target="_blank" rel="noopener">Training Strategies for Efficient Embodied Reasoning (arXiv)</a>
+            
+          </li>
+          
+          <li>
+            
+            <a href="https://doi.org/10.48550/arXiv.2505.08243" target="_blank" rel="noopener">ECoT-Lite source</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">概述</h2>
+<p>机器人链式推理（CoT）通过让模型在预测动作前生成中间表示，能有效提升视觉-语言-动作模型（VLA）的泛化能力和性能。然而，现有方法依赖专门的机器人推理数据且推理速度慢。为克服这些局限，研究者假设了三种推理提升策略的机制：更好的表示学习、改进的学习课程化以及增强的表达能力。通过设计简单变体进行隔离测试，发现生成推理能优化 VLA 表示，而关注推理则有助于利用这些特征改进动作预测。基于此，他们提出了两种轻量级替代方案，在 LIBERO-90 上取得显著性能提升，并实现 3 倍推理加速。</p>
+<h2 id="_2">核心内容</h2>
+<h3 id="_3">方法概述</h3>
+<ul>
+<li><strong>核心假设</strong>：机器人 CoT 推理通过三种机制提升策略性能：</li>
+<li><strong>更好的表示学习</strong>：生成推理过程迫使模型学习更鲁棒的中间特征。</li>
+<li><strong>改进的学习课程化</strong>：推理步骤为动作预测提供结构化引导。</li>
+<li><strong>增强的表达能力</strong>：推理增加了模型输出的复杂度，提升对复杂任务的适应能力。</li>
+<li><strong>实验设计</strong>：通过简单变体隔离测试每种机制，例如仅生成推理但不用于动作预测，或仅关注推理但不生成。</li>
+</ul>
+<h3 id="_4">架构与实验设置</h3>
+<ul>
+<li><strong>模型基础</strong>：基于视觉-语言-动作模型（VLA），在标准机器人操作数据集上训练。</li>
+<li><strong>基准测试</strong>：使用 LIBERO-90 基准，包含 90 个复杂操作任务。</li>
+<li><strong>对比方法</strong>：与非推理策略（直接预测动作）和标准机器人 CoT 推理方法对比。</li>
+</ul>
+<h3 id="_5">关键发现</h3>
+<ul>
+<li><strong>机制验证</strong>：生成推理能提升 VLA 表示质量（通过特征可视化验证），而关注推理则能更有效地利用这些特征进行动作预测。</li>
+<li><strong>性能提升</strong>：两种轻量级替代方案在 LIBERO-90 上达到最先进水平，显著优于非推理策略。</li>
+<li><strong>推理速度</strong>：相比标准机器人推理，推理速度提升 3 倍，同时保持或超越原有性能。</li>
+</ul>
+<h3 id="_6">结论</h3>
+<p>ECoT-Lite 通过解耦机器人 CoT 推理的机制，证明了轻量级推理策略在保持性能的同时大幅提升效率的可行性。这为未来机器人推理研究提供了更高效的设计方向，尤其适用于实时操作场景。</p>
+<h2 id="_7">参考</h2>
+<ul>
+<li>http://arxiv.org/abs/2505.08243v2</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      <span class="rel-desc">ECoT-Lite提及LIBERO。</span>
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zawalski_robotic_control_via_embodied_c_2024/">ECoT</a>
+      
+      <span class="rel-desc">ECoT-Lite提及ECoT。</span>
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chen_training_strategies_for_effici_2025"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zawalski_robotic_control_via_embodied_c_2024/">
+          <span class="entry-type">论文</span>
+          <h3>ECoT</h3>
+          <p>ECoT（Embodied Chain-of-Thought Reasoning）是由UC Berkeley、University of Warsaw和Stanford…</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">概述</a></li>
+<li><a href="#_2">核心内容</a><ul>
+<li><a href="#_3">方法概述</a></li>
+<li><a href="#_4">架构与实验设置</a></li>
+<li><a href="#_5">关键发现</a></li>
+<li><a href="#_6">结论</a></li>
+</ul>
+</li>
+<li><a href="#_7">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en-US" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 25: Humanoid Robot Evaluation System · Wiki · Humanoid Robot Knowledge Graph</title>
+  <meta name="description" content="From Mine to Market: A Knowledge Graph for Humanoid Robots">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
+
+
+</head>
+<body data-lang="en">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/en/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/en/" >Home</a>
+        <a href="/en/roadmap/" >Roadmap</a>
+        <a href="/en/graph/" >Graph</a>
+        <a href="/en/search/" >Search</a>
+        <a href="/en/wiki/" aria-current="page">Wiki</a>
+        <a href="/en/about/" >About</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/en/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="Search entities, papers, companies…" aria-label="Search">
+          <button type="submit" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" selected>English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/en/">Home</a>
+    <span>/</span>
+    <a href="/en/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Chapter 25: Humanoid Robot Evaluation System</span>
+  </nav>
+
+  
+
+  <div class="content-with-toc">
+  <article class="wiki-page">
+    <div class="wiki-body">
+      <h1 id="chapter-25-humanoid-robot-evaluation-system">Chapter 25: Humanoid Robot Evaluation System</h1>
+<h2 id="abstract">Abstract</h2>
+<p>"How capable is this humanoid robot?" — This seemingly simple question currently has a weak answer across the entire industry. Demo videos can be edited, single success rates can be cherry-picked for specific scenarios, but mass production deployment requires an evaluation system that is <strong>reproducible, comparable, and attributable</strong>. This chapter systematically reviews the methodologies and tool stacks for humanoid robot evaluation. Starting from the purpose and hierarchical structure of evaluation, it distinguishes component-level, subsystem-level, system-level, and scenario-level evaluations, and discusses three technical routes: simulation evaluation, real-robot evaluation, and generative evaluation based on world models. It then proceeds by capability dimension: motion control and whole-body performance evaluation introduces MPJPE, Torque Variation Score (TVS), HumanoidBench, and Human-Like Actuation Score (HLAS); manipulation skill evaluation introduces LIBERO, LIBERO-Plus, ManiSkill, and Isaac Gym benchmarks, as well as methods for evaluating simulation fidelity itself; foundation model evaluation discusses the generalization dimensions of VLA models, humanoid robot foundation model benchmarks, and the new paradigm of policy red-teaming using world simulators; the real-robot evaluation section provides statistical inference methods for success rates, key points for evaluation protocol design, and reliability/durability evaluation; finally, it discusses existing problems and trends such as benchmark overfitting and the demo-to-product gap. Together with Chapter 12 (Certification and Compliance), this chapter forms the methodological loop for the "verification and market layer" of humanoid robots: the former answers "Is the robot good enough?", the latter answers "Is the robot safe and legal enough?".</p>
+<p><strong>Keywords</strong>: Evaluation Benchmark; HumanoidBench; LIBERO; ManiSkill; HLAS; MPJPE; Success Rate Statistics; sim-to-real; Generalization; World Model Evaluation</p>
+<hr />
+<h2 id="251-purpose-and-hierarchical-structure-of-evaluation">25.1 Purpose and Hierarchical Structure of Evaluation</h2>
+<h3 id="2511-why-evaluation-is-a-bottleneck-for-embodied-intelligence">25.1.1 Why Evaluation is a Bottleneck for Embodied Intelligence</h3>
+<p>The large language model field has relatively mature public benchmarks like MMLU and HumanEval, where every leap in model capability has quantifiable records. The humanoid robot field is different: demonstrations of parkour, folding clothes, and carrying objects from various manufacturers' launches are dazzling, but the outside world cannot answer three fundamental questions:</p>
+<ol>
+<li><strong>Is it reproducible?</strong> Was the demo a successful segment picked from how many attempts? Were the initial conditions carefully designed?</li>
+<li><strong>Is it comparable?</strong> Robot A can fold a T-shirt, Robot B can carry a 20 kg box. Which one is more capable?</li>
+<li><strong>Is it generalizable?</strong> Can a task learned in one room still be performed with different lighting, different objects, or a different floor plan?</li>
+</ol>
+<p>These three questions correspond to three fundamental attributes of evaluation: <strong>reproducibility, comparability, and generalization predictiveness</strong>. The value of an evaluation system is not just academic ranking, but also the "common currency" of the industry chain: hardware manufacturers need it to prove capability boundaries to customers, model companies need it to screen algorithms, investors need it to identify the gap between marketing and actual progress, and certification bodies (Chapter 12) need it to quantify the evidence for "safety" and "capability".</p>
+<div class="admonition note">
+<p class="admonition-title">Term Explanation: Demo-to-Product Gap</p>
+<p>The systematic gap between metrics optimized for staged demonstrations and those required for reliable, certifiable, mass-producible products. Demonstrations pursue single-shot visual impact, while products require long-term, fault-free expected performance. One core mission of an evaluation system is to quantify the latter, making the chasm between "good demo" and "usable product" measurable, rather than obscured by marketing rhetoric.</p>
+</div>
+<h3 id="2512-the-hierarchical-pyramid-of-evaluation">25.1.2 The Hierarchical Pyramid of Evaluation</h3>
+<p>A complete humanoid robot evaluation system is divided into four layers from bottom to top based on abstraction level:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[L1 Component-Level Evaluation&lt;br/&gt;Motor Torque-Speed Curve/Sensor Accuracy/Battery Cycle Life] --&gt; B[L2 Subsystem-Level Evaluation&lt;br/&gt;Joint Bandwidth/Dexterous Hand Grip Force/Lower Limb Disturbance Recovery]
+    B --&gt; C[L3 System-Level Evaluation&lt;br/&gt;Walking Speed/Manipulation Success Rate/Whole-Body Task Completion]
+    C --&gt; D[L4 Scenario-Level Evaluation&lt;br/&gt;Continuous Shift Operation/Unstructured Environment/Long-Term Reliability]</code></pre>
+<ul>
+<li><strong>L1 Component Level</strong>: Various hardware indicators discussed in Chapters 2–6 of this book — peak and continuous torque of actuators (see Human-Like Actuation Score HLAS, Section 25.2.4), reducer precision grade, torque sensor noise floor, battery energy density. Characterized by mature measurement methods and existing standards, but component indicators alone cannot predict overall robot capability.</li>
+<li><strong>L2 Subsystem Level</strong>: Joint position/force control bandwidth, maximum grip force and degree-of-freedom utilization of the dexterous hand, recovery capability of the lower limb under thrust disturbances. This level begins to exhibit the "indicator combination" problem — bandwidth, precision, and load are often mutually exclusive.</li>
+<li><strong>L3 System Level</strong>: Task-oriented evaluation, such as walking speed, stair traversal success rate, success rate and completion time for specified manipulation tasks. Academic benchmarks (HumanoidBench, LIBERO, etc.) primarily operate at this level.</li>
+<li><strong>L4 Scenario Level</strong>: Comprehensive performance over an 8-hour continuous shift, Mean Time Between Failures (MTBF), task generalization in uncontrolled environments. This is the level that truly matters for products, and it is currently almost a blank area in public benchmarks.</li>
+</ul>
+<p>There is a classic <strong>aggregation error</strong> problem between levels: L1 being all excellent does not guarantee L3 being useful (integration losses, control bottlenecks), and L3 having high scores does not guarantee L4 reliability (durability, maintainability). A mature evaluation system must establish independent indicators at each level and study the mapping relationships between levels.</p>
+<h3 id="2513-three-technical-routes-for-evaluation">25.1.3 Three Technical Routes for Evaluation</h3>
+<p>Based on the evaluation environment, there are currently three parallel development routes:</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Representative Tools</th>
+<th>Advantages</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulation Evaluation</td>
+<td>Isaac Gym Benchmarks, HumanoidBench, ManiSkill, LIBERO</td>
+<td>Low cost, parallelizable, precisely reproducible</td>
+<td>sim-to-real gap, contact/friction modeling errors</td>
+</tr>
+<tr>
+<td>Real-Robot Evaluation</td>
+<td>Task Success Rate Protocols, Telemetry Data, Competitions</td>
+<td>Undisputed realism</td>
+<td>High cost, low throughput, reproducibility difficult to guarantee</td>
+</tr>
+<tr>
+<td>Generative/World Model Evaluation</td>
+<td>Policy Simulators based on Video World Models</td>
+<td>Combines throughput with visual realism, can generate OOD scenarios</td>
+<td>Physical consistency not yet guaranteed, still in research phase</td>
+</tr>
+</tbody>
+</table>
+<p>These three routes are not substitutes but form a funnel: simulation for large-scale initial screening, world models for supplementary testing of out-of-distribution and safety scenarios, and real robots for final confirmation. The evaluation of "Gemini Robotics policies in the Veo World Simulator" introduced in Section 25.4.3 is a representative work of the third route.</p>
+<h3 id="2514-design-principles-for-evaluation-metrics">25.1.4 Design Principles for Evaluation Metrics</h3>
+<p>Whether designing a new benchmark or reviewing an evaluation report, four principles can be used to check the quality of metrics:</p>
+<ol>
+<li><strong>Monotonicity</strong>: An increase in the metric should stably correspond to a real improvement in capability. If a metric can be inflated by sacrificing an unmeasured dimension (e.g., sacrificing movement speed for success rate), it violates monotonicity and must be paired with a reporting constraint (in this case, completion time).</li>
+<li><strong>Decomposability</strong>: The total score should be decomposable into physically or semantically meaningful components, allowing low scores to be directly attributed to subsystems or capability dimensions. The five-component structure of HLAS and the difficulty stratification of DSJE are examples of decomposability; a single, indecomposable black-box score (like the total score of some comprehensive leaderboards) has limited diagnostic value.</li>
+<li><strong>Gaming Resistance</strong>: The metric definition should make the cost of "targeted optimization" higher than the cost of "real capability improvement". Benchmarks with public and fixed initial conditions are highly susceptible to overfitting. Secret test sets and perturbation scanning (LIBERO-Plus style) are the main methods to improve gaming resistance.</li>
+<li><strong>Cost of Measurement</strong>: The measurement cost of a metric determines how frequently it can be used. Real-robot metrics cannot be used for daily regression, so an evaluation system is always a combination of "cheap proxy metrics for high-frequency monitoring + expensive real metrics for milestone confirmation". The correlation between proxy and real metrics itself needs periodic calibration.</li>
+</ol>
+<hr />
+<h3 id="2515-organization-of-this-chapter">25.1.5 Organization of this Chapter</h3>
+<p>Section 25.2 deals with the evaluation of "physical capabilities" (motion control and whole-body performance), Section 25.3 deals with the evaluation of "hand skills" (manipulation skill benchmarks), Section 25.4 deals with the evaluation of the "brain" (foundation models and VLA), Section 25.5 deals with the statistics and protocols for real-robot evaluation, and Section 25.6 discusses existing problems and trends in the system. Reading can be cross-referenced with other chapters of this book: hardware component indicators correspond to Chapters 2–6, motion control principles correspond to chapters on whole-body control and walking, and safety-related evaluation evidence chains correspond to Chapter 12.</p>
+<h2 id="252-motion-control-and-full-body-performance-evaluation">25.2 Motion Control and Full-Body Performance Evaluation</h2>
+<h3 id="2521-motion-imitation-error-mpjpe-and-its-limitations">25.2.1 Motion Imitation Error: MPJPE and Its Limitations</h3>
+<p>Motion imitation based on motion capture or video retargeting is one of the mainstream paradigms for full-body control of humanoid robots. The most commonly used evaluation metric is <strong>MPJPE (Mean Per-Joint Position Error)</strong>:</p>
+<div class="arithmatex">\[
+\text{MPJPE} = \frac{1}{T}\sum_{t=1}^{T} \frac{1}{J}\sum_{j=1}^{J} \left\| \mathbf{p}_j^{robot}(t) - \mathbf{p}_j^{ref}(t) \right\|_2
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{p}_j(t)\)</span> is the position of the <span class="arithmatex">\(j\)</span>-th body keypoint in the world coordinate system. MPJPE is intuitive and easy to compute, but it has a fundamental flaw: <strong>it only measures the imitation result, without distinguishing the source of error</strong>. When a segment of motion imitation fails, is it due to insufficient capability of the policy network, or is the motion itself inherently "difficult to learn" (dynamically unfriendly to reinforcement learning)? Confusing these two can mislead the direction of algorithm iteration.</p>
+<p>To address this issue, the 2025 work <em>Benchmarking Humanoid Imitation Learning with Motion Difficulty</em> (arXiv:2512.07248) proposed the <strong>Torque Variation Score (TVS)</strong>: by applying small perturbations to the poses of a reference motion, it measures the magnitude of torque variation required to "correct" the perturbation. The physical meaning of this metric is the dynamic sensitivity of the motion—high-TVS motions correspond to flat regions in the reward landscape, leading to vanishing policy gradients, and thus are inherently difficult to learn using gradient-based methods. Experiments show that TVS is strongly correlated with the imitation error of mainstream methods such as UHC and PHC+, thereby supporting three practical tools:</p>
+<ul>
+<li><strong>Maximum Imitable Difficulty (MID)</strong>: Characterizes the upper limit of a policy's capability—the TVS threshold at which error begins to diverge, used for horizontal comparison of different policies;</li>
+<li><strong>Difficulty-Stratified Joint Error (DSJE)</strong>: Reports MPJPE stratified by motion difficulty, revealing an attribution structure where "high error on low-difficulty motions = policy deficiency; high error on high-difficulty motions = task difficulty itself";</li>
+<li><strong>Defective Motion Detection</strong>: Identifies segments in the dataset with abnormally high difficulty, used for motion capture data cleaning and quality control.</li>
+</ul>
+<p>The significance of this work extends beyond motion imitation: <strong>good evaluation metrics should support error attribution, not just scoring</strong>.</p>
+<h3 id="2522-humanoidbench-full-body-locomotion-and-manipulation-benchmark">25.2.2 HumanoidBench: Full-Body Locomotion and Manipulation Benchmark</h3>
+<p><strong>HumanoidBench</strong> (arXiv:2403.10506) is one of the most widely cited simulation benchmarks for full-body control of humanoid robots. It is based on the Unitree H1 robot morphology and includes over 40 tasks covering four categories of capabilities:</p>
+<ul>
+<li><strong>Locomotion</strong>: walking, running, climbing stairs, etc.;</li>
+<li><strong>Reaching / Manipulation</strong>: carrying, pushing/pulling, object interaction;</li>
+<li><strong>Loco-Manipulation</strong>: manipulating while walking, requiring full-body coordination of upper and lower limbs;</li>
+<li><strong>Dexterous Hand Tasks</strong>: some tasks are equipped with high-degree-of-freedom hands to examine fine manipulation.</li>
+</ul>
+<p>Its methodological value lies in <strong>controlled comparison</strong>: all algorithms face the same robot model, physical parameters, and task definitions, with differences only in the "brain". Experiments in HumanoidBench also reveal a phenomenon with cautionary implications for the industry: on this benchmark, hierarchical/decomposed structures (high-level planning + low-level pre-trained skills) generally outperform end-to-end reinforcement learning baselines, indicating that "a single network directly learning 40+ full-body tasks" is currently unrealistic given existing algorithms and data—evaluation results, in turn, shape the consensus on architecture selection.</p>
+<p>Limitations are equally clear: tasks and action spaces are tied to the Unitree H1 morphology, so conclusions require caution when extrapolating to other humanoid platforms; moreover, high scores in a purely simulated environment do not equate to real-robot capability (discussed in Section 25.3.5 on fidelity evaluation).</p>
+<h3 id="2523-classic-physical-metrics-for-bipedal-locomotion">25.2.3 Classic Physical Metrics for Bipedal Locomotion</h3>
+<p>Beyond academic benchmarks, bipedal locomotion capabilities have a set of classic metrics derived from biomechanics and control theory, which remain common language in papers and product specifications:</p>
+<ul>
+<li><strong>Walking Speed and Normalized Speed</strong>: Absolute speed (m/s) is non-dimensionalized by leg length to obtain the Froude number <span class="arithmatex">\(Fr = v^2/(g l)\)</span>, enabling comparison across robots of different sizes;</li>
+<li><strong>Cost of Transport (CoT)</strong>: Energy consumption per unit weight per unit distance,
+  $$
+  CoT = \frac{P}{m g v}
+  $$
+  where <span class="arithmatex">\(P\)</span> is average power consumption. Typical human walking CoT is around 0.2, while bipedal robots generally remain several times to an order of magnitude higher, making it a core metric for energy efficiency;</li>
+<li><strong>Disturbance Recovery Capability</strong>: Whether the robot remains upright under standardized push disturbances (push rod or pendulum with specified impulse), and the number of steps required for recovery;</li>
+<li><strong>Terrain Traversal Rate</strong>: Success rate across standard terrain sets such as steps, slopes, gravel, and grass;</li>
+<li><strong>Stability Margin</strong>: Dynamic margin based on ZMP/Capture Point (see relevant chapters in this book for principles), which can serve as a continuous metric in simulation.</li>
+</ul>
+<h3 id="2524-human-level-actuation-score-hlas-a-quantitative-benchmark-for-hardware-capability">25.2.4 Human-Level Actuation Score (HLAS): A Quantitative Benchmark for Hardware Capability</h3>
+<p>"Has this robot's actuator reached human level?" Manufacturers often make such claims, but single-point specifications like peak torque or peak speed cannot indicate whether a joint can simultaneously output appropriate torque, power, and endurance under task-relevant poses and velocities. The 2025 work <em>Human-Level Actuation for Humanoids</em> (arXiv:2511.06796) proposed a reproducible framework that turns "human-level" into a measurable quantity:</p>
+<ol>
+<li><strong>DoF Atlas</strong>: Uses ISB (International Society of Biomechanics) conventions to unify joint coordinate systems and range-of-motion definitions, ensuring that human joints and robot joints are compared under the same coordinate semantics;</li>
+<li><strong>Human-Equivalence Envelope (HEE)</strong>: Characterizes the capability boundary of human joints on the torque-power plane as a function of pose and velocity;</li>
+<li><strong>Human-Level Actuation Score (HLAS)</strong>: A scalar score with a reference human value of 1.0, decomposable into five physically meaningful components—<strong>workspace coverage, HEE envelope coverage, torque pattern bandwidth, efficiency, and thermal sustainability</strong>.</li>
+</ol>
+<p>The engineering value of HLAS lies in its <strong>decomposability</strong>: when the total score is low, one can immediately identify whether the shortcoming is insufficient range of motion (mechanical design issue), a gap in the torque-power envelope (motor/gearbox selection issue), or poor thermal sustainability (heat dissipation design issue), thereby directly translating evaluation results into design iteration inputs (linking to discussions on actuators and motor design in Chapters 3 and 4). This type of metric, using the human body as a reference frame, represents an important direction for hardware evaluation: not pursuing the maximization of absolute values, but rather an interpretable gap relative to a biological reference.</p>
+<h2 id="253-operational-skill-evaluation-benchmarks">25.3 Operational Skill Evaluation Benchmarks</h2>
+<h3 id="2531-libero-lifelong-learning-and-knowledge-transfer">25.3.1 LIBERO: Lifelong Learning and Knowledge Transfer</h3>
+<p><strong>LIBERO</strong> (<em>Benchmarking Knowledge Transfer for Lifelong Robot Learning</em>, NeurIPS 2023, arXiv:2304.13470) uses short-horizon tabletop manipulation tasks as a vehicle. The core research question is not "single-task success rate" but <strong>knowledge transfer</strong>: when a robot learner learns sequentially across a series of tasks, can it leverage knowledge from previous tasks to accelerate subsequent learning and avoid catastrophic forgetting? To this end, LIBERO provides a programmable mechanism for object and scene variation, organizing task suites along variation dimensions—spatial layout changes, object category changes, goal (instruction) changes, and long-horizon compositional tasks—thereby breaking down "generalization" from a vague slogan into independently measurable dimensions.</p>
+<p>LIBERO's impact on the VLA (Vision-Language-Action) era is profound: its standardized task suites and evaluation protocols have become one of the default options for reporting generalization performance in numerous VLA model papers; its design philosophy of "decoupling by variation dimensions" has been widely adopted by subsequent benchmarks.</p>
+<h3 id="2532-libero-plus-a-systematic-dissection-of-robustness">25.3.2 LIBERO-Plus: A Systematic Dissection of Robustness</h3>
+<p>If LIBERO examines "how fast one learns," <strong>LIBERO-Plus</strong> (arXiv:2510.13626) examines "how stable one is under perturbations." It extends LIBERO to <strong>10,030 tasks</strong>, systematically applying pressure along seven perturbation dimensions:</p>
+<ol>
+<li>Camera viewpoint changes;</li>
+<li>Robot initial state changes;</li>
+<li>Language instruction changes (paraphrasing, stylistic variation);</li>
+<li>Lighting changes;</li>
+<li>Background changes;</li>
+<li>Sensor noise;</li>
+<li>Object layout changes.</li>
+</ol>
+<p>This "single-variable perturbation sweep" experimental design can precisely pinpoint a model's vulnerable dimensions. Its analytical findings carry methodological significance for the entire VLA field: many models reporting high success rates on standard LIBERO suffer significant performance drops under specific perturbation dimensions (typically camera viewpoint and initial state shifts), indicating that in-benchmark success rates mask robustness deficits. <strong>The competition in benchmark design is shifting from "task quantity" to "systematicity of perturbation dimensions"</strong>—a clear signal of the evaluation system's own evolution.</p>
+<h3 id="2533-maniskill-and-isaac-gym-benchmarks">25.3.3 ManiSkill and Isaac Gym Benchmarks</h3>
+<p><strong>ManiSkill</strong> is a unified benchmark for generalizable manipulation skills, providing standardized task definitions, simulation environments, and evaluation protocols. Its distinctive feature lies in emphasizing large-scale parallel simulation throughput and realistic observations such as point clouds/RGB-D, supporting comparisons across multiple paradigms—from imitation learning and reinforcement learning to offline multi-task training—under the same protocol.</p>
+<p><strong>Isaac Gym Benchmarks</strong> are built on NVIDIA Isaac Gym. Their core contribution is moving both physics simulation and policy learning entirely onto the GPU, end-to-end eliminating CPU-GPU data transfers, thereby increasing reinforcement learning sample throughput by several orders of magnitude. For humanoid robots, high throughput means it is feasible to run large-scale parallel terrain randomization and domain randomization experiments, which has directly spurred the recent explosion of "simulation training + real-world deployment" bipedal locomotion policies. The Isaac Gym toolchain (and its successor Isaac Lab) has become one of the de facto infrastructures for training and evaluating humanoid locomotion policies.</p>
+<h3 id="2534-multi-dimensional-trade-offs-in-benchmark-selection">25.3.4 Multi-Dimensional Trade-offs in Benchmark Selection</h3>
+<p>Faced with numerous simulation benchmarks, researchers should select tools based on evaluation goals:</p>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Primary Evaluation Target</th>
+<th>Morphology</th>
+<th>Task Scale</th>
+<th>Feature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HumanoidBench</td>
+<td>Full-body locomotion + manipulation policies</td>
+<td>Bipedal humanoid (Unitree H1)</td>
+<td>40+ tasks</td>
+<td>Humanoid-specific, controlled comparison</td>
+</tr>
+<tr>
+<td>LIBERO</td>
+<td>Knowledge transfer / lifelong learning</td>
+<td>Tabletop single arm</td>
+<td>Multi-task suite</td>
+<td>Decoupled variation dimensions</td>
+</tr>
+<tr>
+<td>LIBERO-Plus</td>
+<td>VLA robustness</td>
+<td>Tabletop single arm</td>
+<td>10,030 tasks</td>
+<td>Seven-dimensional perturbation sweep</td>
+</tr>
+<tr>
+<td>ManiSkill</td>
+<td>Generalizable manipulation skills</td>
+<td>Multi-morphology</td>
+<td>Large task set</td>
+<td>High throughput, realistic observations</td>
+</tr>
+<tr>
+<td>Isaac Gym Benchmarks</td>
+<td>RL training and evaluation throughput</td>
+<td>Multi-morphology</td>
+<td>Task set</td>
+<td>GPU end-to-end acceleration</td>
+</tr>
+</tbody>
+</table>
+<p>A caution is needed regarding <strong>benchmark incommensurability</strong>: success rate numbers from different benchmarks are not horizontally comparable. Any cross-benchmark comparison of the form "Model A achieves 90% on Benchmark X, Model B achieves 80% on Benchmark Y" is an invalid argument. Cross-model comparisons must be anchored to the same benchmark, the same protocol, and the same evaluation seed distribution.</p>
+<h3 id="2535-evaluating-the-simulator-itself-fidelity-benchmarks">25.3.5 Evaluating the Simulator Itself: Fidelity Benchmarks</h3>
+<p>The validity of simulation-based evaluation depends on the sim-to-real gap, and this gap itself needs to be evaluated. The 2019 work by Collins et al., <em>Benchmarking Simulated Robotic Manipulation through a Real World Dataset</em>, provides a "hardware-free" fidelity evaluation paradigm: it releases a real-world dataset and standardized protocol of tasks performed by a real robot (Kinova MICO2 arm + Robotiq sensor, recorded by Qualisys motion capture), allowing researchers to compare trajectories generated by their own simulators against it, quantifying deviations using <strong>23 kinematic and dynamic metrics</strong>. The insight of this work is that: <strong>a simulator is not an "all-or-nothing" assumption, but a model that can be benchmarked</strong>; when choosing a simulation stack (PyBullet, MuJoCo, Isaac series, etc.), fidelity benchmark data should enter the selection decision alongside speed and functionality.</p>
+<h2 id="254-foundation-models-and-vla-evaluation">25.4 Foundation Models and VLA Evaluation</h2>
+<h3 id="2541-specifics-of-vla-evaluation">25.4.1 Specifics of VLA Evaluation</h3>
+<p>Vision-Language-Action (VLA) models unify perception, language understanding, and action generation into a single network. Their evaluation is far more challenging than that of traditional controllers, for three reasons:</p>
+<ol>
+<li><strong>The open-loop instruction space is infinite</strong>: Traditional benchmarks specify "put the red block into the bowl." VLAs must handle arbitrary natural language expressions, making instruction understanding itself a source of error.</li>
+<li><strong>Failure modes are semantic</strong>: The model may "understand incorrectly but execute perfectly" or "understand correctly but fail physically," requiring hierarchical attribution.</li>
+<li><strong>Real-robot evaluation is extremely costly</strong>: Each model variant requires a sufficient number of real-robot runs for statistical significance (Section 25.5), forcing evaluation to shift toward simulation and world models.</li>
+</ol>
+<p>Therefore, VLA evaluation is typically organized along dimensions: <strong>intra-instruction generalization</strong> (new expressions for the same task), <strong>visual generalization</strong> (new objects/backgrounds/viewpoints), <strong>semantic generalization</strong> (new instruction combinations), and <strong>physical generalization</strong> (new object properties like weight, friction). The seven-dimensional perturbation set of LIBERO-Plus is a concrete implementation of this dimensional thinking.</p>
+<h3 id="2542-humanoid-robot-foundation-model-benchmarks">25.4.2 Humanoid Robot Foundation Model Benchmarks</h3>
+<p>As various humanoid companies release their own "robot foundation models," independent third-party ratings have emerged. The Humanoid Foundation Model Benchmark (humanoid.guide, released in 2026) is a representative attempt: it rates and compares humanoid robot AI foundation models across <strong>ten capability dimensions</strong>, covering locomotion, manipulation, reasoning, sim-to-real transfer, and more, and is publicly accessible for queries.</p>
+<p>This type of "industry rating" benchmark complements academic benchmarks: academic benchmarks provide precise comparisons under controlled conditions, while industry benchmarks offer a panoramic map across manufacturers. When using the former, one must scrutinize protocol details; when using the latter, attention must be paid to the transparency of its scoring methodology—the evidence on which the rating is based (public demonstrations, technical reports, or third-party testing) determines the credibility of the conclusions.</p>
+<h3 id="2543-world-model-evaluation-generative-red-teaming">25.4.3 World Model Evaluation: Generative Red Teaming</h3>
+<p>Real-robot evaluation is expensive, and physical simulations struggle to cover visual diversity. Thus, a new path has emerged: <strong>using learned world models as evaluation environments</strong>. The 2026 work <em>Evaluating Gemini Robotics Policies in a Veo World Simulator</em> is a landmark case: researchers fine-tuned the Veo2 video generation model on robot data to construct an action-conditioned, multi-view consistent world simulator. Combined with generative scene editing, they evaluated Gemini Robotics policies on ALOHA 2 bimanual tasks under three settings:</p>
+<ul>
+<li><strong>Nominal scenarios</strong>: Verify consistency between evaluation results in the simulator and real-robot evaluations.</li>
+<li><strong>Out-of-distribution (OOD) scenarios</strong>: Generate visual changes unseen during training to test policy generalization.</li>
+<li><strong>Safety-critical scenarios</strong>: Generate hazardous situations (e.g., a person entering, obstacles appearing) to "red-team" the policy.</li>
+</ul>
+<p>The profound significance of this paradigm is that it operationalizes the exploration of "unknown unsafe scenarios" from SOTIF (discussed in Chapter 12)—edge cases that previously required luck to encounter can now be mass-produced and automatically evaluated using generative models. Its limitations must also be clearly recognized: the physical consistency of generated videos (contact, object states after occlusion) has no hard guarantee. Evaluation conclusions used for safety arguments must be backed by real-robot spot checks. World model evaluation is an amplifier, not a free pass.</p>
+<pre class="highlight"><code class="language-mermaid">flowchart LR
+    A[Policy Under Evaluation&lt;br/&gt;VLA / Control Stack] --&gt; B{Evaluation Environment}
+    B --&gt; C[Physical Simulation&lt;br/&gt;HumanoidBench / ManiSkill&lt;br/&gt;High-Throughput Screening]
+    B --&gt; D[World Model Simulator&lt;br/&gt;OOD &amp; Safety Scenario Red Teaming]
+    B --&gt; E[Real-Robot Protocol Evaluation&lt;br/&gt;Success Rate + Confidence Interval]
+    C --&gt; F[Comprehensive Evaluation Report]
+    D --&gt; F
+    E --&gt; F
+    F --&gt; G[Capability Profile &amp; Failure Attribution]</code></pre>
+<h3 id="2544-datasets-as-evaluation-infrastructure">25.4.4 Datasets as Evaluation Infrastructure</h3>
+<p>In the era of large models, the boundary between datasets and evaluation is dissolving: datasets define the capability distribution, and evaluation samples from that distribution. Public datasets closely related to humanoid robot evaluation include:</p>
+<ul>
+<li><strong>Open X-Embodiment</strong>: A large-scale cross-embodiment dataset aggregating demonstration data from diverse real robot platforms and institutions, widely used for VLA pre-training; its platform diversity also makes it a data foundation for "cross-morphology generalization" evaluation.</li>
+<li><strong>DROID</strong>: A real-world manipulation dataset distributedly collected across multiple laboratories and environments, whose environmental diversity directly serves visual and environmental robustness evaluation.</li>
+<li><strong>RH20T</strong>: Approximately 110,000 contact-rich manipulation sequences containing visual, force, audio, and human demonstration pairs, providing a reference for evaluating force control/contact tasks.</li>
+<li><strong>AMASS</strong> and other human motion datasets: Provide reference motion sources for locomotion imitation evaluation (Section 25.2.1); the motion capture quality issues derived from them are precisely the application target of the "defective action detection" tool in the TVS work.</li>
+</ul>
+<p>Evaluation designers must be wary of <strong>distribution bias</strong> in datasets: a high score evaluated within the distribution of data trained from a single laboratory and a single platform has limited predictive power for the external world. Dataset composition (who collected it, where it was collected, and what was used to collect it) should be a mandatory disclosure item in evaluation reports.</p>
+<h2 id="255-real-robot-evaluation-methods-and-statistics">25.5 Real-Robot Evaluation Methods and Statistics</h2>
+<h3 id="2551-statistical-inference-of-success-rate">25.5.1 Statistical Inference of Success Rate</h3>
+<p>The most fundamental metric in real-robot evaluation is the task success rate. Given <span class="arithmatex">\(n\)</span> independent repeated trials with <span class="arithmatex">\(k\)</span> successes, the point estimate is <span class="arithmatex">\(\hat{p} = k/n\)</span>. However, the credibility of "19 successes out of 20 trials (95%)" is completely different from "950 successes out of 1000 trials (95%)"; a confidence interval must be reported. Since the number of robot trials is often limited, the Wilson interval is recommended over the normal approximation:</p>
+<div class="arithmatex">\[
+\frac{\hat{p} + \frac{z^2}{2n} \pm z\sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + \frac{z^2}{n}}
+\]</div>
+<p>where <span class="arithmatex">\(z\)</span> is the standard normal quantile (for 95% confidence, <span class="arithmatex">\(z \approx 1.96\)</span>). Some useful engineering intuitions: with <span class="arithmatex">\(n=20\)</span> trials all successful, the lower bound of the 95% confidence interval is only about 83%; to compress the success rate interval width to within ±5%, hundreds of independent trials are required. This explains why serious VLA evaluations often demand hundreds of rollouts per task, and why "a single successful demonstration at a press conference" provides almost no statistical information about capability.</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: The Trap of the i.i.d. Assumption</p>
+<p>Success rate statistics assume that each trial is independent and identically distributed, but this assumption is often quietly violated in real-robot evaluations: battery level drops, motor temperature rises, object positions on the conveyor belt retain the influence of the previous trial, and the operator subconsciously adjusts initial conditions to "save the situation" between consecutive trials. Evaluation protocols must approximate i.i.d. through randomizing trial order, controlling hardware state (temperature, battery level windows), automatic resetting, and operator blinding; otherwise, the mathematical guarantees of the confidence interval are invalidated.</p>
+</div>
+<h3 id="2552-key-points-in-evaluation-protocol-design">25.5.2 Key Points in Evaluation Protocol Design</h3>
+<p>A rigorous real-robot evaluation protocol should include at least the following elements:</p>
+<pre class="highlight"><code class="language-mermaid">flowchart TD
+    A[Task Definition&lt;br/&gt;Formalization of Success Criteria] --&gt; B[Initial Condition Distribution&lt;br/&gt;Randomization of Object Pose/Lighting/Background]
+    B --&gt; C[Hardware State Control&lt;br/&gt;Battery/Temperature/Calibration Windows]
+    C --&gt; D[Trial Execution&lt;br/&gt;Random Order/No Human Intervention]
+    D --&gt; E[Failure Classification Recording&lt;br/&gt;Perception/Planning/Control/Hardware Attribution]
+    E --&gt; F[Statistical Report&lt;br/&gt;Success Rate + Wilson Interval + Failure Distribution]</code></pre>
+<ul>
+<li><strong>Formalization of Success Criteria</strong>: Describe success using mechanically verifiable state conditions (e.g., "the object is completely within the target area and the robot has returned to the standby pose"), avoiding subjective judgments like "it looks successful";</li>
+<li><strong>Declaration of Initial Condition Distribution</strong>: The sampling range of the object's initial pose must be specified — a "100% success rate" with randomization only within a central 5 cm area is completely different from randomization across the entire desktop;</li>
+<li><strong>Intervention and Takeover Logging</strong>: Any human intervention (teleoperation takeover, manual reset of internal policy state) must be counted and disclosed; the degree of teleoperation assistance is a key variable in autonomy evaluation;</li>
+<li><strong>Failure Attribution Classification</strong>: Classify failures statistically by perception error, planning error, control execution error, and hardware fault. The distribution of failure modes is often more informative than the total score (echoing the attribution idea in Section 25.2.1);</li>
+<li><strong>Computational and Time Costs</strong>: Task completion time, inference latency, and energy consumption should be reported together to prevent "infinite retries + slow execution" from inflating the success rate.</li>
+</ul>
+<h3 id="2553-autonomy-levels-and-hidden-variables">25.5.3 Autonomy Levels and Hidden Variables</h3>
+<p>The biggest "hidden variable" in real-robot evaluation is the <strong>degree of autonomy</strong>. Two robots that both "complete the task" may differ significantly: one is fully autonomous, while the other relies on multiple human teleoperation interventions. Evaluation reports should explicitly declare the autonomy level. Reference dimensions for grading include: whether perception is onboard, whether decision-making is onboard, whether human intervention is required for recovery, and whether environmental modifications are preset (e.g., pasting markers, fixing furniture). One of the values of industry competitions (e.g., various robot challenges) is to make these variables explicit — horizontal comparison under a unified venue, unified rules, and unified judging provides information density far higher than demonstrations released by individual manufacturers.</p>
+<h3 id="2554-reliability-and-durability-evaluation">25.5.4 Reliability and Durability Evaluation</h3>
+<p>The core of scene-level (L4) evaluation is the time dimension: the question is not whether the robot "can do it," but "how long can it keep doing it without failure." Key metrics include:</p>
+<ul>
+<li><strong>MTBF (Mean Time Between Failures)</strong> and <strong>MTTR (Mean Time To Repair)</strong>, which together determine availability <span class="arithmatex">\(A = MTBF/(MTBF + MTTR)\)</span>;</li>
+<li><strong>Task Degradation Curve</strong>: The drift of success rate/accuracy over time during continuous operation for several hours (combined effect of thermal drift, wear, and battery level drop);</li>
+<li><strong>Accelerated Life Testing (ALT)</strong>: Accelerating failure by increasing stress levels (temperature, load, cycle frequency) and extrapolating lifespan under normal stress, requiring clear acceleration model assumptions;</li>
+<li><strong>Maintainability Metrics</strong>: Replacement cycle and replacement time for consumable parts (dexterous hand tendons, batteries, foot cushioning materials).</li>
+</ul>
+<p>Reliability data is inherently difficult to obtain during the paper stage — it requires cumulative operation of hundreds or thousands of hours. This is why operational data from fleet deployment is becoming one of the deepest moats for leading companies, and also echoes the "data flywheel" concept: operational data feeds back into model improvement, and the improved model is redeployed to the fleet.</p>
+<h3 id="2555-python-example-wilson-confidence-interval-and-trial-number-planning">25.5.5 Python Example: Wilson Confidence Interval and Trial Number Planning</h3>
+<p>The following code implements the Wilson interval and answers two of the most common questions in evaluation scheduling: (1) Given trial results, what is the credible interval for the success rate? (2) How many trials are needed to compress the interval half-width to a target value?</p>
+<pre class="highlight"><code class="language-python">import math
+
+def wilson_interval(k, n, z=1.96):
+    """Wilson score interval for a binomial proportion.
+
+    k: number of successes, n: total number of trials, z: standard normal quantile (95% -&gt; 1.96)
+    Returns (lower bound, point estimate, upper bound)
+    """
+    p = k / n
+    denom = 1 + z**2 / n
+    center = (p + z**2 / (2 * n)) / denom
+    half = z * math.sqrt(p * (1 - p) / n + z**2 / (4 * n**2)) / denom
+    return center - half, p, center + half
+
+def required_trials(p, half_width, z=1.96):
+    """Rough estimate of the number of trials needed to compress the Wilson interval half-width to half_width.
+
+    Using the normal approximation half-width z*sqrt(p(1-p)/n) for iterative approximation is sufficient for engineering scheduling accuracy.
+    """
+    n = 1
+    while True:
+        lo, _, hi = wilson_interval(int(round(p * n)), n, z)
+        if (hi - lo) / 2 &lt;= half_width:
+            return n
+        n += 1
+
+# Scenario 1: Press release claim "20 trials all successful"
+lo, p, hi = wilson_interval(20, 20)
+print(f"20/20 successes: point estimate {p:.1%}, 95% interval [{lo:.1%}, {hi:.1%}]")
+# -&gt; Lower bound is only about 83%: a perfect small sample does not prove a high success rate
+
+# Scenario 2: Rigorous evaluation "372 successes out of 400 trials"
+lo, p, hi = wilson_interval(372, 400)
+print(f"372/400 successes: point estimate {p:.1%}, 95% interval [{lo:.1%}, {hi:.1%}]")
+
+# Scenario 3: Scheduling planning — true success rate ~90%, target interval half-width &lt;= 3%
+n = required_trials(0.90, 0.03)
+print(f"With a true success rate of 90%, compressing the half-width to ±3% requires approximately {n} independent trials")</code></pre>
+<p>The running results will confirm the intuition from Section 25.5.1: the lower bound of the interval for 20 perfect successes is only slightly above 80%, and to compress the interval half-width to ±3%, around 400 independent trials are needed when the true success rate is near 90% — considering that each real-robot rollout, including reset time, takes one or two minutes, statistical validation for a single task alone would occupy an entire day of machine time. This is why real-robot evaluation is expensive, and it is the economic root of the value of simulation and world model evaluation (Section 25.1.3).</p>
+<div class="admonition note">
+<p class="admonition-title">Terminology Explanation: Difference Between Wilson Interval and Normal Approximation</p>
+<p>The simple normal approximation interval for the success rate <span class="arithmatex">\(\hat{p} \pm z\sqrt{\hat{p}(1-\hat{p})/n}\)</span> can produce absurd results outside the range <span class="arithmatex">\([0,1]\)</span> when <span class="arithmatex">\(n\)</span> is small or <span class="arithmatex">\(\hat{p}\)</span> is close to 0/1 (e.g., zero width for 20/20, implying "absolute reliability"). The Wilson interval, constructed by inverting the score test for the binomial distribution, maintains correct coverage even with small samples and extreme proportions, and is the default form that should be used in robot evaluation reports; for more conservative cases, the Clopper-Pearson exact interval can be used.</p>
+</div>
+<hr />
+<h2 id="256-existing-problems-and-development-trends">25.6 Existing Problems and Development Trends</h2>
+<h3 id="2561-benchmark-overfitting-and-leaderboard-dynamics">25.6.1 Benchmark Overfitting and Leaderboard Dynamics</h3>
+<p>Once any public benchmark becomes the focus of the community, it triggers <strong>Goodhart's Law</strong> ("When a metric becomes a target, it ceases to be a good metric"): models begin to overfit to the benchmark tasks, and the correlation between benchmark scores and actual capability diminishes. Special mitigation measures in the robotics domain include: regularly replacing/perturbing task suites (LIBERO-Plus-style perturbation expansion), held-out test sets (held-out tasks), real-robot re-verification, and upgrading evaluation from "single-point success rate" to "multi-dimensional capability profiling." The evaluation system itself also requires versioning and renewal; a benchmark that has not been updated for five years is essentially of historical value only.</p>
+<h3 id="2562-from-offline-benchmarks-to-online-evaluation">25.6.2 From Offline Benchmarks to Online Evaluation</h3>
+<p>The ultimate form of evaluation is likely to be <strong>continuous online evaluation</strong>: every task execution, every takeover, and every failure generated by a robot in real-world deployment enters the evaluation pipeline, forming a capability curve that evolves over time and software versions. This transforms evaluation from an "admission exam" into a "lifetime health check," converging with the runtime compliance monitoring discussed in Chapter 12. Technical challenges to be addressed include: privacy compliance (home scenario data), automatic mining and clustering of failure events, and bias correction for cross-fleet statistics.</p>
+<h3 id="2563-standardization-the-final-piece-of-the-evaluation-puzzle">25.6.3 Standardization: The Final Piece of the Evaluation Puzzle</h3>
+<p>The current fragmented landscape of individual benchmarks cannot persist in the long term. The foreseeable evolution direction is: academia continues to produce task suites and metrics (HumanoidBench, LIBERO series), industry alliances and standards organizations (echoing the standards system in Chapter 12) consolidate these into test specifications, and certification bodies incorporate safety-related parts (e.g., obstacle avoidance capability testing in human-robot collaboration scenarios) into the conformity assessment evidence chain. At that point, "evaluation—standards—certification" will form a complete trust chain from the lab to the market—this is precisely the vision depicted by Chapter 12 and this chapter together in this monograph.</p>
+<h3 id="2564-an-evaluation-review-checklist">25.6.4 An Evaluation Review Checklist</h3>
+<p>As a practical application of this chapter's methodology, when faced with any robot capability claim (paper, press release, white paper, due diligence material), the following checklist can be used to quickly assess the quality of its evidence:</p>
+<table>
+<thead>
+<tr>
+<th>Review Item</th>
+<th>Qualified Performance</th>
+<th>Red Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of trials and intervals</td>
+<td>Reports <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(k\)</span>, and confidence intervals</td>
+<td>Only "99% success rate" without sample size</td>
+</tr>
+<tr>
+<td>Initial conditions</td>
+<td>Declares sampling distribution and randomizes</td>
+<td>Fixed initial poses, staged setups</td>
+</tr>
+<tr>
+<td>Autonomy claim</td>
+<td>Clearly states number and timing of teleoperation takeovers</td>
+<td>Avoids the question of "whether human intervention occurred"</td>
+</tr>
+<tr>
+<td>Failure demonstration</td>
+<td>Provides failure classification statistics</td>
+<td>Only shows success clips</td>
+</tr>
+<tr>
+<td>Environmental diversity</td>
+<td>Multiple sites, lighting conditions, objects</td>
+<td>Single laboratory setting</td>
+</tr>
+<tr>
+<td>Benchmark anchor</td>
+<td>Reproducible comparison on public benchmarks</td>
+<td>Only cites custom private tests</td>
+</tr>
+<tr>
+<td>Time dimension</td>
+<td>Reports continuous operation duration and degradation</td>
+<td>Only single best performance</td>
+</tr>
+</tbody>
+</table>
+<p>A single checklist cannot replace a complete evaluation system, but it can distinguish most marketing rhetoric from serious evidence—until benchmark standardization is complete, this "reader's self-defense capability" is itself part of the evaluation ecosystem.</p>
+<hr />
+<h2 id="257-chapter-summary">25.7 Chapter Summary</h2>
+<ul>
+<li>The core attributes of an evaluation system are reproducibility, comparability, and generalization predictive power; its value lies in quantifying the "demo-product gap" and providing a common currency for the industry chain.</li>
+<li>Evaluation is hierarchically divided into component-level, subsystem-level, system-level, and scenario-level, with aggregation errors between layers requiring layered metrics; by environment, it is divided into simulation, real robot, and world model routes, forming a funnel of "simulation screening → world model supplementary testing → real robot confirmation."</li>
+<li>Motion control evaluation is moving from "scoring" to "attribution": MPJPE measures imitation results, TVS measures intrinsic learning difficulty of actions and supports attribution tools like MID/DSJE; HumanoidBench provides controlled comparisons of over 40 whole-body tasks based on Unitree H1; HLAS uses the human body as a reference (=1.0) to decompose actuator capability into five components: workspace, HEE coverage, bandwidth, efficiency, and thermal sustainability.</li>
+<li>Manipulation skill evaluation is represented by LIBERO (knowledge transfer), LIBERO-Plus (10,030 tasks, seven-dimensional perturbation robustness), ManiSkill (generalizable manipulation), and Isaac Gym benchmarks (GPU high-throughput RL); simulator fidelity itself can be benchmarked (Collins et al.'s 23-metric approach).</li>
+<li>VLA/foundation model evaluation is organized along four generalization dimensions: instruction, vision, semantics, and physics; the industry has seen a ten-dimensional humanoid foundation model benchmark; using world simulators (Veo2 fine-tuning) for OOD and safety-critical scenario red-teaming is a frontier paradigm but cannot replace real-robot validation.</li>
+<li>Real-robot evaluation must report Wilson confidence intervals and control the risk of i.i.d. assumption violation; protocol design requires formalizing success criteria, declaring initial condition distributions, and disclosing teleoperation interventions; reliability evaluation (MTBF/MTTR, task degradation, ALT) is the core of scenario-level capability and the moat of fleet data.</li>
+<li>Benchmark overfitting is a long-term game; the evaluation system will evolve toward multi-dimensional capability profiling, continuous online evaluation, and the integration of "evaluation—standards—certification."</li>
+</ul>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Sferrazza, C., et al. (2024). <em>HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation</em>. arXiv:2403.10506. https://arxiv.org/abs/2403.10506</p>
+<p>[2] Liu, B., et al. (2023). <em>LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning</em>. NeurIPS 2023. arXiv:2304.13470. https://arxiv.org/abs/2304.13470</p>
+<p>[3] <em>LIBERO-Plus: In-depth Robustness Analysis of Vision-Language-Action Models</em>. (2025). arXiv:2510.13626. https://arxiv.org/abs/2510.13626</p>
+<p>[4] <em>Benchmarking Humanoid Imitation Learning with Motion Difficulty</em>. (2025). arXiv:2512.07248. https://arxiv.org/abs/2512.07248</p>
+<p>[5] <em>Human-Level Actuation for Humanoids</em>. (2025). arXiv:2511.06796. https://arxiv.org/abs/2511.06796</p>
+<p>[6] Collins, J., et al. (2019). <em>Benchmarking Simulated Robotic Manipulation through a Real World Dataset</em>.</p>
+<p>[7] Choromanski, K., et al. (2026). <em>Evaluating Gemini Robotics Policies in a Veo World Simulator</em>.</p>
+<p>[8] Makoviychuk, V., et al. (2021). <em>Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning</em>. NeurIPS 2021 Datasets and Benchmarks.</p>
+<p>[9] ManiSkill series versions: Unified benchmark and simulation environment for generalizable manipulation skills.</p>
+<p>[10] Open X-Embodiment Collaboration. (2023). <em>Open X-Embodiment: Robotic Learning Datasets and RT-X Models</em>.</p>
+<p>[11] Khazatsky, A., et al. (2024). <em>DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset</em>.</p>
+<p>[12] humanoid.guide. (2026). <em>Humanoid Foundation Models Benchmark</em>. https://humanoid.guide/foundation-models/</p>
+<p>[13] Goodhart, C. A. E. (1975). Problems of monetary management: the U.K. experience (Original formulation of Goodhart's Law).</p>
+    </div>
+
+    
+    <nav class="wiki-prevnext" aria-label="On this page">
+      
+      <a class="prev" href="/en/wiki/chapters/chapter-24/">← Previous<span>Chapter 24: End-to-End Software Stack</span></a>
+      
+      
+      <a class="next" href="/en/wiki/chapters/chapter-26/">Next →<span>Chapter 26: Complete System Case Studies</span></a>
+      
+    </nav>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="On this page">
+    <details open>
+      <summary>On this page</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#chapter-25-humanoid-robot-evaluation-system">Chapter 25: Humanoid Robot Evaluation System</a><ul>
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#251-purpose-and-hierarchical-structure-of-evaluation">25.1 Purpose and Hierarchical Structure of Evaluation</a><ul>
+<li><a href="#2511-why-evaluation-is-a-bottleneck-for-embodied-intelligence">25.1.1 Why Evaluation is a Bottleneck for Embodied Intelligence</a></li>
+<li><a href="#2512-the-hierarchical-pyramid-of-evaluation">25.1.2 The Hierarchical Pyramid of Evaluation</a></li>
+<li><a href="#2513-three-technical-routes-for-evaluation">25.1.3 Three Technical Routes for Evaluation</a></li>
+<li><a href="#2514-design-principles-for-evaluation-metrics">25.1.4 Design Principles for Evaluation Metrics</a></li>
+<li><a href="#2515-organization-of-this-chapter">25.1.5 Organization of this Chapter</a></li>
+</ul>
+</li>
+<li><a href="#252-motion-control-and-full-body-performance-evaluation">25.2 Motion Control and Full-Body Performance Evaluation</a><ul>
+<li><a href="#2521-motion-imitation-error-mpjpe-and-its-limitations">25.2.1 Motion Imitation Error: MPJPE and Its Limitations</a></li>
+<li><a href="#2522-humanoidbench-full-body-locomotion-and-manipulation-benchmark">25.2.2 HumanoidBench: Full-Body Locomotion and Manipulation Benchmark</a></li>
+<li><a href="#2523-classic-physical-metrics-for-bipedal-locomotion">25.2.3 Classic Physical Metrics for Bipedal Locomotion</a></li>
+<li><a href="#2524-human-level-actuation-score-hlas-a-quantitative-benchmark-for-hardware-capability">25.2.4 Human-Level Actuation Score (HLAS): A Quantitative Benchmark for Hardware Capability</a></li>
+</ul>
+</li>
+<li><a href="#253-operational-skill-evaluation-benchmarks">25.3 Operational Skill Evaluation Benchmarks</a><ul>
+<li><a href="#2531-libero-lifelong-learning-and-knowledge-transfer">25.3.1 LIBERO: Lifelong Learning and Knowledge Transfer</a></li>
+<li><a href="#2532-libero-plus-a-systematic-dissection-of-robustness">25.3.2 LIBERO-Plus: A Systematic Dissection of Robustness</a></li>
+<li><a href="#2533-maniskill-and-isaac-gym-benchmarks">25.3.3 ManiSkill and Isaac Gym Benchmarks</a></li>
+<li><a href="#2534-multi-dimensional-trade-offs-in-benchmark-selection">25.3.4 Multi-Dimensional Trade-offs in Benchmark Selection</a></li>
+<li><a href="#2535-evaluating-the-simulator-itself-fidelity-benchmarks">25.3.5 Evaluating the Simulator Itself: Fidelity Benchmarks</a></li>
+</ul>
+</li>
+<li><a href="#254-foundation-models-and-vla-evaluation">25.4 Foundation Models and VLA Evaluation</a><ul>
+<li><a href="#2541-specifics-of-vla-evaluation">25.4.1 Specifics of VLA Evaluation</a></li>
+<li><a href="#2542-humanoid-robot-foundation-model-benchmarks">25.4.2 Humanoid Robot Foundation Model Benchmarks</a></li>
+<li><a href="#2543-world-model-evaluation-generative-red-teaming">25.4.3 World Model Evaluation: Generative Red Teaming</a></li>
+<li><a href="#2544-datasets-as-evaluation-infrastructure">25.4.4 Datasets as Evaluation Infrastructure</a></li>
+</ul>
+</li>
+<li><a href="#255-real-robot-evaluation-methods-and-statistics">25.5 Real-Robot Evaluation Methods and Statistics</a><ul>
+<li><a href="#2551-statistical-inference-of-success-rate">25.5.1 Statistical Inference of Success Rate</a></li>
+<li><a href="#2552-key-points-in-evaluation-protocol-design">25.5.2 Key Points in Evaluation Protocol Design</a></li>
+<li><a href="#2553-autonomy-levels-and-hidden-variables">25.5.3 Autonomy Levels and Hidden Variables</a></li>
+<li><a href="#2554-reliability-and-durability-evaluation">25.5.4 Reliability and Durability Evaluation</a></li>
+<li><a href="#2555-python-example-wilson-confidence-interval-and-trial-number-planning">25.5.5 Python Example: Wilson Confidence Interval and Trial Number Planning</a></li>
+</ul>
+</li>
+<li><a href="#256-existing-problems-and-development-trends">25.6 Existing Problems and Development Trends</a><ul>
+<li><a href="#2561-benchmark-overfitting-and-leaderboard-dynamics">25.6.1 Benchmark Overfitting and Leaderboard Dynamics</a></li>
+<li><a href="#2562-from-offline-benchmarks-to-online-evaluation">25.6.2 From Offline Benchmarks to Online Evaluation</a></li>
+<li><a href="#2563-standardization-the-final-piece-of-the-evaluation-puzzle">25.6.3 Standardization: The Final Piece of the Evaluation Puzzle</a></li>
+<li><a href="#2564-an-evaluation-review-checklist">25.6.4 An Evaluation Review Checklist</a></li>
+</ul>
+</li>
+<li><a href="#257-chapter-summary">25.7 Chapter Summary</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>From Mine to Market: A Knowledge Graph for Humanoid Robots</p>
+      </div>
+      <div class="footer-links">
+        <a href="/en/">Home</a>
+        <a href="/en/roadmap/">Roadmap</a>
+        <a href="/en/graph/">Graph</a>
+        <a href="/en/search/">Search</a>
+        <a href="/en/wiki/">Wiki</a>
+        <a href="/en/about/">About</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+
+
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
+
+
+</body>
+</html>

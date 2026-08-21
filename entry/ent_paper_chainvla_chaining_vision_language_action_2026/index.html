@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation</h1>
+      <p class="entry-name-en">ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>ChainVLA 是一个 1.2B 参数的视觉-语言-动作（VLA）策略，通过联合且可修订的执行状态 s_k = (g_k, u_k) 链式连接连续查询，解决长时程操作中跨查询的任务进度与运动延续问题。其核心贡献在于将循环工作状态（Progress Context）与运动尾部（Motion Tail）统一在一个查询转移框架中，在 RMBench 上达到 62.8% 平均成功率（远超基线），在 LIBERO 上达到 98.8% 平均成功率（超越所有对比方法）。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2608.02326" target="_blank" rel="noopener">arXiv:2608.02326 ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution St</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>现有 action-chunked VLA 策略在每次查询时都从当前输入重新规划，存在两类信息缺失：任务级上，早期任务证据可能已不在当前视野中（如 Put Back Block 任务中相同观测和指令可能对应不同历史，需要不同决策）；运动级上，重新规划丢弃了前一次预测的未执行延续，导致新预测前缀与它所替代的运动不一致。memory-augmented 策略保留长期任务证据但不保留未执行动作延续，基于 Temporal Ensemble 的方法保留短期运动但无法保留更早任务证据——两条路线互补但割裂。</p>
+<p>ChainVLA 真正改变的是将这两类信息统一到一个可修订的执行状态中，并强调运动连续性有助于保留任务进度推断所需的观测流，因此两个组件是顺序作用而非独立作用。它不再把跨查询交接视为后处理技巧，而是作为训练与部署共享的一等公民——训练时按 episode 顺序展开同一执行状态转移，携带的后缀在条件化下一查询前被 detach，确保模型学会主动利用而非被动拼接跨查询信息。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">执行状态定义</h3>
+<ul>
+<li>状态 s_k = (g_k, u_k)，其中 g_k = Fuse(L_k, Z_k^e) 为 Progress Context（循环工作状态实时 token 与检索事件证据的融合），u_k 为 Motion Tail（前一次预测的未执行后缀）</li>
+<li>查询转移公式：s_{k+1} = F_θ(s_k, x_k)，x_k = (o_k, r_k, ℓ) 为观测、本体感受和语言指令</li>
+<li>严格前缀递减时域：1 ≤ h_exec &lt; H，预测 H 步执行前 h_exec 步后再次查询（H=30, h_exec=24）</li>
+</ul>
+<h3 id="recurrent-working-state">循环工作状态（Recurrent Working State）</h3>
+<ul>
+<li>W_k = (L_k, B_k)，L_k 为实时 token，B_k 为早期实时 token 的有界 FIFO 缓存（8 当前 + 24 先前，三槽）</li>
+<li>更新公式：</li>
+<li>η_k = MLP[φ_r(r_k), Pool(P_k), Pool(U_k), τ_k]</li>
+<li>L̃_k = CrossAttn(Q_W + η_k, X_k)</li>
+<li>L_k = LN(L̃<em k-1="k-1">k + m</em> · CrossAttn(L̃}^{live<em k-1="k-1">k, L</em>))</li>
+<li>W̄<em k-1="k-1">k = Pool([L_k, B</em>, P_k, U_k])</li>
+<li>八个学习查询关注当前多模态令牌并循环更新实时令牌，实时令牌直接进入进度上下文</li>
+</ul>
+<h3 id="sparse-event-memory">稀疏事件记忆（Sparse Event Memory）</h3>
+<ul>
+<li>C_k = {(κ_i, E_i, b_i)}，事件体 E_i = [V_i, S_i, T_i]（64 视觉 + 8 阶段 + 8 时间令牌），容量 16，最旧非锚点被逐出</li>
+<li>写入规则：第一个有效查询保留为锚点；有阶段标注按任务阶段转换触发，无标注用固定三查询间隔</li>
+<li>检索评分：ρ_{k,i} = cos(LN(q_k^e), LN(κ_i + Emb_age(clip(k − b_i))))，读取锚点和两个最高分非锚点记录</li>
+</ul>
+<h3 id="motion-tail">Motion Tail 两条模型侧路径</h3>
+<ol>
+<li>动作空间归一化后经学习投影编码为 tail tokens U_{k+1} 供工作状态使用</li>
+<li>对齐的轨迹初始化动作生成：Ã_{k+1}^{(0)} | u_{k+1} ~ N(μ_{k+1}, σ_u²I)，μ_{k+1} = I(u_{k+1})</li>
+</ol>
+<h3 id="_4">解码与训练</h3>
+<ul>
+<li>解码器为 conditional-flow DiT backbone，从最新观测、Progress Context 和 tail tokens 重新生成每个水平位置，不复制或冻结任何位置——携带状态是可修订先验而非固定计划</li>
+<li>解码后控制器线性混合重叠步骤（执行侧交接），与两条模型侧路径分离</li>
+<li>训练目标：标准 conditional-flow 动作目标 + 阶段监督（有标注时）+ 重叠一致性正则化（权重 0.2，前一次预测被 detach）</li>
+<li>训练时按 episode 顺序展开，携带后缀 detach 后才条件化下一查询；episode 开始时 tail 路径被掩码</li>
+</ul>
+<h2 id="_5">关键创新</h2>
+<ol>
+<li>
+<p><strong>统一执行状态的双通道设计</strong>：将长期任务证据（Progress Context）与短期运动延续（Motion Tail）统一在一个查询转移公式中，而非像现有方法那样割裂处理。关键创新在于两个组件顺序作用——运动连续性帮助保留任务进度推断所需的观测流，这解释了为何 w/o Motion Tail 时成功率暴跌至 11.2%（Full 为 62.8%）。</p>
+</li>
+<li>
+<p><strong>可修订先验而非固定计划</strong>：解码器从最新观测和进度上下文重新生成每个水平位置，携带的尾部只是初始化先验（加性噪声扰动），而非复制或冻结。这与 Temporal Ensemble 的硬性平均不同，允许新预测在保持运动连续性的同时响应最新观测变化。</p>
+</li>
+<li>
+<p><strong>训练与部署共享同一状态转移</strong>：训练时按 episode 顺序展开执行状态转移，携带后缀 detach 后条件化下一查询，且以 0.5 概率使用前驱的分离预测尾部。这使得模型在训练时就学会主动利用跨查询信息，而非仅在部署时做后处理拼接——消融显示 FIFO History + Temporal Ensemble 替代方案仅达 35.6%，低于 Full 27.2 个百分点。</p>
+</li>
+</ol>
+<h2 id="_6">实验与结果</h2>
+<h3 id="rmbench-100-episodes">RMBench 主结果（成功率 %，100 episodes/任务）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Obs.</th>
+<th>Rearr.</th>
+<th>Put B.</th>
+<th>Swap B.</th>
+<th>Swap T.</th>
+<th>Avg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DP</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>20</td>
+<td>6.4</td>
+</tr>
+<tr>
+<td>ACT</td>
+<td>1</td>
+<td>29</td>
+<td>0</td>
+<td>2</td>
+<td>2</td>
+<td>6.8</td>
+</tr>
+<tr>
+<td>π_0.5 (2.6B+0.3B)</td>
+<td>9</td>
+<td>13</td>
+<td>11</td>
+<td>24</td>
+<td>15</td>
+<td>14.4</td>
+</tr>
+<tr>
+<td>MemoryVLA (7B+0.3B)</td>
+<td>0</td>
+<td>22</td>
+<td>50</td>
+<td>17</td>
+<td>9</td>
+<td>19.6</td>
+</tr>
+<tr>
+<td>Mem-0 (8B+2B)</td>
+<td>4</td>
+<td>89</td>
+<td>90</td>
+<td>67</td>
+<td>14</td>
+<td>52.8</td>
+</tr>
+<tr>
+<td><strong>ChainVLA (1.2B)</strong></td>
+<td><strong>11</strong></td>
+<td><strong>93</strong></td>
+<td><strong>96</strong></td>
+<td><strong>74</strong></td>
+<td><strong>40</strong></td>
+<td><strong>62.8</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="libero-50-episodes">LIBERO 主结果（成功率 %，50 episodes/任务）</h3>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>Spatial</th>
+<th>Object</th>
+<th>Goal</th>
+<th>Long</th>
+<th>Avg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenVLA (7B)</td>
+<td>84.7</td>
+<td>88.4</td>
+<td>79.2</td>
+<td>53.7</td>
+<td>76.5</td>
+</tr>
+<tr>
+<td>GR00T-N1 (2.2B)</td>
+<td>94.4</td>
+<td>97.6</td>
+<td>93.0</td>
+<td>90.6</td>
+<td>93.9</td>
+</tr>
+<tr>
+<td>π_0 (3.3B)</td>
+<td>96.8</td>
+<td>98.8</td>
+<td>95.8</td>
+<td>85.2</td>
+<td>94.2</td>
+</tr>
+<tr>
+<td>MemoryVLA (7B+0.3B)</td>
+<td>98.4</td>
+<td>98.4</td>
+<td>96.4</td>
+<td>93.4</td>
+<td>96.7</td>
+</tr>
+<tr>
+<td>CronusVLA (7B)</td>
+<td>97.3</td>
+<td>99.6</td>
+<td>96.9</td>
+<td>94.0</td>
+<td>97.0</td>
+</tr>
+<tr>
+<td>X-VLA (0.9B)</td>
+<td>98.2</td>
+<td>98.6</td>
+<td>97.8</td>
+<td>97.6</td>
+<td>98.1</td>
+</tr>
+<tr>
+<td><strong>ChainVLA (1.2B)</strong></td>
+<td><strong>98.4</strong></td>
+<td><strong>99.4</strong></td>
+<td><strong>99.2</strong></td>
+<td><strong>98.2</strong></td>
+<td><strong>98.8</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="rmbench">关键消融（RMBench 成功率 %）</h3>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>Avg.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w/o Progress Ctx.</td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>w/o Motion Tail</td>
+<td>11.2</td>
+</tr>
+<tr>
+<td>w/o Both</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>FIFO Hist. + TE</td>
+<td>35.6</td>
+</tr>
+<tr>
+<td><strong>ChainVLA (Full)</strong></td>
+<td><strong>62.8</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="80-full-vs-wo-motion-tail">边界诊断（80 对匹配场景，Full vs w/o Motion Tail 池化降低）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>降低幅度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CD_p（位置命令不连续性）</td>
+<td>56.6%</td>
+</tr>
+<tr>
+<td>CD_R（方向命令不连续性）</td>
+<td>40.4%</td>
+</tr>
+<tr>
+<td>B2（边界二阶差分）</td>
+<td>57.4%</td>
+</tr>
+<tr>
+<td>RMSE_3（三步重叠 RMSE）</td>
+<td>43.1%</td>
+</tr>
+</tbody>
+</table>
+<p>后解码平滑控制对比显示：Put Back Block 上 w/o Motion Tail 成功率 0（CD_p 5.90），Linear Cont. 成功率 0（CD_p 2.09），Temporal Ens. 成功率 0（CD_p 3.57），Full 成功率 96（CD_p 2.69）——说明仅靠后处理平滑无法恢复链式状态的能力。</p>
+<h2 id="_7">边界与局限</h2>
+<ul>
+<li>所有结果来自固定速率仿真（RMBench 和 LIBERO），边界诊断描述命令流而非物理轨迹；未在硬件上评估，未改变控制速率，报告余量不应视为异步或实时部署的预测</li>
+<li>每个内部训练条件使用单一随机种子（42），未报告种子变异性或显著性检验，成功率和边界均值应视为点估计</li>
+<li>每个消融同时从训练和部署中撤回路径，衡量组装系统对该路径的依赖而非隔离内部机制；边界测量建立关联关系而非组件级因果关系</li>
+<li>未使用单独的规划器或世界模型来分解子目标或想象潜在状态；未将 Motion Tail 用作符号计划或潜在目标；未在 LIBERO 上做消融分析（因接近上限）</li>
+<li>所有四个诊断仅局部于接缝，不评分整剧集轨迹质量、累积状态偏差或固定频率物理平滑度；外部基线比较行未在本文协议下重新运行，可能在骨干、演示数、优化预算和成功标准上不同</li>
+<li>固定设计选择（视界 30、前缀 24、记忆容量 16、写入置信度 0.55、重叠权重 0.2）均固定一次未搜索，无法报告其敏感性</li>
+</ul>
+<h2 id="_8">工程启示</h2>
+<p>复现时先核对四个关键超参：视界 H=30 与执行前缀 h_exec=24 的比例（留 6 步尾部）、事件记忆容量 16、重叠一致性权重 0.2、无阶段标注时的三查询写入间隔。最容易踩坑的是训练与部署的状态转移一致性——训练时必须以 episode 顺序展开查询，携带后缀 detach 后才条件化下一查询，且 episode 开始时 tail 路径必须被掩码，否则会出现训练-部署分布偏移。</p>
+<p>第二个坑是阶段标注的处理：有标注时 ground-truth 转换监督阶段估计和训练时写入目标，但标签从不进入动作解码器；无标注时用固定三查询间隔。如果下游任务没有阶段标签，建议先验证三查询间隔是否合理，因为写入频率直接影响事件记忆的检索质量。</p>
+<p>第三个坑是消融实验的解读：每个消融同时撤回路径输入、训练项和部署处理，因此 w/o Motion Tail 的 11.2% 不是单一机制的孤立效果，而是整个尾部路径（含训练正则化）的系统依赖。如果只想复现核心能力，优先保证 Progress Context（w/o 后仅 3.0%）和 Motion Tail（w/o 后 11.2%）两条路径都完整实现，FIFO History + Temporal Ensemble 替代方案（35.6%）不足以替代链式状态。</p>
+<h2 id="_9">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2608.02326</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">compares_with</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_shi_memoryvla_perceptual_cognitive_2025/">MemoryVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_benchmark_libero/">LIBERO</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">X-VLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">ACT</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_action_chunking_transformer/">动作分块变压器（ACT）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">提及</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_chainvla_chaining_vision_language_action_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_benchmark_libero/">
+          <span class="entry-type">评测基准</span>
+          <h3>LIBERO</h3>
+          <p>一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zhao_learning_fine_grained_bimanual_2023/">
+          <span class="entry-type">论文</span>
+          <h3>ACT</h3>
+          <p>Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware 是斯坦福大学、UC Berkeley 与 Meta 于 2023…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_shi_memoryvla_perceptual_cognitive_2025/">
+          <span class="entry-type">论文</span>
+          <h3>MemoryVLA</h3>
+          <p>MemoryVLA 是由清华大学、Dexmal、MEGVII Technology、天津大学、哈尔滨工业大学及 StepFun 联合提出的 2025…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_paper_zheng_x_vla_soft_prompted_transforme_2025/">
+          <span class="entry-type">论文</span>
+          <h3>X-VLA</h3>
+          <p>X-VLA 是清华大学 AIR、上海 AI Lab 和北京大学于 2025 年提出的大型视觉-语言-动作模型，专为跨实体机器人操作设计。其核心贡献在于引入软提示（Soft…</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_action_chunking_transformer/">
+          <span class="entry-type">方法</span>
+          <h3>动作分块变压器（ACT）</h3>
+          <p>动作分块变压器（ACT）是一种模仿学习方法：用变压器以条件变分自编码器（CVAE）形式一次性预测未来一段动作序列（chunk），再经时间集成平滑执行，显著降低长时程精细操作中的误差累积。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">执行状态定义</a></li>
+<li><a href="#recurrent-working-state">循环工作状态（Recurrent Working State）</a></li>
+<li><a href="#sparse-event-memory">稀疏事件记忆（Sparse Event Memory）</a></li>
+<li><a href="#motion-tail">Motion Tail 两条模型侧路径</a></li>
+<li><a href="#_4">解码与训练</a></li>
+</ul>
+</li>
+<li><a href="#_5">关键创新</a></li>
+<li><a href="#_6">实验与结果</a><ul>
+<li><a href="#rmbench-100-episodes">RMBench 主结果（成功率 %，100 episodes/任务）</a></li>
+<li><a href="#libero-50-episodes">LIBERO 主结果（成功率 %，50 episodes/任务）</a></li>
+<li><a href="#rmbench">关键消融（RMBench 成功率 %）</a></li>
+<li><a href="#80-full-vs-wo-motion-tail">边界诊断（80 对匹配场景，Full vs w/o Motion Tail 池化降低）</a></li>
+</ul>
+</li>
+<li><a href="#_7">边界与局限</a></li>
+<li><a href="#_8">工程启示</a></li>
+<li><a href="#_9">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

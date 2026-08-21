@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation · 人形机器人知识图谱</title>
+  <meta name="description" content="从矿山到市场的人形机器人知识图谱">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="zh">
+  <a class="skip-link" href="#main-content">跳转到主内容</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="/" >首页</a>
+        <a href="/roadmap/" >路线图</a>
+        <a href="/graph/" >关系图谱</a>
+        <a href="/search/" >搜索</a>
+        <a href="/wiki/" >Wiki</a>
+        <a href="/about/" >关于</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
+          <button type="submit" aria-label="搜索">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" selected>简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" >한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题" title="切换主题">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="菜单" title="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/types/paper/">论文</a>
+    <span>/</span>
+    <span class="breadcrumb-current">Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">论文</div>
+      <h1>Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation</h1>
+      <p class="entry-name-en">Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            <span class="tag">AI 模型与算法</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">智能层</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Catch-up sweep 2026-08-05, source channel(s): arxiv_scan. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (deepseek-chat, T&lt;=0.3) with fact guardrails. 深读+数字白名单复核通过 2026-08-10（补网）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 全文核验</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>本文提出 Persistent Object Tokenization (POT)，一种为人形机器人 loco-manipulation 设计的闭环状态表示方法，通过将任务物体绑定到角色索引的持久 3D 对象令牌，并插入 DiT 动作头自注意力序列，使 VLA 策略在长时程移动操作中持续可寻址且可验证。作者在 Unitree G1 上完成 8 个真实世界任务族共 80 次试验，POT-VLA 总成功率 71/80，显著优于直接基线 39/80，并在一组外部参考任务上以 44/50 超过 Being-0 的 37/50。</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2607.18016" target="_blank" rel="noopener">arXiv:2607.18016 Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loc</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">它改变了什么</h2>
+<p>它真正改变的不是“感知更准”或“控制更强”，而是把 VLA 策略从“开环执行器”变成了“闭环决策器”。此前，VLA 的典型用法是：给定当前观测，输出一段动作块，然后靠外部监控器或语言级状态检查来判断任务进度。问题在于，用于生成动作的对象状态（如抓取点、目标位置）与用于验证任务是否达成的状态（如谓词、几何关系）往往来自不同表征，一旦出现小的接地误差或抓取偏移，动作头还在按旧状态执行，而验证器已经判定失败或提前切换子任务——这就是作者点名的 object-state divergence。POT 的贡献在于把“动作条件”和“验证条件”统一到同一份持久 3D 对象记忆上，让策略在每次动作块后都能刷新同一组对象令牌，再决定继续、重试还是重规划。这不是加一个模块，而是改变了 VLA 的闭环结构：从“感知→动作”的单向流水线，变成“感知→动作→验证→再感知”的循环。</p>
+<h2 id="_2">方法拆解</h2>
+<h3 id="_3">类型化子任务作为输入</h3>
+<p>POT 不依赖特定规划器，而是接受 VLM 规划器或人工任务文件给出的类型化子任务计划 Π = ⟨task_id, I, {τ_i}⟩。每个子任务 τ_i 指定角色、接地查询、成功谓词、失败处理器、块时域、超时和重试预算，但不指定低级运动——运动完全由动作专家生成。</p>
+<h3 id="_4">角色索引对象记忆</h3>
+<p>每个子任务维护 M_t^{τ_i} = {m_t^e | e ∈ E_i}，每条记录 m_t^e 存储实体角色、短语、图像框、3D 质心和范围、置信度、可见性和关系特征。在线或缓存的 SAM3 掩码提供角色/查询掩码，有效深度像素通过相机内参和相机到基座变换反投影，经校准工作空间过滤后在机器人基座坐标系中汇总。</p>
+<h3 id="_5">持久令牌模式</h3>
+<p>默认 K=8 槽位、F=33 特征每槽。有效槽位携带角色 ID（TARGET、DESTINATION、SUPPORT、HANDOVER_PARTNER），未使用槽位为 PADDING 并被掩码。槽位特征包括可见性、置信度、归一化 2D 框坐标、3D 质心、3D 范围、可选方向字段和关系。持久性机制的关键设计：任务实体绑定到角色槽位，每个动作块后刷新度量证据；若物体被遮挡或低置信度，槽位仍存在但可见性/置信度字段标记为不确定，允许验证器请求重新观测而非视为已确认。</p>
+<h3 id="_6">动作头插入</h3>
+<p>POT-VLA 将对象令牌插入 DiT 动作头自注意力序列，而非视觉-语言骨干。序列布局为 S_t = [Z_t^state, Z_t^obj, Z_t^action]，填充槽位被掩码，视觉-语言骨干特征保持为编码器隐藏状态用于交叉注意力。对象令牌投影器 f_θ^obj 为 LayerNorm → Linear → GELU → Dropout → Linear，每个投影槽位与学习的角色嵌入和上下文嵌入结合，使动作头能区分任务角色语义与通用对象特征内容。</p>
+<h3 id="_7">训练与闭环执行</h3>
+<p>训练目标与基础动作专家相同（动作块预测），不添加辅助对象记忆或谓词损失。对象令牌微调期间，演示与部署时相同的角色感知 RGB-D 模式生成的对象令牌侧车配对。闭环执行时，每次只执行一个验证过的短时域块（chunk horizon H），在 t^+ = t+H 时刷新感知并重新生成 Z_{t^+}^obj。谓词验证 p = ⟨κ, α, op, ν, n⟩，阈值和稳定窗口由类型化子任务和机器人校准指定。监督器返回 {in_progress, done, blocked, failed, uncertain}，恢复选择为 {continue, retry, reobserve, reground, replan}。</p>
+<h2 id="_8">关键创新</h2>
+<ol>
+<li>
+<p><strong>统一动作条件与验证条件的对象表征</strong>：这是最核心的创新。POT 让用于生成动作的对象状态和用于判断任务达成的谓词状态来自同一份持久 3D 记忆，从机制上消除 object-state divergence。此前方法要么用视觉特征做动作、用语言状态做验证，要么用两套独立感知管线，POT 是第一个把两者绑定到同一角色槽位的方案。</p>
+</li>
+<li>
+<p><strong>角色槽位的持久性与不确定性显式建模</strong>：物体被遮挡或低置信度时，槽位不消失，而是标记为不确定并触发重新观测。这比“检测不到就当作不存在”或“检测不到就重试”都更鲁棒，因为它给验证器提供了明确的“我不知道”信号，而不是错误的“已确认”或“已失败”。</p>
+</li>
+<li>
+<p><strong>对象令牌插入动作头而非骨干</strong>：这是一个工程上巧妙的设计决策。插入 DiT 动作头自注意力序列意味着视觉-语言骨干完全不动，基础动作专家训练路径不变，对象令牌微调只影响动作头分支。这大幅降低了适配成本，且允许在禁用对象令牌时无缝回退到基础动作专家。</p>
+</li>
+</ol>
+<h2 id="_9">实验与结果</h2>
+<h3 id="1-panel-a10">主结果（表1 Panel A，10次试验/任务）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>Direct</th>
+<th>POT-VLA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cart transport/place</td>
+<td>3/10</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Chip box to basket</td>
+<td>9/10</td>
+<td>10/10</td>
+</tr>
+<tr>
+<td>Two balls to basket</td>
+<td>5/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Stack three cups</td>
+<td>1/10</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Garments to basket</td>
+<td>3/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Drawer/tray place-close</td>
+<td>4/10</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Tabletop sorting</td>
+<td>5/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Close-range handover</td>
+<td>9/10</td>
+<td>10/10</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td><strong>39/80</strong></td>
+<td><strong>71/80</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-panel-bbeing-0">外部参考（表1 Panel B，Being-0 对齐服务任务）</h3>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>Being-0</th>
+<th>POT-VLA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fetch-bottle</td>
+<td>9/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Deliver-basket</td>
+<td>8/10</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td>Grasp-bottle</td>
+<td>8/10</td>
+<td>10/10</td>
+</tr>
+<tr>
+<td>Place-basket</td>
+<td>6/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Place-coffee</td>
+<td>6/10</td>
+<td>8/10</td>
+</tr>
+<tr>
+<td><strong>总计</strong></td>
+<td><strong>37/50</strong></td>
+<td><strong>44/50</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-panel-a410">消融（表2 Panel A，4任务×10次）</h3>
+<table>
+<thead>
+<tr>
+<th>变体</th>
+<th>成功率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct baseline</td>
+<td>15/40</td>
+</tr>
+<tr>
+<td>Verifier only</td>
+<td>22/40</td>
+</tr>
+<tr>
+<td>POT tokens only</td>
+<td>31/40</td>
+</tr>
+<tr>
+<td>POT-VLA</td>
+<td>34/40</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-panel-b10">泛化（表2 Panel B，10次/设置）</h3>
+<table>
+<thead>
+<tr>
+<th>设置</th>
+<th>Direct</th>
+<th>POT-VLA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Novel object instances</td>
+<td>6/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Shifted poses/layouts</td>
+<td>5/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Distractor objects</td>
+<td>8/10</td>
+<td>9/10</td>
+</tr>
+<tr>
+<td>Mid-execution perturbations</td>
+<td>4/10</td>
+<td>8/10</td>
+</tr>
+</tbody>
+</table>
+<p>消融结果的关键含义：仅加验证器（22/40）比直接基线（15/40）提升有限，仅加 POT 令牌（31/40）提升显著，两者结合（34/40）接近最优——说明验证器需要持久对象状态才能发挥价值，而 POT 令牌单独也能改善动作质量。泛化测试中 mid-execution perturbations 从 4/10 提升到 8/10，直接验证了闭环恢复的价值。</p>
+<h2 id="_10">边界与局限</h2>
+<p>POT-VLA 仍受限于对象记录质量、SAM3/RGB-D 可靠性、相机校准和动作专家具身覆盖范围。作者明确未在仿真中训练或评估，未使用显式物理引擎或学习动力学模型，未在除 Unitree G1 外的平台实验。对于 Being-0 参考，作者明确说明这不是本地复现，而是使用其论文报告的重叠服务任务成功计数——这意味着跨系统比较存在协议差异风险。论文未提及训练数据量、推理频率（Hz）等关键工程参数，也未讨论对象令牌在极端遮挡或快速运动下的失效边界。</p>
+<h2 id="_11">工程启示</h2>
+<p>复现时先核对三件事：一是 SAM3 掩码质量与深度反投影的相机标定精度，这是对象令牌度量证据的源头，标定误差会直接污染 3D 质心和范围；二是动作专家（GR00T-N1.7）的检查点与对象令牌微调的配对方式——演示时必须使用与部署相同的角色感知 RGB-D 模式生成侧车，否则微调分布不匹配；三是谓词阈值和稳定窗口的校准，这些由类型化子任务和机器人校准指定，不是学习出来的，设置不当会导致验证器频繁返回 uncertain 或误报 done。最容易踩坑的地方是对象令牌插入动作头后的序列布局：S_t = [Z_t^state, Z_t^obj, Z_t^action]，填充槽位必须正确掩码，否则动作头会学到对 PADDING 槽位的虚假依赖。另一个隐蔽问题是恢复选择逻辑：reobserve 和 reground 的触发条件依赖置信度阈值，阈值过严会导致频繁重观测拖慢执行，过松则回到 object-state divergence 的老问题。建议先在小任务集（如 two balls to basket）上校准验证器阈值，再扩展到堆叠和铰接交互任务。</p>
+<h2 id="_12">参考</h2>
+<ul>
+<li>https://arxiv.org/abs/2607.18016</li>
+</ul>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>发出的关系</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">使用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_whole_body_control/">全身控制（WBC）</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">引用</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_method_openvla/">OpenVLA</a>
+      
+      
+    </li>
+    
+    <li>
+      
+      <span class="rel-pill">discusses</span>
+      <span class="rel-arrow">→</span>
+      <a href="/entry/ent_concept_world_model/">世界模型</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_closing_loop_humanoid_vla_persistent_3d_2026"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>知识关联</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/entry/ent_method_openvla/">
+          <span class="entry-type">方法</span>
+          <h3>OpenVLA</h3>
+          <p>基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_concept_world_model/">
+          <span class="entry-type">概念</span>
+          <h3>世界模型</h3>
+          <p>预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。</p>
+        </a>
+        
+        <a class="entry-card" href="/entry/ent_method_whole_body_control/">
+          <span class="entry-type">方法</span>
+          <h3>全身控制（WBC）</h3>
+          <p>协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="本页目录">
+    <details open>
+      <summary>本页目录</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">它改变了什么</a></li>
+<li><a href="#_2">方法拆解</a><ul>
+<li><a href="#_3">类型化子任务作为输入</a></li>
+<li><a href="#_4">角色索引对象记忆</a></li>
+<li><a href="#_5">持久令牌模式</a></li>
+<li><a href="#_6">动作头插入</a></li>
+<li><a href="#_7">训练与闭环执行</a></li>
+</ul>
+</li>
+<li><a href="#_8">关键创新</a></li>
+<li><a href="#_9">实验与结果</a><ul>
+<li><a href="#1-panel-a10">主结果（表1 Panel A，10次试验/任务）</a></li>
+<li><a href="#1-panel-bbeing-0">外部参考（表1 Panel B，Being-0 对齐服务任务）</a></li>
+<li><a href="#2-panel-a410">消融（表2 Panel A，4任务×10次）</a></li>
+<li><a href="#2-panel-b10">泛化（表2 Panel B，10次/设置）</a></li>
+</ul>
+</li>
+<li><a href="#_10">边界与局限</a></li>
+<li><a href="#_11">工程启示</a></li>
+<li><a href="#_12">参考</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>从矿山到市场的人形机器人知识图谱</p>
+      </div>
+      <div class="footer-links">
+        <a href="/">首页</a>
+        <a href="/roadmap/">路线图</a>
+        <a href="/graph/">关系图谱</a>
+        <a href="/search/">搜索</a>
+        <a href="/wiki/">Wiki</a>
+        <a href="/about/">关于</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>

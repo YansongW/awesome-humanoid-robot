@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ko-KR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance · 휴로봇 지식 그래프</title>
+  <meta name="description" content="광산에서 시장까지: 휴로봇 지식 그래프">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  
+
+
+</head>
+<body data-lang="ko">
+  <a class="skip-link" href="#main-content">주요 콘텐츠로 건너뛰기</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/ko/">
+        <span class="logo-icon">🤖</span>
+        <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
+      </a>
+      <nav class="site-nav" aria-label="주요 탐색">
+        <a href="/ko/" >홈</a>
+        <a href="/ko/roadmap/" >로드맵</a>
+        <a href="/ko/graph/" >그래프</a>
+        <a href="/ko/search/" >검색</a>
+        <a href="/ko/wiki/" >Wiki</a>
+        <a href="/ko/about/" >소개</a>
+      </nav>
+      <div class="header-actions">
+        <form class="search-form" action="/ko/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="개체, 논문, 기업 검색…" aria-label="검색">
+          <button type="submit" aria-label="검색">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          </button>
+        </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            
+            <option value="zh" >简体中文</option>
+            
+            <option value="en" >English</option>
+            
+            <option value="ko" selected>한국어</option>
+            
+          </select>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon-light">☀️</span>
+          <span class="theme-icon-dark">🌙</span>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="메뉴" title="메뉴">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="main-content">
+    
+
+<div class="container">
+  <nav class="breadcrumb" aria-label="브레드크럼">
+    <a href="/ko/">홈</a>
+    <span>/</span>
+    <a href="/ko/types/paper/">논문</a>
+    <span>/</span>
+    <span class="breadcrumb-current">AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance</span>
+  </nav>
+
+  <div class="content-with-toc">
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">논문</div>
+      <h1>AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance</h1>
+      <p class="entry-name-en">AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance</p>
+
+      <div class="entry-meta-bar">
+        
+        <div class="meta-group">
+          <span class="meta-label">영역</span>
+          <div class="meta-tags">
+            <span class="tag">AI 모델 및 알고리즘</span>
+          </div>
+        </div>
+        
+        
+        <div class="meta-group">
+          <span class="meta-label">계층</span>
+          <div class="meta-tags">
+            <span class="tag tag-layer">지능 계층</span>
+          </div>
+        </div>
+        
+        
+        
+          
+          
+        
+        <div class="meta-group">
+          <span class="meta-label">검증</span>
+          <div class="meta-tags">
+            
+            <span class="tag tag-verified" title="Deep-read batch3-classics (2026-08-05), source channel(s): xiaoze_P039. Full text from arXiv (HTML or PDF); zh six-section interpretation by DeepSeek (T&lt;=0.3) under programmatic number whitelist; derived values explicitly labeled. 深读+数字白名单复核通过 2026-08-10（批量三）；等级 ai_fulltext_verified（AI 全文核验），schema v1 status 枚举不含该值，按数据纪律记为 verified。">AI 전문 검증</span>
+            
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+
+    
+
+    
+    <section class="entry-summary">
+      <h2>요약</h2>
+      <p>We present AnyBody, a unified whole-body humanoid controller driven by an arbitrary subset of body keypoints chosen at deploy time. Prior physics-based trackers either rely on expensive full-body motion capture and error-prone trajectory retargeting, which bottleneck scalable data collection and policy learning, or decompose upper- and lower-body control into separate hierarchical.</p>
+    </section>
+    
+
+    
+    
+    
+    
+    
+    <div class="entry-info-grid">
+      
+      
+      
+      
+      
+      <div class="info-panel">
+        <h3>출처</h3>
+        <ul>
+          
+          <li>
+            
+            <a href="https://arxiv.org/abs/2606.29209" target="_blank" rel="noopener">arXiv:2606.29209 AnyBody: Free-Form Whole-Body Humanoid Control from Arbitrary Keypoint Guidance</a>
+            
+          </li>
+          
+        </ul>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    <section class="entry-body">
+      <h2 id="_1">개요</h2>
+<p>AnyBody는 연구팀이 제안한, 배포 시 임의의 신체 키포인트 부분집합에 의해 구동되는 통합 전신 휴머노이드 컨트롤러입니다. 핵심 기여는 공유된 구형 잠재 운동 표현을 학습하여 희소 키포인트 조건과 전신 제어를 단일 프레임워크로 통합하고, 잠재 공간 잔차 강화 학습을 통한 하위 작업 미세 조정을 지원한다는 점입니다. 이 방법은 Unitree G1 휴머노이드에서 단일 손목부터 전신까지 다양한 키포인트 구성의 제로샷 추적을 구현했으며, 장애물 도달 및 손목 쓰기와 같은 하위 작업의 성공률을 크게 향상시켰습니다.</p>
+<h2 id="_2">무엇을 바꾸었는가</h2>
+<p>기존 물리 추적기는 두 가지 난관에 직면해 있습니다: 고가의 전신 모션 캡처와 오류가 쉬운 리타게팅 파이프라인에 의존하여 데이터 규모와 정책 학습을 제한하거나, 상·하지 제어를 분리된 계층 구조로 분할하여 전신 협응을 희생합니다. AnyBody가 실제로 바꾼 것은 "제어 조건"을 고정 관절 궤적이나 완전한 골격에서 "임의의 키포인트 부분집합"으로 축소하여 리타게팅 과정을 우회하고, 작업자(operators)가 작업과 배포 환경에 따라 제어 지점(단일 손목부터 전신까지)을 유연하게 선택하면서도 전신 행동의 협응을 유지할 수 있게 한 점입니다. 이는 본질적으로 "무엇을 따라갈 것인가"와 "전신을 어떻게 협응시킬 것인가"를 분리한 것으로, 전자는 사용자가 온라인으로 지정하고 후자는 사전 훈련된 운동 사전(motion prior)이 담당합니다.</p>
+<h2 id="_3">방법 분해</h2>
+<h3 id="3">3단계 훈련 프레임워크</h3>
+<ul>
+<li><strong>Stage 1 (운동 사전 학습)</strong>: 약 140시간의 필터링된 Bones-Seed 데이터에서 특권(privileged) 교사 추적기를 훈련하고, 온라인 증류를 통해 결정적 인코더-디코더로 변환합니다. 잠재 변수 z는 단위 구면 𝕊^{d_z−1} (d_z = 16)에 투영되며, 디코더 D는 역학 인지 운동 사전 역할을 합니다. 손실 ℒ₁ = ‖D_ϕ(z, s^p) − π^T(s)‖²₂ + λ_sm(1 − cos(z_t, z_{t−1})), 여기서 λ_sm = 0.1입니다.</li>
+<li><strong>Stage 2 (키포인트 조건화)</strong>: 디코더 D를 동결하고, 자기 주의(self-attention) 트랜스포머 기반 키포인트 인코더 E^kp를 훈련합니다. 각 키포인트 토큰은 0.5초 창(15프레임, 대칭 로그 간격)의 과거 및 미래 정보를 쌓으며, 누락된 키포인트는 주의 마스크 m을 통해 버려집니다. 손실 ℒ₂ = (1 − cos(ẑ^kp, sg[ẑ])) + λ_a‖D(ẑ^kp, s^p) − sg[D(ẑ, s^p)]‖²₂, λ_a = 0.05. 마스크 커리큘럼은 전체 가시에서 p_see = 0.4로 어닐링되며, 의미론적 배포 모드(몸통만, 손목만, 발목만 등)를 혼합합니다.</li>
+<li><strong>Stage 3 (하위 작업 미세 조정)</strong>: 인코더와 디코더를 동결하고, 얕은 잔차 보정기 g_ξ(1계층 트랜스포머, d_model = 64)를 학습합니다. 정책 평균 ẑ_policy = norm(ẑ_enc + α·g_ξ(·)), α = 1.0. 출력 투영은 gain 0.01의 Xavier 초기화를 사용하여 step 0에서 Δz ≈ 0이 되도록 하여 증류된 동작을 정확히 재현하고, 무작위 잠재 탐색으로 인한 보상 붕괴를 방지합니다.</li>
+</ul>
+<h3 id="_4">핵심 설계 결정</h3>
+<ul>
+<li>구형 잠재 공간(단위 노름)은 경계가 있고 매끄러운 운동 다양체를 제공하여 코사인 정렬과 잔차 보정을 용이하게 합니다.</li>
+<li>디코더를 운동 사전으로 동결하면 어떤 키포인트 구성에서도 동작이 물리적으로 타당한 운동 패턴을 따르도록 보장합니다.</li>
+<li>작은 게인 초기화는 Stage 3 안전 미세 조정의 핵심으로, 초기 정책이 사전 훈련된 동작과 완전히 일치하도록 보장한 후 PPO를 통해 점진적으로 이탈합니다.</li>
+</ul>
+<h2 id="_5">핵심 혁신</h2>
+<ol>
+<li><strong>임의 키포인트 조건의 통합</strong>: 처음으로 희소 키포인트(1~5개)와 전신 제어를 단일 잠재 공간으로 통합하여 리타게팅이나 작업별 분기가 필요 없습니다. 이를 통해 단일 손목 원격 조작부터 전신 추적까지의 연속적인 스펙트럼이 가능해지며, 배포 시 재훈련이 필요 없습니다.</li>
+<li><strong>3단계 증류 및 잔차 미세 조정 패러다임</strong>: "운동 사전 학습"과 "작업 조건화"를 분리한 후, 잠재 공간 잔차 RL 미세 조정을 수행합니다. 이 패러다임은 동결된 디코더에서 직접 무작위 탐색으로 인한 보상 붕괴를 피하며, 사전 훈련된 운동 모델의 안전한 하위 작업 적응에 대한 새로운 접근을 제시합니다.</li>
+<li><strong>마스크 커리큘럼 및 의미론적 모드 샘플링</strong>: 전체 가시에서 희소 마스크로의 점진적 훈련과 배포 관련 키포인트 조합(예: 발목만)의 명시적 샘플링을 통해, 인코더가 특정 구성을 암기하는 대신 임의의 부분집합에서 전신 상태를 추론하는 법을 학습하게 합니다.</li>
+</ol>
+<h2 id="_6">실험 및 결과</h2>
+<h3 id="1">정량적 추적 성능 (표 1)</h3>
+<table>
+<thead>
+<tr>
+<th>명령 모드</th>
+<th># 포인트</th>
+<th>SR (%) ↑</th>
+<th>POI 위치 오차 (cm) ↓</th>
+<th>POI 속도 오차 ↓</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>전신</td>
+<td>5</td>
+<td>97.6</td>
+<td>10.90</td>
+<td>0.301</td>
+</tr>
+<tr>
+<td>상지(손목+몸통)</td>
+<td>3</td>
+<td>94.8</td>
+<td>9.48</td>
+<td>0.284</td>
+</tr>
+<tr>
+<td>손목만</td>
+<td>2</td>
+<td>94.3</td>
+<td>10.41</td>
+<td>0.325</td>
+</tr>
+<tr>
+<td>단일 손목(좌/우)</td>
+<td>1</td>
+<td>93.7</td>
+<td>10.79</td>
+<td>0.335</td>
+</tr>
+<tr>
+<td>몸통만</td>
+<td>1</td>
+<td>94.3</td>
+<td>8.34</td>
+<td>0.216</td>
+</tr>
+<tr>
+<td>발목만</td>
+<td>2</td>
+<td>95.4</td>
+<td>13.39</td>
+<td>0.351</td>
+</tr>
+<tr>
+<td>관절 명령(특권 정보)</td>
+<td>–</td>
+<td>99.3</td>
+<td>8.31</td>
+<td>0.225</td>
+</tr>
+<tr>
+<td>관절 명령(비특권 정보)</td>
+<td>–</td>
+<td>99.1</td>
+<td>16.98</td>
+<td>0.378</td>
+</tr>
+</tbody>
+</table>
+<p>단일 손목 추적 성공률은 93% 이상이며, 평균 POI 위치 오차는 대부분의 마스크 모드에서 약 10cm를 유지합니다. 몸통만 모드가 가장 낮은 오차(8.34cm)를 보여, 몸통이 전역 앵커로서 안정성에 중요함을 시사합니다.</p>
+<h3 id="2">하위 작업 성공률 (표 2)</h3>
+<table>
+<thead>
+<tr>
+<th>작업</th>
+<th>RL 미세 조정 없음 성공률</th>
+<th>RL 미세 조정 있음 성공률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>장애물 도달 - 개방</td>
+<td>54.68%</td>
+<td>97.09%</td>
+</tr>
+<tr>
+<td>장애물 도달 - 장벽</td>
+<td>10.49%</td>
+<td>96.04%</td>
+</tr>
+<tr>
+<td>장애물 도달 - 낮은 간격</td>
+<td>44.36%</td>
+<td>99.47%</td>
+</tr>
+<tr>
+<td>장애물 도달 - 용기</td>
+<td>3.04%</td>
+<td>95.56%</td>
+</tr>
+<tr>
+<td>손목 쓰기</td>
+<td>0.00%</td>
+<td>97.87%</td>
+</tr>
+</tbody>
+</table>
+<p>RL 미세 조정은 특히 용기 작업(3.04% → 95.56%)과 손목 쓰기(0.00% → 97.87%)에서 큰 향상을 가져왔으며, 잔차 미세 조정이 분포 외 명령 궤적을 복구하는 능력을 검증합니다.</p>
+<h2 id="_7">경계 및 한계</h2>
+<p>논문은 모든 한계를 명시적으로 나열하지는 않았지만, 훈련 말뭉치가 충분히 다루지 못하는 가장자리 운동(예: 매우 낮은 도달, 대규모 공중 손글씨)에서는 컨트롤러가 여전히 실패할 수 있으며, 하위 작업 RL 미세 조정에 의존해야 합니다. 현재 플랫폼은 정교한 손(덱스트러스 핸드) 제어를 포함하지 않아 정밀 조작을 수행할 수 없습니다. 정교한 손을 갖춘 휴머노이드로의 확장이 향후 방향입니다. 또한 모든 실험은 Unitree G1에서 수행되었으며, 교차 플랫폼 일반화는 검증되지 않았습니다. 실제 세계의 장기 안정성과 마모는 논의되지 않았습니다.</p>
+<h2 id="_8">엔지니어링 시사점</h2>
+<p>재현 시 Stage 2의 마스크 커리큘럼 매개변수(p_see를 1.0에서 0.4로 어닐링)와 Stage 3의 작은 게인 초기화(gain 0.01)를 우선적으로 확인해야 하며, 이 두 곳이 방법의 유효성을 결정하는 핵심입니다. 가장 실수하기 쉬운 부분은 Stage 3의 보상 설계입니다: 작업별 비대칭 비평가(asymmetric critic)를 사용하지 않거나 성공 임계값에 의한 조기 종료(예: 손목 쓰기 0.5m 오차 종료)를 설정하지 않으면 훈련이 불안정해질 수 있습니다. 하위 작업 팀은 먼저 사전 훈련된 추적기가 목표 키포인트 구성에서의 기준 성공률을 검증한 후 RL 미세 조정 여부를 결정해야 합니다. 분포 외 명령(예: 공중 쓰기)의 경우 추적기를 조정하는 것보다 직접 미세 조정하는 것이 더 효율적입니다. 하드웨어 배포 시 제어 주파수 50Hz와 시뮬레이션 스텝 크기 0.005s의 일치, 그리고 도메인 무작위화 매개변수(마찰 0.3–1.6, 추력 펄스 ±0.5 m/s)가 sim-to-real 전이에 미치는 영향을 확인해야 합니다.</p>
+    </section>
+    
+
+    
+    
+    <section class="entry-relations">
+      <h2>관계</h2>
+      <div class="relations-layout">
+        
+        
+        <div class="relations-column">
+          <h3>나가는 관계</h3>
+          <ul class="relation-list">
+            
+    <li>
+      
+      <span class="rel-pill">언급</span>
+      <span class="rel-arrow">→</span>
+      <a href="/ko/entry/ent_algorithm_ppo/">근위 정책 최적화(PPO)</a>
+      
+      
+    </li>
+    
+            
+          </ul>
+        </div>
+        
+        
+        
+        
+      </div>
+    </section>
+
+    <section class="entry-graph">
+      <h2>관계 하위 그래프</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="ent_paper_anybody_free_form_whole_body_humanoid_2026"></div>
+      <p class="graph-hint">노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.</p>
+    </section>
+    
+
+    
+    <section class="entry-related">
+      <h2>관련 개체</h2>
+      <div class="entry-grid small">
+        
+        <a class="entry-card" href="/ko/entry/ent_algorithm_ppo/">
+          <span class="entry-type">알고리즘</span>
+          <h3>근위 정책 최적화(PPO)</h3>
+          <p>정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.</p>
+        </a>
+        
+      </div>
+    </section>
+    
+  </article>
+
+  
+  <aside class="page-toc" aria-label="이 페이지 목차">
+    <details open>
+      <summary>이 페이지 목차</summary>
+      <nav class="toc-nav"><div class="toc">
+<ul>
+<li><a href="#_1">개요</a></li>
+<li><a href="#_2">무엇을 바꾸었는가</a></li>
+<li><a href="#_3">방법 분해</a><ul>
+<li><a href="#3">3단계 훈련 프레임워크</a></li>
+<li><a href="#_4">핵심 설계 결정</a></li>
+</ul>
+</li>
+<li><a href="#_5">핵심 혁신</a></li>
+<li><a href="#_6">실험 및 결과</a><ul>
+<li><a href="#1">정량적 추적 성능 (표 1)</a></li>
+<li><a href="#2">하위 작업 성공률 (표 2)</a></li>
+</ul>
+</li>
+<li><a href="#_7">경계 및 한계</a></li>
+<li><a href="#_8">엔지니어링 시사점</a></li>
+</ul>
+</div>
+</nav>
+    </details>
+  </aside>
+  
+  </div>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>Rounds Tech KG</strong>
+        <p>광산에서 시장까지: 휴로봇 지식 그래프</p>
+      </div>
+      <div class="footer-links">
+        <a href="/ko/">홈</a>
+        <a href="/ko/roadmap/">로드맵</a>
+        <a href="/ko/graph/">그래프</a>
+        <a href="/ko/search/">검색</a>
+        <a href="/ko/wiki/">Wiki</a>
+        <a href="/ko/about/">소개</a>
+        <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Rounds Tech. Built on <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">Awesome Humanoid Robot</a>.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  
+
+
+
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+
+
+</body>
+</html>
