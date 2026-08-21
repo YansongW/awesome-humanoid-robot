@@ -29,7 +29,7 @@ tau = np.clip(tau, -tau_max, tau_max)
 
 [What to Do] Work through the three levels in order (see [Stage 2](../stage-2-biped.md) Section 2 for details):
 
-1. **[ZMP (Zero Moment Point)](/entry/ent_paper_zero_moment_point_2024/)**: The equivalent point of ground reaction force must lie within the support polygon to avoid tipping. In simulation, plot/print the ZMP trajectory and observe when it leaves the support polygon and when the robot falls;
+1. **[ZMP (Zero Moment Point)](/entry/ent_method_zero_moment_point/)**: The equivalent point of ground reaction force must lie within the support polygon to avoid tipping. In simulation, plot/print the ZMP trajectory and observe when it leaves the support polygon and when the robot falls;
 2. **LIPM (Linear Inverted Pendulum Model)**: Simplify the whole body to a "center of mass + massless legs". Under the constant center of mass height assumption, there is an analytical solution, and for flat ground ZMP estimation:
 
 ```

@@ -48,3 +48,14 @@
 - [ ] **策展网**：跟踪策展型仓库更新（RealXiaoze/humanoid-motion-intelligence 等），新解读 → 建卡挂链 — P0
 - [ ] **"丢链接即建卡"通道**：用户转发链接（微信/arXiv/项目页）→ 1 小时内深读建卡——高信号源是用户自己；微信文机器不可抓，人是最强雷达 — P0（也是 OpenSci4X「收进图谱」功能原型）
 - [ ] 发现层三源合一：arXiv 宽网 + 策展网 + 用户雷达，统一进 staging → 审阅 — P1
+
+## 阻塞项：Mac mini 任务移交（agent-bridge）
+
+**状态**：BLOCKED — Mac mini（songmac-mini，100.102.58.80）sshd 只收密钥且未授权 MacBook 公钥；Tailscale SSH server 未启用；无密码认证；无其他开放端口。
+**解锁条件**：有人在 mini 现场执行一条命令（把 MacBook 公钥写入 ~/.ssh/authorized_keys）。
+**现场傻瓜命令**（在 mini 的终端执行）：
+```bash
+mkdir -p ~/.ssh && chmod 700 ~/.ssh && echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGz6GVi91MGvgPyQW69emWdqXnt2I9RwmOQqfsAqgG0G agentctl@MacBook-Air" >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && echo OK
+```
+**解锁后动作**：agentctl 挂载长期批处理任务（RUNBOOK-remote-batch.md 任务 A/B）到 mini 的 kimi cli（tmux 持久、断线不丢）。
+**过渡方案**：批处理在 MacBook Air 本地跑（管线幂等，桥通后无缝移交）。记录于 2026-08-11。

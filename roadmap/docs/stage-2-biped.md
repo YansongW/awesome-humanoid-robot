@@ -36,7 +36,7 @@
 双足平衡是一架梯子，每级一张卡片，在仿真里验证一级再往上走。
 
 **第一级：ZMP（零力矩点）**
-- 做什么：理解 [Zero Moment Point](/entry/ent_paper_zero_moment_point_2024/)——机器人不倾倒的充要条件是地面反力等效作用点落在支撑多边形内。在仿真里观察 ZMP 何时跑出支撑域、机器人何时倒。
+- 做什么：理解 [Zero Moment Point](/entry/ent_method_zero_moment_point/)——机器人不倾倒的充要条件是地面反力等效作用点落在支撑多边形内。在仿真里观察 ZMP 何时跑出支撑域、机器人何时倒。
 - 为什么：ZMP 是双足稳定性最经典的判据，后续步态规划都在"控制 ZMP"上做文章。背景见 [第 14 章 机器人控制基础](/wiki/chapters/chapter-14/) 与 [第 15 章 运动生成与 Locomotion](/wiki/chapters/chapter-15/)。
 - 你的情况怎么分析：轮足（Upkie）路线同样要学——支撑多边形换成两轮接地点连线即可。
 

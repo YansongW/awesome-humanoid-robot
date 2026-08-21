@@ -278,7 +278,7 @@ entities:
   ent_paper_vins_fusion_an_optimization_ba_2026:
   - stage: stage-3-humanoid
     role: core
-  ent_paper_zero_moment_point_2024:
+  ent_method_zero_moment_point:
   - stage: stage-2-biped
     role: core
   ent_principle_current_velocity_position_loops:

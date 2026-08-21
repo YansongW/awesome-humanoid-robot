@@ -36,7 +36,7 @@ This page is the phase map; the task pages are the construction manual—complet
 Biped balance is a ladder, with a card for each level. Validate one level in simulation before moving up.
 
 **Level 1: ZMP (Zero Moment Point)**
-- What to do: Understand the [Zero Moment Point](/entry/ent_paper_zero_moment_point_2024/)—the necessary and sufficient condition for a robot not to fall is that the equivalent point of ground reaction force lies within the support polygon. Observe in simulation when the ZMP leaves the support region and when the robot falls.
+- What to do: Understand the [Zero Moment Point](/entry/ent_method_zero_moment_point/)—the necessary and sufficient condition for a robot not to fall is that the equivalent point of ground reaction force lies within the support polygon. Observe in simulation when the ZMP leaves the support region and when the robot falls.
 - Why: ZMP is the most classic criterion for biped stability; subsequent gait planning revolves around "controlling the ZMP." See background in [Chapter 14 Fundamentals of Robot Control](/wiki/chapters/chapter-14/) and [Chapter 15 Motion Generation and Locomotion](/wiki/chapters/chapter-15/).
 - How to analyze your situation: The wheeled-biped (Upkie) route also requires learning this—just replace the support polygon with the line connecting the two wheel ground contact points.
 
