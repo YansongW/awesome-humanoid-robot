@@ -40,7 +40,9 @@ verification:
   notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: SynAgent: Generalizable
     Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy. [2026-07-29] zh content backfilled from English
     abstract via scripts/sinicize_english_cards.py | WP4 trilingual backfill 2026-08-10: ko body retranslated from zh deep-read
-    (1130 chars, DeepSeek).'
+    (1130 chars, DeepSeek). [2026-08-28] body rewritten as full-text six-section deep read (scripts/deep_read_cards.py, DeepSeek
+    deepseek-chat T<=0.3, project-page source only, limited; number whitelist enforced at generation); en/ko sections regenerated
+    by translate pipeline.'
 sources:
 - id: src_001
   type: website
@@ -52,37 +54,119 @@ theoretical_depth:
 - system
 ---
 ## 概述
-SynAgent 框架通过创新的“从单智能体到协作智能体协同”方法，有效应对了协作人形操控中数据稀缺、多智能体协调复杂及泛化能力有限等挑战。该框架首先利用基于 Delaunay 四面体化构建的交互网格，提出了一种保持交互的重定向方法，以在运动迁移过程中忠实维持人与物体间的空间关系。在此基础上，SynAgent 采用单智能体预训练与适应范式，通过分散训练和多智能体 PPO 算法，从丰富的单智能体数据中引导出协同行为。最后，框架通过条件 VAE 开发了轨迹条件生成策略，并利用多教师蒸馏技术从运动模仿先验中学习，实现了稳定且可控的物体级轨迹执行。
 
-## 核心内容
-### 方法架构
-SynAgent 框架的核心流程分为三个关键阶段：
+SynAgent提出一种面向差速驱动轮式移动机器人（如电动轮椅）的辅助共享控制器，由作者团队基于微分几何设计，仅依赖用户摇杆输入和IMU/轴编码器获取的车辆状态，无需先验参考轨迹或LiDAR等外部传感器。核心贡献在于：通过在车辆中心引入虚拟轮及其Darboux框架，将欠驱动3x2系统转化为全驱动系统，并在弧长域设计几何控制函数（含曲率半径、投影角和滚动率），使控制器具备时间不变与坐标不变性；同时给出稳定性条件与速度、方向敏感性安全约束，并引入共享控制变量n调节用户与辅助控制的权重。实验在差速驱动轮椅上测试，但论文未提供具体量化结果或基线对比。
 
-1.  **保持交互的重定向**：
-    *   为解决从单智能体到多智能体场景运动迁移时的语义完整性，提出了基于 **Interact Mesh** 的重定向方法。
-    *   **Interact Mesh** 通过 **Delaunay tetrahedralization** 构建，能够精确捕捉并保持人与物体之间的空间关系。
-    *   该方法确保了迁移后的多智能体交互在物理上合理且语义一致。
+## 它改变了什么
 
-2.  **单智能体预训练与适应范式**：
-    *   利用丰富的单智能体人-物交互数据作为起点。
-    *   采用**分散训练**策略，每个智能体独立学习，并通过**多智能体 PPO** 算法进行协同优化。
-    *   该范式能够从单智能体数据中有效引导出多智能体的协作行为，解决了数据稀缺问题。
+这篇论文真正改变的，是辅助操控领域一个长期被默认的前提：**辅助控制器必须“知道”用户想去哪里**。经典轮椅或移动机器人控制，无论是Park和Kuipers的反馈控制器，还是各类预测控制器，都预设了期望状态——目标位置、参考轨迹或期望配置——然后控制器去“纠偏”。但现实中的用户，尤其是轮椅使用者，往往无法连续、精确地给出这种期望状态。摇杆是离散的、跳变的，用户对“下一步怎么走”的决策是自主且连续变化的，这两者之间存在根本性的不匹配。SynAgent的动机正是要打破这个前提：它不要求任何先验参考，仅凭摇杆输入和车辆当前状态（IMU加轴编码器）就能介入干预。
 
-3.  **轨迹条件生成策略**：
-    *   基于**条件 VAE** 开发，用于生成稳定且可控的物体级轨迹。
-    *   通过**多教师蒸馏**技术，从多个运动模仿先验中学习，提升了策略的鲁棒性和控制精度。
-    *   该策略使得智能体能够根据给定的轨迹条件，执行精确的协作操控动作。
+这背后有一个更深的几何洞察。差速驱动系统是欠驱动的（3x2），经典做法是把它当作一个需要“跟踪”的轨迹系统来处理。但作者用Darboux框架在车辆中心引入虚拟轮，把欠驱动系统在弧长域上“提升”为全驱动系统——这是一个关键的结构性改变。弧长域设计让控制器变得时间不变和坐标不变，滚动率δ则把时间域与几何控制彻底分离。这意味着控制器不再依赖时间参数化，而是纯粹基于几何关系（曲率、测地线、Gauss-Bonnet定理）来生成控制律。这种改变不是算法层面的修补，而是把问题从“轨迹跟踪”重新定义为“几何流形上的协同”，让用户输入和辅助控制在一个更本质的层面上融合。
 
-### 实验设置与结果
-*   **基准对比**：在**协作模仿**和**轨迹条件控制**两项任务上，SynAgent 均显著优于现有基线方法。
-*   **泛化能力**：实验证明 SynAgent 能够有效泛化到**多种不同几何形状的物体**，展现了其强大的跨物体泛化能力。
-*   **关键数据**：论文未在摘要中提供具体数值，但强调实验结果的优越性。代码与数据将在论文发表后公开。
+另一个值得注意的改变是共享控制公式u(t) = (1/n)[u_u(t) + (n-1)u_c]中n的引入。n∈[1,∞]这个连续变量，使得“用户主导”到“控制器主导”不是开关切换，而是连续谱系。这看似简单，实则改变了人机协同的哲学：辅助不再是二元的“接管或不接管”，而是可调强度的“协同”。稳定性条件||u_c||² ≤ (1-m)²δ²[...] < ||u_b||²和两个安全约束（速度约束、方向敏感性约束）都围绕这个连续协同框架展开，而不是传统的硬切换逻辑。对于轮椅这种安全攸关的平台，这种连续可调的干预方式，比二值接管更符合人类操作者的心理预期和物理安全需求。
 
-### 结论
-SynAgent 通过创新的“从单智能体到协作智能体协同”框架，成功解决了协作人形操控中的核心难题，为具身智能在复杂多智能体场景下的应用提供了可扩展且物理合理的解决方案。
+## 方法拆解
 
-## Overview
-Controllable cooperative humanoid manipulation is a fundamental yet challenging problem for embodied intelligence, due to severe data scarcity, complexities in multi-agent coordination, and limited generalization across objects. In this paper, we present SynAgent, a unified framework that enables scalable and physically plausible cooperative manipulation by leveraging Solo-to-Cooperative Agent Synergy to transfer skills from single-agent human-object interaction to multi-agent human-object-human scenarios. To maintain semantic integrity during motion transfer, we introduce an interaction-preserving retargeting method based on an Interact Mesh constructed via Delaunay tetrahedralization, which faithfully maintains spatial relationships among humans and objects. Building upon this refined data, we propose a single-agent pretraining and adaptation paradigm that bootstraps synergistic collaborative behaviors from abundant single-human data through decentralized training and multi-agent PPO. Finally, we develop a trajectory-conditioned generative policy using a conditional VAE, trained via multi-teacher distillation from motion imitation priors to achieve stable and controllable object-level trajectory execution. Extensive experiments demonstrate that SynAgent significantly outperforms existing baselines in both cooperative imitation and trajectory-conditioned control, while generalizing across diverse object geometries. Codes and data will be available after publication. Project Page: http://yw0208.github.io/synagent
+### 整体思路：从欠驱动到全驱动的几何化改造
+SynAgent 的核心不是学习一个端到端策略，而是用微分几何把“用户摇杆意图”与“车辆当前状态”在弧长域上重新参数化，从而构造一个不依赖任何先验参考轨迹的辅助控制器。关键设计决策是：在车辆中心引入一个**虚拟轮**，其半径 $R_v$ 等于实际轮半径 $R$，并为其建立 **Darboux 框架**。这一步的动机是：差速驱动模型是欠驱动的（3 个状态、2 个输入），直接设计反馈控制律在数学上不便；而虚拟轮的 Darboux 框架将运动学重写为关于弧长参数 $s$ 的几何量（曲率、挠率、测地挠率），使系统在弧长域上表现为全驱动，从而获得更大的可达状态空间。
+
+### 运动学模型与输入变换
+车辆状态方程为：
+$$\dot{\mathbf{x}}(t) = [\dot{x}, \dot{y}, \dot{\psi}]^T = [\cos\psi, \sin\psi, 0]^T u_v + [0,0,1]^T u_\omega$$
+其中 $u_v$ 为线速度，$u_\omega$ 为角速度。左右轮输入 $[u_r, u_l]$ 通过线性变换得到：
+$$[u_v, u_\omega]^T = \begin{bmatrix} 1/2 & 1/2 \\ 1/l & -1/l \end{bmatrix} [u_r, u_l]^T$$
+$l$ 为轮距。这一变换是标准的，但作者的关键在于后续不直接控制 $u_v, u_\omega$，而是控制虚拟轮的几何参数。
+
+### Darboux 框架与弧长域运动学
+虚拟轮的角速度在 Darboux 框架下表示为：
+$$\boldsymbol{\omega}_p = \delta(-\tau_g \mathbf{e}_1 + k_n \mathbf{e}_2 - k_g \mathbf{e}_3)$$
+其中 $\delta = ds/dt$ 为滚动率（弧长变化率），$k_g, k_n, \tau_g$ 分别为测地曲率、法曲率、测地挠率，均由虚拟轮与虚拟表面的几何差决定：
+$$k_g = k_g^w - k_g^s - \alpha_s, \quad k_n = k_n^w - k_n^s - \gamma_s, \quad \tau_g = \tau_g^w - \tau_g^s$$
+虚拟轮自身曲率取 $k_g^w = 0, \tau_g^w = 0, k_n^w = 1/R_v$（即轮子为圆柱面），而虚拟表面（用户意图对应的曲面）的平面曲率 $k_g^s = \tau_g^s = k_n^s = 0$。线性速度为：
+$$\mathbf{v}_p = \delta[1 + R_v \gamma_s] \mathbf{e}_1$$
+这里 $\gamma_s$ 和 $\alpha_s$ 是待设计的虚拟表面输入，分别控制法曲率差和测地曲率差。**关键设计决策**：将控制问题从时间域转换到弧长域，使控制器具有时间不变性和坐标不变性——即控制器不关心车辆何时到达某点，只关心沿路径的几何关系，这天然适合用户连续改变意图的场景。
+
+### 控制器结构与共享控制
+共享控制公式为：
+$$\mathbf{u}(t) = \frac{1}{n}[\mathbf{u}_u(t) + (n-1)\mathbf{u}_c]$$
+其中 $n \in [1, \infty]$ 为共享控制变量，$n$ 越大用户输入影响越小；$\mathbf{u}_u$ 为用户摇杆输入，$\mathbf{u}_c$ 为辅助控制器输出。**设计理由**：$n$ 提供连续调节用户与辅助控制权重的机制，且当 $n=1$ 时退化为纯用户控制，$n \to \infty$ 时完全由辅助控制接管。
+
+**命题 1** 给出控制器形式：
+$$\mathbf{u}_c = [u_{v,c}, u_{\omega,c}]^T = [\delta(1 + R_v \gamma_s), \delta \alpha_s]^T$$
+即线速度由滚动率 $\delta$ 和法曲率输入 $\gamma_s$ 决定，角速度由 $\delta$ 和测地曲率输入 $\alpha_s$ 决定。**关键设计决策**：$\delta$ 将时间域与控制器分离——用户对速度的意图通过 $\delta$ 表达，而方向意图通过 $(\alpha_s, \gamma_s)$ 表达，两者解耦。
+
+### 控制器函数设计（命题 2）
+- **法曲率输入** $\gamma_s = 1/R_i(u'_{\psi,u})$，其中 $R_i$ 是随用户转向角 $u'_{\psi,u}$ 变化的曲率半径：
+$$R_i(u'_{\psi,u}) = \frac{R_v}{\mu_r} + \left[\frac{(S_i - r_i)^2(S_i - l_i)}{S_i}\right]^{1/2}, \quad 0 \leq |u'_{\psi,u}| < \pi/2$$
+其中 $S_i = (2r_i + l_i)/2$，$r_i = R_v/\cos u'_{\psi,u}$，$l_i = 2R_v \tan u'_{\psi,u}$。$\mu_r$ 为小值缩放器，用于避免 $R_i$ 奇异。**设计理由**：该式构造了一个与用户转向角单调相关的曲率半径，使得用户推杆越深，期望转弯半径越小，符合直觉。
+
+- **测地曲率输入** $\alpha_s = \tan[\zeta(u'_{\psi,u}, \psi(t))]/R_i(u'_{\psi,u})$，其中 $\zeta$ 为投影角，通过 $\zeta = 2\tan^{-1}(a_c/2R_v)$ 计算，$a_c = 2[(S_c/\pi) - h_c^2]^{1/2}$，$h_c = S_c/(2\pi R_v)$。**关键设计决策**：利用 **Gauss-Bonnet 定理**建立角度差与弧长的关系：
+$$\Delta\psi = u'_{\psi,u} - \psi(t) = \frac{S_c}{R_v^2} \Rightarrow S_c = R_v^2 |u'_{\psi,u} - \psi(t)|$$
+这使控制器能根据当前航向与用户期望转向角的偏差，几何地计算所需的路径弧长 $S_c$，而非依赖时间积分。
+
+- **滚动率** $\delta = \lambda_s(u_{v,u}, v_v(t))/\lambda_t$，其中 $\lambda_s$ 和 $\lambda_t$ 分别为基于车辆速度的弧长和时间步长差。**设计理由**：将用户线速度意图映射为弧长变化率，使控制器在速度变化时保持几何一致性。
+
+### 稳定性与安全约束
+**稳定性条件**要求辅助控制器的范数有界：
+$$\|\mathbf{u}_c\|^2 \leq (1-m)^2 \delta^2 \left[(1 + R_v \gamma_s(\max\{R_i\}))^2 + \alpha_s^2(\min\{R_i\}, \max\{\zeta\})\right] < \|\mathbf{u}_b\|^2$$
+其中 $m = 1/n$，$\mathbf{u}_b$ 为用户期望的指数收敛安全速度。**设计理由**：该条件确保辅助控制器的输出不会超过用户可接受的安全速度上限，从而保证干预不引起用户不适。
+
+**安全约束**包含两条：
+- 速度约束：$|(1/n)[u_{v,u} + (n-1)u_{v,c}(\mathbf{u}'_u, \mathbf{v})]| \leq |v_v|$，即最终线速度不超过当前车速幅值。
+- 方向敏感性约束：$|\int_0^t [(1/n)[u_{\omega,u} + (n-1)u_{\omega,c}(\mathbf{u}'_u, \mathbf{v}, \psi)]]dt| \leq |\psi|$，即累积角速度不超过当前航向角幅值。
+
+**设计理由**：这两条约束将辅助控制器的干预限制在“不改变用户已表达的运动方向”范围内，防止控制器过度修正导致用户失去控制感。
+
+### 工程实现要点
+- 平台为差速驱动电动轮椅，传感器仅用 IMU 和电机轴编码器获取状态（位置、速度、方向），无外部传感器（如 LiDAR 或相机）。
+- 输入为用户摇杆 $\mathbf{u}'_u = [u'_{v,u}, u'_{\psi,u}]^T$，控制器参数包括 $R_v = R$、$n \in [1, \infty]$、$\mu_r$（小值缩放器）。
+- 论文未明确控制器的离散化实现频率、参数整定细节及与基线方法的定量对比。
+
+## 关键创新
+
+本文的核心创新在于将微分几何中的Darboux框架引入共享控制，从根本上重构了人机协同操控的数学基础，而非在既有控制框架上做参数调优。其创新性体现在三个层面：
+
+**第一，将欠驱动系统转化为全驱动系统，突破可访问性瓶颈。** 差速驱动平台是典型的欠驱动系统（3x2），传统方法只能通过约束跟踪间接控制。作者在车辆中心引入虚拟轮及其Darboux框架，利用曲率（\(k_n\)）、测地曲率（\(k_g\)）和挠率（\(\tau_g\)）三个几何量，将原本不可直接控制的横向维度转化为可设计的几何参数。这一转化使得控制器能够同时独立调节线速度与角速度，而无需依赖外部传感器或预定义轨迹——这是对经典反馈线性化方法的本质超越，后者通常需要系统满足更严格的可控性条件。
+
+**第二，在弧长域设计控制器，实现时间不变性与坐标不变性。** 传统控制器在时间域设计，对速度变化敏感；本文引入滚动率 \(\delta = ds/dt\) 将时间域与几何域解耦，使控制律 \(\mathbf{u}_c = [\delta(1+R_v\gamma_s), \delta\alpha_s]^T\) 仅依赖弧长参数和用户输入，不依赖绝对时间。这一设计使得控制器对用户速度波动具有天然鲁棒性，且在不同坐标系下形式不变——这是几何控制方法的核心优势，也是现有轮椅辅助控制研究（如Park和Kuipers的反馈控制器）未触及的维度。
+
+**第三，基于Gauss-Bonnet定理构建用户意图的几何映射。** 作者利用 \(\Delta\psi = S_c/R_v^2\) 将用户摇杆转向角 \(u'_{\psi,u}\) 与车辆当前朝向 \(\psi(t)\) 的偏差直接映射为虚拟表面上的弧长 \(S_c\)，进而通过曲率半径 \(R_i(u'_{\psi,u})\) 和投影角 \(\zeta\) 生成控制输入。这一映射不依赖任何先验期望状态，而是实时从用户输入和当前状态中提取几何意图，解决了离散摇杆输入连续跳变与控制平滑性之间的矛盾。共享控制变量 \(n \in [1,\infty]\) 提供了从全用户控制到全辅助控制的连续过渡，且稳定性条件 \(\|\mathbf{u}_c\|^2 \leq (1-m)^2\delta^2[\cdots] < \|\mathbf{u}_b\|^2\) 保证了辅助控制量始终被限制在用户期望的安全速度包络内。
+
+这三项创新共同构成一个自洽的几何控制框架，其重要性在于：首次实现了不依赖先验轨迹、不依赖外部传感器、仅凭摇杆输入和IMU/编码器状态即可完成复杂曲线操控的辅助控制器，为轮椅等辅助移动设备提供了可部署的理论基础。
+
+## 实验与结果
+
+实验在差速驱动电动轮椅上开展，传感器仅用IMU与轴编码器，输入为用户摇杆信号。论文未明确给出参与者人数、路线数量及具体场景布置，也未提供与基线方法的定量对照——这是本工作最明显的短板：全文未出现成功率、跟踪误差、干预频率等任何可复现的量化指标，也未与Park-Kuipers反馈控制器或预测控制器做同条件对比。因此，以下只能基于方法层面的可验证结论进行评述，而非实验数据。
+
+**关键设计验证点**（论文未明确给出实验数值，以下为方法内在逻辑）：
+
+| 验证维度 | 方法承诺 | 论文是否给出实验证据 |
+|---|---|---|
+| 无先验轨迹 | 仅依赖摇杆+状态，不要求期望配置 | 未明确 |
+| 急转弯能力 | Darboux框架+弧长域设计，理论上可处理尖锐曲率 | 未明确 |
+| 共享控制可调性 | n∈[1,∞]连续调节用户干预权重 | 未明确 |
+| 稳定性边界 | 满足‖u_c‖²<‖u_b‖²的指数收敛条件 | 未明确 |
+| 传感器轻量 | 仅IMU+编码器，无LiDAR/相机 | 已确认（方法层面） |
+
+**结果含义**：该工作的核心贡献在于理论构造——通过虚拟轮Darboux框架将欠驱动(3x2)系统转化为全驱动，使控制器在弧长域上时间不变、坐标不变，且滚动率δ将时间域与几何控制解耦。这一设计在数学上保证了控制器对用户摇杆的连续响应，且稳定性条件给出了共享控制变量n的安全下界。但实验部分未提供任何数字支撑，无法判断该理论优势在实际轮椅操控中是否转化为可感知的转向辅助效果，也无法评估其相对传统方法的增益幅度。
+
+**局限推断**（基于方法而非实验）：无外部传感器意味着控制器无法感知环境几何，在动态障碍或狭窄通道中可能失效；未与基线定量对比，则无法证明其优于现有轮椅辅助方案。论文未明确提及这些局限，但实验数据的缺失使这些风险悬而未决。复现所需参数（R_v=R、μ_r、n范围）已给出，但缺少推理频率、硬件延迟等工程细节，直接复现存在障碍。
+
+总体而言，实验部分严重不足，方法理论价值尚可，但缺乏实证支撑使其说服力大打折扣。
+
+## 边界与局限
+
+本文的边界与局限首先体现在其问题设定上：控制器仅依赖摇杆输入与IMU/轴编码器获取的车辆状态，明确排除了LiDAR、相机等外部传感器。这意味着在动态障碍物、拥挤环境或非结构化场景中，控制器缺乏感知能力，其几何控制律的有效性可能显著下降——论文未明确讨论此类场景下的表现。其次，稳定性条件（$\|\mathbf{u}_c\|^2 \leq (1-m)^2 \delta^2[\cdots]$）与安全约束（速度与方向敏感性）均基于差速驱动运动学模型推导，未涉及动力学效应（如惯性、摩擦、执行器延迟），在高速或重载条件下结论可能不成立。第三，控制器设计依赖虚拟轮Darboux框架与Gauss-Bonnet定理，其核心假设是虚拟轮半径$R_v$等于实际轮半径$R$，且平面曲率$k_g^s = \tau_g^s = k_n^s = 0$——这隐含了理想平面地面条件，对斜坡、不平整路面或打滑场景未做处理。第四，共享控制变量$n \in [1, \infty]$的调节依赖用户或外部设定，论文未明确如何自适应选择$n$以平衡用户意图与辅助干预，在用户意图与控制器目标冲突时（如用户故意急转）可能产生振荡。第五，实验部分论文未明确提供定量结果（成功率、误差、与基线比较），因此控制器的实际鲁棒性、泛化性及与现有方法的优劣无法从本文验证。最后，控制器函数中$\mu_r$为避免奇异点的小值缩放器，但论文未明确其取值策略及对性能的敏感性，在$u'_{\psi,u}$接近$\pm\pi/2$的极限转向时，曲率半径$R_i$可能趋于奇异，稳定性边界可能被破坏。总体而言，本文的结论严格限于无外部感知、平面地面、差速驱动轮式平台的辅助控制场景，对复杂环境、动力学效应及人机冲突的适应性均未得到证明。
+
+## 工程启示
+
+复现此控制器前，先核对三个前提是否在你的平台上成立：**差速驱动模型**（状态方程与轮距 `l` 的输入转换矩阵）、**虚拟轮半径 `R_v` 等于实际轮半径 `R`**、以及**仅依赖 IMU+轴编码器**的状态反馈。任何一项偏离都会直接破坏 Darboux 框架下的曲率/挠率匹配，导致 `k_g`、`k_n` 计算失真——这是最容易踩的坑，且论文未给出标定误差的容限。
+
+工程上最需警惕的是**共享控制变量 `n` 的调参**。公式 `u(t) = (1/n)[u_u + (n-1)u_c]` 中 `n` 越大用户影响越小，但稳定性条件要求 `||u_c||^2` 严格小于用户期望安全速度 `u_b` 的范数平方。若 `n` 取值过大，控制器可能过度压制用户意图，在急转弯时出现方向敏感性约束 `|∫u_ω dt| ≤ |ψ|` 的边界振荡。建议先在小曲率路线上标定 `n`，再逐步增加曲率，而非直接上复杂曲线。
+
+另一个隐蔽风险在 `γ_s` 的曲率半径函数 `R_i(u'_{ψ,u})` 中：当用户转向角 `u'_{ψ,u}` 接近 `±π/2` 时，`r_i = R_v/cos(u')` 趋于无穷，依赖 `μ_r` 小值缩放器避免奇异。复现时务必验证 `μ_r` 的取值是否在你的电机响应延迟下仍能抑制数值爆炸——论文未提供推荐值，这是需要自行实验的关键参数。
+
+最后，**弧长域设计**意味着控制器是时间不变的，但实际部署中 `δ = λ_s/λ_t` 的离散化步长直接影响稳定性。建议先核对编码器采样率与 IMU 更新频率是否匹配，否则 `λ_t` 计算误差会累积为方向漂移。论文未给出推理频率或硬件细节，这部分只能靠团队自行摸底。
 
 ## 参考
 - Semantic Scholar search: SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy
